@@ -1,0 +1,420 @@
+{
+  "candidateModel": "claude-opus-5-5",
+  "paperId": "emkohyo-20260217",
+  "governmentSourceCandidates": [
+    {
+      "title": "厚生労働省 職場における労働衛生対策",
+      "url": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/koyou_roudou/roudoukijun/anzen/anzeneisei02.html"
+    },
+    {
+      "title": "厚生労働省 労働安全衛生法",
+      "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74001000"
+    }
+  ],
+  "questions": {
+    "emkohyo-20260217-q11": {
+      "overlay": {
+        "sourceHash": "40998a253eea72a806682446ad27e2fe3e5ec46bf41a205d8ae1fe6cd0f39552",
+        "correctChoice": 5,
+        "summary": "凍瘡（しもやけ）は組織が凍結しない寒冷障害であり、凍傷の表皮だけの型ではない点が誤り",
+        "choices": [
+          {
+            "number": 1,
+            "verdict": "incorrect",
+            "reason": "実効温度は、人が感じる暑さ寒さを基にした指標です。気温・湿度・気流の3要素を合わせた効果を、同じ温感を与える無風で湿度100%の気温に置き換えて表します。記述は定義と一致しているため正しいです。"
+          },
+          {
+            "number": 2,
+            "verdict": "incorrect",
+            "reason": "大量に汗をかいた後に水分だけを補給し、塩分（ナトリウム）が不足すると、筋肉の痛みやこむら返りのような硬直が起こります。これを熱けいれんと呼ぶため、記述は正しいです。"
+          },
+          {
+            "number": 3,
+            "verdict": "incorrect",
+            "reason": "WBGT基準値は作業による身体負荷（代謝率）の区分ごとに決まっています。負荷が大きいほど体内で生じる熱が多いため、基準値は低く（厳しく）なります。したがって負荷が小さい作業の方が大きい値になるという記述は正しいです。"
+          },
+          {
+            "number": 4,
+            "verdict": "incorrect",
+            "reason": "全身が冷えて体温が下がると、まず震え（ふるえ熱産生）が起こります。さらに低体温が進むと震えが止まり、やがて筋肉が硬直します。震えが止まるのは回復ではなく悪化を示すため、この経過の記述は正しいです。"
+          },
+          {
+            "number": 5,
+            "verdict": "correct",
+            "reason": "凍瘡（しもやけ）は、凍結しない程度の寒冷と湿気によって起こる末梢循環障害で、赤みや腫れを伴う炎症です。組織が凍結する凍傷とは別の障害です。表皮だけが障害される凍傷は第1度凍傷であり、凍瘡と呼ぶのは誤りです。"
+          }
+        ],
+        "sources": []
+      },
+      "sourceEvidence": [],
+      "reviewIssues": [
+        "【HOLD】肢1（実効温度の定義）と肢4（全身冷却時の骨格筋症状が震えの発生→消失→筋硬直と進む経過）を直接述べた政府一次資料を確認できなかった。肢2は厚労省『職場における熱中症予防対策マニュアル』の熱けいれんの定義、肢3は令和7年基発0520第6号の表1-1（安静33℃〜極高代謝率25℃）、肢5は厚労省ICD-10分類（T69.1凍瘡は凍傷T33-T35から除外）で裏付け可能だが、肢1・4の根拠が揃うまで保留する。 第2パス（2026-09-24）: Web検索上限に再び達し、肢1・4の政府資料を追加確認できなかった。"
+      ]
+    },
+    "emkohyo-20260217-q12": {
+      "overlay": {
+        "sourceHash": "3c70842e737b7af37803fe939c48f417422590c5dc86ed5352f07696618c726a",
+        "correctChoice": 4,
+        "summary": "振動障害の特殊健康診断は通達上、定期健診のうち1回（又は年1回）を冬期に行うとされるので、冬季を避けるとした肢4が誤り",
+        "choices": [
+          {
+            "number": 1,
+            "verdict": "incorrect",
+            "reason": "基発0710第3号は、振動の周波数などで手腕への影響を評価するとし、手腕振動の周波数補正係数Whを示しています。係数は12.5Hzで0.958と最大で、10Hzで0.951、16Hzで0.896と、それより高くても低くても小さくなります。12Hz前後で影響が最大とする記述は正しいです。"
+          },
+          {
+            "number": 2,
+            "verdict": "incorrect",
+            "reason": "職場のあんぜんサイトは、振動障害をチェーンソー、グラインダー、刈払機などの振動工具の使用で起こる末梢循環障害、末梢神経障害及び運動器障害の総称としています。チェーンソーなどの振動工具で起こり、末梢神経障害や末梢循環障害がみられるという記述は正しいです。"
+          },
+          {
+            "number": 3,
+            "verdict": "incorrect",
+            "reason": "振動障害の認定基準（昭和52年基発第307号）は、レイノー現象を、全身が寒冷にさらされ冷感を覚えたとき等に手指が発作的に蒼白となる現象とし、回復の過程で痛みやしびれを伴うのが通例としています。記述はこれと一致しており正しいです。"
+          },
+          {
+            "number": 4,
+            "verdict": "correct",
+            "reason": "振動工具の特殊健康診断は、神奈川労働局の一覧で「6月毎に1回（内1回は冬期）」「1年毎に1回（冬期）」とされ、林野庁資料も刈払機使用者の健診を1年以内ごとに1回（冬期）行うとしています。冬期に行うべきものであり、冬季を避けるとした記述が誤りです。"
+          },
+          {
+            "number": 5,
+            "verdict": "incorrect",
+            "reason": "基発0710第2号の指針は、3軸合成値aと1日の振動ばく露時間Tから日振動ばく露量A(8)を求め、日振動ばく露対策値を2.5m/s2としています。5.0×√(T/8)≦2.5 から √(T/8)≦0.5、T/8≦0.25 で T≦2時間となるので、記述は正しいです。"
+          }
+        ],
+        "sources": [
+          {
+            "title": "厚生労働省 振動工具の「周波数補正振動加速度実効値の3軸合成値」の測定、表示等について（基発0710第3号）",
+            "url": "https://www.mhlw.go.jp/web/t_doc?dataId=00tb5545&dataType=1&pageNo=1"
+          },
+          {
+            "title": "厚生労働省 職場のあんぜんサイト 安全衛生キーワード 振動障害",
+            "url": "https://anzeninfo.mhlw.go.jp/yougo/yougo97_1.html"
+          },
+          {
+            "title": "厚生労働省 振動障害の認定基準について（昭和52年基発第307号）",
+            "url": "https://www.mhlw.go.jp/web/t_doc?dataId=00tc0353&dataType=1&pageNo=1"
+          },
+          {
+            "title": "神奈川労働局 健康診断を行うべき有害な業務と健診項目一覧",
+            "url": "https://jsite.mhlw.go.jp/kanagawa-roudoukyoku/var/rev0/0118/7874/20171592525.pdf"
+          },
+          {
+            "title": "林野庁中部森林管理局 林業労働における安全衛生確保のための遵守事項等",
+            "url": "https://www.rinya.maff.go.jp/chubu/nansin/HP/attach/pdf/R4jigyou-3.pdf"
+          },
+          {
+            "title": "宮崎労働局 チェーンソー以外の振動工具の取扱い業務に係る振動障害予防対策指針",
+            "url": "https://jsite.mhlw.go.jp/miyazaki-roudoukyoku/content/contents/001882206.pdf"
+          }
+        ]
+      },
+      "sourceEvidence": [
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=00tb5545&dataType=1&pageNo=1",
+          "excerpt": "振動の周波数、振動の強さ、振動ばく露時間により、手腕への影響を評価し",
+          "choiceNumbers": [
+            1
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=00tb5545&dataType=1&pageNo=1",
+          "excerpt": "周波数制限a)を伴う手腕振動の周波数補正係数Whi",
+          "choiceNumbers": [
+            1
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=00tb5545&dataType=1&pageNo=1",
+          "excerpt": "9 8 0.873 10 10 0.951 11 12.5 0.958 12 16 0.896 13 20 0.782",
+          "choiceNumbers": [
+            1
+          ]
+        },
+        {
+          "url": "https://anzeninfo.mhlw.go.jp/yougo/yougo97_1.html",
+          "excerpt": "振動障害は、チェーンソー、グラインダー、刈払機などの振動工具の使用により発生する手指等の末梢循環障害、末梢神経障害及び運動器（骨、関節系）障害の3つの障害の総称です。",
+          "choiceNumbers": [
+            2
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=00tc0353&dataType=1&pageNo=1",
+          "excerpt": "レイノー現象は、全身が寒冷にさらされ、冷感を覚えたとき等に、手指血管の攣縮発作により、手指が発作的に蒼白となる現象をいい",
+          "choiceNumbers": [
+            3
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=00tc0353&dataType=1&pageNo=1",
+          "excerpt": "その多くは10分ないし20分程度で発作前の状態に回復するが、その過程で痛みやしびれを伴うのが通例である。",
+          "choiceNumbers": [
+            3
+          ]
+        },
+        {
+          "url": "https://jsite.mhlw.go.jp/kanagawa-roudoukyoku/var/rev0/0118/7874/20171592525.pdf",
+          "excerpt": "(1)以下の工具使用業務は6月毎に1回 (内1回は冬期)",
+          "choiceNumbers": [
+            4
+          ]
+        },
+        {
+          "url": "https://jsite.mhlw.go.jp/kanagawa-roudoukyoku/var/rev0/0118/7874/20171592525.pdf",
+          "excerpt": "(2) (1)以外の工具使用業務は1年毎に1回(冬期)",
+          "choiceNumbers": [
+            4
+          ]
+        },
+        {
+          "url": "https://www.rinya.maff.go.jp/chubu/nansin/HP/attach/pdf/R4jigyou-3.pdf",
+          "excerpt": "刈払機の使用者の特殊健康診断は、雇入れの際、当該業務への配置換えの際及び１年以内ごとに１回（冬期）、定期に行うこととされています。",
+          "choiceNumbers": [
+            4
+          ]
+        },
+        {
+          "url": "https://jsite.mhlw.go.jp/miyazaki-roudoukyoku/content/contents/001882206.pdf",
+          "excerpt": "T[時間]は１日の振動ばく露時間）",
+          "choiceNumbers": [
+            5
+          ]
+        },
+        {
+          "url": "https://jsite.mhlw.go.jp/miyazaki-roudoukyoku/content/contents/001882206.pdf",
+          "excerpt": "日振動ばく露対策値（2.5m/s2）を超える場合には振動ばく露時間の抑制",
+          "choiceNumbers": [
+            5
+          ]
+        }
+      ],
+      "reviewIssues": []
+    },
+    "emkohyo-20260217-q13": {
+      "overlay": {
+        "sourceHash": "13483e4798be86d45686654786067deed00f15aad1ef5b06c92ce973744bd4ef",
+        "correctChoice": 2,
+        "summary": "点音源の音は球面状に拡がり、音の強さは距離の2乗に反比例するので、距離が2倍になると強さは1/4、音圧レベルは約6dB下がる。音圧レベルが1/2になるとした肢2が誤り。",
+        "choices": [
+          {
+            "number": 1,
+            "verdict": "incorrect",
+            "reason": "この記述は正しい。農林水産省の資料は、音の速さは大気中で約340m/s、水中で約1,470m/sと媒質により大きく異なり、同じ媒質でも温度で変わるとする。総務省の資料も空気中の音速を c=331.45+0.6t と気温だけの式で示しており、気温が高いほど速く、式に波長や振幅は含まれない。"
+          },
+          {
+            "number": 2,
+            "verdict": "correct",
+            "reason": "これが誤り。総務省の資料では、点音源の音は球面状に拡がり、音の強さは球の表面積に反比例するので、距離が2倍になると強さは1/4になる。10×log10(1/4)≒-6dB で「倍距離当たり6dBの減衰」となる。騒音ガイドラインの推計式 Lp=Lw-20log10r-8 でも距離2倍で約6dB下がるだけで、音圧レベルが1/2になるわけではない。"
+          },
+          {
+            "number": 3,
+            "verdict": "incorrect",
+            "reason": "この記述は正しい。厚労省の騒音障害防止ガイドラインの評価表では、B測定が85dB未満かつA測定平均値が85dB未満のときだけ第Ⅰ管理区分となる。B測定が85dB以上90dB未満なら第Ⅱ又は第Ⅲ管理区分、90dB以上なら第Ⅲ管理区分であり、A測定の結果にかかわらず第Ⅰ管理区分にはならない。"
+          },
+          {
+            "number": 4,
+            "verdict": "incorrect",
+            "reason": "この記述は正しい。厚労省のe-ヘルスネットは、内耳の蝸牛内部にある有毛細胞が音を感受し、騒音などの影響で傷つき壊れると音を感じ取りにくくなって難聴を引き起こし、一旦壊れた有毛細胞は元には戻らないとする。厚労省広報誌も、騒音性難聴で聴力が失われるとその回復は難しいとしている。"
+          },
+          {
+            "number": 5,
+            "verdict": "incorrect",
+            "reason": "この記述は正しい。厚労省広報誌は、騒音性難聴は4000Hz付近の比較的高い音から難聴が進行するが、通常の生活には支障がないため聞こえにくさの自覚がないことがあり、500Hz～2000Hzの会話域に難聴が及んではじめて聞こえにくさを自覚するようになると説明している。"
+          }
+        ],
+        "sources": [
+          {
+            "title": "農林水産省 騒音の基礎 音波の屈折",
+            "url": "https://www.maff.go.jp/j/nousin/noukan/eikyou_hyouka/attach/pdf/souon-12.pdf"
+          },
+          {
+            "title": "総務省 音響の基礎：音の発生と伝搬",
+            "url": "https://www.soumu.go.jp/main_content/000674398.pdf"
+          },
+          {
+            "title": "厚生労働省 騒音障害防止のためのガイドラインの改訂について（基発0420第2号）",
+            "url": "https://www.mhlw.go.jp/web/t_doc?dataId=00tc7618&dataType=1&pageNo=1"
+          },
+          {
+            "title": "厚生労働省 騒音障害防止のためのガイドライン パンフレット",
+            "url": "https://www.mhlw.go.jp/content/001195349.pdf"
+          },
+          {
+            "title": "厚生労働省 e-ヘルスネット 有毛細胞",
+            "url": "https://kennet.mhlw.go.jp/information/information/dictionary/sensory-organ/ys-01.html"
+          },
+          {
+            "title": "厚生労働省 広報誌 騒音性難聴",
+            "url": "https://www.mhlw.go.jp/stf/houdou_kouhou/kouhou_shuppan/magazine/202411_004.html"
+          }
+        ]
+      },
+      "sourceEvidence": [
+        {
+          "url": "https://www.maff.go.jp/j/nousin/noukan/eikyou_hyouka/attach/pdf/souon-12.pdf",
+          "excerpt": "音の速さは、大気中では約340m/sだが、水中では約1,470m/sと、音を伝える媒質により大きく異なる。また、同じ媒質であっても温度や圧力により音の速さが異なる。",
+          "choiceNumbers": [
+            1
+          ]
+        },
+        {
+          "url": "https://www.soumu.go.jp/main_content/000674398.pdf",
+          "excerpt": "大気の温度をt℃とすれば、音速c（m/s）は近似的に次式で与えられます。c=331.45+0.6t",
+          "choiceNumbers": [
+            1
+          ]
+        },
+        {
+          "url": "https://www.soumu.go.jp/main_content/000674398.pdf",
+          "excerpt": "音速は三態の間で大きく異なり、水中では1,500m/s",
+          "choiceNumbers": [
+            1
+          ]
+        },
+        {
+          "url": "https://www.soumu.go.jp/main_content/000674398.pdf",
+          "excerpt": "ゴムの厚さは膨らんでいく風船の表面積に反比例するように、音の強さも拡がっていく球の表面積",
+          "choiceNumbers": [
+            2
+          ]
+        },
+        {
+          "url": "https://www.soumu.go.jp/main_content/000674398.pdf",
+          "excerpt": "音源からの距離が2倍のとき（r2=2×r1）の減衰量は6dBで、いわゆる「倍距離当たり6dBの減衰」となります",
+          "choiceNumbers": [
+            2
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=00tc7618&dataType=1&pageNo=1",
+          "excerpt": "Lp＝Lw-20log10r-8",
+          "choiceNumbers": [
+            2
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/content/001195349.pdf",
+          "excerpt": "Ｂ測定85dB未満85dB以上90dB未満90dB以上Ａ測定平均値85dB未満第Ⅰ管理区分第Ⅱ管理区分第Ⅲ管理区分85dB以上90dB未満第Ⅱ管理区分第Ⅱ管理区分第Ⅲ管理区分90dB以上第Ⅲ管理区分第Ⅲ管理区分第Ⅲ管理区分",
+          "choiceNumbers": [
+            3
+          ]
+        },
+        {
+          "url": "https://kennet.mhlw.go.jp/information/information/dictionary/sensory-organ/ys-01.html",
+          "excerpt": "音を感受するのが蝸牛内部にある「有毛細胞」という細胞です",
+          "choiceNumbers": [
+            4
+          ]
+        },
+        {
+          "url": "https://kennet.mhlw.go.jp/information/information/dictionary/sensory-organ/ys-01.html",
+          "excerpt": "有毛細胞が加齢や騒音の影響などで傷つき、壊れてしまうと、音を感じ取りにくくなり、難聴を引き起こします。一旦壊れてしまった有毛細胞は、元には戻りません。",
+          "choiceNumbers": [
+            4
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/stf/houdou_kouhou/kouhou_shuppan/magazine/202411_004.html",
+          "excerpt": "聴力が失われるとその回復は難しく",
+          "choiceNumbers": [
+            4
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/stf/houdou_kouhou/kouhou_shuppan/magazine/202411_004.html",
+          "excerpt": "４０００Hz付近の比較的高い音から難聴が進行しますが、通常の生活には支障がないため、聞こえにくさの自覚がない",
+          "choiceNumbers": [
+            5
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/stf/houdou_kouhou/kouhou_shuppan/magazine/202411_004.html",
+          "excerpt": "５００Hz～２０００Hzの会話域に難聴が及ぶと聞こえにくさを自覚するようになります",
+          "choiceNumbers": [
+            5
+          ]
+        }
+      ],
+      "reviewIssues": []
+    },
+    "emkohyo-20260217-q14": {
+      "overlay": {
+        "sourceHash": "32ab6eb746a539f41d1a5f5cfe283e088b52241a3773bca7a21ad67b61ef50b7",
+        "correctChoice": 3,
+        "summary": "木材チップも酸化などで酸素を消費し、貯蔵場所で酸素欠乏の原因となるため記述3が誤り",
+        "choices": [
+          {
+            "number": 1,
+            "verdict": "incorrect",
+            "reason": "人が正常な機能を保てる酸素濃度の下限は16%程度とされます。濃度がさらに下がって10%前後以下になると、意識を失ったりけいれんが起こったりします。生理的影響の目安として記述は正しいです。法令で酸素欠乏と定義される18%未満とは別の数値です。"
+          },
+          {
+            "number": 2,
+            "verdict": "incorrect",
+            "reason": "重い筋肉労働をしている最中は酸素の消費量が増えます。疲労や二日酔いで体調が悪いときも低酸素に弱くなります。同じ酸素濃度でも症状は重くなりやすいため、記述は正しいです。"
+          },
+          {
+            "number": 3,
+            "verdict": "correct",
+            "reason": "原木だけでなく、加工した木材チップも酸化や微生物の働きで空気中の酸素を吸収します。チップを入れたタンクやサイロ、船倉では酸素欠乏が起こりえます。加工した木材は酸素を消費しないので原因にならないという部分が誤りです。"
+          },
+          {
+            "number": 4,
+            "verdict": "incorrect",
+            "reason": "汚水や汚泥の中では、硫酸塩還元菌などの働きで硫化水素が作られ、液の中にたまっています。かき混ぜたり移し替えたりすると、硫化水素が一気に空気中へ出て中毒を起こすことがあります。記述は正しいです。"
+          },
+          {
+            "number": 5,
+            "verdict": "incorrect",
+            "reason": "硫化水素の急性・亜急性中毒は、命が助かった後も後遺症が残ることがあります。頭痛などが長く続いたり、肺炎や循環器の障害を併発したりすることがあるため、記述は正しいです。"
+          }
+        ],
+        "sources": []
+      },
+      "sourceEvidence": [],
+      "reviewIssues": [
+        "【HOLD】肢2（重筋労働・疲労・二日酔いで酸素欠乏症が重症化）と肢5（硫化水素中毒の後遺症として頭痛・発熱・悪寒の長期化、肺炎・循環器障害の併発）、肢1の『10％程度以下で意識喪失やけいれん』を述べた政府一次資料を確認できなかった。厚労省リーフレット（040325-3a.pdf）の表は16％頭痛・吐き気、12％目まい、8％失神昏倒で10％の記載がない。肢3は同リーフレットの『原木、チップなどが入れてある貯蔵施設などの内部（木材の呼吸、発酵など）』と安衛令別表第六第五号、肢4は同リーフレットの『汚泥をかきまぜ硫化水素発生』で裏付け可能。 第2パス（2026-09-24）: 労働者健康安全機構『産業保健21』第88号は16%で集中力低下等、10%で死の危険、後遺症として言語・運動等の障害とするのみで、肢1の『10%で意識喪失やけいれん』、肢2、肢5の記述とは一致せず、保留を継続する。"
+      ]
+    },
+    "emkohyo-20260217-q15": {
+      "overlay": {
+        "sourceHash": "cfe4222d2f9c408485393a9b24b626d34056d9353d22168d8dbc37727bb1491f",
+        "correctChoice": 1,
+        "summary": "電磁波の波長と周波数は比例ではなく反比例し、波長が長いほど周波数が小さい点が誤り",
+        "choices": [
+          {
+            "number": 1,
+            "verdict": "correct",
+            "reason": "電磁波では、伝わる速さc＝周波数f×波長λの関係が成り立ちます。cが一定なので、周波数と波長は反比例します。波長が長いほど周波数は小さくなるため、比例関係で波長が長いほど周波数が大きいという記述は誤りです。"
+          },
+          {
+            "number": 2,
+            "verdict": "incorrect",
+            "reason": "通常のガラスは、およそ300nmより短い紫外線を吸収してしまいます。石英は紫外線領域の光も通すため、紫外域で吸光度を測るときはガラスセルではなく石英セルを使います。記述は正しいです。"
+          },
+          {
+            "number": 3,
+            "verdict": "incorrect",
+            "reason": "マイクロ波は波長がおよそ1mm〜1mで、赤外線より波長の長い電磁波です。体に吸収されると熱を生じ、水晶体の白内障のほか、血液（リンパ球の減少など）への影響が指摘されています。公式正答上、正しい肢です。"
+          },
+          {
+            "number": 4,
+            "verdict": "incorrect",
+            "reason": "中波は周波数でいうと300kHz〜3MHzの帯域です。c=fλで換算すると波長は100m〜1000mとなり、主にAMラジオ放送に使われます。記述の波長域と用途はどちらも正しいです。"
+          },
+          {
+            "number": 5,
+            "verdict": "incorrect",
+            "reason": "レーザー製品の安全基準では、危険性に応じてクラス1からクラス4までに区分されています（中間に1M、2M、3R、3Bなどがあります）。基準が対象とする波長範囲は180nm〜1mmです。記述は正しいです。"
+          }
+        ],
+        "sources": []
+      },
+      "sourceEvidence": [],
+      "reviewIssues": [
+        "【HOLD】肢3の『マイクロ波がリンパ球の減少を引き起こす』を述べた政府一次資料を確認できなかった（白内障は労働基準法施行規則別表第一の二第二号4で確認可能）。肢1・4は総務省情報通信白書（平成26年版）の周波数帯と波長の対応（1km=300kHz、100m=3MHz、中波放送（AMラジオ））、肢5は平成17年基発第0325002号（180nmから1mm、7クラス）で裏付け可能。肢2の紫外線とガラス・石英セルの政府資料も未取得。 第2パス（2026-09-24）: site:go.jp検索でもマイクロ波によるリンパ球減少を述べた政府資料は見つからず、保留を継続する。"
+      ]
+    }
+  }
+}

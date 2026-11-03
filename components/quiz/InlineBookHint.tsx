@@ -1,9 +1,12 @@
 import Link from "next/link";
 import { BookOpen, ExternalLink } from "lucide-react";
 
+import { TrackedBookLink } from "@/components/analytics/TrackedBookLink";
 import {
   RECOMMENDED_BOOKS,
   buildAmazonUrl,
+  getAmazonAssociateTag,
+  getAmazonLinkDisclosure,
   isAsinFilled,
   type RecommendedBook,
 } from "@/data/recommended-books";
@@ -29,9 +32,11 @@ function pickBookForCategory(
 export function InlineBookHint({
   exam,
   category,
+  pagePath,
 }: {
   exam: ExamCode;
   category: string;
+  pagePath?: string;
 }) {
   const book = pickBookForCategory(exam, category);
   if (!book) return null;
@@ -41,7 +46,7 @@ export function InlineBookHint({
   // The card carries id={book.id}; see app/recommended-books/[exam]/page.tsx.
   const bookDetailHref = `${allBooksHref}#${book.id}`;
   const linkable = isAsinFilled(book.asin);
-  const externalHref = linkable ? buildAmazonUrl(book.asin) : null;
+  const externalHref = linkable ? buildAmazonUrl(book.asin, pagePath) : null;
 
   return (
     <aside
@@ -74,18 +79,27 @@ export function InlineBookHint({
             この試験の推薦書一覧
           </Link>
           {externalHref && (
-            <a
+            <TrackedBookLink
               href={externalHref}
+              exam={exam}
+              bookId={book.id}
+              retailer="amazon"
+              placement="quiz_inline_hint"
               target="_blank"
-              rel="noopener noreferrer sponsored"
+              rel={getAmazonAssociateTag(pagePath) ? "noopener noreferrer sponsored" : "noopener noreferrer"}
               className="inline-flex items-center gap-1 text-muted-foreground hover:text-foreground hover:underline"
             >
-              <span className="text-[9px] opacity-60">[PR]</span>
+              {getAmazonAssociateTag(pagePath) && <span className="text-[9px] opacity-60">[PR]</span>}
               Amazon で見る
               <ExternalLink className="h-3 w-3" />
-            </a>
+            </TrackedBookLink>
           )}
         </div>
+        {pagePath && getAmazonAssociateTag(pagePath) && (
+          <p className="mt-2 text-xs leading-relaxed text-muted-foreground">
+            {getAmazonLinkDisclosure(pagePath)}
+          </p>
+        )}
       </div>
     </aside>
   );

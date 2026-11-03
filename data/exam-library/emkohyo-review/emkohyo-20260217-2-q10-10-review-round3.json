@@ -1,0 +1,58 @@
+{
+  "reviewModel": "claude-opus-5-5",
+  "requestedModel": "claude-opus-5-5",
+  "canonicalModel": "claude-opus-5-5",
+  "provider": "firstParty",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 4,
+      "outputTokens": 4178,
+      "cacheReadInputTokens": 304634,
+      "cacheCreationInputTokens": 20360,
+      "webSearchRequests": 0,
+      "costUSD": 0.3073828,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 3081,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "paperId": "emkohyo-20260217-2",
+  "ids": [
+    "emkohyo-20260217-2-q10"
+  ],
+  "figureSha256": {
+    "emkohyo-20260217-2-q10": {}
+  },
+  "officialRowImageSha256": {
+    "emkohyo-20260217-2-q10": {
+      "/exam-library/emkohyo-20260217-2/q10-p8-0.webp": "116538c2fe19da922facc41581f283a5fde835cde2b85426a37f6d1d7691dc48"
+    }
+  },
+  "governmentSourceImageSha256": {},
+  "candidateSha256": {
+    "emkohyo-20260217-2-q10": "2fd40b0cf976d01af18a0d4f9dae6eb973885982831f24ec622b59162cffbf51"
+  },
+  "sourcePackPath": "docs/evidence/emkohyo-choice-sources/emkohyo-20260217-2-q10-10.json",
+  "sourcePackSha256": "ed22e48ee2addf4acd291cbdb333a36676df23ef4f0a31f65982a0f329dbab46",
+  "assessment": {
+    "emkohyo-20260217-2-q10": {
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "reasonIssues": [
+        "肢5の理由は「同基準の試料採取方法の規定全体でも、この方法を挙げるのは同表のガス状欄だけ」と全体について断定している。しかし、添付の全文監査の結論は「条文上の方法指定の判断に限る」と範囲を限定しており、理由の断定はこの監査の範囲を超えている。作業環境測定基準の試料採取方法の大部分は、第10条（特定化学物質等）と第13条（有機溶剤）が参照する別表第1・別表第2に物質ごとに定められている。これらの別表を確認した証拠がない限り、「規定全体でガス状欄だけ」とは言えない。対応は二つのどちらか。①別表も含めて0件であることを示した上で残す。②「本文の条文上、冷却凝縮捕集方法を掲げるのは第9条のガス状欄だけ」まで表現を弱める。",
+        "肢5の理由では、第10条・第13条等が認める「又はこれと同等以上の性能を有する試料採取方法」の取扱いに触れていない。この肢の「のみに行うことができる」を正しいとする根拠は、基準が名前を挙げて指定した方法の範囲に限られる。そのことを明記すべきである（公式正答4とは矛盾しない）。"
+      ],
+      "sourceIssues": [
+        "証拠は mhlw t_doc の pageNo=1（pages:1）だけを取得している。この取得本文に別表第1・第2（特定化学物質・有機溶剤の物質別試料採取方法）が含まれるのか、別ページや別添PDFになっていて抽出対象外なのかが示されていない。そのため、fullPageOccurrences=2 は基準全体での出現数の証拠として不十分である。",
+        "出典の見出しは「第1～5・9条（全本文の冷却凝縮捕集方法の記載箇所を照合）」となっており、照合した対象が条文本体なのか別表まで含むのかがはっきりしない。肢5の理由で基準全体についての主張を支えるなら、別表の取得元とそのハッシュを証拠に加える必要がある。"
+      ],
+      "needsExternalCheck": [
+        "厚生労働省 法令等データベースの作業環境測定基準（dataId=74087000）で、別表第1・別表第2（HTML本文、または別ページ・別添PDF）に「冷却凝縮捕集方法」の記載がないことを確認する。"
+      ]
+    }
+  }
+}

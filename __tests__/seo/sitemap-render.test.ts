@@ -2,8 +2,10 @@
 import { describe, expect, it } from "vitest";
 
 import { SITE_BASE_URL } from "@/lib/seo/config";
+import { FP2_PRACTICAL_EDITIONS, getPracticalEdition as getFp2PracticalEdition } from "@/lib/fp2/practical";
+import { FP3_PRACTICAL_EDITIONS, getPracticalEdition as getFp3PracticalEdition } from "@/lib/fp3/practical";
 import {
-  getIndexableQuestions,
+  getSitemapQuestions,
   getSitemapChunkCount,
   SITEMAP_CHUNK_SIZE,
 } from "@/lib/seo/sitemap-pagination";
@@ -11,6 +13,7 @@ import {
   renderBlogSitemapXml,
   renderBooksSitemapXml,
   renderExamsSitemapXml,
+  renderFpPracticalSitemapXml,
   renderMainSitemapXml,
   renderQuestionsSitemapChunkXml,
   renderSitemapIndexXml,
@@ -27,6 +30,7 @@ const ALL_RENDERERS: ReadonlyArray<[string, () => string]> = [
   ["index", renderSitemapIndexXml],
   ["main", renderMainSitemapXml],
   ["exams", renderExamsSitemapXml],
+  ["fp-practical", renderFpPracticalSitemapXml],
   ["topics", renderTopicsSitemapXml],
   ["blog", renderBlogSitemapXml],
   ["books", renderBooksSitemapXml],
@@ -55,6 +59,7 @@ describe("sitemap XML well-formedness", () => {
     for (const render of [
       renderMainSitemapXml,
       renderExamsSitemapXml,
+      renderFpPracticalSitemapXml,
       renderBooksSitemapXml,
     ]) {
       const xml = render();
@@ -76,8 +81,32 @@ describe("renderSitemapIndexXml", () => {
     expect(xml).toContain(
       '<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">',
     );
-    for (const name of ["main", "exams", "topics", "blog", "books"]) {
+    for (const name of ["main", "exams", "fp-practical", "topics", "blog", "books"]) {
       expect(indexLocs).toContain(`/sitemap/${name}.xml`);
+    }
+  });
+
+  it("lists each public FP practical hub, edition and question once", () => {
+    const practicalLocs = locs(renderFpPracticalSitemapXml());
+    const expected = [
+      "/fp1/applied", "/fp1/applied/202605", "/fp1/applied/202609",
+      ...Array.from({ length: 15 }, (_, i) => `/fp1/applied/202605/${51 + i}`),
+      ...Array.from({ length: 15 }, (_, i) => `/fp1/applied/202609/${51 + i}`),
+      ...(["fp2", "fp3"] as const).map((exam) => `/${exam}/practical`),
+      ...FP2_PRACTICAL_EDITIONS.flatMap((edition) => [
+        `/fp2/practical/${edition}`,
+        ...(getFp2PracticalEdition(edition)?.questions ?? []).map((q) => `/fp2/practical/${edition}/${q.number}`),
+      ]),
+      ...FP3_PRACTICAL_EDITIONS.flatMap((edition) => [
+        `/fp3/practical/${edition}`,
+        ...(getFp3PracticalEdition(edition)?.questions ?? []).map((q) => `/fp3/practical/${edition}/${q.number}`),
+      ]),
+    ];
+    expect(practicalLocs.toSorted()).toEqual(expected.toSorted());
+    expect(new Set(practicalLocs).size).toBe(practicalLocs.length);
+    for (const edition of ["202605", "202609"] as const) {
+      const appliedLocs = practicalLocs.filter((path) => new RegExp(`^/fp1/applied/${edition}/\\d+$`).test(path));
+      expect(appliedLocs).toEqual(Array.from({ length: 15 }, (_, i) => `/fp1/applied/${edition}/${51 + i}`));
     }
   });
 
@@ -184,11 +213,9 @@ describe("renderMainSitemapXml route contract", () => {
   });
 
   it("omits 301-redirect routes (canonical destinations only)", () => {
-    // /quiz and /support 301-redirect (next.config.ts); /quiz/stream is the
-    // real route and must remain.
+    // /quiz and /support 301-redirect (next.config.ts).
     expect(mainLocs).not.toContain("/quiz");
     expect(mainLocs).not.toContain("/support");
-    expect(mainLocs).toContain("/quiz/stream");
   });
 
   it("omits noindex routes", () => {
@@ -197,6 +224,7 @@ describe("renderMainSitemapXml route contract", () => {
       "/success-stories",
       "/bookmarks",
       "/review",
+      "/quiz/stream",
       "/my-progress",
     ]) {
       expect(mainLocs).not.toContain(path);
@@ -240,7 +268,7 @@ describe("renderQuestionsSitemapChunkXml pagination", () => {
       expect(chunkLocs.length).toBeLessThanOrEqual(SITEMAP_CHUNK_SIZE);
       seen.push(...chunkLocs);
     }
-    expect(seen.length).toBe(getIndexableQuestions().length);
+    expect(seen.length).toBe(getSitemapQuestions().length);
     // No URL appears in two chunks.
     expect(new Set(seen).size).toBe(seen.length);
   });

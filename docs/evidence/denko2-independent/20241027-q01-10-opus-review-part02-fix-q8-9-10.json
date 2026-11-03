@@ -1,0 +1,51 @@
+{
+  "inputHashes": {
+    "draftSha256": "2338e46a628bf97b5fa1a93820459ca8c6833942f48519cac53ec3e54c9ec5a6",
+    "rowSha256": {
+      "8": "4211b49adba44f74f0c3cbb8e29da36e736c96fe3ce540477eb88c8374bb1347",
+      "9": "2e19f593ad5851f2b9323f407e9c0d1d65d917cdef2af890b9bfe1688f0de304",
+      "10": "b1fef79f68688379ebd1e630b5a7748aca4241c8bf9de6d66e448becde8fd981"
+    },
+    "detailFigureSha256": {
+      "public/images/denko2/2024-second/q9-1.png": "80e651fcc96d8908ae2679898656ff168cc7817497e09da21c33d4dc52830e7e",
+      "public/images/denko2/2024-second/q10-1.png": "dc9cd34dfcf02fd15da6da2b2af8fbe0f992ca48ffd14f604c7016625ddd0ff8"
+    },
+    "legalReceiptSha256": {
+      "docs/evidence/denko2-law/20241027-q08.json": "295f81f65e052be4375eef5ec09a63df4e5a54839b68a819738e0af66358d5c0",
+      "docs/evidence/denko2-law/20241027-q09.json": "b463d20ed72d037b9da7cd042388ccb8a53883fcd51a28ea83a2f969c0bd8987",
+      "docs/evidence/denko2-law/20241027-q10.json": "23a04ce224fb6e7138f2bae9a030f9867d46a1f457fd5fd045f3c89f43b43427"
+    }
+  },
+  "reviewModel": "claude-opus-5-5",
+  "assessment": [
+    {
+      "number": 8,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "lawNeedsExternalCheck": []
+    },
+    {
+      "number": 9,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "lawNeedsExternalCheck": []
+    },
+    {
+      "number": 10,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "explanationIssues": [
+        "explanationは表番号を「表149-3」と書いているが、照合receiptの原文表記は「149-3表」。解釈原文どおり「第149条 149-3表」に直す。"
+      ],
+      "figureIssues": [],
+      "lawNeedsExternalCheck": []
+    }
+  ]
+}

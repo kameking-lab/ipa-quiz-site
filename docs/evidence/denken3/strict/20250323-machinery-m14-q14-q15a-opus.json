@@ -1,0 +1,99 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20250323",
+  "subject": "machinery",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 5573,
+      "cacheReadInputTokens": 130032,
+      "cacheCreationInputTokens": 22614,
+      "webSearchRequests": 0,
+      "costUSD": 0.31838639999999996,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 3468,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "ad45a667f00eb7aeeaf3adcdb2eb768bb4a7714b581e180c3fa33d943728f8e4",
+  "inputRequestSha256": "9aa3fafd1ae61a3c4920517024833e6c2f48a6338252c44da9ca78c9d9d6041b",
+  "inputHashes": {
+    "candidateSha256": {
+      "q14": "58acacf4f5f0fa53736c1ad6f1b544937178021526ccdf19bb5175f10391cf34",
+      "q15a": "9070a922c04a27f23207ec107137212e334d2f1c8ebbc231242fbe3bf6537367"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20250323/machinery/p17.png": "b72dba494ccd6ffa84c857323a72b621a51ca1949e58db014e27d1e0a4efe292",
+      "data/raw_pdfs/denken3/review/20250323/machinery/p18.png": "721d0bb1e6c0a15a990ae278dde12226c50925c7b4f6867ffd12aa330935fedb",
+      "data/raw_pdfs/denken3/review/20250323/machinery/p19.png": "c4a73b694816d1db93a4e29deeff74ce09e5c4c0f0e4252078f99045ab7d6884"
+    },
+    "figureSha256": {
+      "public/images/denken3/20250323/machinery/20250323-machinery-q14-logic-circuit.png": "8b26facc733cbed9f9c9bd2dbecff411aa1c421c0d83d0dfe7c5c867ea2ab33b",
+      "public/images/denken3/20250323/machinery/20250323-machinery-q14-input-chart.png": "b1c976a5736a3fad4f9df25da69115c756c86fbdf4a999c008bc2d797b100970",
+      "public/images/denken3/20250323/machinery/20250323-machinery-q14-choice-1.png": "3e1f2f45d2fa22ebaa4c0330a2637df8932e41cbf2c776c3fc93757a10e9167b",
+      "public/images/denken3/20250323/machinery/20250323-machinery-q14-choice-2.png": "e3fa9226cd854994e877850715f66ee14ead52b2710c512253e129dd6853f531",
+      "public/images/denken3/20250323/machinery/20250323-machinery-q14-choice-3.png": "a57c670a1f9adf0b5a7d74acbf14de5047c7c2d583bba8fb70e5b323739ab30c",
+      "public/images/denken3/20250323/machinery/20250323-machinery-q14-choice-4.png": "33e5bb39b4d84c7e3cac9ec83c87d3bdf23b5428e5d8e8caa504ea26fddefcf2",
+      "public/images/denken3/20250323/machinery/20250323-machinery-q14-choice-5.png": "a12d99354e65a8384ef865d4c61e3497560e802b1ff5b2e4bdb03d5793b2587c"
+    },
+    "sourceQuestionPdfSha256": "66e8b0070a314cd78ed9b9f3edd3d75eeaf442b258fd0aacab0e7d9620c75b9f",
+    "sourceAnswerPdfSha256": "4c3b38fcf1405766fafaa78b1b05b867a3d48307a670b9d354476bc6b32acd4c",
+    "officialAnswerUnitsSha256": "bf922366d88c295758c64f9e9911301be80d7315118bdae731515a1a28ef4c2c",
+    "referencePdfSha256": {},
+    "referencePageSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q14",
+      "questionNumber": 14,
+      "part": null,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "問題文: 公式原図（T2-K 017、印刷ページ-14-）と一致。括弧内の補足は、図で入力と出力波形が与えられることを説明するだけで、条件は変えていない。",
+        "回路: 公式原図・公開回路図ともに、A と C が上側ANDの入力。C の分岐点（黒丸）から縦線が上側ANDの第2入力へ伸びる。B と NOT C が下側ANDの入力で、2つのANDの出力が OR に入って X になる。B の横線と C の縦線の交差には黒丸がないので非接続。これで X = A·C + B·C̄。",
+        "入力タイムチャート（公開図のx座標で読む）: A のパルスは 225-265, 310-350, 395-440, 565-610, 820-865, 905-950 の6個。B のパルスは 225-265, 310-350, 480-525, 650-695, 735-780, 820-865 の6個。C は 288 未満で0、288〜543 で1、543〜712 で0、712 以降で1。公式原図と一致。",
+        "正しい出力: C=0 の区間 [<288] は X=B なので 225-265。C=1 の区間 [288-543] は X=A なので 310-350 と 395-440（Bの 310-350 と 480-525 は影響しない）。C=0 の区間 [543-712] は X=B なので 650-695（Aの 565-610 は影響しない）。C=1 の区間 [>712] は X=A なので 820-865 と 905-950（Bの 735-780 は影響しない）。合計6パルス。",
+        "肢(3)の図: 225, 310, 395, 650, 820, 905 の6パルスで、上の計算と完全に一致。公式正答(3)と整合。",
+        "肢(1)の図: 225, 310, 395, 650, 905 の5パルスで、820-865 が欠けている。記述と誤答理由（C=1に戻った後の最初のパルスが欠落、そこでは A も B も1）は正しい。",
+        "肢(2)の図: 225, 310, 395, 820 の4パルス。記述と誤答理由（650-695 と 905-950 が欠落）は正しい。",
+        "肢(4)の図: 225, 310, 650, 820 の4パルス。記述と誤答理由（Aの3番目 395-440 と最後の 905-950 が欠落）は正しい。",
+        "肢(5)の図: 225, 310, 480, 650, 820 の5パルス。記述と誤答理由（C=1区間にB単独のパルス 480-525 が出ている、395 と 905 が欠落）は正しい。",
+        "総合解説: 論理式、セレクタとしての解釈、区間①〜④の読み取り（②の区間にBのパルスが2個、④の区間でBの単独パルスが出力に現れないことを含む）、合計6個の結論は、いずれも検算と一致。",
+        "公開候補図: 回路図1枚、入力図1枚、肢ごとの波形図5枚の計7枚で、figureDescription の記述と figureUrls 2件＋choiceFigureUrls 5件が一致。各肢の波形図は入力図と同じ横座標（軸 x≈190、パルス端 225/310/395/…）で切り出されており、公開図だけで位置を合わせて判定できる。",
+        "出典: reviewedFromPage [17] は原図フッター T2-K 017 と整合。試験日 2025-03-23 は令和6年度下期、機械科目の問14。officialReferenceUrls は空で、独立参照を要する主張はない。"
+      ]
+    },
+    {
+      "unitKey": "q15a",
+      "questionNumber": 15,
+      "part": "a",
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "共通問題文: 公式原図（T2-K 018）と一致。6 600 V、8 MV·A、界磁電流 200 A、無負荷端子電圧 6 600 V、三相短絡電流 800 A、突極性は無視、電機子巻線抵抗・鉄損・機械損も無視。",
+        "設問(a)の文: 「一相分の同期インピーダンス[Ω]として、最も近いもの」で原図と一致。",
+        "選択肢: (1)2.75 (2)4.76 (3)8.25 (4)19.1 (5)33.0 で原図と一致。",
+        "計算: 相電圧 6 600/√3 = 3 810.5 V。Zs = 3 810.5/800 = 4.763 Ω で、最も近いのは(2)。公式正答(2)と整合。無負荷電圧と短絡電流はどちらも同じ界磁電流 200 A での値で、問題文の条件どおり。",
+        "誤答肢の検算: (1) 6 600/3/800 = 2.75 = 4.763/√3。(3) 6 600/800 = 8.25。(4) 3 810.5/200 = 19.05 で 19.1 に近い。(5) 6 600/200 = 33.0。各誤答肢の説明は、いずれも数値と誤りの原因が正しい。",
+        "図: 問題文のみで図はなく、figureUrls と choiceFigureUrls が空であることと整合。",
+        "出典: reviewedFromPage [18, 19] は原図フッター T2-K 018/019 と整合（(a)は018頁、共通の問題文は018頁）。officialReferenceUrls は空。解説は設問条件からの計算だけで完結し、外部で確認すべき主張はない。"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,73 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20250323",
+  "subject": "theory",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 3174,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 14637,
+      "webSearchRequests": 0,
+      "costUSD": 0.1808398,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 1577,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "145fb8d1c65fe0facaac876debc7f5f6dcea81da0139c2fe79175e9b3a867efd",
+  "inputRequestSha256": "288ee595038b54152fed1a338d740ee376c0ab342da211e63b5b8611a23221fb",
+  "inputHashes": {
+    "candidateSha256": {
+      "q01": "02843234be0fa94c84e14dbc2dfdfc5653fc8a4a5089418113865a29c09a1aba"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20250323/theory/p04.png": "4f7e9446a8ffedecaa18aef7e08840d0e85f3275eaec59d4e496f5524c2e11e4"
+    },
+    "figureSha256": {
+      "public/images/denken3/20250323/theory/20250323-theory-q01-layered-capacitor.png": "b30b2e4e3b2abd604a44dc37ec9ba46b371bce0bd189b4449eb8fbdf5d4c3ed2"
+    },
+    "sourceQuestionPdfSha256": "8817012cb55eed9c83bb1e68df138909b1e03a81f7ed48a9893a219e1d2a76ca",
+    "sourceAnswerPdfSha256": "4c3b38fcf1405766fafaa78b1b05b867a3d48307a670b9d354476bc6b32acd4c",
+    "officialAnswerUnitsSha256": "849db675fcef86d58cd64acbd2bbc0e9ee78e3bd175506845ec2015c39fc8912",
+    "referencePdfSha256": {},
+    "referencePageSha256": {},
+    "referenceJsonSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q01",
+      "questionNumber": 1,
+      "part": null,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "問題文: 公式原図（PDF第4頁、冊子表記 -1-、T2-R 004）と照合した。電極面積0.1 m²、電極間隔6 mm、ε₁=2・厚さ2 mm、ε₂=4・厚さ4 mm、電極と平行に挿入、12 Vの直流、単位[C]、ε₀=8.85×10⁻¹² F/m、端効果無視の各条件が一致し、欠落や改変はない。",
+        "選択肢: (1)5.3×10⁻⁹ (2)7.8×10⁻⁹ (3)9.4×10⁻⁹ (4)2.1×10⁻⁸ (5)4.5×10⁻⁸ の仮数・指数・符号がすべて原図と一致する。",
+        "公式正答: 公式解答表（令和6年度 下期、理論 問1）は1。manifestの{question:1, part:null, answer:\"1\"}とも、候補のofficialAnswer \"1\"とも一致する。",
+        "総合解説の計算: C₁=8.85×10⁻¹²×2×0.1/(2×10⁻³)=8.85×10⁻¹⁰ F、C₂=8.85×10⁻¹²×4×0.1/(4×10⁻³)=8.85×10⁻¹⁰ F。直列合成は4.425×10⁻¹⁰ F、Q=4.425×10⁻¹⁰×12=5.31×10⁻⁹ Cで、正答(1)と整合する。",
+        "電束密度による検算: d₁/ε₁=d₂/ε₂=1×10⁻³ mから D=12ε₀/(2×10⁻³)=6000ε₀≒5.31×10⁻⁸ C/m²、Q=DS=5.31×10⁻⁹ Cとなり一致する。境界面で電束密度が連続する（自由電荷なし）という前提も正しく述べられている。",
+        "因果の説明: 誘電体が電極と平行に積層され、同じ電束が各層を貫くため直列として扱う、という説明は物理的に正しい。",
+        "誤答肢の倍率: (2) 7.8/5.31≒1.47、(3) 9.4/5.31≒1.77、(5) 45/5.31≒8.47≒8.5。いずれも記載どおりである。",
+        "誤答肢の誤算経路: (2)(3)(5)について、特定の誤算経路を公式問題から確認できないと明記しており、推測による断定はない。",
+        "選択肢(4): 並列合成C₁+C₂=1.77×10⁻⁹ Fに12 Vを掛けると2.124×10⁻⁸≒2.1×10⁻⁸ Cとなり、記載の誤算経路の数値は正しい。並列が誤りである理由（同一電束が通る直列構造）も妥当である。",
+        "公開候補図: 原図の該当部分と一致する。左側に12 Vのラベル付き直流電源（電池記号）があり、上側導線は上部電極へ、下側導線は下部電極へ接続される。上層ε₁は右上がり斜線、下層ε₂は右下がり斜線で、右側に2 mmと4 mmの寸法矢印がある。ラベルの欠落や接続の誤りはない。",
+        "図の必要性: 公開候補図だけで積層構造と各層の厚さを読み取れ、解答に必要な情報が揃っている。2 mm+4 mm=6 mmで電極間隔と一致し、空隙はない。",
+        "図の極性: 印加極性は電荷の大きさに影響せず、解答に関わらない。",
+        "figureDescription: 図の内容（接続、積層順、ハッチングの向き、寸法、ラベル位置）と整合する。",
+        "メタデータ: fiscalYear=2024、term=lower、examDate=2025-03-23、subject=theory、reviewedFromPage=[4]、sourceQuestionPdfUrl、sourceAnswerPdfUrlがmanifestと一致する。sourceAttribution（令和6年度下期 理論 問1）も正しい。",
+        "参考URL: officialReferenceUrlsは空配列で、検証が必要な独立主張はない。"
+      ]
+    }
+  ]
+}

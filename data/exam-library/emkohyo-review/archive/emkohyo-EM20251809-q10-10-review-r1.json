@@ -1,0 +1,67 @@
+{
+  "reviewModel": "claude-opus-5-5",
+  "requestedModel": "claude-opus-5-5",
+  "canonicalModel": "claude-opus-5-5",
+  "provider": "firstParty",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 3258,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 17250,
+      "webSearchRequests": 0,
+      "costUSD": 0.2034238,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 1999,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponsePath": "data/exam-library/emkohyo-review/emkohyo-EM20251809-q10-10-raw-response.txt",
+  "rawResponseSha256": "57605e8fe9f6db00d1c0f09a34a2a78bed2766a3c33abd680a3c7e64f55a9313",
+  "paperId": "emkohyo-EM20251809",
+  "ids": [
+    "emkohyo-EM20251809-q10"
+  ],
+  "figureSha256": {
+    "emkohyo-EM20251809-q10": {}
+  },
+  "officialRowImageSha256": {
+    "emkohyo-EM20251809-q10": {
+      "/exam-library/emkohyo-EM20251809/q10-p7-1.webp": "cfaefb976851e113d72ce538ffc3835765d1e2f46b7294a8a19ef2ec18fd6f90"
+    }
+  },
+  "officialPageImageSha256": {},
+  "governmentSourceImageSha256": {
+    "docs/evidence/emkohyo-choice-sources/EM20251809-q10-envraddb-no12-pu-table-p63.png": "cab81a9c818541b109f1c2e8f2c14e7d4ac1dfca97ab5d9ed1f1e5f86e6a419b"
+  },
+  "candidateSha256": {
+    "emkohyo-EM20251809-q10": "61ac80ebee81dc182e74f342c0acebd31fc47f9e6f448d898a905ed18b399792"
+  },
+  "sourcePackPath": "docs/evidence/emkohyo-choice-sources/emkohyo-EM20251809-q10-10.json",
+  "sourcePackSha256": "4e9f7b3f7384bb2b520fcf49952e086e30885100010219e3d6a0874c5f81bd4f",
+  "assessment": {
+    "emkohyo-EM20251809-q10": {
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "reasonIssues": [
+        "肢1: 『表面捕集率の高いろ紙が望ましい』という結論を、No.36の『α線を主に測定する場合はメンブレンろ紙等』に結び付けている。しかし、メンブレンろ紙が表面捕集型（表面捕集率が高い）であるという前提が理由文に書かれていない。このため推論が一段飛んでいる。『メンブレンろ紙は粒子をろ紙表面で捕集するため、ろ紙内部での自己吸収が小さい』という因果を明記し、出典を付ける必要がある。",
+        "肢1・肢5: 自己吸収による低エネルギー側への歪みはATOMICAに記載がある。ただしATOMICAが述べているのは、電着などで作る薄い計測試料と真空測定の文脈である。ダストモニタのろ紙捕集試料に当てはめるのは理由文側の敷衍であり、その旨が分かる書き方にするか、ろ紙捕集について直接述べた出典に差し替えるべき。",
+        "肢3: 『潮解性のため密閉容器に入れて使うγ線用検出器で、飛程の短いα線のスペクトル分析には用いない』の因果がつながっていない。潮解性という事実から、α線スペクトル分析に使えないという結論は直接には導けない。『密閉容器（筐体・窓）でα線が遮られ結晶に届かない』という中間の因果を明示すべき。"
+      ],
+      "sourceIssues": [
+        "肢4・肢5: 『Ge半導体検出器はγ線スペクトロメトリ用』という主張を支える記述が、提出された政府資料抜粋に無い。ATOMICAの抜粋は、α線用検出器としてグリッド付電離箱とSi半導体を挙げるだけで、Geには触れていない。Ge検出器をγ線測定に用いることを明記した政府資料（例: 放射能測定法シリーズNo.7『ゲルマニウム半導体検出器によるガンマ線スペクトロメトリー』）の該当箇所の抜粋が必要。",
+        "肢1・肢3・肢5（㋩）: 『表面捕集率』という語や、表面捕集率とα線ピーク形状の関係を直接述べた政府資料の抜粋が無い。No.36 p28の脚注はろ紙の種類を指定しているだけで、理由（表面捕集・自己吸収）を支えていない。",
+        "肢3: No.6の抜粋が支えているのはNaI(Tl)結晶の潮解性と密閉容器での使用だけである。『α線スペクトル分析には用いない』ことを直接述べた記述は抜粋に無い。"
+      ],
+      "needsExternalCheck": [
+        "放射能測定法シリーズNo.36（No36_R408.pdf）の中から、メンブレンろ紙の表面捕集特性（表面捕集率、α線の自己吸収、エネルギー分解能）に触れた頁を探し、抜粋して根拠に加えること。",
+        "Ge半導体検出器がγ線スペクトロメトリ用であることを明記した政府資料（放射能測定法シリーズNo.7等）の該当頁を取得・照合すること。",
+        "NaI(Tl)検出器の密閉筐体をα線が透過できないことを述べた政府資料があるか確認すること。無ければ、理由文を一般的な物理的説明として出典から切り離して表現すること。"
+      ]
+    }
+  }
+}

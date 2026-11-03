@@ -1,0 +1,74 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20260322",
+  "subject": "machinery",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 3163,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 14156,
+      "webSearchRequests": 0,
+      "costUSD": 0.17677179999999998,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 1617,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "92904eaf6debae8be4f02f1fc799ec1305ba6ade3e305be0b7939384ac2cbf4c",
+  "inputRequestSha256": "55e2fa04eb917fb4a8ccc778352a156617c86f4a00e116a3aa9b5e7425e1a10a",
+  "inputHashes": {
+    "candidateSha256": {
+      "q10": "5ef498a208585231feeb621e60edf40330bf29b101e3f74efe34a6453c07bb14"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20260322/machinery/p13.png": "2207604bde9f2b1a13049008c97ae6afdafe8fd6c5a6d3cd757c58397e60c441"
+    },
+    "figureSha256": {},
+    "sourceQuestionPdfSha256": "a89c7dc2b9a305f9db83f2f78195f0df8a0da5aeec6b8e66cfd40fb028d146fb",
+    "sourceAnswerPdfSha256": "cc2890296d06a4823df5697a78a1c01ddfd39f041c51f48c87984daa3a5707c6",
+    "officialAnswerUnitsSha256": "7cfff1bf2d99d84b89508e9d17e8836361e6a21e12d7e6d683e513c82fb418c0",
+    "referencePdfSha256": {},
+    "referencePageSha256": {},
+    "referenceJsonSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q10",
+      "questionNumber": 10,
+      "part": null,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "出典メタデータ: 公式解答表の見出しは『令和7年度 第三種電気主任技術者下期試験解答』。候補の fiscalYear=2025、term=lower、examDate=2026-03-22、subject=machinery、sourceQuestionPdfUrl=…20260322_ch_third_q03.pdf、sourceAnswerPdfUrl=…20260322_ch_third_a01.pdf は、いずれも manifest と一致する。",
+        "reviewedFromPage: 候補の [13] は manifest 指定の PDF 第13頁と一致する。添付原図の下部にある印刷ノンブル『- 10 -』と冊子コード『T2－K 013』とも矛盾しない。",
+        "問題文: 添付原図の問10本文と字句が一致する（『定常的な動作』『誤っているもの』『(1)～(5)のうちから一つ選べ』を含む）。",
+        "(1): 原図と一致する。原図の『決めることができる。』の後にある余分な空白を除いた整形のみで、意味の変化はない。",
+        "(2): 原図と一致する（『極性で決まり，導通時は回路電圧と負荷などで決まる順電流が流れる』）。",
+        "(3): 原図と一致する（『ゲート電流を取り去っても，順方向の電流に続く逆方向の電流を流すことができる』）。",
+        "(4): 原図と一致する（『オフしているパワーMOSFET は，ボディーダイオードを内蔵しているので…逆方向の電流が流れる』）。",
+        "(5): 原図と一致する（『順電圧が印加されていてオンのゲート電圧を与えると順電流を流すことができ，その状態からゲート電圧を取り去ると非導通となる』）。",
+        "公式正答: 公式解答表の機械列で問10の解答は3、配点は5。候補の officialAnswer=\"3\"、scoringPoints=5、manifest 固定値 {answer:\"3\", points:5} と一致する。",
+        "総合解説: サイリスタは自己保持により保持電流以上の順電流が続く限り導通し、電流が零（保持電流未満）でターンオフして逆電圧では逆阻止となる。したがって『順方向に続く逆方向電流』は流せない、という論理は正しく、(3) が誤りとする結論は公式正答と整合する。逆回復電流を過渡現象として定常動作から除外する注記も適切である。",
+        "(1) 固有理由: IGBT の順方向導通期間はゲート電圧で決まる。逆方向電圧では逆並列ダイオードが順バイアスとなり、ゲート状態に無関係に導通する。記述は正しく、選択肢の内容に対応している。",
+        "(2) 固有理由: ダイオードは非可制御デバイスで、導通・非導通は印加電圧の極性で決まり、順電流の大きさは外部回路で決まる。記述は正しい。",
+        "(3) 固有理由: 自己保持が成り立つのは順方向のみで、電流零でターンオフし逆阻止となるため逆方向電流を継続して流せない。誤りの根拠として正確である。",
+        "(4) 固有理由: パワーMOSFET はソース・ドレイン間に逆並列の向きのボディーダイオード（寄生ダイオード）を内蔵する。ゲートオフ時でも逆電圧で逆方向電流が流れる。記述は正しい。",
+        "(5) 固有理由: IGBT は電圧駆動の自己消弧形で、ゲート電圧を除去するとターンオフする。自己保持しない点をサイリスタと対比しており正しい。",
+        "図: 原図に図・表はなく、文章だけで解答できる。figureDescription=null、figureUrls=[]、choiceFigureUrls={} は妥当である。",
+        "参考URL: officialReferenceUrls=[] のため、検証を要する独立主張はない。",
+        "候補の uncertainty=『なし』、needsReview=false は、上記の検証結果と矛盾しない。"
+      ]
+    }
+  ]
+}

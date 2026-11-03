@@ -1,0 +1,64 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20260322",
+  "subject": "power",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 3109,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 14067,
+      "webSearchRequests": 0,
+      "costUSD": 0.1749798,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 1652,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "a28866fa4d68f273c4bb0bd514ef8210264882aa59183e2b4b12ede3efc7b5c1",
+  "inputRequestSha256": "ce8487db55efc2be7d65ad6030fc56b2fefb1d7599e7a00d9264a473508b8644",
+  "inputHashes": {
+    "candidateSha256": {
+      "q05": "25b83ccdc6e6ee38e929123197a1504e5230e4abfd89792e5ba5561f2fc91de2"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20260322/power/p08.png": "5d81dfbd88c8b411e8fdca0421441e76eaf9cb4c6790f8a18a7f705b6ec1bf7d"
+    },
+    "figureSha256": {},
+    "sourceQuestionPdfSha256": "9733341a0f293f068c9a665d5a9a90f1aabf3a2db5d79cd530643cdea241f7b7",
+    "sourceAnswerPdfSha256": "cc2890296d06a4823df5697a78a1c01ddfd39f041c51f48c87984daa3a5707c6",
+    "officialAnswerUnitsSha256": "1042d224d762b9a6826cae3f4f7efcc1aa21b3f05ea736a4de5e887bb730a999",
+    "referencePdfSha256": {},
+    "referencePageSha256": {},
+    "referenceJsonSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q05",
+      "questionNumber": 5,
+      "part": null,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "問題文: 公式原図（フッター『-5-』『T2-D 008』）の問5本文『中小水力や風力発電に使用されている誘導発電機の特徴について，同期発電機と比較した記述として，誤っているものを次の(1)～(5)のうちから一つ選べ。』と候補questionは、全角読点『，』を含め一字一句一致する。",
+        "選択肢: 原図の(1)『構造が簡単で，励磁装置が不要である。』、(2)『始動，系統への並列などの運転操作が簡単である。』、(3)『回転磁界と回転子の速度に差がある。』、(4)『単独で発電することができず，電力系統に並列して運転する必要がある。』、(5)『系統への並列時の突入電流が小さい。』と、候補choices 1～5は全肢一致する。欠落・順序入替・表記揺れはない。",
+        "公式正答: 公式解答表『令和7年度 第三種電気主任技術者下期試験解答』の＜電力＞欄で、問5は解答5・配点5。manifest固定の{question:5, part:null, answer:'5', points:5}、候補officialAnswer='5'、scoringPoints=5はいずれも一致する。",
+        "総合解説の因果: 誘導発電機は同期速度を超えて駆動すると負すべりで発電する。界磁巻線を持たず、励磁用の無効電力を系統から受ける。したがって励磁装置が不要で、同期化操作も要らない。すべりが存在し、単独では発電できない。いずれも正しい。無励磁の機械に系統電圧が直接加わるため、並列時には励磁電流を含む過渡突入電流が流れ、瞬時電圧低下の原因となる。この説明は標準的な理解と整合する。対策（同期速度付近での投入、限流リアクトル、サイリスタ式ソフトスタータ）は『抑制』であって『解消』ではない、という限定も適切である。結論『(5)が誤り』は公式正答と一致する。",
+        "肢別理由: (1)～(4)の『正しい』理由は、それぞれの肢に固有の内容になっている。(1)は界磁巻線なし・系統から励磁、(2)は電圧・周波数・位相の同期操作が不要、(3)は負すべりによる速度差、(4)は系統からの無効電力供給。(4)ではコンデンサによる自己励磁方式の例外にも触れたうえで、系統連系型の通常機に限定しており、誤導はない。(5)の誤り理由は、突入電流が大きいことと、同期発電機が同期化後に並列するため突入電流がほぼ生じないことの対比として正確である。",
+        "図: 原図の問5には図・表がなく、文章のみで構成される。候補のfigureDescription（図・表なし）、figureUrls=[]、choiceFigureUrls={}は妥当で、公開候補図は不要である。",
+        "出典メタデータ: fiscalYear=2025（令和7年度）、term=lower（下期）、examDate=2026-03-22、subject=power（電力）。sourceQuestionPdfUrl=…/20260322_ch_third_q02.pdf、sourceAnswerPdfUrl=…/20260322_ch_third_a01.pdf。これらはmanifestとすべて一致する。reviewedFromPage=[8]は、manifestの原図PDF第8頁と一致する（原図の印字頁番号『-5-』は冊子頁でありPDF頁ではない）。sourceAttribution『令和7年度下期第三種電気主任技術者試験 電力科目 問5』も一致する。",
+        "参考URL: officialReferenceUrlsは空配列で、検証が必要な独立主張はない。uncertainty='なし'、needsReview=falseと、上記の検証結果との間に矛盾はない。"
+      ]
+    }
+  ]
+}

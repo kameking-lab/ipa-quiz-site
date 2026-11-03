@@ -1,0 +1,128 @@
+{
+  "questionNumber": 17,
+  "sharedContext": "問17及び問18は選択問題であり、問17又は問18のどちらかを選んで解答すること。両方解答すると採点されません。\n\n（選択問題）\n問17 図のように、極板間の厚さ d [m]、表面積 S [m²] の平行板コンデンサAとBがある。コンデンサAの内部は、比誘電率と厚さが異なる3種類の誘電体で構成され、極板と各誘電体の水平方向の断面積は同一である。コンデンサBの内部は、比誘電率と水平方向の断面積が異なる3種類の誘電体で構成されている。コンデンサAの各誘電体内部の電界の強さをそれぞれ E_A1、E_A2、E_A3、コンデンサBの各誘電体内部の電界の強さをそれぞれ E_B1、E_B2、E_B3 とし、端効果、初期電荷及び漏れ電流は無視できるものとする。また、真空の誘電率を ε₀ [F/m] とする。両コンデンサの上側の極板に電圧 V [V] の直流電源を接続し、下側の極板を接地した。次の(a)及び(b)の問に答えよ。",
+  "units": [
+    {
+      "part": "a",
+      "question": "問17 図のように、極板間の厚さ d [m]、表面積 S [m²] の平行板コンデンサAとBがある。コンデンサAの内部は、比誘電率と厚さが異なる3種類の誘電体で構成され、極板と各誘電体の水平方向の断面積は同一である。コンデンサBの内部は、比誘電率と水平方向の断面積が異なる3種類の誘電体で構成されている。コンデンサAの各誘電体内部の電界の強さをそれぞれ E_A1、E_A2、E_A3、コンデンサBの各誘電体内部の電界の強さをそれぞれ E_B1、E_B2、E_B3 とし、端効果、初期電荷及び漏れ電流は無視できるものとする。また、真空の誘電率を ε₀ [F/m] とする。両コンデンサの上側の極板に電圧 V [V] の直流電源を接続し、下側の極板を接地した。\n\n(a) コンデンサAにおける各誘電体内部の電界の強さの大小関係とその中の最大値の組合せとして、正しいものを次の(1)〜(5)のうちから一つ選べ。",
+      "choices": {
+        "1": "E_A1 < E_A2 < E_A3、 3V/(5d)",
+        "2": "E_A1 > E_A2 > E_A3、 3V/(5d)",
+        "3": "E_A1 = E_A2 = E_A3、 V/d",
+        "4": "E_A1 < E_A2 < E_A3、 9V/(5d)",
+        "5": "E_A1 > E_A2 > E_A3、 9V/(5d)"
+      },
+      "officialAnswer": "5",
+      "explanation": "コンデンサAは3層の誘電体が直列に積み重なった構造である。各層の断面積は同じ S で、極板上の電荷 Q は各層を通して共通なので、電束密度 D = Q/S はすべての層で等しい。各層の電界は E = D/ε で求まる。\n\n・E_A1 = D/(2ε₀)\n・E_A2 = D/(3ε₀)\n・E_A3 = D/(6ε₀)\n\nD が共通なので、誘電率が小さい層ほど電界が強い。よって E_A1 > E_A2 > E_A3 であり、最大値は E_A1。\n\n各層の電圧の和が V になることから D を求める。\nV = E_A1·(d/6) + E_A2·(d/3) + E_A3·(d/2)\n  = (D·d/ε₀)·{1/(2·6) + 1/(3·3) + 1/(6·2)}\n  = (D·d/ε₀)·(1/12 + 1/9 + 1/12)\n  = (D·d/ε₀)·(3/36 + 4/36 + 3/36)\n  = (D·d/ε₀)·(10/36)\n  = 5D·d/(18ε₀)\n\nしたがって D = 18ε₀V/(5d)。\n\n・E_A1 = D/(2ε₀) = 9V/(5d)\n・E_A2 = D/(3ε₀) = 6V/(5d)\n・E_A3 = D/(6ε₀) = 3V/(5d)\n\n検算：(9V/5d)(d/6) + (6V/5d)(d/3) + (3V/5d)(d/2) = 3V/10 + 4V/10 + 3V/10 = V。\n\n以上より、大小関係は E_A1 > E_A2 > E_A3、最大値は 9V/(5d) で、正解は(5)。",
+      "choiceExplanations": {
+        "1": "誤り。電束密度が共通なので誘電率の小さい層ほど電界が強く、正しくは E_A1 > E_A2 > E_A3 である。また 3V/(5d) は E_A3 の値で、最大値ではなく最小値である。",
+        "2": "誤り。大小関係 E_A1 > E_A2 > E_A3 は正しいが、3V/(5d) は最も誘電率の大きい層の E_A3 の値であり最小値である。最大値は E_A1 = 9V/(5d)。",
+        "3": "誤り。直列の各層の電界が等しくなるのは誘電率がすべて同じ場合である。本問では誘電率が異なるため、共通の電束密度 D に対して E = D/ε は層ごとに異なる。V/d は極板間の平均電界にすぎない。",
+        "4": "誤り。最大値 9V/(5d) は正しいが、大小関係が逆である。正しくは E_A1 > E_A2 > E_A3。",
+        "5": "正しい。E_A1 = 9V/(5d)、E_A2 = 6V/(5d)、E_A3 = 3V/(5d) となり、E_A1 > E_A2 > E_A3、最大値は 9V/(5d)。"
+      },
+      "figureDescription": "図は左右2つのコンデンサを示す。左の「コンデンサA」は、上側極板が端子「V」に接続され、下側極板は接地記号に接続されている。極板間には水平な3層があり、左側の寸法線は上から「d/6」「d/3」「d/2」、各層のラベルは上から「E_A1,2ε₀」「E_A2,3ε₀」「E_A3,6ε₀」。下側極板の下に幅「S」の寸法線がある。右の「コンデンサB」は、上側極板が端子「V」に接続され、下側極板は接地記号に接続されている。左側の寸法線で極板間隔「d」が示され、極板間は縦に3つの領域に分かれている。各領域のラベルは左から「E_B1 2ε₀」「E_B2 3ε₀」「E_B3 6ε₀」で、下側極板の下の寸法線は左から「S/6」「S/3」「S/2」。",
+      "officialReferenceUrls": [],
+      "uncertainty": "なし",
+      "needsReview": true,
+      "sourceQuestionPdfUrl": "https://www.shiken.or.jp/chief/upload/20260322_ch_third_q01.pdf",
+      "sourceAnswerPdfUrl": "https://www.shiken.or.jp/chief/upload/20260322_ch_third_a01.pdf",
+      "reviewedFromPage": [
+        22,
+        23
+      ]
+    },
+    {
+      "part": "b",
+      "question": "問17 図のように、極板間の厚さ d [m]、表面積 S [m²] の平行板コンデンサAとBがある。コンデンサAの内部は、比誘電率と厚さが異なる3種類の誘電体で構成され、極板と各誘電体の水平方向の断面積は同一である。コンデンサBの内部は、比誘電率と水平方向の断面積が異なる3種類の誘電体で構成されている。コンデンサAの各誘電体内部の電界の強さをそれぞれ E_A1、E_A2、E_A3、コンデンサBの各誘電体内部の電界の強さをそれぞれ E_B1、E_B2、E_B3 とし、端効果、初期電荷及び漏れ電流は無視できるものとする。また、真空の誘電率を ε₀ [F/m] とする。両コンデンサの上側の極板に電圧 V [V] の直流電源を接続し、下側の極板を接地した。\n\n(b) コンデンサB全体の蓄積エネルギーは、コンデンサA全体の蓄積エネルギーの何倍か、最も近いものを次の(1)〜(5)のうちから一つ選べ。",
+      "choices": {
+        "1": "0.72",
+        "2": "0.83",
+        "3": "1.00",
+        "4": "1.20",
+        "5": "1.38"
+      },
+      "officialAnswer": "4",
+      "explanation": "両コンデンサには同じ電圧 V が加わっているので、蓄積エネルギー W = (1/2)CV² の比は静電容量の比に等しい。\n\n【コンデンサAの静電容量】\n3層の直列接続である。(a)より電束密度 D = 18ε₀V/(5d) なので、電荷 Q_A = D·S = 18ε₀SV/(5d)。\nC_A = Q_A/V = (18/5)·ε₀S/d = 3.6·ε₀S/d\n（各層の容量 C = εS/t の直列合成でも同じ結果：1/C_A = (d/ε₀S)(1/12 + 1/9 + 1/12) = (d/ε₀S)(10/36) より C_A = (18/5)ε₀S/d。）\n\n【コンデンサBの静電容量】\n3領域はいずれも極板間隔 d で同じ電圧 V が加わるので、並列接続である。\nC_B = 2ε₀·(S/6)/d + 3ε₀·(S/3)/d + 6ε₀·(S/2)/d\n  = (ε₀S/d)·(1/3 + 1 + 3)\n  = (13/3)·ε₀S/d ≒ 4.333·ε₀S/d\n\n【エネルギー比】\nW_B/W_A = C_B/C_A = (13/3)/(18/5) = 65/54 ≒ 1.204\n\nよって最も近いのは 1.20 で、正解は(4)。",
+      "choiceExplanations": {
+        "1": "誤り。0.72 は1未満で、W_B < W_A を意味する。しかし C_A = (18/5)ε₀S/d = 3.6ε₀S/d に対し C_B = (13/3)ε₀S/d ≒ 4.33ε₀S/d で C_B > C_A であり、同じ電圧 V では W = (1/2)CV² より W_B > W_A となるので矛盾する。",
+        "2": "誤り。0.83 は W_A/W_B = 54/65 ≒ 0.831 に相当し、比の向きが逆である。問われているのはコンデンサBのエネルギーがAの何倍か（W_B/W_A）である。",
+        "3": "誤り。1.00 となるのは両者の静電容量が等しい場合である。実際には C_A = (18/5)ε₀S/d、C_B = (13/3)ε₀S/d で等しくない。",
+        "4": "正しい。同じ電圧なのでエネルギー比は容量比に等しく、W_B/W_A = (13/3)/(18/5) = 65/54 ≒ 1.20。",
+        "5": "誤り。1.38倍になるには C_A = 3.6ε₀S/d に対して C_B ≒ 1.38 × 3.6ε₀S/d ≒ 4.97ε₀S/d が必要である。しかし並列合成による実際の値は C_B = (13/3)ε₀S/d ≒ 4.33ε₀S/d であり、比は 65/54 ≒ 1.20 にとどまる。"
+      },
+      "figureDescription": "図は左右2つのコンデンサを示す。左の「コンデンサA」は、上側極板が端子「V」に接続され、下側極板は接地記号に接続されている。極板間には水平な3層があり、左側の寸法線は上から「d/6」「d/3」「d/2」、各層のラベルは上から「E_A1,2ε₀」「E_A2,3ε₀」「E_A3,6ε₀」。下側極板の下に幅「S」の寸法線がある。右の「コンデンサB」は、上側極板が端子「V」に接続され、下側極板は接地記号に接続されている。左側の寸法線で極板間隔「d」が示され、極板間は縦に3つの領域に分かれている。各領域のラベルは左から「E_B1 2ε₀」「E_B2 3ε₀」「E_B3 6ε₀」で、下側極板の下の寸法線は左から「S/6」「S/3」「S/2」。",
+      "officialReferenceUrls": [],
+      "uncertainty": "誤答肢(1) 0.72 と(5) 1.38 が、それぞれどのような誤った考え方を想定して設定されたかは、問題文と公式正答からは確認できない。",
+      "needsReview": true,
+      "sourceQuestionPdfUrl": "https://www.shiken.or.jp/chief/upload/20260322_ch_third_q01.pdf",
+      "sourceAnswerPdfUrl": "https://www.shiken.or.jp/chief/upload/20260322_ch_third_a01.pdf",
+      "reviewedFromPage": [
+        22,
+        23
+      ]
+    }
+  ],
+  "draftModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 6180,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 11379,
+      "webSearchRequests": 0,
+      "costUSD": 0.21489579999999997,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 1138,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "3288ae8e9c814c589faa541820b93e58930a0fa08d13633dae6ad23c756675d2",
+  "inputRequestSha256": "0b7bccbcc9d68a3c053016f0dec84a39ea3ad596be98957123e564ae5c1c083f",
+  "sourceQuestionPdfSha256": "c83e7c7350d98b65f5d8da0b93e4a2581a19dd250be320fb7fc492c9b34a29c1",
+  "sourceAnswerPdfSha256": "cc2890296d06a4823df5697a78a1c01ddfd39f041c51f48c87984daa3a5707c6",
+  "sourcePageImageSha256": {
+    "data/raw_pdfs/denken3/review/20260322/theory/p22.png": "80bfc312c7f05f1c8f860706237552d2e83b9bcc072a12888eea060d3ff08427",
+    "data/raw_pdfs/denken3/review/20260322/theory/p23.png": "e446e4fbf7f94da7a1ccdf7cf0fb1331263fc730cb650061f8c86ff2126bc9c6"
+  },
+  "revisionHistory": [
+    {
+      "version": 1,
+      "model": "claude-opus-5-5",
+      "resolvedModel": "claude-opus-5-5",
+      "modelUsage": {
+        "claude-opus-5-5": {
+          "inputTokens": 2,
+          "outputTokens": 7334,
+          "cacheReadInputTokens": 1279,
+          "cacheCreationInputTokens": 20340,
+          "webSearchRequests": 0,
+          "costUSD": 0.30966380000000004,
+          "contextWindow": 1000000,
+          "maxOutputTokens": 128000,
+          "thinkingTokens": 2859,
+          "canonicalModel": "claude-opus-5-5",
+          "provider": "firstParty",
+          "costBasis": "list"
+        }
+      },
+      "rawResponseSha256": "2c149dee1931348331854665ddbbe373e1b7cde946778944cce1d86e16b8e6f7",
+      "inputRequestSha256": "758029c574217739c476782bcec393a7cc034514d97fba0e61c7f35676ce80e2",
+      "previousDraftSha256": "3e6e142cc1ed3b191259b3c96168334fd75ea1f330d945ccedd1e2cb4065c962",
+      "previousDraft": "data/raw_pdfs/denken3/review/20260322/theory/archive/q17-vision-draft-v1.json",
+      "answeredReviewSha256": "619a14a97785e5d3767d91443bf4f9dcd5e9f6376a0189b5cafe175ff196f425",
+      "answeredReview": "data/raw_pdfs/denken3/review/20260322/theory/archive/q17-opus-review-v1.json",
+      "answeredStrictReceipt": "docs/evidence/denken3/strict/20260322-theory-s1-q17a-q17b-opus.json",
+      "answeredStrictReceiptSha256": "8ac26bc4c2c9d6aa9ac48e8d5f374856b3d07717fcd3458e0e894e51afaf825a",
+      "figureSha256": {
+        "20260322-theory-q17-fig1": "d6971af7f80d96e513c3c79b4723f8db87c728435389e7f3bc4d02555e08dd7e"
+      },
+      "referenceHashes": {},
+      "operatorNote": ""
+    }
+  ]
+}

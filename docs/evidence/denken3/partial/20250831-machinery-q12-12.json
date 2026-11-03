@@ -1,0 +1,39 @@
+{
+  "status": "partial-accepted",
+  "date": "20250831",
+  "subject": "machinery",
+  "questionCount": 1,
+  "answerUnitCount": 1,
+  "choiceCount": 5,
+  "sourceQuestionPdfSha256": "2a73a24594cc2b8bb7504b9a0ff15e001b2bb56b830572ce2be853f7116f26d8",
+  "sourceAnswerPdfSha256": "76fd3715ed487d19a56b387fb402de20ee09474e9fa55b0413f9037b96af06c9",
+  "reviewedDataSha256": "8e6c45d1ae84ad42af724966d6aee73a103a0cea6aafe7459f263bb29ef3acce",
+  "questions": [
+    {
+      "number": 12,
+      "sourceDraftSha256": "8617c264f6c2acb0ce3ee25f049554f2c10f7f20e46cf94569995ec73258b688",
+      "opusReceipt": "data/raw_pdfs/denken3/review/20250831/machinery/q12-opus-review.json",
+      "opusReceiptSha256": "a6556736d11d618ab414d840367f2f93f4ed429ecad9e4c1e50d91f46602557d",
+      "assessment": {
+        "number": 12,
+        "status": "PASS",
+        "textIssues": [],
+        "choiceIssues": [],
+        "explanationIssues": [],
+        "figureIssues": [],
+        "externalSourceIssues": []
+      },
+      "figureSha256": {
+        "20250831-machinery-q12-fig1": "892104fc4744097fab40eab152560cc65a5e50ee3fccc62babd78effb2982c3d"
+      }
+    }
+  ],
+  "strictReview": {
+    "q12": {
+      "path": "docs/evidence/denken3/strict/20250831-machinery-s12-q12-opus.json",
+      "sha256": "d50778cd899b375a953c5281107b78bc87b38f26c2e2becd8f50cadd06c16afc",
+      "status": "PASS",
+      "resolvedModel": "claude-opus-5-5"
+    }
+  }
+}

@@ -1,0 +1,102 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20250323",
+  "subject": "law",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 4611,
+      "cacheReadInputTokens": 130032,
+      "cacheCreationInputTokens": 40984,
+      "webSearchRequests": 0,
+      "costUSD": 0.4461064,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 2796,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "6f08ab848f9e10d34618b9a55da55132184dd1a56a59b58bc81b377e85421855",
+  "inputRequestSha256": "03c4200ee9adc3fcb560b6de471cc54ac731fa7069fdb771b44a7ee30022353a",
+  "inputHashes": {
+    "candidateSha256": {
+      "q03": "3f8493eaae1319b12129b735fe0162fc70da887632df105adaf4c95ec369326b",
+      "q04": "08e6e357eec45d30c8d888969365cacfebe318b6ecb4f64fd006694a35edde54"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20250323/law/p06.png": "a83ce8932f7b0ce02eb299f107358b569001ac21ea76ff78b122009749d94727",
+      "data/raw_pdfs/denken3/review/20250323/law/p07.png": "f8a273b680a96828cf3681b1d69cfede77a6e55eb528ae43ffa40eaaefddc979"
+    },
+    "figureSha256": {},
+    "sourceQuestionPdfSha256": "6b47d422b7fb05b949f366b2c550a00365e1bdffa5c2800368fab9f29d79c84e",
+    "sourceAnswerPdfSha256": "4c3b38fcf1405766fafaa78b1b05b867a3d48307a670b9d354476bc6b32acd4c",
+    "officialAnswerUnitsSha256": "d3cf54e7cb1178c4bd35849fa5acb03888326f02ae81af4d5913e4ee64480d2f",
+    "referencePdfSha256": {
+      "data/raw_pdfs/denken3/review/meti-denki-interpretation-20231226.pdf": "7ff56485cb405ecef67c5f81181370396e2cbb245e6fee41b926c0f5f1a73b43"
+    },
+    "referencePageSha256": {
+      "data/raw_pdfs/denken3/review/references/meti-denki-interpretation-20231226-p004.png": "402d8c15127dcfa17da93c61138d44f644a1768f03d445233677240716850d20",
+      "data/raw_pdfs/denken3/review/references/meti-denki-interpretation-20231226-p031.png": "344d29b99f18c6f6b320defbdb781e35eeef581039155a49309548b6e11f7787",
+      "data/raw_pdfs/denken3/review/references/meti-denki-interpretation-20231226-p032.png": "2c4f847af1edf4e145047129b40452ff0b0e8a6e4b7236564f63cf4f9944d82d",
+      "data/raw_pdfs/denken3/review/references/meti-denki-interpretation-20231226-p035.png": "30fb3e3df4d90ccc71c8cb273da74fe1b2e4d2c73425c1553f9dddb8c96be994",
+      "data/raw_pdfs/denken3/review/references/meti-denki-interpretation-20231226-p120.png": "d1ebf5a32b74f27487b31ee7b7bd31fead63219c962e4fc733a326754c4e18c3",
+      "data/raw_pdfs/denken3/review/references/meti-denki-interpretation-20231226-p150.png": "ad5c9495cffc4f7448c50c0595e67284aaf8b159a11aba9b825b637efdaec994",
+      "data/raw_pdfs/denken3/review/references/meti-denki-interpretation-20231226-p224.png": "b817d46e9cba75eb0dd97f10478db04cfb3bf46424cbe2db5e7a3cb174ec1e6d",
+      "data/raw_pdfs/denken3/review/references/meti-denki-interpretation-20231226-p225.png": "ee6c622f1f2e6d801473f7db3c704d0e8812ad5554b5254e1679700aa05b8a72"
+    },
+    "referenceJsonSha256": {
+      "data/raw_pdfs/denken3/review/egov/409M50000400052-20240401.json": "fc3f322dccf59132c0267e8d9fe62d33eb62f4a8cd382cf5b9e084746f6bafe2"
+    }
+  },
+  "assessment": [
+    {
+      "unitKey": "q03",
+      "questionNumber": 3,
+      "part": null,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "The question text matches the official problem image (PDF page labeled -3-, T2-H 006, consistent with reviewedFromPage=[6]), including the blanks (ア)(イ)(ウ) and the instruction to choose one of (1)–(5).",
+        "All five choices match the official combination table: (1) 離隔・事故・遮断, (2) 離隔・短絡・遮断, (3) 絶縁・混触・接地, (4) 絶縁・短絡・離隔, (5) 遮断・混触・接地.",
+        "The attached e-Gov text of 電気設備技術基準 第5条第1項 (effective 2024-04-01) reads: 電路は、大地から絶縁しなければならない…又は混触による高電圧の侵入等の異常が発生した際の危険を回避するための接地その他の保安上必要な措置を講ずる場合は、この限りでない. This gives (ア) 絶縁, (イ) 混触, (ウ) 接地, which is choice (3) and matches the fixed official answer 3.",
+        "The general explanation and all five per-choice reasons correctly identify which of (ア)–(ウ) is right or wrong in each choice. None contains a factual error.",
+        "The only reference URL is the e-Gov page for 第5条, and the attached article text verifies it. The explanation does not cite any article number that cannot be checked.",
+        "The question has no figure, and none is needed to answer it. The figureDescription saying there is no figure is correct."
+      ]
+    },
+    {
+      "unitKey": "q04",
+      "questionNumber": 4,
+      "part": null,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [
+        "choiceExplanations[\"3\"] says 「切上げ前の1 Aで割っても150・300・600 Ω」. This is wrong. The value before rounding up is I₁ ≈ 1.13 A, not 1 A (the general explanation and choiceExplanations[\"5\"] both say 約1.13 A). Rewrite it as 「端数処理を誤って1 Aとしても150・300・600 Ω、切上げ前の約1.13 Aで割っても約132・265・529 Ω」 or similar, then conclude that no combination gives 225 Ω.",
+        "Minor: the general explanation calls the rounding rule 「解釈第17条の17-2表に付く端数処理規定」. In the source, the rule is in the text of 第17条第2項第二号ロ, which introduces 17-2表. Changing it to 「第17条第2項第二号ロ」 would be more accurate."
+      ],
+      "figureIssues": [],
+      "sourceIssues": [
+        "The uncertainty field says 「2023年12月26日版」 and 「2024年4月1日を基準日とする試験原図」. The attached original pages do not show a publication date for the 解釈 (only the file name 20231226-2 suggests one), and the attached exam pages (-4-, T2-H 007) do not state the exam's reference date. Neither claim can be verified from the attached materials. Delete them or verify them against the attached cover page or the 解釈's front page."
+      ],
+      "verifiedEvidence": [
+        "The question text matches the official problem image (PDF page labeled -4-, T2-H 007, consistent with reviewedFromPage=[7]): 6 600 V, three-phase three-wire, neutral not grounded, wires other than cable, route length 20 km, a device that cuts off within 1 second, the formula I₁ = 1 + ((V/3)L − 100)/150 [A], and the definitions of V and L.",
+        "The choices 75, 150, 225, 300, 600 match the original.",
+        "Calculation check: V = 6.6/1.1 = 6 kV, and L = 20 km × 3 wires = 60 km, so I₁ = 1 + (2×60 − 100)/150 = 1 + 20/150 ≈ 1.133 A. Under 第17条第2項第二号ロ (attached PDF page 32), the result is rounded up and any value under 2 A is set to 2 A, so Ig = 2 A.",
+        "17-1表 (attached PDF page 32) gives 600/Ig for circuits joining high voltage (or special high voltage up to 35,000 V) to low voltage with a cutoff time of 1 second or less. So R ≤ 600/2 = 300 Ω, which is choice (4) and matches the fixed official answer 4.",
+        "Choice (1): 75 = 150/2, and 150/Ig applies under 「下記以外の場合」. Choice (2): 150 = 300/2, the coefficient for more than 1 second up to 2 seconds. Choice (5): 600 = 600/1 comes from taking Ig as 1 A. All three reasons are consistent with 17-1表.",
+        "The question has no figure. The formula in the figureDescription matches the original."
+      ]
+    }
+  ]
+}

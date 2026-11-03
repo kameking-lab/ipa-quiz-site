@@ -1,0 +1,67 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20240818",
+  "subject": "power",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 3873,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 14514,
+      "webSearchRequests": 0,
+      "costUSD": 0.1938358,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 2226,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "e381a556e17ec9317e8491e4a1ae02df349e474aa12f77cdd68eeb931ee8244a",
+  "inputRequestSha256": "bc2e337fce634ab207c2f2ecf85f2e8fb1f7fef74eacc9550df87a47b219931e",
+  "inputHashes": {
+    "candidateSha256": {
+      "q14": "de75af5d33525dc533f133a1f2900f8cacd9261760c327c3b78248c435651ee0"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20240818/power/p19.png": "d6b7026cd46e51df3f1636af0d855291efaaa581490e20bae9b367cfaf1771b3"
+    },
+    "figureSha256": {},
+    "sourceQuestionPdfSha256": "0bc54a85819b9d9c80d1574c5b8c02a3c28976565d8c9068a3dd0344a3db5700",
+    "sourceAnswerPdfSha256": "f72ecbc3a477e64948388b69cf78cb931032c9f0c688639836c8d533a949cd0f",
+    "officialAnswerUnitsSha256": "71c72f53cced07dfbd37e4f77df5e6597739b05644f5ca8d73de05a4f4b5c2f3",
+    "referencePdfSha256": {},
+    "referencePageSha256": {},
+    "referenceJsonSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q14",
+      "questionNumber": 14,
+      "part": null,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [
+        "figureDescription の「原本ページ(p19)」は、PDF頁番号と印刷頁番号のどちらを指すのかが曖昧である。添付原図のページ下部には印刷頁「- 16 -」と冊子管理番号「T1－D 019」が印字されている。p19 は PDF 第19頁（reviewedFromPage=[19]）と一致するため、内容自体は誤りではない。ただし、印刷頁16との混同や、監査レシートの査読回次タグ（p番号）との混同を招きうる。「問題PDF第19頁（印刷頁 -16-）」のように明記すること。図がないという判断そのものは正しい。原図は文章のみで構成されており、図・表・数式はない。"
+      ],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "出典メタデータ: fiscalYear=2024、term=upper、examDate=2024-08-18、subject=power は manifest（令和6年度上期・試験日2024-08-18・電力科目）と一致する。sourceQuestionPdfUrl（20240818_ch_third_q02.pdf）と sourceAnswerPdfUrl（20240818_ch_third_a01.pdf）も manifest と一致する。reviewedFromPage=[19] は manifest 指定の PDF 第19頁と一致する。sourceAttribution「令和6年度上期第三種電気主任技術者試験 電力科目 問14」も正しい。",
+        "問題文: 原図の「電気絶縁材料に関する記述として，誤っているものを次の(1)～(5)のうちから一つ選べ。」と一致する。候補の差異は句読点（，→、）の整形のみで、意味は変わらない。",
+        "選択肢(1)〜(5): 原図と一字ずつ照合した。(1)「電気抵抗率及び誘電率が低いため」「ボイド(空隙，空洞)」「高められやすい」、(2)「気圧を高めるか，真空状態とすることで」、(3)「ボイド内の気体が絶縁破壊することで部分放電」、(4)「熱や電界，機械的応力などが長時間」「微小なボイド」、(5)「継続的又は断続的に」「絶縁破壊に至る場合がある」を含め、脱字・誤字・語順の相違はない。",
+        "公式正答: 添付の公式解答表（令和6年度上期）の＜電力＞列で、問14は 1 である。manifest 固定の正答単位 {question:14, part:null, answer:\"1\"} とも、候補の officialAnswer=\"1\" とも一致する。",
+        "総合解説・肢(1)の理由: 気体絶縁材料は液体・固体より一般に電気抵抗率が高く、誘電率（比誘電率≒1）は低い。したがって「電気抵抗率及び誘電率が低い」のうち抵抗率の部分が事実と逆であり、これが誤り箇所であるという説明は妥当である。直列誘電体で電束密度の法線成分が連続するため、誘電率の低いボイドに電界が集中するという因果も正しい。交流では容量分担、直流定常では抵抗分担が支配的になるという補足も正しい。直流定常でも、抵抗率の高い気体ボイドには電界が集中する。",
+        "肢(2)の理由: 気体の絶縁破壊強度は液体・固体より一般に低い。パッシェン曲線の最小値より高 pd 側では、加圧すると破壊電圧が上昇する（GIS の加圧 SF6）。高真空では気体分子による電離なだれが起きにくく、電界放出など電極表面現象が支配的になる（真空遮断器）。いずれも正しい。",
+        "肢(3)〜(5)の理由: (3) ボイド内気体の局部破壊による部分放電、(4) 熱・電気・機械ストレスによる経年劣化と微小ボイド・クラックの形成、(5) 部分放電の累積による侵食・電気トリー進展から全路破壊に至る過程。いずれも標準的な知見と整合し、各肢の「正しい」判定は妥当である。",
+        "図: 原図 PDF 第19頁は文章のみで、図・回路・グラフはない。figureUrls=[]、choiceFigureUrls={} は妥当であり、解答に図は不要である。",
+        "officialReferenceUrls=[] のため、外部の独立主張で検証を要するものはない。"
+      ]
+    }
+  ]
+}

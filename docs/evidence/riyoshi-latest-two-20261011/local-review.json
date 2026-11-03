@@ -1,0 +1,41 @@
+{
+  "reviewedAt": "2026-10-11",
+  "reviewer": "Independent gpt-6-astra task /root/riyoshi_local_review",
+  "scope": "Localized factual explanation checks; not whole-paper double review or publication approval",
+  "findingSummary": "Standing-customer error removed; fixed haircut technique, winding, shaving weight and historical overclaims. Source/crop/official-key comparison completed by implementation owner.",
+  "primarySources": [
+    "https://www.rbc.or.jp/wp-content/uploads/2021/07/35rhikki.pdf",
+    "https://www.rbc.or.jp/wp-content/uploads/2021/07/38rhikki.pdf",
+    "https://www.rbc.or.jp/wp-content/uploads/2023/03/47rhikki.pdf",
+    "https://www.hiroginza.com/salon/kanda/blog/10552/",
+    "https://www.jacar.archives.go.jp/das/meta/J22022712200"
+  ],
+  "totalRequired": 110,
+  "stored": 110,
+  "sourceChecked": 110,
+  "contentReady": 110,
+  "contentHold": 0,
+  "publicIncrement": 0,
+  "holds": [],
+  "originalHoldsResolved": 10,
+  "strictReceipt": "No new actual claude-opus-5-5/firstParty receipt claimed. Integration owner must determine applicable strict acceptance and final publication decision.",
+  "sourceFollowup": "Last two holds resolved and final localized review complete.",
+  "finalLocalizedReview": {
+    "reviewer": "Independent gpt-6-astra task /root/riyoshi_local_review",
+    "completedAt": "2026-10-11",
+    "scope": [
+      "53Q54 lathering",
+      "54Q42 hairstyle history",
+      "source classification",
+      "candidate counts and publication gates"
+    ],
+    "result": "No new required correction found in the final snapshot.",
+    "evidence": "Reviewer checked 55+55 candidates, 0 needsReview flags, official key fixture lengths, approved:false and non-live catalog. Main implementation owner separately executed 13 tests successfully.",
+    "limitations": [
+      "Reviewer did not execute Vitest; test runner was unavailable in its shell.",
+      "Technical seminar body fetch failed 502; only available primary search extract inspected.",
+      "Historical encyclopedia is explicitly secondary.",
+      "No Opus approval or production publication approval claimed."
+    ]
+  }
+}

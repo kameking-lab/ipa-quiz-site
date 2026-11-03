@@ -1,0 +1,71 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20240818",
+  "subject": "law",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 4401,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 21557,
+      "webSearchRequests": 0,
+      "costUSD": 0.2607398,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 2651,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "670c7e8b310162be36054594d3f3982e20dbec379507436bc80cb1d909ed40aa",
+  "inputRequestSha256": "679a10ea32b9f258e706e58182e9b086aa5553d1dd3e18f8aa4760de6c7937bd",
+  "inputHashes": {
+    "candidateSha256": {
+      "q05": "acc7671982482aefd384e88895c3bc526f8f1a17ffc6523dd17045e9b485297a"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20240818/law/p09.png": "27de758ce0308b26cb09cbda5016d174d958d73f6463fcbace99d331a770a1c4",
+      "data/raw_pdfs/denken3/review/20240818/law/p04.png": "0ac887459630a5c0c2df2467c4d93b5fadc651a9001ea1230c14caa8f8b4c9d1"
+    },
+    "figureSha256": {},
+    "sourceQuestionPdfSha256": "5dbba8b8e4ec681d2d5f0645a3895a6e218d936519ddd18ac544ddc461a1ae78",
+    "sourceAnswerPdfSha256": "f72ecbc3a477e64948388b69cf78cb931032c9f0c688639836c8d533a949cd0f",
+    "officialAnswerUnitsSha256": "c8caad6503d02d34b3573915492391186e4ca243d509f912b508fedc46eb81f6",
+    "referencePdfSha256": {
+      "data/raw_pdfs/denken3/review/meti-wind-standards-guide.pdf": "e2a7df24343994ebf6e118fbc5afe3780d911d832bcf4821d83f0a98c2c7d29d"
+    },
+    "referencePageSha256": {
+      "data/raw_pdfs/denken3/review/references/meti-wind-standards-guide-p006.png": "b1179d7ba69edb02fdfa55ae1d01230e29546023c1c64dbe7235de654da46d26",
+      "data/raw_pdfs/denken3/review/references/meti-wind-standards-guide-p007.png": "e6cccb1274130391466c343386a78573f5ec7a2994c8f55eb9b9c214d893d892"
+    },
+    "referenceJsonSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q05",
+      "questionNumber": 5,
+      "part": null,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "問題文: 公式原図（問題PDF第9頁、頁下部の印字は『-6-』『T1-H 009』）と照合した。導入文、a)①②、b)の読替え規定（一般用電気工作物又は小規模事業用電気工作物、『安全かつ自動的に停止するような措置』→『安全な状態を確保するような措置』）、c)の本文とただし書、設問文が一致する。空欄(ア)〜(エ)の位置と、(エ)が2箇所にあることも一致する。数値は『20m』で、原図の『20 m』と一致する。句読点（，→、）と波ダッシュの差はsourceAttributionにある『読みやすく整形』の範囲内で、意味は変わらない。",
+        "選択肢: 原図の組合せ表と5肢すべてが一致する。(1)回転速度・制御装置・ロータ最低部・雷撃、(2)発電電圧・圧油装置・地表・雷撃、(3)回転速度・制御装置・地表・雷撃、(4)発電電圧・制御装置・ロータ最低部・強風、(5)回転速度・圧油装置・ロータ最低部・強風。",
+        "公式正答: 試験センター公式解答表（令和6年度上期）の＜法規＞問5は『3』。候補のofficialAnswer『3』および公式正答単位 {question:5, part:null, answer:'3'} と一致する。",
+        "総合解説: 公式参考資料（経済産業省・風力発電設備技術基準逐条解説）のPDF第6頁の省令枠で、第五条第1項第一号『回転速度が著しく上昇した場合』、同第二号『風車の制御装置の機能が著しく低下した場合』、第2項の読替え規定を確認した。PDF第6〜7頁にまたがる第3項『最高部の地表からの高さが二十メートルを超える発電用風力設備には、雷撃から風車を保護するような措置…ただし、周囲の状況によって雷撃が風車を損傷するおそれがない場合においては、この限りでない。』も確認した。解説にある条項番号（第5条第1項第1号・第2号、同条第3項）と語句(ア)回転速度・(イ)制御装置・(ウ)地表・(エ)雷撃は、いずれも添付原頁で検証できる。",
+        "法令基準日: 注意書き頁の注3は『令和6年4月1日現在、効力のある法令』に基づき作成と定める。参考資料の省令第5条第2項には『小規模事業用電気工作物』の語が含まれ、試験問題b)の文言と逐語的に一致する。このため、参考資料は基準日時点の条文内容と整合すると判断した。",
+        "各肢解説: (1)は(ウ)ロータ最低部が誤りで、他の3語は正しい。記述は正確。(2)は(ア)発電電圧と(イ)圧油装置が誤り。『圧油装置は制御装置を構成する場合がある』という記述は、PDF第7頁の解釈第7条第3項『風車の制御用圧油装置の油圧…が著しく低下した場合』で裏付けられる。(ウ)地表と(エ)雷撃は正しく、解説はこれを誤りとしていないので矛盾はない。(3)は4語すべてが条文と一致する。(4)は(ア)(ウ)(エ)が誤りで、(イ)制御装置は正しく、解説もこれを誤りとしていない。(5)は(イ)(ウ)(エ)が誤りで、(ア)回転速度は正しく、解説もこれを誤りとしていない。いずれの肢の理由も、正誤判定が条文と一致する。",
+        "図: 本問は条文穴埋めで、解答に図は不要。原図中の表は選択肢そのものであり、choicesに正しく転記されている。figureDescription=null、figureUrls=[]、choiceFigureUrls={} は妥当。",
+        "出典メタデータ: fiscalYear=2024、term=upper、examDate=2024-08-18、subject=law、sourceQuestionPdfUrl=…20240818_ch_third_q04.pdf、sourceAnswerPdfUrl=…20240818_ch_third_a01.pdf、reviewedFromPage=[9] はいずれもmanifest固定情報と一致する。sourceAttributionの『令和6年度上期第三種電気主任技術者試験 法規科目 問5』も一致する。",
+        "officialReferenceUrls: 2件の#page=6と#page=7は、添付された公式参考資料のPDF第6頁・第7頁に対応し、解説の独立主張をすべてカバーしている。"
+      ]
+    }
+  ]
+}

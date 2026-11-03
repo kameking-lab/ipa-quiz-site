@@ -62,6 +62,15 @@ describe("GET /api/search/questions — 正常系 (200) とレスポンス形状
     const res = await GET(get("?exam=ap&calculationOnly=true"));
     expect(res.status).toBe(200);
   });
+
+  it("画面URLの calc=1 は calculationOnly=true と同じ結果を返す", async () => {
+    const [compact, long] = await Promise.all([
+      GET(get("?exam=ap&calc=1&limit=60")),
+      GET(get("?exam=ap&calculationOnly=true&limit=60")),
+    ]);
+    expect(compact.status).toBe(200);
+    expect(await compact.json()).toEqual(await long.json());
+  });
 });
 
 describe("GET /api/search/questions — Cache-Control ポリシー", () => {

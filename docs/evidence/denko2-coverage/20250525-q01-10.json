@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "batch": "20250525-q01-10",
+  "status": "accepted",
+  "questionOriginalVisualQc": 10,
+  "choiceTextOriginalVisualQc": 40,
+  "choiceExplanationQc": 40,
+  "figureAndPhotoQc": 7,
+  "governmentSourceQc": 3,
+  "reviewedQuestionNumbers": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10
+  ],
+  "unresolved": [],
+  "sourceDate": "2025-05-25",
+  "sourceQuestionPdfSha256": "e1a564f3c783d0c6c55356ab058937fa3a919c271d7ba43aeb258427c57d5bc3",
+  "sourceAnswerPdfSha256": "194e465b21806b6bc89865f08ee0a89bd4164a5fe4ce9405b29a8b53b2244ef6",
+  "sourceQuestionNumbers": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10
+  ],
+  "sourceOfficialAnswerCount": 10,
+  "visionDraftQuestionCount": 10,
+  "publishGate": "notification-required-and-two-full-years-required",
+  "governmentSourceApplicableQuestions": [
+    8,
+    9,
+    10
+  ],
+  "independentVisionReview": {
+    "model": "claude-opus-5-5",
+    "passedQuestions": 10,
+    "totalQuestions": 10,
+    "receipts": [
+      "docs/evidence/denko2-independent/20250525-q01-10-acceptance.json"
+    ]
+  },
+  "reviewMethod": "公式行画像・全肢・正答・解説・図表・一次資料をOpus独立再照合。各問の現候補、原図、図表、資料、最終direct receiptのSHA一致と未解決配列0を確認。",
+  "strictCurrentHashPinned": true,
+  "finalReceipt": "docs/evidence/denko2-final/20250525.json",
+  "finalReceiptSha256": "6fd8d6b465a3f1bcd2eea6e079f22e9aeacb5705c59646ab5a15fb25975ca087"
+}

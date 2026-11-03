@@ -1,4 +1,5 @@
 import type { NextConfig } from "next";
+import { BLOG_ARTICLE_ALIASES } from "./lib/blog/article-aliases";
 
 const isDev = process.env.NODE_ENV === "development";
 
@@ -8,9 +9,11 @@ const cspDirectives = [
   // cdn.jsdelivr.net required for Swagger UI on /api-docs
   // va.vercel-scripts.com: Vercel Analytics; vitals.vercel-insights.com: Speed Insights
   // challenges.cloudflare.com: Cloudflare Turnstile (contact-form spam protection)
-  `script-src 'self' 'unsafe-inline'${isDev ? " 'unsafe-eval'" : ""} https://vercel.live https://cdn.jsdelivr.net https://us-assets.i.posthog.com https://va.vercel-scripts.com https://vitals.vercel-insights.com https://challenges.cloudflare.com`,
+  // AdSense bootstrap + SODAR traffic-quality runtime. Keep these host-specific;
+  // do not relax the whole directive to https:.
+  `script-src 'self' 'unsafe-inline'${isDev ? " 'unsafe-eval'" : ""} https://vercel.live https://cdn.jsdelivr.net https://us-assets.i.posthog.com https://va.vercel-scripts.com https://vitals.vercel-insights.com https://challenges.cloudflare.com https://pagead2.googlesyndication.com https://ep2.adtrafficquality.google`,
   "style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net",
-  "img-src 'self' data: blob: https://*.ipa.go.jp",
+  "img-src 'self' data: blob: https://*.ipa.go.jp https://pagead2.googlesyndication.com https://googleads.g.doubleclick.net https://ep1.adtrafficquality.google https://ep2.adtrafficquality.google",
   "font-src 'self' https://cdn.jsdelivr.net",
   // worker-src: service worker at /sw.js (PWA)
   "worker-src 'self'",
@@ -18,9 +21,9 @@ const cspDirectives = [
   "manifest-src 'self'",
   // object-src: block plugins/Flash XSS vectors entirely
   "object-src 'none'",
-  // connect-src: Gemini API + Vercel Live + PostHog + Sentry + Vercel Analytics + Speed Insights
-  "connect-src 'self' https://generativelanguage.googleapis.com https://vercel.live wss://ws-us3.pusher.com wss://ws-eu.pusher.com https://us.i.posthog.com https://us-assets.i.posthog.com https://o4511300167860224.ingest.us.sentry.io https://va.vercel-scripts.com https://vitals.vercel-insights.com",
-  "frame-src https://vercel.live https://challenges.cloudflare.com",
+  // connect-src: Gemini API + Vercel Live + PostHog + Sentry + Vercel Analytics + Speed Insights + AdSense
+  "connect-src 'self' https://generativelanguage.googleapis.com https://vercel.live wss://ws-us3.pusher.com wss://ws-eu.pusher.com https://us.i.posthog.com https://us-assets.i.posthog.com https://o4511300167860224.ingest.us.sentry.io https://va.vercel-scripts.com https://vitals.vercel-insights.com https://pagead2.googlesyndication.com https://googleads.g.doubleclick.net https://ep1.adtrafficquality.google https://ep2.adtrafficquality.google",
+  "frame-src https://vercel.live https://challenges.cloudflare.com https://googleads.g.doubleclick.net https://ep2.adtrafficquality.google https://www.google.com",
   "frame-ancestors 'none'",
   "base-uri 'self'",
   "form-action 'self'",
@@ -57,8 +60,17 @@ const longCacheImmutable = {
 };
 
 const nextConfig: NextConfig = {
+  outputFileTracingIncludes: {
+    "/e-learning/exams": ["./data/exam-library/papers/*.json", "./data/exam-library/presentation/*.json"],
+    "/e-learning/exams/*": ["./data/exam-library/papers/*.json", "./data/exam-library/presentation/*.json"],
+  },
   async redirects() {
     return [
+      ...Object.entries(BLOG_ARTICLE_ALIASES).map(([alias, canonical]) => ({
+        source: `/blog/${alias}`,
+        destination: `/blog/${canonical}`,
+        statusCode: 301 as const,
+      })),
       // /quiz with no mode query → home (broken entry point)
       {
         source: "/quiz",
@@ -115,6 +127,9 @@ const nextConfig: NextConfig = {
   reactStrictMode: true,
   productionBrowserSourceMaps: false,
   experimental: {
+    // Large static question corpus: bound prerender workers so Windows CI does
+    // not exhaust memory while generating thousands of /q pages.
+    cpus: 4,
     optimizePackageImports: [
       "lucide-react",
       "@radix-ui/react-dialog",

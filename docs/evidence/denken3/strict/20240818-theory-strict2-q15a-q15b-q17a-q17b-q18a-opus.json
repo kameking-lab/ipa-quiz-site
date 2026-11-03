@@ -1,0 +1,132 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20240818",
+  "subject": "theory",
+  "reviewModel": "claude-opus-5-5",
+  "inputHashes": {
+    "candidateSha256": {
+      "q15a": "6388bfc0a6043276ff6034c7462a9256be57e947833c56d9c1dc171653a3b9bd",
+      "q15b": "6beaf44c327b8ca4feec5de97261855ecbb2505ad3e520116a67aba41cbb5e2a",
+      "q17a": "64e21fbadbaa7e290d1e95cae31b2a970e32bd6d1c876f9adeb6241a01120b09",
+      "q17b": "1049cd774d4fa8945b558455c1a1b026f4ed05aa12e91c83831f52d21ad22e30",
+      "q18a": "32ba52ece47c5e8c5fa41f1b8ece1a2d57a616da5b33dfb56f10f8982572f57a"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20240818/theory/p19.png": "7dd8b5e9903630242b620cff2d52909aa9e2389354731235d185d1b755ce1c08",
+      "data/raw_pdfs/denken3/review/20240818/theory/p22.png": "d9f046962f51fd98ab8a972b9218f8352f8e18c03e513bd48c0ccde000247cbb",
+      "data/raw_pdfs/denken3/review/20240818/theory/p23.png": "659a3972ec4c17be381241744852f11f1cab2dc08b0822d7245315296427ab85",
+      "data/raw_pdfs/denken3/review/20240818/theory/p24.png": "8a6dad9542b6b51fd4f923ecddb22ee0f4531fb02fda441375139b79d0068d33",
+      "data/raw_pdfs/denken3/review/20240818/theory/p25.png": "619d2ae5a3f2fdb36ed1f6f69db70975fb8efe983c88ec17afaca826617f80ba"
+    },
+    "figureSha256": {
+      "public/images/denken3/20240818/theory/20240818-theory-q15-ac-circuit.png": "3c017b72e88229b876cc59eff777c6a35f495f27fae0d39f50cccc78a09dae02",
+      "public/images/denken3/20240818/theory/20240818-theory-q17-capacitor-networks.png": "8ff60c1a5c6f23abf5e90be4cd13724eb74cd582339fd2dabcfed8891d5acaf2"
+    },
+    "sourceQuestionPdfSha256": "236be905e93a023cf3c65c1e22c45c24dc42b910151c51f8ed023247793d1d29",
+    "sourceAnswerPdfSha256": "f72ecbc3a477e64948388b69cf78cb931032c9f0c688639836c8d533a949cd0f",
+    "officialAnswerUnitsSha256": "a6d5cdbd8d585e03003713bc8613dd3402773a529156960f43141c26645c7224"
+  },
+  "assessment": [
+    {
+      "unitKey": "q15a",
+      "questionNumber": 15,
+      "part": "a",
+      "status": "FIX",
+      "textIssues": [
+        "候補の question には(a)の設問文しかなく、大問の共通文が入っていない。抜けているのは「図の交流回路において、回路素子は、インダクタンスLのコイル又は静電容量Cのコンデンサである。この回路に正弦波交流電圧 v = 500 sin(1000t) [V] を加えたとき、回路に流れる電流は、i = −50 cos(1000t) [A] であった。」の部分。解答に欠かせない v と i の式、素子が L か C の二択であることが問題文に一つも出てこないため、このままでは解けない。親レコードに共通文があり画面に出る設計でない限り、共通文を question の先頭に加えること。親レコードで出す設計であれば、実際に表示されるかの確認が必要。"
+      ],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [
+        "解説は「電流の位相は電圧より90°遅れている」と与式を直接比べているが、その前提となる基準方向の説明がない。図では i が素子に向かって右向き、v の矢印は左向きで、矢印の先（左端子）が＋になる。したがって電流は電源の＋端子から素子へ流れ込み、素子について受動符号規約が成り立つ。この一文を加えること。v の基準方向が逆なら結論は逆（電流が進む、つまりコンデンサ）になるので、因果の説明に必要。"
+      ],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "公式解答表の理論 問15(a) は 4。候補の officialAnswer と一致。",
+        "公開候補図と原図 p19（T1-R 019）を照合: i は上辺で右向き、回路素子は上辺中央、交流電源は下辺中央、v の矢印は左向き。接続とラベルがすべて一致。",
+        "選択肢(1)〜(5)（C=10nF、100nF、10μF、L=10mH、100mH）は原文どおり。",
+        "−cos θ = sin(θ−90°) より i = 50 sin(1000t−π/2)。電流は 90° 遅れなのでコイル。|Z| = 500/50 = 10 Ω、L = 10/1000 = 10 mH。",
+        "各肢のリアクタンスを検算: X_C は 100 kΩ、10 kΩ、100 Ω。X_L は 10 Ω（正答）と 100 Ω。いずれも候補の記述どおり。"
+      ]
+    },
+    {
+      "unitKey": "q15b",
+      "questionNumber": 15,
+      "part": "b",
+      "status": "FIX",
+      "textIssues": [
+        "(a)と同じく、大問の共通文（素子は L か C、v = 500 sin(1000t) [V]、i = −50 cos(1000t) [A]）が question にない。(b)は電流振幅 50 A を使うので、共通文がなければ解けない。親レコードで確実に表示される場合を除き、共通文を補うこと。"
+      ],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "公式解答表の理論 問15(b) は 3。候補の officialAnswer と一致。",
+        "ただし書き「インダクタンスの場合には (1/2)Li²、静電容量の場合には (1/2)Cv²」は原文と一致。選択肢 2.5 / 6.25 / 12.5 / 25 / 125 も原文どおり。",
+        "W_max = (1/2)×0.01×50² = 12.5 J。",
+        "誤答肢を検算: 2.5 J は電流 50 A なら L = 2 mH、L = 10 mH なら電流 ≈ 22.4 A が必要。6.25 J は実効値 1250 A² を使った値。25 J は 1/2 を掛け忘れた値。125 J は L = 0.1 H を使った値。すべて候補の記述どおり。",
+        "公開候補図は(a)と同じ図で、原図と一致。"
+      ]
+    },
+    {
+      "unitKey": "q17a",
+      "questionNumber": 17,
+      "part": "a",
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "公式解答表の理論 問17(a) は 5。候補の officialAnswer と一致。",
+        "設問文と選択肢 1.0 / 2.0 / 4.5 / 6.0 / 9.0 は原図 p23（T1-R 023）と一致。",
+        "図2を照合: b は上頂点、c は左下頂点、d は右下頂点。b-c、b-d、c-d はいずれも 3μF。図3は中性点（無記号）から b、c、d へ各 C[μF]。公開候補図は原図と一致。",
+        "c 開放時の b-d 間: Δ側は 3 + 1.5 = 4.5 μF、Y側は C/2。よって C = 9.0 μF。一般式 C_Y = 3C_Δ（対称）とも一致する。",
+        "誤答肢を検算: 1.0 は抵抗の変換式 R/3 を流用した値。2.0 と 6.0 は C/2 がそれぞれ 1.0、3.0 になり不一致。4.5 は Δ 側の合成容量そのもの。"
+      ]
+    },
+    {
+      "unitKey": "q17b",
+      "questionNumber": 17,
+      "part": "b",
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "公式解答表の理論 問17(b) は 3。候補の officialAnswer と一致。",
+        "設問文と選択肢 3.0 / 4.5 / 4.8 / 6.0 / 9.0 は原図 p23 と一致。",
+        "図1の接続を原図と公開候補図の両方で照合: a-b 9μF、a-c 18μF、b-d 3μF、c-d 3μF、b-c 3μF。a と d は白丸端子。",
+        "Y 変換後: a-b-o は 9 と 9 の直列で 4.5、a-c-o は 18 と 9 の直列で 6.0。並列にして 10.5。これと o-d の 9 を直列にして 94.5/19.5 ≈ 4.846 μF。選択肢では 4.8 が最も近い。",
+        "誤答肢を検算: 3.0 は 4.5 と 9 の直列で、a-c-o の経路を見落とした値。4.5 と 6.0 は途中の部分値。9.0 は(a)の C の値。"
+      ]
+    },
+    {
+      "unitKey": "q18a",
+      "questionNumber": 18,
+      "part": "a",
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "公式解答表の理論 問18(a) は 2。候補の officialAnswer と一致。",
+        "本文の空欄(ア)〜(エ)の位置と周辺の文言は、原図 p24（T1-R 024）と一致。",
+        "選択肢の表 5 行（高い/信号波/三角波/検波、高い/信号波/正弦波/検波、高い/搬送波/三角波/増幅、低い/信号波/三角波/増幅、低い/搬送波/正弦波/検波）は原文どおり。",
+        "正答の組合せ（高い・信号波・正弦波・検波）を確認。各誤答肢の誤り箇所の指摘も、表の各行と一致。",
+        "(a)は図を使わない。figureUrls が空であることは妥当。"
+      ]
+    }
+  ]
+}

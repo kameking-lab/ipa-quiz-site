@@ -1,4 +1,5 @@
 "use client";
+import { SafetyLearningProgress } from "@/components/exam-library/SafetyLearningProgress";
 
 import * as React from "react";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
@@ -68,6 +69,7 @@ export function DashboardTabs({ categoryById }: Props) {
         </p>
       </header>
 
+      <div className="mb-6"><SafetyLearningProgress compact /></div>
       <Tabs value={tab} onValueChange={handleChange}>
         <TabsList className="mb-6 flex w-full flex-nowrap justify-start">
           {TABS.map((t) => (

@@ -30,27 +30,29 @@ export async function generateMetadata({
   params: Promise<RouteParams>;
 }): Promise<Metadata> {
   const { exam } = await params;
-  if (!isEssayExamCode(exam)) {
+  if (!isEssayExamCode(exam) || getEssayQuestionsByExam(exam).length === 0) {
     return { title: "試験区分が見つかりません", robots: { index: false } };
   }
   const label = examLabel(exam);
   return {
-    title: `${label} 業種別合格答案サンプル | 午後II 論述`,
-    description: `${label} 午後II 論述問題の業種別合格答案サンプル。製造業・建設業・金融業・流通業・通信業・公共など、業種別の論述例（序論・本論・結論）を掲載。AI 生成の参考例（査読推奨）。`,
+    title: `${label} 業種別参考答案サンプル | 独自の論述練習`,
+    description: `${label} 独自の論述練習問題の業種別参考答案サンプル。製造業・建設業・金融業・流通業・通信業・公共など、業種別の論述例（序論・本論・結論）を掲載。AI 生成の参考例（査読推奨）。`,
     alternates: { canonical: `/essays/${exam}` },
     // 致命傷③: AI生成の架空の参考答案集なので検索インデックス対象外。
     robots: { index: false, follow: false },
   };
 }
 
-// generateStaticParams が論述区分の全コードを列挙するため、それ以外の区分は
+// generateStaticParams が掲載できる答案のある区分だけを列挙するため、それ以外の区分は
 // ルータ層で 404 にする（dynamicParams=false）。これがないと無効な
 // /essays/{exam} が notFound() を `next start` 上で HTTP200 のソフト404として
 // 返す（深い [qnum] ルートは既に dynamicParams=false・セッション34/35参照）。
 export const dynamicParams = false;
 
 export async function generateStaticParams() {
-  return ESSAY_EXAM_CODES.map((exam) => ({ exam }));
+  return ESSAY_EXAM_CODES
+    .filter((exam) => getEssayQuestionsByExam(exam).length > 0)
+    .map((exam) => ({ exam }));
 }
 
 export default async function EssayExamPage({
@@ -86,16 +88,16 @@ export default async function EssayExamPage({
           <Shield className="h-6 w-6 text-sky-600 dark:text-sky-400" />
           <h1 className="text-2xl font-bold tracking-tight text-zinc-900 dark:text-zinc-50 sm:text-3xl">
             {examLabel(exam)}{" "}
-            <span className="text-sky-600 dark:text-sky-400">業種別合格答案サンプル</span>
+            <span className="text-sky-600 dark:text-sky-400">業種別参考答案サンプル</span>
           </h1>
         </div>
         <AiContentNotice
           className="mb-4"
           headline="AI生成の参考答案（架空）"
-          body="IPA公式の合格答案ではありません。論述構成を学ぶために過去問AIが生成した架空の参考例で、合格を保証するものではありません。業種別シナリオも架空の事例であり、各業界の専門的助言・実務指南ではありません。"
+          body="問題・答案ともに独自教材です。実際のIPA過去問・公式解答ではありません。年度・季節は教材の整理用ラベルです。論述構成を学ぶために過去問AIが生成した架空の参考例で、合格を保証するものではありません。業種別シナリオも架空の事例であり、各業界の専門的助言・実務指南ではありません。"
         />
         <p className="max-w-2xl text-sm leading-relaxed text-zinc-600 dark:text-zinc-400">
-          午後 II 論述問題を業種別の具体的シナリオで解説した参考答案です。
+          独自の論述練習問題を業種別の具体的シナリオで解説した参考答案です。
           自分の業務経験に近い業種を選んで、論述構成の骨格づくりにお役立てください。
         </p>
 

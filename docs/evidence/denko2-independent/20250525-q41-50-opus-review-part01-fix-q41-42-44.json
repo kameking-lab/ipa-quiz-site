@@ -1,0 +1,67 @@
+{
+  "inputHashes": {
+    "draftSha256": "33c07a402134605d14f56cf67d48dcc96ce3c9ef284e6604038e018abe19eb2b",
+    "rowSha256": {
+      "41": "54f4343cabf4dc1a43353fe0582903538a0c870f88bbd58990b9f51394aeae7e",
+      "42": "d0966102c1d0c8b0dcddba3b2cf0f82a0dc9fd0c78a068425ac44df37ca1cee3",
+      "44": "d9356f9bccc9135d894748f094b77fda4aaa7917fd89500d9c16d07a4e74a0e4"
+    },
+    "sharedFigureSha256": {
+      "public/images/denko2/2025-first/wiring-main.png": "9a24f0c440f8551855249e8768d44fb15bbe7db7aff283ebfffe950cfcae4277"
+    },
+    "detailFigureSha256": {
+      "public/images/denko2/2025-first/q41-i.png": "d53c48ae22fd8abf6a425912faf5d16c406c6bc2ab2bc7455e8c090d510f7588",
+      "public/images/denko2/2025-first/q41-ro.png": "f69de98c7013817a1b1c86c8229cbb42ee302dee4104612da4dc3ea44cce8559",
+      "public/images/denko2/2025-first/q41-ha.png": "c8ec1b74ba3e24aeabd73a176cbb2cbf1fef27ba88fb9f147407a795ec4fe9cd",
+      "public/images/denko2/2025-first/q41-ni.png": "988f7d7146dcec64d8a8ebd8f3f7f6566da562d57d13e873746ba77ce90d9e6d",
+      "public/images/denko2/2025-first/q42-i.png": "ca76c1d4046175a91a453e01738c628faf6d2655725a3915ce5edc8f35b9021e",
+      "public/images/denko2/2025-first/q42-ro.png": "a47558c97318cbcbd9ffa06f637a2094843ad3e7bac61aef72984a64a9ee7511",
+      "public/images/denko2/2025-first/q42-ha.png": "1616a217abb62a2d9e339bd937ecf6120686f2eb7e24802fb20a66f3dd28ffc5",
+      "public/images/denko2/2025-first/q42-ni.png": "e1c8fadad3df886332c107c9ac6b75fc0781f8a8376f8ee3acec266eede219f9",
+      "public/images/denko2/2025-first/q44-i.png": "935521d6ccb7b441529badfeccb3e8d88757b04ec2739790714c4d7c0367a60c",
+      "public/images/denko2/2025-first/q44-ro.png": "3ff5bb78b2be55281a52bc7c3e7fc82b37d9f6d9d7a24fca63efe35f0efead00",
+      "public/images/denko2/2025-first/q44-ha.png": "b1251c47b15d4737c60661d2f2ef5620fc7b1d4cce1afb06a8a55234b63bca63",
+      "public/images/denko2/2025-first/q44-ni.png": "cc8b89c65af69635c8b713cf3948bb31f51702d98033c1198c2bf10e26120e76"
+    }
+  },
+  "reviewModel": "claude-opus-5-5",
+  "assessment": [
+    {
+      "number": 41,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "lawNeedsExternalCheck": [
+        "図記号「BE」が過負荷保護付漏電遮断器を表すという点（JIS C 0303）は、画像だけでは確定できないため要確認。⑪の矢印がL-1盤の「BE 3P 100A（欠相保護付）」を指していることは、配線図と照合して確認済み。"
+      ]
+    },
+    {
+      "number": 42,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [
+        "イとロの肢文は「小スリーブ1個」を刻印「小」の意味で使っているが、原本では4個とも小スリーブで、そのうち○刻印のものも小スリーブである。このため「○刻印付き小スリーブ1個・小スリーブ1個」という書き方では、大きさの区分と刻印の区分が混ざって読める。刻印の並び自体は原本と合っている（イは上段 小・小、下段 ○・小。ロは上段 ○・小、下段 ○・○）。イは「小スリーブ4個（刻印：上段 小・小／下段 ○・小）」、ロは「小スリーブ4個（刻印：上段 ○・小／下段 ○・○）」のように、刻印であることを明記した書き方に直すこと。"
+      ],
+      "explanationIssues": [
+        "解説では、地下へ降ろす4本（渡り線2本・N・1階の灯アへの返り線）に非接地側線Lが入らない理由を書いていない。配線図では電源のⓒが1階の⑰側に来ており、1階の3路スイッチの共通端子でLを受けるため、地下へLを降ろす必要はない。この前提を1文足すこと。心線数の計算（2本接続3箇所が○、3本接続1箇所が小で、計4個）と正答ロとの整合には問題ない。"
+      ],
+      "figureIssues": [],
+      "lawNeedsExternalCheck": [
+        "VVF1.6での刻印区分（2本は小スリーブ・刻印○、3〜4本は小、5〜6本は中）は、JIS C 2806、内線規程、圧着工具の規定と外部照合が必要。uncertaintyでJIS C 2806だけを根拠に挙げている点も、あわせて確認すること。"
+      ]
+    },
+    {
+      "number": 44,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [
+        "uncertaintyでは⑭を「接続点」と書いているが、⑭の矢印が指すのは⑫のボックス上部にある立上り記号（○↗）で、地下1階と1階をつなぐ配線の区間である。「区間」に言い換えること（正誤判定には影響しない）。"
+      ],
+      "lawNeedsExternalCheck": []
+    }
+  ]
+}

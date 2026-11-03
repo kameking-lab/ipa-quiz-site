@@ -1,0 +1,55 @@
+{
+  "reviewModel": "claude-opus-5-5",
+  "requestedModel": "claude-opus-5-5",
+  "canonicalModel": "claude-opus-5-5",
+  "provider": "firstParty",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 1945,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 12979,
+      "webSearchRequests": 0,
+      "costUSD": 0.1429958,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 1726,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponsePath": "data/exam-library/emkohyo-review/emkohyo-EM20261805-q01-01-raw-response.txt",
+  "rawResponseSha256": "c3baf9e6dc8df1d48c018bfbe718afbc68988040224c22fa0dd1fe74e482b57a",
+  "paperId": "emkohyo-EM20261805",
+  "ids": [
+    "emkohyo-EM20261805-q1"
+  ],
+  "figureSha256": {
+    "emkohyo-EM20261805-q1": {}
+  },
+  "officialRowImageSha256": {
+    "emkohyo-EM20261805-q1": {
+      "/exam-library/emkohyo-EM20261805/q1-p2-0.webp": "fd98039e40b22634f97902fdad1cb1aed50c215c69cd6adc9ea2dffe674a92a9"
+    }
+  },
+  "officialPageImageSha256": {},
+  "governmentSourceImageSha256": {},
+  "candidateSha256": {
+    "emkohyo-EM20261805-q1": "96231dbf4a8bc966fe92b84f93504304becbd9b24701202cbd180f63aca71ead"
+  },
+  "sourcePackPath": "docs/evidence/emkohyo-choice-sources/emkohyo-EM20261805-q01-01.json",
+  "sourcePackSha256": "b1a62277aa7acc7dab1e8ef87c38338c421b1e8436d9938dd7bbc90413b74d37",
+  "assessment": {
+    "emkohyo-EM20261805-q1": {
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [
+        "presentation.choices の選択肢4が「n - ヘキサン」となっており、ハイフン前後に原図にない空白がある。公式問題原図・公式問題テキストはいずれも「n-ヘキサン」（nは異性体接頭辞でイタリック体）なので、「n-ヘキサン」に修正すること。解説側の表記「n-ヘキサン」とも揃っていない。"
+      ],
+      "reasonIssues": [],
+      "sourceIssues": [],
+      "needsExternalCheck": []
+    }
+  }
+}

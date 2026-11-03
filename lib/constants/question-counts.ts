@@ -21,10 +21,9 @@ import { getIndexableQuestions } from "@/lib/seo/sitemap-pagination";
 export const TOTAL_QUESTIONS_RAW = ALL_QUESTIONS.length;
 
 /**
- * Published / indexable questions: answerable, non-placeholder, listed in the
- * sitemap and searchable. This is the only total shown in user-facing copy,
- * and it shares its source (getIndexableQuestions) with the sitemap so the two
- * can never drift.
+ * Published / usable questions: answerable, non-placeholder pages available
+ * to learners. Exact morning-I aliases remain usable in their exam context,
+ * although the sitemap advertises only one canonical representative.
  */
 export const TOTAL_QUESTIONS_PUBLISHED = getIndexableQuestions().length;
 

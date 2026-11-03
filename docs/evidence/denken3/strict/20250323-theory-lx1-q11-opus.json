@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20250323",
+  "subject": "theory",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 1895,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 13697,
+      "webSearchRequests": 0,
+      "costUSD": 0.1477398,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 979,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "f1fb5bed1af11876671a079a73dad9b24373f5bfb4c29d78b1cac5fe80dfa444",
+  "inputRequestSha256": "4b3e6db5a8933d8c1190b51317c9e653b2f4267dcde59857e017a4fdeaf3a583",
+  "inputHashes": {
+    "candidateSha256": {
+      "q11": "b6a59ee24edcb9c98b4a41886fa44db35faa4e4424711fd590f6cfbcd276b13e"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20250323/theory/p14.png": "8149ad8e4c9a6ae2ddcbad1aa4c15b98031c87afce2d3643e8c16050d032f6cb"
+    },
+    "figureSha256": {},
+    "sourceQuestionPdfSha256": "8817012cb55eed9c83bb1e68df138909b1e03a81f7ed48a9893a219e1d2a76ca",
+    "sourceAnswerPdfSha256": "4c3b38fcf1405766fafaa78b1b05b867a3d48307a670b9d354476bc6b32acd4c",
+    "officialAnswerUnitsSha256": "115486afc5942e956fabaa13788292995ae47d04a7e21cce160a1356fa4f5afc",
+    "referencePdfSha256": {},
+    "referencePageSha256": {},
+    "referenceJsonSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q11",
+      "questionNumber": 11,
+      "part": null,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "The candidate question text matches the official source image (PDF page 14, printed page -11-, footer T2-R 014). It reads: 電界効果トランジスタ(FET)に関する記述として，誤っているものを次の(1)〜(5)のうちから一つ選べ。 The only differences are full-width/half-width parentheses, which are formatting only.",
+        "All five choices match the source image word for word, including the original spelling ドレーン, the term 正孔, and the term 自由電子.",
+        "The official answer table (令和6年度 下期, 理論, 問11) gives 5. The candidate's officialAnswer=5 matches this and matches the manifest-fixed answer unit {question:11, part:null, answer:'5'}. It was not changed.",
+        "Source metadata matches the manifest: fiscalYear=2024 (令和6年度), term=lower (下期), examDate=2025-03-23, subject=theory, sourceQuestionPdfUrl=20250323_ch_third_q01.pdf, sourceAnswerPdfUrl=2024_3_2.pdf, reviewedFromPage=[14]. sourceAttribution gives 令和6年度下期 理論 問11, which also matches.",
+        "Explanation check, choice by choice. (1): the split into junction and MOS types is correct. (2): n-channel and p-channel both exist, correct. (3): MOS devices divide into depletion and enhancement types, correct. (4): gate voltage controls the movement of electrons or holes, correct. (5): a channel existing at V_GS=0 is the depletion-type behavior. An enhancement device forms a channel only when V_GS exceeds the threshold, positive for n-channel and negative for p-channel. The claim that (5) is the wrong statement is therefore correct. The overall explanation and each per-choice reason are consistent with each other.",
+        "The source page contains only the question text and the choices, with no figures, tables, or circuit diagrams. figureDescription says there is no figure, and figureUrls=[] and choiceFigureUrls={} are consistent with that. No figure is needed to answer.",
+        "officialReferenceUrls is an empty array, so there are no independent claims that need outside verification. The explanation rests on standard FET textbook knowledge, and none of it contradicts the source page."
+      ]
+    }
+  ]
+}

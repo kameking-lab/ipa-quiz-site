@@ -1,0 +1,53 @@
+{
+  "scope": "2026May学科応用問51のみ。共通設例＋4空欄＋④イロハ3肢。基礎50/問52/53/9月0。",
+  "lawReferenceDate": "2025-10-01",
+  "configuredAuthorModel": "gpt-6.1-sol",
+  "actualProviderRuntimeReceipt": null,
+  "sourceQuestionSha256": "fd7843fc2082e074bedecb82a9fc11c45f08c0d57de2146ee145c92cd6f2df8d",
+  "sourceAnswerSha256": "4859c487f5c55957b75658d727351c5221f3d6d995e710d2560a8a7e0a217460",
+  "sourcePages": [
+    3,
+    4
+  ],
+  "sourceAnswerPage": 2,
+  "firstBlindSha256": "e1b88a4f73a514302d1e7c0991fe70205eef60b267b3909f1b109ec0c3442c7f",
+  "secondBlindSha256": "e800dd09bb3c97c53d0277415ba8463d0fb4453808e07093db005eb4ac989c84",
+  "exactDiff": {
+    "fields": 34,
+    "different": 0,
+    "receiptSha256": "5d9e31fb2b4646f25c3eceee5f3cf2f13f040f18e61531749d25a3652476054c"
+  },
+  "independentAnswerFreezeSha256": "d08e1aad46f7a65db251a1e7978d601de0072fd5b3d75c51d52d8435e9f4dc12",
+  "authorCandidateSha256": "345748d474ef0afabbe97f8aceb6475be564a19507bc4a14b84ee44697e2145d",
+  "primaryReferencePackSha256": "bcc6452e89691ae10072e3d9b8fbd1968b5ea15cf49367390bf7eb81e5886258",
+  "independentPrimaryReview": {
+    "reviewer": "/root/licensed_source_independent",
+    "checks": 16,
+    "fixes": 0,
+    "receiptSha256": "71ff9fc9b83233346e4efa6afa871dd87947079f65fd2934a45a5cb15541afcb",
+    "contentPrimaryStatus": "LIMITED_PASS",
+    "nativeStatusAtPrimaryReview": "CONTENT_ONLY_HOLD"
+  },
+  "conditionalReuseUrl": "https://www.kinzai.or.jp/ginou/license_terms.html",
+  "rightsScope": "1級学科に応用が含まれる接点を公式掲載分類＋利用条件で照合。出典/加工表示保持。全第三者例外や答案の包括許諾を推測しない。PDF/答案全面再配布0。",
+  "sourceRasterDecorationCopied": false,
+  "sourceVisualReviewByAuthor": null,
+  "integration": "専用originalcloze loader/readerのみ。FP1_QUESTIONS/QuizPlayer変更0。",
+  "finalAstraReview": null,
+  "publicApproval": false,
+  "rawPdfRedistribution": false,
+  "technicalVerification": {
+    "privatePacketSha256": "f7f013998147c30f7326f8bee700385a7b30e24d080f91d6ec2f9b0140836960",
+    "dataSha256": "b47181fa66a67f9669c9b7b440a6eda24a91f96aaefa5cc9402b12679d69dfc3",
+    "standardTurbopackBuild": "PASS_8327",
+    "typecheck": "PASS",
+    "lint": "PASS_0_ERRORS_1_OLD_WARNING",
+    "finalFullSuite": "4374_PASS_1_TIMEOUT",
+    "boundedFailedAndRelatedRerun": "56_PASS",
+    "actual390pxDisplay": "53_PASS",
+    "remoteFullCI": null,
+    "finalAstraAcceptance": null
+  },
+  "consumerReady": false,
+  "publicAllowed": false
+}

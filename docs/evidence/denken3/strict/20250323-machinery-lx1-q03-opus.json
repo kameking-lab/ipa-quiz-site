@@ -1,0 +1,71 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20250323",
+  "subject": "machinery",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 3759,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 14144,
+      "webSearchRequests": 0,
+      "costUSD": 0.18859579999999998,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 2040,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "c9923fd1ae2e5c948acd57475c846d99743f0595753e5659cb6ab0930ce235d1",
+  "inputRequestSha256": "ea5ae42e15c07334967dcdaaeb4141bfeef34886eedb5c240ee35e3079405523",
+  "inputHashes": {
+    "candidateSha256": {
+      "q03": "f067e5f8d4164ca2ba3db4476754f7233f0818092464a6a47d617233160e23a1"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20250323/machinery/p06.png": "a66071d41414913896439d724444e65cb9301485fc3e8f3bfb9ffd27351cbc72"
+    },
+    "figureSha256": {},
+    "sourceQuestionPdfSha256": "66e8b0070a314cd78ed9b9f3edd3d75eeaf442b258fd0aacab0e7d9620c75b9f",
+    "sourceAnswerPdfSha256": "4c3b38fcf1405766fafaa78b1b05b867a3d48307a670b9d354476bc6b32acd4c",
+    "officialAnswerUnitsSha256": "a79e08c4f1b3ecfe6ce9187ee4d7aa7d607aa49b3d154bd4a8ec5d1c689e1de9",
+    "referencePdfSha256": {},
+    "referencePageSha256": {},
+    "referenceJsonSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q03",
+      "questionNumber": 3,
+      "part": null,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [
+        "choiceExplanations[2] の『滑りを k 倍にして同じトルクを得る現象』は、比例推移の成立条件である『二次回路の抵抗を k 倍にすると』が抜けている。このままでは、滑りを変えるだけで同じトルクが得られるように読める。choiceExplanations[4] と同じく『二次抵抗を k 倍にすると同じトルクが滑り k 倍の点で生じる現象（比例推移）の名称ではない』と書き直すべき。"
+      ],
+      "answerIssues": [],
+      "explanationIssues": [
+        "総合解説第1段の『負荷は回転速度によりトルクの釣り合い点を決めるだけで，曲線そのものの条件ではない』は因果関係が不明瞭。負荷が回転速度によって釣り合い点を決めるかのように読める。正しくは、負荷トルク特性と本曲線の交点で運転点（回転速度）が決まるだけで、負荷は曲線を描く前提条件ではない。例：『負荷のトルク特性は，本曲線との交点として運転点（回転速度）を決めるだけで，曲線そのものを定める条件ではない。』"
+      ],
+      "figureIssues": [
+        "figureDescription の『原本ページ（p06）』は、p番号表記の査読回次タグと紛らわしい。『問題PDF第6頁（印刷頁 -3-，T2-K 006）』のように PDF 頁であることを明示すべき。図なし・figureUrls 空という判断自体は原図と一致しており正しい。"
+      ],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "問題文：公式原図（問題PDF第6頁、印刷頁 -3-、T2-K 006）と照合した。『電源電圧及び(ア)が一定』『最大トルク又は(イ)トルク』『(ウ)回路の抵抗には無関係』『(ウ)回路の抵抗が k 倍になると，前と同じトルクが前の滑りの k 倍の点で起こる』『(エ)と呼ばれ，…始動特性の改善及び速度制御』はすべて一致した。枠付き空欄を (ア) 等の表記に整形した点のみ異なり、意味の変化はない。",
+        "選択肢：原図の組合せ表と(1)〜(5)の全セルが一致した。(1) 電源周波数/停動/二次/比例推移、(2) 電源周波数/停動/一次/二次励磁、(3) 負荷/臨界/一次/比例推移、(4) 電源周波数/臨界/二次/二次励磁、(5) 負荷/臨界/二次/比例推移。",
+        "公式正答：解答PDF（令和6年度下期、機械）の表で問3=1 を確認した。manifest の {question:3, part:null, answer:\"1\"} および候補の officialAnswer=\"1\" と一致する。",
+        "メタデータ：fiscalYear=2024、term=lower、examDate=2025-03-23、subject=machinery、sourceQuestionPdfUrl・sourceAnswerPdfUrl、reviewedFromPage=[6] はすべて manifest と一致した。",
+        "トルク式の検算：T = P₂/ω_s、ω_s = ω/p、P₂ = 3I₂²r₂/s、I₂ = V/√((r₁+r₂/s)²+(x₁+x₂)²) から T = (p/ω)·3V²(r₂/s)/[(r₁+r₂/s)²+(x₁+x₂)²] となり、解説と一致する。",
+        "最大トルクの検算：R=r₂/s とおいて f(R)=R/[(r₁+R)²+X²] を最大化すると R=Z=√(r₁²+X²)。このとき分母は 2Z(Z+r₁) なので T_max=(p/ω)·3V²/{2[r₁+√(r₁²+(x₁+x₂)²)]}。r₂ を含まないことを確認し、(ウ)=二次の根拠として正しい。",
+        "比例推移：T は r₂/s のみを通じて r₂ と s に依存するため、r₂→k·r₂、s→k·s で T は不変。(エ)=比例推移の根拠として正しい。",
+        "choiceExplanations：[1]は正しい。[3]と[5]は誤り箇所の指摘が正確。[4]の(イ)(エ)の誤り指摘も正確。[2]の(ウ)の指摘は正確だが、(エ)の説明に上記の不備がある。",
+        "officialReferenceUrls は空で、検証が必要な独立主張はない。uncertainty 空・needsReview=false は、上記の文言修正後であれば妥当。"
+      ]
+    }
+  ]
+}

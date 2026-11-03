@@ -1,37 +1,52 @@
 "use client";
+import { questionSourceEdition, questionSourceExam } from "@/lib/questions/source-label";
+
 
 import * as React from "react";
+import type { NativeBGrade } from "@/lib/questions/types";
+import { gradeNativeB, serializeNativeBSelections, formatNativeBAnswer, type NativeBSelections } from "@/lib/questions/native-b";
+import { NativeBAnswerInput, NativeBFeedback } from "../NativeBAnswer";
+import { DescriptiveAnswerCard } from "../DescriptiveAnswerCard";
+import { QuestionCard } from "../QuestionCard";
+import { QuestionBody } from "../QuestionBody";
+import { QuestionFigures } from "../QuestionFigures";
+import { isAcceptedAnswer, formatAcceptedAnswers, CHOICE_SHORTCUTS, getChoiceKeys } from "@/lib/questions/answers";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import type { ChoiceKey, Question } from "@/lib/questions/types";
+import { choiceDisplayLabel, questionNumberLabel } from "@/lib/questions/display";
+import { formatOrderingAnswer, isOrderingAnswerCorrect } from "@/lib/questions/ordering";
+import { OrderingAnswerInput } from "../OrderingAnswerInput";
 import { createHistoryStore } from "@/lib/storage/history";
-import { examLabel, formatYearSeason } from "@/lib/utils";
 import { FOCUSABLE_SELECTOR, trapTabTarget } from "@/lib/a11y/focus-trap";
 import { ArrowLeft, ChevronUp, ChevronDown, Check, X, Flame } from "lucide-react";
 import { StreamSummary } from "./StreamSummary";
 import { ComboFireworks } from "./ComboFireworks";
-import { getChoiceKeys, keyboardChoiceIndex } from "@/lib/questions/choices";
+
 const SUMMARY_AT = 10;
-const AUTO_ADVANCE_MS = 3000;
 
 interface AnswerLog {
   questionId: string;
-  selected: ChoiceKey | null;
+  selected: string | null;
   correct: boolean;
+  nativeBResult?: NativeBGrade;
 }
 
-export function StreamQuizPlayer({ questions }: { questions: Question[] }) {
+export function StreamQuizPlayer({ questions, backHref = "/ipa" }: { questions: Question[]; backHref?: string }) {
   const router = useRouter();
   const history = React.useMemo(() => createHistoryStore(), []);
   const [index, setIndex] = React.useState(0);
   const [answers, setAnswers] = React.useState<AnswerLog[]>([]);
   const [selected, setSelected] = React.useState<ChoiceKey | null>(null);
+  const [nativeBResult, setNativeBResult] = React.useState<NativeBGrade | undefined>();
   const [revealed, setRevealed] = React.useState(false);
   const [combo, setCombo] = React.useState(0);
   const [showFireworks, setShowFireworks] = React.useState(false);
   const [showSummary, setShowSummary] = React.useState(false);
   const [transitioning, setTransitioning] = React.useState<"none" | "out">("none");
   const [reviewing, setReviewing] = React.useState(false);
+  const advancingRef = React.useRef(false);
+  const descriptiveStartRef = React.useRef<HTMLDivElement>(null);
   // The review trigger unmounts while the overlay is open (canReview === false),
   // so restore focus to it when the overlay closes — otherwise keyboard users
   // are stranded at document.body (WCAG 2.4.3).
@@ -45,7 +60,14 @@ export function StreamQuizPlayer({ questions }: { questions: Question[] }) {
   }, [reviewing]);
 
   const question = questions[index];
-  const choiceKeys = React.useMemo(() => getChoiceKeys(question?.choices), [question]);
+  React.useEffect(() => {
+    if (question?.exam === "chosashi" && question.type === "descriptive") {
+      descriptiveStartRef.current?.focus({ preventScroll: true });
+      descriptiveStartRef.current?.scrollIntoView?.({ block: "start", behavior: "instant" });
+    } else if (questions[index - 1]?.exam === "chosashi" && questions[index - 1]?.type === "descriptive") {
+      window.scrollTo?.({ top: 0, behavior: "instant" });
+    }
+  }, [index, question, questions]);
   const lastAnswer = answers[answers.length - 1];
   const lastAnsweredQuestion = lastAnswer
     ? questions.find((q) => q.id === lastAnswer.questionId) ?? null
@@ -53,11 +75,15 @@ export function StreamQuizPlayer({ questions }: { questions: Question[] }) {
   const canReview = !reviewing && lastAnsweredQuestion !== null && lastAnsweredQuestion.id !== question?.id;
 
   const goNext = React.useCallback(() => {
+    if (advancingRef.current) return;
+    advancingRef.current = true;
     setTransitioning("out");
     window.setTimeout(() => {
+      setNativeBResult(undefined);
       setSelected(null);
       setRevealed(false);
       setTransitioning("none");
+      advancingRef.current = false;
       setIndex((prev) => {
         const next = prev + 1;
         if ((prev + 1) % SUMMARY_AT === 0) {
@@ -73,13 +99,22 @@ export function StreamQuizPlayer({ questions }: { questions: Question[] }) {
     }, 280);
   }, [questions.length]);
 
+  const onNativeBAnswer = React.useCallback((selections: NativeBSelections) => {
+    if (!question?.nativeB || question.type !== "native-b" || revealed) return;
+    const result = gradeNativeB(question.nativeB, selections);
+    const selection = serializeNativeBSelections(question.nativeB, selections);
+    setNativeBResult(result);
+    setRevealed(true);
+    setAnswers((previous) => [...previous, { questionId: question.id, selected: selection, correct: result.isCorrect, nativeBResult: result }]);
+    history.record({ id: question.id, selected: selection, correct: result.isCorrect, at: Date.now(), nativeBResult: result });
+    if (result.isCorrect) setCombo((previous) => previous + 1);
+    else setCombo(0);
+  }, [question, revealed, history]);
+
   const onSelect = React.useCallback(
     (key: ChoiceKey) => {
-      if (!question || revealed) return;
-      const answerKey = Array.isArray(question.answer)
-        ? (question.answer[0] as string)
-        : String(question.answer);
-      const correct = key === answerKey;
+      if (!question || revealed || question.type === "ordering") return;
+      const correct = isAcceptedAnswer(question.answer, key);
       setSelected(key);
       setRevealed(true);
       setAnswers((prev) => [
@@ -103,61 +138,71 @@ export function StreamQuizPlayer({ questions }: { questions: Question[] }) {
     [question, revealed, history],
   );
 
-  React.useEffect(() => {
-    if (!revealed) return;
-    if (reviewing) return;
-    const t = window.setTimeout(goNext, AUTO_ADVANCE_MS);
-    return () => window.clearTimeout(t);
-  }, [revealed, goNext, reviewing]);
-
-  const touchStart = React.useRef<{ y: number; t: number } | null>(null);
-  const onTouchStart = (e: React.TouchEvent) => {
-    touchStart.current = { y: e.touches[0].clientY, t: Date.now() };
-  };
-  const onTouchEnd = (e: React.TouchEvent) => {
-    if (!touchStart.current) return;
-    const dy = e.changedTouches[0].clientY - touchStart.current.y;
-    const dt = Date.now() - touchStart.current.t;
-    touchStart.current = null;
-    if (dy < -60 && dt < 600 && revealed) goNext();
-  };
+  const onOrderingAnswer = React.useCallback((value: ChoiceKey[]) => {
+    if (!question || question.type !== "ordering" || revealed) return;
+    const correct = isOrderingAnswerCorrect(question, value);
+    const display = formatOrderingAnswer(question.exam, value);
+    setRevealed(true);
+    setAnswers((previous) => [...previous, { questionId: question.id, selected: display, correct }]);
+    history.record({ id: question.id, selected: value.join("→"), correct, at: Date.now() });
+    if (correct) {
+      setCombo((previous) => {
+        const next = previous + 1;
+        if (next >= 3) {
+          setShowFireworks(true);
+          window.setTimeout(() => setShowFireworks(false), 1600);
+        }
+        return next;
+      });
+    } else setCombo(0);
+  }, [question, revealed, history]);
 
   React.useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
-      if (showSummary) return;
+      if (!question || showSummary || reviewing || (question.exam === "chosashi" && question.type === "descriptive")) return;
       if (e.target instanceof HTMLElement) {
         const tag = e.target.tagName;
-        if (tag === "INPUT" || tag === "TEXTAREA") return;
+        if (tag === "INPUT" || tag === "TEXTAREA" || tag === "SELECT") return;
       }
-      // Don't hijack browser/OS shortcuts: Ctrl/Cmd+number switches tabs, etc.
+      // Don't hijack browser/OS shortcuts: Ctrl/Cmd+1–4 switches tabs, etc.
       if (e.metaKey || e.ctrlKey || e.altKey) return;
-      if (!revealed) {
-        const i = keyboardChoiceIndex(e.key);
-        const key = choiceKeys[i];
-        if (key) {
+      if (!revealed && question.type !== "ordering") {
+        const i = CHOICE_SHORTCUTS.indexOf(e.key);
+        if (i >= 0 && i < getChoiceKeys(question.choices).length) {
           e.preventDefault();
-          onSelect(key);
+          onSelect(getChoiceKeys(question.choices)[i]);
         }
-      } else if (e.key === "ArrowDown" || e.key === " " || e.key === "Enter") {
+      } else if (revealed && e.key === "Enter" && !(e.target instanceof HTMLElement && e.target.closest("button, a, summary"))) {
         e.preventDefault();
         goNext();
       }
     };
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
-  }, [onSelect, goNext, revealed, showSummary, choiceKeys]);
+  }, [onSelect, goNext, revealed, showSummary, reviewing, question]);
 
   if (!question) return null;
+
+  if (showSummary && question.exam === "chosashi" && answers.length === 0) {
+    return (
+      <main className="mx-auto max-w-3xl space-y-5 px-4 py-6">
+        <h1 className="text-xl font-semibold">記述の確認を終えました</h1>
+        <p>記述答案は自動採点していません。独自解答例とご自身の答案を照らして確認してください。</p>
+        <Link href={backHref} className="inline-block min-h-11 py-3 underline">戻る</Link>
+      </main>
+    );
+  }
 
   if (showSummary) {
     const recent = answers.slice(-SUMMARY_AT);
     return (
       <StreamSummary
+        backHref={backHref}
         recentAnswers={recent}
         totalAnswered={answers.length}
         onContinue={() => {
           if (index + 1 >= questions.length) {
-            router.push("/?done=1");
+            router.push(backHref);
             return;
           }
           setIndex((i) => i + 1);
@@ -168,19 +213,28 @@ export function StreamQuizPlayer({ questions }: { questions: Question[] }) {
     );
   }
 
-  const answerKey = Array.isArray(question.answer)
-    ? (question.answer[0] as string)
-    : String(question.answer);
+  if (question.exam === "chosashi" && question.type === "descriptive") {
+    return (
+      <main className="mx-auto max-w-3xl space-y-5 px-4 py-6">
+        <Link href={backHref} className="inline-block min-h-11 py-3 underline">戻る</Link>
+        <div ref={descriptiveStartRef} tabIndex={-1} className="scroll-mt-24 outline-none">
+          <QuestionCard question={question} progress={{ current: index, total: questions.length }} />
+        </div>
+        <DescriptiveAnswerCard key={question.id} question={question} onNext={goNext} />
+      </main>
+    );
+  }
+
+  const answerKey = question.type === "native-b" ? formatNativeBAnswer(question.nativeB!) : question.type === "ordering" ? formatOrderingAnswer(question.exam, question.answer as ChoiceKey[]) : formatAcceptedAnswers(question.answer);
 
   return (
     <div
+      data-study-presence-exam={question.exam}
       className="relative flex h-[100dvh] min-h-[100dvh] flex-col overflow-hidden bg-gradient-to-b from-zinc-950 via-zinc-900 to-black text-zinc-50 select-none"
-      onTouchStart={onTouchStart}
-      onTouchEnd={onTouchEnd}
     >
       <header className="relative z-20 flex items-center justify-between px-4 pt-4 pb-2">
         <Link
-          href="/"
+          href={backHref}
           className="rounded-full bg-white/10 p-2 backdrop-blur hover:bg-white/20"
           aria-label="戻る"
         >
@@ -212,35 +266,32 @@ export function StreamQuizPlayer({ questions }: { questions: Question[] }) {
       </header>
 
       <main
-        className={`relative z-10 flex flex-1 flex-col px-5 pb-6 transition-all duration-300 ${
+        className={`relative z-10 flex min-h-0 flex-1 flex-col overflow-y-auto px-5 pb-20 transition-all duration-300 ${
           transitioning === "out" ? "-translate-y-8 opacity-0" : "translate-y-0 opacity-100"
         }`}
         key={question.id}
       >
         <div className="mb-3 flex flex-wrap gap-2 text-[10px] text-zinc-300">
           <span className="rounded-full bg-white/5 px-2 py-0.5 ring-1 ring-white/10">
-            {examLabel(question.exam)} {formatYearSeason(question.year, question.season)}
+            {questionSourceExam(question)} {questionSourceEdition(question)}
           </span>
           <span className="rounded-full bg-white/5 px-2 py-0.5 ring-1 ring-white/10">
-            問{question.qNumber}
+            問{questionNumberLabel(question)}
           </span>
           <span className="rounded-full bg-sky-500/20 px-2 py-0.5 text-sky-200 ring-1 ring-sky-400/30">
             {question.category}
           </span>
         </div>
 
-        <div className="mb-4 flex-1 overflow-y-auto rounded-2xl bg-white/5 p-5 text-[15px] leading-relaxed ring-1 ring-white/10 backdrop-blur">
-          {question.question.split("\n").map((line, i) => (
-            <p key={i} className="mb-2 last:mb-0">
-              {line}
-            </p>
-          ))}
+        <div className="mb-4 shrink-0 rounded-2xl bg-white/5 p-5 text-[15px] leading-relaxed ring-1 ring-white/10 backdrop-blur">
+          <QuestionBody text={question.question} />
+          <QuestionFigures question={question} />
         </div>
 
         <div className="space-y-2">
-          {question.choices &&
-            choiceKeys.map((key) => {
-              const isCorrect = answerKey === key;
+          {question.type === "native-b" ? <NativeBAnswerInput key={question.id} data={question.nativeB!} displayedImageUrls={question.imageUrls} disabled={revealed} onAnswer={onNativeBAnswer} /> : question.type === "ordering" ? <OrderingAnswerInput key={question.id} question={question} disabled={revealed} onAnswer={onOrderingAnswer} /> : question.choices &&
+            getChoiceKeys(question.choices).map((key) => {
+              const isCorrect = isAcceptedAnswer(question.answer, key);
               const isSelected = selected === key;
               let cls =
                 "border-white/10 bg-white/5 text-zinc-100 hover:bg-white/10 active:bg-white/15";
@@ -269,7 +320,7 @@ export function StreamQuizPlayer({ questions }: { questions: Question[] }) {
                             : "bg-white/10"
                     }`}
                   >
-                    {key}
+                    {choiceDisplayLabel(question.exam, key)}
                   </span>
                   <span className="flex-1 pt-0.5">{question.choices![key]}</span>
                   {revealed && isCorrect && (
@@ -285,15 +336,14 @@ export function StreamQuizPlayer({ questions }: { questions: Question[] }) {
 
         {revealed && (
           <div className="animate-in slide-in-from-bottom-4 mt-4 rounded-2xl bg-white/5 p-4 text-sm ring-1 ring-white/10 backdrop-blur">
+            {question.type === "native-b" && <NativeBFeedback data={question.nativeB!} result={nativeBResult} />}
             <div className="mb-1 flex items-center justify-between text-xs">
               <span className="font-semibold text-emerald-300">
                 正解: {answerKey}
               </span>
-              <span className="text-zinc-400">3秒後に次の問題へ ↓</span>
+              <span className="text-zinc-400">読んだら次の問題へ</span>
             </div>
-            <p className="mt-2 line-clamp-4 text-zinc-200">
-              {question.explanation || "解説は準備中です。"}
-            </p>
+            <div className="mt-2 text-zinc-200"><QuestionBody text={question.explanation || "解説は準備中です。"} /></div>
           </div>
         )}
       </main>
@@ -304,7 +354,7 @@ export function StreamQuizPlayer({ questions }: { questions: Question[] }) {
           className="pb-safe absolute inset-x-0 bottom-0 z-20 flex items-center justify-center gap-2 bg-gradient-to-t from-black/80 to-transparent py-4 text-xs text-zinc-300 hover:text-white"
         >
           <ChevronUp className="h-4 w-4 animate-bounce" />
-          次の問題へスワイプ
+          次の問題へ
         </button>
       )}
 
@@ -369,9 +419,7 @@ function ReviewOverlay({
     }
   };
 
-  const answerKey = Array.isArray(question.answer)
-    ? (question.answer[0] as string)
-    : String(question.answer);
+  const answerKey = question.type === "native-b" ? formatNativeBAnswer(question.nativeB!) : question.type === "ordering" ? formatOrderingAnswer(question.exam, question.answer as ChoiceKey[]) : formatAcceptedAnswers(question.answer);
 
   return (
     <div
@@ -400,10 +448,10 @@ function ReviewOverlay({
       <div className="flex-1 overflow-y-auto px-5 pb-8">
         <div className="mb-3 flex flex-wrap gap-2 text-[10px] text-zinc-300">
           <span className="rounded-full bg-white/5 px-2 py-0.5 ring-1 ring-white/10">
-            {examLabel(question.exam)} {formatYearSeason(question.year, question.season)}
+            {questionSourceExam(question)} {questionSourceEdition(question)}
           </span>
           <span className="rounded-full bg-white/5 px-2 py-0.5 ring-1 ring-white/10">
-            問{question.qNumber}
+            問{questionNumberLabel(question)}
           </span>
           <span className="rounded-full bg-sky-500/20 px-2 py-0.5 text-sky-200 ring-1 ring-sky-400/30">
             {question.category}
@@ -411,17 +459,14 @@ function ReviewOverlay({
         </div>
 
         <div className="mb-4 rounded-2xl bg-white/5 p-5 text-[15px] leading-relaxed text-zinc-100 ring-1 ring-white/10">
-          {question.question.split("\n").map((line, i) => (
-            <p key={i} className="mb-2 last:mb-0">
-              {line}
-            </p>
-          ))}
+          <QuestionBody text={question.question} />
+          <QuestionFigures question={question} />
         </div>
 
         <div className="mb-4 space-y-2">
-          {question.choices &&
+          {question.type === "native-b" ? <NativeBFeedback data={question.nativeB!} result={answer.nativeBResult} /> : question.type === "ordering" ? <div className="rounded-xl border border-white/10 p-4 text-sm">あなたの回答: {answer.selected ?? "—"}</div> : question.choices &&
             getChoiceKeys(question.choices).map((key) => {
-              const isCorrect = answerKey === key;
+              const isCorrect = isAcceptedAnswer(question.answer, key);
               const isSelected = answer.selected === key;
               let cls = "border-white/10 bg-white/5 text-zinc-300 opacity-70";
               if (isCorrect) cls = "border-emerald-400 bg-emerald-500/20 text-emerald-50";
@@ -432,7 +477,7 @@ function ReviewOverlay({
                   className={`flex w-full items-start gap-3 rounded-2xl border-2 px-4 py-3 text-left text-sm leading-snug ${cls}`}
                 >
                   <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-white/10 text-xs font-bold">
-                    {key}
+                    {choiceDisplayLabel(question.exam, key)}
                   </span>
                   <span className="flex-1 pt-0.5">{question.choices![key]}</span>
                   {isCorrect && <Check className="h-4 w-4 shrink-0 text-emerald-300" />}
@@ -448,11 +493,11 @@ function ReviewOverlay({
           <div className="mb-2 flex items-center justify-between text-xs">
             <span className="font-semibold text-emerald-300">正解: {answerKey}</span>
             <span className={answer.correct ? "text-emerald-300" : "text-red-300"}>
-              あなたの回答: {answer.selected ?? "—"} / {answer.correct ? "正解" : "不正解"}
+              あなたの回答: {question.type === "native-b" ? `正答枠数 ${answer.nativeBResult?.correctSlots ?? 0}/5` : answer.selected ?? "—"} / {answer.correct ? "正解" : "不正解"}
             </span>
           </div>
           <div className="whitespace-pre-wrap leading-relaxed text-zinc-200">
-            {question.explanation || "解説は準備中です。"}
+            <QuestionBody text={question.explanation || "解説は準備中です。"} />
           </div>
         </div>
       </div>

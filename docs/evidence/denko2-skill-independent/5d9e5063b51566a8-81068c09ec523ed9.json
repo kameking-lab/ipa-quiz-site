@@ -1,0 +1,25 @@
+{
+  "inputHashes": {
+    "reviewPromptVersion": "skill-source-v4",
+    "questionPdfSha256": "5d9e5063b51566a8e4d58aa9a4a6e0de939e139f30572757c49c9aacafe10b90",
+    "answerPdfSha256": "81068c09ec523ed963d13dca8f59d93a147cab9cb14dff7844071b68b626ad80",
+    "extractedRecordSha256": "b0d8792c068d10330630e10d7f5fdbbd6a5f56e0b5f003f419e4fe0c93c2851e"
+  },
+  "reviewModel": "claude-opus-5-5",
+  "sourceItemId": "denko2-2024-12-14-skill-01",
+  "assessment": {
+    "status": "PASS",
+    "textIssues": [],
+    "diagramIssues": [],
+    "modelAnswerIssues": [],
+    "notes": [
+      "instructionText: Checked against page 2 of the question PDF. It matches on the 40-minute time limit, the rule to use all supplied materials except spares, and all four なお items: the omitted dash-dot area, no VVF joint box or switch box supplied, insulation treatment omitted, and no mounting on the protective board. The dash-dot line symbol in note 1 is written as 「―・―・―」. That is only a different glyph and does not change the meaning.",
+      "materialsText: All 11 items match the material table on page 1 of the question PDF. The wire sizes match: EM-EEF 2.0mm 2-core about 250mm ×1, VVF 1.6mm 2-core about 900mm ×2, and VVF 1.6mm 3-core about 350mm ×1. The devices match: lamp receptacle without cover ×1, ceiling rosette (square body only) ×1, flush tumbler switch ×2, flush tumbler switch with position indicator lamp ×1, and mounting frame ×1. Small ring sleeves ×8 (including spares), 2-wire push-in connectors ×2 and 3-wire push-in connectors ×1 also match. The exam number tag, vinyl bag, notes and extra-supply notice are correctly left out.",
+      "conditionsText: Checked against page 3 of the question PDF. It matches on mounting switch 「ロ」 in the centre of the frame, white for the grounded conductor, black for the non-grounded conductor up to the switches, and white on both the lamp receptacle screw-shell terminal and the ceiling rosette grounded terminal. It also matches on ring sleeves at A and push-in connectors at B.",
+      "diagramNotesText: Matches notes 1 and 2 under the drawing: JIS C 0303:2000, and Ⓡ means the lamp receptacle. The circled R is printed as a symbol and is written as Ⓡ in the JSON. The meaning is unchanged.",
+      "diagramImage: All of the following fit in the crop and are readable: イ (ceiling rosette), ロ (Ⓡ), the power supply label 「電源 1φ2W 100V」, EM-EEF 2.0-2C, VVF 1.6-3C, VVF 1.6-2C (three runs), VVF 1.6-2C×2, the five 150mm dimensions, joint boxes A and B, the H イ・ロ・ハ switches, the 施工省略 dash-dot box and the fluorescent lamp ハ. The ハ label under the fluorescent lamp sits close to the bottom edge of the crop but is not cut off. This problem has no figure 2, so no secondFigureImage is needed.",
+      "Text layer: 1φ2W, ×2, Ⓡ and the dimensions inside the drawing are image content in the source. They are not transcribed into the body text and are shown via diagramImage instead. I found no other formulas or text that could not be extracted.",
+      "Model answer: The answer PDF is headed 「令和6年度第二種下期技能試験の解答 候補No.1」, which matches the 2024-12-14 lower-half exam, No.1. The concept diagram (EM-EEF 2.0-2C, イ ceiling rosette with white on the grounded terminal, ロ receptacle with white on the screw shell, H イ・ロ・ハ switches, 蛍光灯「ハ」へ) matches the question drawing. So does the wiring diagram, with ring sleeves at A, push-in connectors at B, and black jumper wires between switches. In the completed example photo, box B has one 3-wire and two 2-wire push-in connectors, matching the material quantities. This check only confirms that the model answer materials match the source PDF. No physical completed work was graded."
+    ]
+  }
+}

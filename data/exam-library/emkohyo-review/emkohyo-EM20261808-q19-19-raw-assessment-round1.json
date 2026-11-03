@@ -1,0 +1,15 @@
+{
+  "emkohyo-EM20261808-q19": {
+    "status": "FIX",
+    "textIssues": [
+      "文字起こしpromptの化学式が「K₂C r₂O₇」になっており、CとrのあいだにPDF抽出由来のスペースが入っている。公式問題原図（q19-p11-0.webp）では「K₂Cr₂O₇」なので「K₂Cr₂O₇」に直す必要がある。",
+      "化学式の表記が揃っていない。肢4のreasonとsummaryは下付き文字なしの「K2Cr2O7」、肢1・2・3・5のreasonは「K₂Cr₂O₇」になっている。すべて「K₂Cr₂O₇」に統一すべき。"
+    ],
+    "choiceIssues": [],
+    "reasonIssues": [
+      "肢2のreasonの数値が違う。141×104.0÷294.2＝14664÷294.2＝49.84… なので、四捨五入すると「≒49.8 mg」「約49.8 µg/mL」になる。現候補の「≒49.9 mg」「約49.9 µg/mL」は計算と合わない。「必要な100 µg/mLの約半分」という結論はそのままでよい。"
+    ],
+    "sourceIssues": [],
+    "needsExternalCheck": []
+  }
+}

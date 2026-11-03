@@ -1,0 +1,152 @@
+[
+  {
+    "number": 31,
+    "question": "①で示す図記号の名称は。",
+    "choices": {
+      "イ": "リモコンセレクタスイッチ",
+      "ロ": "漏電警報器",
+      "ハ": "リモコントランス",
+      "ニ": "表示スイッチ"
+    },
+    "officialAnswer": "イ",
+    "explanation": "配線図①の引出線は事務所右側の扉脇、『分電盤へ』の矢印の右端にある、円内に交差線を持つ記号を指す。傍記の『6』と『二重丸a～f用』、電灯分電盤のリモコンリレー群の傍記『6』が対応するため、単相200Vのa～f照明回路を選ぶ6点用リモコンセレクタスイッチである。",
+    "choiceExplanations": {
+      "イ": "円内に交差線を持つ記号に『6』『二重丸a～f用』と選択対象が明記されている。リモコンセレクタスイッチに合う。",
+      "ロ": "漏電警報器は漏電の警報用であり、二重丸a～fの6照明回路を選ぶ①の操作器具ではない。",
+      "ハ": "リモコントランスはリモコン回路への電源供給用。①の6点選択器具とは役割が異なる。",
+      "ニ": "①は『6』『二重丸a～f用』と複数回路の選択を明示する図記号であり、表示スイッチを示さない。"
+    },
+    "diagramDescription": "平面図の事務所右側の扉脇で、①は円内に交差線を持つ記号と傍記『6』『二重丸a～f用』を指す。電灯分電盤には三角印のリモコンリレー群に『6』と傍記され、出力は二重丸a～f。",
+    "uncertainty": "",
+    "reviewedFromCrop": "data/raw_pdfs/denko2/review/20240526/q31.png",
+    "imageUrls": [
+      "/images/denko2/2024-first/wiring-main.png",
+      "/images/denko2/2024-first/wiring-panels.png",
+      "/images/denko2/2024-first/q31-symbol.png"
+    ],
+    "officialReferenceUrls": [],
+    "sourceQuestionPdfUrl": "https://www.shiken.or.jp/construction/upload/20240526_co_second_q01.pdf",
+    "sourceAnswerPdfUrl": "https://www.shiken.or.jp/construction/upload/20240526_co_second_a01.pdf"
+  },
+  {
+    "number": 32,
+    "question": "②で示す図記号の器具の取り付け場所は。",
+    "choices": {
+      "イ": "床面",
+      "ロ": "天井面",
+      "ハ": "壁面",
+      "ニ": "二重床面"
+    },
+    "officialAnswer": "ロ",
+    "explanation": "平面図②はカウンタ内の『LK』（抜止形）付きコンセント記号を指す。円の片側が黒く塗られた壁付けコンセント（右壁の20A等）と異なり、②の円は白抜きのままなので、天井面取付けを表す。",
+    "choiceExplanations": {
+      "イ": "②は白抜き円のコンセント記号で、床面用を示す床付けの表示がないため床面ではない。",
+      "ロ": "②は白抜き円形のコンセント記号で、壁付けを示す半塗りや床埋込み表示がない。天井面が正しい。",
+      "ハ": "同一図の壁付けコンセントには円の壁側を黒く塗った記号があるが、②は塗りつぶされていない。",
+      "ニ": "②には二重床面用を示す表示がなく、白抜き円のコンセント記号として天井面取付けを示す。"
+    },
+    "diagramDescription": "②はカウンタ内にある『LK』傍記の白抜き円形コンセントを指す。右壁の半塗りの壁付けコンセントと区別できる。",
+    "uncertainty": "",
+    "reviewedFromCrop": "data/raw_pdfs/denko2/review/20240526/q32.png",
+    "imageUrls": [
+      "/images/denko2/2024-first/wiring-main.png",
+      "/images/denko2/2024-first/wiring-panels.png"
+    ],
+    "officialReferenceUrls": [],
+    "sourceQuestionPdfUrl": "https://www.shiken.or.jp/construction/upload/20240526_co_second_q01.pdf",
+    "sourceAnswerPdfUrl": "https://www.shiken.or.jp/construction/upload/20240526_co_second_a01.pdf"
+  },
+  {
+    "number": 33,
+    "question": "③で示す部分に使用するコンセントの極配置（刃受）は。",
+    "choices": {
+      "イ": "左に横向きL字の刃受け、右に横向き平刃受け、下に接地極刃受けがある図。",
+      "ロ": "左右に縦向きの平刃受け、下に接地極刃受けがある図。",
+      "ハ": "左右に横向きの平刃受け、下に接地極刃受けがある図。",
+      "ニ": "左に縦向きL字の刃受け、右に縦向き平刃受け、下に接地極刃受けがある図。"
+    },
+    "officialAnswer": "ニ",
+    "explanation": "平面図③には接地極付き20Aコンセントを示す『E20A』があり、接続先のⓘ回路は分電盤図で100V・20Aと指定されている。この条件に必要なのは100V系20A・接地極付きの刃受配置であり、公式問題の4図と公式正答を照合すると、縦向きL字刃受け・縦向き平刃受け・接地極を持つニが該当する。",
+    "choiceExplanations": {
+      "イ": "横向きL字刃受けを持つ20A・250V系の極配置で、100V回路の③には合わない。",
+      "ロ": "縦向き平刃2本の15A・125V系の極配置で、20A指定の③には合わない。",
+      "ハ": "横向き平刃2本の15A・250V系の極配置で、100V・20A指定の③には合わない。",
+      "ニ": "縦向きL字刃受け、縦向き平刃受け、接地極を持つ20A・125V系の極配置で、100V・20Aの③に対応する。"
+    },
+    "diagramDescription": "共通図③は右壁の『E20A』コンセントで、ⓘ回路につながる。4肢は順に横L字・縦平刃・横平刃・縦L字で、各肢とも接地極刃受けを持つ。",
+    "uncertainty": "",
+    "reviewedFromCrop": "data/raw_pdfs/denko2/review/20240526/q33.png",
+    "imageUrls": [
+      "/images/denko2/2024-first/wiring-main.png",
+      "/images/denko2/2024-first/wiring-panels.png"
+    ],
+    "choiceImageUrls": {
+      "イ": "/images/denko2/2024-first/q33-i.png",
+      "ロ": "/images/denko2/2024-first/q33-ro.png",
+      "ハ": "/images/denko2/2024-first/q33-ha.png",
+      "ニ": "/images/denko2/2024-first/q33-ni.png"
+    },
+    "officialReferenceUrls": [
+      "https://www.meti.go.jp/policy/consumer/seian/denan/PDF/old_beppyou4.pdf"
+    ],
+    "sourceQuestionPdfUrl": "https://www.shiken.or.jp/construction/upload/20240526_co_second_q01.pdf",
+    "sourceAnswerPdfUrl": "https://www.shiken.or.jp/construction/upload/20240526_co_second_a01.pdf"
+  },
+  {
+    "number": 34,
+    "question": "④で示す図記号の名称は。",
+    "choices": {
+      "イ": "誘導灯",
+      "ロ": "保安用照明",
+      "ハ": "一般用照明",
+      "ニ": "非常用照明"
+    },
+    "officialAnswer": "イ",
+    "explanation": "平面図④は出入口の扉上部にある、横長の棒と相対する区画を黒く塗った円が一体の図記号を指す。出口の位置を示す誘導灯である。非常用照明は停電時の照度確保が役割で、出口位置を示すこの記号とは区別する。",
+    "choiceExplanations": {
+      "イ": "④の横長器具は出入口上に設置され、出口を示す誘導灯の位置と図記号に合う。",
+      "ロ": "④は出入口の位置を示す横長の棒と塗り分けた円の複合記号。保安用照明は出口を表示する名称ではなく、この記号を指さない。",
+      "ハ": "一般用照明は図中の蛍光灯など室内照明であり、扉上部の④とは設置位置も図記号も異なる。",
+      "ニ": "非常用照明は停電時の照度確保を担う。④は出入口上の横長の棒と塗り分けた円の複合記号で、出口を示す誘導灯に当たる。"
+    },
+    "diagramDescription": "④の引出線は出入口扉の上枠にある、横長の棒と相対する区画を黒く塗った円が一体の図記号を指す。上へ延びる引出しは単相100Vの単丸a回路に接続する。",
+    "uncertainty": "",
+    "reviewedFromCrop": "data/raw_pdfs/denko2/review/20240526/q34.png",
+    "imageUrls": [
+      "/images/denko2/2024-first/wiring-main.png",
+      "/images/denko2/2024-first/wiring-panels.png",
+      "/images/denko2/2024-first/q34-symbol.png"
+    ],
+    "officialReferenceUrls": [],
+    "sourceQuestionPdfUrl": "https://www.shiken.or.jp/construction/upload/20240526_co_second_q01.pdf",
+    "sourceAnswerPdfUrl": "https://www.shiken.or.jp/construction/upload/20240526_co_second_a01.pdf"
+  },
+  {
+    "number": 35,
+    "question": "⑤で示す部分の配線で(VE28)とあるのは。",
+    "choices": {
+      "イ": "外径28 mm の硬質ポリ塩化ビニル電線管である。",
+      "ロ": "外径28 mm の合成樹脂製可とう電線管である。",
+      "ハ": "内径28 mm の硬質ポリ塩化ビニル電線管である。",
+      "ニ": "内径28 mm の合成樹脂製可とう電線管である。"
+    },
+    "officialAnswer": "ハ",
+    "explanation": "⑤の傍記は『600V CV 5.5-2C (VE28)』。公式問題でVE28に対応する正答は、硬質ポリ塩化ビニル電線管の内径28mmを示すハ。28を外径と読むイ、可とう電線管とするロ・ニは一致しない。",
+    "choiceExplanations": {
+      "イ": "VEの管種は正しいが、28を外径と読んでいる点が誤り。",
+      "ロ": "28は外径ではなく、VEは合成樹脂製可とう電線管ではなく硬質ポリ塩化ビニル電線管。両方違う。",
+      "ハ": "VEは硬質ポリ塩化ビニル電線管で、設問のVE28に対応する内径28mmの選択肢。",
+      "ニ": "内径の読みは合うが、VEを可とう電線管とする管種が誤り。"
+    },
+    "diagramDescription": "平面図下端で⑤は、一点鎖線に傍記された『600V CV 5.5-2C (VE28)』の部分を指す。",
+    "uncertainty": "",
+    "reviewedFromCrop": "data/raw_pdfs/denko2/review/20240526/q35.png",
+    "imageUrls": [
+      "/images/denko2/2024-first/wiring-main.png",
+      "/images/denko2/2024-first/wiring-panels.png"
+    ],
+    "officialReferenceUrls": [],
+    "sourceQuestionPdfUrl": "https://www.shiken.or.jp/construction/upload/20240526_co_second_q01.pdf",
+    "sourceAnswerPdfUrl": "https://www.shiken.or.jp/construction/upload/20240526_co_second_a01.pdf"
+  }
+]

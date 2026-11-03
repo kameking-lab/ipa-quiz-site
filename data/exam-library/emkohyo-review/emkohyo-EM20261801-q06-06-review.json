@@ -1,0 +1,65 @@
+{
+  "reviewModel": "claude-opus-5-5",
+  "requestedModel": "claude-opus-5-5",
+  "canonicalModel": "claude-opus-5-5",
+  "provider": "firstParty",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 3393,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 16744,
+      "webSearchRequests": 0,
+      "costUSD": 0.20207579999999997,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 1996,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponsePath": "data/exam-library/emkohyo-review/emkohyo-EM20261801-q06-06-raw-response.txt",
+  "rawResponseSha256": "5c839acac056ac920a850a44d8adb82838aca3d727587a7aa25d22b6586eda04",
+  "paperId": "emkohyo-EM20261801",
+  "ids": [
+    "emkohyo-EM20261801-q6"
+  ],
+  "figureSha256": {
+    "emkohyo-EM20261801-q6": {}
+  },
+  "officialRowImageSha256": {
+    "emkohyo-EM20261801-q6": {
+      "/exam-library/emkohyo-EM20261801/q6-p5-1.webp": "f1f1d41ee55a42ce0d44e35cb000f4ae8bff76764c8760f32e3f44fbfc8198a4"
+    }
+  },
+  "officialPageImageSha256": {},
+  "governmentSourceImageSha256": {},
+  "candidateSha256": {
+    "emkohyo-EM20261801-q6": "515e0efce89e3809a9193bf8f6ea4b886c803a8f7f45f82670b6e7c827e8483a"
+  },
+  "sourcePackPath": "docs/evidence/emkohyo-choice-sources/emkohyo-EM20261801-q06-06.json",
+  "sourcePackSha256": "7d9176f79903be73db470add1f6f2601f47001183f9bf7172fbb0cb7a91fb9fd",
+  "assessment": {
+    "emkohyo-EM20261801-q6": {
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "reasonIssues": [
+        "肢2: 「感作が成立すると喘息症状を繰り返すため、…ばく露が続くとぜんそく様発作を呈するという記述と合う」は候補側の推論である。引用した「この物質により喘息の症状を示した者は、以後この物質に接触しないこと」は応急措置の注意事項で、低濃度ばく露の継続によりぜんそく様発作に至るという本肢の因果を述べていない。本肢の「低濃度ばく露が続くと」を直接支える記述を示すか、SDSの記載範囲（喘息を発症させる、呼吸器感作性区分1、産衛学会の気道感作性第1群）に限定した表現に改めるべき。",
+        "肢4: 斑状歯の根拠とした食品安全委員会評価書の該当箇所は、飲料水中フッ化物（経口摂取、歯の形成期）と斑状歯罹患率の疫学である。フッ化水素による職業性慢性中毒で斑状歯がみられることを示していない。同評価書の「ヒトの発がん性を示す証拠は不十分」も飲料水中フッ化物の経口摂取に関する結論で、フッ化水素ばく露の発がん性評価ではない。理由文はこの対象の違いを明記するか、フッ化水素ばく露に即した根拠に差し替えるべき（モデルSDSの「フッ素は骨及び歯芽に蓄積」「標的臓器：歯・骨」、発がん性「データ不足のため分類できない」で骨・歯の障害と発がん性の部分は足りる）。",
+        "肢4: 本肢の「骨の硬化」と理由文の「骨フッ素症」の対応（骨フッ素症は骨硬化を主徴とする）が理由文に書かれていない。一文補うのが望ましい。"
+      ],
+      "sourceIssues": [
+        "肢2: 厚労省モデルSDS（584-84-9）の引用箇所は、「低濃度ばく露が続くとぜんそく様発作」という本肢の核心部分を直接支えていない。また喘息発症の記載は、2,4-TDIと2,6-TDIの混合物（市販品）に関するNITE初期リスク評価書からの再引用である。",
+        "肢4: 食品安全委員会 清涼飲料水評価書 フッ素（2012年11月 案）は飲料水中フッ化物の経口評価であり、フッ化水素の職業性慢性中毒（斑状歯・発がん性）の根拠としては対象ばく露経路が一致しない。また「案」段階の文書であり、確定版評価書の参照が望ましい。",
+        "肢3・肢5: 根拠は日本熱傷学会誌の総説（J-STAGE）で、政府資料ではない。肢5はモデルSDS（硫酸）の「最初は白化、その後茶色から黒色の変色」で色調は補強されるが、「脱水及び炭化作用」による黒褐色化の因果はSDS引用部に無い。肢3の蛋白変性作用・局所麻酔作用による無感覚を支える政府資料は提示されていない。"
+      ],
+      "needsExternalCheck": [
+        "TDIのモデルSDS本文またはNITE初期リスク評価書に、低濃度の反復・継続ばく露でぜんそく様発作を生じる旨の記載があるか確認する。",
+        "フッ化水素（7664-39-3）のモデルSDS本文、または産衛学会許容濃度提案理由書（2020）に、斑状歯・骨硬化の記載があるか確認する。あれば肢4の歯の根拠をそちらへ差し替える。",
+        "フェノールの蛋白変性作用・局所麻酔作用による無感覚化を記載した政府資料（モデルSDS フェノール 108-95-2 等）の有無を確認する。"
+      ]
+    }
+  }
+}

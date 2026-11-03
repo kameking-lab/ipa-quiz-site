@@ -18,11 +18,11 @@ export interface EssaySubPrompt {
   minChars: number;
   /** 字数上限（目安） */
   maxChars: number;
-  /** IPA公表または編集者作成の解答骨子 */
+  /** 編集者作成の解答骨子 */
   modelOutline: string;
   /**
    * 採点根拠データ（強み1）。汎用LLMが持てない「根拠ある採点」のための構造化ルーブリック。
-   * いずれも任意。IPA 出題趣旨・採点講評の要点を編集部が自前で構造化したもの（原文の長文転載はしない）。
+   * いずれも任意。独自の設問に対応する評価観点を編集者が構造化したもの。
    */
   /** 部分点の核になる語・概念。採点AIはこの有無を部分点判定の核とする。 */
   requiredKeywords?: string[];
@@ -44,11 +44,11 @@ export interface EssayQuestion {
   context: string;
   /** 設問ア・イ・ウ */
   subPrompts: EssaySubPrompt[];
-  /** IPA公式の出題趣旨・採点講評（公表されている場合） */
-  officialReview: string;
-  /** 出典 PDF URL */
+  /** 独自練習問題の編集者作成の評価観点（IPA公式講評ではない） */
+  editorialReview: string;
+  /** 試験制度・出題形式の参考URL（この独自問題の出典ではない） */
   pdfUrl: string;
-  license: "IPA-public";
+  license: "original";
 }
 
 /** 受験生が選択する業種 */

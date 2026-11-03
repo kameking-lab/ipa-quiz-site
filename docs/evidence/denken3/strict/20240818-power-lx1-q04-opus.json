@@ -1,0 +1,66 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20240818",
+  "subject": "power",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 2247,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 13416,
+      "webSearchRequests": 0,
+      "costUSD": 0.1525318,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 920,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "718574141ad31a514c6e225d1025250bd8f76f2e3b7f1fed7fa4d8576374bace",
+  "inputRequestSha256": "118a0eb330439ffa34ea82b66a074a1c56ae3b43c306173617b3c51688831b11",
+  "inputHashes": {
+    "candidateSha256": {
+      "q04": "b5f2f3a1a22983e66002ed3eb9f579ddcc683cf21b64f2a819fd47fc0fbbe2fe"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20240818/power/p07.png": "c2d48ba70a829c601d4843212f6d1c64fa5b6fb39f89be6e3520349fc1d3c148"
+    },
+    "figureSha256": {},
+    "sourceQuestionPdfSha256": "0bc54a85819b9d9c80d1574c5b8c02a3c28976565d8c9068a3dd0344a3db5700",
+    "sourceAnswerPdfSha256": "f72ecbc3a477e64948388b69cf78cb931032c9f0c688639836c8d533a949cd0f",
+    "officialAnswerUnitsSha256": "1690691575ebe4330ad6a395b865fad8356df22c41370c6341472f8c359753a7",
+    "referencePdfSha256": {},
+    "referencePageSha256": {},
+    "referenceJsonSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q04",
+      "questionNumber": 4,
+      "part": null,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "問題文照合: 添付原図（印刷頁「-4-」、manifest上のPDF第7頁）の問4本文「1 g のウラン 235 が核分裂し，0.09 %の質量欠損が生じたとき，発生するエネルギーを石炭に換算した値[kg]として，最も近いものを次の(1)〜(5)のうちから一つ選べ。ただし，石炭の発熱量を 25 000 kJ/kg とする。」と候補questionは一字一句一致。数値0.09 %、単位[kg]、25 000 kJ/kgもすべて一致。",
+        "選択肢照合: 原図 (1)32 (2)320 (3)1 600 (4)3 200 (5)6 400 と候補choicesは全5肢一致（桁区切りの空白も原図どおり）。",
+        "公式正答照合: 公式解答表の原図「令和6年度 上期」＜電力＞問4=4。manifest固定の公式正答単位 answer=\"4\" と候補officialAnswer=\"4\" は一致。",
+        "計算検算: Δm = 1 g × 0.09/100 = 9×10⁻⁴ g = 9×10⁻⁷ kg。E = Δm·c² = 9×10⁻⁷ × (3×10⁸)² = 9×10⁻⁷ × 9×10¹⁶ = 8.1×10¹⁰ J = 8.1×10⁷ kJ。石炭量 = 8.1×10⁷ ÷ 25 000 = 3 240 kg。最も近い選択肢は(4)3 200。候補の総合解説と完全に一致。",
+        "近似の頑健性: 原図に光速の数値指定はないが、c=2.998×10⁸ m/s とすると約3 236 kgとなり、正答(4)は変わらない。候補はc≈3×10⁸ m/sを近似値として明示しており、曖昧さは残らない。",
+        "誤答肢の理由を検算: (1)32は3 240/32≈101で約1/100、(2)320は3 240/320≈10.1で約1/10、(3)1 600は3 240/1 600≈2.03で約1/2、(5)6 400は6 400/3 240≈1.98で約2倍。各肢について計算値からのずれが個別に正しく記述されている。出題者の誤答意図を推測で書いていない点も適切。",
+        "正答肢の理由: (4)の説明は、E=Δmc²で求めた8.1×10⁷ kJを25 000 kJ/kgで割って3 240 kgを得る、という因果が正しい。",
+        "図: 原図に図はなく、問題文と横一列の(1)〜(5)だけで構成されている。候補のfigureDescription、figureUrls=[]、choiceFigureUrls={}と整合。解答に図は不要。",
+        "出典メタデータ: fiscalYear=2024（令和6年度）、term=upper（上期）、examDate=2024-08-18、subject=power（電力）、sourceQuestionPdfUrl=…20240818_ch_third_q02.pdf、sourceAnswerPdfUrl=…20240818_ch_third_a01.pdf、reviewedFromPage=[7]。いずれもmanifestと一致。sourceAttributionの「令和6年度上期 … 電力科目 問4」も正しい。",
+        "公式参考資料: officialReferenceUrlsは空で、原図による検証を要する独立主張はない。"
+      ]
+    }
+  ]
+}

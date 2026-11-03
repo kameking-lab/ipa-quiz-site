@@ -1,0 +1,70 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20250831",
+  "subject": "machinery",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 3354,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 13267,
+      "webSearchRequests": 0,
+      "costUSD": 0.1734798,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 2088,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "933c3d900c9730be827c8194cfe2951299b45d72d0d03c91eb3c353a2605f32a",
+  "inputRequestSha256": "f48ceba875fd19c172fdea5191ad374c8bf5693cb90501986bb98f0f361817ec",
+  "inputHashes": {
+    "candidateSha256": {
+      "q11": "3579504210392dc882b1cb971068fbe85210d86f0f61fd891a0d5915e075fb4b"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20250831/machinery/p14.png": "3f9870ed39f1b0cb6f58e0348cb6c5b661f07fb27e3fb62430a9a5ce3fc61f8d"
+    },
+    "figureSha256": {},
+    "sourceQuestionPdfSha256": "2a73a24594cc2b8bb7504b9a0ff15e001b2bb56b830572ce2be853f7116f26d8",
+    "sourceAnswerPdfSha256": "76fd3715ed487d19a56b387fb402de20ee09474e9fa55b0413f9037b96af06c9",
+    "officialAnswerUnitsSha256": "65afb8e3d36137529c3bb300808b62f0b8e8e56726a521de92f48fc9467a567e",
+    "referencePdfSha256": {},
+    "referencePageSha256": {},
+    "referenceJsonSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q11",
+      "questionNumber": 11,
+      "part": null,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "問題文: 原図の問11と照合。電動機出力 4 kW、質量 900 kg、一定速度、巻上速度[m/s]、機械効率 90 %、ロープの質量及び加速に要する動力は考慮しない、重力加速度 9.8 m/s² の条件はすべて一致する。句読点の全角化などの表記整形のみで、意味の変化はない。",
+        "選択肢: 原図の (1)0.37 (2)0.41 (3)0.45 (4)0.59 (5)0.87 と候補の全5肢が一致する。",
+        "公式正答: 解答表原図は『令和7年度 第三種電気主任技術者上期試験解答』の＜機械＞列で、問11の解答は2、配点は5。manifest固定値 {question:11, part:null, answer:\"2\", points:5} と、候補の officialAnswer=2・scoringPoints=5 が一致する。",
+        "科目の整合: 解答表の他科目の問11は、理論が4、電力が3、法規は(a)=3・(b)=5。計算結果 0.41=(2) と整合するのは機械列だけで、subject=machinery と矛盾しない。",
+        "総合解説の検算: η·P = m·g·v より v = 0.90×4000/(900×9.8) = 3600/8820 = 0.40816… ≒ 0.408 m/s となり、最も近い肢は(2)0.41。効率を電動機出力側に掛ける因果関係も正しい。",
+        "誤用例の検算: η で割った場合は 4000/(0.9×8820) = 4000/7938 ≒ 0.504 m/s で、解説の記載と一致する。",
+        "肢(1)の理由: 0.37 は 0.408 との差が 0.038 で、(2) の差 0.002 より大きい。『最も近い値ではない』は正しい。",
+        "肢(2)の理由: 3600/8820 ≒ 0.408 で、正しい。",
+        "肢(3)の理由: 効率を無視した 4000/8820 ≒ 0.4535 は約 0.454 で、0.45 に近いという記述は正しい。効率 90 % を考慮しないと誤りになる点も正確。",
+        "肢(4)の理由: 0.59 は 0.408 より大きく、最も近い値ではない。記述は正しい。",
+        "肢(5)の理由: 0.87/0.408 ≒ 2.13 で、『約2倍』の記述は妥当。",
+        "図: 原図に図はなく、解答に図は不要。figureDescription=『図なし』、figureUrls=[]、choiceFigureUrls={} は妥当。",
+        "出典: officialReferenceUrls は空で、独立主張の検証対象はない。uncertainty 欄は『原図ページ単体では年度の表記がない』という事実の記載で、誤りではない。年度・回は解答表の見出し(令和7年度上期)と機械列の正答の整合で裏付けられる。sourceAttribution の記載とも矛盾しない。",
+        "ページ: 原図の印刷ページ番号は『-11-』、識別記号は『T1－K 014』。表紙等を含むPDF通し頁として reviewedFromPage=[14] と矛盾する要素はない。"
+      ]
+    }
+  ]
+}

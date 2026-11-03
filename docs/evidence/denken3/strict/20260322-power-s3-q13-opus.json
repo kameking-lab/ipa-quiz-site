@@ -1,0 +1,68 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20260322",
+  "subject": "power",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 3095,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 14815,
+      "webSearchRequests": 0,
+      "costUSD": 0.1806838,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 1547,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "816ff7ddcc157768c4dbf9dd1f95dc0717c0375c32520e947e9a154ee42539a2",
+  "inputRequestSha256": "0970dc31ca568f45528d86e71eb046bc65ffb7fe4ac14bcc06e5fe378ec779ac",
+  "inputHashes": {
+    "candidateSha256": {
+      "q13": "65712d3c5a4a7830f8ccb9cf70d6a99131cb7019adfd7c01b692033b30b91722"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20260322/power/p16.png": "c66d410d45a15bc50aa3859442535674fca327511c18428fdb3780d0cf323a08"
+    },
+    "figureSha256": {},
+    "sourceQuestionPdfSha256": "9733341a0f293f068c9a665d5a9a90f1aabf3a2db5d79cd530643cdea241f7b7",
+    "sourceAnswerPdfSha256": "cc2890296d06a4823df5697a78a1c01ddfd39f041c51f48c87984daa3a5707c6",
+    "officialAnswerUnitsSha256": "97c21f64d6ba5cd59a0c133ece2b936489e9a07824b47e37615dc3e2aa9088c1",
+    "referencePdfSha256": {},
+    "referencePageSha256": {},
+    "referenceJsonSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q13",
+      "questionNumber": 13,
+      "part": null,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [
+        "【検算】の丸め表記が不正確。「Q′ = S′ sinθ′ = 66.7 × 0.8 ≒ 53.3 kvar」と書かれているが、丸めた66.7を使うと66.7 × 0.8 = 53.36となり、四捨五入では53.4になる。53.3になるのは丸める前の値を使った場合だけである(S′ = 200/3、Q′ = 160/3 ≒ 53.3)。この53.3を引き継いだ「Qc = (160 + 53.3) − 120 ≒ 93.3 kvar」も同じ不整合を含む。66.7と53.36から計算すると93.36 ≒ 93.4となり、(1)の93.3との対応がずれる。修正案は2通りある。(a) 丸める前の値で書く: Q′ = P′ tanθ′ = 40 × 0.8 ÷ 0.6 = 160/3 ≒ 53.3 kvar、Qc = 160 + 160/3 − 120 = 280/3 ≒ 93.3 kvar。(b) 「S′ = 200/3 kV·A として」と明記したうえで計算する。"
+      ],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "問題文: 公式原図(PDF第16頁、冊子頁番号「- 13 -」、T2−D 016)と照合した。200 kV·A、P=120 kW、遅れ力率cosθ=0.6、並列に遅れ力率0.6の負荷を増設、進相コンデンサで遅れ力率0.8に改善、増設負荷の皮相電力S′[kV·A]を問う点がすべて一致する。単位・記号(S′、kV·A)も一致する。",
+        "選択肢: (1)93.3 (2)120 (3)66.7 (4)160 (5)40。原図と完全に一致する。",
+        "公式正答: 解答表(令和7年度 第三種電気主任技術者下期試験解答)の<電力>問13は解答3・配点5。候補のofficialAnswer=\"3\"、scoringPoints=5と一致する。",
+        "出典メタデータ: fiscalYear=2025(令和7年度)、term=lower(下期)、examDate=2026-03-22、subject=power、問題PDF URL・解答PDF URL、reviewedFromPage=[16]がmanifestと一致する。sourceAttributionの「令和7年度下期…電力科目 問13」も整合する。",
+        "本解計算: S₁=120/0.6=200 kV·A、Q₁=200×0.8=160 kvar。上限時はP=200×0.8=160 kW、Q=200×0.6=120 kvar。P′=160−120=40 kW、S′=40/0.6=66.67≒66.7 kV·A。正答(3)と一致する。",
+        "検算: Qc=160+160/3−120=280/3≒93.3 kvar。合成はS=√(160²+120²)=200 kV·A、力率0.8となり条件を満たす(丸め表記の問題は上記のとおり)。",
+        "誤答肢の理由をすべて検算した。(1) 93.3×0.6≒56 kW、合成176 kW、176/0.8=220>200。(2) 72 kW、合成192 kW、192/0.8=240>200。(4) 96 kW、合成216 kWで、力率1でも200を超える。(5) 24 kW・32 kvar、合成144 kW、144/0.8=180≤200で増設は可能だが上限ではない。いずれも正しい。値の由来の説明(Qc、P₁、Q、P、Q₁、P′との一致)も正しい。",
+        "因果: 力率0.8を固定すると合成皮相電力は合成有効電力に比例する。したがって上限は合成皮相電力=200 kV·Aで決まる。コンデンサは有効電力を消費しない。いずれの説明も正しい。",
+        "図: 原図に図はない。figureDescription「本問に図はない」、figureUrls=[]、choiceFigureUrls={}は妥当である。",
+        "officialReferenceUrlsは空で、検証が必要な独立主張はない。"
+      ]
+    }
+  ]
+}

@@ -6,7 +6,7 @@
 import { chromium, devices } from "playwright";
 
 const BASE_URL = process.argv[2] ?? "http://localhost:3031";
-const AMAZON_TAG = "safeaisite22-22";
+const CLOSED_AMAZON_TAG = "safeaisite22-22";
 const RAKUTEN_HOST = "hb.afl.rakuten.co.jp";
 const RAKUTEN_ID = "5291f19d";
 
@@ -29,7 +29,7 @@ async function verifyExamPage(page, exam) {
   const res = await page.goto(url, { waitUntil: "domcontentloaded" });
   const row = {
     exam, url,
-    bookCount: 0, amazonLinks: 0, amazonTagOk: 0,
+    bookCount: 0, amazonLinks: 0, amazonClosedTagCount: 0,
     rakutenLinks: 0, rakutenIdOk: 0,
     jsonLd: false, title: false, metaDesc: false, canonical: false,
     placeholderAsins: 0,
@@ -41,7 +41,7 @@ async function verifyExamPage(page, exam) {
     return;
   }
 
-  // Amazon links (affiliate anchors only, not JSON-LD)
+  // Amazon product anchors (not JSON-LD); this closed tag must never return.
   const amazonAnchors = await page.locator('a[href*="amazon.co.jp"]').all();
   row.amazonLinks = amazonAnchors.length;
   row.bookCount = amazonAnchors.length; // 1 Amazon link per book
@@ -53,7 +53,7 @@ async function verifyExamPage(page, exam) {
   }
 
   // Validate each Amazon link
-  let amazonTagOk = 0;
+  let amazonClosedTagCount = 0;
   for (const a of amazonAnchors) {
     const href = await a.getAttribute("href");
     const target = await a.getAttribute("target");
@@ -63,15 +63,15 @@ async function verifyExamPage(page, exam) {
       warn(`Amazon ASIN未入力: ${exam} — ${href}`);
       row.placeholderAsins++;
     }
-    if (href?.includes(`tag=${AMAZON_TAG}`)) amazonTagOk++;
+    if (new URL(href).searchParams.get("tag") === CLOSED_AMAZON_TAG) amazonClosedTagCount++;
     if (target !== "_blank") fail(`Amazon target!=_blank: ${href}`);
-    if (!rel.includes("noopener") || !rel.includes("noreferrer") || !rel.includes("sponsored"))
+    if (!rel.includes("noopener") || !rel.includes("noreferrer") || (new URL(href).searchParams.has("tag") && !rel.includes("sponsored")))
       fail(`Amazon rel 不正: ${href} → "${rel}"`);
   }
-  row.amazonTagOk = amazonTagOk;
+  row.amazonClosedTagCount = amazonClosedTagCount;
   if (row.amazonLinks > 0) {
-    if (amazonTagOk === row.amazonLinks) pass(`Amazon tag 含有 ${amazonTagOk}/${row.amazonLinks}`);
-    else fail(`Amazon tag 不足 ${amazonTagOk}/${row.amazonLinks}: ${exam}`);
+    if (amazonClosedTagCount === 0) pass(`Amazon closed tag absent (${row.amazonLinks} product links)`);
+    else fail(`Closed Amazon tag present ${amazonClosedTagCount}/${row.amazonLinks}: ${exam}`);
   }
 
   // Rakuten links
@@ -234,7 +234,7 @@ async function verifyMobile(browser, exam) {
   );
   console.log("─".repeat(75));
   for (const r of results.pages) {
-    const tagRate = r.amazonLinks > 0 ? `${r.amazonTagOk}/${r.amazonLinks}` : "—";
+    const tagRate = r.amazonLinks > 0 ? `${r.amazonClosedTagCount}/${r.amazonLinks}` : "—";
     const idRate = r.rakutenLinks > 0 ? `${r.rakutenIdOk}/${r.rakutenLinks}` : "—";
     const seo = [r.title, r.metaDesc, r.canonical].filter(Boolean).length + "/3";
     console.log(

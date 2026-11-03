@@ -1,0 +1,58 @@
+{
+  "reviewModel": "claude-opus-5-5",
+  "requestedModel": "claude-opus-5-5",
+  "canonicalModel": "claude-opus-5-5",
+  "provider": "firstParty",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 1958,
+      "cacheReadInputTokens": 0,
+      "cacheCreationInputTokens": 146907,
+      "webSearchRequests": 0,
+      "costUSD": 1.2144240000000002,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 1298,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "paperId": "emkohyo-EM20251805",
+  "ids": [
+    "emkohyo-EM20251805-q20"
+  ],
+  "figureSha256": {
+    "emkohyo-EM20251805-q20": {}
+  },
+  "officialRowImageSha256": {
+    "emkohyo-EM20251805-q20": {
+      "/exam-library/emkohyo-EM20251805/q20-p11-1.webp": "d803ae721a26e043a8f7b0366492468bde66fb31c851c3b19863275d933baba6"
+    }
+  },
+  "officialPageImageSha256": {},
+  "governmentSourceImageSha256": {},
+  "candidateSha256": {
+    "emkohyo-EM20251805-q20": "2b784bd522556b3e6b4467b1527a888cacdfb9441eacb75064ed5bc986ea4c56"
+  },
+  "sourcePackPath": "docs/evidence/emkohyo-choice-sources/emkohyo-EM20251805-q20-20.json",
+  "sourcePackSha256": "e72dd15ee6accf08f2046eae9176e5b1d883d061fbf8e7a9c7a1f1dee7e14e1d",
+  "assessment": {
+    "emkohyo-EM20251805-q20": {
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "reasonIssues": [
+        "肢4の解説は、環境省付表4のチウラム標準原液の保存期間を『90日』、付表5のチオベンカルブ標準原液を『180日を限度』と書いているが、保存条件を省いている。出典ではどちらも『調製後、直ちに冷凍保存する』ことが前提の期間である。直前の肢3が『冷暗所に保管』を扱っているので、このままでは冷暗所や常温で90日・180日もつと読まれるおそれがある。『冷凍保存で90日』『冷凍保存で180日』のように、温度条件を明記すべきである。"
+      ],
+      "sourceIssues": [
+        "根拠に使った政府資料（厚生労働省の室内空気測定法、環境省の水質関係の公定法・調査マニュアル、農林水産消費安全技術センター（FAMIC）の肥料分析法）は、どれも作業環境測定そのものを定めた資料ではない。一般的な化学分析の手順を例として示しているにとどまる。器具の使い分け、標準原液の保存、検量線の範囲という各記述は、これらの資料で直接確認できる。ただし解説文では『作業環境測定でも同様』とは断定せず、他分野の公定法の例であることが分かる書き方にとどめるのが望ましい。",
+        "https://www.env.go.jp/hourei/05/000106.html の表題『水質汚濁に係る環境基準改正の施行通知』が、実際のページ内容と一致するかを証拠データでは確認できない。証拠として抜き出された部分は、ホルムアルデヒドの測定手順（メスピペットで正確に採る操作）である。"
+      ],
+      "needsExternalCheck": [
+        "env.go.jp/hourei/05/000106.html の正式な表題（出典リストの表題が正確か）"
+      ]
+    }
+  }
+}

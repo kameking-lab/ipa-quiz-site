@@ -1,0 +1,67 @@
+{
+  "runnerVersion": 2,
+  "stage": "generation",
+  "scope": [
+    11,
+    12,
+    13,
+    14,
+    15
+  ],
+  "executor": "root fixed-command invocation",
+  "sourceAuthor": "pipe_limited_author_b",
+  "requestedModel": "claude-opus-5-5",
+  "authReceiptPath": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\qualification-expansion-20261007\\ROOT-EXISTING-FIRSTPARTY-CLI-AUTH-STATUS-20261008.json",
+  "authReceiptSha256": "75ec57b30632942af0339bd8d887e07ec4fe758a04afc36627482e0bd8978093",
+  "publicAcceptance": false,
+  "automaticResendAllowed": false,
+  "authCategories": {
+    "loggedIn": true,
+    "authMethod": "claude.ai",
+    "apiProvider": "firstParty",
+    "exitCode": 0
+  },
+  "actualInitModel": "claude-opus-5-5",
+  "actualModelUsageKeys": [
+    "claude-opus-5-5"
+  ],
+  "actualExactModelMatches": true,
+  "rawSha256": "e868a84025871bf970cf710c577e96e5f3e4fc1c01d5ad8bb7c9d3a844600f95",
+  "requestSha256": "d40e0ebcf0b6c162045212616607e7da23ce2c3bf1aaf66df18fb81af0c9d7fd",
+  "sourceHandoffSha256": "b38e00aace1ef7d0b9e2044bb72477f0b85f4b94aba448b52d358e93535b68a0",
+  "exitCode": 0,
+  "resultIsError": false,
+  "resultUsage": {
+    "input_tokens": 2,
+    "cache_creation_input_tokens": 111361,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 5958,
+    "output_tokens_details": {
+      "thinking_tokens": 1147
+    },
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 111361,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "not_available",
+    "iterations": [
+      {
+        "input_tokens": 2,
+        "output_tokens": 5958,
+        "cache_read_input_tokens": 0,
+        "cache_creation_input_tokens": 111361,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 111361
+        },
+        "type": "message"
+      }
+    ],
+    "speed": "standard"
+  }
+}

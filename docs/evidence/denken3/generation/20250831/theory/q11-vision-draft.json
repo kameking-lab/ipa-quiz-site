@@ -1,0 +1,402 @@
+{
+  "questionNumber": 11,
+  "sharedContext": null,
+  "units": [
+    {
+      "part": null,
+      "question": "問11 次の文章は，図1及び図2に示す原理図を用いてホール素子の動作原理について述べたものである。\n\n図1に示すように，p形半導体に直流電流 I [A] を流し，半導体の表面に対して垂直に下から上向きに磁束密度 B [T] の平等磁界を半導体に加えると，半導体内の正孔は進路を曲げられ，電極①には［(ア)］電荷，電極②には［(イ)］電荷が分布し，半導体の内部に電界が生じる。また，図2のn形半導体の場合は，電界の向きはp形半導体の場合と［(ウ)］である。この電界により，電極①-②間にホール電圧 V_H [V] が発生し，それは直流電流 I [A] にほぼ［(エ)］する。\n\n上記の記述中の空白箇所(ア)～(エ)に当てはまる組合せとして，正しいものを次の(1)～(5)のうちから一つ選べ。",
+      "choices": {
+        "1": "(ア) 負　(イ) 正　(ウ) 同じ　(エ) 反比例",
+        "2": "(ア) 正　(イ) 負　(ウ) 同じ　(エ) 反比例",
+        "3": "(ア) 負　(イ) 正　(ウ) 同じ　(エ) 比例",
+        "4": "(ア) 正　(イ) 負　(ウ) 反対　(エ) 比例",
+        "5": "(ア) 負　(イ) 正　(ウ) 反対　(エ) 比例"
+      },
+      "officialAnswer": "4",
+      "explanation": "【座標の設定】電極①から電極②へ向かう向き（図の左→右）を +x とする。板の奥行き方向（奥向き）を +y、鉛直上向きを +z とする。図では電流 I が板の奥側の辺から入り、手前側の辺へ抜けるように描かれている。したがって電流の向きは −y、磁束密度 B の向きは +z（下から上向き）である。以下、素電荷を e とする。\n\n【p形半導体（図1）】多数キャリアは正孔（電荷 +e）で、電流と同じ −y 向きに速さ v で動く。ローレンツ力は次のとおり。\nF = (+e)·v × B = e·v·B·{(−ŷ) × ẑ} = −e·v·B·x̂\n力は −x 向き、すなわち電極①側へ向く。正孔は電極①側に集まり、電極①には正電荷、反対側の電極②には負電荷が分布する。よって (ア) 正、(イ) 負。電界は電極①→電極②の向き（+x）に生じる。\n\n【n形半導体（図2）】多数キャリアは電子（電荷 −e）で、電流と逆の +y 向きに動く。ローレンツ力は次のとおり。\nF = (−e)·v × B = −e·v·B·(ŷ × ẑ) = −e·v·B·x̂\nこちらも力は −x 向き（電極①側）である。電子が電極①側に集まるので、電極①は負、電極②は正となる。電界は電極②→電極①の向き（−x）に生じる。キャリアの曲がる向きは p形と同じだが、電荷の符号が逆なので、電界の向きは p形の場合と反対になる。よって (ウ) 反対。\n\n【ホール電圧の大きさ】定常状態では、ホール電界による力とローレンツ力がつり合う。p形の正孔密度を p、n形の電子密度を n、磁界方向の板の厚さを d とする。ホール電圧の大きさは次式で表される。\np形：V_H = I·B / (e·p·d)\nn形：V_H = I·B / (e·n·d)\nいずれも V_H は直流電流 I に比例する（磁束密度 B にも比例する）。よって (エ) 比例。\n\n以上より、(ア) 正、(イ) 負、(ウ) 反対、(エ) 比例 の組合せである (4) が正しい。",
+      "choiceExplanations": {
+        "1": "誤り。p形では正孔が電極①側へ曲げられるので、電極①は正、電極②は負である。(ア)負・(イ)正はこれと逆。n形ではキャリアの電荷の符号が逆になるため、電界の向きは「反対」であり、(ウ)同じも誤り。p形のホール電圧は V_H = I·B/(e·p·d)（p は正孔密度）で I に比例するので、(エ)反比例も誤り。",
+        "2": "誤り。(ア)正・(イ)負は正しい。しかしn形では、電子が正孔と同じ電極①側へ曲げられ、電極①が負になる。そのため電界の向きはp形と「反対」であり、(ウ)同じは誤り。また V_H は I に比例するので、(エ)反比例も誤り。",
+        "3": "誤り。(エ)比例は正しい。しかしp形では正孔が電極①側に集まり、電極①が正・電極②が負となるので、(ア)負・(イ)正は逆。n形では電界の向きがp形と反対になるので、(ウ)同じも誤り。",
+        "4": "正しい。p形では正孔がローレンツ力で電極①側へ寄り、電極①が正・電極②が負になる。n形では電子が同じ電極①側へ寄るため極性が逆転し、電界の向きはp形と反対になる。ホール電圧の大きさは p形で V_H = I·B/(e·p·d)（p は正孔密度）、n形で V_H = I·B/(e·n·d)（n は電子密度）で、いずれも電流 I に比例する。",
+        "5": "誤り。(ウ)反対・(エ)比例は正しい。しかしp形では正孔（正電荷）が電極①側へ集まるので、電極①は正、電極②は負である。(ア)負・(イ)正はこれと逆で、n形の場合の電荷分布にあたる。"
+      },
+      "figureDescription": "図の範囲は、上端のラベル行（「p形半導体」「n形半導体」「B [T]」「I [A]」）から、各図の下のキャプション「図1」「図2」までである。問題本文と選択肢表は含まない。左に図1、右に図2が並ぶ。\n\n両図とも、水平に置いた薄い直方体の半導体板を斜め上方から見た斜投影図である。\n・電極：板の左側の斜めの側面に電極①、右側の斜めの側面に電極②が付いている（いずれも網掛けの帯）。電極①からは左へ、電極②からは右へ、端子（小円）付きの引出し線が出ている。板の左側に「電極①」、右側に「電極②」のラベルがある。\n・磁束密度 B：白抜きの太い矢印が板の中央を貫き、板の上方で上向きに描かれている。その先端の上に「B [T]」のラベルがある。板の下側にも同じ磁束を示す平行な2本線が続く。これらは、磁束密度が板面に垂直に下から上向きであることを示す。\n・電流 I：板の奥側の辺の右寄りに、右上から奥側の辺へ入る矢印があり、矢じりは板側を向いている。その右に「I [A]」のラベルがある。板の手前側の辺からは線が手前下方へ延びている。これらは、電流が奥側から手前側へ流れる様子を示す。\n・半導体の種類：図1では左上の「p形半導体」、図2では左上の「n形半導体」のラベルから、それぞれ板の上面を指す矢印付きの引出し線が引かれている。\n\n両図の形状、B・I の向き、電極の配置は同一である。電極の電荷の極性や電界の向きは図中に描かれていない。本問では、電流の向き・磁界の向き・電極①②の左右位置の関係からローレンツ力の向きを判断する必要があるため、図の配置の読み取りが不可欠である。",
+      "officialReferenceUrls": [],
+      "uncertainty": "なし",
+      "needsReview": true,
+      "sourceQuestionPdfUrl": "https://www.shiken.or.jp/chief/upload/20250831_ch_third_q01.pdf",
+      "sourceAnswerPdfUrl": "https://www.shiken.or.jp/chief/upload/20250831_ch_third_a01.pdf",
+      "reviewedFromPage": [
+        14
+      ]
+    }
+  ],
+  "draftModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 3723,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 9309,
+      "webSearchRequests": 0,
+      "costUSD": 0.1491958,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 1198,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "83642003ab56784ecffb5634d941d683c43e018887a5e23a5ae048689acca5bc",
+  "inputRequestSha256": "3b4c8549e53cdd9ab9e70df6beaa0c6696523f3433b2f36973c903bf5552a824",
+  "sourceQuestionPdfSha256": "11a75ffd5dd2b5309ad75370bb963c4fda9e12a812174cfa2c2237383c3a964d",
+  "sourceAnswerPdfSha256": "76fd3715ed487d19a56b387fb402de20ee09474e9fa55b0413f9037b96af06c9",
+  "sourcePageImageSha256": {
+    "data/raw_pdfs/denken3/review/20250831/theory/p14.png": "3fbef9d46b0019437ea557a9145515aa813aeb8c9a5db326b2b7f4a3dff2a22c"
+  },
+  "revisionHistory": [
+    {
+      "version": 1,
+      "model": "claude-opus-5-5",
+      "resolvedModel": "claude-opus-5-5",
+      "modelUsage": {
+        "claude-opus-5-5": {
+          "inputTokens": 2,
+          "outputTokens": 4703,
+          "cacheReadInputTokens": 1279,
+          "cacheCreationInputTokens": 12991,
+          "webSearchRequests": 0,
+          "costUSD": 0.19825179999999998,
+          "contextWindow": 1000000,
+          "maxOutputTokens": 128000,
+          "thinkingTokens": 2101,
+          "canonicalModel": "claude-opus-5-5",
+          "provider": "firstParty",
+          "costBasis": "list"
+        }
+      },
+      "rawResponseSha256": "d297d4aa442cc6d2bbe8efbdd7762d71af4774af2f30ffca18e167aec8bca64c",
+      "inputRequestSha256": "b3c3a24adf40c59ae42eea5032e661b24fa3054c591e94d1602b1ee38a88519d",
+      "previousDraftSha256": "a4b969c1b11d0415e142f3df6f0cb8a3764ada9dc35d1c332ef696beb0c66358",
+      "previousDraft": "data/raw_pdfs/denken3/review/20250831/theory/archive/q11-vision-draft-v1.json",
+      "answeredReviewSha256": "f0efbd13ea027199383b158a349676dfa338759bcb71d5b17d6923856483358d",
+      "answeredReview": "data/raw_pdfs/denken3/review/20250831/theory/archive/q11-opus-review-v1.json",
+      "answeredStrictReceipt": null,
+      "answeredStrictReceiptSha256": null,
+      "figureSha256": {
+        "20250831-theory-q11-fig1": "eec18a0814525f8c38e58a734ffa23e04b2b4db47d33c6b53d9cc44b643fa41c"
+      },
+      "referenceHashes": {},
+      "operatorNote": ""
+    },
+    {
+      "version": 2,
+      "model": "claude-opus-5-5",
+      "resolvedModel": "claude-opus-5-5",
+      "modelUsage": {
+        "claude-opus-5-5": {
+          "inputTokens": 2,
+          "outputTokens": 4861,
+          "cacheReadInputTokens": 1279,
+          "cacheCreationInputTokens": 13009,
+          "webSearchRequests": 0,
+          "costUSD": 0.2015558,
+          "contextWindow": 1000000,
+          "maxOutputTokens": 128000,
+          "thinkingTokens": 2292,
+          "canonicalModel": "claude-opus-5-5",
+          "provider": "firstParty",
+          "costBasis": "list"
+        }
+      },
+      "rawResponseSha256": "fa2a497fb4d488990ee8fc7b8d9349438557821d1220cf541d294eadddf67f82",
+      "inputRequestSha256": "f2bcabc33f30bb297c17aefba058c3b97285970bb07ebaf28b4a4b967bdc9987",
+      "previousDraftSha256": "b6a5183e9555ae4f51757ca513cbd8ea3ba83543480274a6ca255db6e63f6ed0",
+      "previousDraft": "data/raw_pdfs/denken3/review/20250831/theory/archive/q11-vision-draft-v2.json",
+      "answeredReviewSha256": "61dbfaa73d9772a091baaf543f85d7b353a703de7454088f05f7d09d973ccfc9",
+      "answeredReview": "data/raw_pdfs/denken3/review/20250831/theory/archive/q11-opus-review-v2.json",
+      "answeredStrictReceipt": null,
+      "answeredStrictReceiptSha256": null,
+      "figureSha256": {
+        "20250831-theory-q11-fig1": "eec18a0814525f8c38e58a734ffa23e04b2b4db47d33c6b53d9cc44b643fa41c"
+      },
+      "referenceHashes": {},
+      "operatorNote": ""
+    },
+    {
+      "version": 3,
+      "model": "claude-opus-5-5",
+      "resolvedModel": "claude-opus-5-5",
+      "modelUsage": {
+        "claude-opus-5-5": {
+          "inputTokens": 2,
+          "outputTokens": 4221,
+          "cacheReadInputTokens": 1279,
+          "cacheCreationInputTokens": 13003,
+          "webSearchRequests": 0,
+          "costUSD": 0.18870779999999998,
+          "contextWindow": 1000000,
+          "maxOutputTokens": 128000,
+          "thinkingTokens": 1629,
+          "canonicalModel": "claude-opus-5-5",
+          "provider": "firstParty",
+          "costBasis": "list"
+        }
+      },
+      "rawResponseSha256": "a29e8639d4f9aade30fd45add26e2904ec2a4ede145c2219f8a0e45aecf2ebf1",
+      "inputRequestSha256": "5418e70de22f27cc308052a7a16049faec6b91e030064bf4ff7157d77bde10d1",
+      "previousDraftSha256": "f7ee49006e63b5368e9426757d37fc7f42ca16629083f53648eb42c7fdb4665d",
+      "previousDraft": "data/raw_pdfs/denken3/review/20250831/theory/archive/q11-vision-draft-v3.json",
+      "answeredReviewSha256": "6891254cf66d6774a28d5071f6353aabf38eac04000decdd0664c6a9924241e6",
+      "answeredReview": "data/raw_pdfs/denken3/review/20250831/theory/archive/q11-opus-review-v3.json",
+      "answeredStrictReceipt": null,
+      "answeredStrictReceiptSha256": null,
+      "figureSha256": {
+        "20250831-theory-q11-fig1": "eec18a0814525f8c38e58a734ffa23e04b2b4db47d33c6b53d9cc44b643fa41c"
+      },
+      "referenceHashes": {},
+      "operatorNote": ""
+    },
+    {
+      "version": 4,
+      "model": "claude-opus-5-5",
+      "resolvedModel": "claude-opus-5-5",
+      "modelUsage": {
+        "claude-opus-5-5": {
+          "inputTokens": 2,
+          "outputTokens": 5118,
+          "cacheReadInputTokens": 1279,
+          "cacheCreationInputTokens": 12995,
+          "webSearchRequests": 0,
+          "costUSD": 0.20658379999999998,
+          "contextWindow": 1000000,
+          "maxOutputTokens": 128000,
+          "thinkingTokens": 2520,
+          "canonicalModel": "claude-opus-5-5",
+          "provider": "firstParty",
+          "costBasis": "list"
+        }
+      },
+      "rawResponseSha256": "391897b9675e0377827a69b37202e8d7fe38c980ff632aa33f1d15321b0a8cd3",
+      "inputRequestSha256": "f6d2151d1c7131456bcdd343b1bc8ffe047647d41c4cb1e2f618dea539feb8f1",
+      "previousDraftSha256": "15c4d2c9c43eed2c5a880b1bf799ece4f08dded6b56d4c54de6f54096c0b70ae",
+      "previousDraft": "data/raw_pdfs/denken3/review/20250831/theory/archive/q11-vision-draft-v4.json",
+      "answeredReviewSha256": "7c98a212d94cde6fe98a630f9105effc9b7bdfe8201d38e18a005abffba02d49",
+      "answeredReview": "data/raw_pdfs/denken3/review/20250831/theory/archive/q11-opus-review-v4.json",
+      "answeredStrictReceipt": null,
+      "answeredStrictReceiptSha256": null,
+      "figureSha256": {
+        "20250831-theory-q11-fig1": "eec18a0814525f8c38e58a734ffa23e04b2b4db47d33c6b53d9cc44b643fa41c"
+      },
+      "referenceHashes": {},
+      "operatorNote": ""
+    },
+    {
+      "version": 5,
+      "model": "claude-opus-5-5",
+      "resolvedModel": "claude-opus-5-5",
+      "modelUsage": {
+        "claude-opus-5-5": {
+          "inputTokens": 2,
+          "outputTokens": 5002,
+          "cacheReadInputTokens": 1279,
+          "cacheCreationInputTokens": 13233,
+          "webSearchRequests": 0,
+          "costUSD": 0.2061678,
+          "contextWindow": 1000000,
+          "maxOutputTokens": 128000,
+          "thinkingTokens": 2345,
+          "canonicalModel": "claude-opus-5-5",
+          "provider": "firstParty",
+          "costBasis": "list"
+        }
+      },
+      "rawResponseSha256": "40d9ab0f4097b87b44b8c6e381079a78b28e2a0dafeaffabf1190dbd1f322120",
+      "inputRequestSha256": "c75196c88bef3ae742754a08b0f7103b20ff831edb67d54c8a9270dfe0ab5e3f",
+      "previousDraftSha256": "6aec08fff84f4794b7aa592951366e35e392fa9e8848c5651701c967c46b5826",
+      "previousDraft": "data/raw_pdfs/denken3/review/20250831/theory/archive/q11-vision-draft-v5.json",
+      "answeredReviewSha256": "5ae492408a2b72625128f400d75198fa247ddaaa83ab0328cb1822b4e648aab8",
+      "answeredReview": "data/raw_pdfs/denken3/review/20250831/theory/archive/q11-opus-review-v5.json",
+      "answeredStrictReceipt": null,
+      "answeredStrictReceiptSha256": null,
+      "figureSha256": {
+        "20250831-theory-q11-fig1": "eec18a0814525f8c38e58a734ffa23e04b2b4db47d33c6b53d9cc44b643fa41c"
+      },
+      "referenceHashes": {},
+      "operatorNote": ""
+    },
+    {
+      "version": 6,
+      "model": "claude-opus-5-5",
+      "resolvedModel": "claude-opus-5-5",
+      "modelUsage": {
+        "claude-opus-5-5": {
+          "inputTokens": 2,
+          "outputTokens": 4923,
+          "cacheReadInputTokens": 1279,
+          "cacheCreationInputTokens": 13151,
+          "webSearchRequests": 0,
+          "costUSD": 0.2039318,
+          "contextWindow": 1000000,
+          "maxOutputTokens": 128000,
+          "thinkingTokens": 2317,
+          "canonicalModel": "claude-opus-5-5",
+          "provider": "firstParty",
+          "costBasis": "list"
+        }
+      },
+      "rawResponseSha256": "2b23ce31c2f3da3fb45690a5a0724d08d5ff82157b4b53017512fabb8a0d932c",
+      "inputRequestSha256": "8970e33ab1d60f3035dde3eb33fb591f20829de94ca2bb5dcafd0784bbcb9882",
+      "previousDraftSha256": "949094ca36f035e233d0414e0cf42611b1a96d5032156b797224c49aabb79980",
+      "previousDraft": "data/raw_pdfs/denken3/review/20250831/theory/archive/q11-vision-draft-v6.json",
+      "answeredReviewSha256": "c5380037766c589793a9bec91cc049a50c31ba35cc56dc97f04d10fe8c8fb435",
+      "answeredReview": "data/raw_pdfs/denken3/review/20250831/theory/archive/q11-opus-review-v6.json",
+      "answeredStrictReceipt": null,
+      "answeredStrictReceiptSha256": null,
+      "figureSha256": {
+        "20250831-theory-q11-fig1": "eec18a0814525f8c38e58a734ffa23e04b2b4db47d33c6b53d9cc44b643fa41c"
+      },
+      "referenceHashes": {},
+      "operatorNote": ""
+    },
+    {
+      "version": 7,
+      "model": "claude-opus-5-5",
+      "resolvedModel": "claude-opus-5-5",
+      "modelUsage": {
+        "claude-opus-5-5": {
+          "inputTokens": 2,
+          "outputTokens": 4564,
+          "cacheReadInputTokens": 1279,
+          "cacheCreationInputTokens": 13066,
+          "webSearchRequests": 0,
+          "costUSD": 0.1960718,
+          "contextWindow": 1000000,
+          "maxOutputTokens": 128000,
+          "thinkingTokens": 1964,
+          "canonicalModel": "claude-opus-5-5",
+          "provider": "firstParty",
+          "costBasis": "list"
+        }
+      },
+      "rawResponseSha256": "e4eb749f7c436472f9813d4a3358f404194127a50a8144ee1518caefee912d52",
+      "inputRequestSha256": "985909f7e8d7b0ea7a79357b34765e28bda493f3b801c7a7d770b2108cd8943e",
+      "previousDraftSha256": "78dd121fc2c5fb16dae7543ff3ee5d8a9537bfd7942398de320c727e1638bfa9",
+      "previousDraft": "data/raw_pdfs/denken3/review/20250831/theory/archive/q11-vision-draft-v7.json",
+      "answeredReviewSha256": "17fc0db594e121636b766f64b894b529e7515ed5a96b23759462287281c1ab83",
+      "answeredReview": "data/raw_pdfs/denken3/review/20250831/theory/archive/q11-opus-review-v7.json",
+      "answeredStrictReceipt": null,
+      "answeredStrictReceiptSha256": null,
+      "figureSha256": {
+        "20250831-theory-q11-fig1": "eec18a0814525f8c38e58a734ffa23e04b2b4db47d33c6b53d9cc44b643fa41c"
+      },
+      "referenceHashes": {},
+      "operatorNote": ""
+    },
+    {
+      "version": 8,
+      "model": "claude-opus-5-5",
+      "resolvedModel": "claude-opus-5-5",
+      "modelUsage": {
+        "claude-opus-5-5": {
+          "inputTokens": 2,
+          "outputTokens": 4138,
+          "cacheReadInputTokens": 1279,
+          "cacheCreationInputTokens": 13220,
+          "webSearchRequests": 0,
+          "costUSD": 0.1887838,
+          "contextWindow": 1000000,
+          "maxOutputTokens": 128000,
+          "thinkingTokens": 1388,
+          "canonicalModel": "claude-opus-5-5",
+          "provider": "firstParty",
+          "costBasis": "list"
+        }
+      },
+      "rawResponseSha256": "fd22a5842120527ffc1625a8d70d245b59ccf321a2cdaee132f9385e6e8f6fe5",
+      "inputRequestSha256": "976a23cfcfe8195dffe4762a89e799b8888dcaba5647b12020189dcf60cc6023",
+      "previousDraftSha256": "4c326214f7d91ca43619ee3748625dc377e99eb8b73436a15765e3c7bdcc2cf8",
+      "previousDraft": "data/raw_pdfs/denken3/review/20250831/theory/archive/q11-vision-draft-v8.json",
+      "answeredReviewSha256": "ccc213eb32ace7750bcf4251869f97fdfbb22bc6979838594faefefbb995caa4",
+      "answeredReview": "data/raw_pdfs/denken3/review/20250831/theory/archive/q11-opus-review-v8.json",
+      "answeredStrictReceipt": null,
+      "answeredStrictReceiptSha256": null,
+      "figureSha256": {
+        "20250831-theory-q11-fig1": "eec18a0814525f8c38e58a734ffa23e04b2b4db47d33c6b53d9cc44b643fa41c"
+      },
+      "referenceHashes": {},
+      "operatorNote": ""
+    },
+    {
+      "version": 9,
+      "model": "claude-opus-5-5",
+      "resolvedModel": "claude-opus-5-5",
+      "modelUsage": {
+        "claude-opus-5-5": {
+          "inputTokens": 2,
+          "outputTokens": 4289,
+          "cacheReadInputTokens": 1279,
+          "cacheCreationInputTokens": 13254,
+          "webSearchRequests": 0,
+          "costUSD": 0.19207580000000002,
+          "contextWindow": 1000000,
+          "maxOutputTokens": 128000,
+          "thinkingTokens": 1593,
+          "canonicalModel": "claude-opus-5-5",
+          "provider": "firstParty",
+          "costBasis": "list"
+        }
+      },
+      "rawResponseSha256": "7c5f667236c6743868eaa949fcd19faa8e354f9872d6f5d91ffafb06049d02b2",
+      "inputRequestSha256": "bd542af14cdfd133159dee8db9c4a6e2e85326b8a7b55ae76e2fa10f17a753e7",
+      "previousDraftSha256": "0b428d433402b2b2ef17d73069c4e4a29f8606a9309e4aba071fe0a8ad8b3253",
+      "previousDraft": "data/raw_pdfs/denken3/review/20250831/theory/archive/q11-vision-draft-v9.json",
+      "answeredReviewSha256": "a4904d3e6dc95ea79e6bdc369e3a18cdd34955c859dda07e6cccfe365d2026d0",
+      "answeredReview": "data/raw_pdfs/denken3/review/20250831/theory/archive/q11-opus-review-v9.json",
+      "answeredStrictReceipt": null,
+      "answeredStrictReceiptSha256": null,
+      "figureSha256": {
+        "20250831-theory-q11-fig1": "eec18a0814525f8c38e58a734ffa23e04b2b4db47d33c6b53d9cc44b643fa41c"
+      },
+      "referenceHashes": {},
+      "operatorNote": ""
+    },
+    {
+      "version": 10,
+      "model": "claude-opus-5-5",
+      "resolvedModel": "claude-opus-5-5",
+      "modelUsage": {
+        "claude-opus-5-5": {
+          "inputTokens": 2,
+          "outputTokens": 3591,
+          "cacheReadInputTokens": 1279,
+          "cacheCreationInputTokens": 14715,
+          "webSearchRequests": 0,
+          "costUSD": 0.1898038,
+          "contextWindow": 1000000,
+          "maxOutputTokens": 128000,
+          "thinkingTokens": 813,
+          "canonicalModel": "claude-opus-5-5",
+          "provider": "firstParty",
+          "costBasis": "list"
+        }
+      },
+      "rawResponseSha256": "6605d41160840f3a705fb7a2c38fdede80ac0bc2c6b742377d69dde38365e6b0",
+      "inputRequestSha256": "8e56953446fcb10cd109888d0c976cc15c74019b4d553e7a511b770f3a814252",
+      "previousDraftSha256": "6347e2c9aac74e9e4894d9c29140dd401dec0c246997fc4062908c8cdb465321",
+      "previousDraft": "data/raw_pdfs/denken3/review/20250831/theory/archive/q11-vision-draft-v10.json",
+      "answeredReviewSha256": "0b0bc7cc1ac36182975eedd2852cabaf014850b811dfea086666957eae4ea71f",
+      "answeredReview": "data/raw_pdfs/denken3/review/20250831/theory/archive/q11-opus-review-v10.json",
+      "answeredStrictReceipt": "docs/evidence/denken3/strict/20250831-theory-s1-q11-opus.json",
+      "answeredStrictReceiptSha256": "32037d64b50d3933cbfa1284bdc1fc3bca24f8f64786dcf39132ca8c27a7be88",
+      "figureSha256": {
+        "20250831-theory-q11-fig1": "0aad65645a4f0536b0bf5c115dc91bf432ffe9e3fee34a281ea86844641846a4"
+      },
+      "referenceHashes": {},
+      "operatorNote": ""
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "at": "2026-10-07T12:46:30.7723077Z",
+  "reviewer": "release_gate_astra",
+  "reviewerModel": "GPT-6-Astra",
+  "apiModelReceipt": null,
+  "scope": "EEC FAQ277 use terms for published denken1 educational questions; integrated commit not frozen",
+  "officialUrl": "https://www.shiken.or.jp/shiken/faq/faq08/000082.html",
+  "freshOfficialPageRead": true,
+  "verdict": "PASS_RIGHTS_BASIS_WITH_ATTRIBUTION_AND_EDUCATIONAL_USE_CONDITIONS",
+  "findings": [
+    "Official permission paragraph states no permission or usage fee is needed for published past questions",
+    "Educational question-book/text use consistent with exam purpose is allowed and source/modifications must be identified",
+    "FAQ does not distinguish commercial from noncommercial publishers or impose a medium-only limitation; applying this to an educational web exercise is a reasoned interpretation, not an explicit statement naming this site",
+    "Email usage-information report is requested separately for reference; no explicit requirement to obtain permission or receive a reply before use appears",
+    "Absence of a sent-message receipt is not evidence of a missing necessary permission; do not mark notice as sent"
+  ],
+  "conditions": [
+    "Use only published official questions for education consistent with exam purpose",
+    "Show exact official source and disclose split into five blanks, mathematical typography normalization and choice-label remapping",
+    "Keep independent explanations distinguishable from official answers; no claim of official endorsement",
+    "Preserve noticeRequested=true and noticeSentReceipt=null; any external notification requires separate explicit sending authorization and accurate sender details"
+  ],
+  "noticeRequested": true,
+  "noticeSentReceipt": null,
+  "providerReplyRequiredBeforeUse": false,
+  "strictOpusRequirementFound": null,
+  "newOpusRequirementImposed": false,
+  "integratedReleaseVerdict": "PENDING_EXACT_COMMIT",
+  "codeEdits": 0,
+  "externalMessagesSent": 0
+}

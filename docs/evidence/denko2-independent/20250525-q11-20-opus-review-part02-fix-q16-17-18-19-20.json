@@ -1,0 +1,84 @@
+{
+  "inputHashes": {
+    "draftSha256": "a720b361bb0d5d06836a8e1394a61343ef05d7b2d723c084674b459ba389c6a0",
+    "candidateSha256": {
+      "16": "d4a916acff5ef4822b72dfbe79e793940f39b5c9a1d2986754a7ce8ecad6e8a5",
+      "17": "600baff5c71b55d424e23f3ce63e9d292fbd75e13da87e1d4a2fdcb835162687",
+      "18": "c629992f5e661f400bed8673b47240ad8537a5a4faf833a53a9eedd6d7a873ee",
+      "19": "bfe166a009a723ca9422fcc6239b2febf31099e6ac0cdfbcf50474e6913cdac2",
+      "20": "e8620a467ace650f31d998443a3b743ab2757275fb49622a6466624d2a87f108"
+    },
+    "rowSha256": {
+      "16": "b418ac16361d499b8c4e3c3e0ecb192497a044ba0214b21019fc49a56f60388a",
+      "17": "8b13b572d6b573231d85028dda06409b8a4fa6b978bcfab6e929a7271e123c49",
+      "18": "3faad7bb436f40ee03f388551bc65e31a21947027f8b7249f24d454ed41cccff",
+      "19": "543a910c1b9c22166fb6509c644d3e0a3d56f8317c34e13f99b9cf61fba8c5eb",
+      "20": "441a83294562dd83d7bac1174358b56ccd0016ad84fd4a9c024b94275095988e"
+    },
+    "detailFigureSha256": {
+      "public/images/denko2/2025-first/q16.png": "6e0d2229ff6be21d8651fc9269e28eff698ca595900d7d8c659c785a933316ef",
+      "public/images/denko2/2025-first/q17.png": "08b29bcaa5a06c3c51f8a83d53b0076045cd69916095f8390f013b6ebb81e5e8",
+      "public/images/denko2/2025-first/q18.png": "f88ff8779d944c178915bf36456d368b50788ed1d755101c8fa052658b6a7a86"
+    },
+    "sourcePackSha256": {
+      "19": "596a7346f3e5cfb68a31339c2b10e208ade3dd280a19bcc3fbfbadf4d6003446",
+      "20": "d08bdeea3f744bf29b730b5d8cc836b938f175f561b71c2ab8b219f586d989c8"
+    },
+    "sourceFigureSha256": {}
+  },
+  "reviewModel": "claude-opus-5-5",
+  "assessment": [
+    {
+      "number": 16,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "explanationIssues": [
+        "本文解説は「右端の開口内部は写真に写っていないため、内部形状までは断定しない」としている。一方、肢別理由のロは「金属管を受けるねじ部…がなく」、ハは「両端が滑らかな硬質管向けの受け口」、ニは「両側とも同形の硬質管向け受け口」と、見えていない右端の内部まで言い切っている。本文と肢別理由が矛盾している。原本写真から言えるのは、外観全体が灰色の樹脂一体成形で金属部品がないことと、左右の受け口部の外形が同じことまでである。肢別理由もこの外観の根拠にそろえる必要がある。",
+        "ロの肢別理由「ねじ部…がなく」は内部を見ないと判定できない。外から見える根拠は、写真の部材全体が同じ灰色の樹脂で、金属製の部分がないことである。根拠をこちらに差し替える必要がある。"
+      ],
+      "figureIssues": [],
+      "lawNeedsExternalCheck": []
+    },
+    {
+      "number": 17,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "lawNeedsExternalCheck": []
+    },
+    {
+      "number": 18,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "lawNeedsExternalCheck": []
+    },
+    {
+      "number": 19,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "explanationIssues": [
+        "本文解説は、引張強さ20%以上減少禁止を絶縁電線相互の接続にそのまま当てはめている。しかし照合パックの第12条第1号イは裸電線相互等の接続の規定である。絶縁電線相互の接続にも及ぶ根拠（第12条第2号イによる第1号の準用）が解説にも照合パックにも示されていない。準用関係を明記する必要がある。"
+      ],
+      "figureIssues": [],
+      "lawNeedsExternalCheck": [
+        "電気設備の技術基準の解釈 第12条第2号イ（絶縁電線相互の接続に第1号の規定を準用する条文）の原文が一次資料照合パックに含まれていない。bの判定（引張強さ10%減少が適切）の根拠になる準用関係は、原文で確認できていない。"
+      ]
+    },
+    {
+      "number": 20,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "lawNeedsExternalCheck": []
+    }
+  ]
+}

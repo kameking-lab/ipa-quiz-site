@@ -1,0 +1,82 @@
+{
+  "schemaVersion": 1,
+  "reviewModel": "claude-opus-5-5",
+  "inputHashes": {
+    "candidateSha256": {
+      "27": "e1f166b06034935b9dbe081e82bd1c8051df5e67140f0413aa1d0ae7e391bad4",
+      "28": "05051c3c4a1ce023af7a09aa5bf0050e7628c601dc102da310d2b7549261a5e4",
+      "29": "7250caad32d59fc73f7f6a1a3a179eefab7e179e221a16385b129bfcfe832446",
+      "31": "047efe2b3970760832f6c0d862f3ab72aad352988c833773b88dd46854ededac",
+      "32": "ca3d3c0b590259eb44c5f4968b74f5037df209356161e406844407398f8b8f29"
+    },
+    "sourceCropSha256": {
+      "27": "6baa411f7c1814ccce7e8ed1646bb4c1be4b79dab52fc98343b6206f6cd46fba",
+      "28": "c8f9ada308739b0dacedfde70f2dec9fcc7c1d46e7209aee47233c9731ebd034",
+      "29": "6068d13943df545a05548befb34e702e76d5a624ab8d6a5f9d68f0e90ba787cb",
+      "31": "b580dcd00adf46a8be8ae893fb54cda930b70a0feb12572cf4dd22c7ebf8dde3",
+      "32": "d0d51ef6fbc4b894367051e35a6757936fe0940f2ba9de3ec449368371f6f0a8"
+    }
+  },
+  "assessment": [
+    {
+      "number": 27,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [
+        "総合解説は『公式正答はロであり』を理由にしているだけで、ロがなぜ誤りかを説明していない。原図左下の動作原理記号が何の記号か（形状から見て可動鉄片形）を書き、永久磁石可動コイル形は直流専用なので『V』の下にある交流記号『～』と合わないことを、ロが誤りである理由として加える必要がある。",
+        "choiceExplanations.ロ も『ロが述べる永久磁石可動コイル形の記号と一致しない』と書いているだけで、同じ理由の繰り返しになっている。左下の記号が何か（可動鉄片形の記号）と、直流専用の方式なので交流用の表示と矛盾することを書く必要がある。"
+      ],
+      "visualIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": "公式原図と公式正答を照合した。https://www.shiken.or.jp/construction/upload/20240526_co_second_q01.pdf 問27（目盛板は0〜150、中央にVと～、左下に動作原理記号・水平記号・1.0）と https://www.shiken.or.jp/construction/upload/20240526_co_second_a01.pdf（正答ロ）。問題文・イロハニ全肢・q27.png の切出しは原図と一致している。"
+    },
+    {
+      "number": 28,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "visualIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": "電気工事士法施行規則（e-Gov API https://laws.e-gov.go.jp/api/1/lawdata/335M50000400097）第2条第2項第1号イ・ロを確認した。イは第1項第1号イ〜ヌ及びヲを引用しており、その中にニ（電線管等に電線を収める）、ヘ（電線管を曲げる）、ヌ（配電盤を造営材に取り付ける）がある。ロは接地極を地面に埋設する作業。これらは軽微な作業から除かれている。電気工事士法施行令（https://laws.e-gov.go.jp/api/1/lawdata/335CO0000000260）第1条では、第1号（600V以下の差込み接続器へのコード接続）、第3号（600V以下の電力量計の取付け）、第5号（電線を支持する柱の設置）、第6号（地中電線用の管の設置）が軽微な工事に当たる。公式正答イと一致する。"
+    },
+    {
+      "number": 29,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "visualIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": "METI『販売事業者の皆様へ』https://www.meti.go.jp/policy/consumer/seian/denan/file/06_guide/hanbai.pdf（SHA256 75a6c759…）を確認した。p.6：製造・輸入事業者は法第8条・第9条の義務を果たしたうえで法第10条の表示を付す。p.8：表示スペースがない電線・ヒューズ・配線器具等は、特定電気用品なら<PS>E、それ以外なら(PS)Eの簡易表示が使える。p.9：販売事業者は法第27条により表示を確認する義務がある。電気用品安全法（e-Gov API https://laws.e-gov.go.jp/api/1/lawdata/336AC0000000234）では、第9条・第10条と、第27条第1項（表示がない電気用品の販売禁止）・第2項（経済産業大臣の承認などの例外）を確認した。公式問題の菱形・丸形の図記号と正答ハが一致し、選択肢画像の切出し2点も原図と一致している。"
+    },
+    {
+      "number": 31,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "visualIssues": [
+        "q31-symbol.png は右端で傍記『6ⓐ～ⓕ用』の末尾『用』が枠に接して欠けている。①の引出番号も切出しに入っていないため、この画像だけでは①の位置との対応が確認できない。右側を①の番号が入るまで広げて切り出し直す必要がある。"
+      ],
+      "sourceIssues": [],
+      "verifiedEvidence": "公式原図と公式正答を照合した。https://www.shiken.or.jp/construction/upload/20240526_co_second_q01.pdf の15頁の平面図で、①の引出線は事務所右の扉脇、『分電盤へ』の矢印の元にある円内に交差線を持つ記号（傍記『6ⓐ～ⓕ用』）を指している。電灯分電盤結線図のリモコンリレー群（傍記6、出力は二重丸ⓐ～ⓕ）と凡例（二重丸は単相200V回路）とも一致する。正答イ（https://www.shiken.or.jp/construction/upload/20240526_co_second_a01.pdf）と一致する。"
+    },
+    {
+      "number": 32,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "visualIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": "公式原図と公式正答を照合した。https://www.shiken.or.jp/construction/upload/20240526_co_second_q01.pdf の15頁の平面図で、②はカウンタ内にある『LK』傍記の白抜き円のコンセント記号を指している。右壁のⓗ 20Aなどの壁付けコンセントは半分塗りつぶしの記号なので区別できる。正答ロ・天井面（https://www.shiken.or.jp/construction/upload/20240526_co_second_a01.pdf）と一致する。wiring-main.png にある②の位置も原図と一致している。"
+    }
+  ]
+}

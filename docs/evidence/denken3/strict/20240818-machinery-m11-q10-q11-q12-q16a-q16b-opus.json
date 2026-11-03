@@ -1,0 +1,155 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20240818",
+  "subject": "machinery",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 11144,
+      "cacheReadInputTokens": 139443,
+      "cacheCreationInputTokens": 43119,
+      "webSearchRequests": 0,
+      "costUSD": 0.5957285999999999,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 7740,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "caa3faee1e145f59adebf83deedee686efa58e75ae8ffce8d7de2d4b787dca2f",
+  "inputRequestSha256": "e9e251f05455c76225019046559d3f121c64c4edf40e65aa20ac24f89fbfaf54",
+  "inputHashes": {
+    "candidateSha256": {
+      "q10": "4aae7544e56f15276f5d49813a3dedbdce4297ab8a146e2299e13b449ea06e70",
+      "q11": "26f2ca176d464485101f692b59942d8b5cb52cac341904d4cead77ea824a3f1b",
+      "q12": "ccf1449838fb6634ddca9e38932b42d4951b7b577345184b38a20d373932c808",
+      "q16a": "0f9c292fe48c29d3abf0c316ed0d497a76cedda977211d6c1af3a3e35610014d",
+      "q16b": "78e2965c3bbbc4ad72646deb528819453995e2c58604d91e3704787b50ef13b1"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20240818/machinery/p14.png": "b0ae106924c3d36d8af3fbc3810c721661c1529fbca941e674c7993917ae1bd9",
+      "data/raw_pdfs/denken3/review/20240818/machinery/p15.png": "832c30c7eda5c6a314c6d8c6630508200d4971b75d247f620bbed3539afc63ac",
+      "data/raw_pdfs/denken3/review/20240818/machinery/p16.png": "b67aaa13016acb5d64b2c3c8cf6bf772333700c7da5b602e821b66e023245f6c",
+      "data/raw_pdfs/denken3/review/20240818/machinery/p17.png": "0830b3d68a791fc31a4c0f034310e4457a7c2ea8d266a6a5c5f3cf84606594d3",
+      "data/raw_pdfs/denken3/review/20240818/machinery/p22.png": "c26606cae91acdca88de7470ef0d62542468a3965ac4c41f03d180eec351c38c",
+      "data/raw_pdfs/denken3/review/20240818/machinery/p23.png": "7a80704b9bce767025e5a36dc0f02b9c1c414054694195aaf65a825badccd9e1"
+    },
+    "figureSha256": {
+      "public/images/denken3/20240818/machinery/20240818-machinery-q10-half-wave-circuit.png": "d98fb450f453116500ce9b4ca680dd99b81f736ea81e78ea20b7d6ea1a6d5c9c",
+      "public/images/denken3/20240818/machinery/20240818-machinery-q10-five-waveforms.png": "c07940fbe1a02a9a0d0cb79dccdd77f5b2c7f2c4eedfa27b9b2946605382dabc",
+      "public/images/denken3/20240818/machinery/20240818-machinery-q16-inverter-circuit.png": "3b0bd667e5ee7feea55ce672d7b23928e89f7b9ccdba8578513d2d48cbfb63a1",
+      "public/images/denken3/20240818/machinery/20240818-machinery-q16-inverter-waveform.png": "6dec55ebdd7a6a90642fb7ee8881743b66f6c0e6b39e041051f19968bc39c883"
+    },
+    "sourceQuestionPdfSha256": "ff8ff270bbe1ea125e92f213d011afde969d0d2b9fa2e17a7caa2b5cd6673e2a",
+    "sourceAnswerPdfSha256": "f72ecbc3a477e64948388b69cf78cb931032c9f0c688639836c8d533a949cd0f",
+    "officialAnswerUnitsSha256": "8810ecd513f702eb89a74b5778b646312a0ca1293f30a201c7c08aa08bee6f12",
+    "referencePdfSha256": {},
+    "referencePageSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q10",
+      "questionNumber": 10,
+      "part": null,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [
+        "【通流期間の比較（エ）】のS閉の説明で、同じ内容が二度書かれており、因果の向きも逆になっている。原文は「Dが遮断した後も負荷電圧e_d≈0のまま環流経路でL/Rの時定数に従ってゆっくり減衰するため，v_sのゼロ点で環流ダイオードへ転流し、L・di/dt=−Riに従ってS開時より緩やかに減衰するため」。転流が起きるのは電流がゆっくり減衰するからではなく、v_sが負になって環流ダイオードが順バイアスになるからである。「v_sのゼロ点で主ダイオードDが逆バイアスとなって遮断し、負荷電流は環流ダイオードへ転流する。以後e_d=0なのでL·di/dt=−Riに従い時定数L/Rで緩やかに減衰し、S開時のように負電圧で急減しないため通流期間は長くなる」の一文にまとめ、e_dの表記を前段と同じ「e_d=0」にそろえること。"
+      ],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "問題文、空欄(ア)〜(エ)、(1)〜(5)の組合せ表が公式原図（PDF p.14、T1-K 014）と一致する。",
+        "波形1〜5の形状が公式原図（PDF p.15、T1-K 015）と一致する。波形1は負の半波に入ってもe_dがv_sに沿って続き、途中で0へ急に戻る。波形2は負の半波でe_d=0。波形3は全波整流波形。波形4はv_sと同相でゼロ点で0になる電流。波形5はv_sより遅れ、ゼロ点を越えて減衰する電流。",
+        "公式正答は(3)（解答表・機械 問10=3）。(ア)波形1、(イ)波形5、(ウ)波形2、(エ)長くなる は回路動作と整合する。",
+        "誤答肢(1)(2)(4)(5)の誤り箇所（ア=波形2、イ=波形4、ウ=波形3、エ=短くなる）の指摘はそれぞれ正しい。",
+        "公開候補図の図1は、主ダイオードの向き（右向き）、S・環流ダイオード（上向き導通）の直列枝、v_s・i_d・e_dの矢印、L・R・図番号を含み、公式原図と一致する。",
+        "公開候補図の図2は、波形1〜5、e_d/i_d・v_s・0・ωtのラベルがそろっており、公式原図と一致する。",
+        "reviewedFromPage [14,15] はT1-K番号と整合する。"
+      ]
+    },
+    {
+      "unitKey": "q11",
+      "questionNumber": 11,
+      "part": null,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "問題文の数値と条件（1200kg、0.3m/s、機械効率98%、9.8m/s²、ロープ質量・加速動力は考慮しない）と選択肢3.4〜3.8が、公式原図（PDF p.16、T1-K 016）と一致する。",
+        "検算: 1200×9.8×0.3=3528W。3528/0.98=3600W=3.6kW。公式正答(3)と一致する。",
+        "誤答肢の検算: (4)は3.528/0.98²=3.673kW、倍率は1/0.9604で正しい。(2)の「効率を考慮しない3.528kW」、(1)の「荷重側出力未満」、(5)の「0.2kW超過」もそれぞれ正しい。",
+        "図は不要で、figureUrlsは空。"
+      ]
+    },
+    {
+      "unitKey": "q12",
+      "questionNumber": 12,
+      "part": null,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "対応表の全行（電圧V[V]⇔(ア)[K]、電気量Q[C]⇔熱量Q[J]、電流I[A]⇔(イ)[W]、導電率σ[S/m]⇔熱伝導率λ[W/(m・K)]、電気抵抗R[Ω]⇔熱抵抗R_T(ウ)、静電容量C[F]⇔熱容量C(エ)）が公式原図（PDF p.17、T1-K 017）と一致する。",
+        "(1)〜(5)の組合せ表が原図と完全に一致する。",
+        "R_T=θ/Φ[K/W]、C=Q/θ[J/K]、V⇔θ、I⇔Φ の対応から(1)となり、公式正答(1)と一致する。",
+        "各誤答肢の固有の誤り（(2)ア/イとウ/エが入れ替わり、(3)ウ[K/J]、(4)ア/イ逆・ウ[J/K]・エ[J/W]、(5)エ[J/W]）の指摘はすべて正しい。"
+      ]
+    },
+    {
+      "unitKey": "q16a",
+      "questionNumber": 16,
+      "part": "a",
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [
+        "総合解説の「i0 はまだ負（前半周期の-Ipから増加途中）」の「前半周期」は、「1周期の前半」とも読めて誤解を招く。実際に指しているのは直前の区間④の終わりにある−Ipなので、「直前の半周期（区間④）の終わりの−Ipから増加途中」に改めること。"
+      ],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "問題文（Ed一定、L・R誘導性負荷、動作モード①〜④、周期T、デッドタイムは考慮しない）と(a)の設問、(1)〜(5)の組合せ表が公式原図（PDF p.22〜23、T1-K 022/023）と一致する。",
+        "図1の構成を確認した。左脚はQ1/D1（上）とQ2/D2（下）、右脚はQ3/D3（上）とQ4/D4（下）で、左脚中点が上側出力端子、右脚中点が下側出力端子につながる。Q1・Q4がオンでv0=+Ed、Q2・Q3がオンでv0=−Edとなる。",
+        "図2より、①はv0=+Edかつi0<0でD1-D4、②はv0=+Edかつi0>0でQ1-Q4、③はv0=−Edかつi0>0でD2-D3、④はv0=−Edかつi0<0でQ2-Q3。公式正答(5)と一致する。",
+        "(4)の検算: Q1-D3はi0>0でv0=0、Q2-D4はi0<0でv0=0となる還流経路であり、解説の記述は正しい。",
+        "公開候補図の図1（Ed、コンデンサ、Q1〜Q4、D1〜D4、出力端子、L、R、i0、v0）と図2（①〜④、±Ed、±Ip、T[s]、τ[s]、t[s]）は、公式原図のラベルと接続をすべて含んでおり、図だけで判定できる。"
+      ]
+    },
+    {
+      "unitKey": "q16b",
+      "questionNumber": 16,
+      "part": "b",
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [
+        "choiceExplanations[4]の「電流の到達時間と時定数L/Rを混同すると過大になる」は、0.0063がそう求められるという根拠がなく、推測で誤答の出どころを決めている。0.0063≈π·L/R（=0.00628）とも取れるため、どちらか一方に断定しないこと。「0.0063sはL/R=0.002sの約3.15倍であり、τ=L/Rからは導かれない」のような、検算できる事実だけに改めること。"
+      ],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "(b)の問題文（Ed=100V、L=2mH、R=1Ω、区間①②で−Ipから+Ipへ時定数τで増加）と選択肢0.001/0.002/0.0032/0.0063/0.02が、公式原図（PDF p.23、T1-K 023）と一致する。",
+        "検算: 区間①②ではv0=Edが一定で、Ed=L·di/dt+R·i。τ=L/R=2×10⁻³/1=0.002s。公式正答(2)と一致する。",
+        "(1)の0.001=半分、(5)の0.02=10倍（mHの換算誤り）、(4)の倍率0.0063/0.002=3.15を検算し、いずれも数値として正しいことを確認した。",
+        "公開候補図の図2は、区間①②とτの作図（立ち上がり点の接線）を含み、解答に必要な区間を公開図だけで特定できる。"
+      ]
+    }
+  ]
+}

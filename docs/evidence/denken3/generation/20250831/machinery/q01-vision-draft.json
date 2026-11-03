@@ -1,0 +1,94 @@
+{
+  "questionNumber": 1,
+  "sharedContext": null,
+  "units": [
+    {
+      "part": null,
+      "question": "直流電動機に関する記述として，誤っているものを次の(1)～(5)のうちから一つ選べ。",
+      "choices": {
+        "1": "直巻電動機は，負荷電流の増減によって回転速度が大きく変わる。トルクは，回転速度が小さいときに大きくなるので，始動時のトルクが大きいという特徴があり，クレーン，巻上機などの電動機として適している。",
+        "2": "分巻電動機の速度制御の方法の一つとして界磁制御法がある。これは，界磁巻線に直列に接続した界磁抵抗器によって界磁電流を調整して界磁磁束の大きさを変え，速度を制御する方法である。",
+        "3": "分巻電動機は，端子電圧を一定として機械的な負荷を増加したとき，電機子電流が増加し，回転速度は，わずかに減少するがほぼ一定である。このため，定速度電動機と呼ばれる。",
+        "4": "複巻電動機には，直巻界磁巻線及び分巻界磁巻線が施され，合成界磁磁束が直巻界磁磁束と分巻界磁磁束との和になっている構造の和動複巻電動機と，差になっている構造の差動複巻電動機とがある。",
+        "5": "直巻電動機は，界磁電流が負荷電流(電動機に流れる電流)と同じである。このため，未飽和領域では界磁磁束が負荷電流に比例し，トルクも負荷電流に比例する。"
+      },
+      "officialAnswer": "5",
+      "explanation": "直流電動機の基本式は次のとおりである。記号は次のとおりとする。\n・Φ：界磁磁束 [Wb]\n・N：回転速度 [min⁻¹]\n・Iₐ：電機子電流 [A]\n・V：端子電圧 [V]\n・Rₐ：電機子抵抗 [Ω]\n・K₁，K₂：機械の構造で決まる定数（極数 p，電機子導体数 Z，並列回路数 a を用いて K₁ = pZ/(60a)，K₂ = pZ/(2πa)）\n\n・逆起電力 E = K₁ΦN\n・トルク T = K₂ΦIₐ [N·m]\n・回転速度（分巻電動機）N = (V − IₐRₐ) / (K₁Φ)\n・回転速度（直巻電動機）N = {V − Iₐ(Rₐ + Rₛ)} / (K₁Φ)（Rₛ：直巻界磁巻線の抵抗）\n\n直巻電動機では界磁巻線と電機子が直列なので，界磁電流 = 電機子電流 = 負荷電流 I である。磁気飽和していない領域では Φ は I に比例するので，Φ = K₃I（K₃：比例定数）とおける。これを代入すると，\nT = K₂ΦI = K₂K₃I² ∝ I²\nとなり，トルクは負荷電流の 2 乗に比例する。(5) は「トルクも負荷電流に比例する」としている点が誤りである。なお，磁気飽和領域では Φ がほぼ一定となるため，T はおおむね I に比例するようになる。\n\nよって，誤っているものは (5) である。",
+      "choiceExplanations": {
+        "1": "正しい。直巻電動機では Φ が負荷電流 I とともに変化する。N = {V − I(Rₐ + Rₛ)} / (K₁Φ) より，負荷電流が小さいと Φ が小さくなり，回転速度が大きく上昇する。負荷電流が大きいと回転速度は低下する。つまり回転速度が小さい状態は負荷電流が大きい状態に対応し，トルク T ∝ I²（未飽和時）が大きくなる。始動時は速度 0 で電流が大きいため始動トルクが大きく，クレーンや巻上機などに適している。",
+        "2": "正しい。分巻電動機の界磁制御法は，界磁巻線に直列に入れた界磁抵抗器で界磁電流を調整し，Φ を変えて速度を制御する方法である。N = (V − IₐRₐ) / (K₁Φ) より，界磁抵抗を大きくして Φ を小さくすると回転速度は上昇する。",
+        "3": "正しい。分巻電動機は界磁巻線が電源に並列に接続される。このため端子電圧 V が一定なら，界磁電流と界磁磁束 Φ はほぼ一定である。負荷が増えて電機子電流 Iₐ が増加しても，電圧降下 IₐRₐ は V に比べて小さい。したがって N = (V − IₐRₐ) / (K₁Φ) はわずかに減少するだけで，ほぼ一定となる。このため定速度電動機と呼ばれる。",
+        "4": "正しい。複巻電動機は直巻界磁巻線と分巻界磁巻線の両方をもつ。両者の磁束が加わり合う（合成磁束 = 和）ものを和動複巻電動機，打ち消し合う（合成磁束 = 差）ものを差動複巻電動機という。",
+        "5": "誤り。直巻電動機の界磁電流が負荷電流と同じであること，未飽和領域で界磁磁束が負荷電流に比例することは正しい。しかしトルクは T = K₂ΦI であり，Φ ∝ I を代入すると T ∝ I² となる。したがってトルクは負荷電流に比例するのではなく，負荷電流の 2 乗に比例する。"
+      },
+      "figureDescription": "本問に図はない。",
+      "officialReferenceUrls": [],
+      "uncertainty": "なし",
+      "needsReview": true,
+      "sourceQuestionPdfUrl": "https://www.shiken.or.jp/chief/upload/20250831_ch_third_q03.pdf",
+      "sourceAnswerPdfUrl": "https://www.shiken.or.jp/chief/upload/20250831_ch_third_a01.pdf",
+      "reviewedFromPage": [
+        4
+      ]
+    }
+  ],
+  "draftModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 2804,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 9309,
+      "webSearchRequests": 0,
+      "costUSD": 0.1308158,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 886,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "5c57851f726724c29e072ce15dcfff6a4c162b27959547ab3a80b9121a2600e8",
+  "inputRequestSha256": "2d77fc3f64f4281332dbaf5a85d38ebf8383fed805ae4ac41b3759bba81a812f",
+  "sourceQuestionPdfSha256": "2a73a24594cc2b8bb7504b9a0ff15e001b2bb56b830572ce2be853f7116f26d8",
+  "sourceAnswerPdfSha256": "76fd3715ed487d19a56b387fb402de20ee09474e9fa55b0413f9037b96af06c9",
+  "sourcePageImageSha256": {
+    "data/raw_pdfs/denken3/review/20250831/machinery/p04.png": "c30e4cb759dd20425a45a9d0be444773072a0863069a360072288b53b4723046"
+  },
+  "revisionHistory": [
+    {
+      "version": 1,
+      "model": "claude-opus-5-5",
+      "resolvedModel": "claude-opus-5-5",
+      "modelUsage": {
+        "claude-opus-5-5": {
+          "inputTokens": 2,
+          "outputTokens": 3383,
+          "cacheReadInputTokens": 1279,
+          "cacheCreationInputTokens": 13018,
+          "webSearchRequests": 0,
+          "costUSD": 0.1720678,
+          "contextWindow": 1000000,
+          "maxOutputTokens": 128000,
+          "thinkingTokens": 1414,
+          "canonicalModel": "claude-opus-5-5",
+          "provider": "firstParty",
+          "costBasis": "list"
+        }
+      },
+      "rawResponseSha256": "86a89adb101af07204306d31b88b03b34bb88b941d6c05e0fd0fcfca01255ac0",
+      "inputRequestSha256": "9b52d637ed52b489e5a5d20129a3eceb0228c1a3efff4af95a35007f22dcbb86",
+      "previousDraftSha256": "d93cb119bfdd73e89f26ae9305e59236a656197111a227d9477d721aff75adc9",
+      "previousDraft": "data/raw_pdfs/denken3/review/20250831/machinery/archive/q01-vision-draft-v1.json",
+      "answeredReviewSha256": "c2f63a0db06a5863a19e0773842e7686c1887a61d5a6b971050db954de944990",
+      "answeredReview": "data/raw_pdfs/denken3/review/20250831/machinery/archive/q01-opus-review-v1.json",
+      "answeredStrictReceipt": "docs/evidence/denken3/strict/20250831-machinery-s1-q01-opus.json",
+      "answeredStrictReceiptSha256": "51d9239ed9e8de911f96789e5e2f9e8cc705400886fb5fb62600857cdaa9d432",
+      "figureSha256": {},
+      "referenceHashes": {},
+      "operatorNote": ""
+    }
+  ]
+}

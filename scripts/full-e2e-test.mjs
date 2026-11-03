@@ -451,7 +451,7 @@ async function scenario6_books(ctx) {
     let rakutenIdOk = false;
     if (apResp?.ok()) {
       const apHtml = await page.content();
-      amazonTagOk = /tag=safeaisite22-22/.test(apHtml);
+      amazonTagOk = !/tag=safeaisite22-22/.test(apHtml);
       rakutenIdOk = /5291f19d\.a0fc3c16\.5291f19e\.b91d11f6/.test(apHtml);
     }
 
@@ -465,7 +465,7 @@ async function scenario6_books(ctx) {
     let verdict = "pass";
     if (!amazonTagOk) {
       verdict = "warn";
-      addIssue("medium", "/recommended-books/ap", "Amazon アフィリエイトタグ (safeaisite22-22) 未挿入");
+      addIssue("medium", "/recommended-books/ap", "Closed Amazon tag (safeaisite22-22) remains in HTML");
     }
     if (!rakutenIdOk) {
       verdict = "warn";

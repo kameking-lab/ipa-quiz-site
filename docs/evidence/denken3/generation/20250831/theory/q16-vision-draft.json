@@ -1,0 +1,193 @@
+{
+  "questionNumber": 16,
+  "sharedContext": "問16 次に示す条件Ⅰ〜Ⅲを満たす永久磁石可動コイル形電流電圧計を製作したい。永久磁石可動コイル形電流電圧計内部の接続の一部が図に示すようであるとき，次の(a)及び(b)の問に答えよ。ただし，コイルは内部抵抗 r = 5 Ω であり，最大 4 mA まで直流電流を流すことができるものとする。\n\n条件Ⅰ：切り替えスイッチを A にしたときは，最大 1 A の直流電流を測定できるものとする。\n条件Ⅱ：切り替えスイッチを B にしたときは，最大 100 mA の直流電流を測定できるものとする。\n条件Ⅲ：切り替えスイッチを C にしたときは，最大 1.2 V の直流電圧を測定できるものとする。",
+  "units": [
+    {
+      "part": "a",
+      "question": "問16 次に示す条件Ⅰ〜Ⅲを満たす永久磁石可動コイル形電流電圧計を製作したい。永久磁石可動コイル形電流電圧計内部の接続の一部が図に示すようであるとき，次の(a)及び(b)の問に答えよ。ただし，コイルは内部抵抗 r = 5 Ω であり，最大 4 mA まで直流電流を流すことができるものとする。\n\n条件Ⅰ：切り替えスイッチを A にしたときは，最大 1 A の直流電流を測定できるものとする。\n条件Ⅱ：切り替えスイッチを B にしたときは，最大 100 mA の直流電流を測定できるものとする。\n条件Ⅲ：切り替えスイッチを C にしたときは，最大 1.2 V の直流電圧を測定できるものとする。\n\n(a) 抵抗 R₁ の値[Ω]として，最も近いものを次の(1)〜(5)のうちから一つ選べ。",
+      "choices": {
+        "1": "0.1",
+        "2": "0.9",
+        "3": "4",
+        "4": "9.6",
+        "5": "9.96"
+      },
+      "officialAnswer": "1",
+      "explanation": "図の接続点（黒丸）を次のように呼ぶ（図中にこれらの名前は書かれていない）。\n・節点 P：コイル r の右端・R₀ の上端・R₃ の左端がつながる接続点\n・節点 M：R₁ の右端・R₂ の左端・端子 A への配線がつながる接続点\n・節点 Q：R₀ の下端・R₂ の右端・端子 B への配線がつながる接続点\n\nコイルに最大電流 4 mA が流れるときを、各条件の最大値（フルスケール）とする。\n\n【スイッチ B（条件Ⅱ）】－端子は節点 Q に接続される。＋端子から Q までの経路は次の 2 つで、端子 C 側は開放なので R₃ には電流が流れない。\n・コイル経路：＋ → r → P → R₀ → Q、抵抗 r + R₀ = 5 + 19 = 24 Ω（電流 4 mA）\n・分流経路：＋ → R₁ → M → R₂ → Q、抵抗 R₁ + R₂\nコイル経路の電圧は 0.004 A × 24 Ω = 0.096 V。分流経路の電流は 0.1 − 0.004 = 0.096 A なので\nR₁ + R₂ = 0.096 V ÷ 0.096 A = 1 Ω …①\n\n【スイッチ A（条件Ⅰ）】－端子は節点 M に接続される。＋端子から M までの経路は次の 2 つ。\n・分流経路：＋ → R₁ → M、抵抗 R₁（電流 1 − 0.004 = 0.996 A）\n・コイル経路：＋ → r → P → R₀ → Q → R₂ → M、抵抗 24 + R₂（電流 4 mA）\n両経路の電圧は等しいので\n0.004 × (24 + R₂) = 0.996 × R₁ …②\n①より R₂ = 1 − R₁ を代入すると\n0.004 × (25 − R₁) = 0.996 R₁\n0.1 − 0.004 R₁ = 0.996 R₁\nR₁ = 0.1 Ω（このとき R₂ = 0.9 Ω）\n\n検算：コイル経路の電圧 0.004 × 24.9 = 0.0996 V、R₁ の電流 0.0996 ÷ 0.1 = 0.996 A、合計 0.996 + 0.004 = 1 A で条件Ⅰを満たす。\n\nよって正答は (1) 0.1 Ω。",
+      "choiceExplanations": {
+        "1": "正しい。条件Ⅱから R₁ + R₂ = 1 Ω、条件Ⅰから 0.004 × (24 + R₂) = 0.996 R₁ が得られ、連立すると R₁ = 0.1 Ω となる。",
+        "2": "誤り。0.9 Ω は R₂ の値である。R₁ = 0.9 Ω とすると R₁ + R₂ = 1 Ω より R₂ = 0.1 Ω となり、スイッチ A での測定範囲は 0.004 + 0.004 × 24.1 ÷ 0.9 ≒ 0.111 A となって、条件Ⅰの 1 A を満たさない。",
+        "3": "誤り。条件Ⅱから R₁ + R₂ = 1 Ω であり、R₁ = 4 Ω では R₂ = −3 Ω となって成立しない。",
+        "4": "誤り。条件Ⅱから R₁ + R₂ = 1 Ω であり、R₁ = 9.6 Ω では R₂ = −8.6 Ω となって成立しない。",
+        "5": "誤り。条件Ⅱから R₁ + R₂ = 1 Ω であり、R₁ = 9.96 Ω では R₂ = −8.96 Ω となって成立しない。"
+      },
+      "figureDescription": "図の範囲：永久磁石可動コイル形電流電圧計内部の接続を示す回路図1枚。\nラベル：上辺の電線に右向き矢印「4 mA」、破線の楕円で囲まれた抵抗「r = 5 Ω」（下に「コイル」）、上辺右側の抵抗「R₃[Ω]」、縦向きの抵抗「R₀ = 19 Ω」、中段の抵抗「R₁[Ω]」「R₂[Ω]」、破線の四角で囲まれた端子「A」「B」「C」（下に「切り替えスイッチ」）、下端の端子「＋」「－」。接続点の黒丸は4個。\n接続：＋端子から左側の縦線が上に伸び、上端でコイル r の左端に、途中の接続点（黒丸）で R₁ の左端につながる。コイル r の右端の接続点（黒丸。図中に名前はなく、解説では節点 P と呼ぶ）から、右へ R₃ を経て右辺を下り、左へ折れて端子 C に至る経路と、下へ R₀ を経て接続点（黒丸。解説では節点 Q と呼ぶ）に至る経路に分かれる。節点 Q はそのまま下へ伸びて端子 B につながる。R₁ の右端の接続点（黒丸。解説では節点 M と呼ぶ）から下へ伸び、右へ折れて端子 A につながり、M と Q の間に R₂ が接続されている。切り替えスイッチの可動片は－端子に接続され、図では端子 A 側に倒れた状態で描かれている。\n必要性：スイッチ位置ごとに、どの抵抗がコイルと直列・並列（分流器）になるかは図の接続からのみ判断でき、問題文だけでは解けない。",
+      "officialReferenceUrls": [],
+      "uncertainty": "試験の実施年度・回次・試験日は本問の問題ページ（印刷頁「- 16 -」、フッタ「T1－R 019」）に印字されておらず、このページからは確認できない。問題文・図・数値・正答については未解消の不確実性はない。",
+      "needsReview": true,
+      "sourceQuestionPdfUrl": "https://www.shiken.or.jp/chief/upload/20250831_ch_third_q01.pdf",
+      "sourceAnswerPdfUrl": "https://www.shiken.or.jp/chief/upload/20250831_ch_third_a01.pdf",
+      "reviewedFromPage": [
+        19
+      ]
+    },
+    {
+      "part": "b",
+      "question": "問16 次に示す条件Ⅰ〜Ⅲを満たす永久磁石可動コイル形電流電圧計を製作したい。永久磁石可動コイル形電流電圧計内部の接続の一部が図に示すようであるとき，次の(a)及び(b)の問に答えよ。ただし，コイルは内部抵抗 r = 5 Ω であり，最大 4 mA まで直流電流を流すことができるものとする。\n\n条件Ⅰ：切り替えスイッチを A にしたときは，最大 1 A の直流電流を測定できるものとする。\n条件Ⅱ：切り替えスイッチを B にしたときは，最大 100 mA の直流電流を測定できるものとする。\n条件Ⅲ：切り替えスイッチを C にしたときは，最大 1.2 V の直流電圧を測定できるものとする。\n\n(b) 抵抗 R₃ の値[Ω]として，最も近いものを次の(1)〜(5)のうちから一つ選べ。",
+      "choices": {
+        "1": "2.36",
+        "2": "23.6",
+        "3": "25",
+        "4": "236",
+        "5": "2360"
+      },
+      "officialAnswer": "4",
+      "explanation": "図の接続点（黒丸）を次のように呼ぶ（図中にこれらの名前は書かれていない）。\n・節点 P：コイル r の右端・R₀ の上端・R₃ の左端がつながる接続点\n・節点 M：R₁ の右端・R₂ の左端・端子 A への配線がつながる接続点\n・節点 Q：R₀ の下端・R₂ の右端・端子 B への配線がつながる接続点\n\nコイルに最大電流 4 mA が流れるときを、最大 1.2 V に対応させる。\n\n【R₁ + R₂ の値】スイッチ B（条件Ⅱ）では、コイル経路 ＋ → r → P → R₀ → Q（r + R₀ = 24 Ω）に 4 mA、分流経路 ＋ → R₁ → M → R₂ → Q（R₁ + R₂）に 0.1 − 0.004 = 0.096 A が流れ、両経路の電圧は 0.004 × 24 = 0.096 V で等しいので\nR₁ + R₂ = 0.096 ÷ 0.096 = 1 Ω\n\n【スイッチ C（条件Ⅲ）】－端子は端子 C に接続され、端子 A・B は開放となる。＋端子から見ると、コイル r の両端（＋側と節点 P）の間に、P → R₀ → Q → R₂ → M → R₁ → ＋側 という R₀・R₂・R₁ を直列につないだ一本の経路が並列に入る。この経路の抵抗は\nR₀ + R₂ + R₁ = 19 + 1 = 20 Ω\nコイルに 4 mA が流れるとき、コイル両端の電圧は\n0.004 × 5 = 0.02 V\n並列経路の電流は 0.02 ÷ 20 = 0.001 A = 1 mA\nしたがって節点 P から R₃ を流れる電流は 4 + 1 = 5 mA。\n端子間電圧が 1.2 V となる条件は\n0.02 + 0.005 × R₃ = 1.2\nR₃ = 1.18 ÷ 0.005 = 236 Ω\n\n検算：コイル部分（5 Ω と 20 Ω の並列）の合成抵抗は 5 × 20 ÷ 25 = 4 Ω、全抵抗 4 + 236 = 240 Ω、電流 1.2 ÷ 240 = 0.005 A。このうちコイルへの分流は 0.005 × 20 ÷ 25 = 0.004 A で最大電流に一致する。\n\nよって正答は (4) 236 Ω。",
+      "choiceExplanations": {
+        "1": "誤り。R₃ = 2.36 Ω のとき、コイル 4 mA での端子間電圧は 0.02 + 0.005 × 2.36 ≒ 0.032 V で、条件Ⅲの 1.2 V に届かない。",
+        "2": "誤り。R₃ = 23.6 Ω のとき、コイル 4 mA での端子間電圧は 0.02 + 0.005 × 23.6 = 0.138 V で、条件Ⅲの 1.2 V に届かない。",
+        "3": "誤り。R₃ = 25 Ω のとき、コイル 4 mA での端子間電圧は 0.02 + 0.005 × 25 = 0.145 V で、条件Ⅲの 1.2 V に届かない。",
+        "4": "正しい。スイッチ C ではコイル r = 5 Ω に、R₀・R₂・R₁ を直列につないだ経路（計 20 Ω）が並列に入り、R₃ には 5 mA が流れる。0.02 + 0.005 × R₃ = 1.2 より R₃ = 236 Ω。",
+        "5": "誤り。R₃ = 2360 Ω のとき、1.2 V を加えてもコイル部分の合成抵抗 4 Ω を含む全抵抗は 2364 Ω で、全電流は約 0.51 mA、コイル電流は約 0.41 mA にしかならない。コイル 4 mA に達する電圧は 0.02 + 0.005 × 2360 = 11.82 V となり、最大 1.2 V の条件に合わない。"
+      },
+      "figureDescription": "図の範囲：永久磁石可動コイル形電流電圧計内部の接続を示す回路図1枚。\nラベル：上辺の電線に右向き矢印「4 mA」、破線の楕円で囲まれた抵抗「r = 5 Ω」（下に「コイル」）、上辺右側の抵抗「R₃[Ω]」、縦向きの抵抗「R₀ = 19 Ω」、中段の抵抗「R₁[Ω]」「R₂[Ω]」、破線の四角で囲まれた端子「A」「B」「C」（下に「切り替えスイッチ」）、下端の端子「＋」「－」。接続点の黒丸は4個。\n接続：＋端子から左側の縦線が上に伸び、上端でコイル r の左端に、途中の接続点（黒丸）で R₁ の左端につながる。コイル r の右端の接続点（黒丸。図中に名前はなく、解説では節点 P と呼ぶ）から、右へ R₃ を経て右辺を下り、左へ折れて端子 C に至る経路と、下へ R₀ を経て接続点（黒丸。解説では節点 Q と呼ぶ）に至る経路に分かれる。節点 Q はそのまま下へ伸びて端子 B につながる。R₁ の右端の接続点（黒丸。解説では節点 M と呼ぶ）から下へ伸び、右へ折れて端子 A につながり、M と Q の間に R₂ が接続されている。切り替えスイッチの可動片は－端子に接続され、図では端子 A 側に倒れた状態で描かれている。\n必要性：スイッチ C のとき、R₀・R₂・R₁ を直列につないだ経路（計 20 Ω）がコイルと並列になり、R₃ がその先に直列の倍率器として入ることは図の接続からのみ判断でき、問題文だけでは解けない。",
+      "officialReferenceUrls": [],
+      "uncertainty": "試験の実施年度・回次・試験日は本問の問題ページ（印刷頁「- 16 -」、フッタ「T1－R 019」）に印字されておらず、このページからは確認できない。問題文・図・数値・正答については未解消の不確実性はない。",
+      "needsReview": true,
+      "sourceQuestionPdfUrl": "https://www.shiken.or.jp/chief/upload/20250831_ch_third_q01.pdf",
+      "sourceAnswerPdfUrl": "https://www.shiken.or.jp/chief/upload/20250831_ch_third_a01.pdf",
+      "reviewedFromPage": [
+        19
+      ]
+    }
+  ],
+  "draftModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 7333,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 9337,
+      "webSearchRequests": 0,
+      "costUSD": 0.22161980000000003,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 2069,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "ee1900f280eb510d600a3c3fa80dfd76fc76ed3c14b14f8f396939f1e21c3d9c",
+  "inputRequestSha256": "3ebd93ba746434d916aadec7304ecd6cbc2c7af51fa4f30a3a4de78438fedc55",
+  "sourceQuestionPdfSha256": "11a75ffd5dd2b5309ad75370bb963c4fda9e12a812174cfa2c2237383c3a964d",
+  "sourceAnswerPdfSha256": "76fd3715ed487d19a56b387fb402de20ee09474e9fa55b0413f9037b96af06c9",
+  "sourcePageImageSha256": {
+    "data/raw_pdfs/denken3/review/20250831/theory/p19.png": "5885bbad7b51bf9f4f172e31bd3a2e5e19bc033244c18d33de09777edbfca849"
+  },
+  "revisionHistory": [
+    {
+      "version": 1,
+      "model": "claude-opus-5-5",
+      "resolvedModel": "claude-opus-5-5",
+      "modelUsage": {
+        "claude-opus-5-5": {
+          "inputTokens": 2,
+          "outputTokens": 8389,
+          "cacheReadInputTokens": 1279,
+          "cacheCreationInputTokens": 17626,
+          "webSearchRequests": 0,
+          "costUSD": 0.3090518,
+          "contextWindow": 1000000,
+          "maxOutputTokens": 128000,
+          "thinkingTokens": 3093,
+          "canonicalModel": "claude-opus-5-5",
+          "provider": "firstParty",
+          "costBasis": "list"
+        }
+      },
+      "rawResponseSha256": "e03d96eee4b114c84d49521309a8ced3a39c407ca539fdeb26ec1e1826717b7e",
+      "inputRequestSha256": "bfb733b3b87e67034955785605f79bbbf94e33da4e4a3c986383e3e937fa01aa",
+      "previousDraftSha256": "651c2e14dc1135b4565e258f3380e8659831cd2add75ad0af716fe8b78d52fc2",
+      "previousDraft": "data/raw_pdfs/denken3/review/20250831/theory/archive/q16-vision-draft-v1.json",
+      "answeredReviewSha256": "2adf3e2030ebf4b36af707622fe67a27d7c85e516f22d9e9b8a5cc3d27ab677e",
+      "answeredReview": "data/raw_pdfs/denken3/review/20250831/theory/archive/q16-opus-review-v1.json",
+      "answeredStrictReceipt": "docs/evidence/denken3/strict/20250831-theory-s1-q16a-q16b-opus.json",
+      "answeredStrictReceiptSha256": "9ad2ea4f0656494474e920f30268ecf04692bbe3bec567c681f2dc82976de22c",
+      "figureSha256": {
+        "20250831-theory-q16-fig1": "076f6ef5cbb10352f9de60450fc60e54d042a5642c8750951fa743c2dad6eb50"
+      },
+      "referenceHashes": {},
+      "operatorNote": ""
+    },
+    {
+      "version": 2,
+      "model": "claude-opus-5-5",
+      "resolvedModel": "claude-opus-5-5",
+      "modelUsage": {
+        "claude-opus-5-5": {
+          "inputTokens": 2,
+          "outputTokens": 7717,
+          "cacheReadInputTokens": 1279,
+          "cacheCreationInputTokens": 18000,
+          "webSearchRequests": 0,
+          "costUSD": 0.2986038,
+          "contextWindow": 1000000,
+          "maxOutputTokens": 128000,
+          "thinkingTokens": 2255,
+          "canonicalModel": "claude-opus-5-5",
+          "provider": "firstParty",
+          "costBasis": "list"
+        }
+      },
+      "rawResponseSha256": "4992f962e19a72ad70686af36da8223c00d61f268c540e1abcc6cb6fcdf79e0b",
+      "inputRequestSha256": "cb15d1f51b09d03f939d306e8d32aece37ce9de573e6e802abe0643f61d9d036",
+      "previousDraftSha256": "3feeace69a9844ec8ffba0b87e98a93859bf5ce4f9737aa18a526d815d1e9f66",
+      "previousDraft": "data/raw_pdfs/denken3/review/20250831/theory/archive/q16-vision-draft-v2.json",
+      "answeredReviewSha256": "899d1784f5b6da2b2c1a94a97baa580a8e9265fc4eb98169d31184a933a0756c",
+      "answeredReview": "data/raw_pdfs/denken3/review/20250831/theory/archive/q16-opus-review-v2.json",
+      "answeredStrictReceipt": "docs/evidence/denken3/strict/20250831-theory-s2-q16a-q16b-opus.json",
+      "answeredStrictReceiptSha256": "e6bac89b8d8f3bb866efd26b721357373f22521bd3cb262c06fa7a95f7aa7081",
+      "figureSha256": {
+        "20250831-theory-q16-fig1": "076f6ef5cbb10352f9de60450fc60e54d042a5642c8750951fa743c2dad6eb50"
+      },
+      "referenceHashes": {},
+      "operatorNote": ""
+    },
+    {
+      "version": 3,
+      "model": "claude-opus-5-5",
+      "resolvedModel": "claude-opus-5-5",
+      "modelUsage": {
+        "claude-opus-5-5": {
+          "inputTokens": 2,
+          "outputTokens": 7921,
+          "cacheReadInputTokens": 1279,
+          "cacheCreationInputTokens": 18467,
+          "webSearchRequests": 0,
+          "costUSD": 0.3064198,
+          "contextWindow": 1000000,
+          "maxOutputTokens": 128000,
+          "thinkingTokens": 2413,
+          "canonicalModel": "claude-opus-5-5",
+          "provider": "firstParty",
+          "costBasis": "list"
+        }
+      },
+      "rawResponseSha256": "4bc733e9175330bb0d0ed498b816c89f04f04aec5d652f073b32ff5657cd3725",
+      "inputRequestSha256": "86d603c68bbed202e2062e0e80c8b49c23c0a9f22d8777220442fbc9f700c91d",
+      "previousDraftSha256": "4775ce488b579474a4e46b2b8cb07f5223c8ba0963fcfbc583a7e0a8c50f6248",
+      "previousDraft": "data/raw_pdfs/denken3/review/20250831/theory/archive/q16-vision-draft-v3.json",
+      "answeredReviewSha256": "d92c6cf74cb30599ae4f18dfae64db3ae9763a5119302c409a3fab4cff675b9f",
+      "answeredReview": "data/raw_pdfs/denken3/review/20250831/theory/archive/q16-opus-review-v3.json",
+      "answeredStrictReceipt": "docs/evidence/denken3/strict/20250831-theory-s3-q16a-q16b-opus.json",
+      "answeredStrictReceiptSha256": "940c880bf65e7198b8a8ca89c533ee91277900c6f0f5f5b991ca8dca4de08be0",
+      "figureSha256": {
+        "20250831-theory-q16-fig1": "076f6ef5cbb10352f9de60450fc60e54d042a5642c8750951fa743c2dad6eb50"
+      },
+      "referenceHashes": {},
+      "operatorNote": ""
+    }
+  ]
+}

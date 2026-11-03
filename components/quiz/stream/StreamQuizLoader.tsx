@@ -7,7 +7,7 @@ import { shuffleChoices } from "@/lib/questions/filter";
 import { StreamQuizPlayer } from "./StreamQuizPlayer";
 import { Loader2 } from "lucide-react";
 
-export function StreamQuizLoader({ pool }: { pool: Question[] }) {
+export function StreamQuizLoader({ pool, backHref = "/ipa" }: { pool: Question[]; backHref?: string }) {
   const [questions, setQuestions] = React.useState<Question[] | null>(null);
 
   React.useEffect(() => {
@@ -26,12 +26,12 @@ export function StreamQuizLoader({ pool }: { pool: Question[] }) {
     return (
       <div className="flex min-h-[100dvh] flex-col items-center justify-center gap-4 bg-zinc-950 px-6 text-center text-zinc-50">
         <p>該当する問題がありませんでした。</p>
-        <Link href="/" className="rounded-xl bg-sky-600 px-4 py-2 text-sm">
-          ホームに戻る
+        <Link href={backHref} className="rounded-xl bg-sky-600 px-4 py-2 text-sm">
+          試験の選択に戻る
         </Link>
       </div>
     );
   }
 
-  return <StreamQuizPlayer questions={questions} />;
+  return <StreamQuizPlayer questions={questions} backHref={backHref} />;
 }

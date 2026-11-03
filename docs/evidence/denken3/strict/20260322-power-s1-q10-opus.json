@@ -1,0 +1,65 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20260322",
+  "subject": "power",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 2749,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 13841,
+      "webSearchRequests": 0,
+      "costUSD": 0.1659718,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 1506,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "a4311354a638fac33ea1369c13f13415abe6900480263bf87f62f8cbd9aa9883",
+  "inputRequestSha256": "eb866d8441799dcafb4fd1ed00680d36cf8f487bdbf70674417d90a38b0f7d43",
+  "inputHashes": {
+    "candidateSha256": {
+      "q10": "b5d426ac85f8a67b8230450660f45e18391f7f49d7b5afb8544404a4304f58f7"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20260322/power/p13.png": "cd5b25cf88f1b77114d99c559e5fc49546bb5a19d4855cf0a57860f6a5ee6fe8"
+    },
+    "figureSha256": {},
+    "sourceQuestionPdfSha256": "9733341a0f293f068c9a665d5a9a90f1aabf3a2db5d79cd530643cdea241f7b7",
+    "sourceAnswerPdfSha256": "cc2890296d06a4823df5697a78a1c01ddfd39f041c51f48c87984daa3a5707c6",
+    "officialAnswerUnitsSha256": "b020d56a7828aef28b951a1c57d368a502c4d9f1425ec2509edd5a1d9b7a9aa0",
+    "referencePdfSha256": {},
+    "referencePageSha256": {},
+    "referenceJsonSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q10",
+      "questionNumber": 10,
+      "part": null,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "問題文：候補の文面は公式原図（印刷頁「- 10 -」、識別記号「T2－D 013」）の問10本文と一字一句一致する。「直接埋設式，管路式，暗きょ式」の表記と句読点「，」もそのままである。",
+        "選択肢(1)〜(5)：5肢すべてが原図と一致し、脱字・誤字・順序の入れ替わりはない。(5)の「直接埋設式，暗きょ式と比較して熱放散が良いため」「多条数布設に対して送電容量の制約を受けにくい」も原文どおりである。",
+        "公式正答：公式解答表は「令和７年度 第三種電気主任技術者下期試験解答」で、電力科目の問10は解答5・配点5である。manifestの固定単位 {question:10, part:null, answer:\"5\", points:5} とも、候補の officialAnswer=\"5\"・scoringPoints=5 とも一致する。",
+        "総合解説の要旨：工事費・工期は直接埋設式＜管路式＜暗きょ式の順に増える。事故復旧は、再掘削が要る直接埋設式が最も遅い。外傷リスクは直接埋設式が最も高い。増設は管路式（予備管路）と暗きょ式が容易である。熱放散は、管内空気層と多条近接配置のため管路式が悪く、多条数では許容電流が低減する。いずれも標準的な技術的事実と整合し、(5)を誤りとする因果も正しい。",
+        "肢別解説：(1)〜(4)を『正しい』、(5)を『誤り』とした判定は公式正答5と整合する。各肢には固有の理由が付いている。(1)は構造物規模と工費・工期の関係、(2)は掘削修理と引替え・構造物内作業の対比、(3)はトラフ・防護板程度の保護、(4)は予備管路と構造物内の空間である。(5)は、管路式の熱放散が悪く送電容量の制約を受けやすい点を明示しており、肢の主張（熱放散が良い・制約を受けにくい）を直接否定している。",
+        "図：原図に図はない。figureDescription（図なし）、figureUrls=[]、choiceFigureUrls={} は妥当である。",
+        "出典メタデータ：fiscalYear=2025（令和7年度）、term=lower、examDate=2026-03-22、subject=power、sourceQuestionPdfUrl=…20260322_ch_third_q02.pdf、sourceAnswerPdfUrl=…20260322_ch_third_a01.pdf、reviewedFromPage=[13] は、いずれもmanifest固定情報と一致する。sourceAttribution『令和7年度下期…電力科目 問10』も解答表見出しと整合する。",
+        "officialReferenceUrls は空配列で、検証を要する独立主張はない。",
+        "uncertainty欄は、原図頁単体から年度・回を特定できないと記載している。これは原図の記載内容として事実どおりであり、年度・回はmanifestと公式解答表見出しで確定済みのため、未解決の外部確認事項は残らない。needsReview=false も妥当である。"
+      ]
+    }
+  ]
+}

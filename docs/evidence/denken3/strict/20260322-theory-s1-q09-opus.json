@@ -1,0 +1,75 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20260322",
+  "subject": "theory",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 4297,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 16876,
+      "webSearchRequests": 0,
+      "costUSD": 0.22121179999999996,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 2182,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "042f497fe1f2349eec5cbde78b696c0ea0a712e704007310b151e56689b4a1ca",
+  "inputRequestSha256": "a392d208c4966d19f64c0f880e0952fae3833b0d60de1bd9735e3f6bc972d2be",
+  "inputHashes": {
+    "candidateSha256": {
+      "q09": "f9100db310c89c0ec9a15b4b13b768386fbfe63810d7ec6946ce6cf96cb4265a"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20260322/theory/p12.png": "03b86990d644ffa5943cc530e56b1ecb0c82a60e2db653c5211f156e9436f862",
+      "data/raw_pdfs/denken3/review/20260322/theory/p13.png": "ab1bd6daba85b8979bcde3f21178befb196cf1ce6c1114ae9d34bdb7c786ecac"
+    },
+    "figureSha256": {
+      "public/images/denken3/20260322/theory/20260322-theory-q09-fig1.png": "cf834ef0dba7034ee9681340ae18f05b8b26eff681b7db47edbb28d1b42186b4"
+    },
+    "sourceQuestionPdfSha256": "c83e7c7350d98b65f5d8da0b93e4a2581a19dd250be320fb7fc492c9b34a29c1",
+    "sourceAnswerPdfSha256": "cc2890296d06a4823df5697a78a1c01ddfd39f041c51f48c87984daa3a5707c6",
+    "officialAnswerUnitsSha256": "a4db2b2235ea554af32edf48625bae15ba4bb0ca1609b0d5c56a6a7fbbc1a63a",
+    "referencePdfSha256": {},
+    "referencePageSha256": {},
+    "referenceJsonSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q09",
+      "questionNumber": 9,
+      "part": null,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [
+        "総合解説の（検算）で丸め方が混在している。『R ≈ 8.14 Ω のとき X² = 100 − 8.14² ≈ 33.8』とあるが、8.14² = 66.2596 なので 100 − 8.14² = 33.74 ≈ 33.7 になり、式と値が一致しない（33.8 は丸める前の R = 179/22 から得た値）。続く『(8.14 + 11)² = 366.3』は丸めた R を使っているため、和が √400.1 という丸め誤差由来の値になっている。修正案：丸める前の値で統一する。R = 179/22 より X² = 100 − (179/22)² = 16359/484 ≈ 33.80、(R + 11)² = (421/22)² = 177241/484 ≈ 366.20、和 = 193600/484 = 400 となり |Z₂| = 20 Ω ちょうど、I = 5 A と厳密に一致する。X ≈ 5.81 Ω はどちらの計算でも変わらない。"
+      ],
+      "figureIssues": [],
+      "sourceIssues": [
+        "uncertainty 欄に『本ページからは試験の実施年度・回を特定できない』とあるが、候補は fiscalYear=2025・term=lower・examDate=2026-03-22 と sourceAttribution『令和7年度下期』を manifest から確定している。さらに公式解答表の見出し『令和7年度 第三種電気主任技術者下期試験解答』でも年度・期は確認できる。記述が確定済みのメタデータと食い違って読めるため、『年度・期・試験日は manifest（公式過去問一覧）と公式解答表見出しで確認済み。独立主張を伴う公式参照URLはないため officialReferenceUrls は空』などに改めるべき。officialReferenceUrls は空配列なので、検証できない外部主張はない。"
+      ],
+      "verifiedEvidence": [
+        "問題文：原図PDF第12頁（冊子 -9-、T2-R 012）と照合。『抵抗 R [Ω] と誘導性リアクタンス X [Ω] との直列回路』『正弦波交流電圧 E＝100 V』『電流は 10 A』『更に抵抗 11 Ω を直列接続』『電流は 5 A』『抵抗 R [Ω] の値として，最も近いもの』まで、語句・数値・単位はすべて一致する。",
+        "選択肢：原図PDF第13頁（冊子 -10-、T2-R 013）の (1) 16.7、(2) 5.5、(3) 11.4、(4) 8.6、(5) 8.1 と完全に一致する。",
+        "公式正答：公式解答表〈理論〉問9の解答は 5、配点は 5。候補の officialAnswer=\"5\"、scoringPoints=5、manifest 固定の正答単位 {question:9, part:null, answer:\"5\", points:5} と一致する。",
+        "出典メタデータ：fiscalYear=2025（令和7年度）、term=lower（下期）、examDate=2026-03-22、subject=theory、reviewedFromPage=[12,13]、問題PDF・解答PDFのURLは manifest と一致する。解答表見出し『令和7年度 第三種電気主任技術者下期試験解答』とも整合する。",
+        "本解の計算：|Z₁| = 100/10 = 10 Ω、|Z₂| = 100/5 = 20 Ω。(R+11)² − R² = 400 − 100 より 22R + 121 = 300、R = 179/22 = 8.136… Ω、最も近いのは (5) 8.1。正しい。",
+        "誤答肢(1)(3)：16.7 と 11.4 はどちらも |Z₁| = 10 Ω を超え、X² < 0 となるので不成立。理由は正しい。",
+        "誤答肢(2)：X² = 100 − 30.25 = 69.75、16.5² + 69.75 = 272.25 + 69.75 = 342、√342 ≈ 18.49 Ω、I ≈ 5.41 A。数値は正しい。",
+        "誤答肢(4)：X² = 100 − 73.96 = 26.04、19.6² + 26.04 = 384.16 + 26.04 = 410.2、√410.2 ≈ 20.25 Ω、I ≈ 4.94 A。数値は正しい。R = 8.1 の場合の I ≈ 5.005 A と比べて条件からの差が大きい、という比較も正しい。",
+        "正答肢(5)：X² = 100 − 65.61 = 34.39、19.1² + 34.39 = 364.81 + 34.39 = 399.2、√399.2 ≈ 19.98 Ω、I ≈ 5.0 A。数値は正しい。",
+        "補足『R ≤ 10 Ω』：√(R² + X²) = 10 から成り立つ。誘導性で X > 0 なら厳密には R < 10 だが、記述として誤りではない。",
+        "図の照合：公開候補図 20260322-theory-q09-fig1.png には図1・図2が両方あり、原図と一致する。図1は上辺に左から R[Ω]・X[Ω]（コイル）、左上に右向き矢印と 10 A、下辺中央に交流電源と E=100 V、キャプション『図1』。図2は上辺に左から R[Ω]・X[Ω]・11 Ω、左上に右向き矢印と 5 A、下辺中央に交流電源と E=100 V、キャプション『図2』。接続・向き・ラベルに欠落も誤りもない。",
+        "図の必要性：直列接続と各電流値は問題文だけで分かるため、図は補助的である。公開候補図だけでも回路構成は完全に理解できる。figureDescription の記述は原図と一致する。"
+      ]
+    }
+  ]
+}

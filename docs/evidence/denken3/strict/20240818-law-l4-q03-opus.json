@@ -1,0 +1,66 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20240818",
+  "subject": "law",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 2679,
+      "cacheReadInputTokens": 139443,
+      "cacheCreationInputTokens": 19969,
+      "webSearchRequests": 0,
+      "costUSD": 0.24122860000000002,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 1637,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "66e92535fe486b83ecf65e528432a5872dac0a7f6e49a5f71a5adb3ea4809aad",
+  "inputRequestSha256": "acc9c0f00f6c03621177b3c17921f6a8b4f922375f4660f208ff92cccdf2b1e0",
+  "inputHashes": {
+    "candidateSha256": {
+      "q03": "3b6e0f04e215c9107f3e9d0be3e17c5304448abd17a7dc54996af4e206db111d"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20240818/law/p07.png": "12d649ab652780529d7e5a1700bee191bcafbf9d2087c57285fd12db1e9d916c"
+    },
+    "figureSha256": {},
+    "sourceQuestionPdfSha256": "5dbba8b8e4ec681d2d5f0645a3895a6e218d936519ddd18ac544ddc461a1ae78",
+    "sourceAnswerPdfSha256": "f72ecbc3a477e64948388b69cf78cb931032c9f0c688639836c8d533a949cd0f",
+    "officialAnswerUnitsSha256": "ba2912083993a611087d59243f807c5ed48dbd08d47532d46648719d22a3f120",
+    "referencePdfSha256": {
+      "data/raw_pdfs/denken3/review/meti-denki-technical-2012.pdf": "83faa87b011a2be7f322ed49b4f64ca3b0453e55c656fd48d98f360f92865d14"
+    },
+    "referencePageSha256": {
+      "data/raw_pdfs/denken3/review/references/meti-denki-technical-2012-p001.png": "65394a8cddcf7793cf9d864e4c4e7b35d09d197bb76626f88741ee1a07971ac2"
+    }
+  },
+  "assessment": [
+    {
+      "unitKey": "q03",
+      "questionNumber": 3,
+      "part": null,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "Question text: checked against the official exam page. The printed page number is -4- and the sheet footer is T1-H 007, which supports reviewedFromPage=[7]. The stem, a) 「保護 (ア) で保護したもの」 and b) 「これを (イ) し，又は保蔵する工作物(造営物の屋内又は (ウ) に施設するものを除く。)」 match the original word for word. The only differences are that full-width commas became 「、」 and the spacing changed. That is the reformatting disclosed in sourceAttribution, and no meaning changed.",
+        "Choices: all five match the original table: (1) 装置/収納/屋外, (2) 装置/収納/屋上, (3) 被覆/支持/屋側, (4) 被覆/保護/屋上, (5) 器具/支持/屋側.",
+        "Official answer: the official answer table for 令和6年度上期 法規 問3 gives 3, which matches officialAnswer=\"3\". Only choice (3) combines 被覆, 支持 and 屋側 correctly.",
+        "Reference document: page 1 of the METI/原子力安全・保安院 「電気設備に関する技術基準を定める省令の解説」 (H24.6.1), under 第1条【用語の定義】, reads 「光ファイバケーブル」とは、光信号の伝送に使用する伝送媒体であって保護被覆で保護したものであり、これを支持又は保蔵する工作物を合わせて「光ファイバケーブル線路」. This confirms (ア)=被覆, (イ)=支持, and that the definition is in 第1条. The exclusion clause containing 屋側 is not on that page. The candidate's uncertainty field says so correctly and bases (ウ) on the exam page and the official answer, so no unverifiable independent claim is attributed to the reference URL.",
+        "Explanation: its conclusion (ア)被覆, (イ)支持, (ウ)屋側 → (3) agrees with both the exam page and the official answer. The cause-and-effect reasoning is sound.",
+        "Per-choice reasons: (1) all three words are wrong. (2) all three words are wrong. (3) all three words match. (4) only (ア) is right; (イ)保護 and (ウ)屋上 are wrong. (5) (ア)器具 is wrong while (イ)(ウ) are right. Every statement about which blank is right or wrong agrees with the correct answer and gives the specific reason each wrong choice fails.",
+        "Figures: the question has no figure, and figureUrls, choiceFigureUrls and figureDescription are all empty or null, which is correct. No figure is needed to answer."
+      ]
+    }
+  ]
+}

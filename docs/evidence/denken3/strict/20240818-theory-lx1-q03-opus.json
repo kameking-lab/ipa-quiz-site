@@ -1,0 +1,70 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20240818",
+  "subject": "theory",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 2661,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 13823,
+      "webSearchRequests": 0,
+      "costUSD": 0.1640678,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 1345,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "4a68f7d9d43e363dd9e4e74d7d06e69792cd68c72112dbb687691ea963309d5b",
+  "inputRequestSha256": "4d61055ea6abbbbd7c7bfab43e5b8d89ad10bd161249a58a2242f693fc3b7d3a",
+  "inputHashes": {
+    "candidateSha256": {
+      "q03": "3a6ccbe1c5b97355f5eb6c4972b7056524c2f56a9e9aa545736f55d4c1e0320a"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20240818/theory/p07.png": "650156086ad86f940aee3d163eb826e52775792d9b6ba835174adb4877c172a1"
+    },
+    "figureSha256": {},
+    "sourceQuestionPdfSha256": "236be905e93a023cf3c65c1e22c45c24dc42b910151c51f8ed023247793d1d29",
+    "sourceAnswerPdfSha256": "f72ecbc3a477e64948388b69cf78cb931032c9f0c688639836c8d533a949cd0f",
+    "officialAnswerUnitsSha256": "bd5b7a1137528dc7e49478027b0347f4e4f44d2219ad0c003e0e9fc0e8a6c81c",
+    "referencePdfSha256": {},
+    "referencePageSha256": {},
+    "referenceJsonSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q03",
+      "questionNumber": 3,
+      "part": null,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "出典メタデータ: 公式解答表の見出しは「令和6年度 上期 第三種電気主任技術者試験解答」。fiscalYear=2024、term=upper、examDate=2024-08-18、subject=theory、sourceQuestionPdfUrl、sourceAnswerPdfUrl はいずれもmanifestと一致する。",
+        "reviewedFromPage=[7] はmanifest固定のPDF第7頁と一致する。原図下部の「- 4 -」は冊子の印刷ノンブルなので、PDFページ番号とは別物である。",
+        "sourceAttribution「令和6年度上期第三種電気主任技術者試験 理論科目 問3」は出典と一致する。整形した旨も明記されている。",
+        "問題文: 原図の「磁気に関する量とその単位記号(SI 基本単位及び組立単位による表し方)の組合せとして，誤っているものを次の(1)～(5)のうちから一つ選べ。」と照合した。候補との差は句読点の「，」→「、」と空白の除去だけで、意味・否定条件（誤っているもの）・選択範囲は同一。",
+        "選択肢: 原図の表と照合した。(1)インダクタンス/Wb/A、(2)磁束/V/s、(3)磁界の強さ/A/m、(4)磁気抵抗/H⁻¹（原図は上付き −1）、(5)透磁率/H/m。量・単位記号・番号の対応はすべて一致する。",
+        "公式正答: 公式解答表の理論 問3 は 2。候補の officialAnswer=\"2\" と一致し、part=null（小問なし）も公式正答単位と一致する。",
+        "(1)の検算: Φ=LI より L=Φ/I、単位は Wb/A=H。表記どおり正しい。",
+        "(2)の検算: e=dΦ/dt より V=Wb/s、したがって Wb=V·s。表の V/s は誤り。V/s を「電圧の時間変化率の単位」とする誤答理由も正しい。正答肢(2)が誤りである理由は正しく示されている。",
+        "(3)の検算: 環状ソレノイド等で H=NI/l となり、単位は A/m。表記どおり正しい。「起磁力を長さで割った量」という説明は電験教科書で標準的な導入であり、単位導出の論拠として誤りではない。",
+        "(4)の検算: Rm=NI/Φ より A/Wb。H=Wb/A から Wb=H·A なので、A/Wb=A/(H·A)=H⁻¹。表記どおり正しい。",
+        "(5)の検算: B=μH より μ=B/H=(Wb/m²)/(A/m)=Wb/(A·m)=H/m。表記どおり正しい。",
+        "総合解説と各肢解説の間に因果・計算の矛盾はない。結論「誤っているのは(2)、正しくは V·s」は公式正答と一致する。",
+        "図: 原図の要素は量と単位記号の表のみで、回路図や向き・接続を要する図はない。表は問題文と choices に完全にテキスト化されており、figureUrls=[] でも解答に支障はない。figureDescription の記述（5行2列＋番号列、判断に不可欠）も原図と一致する。",
+        "officialReferenceUrls=[] のため、外部の独立主張はなく、追加確認事項もない。"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,74 @@
+{
+  "inputHashes": {
+    "draftSha256": "3b6a1ab795239756991fa5f00f024f4eabd5975992dcd597526e87221255fbbe",
+    "rowSha256": {
+      "36": "341dc5af8c4c79d42130ea9e8c8aa8a4fad9a69648fc4cd5072682acbf01c0dc",
+      "37": "e6da3cac4a62111439f1118e7c3b8b2c2ceebb87affd9b38e302d157490310f7",
+      "38": "8c205f32663c2e5346c53f5f2ed7862acd0504627a02b2690c2330f421593b52",
+      "39": "b020bedaa54b2277ef0ade3fd76511da605786289ccb054403866f267c0eeaba",
+      "40": "e4d1f1dbc773d449fe31ef53cf9cb8443b4b9c5fe7145b64ee8a7e0c0d963719"
+    },
+    "sharedFigureSha256": {
+      "public/images/denko2/2025-second/wiring-first-floor.png": "88f652f95103f8bcd90c110af995e65046ace5b5f38e9bceeaad6ab64d29534a",
+      "public/images/denko2/2025-second/wiring-second-floor.png": "f1076fbb7d9e11339f58b180c19a36b98f7146254572449b4b342157779a31e9",
+      "public/images/denko2/2025-second/wiring-panel.png": "2ab6ad86eea5b617f06c0619a24488a74b154265518ad9b2863bda3243aa819f"
+    },
+    "commonInstructionsSha256": "e2bb1b00f146246a003a209c7614e3c0e316f6991480b6f82e9ee5e6a18b2a5b",
+    "legalReceiptSha256": {
+      "docs/evidence/denko2-law/20251026-q39.json": "8fad494abfdad583c568f3e3327fbe6034184d68a24eb5b716a35f30d30b6209",
+      "docs/evidence/denko2-law/20251026-q40.json": "e8cc87ba219a6468958b63a702ca70fc702156dd4acc4338bb5eafb205ddd8f0"
+    }
+  },
+  "reviewModel": "claude-opus-5-5",
+  "assessment": [
+    {
+      "number": 36,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "lawNeedsExternalCheck": []
+    },
+    {
+      "number": 37,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "lawNeedsExternalCheck": []
+    },
+    {
+      "number": 38,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "lawNeedsExternalCheck": []
+    },
+    {
+      "number": 39,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "lawNeedsExternalCheck": []
+    },
+    {
+      "number": 40,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "explanationIssues": [
+        "explanationに『接地極付コンセントなどの接地線を受ける』とあるが、電灯分電盤結線図には接地端子記号から大地への接地線しか描かれていない。コンセントの接地線が接地端子につながる配線は図にない。図にない接続を根拠の一部にしないよう削るか、推定だと明記すること。"
+      ],
+      "figureIssues": [
+        "diagramDescriptionに『接地端子には接地極付コンセントなどの接地線がつながる』とあるが、wiring-panel.pngにその接続は描かれていない。図で確認できるのは、接地端子記号、⑩の矢印、大地への接地線、主幹BE 3P 50AF 50A 30mAだけ。"
+      ],
+      "lawNeedsExternalCheck": []
+    }
+  ]
+}

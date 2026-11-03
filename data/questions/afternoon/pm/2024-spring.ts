@@ -29,7 +29,6 @@ export const PM_AFTERNOON_2024_SPRING: AfternoonQuestion[] = [
           "あなたが携わったシステム開発プロジェクトの概要と、そのプロジェクトにおいて不確実性が高いと判断した要求の内容、及びその不確実性の発生原因について、800字以内で述べよ。",
         type: "essay-text",
         maxLength: 800,
-        minLength: 600,
         modelAnswer: `私が携わったのは、地方銀行F社における法人融資業務の刷新プロジェクトである。F社は預金量約2.4兆円、法人取引先約3,800社の中堅地方銀行であり、私はSIerY社のPMとして、開発期間18か月・予算約9.2億円・要員ピーク時45名（うちF社側10名）の体制で本プロジェクトを統括した。プロジェクトの目的は、紙ベースで運用されてきた融資稟議・与信判断業務を、ワークフロー＋AIスコアリングによる新システムで置き換えることであった。
 
 本プロジェクトには2つの不確実性の高い要求が存在した。第1に、AIスコアリングモデルが提示する与信判断結果を、最終的に支店長や審査役にどの粒度で提示するかという要求である。これは、業務プロセスとUI双方に大きく関わるが、F社内に「AI推定の不確実性をどう人間が引き受けるか」の合意がプロジェクト開始時点で存在しなかった。第2に、金融庁から2025年度に予定されていた中小企業向け融資審査ガイドライン改定が、プロジェクト中に最終確定する見通しであり、改定内容によっては業務フローの再設計が必要となる可能性があった。
@@ -153,7 +152,7 @@ export const PM_AFTERNOON_2024_SPRING: AfternoonQuestion[] = [
     ],
     pdfUrl:
       "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/_index_mondai.html",
-    license: "IPA-public",
+    license: "original",
     totalTimeMinutes: 120,
     industryVariants: PM_2024_SPRING_Q1_INDUSTRIES,
   },

@@ -1,0 +1,64 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20250323",
+  "subject": "theory",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 2650,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 13309,
+      "webSearchRequests": 0,
+      "costUSD": 0.15973579999999998,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 1436,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "c4ba1f7a9077d97a0e72c5fefdd179357be009cf4b52f88b08a8616f6bd67b96",
+  "inputRequestSha256": "4543b2cd388187dfe51b10b1973a7403b4c7e5b392f1e8a3e88e08e38f65e367",
+  "inputHashes": {
+    "candidateSha256": {
+      "q02": "95d2588831b8a1192a0e0869acef74fb27adb8ffbac6fc626692c24bcb6bd34d"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20250323/theory/p05.png": "4b1808a3df72abce90072b1a292368d9a2ad25284fa7c73d6e1fa1e36526ae90"
+    },
+    "figureSha256": {},
+    "sourceQuestionPdfSha256": "8817012cb55eed9c83bb1e68df138909b1e03a81f7ed48a9893a219e1d2a76ca",
+    "sourceAnswerPdfSha256": "4c3b38fcf1405766fafaa78b1b05b867a3d48307a670b9d354476bc6b32acd4c",
+    "officialAnswerUnitsSha256": "e480698d1b5457979638bd88a09f6e09a774ee91ab3a97f2221f9bc513da8538",
+    "referencePdfSha256": {},
+    "referencePageSha256": {},
+    "referenceJsonSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q02",
+      "questionNumber": 2,
+      "part": null,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "The problem text matches the official source figure (PDF page 5, printed page \"-2-\", T2-R 005). It checks the conductor sphere in vacuum, radius 6.37×10⁶ m, capacitance [F], the '最も近いもの' wording and ε₀ = 8.85×10⁻¹² F/m, including exponents and units. The candidate only joins the original's separate 'ただし' paragraph into one paragraph, and the meaning is unchanged.",
+        "All five choices match the source figure digit for digit, including exponent signs: (1) 7.08×10⁻⁴, (2) 4.45×10⁻³, (3) 4.51×10³, (4) 5.67×10⁴, (5) 1.78×10⁵.",
+        "The official answer table (令和6年度 下期, 理論, 問2) gives 1. This matches both the manifest-pinned answer unit {question:2, part:null, answer:\"1\"} and the candidate officialAnswer \"1\".",
+        "Explanation checked. A lone conductor sphere with charge Q has V = Q/(4πε₀a), taking infinity as the reference, so C = 4πε₀a. Calculation: 4π = 12.56637, and 12.56637 × 8.85×10⁻¹² = 1.11212×10⁻¹⁰, which matches the stated ≈1.1121×10⁻¹⁰. Then 1.11212×10⁻¹⁰ × 6.37×10⁶ = 7.084×10⁻⁴ F, which matches choice (1).",
+        "Ratio checks for the wrong choices against the calculated value 7.084×10⁻⁴ F: (2) 4.45×10⁻³ / 7.084×10⁻⁴ = 6.28, stated as 約6.3倍, correct. (3) 4.51×10³ / 7.084×10⁻⁴ = 6.37×10⁶, stated as 約6×10⁶倍, correct at one significant figure. (4) 5.67×10⁴ / 7.084×10⁻⁴ = 8.00×10⁷, stated as 約8×10⁷倍, correct. (5) 1.78×10⁵ / 7.084×10⁻⁴ = 2.51×10⁸, stated as 約2.5×10⁸倍, correct. Each wrong choice gets its own specific ratio as its reason, and the explanations make no speculative claims about how each wrong value was produced.",
+        "The source figure has no diagram. figureDescription says there is no figure, figureUrls=[], and choiceFigureUrls={}, which is consistent. The question can be answered from the text alone.",
+        "officialReferenceUrls is an empty array, and the candidate makes no independent claim that would need an external reference. No external items need checking.",
+        "Metadata checked against the manifest: fiscalYear=2024, term=lower, examDate=2025-03-23, subject=theory, reviewedFromPage=[5]. sourceQuestionPdfUrl and sourceAnswerPdfUrl match the manifest. sourceAttribution '令和6年度下期…理論科目 問2' agrees with 2024年度下期."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,83 @@
+{
+  "schemaVersion": 1,
+  "reviewModel": "claude-opus-5-5",
+  "inputHashes": {
+    "candidateSha256": {
+      "9": "ec7b7a3cb66a2c0e73b56552e30485be3fcf96808a26d41f8879c6de86440420",
+      "10": "0a02535391697c6c011ed0948bf2eccd1de606f450240d96ddbc02dacb0706f4",
+      "12": "81ef4022f9e9028be9a345ba212c6aee3220837b5fa43284da8e04c5b0e6b217",
+      "19": "592444c1752c73f8b6db556c76f350b1d85dbb382d2383e3085e375c02db9234",
+      "22": "7f6a3a050d7ff137c3b1792734dd731e38d8fe95d88a315c510ac8427e890422"
+    },
+    "sourceCropSha256": {
+      "9": "191e1d46e9ed9216d10a9c4adf42651dc872f3a0091658b7cffeb586961c12cc",
+      "10": "b5964a6e3c2589262f1250e773c278f92eb8d782c6c962eb4848bf42c3d7c40c",
+      "12": "2c112be12141e18142d149ebb20709e9cc29be6aa82ff964c9bcae5d092fd7cd",
+      "19": "433a205c23e3826c693a0001f88f9dc20f8d902ea351ab0f6f91478bfbedbeca",
+      "22": "fca64f0eedb00f2070df4db00cd46f2a18cdc54d800b2e037163661ed17df4b7"
+    }
+  },
+  "assessment": [
+    {
+      "number": 9,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "visualIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": "Checked the official figure (20240526_co_second_q01.pdf, Q9) against official answer ハ. The question text, the four choices, and the figure all match: main-line B, B-H 10A, and two B-M 20A branches whose B symbols have a vertical line. The q9.png crop matches the figure. Legal basis: https://www.meti.go.jp/policy/safety_security/industrial_safety/sangyo/electric/files/20231226-2.pdf. WebFetch returned 403, so I used the attached SHA-pinned excerpt (PDF p.147). Article 148(1)(ii)(a): motor currents total 40A, which is at most 50A and larger than 10A, so I_W = 1.25×40 + 10 = 60A. Article 148(1)(v)(a): 3×40 + 10 = 130A. Item (b): the 2.5×I_W = 150A cap does not apply, because 130A does not exceed it. So I_B = 130A. The reasoning for every choice is arithmetically correct."
+    },
+    {
+      "number": 10,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [
+        "The explanation says the 8m distance from breaker to outlet 'does not change the judgment' (判定を変えない). That is wrong as a reason. Article 149(2)(i)(c)(イ) and Table 149-2 relax the wire size when the run from a single outlet to the branch point is 3m or less. For a breaker over 20A up to 30A, the table allows 1.6mm. The 8m condition exists to rule out that relaxation. Without it, the 2.0mm wire in ロ could be argued acceptable. Suggested rewrite: 'The run from breaker to outlet is 8m, which is over 3m, so the Article 149(2)(i)(c)(イ) relaxation (Table 149-2) does not apply. Judge by Table 149-1 and Table 149-3.'"
+      ],
+      "visualIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": "Checked the official figure (20240526_co_second_q01.pdf, Q10) against official answer イ. The breaker ratings, wire sizes, and outlet ratings and counts for choices イ, ロ, ハ and ニ all match the original. The four crops q10-i/ro/ha/ni.png match. Legal basis: https://www.meti.go.jp/policy/safety_security/industrial_safety/sangyo/electric/files/20231226-2.pdf. WebFetch returned 403, so I used the attached SHA-pinned excerpt (PDF p.148-149). Article 149(1)(i) allows up to 3m. Table 149-1: breaker over 15A up to 20A needs 1.6mm; over 20A up to 30A needs 2.6mm. Table 149-3: breaker over 15A up to 20A allows outlets of 20A or less; over 20A up to 30A needs outlets from 20A to 30A. Article 149(2)(i)(c)(イ) and Table 149-2 give the 3m-or-less relaxation."
+    },
+    {
+      "number": 12,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [
+        "The explanation says Table 146-3 'shows the upper temperature limit of 60℃' (その上限温度60℃を示している). This goes beyond what the text says. The table only gives the correction formula √((60−θ)/30) for 'vinyl compounds (excluding heat-resistant ones)'. It does not use the word '最高許容温度' (maximum permissible temperature) and does not name IV. Suggested rewrite: make official answer ロ the main basis, and describe Table 146-3 only as consistent. Its formula for non-heat-resistant vinyl compounds, √((60−θ)/30), drops to zero at 60℃ ambient."
+      ],
+      "visualIssues": [],
+      "sourceIssues": [
+        "The cited source, https://www.meti.go.jp/policy/safety_security/industrial_safety/sangyo/electric/files/20231226-2.pdf (Table 146-3), does not directly state either key fact. It never says IV insulation is a 'vinyl compound (excluding heat-resistant ones)'. It never says the IV maximum permissible temperature is 60℃. I tried to confirm this in the METI commentary on the interpretation (https://www.meti.go.jp/policy/safety_security/industrial_safety/law/files/dengikaishakukaisetsu.pdf), but it returned 403, so I could not confirm it."
+      ],
+      "verifiedEvidence": "Checked the official figure (20240526_co_second_q01.pdf, Q12) against official answer ロ (60). The question and the choices 45/60/75/90 match. Using the attached SHA-pinned excerpt (PDF p.146), I confirmed that Table 146-3 gives the correction formula √((60−θ)/30) for vinyl compounds excluding heat-resistant ones."
+    },
+    {
+      "number": 19,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "visualIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": "Checked the official figure (20240526_co_second_q01.pdf, Q19) against official answer ロ. The table rows a–d (wires / ring sleeve / crimp mark) match the original, and the q19.png crop matches. Technical basis: the exam center's official resource https://www.shiken.or.jp/construction/upload/point2024.pdf, p.22, 'Ring sleeve (E type) and wire combinations (per JIS C 2806)', via the attached SHA-pinned excerpt. Same size: 1.6mm × 2 is small with the ○ mark; 1.6mm × 3–4 is small with the small mark. Mixed sizes: 2.0mm × 1 + 1.6mm × 1–2 is small/small; 2.0mm × 2 + 1.6mm × 1–3 is medium/medium. So a and d are correct and b and c are wrong, which gives ロ."
+    },
+    {
+      "number": 22,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "visualIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": "Checked the official figure (20240526_co_second_q01.pdf, Q22) against official answer ロ. The question text, a–d, and the choices match the original. Legal basis: https://www.meti.go.jp/policy/safety_security/industrial_safety/sangyo/electric/files/20231226-2.pdf. WebFetch returned 403, so I used the attached SHA-pinned excerpt (PDF p.164). Article 167(2): when low-voltage wiring installed by cable work comes near or crosses weak-current wires, it must be installed so the two do not touch. c (10cm clearance) and d (a sturdy barrier) avoid contact and are correct. a and b are in contact and are wrong."
+    }
+  ]
+}

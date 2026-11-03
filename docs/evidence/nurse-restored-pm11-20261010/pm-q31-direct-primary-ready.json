@@ -1,0 +1,86 @@
+{
+  "sourceCandidateSha256": "fb4c044fb50846a5ff2f6808b23ccf26d214022fe992f6087434f9d1dbf8af64",
+  "readyQuestions": [
+    {
+      "id": "kangoshi-2025-annual-pm-q31",
+      "exam": "kangoshi",
+      "session": "pm",
+      "year": 2025,
+      "season": "annual",
+      "qNumber": 31,
+      "subject": "午後（一般問題）",
+      "officialAnswerNumber": "1",
+      "type": "multiple-choice",
+      "category": "一般問題",
+      "topicTags": [
+        "一般問題",
+        "第115回"
+      ],
+      "difficulty": 2,
+      "question": "医療提供施設について正しいのはどれか。",
+      "choices": {
+        "ア": "感染症病床における看護職員の人員配置基準は3 ：1 である。",
+        "イ": "特定機能病院には、医療機器の共同利用の実施が求められる。",
+        "ウ": "介護医療院は要介護高齢者に急性期医療を提供する施設である。",
+        "エ": "訪問看護ステーションの運営基準は医療法によって規定される。"
+      },
+      "answer": "ア",
+      "explanation": "公式正答はア。医療法施行規則第19条第2項第2号は、感染症病床と一般病床の入院患者数を3で除して看護師・准看護師の員数を算定する。これは病院の人員標準に関する規定であり、診療報酬上の病棟配置基準と混同しない。",
+      "choiceExplanations": {
+        "ア": "医療法施行規則第19条第2項第2号で、感染症病床および一般病床の入院患者数を3で除した数が看護師・准看護師の員数算定に用いられるため、3対1で正しい。",
+        "イ": "医療機器の共同利用は、地域医療支援病院が地域の医療機関を支援するために備える承認要件の一つ。特定機能病院に固有の要件として述べた本肢は誤り。",
+        "ウ": "厚生労働省は介護医療院を、長期的な医療と介護を要する高齢者の日常的な医学管理・看取り等と生活施設機能を担う施設と説明している。急性期医療を主に提供する施設ではない。",
+        "エ": "訪問看護ステーションの指定訪問看護については、健康保険法側の指定訪問看護の人員・運営基準や介護保険法側の指定居宅サービス基準がある。医療法が運営基準を直接定めるとの記述は誤り。"
+      },
+      "explanationCoverage": "full",
+      "hasImage": false,
+      "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-05c_01.pdf#page=15",
+      "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-05seitou.pdf#page=1",
+      "sourceAttribution": "出典：厚生労働省「第115回看護師国家試験」午後 問31（問題・正答）。問題文・選択肢は原典どおりで、表示のため改行・字間・選択肢番号の書式のみ調整しています（加工）。解説は過去問AIが独自に作成したもので、厚生労働省とは関係ありません。",
+      "officialReferenceUrls": [
+        "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/tp260424-03_04_05.html",
+        "https://laws.e-gov.go.jp/document?lawid=323M40000100050_20260401_507M60000100087",
+        "https://www.mhlw.go.jp/web/t_doc?dataId=80092000&dataType=0&pageNo=3",
+        "https://www.mhlw.go.jp/stf/shingi/2r9852000001hx9n-att/2r9852000001hxdc.pdf",
+        "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/0000196478.html",
+        "https://www.mhlw.go.jp/web/t_doc?dataId=84aa0500&dataType=0&pageNo=1",
+        "https://www.mhlw.go.jp/web/t_doc?dataId=82999404&dataType=0&pageNo=1"
+      ],
+      "license": "MHLW-attributed",
+      "needsReview": false,
+      "lastUpdated": "2026-10-10"
+    }
+  ],
+  "qa": {
+    "session": "pm",
+    "qNumber": 31,
+    "officialKey": "1/ア",
+    "questionAndChoicesUnchanged": true,
+    "fourChoicesExplained": true,
+    "lawVersionDate": "2026-04-01",
+    "article19LastAmended": "2023 (as shown on MHLW legal text)",
+    "modelCalls": 0
+  },
+  "sourceMap": {
+    "ア": {
+      "url": "https://laws.e-gov.go.jp/document?lawid=323M40000100050_20260401_507M60000100087",
+      "textUrl": "https://www.mhlw.go.jp/web/t_doc?dataId=80092000&dataType=0&pageNo=3",
+      "pinpoint": "第19条第2項第2号; MHLW text lines 665–691, amendment history last 2023"
+    },
+    "イ": {
+      "url": "https://www.mhlw.go.jp/stf/shingi/2r9852000001hx9n-att/2r9852000001hxdc.pdf",
+      "pinpoint": "p2 地域医療支援病院の共同利用承認要件"
+    },
+    "ウ": {
+      "url": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/0000196478.html",
+      "pinpoint": "介護医療院について 2"
+    },
+    "エ": {
+      "urls": [
+        "https://www.mhlw.go.jp/web/t_doc?dataId=84aa0500&dataType=0&pageNo=1",
+        "https://www.mhlw.go.jp/web/t_doc?dataId=82999404&dataType=0&pageNo=1"
+      ],
+      "pinpoint": "指定訪問看護の事業の人員・運営基準; 介護保険法の指定居宅サービス基準"
+    }
+  }
+}

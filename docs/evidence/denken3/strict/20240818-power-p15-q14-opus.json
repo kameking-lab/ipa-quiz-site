@@ -1,0 +1,64 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20240818",
+  "subject": "power",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 2698,
+      "cacheReadInputTokens": 99060,
+      "cacheCreationInputTokens": 16770,
+      "webSearchRequests": 0,
+      "costUSD": 0.20794,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 1359,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "fcf361edb462db1a65c6b185db83c850b3376a3b28b176f364c255bfdea8eacc",
+  "inputRequestSha256": "d1d23c715ed7e0e321f8c034bc18e232e35c72bf89f7c63073d080d7e9d378c6",
+  "inputHashes": {
+    "candidateSha256": {
+      "q14": "de75af5d33525dc533f133a1f2900f8cacd9261760c327c3b78248c435651ee0"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20240818/power/p19.png": "d6b7026cd46e51df3f1636af0d855291efaaa581490e20bae9b367cfaf1771b3"
+    },
+    "figureSha256": {},
+    "sourceQuestionPdfSha256": "0bc54a85819b9d9c80d1574c5b8c02a3c28976565d8c9068a3dd0344a3db5700",
+    "sourceAnswerPdfSha256": "f72ecbc3a477e64948388b69cf78cb931032c9f0c688639836c8d533a949cd0f",
+    "officialAnswerUnitsSha256": "71c72f53cced07dfbd37e4f77df5e6597739b05644f5ca8d73de05a4f4b5c2f3"
+  },
+  "assessment": [
+    {
+      "unitKey": "q14",
+      "questionNumber": 14,
+      "part": null,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "問題文: 添付の公式問題原図（印刷ページ -16-、フッター T1-D 019）と一字ずつ照合した。「電気絶縁材料に関する記述として，誤っているものを次の(1)〜(5)のうちから一つ選べ。」と一致する。変わっているのは全角読点「，」を「、」にした整形だけで、意味は変わらない。",
+        "選択肢(1)〜(5): 全肢の文言を原図と照合した。『ボイド(空隙，空洞)』『気圧を高めるか，真空状態とすることで』『熱や電界，機械的応力など』『継続的又は断続的に』まで、欠落・置換・誤字はない。",
+        "公式正答: 添付の公式解答表（令和6年度 上期 第三種電気主任技術者試験解答）の＜電 力＞欄で、問14 = 1 を確認した。manifest 固定単位 {question:14, part:null, answer:\"1\"} と候補の officialAnswer \"1\" は一致する。理論の問14（=3）や機械の問14（=5）と取り違えてもいない。",
+        "総合解説の検算: 気体は液体・固体より電気抵抗率が高く、比誘電率は約1で低い。したがって(1)の『電気抵抗率及び誘電率が低い』のうち抵抗率の部分が事実と逆で、ここが誤りの箇所になる。直列誘電体では D を一定として E = D/ε となるため、交流では誘電率の低いボイドに電界が集中する。直流の定常状態では抵抗率で分担が決まる。この補足も物理的に正しい。",
+        "正答肢(1)の固有理由: 抵抗率の記述が逆であることを誤りの根拠にしており、誘電率による電界集中という後半の因果は妥当と切り分けている。整合している。",
+        "誤答肢(2): 『気体は固体・液体より絶縁破壊強度が低い』『加圧すると平均自由行程が短くなり破壊強度が上がる（パッシェン曲線の高圧側、SF6 GIS）』『高真空では気体分子がほぼなく絶縁耐力が高い（真空遮断器）』の3点はいずれも正しい。",
+        "誤答肢(3): ボイド内の気体だけが局所的に絶縁破壊して部分放電が起こる、という基本機構の説明として正しい。",
+        "誤答肢(4): 熱・電気・機械ストレスによる長期劣化でボイドやクラックが生じ、そこが部分放電源になるという説明として妥当。",
+        "誤答肢(5): 部分放電を1回だけ見れば貫通破壊には至らないが、繰り返されると損傷が蓄積し、電気トリーを経て絶縁破壊に至る。この説明は妥当。",
+        "図: 原図は文章だけで、図・グラフ・回路図はない。figureUrls=[]、choiceFigureUrls={} で整合する。figureDescription の p19 は PDF のページ番号で、フッターの印刷コード 019 と矛盾しない（印刷上のページ番号は16）。",
+        "出典: officialReferenceUrls は空で、添付原図の外で確かめる必要がある独立した主張はない。sourceQuestionPdfUrl（20240818_ch_third_q02 = 電力）と sourceAnswerPdfUrl（a01）は、試験日 2024-08-18・上期・電力科目と整合する。"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,117 @@
+{
+  "duration_api_ms": 437472,
+  "stop_reason": "end_turn",
+  "session_id": "43d9df38-7581-4789-8a35-da4a90063aa3",
+  "total_cost_usd": 3.1896126,
+  "usage": {
+    "input_tokens": 80,
+    "cache_creation_input_tokens": 107195,
+    "cache_read_input_tokens": 3817718,
+    "output_tokens": 24909,
+    "output_tokens_details": {
+      "thinking_tokens": 8338
+    },
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 107195,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "not_available",
+    "iterations": [
+      {
+        "input_tokens": 2,
+        "output_tokens": 4346,
+        "cache_read_input_tokens": 134772,
+        "cache_creation_input_tokens": 515,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 515
+        },
+        "type": "message"
+      }
+    ],
+    "speed": "standard"
+  },
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 80,
+      "outputTokens": 24909,
+      "cacheReadInputTokens": 3817718,
+      "cacheCreationInputTokens": 107195,
+      "webSearchRequests": 0,
+      "costUSD": 2.1196036,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 8338,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    },
+    "claude-haiku-4-5-20251001": {
+      "inputTokens": 872429,
+      "outputTokens": 11516,
+      "cacheReadInputTokens": 0,
+      "cacheCreationInputTokens": 0,
+      "webSearchRequests": 14,
+      "costUSD": 1.0700090000000002,
+      "contextWindow": 200000,
+      "maxOutputTokens": 32000,
+      "thinkingTokens": 0,
+      "canonicalModel": "claude-haiku-4-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+    "spawned": 0,
+    "requested": {
+      "background": 0,
+      "foreground": 0,
+      "unset": 0
+    },
+    "started_in_background": 0,
+    "max_depth": 0,
+    "spawned_by_subagents": 0,
+    "completed": 0,
+    "failed": 0,
+    "killed": {
+      "parent": 0,
+      "user": 0,
+      "system": 0
+    },
+    "refused": {
+      "depth_limit": 0,
+      "concurrency_limit": 0,
+      "budget": 0
+    },
+    "by_type": {}
+  },
+  "is_error": false,
+  "num_turns": 60,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "{\"36\":{\"status\":\"PASS\",\"choiceStatus\":{\"ア\":\"PASS\",\"イ\":\"PASS\",\"ウ\":\"PASS\",\"エ\":\"PASS\"},\"fixedChoiceExplanations\":{},\"evidence\":[{\"url\":\"https://laws.e-gov.go.jp/api/1/lawdata/419AC0000000066\",\"excerpt\":\"建設業者は、毎年、基準日（三月三十一日をいう。以下同じ。）から三週間を経過する日までの間において、当該基準日前十年間に住宅を新築する建設工事の請負契約に基づき発注者に引き渡した新築住宅について、当該発注者に対する特定住宅建設瑕疵担保責任の履行を確保するため、住宅建設瑕疵担保保証金の供託をしていなければならない。\"},{\"url\":\"https://www.mlit.go.jp/jutakukentiku/jutaku-kentiku.files/kashitanpocorner/jigyousya/about_large_repair.html\",\"excerpt\":\"大規模修繕工事瑕疵保険は、共同住宅の大規模修繕工事の請負契約に関する保険。\"},{\"url\":\"https://www.mamoris.jp/daikibo/\",\"excerpt\":\"大規模修繕工事業者様が工事部分の瑕疵について発注者様（管理組合様等）に対し、瑕疵担保責任を履行した場合の補修費用等をまかなうための保険です。\"}]},\"37\":{\"status\":\"PASS\",\"choiceStatus\":{\"ア\":\"PASS\",\"イ\":\"PASS\",\"ウ\":\"PASS\",\"エ\":\"PASS\"},\"fixedChoiceExplanations\":{},\"evidence\":[{\"url\":\"https://ja.wikipedia.org/wiki/%E4%BB%95%E4%B8%8A%E8%A1%A8\",\"excerpt\":\"仕上表とは建築で用いられる設計図（実施設計図）の一種。建物内外の仕上げを一覧表としてまとめたもので、名前の通り文字だけで構成された表である。\"}]},\"38\":{\"status\":\"PASS\",\"choiceStatus\":{\"ア\":\"PASS\",\"イ\":\"PASS\",\"ウ\":\"PASS\",\"エ\":\"PASS\"},\"fixedChoiceExplanations\":{},\"evidence\":[{\"url\":\"https://reference.chord.or.jp/sr/ks/kt/kkg.html\",\"excerpt\":\"壁、床等に発生したひび割れ(隙間)の幅を測るもので、主として0.05㎜きざみに0.03㎜～1.5㎜程度の太さの直線が表示されている。\"}]},\"39\":{\"status\":\"PASS\",\"choiceStatus\":{\"ア\":\"PASS\",\"イ\":\"PASS\",\"ウ\":\"PASS\",\"エ\":\"PASS\"},\"fixedChoiceExplanations\":{},\"evidence\":[{\"url\":\"https://www.nilim.go.jp/lab/hcg/htmldate/energy-saving/index.html\",\"excerpt\":\"室内の湿った空気が壁内、床下、小屋裏へ流入すると、結露の要因となることがあります。防湿層を設けることにより、室内で発生した水蒸気の壁内への流入量を抑制させることが可能となり、内部結露が発生しにくくなります。\"}]},\"40\":{\"status\":\"HOLD\",\"holdReason\":\"公式正解は1（肢ア＝適切でない）だが、e-Gov法令API（令和6年4月1日時点）で確認した建築物省エネ法施行令7条2項は、増築時の届出対象を「増築又は改築に係る部分の床面積の合計が三百平方メートル」以上としている。300㎡→310㎡（増築部分10㎡）の増築は届出対象外と読めるため、条文上は肢アの記述が適切となり、公式正解と整合しない。イ（法19条2項）、ウ（法40条・施行令11条）、エ（法41条）はいずれも条文と一致し、他に不適切な肢も見当たらない。試験実施機関は公式正解の根拠を公表しておらず、予備校の解説（宅建通信学院）も令和7年改正後の条文で書き換えて説明しているため、公式正解の法的根拠に一次資料で到達できない。人の判断が必要。\",\"choiceStatus\":{\"ア\":\"FIX\",\"イ\":\"PASS\",\"ウ\":\"PASS\",\"エ\":\"PASS\"},\"fixedChoiceExplanations\":{\"ア\":\"公式正解では本肢が「適切でない」とされている。ただし、令和6年4月1日時点の建築物省エネ法施行令7条2項は、増築の届出対象を「増築又は改築に係る部分の床面積の合計が三百平方メートル」以上と定めている。本肢の増築部分は10㎡なので、条文上は届出の対象外と読める。公式正解の根拠は公表されていないので、学習の際は注意が必要である。なお、令和4年改正（令和7年4月施行）により、届出制度は原則すべての建築物への省エネ基準適合義務に移行している。\"},\"evidence\":[{\"url\":\"https://laws.e-gov.go.jp/api/2/law_data/428CO0000000008?asof=2024-04-01&response_format=xml\",\"excerpt\":\"法第十九条第一項第二号の政令で定める規模は、増築又は改築に係る部分の床面積の合計が三百平方メートルであることとする。\"},{\"url\":\"https://laws.e-gov.go.jp/api/2/law_data/428CO0000000008?asof=2024-04-01&response_format=xml\",\"excerpt\":\"法第十九条第一項第一号の政令で定める規模は、床面積の合計が三百平方メートルであることとする。\"},{\"url\":\"https://laws.e-gov.go.jp/api/2/law_data/427AC0000000053?asof=2024-04-01&response_format=xml\",\"excerpt\":\"所管行政庁は、前項の規定による届出があった場合において、その届出に係る計画が建築物エネルギー消費性能基準に適合せず、当該建築物のエネルギー消費性能の確保のため必要があると認めるときは、その届出を受理した日から二十一日以内に限り、その届出をした者に対し、その届出に係る計画の変更その他必要な措置をとるべきことを指示することができる。\"},{\"url\":\"https://laws.e-gov.go.jp/api/2/law_data/427AC0000000053?asof=2024-04-01&response_format=xml\",\"excerpt\":\"建築物の所有者は、国土交通省令で定めるところにより、所管行政庁に対し、当該建築物について建築物エネルギー消費性能基準に適合している旨の認定を申請することができる。\"}]},\"41\":{\"status\":\"PASS\",\"choiceStatus\":{\"ア\":\"PASS\",\"イ\":\"PASS\",\"ウ\":\"PASS\",\"エ\":\"PASS\"},\"fixedChoiceExplanations\":{},\"evidence\":[{\"url\":\"https://www.niijima.com/soshiki/kyouikuiinkai/files/hantei.pdf\",\"excerpt\":\"耐震安全性を判定する指標Is（構造耐震指標）と比較する値であり、さらに強度設計の際の目標値となる。Is≧Iso であれば「安全（想定される地震動に対して所要の耐震性を確保している）」となる。\"},{\"url\":\"https://www.niijima.com/soshiki/kyouikuiinkai/files/hantei.pdf\",\"excerpt\":\"Is＝Eo×Sｄ×T ここでEo：保有性能基本指標 Sd：形状指標 T：経年指標\"},{\"url\":\"https://laws.e-gov.go.jp/api/1/lawdata/407AC0000000123\",\"excerpt\":\"要安全確認計画記載建築物及び特定既存耐震不適格建築物以外の既存耐震不適格建築物の所有者は、当該既存耐震不適格建築物について耐震診断を行い、必要に応じ、当該既存耐震不適格建築物について耐震改修を行うよう努めなければならない。\"}]},\"42\":{\"status\":\"PASS\",\"choiceStatus\":{\"ア\":\"PASS\",\"イ\":\"PASS\",\"ウ\":\"PASS\",\"エ\":\"PASS\"},\"fixedChoiceExplanations\":{},\"evidence\":[{\"url\":\"https://www.pref.tottori.lg.jp/secure/1297716/0921manual-60-66.pdf\",\"excerpt\":\"車椅子使用者用駐車施設は、平坦とし、濡れても滑りにくい仕上げとすること。\"},{\"url\":\"https://www.env.go.jp/content/900493149.pdf\",\"excerpt\":\"駐車スペースと通路の間には段を設けない。・床面は滑りにくく平坦な仕上げとするなど安全を確保する。\"}]},\"43\":{\"status\":\"PASS\",\"choiceStatus\":{\"ア\":\"PASS\",\"イ\":\"PASS\",\"ウ\":\"PASS\",\"エ\":\"PASS\"},\"fixedChoiceExplanations\":{},\"evidence\":[{\"url\":\"https://laws.e-gov.go.jp/api/1/lawdata/325CO0000000338\",\"excerpt\":\"ｎ前条第一項第二号の表備考一の号に規定する住宅等の居室（次項において単に「住宅等の居室」という。）にあつては〇・五、その他の居室にあつては〇・三\"},{\"url\":\"https://www.gesui.metro.tokyo.lg.jp/inquiry/qa/fqmenu7/fq7012\",\"excerpt\":\"「ディスポーザ排水処理システム」とは、ディスポーザで粉砕した生ごみを含む排水を、排水処理装置で処理してから下水道に流すもので、生物処理タイプと機械処理タイプがあります。\"}]},\"44\":{\"status\":\"PASS\",\"choiceStatus\":{\"ア\":\"PASS\",\"イ\":\"PASS\",\"ウ\":\"PASS\",\"エ\":\"PASS\"},\"fixedChoiceExplanations\":{},\"evidence\":[{\"url\":\"https://www.zenkankyo.jp/seisou\",\"excerpt\":\"空気ポンプを用いて圧縮空気を管内に一気に放出し、その衝撃波により閉塞物を破壊・離脱させて除去する\"},{\"url\":\"https://www.zenkankyo.jp/seisou\",\"excerpt\":\"高圧洗浄機または高圧洗浄車からホースで導水し、ホースの先端に取り付けられたノズルから噴射する高速噴流により、管内付着・堆積物等を除去する方法\"}]},\"45\":{\"status\":\"PASS\",\"choiceStatus\":{\"ア\":\"PASS\",\"イ\":\"PASS\",\"ウ\":\"PASS\",\"エ\":\"PASS\"},\"fixedChoiceExplanations\":{},\"evidence\":[{\"url\":\"https://www.fdma.go.jp/mission/prevention/item/prevention001_03_h30_betten03.pdf\",\"excerpt\":\"機器点検 次の事項について、消防用設備等の種類等に応じ、６月に１回実施する点検。\"},{\"url\":\"https://www.fdma.go.jp/mission/prevention/item/prevention001_03_h30_betten03.pdf\",\"excerpt\":\"総合点検 消防用設備等の全部若しくは一部を作動させ、又は使用することにより、総合的な機能を確認するため、消防用設備等の種類等に応じ、年に１回実施する点検。\"}]}}",
+  "ttft_ms": 2658,
+  "type": "result",
+  "duration_ms": 364600,
+  "uuid": "d98e561d-31f5-4ae6-bb36-8ba2be67b267",
+  "ttft_stream_ms": 1496,
+  "time_to_request_ms": 310,
+  "first_content_frame_ms": 1496,
+  "queued_turn_count": 0,
+  "result_index": 0,
+  "_exitCode": 0,
+  "_requestedModel": "claude-opus-5-5",
+  "_toolsAllowed": [
+    "WebFetch",
+    "WebSearch"
+  ]
+}

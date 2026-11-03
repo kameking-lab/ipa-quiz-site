@@ -1,0 +1,49 @@
+{
+  "status": "partial-accepted",
+  "date": "20240818",
+  "subject": "theory",
+  "questionCount": 1,
+  "answerUnitCount": 2,
+  "choiceCount": 10,
+  "sourceQuestionPdfSha256": "236be905e93a023cf3c65c1e22c45c24dc42b910151c51f8ed023247793d1d29",
+  "sourceAnswerPdfSha256": "f72ecbc3a477e64948388b69cf78cb931032c9f0c688639836c8d533a949cd0f",
+  "reviewedDataSha256": "2a2c838998ef0f46b22f0576fe4b7591b5aad526caf4cf73be744ed0ad822a9d",
+  "strictReview": {
+    "q15a": {
+      "path": "docs/evidence/denken3/strict/20240818-theory-strict4-q15a-opus.json",
+      "sha256": "fc718b41f41c9ccc6223ae26aa80e8c12568e5277e6c923766106828c213dd07",
+      "status": "PASS",
+      "resolvedModel": "claude-opus-5-5"
+    },
+    "q15b": {
+      "path": "docs/evidence/denken3/strict/20240818-theory-strict3-q15a-q15b-opus.json",
+      "sha256": "b159dfac4c8f63615d6f18c68d3751d201da43baf45fd146a4bd84cf52e0db28",
+      "status": "PASS",
+      "resolvedModel": "claude-opus-5-5"
+    }
+  },
+  "questions": [
+    {
+      "number": 15,
+      "sourceDraftSha256": "238d95d5838cfb84ff0284614900ac30196365f4b055deecb43e0827b8d65f2c",
+      "opusReceipt": "data/raw_pdfs/denken3/review/20240818/theory/q15-opus-review.json",
+      "opusReceiptSha256": "01bebd6b10afc634707d55563656be59a1404c1ea61b6ed6137a73a81ae11c44",
+      "assessment": {
+        "number": 15,
+        "status": "PASS",
+        "textIssues": [],
+        "choiceIssues": [],
+        "explanationIssues": [],
+        "figureIssues": [],
+        "externalSourceIssues": []
+      },
+      "figureSha256": {
+        "20240818-theory-q15-ac-circuit": "3c017b72e88229b876cc59eff777c6a35f495f27fae0d39f50cccc78a09dae02"
+      }
+    }
+  ],
+  "reviewedDataSha256Repair": {
+    "previous": "da672d2495a76743d611a711fb5db933b43928257725fb2a3953c472839192cc",
+    "reason": "Recorded file digest matched no committed revision under LF or CRLF; every row's canonical JSON still equals the candidateSha256 of its bound strict PASS receipt, so only the byte-level file digest is re-pinned (LF checkout)."
+  }
+}

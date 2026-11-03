@@ -15,9 +15,8 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { createHistoryStore } from "@/lib/storage/history";
-import { aggregateByCategory, daysUntil } from "@/lib/learning/analytics";
+import { aggregateByCategory } from "@/lib/learning/analytics";
 import { summarize as summarizeSrs } from "@/lib/learning/spaced-repetition";
-import { LS_KEYS } from "@/lib/storage/keys";
 
 const DAY_MS = 86_400_000;
 
@@ -63,18 +62,9 @@ function Inner({ categoryById }: Props) {
         </CardContent>
       </Card>
 
-      {report.examMessage && (
-        <Card className="border-amber-300 bg-amber-50 dark:border-amber-900/60 dark:bg-amber-950/30">
-          <CardHeader>
-            <CardTitle className="text-base text-amber-900 dark:text-amber-200">
-              試験直前メッセージ
-            </CardTitle>
-          </CardHeader>
-          <CardContent className="text-sm text-amber-900 dark:text-amber-100">
-            {report.examMessage}
-          </CardContent>
-        </Card>
-      )}
+      <p className="text-sm text-muted-foreground">
+        試験日・申込締切は <a href="https://tsugino-shikaku.jp/calendar" target="_blank" rel="noopener noreferrer" className="text-sky-700 underline dark:text-sky-300">次の資格</a> で確認できます。
+      </p>
 
       <div className="grid gap-4 md:grid-cols-2">
         <Card>
@@ -194,9 +184,6 @@ function buildReport(categoryById: Record<string, string>) {
   const weeklyBuckets = bucketByWeek(entries);
   const srs = summarizeSrs();
 
-  const examDate = readExamDate();
-  const examDays = examDate ? daysUntil(examDate) : null;
-
   const ym = new Date().toLocaleDateString("ja-JP", { year: "numeric", month: "long" });
   const summary = generateSummary({
     monthlyEntries: monthlyEntries.length,
@@ -208,26 +195,14 @@ function buildReport(categoryById: Record<string, string>) {
     dueNow: srs.dueNow,
   });
 
-  const examMessage = examDays !== null && examDays <= 30 ? buildExamMessage(examDays) : null;
-
   return {
     title: `${ym}の学習レポート`,
     summary,
-    examMessage,
     totalAttempts: stats.total,
     focusCategories,
     weeklyBuckets,
     srs,
   };
-}
-
-function readExamDate(): string {
-  if (typeof window === "undefined") return "";
-  try {
-    return window.localStorage.getItem(LS_KEYS.examDate) ?? "";
-  } catch {
-    return "";
-  }
 }
 
 function bucketByWeek(entries: { at: number }[]) {
@@ -281,18 +256,4 @@ function generateSummary(input: {
   }
 
   return lines;
-}
-
-function buildExamMessage(daysLeft: number): string {
-  if (daysLeft <= 0) return "本日が試験日です。深呼吸して、これまでの努力を信じましょう。";
-  if (daysLeft <= 3) {
-    return `試験まであと${daysLeft}日。新しい分野に手を出さず、復習モードで間違えた問題を確実に潰しましょう。前日は早めに休息を。`;
-  }
-  if (daysLeft <= 7) {
-    return `試験まで1週間。ここからは弱点分野の演習＋過去問模試で時間配分を調整するフェーズです。`;
-  }
-  if (daysLeft <= 14) {
-    return `試験まで2週間。重点分野の集中演習に切り替えるタイミングです。模試スコアの推移も確認しましょう。`;
-  }
-  return `試験まで${daysLeft}日。計画的に学習を継続しましょう。週ごとの演習量と正答率の推移を月次レポートで確認できます。`;
 }

@@ -9,6 +9,7 @@ import { cn } from "@/lib/utils";
 import { examLabel, formatYearSeason } from "@/lib/utils";
 import { SITE_BASE_URL } from "@/lib/seo/config";
 import type { SharePayload } from "@/lib/chat/types";
+import { requestsNewQuestion, ORIGINAL_QUESTION_ONLY_MESSAGE } from "@/lib/copilot/original-question-request";
 
 function decodePayload(encoded: string): SharePayload | null {
   try {
@@ -40,6 +41,26 @@ export function ChatShareView() {
         >
           トップへ戻る
         </Link>
+      </main>
+    );
+  }
+
+  // Preserve the original URL payload; do not relabel generated content as past questions.
+  if (Array.isArray(payload.msgs) && payload.msgs.some((message, index) => {
+    const requestedGeneration = message.qa === "similar" || (message.r === "u" && typeof message.c === "string" &&
+      requestsNewQuestion([{ role: "user", content: message.c }]));
+    if (!requestedGeneration) return false;
+    // A known pre-generation refusal is not a generated question. This exact
+    // pair may coexist with an ordinary original-question explanation later.
+    const reply = payload.msgs[index + 1];
+    return reply?.r !== "a" || reply.c !== ORIGINAL_QUESTION_ONLY_MESSAGE;
+  })) {
+    return (
+      <main className="mx-auto max-w-2xl space-y-4 px-4 py-10">
+        <h1 className="text-lg font-bold">旧AI生成会話は非採用です</h1>
+        <p>この共有会話には、廃止した類題生成操作が含まれています。実在する過去問との一致を確認できないため、問題文・選択肢・解説を再表示しません。</p>
+        <p>元の共有データは削除していません。原問に結び付くと確認できない解説も再利用しません。</p>
+        <Link href="/search" className="inline-block min-h-11 py-2 underline">掲載済みの問題を探す</Link>
       </main>
     );
   }

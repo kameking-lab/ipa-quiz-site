@@ -1,0 +1,80 @@
+[
+  {
+    "number": 13,
+    "approved": false,
+    "issues": [
+      "The explanation says the designated representative can be changed by notice from the policyholder at any time. It leaves out that the insured person's consent is normally required, so the reason for choice 3 is incomplete.",
+      "The reason for choice 4 only says this is 'common practice'. It does not explain the rule: when the policyholder and the insured person are the same, the premium-waiver claim is one of the claims the designated representative can make.",
+      "The reason for choice 1 does not state the precondition that the insured person and the beneficiary are the same person, which the question sets out."
+    ],
+    "suggestedCorrection": "Choice 3: The policyholder can change the designated representative during the policy term, with the insured person's consent and through the insurer's procedure. Saying it cannot be changed is therefore inappropriate. Choice 4: When the policyholder and the insured person are the same and the insured person cannot express their own will, the premium-waiver claim can also be made by the designated representative. The statement is appropriate. Choice 1: With the insured person and the beneficiary being the same person, this rider covers hospitalization benefits, specified-illness benefits, severe-disability benefits and living-needs benefits. The statement is appropriate.",
+    "sourceQueries": [
+      "指定代理請求特約 指定代理請求人 変更 被保険者の同意",
+      "指定代理請求 保険料払込免除 契約者 被保険者 同一",
+      "指定代理請求特約 特約保険料 不要"
+    ]
+  },
+  {
+    "number": 14,
+    "approved": true,
+    "issues": [],
+    "suggestedCorrection": "",
+    "sourceQueries": [
+      "個人賠償責任補償特約 職務遂行に直接起因 免責",
+      "携行品損害特約 住宅外 携行 定義"
+    ]
+  },
+  {
+    "number": 15,
+    "approved": true,
+    "issues": [
+      "(ア): the draft should name the three legal heirs (wife, eldest son, second son) to show where 500万円 × 3 people comes from.",
+      "(エ): the draft does not say this is taxed as occasional income (一時所得). It also does not explain the note that the policy term is 20 years: that term keeps it out of the 金融類似商品 rules, which apply to single-premium endowment policies of 5 years or less. The answer is the same either way, so this is only an addition."
+    ],
+    "suggestedCorrection": "(ア): The legal heirs are the wife, the eldest son and the second son, 3 people in total. 500万円 × 3 = 1,500万円. (エ): The policyholder and the maturity beneficiary are the same person, so the maturity benefit is occasional income (一時所得) and subject to income tax and resident tax. The policy term is 20 years, so it is not a 金融類似商品 subject to final withholding tax (源泉分離課税).",
+    "sourceQueries": [
+      "死亡保険金 非課税限度額 500万円 法定相続人の数",
+      "リビング・ニーズ特約 保険金 非課税 被保険者本人",
+      "養老保険 満期保険金 契約者 受取人 同一 一時所得"
+    ]
+  },
+  {
+    "number": 16,
+    "approved": false,
+    "issues": [
+      "The reason for choice 4 says the amount is 'the same as the 2023 amount'. That is wrong: the actual 2023 depreciation was 699,300円, while 1,398,600円 is a full 12-month year with no monthly proration.",
+      "The explanation does not say that 2024 counts as a full 12 months or that the depreciation guarantee amount is ignored under the question's conditions."
+    ],
+    "suggestedCorrection": "Choice 4: 1,398,600円 is the acquisition cost of 4,200,000円 × 0.333, a full year's amount. It ignores both the proration for the first year and the deduction of the prior year's depreciation, so it is wrong. Explanation, adding the conditions: 2023 = 4,200,000 × 0.333 × 6/12 = 699,300円, leaving an undepreciated balance of 3,500,700円 at year-end. 2024 is a full 12 months: 3,500,700 × 0.333 = 1,165,733.1円, rounded up to 1,165,734円. The depreciation guarantee amount is not considered, as the question instructs.",
+    "sourceQueries": [
+      "所得税 減価償却 定率法 取得年 月割 計算",
+      "定率法 償却率 0.333 耐用年数6年"
+    ]
+  },
+  {
+    "number": 17,
+    "approved": true,
+    "issues": [
+      "Suggested addition: the explanation could state why the ½ calculation applies. The service period is over 5 years, so this is not a 'short-term retirement allowance' (短期退職手当等), and the person was never an officer, so it is not a 'specified-officer retirement allowance' (特定役員退職手当等)."
+    ],
+    "suggestedCorrection": "",
+    "sourceQueries": [
+      "退職所得控除額 勤続20年超 70万円 1年未満切上げ",
+      "退職所得 2分の1 短期退職手当等 特定役員退職手当等"
+    ]
+  },
+  {
+    "number": 18,
+    "approved": true,
+    "issues": [
+      "Suggested addition: the draft could note that even when income tax filing is not required under the rule in choice 2, a resident-tax return may still be needed.",
+      "For choice 4, 'cannot be offset against the public pension miscellaneous income' is a more precise wording than 'cannot be offset against other income (損益通算)'."
+    ],
+    "suggestedCorrection": "",
+    "sourceQueries": [
+      "公的年金等控除額 公的年金等に係る雑所得以外の合計所得金額 1,000万円",
+      "公的年金等 確定申告不要制度 400万円 20万円",
+      "先物取引に係る雑所得等 申告分離課税 通算"
+    ]
+  }
+]

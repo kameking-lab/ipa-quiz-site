@@ -36,7 +36,13 @@ export async function POST(req: Request) {
   }
   const userId = session.user.id;
 
-  const body = (await req.json().catch(() => ({}))) as { entries?: unknown };
+  const body = (await req.json().catch(() => null)) as { entries?: unknown; expectedUserId?: unknown } | null;
+  if (!body || typeof body.expectedUserId !== "string" || !body.expectedUserId) {
+    return NextResponse.json({ error: "expected_user_required" }, { status: 400 });
+  }
+  if (body.expectedUserId !== userId) {
+    return NextResponse.json({ error: "account_changed" }, { status: 409 });
+  }
   const incoming: StudyPlanSyncEntry[] = Array.isArray(body.entries)
     ? body.entries.filter(isEntry).slice(0, 50)
     : [];

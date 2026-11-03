@@ -1,0 +1,94 @@
+{
+  "questionNumber": 14,
+  "sharedContext": null,
+  "units": [
+    {
+      "part": null,
+      "question": "磁性材料に関する記述として，誤っているものを次の(1)～(5)のうちから一つ選べ。",
+      "choices": {
+        "1": "鉄，ニッケル，コバルト及びこれらの合金は強磁性体である。",
+        "2": "強磁性体に交番磁界を加えると，ヒステリシス損と渦電流損とを含む鉄損が生じて発熱する。",
+        "3": "交番磁界に対して，強磁性体中の磁束の周りに起電力が生じることでヒステリシス損が発生する。",
+        "4": "ヒステリシス損は，交番磁界の大きさと強磁性体中の磁束密度の大きさとの関係を示す軌跡曲線の囲む面積と交番磁界の周波数に比例する。",
+        "5": "渦電流損は，厚さが薄く，表面を電気絶縁処理した強磁性体を，磁束方向に対して平行に積層する構造とすることで低減することができる。"
+      },
+      "officialAnswer": "3",
+      "explanation": "強磁性体に交番磁界を加えたときに生じる鉄損は，ヒステリシス損と渦電流損の和である。\n\n・ヒステリシス損：磁化の向きが周期的に反転する際に，B-H 曲線（ヒステリシスループ）に沿って磁化が変化することで失われるエネルギーである。1 周期あたり単位体積に失われるエネルギーはループの囲む面積 ∮H dB [J/m³] に等しく，1 秒間には f 回繰り返されるので，単位体積あたりの損失は Pₕ = f × ∮H dB [W/m³] となる。すなわちループ面積と周波数に比例する。\n\n・渦電流損：交番磁束が変化すると，電磁誘導により磁束の周りに起電力が生じ，導電性の鉄心内に渦電流が流れてジュール熱が発生する。この損失は板厚 t，周波数 f，最大磁束密度 Bₘ に対して Pₑ ∝ (t·f·Bₘ)² の関係があり，板厚を薄くすると大きく減らせる。\n\n選択肢(3)は「磁束の周りに起電力が生じる」ことを原因としているが，これは渦電流損の発生メカニズムであり，ヒステリシス損の説明としては誤りである。よって正答は(3)。",
+      "choiceExplanations": {
+        "1": "正しい。鉄（Fe），ニッケル（Ni），コバルト（Co）は常温で強磁性を示す代表的な元素であり，これらを主成分とする合金（例：パーマロイ〔Fe-Ni 系〕など）も強磁性材料として用いられる。",
+        "2": "正しい。強磁性体に交番磁界を加えると，磁化の反転に伴うヒステリシス損と，電磁誘導で流れる渦電流による渦電流損が生じる。両者を合わせて鉄損といい，損失はすべて熱となって強磁性体を発熱させる。",
+        "3": "誤り（正答）。交番磁束の周りに起電力が誘導され，それにより鉄心内に渦電流が流れてジュール熱となるのは渦電流損である。ヒステリシス損は，磁化の反転時に B-H ループに沿って磁化が変化することによる損失であり，誘導起電力が原因ではない。",
+        "4": "正しい。磁界の強さ H と磁束密度 B の関係を示す軌跡曲線がヒステリシスループであり，1 周期あたり単位体積で失われるエネルギーはその囲む面積に等しい。1 秒間に f 周期繰り返すので，ヒステリシス損はループ面積と周波数 f に比例する（Pₕ = f × ∮H dB）。",
+        "5": "正しい。渦電流損は板厚 t の 2 乗に比例する（Pₑ ∝ (t·f·Bₘ)²）。薄い板の表面を絶縁処理し，磁束の方向と平行に積層すると，磁束に垂直な面内を流れようとする渦電流の経路が各板内に分断され，渦電流損を低減できる。変圧器や回転機の鉄心に用いられる積層鉄心（成層鉄心）がこの構造である。"
+      },
+      "figureDescription": "図なし。本問は文章のみで構成されており，解答に図は不要。",
+      "officialReferenceUrls": [],
+      "uncertainty": "なし",
+      "needsReview": true,
+      "sourceQuestionPdfUrl": "https://www.shiken.or.jp/chief/upload/20260322_ch_third_q02.pdf",
+      "sourceAnswerPdfUrl": "https://www.shiken.or.jp/chief/upload/20260322_ch_third_a01.pdf",
+      "reviewedFromPage": [
+        17
+      ]
+    }
+  ],
+  "draftModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 2680,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 9309,
+      "webSearchRequests": 0,
+      "costUSD": 0.1283358,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 1054,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "326abee0a4b7521a1609083d9d6a4589e1674ec5dc04ff715675344364c2f327",
+  "inputRequestSha256": "cb2b91ec8f54d0a69d0c3dce3cebd142cebf0fbf6ab8a6a10c1969f33e1b6934",
+  "sourceQuestionPdfSha256": "9733341a0f293f068c9a665d5a9a90f1aabf3a2db5d79cd530643cdea241f7b7",
+  "sourceAnswerPdfSha256": "cc2890296d06a4823df5697a78a1c01ddfd39f041c51f48c87984daa3a5707c6",
+  "sourcePageImageSha256": {
+    "data/raw_pdfs/denken3/review/20260322/power/p17.png": "cef08a7bfbffbd610c7403bf88377337cab1328c42bb2466340f2db8d1280a86"
+  },
+  "revisionHistory": [
+    {
+      "version": 1,
+      "model": "claude-opus-5-5",
+      "resolvedModel": "claude-opus-5-5",
+      "modelUsage": {
+        "claude-opus-5-5": {
+          "inputTokens": 2,
+          "outputTokens": 2398,
+          "cacheReadInputTokens": 1279,
+          "cacheCreationInputTokens": 12760,
+          "webSearchRequests": 0,
+          "costUSD": 0.15030380000000002,
+          "contextWindow": 1000000,
+          "maxOutputTokens": 128000,
+          "thinkingTokens": 860,
+          "canonicalModel": "claude-opus-5-5",
+          "provider": "firstParty",
+          "costBasis": "list"
+        }
+      },
+      "rawResponseSha256": "af64d7ae0d1a6892857a08f05736f0c7436c237366471dabee006022f6a3cf9f",
+      "inputRequestSha256": "6941baa1b678c2b9e273a9bd78883b0dc5150cdeffe9aff4145045f0458c294c",
+      "previousDraftSha256": "9b2cd6b9ed6a333b6a9420f924d19df8e819b078f752e4e89350fbed0021d931",
+      "previousDraft": "data/raw_pdfs/denken3/review/20260322/power/archive/q14-vision-draft-v1.json",
+      "answeredReviewSha256": "8ce56f74597132b56e2d8b64228dcafa49b73c05474aa956ace01151a036b3b5",
+      "answeredReview": "data/raw_pdfs/denken3/review/20260322/power/archive/q14-opus-review-v1.json",
+      "answeredStrictReceipt": "docs/evidence/denken3/strict/20260322-power-s1-q14-opus.json",
+      "answeredStrictReceiptSha256": "445744f43188a6371a67dc5a16fce401e7536f079652a96e83c5d675b70312b9",
+      "figureSha256": {},
+      "referenceHashes": {},
+      "operatorNote": ""
+    }
+  ]
+}

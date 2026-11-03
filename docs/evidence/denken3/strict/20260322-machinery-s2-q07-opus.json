@@ -1,0 +1,69 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20260322",
+  "subject": "machinery",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 3384,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 14542,
+      "webSearchRequests": 0,
+      "costUSD": 0.1842798,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 1658,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "e8bf113beef836ddd5cc477e07827f31f3cae48c5d922a732338c541de5b25bf",
+  "inputRequestSha256": "2db025822a439c74a27f1d7a281216b2e9fff425b0efc52fa61be3937949a3ac",
+  "inputHashes": {
+    "candidateSha256": {
+      "q07": "4d339fb2af42b68470f7bfa9c2d2b562ae7f8ec49ffe775220509f0237cb2d0c"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20260322/machinery/p10.png": "a98a2df027f9599b4775df365b1839bfda13cd719c09f0d0798d524630e6109d"
+    },
+    "figureSha256": {},
+    "sourceQuestionPdfSha256": "a89c7dc2b9a305f9db83f2f78195f0df8a0da5aeec6b8e66cfd40fb028d146fb",
+    "sourceAnswerPdfSha256": "cc2890296d06a4823df5697a78a1c01ddfd39f041c51f48c87984daa3a5707c6",
+    "officialAnswerUnitsSha256": "957fa42f644482c35715d6e7b88d63ff23aaaad1ad79be7ee18b45b19689c5a8",
+    "referencePdfSha256": {},
+    "referencePageSha256": {},
+    "referenceJsonSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q07",
+      "questionNumber": 7,
+      "part": null,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "出典メタデータ: 公式解答表の表題『令和7年度 第三種電気主任技術者下期試験解答』に照らし、fiscalYear=2025、term=lower、examDate=2026-03-22、subject=machinery はmanifestと一致する。sourceQuestionPdfUrl=20260322_ch_third_q03.pdf、sourceAnswerPdfUrl=20260322_ch_third_a01.pdf もmanifestと一致する。reviewedFromPage=[10] はmanifest指定のPDF第10頁と一致する。原図の頁番号は冊子上『-7-』、フッタは『T2-K 010』である。",
+        "公式正答: 解答表の＜機械＞問7は解答3・配点5である。officialAnswer='3'、scoringPoints=5 と一致し、manifestの正答単位 {question:7, part:null, answer:'3', points:5} とも一致する。",
+        "問題文: 原図と全文を照合した。第1段落『駆動回路に与えられた(ア)に比例する(イ)だけ回転…そのパルスの(ウ)に比例する回転速度で回転し，入力パルスを停止すれば回転子も停止する。』は一致する。第2段落『角度θ[°]を1ステップとして回転…1パルス当たりの回転角度を(エ)という。』は一致し、記号θと単位[°]も一致する。第3段落『永久磁石形，可変リラクタンス形，ハイブリッド形…無通電状態でも回転子位置を(オ)が働く特徴がある。』と設問文も一致する。脱字・語順の差異はない。",
+        "選択肢: 原図の組合せ表と5行×5列の全セルを照合し、候補と完全に一致した。(1)パルス数/回転速度/周波数/移動角/保持する力、(2)パルス数/回転角度/幅/ステップ角/追従する力、(3)パルス数/回転角度/周波数/ステップ角/保持する力、(4)周波数/回転角度/幅/ステップ角/追従する力、(5)周波数/回転速度/幅/移動角/追従する力。",
+        "総合解説の計算: 回転角度=N×θ、回転速度 n=fθ/360 [s⁻¹]=60fθ/360 [min⁻¹] は次元・係数とも正しい。計算例は θ=1.8°、f=1000 pulse/s で 1000×1.8/360=5 s⁻¹、5×60=300 min⁻¹ となり正しい。",
+        "総合解説の因果: 永久磁石形は無通電時にも永久磁石と固定子鉄心間の磁気吸引によるディテントトルクを持ち、回転子位置を保持する。この記述は技術的に正確であり、(オ)=保持する力の根拠として妥当である。結論の(3)も公式正答と一致する。",
+        "肢別解説(1): (1)の誤りは(イ)回転速度と(エ)移動角の2箇所であり、(ア)(ウ)(オ)は正語である。解説はこの誤り箇所・正語の特定と一致し、理由も正確である。",
+        "肢別解説(2): (2)の誤りは(ウ)幅と(オ)追従する力の2箇所であり、(ア)(イ)(エ)は正語である。解説はこれと一致する。",
+        "肢別解説(3): 正答(3)の全5空白を根拠付きで説明しており、正確である。",
+        "肢別解説(4): (4)の誤りは(ア)周波数、(ウ)幅、(オ)追従する力の3箇所であり、(イ)(エ)は正語である。解説はこれと一致する。",
+        "肢別解説(5): (5)は5空白すべてが誤りであり、解説も『すべての空白が誤り』としている。(ア)(イ)の組を単独で見れば成立する関係でも、文脈（回転量）に合わないとする理由付けは妥当である。",
+        "図: 本問は組合せ表のみで回路図・特性図はない。figureUrls=[]、choiceFigureUrls={} は妥当である。figureDescriptionの『図はありません。語句の組合せ表を選択肢に文字化』は原図と整合し、表の内容は選択肢テキストで完全に再現されている。",
+        "参考資料: officialReferenceUrls=[] であり、検証を要する独立主張はない。sourceAttributionの『令和7年度下期第三種電気主任技術者試験 機械科目 問7』は原典と一致する。uncertainty='なし'、needsReview=false は監査結果と整合する。"
+      ]
+    }
+  ]
+}

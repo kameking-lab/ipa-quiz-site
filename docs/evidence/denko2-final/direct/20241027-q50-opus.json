@@ -1,0 +1,42 @@
+{
+  "schemaVersion": 1,
+  "receiptKind": "canonicalized-direct-review",
+  "paper": "20241027",
+  "reviewModel": "claude-opus-5-5",
+  "upstreamReviewReceipt": "docs/evidence/denko2-strict-20241027-q41-50/direct4-q47-50-opus.json",
+  "upstreamReviewSha256": "19651f553c8e7fec0f654e6bd7ea41b771b75870358c9cbfe5719047a190146e",
+  "candidateEquivalenceProof": "current per-question candidate hash equals a clean source-aware direct Opus input hash",
+  "inputHashes": {
+    "draftSha256": "ae88f9ff58a512aa0e4f8eb2ace65e12c1fcd7a4d878081e6eff924ffa38f277",
+    "rowSha256": {
+      "50": "669ead54447b60e569cc456647fb136630401ef912189b9d6dd603e2a4d739d3"
+    },
+    "detailFigureSha256": {
+      "public/images/denko2/2024-second/wiring-diagram.png": "4b4d474a8fde227349db77620ddece4a673956783b85384b48d2247572adcc32",
+      "public/images/denko2/2024-second/q50-1.png": "7c75b2671e856995b1112b174ea78bc73bc61b57996daded292a3db5f5e36e27"
+    },
+    "sharedFigureSha256": {},
+    "legalReceiptSha256": {
+      "docs/evidence/denko2-sources/20241027/q50.json": "d04a9c134bfee33e3c14dd271a56ee5f56f9da7a4c8fb8a421647a9f4718ca1d"
+    }
+  },
+  "assessment": [
+    {
+      "number": 50,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "visualIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "I compared the candidate with the official question row (crop q50.png). The question text matches exactly: 「⑳で示す図記号の電線管をモーターに接続するために使用されるものは。」",
+        "Page 15 of the official common wiring diagram, 1st-floor factory (1階工場), upper left: ⑳ points to the segment annotated 「(F2 30)」, between the 3.7kW motor M (with its earth symbol) and the dashed box marked ⑩ (connected to the d circuit). The candidate's diagramDescription matches this.",
+        "Official photos, checked against the public image q50-1.png (same content and order as the official crop): イ is a metal cylinder with set screws and a screwed-on metal strip on the side, a smooth inner surface and a thread/locknut at the rear. ロ is a metal cylinder with a spiral groove on the inside and a thread/nut at the rear. ハ is a black plastic fitting with stepped, wavy ridges on the rear outer surface and a ring at the front. ニ is a grey rigid plastic fitting with vertical slit claws around the inner rim. All four choice descriptions and per-choice reasons match the photos.",
+        "Official answer ロ is kept unchanged.",
+        "Primary source: the candidate's officialReferenceUrl is https://www.mlit.go.jp/gobuild/content/001879783.pdf. WebFetch returned the PDF, but its compressed streams could not be decoded into text. I therefore checked against the fixed official primary-source pack for Q50 (pack SHA256 a122e7ce…ce96; PDF SHA256 511427a0…2524): MLIT Government Building Repair Division (官庁営繕部), 『公共建築設備工事標準図（電気設備工事編）令和4年版』, PDF page 23 / printed page 22, conduit table (管類). There, F2 corresponds to 「金属製可とう電線管」, and on the same row 「F2WP ビニル被覆金属製可とう電線管」 is shown as the vinyl-covered F2. This supports the explanation's statement that F2 means flexible metal conduit (金属製可とう電線管)."
+      ]
+    }
+  ]
+}

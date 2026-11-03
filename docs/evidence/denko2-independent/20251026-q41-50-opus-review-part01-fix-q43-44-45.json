@@ -1,0 +1,71 @@
+{
+  "inputHashes": {
+    "draftSha256": "0bea99ad7e09bab2e800aa5086fd13e2ef53a1461151e50c53dfa9a6ef858acb",
+    "rowSha256": {
+      "43": "1c3d3de6b16f521aa24bd88829765142487c3e8522966d31aacb45feec15adde",
+      "44": "0ee213dd6774a6324ee958b2aab9fa4ec513378cb02048222c0b58fc7bb12b5f",
+      "45": "0220a970bc41a61d58f8f468630d824b6f136b18446137ff299fae653ee0814a"
+    },
+    "sharedFigureSha256": {
+      "public/images/denko2/2025-second/wiring-first-floor.png": "88f652f95103f8bcd90c110af995e65046ace5b5f38e9bceeaad6ab64d29534a",
+      "public/images/denko2/2025-second/wiring-second-floor.png": "f1076fbb7d9e11339f58b180c19a36b98f7146254572449b4b342157779a31e9",
+      "public/images/denko2/2025-second/wiring-panel.png": "2ab6ad86eea5b617f06c0619a24488a74b154265518ad9b2863bda3243aa819f"
+    },
+    "commonInstructionsSha256": "e2bb1b00f146246a003a209c7614e3c0e316f6991480b6f82e9ee5e6a18b2a5b",
+    "detailFigureSha256": {
+      "public/images/denko2/2025-second/q43-i.png": "02607b59a8e3da6db11b0200f2cfefef17ce9acf427624b298e967b282b7a770",
+      "public/images/denko2/2025-second/q43-ro.png": "1f68be4a6b5af0f81beb1cdbbab3933292758f2ad4c5053b7bd582deb3f05bd0",
+      "public/images/denko2/2025-second/q43-ha.png": "0330cb1161336cf73d5f69bcef2c852a3dceb51a40dc2cad62c712d3762db53a",
+      "public/images/denko2/2025-second/q43-ni.png": "ea1454c89dcd9af7de84db952ad02539117b5cac024858b78b459932a5067afe",
+      "public/images/denko2/2025-second/q44-i.png": "cd969e79d8effa3cd8114e1782fe9f7e45027ce059572676c83059b4d6cb6ad8",
+      "public/images/denko2/2025-second/q44-ro.png": "9980b3dcd3b9134f35a23abc9d63af22218065ee76442c7a67e7c799ab4a41aa",
+      "public/images/denko2/2025-second/q44-ha.png": "fc6f9bfe59bd156714abfbbaa67aff0d695fc4cbef3827088b8016f5c942f1d1",
+      "public/images/denko2/2025-second/q44-ni.png": "37280ea884e9792864e1461c7e3e9252c48e376f09284e695bdf73d1e58606dc",
+      "public/images/denko2/2025-second/q45-i.png": "038955e005ffd5cb79c0566249544c5ac843fd2b0b182eb2a29378a25169c64f",
+      "public/images/denko2/2025-second/q45-ro.png": "0029e8322953d6361f83894625e2b29e044eeb42eaca185371f640c67b49f823",
+      "public/images/denko2/2025-second/q45-ha.png": "1f596cb660d4d1b4f4421cfa2c20d300626508838cd287a587b8f74c84bc3379",
+      "public/images/denko2/2025-second/q45-ni.png": "7cc72399c6e7089d6526bb04372f18d0d598e76b74c49d9d10cc0955bd46b61d"
+    }
+  },
+  "reviewModel": "claude-opus-5-5",
+  "assessment": [
+    {
+      "number": 43,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [
+        "ロ: 原本写真の刃受は円形面の上・左・右・下に並ぶ4個の直線状の長方形の穴で、曲線状の刃受は写っていない。「曲線状の刃受と接地極」「引掛形」という記述は写真と一致しない。写真どおり「3極の刃受＋接地極、中央に『20』表示」として記述し直す必要がある（三相用3P 20A250V接地極付の形）。",
+        "ニ: 原本写真では、左がT字形（上の横棒＋縦棒）の刃受、右が縦長直線形の刃受、両者の中央下に接地極の穴がある。JSONの「白色の大形コンセントと下部の無地プレート部の組合せ」には刃受の形状が一切書かれておらず、ハとの判別根拠を失っている。"
+      ],
+      "explanationIssues": [
+        "choiceExplanations.ロ: 誤りの理由を「引掛形なのに『T』傍記がない」としているが、写真は直線状の刃受が4個ある3極接地極付の形で、引掛形の根拠がない。⑬の傍記「20A250V E」には極数3Pの指定がなく単相200V回路ⓝにつながる、という理由に差し替える必要がある。",
+        "choiceExplanations.ニ: 「刃受の形状がハの20A250V兼用形と異なる」だけで、どう異なるのか（T字形＋直線形の刃受、接地極穴が下）も、その形がどの定格に当たるのかも書かれていない。そのため⑬に該当しない理由が因果として成立していない。"
+      ],
+      "figureIssues": [
+        "diagramDescription: ロを「黒色円形で『20』表示の引掛形」としているが、写真の刃受は直線状の長方形4個で、引掛形（曲線状刃受）ではない。",
+        "diagramDescription: ニを「上部に刃受と接地極の穴」としか書いておらず、左T字形・右直線形・下に接地極穴という原本の配置が記述されていない。"
+      ],
+      "lawNeedsExternalCheck": []
+    },
+    {
+      "number": 44,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "lawNeedsExternalCheck": [
+        "explanationは「単相3線式の200V回路では両線が電圧側になるので2極とも過電流引外し素子を持つ2P2Eが必要」としている。これは電技解釈の過電流遮断器の施設（非接地側電線への素子設置）に基づく記述だが、該当条項の一次法令照合receiptが添付されていないので未照合。"
+      ]
+    },
+    {
+      "number": 45,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "lawNeedsExternalCheck": []
+    }
+  ]
+}

@@ -25,9 +25,9 @@ export function HomeFlagshipEssay() {
               あなたの午後論述を AI が採点
             </h2>
             <p className="mt-1.5 text-sm leading-relaxed text-zinc-600 dark:text-zinc-400">
-              ST・SA・PM・SM・AU の午後 II 論述を、IPA 元採点者プロンプトで
-              「適合度・論理性・具体性・業種事例」の 4 軸採点。過去問は解くだけで終わらせず、
-              受かるまで添削で導きます（AI 採点は学習用の参考評価です）。
+              ST・SA・PM・SM・AU の午後 II 論述を、学習用に定めた
+              「適合度・論理性・具体性・業種事例」の 4 観点で評価。改善点を確認しながら
+              書き直せます（AI 採点は学習用の参考評価です）。
             </p>
             <span className="mt-2.5 inline-flex items-center gap-1 text-sm font-semibold text-sky-700 group-hover:gap-1.5 dark:text-sky-300">
               午後論述 AI 採点を試す

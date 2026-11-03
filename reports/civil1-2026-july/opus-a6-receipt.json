@@ -1,0 +1,97 @@
+{
+  "group": "a6",
+  "startedAt": "2026-09-26T10:16:38.287Z",
+  "finishedAt": "2026-09-26T10:18:19.563Z",
+  "requestedModel": "claude-opus-5-5",
+  "provider": "firstParty",
+  "exitCode": 0,
+  "isError": false,
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 8378,
+      "cacheReadInputTokens": 140300,
+      "cacheCreationInputTokens": 10712,
+      "webSearchRequests": 0,
+      "costUSD": 0.281324,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 2764,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "totalCostUsd": 0.281324,
+  "correctModel": true,
+  "stderr": "",
+  "questionKeys": [
+    "A55",
+    "A56",
+    "A57",
+    "A58",
+    "A59",
+    "A60",
+    "A61",
+    "A62",
+    "A63",
+    "A64",
+    "A65",
+    "A66"
+  ],
+  "statuses": [
+    [
+      "A55",
+      "PASS"
+    ],
+    [
+      "A56",
+      "PASS"
+    ],
+    [
+      "A57",
+      "PASS"
+    ],
+    [
+      "A58",
+      "PASS"
+    ],
+    [
+      "A59",
+      "PASS"
+    ],
+    [
+      "A60",
+      "PASS"
+    ],
+    [
+      "A61",
+      "PASS"
+    ],
+    [
+      "A62",
+      "PASS"
+    ],
+    [
+      "A63",
+      "PASS"
+    ],
+    [
+      "A64",
+      "PASS"
+    ],
+    [
+      "A65",
+      "PASS"
+    ],
+    [
+      "A66",
+      "PASS"
+    ]
+  ],
+  "globalIssues": [
+    "問題A No.65 肢(4) の文字起こしは「作業の期間が当該特定建設作業の場合において」となっており、原本では「場所において」である可能性が高い。正誤判定には影響しないが、原本との照合を推奨する。",
+    "本出力は与えられた文字起こしと公式正答番号のみに基づいて作成しており、外部資料は閲覧していない。"
+  ],
+  "parseError": null
+}

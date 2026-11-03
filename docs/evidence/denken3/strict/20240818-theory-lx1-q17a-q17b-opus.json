@@ -1,0 +1,109 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20240818",
+  "subject": "theory",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 6442,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 19977,
+      "webSearchRequests": 0,
+      "costUSD": 0.28891980000000006,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 3948,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "5a432725a55fa776d819a0973410112f5c78260c632e30421f8426eca168039e",
+  "inputRequestSha256": "ec1f214f3f86cd111abdac8531e3951b58c5a474b20e8d9d36dc3b62172df372",
+  "inputHashes": {
+    "candidateSha256": {
+      "q17a": "64e21fbadbaa7e290d1e95cae31b2a970e32bd6d1c876f9adeb6241a01120b09",
+      "q17b": "1049cd774d4fa8945b558455c1a1b026f4ed05aa12e91c83831f52d21ad22e30"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20240818/theory/p22.png": "d9f046962f51fd98ab8a972b9218f8352f8e18c03e513bd48c0ccde000247cbb",
+      "data/raw_pdfs/denken3/review/20240818/theory/p23.png": "659a3972ec4c17be381241744852f11f1cab2dc08b0822d7245315296427ab85"
+    },
+    "figureSha256": {
+      "public/images/denken3/20240818/theory/20240818-theory-q17-capacitor-networks.png": "8ff60c1a5c6f23abf5e90be4cd13724eb74cd582339fd2dabcfed8891d5acaf2"
+    },
+    "sourceQuestionPdfSha256": "236be905e93a023cf3c65c1e22c45c24dc42b910151c51f8ed023247793d1d29",
+    "sourceAnswerPdfSha256": "f72ecbc3a477e64948388b69cf78cb931032c9f0c688639836c8d533a949cd0f",
+    "officialAnswerUnitsSha256": "5ebd4c47da41d5faef1ab13388f31bfa2035459c5b92784311888563f95c95ed",
+    "referencePdfSha256": {},
+    "referencePageSha256": {},
+    "referenceJsonSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q17a",
+      "questionNumber": 17,
+      "part": "a",
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "出典メタデータ: fiscalYear=2024、term=upper、examDate=2024-08-18、subject=theory、問題PDF・解答PDFのURLはいずれもmanifestと一致する。sourceAttributionの「令和6年度上期 理論科目 問17(a)」は2024年度上期と一致する。",
+        "reviewedFromPage=[22,23]はmanifestのPDF頁と一致する。原図のフッタ「T1−R 022」「T1−R 023」も同じ頁を示している。印刷頁番号の-19-と-20-はPDF頁番号ではない。",
+        "問題文: 原図p.23の(a)と照合した。「端子b−c−d間」「図2のようにΔ結線」「図3のようにY結線」「電気的に等価となるコンデンサCの値[μF]」「最も近いもの」がすべて一致する。～を~に変えた程度の整形のみである。",
+        "問17共通の柱書「図1の端子a−d間の合成静電容量について…」と選択問題の注記は(a)の本文に含まれていない。ただし(a)は図2と図3だけで完結して解けるため、曖昧さは生じない。",
+        "選択肢: (1)1.0 (2)2.0 (3)4.5 (4)6.0 (5)9.0で、原図と全肢一致する。",
+        "公式正答: 解答表の理論 問17(a)=5で、候補のofficialAnswer=5と一致する。",
+        "図2の接続(原図と公開図の両方で確認): 上頂点はb、左下頂点はc、右下頂点はdに接続している。左辺(b−c)、右辺(b−d)、底辺(c−d)はいずれも3μFである。",
+        "図3の接続: 中性点(黒丸、記号なし)からb、c、dへそれぞれC[μF]が伸びている。",
+        "検算(Δ側、c開放時のb−d間): 3+3×3/(3+3)=4.5μF。",
+        "検算(Y側、c開放時のb−d間): C·C/(C+C)=C/2。これを4.5と等置してC=9.0μFとなる。",
+        "別法: 対称Δ-YではZ_Y=Z_Δ/3であり、容量ではC_Y=3C_Δ=9μFとなって一致する。対称網でありY側も3枝等容量と与えられているので、1端子対の等価条件でCは一意に定まり、解説の論理は妥当である。",
+        "誤答肢(1)1.0: 抵抗のR_Δ/3を容量に誤適用した3/3=1.0と正しく特定されている。",
+        "誤答肢(2)2.0: C/2=1.0≠4.5で不一致。数値の検算は正しい。",
+        "誤答肢(3)4.5: Δ側のb−d間合成容量をCと混同した値で、正しい。",
+        "誤答肢(4)6.0: C/2=3.0≠4.5で不一致。数値の検算は正しい。",
+        "正答肢(5)9.0: 上記の等価条件の解と一致する。",
+        "公開候補図: 図1・図2・図3の全ラベル(9μF、18μF、3μF×3、b、c、a、d、C[μF]×3、図番号)、接続、黒丸の位置が原図と完全に一致する。公開図だけで(a)を解くことができる。",
+        "officialReferenceUrlsは空であり、外部の独立主張で検証を要するものはない。"
+      ]
+    },
+    {
+      "unitKey": "q17b",
+      "questionNumber": 17,
+      "part": "b",
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "出典メタデータ: fiscalYear、term、examDate、subject、問題PDF・解答PDFのURL、reviewedFromPage=[22,23]はいずれもmanifestと一致する。sourceAttributionの「令和6年度上期 理論科目 問17(b)」も正しい。",
+        "問題文: 原図p.23の(b)と照合した。「図3を用いて」「図1の端子b−c−d間をY結線回路に変換」「図1の端子a−d間の合成静電容量C0の値[μF]」が一致する。原図の添字C₀はプレーンテキストでC0と表記されているが、解説と一貫しており曖昧さはない。",
+        "選択肢: (1)3.0 (2)4.5 (3)4.8 (4)6.0 (5)9.0で、原図と全肢一致する。",
+        "公式正答: 解答表の理論 問17(b)=3で、候補のofficialAnswer=3と一致する。",
+        "図1の接続(原図と公開図の両方で確認): 端子aは左側の黒丸接続点を介して上枝9μF→b、下枝18μF→cにつながる。bは3μFを介して右側の黒丸接続点に、cも3μFを介して同じ右側の接続点につながる。b−c間は3μFである。右側の接続点は端子dに接続している。",
+        "上記より、b−c−d間は3μF×3のΔ結線であり、図2の接続と整合する。",
+        "検算(Y変換後の構成): b−o、c−o、d−oがそれぞれ9μFとなる。b、cはaとoにしか接続しないため、a−b−o経路とa−c−o経路は並列である。",
+        "検算(a−b−o経路): 9×9/18=4.5μF。",
+        "検算(a−c−o経路): 18×9/27=6.0μF。",
+        "検算(並列と直列): a−o間は並列で10.5μFとなる。これにo−d間の9μFを直列に合成し、C0=94.5/19.5=4.846…μFとなる。最も近い選択肢は(3)4.8である。",
+        "誤答肢(1)3.0: 4.5×9/13.5=3.0で、a−c−o経路を欠落させた値と正しく特定されている。",
+        "誤答肢(2)4.5: a−b−o経路の部分値である。",
+        "誤答肢(4)6.0: a−c−o経路の部分値である。",
+        "誤答肢(5)9.0: (a)のCと混同した値である。いずれの誤答肢の数値・因果も正しい。",
+        "正答肢(3)の理由は計算と一致する。",
+        "公開候補図: 原図の図1〜図3と全ラベル・接続・黒丸位置が一致する。公開図だけで(b)を解くことができる。figureDescriptionの素子接続の列挙も原図と一致する。",
+        "officialReferenceUrlsは空であり、外部の独立主張で検証を要するものはない。"
+      ]
+    }
+  ]
+}

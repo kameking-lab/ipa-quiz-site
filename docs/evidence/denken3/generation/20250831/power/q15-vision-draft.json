@@ -1,0 +1,230 @@
+{
+  "questionNumber": 15,
+  "sharedContext": "B問題（配点は1問題当たり(a)5点，(b)5点，計10点）\n問15 図の流況曲線を持つ河川の全流量を使用できる調整池式水力発電所において，発電所の使用流量[m³/s]と調整池の有効貯水容量[m³]について，次の(a)及び(b)の問に答えよ。\n（図 流況曲線）",
+  "units": [
+    {
+      "part": "a",
+      "question": "図の流況曲線を持つ河川の全流量を使用できる調整池式水力発電所において，発電所の使用流量[m³/s]と調整池の有効貯水容量[m³]について，次の(a)及び(b)の問に答えよ。\n\n(a) 1日単位の調整運転を行う場合，上記流況曲線の渇水量8 m³/sにおいて，1日に6時間の運転を可能とする最大の使用流量[m³/s]と，当該時間外に調整池に流入する貯水量[m³]の組合せとして，最も近いものを次の(1)〜(5)のうちから一つ選べ。\nここで，当該6時間の最大使用流量での運転以外の時間は，水車・発電機を停止して調整池に河川の全流量を貯水するものとする。",
+      "choices": {
+        "1": "最大使用流量 22.8 m³/s，貯水量 410 400 m³",
+        "2": "最大使用流量 28.8 m³/s，貯水量 518 400 m³",
+        "3": "最大使用流量 34.8 m³/s，貯水量 518 400 m³",
+        "4": "最大使用流量 28.8 m³/s，貯水量 410 400 m³",
+        "5": "最大使用流量 32.0 m³/s，貯水量 518 400 m³"
+      },
+      "officialAnswer": "5",
+      "explanation": "渇水量 Q₀ = 8 m³/s の河川流量が1日中流入し，そのすべてを1日のうち6時間の運転で使い切る条件を考える。\n\n【当該時間外（停止中）の貯水量】\n停止時間は 24 − 6 = 18 時間なので，\nV = 8 × 18 × 3600 = 518 400 m³\n\n【最大使用流量】\n1日の総流入量 = 8 × 24 × 3600 = 691 200 m³ を6時間（6 × 3600 = 21 600 s）で使用するので，\nQ = 691 200 ÷ 21 600 = 32.0 m³/s\n\n（別の見方：運転中の6時間も河川から8 m³/sが流入しており，これに停止中の貯水量518 400 m³を6時間で放出する分 518 400 ÷ 21 600 = 24 m³/s を加えて，8 + 24 = 32.0 m³/s となる。）\n\nよって，最大使用流量 32.0 m³/s，貯水量 518 400 m³ の組合せ(5)が正しい。",
+      "choiceExplanations": {
+        "1": "誤り。最大使用流量・貯水量ともに計算値（32.0 m³/s，518 400 m³）と一致しない。22.8 m³/sで6時間運転すると使用水量は 22.8 × 21 600 = 492 480 m³ で，1日の流入量691 200 m³を使い切れないため「最大」の使用流量ではない。また停止中18時間の貯水量は410 400 m³ではなく518 400 m³である。",
+        "2": "誤り。貯水量518 400 m³は正しいが，最大使用流量が不適。28.8 m³/sで6時間運転すると使用水量は 28.8 × 21 600 = 622 080 m³ で，1日の流入量691 200 m³より69 120 m³少なく，最大の使用流量ではない。",
+        "3": "誤り。貯水量518 400 m³は正しいが，34.8 m³/sで6時間運転すると使用水量は 34.8 × 21 600 = 751 680 m³ となり，1日の流入量691 200 m³を上回るため，渇水量8 m³/sでは毎日6時間の運転を継続できない。",
+        "4": "誤り。最大使用流量28.8 m³/s（6時間の使用水量622 080 m³で1日の流入量を使い切れない）と貯水量410 400 m³のどちらも計算値と一致しない。停止中18時間の貯水量は 8 × 18 × 3600 = 518 400 m³ である。",
+        "5": "正しい。停止中18時間の貯水量は 8 × 18 × 3600 = 518 400 m³，1日の総流入量691 200 m³を6時間で使う最大使用流量は 691 200 ÷ 21 600 = 32.0 m³/s で，両方とも一致する。"
+      },
+      "figureDescription": "図「流況曲線」。縦軸は「流量［m³/s］」で，目盛ラベルは0〜45（5刻み，細かい補助目盛あり）。横軸は「日数［日］」で，通常の目盛ラベルは0・50・100・150・250・300・350（200の位置には通常の目盛行の表記なし）で，細かい補助目盛があり，軸は350を超えて枠右端の約365日まで延びている。右下がりの曲線が日数約15日・流量約42 m³/s付近から始まり，枠右端で8 m³/sをわずかに下回る程度まで減少する。破線は2組あり，一方は流量14の位置で縦軸から曲線まで水平に延び，そこから日数200の位置まで垂直に下りている。もう一方は流量8の位置で縦軸から曲線まで水平に延び，そこから日数355の位置まで垂直に下りている。縦軸の左側に破線に対応する「14」「8」が特記され，横軸の通常の目盛ラベルより一段下の行に破線に対応する「200」「355」が特記されている。",
+      "officialReferenceUrls": [],
+      "uncertainty": "図の曲線の始点・終点の値は目盛からの概略の読み取りである（解答に必要な8 m³/sは問題文に数値で示されている）。",
+      "needsReview": true,
+      "sourceQuestionPdfUrl": "https://www.shiken.or.jp/chief/upload/20250831_ch_third_q02.pdf",
+      "sourceAnswerPdfUrl": "https://www.shiken.or.jp/chief/upload/20250831_ch_third_a01.pdf",
+      "reviewedFromPage": [
+        18,
+        19
+      ]
+    },
+    {
+      "part": "b",
+      "question": "図の流況曲線を持つ河川の全流量を使用できる調整池式水力発電所において，発電所の使用流量[m³/s]と調整池の有効貯水容量[m³]について，次の(a)及び(b)の問に答えよ。\n\n(b) 上記流況曲線で200日以上発生する流量において，小問(a)の最大使用流量で1日8時間の運転を可能とするための有効貯水容量[m³]として，最も小さいものを次の(1)〜(5)のうちから一つ選べ。",
+      "choices": {
+        "1": "420 000",
+        "2": "500 000",
+        "3": "440 000",
+        "4": "460 000",
+        "5": "520 000"
+      },
+      "officialAnswer": "5",
+      "explanation": "小問(a)の最大使用流量は，渇水量8 m³/sの1日の総流入量 8 × 24 × 3600 = 691 200 m³ を6時間で使い切る値で，Q = 691 200 ÷ 21 600 = 32.0 m³/s である。\n\n【設計に用いる河川流量】\n流況曲線は1年間の日々の流量を大きい順に並べたものであり，破線から日数200日に対応する流量は14 m³/sと読み取れる。14 m³/sは，1年のうち200日はこれ以上の流量が得られる値である。\n運転中に調整池から補う量は (32.0 − Q) × 8 × 3600 で，河川流量Qが大きいほど小さくなる。したがって，この14 m³/sを基準に容量を決めれば，流量が14 m³/s以上となる約200日間は，いずれの日も8時間運転が可能となる。\n\n【運転可能性の確認】\n1日の流入量 = 14 × 24 × 3600 = 1 209 600 m³\n8時間運転の使用水量 = 32.0 × 8 × 3600 = 921 600 m³\n使用水量が1日の流入量以下なので，水量としては8時間運転が可能である。\n\n【必要な有効貯水容量】\n運転中の8時間も河川から14 m³/sが流入するため，調整池から補う必要があるのは使用流量との差の分だけである。\nV = (32.0 − 14) × 8 × 3600 = 18 × 28 800 = 518 400 m³\n\n停止中16時間の流入量は 14 × 16 × 3600 = 806 400 m³ あり，518 400 m³を貯めるには十分である。\n\nしたがって有効貯水容量は518 400 m³以上必要であり，選択肢のうちこれを満たす最も小さいものは 520 000 m³ の(5)である。",
+      "choiceExplanations": {
+        "1": "誤り。420 000 m³は必要な有効貯水容量518 400 m³に対して98 400 m³不足する。河川流量14 m³/sの日には，運転中8時間の不足分 (32.0 − 14) × 28 800 = 518 400 m³ を補えず，32.0 m³/sでの8時間運転ができない。",
+        "2": "誤り。500 000 m³は選択肢(1)〜(4)の中では最も大きいが，必要な有効貯水容量518 400 m³に対してなお18 400 m³不足する。河川流量14 m³/sの日には，32.0 m³/sでの8時間運転ができない。",
+        "3": "誤り。440 000 m³は必要な有効貯水容量518 400 m³に対して78 400 m³不足する。河川流量14 m³/sの日には，32.0 m³/sでの8時間運転ができない。",
+        "4": "誤り。460 000 m³は必要な有効貯水容量518 400 m³に対して58 400 m³不足する。河川流量14 m³/sの日には，32.0 m³/sでの8時間運転ができない。",
+        "5": "正しい。必要な有効貯水容量は (32.0 − 14) × 8 × 3600 = 518 400 m³ であり，520 000 m³はこれを満たすので，河川流量が14 m³/s以上の日はいずれも8時間運転ができる。選択肢のうち518 400 m³以上となるのは520 000 m³のみなので，これが条件を満たす最も小さい値である。"
+      },
+      "figureDescription": "図「流況曲線」。縦軸は「流量［m³/s］」で，目盛ラベルは0〜45（5刻み，細かい補助目盛あり）。横軸は「日数［日］」で，通常の目盛ラベルは0・50・100・150・250・300・350（200の位置には通常の目盛行の表記なし）で，細かい補助目盛があり，軸は350を超えて枠右端の約365日まで延びている。右下がりの曲線が日数約15日・流量約42 m³/s付近から始まり，枠右端で8 m³/sをわずかに下回る程度まで減少する。破線は2組あり，一方は流量14の位置で縦軸から曲線まで水平に延び，そこから日数200の位置まで垂直に下りている。もう一方は流量8の位置で縦軸から曲線まで水平に延び，そこから日数355の位置まで垂直に下りている。縦軸の左側に破線に対応する「14」「8」が特記され，横軸の通常の目盛ラベルより一段下の行に破線に対応する「200」「355」が特記されている。",
+      "officialReferenceUrls": [],
+      "uncertainty": "なし",
+      "needsReview": true,
+      "sourceQuestionPdfUrl": "https://www.shiken.or.jp/chief/upload/20250831_ch_third_q02.pdf",
+      "sourceAnswerPdfUrl": "https://www.shiken.or.jp/chief/upload/20250831_ch_third_a01.pdf",
+      "reviewedFromPage": [
+        18,
+        19
+      ]
+    }
+  ],
+  "draftModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 5276,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 11379,
+      "webSearchRequests": 0,
+      "costUSD": 0.19681579999999999,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 1523,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "278d6ded681d7325f17d2c1f62c758051b39c6ba9a03aa22cdf82e1f308af08d",
+  "inputRequestSha256": "8154ba37729b7f541c8dbe77baba92ede58af654652ffa3cfd38e78e4e2f783f",
+  "sourceQuestionPdfSha256": "567aac1df6dc0c0950d04e90a1ad03231427c518eede92559effe01e2b97a2c9",
+  "sourceAnswerPdfSha256": "76fd3715ed487d19a56b387fb402de20ee09474e9fa55b0413f9037b96af06c9",
+  "sourcePageImageSha256": {
+    "data/raw_pdfs/denken3/review/20250831/power/p18.png": "cacafad1925ec7467ad801b5acce0a4d23f73cf6945d59ad6c3befc49e4e6319",
+    "data/raw_pdfs/denken3/review/20250831/power/p19.png": "85d46b9ff897a25039ee91dc689fedba571f4750fa73a22d944ff0f9deb44670"
+  },
+  "revisionHistory": [
+    {
+      "version": 1,
+      "model": "claude-opus-5-5",
+      "resolvedModel": "claude-opus-5-5",
+      "modelUsage": {
+        "claude-opus-5-5": {
+          "inputTokens": 2,
+          "outputTokens": 7768,
+          "cacheReadInputTokens": 1279,
+          "cacheCreationInputTokens": 18845,
+          "webSearchRequests": 0,
+          "costUSD": 0.3063838,
+          "contextWindow": 1000000,
+          "maxOutputTokens": 128000,
+          "thinkingTokens": 4051,
+          "canonicalModel": "claude-opus-5-5",
+          "provider": "firstParty",
+          "costBasis": "list"
+        }
+      },
+      "rawResponseSha256": "fce9b8ffdb5ef03420cdd634a5975c37d94e318a5bb12fcf35c8a066a3046fcb",
+      "inputRequestSha256": "71857a3e6a22837919962cfb64ffd10b2cdee514a2096cdef7c62671164cdb5e",
+      "previousDraftSha256": "1ec0e8337932b3eb9e9bd2009091a5e3b56de7034100e4deb3ea233238095aa7",
+      "previousDraft": "data/raw_pdfs/denken3/review/20250831/power/archive/q15-vision-draft-v1.json",
+      "answeredReviewSha256": "984247208c467ef67527f01fc65fb649a3f10bbb5a774c1b0c21b95b5d8d49e0",
+      "answeredReview": "data/raw_pdfs/denken3/review/20250831/power/archive/q15-opus-review-v1.json",
+      "answeredStrictReceipt": "docs/evidence/denken3/strict/20250831-power-s1-q15a-q15b-opus.json",
+      "answeredStrictReceiptSha256": "faf05a793450af2402a8974b69c7740a52c9b80a078502f947d9e6e4dd5062cf",
+      "figureSha256": {
+        "20250831-power-q15-fig1": "ed7610d8df2b88fea373eae49b0a882578b28eecabd7d1ea3542dd501cfba9d0"
+      },
+      "referenceHashes": {},
+      "operatorNote": ""
+    },
+    {
+      "version": 2,
+      "model": "claude-opus-5-5",
+      "resolvedModel": "claude-opus-5-5",
+      "modelUsage": {
+        "claude-opus-5-5": {
+          "inputTokens": 2,
+          "outputTokens": 5510,
+          "cacheReadInputTokens": 1279,
+          "cacheCreationInputTokens": 18604,
+          "webSearchRequests": 0,
+          "costUSD": 0.25929579999999997,
+          "contextWindow": 1000000,
+          "maxOutputTokens": 128000,
+          "thinkingTokens": 1853,
+          "canonicalModel": "claude-opus-5-5",
+          "provider": "firstParty",
+          "costBasis": "list"
+        }
+      },
+      "rawResponseSha256": "7b8ac11990c55379ea9a8672a5bdf4ff3a05608d9bcd761e56ebb891e2ba4a1e",
+      "inputRequestSha256": "38e158ddbc3edb86442a5255dcfc2bed98e510ff2b7500f6a07d44abdfba0d86",
+      "previousDraftSha256": "3daf2649865ffed07146d0b4dba1673dd51c2c755d6ceeca115338d90c3f1980",
+      "previousDraft": "data/raw_pdfs/denken3/review/20250831/power/archive/q15-vision-draft-v2.json",
+      "answeredReviewSha256": "c4b711c96ea61af832c764c5b6bff3b90c028db7ae718990ea1131b2e952b9f1",
+      "answeredReview": "data/raw_pdfs/denken3/review/20250831/power/archive/q15-opus-review-v2.json",
+      "answeredStrictReceipt": "docs/evidence/denken3/strict/20250831-power-s2-q15a-q15b-opus.json",
+      "answeredStrictReceiptSha256": "5d51d38c48c542403b95c32d11333e0333d27aeb2a67890ea694160bf1b6aea4",
+      "figureSha256": {
+        "20250831-power-q15-fig1": "ed7610d8df2b88fea373eae49b0a882578b28eecabd7d1ea3542dd501cfba9d0"
+      },
+      "referenceHashes": {},
+      "operatorNote": ""
+    },
+    {
+      "version": 3,
+      "model": "claude-opus-5-5",
+      "resolvedModel": "claude-opus-5-5",
+      "modelUsage": {
+        "claude-opus-5-5": {
+          "inputTokens": 2,
+          "outputTokens": 4740,
+          "cacheReadInputTokens": 1279,
+          "cacheCreationInputTokens": 17504,
+          "webSearchRequests": 0,
+          "costUSD": 0.2350958,
+          "contextWindow": 1000000,
+          "maxOutputTokens": 128000,
+          "thinkingTokens": 898,
+          "canonicalModel": "claude-opus-5-5",
+          "provider": "firstParty",
+          "costBasis": "list"
+        }
+      },
+      "rawResponseSha256": "8a01c356ac32026553acab243190f9abae24fdd4103fc0896645f332045d9040",
+      "inputRequestSha256": "53e72ee9630ce59a5f4cd944bd46ebbb7de8bdf112048a375307f45e79d142cd",
+      "previousDraftSha256": "eb5ee034e059d97e349d60f1b2977125d076c1df8aace100fbc76430057d0cac",
+      "previousDraft": "data/raw_pdfs/denken3/review/20250831/power/archive/q15-vision-draft-v3.json",
+      "answeredReviewSha256": "7d5bda70068dab4d84ddc08d77c7a8de4214448e316199b4bc639d45c9b1837b",
+      "answeredReview": "data/raw_pdfs/denken3/review/20250831/power/archive/q15-opus-review-v3.json",
+      "answeredStrictReceipt": "docs/evidence/denken3/strict/20250831-power-s3-q15a-q15b-opus.json",
+      "answeredStrictReceiptSha256": "8363f0780060f64277dfc99fc9050ab06254fcf6e17a068467c765825a5a8de0",
+      "figureSha256": {
+        "20250831-power-q15-fig1": "ed7610d8df2b88fea373eae49b0a882578b28eecabd7d1ea3542dd501cfba9d0"
+      },
+      "referenceHashes": {},
+      "operatorNote": ""
+    },
+    {
+      "version": 4,
+      "model": "claude-opus-5-5",
+      "resolvedModel": "claude-opus-5-5",
+      "modelUsage": {
+        "claude-opus-5-5": {
+          "inputTokens": 2,
+          "outputTokens": 6053,
+          "cacheReadInputTokens": 1279,
+          "cacheCreationInputTokens": 18989,
+          "webSearchRequests": 0,
+          "costUSD": 0.2732358,
+          "contextWindow": 1000000,
+          "maxOutputTokens": 128000,
+          "thinkingTokens": 2055,
+          "canonicalModel": "claude-opus-5-5",
+          "provider": "firstParty",
+          "costBasis": "list"
+        }
+      },
+      "rawResponseSha256": "536f779c91c7e737b24bd85ee8bd9b23bd48cc4d592c1c0e63d7447b705ff121",
+      "inputRequestSha256": "1fc837007482aa360222eab8d3b123675b913e0749fd665e83125f37d10f6787",
+      "previousDraftSha256": "706b7d740bd3a9bcc30dc14cf8ec4271e6ce8bcb97d1a871e53cee4cd91ec1cd",
+      "previousDraft": "data/raw_pdfs/denken3/review/20250831/power/archive/q15-vision-draft-v4.json",
+      "answeredReviewSha256": "6ded765542404fd66db6ca6502a5333f526f08eadf7c3cf6bba88222c3355e10",
+      "answeredReview": "data/raw_pdfs/denken3/review/20250831/power/archive/q15-opus-review-v4.json",
+      "answeredStrictReceipt": "docs/evidence/denken3/strict/20250831-power-s11-q15a-q15b-opus.json",
+      "answeredStrictReceiptSha256": "e6dc4a842e4fe7c26b0a37591116d88c1ff96629fc7514aef7d4aff0cdd1d948",
+      "figureSha256": {
+        "20250831-power-q15-fig1": "ed7610d8df2b88fea373eae49b0a882578b28eecabd7d1ea3542dd501cfba9d0"
+      },
+      "referenceHashes": {},
+      "operatorNote": ""
+    }
+  ]
+}

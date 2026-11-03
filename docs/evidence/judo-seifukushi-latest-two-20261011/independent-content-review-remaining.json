@@ -1,0 +1,633 @@
+{
+  "summary": "AM118・PM6・PM38・PM108・PM117の5問20肢は、採用証跡のSHA256および統合候補の数字/カナ逆写像・参照URL集合が受入れ提案と完全一致したため局所受入れPASS。PM117の実装画像も原本照合済み切り出し画像とSHA256一致。公式採点と医学的限界を区別した解説としての受入れであり、出題者の排他的理由や個別患者の診断を確定した意味ではない。全500問、他15画像、公開ゲートや別途required receiptを包括的に受け入れる記録ではない。",
+  "verdict": "PASS_LOCAL_ADOPTED_CONTENT",
+  "reviewer": "nurse_local_evidence_review",
+  "reviewedAtUtc": "2026-10-11T03:15:00.828900+00:00",
+  "scope": "第34回AM118、PM6/38/108/117の5問20肢のみ。既存AM83/PM19の採用照合はINDEPENDENT-CONTENT-REVIEW.jsonへ保存。",
+  "reviewedFields": [
+    "id",
+    "question",
+    "choices",
+    "literalOfficialKey",
+    "acceptedNumbers",
+    "requiredSelections",
+    "answerMode",
+    "explanation",
+    "choiceExplanations",
+    "officialReferenceUrls"
+  ],
+  "hashCanonicalization": "SHA256 over UTF-8 json.dumps(reviewed fields, ensure_ascii=False, sort_keys=True, separators=(',', ':')).",
+  "items": [
+    {
+      "id": "judo-seifukushi-2025-annual-am-q118",
+      "input": "ready/2026_34_gozen.json",
+      "inputFileSha256": "27c2e86b727c6d302ab08adc326cfa2b6f3b0490f01a15178e7a5a24ecae6a97",
+      "originalQuestionVerdict": "PASS",
+      "officialKeyVerdict": "PASS",
+      "originalPhysicalPage": 35,
+      "officialKeyPhysicalPage": 1,
+      "officialLiteral": "1",
+      "currentVerdict": "REVISIONS_REQUIRED",
+      "specificProblem": "既存の死亡率または胆嚢・胆道合算から罹患の性差を推論しない。胆嚢単独の大学病院臨床説明は確認できたため、比率を追加せず根拠と説明を一致させる。肝内胆管癌の男性優位は今回の最小限資料から新たに断定せず、発生部位の区別を説明する。",
+      "remainingScientificIssue": "現在の人口ベース・胆嚢単独の罹患男女比や年齢調整率は確認していない。数値を用いない臨床的傾向の解説には不要。",
+      "proposedTextVerdict": "ACCEPTABLE_BOUNDED_EXAM_EXPLANATION",
+      "acceptanceConditions": [
+        "原問・選択肢・公式単一正答・requiredSelections=1を維持する。",
+        "提案の総論・全肢解説・参照を採用し、実装への写像とSHAを照合する。",
+        "旧reviewNotesの確認待ちという内部メモを新しい公開解説の結論にしない。医学的限界は提案した読者向け注記で保持する。"
+      ],
+      "reviewedFieldsSnapshot": {
+        "id": "judo-seifukushi-2025-annual-am-q118",
+        "question": "女性に多いのはどれか。",
+        "choices": {
+          "1": "胆嚢癌",
+          "2": "胆管癌",
+          "3": "肝細胞癌",
+          "4": "肝内胆管癌"
+        },
+        "literalOfficialKey": "1",
+        "acceptedNumbers": [
+          1
+        ],
+        "requiredSelections": 1,
+        "answerMode": "single",
+        "explanation": "胆嚢癌は女性に多い傾向があり、胆石などが関連する。",
+        "choiceExplanations": {
+          "1": "胆嚢癌は女性に多い傾向があり、胆石などが関連する。",
+          "2": "胆管癌は胆嚢癌ほど女性優位ではなく、男性に多い傾向がある。",
+          "3": "肝細胞癌は男性に多い傾向がある。",
+          "4": "肝内胆管癌は男性に多い傾向があり、女性優位の代表ではない。"
+        },
+        "officialReferenceUrls": [
+          "https://www.mhlw.go.jp/general/sikaku/successlist/2026/siken16/dl/seitou.pdf#page=1",
+          "https://www.jfcr.or.jp/hospital/cancer/type/gall_i/index.html"
+        ]
+      },
+      "reviewedFieldsSha256": "3d97ec65488b819ded70008ef9ee9040f44e07e2f15c55a520878e53c92feaab",
+      "proposedReviewedFieldsSnapshot": {
+        "id": "judo-seifukushi-2025-annual-am-q118",
+        "question": "女性に多いのはどれか。",
+        "choices": {
+          "1": "胆嚢癌",
+          "2": "胆管癌",
+          "3": "肝細胞癌",
+          "4": "肝内胆管癌"
+        },
+        "literalOfficialKey": "1",
+        "acceptedNumbers": [
+          1
+        ],
+        "requiredSelections": 1,
+        "answerMode": "single",
+        "explanation": "本問の公式正答は1（胆嚢癌）です。胆嚢癌は女性に多い傾向があり、大学病院の胆嚢癌を扱う資料でもその傾向が説明されています。胆管癌や肝内胆管癌とは発生部位を区別して理解します。これは女性だけに発生するという意味ではなく、胆嚢・胆道を合算した統計から胆嚢癌単独の性差を推定するものでもありません。",
+        "choiceExplanations": {
+          "1": "本問の公式正答です。胆嚢癌は女性に多い傾向があると説明されています。ここでは特定の統計年や男女比までは断定しません。",
+          "2": "本問の正答ではありません。胆管癌と胆嚢癌は区別します。徳島大学病院の説明では、胆管癌は男性に多い傾向とされています。",
+          "3": "本問の正答ではありません。肝細胞癌は肝細胞から発生する癌で、男性に多い傾向があります。胆嚢癌とは発生部位・由来する細胞が異なります。",
+          "4": "本問の正答ではありません。肝内胆管癌は肝臓内の胆管から発生する癌で、胆管細胞癌とも呼ばれます。胆嚢癌とは別の疾患として扱い、胆嚢癌の性差をそのまま当てはめません。"
+        },
+        "officialReferenceUrls": [
+          "https://www.mhlw.go.jp/general/sikaku/successlist/2026/siken16/dl/seitou.pdf#page=1",
+          "https://www.tmd.ac.jp/grad/msrg/gallbladder/gallbladder_cancer.html",
+          "https://www.tokudai-ganrenkei.jp/standard/detail.html?did=gallbladder_cancer",
+          "https://medical-b.jp/a01-01-021/book037-13/?hospital=a01-01-021",
+          "https://www.tmd.ac.jp/grad/msrg/liver/cancer02.html"
+        ]
+      },
+      "proposedReviewedFieldsSha256": "2fa958a3d699de9a6494952f9eb70ef97400c2fd08586f10bcb8b943ee8c2e07",
+      "adoptionVerified": true,
+      "adoptedCandidateVerdict": "PASS_LOCAL_ADOPTED_CONTENT",
+      "adoptionEvidence": {
+        "verifiedAtUtc": "2026-10-11T03:17:00.074634+00:00",
+        "candidateFile": "C:\\wt\\kakomon-judo-seifukushi-latest-two-20261011\\data\\questions\\judo-seifukushi\\questions.json",
+        "candidateFileSha256": "5e15c52c3ac1423aed16f730f95a39cd6516269f11b0e17655d70d97d0b1fc2a",
+        "adoptedSnapshotFile": "C:\\wt\\kakomon-judo-seifukushi-latest-two-20261011\\docs\\evidence\\judo-seifukushi-latest-two-20261011\\adopted-review-snapshots.json",
+        "adoptedSnapshotFileSha256": "af5163f87e6bc80f905fd60bc08304ed547eb465b20d53dbb46a450d5f5b49cc",
+        "adoptedFieldsSha256": "2fa958a3d699de9a6494952f9eb70ef97400c2fd08586f10bcb8b943ee8c2e07",
+        "snapshotExactMatch": true,
+        "numericKanaReconstructionExactMatch": true,
+        "referenceSubsetExactMatch": true,
+        "referenceTreatment": "Candidate prefixes sourcePdfUrl/sourceAnswerUrl. The complete candidate reference list equals the unique ordered union of those source URLs and the accepted review reference list. Review subset order is exact.",
+        "authorReadyUnmodified": true
+      }
+    },
+    {
+      "id": "judo-seifukushi-2025-annual-pm-q6",
+      "input": "ready/2026_34_gogo.json",
+      "inputFileSha256": "4040bcc10881015ae06974ad5c4d63ef783952678fc64cf417617ad724d19125",
+      "originalQuestionVerdict": "PASS",
+      "officialKeyVerdict": "PASS",
+      "originalPhysicalPage": 6,
+      "officialKeyPhysicalPage": 2,
+      "officialLiteral": "3",
+      "currentVerdict": "REVISIONS_REQUIRED",
+      "specificProblem": "現行総論は公式鍵と他部位/組織型の関連を示さず、肢2は別危険因子だけ、肢4は全体の主要因へ移っている。公式3とNCIに記載された胃上部・食道腺がんの関連を読者向け総論と肢別へ明示する。",
+      "remainingScientificIssue": "肢2/4の部位・組織型未指定を踏まえた出題者の排他的根拠は未取得。公式鍵3のまま医学的関連を併記し、独自の複数正答化はしない。",
+      "proposedTextVerdict": "ACCEPTABLE_BOUNDED_EXAM_EXPLANATION",
+      "acceptanceConditions": [
+        "原問・選択肢・公式単一正答・requiredSelections=1を維持する。",
+        "提案の総論・全肢解説・参照を採用し、実装への写像とSHAを照合する。",
+        "旧reviewNotesの確認待ちという内部メモを新しい公開解説の結論にしない。医学的限界は提案した読者向け注記で保持する。"
+      ],
+      "reviewedFieldsSnapshot": {
+        "id": "judo-seifukushi-2025-annual-pm-q6",
+        "question": "肥満によって発がんリスクが上がるのはどれか。",
+        "choices": {
+          "1": "肺がん",
+          "2": "胃がん",
+          "3": "大腸がん",
+          "4": "食道がん"
+        },
+        "literalOfficialKey": "3",
+        "acceptedNumbers": [
+          3
+        ],
+        "requiredSelections": 1,
+        "answerMode": "single",
+        "explanation": "肥満は大腸がんの発症リスク上昇と関連する。",
+        "choiceExplanations": {
+          "1": "肺がんは喫煙が主要な確立した危険因子であり、本設問の肥満関連がんの代表ではない。",
+          "2": "胃がんはヘリコバクター・ピロリ感染などとの関連が強い。",
+          "3": "肥満は大腸がんの発症リスク上昇と関連する。",
+          "4": "食道がん全体では飲酒や喫煙が主要因で、肥満との関連は組織型で異なる。"
+        },
+        "officialReferenceUrls": [
+          "https://www.mhlw.go.jp/general/sikaku/successlist/2026/siken16/dl/seitou.pdf#page=2"
+        ]
+      },
+      "reviewedFieldsSha256": "079cb48f0cf3834f47678e77c6128287e4373468b0ddb3788e4e2a049118dd7d",
+      "proposedReviewedFieldsSnapshot": {
+        "id": "judo-seifukushi-2025-annual-pm-q6",
+        "question": "肥満によって発がんリスクが上がるのはどれか。",
+        "choices": {
+          "1": "肺がん",
+          "2": "胃がん",
+          "3": "大腸がん",
+          "4": "食道がん"
+        },
+        "literalOfficialKey": "3",
+        "acceptedNumbers": [
+          3
+        ],
+        "requiredSelections": 1,
+        "answerMode": "single",
+        "explanation": "本問の公式正答は3（大腸がん）です。肥満は大腸がんの発症リスク上昇と関連します。ただし、米国国立がん研究所（NCI）は食道腺がんや胃上部のがんも肥満と関連するがんに挙げています。したがって、公式採点では3を選びますが、胃がん・食道がん全般が肥満と無関係だと覚えてはいけません。部位や組織型が指定されていない肢2・4との排他的な区別までは、この資料で確定できません。",
+        "choiceExplanations": {
+          "1": "本問の公式正答ではありません。NCIが肥満との関連について一貫した根拠を示しているがんの一覧に、肺がんは含まれていません。このことだけで、あらゆる条件で関連がないと断定はしません。",
+          "2": "本問の公式正答ではありません。ただし、胃がんを一括して肥満と無関係とはいえません。NCIは胃上部のがんを肥満と関連するがんに挙げており、部位を区別する必要があります。",
+          "3": "本問の公式正答です。肥満と大腸がんの発症リスク上昇との関連はNCIの解説でも示されています。",
+          "4": "本問の公式正答ではありません。ただし、食道腺がんには肥満との関連があります。食道がんを組織型で区別せず、すべて肥満と無関係と説明することはできません。"
+        },
+        "officialReferenceUrls": [
+          "https://www.mhlw.go.jp/general/sikaku/successlist/2026/siken16/dl/seitou.pdf#page=2",
+          "https://www.cancer.gov/about-cancer/causes-prevention/risk/obesity/obesity-fact-sheet"
+        ]
+      },
+      "proposedReviewedFieldsSha256": "cec645a5adb985b7d661ffc799437bbeebd19386f07d8844cbdd5bca2f60e294",
+      "adoptionVerified": true,
+      "adoptedCandidateVerdict": "PASS_LOCAL_ADOPTED_CONTENT",
+      "adoptionEvidence": {
+        "verifiedAtUtc": "2026-10-11T03:17:00.074634+00:00",
+        "candidateFile": "C:\\wt\\kakomon-judo-seifukushi-latest-two-20261011\\data\\questions\\judo-seifukushi\\questions.json",
+        "candidateFileSha256": "5e15c52c3ac1423aed16f730f95a39cd6516269f11b0e17655d70d97d0b1fc2a",
+        "adoptedSnapshotFile": "C:\\wt\\kakomon-judo-seifukushi-latest-two-20261011\\docs\\evidence\\judo-seifukushi-latest-two-20261011\\adopted-review-snapshots.json",
+        "adoptedSnapshotFileSha256": "af5163f87e6bc80f905fd60bc08304ed547eb465b20d53dbb46a450d5f5b49cc",
+        "adoptedFieldsSha256": "cec645a5adb985b7d661ffc799437bbeebd19386f07d8844cbdd5bca2f60e294",
+        "snapshotExactMatch": true,
+        "numericKanaReconstructionExactMatch": true,
+        "referenceSubsetExactMatch": true,
+        "referenceTreatment": "Candidate prefixes sourcePdfUrl/sourceAnswerUrl. The complete candidate reference list equals the unique ordered union of those source URLs and the accepted review reference list. Review subset order is exact.",
+        "authorReadyUnmodified": true
+      }
+    },
+    {
+      "id": "judo-seifukushi-2025-annual-pm-q38",
+      "input": "ready/2026_34_gogo.json",
+      "inputFileSha256": "4040bcc10881015ae06974ad5c4d63ef783952678fc64cf417617ad724d19125",
+      "originalQuestionVerdict": "PASS",
+      "officialKeyVerdict": "PASS",
+      "originalPhysicalPage": 15,
+      "officialKeyPhysicalPage": 2,
+      "officialLiteral": "1",
+      "currentVerdict": "REVISIONS_REQUIRED",
+      "specificProblem": "現行肢3の追加確認待ちをそのまま掲載せず、公式1と鉄欠乏での舌症状の両立を総論へ明示する。ASHのsmooth tongueを組織学的検証や舌乳頭萎縮の頻度比較と同一視しない。",
+      "remainingScientificIssue": "異食症と舌乳頭萎縮の感度・特異度・頻度の比較や出題者の排他的理由は未確認。その比較を捏造せず注記付き試験解説として受入れ可能。",
+      "proposedTextVerdict": "ACCEPTABLE_BOUNDED_EXAM_EXPLANATION",
+      "acceptanceConditions": [
+        "原問・選択肢・公式単一正答・requiredSelections=1を維持する。",
+        "提案の総論・全肢解説・参照を採用し、実装への写像とSHAを照合する。",
+        "旧reviewNotesの確認待ちという内部メモを新しい公開解説の結論にしない。医学的限界は提案した読者向け注記で保持する。"
+      ],
+      "reviewedFieldsSnapshot": {
+        "id": "judo-seifukushi-2025-annual-pm-q38",
+        "question": "鉄欠乏性貧血に特徴的なのはどれか。",
+        "choices": {
+          "1": "異食症",
+          "2": "振動覚異常",
+          "3": "舌乳頭萎縮",
+          "4": "皮下・粘膜出血"
+        },
+        "literalOfficialKey": "1",
+        "acceptedNumbers": [
+          1
+        ],
+        "requiredSelections": 1,
+        "answerMode": "single",
+        "explanation": "鉄欠乏では氷などを食べたくなる異食症を伴うことがある。",
+        "choiceExplanations": {
+          "1": "鉄欠乏では氷などを食べたくなる異食症を伴うことがある。",
+          "2": "振動覚異常は末梢神経障害などでみられ、鉄欠乏の典型ではない。",
+          "3": "舌乳頭萎縮は鉄欠乏でも起こり得るため、選択肢の弁別には追加確認が要る。",
+          "4": "皮下・粘膜出血は血小板減少や凝固障害などを考える。"
+        },
+        "officialReferenceUrls": [
+          "https://www.mhlw.go.jp/general/sikaku/successlist/2026/siken16/dl/seitou.pdf#page=2",
+          "https://pubmed.ncbi.nlm.nih.gov/31607629/"
+        ]
+      },
+      "reviewedFieldsSha256": "09732f826b04776a2a145aabe6dd41e45ce25eb6138d910ca8d96634c1b2c3c2",
+      "proposedReviewedFieldsSnapshot": {
+        "id": "judo-seifukushi-2025-annual-pm-q38",
+        "question": "鉄欠乏性貧血に特徴的なのはどれか。",
+        "choices": {
+          "1": "異食症",
+          "2": "振動覚異常",
+          "3": "舌乳頭萎縮",
+          "4": "皮下・粘膜出血"
+        },
+        "literalOfficialKey": "1",
+        "acceptedNumbers": [
+          1
+        ],
+        "requiredSelections": 1,
+        "answerMode": "single",
+        "explanation": "本問の公式正答は1（異食症）です。鉄欠乏性貧血では、氷や土などを食べたくなる異食症を伴うことがあります。一方、米国血液学会（ASH）の患者向け説明は、舌の疼痛や平滑化も症状として挙げています。公式正答が1であることを理由に、舌乳頭萎縮が鉄欠乏では起こらないと断定しないようにします。肢1だけを採点対象とする根拠を、症状の有無だけから排他的に説明することはできません。",
+        "choiceExplanations": {
+          "1": "本問の公式正答です。鉄欠乏性貧血に伴い、氷や土などを食べたくなる異食症がみられることがあります。全患者に必ず現れる症状ではありません。",
+          "2": "本問の正答ではありません。振動覚異常は神経障害などの評価を要する所見であり、鉄欠乏性貧血を特徴付ける症状として本問では選びません。",
+          "3": "本問の公式正答ではありませんが、鉄欠乏で舌の変化が起こり得ないという意味ではありません。ASHは舌の疼痛や平滑化を挙げています。舌乳頭萎縮を一律に否定して肢1との差を説明することは避けます。",
+          "4": "本問の正答ではありません。皮下・粘膜出血では血小板や止血機能の異常などを考えます。出血が鉄欠乏の原因になる場合と、鉄欠乏自体を特徴付ける所見とは区別します。"
+        },
+        "officialReferenceUrls": [
+          "https://www.mhlw.go.jp/general/sikaku/successlist/2026/siken16/dl/seitou.pdf#page=2",
+          "https://www.hematology.org/education/patients/anemia/iron-deficiency"
+        ]
+      },
+      "proposedReviewedFieldsSha256": "c170b6fa3ce6aec19103348740134b9530d2d1d2c0cfcba6eaec864b75925605",
+      "adoptionVerified": true,
+      "adoptedCandidateVerdict": "PASS_LOCAL_ADOPTED_CONTENT",
+      "adoptionEvidence": {
+        "verifiedAtUtc": "2026-10-11T03:17:00.074634+00:00",
+        "candidateFile": "C:\\wt\\kakomon-judo-seifukushi-latest-two-20261011\\data\\questions\\judo-seifukushi\\questions.json",
+        "candidateFileSha256": "5e15c52c3ac1423aed16f730f95a39cd6516269f11b0e17655d70d97d0b1fc2a",
+        "adoptedSnapshotFile": "C:\\wt\\kakomon-judo-seifukushi-latest-two-20261011\\docs\\evidence\\judo-seifukushi-latest-two-20261011\\adopted-review-snapshots.json",
+        "adoptedSnapshotFileSha256": "af5163f87e6bc80f905fd60bc08304ed547eb465b20d53dbb46a450d5f5b49cc",
+        "adoptedFieldsSha256": "c170b6fa3ce6aec19103348740134b9530d2d1d2c0cfcba6eaec864b75925605",
+        "snapshotExactMatch": true,
+        "numericKanaReconstructionExactMatch": true,
+        "referenceSubsetExactMatch": true,
+        "referenceTreatment": "Candidate prefixes sourcePdfUrl/sourceAnswerUrl. The complete candidate reference list equals the unique ordered union of those source URLs and the accepted review reference list. Review subset order is exact.",
+        "authorReadyUnmodified": true
+      }
+    },
+    {
+      "id": "judo-seifukushi-2025-annual-pm-q108",
+      "input": "ready/2026_34_gogo.json",
+      "inputFileSha256": "4040bcc10881015ae06974ad5c4d63ef783952678fc64cf417617ad724d19125",
+      "originalQuestionVerdict": "PASS",
+      "officialKeyVerdict": "PASS",
+      "originalPhysicalPage": 35,
+      "officialKeyPhysicalPage": 2,
+      "officialLiteral": "1",
+      "currentVerdict": "REVISIONS_REQUIRED",
+      "specificProblem": "現在readyでは既に円板へ訂正済みだが、肢4を単に広い総称として退けるだけでは同義性との衝突が残る。下顎頭脱臼へ読み替えず、開口路の偏位と安静時偏位を混同しない説明に修正する。",
+      "remainingScientificIssue": "症例には偏位方向・MRI・発症時点が明示されず、個別患者の確定診断や1と4の病態的排他性は証明されない。公式1を残し、その範囲を説明する。",
+      "proposedTextVerdict": "ACCEPTABLE_BOUNDED_EXAM_EXPLANATION",
+      "acceptanceConditions": [
+        "原問・選択肢・公式単一正答・requiredSelections=1を維持する。",
+        "提案の総論・全肢解説・参照を採用し、実装への写像とSHAを照合する。",
+        "旧reviewNotesの確認待ちという内部メモを新しい公開解説の結論にしない。医学的限界は提案した読者向け注記で保持する。"
+      ],
+      "reviewedFieldsSnapshot": {
+        "id": "judo-seifukushi-2025-annual-pm-q108",
+        "question": "40歳の女性。初発の両側性顎関節前方脱臼で来所した。整復を行ったが、下顎の片側偏位が残存した。整復前と比較し疼痛は減少し会話が可能となり、口の開閉もわずかに可能となった。考えられるのはどれか。",
+        "choices": {
+          "1": "片側顎関節円板前方転位の残存",
+          "2": "顔面神経麻痺の合併",
+          "3": "整復時下顎頭の骨折",
+          "4": "顎関節内障の続発"
+        },
+        "literalOfficialKey": "1",
+        "acceptedNumbers": [
+          1
+        ],
+        "requiredSelections": 1,
+        "answerMode": "single",
+        "explanation": "片側の関節円板が前方転位したままだと顎頭の滑走が制限され、下顎偏位と開閉制限が残り得る。",
+        "choiceExplanations": {
+          "1": "片側の関節円板が前方転位したままだと顎頭の滑走が制限され、下顎偏位と開閉制限が残り得る。",
+          "2": "顔面神経麻痺では表情筋の麻痺を生じるが、下顎の機械的開閉制限を説明しない。",
+          "3": "下顎頭骨折なら新たな骨性疼痛や咬合異常を考え、部分的な開閉改善だけでは示しにくい。",
+          "4": "顎関節内障は円板・関節運動の異常の総称で、整復直後の偏位を説明する具体的診断としては片側円板転位を優先する。"
+        },
+        "officialReferenceUrls": [
+          "https://www.mhlw.go.jp/general/sikaku/successlist/2026/siken16/dl/seitou.pdf#page=2"
+        ]
+      },
+      "reviewedFieldsSha256": "f8065e332ffc7f499ec059f01f0602dfc4563ab1da29690f90aa751130f9d3e5",
+      "proposedReviewedFieldsSnapshot": {
+        "id": "judo-seifukushi-2025-annual-pm-q108",
+        "question": "40歳の女性。初発の両側性顎関節前方脱臼で来所した。整復を行ったが、下顎の片側偏位が残存した。整復前と比較し疼痛は減少し会話が可能となり、口の開閉もわずかに可能となった。考えられるのはどれか。",
+        "choices": {
+          "1": "片側顎関節円板前方転位の残存",
+          "2": "顔面神経麻痺の合併",
+          "3": "整復時下顎頭の骨折",
+          "4": "顎関節内障の続発"
+        },
+        "literalOfficialKey": "1",
+        "acceptedNumbers": [
+          1
+        ],
+        "requiredSelections": 1,
+        "answerMode": "single",
+        "explanation": "本問の公式正答は1（片側顎関節円板前方転位の残存）です。残存するのは関節円板の転位であり、下顎頭の前方脱臼の残存と読み替えません。日本顎関節学会の指針では、非復位性の関節円板前方転位は患側下顎頭の前方移動を制限し、開口障害や開口路の患側偏位を生じ得ると説明されています。ただし、顎関節円板障害と顎関節内障は同義とされるため、肢4を円板転位と無関係な病態として排除することはできません。本問では1の「残存」と4の「続発」を区別して公式採点に従い、病態の発症時点まで症例文だけで確定したとは扱いません。",
+        "choiceExplanations": {
+          "1": "本問の公式正答です。片側の円板前方転位が復位せず残ると、その側の下顎頭の前方移動が制限され、開口障害や開口時の患側偏位を説明できます。下顎頭自体の脱臼残存とは区別します。",
+          "2": "本問の正答ではありません。顔面神経麻痺は表情筋の麻痺を主に考える病態です。症例にはその所見が示されておらず、残った開口制限と偏位は公式正答の関節円板の病態で考えます。",
+          "3": "本問の正答ではありません。下顎頭骨折を示す画像や新たな骨折所見は提示されていません。疼痛が減少したことだけで骨折を完全に除外できるという意味ではなく、本問では円板転位の残存が正答とされています。",
+          "4": "本問の公式正答ではありません。ただし、学会指針では顎関節円板障害と顎関節内障は同義であり、円板転位と無関係な疾患ではありません。選択肢の「続発」は1の「残存」と区別し、症例文だけで新たな発症を証明したとは扱いません。"
+        },
+        "officialReferenceUrls": [
+          "https://www.mhlw.go.jp/general/sikaku/successlist/2026/siken16/dl/seitou.pdf#page=2",
+          "https://kokuhoken.net/jstmj/publication/file/guideline/guideline_treatment_tmj_2020.pdf#page=11",
+          "https://kokuhoken.net/jstmj/publication/file/guideline/guideline_treatment_tmj_2020.pdf#page=12"
+        ]
+      },
+      "proposedReviewedFieldsSha256": "83c2410c8384c9694b337c958f01f5fde826b351ac91d496f08fc6152e9f565a",
+      "adoptionVerified": true,
+      "adoptedCandidateVerdict": "PASS_LOCAL_ADOPTED_CONTENT",
+      "adoptionEvidence": {
+        "verifiedAtUtc": "2026-10-11T03:17:00.074634+00:00",
+        "candidateFile": "C:\\wt\\kakomon-judo-seifukushi-latest-two-20261011\\data\\questions\\judo-seifukushi\\questions.json",
+        "candidateFileSha256": "5e15c52c3ac1423aed16f730f95a39cd6516269f11b0e17655d70d97d0b1fc2a",
+        "adoptedSnapshotFile": "C:\\wt\\kakomon-judo-seifukushi-latest-two-20261011\\docs\\evidence\\judo-seifukushi-latest-two-20261011\\adopted-review-snapshots.json",
+        "adoptedSnapshotFileSha256": "af5163f87e6bc80f905fd60bc08304ed547eb465b20d53dbb46a450d5f5b49cc",
+        "adoptedFieldsSha256": "83c2410c8384c9694b337c958f01f5fde826b351ac91d496f08fc6152e9f565a",
+        "snapshotExactMatch": true,
+        "numericKanaReconstructionExactMatch": true,
+        "referenceSubsetExactMatch": true,
+        "referenceTreatment": "Candidate prefixes sourcePdfUrl/sourceAnswerUrl. The complete candidate reference list equals the unique ordered union of those source URLs and the accepted review reference list. Review subset order is exact.",
+        "authorReadyUnmodified": true
+      }
+    },
+    {
+      "id": "judo-seifukushi-2025-annual-pm-q117",
+      "input": "ready/2026_34_gogo.json",
+      "inputFileSha256": "4040bcc10881015ae06974ad5c4d63ef783952678fc64cf417617ad724d19125",
+      "originalQuestionVerdict": "PASS",
+      "officialKeyVerdict": "PASS",
+      "originalPhysicalPage": 39,
+      "officialKeyPhysicalPage": 2,
+      "officialLiteral": "2",
+      "currentVerdict": "PASS_LOCAL_IMAGE_CONTENT",
+      "specificProblem": "切り出し図は原本別冊No.4/物理p5と一致。現行の肥厚読影を受入れ可能。総論を比較読影と公式2に限定し、浮腫の病理確定・重症度・完全断裂等を追加断定しない提案とする。",
+      "remainingScientificIssue": "この画像一枚から損傷等級や完全断裂の有無、他損傷の除外までは判断しない。専門家確認という抽象的理由による一律停止は不要。",
+      "proposedTextVerdict": "ACCEPTABLE_BOUNDED_EXAM_EXPLANATION",
+      "acceptanceConditions": [
+        "原問・選択肢・公式単一正答・requiredSelections=1を維持する。",
+        "提案の総論・全肢解説・参照を採用し、実装への写像とSHAを照合する。",
+        "旧reviewNotesの確認待ちという内部メモを新しい公開解説の結論にしない。医学的限界は提案した読者向け注記で保持する。"
+      ],
+      "reviewedFieldsSnapshot": {
+        "id": "judo-seifukushi-2025-annual-pm-q117",
+        "question": "20歳の男性。ラグビーの試合中、右膝外側からタックルを受けた。直後から右膝内側に強い痛みがあり、プレーを続行できなかった。来所時に撮影した膝内側の長軸超音波画像（別冊No.4）を別に示す。画像所見でみられるのはどれか。",
+        "choices": {
+          "1": "骨皮質の不整像",
+          "2": "内側側副靱帯の肥厚",
+          "3": "関節内遊離体",
+          "4": "半月板の石灰化"
+        },
+        "literalOfficialKey": "2",
+        "acceptedNumbers": [
+          2
+        ],
+        "requiredSelections": 1,
+        "answerMode": "single",
+        "explanation": "患側で内側側副靱帯が健側より厚く、外反外力による損傷後の腫脹を示す。",
+        "choiceExplanations": {
+          "1": "骨皮質の不整なら高エコーの骨表面線が乱れるが、提示像では靱帯の変化が中心である。",
+          "2": "患側で内側側副靱帯が健側より厚く、外反外力による損傷後の腫脹を示す。",
+          "3": "関節内遊離体なら関節腔内に独立した高エコー構造をみる。",
+          "4": "半月板石灰化なら半月板内の高エコーをみるが提示部位は靱帯である。"
+        },
+        "officialReferenceUrls": [
+          "https://www.mhlw.go.jp/general/sikaku/successlist/2026/siken16/dl/seitou.pdf#page=2"
+        ]
+      },
+      "reviewedFieldsSha256": "945324e757604f7b314130a2c3f38b2e0b3058f986e806e640e1343b73bfce5e",
+      "proposedReviewedFieldsSnapshot": {
+        "id": "judo-seifukushi-2025-annual-pm-q117",
+        "question": "20歳の男性。ラグビーの試合中、右膝外側からタックルを受けた。直後から右膝内側に強い痛みがあり、プレーを続行できなかった。来所時に撮影した膝内側の長軸超音波画像（別冊No.4）を別に示す。画像所見でみられるのはどれか。",
+        "choices": {
+          "1": "骨皮質の不整像",
+          "2": "内側側副靱帯の肥厚",
+          "3": "関節内遊離体",
+          "4": "半月板の石灰化"
+        },
+        "literalOfficialKey": "2",
+        "acceptedNumbers": [
+          2
+        ],
+        "requiredSelections": 1,
+        "answerMode": "single",
+        "explanation": "本問の公式正答は2（内側側副靱帯の肥厚）です。提示された患側・健側の長軸超音波画像を比較すると、患側の内側側副靱帯が厚く描出されています。膝外側からの外力と内側痛という受傷状況にも整合します。この一枚だけで損傷の重症度や完全断裂の有無まで断定しません。",
+        "choiceExplanations": {
+          "1": "本問の正答ではありません。骨皮質の不整像は骨表面の連続性や形状の乱れに注目する所見ですが、本提示像で問われている中心所見は内側側副靱帯の肥厚です。",
+          "2": "本問の公式正答です。患側と健側の表示を対応させて比較し、患側の内側側副靱帯の厚みが増していることを読み取ります。",
+          "3": "本問の正答ではありません。関節内遊離体を示す独立した構造を中心に読む画像ではなく、健側との比較で靱帯の厚みの違いを捉える設問です。",
+          "4": "本問の正答ではありません。半月板の石灰化を積極的に示す所見ではなく、提示像では内側側副靱帯の肥厚に着目します。"
+        },
+        "officialReferenceUrls": [
+          "https://www.mhlw.go.jp/general/sikaku/successlist/2026/siken16/dl/seitou.pdf#page=2",
+          "https://www.zaijusei.com/doc/2026_34_gogo_bessatsu.pdf#page=5"
+        ]
+      },
+      "proposedReviewedFieldsSha256": "22632cd1b2fd2c60ba9641a2bbaff30206a7f552464f609e87f97a61fdde4243",
+      "adoptionVerified": true,
+      "adoptedCandidateVerdict": "PASS_LOCAL_ADOPTED_CONTENT",
+      "adoptionEvidence": {
+        "verifiedAtUtc": "2026-10-11T03:17:00.074634+00:00",
+        "candidateFile": "C:\\wt\\kakomon-judo-seifukushi-latest-two-20261011\\data\\questions\\judo-seifukushi\\questions.json",
+        "candidateFileSha256": "5e15c52c3ac1423aed16f730f95a39cd6516269f11b0e17655d70d97d0b1fc2a",
+        "adoptedSnapshotFile": "C:\\wt\\kakomon-judo-seifukushi-latest-two-20261011\\docs\\evidence\\judo-seifukushi-latest-two-20261011\\adopted-review-snapshots.json",
+        "adoptedSnapshotFileSha256": "af5163f87e6bc80f905fd60bc08304ed547eb465b20d53dbb46a450d5f5b49cc",
+        "adoptedFieldsSha256": "22632cd1b2fd2c60ba9641a2bbaff30206a7f552464f609e87f97a61fdde4243",
+        "snapshotExactMatch": true,
+        "numericKanaReconstructionExactMatch": true,
+        "referenceSubsetExactMatch": true,
+        "referenceTreatment": "Candidate prefixes sourcePdfUrl/sourceAnswerUrl. The complete candidate reference list equals the unique ordered union of those source URLs and the accepted review reference list. Review subset order is exact.",
+        "authorReadyUnmodified": true,
+        "image": {
+          "path": "C:\\wt\\kakomon-judo-seifukushi-latest-two-20261011\\public\\images\\questions\\judo-seifukushi\\2025-pm-q117-1.png",
+          "sha256": "272842b3138a73c56bc492a3ca1d17c901b50dd124e254723fa89b63b34069a3",
+          "expectedSha256": "272842b3138a73c56bc492a3ca1d17c901b50dd124e254723fa89b63b34069a3",
+          "exactMatch": true,
+          "scope": "PM117 only; original PDF/crop comparison retained in imageCoordinateFindings. Other 15 images not reviewed by this adoption check."
+        }
+      }
+    }
+  ],
+  "medicalSourceObservations": [
+    {
+      "url": "https://www.tmd.ac.jp/grad/msrg/gallbladder/gallbladder_cancer.html",
+      "observed": "大学病院肝胆膵外科の胆嚢癌単独の疾患説明に女性に多い傾向。統計年や男女比は本レビューでは主張しない。",
+      "retrieval": "web本文読取"
+    },
+    {
+      "url": "https://www.tokudai-ganrenkei.jp/standard/detail.html?did=gallbladder_cancer",
+      "observed": "胆管癌と胆嚢癌を分け、前者は男性、後者は女性に多い傾向を説明。",
+      "retrieval": "web本文読取"
+    },
+    {
+      "url": "https://medical-b.jp/a01-01-021/book037-13/?hospital=a01-01-021",
+      "observed": "福井大学医学部附属病院の疾患説明に肝細胞癌は男性に多い傾向。",
+      "retrieval": "web検索結果本文"
+    },
+    {
+      "url": "https://www.tmd.ac.jp/grad/msrg/liver/cancer02.html",
+      "observed": "肝内胆管癌＝胆管細胞癌、原発性肝癌の一つと記載。性差の根拠には使用しない。",
+      "retrieval": "web本文読取"
+    },
+    {
+      "url": "https://www.cancer.gov/about-cancer/causes-prevention/risk/obesity/obesity-fact-sheet",
+      "observed": "肥満と関連するがんに大腸、食道腺がん、胃上部が含まれる。一覧に肺がんは含まれないが絶対的無関連を証明しない。",
+      "retrieval": "web本文読取"
+    },
+    {
+      "url": "https://www.hematology.org/education/patients/anemia/iron-deficiency",
+      "observed": "鉄欠乏性貧血の症状に氷/土への欲求と舌の疼痛/平滑化を記載。組織学的舌乳頭萎縮の頻度比較はこの頁から主張しない。",
+      "retrieval": "web本文読取"
+    },
+    {
+      "url": "https://kokuhoken.net/jstmj/publication/file/guideline/guideline_treatment_tmj_2020.pdf",
+      "observed": "物理pp11–12に顎関節円板障害と顎関節内障の同義性、非復位性前方転位で患側下顎頭前方移動制限・開口障害・開口路の患側偏位を説明。",
+      "retrieval": "web本文読取、物理p12スクリーンショット要求実施"
+    }
+  ],
+  "sourceChecks": [
+    {
+      "id": "judo-seifukushi-2025-annual-am-q118",
+      "pdf": "official\\2026_34_gozen.pdf",
+      "pdfSha256": "11af4d6b36e8969fb7fc0d7bca0e3e87339e930ecf1b563594f36357db8af2db",
+      "manifestHashMatched": true,
+      "physicalPage": 35,
+      "viewedImage": "ocr\\2026_34_gozen\\p035.png",
+      "imageSha256": "da6f9ef7a26cb1d7c69b5614b72563cffb3d96210f5c5e642f26a5a384fa166f",
+      "freshScale3RenderMatched": true
+    },
+    {
+      "id": "judo-seifukushi-2025-annual-pm-q6",
+      "pdf": "official\\2026_34_gogo.pdf",
+      "pdfSha256": "79ded00c7afb2941b9c311979872ac446b3b7e0b12e6a0a85dd8cb7aa2254220",
+      "manifestHashMatched": true,
+      "physicalPage": 6,
+      "viewedImage": "ocr\\2026_34_gogo\\p006.png",
+      "imageSha256": "9a9f42de061c24570085a112c9e660ae672b7d689db3841ad00e63836610c6a9",
+      "freshScale3RenderMatched": true
+    },
+    {
+      "id": "judo-seifukushi-2025-annual-pm-q38",
+      "pdf": "official\\2026_34_gogo.pdf",
+      "pdfSha256": "79ded00c7afb2941b9c311979872ac446b3b7e0b12e6a0a85dd8cb7aa2254220",
+      "manifestHashMatched": true,
+      "physicalPage": 15,
+      "viewedImage": "ocr\\2026_34_gogo\\p015.png",
+      "imageSha256": "7c812ff399ecba70b35708a35bf3b07e0a8ce7be367deda18b88adbd05d0bad9",
+      "freshScale3RenderMatched": true
+    },
+    {
+      "id": "judo-seifukushi-2025-annual-pm-q108",
+      "pdf": "official\\2026_34_gogo.pdf",
+      "pdfSha256": "79ded00c7afb2941b9c311979872ac446b3b7e0b12e6a0a85dd8cb7aa2254220",
+      "manifestHashMatched": true,
+      "physicalPage": 35,
+      "viewedImage": "ocr\\2026_34_gogo\\p035.png",
+      "imageSha256": "ad5ad0d02dc29c7288a3d6e488a60a6bd004effbb29fa3aa1d9b4d10071a055b",
+      "freshScale3RenderMatched": true
+    },
+    {
+      "id": "judo-seifukushi-2025-annual-pm-q117",
+      "pdf": "official\\2026_34_gogo.pdf",
+      "pdfSha256": "79ded00c7afb2941b9c311979872ac446b3b7e0b12e6a0a85dd8cb7aa2254220",
+      "manifestHashMatched": true,
+      "physicalPage": 39,
+      "viewedImage": "ocr\\2026_34_gogo\\p039.png",
+      "imageSha256": "23d3140fb19f82fd62d7d35314bf67f723957580fffeff990e2ff36d56aceb0a",
+      "freshScale3RenderMatched": true
+    },
+    {
+      "pdf": "official\\2026_seitou.pdf",
+      "pdfSha256": "117a1a68878eb91e40d1b9c6fd11982b4bc5ccd5ced557bcd9fd2861c8b94fbb",
+      "physicalPage": 1,
+      "viewedImage": "official\\2026_seitou-p1.png",
+      "imageSha256": "9e42905be8d73e533e07065267cfaf920741727ebcd7d4c9bf83f86810f7a37d",
+      "freshScale2RenderMatched": true
+    },
+    {
+      "pdf": "official\\2026_seitou.pdf",
+      "pdfSha256": "117a1a68878eb91e40d1b9c6fd11982b4bc5ccd5ced557bcd9fd2861c8b94fbb",
+      "physicalPage": 2,
+      "viewedImage": "official\\2026_seitou-p2.png",
+      "imageSha256": "5688edc5e1fc1b61382cc0c5de732a4cfdfddd1458c9514242c88f381ed1234e",
+      "freshScale2RenderMatched": true
+    }
+  ],
+  "imageCoordinateFindings": [
+    {
+      "id": "judo-seifukushi-2025-annual-pm-q117",
+      "verdict": "PASS_NO_COORDINATE_UNIT_ERROR",
+      "sourcePdf": "official\\2026_34_gogo_bessatsu.pdf",
+      "sourcePdfSha256": "6bb8057486648c37eeda9c9348ccf61f7085ea64c589beeeb3edbb90beebc896",
+      "physicalPage": 5,
+      "printedPage": 4,
+      "figureLabel": "No.4 / 午後 問題117",
+      "pageSizePdfPoints": [
+        516.0,
+        729.5999755859375
+      ],
+      "bboxPdfPoints": [
+        25,
+        115,
+        490,
+        325
+      ],
+      "renderScale": 3,
+      "assetPixels": [
+        1395,
+        630
+      ],
+      "asset": "ready-assets/2025-pm/2025-pm-q117-figure.png",
+      "assetSha256": "272842b3138a73c56bc492a3ca1d17c901b50dd124e254723fa89b63b34069a3",
+      "freshClippedRenderExactMatch": true,
+      "visualMatch": "患側が左・健側が右。ラベル・両比較像・深さ目盛が保存され、左右逆転・図違いなし。",
+      "finding": "患側の内側側副靱帯の厚み増加を健側比較で確認。数値計測、等級、完全断裂診断は行っていない。"
+    }
+  ],
+  "authorDraftsModified": false,
+  "implementationPerformed": false,
+  "productionOperationPerformed": false,
+  "fullDatasetAccepted": false,
+  "retrievalRestrictions": "PubMed6804605の429、PMC11403384のreCAPTCHAは追加取得・別経路取得なし。既存2問の採用検査のみ。",
+  "adoptionVerified": true,
+  "adoptionVerifiedAtUtc": "2026-10-11T03:17:00.074634+00:00",
+  "adoptionScope": {
+    "questionCount": 5,
+    "choiceCount": 20,
+    "imageCount": 1,
+    "candidateFileSha256": "5e15c52c3ac1423aed16f730f95a39cd6516269f11b0e17655d70d97d0b1fc2a",
+    "fullDatasetAccepted": false,
+    "authorReadyFilesChanged": false,
+    "implementationChangedByReviewer": false,
+    "productionOperationPerformed": false
+  }
+}

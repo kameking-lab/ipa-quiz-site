@@ -1,0 +1,96 @@
+{
+  "questionNumber": 1,
+  "sharedContext": null,
+  "units": [
+    {
+      "part": null,
+      "question": "真空中において，一辺 l [m] の正方形電極を間隔 d [m] で配置した平行板コンデンサがある。図1はこのコンデンサの電極板間に比誘電率 εr = 5 の誘電体を挿入した状態，図2は図1の誘電体を電極面積の 1/2 だけ引き出した状態を示している。図1及び図2の二つのコンデンサの静電容量 C₁ [F] 及び C₂ [F] の比（C₁ : C₂）として，正しいものを次の(1)～(5)のうちから一つ選べ。\nただし，l ≫ d であり，コンデンサの端効果は無視できるものとする。",
+      "choices": {
+        "1": "2 : 1",
+        "2": "3 : 2",
+        "3": "5 : 2",
+        "4": "5 : 3",
+        "5": "5 : 4"
+      },
+      "officialAnswer": "4",
+      "explanation": "真空の誘電率を ε₀ [F/m] とし，電極面積を S = l² [m²] とする。\n\n【図1】電極間全体が比誘電率 εr = 5 の誘電体で満たされているので，\nC₁ = εr·ε₀·S / d = 5ε₀l² / d\n\n【図2】誘電体が電極面積の 1/2 だけ引き出されているため，電極間は「誘電体が入った面積 l²/2 の部分」と「真空の面積 l²/2 の部分」に分かれる。両部分は同じ電極間に並んでいるので，並列接続のコンデンサとして容量を足し合わせる。\n・誘電体部分：5ε₀ × (l²/2) / d = 2.5ε₀l² / d\n・真空部分：ε₀ × (l²/2) / d = 0.5ε₀l² / d\nC₂ = 2.5ε₀l²/d + 0.5ε₀l²/d = 3ε₀l² / d\nなお，電極の外側へはみ出した誘電体部分は電極間に存在しないため，端効果を無視する条件のもとでは静電容量に寄与しない。\n\n【比】\nC₁ : C₂ = 5ε₀l²/d : 3ε₀l²/d = 5 : 3\n\nよって正解は(4)である。",
+      "choiceExplanations": {
+        "1": "誤り。2 : 1 となるには C₂ = 2.5ε₀l²/d が必要で，これは図2の誘電体部分の容量だけに相当する。実際には真空部分の容量 0.5ε₀l²/d も並列に加わるので C₂ = 3ε₀l²/d となり，比は 5 : 3 である。",
+        "2": "誤り。C₁ = 5ε₀l²/d に対して 3 : 2 となるには C₂ = (10/3)ε₀l²/d が必要だが，誘電体部分と真空部分の並列合成で求めた C₂ は 3ε₀l²/d であり一致しない。",
+        "3": "誤り。5 : 2 となるには C₂ = 2ε₀l²/d が必要で，誘電体部分の容量 2.5ε₀l²/d 単独よりも小さい値になってしまう。並列合成した C₂ は 3ε₀l²/d である。",
+        "4": "正しい。C₁ = 5ε₀l²/d，C₂ = (5ε₀ + ε₀) × (l²/2)/d = 3ε₀l²/d より，C₁ : C₂ = 5 : 3 となる。",
+        "5": "誤り。5 : 4 となるには C₂ = 4ε₀l²/d が必要で，誘電体を半分引き出したことによる容量の減少を過小に見積もった値になる。並列合成した C₂ は 3ε₀l²/d である。"
+      },
+      "figureDescription": "図1と図2の2つの断面図が横に並んで示されている。\n図1：上下2枚の平行な電極板（間隔 d[m]，左側に寸法表示）の間を，斜線で示された誘電体が電極の全幅にわたって満たしている。電極の幅は下部の寸法線で l[m] と示され，上下の電極中央からそれぞれ垂直に引き出し線が出ている。上部に「C₁」，右上に矢印付きで「誘電体」のラベルがある。\n図2：図1と同じ寸法の平行板電極（間隔 d[m]，幅 l[m]）で，誘電体（斜線）が右方向へずれており，電極間の左半分は誘電体のない空間，右半分は誘電体で満たされている。誘電体は電極の右端からさらに外側へはみ出して描かれている。上下の電極中央からそれぞれ垂直に引き出し線が出ている。上部に「C₂」，右上に矢印付きで「誘電体」のラベルがある。\n図は，誘電体が電極面積の 1/2 だけ引き出された状態（電極間の半分が真空，半分が誘電体）を視覚的に示すもので，問題文にもその内容は記述されている。",
+      "officialReferenceUrls": [],
+      "uncertainty": "なし",
+      "needsReview": true,
+      "sourceQuestionPdfUrl": "https://www.shiken.or.jp/chief/upload/20260322_ch_third_q01.pdf",
+      "sourceAnswerPdfUrl": "https://www.shiken.or.jp/chief/upload/20260322_ch_third_a01.pdf",
+      "reviewedFromPage": [
+        4
+      ]
+    }
+  ],
+  "draftModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 2500,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 9309,
+      "webSearchRequests": 0,
+      "costUSD": 0.12473580000000001,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 784,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "9d16727fa7bea294dab5439cdbf5d906ab3adf44b12a167a62ab5bf88d03ec67",
+  "inputRequestSha256": "96b20aa2f24289a63ea521bd7d7005bec5b483e2b56883df94c9131479553e93",
+  "sourceQuestionPdfSha256": "c83e7c7350d98b65f5d8da0b93e4a2581a19dd250be320fb7fc492c9b34a29c1",
+  "sourceAnswerPdfSha256": "cc2890296d06a4823df5697a78a1c01ddfd39f041c51f48c87984daa3a5707c6",
+  "sourcePageImageSha256": {
+    "data/raw_pdfs/denken3/review/20260322/theory/p04.png": "71af29f33b6d8a0eacabef401363cb3eb9b3a1beb6eef3038cd70071e9e8d63a"
+  },
+  "revisionHistory": [
+    {
+      "version": 1,
+      "model": "claude-opus-5-5",
+      "resolvedModel": "claude-opus-5-5",
+      "modelUsage": {
+        "claude-opus-5-5": {
+          "inputTokens": 2,
+          "outputTokens": 2838,
+          "cacheReadInputTokens": 1279,
+          "cacheCreationInputTokens": 13275,
+          "webSearchRequests": 0,
+          "costUSD": 0.1632238,
+          "contextWindow": 1000000,
+          "maxOutputTokens": 128000,
+          "thinkingTokens": 1020,
+          "canonicalModel": "claude-opus-5-5",
+          "provider": "firstParty",
+          "costBasis": "list"
+        }
+      },
+      "rawResponseSha256": "95c7adfe687c05afed08dc95e1c3c33dea9716bcf33bbe130b3f79ea8f9c61c0",
+      "inputRequestSha256": "44c7b580728971361933f6415bb601ffa1abf7c2a88e7effca97d5b1502299cc",
+      "previousDraftSha256": "77fd5dee6e741756999c594983aceb537a465f1d0f51d5f819c0a473d3a7b044",
+      "previousDraft": "data/raw_pdfs/denken3/review/20260322/theory/archive/q01-vision-draft-v1.json",
+      "answeredReviewSha256": "70ec3dc43dfde09afcc744114afc912308b601dca038491460af83741331ae74",
+      "answeredReview": "data/raw_pdfs/denken3/review/20260322/theory/archive/q01-opus-review-v1.json",
+      "answeredStrictReceipt": "docs/evidence/denken3/strict/20260322-theory-s1-q01-opus.json",
+      "answeredStrictReceiptSha256": "09513a1a9f202008d7f7bfe3cf463a627fe47b0f4ce3130326ddac6d46f77d73",
+      "figureSha256": {
+        "20260322-theory-q01-fig1": "8c74efede6a60c61f58f525acf66c26881d5bee48531b9beb02b87b3d88421b0"
+      },
+      "referenceHashes": {},
+      "operatorNote": ""
+    }
+  ]
+}

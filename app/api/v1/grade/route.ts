@@ -1,3 +1,5 @@
+import { isCompleteSelectionCorrect, requiredSelectionCount } from "@/lib/questions/answers";
+import { isPracticeReadyQuestion } from "@/lib/questions/filter";
 import { NextResponse } from "next/server";
 import { z } from "zod";
 
@@ -49,19 +51,24 @@ export async function POST(req: Request) {
     );
   }
 
+  if (!isPracticeReadyQuestion(q)) {
+    return NextResponse.json({ error: "content_under_review", message: "原典との照合中のため、この問題の演習・採点は停止しています。" }, { status: 409, headers: { "Cache-Control": "no-store" } });
+  }
   if (q.type !== "multiple-choice") {
     return NextResponse.json(
       {
         error: "unsupported",
-        message:
-          "現在 Public API では多肢選択問題（multiple-choice）のみ採点可能です。記述・論述問題は将来対応予定です。",
+        message: "Public API v1 は多肢選択問題のみ採点できます。数値記入・記述・論述問題は採点対象外です。",
+        questionType: q.type,
+        supportedQuestionTypes: ["multiple-choice"],
+        ...(q.type === "numeric" ? { numericAnswer: q.numericAnswer } : {}),
       },
       { status: 400, headers: buildRateLimitHeaders(rl) },
     );
   }
 
   const correctAnswer = q.answer;
-  const correct = compareAnswer(parsed.answer, correctAnswer);
+  const correct = isCompleteSelectionCorrect(correctAnswer, (Array.isArray(parsed.answer) ? parsed.answer : [parsed.answer]).map(key => key.trim()), requiredSelectionCount(q));
 
   return NextResponse.json(
     {
@@ -72,13 +79,4 @@ export async function POST(req: Request) {
     },
     { headers: buildRateLimitHeaders(rl) },
   );
-}
-
-function compareAnswer(submitted: string | string[], correct: string | string[]): boolean {
-  const sub = Array.isArray(submitted)
-    ? [...submitted].map((s) => s.trim()).sort()
-    : [submitted.trim()];
-  const cor = Array.isArray(correct) ? [...correct].map((s) => s.trim()).sort() : [correct.trim()];
-  if (sub.length !== cor.length) return false;
-  return sub.every((s, i) => s === cor[i]);
 }

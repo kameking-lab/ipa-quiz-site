@@ -1,0 +1,92 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20240818",
+  "subject": "theory",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 3803,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 16170,
+      "webSearchRequests": 0,
+      "costUSD": 0.2056838,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 1692,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "9bc29bf4d7748df383993e713342c11653a704cd5e749299cd35839852eeb51f",
+  "inputRequestSha256": "b4155a48af34dd86ecf552b964721367eeb67556601a4e46211acaab1c431ca0",
+  "inputHashes": {
+    "candidateSha256": {
+      "q15a": "519085b26dd5a41d479b541e5e997c8557e149e22d7c630ec673754499e253e0",
+      "q15b": "0754229386e90d5144459317f3628d80dbc99ae0403d95cec8e7c3b0e2f0d7d5"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20240818/theory/p19.png": "7dd8b5e9903630242b620cff2d52909aa9e2389354731235d185d1b755ce1c08"
+    },
+    "figureSha256": {
+      "public/images/denken3/20240818/theory/20240818-theory-q15-ac-circuit.png": "3c017b72e88229b876cc59eff777c6a35f495f27fae0d39f50cccc78a09dae02"
+    },
+    "sourceQuestionPdfSha256": "236be905e93a023cf3c65c1e22c45c24dc42b910151c51f8ed023247793d1d29",
+    "sourceAnswerPdfSha256": "f72ecbc3a477e64948388b69cf78cb931032c9f0c688639836c8d533a949cd0f",
+    "officialAnswerUnitsSha256": "07beb363b58936874ea20e5d8da716d6b8021f33948135ba7d3563ed0d7cc2d8",
+    "referencePdfSha256": {},
+    "referencePageSha256": {},
+    "referenceJsonSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q15a",
+      "questionNumber": 15,
+      "part": "a",
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "出典メタデータ: 公式原図は理論冊子の問15、PDF第19頁（原図フッタ『T1−R 019』、印刷頁番号は-16-）。候補のreviewedFromPage=[19]、fiscalYear=2024、term=upper、examDate=2024-08-18、subject=theory、問題PDF・解答PDFのURL、sourceAttributionはmanifestと一致する。",
+        "問題文: 『回路素子は，インダクタンスLのコイル又は静電容量Cのコンデンサである』『v=500sin(1000t)[V]』『i=−50cos(1000t)[A]』『最も近いものを次の(1)〜(5)のうちから一つ選べ』が原図と一致する。記号・符号・単位も一致する。読点の整形のみで、意味の変化はない。",
+        "選択肢: (1)C=10nF、(2)C=100nF、(3)C=10μF、(4)L=10mH、(5)L=100mH。原図の全5肢と一致する。",
+        "公式正答: 公式解答表の理論・問15(a)は4で、候補のofficialAnswer='4'と一致する。",
+        "極性: 原図と公開図の両方で、iの矢印は上辺を右向き、vの矢印は電源下で左向き。電験の慣例では電圧矢印の先端が高電位側なので、電源の左端子が正になる。電流は正端子から左導線を通って素子の左端子へ流入する。したがって素子について受動符号規約が成立し、与式のvとiをそのまま位相比較できる。",
+        "検算(微分式): コイルと仮定すると v=L·di/dt=L·50·1000·sin(1000t)=50000L·sin(1000t)。これが500sin(1000t)と等しいので L=0.01H=10mH。コンデンサと仮定すると i=C·dv/dt=+500000C·cos(1000t) となり、与式の −cos と符号が矛盾する。",
+        "検算(位相): −50cos(1000t)=50sin(1000t−π/2) なので、電流は電圧より90°遅れで、コイルと判定される。|Z|=500/50=10Ω、L=10/1000=10mH。総合解説の計算と因果は正しい。",
+        "仮に逆の極性慣例で読んでも、電流進み90°のコンデンサで X_C=10Ω、すなわち C=100μF となり、選択肢に存在しない。よって極性解釈の曖昧さが正答を左右することはない。",
+        "各肢の解説: (1) X_C=1/(1000×10⁻⁸)=10⁵Ω。(2) 1/(1000×10⁻⁷)=10⁴Ω。(3) 1/(1000×10⁻⁵)=100Ω。(5) X_L=1000×0.1=100Ω。数値はすべて正しい。コンデンサ肢に対する位相矛盾の指摘と、(5)が『種類は適合するが値が1桁違う』とする理由付けも正しい。",
+        "公開候補図: 原図の回路部分を忠実に切り出している。iの矢印(右向き)、『回路素子』の箱、交流電源記号(〜)、vの矢印(左向き)、単一の直列閉ループの接続がすべて一致し、欠落や改変したラベルはない。この図だけで極性の判断に必要な情報が読み取れる。figureDescriptionの記述も図と整合する。",
+        "officialReferenceUrlsは空で、検証を要する外部主張はない。"
+      ]
+    },
+    {
+      "unitKey": "q15b",
+      "questionNumber": 15,
+      "part": "b",
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "出典メタデータ: 原図のPDF第19頁に問15(b)がある。reviewedFromPage=[19]、年度・期・試験日・科目・URL・sourceAttributionはmanifestと一致する。",
+        "問題文: 『エネルギーの最大値W_maxの値[J]』と、ただし書き『インダクタンスの場合には(1/2)Li²の，静電容量の場合には(1/2)Cv²のエネルギーが蓄えられるものとする』が原図と一致する。共通の前文(v、iの式)も正確である。",
+        "選択肢: (1)2.5、(2)6.25、(3)12.5、(4)25、(5)125。原図の全5肢と一致する。",
+        "公式正答: 公式解答表の理論・問15(b)は3で、候補のofficialAnswer='3'と一致する。",
+        "検算: L=0.01H、Im=50A。W=(1/2)Li²=0.005×2500cos²(1000t) なので、最大値は12.5J。総合解説は正しい。",
+        "各肢の解説: (1) 2.5=0.5·L·2500 から L=2mH。L=10mHなら I²=500 で I≈22.4A。記述と一致する。(2) Irms²=1250 から 0.5×0.01×1250=6.25 で、実効値を誤用した場合の値として正しい。(4) 0.01×2500=25 で、係数1/2を欠いた場合の値として正しい。(5) 0.5×0.1×2500=125 で、(a)でL=100mHを選んだ場合の値として正しい。",
+        "図: (a)と同一の公開図を参照しており、原図と一致する。(b)固有の図は原図にもない。figureDescriptionは正確である。",
+        "officialReferenceUrlsは空で、検証を要する外部主張はない。"
+      ]
+    }
+  ]
+}

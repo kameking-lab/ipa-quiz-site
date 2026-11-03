@@ -99,8 +99,8 @@ export function ReviewQuizClient() {
     return (
       <main className="mx-auto w-full max-w-2xl flex-1 px-4 py-8 sm:py-12">
         <Button asChild variant="ghost" size="sm" className="mb-4">
-          <Link href="/">
-            <ArrowLeft className="h-4 w-4" /> ホームに戻る
+          <Link href="/review">
+            <ArrowLeft className="h-4 w-4" /> 復習一覧に戻る
           </Link>
         </Button>
         <div className="rounded-2xl border-2 border-dashed border-zinc-300 bg-zinc-50/50 p-8 text-center dark:border-zinc-700 dark:bg-zinc-900/30">
@@ -129,8 +129,8 @@ export function ReviewQuizClient() {
       index={index}
       total={sessionIds.length}
       mode="review"
-      backHref="/"
-      exam="ap"
+      backHref="/review"
+      exam={current?.exam ?? "ap"}
       onNext={handleNext}
     />
   );

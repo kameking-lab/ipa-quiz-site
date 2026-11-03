@@ -1,0 +1,70 @@
+{
+  "reviewModel": "claude-opus-5-5",
+  "requestedModel": "claude-opus-5-5",
+  "canonicalModel": "claude-opus-5-5",
+  "provider": "firstParty",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 2780,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 18412,
+      "webSearchRequests": 0,
+      "costUSD": 0.2031598,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 2110,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponsePath": "data/exam-library/emkohyo-review/emkohyo-EM20251809-q04-05-raw-response.txt",
+  "rawResponseSha256": "d63507f9429a5e9107f89412ce8921f5f7cdd4eac1afe8ded74c6ad9a94ac934",
+  "paperId": "emkohyo-EM20251809",
+  "ids": [
+    "emkohyo-EM20251809-q4",
+    "emkohyo-EM20251809-q5"
+  ],
+  "figureSha256": {
+    "emkohyo-EM20251809-q4": {},
+    "emkohyo-EM20251809-q5": {}
+  },
+  "officialRowImageSha256": {
+    "emkohyo-EM20251809-q4": {
+      "/exam-library/emkohyo-EM20251809/q4-p3-1.webp": "c89b95e3f44fc95772532dd0d4c72a51ed92eef3ca4c87db157ab66ef8e1eb4c"
+    },
+    "emkohyo-EM20251809-q5": {
+      "/exam-library/emkohyo-EM20251809/q5-p4-0.webp": "a18561f07572f7afdce5d5262ab59ce9113f9da1a39f05e9d17efb81711d387d"
+    }
+  },
+  "officialPageImageSha256": {},
+  "governmentSourceImageSha256": {},
+  "candidateSha256": {
+    "emkohyo-EM20251809-q4": "54ea163eefe874ae25b340e1258b03c6bc8f3dd3dbe49ce7b48dfc5a2a19090c",
+    "emkohyo-EM20251809-q5": "ad369beaac7452ef5632505eafce3c68c16fa4a0ccfef9fa58685b9ce1376de0"
+  },
+  "sourcePackPath": "docs/evidence/emkohyo-choice-sources/emkohyo-EM20251809-q04-05.json",
+  "sourcePackSha256": "d4a1c6d422a58e15786ecc924d0313ca8065a52b3d829fa7f4ddd1769849032f",
+  "assessment": {
+    "emkohyo-EM20251809-q4": {
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "reasonIssues": [
+        "肢1の理由に事実誤認がある。肢1は「㋑¹³⁷Cs／㋺2～3／㋩消滅γ線」だが、理由は「㋑の¹³⁷Csと㋩の後方散乱は正しいが、㋺の2〜3%が誤り」としている。肢1の㋩は後方散乱ではなく消滅γ線である。正しくは「㋑¹³⁷Csは正しいが、㋺2〜3%（No.6は7〜9%程度が一般的）と㋩消滅γ線（511keVの陽電子消滅放射線で、約185keVの幅広いピークの原因ではない。約185keVは662/(1+2×662/511)≈184keVの後方散乱）の2か所が誤り」と修正が必要。",
+        "肢2の理由とsummaryの表現が過大である。出典No.6の値は「7～9%程度」で、選択肢の「6～8%」とは一致しない。範囲が重なり、2〜3%よりはるかに近いため比較結論（6〜8が正しい）は支持される。ただし「整合する」は言い過ぎなので、「出典の7〜9%程度と範囲が重なり、選択肢中で妥当なのは6〜8%である（2〜3%はGe検出器並みの値で、NaI(Tl)では達成されない）」のように、近似である旨を明示するのが望ましい。"
+      ],
+      "sourceIssues": [],
+      "needsExternalCheck": []
+    },
+    "emkohyo-EM20251809-q5": {
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "reasonIssues": [],
+      "sourceIssues": [],
+      "needsExternalCheck": []
+    }
+  }
+}

@@ -1,0 +1,34 @@
+[
+  {
+    "qNumber": 23,
+    "question": "肺癌に対する放射線治療の基準点線量処方で正しいのはどれか。",
+    "choices": {
+      "ア": "平均肺線量処方",
+      "イ": "計画標的体積のD2cc 処方",
+      "ウ": "計画標的体積のD95％処方",
+      "エ": "計画標的体積のDmax 処方",
+      "オ": "計画標的体積のV20Gy 処方"
+    },
+    "rawSourceText": "肺癌に対する放射線治療の基準点線量処方で正しいのはどれか。\n 1．平均肺線量処方\n 2．計画標的体積のD2cc 処方\n 3．計画標的体積のD95％処方\n 4．計画標的体積のDmax 処方\n 5．計画標的体積のV20Gy 処方\n",
+    "physicalPage": 13,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-06a_01.pdf",
+    "sourceSha256": "dcf6807d059bc3101546a246dd3cdd936f999b4a030f10f9bfef7ca517cfc9d0",
+    "status": "officially-excluded-from-scoring",
+    "officialAnswerNumber": null,
+    "answer": null,
+    "reason": "設問が不適切で正解が得られないため、公式に採点対象から除外。",
+    "exclusionEvidence": {
+      "url": "https://www.mhlw.go.jp/general/sikaku/successlist/2026/siken06/dl/AM23.pdf",
+      "officialText": "採点対象から除外する。理由：設問が不適切で正解が得られないため。"
+    },
+    "explanation": "基準点線量処方は基準点の吸収線量を指定する方式。ここに挙げられた平均線量や線量体積指標等から正解を選べないため、厚生労働省は採点対象から除外した。正答は作成しない。",
+    "choiceExplanations": {
+      "ア": "平均肺線量は肺全体の平均線量という指標で、基準点処方そのものではない。",
+      "イ": "D2ccは最も高線量となる2 cm³の領域の線量を表す線量体積指標で、基準点処方ではない。",
+      "ウ": "D95％はPTVの95％を覆う線量で、体積に基づく処方指標。基準点線量とは異なる。",
+      "エ": "DmaxはPTV内の最大線量で、設定した基準点線量をそのまま表すものではない。",
+      "オ": "V20Gyは20 Gy以上を受ける体積割合等の指標で、基準点での線量値ではない。"
+    },
+    "needsInventedAnswer": false
+  }
+]

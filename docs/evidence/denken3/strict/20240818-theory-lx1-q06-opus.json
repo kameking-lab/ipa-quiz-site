@@ -1,0 +1,68 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20240818",
+  "subject": "theory",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 4409,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 14441,
+      "webSearchRequests": 0,
+      "costUSD": 0.20397179999999998,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 2983,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "c7676cc91abfc25ce8039e6eea8518618804f9d5c235d1b250569320c90b5b2f",
+  "inputRequestSha256": "1387c7424d7ad2176b2cf154c448b596a927696d6f94caab94563ff76e525ab5",
+  "inputHashes": {
+    "candidateSha256": {
+      "q06": "98991e42ea49b3d6286601df049670e0a0627bce5960adc03150cc9e50ac9bd1"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20240818/theory/p10.png": "9ad602c7534241edd457d84898c573ffdd7fa1c4f938c0af2a98fb4dac8d5a5a"
+    },
+    "figureSha256": {
+      "public/images/denken3/20240818/theory/20240818-theory-q06-circuit.png": "dc403bcc5a2baea4a638caec74ac208c924d0d6bcb4d3527a00600258320f943"
+    },
+    "sourceQuestionPdfSha256": "236be905e93a023cf3c65c1e22c45c24dc42b910151c51f8ed023247793d1d29",
+    "sourceAnswerPdfSha256": "f72ecbc3a477e64948388b69cf78cb931032c9f0c688639836c8d533a949cd0f",
+    "officialAnswerUnitsSha256": "8f048241dfea414bc8ceb31eacd1ada87b1ffe90694e652f02c567888a3e22a1",
+    "referencePdfSha256": {},
+    "referencePageSha256": {},
+    "referenceJsonSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q06",
+      "questionNumber": 6,
+      "part": null,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "出典メタデータ: fiscalYear=2024(令和6年度)、term=upper(上期)、examDate=2024-08-18、subject=theory、sourceQuestionPdfUrl/sourceAnswerPdfUrlはmanifestと完全一致。reviewedFromPage=[10]はmanifest指定のPDF第10頁と一致し、原図下部の管理番号『T1−R 010』とも整合する（印刷頁番号は『-7-』でPDF頁とは別物）。",
+        "問題文: 原図『図の回路において，抵抗R[Ω]には電流0.3Aが流れている。抵抗Rの値[Ω]として，最も近いものを次の(1)〜(5)のうちから一つ選べ。』と語句・数値・単位が一致する。",
+        "選択肢: (1)2.0 (2)2.8 (3)3.7 (4)4.9 (5)25 が原図と全肢一致する。",
+        "公式正答: 公式解答表の理論・問6=1。候補のofficialAnswer='1'、manifest固定単位answer='1'と一致する。",
+        "回路接続の照合: 9V電源の上端は6Ωを経て節点Pに接続する。Pから上枝(3V→0.3A右向き矢印→R)と下枝(4V→1Ω)に分岐する。上枝は右上角で下に折れ、下枝右端の黒丸(節点Q)で合流する。Qから下側配線を通って9V電源の下端へ戻る。以上が原図と一致する。",
+        "極性の検証: 原図の長線から、9Vは上側が正極、3V・4Vは右側(Q側)が正極と読める。独立検算として4通りの極性組合せをすべて解いた。『9V上正・3V/4V右正』の場合だけR=2.0Ω（公式正答(1)）になる。『3V/4V左正』ではR≈4.86Ωとなる。9V下正の2通りはいずれもR<0で物理的に不成立。よって候補の極性解釈は公式正答と整合する唯一の読みである。",
+        "総合解説の計算: I₁=(9−V)/6、V=0.3R−3、I₃=V+4、I₁=I₂+I₃ を立てる。9−V=1.8+6V+24 からV=−16.8/7=−2.4V、0.3R=0.6 からR=2.0Ωを得る。各式の符号は電流の仮定方向と電源極性に照らして正しい。検算 I₁=1.9A、I₃=1.6A、1.9=0.3+1.6 も成立する。",
+        "誤答肢の理由: (2)0.3×2.8−3=−2.16V、(3)0.3×3.7−3=−1.89V、(4)0.3×4.9−3=−1.53V、(5)0.3×25−3=4.5V はいずれも−2.4Vと不一致で、数値はすべて正確。(4)で示した『3V・4Vの極性を逆に読むとR≈4.86Ω』は再計算((9−V)/6=0.3+V−4 → V=31.2/7 → R=4.857Ω)で裏付けられ、固有の誤答要因として妥当である。",
+        "公開候補図: 原図の回路部分を欠落なく切り出している。9V・6Ω・3V・0.3A(右向き矢印)・R[Ω]・4V・1Ωの全ラベル、節点P/Qの黒丸、電源3個の長線/短線、配線接続がすべて判読でき、候補図だけで解答に必要な情報が得られる。",
+        "figureDescriptionは原図の接続・極性・矢印位置と一致する。officialReferenceUrlsは空で、検証を要する外部主張はない。"
+      ]
+    }
+  ]
+}

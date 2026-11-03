@@ -1,0 +1,66 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20260322",
+  "subject": "theory",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 2479,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 13318,
+      "webSearchRequests": 0,
+      "costUSD": 0.1563878,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 1234,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "059e38bb188fb9db585be3b1543a4128aaf0c47610887a96a11a68163d708a6c",
+  "inputRequestSha256": "817b19993964d83b7190a48dab1387a4fd0746de6dae15ea8ffcb49f51c75d7e",
+  "inputHashes": {
+    "candidateSha256": {
+      "q03": "1adae2dceee16689ddb64e05acb4c60b48d72a22d75ea1c29d28e25a061873e8"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20260322/theory/p06.png": "1438fdf54948f9d2059ca270f03ad22ca84021d3f9294244f6fa6ed9d7de57fc"
+    },
+    "figureSha256": {},
+    "sourceQuestionPdfSha256": "c83e7c7350d98b65f5d8da0b93e4a2581a19dd250be320fb7fc492c9b34a29c1",
+    "sourceAnswerPdfSha256": "cc2890296d06a4823df5697a78a1c01ddfd39f041c51f48c87984daa3a5707c6",
+    "officialAnswerUnitsSha256": "ab09e59978bc2ceaa18992fc66a0d78ba6d640a8ee332605be6e9b0a8e9f38a3",
+    "referencePdfSha256": {},
+    "referencePageSha256": {},
+    "referenceJsonSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q03",
+      "questionNumber": 3,
+      "part": null,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [
+        "uncertainty欄が候補JSONの他フィールドと矛盾している。uncertaintyは「実施年度・科目名はページ上に明記されていない。そのため出典の年度を特定しておらず，一次資料URLも記載していない」と述べている。一方で候補は fiscalYear=2025、term=lower、examDate=2026-03-22、subject=theory、sourceAttribution=「令和7年度下期…理論科目 問3」を持ち、sourceQuestionPdfUrl/sourceAnswerPdfUrl にも公式PDFのURLを記載している。manifest固定の出典情報と公式解答表の標題「令和7年度 第三種電気主任技術者下期試験解答」により、年度・期・科目は特定済みである。uncertaintyを実態に合わせて書き換える必要がある（例：「年度・期・科目・PDF頁はmanifest固定の公式出典情報と公式解答表標題で特定。問題文・数値・単位・選択肢は原図で明瞭に判読でき、計算結果は公式正答(3)と一致」）。"
+      ],
+      "verifiedEvidence": [
+        "問題文：原図PDF第6頁（冊子頁「- 3 -」、頁下部「T2－R 006」）と照合した。巻数 1 000、直流電流 0.2 A、磁束 6×10⁻⁴ Wb、求める量は自己インダクタンス[H]、ただし書き「コイルの漏れ磁束は無視できるものとする」。いずれも数値・指数の符号・単位・文言まで一致する。",
+        "選択肢：原図の(1)1、(2)2、(3)3、(4)4、(5)5と候補のchoices 1〜5が完全に一致する。",
+        "公式正答：公式解答表「令和7年度 第三種電気主任技術者下期試験解答」の＜理論＞問3は解答3・配点5である。候補の officialAnswer=\"3\"、scoringPoints=5、part=null（小問なし）はいずれも公式正答単位と一致する。",
+        "計算検算：L = NΦ/I = (1 000 × 6×10⁻⁴)/0.2 = 0.6/0.2 = 3 H で、(3)と一致する。漏れ磁束を無視するので全巻数が磁束と鎖交し、磁束鎖交数はNΦとなる。この因果の説明は正しい。",
+        "肢別解説：正答肢(3)の計算は正しい。誤答肢(1)(2)(4)(5)は、いずれも同じ計算値3 Hとの不一致を理由としている。数値のみの選択肢で特定の典型誤答に対応する肢ではないため、この理由付けに事実誤りはない。",
+        "図：原図に図はない。figureDescription（図なし）、figureUrls=[]、choiceFigureUrls={} は正しい。",
+        "メタデータ：fiscalYear=2025（令和7年度）、term=lower、examDate=2026-03-22、subject=theory、reviewedFromPage=[6]、問題・解答PDFのURLは、いずれもmanifest固定の出典情報と一致する。",
+        "officialReferenceUrlsは空で、検証を要する独立主張はない。"
+      ]
+    }
+  ]
+}

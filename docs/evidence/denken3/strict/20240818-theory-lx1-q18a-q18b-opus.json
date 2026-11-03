@@ -1,0 +1,94 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20240818",
+  "subject": "theory",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 9799,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 21005,
+      "webSearchRequests": 0,
+      "costUSD": 0.36428380000000005,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 7491,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "2b65b2544901897a50017849ebdaa1aecab8365e7cb458cfc3529de1344d8f70",
+  "inputRequestSha256": "7fe525c1cf7149c26058de0a014b253a67beb1b648074d9f6cbca675821749fd",
+  "inputHashes": {
+    "candidateSha256": {
+      "q18a": "32ba52ece47c5e8c5fa41f1b8ece1a2d57a616da5b33dfb56f10f8982572f57a",
+      "q18b": "2066f3762ae3dd254a0f070e90ef33df78a42ae895223b6b30ffa745e2302c42"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20240818/theory/p24.png": "8a6dad9542b6b51fd4f923ecddb22ee0f4531fb02fda441375139b79d0068d33",
+      "data/raw_pdfs/denken3/review/20240818/theory/p25.png": "619d2ae5a3f2fdb36ed1f6f69db70975fb8efe983c88ec17afaca826617f80ba"
+    },
+    "figureSha256": {
+      "public/images/denken3/20240818/theory/20240818-theory-q18-am-circuit-waveforms.png": "27d643514d4dc897f88d431bf620d534aa8d08f45b62c459909a6a543bb49fa9"
+    },
+    "sourceQuestionPdfSha256": "236be905e93a023cf3c65c1e22c45c24dc42b910151c51f8ed023247793d1d29",
+    "sourceAnswerPdfSha256": "f72ecbc3a477e64948388b69cf78cb931032c9f0c688639836c8d533a949cd0f",
+    "officialAnswerUnitsSha256": "71d06d683a1e0e730250afbc725a4677dc2387facd1fa6225e1ff8be714703ce",
+    "referencePdfSha256": {},
+    "referencePageSha256": {},
+    "referenceJsonSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q18a",
+      "questionNumber": 18,
+      "part": "a",
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "出典メタデータ: fiscalYear=2024, term=upper, examDate=2024-08-18, subject=theory, 問題PDF・解答PDFのURLがmanifestと一致。reviewedFromPage=[24,25]はmanifestの原図頁と一致。sourceAttributionの「令和6年度上期 理論 問18(a)」は公式解答表見出しの「令和6年度 上期」と一致。",
+        "問題文: PDF第24頁（印刷頁-21-）の(a)本文と照合。空白(ア)〜(エ)の位置と文言がすべて一致する。原文の読点「，」は候補内で「、」に統一されており、意味の変化はない。",
+        "選択肢: PDF第24頁の表と照合。(1)高い/信号波/三角波/検波、(2)高い/信号波/正弦波/検波、(3)高い/搬送波/三角波/増幅、(4)低い/信号波/三角波/増幅、(5)低い/搬送波/正弦波/検波。全肢が一致する。",
+        "公式正答: 公式解答表の理論 問18(a)=2。候補のofficialAnswer=2と一致する。",
+        "総合解説: ア=高い（搬送波は信号波より高周波）、イ=信号波（受信側で取り出す成分）、ウ=正弦波（AM/FM/PMの基本搬送波）、エ=検波（復調の別称）。いずれも正しく、結論(2)と整合する。",
+        "肢別解説: (1)はウのみ誤り。(3)はイ・ウ・エが誤り。(4)はア・ウ・エが誤り。(5)はア・イが誤り。いずれも表の内容と一致し、各誤答の固有理由が正確である。",
+        "図: (a)は文章のみで解答でき、図1・図2は(b)専用。figureUrlsが空であることは妥当。",
+        "officialReferenceUrlsは空で、独立主張の外部確認事項はない。"
+      ]
+    },
+    {
+      "unitKey": "q18b",
+      "questionNumber": 18,
+      "part": "b",
+      "status": "FIX",
+      "textIssues": [
+        "問題文の読点表記が不統一である。「図1は、」「(イ) 、」「(ウ) 、」では「、」を使い、「電圧v1，v2，v3」「このとき，」「組合せとして，」「ただし，」では「，」を使っている。(a)は「、」に統一済みなので、(b)も同じ表記に統一すること（内容の誤りではない）。"
+      ],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "出典メタデータ: fiscalYear・term・examDate・subject・問題/解答PDF URL・reviewedFromPage=[24,25]がmanifestと一致。本文冒頭はPDF第24頁、選択肢表と図はPDF第25頁（印刷頁-22-）にある。",
+        "問題文: 原図と照合し、(ア)〜(オ)の空白位置、「図2のいずれかであった」、ただし書き「図2のそれぞれの電圧波形間の位相関係は無視する」まで文言が一致する（読点表記の不統一を除く）。",
+        "選択肢: PDF第25頁の表と照合。(1)コレクタ/c/a/b/33、(2)コレクタ/c/b/a/67、(3)ベース/b/a/c/50、(4)エミッタ/b/c/a/67、(5)ベース/c/a/b/33。全肢が一致する。",
+        "公式正答: 公式解答表の理論 問18(b)=5。候補のofficialAnswer=5と一致する。",
+        "図1の接続を原図で確認した。v1の交流源は変成器一次側につながり、二次側上端はベースへ、二次側下端はv2を経てE1の左端へつながる。E1とE2の接続点（黒丸）は、矢印付きリードであるエミッタへ直結する。上側リードのコレクタは、上へ延びてからLC並列回路の上端節点（黒丸）へつながる。LC下端節点（黒丸）はE2の右端へつながり、LC回路から別の変成器を介して開放端子v3（上向き矢印）を取り出す。候補の解説・figureDescription・uncertaintyの接続記述はこれと一致する。",
+        "図2(b)の寸法線を確認した。8Vは包絡線の最大山から最大谷までの点線間、4Vは包絡線が最も狭い部分の上下点線間を示し、それぞれ2Vmax・2Vminにあたる。m=(8−4)/(8+4)×100=33.3≒33%であり、公式正答(5)のオ=33と一致する。",
+        "総合解説: ア=ベース（v2がE1と直列にベース－エミッタ間ループへ入るベース変調）、イ=図2(c)、ウ=図2(a)、エ=図2(b)、オ=33。ア=ベースの肢は(3)と(5)で、(3)は出力v3を無変調波としているため不成立。この絞り込みは正しい。",
+        "肢別解説の検算: (1)はアのみ誤り。(2)はア・ウ・エ・オが誤りで、8/(8+4)=66.7≒67は例示として算術的に正しい。(3)はイ・エの入替えとオが誤りで、(8−4)/8=50は算術的に正しい。(4)はアが誤り、v1・v2・v3の割当ては(b/c/a)で正解(c/a/b)と全て異なり、オ=67も誤り。(5)は全項目が一致する。",
+        "公開候補図: 原図PDF第25頁の図1・図2と照合した。v1・v2・v3・E1・E2の全ラベル、電圧矢印の向き、3個の黒丸節点、エミッタ矢印、開放端子、(a)(b)(c)の区分、8V・4Vの寸法線、「破線は包絡線を示す」、両図のキャプションがすべて欠落なく残っている。公開候補図だけで(b)に解答できる。",
+        "officialReferenceUrlsは空で、独立主張の外部確認事項はない。"
+      ]
+    }
+  ]
+}

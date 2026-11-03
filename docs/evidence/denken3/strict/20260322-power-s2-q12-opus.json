@@ -1,0 +1,66 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20260322",
+  "subject": "power",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 2664,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 13900,
+      "webSearchRequests": 0,
+      "costUSD": 0.1647438,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 1456,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "fd0f76b88df42698f13945aaef40f1133ba36ff128b5e523f78b31528b62c340",
+  "inputRequestSha256": "0b4a0a44046e48aba290d9ec1b08dd9c8a548e749119dd059e106bfd92334a88",
+  "inputHashes": {
+    "candidateSha256": {
+      "q12": "8081fe2c4ea703d19edc66ed122ef8e492d255be66f92f3a354d1ca8199f6a8e"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20260322/power/p15.png": "a12a25dfb1b6632b2364b47d9a9c9809c929bffef1a5b82d489e1871ff1089b1"
+    },
+    "figureSha256": {},
+    "sourceQuestionPdfSha256": "9733341a0f293f068c9a665d5a9a90f1aabf3a2db5d79cd530643cdea241f7b7",
+    "sourceAnswerPdfSha256": "cc2890296d06a4823df5697a78a1c01ddfd39f041c51f48c87984daa3a5707c6",
+    "officialAnswerUnitsSha256": "29df8a245c626320aa408011d6f1351b1edd55fe202954997ae3e71657ba2f2e",
+    "referencePdfSha256": {},
+    "referencePageSha256": {},
+    "referenceJsonSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q12",
+      "questionNumber": 12,
+      "part": null,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "問題文: 公式原図の問12と一字一句照合し、定格容量20 MV·A、一次77 kV、二次6.6 kV、変圧器%Z 10.6 %（基準20 MV·A）、電源%Z 1.1 %（基準20 MV·A）、抵抗分等無視、二次側遮断器の定格遮断電流[kA]、『最も近いもの』の要素に欠落・改変がないことを確認した。",
+        "選択肢: 原図の (1)260.0 (2)6.0 (3)20.0 (4)2.6 (5)1.5 と候補の choices 1〜5 が値・順序とも一致することを確認した。",
+        "公式正答: 公式解答表の電力列 問12 は解答3・配点5で、manifest単位 {question:12, part:null, answer:'3', points:5} と候補の officialAnswer='3'・scoringPoints=5 に一致する。",
+        "検算(合成%Z): 両者とも基準容量20 MV·Aなので直列加算でき、1.1+10.6=11.7 %。",
+        "検算(基準電流): In=20×10^6/(√3×6600)=20×10^6/11431.5≒1749.5 A。",
+        "検算(短絡電流): Is=1749.5×100/11.7≒14953 A≒15.0 kA。これを遮断できる最小の選択肢は20.0 kAである。数値差で比べても、各選択肢との差は245、9.0、5.0、12.4、13.5 kAとなり、(3)が最小になる。どちらの解釈でも公式正答(3)と整合する。",
+        "肢別理由: 検算結果は次のとおりで、各記述は正確である。(1) 260/14.95≒17.4倍で『17倍以上』は正しい。(2) 差9.0 kAで2番目に近く、15 kA未満のため遮断不能。(4) 2.6/15≒1/5.8で『6分の1程度』は妥当。(5) 1.5/15=1/10。一次側77 kVで計算した場合の値はIn=20×10^6/(√3×77000)≒150 A、Is≒150×100/11.7≒1.28 kAで、記述と一致する。",
+        "図: 原図の問12には図・表がなく、選択肢も図を含まない。figureDescription、figureUrls=[]、choiceFigureUrls={} は妥当である。",
+        "出典メタデータ: 公式解答表の表題は『令和7年度 第三種電気主任技術者下期試験解答』である。fiscalYear=2025、term=lower、examDate=2026-03-22、subject=power、sourceAttribution（令和7年度下期・電力科目・問12）は manifest と一致する。問題PDF・解答PDFのURLも manifest と一致する。reviewedFromPage=[15] は manifest 指定のPDF第15頁と一致し、原図フッタ『T2−D 015』とも整合する（冊子印字の頁番号は-12-）。",
+        "参考URL: officialReferenceUrls は空で、独立した主張を含まないため、外部確認事項はない。"
+      ]
+    }
+  ]
+}

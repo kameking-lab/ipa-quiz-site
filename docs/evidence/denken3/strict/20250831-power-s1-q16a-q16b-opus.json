@@ -1,0 +1,99 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20250831",
+  "subject": "power",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 6910,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 15024,
+      "webSearchRequests": 0,
+      "costUSD": 0.2586558,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 3996,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "96cd00f7bd629217d80a15629b28c139d0332f5bef8553290b0cc3059aac8d5b",
+  "inputRequestSha256": "e87f7346087052cd03f09a3c92c22479c1e1ea28e9bdece2a27aabf2359578e5",
+  "inputHashes": {
+    "candidateSha256": {
+      "q16a": "49303ad00f8c25c4a102f3b3c1a42e303f681a6907df50842b6ddf8349acdae3",
+      "q16b": "254555b8ccff6f5dd1ad6868341af2c4a5dbdcdaeea6e991dd9ee51e583d4c7d"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20250831/power/p20.png": "9a1ebbbf0996360023791e7925fe72721ed3c92bcc5366f9885db55cdfacc0b7"
+    },
+    "figureSha256": {},
+    "sourceQuestionPdfSha256": "567aac1df6dc0c0950d04e90a1ad03231427c518eede92559effe01e2b97a2c9",
+    "sourceAnswerPdfSha256": "76fd3715ed487d19a56b387fb402de20ee09474e9fa55b0413f9037b96af06c9",
+    "officialAnswerUnitsSha256": "a3749d1b888e8eb442ab7cd340babf4e5b826c7d96b464a99c942f590e5344b7",
+    "referencePdfSha256": {},
+    "referencePageSha256": {},
+    "referenceJsonSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q16a",
+      "questionNumber": 16,
+      "part": "a",
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [
+        "choiceExplanations の (2)(4)(5) が「計算値約 12.6 kA と一致しない」だけで、肢固有の理由になっていない。各肢ごとに固有の誤り理由を書くか、誤答の由来を公式資料で確認できないならその旨を明記すること。なお (2) 10.5 kA は、線路長を 1 km と誤って計算した場合（|Z| = √(0.2056² + 1.2278²) ≒ 1.2449 Ω、I ≒ 12 702 / 1.2449 ≒ 10.2 kA）とも一致しない。(5) 17.3 kA は、変圧器インピーダンスだけで計算した場合（12 702 / 0.7778 ≒ 16.3 kA）とも一致しない。したがって出題者が意図した誤答の由来は検証できず、推測で由来を書いてはならない。"
+      ],
+      "answerIssues": [],
+      "explanationIssues": [
+        "本文で与えられた容量 50 MV·A を計算に使っていない。使わない理由（オーム値が直接与えられているため不要）を一言添えると、読者が迷わない（計算自体に誤りはない）。"
+      ],
+      "figureIssues": [],
+      "sourceIssues": [
+        "uncertainty に「出典年度は本ページからは特定できない」とある一方で、sourceAttribution は令和7年度上期・電力・問16(a) と断定し、needsReview=false になっている。フィールド間で矛盾しているので解消が必要。添付原図のページには年度・科目の表記がなく、フッターは「T1－D 020」、印刷頁は「-17-」のみ。年度と科目の同定は sourceQuestionPdfUrl（20250831_ch_third_q02）と公式解答表に依拠している。解答表で問16(a)=3・(b)=3 の組になるのは電力だけ（理論は 1/4、機械は 2/4）で、これは同定と整合する。uncertainty の記述は、この根拠を明記した形に改めること。",
+        "uncertainty の「その他の値は無視する」の解釈注記について。原文は「変圧器一次電圧側の線路インピーダンス及びその他の値は無視する」と明記しており、電源側インピーダンスを無視するのは原文どおりである。これを不確実性として残すと PASS 条件（曖昧さゼロ）を満たさないため、削除するか確定的な記述に改めること。",
+        "examDate 2025-08-31 は URL 名（20250831_...）からの推定である。添付の公式解答表原図には試験日が記載されておらず、添付資料だけでは試験日を検証できない。"
+      ],
+      "verifiedEvidence": [
+        "問題文：公式原図と照合し、66 kV／22 kV／50 MV·A／Y-Y 結線／無負荷／500 m／0.05 Ω／7 Ω（一次側からみた1相当たり）／(0.20+j0.45) Ω/km／一次側線路インピーダンス等を無視、の各条件が一致した。",
+        "選択肢：(1)21.8 (2)10.5 (3)12.6 (4)6.5 (5)17.3 が原図と一致した。",
+        "公式正答：解答表原図（令和7年度上期・電力・問16(a)）は解答 3・配点 5 で、manifest および候補の officialAnswer=3、scoringPoints=5 と一致した。",
+        "検算：R_t = 0.05/9 = 0.005556 Ω、X_t = 7/9 = 0.77778 Ω、R_l = 0.10 Ω、X_l = 0.225 Ω、R = 0.105556 Ω、X = 1.002778 Ω、|Z|² = 1.016705、|Z| = 1.008318 Ω、E = 22 000/√3 = 12 701.7 V、I_s = 12 597 A ≒ 12.6 kA。候補解説の数値はすべて正しい。",
+        "(1) の理由：22 000 / 1.00832 = 21 818 A ≒ 21.8 kA で、12.597 × √3 = 21.82 のため「√3 倍過大」の記述は正しい。",
+        "図：原図に図はなく、figureDescription・figureUrls が空であることは妥当。"
+      ]
+    },
+    {
+      "unitKey": "q16b",
+      "questionNumber": 16,
+      "part": "b",
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [
+        "choiceExplanations の (1)(2)(4)(5) がすべて「計算値約 5.37 kV と一致しない」の定型文で、肢固有の理由がない。検算で確認できた事実は次のとおりで、これを使って各肢に固有の記述を付けること。(1) 8.70 kV は、線路長を 1 km として分圧した値 22 × 0.4924 / 1.2449 ≒ 8.70 kV と算術的に一致する（500 m = 0.5 km の換算を落とした場合に相当）。(2) 2.72 kV と (5) 4.71 kV は互いに √3 倍の関係にある（2.72 × √3 ≒ 4.71）。(4) 1.34 kV は、公式資料からは由来を検証できなかった。由来を確認できない肢については、由来を推測で書かないこと。"
+      ],
+      "answerIssues": [],
+      "explanationIssues": [
+        "「母線の相電圧は線路インピーダンスによる電圧降下に等しい」の記述について。無負荷のため短絡前電流はなく、短絡点の電圧が 0 であることが前提となる。この点を一言添えると因果が明確になる（計算自体に誤りはない）。"
+      ],
+      "figureIssues": [],
+      "sourceIssues": [
+        "uncertainty に「出典年度は本ページからは特定できない」とある一方で、sourceAttribution は令和7年度上期・電力・問16(b) と断定し、needsReview=false になっている。フィールド間で矛盾している。添付原図のページに年度・科目の表記はなく（フッター「T1－D 020」、印刷頁「-17-」のみ）、同定根拠は URL（q02）と公式解答表の整合（電力 問16(a)=3・(b)=3）である。uncertainty はこの根拠を明記した形に改めること。",
+        "uncertainty の「その他の値は無視する」の解釈注記について。電源側インピーダンスの無視は原文で明示されており、不確実性として残す必要はない。削除するか確定的な記述に改めること。",
+        "examDate 2025-08-31 は URL 名からの推定である。添付の公式解答表原図に試験日の記載はなく、添付資料では検証できない。"
+      ],
+      "verifiedEvidence": [
+        "問題文：(b) の設問文「短絡前に，22 kV に保たれていた三相変圧器の母線の線間電圧は，三相短絡故障したとき，何 kV に低下するか」が原図と一致した。共通前文も (a) と同じく一致した。",
+        "選択肢：(1)8.70 (2)2.72 (3)5.37 (4)1.34 (5)4.71 が原図と一致した。",
+        "公式正答：解答表原図（令和7年度上期・電力・問16(b)）は解答 3・配点 5 で、manifest および候補の officialAnswer=3、scoringPoints=5 と一致した。",
+        "検算：|Z_l| = 0.5 × √(0.04 + 0.2025) = 0.5 × 0.49244 = 0.24622 Ω、V_p = 12 597 × 0.24622 ≒ 3 101.6 V、V = √3 × 3 101.6 ≒ 5 372 V ≒ 5.37 kV。分圧による検算 22 × 0.24622 / 1.008318 ≒ 5.372 kV とも一致した。",
+        "(1) 8.70 の検算：線路 1 km のとき R = 0.205556 Ω、X = 1.227778 Ω、|Z| = 1.24487 Ω で、22 × 0.49244 / 1.24487 ≒ 8.702 kV となる。",
+        "図：原図に図はなく、figureDescription・figureUrls が空であることは妥当。"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,137 @@
+{
+  "atUtc": "2026-10-07T17:36:08.792763+00:00",
+  "author": "/root/licensed_question_author",
+  "rootScopeFreezeReceived": true,
+  "original": "denken1-2026-theory-Aq03",
+  "originalQuestions": 1,
+  "practiceBlanks": 5,
+  "sourceQuestion": {
+    "url": "https://www.shiken.or.jp/chief/upload/20260830_ch_first_q01.pdf",
+    "path": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\qualification-expansion-20261007\\approved35\\construction\\denken1-source\\20260830_ch_first_q01.pdf",
+    "sha256": "6a6a509a9cd2e9a36c79e90561345e0fc093389796ffd482833109057b0aa7f5",
+    "bytes": 1860950
+  },
+  "physicalPages": [
+    8,
+    9
+  ],
+  "printedPages": [
+    5,
+    6
+  ],
+  "method": "Manual visual transcription from exact official PDF page renders; no previous candidate or other transcriber output read.",
+  "question": "次の文章は，発振回路に関する記述である。文中の空欄に当てはまる最も適切なものを解答群の中から選べ。\n図1の回路はヒステリシスコンパレータと積分回路からなる発振回路である。各素子の値は図内に示した変数で表され，電圧，抵抗値及び静電容量の単位はそれぞれ[V]，[Ω]，[F]である。また，演算増幅器の非反転入力端子の電位V_+と反転入力端子の電位V_−の電位差V_+−V_−と出力電圧V_oの間には図2の関係があり，その他の特性は理想とする。\nまず，ヒステリシスコンパレータの動作を考える。演算増幅器1の非反転入力端子の電位V_{+,1}は，節点Aの電位V_Aと節点Bの電位V_BをR_1とR_2で分圧した電圧であるから，V_{+,1}=〔(1)〕となる。演算増幅器1の出力V_Bは，V_{+,1}の値に応じて−V_LまたはV_Hとなる。まずV_B=−V_LのときにV_Aが負の値から時間とともに増加する場合を考える。V_Aが〔(2)〕となるときV_{+,1}は0Vとなるため，〔(2)〕はV_Bが−V_LからV_Hに変化するしきい値であることがわかる。同様に，V_B=V_Hの状態でV_Aが正の値から減少する場合を考える。V_Aが〔(3)〕となると，V_BはV_Hから−V_Lに変化する。以上より，ヒステリシスコンパレータは，現在の出力に応じて，しきい値が変わることがわかる。\nヒステリシスコンパレータの出力V_Bは積分回路に入力される。積分回路の入力電圧をV_Bとすると積分回路の出力電圧V_Aは傾き−V_B/(CR_3)[V/s]で時間とともに変化する。\n以上の性質を用いて図1の発振回路の発振周期を求める。回路は安定した発振動作をしており，ある時刻でヒステリシスコンパレータの出力V_BがV_Hから−V_Lに変化したとする。このときのV_Aは〔(3)〕である。V_B=−V_Lであるとき，V_AはV_L/(CR_3)の傾きで増加するためV_Aが〔(3)〕から〔(2)〕まで変化するために要する時間は〔(4)〕[s]となる。V_Aが〔(2)〕となるとV_Bは−V_LからV_Hに変化するためV_Aは減少に転じ，その傾きは−V_H/(CR_3)となる。この発振回路の周期は，V_Aが〔(2)〕から再び〔(3)〕まで変化するために要する時間と〔(4)〕の和から，〔(5)〕[s]と求まる。",
+  "choices": {
+    "イ": "0",
+    "ロ": "(C R_2 R_3/R_1) (V_H+V_L)^2/(V_H V_L)",
+    "ハ": "(R_1/R_2) V_L",
+    "ニ": "(C R_1 R_3/(R_2 V_L)) (V_H−V_L)",
+    "ホ": "−(R_1/R_2) V_L",
+    "ヘ": "(R_2/(R_1+R_2)) V_A+(R_1/(R_1+R_2)) V_B",
+    "ト": "(R_1/R_2) V_H",
+    "チ": "(C R_2 R_3/(R_1 V_L)) (V_H+V_L)",
+    "リ": "−(R_2/R_1) V_H",
+    "ヌ": "(C R_1 R_3/R_2) (V_H+V_L)^2/(V_H V_L)",
+    "ル": "(R_2/R_1) V_L",
+    "ヲ": "(C R_1 R_3/(R_2 V_L)) (V_H+V_L)",
+    "ワ": "(C R_1 R_3/R_2) (V_H−V_L)^2/(V_H V_L)",
+    "カ": "−(R_1/R_2) V_H",
+    "ヨ": "(R_1/(R_1+R_2)) V_A+(R_2/(R_1+R_2)) V_B"
+  },
+  "blankCorrespondence": {
+    "1": "V_{+,1}=〔(1)〕",
+    "2": "V_A upper switching threshold from V_B=−V_L to V_H",
+    "3": "V_A lower switching threshold from V_B=V_H to −V_L",
+    "4": "Increase time from threshold(3) to threshold(2) when V_B=−V_L",
+    "5": "Full oscillation period"
+  },
+  "diagram": {
+    "figure1": {
+      "A": "Integrator output; R_1 connects A to comparator1 noninverting input",
+      "B": "Comparator1 output; R_2 connects B to comparator1 noninverting input; R_3 connects B to integrator2 inverting input",
+      "integrator2": "Noninverting input grounded; capacitor C between A and integrator2 inverting input",
+      "comparator1": "Inverting input grounded",
+      "idealAmplifierGain": "∞"
+    },
+    "figure2": {
+      "horizontal": "V_+−V_−",
+      "vertical": "V_o",
+      "negativeInputDifferenceOutput": "−V_L",
+      "positiveInputDifferenceOutput": "V_H"
+    }
+  },
+  "figureArtifacts": [
+    {
+      "name": "図1",
+      "physicalPage": 9,
+      "clipPdfPoints": [
+        75,
+        85,
+        259,
+        351
+      ],
+      "method": "Direct cached official PDF render crop; no redraw or ImageGen",
+      "path": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\qualification-expansion-20261007\\approved35\\construction\\denken1-q03-next\\q03-figure1-original.png",
+      "sha256": "338b4de4503003af6d14c4c63555e6298851cc1a6f0760f59e657a6755ff1026",
+      "bytes": 38413
+    },
+    {
+      "name": "図2",
+      "physicalPage": 9,
+      "clipPdfPoints": [
+        290,
+        165,
+        474,
+        351
+      ],
+      "method": "Direct cached official PDF render crop; no redraw or ImageGen",
+      "path": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\qualification-expansion-20261007\\approved35\\construction\\denken1-q03-next\\q03-figure2-original.png",
+      "sha256": "7672f8232e0205f82a6dc80f69bc7b1f4602bb98dd0b5777c982f11b2d7263f0",
+      "bytes": 9105
+    }
+  ],
+  "authorSolvedKanaAnswers": [
+    "ヘ",
+    "ハ",
+    "カ",
+    "ヲ",
+    "ヌ"
+  ],
+  "authorSolutionMethod": "Kirchhoff current balance at high impedance comparator input; switching input=0; integrator slope and threshold difference; official answer PDF not read in this new scope.",
+  "officialAnswerReadBeforeFreeze": false,
+  "candidateReadBeforeFreeze": false,
+  "independentTranscriptionReadBeforeFreeze": false,
+  "normalizations": [
+    "Whitespace and line breaks",
+    "Printed generic empty box becomes 空欄",
+    "Printed math subscripts rendered with underscores; minus sign U+2212",
+    "Blank boxes represented by 〔(n)〕"
+  ],
+  "publishAllowed": false,
+  "blindSharingAllowed": false,
+  "finalPassClaimed": false,
+  "stage": "AUTHOR_SOURCE_RECONCILED_COPY_V2",
+  "immutableOriginalFirstFreeze": {
+    "path": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\qualification-expansion-20261007\\approved35\\construction\\denken1-q03-next\\FIRST-AUTHOR-FROZEN.json",
+    "sha256": "829ca98fd78f119922078e15914b8201cad7032de63b64a536631aea1f458153",
+    "bytes": 6727
+  },
+  "originalTranscriptionChanged": false,
+  "sourceReconciliation": {
+    "difference": "著者: 場合を考える。V_Aが / 独立: 場合を考えると，V_Aが",
+    "officialVisual": "場合を考える。V_Aが",
+    "physicalPage": 8,
+    "crop": {
+      "path": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\qualification-expansion-20261007\\approved35\\construction\\denken1-q03-next\\q03-contested-prose-source.png",
+      "sha256": "2f985b1b2556e4440e3ed0bb1dbf8dba5298a0eba8380efe99f304b7b0de6168",
+      "bytes": 83056
+    },
+    "clipPdfPoints": [
+      75,
+      307,
+      480,
+      377
+    ],
+    "decision": "Preserve author original; request blind source correction. No prose deletion or paraphrase normalization."
+  }
+}

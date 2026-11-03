@@ -1,0 +1,53 @@
+{
+  "reviewModel": "claude-opus-5-5",
+  "requestedModel": "claude-opus-5-5",
+  "canonicalModel": "claude-opus-5-5",
+  "provider": "firstParty",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 1328,
+      "cacheReadInputTokens": 139443,
+      "cacheCreationInputTokens": 13115,
+      "webSearchRequests": 0,
+      "costUSD": 0.1593766,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 995,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "paperId": "emkohyo-EM20261803",
+  "ids": [
+    "emkohyo-EM20261803-q1"
+  ],
+  "figureSha256": {
+    "emkohyo-EM20261803-q1": {}
+  },
+  "officialRowImageSha256": {
+    "emkohyo-EM20261803-q1": {
+      "/exam-library/emkohyo-EM20261803/q1-p2-0.webp": "123b3d948cd0dd7b407931b444d7794853d2cd99a579d276143c1a1e0f6b2dd0"
+    }
+  },
+  "officialPageImageSha256": {},
+  "governmentSourceImageSha256": {},
+  "candidateSha256": {
+    "emkohyo-EM20261803-q1": "9d2ced9311b7c15eaac744ffa5e1fb96fe5fd0355754a4210cf85096c734f78c"
+  },
+  "sourcePackPath": "docs/evidence/emkohyo-choice-sources/emkohyo-EM20261803-q01-01.json",
+  "sourcePackSha256": "08479b3dcfe9c011a18db8bc1a0d72a57fa7793abb12a778f82b9d97b9445004",
+  "assessment": {
+    "emkohyo-EM20261803-q1": {
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "reasonIssues": [
+        "選択肢4の理由の後半「モル体積とモル質量のどちらで換算しても約99 ppmからは大きく外れる」は意味が通らない。ppm換算にはモル体積とモル質量の両方を使うため、どちらか一方で換算するという比較は成り立たない。比べる軸を明示した文に直すべき。例: 「25℃の24.45 Lでは約99 ppm、0℃の22.4 Lでも約91 ppmであり、どちらも300 ppmからは大きく外れる」。なお、前半の300×32.04÷24.45≒393 mg/m³と、それが130 mg/m³の約3倍になる点は正しい。"
+      ],
+      "sourceIssues": [],
+      "needsExternalCheck": []
+    }
+  }
+}

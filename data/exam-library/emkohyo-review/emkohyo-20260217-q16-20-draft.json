@@ -1,0 +1,722 @@
+{
+  "candidateModel": "claude-opus-5-5",
+  "paperId": "emkohyo-20260217",
+  "governmentSourceCandidates": [
+    {
+      "title": "厚生労働省 職場における労働衛生対策",
+      "url": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/koyou_roudou/roudoukijun/anzen/anzeneisei02.html"
+    },
+    {
+      "title": "厚生労働省 労働安全衛生法",
+      "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74001000"
+    }
+  ],
+  "questions": {
+    "emkohyo-20260217-q16": {
+      "overlay": {
+        "sourceHash": "fa54b7e3ca4fee9efe61dc8e845d86d0d0cf3148c90f5c2bef782045a0cfcd6d",
+        "correctChoice": 1,
+        "summary": "α崩壊で質量数は4減るのに、2減るとした肢1が誤り",
+        "choices": [
+          {
+            "number": 1,
+            "verdict": "correct",
+            "reason": "α粒子は陽子2個と中性子2個からなるヘリウム原子核です。α崩壊では陽子数が2、中性子数も2減るため、原子番号は2、質量数は合計4減ります。質量数が2減るとした記述が誤りで、この肢が正答です。"
+          },
+          {
+            "number": 2,
+            "verdict": "incorrect",
+            "reason": "厚生労働省掲載の放射線用語集は、γ線の生物に影響を与える電離作用はα線・β線に比べて小さいと説明しています。したがってβ線の方がγ線より電離作用が大きいという記述は正しく、誤りを選ぶ本問の正答ではありません。"
+          },
+          {
+            "number": 3,
+            "verdict": "incorrect",
+            "reason": "環境省の臓器・組織別の感受性図では、リンパ組織（脾臓・胸腺・リンパ節）を造血系の高感受性群に、神経を感受性の低い伝達系に置いています。両組織を直接比較するとリンパ組織の方が高く、この記述は正しいです。"
+          },
+          {
+            "number": 4,
+            "verdict": "incorrect",
+            "reason": "環境省の報告書は、身体的影響のうち急性効果と発がん以外の晩発効果を確定的影響と明記しています。これらはしきい線量を超えると線量に応じて障害の重篤度が増す一方、がん・白血病は確率的影響です。この分類に沿うため、記述は正しいです。"
+          },
+          {
+            "number": 5,
+            "verdict": "incorrect",
+            "reason": "環境省の分類図では、遺伝性影響を子孫に現れる影響として、潜伏期間では晩発影響、機序では確率的影響側に置いています。ただしヒトで被ばく由来の遺伝性疾患の増加が確認されたという意味ではありません。分類を述べたこの肢は正しいです。"
+          }
+        ],
+        "sources": [
+          {
+            "title": "環境省 放射線はどこで生まれる？",
+            "url": "https://www.env.go.jp/chemi/rhm/current/01-03-01.html"
+          },
+          {
+            "title": "厚生労働省掲載 放射線関連用語集",
+            "url": "https://www.mhlw.go.jp/topics/bukyoku/iyaku/syoku-anzen/housya/dl/houkokusho22.pdf"
+          },
+          {
+            "title": "環境省 臓器・組織の放射線感受性",
+            "url": "https://www.env.go.jp/chemi/rhm/current/03-02-06.html"
+          },
+          {
+            "title": "環境省 放射線影響の分類",
+            "url": "https://www.env.go.jp/chemi/rhm/current/03-01-03.html"
+          },
+          {
+            "title": "環境省 確定的影響（組織反応）と確率的影響",
+            "url": "https://www.env.go.jp/chemi/rhm/current/03-01-04.html"
+          },
+          {
+            "title": "環境省 被ばくと健康影響について（その2）報告書",
+            "url": "https://www.env.go.jp/content/900481428.pdf"
+          },
+          {
+            "title": "環境省 影響の種類",
+            "url": "https://www.env.go.jp/chemi/rhm/current/03-01-02.html"
+          }
+        ]
+      },
+      "sourceEvidence": [
+        {
+          "url": "https://www.env.go.jp/chemi/rhm/current/01-03-01.html",
+          "excerpt": "α線とは、陽子２個と中性子２個からなるヘリウム原子核",
+          "choiceNumbers": [
+            1
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/topics/bukyoku/iyaku/syoku-anzen/housya/dl/houkokusho22.pdf",
+          "excerpt": "生物に影響を与える電離作用はα線、β線に比べて",
+          "choiceNumbers": [
+            2
+          ]
+        },
+        {
+          "url": "https://www.env.go.jp/chemi/rhm/current/03-02-06.html",
+          "excerpt": "細胞分裂が盛んで、分化の程度の低い細胞ほど、放射線感受性が高い傾向",
+          "choiceNumbers": [
+            3
+          ]
+        },
+        {
+          "url": "https://www.env.go.jp/chemi/rhm/current/03-02-06.html",
+          "excerpt": "細胞分裂をしない神経組織や筋組織は放射線に強い",
+          "choiceNumbers": [
+            3
+          ]
+        },
+        {
+          "url": "https://www.env.go.jp/chemi/rhm/current/03-01-03.html",
+          "excerpt": "一方、「確率的影響」は、がんや遺伝性影響",
+          "choiceNumbers": [
+            4,
+            5
+          ]
+        },
+        {
+          "url": "https://www.env.go.jp/chemi/rhm/current/03-01-04.html",
+          "excerpt": "症状の重症度は重くなります",
+          "choiceNumbers": [
+            4
+          ]
+        },
+        {
+          "url": "https://www.env.go.jp/content/900481428.pdf",
+          "excerpt": "身体的影響のうち、急性効果と、発がん以外の晩発効果は、あるしきい値を超える線量に応じて障害の重篤度が変化します",
+          "choiceNumbers": [
+            4
+          ]
+        },
+        {
+          "url": "https://www.env.go.jp/chemi/rhm/current/03-01-03.html",
+          "excerpt": "子供や孫等子孫に出る遺伝性影響",
+          "choiceNumbers": [
+            5
+          ]
+        },
+        {
+          "url": "https://www.env.go.jp/chemi/rhm/current/03-01-03.html",
+          "excerpt": "数か月後以降に現れる「晩発影響」",
+          "choiceNumbers": [
+            5
+          ]
+        },
+        {
+          "url": "https://www.env.go.jp/chemi/rhm/current/03-01-02.html",
+          "excerpt": "ヒトでは、動物実験の結果と同じような頻度で放射線による遺伝性疾患が出現することは、確認されていません",
+          "choiceNumbers": [
+            5
+          ]
+        }
+      ],
+      "reviewIssues": []
+    },
+    "emkohyo-20260217-q17": {
+      "overlay": {
+        "sourceHash": "737a6e99d74eabf898f753da4c47f0a6bcce326b1c498d69c3eaa745a9d02105",
+        "correctChoice": 1,
+        "summary": "全体換気を有害性の高い物質に最も有効とした肢1が誤り",
+        "choices": [
+          {
+            "number": 1,
+            "verdict": "correct",
+            "reason": "全体換気は、外気で室内全体を薄めて平均濃度を下げる方式です。発散源近くの高濃度は十分に抑えられません。有害性の高い物質には密閉化や局所排気を優先するため、最も有効とした記述は誤りで、これが正答です。"
+          },
+          {
+            "number": 2,
+            "verdict": "incorrect",
+            "reason": "局所排気装置のフードは、囲い式、外付け式、レシーバ式に分類されます。発散源を囲い込む囲い式は、少ない排風量でも吸引しやすく、排気効果が最も大きいとされます。この記述は正しいので正答ではありません。"
+          },
+          {
+            "number": 3,
+            "verdict": "incorrect",
+            "reason": "開放式のプッシュプル型換気装置は、送風機による吹出しと排風機による吸込みで一様な気流を作ります。密閉式には送風機を持たず、排風機だけで気流を作る型もあるので、この記述は正しく正答ではありません。"
+          },
+          {
+            "number": 4,
+            "verdict": "incorrect",
+            "reason": "断面積が同じなら、角形ダクトは円形より周長が長く、隅部で流れも乱れるため、圧力損失が大きくなります。形状が同じなら、断面積が小さいほど風速が上がって損失が増えます。この記述は正しい内容です。"
+          },
+          {
+            "number": 5,
+            "verdict": "incorrect",
+            "reason": "除じん装置の方式には、重力沈降式、慣性分離式、遠心分離式、洗浄式、ろ過式、電気式などがあります。記述に挙げた方式はどれも実在し、『など』で他の方式も含めているため、正しい記述です。"
+          }
+        ],
+        "sources": []
+      },
+      "sourceEvidence": [],
+      "reviewIssues": [
+        "【HOLD】肢4（ダクトの圧力損失は同一断面積なら角形の方が大きく、同一形状なら断面積が小さい方が大きい）と肢2（囲い式フードが最も排気効果が大きい）、肢3（密閉式プッシュプル型換気装置に送風機のないものがある）を直接述べた政府一次資料の本文を確認できていない。セッションのWeb検索上限に達したため追加探索ができず、根拠が揃うまで保留する。 第2パス（2026-09-24）: 肢1・2・5は職場のあんぜんサイト共通シート『換気、空気清浄』（common_Ventilating201903.pdf：リスクが大きい場合は全体換気より局所排気又はプッシュプル換気、囲い式フードは最も効果的なフード、除じん装置の種類表）、肢3は平成9年労働省告示第21号の密閉式プッシュプル型換気装置の定義（ブース内へ空気を供給する開口部を有するもの）で裏付け可能となった。残る不足は肢4（ダクト形状・断面積と圧力損失）のみで、候補の愛媛産業保健総合支援センターのコラム（ehimes.johas.go.jp/wp/topics/4043/）は404で本文確認できなかった。"
+      ]
+    },
+    "emkohyo-20260217-q18": {
+      "overlay": {
+        "sourceHash": "4a0fd9395886800bf9b4dfd79d69bd87214bf254a71eb08f86ff5388d913e79f",
+        "correctChoice": 2,
+        "summary": "送気マスクを自給式呼吸器とした肢2が誤り",
+        "choices": [
+          {
+            "number": 1,
+            "verdict": "incorrect",
+            "reason": "厚労省は呼吸用保護具を、健康障害のおそれがある「環境空気中」で着用する保護具と定義します。水中で使う潜水器には別の構造規格がありますが、この呼吸用保護具とは区別されます。防じんマスク、防毒マスク、電動ファン付き呼吸用保護具に厚生労働大臣の規格があり、法・施行令・安衛則の規格対象と型式検定対象は、対象ガスなどの限定も含め一致します。送気マスクと自給式呼吸器は同法の規格対象リストにはなく、この肢は正しいです。"
+          },
+          {
+            "number": 2,
+            "verdict": "correct",
+            "reason": "厚生労働省サイトに掲載された平成21年度の報告書表16は、送気マスクが離れた場所の空気源からホース等で送気を受けるのに対し、自給式呼吸器は着用者が携行する高圧空気・高圧酸素ボンベ等から供給すると区別しています。この給気方式の違いは現在の厚労省通達とも一致し、送気マスクを自給式とした部分が誤りです。"
+          },
+          {
+            "number": 3,
+            "verdict": "incorrect",
+            "reason": "厚生労働省の「職場のあんぜんサイト」は、両者ともバッテリー駆動のファンで送風すると説明しています。一方、PAPRは面体内を陽圧に保ち、吸気補助具付き防じんマスクは常に陽圧が保たれるものではないと明記します。送風の仕組みが共通でも陽圧要件は異なるため、この肢は正しいです。"
+          },
+          {
+            "number": 4,
+            "verdict": "incorrect",
+            "reason": "厚生労働省の化学防護手袋の選択に関する通達は、平均標準破過点検出時間を指標として耐透過性をクラス1（10分以上）からクラス6（480分以上）までの6区分に分けています。番号が大きいほど高い耐透過性を示すので、この肢は正しいです。"
+          },
+          {
+            "number": 5,
+            "verdict": "incorrect",
+            "reason": "厚生労働省の騒音障害防止ガイドラインは、聴覚保護具に耳栓と耳覆い（イヤーマフ）があり、非常に強烈な騒音では両者の併用が有効と明記しています。併用してよいという記述は正しく、誤りを選ぶ本問の正答ではありません。"
+          }
+        ],
+        "sources": [
+          {
+            "title": "厚生労働省 潜水器構造規格（労働省告示第148号）",
+            "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74061000&dataType=0&pageNo=1"
+          },
+          {
+            "title": "厚生労働省 職場のあんぜんサイト 呼吸用保護具の分類",
+            "url": "https://anzeninfo.mhlw.go.jp/yougo/yougo16_1.html"
+          },
+          {
+            "title": "厚生労働省 労働安全衛生法 別表第二・別表第四",
+            "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74001000"
+          },
+          {
+            "title": "厚生労働省 労働安全衛生法施行令 第13条第5項・第14条の2",
+            "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74002000"
+          },
+          {
+            "title": "厚生労働省 労働安全衛生規則 第26条・第26条の2・第29条の2・第29条の3",
+            "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74003000&dataType=0&pageNo=2"
+          },
+          {
+            "title": "厚生労働省掲載・中央労働災害防止協会「平成21年度 屋外のアーク溶接作業等に係る粉じんばく露防止対策等報告書」表16（2010年3月、PDF96頁・印刷頁90。問2の給気式分類のみ参照）",
+            "url": "https://www.mhlw.go.jp/content/11303000/001373168.pdf"
+          },
+          {
+            "title": "厚生労働省 送気マスクの適正な使用等について",
+            "url": "https://www.mhlw.go.jp/web/t_doc?dataId=00tb9667&dataType=1&pageNo=1"
+          },
+          {
+            "title": "厚生労働省 職場のあんぜんサイト 電動ファン付き呼吸用保護具",
+            "url": "https://anzeninfo.mhlw.go.jp/yougo/yougo93_1.html"
+          },
+          {
+            "title": "厚生労働省 機械等検定規則の一部を改正する省令の施行及び防じんマスクの規格の適用について",
+            "url": "https://www.mhlw.go.jp/web/t_doc?dataId=00tc3389&dataType=1&pageNo=1"
+          },
+          {
+            "title": "厚生労働省 化学防護手袋の選択、使用等について",
+            "url": "https://www.mhlw.go.jp/web/t_doc?dataId=00tc2426&dataType=1&pageNo=1"
+          },
+          {
+            "title": "厚生労働省 騒音障害防止のためのガイドライン改訂について",
+            "url": "https://www.mhlw.go.jp/web/t_doc?dataId=00tc7618&dataType=1&pageNo=2"
+          }
+        ]
+      },
+      "sourceEvidence": [
+        {
+          "url": "https://anzeninfo.mhlw.go.jp/yougo/yougo16_1.html",
+          "excerpt": "人体に健康障害のおそれがある環境空気中で呼吸保護の目的で着用する個人用保護具",
+          "choiceNumbers": [
+            1
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74061000&dataType=0&pageNo=1",
+          "excerpt": "労働安全衛生法(昭和四十七年法律第五十七号)第四十二条の規定に基づき、潜水器構造規格を次のように定め",
+          "choiceNumbers": [
+            1
+          ]
+        },
+        {
+          "url": "https://anzeninfo.mhlw.go.jp/yougo/yougo16_1.html",
+          "excerpt": "主な呼吸用保護具の種類は次のとおりです。",
+          "choiceNumbers": [
+            1
+          ]
+        },
+        {
+          "url": "https://anzeninfo.mhlw.go.jp/yougo/yougo16_1.html",
+          "excerpt": "送気マスク 空気呼吸器 圧縮酸素形循環式呼吸器 酸素発生形循環式呼吸器",
+          "choiceNumbers": [
+            1
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74001000",
+          "excerpt": "八 防じんマスク 九 防毒マスク",
+          "choiceNumbers": [
+            1
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74001000",
+          "excerpt": "十六 電動ファン付き呼吸用保護具",
+          "choiceNumbers": [
+            1
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74001000",
+          "excerpt": "五 防じんマスク 六 防毒マスク",
+          "choiceNumbers": [
+            1
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74001000",
+          "excerpt": "十三 電動ファン付き呼吸用保護具",
+          "choiceNumbers": [
+            1
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74002000",
+          "excerpt": "３　法第四十二条の政令で定める機械等は、次に掲げる機械等(本邦の地域内で使用されないことが明らかな場合を除く。)とする。 一　アセチレン溶接装置のアセチレン発生器 二　研削盤、研削といし及び研削といしの覆い 三　手押しかんな盤及びその刃の接触予防装置 四　アセチレン溶接装置又はガス集合溶接装置の安全器 五　活線作業用装置(その電圧が、直流にあつては七百五十ボルトを、交流にあつては六百ボルトを超える充電電路について用いられるものに限る。) 六　活線作業用器具(その電圧が、直流にあつては七百五十ボルトを、交流にあつては三百ボルトを超える充電電路について用いられるものに限る。) 七　絶縁用防護具(対地電圧が五十ボルトを超える充電電路に用いられるものに限る。) 八　フォークリフト 九　別表第七に掲げる建設機械で、動力を用い、かつ、不特定の場所に自走することができるもの 十　型枠支保工用のパイプサポート、補助サポート及びウイングサポート 十一　別表第八に掲げる鋼管足場用の部材及び附属金具 十二　つり足場用のつりチェーン及びつり枠 十三　合板足場板(アピトン又はカポールをフェノール樹脂等により接着したものに限る。) 十四　つり上げ荷重が〇・五トン以上三トン未満(スタッカー式クレーンにあつては、〇・五トン以上一トン未満)のクレーン 十五　つり上げ荷重が〇・五トン以上三トン未満の移動式クレーン 十六　つり上げ荷重が〇・五トン以上二トン未満のデリック 十七　積載荷重が〇・二五トン以上一トン未満のエレベーター 十八　ガイドレールの高さが十メートル以上十八メートル未満の建設用リフト 十九　積載荷重が〇・二五トン以上の簡易リフト 二十　再圧室 二十一　潜水器 二十二　波高値による定格管電圧が十キロボルト以上のエツクス線装置(エックス線又はエツクス線装置の研究又は教育のため、使用の都度組み立てるもの及び医薬品、医療機器等の品質、有効性及び安全性の確保等に関する法律(昭和三十五年法律第百四十五号)第二条第四項に規定する医療機器で、厚生労働大臣が定めるものを除く。) 二十三　ガンマ線照射装置(医薬品、医療機器等の品質、有効性及び安全性の確保等に関する法律第二条第四項に規定する医療機器で、厚生労働大臣が定めるものを除く。) 二十四　紡績機械及び製綿機械で、ビーター、シリンダー等の回転体を有するもの 二十五　蒸気ボイラー及び温水ボイラーのうち、第一条第三号イからトまでに掲げるもの(船舶安全法の適用を受ける船舶に用いられるもの及び電気事業法の適用を受けるものを除く。) 二十六　第一条第五号イからニまでに掲げる容器のうち、第一種圧力容器以外のもの(ゲージ圧力〇・一メガパスカル以下で使用する容器で内容積が〇・〇一立方メートル以下のもの及びその使用する最高のゲージ圧力をメガパスカルで表した数値と内容積を立方メートルで表した数値との積が〇・〇〇一以下の容器並びに船舶安全法の適用を受ける船舶に用いられるもの、自動車用燃料装置に用いられるもの及び電気事業法、高圧ガス保安法、ガス事業法、液化石油ガスの保安の確保及び取引の適正化に関する法律又は二酸化炭素の貯留事業に関する法律の適用を受けるものを除く。) 二十七　大気圧を超える圧力を有する気体をその内部に保有する容器(第一条第五号イからニまでに掲げる容器、第二種圧力容器及び第一号に掲げるアセチレン発生器を除く。)で、内容積が〇・一立方メートルを超えるもの(船舶安全法の適用を受ける船舶に用いられるもの、自動車用燃料装置に用いられるもの及び電気事業法、高圧ガス保安法、ガス事業法又は二酸化炭素の貯留事業に関する法律の適用を受けるものを除く。) 二十八　墜落制止用器具 二十九　チェーンソー(内燃機関を内蔵するものであつて、排気量が四十立方センチメートル以上のものに限る。) 三十　ショベルローダー 三十一　フォークローダー 三十二　ストラドルキャリヤー 三十三　不整地運搬車 三十四　作業床の高さが二メートル以上の高所作業車",
+          "choiceNumbers": [
+            1
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74002000",
+          "excerpt": "法別表第二第八号に掲げる防じんマスク ろ過材又は面体を有していない防じんマスク",
+          "choiceNumbers": [
+            1
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74002000",
+          "excerpt": "法別表第二第九号に掲げる防毒マスク ハロゲンガス用又は有機ガス用防毒マスクその他厚生労働省令で定めるもの以外の防毒マスク",
+          "choiceNumbers": [
+            1
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74002000",
+          "excerpt": "法別表第二第十六号に掲げる電動ファン付き呼吸用保護具 ハロゲンガス用又は有機ガス用の防毒機能を有する電動ファン付き呼吸用保護具その他厚生労働省令で定めるもの以外の防毒機能を有する電動ファン付き呼吸用保護具",
+          "choiceNumbers": [
+            1
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74002000",
+          "excerpt": "五 防じんマスク(ろ過材及び面体を有するものに限る。) 六 防毒マスク(ハロゲンガス用又は有機ガス用のものその他厚生労働省令で定めるものに限る。)",
+          "choiceNumbers": [
+            1
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74002000",
+          "excerpt": "十三 防じん機能を有する電動ファン付き呼吸用保護具 十四 防毒機能を有する電動ファン付き呼吸用保護具(ハロゲンガス用又は有機ガス用のものその他厚生労働省令で定めるものに限る。)",
+          "choiceNumbers": [
+            1
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74003000&dataType=0&pageNo=2",
+          "excerpt": "第二十六条 令第十三条第五項の厚生労働省令で定める防毒マスクは、次のとおりとする。 一 一酸化炭素用防毒マスク 二 アンモニア用防毒マスク 三 亜硫酸ガス用防毒マスク",
+          "choiceNumbers": [
+            1
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74003000&dataType=0&pageNo=2",
+          "excerpt": "第二十六条の二 令第十三条第五項の厚生労働省令で定める防毒機能を有する電動ファン付き呼吸用保護具は、次のとおりとする。 一 アンモニア用の防毒機能を有する電動ファン付き呼吸用保護具 二 亜硫酸ガス用の防毒機能を有する電動ファン付き呼吸用保護具",
+          "choiceNumbers": [
+            1
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74003000&dataType=0&pageNo=2",
+          "excerpt": "第二十九条の二 令第十四条の二第六号の厚生労働省令で定める防毒マスクは、次のとおりとする。 一 一酸化炭素用防毒マスク 二 アンモニア用防毒マスク 三 亜硫酸ガス用防毒マスク",
+          "choiceNumbers": [
+            1
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74003000&dataType=0&pageNo=2",
+          "excerpt": "第二十九条の三 令第十四条の二第十四号の厚生労働省令で定める防毒機能を有する電動ファン付き呼吸用保護具は、次のとおりとする。 一 アンモニア用の防毒機能を有する電動ファン付き呼吸用保護具 二 亜硫酸ガス用の防毒機能を有する電動ファン付き呼吸用保護具",
+          "choiceNumbers": [
+            1
+          ]
+        },
+        {
+          "url": "https://anzeninfo.mhlw.go.jp/yougo/yougo93_1.html",
+          "excerpt": "電動ファンとバッテリーを使用して着用者に送風するため",
+          "choiceNumbers": [
+            3
+          ]
+        },
+        {
+          "url": "https://anzeninfo.mhlw.go.jp/yougo/yougo93_1.html",
+          "excerpt": "吸気補助具付き防じんマスク（型式検定合格標章に「補」のマーク）もバッテリーとそれによって駆動するファンを使用して着用者に送風する機能を有しておりますが、常に陽圧が保たれるものではない",
+          "choiceNumbers": [
+            3
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=00tb9667&dataType=1&pageNo=1",
+          "excerpt": "給気式呼吸用保護具(送気マスク又は自給式呼吸器)",
+          "choiceNumbers": [
+            2
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=00tb9667&dataType=1&pageNo=1",
+          "excerpt": "その空気供給量に適した空気源、ホースなどを備えること",
+          "choiceNumbers": [
+            2
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=00tc3389&dataType=1&pageNo=1",
+          "excerpt": "吸気補助具付き防じんマスクは、面体内圧を必ずしも陽圧に保つ必要はなく",
+          "choiceNumbers": [
+            3
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=00tc3389&dataType=1&pageNo=1",
+          "excerpt": "電動ファン付き呼吸用保護具は、面体内圧を常に陽圧に保つ必要があり",
+          "choiceNumbers": [
+            3
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=00tc2426&dataType=1&pageNo=1",
+          "excerpt": "クラス1(平均標準破過点検出時間10分以上)からクラス6(平均標準破過点検出時間480分以上)の6つのクラスに区分している",
+          "choiceNumbers": [
+            4
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=00tc7618&dataType=1&pageNo=2",
+          "excerpt": "非常に強烈な騒音に対しては耳栓と耳覆いとの併用が有効であること",
+          "choiceNumbers": [
+            5
+          ]
+        }
+      ],
+      "reviewIssues": []
+    },
+    "emkohyo-20260217-q19": {
+      "overlay": {
+        "sourceHash": "76ac5a6010ae655f42a95e3f6ff480be5a9c4df20718783e451aca541819d136",
+        "correctChoice": 4,
+        "summary": "吸収缶が粉じんを通さないとした肢4が誤り",
+        "choices": [
+          {
+            "number": 1,
+            "verdict": "incorrect",
+            "reason": "厚生労働省の「防毒マスクの規格」第2条は隔離式、直結式、直結式小型の3種類を定め、直結式小型をガス・蒸気0.1％以下の大気で使う非緊急用と規定します。酸素条件は同規格第1条で18％未満に適用しないと定められ、厚労省の令和5年通達も酸素欠乏場所でろ過式を使わせないため、この肢は正しいです。"
+          },
+          {
+            "number": 2,
+            "verdict": "incorrect",
+            "reason": "厚生労働省の令和5年の呼吸用保護具通達は、有機ガス用吸収缶の破過時間は温度・湿度が高いほど短くなる傾向があり、沸点の低い物質ほどその傾向が顕著と明記します。環境条件で吸着性能が変わるという肢2は、通達の内容に合い正しいです。"
+          },
+          {
+            "number": 3,
+            "verdict": "incorrect",
+            "reason": "厚生労働省の令和5年通達は、メタノールや二硫化炭素など破過時間が著しく短い物質に使用した吸収缶では、吸着した物質が時間とともに脱着して面体側に漏れ得るため再使用しないよう定めます。使用時間だけで安全とは判断できないので、この肢は正しいです。"
+          },
+          {
+            "number": 4,
+            "verdict": "correct",
+            "reason": "厚生労働省の「防毒マスクの規格」第2条第3項は、防毒マスクを防じん機能の有無で明確に区分します。また令和5年通達は、ガス・蒸気と粉じんが混在する環境では防じん機能を有する防毒マスク等を選ぶよう指示します。吸収缶付きの通常の防毒マスクだけで粉じん対策までできるとする肢4が誤りです。"
+          },
+          {
+            "number": 5,
+            "verdict": "incorrect",
+            "reason": "厚生労働省の「職場のあんぜんサイト」は、電動ファン付き呼吸用保護具に防じん機能を有するP-PAPRと防毒機能を有するG-PAPRがあると明示します。粉じん用だけという限定はなく、防毒機能を有する型もあるため、肢5は正しいです。"
+          }
+        ],
+        "sources": [
+          {
+            "title": "厚生労働省 防毒マスクの規格 第1条・第2条",
+            "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74042100&dataType=0&pageNo=1"
+          },
+          {
+            "title": "厚生労働省 防じんマスク、防毒マスク及び電動ファン付き呼吸用保護具の選択、使用等について（令和5年5月25日基発0525第3号）",
+            "url": "https://www.mhlw.go.jp/content/11300000/001100842.pdf"
+          },
+          {
+            "title": "厚生労働省 職場のあんぜんサイト 電動ファン付き呼吸用保護具",
+            "url": "https://anzeninfo.mhlw.go.jp/yougo/yougo93_1.html"
+          }
+        ]
+      },
+      "sourceEvidence": [
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74042100&dataType=0&pageNo=1",
+          "excerpt": "ただし、酸素濃度が一八パーセントに満たない場所又はガス若しくは蒸気の濃度が二パーセント",
+          "choiceNumbers": [
+            1
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/content/11300000/001100842.pdf",
+          "excerpt": "酸素欠乏又はそのおそれがある場所及び有害物質の濃度が不明な場所ではろ過式呼吸用保護具を使用させてはならないこと",
+          "choiceNumbers": [
+            1
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74042100&dataType=0&pageNo=1",
+          "excerpt": "防毒マスクは、防じん機能を有するものと有しないものに区分するものとし",
+          "choiceNumbers": [
+            4
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74042100&dataType=0&pageNo=1",
+          "excerpt": "直結式小型防毒マスク 吸収缶、吸気弁、面体、排気弁及びしめひもからなり",
+          "choiceNumbers": [
+            1
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74042100&dataType=0&pageNo=1",
+          "excerpt": "ガス又は蒸気の濃度が〇・一パーセント以下の大気中で使用する非緊急用のもの",
+          "choiceNumbers": [
+            1
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/content/11300000/001100842.pdf",
+          "excerpt": "使用する環境の温度又は湿度が高いほど破過時間が短くなる傾向があり、沸点の低い物質ほど、その傾向が顕著であること",
+          "choiceNumbers": [
+            2
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/content/11300000/001100842.pdf",
+          "excerpt": "ただし、メタノール、二硫化炭素等破過時間が試験用ガスの破過時間よりも著しく短い有毒ガス等に対して使用した吸収缶は",
+          "choiceNumbers": [
+            3
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/content/11300000/001100842.pdf",
+          "excerpt": "吸収剤から微量ずつ脱着して面体側に漏れ出してくることがあるため、再使用しないこと",
+          "choiceNumbers": [
+            3
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/content/11300000/001100842.pdf",
+          "excerpt": "有毒ガス等が粉じん等と混在している作業環境中では、粉じん等を捕集する防じん機能を有する防毒マスク又は防じん機能を有する G-PAPR を選択すること",
+          "choiceNumbers": [
+            4
+          ]
+        },
+        {
+          "url": "https://anzeninfo.mhlw.go.jp/yougo/yougo93_1.html",
+          "excerpt": "①防じん機能を有する電動ファン付き呼吸用保護具（P-PAPR）と②防毒機能を有する電動ファン付き呼吸用保護具（G-PAPR）があります",
+          "choiceNumbers": [
+            5
+          ]
+        }
+      ],
+      "reviewIssues": []
+    },
+    "emkohyo-20260217-q20": {
+      "overlay": {
+        "sourceHash": "39df12ac6b22d78e80c4bfbd6ca951d8b750f0d3ebc682a5f46c3e2b0c0ae880",
+        "correctChoice": 2,
+        "summary": "第2評価値を幾何平均濃度の推定値とした肢2が誤り",
+        "choices": [
+          {
+            "number": 1,
+            "verdict": "incorrect",
+            "reason": "第1評価値は、単位作業場所の濃度分布の上側5％点の推定値です。A測定のみで第1評価値が管理濃度を下回れば、95％以上の場所で管理濃度を超えないと判断され、第1管理区分になります。この記述は正しいです。"
+          },
+          {
+            "number": 2,
+            "verdict": "correct",
+            "reason": "第2評価値は、単位作業場所の気中有害物質の『算術平均濃度』の推定値です。幾何平均濃度ではありません。第2評価値が管理濃度を超えると第3管理区分になるという後半は正しいものの、定義が誤っているため、これが正答です。"
+          },
+          {
+            "number": 3,
+            "verdict": "incorrect",
+            "reason": "作業環境評価基準（労働省告示第79号）の別表は、土石・岩石・鉱物・金属・炭素の粉じんの管理濃度を、遊離けい酸含有率Q（％）に応じてE＝3.0/(1.19Q＋1) mg/m³で算定すると定めています。記述の式と一致します。"
+          },
+          {
+            "number": 4,
+            "verdict": "incorrect",
+            "reason": "日本産業衛生学会の許容濃度等の勧告では、気道感作性物質と皮膚感作性物質をそれぞれ第1群から第3群に分類しています。人間に対して明らかに感作性がある物質は第1群です。この記述は正しいです。"
+          },
+          {
+            "number": 5,
+            "verdict": "incorrect",
+            "reason": "厚生労働省掲載の日本産業衛生学会『許容濃度等の勧告』には発がん性分類の章があります。前文は有害物質の許容濃度・生物学的許容値に加え、騒音・高温・寒冷・全身振動・手腕振動などの許容基準を列挙しています。化学物質と物理的因子の両方を扱うため正しい記述です。"
+          }
+        ],
+        "sources": [
+          {
+            "title": "厚生労働省 作業環境評価基準の適用について（基発第605号）",
+            "url": "https://www.mhlw.go.jp/web/t_doc?dataId=00tb2166&dataType=1&pageNo=1"
+          },
+          {
+            "title": "厚生労働省 作業環境評価基準（昭和63年労働省告示第79号・別表）",
+            "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74088000"
+          },
+          {
+            "title": "厚生労働省 管理濃度・抑制濃度等一覧 参考資料2-2",
+            "url": "https://www.mhlw.go.jp/file/05-Shingikai-11201000-Roudoukijunkyoku-Soumuka/0000080701.pdf"
+          },
+          {
+            "title": "厚生労働省掲載 業務上疾病に関する医学的知見の収集に係る調査研究（化学物質等による疾病）報告書",
+            "url": "https://www.mhlw.go.jp/content/11201000/000748737.pdf"
+          },
+          {
+            "title": "厚生労働省掲載 日本産業衛生学会 許容濃度等の勧告（2019年度）",
+            "url": "https://www.mhlw.go.jp/content/11201000/000606772.pdf"
+          }
+        ]
+      },
+      "sourceEvidence": [
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=00tb2166&dataType=1&pageNo=1",
+          "excerpt": "高濃度側から五％に相当する濃度の推定値",
+          "choiceNumbers": [
+            1
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=00tb2166&dataType=1&pageNo=1",
+          "excerpt": "第一評価値＜管理濃度",
+          "choiceNumbers": [
+            1
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=00tb2166&dataType=1&pageNo=1",
+          "excerpt": "当該単位作業場所のほとんど(九五％以上)の場所で気中有害物質の濃度が管理濃度を超えない状態",
+          "choiceNumbers": [
+            1
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=00tb2166&dataType=1&pageNo=1",
+          "excerpt": "第二評価値」とは、単位作業場所における気中有害物質の算術平均濃度の推定値",
+          "choiceNumbers": [
+            2
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=00tb2166&dataType=1&pageNo=1",
+          "excerpt": "第二評価値＞管理濃度",
+          "choiceNumbers": [
+            2
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/file/05-Shingikai-11201000-Roudoukijunkyoku-Soumuka/0000080701.pdf",
+          "excerpt": "Q=当該粉じんの遊離けい酸含有率(%)",
+          "choiceNumbers": [
+            3
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74088000",
+          "excerpt": "土石、岩石、鉱物、金属又は炭素の粉じん 次の式により算定される値 E＝3.0／(1.19Q＋1)",
+          "choiceNumbers": [
+            3
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/content/11201000/000748737.pdf",
+          "excerpt": "感作性（気道・皮膚） 第1 群 人間に対して明らかに感作性がある物質 第2 群 人間に対しておそらく感作性があると考えられる物質 第3 群 動物試験などにより人間に対して感作性が懸念される物質",
+          "choiceNumbers": [
+            4
+          ]
+        }
+      ],
+      "independentCurrentEditionVerification": {
+        "scope": "査読用の現行性照合。公開する根拠リンクには使用しない",
+        "url": "https://www.jstage.jst.go.jp/article/sangyoeisei/67/5/67_S25001/_pdf",
+        "sha256": "11c12c8fd05a180cf5b56eee100e8821cf3e392e6c929c86bc0fc2ccd9975fd4",
+        "publication": "日本産業衛生学会 許容濃度等の勧告（2025年度）, 産業衛生学雑誌 67(5)",
+        "checks": [
+          {
+            "pdfPage": 1,
+            "excerpt": "ここに述べる有害物質の許容濃度，生物学的許容値，騒音，衝撃騒音，高温，",
+            "purpose": "騒音・振動・高温・寒冷を含む前文の現行性"
+          },
+          {
+            "pdfPage": 18,
+            "excerpt": "感作性物質を，反応の場としての気道と皮膚に分けて",
+            "purpose": "気道と皮膚の分類を2025年度版で確認"
+          },
+          {
+            "pdfPage": 18,
+            "excerpt": "物質（第3 群）",
+            "purpose": "第1〜第3群の分類を2025年度版で確認"
+          },
+          {
+            "pdfPage": 10,
+            "excerpt": "III．発がん性分類",
+            "purpose": "発がん性分類の章が現行勧告に存在することを確認"
+          }
+        ]
+      },
+      "reviewIssues": []
+    }
+  }
+}

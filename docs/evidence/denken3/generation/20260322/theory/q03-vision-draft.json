@@ -1,0 +1,94 @@
+{
+  "questionNumber": 3,
+  "sharedContext": null,
+  "units": [
+    {
+      "part": null,
+      "question": "巻数 1 000 のコイルに直流電流 0.2 A を流したとき，6×10⁻⁴ Wb の磁束を発生した。この場合，コイルの自己インダクタンス[H]の値として，最も近いものを次の(1)〜(5)のうちから一つ選べ。ただし，コイルの漏れ磁束は無視できるものとする。",
+      "choices": {
+        "1": "1",
+        "2": "2",
+        "3": "3",
+        "4": "4",
+        "5": "5"
+      },
+      "officialAnswer": "3",
+      "explanation": "漏れ磁束を無視できるので，コイルが発生する磁束 Φ はコイルの全巻数 N と鎖交する。このとき磁束鎖交数は NΦ である。自己インダクタンス L は，電流 I に対する磁束鎖交数の比として定義される。\n\nL = NΦ / I\n\n与えられた値を代入する。\n\nN = 1 000，Φ = 6×10⁻⁴ Wb，I = 0.2 A\n\nNΦ = 1 000 × 6×10⁻⁴ = 0.6 Wb\nL = 0.6 / 0.2 = 3 H\n\nよって，自己インダクタンスは 3 H であり，正答は(3)である。\n\nなお，巻数 N を掛け忘れて L = Φ / I とすると 6×10⁻⁴ / 0.2 = 3×10⁻³ H となり，どの選択肢にも近くならない。磁束鎖交数 NΦ を使うことが要点である。",
+      "choiceExplanations": {
+        "1": "誤り。L = 1 H となるには，I = 0.2 A のもとで磁束鎖交数 NΦ が 0.2 Wb，すなわち N = 1 000 なら Φ = 2×10⁻⁴ Wb である必要がある。実際の Φ は 6×10⁻⁴ Wb なので NΦ = 0.6 Wb となり，L = 0.6 / 0.2 = 3 H である。",
+        "2": "誤り。L = 2 H となるには，NΦ が 0.4 Wb（Φ = 4×10⁻⁴ Wb）である必要がある。実際は NΦ = 1 000 × 6×10⁻⁴ = 0.6 Wb で，L = 0.6 / 0.2 = 3 H である。",
+        "3": "正しい。漏れ磁束を無視できるので磁束は全巻数と鎖交し，L = NΦ / I = (1 000 × 6×10⁻⁴ Wb) / 0.2 A = 0.6 / 0.2 = 3 H である。",
+        "4": "誤り。L = 4 H となるには，NΦ が 0.8 Wb（Φ = 8×10⁻⁴ Wb）である必要がある。実際は NΦ = 0.6 Wb で，L = 0.6 / 0.2 = 3 H である。",
+        "5": "誤り。L = 5 H となるには，NΦ が 1.0 Wb（Φ = 1×10⁻³ Wb）である必要がある。実際は NΦ = 0.6 Wb で，L = 0.6 / 0.2 = 3 H である。"
+      },
+      "figureDescription": "本問に図はない。問題文と選択肢のみで解答できる。",
+      "officialReferenceUrls": [],
+      "uncertainty": "なし",
+      "needsReview": true,
+      "sourceQuestionPdfUrl": "https://www.shiken.or.jp/chief/upload/20260322_ch_third_q01.pdf",
+      "sourceAnswerPdfUrl": "https://www.shiken.or.jp/chief/upload/20260322_ch_third_a01.pdf",
+      "reviewedFromPage": [
+        6
+      ]
+    }
+  ],
+  "draftModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 1343,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 9309,
+      "webSearchRequests": 0,
+      "costUSD": 0.1015958,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 361,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "24024535e76c709b35b75c3d6257df7994222600ad4c01367a1e3fab7816a3b9",
+  "inputRequestSha256": "e55898573ebf3298cb3e2594bbddf7318ddd854b026243e633d545e9f4379379",
+  "sourceQuestionPdfSha256": "c83e7c7350d98b65f5d8da0b93e4a2581a19dd250be320fb7fc492c9b34a29c1",
+  "sourceAnswerPdfSha256": "cc2890296d06a4823df5697a78a1c01ddfd39f041c51f48c87984daa3a5707c6",
+  "sourcePageImageSha256": {
+    "data/raw_pdfs/denken3/review/20260322/theory/p06.png": "1438fdf54948f9d2059ca270f03ad22ca84021d3f9294244f6fa6ed9d7de57fc"
+  },
+  "revisionHistory": [
+    {
+      "version": 1,
+      "model": "claude-opus-5-5",
+      "resolvedModel": "claude-opus-5-5",
+      "modelUsage": {
+        "claude-opus-5-5": {
+          "inputTokens": 2,
+          "outputTokens": 1874,
+          "cacheReadInputTokens": 1279,
+          "cacheCreationInputTokens": 11632,
+          "webSearchRequests": 0,
+          "costUSD": 0.1307998,
+          "contextWindow": 1000000,
+          "maxOutputTokens": 128000,
+          "thinkingTokens": 637,
+          "canonicalModel": "claude-opus-5-5",
+          "provider": "firstParty",
+          "costBasis": "list"
+        }
+      },
+      "rawResponseSha256": "63f5e68603c3ad2334054a4c20ff203ac9fa38b3415cd15281c4250bd009927d",
+      "inputRequestSha256": "31e2d15478c80f79ec5984568629a7ab8840a689f1938eff02c12282d0fafe42",
+      "previousDraftSha256": "ca0da36f56827a3371c3b4bd8208916aad53962a2ec1784bb31a906574a01a12",
+      "previousDraft": "data/raw_pdfs/denken3/review/20260322/theory/archive/q03-vision-draft-v1.json",
+      "answeredReviewSha256": "d5e4ca3d74c0f067623be6bead50d6114c0f7ca60f79ec874e17a88bd0da0691",
+      "answeredReview": "data/raw_pdfs/denken3/review/20260322/theory/archive/q03-opus-review-v1.json",
+      "answeredStrictReceipt": "docs/evidence/denken3/strict/20260322-theory-s1-q03-opus.json",
+      "answeredStrictReceiptSha256": "ead6f0df3cf8b11d25af7e229552167bf44149f7460aa7658f4d64a210aaf81b",
+      "figureSha256": {},
+      "referenceHashes": {},
+      "operatorNote": ""
+    }
+  ]
+}

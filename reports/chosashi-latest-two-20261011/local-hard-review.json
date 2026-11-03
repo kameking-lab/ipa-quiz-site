@@ -1,0 +1,312 @@
+{
+  "status": "completed_selected_review_with_disclosed_limits",
+  "reviewer": "/root/chosashi_local_hard_review",
+  "scope": {
+    "originalSelected": 19,
+    "addedByParent": [
+      "chosashi-2024-pm-q13",
+      "chosashi-2024-pm-q5"
+    ],
+    "totalSelected": 21,
+    "fullCorpusReview": false,
+    "excludedOriginalCount": 45,
+    "implementationEdited": false
+  },
+  "method": "保存済み公式原問/PNG・公式正答・eGov原文を対照。計算は制作スクリプトを実行せず独立式で検算。未取得先例を条文から推測して承認しない。",
+  "accessLimit": [
+    {
+      "url": "https://www.moj.go.jp/content/001394394.pdf",
+      "result": "web open 403 Forbidden",
+      "action": "同一資料の別手段アクセス・回避を実施しない"
+    }
+  ],
+  "findings": [
+    {
+      "identity": "chosashi-2025-pm-q17/オ",
+      "severity": "P1",
+      "status": "fixed_verified",
+      "finding": "抵当権者個別の利害関係欠如を理由としていたが、参加人規定の適用除外が直接根拠。",
+      "primaryEvidence": "不動産登記法158条（行政不服審査法13条を適用除外）、保存eGov416AC0000000123",
+      "requiredFix": "参加制度除外を理由に記載する。修正稿で確認済み。"
+    },
+    {
+      "identity": "chosashi-2025-pm-q19/ウ",
+      "severity": "P1",
+      "status": "fixed_verified",
+      "finding": "初稿の具体税額欠落・課税を示唆する説明を修正。",
+      "primaryEvidence": "登録免許税法別表第一1(15)は土地又は建物の表題部登記抹消を除外。保存eGov342AC0000000035。",
+      "requiredFix": "0円と明示。最新稿で確認済み。"
+    },
+    {
+      "identity": "chosashi-2025-pm-q19/オ",
+      "severity": "P2",
+      "status": "fixed_verified_with_source_limit",
+      "finding": "3000円ではないとの否定だけで具体額・一申請での課税単位の説明がない。",
+      "primaryEvidence": "登録免許税法別表第一1(13)イ/ロ、規則35条2号。合算先例未取得。",
+      "requiredFix": "最新稿で一申請後の甲乙2個×1000=2000円の説明を確認。合算取扱いの個別先例原本は未取得でevidenceに保持。"
+    },
+    {
+      "identity": "chosashi-2025-pm-q3/オ",
+      "severity": "P2",
+      "status": "fixed_verified",
+      "finding": "『東京地判昭和30年5月6日』の原本/事件識別根拠がevidenceにない。",
+      "primaryEvidence": "民法923条は共同限定承認、915/921条は熟慮期間と単純承認。公式問題/正答は本設問条件でオを正しいとする。",
+      "requiredFix": "未確認判決日削除、本設問の熟慮期間条件に限定、923条だけでは導けない旨を最新稿で確認。"
+    },
+    {
+      "identity": "chosashi-2025-pm-q21/問5地積",
+      "severity": "P1",
+      "status": "resolved_with_disclosed_calculation_assumption",
+      "finding": "残部C-H-L-Mに余分なDを加えた靴紐で217.87425→217.87と説明。実際の残部を丸め済M/Lで計算すると217.90260→217.90。",
+      "primaryEvidence": "原問001450011.pdf pp25-27,33。M=(205.30,115.04),L=(203.64,131.88)、新筆D-M-L-K=62.72080。",
+      "requiredFix": "誤多角形を撤回。正しいC-H-L-Mについて丸め前交点による217.87505→217.87と、表示座標による217.9026→217.90をmodelAnswerで併記。途中交点を丸めない独自例の方針を明示。217.87を公式唯一正解とは承認しない。"
+    },
+    {
+      "identity": "chosashi-2025-pm-q21/問5原因",
+      "severity": "P1",
+      "status": "fixed_verified",
+      "finding": "申請日10月30日を分筆の原因日と断定。",
+      "primaryEvidence": "原問の申請日、規則101条1〜3項の分筆記録方法。",
+      "requiredFix": "最新稿で原因日付除去、元筆10番1は10番3を分筆、新筆10番3は10番1から分筆、と行別に確認。"
+    },
+    {
+      "identity": "chosashi-2025-pm-q22/床面積",
+      "severity": "P1",
+      "status": "fixed_verified",
+      "finding": "旧2階176.51は吹抜け寸法/形状を誤読。",
+      "primaryEvidence": "原問001450011.pdf p41とp42注3、A部分詳細。25.50等は壁芯寸法。南西7.00×2.00=14.00、南東L字2.30×2.50+5.70×1.00=11.45。",
+      "requiredFix": "最新JSONとSVGで1F190.75/2F165.30、南西14.00と南東11.45の除外を確認。"
+    },
+    {
+      "identity": "chosashi-2025-pm-q22/問3図",
+      "severity": "P1",
+      "status": "fixed_verified",
+      "finding": "原問は主建物のみ省略可だが、符号6守衛所図が欠落。",
+      "primaryEvidence": "原問問3、規則81/83条、原図p40。",
+      "requiredFix": "守衛所4.00×2.50=10.00㎡と符号6、倉庫の正しい吹抜形状・寸法・求積を最終SVGで確認。最後に倉庫1階/2階見出し双方へ附属建物符号5の追記を確認。"
+    },
+    {
+      "identity": "chosashi-2025-pm-q21/問3図",
+      "severity": "P2",
+      "status": "fixed_verified",
+      "finding": "HK/KG別辺長・境界標種類・隣地/道路/所在注記欠落。骨格とT1/T2は一致。",
+      "primaryEvidence": "原問p26注4〜6、p31〜33、規則77条。",
+      "requiredFix": "最終SVGを画像化して原問と再照合済。寸法・方位・隣地・境界標等の要求情報と図形骨格を確認。"
+    },
+    {
+      "identity": "chosashi-2024-pm-q22/問3図",
+      "severity": "P2",
+      "status": "fixed_verified",
+      "finding": "各階図の全辺寸法/求積方法、建物図の隣地と離隔/方位が不足。",
+      "primaryEvidence": "原問注3〜4・図1〜2、規則82/83条。",
+      "requiredFix": "最終SVGを画像化して原問と再照合済。寸法・方位・隣地・境界標等の要求情報と図形骨格を確認。"
+    },
+    {
+      "identity": "chosashi-2024-pm-q21/問4図",
+      "severity": "P2",
+      "status": "fixed_verified",
+      "finding": "隣地地番・道路注記欠落。骨格/辺長/基準点は一致。",
+      "primaryEvidence": "原問調査図素図、規則77条。",
+      "requiredFix": "最終SVGを画像化して原問と再照合済。寸法・方位・隣地・境界標等の要求情報と図形骨格を確認。"
+    },
+    {
+      "identity": "QuizPlayer/descriptive-summary-keyboard",
+      "severity": "P2",
+      "status": "fixed_verified",
+      "finding": "独自例を開いた後summaryにEnter/Spaceを押すとglobal shortcutが次問へ進めていた。",
+      "primaryEvidence": "WT components/quiz/QuizPlayer.tsx 259-261",
+      "requiredFix": "chosashi記述時のglobal shortcut除外とsummary selector追加を確認。"
+    },
+    {
+      "identity": "QuizPlayer/descriptive-next-focus",
+      "severity": "P2",
+      "status": "fixed_verified",
+      "finding": "記述分岐にquestionStartRefがなく次問時先頭focus/scrollが働かない。",
+      "primaryEvidence": "WT components/quiz/QuizPlayer.tsx 378",
+      "requiredFix": "refとtabIndex=-1のwrapper追加を確認。"
+    }
+  ],
+  "questionReviews": [
+    {
+      "identity": "chosashi-2025-am-q3",
+      "status": "pass",
+      "primaryEvidence": "対応公式PNG+原問PDF+公式正答",
+      "evidence": "原図350°→小角10°。DE=6sin150°sin20°/(sin10°sin80°)=6m。4。"
+    },
+    {
+      "identity": "chosashi-2025-am-q5",
+      "status": "pass",
+      "primaryEvidence": "対応公式PNG+原問PDF+公式正答",
+      "evidence": "∠ACB=300−230=70°。余弦定理97.0358681795m→97.04、2。"
+    },
+    {
+      "identity": "chosashi-2025-am-q6",
+      "status": "pass",
+      "primaryEvidence": "対応公式PNG+原問PDF+公式正答",
+      "evidence": "総長122.34、A→E81.76。閉合補正E=(110.4809991862,170.7989613340)→(110.48,170.80)、4。"
+    },
+    {
+      "identity": "chosashi-2025-am-q9",
+      "status": "pass",
+      "primaryEvidence": "対応公式PNG+原問PDF+公式正答",
+      "evidence": "50=10h−h²/8、BF'=5.52391411346→5.524、2。"
+    },
+    {
+      "identity": "chosashi-2025-am-q10",
+      "status": "pass",
+      "primaryEvidence": "対応公式PNG+原問PDF+公式正答",
+      "evidence": "三角形ABC面積1028.057、平行四辺形への面積保存CQ=17.9218198814→17.92、3。"
+    },
+    {
+      "identity": "chosashi-2024-am-q8",
+      "status": "pass",
+      "primaryEvidence": "対応公式PNG+原問PDF+公式正答",
+      "evidence": "等距離差.048、B観測差.058、33m補正.011。1.413−.011=1.402、4。"
+    },
+    {
+      "identity": "chosashi-2025-pm-q2",
+      "status": "pass_with_source_limit",
+      "primaryEvidence": "民法184/187/189/196/200条、原問001450011p5、正答5",
+      "evidence": "各肢結論整合。落雷修復は通常維持費とは区別し必要費196条1項本文。間接占有者の保護を説明。個別判例原本は未取得。"
+    },
+    {
+      "identity": "chosashi-2025-pm-q3",
+      "status": "pass_limited_explanation",
+      "primaryEvidence": "民法918/921/923/931/938条、原問p6、正答2",
+      "evidence": "ア申述先、イ管理、ウ債権者優先、エ保存例外を条文確認。オ個別判決日根拠未取得。"
+    },
+    {
+      "identity": "chosashi-2025-pm-q17",
+      "status": "pass_after_fix_with_source_limit",
+      "primaryEvidence": "不登法156/158条、原問p20、正答3",
+      "evidence": "ア期間制限とオ参加人は158適用除外。ウ筆界特定結果、エ隣地所有者の取消請求は設問条件に限定。イ裁決謄本交付の個別原本未取得。"
+    },
+    {
+      "identity": "chosashi-2025-pm-q19",
+      "status": "pass_with_source_limit",
+      "primaryEvidence": "登録免許税法4条/別表第一1(13)(14)(15)、原問p22、正答3",
+      "evidence": "ア0円、イ公共団体自己のため免税、ウ表題部抹消除外0円、エ再区分2個×1000整合。オ一申請税額説明不足。 最新稿オは一申請後2個×1000=2000円に補足。個別合算先例未取得。"
+    },
+    {
+      "identity": "chosashi-2024-pm-q10",
+      "status": "pass",
+      "primaryEvidence": "規則79条1/2/4項・87条1項、不登令別表8添付情報ロ",
+      "evidence": "ア署名、イ適宜縮尺、ウ範囲が分筆後一部なら図面要、エ旧図閉鎖、オ要役地所在地番は必須列挙外。"
+    },
+    {
+      "identity": "chosashi-2024-pm-q12",
+      "status": "pass_with_source_limit",
+      "primaryEvidence": "規則111条、原問図・正答3",
+      "evidence": "サイロの土地定着/屋根周壁・廃車定着店舗の条件を確認。ホーム売店/開閉ドーム/石油タンクの個別先例原本は未取得。全構造物一般への拡張をせず本設問の限定説明。"
+    },
+    {
+      "identity": "chosashi-2024-pm-q18",
+      "status": "pass_with_source_limit",
+      "primaryEvidence": "区分所有法5条2項、不登法48条・51条5/6項、規則117条",
+      "evidence": "ウは建物一部滅失により規約敷地とみなされるため変更義務なし。オ一棟情報は他区分に効力＋職権反映。別棟附属の同時申請等は原問条件限定、個別先例原本未取得。"
+    },
+    {
+      "identity": "chosashi-2024-pm-q13",
+      "status": "pass_limited_explanation",
+      "primaryEvidence": "原問001427202p14・正答1、不登令3条8号イ/ホ、不登法44条1号/5号",
+      "evidence": "オ同一棟の所在は主と共通し重ねた記載不要に限定。所在地番自体を全く提供しなくてよいと拡張しない。未取得先例/不存在例外番号の断定なし。"
+    },
+    {
+      "identity": "chosashi-2025-am-q11",
+      "status": "pass",
+      "primaryEvidence": "原問001450010p14-15",
+      "evidence": "独立計算角188.671993653°→188°40′、距離6.929429991→6.93、F199.08/214.09、G197.06/214.29、丸め座標面積95.9081→95.90。SVG座標骨格/方位/1m4mm/全辺長一致。"
+    },
+    {
+      "identity": "chosashi-2024-am-q11",
+      "status": "pass",
+      "primaryEvidence": "原問001427201p12-13",
+      "evidence": "独立計算B210.50/210.50、角271.153319404→271°09′、距離23.377339455→23.38、F212.50/228.50、A207.50/223.50、土地1=128.00。"
+    },
+    {
+      "identity": "chosashi-2025-pm-q21",
+      "status": "pass_as_independent_example_with_disclosed_rounding_assumption",
+      "primaryEvidence": "原問001450011p24-33、規則100/101",
+      "evidence": "D201.71/114.41、全561.1905、K199.98/131.88、両分筆280.59、J216.07/116.94、L203.64/131.88、M205.30/115.04、新筆62.7208→62.72まで独立検算。残部方法はfinding参照。 残部の丸め前/丸め後差を本文開示し、採用方針を明示。原因日修正済。最終SVGの境界標/辺長/基準点/隣地/道路/位置を再確認。"
+    },
+    {
+      "identity": "chosashi-2024-pm-q21",
+      "status": "pass",
+      "primaryEvidence": "原問001427202p22-30、規則16/100/101、登録免許税別表第一1(13)",
+      "evidence": "B27.39/54.17、D30/60.78、P27.49/60.82。独立靴紐37.53290→37.53、8.34775→8.34。税額2個×1000=2000。小問1と5は原問条件/法令と整合。 修正後SVGを画像化し、原図の相対位置・形状と全辺寸法・方位・隣地・離隔・求積を再照合済。"
+    },
+    {
+      "identity": "chosashi-2025-pm-q22",
+      "status": "pass_as_independent_example_with_disclosed_form_limit",
+      "primaryEvidence": "原問001450011p34-42、規則81/83/115",
+      "evidence": "1月旧主取壊し、旧附属2を主へ123.50/123.50。新倉庫1F190.75、修正2F165.30。新附属5/6は原文工事順条件。原因欄の完全な転記形式は個別先例未取得、原文事実/日付と矛盾しないことを限定確認。 修正値・守衛所図再確認。申請原因事実の対応表として整合し、登記原因欄の唯一の完全転記例とまでは承認しない。"
+    },
+    {
+      "identity": "chosashi-2024-pm-q22",
+      "status": "pass",
+      "primaryEvidence": "原問001427202p31-37、規則115",
+      "evidence": "原図閉鎖形状から1F68.040、2F57.510+14.175=71.685→71.68。出窓0.90高・開放車庫・屋外廊下・バルコニー除外。共有持分2/5・3/5、申請人桜子、9/30新築、10/18申請と一致。 修正後SVGを画像化し、原図の相対位置・形状と全辺寸法・方位・隣地・離隔・求積を再照合済。"
+    },
+    {
+      "identity": "chosashi-2024-pm-q5",
+      "status": "pass_limited_explanation",
+      "primaryEvidence": "原問001427202第5問、公式正答001427198=3、連合会70周年PDF pp58-61に一次転載された令和元年10月7日民二187通知2(1)/(3)",
+      "evidence": "2(1)は代理人申請時に代理人自身が作成したもののみ令13除外と解釈し、委任状を明示。2(3)に別紙対象外添付情報の制度が存在。イウ対象/アエオ対象外は本設問公式正答に限定して説明可能。除外別紙原本未取得のため、他権利者保護が通知制定理由だと断定しない。通知要件と個別対象区分を分けて説明する修正を親へ推奨。 最終保存稿で通知2(1)/(3)補足、原問限定説明、needsReview=false、evidenceで別紙未取得の保持を再確認。"
+    }
+  ],
+  "descriptiveLabel": {
+    "status": "pass",
+    "evidence": "6問のmodelAnswerに『公式問題に基づく独自解答例（法務省の公式解答ではありません）』を確認。"
+  },
+  "uxReview": {
+    "status": "pass_static_diff_review",
+    "scope": "新資格metadata、記述自己確認、静的詳細ページ、JSONLD差分のみ。ブラウザ実機確認は親担当。",
+    "evidence": [
+      "独自解答例と公式解答でない旨をカード先頭表示。",
+      "出題の趣旨を解答ではないと明示。",
+      "記述分岐はcommitAnswerを呼ばず自動採点しない。",
+      "detailsのnative keyboardと次問focus修正をコード再確認。",
+      "静的詳細頁も独自例を表示、記述JSONLDはsuggestedAnswer。"
+    ],
+    "streamSupplement": {
+      "status": "pass_core_behavior_minor_focus_followup",
+      "file": "C:\\wt\\kakomon-chosashi-latest-two-20261011\\components\\quiz\\stream\\StreamQuizPlayer.tsx",
+      "sha256": "b772ab96b5bfc2714cc6cf017f07b42e176273d670a5a72c3b014d3193d532f2",
+      "scope": "StreamQuizPlayer.tsxの追加差分と既存goNext/onSelect/hooksのみ静的確認。原問再読なし。",
+      "evidence": [
+        "記述分岐は全React hooks後かつshowSummary後。",
+        "QuestionCard+DescriptiveAnswerCardのkey=question.idで独自例の開閉状態は次問へ引き継がない。",
+        "記述中global shortcutをreturnし、選択onSelect/history.recordへ入らない。",
+        "次問buttonはgoNextに接続、advancingRefで連打の二重遷移を防止。",
+        "最終問題では既存showSummaryへ進むため選択肢不在で停止しない。"
+      ],
+      "minorFollowup": "長い記述ページの次問遷移時にfocus/scrollを先頭へ戻す処理がない。通常QuizPlayer同様のref/tabIndex=-1とindex変更effectを親に推奨。",
+      "testOwnership": "ストリーム次問・履歴0のテストは親担当。独立実行はしていない。"
+    }
+  },
+  "completedAt": "2026-10-11T03:02:11.133182+00:00",
+  "descriptiveAcceptance": {
+    "status": "six_examples_acceptable_with_disclosed_limits",
+    "confirmed": "小問網羅、数値検算、公式原問図形の相対位置、独自解答の明示を6問確認。",
+    "limits": [
+      "2025PM21残部217.87/217.90は丸め方法の解釈差を本文開示し、一意の公式解答としない。",
+      "2025PM22申請欄は原問の原因事実に対応する独自例として確認。完全転記の唯一形式とは断定しない。"
+    ],
+    "remainingSubstantiveNumericalOrGeometricBugs": [],
+    "publicationDecision": "ユーザー/親の判断対象。独立局所レビューは全66問の内容保証ではない。"
+  },
+  "artifactHashes": {
+    "drafts\\2024-descriptive.json": "d15092d70fd93a600603bcd73c4a34974a80ad16157e607839d9ade8c084c8fa",
+    "drafts\\2024-pm-mc.json": "e84987f1eb3ab93aff52376629e88595ec33d3818cd4332bed5038ad8c977a5b",
+    "drafts\\2025-descriptive.json": "77089e05545d2fd73c10ab9cfaaf57a3ad1d9ecda8bca8e97bc4297b6206389a",
+    "drafts\\2025-pm-mc.json": "d083a4204ab045dd3454d8c64f8bcb5db64a5f17483ece662e901c562ee59b44",
+    "drafts\\am-mc.json": "28806157f644867be6c1873b030298ae9e99828ceed4422c9fc70bb8b3f8b942",
+    "answer-figures\\2024-am-q11-answer.svg": "194809494b61911fa4bea8241d8de4068e169e3eb9bcfadfff92f7a3b5b7df57",
+    "answer-figures\\2024-pm-q21-answer.svg": "0651887a40c67fa0fdf11a550de5aafda02ae60efcd225e6f61d1c4a2802b691",
+    "answer-figures\\2024-pm-q22-building-answer.svg": "fad6d52529603064a5d11a15cc7f9ffbbc6db1acf1ec58a624d798df9136c7f7",
+    "answer-figures\\2024-pm-q22-floor-answer.svg": "95068153d24b06f54cc193cdb5f1ad8dca3ec16ef0ba0670a892064230535e56",
+    "answer-figures\\2025-am-q11.svg": "0edcf060b78ec34c043a917c7c8aec3782208195ac25941a872e022bd81d0454",
+    "answer-figures\\2025-pm-q21-survey.svg": "0ec5f6ce9eb4a36e0cb80a0449e85aabd371f88626ad0e70a6254903d064d66d",
+    "answer-figures\\2025-pm-q22-floor.svg": "2c0448542211d2f52983199ee19708e7a794fdb8a2c8c5065a5c5e4fe1dcc9dc"
+  }
+}

@@ -25,4 +25,19 @@ describe("合格通知時期記事の CBT 区分に FE を含む", () => {
     const body = getBlogPostBySlug(SLUG)!.body;
     expect(body).toContain("基本情報技術者（FE）は通年 CBT 方式");
   });
+
+  it("2026年度のAP・高度・SCの成績・合格発表時期を区別する", () => {
+    const body = getBlogPostBySlug(SLUG)!.body;
+    expect(body).toContain("前期は2027年1月頃、後期は2027年5月頃");
+    expect(body).toContain("前期は2027年2月頃、後期は2027年6月頃");
+    expect(body).not.toContain("PBT（紙試験）の試験では");
+  });
+
+  it("証書の簡易書留と再発行不可、証明書の別申請を案内する", () => {
+    const body = getBlogPostBySlug(SLUG)!.body;
+    expect(body).toContain("簡易書留");
+    expect(body).toContain("紛失しても再発行できません");
+    expect(body).toContain("合格証明書を申請");
+    expect(body).not.toContain("普通郵便");
+  });
 });

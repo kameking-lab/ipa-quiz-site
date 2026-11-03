@@ -1,0 +1,86 @@
+{
+  "schemaVersion": 1,
+  "reviewModel": "claude-opus-5-5",
+  "inputHashes": {
+    "candidateSha256": {
+      "39": "7c6c527af4e6ac16bf7d3ba06c71955ff438def252ef7c2cce4c0593cf467787",
+      "45": "8223587bfafe928cb2adfb1eaf3c9c48bb52faf6858eb390ac8764e8f6533ed7",
+      "46": "6eeb9f5ba29a736a2e98e2eae5e7ab0cb24b9a2ebf0ecdb46bcee1d12a2e6714",
+      "47": "888d29eafd1693262a24b0ce3584d15b887faf0c3f20b67bdda0716d916a7bc5",
+      "48": "4c4d0ccd444eee5dbd704d88b842c155e8747a444c05387905c4161b1c910a13"
+    },
+    "sourceCropSha256": {
+      "39": "e947e42663d3b4af0edf496907ee42c833fef6531cc0c0d40ded65f03c648fd1",
+      "45": "1f1154106b4e910e1a3f72a4dfe32872e89f539ee95b62591794c663b58c4081",
+      "46": "1983191681022a9d42d1de602b1ba368e3695dc59630ba185ff4b83072f30f7e",
+      "47": "79d2ad79c8fb9e001e754612f7e96e94eef7d6c06fcb1b8b3ac552867eab2751",
+      "48": "a35c0baa53554b4aa7471f789eebfffb0aa691f1cb5d4d4506b85043b2e43666"
+    }
+  },
+  "assessment": [
+    {
+      "number": 39,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "visualIssues": [],
+      "sourceIssues": [
+        "officialReferenceUrls is empty. The explanation relies on two symbol claims: that the S symbol means a switch (開閉器), and that the f20A annotation means a fuse rated 20A. The official answer (イ: interrupting overcurrent) supports only the device's purpose. It does not directly support what 'f' means or what the symbol is (drawn in the original as a circled S inside a square).",
+        "An mlit.go.jp source might define these symbols: the 公共建築設備工事標準図（電気設備工事編）, found by search. I fetched the 令和4年版 and 平成28年版 PDFs, and shiken.or.jp kex06.pdf, but could not read any of their text. The claims remain unverified. Add a primary source that defines the switch symbol and the f annotation, or change the explanation so it relies only on the official answer."
+      ],
+      "verifiedEvidence": "Checked against the official question PDF (20240526_co_second_q01.pdf, common wiring diagram p.15) and the official answer (20240526_co_second_a01.pdf, 問39=イ). ⑨ points to the S symbol with f20A beside the refrigerator. c is the three-phase 200V refrigerator circuit (power panel diagram BE 3P20A, legend). The meaning of the switch symbol and of the f annotation has no primary-source support yet."
+    },
+    {
+      "number": 45,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "visualIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": "Checked against the official question PDF (common wiring diagram p.15 and the 問45 photos) and the official answer (問45=ニ). ⑮ is the triangle symbol with '6' in the lighting panel diagram, feeding the double-circled a–f circuits (legend: double circles are single-phase 200V). g is routed separately through TS. ⑦ is the dashed box fed from BE 100V20A. In the photos, イ is a remote-control transformer (100V/24V, fuse capacity 2A), ロ has a time dial, ハ has 2 main-circuit terminals and ニ has 4. The crops match the original."
+    },
+    {
+      "number": 46,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "visualIssues": [],
+      "sourceIssues": [
+        "officialReferenceUrls is empty. Add https://www.shiken.or.jp/construction/upload/point2024.pdf (SHA256 0b40cdd6…). Its p.24 supports the claim that the E sleeve is the end-overlap type (JIS C 2806 終端重合せ用). Its p.25 supports the claim that the yellow-handled tool is the ring-sleeve crimping tool.",
+        "point2024.pdf p.26 describes the red/orange-handled tool as a crimp-terminal tool (圧着端子用). The candidate calls it a tool for bare crimp sleeves (裸圧着スリーブ用 / P形などの裸圧着スリーブ用) in choices ハ・ニ, the explanation and the choice explanations. The attached primary source does not directly support this wording. Either align it with the source ('crimp-terminal / P-sleeve tool') or add a primary source for the current wording.",
+        "No attached primary source directly supports the claim that the P sleeve is the straight-overlap type (直線重合せ用). The official answer ニ supports it only indirectly, as the correct combination for this question."
+      ],
+      "verifiedEvidence": "Checked against the official question PDF (common wiring diagram p.15: ⑯ = the grounding wire E5.5; 問46 photos: yellow and red tools, E and P sleeves) and the official answer (問46=ニ). point2024.pdf p.24–26 confirms that the E-type ring sleeve is for end-overlap joints, that the yellow-handled tool is for ring sleeves, and that the red/orange tool is for crimp terminals."
+    },
+    {
+      "number": 47,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "visualIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": "Checked against the official question PDF (common wiring diagram p.15: ⑰ = the ●● with L and エオ near the toilet/wash-area partition; 問47 photos and contact diagrams) and the official answer (問47=ニ). The contact diagrams are, in order: イ 3-way, ロ lamp in parallel with the contacts, ハ single-pole without lamp, ニ lamp branching from the load side to terminal 3. The crops match the original."
+    },
+    {
+      "number": 48,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "visualIssues": [],
+      "sourceIssues": [
+        "officialReferenceUrls is empty. The explanation relies on the ring-sleeve size ranges, but no source is cited. Add https://www.shiken.or.jp/construction/upload/point2024.pdf p.25, the JIS C 2806 table for ring sleeves and wire combinations. For same-size φ2.0mm wire it gives: 2 wires = 小, 3–4 wires = 中, 5 wires = 大. This directly supports the conclusion that 2.0mm×4 and 2.0mm×3 both need 中."
+      ],
+      "verifiedEvidence": "Checked against the official question PDF (common wiring diagram p.15) and the official answer (問48=ロ). Four cables enter ⑱: three VVF2.0-3C (to the upper 2E outlet, to ⓒ, and down to the lower 2E outlet) and one VVF2.0-2C (to the lighting box). That gives three joints: ungrounded 2.0×4, grounded 2.0×4 and earth 2.0×3. Applying the φ2.0 same-size rows of the point2024.pdf p.25 table gives three 中 sleeves, which matches the official answer."
+    }
+  ]
+}

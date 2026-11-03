@@ -1,0 +1,49 @@
+{
+  "inputHashes": {
+    "draftSha256": "b0fa1fb3db8a5250431ffdc48aae4ce1291fc95aa842cf6aae3885cf3116ecc8",
+    "rowSha256": {
+      "46": "a69cc524c8bf0e786a7e2d27f8730dc91cb5ef01e47bfe9fda4a8edb43b34b6e",
+      "50": "1a81d2b36328e5c827367f85e898e7373f1303d199e8a236929efb8ce98d76b0"
+    },
+    "sharedFigureSha256": {
+      "public/images/denko2/2025-second/wiring-first-floor.png": "88f652f95103f8bcd90c110af995e65046ace5b5f38e9bceeaad6ab64d29534a",
+      "public/images/denko2/2025-second/wiring-second-floor.png": "f1076fbb7d9e11339f58b180c19a36b98f7146254572449b4b342157779a31e9",
+      "public/images/denko2/2025-second/wiring-panel.png": "2ab6ad86eea5b617f06c0619a24488a74b154265518ad9b2863bda3243aa819f"
+    },
+    "commonInstructionsSha256": "e2bb1b00f146246a003a209c7614e3c0e316f6991480b6f82e9ee5e6a18b2a5b",
+    "detailFigureSha256": {
+      "public/images/denko2/2025-second/q46-i.png": "557e569c7dd5073761c82a0015fd5bc4baa88d52e96bc1fbc4aec863b8b2f039",
+      "public/images/denko2/2025-second/q46-ro.png": "c816cd9b7f6970ff12d13ef0c3a3896a44fa6233163407d70a32b488bc96fab9",
+      "public/images/denko2/2025-second/q46-ha.png": "538a233ca72212c926eb308e2af3edd0189f30923c4b51c7bcb77d052adc2618",
+      "public/images/denko2/2025-second/q46-ni.png": "de5fb35a10a0cce684531062625f1fd280cfaa3db2b82182da611464c0211115",
+      "public/images/denko2/2025-second/q50-i.png": "be4b048e89e5ae72598e1c1ede3cc2d7a626b9b33268bb9fbec24bb09fbca455",
+      "public/images/denko2/2025-second/q50-ro.png": "81b8e897df8fe2d89ec9312feaebec3d301378eda8f59f4b397fa61909176fb9",
+      "public/images/denko2/2025-second/q50-ha.png": "8dc0a815ceee9496aaf4714a80869727f62a145eab2884e60cad0e290a884ede",
+      "public/images/denko2/2025-second/q50-ni.png": "3905c5a8a2c6c3916c5ac61a0575239a7ddfcc9af6d9e03b0d76b1345aeb9347"
+    },
+    "legalReceiptSha256": {
+      "docs/evidence/denko2-law/20251026-q46.json": "92a5ee9c28a01ee2e222e2e0e5c2a4ef3766806a136dab2b1e399ad9c6992a77"
+    }
+  },
+  "reviewModel": "claude-opus-5-5",
+  "assessment": [
+    {
+      "number": 46,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "lawNeedsExternalCheck": []
+    },
+    {
+      "number": 50,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "lawNeedsExternalCheck": []
+    }
+  ]
+}

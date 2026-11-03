@@ -1,0 +1,84 @@
+[
+  {
+    "number": 17,
+    "approved": true,
+    "issues": [],
+    "suggestedCorrection": "",
+    "sourceQueries": [
+      "地震保険 基本料率 所在地 都道府県 構造区分",
+      "地震保険 割引制度 重複適用 不可 損害区分 支払割合"
+    ]
+  },
+  {
+    "number": 18,
+    "approved": true,
+    "issues": [],
+    "suggestedCorrection": "",
+    "sourceQueries": [
+      "法人契約 普通傷害保険 従業員全員 保険金受取人 従業員 福利厚生費 損金",
+      "保険差益 圧縮記帳 棚卸資産 対象外 法人税"
+    ]
+  },
+  {
+    "number": 19,
+    "approved": true,
+    "issues": [],
+    "suggestedCorrection": "",
+    "sourceQueries": [
+      "医療保険 検査入院 人間ドック 異常なし 入院給付金 支払われない",
+      "がん保険 免責期間 90日 3カ月 責任開始日"
+    ]
+  },
+  {
+    "number": 20,
+    "approved": true,
+    "issues": [],
+    "suggestedCorrection": "",
+    "sourceQueries": [
+      "機械保険 火災 免責 補償対象外",
+      "労働災害総合保険 政府労災 上乗せ 請負業者賠償責任保険"
+    ]
+  },
+  {
+    "number": 21,
+    "approved": true,
+    "issues": [],
+    "suggestedCorrection": "",
+    "sourceQueries": [
+      "日米金利差 拡大 円安 ドル高 要因",
+      "購買力平価説 為替レート 計算 物価上昇 円安"
+    ]
+  },
+  {
+    "number": 22,
+    "approved": true,
+    "issues": [
+      "総合解説の「消去法により…と判断」「正しい記述と判断」という表現は、公式正答に沿って断定すべきところを曖昧にしている(内容自体は公式正答イと整合)。"
+    ],
+    "suggestedCorrection": "総合解説を「当座預金は公共料金等の口座振替(自動振替)口座として利用できるためイが適切。期日指定定期預金は据置期間(1年)経過後に満期日を指定する仕組み、スーパー定期の半年複利型は個人のみ、大口定期は最低1,000万円の固定金利型であり、ア・ウ・エは不適切。」に修正し、イの肢解説末尾の「と判断」を削る。",
+    "sourceQueries": [
+      "期日指定定期預金 据置期間 1年 最長預入期日 3年",
+      "大口定期預金 1,000万円 固定金利 スーパー定期 半年複利型 個人のみ"
+    ]
+  },
+  {
+    "number": 23,
+    "approved": true,
+    "issues": [],
+    "suggestedCorrection": "",
+    "sourceQueries": [
+      "ETF 信用取引 可能 信託報酬",
+      "ETF 分配金 自動再投資されない REIT指数 商品指数 連動"
+    ]
+  },
+  {
+    "number": 24,
+    "approved": true,
+    "issues": [],
+    "suggestedCorrection": "",
+    "sourceQueries": [
+      "債券価格 市場金利 逆相関 残存期間 長い 価格変動 大きい",
+      "好景気 物価上昇 金利上昇 債券価格 下落"
+    ]
+  }
+]

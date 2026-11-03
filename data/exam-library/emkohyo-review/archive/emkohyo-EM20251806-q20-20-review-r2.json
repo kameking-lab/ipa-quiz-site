@@ -1,0 +1,60 @@
+{
+  "reviewModel": "claude-opus-5-5",
+  "requestedModel": "claude-opus-5-5",
+  "canonicalModel": "claude-opus-5-5",
+  "provider": "firstParty",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 2513,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 13307,
+      "webSearchRequests": 0,
+      "costUSD": 0.1569798,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 1657,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponsePath": "data/exam-library/emkohyo-review/emkohyo-EM20251806-q20-20-raw-response.txt",
+  "rawResponseSha256": "400bc6129d738445cfba4d03993b8a428c3e82bbe355231ab26ee528fcdb1f72",
+  "paperId": "emkohyo-EM20251806",
+  "ids": [
+    "emkohyo-EM20251806-q20"
+  ],
+  "figureSha256": {
+    "emkohyo-EM20251806-q20": {}
+  },
+  "officialRowImageSha256": {
+    "emkohyo-EM20251806-q20": {
+      "/exam-library/emkohyo-EM20251806/q20-p11-1.webp": "75f2069c146cebd674c20b8b0ea5ccba7d196c9cd5564d581bbc7e403f86f4a5"
+    }
+  },
+  "officialPageImageSha256": {},
+  "governmentSourceImageSha256": {},
+  "candidateSha256": {
+    "emkohyo-EM20251806-q20": "9c1a5b65bc3cc69f2685c8c9bd7faf91d54eaffa99a33941061906d4a5cd4e1a"
+  },
+  "sourcePackPath": "docs/evidence/emkohyo-choice-sources/emkohyo-EM20251806-q20-20.json",
+  "sourcePackSha256": "1694249c982d474d704310a6021fcec8b274e0c86432492270c57b6985c2493b",
+  "assessment": {
+    "emkohyo-EM20251806-q20": {
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "reasonIssues": [
+        "肢5の理由は「小円で計数する場合も繊維数の条件は200本である」と断定している。しかし添付資料の該当箇所（p.25「検鏡した視野の数が100視野になるまで、あるいは繊維数が200本以上になるまで行う」、p.35の200本終了規定）は、終了条件をアイピースグレーティクルの小円（直径0.1 mm）に結び付けて述べていない。「本数の基準は視野円の大きさではなく計数精度から決まる」はp.25の「標準誤差が約±7%となるように定めている」から導いた推論で、資料の直接記述ではない。推論であることを明示するか、小円計数時の終了条件を直接規定する記述に差し替えること。200本の根拠（ポアソン誤差1/√200≒7%）と、肢5が誤りという結論自体は支持される。"
+      ],
+      "sourceIssues": [
+        "環境省アスベストモニタリングマニュアル（第4.2版）の抜粋は、計数の終了条件（100視野／200本）と計数視野円の径（小円直径0.1 mm か大円か）の対応を示していない。問題文は「小円内（直径0.1 mm）を計数する場合」と条件を付けているため、この政府資料は肢5の条件部分を直接には支えていない。同マニュアル内で計数視野範囲を定義している箇所（位相差顕微鏡法の計数視野の径の規定）の抜粋を追加するか、作業環境測定の公的基準で小円計数時の条件を明記した資料を併記すること。"
+      ],
+      "needsExternalCheck": [
+        "環境省アスベストモニタリングマニュアル第4.2版の位相差顕微鏡法の節で、計数視野範囲がアイピースグレーティクルの小円（直径100 µm）と規定されているか、また「100視野／200本以上」がその小円計数を前提とした条件かを原文で確認すること。",
+        "作業環境測定の公的基準（作業環境測定基準・作業環境測定ガイドブック等）で、小円（直径0.1 mm）計数時の終了条件が「繊維数200本以上又は100視野」と明記されているかを確認し、大円計数時と条件が異なる場合は肢5の理由に反映すること。"
+      ]
+    }
+  }
+}

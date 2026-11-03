@@ -1,0 +1,79 @@
+{
+  "inputHashes": {
+    "draftSha256": "8042ecd132a4497f9f7bac6e696c449db012d19e3b592f4bf53b82515d1a862c",
+    "candidateSha256": {
+      "21": "8b90113dd9e3a7eb312e488c34d8bcc865dd58417db2f4abb887b4c9070a41b1",
+      "22": "ca20cb46bdc0395f875aa277a6d070dd80b200034c97b18ad6c89baa1c31d656",
+      "23": "134db4af146882b8d4d3c4c06875aa7ba48e78f87e32bb3c154ac2be6461c048",
+      "24": "cf89e9b456088d15973f679ae727e80b4925834b210346ca39b9abe975603cd2",
+      "25": "35f1948b4b0c87b620d362bc0ca535fde2b399e2535cfe9bcfe2461a8e2cc861"
+    },
+    "rowSha256": {
+      "21": "ed08212b35a74911744e3f58895ca9d88b5fec9ed42fb8530516a5e65b6d6c67",
+      "22": "9a5d24f51e4f8f445f8d7e04bf098e68544384632870adee740198aaacdea578",
+      "23": "25b7b6901e41decc3b2081c86dad4c7cbc40c44b4dbddc5796319aa22c196134",
+      "24": "cbf0e2f404993732b0bd065a1d19a54fe38aaf5801639c35c296a3d5a19264f1",
+      "25": "40b8d9b7b82c191f3623af68fb6c9392c4a5770f1516e1810efde3c62de7af84"
+    },
+    "figureSha256": {
+      "public/images/denko1/2026-first/q22.png": "4ee4290437c1b320bec8ab001a1626b865b29e3a14c608a92ad2d14c705eb5b5",
+      "public/images/denko1/2026-first/q23.png": "897432bde33cf76b9adb99670e0a2f8560444235b4e12d57f192fb9d1593f4f5",
+      "public/images/denko1/2026-first/q25.png": "3d53236da0c57252ee92cb3b6609f6296b04bb80ddd6a8028dd0ae4dd62c689b"
+    },
+    "legalReceiptSha256": {}
+  },
+  "reviewModel": "claude-opus-5-5",
+  "cliInitModel": "claude-opus-5-5",
+  "sessionId": "e2421ad2-ccda-4caf-9d89-4f64e6c38288",
+  "assessment": [
+    {
+      "number": 21,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "explanationIssues": [
+        "explanationは、周囲の保有距離が必要な理由を「扉を開いて機器を操作・点検するための空間」だけで説明している。ところが同じ文の後半では、根拠として屋外キュービクルの「周囲」の保有距離(1m程度+保安上有効な距離)を挙げている。操作・点検に必要な面ごとの距離と、屋外設置時の周囲の保有距離は別々に定められているため、理由と根拠が一致していない。choiceExplanations.ニも「扉の開閉や点検・操作の空間が取れない」という理由だけで書かれており、同じずれがある。"
+      ],
+      "figureIssues": [],
+      "lawNeedsExternalCheck": [
+        "explanationの「高圧受電設備規程では、屋外に設置するキュービクルの保有距離を1m程度に保安上有効な距離を加えた値などとしている」について、照合receiptが添付されていない。数値(1m)、「程度」「など」という書き方の妥当さ、この値が周囲・操作面・点検面のどれに当たるかを規程の原文で確認する必要がある。"
+      ]
+    },
+    {
+      "number": 22,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "lawNeedsExternalCheck": []
+    },
+    {
+      "number": 23,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "lawNeedsExternalCheck": []
+    },
+    {
+      "number": 24,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "lawNeedsExternalCheck": []
+    },
+    {
+      "number": 25,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "lawNeedsExternalCheck": []
+    }
+  ]
+}

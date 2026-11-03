@@ -1,0 +1,126 @@
+{
+  "questionNumber": 5,
+  "sharedContext": null,
+  "units": [
+    {
+      "part": null,
+      "question": "回転界磁形同期電動機が停止している状態で，固定子巻線に対称三相交流電圧を印加すると回転磁界が生じる。しかし，励磁された回転子磁極が受けるトルクは，同じ大きさで向きが交互に変わるので，その平均トルクは零になり電動機は起動しない。これを改善するために，回転子の磁極面に［(ア)］を施す。これは，［(イ)］と同じ起動原理を利用したもので，誘導トルクによって電動機を起動させる。\n起動時には，回転磁束によって誘導される高電圧によって絶縁が破壊するおそれがあるので，［(ウ)］を抵抗で短絡して起動する。回転子の回転速度が同期速度に近づくと，この短絡を切り放し［(エ)］で励磁すると，回転子は同期速度に引き込まれる。\n\n上記の記述中の空白箇所(ア)～(エ)に当てはまる組合せとして，正しいものを次の(1)～(5)のうちから一つ選べ。",
+      "choices": {
+        "1": "(ア) 補償巻線　(イ) 巻線形誘導電動機　(ウ) 界磁巻線　(エ) 交流",
+        "2": "(ア) 制動巻線　(イ) 巻線形誘導電動機　(ウ) 界磁巻線　(エ) 交流",
+        "3": "(ア) 制動巻線　(イ) かご形誘導電動機　(ウ) 界磁巻線　(エ) 直流",
+        "4": "(ア) 制動巻線　(イ) かご形誘導電動機　(ウ) 固定子巻線　(エ) 直流",
+        "5": "(ア) 補償巻線　(イ) かご形誘導電動機　(ウ) 固定子巻線　(エ) 直流"
+      },
+      "officialAnswer": "3",
+      "explanation": "正答は(3)：(ア) 制動巻線，(イ) かご形誘導電動機，(ウ) 界磁巻線，(エ) 直流。\n\n【起動しない理由】停止中の回転子に対して回転磁界は同期速度で回転しているため，回転子磁極と回転磁界の相対位置が高速で変わり続ける。磁極が受けるトルクは吸引・反発が交互に入れ替わり，平均トルクは零となる。回転子は慣性のため追従できず，同期電動機は単独では起動できない。\n\n【(ア)・(イ) 自己始動法】回転子の磁極面に導体棒を埋め込み，その両端を短絡環でつないだ巻線が制動巻線である。この構造はかご形誘導電動機の回転子（かご形導体）と同じで，回転磁界によって導体に誘導電流が流れ，誘導トルクが発生して回転子が加速する。制動巻線は運転中には乱調（同期速度付近での回転速度の振動）を抑制する働きも持つ。\n\n【(ウ) 起動時の界磁巻線の処置】界磁巻線は巻数が多いため，起動時（回転子と回転磁界の相対速度が大きいとき）には回転磁束の鎖交により高電圧が誘導され，絶縁破壊のおそれがある。そこで界磁巻線を抵抗で短絡して起動する。\n\n【(エ) 同期への引き入れ】誘導トルクだけでは回転子は同期速度に達しない（すべりが残る）。同期速度に近づいたところで短絡を切り放し，界磁巻線を直流で励磁すると，回転子に固定の N・S 磁極ができ，回転磁界に引き込まれて同期速度で回転する。",
+      "choiceExplanations": {
+        "1": "誤り。(ウ) 界磁巻線は正しいが，(ア) 補償巻線は誤り。補償巻線は直流機で電機子反作用を打ち消すために主磁極面に設ける巻線であり，同期電動機の起動用巻線ではない。(イ) 巻線形誘導電動機も誤り。制動巻線は磁極面の導体棒を両端の短絡環で常時短絡した構造で，スリップリングや外部抵抗を持たず，かご形誘導電動機の回転子と同じ構造である。スリップリングを介して外部抵抗に接続する巻線形誘導電動機の回転子とは異なる。(エ) 交流も誤りで，回転界磁形同期電動機の界磁は直流で励磁する。",
+        "2": "誤り。(ア) 制動巻線と(ウ) 界磁巻線は正しいが，(イ) 巻線形誘導電動機は誤り。(ア)の制動巻線は導体棒を短絡環で常時短絡した構造で，スリップリングや外部抵抗を持たないため，かご形誘導電動機の回転子と同じ構造である。また(エ) 交流も誤りで，界磁は直流で励磁して固定の磁極をつくる必要があり，交流励磁では同期速度への引き入れができない。",
+        "3": "正しい。回転子磁極面の制動巻線（ア）がかご形誘導電動機（イ）の回転子と同じ働きをして誘導トルクで起動し，起動中は高電圧誘起による絶縁破壊を防ぐため界磁巻線（ウ）を抵抗で短絡しておく。同期速度付近で短絡を切り放し直流（エ）で励磁すると同期速度に引き込まれる。",
+        "4": "誤り。(ア)，(イ)，(エ)は正しいが，(ウ) 固定子巻線は対称三相交流電圧を印加して回転磁界をつくる巻線であり，これを短絡して起動することはない。回転磁束によって高電圧が誘導され絶縁破壊のおそれがあるのは，巻数の多い回転子側の界磁巻線である。",
+        "5": "誤り。(イ) かご形誘導電動機と(エ) 直流は正しいが，(ア) 補償巻線は直流機の電機子反作用対策の巻線であり同期電動機の起動用ではない。また(ウ) 起動時に抵抗で短絡するのは界磁巻線であり，電源を印加する固定子巻線ではない。"
+      },
+      "figureDescription": "図なし。選択肢は，列見出し(ア)・(イ)・(ウ)・(エ)，行見出し(1)～(5)の表形式で語句の組合せを示しており，その内容は choices にすべて記載している。",
+      "officialReferenceUrls": [],
+      "uncertainty": "なし",
+      "needsReview": true,
+      "sourceQuestionPdfUrl": "https://www.shiken.or.jp/chief/upload/20260322_ch_third_q03.pdf",
+      "sourceAnswerPdfUrl": "https://www.shiken.or.jp/chief/upload/20260322_ch_third_a01.pdf",
+      "reviewedFromPage": [
+        8
+      ]
+    }
+  ],
+  "draftModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 3910,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 9309,
+      "webSearchRequests": 0,
+      "costUSD": 0.1529358,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 1740,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "8bacd71343abcaf9d3894027b83fc8d924484f56b3b17a7839dc9e436eee293c",
+  "inputRequestSha256": "c079fe89b8fdacdcdaa32e72541a6b0d606672ed6a8115b87312ee57e519f272",
+  "sourceQuestionPdfSha256": "a89c7dc2b9a305f9db83f2f78195f0df8a0da5aeec6b8e66cfd40fb028d146fb",
+  "sourceAnswerPdfSha256": "cc2890296d06a4823df5697a78a1c01ddfd39f041c51f48c87984daa3a5707c6",
+  "sourcePageImageSha256": {
+    "data/raw_pdfs/denken3/review/20260322/machinery/p08.png": "9b060fb3e4569f292e3fdbbdb458505411aca252e0c69b2aba1fe886b1aa123d"
+  },
+  "revisionHistory": [
+    {
+      "version": 1,
+      "model": "claude-opus-5-5",
+      "resolvedModel": "claude-opus-5-5",
+      "modelUsage": {
+        "claude-opus-5-5": {
+          "inputTokens": 2,
+          "outputTokens": 3555,
+          "cacheReadInputTokens": 1279,
+          "cacheCreationInputTokens": 13342,
+          "webSearchRequests": 0,
+          "costUSD": 0.17809979999999997,
+          "contextWindow": 1000000,
+          "maxOutputTokens": 128000,
+          "thinkingTokens": 1270,
+          "canonicalModel": "claude-opus-5-5",
+          "provider": "firstParty",
+          "costBasis": "list"
+        }
+      },
+      "rawResponseSha256": "cb767d5c124c60887f35b8202691a3654dbf281b577382160acfafd337740a3e",
+      "inputRequestSha256": "1dfd0b5da71371c7332b297e30bbbf69a1a5f2a7aacae1f20c4bb062b39a90c2",
+      "previousDraftSha256": "7811db07be1f94089cb4fa84cee006bef2db1a8a76fcbd4502646eeae23fc497",
+      "previousDraft": "data/raw_pdfs/denken3/review/20260322/machinery/archive/q05-vision-draft-v1.json",
+      "answeredReviewSha256": "f5ff860d3c00392a658dcaa2aeb88e332f07d99adb06c836903ec435775dce91",
+      "answeredReview": "data/raw_pdfs/denken3/review/20260322/machinery/archive/q05-opus-review-v1.json",
+      "answeredStrictReceipt": "docs/evidence/denken3/strict/20260322-machinery-s1-q05-opus.json",
+      "answeredStrictReceiptSha256": "325a02c92895c584c5d2c4ecd12d5ac56613a023fd5712bf3389dedf9d2d29ae",
+      "figureSha256": {},
+      "referenceHashes": {},
+      "operatorNote": ""
+    },
+    {
+      "version": 2,
+      "model": "claude-opus-5-5",
+      "resolvedModel": "claude-opus-5-5",
+      "modelUsage": {
+        "claude-opus-5-5": {
+          "inputTokens": 2,
+          "outputTokens": 3485,
+          "cacheReadInputTokens": 1279,
+          "cacheCreationInputTokens": 12156,
+          "webSearchRequests": 0,
+          "costUSD": 0.1672118,
+          "contextWindow": 1000000,
+          "maxOutputTokens": 128000,
+          "thinkingTokens": 1161,
+          "canonicalModel": "claude-opus-5-5",
+          "provider": "firstParty",
+          "costBasis": "list"
+        }
+      },
+      "rawResponseSha256": "8ddfa9f18b80f07f2b7f4dd3e67b9a8123bde9e81c1044132a0e3493d9546ce2",
+      "inputRequestSha256": "243ba097e42fc29f4ae3d77cfdea06a1e5e4fb86d8fa38bff2ba1f3d07e16751",
+      "previousDraftSha256": "44e77899d6ecd3632f85cc86a4776b696b8b8cbf379fa35b6d70d7749a247c01",
+      "previousDraft": "data/raw_pdfs/denken3/review/20260322/machinery/archive/q05-vision-draft-v2.json",
+      "answeredReviewSha256": "fec3b84b9751e9fe6f9706e7a673232d2c1b7900bd3e56ca33a3ee76ef9aad01",
+      "answeredReview": "data/raw_pdfs/denken3/review/20260322/machinery/archive/q05-opus-review-v2.json",
+      "answeredStrictReceipt": null,
+      "answeredStrictReceiptSha256": null,
+      "figureSha256": {},
+      "referenceHashes": {},
+      "operatorNote": ""
+    }
+  ]
+}

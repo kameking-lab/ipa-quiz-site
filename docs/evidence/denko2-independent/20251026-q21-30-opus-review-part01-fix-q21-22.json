@@ -1,0 +1,34 @@
+{
+  "inputHashes": {
+    "draftSha256": "f6a512de22311920dd4a59dfe32d9162b66434c2e42482889b02390173a85ba1",
+    "rowSha256": {
+      "21": "fea5bc87dbc9cbe6f0b375e45a69683aa300fb94abca216208d5354f851def09",
+      "22": "fa2bcb6b5c24eac75fac85b200f94946c222bb292bd7ad94a57f5e6ebeea71a5"
+    },
+    "legalReceiptSha256": {
+      "docs/evidence/denko2-law/20251026-q21.json": "23c5e88f8e13d2f8b65908646c4170bc0c6103483d3fe53c56f72138880b44c4",
+      "docs/evidence/denko2-law/20251026-q22.json": "3189991d80f69a821cea4b4a5083b2ef9dcda4ca70fadf04bd180c520a56fa4a"
+    }
+  },
+  "reviewModel": "claude-opus-5-5",
+  "assessment": [
+    {
+      "number": 21,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "lawNeedsExternalCheck": []
+    },
+    {
+      "number": 22,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "lawNeedsExternalCheck": []
+    }
+  ]
+}

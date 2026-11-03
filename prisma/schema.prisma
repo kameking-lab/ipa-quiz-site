@@ -16,6 +16,15 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
+// Anonymous, short-lived browser presence; expired rows are removed on heartbeat.
+model StudyPresence {
+  id         String   @id
+  lastSeenAt DateTime @default(now())
+  exam       String?
+
+  @@index([lastSeenAt])
+}
+
 // ---------------------------------------------------------------------------
 // User / Auth
 // ---------------------------------------------------------------------------

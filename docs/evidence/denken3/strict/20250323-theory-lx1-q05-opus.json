@@ -1,0 +1,75 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20250323",
+  "subject": "theory",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 3572,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 14881,
+      "webSearchRequests": 0,
+      "costUSD": 0.1907518,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 1597,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "011cea0914b96becabb25e2c0287d96408798c049a02a94b07a7e2fe43aa4d14",
+  "inputRequestSha256": "809c4d8b367925214cefa59930326332e1fff5d0683fd41ecb88f02ff8590739",
+  "inputHashes": {
+    "candidateSha256": {
+      "q05": "08a5db3321df490f097a60c3dcb740c73c3a218183e396ecc240edac19fdc263"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20250323/theory/p08.png": "1abcb0fb3b6c6b31a726ca92737a54c7f69767547cf9c4e524ce0abfa2d38b8b"
+    },
+    "figureSha256": {
+      "public/images/denken3/20250323/theory/20250323-theory-q05-energy-circuit.png": "81f6caf7a309ef9d8407116dfa53dcaa92814e537eab05713e3dbbfce5b7d258"
+    },
+    "sourceQuestionPdfSha256": "8817012cb55eed9c83bb1e68df138909b1e03a81f7ed48a9893a219e1d2a76ca",
+    "sourceAnswerPdfSha256": "4c3b38fcf1405766fafaa78b1b05b867a3d48307a670b9d354476bc6b32acd4c",
+    "officialAnswerUnitsSha256": "94ce3aef5a76a15e036713f1c30faaaee0c2e160e915d1414a742bc6013acbab",
+    "referencePdfSha256": {},
+    "referencePageSha256": {},
+    "referenceJsonSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q05",
+      "questionNumber": 5,
+      "part": null,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "出典メタデータ: fiscalYear=2024（令和6年度）、term=lower（下期）、examDate=2025-03-23、subject=theory、sourceQuestionPdfUrl=https://www.shiken.or.jp/chief/upload/20250323_ch_third_q01.pdf、sourceAnswerPdfUrl=https://www.shiken.or.jp/chief/upload/2024_3_2.pdf、reviewedFromPage=[8] は、いずれも manifest と一致する。原図の冊子内ページ表記は「-5-」、フッターは「T2-R 008」で、PDF第8頁と整合する。sourceAttribution の「令和6年度下期第三種電気主任技術者試験 理論科目 問5」も正しい。",
+        "問題文: 候補の問題文を原図と照合した。R₁=20 Ω、R₂=30 Ω、L₁=20 mH、L₂=40 mH、C₁=400 μF、C₂=600 μF、E=100 V、『定常状態において L₁、L₂、C₁ 及び C₂ に蓄えられるエネルギーの総和の値[J]』、『最も近いもの』、『(1)〜(5)のうちから一つ選べ』を確認し、数値・単位・語句はすべて一致する。句読点の全角・半角の整形だけが異なり、意味は変わらない。",
+        "選択肢: (1)0.12、(2)1.20、(3)1.32、(4)1.40、(5)1.52 は原図と完全に一致する。",
+        "公式正答: 公式解答表の理論・問5の値は 5 で、候補の officialAnswer=\"5\" と一致する。",
+        "原図の接続: 左側の黒丸は E の上側端子につながる。左側黒丸から L₁、R₁ が直列に並び、右中央の黒丸に至る。C₁ は左側黒丸から上へ回る配線上にあり、右中央黒丸へ降りる。したがって C₁ は L₁+R₁ に並列である。右中央黒丸から L₂（上）と R₂（下）が直列に下側の黒丸へ降りる。右中央黒丸から右へ出た配線は C₂ を経て下側配線に至るので、C₂ は L₂+R₂ に並列である。下側配線は E の下側端子に戻る。",
+        "独立検算（電流）: 直流の定常状態では L は短絡、C は開放として扱える。電流経路は E→L₁→R₁→L₂→R₂→E の単一直列で、I = 100/(20+30) = 2 A。",
+        "独立検算（コイル）: W_L1 = ½×0.020×2² = 0.04 J、W_L2 = ½×0.040×2² = 0.08 J。",
+        "独立検算（コンデンサ）: V_C1 = V_R1 = 2×20 = 40 V なので W_C1 = ½×400×10⁻⁶×40² = 0.32 J。V_C2 = V_R2 = 2×30 = 60 V なので W_C2 = ½×600×10⁻⁶×60² = 1.08 J。",
+        "総和: 0.04 + 0.08 + 0.32 + 1.08 = 1.52 J で、選択肢(5)と一致する。総合解説の計算と因果（L短絡・C開放、C₁=R₁電圧、C₂=R₂電圧）もすべて正しい。",
+        "誤答肢(1): 0.04+0.08 = 0.12 J（コイルのみ）で、記述は正しい。",
+        "誤答肢(2): 0.12+1.08 = 1.20 J（C₁ を欠落させた場合）で、記述は正しい。電圧を逆に割り当てた場合の 0.72+0.48 = 1.20 J（コイルを欠落させた場合）も算術的に正しい。どちらも正しい総和 1.52 J ではない、という結論も正しい。",
+        "誤答肢(3): C₁ に 60 V、C₂ に 40 V を割り当てると、½×400×10⁻⁶×3600 = 0.72 J、½×600×10⁻⁶×1600 = 0.48 J となる。これにコイル分を足すと 0.72+0.48+0.12 = 1.32 J で、記述は正しい。原図の並列関係に照らして電圧割当てが逆であるという指摘も正しい。",
+        "誤答肢(4): 0.32+1.08 = 1.40 J（コンデンサのみ）で、記述は正しい。",
+        "正答肢(5): 各素子のエネルギー値と総和 1.52 J の記述は正しい。",
+        "公開候補図: 原図と比べて、素子配置・接続・3つの黒丸（左側接続点、右中央接続点、下側接続点）・全ラベル（E, L₁, R₁, C₁, L₂, R₂, C₂）が一致する。電源記号の向きも原図と同じで、上側が長い極板である。本問は極性がエネルギー値に影響しない。候補図だけで C₁∥(L₁+R₁)、C₂∥(L₂+R₂) の関係を読み取って解答できる。",
+        "figureDescription: 記述は原図・候補図の接続と一致する。",
+        "officialReferenceUrls: 空配列で、独立主張はない。検証を要する外部参照もない。"
+      ]
+    }
+  ]
+}

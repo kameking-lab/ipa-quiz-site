@@ -1,0 +1,63 @@
+{
+  "reviewModel": "claude-opus-5-5",
+  "requestedModel": "claude-opus-5-5",
+  "canonicalModel": "claude-opus-5-5",
+  "provider": "firstParty",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 3674,
+      "cacheReadInputTokens": 139443,
+      "cacheCreationInputTokens": 17273,
+      "webSearchRequests": 0,
+      "costUSD": 0.2395606,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 2456,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "paperId": "emkohyo-20260217",
+  "ids": [
+    "emkohyo-20260217-q19"
+  ],
+  "figureSha256": {
+    "emkohyo-20260217-q19": {}
+  },
+  "officialRowImageSha256": {
+    "emkohyo-20260217-q19": {
+      "/exam-library/emkohyo-20260217/q19-p14-0.webp": "30ec2c7da40a6847edd852d39f60b280ccd780460a40b8448b9ac3365141086b"
+    }
+  },
+  "officialPageImageSha256": {},
+  "governmentSourceImageSha256": {},
+  "candidateSha256": {
+    "emkohyo-20260217-q19": "1be3799959a2b19a8a0f894855606f60255ee75dcfb5e20e6801b932b73e3e75"
+  },
+  "sourcePackPath": "docs/evidence/emkohyo-choice-sources/emkohyo-20260217-q19-19.json",
+  "sourcePackSha256": "b29f8b2f6c2aaf1728ec4c9ba9090c01665f016882a75eb190776631e49e2288",
+  "assessment": {
+    "emkohyo-20260217-q19": {
+      "status": "FIX",
+      "textIssues": [
+        "In the transcription, choice 1 reads \"18 ％以上\" and \"0.1 ％以下\", with a space before ％. The official problem text reads \"18％以上\" and \"0.1％以下\" with no space. The spacing should match the original.",
+        "In the official source image (q19-p14-0.webp), there is a faint dotted circle to the left of the number for choice 4. If this is an answer mark or a scanning artifact, showing the image as-is would reveal the answer before the explanation. We need to confirm the mark is not in the official PDF, and if it is not, re-crop or clean the image."
+      ],
+      "choiceIssues": [],
+      "reasonIssues": [
+        "Choice 4: the reason says \"通常の吸収缶だけに粉じん捕集性能は保証されない\" (ordinary absorption canisters alone are not guaranteed to capture dust). This is the reviewer's own inference. The cited 通達 (Ministry circular) only says to choose a gas mask with a dust-filtering function in mixed environments. It does not directly say that an ordinary canister lets dust through. To state why the choice is wrong, the reason should cite the requirement to choose a gas mask with a dust-filtering function (the 通達 at pdf p.13(6)). If it also claims that a canister without a dust-filtering function cannot capture dust, it needs a source that says so directly."
+      ],
+      "sourceIssues": [
+        "Choice 1: the reason says the 呼吸用保護具通達 (respirator circular) does not allow filter-type respirators below 18% oxygen. The only excerpt recorded as evidence is \"酸素濃度18%以上の場所であっても\", which is a rule about P-PAPR (powered dust respirators) not being used where toxic gas is present. It does not directly support the claim that filter-type respirators are prohibited below 18% oxygen. The sentence in the same 通達 that prohibits filter-type respirators below 18% (it comes before \"給気式呼吸用保護具…の中から有効なものを選択すること\") should be recorded as the excerpt.",
+        "Choice 1: the 防毒マスクの規格 (gas mask standard), Article 1, defines the 直結式小型 (direct-connection small) type only by gas or vapour concentration of 0.1% or less and non-emergency use. It has no oxygen condition. The explanation should show clearly that the \"酸素濃度18％以上\" (oxygen 18% or more) condition comes from the 通達, not from the standard.",
+        "Choice 4: 防毒マスクの規格 Article 1, paragraph 3 (\"防毒マスクは、防じん機能を有する…\") shows that gas masks with a dust-filtering function are a separate category. It appears in the context of the collected excerpts, but it is not registered as evidence. Registering it would strengthen the source for choice 4."
+      ],
+      "needsExternalCheck": [
+        "Check the original text of the 令和5年5月25日基発0525第3号 circular (the section on choosing respirators, around pdf pp.2–3). Confirm the exact wording of the sentence saying filter-type respirators must not be used where oxygen is below 18% or the concentration of harmful substances is unknown, and record that sentence as an excerpt.",
+        "Check the original official PDF (https://www.exam.or.jp/20260217/, SHA256 0635bbf8…) to see whether the dotted mark to the left of choice 4 on p.14 exists there."
+      ]
+    }
+  }
+}

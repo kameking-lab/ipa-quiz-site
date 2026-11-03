@@ -1,0 +1,98 @@
+{
+  "schemaVersion": 1,
+  "reviewModel": "claude-opus-5-5",
+  "inputHashes": {
+    "candidateSha256": {
+      "37": "4921af81b5fc09f7c95db372eee7a843df0674b2ddd3e50b2819741b172331b2",
+      "38": "533c5a13ecaf47639803e204d1ed4afed8b61a38bfd251283bd5844b80298176",
+      "39": "155724e9c93a58d2b813eee70fbf49de880802953e3577fbbdeb86d5f84d9e2e",
+      "45": "799a721264797f9119e06a9ad29d1c92f54bed5bb85a4019702fbcd79c4690e6",
+      "46": "ef095080009946e4b16e2cd536e3d66a9f4692b671114dbc26b9b50b62692acc"
+    },
+    "sourceCropSha256": {
+      "37": "e70d42abd34150abad527ab4faff97ea7c46386dbd34229f258ed55ec73ea401",
+      "38": "43facd4cb31a3514b972c488b78da382ee40be9f75665c16ef3897bcd6de3a4b",
+      "39": "e947e42663d3b4af0edf496907ee42c833fef6531cc0c0d40ded65f03c648fd1",
+      "45": "1f1154106b4e910e1a3f72a4dfe32872e89f539ee95b62591794c663b58c4081",
+      "46": "1983191681022a9d42d1de602b1ba368e3695dc59630ba185ff4b83072f30f7e"
+    }
+  },
+  "assessment": [
+    {
+      "number": 37,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "visualIssues": [],
+      "sourceIssues": [
+        "Reference URL https://www.mlit.go.jp/koku/content/001611774.pdf: WebFetch got the file, but the PDF is compressed and no text could be pulled from it. Only the metadata was readable (title 'Format1', created 2023-03-29). I could not confirm that it lists T with R (remote-control transformer), T with B (bell transformer), black dot with D (delay switch) or black dot with R (remote-control switch).",
+        "Reference URL https://www.hrr.mlit.go.jp/youchi/youchi_shiyousyo/240326_zenbun.pdf: the file is over 10MB and could not be fetched, so I could not check it.",
+        "I found no readable government source that confirms the symbol meanings in the choice explanations: T with R, T with B, black dot with D, black dot with R. Add a symbol-table reference with a page number that can be fetched and read (for example, the page of the MLIT public-building standard drawings that follows JIS C 0303), or a shorter excerpt."
+      ],
+      "verifiedEvidence": "Checked the question text, all 4 choice symbols and the official answer ロ against the official original drawing. ⑦ is the dashed box in the lower left of the lighting panel wiring diagram. It connects the 100V 20A BE to the 6 remote-control relays. The primary source for the symbol meanings could not be read."
+    },
+    {
+      "number": 38,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "visualIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": "Primary source: https://laws.e-gov.go.jp/law/409M50000400052/20230320_504M60000400096 (the body is JS-rendered, so I read the same text through the e-Gov API: https://laws.e-gov.go.jp/api/1/articles;lawNum=平成九年通商産業省令第五十二号;article=58). Article 58 of the ministerial ordinance on electrical equipment technical standards, table: 300V or less with voltage to ground of 150V or less, 0.1MΩ; other cases 0.2MΩ; over 300V, 0.4MΩ. This supports every choice explanation. The original drawing confirms that ⑧ points to the double-circled g circuit in the lower left of the plan, and that the lighting panel wiring diagram shows double-circled g as 200V 20A (BE→TS). The official answer イ matches."
+    },
+    {
+      "number": 39,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [
+        "The main explanation and the explanation for ロ say the device 'is not a detector only for ground faults'. That reads as if it might detect ground faults partly. The device has no function to detect ground-fault current and trip on it, so rewrite it to say that plainly, e.g. 'It has no function to detect ground-fault current and trip.'"
+      ],
+      "visualIssues": [],
+      "sourceIssues": [
+        "Reference URL https://www.meti.go.jp/policy/safety_security/industrial_safety/oshirase/2020/06/20200601-2-4.pdf returned HTTP 403, so I could not check it.",
+        "Reference URL https://www.mlit.go.jp/koku/content/001611774.pdf: the PDF is compressed and no text could be pulled from it. I could not confirm that the switch symbol (S in a square) uses the side note f for the fuse rating.",
+        "I found no readable government source for the claims that 'f20A = switch with a 20A fuse' and that 'the fuse blows on overcurrent and opens the circuit'. Add a reference that can be fetched."
+      ],
+      "verifiedEvidence": "Checked the question text, all 4 choices and the official answer イ against the official original drawing. ⑨ points to the circled S with the side note f20A to the right of the refrigerated room. Next to it is c, which the legend defines as a three-phase 200V circuit, and the power panel feeds it through BE 3P20A. The primary source for the symbol meaning could not be read."
+    },
+    {
+      "number": 45,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [
+        "The line 'the lighting loads on double-circled a–f include single-phase 200V circuits' is inaccurate. The drawing marks all six circuits, double-circled a through f, as 200V 20A single-phase 200V circuits. Write that they are all single-phase 200V circuits.",
+        "The claim that a single-phase 200V circuit needs a 2-pole relay that switches both poles has no stated basis. Add the reason: in a single-phase three-wire system, both wires of a 200V circuit are ungrounded (100V to ground each), so both must be switched. Add a source for this too.",
+        "The explanation of ニ versus ハ relies only on the count of main-circuit terminals (4 versus 2) read from the photo. Using the photo labels would be more certain: the 'main circuit side' label shows two contact marks on ニ and one on ハ."
+      ],
+      "visualIssues": [],
+      "sourceIssues": [
+        "The only reference URL, https://www.mlit.go.jp/koku/content/001611774.pdf, yielded no text because the PDF is compressed. I could not confirm that the black triangle means a remote-control relay, or what the side note '6' means.",
+        "The 2-pole requirement for 200V circuits has no government source among the references."
+      ],
+      "verifiedEvidence": "Checked the question text, all 4 choice photos and the official answer ニ against the official original drawing. ⑮ is the three black triangles with the side note '6' in the lighting panel wiring diagram. They feed double-circled a through f, all 200V 20A. The photo nameplate on イ reads 'small remote-control transformer', 100V AC primary, 24V AC secondary, fuse capacity 2A. The primary source for the symbol and the 2-pole requirement could not be read."
+    },
+    {
+      "number": 46,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "visualIssues": [],
+      "sourceIssues": [
+        "Reference URL https://www.mlit.go.jp/koku/content/001885918.pdf is over 10MB and could not be fetched, so I could not check it.",
+        "Government search results (the shiken.or.jp result list for https://www.shiken.or.jp/construction/upload/point2024.pdf) include text saying that type E (end-overlap) sleeves of JIS C 2806 are called ring sleeves and that ring-sleeve crimping tools have yellow grips. But WebFetch could not read that PDF itself, so I could not confirm it in the body text.",
+        "I found no readable government source for two claims: that type P is for straight overlap joints, and that the red-handled tool is for bare crimp sleeves. Add a reference that can be fetched."
+      ],
+      "verifiedEvidence": "Checked the question text ('⑯の示す接地線を直線重合せ接続する', matching the original wording), all 4 choice photos and the official answer ニ against the official original drawing. ⑯ points to the ground wire marked E5.5 below the lighting panel. The photos show: イ and ロ are the yellow tool, ハ and ニ the red tool; イ and ハ an E sleeve, ロ and ニ a P sleeve. The primary source for sleeve use and tool type could not be read."
+    }
+  ]
+}

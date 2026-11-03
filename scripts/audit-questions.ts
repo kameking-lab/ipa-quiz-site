@@ -21,6 +21,7 @@ import { writeFileSync, mkdirSync } from "node:fs";
 import { join } from "node:path";
 import { ALL_QUESTIONS } from "@/data/questions";
 import type { Question, ChoiceKey } from "@/lib/questions/types";
+import { auditQuestionAnswer } from "./audit-question-answer";
 import { AP_AFTERNOON_QUESTIONS } from "@/data/questions/afternoon/ap";
 import { ALL_ESSAY_QUESTIONS } from "@/data/questions/essay";
 import type { AfternoonQuestion } from "@/lib/afternoon/types";
@@ -116,13 +117,14 @@ const REQUIRED_MORNING_FIELDS: (keyof Question)[] = [
   "type",
   "category",
   "question",
-  "answer",
   "explanation",
   "sourcePdfUrl",
   "license",
 ];
 
-const VALID_CHOICE_KEYS: ChoiceKey[] = ["ア", "イ", "ウ", "エ", "オ", "カ", "キ", "ク", "コ"];
+const VALID_CHOICE_KEYS: ChoiceKey[] = ["ア", "イ", "ウ", "エ", "オ", "カ", "キ", "ク", "ケ", "コ"];
+/** 電験二種一次試験は公式解答群(イ)〜(ヨ)の15肢を ア〜ソ で保持する。 */
+const DENKEN2_CHOICE_KEYS: ChoiceKey[] = [...VALID_CHOICE_KEYS, "サ", "シ", "ス", "セ", "ソ"];
 
 function auditMorningQuestion(q: Question, seenIds: Set<string>): void {
   // 既に needsReview=true で出題プール／URL から除外済の問題は
@@ -136,6 +138,10 @@ function auditMorningQuestion(q: Question, seenIds: Set<string>): void {
     if (v === undefined || v === null || (typeof v === "string" && v.trim() === "")) {
       add(q, "morning", downgrade("critical"), "missing-field", `必須フィールド欠落: ${String(k)}`);
     }
+  }
+
+  for (const issue of auditQuestionAnswer(q)) {
+    add(q, "morning", downgrade("critical"), issue.category, issue.message);
   }
 
   // (b) ID 重複
@@ -155,12 +161,13 @@ function auditMorningQuestion(q: Question, seenIds: Set<string>): void {
       if (filled.length < 2) {
         add(q, "morning", downgrade("critical"), "choices-too-few", `有効な選択肢が ${filled.length} 個しかない`);
       }
-      if (filled.length > 9) {
+      const maxChoices = (q.exam === "denken2" || q.exam === "denken1") ? 15 : 9;
+      if (filled.length > maxChoices) {
         add(q, "morning", "warning", "choices-too-many", `選択肢が ${filled.length} 個（想定外）`);
       }
       // 想定外キー
       for (const k of keys) {
-        if (!VALID_CHOICE_KEYS.includes(k)) {
+        if (!((q.exam === "denken2" || q.exam === "denken1") ? DENKEN2_CHOICE_KEYS : VALID_CHOICE_KEYS).includes(k)) {
           add(q, "morning", "warning", "invalid-choice-key", `不正な選択肢キー: ${k}`);
         }
       }
@@ -183,7 +190,7 @@ function auditMorningQuestion(q: Question, seenIds: Set<string>): void {
         );
       }
     }
-  } else {
+  } else if (q.type !== "native-b") {
     // descriptive/essay は modelAnswer が望ましい
     if (!q.modelAnswer || q.modelAnswer.trim() === "") {
       add(q, "morning", "opportunity", "missing-model-answer", `${q.type} に modelAnswer なし`);

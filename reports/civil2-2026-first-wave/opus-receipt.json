@@ -1,0 +1,75 @@
+{
+  "startedAt": "2026-09-25T13:43:09.515Z",
+  "finishedAt": "2026-09-25T13:44:12.034Z",
+  "requestedModel": "claude-opus-5-5",
+  "exitCode": 0,
+  "isError": false,
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 5988,
+      "cacheReadInputTokens": 99916,
+      "cacheCreationInputTokens": 13641,
+      "webSearchRequests": 0,
+      "costUSD": 0.2488792,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 1800,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "stderr": "",
+  "questionCount": 11,
+  "statuses": [
+    [
+      6,
+      "PASS"
+    ],
+    [
+      7,
+      "PASS"
+    ],
+    [
+      8,
+      "PASS"
+    ],
+    [
+      9,
+      "PASS"
+    ],
+    [
+      10,
+      "PASS"
+    ],
+    [
+      11,
+      "PASS"
+    ],
+    [
+      12,
+      "PASS"
+    ],
+    [
+      13,
+      "PASS"
+    ],
+    [
+      14,
+      "PASS"
+    ],
+    [
+      15,
+      "PASS"
+    ],
+    [
+      16,
+      "PASS"
+    ]
+  ],
+  "globalIssues": [
+    "根拠として示した数値（路床20cm・路体30cm、吐出口高さ1.5m、1層40〜50cm、寒中4℃、流動化後スランプ18cm）は、問題PDF・正答PDFに書かれているものではありません。示方書・指針類の一般的な標準値として記載しました。これらの原本は照合していないので、公開前に最新の基準で確認することを推奨します。",
+    "問題PDF・正答PDFの原本は閲覧していません。受け取った文字起こしが原本と一致している前提で査読しました。"
+  ]
+}

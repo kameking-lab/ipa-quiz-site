@@ -1,0 +1,482 @@
+[
+  {
+    "id": "radio21-land2-2021-10-kogaku-q13",
+    "exam": "land-special2",
+    "session": "kogaku",
+    "year": 2021,
+    "season": "october",
+    "qNumber": 13,
+    "officialAnswerNumber": "2",
+    "type": "multiple-choice",
+    "category": "無線工学",
+    "subject": "無線工学",
+    "topicTags": [
+      "無線工学"
+    ],
+    "difficulty": 2,
+    "question": "図に示す回路の端子ab間の合成抵抗の値として、正しいのは次のうちどれか。",
+    "choices": {
+      "ア": "1.3〔kΩ〕",
+      "イ": "5.6〔kΩ〕",
+      "ウ": "8.5〔kΩ〕",
+      "エ": "17〔kΩ〕"
+    },
+    "answer": "イ",
+    "explanation": "9×6/(9+6)=3.6kΩ、これに直列の2kΩを加えて5.6kΩ。",
+    "choiceExplanations": {
+      "ア": "9kΩと6kΩの並列は3.6kΩで、さらに2kΩを直列に加えるため1.3kΩではない。",
+      "イ": "9×6/(9+6)=3.6kΩ、これに直列の2kΩを加えて5.6kΩ。",
+      "ウ": "並列部分3.6kΩと直列2kΩの合計は8.5kΩではない。",
+      "エ": "9kΩ・6kΩ・2kΩをすべて直列に加えて17kΩとはできない。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/riku-toku-2-kogaku.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/riku-toku-2-kogaku-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第二級陸上特殊無線技士試験 2021年10月期筆記 無線工学 問13（問題・正答）。解説は過去問AIが独自作成。図は原典から切り出し。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-10-15",
+    "imageUrls": [
+      "/images/questions/land-special2/radio21-land2-2021-10-kogaku-q13-original.png"
+    ],
+    "imageAltTexts": [
+      "公式問13の図と選択肢（原典配置）"
+    ]
+  },
+  {
+    "id": "radio21-land2-2021-10-kogaku-q14",
+    "exam": "land-special2",
+    "session": "kogaku",
+    "year": 2021,
+    "season": "october",
+    "qNumber": 14,
+    "officialAnswerNumber": "4",
+    "type": "multiple-choice",
+    "category": "無線工学",
+    "subject": "無線工学",
+    "topicTags": [
+      "無線工学"
+    ],
+    "difficulty": 2,
+    "question": "図のようなトランジスタに流れる電流の性質で、誤っているのはどれか。",
+    "choices": {
+      "ア": "ICはIBによって大きく変化する。",
+      "イ": "IBはVBEによって大きく変化する。",
+      "ウ": "IEはICとIBの和である。",
+      "エ": "ICはIBよりも小さい。"
+    },
+    "answer": "エ",
+    "explanation": "通常ICはIBより十分大きいので『ICがIBより小さい』が誤り。",
+    "choiceExplanations": {
+      "ア": "コレクタ電流ICはベース電流IBによって大きく変わる。",
+      "イ": "ベース電流IBはベース・エミッタ間電圧VBEの変化に敏感である。",
+      "ウ": "節点の電流関係はIE=IC+IB。",
+      "エ": "通常ICはIBより十分大きいので『ICがIBより小さい』が誤り。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/riku-toku-2-kogaku.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/riku-toku-2-kogaku-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第二級陸上特殊無線技士試験 2021年10月期筆記 無線工学 問14（問題・正答）。解説は過去問AIが独自作成。図は原典から切り出し。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-10-15",
+    "imageUrls": [
+      "/images/questions/land-special2/radio21-land2-2021-10-kogaku-q14-original.png"
+    ],
+    "imageAltTexts": [
+      "公式問14の図と選択肢（原典配置）"
+    ]
+  },
+  {
+    "id": "radio21-land2-2021-10-kogaku-q15",
+    "exam": "land-special2",
+    "session": "kogaku",
+    "year": 2021,
+    "season": "october",
+    "qNumber": 15,
+    "officialAnswerNumber": "3",
+    "type": "multiple-choice",
+    "category": "無線工学",
+    "subject": "無線工学",
+    "topicTags": [
+      "無線工学"
+    ],
+    "difficulty": 2,
+    "question": "図の破線は、水平設置の八木・宇田アンテナ（八 木アンテナ）の水平面内指向特性を示したものであ る。正しいのはどれか。ただし、D は導波器、P は放 射器、R は反射器とする。",
+    "choices": {
+      "ア": "図の選択肢１",
+      "イ": "図の選択肢２",
+      "ウ": "図の選択肢３",
+      "エ": "図の選択肢４"
+    },
+    "answer": "ウ",
+    "explanation": "図３の主ローブは放射器Pから導波器D側へ向き、正しい指向性。",
+    "choiceExplanations": {
+      "ア": "図１は導波器D側と反射器R側に同程度の二方向ローブがあり、単一の主方向にならない。",
+      "イ": "図２の主ローブは反射器R側で、八木アンテナの主方向と逆。",
+      "ウ": "図３の主ローブは放射器Pから導波器D側へ向き、正しい指向性。",
+      "エ": "図４は素子の並びと直角方向の主ローブを示すが、八木アンテナの主方向ではない。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/riku-toku-2-kogaku.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/riku-toku-2-kogaku-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第二級陸上特殊無線技士試験 2021年10月期筆記 無線工学 問15（問題・正答）。解説は過去問AIが独自作成。図は原典から切り出し。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-10-15",
+    "imageUrls": [
+      "/images/questions/land-special2/radio21-land2-2021-10-kogaku-q15-original.png"
+    ],
+    "imageAltTexts": [
+      "公式問15の図と選択肢（原典配置）"
+    ]
+  },
+  {
+    "id": "radio21-land2-2021-10-kogaku-q16",
+    "exam": "land-special2",
+    "session": "kogaku",
+    "year": 2021,
+    "season": "october",
+    "qNumber": 16,
+    "officialAnswerNumber": "1",
+    "type": "multiple-choice",
+    "category": "無線工学",
+    "subject": "無線工学",
+    "topicTags": [
+      "無線工学"
+    ],
+    "difficulty": 2,
+    "question": "超短波(VHF)帯を使った見通し外の遠距離の通信に おいて、伝搬路上に山岳が有り、送受信点のそれぞ れからその山頂が見通せるとき、比較的安定した通 信ができることがあるのは、一般にどの現象による ものか。",
+    "choices": {
+      "ア": "電波が回折する。",
+      "イ": "電波が屈折する。",
+      "ウ": "電波が直進する。",
+      "エ": "電波が干渉する。"
+    },
+    "answer": "ア",
+    "explanation": "山頂付近で電波が回折し、幾何学的な見通し外へ届く山岳回折である。",
+    "choiceExplanations": {
+      "ア": "山頂付近で電波が回折し、幾何学的な見通し外へ届く山岳回折である。",
+      "イ": "媒質内で進路が曲がる屈折では山を越える条件を説明しない。",
+      "ウ": "直進だけなら山の背後の見通し外に届かない。",
+      "エ": "干渉は複数波の重ね合わせであり、山越え通信の主因ではない。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/riku-toku-2-kogaku.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/riku-toku-2-kogaku-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第二級陸上特殊無線技士試験 2021年10月期筆記 無線工学 問16（問題・正答）。解説は過去問AIが独自作成。図は原典から切り出し。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-10-15"
+  },
+  {
+    "id": "radio21-land2-2021-10-kogaku-q17",
+    "exam": "land-special2",
+    "session": "kogaku",
+    "year": 2021,
+    "season": "october",
+    "qNumber": 17,
+    "officialAnswerNumber": "3",
+    "type": "multiple-choice",
+    "category": "無線工学",
+    "subject": "無線工学",
+    "topicTags": [
+      "無線工学"
+    ],
+    "difficulty": 2,
+    "question": "次の記述の 内に入れるべき字句の組合せで、 正しいのはどれか。 一般に、充放電が可能な A 電池の一つに B があり、ニッケルカドミウム蓄電池に比べて、 自己放電が少なく、メモリー効果がない等の特徴が ある。 A B",
+    "choices": {
+      "ア": "一次 リチウムイオン蓄電池",
+      "イ": "一次 マンガン乾電池",
+      "ウ": "二次 リチウムイオン蓄電池",
+      "エ": "二次 マンガン乾電池"
+    },
+    "answer": "ウ",
+    "explanation": "リチウムイオン蓄電池は充放電可能な二次電池で、設問の特徴に合う。",
+    "choiceExplanations": {
+      "ア": "充放電できるものは二次電池で、一次電池ではない。",
+      "イ": "マンガン乾電池は原則充電して繰り返し使う二次電池ではない。",
+      "ウ": "リチウムイオン蓄電池は充放電可能な二次電池で、設問の特徴に合う。",
+      "エ": "マンガン乾電池を二次電池とする組合せが誤り。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/riku-toku-2-kogaku.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/riku-toku-2-kogaku-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第二級陸上特殊無線技士試験 2021年10月期筆記 無線工学 問17（問題・正答）。解説は過去問AIが独自作成。図は原典から切り出し。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-10-15"
+  },
+  {
+    "id": "radio21-land2-2021-10-kogaku-q18",
+    "exam": "land-special2",
+    "session": "kogaku",
+    "year": 2021,
+    "season": "october",
+    "qNumber": 18,
+    "officialAnswerNumber": "3",
+    "type": "multiple-choice",
+    "category": "無線工学",
+    "subject": "無線工学",
+    "topicTags": [
+      "無線工学"
+    ],
+    "difficulty": 2,
+    "question": "次の記述の 内に入れるべき字句の組合せで、 正しいのはどれか。 回路の A を測定するときは、測定回路に直列 に計器を接続し、 B を測定するときは、測定回 路に並列に計器を接続する。また、特に C の場 合、極性を間違わないよう注意しなければならない。 A B C",
+    "choices": {
+      "ア": "電流 電圧 交流",
+      "イ": "電圧 電流 交流",
+      "ウ": "電流 電圧 直流",
+      "エ": "電圧 電流 直流"
+    },
+    "answer": "ウ",
+    "explanation": "電流計は直列、電圧計は並列、直流測定では極性に注意する。",
+    "choiceExplanations": {
+      "ア": "電流は直列・電圧は並列で正しいが、極性に特に注意するのは交流でなく直流。",
+      "イ": "電圧計を直列、電流計を並列にする点が逆。",
+      "ウ": "電流計は直列、電圧計は並列、直流測定では極性に注意する。",
+      "エ": "電圧と電流の計器接続が逆。直流というＣだけ正しい。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/riku-toku-2-kogaku.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/riku-toku-2-kogaku-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第二級陸上特殊無線技士試験 2021年10月期筆記 無線工学 問18（問題・正答）。解説は過去問AIが独自作成。図は原典から切り出し。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-10-15"
+  },
+  {
+    "id": "radio21-land2-2021-10-kogaku-q19",
+    "exam": "land-special2",
+    "session": "kogaku",
+    "year": 2021,
+    "season": "october",
+    "qNumber": 19,
+    "officialAnswerNumber": "3",
+    "type": "multiple-choice",
+    "category": "無線工学",
+    "subject": "無線工学",
+    "topicTags": [
+      "無線工学"
+    ],
+    "difficulty": 2,
+    "question": "図のベースバンド信号で搬送波をデジタル変調したとき、示された変調波形は何の一例か。",
+    "choices": {
+      "ア": "FSK",
+      "イ": "PWM",
+      "ウ": "PSK",
+      "エ": "PAM"
+    },
+    "answer": "ウ",
+    "explanation": "図は記号境界で波の位相が切り替わり振幅・周波数がほぼ一定のPSK。",
+    "choiceExplanations": {
+      "ア": "FSKは周波数を記号で切り替える。図は周波数より位相の切替えを示す。",
+      "イ": "PWMはパルス幅を変える方式で、図の連続搬送波ではない。",
+      "ウ": "図は記号境界で波の位相が切り替わり振幅・周波数がほぼ一定のPSK。",
+      "エ": "PAMはパルス振幅を変えるが、図はパルス列でない。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/riku-toku-2-kogaku.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/riku-toku-2-kogaku-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第二級陸上特殊無線技士試験 2021年10月期筆記 無線工学 問19（問題・正答）。解説は過去問AIが独自作成。図は原典から切り出し。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-10-15",
+    "imageUrls": [
+      "/images/questions/land-special2/radio21-land2-2021-10-kogaku-q19-original.png"
+    ],
+    "imageAltTexts": [
+      "公式問19の図と選択肢（原典配置）"
+    ]
+  },
+  {
+    "id": "radio21-land2-2021-10-kogaku-q20",
+    "exam": "land-special2",
+    "session": "kogaku",
+    "year": 2021,
+    "season": "october",
+    "qNumber": 20,
+    "officialAnswerNumber": "1",
+    "type": "multiple-choice",
+    "category": "無線工学",
+    "subject": "無線工学",
+    "topicTags": [
+      "無線工学"
+    ],
+    "difficulty": 2,
+    "question": "AM（A3E）通信方式と比べたときのFM(F3E）通信方 式の一般的な特徴で、誤っているのはどれか。",
+    "choices": {
+      "ア": "占有周波数帯幅が狭い。",
+      "イ": "振幅性の雑音に強い。",
+      "ウ": "受信機出力の信号対雑音比が良い。",
+      "エ": "装置の回路構成が多少複雑である。"
+    },
+    "answer": "ア",
+    "explanation": "FMは一般に同等の音声帯域のAMより占有帯域が広く、『狭い』が誤り。",
+    "choiceExplanations": {
+      "ア": "FMは一般に同等の音声帯域のAMより占有帯域が広く、『狭い』が誤り。",
+      "イ": "FMの情報は周波数偏移にあり、振幅性雑音の影響を抑えやすい。",
+      "ウ": "十分な受信レベルではリミッタ等により良好な出力S/Nを得やすい。",
+      "エ": "FM送受信の変調・復調・制限回路はAMより多少複雑になる。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/riku-toku-2-kogaku.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/riku-toku-2-kogaku-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第二級陸上特殊無線技士試験 2021年10月期筆記 無線工学 問20（問題・正答）。解説は過去問AIが独自作成。図は原典から切り出し。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-10-15"
+  },
+  {
+    "id": "radio21-land2-2021-10-kogaku-q21",
+    "exam": "land-special2",
+    "session": "kogaku",
+    "year": 2021,
+    "season": "october",
+    "qNumber": 21,
+    "officialAnswerNumber": "2",
+    "type": "multiple-choice",
+    "category": "無線工学",
+    "subject": "無線工学",
+    "topicTags": [
+      "無線工学"
+    ],
+    "difficulty": 2,
+    "question": "次の記述は、デジタル無線通信で発生するバース ト誤りの対策の一例について述べたものである。 内に入れるべき字句の正しい組合せを下の 番号から選べ。 バースト誤り対策として、送信する符号の順序を 入れ替える A を行い、受信側で受信符号を並び 替えて B ことにより誤りの影響を軽減する方 法がある。 A B",
+    "choices": {
+      "ア": "インターリーブ 逆拡散する",
+      "イ": "インターリーブ 元の順序に戻す",
+      "ウ": "A / D 変換 元の順序に戻す",
+      "エ": "A / D 変換 逆拡散する"
+    },
+    "answer": "イ",
+    "explanation": "順序を入れ替えるインターリーブと、受信側で元の順序へ戻す処理が一組。",
+    "choiceExplanations": {
+      "ア": "インターリーブは正しいが、受信側では逆拡散でなく元の順序へ戻す。",
+      "イ": "順序を入れ替えるインターリーブと、受信側で元の順序へ戻す処理が一組。",
+      "ウ": "A/D変換はアナログをデジタルにする処理で、符号順序の入替えではない。",
+      "エ": "A/D変換も逆拡散も、このバースト誤り分散の組合せではない。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/riku-toku-2-kogaku.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/riku-toku-2-kogaku-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第二級陸上特殊無線技士試験 2021年10月期筆記 無線工学 問21（問題・正答）。解説は過去問AIが独自作成。図は原典から切り出し。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-10-15"
+  },
+  {
+    "id": "radio21-land2-2021-10-kogaku-q22",
+    "exam": "land-special2",
+    "session": "kogaku",
+    "year": 2021,
+    "season": "october",
+    "qNumber": 22,
+    "officialAnswerNumber": "4",
+    "type": "multiple-choice",
+    "category": "無線工学",
+    "subject": "無線工学",
+    "topicTags": [
+      "無線工学"
+    ],
+    "difficulty": 2,
+    "question": "次の記述は、静止衛星通信について述べたもので ある。誤っているのはどれか。",
+    "choices": {
+      "ア": "使用周波数が高くなるほど、降雨による影響が 大きくなる。",
+      "イ": "地上での自然災害の影響を受けにくい。",
+      "ウ": "衛星を見通せる2 点間の通信は、常時行うこと ができる。",
+      "エ": "衛星の太陽電池の機能が停止する食は、夏至及 び冬至の時期に発生する。"
+    },
+    "answer": "エ",
+    "explanation": "静止衛星の食は太陽・地球・衛星が近い直線に並ぶ春分・秋分頃で、夏至・冬至ではない。",
+    "choiceExplanations": {
+      "ア": "マイクロ波帯では周波数が高いほど雨滴等による減衰の影響が大きい。",
+      "イ": "衛星中継は地上長距離回線の災害影響を受けにくい。",
+      "ウ": "静止衛星を見通せる固定地点間では、通常連続して通信できる。",
+      "エ": "静止衛星の食は太陽・地球・衛星が近い直線に並ぶ春分・秋分頃で、夏至・冬至ではない。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/riku-toku-2-kogaku.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/riku-toku-2-kogaku-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第二級陸上特殊無線技士試験 2021年10月期筆記 無線工学 問22（問題・正答）。解説は過去問AIが独自作成。図は原典から切り出し。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-10-15"
+  },
+  {
+    "id": "radio21-land2-2021-10-kogaku-q23",
+    "exam": "land-special2",
+    "session": "kogaku",
+    "year": 2021,
+    "season": "october",
+    "qNumber": 23,
+    "officialAnswerNumber": "3",
+    "type": "multiple-choice",
+    "category": "無線工学",
+    "subject": "無線工学",
+    "topicTags": [
+      "無線工学"
+    ],
+    "difficulty": 2,
+    "question": "パルスレーダーの最大探知距離を大きくするため の条件として、誤っているのは次のうちどれか。",
+    "choices": {
+      "ア": "受信機の感度を良くする。",
+      "イ": "送信電力を大きくする。",
+      "ウ": "パルス幅を狭くし、パルス繰返し周波数を高く する。",
+      "エ": "アンテナの高さを高くする。"
+    },
+    "answer": "ウ",
+    "explanation": "パルス幅を狭めると送信エネルギーが減りやすく、繰返し周波数を上げると無曖昧最大距離も短くなる。最大距離を伸ばす条件ではない。",
+    "choiceExplanations": {
+      "ア": "受信感度を改善すると弱い遠方反射を検出しやすくなる。",
+      "イ": "送信電力を増すと遠方の反射受信電力も増える。",
+      "ウ": "パルス幅を狭めると送信エネルギーが減りやすく、繰返し周波数を上げると無曖昧最大距離も短くなる。最大距離を伸ばす条件ではない。",
+      "エ": "アンテナを高くすると地球曲率による見通し距離が伸びる。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/riku-toku-2-kogaku.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/riku-toku-2-kogaku-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第二級陸上特殊無線技士試験 2021年10月期筆記 無線工学 問23（問題・正答）。解説は過去問AIが独自作成。図は原典から切り出し。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-10-15"
+  },
+  {
+    "id": "radio21-land2-2021-10-kogaku-q24",
+    "exam": "land-special2",
+    "session": "kogaku",
+    "year": 2021,
+    "season": "october",
+    "qNumber": 24,
+    "officialAnswerNumber": "2",
+    "type": "multiple-choice",
+    "category": "無線工学",
+    "subject": "無線工学",
+    "topicTags": [
+      "無線工学"
+    ],
+    "difficulty": 2,
+    "question": "単信方式のFM（F3E）送受信装置において、プレス トークボタンを押すとどのような状態になるか。",
+    "choices": {
+      "ア": "アンテナが送信機に接続され、受信状態となる。",
+      "イ": "アンテナが送信機に接続され、送信状態となる。",
+      "ウ": "アンテナが受信機に接続され、受信状態となる。",
+      "エ": "アンテナが受信機に接続され、送信状態となる。"
+    },
+    "answer": "イ",
+    "explanation": "プレストークを押すとアンテナを送信機に接続して送信状態にする。",
+    "choiceExplanations": {
+      "ア": "送信機に接続したまま受信状態という組合せは単信機の送受切替と矛盾する。",
+      "イ": "プレストークを押すとアンテナを送信機に接続して送信状態にする。",
+      "ウ": "アンテナを受信機に接続した受信状態は通常、ボタンを離した状態。",
+      "エ": "受信機につないだまま送信状態にはならない。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/riku-toku-2-kogaku.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/riku-toku-2-kogaku-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第二級陸上特殊無線技士試験 2021年10月期筆記 無線工学 問24（問題・正答）。解説は過去問AIが独自作成。図は原典から切り出し。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-10-15"
+  }
+]

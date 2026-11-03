@@ -1,0 +1,70 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20260322",
+  "subject": "power",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 4447,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 15751,
+      "webSearchRequests": 0,
+      "costUSD": 0.2152118,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 3065,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "22bafd9d53fd666246e01efdba9b03a40adec9339cebdace1bfd3902ee09312f",
+  "inputRequestSha256": "e42157135bd1468642c7132cabcf4d86454a3f01efa4e82fb30f7188ab99a3ae",
+  "inputHashes": {
+    "candidateSha256": {
+      "q01": "d5f02508d1cd23515c10eb92737e70e01d341d65a38632509755c105ee28790d"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20260322/power/p04.png": "b5db000e4206d9200a3d5b80001dc23907f06ab38b8c96f60dfae6d1219fab96"
+    },
+    "figureSha256": {},
+    "sourceQuestionPdfSha256": "9733341a0f293f068c9a665d5a9a90f1aabf3a2db5d79cd530643cdea241f7b7",
+    "sourceAnswerPdfSha256": "cc2890296d06a4823df5697a78a1c01ddfd39f041c51f48c87984daa3a5707c6",
+    "officialAnswerUnitsSha256": "a7fe1c20f1fe2d13156ebd8ba1ed6e10dd89989f2411fd92dd3be8b2117e0239",
+    "referencePdfSha256": {},
+    "referencePageSha256": {},
+    "referenceJsonSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q01",
+      "questionNumber": 1,
+      "part": null,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [
+        "空欄(エ)について、公式正答(3)の語句「高落差を得にくい」がなぜ入るのかを総合解説でもchoiceExplanations[3]でも説明していない。「技術的根拠は確認できない」と明記して説明を放棄しており、正答肢固有の理由として(ア)〜(オ)の全空欄を説明できていない。",
+        "(エ)の技術的妥当性には外部確認を要する曖昧さがある。一般的な教科書では、水路式は河川勾配の急な上流部で導水路により落差を得る方式と説明されることが多い。これは公式正答の組合せ「水路式はダム式、ダム水路式に比べ高落差を得にくい」と読み方が分かれうる。比較対象にダム水路式を含むことで成立するという解釈なども考えられるが、添付資料だけでは確定できず、解説として未解決のまま残っている。",
+        "誤答肢の(エ)語句にも同様の問題がある。(2)「建設期間が短い」と(5)「建設費が安い」は水路式の一般的特徴として読める余地があり、(4)「高落差を得やすい」は公式正答の(エ)と真逆の記述である。いずれも正誤を断定していないため、(エ)単独では肢を判別できないことを学習者に説明できていない。正答の一意性は(ア)(イ)(ウ)(オ)で成立しており、この点の検算は正しい。",
+        "uncertaintyに未解決事項((エ)の技術的根拠が未確認)を記載しているのに、needsReviewがfalseになっており整合しない。needsReview=trueとすべき。"
+      ],
+      "figureIssues": [],
+      "sourceIssues": [
+        "officialReferenceUrlsは空である。(エ)「高落差を得にくい」の技術的根拠を、添付した公式原図・公式解答表から検証できない(試験センター公式資料は正答番号のみで解説を含まない)。外部確認事項として未解決。"
+      ],
+      "verifiedEvidence": [
+        "問題文をPDF第4頁の公式原図(頁下部「-1-」「T2－D 004」)と照合した。全文、空欄の配置((イ)(ウ)の再出現を含む)、「1 日又は数日程度」の表記は一致。",
+        "(1)〜(5)全肢の(ア)〜(オ)の語句を原図の表と1セルずつ照合し、全て一致。",
+        "公式解答表(令和7年度第三種電気主任技術者下期試験解答)の<電力>問1は解答3・配点5。officialAnswer=\"3\"、scoringPoints=5と一致。",
+        "fiscalYear=2025(令和7年度)、term=lower、examDate=2026-03-22、subject=power、問題PDF URL(q02)、解答PDF URL(a01)、reviewedFromPage=[4]はmanifestと一致。",
+        "消去法を検算した。(ア)落差で(2)(4)、(イ)流量で(1)(2)(4)、(ウ)流込み式で(1)(2)、(オ)調整池式で(1)(2)(5)が外れ、残るのは(3)のみ。解説の記述は正しい。",
+        "誤答肢の除外理由を検算した。(1)は(イ)(ウ)(オ)誤り、(2)は(ア)(イ)(ウ)(オ)全て誤り、(4)は(ア)(イ)が入れ替わり、(5)は(オ)貯水池式が誤り。各choiceExplanationsと一致。",
+        "図は選択肢表のみで、回路図・写真はない。表の内容は全てchoicesに転記済みで、figureUrls=[]でも解答に支障はない。"
+      ]
+    }
+  ]
+}

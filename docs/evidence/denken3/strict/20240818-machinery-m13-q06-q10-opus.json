@@ -1,0 +1,89 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20240818",
+  "subject": "machinery",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 5448,
+      "cacheReadInputTokens": 139443,
+      "cacheCreationInputTokens": 27653,
+      "webSearchRequests": 0,
+      "costUSD": 0.35808059999999997,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 3585,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "4c0aed66c50c43625363f356a295ccef1d1d21018d3ffa9c2aa474798135cb32",
+  "inputRequestSha256": "88c1100078d8b3f75ba46fc9a339f48fe668bf8128b62ae9bcbd5f5f6c7b961f",
+  "inputHashes": {
+    "candidateSha256": {
+      "q06": "716b9332703cc0b7054357d0561fc8e1aa775e280b0b2885f38d9da1adc4f91d",
+      "q10": "223f994b76dbb5ae73dda0c31e761a349327b9d31a23e2e9c524a332cb275351"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20240818/machinery/p09.png": "cdfc0e3719fc869cb9c4e34cc1e899eb499a7b8a58966c98b252d64804332e45",
+      "data/raw_pdfs/denken3/review/20240818/machinery/p14.png": "b0ae106924c3d36d8af3fbc3810c721661c1529fbca941e674c7993917ae1bd9",
+      "data/raw_pdfs/denken3/review/20240818/machinery/p15.png": "832c30c7eda5c6a314c6d8c6630508200d4971b75d247f620bbed3539afc63ac"
+    },
+    "figureSha256": {
+      "public/images/denken3/20240818/machinery/20240818-machinery-q10-half-wave-circuit.png": "d98fb450f453116500ce9b4ca680dd99b81f736ea81e78ea20b7d6ea1a6d5c9c",
+      "public/images/denken3/20240818/machinery/20240818-machinery-q10-five-waveforms.png": "c07940fbe1a02a9a0d0cb79dccdd77f5b2c7f2c4eedfa27b9b2946605382dabc"
+    },
+    "sourceQuestionPdfSha256": "ff8ff270bbe1ea125e92f213d011afde969d0d2b9fa2e17a7caa2b5cd6673e2a",
+    "sourceAnswerPdfSha256": "f72ecbc3a477e64948388b69cf78cb931032c9f0c688639836c8d533a949cd0f",
+    "officialAnswerUnitsSha256": "6357c08d7f74d14a7e592a4d260211ee7648b95385aabc5d9eddedca3967766f",
+    "referencePdfSha256": {},
+    "referencePageSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q06",
+      "questionNumber": 6,
+      "part": null,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "問題文は公式原図（下部表記 T1−K 009、PDF p.9、reviewedFromPage=[9]）と一致する。一致を確認した値は、線間電圧V=360V、電機子電流I=20A、cosθ=1.0、Y結線、一相の同期リアクタンスx_s=6Ω、巻線抵抗の電圧降下は無視、求める量は一相の誘導起電力E[V]。",
+        "選択肢(1)130、(2)220、(3)240、(4)370、(5)380は原図と完全に一致する。",
+        "公式解答表の機械・問6は3。manifestの正答単位 {question:6, answer:'3'} と候補のofficialAnswer='3'も一致する。",
+        "検算：相電圧V_p=360/√3≈207.85V、リアクタンス降下I·x_s=20×6=120V。力率1ではIとV_pが同相で、電動機の関係式V_p=E+jIx_sからE=V_p−j120。|E|=√(43200+14400)=√57600=240Vちょうどになり、(3)と一致する。",
+        "誤答肢の検算：(1)力率1ではE>V_p≈207.8Vなので130Vは成り立たない。(2)√(207.8²+69.3²)=√48000≈219.1V。(4)√(360²+69.3²)=√134400≈366.6V。(5)√(360²+120²)=√144000≈379.5V。いずれも各肢の誤り方の説明と数値が合う。",
+        "図の無い問題であり、figureUrls=[]で適切。officialReferenceUrls=[]なので、外部の主張に確認事項は無い。"
+      ]
+    },
+    {
+      "unitKey": "q10",
+      "questionNumber": 10,
+      "part": null,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "問題文は公式原図（T1−K 014/015、PDF p.14–15、reviewedFromPage=[14,15]）と一致する。一致を確認した点は、単相半波ダイオード整流回路、R・L直列負荷、S開のとき空欄(ア)がe_d・(イ)がi_d、S閉で環流ダイオードを接続したとき空欄(ウ)がe_d・(エ)が通流期間であること。",
+        "(1)〜(5)の組合せ表（(ア)(イ)(ウ)(エ)）は、全5行とも原図の表と一致する。",
+        "公式解答表の機械・問10は3。manifestの正答単位 {question:10, answer:'3'} と候補のofficialAnswer='3'も一致する。",
+        "回路動作を検証した。S開では、L成分によりv_sが負に入った後もi_dが流れ続け、e_d=v_sのまま負領域まで追随し、i_d=0で急に0へ戻る。したがって(ア)は波形1、(イ)はゼロ点を越えて裾を引く遅れ電流の波形5。S閉では、v_sが負の間は環流ダイオードが導通してe_d=0になり、(ウ)は波形2。電流はL·di/dt=−Riに従って緩やかに減衰し、負電圧で急に減ることが無いので、(エ)は長くなる。結果は(3)で、公式正答と一致する。",
+        "各誤答肢の理由を確認した。(1)は(ア)波形2・(イ)波形4・(ウ)波形3が誤り。(2)は(ウ)波形3・(エ)短くなるが誤り。(4)は(イ)波形4が誤り。(5)は(ア)波形2・(ウ)波形3・(エ)短くなるが誤り。いずれも候補の説明と一致する。",
+        "公開候補図1を原図と照合した。電源v_s（上向き矢印）、直列ダイオード（負荷方向に順方向）、接続点からスイッチSと環流ダイオードの直列枝、L・R直列負荷、e_dの上向き矢印、i_dの右向き矢印、帰線の接続点、ラベル『図1』がすべて一致する。環流ダイオードは帰線側から接続点側へ導通する向きで、原図と同じ。",
+        "公開候補図2を原図と照合した。波形1〜5のe_d/i_d（実線）とv_s（破線）、縦軸ラベル、ωt軸、波形1の急な立下り位置、波形5の遅れた山と裾、ラベル『図2』がすべて一致する。解答に必要な情報は、公開候補図だけで判別できる。",
+        "figureDescriptionの記述（直列枝が負荷と並列、環流ダイオードの向き、波形1〜5の特徴）は原図と矛盾しない。officialReferenceUrls=[]なので、外部の主張に確認事項は無い。"
+      ]
+    }
+  ]
+}

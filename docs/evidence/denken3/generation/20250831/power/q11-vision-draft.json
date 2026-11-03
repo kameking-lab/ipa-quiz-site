@@ -1,0 +1,94 @@
+{
+  "questionNumber": 11,
+  "sharedContext": null,
+  "units": [
+    {
+      "part": null,
+      "question": "100/200 V単相3線式配電方式に関する記述として，誤っているものを次の(1)～(5)のうちから一つ選べ。",
+      "choices": {
+        "1": "単相200 V負荷の使用が可能である。",
+        "2": "配電容量が等しい場合，100 V単相2線式配電方式より電線の銅量が少なくてすむ。",
+        "3": "バランサは，電源の近くに設ける方が効果が大きい。",
+        "4": "負荷の分布によっては，負荷電圧が不平衡になることがある。",
+        "5": "中性線が断線すると，異常電圧を発生することがある。"
+      },
+      "officialAnswer": "3",
+      "explanation": "100/200 V単相3線式は，変圧器二次巻線の中点を中性線として引き出し，外側線と中性線の間で100 V，外側線どうしの間で200 Vを取り出す方式である。\n\nバランサは巻数比1:1の単巻変圧器で，両外側線間に接続し，その中点を中性線に接続する。負荷が不平衡だと中性線に電流が流れ，線路の電圧降下が両側で異なるため負荷電圧が不平衡になる。バランサを線路の末端（負荷側）に設けると，不平衡分の電流をバランサが分担し，線路の中性線電流がほぼ零になって両外側の電圧がそろう。電源（変圧器）の近くでは電圧はもともと平衡しており，そこに設けても線路上の中性線電流は減らないので効果は小さい。したがって「電源の近くに設ける方が効果が大きい」とする(3)が誤りである。\n\n【参考：銅量比の計算】\n送電電力P，外側線と中性線間の電圧V（=100 V），線路こう長，電力損失，力率が等しく，単相3線式の3線を同一太さとし負荷が平衡している条件で比較する。\n・単相2線式（100 V）：電流 I₂ = P/V，損失 = 2·I₂²·R₂\n・単相3線式（100/200 V）：外側線電流 I₃ = P/(2V)，中性線電流 0，損失 = 2·I₃²·R₃\n損失を等しくおくと 2(P/V)²R₂ = 2(P/2V)²R₃ より R₃ = 4R₂，すなわち断面積 A₃ = A₂/4。\n銅量比 = (3·A₃)/(2·A₂) = (3/4)/2 = 3/8 = 37.5 %\nよって単相3線式の方が銅量は少なくてすむ。",
+      "choiceExplanations": {
+        "1": "正しい。両外側線の間から200 Vが得られるので，単相200 V負荷を接続して使用できる。",
+        "2": "正しい。負荷が平衡し（中性線電流0）力率が等しい条件で，電力・電圧（対地電圧100 V）・電力損失・こう長を等しくし，3線を同一太さとして比較すると，単相3線式の所要銅量は単相2線式の3/8（37.5 %）になる。",
+        "3": "誤り。バランサは線路の末端（負荷側）に設けることで，線路の中性線電流を打ち消し，両側の電圧降下をそろえて負荷電圧の不平衡を是正する。電源の近くでは電圧はもともと平衡しており，線路の中性線電流も減らないため効果は小さい。",
+        "4": "正しい。外側線と中性線の間に接続される100 V負荷が両側で不均等だと中性線に電流が流れ，両側の電圧降下が異なるため，負荷電圧が不平衡になる。",
+        "5": "正しい。中性線が断線すると，両側の100 V負荷が直列に200 Vへ接続された状態になり，200 Vが負荷のインピーダンスに比例して分圧される。負荷の小さい側（インピーダンスの大きい側）には100 Vを超える異常電圧が加わり，機器を損傷するおそれがある。"
+      },
+      "figureDescription": "本問には図はない。",
+      "officialReferenceUrls": [],
+      "uncertainty": "問題頁には実施年度・科目名の記載がなく，出題年度・科目は問題頁からは確定していない。選択肢(2)の銅量比3/8は，負荷平衡・力率・電力・対地電圧・電力損失・こう長が等しく，単相3線式の3線を同一太さとする一般的な比較条件を前提とした値であり，問題文自体にはこれらの条件は明記されていない。",
+      "needsReview": true,
+      "sourceQuestionPdfUrl": "https://www.shiken.or.jp/chief/upload/20250831_ch_third_q02.pdf",
+      "sourceAnswerPdfUrl": "https://www.shiken.or.jp/chief/upload/20250831_ch_third_a01.pdf",
+      "reviewedFromPage": [
+        14
+      ]
+    }
+  ],
+  "draftModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 2606,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 9309,
+      "webSearchRequests": 0,
+      "costUSD": 0.1268558,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 1031,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "32091c3b47866e8294222863d03f14f9b8f5abe955f77dbbbe4fb17e194bc162",
+  "inputRequestSha256": "0bafa06c4034b5a359880515306f73b77596daca38a8f79e5a05248c0e88904e",
+  "sourceQuestionPdfSha256": "567aac1df6dc0c0950d04e90a1ad03231427c518eede92559effe01e2b97a2c9",
+  "sourceAnswerPdfSha256": "76fd3715ed487d19a56b387fb402de20ee09474e9fa55b0413f9037b96af06c9",
+  "sourcePageImageSha256": {
+    "data/raw_pdfs/denken3/review/20250831/power/p14.png": "1261e3aa4fc68d29a992e50d0d229b8408731e020b01050862d262ac6ad04122"
+  },
+  "revisionHistory": [
+    {
+      "version": 1,
+      "model": "claude-opus-5-5",
+      "resolvedModel": "claude-opus-5-5",
+      "modelUsage": {
+        "claude-opus-5-5": {
+          "inputTokens": 2,
+          "outputTokens": 3071,
+          "cacheReadInputTokens": 1279,
+          "cacheCreationInputTokens": 12412,
+          "webSearchRequests": 0,
+          "costUSD": 0.1609798,
+          "contextWindow": 1000000,
+          "maxOutputTokens": 128000,
+          "thinkingTokens": 1450,
+          "canonicalModel": "claude-opus-5-5",
+          "provider": "firstParty",
+          "costBasis": "list"
+        }
+      },
+      "rawResponseSha256": "02bc88331c2fa5cfbc0d4d51219f3cb2e0b3910f92fc7a11b7f09da46a8fda66",
+      "inputRequestSha256": "53fd030fc8119dbd97c236db0c0fda18559bf95e372afbeedd0805cddc6a7b0c",
+      "previousDraftSha256": "11fed55e9e48ee9de89ec5aa3a95b4eaf94c2707e5f7d1cbed5ab46762d2fca4",
+      "previousDraft": "data/raw_pdfs/denken3/review/20250831/power/archive/q11-vision-draft-v1.json",
+      "answeredReviewSha256": "7fbaee1945cd2c00fb6b50faf5bf7b1c77fdc045b630d88d0e90e835cbca67e1",
+      "answeredReview": "data/raw_pdfs/denken3/review/20250831/power/archive/q11-opus-review-v1.json",
+      "answeredStrictReceipt": "docs/evidence/denken3/strict/20250831-power-s1-q11-opus.json",
+      "answeredStrictReceiptSha256": "c0485e0aba104d32e597a17011697da8be4418fd2c92ce71d33892fe4f2eda49",
+      "figureSha256": {},
+      "referenceHashes": {},
+      "operatorNote": ""
+    }
+  ]
+}

@@ -1,0 +1,110 @@
+{
+  "status": "PASS",
+  "targetedTests": {
+    "command": "pnpm exec vitest run __tests__/questions/sagyo-ot13-recovered.test.ts __tests__/questions/shino-sagyo-am-ready.test.ts __tests__/questions/shino-sagyo-pm-ready.test.ts __tests__/questions/shino-sagyo-pm01-20-ready.test.ts --maxWorkers=1",
+    "exitCode": 0,
+    "filesPassed": 4,
+    "testsPassed": 27,
+    "newTestsPassed": 18
+  },
+  "typecheck": {
+    "command": "pnpm typecheck",
+    "exitCode": 0
+  },
+  "changedFileLint": {
+    "command": "pnpm exec eslint data/qualification-staging/sagyo-ryohoshi/ot13-recovered/questions.ts data/qualification-staging/sagyo-ryohoshi/ot13-recovered/excluded.ts data/qualification-staging/sagyo-ryohoshi/ot13-recovered/index.ts __tests__/questions/sagyo-ot13-recovered.test.ts --max-warnings 0",
+    "exitCode": 0,
+    "warnings": 0
+  },
+  "diffCheck": {
+    "command": "git diff --check",
+    "exitCode": 0
+  },
+  "fullBuildRun": false,
+  "fullBuildReason": "Local candidate-only handoff with no public registry or runtime changes; parent requested queued control of heavy full builds. Integration owner performs release checks.",
+  "sourceChecks": {
+    "uniqueOriginals": 13,
+    "gradableCandidates": 11,
+    "choiceExplanations": 55,
+    "officialExclusions": 2,
+    "multipleSelectionQuestions": 2,
+    "choiceImages": 25,
+    "originalImageHashesMatched": 37,
+    "originalStemAndFiveChoicesMatched": 13
+  },
+  "mainOverlap": 0,
+  "otherHelperOverlap": 0,
+  "openPrFilesChecked": 67,
+  "openPrOtPathOverlap": 0,
+  "publicQuestionIncrement": 0,
+  "finalWordingRerun": {
+    "question": "r60-pm-q7 choice 2",
+    "reason": "Removed unsupported assumption of a required turn; retained case-specific clearance explanation.",
+    "relatedTestsPassed": 18,
+    "testExitCode": 0,
+    "changedFileLintExitCode": 0
+  },
+  "registryIntegrationValidation": {
+    "status": "PASS",
+    "relatedTests": {
+      "filesPassed": 6,
+      "testsPassed": 34,
+      "command": "pnpm exec vitest run __tests__/questions/sagyo-ot13-recovered.test.ts __tests__/questions/shino-sagyo-am-ready.test.ts __tests__/questions/shino-sagyo-pm-ready.test.ts __tests__/questions/shino-sagyo-pm01-20-ready.test.ts __tests__/questions/medical-am3-ready.test.ts __tests__/questions/medical-question-labels.test.tsx --maxWorkers=1 --testTimeout=60000",
+      "exitCode": 0
+    },
+    "routesAndUi": {
+      "file": "__tests__/questions/sagyo-ot13-routes.test.tsx",
+      "testsPassed": 5,
+      "exitCode": 0,
+      "checks": [
+        "11 static routes and indexable metadata",
+        "main MRI and five choice images render",
+        "two-selection prompt renders",
+        "two official exclusions have no static route and return 404",
+        "hub reports 310 partial originals"
+      ],
+      "fixedFinding": "The OT hub used a generic lead; it now uses the existing count-linked examMetaDescription."
+    },
+    "schema": {
+      "command": "pnpm validate:questions --exam=sagyo-ryohoshi",
+      "ok": 310,
+      "fail": 0,
+      "warn": 7,
+      "newQuestionWarnings": 0,
+      "exitCode": 0,
+      "warningIds": [
+        "sagyo-ryohoshi-2025-annual-pm-q55",
+        "sagyo-ryohoshi-2025-annual-am-q80",
+        "sagyo-ryohoshi-2024-annual-am-q25",
+        "sagyo-ryohoshi-2024-annual-am-q42",
+        "sagyo-ryohoshi-2024-annual-pm-q68",
+        "sagyo-ryohoshi-2024-annual-pm-q73",
+        "sagyo-ryohoshi-2024-annual-pm-q92"
+      ]
+    },
+    "typecheckExitCode": 0,
+    "changedFileLintExitCode": 0,
+    "localFullBuildRun": false,
+    "fullBuildPlan": "Existing PR E2E workflow runs full lint, typecheck, unit tests, source checks, build and E2E. No duplicate host-wide build is started.",
+    "registeredIncrement": 11,
+    "registeredTotal": 310,
+    "productionPublicationIncrement": 0,
+    "ciHomeCardCorrection": {
+      "initialRunId": 38108960480,
+      "initialUnitFilesPassed": 519,
+      "initialUnitTestsPassed": 4801,
+      "initialUnitTestsFailed": 1,
+      "failure": "The home directory retained a 299-question expectation and visible card description after the OT registry increased to 310.",
+      "fixedFiles": [
+        "lib/home/home-directory.ts",
+        "__tests__/lib/home-directory.test.ts"
+      ],
+      "command": "pnpm exec vitest run __tests__/lib/home-directory.test.ts --maxWorkers=1 --testTimeout=60000",
+      "filesPassed": 1,
+      "testsPassed": 8,
+      "exitCode": 0,
+      "changedFileLintExitCode": 0,
+      "newHeadCi": "PENDING"
+    }
+  }
+}

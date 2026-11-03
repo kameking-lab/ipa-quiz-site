@@ -1,0 +1,69 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20250831",
+  "subject": "theory",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 5401,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 15717,
+      "webSearchRequests": 0,
+      "costUSD": 0.2340198,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 3493,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "3ac2b95f906022e546d5d299715c58077aa9e8dc0792aee17ef916c7e462abe2",
+  "inputRequestSha256": "522db8dffc459f24a1c32637112b40a376bde272902c7a5b73f2193bfba9f8ce",
+  "inputHashes": {
+    "candidateSha256": {
+      "q11": "4e254c31fcb9ef7c0d42bd206ded0b23a9dc0c5d62cd88fdc900bf81c2dee89e"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20250831/theory/p14.png": "3fbef9d46b0019437ea557a9145515aa813aeb8c9a5db326b2b7f4a3dff2a22c"
+    },
+    "figureSha256": {
+      "public/images/denken3/20250831/theory/20250831-theory-q11-fig1.png": "0aad65645a4f0536b0bf5c115dc91bf432ffe9e3fee34a281ea86844641846a4"
+    },
+    "sourceQuestionPdfSha256": "11a75ffd5dd2b5309ad75370bb963c4fda9e12a812174cfa2c2237383c3a964d",
+    "sourceAnswerPdfSha256": "76fd3715ed487d19a56b387fb402de20ee09474e9fa55b0413f9037b96af06c9",
+    "officialAnswerUnitsSha256": "264c4d7169ad8a52205da48b78cc7ed71babbb31c1c7a05ae178cdee21d089c9",
+    "referencePdfSha256": {},
+    "referencePageSha256": {},
+    "referenceJsonSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q11",
+      "questionNumber": 11,
+      "part": null,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [
+        "記号が統一されていない。【p形】【n形】のローレンツ力の式では素電荷を e（+e / −e）と書き、【ホール電圧の大きさ】では同じ素電荷を q と置き直している。V_H = I·B/(q·n·d) の q と前段の e が同一量であることが本文から直接読み取れない。どちらかに統一すること（例：V_H = I·B/(e·n·d)）。あわせて、キャリア密度を p形でも n と置いている点も直すこと。問題文・選択肢で使う「n形」の n と字面が衝突し、正孔密度は慣用的に p と書くためである（例：キャリア密度 N とする、または p形 p・n形 n と書き分ける）。計算・因果・結論は正しく、修正は表記のみ。"
+      ],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "出典メタデータ: fiscalYear=2025、term=upper、examDate=2025-08-31、subject=theory、sourceQuestionPdfUrl=…20250831_ch_third_q01.pdf、sourceAnswerPdfUrl=…20250831_ch_third_a01.pdf はいずれも manifest と一致した。reviewedFromPage=[14] は manifest の PDF 第14頁と一致する。原図下部の表記は冊子頁「- 11 -」と通し番号「T1－R 014」で、PDF 頁14と矛盾しない。sourceAttribution の『令和7年度上期 理論科目 問11』は 2025年度上期（令和7年）と一致する。",
+        "公式正答: 解答表原図『令和７年度 第三種電気主任技術者上期試験解答』の＜理論＞問11は解答4・配点5。officialAnswer=\"4\"、scoringPoints=5 と一致した。",
+        "問題文: 原図と照合した。『p形半導体に直流電流I[A]を流し』『表面に対して垂直に下から上向きに磁束密度B[T]の平等磁界』『正孔は進路を曲げられ』『電極①には(ア)電荷，電極②には(イ)電荷』『図2のn形半導体の場合は，電界の向きはp形半導体の場合と(ウ)』『電極①-②間にホール電圧V_H[V]』『直流電流I[A]にほぼ(エ)する』の各語句・記号・単位はすべて一致した。欠落・改変はない。",
+        "選択肢: 原図の表と照合し、(1) 負・正・同じ・反比例、(2) 正・負・同じ・反比例、(3) 負・正・同じ・比例、(4) 正・負・反対・比例、(5) 負・正・反対・比例 の全肢・全欄が一致した。",
+        "物理検算: +x を電極①→②、+y を奥向き、+z を上向きとする右手系で計算した。図の I の矢印は奥側の辺へ入り手前側へ抜けるので v_hole は −y、B は +z である。p形では F = e(−ŷ×ẑ)vB = −x̂ となり、正孔は電極①側へ寄る。電極①が正、②が負で、電界は +x（ア=正、イ=負）。n形では電子が +y に動き、F = (−e)(ŷ×ẑ)vB = −x̂ で同じく電極①側へ寄る。電極①が負となり、電界は −x で反対（ウ=反対）。V_H = IB/(qnd) より I に比例する（エ=比例）。組合せは(4)で公式正答と一致した。電流向きを逆に読むと(5)になるため、図の I の向きが解答を決める。候補の読み取り（奥→手前）は公式正答と整合する。",
+        "肢別理由: (1)はア〜エの4欄すべて誤り。(2)はア・イ正、ウ・エ誤り。(3)はエのみ正。(5)はウ・エ正、ア・イ誤り（n形の電荷分布に当たるという記述も正しい）。(4)の正答理由も含め、各肢固有の理由の正誤判定はすべて正しい。",
+        "公開候補図: 原図の図1・図2領域を欠けなく切り出している。p形半導体／n形半導体の引出し矢印、B[T]の白抜き矢印と板下の2本線、I[A]の矢印（奥側の辺へ入る向き）と手前側の辺から出る線、電極①（左側面・網掛け・左へ端子）、電極②（右側面・網掛け・右へ端子）、キャプション図1・図2がすべて判読でき、接続・向き・ラベルは原図と一致した。問題文・選択肢表は含まれないが、JSON本文で補完されるため、候補図だけで解答に必要な幾何関係（I・B・電極①②の左右配置）は判断できる。",
+        "figureDescription: 範囲、斜投影、電極位置と端子方向、Bの向き（下から上）、Iの向き（奥→手前）、両図同一形状、極性や電界が図中に描かれていない点のいずれも原図と一致した。誤りはない。",
+        "officialReferenceUrls は空で、独立した外部主張はない。検証が必要な参照事項はない。"
+      ]
+    }
+  ]
+}

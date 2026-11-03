@@ -4,6 +4,7 @@ import { join } from "node:path";
 import { getCorpus, resetCorpusCache } from "@/lib/copilot/corpus";
 import { getAllQuestions } from "@/lib/questions/load";
 import { GLOSSARY } from "@/data/glossary";
+import { isPracticeReadyQuestion } from "@/lib/questions/filter";
 
 // getCorpus は AI コパイロットの RAG 検索（B軸）が参照する全コーパスを組み立てる。
 // BM25 のフィールド重み付け（カテゴリ/タグ ×2・用語名 ×6・英語表記 ×3 を本文に重複挿入）と
@@ -67,6 +68,18 @@ describe("getCorpus - doc 形状の不変条件", () => {
     for (const rid of reviewIds) {
       expect(docIds.has(rid)).toBe(false);
     }
+  });
+
+  it("全 question doc が直接ページと同じ公開条件を満たす", () => {
+    const byId = new Map(getAllQuestions().map((q) => [q.id, q]));
+    const bad = getCorpus()
+      .filter((d) => d.kind === "question")
+      .filter((d) => {
+        const q = byId.get(d.id.slice(2));
+        return !q || !isPracticeReadyQuestion(q);
+      })
+      .map((d) => d.id);
+    expect(bad).toEqual([]);
   });
 
   it("glossary doc は g: プレフィックス・kind=glossary・/glossary# の URL で全用語が乗る", () => {

@@ -1,0 +1,72 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20250831",
+  "subject": "law",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 5601,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 25304,
+      "webSearchRequests": 0,
+      "costUSD": 0.3147158,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 3568,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "fa67bfd41b7d75953ca86e9c5991f4b6a506b58f88720f53e44a55af706f16ce",
+  "inputRequestSha256": "222fd18a8e6bf89551bee6fd33ddddaeccbbc7ce70bdb1daad1fa5265d76e529",
+  "inputHashes": {
+    "candidateSha256": {
+      "q02": "1a1a25e757c9e4bdaa9981263357d212b46296c7e0711e4b0d7a89918b56ad7f"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20250831/law/p06.png": "de867b00ab15012e279ffd204fb1e2e3f18de673f426f9e5b24887b92e81e3a4",
+      "data/raw_pdfs/denken3/review/20250831/law/p04.png": "38045ec67d58396f98ae270d13322f49aa0291474ec50e346ecabbd47a85dfbe"
+    },
+    "figureSha256": {},
+    "sourceQuestionPdfSha256": "51aeb8f1cbfe8e6d3667c2848a3d9fccff40a967f48aafc292fa13a13a6efbb0",
+    "sourceAnswerPdfSha256": "76fd3715ed487d19a56b387fb402de20ee09474e9fa55b0413f9037b96af06c9",
+    "officialAnswerUnitsSha256": "c28e99d4361c917265cef6b603bb4660b972c8cc97993c6df376d9748bd8d037",
+    "referencePdfSha256": {},
+    "referencePageSha256": {},
+    "referenceJsonSha256": {
+      "data/raw_pdfs/denken3/review/egov/340M50000400054-20250401.json": "4cdb08201a4f7653f216d16416f06878f68d87290d508b20e8a70a5abadf64c7"
+    }
+  },
+  "assessment": [
+    {
+      "unitKey": "q02",
+      "questionNumber": 2,
+      "part": null,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "出典メタデータ: fiscalYear=2025, term=upper, examDate=2025-08-31, subject=law, sourceQuestionPdfUrl=20250831_ch_third_q04.pdf, sourceAnswerPdfUrl=20250831_ch_third_a01.pdf, reviewedFromPage=[6] はmanifestと一致する。添付原図の頁フッタは「T1−H 006」で印刷頁は「-3-」であり、PDF第6頁とする判断と矛盾しない。",
+        "問題文: 原図の「受電電圧6.6 kVの自家用電気工作物を設置する事業場における次の事例のうち，電気関係報告規則に基づいて，設置者が所轄産業保安監督部長に対し報告すべき事故に該当しないものを次の(1)〜(5)のうちから一つ選べ。」と文言・数値・単位が一致する。",
+        "選択肢(1)〜(5): 原図と照合した。(1) 100 V屋内配線・過負荷・高熱・電気火災・建物半焼、(2) 落雷・高圧負荷開閉器焼損・一般送配電事業者への供給支障事故、(3) 高圧断路器誤操作・アーク熱・火傷・病院入院、(4) 高圧受電用真空遮断器・誤操作・損傷・操作不能、(5) 構内第1号柱折損・構外隣接需要家の建物損傷。語句・数値はすべて一致し、差異は句読点の整形のみである。",
+        "公式正答: 公式解答表（令和7年度 第三種電気主任技術者上期試験解答）の＜法規＞問2は解答4・配点6である。候補のofficialAnswer=\"4\"、scoringPoints=6と一致する。",
+        "法令基準日: 法規注意書き頁の注3「令和7年4月1日現在，効力のある法令」を確認した。officialReferenceUrlsのoccasion_date=20250401および添付のe-Gov施行時点2025-04-01版と整合する。",
+        "肢(1): 規則第1条第2項第4号の電気火災事故の定義（電気的要因により建造物等の工作物（電気工作物を除く。）に火災が発生すること）を確認した。第3条第1項表第2号の「工作物にあつては、その半焼以上の場合に限る」と、同号に電圧要件がないことも添付条文で確認した。候補の引用文言は条文と一致する。",
+        "肢(2): 第3条第1項表第12号（一般送配電事業者等の電気工作物と電気的に接続されている電圧三千ボルト以上の自家用電気工作物の破損等により一般送配電事業者等に供給支障を発生させた事故、報告先は産業保安監督部長）を確認した。6.6 kV≥3000 Vで該当する。第3条第2項ただし書（第8号〜第13号のうち原因が自然現象のものは様式第十三の報告書提出不要）も確認した。一方、同項本文の24時間以内の電話等による報告は免除されない。候補の記述はこれと一致する。",
+        "肢(3): 第3条第1項表第1号（電気工作物の誤操作等により人が死傷した事故、死亡または病院・診療所に入院した場合に限る）を確認した。入院しているので該当する。候補の引用文言は条文と一致する。",
+        "肢(4)（正答）: 第3条第1項表第4号ヌ「電圧一万ボルト以上の需要設備（自家用電気工作物を設置する者に限る。）」を確認した。第1条第2項第3号リで、需要設備の主要電気工作物とされる遮断器は「他の者が設置する電気工作物と電気的に接続するための受電電圧一万ボルト以上のもの」に限られることも確認した。6.6 kV<10 kVなので第4号に当たらない。問題文上、人身被害・火災・他物件損傷・供給支障は生じておらず、第1〜3号・第12号にも当たらない。候補の論理は正しい。",
+        "肢(5): 第3条第1項表第3号（電気工作物の破損等により他の物件に損傷を与えた事故）を確認した。構内第1号柱（支持物＝電気工作物）の折損で構外の建物を損傷しているので該当する。補足にある「需要設備の支持物は電圧五万ボルト以上の電線路のものに限り主要電気工作物」は、第1条第2項第3号リの文言と一致する。",
+        "総合解説: 報告先について、自家用電気工作物設置者の第1〜4号・第12号の報告先はいずれも「電気工作物の設置の場所を管轄する産業保安監督部長」であり、表と一致する。「受電電圧6.6 kV」が(2)（3000 V以上）と(4)（1万V未満）の結論を分けるという因果説明も正しい。第3条第2項の二段階報告（24時間以内に電話等、知った日から起算して30日以内に様式第十三）の記述は条文と一致する。",
+        "図: 原図に図・表はない。figureDescription「図なし」、figureUrls=[]、choiceFigureUrls={} は正しい。",
+        "公式参考URL: officialReferenceUrlsの独立主張（第1条第2項第3号リ・第4号、第3条第1項表第1〜4号・第12号、第2項）は、すべて添付のe-Gov施行時点2025-04-01版条文の原文で検証できた。未検証の外部主張はない。"
+      ]
+    }
+  ]
+}

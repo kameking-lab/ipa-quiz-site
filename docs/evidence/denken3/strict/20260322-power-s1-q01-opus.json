@@ -1,0 +1,73 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20260322",
+  "subject": "power",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 6215,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 14528,
+      "webSearchRequests": 0,
+      "costUSD": 0.2407878,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 4206,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "2a02a4a3e724a65e1b3fa9d0ff3e56192c1312d1878881313874889c60e8b5d4",
+  "inputRequestSha256": "087304d46a6bd2c509c541b0deb6de9e5f55d7c3e420e139aa6447864430abfe",
+  "inputHashes": {
+    "candidateSha256": {
+      "q01": "fd4c433945083d6fb3dfa0dc75896589e1554cca97ab29d14169dc23c62e79d7"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20260322/power/p04.png": "b5db000e4206d9200a3d5b80001dc23907f06ab38b8c96f60dfae6d1219fab96"
+    },
+    "figureSha256": {},
+    "sourceQuestionPdfSha256": "9733341a0f293f068c9a665d5a9a90f1aabf3a2db5d79cd530643cdea241f7b7",
+    "sourceAnswerPdfSha256": "cc2890296d06a4823df5697a78a1c01ddfd39f041c51f48c87984daa3a5707c6",
+    "officialAnswerUnitsSha256": "a7fe1c20f1fe2d13156ebd8ba1ed6e10dd89989f2411fd92dd3be8b2117e0239",
+    "referencePdfSha256": {},
+    "referencePageSha256": {},
+    "referenceJsonSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q01",
+      "questionNumber": 1,
+      "part": null,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [
+        "choiceExplanations[3] は (エ)「高落差を得にくい」について「公式正答の組合せに含まれる記述である」と述べるだけで、なぜ本文に当てはまるのかという正答肢固有の理由を示していない。循環的な説明なので、(エ) の技術的根拠を示すか、次の点を明記する必要がある。(エ) は他の空欄で組合せが一意に定まった結果として公式正答に従うものであり、この肢の判定根拠ではない。",
+        "(2)「建設期間が短い」、(4)「高落差を得やすい」、(5)「建設費が安い」は、水路式の一般的特徴として成立し得る記述である。一方、各誤答肢の解説は (エ) に触れていない。これでは学習者がこれらの (エ) も誤りと受け取るおそれがある。そこで、(エ) 単独では正誤を判定しないことを学習者向けの解説に明記するよう求める。現状はこの注記が uncertainty にしかない。"
+      ],
+      "answerIssues": [],
+      "explanationIssues": [
+        "総合解説の結論「(ア)〜(オ) がすべて本文の記述と整合する組合せは (3) である」は過剰主張である。(エ) が本文と整合することを解説中で一度も示していないうえ、uncertainty 自身が「水路式とダム式の落差の比較は地形条件に依存する」と認めている。結論は「(ア)(イ)(ウ)(オ) により (3) に一意に定まる」に改めるべき。",
+        "(エ)「高落差を得にくい」は学習者向けの解説で技術的に説明されていない。一般的な教科書では、水路式は河川勾配の急な上流部で長い水路により落差を得る方式とされる。そのため「ダム式に比べ高落差を得にくい」は条件付きの記述である。ダム水路式が水路式とダム式を組み合わせて落差を得る方式であることなど、公式正答の文脈での解釈を補足するべき。補足しない場合は、(エ) が消去法の結果として定まることを本文中で明示する必要がある。",
+        "uncertainty に未解決の技術的留保（(エ) の地形依存性）が記載されているのに、needsReview=false になっており、両者が矛盾している。"
+      ],
+      "figureIssues": [],
+      "sourceIssues": [
+        "uncertainty の「出題年度・試験回は原本ページからは特定できない」は、添付資料で解消済みの事項であり、記述が古い。manifest には 2025年度下期・試験日 2026-03-22・電力の冊子（20260322_ch_third_q02.pdf）PDF 第4頁と固定されている。添付の公式解答表の見出しにも「令和7年度 第三種電気主任技術者下期試験解答」とある。sourceAttribution の「令和7年度下期」は正しいのに、uncertainty がそれを否定するように読めるため、manifest と公式解答表を根拠にするよう書き換えるべき。",
+        "水路式が「ダム式，ダム水路式に比べ高落差を得にくい」ことの技術的妥当性は、添付の問題原図と解答表からは検証できない。解答表は正答番号 3 を示すだけである。したがってこの点は外部確認事項として残る。公式正答 (3) は変更しない。"
+      ],
+      "verifiedEvidence": [
+        "問題文を原図（PDF 第4頁、頁下部の表記「-1-」「T2－D 004」）と全文照合した。空欄 (ア)〜(オ) の位置、(イ)(ウ) の再出現箇所、「1 日又は数日程度」、末尾の設問文はすべて一致した。「～」と「〜」の字形差は表示上の差であり、実質的な差異ではない。",
+        "選択肢 (1)〜(5) の全 25 セルを原図の表と照合した。(1) 落差/流速/自然放流式/建設期間が長い/ダム式、(2) 流速/落差/自然放流式/建設期間が短い/ダム式、(3) 落差/流量/流込み式/高落差を得にくい/調整池式、(4) 流量/落差/流込み式/高落差を得やすい/調整池式、(5) 落差/流量/流込み式/建設費が安い/貯水池式。すべて一致した。",
+        "公式解答表の電力 問1 は解答 3、配点 5 である。候補の officialAnswer=\"3\"、scoringPoints=5 と一致し、manifest 固定の正答単位とも一致した。",
+        "消去の論理を検算した。(ア)=落差で (2)(4) が除外され、(イ)=流量で (1) が除外され、(オ)=調整池式で (5) が除外される。この結果 (3) に一意に定まり、(エ) を用いずに正答が確定することを確認した。",
+        "流込み式（自流式）・調整池式・貯水池式の定義に関する説明に誤りはない。本文の記述「貯水池などを持たない水路式」「1 日又は数日程度」との対応も正しい。",
+        "メタデータを照合した。fiscalYear=2025、term=lower、examDate=2026-03-22、subject=power、reviewedFromPage=[4]、sourceQuestionPdfUrl と sourceAnswerPdfUrl は、いずれも manifest および解答表見出しと一致した。",
+        "図について確認した。本問は表形式の選択肢のみで回路図などはなく、figureUrls=[] と figureDescription の記述は妥当である。officialReferenceUrls=[] のため、独立主張の検証対象はない。"
+      ]
+    }
+  ]
+}

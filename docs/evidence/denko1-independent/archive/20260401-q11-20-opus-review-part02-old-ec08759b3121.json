@@ -1,0 +1,77 @@
+{
+  "inputHashes": {
+    "draftSha256": "5da903f42200067b41b78147ba3f0838ece06f19f8abac5a3734fc211220011f",
+    "candidateSha256": {
+      "16": "9c6d1ee2d384b20426d693a3c3fb47cb3c1bf901d21c058510001aa5e8221adf",
+      "17": "dcba007c78c5454edc889c5d6188bc867bd5e590326b446a826844ccba5eed81",
+      "18": "c376502c9a5cbd4229aa5e7c9ed216b759fdd07989f44d07d91ea079fbbeff18",
+      "19": "2f840c7981289c01611feaa659e149527dcc3f5aa5a324db207098a41e1b440d",
+      "20": "b65af807d17d1e9792dd6b87b5d6bcad6e1bff1538e93dce6b1fe1b59cef283d"
+    },
+    "rowSha256": {
+      "16": "f3437f3b5bcf3a17dc19e24a61026cf932eaf29972f585ca6ea183d0b392a252",
+      "17": "78d1eeb7983a0128e1cfd66dd3b361f4396e65d85058393815325d7016e33441",
+      "18": "c7ea648e28b862125a9d49ab582e7c6ba56eabd99a0e5ee4c78517ffc2c18ebe",
+      "19": "7e58fc4dd3f184fc5cc5f1f6da8d4382299249e24bb164c510b3842160680517",
+      "20": "c9b13f9f19b5fe2035153aefd9aa8f5a47107c0428a499ce15d701c63deb6fd0"
+    },
+    "figureSha256": {
+      "public/images/denko1/2026-first/q16.png": "fde0d2e5e20a87e8d21326d561a51214354503db238e8f342e56611f49926136"
+    },
+    "legalReceiptSha256": {}
+  },
+  "reviewModel": "claude-opus-5-5",
+  "cliInitModel": "claude-opus-5-5",
+  "sessionId": "61738e81-85dc-4323-8d87-c914bf351692",
+  "assessment": [
+    {
+      "number": 16,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "lawNeedsExternalCheck": []
+    },
+    {
+      "number": 17,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "lawNeedsExternalCheck": []
+    },
+    {
+      "number": 18,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "lawNeedsExternalCheck": []
+    },
+    {
+      "number": 19,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [
+        "イ: 公式画像では「SF₆」と6が下付き文字になっているが、JSONのchoices.イは「SF6」になっており、下付き表記が失われている。「SF₆」に直す。"
+      ],
+      "explanationIssues": [
+        "choiceExplanations.イも「SF6」になっている。choicesに合わせて「SF₆」に直す。"
+      ],
+      "figureIssues": [],
+      "lawNeedsExternalCheck": []
+    },
+    {
+      "number": 20,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "lawNeedsExternalCheck": []
+    }
+  ]
+}

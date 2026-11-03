@@ -1,0 +1,67 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20250831",
+  "subject": "power",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 3785,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 13510,
+      "webSearchRequests": 0,
+      "costUSD": 0.18404379999999998,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 2542,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "53ef00b4e18f71e150bd1db6a0052af181635fb51d68655cbdeeb49f9b0384e2",
+  "inputRequestSha256": "72ab5af616f9ec5f79dec7851eb2093d89b30272ddecd84870a2171e4c7d80b5",
+  "inputHashes": {
+    "candidateSha256": {
+      "q13": "054bbd918a513390a1ac808cfd78281f24550b3b6d5fb2e4be765a739d21f585"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20250831/power/p16.png": "5cfb51266a279d19b9f1243316f50ce88274279a9c311c1a59d0dd92b123ab88"
+    },
+    "figureSha256": {},
+    "sourceQuestionPdfSha256": "567aac1df6dc0c0950d04e90a1ad03231427c518eede92559effe01e2b97a2c9",
+    "sourceAnswerPdfSha256": "76fd3715ed487d19a56b387fb402de20ee09474e9fa55b0413f9037b96af06c9",
+    "officialAnswerUnitsSha256": "88626c84eff8b6e21617dcd0a6ad4f317a7811cfe8b4136958bf4ff886fe9a33",
+    "referencePdfSha256": {},
+    "referencePageSha256": {},
+    "referenceJsonSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q13",
+      "questionNumber": 13,
+      "part": null,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [
+        "choiceExplanations[3] の誤答理由が推測に基づいており、数値も合わない。『有効電力を一定とみなした無効電力の比 tanθ₁/tanθ₂』を求めると、tanθ₁ = √0.51/0.70 ≈ 1.020、tanθ₂ = √0.1719/0.91 ≈ 0.456 で比は ≈ 2.24 になる。これを四捨五入すると 2.2 であり、選択肢の 2.3 とは一致しない。『この肢に近い値になる』という記述は誤答の由来を裏付けられない推測で、本問とは無関係な条件（有効電力一定・無効電力比）を持ち込むため学習者を混乱させる。この一文を削除し、『電流と電圧が一定なら皮相電力が一定なので、W₂/W₁ は力率の比 1.3 を超えられない』という本質的な理由だけにすることを推奨する。"
+      ],
+      "figureIssues": [],
+      "sourceIssues": [
+        "添付した問題原図のページには科目名が印字されていない（印字頁『- 13 -』、識別記号『■T1－D 016』のみ）。公式解答表では理論 問13 と電力 問13 がどちらも正答 2 なので、正答からは科目を特定できない。subject=power と sourceAttribution『電力科目 問13』は、manifest と sourceQuestionPdfUrl（…_q02.pdf）に依存しており、添付原図だけでは確認できない。出題内容（配電線の線路損失）と、年度・回（解答表見出し『令和7年度 第三種電気主任技術者上期試験解答』）は候補と整合する。候補自身の uncertainty 欄もこの点を未確認事項として挙げており、needsReview=false と食い違っている。"
+      ],
+      "verifiedEvidence": [
+        "問題文：原図と一字一句照合した。遅れ力率70 %、W₁ [kW]、遅れ力率91 %、W₂ [kW]、線路損失不変、負荷端子電圧不変。いずれも一致し、単位・添字の誤りはない。",
+        "選択肢：(1) 0.77、(2) 1.3、(3) 2.3、(4) 1.1、(5) 1.7。順序・数値とも原図と一致する。",
+        "公式正答：解答表の電力 問13 は解答 2・配点 5。manifest の {answer: 2, points: 5} および候補の officialAnswer=2、scoringPoints=5 と一致する。",
+        "計算：Pₗ = 3I²R は一定で、R も一定なので I は一定。V も一定なので、W = √3·V·I·cosθ は cosθ に比例する。W₂/W₁ = 0.91/0.70 = 1.30 となり、(2) と一致する。",
+        "誤答肢の検算：(1) 0.70/0.91 = 0.769（比の逆転）。(4) √1.3 = 1.140。(5) 1.3² = 1.69。いずれも記述どおり。",
+        "図：原図に図はなく、figureDescription・figureUrls が空であることと整合する。",
+        "reviewedFromPage=[16] は識別記号『D 016』と整合する。officialReferenceUrls は空で、検証すべき独立主張はない。"
+      ]
+    }
+  ]
+}

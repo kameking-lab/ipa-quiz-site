@@ -1,0 +1,65 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20260322",
+  "subject": "machinery",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 3188,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 14661,
+      "webSearchRequests": 0,
+      "costUSD": 0.1813118,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 1556,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "2dfb554c7b1752128c80a727dc63e74bff3277fbe85f49b6f988b93568b75e43",
+  "inputRequestSha256": "9a2f25b54082e30c324293c6d5222a7ce357d4e868e6984a4dcadd1d2b77b5da",
+  "inputHashes": {
+    "candidateSha256": {
+      "q05": "d0c80b63dd29f8ce18e8c04e39417623783e8b5c9ab004ce413749a2f57f1808"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20260322/machinery/p08.png": "9b060fb3e4569f292e3fdbbdb458505411aca252e0c69b2aba1fe886b1aa123d"
+    },
+    "figureSha256": {},
+    "sourceQuestionPdfSha256": "a89c7dc2b9a305f9db83f2f78195f0df8a0da5aeec6b8e66cfd40fb028d146fb",
+    "sourceAnswerPdfSha256": "cc2890296d06a4823df5697a78a1c01ddfd39f041c51f48c87984daa3a5707c6",
+    "officialAnswerUnitsSha256": "9caccf2fd122a97218bf3ac96a785d070c620e4be7cc9c5f1ddb43533263025e",
+    "referencePdfSha256": {},
+    "referencePageSha256": {},
+    "referenceJsonSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q05",
+      "questionNumber": 5,
+      "part": null,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "問題文を公式原図（フッター「- 5 -」「T2－K 008」、manifestでPDF第8頁）と一文ずつ照合した。「回転界磁形同期電動機」「対称三相交流電圧」「同じ大きさで向きが交互に変わる」「平均トルクは零」「回転子の磁極面に(ア)を施す」「(イ)と同じ起動原理」「誘導トルク」「回転磁束によって誘導される高電圧」「(ウ)を抵抗で短絡」「この短絡を切り放し(エ)で励磁」「同期速度に引き込まれる」まで、欠落・改変・表記ゆれ（「切り放し」を含む）は見当たらない。空欄は(ア)〜(エ)の4箇所で、原図と一致する。",
+        "選択肢(1)〜(5)を原図の表と行・列ごとに照合し、全20セルが一致した。(1) 補償巻線／巻線形誘導電動機／界磁巻線／交流、(2) 制動巻線／巻線形誘導電動機／界磁巻線／交流、(3) 制動巻線／かご形誘導電動機／界磁巻線／直流、(4) 制動巻線／かご形誘導電動機／固定子巻線／直流、(5) 補償巻線／かご形誘導電動機／固定子巻線／直流。",
+        "公式解答表（令和7年度 第三種電気主任技術者下期試験解答、＜機械＞欄）で、問5の解答は3、配点は5。候補のofficialAnswer=\"3\"、scoringPoints=5、manifest固定の公式正答単位 {question:5, part:null, answer:\"3\", points:5} の三者が一致する。",
+        "出典情報を照合した。fiscalYear=2025（令和7年度）、term=lower（下期）、examDate=2026-03-22、subject=machinery、問題PDF=20260322_ch_third_q03.pdf、解答PDF=20260322_ch_third_a01.pdf、reviewedFromPage=[8]。いずれもmanifestと一致し、sourceAttributionの「令和7年度下期…機械科目 問5」とも整合する。",
+        "総合解説の技術内容を検算した。停止中は回転磁界に対する磁極の相対位置が変わり続け、トルクが交番して平均零になる。制動巻線は、磁極面の導体棒を短絡環で短絡した、かご形回転子と同構造の巻線であり、誘導トルクで自己始動する。制動巻線は運転中の乱調抑制も担う。界磁巻線は巻数が多く、起動時に高電圧が誘起されるため抵抗で短絡する。誘導トルクだけではすべりが残り同期速度に達しないため、同期速度付近で直流励磁して引き入れる。以上の因果はすべて正しく、正答(3)と矛盾しない。",
+        "誤答肢ごとに、誤りとされた空欄を照合した。(1) は(ア)(イ)(エ)が誤りで(ウ)が正しい。(2) は(イ)(エ)が誤りで(ア)(ウ)が正しい。(4) は(ウ)のみ誤り。(5) は(ア)(ウ)が誤りで(イ)(エ)が正しい。choiceExplanationsの正誤判定はすべて表の内容と一致する。",
+        "誤答理由の技術記述を確認した。補償巻線は直流機の主磁極面に設けて電機子反作用を打ち消す巻線である。巻線形誘導電動機はスリップリングを介して外部抵抗を接続する方式で、常時短絡の制動巻線とは構造が異なる。固定子巻線は電源を印加して回転磁界をつくる巻線であり、短絡して起動することはない。交流励磁では固定磁極ができず同期引き入れができない。いずれも正しい。",
+        "図の要否を確認した。原図に回路図・構造図はなく、表形式の選択肢のみである。figureDescription=「図なし」、figureUrls=[]、choiceFigureUrls={} は妥当で、表の全内容はchoicesに転記済みである。",
+        "officialReferenceUrlsは空配列で、外部参照に依拠する独立主張はない。検証不能な外部確認事項もない。"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20250323",
+  "subject": "law",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 2661,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 15500,
+      "webSearchRequests": 0,
+      "costUSD": 0.1774838,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 1274,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "6e3a73a0c0d5555b7eea16ca936bb79207da40f231bf513d9f35418eed483243",
+  "inputRequestSha256": "6a1750bff9154164c51dc0a16c0dd61f5b90196677afad5369c22d74a85846c4",
+  "inputHashes": {
+    "candidateSha256": {
+      "q10": "688aadf2a3cc281c43449e82a1877205660e9a6dc5c4b19b891b22ec79015aec"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20250323/law/p14.png": "a4cd026c062d62357b0fde87318a7a06923c12caf0906634eb67555f00941953",
+      "data/raw_pdfs/denken3/review/20250323/law/p04.png": "77f750bb7c61f444f973bec2034dc21cb28a5ddc2851ac7857d8867b4d6efa0a"
+    },
+    "figureSha256": {},
+    "sourceQuestionPdfSha256": "6b47d422b7fb05b949f366b2c550a00365e1bdffa5c2800368fab9f29d79c84e",
+    "sourceAnswerPdfSha256": "4c3b38fcf1405766fafaa78b1b05b867a3d48307a670b9d354476bc6b32acd4c",
+    "officialAnswerUnitsSha256": "1764572c3f33cdb4f2a6d945d717691976b12575e0f4044e647376b3f1482d18",
+    "referencePdfSha256": {},
+    "referencePageSha256": {},
+    "referenceJsonSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q10",
+      "questionNumber": 10,
+      "part": null,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "問題文: 添付原図（頁下部『-11-』『T2-H 014』）の『次の文章は，計器用変成器の変流器に関する記述である。その記述内容として誤っているものを次の(1)～(5)のうちから一つ選べ。』と候補questionが一字一句一致。",
+        "選択肢(1)〜(5): 原図の全肢と候補choicesを一字ずつ照合し、文言・句読点に脱落・改変はない。(1)一次電流の磁束で二次電流を発生、(2)二次側に開閉器・ヒューズを設置してはいけない、(3)通電中の二次開放で異常電圧・絶縁破壊の危険、(4)二次端子を短絡して交換し、その後に短絡を外す、(5)二次側抵抗値で変流比が変化するので電流計選択に注意。",
+        "公式正答: 公式解答表（令和6年度 下期）の＜法規＞問10は『5』。manifest固定の正答単位 {question:10, part:null, answer:'5'} および候補officialAnswer『5』と一致。",
+        "頁番号: 注意書き頁は冊子頁『-1-』・管理番号『T2-H 004』であり、管理番号の下3桁がPDF頁番号に対応する。問10原図は『T2-H 014』なのでPDF第14頁となり、manifestのPDF第[14]頁および候補reviewedFromPage [14]と整合する。",
+        "出典メタデータ: fiscalYear=2024、term=lower、examDate=2025-03-23、subject=law、sourceQuestionPdfUrl=…20250323_ch_third_q04.pdf、sourceAnswerPdfUrl=…2024_3_2.pdf はいずれもmanifestと一致。sourceAttributionの『令和6年度下期』『法規科目 問10』は解答表見出しの『令和6年度 下期』と整合する。",
+        "総合解説: CTの一次電流は被測定回路で決まる。二次電流は巻数比でほぼ一次電流/変流比に定まり、定格負担内なら二次負担の変化で変流比は変わらない。したがって(5)が誤りとする因果は正しい。過大負担では励磁電流増加・飽和で比誤差が増える、という但し書きも技術的に正確で、選択肢の『変流比は変化する』とは区別されている。",
+        "各肢解説: (1)は変流器の動作原理として正しい。(2)は二次開放防止のため開閉器・ヒューズを入れないという点で正しい。(3)は二次開放時に一次起磁力がすべて励磁に回り、鉄心が飽和して二次に高電圧が生じるという点で正しい。(4)は先に短絡してから交換し、最後に短絡を外す手順として正しい。(5)は誤り＝正答。いずれも公式正答5と矛盾しない。",
+        "法令基準日: 注意書き頁の注3は令和6年4月1日現在の法令を基準とする。本問は変流器の原理・取扱いに関する技術問題で、特定の条文・解釈番号を根拠にしておらず、候補解説も法令条文を引用していないため、基準日による検証事項は生じない。",
+        "図: 原図に図はなく文章のみ。候補の figureDescription『図なし』、figureUrls []、choiceFigureUrls {} と整合し、解答に図は不要。",
+        "参考URL: officialReferenceUrlsは空で、公式資料に依拠した独立主張はない。解説は一般的な変流器原理のみで構成され、外部確認を要する主張は含まれない。"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,39 @@
+{
+  "status": "partial-accepted",
+  "date": "20240818",
+  "subject": "law",
+  "questionCount": 1,
+  "answerUnitCount": 1,
+  "choiceCount": 5,
+  "sourceQuestionPdfSha256": "5dbba8b8e4ec681d2d5f0645a3895a6e218d936519ddd18ac544ddc461a1ae78",
+  "sourceAnswerPdfSha256": "f72ecbc3a477e64948388b69cf78cb931032c9f0c688639836c8d533a949cd0f",
+  "reviewedDataSha256": "10954ef1d8e2bc63184ec06742bb8b84b9612a9ea671274cfea5a2a763433234",
+  "questions": [
+    {
+      "number": 6,
+      "sourceDraftSha256": "e5df5130703c032cc8101d59a8ac3da5af84db5e3dcaaa9f9dc8581068c5bffb",
+      "opusReceipt": "data/raw_pdfs/denken3/review/20240818/law/q06-opus-review.json",
+      "opusReceiptSha256": "741077dcf9a74428ee0bc193a2f37e73a2eefdbcd174bf4ada4f58b6664a7c6b",
+      "assessment": {
+        "number": 6,
+        "status": "PASS",
+        "textIssues": [],
+        "choiceIssues": [],
+        "explanationIssues": [],
+        "figureIssues": [],
+        "externalSourceIssues": [
+          "The draft's answer values — 5 mm hard-drawn copper wire, 引下げ用 insulated wire, 3.5 m, and 下方 — match the official answer (4). The page images cannot confirm that they match the current text of 電気設備技術基準の解釈 Article 117 (高圧架空引込線). They also cannot confirm that the cited METI PDF (20231226-2.pdf#page=120) is the right edition or that Article 117 is on page 120. Check the article and page against the source PDF."
+        ]
+      },
+      "figureSha256": {}
+    }
+  ],
+  "strictReview": {
+    "q06": {
+      "path": "docs/evidence/denken3/strict/20240818-law-l15-q06-opus.json",
+      "sha256": "8e4814c8d9ac4b6dbefb770e399d7775caf810d51fe14fcdd0dea8dbb26350d6",
+      "status": "PASS",
+      "resolvedModel": "claude-opus-5-5"
+    }
+  }
+}

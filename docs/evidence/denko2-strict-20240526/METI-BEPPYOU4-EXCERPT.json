@@ -1,0 +1,47 @@
+{
+  "schemaVersion": 1,
+  "sourceAuthority": "経済産業省",
+  "sourceUrl": "https://www.meti.go.jp/policy/consumer/seian/denan/PDF/old_beppyou4.pdf",
+  "sourceTitle": "電気用品の技術上の基準を定める省令の解釈 別表第四（配線器具）",
+  "retrievalMethod": "公式URLの検索インデックス抽出をJIS C 8303:2007公式音声PDFの表1・図A.9〜A.12見出しと相互照合",
+  "retrievedAt": "2026-09-23T19:22:00+09:00",
+  "relevantRows": [
+    {
+      "slotPattern": "左右に縦向き平刃",
+      "ratedCurrentA": 15,
+      "ratedVoltageV": 125,
+      "figure": "図1又は図2"
+    },
+    {
+      "slotPattern": "左右に横向き平刃",
+      "ratedCurrentA": 15,
+      "ratedVoltageV": 250,
+      "figure": "図6"
+    },
+    {
+      "slotPattern": "左に縦向きL字・右に縦向き平刃",
+      "ratedCurrentA": 20,
+      "ratedVoltageV": 125,
+      "figure": "図10"
+    },
+    {
+      "slotPattern": "左に横向きL字・右に横向き平刃",
+      "ratedCurrentA": 20,
+      "ratedVoltageV": 250,
+      "figure": "図14"
+    }
+  ],
+  "excerptSha256": "99ce302194ff869642411fc2209add05be505208588803e1ee90d77e993d9111",
+  "crossCheck": {
+    "jisSourceFileSha256": "18edc662cfc48e38b3fafb17f4e67d0faf842f97f0df635d015d358d7df7008e",
+    "jisPages": [
+      9,
+      10,
+      33,
+      34,
+      35,
+      36
+    ]
+  },
+  "note": "METI公式PDF本文の表2にある極配置・定格電流・定格電圧・図番号の該当4行のみ。"
+}

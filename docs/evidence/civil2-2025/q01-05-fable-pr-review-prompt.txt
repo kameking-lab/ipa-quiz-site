@@ -1,0 +1,9 @@
+You are the final independent merge reviewer for PR #530 (kameking-lab/ipa-quiz-site). Scope of this review: commit b6773c29, which adds 2025 October 2級土木 No.1–5 (all figure questions) and completes that edition at 66/66. Earlier commits (No.6–66) were already accepted and are out of scope unless this commit breaks them. Use the Read tool only. Files here:
+- commit.diff: the full commit diff (PNG binaries excluded)
+- page2.png..page5.png: official question pages; answer1.png: official answer key (first table 土木 only)
+- q01..q05-official-figure.png: the published figure crops
+- preview-result.json, q3-top.png, q4-top.png: Playwright check of the Vercel preview (status, figure loaded, 4 radios, wrong choice shows 不正解, correct shows 正解, no navigation, year page shows 66 問)
+CI on this head: typecheck pass, validate questions pass, unit 397 files / 4007 tests pass, build pass, e2e 242 pass.
+
+Check: (1) the published data for No.1–5 faithfully matches the official pages and 土木 key, and every explanation/choice reason is correct; (2) the loader order and the test index offsets (+5 shift) are consistent, and the tests would fail if data/figures/receipts drifted; (3) the receipt honestly records Antigravity (requested model, no resolved model, the rejected misreading), Opus rounds and Fable rounds with firstParty modelUsage, and does not overclaim; (4) the UI/SEO copy changes (66/66) are accurate and do not affect the 2026 edition; (5) nothing out of scope, no secrets.
+Output ONLY one single-line JSON object, no code fence: {"verdict":"MERGE" or "BLOCK","blockingIssues":["..."],"nonBlockingNotes":["..."]}

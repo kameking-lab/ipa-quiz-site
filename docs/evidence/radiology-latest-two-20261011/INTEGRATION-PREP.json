@@ -1,0 +1,119 @@
+{
+  "savedAtUtc": "2026-10-11T03:41:10.427544+00:00",
+  "pr": 720,
+  "previousHead": "7240de828fa051021404f8cc8261cd07eb3254d7",
+  "validatedMain": "cad6ca471f10cde5122ce673197eccce5482dc9f",
+  "preparationStatus": "MAIN_MERGE_CONFLICTS_RESOLVED_CHECKS_PASSED",
+  "resolvedConflictFiles": 9,
+  "questionAndExplanationRegenerationCount": 0,
+  "radioResults": {
+    "finalOriginals": 398,
+    "uniqueOriginals": 398,
+    "mainOriginals": 10,
+    "incrementAgainstMain": 388,
+    "mainOriginalsPreservedExactly": true,
+    "unchangedDataFiles": [
+      {
+        "path": "data/questions/shinryo-hoshasengishi/2025-annual-am-completion.json",
+        "repositoryBlobSha256": "8c7acf94eb72624132295737b521f87c32803347f248949cc2a0491d27b44ae0",
+        "unchangedFromVerifiedHead": true,
+        "filesystemLineEndingsNormalized": true
+      },
+      {
+        "path": "data/questions/shinryo-hoshasengishi/2025-annual-pm-batch1.json",
+        "repositoryBlobSha256": "d64498bd9e463172cc106711ea02442a24a21bf1a31ab92bcf7297151d601049",
+        "unchangedFromVerifiedHead": true,
+        "filesystemLineEndingsNormalized": true
+      },
+      {
+        "path": "data/questions/shinryo-hoshasengishi/2025-annual-pm-batch2.json",
+        "repositoryBlobSha256": "46bd99daee09ef4fb353c2dd73efc91c11ff8cdd88b2a22f4fac99783d862cd3",
+        "unchangedFromVerifiedHead": true,
+        "filesystemLineEndingsNormalized": true
+      },
+      {
+        "path": "data/questions/shinryo-hoshasengishi/2025-annual-pm-completion.json",
+        "repositoryBlobSha256": "519ca2084698314049a2b866bde0b7d9441999e78c21533e8f13c2e6ef46a991",
+        "unchangedFromVerifiedHead": true,
+        "filesystemLineEndingsNormalized": true
+      },
+      {
+        "path": "data/questions/shinryo-hoshasengishi/2026-annual-am-completion.json",
+        "repositoryBlobSha256": "492d0ceb1f5f8cd69b44b6920f670ef5be70a0236ad2668d09500ca8ad73afa9",
+        "unchangedFromVerifiedHead": true,
+        "filesystemLineEndingsNormalized": true
+      },
+      {
+        "path": "data/questions/shinryo-hoshasengishi/2026-annual-pm-batch1.json",
+        "repositoryBlobSha256": "0f63dd8c2177374b66a7017fd0e7fecdc97043be33a032adb2fb51970a84e8c6",
+        "unchangedFromVerifiedHead": true,
+        "filesystemLineEndingsNormalized": true
+      },
+      {
+        "path": "data/questions/shinryo-hoshasengishi/2026-annual-pm-completion.json",
+        "repositoryBlobSha256": "260409cd6ee3ff0c8cac42802da27ea44d4c05b204f153be68ea48c5da565779",
+        "unchangedFromVerifiedHead": true,
+        "filesystemLineEndingsNormalized": true
+      }
+    ]
+  },
+  "dependencyClinicalLabResults": {
+    "finalOriginals": 35,
+    "uniqueOriginals": 35,
+    "mainOriginals": 10,
+    "incrementAgainstMain": 25,
+    "mainOriginalsPreservedExactly": true,
+    "unchangedDataFiles": [
+      {
+        "path": "data/questions/rinsho-kensagishi/2025-annual-pm-batch1.json",
+        "repositoryBlobSha256": "704a424b3992251cbc86efeb6094759bf3546371078b61f43bfc76055ef0411b",
+        "unchangedFromVerifiedHead": true,
+        "filesystemLineEndingsNormalized": true
+      },
+      {
+        "path": "data/questions/rinsho-kensagishi/2025-annual-pm-batch2.json",
+        "repositoryBlobSha256": "9f1946f2f0c255e26ff0ee8999e41556a53a4d8b2a99d84dcfb0561871fd00d4",
+        "unchangedFromVerifiedHead": true,
+        "filesystemLineEndingsNormalized": true
+      },
+      {
+        "path": "data/questions/rinsho-kensagishi/2026-annual-pm-batch1.json",
+        "repositoryBlobSha256": "44d89631b73a822621a1b67566d2bb39dd2b122493bdf22382aba3406aa006e5",
+        "unchangedFromVerifiedHead": true,
+        "filesystemLineEndingsNormalized": true
+      }
+    ]
+  },
+  "dependencyPrs": [
+    688,
+    692
+  ],
+  "dependencyStatus": "OPEN at preparation; contained saved clinical-lab originals are not counted as radiology increments",
+  "officialSourceOriginalsPreserved": 400,
+  "officiallyExcluded": 1,
+  "omittedOfficialPETFigureHold": 1,
+  "choiceExplanations": 1990,
+  "officialImageAssets": 70,
+  "validation": {
+    "focusedTestFiles": 7,
+    "focusedTestsPassed": 47,
+    "typecheckExitCode": 0,
+    "scopedLintExitCode": 0,
+    "diffCheckExitCode": 0,
+    "newFullLocalBuildExecuted": false,
+    "previousBuildHead": "7240de828fa051021404f8cc8261cd07eb3254d7",
+    "previousBuildStaticPages": 11991
+  },
+  "ci": {
+    "previousBase": "codex/lab-rad-cli-safe34-20261011",
+    "previousContexts": [
+      "Vercel SUCCESS",
+      "Vercel Preview Comments SUCCESS"
+    ],
+    "workflowTriggerRequirement": "pull_request base main; Question Quality Check and E2E jobs",
+    "newHeadRequiredCi": "PENDING after push and retarget"
+  },
+  "mainMergePerformed": false,
+  "productionDeployPerformed": false,
+  "currentProductionCountVerified": false
+}

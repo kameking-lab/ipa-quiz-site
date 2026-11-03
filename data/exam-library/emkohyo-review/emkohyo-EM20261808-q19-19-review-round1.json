@@ -1,0 +1,55 @@
+{
+  "reviewModel": "claude-opus-5-5",
+  "requestedModel": "claude-opus-5-5",
+  "canonicalModel": "claude-opus-5-5",
+  "provider": "firstParty",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 1780,
+      "cacheReadInputTokens": 143524,
+      "cacheCreationInputTokens": 14128,
+      "webSearchRequests": 0,
+      "costUSD": 0.17733680000000002,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 796,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "paperId": "emkohyo-EM20261808",
+  "ids": [
+    "emkohyo-EM20261808-q19"
+  ],
+  "figureSha256": {
+    "emkohyo-EM20261808-q19": {}
+  },
+  "officialRowImageSha256": {
+    "emkohyo-EM20261808-q19": {
+      "/exam-library/emkohyo-EM20261808/q19-p11-0.webp": "e9141c50f54630b4f1b0b815da5a1598efc77ee79019d5922e295e8ec8b5fd49"
+    }
+  },
+  "governmentSourceImageSha256": {},
+  "candidateSha256": {
+    "emkohyo-EM20261808-q19": "f861602959915006bd56a89898e594adacc838ce52bb427dd5a058d0b2ba487b"
+  },
+  "sourcePackPath": "docs/evidence/emkohyo-choice-sources/emkohyo-EM20261808-q19-19.json",
+  "sourcePackSha256": "44b083617a362858c576b9c4298800b96ef2db20ac7415a249d3a54cda8d4a3e",
+  "assessment": {
+    "emkohyo-EM20261808-q19": {
+      "status": "FIX",
+      "textIssues": [
+        "文字起こしpromptの化学式が「K₂C r₂O₇」になっており、CとrのあいだにPDF抽出由来のスペースが入っている。公式問題原図（q19-p11-0.webp）では「K₂Cr₂O₇」なので「K₂Cr₂O₇」に直す必要がある。",
+        "化学式の表記が揃っていない。肢4のreasonとsummaryは下付き文字なしの「K2Cr2O7」、肢1・2・3・5のreasonは「K₂Cr₂O₇」になっている。すべて「K₂Cr₂O₇」に統一すべき。"
+      ],
+      "choiceIssues": [],
+      "reasonIssues": [
+        "肢2のreasonの数値が違う。141×104.0÷294.2＝14664÷294.2＝49.84… なので、四捨五入すると「≒49.8 mg」「約49.8 µg/mL」になる。現候補の「≒49.9 mg」「約49.9 µg/mL」は計算と合わない。「必要な100 µg/mLの約半分」という結論はそのままでよい。"
+      ],
+      "sourceIssues": [],
+      "needsExternalCheck": []
+    }
+  }
+}

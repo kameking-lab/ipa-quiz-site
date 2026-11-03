@@ -1,0 +1,49 @@
+{
+  "scope": "MHLW 115th nursing afternoon original Q105 only, shared case Q103-105 retained",
+  "status": "source-only, visually repaired ruby extraction",
+  "originalSourcePacketSha256": "6571bfc7c3f1e5b96fb92432cb9b5e00609963a231242d6572b14eb55c5ddf59",
+  "repair": {
+    "field": "sharedCaseText",
+    "removedExtractorArtifact": "femoral fracture standalone line is small ruby, not running text",
+    "originalTextSpan": "転倒による\nfemoral fracture\n大腿骨骨折をきっかけに",
+    "visualTextSpan": "転倒による大腿骨骨折をきっかけに",
+    "officialPdfPhysicalPage": 44,
+    "officialPageImageSha256": "16b9ba42f612c5b5b75ee6739bb5f1d3b12ae751b93fcf34b912a26f266b91f6"
+  },
+  "question": {
+    "round": 115,
+    "session": "afternoon",
+    "question": 105,
+    "questionPdfPhysicalPage": 45,
+    "questionPdfPrintedPage": 39,
+    "sharedCaseQuestionNumbers": [
+      103,
+      104,
+      105
+    ],
+    "sharedCaseText": "次の文を読み103～105 の問いに答えよ。\nA さん（102 歳、女性）は夫と死別した後、介護老人福祉施設に入所しており、息子\n夫婦が頻繁に面会に来ている。転倒による大腿骨骨折をきっかけに寝たきりになり、\n食事摂取量が低下した。A さんは「私はここで最期を迎えたい」と自分の気持ちを看\n護師に話した。看護師は、A さんが点滴や酸素吸入などの延命処置を希望しないこ\nとを確認した。医師は家族にA さんは老衰であるため回復の見込みが低いことを伝\nえ、家族も延命処置は行わずに施設での看取りに同意した。",
+    "sharedCaseSourcePageImage": {
+      "path": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\claude-capacity-20261010\\nurse-q76-100\\pm115-q91-105-renders\\115-pm-physical-p44.png",
+      "sha256": "16b9ba42f612c5b5b75ee6739bb5f1d3b12ae751b93fcf34b912a26f266b91f6"
+    },
+    "stem": "A さんは深い昏睡状態となり、四肢の冷感、チアノーゼ、喘鳴および下顎呼吸\nが出現してきた。医師は家族にA さんの死期が近いことを説明した。\n看護師の対応で最も適切なのはどれか。",
+    "choices": [
+      "足浴を行う。",
+      "口腔内吸引を行う。",
+      "心肺蘇生の準備をする。",
+      "家族と過ごせるよう居室を整備する。"
+    ],
+    "choiceCount": 4,
+    "officialAcceptedAnswerNumbers": [
+      "4"
+    ],
+    "answerKind": "select_one",
+    "requiredSelections": 1,
+    "sourcePageImage": {
+      "path": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\claude-capacity-20261010\\nurse-q76-100\\pm115-q91-105-renders\\115-pm-physical-p45.png",
+      "sha256": "87b347b0d6d905cf7d2696a4b2f23a53be3e72fa20a9564e91afdd8b0bbdc2ce"
+    },
+    "figurePresent": false,
+    "transcriptionStatus": "visually verified against original PDF page"
+  }
+}

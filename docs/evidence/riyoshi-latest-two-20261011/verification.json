@@ -1,0 +1,84 @@
+{
+  "checkedAt": "2026-10-11T01:41:49.279Z",
+  "contentHead": "1c460c163d4342d2a2756177d19b0764b74bb0c9",
+  "latestMain": "52953d4e66389b492e13f5d9040fffbb581755a1",
+  "typecheck": {
+    "command": "pnpm typecheck",
+    "result": "passed before and after rebase; exit 0"
+  },
+  "lint": {
+    "command": "pnpm lint",
+    "result": "0 errors, 1 pre-existing unused variable warning in reports/civil2-2026-completion-20260926/parse-fenced-results.mjs",
+    "postRebase": "pnpm exec eslint on 8 conflict/test files passed; exit 0"
+  },
+  "questions": {
+    "command": "pnpm validate:questions --exam=riyoshi",
+    "total": 110,
+    "ok": 110,
+    "fail": 0,
+    "warn": 0
+  },
+  "fullSuite": {
+    "command": "pnpm exec vitest run --maxWorkers=2",
+    "base": "a9915090bf0c97dbc8a92084c33886424dcf8a96",
+    "files": 516,
+    "passedFiles": 513,
+    "failedFiles": 3,
+    "tests": 4768,
+    "passed": 4764,
+    "failed": 4,
+    "exitCode": 1,
+    "failedTestsResolved": true,
+    "resolutions": [
+      {
+        "file": "__tests__/questions/riyoshi-latest-two.test.ts",
+        "reason": "Independent official-key fixture omitted an entry near Q39/Q40. Official PDF rechecked and fixture corrected; saved official answers were already correct.",
+        "result": "all 5 passed"
+      },
+      {
+        "file": "__tests__/api/cost-record-durability.test.ts",
+        "reason": "15-second timeout and subsequent mock-call count interference under concurrent load",
+        "command": "vitest run selected files --maxWorkers=1 --testTimeout=60000",
+        "result": "all 5 passed"
+      },
+      {
+        "file": "__tests__/seo/sitemap-static-indexable.test.ts",
+        "reason": "Explicit 30-second timeout under concurrent load",
+        "command": "vitest run __tests__/seo/sitemap-static-indexable.test.ts --maxWorkers=1 --retry=1",
+        "result": "all 8 passed; actual test duration 11.55s"
+      }
+    ],
+    "note": "A fresh single all-green full-suite run is not claimed. Initial four failures were resolved by correction or separate reruns."
+  },
+  "postRebase": {
+    "command": "vitest run Riyoshi two files, config integrity, main lab/radiology and lazy-loader tests --maxWorkers=1",
+    "files": 5,
+    "passedTests": 24,
+    "failedTests": 2,
+    "tests": 26,
+    "failures": "Only two 15-second lazy-loader timeouts; no failed content or diagram assertion.",
+    "resolution": {
+      "command": "pnpm exec vitest run __tests__/questions/get-questions.test.ts --maxWorkers=1 --testTimeout=120000",
+      "passed": 7,
+      "failed": 0
+    },
+    "riyoshiAndConfigAndMainLabTests": "All 19 passed"
+  },
+  "build": {
+    "command": "pnpm exec next build --webpack",
+    "result": "full production build passed; exit 0",
+    "staticPages": 11441,
+    "base": "a9915090bf0c97dbc8a92084c33886424dcf8a96",
+    "timing": "Full build completed before rebase. After rebase the full typecheck, selected lint, 110-question validation and affected registration/figure/loader tests were rerun.",
+    "defaultCommand": "Turbopack build could not resolve the reused node_modules junction outside its filesystem root. Webpack used existing installed dependencies; no dependency or Next configuration changed.",
+    "warnings": [
+      "Existing middleware deprecation",
+      "Existing Sentry/OpenTelemetry dynamic dependency warning",
+      "Existing chart size warnings during prerender"
+    ]
+  },
+  "sourceReview": "Independent localized Astra review passed; no whole-paper double review or Opus/publication approval claimed.",
+  "remainingContentHolds": [],
+  "remainingTestFailures": [],
+  "publicIncrement": 0
+}

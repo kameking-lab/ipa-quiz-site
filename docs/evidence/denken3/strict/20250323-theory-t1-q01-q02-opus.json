@@ -1,0 +1,91 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20250323",
+  "subject": "theory",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 7347,
+      "cacheReadInputTokens": 99060,
+      "cacheCreationInputTokens": 17296,
+      "webSearchRequests": 0,
+      "costUSD": 0.305128,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 4890,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "2efe2178cb4557a3fd76efb8d5e9bd259a93ed6c0fec16afbdee0db23e32e32a",
+  "inputRequestSha256": "aaafa30d17a6de623fc2d052082d878aa93c9b24c9fb28ac373f71b5e58845cd",
+  "inputHashes": {
+    "candidateSha256": {
+      "q01": "35c771a1bdf852bef868768dc58f0cd6e4afd274cc79f9b7849fc7d7ff5e83f8",
+      "q02": "95d2588831b8a1192a0e0869acef74fb27adb8ffbac6fc626692c24bcb6bd34d"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20250323/theory/p04.png": "4f7e9446a8ffedecaa18aef7e08840d0e85f3275eaec59d4e496f5524c2e11e4",
+      "data/raw_pdfs/denken3/review/20250323/theory/p05.png": "4b1808a3df72abce90072b1a292368d9a2ad25284fa7c73d6e1fa1e36526ae90"
+    },
+    "figureSha256": {},
+    "sourceQuestionPdfSha256": "8817012cb55eed9c83bb1e68df138909b1e03a81f7ed48a9893a219e1d2a76ca",
+    "sourceAnswerPdfSha256": "4c3b38fcf1405766fafaa78b1b05b867a3d48307a670b9d354476bc6b32acd4c",
+    "officialAnswerUnitsSha256": "8c87f65663c3524950dadaea2dd7f511d1e54f949346a6a5aa1c235b1a459d15",
+    "referencePdfSha256": {},
+    "referencePageSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q01",
+      "questionNumber": 1,
+      "part": null,
+      "status": "FIX",
+      "textIssues": [
+        "問題文は「図のように，」で始まり、図がある前提の文になっている。しかし figureUrls は [] で、公開される候補図がない。このままでは、利用者の画面では存在しない図を指す文になる。公開候補図を用意して figureUrls に登録するか、図を出さないなら問題文の末尾などに「（図は省略。電極間を上側から ε₁ 層 2 mm、ε₂ 層 4 mm の順に隙間なく平行に積層）」のような注記を加える必要がある。"
+      ],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [
+        "choiceExplanations の (2)(3)(5) は、どれも「誤り。計算結果5.31×10⁻⁹ Cと一致しない。」という同じ文で、その肢固有の理由になっていない。少なくとも正しい値との比を書き分けること。(2) 7.8×10⁻⁹ は正しい値の約1.47倍、(3) 9.4×10⁻⁹ は約1.77倍、(5) 4.5×10⁻⁸ は約8.5倍で、いずれも直列合成容量から求めた値より大きい。どの誤りから出た値か説明できない肢は、その旨を明記したうえで、比で違いを示す形にする。"
+      ],
+      "figureIssues": [
+        "figureDescription は図を「文章だけでは位置関係が伝わりにくいため必要」としているが、figureUrls は [] で公開候補図がない。記述と成果物が食い違っており、公開候補図だけで理解できるかという検査が成り立たない。実際には問題文の「電極と平行に挿入」「厚さ2 mm，4 mm（電極間隔6 mmと一致）」だけでも直列構造は読み取れる。したがって、図を作って登録するか、figureDescription を「文章だけで解答可能」に改めて問題文の『図のように』を扱い直すか、どちらかに揃える必要がある。",
+        "原図との照合結果: 左に12 Vの直流電源、上下の電極板へ配線、上層がε₁（2 mm、右上がりの斜線）、下層がε₂（4 mm、右下がりの斜線）、右側に寸法線2 mm / 4 mm。figureDescription の接続・積層順・ラベル・寸法の記述は原図と一致しており、この点に誤りはない。電源の極性は記述されていないが、電荷の大きさには影響しない。"
+      ],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "問題文: 原図の問1と照合した。電極面積0.1 m²、電極間隔6 mm、ε₁=2・厚さ2 mm、ε₂=4・厚さ4 mm、12 V直流、ε₀=8.85×10⁻¹² F/m、端効果無視。数値・単位・但し書きはすべて一致。",
+        "選択肢: (1)5.3×10⁻⁹ (2)7.8×10⁻⁹ (3)9.4×10⁻⁹ (4)2.1×10⁻⁸ (5)4.5×10⁻⁸。仮数と指数の符号・桁は原図と一致。",
+        "公式正答: manifest の answer=\"1\" と officialAnswer=\"1\" は一致。",
+        "計算の検算: C₁=8.85×10⁻¹²×2×0.1/(2×10⁻³)=8.85×10⁻¹⁰ F、C₂=8.85×10⁻¹²×4×0.1/(4×10⁻³)=8.85×10⁻¹⁰ F、直列合成で4.425×10⁻¹⁰ F、Q=4.425×10⁻¹⁰×12=5.31×10⁻⁹ C。(1)に最も近い。",
+        "電束密度による検算: d₁/ε₁+d₂/ε₂=1×10⁻³+1×10⁻³=2×10⁻³ m、D=12ε₀/(2×10⁻³)=5.31×10⁻⁸ C/m²、Q=DS=5.31×10⁻⁹ C。本文の記述と一致。",
+        "肢(4)の説明を検算: C₁+C₂=1.77×10⁻⁹ F、×12 V=2.12×10⁻⁸ C。並列と取り違えた場合に(4)になるという説明は数値的に正しい。",
+        "出典: 試験日2025-03-23は令和6年度下期、fiscalYear=2024、term=lower、subject=theory と整合する。原図のフッター「T2－R 004」は reviewedFromPage=[4] と整合する。officialReferenceUrls は [] なので、検証が必要な独立主張はない。"
+      ]
+    },
+    {
+      "unitKey": "q02",
+      "questionNumber": 2,
+      "part": null,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "問題文: 原図の問2と照合した。「地球を，真空中にある半径6.37×10⁶ mの導体球と見なしたとき」「静電容量の値[F]」「ε₀=8.85×10⁻¹² F/m」は一致。原図に図はなく、figureDescription の「図なし」と figureUrls=[] は正しい。",
+        "選択肢: (1)7.08×10⁻⁴ (2)4.45×10⁻³ (3)4.51×10³ (4)5.67×10⁴ (5)1.78×10⁵。指数の符号・桁は原図と一致。",
+        "公式正答: manifest の answer=\"1\" と officialAnswer=\"1\" は一致。",
+        "計算の検算: 4π×8.85×10⁻¹²=1.1121×10⁻¹⁰、×6.37×10⁶=7.084×10⁻⁴ F。(1)に一致する。V=Q/(4πε₀a) から C=4πε₀a を導く因果にも誤りはない。",
+        "誤答肢の倍率を検算: (2) 4.45×10⁻³/7.084×10⁻⁴=6.28（約6.3倍）、(3) 6.37×10⁶倍（約6×10⁶倍）、(4) 8.0×10⁷倍（約8×10⁷倍）、(5) 2.51×10⁸倍（約2.5×10⁸倍）。記載された倍率はすべて正しく、各肢で書き分けられている。",
+        "出典: 令和6年度下期、試験日2025-03-23、fiscalYear=2024、term=lower は整合する。原図のフッター「T2－R 005」は reviewedFromPage=[5] と整合する。officialReferenceUrls は [] なので、検証が必要な独立主張はない。"
+      ]
+    }
+  ]
+}

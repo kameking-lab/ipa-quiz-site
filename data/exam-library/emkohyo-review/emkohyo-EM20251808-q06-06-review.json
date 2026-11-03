@@ -1,0 +1,62 @@
+{
+  "reviewModel": "claude-opus-5-5",
+  "requestedModel": "claude-opus-5-5",
+  "canonicalModel": "claude-opus-5-5",
+  "provider": "firstParty",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 3285,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 13737,
+      "webSearchRequests": 0,
+      "costUSD": 0.1758598,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 2239,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponsePath": "data/exam-library/emkohyo-review/emkohyo-EM20251808-q06-06-raw-response.txt",
+  "rawResponseSha256": "b9ec8051d43547532030186cae6581da57bcaa8bb90435ee4537b4e9c5c95f73",
+  "paperId": "emkohyo-EM20251808",
+  "ids": [
+    "emkohyo-EM20251808-q6"
+  ],
+  "figureSha256": {
+    "emkohyo-EM20251808-q6": {}
+  },
+  "officialRowImageSha256": {
+    "emkohyo-EM20251808-q6": {
+      "/exam-library/emkohyo-EM20251808/q6-p4-1.webp": "639e32d535e227ed2f1dabfb23a70e86baf3e9466af278d191068419f4d361e4"
+    }
+  },
+  "officialPageImageSha256": {},
+  "governmentSourceImageSha256": {},
+  "candidateSha256": {
+    "emkohyo-EM20251808-q6": "fc6b19b5700fb9326cb5d7ca4a730a44a361fe1eba214125c0c3bfc7564c18c5"
+  },
+  "sourcePackPath": "docs/evidence/emkohyo-choice-sources/emkohyo-EM20251808-q06-06.json",
+  "sourcePackSha256": "ca6023bd8ee3b7ae3f03d447488848a62b729def6791c9a4da5650be6e5d128a",
+  "assessment": {
+    "emkohyo-EM20251808-q6": {
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "reasonIssues": [
+        "肢4: 解説は錯体を『生成したジフェニルカルバゾンとクロム（Ⅲ）』が作ると正しく説明している。しかし問題文の『ジフェニルカルバジドとクロムイオンとの錯体』という表現との食い違いに触れないまま『記述は正しい』と結論している。本肢を正しいと扱う理由を一文補うべきである。たとえば、試験上はジフェニルカルバジド法で生じるクロム錯体の慣用的表現であり、判定の焦点は色（赤紫色）にある、という説明である。これがないと、学習者が『錯体を作るのはカルバゾンだから肢4も誤り』と混乱するおそれがある。",
+        "肢5: 解説は『影響が呈色後の時間経過で消えることから、バナジウムによる呈色は一時的に生じて退色すると解され』としており、妨害の記述から呈色反応を推論している。引用資料は『妨害する』『10～15分経過すれば影響は無視できる』と述べるにとどまる。バナジウムがジフェニルカルバジドと反応して発色すること自体は明示していない。推論の形のまま正誤の根拠とするのではなく、発色を明示する資料に基づいて書き直すべきである。"
+      ],
+      "sourceIssues": [
+        "肢5: 環境省『有害大気汚染物質測定方法マニュアル』（注1）と『底質調査方法』注(10)は、バナジウムを妨害元素として挙げ、時間経過で影響が消えると記すのみである。『硫酸酸性下でバナジウムがジフェニルカルバジドと反応し発色する』ことを直接支える記述ではない。本肢の理由を直接支える一次資料が添付資料中に無い。",
+        "肢3: 産総研手順書は『暗色瓶で冷蔵保存』、環境省マニュアルは『冷暗所に保存』と記している。問題文の『褐色ガラス瓶』『冷蔵庫内』をそのまま記載した資料ではない。趣旨の整合は認められるが、厳密には近似的な支持にとどまる。"
+      ],
+      "needsExternalCheck": [
+        "肢5: バナジウムがジフェニルカルバジドと反応して呈色すること（呈色が短時間で退色すること）を明示した一次資料を確認し、根拠として差し替えまたは追加すること。候補は JIS K 0102 のクロム（Ⅵ）ジフェニルカルバジド吸光光度法の備考・注記、作業環境測定ガイドブック等。",
+        "肢3: 『褐色ガラス瓶に入れ冷暗所（冷蔵庫）に保存』と明記した資料（JIS K 0102 の試薬調製記載等）があれば確認し、根拠として追加すること。"
+      ]
+    }
+  }
+}

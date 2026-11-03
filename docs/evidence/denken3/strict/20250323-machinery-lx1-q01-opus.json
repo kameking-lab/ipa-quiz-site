@@ -1,0 +1,66 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20250323",
+  "subject": "machinery",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 4113,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 14308,
+      "webSearchRequests": 0,
+      "costUSD": 0.1969878,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 2480,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "1d3890dd39cc17a433105c3295458bfe663ea11f6dbe0b2ffa43fa3edb5980d0",
+  "inputRequestSha256": "20677ad84ff3c159d96046bcedc8e4d8a6f3b08b7cf36a9bcdcefb1d0f44b1af",
+  "inputHashes": {
+    "candidateSha256": {
+      "q01": "75c8e2d6b1b6f91aa4523c5fc2ab3bcac8bd1b8224b9109cd2991c9c867c9aa1"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20250323/machinery/p04.png": "d63f104017cf31be1ef1f998731858ddd7d34359433f3dd44dc9e03a0af986e2"
+    },
+    "figureSha256": {},
+    "sourceQuestionPdfSha256": "66e8b0070a314cd78ed9b9f3edd3d75eeaf442b258fd0aacab0e7d9620c75b9f",
+    "sourceAnswerPdfSha256": "4c3b38fcf1405766fafaa78b1b05b867a3d48307a670b9d354476bc6b32acd4c",
+    "officialAnswerUnitsSha256": "f50fdd46498cf67bc8fe692426db828760078cc540f8b5e64e1bfb9bf4773e9b",
+    "referencePdfSha256": {},
+    "referencePageSha256": {},
+    "referenceJsonSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q01",
+      "questionNumber": 1,
+      "part": null,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "出典メタデータ: fiscalYear=2024、term=lower、examDate=2025-03-23、subject=machinery、sourceQuestionPdfUrl=20250323_ch_third_q03.pdf、sourceAnswerPdfUrl=2024_3_2.pdf は manifest と一致する。reviewedFromPage=[4] は manifest の PDF 第4頁と一致する。原図下部の『-1-』は冊子の頁番号で、PDF頁番号ではない。原図のフッタ『T2－K 004』とも整合する。",
+        "sourceAttribution『令和6年度下期第三種電気主任技術者試験 機械科目 問1』は、解答表見出し『令和6年度 下期 第三種電気主任技術者試験解答』（令和6年度=2024年度）および manifest と一致する。",
+        "公式正答: 解答表〈機械〉問1=5。manifest 固定の公式正答単位 answer=\"5\" および候補の officialAnswer=\"5\" と一致する。",
+        "問題文: 原図と照合した。l[m]・B[T]・v[m/s]、『導体及び磁束に直角な方向に移動』、フレミングの(ア)の法則、e=(イ)[V]、Φ[Wb]・p・Z・a・D[m]・n[min⁻¹]、v=πD·n/60[m/s]、『正負のブラシ間には(ウ)本の導体が(エ)に接続』、E=(オ)[V] は、記号・単位・語句とも一致する。差異は句読点の整形のみである。",
+        "選択肢: (1)左手/Bv/l/Z/a/直列/Z/(60pa)·Φn、(2)左手/Blv/Za/直列/pZa/60·Φn、(3)右手/Bv/l/Za/並列/pZa/60·Φn、(4)右手/Blv/a/Z/並列/pZ/(60a)·Φn、(5)右手/Blv/Z/a/直列/pZ/(60a)·Φn。全5肢×5空欄を原図の表と1セルずつ照合し、すべて一致した。一行表記した分数は、通常の演算順序で原図の分数と同値に読める。",
+        "総合解説の検算: 電機子表面積 πDl を貫く全磁束は pΦ なので B_av = pΦ/(πDl) となる。e_av = B_av·l·πD·n/60 = pΦn/60 である。並列回路 a の1経路にある直列導体は Z/a 本なので、E = (Z/a)·pΦn/60 = pZΦn/(60a)[V] となり、(5)の(オ)と一致する。発電作用を右手の法則とする説明、ブラシ間電圧を1経路の直列導体の起電力の和とする因果も正しい。",
+        "肢別解説: (1)は(ア)(イ)(オ)の誤りを正しく指摘している。Bv/l の単位は T/s（=V/m²）で V にならず、Z/(60pa) は p が分母にある点で正答と異なる。(ウ)(エ)が正しいという記述も正確である。(2)は(ア)(ウ)(オ)の誤りを指摘し、pZa/60 は a が分子にある点で正答と異なる。(3)は(ア)のみ正しく、他4空欄が誤りである。(4)は(ウ)a/Z が逆数である点と(エ)並列の誤りを指摘している。(5)は全空欄が正しい。いずれも原図の肢内容と整合する。",
+        "図: 原図は問題文と組合せ表のみで、回路図・構造図はない。figureUrls=[]、choiceFigureUrls={}、figureDescription『図はない』は妥当で、解答に公開候補図は不要である。",
+        "参照URL: officialReferenceUrls=[] で、独立した外部主張はない。検証が必要な外部確認事項はない。",
+        "非阻害の所見（修正不要）: 総合解説の『B_av·πD·l = pΦ。したがって B_av·l·πD = pΦ。』は同式を並べ替えただけの冗長な一文で、計算の正誤には影響しない。uncertainty 欄の『政府の一次資料URL』は、試験センター（一般財団法人）を指す表現として不正確だが、内部メモであり公開内容には影響しない。"
+      ]
+    }
+  ]
+}

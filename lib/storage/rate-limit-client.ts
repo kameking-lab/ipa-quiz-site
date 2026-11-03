@@ -36,10 +36,7 @@ export function incrementAiUsage(): UsageData {
   return next;
 }
 
-/**
- * Initial free quota before the feedback gate triggers.
- * After feedback is submitted, the limit effectively becomes unlimited.
- */
+/** Legacy local quota data, retained for older clients and feedback migration. */
 export const FREE_DAILY_LIMIT_CLIENT = FREE_AI_DAILY_LIMIT;
 export const POST_FEEDBACK_DAILY_LIMIT_CLIENT = POST_FEEDBACK_AI_DAILY_LIMIT;
 
@@ -71,7 +68,7 @@ export function effectiveDailyLimit(): number {
  * 無料枠解除の判定根拠が「クライアントの自己申告ヘッダ」から「サーバ署名済み
  * Cookie」に変わったため、旧方式で解除済みのユーザーは localStorage だけが
  * true でサーバ側の証跡を持たない状態になる。放置すると、UI は「解除済み」の
- * ままなのに実際は 10 回で止まる＝ユーザーから見て原因不明の頭打ちになる。
+ * ままなのに旧 API では 10 回で止まる＝ユーザーから見て原因不明の頭打ちになる。
  *
  * そこで成功レスポンスの X-RateLimit-Limit を見て、サーバが無料枠のままだと
  * 分かったらローカルの解除フラグを落とす。次の枠到達でフィードバックゲートが

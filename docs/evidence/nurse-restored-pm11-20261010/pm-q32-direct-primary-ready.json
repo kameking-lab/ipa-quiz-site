@@ -1,0 +1,79 @@
+{
+  "sourceCandidateSha256": "fb4c044fb50846a5ff2f6808b23ccf26d214022fe992f6087434f9d1dbf8af64",
+  "readyQuestions": [
+    {
+      "id": "kangoshi-2025-annual-pm-q32",
+      "exam": "kangoshi",
+      "session": "pm",
+      "year": 2025,
+      "season": "annual",
+      "qNumber": 32,
+      "subject": "午後（一般問題）",
+      "officialAnswerNumber": "4",
+      "type": "multiple-choice",
+      "category": "一般問題",
+      "topicTags": [
+        "一般問題",
+        "第115回"
+      ],
+      "difficulty": 2,
+      "question": "救急医療に関する記述で正しいのはどれか。",
+      "choices": {
+        "ア": "救急医療情報センターは国が整備する。",
+        "イ": "救急搬送の約8 割が軽傷・中等症患者である。",
+        "ウ": "都道府県の健康増進計画に救急医療の連携が記載されている。",
+        "エ": "一般住民による自動体外式除細動器〈AED〉の使用はプレホスピタルケア〈病\n院前救護〉に該当する。"
+      },
+      "answer": "エ",
+      "explanation": "公式正答はエ。一般住民が病院到着前の現場で行うAEDによる救命処置は病院前救護に含まれる。救急医療情報センターの整備主体、救急搬送の傷病程度別構成比、救急医療の連携を定める計画を区別する。",
+      "choiceExplanations": {
+        "ア": "厚生労働省の救急医療対策事業実施要綱は、都道府県が県全域を対象とした救急医療情報センターを整備すると定める。国が整備するとの記述は誤り。",
+        "イ": "消防庁の令和7年版資料では、令和6年中の救急自動車による搬送人員のうち軽症46.8％、中等症44.6％。合計91.4％で、約8割ではなく約9割。",
+        "ウ": "救急医療の医療連携体制を定めるのは都道府県の医療計画であり、健康増進計画ではない。第8次医療計画では救急医療は5疾病6事業の一つ。",
+        "エ": "厚生労働省は一般市民による救命現場でのAED使用を認め、病院前救護体制の充実と結び付けている。病院到着前の救命処置に当たり、公式正答どおり。"
+      },
+      "explanationCoverage": "full",
+      "hasImage": false,
+      "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-05c_01.pdf#page=15",
+      "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-05seitou.pdf#page=1",
+      "sourceAttribution": "出典：厚生労働省「第115回看護師国家試験」午後 問32（問題・正答）。問題文・選択肢は原典どおりで、表示のため改行・字間・選択肢番号の書式のみ調整しています（加工）。解説は過去問AIが独自に作成したもので、厚生労働省とは関係ありません。",
+      "officialReferenceUrls": [
+        "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/tp260424-03_04_05.html",
+        "https://www.mhlw.go.jp/web/t_doc?dataId=00ta6774&dataType=1&pageNo=1",
+        "https://www.fdma.go.jp/pressrelease/houdou/items/kyuuki_20260116.pdf",
+        "https://www.mhlw.go.jp/content/10800000/001015863.pdf",
+        "https://www.mhlw.go.jp/web/t_doc?dataId=00tb2986&dataType=1&pageNo=1"
+      ],
+      "license": "MHLW-attributed",
+      "needsReview": false,
+      "lastUpdated": "2026-10-10"
+    }
+  ],
+  "qa": {
+    "session": "pm",
+    "qNumber": 32,
+    "officialKey": "4/エ",
+    "questionAndChoicesUnchanged": true,
+    "fourChoicesExplained": true,
+    "amQ32Untouched": true,
+    "modelCalls": 0
+  },
+  "sourceMap": {
+    "ア": {
+      "url": "https://www.mhlw.go.jp/web/t_doc?dataId=00ta6774&dataType=1&pageNo=1",
+      "pinpoint": "第12 救急医療情報センター 1目的・2補助対象"
+    },
+    "イ": {
+      "url": "https://www.fdma.go.jp/pressrelease/houdou/items/kyuuki_20260116.pdf",
+      "pinpoint": "PDF p6 表9、2024年搬送人員、46.8+44.6=91.4%"
+    },
+    "ウ": {
+      "url": "https://www.mhlw.go.jp/content/10800000/001015863.pdf",
+      "pinpoint": "PDF p2–3、都道府県医療計画、5疾病6事業、救急医療"
+    },
+    "エ": {
+      "url": "https://www.mhlw.go.jp/web/t_doc?dataId=00tb2986&dataType=1&pageNo=1",
+      "pinpoint": "通知2・報告書第1、一般市民AEDと病院前救護"
+    }
+  }
+}

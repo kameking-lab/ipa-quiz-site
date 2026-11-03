@@ -1,0 +1,117 @@
+{
+  "duration_api_ms": 80989,
+  "stop_reason": "end_turn",
+  "session_id": "d5f71972-0acd-4f34-b72e-780c150ec728",
+  "total_cost_usd": 0.6346468000000001,
+  "usage": {
+    "input_tokens": 24,
+    "cache_creation_input_tokens": 34954,
+    "cache_read_input_tokens": 650714,
+    "output_tokens": 7274,
+    "output_tokens_details": {
+      "thinking_tokens": 1093
+    },
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 34954,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "not_available",
+    "iterations": [
+      {
+        "input_tokens": 2,
+        "output_tokens": 3191,
+        "cache_read_input_tokens": 62175,
+        "cache_creation_input_tokens": 871,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 871
+        },
+        "type": "message"
+      }
+    ],
+    "speed": "standard"
+  },
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 24,
+      "outputTokens": 7274,
+      "cacheReadInputTokens": 650714,
+      "cacheCreationInputTokens": 34954,
+      "webSearchRequests": 0,
+      "costUSD": 0.5553508,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 1093,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    },
+    "claude-haiku-4-5-20251001": {
+      "inputTokens": 63891,
+      "outputTokens": 1081,
+      "cacheReadInputTokens": 0,
+      "cacheCreationInputTokens": 0,
+      "webSearchRequests": 1,
+      "costUSD": 0.07929599999999999,
+      "contextWindow": 200000,
+      "maxOutputTokens": 32000,
+      "thinkingTokens": 0,
+      "canonicalModel": "claude-haiku-4-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+    "spawned": 0,
+    "requested": {
+      "background": 0,
+      "foreground": 0,
+      "unset": 0
+    },
+    "started_in_background": 0,
+    "max_depth": 0,
+    "spawned_by_subagents": 0,
+    "completed": 0,
+    "failed": 0,
+    "killed": {
+      "parent": 0,
+      "user": 0,
+      "system": 0
+    },
+    "refused": {
+      "depth_limit": 0,
+      "concurrency_limit": 0,
+      "budget": 0
+    },
+    "by_type": {}
+  },
+  "is_error": false,
+  "num_turns": 13,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "{\"46\":{\"status\":\"PASS\",\"choiceStatus\":{\"ア\":\"PASS\",\"イ\":\"PASS\",\"ウ\":\"PASS\",\"エ\":\"PASS\"},\"fixedChoiceExplanations\":{},\"evidence\":[{\"url\":\"https://www.mlit.go.jp/jutakukentiku/house/content/001979635.pdf\",\"excerpt\":\"特に、専有部分と共用部分の区分、専用使用部分と共用部分の管理及び駐車場の使用等に関してトラブルが生じることが多いことから、適正な利用と公平な負担が確保されるよう、各部分の範囲及びこれに対するマンションの区分所有者等の負担を明確に定めておくことが重要である。\"},{\"url\":\"https://www.mlit.go.jp/jutakukentiku/house/content/001979635.pdf\",\"excerpt\":\"管理業務の委託や工事の発注等については、事業者の選定に係る意思決定の透明性確保や利益相反等に注意して、適正に行われる必要があるが、とりわけ外部の専門家が管理組合の管理者等又は役員に就任する場合においては、マンションの区分所有者等から信頼されるような発注等に係るルールの整備が必要である。\"},{\"url\":\"https://www.mlit.go.jp/jutakukentiku/house/content/001979635.pdf\",\"excerpt\":\"自治会及び町内会等（以下「自治会」という。）は、管理組合と異なり、各居住者が各自の判断で加入するものであることに留意するとともに、特に管理費の使途については、マンションの管理と自治会活動の範囲・相互関係を整理し、管理費と自治会費の徴収、支出を分けて適切に運用する必要がある。\"},{\"url\":\"https://www.mlit.go.jp/jutakukentiku/house/content/001979635.pdf\",\"excerpt\":\"複合用途型マンションにあっては、住宅部分と非住宅部分との利害の調整を図り、その管理、費用負担等について適切な配慮をすることが重要である。\"}]},\"47\":{\"status\":\"PASS\",\"choiceStatus\":{\"ア\":\"PASS\",\"イ\":\"PASS\",\"ウ\":\"PASS\",\"エ\":\"PASS\"},\"fixedChoiceExplanations\":{},\"evidence\":[{\"url\":\"https://laws.e-gov.go.jp/api/1/lawdata/412AC1000000149\",\"excerpt\":\"二以上の区分所有者（建物の区分所有等に関する法律（昭和三十七年法律第六十九号。以下「区分所有法」という。）第二条第二項に規定する区分所有者をいう。以下同じ。）が存する建物で人の居住の用に供する専有部分（区分所有法第二条第三項に規定する専有部分をいう。以下同じ。）のあるもの並びにその敷地及び附属施設\"},{\"url\":\"https://laws.e-gov.go.jp/api/1/lawdata/412AC1000000149\",\"excerpt\":\"第三十条第一項の登録を受け、マンション管理士の名称を用いて、専門的知識をもって、管理組合の運営その他マンションの管理に関し、管理組合の管理者等又はマンションの区分所有者等の相談に応じ、助言、指導その他の援助を行うことを業務（他の法律においてその業務を行うことが制限されているものを除く。）とする者をいう。\"},{\"url\":\"https://laws.e-gov.go.jp/api/1/lawdata/412AC1000000149\",\"excerpt\":\"認定管理者等は、第五条の十四の認定を受けた管理計画の変更（国土交通省令で定める軽微な変更を除く。）をしようとするときは、国土交通省令で定めるところにより、計画作成都道府県知事等の認定を受けなければならない。\"},{\"url\":\"https://laws.e-gov.go.jp/api/1/lawdata/412AC1000000149\",\"excerpt\":\"マンション管理士は、正当な理由がなく、その業務に関して知り得た秘密を漏らしてはならない。マンション管理士でなくなった後においても、同様とする。\"}]},\"48\":{\"status\":\"PASS\",\"choiceStatus\":{\"ア\":\"PASS\",\"イ\":\"PASS\",\"ウ\":\"PASS\",\"エ\":\"PASS\"},\"fixedChoiceExplanations\":{},\"evidence\":[{\"url\":\"https://www.mlit.go.jp/jutakukentiku/house/content/001979635.pdf\",\"excerpt\":\"マンションの適切な管理のため、管理規約において災害等の緊急時や管理上必要なときの専有部の立ち入り、修繕等の履歴情報の管理等について定められていること\"},{\"url\":\"https://www.mlit.go.jp/jutakukentiku/house/content/001979635.pdf\",\"excerpt\":\"長期修繕計画が「長期修繕計画標準様式」に準拠し作成され、長期修繕計画の内容及びこれに基づき算定された修繕積立金額について集会にて決議されていること\"},{\"url\":\"https://www.mlit.go.jp/jutakukentiku/house/content/001979635.pdf\",\"excerpt\":\"長期修繕計画の作成又は見直しが七年以内に行われていること\"},{\"url\":\"https://www.mlit.go.jp/jutakukentiku/house/content/001979635.pdf\",\"excerpt\":\"長期修繕計画の計画期間全体での修繕積立金の総額から算定された修繕積立金の平均額が著しく低額でないこと\"}]},\"49\":{\"status\":\"PASS\",\"choiceStatus\":{\"ア\":\"PASS\",\"イ\":\"PASS\",\"ウ\":\"PASS\",\"エ\":\"PASS\"},\"fixedChoiceExplanations\":{},\"evidence\":[{\"url\":\"https://laws.e-gov.go.jp/api/1/lawdata/412AC1000000149\",\"excerpt\":\"マンション管理士となる資格を有する者は、国土交通大臣の登録を受けることができる。ただし、次の各号のいずれかに該当する者については、この限りでない。\"},{\"url\":\"https://laws.e-gov.go.jp/api/1/lawdata/412AC1000000149\",\"excerpt\":\"この法律の規定により罰金の刑に処せられ、その執行を終わり、又は執行を受けることがなくなった日から二年を経過しない者\"},{\"url\":\"https://laws.e-gov.go.jp/api/1/lawdata/412AC1000000149\",\"excerpt\":\"国土交通大臣は、マンション管理士の登録がその効力を失ったときは、その登録を消除しなければならない。\"},{\"url\":\"https://laws.e-gov.go.jp/api/1/lawdata/412AC1000000149\",\"excerpt\":\"マンション管理士でない者は、マンション管理士又はこれに紛らわしい名称を使用してはならない。\"},{\"url\":\"https://laws.e-gov.go.jp/api/1/lawdata/412AC1000000149\",\"excerpt\":\"次の各号のいずれかに該当する場合には、その違反行為をした者は、三十万円以下の罰金に処する。\"}]},\"50\":{\"status\":\"PASS\",\"choiceStatus\":{\"ア\":\"PASS\",\"イ\":\"PASS\",\"ウ\":\"PASS\",\"エ\":\"PASS\"},\"fixedChoiceExplanations\":{},\"evidence\":[{\"url\":\"https://laws.e-gov.go.jp/api/1/lawdata/412AC1000000149\",\"excerpt\":\"マンション管理業者は、従前の管理受託契約又は管理者受託契約と同一の条件で管理組合との管理受託契約又は管理者受託契約を更新しようとするときは、あらかじめ、当該管理組合を構成するマンションの区分所有者等全員に対し、重要事項を記載した書面を交付しなければならない。\"},{\"url\":\"https://laws.e-gov.go.jp/api/1/lawdata/413M60000800110\",\"excerpt\":\"マンション管理業者は、毎月、管理事務の委託を受けた管理組合のその月（以下この項において「対象月」という。）における会計の収入及び支出の状況に関する書面を作成し、翌月末日までに、当該書面を当該管理組合の管理者等に交付しなければならない。\"},{\"url\":\"https://laws.e-gov.go.jp/api/1/lawdata/412AC1000000149\",\"excerpt\":\"マンション管理業者は、管理組合から委託を受けた管理事務のうち基幹事務については、これを一括して他人に委託してはならない。\"},{\"url\":\"https://laws.e-gov.go.jp/api/1/lawdata/412AC1000000149\",\"excerpt\":\"マンション管理業者は、第一項から第三項までの規定により交付すべき書面を作成するときは、管理業務主任者をして、当該書面に記名させなければならない。\"}]}}",
+  "ttft_ms": 2341,
+  "type": "result",
+  "duration_ms": 105826,
+  "uuid": "59548692-03ee-4fa6-81ff-1cb4bac5c1f5",
+  "ttft_stream_ms": 1040,
+  "time_to_request_ms": 267,
+  "first_content_frame_ms": 1041,
+  "queued_turn_count": 0,
+  "result_index": 0,
+  "_exitCode": 0,
+  "_requestedModel": "claude-opus-5-5",
+  "_toolsAllowed": [
+    "WebFetch",
+    "WebSearch"
+  ]
+}

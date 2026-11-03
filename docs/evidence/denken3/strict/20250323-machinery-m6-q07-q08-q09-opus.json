@@ -1,0 +1,109 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20250323",
+  "subject": "machinery",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 6589,
+      "cacheReadInputTokens": 130032,
+      "cacheCreationInputTokens": 22192,
+      "webSearchRequests": 0,
+      "costUSD": 0.33533040000000003,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 3725,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "8dbdecbba1b5a82d89e5a2bc1882880e5944d9347f86737e77607003a2fa0f3d",
+  "inputRequestSha256": "b91ea87965502a67e3f68fc5960b5b6748cf03e3b35f458e399f86380b939c48",
+  "inputHashes": {
+    "candidateSha256": {
+      "q07": "05b23b7a7590d21c8bfc22b979ab6e649384677fe9c3145201a655e77e115452",
+      "q08": "ad77238fcf3010b3647d57b5a23e1f7e4b648d0bc3df7047666b3771dad2dd22",
+      "q09": "f8c1203fddf23a9599e2223139a6467b86186a358a4f4a3c8c404982685e7419"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20250323/machinery/p10.png": "b7760501bd32bc6dfd5a79126da17fcefdca19d987176bd1e0df5fb39d2916b1",
+      "data/raw_pdfs/denken3/review/20250323/machinery/p11.png": "27d5995042dfb34575c27bbd9eef1ef18e684126c7ebff32c4031cf8e7037e1b",
+      "data/raw_pdfs/denken3/review/20250323/machinery/p12.png": "bfd79ed73b2dae25ef681db4fb97f5bcca8fb819f00a2fcae8bb3c305333dd8d"
+    },
+    "figureSha256": {},
+    "sourceQuestionPdfSha256": "66e8b0070a314cd78ed9b9f3edd3d75eeaf442b258fd0aacab0e7d9620c75b9f",
+    "sourceAnswerPdfSha256": "4c3b38fcf1405766fafaa78b1b05b867a3d48307a670b9d354476bc6b32acd4c",
+    "officialAnswerUnitsSha256": "4d564651f60cd884c73730b1fe8ccdb41e3d70929a39fd28fc948d68dbed78d7",
+    "referencePdfSha256": {},
+    "referencePageSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q07",
+      "questionNumber": 7,
+      "part": null,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "I compared the question text with the official original (page 7, T2-K 010). It matches word for word, including 「1相のコイルをいくつかのスロットに分けて配置する(ア)と，集中巻がある」, 「(ア)の場合，各極各相のスロット数は(イ)」, 「コイルピッチを極ピッチよりも短くした巻線法を(ウ)」, 「(エ)は小さくなるが，コイル端を短くできることや，(オ)が改善できる」 and the closing instruction. The only differences are punctuation (、 instead of ，), which does not change the meaning.",
+        "I checked all five rows of the original table against the candidate choices. (1) 分布巻/2未満/短節巻/励磁電流/電圧波形, (2) 分散巻/2未満/全節巻/励磁電流/力率, (3) 分布巻/2未満/短節巻/励磁電流/力率, (4) 分布巻/2以上/短節巻/誘導起電力/電圧波形, (5) 分散巻/2以上/全節巻/誘導起電力/力率. All five match.",
+        "officialAnswer=4 matches the fixed manifest official answer (question 7, answer 4).",
+        "I checked the physics in the explanation. A distributed winding has 2 or more slots per pole per phase, and a concentrated winding has 1. A short-pitch winding reduces the induced EMF because kp = sin(βπ/2) < 1. It shortens the coil ends and suppresses the 5th and 7th harmonics, which improves the voltage waveform. There are no contradictions.",
+        "I checked each choice's explanation against the original. Every wrong choice gets the specific reason its blanks are wrong: 分散巻 is not the standard term, 2未満 is wrong, 全節巻 means coil pitch equals pole pitch, 励磁電流 is wrong for (エ), and 力率 is wrong for (オ). The blanks each explanation calls correct also agree with the table.",
+        "No figure is needed. The problem is a sentence plus a combination table, so figureUrls being empty is appropriate. officialReferenceUrls is empty, so there are no independent claims that need checking.",
+        "reviewedFromPage=[10] was not checked against a PDF page number. The attached original is question 7 on printed page 7 (T2-K 010), and it matches the candidate content."
+      ]
+    },
+    {
+      "unitKey": "q08",
+      "questionNumber": 8,
+      "part": null,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [
+        "In choiceExplanations[4] and [5], the reason given for rejecting (ウ) 定格容量 is only that it 「とは記述が合わない」 (does not match the wording). That is vague. The uncertainty field also admits the choice was judged only by the definition in the problem text, so this is an open external-check item. Depending on the standard or textbook, an autotransformer's rated capacity may be defined as V2×I2 at rated values (the line capacity), so the basis for calling it wrong is ambiguous. Suggested fix: separate two points. First, the problem says 「二次端子電圧と二次電流との積」 (terminal voltage × current at any operating point), not rated values, so the right term is the general 負荷容量 (line capacity) rather than 定格容量, a rated value. Second, and more decisively, (エ)「多く」 and (オ)「大きい」 are clearly wrong. Make the (エ)(オ) errors the main reason these choices are wrong.",
+        "In choiceExplanations[2], the reason for rejecting 自己容量 is only that the product 「負荷容量であり当てはまらない」. It does not explain what 自己容量 means, so the specific reason this choice is wrong is thin. Suggested addition: 自己容量 is the capacity of the series winding, (V2−V1)·I2 (= (V2−V1)/V2 × V2·I2), which is smaller than the load capacity V2·I2. So it is not the product of the secondary terminal voltage and the secondary current.",
+        "After the explanation is fixed, remove the reservation in the uncertainty field about judging 自己容量 and 定格容量 only by the problem's wording, or replace it with the verified basis."
+      ],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "I compared the question text with the official original (page 8, T2-K 011). It matches word for word, including 「巻線の共通部分を(ア)，共通でない部分を(イ)という」, 「(ア)の端子を一次側に接続し，(イ)の端子を二次側に接続して使用すると通常の変圧器と同じように動作する」, 「単巻変圧器の(ウ)は，二次端子電圧と二次電流との積である」 and 「漏れ磁束が(エ)，電圧変動率が(オ)」.",
+        "I checked all five rows of the original table against the candidate choices. (1) 分路/直列/負荷容量/多く/小さい, (2) 直列/分路/自己容量/少なく/小さい, (3) 分路/直列/負荷容量/少なく/小さい, (4) 分路/直列/定格容量/多く/大きい, (5) 直列/分路/定格容量/多く/大きい. All five match.",
+        "officialAnswer=3 matches the fixed manifest official answer (question 8, answer 3).",
+        "The main explanation is correct. The shared winding is the shunt winding (分路巻線) and the unshared part is the series winding (直列巻線). V2·I2 is the load capacity. Because part of the winding is shared, leakage flux and leakage reactance are small, so the voltage regulation is small.",
+        "No figure is needed. The problem is a sentence plus a combination table. officialReferenceUrls is empty, so there are no independent claims that need checking."
+      ]
+    },
+    {
+      "unitKey": "q09",
+      "questionNumber": 9,
+      "part": null,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "I compared the question text with the official original (page 9, T2-K 012). The conditions all match: 100 kV·A, 6.3 kV, two identical single-phase transformers, 1 600 W load loss each at rated load, V-V connection, 6.3 kV primary, a 90 kW three-phase balanced load, power factor 1, and the question asks for the total load loss in W across both transformers.",
+        "I checked the choices against the original: (1) 324, (2) 432, (3) 648, (4) 864, (5) 1 440. All match.",
+        "Recalculation: I = 90×10³/(√3×6 300) ≈ 8.248 A. Rated current = 100×10³/6 300 ≈ 15.87 A. α = 90/(√3×100) ≈ 0.5196, so α² = 0.27. Each transformer's loss is 1 600×0.27 = 432 W, and the total is 864 W. This matches the fixed manifest official answer 4.",
+        "I checked the arithmetic behind each distractor. 1 600×0.45² = 324, 2×1 600×0.45² = 648, and 2×1 600×0.45 = 1 440. The explanation for (2) 432 correctly says it is one transformer's value only. Each wrong choice gets a specific error: the wrong load factor, the wrong number of units, or not squaring the load factor.",
+        "The original page has no figure, and none is needed to solve the problem. officialReferenceUrls is empty, so there are no independent claims that need checking.",
+        "Minor wording point, with no effect on content accuracy: in choiceExplanations[5], 「〜とした値にも一致する」 would read more naturally as 「〜とした値である」."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,65 @@
+{
+  "reviewModel": "claude-opus-5-5",
+  "requestedModel": "claude-opus-5-5",
+  "canonicalModel": "claude-opus-5-5",
+  "provider": "firstParty",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 2316,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 11809,
+      "webSearchRequests": 0,
+      "costUSD": 0.1410558,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 1134,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponsePath": "data/exam-library/emkohyo-review/emkohyo-EM20261806-q12-12-raw-response.txt",
+  "rawResponseSha256": "4578794f2db1994eb78eb5bb194179b8087fe0e32f863bcd19b2a3d3b0438694",
+  "paperId": "emkohyo-EM20261806",
+  "ids": [
+    "emkohyo-EM20261806-q12"
+  ],
+  "figureSha256": {
+    "emkohyo-EM20261806-q12": {}
+  },
+  "officialRowImageSha256": {
+    "emkohyo-EM20261806-q12": {
+      "/exam-library/emkohyo-EM20261806/q12-p8-0.webp": "54747fe72d1ea20d89ea12f60fc2ba4dbac45c0f1e1c8bd5b3f38a1520d7ad7b"
+    }
+  },
+  "officialPageImageSha256": {},
+  "governmentSourceImageSha256": {},
+  "candidateSha256": {
+    "emkohyo-EM20261806-q12": "b12380a55000d6b526e066ce0937ec25d0178134b4a44970536263f1d7691f0d"
+  },
+  "sourcePackPath": "docs/evidence/emkohyo-choice-sources/emkohyo-EM20261806-q12-12.json",
+  "sourcePackSha256": "a345c31dc65594d5782fe95faea5ed7e7f75f2f6b3f91182fa4840e78e8aacdd",
+  "assessment": {
+    "emkohyo-EM20261806-q12": {
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "reasonIssues": [
+        "選択肢1・3・5の理由と要約は、X線回折分析法を『誤り』『記述と合わない』と断定しているが、資料が言っているのは『液相沈降法により粒度調整した試料をりん酸法により測定を行うことができる』『りん酸法については…液相沈降法にて10μm以下にした試料について定量を行う』という許容・手順の記述だけである。液相沈降法の試料をX線回折分析法に用いることを否定する記述は資料にない。問題文も『多くの場合 ㋩』と限定している。したがって『X線回折分析法が不可』ではなく、『粒度調整試料の分析法として通常用いられる（最も適当な）のはりん酸法』という比較の論理に改めるべきである。",
+        "選択肢1〜5の理由は『75µm＝200メッシュ（74µm）』と等置している。一方で資料の数値は74µmで、75µmではない。等置する根拠（旧JIS 74µmの200メッシュ標準ふるいが現行JIS Z 8801の公称目開き75µmに相当すること）を理由中に明示すべきである。今の書き方では、資料の数値と選択肢の数値が一致しているかのように読める。",
+        "選択肢2の理由と要約はいずれも㋺『約5g』を資料で確認できていない。選択肢1・3の『約1g』を退ける根拠が示されていないため、1と2の判別を実質的に㋩だけに依存している。㋺の数値根拠を補うべきである。"
+      ],
+      "sourceIssues": [
+        "引用資料は経済産業省『鉱山における粉じん濃度測定マニュアル』で、鉱山保安法体系の文書である。一方、本問は労働安全衛生法・作業環境測定基準に基づく第一種作業環境測定士試験の設問である。堆積粉じんの粒度調整（ふるい目開き、試料量約5g/精製水約500mL、ピペット型液相沈降試験器の操作）を直接規定・説明する一次資料ではない。作業環境測定基準（昭和51年労働省告示第46号）や厚生労働省の関連通達など、作業環境測定の文脈の政府資料で補強すべきである。",
+        "資料のp.41は74μm（200メッシュ）と記載しており、75µmを直接支える記述ではない。JISの呼称換算は政府ページからは直接支持されない。",
+        "㋺『約5g』（約500mLの精製水に対する試料量）を支える記述は、添付の政府資料に存在しない。"
+      ],
+      "needsExternalCheck": [
+        "液相沈降法による粒度調整で、精製水約500mLに対し試料約5gとする根拠（作業環境測定ガイドブック等、作業環境測定基準に準拠した手順書）の確認",
+        "堆積粉じん試料のふるいの目開き75µm（JIS Z 8801公称目開き、旧200メッシュ74µm相当）が作業環境測定の手順として規定されていることの確認",
+        "液相沈降法で粒度調整した試料が『多くの場合』りん酸法に用いられ、X線回折分析法は通常この用途に用いられないことの、作業環境測定分野の資料による確認"
+      ]
+    }
+  }
+}

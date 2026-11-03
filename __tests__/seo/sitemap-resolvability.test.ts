@@ -1,6 +1,7 @@
 import { describe, expect, it } from "vitest";
 
 import { ALL_QUESTIONS } from "@/data/questions";
+import { loadExamPaper } from "@/lib/exam-library-papers";
 import { getAllBlogSummaries } from "@/data/blog";
 import { getQuestionsByExamStrict } from "@/lib/seo/exam-meta";
 import { findQuestionByRoute } from "@/lib/seo/question-url";
@@ -14,6 +15,7 @@ import type { EssayExamCode } from "@/lib/essay/load";
 import { SITE_BASE_URL } from "@/lib/seo/config";
 import {
   renderExamsSitemapXml,
+  renderFpPracticalSitemapXml,
   renderBlogSitemapXml,
   renderBooksSitemapXml,
   renderMainSitemapXml,
@@ -21,7 +23,10 @@ import {
   renderTopicsSitemapXml,
 } from "@/lib/seo/sitemap-xml";
 import { getSitemapChunkCount } from "@/lib/seo/sitemap-pagination";
+import { getPracticalEdition as getFp2PracticalEdition } from "@/lib/fp2/practical";
+import { getPracticalEdition as getFp3PracticalEdition } from "@/lib/fp3/practical";
 import type { ExamCode } from "@/lib/questions/types";
+import { isPracticeReadyQuestion } from "@/lib/questions/filter";
 import { GONE_PATHS } from "@/middleware";
 import nextConfig from "@/next.config";
 
@@ -41,6 +46,16 @@ const blogSlugs = new Set(getAllBlogSummaries().map((p) => p.slug));
  * a URL that the route would 404.
  */
 function isResolvable(path: string): boolean {
+  const practical = /^\/(fp2|fp3)\/practical(?:\/(\d{6}))?(?:\/(\d+))?$/.exec(path);
+  if (practical) {
+    const [, exam, edition, number] = practical;
+    if (!edition) return true;
+    const data = exam === "fp2" ? getFp2PracticalEdition(edition) : getFp3PracticalEdition(edition);
+    if (!data) return false;
+    return !number || data.questions.some((question) => question.number === Number(number));
+  }
+  const safetyExam = /^\/e-learning\/exams\/([^/]+)$/.exec(path);
+  if (safetyExam) return Boolean(loadExamPaper(safetyExam[1])?.length);
   // /q/{exam}/{year-season}/{section}/{qnum}
   const q = /^\/q\/([^/]+)\/([^/]+)\/([^/]+)\/([^/]+)$/.exec(path);
   if (q) {
@@ -50,7 +65,7 @@ function isResolvable(path: string): boolean {
       section: q[3],
       qnum: q[4],
     });
-    return Boolean(found && !found.needsReview);
+    return Boolean(found && isPracticeReadyQuestion(found));
   }
   // /{exam}/{year-season}
   const ys = /^\/([a-z]{2})\/(\d{4}-(?:spring|autumn|cbt))$/.exec(path);
@@ -89,6 +104,11 @@ function isResolvable(path: string): boolean {
 }
 
 describe("sitemap data-driven URLs all resolve (no 404s emitted)", () => {
+  it("all safety exam papers in the main sitemap contain playable questions", () => {
+    const paths = locs(renderMainSitemapXml()).filter((path) => path.startsWith("/e-learning/exams/"));
+    expect(paths.length).toBeGreaterThan(0);
+    expect(paths.filter((path) => !isResolvable(path))).toEqual([]);
+  });
   it("every question URL resolves to an answerable, non-needsReview question", () => {
     const chunks = getSitemapChunkCount();
     const bad: string[] = [];
@@ -103,6 +123,12 @@ describe("sitemap data-driven URLs all resolve (no 404s emitted)", () => {
   it("every exam hub / year-season / category URL resolves", () => {
     const bad = locs(renderExamsSitemapXml()).filter((p) => !isResolvable(p));
     expect(bad).toEqual([]);
+  });
+
+  it("every FP practical hub, edition and question URL resolves", () => {
+    const paths = locs(renderFpPracticalSitemapXml());
+    expect(paths.length).toBeGreaterThan(0);
+    expect(paths.filter((path) => !isResolvable(path))).toEqual([]);
   });
 
   it("every topic and blog URL resolves", () => {
@@ -135,6 +161,7 @@ describe("sitemap never lists a retired (301/410) URL", () => {
   const allSitemapPaths: string[] = [
     ...locs(renderMainSitemapXml()),
     ...locs(renderExamsSitemapXml()),
+    ...locs(renderFpPracticalSitemapXml()),
     ...locs(renderTopicsSitemapXml()),
     ...locs(renderBlogSitemapXml()),
     ...locs(renderBooksSitemapXml()),

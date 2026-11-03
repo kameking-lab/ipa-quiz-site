@@ -1,0 +1,63 @@
+{
+  "reviewModel": "claude-opus-5-5",
+  "requestedModel": "claude-opus-5-5",
+  "canonicalModel": "claude-opus-5-5",
+  "provider": "firstParty",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 3836,
+      "cacheReadInputTokens": 2155,
+      "cacheCreationInputTokens": 20419,
+      "webSearchRequests": 0,
+      "costUSD": 0.24051099999999997,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 2757,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "paperId": "emkohyo-20260217",
+  "ids": [
+    "emkohyo-20260217-q20"
+  ],
+  "figureSha256": {
+    "emkohyo-20260217-q20": {}
+  },
+  "officialRowImageSha256": {
+    "emkohyo-20260217-q20": {
+      "/exam-library/emkohyo-20260217/q20-p15-0.webp": "7d5c7725b774c8bb4b2aebcc80734d0768544a20bb7492a4ba4c34389d8cf529"
+    }
+  },
+  "officialPageImageSha256": {},
+  "governmentSourceImageSha256": {
+    "docs/evidence/emkohyo-choice-sources/20260217-q20-dust-standard-p1.png": "861f2e8becbd23d356459630e6a46871f5571aa0d1128741cd5dc7f604bd784f",
+    "docs/evidence/emkohyo-choice-sources/20260217-q20-jsoh-classification-p424.png": "257b85d4f4a98720acfe1fec71b92ba300280d08623d6f1d489d82ceeebf5702",
+    "docs/evidence/emkohyo-choice-sources/20260217-q20-jsoh-2019-p1.png": "561b97bfbd386308bf1ebcd55c3735f718b36cf22565b29463b12407ec8eb918"
+  },
+  "candidateSha256": {
+    "emkohyo-20260217-q20": "50fc183bed1fb987e98492bcaa609882fbd53f81369bc382c7e0667f5d4e0c79"
+  },
+  "sourcePackPath": "docs/evidence/emkohyo-choice-sources/emkohyo-20260217-q20-20.json",
+  "sourcePackSha256": "3a0cf302d5a819740019db8c1cfd9ba7d65f4a0683cab7fb99c69892b962771e",
+  "assessment": {
+    "emkohyo-20260217-q20": {
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "reasonIssues": [],
+      "sourceIssues": [
+        "肢1: 理由の核心は『第1評価値＜管理濃度なら95％以上の場所で管理濃度を超えない（第1管理区分）』だが、基発第605号から採った claimedExcerpts は第一評価値の定義（高濃度側から5％の推定値）と区分表（第一評価値＜管理濃度→第一管理区分）だけである。『95％以上の場所で管理濃度を超えない状態』という判断内容を直接示す文言が抜粋されていない。定義からの推論に留まっているため、同通達の第三条関係にある第一管理区分の説明文（『当該単位作業場所のほとんど（95％以上）の場所で気中有害物質の濃度が管理濃度を超えない状態』に当たる箇所）を抜粋として追加すること。",
+        "肢5: 日本産業衛生学会『許容濃度等の勧告（2019年度）』（mhlw.go.jp/content/11201000/000606772.pdf）の claimedExcerpts が空で、根拠がページ画像だけになっている。p1 前文の『有害物質の許容濃度，生物学的許容値，騒音，衝撃騒音，高温，寒冷，全身振動，手腕振動，電場・磁場および電磁場，紫外放射の各許容基準』を excerpt として登録し、照合済みにすること。なお画像上の記載そのものは肢5の理由を直接支持している。",
+        "肢5: p1 には『発がん性分類』の語がない。理由文の『発がん性分類のほか』は、同PDF内の発がん性分類表の頁で裏付けるか、理由文から外して p1 で支持できる範囲に留めること。",
+        "肢4: 根拠が厚生労働省『業務上疾病に関する医学的知見の収集に係る報告書 別冊』p424（印刷頁406）『IV 6 日本産業衛生学会・毒性分類基準』による二次掲載である。内容（感作性〈気道・皮膚〉第1群＝人間に対して明らかに感作性がある物質、第2群、第3群）は肢4を直接支持しており、判定上の問題はない。ただし一次資料である勧告PDF（000606772.pdf）の感作性分類表の頁も併記するのが望ましい。"
+      ],
+      "needsExternalCheck": [
+        "基発第605号（dataId=00tb2166）の同一ページに、第一管理区分を『95％以上の場所で管理濃度を超えない状態』と説明する文言が存在することを確認し、抜粋を採取する。",
+        "出題年（2026年）時点の最新版『許容濃度等の勧告』でも、感作性物質が気道・皮膚とも第1〜第3群の3区分であること、物理的因子（騒音・振動・高温・寒冷等）の許容基準が収載されていることを確認する。引用している2019年度版から構成が変わっていないかを見る。"
+      ]
+    }
+  }
+}

@@ -1,0 +1,64 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20260322",
+  "subject": "power",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 3265,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 14168,
+      "webSearchRequests": 0,
+      "costUSD": 0.1789078,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 2037,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "2757043fd86d214b1d787aacfa5f9054bf90419dd72b4fc66f0aeb5809d5224b",
+  "inputRequestSha256": "be17c11f3830dd2a030c3c5b788e4787b675154ec2032c4e06545fbc0625c547",
+  "inputHashes": {
+    "candidateSha256": {
+      "q07": "2ff94919cff3b945e2fc3e9df6d14be1878cb37de5a63327a147a1cc4a0ccafc"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20260322/power/p10.png": "ccbdcb03a7f7c0d4c62988274ef6e0edf48ed641b796a80b77b4038e11191ec6"
+    },
+    "figureSha256": {},
+    "sourceQuestionPdfSha256": "9733341a0f293f068c9a665d5a9a90f1aabf3a2db5d79cd530643cdea241f7b7",
+    "sourceAnswerPdfSha256": "cc2890296d06a4823df5697a78a1c01ddfd39f041c51f48c87984daa3a5707c6",
+    "officialAnswerUnitsSha256": "957fa42f644482c35715d6e7b88d63ff23aaaad1ad79be7ee18b45b19689c5a8",
+    "referencePdfSha256": {},
+    "referencePageSha256": {},
+    "referenceJsonSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q07",
+      "questionNumber": 7,
+      "part": null,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "The problem text matches the official original figure on PDF page 10. The printed page number is -7- and the footer reads T2-D 010. The stem reads: 6.6 kV 非接地方式配電線及び高圧受電設備の保護に関する記述として，誤っているものを次の(1)～(5)のうちから一つ選べ。",
+        "All five choices (1) to (5) match the original figure in wording and terminology. This covers 零相変流器, 接地用変圧器, 地絡方向継電器, 時限順送式故障区間分離方式, 無方向性, こう長が短い場合, 地絡過電圧継電器 and 過電流継電器. The only difference is that the half-width comma in (2) of the original was changed to a full-width comma. This is formatting only and is covered by the '整形' note in sourceAttribution.",
+        "The official answer table (令和7年度 第三種電気主任技術者下期試験解答, 電力 column) lists 問7 = 3 with 配点 5. This matches officialAnswer=3 and scoringPoints=5, and it matches the manifest-fixed unit {question:7, part:null, answer:'3', points:5}.",
+        "The candidate metadata matches the manifest. The values are fiscalYear=2025 (令和7年度), term=lower, examDate=2026-03-22, subject=power and reviewedFromPage=[10]. sourceQuestionPdfUrl and sourceAnswerPdfUrl are the same as the manifest URLs.",
+        "Overall explanation, causal chain: In an ungrounded system, a ground fault outside the premises raises the zero-sequence voltage V0 across the whole system. Charging current then flows through the ground capacitance of the in-premises cable and passes through the ZCT. The current is I0 ≈ 3ωC·V0, with C per phase. C is proportional to cable length, so I0 grows with cable length. The nondirectional GR reacts to magnitude only, so it can operate unnecessarily when the cable is long. The statement in (3) says 'short', and that is the error. The explanation's check of the formula and its derivation of the answer are correct.",
+        "Per-choice reasons: (1) GR/DGR use is correct, and the note that ZPD is also used is accurate. (2) The sequential sectionalizing description is technically sound. It covers no-voltage opening, time-delayed sequential closing from the source side, closing lockout of the switch on the source side of the faulted section, restoration of the healthy source-side sections, and backfeed to load-side sections through a tie switch. (3) The misstatement is stated clearly: the problem arises with long cables, not short ones. (4) The OVGR/DGR roles are correct: OVGR detects a ground fault from V0 measured by the grounded instrument transformer, and DGR selects the faulted feeder. (5) OCR on each feeder for short-circuit protection is correct. None of these reasons conflicts with the official answer.",
+        "The original figure contains no diagrams or tables. figureDescription, figureUrls=[] and choiceFigureUrls={} are consistent with this, and no figure is needed to solve the question.",
+        "officialReferenceUrls is empty, so there are no independent claims from external references to verify."
+      ]
+    }
+  ]
+}

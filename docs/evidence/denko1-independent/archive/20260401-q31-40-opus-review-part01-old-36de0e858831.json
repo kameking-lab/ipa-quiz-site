@@ -1,0 +1,94 @@
+{
+  "inputHashes": {
+    "draftSha256": "62361eea1966bca5e99b214fd2037809135cab0937cd9f990bc67705a2249aa0",
+    "candidateSha256": {
+      "31": "1cd6fa6ff292b6fc50fda2f5bd6c52b8c56b516d137b885ca0b55c7f3507af1e",
+      "32": "7bfaf7ff071399972b0f83d57dea18b127915679983c71a84f7f30f377948c99",
+      "33": "8c6983b1b4d3d4b7e12787d85519657281b62b629da15f96a1b4a396defc0c99",
+      "34": "3f3df5a545ca80cce8ee635afb5973c382ad630f386814ec91100f6b73fba033",
+      "35": "4e4e35846ea80911caabdd41a53ead0ef795f28468ccec60322a3bcf0420b531"
+    },
+    "rowSha256": {
+      "31": "2269dab487b75e8fd31aba305064e4328273e6426dcbe5d49b46a6306277cca7",
+      "32": "f68991a83c96c794b08a555c3f28bb80a808b0c42ecab6c81f26975f01b2fdbe",
+      "33": "fc9c89c464ff34e69d34e371265b4880afdaad3503069d1cc93c61af64b2b065",
+      "34": "76435bf6144f79f8f211357b7fae3cc7d1e0941ac8eed475f3f6fd7b0ff7e495",
+      "35": "e8c8de66d63c2e1fea2f68d2038cf3df22a76589b60a6541bc606f0330f91bb2"
+    },
+    "figureSha256": {
+      "public/images/denko1/2026-first/facility-plan.png": "8e17a9515926bc82c7afb6f6df4cb65eb076f74a7d9327dedf7a74c30cee55a5"
+    },
+    "legalReceiptSha256": {
+      "docs/evidence/denko1-law/20260401-q31.json": "1920e4f427e47613df331defabf13450c4b497b841066aafe1f420692551989e",
+      "docs/evidence/denko1-law/20260401-q32.json": "fdb005f27a98fc891ecc30daf300325bb8a5ec1c1eea035a0fa96d2a96728806",
+      "docs/evidence/denko1-law/20260401-q33.json": "2cd588e83dfb9d64b363845565e1614c2b1d69970955c98aa501a36bf41a579e",
+      "docs/evidence/denko1-law/20260401-q34.json": "8c0a2083189b14b00bcaa107b5ae0670fc10e380ea500887da4a952cfb31173f",
+      "docs/evidence/denko1-law/20260401-q35.json": "9662e4984724dddadf023677ad7858ac871e3e23441e9d1a1d2cb141a1aadb78"
+    }
+  },
+  "reviewModel": "claude-opus-5-5",
+  "cliInitModel": "claude-opus-5-5",
+  "sessionId": "83791798-02c2-4acf-a88a-f0e26e604491",
+  "assessment": [
+    {
+      "number": 31,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [
+        "diagramDescriptionでは「上部は構外の電柱」となっているが、図では「構外」の文字と波線の境界線が電柱の左側にある。電柱は境界線の右側、つまり構内側に立っている構内第1柱である。「構内の電柱(左側の波線より外が構外)」のように直すべき。直さないと、explanationの「図の引込ケーブルの下は構内の芝生」とも食い違う。"
+      ],
+      "lawNeedsExternalCheck": []
+    },
+    {
+      "number": 32,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [
+        "共通図のdiagramDescriptionの「上部は構外の電柱」は誤り。図では「構外」の表示と波線の境界は電柱の左側にあり、電柱は構内側に立っている。"
+      ],
+      "lawNeedsExternalCheck": [
+        "explanationとchoiceExplanations.ハの「避雷器と電路の間にヒューズを入れない」「保安上電路から切り離すには断路器を施設する」は、高圧受電設備規程に基づく断定である。receiptで照合したのは解釈第37条の施設箇所とA種接地だけで、この点は照合されていない。",
+        "choiceExplanations.イの「500kW未満でも雷害の多い地区で架空電線路に接続される受電設備には施設すべきとされる」も、根拠となる規程(高圧受電設備規程)がreceiptで照合されていない。"
+      ]
+    },
+    {
+      "number": 33,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [
+        "共通図のdiagramDescriptionの「上部は構外の電柱」は誤り。図では「構外」の表示と波線の境界は電柱の左側にあり、電柱は構内側に立っている。"
+      ],
+      "lawNeedsExternalCheck": [
+        "choiceExplanations.ハの「バスダクト工事は展開した場所や点検できる隠ぺい場所の乾燥した場所に施設できる」は、解釈第156条(156-1表、施設場所の区分)に基づく断定である。receiptには第163条の条文しかなく、この点は照合されていない。"
+      ]
+    },
+    {
+      "number": 34,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [
+        "共通図のdiagramDescriptionの「上部は構外の電柱」は誤り。図では「構外」の表示と波線の境界は電柱の左側にあり、電柱は構内側に立っている。"
+      ],
+      "lawNeedsExternalCheck": []
+    },
+    {
+      "number": 35,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "lawNeedsExternalCheck": [
+        "choiceExplanations.イの「B種は高圧と低圧を結合する変圧器の低圧側に施す接地」は、解釈第24条に基づく断定である。receiptで照合したのは第29条・29-1表だけで、この点は照合されていない。"
+      ]
+    }
+  ]
+}

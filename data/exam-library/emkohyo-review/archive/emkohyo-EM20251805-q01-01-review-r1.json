@@ -1,0 +1,42 @@
+{
+  "reviewModel": "claude-opus-5-5",
+  "requestedModel": "claude-opus-5-5",
+  "paperId": "emkohyo-EM20251805",
+  "ids": [
+    "emkohyo-EM20251805-q1"
+  ],
+  "figureSha256": {
+    "emkohyo-EM20251805-q1": {}
+  },
+  "officialRowImageSha256": {
+    "emkohyo-EM20251805-q1": {
+      "/exam-library/emkohyo-EM20251805/q1-p2-0.webp": "f9568601d40bf19a42d1f42a97e0c0c87104828b286cc80f78bcbde33a97c2b2"
+    }
+  },
+  "governmentSourceImageSha256": {
+    "docs/evidence/emkohyo-choice-sources/EM20251805-q1-fdma-table-p35.png": "8680e18eca2b22ca79f5cac5933f85b41a4fba9186eb9084a44f8593b3e755d2"
+  },
+  "candidateSha256": {
+    "emkohyo-EM20251805-q1": "e4a4a1179dc249448f489d9c682dd65d3fad55c63570c8bfd0e26284b2faef5f"
+  },
+  "sourcePackPath": "docs/evidence/emkohyo-choice-sources/emkohyo-EM20251805-q01-01.json",
+  "sourcePackSha256": "e85033c4a61177c6ce8346b100ac3823356c4a6e424eeafae3d9ccad1475971e",
+  "assessment": {
+    "emkohyo-EM20251805-q1": {
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "reasonIssues": [
+        "肢5: 25℃では2-ブタノールの蒸気圧が31hPa以下だという前提が、根拠から論理的に導けていない。国立環境研究所 Webkis-Plus の要約表には、蒸気圧の範囲『10〜31 hPa』と測定温度の範囲『20〜32.2 ℃』が別々の欄に載っているだけで、どの値がどの温度の測定かは示されていない。『20〜32.2℃の測定範囲で最大31hPa』から『25℃でも31hPa以下』を導くには、31hPa以下の値が32.2℃側で測られていることが必要だが、これは推測である。さらに厚労省モデルSDSの2-ブタノールは1.7kPa＝17hPa（20℃）で、Webkisの下限『10hPa』が20℃の値だとすると両者が合わない。そのため、この値と温度の組合せ方をそのまま根拠にするのは危うい。結論（25℃で2-ブタノール＜IPA）そのものは正しいと考えられるので、同じ温度の値どうしを比べる形に論証を組み直すべき。",
+        "肢5: 同じ出典（ICSC）・同じ20℃の値として、厚労省モデルSDSに2-ブタノール1.7kPaとイソプロピルアルコール4.4kPaが載っているのに、解説で使っていない。まず20℃で約2.6倍の差があることを示し、そのうえで25℃の値そのものを示す政府資料を使うのが望ましい。そうした資料がなければ、25℃で逆転しない理由を明示すべき。"
+      ],
+      "sourceIssues": [
+        "国立環境研究所 Webkis-Plus TKV00018: 集計表なので、蒸気圧の値と測定温度の対応が示されていない。『25℃での2-ブタノールの蒸気圧の上限』を直接には支えない。",
+        "消防研究所報告第129号 表1: 蒸気圧欄の脚注『****』（括弧内の数値が温度℃であることの定義）が、提示された切出し画像に写っておらず確認できない。ただし厚労省モデルSDSのメタノール95.2mmHg（20℃）と『100 (21.2)』が整合するので、括弧内を温度と読むことに実害のリスクは低い。確認のため脚注部分の切出しも証拠に加えることが望ましい。"
+      ],
+      "needsExternalCheck": [
+        "2-ブタノールの25℃（または25℃以上）での蒸気圧を、値と温度の組合せ付きで明示する政府一次資料を探す。候補は環境省『化学物質の環境リスク評価』、NITE 化審法・化管法の初期リスク評価書、NITE-CHRIP など。見つかれば肢5の根拠をそれに差し替える。"
+      ]
+    }
+  }
+}

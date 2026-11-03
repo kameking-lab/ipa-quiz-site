@@ -21,20 +21,22 @@ function bulletList(items: string[]): string {
 }
 
 function buildTitle(p: PersonaInput): string {
-  return `【${examLabel(p.exam)}合格体験記】${p.titleHook}`;
+  return `【架空の学習ケース・${examLabel(p.exam)}】${p.titleHook}`;
 }
 
 function buildDescription(p: PersonaInput): string {
   const monthsPart = `${p.studyMonths}か月`;
   const hoursPart = `計${p.totalStudyHours}時間`;
-  return `${p.occupation}（${p.ageRange}）が${examLabel(p.exam)}に${monthsPart}・${hoursPart}で合格した実体験。${p.motivation.slice(0, 50)}…という動機から、勉強法・つまずき・突破方法・合格後の変化までを生々しく振り返ります。`;
+  return `架空の学習ケース。${p.occupation}（${p.ageRange}）が${examLabel(p.exam)}を${monthsPart}・${hoursPart}で学ぶ設定です。${p.motivation.slice(0, 50)}…を題材に、計画の組み方を考える参考例です。実在の合格者の体験・実績ではありません。`;
 }
 
 function buildBody(p: PersonaInput): string {
   const examName = examLabel(p.exam);
   const scoreLine = p.score ? `- 結果: ${p.score}\n` : "";
 
-  return `## 合格までのサマリー
+  return `> 以下は架空の人物を用いた学習ケースです。一人称の語り、学習時間、得点、合格時期、ツールの使用感は設定上の描写で、利用者の証言や学習効果の実測ではありません。
+
+## ケース設定のサマリー
 
 - 受験者プロフィール: ${p.occupation}（${p.ageRange}）
 - 背景: ${p.background}

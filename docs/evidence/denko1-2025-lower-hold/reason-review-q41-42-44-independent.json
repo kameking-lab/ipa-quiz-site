@@ -1,0 +1,67 @@
+{
+  "review": "independent-original-photo-and-diagram-audit",
+  "reviewDate": "2026-09-28",
+  "examDate": "2025-10-05",
+  "status": "REVIEWED_PUBLICATION_HOLD",
+  "publicationHold": true,
+  "draftEdited": false,
+  "draftFile": "reason-draft-q41-42-44.json",
+  "draftSha256": "EFF77F0B95E0412843DBEC2E66F9BAAF88128C496EA980EC6B749039764807DB",
+  "officialQuestion": {
+    "url": "https://www.shiken.or.jp/construction/upload/20251005_co_first_q01.pdf",
+    "sha256": "635c811dbee7dd6c5605c856a8250285a4c99ef80a0609793600cb0d011ef451",
+    "figurePrintedPage": 13,
+    "choicesPrintedPage": 14,
+    "visualCheck": "原本13ページの①・②・④の位置、14ページの試験器と工具4写真を目視照合。"
+  },
+  "officialAnswer": {
+    "url": "https://www.shiken.or.jp/construction/upload/20251005_co_first_a01.pdf",
+    "sha256": "F377A1DB85DB4544C7C0D5B443CB7D6C139BA90F87826523EB6444625C8C8A56"
+  },
+  "otherPrimarySources": [
+    "https://www.shiken.or.jp/construction/upload/070718p2annai.pdf",
+    "https://www.hozan.co.jp/corp/denko2/pg/1material3/",
+    "https://www.tsunoda-japan.com/itempage/TP-R.html"
+  ],
+  "reviewedQuestions": 3,
+  "reviewedChoices": 12,
+  "questionReviews": [
+    {
+      "number": 41,
+      "officialAnswer": "ロ",
+      "draftAnswerMatches": true,
+      "choiceChecks": {
+        "イ": "地絡継電器のV/A/位相角を個別に扱う写真ではなく、前面はmA・V・動作時間系。①の動作特性試験には不一致。",
+        "ロ": "V・A・φの三計器が原本写真に明瞭で、地絡継電器①の電圧・電流・位相角による動作特性試験器。",
+        "ハ": "mAとkVの表示があり高電圧・漏れ電流系で、V/A/φの地絡継電器試験器ではない。",
+        "ニ": "11kV・5kVA・MAX455mAの表示があり高電圧試験用電源で、地絡継電器試験器ではない。"
+      },
+      "draftFinding": "正誤・写真の読み一致。写真イの細かな機種名は断定せず機能差で区別する草案が妥当。"
+    },
+    {
+      "number": 42,
+      "officialAnswer": "ロ",
+      "draftAnswerMatches": true,
+      "choiceChecks": {
+        "イ": "原本写真は両端にラチェット機構を持つ締付け工具。ケーブル終端施工の締付けに使える。",
+        "ロ": "黄色のグリップのリングスリーブE形用圧着工具。試験センター案内・工具メーカーは黄色グリップを同用途と明記。高圧ケーブル終端施工に用いない。",
+        "ハ": "原本写真は筒状のケーブル端部処理工具。ケーブルの被覆・端末処理に使用し得る。細かな型式名は原本のみで確定しない。",
+        "ニ": "原本写真は湾曲刃を備えたケーブル切断・端末処理系工具。高圧ケーブル施工と無関係ではない。細かな型式名は原本のみで確定しない。"
+      },
+      "draftFinding": "正誤一致。初稿ロの『低圧用の圧着端子』は範囲が広かったため、執筆担当が『E形リングスリーブ用』に修正済み。ハ・ニは型式を断定しない現行方針が妥当。"
+    },
+    {
+      "number": 44,
+      "officialAnswer": "ニ",
+      "draftAnswerMatches": true,
+      "figureCheck": "④は計器用変圧器一次側のヒューズ記号。二次電圧計とは別、一次事故時の主回路波及防止。",
+      "choiceChecks": {
+        "イ": "ヒューズは計器用変圧器の欠相を防ぐ機器ではない。",
+        "ロ": "過負荷防止という一般化では④の一次ヒューズの主目的を説明できない。",
+        "ハ": "雷サージ保護は避雷器の役割で④ではない。",
+        "ニ": "計器用変圧器の内部短絡時に一次ヒューズが溶断し主回路への波及を防ぐ。"
+      },
+      "draftFinding": "正誤・図の読み一致。"
+    }
+  ]
+}

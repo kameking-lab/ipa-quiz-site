@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20250831",
+  "subject": "machinery",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 2372,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 13727,
+      "webSearchRequests": 0,
+      "costUSD": 0.1575198,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 1064,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "7745a5463082591d348cbcbc8f85f67714c778c247f7c810fe54fdee5615b528",
+  "inputRequestSha256": "0ac4c140b84eea648de4dfb6a715631f57bcdfc8de758874f6d5bb9544604f13",
+  "inputHashes": {
+    "candidateSha256": {
+      "q07": "74755e7876913195a72fa564dc57038a5510b82bf7121009e7266d9a8b03aad1"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20250831/machinery/p10.png": "f539c838989a385777853e5a43ec6f1419a1ceb91469c87c953b3d1ce05fdb6e"
+    },
+    "figureSha256": {},
+    "sourceQuestionPdfSha256": "2a73a24594cc2b8bb7504b9a0ff15e001b2bb56b830572ce2be853f7116f26d8",
+    "sourceAnswerPdfSha256": "76fd3715ed487d19a56b387fb402de20ee09474e9fa55b0413f9037b96af06c9",
+    "officialAnswerUnitsSha256": "957fa42f644482c35715d6e7b88d63ff23aaaad1ad79be7ee18b45b19689c5a8",
+    "referencePdfSha256": {},
+    "referencePageSha256": {},
+    "referenceJsonSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q07",
+      "questionNumber": 7,
+      "part": null,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "問題文: 添付原図（機械 問7、頁下部『-7-』『T1-K 010』）と照合した。導入文、第1段落（(ア)固定子の巻線、(イ)回転子の形状、(イ)の回転子が固定子の磁極に引き付けられて回転する）、第2段落（(ウ)回転子の構造が簡単で強固、(エ)ネオジムなど、鉄心と巻線のみで磁気回路を構成）、設問文はいずれも一致した。空白記号(イ)が2回現れる点も原図と同じである。",
+        "選択肢: 原図の表と各行の(ア)〜(エ)の語句を照合し、全5肢が一致した。(1)集中巻・円筒形・低速回転・軟磁性体、(2)分布巻・突極形・低速回転・希土類磁石、(3)集中巻・突極形・高速回転・希土類磁石、(4)分布巻・円筒形・高速回転・希土類磁石、(5)集中巻・突極形・低速回転・軟磁性体。",
+        "公式正答: 添付の令和7年度上期解答表で＜機械＞問7の解答は3、配点は5である。manifest固定単位（question 7, part null, answer '3', points 5）、候補のofficialAnswer '3'、scoringPoints 5 と一致した。なお＜理論＞問7は1だが、本問はSRMを扱う機械科目の問題であり、subject=machinery と整合する。",
+        "総合解説: SRMは二重突極構造である。固定子は各突極に巻く集中巻、回転子は巻線も磁石もない積層鉄心の突極形である。励磁すると磁気抵抗が最小となる位置へ回転子突極が吸引されてリラクタンストルクが生じ、円筒形では位置による磁気抵抗変化がないためトルクが生じない。回転子が簡単・強固で遠心力に強いため高速回転に適し、希土類（ネオジム）磁石を使わない。以上の因果はいずれも技術的に正しく、結論(3)と整合する。",
+        "肢別解説: (1)は(ア)正しい、(イ)(ウ)(エ)誤りの指摘が正確である。鉄心自体が軟磁性材料であるという補足も妥当である。(2)は(ア)(ウ)誤り、(4)は(ア)(イ)誤り、(5)は(ウ)(エ)誤りの指摘がそれぞれ各肢の語句と正答(3)との差分に正確に対応している。(3)の正当理由も問題文の記述と一致した。",
+        "図: 原図には回路図・構造図がなく、選択肢表のみである。表の内容はchoicesに全て転記されており、figureUrlsとchoiceFigureUrlsが空であること、およびfigureDescriptionの記述は妥当である。",
+        "出典: officialReferenceUrlsは空のため、独立主張の検証対象はない。reviewedFromPage [10] は、原図の頁コード『T1-K 010』と整合する（印刷頁番号『-7-』とは別である）。問題冊子URL（20250831_ch_third_q03）、解答URL（20250831_ch_third_a01）、fiscalYear 2025、term upper、examDate 2025-08-31 は、解答表見出し『令和7年度 第三種電気主任技術者上期試験解答』と矛盾しない。"
+      ]
+    }
+  ]
+}

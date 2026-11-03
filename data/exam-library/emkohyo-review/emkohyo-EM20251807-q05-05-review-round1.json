@@ -1,0 +1,69 @@
+{
+  "reviewModel": "claude-opus-5-5",
+  "requestedModel": "claude-opus-5-5",
+  "canonicalModel": "claude-opus-5-5",
+  "provider": "firstParty",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 3646,
+      "cacheReadInputTokens": 99060,
+      "cacheCreationInputTokens": 14786,
+      "webSearchRequests": 0,
+      "costUSD": 0.211028,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 1806,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "paperId": "emkohyo-EM20251807",
+  "ids": [
+    "emkohyo-EM20251807-q5"
+  ],
+  "figureSha256": {
+    "emkohyo-EM20251807-q5": {}
+  },
+  "officialRowImageSha256": {
+    "emkohyo-EM20251807-q5": {
+      "/exam-library/emkohyo-EM20251807/q5-p4-0.webp": "344dede6cc27ec0a1476347dd062e9bcc24b4d6399d756c2c41c6dc2297f13e8"
+    }
+  },
+  "officialPageImageSha256": {},
+  "governmentSourceImageSha256": {},
+  "candidateSha256": {
+    "emkohyo-EM20251807-q5": "d4cfd0331b20121dfb20037e7a8b40ecea61ad20e5ead15b7e34c5e5cf38eb3c"
+  },
+  "sourcePackPath": "docs/evidence/emkohyo-choice-sources/emkohyo-EM20251807-q05-05.json",
+  "sourcePackSha256": "2b1dbcc94164b96c21e2d40508790dab849eb2e68a3cf666962c7d0bffbc53bd",
+  "assessment": {
+    "emkohyo-EM20251807-q5": {
+      "status": "FIX",
+      "textIssues": [
+        "presentation.promptの末尾にある「Ⓐ\\nⒷ」は、原図では表の列見出しである。しかしchoicesは表の形になっておらず、見出しだけが意味なく残っている。「Ⓐ（特定化学物質）」と「Ⓑ（検出器）」の対応が読み取れるように直すか、見出しを削除して各肢のほうで対応を示すべきである。",
+        "choices 1〜5では、Ⓐ列の物質名とⒷ列の検出器名が区切りなしにつながっている（例：「アクリロニトリル電子捕獲検出器（ECD）」）。原図は2列の表である。「アクリロニトリル ― 電子捕獲検出器（ECD）」のように区切りを入れ、組合せであることが分かる表記にすべきである。"
+      ],
+      "choiceIssues": [],
+      "reasonIssues": [
+        "肢1：解説は「ECDはハロゲン化合物などに高感度」と「FIDを指定した試験法がある」の2点を並べるだけである。「アクリロニトリル（CH2=CHCN）はハロゲンを含まず、ECDの感度は低い。そのため、この組合せは適当でない」という個別の因果が書かれていない。また、別の試験法がFIDを指定していることは、ECDが不適当である直接の理由にならない。アクリロニトリルが強い親電子性を持たないことを明記すべきである。さらに、作業環境測定での標準的な検出器（FIDやFTDなど）と対比させるべきである。",
+        "肢1：引用しているMHLWの試験法は、文脈（ヘキサンで調製する標準溶液、ポーラスポリマーを充填したカラム）から、食品・器具容器包装などの規格試験とみられる。作業環境測定の方法ではない可能性が高い。解説がこれを「アクリロニトリル試験法」とだけ書くと、測定の場面が異なることを利用者に誤認させるおそれがある。出典の性質を明記すべきである。",
+        "肢2：NIESの資料は、FTDが窒素・リン化合物に選択的であることを示すだけである。アクリルアミドの分析にFTDが使われることは、化合物に窒素が含まれるという推論でしか支えられていない。推論自体は妥当だが、アクリルアミドの測定にGC-FTDを使う公的な事例を示せればより確実である（必須ではない）。",
+        "肢5：FPDが硫黄やリンを選択的に検出する検出器であり、硫酸ジメチルが硫黄を含むことが、適当である理由の核心である。この因果の一文を加えると、出典の記載をなぞるだけの説明から改善される。"
+      ],
+      "sourceIssues": [
+        "sourcesのtitleがすべて「政府・公的研究資料 1〜6」という汎用名である。各資料が何か（JAEA ATOMICA「ECD」、MHLW告示の試験法、NIES用語解説、MAFFのくん蒸試験報告、環境省の有害大気汚染物質測定方法マニュアル、MHLW硫酸ジイソプロピル測定法検討資料）を具体的に記すべきである。",
+        "MHLW t_doc（dataId=00tc9023）の照合済み抜粋「検出器：水素炎イオン化検出器」とその前後の文脈に、アクリロニトリルの語が含まれていない。この操作条件がアクリロニトリルの試験に関するものか、提示された証拠からは確認できない。",
+        "MAFF shuryo_plant-7.pdf 12ページの抜粋「GC-FID測定」とその前後の文脈に、「臭化メチル」の語が含まれていない。GC-FIDで測った対象ガスが臭化メチルであることを、抜粋の範囲では確認できない。",
+        "ATOMICA（JAEA）の記事は、ECDの原理とハロゲン化合物への高感度を支えている。しかし、アクリロニトリルにECDが不適当であることを直接には述べていない。肢1の結論を直接支える作業環境測定分野の資料が欠けている。",
+        "環境省マニュアル（肢4）は大気環境の測定、MHLW硫酸ジイソプロピル資料（肢5）は測定法の検討資料である。いずれも検出器の組合せが妥当であることは支えている。作業環境測定の正式な方法として引用するのであれば、その旨の限定が必要である。"
+      ],
+      "needsExternalCheck": [
+        "MHLW https://www.mhlw.go.jp/web/t_doc?dataId=00tc9023&dataType=1 の該当箇所がアクリロニトリルの試験法か、また何の規格試験（食品、器具容器包装など）かを確認すること。",
+        "MAFF shuryo_plant-7.pdf 12ページの「GC-FID測定」が臭化メチルのガス濃度測定であることを、同じ資料の本文で確認すること。",
+        "作業環境測定ガイドブックなどで、アクリロニトリルのGC分析に標準的に使われる検出器（FIDやFTD/NPDなど）を確認し、肢1の根拠を補強すること。"
+      ]
+    }
+  }
+}

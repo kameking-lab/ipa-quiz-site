@@ -1,32 +1,13 @@
 import type { ExamCode } from "@/lib/questions/types";
 import { ALL_QUESTIONS, QUESTIONS_BY_EXAM } from "@/data/questions";
 import { ALL_ESSAY_QUESTIONS } from "@/data/questions/essay";
-import { AP_AFTERNOON_QUESTIONS } from "@/data/questions/afternoon/ap";
-import { ST_AFTERNOON_QUESTIONS } from "@/data/questions/afternoon/st";
-import { FE_AFTERNOON_QUESTIONS } from "@/data/questions/afternoon/fe";
-import { DB_AFTERNOON_QUESTIONS } from "@/data/questions/afternoon/db";
-import { NW_AFTERNOON_QUESTIONS } from "@/data/questions/afternoon/nw";
-import { SC_AFTERNOON_QUESTIONS } from "@/data/questions/afternoon/sc";
-import { ES_AFTERNOON_QUESTIONS } from "@/data/questions/afternoon/es";
-import { PM_AFTERNOON_QUESTIONS } from "@/data/questions/afternoon/pm";
-import { SA_AFTERNOON_QUESTIONS } from "@/data/questions/afternoon/sa";
-import { AU_AFTERNOON_QUESTIONS } from "@/data/questions/afternoon/au";
-import { SM_AFTERNOON_QUESTIONS } from "@/data/questions/afternoon/sm";
-import type { AfternoonQuestion } from "@/lib/afternoon/types";
+import { getAfternoonQuestions } from "@/lib/afternoon/load";
 
-const ALL_AFTERNOON: AfternoonQuestion[] = [
-  ...AP_AFTERNOON_QUESTIONS,
-  ...ST_AFTERNOON_QUESTIONS,
-  ...FE_AFTERNOON_QUESTIONS,
-  ...DB_AFTERNOON_QUESTIONS,
-  ...NW_AFTERNOON_QUESTIONS,
-  ...SC_AFTERNOON_QUESTIONS,
-  ...ES_AFTERNOON_QUESTIONS,
-  ...PM_AFTERNOON_QUESTIONS,
-  ...SA_AFTERNOON_QUESTIONS,
-  ...AU_AFTERNOON_QUESTIONS,
-  ...SM_AFTERNOON_QUESTIONS,
+// Count the same admitted collection served by the afternoon routes, not legacy barrels.
+const AFTERNOON_EXAMS: ExamCode[] = [
+  "ap", "st", "fe", "db", "nw", "sc", "es", "pm", "sa", "au", "sm",
 ];
+const ALL_AFTERNOON = AFTERNOON_EXAMS.flatMap(getAfternoonQuestions);
 
 export interface ExamContentRow {
   exam: ExamCode;

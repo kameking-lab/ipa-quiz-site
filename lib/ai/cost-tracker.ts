@@ -1,7 +1,7 @@
 import { readFileSync, writeFileSync, mkdirSync, existsSync } from "node:fs";
 import { join } from "node:path";
 
-export type ModelTier = "pro" | "flash" | "flash-lite";
+export type ModelTier = "pro" | "flash" | "flash-lite" | "flash-3.8";
 
 // USD per 1M tokens (Gemini 2.5 Pro / Flash / Flash-Lite)
 // Record<ModelTier, ...> なので、ModelTier に層を足すと単価行の追加が
@@ -10,6 +10,8 @@ const PRICING: Record<ModelTier, { input: number; output: number }> = {
   pro: { input: 1.25, output: 10.00 },
   flash: { input: 0.30, output: 2.50 },
   "flash-lite": { input: 0.10, output: 0.40 },
+  // Gemini 3.8 Flash standard paid tier, from 2027-01-01 onward.
+  "flash-3.8": { input: 1.50, output: 7.50 },
 };
 
 /**
@@ -22,6 +24,7 @@ const PRICING: Record<ModelTier, { input: number; output: number }> = {
  */
 function lookupTier(model: string | undefined): ModelTier | null {
   const id = (model ?? "").toLowerCase();
+  if (id === "gemini-3.8-flash") return "flash-3.8";
   // "flash-lite" は "flash" を部分文字列に含むので、必ず先に判定する。
   if (id.includes("flash-lite")) return "flash-lite";
   if (id.includes("flash")) return "flash";
@@ -86,7 +89,12 @@ function calcCost(
   input: number,
   output: number,
 ): { usd: number; jpy: number } {
-  const p = PRICING[tier];
+  // Google's introductory standard pricing ends 2026-12-31. The model ID is
+  // stable across that boundary, so apply the date here instead of relying on
+  // a manual env change that could silently undercount spending in January.
+  const p = tier === "flash-3.8" && Date.now() < Date.UTC(2027, 0, 1)
+    ? { input: 0.75, output: 3.75 }
+    : PRICING[tier];
   const usd = (input * p.input + output * p.output) / 1_000_000;
   return { usd, jpy: usd * USD_TO_JPY };
 }

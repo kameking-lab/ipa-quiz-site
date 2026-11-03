@@ -1,0 +1,61 @@
+{
+  "status": "partial-accepted",
+  "date": "20250323",
+  "subject": "theory",
+  "questionCount": 2,
+  "answerUnitCount": 2,
+  "choiceCount": 10,
+  "sourceQuestionPdfSha256": "8817012cb55eed9c83bb1e68df138909b1e03a81f7ed48a9893a219e1d2a76ca",
+  "sourceAnswerPdfSha256": "4c3b38fcf1405766fafaa78b1b05b867a3d48307a670b9d354476bc6b32acd4c",
+  "reviewedDataSha256": "23c898b1f6b5e407b47c443c86aa354e6c2c36d5bf9fb6f02d70420b3a6e8a4f",
+  "questions": [
+    {
+      "number": 1,
+      "sourceDraftSha256": "c09ca5fb5308f43fba403601ad711d84dec4592b30ea6a419502bda273f6a001",
+      "opusReceipt": "data/raw_pdfs/denken3/review/20250323/theory/q01-opus-review.json",
+      "opusReceiptSha256": "6a3161415a9569483f8ebbf5f89bdc413a40ca868760fd00f6cda91e1ddb7206",
+      "assessment": {
+        "number": 1,
+        "status": "PASS",
+        "textIssues": [],
+        "choiceIssues": [],
+        "explanationIssues": [],
+        "figureIssues": [],
+        "externalSourceIssues": []
+      },
+      "figureSha256": {
+        "20250323-theory-q01-layered-capacitor": "b30b2e4e3b2abd604a44dc37ec9ba46b371bce0bd189b4449eb8fbdf5d4c3ed2"
+      }
+    },
+    {
+      "number": 2,
+      "sourceDraftSha256": "b627ca347e6637f789e7ab8d70e4b3dcc98d939532fc8d11a74a72fcbb87b58d",
+      "opusReceipt": "data/raw_pdfs/denken3/review/20250323/theory/q01-02-opus-review.json",
+      "opusReceiptSha256": "7e1f6411fe4be26f413e8b2739e61111844c1c717b7186bfd69cc83ba50ca469",
+      "assessment": {
+        "number": 2,
+        "status": "PASS",
+        "textIssues": [],
+        "choiceIssues": [],
+        "explanationIssues": [],
+        "figureIssues": [],
+        "externalSourceIssues": []
+      },
+      "figureSha256": {}
+    }
+  ],
+  "strictReview": {
+    "q01": {
+      "path": "docs/evidence/denken3/strict/20250323-theory-t6-q01-opus.json",
+      "sha256": "2bd592847d3b4c166082358ad5f3b942e7be914fe1454ee0125f8c4844a68a0f",
+      "status": "PASS",
+      "resolvedModel": "claude-opus-5-5"
+    },
+    "q02": {
+      "path": "docs/evidence/denken3/strict/20250323-theory-t1-q01-q02-opus.json",
+      "sha256": "83534feb545462f4158c89e7617e3db27c7f7eb23ea184e4c86f6e334ddc7f39",
+      "status": "PASS",
+      "resolvedModel": "claude-opus-5-5"
+    }
+  }
+}

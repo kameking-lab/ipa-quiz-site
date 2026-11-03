@@ -3,6 +3,7 @@ import type { Question, ExamCode, Season, Session } from "@/lib/questions/types"
 import type { HistoryStore } from "@/lib/storage/history";
 import {
   filterQuestions,
+  isPracticeReadyQuestion,
   isPlaceholderExplanation,
   shuffle,
   shuffleChoices,
@@ -32,6 +33,7 @@ function q(partial: Partial<Question> & { id?: string }): Question {
     answer: partial.answer ?? "ア",
     explanation: partial.explanation ?? "これは十分に長い実際の解説文です。",
     hasImage: partial.hasImage ?? false,
+    imageUrls: partial.imageUrls,
     sourcePdfUrl: "https://example.com/x.pdf",
     license: "IPA-public",
     isCalculation: partial.isCalculation,
@@ -68,7 +70,7 @@ describe("isPlaceholderExplanation", () => {
   it("実際の解説はプレースホルダ扱いしない", () => {
     expect(
       isPlaceholderExplanation(q({ explanation: "正解はアです。なぜなら…と続く解説。" })),
-    ).toBe(true); // 先頭一致のため前置きが定型なら該当する（現挙動を固定）
+    ).toBe(false);
     expect(
       isPlaceholderExplanation(q({ explanation: "この問題のポイントは正規化である。" })),
     ).toBe(false);
@@ -145,15 +147,17 @@ describe("filterQuestions — フィルタ条件", () => {
 });
 
 describe("filterQuestions — 品質フィルタ", () => {
-  it("表/図/条件に言及するが画像のない問題を除外する", () => {
+  it("画像フラグだけの問題を除外し、実画像と文字起こしした表は出題する", () => {
     const all = [
       q({ id: "ok", question: "正規化に関する記述はどれか。" }),
       q({ id: "table", question: "次の表に示すデータについて答えよ。", hasImage: false }),
       q({ id: "tableImg", question: "次の表に示すデータについて答えよ。", hasImage: true }),
+      q({ id: "rendered", question: "次の図に示す回路", hasImage: true, imageUrls: ["/figure.png"] }),
+      q({ id: "transcribed", question: "次の表について。\nA | B\n--- | ---\n1 | 2", hasImage: false }),
       q({ id: "cond", question: "以下の条件のもとで計算せよ。", hasImage: false }),
     ];
     const out = filterQuestions(all, { mode: "year" });
-    expect(out.map((x) => x.id).sort()).toEqual(["ok", "tableImg"]);
+    expect(out.map((x) => x.id).sort()).toEqual(["cond", "ok", "rendered", "transcribed"]);
   });
 
   it("needsReview の問題を除外する", () => {
@@ -162,7 +166,7 @@ describe("filterQuestions — 品質フィルタ", () => {
     expect(out.map((x) => x.id)).toEqual(["ok"]);
   });
 
-  it("実解説がある場合プレースホルダ解説を落とすが、全てプレースホルダなら残す", () => {
+  it("プレースホルダ解説は、同じ絞り込み内の件数にかかわらず出題しない", () => {
     const mixed = [
       q({ id: "real", explanation: "実際の解説です。" }),
       q({ id: "ph", explanation: "正解はイです。" }),
@@ -173,10 +177,14 @@ describe("filterQuestions — 品質フィルタ", () => {
       q({ id: "p1", explanation: "正解はアです。" }),
       q({ id: "p2", explanation: "正解はウです。" }),
     ];
-    expect(filterQuestions(allPlaceholder, { mode: "year" }).map((x) => x.id).sort()).toEqual([
-      "p1",
-      "p2",
-    ]);
+    expect(filterQuestions(allPlaceholder, { mode: "year" })).toEqual([]);
+  });
+
+  it("一覧とプレイヤーが共有する公開条件を一つの述語で判定する", () => {
+    expect(isPracticeReadyQuestion(q({ id: "ready" }))).toBe(true);
+    expect(isPracticeReadyQuestion(q({ id: "figure", hasImage: true }))).toBe(false);
+    expect(isPracticeReadyQuestion(q({ id: "review", needsReview: true }))).toBe(false);
+    expect(isPracticeReadyQuestion(q({ id: "placeholder", explanation: "正解はアです。" }))).toBe(false);
   });
 
   it("inOrder は qNumber 昇順に並べる", () => {
@@ -240,6 +248,13 @@ describe("shuffleChoices", () => {
     expect(shuffled.choices![newAnswerKey]).toBe(correctValue);
     // 4択の内容は保存される（集合として不変）
     expect(Object.values(shuffled.choices!).sort()).toEqual(["A値", "B値", "C値", "D値"]);
+  });
+
+  it("keeps original labels when explanation prose refers to choices", () => {
+    const original = q({ choices: { ア: "123", イ: "124", ウ: "127", エ: "128" }, answer: "ア", explanation: "イの124、ウの127、エの128は条件を満たさない。" });
+    vi.spyOn(Math, "random").mockReturnValue(0);
+    expect(shuffleChoices(original)).toBe(original);
+    expect(original.choices?.イ).toBe("124");
   });
 
   it("choices を持たない問題はそのまま返す", () => {

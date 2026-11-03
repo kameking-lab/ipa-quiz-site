@@ -1,0 +1,56 @@
+{
+  "reviewModel": "claude-opus-5-5",
+  "requestedModel": "claude-opus-5-5",
+  "canonicalModel": "claude-opus-5-5",
+  "provider": "firstParty",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 3925,
+      "cacheReadInputTokens": 139443,
+      "cacheCreationInputTokens": 20108,
+      "webSearchRequests": 0,
+      "costUSD": 0.26726059999999996,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 3275,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "paperId": "emkohyo-EM20261802",
+  "ids": [
+    "emkohyo-EM20261802-q16"
+  ],
+  "figureSha256": {
+    "emkohyo-EM20261802-q16": {}
+  },
+  "officialRowImageSha256": {
+    "emkohyo-EM20261802-q16": {
+      "/exam-library/emkohyo-EM20261802/q16-p12-0.webp": "ab7110724ee7a408a629ed51450e270c5a50db7f5a0595288012466a4ea43726"
+    }
+  },
+  "officialPageImageSha256": {},
+  "governmentSourceImageSha256": {},
+  "candidateSha256": {
+    "emkohyo-EM20261802-q16": "35b90b4400ae91bf480ae9e668a069ab04980e059cdec05b53249bc99605e53a"
+  },
+  "sourcePackPath": "docs/evidence/emkohyo-choice-sources/emkohyo-EM20261802-q16-16.json",
+  "sourcePackSha256": "51626252f5589fb52ff7eef36d07a277e36204246b5edd2b7e9153cf71ea38d0",
+  "assessment": {
+    "emkohyo-EM20261802-q16": {
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "reasonIssues": [],
+      "sourceIssues": [
+        "肢3の理由にある『測定器で著しく困難なら同条第2項により計算できる』の根拠として、抜粋『放射線測定器を用いて測定することが著しく困難なときは、同項の規定にかかわらず、計算により算出することができる。』を使っている。しかし照合された前後文は『計算により前項の実効線量又は等価線量を算出しなければならない。３前項の線量当量率は…』と『４事業者は、放射線業務等の一部を請負人に…』である。これは第45条第3項（事故が起きたときの線量当量率の算定）の文で、第54条第2項ではない。第54条第2項の条文そのものを抜粋し直す必要がある。",
+        "肢3の5年間保存の根拠として、抜粋『次の事項を記録し、これを五年間保存しなければならない。』が照合された箇所は、前後文『第四十二条第一項各号のいずれかに該当する事故が発生し…一事故の発生した日時及び場所』から第45条第1項（事故の記録）である。第54条の記録保存ではない。第54条第1項の保存義務は別の抜粋（『三・七ギガベクレル以下…六月以内』）の前後文に入っているだけなので、『その都度、次の事項を記録し、これを五年間保存しなければならない』までを含めて第54条第1項から抜粋し直す必要がある。"
+      ],
+      "needsExternalCheck": [
+        "厚生労働省の法令ページ（dataId=74101000、pageNo=2）で第54条第2項の現行条文を確認し、放射線測定器で測定することが著しく困難なときに計算で算出できる対象が、第1項の『線量当量率又は線量当量』であることを一次資料で確かめる。"
+      ]
+    }
+  }
+}

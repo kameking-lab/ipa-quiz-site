@@ -43,7 +43,7 @@ export default async function StreakSharePage({ params }: PageProps) {
         {days}日連続学習達成
       </h1>
       <p className="mb-6 text-sm leading-relaxed text-zinc-600 dark:text-zinc-400">
-        IPA 過去問 AI は誰でも完全無料で使える教育貢献プロジェクトです。
+        IPA 過去問 AI は無料の学習機能と月額プランを提供する教育貢献プロジェクトです。
         あなたも今日から一緒に始めてみませんか?
       </p>
       <Link

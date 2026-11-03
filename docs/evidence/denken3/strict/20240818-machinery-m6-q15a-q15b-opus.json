@@ -1,0 +1,86 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20240818",
+  "subject": "machinery",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 3338,
+      "cacheReadInputTokens": 139443,
+      "cacheCreationInputTokens": 21207,
+      "webSearchRequests": 0,
+      "costUSD": 0.2643126,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 1838,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "554472b3570c23b487054be0260edca352ad4da8a42537248a3bb89134289f03",
+  "inputRequestSha256": "3362f9857b02c6b9f022413dae667e873248c3ca5e2fb14f22291b41bf4ae174",
+  "inputHashes": {
+    "candidateSha256": {
+      "q15a": "2a75fb65e4fb7941b7cbae989191eec144588d0c09898f714981972ee2b0108b",
+      "q15b": "6b7a43dee91ce95ecfec42726a94c5793097c0fc1972d3ea720aa3da08c07233"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20240818/machinery/p20.png": "7bb5b70469ef38e970059d7fa82f141a4c91dd31e4dcef1297bced8e24ee906d",
+      "data/raw_pdfs/denken3/review/20240818/machinery/p21.png": "b97f38f6cf673a45ee0f21b4ba1cb7b19fdf24ec73a2192dde5b090ba49c5d6f"
+    },
+    "figureSha256": {},
+    "sourceQuestionPdfSha256": "ff8ff270bbe1ea125e92f213d011afde969d0d2b9fa2e17a7caa2b5cd6673e2a",
+    "sourceAnswerPdfSha256": "f72ecbc3a477e64948388b69cf78cb931032c9f0c688639836c8d533a949cd0f",
+    "officialAnswerUnitsSha256": "cd0092bb9693b02adf790886b696768d1ff92b7511409b91123c3db8edcaec57",
+    "referencePdfSha256": {},
+    "referencePageSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q15a",
+      "questionNumber": 15,
+      "part": "a",
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "Checked the stem against the official problem image (page marked -17-, T1-K 020). It matches: rated frequency 60 Hz, 6-pole, three-phase wound-rotor induction motor, 1 170 min⁻¹ at rated load with the secondary short-circuited. The proviso that slip and torque are proportional when secondary resistance is constant also matches. Only the punctuation (、 vs ，) and spacing differ, which is formatting and does not change the meaning.",
+        "Checked the (a) question text against the image: 80 % of rated-load torque, secondary winding short-circuited, find the slip. It matches.",
+        "Checked all five choices against the image: (1)0.015 (2)0.02 (3)0.025 (4)0.03 (5)0.04. They match.",
+        "Checked the official answer table (令和6年度上期, 機械, 問15(a)=2). It matches officialAnswer=\"2\" and the manifest unit.",
+        "Recalculated independently: Ns=120×60/6=1200 min⁻¹. s0=(1200−1170)/1200=0.025. With constant secondary resistance, s∝T, so s=0.025×0.8=0.02, which is choice (2). This matches the candidate explanation.",
+        "Checked each choice explanation. (2) matches the calculation. (3) is the rated-load slip s0 with the 80 % correction skipped, which is correct as the specific reason. (1), (4) and (5) differ from the computed 0.02, and these statements are factually correct.",
+        "Figure check: the original has no figure and none is needed to answer. figureUrls=[] is appropriate.",
+        "Source check: officialReferenceUrls is empty, so there are no independent claims to verify. Pages 20 and 21 in reviewedFromPage match the printed codes T1-K 020 and T1-K 021 on the original."
+      ]
+    },
+    {
+      "unitKey": "q15b",
+      "questionNumber": 15,
+      "part": "b",
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "Checked the (b) question text against the official problem image (page marked -18-, T1-K 021). It matches: 80 % torque, a three-phase resistor connected to the secondary terminals, per-phase secondary resistance set to 2.5 times the short-circuit value, find the speed in min⁻¹.",
+        "Checked all five choices against the image: (1)980 (2)1 110 (3)1 140 (4)1 170 (5)1 200. They match; only the digit grouping space was removed.",
+        "Checked the official answer table (令和6年度上期, 機械, 問15(b)=3). It matches officialAnswer=\"3\" and the manifest unit.",
+        "Recalculated independently. Torque depends on slip and secondary resistance only through s/r2, so this is the proportional-shift (比例推移) property. At constant torque, s∝r2, so s'=0.02×2.5=0.05. N=1200×(1−0.05)=1140 min⁻¹, which is choice (3). The candidate explanation derives this from the low-slip approximation T∝s/r2, which gives the same result, so there is no causal error.",
+        "Checked each choice explanation. (1) is s≈0.183, (2) is s=0.075, (4) is the rated-load speed from the stem (s0=0.025), and (5) is synchronous speed (s=0), which cannot occur while the motor carries 80 % torque. All of these slip conversions are arithmetically correct and the reasons are valid.",
+        "Figure check: the original has no figure and none is needed to answer. figureUrls=[] is appropriate.",
+        "Source check: officialReferenceUrls is empty, so there are no independent claims to verify. reviewedFromPage [20, 21] matches the original images."
+      ]
+    }
+  ]
+}

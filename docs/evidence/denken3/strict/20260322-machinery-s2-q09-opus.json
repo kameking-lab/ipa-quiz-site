@@ -1,0 +1,68 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20260322",
+  "subject": "machinery",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 2654,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 13665,
+      "webSearchRequests": 0,
+      "costUSD": 0.1626638,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 1155,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "b1368353f655c47dc097e12084bd391545c894f731f39df2742758e2e51f808f",
+  "inputRequestSha256": "f45bc48cecbb5012a208dcf40e38b1a0a4e61c38c1edf9093deeec286bf56322",
+  "inputHashes": {
+    "candidateSha256": {
+      "q09": "fde1e4ca527080f27cd9008ab58c4f306ff293fea78860263b7f7d5ce302155e"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20260322/machinery/p12.png": "72ce32d2d06018903c10572b94c5f3f20a19a29bf8bb74cae164246c56ba2240"
+    },
+    "figureSha256": {},
+    "sourceQuestionPdfSha256": "a89c7dc2b9a305f9db83f2f78195f0df8a0da5aeec6b8e66cfd40fb028d146fb",
+    "sourceAnswerPdfSha256": "cc2890296d06a4823df5697a78a1c01ddfd39f041c51f48c87984daa3a5707c6",
+    "officialAnswerUnitsSha256": "92f80b2c8107abde786e8ae42c1215b00cf9791c7ea0854a0986b008387c9c38",
+    "referencePdfSha256": {},
+    "referencePageSha256": {},
+    "referenceJsonSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q09",
+      "questionNumber": 9,
+      "part": null,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "問題文: 添付原図（ページ下部の印刷頁番号『- 9 -』、管理番号『T2－K 012』）と一字ずつ照合した。『単相変圧器の一次側に電流計，電圧計及び電力計を接続して，短絡試験を行う。』から『理想的な計器であるものとする。』まで一致している。数値30 A・150 V・1 350 W、単位[Ω]、ただし書き（励磁回路のインピーダンスを無視する、計器は理想的とする）も一致する。本文とただし書きの段落区切りを改行で表している点は、sourceAttributionの『読みやすく整形』の範囲内である。",
+        "選択肢: 原図の(1) 1.50、(2) 3.50、(3) 4.77、(4) 5.00、(5) 5.22と、候補choicesの1〜5が完全に一致する。",
+        "公式正答: 添付の公式解答表『令和７年度 第三種電気主任技術者下期試験解答』の＜機械＞欄で、問9の解答は3、配点は5である。manifest固定の正答単位 {question:9, part:null, answer:\"3\", points:5} とも、候補のofficialAnswer=\"3\"、scoringPoints=5とも一致する。",
+        "計算の検算: |Z| = 150/30 = 5.00 Ω。R = 1350/30² = 1350/900 = 1.50 Ω。X = √(25 − 2.25) = √22.75 = 4.7697… ≒ 4.77 Ω。正答(3)と一致する。",
+        "因果の検証: 励磁回路を無視するため、短絡試験時の回路は一次側換算の等価直列インピーダンスR+jXだけになる。理想計器の条件から、電力計の指示はすべてRで消費される銅損とみなせる。したがってP=I²RとR²+X²=|Z|²を使う論理は妥当である。R=r1+a²r2、X=x1+a²x2（aは巻数比）という一次側換算の記述も正しい。",
+        "誤答肢(1) 1.50: P/I²で求まる等価抵抗Rの値である。候補の理由付けは正しい。",
+        "誤答肢(2) 3.50: |Z|−R = 5.00−1.50 = 3.50に一致することを確認した。RとXは直交する成分であり、単純な差ではXにならないという理由は正しい。",
+        "誤答肢(4) 5.00: V/Iで求まる|Z|である。抵抗分を含むため漏れリアクタンスではないという理由は正しい。",
+        "誤答肢(5) 5.22: √(25+2.25) = √27.25 = 5.2202… ≒ 5.22に一致することを確認した。R²を引くべきところを加えた値であるという理由は正しい。",
+        "図: 原図の頁には問題文と選択肢しかなく、図は存在しない。figureDescription『図なし』、figureUrls=[]、choiceFigureUrls={}は原図と整合する。",
+        "出典メタデータ: 候補の値はすべてmanifestと一致する（fiscalYear=2025、term=lower、examDate=2026-03-22、subject=machinery）。sourceQuestionPdfUrl=…20260322_ch_third_q03.pdf（機械冊子）とsourceAnswerPdfUrl=…20260322_ch_third_a01.pdfもmanifestと一致する。reviewedFromPage=[12]はmanifestの『問9原図はPDF第12頁』と一致する。原図の印刷頁番号『- 9 -』はPDFページ番号ではないため、食い違いとして扱わない。解答表の『令和７年度』は2025年度に当たる。",
+        "外部参照: officialReferenceUrlsは空であり、原図で検証すべき独立主張はない。uncertaintyは『なし』、needsReviewはfalseで、監査結果と矛盾しない。"
+      ]
+    }
+  ]
+}

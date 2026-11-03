@@ -2,12 +2,10 @@ import "server-only";
 
 import type { ExamCode, Question, QuizFilter } from "./types";
 import { getAllQuestionsLazy, getQuestionsForExam } from "./get-questions";
-import { isPlaceholderExplanation } from "./filter";
+import { isPracticeReadyQuestion } from "./filter";
+import { selectExplicitPoolIds } from "./explicit-pool";
 
-function hasUnrenderableContent(q: Question): boolean {
-  const tableOrFigurePattern = /次の表|以下の表|下の表|表のように|表に示す|次の図|以下の図|下の図|図のように|図に示す|図中の|次の条件|以下の条件/;
-  return tableOrFigurePattern.test(q.question) && !q.hasImage;
-}
+
 
 /**
  * Apply non-history filters server-side. Does not shuffle or slice — the client
@@ -40,11 +38,7 @@ async function loadServerPool(filter: QuizFilter): Promise<Question[]> {
   }
   if (filter.calculationOnly) pool = pool.filter((q) => q.isCalculation === true);
 
-  pool = pool.filter((q) => !hasUnrenderableContent(q));
-  pool = pool.filter((q) => !q.needsReview);
-
-  const withReal = pool.filter((q) => !isPlaceholderExplanation(q));
-  if (withReal.length > 0) pool = withReal;
+  pool = pool.filter(isPracticeReadyQuestion);
 
   if (filter.inOrder) {
     pool = [...pool].sort((a, b) => a.qNumber - b.qNumber);
@@ -57,6 +51,19 @@ async function loadServerPool(filter: QuizFilter): Promise<Question[]> {
 export async function getPoolIds(filter: QuizFilter): Promise<string[]> {
   const pool = await loadServerPool(filter);
   return pool.map((q) => q.id);
+}
+
+/**
+ * Resolve a caller-supplied pool against the canonical corpus. Invalid IDs,
+ * review-only questions and duplicates never reach the client. A malformed
+ * payload fails closed to an empty pool rather than falling back to all exams.
+ */
+export async function getExplicitPoolIds(raw: unknown): Promise<string[]> {
+  const all = await getAllQuestionsLazy();
+  return selectExplicitPoolIds(
+    raw,
+    all.filter(isPracticeReadyQuestion).map((question) => question.id),
+  );
 }
 
 /** Look up a single question by ID (server-only). */

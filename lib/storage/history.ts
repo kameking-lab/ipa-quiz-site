@@ -1,3 +1,5 @@
+import { isReferenceOnlyQuestionId } from "@/lib/questions/assessment";
+import type { NativeBGrade } from "@/lib/questions/types";
 import { LS_KEYS } from "./keys";
 
 export interface HistoryEntry {
@@ -5,6 +7,7 @@ export interface HistoryEntry {
   selected: string;
   correct: boolean;
   at: number;
+  nativeBResult?: NativeBGrade;
 }
 
 export interface HistoryData {
@@ -63,18 +66,29 @@ export interface HistoryStore {
 }
 
 export function createHistoryStore(): HistoryStore {
-  const snapshot = (): HistoryData => readRaw();
+  // Public assessment reads are projected; mutations always start from raw data.
+  const snapshot = (): HistoryData => {
+    const raw = readRaw();
+    return { entries: raw.entries.filter(entry => !isReferenceOnlyQuestionId(entry.id)),
+      starredIds: raw.starredIds.filter(id => !isReferenceOnlyQuestionId(id)) };
+  };
   return {
     record(entry) {
-      const data = snapshot();
+      if (isReferenceOnlyQuestionId(entry.id)) return;
+      const data = readRaw();
       data.entries.push(entry);
-      if (data.entries.length > 2000) {
-        data.entries.splice(0, data.entries.length - 2000);
-      }
+      // Keep the existing 2000 assessed-entry cap without deleting legacy
+      // reference rows, including duplicate/raw auxiliary fields or ordering.
+      let excess = data.entries.filter(item => !isReferenceOnlyQuestionId(item.id)).length - 2000;
+      if (excess > 0) data.entries = data.entries.filter(item => {
+        if (isReferenceOnlyQuestionId(item.id) || excess <= 0) return true;
+        excess -= 1; return false;
+      });
       writeRaw(data);
     },
     toggleStar(id) {
-      const data = snapshot();
+      if (isReferenceOnlyQuestionId(id)) return false;
+      const data = readRaw();
       const idx = data.starredIds.indexOf(id);
       if (idx >= 0) {
         data.starredIds.splice(idx, 1);
@@ -132,9 +146,14 @@ export function createHistoryStore(): HistoryStore {
       try {
         const parsed = JSON.parse(json) as HistoryData;
         if (!parsed || !Array.isArray(parsed.entries)) return false;
+        const retained = readRaw();
         writeRaw({
-          entries: parsed.entries,
-          starredIds: Array.isArray(parsed.starredIds) ? parsed.starredIds : [],
+          // Import still replaces ordinary history. Existing local reference
+          // rows/stars survive; imported reference rows cannot become new data.
+          entries: [...parsed.entries.filter(entry => !isReferenceOnlyQuestionId(entry.id)),
+            ...retained.entries.filter(entry => isReferenceOnlyQuestionId(entry.id))],
+          starredIds: [...(Array.isArray(parsed.starredIds) ? parsed.starredIds.filter(id => !isReferenceOnlyQuestionId(id)) : []),
+            ...retained.starredIds.filter(id => isReferenceOnlyQuestionId(id))],
         });
         return true;
       } catch {

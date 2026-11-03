@@ -1,0 +1,117 @@
+{
+  "duration_api_ms": 342181,
+  "stop_reason": "end_turn",
+  "session_id": "a1db8edd-45ff-4d6e-93b5-6bc31af7ab9b",
+  "total_cost_usd": 2.248285399999999,
+  "usage": {
+    "input_tokens": 46,
+    "cache_creation_input_tokens": 83613,
+    "cache_read_input_tokens": 1862067,
+    "output_tokens": 18725,
+    "output_tokens_details": {
+      "thinking_tokens": 4680
+    },
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 83613,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "not_available",
+    "iterations": [
+      {
+        "input_tokens": 2,
+        "output_tokens": 4944,
+        "cache_read_input_tokens": 110815,
+        "cache_creation_input_tokens": 890,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 890
+        },
+        "type": "message"
+      }
+    ],
+    "speed": "standard"
+  },
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 46,
+      "outputTokens": 18725,
+      "cacheReadInputTokens": 1862067,
+      "cacheCreationInputTokens": 83613,
+      "webSearchRequests": 0,
+      "costUSD": 1.4160013999999999,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 4680,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    },
+    "claude-haiku-4-5-20251001": {
+      "inputTokens": 612974,
+      "outputTokens": 11862,
+      "cacheReadInputTokens": 0,
+      "cacheCreationInputTokens": 0,
+      "webSearchRequests": 16,
+      "costUSD": 0.8322839999999998,
+      "contextWindow": 200000,
+      "maxOutputTokens": 32000,
+      "thinkingTokens": 0,
+      "canonicalModel": "claude-haiku-4-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+    "spawned": 0,
+    "requested": {
+      "background": 0,
+      "foreground": 0,
+      "unset": 0
+    },
+    "started_in_background": 0,
+    "max_depth": 0,
+    "spawned_by_subagents": 0,
+    "completed": 0,
+    "failed": 0,
+    "killed": {
+      "parent": 0,
+      "user": 0,
+      "system": 0
+    },
+    "refused": {
+      "depth_limit": 0,
+      "concurrency_limit": 0,
+      "budget": 0
+    },
+    "by_type": {}
+  },
+  "is_error": false,
+  "num_turns": 55,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "{\"36\":{\"status\":\"PASS\",\"choiceStatus\":{\"ア\":\"PASS\",\"イ\":\"PASS\",\"ウ\":\"PASS\",\"エ\":\"PASS\"},\"fixedChoiceExplanations\":{},\"evidence\":[{\"url\":\"https://ja.wikipedia.org/wiki/レディーミクストコンクリート\",\"excerpt\":\"工場で練り混ぜてから打設現場に運送するコンクリート\"},{\"url\":\"https://ja.wikipedia.org/wiki/レディーミクストコンクリート\",\"excerpt\":\"生コンに対し、現場で練り混ぜをする方法を（打設から見て）現場練りや（練り混ぜから見て）直送などと呼ぶ\"},{\"url\":\"https://www.jci-net.or.jp/j/concrete/technology/202202_article_1.html\",\"excerpt\":\"高強度コンクリート：普通コンクリートよりも強度が高いコンクリート（呼び強度60（N/mm2）まで）強度が高い分，部材断面を小さくすることができるため，建築分野では居住空間を広くとることができます。\"}]},\"37\":{\"status\":\"PASS\",\"choiceStatus\":{\"ア\":\"PASS\",\"イ\":\"PASS\",\"ウ\":\"PASS\",\"エ\":\"PASS\"},\"fixedChoiceExplanations\":{},\"evidence\":[{\"url\":\"https://www.kan-bo-kyo.or.jp/method/\",\"excerpt\":\"液状の溶解アスファルトと、防水性の高いアスファルトシートを積層し、厚みのある防水層をつくります。二層以上の積層工法が原則で、水密性・耐久性とも高く、施工の不具合が出にくい工法です。\"},{\"url\":\"https://www.kan-bo-kyo.or.jp/method/\",\"excerpt\":\"現場で液状の防水材料を塗り、化学反応で防水の膜をつくります。フェンスの基礎があって細かい作業が必要な屋根やベランダなど、歩行を伴う場所の防水に有効です。\"},{\"url\":\"https://www.kan-bo-kyo.or.jp/method/\",\"excerpt\":\"ゴムや塩ビ（塩化ビニル）でできたシートを下地に貼りつければ完成します。\"}]},\"38\":{\"status\":\"FIX\",\"choiceStatus\":{\"ア\":\"PASS\",\"イ\":\"PASS\",\"ウ\":\"PASS\",\"エ\":\"FIX\"},\"fixedChoiceExplanations\":{\"エ\":\"不適切。長期修繕計画作成ガイドラインでは、推定修繕工事は新築時と同等水準に維持・回復させる修繕工事を基本としつつ、「区分所有者の要望など必要に応じて、建物及び設備の性能を向上させる改良工事を設定する」とされ、性能向上を図る改良工事を行うことも望まれるとしている。初期性能を超える改良工事を原則として実施しないとする記述は誤りである。\"},\"evidence\":[{\"url\":\"https://www.mlit.go.jp/jutakukentiku/house/content/001747006.pdf\",\"excerpt\":\"①推定修繕工事は、建物及び設備の性能・機能を新築時と同等水準に維持、回復させる修繕工事を基本とする。②区分所有者の要望など必要に応じて、建物及び設備の性能を向上させる改良工事を設定する。\"},{\"url\":\"https://www.mlit.go.jp/jutakukentiku/house/content/001747006.pdf\",\"excerpt\":\"また、必要に応じて建物及び設備の性能向上を図る改良工事を行うことも望まれます。\"},{\"url\":\"https://www.mlit.go.jp/jutakukentiku/house/content/001747006.pdf\",\"excerpt\":\"①将来見込まれる修繕工事及び改修工事の内容、おおよその時期、概算の費用等を明確にする。②計画修繕工事の実施のために積み立てる修繕積立金の額の根拠を明確にする。③修繕工事及び改修工事に関する長期計画について、あらかじめ合意しておくことで、計画修繕工事の円滑な実施を図る。\"},{\"url\":\"https://www.mlit.go.jp/jutakukentiku/house/content/001747006.pdf\",\"excerpt\":\"既存マンションの場合は、長期修繕計画の見直し及び修繕積立金の額の設定について、理事会、専門委員会等で検討を行ったのち、専門家に依頼して長期修繕計画及び修繕積立金の額を見直し、総会で決議します。\"}]},\"39\":{\"status\":\"PASS\",\"choiceStatus\":{\"ア\":\"PASS\",\"イ\":\"PASS\",\"ウ\":\"PASS\",\"エ\":\"PASS\"},\"fixedChoiceExplanations\":{},\"evidence\":[{\"url\":\"https://www.jci-net.or.jp/j/concrete/kiso/Carbonation.html\",\"excerpt\":\"中性化とは、一般に空気中の二酸化炭素の作用を受けて、コンクリート中の水酸化カルシウムが徐々に炭酸カルシウムになり、コンクリートのアルカリ性が低下する現象をいい、炭酸化と呼ばれることもある。\"},{\"url\":\"https://concrete-mc.jp/efflorescence/\",\"excerpt\":\"白色に見える結晶がエフロレッセンスです\"}]},\"40\":{\"status\":\"FIX\",\"choiceStatus\":{\"ア\":\"FIX\",\"イ\":\"PASS\",\"ウ\":\"PASS\",\"エ\":\"PASS\"},\"fixedChoiceExplanations\":{\"ア\":\"適切。共同住宅の用途に供する階は、居室の床面積の合計が100m2を超えると2以上の直通階段が必要になる（建築基準法施行令121条1項5号）。主要構造部が準耐火構造（耐火構造を含む）の建築物では、この100m2が200m2に読み替えられる（同条2項）。各階の居室の床面積の合計が200m2であれば「200m2を超える」には当たらないため、2以上の直通階段を設けなくてもよい。\"},\"evidence\":[{\"url\":\"https://laws.e-gov.go.jp/api/1/lawdata/325CO0000000338\",\"excerpt\":\"敷地内には、第百二十三条第二項の屋外に設ける避難階段及び第百二十五条第一項の出口から道又は公園、広場その他の空地に通ずる幅員が一・五メートル（階数が三以下で延べ面積が二百平方メートル未満の建築物の敷地内にあつては、九十センチメートル）以上の通路を設けなければならない。\"},{\"url\":\"https://laws.e-gov.go.jp/api/1/lawdata/325CO0000000338\",\"excerpt\":\"五　ホテル、旅館若しくは下宿の用途に供する階でその階における宿泊室の床面積の合計、共同住宅の用途に供する階でその階における居室の床面積の合計又は寄宿舎の用途に供する階でその階における寝室の床面積の合計が、それぞれ百平方メートルを超えるもの\"},{\"url\":\"https://laws.e-gov.go.jp/api/1/lawdata/325CO0000000338\",\"excerpt\":\"２　主要構造部が準耐火構造である建築物又は主要構造部が不燃材料で造られている建築物について前項の規定を適用する場合には、同項中「五十平方メートル」とあるのは「百平方メートル」と、「百平方メートル」とあるのは「二百平方メートル」と、「二百平方メートル」とあるのは「四百平方メートル」とする。\"},{\"url\":\"https://laws.e-gov.go.jp/api/1/lawdata/325CO0000000338\",\"excerpt\":\"避難階（直接地上へ通ずる出入口のある階をいう。以下同じ。）\"}]},\"41\":{\"status\":\"PASS\",\"choiceStatus\":{\"ア\":\"PASS\",\"イ\":\"PASS\",\"ウ\":\"PASS\",\"エ\":\"PASS\"},\"fixedChoiceExplanations\":{},\"evidence\":[{\"url\":\"https://laws.e-gov.go.jp/api/1/lawdata/325CO0000000338\",\"excerpt\":\"建築物の地上部分の地震力については、当該建築物の各部分の高さに応じ、当該高さの部分が支える部分に作用する全体の地震力として計算するものとし、その数値は、当該部分の固定荷重と積載荷重との和（第八十六条第二項ただし書の規定により特定行政庁が指定する多雪区域においては、更に積雪荷重を加えるものとする。）に当該高さにおける地震層せん断力係数を乗じて計算しなければならない。\"}]},\"42\":{\"status\":\"PASS\",\"choiceStatus\":{\"ア\":\"PASS\",\"イ\":\"PASS\",\"ウ\":\"PASS\",\"エ\":\"PASS\"},\"fixedChoiceExplanations\":{},\"evidence\":[{\"url\":\"https://laws.e-gov.go.jp/api/1/lawdata/325CO0000000338\",\"excerpt\":\"ｎ　前条第一項第二号の表備考一の号に規定する住宅等の居室（次項において単に「住宅等の居室」という。）にあつては〇・五、その他の居室にあつては〇・三\"},{\"url\":\"https://www.mlit.go.jp/jutakukentiku/build/kensetu.files/031127kijunsetumeishiryou.pdf\",\"excerpt\":\"0.005mg／㎡ｈ以下 JIS,JASのF☆☆☆☆ 第20条の５第４項の認定 制限なし\"}]},\"43\":{\"status\":\"FIX\",\"choiceStatus\":{\"ア\":\"FIX\",\"イ\":\"PASS\",\"ウ\":\"PASS\",\"エ\":\"PASS\"},\"fixedChoiceExplanations\":{\"ア\":\"誤り。アは適切な記述である（飲料用受水槽のオーバーフロー管と排水管の間には150mm以上の排水口空間を設ける）。不適切なのはイとウであり、適切なアを含むこの組合せは該当しない。\"},\"evidence\":[{\"url\":\"https://www.city.meguro.tokyo.jp/documents/3253/1kyuusui2712.pdf\",\"excerpt\":\"排水を受ける間接排水管にホッパー（水受け）を設ける場合には、排水が飛散しないようにホッパー開口部の大きさに配慮し、オーバーフロー管との間に150mm以上の排水口空間を設ける\"},{\"url\":\"https://daikibo.jp.net/archives/15456\",\"excerpt\":\"マンションでは、住戸内の給水管における給水圧力の上限を、一般的に300kPa ～ 400kPaとしています。\"},{\"url\":\"https://daikibo.jp.net/archives/15456\",\"excerpt\":\"給水管内の流速は、秒速1.5 ～ 2.0m程度で一定にすることで、ウォーターハンマー現象やエロ―ジョン現象を防止します。\"},{\"url\":\"https://www.m-kogyo.co.jp/columns/drainage-slope-design-guide\",\"excerpt\":\"口径125mm：1/150（最低）\"}]},\"44\":{\"status\":\"PASS\",\"choiceStatus\":{\"ア\":\"PASS\",\"イ\":\"PASS\",\"ウ\":\"PASS\",\"エ\":\"PASS\"},\"fixedChoiceExplanations\":{},\"evidence\":[{\"url\":\"https://www.fdma.go.jp/mission/prevention/suisin/items/h30_betten03.pdf\",\"excerpt\":\"●機器点検次の事項について、消防用設備等の種類等に応じ、６月に１回実施する点検。\"},{\"url\":\"https://www.mlit.go.jp/notice/noticedata/pdf/201703/00006620.pdf\",\"excerpt\":\"（1）外部から給水タンク又は貯水タンク（以下「給水タンク等」という。）の天井、底又は周壁の保守点検を容易かつ安全に行うことができるように設けること。\"},{\"url\":\"http://www.elevator-maintenance.jp/mainte/contract.html\",\"excerpt\":\"乗場扉・三方枠塗装、かご内装、床材など\"}]},\"45\":{\"status\":\"PASS\",\"choiceStatus\":{\"ア\":\"PASS\",\"イ\":\"PASS\",\"ウ\":\"PASS\",\"エ\":\"PASS\"},\"fixedChoiceExplanations\":{},\"evidence\":[{\"url\":\"https://futaba-setsubi.co.jp/blogword20221019\",\"excerpt\":\"架橋ポリエチレン管、ポリブテン管を使用する場合は、さや管ヘッダー工法を基本とする。\"},{\"url\":\"https://home.tokyo-gas.co.jp/column/boiler/10146/\",\"excerpt\":\"号数は『水温+25℃のお湯が1分間に出る量』を表しています。\"}]}}",
+  "ttft_ms": 22345,
+  "type": "result",
+  "duration_ms": 260082,
+  "uuid": "79ee0918-f78d-49eb-9192-cdda330d73c3",
+  "ttft_stream_ms": 1338,
+  "time_to_request_ms": 376,
+  "first_content_frame_ms": 1338,
+  "queued_turn_count": 0,
+  "result_index": 0,
+  "_exitCode": 0,
+  "_requestedModel": "claude-opus-5-5",
+  "_toolsAllowed": [
+    "WebFetch",
+    "WebSearch"
+  ]
+}

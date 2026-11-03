@@ -1,0 +1,38 @@
+{
+  "inputHashes": {
+    "draftSha256": "97fc329e1d104eeae201fcdcbaa06c1054085ef067f5259d7cb19771e65ea0f8",
+    "rowSha256": {
+      "18": "94a4df8aeccb5ab1de7899686ef90e345f9cc79a1c57168695ecf819eb3034ca",
+      "19": "1354aee1ee26fd27bb412384067fcde04b27ab1150d3a4c6f39ae9d19294f85d"
+    },
+    "detailFigureSha256": {
+      "public/images/denko2/2024-second/q18-1.png": "e3de262ce5f6cec773060e0876e7015ce3d89b6935eab38c41354c91004ff30a"
+    },
+    "legalReceiptSha256": {
+      "docs/evidence/denko2-law/20241027-q19.json": "5bd198e6a81400da11a7d5a7c936753f939fb9e21f188bc34a547c8e2451c7ff"
+    }
+  },
+  "reviewModel": "claude-opus-5-5",
+  "assessment": [
+    {
+      "number": 18,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "explanationIssues": [
+        "choiceExplanations.ハ は、写真の工具に「本体ポンプ部の構造が見られず」一致しないとしている。しかし同じJSONの diagramDescription は、ハンドル基部の「油圧シリンダ部」を記述しており、原画像にもハンドル基部に油圧本体部が写っている。油圧部の有無ではハとイを区別できず、記述どうしが矛盾している。ハを除外する根拠は、パンチとダイスを引き込むドローボルトが無いこと、および先端が穴あけ用のパンチ・ダイス構造ではなく圧着ダイスを備えた環状ヘッドであることに限定すべき。"
+      ],
+      "figureIssues": [],
+      "lawNeedsExternalCheck": []
+    },
+    {
+      "number": 19,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "lawNeedsExternalCheck": []
+    }
+  ]
+}

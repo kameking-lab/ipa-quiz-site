@@ -4,38 +4,39 @@ import * as React from "react";
 import { cn } from "@/lib/utils";
 import { Check, X } from "lucide-react";
 import type { ChoiceKey } from "@/lib/questions/types";
+import { QuestionBody } from "./QuestionBody";
 
 interface Props {
-  choiceKey: ChoiceKey;
+  choiceKey: ChoiceKey | `${number}`;
+  displayLabel?: string;
   text: string;
+  imageUrl?: string;
+  /** 選択肢が図そのものの場合の代替テキスト。未指定時は回路図として扱う。 */
+  imageAlt?: string;
   revealed: boolean;
   selected: boolean;
   correct: boolean;
   disabled: boolean;
   onClick: () => void;
-  shortcutIndex?: number;
+  /** null は数字キーの割り当てがない肢（11肢目以降）。 */
+  shortcutIndex?: number | null;
   /** Roving-tabindex value from useQuizChoiceRoving (single Tab stop). */
   tabIndex?: number;
   /** Arrow-key roving handler from useQuizChoiceRoving. */
   onKeyDown?: React.KeyboardEventHandler<HTMLButtonElement>;
+  /** 「二つとも答えなさい」形式。押すたびに選択を切り替えるチェックボックスとして振る舞う。 */
+  multiSelect?: boolean;
 }
 
-const CHOICE_INDEX: Partial<Record<ChoiceKey, number>> = {
-  ア: 1,
-  イ: 2,
-  ウ: 3,
-  エ: 4,
-  オ: 5,
-  カ: 6,
-  キ: 7,
-  ク: 8,
-  コ: 9,
-};
+const CHOICE_INDEX: Partial<Record<string, number>> = { ア: 1, イ: 2, ウ: 3, エ: 4, オ: 5, カ: 6, キ: 7, ク: 8, ケ: 9, コ: 0 };
 
 export const ChoiceButton = React.forwardRef<HTMLButtonElement, Props>(function ChoiceButton(
   {
     choiceKey,
+    displayLabel,
     text,
+    imageUrl,
+    imageAlt,
     revealed,
     selected,
     correct,
@@ -44,6 +45,7 @@ export const ChoiceButton = React.forwardRef<HTMLButtonElement, Props>(function 
     shortcutIndex,
     tabIndex,
     onKeyDown,
+    multiSelect = false,
   },
   ref,
 ) {
@@ -55,10 +57,12 @@ export const ChoiceButton = React.forwardRef<HTMLButtonElement, Props>(function 
     state = "selected";
   }
 
-  const numberKey = shortcutIndex ?? CHOICE_INDEX[choiceKey] ?? 0;
-  const baseLabel = `選択肢 ${choiceKey}: ${text}`;
+  const numberKey = shortcutIndex === null ? null : shortcutIndex ?? CHOICE_INDEX[choiceKey] ?? 0;
+  const baseLabel = `選択肢 ${displayLabel ?? choiceKey}: ${text}`;
   const stateLabel = !revealed
-    ? `数字キー${numberKey}でも選択できます`
+    ? numberKey === null ? "" : multiSelect
+      ? `数字キー${numberKey}でも選択・解除できます`
+      : `数字キー${numberKey}でも選択できます`
     : state === "revealed-correct"
       ? "（正解）"
       : state === "wrong"
@@ -70,7 +74,7 @@ export const ChoiceButton = React.forwardRef<HTMLButtonElement, Props>(function 
     <button
       ref={ref}
       type="button"
-      role="radio"
+      role={multiSelect ? "checkbox" : "radio"}
       onClick={onClick}
       onKeyDown={onKeyDown}
       tabIndex={tabIndex}
@@ -78,7 +82,7 @@ export const ChoiceButton = React.forwardRef<HTMLButtonElement, Props>(function 
       aria-label={ariaLabel}
       aria-checked={selected}
       aria-disabled={disabled}
-      aria-keyshortcuts={!revealed ? String(numberKey) : undefined}
+      aria-keyshortcuts={!revealed && numberKey !== null ? String(numberKey) : undefined}
       data-state={state}
       className={cn(
         "group relative w-full rounded-2xl border-2 px-4 py-4 text-left transition-colors",
@@ -114,9 +118,21 @@ export const ChoiceButton = React.forwardRef<HTMLButtonElement, Props>(function 
                 : "bg-zinc-200 text-zinc-900 dark:bg-zinc-800 dark:text-zinc-50",
         )}
       >
-        {choiceKey}
+        {displayLabel ?? choiceKey}
       </span>
-      <span className="flex-1 pt-1 text-base leading-relaxed">{text}</span>
+      <div className="min-w-0 flex-1 pt-1 text-base leading-relaxed">
+        <QuestionBody text={text} />
+        {(state === "selected" || state === "revealed-correct" || state === "wrong") && (
+          <span aria-hidden="true" className="mt-2 block text-sm font-semibold">
+            {state === "selected" ? "選択中" : state === "wrong" ? "選択した答え（不正解）" : selected ? "正解（選択した答え）" : "正解"}
+          </span>
+        )}
+        {imageUrl && (
+          // Exact circuit diagrams are cropped from the published paper.
+          // eslint-disable-next-line @next/next/no-img-element
+          <img src={imageUrl} alt={imageAlt ?? `${text}の回路図`} className="mt-3 h-auto max-h-44 max-w-full rounded border border-border bg-white p-2" loading="lazy" />
+        )}
+      </div>
       {state === "revealed-correct" && (
         <Check
           aria-hidden="true"

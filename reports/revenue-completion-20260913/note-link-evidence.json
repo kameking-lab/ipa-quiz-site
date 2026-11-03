@@ -1,0 +1,767 @@
+{
+  "generatedAt": "2026-09-13T06:46:08.317Z",
+  "what": "このリポジトリに載せた note.com の記事URLごとの根拠。URLやメタデータの推測は行っていない。",
+  "rules": [
+    "新規公開分: publisher の receipt が ok:true かつ checks 全て true、account/id/url/price が結線定義と厳密一致",
+    "既存記事の再利用: note.com の認証不要な公開APIを読み取りのみで叩き、status=published / price=0 / is_limited=false / アカウント一致を実測",
+    "証跡が無いものは結線していない(未着は保留であって合格ではない)"
+  ],
+  "totalArticles": 26,
+  "site": "ipa-quiz-site",
+  "articles": [
+    {
+      "id": "cf-01-boiler2-free",
+      "url": "https://note.com/anzen_ai_jp/n/nd31f7ae117e6",
+      "label": "二級ボイラー技士の学習手順",
+      "subjects": [
+        "二級ボイラー技士"
+      ],
+      "calendarIds": [
+        "boiler-2kyu"
+      ],
+      "evidenceKind": "publication-receipt",
+      "evidence": {
+        "source": "note-automation reports/revenue-completion-20260913/receipts/cf-01-boiler2-free.json",
+        "observedAt": "2026-09-13T06:18:18.709Z",
+        "publishedAt": "2026-09-13T15:18:17.000+09:00",
+        "ok": true,
+        "checks": {
+          "identity": true,
+          "published": true,
+          "free": true,
+          "cover": true,
+          "body": true,
+          "links": true,
+          "history": true
+        },
+        "price": 0,
+        "bodyChars": 6972
+      },
+      "bindingSource": "coverage-final/bindings.json"
+    },
+    {
+      "id": "cf-02-crane-unlimited-free",
+      "url": "https://note.com/anzen_ai_jp/n/n8d3eaef9571f",
+      "label": "クレーン・デリック運転士（限定なし）の学習手順",
+      "subjects": [
+        "クレーン・デリック運転士（限定なし）"
+      ],
+      "calendarIds": [
+        "crane-derrick-untenshi"
+      ],
+      "evidenceKind": "publication-receipt",
+      "evidence": {
+        "source": "note-automation reports/revenue-completion-20260913/receipts/cf-02-crane-unlimited-free.json",
+        "observedAt": "2026-09-13T06:21:17.933Z",
+        "publishedAt": "2026-09-13T15:21:16.000+09:00",
+        "ok": true,
+        "checks": {
+          "identity": true,
+          "published": true,
+          "free": true,
+          "cover": true,
+          "body": true,
+          "links": true,
+          "history": true
+        },
+        "price": 0,
+        "bodyChars": 6748
+      },
+      "bindingSource": "coverage-final/bindings.json"
+    },
+    {
+      "id": "cf-03-crane-limited-free",
+      "url": "https://note.com/anzen_ai_jp/n/n1d4c5e7ccf3e",
+      "label": "クレーン限定の試験形式と学習手順",
+      "subjects": [
+        "クレーン・デリック運転士〔クレーン限定〕"
+      ],
+      "calendarIds": [
+        "crane-derrick-crane-limited"
+      ],
+      "evidenceKind": "publication-receipt",
+      "evidence": {
+        "source": "note-automation reports/revenue-completion-20260913/receipts/cf-03-crane-limited-free.json",
+        "observedAt": "2026-09-13T06:24:16.051Z",
+        "publishedAt": "2026-09-13T15:24:15.000+09:00",
+        "ok": true,
+        "checks": {
+          "identity": true,
+          "published": true,
+          "free": true,
+          "cover": true,
+          "body": true,
+          "links": true,
+          "history": true
+        },
+        "price": 0,
+        "bodyChars": 6878
+      },
+      "bindingSource": "coverage-final/bindings.json"
+    },
+    {
+      "id": "cf-04-health1-free",
+      "url": "https://note.com/anzen_ai_jp/n/n2153c66a893b",
+      "label": "第一種衛生管理者の科目と学習手順",
+      "subjects": [
+        "第一種衛生管理者"
+      ],
+      "calendarIds": [
+        "eisei-kanrisha-1shu"
+      ],
+      "evidenceKind": "publication-receipt",
+      "evidence": {
+        "source": "note-automation reports/revenue-completion-20260913/receipts/cf-04-health1-free.json",
+        "observedAt": "2026-09-13T06:27:25.049Z",
+        "publishedAt": "2026-09-13T15:27:18.000+09:00",
+        "ok": true,
+        "checks": {
+          "identity": true,
+          "published": true,
+          "free": true,
+          "cover": true,
+          "body": true,
+          "links": true,
+          "history": true
+        },
+        "price": 0,
+        "bodyChars": 6808
+      },
+      "bindingSource": "coverage-final/bindings.json"
+    },
+    {
+      "id": "cf-05-health2-free",
+      "url": "https://note.com/anzen_ai_jp/n/n31446724459f",
+      "label": "第二種衛生管理者の科目と学習手順",
+      "subjects": [
+        "第二種衛生管理者"
+      ],
+      "calendarIds": [
+        "eisei-kanrisha-2shu"
+      ],
+      "evidenceKind": "publication-receipt",
+      "evidence": {
+        "source": "note-automation reports/revenue-completion-20260913/receipts/cf-05-health2-free.json",
+        "observedAt": "2026-09-13T06:30:41.961Z",
+        "publishedAt": "2026-09-13T15:30:41.000+09:00",
+        "ok": true,
+        "checks": {
+          "identity": true,
+          "published": true,
+          "free": true,
+          "cover": true,
+          "body": true,
+          "links": true,
+          "history": true
+        },
+        "price": 0,
+        "bodyChars": 6839
+      },
+      "bindingSource": "coverage-final/bindings.json"
+    },
+    {
+      "id": "cf-06-xray-free",
+      "url": "https://note.com/anzen_ai_jp/n/nc683c3b284e5",
+      "label": "エックス線作業主任者の学習手順",
+      "subjects": [
+        "エックス線作業主任者"
+      ],
+      "calendarIds": [
+        "x-ray-work-supervisor"
+      ],
+      "evidenceKind": "publication-receipt",
+      "evidence": {
+        "source": "note-automation reports/revenue-completion-20260913/receipts/cf-06-xray-free.json",
+        "observedAt": "2026-09-13T06:33:42.825Z",
+        "publishedAt": "2026-09-13T15:33:42.000+09:00",
+        "ok": true,
+        "checks": {
+          "identity": true,
+          "published": true,
+          "free": true,
+          "cover": true,
+          "body": true,
+          "links": true,
+          "history": true
+        },
+        "price": 0,
+        "bodyChars": 6788
+      },
+      "bindingSource": "coverage-final/bindings.json"
+    },
+    {
+      "id": "cf-07-labor-safety-consultant-free",
+      "url": "https://note.com/anzen_ai_jp/n/nf6ca28af76c2",
+      "label": "労働安全コンサルタントの区分と学習手順",
+      "subjects": [
+        "産業安全一般",
+        "産業安全関係法令",
+        "機械安全",
+        "電気安全",
+        "化学安全",
+        "土木安全",
+        "建築安全"
+      ],
+      "calendarIds": [
+        "rodo-anzen-consultant"
+      ],
+      "evidenceKind": "publication-receipt",
+      "evidence": {
+        "source": "note-automation reports/revenue-completion-20260913/receipts/cf-07-labor-safety-consultant-free.json",
+        "observedAt": "2026-09-13T06:36:53.415Z",
+        "publishedAt": "2026-09-13T15:36:52.000+09:00",
+        "ok": true,
+        "checks": {
+          "identity": true,
+          "published": true,
+          "free": true,
+          "cover": true,
+          "body": true,
+          "links": true,
+          "history": true
+        },
+        "price": 0,
+        "bodyChars": 7803
+      },
+      "bindingSource": "coverage-final/bindings.json"
+    },
+    {
+      "id": "cf-08-koatsu-shitsunai-free",
+      "url": "https://note.com/anzen_ai_jp/n/n44a40ffaed97",
+      "label": "高圧室内作業主任者の受験条件と学習手順",
+      "subjects": [
+        "高圧室内作業主任者"
+      ],
+      "calendarIds": [
+        "kouatsu-shitsunai-shuninsha"
+      ],
+      "evidenceKind": "publication-receipt",
+      "evidence": {
+        "source": "note-automation reports/revenue-completion-20260913/receipts/cf-08-koatsu-shitsunai-free.json",
+        "observedAt": "2026-09-13T06:39:52.367Z",
+        "publishedAt": "2026-09-13T15:39:51.000+09:00",
+        "ok": true,
+        "checks": {
+          "identity": true,
+          "published": true,
+          "free": true,
+          "cover": true,
+          "body": true,
+          "links": true,
+          "history": true
+        },
+        "price": 0,
+        "bodyChars": 6900
+      },
+      "bindingSource": "coverage-final/bindings.json"
+    },
+    {
+      "id": "cf-09-sensuishi-free",
+      "url": "https://note.com/anzen_ai_jp/n/n2d8d3615b903",
+      "label": "潜水士の科目と学習手順",
+      "subjects": [
+        "潜水士"
+      ],
+      "calendarIds": [
+        "sensuishi"
+      ],
+      "evidenceKind": "publication-receipt",
+      "evidence": {
+        "source": "note-automation reports/revenue-completion-20260913/receipts/cf-09-sensuishi-free.json",
+        "observedAt": "2026-09-13T06:42:51.402Z",
+        "publishedAt": "2026-09-13T15:42:50.000+09:00",
+        "ok": true,
+        "checks": {
+          "identity": true,
+          "published": true,
+          "free": true,
+          "cover": true,
+          "body": true,
+          "links": true,
+          "history": true
+        },
+        "price": 0,
+        "bodyChars": 6806
+      },
+      "bindingSource": "coverage-final/bindings.json"
+    },
+    {
+      "id": "cf-10-sg-free",
+      "url": "https://note.com/ipa_quiz_ai/n/n094a9aefbc1a",
+      "label": "情報セキュリティマネジメント試験の形式と学習手順",
+      "exam": "sg",
+      "calendarIds": [
+        "sg"
+      ],
+      "evidenceKind": "publication-receipt",
+      "evidence": {
+        "source": "note-automation reports/revenue-completion-20260913/receipts/cf-10-sg-free.json",
+        "observedAt": "2026-09-13T05:58:01.755Z",
+        "publishedAt": "2026-09-13T14:58:01.000+09:00",
+        "ok": true,
+        "checks": {
+          "identity": true,
+          "published": true,
+          "free": true,
+          "cover": true,
+          "body": true,
+          "links": true,
+          "history": true
+        },
+        "price": 0,
+        "bodyChars": 5614
+      },
+      "bindingSource": "coverage-final/bindings.json"
+    },
+    {
+      "id": "cf-11-ap-free",
+      "url": "https://note.com/ipa_quiz_ai/n/n550db5ff2054",
+      "label": "応用情報の試験形式と高度試験への進み方",
+      "exam": "ap",
+      "calendarIds": [
+        "ap"
+      ],
+      "evidenceKind": "publication-receipt",
+      "evidence": {
+        "source": "note-automation reports/revenue-completion-20260913/receipts/cf-11-ap-free.json",
+        "observedAt": "2026-09-13T06:01:06.187Z",
+        "publishedAt": "2026-09-13T15:01:05.000+09:00",
+        "ok": true,
+        "checks": {
+          "identity": true,
+          "published": true,
+          "free": true,
+          "cover": true,
+          "body": true,
+          "links": true,
+          "history": true
+        },
+        "price": 0,
+        "bodyChars": 7090
+      },
+      "bindingSource": "coverage-final/bindings.json"
+    },
+    {
+      "id": "existing-fe-free",
+      "url": "https://note.com/ipa_quiz_ai/n/n7e5046098452",
+      "label": "9大分類・23中分類をつなげて用語を覚える",
+      "exam": "fe",
+      "calendarIds": [
+        "kihon-joho"
+      ],
+      "evidenceKind": "public-api-observation",
+      "evidence": {
+        "source": "note-automation reports/revenue-completion-20260913/existing-guides/existing-fe-free.json",
+        "observedAt": "2026-09-13T06:06:43.647Z",
+        "httpStatus": 200,
+        "status": "published",
+        "price": 0,
+        "is_limited": false,
+        "urlname": "ipa_quiz_ai"
+      },
+      "note": "新規公開ではなく、既に公開済みの無料記事の再利用。"
+    },
+    {
+      "id": "existing-ip-free",
+      "url": "https://note.com/ipa_quiz_ai/n/nbabb9742557b",
+      "label": "ストラテジ系32問を経営3手法で判別する",
+      "exam": "ip",
+      "calendarIds": [
+        "itpassport"
+      ],
+      "evidenceKind": "public-api-observation",
+      "evidence": {
+        "source": "note-automation reports/revenue-completion-20260913/existing-guides/existing-ip-free.json",
+        "observedAt": "2026-09-13T06:06:40.525Z",
+        "httpStatus": 200,
+        "status": "published",
+        "price": 0,
+        "is_limited": false,
+        "urlname": "ipa_quiz_ai"
+      },
+      "note": "新規公開ではなく、既に公開済みの無料記事の再利用。"
+    },
+    {
+      "id": "free-05-sm-am2",
+      "url": "https://note.com/sikaku_rakutoru/n/nba9435c2ae0f",
+      "label": "運用プロセスの定義と復習手順",
+      "exam": "sm",
+      "calendarIds": [
+        "sm"
+      ],
+      "evidenceKind": "publication-receipt",
+      "evidence": {
+        "source": "note-automation reports/revenue-completion-20260913/receipts/free-05-sm-am2.json",
+        "observedAt": "2026-09-13T05:27:26.267Z",
+        "publishedAt": "2026-09-13T14:27:24.000+09:00",
+        "ok": true,
+        "checks": {
+          "identity": true,
+          "published": true,
+          "free": true,
+          "cover": true,
+          "body": true,
+          "links": true,
+          "history": true
+        },
+        "price": 0,
+        "bodyChars": 8647
+      },
+      "bindingSource": "article-bindings.json"
+    },
+    {
+      "id": "free-06-es-am2",
+      "url": "https://note.com/sikaku_rakutoru/n/nd0881771250e",
+      "label": "リアルタイムOSの用語と復習手順",
+      "exam": "es",
+      "calendarIds": [
+        "es"
+      ],
+      "evidenceKind": "publication-receipt",
+      "evidence": {
+        "source": "note-automation reports/revenue-completion-20260913/receipts/free-06-es-am2.json",
+        "observedAt": "2026-09-13T05:40:17.018Z",
+        "publishedAt": "2026-09-13T14:40:10.000+09:00",
+        "ok": true,
+        "checks": {
+          "identity": true,
+          "published": true,
+          "free": true,
+          "cover": true,
+          "body": true,
+          "links": true,
+          "history": true
+        },
+        "price": 0,
+        "bodyChars": 8759
+      },
+      "bindingSource": "article-bindings.json"
+    },
+    {
+      "id": "safety-free-03-boiler-ikkyu",
+      "url": "https://note.com/anzen_ai_jp/n/n7fac21daf8c5",
+      "label": "一級ボイラー技士の4科目の学習手順",
+      "subjects": [
+        "一級ボイラー技士"
+      ],
+      "calendarIds": [],
+      "evidenceKind": "publication-receipt",
+      "evidence": {
+        "source": "note-automation reports/revenue-completion-20260913/receipts/safety-free-03-boiler-ikkyu.json",
+        "observedAt": "2026-09-13T05:43:46.555Z",
+        "publishedAt": "2026-09-13T14:43:45.000+09:00",
+        "ok": true,
+        "checks": {
+          "identity": true,
+          "published": true,
+          "free": true,
+          "cover": true,
+          "body": true,
+          "links": true,
+          "history": true
+        },
+        "price": 0,
+        "bodyChars": 10470
+      },
+      "bindingSource": "article-bindings.json"
+    },
+    {
+      "id": "safety-free-03-tokkyu-boira-kijutsu",
+      "url": "https://note.com/anzen_ai_jp/n/nab2428b54766",
+      "label": "特級ボイラー技士の記述式対策",
+      "subjects": [
+        "特級ボイラー技士"
+      ],
+      "calendarIds": [],
+      "evidenceKind": "publication-receipt",
+      "evidence": {
+        "source": "note-automation reports/revenue-completion-20260913/receipts/safety-free-03-tokkyu-boira-kijutsu.json",
+        "observedAt": "2026-09-13T05:47:00.961Z",
+        "publishedAt": "2026-09-13T14:47:00.000+09:00",
+        "ok": true,
+        "checks": {
+          "identity": true,
+          "published": true,
+          "free": true,
+          "cover": true,
+          "body": true,
+          "links": true,
+          "history": true
+        },
+        "price": 0,
+        "bodyChars": 10049
+      },
+      "bindingSource": "article-bindings.json"
+    },
+    {
+      "id": "safety-free-04-boira-yousetsu-hikaku",
+      "url": "https://note.com/anzen_ai_jp/n/nf79755d8d3a5",
+      "label": "普通・特別ボイラー溶接士の違いと学習手順",
+      "subjects": [
+        "普通ボイラー溶接士",
+        "特別ボイラー溶接士"
+      ],
+      "calendarIds": [
+        "guide-2026-10b384ea45c8ea54"
+      ],
+      "evidenceKind": "publication-receipt",
+      "evidence": {
+        "source": "note-automation reports/revenue-completion-20260913/receipts/safety-free-04-boira-yousetsu-hikaku.json",
+        "observedAt": "2026-09-13T05:50:07.194Z",
+        "publishedAt": "2026-09-13T14:50:06.000+09:00",
+        "ok": true,
+        "checks": {
+          "identity": true,
+          "published": true,
+          "free": true,
+          "cover": true,
+          "body": true,
+          "links": true,
+          "history": true
+        },
+        "price": 0,
+        "bodyChars": 9423
+      },
+      "bindingSource": "article-bindings.json"
+    },
+    {
+      "id": "safety-free-04-crane-idoshiki",
+      "url": "https://note.com/anzen_ai_jp/n/n650dd9520e88",
+      "label": "移動式クレーン運転士の学習手順",
+      "subjects": [
+        "移動式クレーン運転士"
+      ],
+      "calendarIds": [
+        "idoshiki-crane-untenshi"
+      ],
+      "evidenceKind": "publication-receipt",
+      "evidence": {
+        "source": "note-automation reports/revenue-completion-20260913/receipts/safety-free-04-crane-idoshiki.json",
+        "observedAt": "2026-09-13T05:53:29.121Z",
+        "publishedAt": "2026-09-13T14:53:27.000+09:00",
+        "ok": true,
+        "checks": {
+          "identity": true,
+          "published": true,
+          "free": true,
+          "cover": true,
+          "body": true,
+          "links": true,
+          "history": true
+        },
+        "price": 0,
+        "bodyChars": 10711
+      },
+      "bindingSource": "article-bindings.json"
+    },
+    {
+      "id": "safety-free-05-boira-seibishi",
+      "url": "https://note.com/anzen_ai_jp/n/n4fd9dfe05d82",
+      "label": "ボイラー整備士の科目と復習手順",
+      "subjects": [
+        "ボイラー整備士"
+      ],
+      "calendarIds": [
+        "boiler-seibishi"
+      ],
+      "evidenceKind": "publication-receipt",
+      "evidence": {
+        "source": "note-automation reports/revenue-completion-20260913/receipts/safety-free-05-boira-seibishi.json",
+        "observedAt": "2026-09-13T05:56:30.571Z",
+        "publishedAt": "2026-09-13T14:56:29.000+09:00",
+        "ok": true,
+        "checks": {
+          "identity": true,
+          "published": true,
+          "free": true,
+          "cover": true,
+          "body": true,
+          "links": true,
+          "history": true
+        },
+        "price": 0,
+        "bodyChars": 8427
+      },
+      "bindingSource": "article-bindings.json"
+    },
+    {
+      "id": "safety-free-06-youkasouchi-untenshi",
+      "url": "https://note.com/anzen_ai_jp/n/nfe4ae92b9ec2",
+      "label": "揚貨装置運転士の科目と復習手順",
+      "subjects": [
+        "揚貨装置運転士"
+      ],
+      "calendarIds": [
+        "cargo-lifting-appliance-operator"
+      ],
+      "evidenceKind": "publication-receipt",
+      "evidence": {
+        "source": "note-automation reports/revenue-completion-20260913/receipts/safety-free-06-youkasouchi-untenshi.json",
+        "observedAt": "2026-09-13T05:59:32.442Z",
+        "publishedAt": "2026-09-13T14:59:31.000+09:00",
+        "ok": true,
+        "checks": {
+          "identity": true,
+          "published": true,
+          "free": true,
+          "cover": true,
+          "body": true,
+          "links": true,
+          "history": true
+        },
+        "price": 0,
+        "bodyChars": 8726
+      },
+      "bindingSource": "article-bindings.json"
+    },
+    {
+      "id": "safety-free-07-happa-gishi",
+      "url": "https://note.com/anzen_ai_jp/n/nb94d897a28ed",
+      "label": "発破技士の学科の学習手順",
+      "subjects": [
+        "発破技士"
+      ],
+      "calendarIds": [
+        "blasting-technician"
+      ],
+      "evidenceKind": "publication-receipt",
+      "evidence": {
+        "source": "note-automation reports/revenue-completion-20260913/receipts/safety-free-07-happa-gishi.json",
+        "observedAt": "2026-09-13T06:02:35.444Z",
+        "publishedAt": "2026-09-13T15:02:34.000+09:00",
+        "ok": true,
+        "checks": {
+          "identity": true,
+          "published": true,
+          "free": true,
+          "cover": true,
+          "body": true,
+          "links": true,
+          "history": true
+        },
+        "price": 0,
+        "bodyChars": 8550
+      },
+      "bindingSource": "article-bindings.json"
+    },
+    {
+      "id": "safety-free-08-gasu-yousetsu-sagyoshunininsha",
+      "url": "https://note.com/anzen_ai_jp/n/n760b02583fc9",
+      "label": "ガス溶接作業主任者の学習手順",
+      "subjects": [
+        "ガス溶接作業主任者"
+      ],
+      "calendarIds": [
+        "gas-welding-work-supervisor"
+      ],
+      "evidenceKind": "publication-receipt",
+      "evidence": {
+        "source": "note-automation reports/revenue-completion-20260913/receipts/safety-free-08-gasu-yousetsu-sagyoshunininsha.json",
+        "observedAt": "2026-09-13T06:05:37.171Z",
+        "publishedAt": "2026-09-13T15:05:35.000+09:00",
+        "ok": true,
+        "checks": {
+          "identity": true,
+          "published": true,
+          "free": true,
+          "cover": true,
+          "body": true,
+          "links": true,
+          "history": true
+        },
+        "price": 0,
+        "bodyChars": 8594
+      },
+      "bindingSource": "article-bindings.json"
+    },
+    {
+      "id": "safety-free-09-ringyo-kasen-sagyoshunininsha",
+      "url": "https://note.com/anzen_ai_jp/n/n176ef279ef8c",
+      "label": "林業架線作業主任者の学科対策",
+      "subjects": [
+        "林業架線作業主任者"
+      ],
+      "calendarIds": [
+        "forestry-cable-work-supervisor"
+      ],
+      "evidenceKind": "publication-receipt",
+      "evidence": {
+        "source": "note-automation reports/revenue-completion-20260913/receipts/safety-free-09-ringyo-kasen-sagyoshunininsha.json",
+        "observedAt": "2026-09-13T06:08:42.305Z",
+        "publishedAt": "2026-09-13T15:08:41.000+09:00",
+        "ok": true,
+        "checks": {
+          "identity": true,
+          "published": true,
+          "free": true,
+          "cover": true,
+          "body": true,
+          "links": true,
+          "history": true
+        },
+        "price": 0,
+        "bodyChars": 8755
+      },
+      "bindingSource": "article-bindings.json"
+    },
+    {
+      "id": "safety-free-10-gamma-toukashashin-sagyoshunininsha",
+      "url": "https://note.com/anzen_ai_jp/n/n7a163b6880df",
+      "label": "ガンマ線透過写真撮影作業主任者の学習手順",
+      "subjects": [
+        "ガンマ線透過写真撮影作業主任者"
+      ],
+      "calendarIds": [
+        "gamma-ray-radiography-work-supervisor"
+      ],
+      "evidenceKind": "publication-receipt",
+      "evidence": {
+        "source": "note-automation reports/revenue-completion-20260913/receipts/safety-free-10-gamma-toukashashin-sagyoshunininsha.json",
+        "observedAt": "2026-09-13T06:11:45.372Z",
+        "publishedAt": "2026-09-13T15:11:44.000+09:00",
+        "ok": true,
+        "checks": {
+          "identity": true,
+          "published": true,
+          "free": true,
+          "cover": true,
+          "body": true,
+          "links": true,
+          "history": true
+        },
+        "price": 0,
+        "bodyChars": 8782
+      },
+      "bindingSource": "article-bindings.json"
+    },
+    {
+      "id": "safety-free-11-sagyokankyo-sokuteishi-junjo",
+      "url": "https://note.com/anzen_ai_jp/n/n618dc6960b3d",
+      "label": "作業環境測定士の共通科目・選択科目の学習順",
+      "group": "emkohyo",
+      "calendarIds": [
+        "work-environment-measurement-expert-first",
+        "work-environment-measurement-expert-second"
+      ],
+      "evidenceKind": "publication-receipt",
+      "evidence": {
+        "source": "note-automation reports/revenue-completion-20260913/receipts/safety-free-11-sagyokankyo-sokuteishi-junjo.json",
+        "observedAt": "2026-09-13T06:15:00.728Z",
+        "publishedAt": "2026-09-13T15:14:59.000+09:00",
+        "ok": true,
+        "checks": {
+          "identity": true,
+          "published": true,
+          "free": true,
+          "cover": true,
+          "body": true,
+          "links": true,
+          "history": true
+        },
+        "price": 0,
+        "bodyChars": 10701
+      },
+      "bindingSource": "article-bindings.json"
+    }
+  ]
+}

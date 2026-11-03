@@ -1,0 +1,514 @@
+{
+  "questionNumber": 18,
+  "sharedContext": "問17及び問18は選択問題であり，問17又は問18のどちらかを選んで解答すること。両方解答すると採点されません。\n\n（選択問題）\n問18 図は，出力信号 y を入力信号 x に一致させるように動作するフィードバック制御系のブロック線図である。次の(a)及び(b)の問に答えよ。",
+  "units": [
+    {
+      "part": "a",
+      "question": "問18 図は，出力信号 y を入力信号 x に一致させるように動作するフィードバック制御系のブロック線図である。次の(a)及び(b)の問に答えよ。\n\n(a) 図において，K = 2，T = 0.5 として，入力信号からフィードバック信号までの一巡伝達関数(開ループ伝達関数)を表す式を計算し，正しいものを次の(1)～(5)から一つ選べ。",
+      "choices": {
+        "1": "2 / (1 − jω0.5)",
+        "2": "2 / (1 + jω0.5)",
+        "3": "1 / (1 + jω0.5)",
+        "4": "2 / (3 − jω0.5)",
+        "5": "2 / (3 + jω0.5)"
+      },
+      "officialAnswer": "2",
+      "explanation": "① 制御対象（内側ループ）の伝達関数を求める。前向き要素は 1/(jωT)、フィードバック要素は 1（負帰還）なので、\nG(jω) = {1/(jωT)} / {1 + 1/(jωT)} = 1 / (1 + jωT)\n\n② 一巡伝達関数は、入力信号側の加え合わせ点から制御器・制御対象を通って出力に至り、外側のフィードバック線で加え合わせ点に戻るまでの伝達関数の積である。外側のフィードバック要素は 1 なので、\nG₀(jω) = K × G(jω) = K / (1 + jωT)\n\n③ K = 2，T = 0.5 を代入すると、\nG₀(jω) = 2 / (1 + jω0.5)\n\nよって正答は (2)。",
+      "choiceExplanations": {
+        "1": "誤り。分母の jω0.5 の符号が逆である。内側ループは負帰還なので制御対象は 1/(1 + jωT) となり、分母の虚数項は + になる。",
+        "2": "正しい。制御対象 1/(1 + jωT) に制御器 K を掛けた K/(1 + jωT) に K = 2，T = 0.5 を代入した式である。",
+        "3": "誤り。これは制御対象（内側ループを閉じたもの）1/(1 + jω0.5) だけであり、制御器のゲイン K = 2 が掛けられていない。",
+        "4": "誤り。分母の実数部が 3 で、ω = 0 での値が 2/3 となり、一巡伝達関数の ω = 0 での値 2 と一致しない。さらに虚数項の符号も − であり、負帰還の内側ループから得られる + と逆になっている。",
+        "5": "誤り。これは外側ループまで閉じた x から y への閉ループ伝達関数 G₀/(1 + G₀) = {2/(1 + jω0.5)} / {1 + 2/(1 + jω0.5)} = 2/(3 + jω0.5) であり、問われている一巡伝達関数（開ループ伝達関数）ではない。"
+      },
+      "figureDescription": "【問題文中のブロック線図】図の範囲は、上端の破線枠ラベル「制御器」「制御対象」から下端の外側フィードバック線まで、左端の「入力信号」の表示と入力信号 x から右端の「出力信号」の表示と出力信号 y までである。左端に「入力信号」の表示とその下に「x」があり、x から右向きの矢印が 1 つ目の加え合わせ点（白丸）に入る。この加え合わせ点には左上（x 側）に「+」、左下に「−」が付いている。加え合わせ点の出力は、上部に「制御器」とラベルされた破線枠内の四角いブロック「K」に入る。ブロック K の出力は、上部に「制御対象」とラベルされた破線枠内の 2 つ目の加え合わせ点（白丸，左上に「+」，左下に「−」）に入り、その出力は四角いブロック「1/(jωT)」（分子 1，分母 jωT の分数）に入る。2 つの加え合わせ点は同じ高さに左右に並んでいる。ブロック 1/(jωT) の出力線上に黒丸の分岐点が 2 つあり、1 つ目（制御対象の破線枠内）からは下へ出て左へ戻り、2 つ目の加え合わせ点の「−」入力へ下側から入る内側フィードバック線、2 つ目（破線枠の外）からは下へ出て図の下部を左へ戻り、1 つ目の加え合わせ点の「−」入力へ下側から入る外側フィードバック線が描かれている。出力線は右向きの矢印で右端の「y」に至り、その上に「出力信号」の表示がある。",
+      "officialReferenceUrls": [],
+      "uncertainty": "なし",
+      "needsReview": true,
+      "sourceQuestionPdfUrl": "https://www.shiken.or.jp/chief/upload/20250831_ch_third_q03.pdf",
+      "sourceAnswerPdfUrl": "https://www.shiken.or.jp/chief/upload/20250831_ch_third_a01.pdf",
+      "reviewedFromPage": [
+        22,
+        23
+      ]
+    },
+    {
+      "part": "b",
+      "question": "問18 図は，出力信号 y を入力信号 x に一致させるように動作するフィードバック制御系のブロック線図である。次の(a)及び(b)の問に答えよ。\n\n(b) (a)で求めた一巡伝達関数において，ω を変化させることで得られるベクトル軌跡はどのような曲線を描くか，最も近いものを次の(1)～(5)のうちから一つ選べ。",
+      "choices": {
+        "1": "上半面（虚軸正側）の半円。ω = ∞ で原点 0，ω = 0 で実軸上 2.0。原点から 45°（実軸から上向き）の破線と軌跡の交点が ω = 2 rad/s。",
+        "2": "上半面（虚軸正側）の半円。ω = ∞ で原点 0，ω = 0 で実軸上 0.67。原点から 45°（実軸から上向き）の破線と軌跡の交点が ω = 6 rad/s。",
+        "3": "下半面（虚軸負側）の半円。ω = ∞ で原点 0，ω = 0 で実軸上 2.0。原点から 45°（実軸から下向き）の破線と軌跡の交点が ω = 2 rad/s。",
+        "4": "下半面（虚軸負側）の半円。ω = ∞ で原点 0，ω = 0 で実軸上 0.67。原点から 45°（実軸から下向き）の破線と軌跡の交点が ω = 2 rad/s。",
+        "5": "下半面（虚軸負側）の半円。ω = ∞ で原点 0，ω = 0 で実軸上 0.67。原点から 45°（実軸から下向き）の破線と軌跡の交点が ω = 6 rad/s。"
+      },
+      "officialAnswer": "3",
+      "explanation": "(a)の一巡伝達関数（K = 2，T = 0.5）G₀(jω) = 2/(1 + j0.5ω) を実部と虚部に分ける。\nG₀(jω) = 2(1 − j0.5ω) / (1 + 0.25ω²)\n実部 Re = 2 / (1 + 0.25ω²)\n虚部 Im = −ω / (1 + 0.25ω²)\n\n① ω = 0 のとき Re = 2，Im = 0 → 実軸上の 2.0。\n② ω → ∞ のとき Re → 0，Im → 0 → 原点（位相は −90° に近づく）。\n③ ω > 0 では Im < 0 なので、軌跡は下半面（第 4 象限）を通る。\n④ 位相 ∠G₀ = −tan⁻¹(0.5ω) が −45° になるのは 0.5ω = 1，すなわち ω = 2 rad/s。このとき |G₀| = 2/√2 = √2 ≈ 1.41，点は (1, −1)。\n⑤ (Re − 1)² + Im² を計算すると、a = 0.25ω² とおいて {(1 − a)² + 4a} / (1 + a)² = (1 + a)²/(1 + a)² = 1 となり、軌跡は中心 (1, 0)、半径 1 の円の下半分（半円）である。\n\n以上より、ω = 0 で 2.0、ω = 2 rad/s で −45°、ω = ∞ で原点に至る下半面の半円となり、正答は (3)。",
+      "choiceExplanations": {
+        "1": "誤り。ω = 0 で 2.0、45° の点が ω = 2 rad/s という数値は合っているが、軌跡が上半面にある。G₀ の虚部は −ω/(1 + 0.25ω²) で ω > 0 では負なので、軌跡は下半面を通る。上半面のこの軌跡は 2/(1 − jω0.5) の場合に相当する。",
+        "2": "誤り。軌跡が上半面にあり、ω = 0 の値 0.67 と 45° の点 ω = 6 rad/s も G₀ = 2/(1 + jω0.5) と合わない。この軌跡は 2/(3 − jω0.5) のベクトル軌跡に相当する（ω = 0 で 2/3 ≈ 0.67、0.5ω = 3 で 45°）。",
+        "3": "正しい。ω = 0 で実軸上 2.0、ω = 2 rad/s で位相 −45°、ω → ∞ で原点に至る下半面の半円であり、G₀ = 2/(1 + jω0.5) の計算結果と一致する。",
+        "4": "誤り。下半面の半円で 45° の点が ω = 2 rad/s である点は合っているが、ω = 0 での値が 0.67 になっている。G₀(j0) = 2 なので実軸上の始点は 2.0 である。",
+        "5": "誤り。ω = 0 で 0.67（= 2/3）、−45° となるのが 0.5ω = 3 すなわち ω = 6 rad/s という軌跡は、閉ループ伝達関数 2/(3 + jω0.5) のベクトル軌跡であり、一巡伝達関数のものではない。"
+      },
+      "figureDescription": "図は 2 つある。\n\n【1 つ目：問題文中のブロック線図（(a)で一巡伝達関数を求める対象の図）】図の範囲は、上端の破線枠ラベル「制御器」「制御対象」から下端の外側フィードバック線まで、左端の「入力信号」の表示と入力信号 x から右端の「出力信号」の表示と出力信号 y までである。左端に「入力信号」の表示とその下に「x」があり、x から右向きの矢印が 1 つ目の加え合わせ点（白丸）に入る。この加え合わせ点には左上（x 側）に「+」、左下に「−」が付いている。加え合わせ点の出力は、上部に「制御器」とラベルされた破線枠内の四角いブロック「K」に入る。ブロック K の出力は、上部に「制御対象」とラベルされた破線枠内の 2 つ目の加え合わせ点（白丸，左上に「+」，左下に「−」）に入り、その出力は四角いブロック「1/(jωT)」（分子 1，分母 jωT の分数）に入る。2 つの加え合わせ点は同じ高さに左右に並んでいる。ブロック 1/(jωT) の出力線上に黒丸の分岐点が 2 つあり、1 つ目（制御対象の破線枠内）からは下へ出て左へ戻り、2 つ目の加え合わせ点の「−」入力へ下側から入る内側フィードバック線、2 つ目（破線枠の外）からは下へ出て図の下部を左へ戻り、1 つ目の加え合わせ点の「−」入力へ下側から入る外側フィードバック線が描かれている。出力線は右向きの矢印で右端の「y」に至り、その上に「出力信号」の表示がある。\n\n【2 つ目：(b) の選択肢 (1)～(5) のベクトル軌跡の図】図の範囲は各図の番号表示「(1)」～「(5)」から、縦軸・横軸・軌跡・各ラベルまでを含む 5 つの図である。各図は複素平面上のベクトル軌跡で、横軸「実軸(+)」、縦軸「虚軸(j)」であり、原点に「0」と「ω = ∞」の表示があり、軌跡は原点に矢印で到達する。実軸上の黒丸（ω = 0）に数値、半円上の黒丸に ω の値が記され、原点からその黒丸へ破線が引かれ、破線と実軸のなす角に「45°」の円弧矢印が付く。(1)：半円は実軸より上側、実軸上の値 2.0、黒丸は ω = 2 rad/s。(2)：上側、0.67、ω = 6 rad/s。(3)：下側、2.0、ω = 2 rad/s。(4)：下側、0.67、ω = 2 rad/s。(5)：下側、0.67、ω = 6 rad/s。",
+      "officialReferenceUrls": [],
+      "uncertainty": "なし",
+      "needsReview": true,
+      "sourceQuestionPdfUrl": "https://www.shiken.or.jp/chief/upload/20250831_ch_third_q03.pdf",
+      "sourceAnswerPdfUrl": "https://www.shiken.or.jp/chief/upload/20250831_ch_third_a01.pdf",
+      "reviewedFromPage": [
+        22,
+        23
+      ]
+    }
+  ],
+  "draftModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 7491,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 11379,
+      "webSearchRequests": 0,
+      "costUSD": 0.24111580000000002,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 3362,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "e2188692f0099d9372478bca293435498bbe1b5a1337f3c28e39326ade6787a2",
+  "inputRequestSha256": "8861ee69a8a0075cb93353f928a1ecd8180eebb0f337baf85e0e3e0b9d85844a",
+  "sourceQuestionPdfSha256": "2a73a24594cc2b8bb7504b9a0ff15e001b2bb56b830572ce2be853f7116f26d8",
+  "sourceAnswerPdfSha256": "76fd3715ed487d19a56b387fb402de20ee09474e9fa55b0413f9037b96af06c9",
+  "sourcePageImageSha256": {
+    "data/raw_pdfs/denken3/review/20250831/machinery/p22.png": "7ec657641f9e38c07b2118f3183aac3f85e2c5bb5cb433836606e5ab031395d6",
+    "data/raw_pdfs/denken3/review/20250831/machinery/p23.png": "28e8c131d06089ebf00e9f54f3787d6a656a5a649762d6e91c6d8286a8b3e06f"
+  },
+  "revisionHistory": [
+    {
+      "version": 1,
+      "model": "claude-opus-5-5",
+      "resolvedModel": "claude-opus-5-5",
+      "modelUsage": {
+        "claude-opus-5-5": {
+          "inputTokens": 2,
+          "outputTokens": 6294,
+          "cacheReadInputTokens": 1279,
+          "cacheCreationInputTokens": 18057,
+          "webSearchRequests": 0,
+          "costUSD": 0.2705998,
+          "contextWindow": 1000000,
+          "maxOutputTokens": 128000,
+          "thinkingTokens": 2725,
+          "canonicalModel": "claude-opus-5-5",
+          "provider": "firstParty",
+          "costBasis": "list"
+        }
+      },
+      "rawResponseSha256": "a59b84f716f72159e187514b05c12e88d2c92009b0e29c695d9656b25abd79e1",
+      "inputRequestSha256": "40c0b22254e3a9877d74e6728ddbd056469c22a4a44301582ceb16927e22a432",
+      "previousDraftSha256": "3ce262c50953d1f92020c235b6e65a48fc0e4b5b27244f69ed09b196df5427a4",
+      "previousDraft": "data/raw_pdfs/denken3/review/20250831/machinery/archive/q18-vision-draft-v1.json",
+      "answeredReviewSha256": "260c4910e1b6dcb5af746642893297cc57dda518aa16a7b65ac81a220646a5df",
+      "answeredReview": "data/raw_pdfs/denken3/review/20250831/machinery/archive/q18-opus-review-v1.json",
+      "answeredStrictReceipt": null,
+      "answeredStrictReceiptSha256": null,
+      "figureSha256": {
+        "20250831-machinery-q18-fig1": "fc5019b5d724efb3d6fc44d2a46ce1c9ffa55a2d5f12f58215f8f1b431869977",
+        "20250831-machinery-q18-fig2": "f3bec6dd57af3b37a73c6e963a3d292399a2635fcb089635e1cbbe09901da093"
+      },
+      "referenceHashes": {},
+      "operatorNote": ""
+    },
+    {
+      "version": 2,
+      "model": "claude-opus-5-5",
+      "resolvedModel": "claude-opus-5-5",
+      "modelUsage": {
+        "claude-opus-5-5": {
+          "inputTokens": 2,
+          "outputTokens": 6118,
+          "cacheReadInputTokens": 1279,
+          "cacheCreationInputTokens": 17506,
+          "webSearchRequests": 0,
+          "costUSD": 0.2626718,
+          "contextWindow": 1000000,
+          "maxOutputTokens": 128000,
+          "thinkingTokens": 2350,
+          "canonicalModel": "claude-opus-5-5",
+          "provider": "firstParty",
+          "costBasis": "list"
+        }
+      },
+      "rawResponseSha256": "750085bd8c2d427a5c324d42a0d926dca2af8dd63b9e23d36b3590268c8addb7",
+      "inputRequestSha256": "1373b558c18aa81f09a75beb369d2e27c5b14559ff9623f06be200db4096d817",
+      "previousDraftSha256": "e4e8052720bbc898e505bc5633c2a751d9e4906e881620be561c1ac2b1333aa9",
+      "previousDraft": "data/raw_pdfs/denken3/review/20250831/machinery/archive/q18-vision-draft-v2.json",
+      "answeredReviewSha256": "307b842c35bd9098229688358e1e430b341c9875ddd4fcca9be88459d04e43a9",
+      "answeredReview": "data/raw_pdfs/denken3/review/20250831/machinery/archive/q18-opus-review-v2.json",
+      "answeredStrictReceipt": null,
+      "answeredStrictReceiptSha256": null,
+      "figureSha256": {
+        "20250831-machinery-q18-fig1": "fc5019b5d724efb3d6fc44d2a46ce1c9ffa55a2d5f12f58215f8f1b431869977",
+        "20250831-machinery-q18-fig2": "f3bec6dd57af3b37a73c6e963a3d292399a2635fcb089635e1cbbe09901da093"
+      },
+      "referenceHashes": {},
+      "operatorNote": ""
+    },
+    {
+      "version": 3,
+      "model": "claude-opus-5-5",
+      "resolvedModel": "claude-opus-5-5",
+      "modelUsage": {
+        "claude-opus-5-5": {
+          "inputTokens": 2,
+          "outputTokens": 5327,
+          "cacheReadInputTokens": 1279,
+          "cacheCreationInputTokens": 17686,
+          "webSearchRequests": 0,
+          "costUSD": 0.2482918,
+          "contextWindow": 1000000,
+          "maxOutputTokens": 128000,
+          "thinkingTokens": 1575,
+          "canonicalModel": "claude-opus-5-5",
+          "provider": "firstParty",
+          "costBasis": "list"
+        }
+      },
+      "rawResponseSha256": "eb2513aabf0a4e61cbc21a0f70882ad056cfa4e9a0d57b0cc37f17fc66a3c793",
+      "inputRequestSha256": "7cc68bb4e10bd97087cb296fefe5b38d23e85e07d1d890bcd5c2e776455bb23d",
+      "previousDraftSha256": "f544d1d00f143a54731a3ba9322fd9128aceeadc594b952181cfbd268ab87e97",
+      "previousDraft": "data/raw_pdfs/denken3/review/20250831/machinery/archive/q18-vision-draft-v3.json",
+      "answeredReviewSha256": "682ba91e7e9522e33aa1810e50d114aade31bb93841b17ee0affbed976f6105a",
+      "answeredReview": "data/raw_pdfs/denken3/review/20250831/machinery/archive/q18-opus-review-v3.json",
+      "answeredStrictReceipt": null,
+      "answeredStrictReceiptSha256": null,
+      "figureSha256": {
+        "20250831-machinery-q18-fig1": "fc5019b5d724efb3d6fc44d2a46ce1c9ffa55a2d5f12f58215f8f1b431869977",
+        "20250831-machinery-q18-fig2": "f3bec6dd57af3b37a73c6e963a3d292399a2635fcb089635e1cbbe09901da093"
+      },
+      "referenceHashes": {},
+      "operatorNote": ""
+    },
+    {
+      "version": 4,
+      "model": "claude-opus-5-5",
+      "resolvedModel": "claude-opus-5-5",
+      "modelUsage": {
+        "claude-opus-5-5": {
+          "inputTokens": 2,
+          "outputTokens": 5688,
+          "cacheReadInputTokens": 1279,
+          "cacheCreationInputTokens": 17797,
+          "webSearchRequests": 0,
+          "costUSD": 0.2563998,
+          "contextWindow": 1000000,
+          "maxOutputTokens": 128000,
+          "thinkingTokens": 1879,
+          "canonicalModel": "claude-opus-5-5",
+          "provider": "firstParty",
+          "costBasis": "list"
+        }
+      },
+      "rawResponseSha256": "8cbe858b50f7fde5a6fc7a6dbb4b3bf50d9ec1b98f5b700425f312e60621714c",
+      "inputRequestSha256": "c507cfcfa1623fd3aadfd596a8b0c1e18dff84d7412c6cc2d50f481bf83f6676",
+      "previousDraftSha256": "f0c9571022107c594183a623139059b9ca9eb29532b75bba6f31ed2fd78274b9",
+      "previousDraft": "data/raw_pdfs/denken3/review/20250831/machinery/archive/q18-vision-draft-v4.json",
+      "answeredReviewSha256": "690cf4ac483222871bf2118f314d1ffb1d48bf2371bc7d8107ce68b5ca133577",
+      "answeredReview": "data/raw_pdfs/denken3/review/20250831/machinery/archive/q18-opus-review-v4.json",
+      "answeredStrictReceipt": null,
+      "answeredStrictReceiptSha256": null,
+      "figureSha256": {
+        "20250831-machinery-q18-fig1": "fc5019b5d724efb3d6fc44d2a46ce1c9ffa55a2d5f12f58215f8f1b431869977",
+        "20250831-machinery-q18-fig2": "f3bec6dd57af3b37a73c6e963a3d292399a2635fcb089635e1cbbe09901da093"
+      },
+      "referenceHashes": {},
+      "operatorNote": ""
+    },
+    {
+      "version": 5,
+      "model": "claude-opus-5-5",
+      "resolvedModel": "claude-opus-5-5",
+      "modelUsage": {
+        "claude-opus-5-5": {
+          "inputTokens": 2,
+          "outputTokens": 6706,
+          "cacheReadInputTokens": 1279,
+          "cacheCreationInputTokens": 17803,
+          "webSearchRequests": 0,
+          "costUSD": 0.27680780000000005,
+          "contextWindow": 1000000,
+          "maxOutputTokens": 128000,
+          "thinkingTokens": 2780,
+          "canonicalModel": "claude-opus-5-5",
+          "provider": "firstParty",
+          "costBasis": "list"
+        }
+      },
+      "rawResponseSha256": "5e9958ddd2daba4e29e9467d0a859bd6060160e0502aa43080c81ff2484fe735",
+      "inputRequestSha256": "f45240c2e55c7c15e44151e7909e8b08238679a08fb03ac7f56352a15de2e245",
+      "previousDraftSha256": "93126610f28c81d49038ff9a3260801576b70ed6fffc496c73aec6e30f31b010",
+      "previousDraft": "data/raw_pdfs/denken3/review/20250831/machinery/archive/q18-vision-draft-v5.json",
+      "answeredReviewSha256": "f0d6f664ce04fb45e2895f1edc5ec34dc7f8b68fd168e649a08d7473f70b0a9b",
+      "answeredReview": "data/raw_pdfs/denken3/review/20250831/machinery/archive/q18-opus-review-v5.json",
+      "answeredStrictReceipt": null,
+      "answeredStrictReceiptSha256": null,
+      "figureSha256": {
+        "20250831-machinery-q18-fig1": "fc5019b5d724efb3d6fc44d2a46ce1c9ffa55a2d5f12f58215f8f1b431869977",
+        "20250831-machinery-q18-fig2": "f3bec6dd57af3b37a73c6e963a3d292399a2635fcb089635e1cbbe09901da093"
+      },
+      "referenceHashes": {},
+      "operatorNote": ""
+    },
+    {
+      "version": 6,
+      "model": "claude-opus-5-5",
+      "resolvedModel": "claude-opus-5-5",
+      "modelUsage": {
+        "claude-opus-5-5": {
+          "inputTokens": 2,
+          "outputTokens": 6121,
+          "cacheReadInputTokens": 1279,
+          "cacheCreationInputTokens": 17960,
+          "webSearchRequests": 0,
+          "costUSD": 0.2663638,
+          "contextWindow": 1000000,
+          "maxOutputTokens": 128000,
+          "thinkingTokens": 2195,
+          "canonicalModel": "claude-opus-5-5",
+          "provider": "firstParty",
+          "costBasis": "list"
+        }
+      },
+      "rawResponseSha256": "d71cb7c4e0a505768223fab80079e5d2e65b7541b08aa03b878d12a46f2e6359",
+      "inputRequestSha256": "48c2b669de560cea4f13efe480ed08d5b8ee0a20fcb8033361adb708c7f4854c",
+      "previousDraftSha256": "7dfe2eeba7e447314738af5ffe6cbab1421b73b5dc20d6c4d5cfd34f1935fe46",
+      "previousDraft": "data/raw_pdfs/denken3/review/20250831/machinery/archive/q18-vision-draft-v6.json",
+      "answeredReviewSha256": "c176a0a915ffccdb281393a30d7ee956036fd3d008736c48d57746bc9d9d9d7f",
+      "answeredReview": "data/raw_pdfs/denken3/review/20250831/machinery/archive/q18-opus-review-v6.json",
+      "answeredStrictReceipt": null,
+      "answeredStrictReceiptSha256": null,
+      "figureSha256": {
+        "20250831-machinery-q18-fig1": "fc5019b5d724efb3d6fc44d2a46ce1c9ffa55a2d5f12f58215f8f1b431869977",
+        "20250831-machinery-q18-fig2": "f3bec6dd57af3b37a73c6e963a3d292399a2635fcb089635e1cbbe09901da093"
+      },
+      "referenceHashes": {},
+      "operatorNote": ""
+    },
+    {
+      "version": 7,
+      "model": "claude-opus-5-5",
+      "resolvedModel": "claude-opus-5-5",
+      "modelUsage": {
+        "claude-opus-5-5": {
+          "inputTokens": 2,
+          "outputTokens": 5694,
+          "cacheReadInputTokens": 1279,
+          "cacheCreationInputTokens": 18076,
+          "webSearchRequests": 0,
+          "costUSD": 0.2587518,
+          "contextWindow": 1000000,
+          "maxOutputTokens": 128000,
+          "thinkingTokens": 1830,
+          "canonicalModel": "claude-opus-5-5",
+          "provider": "firstParty",
+          "costBasis": "list"
+        }
+      },
+      "rawResponseSha256": "ef761de2a1462c1d2a69fcfa4a22c962c6f61ed753fb498ed6b7b9d5bb0ebebe",
+      "inputRequestSha256": "6bcd1e3b7f2b4452a3e0ac6748ec543003c0419659bf3329f8c7860d2142a9df",
+      "previousDraftSha256": "ecad954d161abc9b890636da6fb6aa229faa9f96e3820cc6c6c0652b5161a434",
+      "previousDraft": "data/raw_pdfs/denken3/review/20250831/machinery/archive/q18-vision-draft-v7.json",
+      "answeredReviewSha256": "8f8c50b9d21bd2a03d96b594f1c2dd12f8004b672bb1423de13756936bd0fbcd",
+      "answeredReview": "data/raw_pdfs/denken3/review/20250831/machinery/archive/q18-opus-review-v7.json",
+      "answeredStrictReceipt": null,
+      "answeredStrictReceiptSha256": null,
+      "figureSha256": {
+        "20250831-machinery-q18-fig1": "fc5019b5d724efb3d6fc44d2a46ce1c9ffa55a2d5f12f58215f8f1b431869977",
+        "20250831-machinery-q18-fig2": "f3bec6dd57af3b37a73c6e963a3d292399a2635fcb089635e1cbbe09901da093"
+      },
+      "referenceHashes": {},
+      "operatorNote": ""
+    },
+    {
+      "version": 8,
+      "model": "claude-opus-5-5",
+      "resolvedModel": "claude-opus-5-5",
+      "modelUsage": {
+        "claude-opus-5-5": {
+          "inputTokens": 2,
+          "outputTokens": 6163,
+          "cacheReadInputTokens": 1279,
+          "cacheCreationInputTokens": 18044,
+          "webSearchRequests": 0,
+          "costUSD": 0.2678758,
+          "contextWindow": 1000000,
+          "maxOutputTokens": 128000,
+          "thinkingTokens": 2299,
+          "canonicalModel": "claude-opus-5-5",
+          "provider": "firstParty",
+          "costBasis": "list"
+        }
+      },
+      "rawResponseSha256": "a6ff641248178757ca46212dbc460c0580ec48b77c571b37a37905aef88f784d",
+      "inputRequestSha256": "ed9f87b529bbd0062e41d2266239505659da13b19f354046a5a7f8b9e637f108",
+      "previousDraftSha256": "fa09c6f06ad8502d1b48f508e53e29ffa2e5bd5b99beb1373566ab0c36e39c79",
+      "previousDraft": "data/raw_pdfs/denken3/review/20250831/machinery/archive/q18-vision-draft-v8.json",
+      "answeredReviewSha256": "d0208f2b0d052331edc556f73ae7de253b502bc508f16007808ec045bcd0efeb",
+      "answeredReview": "data/raw_pdfs/denken3/review/20250831/machinery/archive/q18-opus-review-v8.json",
+      "answeredStrictReceipt": null,
+      "answeredStrictReceiptSha256": null,
+      "figureSha256": {
+        "20250831-machinery-q18-fig1": "fc5019b5d724efb3d6fc44d2a46ce1c9ffa55a2d5f12f58215f8f1b431869977",
+        "20250831-machinery-q18-fig2": "f3bec6dd57af3b37a73c6e963a3d292399a2635fcb089635e1cbbe09901da093"
+      },
+      "referenceHashes": {},
+      "operatorNote": ""
+    },
+    {
+      "version": 9,
+      "model": "claude-opus-5-5",
+      "resolvedModel": "claude-opus-5-5",
+      "modelUsage": {
+        "claude-opus-5-5": {
+          "inputTokens": 2,
+          "outputTokens": 6116,
+          "cacheReadInputTokens": 1279,
+          "cacheCreationInputTokens": 18058,
+          "webSearchRequests": 0,
+          "costUSD": 0.2670478,
+          "contextWindow": 1000000,
+          "maxOutputTokens": 128000,
+          "thinkingTokens": 2252,
+          "canonicalModel": "claude-opus-5-5",
+          "provider": "firstParty",
+          "costBasis": "list"
+        }
+      },
+      "rawResponseSha256": "ae9158cf58de48f37deecf37875f7e4e2eeb5ad8a21f6a6828aea7a86ec1d708",
+      "inputRequestSha256": "234f51fdfe2096199c6409ce0b02b7b5be35660deb22856818f1921214fca5f7",
+      "previousDraftSha256": "b5560fc2cc75cc42a9628de447adcfd63f2f6b3c33ad293dffd08ceb2261c42e",
+      "previousDraft": "data/raw_pdfs/denken3/review/20250831/machinery/archive/q18-vision-draft-v9.json",
+      "answeredReviewSha256": "068dcbcd67e504693006ba5165b6ee504d15536a89249cf51417e131a90d20ee",
+      "answeredReview": "data/raw_pdfs/denken3/review/20250831/machinery/archive/q18-opus-review-v9.json",
+      "answeredStrictReceipt": null,
+      "answeredStrictReceiptSha256": null,
+      "figureSha256": {
+        "20250831-machinery-q18-fig1": "fc5019b5d724efb3d6fc44d2a46ce1c9ffa55a2d5f12f58215f8f1b431869977",
+        "20250831-machinery-q18-fig2": "f3bec6dd57af3b37a73c6e963a3d292399a2635fcb089635e1cbbe09901da093"
+      },
+      "referenceHashes": {},
+      "operatorNote": ""
+    },
+    {
+      "version": 10,
+      "model": "claude-opus-5-5",
+      "resolvedModel": "claude-opus-5-5",
+      "modelUsage": {
+        "claude-opus-5-5": {
+          "inputTokens": 2,
+          "outputTokens": 6885,
+          "cacheReadInputTokens": 1279,
+          "cacheCreationInputTokens": 20069,
+          "webSearchRequests": 0,
+          "costUSD": 0.2985158,
+          "contextWindow": 1000000,
+          "maxOutputTokens": 128000,
+          "thinkingTokens": 1852,
+          "canonicalModel": "claude-opus-5-5",
+          "provider": "firstParty",
+          "costBasis": "list"
+        }
+      },
+      "rawResponseSha256": "eb9516ff57564f09fddd75001b94ee3f32017ffe61a624d1021df9e323807f4c",
+      "inputRequestSha256": "0371405de217e5c2f12fd961ff96e78413028e3d9d758b42d14fb881769bd8c9",
+      "previousDraftSha256": "97f19568af5e0d530c78be4a9482c8157d736499b2279d12d2517a7f88313508",
+      "previousDraft": "data/raw_pdfs/denken3/review/20250831/machinery/archive/q18-vision-draft-v10.json",
+      "answeredReviewSha256": "1fc1ea1bb74aceb3cf56192ec4a2a9060170230591dc80df4dab308c3308f075",
+      "answeredReview": "data/raw_pdfs/denken3/review/20250831/machinery/archive/q18-opus-review-v10.json",
+      "answeredStrictReceipt": "docs/evidence/denken3/strict/20250831-machinery-s1-q18a-q18b-opus.json",
+      "answeredStrictReceiptSha256": "6f276b83581d48a5ff5658a6860d8914d4a980a06370f382842e954020f756a5",
+      "figureSha256": {
+        "20250831-machinery-q18-fig1": "3ec2f12551841ebdc2e01f71c469510f0363c9abf95800153bac22b8f3ceb658",
+        "20250831-machinery-q18-fig2": "f3bec6dd57af3b37a73c6e963a3d292399a2635fcb089635e1cbbe09901da093"
+      },
+      "referenceHashes": {},
+      "operatorNote": ""
+    },
+    {
+      "version": 11,
+      "model": "claude-opus-5-5",
+      "resolvedModel": "claude-opus-5-5",
+      "modelUsage": {
+        "claude-opus-5-5": {
+          "inputTokens": 2,
+          "outputTokens": 6218,
+          "cacheReadInputTokens": 1279,
+          "cacheCreationInputTokens": 21223,
+          "webSearchRequests": 0,
+          "costUSD": 0.2944078,
+          "contextWindow": 1000000,
+          "maxOutputTokens": 128000,
+          "thinkingTokens": 1131,
+          "canonicalModel": "claude-opus-5-5",
+          "provider": "firstParty",
+          "costBasis": "list"
+        }
+      },
+      "rawResponseSha256": "5816593e4390c7e81685de1fa5a38f56d0c57c1bc32b7431010ec25fc3b2e86a",
+      "inputRequestSha256": "7dc538a304211eaee7d4ffbab3f61708b7d62249d2ba3bd3538205d9657f5bec",
+      "previousDraftSha256": "3d1be87890707cc0e7350ddc97dbb73fd0c065e10b4dac1b93fd434694fe3a25",
+      "previousDraft": "data/raw_pdfs/denken3/review/20250831/machinery/archive/q18-vision-draft-v11.json",
+      "answeredReviewSha256": "77de9c1e83807f06c8d61e118dbe704c28faa51a09df9dee4ec605975a09756b",
+      "answeredReview": "data/raw_pdfs/denken3/review/20250831/machinery/archive/q18-opus-review-v11.json",
+      "answeredStrictReceipt": "docs/evidence/denken3/strict/20250831-machinery-s2-q18a-q18b-opus.json",
+      "answeredStrictReceiptSha256": "c615ae9c39280034e8eacc3b3924072d43af2cf43e71337dad52e742d78fc144",
+      "figureSha256": {
+        "20250831-machinery-q18-fig1": "3ec2f12551841ebdc2e01f71c469510f0363c9abf95800153bac22b8f3ceb658",
+        "20250831-machinery-q18-fig2": "f3bec6dd57af3b37a73c6e963a3d292399a2635fcb089635e1cbbe09901da093"
+      },
+      "referenceHashes": {},
+      "operatorNote": ""
+    },
+    {
+      "version": 12,
+      "model": "claude-opus-5-5",
+      "resolvedModel": "claude-opus-5-5",
+      "modelUsage": {
+        "claude-opus-5-5": {
+          "inputTokens": 2,
+          "outputTokens": 6027,
+          "cacheReadInputTokens": 1279,
+          "cacheCreationInputTokens": 20326,
+          "webSearchRequests": 0,
+          "costUSD": 0.2834118,
+          "contextWindow": 1000000,
+          "maxOutputTokens": 128000,
+          "thinkingTokens": 1489,
+          "canonicalModel": "claude-opus-5-5",
+          "provider": "firstParty",
+          "costBasis": "list"
+        }
+      },
+      "rawResponseSha256": "7b82bedb990f143eb090f5fac45808c6363f3be2e9e07c0b8823186ef57935a4",
+      "inputRequestSha256": "83c3beab7304462ffb152b83fec22096e033c9fb65b293cb357bd1564a4c32e3",
+      "previousDraftSha256": "467c0bd11ae9ec8c0920379d770a7e7f6a0bf32d030d0452662affa776eaa82a",
+      "previousDraft": "data/raw_pdfs/denken3/review/20250831/machinery/archive/q18-vision-draft-v12.json",
+      "answeredReviewSha256": "f63639a371e7a0fd3422d9d9c4ea71546e95ff84eb6cacbcdbf4b77a20673cb1",
+      "answeredReview": "data/raw_pdfs/denken3/review/20250831/machinery/archive/q18-opus-review-v12.json",
+      "answeredStrictReceipt": "docs/evidence/denken3/strict/20250831-machinery-s3-q18a-q18b-opus.json",
+      "answeredStrictReceiptSha256": "51337c100eedc6f7f16dc76dbf100b24569530dc766068f7a741f3f019a538cd",
+      "figureSha256": {
+        "20250831-machinery-q18-fig1": "3ec2f12551841ebdc2e01f71c469510f0363c9abf95800153bac22b8f3ceb658",
+        "20250831-machinery-q18-fig2": "f3bec6dd57af3b37a73c6e963a3d292399a2635fcb089635e1cbbe09901da093"
+      },
+      "referenceHashes": {},
+      "operatorNote": ""
+    }
+  ]
+}

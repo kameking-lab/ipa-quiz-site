@@ -1,0 +1,76 @@
+{
+  "scope": [
+    "r60-am-q2",
+    "r60-pm-q1",
+    "r60-pm-q7"
+  ],
+  "visualReview": "SOURCE-PACKETS.json に指定された3問の questionRegion と figures.sourceRegion を原寸で確認。PM1 は選択肢1-5の元画像も個別に確認。公式正答は変更しない。",
+  "cases": [
+    {
+      "id": "r60-am-q2",
+      "officialAnswer": [
+        "2"
+      ],
+      "reason": "頸椎MRIに中下位頸椎の前方突出による脊髄圧迫を認め、設問のAIS Bは仙髄S4-5を含む感覚残存と、運動機能が運動レベルの3髄節を超えて下方に保存されない分類。上位で保たれる肩すくめは可能と考える。",
+      "choiceCautions": {
+        "1": "横隔膜麻痺をMRIだけで断定しない。高位C3-C5の損傷を示す設問ではない。",
+        "2": "肩甲帯・上位頸髄で保たれる肩すくめが正答。",
+        "3": "頸部の感覚障害をAIS Bの意味から自動的に導かない。AIS Bは損傷以下の感覚が全て消失した状態ではない。",
+        "4": "スプーン把持と食事動作には手指の随意運動・把持機能が要る。AIS Bを『全ての筋収縮が全くない』と拡大解釈しない。",
+        "5": "棚上へのリーチ・物品把持には肩、肘、手指の協調が要る。MRIから厳密な運動高位を断定しない。"
+      },
+      "sources": [
+        "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-09a_01.pdf",
+        "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-09a_02.pdf",
+        "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-09seitou.pdf",
+        "https://asia-spinalinjury.org/wp-content/uploads/2019/04/ASIA-ISCOS-IntlWorksheet_2019.pdf"
+      ]
+    },
+    {
+      "id": "r60-pm-q1",
+      "officialAnswer": [
+        "3",
+        "4"
+      ],
+      "reason": "元図の矢印位置と方向をDaniels準拠の大学教材と照合。3は母指基節骨内側へ外転方向の抵抗、4は膝外側へ下内方・下腿内前面へ上外方の2点抵抗で一致。",
+      "choiceCautions": {
+        "1": "肩甲骨挙上の抵抗は両肩上面へ下向き。元図は上腕・肘周辺へ下向きで、抵抗位置が違う。",
+        "2": "肘屈曲の抵抗は手関節近位の前腕屈側へ屈曲を妨げる向き。元図は前腕軸に近い斜め下方向の矢印で、肘屈曲への抵抗方向として不適切。",
+        "3": "母指内転の抵抗は母指基節骨内側に外転方向で正しい。",
+        "4": "縫工筋の複合運動（股屈曲・外転・外旋と膝屈曲）を、膝と下腿の二点で反対方向に抵抗し正しい。",
+        "5": "股内転では下側の検査脚の大腿遠位内側へ下向きに抵抗する。元図では膝下寄りを押しているため位置が違う。単に『下向きだから誤り』としない。"
+      },
+      "sources": [
+        "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-09b_01.pdf",
+        "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-09seitou.pdf",
+        "https://at.uwa.edu/mmt/scapula.htm",
+        "https://at.uwa.edu/mmt/Elbow.htm",
+        "https://at.uwa.edu/mmt/thumb.htm",
+        "https://at.uwa.edu/mmt/hip.htm"
+      ]
+    },
+    {
+      "id": "r60-pm-q7",
+      "officialAnswer": [
+        "3"
+      ],
+      "reason": "国交省2024年住宅設計ハンドブックは全幅70cm以下・全長120cm以下の車椅子を想定し、140cm四方を転回・すれ違いスペースとして明記。図のポーチ140cmはその寸法と合う。70×120cm長方形の対角線約139cmは補助的な幾何説明にとどめ、実際の旋回軌跡を断定しない。",
+      "choiceCautions": {
+        "1": "屋外スロープ1/6は急勾配。国交省住宅設計ハンドブックは高低差16cm以下かつ1/8以下、または1/12以下を示す。",
+        "2": "80cm開口は一般的に通れないと断定しない。同ハンドブックは共用建物出入口80cm以上、住戸内の直進出入口78cm以上を示す。幅70cmの車椅子に余裕は10cmのみで、開閉操作・接近経路の評価が必要という限定説明にする。これだけで普遍的な誤肢と証明する公的数値は見つからない。",
+        "3": "140cm転回スペースが公式正答。150cmは別用途・別基準にある値で、本問の140cmを上書きしない。",
+        "4": "120cmで横向きの歩行者とならすれ違える最低幅とする自治体一次資料がある。通常姿勢の歩行者との余裕あるすれ違いとは異なるため、『絶対にすれ違えない』と断定しない。",
+        "5": "浴槽縁80cmは車椅子座位からの自立移乗に高すぎる。大阪府浴室整備資料は車椅子から移乗しやすい洗い場台を40-45cm程度としており、縁の適切な高さと厳密に同一視はしない。"
+      },
+      "sources": [
+        "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-09b_01.pdf",
+        "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-09b_02.pdf",
+        "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-09seitou.pdf",
+        "https://www.mlit.go.jp/jutakukentiku/house/content/001751893.pdf",
+        "https://www.city.tama.lg.jp/_res/projects/default_project/_page_/001/004/820/11111111111111.pdf",
+        "https://www.pref.osaka.lg.jp/documents/21203/06-1120yokushututo.pdf"
+      ]
+    }
+  ],
+  "remainingUncertainty": "PM7肢2と4の否定は基準・用途・動線条件に依存する。正答3は公式解答と国交省の140cm転回寸法で支持されるが、他肢の一般的な使用不能を断言しない。"
+}

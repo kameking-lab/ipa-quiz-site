@@ -1,0 +1,159 @@
+{
+  "questionNumber": 17,
+  "sharedContext": "図のような、A点及びB点に負荷を有する三相3線式高圧配電線がある。電源側S点の線間電圧を6 600 Vとするとき、次の(a)及び(b)の問に答えよ。\nただし、配電線1線当たりの抵抗及びリアクタンスはそれぞれ0.3 Ω/kmとする。",
+  "units": [
+    {
+      "part": "a",
+      "question": "図のような、A点及びB点に負荷を有する三相3線式高圧配電線がある。電源側S点の線間電圧を6 600 Vとするとき、次の(a)及び(b)の問に答えよ。\nただし、配電線1線当たりの抵抗及びリアクタンスはそれぞれ0.3 Ω/kmとする。\n\n(a) S-A間に流れる電流の有効成分の値[A]として、正しいものを次の(1)〜(5)のうちから一つ選べ。",
+      "choices": {
+        "1": "160",
+        "2": "240",
+        "3": "220",
+        "4": "200",
+        "5": "140"
+      },
+      "officialAnswer": "3",
+      "explanation": "図より、A点とB点の負荷はどちらもS-A区間より負荷側にあるので、S-A間にはA点負荷とB点負荷の両方の電流が流れる。A点とB点の電圧の位相差は小さいので無視し、各負荷電流を有効成分と無効成分に分けて、成分ごとに足し合わせる。\n\nA点負荷（200 A、遅れ力率0.8、sinθ = 0.6）\n・有効成分：200 × 0.8 = 160 A\n・無効成分：200 × 0.6 = 120 A\n\nB点負荷（100 A、遅れ力率0.6、sinθ = 0.8）\n・有効成分：100 × 0.6 = 60 A\n・無効成分：100 × 0.8 = 80 A\n\nS-A間の電流\n・有効成分：160 + 60 = 220 A\n・無効成分：120 + 80 = 200 A\n\nよって、S-A間に流れる電流の有効成分は220 Aであり、正答は(3)である。",
+      "choiceExplanations": {
+        "1": "誤り。160 AはA点負荷の有効成分（200 × 0.8）だけの値である。S-A間にはB点負荷の電流も流れるため、B点負荷の有効成分60 A（100 × 0.6）も加える必要がある。正しくは220 A。",
+        "2": "誤り。240 Aは、B点負荷の有効成分を力率0.6ではなく0.8を使って100 × 0.8 = 80 Aとし、160 + 80 = 240 Aとした場合の値と一致する。0.8はB点負荷の無効率（sinθ）であり、B点負荷の有効成分は100 × 0.6 = 60 Aである。正しくは160 + 60 = 220 A。",
+        "3": "正しい。A点負荷の有効成分160 A（200 × 0.8）とB点負荷の有効成分60 A（100 × 0.6）の和が220 Aとなる。",
+        "4": "誤り。200 AはS-A間電流の無効成分（120 + 80）の値であり、有効成分ではない。A点の負荷電流の大きさ200 Aとも同じ値だが、S-A間にはB点負荷の電流も流れ、しかも問われているのは有効成分である。有効成分は220 A。",
+        "5": "誤り。140 Aは、B点負荷の有効成分60 Aと無効成分80 Aを加えた値（60 + 80）と一致する。有効成分と無効成分は位相が90°異なるため同じ成分として加えることはできず、またS-A間の有効成分にはA点負荷の有効成分160 Aも含まれる。正しくは160 + 60 = 220 A。"
+      },
+      "figureDescription": "配電線の単線図のみを示す図。左からS、A、Bの3点が横一直線の配電線で結ばれ、各点は黒丸で示される。点の上にそれぞれ「S」「A」「B」のラベルがある。上部に両矢印の寸法線があり、S-A間に「2 km」、A-B間に「2 km」と記される。A点とB点からはそれぞれ下向きの矢印が出ており、負荷電流の取り出しを示す。A点の矢印の下には「負荷電流 200A」「力率(遅れ)0.8」、B点の矢印の下には「負荷電流 100A」「力率(遅れ)0.6」と2行で記される。(a)では、A点・B点の両負荷がS-A区間より負荷側に接続されている配置と、各負荷の電流・力率を図から読み取る。区間長は(a)の解答には用いない。",
+      "officialReferenceUrls": [],
+      "uncertainty": "誤答肢(2)240 A・(5)140 Aについて示した計算上の一致は、出題者が想定した誤答の経路であるとは確定できない。",
+      "needsReview": true,
+      "sourceQuestionPdfUrl": "https://www.shiken.or.jp/chief/upload/20260322_ch_third_q02.pdf",
+      "sourceAnswerPdfUrl": "https://www.shiken.or.jp/chief/upload/20260322_ch_third_a01.pdf",
+      "reviewedFromPage": [
+        20
+      ]
+    },
+    {
+      "part": "b",
+      "question": "図のような、A点及びB点に負荷を有する三相3線式高圧配電線がある。電源側S点の線間電圧を6 600 Vとするとき、次の(a)及び(b)の問に答えよ。\nただし、配電線1線当たりの抵抗及びリアクタンスはそれぞれ0.3 Ω/kmとする。\n\n(b) B点における線間電圧の値[V]として、最も近いものを次の(1)〜(5)のうちから一つ選べ。",
+      "choices": {
+        "1": "6 020",
+        "2": "5 770",
+        "3": "6 460",
+        "4": "6 130",
+        "5": "6 260"
+      },
+      "officialAnswer": "1",
+      "explanation": "三相3線式線路の電圧降下の近似式を用いる。\nv ≒ √3 × (R × I有効 + X × I無効)\n（I有効 = I cosθ、I無効 = I sinθ）\n\n各区間の1線当たりのインピーダンス（区間長2 km）\n・R = 0.3 × 2 = 0.6 Ω\n・X = 0.3 × 2 = 0.6 Ω\n\n各負荷電流の成分（A点とB点の電圧の位相差は小さいので無視する）\n・A点負荷（200 A、遅れ力率0.8、sinθ = 0.6）：有効成分200 × 0.8 = 160 A、無効成分200 × 0.6 = 120 A\n・B点負荷（100 A、遅れ力率0.6、sinθ = 0.8）：有効成分100 × 0.6 = 60 A、無効成分100 × 0.8 = 80 A\n\nS-A間の電圧降下\nS-A間にはA点負荷とB点負荷の両方の電流が流れる。\n・有効成分：160 + 60 = 220 A\n・無効成分：120 + 80 = 200 A\nv_SA = √3 × (0.6 × 220 + 0.6 × 200) = √3 × 252 ≒ 436.5 V\n\nA-B間の電圧降下\nA-B間にはB点負荷の電流だけが流れる（有効成分60 A、無効成分80 A）。\nv_AB = √3 × (0.6 × 60 + 0.6 × 80) = √3 × 84 ≒ 145.5 V\n\nS-B間の電圧降下の合計\nv = v_SA + v_AB = √3 × 336 ≒ 582.0 V\n\nB点の線間電圧\nV_B = 6 600 − 582.0 ≒ 6 018 V\n\nよって最も近いのは6 020 Vであり、正答は(1)である。",
+      "choiceExplanations": {
+        "1": "正しい。S-A間の降下√3 × 252 ≒ 436.5 VとA-B間の降下√3 × 84 ≒ 145.5 Vの合計は√3 × 336 ≒ 582 V。B点の線間電圧は6 600 − 582 ≒ 6 018 Vとなり、6 020 Vが最も近い。",
+        "2": "誤り。5 770 Vは、力率を考慮せずに各区間の電流の大きさに(R + X)をそのまま掛け、S-A間の電流を200 + 100 = 300 Aとした場合の値と一致する。このとき電圧降下は√3 × (0.6 + 0.6) × 300 + √3 × (0.6 + 0.6) × 100 = √3 × 480 ≒ 831.4 Vとなり、B点の線間電圧は6 600 − 831.4 ≒ 5 769 Vとなる（S-A間の電流を有効・無効成分から求めた大きさ√(220² + 200²) ≒ 297.3 Aとしても約5 774 Vで、同じく5 770 Vが最も近い）。電圧降下の近似式は√3 × I × (R cosθ + X sinθ)であり、抵抗には電流の有効成分、リアクタンスには無効成分を掛ける。電流の大きさに(R + X)を掛けることはcosθとsinθをともに1とみなすことに相当し、降下を過大に見積もる。正しい電圧降下は約582 Vで、B点の線間電圧は約6 018 Vである。",
+        "3": "誤り。6 460 Vは、A-B間の電圧降下√3 × 84 ≒ 145.5 Vだけを6 600 Vから引いた約6 454.5 Vに最も近い値である。S-A間にもA・B両負荷の電流による降下√3 × 252 ≒ 436.5 Vが生じるため、この区間の降下を除いてはならない。",
+        "4": "誤り。S-A間の降下√3 × 252 ≒ 436.5 Vだけを考えると、A点の線間電圧は6 600 − 436.5 ≒ 6 164 Vとなり、選択肢の中では6 130 Vが最も近くなる。しかし問われているのはB点の電圧であり、B点ではさらにA-B間の降下約145.5 Vが加わって約6 018 Vとなる。",
+        "5": "誤り。6 260 Vは、√3を掛けずに電圧降下を252 + 84 = 336 Vとした場合の6 600 − 336 = 6 264 Vに最も近い値である。三相3線式の線間電圧の降下には√3を掛ける必要があり、正しい電圧降下は約582 Vである。"
+      },
+      "figureDescription": "配電線の単線図のみを示す図。左からS、A、Bの3点が横一直線の配電線で結ばれ、各点は黒丸で示される。点の上にそれぞれ「S」「A」「B」のラベルがある。上部に両矢印の寸法線があり、S-A間に「2 km」、A-B間に「2 km」と記される。A点とB点からはそれぞれ下向きの矢印が出ており、負荷電流の取り出しを示す。A点の矢印の下には「負荷電流 200A」「力率(遅れ)0.8」、B点の矢印の下には「負荷電流 100A」「力率(遅れ)0.6」と2行で記される。(b)では、図に示された区間長から各区間の抵抗・リアクタンスを求め、負荷の接続位置と電流・力率から各区間に流れる電流を求める。区間ごとの電流の値そのものは図には記されていない。",
+      "officialReferenceUrls": [],
+      "uncertainty": "誤答肢(2)5 770 V・(3)6 460 V・(4)6 130 V・(5)6 260 Vについて示した計算上の一致は、出題者が想定した誤答の経路であるとは確定できない。",
+      "needsReview": true,
+      "sourceQuestionPdfUrl": "https://www.shiken.or.jp/chief/upload/20260322_ch_third_q02.pdf",
+      "sourceAnswerPdfUrl": "https://www.shiken.or.jp/chief/upload/20260322_ch_third_a01.pdf",
+      "reviewedFromPage": [
+        20
+      ]
+    }
+  ],
+  "draftModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 5159,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 9337,
+      "webSearchRequests": 0,
+      "costUSD": 0.17813980000000001,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 1853,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "624cf0b1c440f20a82f899640a4c45db2f7bfeb43f067fe977bdb5caccc0ecda",
+  "inputRequestSha256": "7a189595900059ed1b324fc12a6ced9a74a7d9ae47bf46bb14e2ddb55186bebd",
+  "sourceQuestionPdfSha256": "9733341a0f293f068c9a665d5a9a90f1aabf3a2db5d79cd530643cdea241f7b7",
+  "sourceAnswerPdfSha256": "cc2890296d06a4823df5697a78a1c01ddfd39f041c51f48c87984daa3a5707c6",
+  "sourcePageImageSha256": {
+    "data/raw_pdfs/denken3/review/20260322/power/p20.png": "36d5835cf9cf7fbfe60e0dbea0e74aac99e127d7fe3920d1b413f7bff1033e25"
+  },
+  "revisionHistory": [
+    {
+      "version": 1,
+      "model": "claude-opus-5-5",
+      "resolvedModel": "claude-opus-5-5",
+      "modelUsage": {
+        "claude-opus-5-5": {
+          "inputTokens": 2,
+          "outputTokens": 10759,
+          "cacheReadInputTokens": 1279,
+          "cacheCreationInputTokens": 16809,
+          "webSearchRequests": 0,
+          "costUSD": 0.3499158,
+          "contextWindow": 1000000,
+          "maxOutputTokens": 128000,
+          "thinkingTokens": 6925,
+          "canonicalModel": "claude-opus-5-5",
+          "provider": "firstParty",
+          "costBasis": "list"
+        }
+      },
+      "rawResponseSha256": "7bc93de97372eb2442d7e854bf7e0472ab5bf3cffbd0f04da46a971f8cf6634c",
+      "inputRequestSha256": "d3af64dd3b7ffa71cf7de1557cf7bd57139f90aa9cb205c09d25fb53b84cbb1f",
+      "previousDraftSha256": "bc6624ec56a3c8bffca58142ba51335bed89fef2bffd85175b8167ba6dac4b46",
+      "previousDraft": "data/raw_pdfs/denken3/review/20260322/power/archive/q17-vision-draft-v1.json",
+      "answeredReviewSha256": "742b27b3ae79556f50a6876329ded0b318a346ee059fdf0af92fb7c575496643",
+      "answeredReview": "data/raw_pdfs/denken3/review/20260322/power/archive/q17-opus-review-v1.json",
+      "answeredStrictReceipt": "docs/evidence/denken3/strict/20260322-power-s1-q17a-q17b-opus.json",
+      "answeredStrictReceiptSha256": "4c12187bcf02b9253ea161b7e1ad15ce533c7a834063c18bf36721c87c69649c",
+      "figureSha256": {
+        "20260322-power-q17-fig1": "314a001ab23942d5cff2a3917ab6dba490f998682a17965fc9c7f661f604339b"
+      },
+      "referenceHashes": {},
+      "operatorNote": ""
+    },
+    {
+      "version": 2,
+      "model": "claude-opus-5-5",
+      "resolvedModel": "claude-opus-5-5",
+      "modelUsage": {
+        "claude-opus-5-5": {
+          "inputTokens": 2,
+          "outputTokens": 5503,
+          "cacheReadInputTokens": 1279,
+          "cacheCreationInputTokens": 15567,
+          "webSearchRequests": 0,
+          "costUSD": 0.2348598,
+          "contextWindow": 1000000,
+          "maxOutputTokens": 128000,
+          "thinkingTokens": 1549,
+          "canonicalModel": "claude-opus-5-5",
+          "provider": "firstParty",
+          "costBasis": "list"
+        }
+      },
+      "rawResponseSha256": "27f093f907cefa948d597db9137fa67df6ebed0e5680b95266a06b423320daa8",
+      "inputRequestSha256": "1480b2576c3f3e59663acd6787da29579d63e429781450102d563d2adb6435df",
+      "previousDraftSha256": "2a28cc518f52de5e4d69846852ba6e552c00f2642181c2ab3d451255f59eb3a6",
+      "previousDraft": "data/raw_pdfs/denken3/review/20260322/power/archive/q17-vision-draft-v2.json",
+      "answeredReviewSha256": "44ab4951c7fc05e51dce4cd13e4c50fbe0e05331454177b8b92f62104c942343",
+      "answeredReview": "data/raw_pdfs/denken3/review/20260322/power/archive/q17-opus-review-v2.json",
+      "answeredStrictReceipt": "docs/evidence/denken3/strict/20260322-power-s2-q17a-q17b-opus.json",
+      "answeredStrictReceiptSha256": "b1bf6702e344e2aa9238816d8565a697553d0bf6dde42e7cc0dce6ae12115dec",
+      "figureSha256": {
+        "20260322-power-q17-fig1": "314a001ab23942d5cff2a3917ab6dba490f998682a17965fc9c7f661f604339b"
+      },
+      "referenceHashes": {},
+      "operatorNote": ""
+    }
+  ]
+}

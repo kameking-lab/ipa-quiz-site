@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { PRICE_PAGE_LINK } from "@/lib/billing/price-page-link";
+import { AMAZON_ASSOCIATE_DISCLOSURE } from "@/data/recommended-books";
 import {
   AlertOctagon,
   ArrowLeft,
@@ -21,7 +23,7 @@ import { Breadcrumbs } from "@/components/seo/Breadcrumbs";
 export const metadata: Metadata = {
   title: "利用規約",
   description:
-    "過去問AI の利用規約。教育貢献プロジェクトとして全機能無料で運営しています。サービス概要・AI 生成・免責・禁止事項・出典・準拠法について。",
+    "過去問AI の利用規約。無料の学習機能と月額プランを提供します。サービス概要・AI 生成・免責・禁止事項・出典・準拠法について。",
   alternates: { canonical: "/terms" },
 };
 
@@ -60,7 +62,7 @@ export default function TermsPage() {
           <h1 className="text-balance text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
             利用規約
           </h1>
-          <p className="mt-3 text-xs text-muted-foreground">最終更新: 2026年5月2日</p>
+          <p className="mt-3 text-xs text-muted-foreground">最終更新: 2026年10月28日</p>
           <p className="mt-4 max-w-2xl text-pretty text-sm leading-relaxed text-muted-foreground sm:text-base">
             過去問AI（以下「本サービス」）をご利用いただく前に、本利用規約をよくお読みください。
             本サービスを利用することにより、本規約に同意したものとみなします。
@@ -75,7 +77,7 @@ export default function TermsPage() {
           >
             <p>
               本サービスは、情報処理技術者試験の過去問学習を支援する教育貢献プロジェクトとして
-              <strong>全機能を無料で公開</strong>しています。
+              無料の学習機能と月額プランを提供します。
               機能・データ・仕様は改善のため予告なく変更・中断・終了する場合があります。
               開発中の機能を含むため、不具合や予期しない動作が発生する可能性があります。
             </p>
@@ -223,7 +225,7 @@ export default function TermsPage() {
               >
                 おすすめ問題集
               </Link>
-              」ページなど一部のページには、Amazonアソシエイト・楽天アフィリエイトなどのアフィリエイトリンクが含まれます。
+              」ページなど一部のページには、楽天アフィリエイトなどのアフィリエイトリンクが含まれます。
               ユーザーがこれらのリンクから商品を購入された場合、当サービス運営者に紹介料が支払われ、運営費の一部に充当されます。
             </p>
             <p>
@@ -232,8 +234,7 @@ export default function TermsPage() {
               価格・在庫・最新版情報については、リンク先の販売ページの表示が最新です。
             </p>
             <p>
-              当サービスは Amazon.co.jp を宣伝しリンクすることによってサイトが紹介料を獲得できる手段を提供することを目的に設定された
-              アフィリエイトプログラムである、Amazonアソシエイト・プログラムの参加者です。
+              {AMAZON_ASSOCIATE_DISCLOSURE}
             </p>
           </Section>
 
@@ -246,7 +247,9 @@ export default function TermsPage() {
               <li>
                 本サービスは、IPA試験受験者への教育貢献を目的として、ボランティア有志により運営されています。
               </li>
-              <li>本サービスは現時点で全機能を無償提供しています。</li>
+              <li>個別問題・原紙・保存済み履歴の閲覧と復習は無料です。連続演習はログインなしでも1日10問まで無料で、日本時間0時に更新されます。履歴の同期などは無料ログインで利用できます。月額プランの詳細は <Link href={PRICE_PAGE_LINK.href} className="underline underline-offset-2">{PRICE_PAGE_LINK.label}</Link> をご確認ください。</li>
+              <li>月額プランは税込980円で毎月自動更新されます。契約管理から次回更新を停止でき、期間末解約を予約した後も支払済み期間末まで利用できます。日割返金はありません。重複請求・誤請求や当社の障害で利用できなかった場合は個別に確認し返金します。法令上の権利は制限しません。</li>
+              <li>部分返金では利用権と自動更新は変わらず、全額返金では該当請求期間の利用権を終了します。返金と解約は別の手続きです。</li>
               <li>
                 運営継続のため、皆様のフィードバック投稿によるコンテンツ改善へのご協力をお願いいたします。
               </li>

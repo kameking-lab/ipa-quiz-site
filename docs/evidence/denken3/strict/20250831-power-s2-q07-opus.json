@@ -1,0 +1,72 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20250831",
+  "subject": "power",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 4381,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 13751,
+      "webSearchRequests": 0,
+      "costUSD": 0.1978918,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 2938,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "9688cd26f24be4451befee6bf813bcc8bc7096bdae1b4c5e7478257df3ffebd3",
+  "inputRequestSha256": "653f617a01889832b4704a18b022baf69171617b42aaf7b681455459d3a4a993",
+  "inputHashes": {
+    "candidateSha256": {
+      "q07": "9ab75359a673118125575c233e87bc76077dc6df1c8176b1acd21a982f3c0bd7"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20250831/power/p10.png": "09b6178679fcd789b29d5ec878509572046e12e2e809a7003bc98a6577c0af63"
+    },
+    "figureSha256": {},
+    "sourceQuestionPdfSha256": "567aac1df6dc0c0950d04e90a1ad03231427c518eede92559effe01e2b97a2c9",
+    "sourceAnswerPdfSha256": "76fd3715ed487d19a56b387fb402de20ee09474e9fa55b0413f9037b96af06c9",
+    "officialAnswerUnitsSha256": "957fa42f644482c35715d6e7b88d63ff23aaaad1ad79be7ee18b45b19689c5a8",
+    "referencePdfSha256": {},
+    "referencePageSha256": {},
+    "referenceJsonSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q07",
+      "questionNumber": 7,
+      "part": null,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [
+        "uncertainty欄に「本問の出題回・科目は問題ページの記載からは確認できない」という未解決事項が残っているのに、needsReview=false で、sourceAttribution・subject・fiscalYear・term・examDate では「令和7年度上期 電力 問7」と断定しており、候補JSONの内部で矛盾している。",
+        "この不確実性は添付資料で解消できる。manifest固定の公式正答単位(q07, answer=3, points=5)は、公式解答表(令和7年度第三種電気主任技術者上期試験解答)の＜電力＞問7「解答3・配点5」と一致する。理論の問7は1、法規の問7は5で不一致。機械の問7も3だが、本問の内容(分散型電源の配電系統連系)は電力科目の範囲である。さらに問題原図フッターの「T1－D 010」は reviewedFromPage=[10] と整合する。",
+        "修正案: uncertainty欄を空にする。または「科目・回次は manifest および公式解答表(電力 問7=3, 配点5)との照合で確定」と解消済みの記述に改め、needsReview と整合させる。"
+      ],
+      "verifiedEvidence": [
+        "問題文: 原図「分散型電源の配電系統連系に関する記述として，誤っているものを次の(1)〜(5)のうちから一つ選べ。」と候補の問題文が逐字一致。",
+        "選択肢(1)〜(5): 原図と逐字一致。句読点(，。)、「負荷分割等配電系統側の増強」、「ステップ式自動電圧調整器(SVR)」を含めて相違なし。",
+        "公式正答: manifestは answer=\"3\", points=5。公式解答表の＜電力＞問7は解答3・配点5で、officialAnswer=\"3\"・scoringPoints=5 と一致。",
+        "総合解説の検算: ΔV≒(PR+QX)/V (P・Qは送電端→受電点の向き、遅れQを正)。逆潮流では P<0 となり ΔV<0、つまり受電点の電圧が上昇する。受電点が系統から遅れ無効電力を受け取る(系統側から見て遅れ力率)と QX>0 となり、上昇が相殺される。系統側から見て進み力率にすると Q<0 で QX<0 となり、電圧上昇が助長される。したがって(3)が誤りで、正しくは『遅れ力率』。符号・因果に誤りなし。",
+        "(1)の理由: 発電量が負荷を上回ると配電用変電所の変圧器に逆潮流が生じ、連系点付近の電圧が上昇する。単一電源の電圧分布として妥当。",
+        "(2)の理由: 太陽光・燃料電池はともに直流出力で、インバータで連系する。スイッチングによる高調波の流出を抑えるためフィルタ等が必要になることがある。妥当。",
+        "(3)の理由: 総合解説と同じ ΔV 式で、進み力率が電圧上昇を助長することを示している。整合。",
+        "(4)の理由: 大容量電源による電圧上昇・容量超過への対策として、専用線連系や負荷分割による系統増強が必要になることがある。妥当。",
+        "(5)の理由: SVRを配電線途中に設置し、タップ切換で他需要家の電圧を適正に維持する。妥当。",
+        "図: 原図に図はなく、figureDescription『本問に図はない』、figureUrls=[]、choiceFigureUrls={} と整合。",
+        "officialReferenceUrls=[] のため、外部参考資料に基づく独立主張はない。",
+        "ページ: 原図の印刷頁は「- 7 -」、フッターは「T1－D 010」。reviewedFromPage=[10] と矛盾しない。"
+      ]
+    }
+  ]
+}

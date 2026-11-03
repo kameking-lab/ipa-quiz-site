@@ -1,4 +1,4 @@
-import type { Question, Season, Session, ExamCode } from "@/lib/questions/types";
+import type { Question, QuestionPart, Season, Session, ExamCode } from "@/lib/questions/types";
 
 export interface QuestionRouteParams {
   exam: string;
@@ -7,8 +7,29 @@ export interface QuestionRouteParams {
   qnum: string;
 }
 
-export function questionPagePath(q: Pick<Question, "exam" | "year" | "season" | "session" | "qNumber">): string {
-  return `/q/${q.exam}/${q.year}-${q.season}/${q.session}/q${q.qNumber}`;
+/** URLの問番号部分。枝問は `q15a`、電験一種・二種の空欄は `q1-3`（問1の空欄(3)）。 */
+export function questionNumberSegment(qNumber: number, part?: QuestionPart): string {
+  if (!part) return `q${qNumber}`;
+  return /^\d$/.test(part) ? `q${qNumber}-${part}` : `q${qNumber}${part}`;
+}
+
+/** 枝番(a)/(b)は電験三種、数字の枝番は電験一・二種と診断士の設問に使用する。 */
+const PART_EXAMS: Record<"letter" | "blank", readonly string[]> = {
+  letter: ["denken3", "maritime4", "aviation-comm", "maritime3", "maritime2", "maritime1", "general3", "general2", "general1"],
+  blank: ["denken2", "denken1", "chusho-kigyo-shindanshi"],
+};
+
+export function parseQuestionNumberSegment(exam: string, qnum: string): { qNumber: number; part?: QuestionPart } | null {
+  const match = /^q(\d+)(?:([ab])|-([1-5]))?$/.exec(qnum);
+  if (!match) return null;
+  const qNumber = Number(match[1]);
+  if (match[2]) return PART_EXAMS.letter.includes(exam) ? { qNumber, part: match[2] as QuestionPart } : null;
+  if (match[3]) return PART_EXAMS.blank.includes(exam) ? { qNumber, part: match[3] as QuestionPart } : null;
+  return { qNumber };
+}
+
+export function questionPagePath(q: Pick<Question, "exam" | "year" | "season" | "session" | "qNumber"> & Partial<Pick<Question, "part">>): string {
+  return `/q/${q.exam}/${q.year}-${q.season}/${q.session}/${questionNumberSegment(q.qNumber, q.part)}`;
 }
 
 export function parseQuestionRoute(params: QuestionRouteParams): {
@@ -17,15 +38,16 @@ export function parseQuestionRoute(params: QuestionRouteParams): {
   season: Season;
   session: Session;
   qNumber: number;
+  part?: QuestionPart;
 } | null {
-  const match = /^(\d{4})-(spring|autumn|cbt|published|first|second)$/.exec(params.yearSeason);
+  const match = /^(\d{4})-(spring|autumn|cbt|published|first|second|early|may|september|january|october|late|annual|july|primary|kansai|february|june|august|march|round1|round2)$/.exec(params.yearSeason);
   if (!match) return null;
   const year = Number(match[1]);
   const season = match[2] as Season;
 
-  const qMatch = /^q(\d+)$/.exec(params.qnum);
-  if (!qMatch) return null;
-  const qNumber = Number(qMatch[1]);
+  const segment = parseQuestionNumberSegment(params.exam, params.qnum);
+  if (!segment) return null;
+  const { qNumber, part } = segment;
 
   return {
     exam: params.exam as ExamCode,
@@ -33,6 +55,7 @@ export function parseQuestionRoute(params: QuestionRouteParams): {
     season,
     session: params.section as Session,
     qNumber,
+    ...(part ? { part } : {}),
   };
 }
 
@@ -42,8 +65,9 @@ function routeKey(
   season: string,
   session: string,
   qNumber: number,
+  part?: QuestionPart,
 ): string {
-  return `${exam}/${year}-${season}/${session}/q${qNumber}`;
+  return `${exam}/${year}-${season}/${session}/${questionNumberSegment(qNumber, part)}`;
 }
 
 // O(1) route lookup. The /q/* page resolves the question twice per request
@@ -59,7 +83,7 @@ function getRouteIndex(pool: Question[]): Map<string, Question> {
   if (!index) {
     index = new Map();
     for (const q of pool) {
-      index.set(routeKey(q.exam, q.year, q.season, q.session, q.qNumber), q);
+      index.set(routeKey(q.exam, q.year, q.season, q.session, q.qNumber, q.part), q);
     }
     routeIndexByPool.set(pool, index);
   }
@@ -73,6 +97,6 @@ export function findQuestionByRoute(
   const parsed = parseQuestionRoute(params);
   if (!parsed) return undefined;
   return getRouteIndex(pool).get(
-    routeKey(parsed.exam, parsed.year, parsed.season, parsed.session, parsed.qNumber),
+    routeKey(parsed.exam, parsed.year, parsed.season, parsed.session, parsed.qNumber, parsed.part),
   );
 }

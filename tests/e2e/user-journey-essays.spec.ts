@@ -7,7 +7,7 @@ const ESSAY_QUESTION = "/essays/sc/2025-spring/pm2/q1";
 // EssayIndustryTabs renders the industry selector as a role="group"
 // (aria-label "業種選択") of aria-pressed toggle buttons labelled by industry
 // name, in this order. The matching answer is a <section hidden> with a
-// "<industry>の合格答案例" heading. (Was a role=tablist/aria-selected/tabpanel
+// "<industry>の参考答案例" heading. (Was a role=tablist/aria-selected/tabpanel
 // pattern before the a11y fix in 6e4fb97 — these specs assert the new pattern.)
 const INDUSTRY_LABELS = [
   "IT・情報サービス業",
@@ -90,11 +90,11 @@ test.describe("user journey: essays industry selector UI", () => {
     await page.goto(ESSAY_QUESTION);
     const group = page.getByRole("group", { name: "業種選択" });
     const itHeading = page.getByRole("heading", {
-      name: "IT・情報サービス業の合格答案例",
+      name: "IT・情報サービス業の参考答案例",
       exact: true,
     });
     const mfgHeading = page.getByRole("heading", {
-      name: "製造業の合格答案例",
+      name: "製造業の参考答案例",
       exact: true,
     });
     // IT answer is shown initially; the manufacturing answer is hidden.

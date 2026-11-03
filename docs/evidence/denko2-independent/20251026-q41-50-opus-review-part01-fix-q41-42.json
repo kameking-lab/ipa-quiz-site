@@ -1,0 +1,52 @@
+{
+  "inputHashes": {
+    "draftSha256": "982f38724c8b0b5bcebf44b48165d7685f46a7829034d86521ca2efc719883ca",
+    "rowSha256": {
+      "41": "a51623d4d36ad83d80fa500d1b56595cf8f9f2d5701d5972f8d755555534210a",
+      "42": "5a51a39ef0e99dba3e2f1de7555d4a4a40618cdd87b09701b32b91863d549ddb"
+    },
+    "sharedFigureSha256": {
+      "public/images/denko2/2025-second/wiring-first-floor.png": "88f652f95103f8bcd90c110af995e65046ace5b5f38e9bceeaad6ab64d29534a",
+      "public/images/denko2/2025-second/wiring-second-floor.png": "f1076fbb7d9e11339f58b180c19a36b98f7146254572449b4b342157779a31e9",
+      "public/images/denko2/2025-second/wiring-panel.png": "2ab6ad86eea5b617f06c0619a24488a74b154265518ad9b2863bda3243aa819f"
+    },
+    "commonInstructionsSha256": "e2bb1b00f146246a003a209c7614e3c0e316f6991480b6f82e9ee5e6a18b2a5b",
+    "detailFigureSha256": {
+      "public/images/denko2/2025-second/q41-i.png": "43c1d52f7edb43601e8ac1c107c6400d637a0836bd341ff8a7ebb577af349fa1",
+      "public/images/denko2/2025-second/q41-ro.png": "0608bdbce73f79ce7f7517e61973a1b2bbe0e84e1486246369052a20af9a1a71",
+      "public/images/denko2/2025-second/q41-ha.png": "6de0c750fcff8cc1175c834f5cf77024b719b1154041e1c4bd3e1a5c42feb3eb",
+      "public/images/denko2/2025-second/q41-ni.png": "cb2b6b52bffb3a228b3568d737e2bfaf587b5c5bdb686e957695cf4f5dbe88aa",
+      "public/images/denko2/2025-second/q42-i.png": "cf0fdb18860f517c9d833ead0098914a4e8939f89c91bdfc75403fc8022f19c6",
+      "public/images/denko2/2025-second/q42-ro.png": "7125e815668f93b87fba98e8cfd9303c5f468b2ba8fb53e764d7ea95195e94d9",
+      "public/images/denko2/2025-second/q42-ha.png": "f5422e757a8988915392b82f3ded0c38ec3e899206ef04fc771c6878fc40e3fe",
+      "public/images/denko2/2025-second/q42-ni.png": "f97136297e15c79d1ea51f340ba4023c93ede04531d4078f87c485167b1e3942"
+    }
+  },
+  "reviewModel": "claude-opus-5-5",
+  "assessment": [
+    {
+      "number": 41,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "lawNeedsExternalCheck": []
+    },
+    {
+      "number": 42,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [
+        "ニの肢文は「白色の露出用スイッチボックス」になっているが、原本写真は銀灰色の金属製（ダイカスト）ボックスで、上部に管の接続口がある。白色ではない。choiceExplanations.ニと、diagramDescriptionに書かれた「金属製の露出ボックス」の記述とも食い違っている。「金属製の露出形スイッチボックス（管接続口付き）」など、写真どおりの記述に直す。"
+      ],
+      "explanationIssues": [
+        "explanationの「分電盤への立上り（○）」は向きが逆。⑫は2階にあり、横の○から矢印が「分電盤へ」向かっている。これは2階から1階の電灯分電盤（1階平面図の台所付近）へ下ろす配線なので、図記号は引下げになる。「立上り」ではなく「分電盤への引下げ」に直す。"
+      ],
+      "figureIssues": [
+        "diagramDescriptionの「分電盤への立上り（○、「分電盤へ」）」も同じ誤り。2階から1階分電盤へ向かう配線なので「引下げ」に直す。"
+      ],
+      "lawNeedsExternalCheck": []
+    }
+  ]
+}

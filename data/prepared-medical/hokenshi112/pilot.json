@@ -1,0 +1,56 @@
+{
+  "qualification": "保健師国家試験",
+  "round": 112,
+  "examDate": "2026-02-13",
+  "session": "am",
+  "status": "AUTHOR_DRAFT_INDEPENDENT_REVIEW_PENDING",
+  "publicAllowed": false,
+  "authorModel": "GPT-6.1 Sol",
+  "firstPartyModelReceipt": null,
+  "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-03a_01.pdf",
+  "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-03seitou.pdf",
+  "sourceAttribution": "出典：厚生労働省 第112回保健師国家試験 午前問題。問題の改行・表の配置を整理して作成。解説は過去問AIが独自に作成したもので、厚生労働省の公式解説ではありません。",
+  "questions": [
+    {
+      "id": "hokenshi-112-am-q2",
+      "questionNumber": 2,
+      "physicalPdfPage": 7,
+      "printedPage": 1,
+      "question": "世界保健機関〈WHO〉が、世界的な感染拡大によって「国際的に懸念される公衆衛生上の緊急事態〈PHEIC〉」を宣言した感染症はどれか。",
+      "choices": ["結核", "マラリア", "ヒト免疫不全ウイルス〈HIV〉感染症", "新型コロナウイルス感染症〈COVID-19〉"],
+      "officialAnswer": [4],
+      "explanation": "正答は4。WHOのCOVID-19に関するIHR緊急委員会の公式記録では、2020年1月30日に事務局長がPHEICと判断した経緯が確認できる。この問題は感染症の深刻さを比較する問題ではなく、指定された国際的な緊急事態の宣言対象を選ぶ問題である。宣言の歴史的事実を尋ねており、現在も同じ宣言が継続しているという意味ではない。",
+      "choiceExplanations": [
+        "誤り。結核を選ぶと、この設問が尋ねる宣言対象と一致しない。公式正答表は4を示し、WHOの緊急委員会の記録は新型コロナウイルス感染症についてのPHEIC判断を示している。結核の公衆衛生上の重要性だけを理由に宣言対象と判断してはいけない。",
+        "誤り。マラリアを選ぶと、この設問が尋ねる宣言対象と一致しない。感染症による負担が大きいことと、ここで問うPHEIC宣言が行われたことは区別する。公式正答表とWHOの該当緊急委員会記録に対応する選択肢は4である。",
+        "誤り。HIV感染症を選ぶと、この設問が尋ねる宣言対象と一致しない。世界的に対策が必要な感染症であることを、設問で指定されたPHEIC宣言の事実と取り違えない。公式正答表とWHOの該当記録に対応する選択肢は4である。",
+        "正しい。WHOのCOVID-19に関するIHR緊急委員会の公式記録で、2020年1月30日のPHEIC判断を確認できる。原問題のCOVID-19はこの記録が対象とする感染症に対応し、公式正答表A002の4とも一致する。"
+      ],
+      "primaryReferences": [{"url": "https://www.who.int/groups/covid-19-ihr-emergency-committee", "cachedSource": "sources/who-covid-committee.html", "locator": "本文冒頭、2020年1月30日のPHEIC判断。これは宣言対象の肯定根拠で、他の全疾患について宣言が歴史上一度もなかったという包括的証明には用いない。"}],
+      "sourceConfidence": "PRIMARY_READ_AUTHOR_ONLY_REVIEW_PENDING",
+      "needsReview": true
+    },
+    {
+      "id": "hokenshi-112-am-q8",
+      "questionNumber": 8,
+      "physicalPdfPage": 10,
+      "printedPage": 4,
+      "question": "「がん予防重点健康教育及びがん検診実施のための指針」で推奨されている、市町村が行うがん検診の種類と対象年齢の組合せで正しいのはどれか。",
+      "choices": ["胃がん検診 — 35歳以上", "乳がん検診 — 20歳以上", "大腸がん検診 — 40歳以上", "子宮頸がん検診 — 18歳以上"],
+      "choicePairs": [{"screening":"胃がん検診","age":35},{"screening":"乳がん検診","age":20},{"screening":"大腸がん検診","age":40},{"screening":"子宮頸がん検診","age":18}],
+      "officialAnswer": [3],
+      "explanation": "正答は3。厚生労働省の指針第3の1（3）では、肺がん検診及び大腸がん検診の対象は40歳以上とされる。がんの種類と対象年齢を一組ずつ照合する。対象者と『受診を特に推奨する者』の範囲、子宮頸がん検診の検査方式の違いを混同しない。これは出題時点の制度を学ぶ解説であり、個人の受診や診断を決定するものではない。公開前にはその時点の指針を再確認する。",
+      "choiceExplanations": [
+        "誤り。指針第3の1（3）①では、胃がん検診の対象は原則50歳以上である。胃部エックス線検査については当分の間40歳以上を対象としても差し支えないという但書があるが、35歳以上ではない。原則と但書を並べて確認すると、この肢はどちらにも一致しない。",
+        "誤り。指針第3の1（3）④では、乳がん検診の対象は40歳以上の女性である。20歳以上という年齢は、この指針の乳がん検診対象に一致しない。他の種類の検診の年齢を転用しない。",
+        "正しい。指針第3の1（3）③では、肺がん検診及び大腸がん検診の対象は40歳以上の者である。大腸がん検診と40歳以上の組合せは一致し、公式正答表A008の3とも一致する。",
+        "誤り。指針第3の1（3）②では、子宮頸がん検診の対象は20歳以上の女性であり、HPV検査単独法は30歳以上の女性を対象とする。18歳以上という肢はどちらにも一致しない。検査方式による区別を保ち、全方式を一律30歳以上とも説明しない。"
+      ],
+      "primaryReferences": [{"url": "https://www.mhlw.go.jp/content/10900000/001642974.pdf", "cachedSource":"sources/cancer-guideline-current.pdf", "version":"2025-12-24改正版、取得2026-10-07", "locator":"物理・印刷4〜5ページ、第3・1（3）①〜④。原PDF画像も実読。"},{"url":"https://www.mhlw.go.jp/content/10900000/001471911.pdf","cachedSource":"sources/cancer-guideline-202402.pdf","version":"2024-02-14改正版（比較用。現在版へ代用しない）"}],
+      "sourceConfidence": "PRIMARY_PDF_READ_AUTHOR_ONLY_REVIEW_PENDING",
+      "lawReferenceDate": "2025-12-24",
+      "deadlineRecheck": "公開予定時に指針の最新改正と当該設問の対象年齢を再確認",
+      "needsReview": true
+    }
+  ]
+}

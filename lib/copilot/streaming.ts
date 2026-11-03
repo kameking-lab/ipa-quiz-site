@@ -1,5 +1,6 @@
-import type { LLMProvider } from "@/lib/ai/provider";
+import type { LLMProvider, StreamCompletion } from "@/lib/ai/provider";
 import { captureException } from "@/lib/monitoring/sentry";
+import { citationFooterForResponse, CITATION_UNVERIFIED_NOTICE } from "./citations";
 
 export interface CopilotStreamInput {
   provider: LLMProvider;
@@ -9,7 +10,7 @@ export interface CopilotStreamInput {
   maxTokens: number;
   temperature?: number;
   clientSignal?: AbortSignal;
-  /** If hasGrounding is true the citationFooter is appended after a successful stream. */
+  /** Candidate source-list template; only answer-used references are appended. */
   citationFooter: string;
   hasGrounding: boolean;
   /** Cap upstream latency (ms). Defaults to 35_000. */
@@ -24,7 +25,7 @@ export interface CopilotStreamInput {
    * frozen the moment the response completes — anything still in flight at
    * close() is silently dropped.
    */
-  onComplete?: (outputChars: number) => void | Promise<void>;
+  onComplete?: (outputChars: number, usage?: StreamCompletion) => void | Promise<void>;
 }
 
 const DEFAULT_TIMEOUT_MS = 35_000;
@@ -62,6 +63,8 @@ export function createCopilotResponseStream(input: CopilotStreamInput): Readable
   const encoder = new TextEncoder();
   let producedAnyChunk = false;
   let producedChars = 0;
+  let responseText = "";
+  let usage: StreamCompletion | undefined;
 
   return new ReadableStream<Uint8Array>({
     async start(controller) {
@@ -83,14 +86,18 @@ export function createCopilotResponseStream(input: CopilotStreamInput): Readable
           maxTokens,
           temperature,
           signal: upstreamAbort.signal,
+          onComplete: (completion) => { usage = completion; },
         })) {
           producedAnyChunk = true;
           producedChars += chunk.length;
+          responseText += chunk;
           controller.enqueue(encoder.encode(chunk));
         }
-        if (hasGrounding && citationFooter) {
-          controller.enqueue(encoder.encode(citationFooter));
+        if (usage?.truncated) {
+          controller.enqueue(encoder.encode("\n\n[応答の途中終了] 出力上限に達しました。続きを質問してください。"));
         }
+        const usedFooter = hasGrounding ? citationFooterForResponse(citationFooter, responseText) : "";
+        controller.enqueue(encoder.encode(usedFooter || CITATION_UNVERIFIED_NOTICE));
       } catch (err) {
         const aborted =
           (err as { name?: string } | null)?.name === "AbortError" ||
@@ -129,7 +136,7 @@ export function createCopilotResponseStream(input: CopilotStreamInput): Readable
         // 必ず close() の **前** に await する。close() 後に投げた非同期処理は、
         // レスポンス完了でサーバレス関数が凍結されるため完了が保証されない。
         try {
-          await onComplete?.(producedChars);
+          await onComplete?.(producedChars, usage);
         } catch {
           // ignore
         }

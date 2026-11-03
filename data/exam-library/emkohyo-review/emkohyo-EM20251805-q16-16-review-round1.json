@@ -1,0 +1,57 @@
+{
+  "reviewModel": "claude-opus-5-5",
+  "requestedModel": "claude-opus-5-5",
+  "canonicalModel": "claude-opus-5-5",
+  "provider": "firstParty",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 2236,
+      "cacheReadInputTokens": 139443,
+      "cacheCreationInputTokens": 15209,
+      "webSearchRequests": 0,
+      "costUSD": 0.1942886,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 1433,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "paperId": "emkohyo-EM20251805",
+  "ids": [
+    "emkohyo-EM20251805-q16"
+  ],
+  "figureSha256": {
+    "emkohyo-EM20251805-q16": {}
+  },
+  "officialRowImageSha256": {
+    "emkohyo-EM20251805-q16": {
+      "/exam-library/emkohyo-EM20251805/q16-p9-1.webp": "4932fd7214da96aea6251f2b02563f2b002b4f32407da347ffb4ac769ebe79d5"
+    }
+  },
+  "officialPageImageSha256": {},
+  "governmentSourceImageSha256": {},
+  "candidateSha256": {
+    "emkohyo-EM20251805-q16": "c9f0ef58b3a157c98469679d3d6fd85f63afcfc6d5a9201b6a9452bf160e3afa"
+  },
+  "sourcePackPath": "docs/evidence/emkohyo-choice-sources/emkohyo-EM20251805-q16-16.json",
+  "sourcePackSha256": "5a95886c289f3c66e7af7288b6fdf2ba2837e50c4f70e6b173ff29271b40e89c",
+  "assessment": {
+    "emkohyo-EM20251805-q16": {
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "reasonIssues": [],
+      "sourceIssues": [
+        "肢1: 根拠の産業技術総合研究所資料は、特定機器の調達仕様書にすぎない（「測定波長は200～1,100㎚の範囲を満たすこと」）。その機器が200～1100 nmを満たすことは言えるが、紫外可視分光光度計が「通常」約200～1000 nmを測れることまでは直接支えない。一般的な測定範囲を述べた政府資料に差し替えるか、根拠は1機器の仕様例にとどまると明記すべき。",
+        "肢2: 根拠の産業技術総合研究所プレスリリースは、色素増感太陽電池用クマリン色素の話である。「共役二重結合系の拡張…が色素の吸収波長の長波長化につながった」と述べるだけで、対象の色素は可視域で吸収する。「二重結合のπ電子は紫外光による電子遷移に関わる」「二重結合を持つ化合物は紫外部の光を吸収する」という解説の主要な因果を、この資料は直接支えない。π→π*遷移と紫外吸収の関係を直接述べた資料が必要。",
+        "肢4: 根拠の農林水産消費安全技術センター成分規格は、紫外部では石英製セル、可視部ではガラス製または石英製セルを使うと規定している。しかし700～1000 nm付近の近赤外側での石英セルの使用には触れていない。したがって、解説の「約200～1000 nmの波長範囲を通した選択肢として適切」を全域にわたって直接は支えない。支える範囲は紫外・可視域までと限定するか、近赤外側まで含めた根拠を加えるべき。"
+      ],
+      "needsExternalCheck": [
+        "肢3: 国立科学博物館ページについて照合済みの抜粋で確認できるのは、「紫外～可視領域（190～700 nm）に２か所の吸収帯」と「吸収極大の位置は種類によって異なる」の2点だけ。解説の「Band IとBand IIそれぞれの極大波長も示されている」を確かめるには、同ページの第1表に各バンドの極大波長の数値が実際に載っているか、原ページで確認する必要がある。"
+      ]
+    }
+  }
+}

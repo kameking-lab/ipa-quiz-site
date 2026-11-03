@@ -1,0 +1,60 @@
+{
+  "reviewModel": "claude-opus-5-5",
+  "requestedModel": "claude-opus-5-5",
+  "canonicalModel": "claude-opus-5-5",
+  "provider": "firstParty",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 3062,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 14603,
+      "webSearchRequests": 0,
+      "costUSD": 0.1783278,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 2322,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponsePath": "data/exam-library/emkohyo-review/emkohyo-20260217-3-q09-09-raw-response.txt",
+  "rawResponseSha256": "895e2a15975908be2e2953276ea04b8df288b1bc0b078a04c5dc73f542c3a6d8",
+  "paperId": "emkohyo-20260217-3",
+  "ids": [
+    "emkohyo-20260217-3-q9"
+  ],
+  "figureSha256": {
+    "emkohyo-20260217-3-q9": {}
+  },
+  "officialRowImageSha256": {
+    "emkohyo-20260217-3-q9": {
+      "/exam-library/emkohyo-20260217-3/q9-p6-1.webp": "feaa3eed1b14933340f322c97f55fb15691a721e60479c925dbab8c83b8cf002"
+    }
+  },
+  "officialPageImageSha256": {},
+  "governmentSourceImageSha256": {},
+  "candidateSha256": {
+    "emkohyo-20260217-3-q9": "bd3e0cddfb16427f68d6161eea7d71027c1fd52c28ee9b62a1dc0cb1fca9cd5f"
+  },
+  "sourcePackPath": "docs/evidence/emkohyo-choice-sources/emkohyo-20260217-3-q09-09.json",
+  "sourcePackSha256": "06071fd42b525192ccaa309e1291699606d7bdb0bb591a4d3410c120a037f003",
+  "assessment": {
+    "emkohyo-20260217-3-q9": {
+      "status": "FIX",
+      "textIssues": [
+        "presentation.choices で、原図のⒶ列（有害物質）とⒷ列（捕集器具又はろ過材）が区切りなしで連結されている（例:「クロロホルム活性炭管」「アクリルアミドグラスファイバーフィルター及び活性炭フェルト」）。ユーザー画面では組合せの境界が判別しにくいため、「クロロホルム ／ 活性炭管」のようにⒶとⒷを明示的に区切るべき。",
+        "presentation.prompt の末尾に列見出し「Ⓐ\\nⒷ」だけが孤立して残っている。choices をⒶ／Ⓑ区切りに直すなら見出し行は削除し、表形式を保つなら choices 側の区切りと対応させる必要がある。"
+      ],
+      "choiceIssues": [],
+      "reasonIssues": [],
+      "sourceIssues": [
+        "肢4: 測定基準別表第一の抜粋が支えるのは「アクリルアミド＝固体捕集方法及びろ過捕集方法」までである。「グラスファイバーフィルター＋活性炭フェルト」がアクリルアミドの捕集器具であること、活性炭フェルトが固体捕集材に当たること、二段構成であることは、添付の政府資料のどれも直接支えていない。厚労省報告書p46のガラス繊維ろ紙の記載はオルト-フタロジニトリルの行であり、アクリルアミドの根拠にはならない。アクリルアミドの試料採取機器を具体的に記した政府資料（例: 厚労省の測定手法資料等）を追加するか、理由の記述を別表第一で支えられる範囲に限定すること。"
+      ],
+      "needsExternalCheck": [
+        "肢4: アクリルアミドの標準的な試料採取構成（ガラス繊維フィルターと活性炭フェルトの組合せ・配置）を、厚労省または労働安全衛生総合研究所の一次資料で確認すること。"
+      ]
+    }
+  }
+}

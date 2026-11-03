@@ -1,0 +1,26 @@
+{
+  "inputHashes": {
+    "reviewPromptVersion": "skill-source-v4",
+    "questionPdfSha256": "503264a3f73b5427d66e9475a8ccfba3a9c2601ec49f66357080c1c32ec254b9",
+    "answerPdfSha256": "bd7422863de9ae6d6c15460d2f7d82e6eb229d38007a070292696cc594afe755",
+    "extractedRecordSha256": "9e40486ade787c587ac1cef1bb48bd6f80395d4cd25125967eb583330eeba739"
+  },
+  "reviewModel": "claude-opus-5-5",
+  "sourceItemId": "denko2-2024-12-14-skill-02",
+  "assessment": {
+    "status": "PASS",
+    "textIssues": [],
+    "diagramIssues": [],
+    "modelAnswerIssues": [],
+    "notes": [
+      "The instructionText matches the official question PDF, page 2. It includes the 40-minute time limit, the instruction to use all supplied materials except spares, and items 1–4 under なお: the dash-dot omitted area, no box installation, no insulation treatment, and no protective board. The 一・一・一 mark is written as ―・―・―, which is only a notation difference.",
+      "The materialsText matches page 1, items 1–12, in wire size, core count, length, colour, device and quantity. Item 1 is the blue-sheathed VVF 2.0mm 2-core cable, about 250mm, 1 piece. Item 2 is 1.6-2C, about 1250mm. Item 3 is 1.6-3C, about 800mm. Item 10 is 5 small ring sleeves including spares. Item 11 is 2 three-wire push-in connectors and item 12 is 1 four-wire connector. The candidate number tag and vinyl bag are correctly left out as administrative items.",
+      "The conditionsText matches page 3, conditions 1–5. It includes the always-on pilot lamp, all three colour rules, ring sleeves at A, push-in connectors at B, and the mounting frame used for the switch and pilot lamp. The bold emphasis in the original is not kept, but no wording is missing.",
+      "The diagramNotesText matches notes 1 and 2 below the figure (JIS C 0303:2000 and Ⓡ for the lamp receptacle). The encircled R survived as the Ⓡ character. Figure text such as 1φ2W, 100V, the VVF wire sizes and the dimensions is only in the image, and because it is shown via diagramImage, its absence from the text is not a problem.",
+      "The diagramImage crop contains everything readable, with nothing cut off: the power feed (VVF 2.0-2C, 150mm), boxes A and B, the lamp receptacle イ above A (VVF 1.6-2C, 150mm), the pilot lamp and switch イ above B (VVF 1.6-3C, 150mm), the lamp receptacle イ to the right of B (VVF 1.6-2C, 100mm) inside the 施工省略 area, and below B the duplex outlet marked 2 (VVF 1.6-2C, 150mm) and the single outlet (VVF 1.6-2C, 150mm). This question has no second figure, so secondFigureImage is not needed.",
+      "The official answer is headed 令和6年度第二種下期技能試験の解答 候補No.2, which matches this question number. The concept diagram, wiring diagram and finished-work photo all show the same layout as the question figure: lamp receptacle above A, pilot lamp and switch above B, a lamp receptacle beyond B leading to the omitted area, and the duplex and single outlets below. The wiring diagram puts the pilot lamp between black and white, so it matches the always-on condition. The 正解の例 inset shows how the switch and pilot lamp are wired together.",
+      "In the answer wiring, box B needs one four-wire connector for the white wires (power, lamp receptacle イ, pilot lamp, outlet). It needs two three-wire connectors: one for the black wires (power, switch/pilot, outlet) and one for red plus the lamp receptacle black. That matches materials items 11 and 12. Box A needs 3 ring sleeves, which is consistent with 5 supplied including spares. The finished-work photo also shows 1 yellow four-wire connector and 2 blue three-wire connectors.",
+      "This check covers only whether the extraction matches the official PDFs. No physical finished work was graded."
+    ]
+  }
+}

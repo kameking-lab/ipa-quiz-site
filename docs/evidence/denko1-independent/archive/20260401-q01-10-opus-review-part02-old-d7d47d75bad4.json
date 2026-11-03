@@ -1,0 +1,78 @@
+{
+  "inputHashes": {
+    "draftSha256": "3c0d230863f1958303d07c710c4f25097b689fc569d906fc217b87dec96f89c6",
+    "candidateSha256": {
+      "6": "415c6fe66c14da28afbabbf097f0359352badd3c4c800bec421bac36a7ea5671",
+      "7": "bc160fc590cfa9fa5f424b2179043d7c6bc813a95985a1999ee0b8fb05a5c35b",
+      "8": "811142b17f049baa08f3802ce69dce0eba704f744ce6311121e309e08e0a6077",
+      "9": "1da5894fa1a81965ff7f6911033942c7aba3bc8bfdebfcc48db30b72bfa5da12",
+      "10": "53dfdb96e8b47bed7c57d696e3296d68ab4a04e177190d56f18edd9045646c71"
+    },
+    "rowSha256": {
+      "6": "617601d354db94cc07c758f869cda1b420e51b3971ac3d6d082e1484f7828580",
+      "7": "07c61d7a2c1c560a404cd9438e58eae208deaa8781f79bc3ddfd8976fe9be071",
+      "8": "4709b1f559051672dea801f236904efa7d91e5e170778be1f3d50fa7bcd4fd8f",
+      "9": "d9ad83bb31aa8f0e23c859a87ee26e45c92942e9bb78ea6f1faebd5b3e8d2037",
+      "10": "5cbec0609e2d270d865b6526db1f8bed25136ca73a84e0d484e99a13540927a3"
+    },
+    "figureSha256": {
+      "public/images/denko1/2026-first/q6.png": "2d1feeb97101d6a32d75839e442a9267e8905142956bafd181ecddda2b06d204",
+      "public/images/denko1/2026-first/q7.png": "de3094d9717f1351a39d85f474e6c18a8c546a80a32d640b0c39407746ff733c",
+      "public/images/denko1/2026-first/q8.png": "a7c8169576b770705a57912a4e871e02dbf36fc734eed28f8831c89dc41d57fd",
+      "public/images/denko1/2026-first/q9.png": "609b7002f3e80fd671d14fd7d7561e37fe1d0428a76f7e2adad562bdd82473f1"
+    },
+    "legalReceiptSha256": {}
+  },
+  "reviewModel": "claude-opus-5-5",
+  "cliInitModel": "claude-opus-5-5",
+  "sessionId": "e5052aa1-75d1-43c2-a222-3039e80d416d",
+  "assessment": [
+    {
+      "number": 6,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "lawNeedsExternalCheck": []
+    },
+    {
+      "number": 7,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "explanationIssues": [
+        "choiceExplanations.ニの因果が誤っている。ニの式P·r²/(Vcos²φ)の分母はcos²φで、正解の式P²·r/(V²cos²φ)とcosφの次数は同じ2乗である。『Pとcosφの次数…がいずれも合わない』と書いているが、実際に合わないのはPの次数(1乗、正しくは2乗)、Vの次数(1乗、正しくは2乗)、rの次数(2乗、正しくは1乗)の3つである。cosφを外してVを入れること。"
+      ],
+      "figureIssues": [],
+      "lawNeedsExternalCheck": []
+    },
+    {
+      "number": 8,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "lawNeedsExternalCheck": []
+    },
+    {
+      "number": 9,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "lawNeedsExternalCheck": []
+    },
+    {
+      "number": 10,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "lawNeedsExternalCheck": []
+    }
+  ]
+}

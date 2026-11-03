@@ -1,0 +1,73 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20250831",
+  "subject": "machinery",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 2561,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 14136,
+      "webSearchRequests": 0,
+      "costUSD": 0.1645718,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 996,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "a961c80b6cb544ecc5e2fef225e83c279831de7a8d2bcc8253b1695a660fce29",
+  "inputRequestSha256": "7e284b5daa40cb539700e232d15a82ec6dd935ebbee49b7ebc398002422a1fde",
+  "inputHashes": {
+    "candidateSha256": {
+      "q01": "1c56d27cc23c0a49367460db93467c5020cf2e4d8a0614008ffe541d12462188"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20250831/machinery/p04.png": "c30e4cb759dd20425a45a9d0be444773072a0863069a360072288b53b4723046"
+    },
+    "figureSha256": {},
+    "sourceQuestionPdfSha256": "2a73a24594cc2b8bb7504b9a0ff15e001b2bb56b830572ce2be853f7116f26d8",
+    "sourceAnswerPdfSha256": "76fd3715ed487d19a56b387fb402de20ee09474e9fa55b0413f9037b96af06c9",
+    "officialAnswerUnitsSha256": "10d5afd93743aa0b59bdfdafbe9472a9d67618ae102f53b59f5e2154710369a5",
+    "referencePdfSha256": {},
+    "referencePageSha256": {},
+    "referenceJsonSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q01",
+      "questionNumber": 1,
+      "part": null,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "問題文: 添付原図（機械 A問題 問1、印字頁 -1-、欄外コード T1－K 004）の「直流電動機に関する記述として，誤っているものを次の(1)～(5)のうちから一つ選べ。」と候補JSONの文言が一致する。",
+        "選択肢(1): 直巻電動機について「負荷電流の増減で回転速度が大きく変わる」「回転速度が小さいときにトルクが大きい」「始動トルクが大きい」「クレーン，巻上機に適する」とする記述が、原図と一字一句一致する。",
+        "選択肢(2): 分巻電動機の界磁制御法（界磁巻線に直列の界磁抵抗器で界磁電流を調整し、界磁磁束を変えて速度を制御する）の記述が、原図と一致する。",
+        "選択肢(3): 分巻電動機は端子電圧一定で負荷を増やすと電機子電流が増え、回転速度はわずかに減少するがほぼ一定で、定速度電動機と呼ばれる、とする記述が原図と一致する。",
+        "選択肢(4): 和動複巻（直巻磁束と分巻磁束の和）と差動複巻（差）の記述が原図と一致する。",
+        "選択肢(5): 「界磁電流が負荷電流(電動機に流れる電流)と同じ」「未飽和領域では界磁磁束が負荷電流に比例し，トルクも負荷電流に比例する」の記述が原図と一致する。括弧の全角・半角差は sourceAttribution の整形注記の範囲内である。",
+        "公式正答: 添付の公式解答表（令和7年度上期、＜機械＞）で問1の解答は5、配点は5である。manifest の {question:1, part:null, answer:\"5\", points:5}、候補の officialAnswer=\"5\"、scoringPoints=5 とすべて一致する。",
+        "総合解説の検算(1): E = pZΦN/(60a) より K₁ = pZ/(60a)（N は min⁻¹）。T = pZΦIₐ/(2πa) より K₂ = pZ/(2πa)。どちらも正しい。",
+        "総合解説の検算(2): 分巻の N = (V − IₐRₐ)/(K₁Φ)、直巻の N = {V − Iₐ(Rₐ + Rₛ)}/(K₁Φ) はともに正しい。",
+        "総合解説の検算(3): 直巻では界磁電流 = 電機子電流 = 負荷電流 I。未飽和で Φ = K₃I とおくと T = K₂K₃I² ∝ I² となり、(5) の『トルクも負荷電流に比例』が誤りという因果は正しい。飽和域で T ≈ ∝ I となる補足も正しい。",
+        "肢別解説(1): 軽負荷で Φ が小さく高速、重負荷で低速かつ T ∝ I² が大となる。始動時は N=0 で電流が大きく、始動トルクが大きい。論理は正しい。",
+        "肢別解説(2): 界磁抵抗を増やすと Φ が減り N が上昇する。正しい。",
+        "肢別解説(3): 並列界磁のため V 一定なら Φ はほぼ一定である。IₐRₐ ≪ V なので N はわずかに減少するのみ。正しい。",
+        "肢別解説(4): 和動・差動の定義は正しい。",
+        "肢別解説(5): 前半2点は正しいと認めている。そのうえで、トルクは I² に比例するので誤り、とする固有理由は正しい。",
+        "図: 原図の問1に図はない。figureDescription『本問に図はない。』、figureUrls=[]、choiceFigureUrls={} と整合する。",
+        "出典: officialReferenceUrls は空で、独立主張はない。原図欄外コード『004』は reviewedFromPage=[4] と整合する。機械科目は第3科目であり、sourceQuestionPdfUrl の q03 と、解答表の sourceAnswerPdfUrl a01 の命名も科目順と整合する。"
+      ]
+    }
+  ]
+}

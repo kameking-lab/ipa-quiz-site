@@ -1,0 +1,68 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20240818",
+  "subject": "machinery",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 2256,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 13529,
+      "webSearchRequests": 0,
+      "costUSD": 0.1536158,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 906,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "f2363144522d8c213d277d6fe8c88b785c826df7ca81201c06755e7153f8859b",
+  "inputRequestSha256": "1ddfabb510925708a063a2aff738d2ad6ea8eab33a64b3ec3b9981d89b18629a",
+  "inputHashes": {
+    "candidateSha256": {
+      "q06": "716b9332703cc0b7054357d0561fc8e1aa775e280b0b2885f38d9da1adc4f91d"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20240818/machinery/p09.png": "cdfc0e3719fc869cb9c4e34cc1e899eb499a7b8a58966c98b252d64804332e45"
+    },
+    "figureSha256": {},
+    "sourceQuestionPdfSha256": "ff8ff270bbe1ea125e92f213d011afde969d0d2b9fa2e17a7caa2b5cd6673e2a",
+    "sourceAnswerPdfSha256": "f72ecbc3a477e64948388b69cf78cb931032c9f0c688639836c8d533a949cd0f",
+    "officialAnswerUnitsSha256": "ce1089f8a6b817636830daeafbe6a6fab27fe086b09120134291865e3730d875",
+    "referencePdfSha256": {},
+    "referencePageSha256": {},
+    "referenceJsonSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q06",
+      "questionNumber": 6,
+      "part": null,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "問題文: 添付原図（PDF第9頁、頁下部『- 6 -』『T1−K 009』）と照合。候補の問題文は原図と一致する。一致を確認した要素は、線間電圧V=360V、電機子電流I=20A、力率cosθ=1.0、三相同期電動機、電機子巻線Y結線、一相の同期リアクタンスx_s=6Ω、巻線抵抗の電圧降下無視、一相の誘導起電力E[V]、『最も近いもの』。変更は x_s の添字をプレーン表記 xs にした整形のみで、意味の変化はない。",
+        "選択肢: 原図の (1)130、(2)220、(3)240、(4)370、(5)380 と候補の choices 1〜5 が完全に一致する。単位表記がない点も原図と同じ。",
+        "公式正答: 解答表原図『令和6年度 上期 第三種電気主任技術者試験解答』の＜機械＞列、問6の値は『3』。manifest固定の公式正答単位 answer='3'、候補の officialAnswer='3' と一致する。",
+        "総合解説の検算: V_p=360/√3=207.85V、V_p²=129600/3=43200。I·x_s=20×6=120V、(I·x_s)²=14400。|E|=√(43200+14400)=√57600=240V ちょうどで、(3)と一致する。同期電動機の電圧方程式 V=E+jx_sI（E=V−jx_sI）の極性は正しい。力率1でIとV_pを実軸にとり、E=207.8−j120 とする扱いもベクトル的に整合する。",
+        "肢(1)の理由: cosθ=1では E=√(V_p²+(Ix_s)²)>V_p=207.8V が常に成り立つ。130Vはこれを満たさないという理由付けは正しい。",
+        "肢(2)の理由: √(43200+(120/√3)²)=√(43200+4800)=√48000=219.1V で、記載の≈219Vと一致する。誤答の生成過程として妥当である。",
+        "肢(3)の理由: 正答の計算過程は総合解説と一致し、数値も正しい。",
+        "肢(4)の理由: √(360²+69.28²)=√(129600+4800)=√134400=366.6V で、記載値と一致する。",
+        "肢(5)の理由: √(360²+120²)=√(129600+14400)=√144000=379.5V で、記載値と一致する。線間電圧を相電圧として扱った誤りという指摘は正しい。",
+        "図: 原図の問6に図はない。解答に図は不要で、figureDescription=null、figureUrls=[]、choiceFigureUrls={} は妥当である。",
+        "出典メタデータ: manifestと照合し、すべて一致する。一致を確認した項目は、fiscalYear=2024、term=upper、examDate=2024-08-18、subject=machinery、reviewedFromPage=[9]、sourceQuestionPdfUrl=…/20240818_ch_third_q03.pdf、sourceAnswerPdfUrl=…/20240818_ch_third_a01.pdf。sourceAttribution の『令和6年度上期…機械科目 問6』も2024年度上期・機械と整合する。",
+        "公式参考URL: officialReferenceUrls=[] で、検証が必要な独立主張はない。uncertainty の『240Vちょうど』という記述も検算結果（√57600=240）と一致し、needsReview=false は妥当である。"
+      ]
+    }
+  ]
+}

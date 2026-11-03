@@ -1,0 +1,64 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20250831",
+  "subject": "machinery",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 3262,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 14422,
+      "webSearchRequests": 0,
+      "costUSD": 0.1808798,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 1822,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "2ef5665814b446a5cad2c916cca9592bb61e6aa934c8619d39f0437ae51973f9",
+  "inputRequestSha256": "bf8e552c8b63600be78bf2951c684f3553ee230e4f706f37ded423bfce7bdc07",
+  "inputHashes": {
+    "candidateSha256": {
+      "q08": "251cc3267c380e29f9fea79b008e860888af80f00457ffcbfaeb6f539099aedc"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20250831/machinery/p11.png": "300767c4d582a4b6ddd271493e54f2d6ef233263324ce63178a7fc86fc005da7"
+    },
+    "figureSha256": {},
+    "sourceQuestionPdfSha256": "2a73a24594cc2b8bb7504b9a0ff15e001b2bb56b830572ce2be853f7116f26d8",
+    "sourceAnswerPdfSha256": "76fd3715ed487d19a56b387fb402de20ee09474e9fa55b0413f9037b96af06c9",
+    "officialAnswerUnitsSha256": "3b16851c6b8738a23c93c64e68a4e38968fe89a4f644398bac6810ceb9d422ec",
+    "referencePdfSha256": {},
+    "referencePageSha256": {},
+    "referenceJsonSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q08",
+      "questionNumber": 8,
+      "part": null,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "問題文: 公式原図と1文ずつ照合し一致。導入文、「パワーコンディショナは(ア)と系統連系用保護装置とが一体になった装置」「太陽光発電設備が(イ)状態を継続しないように」「(イ)の検出のために，電圧位相や(ウ)の急変などを常時監視する」「配電線側で発生する(エ)に対しては，系統からの不要な切り離しをしない」、設問指示文のいずれにも脱字・改変はない。(イ)が2箇所で使われている点も原図どおり再現されている。",
+        "選択肢: 原図の表の行(1)〜(5)×列(ア)〜(エ)の全20セルが候補と一致する。(1) 逆変換装置/自立運転/発電電力/停電、(2) 逆変換装置/単独運転/発電電力/瞬時電圧低下、(3) 逆変換装置/単独運転/周波数/瞬時電圧低下、(4) 整流装置/自立運転/発電電力/停電、(5) 整流装置/単独運転/周波数/停電。",
+        "公式正答: 公式解答表の＜機械＞列で問8＝3、配点5を確認した。manifestの正答単位 {question:8, part:null, answer:\"3\", points:5}、候補の officialAnswer=\"3\" および scoringPoints=5 と一致する。＜電力＞列の問8は2だが、sourceQuestionPdfUrl が q03（機械）であり、内容上も(3)が唯一整合するため、科目の取り違えはない。",
+        "内容の正しさ: (ア) 太陽電池の直流を交流に変換するのは逆変換装置（インバータ）で、整流装置は交流→直流なので不適。(イ) 事故時に継続させてはならないのは単独運転で、自立運転は解列後に特定負荷へ給電する意図的な運転形態。(ウ) 受動的方式で電圧位相跳躍とともに監視するのは周波数（変化率）。(エ) 不要解列を避ける対象は瞬時電圧低下（FRT要件）で、停電は解列すべき事象。以上から(3)が一意に正しく、公式正答と整合する。",
+        "総合解説: (ア)〜(エ)の各理由と因果（単独運転による感電・機器損傷・再閉路時の問題、一斉解列による供給力の急減、FRT）を検算し、誤りはない。本問は計算を要しない知識問題であり、「計算を要しない」との記述も正しい。",
+        "肢別解説: 各肢について正誤の空欄数を検算した。(1)は(イ)(ウ)(エ)の3つが誤り、(2)は(ウ)のみ誤り、(4)は4つすべて誤り、(5)は(ア)(エ)が誤り。いずれも候補の記述と一致する。各誤答肢には、誤っている空欄ごとに固有の理由が付されている。(3)の正答理由も4空欄すべてを根拠付けている。",
+        "図: 原図に回路図などの図はなく、解答に図は不要。figureDescription は選択肢を組合せ表として正しく記述している。figureUrls と choiceFigureUrls が空であることも妥当。",
+        "出典: officialReferenceUrls は空のため、検証を要する独立主張はない。sourceAttribution（令和7年度上期 機械 問8）、fiscalYear 2025（令和7年度）、term upper、examDate 2025-08-31 は、解答表の見出しおよびPDFのURL日付と整合する。reviewedFromPage [11] と原図の印刷頁「-8-」の差は表紙・注意事項頁によるオフセットとして整合的で、解答単位の特定に影響しない。"
+      ]
+    }
+  ]
+}

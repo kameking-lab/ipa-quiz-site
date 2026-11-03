@@ -1,0 +1,60 @@
+{
+  "questionNumber": 13,
+  "sharedContext": null,
+  "units": [
+    {
+      "part": null,
+      "question": "水晶振動子と水晶発振回路に関する記述として，誤っているものを次の(1)～(5)のうちから一つ選べ。",
+      "choices": {
+        "1": "水晶振動子は，水晶片を二つの電極で挟んだ素子である。",
+        "2": "水晶振動子の電気的な等価回路には，直列共振周波数と並列共振周波数の差が非常に小さいという特徴がある。",
+        "3": "水晶発振回路は，LC 発振回路のコンデンサを水晶振動子に置き換えたものである。",
+        "4": "水晶発振回路は，LC 発振回路と比較して周波数変動が非常に小さい。",
+        "5": "水晶発振回路を用いた周波数シンセサイザは，無線送信機の周波数源として利用されている。"
+      },
+      "officialAnswer": "3",
+      "explanation": "水晶振動子は，薄く切り出した水晶片の両面に電極を設けた素子で，圧電効果によって機械的振動と電気信号が結び付き，特定の周波数で鋭く共振する。\n\n電気的な等価回路は，直列に接続した L₁・C₁・R₁（機械的振動を表す枝）に，電極間の静電容量 C₀ を並列に接続した形で表される。\n・直列共振周波数：fs = 1 / (2π√(L₁C₁))\n・並列共振周波数：fp = 1 / (2π√(L₁·C₁C₀/(C₁+C₀))) = fs·√(1 + C₁/C₀)\n水晶振動子では C₁ ≪ C₀ なので，fp ≒ fs·(1 + C₁/(2C₀)) となり，fp − fs ≒ fs·C₁/(2C₀) は fs に比べて非常に小さい。\n\nfs と fp の間の狭い周波数範囲では，水晶振動子のリアクタンスは誘導性（コイルとして振る舞う）になる。一般的な水晶発振回路（ピアース形など）は，この誘導性領域を利用し，LC 発振回路（コルピッツ形など）の「コイル」を水晶振動子に置き換えた構成になっている。したがって「コンデンサを水晶振動子に置き換えた」とする(3)が誤りである。\n\n水晶振動子は Q が非常に高く，発振周波数が fs と fp の狭い範囲に拘束されるため，LC 発振回路に比べて周波数安定度が高い。この安定した発振を基準として，PLL などを用いて所望の周波数を作る周波数シンセサイザが構成され，無線送信機の周波数源として用いられている。",
+      "choiceExplanations": {
+        "1": "正しい。水晶振動子は，水晶片を二つの電極で挟んだ（両面に電極を設けた）構造の素子であり，電極間に加えた電圧による圧電効果で機械的振動を起こす。",
+        "2": "正しい。等価回路の直列共振周波数 fs = 1/(2π√(L₁C₁)) と並列共振周波数 fp = fs·√(1 + C₁/C₀) の差は，C₁ ≪ C₀ のためおよそ fs·C₁/(2C₀) となり，非常に小さい。",
+        "3": "誤り。水晶振動子は fs と fp の間で誘導性リアクタンスを示すため，水晶発振回路は LC 発振回路のコンデンサではなく，コイルを水晶振動子に置き換えた構成である。",
+        "4": "正しい。水晶振動子は Q が非常に高く，発振周波数が直列共振周波数と並列共振周波数の間の狭い範囲に限定されるため，LC 発振回路と比べて周波数変動が非常に小さい。",
+        "5": "正しい。水晶発振回路の安定な周波数を基準信号とし，PLL などで任意の周波数を合成する周波数シンセサイザは，無線送信機の周波数源として利用されている。"
+      },
+      "figureDescription": "本問には図はない。問題文と選択肢(1)～(5)の文字情報のみで構成されている。",
+      "officialReferenceUrls": [],
+      "uncertainty": "問題ページ上には試験の年度・期（上期／下期）の表記がなく，出典となる試験回をこのページだけからは特定できない。ページ下部には「- 15 -」の頁番号と「T2－R 018」の管理記号が印字されている。",
+      "needsReview": true,
+      "sourceQuestionPdfUrl": "https://www.shiken.or.jp/chief/upload/20260322_ch_third_q01.pdf",
+      "sourceAnswerPdfUrl": "https://www.shiken.or.jp/chief/upload/20260322_ch_third_a01.pdf",
+      "reviewedFromPage": [
+        18
+      ]
+    }
+  ],
+  "draftModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 2683,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 9309,
+      "webSearchRequests": 0,
+      "costUSD": 0.1283958,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 1093,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "fb4b09323cfbb023b478a4ab6cf43830977e26d61cd8138352b4c1be5ae999f3",
+  "inputRequestSha256": "5fe7f6537506ae6ae75d4856411c389b333f55e3bc109fb026dbdf1de35c28e3",
+  "sourceQuestionPdfSha256": "c83e7c7350d98b65f5d8da0b93e4a2581a19dd250be320fb7fc492c9b34a29c1",
+  "sourceAnswerPdfSha256": "cc2890296d06a4823df5697a78a1c01ddfd39f041c51f48c87984daa3a5707c6",
+  "sourcePageImageSha256": {
+    "data/raw_pdfs/denken3/review/20260322/theory/p18.png": "dbc674abccbc71f188e90545535e13846955f7ad39ae7eaf3109cee64b5de0c2"
+  }
+}

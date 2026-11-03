@@ -1,9 +1,10 @@
 import Link from "next/link";
 import { Sparkles, ExternalLink, Info } from "lucide-react";
+import { ipaSourceLabel, isPdfDocumentUrl } from "@/lib/exam-config";
 
 interface Props {
-  lastUpdatedISO: string;
-  lastUpdatedJa: string;
+  lastUpdatedISO?: string;
+  lastUpdatedJa?: string;
   sourcePdfUrl: string;
   answerPdfUrl: string;
   sourceAttribution?: string;
@@ -26,36 +27,36 @@ export function AiTransparencyDisclaimer({
   sourceAttribution,
 }: Props) {
   return (
-    <details className="group relative mt-4 inline-block text-xs">
+    <details open className="group mt-4 rounded-xl border border-border bg-muted/20 p-3 text-xs">
       <summary className="inline-flex cursor-pointer list-none items-center gap-1.5 rounded-full border border-border bg-muted/40 px-2.5 py-1 font-medium text-muted-foreground transition hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background [&::-webkit-details-marker]:hidden">
         <Sparkles className="h-3 w-3 text-primary" aria-hidden="true" />
-        AI生成
+        解説・公式出典について
         <Info className="h-3 w-3 opacity-60" aria-hidden="true" />
       </summary>
       <div
         role="group"
         aria-label="AI生成の解説に関する詳細"
-        className="absolute left-0 z-20 mt-2 w-[min(20rem,calc(100vw-2rem))] space-y-2 rounded-xl border border-border bg-card p-3 leading-relaxed text-muted-foreground shadow-lg"
+        className="mt-3 space-y-2 leading-relaxed text-muted-foreground"
       >
         <p>
-          解説は公式の問題文・公式解答を基に作成しています。
+          解説は学習支援用に作成したもので、試験実施機関による公式解説ではありません。
           事実誤認・選択肢の取り違え・最新法令の反映漏れ等を含む可能性があるため、
           重要な判断は必ずリンク先の公式資料でご確認ください。
         </p>
-        <p>
+        {lastUpdatedISO && lastUpdatedJa && <p>
           最終更新:{" "}
           <time dateTime={lastUpdatedISO} className="font-medium text-foreground">
             {lastUpdatedJa}
           </time>
-        </p>
+        </p>}
         <div className="flex flex-wrap gap-x-4 gap-y-1">
           <a
             href={sourcePdfUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex w-fit items-center gap-1 font-medium text-foreground underline decoration-border underline-offset-4 transition hover:decoration-primary"
+            className="inline-flex min-h-11 w-fit items-center gap-1 font-medium text-foreground underline decoration-border underline-offset-4 transition hover:decoration-primary"
           >
-            公式問題 PDF
+            {isPdfDocumentUrl(sourcePdfUrl) ? "公式問題PDF" : "公式問題の公開ページ"}（{ipaSourceLabel(sourcePdfUrl, "question")}）
             <ExternalLink className="h-3 w-3" aria-hidden="true" />
           </a>
           <a
@@ -64,17 +65,17 @@ export function AiTransparencyDisclaimer({
             rel="noopener noreferrer"
             className="inline-flex w-fit items-center gap-1 font-medium text-foreground underline decoration-border underline-offset-4 transition hover:decoration-primary"
           >
-            公式解答 PDF
+            {isPdfDocumentUrl(answerPdfUrl) ? "公式正答PDF" : "公式正答の公開ページ"}（{ipaSourceLabel(answerPdfUrl, "answer")}）
             <ExternalLink className="h-3 w-3" aria-hidden="true" />
           </a>
         </div>
         {sourceAttribution && <p>{sourceAttribution}</p>}
         <p>
-          検証プロセス・誤り報告フローは{" "}
-          <Link href="/transparency" className="font-medium underline">
-            運営透明性レポート
+          制作・確認範囲・誤り報告の手順は{" "}
+          <Link href="/transparency#static-explanations" className="font-medium underline">
+            静的解説の確認方針
           </Link>
-          で公開しています。
+          で説明しています。出典リンクや自動テストだけで、解説全体の正確性が保証されるわけではありません。
         </p>
       </div>
     </details>

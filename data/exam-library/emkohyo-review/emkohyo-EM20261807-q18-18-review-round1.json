@@ -1,0 +1,52 @@
+{
+  "reviewModel": "claude-opus-5-5",
+  "requestedModel": "claude-opus-5-5",
+  "canonicalModel": "claude-opus-5-5",
+  "provider": "firstParty",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 1678,
+      "cacheReadInputTokens": 143524,
+      "cacheCreationInputTokens": 15480,
+      "webSearchRequests": 0,
+      "costUSD": 0.18611280000000002,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 1380,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "paperId": "emkohyo-EM20261807",
+  "ids": [
+    "emkohyo-EM20261807-q18"
+  ],
+  "figureSha256": {
+    "emkohyo-EM20261807-q18": {}
+  },
+  "officialRowImageSha256": {
+    "emkohyo-EM20261807-q18": {
+      "/exam-library/emkohyo-EM20261807/q18-p12-0.webp": "da929843b9af81ebaa11a820bf79afce6c9cdd5b310b61595a41697edf12ffc8"
+    }
+  },
+  "governmentSourceImageSha256": {},
+  "candidateSha256": {
+    "emkohyo-EM20261807-q18": "b3e192606fe356a3c9ab286c0192537bea461735567db72d6460a13448cefa58"
+  },
+  "sourcePackPath": "docs/evidence/emkohyo-choice-sources/emkohyo-EM20261807-q18-18.json",
+  "sourcePackSha256": "2e7edf37e744e9531248151d52e5b456cf2d7d224ca8ff740734d399c885b12f",
+  "assessment": {
+    "emkohyo-EM20261807-q18": {
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "reasonIssues": [
+        "肢2の理由にある「ろ過捕集方法が選択肢に含まれず」の「選択肢」は、この問題の選択肢1〜5と読み違えるおそれがある。ここで言いたいのは作業環境測定基準の別表に指定された試料採取方法のことなので、「別表で指定された試料採取方法（液体捕集方法、固体捕集方法又は直接捕集方法）にろ過捕集方法は含まれず」などの表現に改める。判定（incorrect）と根拠自体は別表の記載と一致しており、問題ない。"
+      ],
+      "sourceIssues": [],
+      "needsExternalCheck": []
+    }
+  }
+}

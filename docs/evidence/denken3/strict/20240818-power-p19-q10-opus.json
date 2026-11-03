@@ -1,0 +1,66 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20240818",
+  "subject": "power",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 5614,
+      "cacheReadInputTokens": 139443,
+      "cacheCreationInputTokens": 21678,
+      "webSearchRequests": 0,
+      "costUSD": 0.3136006,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 3943,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "a75dcf474b00fc36381e37b1e0ec9467b89aa2dbdfb57515ffcef05ff7ab74fb",
+  "inputRequestSha256": "6b20382cbce1853312ba4380aff7f1ae84a81b4dd5b52b1d07d6e83e766e483e",
+  "inputHashes": {
+    "candidateSha256": {
+      "q10": "05d64d271d8016d0945331621d5376810b140b936eff76b1215d4cbc7575c553"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20240818/power/p14.png": "8c66580e003a678df27ba9b992032a7a967a3e9f90fcb6bb5131777edf526cac",
+      "data/raw_pdfs/denken3/review/20240818/power/p15.png": "3ac69c08afcff83f88241ac07b3f48d79b44ba9ac95c786789ab798a311ca5d4"
+    },
+    "figureSha256": {
+      "public/images/denken3/20240818/power/20240818-power-q10-murray-loop.png": "8aa1a3a8e3522f0bf196a564c58c7bf0af93572f4a5c1a3c56f40ecc8b2d5d2a"
+    },
+    "sourceQuestionPdfSha256": "0bc54a85819b9d9c80d1574c5b8c02a3c28976565d8c9068a3dd0344a3db5700",
+    "sourceAnswerPdfSha256": "f72ecbc3a477e64948388b69cf78cb931032c9f0c688639836c8d533a949cd0f",
+    "officialAnswerUnitsSha256": "d21b233ae17741c69fbe9f2345a20308d79fe9e9b03e94f4cac2adbe2ce4fc5b"
+  },
+  "assessment": [
+    {
+      "unitKey": "q10",
+      "questionNumber": 10,
+      "part": null,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "Official answer sheet (令和6年度上期, 電力 column): 問10 = 4. This matches the manifest's official answer {question:10, part:null, answer:\"4\"} and the candidate's officialAnswer \"4\".",
+        "The question text matches the original's wording, symbols and quantities line by line: the answer blanks (ア)(イ)(ウ)(エ), 導体と遮へい層の間に地絡故障, the 逆側端部 where ケーブルA and ケーブルB are joined, L, x, the full scale 1000 (1 000 in the original), the reading a, and the ただし condition (same specification, same length, connecting-line impedance ignored). Changes are limited to punctuation (，→、) and merging paragraphs, which is covered by the 整形 note in sourceAttribution and does not change the meaning.",
+        "Each of choices (1) to (5) matches the original table exactly for (ア), (イ), (ウ) and (エ): (1) ホイートストン/遮へい層/aL/500/十分低い, (2) シェーリング/導体/2L−aL/500/十分高い, (3) シェーリング/遮へい層/2L−aL/500/十分高い, (4) ホイートストン/導体/aL/500/十分低い, (5) ホイートストン/導体/aL/500/十分高い. Under normal operator precedence, 2L−aL/500 means 2L−(aL/500), the same as the original fraction.",
+        "Bridge check against the figure: the slide wire runs from 0 (cable A terminal, node N4) through the slider (N1) to 1000 (cable B terminal, N2). The power supply is connected between the slider and ground, and the ground path reaches the fault point N3 through the grounded shield and the fault. The galvanometer is connected across N2 and N4. The four arms are P = a (N4 to N1), Q = 1000−a (N1 to N2), R = 2L−x (N2 to N3, through cable B, the far-end connecting line and the remaining length L−x of cable A), and X = x (N3 to N4). The balance condition V2 = V4 gives QX = PR, so a/(1000−a) = x/(2L−x). Solving: 2aL = 1000x, so x = aL/500. This agrees with the candidate's a/x = (1000−a)/(2L−x) and its step-by-step working.",
+        "(エ) check: the fault resistance is in series with the supply circuit (slider to ground to fault), not in a bridge arm, so it does not change the balance point. If it is high, however, less current reaches the galvanometer and the balance detection loses sensitivity. That makes 十分低い correct, and the explanation states the reason consistently with this.",
+        "(イ) check: to build the arms X and R from the conductor path through the fault point, the conductors must be joined at the far end. The candidate's reason for rejecting 遮へい層 is appropriate: joining the shields does not produce the conductor-resistance arms.",
+        "Each choice explanation is correct. (1) is wrong only on (イ). (2) is wrong on (ア), (ウ) and (エ). (3) is wrong on all four; the Schering bridge measures capacitance and dielectric loss, so it is not the principle here. (4) is consistent on every blank. (5) is wrong only on (エ).",
+        "figureDescription agrees with the original: the dial's 0 side is at the cable A terminal line and its 1000 side at the cable B terminal line. The galvanometer is across the terminal lines, and the power supply runs from the slider to ground. Both cables are drawn with length L, joined at the far end by a connecting line. The fault × is on the cable A conductor at distance x, and the shields are grounded near the near end.",
+        "The published candidate figure 20240818-power-q10-murray-loop.png is a crop of the original figure with no missing labels or connections: マーレーループ装置, 1 000, 0, a, 検流計 (arrow), 電源, the ground symbols (device and cable side), ケーブル線路, L with dimension arrows, ケーブルB, ケーブルA, the fault ×, x with dimension arrows, 故障点, the far-end terminals and 接続線 with its arrow are all present. The connections and orientation match, so the figure alone is enough to follow the bridge configuration needed for the answer.",
+        "reviewedFromPage [14,15] agrees with the page identifiers T1-D 014 and T1-D 015 printed on the original pages. officialReferenceUrls is empty, so there are no independent claims that need external confirmation."
+      ]
+    }
+  ]
+}

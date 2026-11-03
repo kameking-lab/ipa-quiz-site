@@ -193,11 +193,20 @@ export async function checkRateLimit(opts: RateLimitOpts): Promise<RateLimitResu
   const tokenKey =
     feedbackSubmitted && feedbackTokenId ? `rl:day:tok:${feedbackTokenId}` : null;
 
-  const [minCount, dayCount, tokenCount] = await Promise.all([
-    peek(minKey, minuteBuckets),
-    peek(dayKey, dayBuckets),
-    tokenKey ? peek(tokenKey, tokenBuckets) : Promise.resolve(0),
-  ]);
+  // Without KV, admission must run synchronously through all reads, checks and
+  // writes. An await here lets concurrent calls all admit against the same count.
+  // Keep configured-KV behavior separate; this is only single-process atomicity.
+  const [minCount, dayCount, tokenCount] = USE_KV
+    ? await Promise.all([
+        peek(minKey, minuteBuckets),
+        peek(dayKey, dayBuckets),
+        tokenKey ? peek(tokenKey, tokenBuckets) : Promise.resolve(0),
+      ])
+    : [
+        memPeek(minKey, minuteBuckets),
+        memPeek(dayKey, dayBuckets),
+        tokenKey ? memPeek(tokenKey, tokenBuckets) : 0,
+      ];
 
   if (minCount >= BETA_MINUTE_LIMIT) {
     return {
@@ -231,13 +240,19 @@ export async function checkRateLimit(opts: RateLimitOpts): Promise<RateLimitResu
     };
   }
 
-  await Promise.all([
-    consume(minKey, minuteBuckets, WINDOW_MS_MINUTE, minResetAt),
-    consume(dayKey, dayBuckets, WINDOW_MS_DAY, dayResetAt),
-    tokenKey
-      ? consume(tokenKey, tokenBuckets, WINDOW_MS_DAY, dayResetAt)
-      : Promise.resolve(),
-  ]);
+  if (USE_KV) {
+    await Promise.all([
+      consume(minKey, minuteBuckets, WINDOW_MS_MINUTE, minResetAt),
+      consume(dayKey, dayBuckets, WINDOW_MS_DAY, dayResetAt),
+      tokenKey
+        ? consume(tokenKey, tokenBuckets, WINDOW_MS_DAY, dayResetAt)
+        : Promise.resolve(),
+    ]);
+  } else {
+    memConsume(minKey, minuteBuckets, minResetAt);
+    memConsume(dayKey, dayBuckets, dayResetAt);
+    if (tokenKey) memConsume(tokenKey, tokenBuckets, dayResetAt);
+  }
 
   return {
     ok: true,

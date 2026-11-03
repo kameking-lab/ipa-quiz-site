@@ -1,0 +1,73 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20240818",
+  "subject": "law",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 4363,
+      "cacheReadInputTokens": 121094,
+      "cacheCreationInputTokens": 24970,
+      "webSearchRequests": 0,
+      "costUSD": 0.3112468,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 2864,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "c74cf4e0050ffc90a4345a07a158b32f75a5658fa1578067e5e7001f78d7ec6b",
+  "inputRequestSha256": "805bacd0bc3e9cf12e29feca8fde153ce463942a2a92650473b1684fa0c8ba31",
+  "inputHashes": {
+    "candidateSha256": {
+      "q01": "cf58fa9c081d3eb0668e184ff2b7fa9a8b5e26442adec937e3c75802e3571248"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20240818/law/p04.png": "0ac887459630a5c0c2df2467c4d93b5fadc651a9001ea1230c14caa8f8b4c9d1",
+      "data/raw_pdfs/denken3/review/20240818/law/p05.png": "cb7bdacf5b2818215784307c468bcc447b524bfd74a2fe7d42fb224aa7f8a7cd"
+    },
+    "figureSha256": {},
+    "sourceQuestionPdfSha256": "5dbba8b8e4ec681d2d5f0645a3895a6e218d936519ddd18ac544ddc461a1ae78",
+    "sourceAnswerPdfSha256": "f72ecbc3a477e64948388b69cf78cb931032c9f0c688639836c8d533a949cd0f",
+    "officialAnswerUnitsSha256": "880c9a33ab54bfc54a686bb9d3e08401cc63a6c742f17cfbc634a63cfbb7d34b",
+    "referencePdfSha256": {
+      "data/raw_pdfs/denken3/review/meti-denjigyo-law-2020.pdf": "7ca59c706dcf3158e8c1624ca0547ba5f7387a1d7ed810f870cb4e03a9ed6450"
+    },
+    "referencePageSha256": {
+      "data/raw_pdfs/denken3/review/references/meti-denjigyo-law-2020-p448.png": "2884a1f08467ba2b9cb7db1066df75250dfe7bed31a6ebd3a92ed08a0fa092d7",
+      "data/raw_pdfs/denken3/review/references/meti-denjigyo-law-2020-p452.png": "a7c0adf4ea4e507127a9ed388e13e53cba0f3b4fe6110bc13e4198e3ebd97e16",
+      "data/raw_pdfs/denken3/review/references/meti-denjigyo-law-2020-p453.png": "29c0c4263f173673c091932d11bdda6916ca60a73d0491df20a9f5d82aaaecac"
+    }
+  },
+  "assessment": [
+    {
+      "unitKey": "q01",
+      "questionNumber": 1,
+      "part": null,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "問題文: 公式原図の印刷頁-1-（T1-H 004）と-2-（T1-H 005）を一字ずつ照合した。本文は完全に一致する。導入文、a)（空欄ア）、b)の柱書と①〜④、c)（空欄ウ）、設問文の順に確認した。③の「一般送配電事業者又は配電事業者」、④の「一般送配電事業又は配電事業」、④の「あつて」も原図どおりである。違いは、全角「ａ）」を半角「a)」に変えるなどの整形だけで、意味は変わらない。",
+        "選択肢: 原図の表と(1)〜(5)の5組がすべて一致する。(1)設置・磁気・一時停止、(2)維持・磁気・一時停止、(3)設置・熱・禁止、(4)維持・熱・禁止、(5)設置・熱・一時停止。",
+        "公式正答: 令和6年度上期の解答表で、法規 問1＝2。候補JSONのofficialAnswer＝\"2\"と一致する。",
+        "空欄(ア)＝維持: 参考PDF第448頁（印刷頁427）の第39条第1項「…技術基準に適合するように維持しなければならない。」で確認した。見出しも「(事業用電気工作物の維持)」であり、「維持」と裏付けられる。",
+        "空欄(イ)＝磁気: 参考PDF第448頁の第39条第2項第2号「電気的又は磁気的な障害を与えないようにすること」で確認した。同項の第1号〜第4号はすべてこの頁に載っており、「熱的な障害」の規定はない。したがって、解説の「熱的な障害という規定は同条にない」は正しい。",
+        "空欄(ウ)＝一時停止: 参考PDF第452頁（印刷頁431）〜第453頁（印刷頁432）の第40条「…若しくはその使用を一時停止すべきことを命じ、又はその使用を制限することができる。」で確認した。第453頁の解説にも「使用の一時停止」とあり、文言は「禁止」ではない。",
+        "参考PDFの版: 参考PDFは第39条第2項第3号・第4号に配電事業を含まない、改正前の条文である。ただし、公式問題の空欄以外の文言は参考PDFの第39条第1項・第2項第2号・第40条と完全に一致する。空欄の語は公式正答2で決まる。したがって、令和6年4月1日現在の空欄箇所の文言は、添付資料だけで確かめられる。③④の配電事業の文言は公式原図から転記されており、候補のuncertainty欄にもその旨が明記されている。未確認の独立主張はない。",
+        "総合解説: (ア)(イ)(ウ)それぞれの根拠条文、語を選ぶ理由、結論の(2)が、添付の条文頁と矛盾しない。",
+        "各肢の解説: (1)は(ア)だけが誤り。(2)は全箇所が正しい。(3)は3箇所とも誤り。(4)は(イ)(ウ)が誤り。(5)は(ア)(イ)が誤り。各肢で、正しい箇所と誤った箇所の特定を正答の組合せと照合し、すべて正確であった。",
+        "図: この問題に回路図などはなく、選択肢表はchoicesに全文が転記されている。そのため、figureUrlsが空でも解答できる。figureDescriptionの「第5頁（印刷頁-2-、T1-H 005）」は、reviewedFromPage=[4,5]と、原図の頁番号・頁コードに一致する。",
+        "出典URL: sourceQuestionPdfUrl（20240818_ch_third_q04.pdf＝法規の問題冊子）とsourceAnswerPdfUrl（a01）を確認した。officialReferenceUrlsの#page=448・452・453は、添付した参考資料の頁と一致する。"
+      ]
+    }
+  ]
+}

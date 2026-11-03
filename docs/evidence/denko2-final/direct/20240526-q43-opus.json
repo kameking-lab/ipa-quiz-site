@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "receiptKind": "canonicalized-direct-review",
+  "paper": "20240526",
+  "reviewModel": "claude-opus-5-5",
+  "upstreamReviewReceipt": "docs/evidence/denko2-strict-20240526/finalpin6-q16-42-43-opus.json",
+  "upstreamReviewSha256": "76791f72fb4238edaeb998d93c6ccdb7330cf23954a56e9f47039e59b09633c7",
+  "candidateEquivalenceProof": "current per-question candidate hash equals a clean source-aware direct Opus input hash",
+  "inputHashes": {
+    "draftSha256": "20a64754e91cd3eb76fe9918dfff65fbbcda8651c5102c83682fa10f00b31823",
+    "rowSha256": {
+      "43": "07948aac1410e898f37fff9574a2d62d2f07d73abd32d2b826d8f22e886181a7"
+    },
+    "detailFigureSha256": {
+      "public/images/denko2/2024-first/wiring-main.png": "96f2acfccdeb2327128a8106364d853365146f947233b9b231a3b1a48d4173b7",
+      "public/images/denko2/2024-first/wiring-panels.png": "17d82087689eb0571154d640cc3822ce5a9c3d7355a0ad1ac7a22577d8e986fe",
+      "public/images/denko2/2024-first/q43-i.png": "5c1223cc71d20f3e399da48fdaca9af39bf29eb4b3880965fb4dd9122520c42e",
+      "public/images/denko2/2024-first/q43-ro.png": "72eb7269f149fff6627e41ae6b7a21bbb9974eb189cb609c1d20a45155a9a1d3",
+      "public/images/denko2/2024-first/q43-ha.png": "2006b066284bb03402ec44000f9abf0ddb7cbcff70e7b94fdaf3f00935840ecd",
+      "public/images/denko2/2024-first/q43-ni.png": "60bbf966c42e85de7067035626e4ab924b0933edec0db44cb22f080c8b3468e7"
+    },
+    "sharedFigureSha256": {},
+    "legalReceiptSha256": {}
+  },
+  "assessment": [
+    {
+      "number": 43,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "visualIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": "公式問題43の原図（否定形『使用されることのない』を含む）と公式正答イを照合。4肢の切出しq43-i/ro/ha/ni.pngは原図の各写真と一致。公式共通配線図（15頁）で⑬が『(VE28)』の管路を指すことを確認。国交省 https://www.mlit.go.jp/gobuild/content/001888825.pdf（SHA bec6ec62…の公式抽出本文）で次を確認: 表1.2.3（VE＝JIS C 8430硬質ビニル管）、2.12.4(8)（地中での硬質ビニル管の敷設）、2.4.3(2)『管の切口は、リーマ等を使用して平滑にする』、2.4.3(5)『管を加熱する場合は、過度にならないようにし、焼けこげを生じないように』、2.4.5(1)（TSカップリングと接着剤による接続）。切断・面取り・加熱の工具を使い、ねじ接合用の把持工具イを一般には使わないという整理は、公式正答と整合する。"
+    }
+  ]
+}

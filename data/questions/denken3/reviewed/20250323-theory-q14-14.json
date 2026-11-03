@@ -1,0 +1,40 @@
+[
+  {
+    "part": null,
+    "question": "固有の名称をもつ SI 組立単位の記号と，これと同じ内容を表す他の表し方の組合せとして，誤っているものを次の(1)〜(5)のうちから一つ選べ。",
+    "choices": {
+      "1": "F ／ C/V",
+      "2": "Wb ／ V/s",
+      "3": "S ／ A/V",
+      "4": "T ／ Wb/m²",
+      "5": "W ／ J/s"
+    },
+    "officialAnswer": "2",
+    "explanation": "各組立単位を定義式に戻して確認する。(1) 静電容量 C = Q/V より、[F]=[C]/[V]（[C]は電荷の単位クーロン） で正しい。(2) 磁束 Φ と誘導起電力 e の関係は e = −dΦ/dt なので、単位の関係は[Wb]=[V]·[s]である。問題のV/sはVをsで割っているので、Vにsを掛ける正しい単位V·sと異なり誤り。(3) コンダクタンス G = I/V なので S = A/V で正しい。(4) 磁束密度 B = Φ/(面積[m²])なので T = Wb/m² で正しい。(5) 電力 P = E/t（Eはエネルギー）なので W = J/s で正しい。以上より誤っているのは (2)。",
+    "choiceExplanations": {
+      "1": "静電容量は C = Q/V（電荷/電圧）で定義され、[F]=[C]/[V]（クーロン毎ボルト）。表の対応は正しいので誤りではない。",
+      "2": "磁束の単位 Wb は、誘導起電力の大きさ e = dΦ/dt から 単位の関係は[Wb]=[V]·[s]である。表の V/s は V·s ではないため誤り。これが正答。",
+      "3": "コンダクタンス（抵抗の逆数）G = I/V なので S = A/V。表の対応は正しい。",
+      "4": "磁束密度 B = Φ/(面積[m²])なので T = Wb/m²。表の対応は正しい。",
+      "5": "電力は単位時間あたりのエネルギーなので W = J/s。表の対応は正しい。"
+    },
+    "figureDescription": "図はなし。問題文の下に、SI組立単位の記号（F, Wb, S, T, W）と、SI基本単位及びSI組立単位による他の表し方（C/V, V/s, A/V, Wb/m², J/s）を対応させた(1)〜(5)の表がある。表の内容は選択肢に転記済みで、追加の図は不要。",
+    "officialReferenceUrls": [],
+    "uncertainty": "原図の表は「記号／他の表し方」の2列で、選択肢では「／」で区切って記録した。(2)の説明中、e = −dΦ/dt の符号は向きを表すだけで、単位の大きさの議論には影響しない。政府の一次資料URLは特定できていないため空配列とした。",
+    "needsReview": false,
+    "sourceQuestionPdfUrl": "https://www.shiken.or.jp/chief/upload/20250323_ch_third_q01.pdf",
+    "sourceAnswerPdfUrl": "https://www.shiken.or.jp/chief/upload/2024_3_2.pdf",
+    "reviewedFromPage": [
+      18
+    ],
+    "questionNumber": 14,
+    "fiscalYear": 2024,
+    "term": "lower",
+    "examDate": "2025-03-23",
+    "subject": "theory",
+    "scoringPoints": null,
+    "sourceAttribution": "出典：令和6年度下期第三種電気主任技術者試験 理論科目 問14。問題文・選択肢を読みやすく整形。",
+    "figureUrls": [],
+    "choiceFigureUrls": {}
+  }
+]

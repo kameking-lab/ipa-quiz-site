@@ -1,0 +1,59 @@
+{
+  "status": "partial-accepted",
+  "date": "20250323",
+  "subject": "law",
+  "questionCount": 2,
+  "answerUnitCount": 2,
+  "choiceCount": 10,
+  "sourceQuestionPdfSha256": "6b47d422b7fb05b949f366b2c550a00365e1bdffa5c2800368fab9f29d79c84e",
+  "sourceAnswerPdfSha256": "4c3b38fcf1405766fafaa78b1b05b867a3d48307a670b9d354476bc6b32acd4c",
+  "reviewedDataSha256": "96de4f95e8b46bc19258c77d8f01e1c8997d7d14780bf975af3029eccaf388e9",
+  "questions": [
+    {
+      "number": 9,
+      "sourceDraftSha256": "9401a3e1ec864cfabcb217d7d561625edd71e52356ac8df62a006802a16462bf",
+      "opusReceipt": "data/raw_pdfs/denken3/review/20250323/law/q09-10-opus-review.json",
+      "opusReceiptSha256": "0bc8a5e9ab31db9fce18fef58e4379d2a97939020531f5ba8c0a4534f529f732",
+      "assessment": {
+        "number": 9,
+        "status": "PASS",
+        "textIssues": [],
+        "choiceIssues": [],
+        "explanationIssues": [],
+        "figureIssues": [],
+        "externalSourceIssues": []
+      },
+      "figureSha256": {}
+    },
+    {
+      "number": 10,
+      "sourceDraftSha256": "57907f5215f8e97d203067ccc293151aef425cdae316096c63cf3cc64bad741c",
+      "opusReceipt": "data/raw_pdfs/denken3/review/20250323/law/q09-10-opus-review.json",
+      "opusReceiptSha256": "0bc8a5e9ab31db9fce18fef58e4379d2a97939020531f5ba8c0a4534f529f732",
+      "assessment": {
+        "number": 10,
+        "status": "PASS",
+        "textIssues": [],
+        "choiceIssues": [],
+        "explanationIssues": [],
+        "figureIssues": [],
+        "externalSourceIssues": []
+      },
+      "figureSha256": {}
+    }
+  ],
+  "strictReview": {
+    "q10": {
+      "path": "docs/evidence/denken3/strict/20250323-law-l9-q09-q10-opus.json",
+      "sha256": "2449077f7885394936a52e68004f3f6bba3587fc4c9bab92ad64d3618831e06a",
+      "status": "PASS",
+      "resolvedModel": "claude-opus-5-5"
+    },
+    "q09": {
+      "path": "docs/evidence/denken3/strict/20250323-law-l13-q09-opus.json",
+      "sha256": "62fc77df84792297bd44b4aa7b8662540e50e14692fdf4e4665fc1650fb62b65",
+      "status": "PASS",
+      "resolvedModel": "claude-opus-5-5"
+    }
+  }
+}

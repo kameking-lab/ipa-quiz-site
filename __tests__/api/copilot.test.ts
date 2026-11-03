@@ -86,6 +86,26 @@ describe("POST /api/copilot", () => {
     expect(res.status).toBe(400);
   });
 
+  it("rejects a question ID outside the published corpus", async () => {
+    const res = await POST(makeReq({
+      question: { id: "not-a-published-question", question: "偽の問題", answer: "ア" },
+      messages: [{ role: "user", content: "解説して" }],
+    }, "10.2.0.8"));
+    expect(res.status).toBe(400);
+    expect((await res.json()).error).toBe("unknown_question");
+  });
+
+  it("uses a published ID even if the browser sends altered answer data", async () => {
+    const res = await POST(makeReq({
+      question: { ...validQuestion, answer: "偽", explanation: "偽の解説" },
+      selectedChoice: "ア",
+      isCorrect: false,
+      messages: [{ role: "user", content: "この問題を解説して" }],
+    }, "10.2.0.9"));
+    expect(res.status).toBe(200);
+    expect(await drainStream(res)).toBeTruthy();
+  });
+
   it("returns a streamed text/plain body via mock provider with expected headers", async () => {
     const res = await POST(
       makeReq(
@@ -99,7 +119,7 @@ describe("POST /api/copilot", () => {
     expect(res.status).toBe(200);
     expect(res.headers.get("Content-Type")).toContain("text/plain");
     expect(res.headers.get("X-Provider")).toBe("mock");
-    expect(res.headers.get("X-RateLimit-Limit")).toBeTruthy();
+    expect(res.headers.get("X-RateLimit-Limit")).toBeNull();
     expect(res.headers.get("X-RAG-Enabled")).toMatch(/^[01]$/);
 
     const body = await drainStream(res);
@@ -118,5 +138,19 @@ describe("POST /api/copilot", () => {
       ),
     );
     expect(res.status).toBe(400);
+  });
+
+  it("does not call paid Gemini when the shared abuse counter is unavailable", async () => {
+    process.env.GEMINI_API_KEY = "test-key";
+    try {
+      const res = await POST(makeReq({
+        question: { id: validQuestion.id },
+        messages: [{ role: "user", content: "解説して" }],
+      }, "10.2.0.10"));
+      expect(res.status).toBe(503);
+      expect((await res.json()).error).toBe("rate_limit_unavailable");
+    } finally {
+      delete process.env.GEMINI_API_KEY;
+    }
   });
 });

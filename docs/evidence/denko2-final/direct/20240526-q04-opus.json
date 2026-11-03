@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "receiptKind": "canonicalized-direct-review",
+  "paper": "20240526",
+  "reviewModel": "claude-opus-5-5",
+  "upstreamReviewReceipt": "docs/evidence/denko2-strict-20240526/finalpin-q01-02-03-04-05-opus.json",
+  "upstreamReviewSha256": "d83f2e6100cd366b62cb135f5df0cdc08a6f1d2d739023b8b165895a491ad262",
+  "candidateEquivalenceProof": "current per-question candidate hash equals a clean source-aware direct Opus input hash",
+  "inputHashes": {
+    "draftSha256": "6c51f6bc0a11898bf8c740bb521297c6f83103484c1d1fb9ac310b5a94ae1c52",
+    "rowSha256": {
+      "4": "b008d0a83a7730a57ad208e4aa119f1edc3ffb358afbd7b7d6cd2e319511d340"
+    },
+    "detailFigureSha256": {},
+    "sharedFigureSha256": {},
+    "legalReceiptSha256": {}
+  },
+  "assessment": [
+    {
+      "number": 4,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "visualIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": "公式原図と公式正答を照合。問題文と4つの式は原図と一致。P×10³=√3VIcosθ を解くと力率[%]=P×10⁵/(√3VI) となり、公式正答イと合う。ロが正しい式の3倍になること、ハとニが分数の上下を逆にしていることも確認した。"
+    }
+  ]
+}

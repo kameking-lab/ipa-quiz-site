@@ -1,0 +1,833 @@
+{
+  "purpose": "Supplementary reference and drafting provenance; historical notes may retain pre-review hold state.",
+  "finalStatusSource": "MANIFEST.json and REVIEW-ASTRA-FINAL.json",
+  "finalScoredRows": 219,
+  "finalUnresolvedContentFindings": 0,
+  "sessions": [
+    {
+      "session": "109-am",
+      "historicalAuthorNotes": {
+        "owner": "109-am",
+        "updated": "2026-10-11",
+        "sourceQuestionPdf": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-04a_01.pdf",
+        "sourceAnswerPdf": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-04seitou.pdf",
+        "authoredQuestions": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30,
+          31,
+          32,
+          33,
+          34,
+          35,
+          36,
+          37,
+          38,
+          39,
+          40,
+          41,
+          42,
+          43,
+          44
+        ],
+        "sourceQa": {
+          "18": "別冊 tp260424-04a_02.pdf PDF5頁をfitz描画し目視。①窓、②浴槽のある浴室、③大きな玩具、④柵の外の暖房器具。候補hasImage:falseをtrueへ訂正。公式正答2。図の画像URL・実装は親担当。",
+          "19": "本冊 tp260424-04a_01.pdf PDF13頁をfitz描画し目視。Aは2000年約20、2023年約11の最上位実線。候補hasImage:falseをtrueへ訂正。公式正答2。図の画像URL・実装は親担当。",
+          "30": "本冊 tp260424-04a_01.pdf PDF18頁をfitz描画し5肢を目視。候補のchoicesは空だったが、画像アセット実装後は図1～図5のラベルのみを表示し、正答内容を選択肢文で漏らさない。公式正答2。実画像アセットとchoiceImageUrlsは親担当。",
+          "42": "別冊 tp260424-04a_02.pdf PDF9頁をfitz描画し目視。胎児心拍基線は約140bpmで顕著な15×15加速は見えず、間欠的収縮あり。原問42～44で共通使用。公式正答42=3、43=2、44=2・3。画像URL・実装は親担当。"
+        },
+        "unresolved": [],
+        "officialReferences": {
+          "all": [
+            "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-04a_01.pdf",
+            "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-04seitou.pdf"
+          ],
+          "6": [
+            "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/kenkou_iryou/kenkou/kekkaku-kansenshou/yobou-sesshu/vaccine/rota/index.html"
+          ],
+          "24": [
+            "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/kenkou_iryou/iryou/i-anzen/sanka-iryou/index.html"
+          ],
+          "33": [
+            "https://www.who.int/publications/i/item/9789240030787"
+          ],
+          "41": [
+            "https://www.mhlw.go.jp/content/10901000/001724380.pdf"
+          ],
+          "7": [
+            "https://www.pmda.go.jp/PmdaSearch/iyakuDetail/670666_24997A2H1020_1_05"
+          ],
+          "8": [
+            "https://www.pmda.go.jp/PmdaSearch/iyakuDetail/470007_254900AF2024_1_06"
+          ],
+          "21": [
+            "https://www.mhlw.go.jp/file/06-Seisakujouhou-10800000-Iseikyoku/guideline2018.pdf"
+          ],
+          "22": [
+            "https://laws.e-gov.go.jp/law/323AC0000000205",
+            "https://www.mhlw.go.jp/content/10800000/josanjo_tebiki.pdf"
+          ],
+          "23": [
+            "https://www.city.kishiwada.lg.jp/page/21-syussei.html",
+            "https://www.es.emb-japan.go.jp/files/100877860.pdf"
+          ],
+          "27": [
+            "https://www.ncchd.go.jp/hospital/pregnancy/saniden/nipt.html",
+            "https://www.health.state.mn.us/diseases/cy/downsyndrome.html"
+          ],
+          "31": [
+            "https://pmc.ncbi.nlm.nih.gov/articles/PMC2827530/"
+          ],
+          "42": [
+            "https://www.ncchd.go.jp/hospital/sickness/children/037.html"
+          ],
+          "43": [
+            "https://www.acog.org/clinical/clinical-guidance/committee-opinion/articles/2020/02/prevention-of-group-b-streptococcal-early-onset-disease-in-newborns"
+          ],
+          "5": [
+            "https://pubmed.ncbi.nlm.nih.gov/5430794/"
+          ],
+          "17": [
+            "https://www.mhlw.go.jp/shingi/2007/06/dl/s0604-2k.pdf"
+          ],
+          "36": [
+            "https://www.kochi-family.jp/dataroom/%E6%B2%90%E6%B5%B4%E3%81%8B%E3%82%89%E3%83%89%E3%83%A9%E3%82%A4%E3%83%86%E3%82%AF%E3%83%8B%E3%83%83%E3%82%AF%E3%81%B8%EF%BD%9E%E6%97%A9%E6%9C%9F%E6%96%B0%E7%94%9F%E5%85%90%E6%B8%85%E6%BD%94%E6%B3%95/"
+          ],
+          "30": [
+            "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-04a_01.pdf",
+            "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-04seitou.pdf"
+          ]
+        },
+        "resolvedVerification": {
+          "7": "PMDA電子添文で頸管熟化、継続的な母児監視、子宮収縮薬との同時使用回避を照合。",
+          "8": "PMDA電子添文でレボノルゲストレル1.5mg単回、性交後72時間以内、服用後も妊娠を完全に排除しない点を照合。",
+          "21": "厚生労働省「院内助産・助産師外来ガイドライン2018」で医師との協働、施設ごとの運用・報告基準を照合。",
+          "22": "医療法（e-Gov）と厚生労働省の助産所開設手引きで分娩取扱いに伴う嘱託医師・連携医療機関の確保を照合。",
+          "23": "自治体の出生届案内と外務省の出生証明書様式で、医師・助産師が出生に立ち会わない場合のその他の立会者による証明欄を確認。",
+          "27": "国立成育医療研究センターで母体血検査はスクリーニングと確認。Minnesota州保健局の年齢別資料では40歳のDown症候群リスクは約1/100。妊娠週数等で厳密な値は変動。",
+          "31": "IADPSG原著で75gOGTTの2時間値153mg/dL以上という判定値を照合。165mg/dLがこれを満たす。",
+          "42": "国立成育医療研究センターで、蛋白尿がなくても胎盤機能障害・FGRを伴えば妊娠高血圧腎症となり得ることを照合。胎児心拍図は原本図で確認。BPSの呼吸様運動は回数だけでは採点不能。",
+          "43": "ACOGのGBS早発症予防指針で破水時の感染予防・GBS予防の抗菌薬適応を確認。36週4日の前期破水全例に無条件投与とは書かず、感染徴候・GBS状況・分娩方針を踏まえる表現に補正。",
+          "30": "原本図の5肢を目視済み。親担当が画像アセットを実装・確認済みとの連絡を受け、公開向け選択肢は図1～図5のみとし、図の内容による正答ヒントを除去。",
+          "5": "Dubowitzらの原著で神経・身体所見による在胎週数推定法を確認。36時間という設問上の選択は厚労省公式正答に従う。原著抄録は個別の評価時刻まで示さないため、24～48時間という固定数値は解説から削除。",
+          "17": "厚労省の食育資料で発達段階に応じた食具・食行動を確認。3歳ちょうどで全員が箸を使えるという断定は避け、設問内の相対的に適切な組合せとして記載。",
+          "33": "WHO精液検査マニュアル第6版を原典として参照。各参考下限値は妊孕性を二分する絶対基準ではないため、設問の異常値判別に限定して説明。WHO PDF本体は接続先から取得不可だが公式書誌・版を照合。",
+          "36": "高知ファミリークリニックの学会発表原抄録で、胎脂を保つDTと皮膚感染減少・臍帯脱落率上昇の報告を確認。感染予防は観察的・一般的傾向として説明し保証としない。保温は濡らさず熱損失を抑える生理学的理由。"
+        }
+      }
+    },
+    {
+      "session": "109-pm",
+      "historicalAuthorNotes": {
+        "exam": "第109回助産師国家試験 午後",
+        "sourceQuestionPdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-04b_01.pdf",
+        "sourceAnswerPdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-04seitou.pdf",
+        "authoredQuestionCount": 55,
+        "reviewQuestionNumbers": [
+          31
+        ],
+        "reviewNotes": {
+          "31": "厚生労働省通知により採点対象から除外。理由は「選択肢において正解を得ることが困難なため」。正答は空欄とし、推定しない。"
+        },
+        "officialExclusion": {
+          "qNumber": 31,
+          "reason": "選択肢において正解を得ることが困難なため。",
+          "handling": "採点対象から除外。answerは空文字。",
+          "url": "https://www.mhlw.go.jp/general/sikaku/successlist/2026/siken03_04_05/dl/josanshi_pm31.pdf"
+        },
+        "figureCheck": "問2の骨盤矢状断面を原PDF物理7頁（0始まり6頁）で画像として実視認。膀胱が腟前壁に突出する図。選択肢転記も原本と一致。",
+        "references": {
+          "1": [
+            "https://laws.e-gov.go.jp/law/323AC0000000203"
+          ],
+          "16": [
+            "https://www.mhlw.go.jp/web/t_doc?dataId=82060000&dataType=0"
+          ],
+          "23": [
+            "https://www.cfa.go.jp/policies/boshihoken/techou"
+          ],
+          "27": [
+            "https://www.cfa.go.jp/policies/kodomo-kihon"
+          ],
+          "31": [
+            "https://www.mhlw.go.jp/general/sikaku/successlist/2026/siken03_04_05/dl/josanshi_pm31.pdf"
+          ],
+          "34": [
+            "https://www.mhlw.go.jp/web/t_doc?dataId=82099000&dataType=0"
+          ],
+          "48": [
+            "https://www.mhlw.go.jp/seisakunitsuite/bunya/koyou_roudou/koyoukintou/ryouritsu/ikuji/"
+          ],
+          "55": [
+            "https://www.cfa.go.jp/policies/boshihoken/techou"
+          ],
+          "12": [
+            "https://www.med.akita-u.ac.jp/~seiri1/Japanese/okamoto/med/obste_birth_normal.htm"
+          ],
+          "26": [
+            "https://kyoto.hosp.go.jp/html/guide/medicalinfo/anesthesiology/painless.html"
+          ],
+          "53": [
+            "https://www.midwife.or.jp/user/media/midwife/page/guilde-line/tab01/josangl2024_PW.pdf"
+          ]
+        },
+        "disclaimer": "独自作成した解説であり、原本の公式解説や独立した公開承認ではない。",
+        "resolvedChecks": {
+          "12": "秋田大学医学部の「正常分娩」表：先進部Sp±0～＋3では児頭最大径が骨盤濶部。排臨はSp＋4、恥骨結合に全く触れないのはより低在。原問の公式正答3と整合。",
+          "26": "国立病院機構京都医療センター「経口摂取制限について」：無痛分娩では陣痛発来以降、原則として食事・固形物を控える。透明な水分は条件付きで可。公式正答5と整合。",
+          "34": "厚生労働省掲載の母子及び父子並びに寡婦福祉法第28条は保育施設利用時の特別の配慮、第29条は雇用促進。公式正答1・4と整合。",
+          "53": "日本助産師会「助産業務ガイドライン2024」Ⅱ-1③は自宅分娩時の移動所要時間を原則1時間以内、同①⑤は産婦・家族の意向とインフォームド・コンセントを重視。公式正答4・5と整合。"
+        },
+        "stage1Corrections": {
+          "12": "排臨は陣痛時に児頭が陰門から見え、間欠時に後退する。間欠時にも見え続けるのは発露。アの解説を訂正した。",
+          "53": "公式正答は4・5の2肢。requiredSelectionsを1から2に訂正した。"
+        },
+        "selectionCountAudit": "午後55問のrequiredSelectionsと公式正答肢数を照合。Q31は採点除外で正答空欄・設問上は2肢選択。その他54問はすべて一致。"
+      }
+    },
+    {
+      "session": "108-am",
+      "historicalAuthorNotes": {
+        "scope": "第108回助産師国家試験 午前55問。新規解説Q1–44、保存HOLD再検討Q47・48・51・52。完成済みQ45・46・49・50・53・54・55はデータとして変更していない。",
+        "output": "108-am-authored.json",
+        "status": "55問の候補を作成。各問に全選択肢の個別解説を配置。独立した公開承認は行っていない。",
+        "officialQuestionUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-04a_01.pdf",
+        "officialFigureUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-04a_02.pdf",
+        "officialAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-04seitou.pdf",
+        "figureVerification": [
+          {
+            "qNumber": 9,
+            "pageInSeparateBooklet": 5,
+            "observation": "①自動歩行、②モロー、③足底把握、④Landau反応（腹臥位水平懸垂から頭部前屈で四肢屈曲）を実視認。独立原図査読に合わせ④を訂正。"
+          },
+          {
+            "qNumber": 10,
+            "pageInSeparateBooklet": 9,
+            "observation": "基線約140回/分、急峻なV字状の変動一過性徐脈と陣痛波形を実視認。"
+          },
+          {
+            "qNumber": 14,
+            "pageInSeparateBooklet": 13,
+            "observation": "③が頭頂から殿部までの頭殿長。④は胎嚢長径。"
+          },
+          {
+            "qNumber": 16,
+            "pageInQuestionBooklet": 12,
+            "observation": "選択肢はPDFでは図①〜④のみで、元候補のchoicesが空だった。図ラベルを補った。④は側臥位母体と児が対面・接触するが、乳房・寝具による気道閉塞と観察・保持の難しさを②半座位と比較した。"
+          },
+          {
+            "qNumber": 28,
+            "pageInQuestionBooklet": 17,
+            "observation": "④は踵外側寄り、⑤は踵中央。"
+          },
+          {
+            "qNumber": 47,
+            "pageInSeparateBooklet": 17,
+            "observation": "②はT10程度から下方へ広がる適切な範囲。③は仙骨・会陰部も含むがT2付近以上の胸部へ不要に広がる。④は上肢にまで高く広がる。独立原図査読に合わせ③の解釈を訂正。"
+          }
+        ],
+        "holdResolutions": [
+          {
+            "qNumber": 47,
+            "resolution": "図②のT10程度からの範囲と分娩痛の経路を対応づけた。図③は仙骨不足ではなく高位胸部への過大な広がりとして訂正した。"
+          },
+          {
+            "qNumber": 48,
+            "resolution": "60回/分が2分持続する徐脈への即応として体位変換と医師診察依頼を記載。母体血圧と子宮収縮の並行確認も説明に追加。",
+            "primaryReferenceUrls": [
+              "https://www.midwife.or.jp/user/media/midwife/page/guilde-line/tab01/josangl2024_PW.pdf"
+            ]
+          },
+          {
+            "qNumber": 51,
+            "resolution": "旧保存稿の『出生体重1300gは個別審査』を削除。2022年3月出生では在胎28週以上・体重制限なし。申請は原則満1歳〜満5歳、極めて重症で診断可能なら生後6か月から。日齢120は例外の最早時期にも届かない。",
+            "primaryReferenceUrls": [
+              "https://www.sanka-hp.jcqhc.or.jp/documents/agreement/pdf/202201_hyoujyunhoshoyakkankanyukiyaku_kaitei.pdf",
+              "https://www.sanka-hp.jcqhc.or.jp/detail/compensation.html",
+              "https://www.city.miyawaka.lg.jp/kiji003445312/index.html"
+            ],
+            "acquisitionLimit": "JCQHC本体約款全文の取得は接続失敗。2022年出生の28週以上・体重条件なし、1歳〜5歳の申請は宮若市公式情報でも確認。未取得の原文を読了と扱わない。"
+          },
+          {
+            "qNumber": 52,
+            "resolution": "公式正答④を維持し、当該訓練の選択肢間比較として解説。実災害の絶対順位と誤読されないよう、病状・災害の場所・人員・搬送手段・施設計画による判断を明記。",
+            "primaryReferenceUrls": [
+              "https://www.achmc.pref.aichi.jp/assets/clinical/R4/040.pdf"
+            ],
+            "referenceScope": "愛知040はNEXT新生児避難トリアージ研究のオプトアウト案内。搬送順位を施設指揮系統と共有する参考資料であり、コット先行の訓練実証資料ではない。公式正答4の解説は設問の選択肢比較に限定。"
+          }
+        ],
+        "editorialChecks": [
+          "Q9・Q10・Q14の選択肢エにPDFの『別冊No.』見出しが混入していたため除去した。",
+          "Q16は図のみの選択肢①〜④をア〜エに補った。",
+          "Q22は試験日（2025-02-13）の子の看護休暇の表現を前提にし、その後の制度改正と混同しない。",
+          "Q39のRSV抗体製剤の名称・適応は時間とともに変わり得るため一般名を固定せず、試験の選択肢と出生・日齢条件に限定した。",
+          "Q52の搬送順位は現場のトリアージで変わるため、単純な『重症児は必ず後回し』とは書かなかった。"
+        ],
+        "remainingBlocks": [],
+        "publicationApproval": "未実施"
+      }
+    },
+    {
+      "session": "108-pm",
+      "historicalAuthorNotes": {
+        "exam": "josanshi",
+        "year": 2024,
+        "session": "pm",
+        "questionCount": 55,
+        "authoredCount": 55,
+        "holdQuestionNumbers": [
+          3,
+          12,
+          24,
+          27,
+          37,
+          47
+        ],
+        "notes": [
+          {
+            "qNumber": 1,
+            "status": "authored",
+            "officialReferenceUrls": [
+              "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-04b_01.pdf",
+              "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-04seitou.pdf"
+            ],
+            "note": "公式問題・正答と各肢の解説を確認。"
+          },
+          {
+            "qNumber": 2,
+            "status": "authored",
+            "officialReferenceUrls": [
+              "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-04b_01.pdf",
+              "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-04seitou.pdf"
+            ],
+            "note": "公式問題・正答と各肢の解説を確認。"
+          },
+          {
+            "qNumber": 3,
+            "status": "hold",
+            "officialReferenceUrls": [
+              "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-04b_01.pdf",
+              "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-04seitou.pdf",
+              "https://ganjoho.jp/public/cancer/breast/index.html"
+            ],
+            "note": "公式正答3は鏡による視診。選択肢4の「片腕を上げた姿勢」は観察方法として成立する可能性があるため、挙上そのものを誤り・禁忌とは記さない。厚労省のブレスト・アウェアネス資料も確認したが選択肢4を明確に排除する根拠はなく、単一正答性を保留。"
+          },
+          {
+            "qNumber": 4,
+            "status": "authored",
+            "officialReferenceUrls": [
+              "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-04b_01.pdf",
+              "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-04seitou.pdf"
+            ],
+            "note": "公式問題・正答と各肢の解説を確認。"
+          },
+          {
+            "qNumber": 5,
+            "status": "authored",
+            "officialReferenceUrls": [
+              "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-04b_01.pdf",
+              "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-04seitou.pdf"
+            ],
+            "note": "公式問題・正答と各肢の解説を確認。"
+          },
+          {
+            "qNumber": 6,
+            "status": "authored",
+            "officialReferenceUrls": [
+              "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-04b_01.pdf",
+              "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-04seitou.pdf"
+            ],
+            "note": "公式問題・正答と各肢の解説を確認。"
+          },
+          {
+            "qNumber": 7,
+            "status": "authored",
+            "officialReferenceUrls": [
+              "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-04b_01.pdf",
+              "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-04seitou.pdf"
+            ],
+            "note": "公式問題・正答と各肢の解説を確認。"
+          },
+          {
+            "qNumber": 8,
+            "status": "authored",
+            "officialReferenceUrls": [
+              "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-04b_01.pdf",
+              "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-04seitou.pdf"
+            ],
+            "note": "公式問題・正答と各肢の解説を確認。"
+          },
+          {
+            "qNumber": 9,
+            "status": "authored",
+            "officialReferenceUrls": [
+              "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-04b_01.pdf",
+              "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-04seitou.pdf"
+            ],
+            "note": "公式問題・正答と各肢の解説を確認。"
+          },
+          {
+            "qNumber": 10,
+            "status": "authored",
+            "officialReferenceUrls": [
+              "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-04b_01.pdf",
+              "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-04seitou.pdf"
+            ],
+            "note": "公式問題・正答と各肢の解説を確認。"
+          },
+          {
+            "qNumber": 11,
+            "status": "authored",
+            "officialReferenceUrls": [
+              "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-04b_01.pdf",
+              "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-04seitou.pdf"
+            ],
+            "note": "公式問題・正答と各肢の解説を確認。"
+          },
+          {
+            "qNumber": 12,
+            "status": "hold",
+            "officialReferenceUrls": [
+              "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-04b_01.pdf",
+              "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-04seitou.pdf"
+            ],
+            "note": "公式正答2と大泉門先進・前後径の対応は維持。従前の「前頭位」という分類名は、前頭部先進の強い反屈位と紛らわしいため削除。骨盤通過面の分類を直接示す産科一次資料は未確保のため保留。"
+          },
+          {
+            "qNumber": 13,
+            "status": "authored",
+            "officialReferenceUrls": [
+              "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-04b_01.pdf",
+              "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-04seitou.pdf",
+              "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/f33696fb-1ccf-416e-9eff-0724df1bab11/dd15fe97/20230401_policies_shakaiteki-yougo_tokubetsu-youshi-engumi_01.pdf"
+            ],
+            "note": "公式問題・正答と各肢の解説を確認。"
+          },
+          {
+            "qNumber": 14,
+            "status": "authored",
+            "officialReferenceUrls": [
+              "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-04b_01.pdf",
+              "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-04seitou.pdf"
+            ],
+            "note": "公式問題・正答と各肢の解説を確認。"
+          },
+          {
+            "qNumber": 15,
+            "status": "authored",
+            "officialReferenceUrls": [
+              "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-04b_01.pdf",
+              "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-04seitou.pdf"
+            ],
+            "note": "公式問題・正答と各肢の解説を確認。"
+          },
+          {
+            "qNumber": 16,
+            "status": "authored",
+            "officialReferenceUrls": [
+              "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-04b_01.pdf",
+              "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-04seitou.pdf"
+            ],
+            "note": "公式問題・正答と各肢の解説を確認。"
+          },
+          {
+            "qNumber": 17,
+            "status": "authored",
+            "officialReferenceUrls": [
+              "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-04b_01.pdf",
+              "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-04seitou.pdf",
+              "https://www.mhlw.go.jp/toukei/saikin/hw/jinkou/kakutei21/index.html"
+            ],
+            "note": "公式問題・正答と各肢の解説を確認。"
+          },
+          {
+            "qNumber": 18,
+            "status": "authored",
+            "officialReferenceUrls": [
+              "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-04b_01.pdf",
+              "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-04seitou.pdf"
+            ],
+            "note": "公式問題・正答と各肢の解説を確認。"
+          },
+          {
+            "qNumber": 19,
+            "status": "confirmed",
+            "officialReferenceUrls": [
+              "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-04b_01.pdf",
+              "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-04seitou.pdf",
+              "https://www.nurse.or.jp/nursing/home/publication/pdf/guideline/sankakongo.pdf",
+              "https://www.mhlw.go.jp/content/11920000/000636868.pdf"
+            ],
+            "note": "日本看護協会の産科混合病棟ユニットマネジメント（2013年）は他科患者の入院と受け入れ基準を直接記載。厚労省公開の2016年度調査では産科病棟の77.3％が混合病棟で、婦人科以外の診療科との混合は49.6％。公式正答1に整合。医療機関ごとの感染管理・配置基準は別途遵守する。"
+          },
+          {
+            "qNumber": 20,
+            "status": "authored",
+            "officialReferenceUrls": [
+              "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-04b_01.pdf",
+              "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-04seitou.pdf",
+              "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/hukushi_kaigo/seikatsuhogo/seikatuhogo/index.html"
+            ],
+            "note": "公式問題・正答と各肢の解説を確認。"
+          },
+          {
+            "qNumber": 21,
+            "status": "authored",
+            "officialReferenceUrls": [
+              "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-04b_01.pdf",
+              "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-04seitou.pdf"
+            ],
+            "note": "公式問題・正答と各肢の解説を確認。"
+          },
+          {
+            "qNumber": 22,
+            "status": "authored",
+            "officialReferenceUrls": [
+              "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-04b_01.pdf",
+              "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-04seitou.pdf"
+            ],
+            "note": "公式問題・正答と各肢の解説を確認。"
+          },
+          {
+            "qNumber": 23,
+            "status": "authored",
+            "officialReferenceUrls": [
+              "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-04b_01.pdf",
+              "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-04seitou.pdf"
+            ],
+            "note": "公式問題・正答と各肢の解説を確認。"
+          },
+          {
+            "qNumber": 24,
+            "status": "hold",
+            "officialReferenceUrls": [
+              "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-04b_01.pdf",
+              "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-04seitou.pdf",
+              "https://pmc.ncbi.nlm.nih.gov/articles/PMC7146284/"
+            ],
+            "note": "ビタミンK欠乏が新生児の凝固障害・消化管出血を起こし得る根拠を照合。児由来の血便は壊死性腸炎や胃粘膜病変などでも起こり得るため、真性メレナの定義だけではビタミンK欠乏のみを排他的に導けない。典型原因としての公式正答5を保持し、設問の排他性について保留。"
+          },
+          {
+            "qNumber": 25,
+            "status": "authored",
+            "officialReferenceUrls": [
+              "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-04b_01.pdf",
+              "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-04seitou.pdf"
+            ],
+            "note": "公式問題・正答と各肢の解説を確認。"
+          },
+          {
+            "qNumber": 26,
+            "status": "authored",
+            "officialReferenceUrls": [
+              "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-04b_01.pdf",
+              "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-04seitou.pdf"
+            ],
+            "note": "公式問題・正答と各肢の解説を確認。"
+          },
+          {
+            "qNumber": 27,
+            "status": "hold",
+            "officialReferenceUrls": [
+              "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-04b_01.pdf",
+              "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-04seitou.pdf",
+              "https://doi.org/10.1093/aje/kwp043"
+            ],
+            "note": "SWAN縦断研究は中性脂肪・LDLの閉経移行期後期～閉経後早期の上昇を支持する一方、HDLも一過性にピークを報告。HDL「上昇しない」という断定は削除。骨形成の説明も骨吸収優位の代謝回転として補正。選択肢4の時期依存性と選択肢2の一次資料を引き続き保留。"
+          },
+          {
+            "qNumber": 28,
+            "status": "authored",
+            "officialReferenceUrls": [
+              "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-04b_01.pdf",
+              "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-04seitou.pdf"
+            ],
+            "note": "公式問題・正答と各肢の解説を確認。"
+          },
+          {
+            "qNumber": 29,
+            "status": "authored",
+            "officialReferenceUrls": [
+              "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-04b_01.pdf",
+              "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-04seitou.pdf"
+            ],
+            "note": "公式問題・正答と各肢の解説を確認。"
+          },
+          {
+            "qNumber": 30,
+            "status": "confirmed",
+            "officialReferenceUrls": [
+              "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-04b_01.pdf",
+              "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-04seitou.pdf",
+              "https://www.jaog.or.jp/lecture/35-%E7%BE%8A%E6%B0%B4%E9%81%8E%E5%A4%9A/",
+              "https://virtualhumanembryo.lsuhsc.edu/HEIRLOOM/Stage_Descriptions/Stage_5.html",
+              "https://pubmed.ncbi.nlm.nih.gov/22840296/"
+            ],
+            "note": "日本産婦人科医会は妊娠初期の羊水を羊膜での母体血漿成分の浸透により生成すると説明。受精後7～12日のCarnegie第5期に羊膜腔が認められ、42日形成説を除外。羊膜無血管性は原著論文でも言及。羊水「分泌」は国試選択肢の表現を保持しつつ、解説は羊膜経由の生成・調節とした。"
+          },
+          {
+            "qNumber": 31,
+            "status": "authored",
+            "officialReferenceUrls": [
+              "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-04b_01.pdf",
+              "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-04seitou.pdf",
+              "https://www.bosei-navi.mhlw.go.jp/renraku_card/"
+            ],
+            "note": "公式問題・正答と各肢の解説を確認。"
+          },
+          {
+            "qNumber": 32,
+            "status": "authored",
+            "officialReferenceUrls": [
+              "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-04b_01.pdf",
+              "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-04seitou.pdf"
+            ],
+            "note": "公式問題・正答と各肢の解説を確認。"
+          },
+          {
+            "qNumber": 33,
+            "status": "authored",
+            "officialReferenceUrls": [
+              "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-04b_01.pdf",
+              "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-04seitou.pdf"
+            ],
+            "note": "公式問題・正答と各肢の解説を確認。"
+          },
+          {
+            "qNumber": 34,
+            "status": "authored",
+            "officialReferenceUrls": [
+              "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-04b_01.pdf",
+              "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-04seitou.pdf"
+            ],
+            "note": "公式問題・正答と各肢の解説を確認。"
+          },
+          {
+            "qNumber": 35,
+            "status": "authored",
+            "officialReferenceUrls": [
+              "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-04b_01.pdf",
+              "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-04seitou.pdf",
+              "https://laws.e-gov.go.jp/law/323AC0000000203"
+            ],
+            "note": "公式問題・正答と各肢の解説を確認。"
+          },
+          {
+            "qNumber": 36,
+            "status": "authored",
+            "officialReferenceUrls": [
+              "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-04b_01.pdf",
+              "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-04seitou.pdf"
+            ],
+            "note": "公式問題・正答と各肢の解説を確認。"
+          },
+          {
+            "qNumber": 37,
+            "status": "hold",
+            "officialReferenceUrls": [
+              "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-04b_01.pdf",
+              "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-04seitou.pdf",
+              "https://www.cochrane.org/evidence/CD000051_cephalic-version-postural-management-breech-presentation"
+            ],
+            "note": "公式正答3とLeopold所見からの骨盤位推定は確認済み。Cochraneの体位療法レビューでは頭位への回転を確実に促す証拠は不十分。右側臥位を正答とする個別の体位選択根拠は未確保のため保留し、効果保証を避けた。"
+          },
+          {
+            "qNumber": 38,
+            "status": "authored",
+            "officialReferenceUrls": [
+              "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-04b_01.pdf",
+              "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-04seitou.pdf"
+            ],
+            "note": "公式問題・正答と各肢の解説を確認。"
+          },
+          {
+            "qNumber": 39,
+            "status": "authored",
+            "officialReferenceUrls": [
+              "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-04b_01.pdf",
+              "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-04seitou.pdf"
+            ],
+            "note": "公式問題・正答と各肢の解説を確認。"
+          },
+          {
+            "qNumber": 40,
+            "status": "authored",
+            "officialReferenceUrls": [
+              "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-04b_01.pdf",
+              "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-04seitou.pdf"
+            ],
+            "note": "公式問題・正答と各肢の解説を確認。"
+          },
+          {
+            "qNumber": 41,
+            "status": "authored",
+            "officialReferenceUrls": [
+              "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-04b_01.pdf",
+              "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-04seitou.pdf"
+            ],
+            "note": "公式問題・正答と各肢の解説を確認。"
+          },
+          {
+            "qNumber": 42,
+            "status": "authored",
+            "officialReferenceUrls": [
+              "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-04b_01.pdf",
+              "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-04seitou.pdf"
+            ],
+            "note": "公式問題・正答と各肢の解説を確認。"
+          },
+          {
+            "qNumber": 43,
+            "status": "authored",
+            "officialReferenceUrls": [
+              "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-04b_01.pdf",
+              "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-04seitou.pdf"
+            ],
+            "note": "公式問題・正答と各肢の解説を確認。"
+          },
+          {
+            "qNumber": 44,
+            "status": "authored",
+            "officialReferenceUrls": [
+              "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-04b_01.pdf",
+              "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-04seitou.pdf"
+            ],
+            "note": "公式問題・正答と各肢の解説を確認。"
+          },
+          {
+            "qNumber": 45,
+            "status": "confirmed",
+            "officialReferenceUrls": [
+              "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-04b_01.pdf",
+              "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-04seitou.pdf",
+              "https://cpqcc.org/files/peds_2020038505e.pdf"
+            ],
+            "note": "2020年AHA新生児蘇生ガイドラインの初期処置では、乾燥・保温が基本で、吸引は可視の液体による閉塞または呼吸の妨げが疑われる場合。公式正答3・4に沿って口腔内吸引を条件付きで説明し、全例必須とは記さない。"
+          },
+          {
+            "qNumber": 46,
+            "status": "authored",
+            "officialReferenceUrls": [
+              "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-04b_01.pdf",
+              "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-04seitou.pdf"
+            ],
+            "note": "公式問題・正答と各肢の解説を確認。"
+          },
+          {
+            "qNumber": 47,
+            "status": "hold",
+            "officialReferenceUrls": [
+              "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-04b_01.pdf",
+              "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-04seitou.pdf",
+              "https://www.mhlw.go.jp/stf/shingi/2r9852000001ovdz-att/2r9852000001ovla.pdf",
+              "https://www.jpeds.or.jp/uploads/files/20211130_VK_teigen.pdf"
+            ],
+            "note": "厚労省の未承認薬等検討会資料には、出血リスクが高い、またはビタミンK吸収不良の新生児に出生時/直後の筋注または静注を行う外国用法が示される。通常の新生児予防は国内学会では経口シロップが基本であり、CPAP・輸液だけから静注必須を導く根拠は未確認。国試正答は保持し、静注を一律必須とする従前の断定を削除して保留。"
+          },
+          {
+            "qNumber": 48,
+            "status": "confirmed",
+            "officialReferenceUrls": [
+              "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-04b_01.pdf",
+              "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-04seitou.pdf",
+              "https://www.mhlw.go.jp/content/10904750/000586556.pdf"
+            ],
+            "note": "2020年版食事摂取基準の参照表：30～49歳女性・身体活動レベルⅡ2,050kcal/日、妊娠中期付加量250kcal/日、計2,300kcal/日。仕事がデスクワークという情報だけでは活動レベルは一意に決まらないので、正答は国試で置く参照レベルⅡの推定値として説明し、個人への確定処方とはしない。"
+          },
+          {
+            "qNumber": 49,
+            "status": "authored",
+            "officialReferenceUrls": [
+              "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-04b_01.pdf",
+              "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-04seitou.pdf"
+            ],
+            "note": "公式問題・正答と各肢の解説を確認。"
+          },
+          {
+            "qNumber": 50,
+            "status": "authored",
+            "officialReferenceUrls": [
+              "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-04b_01.pdf",
+              "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-04seitou.pdf"
+            ],
+            "note": "公式問題・正答と各肢の解説を確認。"
+          },
+          {
+            "qNumber": 51,
+            "status": "authored",
+            "officialReferenceUrls": [
+              "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-04b_01.pdf",
+              "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-04seitou.pdf"
+            ],
+            "note": "公式問題・正答と各肢の解説を確認。"
+          },
+          {
+            "qNumber": 52,
+            "status": "authored",
+            "officialReferenceUrls": [
+              "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-04b_01.pdf",
+              "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-04seitou.pdf"
+            ],
+            "note": "公式問題・正答と各肢の解説を確認。"
+          },
+          {
+            "qNumber": 53,
+            "status": "authored",
+            "officialReferenceUrls": [
+              "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-04b_01.pdf",
+              "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-04seitou.pdf"
+            ],
+            "note": "公式問題・正答と各肢の解説を確認。"
+          },
+          {
+            "qNumber": 54,
+            "status": "authored",
+            "officialReferenceUrls": [
+              "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-04b_01.pdf",
+              "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-04seitou.pdf"
+            ],
+            "note": "公式問題・正答と各肢の解説を確認。"
+          },
+          {
+            "qNumber": 55,
+            "status": "authored",
+            "officialReferenceUrls": [
+              "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-04b_01.pdf",
+              "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-04seitou.pdf",
+              "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/0238af12-b583-4c09-9a67-0f2f7cb19c1c/028b6e96/20241120_councils_shingikai_seiiku_iryou_0238af12_04.pdf"
+            ],
+            "note": "公式問題・正答と各肢の解説を確認。"
+          }
+        ]
+      }
+    }
+  ]
+}

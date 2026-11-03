@@ -1,0 +1,57 @@
+{
+  "reviewModel": "claude-opus-5-5",
+  "requestedModel": "claude-opus-5-5",
+  "canonicalModel": "claude-opus-5-5",
+  "provider": "firstParty",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 1190,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 14344,
+      "webSearchRequests": 0,
+      "costUSD": 0.13881580000000002,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 1106,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponsePath": "data/exam-library/emkohyo-review/emkohyo-EM20261807-q13-13-raw-response.txt",
+  "rawResponseSha256": "23a784823e9cb260f499374cab189981b4ef05e98b8c63d0286f4e2733cf377d",
+  "paperId": "emkohyo-EM20261807",
+  "ids": [
+    "emkohyo-EM20261807-q13"
+  ],
+  "figureSha256": {
+    "emkohyo-EM20261807-q13": {
+      "/exam-library/emkohyo-EM20261807/text-q13-p8-fig1.webp": "ef4137be3e1ed66501e505088816a4f55b0b8c19522a15d68ab80d14a2240c35",
+      "/exam-library/emkohyo-EM20261807/text-q13-p8-fig2.webp": "28ed51811120e5541b00d8e33873ffff63b2fd9e44832ea0d7afc60fe2abd0d2",
+      "/exam-library/emkohyo-EM20261807/text-q13-p8-fig3.webp": "f96d811bcd6eabebe0ec7046a1c242987a76fa754cd3e5b07b188767194fec82"
+    }
+  },
+  "officialRowImageSha256": {
+    "emkohyo-EM20261807-q13": {
+      "/exam-library/emkohyo-EM20261807/q13-p8-0.webp": "ceb036f6e79d86476daf5acf2096d8ada2f9f8a4dd9e94dacb8f156288e1ec2f"
+    }
+  },
+  "officialPageImageSha256": {},
+  "governmentSourceImageSha256": {},
+  "candidateSha256": {
+    "emkohyo-EM20261807-q13": "573bf85756decc715963c92de75cff75e8f2e05ec248eb1dbe48ce11325a81dd"
+  },
+  "sourcePackPath": "docs/evidence/emkohyo-choice-sources/emkohyo-EM20261807-q13-13.json",
+  "sourcePackSha256": "2f49adcaccbae5ca6373e0fc0392f601f506797671b864c7c82684086148ea97",
+  "assessment": {
+    "emkohyo-EM20261807-q13": {
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "reasonIssues": [],
+      "sourceIssues": [],
+      "needsExternalCheck": []
+    }
+  }
+}

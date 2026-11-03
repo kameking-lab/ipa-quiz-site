@@ -1,0 +1,92 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20250323",
+  "subject": "machinery",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 4211,
+      "cacheReadInputTokens": 140024,
+      "cacheCreationInputTokens": 19863,
+      "webSearchRequests": 0,
+      "costUSD": 0.27113679999999996,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 2380,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "61fb3947d358608670b83d0a062a2170aea2879a1d1a089b7865a836acf042f8",
+  "inputRequestSha256": "72f1b97d07421c7e83bc3d7deeffcd91a7ea739307075f994ff4ed44609080e8",
+  "inputHashes": {
+    "candidateSha256": {
+      "q01": "75c8e2d6b1b6f91aa4523c5fc2ab3bcac8bd1b8224b9109cd2991c9c867c9aa1",
+      "q03": "f067e5f8d4164ca2ba3db4476754f7233f0818092464a6a47d617233160e23a1"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20250323/machinery/p04.png": "d63f104017cf31be1ef1f998731858ddd7d34359433f3dd44dc9e03a0af986e2",
+      "data/raw_pdfs/denken3/review/20250323/machinery/p06.png": "a66071d41414913896439d724444e65cb9301485fc3e8f3bfb9ffd27351cbc72"
+    },
+    "figureSha256": {},
+    "sourceQuestionPdfSha256": "66e8b0070a314cd78ed9b9f3edd3d75eeaf442b258fd0aacab0e7d9620c75b9f",
+    "sourceAnswerPdfSha256": "4c3b38fcf1405766fafaa78b1b05b867a3d48307a670b9d354476bc6b32acd4c",
+    "officialAnswerUnitsSha256": "7e4628f182b6d7c4bcbfedc2579b0ed1fd054071b45ecd99745833b8dc59b1a5",
+    "referencePdfSha256": {},
+    "referencePageSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q01",
+      "questionNumber": 1,
+      "part": null,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "The question text matches the official original page (T2-K 004, page -1-, reviewedFromPage=[4]). This includes l[m], B[T], v[m/s], Φ[Wb], p, Z, a, D[m], n[min⁻¹], the peripheral speed v = πD·n/60 [m/s], and the order of blanks (ア)–(オ).",
+        "Choice (1) matches the original: 左手 / Bv/l / Z/a / 直列 / Z/(60pa)·Φn.",
+        "Choice (2) matches the original: 左手 / Blv / Za / 直列 / pZa/60·Φn.",
+        "Choice (3) matches the original: 右手 / Bv/l / Za / 並列 / pZa/60·Φn.",
+        "Choice (4) matches the original: 右手 / Blv / a/Z / 並列 / pZ/(60a)·Φn.",
+        "Choice (5) matches the original: 右手 / Blv / Z/a / 直列 / pZ/(60a)·Φn.",
+        "The official answer is 5, and the candidate's officialAnswer is also 5.",
+        "Recalculation: the total flux around the armature is pΦ = B_av·πD·l. So e_av = B_av·l·πD·n/60 = pΦn/60. Multiplying by the Z/a conductors in series in one parallel path gives E = pZΦn/(60a). This matches the explanation's derivation.",
+        "Unit check: Bv/l has units T·(m/s)/m = V/m², so it is not a voltage. The unit argument in the explanation for choice (1) is correct.",
+        "Every wrong choice's explanation correctly names which blanks are right and which are wrong. (1): ア, イ and オ are wrong. (2): ア, ウ and オ are wrong. (3): イ, ウ, エ and オ are wrong. (4): ウ and エ are wrong. None of these contradicts the correct combination.",
+        "The original has no figure. It contains only the question text and the combination table, so figureUrls=[] is appropriate. No figure is needed to solve the question.",
+        "officialReferenceUrls is empty, and the explanation makes no independent claims that would need external verification. The table readings noted in uncertainty ((1)(オ) Z/(60pa)·Φn and (2)(3) pZa/60·Φn) were confirmed against the original image, so no ambiguity remains."
+      ]
+    },
+    {
+      "unitKey": "q03",
+      "questionNumber": 3,
+      "part": null,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "The question text matches the official original page (T2-K 006, page -3-, reviewedFromPage=[6]). This includes the three occurrences of (ウ), the phrasing 'k 倍 of the slip', and the description of use for improving starting characteristics and speed control.",
+        "All five choices (1)–(5) match the original table in every blank. (1) 電源周波数/停動/二次/比例推移. (2) 電源周波数/停動/一次/二次励磁. (3) 負荷/臨界/一次/比例推移. (4) 電源周波数/臨界/二次/二次励磁. (5) 負荷/臨界/二次/比例推移.",
+        "The official answer is 1, and the candidate's officialAnswer is also 1.",
+        "Torque formula check: the synchronous angular speed is ω/p. The secondary input is 3V²(r₂/s)/[(r₁+r₂/s)²+(x₁+x₂)²]. Dividing gives T = (p/ω)·3V²(r₂/s)/[…], which matches the explanation.",
+        "Maximum torque check: let R = r₂/s and Z = √(r₁²+(x₁+x₂)²). At R = Z the denominator is 2Z(Z+r₁), so T_max = (p/ω)·3V²/{2[r₁+Z]}. This does not contain r₂, which confirms the explanation.",
+        "Because torque is a function of r₂/s, multiplying r₂ by k produces the same torque at k times the slip. This is proportional shifting (比例推移), and it is consistent with blanks (ウ) 二次 and (エ) 比例推移.",
+        "The wrong-choice explanations correctly identify the errors in each choice. (2): ウ and エ. (3): ア, イ and ウ. (4): イ and エ. (5): ア and イ. None of them contradicts the blanks that are correct.",
+        "The original page has no figure, so figureUrls=[] is appropriate. The 'p06' in figureDescription matches the PDF page number reviewedFromPage=[6].",
+        "officialReferenceUrls is empty, and the explanation makes no independent claims that would need external verification."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,61 @@
+{
+  "reviewModel": "claude-opus-5-5",
+  "requestedModel": "claude-opus-5-5",
+  "canonicalModel": "claude-opus-5-5",
+  "provider": "firstParty",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 4097,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 22703,
+      "webSearchRequests": 0,
+      "costUSD": 0.2638278,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 3139,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponsePath": "data/exam-library/emkohyo-review/emkohyo-EM20261801-q04-04-raw-response.txt",
+  "rawResponseSha256": "e0d57ee89bbff6ffa30e46af28b653aee01b32119f3497afea854a3f143546f3",
+  "paperId": "emkohyo-EM20261801",
+  "ids": [
+    "emkohyo-EM20261801-q4"
+  ],
+  "figureSha256": {
+    "emkohyo-EM20261801-q4": {}
+  },
+  "officialRowImageSha256": {
+    "emkohyo-EM20261801-q4": {
+      "/exam-library/emkohyo-EM20261801/q4-p4-1.webp": "8a36349e1294500e9706a7233284f4feccc8adbdfe57f8aacd4c00a3ce529c41"
+    }
+  },
+  "officialPageImageSha256": {},
+  "governmentSourceImageSha256": {},
+  "candidateSha256": {
+    "emkohyo-EM20261801-q4": "b2305eb293abae1d1388a680c00d009914d82fe3789df239126d78a30a9b4950"
+  },
+  "sourcePackPath": "docs/evidence/emkohyo-choice-sources/emkohyo-EM20261801-q04-04.json",
+  "sourcePackSha256": "5003e2e57975da15c005f1ca62ebd4611415735366ee7e699d920184e019d8c5",
+  "assessment": {
+    "emkohyo-EM20261801-q4": {
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "reasonIssues": [
+        "肢3の理由で、特化則44条3項を「皮膚から吸収されるおそれのある作業で不浸透性保護衣等の使用を義務付ける」と言い換えているが、証拠抜粋の条文は「皮膚に障害を与え、又は皮膚から吸収されることにより障害をおこすおそれがあるもの」という選択的な要件である。同項の対象物質に掲げられている事実だけでは、MOCAが経皮吸収される物質であることを直接には示せない。条文どおり「皮膚に障害を与え、又は皮膚から吸収されることにより障害をおこすおそれがある作業」と引用し、MOCAの経皮吸収性は別の直接的な根拠で示すよう修正すること。"
+      ],
+      "sourceIssues": [
+        "肢3のうちMOCAの経皮吸収性を直接支える政府資料の抜粋がない。o-トルイジンは厚労省リスク評価書の「皮膚吸収が大きく」で支持されるが、MOCAについては特化則44条3項の対象列挙（要件は皮膚障害又は経皮吸収のいずれか）からの推論にとどまる。モデルSDS 101-14-4の許容濃度欄（日本産業衛生学会の経皮吸収「皮」表示、ACGIHのSkin表記等）や厚労省の皮膚等障害化学物質リストなど、経皮吸収を明記した箇所を抜粋して追加すること。",
+        "肢2の補強根拠である食品安全委員会「1,2-ジクロロエタン」評価書は、意見募集用の（案）である（pc2_kagaku_osen_12cletan_200925.pdf）。確定版の評価書があれば差し替えるのが望ましい。なお肢2の正誤判定の主根拠は職場のあんぜんサイトの生物学的モニタリング表であり、そちらで十分に支持されている。"
+      ],
+      "needsExternalCheck": [
+        "モデルSDS（https://anzeninfo.mhlw.go.jp/anzen/gmsds/101-14-4.html）または厚労省の皮膚等障害化学物質関連資料に、3,3'-ジクロロ-4,4'-ジアミノジフェニルメタン（MOCA）の経皮吸収（「皮」表示・Skin表記等）が明記されているか確認する。",
+        "食品安全委員会の1,2-ジクロロエタン評価書について、確定版の有無と、代謝経路・尿中代謝物の記載が（案）から変わっていないかを確認する。"
+      ]
+    }
+  }
+}

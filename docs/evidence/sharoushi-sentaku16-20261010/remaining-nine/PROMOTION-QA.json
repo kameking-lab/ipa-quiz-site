@@ -1,0 +1,119 @@
+{
+  "checkedAt": "2026-10-10T05:03:36.352890+00:00",
+  "baseCommit": "7a8ccc72a76120f35defb643a701ad38f6567d36",
+  "promotion": {
+    "originals": 9,
+    "fields": 45,
+    "publishedCandidateOriginals": 16,
+    "publishedCandidateFields": 80,
+    "multipleChoiceOriginalsOnBranch": 27,
+    "totalOriginalsOnBranch": 43,
+    "twoExamsDenominator": 156,
+    "expectedRootWith38Mc": 54,
+    "twoExamsComplete": false
+  },
+  "unchanged": {
+    "prior7ObjectHashes": true,
+    "originalWording": true,
+    "officialKeys": true,
+    "originalWordBanks": true,
+    "sourcePdfPages": true,
+    "lawDates": true,
+    "allUntargetedFieldExplanationsAndEvidenceStatuses": true
+  },
+  "changedFields": [
+    "sharoushi-2025-sentaku-q01:C",
+    "sharoushi-2025-sentaku-q02:C",
+    "sharoushi-2025-sentaku-q03:A",
+    "sharoushi-2025-sentaku-q06:A",
+    "sharoushi-2025-sentaku-q06:B",
+    "sharoushi-2025-sentaku-q07:D",
+    "sharoushi-2025-sentaku-q08:D",
+    "sharoushi-2025-sentaku-q08:E",
+    "sharoushi-2026-sentaku-q01:B",
+    "sharoushi-2026-sentaku-q01:D",
+    "sharoushi-2026-sentaku-q06:E",
+    "sharoushi-2026-sentaku-q08:C"
+  ],
+  "validation": {
+    "relatedUnit": {
+      "passed": 66,
+      "failed": 0
+    },
+    "finalAll16CanonicalUnit": {
+      "passed": 10,
+      "failed": 0
+    },
+    "typecheck": "PASS",
+    "lint": "PASS",
+    "mobile": {
+      "fixture": "Actual server reader + webpack production CSS; 390px",
+      "cssFiles": [
+        "19b91085965a4b4c.css",
+        "6095a7890e456247.css"
+      ],
+      "cssSha256": "62b6fe35659addbba7cd0898fe11a276f8ae5c6b6516976d8d9f103f8a98a538",
+      "results": [
+        {
+          "year": "2025",
+          "number": "1",
+          "closedInitially": true,
+          "opensOnClick": true,
+          "answerFields": 5,
+          "bankWords": 20,
+          "before": {
+            "width": 390,
+            "scrollWidth": 390
+          },
+          "after": {
+            "width": 390,
+            "scrollWidth": 390
+          },
+          "pass": true
+        },
+        {
+          "year": "2026",
+          "number": "1",
+          "closedInitially": true,
+          "opensOnClick": true,
+          "answerFields": 5,
+          "bankWords": 20,
+          "before": {
+            "width": 390,
+            "scrollWidth": 390
+          },
+          "after": {
+            "width": 390,
+            "scrollWidth": 390
+          },
+          "pass": true
+        },
+        {
+          "year": "2026",
+          "number": "2",
+          "closedInitially": true,
+          "opensOnClick": true,
+          "answerFields": 5,
+          "bankWords": 20,
+          "before": {
+            "width": 390,
+            "scrollWidth": 390
+          },
+          "after": {
+            "width": 390,
+            "scrollWidth": 390
+          },
+          "pass": true
+        }
+      ],
+      "pass": true
+    },
+    "mobileVisualChecked": "2026Q1 longest judgment shared bank screenshot; no clipping observed",
+    "build": "NOT RERUN; previous workStore invariant remains root clean CI responsibility"
+  },
+  "datasetSha256": "80e0a8c2f47d5c16a3dd6a39e94b350af6b24f60b7c87c1ec99522b88feec47a",
+  "newModelCalls": 0,
+  "push": false,
+  "newlyPublished": 0,
+  "evidenceLimitation": "2025Q1C is confirmed against MHLW official judgment summary, not the Supreme Court original; no full re-review claim."
+}

@@ -1,0 +1,59 @@
+{
+  "reviewerModel": "GPT-6-Astra",
+  "apiModelReceipt": null,
+  "verdict": "PASS_FIXED_Q3_SOURCE_RIGHTS_75_REASONS_AND_TWO_FIGURES_PENDING_EXACT_INTEGRATION_COMMIT",
+  "scope": "denken1 2026 primary theory A question3 only; one official original, five practice blanks, fifteen shared options and75 option explanations",
+  "candidateSha256": "f33010e05d0b7a691788567dd9296f01a00af4602712b324aff0be6fed00839a",
+  "sourceQcPacketSha256": "8ad5954d74cb74991088273acdf883553659d1f01396d60e63ec46d9b688b2ff",
+  "claimsSha256": "dde5600f555a6bf82bce9e8bb7ef830dd5451bb53623dad870adbb095a750e06",
+  "independentEvidencePinsVerified": 24,
+  "sourceReading": {
+    "questionPdfSha256": "6a6a509a9cd2e9a36c79e90561345e0fc093389796ffd482833109057b0aa7f5",
+    "actualOfficialQuestionPageRendersViewed": [8, 9],
+    "allQuestionProseAnd15OptionsRead": true,
+    "officialAnswerTargetCaptureViewed": true,
+    "officialKanaAnswers": ["ヘ", "ハ", "カ", "ヲ", "ヌ"],
+    "correspondingDisplayAnswers": ["カ", "ウ", "セ", "シ", "コ"],
+    "answerRemappingIsOrderPreserving": true,
+    "independentInitialFreezeRetained": true,
+    "postDiffBlindErratum": "One Japanese prose transcription error corrected after source reinspection. Original frozen record retained; corrected copy is explicitly post-diff rather than a new blind transcription.",
+    "reconciledProseAndAll15AlgebraChoices": "PASS"
+  },
+  "technicalReview": {
+    "all75OptionReasonsRead": true,
+    "all75ClaimsMatchFinalCandidateReasonsExactly": true,
+    "derivations": [
+      "Ideal comparator input draws zero current: (VA-x)/R1+(VB-x)/R2=0, giving x=(R2*VA+R1*VB)/(R1+R2).",
+      "For VB=-VL, x=0 gives upper threshold (R1/R2)*VL; for VB=VH, lower threshold is -(R1/R2)*VH.",
+      "Threshold span is (R1/R2)*(VH+VL). Dividing by the stated integrator slope VL/(C*R3) gives tL=C*R1*R3*(VH+VL)/(R2*VL).",
+      "Return time uses VH, so total T=C*R1*R3*(VH+VL)^2/(R2*VH*VL); unequal saturation magnitudes remain supported."
+    ],
+    "distractorReasons": "All70 incorrect-option explanations distinguish wrong voltage/time dimension, swapped resistor ratio, wrong threshold sign or rail, sum versus difference and one-way time versus full period. No outside clinical, legal or unproved technical rule is introduced.",
+    "correctedFinding": "Part2 originally attributed grounding to figure2. Final candidate and its correct-option reason now attribute grounding to figure1 and switching characteristic to figure2.",
+    "independentV2ToV3Diff": "Only those two explanation fields changed; question prose, choices, formulas and answers are unchanged."
+  },
+  "figures": [
+    {"sha256": "bde1519fc062e6c4712c7c2d55a9276129e68bdc10950b208f26f8576a2606e6", "verdict": "PASS_ACTUALLY_VIEWED: exact original figure1 crop contains full comparator/integrator topology, R1/R2/R3/C, A/B, polarity, grounding references and labels, including upper R2 branch."},
+    {"sha256": "7672f8232e0205f82a6dc80f69bc7b1f4602bb98dd0b5777c982f11b2d7263f0", "verdict": "PASS_ACTUALLY_VIEWED: exact original figure2 crop preserves both axes, origin, VH, -VL and switching graph."}
+  ],
+  "rights": {
+    "freshClauseCaptureSha256": "d599a12c16a952059849eb99e2f5ce12fb2ade45c2694bdb55208682baf03b1e",
+    "actualClauseRead": true,
+    "verdict": "PASS_INHERITED_EDUCATIONAL_REUSE_WITH_SOURCE_AND_MODIFICATION_DISCLOSURE",
+    "interpretation": "FAQ277 permits educational use of published questions without permission or usage fee and requires attribution/modification disclosure. Applying the stated purpose to this educational web exercise is a reasoned interpretation, not express endorsement of this site.",
+    "attributionAndModificationsPresent": true,
+    "independentExplanationDistinguished": true,
+    "thirdPartyMarkObservedOnTarget": false,
+    "thirdPartyAbsenceIsNotRightsWarranty": true,
+    "noticeRequested": true,
+    "noticeSentReceipt": null,
+    "externalMessagesSent": 0,
+    "newStrictModelRequirementImposed": false
+  },
+  "exactIntegrationCommitReview": "PENDING",
+  "publicReleaseAllowed": false,
+  "fullLatestTwoSittingsCompleted": false,
+  "medicalScopeIncluded": false,
+  "medicalExternalDisclosureAllowed": false,
+  "reviewerExternalOperations": 0
+}

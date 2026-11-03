@@ -1,0 +1,65 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20240818",
+  "subject": "machinery",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 2018,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 13637,
+      "webSearchRequests": 0,
+      "costUSD": 0.1497198,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 942,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "3db369554447320f4358b458a2b564b9b20f3def8700d856d2bafade1789dce2",
+  "inputRequestSha256": "7968d8887f7242e403a0954dbc898e69507d4f71d6ee5902c838e3457c6551bb",
+  "inputHashes": {
+    "candidateSha256": {
+      "q02": "ef68bd3ea6c1fce85112da1aac114ac563c26085766bfc1145712bc9f5093a69"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20240818/machinery/p05.png": "26d1f39e615932b6c25fa90d01d7ce75246527ebc461d2e28ce1d0d718437e0f"
+    },
+    "figureSha256": {},
+    "sourceQuestionPdfSha256": "ff8ff270bbe1ea125e92f213d011afde969d0d2b9fa2e17a7caa2b5cd6673e2a",
+    "sourceAnswerPdfSha256": "f72ecbc3a477e64948388b69cf78cb931032c9f0c688639836c8d533a949cd0f",
+    "officialAnswerUnitsSha256": "dbed7e5a02771b0edd3e58b26451240024a9692cfe172b5c2c14413430456ead",
+    "referencePdfSha256": {},
+    "referencePageSha256": {},
+    "referenceJsonSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q02",
+      "questionNumber": 2,
+      "part": null,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "問題文を添付原図（manifest上のPDF第5頁、冊子面の頁表示は「-2-」）と照合した。直流他励電動機、電機子回路抵抗0.20Ω、電機子電流50A、1200 min⁻¹のとき入力電圧110V、変化後の入力電圧80V、励磁電流と電機子電流は一定、電機子反作用なし、ブラシ抵抗は無視。候補の問題文はこれらの数値・単位・条件と一致し、欠落や改変はない。",
+        "選択肢(1)764、(2)840、(3)873、(4)900、(5)960は原図と完全に一致する。",
+        "公式解答表の原図（令和6年度上期・機械）で問2の正答は2である。manifest固定の正答単位（answer=\"2\"）と候補のofficialAnswer=\"2\"も一致する。",
+        "総合解説を検算した。Ia・Ra=50×0.20=10V。E₁=110−10=100V、E₂=80−10=70V。励磁電流が一定で電機子反作用もないため磁束Φは一定で、E=kΦNよりN₂=1200×70/100=840 min⁻¹となる。式、因果、符号（電動機ではE=V−IaRa）はいずれも正しい。",
+        "誤答肢の由来を検算した。(1) 1200×70/110=763.6≒764。(3) 1200×80/110=872.7≒873。(4) 1200×(80+10)/(110+10)=1200×90/120=900。(5) 1200×80/100=960。各肢が指摘する誤りはいずれも数値的に再現でき、正しい理由の説明になっている。",
+        "正答肢(2)の理由説明（IaRaを差し引いてE₁=100V、E₂=70Vを求め、E∝Nから840を得る）は総合解説と整合している。",
+        "本問には図がなく、解答にも図は不要である。figureDescription=null、figureUrls=[]、choiceFigureUrls={}は妥当。",
+        "メタデータをmanifestと照合した。fiscalYear=2024（令和6年度）、term=upper、examDate=2024-08-18、subject=machinery、sourceQuestionPdfUrl=…20240818_ch_third_q03.pdf、sourceAnswerPdfUrl=…20240818_ch_third_a01.pdf、reviewedFromPage=[5]はいずれも一致する。sourceAttributionの「令和6年度上期第三種電気主任技術者試験 機械科目 問2」も正確である。",
+        "officialReferenceUrlsは空で、原図以外の独立した主張はない。検証を要する外部確認事項は存在しない。"
+      ]
+    }
+  ]
+}

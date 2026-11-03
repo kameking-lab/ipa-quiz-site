@@ -1,0 +1,74 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20260322",
+  "subject": "theory",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 3729,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 14797,
+      "webSearchRequests": 0,
+      "costUSD": 0.1932198,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 2009,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "ddc08ccbe69e455db0b6aba13bd4fa79dd840cb598ef835a565be0a715662f88",
+  "inputRequestSha256": "c440865753ea13c18684136a3e0ef0a373fedd4b5288b315bbb490a328c3c4c7",
+  "inputHashes": {
+    "candidateSha256": {
+      "q04": "32c4e6bfa43943a5907cabc7c74be4c9fcf8c033c38bed57371d457269bc5360"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20260322/theory/p07.png": "1aadb34eeefcae4c86be44266ab5725adb76e43811077631886d53bb83a24485"
+    },
+    "figureSha256": {
+      "public/images/denken3/20260322/theory/20260322-theory-q04-fig1.png": "c467b5f4cfaf4cd3125d8dc24b6acd22c1cac2d33e3ffbfb90fdecd44065a7f8"
+    },
+    "sourceQuestionPdfSha256": "c83e7c7350d98b65f5d8da0b93e4a2581a19dd250be320fb7fc492c9b34a29c1",
+    "sourceAnswerPdfSha256": "cc2890296d06a4823df5697a78a1c01ddfd39f041c51f48c87984daa3a5707c6",
+    "officialAnswerUnitsSha256": "82bbc27ee4202160980cc221c64986a18e95e57e8c2b3c96210683a999978ff1",
+    "referencePdfSha256": {},
+    "referencePageSha256": {},
+    "referenceJsonSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q04",
+      "questionNumber": 4,
+      "part": null,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "出典メタデータ: fiscalYear=2025（令和7年度）、term=lower、examDate=2026-03-22、subject=theory、sourceQuestionPdfUrl=20260322_ch_third_q01.pdf、sourceAnswerPdfUrl=20260322_ch_third_a01.pdf、reviewedFromPage=[7] は manifest と一致する。原図の印刷ページ番号「-4-」は PDF 第7頁と矛盾しない。sourceAttribution『令和7年度下期第三種電気主任技術者試験 理論科目 問4』も正しい。",
+        "公式正答: 公式解答表の＜理論＞問4は解答5・配点5である。候補の officialAnswer=\"5\" と scoringPoints=5 はこれと一致する。",
+        "問題文: 原図と照合し、以下が一致することを確認した。半径0.5 mと1 m、円形導線の1/4、連結する直線状導線、図示の向きの直流電流 I=16 A、点Oの磁界の大きさ H [A/m]、最も近いもの、同一平面上・一巻き・導線の太さは無視。改変・欠落はない。",
+        "選択肢: (1)0.25 (2)0.5 (3)0.75 (4)1.0 (5)2.0 で、原図と完全に一致する。",
+        "総合解説の計算: 1/4円弧の中心磁界は H=I/(2r)×1/4=I/(8r)。内側は 16/(8×0.5)=4 A/m、外側は 16/(8×1)=2 A/m。直線部はいずれも延長線がOを通る半径方向なので dl×r=0 となり、寄与はない。内外で電流の周回向きが逆なので H=4−2=2.0 A/m となり、(5)と一致する。",
+        "電流経路と極性: 図で電流の向きをたどると次のとおりで、解説の記述と一致する。左縦直線を上向き（0.5 m→1 m）、外側円弧を上端→右端（時計回り）、下横直線を1 m→0.5 m（O側へ）、内側円弧を右→上（反時計回り）。右ねじの法則では、外側（時計回り）の磁界は紙面表→裏、内側（反時計回り）は裏→表となる。大きい内側の寄与が勝つため、合成磁界は裏→表となり、解説の記述は正しい。",
+        "誤答肢(1): I/(32d) を用いると、内側 d=1 で 0.5、外側 d=2 で 0.25、差 0.25。算術は正しい。",
+        "誤答肢(2): I/(32r) を用いると、16/16=1、16/32=0.5、差 0.5。算術は正しい。",
+        "誤答肢(3): I/(32d) で和をとると 0.5+0.25=0.75。算術は正しく、係数誤りと和・差の誤りの指摘も正しい。",
+        "誤答肢(4): I/(8d) を用いると、16/8=2、16/16=1、差 1.0。算術は正しい。",
+        "誤答肢の記述形式: 各誤答肢の説明は『典型的な誤りの例として』と明示しており、正解との差異も正しく説明している。",
+        "正答肢(5): 内側4 A/m と外側2 A/m の差で 2.0 A/m となる。外側単独でも2 A/m になるという注記も事実として正しく、根拠を差に置いている点も適切である。",
+        "figureDescription: 原図と照合し、以下を確認した。⊙記号、上方向・右方向の破線補助線、O付近の直角記号、①〜④の4部分の位置と端点、①の上向き矢印と『I=16 A』ラベル、『0.5 m』『1 m』の寸法矢印。⊙に問題文で説明がない点の注記も原図どおりである。",
+        "⊙記号の扱い: 本問は磁界の大きさのみを問うので、⊙の意味は解答に影響しない。",
+        "公開候補図 20260322-theory-q04-fig1.png: 原図の図部分を忠実に切り出したもので、欠落・改変はない。含まれている要素は、4区間の導線、I=16 A と上向き矢印、0.5 m/1 m 寸法矢印、⊙と O ラベル、上・右の破線延長、直角記号である。この図だけで電流経路と半径を特定でき、解答に十分である。",
+        "officialReferenceUrls は空配列で、検証が必要な独立主張はない。uncertainty=なし、needsReview=false は監査結果と整合する。"
+      ]
+    }
+  ]
+}

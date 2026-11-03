@@ -1,0 +1,70 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20250323",
+  "subject": "theory",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 3432,
+      "cacheReadInputTokens": 2155,
+      "cacheCreationInputTokens": 13593,
+      "webSearchRequests": 0,
+      "costUSD": 0.177823,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 2005,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "4e169b390337dbb4b901d61972c33773f53fa4e4a0add969694a6958dfd84aec",
+  "inputRequestSha256": "590395b107f3f5824e6ae54aad2cb2434357b8dfdddbf1bab9c49c83c6db3127",
+  "inputHashes": {
+    "candidateSha256": {
+      "q01": "02843234be0fa94c84e14dbc2dfdfc5653fc8a4a5089418113865a29c09a1aba"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20250323/theory/p04.png": "4f7e9446a8ffedecaa18aef7e08840d0e85f3275eaec59d4e496f5524c2e11e4"
+    },
+    "figureSha256": {
+      "public/images/denken3/20250323/theory/20250323-theory-q01-layered-capacitor.png": "b30b2e4e3b2abd604a44dc37ec9ba46b371bce0bd189b4449eb8fbdf5d4c3ed2"
+    },
+    "sourceQuestionPdfSha256": "8817012cb55eed9c83bb1e68df138909b1e03a81f7ed48a9893a219e1d2a76ca",
+    "sourceAnswerPdfSha256": "4c3b38fcf1405766fafaa78b1b05b867a3d48307a670b9d354476bc6b32acd4c",
+    "officialAnswerUnitsSha256": "849db675fcef86d58cd64acbd2bbc0e9ee78e3bd175506845ec2015c39fc8912",
+    "referencePdfSha256": {},
+    "referencePageSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q01",
+      "questionNumber": 1,
+      "part": null,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "問題文: 公式原図と照合し、電極面積0.1 m²、電極間隔6 mm、ε₁=2・厚さ2 mm、ε₂=4・厚さ4 mm、12 V直流、ε₀=8.85×10⁻¹² F/m、端効果無視がすべて一致。数値・単位・添字の欠落や改変はない。",
+        "選択肢: (1)5.3×10⁻⁹ (2)7.8×10⁻⁹ (3)9.4×10⁻⁹ (4)2.1×10⁻⁸ (5)4.5×10⁻⁸ が原図と仮数・指数とも一致。",
+        "公式正答: manifest固定値 answer=1 と候補 officialAnswer=\"1\" が一致。",
+        "計算検算: C₁ = 8.85×10⁻¹²×2×0.1/(2×10⁻³) = 8.85×10⁻¹⁰ F。C₂ = 8.85×10⁻¹²×4×0.1/(4×10⁻³) = 8.85×10⁻¹⁰ F。直列合成は C = 4.425×10⁻¹⁰ F で、Q = 4.425×10⁻¹⁰×12 = 5.31×10⁻⁹ C。よって(1)。",
+        "別解検算: d₁/ε₁ + d₂/ε₂ = 1×10⁻³ + 1×10⁻³ = 2×10⁻³ m。D = 12ε₀/(2×10⁻³) = 6000ε₀ = 5.31×10⁻⁸ C/m²。Q = DS = 5.31×10⁻⁹ C で一致。",
+        "因果: 誘電体層が電極と平行に積層されている。このため各層を同じ電束が貫き、直列扱いになる。この説明は物理的に正しい。",
+        "誤答肢(2): 7.8/5.31 ≒ 1.47倍で記述どおり。特定の誤算は断定しておらず、推測もない。",
+        "誤答肢(3): 9.4/5.31 ≒ 1.77倍で記述どおり。特定の誤算は断定しておらず、推測もない。",
+        "誤答肢(4): 並列合成 C₁+C₂ = 1.77×10⁻⁹ F とすると、Q = 1.77×10⁻⁹×12 = 2.12×10⁻⁸ C となり 2.1×10⁻⁸ と一致する。直列が正しい理由も明示されている。",
+        "誤答肢(5): 4.5/0.531 ≒ 8.5倍で記述どおり。特定の誤算は断定していない。",
+        "公開候補図: 原図と照合した。左の電源記号と「12 V」ラベル、上配線が上電極・下配線が下電極へつながる接続、上層ε₁(／ハッチ)と下層ε₂(＼ハッチ)の配置、右側の寸法矢印 2 mm・4 mm のすべてが一致し、欠落・反転・切れはない。候補図だけで積層構造と寸法が理解できる。",
+        "figureDescription: 接続・層配置・ハッチング向き・寸法ラベルの記述が原図と一致する。電源極性の記載はないが、電荷量の大きさに影響せず解答に不要なので不備としない。",
+        "出典: examDate 2025-03-23 は令和6年度下期にあたり、fiscalYear=2024・term=lower・sourceAttribution と整合する。officialReferenceUrls は空配列で、検証を要する独立主張はない。reviewedFromPage=[4] は、印刷ページ「-1-」の理論問題冒頭頁が表紙等に続くPDFページであることと矛盾しない。"
+      ]
+    }
+  ]
+}

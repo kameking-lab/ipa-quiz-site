@@ -1,0 +1,104 @@
+{
+  "retrievedOn": "2026-09-23",
+  "notice": "候補資料。該当ページ・肢の文言を直接照合するまで受入不可。",
+  "questions": {
+    "Q18": [
+      {
+        "name": "term-dictionary",
+        "url": "https://kouseikyoku.mhlw.go.jp/kyushu/iryo_shido/documents/2016033035.pdf",
+        "httpStatus": 200,
+        "sha256": "c7ae783dc7802aa78505a3eb86ef661307203e2848a476618acaaee75065f9e9",
+        "bytes": 2204958,
+        "contentType": "application/pdf",
+        "locatorCandidate": "PDF51頁：単純骨折→閉鎖性骨折、複雑骨折→開放骨折"
+      },
+      {
+        "name": "fdma-first-aid",
+        "url": "https://www.fdma.go.jp/relocation/html/life/survival/pdf/h29/survival2903.pdf",
+        "httpStatus": 200,
+        "sha256": "a55de2c2bb21c957d6244e945410a5724ba4ac71b537058305dadee39dc221d2",
+        "bytes": 22141266,
+        "contentType": "application/pdf",
+        "locatorCandidate": "骨折の副子固定：骨折部分の上下の関節より長い副子。PDF中の頁番号は画像資料のため再確認要"
+      }
+    ],
+    "Q19": [
+      {
+        "name": "mhlw-abnormal-findings",
+        "url": "https://www.mhlw.go.jp/toukei/itiran/roudou/saigai/anzen/kenkou07/j1.html",
+        "httpStatus": 200,
+        "sha256": "65e86c42ae4e852d8f38ce88b3bd105959aa65453e630720b9b139d49af4a44b",
+        "bytes": 55508,
+        "contentType": "text/html",
+        "locatorCandidate": "有所見率＝健診受診者中、所見のあった労働者の割合"
+      },
+      {
+        "name": "stat-dispersion",
+        "url": "https://www.stat.go.jp/naruhodo/10_tokucho/chirabari.html",
+        "httpStatus": 200,
+        "sha256": "60893dc3d1ab5fdec08b27ba24441d2452e47530f2e484b674d19e4db23a4c8e",
+        "bytes": 15580,
+        "contentType": "text/html",
+        "locatorCandidate": "代表値と分散。データの散らばりを見る"
+      },
+      {
+        "name": "stat-correlation",
+        "url": "https://www.stat.go.jp/dstart/point/keyword/",
+        "httpStatus": 200,
+        "sha256": "aa89238c773ad6382dc215d08c8a0fe35a75e41c914435a072c183bf3614ce6f",
+        "bytes": 20988,
+        "contentType": "text/html",
+        "locatorCandidate": "相関関係と因果関係の違い"
+      }
+    ],
+    "Q25": [
+      {
+        "name": "mhlw-digestive-handbook",
+        "url": "https://www.mhlw.go.jp/content/001087177.pdf",
+        "httpStatus": 200,
+        "sha256": "cc41206dd69e1b3f0d5adbe93e867e32ba2cccb9db2abd9d69259d9fafff38f3",
+        "bytes": 6684723,
+        "contentType": "application/pdf",
+        "locatorCandidate": "PDF30～33頁：胃・小腸・膵臓・胆嚢／肝臓の記述"
+      },
+      {
+        "name": "mhlw-vitamin-b6-dri",
+        "url": "https://www.mhlw.go.jp/content/10904750/000586563.pdf",
+        "httpStatus": 200,
+        "sha256": "db0c964b701e789ce1f2fd05a7d632707986f2ffa439255ea6bfb34513316f0d",
+        "bytes": 2089701,
+        "contentType": "application/pdf",
+        "locatorCandidate": "PDF14頁・印刷222頁：遊離PLP/PMPがホスファターゼで加水分解後に吸収"
+      }
+    ],
+    "Q29": [
+      {
+        "name": "mhlw-heat-manual",
+        "url": "https://www.mhlw.go.jp/file/06-Seisakujouhou-11200000-Roudoukijunkyoku/manual.pdf",
+        "httpStatus": 200,
+        "sha256": "55cf76ade88b22ae92a48593023fdedcdcdc80c82e1a34a71ddf82fcc082c019",
+        "bytes": 3459585,
+        "contentType": "application/pdf",
+        "locatorCandidate": "PDF9～10頁・印刷4～5頁：視床下部、恒常性、皮膚血流、発汗"
+      },
+      {
+        "name": "mhlw-thyroid",
+        "url": "https://www.bosei-navi.mhlw.go.jp/health/thyroid.html",
+        "httpStatus": 200,
+        "sha256": "aae29f88269a3a6c27087c36cc3fbb798dd11aed955f4fe35acf4f1c219a5bb7",
+        "bytes": 14396,
+        "contentType": "text/html",
+        "locatorCandidate": "甲状腺ホルモン過剰による代謝と体温上昇"
+      },
+      {
+        "name": "mhlw-homeostasis",
+        "url": "https://www.mhlw.go.jp/file/06-Seisakujouhou-12200000-Shakaiengokyokushougaihokenfukushibu/0000123635.pdf",
+        "httpStatus": 200,
+        "sha256": "e149de72145bd30e2f94fe600cd1fc25133e4f1d828a5c2874cc066d8f5da4da",
+        "bytes": 4213712,
+        "contentType": "application/pdf",
+        "locatorCandidate": "生理「ホメオスターシスについて」"
+      }
+    ]
+  }
+}

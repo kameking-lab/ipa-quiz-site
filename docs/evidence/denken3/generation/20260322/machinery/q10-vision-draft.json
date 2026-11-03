@@ -1,0 +1,94 @@
+{
+  "questionNumber": 10,
+  "sharedContext": null,
+  "units": [
+    {
+      "part": null,
+      "question": "電力変換装置では，各種のパワー半導体デバイスが使用されている。パワー半導体デバイスの定常的な動作に関する記述として，誤っているものを次の(1)～(5)のうちから一つ選べ。",
+      "choices": {
+        "1": "IGBT と逆並列ダイオードを組み合わせたパワー半導体デバイスは，IGBT にとって順方向の電流を流すことができる期間を IGBT のオンのゲート電圧を与えることで決めることができる。IGBT にとって逆方向の電圧が印加されると，IGBT のゲート状態にかかわらず IGBT にとって逆方向の電流が逆並列ダイオードに流れる。",
+        "2": "ダイオードの導通，非導通は，そのダイオードに印加される電圧の極性で決まり，導通時は回路電圧と負荷などで決まる順電流が流れる。",
+        "3": "サイリスタは，オンのゲート電流が与えられて順方向の電流が流れている状態であれば，その後にゲート電流を取り去っても，順方向の電流に続く逆方向の電流を流すことができる。",
+        "4": "オフしているパワーMOSFET は，ボディーダイオードを内蔵しているのでオンのゲート電圧が与えられなくても逆電圧が印加されれば逆方向の電流が流れる。",
+        "5": "オフしている IGBT は，順電圧が印加されていてオンのゲート電圧を与えると順電流を流すことができ，その状態からゲート電圧を取り去ると非導通となる。"
+      },
+      "officialAnswer": "3",
+      "explanation": "各デバイスの定常的な動作を整理すると次のとおりである。\n・ダイオード：制御端子を持たず，印加電圧の極性だけで導通（順バイアス）・非導通（逆バイアス）が決まる。導通時の電流値はデバイスではなく外部回路（電源電圧・負荷）で決まる。\n・サイリスタ：順電圧印加中にゲート電流を与えるとターンオンし，いったん導通すればゲート電流を取り去っても，順電流が保持電流以上である限り導通を続ける（自己保持）。しかし逆方向の電流を流し続けることはできない。電流が零（保持電流未満）まで減少するとターンオフし，逆電圧に対しては逆阻止状態となる。\n・IGBT／パワーMOSFET：ゲート電圧で導通・非導通を制御できる自己消弧形（電圧駆動形）デバイスで，オンのゲート電圧を与えている間だけ順電流を流し，ゲート電圧を取り去るとオフする。パワーMOSFET は構造上ボディーダイオードをソース・ドレイン間に逆並列の向きで内蔵する。IGBT は通常，逆方向電流の経路として逆並列ダイオードと組み合わせて使用される。\n以上から，サイリスタが「順方向の電流に続く逆方向の電流を流すことができる」とする(3)が誤りである。なお，転流時に短時間流れる逆回復電流は過渡現象であり，定常的な動作として逆方向電流を流せることを意味しない。",
+      "choiceExplanations": {
+        "1": "正しい。IGBT の順方向電流は，オンのゲート電圧を与えている期間だけ流れるので，導通期間をゲート電圧で決められる。IGBT にとって逆方向の電圧が加わると，逆並列ダイオードが順バイアスとなって導通するため，ゲート状態にかかわらず逆方向の電流はダイオードを通って流れる。",
+        "2": "正しい。ダイオードは制御端子を持たない非可制御デバイスであり，導通・非導通は印加電圧の極性で決まる。導通時に流れる順電流の大きさは，回路の電圧や負荷などの外部条件で決まる。",
+        "3": "誤り。サイリスタはゲート電流によってターンオンした後，ゲート電流を取り去っても順電流が保持電流以上であれば導通を続ける（自己保持）。しかし電流が零付近まで減少するとターンオフし，逆電圧に対しては逆阻止状態となるため，順方向の電流に続けて逆方向の電流を流すことはできない。",
+        "4": "正しい。パワーMOSFET はその構造上，ソース・ドレイン間に逆並列の向きのボディーダイオード（寄生ダイオード）を内蔵している。そのため，ゲート電圧を与えずオフしている状態でも，MOSFET にとって逆方向の電圧が加わればボディーダイオードを通して逆方向の電流が流れる。",
+        "5": "正しい。IGBT は電圧駆動形の自己消弧形デバイスであり，順電圧が加わった状態でオンのゲート電圧を与えると順電流を流し，ゲート電圧を取り去るとターンオフして非導通となる。サイリスタのような自己保持動作はしない。"
+      },
+      "figureDescription": null,
+      "officialReferenceUrls": [],
+      "uncertainty": "なし",
+      "needsReview": true,
+      "sourceQuestionPdfUrl": "https://www.shiken.or.jp/chief/upload/20260322_ch_third_q03.pdf",
+      "sourceAnswerPdfUrl": "https://www.shiken.or.jp/chief/upload/20260322_ch_third_a01.pdf",
+      "reviewedFromPage": [
+        13
+      ]
+    }
+  ],
+  "draftModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 3574,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 9309,
+      "webSearchRequests": 0,
+      "costUSD": 0.1462158,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 1643,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "ba40ef07668a4a39caa7aa86bac40211bff4d8fe8fbaa7d9333806aa6de3f2f4",
+  "inputRequestSha256": "f7fa2c2d32ff0e74594d65a967397d4e38c2865ea3bfe2adcc6932bd45c9bd21",
+  "sourceQuestionPdfSha256": "a89c7dc2b9a305f9db83f2f78195f0df8a0da5aeec6b8e66cfd40fb028d146fb",
+  "sourceAnswerPdfSha256": "cc2890296d06a4823df5697a78a1c01ddfd39f041c51f48c87984daa3a5707c6",
+  "sourcePageImageSha256": {
+    "data/raw_pdfs/denken3/review/20260322/machinery/p13.png": "2207604bde9f2b1a13049008c97ae6afdafe8fd6c5a6d3cd757c58397e60c441"
+  },
+  "revisionHistory": [
+    {
+      "version": 1,
+      "model": "claude-opus-5-5",
+      "resolvedModel": "claude-opus-5-5",
+      "modelUsage": {
+        "claude-opus-5-5": {
+          "inputTokens": 2,
+          "outputTokens": 2645,
+          "cacheReadInputTokens": 1279,
+          "cacheCreationInputTokens": 12675,
+          "webSearchRequests": 0,
+          "costUSD": 0.1545638,
+          "contextWindow": 1000000,
+          "maxOutputTokens": 128000,
+          "thinkingTokens": 826,
+          "canonicalModel": "claude-opus-5-5",
+          "provider": "firstParty",
+          "costBasis": "list"
+        }
+      },
+      "rawResponseSha256": "160c7c32940576f00c0b733bc3a48b3ae328464b2f7d1950af284b5b90b88d66",
+      "inputRequestSha256": "9e3d4b717d34bd08bd73a525944c5069e068a19aea9de213152e52615470dd83",
+      "previousDraftSha256": "8a8f8921a7d774166a30f91c1e81791ee10bccc84b10e6113ccff44d9818f0b0",
+      "previousDraft": "data/raw_pdfs/denken3/review/20260322/machinery/archive/q10-vision-draft-v1.json",
+      "answeredReviewSha256": "3bef707196a4f93c132cd930e2b256c71abc923f7864a149281f44093311c36e",
+      "answeredReview": "data/raw_pdfs/denken3/review/20260322/machinery/archive/q10-opus-review-v1.json",
+      "answeredStrictReceipt": "docs/evidence/denken3/strict/20260322-machinery-s1-q10-opus.json",
+      "answeredStrictReceiptSha256": "3565d0f8e33a66ccf1a93d9a95c225c3430c298d44ecabd6ad65383c6dfe10b3",
+      "figureSha256": {},
+      "referenceHashes": {},
+      "operatorNote": ""
+    }
+  ]
+}

@@ -1,0 +1,97 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20250323",
+  "subject": "theory",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 6451,
+      "cacheReadInputTokens": 139443,
+      "cacheCreationInputTokens": 19800,
+      "webSearchRequests": 0,
+      "costUSD": 0.31531660000000006,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 3750,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "1b82ded53c53371909a655c655678faf1b9792dc7f6967cf7a49f4affcca12c0",
+  "inputRequestSha256": "dc6fb1bf230c7442fadcfd740a705c85f13a6db6a4c1094eaa693a80844fe02b",
+  "inputHashes": {
+    "candidateSha256": {
+      "q05": "e6cfd726f1f57e5fee1e375e507fc35c5682a1bf1e266023274152fafa1647a1",
+      "q06": "d10501923f8c4da018c17b5b615ca99153d153432b60fafea62801a6144c3e6e"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20250323/theory/p08.png": "1abcb0fb3b6c6b31a726ca92737a54c7f69767547cf9c4e524ce0abfa2d38b8b",
+      "data/raw_pdfs/denken3/review/20250323/theory/p09.png": "5532f8893806118cca9c9e9aba1ffd29096959334d416f60cd9f7f974925990b"
+    },
+    "figureSha256": {
+      "public/images/denken3/20250323/theory/20250323-theory-q06-dc-circuit.png": "d9f695d62954c89bbd44ccb7ff751e9580f04b5e6eeb80ac4ea082207e81844f"
+    },
+    "sourceQuestionPdfSha256": "8817012cb55eed9c83bb1e68df138909b1e03a81f7ed48a9893a219e1d2a76ca",
+    "sourceAnswerPdfSha256": "4c3b38fcf1405766fafaa78b1b05b867a3d48307a670b9d354476bc6b32acd4c",
+    "officialAnswerUnitsSha256": "7b8d761ca96e6a3ad97343fdfaebc695cc3d7e56456d1cf8b08d833221e73146",
+    "referencePdfSha256": {},
+    "referencePageSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q05",
+      "questionNumber": 5,
+      "part": null,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [
+        "(3) 1.32 J の誤答理由が固有の理由になっていない。現状は『4つのエネルギーのどの組合せの和にも一致しない』『総和は1.52 Jなので誤り』だけである。1.32 J は、C₁ と C₂ の電圧を取り違えた（C₁ に R₂ の電圧 60 V、C₂ に R₁ の電圧 40 V を当てた）ときに出る値である。この場合 C₁ = ½×400×10⁻⁶×60² = 0.72 J、C₂ = ½×600×10⁻⁶×40² = 0.48 J で、コイルの 0.12 J を足すと 0.72 + 0.48 + 0.12 = 1.32 J になる。この誤りの筋道を示し、『C₁ は L₁+R₁ に並列なので電圧は 40 V、C₂ は L₂+R₂ に並列なので電圧は 60 V』と書いて否定すべき。",
+        "(2) 1.20 J は『コイル 0.12 J + C₂ 1.08 J（C₁ を落とした）』のほかに、『C₁・C₂ の電圧を取り違え、コイルを落とした 0.72 + 0.48 = 1.20 J』とも一致する。算術的な記述は正しいが、誤答の生じ方を一つに決めつけている。『〜に一致する』という事実の記述にとどめるか、両方の経路を併記するのが望ましい。"
+      ],
+      "answerIssues": [],
+      "explanationIssues": [
+        "uncertainty 欄が『図の接続点の位置に基づく判読であり、この解釈で公式正答(5)と一致した』という未確認の書き方のままである。公式問題原図と照合した結果、C₁ は左上の接続点と右中央の接続点の間（L₁+R₁ に並列）、C₂ は右中央の接続点と下側配線の間（L₂+R₂ に並列）にあることを確認した。確認済みの記述に更新すべき。"
+      ],
+      "figureIssues": [
+        "figureDescription 自身が『この図が問題の解答に必須』と書いているのに、figureUrls が空で、公開する候補図がない。問題文だけでは C₁・C₂ がどの素子に並列かが決まらず（たとえば C₁ が L₁ だけに並列なのか、L₁+R₁ に並列なのか）、公開物だけでは解けない。公式原図 p.8（印刷頁 -5-、T2-R 008）から、C₁・L₁・R₁・L₂・R₂・C₂・E の全ラベル、3つの接続点の黒丸、電源記号を含む回路図を、問題文と選択肢を入れずに切り出して figureUrls に登録する必要がある。",
+        "figureDescription に電源 E の極性（長い極板が上か下か）の記述がない。エネルギーの計算には影響しないが、図を完全に記述するなら原図どおり記載すべき。"
+      ],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "問題文は原図と一致（R₁=20 Ω, R₂=30 Ω, L₁=20 mH, L₂=40 mH, C₁=400 μF, C₂=600 μF, E=100 V, 定常状態で L₁, L₂, C₁, C₂ に蓄えられるエネルギーの総和[J]）",
+        "選択肢は原図と一致: (1)0.12 (2)1.20 (3)1.32 (4)1.40 (5)1.52",
+        "原図の接続: 左上の黒丸 = E の上側・L₁ の左端・C₁ の左端。右中央の黒丸 = R₁ の右端・C₁ の右端・L₂ の上端・C₂ へ向かう配線。下の黒丸 = R₂ の下端・E の下側・C₂ の下端。したがって C₁ ∥ (L₁+R₁)、C₂ ∥ (L₂+R₂)",
+        "検算: I = 100/(20+30) = 2 A。W_L1 = ½×0.02×4 = 0.04 J、W_L2 = ½×0.04×4 = 0.08 J、V_C1 = 2×20 = 40 V → 0.32 J、V_C2 = 2×30 = 60 V → 1.08 J。総和 1.52 J で公式正答(5)と一致",
+        "4つのエネルギーの部分和は {0.04, 0.08, 0.12, 0.32, 0.36, 0.40, 0.44, 1.08, 1.12, 1.16, 1.20, 1.40, 1.44, 1.48, 1.52}。(1)(2)(4) の一致の記述は正しく、1.32 はどの部分和にもない",
+        "reviewedFromPage [8] は原図下部の T2-R 008（印刷頁 -5-）と整合",
+        "officialReferenceUrls は空で、検証が必要な独立主張はない"
+      ]
+    },
+    {
+      "unitKey": "q06",
+      "questionNumber": 6,
+      "part": null,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "問題文は原図と一致（二つの直流電源と三つの抵抗、図の向きに定義した I₁, I₂, I₃[A] の組合せ）",
+        "選択肢は原図の表と一致: (1)−1,−1,0 (2)−1,1,−2 (3)2,1,1 (4)1,1,0 (5)1,−1,2",
+        "原図の極性: 左 4 V は長い極板が上（上が正）、右 2 V は長い極板が下（上側端子は −2 V）。I₁ は 4 Ω の下で右向き、I₂ は 2 Ω の下で右向き、I₃ は 5 Ω の左で下向き。上中央と下中央に接続点の黒丸",
+        "検算: 下側配線を 0 V、上中央の電位を V とする。(4−V)/4 = (V+2)/2 + V/5 → 20−5V = 14V+20 → V=0。I₁=1, I₂=1, I₃=0 で公式正答(4)と一致",
+        "極性の裏付け: 右電源を上正と仮定すると V = 40/19 V となり、どの選択肢とも合わない。原図どおりの極性で正答と一意に整合する",
+        "誤答肢の検算: 全選択肢が KCL を満たすため、KVL で否定している。(1) I₃=0→V=0→I₁=1≠−1、(2) I₃=−2→V=−10→I₁=3.5≠−1、(3) I₃=1→V=5→I₁=−0.25≠2、(5) I₃=2→V=10→I₁=−1.5≠1。いずれも正しい",
+        "公開候補図 20250323-theory-q06-dc-circuit.png は原図と一致: 4 Ω、2 Ω、5 Ω、4 V、2 V、I₁[A]、I₂[A]、I₃[A] の全ラベル、矢印の向き、電源極板の長短、2つの黒丸、配線の接続がすべて一致。問題文・表の混入や端の切れもなく、この図だけで解答できる",
+        "reviewedFromPage [9] は原図下部の T2-R 009（印刷頁 -6-）と整合",
+        "officialReferenceUrls は空で、検証が必要な独立主張はない"
+      ]
+    }
+  ]
+}

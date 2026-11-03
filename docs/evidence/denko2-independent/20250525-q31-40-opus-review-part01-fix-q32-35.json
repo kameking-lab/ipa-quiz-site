@@ -1,0 +1,52 @@
+{
+  "inputHashes": {
+    "draftSha256": "965c32868d24a6ee0754c4ece562346e145f0a37762f70de69b3441411886619",
+    "candidateSha256": {
+      "32": "96e391c7deda69cb2232c50b3132ad750ab8e72a6807bdf175e72e6888992cc3",
+      "35": "508116f2a6410227a99f66e67b39fc8f22ecdb45f5942412e00de17f887c3249"
+    },
+    "rowSha256": {
+      "32": "73d0c10007ac0fa68fc52330cedf5557c53ed4edc17ffbe220ddf1b5ed524de8",
+      "35": "e5bf6fa656c6a19a41d350290c2fde70209c139b6d822b69430c84d2cae1c00f"
+    },
+    "sharedFigureSha256": {
+      "public/images/denko2/2025-first/wiring-main.png": "9a24f0c440f8551855249e8768d44fb15bbe7db7aff283ebfffe950cfcae4277"
+    },
+    "sourcePackSha256": {
+      "32": "0d781e0b7fa6f6809d84524e27249c04083ba6f7f51f35ccab8c8dc8e6aa82f0",
+      "35": "1de63fc41c33c83070bc5bd0441650393a1fbec37d9520dafc26aa57e3d78ed6"
+    },
+    "sourceFigureSha256": {
+      "35": "51bdf4d1cbae0e14d4684372fc2203e4dd4c2cd29d7bb6e038ad77c94a2c9aaa"
+    }
+  },
+  "reviewModel": "claude-opus-5-5",
+  "assessment": [
+    {
+      "number": 32,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "lawNeedsExternalCheck": []
+    },
+    {
+      "number": 35,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "explanationIssues": [
+        "choiceExplanations.ロ の『国交省の図記号表では電流計箱付開閉器は箱Sに斜線を重ねる』は、添付の九州地方整備局図記号表（PDF191頁）と合わない。『電流計箱付開閉器・電磁開閉器』の行には記号が2つ並ぶ。左は箱の中のSを円で囲んだもの、右は箱の中のSに縦線を通したもの（$状）。斜線を重ねた記号はない。並び順どおりに読むと、縦線付きの記号は電磁開閉器にあたる。『原図⑤の箱Sに斜線はなく』という否定の根拠も、これに合わせて『円で囲んだSではない』に直す必要がある。",
+        "explanation の『国交省の標準図でも電磁開閉器は開閉器…とは別の機器として掲げられ、公式正答イと一致する』は論理が逆向きになっている。添付の図記号表では、原図⑤の枠だけのSは『開閉器箱』の記号と同じ形で、電磁開閉器の縦線付き記号とは違う。したがって図記号の形だけでは電磁開閉器と判定できない。電磁開閉器と判定できるのは、制御配線※1で圧力スイッチ●Pにつながり、ポンプ主回路aを開閉するという配線上の文脈と公式正答による。この点を明記し、図記号表が正答を直接裏付けるように読める記述は削除又は修正すること。",
+        "editorialReviewNotes の『斜線付き箱S（電流計箱付開閉器）』も同じ誤りである。添付画像で線が通っているのは縦線で、対応する機器は電磁開閉器。電流計箱付開閉器の記号は円で囲んだSである。",
+        "editorialReviewNotes は九州地方整備局の共通仕様書（kyoutuu2022.pdf）PDF191頁を根拠に挙げているのに、officialReferenceUrls にそのURL https://www.qsr.mlit.go.jp/n-youchi/kokyo-youchi/site_files/file/pdf/kyoutuu2022.pdf が入っていない。代わりに入っている mlit 001108579.pdf と取り違えている。"
+      ],
+      "figureIssues": [],
+      "lawNeedsExternalCheck": [
+        "explanation が根拠にしている国交省標準図（001108579.pdf）PDF36頁の電磁開閉器図記号と、PDF11頁の圧力スイッチP・押しボタンBの別記について、原文も図も添付されておらず、記号の形を照合できない。",
+        "JIS C 0303:2000 4.4（PDF13頁）の開閉器分類は、照合パックに要約があるだけで、原文と図形を確認できない（音声PDFは図形を再現しない）。"
+      ]
+    }
+  ]
+}

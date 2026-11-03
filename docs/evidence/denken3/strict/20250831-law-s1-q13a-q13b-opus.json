@@ -1,0 +1,103 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20250831",
+  "subject": "law",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 5701,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 20422,
+      "webSearchRequests": 0,
+      "costUSD": 0.2776598,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 3268,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "e9b963a9e85dde0e5ecc802944d87a481de0e283065570dd3f824ea68bfd57c7",
+  "inputRequestSha256": "09f697197d87a8b72c6ae4bacca4337fad69fc69f6d2e61d630772c45f2c0b15",
+  "inputHashes": {
+    "candidateSha256": {
+      "q13a": "f10d332387ded159476c17240d95c7c34b49f117d87a2f73a9bdd16375e9cfa1",
+      "q13b": "5685cdc3696a2d422e43e254dd2b4c9b711f306d8ce3fe0d5ff3589600884b30"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20250831/law/p18.png": "3b6b6606795ba03ebdb89ebd40d12f1316f69c8b1f96b403d8be5cfb66a26dd8",
+      "data/raw_pdfs/denken3/review/20250831/law/p04.png": "38045ec67d58396f98ae270d13322f49aa0291474ec50e346ecabbd47a85dfbe"
+    },
+    "figureSha256": {
+      "public/images/denken3/20250831/law/20250831-law-q13-fig1.png": "ac0ab4c395dadae3c47f75237bf8e511fc1e98775ae93ae72d34ddb142997330"
+    },
+    "sourceQuestionPdfSha256": "51aeb8f1cbfe8e6d3667c2848a3d9fccff40a967f48aafc292fa13a13a6efbb0",
+    "sourceAnswerPdfSha256": "76fd3715ed487d19a56b387fb402de20ee09474e9fa55b0413f9037b96af06c9",
+    "officialAnswerUnitsSha256": "67fae9c5b921bc44fa8748a660e7904e40eeb827211e58c006625e2e7914495c",
+    "referencePdfSha256": {},
+    "referencePageSha256": {},
+    "referenceJsonSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q13a",
+      "questionNumber": 13,
+      "part": "a",
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "出典メタデータ: fiscalYear=2025, term=upper, examDate=2025-08-31, subject=law, sourceQuestionPdfUrl=…20250831_ch_third_q04.pdf, sourceAnswerPdfUrl=…20250831_ch_third_a01.pdf, reviewedFromPage=[18] はすべてmanifestと一致。原図頁の頁番号は『-15-』『T1-H 018』で、法規冊子1頁目が『T1-H 004』。この3頁差はPDF第18頁と整合する。sourceAttributionの『令和7年度上期 … 法規科目 問13(a)』も公式解答表の表題『令和7年度 第三種電気主任技術者上期試験解答』と整合する。",
+        "問題文: 原図の共通リード文（出力600 kW、6→12時直線増大、12→18時直線下降、消費電力 0–10時100 kW／10–17時300 kW／17–21時400 kW／21–24時100 kW、余剰は電力系統に送電）と(a)設問文（[kW·h]、最も近いもの）は、数値・単位・語句とも一致する。『次の(a)及び(b)の問に答えよ。』の省略は小問分割に伴う整形で、意味は変わらない。",
+        "選択肢: (1)900 (2)1 300 (3)1 500 (4)2 200 (5)3 600 は原図と完全一致。",
+        "公式正答: 公式解答表の法規 問13(a)=2、配点7。候補の officialAnswer=2、scoringPoints=7 と一致。",
+        "独立検算: P(t)=100(t−6)（6–12時）、100(18−t)（12–18時）。余剰は次の3区間。7–10時は三角形で½×3×300=450。10–12時は台形で(100+300)/2×2=400。12–15時は三角形で½×3×300=450。15–18時は発電が消費以下のため余剰なし。合計1 300 kW·h となり(2)に一致する。",
+        "誤答肢理由の検算:",
+        "(1) 900=450+450 で、10–12時の400が欠落した値。記述は正しい。",
+        "(3) 1 500 とすると自家消費は2 100 になるが、実際は2 300 で矛盾する。記述は正しい。",
+        "(4) 7–15時の消費分は 100×3+300×5=1 800 kW·h で、全量を発電で賄っている。2 200 とすると自家消費は1 400 となり過大。記述は正しい。",
+        "(5) 3 600=½×12×600 は総発電量。記述は正しい。",
+        "図: 公開候補図は原図のグラフ部分と同一内容。凡例（実線=発電電力、破線=消費電力）、縦軸ラベル（縦書き『発電電力』『消費電力』、[kW]、上向き矢印）、縦軸目盛 100/300/400/600、点線補助線（600→12時頂点、400→17時段、300→10時段）、横軸目盛 0/6/10/12/17/18/21/24、『時刻[時] →』、24時の右端縦線をすべて保持している。欠落・誤接続はなく、公開候補図だけで解答に必要な読み取りが可能。",
+        "figureDescription: 補助線の範囲、100 kWに補助線がないこと、交点7時・15時が図中に数値表記されていないこと、はすべて原図と整合する。",
+        "外部参照: officialReferenceUrls は空で、独立主張はない。本問は計算問題で、注3（令和7年4月1日現在の法令）に依存する法令上の主張も含まない。"
+      ]
+    },
+    {
+      "unitKey": "q13b",
+      "questionNumber": 13,
+      "part": "b",
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "出典メタデータ: fiscalYear・term・examDate・subject・問題PDF・解答PDF・reviewedFromPage=[18] はmanifestと一致。原図頁の頁番号は『-15-』『T1-H 018』で、PDF第18頁と整合する。sourceAttributionの『問13(b)』表記も適切。",
+        "問題文: 共通リード文と(b)設問文（消費電力量に対し、太陽電池発電所が発電した電力量により自給した比率[%]、最も近いもの）は原図と一致する。",
+        "選択肢: (1)35 (2)38 (3)46 (4)52 (5)58 は原図と完全一致。",
+        "公式正答: 公式解答表の法規 問13(b)=3、配点7。候補の officialAnswer=3、scoringPoints=7 と一致。",
+        "独立検算（消費電力量）: 100×10 + 300×7 + 400×4 + 100×3 = 1 000 + 2 100 + 1 600 + 300 = 5 000 kW·h。",
+        "独立検算（発電電力量）: ½×12×600 = 3 600 kW·h。",
+        "独立検算（自家消費量）: 3 600 − 1 300 = 2 300 kW·h。区間別の min(発電, 消費) の積算でも一致する。6–7時 50、7–10時 300、10–12時 600、12–15時 900、15–17時 (300+100)/2×2=400、17–18時 50 で、合計 2 300 kW·h。",
+        "自給率: 2 300 ÷ 5 000 = 46 % となり(3)に一致する。解説の因果（送電した余剰分は自給に含めない）も正しい。",
+        "誤答肢の相当自給量と差分:",
+        "(1) 35 % → 1 750 kW·h、実際との差 −550。",
+        "(2) 38 % → 1 900 kW·h、実際との差 −400。",
+        "(4) 52 % → 2 600 kW·h、実際との差 +300。",
+        "(5) 58 % → 2 900 kW·h、実際との差 +600。",
+        "上記の算術はすべて正しく、各肢固有の数値で否定できている。",
+        "図: 公開候補図は(a)と同一ファイルで、原図と同一内容を保持している。(b)で必要な『破線下の面積』と『実線下のうち破線以下の部分』は、公開候補図の目盛・凡例のみで読み取れる。figureDescription の記述は原図と整合する。",
+        "外部参照: officialReferenceUrls は空で、独立主張はない。法令効力基準日（注3）に依存する主張も含まない。"
+      ]
+    }
+  ]
+}

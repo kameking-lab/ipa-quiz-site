@@ -1,0 +1,36 @@
+{
+  "inputHashes": {
+    "draftSha256": "d1087f8fff610e1c2bf6a97b6914ed0862c29193d81d26cc78f60fc15388b4a6",
+    "rowSha256": {
+      "19": "3ff0ea7e5b2d724d61777af5ca51f8cc4c5566710b69196aec484ee5eab3f718",
+      "20": "22fe91d4ace5ee0e615c2489905234ff6808e393d256e7f849cf2ed098b057aa"
+    },
+    "legalReceiptSha256": {
+      "docs/evidence/denko2-law/20251026-q19.json": "fa9efb4eff20510c89558045286b64e3446306cf9abac48402eca18da1fed668",
+      "docs/evidence/denko2-law/20251026-q20.json": "9d9d8db0b03e5a22b2d33e8292b63029ca1780465bd10ee278fe25dab3697a3d"
+    }
+  },
+  "reviewModel": "claude-opus-5-5",
+  "assessment": [
+    {
+      "number": 19,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "lawNeedsExternalCheck": []
+    },
+    {
+      "number": 20,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "explanationIssues": [
+        "choiceExplanations.ハの根拠が違う。『耐湿性のある工事方法として認められており』と書いているが、湿気の多い場所で合成樹脂管工事ができる根拠は電技解釈第156条156-1表である。さらに第158条は、湿気の多い場所又は水気のある場所では防湿装置を施すことを条件にしている。この条件が抜けており、無条件で適切であるかのように読める。『156-1表で湿気の多い場所にも施設できる工事方法。第158条により防湿装置を施せば適切』の趣旨に直すこと。"
+      ],
+      "figureIssues": [],
+      "lawNeedsExternalCheck": []
+    }
+  ]
+}

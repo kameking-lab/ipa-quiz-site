@@ -1,21 +1,35 @@
 import type { Question } from "@/lib/questions/types";
-import { examLabel, formatYearSeason } from "@/lib/utils";
+import { questionSourceExam, questionSourceEdition } from "@/lib/questions/source-label";
+import { getChoiceKeys } from "@/lib/questions/answers";
+import { formatNumericAnswer } from "@/lib/questions/numeric";
+import { choiceDisplayLabel, formatQuestionAnswerForDisplay } from "@/lib/questions/display";
 
-export const COPILOT_SYSTEM_PROMPT = `あなたは IPA 情報処理技術者試験を受験する学習者のための AI 学習アシスタントです。
+export const COPILOT_SYSTEM_PROMPT = `あなたは資格試験を受験する学習者のための AI 学習アシスタントです。現在の問題に書かれた資格・年度・正答を優先し、他資格の制度や出題形式を混同しません。
 単なる解説ボットではなく、学習効果を最大化するパーソナルチューターとして振る舞います。
 
 ## あなたにできること
 
-- 過去問の解説・選択肢分析・用語解説・類題生成
+- 掲載された原問の解説・選択肢分析・用語説明
 - IT 技術全般の質問（ネットワーク・セキュリティ・データベース・プログラミング・アーキテクチャなど）
 - 試験勉強の方針・スケジュール・教材に関するアドバイス
 - 試験前の不安・焦りへの共感とサポート
 - キャリア・資格の活かし方に関する相談
 
+## 原問の解説だけを行う（最優先）
+
+独自の問題・類題・予想問題・模擬問題・練習問題を作成してはいけません。ユーザーが要求しても、新しい設問、選択肢、正解、配点を作らず、現在の原問の解説へ案内してください。
+数値・条件・固有名詞を置き換えた設問や、原問の選択肢を改変した設問も作成してはいけません。説明のための文章は、この原問の根拠と解き方に結び付く解説だけにしてください。
+別の問題を実在する過去問として提示する場合は、サーバーから渡された原文・選択肢・年度・問題番号と完全に一致するものだけを扱い、存在しない出典や年度・番号を補ってはいけません。照合できない別問は提示しないでください。
+公式サンプル・参考問題を実際に出題された過去問と呼んではいけません。出典の区分を維持してください。以前の会話に独自の類題が含まれていても採用・続行・再掲せず、現在の原問に戻って解説してください。
+
 ## 問題コンテキストについて
 
-システムメッセージに「現在の問題」が付与されている場合、それはユーザーが現在取り組んでいる過去問です。
-**ユーザーの選択した答え／正誤・標準解説・選択肢全文も同時に渡されます。** 必ず参照してから応答してください。
+システムメッセージに「現在の問題」が付与されている場合、それはユーザーが現在取り組んでいる原問です。公式サンプル等の出典区分を、実際の過去問へ読み替えてはいけません。
+**ユーザーの選択した答え／正誤・サイト掲載の解説・選択肢全文も同時に渡されます。** 必ず参照してから応答してください。掲載解説は公式見解とは限りません。
+説明を言い換えるときも、問題と掲載解説の処理順序・前提条件・数値・否定記号を保持してください。順序の一部分だけが入れ替え可能な場合、他の手順まで並べ替えてはいけません。
+回答前に、問われているのが「正しい／誤っている」のどちらか、選択肢の正誤、条件・閾値・例外・義務の種類を、現在の問題とサイト掲載の選択肢別解説に照らして確認してください。似た専門用語を省略・混同して意味を変えてはいけません。根拠文にない結論は補わず、根拠が不足する箇所はその旨を明示して試験実施団体の資料での確認を促してください。
+とくに法令・安全・医療などの事実は、問題の出題時点と現行制度を混同しないでください。回答の結論と理由が掲載解説に矛盾しないか出力前にもう一度点検してください。
+複数の公式正答がある場合は全てを正答として扱ってください。公式に公表されていない採点理由は公式見解と断定せず、学習上の考え方として区別してください。
 ユーザーが「解説して」「選択肢を分析して」「用語を説明して」など問題に関する質問をしたときはそのコンテキストを活用してください。
 問題と無関係な質問（勉強法・IT技術の質問・体調・不安・キャリア相談など）には、コンテキストを無視して直接答えてください。
 
@@ -88,9 +102,9 @@ export const COPILOT_SYSTEM_PROMPT = `あなたは IPA 情報処理技術者試�
 
 ## 外部学習リソース言及のルール
 
-学習リソースを挙げる必要がある場合は「IPA 公式サイト」「市販の書籍」「公式教科書」など**一般的な表現に限定**し、特定のサービス名・商品名・著者名は出さないでください。このサイト内での学習に誘導することを基本とします。
+学習リソースを挙げる必要がある場合は「当該試験の公式サイト」「市販の書籍」「公式教科書」など**一般的な表現に限定**し、特定のサービス名・商品名・著者名は出さないでください。このサイト内での学習に誘導することを基本とします。
 
-## 試験制度の正確な知識
+## IPA 試験制度の正確な知識（現在の問題が IPA の場合のみ）
 
 試験制度・出題形式について言及する場合、以下の事実に従ってください:
 
@@ -100,22 +114,22 @@ export const COPILOT_SYSTEM_PROMPT = `あなたは IPA 情報処理技術者試�
 - **IT パスポート（IP）**: CBT 方式、四肢択一 100 問、120 分
 - **高度試験**: 午前Ⅰ（四肢択一 30 問共通）・午前Ⅱ（四肢択一 25 問区分別）・午後Ⅰ（記述式）・午後Ⅱ（記述式または論文）
 
-不確実な制度情報は断言せず、「IPA 公式サイトで最新情報をご確認ください」と返してください。
+不確実な制度情報は断言せず、当該試験の公式サイトで最新情報を確認するよう伝えてください。
 
 ## AI 解説の不確実性
 
 AI が生成した解説には誤りが含まれる可能性があります。
-合否判定や学習方針など重要な判断は、必ず IPA 公式資料や信頼できる書籍で確認するよう促してください。
+合否判定や学習方針など重要な判断は、必ず当該試験の公式資料や信頼できる書籍で確認するよう促してください。
 
 ## 語尾・断定回避ルール（厳守）
 
-公式に確認された事実（IPA 試験区分名・問題番号・選択肢の記号など）は普通に断定してよいですが、
+公式に確認された事実（試験区分名・問題番号・選択肢の記号など）は普通に断定してよいですが、
 **解説の論理・選択肢分析・用語定義・学習アドバイス・暗記法**については過剰な断定を避け、
 読者が自分で確かめるための余地を残す語尾に統一してください。
 
 - ✅ よい例: 「〜と考えられます」「〜と整理できます」「〜と理解しておくと覚えやすいです」「〜が一般的です」
 - ❌ 避ける: 「絶対に〜」「必ず〜です」「100%〜」「〜以外あり得ません」「断言できます」
-- ✅ 不確実なときは「IPA 公式資料でご確認ください」「正式な定義は〜を参照してください」と添える
+- ✅ 不確実なときは「当該試験の公式資料でご確認ください」「正式な定義は〜を参照してください」と添える
 
 理由のない断定はユーザーの誤学習につながります。「〜です／〜ます」基調は維持しつつ、
 検証可能性を持たせる語尾を選んでください。`;
@@ -128,7 +142,7 @@ export function buildQuestionContext(
   const lines: string[] = [];
   lines.push(`# 現在の問題`);
   lines.push(
-    `- 試験: ${examLabel(question.exam)}（${formatYearSeason(question.year, question.season)} 問${question.qNumber}）`,
+    `- 試験: ${questionSourceExam(question)}（${questionSourceEdition(question)} 問${question.qNumber}）`,
   );
   lines.push(`- 分野: ${question.category}`);
   if (question.topicTags.length) {
@@ -140,24 +154,43 @@ export function buildQuestionContext(
   if (question.choices) {
     lines.push("");
     lines.push(`## 選択肢`);
-    for (const key of ["ア", "イ", "ウ", "エ"] as const) {
+    for (const key of getChoiceKeys(question.choices)) {
       const c = question.choices[key];
-      if (c) lines.push(`- ${key}: ${c}`);
+      if (c) lines.push(`- ${choiceDisplayLabel(question.exam, key)}: ${c}`);
     }
   }
   lines.push("");
   lines.push(`## 正解`);
   lines.push(
-    Array.isArray(question.answer) ? question.answer.join(", ") : String(question.answer),
+    question.type === "ordering" && Array.isArray(question.answer)
+      ? `正しい順序: ${formatQuestionAnswerForDisplay(question, question.answer)}`
+      : question.type === "numeric" ? formatNumericAnswer(question)
+        : formatQuestionAnswerForDisplay(question, question.answer, ", "),
   );
   lines.push("");
-  lines.push(`## 標準解説（参考）`);
+  lines.push(`## サイト掲載の解説（参考・公式見解とは限らない）`);
   lines.push(question.explanation);
+  if (question.choiceExplanations && question.choices) {
+    const explainedChoices = getChoiceKeys(question.choices)
+      .map((key) => ({ key, explanation: question.choiceExplanations?.[key] }))
+      .filter((item): item is { key: typeof item.key; explanation: string } => Boolean(item.explanation));
+    if (explainedChoices.length) {
+      lines.push("");
+      lines.push("## サイト掲載の選択肢別解説（参考・公式見解とは限らない）");
+      for (const { key, explanation } of explainedChoices) {
+        lines.push(`- ${choiceDisplayLabel(question.exam, key)}: ${explanation}`);
+      }
+    }
+  }
+  if (question.lawReferenceDate) {
+    lines.push("");
+    lines.push(`- 法令・制度の基準日: ${question.lawReferenceDate}`);
+  }
   if (selectedChoice !== undefined) {
     lines.push("");
     lines.push(`## ユーザーの回答`);
     lines.push(
-      `選択: ${selectedChoice} / ${isCorrect === true ? "正解" : isCorrect === false ? "不正解" : "未採点"}`,
+      `選択: ${formatQuestionAnswerForDisplay(question, selectedChoice)} / ${isCorrect === true ? "正解" : isCorrect === false ? "不正解" : "未採点"}`,
     );
   }
   return lines.join("\n");
@@ -208,7 +241,7 @@ export interface LearnerProfile {
  * 「出典のみ参照」ディレクティブ。passages が空の場合は null を返す。
  *
  * このディレクティブは「現在の問題」コンテキストと並行して機能する:
- *  - 標準解説（問題に付随）は引き続き参照可能
+ *  - サイト掲載の解説（問題に付随）は引き続き参照可能
  *  - 加えて [1]..[N] でラベル付けされた追加出典が利用可能
  *  - それ以外の一般知識は推測で語らない
  *  - 本文中に [1] のような番号で必ず引用
@@ -224,9 +257,9 @@ export function buildRAGDirective(passageCount: number): string | null {
     `直後に「参照可能な出典」として ${passageCount} 件のパッセージ ${nums} を提供します。`,
     "回答に使う事実・定義・規格・数値・選択肢の正誤判定は、その出典に書かれている内容のみから根拠を引いてください。",
     "出典に裏付けが無い情報を、自分の一般知識として断定的に語らないでください。",
-    "本文の該当箇所には必ず [1] [2] のように番号で引用してください（最低 1 回）。",
+    "参照資料を使った箇所にだけ [1] [2] のように番号で引用してください。閲覧中の問題の事実に、別の問題の引用番号を付けてはいけません。該当する裏付けがなければ、引用番号を無理に付けないでください。",
     "サーバー側が末尾に出典一覧を自動付与するため、応答末尾に自分で「出典一覧」を書く必要はありません。",
-    "問題に付随する標準解説は引き続き参照してよいが、それ以外の知識は出典に限定してください。",
+    "問題に付随するサイト掲載の解説は参考にしてよいが、公式見解と混同せず、それ以外の知識は出典に限定してください。",
   ].join("\n");
 }
 
@@ -275,10 +308,7 @@ export const INITIAL_QUESTION_EXAMPLES: ReadonlyArray<{
     label: "覚え方のコツ",
     prompt: "この問題で問われている用語や数値を覚えやすくする語呂合わせ・対比・イメージ法を提案してください。",
   },
-  {
-    label: "同じ論点の類題",
-    prompt: "この問題と同じ分野・同じ論点（細分野まで一致）の類題を 1 問作成してください。分野や論点が異なる問題は作らないでください。選択肢ア〜エ、正解、簡潔な解説まで含めてください。",
-  },
+
 ];
 
 export type QuickActionId =
@@ -289,7 +319,6 @@ export type QuickActionId =
   | "analyze-e"
   | "simplify"
   | "detailed"
-  | "similar"
   | "example"
   | "mnemonic"
   | "prerequisite"
@@ -334,11 +363,6 @@ export const QUICK_ACTIONS: Record<
     label: "もっと詳しく",
     prompt: () =>
       "この問題の論点をさらに深掘りしてください。関連する仕様・規格・歴史的背景・他の出題パターンも含め、上級者向けの解説をお願いします。",
-  },
-  similar: {
-    label: "類題を1問",
-    prompt: () =>
-      "この問題と同じ分野・同じ論点（細分野まで一致）の類題を1問生成してください。分野や論点が異なる問題は作らないでください。選択肢ア〜エ、正解、簡潔な解説を含めてください。",
   },
   example: {
     label: "実例で教えて",

@@ -1,0 +1,69 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20250831",
+  "subject": "power",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 3994,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 13727,
+      "webSearchRequests": 0,
+      "costUSD": 0.1899598,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 2330,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "b4e2e84575b66691d8154861ec93481e3a3b5417ad3c2bbe627d48c8cd802434",
+  "inputRequestSha256": "2646825bff2c197bd8a2a47a6a4fc8b8d9cfb01efb14cb6dfd73fb271a325ddd",
+  "inputHashes": {
+    "candidateSha256": {
+      "q07": "5df3bef15083066d650756ddec2dc3c1b92bd0bb2e4a6f1c2f70c0b8a631d19c"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20250831/power/p10.png": "09b6178679fcd789b29d5ec878509572046e12e2e809a7003bc98a6577c0af63"
+    },
+    "figureSha256": {},
+    "sourceQuestionPdfSha256": "567aac1df6dc0c0950d04e90a1ad03231427c518eede92559effe01e2b97a2c9",
+    "sourceAnswerPdfSha256": "76fd3715ed487d19a56b387fb402de20ee09474e9fa55b0413f9037b96af06c9",
+    "officialAnswerUnitsSha256": "957fa42f644482c35715d6e7b88d63ff23aaaad1ad79be7ee18b45b19689c5a8",
+    "referencePdfSha256": {},
+    "referencePageSha256": {},
+    "referenceJsonSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q07",
+      "questionNumber": 7,
+      "part": null,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [
+        "choiceExplanations[\"1\"]の「電力が末端側から流れ込むため、配電線の電圧は末端側ほど高くなり」は一般化しすぎている。逆潮流時の電圧は分散型電源の連系点付近で高くなる。連系点が末端とは限らないので、「分散型電源の連系点に近いほど電圧が高くなり（連系点が末端側なら末端ほど高くなり）」のように、電源位置に依存する表現に改めるべき。",
+        "総合解説の「この上昇を打ち消すには QX の項を正にする」は言い過ぎである。力率制御（系統側から見て遅れ力率、原則85%以上・やむを得ない場合80%まで）は電圧上昇を『抑制』するもので、完全に打ち消せるとは限らない。選択肢(3)の文言「抑制するために」に合わせ、「抑制するには」とすべき。"
+      ],
+      "figureIssues": [],
+      "sourceIssues": [
+        "uncertainty欄は「本問の出典年度・科目はこのページだけからは特定できない」とする一方、needsReview=false であり、sourceAttributionは「令和7年度上期 電力科目 問7」と断定している。未解決事項を残したままレビュー不要としており、矛盾している。添付の問題原図には年度・科目の表記がなく、フッターは「- 7 -」と「T1－D 010」のみである。一方、添付の公式解答表（令和7年度上期、電力 問7=3）は manifest の公式正答と一致しており、出題内容も電力科目の範囲である。このため、年度・科目の特定は manifest と sourceQuestionPdfUrl（…_ch_third_q02.pdf）に依拠することになる。どちらかで確定させたうえで uncertainty 欄を解消するか、未確定のまま残すなら needsReview=true にすべき。",
+        "sourceQuestionPdfUrl（20250831_ch_third_q02.pdf）が電力科目の問題冊子であること、および reviewedFromPage=[10] のPDF頁が印刷頁「- 7 -」に対応することは、添付物だけでは検証できない。添付原図が示すのは印刷頁番号のみである。manifest 側での照合記録が必要。"
+      ],
+      "verifiedEvidence": [
+        "問題文：添付原図の「分散型電源の配電系統連系に関する記述として，誤っているものを次の(1)〜(5)のうちから一つ選べ。」と候補の文言が一致。",
+        "選択肢(1)〜(5)：全5肢とも添付原図と字句・句読点・「(SVR)」表記まで一致。",
+        "公式正答：添付の令和7年度上期 第三種電気主任技術者試験解答表で、電力 問7 は解答3・配点5。manifest の {question:7, part:null, answer:\"3\", points:5} および候補の officialAnswer=\"3\"・scoringPoints=5 と一致。",
+        "総合解説の検算：ΔV ≒ (PR + QX)/V について、P は送電端→受電点、Q は遅れを正とする。逆潮流では P<0 となり PR 項が負、つまり受電点電圧が上昇する。受電点が遅れ無効電力を受け取る（系統側から見て遅れ力率）と QX>0 となり、上昇を抑制する向きに働く。系統側から見て進み力率では Q<0 となり、上昇を助長する。したがって(3)の「進み力率とする」が誤りで、「遅れ力率」が正しい。符号の定義と因果関係は整合しており、系統連系技術要件ガイドラインの趣旨（受電点力率は系統側から見て進み力率とならないようにする）とも合致する。",
+        "誤答肢(1)(2)(4)(5)の理由：(1)は変電所バンク逆潮流による電圧上昇、(2)はPV・燃料電池の直流出力をインバータで連系する際に生じる高調波とフィルタ対策、(4)は専用線連系・負荷分割による系統増強、(5)はSVRのタップ切換による電圧調整を述べており、いずれも正しい記述として根拠が妥当。ただし(1)の電圧分布の表現は explanationIssues に記載したとおり要修正。",
+        "図：添付原図に図はなく、figureDescription「本問に図はない。」、figureUrls=[]、choiceFigureUrls={} は妥当。",
+        "officialReferenceUrls は空配列で、検証対象となる独立主張はない。"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,71 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20250831",
+  "subject": "theory",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 4029,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 14237,
+      "webSearchRequests": 0,
+      "costUSD": 0.19473979999999996,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 2224,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "6c1cf41fd26462911432803ac12e52ed9eedd54f8d8a2b747759b7b5164975c1",
+  "inputRequestSha256": "e5d3d81b442b8a7ae28adf1ebdc9a8d90a5c49485c1945d4e0d5799b2c319f22",
+  "inputHashes": {
+    "candidateSha256": {
+      "q07": "124de4ef017e766fbede2ad4264dcb92e641955d095aa311f8c4a952b0d09ef6"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20250831/theory/p10.png": "6dfdba488e2d253d508595df3695e2a4bd3eaba8960e7b00933a82dd882225d5"
+    },
+    "figureSha256": {
+      "public/images/denken3/20250831/theory/20250831-theory-q07-fig1.png": "f5f4265f2e4377beadf69b9ea13c8b4c9d786f54b68e9f7fad963f4809587aa4"
+    },
+    "sourceQuestionPdfSha256": "11a75ffd5dd2b5309ad75370bb963c4fda9e12a812174cfa2c2237383c3a964d",
+    "sourceAnswerPdfSha256": "76fd3715ed487d19a56b387fb402de20ee09474e9fa55b0413f9037b96af06c9",
+    "officialAnswerUnitsSha256": "9a5cbdec7f18539027226f8bbaae0f1be131e67b15b2b1ed459765dc3e52aa61",
+    "referencePdfSha256": {},
+    "referencePageSha256": {},
+    "referenceJsonSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q07",
+      "questionNumber": 7,
+      "part": null,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [
+        "figureDescription の I の位置が原図と合わない。記述は「2Ω の抵抗があり、その上方に右向きの矢印と電流記号 I」だが、原図・公開候補図とも I と右向き矢印は 2Ω 抵抗の上ではなく、その左側（電源上端から 2Ω までの上側導線の上方）にある。2Ω の上方にあるのはラベル「2Ω」である。「2Ω の左側の上側導線の上方に右向きの矢印と I」と直すこと（直列なので I＝2Ω の電流という解釈自体は正しい）。",
+        "figureDescription はスイッチ S が図では開いた状態で描かれていること、および S 付近に操作を示す曲線矢印があることに触れていない。解答には影響しないが、図の全要素の記述としては不足している。"
+      ],
+      "sourceIssues": [
+        "uncertainty 欄が他のフィールドと矛盾している。uncertainty は「試験年度・回をこのページのみからは特定できない」としている。一方で sourceAttribution は「令和7年度上期 理論科目 問7」と断定し、fiscalYear=2025・term=upper・examDate=2025-08-31 も確定値として入っている。needsReview=false とも整合しない。年度・回の根拠は問題ページではなく次の 2 点である。①manifest 固定の sourceQuestionPdfUrl（20250831_ch_third_q01.pdf）。②添付の公式解答表の見出し「令和7年度 第三種電気主任技術者上期試験解答」で、理論 問7＝1・配点5 が公式正答単位と一致する。uncertainty 欄はこの根拠を明記した内容に書き換え、未解決事項として残さないこと。"
+      ],
+      "verifiedEvidence": [
+        "問題文: 原図（PDF 頁 10、頁下部の識別記号「T1−R 010」、印字頁番号「-7-」）と照合した。「スイッチSを閉じているとき，2Ωの抵抗を流れる電流は，スイッチSを開いたときの電流の3倍」「Rの値[Ω]」「最も近いもの」「(1)〜(5)のうちから一つ選べ」まで、語句・単位の脱落や改変はない。",
+        "選択肢: 原図の (1)2.5 (2)3.5 (3)0.5 (4)1.5 (5)4.5 と候補 choices 1〜5 の番号・値の対応が一致する。",
+        "公式正答: 公式解答表の理論 問7 の解答は 1、配点は 5。manifest の {question:7, part:null, answer:\"1\", points:5} および候補の officialAnswer=\"1\"・scoringPoints=5 と一致する。",
+        "総合解説の検算: S 開放時は全抵抗 12Ω で I_開=E/12。S 閉路時は R_p=10R/(10+R) で I_閉=E/(2+R_p)。3 倍条件から 2+R_p=4、R_p=2 となり、10R=20+2R から R=2.5Ω。逆算すると R_p=25/12.5=2Ω、全抵抗 4Ω、比 12/4=3 で正しい。比のみを使うので E の値と極性に依存しないという記述も正しい。",
+        "誤答肢の検算: (2) R=3.5 → R_p=35/13.5≈2.593、全抵抗≈4.593、比≈2.613。(3) R=0.5 → R_p=5/10.5≈0.476、全抵抗≈2.476、比≈4.846。(4) R=1.5 → R_p=15/11.5≈1.304、全抵抗≈3.304、比≈3.632。(5) R=4.5 → R_p=45/14.5≈3.103、全抵抗≈5.103、比≈2.351。いずれも候補の数値（2.61/4.85/3.63/2.35）と丸めの範囲で一致し、3 倍との大小関係の記述も正しい。",
+        "図の接続: 公開候補図は原図と同一の回路である。E（左辺）→ I 矢印 → 2Ω → 上側接続点（黒丸）→ 10Ω → 下側接続点（黒丸）の経路と、上側接続点 → S → R → 下側導線 → 10Ω 下端・電源下端への帰路がある。S 閉路で R は 10Ω と並列になり、2Ω と直列に電源へつながる。ラベル I・2Ω・E・10Ω・S・R、接続点の黒丸 2 個、S の曲線矢印に欠落はない。",
+        "図の必要性: R が 10Ω と並列になることは問題文だけでは分からず、図が必要である。公開候補図だけで解答に必要な接続関係はすべて読み取れる。",
+        "officialReferenceUrls は空で、独立した外部主張もないため、参考資料の検証対象はない。"
+      ]
+    }
+  ]
+}

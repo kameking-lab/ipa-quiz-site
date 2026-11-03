@@ -1,0 +1,78 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20250831",
+  "subject": "machinery",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 4919,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 14258,
+      "webSearchRequests": 0,
+      "costUSD": 0.2127078,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 2936,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "ce5afb2015276d0c7ef0cff5dcebddefa1e016d2f079057b0ead97685752ca5c",
+  "inputRequestSha256": "2ea91bcc2b76f78e3f7c625847d66f7f4b900f44b7e4cd63d5b3fedbd614af8d",
+  "inputHashes": {
+    "candidateSha256": {
+      "q10": "9226f7e9c4e1a5b56d2cf90c558454451679f1fa2257bda5de9d4386e6b0e447"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20250831/machinery/p13.png": "1cb2bd6a22c5769315b87c84cee28a068ad372ec999daa27a2fa074abfb085d3"
+    },
+    "figureSha256": {
+      "public/images/denken3/20250831/machinery/20250831-machinery-q10-fig1.png": "01abbf7e34b16b0915465273656a013ec3f6a29d08337f46e2408b8c93573cbd"
+    },
+    "sourceQuestionPdfSha256": "2a73a24594cc2b8bb7504b9a0ff15e001b2bb56b830572ce2be853f7116f26d8",
+    "sourceAnswerPdfSha256": "76fd3715ed487d19a56b387fb402de20ee09474e9fa55b0413f9037b96af06c9",
+    "officialAnswerUnitsSha256": "95638092e114170a332e710f1d4875873d08af6659d2017919978a70ace83047",
+    "referencePdfSha256": {},
+    "referencePageSha256": {},
+    "referenceJsonSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q10",
+      "questionNumber": 10,
+      "part": null,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [
+        "choiceExplanations[5]: 2.5 を否定する固有の理由が弱い。示されているのは「24.0 A と一致しない」と「1/(1−d)=2.5 は昇圧チョッパの無次元の電圧比」の 2 点だけで、後者は単位 [A] の選択肢の成り立ちとしては推測にとどまる。『昇圧チョッパの式を誤って当てはめても電圧比が得られるだけで、電流 [A] にはならない』のように、なぜ誤りかを明示する表現に改めるか、推測である旨を明記すること。",
+        "choiceExplanations[4]: 3.8 A を 240/(2πfL)≈3.82 A とする由来の説明は検算上正しい。ただし出題者の意図は確認できないので、『〜と考えられる』など推測であることが分かる書き方が望ましい（軽微）。"
+      ],
+      "answerIssues": [],
+      "explanationIssues": [
+        "スイッチ S とダイオード D を理想素子（オン抵抗・順方向電圧降下 0）とみなす前提が明記されていない。『D 導通期間の両端電圧は 0』『Vo = dE』はこの前提に依存するので、前提を 1 文追記すること（軽微）。"
+      ],
+      "figureIssues": [
+        "uncertainty 欄に『電源 E の電池記号の極性を明確には読み取れない』とあり、未解決の曖昧さとして残っている。一方で needsReview=false になっており、整合していない。",
+        "原図・公開候補図のどちらでも、電池記号は上側の極板がやや長く描かれているように見え、上側を正極と読むのが自然である。ダイオードの向き（カソードが S–L 接続点側）も、上側を正極とする降圧チョッパの構成と矛盾しない。ただし添付画像の解像度では極板の長短を断定できない。原図 PDF を高倍率で確認し、figureDescription に『電源 E は上側が正極（長い極板）』と明記したうえで uncertainty から削除すること。確認できない場合は needsReview=true とすること。"
+      ],
+      "sourceIssues": [
+        "uncertainty 欄の『原本ページに試験年度・回の表記がなく、出典の年度を特定できていない』は古い記述のまま残っており、sourceAttribution（令和7年度上期 機械 問10）、examDate=2025-08-31、fiscalYear=2025 と矛盾している。",
+        "公式解答表の原図には『令和7年度 第三種電気主任技術者上期試験解答』と明記されており、機械 問10=2 である。問題原図のフッター『T1−K 013』（K=機械）と sourceQuestionPdfUrl（20250831_ch_third_q03）から、年度と科目の帰属は確認できる。この記述を削除するか、確認済みの内容に更新すること。"
+      ],
+      "verifiedEvidence": [
+        "公式正答: 公式解答表の原図〈機械〉問10 の解答は 2、配点は 5。manifest 固定値 {question:10, part:null, answer:\"2\", points:5}、候補の officialAnswer=\"2\"、scoringPoints=5 といずれも一致する。",
+        "問題文: 原図の『E=400 V，L=1 mH，R=10 Ω，f=10 kHz，d=0.6，定常状態，D はダイオード，負荷抵抗に流れる電流の平均値[A]として最も近いもの』と、数値・単位・語句がすべて一致する。",
+        "選択肢: 原図の (1)40.0 (2)24.0 (3)16.0 (4)3.8 (5)2.5 と候補 choices が完全に一致する。",
+        "頁: 原図の印刷頁は『-10-』、フッターは『T1−K 013』である。reviewedFromPage=[13] はフッターの通し番号 013 と整合する。",
+        "計算検算: Vo=dE=0.6×400=240 V、Io=240/10=24.0 A で (2) と一致する。T=1/f=100 μs、オン期間 dT=60 μs、ΔI≈(E−Vo)dT/L=160×60×10⁻⁶/10⁻³=9.6 A、最小電流≈24−4.8=19.2 A>0 となり、電流連続モードであることを確認した。",
+        "誤答肢の検算: (1) E/R=40 A、(3) (1−d)E/R=0.4×400/10=16 A、(4) 240/(2π×10⁴×10⁻³)=240/62.83≈3.82 A、(5) 1/(1−d)=2.5（無次元）。いずれも数値として正しい。",
+        "図の照合: 公開候補図は原図と同じ接続である。E の上側から S を経て黒丸の接続点に至り、そこから L を経て R 上端へつながる。D は接続点と下側線路（黒丸）の間に縦向きに入り、カソードが上側である。下側線路は E・D・R に共通である。ラベル E・S・L・D・R はすべて存在し、欠落や改変はない。解答に必要な回路構成は、公開候補図だけで理解できる。",
+        "因果の検算: 定常状態では L の平均電圧が 0 になるため、D 両端電圧の平均が負荷電圧の平均に等しくなる。S オフ時は D を通して還流する。この説明は降圧チョッパの動作として正しい。",
+        "officialReferenceUrls は空で、検証を要する独立主張はない。"
+      ]
+    }
+  ]
+}

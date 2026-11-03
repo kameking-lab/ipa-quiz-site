@@ -1,0 +1,59 @@
+{
+  "reviewModel": "claude-opus-5-5",
+  "requestedModel": "claude-opus-5-5",
+  "canonicalModel": "claude-opus-5-5",
+  "provider": "firstParty",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 2390,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 14732,
+      "webSearchRequests": 0,
+      "costUSD": 0.1659198,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 1679,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponsePath": "data/exam-library/emkohyo-review/emkohyo-EM20251809-q13-13-raw-response.txt",
+  "rawResponseSha256": "bd645ac5117208a2aecde40bce0006f05e71067baa43f2d586d1527f342e0c94",
+  "paperId": "emkohyo-EM20251809",
+  "ids": [
+    "emkohyo-EM20251809-q13"
+  ],
+  "figureSha256": {
+    "emkohyo-EM20251809-q13": {}
+  },
+  "officialRowImageSha256": {
+    "emkohyo-EM20251809-q13": {
+      "/exam-library/emkohyo-EM20251809/q13-p9-0.webp": "9d3ee81bb320c2fb97d82246cf86cb374da15702cfcdffe4c5ddfed65b26be5a"
+    }
+  },
+  "officialPageImageSha256": {},
+  "governmentSourceImageSha256": {},
+  "candidateSha256": {
+    "emkohyo-EM20251809-q13": "08b329d42548c440a9cd9c225cb148736533385c21d862c76bfdfd1ca3002549"
+  },
+  "sourcePackPath": "docs/evidence/emkohyo-choice-sources/emkohyo-EM20251809-q13-13.json",
+  "sourcePackSha256": "759d530757ee8bb52336c75da81705a29c7f627c3493bbc5f47c1251a1ee5e82",
+  "assessment": {
+    "emkohyo-EM20251809-q13": {
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "reasonIssues": [],
+      "sourceIssues": [
+        "㋩の否定（³Hと¹⁴Cは同時測定できる）の根拠は放射能測定法シリーズNo.23 解説Ⅰ-7（PDF p.224）だけで、この箇所は⁸⁹Sr＋⁹⁰Sr（＋⁹⁰Y）の3核種同時定量を例とする連立方程式法の説明である。³H/¹⁴Cの二核種同時測定を直接述べた記述は抽出されていない。肢3・肢5の理由と summary は、この原理を³H/¹⁴Cへ当てはめた推論である。No.25（PDF p.46）が支えるのは最大β線エネルギー（約18keV／156keV）の差だけで、同時測定が可能とは述べていない。³H・¹⁴Cの二重標識（デュアルラベル）同時測定を直接記述した政府資料を追加するか、No.23の該当箇所が³H/¹⁴Cも対象としていることを示す抜粋を示す必要がある。",
+        "肢5の理由の「¹⁴Cの分布は³Hの領域にも重なる」には対応する抽出抜粋がない。物理的には妥当だが、添付の政府資料では直接裏付けられていない。"
+      ],
+      "needsExternalCheck": [
+        "No.23 またはその他の原子力規制庁・JAEA 資料に、³Hと¹⁴Cの同時測定（二重標識・複数ウィンドウ法）を明示した記述があるか確認すること。",
+        "sources の No.23 の書誌表記「平成8年改訂、表紙表記は文部科学省」を確認すること。平成8年時点の所管は科学技術庁であり、掲載PDFの表紙が実際に文部科学省表記か（後年の再版か）を照合する必要がある。"
+      ]
+    }
+  }
+}

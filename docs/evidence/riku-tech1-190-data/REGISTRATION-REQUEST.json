@@ -1,0 +1,194 @@
+{
+  "exam": "riku-tech1",
+  "export": "RIKU_TECH1_QUESTIONS",
+  "module": "@/data/questions/riku-tech1",
+  "normalizer": "@/lib/questions/native-b normalizeQuestionData",
+  "displayName": "第一級陸上無線技術士",
+  "periods": [
+    "2026-01",
+    "2026-07"
+  ],
+  "sessions": [
+    {
+      "session": "kiso",
+      "label": "無線工学の基礎",
+      "originalsPerSitting": 25
+    },
+    {
+      "session": "kogaku-a",
+      "label": "無線工学A",
+      "originalsPerSitting": 25
+    },
+    {
+      "session": "kogaku-b",
+      "label": "無線工学B",
+      "originalsPerSitting": 25
+    },
+    {
+      "session": "houki",
+      "label": "法規",
+      "originalsPerSitting": 20
+    }
+  ],
+  "counts": {
+    "originals": 190,
+    "A": 150,
+    "B": 40,
+    "BSlots": 200,
+    "gradingCells": 350
+  },
+  "commonFilesEdited": 0,
+  "qualificationMapperImplemented": false,
+  "publicGo": false,
+  "seasonEnumAlreadyPresent": [
+    "january",
+    "july"
+  ],
+  "newSchemaEnumRegistrationRequired": {
+    "exam": [
+      "riku-tech1"
+    ],
+    "session": [
+      "kiso",
+      "kogaku-a",
+      "kogaku-b"
+    ],
+    "type": [
+      "native-b"
+    ]
+  },
+  "existingSessionReused": [
+    "houki"
+  ],
+  "part": "absent for all190: retain source-ledger qNumber1..25 or1..20 so routes remain unique; B original labels separately in nativeB.officialLabel",
+  "qNumberRanges": {
+    "kiso": [
+      1,
+      25
+    ],
+    "kogaku-a": [
+      1,
+      25
+    ],
+    "kogaku-b": [
+      1,
+      25
+    ],
+    "houki": [
+      1,
+      20
+    ]
+  },
+  "periodCounts": {
+    "2026-01": 95,
+    "2026-07": 95
+  },
+  "paperCounts": [
+    {
+      "file": "2026-january-houki.json",
+      "exam": "riku-tech1",
+      "session": "houki",
+      "season": "january",
+      "part": null,
+      "originals": 20,
+      "expectedQuestions": 20,
+      "qNumberRange": [
+        1,
+        20
+      ]
+    },
+    {
+      "file": "2026-january-kiso.json",
+      "exam": "riku-tech1",
+      "session": "kiso",
+      "season": "january",
+      "part": null,
+      "originals": 25,
+      "expectedQuestions": 25,
+      "qNumberRange": [
+        1,
+        25
+      ]
+    },
+    {
+      "file": "2026-january-kogaku-a.json",
+      "exam": "riku-tech1",
+      "session": "kogaku-a",
+      "season": "january",
+      "part": null,
+      "originals": 25,
+      "expectedQuestions": 25,
+      "qNumberRange": [
+        1,
+        25
+      ]
+    },
+    {
+      "file": "2026-january-kogaku-b.json",
+      "exam": "riku-tech1",
+      "session": "kogaku-b",
+      "season": "january",
+      "part": null,
+      "originals": 25,
+      "expectedQuestions": 25,
+      "qNumberRange": [
+        1,
+        25
+      ]
+    },
+    {
+      "file": "2026-july-houki.json",
+      "exam": "riku-tech1",
+      "session": "houki",
+      "season": "july",
+      "part": null,
+      "originals": 20,
+      "expectedQuestions": 20,
+      "qNumberRange": [
+        1,
+        20
+      ]
+    },
+    {
+      "file": "2026-july-kiso.json",
+      "exam": "riku-tech1",
+      "session": "kiso",
+      "season": "july",
+      "part": null,
+      "originals": 25,
+      "expectedQuestions": 25,
+      "qNumberRange": [
+        1,
+        25
+      ]
+    },
+    {
+      "file": "2026-july-kogaku-a.json",
+      "exam": "riku-tech1",
+      "session": "kogaku-a",
+      "season": "july",
+      "part": null,
+      "originals": 25,
+      "expectedQuestions": 25,
+      "qNumberRange": [
+        1,
+        25
+      ]
+    },
+    {
+      "file": "2026-july-kogaku-b.json",
+      "exam": "riku-tech1",
+      "session": "kogaku-b",
+      "season": "july",
+      "part": null,
+      "originals": 25,
+      "expectedQuestions": 25,
+      "qNumberRange": [
+        1,
+        25
+      ]
+    }
+  ],
+  "numberingContractConfirmedByRoot": true,
+  "officialBLabelDisplay": "nativeB.officialLabel takes priority for B; immutable ledger ID/qNumber retained; no renumber or part conversion"
+}

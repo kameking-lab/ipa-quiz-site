@@ -1,0 +1,97 @@
+{
+  "inputHashes": {
+    "draftSha256": "ddeb95c5241a23aaddbdb9fdc822e9345ec703583dd3df7a2f29dad5afb77392",
+    "candidateSha256": {
+      "26": "d20627dcf2a5214ad0e43b1ae1ea25b51ccc3e885e97dbe9d6a85ade3a7a0b9f",
+      "27": "b4ea1f4107259369edadfe469d6528c3d96d4490fac33c8cb161c4bd9444fcad",
+      "28": "92a8f4e45c433992be0b28642bd1ffb6b557a83d875dfab6b8d22c7cd5079bde",
+      "29": "ec2b15581656d33560faadb441a8ea5f297f0fa7aa0508f1c518142182bfe2f4",
+      "30": "0434b539af7055cb7f30632b082c9bc59ecf13c92fa213d87424cc030646185c"
+    },
+    "rowSha256": {
+      "26": "ac3fcce996143a94c68466dca69b48221a92233326a2122e79b444b5f9a17c06",
+      "27": "6c741c459114843bab939583e4ac52397122d2e66b920ca6fb8c57a55a397dcf",
+      "28": "c94bce534ec8b3b10471162cf8ebaf584eb6524904879fdf0323c41c40db8cac",
+      "29": "0723ff70f4035f0e1d94d4e98c99ac90bf292bd377503567de26f6f8d13063f8",
+      "30": "72cf628e7dcbfdc49d39a5d4f84a4196a014ad7e853cfb41230c1c38c5bae868"
+    },
+    "figureSha256": {
+      "public/images/denko1/2026-first/q26.png": "9653965b9f18a949ede9d185c20aaf23f070b1652debbfa916789776c949bb49",
+      "public/images/denko1/2026-first/facility-plan.png": "8e17a9515926bc82c7afb6f6df4cb65eb076f74a7d9327dedf7a74c30cee55a5"
+    },
+    "legalReceiptSha256": {
+      "docs/evidence/denko1-law/20260401-q27.json": "1c05f89458567a67b5b5187cb436f52d97fecaa1cf470985b2b2ecb31f5efd4b",
+      "docs/evidence/denko1-law/20260401-q28.json": "51c37c32236342bde7fb348e8936c5322cea3724513ee4c12af5db29087b3e36",
+      "docs/evidence/denko1-law/20260401-q29.json": "08de54ddf350b3d59b9b82ce30b5bf530e84a6246d262fc8c70101be23ed721a"
+    }
+  },
+  "reviewModel": "claude-opus-5-5",
+  "cliInitModel": "claude-opus-5-5",
+  "sessionId": "3517b879-07f4-4a93-8a46-82f68487190f",
+  "assessment": [
+    {
+      "number": 26,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "explanationIssues": [
+        "explanationには「ヘッドに取り付ける刃物(ポンチとダイス)で構成された工具」とあるが、写真のヘッド横にある小さな丸い部品2個のうち1個は、ホースの継手(カプラ)から下がる鎖につながっている。形状からは油圧カプラの防じんキャップと読むのが自然で、ポンチとダイスとは確認できない。穴をあける刃物に当たるのは、ヘッド上部に付いているねじ軸付きの円筒部分である。explanationとchoiceExplanations.ニの「穴あけ用の刃物」は、この写真の読み方に合わせて直す必要がある。"
+      ],
+      "figureIssues": [
+        "diagramDescriptionの「その横に小さな丸い刃物部品が写っている」は写真と合わない。この部品は鎖でホース継手とつながった丸いキャップ状の部品(防じんキャップとみられる)で、刃物とは判定できない。ヘッド上部に付いたねじ軸付きの円筒部分(ポンチとダイスの取付部)の記述も抜けている。"
+      ],
+      "lawNeedsExternalCheck": []
+    },
+    {
+      "number": 27,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "lawNeedsExternalCheck": [
+        "explanationの「横に向けることができるのは、簡易接触防護措置を施し、かつダクト内部にじんあいが侵入し難いように施設する場合など」について、receiptは第六号本文とただし書の冒頭(「次のいずれかに該当する場合は、横に向けて施設することができる」)しか照合していない。横向きにできる具体的な条件の原文は未照合。",
+        "explanationの「D種接地工事(除外条件あり)」と、choiceExplanations.ハの「合成樹脂等で被覆したダクト等は省略可」について、receiptは第八号本文「ダクトには、D種接地工事を施すこと。」だけを照合しており、省略できる条件の原文は未照合。"
+      ]
+    },
+    {
+      "number": 28,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "lawNeedsExternalCheck": [
+        "explanationとchoiceExplanationsの「第159条第3項第二号〜第五号」について、receiptに残っているのは見出し【金属管工事】と号の番号(二〜五)だけで、「第3項」という項番号の原文は未照合。",
+        "explanationの「管の長さ8m以下のものに簡易接触防護措置を施すか乾燥した場所に施設する場合」について、receiptのロは「管の長さが8m以下のもの」までしか引用しておらず、その後の「簡易接触防護措置を施すか乾燥した場所に施設する」という条件の原文は未照合。",
+        "choiceExplanations.ニの「(接触防護措置を施す場合はD種可)」について、receiptは第五号本文だけを照合しており、ただし書の原文は未照合。"
+      ]
+    },
+    {
+      "number": 29,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "lawNeedsExternalCheck": [
+        "explanationとchoiceExplanationsの「第161条第2項第一号」「第3項第一号」「第3項第二号」について、receiptの原文句は号の番号(一・二)だけで、第2項・第3項という項番号は未照合。",
+        "explanationとchoiceExplanations.ハの「対地電圧150V以下で8m以下の線ぴに簡易接触防護措置を施すか乾燥した場所に施設する場合」について、receiptは「その電線を収める線ぴの長さが8m以下のもの」だけを照合している。対地電圧150V以下(直流300V以下を含む)という電圧条件と、簡易接触防護措置又は乾燥した場所という条件の原文は未照合。"
+      ]
+    },
+    {
+      "number": 30,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "explanationIssues": [
+        "explanationの「地絡継電装置の動作により直ちに負荷開閉器を開路する(G動作)」は不正確。実際には、地絡継電装置に設定した動作時限が経過した後に開路する。この時限は、ロの肢でいう一般送配電事業者側との保護協調のために設ける。「直ちに」と書くと、ロの説明(保護協調が必要)と整合しない。choiceExplanations.ハの「直ちに開路する」も同じ。"
+      ],
+      "figureIssues": [
+        "diagramDescriptionの「③の矢印は盤上部の避雷器LAを指す」は断定しすぎている。③の矢印の先端は高圧受電盤の上辺の外枠に当たっており、その位置はLAの枠の右端よりさらに右側である。LAを指すとは読み取れない。問30〜34共通の図なので、③を問う設問に影響するおそれがある。",
+        "diagramDescriptionの「低圧動力盤からバスダクト(④)で動力制御盤(⑤)へ至り」は図と違う。図のバスダクトは、壁を貫通した後に立ち上がり(④)、上側を右へ延びて途中に波線の省略記号があり、さらに先へ続いている。動力制御盤(⑤)は、バスダクト上の「S」から破線で接続されている。このS(バスダクトからの分岐用開閉器)の記述が抜けている。"
+      ],
+      "lawNeedsExternalCheck": []
+    }
+  ]
+}

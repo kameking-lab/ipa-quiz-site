@@ -1,0 +1,62 @@
+{
+  "reviewModel": "claude-opus-5-5",
+  "requestedModel": "claude-opus-5-5",
+  "canonicalModel": "claude-opus-5-5",
+  "provider": "firstParty",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 3152,
+      "cacheReadInputTokens": 143524,
+      "cacheCreationInputTokens": 20512,
+      "webSearchRequests": 0,
+      "costUSD": 0.2558488,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 1993,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "paperId": "emkohyo-20260217-4",
+  "ids": [
+    "emkohyo-20260217-4-q13"
+  ],
+  "figureSha256": {
+    "emkohyo-20260217-4-q13": {}
+  },
+  "officialRowImageSha256": {
+    "emkohyo-20260217-4-q13": {
+      "/exam-library/emkohyo-20260217-4/q13-p8-0.webp": "5afc699c08755424a4bc896f98c5c0198506b799a50a06953ce1b2c8a833e316"
+    }
+  },
+  "governmentSourceImageSha256": {
+    "docs/evidence/emkohyo-choice-sources/aist-absorbance-p109.png": "b7a837d1579876d4ace0ed0f2820ea581b9f410310a4fa6fe161d05307225dde",
+    "docs/evidence/emkohyo-choice-sources/aist-absorbance-p111.png": "ed701f0c354da0ea65a289ff76d27b4f49979aecdce1ce0390f8f6a73da0e3d2"
+  },
+  "candidateSha256": {
+    "emkohyo-20260217-4-q13": "96f8076a6ad9fdc929c6b5f6fb3e7fedc44416dd6a7e7266b12b5db2a60181bd"
+  },
+  "sourcePackPath": "docs/evidence/emkohyo-choice-sources/emkohyo-20260217-4-q13-13.json",
+  "sourcePackSha256": "a99da0a38fc479bd2e3dd37f4fadb77eaf9c6f76125fe79395d8c17a61c70498",
+  "assessment": {
+    "emkohyo-20260217-4-q13": {
+      "status": "FIX",
+      "textIssues": [
+        "選択肢2の解説だけが「導ける」「下がる」「なる」と常体で書かれている。選択肢1・3・4・5の解説は「です・ます」調なので、敬体に揃える。"
+      ],
+      "choiceIssues": [],
+      "reasonIssues": [
+        "選択肢2の数値例が誤りを示せていない。「Tが0.5なら光路長を2倍にしたときTは0.25」とあるが、反比例（T∝1/l）でも0.5÷2＝0.25で同じ値になる。反比例ではなく指数関数的に下がることの例になっていないうえ、学習者に反比例でも正しいと誤解させるおそれがある。反比例と指数で結果が分かれる例に差し替える。例1：T＝0.1で光路長を2倍にすると、指数では0.01、反比例では0.05。例2：T＝0.5で光路長を3倍にすると、指数では0.125、反比例では約0.167。",
+        "選択肢2と3の解説で、ランバート－ベールの法則が成り立つことが前提だと明記していない。産総研資料p109は「透過光強度の減衰がランバート－ベールの法則に従う場合、吸光度は吸収媒体の濃度に比例する」と条件付きで述べている。T＝10^(−εCl)の導出とA∝Cの比例関係が、この条件の下でのみ成り立つことを書き添えるのが望ましい。"
+      ],
+      "sourceIssues": [
+        "選択肢2の解説は「産総研資料の式(1)はA＝−log₁₀T」としているが、原資料p109（印刷ページ101）の式(1)はA＝−log(I/I0)で、常用対数である旨の注記しかない。原資料は「透過率」という語もTという記号も定義していない。T＝I/I0と置いて書き換えたことを明示し、原式そのままの引用と誤読されないようにする。",
+        "選択肢4の解説には、根拠として主張された抜粋が付いていない。産総研資料p111（印刷ページ103）の「8.3 c) 濃度の異なる一群の標準分散液を作成する」と「8.4.4 検量線の作成」は、原図で確認すると選択肢4を支えている。ところがclaimedExcerptsには含まれておらず、解説でも引用されていない。環境省『底質調査方法』の「標準溶液濃度は、5濃度以上とし」も補強に使える。どちらかを抜粋として登録し、解説に紐づけるべきである。「試料の吸光度を検量線に当てはめて濃度を求める」という記述は、登録済みの抜粋では直接支えられていない。",
+        "産総研ほか『セルロースナノファイバーの有害性試験手順書』は、染色したCNFを定量するための専用手順書であり、吸光光度分析の一般通則ではない。また国立研究開発法人の資料で、省庁の資料ではない。式(1)(2)の記述は一般的な内容で、この問題の根拠としては有効である。ただし、汎用の根拠としてはJIS K 0115（吸光光度分析通則）の方が適切で、環境省資料もJIS K 0115に準じると明記している。"
+      ],
+      "needsExternalCheck": []
+    }
+  }
+}

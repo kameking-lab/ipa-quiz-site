@@ -1,0 +1,70 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20250323",
+  "subject": "machinery",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 3641,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 13450,
+      "webSearchRequests": 0,
+      "costUSD": 0.1806838,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 2018,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "6312d0a52fedc71fdca65bd155b1d35dd25455381fba5c61ce6efc790d8fe723",
+  "inputRequestSha256": "b269c699e7cbd09ab64b333dc5a30f7fc4bd9d2eab3c306429fe300edc0fe34b",
+  "inputHashes": {
+    "candidateSha256": {
+      "q04": "89e6b800187c38fa44afe4cb252ab3f5318422a0c73a342603adb34e2aed9f13"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20250323/machinery/p07.png": "e8a2feaab84938edff7d0d0790ba2048faacd778c0fadfb74324559116ec0e0e"
+    },
+    "figureSha256": {},
+    "sourceQuestionPdfSha256": "66e8b0070a314cd78ed9b9f3edd3d75eeaf442b258fd0aacab0e7d9620c75b9f",
+    "sourceAnswerPdfSha256": "4c3b38fcf1405766fafaa78b1b05b867a3d48307a670b9d354476bc6b32acd4c",
+    "officialAnswerUnitsSha256": "6ae63796de43156aac580c3ce705236a987e2128a772755da6e6473c196bcbf7",
+    "referencePdfSha256": {},
+    "referencePageSha256": {},
+    "referenceJsonSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q04",
+      "questionNumber": 4,
+      "part": null,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [
+        "choiceExplanations[2]: 344 W は √3 を落とした 8 256 W に 0.04/(1−0.04) を掛けた値で、8 256 × 0.04 / 0.96 = 344.0 W となり数値は合っている。しかし「誤り」の理由は「入力電力と機械出力を取り違えるため」の一点だけで、同じ文中で経路として挙げている √3 の欠落（単相式の使用）が理由に含まれていない。二つの誤りを両方とも理由として明記すべき。例：『三相入力に必要な √3 を落としており、さらに入力電力を機械出力とみなして Pc2 = s/(1−s)·P0 を適用しているため誤り』。",
+        "choiceExplanations[2]: 「約344 Wとした値」と経路を断定している。他の肢は「〜とした値に近い」と書いており、uncertainty 欄の方針『出題者の意図を断定しない』とも食い違う。他の肢と同じく「〜とした値に近い」の表現にそろえるべき。",
+        "表記統一（軽微）：読点が混在している。choiceExplanations の 1・2・5 と原問題は「，」、explanation と choiceExplanations の 3・4 は「、」を使っている。原問題に合わせて「，」に統一することを推奨する。"
+      ],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "問題文の照合：添付原図（冊子 p.4、フッター T2−K 007、manifest 上の PDF 第7頁）と照合した。線間電圧 Vn=400 V、線電流 Il=25.8 A、力率 0.8、滑り s=4 %、Pi と Pc1 は共に Pc2 の 1/2、問われているのは二次銅損 Pc2[W]、ただし書き『その他の損失は無視できる』。候補の問題文と意味・数値・単位はすべて一致する。添字（Vn, Il, Pi, Pc1, Pc2）はプレーンテキスト化されているが、意味の変化はない。",
+        "選択肢の照合：原図の (1)318 (2)344 (3)550 (4)571 (5)596 と、候補の choices 1〜5 は完全に一致する。",
+        "公式正答の照合：公式解答表（令和6年度 下期、機械）の問4 は 3 で、manifest の answer=\"3\"、候補の officialAnswer=\"3\" と一致する。",
+        "総合解説の検算：P1 = √3 × 400 × 25.8 × 0.8 = 14 299.8 W。P2 = P1 − (Pi + Pc1) = 14 299.8 − x、Pc2 = sP2 から x = 0.04(14 299.8 − x) となり、1.04x = 571.99、x = 549.99 ≒ 550 W で (3) に一致する。二次入力を同期ワットとする用語、および『二次銅損 = s × 二次入力』の因果もいずれも正しい。",
+        "肢(1)の検算：√3 なしの入力 400 × 25.8 × 0.8 = 8 256 W、0.04 × 8 256 / 1.04 = 317.5 W で 318 に近い。正しい解法から √3 だけを欠いた経路であり、誤りの理由の記述は妥当。",
+        "肢(4)の検算：0.04 × 14 299.8 = 572.0 W で、選択肢 571 W に最も近い。鉄損・一次銅損を差し引いていないという誤りの理由は妥当。",
+        "肢(5)の検算：14 299.8 × 0.04 / 0.96 = 595.8 W で 596 に近い。入力を機械出力とみなして Pc2 = s/(1−s)·P0 を適用した経路で、誤りの理由は妥当。",
+        "図：原図に図はない。figureDescription『図はなし』、figureUrls=[]、choiceFigureUrls={} は正しい。",
+        "出典メタデータ：fiscalYear=2024、term=lower、examDate=2025-03-23、subject=machinery、reviewedFromPage=[7]、問題 PDF URL、解答 PDF URL はいずれも manifest と一致する。sourceAttribution の『令和6年度下期…機械科目 問4』も解答表の表題と一致する。",
+        "officialReferenceUrls は空で、検証が必要な独立の主張はない。"
+      ]
+    }
+  ]
+}

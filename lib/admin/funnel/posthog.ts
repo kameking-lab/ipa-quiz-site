@@ -106,7 +106,9 @@ export function buildFunnelSteps(
 }
 
 const QUIZ_FUNNEL: Array<{ event: string; label: string }> = [
-  { event: "$pageview", label: "ページビュー" },
+  // PostHogProvider は自動 `$pageview` を無効化 (capture_pageview: false) し、
+  // 明示的な `page_view` イベントを送っている。`$pageview` を数えると常に 0 になる。
+  { event: "page_view", label: "ページビュー" },
   { event: "quiz_started", label: "クイズ開始" },
   { event: "question_answered", label: "問題に解答" },
   { event: "quiz_completed", label: "クイズ完了" },

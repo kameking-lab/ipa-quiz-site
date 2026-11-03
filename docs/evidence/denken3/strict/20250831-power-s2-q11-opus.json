@@ -1,0 +1,66 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20250831",
+  "subject": "power",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 4208,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 13727,
+      "webSearchRequests": 0,
+      "costUSD": 0.1942398,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 2655,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "41c9a62f70783d8f483bae1e939ef121f687eda98bec030887a775427fd14b94",
+  "inputRequestSha256": "46ddecfe801eb8668d032ea34c9c04fe54e67bd19e3e1dc59c332798a0fbb897",
+  "inputHashes": {
+    "candidateSha256": {
+      "q11": "76943932c16edd94dc0c2ee2cff54b1dde528368d62ac5a0c597d23e30645101"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20250831/power/p14.png": "1261e3aa4fc68d29a992e50d0d229b8408731e020b01050862d262ac6ad04122"
+    },
+    "figureSha256": {},
+    "sourceQuestionPdfSha256": "567aac1df6dc0c0950d04e90a1ad03231427c518eede92559effe01e2b97a2c9",
+    "sourceAnswerPdfSha256": "76fd3715ed487d19a56b387fb402de20ee09474e9fa55b0413f9037b96af06c9",
+    "officialAnswerUnitsSha256": "e64097c3cb9e033009fcd95e1057e5e03640ef8bfac7f50f7fcb206e9b7d4d5c",
+    "referencePdfSha256": {},
+    "referencePageSha256": {},
+    "referenceJsonSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q11",
+      "questionNumber": 11,
+      "part": null,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "問題文: 添付の公式問題原図（印刷頁「- 11 -」）と照合した。「100/200 V単相3線式配電方式に関する記述として，誤っているものを次の(1)～(5)のうちから一つ選べ。」と一致する。電圧値100/200 V、単位、否定形（誤っているもの）の相違はない。「〜」が「～」になっている点は表記上の差で、意味は変わらない。",
+        "選択肢(1)～(5): 原図と一字ずつ照合し、全肢一致を確認した。(2)は原図で「少なく／てすむ」と改行されているが、候補では「少なくてすむ」と正しく連結されている。",
+        "公式正答: 添付の公式解答表（令和7年度 第三種電気主任技術者上期試験解答）の＜電力＞列で、問11の解答は3、配点は5である。manifest固定の公式正答単位 {question:11, part:null, answer:\"3\", points:5} とも、候補のofficialAnswer=\"3\"・scoringPoints=5とも一致する。",
+        "年度・科目の整合: 解答表で問11の正答が3になるのは電力列だけである（理論は4、機械は2、法規の問11は(a)(b)小問構成で単独の選択式ではない）。本問の内容は配電方式で、電力科目の範囲に当たる。したがってfiscalYear=2025、term=upper、subject=power、examDate=2025-08-31、sourceAttributionは添付資料と矛盾しない。uncertainty欄の「問題頁に年度・科目の記載がない」は事実どおりの注記で、解答表との照合により解消済みと判断した。",
+        "reviewedFromPage=[14]: 原図の印刷頁番号は11である。表紙・注意事項などの前付頁を含むPDF頁番号が14であることと矛盾しない。PDF頁番号はreviewedFromPageに従った。",
+        "総合解説・正答肢(3): バランサは巻数比1:1の単巻変圧器で、両外側線間に接続し、中点を中性線に接続する。線路末端（負荷側）に設けると、不平衡分の電流をバランサが分担するため、線路の中性線電流がほぼ零になり、両側の電圧降下がそろう。電源の近くに設けても、線路上の中性線電流は減らず、効果は小さい。候補の因果説明は正しく、(3)を誤りとする結論も公式正答と整合する。",
+        "銅量比の検算: 2線式は I₂=P/V、損失 2I₂²R₂。3線式（平衡、中性線電流0）は I₃=P/(2V)、損失 2I₃²R₃。損失を等しくおくと R₃=4R₂ となり、A₃=A₂/4 である。銅量比は 3A₃/(2A₂)=3/8=37.5 % となり、候補の記載と一致する。比較条件（電力、対地電圧100 V、損失、こう長、力率が等しい、平衡負荷、3線同一太さ）は総合解説とchoiceExplanations(2)に明記されている。これは教科書的な標準前提であり、問題文の「配電容量が等しい場合」の判定（正しい）を左右しない。",
+        "誤答肢の理由: (1) 外側線間から200 Vが得られるので正しい。(2) 上記検算のとおり正しい。(4) 両側の100 V負荷が不均等だと中性線電流が流れ、電圧降下が異なって不平衡になるので正しい。(5) 中性線が断線すると両側負荷が200 Vに直列接続され、インピーダンス比で分圧されるため、負荷の小さい側（インピーダンスの大きい側）に100 V超の異常電圧が加わるので正しい。各理由は肢固有の内容で、いずれも正確である。",
+        "図: 原図に図はない。figureDescription「本問には図はない。」、figureUrls=[]、choiceFigureUrls={} と整合する。",
+        "出典参照: officialReferenceUrls=[] のため、検証を要する独立主張はない。"
+      ]
+    }
+  ]
+}

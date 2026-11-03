@@ -1,0 +1,97 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20240818",
+  "subject": "law",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 4777,
+      "cacheReadInputTokens": 139443,
+      "cacheCreationInputTokens": 42586,
+      "webSearchRequests": 0,
+      "costUSD": 0.4641246,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 3157,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "191445d7c2123018c3383150dfe0cb11268c50e631daba66d2e365fb1643e943",
+  "inputRequestSha256": "0d1d1efb3bf68005167a6b6869e1618ac1b84f7558d2db476dcba0b01b21ee61",
+  "inputHashes": {
+    "candidateSha256": {
+      "q13a": "8059aeff4f0bbf0bd34bdfa5a46eb547ac3133f7392343a8e84169a565ed03de",
+      "q13b": "d33db9280625a48272871f4e148b9345eef544d6b3a2cbb00c34866d8d287e5c"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20240818/law/p19.png": "15ca4576f2ca880988dcac833b03c91dd54579b805bf6d2a34b3f50decf6916e"
+    },
+    "figureSha256": {},
+    "sourceQuestionPdfSha256": "5dbba8b8e4ec681d2d5f0645a3895a6e218d936519ddd18ac544ddc461a1ae78",
+    "sourceAnswerPdfSha256": "f72ecbc3a477e64948388b69cf78cb931032c9f0c688639836c8d533a949cd0f",
+    "officialAnswerUnitsSha256": "2d86aa65e7542b1741807b337af570c53b1b89b34a970b81d9206dc8e52864d5",
+    "referencePdfSha256": {
+      "data/raw_pdfs/denken3/review/meti-denki-interpretation-20231226.pdf": "7ff56485cb405ecef67c5f81181370396e2cbb245e6fee41b926c0f5f1a73b43"
+    },
+    "referencePageSha256": {
+      "data/raw_pdfs/denken3/review/references/meti-denki-interpretation-20231226-p004.png": "402d8c15127dcfa17da93c61138d44f644a1768f03d445233677240716850d20",
+      "data/raw_pdfs/denken3/review/references/meti-denki-interpretation-20231226-p031.png": "344d29b99f18c6f6b320defbdb781e35eeef581039155a49309548b6e11f7787",
+      "data/raw_pdfs/denken3/review/references/meti-denki-interpretation-20231226-p032.png": "2c4f847af1edf4e145047129b40452ff0b0e8a6e4b7236564f63cf4f9944d82d",
+      "data/raw_pdfs/denken3/review/references/meti-denki-interpretation-20231226-p035.png": "30fb3e3df4d90ccc71c8cb273da74fe1b2e4d2c73425c1553f9dddb8c96be994",
+      "data/raw_pdfs/denken3/review/references/meti-denki-interpretation-20231226-p120.png": "d1ebf5a32b74f27487b31ee7b7bd31fead63219c962e4fc733a326754c4e18c3",
+      "data/raw_pdfs/denken3/review/references/meti-denki-interpretation-20231226-p150.png": "ad5c9495cffc4f7448c50c0595e67284aaf8b159a11aba9b825b637efdaec994",
+      "data/raw_pdfs/denken3/review/references/meti-denki-interpretation-20231226-p224.png": "b817d46e9cba75eb0dd97f10478db04cfb3bf46424cbe2db5e7a3cb174ec1e6d",
+      "data/raw_pdfs/denken3/review/references/meti-denki-interpretation-20231226-p225.png": "ee6c622f1f2e6d801473f7db3c704d0e8812ad5554b5254e1679700aa05b8a72"
+    }
+  },
+  "assessment": [
+    {
+      "unitKey": "q13a",
+      "questionNumber": 13,
+      "part": "a",
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "The stem and conditions match the official problem image. This covers the 100 V air conditioner, the 5 A one-line ground-fault current, the 1/3 of the maximum permitted value, the 150 V threshold and the 0.8 s automatic disconnection. The wording of question (a) also matches. The footer shows T1-H 019, which is consistent with reviewedFromPage [19].",
+        "All five choices match the original: (1) 10, (2) 20, (3) 30, (4) 40, (5) 50.",
+        "The official answer table lists 法規 問13(a) = 4. The candidate officialAnswer is also 4.",
+        "Page 32 of the METI Interpretation PDF shows Article 17, paragraph 2, table 17-1. It gives three limits: 150/Ig as the base case; 300/Ig for more than 1 s up to 2 s; and 600/Ig for 1 s or less. The two relaxed limits apply to transformers that couple a high-voltage or ≤35,000 V extra-high-voltage circuit to a low-voltage circuit. This confirms the explanation's statements about the Interpretation.",
+        "Recalculation: 0.8 s is 1 s or less, so the limit is 600/Ig = 600/5 = 120 Ω. One third of that is 40 Ω, so choice (4) is confirmed.",
+        "Wrong-choice explanations recalculated: (1) 150/5 = 30 Ω, then ÷3 = 10 Ω. (2) 300/5 = 60 Ω, then ÷3 = 20 Ω. (3) 150/5 = 30 Ω. (5) 50 Ω cannot be obtained from 10, 20, 40, 30, 60 or 120 Ω. Each reason is correct.",
+        "The original has no figure, and none is needed to answer. figureUrls is empty, which is appropriate."
+      ]
+    },
+    {
+      "unitKey": "q13b",
+      "questionNumber": 13,
+      "part": "b",
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "Question (b) matches the official problem image. This covers the ground fault, the 10 mA limit on current through a body touching the metal case, the upper limit on the Class D ground resistance, and the 6000 Ω body resistance.",
+        "All five choices match the original: (1) 10, (2) 15, (3) 20, (4) 30, (5) 60.",
+        "The official answer table lists 法規 問13(b) = 5. The candidate officialAnswer is also 5.",
+        "Equivalent circuit: the 100 V source feeds Rb = 40 Ω in series with Rd in parallel with Rh = 6000 Ω. The current-division result Ih = 100Rd/[Rb(Rd+Rh)+RdRh] = 100Rd/(6040Rd+240000) is algebraically correct.",
+        "Setting Ih = 0.01 A gives 39.6Rd = 2400, so Rd ≈ 60.6 Ω. Checking Rd = 60 Ω gives 6000/602400 ≈ 9.96 mA, which confirms it.",
+        "Approximate method: the case voltage is 100Rd/(40+Rd) ≤ 6000 × 0.01 = 60 V, so Rd ≤ 60 Ω. This agrees with choice (5).",
+        "Body currents for each choice recalculated: Rd = 10 Ω gives 1000/300400 ≈ 3.33 mA. Rd = 15 Ω gives 1500/330600 ≈ 4.54 mA. Rd = 20 Ω gives 2000/360800 ≈ 5.54 mA. Rd = 30 Ω gives 3000/421200 ≈ 7.12 mA. All match the stated values.",
+        "The only Interpretation-based input is Rb = 40 Ω from (a), which is confirmed on page 32 (Article 17, table 17-1). The explanation makes no other independent claims about the Interpretation.",
+        "The original has no figure. The explanation describes the equivalent circuit well enough to follow without one, and figureUrls is empty, which is appropriate."
+      ]
+    }
+  ]
+}

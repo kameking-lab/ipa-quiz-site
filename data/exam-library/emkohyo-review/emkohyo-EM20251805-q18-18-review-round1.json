@@ -1,0 +1,66 @@
+{
+  "reviewModel": "claude-opus-5-5",
+  "requestedModel": "claude-opus-5-5",
+  "canonicalModel": "claude-opus-5-5",
+  "provider": "firstParty",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 3604,
+      "cacheReadInputTokens": 139443,
+      "cacheCreationInputTokens": 14282,
+      "webSearchRequests": 0,
+      "costUSD": 0.2142326,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 2201,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "paperId": "emkohyo-EM20251805",
+  "ids": [
+    "emkohyo-EM20251805-q18"
+  ],
+  "figureSha256": {
+    "emkohyo-EM20251805-q18": {}
+  },
+  "officialRowImageSha256": {
+    "emkohyo-EM20251805-q18": {
+      "/exam-library/emkohyo-EM20251805/q18-p10-1.webp": "03e2918329a3b1f0b628fa5d0714ea7800d92fa53b2c3750193b3611d3e368ea"
+    }
+  },
+  "officialPageImageSha256": {},
+  "governmentSourceImageSha256": {},
+  "candidateSha256": {
+    "emkohyo-EM20251805-q18": "53c5c79c011fbd4a033bbc87847015779072aab08832f16402bf837d5f40f4d9"
+  },
+  "sourcePackPath": "docs/evidence/emkohyo-choice-sources/emkohyo-EM20251805-q18-18.json",
+  "sourcePackSha256": "03d6f7c4b8e0c2ea9c6a9f9130ca70441dd8f500272283ccf3fc2ef42b8944b3",
+  "assessment": {
+    "emkohyo-EM20251805-q18": {
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [
+        "肢1: 22ppmの質量濃度が約64.9mg/m³となっているが、summaryと肢2で採用した24.47L/molで計算すると22×72.1/24.47=64.8mg/m³になる。捕集量約11.7µgは正しい。",
+        "肢3: 66ppmの質量濃度が約194.6mg/m³となっているが、24.47L/molでは66×72.1/24.47=194.5mg/m³になる。捕集量約35.0µgと1.5倍という比は正しい。",
+        "肢4: 88ppmの質量濃度が約259.5mg/m³となっているが、24.47L/molでは88×72.1/24.47=259.3mg/m³になる。捕集量約46.7µgは正しい。「正しい値のちょうど2倍」は、正しい値の約43.99ppmや捕集量23.33µgに対しては厳密に言えば「約2倍」である。",
+        "肢5: 110ppmの質量濃度が約324.4mg/m³、捕集量が約58.4µgとなっているが、24.47L/molでは110×72.1/24.47=324.1mg/m³、捕集量は324.1×0.18=58.3µgになる。"
+      ],
+      "reasonIssues": [
+        "誤肢1・3・4・5のmg/m³換算値は、どれも24.45L/molで計算した値と一致する（例: 22×72.1/24.45=64.87）。一方、summaryと肢2では厚労省資料と同じ24.47L/molを明記している。1つの解説の中でモル体積が24.47と24.45に分かれて不整合なので、全肢を24.47L/molで統一して再計算すること。結論（肢2が約44.0ppm、ほかは不適）は変わらない。",
+        "肢5: 「GCに注入した2µLは分析用の分取量にすぎない」は、110ppmが出る理由の説明になっていない。2µLを総量に使えば値は正解の約1/1000になり、110ppmにはならない。個別因果になっていないので、正しい値の約2.5倍で最も近い値ではない、という比較による理由に書き換えること。",
+        "肢1の「採気量を2倍に見積もる」と肢4の「相当採気量を0.09Lと半分に見積もる」は、誤りの一例として書かれている推測である。「など」で限定しているので大きな問題ではないが、断定的に読める書き方は避けるのが望ましい。"
+      ],
+      "sourceIssues": [
+        "厚労省 作業環境測定基準（dataId=74087000）の引用部分は、別表でメチルエチルケトンの試料採取方法と分析方法を挙げた箇所にすぎない。D測定の定義、パッシブサンプラーの相当採気量の計算、ppm換算を直接支える記述ではない。本問の計算根拠として挙げるなら、個人サンプリング法（D測定）を定めた条項を引用すること。",
+        "厚労省 個人サンプラー報告書（000616847.pdf）のp.42-43は、サンプリング速度を吸引流量とみなして採気量を求めることと、25℃のモル体積24.47によるppm換算を支えている。しかし、脱着率で割って捕集量を補正する手順（21/0.9）を支える記述は引用されていない。脱着率補正の根拠となる箇所を追加すること。",
+        "同報告書の原文ではモル体積の単位が「24.47(moL／L)」と誤植されている。解説の「L/mol」の表記が正しいので、そのまま引用する場合は原文の誤記である旨に注意が必要。"
+      ],
+      "needsExternalCheck": [
+        "脱着率で捕集量を補正する手順（捕集量＝試料液濃度×脱着液量÷脱着率）を直接記述した政府一次資料（厚労省の告示・通達、または000616847.pdfの該当ページ）の所在を確認すること。"
+      ]
+    }
+  }
+}

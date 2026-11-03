@@ -1,0 +1,69 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20260322",
+  "subject": "machinery",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 3205,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 13794,
+      "webSearchRequests": 0,
+      "costUSD": 0.1747158,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 1788,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "d07dd8c497fb54510dee089d1a4c8d59b527e24e3eb25eda123672efc9ae660d",
+  "inputRequestSha256": "17c13bd5e4984fbe0a676b33615f2bc8082cf1c6a34db4fe835bb91bb677a776",
+  "inputHashes": {
+    "candidateSha256": {
+      "q12": "f7a9a34993a24925a459551e2ef4d204c9565fe2f6b8c93da2de11d346ea36e6"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20260322/machinery/p15.png": "7aaaadae5e0c9d3dae535e9c335e45cb6039537710cc15cb7e994302ef02793f"
+    },
+    "figureSha256": {},
+    "sourceQuestionPdfSha256": "a89c7dc2b9a305f9db83f2f78195f0df8a0da5aeec6b8e66cfd40fb028d146fb",
+    "sourceAnswerPdfSha256": "cc2890296d06a4823df5697a78a1c01ddfd39f041c51f48c87984daa3a5707c6",
+    "officialAnswerUnitsSha256": "ba616589d9dfd92079db1e503a72eb810c0cd5616fd206b08a1f9715fa947223",
+    "referencePdfSha256": {},
+    "referencePageSha256": {},
+    "referenceJsonSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q12",
+      "questionNumber": 12,
+      "part": null,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "問題文: 添付原図（印刷頁 -12-、フッタ T2−K 015）と照合した。条件（外面に垂直な小穴、外面から10 cmと30 cm、72 ℃と142 ℃、熱伝導率0.94 W/(m·K)、単位面積当たりの熱損失[W/m²]、温度こう配一定）はすべて一致する。数値・単位・位置と温度の対応に脱落や誤記はない。W/ (m·K)→W/(m·K)、～→〜 の置換は表記の整形にとどまり、意味は変わらない。",
+        "選択肢: 原図の (1) 1 490、(2) 329、(3) 165、(4) 14.9、(5) 3.29 と全肢が一致する。",
+        "公式正答: 公式解答表（令和7年度 第三種電気主任技術者下期試験解答）の＜機械＞列で問12の解答は2、配点は5。manifest固定の正答単位 {answer:\"2\", points:5} と、候補の officialAnswer=\"2\"、scoringPoints=5 はいずれも一致する。",
+        "総合解説の検算: Δx = 0.30 − 0.10 = 0.20 m、ΔT = 142 − 72 = 70 K、ΔT/Δx = 350 K/m、q = 0.94 × 350 = 329 W/m²。計算は正しい。単位も W/(m·K) × K/m = W/m² で整合する。熱流の向き（深い位置ほど高温なので内側から外面へ流れる）と、温度こう配が一定なら熱流束は壁厚方向に一様で外面損失に等しいという因果も正しい。",
+        "誤答肢(1)の検算: 70 × 20 / 0.94 = 1 489.4 ≈ 1 490。λとΔxの取り違えにcm未換算が重なった場合の値として成立する。",
+        "誤答肢(3)の検算: 0.94 × 70 / 0.40 = 164.5 ≈ 165。距離に和を用いた場合の値として成立する。",
+        "誤答肢(4)の検算: 70 × 0.20 / 0.94 = 14.89 ≈ 14.9。λとΔxの取り違えによる値として成立する。",
+        "誤答肢(5)の検算: 0.94 × 70 / 20 = 3.29。cm未換算による値として成立する。",
+        "100倍関係の検算: 1 490/14.9 = 100、329/3.29 = 100。総合解説の「(1)と(4)、(2)と(5)が100倍の関係でcm→m換算の有無で対になる」という記述は、各肢の再現式と整合する。",
+        "肢別解説の固有性: 各誤答肢の理由は互いに重複せず、それぞれ固有の誤り方を示している。いずれも正しい値329 W/m²を併記している。",
+        "図: 原図に図はない。figureDescription、figureUrls=[]、choiceFigureUrls={} は妥当で、問題文だけで解答できる。",
+        "出典メタデータ: fiscalYear=2025、term=lower、examDate=2026-03-22、subject=machinery、sourceQuestionPdfUrl（…_q03.pdf）、sourceAnswerPdfUrl（…_a01.pdf）はmanifestと一致する。reviewedFromPage=[15] はmanifestのPDF第15頁と一致し、原図フッタの T2−K 015 とも整合する。sourceAttribution の「令和7年度下期…機械科目 問12」は正しい。",
+        "公式ReferenceUrls: officialReferenceUrls は空配列で、検証が必要な独立主張はない。"
+      ]
+    }
+  ]
+}

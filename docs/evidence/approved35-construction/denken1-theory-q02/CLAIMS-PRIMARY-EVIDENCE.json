@@ -1,0 +1,35 @@
+{
+  "sourceQuestionSha256": "6a6a509a9cd2e9a36c79e90561345e0fc093389796ffd482833109057b0aa7f5",
+  "primaryEvidence": [
+    {
+      "blank": 1,
+      "locator": "official physical page6 formula① + concentration description",
+      "derivation": "電子濃度勾配が原因の輸送は拡散であり，①のD_eが拡散定数である。濃度の高い側から低い側への粒子輸送と，電界によるドリフトを区別する。"
+    },
+    {
+      "blank": 2,
+      "locator": "official physical page6 formula②",
+      "derivation": "②をv=−μ_e Eと書いたときの比例係数μ_eは移動度である。電子の電荷が負なので平均速度は電界と逆向きである。"
+    },
+    {
+      "blank": 3,
+      "locator": "official physical page6 formula② + charge−e, n, v",
+      "derivation": "単位体積の電子数n，1電子の電荷−e，平均速度vより，電流密度は(−e)nv=−env。②を代入すると+enμ_e Eとなる。"
+    },
+    {
+      "blank": 4,
+      "locator": "official physical page6 formula①②③④",
+      "derivation": "①+③=0からeD_e(dn/dx)−env=0。②を代入してD_e(dn/dx)+nμ_e E=0。よってdn/dx=−(μ_e E/D_e)nとなる。④の先頭の負号は既に印刷されているため，マイナスを重複させずμ_e E/D_eを入れる。Eの符号によりこの係数の符号も変わるため，常に正とはしない。"
+    },
+    {
+      "blank": 5,
+      "locator": "official physical page6 formula④⑤⑥",
+      "derivation": "⑥をxで微分するとdn/dx=n[e/(k_B T)](dV/dx)=−[eE/(k_B T)]n。④と照合してμ_e E/D_e=eE/(k_B T)，従ってD_e/μ_e=k_B T/e。定数は問題の熱平衡・ボルツマン分布の仮定に従う。"
+    }
+  ],
+  "all75OptionReasons": true,
+  "externalNewRulesIntroduced": false,
+  "publicAllowed": false,
+  "independentTechnicalPass": false,
+  "strictGenerationReceipt": null
+}

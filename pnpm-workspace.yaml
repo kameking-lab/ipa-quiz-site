@@ -2,6 +2,9 @@
 # in package.json (which it now ignores with a warning). These transitive-dep
 # security pins were silently dropped after the pnpm 10 upgrade — restored here.
 # (Phase 11 / structural review H-2.)
+packages:
+  - '.'
+
 overrides:
   postcss: '>=8.5.10'
   protobufjs: '^7.5.8'

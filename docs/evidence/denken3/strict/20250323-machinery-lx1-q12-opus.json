@@ -1,0 +1,70 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20250323",
+  "subject": "machinery",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 2358,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 13253,
+      "webSearchRequests": 0,
+      "costUSD": 0.1534478,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 1110,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "eebd76123c4bf1b592c29a8252c5466c24f253d6c5a693e723bc842433822ab3",
+  "inputRequestSha256": "0571218cf20eec3913d9a12a2d47a9d200e6b4f84f248caff73d6703c0cd0b33",
+  "inputHashes": {
+    "candidateSha256": {
+      "q12": "7307fd595c15c2a92f869fdd826278ce2ef08561fc408475a500125ffcd728ae"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20250323/machinery/p15.png": "c71207485fddcbd586274fd00864e3a35c71136182492248c71ba690e76c3ad3"
+    },
+    "figureSha256": {},
+    "sourceQuestionPdfSha256": "66e8b0070a314cd78ed9b9f3edd3d75eeaf442b258fd0aacab0e7d9620c75b9f",
+    "sourceAnswerPdfSha256": "4c3b38fcf1405766fafaa78b1b05b867a3d48307a670b9d354476bc6b32acd4c",
+    "officialAnswerUnitsSha256": "fb503a33fbecc6b3069511f9480ee982fb83e790ef373d195866374c85f18ff0",
+    "referencePdfSha256": {},
+    "referencePageSha256": {},
+    "referenceJsonSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q12",
+      "questionNumber": 12,
+      "part": null,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "問題文: 添付原図（PDF第15頁、冊子ページ番号 -12-、T2−K 015）の問12本文と候補questionを照合した。面積 25 m²、厚さ 10 cm、熱伝導率 0.4 W／(m·K)、内外面の温度差 4 K、求める量は熱流[W]、『最も近いもの』『(1)〜(5)のうちから一つ選べ』。数値、単位、語句はすべて一致する。",
+        "選択肢: 原図の (1) 16、(2) 40、(3) 250、(4) 400、(5) 2 500 と、候補choices 1〜5 が順序・数値・桁区切りまで一致する。",
+        "公式正答: 公式解答表（令和6年度 下期 第三種電気主任技術者試験解答）の＜機械＞列で、問12の正答は 4。manifest固定の answer=\"4\" とも、候補officialAnswer=\"4\" とも一致する。",
+        "計算検算: Φ = λAΔT／d = 0.4 × 25 × 4 ／ 0.1 = 40 ／ 0.1 = 400 W。10 cm = 0.1 m の単位換算は正しい。W／(m·K) × m² × K ／ m = W で次元も整合し、結果は(4) 400 と一致する。",
+        "総合解説: 平板の定常熱伝導の式、記号の定義、単位換算、途中値 40、最終値 400 W はいずれも正しく、因果に誤りはない。",
+        "肢別解説(1): 16 W は計算値 400 W と一致しないという理由は正しい。誤りの由来は推測しておらず、この点は uncertainty に明記されている。",
+        "肢別解説(2): 0.4×25×4 = 40 は厚さ d = 0.1 m で割る前の値であり、この説明は算術的に正しい。",
+        "肢別解説(3): 250 W は計算値 400 W と一致しないという記述は正しい。",
+        "肢別解説(4): 正答の根拠となる計算式と値が正しい。",
+        "肢別解説(5): 2 500 ÷ 400 = 6.25 であり、倍率の記述は数値として正しい。",
+        "図: 原図の問12には図がない。figureDescription『図はない』は原図と一致し、figureUrls=[] と choiceFigureUrls={} で整合する。解答に図は不要。",
+        "出典メタデータ: fiscalYear=2024、term=lower、examDate=2025-03-23、subject=machinery、sourceQuestionPdfUrl、sourceAnswerPdfUrl、reviewedFromPage=[15] はすべてmanifestと一致する。解答表見出し『令和6年度 下期』は2024年度下期に当たる。figureDescription の『原本 p15、ページ番号 12』も原図フッターと整合する。",
+        "sourceAttribution: 『令和6年度下期第三種電気主任技術者試験 機械科目 問12』は原図・解答表と一致する。",
+        "officialReferenceUrls は空配列で、検証を要する外部の独立主張はない。scoringPoints=null は公式正答単位の points=null と一致する。"
+      ]
+    }
+  ]
+}

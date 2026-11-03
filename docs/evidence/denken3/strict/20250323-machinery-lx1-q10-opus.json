@@ -1,0 +1,67 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20250323",
+  "subject": "machinery",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 3848,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 15075,
+      "webSearchRequests": 0,
+      "costUSD": 0.1978238,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 2482,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "9645e4458227934ad7a837737129d3ed6612475046b0cba80038252405e488e8",
+  "inputRequestSha256": "a8a743756d7a467ce7b654ad5f4af173753a2ecfef581e58be365806dd781875",
+  "inputHashes": {
+    "candidateSha256": {
+      "q10": "58ab2edf9d32ccef0d6a739a293debf55ac57df15494c5eb1657c7ade1978029"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20250323/machinery/p13.png": "3106a7a5d743c05344733ea038a7517041ca4988052e6521d113a1e676dfb468"
+    },
+    "figureSha256": {
+      "public/images/denken3/20250323/machinery/20250323-machinery-q10-pcs-circuit.png": "c7fcfb14c6d9dec2f4f9b4e8bff426426f822c005e164d466daaeaf00e56e3e4"
+    },
+    "sourceQuestionPdfSha256": "66e8b0070a314cd78ed9b9f3edd3d75eeaf442b258fd0aacab0e7d9620c75b9f",
+    "sourceAnswerPdfSha256": "4c3b38fcf1405766fafaa78b1b05b867a3d48307a670b9d354476bc6b32acd4c",
+    "officialAnswerUnitsSha256": "645fce39114d52abdbc2a3630bb35d137618e4f31628a2adb8c76f40542005aa",
+    "referencePdfSha256": {},
+    "referencePageSha256": {},
+    "referenceJsonSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q10",
+      "questionNumber": 10,
+      "part": null,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "出典メタデータ: fiscalYear=2024, term=lower, examDate=2025-03-23, subject=machinery, sourceQuestionPdfUrl=20250323_ch_third_q03.pdf, sourceAnswerPdfUrl=2024_3_2.pdf, reviewedFromPage=[13] はいずれも manifest と一致。原図下部の印字「-10-」は冊子内ページ番号であり、PDF第13頁という manifest 指定とは矛盾しない。sourceAttribution の『令和6年度下期 機械科目 問10』も一致。",
+        "問題文: 原図の『図に示す太陽光発電用パワーコンディショナに関する記述として，誤っているものを次の(1)〜(5)のうちから一つ選べ。』と文言が一致する。読点を「，」から「、」へ変えているのは表記正規化で、sourceAttribution の『読みやすく整形』の範囲内。",
+        "選択肢(1)〜(5): 原図の全肢と語句・略語（MPPT、PWM）・語順が一致し、欠落・追加・改変はない。",
+        "公式正答: 解答表〈機械〉問10=1 を確認。候補 officialAnswer=\"1\" と manifest 固定の正答単位 answer=\"1\" に一致する。",
+        "総合解説の回路解析: 原図では、入力側の上側ラインに直列リアクトルがあり、リアクトル出力が上下スイッチ素子の中点に接続されている。上側素子は直流リンク正側、下側素子は負側に接続される。下側素子がオンのときにリアクトルへエネルギーを蓄え、オフ時に上側の逆並列ダイオードを通して直流リンクへ放出する動作は昇圧チョッパの構成と整合する。したがって(1)の『降圧チョッパ』が誤りであるという因果は正しい。",
+        "肢別解説: (2)は日射・温度で最大電力点が変動するためMPPTを行うという記述で正しい。(3)はΔV=ΔQ/Cにより容量増でリプルが減るという記述で正しい。(4)はPWM制御と出力側LCフィルタによる高調波低減で、原図の出力側2線の直列リアクトルと線間コンデンサに整合する。(5)は系統連系保護装置による異常時の出力遮断（解列）で正しい。誤答肢それぞれに固有の理由が付されている。",
+        "公開候補図: 原図と照合し、以下の接続点・交差を確認した。太陽電池端子（白丸）、入力並列コンデンサ、直列リアクトル、チョッパ2素子の中点接続、上下レールへの接続点、直流リンクコンデンサ、フルブリッジ4素子（逆並列ダイオード付き）。左レグ中点→上側出力線、右レグ中点→下側出力線の接続。上側出力線が右レグと交差する箇所は接続点なしの交差であること。出力リアクトル2個、線間コンデンサ、出力端子（白丸）。ラベル『パワーコンディショナ』『太陽電池』『電力系統へ』と図題『図 パワーコンディショナの構成例』。以上すべて原図と一致し、公開候補図だけで(1)の正誤判断が可能。",
+        "figureDescription: 構成要素・接続順・ラベルの記述が原図と整合している。",
+        "officialReferenceUrls は空配列で、検証を要する独立主張はない。uncertainty の記載内容も原図で確認できた。"
+      ]
+    }
+  ]
+}

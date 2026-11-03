@@ -1,0 +1,117 @@
+{
+  "duration_api_ms": 117182,
+  "stop_reason": "end_turn",
+  "session_id": "8b87645a-88e8-4490-ab89-d114a13b3572",
+  "total_cost_usd": 0.8179312000000002,
+  "usage": {
+    "input_tokens": 36,
+    "cache_creation_input_tokens": 44338,
+    "cache_read_input_tokens": 1020306,
+    "output_tokens": 10987,
+    "output_tokens_details": {
+      "thinking_tokens": 2330
+    },
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 44338,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "not_available",
+    "iterations": [
+      {
+        "input_tokens": 2,
+        "output_tokens": 3454,
+        "cache_read_input_tokens": 71244,
+        "cache_creation_input_tokens": 1186,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 1186
+        },
+        "type": "message"
+      }
+    ],
+    "speed": "standard"
+  },
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 36,
+      "outputTokens": 10987,
+      "cacheReadInputTokens": 1020306,
+      "cacheCreationInputTokens": 44338,
+      "webSearchRequests": 0,
+      "costUSD": 0.7786492,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 2330,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    },
+    "claude-haiku-4-5-20251001": {
+      "inputTokens": 22502,
+      "outputTokens": 1356,
+      "cacheReadInputTokens": 0,
+      "cacheCreationInputTokens": 0,
+      "webSearchRequests": 1,
+      "costUSD": 0.039282,
+      "contextWindow": 200000,
+      "maxOutputTokens": 32000,
+      "thinkingTokens": 0,
+      "canonicalModel": "claude-haiku-4-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+    "spawned": 0,
+    "requested": {
+      "background": 0,
+      "foreground": 0,
+      "unset": 0
+    },
+    "started_in_background": 0,
+    "max_depth": 0,
+    "spawned_by_subagents": 0,
+    "completed": 0,
+    "failed": 0,
+    "killed": {
+      "parent": 0,
+      "user": 0,
+      "system": 0
+    },
+    "refused": {
+      "depth_limit": 0,
+      "concurrency_limit": 0,
+      "budget": 0
+    },
+    "by_type": {}
+  },
+  "is_error": false,
+  "num_turns": 20,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "{\"21\":{\"status\":\"PASS\",\"choiceStatus\":{\"ア\":\"PASS\",\"イ\":\"PASS\",\"ウ\":\"PASS\",\"エ\":\"PASS\"},\"fixedChoiceExplanations\":{},\"evidence\":[{\"url\":\"https://laws.e-gov.go.jp/api/1/lawdata/325AC0000000201\",\"excerpt\":\"第六十三条　防火地域又は準防火地域内にある建築物で、外壁が耐火構造のものについては、その外壁を隣地境界線に接して設けることができる。\"},{\"url\":\"https://laws.e-gov.go.jp/api/1/lawdata/325AC0000000201\",\"excerpt\":\"特定建築設備等（昇降機及び特定建築物の昇降機以外の建築設備等をいう。以下この項及び次項において同じ。）で安全上、防火上又は衛生上特に重要であるものとして政令で定めるもの（国等の建築物に設けるものを除く。）及び当該政令で定めるもの以外の特定建築設備等で特定行政庁が指定するもの（国等の建築物に設けるものを除く。）の所有者は、これらの特定建築設備等について、国土交通省令で定めるところにより、定期に、一級建築士若しくは二級建築士又は建築設備等検査員資格者証の交付を受けている者（次項及び第十二条の三第二項において「建築設備等検査員」という。）に検査（これらの特定建築設備等についての損傷、腐食その他の劣化の状況の点検を含む。）をさせて、その結果を特定行政庁に報告しなければならない。\"},{\"url\":\"https://laws.e-gov.go.jp/api/1/lawdata/325CO0000000338\",\"excerpt\":\"第百二十六条　屋上広場又は二階以上の階にあるバルコニーその他これに類するものの周囲には、安全上必要な高さが一・一メートル以上の手すり壁、さく又は金網を設けなければならない。\"},{\"url\":\"https://laws.e-gov.go.jp/api/1/lawdata/325CO0000000338\",\"excerpt\":\"ただし、次の各号のいずれかに該当する建築物又は建築物の部分については、この限りでない。（略）三　階段の部分、昇降機の昇降路の部分（当該昇降機の乗降のための乗降ロビーの部分を含む。）その他これらに類する建築物の部分\"}]},\"22\":{\"status\":\"FIX\",\"choiceStatus\":{\"ア\":\"FIX\",\"イ\":\"FIX\",\"ウ\":\"PASS\",\"エ\":\"PASS\"},\"fixedChoiceExplanations\":{\"ア\":\"簡易専用水道の設置者は、地方公共団体の機関または登録を受けた者の検査を、毎年1回以上定期に受けなければなりません（水道法34条の2第2項、水道法施行規則56条1項）。「2年以内ごとに1回」とする点が誤りです。\",\"イ\":\"水槽の掃除は毎年1回以上定期に行わなければなりません（水道法施行規則55条1号）。水槽の点検など汚染防止の措置を講じる点（同条2号）は正しいですが、「3年以内ごとに1回」とする点が誤りです。\"},\"evidence\":[{\"url\":\"https://laws.e-gov.go.jp/api/1/lawdata/332M50000100045\",\"excerpt\":\"第五十五条　法第三十四条の二第一項に規定する国土交通省令で定める基準は、次に掲げるものとする。一　水槽の掃除を毎年一回以上定期に行うこと。二　水槽の点検等有害物、汚水等によつて水が汚染されるのを防止するために必要な措置を講ずること。三　給水栓における水の色、濁り、臭い、味その他の状態により供給する水に異常を認めたときは、水質基準に関する省令の表の上欄に掲げる事項のうち必要なものについて検査を行うこと。\"},{\"url\":\"https://laws.e-gov.go.jp/api/1/lawdata/332M50000100045\",\"excerpt\":\"第五十六条　法第三十四条の二第二項の規定による検査は、毎年一回以上定期に行うものとする。\"},{\"url\":\"https://laws.e-gov.go.jp/api/1/lawdata/332CO0000000336\",\"excerpt\":\"第二条　法第三条第七項ただし書に規定する政令で定める基準は、水道事業の用に供する水道から水の供給を受けるために設けられる水槽の有効容量の合計が十立方メートルであることとする。\"}]},\"23\":{\"status\":\"PASS\",\"choiceStatus\":{\"ア\":\"PASS\",\"イ\":\"PASS\",\"ウ\":\"PASS\",\"エ\":\"PASS\"},\"fixedChoiceExplanations\":{},\"evidence\":[{\"url\":\"https://laws.e-gov.go.jp/api/1/lawdata/336M50000008006\",\"excerpt\":\"ニ　避難通路、避難口、安全区画、防煙区画その他の避難施設の維持管理及びその案内に関すること。\"},{\"url\":\"https://laws.e-gov.go.jp/api/1/lawdata/336M50000008006\",\"excerpt\":\"チ　消火、通報及び避難の訓練その他防火管理上必要な訓練の定期的な実施に関すること。\"},{\"url\":\"https://laws.e-gov.go.jp/api/1/lawdata/336M50000008006\",\"excerpt\":\"リ　火災、地震その他の災害が発生した場合における消火活動、通報連絡及び避難誘導に関すること。\"}]},\"24\":{\"status\":\"PASS\",\"choiceStatus\":{\"ア\":\"PASS\",\"イ\":\"PASS\",\"ウ\":\"PASS\",\"エ\":\"PASS\"},\"fixedChoiceExplanations\":{},\"evidence\":[{\"url\":\"https://www.mlit.go.jp/kisha/kisha06/07/070420/02.pdf\",\"excerpt\":\"共用玄関の存する階のエレベーターホールは、共用玄関又は管理人室等からの見通しが確保された位置に配置する。\"},{\"url\":\"https://www.mlit.go.jp/kisha/kisha06/07/070420/02.pdf\",\"excerpt\":\"共用玄関の存する階のエレベーターホールの照明設備は、床面において概ね５０ルクス以上の平均水平面照度を確保することができるものとする。その他の階のエレベーターホールの照明設備は、床面において概ね２０ルクス以上の平均水平面照度を確保することができるものとする。\"},{\"url\":\"https://www.mlit.go.jp/kisha/kisha06/07/070420/02.pdf\",\"excerpt\":\"屋外に設置されるものについては、住棟外部から見通しが確保されたものとすることが望ましく、屋内に設置されるものについては、各階において階段室が共用廊下等に常時開放されたものとすることが望ましい。\"},{\"url\":\"https://www.mlit.go.jp/kisha/kisha06/07/070420/02.pdf\",\"excerpt\":\"駐車場の照明設備は、極端な明暗が生じないよう配慮しつつ、床面において概ね３ルクス以上の平均水平面照度を確保することができるものとする。\"}]},\"25\":{\"status\":\"FIX\",\"choiceStatus\":{\"ア\":\"FIX\",\"イ\":\"PASS\",\"ウ\":\"PASS\",\"エ\":\"PASS\"},\"fixedChoiceExplanations\":{\"ア\":\"標準管理規約19条3項は、区分所有者が専有部分を第三者に貸与する場合、その第三者に専有部分を借用した旨の届出を管理組合に提出させなければならないと定めています（令和6年6月7日改正で新設された規定です）。適切な記述です。\"},\"evidence\":[{\"url\":\"https://www.mlit.go.jp/jutakukentiku/house/content/001746771.pdf\",\"excerpt\":\"３第１項の場合において、区分所有者は、当該第三者に、専有部分を借用した旨の届出を管理組合に提出させなければならない。\"},{\"url\":\"https://www.mlit.go.jp/jutakukentiku/house/content/001999013.pdf\",\"excerpt\":\"２区分所有者の承諾を得て専有部分を占有する者は、会議の目的につき利害関係を有する場合には、総会に出席して意見を述べることができる。この場合において、総会に出席して意見を述べようとする者は、あらかじめ理事長にその旨を通知しなければならない。\"},{\"url\":\"https://laws.e-gov.go.jp/api/1/lawdata/337AC0000000069\",\"excerpt\":\"２　第五十七条第三項の規定は前項の訴えの提起に、第五十八条第二項及び第三項の規定は前項の決議に準用する。\"},{\"url\":\"https://laws.e-gov.go.jp/api/1/lawdata/337AC0000000069\",\"excerpt\":\"３　第一項の決議をするには、あらかじめ、当該区分所有者に対し、弁明する機会を与えなければならない。\"},{\"url\":\"https://laws.e-gov.go.jp/api/1/lawdata/337AC0000000069\",\"excerpt\":\"２　占有者は、建物又はその敷地若しくは附属施設の使用方法につき、区分所有者が規約又は集会の決議に基づいて負う義務と同一の義務を負う。\"}]}}",
+  "ttft_ms": 2327,
+  "type": "result",
+  "duration_ms": 178219,
+  "uuid": "b5422a8c-458c-4408-9dc1-96c0fc065d03",
+  "ttft_stream_ms": 1189,
+  "time_to_request_ms": 455,
+  "first_content_frame_ms": 1190,
+  "queued_turn_count": 0,
+  "result_index": 0,
+  "_exitCode": 0,
+  "_requestedModel": "claude-opus-5-5",
+  "_toolsAllowed": [
+    "WebFetch",
+    "WebSearch"
+  ]
+}

@@ -1,0 +1,883 @@
+{
+  "scope": "MHLW 114th nursing afternoon Q76-90 local candidate only",
+  "publication": "none",
+  "sourcePacketSha256": "123d58b2e590dc436239b88f104a3a78fd2cca1c46877b333a95828077b5f183",
+  "draftSha256": "df3f79a5997a97ab9361dd2b98e6c0248dee2c0741c2a2bdf899e2c04239d56b",
+  "numericProofSha256": "4bfa7a40507865bbd504f448155e8ffa2ea6efb17397c24ca6bf933ce3343a4a",
+  "readyQuestionCount": 11,
+  "heldQuestionCount": 4,
+  "readyChoiceCount": 55,
+  "heldChoiceCount": 15,
+  "reviewStatuses": [
+    {
+      "question": 76,
+      "status": "ready_local_candidate",
+      "reason": [],
+      "sourceFigure": null,
+      "reviewFlags": []
+    },
+    {
+      "question": 77,
+      "status": "ready_local_candidate",
+      "reason": [],
+      "sourceFigure": null,
+      "reviewFlags": []
+    },
+    {
+      "question": 78,
+      "status": "ready_local_candidate",
+      "reason": [],
+      "sourceFigure": null,
+      "reviewFlags": []
+    },
+    {
+      "question": 79,
+      "status": "ready_local_candidate",
+      "reason": [],
+      "sourceFigure": null,
+      "reviewFlags": []
+    },
+    {
+      "question": 80,
+      "status": "hold",
+      "reason": [
+        "official figure asset is not yet integrated",
+        "targeted factual review flag remains open"
+      ],
+      "sourceFigure": {
+        "kind": "original death rates by cause in Japan, time-series lines A–E",
+        "sourcePageImage": {
+          "path": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\claude-capacity-20261010\\nurse-q76-100\\pm114-q76-90-renders\\114-pm-physical-p31.png",
+          "sha256": "5edc8478b688945df88ac92f712e1baf8e706751dbf707c1281f241ee06825bf"
+        },
+        "visualCheck": "Years 2004–2022 and five trajectories A–E; C rises steeply from about 20 to about 140 per 100,000. Retain original labels and chart before publication."
+      },
+      "reviewFlags": [
+        "Q80は原図の折れ線A〜Eの具体的な位置関係を、提示された視覚説明（Cのみ）以外では確認できていない。各死因の水準・傾向の記述は一般的な知識に基づくため、公開前に原図との照合が必要。"
+      ]
+    },
+    {
+      "question": 81,
+      "status": "ready_local_candidate",
+      "reason": [],
+      "sourceFigure": null,
+      "reviewFlags": []
+    },
+    {
+      "question": 82,
+      "status": "ready_local_candidate",
+      "reason": [],
+      "sourceFigure": null,
+      "reviewFlags": []
+    },
+    {
+      "question": 83,
+      "status": "ready_local_candidate",
+      "reason": [],
+      "sourceFigure": null,
+      "reviewFlags": []
+    },
+    {
+      "question": 84,
+      "status": "ready_local_candidate",
+      "reason": [],
+      "sourceFigure": null,
+      "reviewFlags": []
+    },
+    {
+      "question": 85,
+      "status": "ready_local_candidate",
+      "reason": [],
+      "sourceFigure": null,
+      "reviewFlags": []
+    },
+    {
+      "question": 86,
+      "status": "hold",
+      "reason": [
+        "targeted factual review flag remains open"
+      ],
+      "sourceFigure": null,
+      "reviewFlags": [
+        "特定疾病の一覧は法令改正で変わり得るため、公開前に試験実施時点の規定との照合を推奨する。"
+      ]
+    },
+    {
+      "question": 87,
+      "status": "ready_local_candidate",
+      "reason": [],
+      "sourceFigure": null,
+      "reviewFlags": []
+    },
+    {
+      "question": 88,
+      "status": "ready_local_candidate",
+      "reason": [],
+      "sourceFigure": null,
+      "reviewFlags": []
+    },
+    {
+      "question": 89,
+      "status": "hold",
+      "reason": [
+        "targeted factual review flag remains open"
+      ],
+      "sourceFigure": null,
+      "reviewFlags": [
+        "選択肢4の『遺伝の影響が大きい』は発達論上の見解に依存する表現のため、解説の根拠は公式正答に従い、公開前に妥当性を確認すること。"
+      ]
+    },
+    {
+      "question": 90,
+      "status": "hold",
+      "reason": [
+        "decimal numeric grading/display contract pending separate implementation"
+      ],
+      "sourceFigure": null,
+      "reviewFlags": []
+    }
+  ],
+  "readyQuestions": [
+    {
+      "id": "kangoshi-2024-annual-pm-q76",
+      "exam": "kangoshi",
+      "session": "pm",
+      "year": 2024,
+      "season": "annual",
+      "qNumber": 76,
+      "subject": "午後（一般問題）",
+      "category": "一般問題",
+      "topicTags": [
+        "一般問題",
+        "第114回"
+      ],
+      "difficulty": 2,
+      "question": "心房と心室の間を電気的に結合し、心房側の興奮を心室側に伝えるのはどれか。",
+      "explanationCoverage": "full",
+      "hasImage": false,
+      "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-05c_01.pdf#page=30",
+      "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-05seitou.pdf#page=1",
+      "sourceAttribution": "出典：厚生労働省『第114回看護師国家試験』午後 問76（問題・正答）。問題文・選択肢は原典と照合。解説は過去問AIが独自に作成したもので、厚生労働省とは関係ありません。",
+      "officialReferenceUrls": [
+        "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/tp250428-03_04_05.html"
+      ],
+      "license": "MHLW-attributed",
+      "lastUpdated": "2026-10-10",
+      "type": "multiple-choice",
+      "officialAnswerNumber": [
+        "4"
+      ],
+      "choices": {
+        "ア": "心筋層",
+        "イ": "心内膜",
+        "ウ": "洞房結節",
+        "エ": "His¹ヒス¼束",
+        "オ": "Purkinje¹プルキンエ¼線維"
+      },
+      "answer": "エ",
+      "requiredSelections": 1,
+      "explanation": "房室間で電気的に興奮を伝える特殊心筋の経路は、房室結節からHis束、左右脚、Purkinje線維へと続く刺激伝導系です。このうち心房と心室を結ぶ橋渡しの部分がHis束です。",
+      "choiceExplanations": {
+        "ア": "心筋層は収縮を担う作業心筋で、房室間の電気的な連絡を担う専用の伝導路ではありません。",
+        "イ": "心内膜は心腔内面を覆う薄い膜で、興奮伝導には関与しません。",
+        "ウ": "洞房結節は右心房にある歩調取り（ペースメーカー）で、興奮の発生源です。心房から心室への伝達部ではありません。",
+        "エ": "His束は房室結節から続き、心房側の興奮を心室中隔へ伝える唯一の電気的連絡路で、正解です。",
+        "オ": "Purkinje線維は伝導路の末端で、心室筋全体へ興奮を広げます。心房と心室を結ぶ部位ではありません。"
+      },
+      "needsReview": false
+    },
+    {
+      "id": "kangoshi-2024-annual-pm-q77",
+      "exam": "kangoshi",
+      "session": "pm",
+      "year": 2024,
+      "season": "annual",
+      "qNumber": 77,
+      "subject": "午後（一般問題）",
+      "category": "一般問題",
+      "topicTags": [
+        "一般問題",
+        "第114回"
+      ],
+      "difficulty": 2,
+      "question": "肝臓の機能はどれか。",
+      "explanationCoverage": "full",
+      "hasImage": false,
+      "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-05c_01.pdf#page=30",
+      "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-05seitou.pdf#page=1",
+      "sourceAttribution": "出典：厚生労働省『第114回看護師国家試験』午後 問77（問題・正答）。問題文・選択肢は原典と照合。解説は過去問AIが独自に作成したもので、厚生労働省とは関係ありません。",
+      "officialReferenceUrls": [
+        "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/tp250428-03_04_05.html"
+      ],
+      "license": "MHLW-attributed",
+      "lastUpdated": "2026-10-10",
+      "type": "multiple-choice",
+      "officialAnswerNumber": [
+        "1"
+      ],
+      "choices": {
+        "ア": "糖の貯蔵",
+        "イ": "胆汁の貯蔵",
+        "ウ": "体液量の調節",
+        "エ": "体液のpH 調節",
+        "オ": "ホルモンの分泌"
+      },
+      "answer": "ア",
+      "requiredSelections": 1,
+      "explanation": "肝臓は糖をグリコーゲンとして貯蔵するほか、胆汁の生成、解毒、蛋白合成などを担います。選択肢のうち肝臓の機能はグリコーゲン貯蔵（糖の貯蔵）です。",
+      "choiceExplanations": {
+        "ア": "食後の余剰グルコースをグリコーゲンとして貯蔵し、空腹時に分解して血糖を維持します。肝臓の機能で正解です。",
+        "イ": "胆汁は肝臓で作られますが、貯蔵と濃縮を行うのは胆嚢です。",
+        "ウ": "体液量の調節は主に腎臓（と抗利尿ホルモンなど）の役割です。",
+        "エ": "体液のpH調節は主に腎臓と肺（緩衝系）が担います。",
+        "オ": "肝臓は主要な内分泌器官ではありません。ホルモン分泌は下垂体や甲状腺などの内分泌腺が担います。"
+      },
+      "needsReview": false
+    },
+    {
+      "id": "kangoshi-2024-annual-pm-q78",
+      "exam": "kangoshi",
+      "session": "pm",
+      "year": 2024,
+      "season": "annual",
+      "qNumber": 78,
+      "subject": "午後（一般問題）",
+      "category": "一般問題",
+      "topicTags": [
+        "一般問題",
+        "第114回"
+      ],
+      "difficulty": 2,
+      "question": "術後の回復過程でエネルギー不足の場合にケトン体の供給源となるのはどれか。",
+      "explanationCoverage": "full",
+      "hasImage": false,
+      "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-05c_01.pdf#page=30",
+      "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-05seitou.pdf#page=1",
+      "sourceAttribution": "出典：厚生労働省『第114回看護師国家試験』午後 問78（問題・正答）。問題文・選択肢は原典と照合。解説は過去問AIが独自に作成したもので、厚生労働省とは関係ありません。",
+      "officialReferenceUrls": [
+        "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/tp250428-03_04_05.html"
+      ],
+      "license": "MHLW-attributed",
+      "lastUpdated": "2026-10-10",
+      "type": "multiple-choice",
+      "officialAnswerNumber": [
+        "3"
+      ],
+      "choices": {
+        "ア": "乳\n酸",
+        "イ": "尿\n酸",
+        "ウ": "脂肪酸",
+        "エ": "蛋白質",
+        "オ": "アンモニア"
+      },
+      "answer": "ウ",
+      "requiredSelections": 1,
+      "explanation": "エネルギー不足で糖が利用できない状況では、脂肪組織から動員された脂肪酸が肝臓でβ酸化を受け、アセチルCoAからケトン体が作られます。供給源は脂肪酸です。",
+      "choiceExplanations": {
+        "ア": "乳酸は嫌気的解糖の産物で、肝臓で糖新生の材料になります。ケトン体の供給源ではありません。",
+        "イ": "尿酸はプリン体の代謝産物で、エネルギー源やケトン体の材料ではありません。",
+        "ウ": "脂肪酸は肝でβ酸化されアセチルCoAとなり、ケトン体（アセト酢酸など）に変換されます。正解です。",
+        "エ": "蛋白質（アミノ酸）は糖新生の材料にはなりますが、ここでの主たるケトン体の供給源は脂肪酸です。",
+        "オ": "アンモニアは蛋白代謝で生じる有害物質で、尿素回路で処理されます。エネルギー源ではありません。"
+      },
+      "needsReview": false
+    },
+    {
+      "id": "kangoshi-2024-annual-pm-q79",
+      "exam": "kangoshi",
+      "session": "pm",
+      "year": 2024,
+      "season": "annual",
+      "qNumber": 79,
+      "subject": "午後（一般問題）",
+      "category": "一般問題",
+      "topicTags": [
+        "一般問題",
+        "第114回"
+      ],
+      "difficulty": 2,
+      "question": "狭窄による血流低下で二次性高血圧を起こす血管はどれか。",
+      "explanationCoverage": "full",
+      "hasImage": false,
+      "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-05c_01.pdf#page=31",
+      "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-05seitou.pdf#page=1",
+      "sourceAttribution": "出典：厚生労働省『第114回看護師国家試験』午後 問79（問題・正答）。問題文・選択肢は原典と照合。解説は過去問AIが独自に作成したもので、厚生労働省とは関係ありません。",
+      "officialReferenceUrls": [
+        "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/tp250428-03_04_05.html"
+      ],
+      "license": "MHLW-attributed",
+      "lastUpdated": "2026-10-10",
+      "type": "multiple-choice",
+      "officialAnswerNumber": [
+        "4"
+      ],
+      "choices": {
+        "ア": "冠動脈",
+        "イ": "肝動脈",
+        "ウ": "頸動脈",
+        "エ": "腎動脈",
+        "オ": "脳動脈"
+      },
+      "answer": "エ",
+      "requiredSelections": 1,
+      "explanation": "腎動脈が狭窄すると腎血流が低下し、レニン分泌が増えてレニン‐アンジオテンシン‐アルドステロン系が亢進し、腎血管性高血圧（二次性高血圧）を起こします。",
+      "choiceExplanations": {
+        "ア": "冠動脈の狭窄は心筋虚血（狭心症・心筋梗塞）を起こす血管で、二次性高血圧の原因ではありません。",
+        "イ": "肝動脈の狭窄は肝血流障害に関わりますが、高血圧の主要な原因ではありません。",
+        "ウ": "頸動脈の狭窄は脳梗塞や一過性脳虚血発作の原因になります。二次性高血圧の典型ではありません。",
+        "エ": "腎動脈狭窄は腎血流低下→レニン分泌亢進により腎血管性高血圧を起こします。正解です。",
+        "オ": "脳動脈の狭窄は脳虚血の原因となる血管で、二次性高血圧の原因ではありません。"
+      },
+      "needsReview": false
+    },
+    {
+      "id": "kangoshi-2024-annual-pm-q81",
+      "exam": "kangoshi",
+      "session": "pm",
+      "year": 2024,
+      "season": "annual",
+      "qNumber": 81,
+      "subject": "午後（一般問題）",
+      "category": "一般問題",
+      "topicTags": [
+        "一般問題",
+        "第114回"
+      ],
+      "difficulty": 2,
+      "question": "第2〜第4腰髄の障害の有無を把握するために確認するのはどれか。",
+      "explanationCoverage": "full",
+      "hasImage": false,
+      "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-05c_01.pdf#page=32",
+      "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-05seitou.pdf#page=1",
+      "sourceAttribution": "出典：厚生労働省『第114回看護師国家試験』午後 問81（問題・正答）。問題文・選択肢は原典と照合。解説は過去問AIが独自に作成したもので、厚生労働省とは関係ありません。",
+      "officialReferenceUrls": [
+        "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/tp250428-03_04_05.html"
+      ],
+      "license": "MHLW-attributed",
+      "lastUpdated": "2026-10-10",
+      "type": "multiple-choice",
+      "officialAnswerNumber": [
+        "3"
+      ],
+      "choices": {
+        "ア": "輻輳反射",
+        "イ": "腹壁反射",
+        "ウ": "膝蓋腱反射",
+        "エ": "Trousseau¹トルソー¼徴候",
+        "オ": "Blumberg¹ブルンベルグ¼徴候"
+      },
+      "answer": "ウ",
+      "requiredSelections": 1,
+      "explanation": "膝蓋腱反射の反射中枢は第2〜第4腰髄（L2〜L4）で、大腿神経が関わります。この範囲の障害の有無は膝蓋腱反射で確認します。",
+      "choiceExplanations": {
+        "ア": "輻輳反射は近くを見る際の眼球内転と縮瞳で、中脳や動眼神経が関与します。腰髄とは無関係です。",
+        "イ": "腹壁反射の中枢は胸髄（概ねT7〜T12）で、腰髄L2〜L4の評価ではありません。",
+        "ウ": "膝蓋腱反射の中枢はL2〜L4で、腰髄障害の評価に用います。正解です。",
+        "エ": "Trousseau徴候は低カルシウム血症でみられるテタニー誘発所見で、脊髄髄節の評価ではありません。",
+        "オ": "Blumberg徴候は腹膜刺激症状（反跳痛）で、腰髄の評価ではありません。"
+      },
+      "needsReview": false
+    },
+    {
+      "id": "kangoshi-2024-annual-pm-q82",
+      "exam": "kangoshi",
+      "session": "pm",
+      "year": 2024,
+      "season": "annual",
+      "qNumber": 82,
+      "subject": "午後（一般問題）",
+      "category": "一般問題",
+      "topicTags": [
+        "一般問題",
+        "第114回"
+      ],
+      "difficulty": 2,
+      "question": "門脈系の血管はどれか。2つ選べ。",
+      "explanationCoverage": "full",
+      "hasImage": false,
+      "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-05c_01.pdf#page=32",
+      "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-05seitou.pdf#page=1",
+      "sourceAttribution": "出典：厚生労働省『第114回看護師国家試験』午後 問82（問題・正答）。問題文・選択肢は原典と照合。解説は過去問AIが独自に作成したもので、厚生労働省とは関係ありません。",
+      "officialReferenceUrls": [
+        "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/tp250428-03_04_05.html"
+      ],
+      "license": "MHLW-attributed",
+      "lastUpdated": "2026-10-10",
+      "type": "multiple-choice",
+      "officialAnswerNumber": [
+        "2",
+        "5"
+      ],
+      "choices": {
+        "ア": "肝静脈",
+        "イ": "脾静脈",
+        "ウ": "食道静脈",
+        "エ": "内腸骨静脈",
+        "オ": "下腸間膜静脈"
+      },
+      "answer": [
+        "イ",
+        "オ"
+      ],
+      "requiredSelections": 2,
+      "explanation": "門脈は上腸間膜静脈と脾静脈が合流して形成され、下腸間膜静脈は脾静脈または上腸間膜静脈に注ぎます。よって脾静脈と下腸間膜静脈が門脈系です。",
+      "choiceExplanations": {
+        "ア": "肝静脈は肝臓から血液を出して下大静脈へ注ぐ静脈で、門脈系ではなく大循環系に属します。",
+        "イ": "脾静脈は上腸間膜静脈と合流して門脈を形成する門脈系の血管です。正解です。",
+        "ウ": "食道静脈は門脈と上大静脈系をつなぐ側副路になり得ますが、本来の門脈系の血管としては扱いません。",
+        "エ": "内腸骨静脈は骨盤内の静脈で総腸骨静脈から下大静脈へ向かう大循環系です。",
+        "オ": "下腸間膜静脈は下部結腸などの血液を集め、脾静脈などを経て門脈に入る門脈系の血管です。正解です。"
+      },
+      "needsReview": false
+    },
+    {
+      "id": "kangoshi-2024-annual-pm-q83",
+      "exam": "kangoshi",
+      "session": "pm",
+      "year": 2024,
+      "season": "annual",
+      "qNumber": 83,
+      "subject": "午後（一般問題）",
+      "category": "一般問題",
+      "topicTags": [
+        "一般問題",
+        "第114回"
+      ],
+      "difficulty": 2,
+      "question": "Aさん（35歳、女性）は1年前に子宮体癌のために単純子宮全摘出術と両側卵巣\n摘出術を受け、その後、ホルモン補充療法は受けずに健康に過ごしている。\nA さんの血液中で術前よりも濃度が上昇しているホルモンはどれか。2つ選べ。",
+      "explanationCoverage": "full",
+      "hasImage": false,
+      "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-05c_01.pdf#page=32",
+      "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-05seitou.pdf#page=1",
+      "sourceAttribution": "出典：厚生労働省『第114回看護師国家試験』午後 問83（問題・正答）。問題文・選択肢は原典と照合。解説は過去問AIが独自に作成したもので、厚生労働省とは関係ありません。",
+      "officialReferenceUrls": [
+        "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/tp250428-03_04_05.html"
+      ],
+      "license": "MHLW-attributed",
+      "lastUpdated": "2026-10-10",
+      "type": "multiple-choice",
+      "officialAnswerNumber": [
+        "4",
+        "5"
+      ],
+      "choices": {
+        "ア": "テストステロン",
+        "イ": "プロゲステロン",
+        "ウ": "エストラジオール",
+        "エ": "黄体形成ホルモン〈LH〉",
+        "オ": "卵胞刺激ホルモン〈FSH〉"
+      },
+      "answer": [
+        "エ",
+        "オ"
+      ],
+      "requiredSelections": 2,
+      "explanation": "両側卵巣摘出後はエストラジオールとプロゲステロンが低下し、ネガティブフィードバックが失われて下垂体からのLHとFSHが上昇します。上昇するのはLHとFSHです。",
+      "choiceExplanations": {
+        "ア": "テストステロンは卵巣でも産生されますが、卵巣摘出後は低下傾向であり、上昇しません。",
+        "イ": "プロゲステロンは主に黄体から分泌され、卵巣摘出で低下します。",
+        "ウ": "エストラジオールは卵巣由来が主で、摘出により低下します。",
+        "エ": "エストロゲン低下によるフィードバック消失で、LHは術前より上昇します。正解です。",
+        "オ": "FSHも同様に上昇し、閉経後と似た状態になります。正解です。"
+      },
+      "needsReview": false
+    },
+    {
+      "id": "kangoshi-2024-annual-pm-q84",
+      "exam": "kangoshi",
+      "session": "pm",
+      "year": 2024,
+      "season": "annual",
+      "qNumber": 84,
+      "subject": "午後（一般問題）",
+      "category": "一般問題",
+      "topicTags": [
+        "一般問題",
+        "第114回"
+      ],
+      "difficulty": 2,
+      "question": "後天性の大動脈弁狭窄症について正しいのはどれか。2つ選べ。",
+      "explanationCoverage": "full",
+      "hasImage": false,
+      "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-05c_01.pdf#page=33",
+      "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-05seitou.pdf#page=1",
+      "sourceAttribution": "出典：厚生労働省『第114回看護師国家試験』午後 問84（問題・正答）。問題文・選択肢は原典と照合。解説は過去問AIが独自に作成したもので、厚生労働省とは関係ありません。",
+      "officialReferenceUrls": [
+        "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/tp250428-03_04_05.html"
+      ],
+      "license": "MHLW-attributed",
+      "lastUpdated": "2026-10-10",
+      "type": "multiple-choice",
+      "officialAnswerNumber": [
+        "2",
+        "4"
+      ],
+      "choices": {
+        "ア": "二尖弁が多い。",
+        "イ": "弁尖の石灰化による。",
+        "ウ": "左室壁は徐々に薄くなる。",
+        "エ": "収縮期に心雑音を聴取する。",
+        "オ": "心筋の酸素消費量は減少する。"
+      },
+      "answer": [
+        "イ",
+        "エ"
+      ],
+      "requiredSelections": 2,
+      "explanation": "後天性大動脈弁狭窄症は主に加齢変性による弁尖の石灰化が原因で、左室から大動脈への血流が妨げられるため収縮期駆出性雑音を聴取します。",
+      "choiceExplanations": {
+        "ア": "二尖弁が多いのは先天性の大動脈弁狭窄の原因で、後天性の主因ではありません。",
+        "イ": "加齢などによる弁尖の石灰化・硬化が後天性の主な原因です。正解です。",
+        "ウ": "圧負荷により左室壁は代償的に肥厚（求心性肥大）し、薄くはなりません。",
+        "エ": "狭窄部を血液が通る収縮期に駆出性の心雑音を聴取します。正解です。",
+        "オ": "圧負荷と肥大により心筋の酸素消費量は増加し、狭心症の一因となります。"
+      },
+      "needsReview": false
+    },
+    {
+      "id": "kangoshi-2024-annual-pm-q85",
+      "exam": "kangoshi",
+      "session": "pm",
+      "year": 2024,
+      "season": "annual",
+      "qNumber": 85,
+      "subject": "午後（一般問題）",
+      "category": "一般問題",
+      "topicTags": [
+        "一般問題",
+        "第114回"
+      ],
+      "difficulty": 2,
+      "question": "内臓脂肪の蓄積を推定するために用いるのはどれか。2つ選べ。",
+      "explanationCoverage": "full",
+      "hasImage": false,
+      "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-05c_01.pdf#page=33",
+      "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-05seitou.pdf#page=1",
+      "sourceAttribution": "出典：厚生労働省『第114回看護師国家試験』午後 問85（問題・正答）。問題文・選択肢は原典と照合。解説は過去問AIが独自に作成したもので、厚生労働省とは関係ありません。",
+      "officialReferenceUrls": [
+        "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/tp250428-03_04_05.html"
+      ],
+      "license": "MHLW-attributed",
+      "lastUpdated": "2026-10-10",
+      "type": "multiple-choice",
+      "officialAnswerNumber": [
+        "3",
+        "4"
+      ],
+      "choices": {
+        "ア": "身\n長",
+        "イ": "体\n重",
+        "ウ": "腹部CT",
+        "エ": "腹囲〈ウエスト周囲長〉",
+        "オ": "血中トリグリセライド値"
+      },
+      "answer": [
+        "ウ",
+        "エ"
+      ],
+      "requiredSelections": 2,
+      "explanation": "内臓脂肪蓄積の推定には、腹部CTによる内臓脂肪面積の測定と、簡便な指標である腹囲（ウエスト周囲長）を用います。",
+      "choiceExplanations": {
+        "ア": "身長単独では脂肪蓄積を推定できません。BMIの算出要素にとどまります。",
+        "イ": "体重単独では脂肪量や分布は分からず、内臓脂肪の推定指標になりません。",
+        "ウ": "腹部CTの臍高レベル断面で内臓脂肪面積を直接評価できます。正解です。",
+        "エ": "腹囲は内臓脂肪蓄積を反映する簡便な指標で、メタボリックシンドローム診断にも用います。正解です。",
+        "オ": "中性脂肪値は診断項目の一つですが、内臓脂肪蓄積の推定そのものに用いる指標ではありません。"
+      },
+      "needsReview": false
+    },
+    {
+      "id": "kangoshi-2024-annual-pm-q87",
+      "exam": "kangoshi",
+      "session": "pm",
+      "year": 2024,
+      "season": "annual",
+      "qNumber": 87,
+      "subject": "午後（一般問題）",
+      "category": "一般問題",
+      "topicTags": [
+        "一般問題",
+        "第114回"
+      ],
+      "difficulty": 2,
+      "question": "介護保険法で地域包括支援センターに配置が義務付けられているのはどれか。2\nつ選べ。",
+      "explanationCoverage": "full",
+      "hasImage": false,
+      "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-05c_01.pdf#page=34",
+      "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-05seitou.pdf#page=1",
+      "sourceAttribution": "出典：厚生労働省『第114回看護師国家試験』午後 問87（問題・正答）。問題文・選択肢は原典と照合。解説は過去問AIが独自に作成したもので、厚生労働省とは関係ありません。",
+      "officialReferenceUrls": [
+        "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/tp250428-03_04_05.html"
+      ],
+      "license": "MHLW-attributed",
+      "lastUpdated": "2026-10-10",
+      "type": "multiple-choice",
+      "officialAnswerNumber": [
+        "2",
+        "5"
+      ],
+      "choices": {
+        "ア": "介護福祉士",
+        "イ": "社会福祉士",
+        "ウ": "介護支援専門員",
+        "エ": "精神保健福祉士",
+        "オ": "主任介護支援専門員"
+      },
+      "answer": [
+        "イ",
+        "オ"
+      ],
+      "requiredSelections": 2,
+      "explanation": "地域包括支援センターには、原則として保健師（または経験のある看護師）、社会福祉士、主任介護支援専門員の三職種を配置します。選択肢では社会福祉士と主任介護支援専門員です。",
+      "choiceExplanations": {
+        "ア": "介護福祉士は配置が義務付けられた職種ではありません。",
+        "イ": "社会福祉士は必置の三職種の一つで、権利擁護や総合相談を担います。正解です。",
+        "ウ": "介護支援専門員は一般的な資格で、配置義務は『主任』介護支援専門員です。",
+        "エ": "精神保健福祉士は配置が義務付けられた職種ではありません。",
+        "オ": "主任介護支援専門員は必置の三職種の一つで、包括的・継続的ケアマネジメントを担います。正解です。"
+      },
+      "needsReview": false
+    },
+    {
+      "id": "kangoshi-2024-annual-pm-q88",
+      "exam": "kangoshi",
+      "session": "pm",
+      "year": 2024,
+      "season": "annual",
+      "qNumber": 88,
+      "subject": "午後（一般問題）",
+      "category": "一般問題",
+      "topicTags": [
+        "一般問題",
+        "第114回"
+      ],
+      "difficulty": 2,
+      "question": "高齢者における感覚器の変化の特徴で正しいのはどれか。2つ選べ。",
+      "explanationCoverage": "full",
+      "hasImage": false,
+      "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-05c_01.pdf#page=34",
+      "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-05seitou.pdf#page=1",
+      "sourceAttribution": "出典：厚生労働省『第114回看護師国家試験』午後 問88（問題・正答）。問題文・選択肢は原典と照合。解説は過去問AIが独自に作成したもので、厚生労働省とは関係ありません。",
+      "officialReferenceUrls": [
+        "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/tp250428-03_04_05.html"
+      ],
+      "license": "MHLW-attributed",
+      "lastUpdated": "2026-10-10",
+      "type": "multiple-choice",
+      "officialAnswerNumber": [
+        "2",
+        "4"
+      ],
+      "choices": {
+        "ア": "高音域の聴力が保持される。",
+        "イ": "痛覚の感受性が低下する。",
+        "ウ": "味覚の閾値が低下する。",
+        "エ": "暗順応が低下する。",
+        "オ": "嗅覚は保持される。"
+      },
+      "answer": [
+        "イ",
+        "エ"
+      ],
+      "requiredSelections": 2,
+      "explanation": "高齢者では痛覚の感受性が低下し、暗順応も低下します。一方で高音域の聴力は低下し、味覚の閾値は上昇、嗅覚も低下します。",
+      "choiceExplanations": {
+        "ア": "加齢性難聴では高音域から聴力が低下するため、保持されるという記述は誤りです。",
+        "イ": "痛覚の感受性は低下し、外傷や疾患の発見が遅れることがあります。正解です。",
+        "ウ": "味覚は閾値が上昇（感じにくくなる）するため、低下という記述は誤りです。",
+        "エ": "暗い所へ目が慣れる暗順応は加齢により低下します。正解です。",
+        "オ": "嗅覚も加齢で低下するため、保持されるという記述は誤りです。"
+      },
+      "needsReview": false
+    }
+  ],
+  "heldDraftQuestions": [
+    {
+      "id": "kangoshi-2024-annual-pm-q80",
+      "exam": "kangoshi",
+      "session": "pm",
+      "year": 2024,
+      "season": "annual",
+      "qNumber": 80,
+      "subject": "午後（一般問題）",
+      "category": "一般問題",
+      "topicTags": [
+        "一般問題",
+        "第114回"
+      ],
+      "difficulty": 2,
+      "question": "日本の人口動態統計の死因別死亡率の年次推移をグラフに示す。\nC の死因はどれか。",
+      "explanationCoverage": "full",
+      "hasImage": true,
+      "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-05c_01.pdf#page=31",
+      "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-05seitou.pdf#page=1",
+      "sourceAttribution": "出典：厚生労働省『第114回看護師国家試験』午後 問80（問題・正答）。問題文・選択肢は原典と照合。解説は過去問AIが独自に作成したもので、厚生労働省とは関係ありません。",
+      "officialReferenceUrls": [
+        "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/tp250428-03_04_05.html"
+      ],
+      "license": "MHLW-attributed",
+      "lastUpdated": "2026-10-10",
+      "type": "multiple-choice",
+      "officialAnswerNumber": [
+        "2"
+      ],
+      "choices": {
+        "ア": "肺\n炎\npneumonia",
+        "イ": "老\n衰",
+        "ウ": "心疾患\nheart disease",
+        "エ": "脳血管疾患\ncerebrovascular disease",
+        "オ": "悪性新生物¹腫瘍¼\nmalignant neoplasm"
+      },
+      "answer": "イ",
+      "requiredSelections": 1,
+      "explanation": "提示された図（2004〜2022年、A〜Eの5本の折れ線）で、Cは約20から約140（人口10万対）へ急増しています。この急増傾向は老衰の特徴と合致し、公式正答は老衰です。ただし各線A〜Eの位置関係は原図を確認してください。",
+      "choiceExplanations": {
+        "ア": "肺炎は図の期間では死亡率が大きく急増する死因ではなく、Cの急増という傾向と合いません。他線との対応は原図で確認が必要です。",
+        "イ": "老衰は高齢化に伴い死亡率が大きく上昇し続け、図のCの約20→約140への急増と合います。正解です。",
+        "ウ": "心疾患は死亡率が高い水準で推移する死因で、約20から始まる低水準からの急増型ではありません。",
+        "エ": "脳血管疾患は長期的に死亡率が低下傾向にあり、Cの急上昇とは逆の傾向です。",
+        "オ": "悪性新生物は死亡率が最も高く緩やかに上昇する死因で、約20起点のCとは水準が異なります。"
+      },
+      "needsReview": true
+    },
+    {
+      "id": "kangoshi-2024-annual-pm-q86",
+      "exam": "kangoshi",
+      "session": "pm",
+      "year": 2024,
+      "season": "annual",
+      "qNumber": 86,
+      "subject": "午後（一般問題）",
+      "category": "一般問題",
+      "topicTags": [
+        "一般問題",
+        "第114回"
+      ],
+      "difficulty": 2,
+      "question": "介護保険法で定める特定疾病はどれか。2つ選べ。",
+      "explanationCoverage": "full",
+      "hasImage": false,
+      "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-05c_01.pdf#page=33",
+      "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-05seitou.pdf#page=1",
+      "sourceAttribution": "出典：厚生労働省『第114回看護師国家試験』午後 問86（問題・正答）。問題文・選択肢は原典と照合。解説は過去問AIが独自に作成したもので、厚生労働省とは関係ありません。",
+      "officialReferenceUrls": [
+        "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/tp250428-03_04_05.html"
+      ],
+      "license": "MHLW-attributed",
+      "lastUpdated": "2026-10-10",
+      "type": "multiple-choice",
+      "officialAnswerNumber": [
+        "2",
+        "3"
+      ],
+      "choices": {
+        "ア": "ウイルス肝炎",
+        "イ": "脊髄小脳変性症",
+        "ウ": "閉塞性動脈硬化症〈ASO〉",
+        "エ": "メタボリックシンドローム",
+        "オ": "後天性免疫不全症候群〈AIDS〉"
+      },
+      "answer": [
+        "イ",
+        "ウ"
+      ],
+      "requiredSelections": 2,
+      "explanation": "介護保険法の特定疾病は、加齢に伴う疾病で40〜64歳の第2号被保険者が要介護認定を受けられる疾病です。脊髄小脳変性症と閉塞性動脈硬化症が該当します。",
+      "choiceExplanations": {
+        "ア": "ウイルス肝炎は特定疾病に含まれません。",
+        "イ": "脊髄小脳変性症は特定疾病に指定されています。正解です。",
+        "ウ": "閉塞性動脈硬化症は特定疾病に指定されています。正解です。",
+        "エ": "メタボリックシンドロームは病態概念であり、特定疾病ではありません。",
+        "オ": "後天性免疫不全症候群（AIDS）は特定疾病に含まれません。"
+      },
+      "needsReview": true
+    },
+    {
+      "id": "kangoshi-2024-annual-pm-q89",
+      "exam": "kangoshi",
+      "session": "pm",
+      "year": 2024,
+      "season": "annual",
+      "qNumber": 89,
+      "subject": "午後（一般問題）",
+      "category": "一般問題",
+      "topicTags": [
+        "一般問題",
+        "第114回"
+      ],
+      "difficulty": 2,
+      "question": "子どもの成長・発達で正しいのはどれか。2つ選べ。",
+      "explanationCoverage": "full",
+      "hasImage": false,
+      "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-05c_01.pdf#page=34",
+      "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-05seitou.pdf#page=1",
+      "sourceAttribution": "出典：厚生労働省『第114回看護師国家試験』午後 問89（問題・正答）。問題文・選択肢は原典と照合。解説は過去問AIが独自に作成したもので、厚生労働省とは関係ありません。",
+      "officialReferenceUrls": [
+        "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/tp250428-03_04_05.html"
+      ],
+      "license": "MHLW-attributed",
+      "lastUpdated": "2026-10-10",
+      "type": "multiple-choice",
+      "officialAnswerNumber": [
+        "2",
+        "4"
+      ],
+      "choices": {
+        "ア": "基本的な運動発達は末梢から中枢へ向かう。",
+        "イ": "発達の臨界期は身体の各部位によって異なる。",
+        "ウ": "成長とは身体の機能が質的に変化することである。",
+        "エ": "新生児期の成長・発達は環境よりも遺伝の影響が大きい。",
+        "オ": "乳幼児期の脳神経系の発達は学童期と比べゆるやかである。"
+      },
+      "answer": [
+        "イ",
+        "エ"
+      ],
+      "requiredSelections": 2,
+      "explanation": "発達の臨界期は部位や機能ごとに異なります。また新生児期は遺伝的要因の影響が大きいとされます。公式の正答はこの2つです。",
+      "choiceExplanations": {
+        "ア": "運動発達は中枢から末梢へ（頭から足へ）進みます。逆の記述は誤りです。",
+        "イ": "臨界期（感受性期）は身体の部位・機能ごとに異なります。正解です。",
+        "ウ": "身体の機能が質的に変化するのは『発達』で、『成長』は量的な増大を指します。",
+        "エ": "新生児期は遺伝的要因の影響が相対的に大きいとされる、公式正答の記述です。正解です。",
+        "オ": "脳神経系はスキャモンの発育曲線で乳幼児期に急速に発達し、学童期より速いです。"
+      },
+      "needsReview": true
+    },
+    {
+      "id": "kangoshi-2024-annual-pm-q90",
+      "exam": "kangoshi",
+      "session": "pm",
+      "year": 2024,
+      "season": "annual",
+      "qNumber": 90,
+      "subject": "午後（一般問題）",
+      "category": "一般問題",
+      "topicTags": [
+        "一般問題",
+        "第114回"
+      ],
+      "difficulty": 2,
+      "question": "身長160cm、体重60kgの成人の体格指数〈BMI〉を求めよ。\nただし、小数点以下の数値が得られた場合には、小数点以下第2位を四捨五入すること。",
+      "explanationCoverage": "full",
+      "hasImage": false,
+      "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-05c_01.pdf#page=35",
+      "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-05seitou.pdf#page=1",
+      "sourceAttribution": "出典：厚生労働省『第114回看護師国家試験』午後 問90（問題・正答）。問題文・選択肢は原典と照合。解説は過去問AIが独自に作成したもので、厚生労働省とは関係ありません。",
+      "officialReferenceUrls": [
+        "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/tp250428-03_04_05.html"
+      ],
+      "license": "MHLW-attributed",
+      "lastUpdated": "2026-10-10",
+      "type": "descriptive",
+      "officialAnswerNumber": "23.4",
+      "answer": "23.4",
+      "numericAnswer": {
+        "format": "decimal",
+        "precision": 1
+      },
+      "explanation": "BMI＝体重(kg)÷身長(m)²です。身長160cm＝1.60m、体重60kgなので、BMI＝60/(1.60^2)＝60/2.56＝23.4375となります。問題文の指示により小数点以下第2位を四捨五入すると23.4です。公式解答シートでは数字2、3、4として記入します。",
+      "needsReview": true
+    }
+  ]
+}

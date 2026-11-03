@@ -1,0 +1,64 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20250831",
+  "subject": "machinery",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 3320,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 13810,
+      "webSearchRequests": 0,
+      "costUSD": 0.1771438,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 1896,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "58d503d6a45b5709463b64b3958aa53d1d01750e3dc05344263e2d35119a2801",
+  "inputRequestSha256": "82c7694d712584c48ddf8ca7574a0ee9c4993575346cc24a801918e9285b3d24",
+  "inputHashes": {
+    "candidateSha256": {
+      "q13": "ef8c9361647e94a314066766d62f9946bf98db08870c47d725733f5b2e7a1b1d"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20250831/machinery/p16.png": "2b3f9dbfeedb6cb8802b91a478127b42af57148ea29e7c4db4b3ae8c42f4cfa0"
+    },
+    "figureSha256": {},
+    "sourceQuestionPdfSha256": "2a73a24594cc2b8bb7504b9a0ff15e001b2bb56b830572ce2be853f7116f26d8",
+    "sourceAnswerPdfSha256": "76fd3715ed487d19a56b387fb402de20ee09474e9fa55b0413f9037b96af06c9",
+    "officialAnswerUnitsSha256": "97c21f64d6ba5cd59a0c133ece2b936489e9a07824b47e37615dc3e2aa9088c1",
+    "referencePdfSha256": {},
+    "referencePageSha256": {},
+    "referenceJsonSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q13",
+      "questionNumber": 13,
+      "part": null,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "問題文: 公式問題原図（頁下部『- 13 -』『T1－K 016』）と照合した。第1段落「一般のフィードバック制御系においては，制御系の安定性が要求され，制御系の特性を評価するものとして，(ア)特性と過渡特性がある。」、第2段落「サーボ制御系では，目標値の変化に対する追従性が重要であり，過渡特性を評価するものとして，(イ)応答の遅れ時間，立上り時間，(ウ)などが用いられる。」、設問文の3段落とも候補と一字一句一致した。空欄記号(ア)〜(ウ)と句読点（，。）も一致した。",
+        "選択肢: 原図の表（列見出し(ア)(イ)(ウ)、行(1)〜(5)）と照合し、全5肢が一致した。(1)定常/ステップ/定常偏差、(2)追従/ステップ/定常偏差、(3)定常/ステップ/行過ぎ量、(4)追従/インパルス/行過ぎ量、(5)定常/インパルス/定常偏差。原図の字間空け（『定　常』『追　従』）の除去は表記整形であり、意味の変化はない。",
+        "公式正答: 試験センター公式解答表（令和7年度 第三種電気主任技術者上期試験解答）の＜機械＞列で問13の解答は3、配点は5である。これはmanifest固定単位 {question:13, part:null, answer:'3', points:5} および候補の officialAnswer='3'、scoringPoints=5 と一致した。",
+        "総合解説: 制御系の特性を定常特性と過渡特性に大別し、(ア)を定常とする論理は正しい。過渡特性の指標がステップ応答から定義されるため(イ)をステップとする点も正しい。遅れ時間（最終値の50%到達）、立上り時間（10%→90%）、行過ぎ量（最終値超過の最大量、%表示）、整定時間（±2%または±5%以内）の各定義は電験三種の標準的な定義と整合する。定常偏差は定常特性の指標であるため(ウ)から除外する因果も正しい。結論(3)は公式正答と一致した。",
+        "各肢解説: (1)は(ウ)のみ誤り、(2)は(ア)(ウ)が誤り、(4)は(ア)(イ)が誤り、(5)は(イ)(ウ)が誤りと、各肢の誤り箇所の特定を表と突き合わせて確認し、いずれも正確だった。(4)(5)で(イ)がインパルスでない理由として、遅れ時間・立上り時間は最終値に対する到達割合で定義されるステップ応答の指標である点を挙げており、固有の理由として妥当である。(3)の正当化も正しい。",
+        "図: 原図には回路図・波形図がなく、選択肢表のみである。候補の figureDescription（図なし、選択肢は列見出し(ア)〜(ウ)・行(1)〜(5)の表）は正確である。figureUrls=[]、choiceFigureUrls={} は妥当で、公開候補図なしで解答可能である。",
+        "出典・頁: 原図フッタ『T1－K 016』は reviewedFromPage=[16]（PDF頁）と整合する。印刷頁番号『- 13 -』は問題番号と一致するが、PDF頁とは別物として扱った。officialReferenceUrls は空で、検証を要する独立主張はない。",
+        "uncertainty欄: 立上り時間などの定義に文献差があるという注記は事実として正しい。ただし本問の正答判定（(ア)(イ)(ウ)の語句選択）には影響しない。"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,85 @@
+{
+  "startedAt": "2026-09-25T15:11:09.948Z",
+  "finishedAt": "2026-09-25T15:12:06.138Z",
+  "requestedModel": "claude-opus-5-5",
+  "provider": "firstParty",
+  "exitCode": 0,
+  "isError": false,
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 5475,
+      "cacheReadInputTokens": 0,
+      "cacheCreationInputTokens": 155095,
+      "webSearchRequests": 0,
+      "costUSD": 1.350268,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 1500,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "correctModel": true,
+  "stderr": "",
+  "questionNumbers": [
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26
+  ],
+  "statuses": [
+    [
+      17,
+      "PASS"
+    ],
+    [
+      18,
+      "PASS"
+    ],
+    [
+      19,
+      "PASS"
+    ],
+    [
+      20,
+      "PASS"
+    ],
+    [
+      21,
+      "PASS"
+    ],
+    [
+      22,
+      "PASS"
+    ],
+    [
+      23,
+      "PASS"
+    ],
+    [
+      24,
+      "PASS"
+    ],
+    [
+      25,
+      "HOLD"
+    ],
+    [
+      26,
+      "PASS"
+    ]
+  ],
+  "globalIssues": [
+    "Q25の肢1で単位の上付き文字（m²）が欠けた疑いがあるため、原PDFとの照合が必要。",
+    "計画モードで起動しましたが、Write・ExitPlanMode・AskUserQuestionの各ツールが使えなかったため、計画ファイルは作成せず、査読結果のJSONを直接出力しました。",
+    "Microsoft 365・Slack・VercelのMCPコネクタは未認証のため使えません。使う場合はclaude.aiのコネクタ設定で認証してください。"
+  ]
+}

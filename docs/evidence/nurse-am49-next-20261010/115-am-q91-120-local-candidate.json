@@ -1,0 +1,1685 @@
+{
+  "scope": "MHLW 115th nursing morning Q91-120 local candidate only",
+  "publication": "none",
+  "sourcePacketSha256": "40fac0f7b6143b2e9c64e719e5049e37800f568b6c8135ca54c2075022316c36",
+  "requestSha256": "8fcd74aa94200152d2f82fc5d3e1a4c33fdb485daebdcab8e69b243b58daf023",
+  "rawModelOutputSha256": "02831b0c50ab35ec0df989b82a46313247876afbbb8a776453eb6204ecc9b5c5",
+  "draftSha256": "c86ae8e497ef3329ee72320ec0d656855ea98e556d282f19547160f2c52d2854",
+  "readyQuestionCount": 26,
+  "heldQuestionCount": 4,
+  "readyChoiceCount": 107,
+  "heldChoiceCount": 16,
+  "reviewStatuses": [
+    {
+      "number": 91,
+      "status": "ready_local_candidate",
+      "reasons": []
+    },
+    {
+      "number": 92,
+      "status": "hold",
+      "reasons": [
+        "選択肢1について、届出対象か否かの制度上の根拠は入力に含まれていない。公式正答2を前提に不適切と記載した。制度面の根拠は未確認。"
+      ]
+    },
+    {
+      "number": 93,
+      "status": "ready_local_candidate",
+      "reasons": []
+    },
+    {
+      "number": 94,
+      "status": "ready_local_candidate",
+      "reasons": []
+    },
+    {
+      "number": 95,
+      "status": "ready_local_candidate",
+      "reasons": []
+    },
+    {
+      "number": 96,
+      "status": "ready_local_candidate",
+      "reasons": []
+    },
+    {
+      "number": 97,
+      "status": "ready_local_candidate",
+      "reasons": []
+    },
+    {
+      "number": 98,
+      "status": "ready_local_candidate",
+      "reasons": []
+    },
+    {
+      "number": 99,
+      "status": "hold",
+      "reasons": [
+        "選択肢4の総エネルギーの適正値は入力から確定できず、一般論での判断になっている。数値根拠は未確認。",
+        "選択肢2の判断は、現時点のK値と尿量のみに基づく。透析液条件や食事内容は入力にないため、一般化は避ける。"
+      ]
+    },
+    {
+      "number": 100,
+      "status": "ready_local_candidate",
+      "reasons": []
+    },
+    {
+      "number": 101,
+      "status": "ready_local_candidate",
+      "reasons": []
+    },
+    {
+      "number": 102,
+      "status": "ready_local_candidate",
+      "reasons": []
+    },
+    {
+      "number": 103,
+      "status": "hold",
+      "reasons": [
+        "発作強度の判定基準値（年齢別の呼吸数・SpO2など）は入力に含まれておらず、公式正答2を前提に説明した。基準表との照合は未確認。"
+      ]
+    },
+    {
+      "number": 104,
+      "status": "ready_local_candidate",
+      "reasons": []
+    },
+    {
+      "number": 105,
+      "status": "ready_local_candidate",
+      "reasons": []
+    },
+    {
+      "number": 106,
+      "status": "ready_local_candidate",
+      "reasons": []
+    },
+    {
+      "number": 107,
+      "status": "ready_local_candidate",
+      "reasons": []
+    },
+    {
+      "number": 108,
+      "status": "ready_local_candidate",
+      "reasons": []
+    },
+    {
+      "number": 109,
+      "status": "hold",
+      "reasons": [
+        "体重増加の目安値（BMI区分別の推奨増加量など）や胎動初覚の時期は入力にない。公式正答3を前提とした記述で、基準値の確認は未了。"
+      ]
+    },
+    {
+      "number": 110,
+      "status": "ready_local_candidate",
+      "reasons": []
+    },
+    {
+      "number": 111,
+      "status": "ready_local_candidate",
+      "reasons": []
+    },
+    {
+      "number": 112,
+      "status": "ready_local_candidate",
+      "reasons": []
+    },
+    {
+      "number": 113,
+      "status": "ready_local_candidate",
+      "reasons": []
+    },
+    {
+      "number": 114,
+      "status": "ready_local_candidate",
+      "reasons": []
+    },
+    {
+      "number": 115,
+      "status": "ready_local_candidate",
+      "reasons": []
+    },
+    {
+      "number": 116,
+      "status": "ready_local_candidate",
+      "reasons": []
+    },
+    {
+      "number": 117,
+      "status": "ready_local_candidate",
+      "reasons": []
+    },
+    {
+      "number": 118,
+      "status": "ready_local_candidate",
+      "reasons": []
+    },
+    {
+      "number": 119,
+      "status": "ready_local_candidate",
+      "reasons": []
+    },
+    {
+      "number": 120,
+      "status": "ready_local_candidate",
+      "reasons": []
+    }
+  ],
+  "readyQuestions": [
+    {
+      "id": "kangoshi-2025-annual-am-q91",
+      "exam": "kangoshi",
+      "session": "am",
+      "year": 2025,
+      "season": "annual",
+      "qNumber": 91,
+      "subject": "午前（状況設定問題）",
+      "officialAnswerNumber": "2",
+      "type": "multiple-choice",
+      "category": "状況設定問題",
+      "topicTags": [
+        "状況設定問題",
+        "第115回"
+      ],
+      "difficulty": 2,
+      "question": "次の文を読み91～93 の問いに答えよ。\n　A さん（80 歳、男性、要介護2 ）は1 人で暮らしている。\ncerebral hemorrhage\n脳出血を発症し、急性期\n病院で地域連携クリニカルパスに沿って治療が行われた。軽度の右不全麻痺と失語が\nあるため、回復期リハビリテーション病院に転院した。A さんは自宅退院を希望し\nている。退院後はかかりつけの診療所へ通院し、訪問看護と訪問介護を利用する予定\nである。\n\n回復期リハビリテーション病院の看護師がA さんに行う地域連携クリニカルパ\nスの説明で適切なのはどれか。",
+      "choices": {
+        "ア": "「診療計画を介護支援専門員に提供します」",
+        "イ": "「治療内容は急性期病院から引き継いでいます」",
+        "ウ": "「退院後の介護サービスは医療ソーシャルワーカーが決めます」",
+        "エ": "「リハビリテーションの内容をお住まいの市町村に報告します」"
+      },
+      "answer": "イ",
+      "requiredSelections": 1,
+      "explanation": "地域連携クリニカルパスは、急性期病院から回復期病院、かかりつけ医へと切れ目なく医療を引き継ぐための共有計画である。回復期病院の看護師が「治療内容は急性期病院から引き継いでいる」と説明するのは適切である。",
+      "choiceExplanations": {
+        "ア": "パスは医療機関間で診療計画を共有する仕組みである。介護支援専門員への提供を中心とする説明は、パスの趣旨とずれている。",
+        "イ": "急性期病院で行われた治療がパスに沿って回復期病院へ引き継がれる、という説明であり適切。",
+        "ウ": "退院後の介護サービスは本人の意向を踏まえて介護支援専門員らが調整する。医療ソーシャルワーカーが一方的に決めるわけではない。",
+        "エ": "リハビリ内容を市町村に報告する仕組みはパスの目的ではない。"
+      },
+      "explanationCoverage": "full",
+      "hasImage": false,
+      "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-05a_01.pdf#page=36",
+      "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-05seitou.pdf#page=1",
+      "sourceAttribution": "出典：厚生労働省『第115回看護師国家試験』午前 問91（問題・正答）。問題文・選択肢は原本照合。解説は過去問AIが独自に作成し、厚生労働省とは関係ありません。",
+      "officialReferenceUrls": [
+        "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-05a_01.pdf",
+        "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-05seitou.pdf"
+      ],
+      "license": "MHLW-attributed",
+      "needsReview": false,
+      "lastUpdated": "2026-10-10"
+    },
+    {
+      "id": "kangoshi-2025-annual-am-q93",
+      "exam": "kangoshi",
+      "session": "am",
+      "year": 2025,
+      "season": "annual",
+      "qNumber": 93,
+      "subject": "午前（状況設定問題）",
+      "officialAnswerNumber": "3",
+      "type": "multiple-choice",
+      "category": "状況設定問題",
+      "topicTags": [
+        "状況設定問題",
+        "第115回"
+      ],
+      "difficulty": 2,
+      "question": "次の文を読み91～93 の問いに答えよ。\n　A さん（80 歳、男性、要介護2 ）は1 人で暮らしている。\ncerebral hemorrhage\n脳出血を発症し、急性期\n病院で地域連携クリニカルパスに沿って治療が行われた。軽度の右不全麻痺と失語が\nあるため、回復期リハビリテーション病院に転院した。A さんは自宅退院を希望し\nている。退院後はかかりつけの診療所へ通院し、訪問看護と訪問介護を利用する予定\nである。\n\n退院2 か月後、訪問看護師が訪問するとA さんの長男から「最近、父がよく話し\nてくれるようになったが、言いたいことが伝わらずイライラしていることがある。\nどう対応していいかわからない」と相談があった。\n　A さんとのコミュニケーションについて、家族への助言で適切なのはどれか。",
+      "choices": {
+        "ア": "「A さんに何度も聞き返しましょう」",
+        "イ": "「A さんが言い間違えたときは訂正しましょう」",
+        "ウ": "「A さんに短くわかりやすい言葉で話しかけましょう」",
+        "エ": "「A さんの表情よりも言葉での表現を大事にしましょう」"
+      },
+      "answer": "ウ",
+      "requiredSelections": 1,
+      "explanation": "失語のある人には、短くわかりやすい言葉でゆっくり話しかけるのが基本である。責めたり追い詰めたりせず、安心して伝えられる環境をつくる。",
+      "choiceExplanations": {
+        "ア": "何度も聞き返すと本人の焦りやイライラが強まる。",
+        "イ": "言い間違いを訂正すると自信を失わせ、意欲を低下させる。",
+        "ウ": "短くわかりやすい言葉は理解を助けるため適切。",
+        "エ": "失語では言葉の表出が難しいため、表情や身振りも含めて非言語的な表現を読み取る必要がある。"
+      },
+      "explanationCoverage": "full",
+      "hasImage": false,
+      "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-05a_01.pdf#page=37",
+      "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-05seitou.pdf#page=1",
+      "sourceAttribution": "出典：厚生労働省『第115回看護師国家試験』午前 問93（問題・正答）。問題文・選択肢は原本照合。解説は過去問AIが独自に作成し、厚生労働省とは関係ありません。",
+      "officialReferenceUrls": [
+        "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-05a_01.pdf",
+        "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-05seitou.pdf"
+      ],
+      "license": "MHLW-attributed",
+      "needsReview": false,
+      "lastUpdated": "2026-10-10"
+    },
+    {
+      "id": "kangoshi-2025-annual-am-q94",
+      "exam": "kangoshi",
+      "session": "am",
+      "year": 2025,
+      "season": "annual",
+      "qNumber": 94,
+      "subject": "午前（状況設定問題）",
+      "officialAnswerNumber": "2",
+      "type": "multiple-choice",
+      "category": "状況設定問題",
+      "topicTags": [
+        "状況設定問題",
+        "第115回"
+      ],
+      "difficulty": 2,
+      "question": "次の文を読み94～96 の問いに答えよ。\n　A さん（56 歳、男性、会社員）は\nthoracic esophageal cancer\n胸部食道癌と診断され、開胸開腹下で食道切除再\n建術を受けることになった。\n　病状と手術の説明を聞き「酒もほとんど飲まないのに、\nesophageal cancer\n食道癌になっちゃうんです\nね」と落ち込んだ様子で「早くよくなりたい。20 歳から毎日20 本吸っていたタバコも\n手術が決まってやめました」と話した。\n身体所見： 身長168 cm、体重54 kg、BMI 19。\n血液所見： Hb 13.6 g/dL、Ht 41.4 %、血小板数28 万/μL、プロトロンビン時間11\n秒、総蛋白6.2 g/dL、アルブミン3.8 g/dL、空腹時血糖102 mg/dL、\nHbA1c 4.8 %。\n呼吸機能所見： %VC 78 %、FEV1% 67 %。\n\n術前のA さんの状況から、術後に最も起こる可能性の高い合併症はどれか。",
+      "choices": {
+        "ア": "出　血",
+        "イ": "atelectasis\n無気肺",
+        "ウ": "縫合不全",
+        "エ": "deep vein thrombosis\n深部静脈血栓症〈DVT〉"
+      },
+      "answer": "イ",
+      "requiredSelections": 1,
+      "explanation": "20本/日を長年喫煙しており、FEV1%が67%と低めで閉塞性の換気障害が示唆される。さらに開胸開腹の大手術のため、術後は創部痛による呼吸抑制や排痰困難を招きやすく、無気肺の可能性が最も高い。",
+      "choiceExplanations": {
+        "ア": "プロトロンビン時間や血小板数は正常で、出血傾向を示す所見がない。",
+        "イ": "喫煙歴、FEV1%低下、開胸開腹手術という条件が重なっており、最も起こりやすい。",
+        "ウ": "縫合不全は食道癌術後の重要な合併症だが、本事例では栄養や血糖が大きく悪くなく、設問のこの条件から最も可能性が高いとはいえない。",
+        "エ": "年齢、BMI、凝固系などから、DVTを特に起こしやすい所見は読み取れない。"
+      },
+      "explanationCoverage": "full",
+      "hasImage": false,
+      "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-05a_01.pdf#page=38",
+      "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-05seitou.pdf#page=1",
+      "sourceAttribution": "出典：厚生労働省『第115回看護師国家試験』午前 問94（問題・正答）。問題文・選択肢は原本照合。解説は過去問AIが独自に作成し、厚生労働省とは関係ありません。",
+      "officialReferenceUrls": [
+        "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-05a_01.pdf",
+        "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-05seitou.pdf"
+      ],
+      "license": "MHLW-attributed",
+      "needsReview": false,
+      "lastUpdated": "2026-10-10"
+    },
+    {
+      "id": "kangoshi-2025-annual-am-q95",
+      "exam": "kangoshi",
+      "session": "am",
+      "year": 2025,
+      "season": "annual",
+      "qNumber": 95,
+      "subject": "午前（状況設定問題）",
+      "officialAnswerNumber": "4",
+      "type": "multiple-choice",
+      "category": "状況設定問題",
+      "topicTags": [
+        "状況設定問題",
+        "第115回"
+      ],
+      "difficulty": 2,
+      "question": "次の文を読み94～96 の問いに答えよ。\n　A さん（56 歳、男性、会社員）は\nthoracic esophageal cancer\n胸部食道癌と診断され、開胸開腹下で食道切除再\n建術を受けることになった。\n　病状と手術の説明を聞き「酒もほとんど飲まないのに、\nesophageal cancer\n食道癌になっちゃうんです\nね」と落ち込んだ様子で「早くよくなりたい。20 歳から毎日20 本吸っていたタバコも\n手術が決まってやめました」と話した。\n身体所見： 身長168 cm、体重54 kg、BMI 19。\n血液所見： Hb 13.6 g/dL、Ht 41.4 %、血小板数28 万/μL、プロトロンビン時間11\n秒、総蛋白6.2 g/dL、アルブミン3.8 g/dL、空腹時血糖102 mg/dL、\nHbA1c 4.8 %。\n呼吸機能所見： %VC 78 %、FEV1% 67 %。\n\nA さんは、右開胸開腹胸部食道亜全摘術、胃を用いた食道再建術、頸部リンパ\n節郭清術を受け、胸腔ドレーン、腹腔内ドレーン、頸部皮下ドレーン、胃管減圧\nチューブ、経腸栄養チューブ、膀胱留置カテーテルが挿入された。\n　術後1 日には看護師が介助してベッドサイドで立位になり、足踏みを行った。術\n後2 日には病室から廊下に出て歩行し、看護師がドレーンバッグを持つなどの介助\nをした。A さんは「こんなにたくさん管が入るとは思わなかった。1 人ではとても\n歩けない」と話した。\n　A さんの離床を援助するときのドレーン類の取り扱いで正しいのはどれか。",
+      "choices": {
+        "ア": "ドレーン類は引っ張った状態で保持する。",
+        "イ": "ドレーンを気にしないで歩いてよいとA さんに伝える。",
+        "ウ": "ドレーンバッグは、ドレーン挿入部よりも高い位置に掛ける。",
+        "エ": "離床前後にドレーンの固定位置が変わっていないことを確認する。"
+      },
+      "answer": "エ",
+      "requiredSelections": 1,
+      "explanation": "離床時は、ドレーンの抜去や位置のずれを防ぐことが重要である。離床の前後に固定位置が変わっていないかを確認するのは適切。",
+      "choiceExplanations": {
+        "ア": "引っ張った状態で保持すると、抜去や疼痛の原因になる。",
+        "イ": "ドレーンを気にしなくてよいと伝えると、事故抜去の危険がある。",
+        "ウ": "バッグを挿入部より高い位置に置くと、逆流や感染の危険がある。バッグは挿入部より低く保つのが原則。",
+        "エ": "固定位置の変化を確認することで、抜去や屈曲、ずれを早期に発見できる。"
+      },
+      "explanationCoverage": "full",
+      "hasImage": false,
+      "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-05a_01.pdf#page=39",
+      "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-05seitou.pdf#page=1",
+      "sourceAttribution": "出典：厚生労働省『第115回看護師国家試験』午前 問95（問題・正答）。問題文・選択肢は原本照合。解説は過去問AIが独自に作成し、厚生労働省とは関係ありません。",
+      "officialReferenceUrls": [
+        "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-05a_01.pdf",
+        "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-05seitou.pdf"
+      ],
+      "license": "MHLW-attributed",
+      "needsReview": false,
+      "lastUpdated": "2026-10-10"
+    },
+    {
+      "id": "kangoshi-2025-annual-am-q96",
+      "exam": "kangoshi",
+      "session": "am",
+      "year": 2025,
+      "season": "annual",
+      "qNumber": 96,
+      "subject": "午前（状況設定問題）",
+      "officialAnswerNumber": "1",
+      "type": "multiple-choice",
+      "category": "状況設定問題",
+      "topicTags": [
+        "状況設定問題",
+        "第115回"
+      ],
+      "difficulty": 2,
+      "question": "次の文を読み94～96 の問いに答えよ。\n　A さん（56 歳、男性、会社員）は\nthoracic esophageal cancer\n胸部食道癌と診断され、開胸開腹下で食道切除再\n建術を受けることになった。\n　病状と手術の説明を聞き「酒もほとんど飲まないのに、\nesophageal cancer\n食道癌になっちゃうんです\nね」と落ち込んだ様子で「早くよくなりたい。20 歳から毎日20 本吸っていたタバコも\n手術が決まってやめました」と話した。\n身体所見： 身長168 cm、体重54 kg、BMI 19。\n血液所見： Hb 13.6 g/dL、Ht 41.4 %、血小板数28 万/μL、プロトロンビン時間11\n秒、総蛋白6.2 g/dL、アルブミン3.8 g/dL、空腹時血糖102 mg/dL、\nHbA1c 4.8 %。\n呼吸機能所見： %VC 78 %、FEV1% 67 %。\n\nA さんは術後5 日に経口摂取が開始となり、流動食、粥食を経て、術後2 週に\nは普通食を1 日6 回に分けて食べるようになった。食事については「すぐおなかが\nいっぱいになって、入っていかない感じなんだよね。食べ物を少しずつ口に入れる\n習慣がついたな」と言いながら、各食50～70 % を摂取していた。\n　A さんの退院時の食事指導で適切なのはどれか。",
+      "choices": {
+        "ア": "「よくかんでから飲み込んでください」",
+        "イ": "「食後は早く横になって休んでください」",
+        "ウ": "「退院後は間食をせずに3 食の食事量を確保してください」",
+        "エ": "「飲み込みにくいときは、お茶や汁物で流し込むといいです」"
+      },
+      "answer": "ア",
+      "requiredSelections": 1,
+      "explanation": "食道切除再建術後は少量ずつ摂取し、よくかんで食べることが基本である。食事が1回に少ししか入らないため、分割して摂る工夫が必要になる。",
+      "choiceExplanations": {
+        "ア": "よくかんでゆっくり摂取することは、通過障害や逆流の予防に役立つ。",
+        "イ": "食後すぐに横になると逆流しやすいため不適切。",
+        "ウ": "1回量が少ないので、間食を含めて分割して摂取する必要がある。間食を禁じる指導は不適切。",
+        "エ": "流し込むと誤嚥や逆流のおそれがあり、避けるべきである。"
+      },
+      "explanationCoverage": "full",
+      "hasImage": false,
+      "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-05a_01.pdf#page=39",
+      "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-05seitou.pdf#page=1",
+      "sourceAttribution": "出典：厚生労働省『第115回看護師国家試験』午前 問96（問題・正答）。問題文・選択肢は原本照合。解説は過去問AIが独自に作成し、厚生労働省とは関係ありません。",
+      "officialReferenceUrls": [
+        "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-05a_01.pdf",
+        "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-05seitou.pdf"
+      ],
+      "license": "MHLW-attributed",
+      "needsReview": false,
+      "lastUpdated": "2026-10-10"
+    },
+    {
+      "id": "kangoshi-2025-annual-am-q97",
+      "exam": "kangoshi",
+      "session": "am",
+      "year": 2025,
+      "season": "annual",
+      "qNumber": 97,
+      "subject": "午前（状況設定問題）",
+      "officialAnswerNumber": "3",
+      "type": "multiple-choice",
+      "category": "状況設定問題",
+      "topicTags": [
+        "状況設定問題",
+        "第115回"
+      ],
+      "difficulty": 2,
+      "question": "次の文を読み97～99 の問いに答えよ。\n　A さん（60 歳、女性、会社員）は15 年前に\ndiabetes mellitus\n糖尿病と診断され血糖降下薬を服用して\nいた。その後、微量のアルブミン尿が出現し、腎機能は徐々に悪化したため、10 年\n前からインスリン療法が開始された。A さんは外来受診時に労作時の息切れを訴え\nており、肺野の水泡音と下肢の浮腫が認められ、精査加療目的で入院した。入院時\nは、身長155 cm、体重65 kg で1 か月前から5 kg 増加している。体温36.3 ℃、呼\n吸数28/分、脈拍82/分、血圧160/82　mmHg であった。血液検査データは、\nHb 8.5 g/dL、HbA1c 8.5 %、アルブミン3.1 g/dL、クレアチニン3.5 mg/dL、\nK 4.0 mEq/L で、推算糸球体濾過量〈eGFR〉は15 mL/分/1.73 m2 であった。\n\nA さんの入院時のアセスメントで適切なのはどれか。",
+      "choices": {
+        "ア": "栄養状態は良好である。",
+        "イ": "高カリウム血症である。",
+        "ウ": "pulmonary edema\n肺水腫の危険性がある。",
+        "エ": "血糖コントロールは良好である。"
+      },
+      "answer": "ウ",
+      "requiredSelections": 1,
+      "explanation": "体重は1か月で5kg増加し、浮腫、水泡音、呼吸数28/分、血圧160/82mmHg、eGFR 15と腎機能低下があり、体液過剰による肺水腫の危険がある。",
+      "choiceExplanations": {
+        "ア": "アルブミンが3.1g/dLと低めで、貧血もあるため、栄養状態は良好とはいえない。",
+        "イ": "Kは4.0mEq/Lで、高カリウム血症ではない。",
+        "ウ": "体液貯留、肺野の水泡音、息切れ、腎機能低下から肺水腫のリスクがある。",
+        "エ": "HbA1cが8.5%で、血糖コントロールは良好とはいえない。"
+      },
+      "explanationCoverage": "full",
+      "hasImage": false,
+      "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-05a_01.pdf#page=40",
+      "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-05seitou.pdf#page=1",
+      "sourceAttribution": "出典：厚生労働省『第115回看護師国家試験』午前 問97（問題・正答）。問題文・選択肢は原本照合。解説は過去問AIが独自に作成し、厚生労働省とは関係ありません。",
+      "officialReferenceUrls": [
+        "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-05a_01.pdf",
+        "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-05seitou.pdf"
+      ],
+      "license": "MHLW-attributed",
+      "needsReview": false,
+      "lastUpdated": "2026-10-10"
+    },
+    {
+      "id": "kangoshi-2025-annual-am-q98",
+      "exam": "kangoshi",
+      "session": "am",
+      "year": 2025,
+      "season": "annual",
+      "qNumber": 98,
+      "subject": "午前（状況設定問題）",
+      "officialAnswerNumber": "3",
+      "type": "multiple-choice",
+      "category": "状況設定問題",
+      "topicTags": [
+        "状況設定問題",
+        "第115回"
+      ],
+      "difficulty": 2,
+      "question": "次の文を読み97～99 の問いに答えよ。\n　A さん（60 歳、女性、会社員）は15 年前に\ndiabetes mellitus\n糖尿病と診断され血糖降下薬を服用して\nいた。その後、微量のアルブミン尿が出現し、腎機能は徐々に悪化したため、10 年\n前からインスリン療法が開始された。A さんは外来受診時に労作時の息切れを訴え\nており、肺野の水泡音と下肢の浮腫が認められ、精査加療目的で入院した。入院時\nは、身長155 cm、体重65 kg で1 か月前から5 kg 増加している。体温36.3 ℃、呼\n吸数28/分、脈拍82/分、血圧160/82　mmHg であった。血液検査データは、\nHb 8.5 g/dL、HbA1c 8.5 %、アルブミン3.1 g/dL、クレアチニン3.5 mg/dL、\nK 4.0 mEq/L で、推算糸球体濾過量〈eGFR〉は15 mL/分/1.73 m2 であった。\n\n医師はA さんに透析導入の可能性について説明した。A さんは「週に3 回も病院\nに来るのは無理です。他の患者さんから家でできる腹膜透析もあるって聞いたけ\nど、どういうものかしら」と看護師に尋ねた。\n　A さんへの腹膜透析に関する説明内容で適切なのはどれか。",
+      "choices": {
+        "ア": "入浴はできない。",
+        "イ": "腸炎の危険性がある。",
+        "ウ": "腹腔にカテーテルを挿入する。",
+        "エ": "心血管系への負担が血液透析より大きい。"
+      },
+      "answer": "ウ",
+      "requiredSelections": 1,
+      "explanation": "腹膜透析は、腹腔内にカテーテルを留置し、透析液を出し入れして腹膜を透析膜として利用する方法である。",
+      "choiceExplanations": {
+        "ア": "カテーテル出口部の管理をすれば、入浴は可能である。",
+        "イ": "代表的な合併症は腹膜炎で、腸炎ではない。",
+        "ウ": "腹腔にカテーテルを挿入するという説明は適切。",
+        "エ": "腹膜透析は血液透析より緩徐に除水するため、心血管系への負担は小さいとされる。"
+      },
+      "explanationCoverage": "full",
+      "hasImage": false,
+      "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-05a_01.pdf#page=40",
+      "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-05seitou.pdf#page=1",
+      "sourceAttribution": "出典：厚生労働省『第115回看護師国家試験』午前 問98（問題・正答）。問題文・選択肢は原本照合。解説は過去問AIが独自に作成し、厚生労働省とは関係ありません。",
+      "officialReferenceUrls": [
+        "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-05a_01.pdf",
+        "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-05seitou.pdf"
+      ],
+      "license": "MHLW-attributed",
+      "needsReview": false,
+      "lastUpdated": "2026-10-10"
+    },
+    {
+      "id": "kangoshi-2025-annual-am-q100",
+      "exam": "kangoshi",
+      "session": "am",
+      "year": 2025,
+      "season": "annual",
+      "qNumber": 100,
+      "subject": "午前（状況設定問題）",
+      "officialAnswerNumber": "15",
+      "type": "multiple-choice",
+      "category": "状況設定問題",
+      "topicTags": [
+        "状況設定問題",
+        "第115回"
+      ],
+      "difficulty": 2,
+      "question": "次の文を読み100～102 の問いに答えよ。\n　A さん（75 歳、男性）は妻（70 歳）と2 人で暮らしている。日中は本を読んで過ごす\nことが多い。2 か月前からA さんは、椅子から立ち上がる時にバランスを崩すこと\nや「寝室に女の子がいる」と言うことがあった。また、就寝後、夜間に大きな声で\n「おーい」と叫んで手を振る行動が継続してみられるようになった。心配になった妻が\nA さんと病院を受診し、初期の \ndementia with Lewy bodies\nLewy〈レビー〉小体型認知症と診断された。A さんは\n要介護認定の申請をし、要支援1 と認定された。\n\nA さんに出現している症状はどれか。2 つ選べ。",
+      "choices": {
+        "ア": "幻　視",
+        "イ": "徘　徊",
+        "ウ": "観念失行",
+        "エ": "実行機能障害",
+        "オ": "レム睡眠行動障害"
+      },
+      "answer": [
+        "ア",
+        "オ"
+      ],
+      "requiredSelections": 2,
+      "explanation": "「寝室に女の子がいる」は幻視、夜間に叫んで手を振る行動はレム睡眠行動障害に当たる。どちらもレビー小体型認知症で特徴的な症状である。",
+      "choiceExplanations": {
+        "ア": "実在しない人物が見えるという訴えは幻視である。",
+        "イ": "徘徊を示す記述はない。",
+        "ウ": "観念失行を示す記述はない。",
+        "エ": "実行機能障害を示す記述はない。",
+        "オ": "就寝後に叫び、手を振る行動が続いており、レム睡眠行動障害に合致する。"
+      },
+      "explanationCoverage": "full",
+      "hasImage": false,
+      "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-05a_01.pdf#page=42",
+      "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-05seitou.pdf#page=1",
+      "sourceAttribution": "出典：厚生労働省『第115回看護師国家試験』午前 問100（問題・正答）。問題文・選択肢は原本照合。解説は過去問AIが独自に作成し、厚生労働省とは関係ありません。",
+      "officialReferenceUrls": [
+        "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-05a_01.pdf",
+        "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-05seitou.pdf"
+      ],
+      "license": "MHLW-attributed",
+      "needsReview": false,
+      "lastUpdated": "2026-10-10"
+    },
+    {
+      "id": "kangoshi-2025-annual-am-q101",
+      "exam": "kangoshi",
+      "session": "am",
+      "year": 2025,
+      "season": "annual",
+      "qNumber": 101,
+      "subject": "午前（状況設定問題）",
+      "officialAnswerNumber": "1",
+      "type": "multiple-choice",
+      "category": "状況設定問題",
+      "topicTags": [
+        "状況設定問題",
+        "第115回"
+      ],
+      "difficulty": 2,
+      "question": "次の文を読み100～102 の問いに答えよ。\n　A さん（75 歳、男性）は妻（70 歳）と2 人で暮らしている。日中は本を読んで過ごす\nことが多い。2 か月前からA さんは、椅子から立ち上がる時にバランスを崩すこと\nや「寝室に女の子がいる」と言うことがあった。また、就寝後、夜間に大きな声で\n「おーい」と叫んで手を振る行動が継続してみられるようになった。心配になった妻が\nA さんと病院を受診し、初期の \ndementia with Lewy bodies\nLewy〈レビー〉小体型認知症と診断された。A さんは\n要介護認定の申請をし、要支援1 と認定された。\n\n診断から1 か月後の外来受診時に、A さんの妻から看護師に「夫は夜8 時くらい\nに入浴しますが、最近、入浴時にふらつくことがあるそうです。ふらついた時は壁\nや浴槽の端に手をついてバランスをとっていると聞きました。夫が安全に入浴する\nにはどうすればよいか教えてほしいです」と相談があった。\n　看護師のA さんの妻への助言で適切なのはどれか。",
+      "choices": {
+        "ア": "「お風呂場に手すりを付けましょう」",
+        "イ": "「奥さんが入浴を手伝ってあげてください」",
+        "ウ": "「バスマットは床と異なる色にしましょう」",
+        "エ": "「入浴前に1 時間以上の睡眠をとりましょう」"
+      },
+      "answer": "ア",
+      "requiredSelections": 1,
+      "explanation": "入浴時にふらつき、壁や浴槽の縁で支えている状況から、転倒予防のために手すりの設置が適切である。",
+      "choiceExplanations": {
+        "ア": "手すりはバランス保持を助け、転倒予防につながる。",
+        "イ": "妻が手伝うかどうかは本人の自立度や意向を踏まえて決めるもので、最初の助言としては不適切。妻は70歳であり、負担も考慮が必要。",
+        "ウ": "色の違いだけではふらつきへの対策として十分でない。",
+        "エ": "入浴前に1時間以上寝ることを一律に勧める根拠がない。"
+      },
+      "explanationCoverage": "full",
+      "hasImage": false,
+      "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-05a_01.pdf#page=42",
+      "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-05seitou.pdf#page=1",
+      "sourceAttribution": "出典：厚生労働省『第115回看護師国家試験』午前 問101（問題・正答）。問題文・選択肢は原本照合。解説は過去問AIが独自に作成し、厚生労働省とは関係ありません。",
+      "officialReferenceUrls": [
+        "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-05a_01.pdf",
+        "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-05seitou.pdf"
+      ],
+      "license": "MHLW-attributed",
+      "needsReview": false,
+      "lastUpdated": "2026-10-10"
+    },
+    {
+      "id": "kangoshi-2025-annual-am-q102",
+      "exam": "kangoshi",
+      "session": "am",
+      "year": 2025,
+      "season": "annual",
+      "qNumber": 102,
+      "subject": "午前（状況設定問題）",
+      "officialAnswerNumber": "4",
+      "type": "multiple-choice",
+      "category": "状況設定問題",
+      "topicTags": [
+        "状況設定問題",
+        "第115回"
+      ],
+      "difficulty": 2,
+      "question": "次の文を読み100～102 の問いに答えよ。\n　A さん（75 歳、男性）は妻（70 歳）と2 人で暮らしている。日中は本を読んで過ごす\nことが多い。2 か月前からA さんは、椅子から立ち上がる時にバランスを崩すこと\nや「寝室に女の子がいる」と言うことがあった。また、就寝後、夜間に大きな声で\n「おーい」と叫んで手を振る行動が継続してみられるようになった。心配になった妻が\nA さんと病院を受診し、初期の \ndementia with Lewy bodies\nLewy〈レビー〉小体型認知症と診断された。A さんは\n要介護認定の申請をし、要支援1 と認定された。\n\n診断から4 か月後、病院受診時にA さんは、外来看護師に「最近、歩こうとする\nと足が前に出ないことがありますが、地域の行事に参加して、いろいろな人と交流\nしながら、妻との生活を続けたいです。今できていることを維持するために、運動\nが効果的と聞きました。何か方法はありますか」と話した。\n　外来看護師の助言として最も適切なのはどれか。",
+      "choices": {
+        "ア": "「毎日、散歩に行きましょう」",
+        "イ": "「家の中で運動できるサービスがありますよ」",
+        "ウ": "「次回の受診時に医師に相談してみましょう」",
+        "エ": "「介護予防通所リハビリテーションが利用できますよ」"
+      },
+      "answer": "エ",
+      "requiredSelections": 1,
+      "explanation": "Aさんは要支援1で、地域の行事に参加しながら今の生活を維持したいと望んでいる。運動と交流を兼ねた介護予防通所リハビリテーションが適切である。",
+      "choiceExplanations": {
+        "ア": "足が前に出ないことがあるため、一人での散歩には転倒の危険がある。",
+        "イ": "家の中で運動できるサービスでは、交流の希望を満たしにくい。",
+        "ウ": "受診先で医師に相談するのは間違いではないが、相談を先送りにするだけで、希望に即した助言としては弱い。",
+        "エ": "運動の機会と他者との交流が得られ、要支援1で利用できるサービスである。"
+      },
+      "explanationCoverage": "full",
+      "hasImage": false,
+      "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-05a_01.pdf#page=43",
+      "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-05seitou.pdf#page=1",
+      "sourceAttribution": "出典：厚生労働省『第115回看護師国家試験』午前 問102（問題・正答）。問題文・選択肢は原本照合。解説は過去問AIが独自に作成し、厚生労働省とは関係ありません。",
+      "officialReferenceUrls": [
+        "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-05a_01.pdf",
+        "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-05seitou.pdf"
+      ],
+      "license": "MHLW-attributed",
+      "needsReview": false,
+      "lastUpdated": "2026-10-10"
+    },
+    {
+      "id": "kangoshi-2025-annual-am-q104",
+      "exam": "kangoshi",
+      "session": "am",
+      "year": 2025,
+      "season": "annual",
+      "qNumber": 104,
+      "subject": "午前（状況設定問題）",
+      "officialAnswerNumber": "1",
+      "type": "multiple-choice",
+      "category": "状況設定問題",
+      "topicTags": [
+        "状況設定問題",
+        "第115回"
+      ],
+      "difficulty": 2,
+      "question": "次の文を読み103～105 の問いに答えよ。\n　A ちゃん（10 歳、女児）は両親と3 人で暮らしている。3 歳の時に\nbronchial asthma\n気管支喘息と診\n断された。6 歳までは喘息発作で年に1 回は入院していたが、8 歳から発作を起こす\nことはなくなり、定期受診が必要なくなった。ダニとハウスダストに感作がある。\n\n救急外来で気管支拡張薬の吸入が行われたが、吸入後も呼吸数32/分、経皮的動\n脈血酸素飽和度〈SpO2〉94 %（room air）だったため、入院することになった。入院\n後、鼻カニューレによる酸素投与と点滴静脈内注射が開始され、1 日3 回のステロ\nイド薬の静脈内注射と1 日4 回の気管支拡張薬の吸入が開始された。\n　翌日のバイタルサインは体温36.8 ℃、呼吸数22/分、心拍数94/分、経皮的動脈\n血酸素飽和度〈SpO2〉97 %（room air）で、酸素投与が中止された。聴診で喘鳴が聴\n取された。A ちゃんは「楽になった。お腹がすいた」などと勢いよく話し、笑顔が\n見られるようになった。\n　このときのA ちゃんへの看護で適切なのはどれか。",
+      "choices": {
+        "ア": "排痰を促す。",
+        "イ": "胸式呼吸を促す。",
+        "ウ": "水分摂取を制限する。",
+        "エ": "食事はとろみ食にする。"
+      },
+      "answer": "ア",
+      "requiredSelections": 1,
+      "explanation": "翌日は酸素投与が不要になり、症状は改善している。ただし喘鳴が聴取されるため、気道の分泌物の排出を促す援助が適切である。",
+      "choiceExplanations": {
+        "ア": "喘鳴が残っているため、排痰を促すのは妥当。",
+        "イ": "胸式呼吸を促す根拠はない。",
+        "ウ": "水分制限は不要で、むしろ痰の粘稠度を保たないために水分は必要である。",
+        "エ": "食欲があり嚥下に問題はなく、とろみ食にする必要はない。"
+      },
+      "explanationCoverage": "full",
+      "hasImage": false,
+      "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-05a_01.pdf#page=45",
+      "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-05seitou.pdf#page=1",
+      "sourceAttribution": "出典：厚生労働省『第115回看護師国家試験』午前 問104（問題・正答）。問題文・選択肢は原本照合。解説は過去問AIが独自に作成し、厚生労働省とは関係ありません。",
+      "officialReferenceUrls": [
+        "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-05a_01.pdf",
+        "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-05seitou.pdf"
+      ],
+      "license": "MHLW-attributed",
+      "needsReview": false,
+      "lastUpdated": "2026-10-10"
+    },
+    {
+      "id": "kangoshi-2025-annual-am-q105",
+      "exam": "kangoshi",
+      "session": "am",
+      "year": 2025,
+      "season": "annual",
+      "qNumber": 105,
+      "subject": "午前（状況設定問題）",
+      "officialAnswerNumber": "4",
+      "type": "multiple-choice",
+      "category": "状況設定問題",
+      "topicTags": [
+        "状況設定問題",
+        "第115回"
+      ],
+      "difficulty": 2,
+      "question": "次の文を読み103～105 の問いに答えよ。\n　A ちゃん（10 歳、女児）は両親と3 人で暮らしている。3 歳の時に\nbronchial asthma\n気管支喘息と診\n断された。6 歳までは喘息発作で年に1 回は入院していたが、8 歳から発作を起こす\nことはなくなり、定期受診が必要なくなった。ダニとハウスダストに感作がある。\n\nA ちゃんの咳嗽は軽快し、全身状態も良好で退院が決定した。A ちゃんに学校\nでの生活状況を確認すると「最近、喘息発作はなかったけど、体育の時は咳が出た\nり苦しくなったりすることが時々あった」と話した。そのため、A ちゃんと母親\nに、退院後も抗アレルギー薬の内服と副腎皮質ステロイド薬の吸入を続けるよう医\n師が説明した。\n　看護師のA ちゃんに対する退院後の生活についての指導で適切なのはどれか。",
+      "choices": {
+        "ア": "「風邪が流行ったら学校を休みましょう」",
+        "イ": "「咳が出なくなったら薬はやめましょう」",
+        "ウ": "「咳が出なくても体育の授業は見学しましょう」",
+        "エ": "「学校で咳が続くときは担任の先生に伝えましょう」"
+      },
+      "answer": "エ",
+      "requiredSelections": 1,
+      "explanation": "体育の時に咳や苦しさがあるため、学校生活での症状を担任に伝えて共有することが適切である。",
+      "choiceExplanations": {
+        "ア": "風邪の流行のたびに休む必要はない。感染対策を取りつつ通学する。",
+        "イ": "症状が消えても、医師の指示なく薬をやめてはならない。",
+        "ウ": "咳が出なければ、一律に見学する必要はない。",
+        "エ": "症状が続くときに担任へ伝えることで、学校での対応や安全確保につながる。"
+      },
+      "explanationCoverage": "full",
+      "hasImage": false,
+      "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-05a_01.pdf#page=45",
+      "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-05seitou.pdf#page=1",
+      "sourceAttribution": "出典：厚生労働省『第115回看護師国家試験』午前 問105（問題・正答）。問題文・選択肢は原本照合。解説は過去問AIが独自に作成し、厚生労働省とは関係ありません。",
+      "officialReferenceUrls": [
+        "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-05a_01.pdf",
+        "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-05seitou.pdf"
+      ],
+      "license": "MHLW-attributed",
+      "needsReview": false,
+      "lastUpdated": "2026-10-10"
+    },
+    {
+      "id": "kangoshi-2025-annual-am-q106",
+      "exam": "kangoshi",
+      "session": "am",
+      "year": 2025,
+      "season": "annual",
+      "qNumber": 106,
+      "subject": "午前（状況設定問題）",
+      "officialAnswerNumber": "2",
+      "type": "multiple-choice",
+      "category": "状況設定問題",
+      "topicTags": [
+        "状況設定問題",
+        "第115回"
+      ],
+      "difficulty": 2,
+      "question": "次の文を読み106～108 の問いに答えよ。\n　A ちゃん（1 歳9 か月）は両親と保育所に通う姉のB ちゃん（3 歳）と4 人で暮らし\nている。A ちゃんは重症の仮死で出生し、\ncerebral palsy\n脳性麻痺と診断されている。食事、排\n泄、更衣は全介助である。食事はきざみ食を摂取しており、浣腸によって2 日に1 回\n排便がある。A ちゃんは全身の筋緊張が強く、肘関節と手関節は屈曲し、両下肢が\n交差し伸展する姿勢が多い。声かけやタッチングで笑顔がみられるが、発語はない。\n　A ちゃんは月2 回の外来受診をしており、受診の際に母親が看護師に「A は食欲が\nありますが、時々むせてしまいます。日中は機嫌よく過ごすことが多いのですが、手\n足を突っ張らせて背を反り返ることがあり、夜眠らないことが時々あります」と話し\nている。\n\nA ちゃんへの支援で優先度が高いのはどれか。",
+      "choices": {
+        "ア": "感染対策の見直し",
+        "イ": "食事の形態の変更",
+        "ウ": "排便のコントロール",
+        "エ": "睡眠パターンのコントロール"
+      },
+      "answer": "イ",
+      "requiredSelections": 1,
+      "explanation": "むせがあり、きざみ食を摂取している脳性麻痺児では、誤嚥のリスクが高い。食事形態の見直しを優先する。",
+      "choiceExplanations": {
+        "ア": "感染対策の見直しを要する根拠は示されていない。",
+        "イ": "むせがあり、誤嚥と窒息、肺炎の危険があるため、優先度が高い。",
+        "ウ": "浣腸で2日に1回排便があり、現時点で緊急性は高くない。",
+        "エ": "夜眠らないことは時々あるが、誤嚥の危険より優先度は低い。"
+      },
+      "explanationCoverage": "full",
+      "hasImage": false,
+      "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-05a_01.pdf#page=46",
+      "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-05seitou.pdf#page=1",
+      "sourceAttribution": "出典：厚生労働省『第115回看護師国家試験』午前 問106（問題・正答）。問題文・選択肢は原本照合。解説は過去問AIが独自に作成し、厚生労働省とは関係ありません。",
+      "officialReferenceUrls": [
+        "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-05a_01.pdf",
+        "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-05seitou.pdf"
+      ],
+      "license": "MHLW-attributed",
+      "needsReview": false,
+      "lastUpdated": "2026-10-10"
+    },
+    {
+      "id": "kangoshi-2025-annual-am-q107",
+      "exam": "kangoshi",
+      "session": "am",
+      "year": 2025,
+      "season": "annual",
+      "qNumber": 107,
+      "subject": "午前（状況設定問題）",
+      "officialAnswerNumber": "4",
+      "type": "multiple-choice",
+      "category": "状況設定問題",
+      "topicTags": [
+        "状況設定問題",
+        "第115回"
+      ],
+      "difficulty": 2,
+      "question": "次の文を読み106～108 の問いに答えよ。\n　A ちゃん（1 歳9 か月）は両親と保育所に通う姉のB ちゃん（3 歳）と4 人で暮らし\nている。A ちゃんは重症の仮死で出生し、\ncerebral palsy\n脳性麻痺と診断されている。食事、排\n泄、更衣は全介助である。食事はきざみ食を摂取しており、浣腸によって2 日に1 回\n排便がある。A ちゃんは全身の筋緊張が強く、肘関節と手関節は屈曲し、両下肢が\n交差し伸展する姿勢が多い。声かけやタッチングで笑顔がみられるが、発語はない。\n　A ちゃんは月2 回の外来受診をしており、受診の際に母親が看護師に「A は食欲が\nありますが、時々むせてしまいます。日中は機嫌よく過ごすことが多いのですが、手\n足を突っ張らせて背を反り返ることがあり、夜眠らないことが時々あります」と話し\nている。\n\n母親は外来看護師に「姉のB は最近、私に甘えて傍を離れません。A の世話でB\nに関わる時間が少ないので、短時間でもB とだけじっくり関われるようにしたい\nです」と話した。父親は会社員で夜の帰りが遅い。父親がB ちゃんを保育所へ送\nり、母親がA ちゃんを連れて迎えに行く。両親は、A ちゃんの育児をできるだけ\n在宅で行いたいと思っており、訪問看護を週1 回1 時間利用している。\n　このときの外来看護師の母親への返答で最も適切なのはどれか。",
+      "choices": {
+        "ア": "「B ちゃんにA ちゃんの状況を説明しましょう」",
+        "イ": "「お父さんに保育所のお迎えもしてもらいましょう」",
+        "ウ": "「B ちゃんを預かるファミリーサポートを利用しましょう」",
+        "エ": "「訪問看護の時間をB ちゃんのお迎えの時間にできるか相談してみましょ\nう」"
+      },
+      "answer": "エ",
+      "requiredSelections": 1,
+      "explanation": "母親はBちゃんと関わる時間をつくりたいと望んでいる。訪問看護の時間を迎えの時間に調整する提案は、既存のサービスを活用でき、母親の希望に沿った現実的な方法である。",
+      "choiceExplanations": {
+        "ア": "状況の説明は有用だが、母親の求める「Bちゃんと関わる時間」をつくる直接の解決にならない。",
+        "イ": "父親は帰宅が遅く、現実的でない。",
+        "ウ": "新たなサービスの利用を提案する前に、まず既存の資源を活用する案が適している。",
+        "エ": "迎えの間にAちゃんを訪問看護師に任せれば、母親はBちゃんとだけ過ごす時間を確保できる。"
+      },
+      "explanationCoverage": "full",
+      "hasImage": false,
+      "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-05a_01.pdf#page=46",
+      "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-05seitou.pdf#page=1",
+      "sourceAttribution": "出典：厚生労働省『第115回看護師国家試験』午前 問107（問題・正答）。問題文・選択肢は原本照合。解説は過去問AIが独自に作成し、厚生労働省とは関係ありません。",
+      "officialReferenceUrls": [
+        "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-05a_01.pdf",
+        "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-05seitou.pdf"
+      ],
+      "license": "MHLW-attributed",
+      "needsReview": false,
+      "lastUpdated": "2026-10-10"
+    },
+    {
+      "id": "kangoshi-2025-annual-am-q108",
+      "exam": "kangoshi",
+      "session": "am",
+      "year": 2025,
+      "season": "annual",
+      "qNumber": 108,
+      "subject": "午前（状況設定問題）",
+      "officialAnswerNumber": "2",
+      "type": "multiple-choice",
+      "category": "状況設定問題",
+      "topicTags": [
+        "状況設定問題",
+        "第115回"
+      ],
+      "difficulty": 2,
+      "question": "次の文を読み106～108 の問いに答えよ。\n　A ちゃん（1 歳9 か月）は両親と保育所に通う姉のB ちゃん（3 歳）と4 人で暮らし\nている。A ちゃんは重症の仮死で出生し、\ncerebral palsy\n脳性麻痺と診断されている。食事、排\n泄、更衣は全介助である。食事はきざみ食を摂取しており、浣腸によって2 日に1 回\n排便がある。A ちゃんは全身の筋緊張が強く、肘関節と手関節は屈曲し、両下肢が\n交差し伸展する姿勢が多い。声かけやタッチングで笑顔がみられるが、発語はない。\n　A ちゃんは月2 回の外来受診をしており、受診の際に母親が看護師に「A は食欲が\nありますが、時々むせてしまいます。日中は機嫌よく過ごすことが多いのですが、手\n足を突っ張らせて背を反り返ることがあり、夜眠らないことが時々あります」と話し\nている。\n\nA ちゃんは2 歳2 か月になった。現在まで療育は受けていない。母親は、訪問\n看護師に「A の発達を促すような場所に通いたいのですが、誰に聞くと紹介してく\nれるでしょうか」と質問した。\n　訪問看護師がA ちゃんの母親に紹介する者として最も適切なのはどれか。",
+      "choices": {
+        "ア": "民生委員",
+        "イ": "相談支援専門員",
+        "ウ": "地域の保育所の保育士",
+        "エ": "訪問診療をしている医師"
+      },
+      "answer": "イ",
+      "requiredSelections": 1,
+      "explanation": "療育の場の紹介や、障害福祉サービス利用のための調整を担うのは相談支援専門員である。",
+      "choiceExplanations": {
+        "ア": "民生委員は地域の見守りや相談役で、療育の紹介窓口ではない。",
+        "イ": "障害児の福祉サービスの利用相談や調整を行う専門職であり、最も適切。",
+        "ウ": "保育所の保育士は、療育の紹介を専門に担う立場ではない。",
+        "エ": "医師への相談も考えられるが、療育の紹介窓口としては相談支援専門員が最も適切。"
+      },
+      "explanationCoverage": "full",
+      "hasImage": false,
+      "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-05a_01.pdf#page=47",
+      "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-05seitou.pdf#page=1",
+      "sourceAttribution": "出典：厚生労働省『第115回看護師国家試験』午前 問108（問題・正答）。問題文・選択肢は原本照合。解説は過去問AIが独自に作成し、厚生労働省とは関係ありません。",
+      "officialReferenceUrls": [
+        "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-05a_01.pdf",
+        "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-05seitou.pdf"
+      ],
+      "license": "MHLW-attributed",
+      "needsReview": false,
+      "lastUpdated": "2026-10-10"
+    },
+    {
+      "id": "kangoshi-2025-annual-am-q110",
+      "exam": "kangoshi",
+      "session": "am",
+      "year": 2025,
+      "season": "annual",
+      "qNumber": 110,
+      "subject": "午前（状況設定問題）",
+      "officialAnswerNumber": "1",
+      "type": "multiple-choice",
+      "category": "状況設定問題",
+      "topicTags": [
+        "状況設定問題",
+        "第115回"
+      ],
+      "difficulty": 2,
+      "question": "次の文を読み109～111 の問いに答えよ。\n　A さん（33 歳、初妊婦、会社員）は夫と2 人で暮らしている。身長160 cm、非妊時\n体重60 kg。妊娠17 週1 日の妊婦健康診査にて、児の発育に異常はなかった。体重\nは66 kg で4 週前から4 kg 増加している。血圧120/78　mmHg。尿蛋白（－）、浮腫\n（－）。排便は妊娠前と変わらず2 日に1 回出ている。A さんは「同じ週数の友達は胎\n動を感じると言っていたのに、自分は感じられず心配です」と話す。\n\n妊娠22 週2 日。妊婦健康診査で母児ともに経過は順調であった。A さんは夫の\n立ち合い分娩を希望しており「産後は夫も育児休業を取得する予定です。最近この\n地域に引っ越してきたばかりで、今のうちに妊娠週数が同じくらいのお母さんと仲\n良くなって色々と情報交換したいです」と話す。\n　このときのA さんへの支援で最も適切なのはどれか。",
+      "choices": {
+        "ア": "両親学級への参加を促す。",
+        "イ": "バースプランの立案を勧める。",
+        "ウ": "産後ケアに関する情報提供を行う。",
+        "エ": "妊婦健康診査への夫の同席を勧める。"
+      },
+      "answer": "ア",
+      "requiredSelections": 1,
+      "explanation": "Aさんは引っ越してきたばかりで、同じ時期の妊婦と友達になり情報交換したいと望んでいる。夫も育児休業を取る予定のため、両親学級への参加を促すのが最も適切である。",
+      "choiceExplanations": {
+        "ア": "妊婦同士の交流と、夫婦での育児準備の双方につながる。",
+        "イ": "バースプランは出産への希望整理には役立つが、Aさんの訴えである仲間づくりにはつながりにくい。",
+        "ウ": "産後ケアの情報提供は有用だが、現在の訴えへの直接の支援としては優先度が低い。",
+        "エ": "夫の同席は家族の関与を高めるが、他の妊婦との交流という希望にはつながらない。"
+      },
+      "explanationCoverage": "full",
+      "hasImage": false,
+      "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-05a_01.pdf#page=48",
+      "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-05seitou.pdf#page=1",
+      "sourceAttribution": "出典：厚生労働省『第115回看護師国家試験』午前 問110（問題・正答）。問題文・選択肢は原本照合。解説は過去問AIが独自に作成し、厚生労働省とは関係ありません。",
+      "officialReferenceUrls": [
+        "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-05a_01.pdf",
+        "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-05seitou.pdf"
+      ],
+      "license": "MHLW-attributed",
+      "needsReview": false,
+      "lastUpdated": "2026-10-10"
+    },
+    {
+      "id": "kangoshi-2025-annual-am-q111",
+      "exam": "kangoshi",
+      "session": "am",
+      "year": 2025,
+      "season": "annual",
+      "qNumber": 111,
+      "subject": "午前（状況設定問題）",
+      "officialAnswerNumber": "4",
+      "type": "multiple-choice",
+      "category": "状況設定問題",
+      "topicTags": [
+        "状況設定問題",
+        "第115回"
+      ],
+      "difficulty": 2,
+      "question": "次の文を読み109～111 の問いに答えよ。\n　A さん（33 歳、初妊婦、会社員）は夫と2 人で暮らしている。身長160 cm、非妊時\n体重60 kg。妊娠17 週1 日の妊婦健康診査にて、児の発育に異常はなかった。体重\nは66 kg で4 週前から4 kg 増加している。血圧120/78　mmHg。尿蛋白（－）、浮腫\n（－）。排便は妊娠前と変わらず2 日に1 回出ている。A さんは「同じ週数の友達は胎\n動を感じると言っていたのに、自分は感じられず心配です」と話す。\n\nA さんは妊娠39 週5 日、男児を経腟分娩で出産した。産褥1 日、体温37.1 ℃、\n脈拍85/分、血圧110/75　mmHg である。子宮底の位置は臍下1 横指、中等量の血\n性悪露を認めるが、量は減少してきている。乳頭は乳管が左右共に2 本開口してお\nり、にじむ程度の乳汁分泌を認める。A さんは「生理痛のような下腹部の痛みがあ\nりましたが、徐々に改善しています。お産のあとは尿意がなくて尿も出ている実感\nがなかったのですが、今は尿意があり排尿もしっかりあります」と話す。\n　A さんに対するアセスメントで正しいのはどれか。",
+      "choices": {
+        "ア": "異常な腹痛",
+        "イ": "子宮の復古遅延",
+        "ウ": "乳汁の分泌不良",
+        "エ": "一過性の排尿障害"
+      },
+      "answer": "エ",
+      "requiredSelections": 1,
+      "explanation": "分娩後は尿意がなかったが、現在は尿意があり排尿も十分にある。一過性の排尿障害として説明できる。",
+      "choiceExplanations": {
+        "ア": "生理痛のような痛みは後陣痛で、改善傾向にあり異常ではない。",
+        "イ": "産褥1日で子宮底は臍下1横指、悪露も減少傾向で、復古遅延とはいえない。",
+        "ウ": "乳管は開口し、乳汁も少量にじんでおり、産褥1日としては分泌不良とはいえない。",
+        "エ": "分娩直後は尿意が乏しく、現在は回復しているため、一過性の排尿障害と評価できる。"
+      },
+      "explanationCoverage": "full",
+      "hasImage": false,
+      "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-05a_01.pdf#page=49",
+      "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-05seitou.pdf#page=1",
+      "sourceAttribution": "出典：厚生労働省『第115回看護師国家試験』午前 問111（問題・正答）。問題文・選択肢は原本照合。解説は過去問AIが独自に作成し、厚生労働省とは関係ありません。",
+      "officialReferenceUrls": [
+        "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-05a_01.pdf",
+        "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-05seitou.pdf"
+      ],
+      "license": "MHLW-attributed",
+      "needsReview": false,
+      "lastUpdated": "2026-10-10"
+    },
+    {
+      "id": "kangoshi-2025-annual-am-q112",
+      "exam": "kangoshi",
+      "session": "am",
+      "year": 2025,
+      "season": "annual",
+      "qNumber": 112,
+      "subject": "午前（状況設定問題）",
+      "officialAnswerNumber": "3",
+      "type": "multiple-choice",
+      "category": "状況設定問題",
+      "topicTags": [
+        "状況設定問題",
+        "第115回"
+      ],
+      "difficulty": 2,
+      "question": "次の文を読み112～114 の問いに答えよ。\n　A さん（24 歳、初妊婦、事務職）は妊娠8 週であり、両親と3 人で暮らしている。\nパートナー（24 歳、大学院2 年生）は就職が決まっており、A さんと結婚する予定で\nある。\n　A さんは「特に朝の気持ち悪さがつらくて、あまり食べられません。ご飯が炊き上\nがるにおいだけで吐き気がします」と話す。妊娠経過は順調である。\n\nA さんへの食事指導で適切なのはどれか。",
+      "choices": {
+        "ア": "「食事は温めましょう」",
+        "イ": "「空腹の状態にしましょう」",
+        "ウ": "「食べたいときに食べましょう」",
+        "エ": "「赤ちゃんのために栄養を考えて食べましょう」"
+      },
+      "answer": "ウ",
+      "requiredSelections": 1,
+      "explanation": "つわり時は、食べられるときに食べたいものを食べるのが基本である。においや空腹で悪化しやすいため、無理に決まった形で食べさせない。",
+      "choiceExplanations": {
+        "ア": "温かい食事はにおいが立ちやすく、吐き気を強めることがある。冷ました食事のほうが摂りやすい場合が多い。",
+        "イ": "空腹は吐き気を悪化させることがある。",
+        "ウ": "食べたいときに、食べられるものを摂るのが適切。",
+        "エ": "栄養を意識するよう促すと、プレッシャーになる。"
+      },
+      "explanationCoverage": "full",
+      "hasImage": false,
+      "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-05a_01.pdf#page=50",
+      "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-05seitou.pdf#page=1",
+      "sourceAttribution": "出典：厚生労働省『第115回看護師国家試験』午前 問112（問題・正答）。問題文・選択肢は原本照合。解説は過去問AIが独自に作成し、厚生労働省とは関係ありません。",
+      "officialReferenceUrls": [
+        "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-05a_01.pdf",
+        "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-05seitou.pdf"
+      ],
+      "license": "MHLW-attributed",
+      "needsReview": false,
+      "lastUpdated": "2026-10-10"
+    },
+    {
+      "id": "kangoshi-2025-annual-am-q113",
+      "exam": "kangoshi",
+      "session": "am",
+      "year": 2025,
+      "season": "annual",
+      "qNumber": 113,
+      "subject": "午前（状況設定問題）",
+      "officialAnswerNumber": "1",
+      "type": "multiple-choice",
+      "category": "状況設定問題",
+      "topicTags": [
+        "状況設定問題",
+        "第115回"
+      ],
+      "difficulty": 2,
+      "question": "次の文を読み112～114 の問いに答えよ。\n　A さん（24 歳、初妊婦、事務職）は妊娠8 週であり、両親と3 人で暮らしている。\nパートナー（24 歳、大学院2 年生）は就職が決まっており、A さんと結婚する予定で\nある。\n　A さんは「特に朝の気持ち悪さがつらくて、あまり食べられません。ご飯が炊き上\nがるにおいだけで吐き気がします」と話す。妊娠経過は順調である。\n\nA さんは「妊娠することは考えていなかったので、自分の体にどんなことが起こ\nるのか想像もつきません」と話した。看護師は、次の妊婦健康診査までに生じやす\nい変化について説明することにした。\n　A さんに説明する内容で適切なのはどれか。",
+      "choices": {
+        "ア": "便　秘",
+        "イ": "尿漏れ",
+        "ウ": "腰背部痛",
+        "エ": "下肢のけいれん"
+      },
+      "answer": "ア",
+      "requiredSelections": 1,
+      "explanation": "次の健診までの妊娠初期には、便秘が起こりやすい。腰背部痛や下肢のけいれん、尿漏れは中期から後期にかけて目立ちやすい。",
+      "choiceExplanations": {
+        "ア": "妊娠初期から、黄体ホルモンの影響や生活の変化で便秘が起こりやすい。",
+        "イ": "尿漏れは主に子宮増大が進む時期に出やすい。",
+        "ウ": "腰背部痛は妊娠が進んで体型が変わる時期に多い。",
+        "エ": "下肢のけいれんは妊娠中期から後期に多い。"
+      },
+      "explanationCoverage": "full",
+      "hasImage": false,
+      "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-05a_01.pdf#page=50",
+      "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-05seitou.pdf#page=1",
+      "sourceAttribution": "出典：厚生労働省『第115回看護師国家試験』午前 問113（問題・正答）。問題文・選択肢は原本照合。解説は過去問AIが独自に作成し、厚生労働省とは関係ありません。",
+      "officialReferenceUrls": [
+        "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-05a_01.pdf",
+        "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-05seitou.pdf"
+      ],
+      "license": "MHLW-attributed",
+      "needsReview": false,
+      "lastUpdated": "2026-10-10"
+    },
+    {
+      "id": "kangoshi-2025-annual-am-q114",
+      "exam": "kangoshi",
+      "session": "am",
+      "year": 2025,
+      "season": "annual",
+      "qNumber": 114,
+      "subject": "午前（状況設定問題）",
+      "officialAnswerNumber": "4",
+      "type": "multiple-choice",
+      "category": "状況設定問題",
+      "topicTags": [
+        "状況設定問題",
+        "第115回"
+      ],
+      "difficulty": 2,
+      "question": "次の文を読み112～114 の問いに答えよ。\n　A さん（24 歳、初妊婦、事務職）は妊娠8 週であり、両親と3 人で暮らしている。\nパートナー（24 歳、大学院2 年生）は就職が決まっており、A さんと結婚する予定で\nある。\n　A さんは「特に朝の気持ち悪さがつらくて、あまり食べられません。ご飯が炊き上\nがるにおいだけで吐き気がします」と話す。妊娠経過は順調である。\n\nA さんの妊娠経過は順調で、妊娠38 週3 日に正常分娩で出産した。産褥経過と\n乳汁分泌は順調である。産褥4 日の退院指導の際に「産後の性生活について教えて\nほしい」と話す。\n　A さんへの説明で適切なのはどれか。",
+      "choices": {
+        "ア": "「コンドームは不要です」",
+        "イ": "「基礎体温を計測して避妊しましょう」",
+        "ウ": "「月経が再開しなければ妊娠しません」",
+        "エ": "「産後1 か月の健診までは性交渉は避けましょう」"
+      },
+      "answer": "エ",
+      "requiredSelections": 1,
+      "explanation": "産褥期は子宮や産道の回復を待つ必要があり、1か月健診で回復を確認するまで性交渉を避けるよう説明する。",
+      "choiceExplanations": {
+        "ア": "授乳中でも排卵は起こりうるため、避妊は必要。",
+        "イ": "産後は基礎体温による排卵の判断が難しく、避妊法として不確実。",
+        "ウ": "月経再開前でも排卵は起こりうる。",
+        "エ": "1か月健診で回復を確認するまで避ける、という説明が適切。"
+      },
+      "explanationCoverage": "full",
+      "hasImage": false,
+      "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-05a_01.pdf#page=51",
+      "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-05seitou.pdf#page=1",
+      "sourceAttribution": "出典：厚生労働省『第115回看護師国家試験』午前 問114（問題・正答）。問題文・選択肢は原本照合。解説は過去問AIが独自に作成し、厚生労働省とは関係ありません。",
+      "officialReferenceUrls": [
+        "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-05a_01.pdf",
+        "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-05seitou.pdf"
+      ],
+      "license": "MHLW-attributed",
+      "needsReview": false,
+      "lastUpdated": "2026-10-10"
+    },
+    {
+      "id": "kangoshi-2025-annual-am-q115",
+      "exam": "kangoshi",
+      "session": "am",
+      "year": 2025,
+      "season": "annual",
+      "qNumber": 115,
+      "subject": "午前（状況設定問題）",
+      "officialAnswerNumber": "4",
+      "type": "multiple-choice",
+      "category": "状況設定問題",
+      "topicTags": [
+        "状況設定問題",
+        "第115回"
+      ],
+      "difficulty": 2,
+      "question": "次の文を読み115～117 の問いに答えよ。\n　A さん（24 歳、女性）は両親と3 人で暮らしている。会社員として働いているが、\n最近責任の大きな仕事が増えていた。仕事帰りにコンビニエンスストアでサンドイッ\nチやおにぎりなどを買い込み、家族が寝た後に一気に食べるようになった。量が増え\nていき、食べた後に自ら嘔吐することを繰り返すようになった。過食嘔吐をやめられ\nないことに悩み、クリニックを受診し、\nbulimia nervosa\n神経性過食症と診断された。\n来院時の身体所見： 身長155 cm、体重48 kg、体温36.4 ℃、血圧104/60　mmHg、\n脈拍66/分（不整）。\n検査所見： 赤血球400 万/μL、Hb 12.5 g/dL、白血球6,300/μL、Na 135 mEq/L、\nK 2.7 mEq/L、Cl 98 mEq/L、AST 30 IU/L〈U/L〉、ALT 35 IU/L\n〈U/L〉、γ-GTP 29 IU/L〈U/L〉、血糖92 mg/dL。\n\nA さんの来院時の所見から考えられるのはどれか。",
+      "choices": {
+        "ア": "貧　血",
+        "イ": "低血糖",
+        "ウ": "肝機能障害",
+        "エ": "低カリウム血症"
+      },
+      "answer": "エ",
+      "requiredSelections": 1,
+      "explanation": "自己誘発性嘔吐を繰り返すため、K 2.7mEq/Lの低カリウム血症が考えられる。脈拍が不整であることとも合致する。",
+      "choiceExplanations": {
+        "ア": "Hb 12.5g/dLで、貧血は認められない。",
+        "イ": "血糖は92mg/dLで正常範囲。",
+        "ウ": "AST、ALT、γ-GTPはいずれも正常範囲。",
+        "エ": "K 2.7mEq/Lは低値で、嘔吐の反復による低カリウム血症が考えられる。"
+      },
+      "explanationCoverage": "full",
+      "hasImage": false,
+      "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-05a_01.pdf#page=52",
+      "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-05seitou.pdf#page=1",
+      "sourceAttribution": "出典：厚生労働省『第115回看護師国家試験』午前 問115（問題・正答）。問題文・選択肢は原本照合。解説は過去問AIが独自に作成し、厚生労働省とは関係ありません。",
+      "officialReferenceUrls": [
+        "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-05a_01.pdf",
+        "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-05seitou.pdf"
+      ],
+      "license": "MHLW-attributed",
+      "needsReview": false,
+      "lastUpdated": "2026-10-10"
+    },
+    {
+      "id": "kangoshi-2025-annual-am-q116",
+      "exam": "kangoshi",
+      "session": "am",
+      "year": 2025,
+      "season": "annual",
+      "qNumber": 116,
+      "subject": "午前（状況設定問題）",
+      "officialAnswerNumber": "2",
+      "type": "multiple-choice",
+      "category": "状況設定問題",
+      "topicTags": [
+        "状況設定問題",
+        "第115回"
+      ],
+      "difficulty": 2,
+      "question": "次の文を読み115～117 の問いに答えよ。\n　A さん（24 歳、女性）は両親と3 人で暮らしている。会社員として働いているが、\n最近責任の大きな仕事が増えていた。仕事帰りにコンビニエンスストアでサンドイッ\nチやおにぎりなどを買い込み、家族が寝た後に一気に食べるようになった。量が増え\nていき、食べた後に自ら嘔吐することを繰り返すようになった。過食嘔吐をやめられ\nないことに悩み、クリニックを受診し、\nbulimia nervosa\n神経性過食症と診断された。\n来院時の身体所見： 身長155 cm、体重48 kg、体温36.4 ℃、血圧104/60　mmHg、\n脈拍66/分（不整）。\n検査所見： 赤血球400 万/μL、Hb 12.5 g/dL、白血球6,300/μL、Na 135 mEq/L、\nK 2.7 mEq/L、Cl 98 mEq/L、AST 30 IU/L〈U/L〉、ALT 35 IU/L\n〈U/L〉、γ-GTP 29 IU/L〈U/L〉、血糖92 mg/dL。\n\n2 回目の外来受診日に、A さんから外来看護師に「過食がやめられません。私は\nどうすればいいのでしょうか」と\nbulimia nervosa\n神経性過食症との付き合い方について相談があっ\nた。\n　外来看護師の声かけとして適切なのはどれか。",
+      "choices": {
+        "ア": "「毎食の食事は手作りしましょう」",
+        "イ": "「過食したくなるときの状況を記録してみましょう」",
+        "ウ": "「家族の力は借りず自分の力で頑張っていきましょう」",
+        "エ": "「理想体重を維持できるよう毎日体重計に乗りましょう」"
+      },
+      "answer": "イ",
+      "requiredSelections": 1,
+      "explanation": "過食が起こる状況を記録すると、誘因や感情との関連が把握でき、対処法を見つけやすくなる。",
+      "choiceExplanations": {
+        "ア": "手作りを求めることは負担を増やし、治療上の根拠もない。",
+        "イ": "状況を記録して誘因を明らかにすることは、治療的に有益。",
+        "ウ": "家族の支援は回復に役立つため、頼らないよう促すのは不適切。",
+        "エ": "毎日の体重測定は、体重へのとらわれを強める可能性がある。"
+      },
+      "explanationCoverage": "full",
+      "hasImage": false,
+      "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-05a_01.pdf#page=52",
+      "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-05seitou.pdf#page=1",
+      "sourceAttribution": "出典：厚生労働省『第115回看護師国家試験』午前 問116（問題・正答）。問題文・選択肢は原本照合。解説は過去問AIが独自に作成し、厚生労働省とは関係ありません。",
+      "officialReferenceUrls": [
+        "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-05a_01.pdf",
+        "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-05seitou.pdf"
+      ],
+      "license": "MHLW-attributed",
+      "needsReview": false,
+      "lastUpdated": "2026-10-10"
+    },
+    {
+      "id": "kangoshi-2025-annual-am-q117",
+      "exam": "kangoshi",
+      "session": "am",
+      "year": 2025,
+      "season": "annual",
+      "qNumber": 117,
+      "subject": "午前（状況設定問題）",
+      "officialAnswerNumber": "14",
+      "type": "multiple-choice",
+      "category": "状況設定問題",
+      "topicTags": [
+        "状況設定問題",
+        "第115回"
+      ],
+      "difficulty": 2,
+      "question": "次の文を読み115～117 の問いに答えよ。\n　A さん（24 歳、女性）は両親と3 人で暮らしている。会社員として働いているが、\n最近責任の大きな仕事が増えていた。仕事帰りにコンビニエンスストアでサンドイッ\nチやおにぎりなどを買い込み、家族が寝た後に一気に食べるようになった。量が増え\nていき、食べた後に自ら嘔吐することを繰り返すようになった。過食嘔吐をやめられ\nないことに悩み、クリニックを受診し、\nbulimia nervosa\n神経性過食症と診断された。\n来院時の身体所見： 身長155 cm、体重48 kg、体温36.4 ℃、血圧104/60　mmHg、\n脈拍66/分（不整）。\n検査所見： 赤血球400 万/μL、Hb 12.5 g/dL、白血球6,300/μL、Na 135 mEq/L、\nK 2.7 mEq/L、Cl 98 mEq/L、AST 30 IU/L〈U/L〉、ALT 35 IU/L\n〈U/L〉、γ-GTP 29 IU/L〈U/L〉、血糖92 mg/dL。\n\nA さんは受診時に母親と一緒に来院した。母親から「父親は、普段はA とあまり\n話すことはありませんが、過食を見つけると我慢が足りないからだとA を叱りま\nす。私は食費が高くて困っています。どうしたらいいのでしょう」と外来看護師に\n相談があった。\n　看護師が母親に行う支援として、適切なのはどれか。2 つ選べ。",
+      "choices": {
+        "ア": "家族心理教育や家族会を紹介する。",
+        "イ": "疾患による家計への影響は仕方がないと伝える。",
+        "ウ": "食行動の異常には厳しく接するように指導する。",
+        "エ": "A さんの疾患や今後の見通しについて説明をする。",
+        "オ": "家族が原因であるため、すぐ態度を改めるよう指導する。"
+      },
+      "answer": [
+        "ア",
+        "エ"
+      ],
+      "requiredSelections": 2,
+      "explanation": "母親が困っているのは、父親の叱責と食費の負担である。家族心理教育や家族会の紹介、疾患や見通しの説明が、家族を支える適切な支援になる。",
+      "choiceExplanations": {
+        "ア": "家族が疾患を理解し、対応を学ぶ場となるため適切。",
+        "イ": "家計への影響を仕方がないと片付けるのは、母親の困りごとを受け止めていない。",
+        "ウ": "厳しく接すると症状や関係が悪化するおそれがある。",
+        "エ": "疾患への理解が深まれば、父親の叱責などの対応も変わりうるため適切。",
+        "オ": "家族が原因と断じて責めるのは不適切である。"
+      },
+      "explanationCoverage": "full",
+      "hasImage": false,
+      "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-05a_01.pdf#page=53",
+      "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-05seitou.pdf#page=1",
+      "sourceAttribution": "出典：厚生労働省『第115回看護師国家試験』午前 問117（問題・正答）。問題文・選択肢は原本照合。解説は過去問AIが独自に作成し、厚生労働省とは関係ありません。",
+      "officialReferenceUrls": [
+        "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-05a_01.pdf",
+        "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-05seitou.pdf"
+      ],
+      "license": "MHLW-attributed",
+      "needsReview": false,
+      "lastUpdated": "2026-10-10"
+    },
+    {
+      "id": "kangoshi-2025-annual-am-q118",
+      "exam": "kangoshi",
+      "session": "am",
+      "year": 2025,
+      "season": "annual",
+      "qNumber": 118,
+      "subject": "午前（状況設定問題）",
+      "officialAnswerNumber": "3",
+      "type": "multiple-choice",
+      "category": "状況設定問題",
+      "topicTags": [
+        "状況設定問題",
+        "第115回"
+      ],
+      "difficulty": 2,
+      "question": "次の文を読み118～120 の問いに答えよ。\n　午前9 時、震度6 強の大地震が発生した。発災直後、A 病院では傷病者への対応\nとして救急病棟に8 床確保した。その応援のために各部署から看護師3 名、医師2\n名、臨床工学技士1 名、臨床検査技師1 名、理学療法士1 名が救急病棟に集まった。\n救急病棟のリーダー看護師は他部署から集まったスタッフとカンファレンスを行っ\nた。\n\nリーダー看護師が指揮する内容で適切なのはどれか。",
+      "choices": {
+        "ア": "理学療法士に傷病者の採血を依頼する。",
+        "イ": "看護師に自己判断で輸液を実施するよう伝える。",
+        "ウ": "臨床工学技士に医療機器の動作確認を依頼する。",
+        "エ": "傷病者本人が名前を名乗る行為は省くよう医療スタッフに伝える。"
+      },
+      "answer": "ウ",
+      "requiredSelections": 1,
+      "explanation": "臨床工学技士は医療機器の専門職であり、災害時に医療機器の動作確認を依頼するのは適切である。",
+      "choiceExplanations": {
+        "ア": "採血は理学療法士の業務ではない。",
+        "イ": "輸液は医師の指示のもとで行うもので、自己判断は不可。",
+        "ウ": "臨床工学技士の専門性に合った依頼である。",
+        "エ": "氏名の確認は患者誤認防止のために必要で、省略してはならない。"
+      },
+      "explanationCoverage": "full",
+      "hasImage": false,
+      "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-05a_01.pdf#page=54",
+      "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-05seitou.pdf#page=1",
+      "sourceAttribution": "出典：厚生労働省『第115回看護師国家試験』午前 問118（問題・正答）。問題文・選択肢は原本照合。解説は過去問AIが独自に作成し、厚生労働省とは関係ありません。",
+      "officialReferenceUrls": [
+        "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-05a_01.pdf",
+        "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-05seitou.pdf"
+      ],
+      "license": "MHLW-attributed",
+      "needsReview": false,
+      "lastUpdated": "2026-10-10"
+    },
+    {
+      "id": "kangoshi-2025-annual-am-q119",
+      "exam": "kangoshi",
+      "session": "am",
+      "year": 2025,
+      "season": "annual",
+      "qNumber": 119,
+      "subject": "午前（状況設定問題）",
+      "officialAnswerNumber": "5",
+      "type": "multiple-choice",
+      "category": "状況設定問題",
+      "topicTags": [
+        "状況設定問題",
+        "第115回"
+      ],
+      "difficulty": 2,
+      "question": "次の文を読み118～120 の問いに答えよ。\n　午前9 時、震度6 強の大地震が発生した。発災直後、A 病院では傷病者への対応\nとして救急病棟に8 床確保した。その応援のために各部署から看護師3 名、医師2\n名、臨床工学技士1 名、臨床検査技師1 名、理学療法士1 名が救急病棟に集まった。\n救急病棟のリーダー看護師は他部署から集まったスタッフとカンファレンスを行っ\nた。\n\n発災1 時間後、町内の避難所に救護所が開設され、A 病院から応援の看護師が\n派遣された。救護所には簡易ベッド、処置台、医療資材、ホワイトボードが設置さ\nれている。数十分後には救護所に多数の傷病者が来ることを想定し準備を行った。\n　救護所の看護師が行う準備で優先されるのはどれか。",
+      "choices": {
+        "ア": "医療資材の使用期限確認",
+        "イ": "24 時間体制の看護師の確保",
+        "ウ": "医療処置前に契約する同意書の作成",
+        "エ": "医療機関別の救急受け入れ先リストの確認",
+        "オ": "トリアージ別に傷病者が待機する区域の確保"
+      },
+      "answer": "オ",
+      "requiredSelections": 1,
+      "explanation": "数十分後に多数の傷病者が来る状況では、トリアージ区分ごとの待機区域を確保することが最優先である。",
+      "choiceExplanations": {
+        "ア": "期限確認は重要だが、直近の対応としての優先度は下がる。",
+        "イ": "24時間体制の確保は中長期の課題で、今すぐの準備ではない。",
+        "ウ": "緊急時に医療処置前に契約する同意書を作成することは、優先事項ではない。",
+        "エ": "受け入れ先リストの確認も有用だが、まず来所者を分類して待機させる体制が先。",
+        "オ": "多数傷病者に備え、トリアージ区分別の区域を確保することが最優先。"
+      },
+      "explanationCoverage": "full",
+      "hasImage": false,
+      "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-05a_01.pdf#page=54",
+      "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-05seitou.pdf#page=1",
+      "sourceAttribution": "出典：厚生労働省『第115回看護師国家試験』午前 問119（問題・正答）。問題文・選択肢は原本照合。解説は過去問AIが独自に作成し、厚生労働省とは関係ありません。",
+      "officialReferenceUrls": [
+        "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-05a_01.pdf",
+        "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-05seitou.pdf"
+      ],
+      "license": "MHLW-attributed",
+      "needsReview": false,
+      "lastUpdated": "2026-10-10"
+    },
+    {
+      "id": "kangoshi-2025-annual-am-q120",
+      "exam": "kangoshi",
+      "session": "am",
+      "year": 2025,
+      "season": "annual",
+      "qNumber": 120,
+      "subject": "午前（状況設定問題）",
+      "officialAnswerNumber": "4",
+      "type": "multiple-choice",
+      "category": "状況設定問題",
+      "topicTags": [
+        "状況設定問題",
+        "第115回"
+      ],
+      "difficulty": 2,
+      "question": "次の文を読み118～120 の問いに答えよ。\n　午前9 時、震度6 強の大地震が発生した。発災直後、A 病院では傷病者への対応\nとして救急病棟に8 床確保した。その応援のために各部署から看護師3 名、医師2\n名、臨床工学技士1 名、臨床検査技師1 名、理学療法士1 名が救急病棟に集まった。\n救急病棟のリーダー看護師は他部署から集まったスタッフとカンファレンスを行っ\nた。\n\n発災2 時間後、救護所に2 名の傷病者が同時に到着した。\nB 氏（63 歳、男性）： 避難の途中に転倒し、右足首を負傷した。「自力で歩いてき\nた。痛みは我慢できる程度」と話す。\n \n 体温37.2 ℃、呼吸数12/分、脈拍82/分、血圧140/80　\nmmHg、経皮的動脈血酸素飽和度〈SpO2〉97 %。右足首に内出\n血がある。発汗著明、頭痛はない。\nC 氏（36 歳、男性）： 避難の途中でつまずき、右側腹部をガードレールにぶつけ\nた。「ここが少し痛むだけ」と右側腹部を押さえている。\n \n 体温37.4 ℃、呼吸数20/分、脈拍84/分、血圧110/74　\nmmHg、経皮的動脈血酸素飽和度〈SpO2〉96 %、皮膚冷感な\nし、右側腹部に軽度の発赤があるが腫脹や外出血はない、腹\n壁緊張はない。\n　10 分経過後、看護師は2 名の観察を行った。\nB 氏： 右足首の内出血と腫脹が軽度増大している。体温37.5 ℃。他のバイタルサ\nインに変動はない。\nC 氏： \n「少しお腹が痛い、吐き気がする」と訴える。体温37.4 ℃、呼吸数24/分、\n脈拍98/分、血圧88/48　mmHg、経皮的動脈血酸素飽和度〈SpO2〉94 %。腹\n壁緊張あり。\n　このときの看護師の対応で優先されるのはどれか。",
+      "choices": {
+        "ア": "B 氏の水分補給",
+        "イ": "B 氏の頸部の冷却",
+        "ウ": "C 氏の吐物処理の準備",
+        "エ": "C 氏の静脈路確保の準備"
+      },
+      "answer": "エ",
+      "requiredSelections": 1,
+      "explanation": "C氏は10分後に血圧88/48mmHg、脈拍98/分、呼吸数24/分、SpO2 94%、腹壁緊張ありで、腹腔内出血によるショックが疑われる。静脈路確保の準備が最優先である。",
+      "choiceExplanations": {
+        "ア": "B氏の変化は軽度で、緊急性はC氏より低い。",
+        "イ": "B氏に頸部冷却を要する所見は乏しく、優先されない。",
+        "ウ": "吐物処理の準備は必要でも、ショックへの対応より優先度は低い。",
+        "エ": "C氏の血圧低下、頻脈、腹壁緊張はショックと腹腔内臓器損傷を示唆し、輸液のための静脈路確保が優先される。"
+      },
+      "explanationCoverage": "full",
+      "hasImage": false,
+      "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-05a_01.pdf#page=55",
+      "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-05seitou.pdf#page=1",
+      "sourceAttribution": "出典：厚生労働省『第115回看護師国家試験』午前 問120（問題・正答）。問題文・選択肢は原本照合。解説は過去問AIが独自に作成し、厚生労働省とは関係ありません。",
+      "officialReferenceUrls": [
+        "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-05a_01.pdf",
+        "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-05seitou.pdf"
+      ],
+      "license": "MHLW-attributed",
+      "needsReview": false,
+      "lastUpdated": "2026-10-10"
+    }
+  ],
+  "heldDraftQuestions": [
+    {
+      "question": {
+        "id": "kangoshi-2025-annual-am-q92",
+        "exam": "kangoshi",
+        "session": "am",
+        "year": 2025,
+        "season": "annual",
+        "qNumber": 92,
+        "subject": "午前（状況設定問題）",
+        "officialAnswerNumber": "2",
+        "type": "multiple-choice",
+        "category": "状況設定問題",
+        "topicTags": [
+          "状況設定問題",
+          "第115回"
+        ],
+        "difficulty": 2,
+        "question": "次の文を読み91～93 の問いに答えよ。\n　A さん（80 歳、男性、要介護2 ）は1 人で暮らしている。\ncerebral hemorrhage\n脳出血を発症し、急性期\n病院で地域連携クリニカルパスに沿って治療が行われた。軽度の右不全麻痺と失語が\nあるため、回復期リハビリテーション病院に転院した。A さんは自宅退院を希望し\nている。退院後はかかりつけの診療所へ通院し、訪問看護と訪問介護を利用する予定\nである。\n\n退院1 か月後、隣町に住んでいる長男がA さん宅を訪ねると、A さんは嘔吐と\n下痢をしていた。長男が付き添ってかかりつけの診療所を受診したところ、A さ\nんは\ninfectious gastroenteritis\n感染性胃腸炎と診断された。A さんの長男から依頼を受け、訪問看護師はA\nさんの体調確認のために臨時で訪問した。\n　このときの訪問看護師の対応で正しいのはどれか。",
+        "choices": {
+          "ア": "保健所に\ninfectious gastroenteritis\n感染性胃腸炎の発生届を提出する。",
+          "イ": "A さんが石鹸と流水で手洗いできているか確認する。",
+          "ウ": "介護支援専門員に訪問介護を中止するよう連絡する。",
+          "エ": "長男に吐物で汚染した衣類は洗濯して室内に干すよう伝える。"
+        },
+        "answer": "イ",
+        "requiredSelections": 1,
+        "explanation": "感染性胃腸炎では接触感染と飛沫様の汚染物経由の感染を防ぐ必要があり、石鹸と流水による手洗いが基本である。訪問看護師は、Aさんが手洗いできているかを確認する。",
+        "choiceExplanations": {
+          "ア": "感染性胃腸炎を個別の発生届の対象として訪問看護師が提出する、という対応は適切とされていない。この点は公式正答2の裏返しとして判断した。",
+          "イ": "手洗いは基本的な感染予防策で、Aさんの実施状況を確認する対応は正しい。",
+          "ウ": "標準予防策を徹底すれば訪問介護の利用は継続できる。中止連絡は過剰な対応である。",
+          "エ": "吐物で汚染した衣類は適切に処理・消毒する必要がある。室内に干すと周囲への感染拡大のおそれがある。"
+        },
+        "explanationCoverage": "review-needed",
+        "hasImage": false,
+        "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-05a_01.pdf#page=36",
+        "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-05seitou.pdf#page=1",
+        "sourceAttribution": "出典：厚生労働省『第115回看護師国家試験』午前 問92（問題・正答）。問題文・選択肢は原本照合。解説は過去問AIが独自に作成し、厚生労働省とは関係ありません。",
+        "officialReferenceUrls": [
+          "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-05a_01.pdf",
+          "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-05seitou.pdf"
+        ],
+        "license": "MHLW-attributed",
+        "needsReview": true,
+        "lastUpdated": "2026-10-10"
+      },
+      "source": {
+        "number": 92,
+        "id": "nurse-115-am-q92",
+        "physicalPage": 36,
+        "sharedCaseId": "115-AM-91-93",
+        "fullSharedPremiseText": "次の文を読み91～93 の問いに答えよ。\n　A さん（80 歳、男性、要介護2 ）は1 人で暮らしている。\ncerebral hemorrhage\n脳出血を発症し、急性期\n病院で地域連携クリニカルパスに沿って治療が行われた。軽度の右不全麻痺と失語が\nあるため、回復期リハビリテーション病院に転院した。A さんは自宅退院を希望し\nている。退院後はかかりつけの診療所へ通院し、訪問看護と訪問介護を利用する予定\nである。",
+        "rawQuestionAndAllChoices": "92 退院1 か月後、隣町に住んでいる長男がA さん宅を訪ねると、A さんは嘔吐と\n下痢をしていた。長男が付き添ってかかりつけの診療所を受診したところ、A さ\nんは\ninfectious gastroenteritis\n感染性胃腸炎と診断された。A さんの長男から依頼を受け、訪問看護師はA\nさんの体調確認のために臨時で訪問した。\n　このときの訪問看護師の対応で正しいのはどれか。\n 1．保健所に\ninfectious gastroenteritis\n感染性胃腸炎の発生届を提出する。\n 2．A さんが石鹸と流水で手洗いできているか確認する。\n 3．介護支援専門員に訪問介護を中止するよう連絡する。\n 4．長男に吐物で汚染した衣類は洗濯して室内に干すよう伝える。",
+        "observedChoiceNumbers": [
+          "1",
+          "2",
+          "3",
+          "4"
+        ],
+        "officialAnswerDigits": "2",
+        "render": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\claude-capacity-20261010\\nurse-am91-120\\rendered\\115-am-physical-p36.png"
+      },
+      "draft": {
+        "id": "nurse-115-am-q92",
+        "number": 92,
+        "officialAnswerDigits": "2",
+        "explanation": "感染性胃腸炎では接触感染と飛沫様の汚染物経由の感染を防ぐ必要があり、石鹸と流水による手洗いが基本である。訪問看護師は、Aさんが手洗いできているかを確認する。",
+        "choiceExplanations": {
+          "1": "感染性胃腸炎を個別の発生届の対象として訪問看護師が提出する、という対応は適切とされていない。この点は公式正答2の裏返しとして判断した。",
+          "2": "手洗いは基本的な感染予防策で、Aさんの実施状況を確認する対応は正しい。",
+          "3": "標準予防策を徹底すれば訪問介護の利用は継続できる。中止連絡は過剰な対応である。",
+          "4": "吐物で汚染した衣類は適切に処理・消毒する必要がある。室内に干すと周囲への感染拡大のおそれがある。"
+        },
+        "reviewFlags": [
+          "選択肢1について、届出対象か否かの制度上の根拠は入力に含まれていない。公式正答2を前提に不適切と記載した。制度面の根拠は未確認。"
+        ]
+      },
+      "reasons": [
+        "選択肢1について、届出対象か否かの制度上の根拠は入力に含まれていない。公式正答2を前提に不適切と記載した。制度面の根拠は未確認。"
+      ]
+    },
+    {
+      "question": {
+        "id": "kangoshi-2025-annual-am-q99",
+        "exam": "kangoshi",
+        "session": "am",
+        "year": 2025,
+        "season": "annual",
+        "qNumber": 99,
+        "subject": "午前（状況設定問題）",
+        "officialAnswerNumber": "2",
+        "type": "multiple-choice",
+        "category": "状況設定問題",
+        "topicTags": [
+          "状況設定問題",
+          "第115回"
+        ],
+        "difficulty": 2,
+        "question": "次の文を読み97～99 の問いに答えよ。\n　A さん（60 歳、女性、会社員）は15 年前に\ndiabetes mellitus\n糖尿病と診断され血糖降下薬を服用して\nいた。その後、微量のアルブミン尿が出現し、腎機能は徐々に悪化したため、10 年\n前からインスリン療法が開始された。A さんは外来受診時に労作時の息切れを訴え\nており、肺野の水泡音と下肢の浮腫が認められ、精査加療目的で入院した。入院時\nは、身長155 cm、体重65 kg で1 か月前から5 kg 増加している。体温36.3 ℃、呼\n吸数28/分、脈拍82/分、血圧160/82　mmHg であった。血液検査データは、\nHb 8.5 g/dL、HbA1c 8.5 %、アルブミン3.1 g/dL、クレアチニン3.5 mg/dL、\nK 4.0 mEq/L で、推算糸球体濾過量〈eGFR〉は15 mL/分/1.73 m2 であった。\n\nその後、A さんには連続携行式腹膜透析法〈CAPD〉が開始された。同時に腹膜透\n析の方法と必要な自己管理についての指導が開始となった。現在の血液検査データ\nは、Hb 9.0 g/dL、アルブミン2.9 g/dL、クレアチニン2.5 mg/dL、K 3.8 mEq/L\nであった。また腹膜透析開始後の除水量は平均450 mL/日、尿量は平均900 mL/日\nであった。\n　現在のA さんに対する食事指導の内容で適切なのはどれか。",
+        "choices": {
+          "ア": "蛋白質は0.2 g/kg/日とする。",
+          "イ": "カリウムを含む食品の制限はない。",
+          "ウ": "水分摂取量は除水量と同量とする。",
+          "エ": "総エネルギーは50 kcal/kg/日とする。"
+        },
+        "answer": "イ",
+        "requiredSelections": 1,
+        "explanation": "現在のK値は3.8mEq/Lで高くなく、尿量も900mL/日あるため、カリウム制限は不要という判断になる。公式正答は2である。",
+        "choiceExplanations": {
+          "ア": "蛋白質0.2g/kg/日は少なすぎる。腹膜透析では蛋白喪失もあり、アルブミンは2.9g/dLと低い。",
+          "イ": "血清Kは基準範囲で尿量もあるため、制限はないとする記述が適切。",
+          "ウ": "水分は除水量と尿量を合わせて考える必要があり、除水量と同量とは限らない。",
+          "エ": "50kcal/kg/日は過剰である。"
+        },
+        "explanationCoverage": "review-needed",
+        "hasImage": false,
+        "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-05a_01.pdf#page=41",
+        "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-05seitou.pdf#page=1",
+        "sourceAttribution": "出典：厚生労働省『第115回看護師国家試験』午前 問99（問題・正答）。問題文・選択肢は原本照合。解説は過去問AIが独自に作成し、厚生労働省とは関係ありません。",
+        "officialReferenceUrls": [
+          "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-05a_01.pdf",
+          "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-05seitou.pdf"
+        ],
+        "license": "MHLW-attributed",
+        "needsReview": true,
+        "lastUpdated": "2026-10-10"
+      },
+      "source": {
+        "number": 99,
+        "id": "nurse-115-am-q99",
+        "physicalPage": 41,
+        "sharedCaseId": "115-AM-97-99",
+        "fullSharedPremiseText": "次の文を読み97～99 の問いに答えよ。\n　A さん（60 歳、女性、会社員）は15 年前に\ndiabetes mellitus\n糖尿病と診断され血糖降下薬を服用して\nいた。その後、微量のアルブミン尿が出現し、腎機能は徐々に悪化したため、10 年\n前からインスリン療法が開始された。A さんは外来受診時に労作時の息切れを訴え\nており、肺野の水泡音と下肢の浮腫が認められ、精査加療目的で入院した。入院時\nは、身長155 cm、体重65 kg で1 か月前から5 kg 増加している。体温36.3 ℃、呼\n吸数28/分、脈拍82/分、血圧160/82　mmHg であった。血液検査データは、\nHb 8.5 g/dL、HbA1c 8.5 %、アルブミン3.1 g/dL、クレアチニン3.5 mg/dL、\nK 4.0 mEq/L で、推算糸球体濾過量〈eGFR〉は15 mL/分/1.73 m2 であった。",
+        "rawQuestionAndAllChoices": "99 その後、A さんには連続携行式腹膜透析法〈CAPD〉が開始された。同時に腹膜透\n析の方法と必要な自己管理についての指導が開始となった。現在の血液検査データ\nは、Hb 9.0 g/dL、アルブミン2.9 g/dL、クレアチニン2.5 mg/dL、K 3.8 mEq/L\nであった。また腹膜透析開始後の除水量は平均450 mL/日、尿量は平均900 mL/日\nであった。\n　現在のA さんに対する食事指導の内容で適切なのはどれか。\n 1．蛋白質は0.2 g/kg/日とする。\n 2．カリウムを含む食品の制限はない。\n 3．水分摂取量は除水量と同量とする。\n 4．総エネルギーは50 kcal/kg/日とする。",
+        "observedChoiceNumbers": [
+          "1",
+          "2",
+          "3",
+          "4"
+        ],
+        "officialAnswerDigits": "2",
+        "render": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\claude-capacity-20261010\\nurse-am91-120\\rendered\\115-am-physical-p41.png"
+      },
+      "draft": {
+        "id": "nurse-115-am-q99",
+        "number": 99,
+        "officialAnswerDigits": "2",
+        "explanation": "現在のK値は3.8mEq/Lで高くなく、尿量も900mL/日あるため、カリウム制限は不要という判断になる。公式正答は2である。",
+        "choiceExplanations": {
+          "1": "蛋白質0.2g/kg/日は少なすぎる。腹膜透析では蛋白喪失もあり、アルブミンは2.9g/dLと低い。",
+          "2": "血清Kは基準範囲で尿量もあるため、制限はないとする記述が適切。",
+          "3": "水分は除水量と尿量を合わせて考える必要があり、除水量と同量とは限らない。",
+          "4": "50kcal/kg/日は過剰である。"
+        },
+        "reviewFlags": [
+          "選択肢4の総エネルギーの適正値は入力から確定できず、一般論での判断になっている。数値根拠は未確認。",
+          "選択肢2の判断は、現時点のK値と尿量のみに基づく。透析液条件や食事内容は入力にないため、一般化は避ける。"
+        ]
+      },
+      "reasons": [
+        "選択肢4の総エネルギーの適正値は入力から確定できず、一般論での判断になっている。数値根拠は未確認。",
+        "選択肢2の判断は、現時点のK値と尿量のみに基づく。透析液条件や食事内容は入力にないため、一般化は避ける。"
+      ]
+    },
+    {
+      "question": {
+        "id": "kangoshi-2025-annual-am-q103",
+        "exam": "kangoshi",
+        "session": "am",
+        "year": 2025,
+        "season": "annual",
+        "qNumber": 103,
+        "subject": "午前（状況設定問題）",
+        "officialAnswerNumber": "2",
+        "type": "multiple-choice",
+        "category": "状況設定問題",
+        "topicTags": [
+          "状況設定問題",
+          "第115回"
+        ],
+        "difficulty": 2,
+        "question": "次の文を読み103～105 の問いに答えよ。\n　A ちゃん（10 歳、女児）は両親と3 人で暮らしている。3 歳の時に\nbronchial asthma\n気管支喘息と診\n断された。6 歳までは喘息発作で年に1 回は入院していたが、8 歳から発作を起こす\nことはなくなり、定期受診が必要なくなった。ダニとハウスダストに感作がある。\n\n本日A ちゃんは、学校から帰ってきた後から咳嗽がみられ、元気がなかった。\n夜「苦しくて眠れない」と訴え、母親とともに救急外来を受診した。口元での喘鳴が\n著明であり、問診すると途切れ途切れに話した。救急外来受診時のバイタルサイン\nは、体温36.6 ℃、呼吸数36/分、心拍数120/分、経皮的動脈血酸素飽和度〈SpO2〉\n93 % であった。\n　A ちゃんの\nbronchial asthma\n気管支喘息の発作強度はどれか。",
+        "choices": {
+          "ア": "小発作",
+          "イ": "中発作",
+          "ウ": "大発作",
+          "エ": "呼吸不全"
+        },
+        "answer": "イ",
+        "requiredSelections": 1,
+        "explanation": "途切れ途切れの会話、呼吸数36/分、心拍数120/分、SpO2 93%、著明な喘鳴といった所見から、公式の判定は中発作である。",
+        "choiceExplanations": {
+          "ア": "小発作は、会話や日常動作にあまり支障がない程度の軽い状態を指す。本事例の所見はそれより重い。",
+          "イ": "発作強度の判定基準に照らし、中発作に該当する。",
+          "ウ": "大発作は、会話が困難で、SpO2もさらに低下する状態を指す。本事例は途切れ途切れでも話せている。",
+          "エ": "呼吸不全に至る徴候（意識低下やチアノーゼなど）は示されていない。"
+        },
+        "explanationCoverage": "review-needed",
+        "hasImage": false,
+        "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-05a_01.pdf#page=44",
+        "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-05seitou.pdf#page=1",
+        "sourceAttribution": "出典：厚生労働省『第115回看護師国家試験』午前 問103（問題・正答）。問題文・選択肢は原本照合。解説は過去問AIが独自に作成し、厚生労働省とは関係ありません。",
+        "officialReferenceUrls": [
+          "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-05a_01.pdf",
+          "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-05seitou.pdf"
+        ],
+        "license": "MHLW-attributed",
+        "needsReview": true,
+        "lastUpdated": "2026-10-10"
+      },
+      "source": {
+        "number": 103,
+        "id": "nurse-115-am-q103",
+        "physicalPage": 44,
+        "sharedCaseId": "115-AM-103-105",
+        "fullSharedPremiseText": "次の文を読み103～105 の問いに答えよ。\n　A ちゃん（10 歳、女児）は両親と3 人で暮らしている。3 歳の時に\nbronchial asthma\n気管支喘息と診\n断された。6 歳までは喘息発作で年に1 回は入院していたが、8 歳から発作を起こす\nことはなくなり、定期受診が必要なくなった。ダニとハウスダストに感作がある。",
+        "rawQuestionAndAllChoices": "103 本日A ちゃんは、学校から帰ってきた後から咳嗽がみられ、元気がなかった。\n夜「苦しくて眠れない」と訴え、母親とともに救急外来を受診した。口元での喘鳴が\n著明であり、問診すると途切れ途切れに話した。救急外来受診時のバイタルサイン\nは、体温36.6 ℃、呼吸数36/分、心拍数120/分、経皮的動脈血酸素飽和度〈SpO2〉\n93 % であった。\n　A ちゃんの\nbronchial asthma\n気管支喘息の発作強度はどれか。\n 1．小発作\n 2．中発作\n 3．大発作\n 4．呼吸不全",
+        "observedChoiceNumbers": [
+          "1",
+          "2",
+          "3",
+          "4"
+        ],
+        "officialAnswerDigits": "2",
+        "render": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\claude-capacity-20261010\\nurse-am91-120\\rendered\\115-am-physical-p44.png"
+      },
+      "draft": {
+        "id": "nurse-115-am-q103",
+        "number": 103,
+        "officialAnswerDigits": "2",
+        "explanation": "途切れ途切れの会話、呼吸数36/分、心拍数120/分、SpO2 93%、著明な喘鳴といった所見から、公式の判定は中発作である。",
+        "choiceExplanations": {
+          "1": "小発作は、会話や日常動作にあまり支障がない程度の軽い状態を指す。本事例の所見はそれより重い。",
+          "2": "発作強度の判定基準に照らし、中発作に該当する。",
+          "3": "大発作は、会話が困難で、SpO2もさらに低下する状態を指す。本事例は途切れ途切れでも話せている。",
+          "4": "呼吸不全に至る徴候（意識低下やチアノーゼなど）は示されていない。"
+        },
+        "reviewFlags": [
+          "発作強度の判定基準値（年齢別の呼吸数・SpO2など）は入力に含まれておらず、公式正答2を前提に説明した。基準表との照合は未確認。"
+        ]
+      },
+      "reasons": [
+        "発作強度の判定基準値（年齢別の呼吸数・SpO2など）は入力に含まれておらず、公式正答2を前提に説明した。基準表との照合は未確認。"
+      ]
+    },
+    {
+      "question": {
+        "id": "kangoshi-2025-annual-am-q109",
+        "exam": "kangoshi",
+        "session": "am",
+        "year": 2025,
+        "season": "annual",
+        "qNumber": 109,
+        "subject": "午前（状況設定問題）",
+        "officialAnswerNumber": "3",
+        "type": "multiple-choice",
+        "category": "状況設定問題",
+        "topicTags": [
+          "状況設定問題",
+          "第115回"
+        ],
+        "difficulty": 2,
+        "question": "次の文を読み109～111 の問いに答えよ。\n　A さん（33 歳、初妊婦、会社員）は夫と2 人で暮らしている。身長160 cm、非妊時\n体重60 kg。妊娠17 週1 日の妊婦健康診査にて、児の発育に異常はなかった。体重\nは66 kg で4 週前から4 kg 増加している。血圧120/78　mmHg。尿蛋白（－）、浮腫\n（－）。排便は妊娠前と変わらず2 日に1 回出ている。A さんは「同じ週数の友達は胎\n動を感じると言っていたのに、自分は感じられず心配です」と話す。\n\nこのときのA さんの状態で正常から逸脱しているのはどれか。",
+        "choices": {
+          "ア": "血　圧",
+          "イ": "排便回数",
+          "ウ": "体重の増加量",
+          "エ": "胎動の無自覚"
+        },
+        "answer": "ウ",
+        "requiredSelections": 1,
+        "explanation": "4週で4kg増加しており、妊娠初期から中期にかけての増加としては急である。体重増加量が正常から逸脱している。",
+        "choiceExplanations": {
+          "ア": "血圧は120/78mmHgで、正常範囲。",
+          "イ": "排便は妊娠前と変わらず、問題ない。",
+          "ウ": "4週で4kgの増加は急で、逸脱と判断される。",
+          "エ": "妊娠17週で胎動を自覚しないのは、初妊婦では珍しくない。"
+        },
+        "explanationCoverage": "review-needed",
+        "hasImage": false,
+        "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-05a_01.pdf#page=48",
+        "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-05seitou.pdf#page=1",
+        "sourceAttribution": "出典：厚生労働省『第115回看護師国家試験』午前 問109（問題・正答）。問題文・選択肢は原本照合。解説は過去問AIが独自に作成し、厚生労働省とは関係ありません。",
+        "officialReferenceUrls": [
+          "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-05a_01.pdf",
+          "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-05seitou.pdf"
+        ],
+        "license": "MHLW-attributed",
+        "needsReview": true,
+        "lastUpdated": "2026-10-10"
+      },
+      "source": {
+        "number": 109,
+        "id": "nurse-115-am-q109",
+        "physicalPage": 48,
+        "sharedCaseId": "115-AM-109-111",
+        "fullSharedPremiseText": "次の文を読み109～111 の問いに答えよ。\n　A さん（33 歳、初妊婦、会社員）は夫と2 人で暮らしている。身長160 cm、非妊時\n体重60 kg。妊娠17 週1 日の妊婦健康診査にて、児の発育に異常はなかった。体重\nは66 kg で4 週前から4 kg 増加している。血圧120/78　mmHg。尿蛋白（－）、浮腫\n（－）。排便は妊娠前と変わらず2 日に1 回出ている。A さんは「同じ週数の友達は胎\n動を感じると言っていたのに、自分は感じられず心配です」と話す。",
+        "rawQuestionAndAllChoices": "109 このときのA さんの状態で正常から逸脱しているのはどれか。\n 1．血　圧\n 2．排便回数\n 3．体重の増加量\n 4．胎動の無自覚",
+        "observedChoiceNumbers": [
+          "1",
+          "2",
+          "3",
+          "4"
+        ],
+        "officialAnswerDigits": "3",
+        "render": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\claude-capacity-20261010\\nurse-am91-120\\rendered\\115-am-physical-p48.png"
+      },
+      "draft": {
+        "id": "nurse-115-am-q109",
+        "number": 109,
+        "officialAnswerDigits": "3",
+        "explanation": "4週で4kg増加しており、妊娠初期から中期にかけての増加としては急である。体重増加量が正常から逸脱している。",
+        "choiceExplanations": {
+          "1": "血圧は120/78mmHgで、正常範囲。",
+          "2": "排便は妊娠前と変わらず、問題ない。",
+          "3": "4週で4kgの増加は急で、逸脱と判断される。",
+          "4": "妊娠17週で胎動を自覚しないのは、初妊婦では珍しくない。"
+        },
+        "reviewFlags": [
+          "体重増加の目安値（BMI区分別の推奨増加量など）や胎動初覚の時期は入力にない。公式正答3を前提とした記述で、基準値の確認は未了。"
+        ]
+      },
+      "reasons": [
+        "体重増加の目安値（BMI区分別の推奨増加量など）や胎動初覚の時期は入力にない。公式正答3を前提とした記述で、基準値の確認は未了。"
+      ]
+    }
+  ]
+}

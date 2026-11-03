@@ -72,10 +72,10 @@ export const AU_ESSAY_QUESTIONS: EssayQuestion[] = [
         ],
       },
     ],
-    officialReview: `監査計画の妥当性、監査手続の網羅性、監査証拠の十分性・適切性、改善勧告の実効性が評価される。
+    editorialReview: `監査計画の妥当性、監査手続の網羅性、監査証拠の十分性・適切性、改善勧告の実効性が評価される。
 被監査部門への一方的な指摘ではなく、リスクと統制のバランスを踏まえた建設的な監査論述が求められる。`,
     pdfUrl: "https://www.ipa.go.jp/shiken/mondai-kaiotu/2024r06.html",
-    license: "IPA-public",
+    license: "original",
   },
   {
     id: "au-2024a-pm2-q2",
@@ -148,9 +148,9 @@ export const AU_ESSAY_QUESTIONS: EssayQuestion[] = [
         ],
       },
     ],
-    officialReview: `プロジェクト固有のリスクの理解、監査手続の有効性、改善勧告の実装可能性が評価される。
+    editorialReview: `プロジェクト固有のリスクの理解、監査手続の有効性、改善勧告の実装可能性が評価される。
 開発の現場感覚を持ちつつ、独立した監査人としての視点を維持できているかが重要である。`,
     pdfUrl: "https://www.ipa.go.jp/shiken/mondai-kaiotu/2024r06.html",
-    license: "IPA-public",
+    license: "original",
   },
 ];

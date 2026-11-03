@@ -1,0 +1,286 @@
+[
+  {
+    "number": 1,
+    "question": "図のような平行平板キャパシタにおいて、電極間に100 Vの電圧を加えたとき、空気中のキャパシタ内の電界の強さE［V/m］は。ただし、電極間の距離d=1×10⁻³ m、電界は平等電界とする。",
+    "choices": {
+      "イ": "1×10²",
+      "ロ": "1×10³",
+      "ハ": "1×10⁴",
+      "ニ": "1×10⁵"
+    },
+    "officialAnswer": "ニ",
+    "explanation": "E=V/d=100/(1×10^-3)=1×10^5 V/m。",
+    "choiceExplanations": {
+      "イ": "1×10^2は距離1 mを仮定した桁で、指定の1 mmを反映していない。",
+      "ロ": "1×10^3 V/mならd=100/1000=0.1 m（100 mm）だが、指定は1 mm。",
+      "ハ": "1×10^4は指定の距離での計算より10分の1。",
+      "ニ": "1×10^5 V/mは100 V÷0.001 mに一致する。"
+    },
+    "reviewedFromCrop": "media/q01.png",
+    "imageUrls": [
+      "media/q01.png"
+    ],
+    "sourcePage": 3,
+    "sourceAttribution": "出典：令和7年度下期第一種電気工事士学科試験 問1（電気技術者試験センター）。設問の改行・空白と表記を整え、図のみの選択肢は識別用の説明を追加。原本図版を切り出した。",
+    "sourceQuestionPdfUrl": "https://www.shiken.or.jp/construction/upload/20251005_co_first_q01.pdf",
+    "sourceAnswerPdfUrl": "https://www.shiken.or.jp/construction/upload/20251005_co_first_a01.pdf",
+    "publicationStatus": "HOLD",
+    "normalizationStatus": "CANDIDATE_PENDING_FINAL_QA"
+  },
+  {
+    "number": 2,
+    "question": "図のような直流回路において、スイッチSが開いているとき抵抗Rの両端の電圧は36 Vであった。Sを閉じたときのRの両端の電圧［V］は。",
+    "choices": {
+      "イ": "3",
+      "ロ": "12",
+      "ハ": "24",
+      "ニ": "30"
+    },
+    "officialAnswer": "ニ",
+    "explanation": "S開のとき2 Ωの電圧降下は60-36=24 V、電流は12 AなのでR=3 Ω。S閉ではR||6 Ω=2 Ω、上流2 Ωとの分圧で60×2/(2+2)=30 V。",
+    "choiceExplanations": {
+      "イ": "S閉では合成負荷2 Ω、回路全体4 Ω、枝電圧30 Vとなるため3 Vではない。",
+      "ロ": "S開時の電流は12 Aであり、数値12をそのまま電圧[V]にはできない。S閉時の枝電圧は30 V。",
+      "ハ": "24 VはS開の上流2 Ωでの電圧降下で、Rの閉路後電圧ではない。",
+      "ニ": "30 Vは閉路後のRと6 Ωの並列枝に加わる電圧。"
+    },
+    "reviewedFromCrop": "media/q02.png",
+    "imageUrls": [
+      "media/q02.png"
+    ],
+    "sourcePage": 3,
+    "sourceAttribution": "出典：令和7年度下期第一種電気工事士学科試験 問2（電気技術者試験センター）。設問の改行・空白と表記を整え、図のみの選択肢は識別用の説明を追加。原本図版を切り出した。",
+    "sourceQuestionPdfUrl": "https://www.shiken.or.jp/construction/upload/20251005_co_first_q01.pdf",
+    "sourceAnswerPdfUrl": "https://www.shiken.or.jp/construction/upload/20251005_co_first_a01.pdf",
+    "publicationStatus": "HOLD",
+    "normalizationStatus": "CANDIDATE_PENDING_FINAL_QA"
+  },
+  {
+    "number": 3,
+    "question": "図のように、角周波数ω=500 rad/s、電圧100 Vの交流電源に、抵抗R=3 ΩとインダクタンスL=8 mHが接続されている。回路に流れる電流I［A］は。",
+    "choices": {
+      "イ": "9",
+      "ロ": "14",
+      "ハ": "20",
+      "ニ": "33"
+    },
+    "officialAnswer": "ハ",
+    "explanation": "誘導リアクタンスωL=500×0.008=4 Ω。直列インピーダンスの大きさ√(3²+4²)=5 Ω、I=100/5=20 A。",
+    "choiceExplanations": {
+      "イ": "R=3 Ω、XL=4 Ωなので|Z|=5 Ω。9 Aなら必要な|Z|は100/9≈11.1 Ωとなり回路条件に合わない。",
+      "ロ": "14 Aなら|Z|≈7.14 Ωだが、直列R-Lの|Z|=√(3²+4²)=5 Ωであり電流は20 A。",
+      "ハ": "20 Aは100 V÷5 Ω。",
+      "ニ": "33 Aはリアクタンス4 Ωを無視して100/3とした概算であり不適切。"
+    },
+    "reviewedFromCrop": "media/q03.png",
+    "imageUrls": [
+      "media/q03.png"
+    ],
+    "sourcePage": 3,
+    "sourceAttribution": "出典：令和7年度下期第一種電気工事士学科試験 問3（電気技術者試験センター）。設問の改行・空白と表記を整え、図のみの選択肢は識別用の説明を追加。原本図版を切り出した。",
+    "sourceQuestionPdfUrl": "https://www.shiken.or.jp/construction/upload/20251005_co_first_q01.pdf",
+    "sourceAnswerPdfUrl": "https://www.shiken.or.jp/construction/upload/20251005_co_first_a01.pdf",
+    "publicationStatus": "HOLD",
+    "normalizationStatus": "CANDIDATE_PENDING_FINAL_QA"
+  },
+  {
+    "number": 4,
+    "question": "図のような交流回路において、10 Ωの抵抗の消費電力［W］は。ただし、ダイオードの電圧降下や電力損失は無視する。交流電源は100 V。",
+    "choices": {
+      "イ": "100",
+      "ロ": "200",
+      "ハ": "500",
+      "ニ": "1000"
+    },
+    "officialAnswer": "ハ",
+    "explanation": "100 Vは交流の実効値。理想半波整流で抵抗への平均電力は全波通電時の半分、100²/(2×10)=500 W。",
+    "choiceExplanations": {
+      "イ": "半波整流後の抵抗電圧の実効値は100/√2≈70.7 V。100 Wに相当する31.6 Vではない。",
+      "ロ": "P=(100/√2)²/10=500 Wであり、200 Wに相当する44.7 Vではない。",
+      "ハ": "500 Wは正半周期のみ通電する理想ダイオードでの平均消費電力。",
+      "ニ": "1000 Wはダイオードがなく全周期通電する場合の100²/10。"
+    },
+    "reviewedFromCrop": "media/q04.png",
+    "imageUrls": [
+      "media/q04.png"
+    ],
+    "sourcePage": 3,
+    "sourceAttribution": "出典：令和7年度下期第一種電気工事士学科試験 問4（電気技術者試験センター）。設問の改行・空白と表記を整え、図のみの選択肢は識別用の説明を追加。原本図版を切り出した。",
+    "sourceQuestionPdfUrl": "https://www.shiken.or.jp/construction/upload/20251005_co_first_q01.pdf",
+    "sourceAnswerPdfUrl": "https://www.shiken.or.jp/construction/upload/20251005_co_first_a01.pdf",
+    "publicationStatus": "HOLD",
+    "normalizationStatus": "CANDIDATE_PENDING_FINAL_QA"
+  },
+  {
+    "number": 5,
+    "question": "図のような三相交流回路において、電源電圧はV［V］、抵抗R=5 Ω、誘導性リアクタンスXL=3 Ωである。回路の全消費電力［W］を示す式は。",
+    "choices": {
+      "イ": "3V²/5",
+      "ロ": "V²/3",
+      "ハ": "V²/5",
+      "ニ": "V²"
+    },
+    "officialAnswer": "イ",
+    "explanation": "原本図では5 Ωの抵抗3本がΔ接続で各枝に線間電圧V。3本の有効電力は3×V²/5。理想リアクタンスのY枝は有効電力を消費しない。",
+    "choiceExplanations": {
+      "イ": "3V²/5はΔ抵抗3枝の合計に一致。",
+      "ロ": "Yリアクタンスの無効電力は3×(V/√3)²/3=V²/3 var。求める有効電力ではない。",
+      "ハ": "V²/5は抵抗枝1本分だけで3枝を合算していない。",
+      "ニ": "抵抗の各Δ枝は線間電圧V、抵抗5 Ωなので各V²/5 W。3枝合計3V²/5 WでありV² Wにはならない。"
+    },
+    "reviewedFromCrop": "media/q05.png",
+    "imageUrls": [
+      "media/q05.png"
+    ],
+    "sourcePage": 4,
+    "sourceAttribution": "出典：令和7年度下期第一種電気工事士学科試験 問5（電気技術者試験センター）。設問の改行・空白と表記を整え、図のみの選択肢は識別用の説明を追加。原本図版を切り出した。",
+    "sourceQuestionPdfUrl": "https://www.shiken.or.jp/construction/upload/20251005_co_first_q01.pdf",
+    "sourceAnswerPdfUrl": "https://www.shiken.or.jp/construction/upload/20251005_co_first_a01.pdf",
+    "publicationStatus": "HOLD",
+    "normalizationStatus": "CANDIDATE_PENDING_FINAL_QA"
+  },
+  {
+    "number": 6,
+    "question": "図のような単相3線式電路において、スイッチAとBを閉じたとき図中の電圧Vは102 Vであった。Aを閉じたままBを開いた場合、Vはどう変化するか。ただし電源電圧は各104 V、電線1線の抵抗は0.2 Ω、各負荷抵抗は10.2 Ωで一定。",
+    "choices": {
+      "イ": "2V下がる。",
+      "ロ": "変化しない。",
+      "ハ": "1V上がる。",
+      "ニ": "3V上がる。"
+    },
+    "officialAnswer": "イ",
+    "explanation": "A/B閉時は対称負荷で中性線に電流が流れず、各負荷電圧は104×10.2/(10.2+0.2)=102 V。B開後は上側10.2 Ωと上線・中性線0.2 Ωずつの直列で104×10.2/10.6≈100.08 V。約2 V低下。",
+    "choiceExplanations": {
+      "イ": "B開後は約100 Vとなり、元の102 Vから約2 V下がる。",
+      "ロ": "中性線の0.2 Ωに上側負荷電流が流れるため不変ではない。",
+      "ハ": "Bを開くと負荷電圧は100.08 Vへ下がるため、1 V上がるという符号・大きさとも違う。",
+      "ニ": "102 Vから約1.92 V下がるため、3 V上がることはない。"
+    },
+    "reviewedFromCrop": "media/q06.png",
+    "imageUrls": [
+      "media/q06.png"
+    ],
+    "sourcePage": 4,
+    "sourceAttribution": "出典：令和7年度下期第一種電気工事士学科試験 問6（電気技術者試験センター）。設問の改行・空白と表記を整え、図のみの選択肢は識別用の説明を追加。原本図版を切り出した。",
+    "sourceQuestionPdfUrl": "https://www.shiken.or.jp/construction/upload/20251005_co_first_q01.pdf",
+    "sourceAnswerPdfUrl": "https://www.shiken.or.jp/construction/upload/20251005_co_first_a01.pdf",
+    "publicationStatus": "HOLD",
+    "normalizationStatus": "CANDIDATE_PENDING_FINAL_QA"
+  },
+  {
+    "number": 7,
+    "question": "図のような単相3線式配電線路において、負荷AとBはともに800 W、力率0.8（遅れ）、負荷電圧100 Vである。配電線路の電力損失［W］は。ただし電線1線の抵抗は0.4 Ω、リアクタンスは無視する。",
+    "choices": {
+      "イ": "40",
+      "ロ": "60",
+      "ハ": "80",
+      "ニ": "120"
+    },
+    "officialAnswer": "ハ",
+    "explanation": "各負荷電流は800/(100×0.8)=10 A。等しい遅れ力率の上下負荷で中性線電流は0。外線2本の銅損は2×10²×0.4=80 W。",
+    "choiceExplanations": {
+      "イ": "40 Wは外線1本分のみの損失。",
+      "ロ": "上下の外線はそれぞれ10²×0.4=40 Wで合計80 Wとなり、60 Wではない。",
+      "ハ": "80 Wは外線2本の40 Wずつの合計。",
+      "ニ": "120 Wは中性線にも10 Aが流れると誤って加算した値。"
+    },
+    "reviewedFromCrop": "media/q07.png",
+    "imageUrls": [
+      "media/q07.png"
+    ],
+    "sourcePage": 4,
+    "sourceAttribution": "出典：令和7年度下期第一種電気工事士学科試験 問7（電気技術者試験センター）。設問の改行・空白と表記を整え、図のみの選択肢は識別用の説明を追加。原本図版を切り出した。",
+    "sourceQuestionPdfUrl": "https://www.shiken.or.jp/construction/upload/20251005_co_first_q01.pdf",
+    "sourceAnswerPdfUrl": "https://www.shiken.or.jp/construction/upload/20251005_co_first_a01.pdf",
+    "publicationStatus": "HOLD",
+    "normalizationStatus": "CANDIDATE_PENDING_FINAL_QA"
+  },
+  {
+    "number": 8,
+    "question": "図のような配電線路において、抵抗負荷R1に50 A、R2に70 Aの電流が流れる。一次側電流I［A］は。ただし損失と励磁電流は無視する。一次電圧6,000 V、二次は100 V＋100 V。",
+    "choices": {
+      "イ": "1",
+      "ロ": "2",
+      "ハ": "3",
+      "ニ": "4"
+    },
+    "officialAnswer": "ロ",
+    "explanation": "二次100 V負荷が50 Aと70 Aなので理想変圧器の出力は100×50+100×70=12,000 W。一次6,000 Vの電流は12,000/6,000=2 A。",
+    "choiceExplanations": {
+      "イ": "1 Aでは一次電力6,000 Wとなり二次12,000 Wを満たさない。",
+      "ロ": "2 Aで一次電力12,000 Wとなり二次負荷合計と一致。",
+      "ハ": "3 Aでは一次電力18,000 Wとなり損失無視の条件と矛盾。",
+      "ニ": "4 Aでは一次電力24,000 Wとなり損失無視の条件と矛盾。"
+    },
+    "reviewedFromCrop": "media/q08.png",
+    "imageUrls": [
+      "media/q08.png"
+    ],
+    "sourcePage": 5,
+    "sourceAttribution": "出典：令和7年度下期第一種電気工事士学科試験 問8（電気技術者試験センター）。設問の改行・空白と表記を整え、図のみの選択肢は識別用の説明を追加。原本図版を切り出した。",
+    "sourceQuestionPdfUrl": "https://www.shiken.or.jp/construction/upload/20251005_co_first_q01.pdf",
+    "sourceAnswerPdfUrl": "https://www.shiken.or.jp/construction/upload/20251005_co_first_a01.pdf",
+    "publicationStatus": "HOLD",
+    "normalizationStatus": "CANDIDATE_PENDING_FINAL_QA"
+  },
+  {
+    "number": 9,
+    "question": "図の低圧屋内幹線からの分岐回路を600 V VVRケーブルで配線する。分岐点から配線用遮断器までの長さaと太さbの組合せとして不適切なものは。ただし幹線遮断器は100 A、VVRの許容電流は原本図の表による。",
+    "choices": {
+      "イ": "a：2 m、b：直径2.0 mm",
+      "ロ": "a：5 m、b：断面積5.5 mm²",
+      "ハ": "a：7 m、b：断面積8 mm²",
+      "ニ": "a：10 m、b：断面積14 mm²"
+    },
+    "officialAnswer": "ロ",
+    "explanation": "100 Aの35%=35 A、55%=55 A。",
+    "choiceExplanations": {
+      "イ": "2 m・24 Aは分岐点から3 m以内の原則を満たす。",
+      "ロ": "5 mでは35 A以上が必要だが、5.5 mm²の許容電流は34 Aで1 A不足。",
+      "ハ": "7 m・42 Aは8 m以内かつ35 A以上。",
+      "ニ": "10 m・61 Aは8 mを超えるが55 A以上。"
+    },
+    "reviewedFromCrop": "media/q09.png",
+    "imageUrls": [
+      "media/q09.png"
+    ],
+    "sourcePage": 5,
+    "sourceAttribution": "出典：令和7年度下期第一種電気工事士学科試験 問9（電気技術者試験センター）。設問の改行・空白と表記を整え、図のみの選択肢は識別用の説明を追加。原本図版を切り出した。",
+    "sourceQuestionPdfUrl": "https://www.shiken.or.jp/construction/upload/20251005_co_first_q01.pdf",
+    "sourceAnswerPdfUrl": "https://www.shiken.or.jp/construction/upload/20251005_co_first_a01.pdf",
+    "publicationStatus": "HOLD",
+    "normalizationStatus": "CANDIDATE_PENDING_FINAL_QA",
+    "officialReferenceUrls": [
+      "https://www.meti.go.jp/policy/safety_security/industrial_safety/sangyo/electric/files/20241022-2.pdf"
+    ],
+    "lawReferenceDate": "2024-10-22"
+  },
+  {
+    "number": 10,
+    "question": "定格出力22kW、極数4の三相誘導電動機が電源周波数60Hz、滑り5％で運転されている。このときの1分間当たりの回転数は。",
+    "choices": {
+      "イ": "1620",
+      "ロ": "1710",
+      "ハ": "1800",
+      "ニ": "1890"
+    },
+    "officialAnswer": "ロ",
+    "explanation": "4極・60 Hzの同期速度は120f/P=1,800 min^-1。すべり5%の回転速度は1,800×(1-0.05)=1,710 min^-1。",
+    "choiceExplanations": {
+      "イ": "1,620/1,800=0.90で、すべり10%に相当し指定の5%とは違う。",
+      "ロ": "1,710 min^-1は同期速度1,800の95%。",
+      "ハ": "1,800 min^-1はすべり0%の同期速度で、設問の5%を反映しない。",
+      "ニ": "1,890 min^-1は同期速度を超え、5%すべりの誘導電動機にはならない。"
+    },
+    "reviewedFromCrop": "media/q10.png",
+    "imageUrls": [
+      "media/q10.png"
+    ],
+    "sourcePage": 5,
+    "sourceAttribution": "出典：令和7年度下期第一種電気工事士学科試験 問10（電気技術者試験センター）。設問の改行・空白と表記を整え、図のみの選択肢は識別用の説明を追加。原本図版を切り出した。",
+    "sourceQuestionPdfUrl": "https://www.shiken.or.jp/construction/upload/20251005_co_first_q01.pdf",
+    "sourceAnswerPdfUrl": "https://www.shiken.or.jp/construction/upload/20251005_co_first_a01.pdf",
+    "publicationStatus": "HOLD",
+    "normalizationStatus": "CANDIDATE_PENDING_FINAL_QA"
+  }
+]

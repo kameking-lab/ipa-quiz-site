@@ -1,0 +1,735 @@
+{
+  "candidateModel": "claude-opus-5-5",
+  "paperId": "emkohyo-20260217-2",
+  "governmentSourceCandidates": [
+    {
+      "title": "厚生労働省 労働安全衛生法",
+      "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74001000"
+    },
+    {
+      "title": "厚生労働省 労働安全衛生規則",
+      "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74003000&dataType=0&pageNo=1"
+    },
+    {
+      "title": "厚生労働省 作業環境測定法",
+      "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74156000&dataType=0&pageNo=1"
+    },
+    {
+      "title": "厚生労働省 作業環境測定基準",
+      "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74087000"
+    }
+  ],
+  "questions": {
+    "emkohyo-20260217-2-q11": {
+      "overlay": {
+        "sourceHash": "a7581f95f979bea1731b7c694b0dd6c7b8d7675ad3e7fc898c20db9ebd8b48a1",
+        "correctChoice": 2,
+        "summary": "連続2作業日のB測定は両日の値を算術平均せず大きい方を用いるため、肢2が誤り。",
+        "choices": [
+          {
+            "number": 1,
+            "verdict": "incorrect",
+            "reason": "作業環境評価基準第2条の表では、A測定とB測定を併用するとき、第1評価値とB測定値がいずれも管理濃度未満の場合に限り第1管理区分です。どちらかが管理濃度以上ならこの要件を満たさないため、肢1は正しい記述です。"
+          },
+          {
+            "number": 2,
+            "verdict": "correct",
+            "reason": "作業環境評価基準第2条はB測定値が2以上あるとき「そのうちの最大値」を評価に用います。厚労省の適用通達は、この場合に連続する2作業日で得た複数のB測定値も含むと明示します。日別最大値の算術平均ではないため肢2が誤りです。"
+          },
+          {
+            "number": 3,
+            "verdict": "incorrect",
+            "reason": "作業環境評価基準第4条は第2条・第3条をC測定とD測定へ準用し、A測定をC測定と読み替えます。C測定のみの場合、第2評価値が管理濃度を超えれば第3管理区分となり、第1評価値の大小によって結論は変わりません。したがって肢3は正しい記述です。"
+          },
+          {
+            "number": 4,
+            "verdict": "incorrect",
+            "reason": "作業環境評価基準第4条により第2条のA・B測定をC・D測定に読み替えます。第1評価値が管理濃度以上なので第1管理区分ではありません。第2評価値が管理濃度以下、D測定値が管理濃度の1.5倍以下なので第3管理区分にも該当せず、第2管理区分です。D測定値が管理濃度未満なら1.5倍以下の条件も満たすため、肢4は正しい記述です。"
+          },
+          {
+            "number": 5,
+            "verdict": "incorrect",
+            "reason": "作業環境評価基準の別表では、石綿の管理濃度を長さ5μm以上の繊維として0.15本/cm³と定めています。評価で比較する数値はこの長さ条件を含む繊維数濃度なので、5μm以上の繊維を対象とする肢5は正しい記述です。"
+          }
+        ],
+        "sources": [
+          {
+            "title": "厚生労働省 作業環境評価基準 第2・4条・別表",
+            "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74088000&dataType=0&pageNo=1"
+          },
+          {
+            "title": "厚生労働省 作業環境評価基準の適用について",
+            "url": "https://www.mhlw.go.jp/web/t_doc?dataId=00tb2166&dataType=1&pageNo=1"
+          }
+        ]
+      },
+      "sourceEvidence": [
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74088000&dataType=0&pageNo=1",
+          "excerpt": "第一評価値及びB測定の測定値(二以上の測定点においてB測定を実施した場合には、そのうちの最大値。以下同じ。)が管理濃度に満たない場合",
+          "choiceNumbers": [
+            1,
+            2
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=00tb2166&dataType=1&pageNo=1",
+          "excerpt": "連続する二作業日に測定を行い、二以上のB測定値が得られた場合も含むものであること",
+          "choiceNumbers": [
+            2
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74088000&dataType=0&pageNo=1",
+          "excerpt": "第三管理区分 第二評価値が管理濃度を超える場合",
+          "choiceNumbers": [
+            3
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74088000&dataType=0&pageNo=1",
+          "excerpt": "第二管理区分 第二評価値が管理濃度以下であり、かつ、B測定の測定値が管理濃度の一・五倍以下である場合(第一管理区分に該当する場合を除く。)",
+          "choiceNumbers": [
+            4
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74088000&dataType=0&pageNo=1",
+          "excerpt": "三十三の二　石綿 五マイクロメートル以上の繊維として〇・一五本毎立方センチメートル",
+          "choiceNumbers": [
+            5
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74088000&dataType=0&pageNo=1",
+          "excerpt": "第四条　前二条の規定は、C測定",
+          "choiceNumbers": [
+            3,
+            4
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74088000&dataType=0&pageNo=1",
+          "excerpt": "及びD測定(作業環境測定基準第十条第五項第五号及び第六号の規定により行う測定",
+          "choiceNumbers": [
+            3,
+            4
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74088000&dataType=0&pageNo=1",
+          "excerpt": "について準用する。この場合において、第二条第一項第一号中",
+          "choiceNumbers": [
+            3,
+            4
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74088000&dataType=0&pageNo=1",
+          "excerpt": "とあるのは「C測定",
+          "choiceNumbers": [
+            3,
+            4
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74088000&dataType=0&pageNo=1",
+          "excerpt": "とあるのは「C測定及びD測定",
+          "choiceNumbers": [
+            4
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74088000&dataType=0&pageNo=1",
+          "excerpt": "「B測定の測定値」とあるのは「D測定の測定値」",
+          "choiceNumbers": [
+            4
+          ]
+        }
+      ],
+      "reviewIssues": []
+    },
+    "emkohyo-20260217-2-q12": {
+      "overlay": {
+        "sourceHash": "f1b0e946f5dbe7ffb702309a1338240ee236b2e30a670596d39f35d69039163f",
+        "correctChoice": 1,
+        "summary": "特定化学物質の裾切り含有率は物質ごとに1％等と定められ、一律5％以下除外ではないため肢1が誤り。",
+        "choices": [
+          {
+            "number": 1,
+            "verdict": "correct",
+            "reason": "労働安全衛生法施行令別表第3第一号8は、1～6の物質を重量1％超、ベンゾトリクロリドを0.5％超含む製剤等も第一類物質とします。ただしベリリウム合金は3％超という特則があります。いずれも5％以下を一律除外する基準ではなく、肢1が誤りです。"
+          },
+          {
+            "number": 2,
+            "verdict": "incorrect",
+            "reason": "特化則第2条は、オーラミン等を施行令別表第3第二号8・32及び対応する製剤等と定義します。第38条の4はこれらの番号を特別管理物質の列挙に含めるので、オーラミン等がすべて該当するという記述は正しいです。"
+          },
+          {
+            "number": 3,
+            "verdict": "incorrect",
+            "reason": "特化則第4条は、特定第二類物質とオーラミン等を合わせて「特定第二類物質等」と呼び、製造設備の密閉式構造や取扱時の隔離室での遠隔操作を定めています。肢3の名称と対象の組合せは条文の定義に一致し、正しい記述です。"
+          },
+          {
+            "number": 4,
+            "verdict": "incorrect",
+            "reason": "労働安全衛生法施行令別表第3は、第一類物質の6に「ベリリウム及びその化合物」を掲げています。製剤や合金の含有率には別の条件がありますが、物質そのものの区分を第一類とする肢4は正しい記述です。"
+          },
+          {
+            "number": 5,
+            "verdict": "incorrect",
+            "reason": "労働安全衛生法施行令別表第3の第二類物質3の2には「インジウム化合物」が直接掲げられています。物質名と区分が条文の列挙に一致するため、肢5は正しい記述です。"
+          }
+        ],
+        "sources": [
+          {
+            "title": "厚生労働省 労働安全衛生法施行令 別表第3",
+            "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74002000&dataType=0&pageNo=2"
+          },
+          {
+            "title": "厚生労働省 特定化学物質障害予防規則 第2・4・38条の4",
+            "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74097000&dataType=0&pageNo=1"
+          }
+        ]
+      },
+      "sourceEvidence": [
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74002000&dataType=0&pageNo=2",
+          "excerpt": "1から6までに掲げる物をその重量の一パーセントを超えて含有し、又は7に掲げる物をその重量の〇・五パーセントを超えて含有する製剤その他の物",
+          "choiceNumbers": [
+            1
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74097000&dataType=0&pageNo=1",
+          "excerpt": "オーラミン等　第二類物質のうち、令別表第三第二号8及び32に掲げる物並びに別表第一第八号及び第三十二号に掲げる物をいう",
+          "choiceNumbers": [
+            2
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74097000&dataType=0&pageNo=1",
+          "excerpt": "第八号、第八号の二、第十一号から第十二号まで",
+          "choiceNumbers": [
+            2
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74097000&dataType=0&pageNo=1",
+          "excerpt": "第三十八条の四　事業者は、第一類物質(塩素化ビフェニル等を除く。)又は令別表第三第二号3の2から6まで、8、8の2、11から12まで、13の2から15の2まで、18の2から19の5まで、21、22の2から22の5まで、23の2から24まで、26、27の2、29、30、31の2、32、33の2若しくは34の3に掲げる物若しくは別表第一第三号の二から第六号まで、第八号、第八号の二、第十一号から第十二号まで、第十三号の二から第十五号の二まで、第十八号の二から第十九号の五まで、第二十一号、第二十二号の二から第二十二号の五まで、第二十三号の二から第二十四号まで、第二十六号、第二十七号の二、第二十九号、第三十号、第三十一号の二、第三十二号、第三十三号の二若しくは第三十四号の三に掲げる物(以下「特別管理物質」と総称する。)",
+          "choiceNumbers": [
+            2
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74097000&dataType=0&pageNo=1",
+          "excerpt": "特定第二類物質又はオーラミン等(以下「特定第二類物質等」という。)",
+          "choiceNumbers": [
+            3
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74002000&dataType=0&pageNo=2",
+          "excerpt": "６　ベリリウム及びその化合物",
+          "choiceNumbers": [
+            4
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74002000&dataType=0&pageNo=2",
+          "excerpt": "３の２　インジウム化合物",
+          "choiceNumbers": [
+            5
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74002000&dataType=0&pageNo=2",
+          "excerpt": "合金にあつては、ベリリウムをその重量の三パーセントを超えて含有するものに限る。",
+          "choiceNumbers": [
+            1
+          ]
+        }
+      ],
+      "reviewIssues": []
+    },
+    "emkohyo-20260217-2-q13": {
+      "overlay": {
+        "sourceHash": "10f75aefc2045c3acc443fc103cb39c2283b7cf59b7f86be38ccaee382b5dcd7",
+        "correctChoice": 1,
+        "summary": "厚生労働大臣の許可が必要なのは第1類物質の製造であり、取扱いは許可対象外のため肢1が誤り。",
+        "choices": [
+          {
+            "number": 1,
+            "verdict": "correct",
+            "reason": "安衛法第56条第1項は製造しようとする者に許可を求め、施行令第17条はその対象を別表第3第1号の第一類物質等と定めています。特化則第48条も物質と製造プラントごとの許可を規定し、取扱いだけを同じ製造許可の対象とはしていません。肢1の「又は取り扱おうとする者」が誤りです。"
+          },
+          {
+            "number": 2,
+            "verdict": "incorrect",
+            "reason": "特化則は、排液処理装置の方式を物質ごとに定めている。シアン化ナトリウム・シアン化カリウムの排液には、酸化・還元方式、活性汚泥方式、又はこれらと同等以上の性能を持つ装置を求める。塩酸等の中和方式とは区別され、記述は正しい。"
+          },
+          {
+            "number": 3,
+            "verdict": "incorrect",
+            "reason": "特化則第20条は、特定化学設備等から第三類物質等が漏れるのを防ぐための作業規程を定めています。原材料の送給や製品の取出しに用いるバルブ・コック等の操作、冷却・加熱装置等の操作、計測装置と制御装置の監視・調整を列挙しており、肢3はその内容に一致します。"
+          },
+          {
+            "number": 4,
+            "verdict": "incorrect",
+            "reason": "特化則第27条は、特別有機溶剤業務に係る作業では、有機溶剤作業主任者技能講習を修了した者から特定化学物質作業主任者を選任すると明記しています。この講習区分を述べた肢4は、条文の選任要件に一致する正しい記述です。"
+          },
+          {
+            "number": 5,
+            "verdict": "incorrect",
+            "reason": "特化則第42条は、特定化学物質が漏えいし、労働者が汚染又は吸入したときの医師による診察・処置を定めます。第2条第1項第7号の特定化学物質には第3類物質も含まれるため、肢5の対象と措置は正しい記述です。"
+          }
+        ],
+        "sources": [
+          {
+            "title": "厚生労働省 労働安全衛生法 第56条",
+            "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74001000&dataType=0&pageNo=2"
+          },
+          {
+            "title": "厚生労働省 特定化学物質障害予防規則 第2・20・27条（補助参照。施行日版はe-Govで照合）",
+            "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74097000&dataType=0&pageNo=1"
+          },
+          {
+            "title": "厚生労働省 特定化学物質障害予防規則 第42条（補助参照。施行日版はe-Govで照合）",
+            "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74097000&dataType=0&pageNo=2"
+          },
+          {
+            "title": "e-Gov 特定化学物質障害予防規則 第2・11・20・27・42・48条（2026-02-17施行版）",
+            "url": "https://laws.e-gov.go.jp/api/2/law_data/347M50002000039?asof=2026-02-17"
+          },
+          {
+            "title": "e-Gov 労働安全衛生法 第56条（2026-02-17施行版）",
+            "url": "https://laws.e-gov.go.jp/api/2/law_data/347AC0000000057?asof=2026-02-17"
+          },
+          {
+            "title": "e-Gov 労働安全衛生法施行令 第17条（2026-02-17施行版）",
+            "url": "https://laws.e-gov.go.jp/api/2/law_data/347CO0000000318?asof=2026-02-17"
+          }
+        ]
+      },
+      "sourceEvidence": [
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74001000&dataType=0&pageNo=2",
+          "excerpt": "政令で定めるものを製造しようとする者は、厚生労働省令で定めるところにより、あらかじめ、厚生労働大臣の許可を受けなければならない",
+          "choiceNumbers": [
+            1
+          ]
+        },
+        {
+          "url": "https://laws.e-gov.go.jp/api/2/law_data/347M50002000039?asof=2026-02-17",
+          "excerpt": "シアン化カリウム酸化・還元方式活性汚泥でい方式シアン化ナトリウム酸化・還元方式活性汚泥でい方式",
+          "choiceNumbers": [
+            2
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74097000&dataType=0&pageNo=1",
+          "excerpt": "特定化学設備又はその附属設備を使用する作業に労働者を従事させるときは、当該特定化学設備又はその附属設備に関し、次の事項について、第三類物質等の漏えいを防止するため必要な規程を定め",
+          "choiceNumbers": [
+            3
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74097000&dataType=0&pageNo=1",
+          "excerpt": "第二十条　事業者は、特定化学設備又はその附属設備を使用する作業に労働者を従事させるときは、当該特定化学設備又はその附属設備に関し、次の事項について、第三類物質等の漏えいを防止するため必要な規程を定め、これにより作業を行わなければならない。 一　バルブ、コック等(特定化学設備に原材料を送給するとき、及び特定化学設備から製品等を取り出すときに使用されるものに限る。)の操作 二　冷却装置、加熱装置、 攪拌 装置及び圧縮装置の操作 三　計測装置及び制御装置の監視及び調整",
+          "choiceNumbers": [
+            3
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74097000&dataType=0&pageNo=1",
+          "excerpt": "特別有機溶剤業務に係る作業にあつては、有機溶剤作業主任者技能講習",
+          "choiceNumbers": [
+            4
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74097000&dataType=0&pageNo=1",
+          "excerpt": "特定化学物質　第一類物質、第二類物質及び第三類物質をいう",
+          "choiceNumbers": [
+            5
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74097000&dataType=0&pageNo=2",
+          "excerpt": "当該特定化学物質により汚染され、又は当該特定化学物質を吸入したときは、遅滞なく、当該労働者に医師による診察又は処置を受けさせなければならない",
+          "choiceNumbers": [
+            5
+          ]
+        },
+        {
+          "url": "https://laws.e-gov.go.jp/api/2/law_data/347AC0000000057?asof=2026-02-17",
+          "excerpt": "政令で定めるものを製造しようとする者は、厚生労働省令で定めるところにより、あらかじめ、厚生労働大臣の許可を受けなければならない。",
+          "choiceNumbers": [
+            1
+          ]
+        },
+        {
+          "url": "https://laws.e-gov.go.jp/api/2/law_data/347CO0000000318?asof=2026-02-17",
+          "excerpt": "法第五十六条第一項の政令で定める物は、別表第三第一号に掲げる第一類物質及び石綿分析用試料等とする。",
+          "choiceNumbers": [
+            1
+          ]
+        },
+        {
+          "url": "https://laws.e-gov.go.jp/api/2/law_data/347M50002000039?asof=2026-02-17",
+          "excerpt": "第一類物質労働安全衛生法施行令（以下「令」という。）別表第三第一号に掲げる物をいう。",
+          "choiceNumbers": [
+            1
+          ]
+        },
+        {
+          "url": "https://laws.e-gov.go.jp/api/2/law_data/347M50002000039?asof=2026-02-17",
+          "excerpt": "法第五十六条第一項の許可は、令別表第三第一号に掲げる物ごとに、かつ、当該物を製造するプラントごとに行なうものとする。",
+          "choiceNumbers": [
+            1
+          ]
+        },
+        {
+          "url": "https://laws.e-gov.go.jp/api/2/law_data/347M50002000039?asof=2026-02-17",
+          "excerpt": "特別有機溶剤業務に係る作業にあつては、有機溶剤作業主任者技能講習",
+          "choiceNumbers": [
+            4
+          ]
+        },
+        {
+          "url": "https://laws.e-gov.go.jp/api/2/law_data/347M50002000039?asof=2026-02-17",
+          "excerpt": "バルブ、コック等（特定化学設備に原材料を送給するとき、及び特定化学設備から製品等を取り出すときに使用されるものに限る。）の操作",
+          "choiceNumbers": [
+            3
+          ]
+        },
+        {
+          "url": "https://laws.e-gov.go.jp/api/2/law_data/347M50002000039?asof=2026-02-17",
+          "excerpt": "当該特定化学物質により汚染され、又は当該特定化学物質を吸入したときは、遅滞なく、当該労働者に医師による診察又は処置を受けさせなければならない。",
+          "choiceNumbers": [
+            5
+          ]
+        }
+      ],
+      "reviewIssues": []
+    },
+    "emkohyo-20260217-2-q14": {
+      "overlay": {
+        "sourceHash": "a355d1506668e1f90fd6959450776039255c586c51074bc5d6073dd32f1305f6",
+        "correctChoice": 5,
+        "summary": "第1種1％と第2種5％の合計が6％で5％を超えるため第2種有機溶剤等となり、肢5の第3種は誤り。",
+        "choices": [
+          {
+            "number": 1,
+            "verdict": "incorrect",
+            "reason": "第1種有機溶剤を重量の5％を超えて含む混合物は、第1種有機溶剤等となる。本肢は第1種が6％で5％を超えるので、第2種1％や第3種50％の割合にかかわらず第1種有機溶剤等であり、区分の記述は正しい。"
+          },
+          {
+            "number": 2,
+            "verdict": "incorrect",
+            "reason": "第1種は4％で5％以下のため、第1種有機溶剤等には当たらない。第1種と第2種の合計は4％＋2％＝6％で5％を超えるので、第2種有機溶剤等となる。第3種が60％と最も多くても上位の区分が優先され、記述は正しい。"
+          },
+          {
+            "number": 3,
+            "verdict": "incorrect",
+            "reason": "第1種3％は5％以下で、第1種有機溶剤等には当たらない。第1種と第2種の合計は3％＋3％＝6％で5％を超えるため、第2種有機溶剤等となる。第3種70％は区分の決定に影響しないので、第2種とする記述は正しい。"
+          },
+          {
+            "number": 4,
+            "verdict": "incorrect",
+            "reason": "第1種1％は5％以下で、第1種と第2種の合計も1％＋3％＝4％で5％以下なので、第1種・第2種のいずれにも当たらない。有機溶剤の合計は84％で5％を超えるため第3種有機溶剤等となり、記述は正しい。"
+          },
+          {
+            "number": 5,
+            "verdict": "correct",
+            "reason": "第1種1％は5％以下だが、第1種と第2種の合計は1％＋5％＝6％で5％を超える。したがって第2種有機溶剤等に区分され、第3種が90％と最も多くても第3種にはならない。第3種有機溶剤等とする記述は誤り。"
+          }
+        ],
+        "sources": [
+          {
+            "title": "厚生労働省 有機溶剤中毒予防規則 第1条 有機溶剤等の区分",
+            "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74090000&dataType=0&pageNo=1"
+          }
+        ]
+      },
+      "sourceEvidence": [
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74090000&dataType=0&pageNo=1",
+          "excerpt": "有機溶剤と有機溶剤以外の物との混合物で、有機溶剤を当該混合物の重量の五パーセントを超えて含有するもの",
+          "choiceNumbers": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74090000&dataType=0&pageNo=1",
+          "excerpt": "イに掲げる物を当該混合物の重量の五パーセントを超えて含有するもの",
+          "choiceNumbers": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74090000&dataType=0&pageNo=1",
+          "excerpt": "イに掲げる物又は前号イに掲げる物を当該混合物の重量の五パーセントを超えて含有するもの(前号ハに掲げる物を除く。)",
+          "choiceNumbers": [
+            2,
+            3,
+            4,
+            5
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74090000&dataType=0&pageNo=1",
+          "excerpt": "第三種有機溶剤等　有機溶剤等のうち第一種有機溶剤等及び第二種有機溶剤等以外の物をいう",
+          "choiceNumbers": [
+            4,
+            5
+          ]
+        }
+      ],
+      "reviewIssues": []
+    },
+    "emkohyo-20260217-2-q15": {
+      "overlay": {
+        "sourceHash": "9d06379bfe1494c2aa26b1095a33fcd5ce32eb038feaa2eff413e0825161eb32",
+        "correctChoice": 3,
+        "summary": "通風不十分な屋内作業場の第1種有機溶剤業務でも、一律に送気マスクを使用させる義務はないため肢3が誤り。",
+        "choices": [
+          {
+            "number": 1,
+            "verdict": "incorrect",
+            "reason": "有機則第5条は、第2種有機溶剤等の屋内作業について密閉設備・局所排気装置・プッシュプル型換気装置のいずれかを求める。局所排気装置を設けて囲い式フードを使う場合、第16条の制御風速表は0.4m/sを指定する。したがって肢1の数値は正しい。"
+          },
+          {
+            "number": 2,
+            "verdict": "incorrect",
+            "reason": "労働安全衛生法施行令第15条第1項第9号が定期自主検査の対象として列挙するのは、所定の局所排気装置とプッシュプル型換気装置などである。有機則第20条・第20条の2は両装置について1年以内ごとの検査を定めるが、全体換気装置はこの列挙に含まれず、肢2は正しい記述である。"
+          },
+          {
+            "number": 3,
+            "verdict": "correct",
+            "reason": "有機則第2条の「タンク等の内部」には通風不十分な屋内作業場も含まれる。ただし設問は特例なしの前提なので、第9条第2項の短時間作業特例を使って換気設備を省く場合は除外される。この前提で第32条の送気マスク義務が働くのは、第1条第1項第6号ヲの有機溶剤等を入れたことのあるタンク内部の業務である。通常の第1種業務には第5条の密閉・局排・プッシュプル設備義務があり、通風不十分という条件だけで送気マスクを義務付ける規定はない。第33条の別業務でも送気マスクのほか防毒マスク等を選べるため、送気マスクを一律義務とする肢3は誤りである。"
+          },
+          {
+            "number": 4,
+            "verdict": "incorrect",
+            "reason": "有機則第28条第1項の作業環境測定義務は、施行令別表第6の2第1号〜第47号の有機溶剤に係る業務が対象である。第3種の単一物質は同別表の第48号〜第54号にあり、第55号には混合物もある。第3種の混合物を含む対象範囲についても、厚労省の審議会資料は「第三種有機溶剤等に係る有機溶剤業務を行う作業場は対象外」と説明する。第28条を主たる根拠とし、この行政資料を補強として読むと、第3種による洗浄作業場は通風不十分でも測定義務がなく、肢4は正しい。"
+          },
+          {
+            "number": 5,
+            "verdict": "incorrect",
+            "reason": "有機則第30条の3は、所定の定期健康診断を行った事業者に、労働者数の下限を置かず、遅滞ない所轄労働基準監督署長への報告を義務付けている。現行条文では電子情報処理組織を使用した所定事項の報告であり、肢5は正しい記述である。"
+          }
+        ],
+        "sources": [
+          {
+            "title": "e-Gov 有機溶剤中毒予防規則（2026年2月17日時点）第1・2・5・9・16・20・20条の2・28・30条の3・32・33条",
+            "url": "https://laws.e-gov.go.jp/api/2/law_data/347M50002000036?asof=2026-02-17"
+          },
+          {
+            "title": "e-Gov 労働安全衛生法施行令（2026年2月17日施行版）第15条・別表第6の2",
+            "url": "https://laws.e-gov.go.jp/api/2/law_data/347CO0000000318?asof=2026-02-17"
+          },
+          {
+            "title": "厚生労働省 平成24年有機則改正 審議会資料（第3種対象外の補強資料）",
+            "url": "https://www.mhlw.go.jp/stf/shingi/2r98520000026al8-att/2r98520000026ana.pdf"
+          }
+        ]
+      },
+      "sourceEvidence": [
+        {
+          "url": "https://laws.e-gov.go.jp/api/2/law_data/347CO0000000318?asof=2026-02-17",
+          "excerpt": "局所排気装置、プッシュプル型換気装置、除じん装置、排ガス処理装置及び排液処理装置で、厚生労働省令で定めるもの",
+          "choiceNumbers": [
+            2
+          ]
+        },
+        {
+          "url": "https://laws.e-gov.go.jp/api/2/law_data/347M50002000036?asof=2026-02-17",
+          "excerpt": "前項の局所排気装置については、一年以内ごとに一回、定期に",
+          "choiceNumbers": [
+            2
+          ]
+        },
+        {
+          "url": "https://laws.e-gov.go.jp/api/2/law_data/347M50002000036?asof=2026-02-17",
+          "excerpt": "前条第二項及び第三項の規定は、前項のプッシュプル型換気装置に関して準用する。",
+          "choiceNumbers": [
+            2
+          ]
+        },
+        {
+          "url": "https://laws.e-gov.go.jp/api/2/law_data/347M50002000036?asof=2026-02-17",
+          "excerpt": "第三種有機溶剤等有機溶剤等のうち第一種有機溶剤等及び第二種有機溶剤等以外の物をいう。",
+          "choiceNumbers": [
+            4
+          ]
+        },
+        {
+          "url": "https://laws.e-gov.go.jp/api/2/law_data/347M50002000036?asof=2026-02-17",
+          "excerpt": "令別表第六の二第一号から第四十七号までに掲げる有機溶剤に係る有機溶剤業務",
+          "choiceNumbers": [
+            4
+          ]
+        },
+        {
+          "url": "https://laws.e-gov.go.jp/api/2/law_data/347CO0000000318?asof=2026-02-17",
+          "excerpt": "四十八ガソリン",
+          "choiceNumbers": [
+            4
+          ]
+        },
+        {
+          "url": "https://laws.e-gov.go.jp/api/2/law_data/347M50002000036?asof=2026-02-17",
+          "excerpt": "当該業務に従事する労働者に送気マスクを使用させなければならない。",
+          "choiceNumbers": [
+            3
+          ]
+        },
+        {
+          "url": "https://laws.e-gov.go.jp/api/2/law_data/347M50002000036?asof=2026-02-17",
+          "excerpt": "第一条第一項第六号ヲに掲げる業務",
+          "choiceNumbers": [
+            3
+          ]
+        },
+        {
+          "url": "https://laws.e-gov.go.jp/api/2/law_data/347M50002000036?asof=2026-02-17",
+          "excerpt": "事業者は、健康診断（第二十九条第二項、第三項又は第五項の健康診断であつて定期のものに限る。",
+          "choiceNumbers": [
+            5
+          ]
+        },
+        {
+          "url": "https://laws.e-gov.go.jp/api/2/law_data/347M50002000036?asof=2026-02-17",
+          "excerpt": "第六条第一項に規定する電子情報処理組織を使用して、次に掲げる事項を所轄労働基準監督署長に報告しなければならない。",
+          "choiceNumbers": [
+            5
+          ]
+        },
+        {
+          "url": "https://laws.e-gov.go.jp/api/2/law_data/347M50002000036?asof=2026-02-17",
+          "excerpt": "第一種有機溶剤等有機溶剤等のうち次に掲げる物をいう。イ令別表第六の二第二十八号又は第三十八号に掲げる物",
+          "choiceNumbers": [
+            4
+          ]
+        },
+        {
+          "url": "https://laws.e-gov.go.jp/api/2/law_data/347M50002000036?asof=2026-02-17",
+          "excerpt": "第二種有機溶剤等有機溶剤等のうち次に掲げる物をいう。イ令別表第六の二第一号から第十三号まで、第十五号から第二十二号まで、第二十四号、第二十五号、第三十号、第三十四号、第三十五号、第三十七号、第三十九号から第四十二号まで又は第四十四号から第四十七号までに掲げる物",
+          "choiceNumbers": [
+            4
+          ]
+        },
+        {
+          "url": "https://laws.e-gov.go.jp/api/2/law_data/347M50002000036?asof=2026-02-17",
+          "excerpt": "囲い式フード〇・四",
+          "choiceNumbers": [
+            1
+          ]
+        },
+        {
+          "url": "https://laws.e-gov.go.jp/api/2/law_data/347M50002000036?asof=2026-02-17",
+          "excerpt": "有機溶剤等を入れたことのあるタンク",
+          "choiceNumbers": [
+            3
+          ]
+        },
+        {
+          "url": "https://laws.e-gov.go.jp/api/2/law_data/347M50002000036?asof=2026-02-17",
+          "excerpt": "第一条第一項第六号ヲに掲げる業務",
+          "choiceNumbers": [
+            3
+          ]
+        },
+        {
+          "url": "https://laws.e-gov.go.jp/api/2/law_data/347M50002000036?asof=2026-02-17",
+          "excerpt": "第九条第二項の規定により有機溶剤の蒸気の発散源を密閉する設備、局所排気装置、プッシュプル型換気装置及び全体換気装置を設けないで行うタンク等の内部における業務",
+          "choiceNumbers": [
+            3
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/stf/shingi/2r98520000026al8-att/2r98520000026ana.pdf",
+          "excerpt": "第三種有機溶剤等に係る有機溶剤業務を行う作業場は対象外",
+          "choiceNumbers": [
+            4
+          ]
+        },
+        {
+          "url": "https://laws.e-gov.go.jp/api/2/law_data/347M50002000036?asof=2026-02-17",
+          "excerpt": "第三十三条事業者は、次の各号のいずれかに掲げる業務に労働者を従事させるときは、当該業務に従事する労働者に送気マスク、有機ガス用防毒マスク又は有機ガス用の防毒機能を有する電動ファン付き呼吸用保護具を使用させなければならない。",
+          "choiceNumbers": [
+            3
+          ]
+        },
+        {
+          "url": "https://laws.e-gov.go.jp/api/2/law_data/347M50002000036?asof=2026-02-17",
+          "excerpt": "第六条第一項の規定により全体換気装置を設けたタンク等の内部における業務",
+          "choiceNumbers": [
+            3
+          ]
+        },
+        {
+          "url": "https://laws.e-gov.go.jp/api/2/law_data/347M50002000036?asof=2026-02-17",
+          "excerpt": "事業者は、タンク等の内部において有機溶剤業務に労働者を従事させる場合において、当該場所における有機溶剤業務に要する時間が短時間であり、かつ、送気マスクを備えたとき",
+          "choiceNumbers": [
+            3
+          ]
+        },
+        {
+          "url": "https://laws.e-gov.go.jp/api/2/law_data/347M50002000036?asof=2026-02-17",
+          "excerpt": "タンク等の内部（地下室の内部その他通風が不十分な屋内作業場、船倉の内部その他通風が不十分な船舶の内部",
+          "choiceNumbers": [
+            3
+          ]
+        },
+        {
+          "url": "https://laws.e-gov.go.jp/api/2/law_data/347M50002000036?asof=2026-02-17",
+          "excerpt": "事業者は、屋内作業場等において、第一種有機溶剤等又は第二種有機溶剤等に係る有機溶剤業務",
+          "choiceNumbers": [
+            1,
+            3
+          ]
+        },
+        {
+          "url": "https://laws.e-gov.go.jp/api/2/law_data/347M50002000036?asof=2026-02-17",
+          "excerpt": "有機溶剤の蒸気の発散源を密閉する設備、局所排気装置又はプッシュプル型換気装置を設けなければならない。",
+          "choiceNumbers": [
+            1,
+            3
+          ]
+        },
+        {
+          "url": "https://laws.e-gov.go.jp/api/2/law_data/347M50002000036?asof=2026-02-17",
+          "excerpt": "（短時間有機溶剤業務を行う場合の設備の特例）第九条",
+          "choiceNumbers": [
+            3
+          ]
+        },
+        {
+          "url": "https://laws.e-gov.go.jp/api/2/law_data/347CO0000000318?asof=2026-02-17",
+          "excerpt": "四十八ガソリン四十九コールタールナフサ（ソルベントナフサを含む。）",
+          "choiceNumbers": [
+            4
+          ]
+        },
+        {
+          "url": "https://laws.e-gov.go.jp/api/2/law_data/347CO0000000318?asof=2026-02-17",
+          "excerpt": "五十四ミネラルスピリツト（ミネラルシンナー、ペトロリウムスピリツト、ホワイトスピリツト及びミネラルターペンを含む。）五十五前各号に掲げる物のみから成る混合物",
+          "choiceNumbers": [
+            4
+          ]
+        }
+      ],
+      "reviewIssues": []
+    }
+  }
+}

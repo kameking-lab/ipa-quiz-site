@@ -1,3 +1,4 @@
+import { NativeBDataSchema, nativeBQuestionIssue } from "../lib/questions/native-b";
 /**
  * data/questions/ 配下の問題データを検証・品質スコア算出。
  *
@@ -11,10 +12,33 @@
 
 import { writeFileSync, mkdirSync } from "node:fs";
 import { join } from "node:path";
+import { numericQuestionIssue } from "@/lib/questions/numeric";
+import { orderingQuestionIssue } from "@/lib/questions/ordering";
 import { ALL_QUESTIONS } from "@/data/questions";
+import { DENKEN3_QUESTIONS } from "@/data/questions/denken3";
+import { DENKEN2_QUESTIONS } from "@/data/questions/denken2";
+import { DENKEN1_QUESTIONS } from "@/data/questions/denken1";
+import { DENKO2_QUESTIONS } from "@/data/questions/denko2";
+import { DENKO1_QUESTIONS } from "@/data/questions/denko1";
+import { CIVIL2_QUESTIONS } from "@/data/questions/civil2";
+import { KANKOJI2_QUESTIONS } from "@/data/questions/kankoji2";
+import { ZOEN2_QUESTIONS } from "@/data/questions/zoen2";
+import { ZOEN1_QUESTIONS } from "@/data/questions/zoen1";
+import { TSUSHIN2_QUESTIONS } from "@/data/questions/tsushin2";
+import { TSUSHIN1_QUESTIONS } from "@/data/questions/tsushin1";
+import { CIVIL1_QUESTIONS } from "@/data/questions/civil1";
 import type { Question } from "@/lib/questions/types";
 import { detectAnswerDispute } from "@/lib/questions/explanation-consistency";
 import { z } from "zod";
+import { RIYOSHI_CANDIDATES } from "@/data/questions/riyoshi";
+
+// Publication-gated pilots still require the same schema and source validation
+// before their release gate can be lifted.
+const VALIDATION_QUESTIONS = [
+  ...new Map(
+    [...ALL_QUESTIONS, ...RIYOSHI_CANDIDATES, ...DENKEN3_QUESTIONS, ...DENKEN2_QUESTIONS, ...DENKEN1_QUESTIONS, ...DENKO2_QUESTIONS, ...DENKO1_QUESTIONS, ...CIVIL2_QUESTIONS, ...CIVIL1_QUESTIONS, ...KANKOJI2_QUESTIONS, ...ZOEN2_QUESTIONS, ...ZOEN1_QUESTIONS, ...TSUSHIN2_QUESTIONS, ...TSUSHIN1_QUESTIONS].map((question) => [question.id, question]),
+  ).values(),
+];
 
 // ─── CLI ─────────────────────────────────────────────────────────────────────
 
@@ -43,12 +67,18 @@ function parseCliOptions(): CliOptions {
 
 const QuestionSchema = z.object({
   id: z.string().min(1),
-  exam: z.enum(["ip", "sg", "fe", "ap", "st", "sa", "pm", "nw", "db", "es", "sc", "sm", "au", "fp3", "denken3"]),
-  session: z.enum(["am", "am1", "am2", "pm", "pm1", "pm2", "kamoku-a", "kamoku-b", "gakka", "riron"]),
+  exam: z.enum(["ip", "sg", "fe", "ap", "st", "sa", "pm", "nw", "db", "es", "sc", "sm", "au", "fp1", "fp2", "fp3", "denken3", "denken2", "denken1", "denko2", "denko1", "takken", "civil2", "civil1", "kankoji2", "zoen2", "zoen1", "tsushin2", "tsushin1", "kaigo", "shakai", "seishin", "tohan", "kanri", "eisei1", "eisei2", "soukan", "hoikushi", "mankan", "kashikin", "sharoushi", "kangoshi", "yakuzaishi", "ahaki-anma", "ahaki-hari-kyu", "hokenshi", "josanshi", "rigaku-ryohoshi", "sagyo-ryohoshi", "shino-kunrenshi", "rinsho-kensagishi", "shinryo-hoshasengishi", "rinsho-kogishi", "riyoshi", "chusho-kigyo-shindanshi", "chosashi", "shika-ishi", "judo-seifukushi", "riku-toku-kokunai", "kai-toku2", "kai-toku3", "koku-toku", "land-special1", "riku-tech1", "maritime4", "aviation-comm", "amateur1", "maritime-special1", "riku-tech2", "amateur2", "maritime-radar", "maritime3", "maritime2", "maritime1", "general3", "general2", "general1", "land-special2", "land-special3", "kanteishi", "kaikeishi", "gas-kou", "gas-otsu", "gas-hei"]),
+  session: z.enum(["am", "am1", "am2", "pm", "pm1", "pm2", "kamoku-a", "kamoku-b", "gakka", "rousai", "koyou", "kenpo", "kounen", "kokunen", "ippan", "sentaku", "required", "theory", "practical", "riron", "denryoku", "kikai", "houki", "mondai-a", "mondai-b", "mondai-c", "mondai-d", "kyotsu", "senmon", "hoiku-genri", "kyoiku-genri", "shakaiteki-yougo", "kodomo-katei-fukushi", "shakai-fukushi", "hoiku-shinrigaku", "kodomo-hoken", "kodomo-shokueiyou", "hoiku-jisshu-riron", "keizai", "zaimu", "kigyo", "unei", "keiei-houmu", "keiei-joho", "chusho-seisaku", "kogaku", "kiso", "kogaku-a", "kogaku-b", "hoki", "tiri", "gyosei", "kanri", "kansa", "gas-law", "gas-basic", "gas-technology"]),
   year: z.number().int().min(2000).max(2100),
-  season: z.enum(["spring", "autumn", "cbt", "published", "first", "second"]),
+  season: z.enum(["spring", "autumn", "cbt", "published", "first", "second", "early", "may", "september", "january", "october", "late", "annual", "july", "primary", "kansai", "february", "june", "august", "march", "round1", "round2"]),
   qNumber: z.number().int().min(1),
-  type: z.enum(["multiple-choice", "descriptive", "essay"]),
+  part: z.enum(["a", "b", "1", "2", "3", "4", "5"]).optional(),
+  type: z.enum(["multiple-choice", "ordering", "numeric", "descriptive", "essay", "native-b"]),
+  nativeB: NativeBDataSchema.optional(),
+  numericAnswer: z.discriminatedUnion("format", [
+    z.object({ format: z.literal("integer"), unit: z.string().trim().min(1), fixedSign: z.literal("negative").optional() }),
+    z.object({ format: z.literal("decimal"), precision: z.literal(1), unit: z.string().trim().min(1), fixedSign: z.literal("negative").optional() }),
+  ]).optional(),
   category: z.string().min(1),
   topicTags: z.array(z.string()),
   difficulty: z.union([z.literal(1), z.literal(2), z.literal(3), z.literal(4), z.literal(5)]),
@@ -63,22 +93,32 @@ const QuestionSchema = z.object({
       カ: z.string().optional(),
       キ: z.string().optional(),
       ク: z.string().optional(),
+      ケ: z.string().optional(),
       コ: z.string().optional(),
+      サ: z.string().optional(),
+      シ: z.string().optional(),
+      ス: z.string().optional(),
+      セ: z.string().optional(),
+      ソ: z.string().optional(),
     })
     .refine((choices) => Object.values(choices).filter(Boolean).length >= 2, "選択肢は2個以上必要です")
     .optional(),
-  answer: z.union([z.string().min(1), z.array(z.string().min(1))]),
+  answer: z.union([z.string(), z.array(z.string().min(1))]),
+  requiredSelections: z.number().int().min(1).max(4).optional(),
   explanation: z.string().min(1),
   choiceExplanations: z.record(z.string(), z.string()).optional(),
   modelAnswer: z.string().optional(),
   scoringCriteria: z.string().optional(),
   hasImage: z.boolean(),
   imageUrls: z.array(z.string()).optional(),
+  imageAltTexts: z.array(z.string().trim().min(1)).optional(),
+  choiceImageUrls: z.record(z.string(), z.string()).optional(),
   sourcePdfUrl: z.string().url(),
   sourceAnswerUrl: z.string().url().optional(),
   sourceAttribution: z.string().min(1).optional(),
+  lawReferenceDate: z.string().regex(/^\d{4}-\d{2}-\d{2}$/).optional(),
   officialReferenceUrls: z.array(z.string().url()).optional(),
-  license: z.enum(["IPA-public", "JAFP-reuse-with-attribution", "ECEE-educational-reuse"]),
+  license: z.enum(["IPA-public", "JAFP-reuse-with-attribution", "KINZAI-reuse-with-attribution", "ECEE-educational-reuse", "RETIO-reuse", "JCTC-authorized-reuse", "SSSC-reuse", "KANSAI-UNION-reuse", "KANRIKYO-educational-reuse", "EXAM-OR-JP-attributed", "IPEJ-attributed", "HOYOKYO-attributed", "MANKAN-attributed", "JFSA-attributed", "SHAROSI-attributed", "MHLW-attributed", "AHK-attributed", "JAAME-attributed", "RBC-attributed", "JF-CMCA-attributed", "JCTC-attributed", "MOJ-attributed", "ZAIJUSEI-attributed", "NICHIMU-educational-reuse", "NICHIMU-past-question-study-use", "MLIT-PDL-1.0", "CPAAOB-PDL-1.0", "JIA-attributed"]),
   isCalculation: z.boolean().optional(),
 });
 
@@ -95,7 +135,6 @@ const UNCERTAIN_PHRASES = [
   /でしょう[。．]/,
   /不明です/,
   /確認が必要/,
-  /^正解は[アイウエ]です[。．]/,
 ];
 
 function computeQuality(q: Question): QualityResult {
@@ -112,6 +151,10 @@ function computeQuality(q: Question): QualityResult {
   }
 
   const expLen = q.explanation.trim().length;
+  if (/^正解は[アイウエオカキクケコ]です[。．]\s*(?:[（(]出典[:：][^）)]*[）)])?\s*$/.test(q.explanation.trim())) {
+    score -= 15;
+    warnings.push("解説が正答・出典のみで理由がない");
+  }
   if (expLen < 30) {
     score -= 30;
     warnings.push(`explanation < 30文字 (${expLen}字) — 要確認`);
@@ -126,7 +169,7 @@ function computeQuality(q: Question): QualityResult {
     warnings.push(`不安言い回し検出: "${q.explanation.slice(0, 40)}…"`);
   }
 
-  if (q.hasImage && !q.imageUrls?.length) {
+  if (q.hasImage && !q.imageUrls?.length && !Object.values(q.choiceImageUrls ?? {}).some(Boolean)) {
     score -= 10;
     warnings.push("hasImage=true だが imageUrls なし");
   }
@@ -169,7 +212,7 @@ function validate(questions: Question[]): ValidationResult {
   let fail = 0;
   let warn = 0;
   const seenIds = new Set<string>();
-  const seenQNumbers = new Map<string, Set<number>>(); // "exam-year-season-session" → Set<qNumber>
+  const seenQNumbers = new Map<string, Set<string>>(); // "exam-year-season-session" → Set<qNumber+part>
   const byExam: ValidationResult["byExam"] = {};
   const issues: ValidationResult["issues"] = [];
 
@@ -203,14 +246,48 @@ function validate(questions: Question[]): ValidationResult {
     const groupKey = `${q.exam}-${q.year}-${q.season}-${q.session}`;
     if (!seenQNumbers.has(groupKey)) seenQNumbers.set(groupKey, new Set());
     const numSet = seenQNumbers.get(groupKey)!;
-    if (numSet.has(q.qNumber)) {
+    const answerUnit = `${q.qNumber}${q.part ? `-${q.part}` : ""}`;
+    if (numSet.has(answerUnit)) {
       fail++;
       byExam[examKey].fail++;
       issues.push({ id: q.id, level: "error", message: `qNumber 重複: ${groupKey} #${q.qNumber}` });
       console.error(`[FAIL] ${q.id}: qNumber ${q.qNumber} duplicated in ${groupKey}`);
       continue;
     }
-    numSet.add(q.qNumber);
+    numSet.add(answerUnit);
+
+    if (q.type === "numeric") {
+      const numericIssue = numericQuestionIssue(q);
+      if (numericIssue || !q.sourceAnswerUrl || !q.sourceAttribution) {
+        fail++;
+        byExam[examKey].fail++;
+        const message = numericIssue ?? "numeric requires official answer URL and source attribution";
+        issues.push({ id: q.id, level: "error", message });
+        console.error(`[FAIL] ${q.id}: ${message}`);
+        continue;
+      }
+    }
+
+    if (q.type === "ordering") {
+      const orderingIssue = orderingQuestionIssue(q);
+      if (orderingIssue || !q.sourceAnswerUrl || !q.sourceAttribution) {
+        fail++;
+        byExam[examKey].fail++;
+        const message = orderingIssue ?? "ordering requires official answer URL and source attribution";
+        issues.push({ id: q.id, level: "error", message });
+        console.error(`[FAIL] ${q.id}: ${message}`);
+        continue;
+      }
+    }
+
+    const nativeIssue = nativeBQuestionIssue(q);
+    if (nativeIssue || (q.type !== "native-b" && typeof q.answer === "string" && !q.answer.trim())) {
+      fail++;
+      byExam[examKey].fail++;
+      const message = nativeIssue ?? "Missing answer";
+      issues.push({ id: q.id, level: "error", message });
+      continue;
+    }
 
     // Multiple-choice specific checks
     if (q.type === "multiple-choice") {
@@ -221,12 +298,13 @@ function validate(questions: Question[]): ValidationResult {
         console.error(`[FAIL] ${q.id}: multiple-choice requires choices`);
         continue;
       }
-      const ans = Array.isArray(q.answer) ? q.answer[0] : q.answer;
-      if (!Object.prototype.hasOwnProperty.call(q.choices, ans)) {
+      const answers = Array.isArray(q.answer) ? q.answer : [q.answer];
+      const ans = answers.find(key => !["ア", "イ", "ウ", "エ", "オ", "カ", "キ", "ク", "ケ", "コ", "サ", "シ", "ス", "セ", "ソ"].includes(key) || !q.choices?.[key as keyof typeof q.choices]);
+      if (ans !== undefined || answers.length === 0) {
         fail++;
         byExam[examKey].fail++;
         issues.push({ id: q.id, level: "error", message: `answer 不正: "${ans}"` });
-        console.error(`[FAIL] ${q.id}: answer must match a choice key, got "${ans}"`);
+        console.error(`[FAIL] ${q.id}: answer must identify a present choice, got "${ans}"`);
         continue;
       }
 
@@ -249,7 +327,8 @@ function validate(questions: Question[]): ValidationResult {
       }
 
       if (q.license !== "IPA-public") {
-        if (!q.choiceExplanations || !q.sourceAnswerUrl || !q.sourceAttribution) {
+        const officialSummary = q.exam === "denken3" && q.explanationCoverage === "official-summary";
+        if ((!q.choiceExplanations && !officialSummary) || !q.sourceAnswerUrl || !q.sourceAttribution) {
           fail++;
           byExam[examKey].fail++;
           issues.push({
@@ -396,8 +475,8 @@ function reportFixes(questions: Question[]): void {
 
 const opts = parseCliOptions();
 const questions = opts.exams.length > 0
-  ? ALL_QUESTIONS.filter((q) => opts.exams.includes(q.exam))
-  : ALL_QUESTIONS;
+  ? VALIDATION_QUESTIONS.filter((q) => opts.exams.includes(q.exam))
+  : VALIDATION_QUESTIONS;
 
 if (opts.exams.length > 0) {
   console.log(`[filter] exam: ${opts.exams.join(", ")} → ${questions.length}件`);

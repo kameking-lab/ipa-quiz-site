@@ -1,0 +1,634 @@
+{
+  "baseCommit": "f6bf8e12223311ececebc10d7ae7f386bd0f4c4e",
+  "scope": "GO-only social-insurance post-668 local integration",
+  "oldMcOriginals": 62,
+  "oldMcChoices": 310,
+  "newMcOriginals": 24,
+  "newMcChoices": 120,
+  "totalMcOriginals": 86,
+  "totalMcChoices": 430,
+  "nativeClozeOriginalsUnchanged": 16,
+  "nativeClozeBlanksUnchanged": 80,
+  "totalOriginalsIncludingNative": 102,
+  "latestTwoOriginals": 156,
+  "previousMcObjectHashes": [
+    {
+      "id": "sharoushi-2025-annual-gakka-q10",
+      "sha256": "b752d3db87cf2e4f0a786cff37978615e702ded6b37088237211ed4d5265684f"
+    },
+    {
+      "id": "sharoushi-2025-annual-gakka-q2",
+      "sha256": "9876694012236e2c5c915fd31c0ee777a11fe1780692914acd6efc4a81f426d8"
+    },
+    {
+      "id": "sharoushi-2025-annual-gakka-q3",
+      "sha256": "da1c6638c52d483803e2e16d13fa226f0408cea274ddcc4a2283e96ec8f85865"
+    },
+    {
+      "id": "sharoushi-2025-annual-gakka-q4",
+      "sha256": "7f6a464da0e5996185d4390c64603158ed372dcc32f90273a379e38f25d93e27"
+    },
+    {
+      "id": "sharoushi-2025-annual-gakka-q5",
+      "sha256": "ea0fc973dbf73928aae79206a3bf9616fe476b678397d4c28436b93230c4a378"
+    },
+    {
+      "id": "sharoushi-2025-annual-gakka-q6",
+      "sha256": "d9d37fc75464cb62637703287d19a3be6c3e26d41cbf213308276f58c25feac9"
+    },
+    {
+      "id": "sharoushi-2025-annual-gakka-q8",
+      "sha256": "464155ca5900d64477c781944b2a92dbdfd6cee449839f3fdae17a45abaf243b"
+    },
+    {
+      "id": "sharoushi-2025-annual-gakka-q9",
+      "sha256": "2ba70c490326aca4b120093ae391eb2cf7529e8a1b4e8035a999d37f5acb5607"
+    },
+    {
+      "id": "sharoushi-2025-annual-ippan-q1",
+      "sha256": "820041a2192adb624ca9bdccfea78d5db6f3873aefa9d069a8f39556991373f5"
+    },
+    {
+      "id": "sharoushi-2025-annual-ippan-q2",
+      "sha256": "49505dea9bb63246de2342bb788eb63bf4aa4006604c60a0e776865709af3052"
+    },
+    {
+      "id": "sharoushi-2025-annual-ippan-q3",
+      "sha256": "c8d4fca890d7ab49eb3533440c2d08293b918f433dc1ac665fbbce130838740c"
+    },
+    {
+      "id": "sharoushi-2025-annual-kenpo-q1",
+      "sha256": "626fbc4eb7209dc58ab91bb26a3859fd7c41d7e5e2bf6b7f75a01d051945238b"
+    },
+    {
+      "id": "sharoushi-2025-annual-kenpo-q3",
+      "sha256": "3e6f6b5ec7b18eb41a9bd9ed97fd75d41a32032359f98aff98d5d9fc9bf24663"
+    },
+    {
+      "id": "sharoushi-2025-annual-kenpo-q4",
+      "sha256": "9f8c32bd6f092ab4a8a73b8cf0df2596e5ff2fcf2beb4760e06a81f4a67dc405"
+    },
+    {
+      "id": "sharoushi-2025-annual-kenpo-q5",
+      "sha256": "008c89fc444a875a9c6844daa7354a91881968435ee55104919986774e02b121"
+    },
+    {
+      "id": "sharoushi-2025-annual-kenpo-q6",
+      "sha256": "087c3dffe64e9c275d8453fa79516ca1eaad9cb756433e9e2d938aa6cd89ecf2"
+    },
+    {
+      "id": "sharoushi-2025-annual-kenpo-q7",
+      "sha256": "a56cad7f5e03081391f0f632f274e225a85b649f77c733f1ffd78a3d8cbb423b"
+    },
+    {
+      "id": "sharoushi-2025-annual-kenpo-q9",
+      "sha256": "24f66f209f70b4488be70120c77bd3132eff10750043ec1a7a83e2fb36217329"
+    },
+    {
+      "id": "sharoushi-2025-annual-kounen-q1",
+      "sha256": "47b6e06864942b98e2f044c45547d09128ae18c27bc63bc25d5ae34e7799b37d"
+    },
+    {
+      "id": "sharoushi-2025-annual-kounen-q7",
+      "sha256": "1fd34f07723bff9c037c62c3d89dd4e129337958e0c3f0debdd8c79b87a4a46f"
+    },
+    {
+      "id": "sharoushi-2025-annual-koyou-q4",
+      "sha256": "5dc14cda7de78998704a8a07fddc9b1979ac704986aee6a9797c86df477394ea"
+    },
+    {
+      "id": "sharoushi-2025-annual-koyou-q9",
+      "sha256": "88fcb368435566078600ceb0d8b9283df151e37b4d59268c4f40d841f066e6fa"
+    },
+    {
+      "id": "sharoushi-2025-annual-rousai-q10",
+      "sha256": "984ce306b9c1392d5a6bc9ddc5f460f513a5852b34321217ddf1722db5676f82"
+    },
+    {
+      "id": "sharoushi-2025-annual-rousai-q3",
+      "sha256": "0878f81d1dcd15882143c0cfaa9aabcffdb4a3879dd13617c1b0ef2b2adb704c"
+    },
+    {
+      "id": "sharoushi-2025-annual-rousai-q4",
+      "sha256": "516b3491b0bce199c3fc407eb6c051d1ac2fe572be0ae31278bd93c01c8d8246"
+    },
+    {
+      "id": "sharoushi-2025-annual-rousai-q5",
+      "sha256": "081b78f098558deff8f1cb87ada0cfa3cb1d85eff855c4d7b9d810f37e7b1de9"
+    },
+    {
+      "id": "sharoushi-2025-annual-rousai-q6",
+      "sha256": "d56fadb7276d2505b8e7869a21d32905f5966c3b022628b8e1dd3ffa91fbdd3f"
+    },
+    {
+      "id": "sharoushi-2025-annual-rousai-q7",
+      "sha256": "13b02b14df91fac2956c71858fc5d3076be3c34ae7d64d7e82fe098779a179be"
+    },
+    {
+      "id": "sharoushi-2025-annual-rousai-q9",
+      "sha256": "96cc364737af2176fbb7172da063da64107db49ed8fdbddb2cd550fbfa845fcd"
+    },
+    {
+      "id": "sharoushi-2026-annual-gakka-q1",
+      "sha256": "8f7e5209533847025fe3866cc330c7ecf03767b0fd3524c01ceef5261216f45f"
+    },
+    {
+      "id": "sharoushi-2026-annual-gakka-q10",
+      "sha256": "6145eef176d0d6be900111e49dd78e61ea1115b989b541e698c40027fd5ab306"
+    },
+    {
+      "id": "sharoushi-2026-annual-gakka-q3",
+      "sha256": "be431ed6475a25d40959579f3fe7fc5a176648d0e99c8d820a235617734955e4"
+    },
+    {
+      "id": "sharoushi-2026-annual-gakka-q4",
+      "sha256": "f5071704ba8537d8c5060b14fe1751eccfa865ab136cee75a65f2e7814b82971"
+    },
+    {
+      "id": "sharoushi-2026-annual-gakka-q5",
+      "sha256": "50a18cfc8b5168499dff2f0e46a0bc53d48bcf6cdc1eb1ad989f641a136ec68e"
+    },
+    {
+      "id": "sharoushi-2026-annual-gakka-q6",
+      "sha256": "3b34e6580865c36d350a99ba27bb49fd49b4deba4bd6c23fdb64ad92e22fe784"
+    },
+    {
+      "id": "sharoushi-2026-annual-gakka-q8",
+      "sha256": "077c8c28c7b077ec4501fdc8b983c335860b82d271b546ba5726f5bc6c68a7b9"
+    },
+    {
+      "id": "sharoushi-2026-annual-gakka-q9",
+      "sha256": "dd37bf0048c9cd77c1a3ab5fbf72863932e7702f9fdd5860ebe5f680614fa6d4"
+    },
+    {
+      "id": "sharoushi-2026-annual-ippan-q1",
+      "sha256": "b99b5aa59a5f685ea526f12b7abe2eb569e6ad08c39f76ea22d1e817f464ef69"
+    },
+    {
+      "id": "sharoushi-2026-annual-ippan-q2",
+      "sha256": "525465a992dcbd640f836c1eddc900c2594c68bd3342f67e9fb61344d580e911"
+    },
+    {
+      "id": "sharoushi-2026-annual-ippan-q3",
+      "sha256": "558f4d077ceb970f6dca1952e4e956f16519862b7a68663768c04e65688ece47"
+    },
+    {
+      "id": "sharoushi-2026-annual-kenpo-q2",
+      "sha256": "769e7c9f20ba0c83cf99029ce721d9811e5e4001ccc8eaba85b6bb28958ad812"
+    },
+    {
+      "id": "sharoushi-2026-annual-kenpo-q3",
+      "sha256": "12576e2cd1a760a148f98df69c9de584917d1ba779fbdba97e53d6fb271254c1"
+    },
+    {
+      "id": "sharoushi-2026-annual-kenpo-q5",
+      "sha256": "23f718ccce6c2207c0362f2e802730a92cd62d1760fb184cae40506f5086be03"
+    },
+    {
+      "id": "sharoushi-2026-annual-kenpo-q6",
+      "sha256": "820b614582e12708dbf606b019c08485c92cd8e41482295b01158a1636aae14e"
+    },
+    {
+      "id": "sharoushi-2026-annual-kenpo-q7",
+      "sha256": "34b54232529a1395bfb8197c43286c1041cf1dd0151c73faeb11c93882d51a42"
+    },
+    {
+      "id": "sharoushi-2026-annual-kenpo-q8",
+      "sha256": "53d577ad391f3ce35e4bc3c9c32174d0c268658205d9521777effd6840c705cb"
+    },
+    {
+      "id": "sharoushi-2026-annual-kenpo-q9",
+      "sha256": "81aa98a94136f74ad380a02f57c4c54fabb065f940431d7db656b3f163b2c539"
+    },
+    {
+      "id": "sharoushi-2026-annual-kounen-q1",
+      "sha256": "4e225b3bdaecf15b4a73a57f5e6c2696a614349cf8a293c27ba712543378cbca"
+    },
+    {
+      "id": "sharoushi-2026-annual-kounen-q3",
+      "sha256": "b28b50edb1020bf1b86b11c34c111cc6108d7aee5ed9c552f5f6764a68ce9746"
+    },
+    {
+      "id": "sharoushi-2026-annual-kounen-q5",
+      "sha256": "edf4e3461a91a44cf61a00a159291f79b04f25e47a2f84389d3e7fb9d6c13f1d"
+    },
+    {
+      "id": "sharoushi-2026-annual-koyou-q2",
+      "sha256": "3cbd4c09c1d135e37dc5ad864c32a0c7f4452a15c3fe6066db9eafd98742b22b"
+    },
+    {
+      "id": "sharoushi-2026-annual-koyou-q5",
+      "sha256": "9b9746b958131130496646f1e66d53ebdb9d2399df79fec210a451f8340ae966"
+    },
+    {
+      "id": "sharoushi-2026-annual-koyou-q6",
+      "sha256": "2d58ee728222ac4dda02ff2e0ec5565b05024e4096feb6b9e97b699ca517eed0"
+    },
+    {
+      "id": "sharoushi-2026-annual-koyou-q7",
+      "sha256": "aa92811a6053af3e4211142b3668a5496ddf8390a03193e19d96d68fe71565cb"
+    },
+    {
+      "id": "sharoushi-2026-annual-koyou-q9",
+      "sha256": "ffe4adec94e36110c1df0407ad58e21f5268b53bfb3c71a5a8477e8819746acc"
+    },
+    {
+      "id": "sharoushi-2026-annual-rousai-q10",
+      "sha256": "6b1f932740a0804fc9e742a80df33d488130e61ecfea6a3a0354610fe119cf71"
+    },
+    {
+      "id": "sharoushi-2026-annual-rousai-q2",
+      "sha256": "a35165562cd8d196c3f35112fa2e0944cf8066be4a5e0b7a5ca8993ee81efd40"
+    },
+    {
+      "id": "sharoushi-2026-annual-rousai-q3",
+      "sha256": "9744d7eab5835b91d072c1b5240dce3ef396e39a0ba1b8b472244b03eed5c8a5"
+    },
+    {
+      "id": "sharoushi-2026-annual-rousai-q4",
+      "sha256": "1faff9531800e6722931ee4d12d1a77b31367253a109e1ed5c7170a2bdddbf09"
+    },
+    {
+      "id": "sharoushi-2026-annual-rousai-q5",
+      "sha256": "151a0f70ad314527f8f77281d57dddb8747395a8f69ad958026c1adb728833a1"
+    },
+    {
+      "id": "sharoushi-2026-annual-rousai-q8",
+      "sha256": "b2943ba93e39f2f94f38ef5f90baeb6831ca365f68f2eff97b93a55d69cb9a70"
+    },
+    {
+      "id": "sharoushi-2026-annual-rousai-q9",
+      "sha256": "41ac075e23231d276dc0754be112ba32227342b5cc73639d9b7b9366183e893b"
+    }
+  ],
+  "previousMcSourceFileHashes": [
+    {
+      "path": "data/questions/sharoushi/2025-annual.json",
+      "sha256": "7ed05043bf1778ba332c1ed79ee3b035c8f52e0718d9aefade6a191c5cb97656"
+    },
+    {
+      "path": "data/questions/sharoushi/2026-annual.json",
+      "sha256": "d3f5cf0d257ef89f551d5c5df0539b4ede9f0ba2c0554ef987a2572be79c20e9"
+    },
+    {
+      "path": "data/questions/sharoushi/ippan-2025-annual.json",
+      "sha256": "7ac2e05d61997a47b0780d0468f58a81bd6b740ea7166639d1eca88bc6170e1c"
+    },
+    {
+      "path": "data/questions/sharoushi/ippan-2026-annual.json",
+      "sha256": "f82ed34bc8f054dcbbe70b86065ca23a34f494d826a5999691d351baedcc467b"
+    },
+    {
+      "path": "data/questions/sharoushi/kenpo-2025-annual.json",
+      "sha256": "4ecb50b068c7b67303b3318b2799ba8ae5a066f4f0689a5b4afabfc773edd887"
+    },
+    {
+      "path": "data/questions/sharoushi/kenpo-2026-annual.json",
+      "sha256": "e9581de3befa4ee37d17b5e2880eabf5eb177c1de2caec0b762ff4313c8ef3b0"
+    },
+    {
+      "path": "data/questions/sharoushi/kounen-2025-annual.json",
+      "sha256": "967f19f22cc1fbc30579156004be8d7e09861ccd9e2d4166dbf8e362758fae4f"
+    },
+    {
+      "path": "data/questions/sharoushi/kounen-2026-annual.json",
+      "sha256": "cbbecf6cd814006c16ef2881399a4da18325ec20a329d6417f058eef7631fefb"
+    },
+    {
+      "path": "data/questions/sharoushi/koyou-2025-annual.json",
+      "sha256": "2994aa7566a33a3e2f7c9b90d4ced6bbeac0ef08fd93930692008f8aefbb08a3"
+    },
+    {
+      "path": "data/questions/sharoushi/koyou-2026-annual.json",
+      "sha256": "a24f3a15bab40e2ae0f8720a7fe80f105045a139334a4af729e6602f6cf883bd"
+    },
+    {
+      "path": "data/questions/sharoushi/rousai-2025-annual.json",
+      "sha256": "aabcf10aed72c0afcdf14831cf70d941c81192fb05c543ef00b16241da4756c8"
+    },
+    {
+      "path": "data/questions/sharoushi/rousai-2026-annual.json",
+      "sha256": "27ec38cb5331b16bc684c20589b88c97d30116743bc8d19a26b5ef13e1d39b86"
+    }
+  ],
+  "added": [
+    {
+      "sourceId": "sharoushi-2025-ippan-q09",
+      "id": "sharoushi-2025-annual-ippan-q9",
+      "year": 2025,
+      "session": "ippan",
+      "qNumber": 9,
+      "officialKey": "A",
+      "sourceFile": "sharoushi-ippan20-public/targeted-legal-three-sonnet/READY-THREE-GO-CANDIDATE.json",
+      "sourceSha256": "d71bfc75747c2b8dd0d741b045eed26e96a9b24b450facd1451bcb8eb4ca6410",
+      "siteObjectSha256": "7636dbba1451982f7bd38a3a0cd64eba85d70279a6b5ebde0ee71196158ca356"
+    },
+    {
+      "sourceId": "sharoushi-2025-kenpo-q10",
+      "id": "sharoushi-2025-annual-kenpo-q10",
+      "year": 2025,
+      "session": "kenpo",
+      "qNumber": 10,
+      "officialKey": "B",
+      "sourceFile": "sharoushi-kenpo20-public/targeted-2025-q10-d-supplement-20261010/TARGETED-CANDIDATE.json",
+      "sourceSha256": "55bb83338b8d878feb86e223d0c79b2b37538a304599d288d4078c75d4bb0640",
+      "siteObjectSha256": "8402cd19397c6e3a0371016978bab0ce8c7557849d73cfb5398141c6311ea693"
+    },
+    {
+      "sourceId": "sharoushi-2025-kenpo-q08",
+      "id": "sharoushi-2025-annual-kenpo-q8",
+      "year": 2025,
+      "session": "kenpo",
+      "qNumber": 8,
+      "officialKey": "E",
+      "sourceFile": "sharoushi-kenpo20-public/targeted-2025-q08-d-correction-20261010/TARGETED-CANDIDATE.json",
+      "sourceSha256": "7fb5c4c60d505d23fe6c990b069a30fcccddd47b62875701f95ad9f45d195926",
+      "siteObjectSha256": "be5cb86a60b6bd8d005199d936df4f6f370e7dd9eb99dca2b46951de76bb6f22"
+    },
+    {
+      "sourceId": "sharoushi-2025-kokunen-q01",
+      "id": "sharoushi-2025-annual-kokunen-q1",
+      "year": 2025,
+      "session": "kokunen",
+      "qNumber": 1,
+      "officialKey": "B",
+      "sourceFile": "sharoushi-kokunen20-public/targeted-2025-q01-q08-q10-2026-q08-20261010/TARGETED-CANDIDATE.json",
+      "sourceSha256": "67b9cf0e6c8ee4f97a29f0be62e5d77983ff27b9ecddb7a80831ce9e0bd97288",
+      "siteObjectSha256": "abe27359e3f2c169b4a7d1c147180a837dbaf6c8b2d2b701e947098dfc53c8a2"
+    },
+    {
+      "sourceId": "sharoushi-2025-kokunen-q10",
+      "id": "sharoushi-2025-annual-kokunen-q10",
+      "year": 2025,
+      "session": "kokunen",
+      "qNumber": 10,
+      "officialKey": "E",
+      "sourceFile": "sharoushi-kokunen20-public/targeted-2025-q01-q08-q10-2026-q08-20261010/TARGETED-CANDIDATE.json",
+      "sourceSha256": "67b9cf0e6c8ee4f97a29f0be62e5d77983ff27b9ecddb7a80831ce9e0bd97288",
+      "siteObjectSha256": "31b97ac6594aaa8d7f15cd5ba6540139fe144e7f96d55af262aebbb732e045a6"
+    },
+    {
+      "sourceId": "sharoushi-2025-kokunen-q08",
+      "id": "sharoushi-2025-annual-kokunen-q8",
+      "year": 2025,
+      "session": "kokunen",
+      "qNumber": 8,
+      "officialKey": "C",
+      "sourceFile": "sharoushi-kokunen20-public/targeted-2025-q01-q08-q10-2026-q08-20261010/TARGETED-CANDIDATE.json",
+      "sourceSha256": "67b9cf0e6c8ee4f97a29f0be62e5d77983ff27b9ecddb7a80831ce9e0bd97288",
+      "siteObjectSha256": "a85eae5887e0c09262a1a184b6128bba62a5c066e39f4eafdfa2fad2fec61d98"
+    },
+    {
+      "sourceId": "sharoushi-2025-kounen-q10",
+      "id": "sharoushi-2025-annual-kounen-q10",
+      "year": 2025,
+      "session": "kounen",
+      "qNumber": 10,
+      "officialKey": "D",
+      "sourceFile": "sharoushi-kounen20-public/targeted-primary/2025-q10-dated-go-delta.json",
+      "sourceSha256": "3ec1be3bcf205db636e514896a1316e6ac07380d67577acb356f4a55f8ada7f7",
+      "siteObjectSha256": "3ee1ba367415160c27d8a236ed7cc95a96fd0d4f132b148ffe4d66f17212df44"
+    },
+    {
+      "sourceId": "sharoushi-2025-kounen-q02",
+      "id": "sharoushi-2025-annual-kounen-q2",
+      "year": 2025,
+      "session": "kounen",
+      "qNumber": 2,
+      "officialKey": "E",
+      "sourceFile": "sharoushi-kounen20-public/targeted-primary/2025-q02-go-delta.json",
+      "sourceSha256": "5fde0e04d17bd4d277e6a81c1c212e267d426c7fbed49d706289351ce5278070",
+      "siteObjectSha256": "b7cc52e67bd3547a04b03ff72849222f730966a1a614dad5ed1991677837a4e3"
+    },
+    {
+      "sourceId": "sharoushi-2025-kounen-q03",
+      "id": "sharoushi-2025-annual-kounen-q3",
+      "year": 2025,
+      "session": "kounen",
+      "qNumber": 3,
+      "officialKey": "B",
+      "sourceFile": "sharoushi-kounen20-public/targeted-primary/2025-q03-be-direct-go-delta.json",
+      "sourceSha256": "1530643eb209a83459deb936d80fc1de9ac2f06f15af08268ce1dafe458dbd97",
+      "siteObjectSha256": "9ee350aca5c74db0f00be6b1393a873399385754a0f3195b336e586073039ea4"
+    },
+    {
+      "sourceId": "sharoushi-2025-kounen-q04",
+      "id": "sharoushi-2025-annual-kounen-q4",
+      "year": 2025,
+      "session": "kounen",
+      "qNumber": 4,
+      "officialKey": "C",
+      "sourceFile": "sharoushi-kounen20-public/targeted-primary/2025-q04-dated-go-delta.json",
+      "sourceSha256": "8cc8f8a73976242cbc0038cd9a8dd8e3cd796c45796377c5ec547057e2dc5ac0",
+      "siteObjectSha256": "9e547795cbc0def00e8fb577c933027c5265eb34451fc7ef699ba48d41ee00da"
+    },
+    {
+      "sourceId": "sharoushi-2025-kounen-q05",
+      "id": "sharoushi-2025-annual-kounen-q5",
+      "year": 2025,
+      "session": "kounen",
+      "qNumber": 5,
+      "officialKey": "D",
+      "sourceFile": "sharoushi-kounen20-public/targeted-primary/2025-q05-a-supplement-go-delta.json",
+      "sourceSha256": "7a68df3cba5ed2ac46f17f7ea37b6114f5479b219cfb1719fe12a3cfb34a0d71",
+      "siteObjectSha256": "03995a8dae9ee4b7ff80b524d976ee206a0b47f40d582222f9e4e58245c27bfa"
+    },
+    {
+      "sourceId": "sharoushi-2025-koyou-q03",
+      "id": "sharoushi-2025-annual-koyou-q3",
+      "year": 2025,
+      "session": "koyou",
+      "qNumber": 3,
+      "officialKey": "B",
+      "sourceFile": "sharoushi-koyou20-public/local-2025-q03-GO-candidate.json",
+      "sourceSha256": "19196afba017efc991e24cf0551e3fca5e2b3620cb537aaa954e5b9056354790",
+      "siteObjectSha256": "82126503c51c10ef969be2ddcc136957a0b4e3efa04ca9d4ec75ebcd133a66e3"
+    },
+    {
+      "sourceId": "sharoushi-2026-ippan-q10",
+      "id": "sharoushi-2026-annual-ippan-q10",
+      "year": 2026,
+      "session": "ippan",
+      "qNumber": 10,
+      "officialKey": "D",
+      "sourceFile": "sharoushi-ippan20-public/targeted-legal-three-sonnet/READY-THREE-GO-CANDIDATE.json",
+      "sourceSha256": "d71bfc75747c2b8dd0d741b045eed26e96a9b24b450facd1451bcb8eb4ca6410",
+      "siteObjectSha256": "8ed8cbc558d58aaf0c0a088d65c62f18e6c77ec0e45e5cc761ebb3d52e386d5f"
+    },
+    {
+      "sourceId": "sharoushi-2026-ippan-q07",
+      "id": "sharoushi-2026-annual-ippan-q7",
+      "year": 2026,
+      "session": "ippan",
+      "qNumber": 7,
+      "officialKey": "D",
+      "sourceFile": "sharoushi-ippan20-public/targeted-legal-three-sonnet/READY-THREE-GO-CANDIDATE.json",
+      "sourceSha256": "d71bfc75747c2b8dd0d741b045eed26e96a9b24b450facd1451bcb8eb4ca6410",
+      "siteObjectSha256": "9c1dd1e9ae4dad4ff0ae536df224006d9bdb1f894836837deef99a2f3b5e59f3"
+    },
+    {
+      "sourceId": "sharoushi-2026-kenpo-q01",
+      "id": "sharoushi-2026-annual-kenpo-q1",
+      "year": 2026,
+      "session": "kenpo",
+      "qNumber": 1,
+      "officialKey": "D",
+      "sourceFile": "sharoushi-kenpo20-public/targeted-2026-q01-scope-reconciliation-20261010/TARGETED-CANDIDATE.json",
+      "sourceSha256": "b3b0d3439a9f3134ca130c2badc6b755acdd97db79699358dd50d1d4df5b1dda",
+      "siteObjectSha256": "91f568e5daf40ed1d9fa933486c422510d5cd71297d72d8136b57d1aae9ac81d"
+    },
+    {
+      "sourceId": "sharoushi-2026-kenpo-q10",
+      "id": "sharoushi-2026-annual-kenpo-q10",
+      "year": 2026,
+      "session": "kenpo",
+      "qNumber": 10,
+      "officialKey": "A",
+      "sourceFile": "sharoushi-kenpo20-public/targeted-2026-q10-c-supplement-20261010/TARGETED-CANDIDATE.json",
+      "sourceSha256": "feccb6f5abb3fac9ee899af429903e520146cf5acd0cd97fcd3787b183d3b179",
+      "siteObjectSha256": "b6794571381efbc6f7284f2aaaa47ce7ec2b2c4cd2181e3e440b336aaa8b07f8"
+    },
+    {
+      "sourceId": "sharoushi-2026-kenpo-q04",
+      "id": "sharoushi-2026-annual-kenpo-q4",
+      "year": 2026,
+      "session": "kenpo",
+      "qNumber": 4,
+      "officialKey": "E",
+      "sourceFile": "sharoushi-kenpo20-public/targeted-2026-q04-ad-supplement-20261010/TARGETED-CANDIDATE.json",
+      "sourceSha256": "829f6a4011a2fe67d837d428eb86995e098459391144e9fe3c51beedfa7fe318",
+      "siteObjectSha256": "46120fbc21b7c740647f428e90a874fb543dca68a73b4192329e37fdfbbe271a"
+    },
+    {
+      "sourceId": "sharoushi-2026-kokunen-q08",
+      "id": "sharoushi-2026-annual-kokunen-q8",
+      "year": 2026,
+      "session": "kokunen",
+      "qNumber": 8,
+      "officialKey": "D",
+      "sourceFile": "sharoushi-kokunen20-public/targeted-2025-q01-q08-q10-2026-q08-20261010/TARGETED-CANDIDATE.json",
+      "sourceSha256": "67b9cf0e6c8ee4f97a29f0be62e5d77983ff27b9ecddb7a80831ce9e0bd97288",
+      "siteObjectSha256": "65d71f52c5e337864c986a85d7888434f6cf343aa28375136201778694a2af8f"
+    },
+    {
+      "sourceId": "sharoushi-2026-kounen-q10",
+      "id": "sharoushi-2026-annual-kounen-q10",
+      "year": 2026,
+      "session": "kounen",
+      "qNumber": 10,
+      "officialKey": "E",
+      "sourceFile": "sharoushi-kounen20-public/targeted-primary/2026-q10-de-age-amount-go-delta.json",
+      "sourceSha256": "b6222ab7a8632bd4ffb4c895df06e75a8b034b2b184d85e8ea36d119ee02006d",
+      "siteObjectSha256": "69d90766cd84f2387f0a941fcd5ac77e6b40d0f5320b30e05e27459fb7d6162a"
+    },
+    {
+      "sourceId": "sharoushi-2026-kounen-q02",
+      "id": "sharoushi-2026-annual-kounen-q2",
+      "year": 2026,
+      "session": "kounen",
+      "qNumber": 2,
+      "officialKey": "B",
+      "sourceFile": "sharoushi-kounen20-public/targeted-primary/2026-q02-ab-supplement-go-delta.json",
+      "sourceSha256": "4ac2025a92d7c60932a2e396b4eaa7f2e3253c0c227c6a446e693579becf8b7f",
+      "siteObjectSha256": "9fb11cdee3b2c14881bf849daa9d78b0bd6ce94c39d335d52b8b511bf946511e"
+    },
+    {
+      "sourceId": "sharoushi-2026-kounen-q06",
+      "id": "sharoushi-2026-annual-kounen-q6",
+      "year": 2026,
+      "session": "kounen",
+      "qNumber": 6,
+      "officialKey": "D",
+      "sourceFile": "sharoushi-kounen20-public/targeted-primary/2026-q06-a-decree-go-delta.json",
+      "sourceSha256": "f43760454d291b438c701da964e3a388cdac2ed6813796185d7b71f1a377433d",
+      "siteObjectSha256": "9ff2d346643509a7ebd0a333f68b5d45dc840d67a8311b726cb8031b22e35ae0"
+    },
+    {
+      "sourceId": "sharoushi-2026-kounen-q07",
+      "id": "sharoushi-2026-annual-kounen-q7",
+      "year": 2026,
+      "session": "kounen",
+      "qNumber": 7,
+      "officialKey": "C",
+      "sourceFile": "sharoushi-kounen20-public/targeted-primary/2026-q07-go-delta.json",
+      "sourceSha256": "e53e220ed2cf4fc63ba0926fbf653300e028b893ddee47739dc8e4e382e1fcfd",
+      "siteObjectSha256": "fb62ef6be02d0e1effc2f18d41f889ebc5f0d7466252f9cb5c06125393c0687e"
+    },
+    {
+      "sourceId": "sharoushi-2026-kounen-q08",
+      "id": "sharoushi-2026-annual-kounen-q8",
+      "year": 2026,
+      "session": "kounen",
+      "qNumber": 8,
+      "officialKey": "B",
+      "sourceFile": "sharoushi-kounen20-public/targeted-primary/2026-q08-go-delta.json",
+      "sourceSha256": "1ab367c4ddb634a5e3cc89679cdfdeffcf1a3f5a7188261fc9015b2d2da79282",
+      "siteObjectSha256": "62dd1a7f5528a25e71d706f9fa994ee0b297ba9d4614e5a850eaaaf63bc7e105"
+    },
+    {
+      "sourceId": "sharoushi-2026-kounen-q09",
+      "id": "sharoushi-2026-annual-kounen-q9",
+      "year": 2026,
+      "session": "kounen",
+      "qNumber": 9,
+      "officialKey": "A",
+      "sourceFile": "sharoushi-kounen20-public/targeted-primary/2026-q09-complete-sourcequeue-go-delta.json",
+      "sourceSha256": "341ed88d71848e327835852d0ec8edcb19870c95e0862a9b5d848ecd7bd7581a",
+      "siteObjectSha256": "e5a2ecb268096d5e7b76509fa4529d7e52852f22d9dc697e633fbdb77cba41c2"
+    }
+  ],
+  "skippedPublishedCandidateIds": [
+    "sharoushi-2025-annual-kenpo-q1",
+    "sharoushi-2025-annual-kenpo-q3",
+    "sharoushi-2025-annual-kenpo-q4",
+    "sharoushi-2025-annual-kenpo-q5",
+    "sharoushi-2025-annual-kenpo-q6",
+    "sharoushi-2025-annual-kenpo-q7",
+    "sharoushi-2025-annual-kenpo-q9",
+    "sharoushi-2025-annual-kounen-q1",
+    "sharoushi-2025-annual-kounen-q7",
+    "sharoushi-2026-annual-kenpo-q2",
+    "sharoushi-2026-annual-kenpo-q3",
+    "sharoushi-2026-annual-kenpo-q5",
+    "sharoushi-2026-annual-kenpo-q6",
+    "sharoushi-2026-annual-kenpo-q7",
+    "sharoushi-2026-annual-kenpo-q8",
+    "sharoushi-2026-annual-kenpo-q9",
+    "sharoushi-2026-annual-kounen-q1",
+    "sharoushi-2026-annual-kounen-q3",
+    "sharoushi-2026-annual-kounen-q5"
+  ],
+  "inputManifestFiles": [
+    {
+      "path": "sharoushi-kenpo20-public/targeted-2025-q10-d-supplement-20261010/READY19-MANIFEST.json",
+      "sha256": "c5abe238f809ffa02f42767f0b68e11c8d50316f673517c32538960303a3dde2"
+    },
+    {
+      "path": "sharoushi-kounen20-public/targeted-primary/READY-4-GO-20261010.json",
+      "sha256": "57bad7d8cf352a56c3418fac74786a0501fa478cc9adf6777e42d9b48872500f"
+    },
+    {
+      "path": "sharoushi-kounen20-public/SOURCE-PACKET.json",
+      "sha256": "8135a03c81450f367b2e5a46ebbdf12c14832ded74ebd102f0aef3b590cbb9e9"
+    },
+    {
+      "path": "sharoushi-koyou20-public/local-2025-q03-GO-candidate.json",
+      "sha256": "19196afba017efc991e24cf0551e3fca5e2b3620cb537aaa954e5b9056354790"
+    },
+    {
+      "path": "sharoushi-ippan20-public/targeted-legal-three-sonnet/READY-THREE-GO-CANDIDATE.json",
+      "sha256": "d71bfc75747c2b8dd0d741b045eed26e96a9b24b450facd1451bcb8eb4ca6410"
+    },
+    {
+      "path": "sharoushi-kokunen20-public/targeted-2025-q01-q08-q10-2026-q08-20261010/TARGETED-CANDIDATE.json",
+      "sha256": "67b9cf0e6c8ee4f97a29f0be62e5d77983ff27b9ecddb7a80831ce9e0bd97288"
+    }
+  ],
+  "heldExcluded": [
+    "sharoushi-2025-koyou-q01",
+    "sharoushi-2026-ippan-q09",
+    "sharoushi-2025-kenpo-q02"
+  ],
+  "newLlmRequests": 0,
+  "pushOrPr": false
+}

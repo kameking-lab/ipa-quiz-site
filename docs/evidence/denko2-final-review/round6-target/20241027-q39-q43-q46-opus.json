@@ -1,0 +1,52 @@
+{
+  "schemaVersion": 1,
+  "reviewModel": "claude-opus-5-5",
+  "inputHashes": {
+    "reviewedSha256": {
+      "39": "e0ab6df71467a0e905823a6da78346c082dbc28a196d202f3db328ed2e0d7d43",
+      "43": "2cd1ac4ae99d1d37b548d6b11a0f8a29902d7958384841e559c2e35475edf20c",
+      "46": "daad92406f7b6ddbd7475052eaa1c9e937c79e5d7af91610ad809bfa4223f206"
+    },
+    "rowSha256": {
+      "39": "9e22d0df496cd762e69844341600223855d3009fc7bde500cdd00f21cb60cc28",
+      "43": "e194236db9bc347e8821cbaa5ad8385859d9ea46f90f08a4402b4520a5311cf8",
+      "46": "812227c44f30b5dcd7566477f417199547b6adeeab5af68669fcd4d607c27c3e"
+    }
+  },
+  "assessment": [
+    {
+      "number": 39,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "visualIssues": [],
+      "lawIssues": []
+    },
+    {
+      "number": 43,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [
+        "総合解説で2階から1階へ下りる部分を「立下り」と呼んでいるが、これは配線用図記号(JIS C 0303)の名称ではない。2階側から見て下の階へ向かう記号の名称は「引下げ」で、diagramDescriptionも「引下げ」と書いているため、解説と説明文で呼び方が食い違っている。総合解説も「引下げ」に統一すること(1階側の記号⑯は「立上り」で、Q46の記述と揃う)。"
+      ],
+      "visualIssues": [],
+      "lawIssues": []
+    },
+    {
+      "number": 46,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [
+        "総合解説とハ・ニの肢別理由は、問題冊子の注意書きを「特記のない屋内配線はVVFケーブルによるケーブル工事による」と言い換えている。しかし、この注意書きがある頁は今回渡された原本(15頁配線図・設問行画像)に含まれておらず、文言を照合できない。工場・動力盤を含む配線図の回では、注意書きが「動力回路及び特記のある場合を除きVVF」のように動力回路を別扱いにしている場合があり、今の言い換えは不正確になるおそれがある。問題冊子の注意書きを逐語で引用し、⑯が電灯回路(L-2の回路c)であるためVVFに当たる、という形で理由付けを書き直すこと。正答ハの結論は変わらない。"
+      ],
+      "visualIssues": [],
+      "lawIssues": []
+    }
+  ]
+}

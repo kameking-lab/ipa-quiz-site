@@ -1,0 +1,70 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20240818",
+  "subject": "theory",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 4259,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 14471,
+      "webSearchRequests": 0,
+      "costUSD": 0.2012118,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 2718,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "2e26fb805ef53d955ea4c04dcd42cf3364359ae131800d7475b0639546809249",
+  "inputRequestSha256": "f2bde4178075ecfce47a3af66a2b0e1a8c57544e3009ee4eefe0d8abc842ab7f",
+  "inputHashes": {
+    "candidateSha256": {
+      "q05": "e5a111ebaad238fe00db1a34c08af786c17e5fc3f8fa931cdb693159e3e48c67"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20240818/theory/p09.png": "6865b11d8b65849353e6be09a4f74a34350692de15850f0692023d5441e758e0"
+    },
+    "figureSha256": {
+      "public/images/denken3/20240818/theory/20240818-theory-q05-circuit.png": "3f0a086e94e0b2a514a6089de626e086c5f1e96f16674c7862f2a68889a2610a"
+    },
+    "sourceQuestionPdfSha256": "236be905e93a023cf3c65c1e22c45c24dc42b910151c51f8ed023247793d1d29",
+    "sourceAnswerPdfSha256": "f72ecbc3a477e64948388b69cf78cb931032c9f0c688639836c8d533a949cd0f",
+    "officialAnswerUnitsSha256": "3ddabaf180f237f7f2d69e951425a938e262cb6fe8b89a22c0605baed5e35375",
+    "referencePdfSha256": {},
+    "referencePageSha256": {},
+    "referenceJsonSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q05",
+      "questionNumber": 5,
+      "part": null,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [
+        "検算段落の節点Aの式が、表示どおりの丸め値では0になっていない。−0.667 + 0.833 − 0.167 を計算すると −0.001 であり、『= 0 ✓』と書くのは数値として誤り。厳密値で書くべきである：(100/3−60)/40 + (100/3)/40 + (100/3−35)/10 = −2/3 + 5/6 − 1/6 = 0。丸め値のまま残すなら『≒ 0』とする。節点Bの式（−0.75 + 0.583 + 0.167 = 0.000）は表示値でも成立する。これも厳密値 −3/4 + 7/12 + 1/6 = 0 に揃えることを推奨。本文の解（VA = 100/3 V、VB = 35 V、I_R = −1/6 A、P = 10/36 ≒ 0.2778 W）は正しく、公式正答(1)と整合する。"
+      ],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "出典：公式問題原図は冊子の頁フッタ『- 6 -』『T1−R 009』の頁で、manifestが示すPDF第9頁と一致する。候補の reviewedFromPage=[9]、fiscalYear=2024、term=upper、examDate=2024-08-18、subject=theory、問題・解答PDFのURLはいずれもmanifestと一致する。sourceAttribution『令和6年度上期…理論科目 問5』も解答表の表題『令和6年度 上期』と一致する。",
+        "問題文：原図『抵抗 R = 10 Ωで消費される電力の値[W]として，最も近いものを次の(1)～(5)のうちから一つ選べ。』と照合した。語句・記号・単位は一致しており、差異はスペースと波ダッシュの字形のみ（整形の範囲内）。",
+        "選択肢：(1)0.28、(2)1.89、(3)3.79、(4)5.36、(5)7.62。原図と全肢一致。",
+        "公式正答：解答表〈理論〉問5 = 1。manifest の正答単位 answer='1' および候補の officialAnswer='1' と一致する。",
+        "原図の接続：60 V電源の上端から上辺の40 Ωを経て節点A。節点Aから下辺へ40 Ω。AからR=10 Ωを経て節点B。節点Bから下辺へ60 Ω。Bから上辺の60 Ωを経て80 V電源の上端へ。下辺は共通線。節点の黒丸は4か所（A、B、各シャント抵抗の下端）。両電池記号とも長線が上側で、正極は上である。",
+        "独立計算：節点Aは (VA−60)/40 + VA/40 + (VA−VB)/10 = 0 から 3VA − 2VB = 30。節点Bは (VB−80)/60 + VB/60 + (VB−VA)/10 = 0 から −3VA + 4VB = 40。これを解くと VB = 35 V、VA = 100/3 V。I_R = −1/6 A（向きはB→A）、P = 10/36 ≒ 0.278 W で、(1)0.28に最も近い。",
+        "誤答肢の必要電流を検算した：√(0.189) = 0.435 A、√(0.379) = 0.616 A、√(0.536) = 0.732 A、√(0.762) = 0.873 A。いずれも候補の記載と一致し、実際の1/6 Aと矛盾するという各肢固有の理由として成立する。",
+        "公開候補図 20240818-theory-q05-circuit.png：原図の回路部分を欠落なく切り出している。全ラベル（60 V、40 Ω、40 Ω、R=10 Ω、60 Ω、60 Ω、80 V）、4つの節点黒丸、両電源の長線・短線（上側が正極）が判読できる。この図だけで解答に必要な情報がそろう。",
+        "figureDescription：接続・極性・共通負極線の記述は原図と一致する。",
+        "officialReferenceUrls は空で、検証を要する外部の独立主張はない。"
+      ]
+    }
+  ]
+}

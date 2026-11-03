@@ -1,3 +1,5 @@
+// TEST ONLY corpus injection: retain generic grading/provider/cost contracts, not public availability.
+vi.mock("@/lib/afternoon/load", async () => await import("@/__tests__/fixtures/archived-afternoon-load"));
 import { describe, it, expect, vi, beforeEach, afterEach } from "vitest";
 
 /**
@@ -97,7 +99,7 @@ describe("コスト計上はレスポンス完了前に永続化を終える", (
     stubStream(
       JSON.stringify({
         totalScore: 80,
-        subResults: [{ label: "設問1", score: 16, goodPoints: [], improvements: [] }],
+        subResults: ["設問1", "設問2", "設問3", "設問4"].map(label => ({label, score: 20, goodPoints: [], improvements: []})),
         overallComment: "ok",
       }),
     );
@@ -123,7 +125,7 @@ describe("コスト計上はレスポンス完了前に永続化を終える", (
 
   it("/api/essay-grade — レスポンス返却時点で recordAiCost が解決済み", async () => {
     const pending = installPendingRecord();
-    stubStream("これは JSON ではないので簡易採点へフォールバックするが、課金は発生している。");
+    stubStream("これはJSONではないので評価不能だが、呼出し使用量は計上する。");
     const { POST } = await import("@/app/api/essay-grade/route");
 
     const res = await POST(
@@ -141,49 +143,11 @@ describe("コスト計上はレスポンス完了前に永続化を終える", (
         }),
       }),
     );
-    expect(res.status).toBe(200);
+    expect(res.status).toBe(503);
     await drain(res);
 
     expect(recordAiCost).toHaveBeenCalledTimes(1);
     // 1 回 ¥2〜3 の最高単価経路。ここが落ちると上限が最も危険な経路を見失う。
-    expect(pending.settled()).toBe(true);
-  });
-
-  it("/api/generate-question — レスポンス返却時点で recordAiCost が解決済み", async () => {
-    const pending = installPendingRecord();
-    stubStream(
-      JSON.stringify({
-        question: "類題本文",
-        choices: { ア: "a", イ: "b", ウ: "c", エ: "d" },
-        answer: "ア",
-        explanation: "解説",
-      }),
-    );
-    const { POST } = await import("@/app/api/generate-question/route");
-
-    const res = await POST(
-      new Request("http://localhost/api/generate-question", {
-        method: "POST",
-        headers: { "content-type": "application/json", "x-forwarded-for": "10.9.0.3" },
-        body: JSON.stringify({
-          baseQuestion: {
-            id: "ap-2023h-am-q1",
-            exam: "ap",
-            category: "テクノロジ",
-            topicTags: ["アルゴリズム"],
-            question: "テスト問題本文。",
-            choices: { ア: "選択肢ア", イ: "選択肢イ", ウ: "選択肢ウ", エ: "選択肢エ" },
-            answer: "ア",
-            explanation: "解説テキスト。",
-          },
-          difficultyShift: "same",
-        }),
-      }),
-    );
-    expect(res.status).toBe(200);
-    await drain(res);
-
-    expect(recordAiCost).toHaveBeenCalledTimes(1);
     expect(pending.settled()).toBe(true);
   });
 
@@ -237,7 +201,6 @@ describe("ソースレベルの再発防止", () => {
     const ROUTES = [
       "app/api/scoring/route.ts",
       "app/api/essay-grade/route.ts",
-      "app/api/generate-question/route.ts",
       "app/api/copilot/route.ts",
     ];
     for (const rel of ROUTES) {

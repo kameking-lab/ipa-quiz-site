@@ -1,0 +1,59 @@
+```json
+{
+  "emkohyo-EM20251809-q1": {
+    "status": "FIX",
+    "textIssues": [],
+    "choiceIssues": [],
+    "reasonIssues": [
+      "肢2の理由の100keV差分「約5%」は、(1.64−1.55)/1.64≒5.5%、1.55基準では≒5.8%となる。「約5〜6%」または「約6%」とするほうが正確。",
+      "肢2の理由は、48〜208keVの3点から「40keV程度以上の光子では両者の差は1割以内」と一般化している。表の最高点は約208keVで、それより高いγ線（例: ¹³⁷Csの662keV、⁶⁰Coの1.17/1.33MeV）については数値の裏付けがない。結論の適用範囲を根拠が示す範囲に限定するか、高エネルギー側の根拠を追加する必要がある。"
+    ],
+    "sourceIssues": [
+      "肢2の根拠である原子力規制庁報告書（JIS Z 4511:2018抜粋）は、NシリーズX線の実効エネルギー33〜208keVの換算係数表にすぎない。「40keV以上のγ線及びX線」全域で差が10%以内であることを直接述べた記載ではない。γ線を含む高エネルギー域を直接支える政府資料がない。",
+      "肢4の理由の「ICRU球（直径30cm）」の直径は、提示されたATOMICA抜粋（09-04-02-05）に含まれていない。記述自体は正しいが、抜粋では裏付けられていない。"
+    ],
+    "needsExternalCheck": [
+      "「40keV以上の光子で70µm線量当量と1cm線量当量の差が10%以内」という基準を明示する一次資料（電離則関係通達、ICRP Publ.74 / ICRU換算係数表など）で、約250keV超〜MeV域のγ線も含めて成立することを確認すること。"
+    ]
+  },
+  "emkohyo-EM20251809-q2": {
+    "status": "PASS",
+    "textIssues": [],
+    "choiceIssues": [],
+    "reasonIssues": [],
+    "sourceIssues": [],
+    "needsExternalCheck": []
+  },
+  "emkohyo-EM20251809-q3": {
+    "status": "PASS",
+    "textIssues": [],
+    "choiceIssues": [],
+    "reasonIssues": [],
+    "sourceIssues": [],
+    "needsExternalCheck": []
+  },
+  "emkohyo-EM20251809-q4": {
+    "status": "FIX",
+    "textIssues": [],
+    "choiceIssues": [],
+    "reasonIssues": [
+      "肢1の理由の「2〜3%はNaI(Tl)では得られない値である」は断定が強すぎる。引用しているATOMICAは「662keVに対し通常60keV以下」（≒9%以下）という上限を示すだけで、下限は示していない。農研機構の7.1%も1台の実測値にすぎない。「一般的なNaI(Tl)の分解能（7%前後）と合わない」程度に弱めるべき。"
+    ],
+    "sourceIssues": [
+      "肢1・肢3で2〜3%を否定する根拠として、ATOMICA（通常60keV以下）は上限しか示しておらず、2〜3%を否定する直接の根拠にならない。否定を支えているのは農研機構の単一実測値（7.1%）だけである。",
+      "肢5の理由の「¹³⁷Cs（661.7keV）」の数値は、提示された政府資料抜粋に含まれていない（農研機構は「662keV」と記載）。記述は正しいが、抜粋では裏付けられていない。"
+    ],
+    "needsExternalCheck": []
+  },
+  "emkohyo-EM20251809-q5": {
+    "status": "FIX",
+    "textIssues": [
+      "presentation.promptの「一方 ㋑ と\n㋩ は、」の位置に、原図の組版改行に由来する不要な改行が残っている。他問と同様に1行へ連結すべき（「一方 ㋑ と ㋩ は、」）。"
+    ],
+    "choiceIssues": [],
+    "reasonIssues": [],
+    "sourceIssues": [],
+    "needsExternalCheck": []
+  }
+}
+```

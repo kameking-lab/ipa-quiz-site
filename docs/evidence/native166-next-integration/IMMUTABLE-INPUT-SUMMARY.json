@@ -1,0 +1,34 @@
+{
+  "data100GitBlobExact": true,
+  "base338Json13GitBlobExact": true,
+  "sourceCommits": [
+    "2d7215c7b0d094b1c5f71130ca5d5452ceb4d28f",
+    "3b54032d3de9a182ef9f7b83e1f1345f6d326505",
+    "b22172b1cd627d1666fc8663015508d605b1e992"
+  ],
+  "base": "8fc0646606da456b8d49d107964f200237636d3b",
+  "sharedCoreFiles": [
+    {
+      "path": "lib/questions/native-b.ts",
+      "sha256": "addac75138c34c225a06b3d43ddfb8ebee4fa15d66354991e595fbf74d6c2231"
+    },
+    {
+      "path": "components/quiz/NativeBAnswer.tsx",
+      "sha256": "ccbe67befbb0b1aa31f7c05966d4619e5e597fb2156e3c0e8b474629f107003a"
+    },
+    {
+      "path": "app/review/NativeBReview.tsx",
+      "sha256": "187e467630ff47db0189f3925d9057ff5b3d90e89facc94ef5628f47c7db15d4"
+    },
+    {
+      "path": "lib/storage/history.ts",
+      "sha256": "cb49cd39ba55b3674d83a4f8f8d20493f195ed73ae227f68087d9c8e491af55d"
+    },
+    {
+      "path": "lib/questions/content-quality.ts",
+      "sha256": "8373581823d0aae12eec710c483a69da8040b92e8816938afd81a41b5169f6e2"
+    }
+  ],
+  "detailedCheckSha256": "f4fa6de72b20fdc3979bbb01451df11fb62efdf7e486e2ca29d9bb5bb17a67c5",
+  "publicGo": false
+}

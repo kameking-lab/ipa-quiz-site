@@ -1,0 +1,45 @@
+{
+  "status": "partial-accepted",
+  "date": "20240818",
+  "subject": "law",
+  "questionCount": 1,
+  "answerUnitCount": 2,
+  "choiceCount": 10,
+  "sourceQuestionPdfSha256": "5dbba8b8e4ec681d2d5f0645a3895a6e218d936519ddd18ac544ddc461a1ae78",
+  "sourceAnswerPdfSha256": "f72ecbc3a477e64948388b69cf78cb931032c9f0c688639836c8d533a949cd0f",
+  "reviewedDataSha256": "0343d85c48f0998d16bacca808d9ac97233c6d4bcc7b1f9c72ee44f23e45681c",
+  "questions": [
+    {
+      "number": 12,
+      "sourceDraftSha256": "70dc2226dc0f39d1530f1bbac9bcf98e59e95eb09880102ae0fc4f95e6c7d155",
+      "opusReceipt": "data/raw_pdfs/denken3/review/20240818/law/q12-opus-review.json",
+      "opusReceiptSha256": "e610e9b89fc7041a3f6a77e00bb47248b2689f8455a35ab5608dcac3f14896b6",
+      "assessment": {
+        "number": 12,
+        "status": "PASS",
+        "textIssues": [],
+        "choiceIssues": [],
+        "explanationIssues": [],
+        "figureIssues": [],
+        "externalSourceIssues": []
+      },
+      "figureSha256": {
+        "20240818-law-q12-power-factor-circuit": "0acdc68d49f6f5d667d789a70764dd3318ee155ef02cf6dbe22d12ccaed7b221"
+      }
+    }
+  ],
+  "strictReview": {
+    "q12a": {
+      "path": "docs/evidence/denken3/strict/20240818-law-l30-q12a-q12b-opus.json",
+      "sha256": "d4e1076fe0bbd1495959d60b5837770371c05a8fd27b33662cca01cddec0375b",
+      "status": "PASS",
+      "resolvedModel": "claude-opus-5-5"
+    },
+    "q12b": {
+      "path": "docs/evidence/denken3/strict/20240818-law-l30-q12a-q12b-opus.json",
+      "sha256": "d4e1076fe0bbd1495959d60b5837770371c05a8fd27b33662cca01cddec0375b",
+      "status": "PASS",
+      "resolvedModel": "claude-opus-5-5"
+    }
+  }
+}

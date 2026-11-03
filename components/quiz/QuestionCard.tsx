@@ -1,16 +1,13 @@
+import { questionSourceEdition, questionSourceExam } from "@/lib/questions/source-label";
+import { QuestionFigures } from "./QuestionFigures";
+import { hasUnrenderableContent } from "@/lib/questions/content-quality";
 import { Badge } from "@/components/ui/badge";
 import type { Question } from "@/lib/questions/types";
-import { examLabel, formatYearSeason } from "@/lib/utils";
-import { getSafePdfUrl } from "@/lib/exam-config";
+import { questionNumberLabel } from "@/lib/questions/display";
+import { getSafePdfUrl, ipaSourceLabel } from "@/lib/exam-config";
 import { QuestionBody } from "./QuestionBody";
+import { QuestionSourcePresentation } from "./QuestionSourcePresentation";
 import { TTSButton } from "./TTSButton";
-
-const FIGURE_TABLE_RE =
-  /図中|表中|図\s*\d|表\s*\d|図[一二三四五六七八九十]|表[一二三四五六七八九十]|下図|下表|次の図|次の表|右図|上図|図[ａ-ｚＡ-Ｚa-zA-Z]/;
-
-function hasFigureTableRef(text: string): boolean {
-  return FIGURE_TABLE_RE.test(text);
-}
 
 export function QuestionCard({
   question,
@@ -20,12 +17,13 @@ export function QuestionCard({
   progress?: { current: number; total: number };
 }) {
   return (
-    <div className="space-y-3">
+    <div data-study-presence-exam={question.exam} className="space-y-3">
       <div className="flex flex-wrap items-center gap-2 text-xs">
         <Badge variant="outline">
-          {examLabel(question.exam)} {formatYearSeason(question.year, question.season)}
+          {questionSourceExam(question)} {questionSourceEdition(question)}
         </Badge>
-        <Badge variant="default">問{question.qNumber}</Badge>
+        <Badge variant="default">問{questionNumberLabel(question)}</Badge>
+        {question.explanationCoverage === "official-summary" && <Badge variant="outline">公式正答と一般解説</Badge>}
         <Badge variant="default">{question.category}</Badge>
         {question.topicTags.slice(0, 3).map((t) => (
           <Badge key={t} variant="outline">
@@ -43,8 +41,15 @@ export function QuestionCard({
         <div className="mb-2 flex justify-end">
           <TTSButton text={question.question} label="読み上げ" />
         </div>
+        {question.lawReferenceDate && (
+          <p className="mb-3 text-sm font-medium text-muted-foreground">
+            法令基準日: {question.lawReferenceDate}（この日の制度で解答）
+          </p>
+        )}
+        <QuestionSourcePresentation question={question} phase="before" />
         <QuestionBody text={question.question} />
-        {question.hasImage && hasFigureTableRef(question.question) && (
+        <QuestionFigures question={question} />
+        {hasUnrenderableContent(question) && (
           <div className="mt-3 flex items-start gap-1.5 rounded-xl border border-amber-200 bg-amber-50/70 px-3 py-2 text-xs text-amber-800 dark:border-amber-700/50 dark:bg-amber-950/30 dark:text-amber-200">
             <span className="shrink-0">※</span>
             <span>
@@ -55,7 +60,7 @@ export function QuestionCard({
                 rel="noopener noreferrer"
                 className="underline hover:text-amber-900 dark:hover:text-amber-100"
               >
-                公式問題PDF
+                {ipaSourceLabel(getSafePdfUrl(question.sourcePdfUrl), "question")}
               </a>
               をご確認ください。
             </span>

@@ -1,0 +1,94 @@
+{
+  "questionNumber": 8,
+  "sharedContext": null,
+  "units": [
+    {
+      "part": null,
+      "question": "架空送電線路の構成部品に関する記述として，誤っているものを次の(1)〜(5)のうちから一つ選べ。",
+      "choices": {
+        "1": "鋼心アルミより線は，アルミ線を使用することで質量を小さくし，これによる強度の不足を，鋼心を用いることで補ったものである。",
+        "2": "がいしは，電線と鉄塔などの支持物との間を絶縁するために使用する。雷撃などの異常電圧による絶縁破壊は，がいし内部で起こるように設計されている。",
+        "3": "架空送電線におけるねん架とは，送電線各相の作用インダクタンスと作用静電容量を平衡させるために行われるもので，ジャンパ線を用いて電線の配置を入れ替えることができる。",
+        "4": "電線の微風振動やギャロッピングを抑制するために，電線にダンパを取り付け，振動エネルギーを吸収する方法がとられる。",
+        "5": "送電線やがいしを雷撃などの異常電圧から保護するための設備に架空地線がある。架空地線には，光ファイバを内蔵し電力用通信線として使用されるものもある。"
+      },
+      "officialAnswer": "2",
+      "explanation": "がいしは，異常電圧が加わったときにがいし内部（磁器部分）が貫通破壊されないように設計されます。内部が破壊されると絶縁が回復せず，がいしの交換が必要になるためです。そのため，がいしの貫通破壊電圧は表面（空気中）のフラッシオーバ電圧より高くなるように設計され，異常電圧による放電はがいしの外部の空気中で起こるようにしています。アークホーンを併用して，アークをがいし表面から離れた位置に導き，がいしの損傷を防ぐこともあります。したがって，「絶縁破壊はがいし内部で起こるように設計されている」とする(2)が誤りです。",
+      "choiceExplanations": {
+        "1": "正しい。鋼心アルミより線（ACSR）は，中心に亜鉛めっき鋼線を，その周囲に硬アルミ線をより合わせた電線です。アルミは銅より軽いため電線の質量を小さくできますが，引張強さが小さいため，その不足を鋼心で補っています。",
+        "2": "誤り。がいし内部で絶縁破壊（貫通破壊）が起こると絶縁が回復せず，がいしが使用不能になります。そのため，がいしは貫通破壊電圧がフラッシオーバ電圧より高くなるように設計されており，異常電圧による放電はがいし外部の空気中で起こるようにしています。",
+        "3": "正しい。ねん架は，各相の電線の配置を送電線路の途中で入れ替え，各相の作用インダクタンスと作用静電容量を平衡させるものです。ねん架を行う鉄塔では，ジャンパ線を用いて電線の配置を入れ替えることができます。",
+        "4": "正しい。微風振動に対しては，ストックブリッジダンパなどのダンパを電線に取り付け，振動エネルギーを吸収させて振動を抑制します。ギャロッピングに対しても，相間スペーサと併用して，ねじれ防止ダンパなどのダンパ類が用いられます。したがって，微風振動やギャロッピングの抑制のために電線にダンパを取り付けるという記述は正しい内容です。",
+        "5": "正しい。架空地線は鉄塔頂部に張られ，送電線への直撃雷を防ぐ遮へいの役割をもち，送電線やがいしを雷撃から保護します。光ファイバを内蔵した光ファイバ複合架空地線（OPGW）は，電力用通信線としても使用されます。"
+      },
+      "figureDescription": "この問題に図はありません。",
+      "officialReferenceUrls": [],
+      "uncertainty": "なし",
+      "needsReview": true,
+      "sourceQuestionPdfUrl": "https://www.shiken.or.jp/chief/upload/20250831_ch_third_q02.pdf",
+      "sourceAnswerPdfUrl": "https://www.shiken.or.jp/chief/upload/20250831_ch_third_a01.pdf",
+      "reviewedFromPage": [
+        11
+      ]
+    }
+  ],
+  "draftModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 2047,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 9309,
+      "webSearchRequests": 0,
+      "costUSD": 0.1156758,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 619,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "6a3f33e9bda4a9a804737e56378b8d7d9335325efc130144e492c863c97119a9",
+  "inputRequestSha256": "663472b48a1c925ff17a3f3c19f2378984531bb6aa527fa075210b1ee269085d",
+  "sourceQuestionPdfSha256": "567aac1df6dc0c0950d04e90a1ad03231427c518eede92559effe01e2b97a2c9",
+  "sourceAnswerPdfSha256": "76fd3715ed487d19a56b387fb402de20ee09474e9fa55b0413f9037b96af06c9",
+  "sourcePageImageSha256": {
+    "data/raw_pdfs/denken3/review/20250831/power/p11.png": "07ccab2755f141106c264dce51995b89023cfa4999ab41a6344c3bcb79c7999d"
+  },
+  "revisionHistory": [
+    {
+      "version": 1,
+      "model": "claude-opus-5-5",
+      "resolvedModel": "claude-opus-5-5",
+      "modelUsage": {
+        "claude-opus-5-5": {
+          "inputTokens": 2,
+          "outputTokens": 2740,
+          "cacheReadInputTokens": 1279,
+          "cacheCreationInputTokens": 11145,
+          "webSearchRequests": 0,
+          "costUSD": 0.1442238,
+          "contextWindow": 1000000,
+          "maxOutputTokens": 128000,
+          "thinkingTokens": 1390,
+          "canonicalModel": "claude-opus-5-5",
+          "provider": "firstParty",
+          "costBasis": "list"
+        }
+      },
+      "rawResponseSha256": "aaf5e32e3ab6c562ca0c91c65e36b9cbc30c826079db004e9944b09747bb5c36",
+      "inputRequestSha256": "b9b3bd70617de6459fdda88b9281e22a42b6bd83b1e5aa9070986fa602efa39b",
+      "previousDraftSha256": "db246e0479e97fcb0561af2cfcde15d272749dced34ff17d9fd3b366902a1be3",
+      "previousDraft": "data/raw_pdfs/denken3/review/20250831/power/archive/q08-vision-draft-v1.json",
+      "answeredReviewSha256": "0b565993d1a1ff1cacb784803c9f3797cc5ba83894a13cd9a2b50b689b467aff",
+      "answeredReview": "data/raw_pdfs/denken3/review/20250831/power/archive/q08-opus-review-v1.json",
+      "answeredStrictReceipt": null,
+      "answeredStrictReceiptSha256": null,
+      "figureSha256": {},
+      "referenceHashes": {},
+      "operatorNote": ""
+    }
+  ]
+}

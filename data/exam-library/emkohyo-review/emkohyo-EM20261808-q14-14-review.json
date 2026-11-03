@@ -1,0 +1,65 @@
+{
+  "reviewModel": "claude-opus-5-5",
+  "requestedModel": "claude-opus-5-5",
+  "canonicalModel": "claude-opus-5-5",
+  "provider": "firstParty",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 3169,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 14099,
+      "webSearchRequests": 0,
+      "costUSD": 0.17643579999999998,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 2014,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponsePath": "data/exam-library/emkohyo-review/emkohyo-EM20261808-q14-14-raw-response.txt",
+  "rawResponseSha256": "fe4a22307df3be21ca48c00ebcc5bad4c75787f12a34c106bcbcb9342ba3f0cf",
+  "paperId": "emkohyo-EM20261808",
+  "ids": [
+    "emkohyo-EM20261808-q14"
+  ],
+  "figureSha256": {
+    "emkohyo-EM20261808-q14": {}
+  },
+  "officialRowImageSha256": {
+    "emkohyo-EM20261808-q14": {
+      "/exam-library/emkohyo-EM20261808/q14-p8-1.webp": "fedb3a8dd69d3de60e2031ba36ab81f189629810b3a0c69f183c1962b1e815a2"
+    }
+  },
+  "officialPageImageSha256": {},
+  "governmentSourceImageSha256": {},
+  "candidateSha256": {
+    "emkohyo-EM20261808-q14": "5ab0ba7ef88a9458a8a902675cc7c484734acead8c01634f37741025066f550d"
+  },
+  "sourcePackPath": "docs/evidence/emkohyo-choice-sources/emkohyo-EM20261808-q14-14.json",
+  "sourcePackSha256": "233e022a8cc370025ad26dd0cfc07adc632434f14c8a882d584428ea87b4de58",
+  "assessment": {
+    "emkohyo-EM20261808-q14": {
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "reasonIssues": [
+        "肢3の理由にある「塩酸と硝酸は混ぜると互いに反応して塩素などを生じ性質が変わっていく」という因果説明は、添付の政府資料のどこにも記載がない。日本薬局方は王水を「用時製する」と定めるだけで、理由は示していない。出典で支えられる範囲（用時調製と定められていること）に表現を限定するか、この因果を直接述べる一次資料を追加する必要がある。",
+        "肢3の理由は、設問の「混酸」を日本薬局方の王水（塩酸3容量に硝酸1容量）と同一視している。しかし厚労省報告書の記述は「王水による分解を行う作業環境ガイドブックのマンガン分析法に近い方法」にとどまる。ガイドブック法の混酸の配合比が薬局方の王水と同じであること、ガイドブック法自体が用時調製を定めていることは、どちらも示されていない。「混酸（王水系）」のように断定を弱めるか、測定法側の根拠を補う必要がある。",
+        "肢5の理由の根拠は、厚労省報告書にある「装置の第一推奨条件である259.372nmの軸方向測光」を代表値とした、という記述である。これは使用した装置メーカーの推奨条件であって、測定法として観測方向を軸方向と規定したものではない。同報告書は直交方向でも「まずまずの感度」としている。したがって「観測方向を軸方向とする」を正しい記述とする直接の根拠としては弱い。そのことが分かる表現にするか、測定法の規定を示す資料を補う必要がある。"
+      ],
+      "sourceIssues": [
+        "日本薬局方（試薬・試液 王水）は医薬品試験用試液の規定であり、作業環境測定のマンガン分析法における混酸の取扱いを直接定めた資料ではない。肢3が誤りであることの直接根拠としては間接的である。",
+        "添付の政府資料には、混酸を保存すると性質が変わる（塩素・塩化ニトロシル等が生じる）という化学的理由を支える記載がない。",
+        "肢5について、厚労省報告書は装置の第一推奨条件として軸方向測光のデータを代表値にしたと述べるにとどまる。測定法として軸方向観測を定めた政府資料は添付されていない。",
+        "肢2について、底質調査方法の等級名は「有害金属測定用」であり、設問の「有害金属分析用」とは表記が異なる。同等の等級として扱う根拠は示されていない（環境省マニュアルの「精密分析用」は設問と一致する）。"
+      ],
+      "needsExternalCheck": [
+        "作業環境測定ガイドブック（マンガン及びその化合物、ICP-AES法）または令和2年改正の作業環境測定基準関係通達で、次の2点を原文確認すること：混酸の組成（塩酸・硝酸の比）と、「用時調製」または「保存不可」の規定の有無。",
+        "同ガイドブックまたは通達で、ICP-AESの測光方向（軸方向）が規定されているかを原文確認すること。"
+      ]
+    }
+  }
+}

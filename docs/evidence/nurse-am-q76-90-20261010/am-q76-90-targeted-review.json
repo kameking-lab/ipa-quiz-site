@@ -1,0 +1,48 @@
+{
+  "scope": "Targeted verification of four flagged AM Q76-90 explanations; no second whole-draft model review",
+  "status": "three ready after primary-source cross-check and local wording correction, one held for exact-year source",
+  "publication": "none",
+  "checks": [
+    {
+      "round": 115,
+      "question": 79,
+      "status": "hold",
+      "finding": "The official answer identifies the health-center service role. The 468-facility distractor is inconsistent with health-center counts in the thousands, but an exact same-year 2024 facility table was not confirmed; retain the review flag and do not insert an invented exact count.",
+      "primarySources": [
+        "https://laws.e-gov.go.jp/law/322AC0000000101",
+        "https://www.mhlw.go.jp/content/10900000/001232816.pdf"
+      ]
+    },
+    {
+      "round": 115,
+      "question": 80,
+      "status": "ready_local_candidate",
+      "finding": "The WHO ICF defines activity as an individual's execution of a task or action. The official answer table independently accepts choice 4 or choice 5 as one selected answer. The local candidate softens choice 3's speculative body-function classification without altering the key or the one-selection contract.",
+      "primarySources": [
+        "https://cdn.who.int/media/docs/default-source/classification/icf/icfbeginnersguide.pdf",
+        "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-05seitou.pdf"
+      ]
+    },
+    {
+      "round": 115,
+      "question": 88,
+      "status": "ready_local_candidate_after_targeted_correction",
+      "finding": "The official key is choices 2 and 5. Human histology reports age-related ciliary-muscle area/length changes; imaging studies show contractility may persist. The local candidate now explains the muscle's role in accommodation and age-related change without claiming atrophy is the sole established cause of presbyopia.",
+      "primarySources": [
+        "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-05seitou.pdf",
+        "https://pubmed.ncbi.nlm.nih.gov/1569790/",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC2784077/"
+      ]
+    },
+    {
+      "round": 114,
+      "question": 88,
+      "status": "ready_local_candidate",
+      "finding": "MHLW's disease-by-class list confirms polio and tuberculosis as class II, bacillary dysentery as class III, rabies as class IV, and pertussis as class V, matching the draft and the official two-selection key 1 and 5.",
+      "primarySources": [
+        "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/kenkou_iryou/kenkou/kekkaku-kansenshou/sagasu_ruikei.html",
+        "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-05seitou.pdf"
+      ]
+    }
+  ]
+}

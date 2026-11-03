@@ -1,0 +1,62 @@
+{
+  "base": "7aac36036cc26e7cc97b8a29b14d26f49d33dfe2",
+  "manifestSha256": "4e4e67b184ab73ff02785c15fcf1b1d45cf62e9fc61a8b96108bfb3d84537286",
+  "newReady": {
+    "sagyo-ryohoshi": {
+      "count": 139,
+      "choices": 695,
+      "sha256": "14e85cda640bd13e427bfa00eb1619f50b88eb6670b842b8f4c90505c966f9ef"
+    },
+    "shino-kunrenshi": {
+      "count": 91,
+      "choices": 455,
+      "sha256": "4eac8c66e9c62d6a18dacb7ce3e94c7f9b2a7f30fd0d5e8b542a2593bc54d4cf"
+    }
+  },
+  "oldPmFilesUnchanged": {
+    "data/questions/sagyo-ryohoshi/pm-ready.json": {
+      "canonicalBlob": "e679dbda5470dce3b7d188a7731e44a8962fcfe5",
+      "checkoutSha256": "3f82e2a961a7b50d083bf418951becc85dfa365e8d1457d5c2e69dfc5433ef45"
+    },
+    "data/questions/sagyo-ryohoshi/pm57-end-ready.json": {
+      "canonicalBlob": "0c37ba19827737e942081769c6699cf922f29622",
+      "checkoutSha256": "2e93438db5cd6bc847b7e6d79b7a127637b9a6ffdddf82395c3aca0f3d4f9933"
+    },
+    "data/questions/shino-kunrenshi/pm-ready.json": {
+      "canonicalBlob": "cee812a02c621f7a228e61bc286b0bb0fc528a68",
+      "checkoutSha256": "3d132a00837f2d9bccb357b90d9626020f9dccf0103401ebf9dfa26b8dd6d993"
+    },
+    "data/questions/shino-kunrenshi/pm57-end-ready.json": {
+      "canonicalBlob": "ab1eeab61d92ef305f26eb55b921ff8d9f94d21b",
+      "checkoutSha256": "4556fdc237dc4bc9d9d3ea3c5ff0f13e18be25232dfefc3802e2f9afc1e38a4a"
+    }
+  },
+  "oldPmOriginals": 218,
+  "newAmOriginals": 230,
+  "newAmChoices": 1150,
+  "totalOriginals": 448,
+  "heldDrafts": 37,
+  "preDraftAmHolds": 14,
+  "sharedCaseIdentities": [
+    "sagyo-ryohoshi-60-am-14",
+    "sagyo-ryohoshi-60-am-15",
+    "sagyo-ryohoshi-61-am-11",
+    "sagyo-ryohoshi-61-am-12"
+  ],
+  "literalStemOverlays": [
+    "sagyo-ryohoshi-60-am-14",
+    "sagyo-ryohoshi-60-am-31",
+    "sagyo-ryohoshi-60-am-50",
+    "sagyo-ryohoshi-61-am-10",
+    "sagyo-ryohoshi-61-am-13",
+    "shino-kunrenshi-55-am-68",
+    "shino-kunrenshi-56-am-14"
+  ],
+  "validator": "exit0",
+  "focusedTests": "14/14",
+  "typecheck": "exit0",
+  "scopedLint": "exit0",
+  "newHttpCalls": 0,
+  "newClaudeCalls": 0,
+  "published": false
+}

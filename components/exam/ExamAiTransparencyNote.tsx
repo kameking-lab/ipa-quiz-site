@@ -15,13 +15,13 @@ export function ExamAiTransparencyNote() {
       </div>
       <ul className="ml-1 list-disc space-y-1 pl-4 text-xs leading-relaxed">
         <li>
-          解説本文は Google Gemini を用いて、IPA 公式問題と公式解答を入力に再生成しています。
+          解説本文はAIの支援を用いて作成した学習用の独自解説です。公式問題・正答の照合と、解説内容の確認は別の工程です。
         </li>
         <li>
-          AI 生成のため、用語の言い換えや細部の表現に誤りが含まれる可能性があります。
+          確認範囲は問題・実施回で異なります。全件の人による確認や専門家監修を保証していません。誤りや最新制度の反映漏れが含まれる可能性があります。
         </li>
         <li>
-          各問題には IPA 公式 PDF へのリンクを必ず併記しています。最終確認は公式資料でお願いします。
+          各問題には、対応する公式資料へのリンクを併記しています。最終確認は試験実施団体の公式資料でお願いします。
         </li>
         <li>
           誤りに気付いた場合は、各問題ページ下部のフィードバックから報告できます。
@@ -29,8 +29,8 @@ export function ExamAiTransparencyNote() {
       </ul>
       <p className="mt-3 text-[11px]">
         運営方針の詳細は{" "}
-        <Link href="/transparency" className="font-medium underline">
-          運営透明性レポート
+        <Link href="/transparency#static-explanations" className="font-medium underline">
+          静的解説の確認範囲・訂正手順
         </Link>
         ・
         <Link href="/operator" className="font-medium underline">

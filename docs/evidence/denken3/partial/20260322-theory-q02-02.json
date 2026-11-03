@@ -1,0 +1,39 @@
+{
+  "status": "partial-accepted",
+  "date": "20260322",
+  "subject": "theory",
+  "questionCount": 1,
+  "answerUnitCount": 1,
+  "choiceCount": 5,
+  "sourceQuestionPdfSha256": "c83e7c7350d98b65f5d8da0b93e4a2581a19dd250be320fb7fc492c9b34a29c1",
+  "sourceAnswerPdfSha256": "cc2890296d06a4823df5697a78a1c01ddfd39f041c51f48c87984daa3a5707c6",
+  "reviewedDataSha256": "96299de167b97904d9ef061de607804c8e95dee03f69a5aa422e95af44969248",
+  "questions": [
+    {
+      "number": 2,
+      "sourceDraftSha256": "9f1fac5a5c9190e4e61a1917abf58fe55c0c844a1a0a86d7a783a3a837cc6537",
+      "opusReceipt": "data/raw_pdfs/denken3/review/20260322/theory/q02-opus-review.json",
+      "opusReceiptSha256": "ab03056d1eaab32478ac258dba31e03ff9c004cf49df09b69415b5be720ef80f",
+      "assessment": {
+        "number": 2,
+        "status": "PASS",
+        "textIssues": [],
+        "choiceIssues": [],
+        "explanationIssues": [],
+        "figureIssues": [],
+        "externalSourceIssues": []
+      },
+      "figureSha256": {
+        "20260322-theory-q02-fig1": "f72f2e7b4b8b2eec4ece0d76c676ac5ac174d6d40cae6f75db59ecd75be56bc5"
+      }
+    }
+  ],
+  "strictReview": {
+    "q02": {
+      "path": "docs/evidence/denken3/strict/20260322-theory-s2-q02-opus.json",
+      "sha256": "ef9905bf4207f1be004efa9e4b8a088ff6e23ab07f509c861e4f0573b56ab1a8",
+      "status": "PASS",
+      "resolvedModel": "claude-opus-5-5"
+    }
+  }
+}

@@ -24,7 +24,7 @@ export const SC_2024_SPRING_PM2_Q1: SCpm2Question = {
 
 設問ウ：対策の結果と残存する課題、及び今後の改善計画を 600 字以内で述べよ。`,
   pdfUrl: "https://www.ipa.go.jp/shiken/mondai-kaiotu/2024r06.html",
-  license: "IPA-public",
+  license: "original",
   industries: [
     itEssay,
     financeEssay,

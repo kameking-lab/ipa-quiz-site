@@ -1,0 +1,69 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20260322",
+  "subject": "theory",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 3285,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 14202,
+      "webSearchRequests": 0,
+      "costUSD": 0.1795798,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 1650,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "e8eba31533538bed4f5206bf4d37765ba46fee54a22fe4153dfd648a9ed88b62",
+  "inputRequestSha256": "212c45246911d1597bf491215a8db86284cf6af5be3d00728b54bfe60df0364e",
+  "inputHashes": {
+    "candidateSha256": {
+      "q12": "50a446aa6730471f2c0489ff551673462c4ab545f06a7e472cdc2df5d1e5fefb"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20260322/theory/p17.png": "5a8896de78b35539efccde17253b46c19106109ad2f85e597b7fa594eae4788e"
+    },
+    "figureSha256": {
+      "public/images/denken3/20260322/theory/20260322-theory-q12-fig1.png": "a7677ea1d8ad1b892bc429eaac84071ce0c738ce86dd45b13ddf1e1fb22cfcec"
+    },
+    "sourceQuestionPdfSha256": "c83e7c7350d98b65f5d8da0b93e4a2581a19dd250be320fb7fc492c9b34a29c1",
+    "sourceAnswerPdfSha256": "cc2890296d06a4823df5697a78a1c01ddfd39f041c51f48c87984daa3a5707c6",
+    "officialAnswerUnitsSha256": "d9d7530ffe7330870cfb5b3140683d0ec62b319454d9d16788e82d7b17c79821",
+    "referencePdfSha256": {},
+    "referencePageSha256": {},
+    "referenceJsonSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q12",
+      "questionNumber": 12,
+      "part": null,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [
+        "uncertainty欄に「このページには試験の実施年度・回の表記がなく、本問の出題年度は特定できない。」とあるが、候補自身は fiscalYear=2025・term=lower・examDate=2026-03-22 を確定値として持ち、sourceAttribution も「令和7年度下期」と明記している。これらはmanifest固定の出典情報（公式過去問一覧の2026-03-22実施分、問題PDF 20260322_ch_third_q01.pdf）と、公式解答表見出し「令和7年度 第三種電気主任技術者下期試験解答」で裏付けられる。したがってこのuncertainty記述は、事実として誤っているうえに候補内のメタデータとも矛盾する。needsReview=falseとも整合しない。削除するか、「出題年度・回は原図頁ではなくmanifest（公式過去問一覧）と公式解答表見出しで特定」と書き換える必要がある。"
+      ],
+      "verifiedEvidence": [
+        "問題文: 原図（PDF第17頁、印刷頁「-14-」、フッタ「T2－R 017」）の本文と照合した。真空中・電極間隔d[m]・陰極板上に電子・陽極板に電圧V[V]・力F[N]・質量m[kg]・電気素量e[C]・端効果無視の各条件が一字一句一致しており、記号と単位の脱落はない。",
+        "選択肢: 原図の(1)(V/d)e、(2)(V/d²)e、(3)(V/d²)(m/e)、(4)(V/d²)em、(5)(V²/d)e と、候補の全5肢が一致する。べき指数・分子分母の配置・積の順序にも誤りはない。",
+        "公式正答: 公式解答表の＜理論＞問12は解答1・配点5で、候補のofficialAnswer=\"1\"、scoringPoints=5 と一致する。manifest固定の公式正答単位（answer \"1\", points 5）とも一致する。",
+        "総合解説の検算: 端効果なしの平行板では一様電界 E=V/d。F=qE より電子に働く力の大きさは F=eV/d で、選択肢(1)と一致する。電界は陽極→陰極向きで、負電荷の電子は陽極向きに力を受ける。これは図のF矢印（上向き）と整合する。質量mは加速度 a=F/m で初めて関与するという記述も正しい。単位 (V/m)·C = J/m = N も正しい。",
+        "各肢の理由の検算: (2) V·C/m² = J/m² = N/m で力の次元にならない（正）。(3) (V/m²)(kg/C) = V·kg/(m²·C) で、e が分母のため F∝e に反する（正）。(4) V·C·kg/m² = J·kg/m² で次元不一致（正）。(5) V²·C/m = V·J/m = V·N で次元不一致（正）。いずれも各肢に固有の誤り理由として妥当である。",
+        "メタデータ: reviewedFromPage=[17] はmanifest指定のPDF第17頁と一致し、原図フッタ「T2－R 017」とも整合する。sourceQuestionPdfUrl・sourceAnswerPdfUrl はmanifestと完全一致する。subject=theory、fiscalYear=2025（令和7年度）、term=lower、examDate=2026-03-22 も一致する。",
+        "公開候補図: 原図のうち図部分を欠落なく切り出したものと確認した。陽極板（上）・陰極板（下）のラベル、d[m]の両端矢印寸法線（両板の内側面に対応する破線付き）、陰極板上面左寄りの黒丸電子と「電子」引出線、電子から上向きのF[N]矢印、右側の陰極→陽極向きV[V]矢印、陰極板下中央の接地記号がすべて残っている。接続・向き・ラベルは原図と一致しており、この図だけで設問の理解に必要な情報は揃う。",
+        "figureDescription: 板の上下関係、接地位置（陰極板下側中央）、寸法線の位置と対象（内側面間）、電子の位置（左寄り）、F・V矢印の向きを記述しており、いずれも原図と一致する。",
+        "officialReferenceUrls は空配列で、検証が必要な独立主張はない。"
+      ]
+    }
+  ]
+}

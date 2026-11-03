@@ -1,0 +1,40 @@
+{
+  "status": "partial-accepted",
+  "date": "20240818",
+  "subject": "law",
+  "questionCount": 1,
+  "answerUnitCount": 1,
+  "choiceCount": 5,
+  "sourceQuestionPdfSha256": "5dbba8b8e4ec681d2d5f0645a3895a6e218d936519ddd18ac544ddc461a1ae78",
+  "sourceAnswerPdfSha256": "f72ecbc3a477e64948388b69cf78cb931032c9f0c688639836c8d533a949cd0f",
+  "reviewedDataSha256": "cf9eb876bd26742694bb867cd6ba30b1fe7a3c56bd220ec01984278a2fcf0bb4",
+  "questions": [
+    {
+      "number": 9,
+      "sourceDraftSha256": "fd81d5b2e319d89ea7c60a26b90431d659cf629faedff07151d0a6dea26a2ae1",
+      "opusReceipt": "data/raw_pdfs/denken3/review/20240818/law/q09-opus-review.json",
+      "opusReceiptSha256": "0740a18447c93e3feff8ef4128e5af1e396e71ee69af4170cf0e2253920b97cb",
+      "assessment": {
+        "number": 9,
+        "status": "PASS",
+        "textIssues": [],
+        "choiceIssues": [],
+        "explanationIssues": [],
+        "figureIssues": [],
+        "externalSourceIssues": [
+          "要外部確認: 画像からは設問文・選択肢・公式正答(4)しか確定できない。草稿は『電気設備の技術基準の解釈』第150条第1項第一号〜第四号を根拠にしているが、この条・項・号の番号と条文の文言は画像では検証できない。",
+          "要外部確認: 出典URLの末尾『#page=150』は条番号(第150条)と同じ数値になっている。PDFの150ページ目に本当に第150条があるかは疑わしいので、リンク先のページが正しいか確認が必要(草稿の uncertainty 欄にある『PDF150頁』という記述も同様)。"
+        ]
+      },
+      "figureSha256": {}
+    }
+  ],
+  "strictReview": {
+    "q09": {
+      "path": "docs/evidence/denken3/strict/20240818-law-l21-q09-opus.json",
+      "sha256": "6459a07bf7ea7e701c1e512c47b774144a82839aeabc89184fe668da38ebaf2e",
+      "status": "PASS",
+      "resolvedModel": "claude-opus-5-5"
+    }
+  }
+}

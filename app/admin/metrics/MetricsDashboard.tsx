@@ -23,6 +23,7 @@ import type {
   KpiValue,
   MetricsRange,
   MetricsResponse,
+  AvailableMetricsResponse,
   PageAccess,
 } from "@/lib/admin/metrics/types";
 
@@ -147,6 +148,13 @@ export function MetricsDashboard({ initial }: { initial: MetricsResponse }) {
         </div>
       )}
 
+      {data.source === "unavailable" ? (
+        <div role="status" className="rounded-xl border border-amber-300 bg-amber-50 p-5 text-sm text-amber-950 dark:border-amber-800 dark:bg-amber-950 dark:text-amber-100">
+          <p className="font-semibold">アクセスデータは未取得です</p>
+          <p className="mt-2">{data.reason}</p>
+          <p className="mt-2">未取得の数値や比較・改善予測は表示しません。</p>
+        </div>
+      ) : <>
       <Section1Summary data={data} />
       <Section2Features data={data} />
       <Section3Pages data={data} />
@@ -155,6 +163,7 @@ export function MetricsDashboard({ initial }: { initial: MetricsResponse }) {
       <Section6Conversion data={data} />
       <Section7Errors data={data} />
       <Section8Insights data={data} />
+      </>}
     </div>
   );
 }
@@ -225,7 +234,7 @@ function RangeTabs({
           {meta.from} 〜 {meta.to}（前期: {meta.comparedFrom} 〜 {meta.comparedTo}）
         </span>
         <Badge variant={source === "posthog" ? "success" : "warn"}>
-          {source === "posthog" ? "PostHog" : "モック"}
+          {source === "posthog" ? "PostHog" : source === "unavailable" ? "未取得" : "デモデータ"}
         </Badge>
         {cachedAt && (
           <span className="text-[10px]">
@@ -238,7 +247,7 @@ function RangeTabs({
   );
 }
 
-function Section1Summary({ data }: { data: MetricsResponse }) {
+function Section1Summary({ data }: { data: AvailableMetricsResponse }) {
   const s = data.summary;
   return (
     <SectionShell n={1} title="サマリ" subtitle="主要 KPI と前期比">
@@ -281,7 +290,7 @@ function Section1Summary({ data }: { data: MetricsResponse }) {
   );
 }
 
-function Section2Features({ data }: { data: MetricsResponse }) {
+function Section2Features({ data }: { data: AvailableMetricsResponse }) {
   const items = data.features.features;
   const chartData = items.map((f) => ({ name: f.feature, 使用回数: f.uses, UU: f.uniqueUsers }));
   return (
@@ -329,7 +338,7 @@ function Section2Features({ data }: { data: MetricsResponse }) {
   );
 }
 
-function Section3Pages({ data }: { data: MetricsResponse }) {
+function Section3Pages({ data }: { data: AvailableMetricsResponse }) {
   const { byExam, byBlog, byQuestion } = data.pages;
   return (
     <SectionShell n={3} title="ページ別アクセス" subtitle="試験区分 TOP13 / ブログ TOP10 / 問題 TOP20">
@@ -383,7 +392,7 @@ function PageTable({ title, rows }: { title: string; rows: PageAccess[] }) {
   );
 }
 
-function Section4Traffic({ data }: { data: MetricsResponse }) {
+function Section4Traffic({ data }: { data: AvailableMetricsResponse }) {
   const { sources, keywords } = data.traffic;
   const pieData = sources.map((s) => ({ name: s.source, value: s.sessions }));
   return (
@@ -463,7 +472,7 @@ function Section4Traffic({ data }: { data: MetricsResponse }) {
   );
 }
 
-function Section5Flow({ data }: { data: MetricsResponse }) {
+function Section5Flow({ data }: { data: AvailableMetricsResponse }) {
   return (
     <SectionShell n={5} title="ユーザー行動フロー" subtitle="新規・リピーター導線の通過率">
       <div className="grid grid-cols-1 gap-3 lg:grid-cols-2">
@@ -474,7 +483,7 @@ function Section5Flow({ data }: { data: MetricsResponse }) {
   );
 }
 
-function FunnelCard({ title, steps }: { title: string; steps: MetricsResponse["flow"]["newUserFunnel"] }) {
+function FunnelCard({ title, steps }: { title: string; steps: AvailableMetricsResponse["flow"]["newUserFunnel"] }) {
   return (
     <Card>
       <CardHeader>
@@ -503,7 +512,7 @@ function FunnelCard({ title, steps }: { title: string; steps: MetricsResponse["f
   );
 }
 
-function Section6Conversion({ data }: { data: MetricsResponse }) {
+function Section6Conversion({ data }: { data: AvailableMetricsResponse }) {
   const c = data.conversions;
   return (
     <SectionShell n={6} title="コンバージョン" subtitle="アフィリエイトクリックと CTR">
@@ -555,7 +564,7 @@ function Section6Conversion({ data }: { data: MetricsResponse }) {
   );
 }
 
-function Section7Errors({ data }: { data: MetricsResponse }) {
+function Section7Errors({ data }: { data: AvailableMetricsResponse }) {
   const e = data.errors;
   return (
     <SectionShell
@@ -597,7 +606,7 @@ function Section7Errors({ data }: { data: MetricsResponse }) {
   );
 }
 
-function Section8Insights({ data }: { data: MetricsResponse }) {
+function Section8Insights({ data }: { data: AvailableMetricsResponse }) {
   const i = data.insights;
   return (
     <SectionShell n={8} title="改善判断用インサイト" subtitle="使われていない／離脱率高／成長 TOP3">
@@ -625,7 +634,7 @@ function InsightList({
 }: {
   title: string;
   tone: "warn" | "danger" | "success";
-  items: MetricsResponse["insights"]["unused"];
+  items: AvailableMetricsResponse["insights"]["unused"];
 }) {
   return (
     <Card>

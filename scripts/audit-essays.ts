@@ -6,15 +6,15 @@
  * 7つの品質基準で各論述を機械的に検査する。
  *
  * 品質基準:
- *   (a) 字数   : 全3設問合計 ≥ 2,200字
- *   (b) ウ比率 : essayU / 合計 ≥ 25%
- *   (c) 制度名 : 業種固有の制度名・法令を3件以上引用
+ *   (a) 字数   : 各設問の正式な上下限（親設問を参照）
+ *   (b) ウ     : 設問ウの正式な字数条件
+ *   (c) 具体性 : 業種固有の制度又は業務用語を3件以上使用
  *   (d) 推進課題: "課題"/"困難"/"リスク"/"問題" を含む段落 ≥ 2
  *   (e) 定量効果: パーセント or 数値+単位の表現 ≥ 2
  *   (f) キャラ  : 冒頭に組織名（◯社/行/院等）と規模情報が存在
  *   (g) ﾌﾟﾚｰｽﾎﾙﾀﾞｰ: "準備中"/"TODO"/"[X]" が存在しない
  *
- * 致命傷 (exit 1): プレースホルダ検出 OR 字数<1,800 OR 制度名=0 OR 合格項目<4
+ * 致命傷 (exit 1): プレースホルダ検出 OR 設問別字数違反 OR 業種固有語=0 OR 合格項目<4
  * 軽微違反 (exit 0 + warning): 合格項目 4–6
  *
  * 使い方:
@@ -28,6 +28,7 @@
 import { readdirSync, existsSync, writeFileSync, mkdirSync } from "node:fs";
 import { join, resolve } from "node:path";
 import { pathToFileURL } from "node:url";
+import { findAfternoonQuestion } from "@/lib/afternoon/load";
 import type { IndustryVariant } from "@/lib/afternoon/types";
 
 const CI_MODE = process.argv.includes("--ci");
@@ -104,6 +105,31 @@ const INDUSTRY_TERMS: Record<string, string[]> = {
   ],
 };
 
+// 制度名の挿入を強制せず、業種の工程・データ・設備の具体性も認識する。
+const INDUSTRY_WORK_TERMS: Record<string, string[]> = {
+  manufacturing: ["BOM", "MES", "PLM", "製造指示", "生産指示", "部品手配", "予知保全", "設備", "工場"],
+  construction: ["施工", "竣工", "積算", "労務", "設計モデル", "工事", "現場"],
+  finance: ["融資", "貸出", "稟議", "勘定系", "審査", "営業店", "与信"],
+  retail: ["POS", "店舗", "EC", "在庫引当", "商品マスタ", "物流", "返品"],
+  telecom: ["回線", "通信設備", "基地局", "ネットワーク", "開通", "通信断", "契約者"],
+  public: ["住民", "申請", "自治体", "行政", "窓口", "届出", "審査"],
+  it: ["テナント", "API", "認証", "リリース", "デプロイ", "受託開発"],
+  healthcare: ["患者", "病院", "処方", "病床", "検査", "診療", "医療"]
+};
+
+// 親設問が存在する場合はその条件を使用。旧年度の独自教材は実配信側と同じ上限。
+export function auditEssayLengths(v: IndustryVariant, exam: string, period: string) {
+  const [year, season] = period.split("-");
+  const parent = findAfternoonQuestion(`${exam}-${year}${season === "spring" ? "h" : "a"}-pm2-q1`);
+  return [v.essayA, v.essayI, v.essayU].map((text, i) => {
+    const condition = parent?.subQuestions[i];
+    const min = condition?.minLength ?? 0;
+    const max = condition?.maxLength ?? [800, 1600, 600][i]!;
+    const count = text.length;
+    return { pass: count > 0 && count >= min && count <= max, value: `${["ア", "イ", "ウ"][i]} ${count}字 (${min}–${max})` };
+  });
+}
+
 // ─── 型定義 ───────────────────────────────────────────────────────────────────
 
 interface CheckResult {
@@ -131,12 +157,12 @@ function charCount(text: string): number {
 }
 
 function countIndustryTerms(text: string, industryId: string): string[] {
-  const terms = INDUSTRY_TERMS[industryId] ?? [];
+  const terms = [...(INDUSTRY_TERMS[industryId] ?? []), ...(INDUSTRY_WORK_TERMS[industryId] ?? [])];
   return terms.filter((t) => text.includes(t));
 }
 
 function countChallengeParagraphs(text: string): number {
-  const keywords = ["課題", "困難", "リスク", "問題"];
+  const keywords = ["課題", "困難", "リスク", "問題", "懸念", "障害", "未確定", "制約", "不一致"];
   const paragraphs = text.split(/\n\n+|\n(?=[\s　]*[第一二三四五六七八九十\d])/);
   return paragraphs.filter((p) =>
     keywords.some((k) => p.includes(k))
@@ -165,9 +191,9 @@ const ORG_PATTERN =
 const SIZE_PATTERN =
   /(?:売上高?|年商|預金量|従業員数?|職員数?|医師数?|病床数?|床数|店舗数?|拠点数?)[\s　]*(?:約|は)?\s*[\d,]|(?:人口|従業員|職員|店舗|拠点)[\s　]*約\s*[\d,]/;
 
-function hasCharacterSetup(essayA: string): boolean {
-  const intro = essayA.slice(0, 400);
-  return ORG_PATTERN.test(intro) && SIZE_PATTERN.test(intro);
+export function hasCharacterSetup(essayA: string): boolean {
+  const intro = essayA.slice(0, 400).replace(/\s+/g, "");
+  return ORG_PATTERN.test(intro) && (SIZE_PATTERN.test(intro) || /(?:ピーク|最大|体制)[\d,]+名|[\d,]+(?:店舗|病床|床|現場)|期間[\d,]+か月/.test(intro));
 }
 
 const PLACEHOLDER_RE = /準備中|TODO|^\[X\]$/im;
@@ -179,7 +205,7 @@ function detectPlaceholder(text: string): string | null {
 
 // ─── 1 バリアントを検査 ────────────────────────────────────────────────────────
 
-function auditVariant(
+export function auditVariant(
   v: IndustryVariant,
   file: string,
   exam: string,
@@ -187,6 +213,7 @@ function auditVariant(
 ): VariantAudit {
   const allText = v.essayA + "\n\n" + v.essayI + "\n\n" + v.essayU;
   const totalChars = charCount(allText);
+  const lengths = auditEssayLengths(v, exam, period);
   const uChars = charCount(v.essayU);
   const uRatio = totalChars > 0 ? uChars / totalChars : 0;
 
@@ -198,17 +225,17 @@ function auditVariant(
 
   const checks: CheckResult[] = [
     {
-      name: "(a) 字数≥2200",
-      pass: totalChars >= 2200,
-      value: `${totalChars}字`,
+      name: "(a) 設問ア・イの字数条件",
+      pass: lengths.slice(0, 2).every(c => c.pass),
+      value: lengths.map(c => c.value).join(" / "),
     },
     {
-      name: "(b) 設問ウ比率≥25%",
-      pass: uRatio >= 0.25,
+      name: "(b) 設問ウの字数条件",
+      pass: lengths[2]!.pass,
       value: `${(uRatio * 100).toFixed(1)}%`,
     },
     {
-      name: "(c) 業種固有制度名≥3件",
+      name: "(c) 業種固有の制度・業務用語≥3件",
       pass: matchedTerms.length >= 3,
       value: `${matchedTerms.length}件: ${matchedTerms.slice(0, 5).join("/")}`,
     },
@@ -242,12 +269,12 @@ function auditVariant(
   if (placeholder !== null) {
     isCritical = true;
     criticalReason = `プレースホルダ検出: "${placeholder}"`;
-  } else if (totalChars < 1800) {
+  } else if (lengths.some(c => !c.pass)) {
     isCritical = true;
-    criticalReason = `字数不足 (${totalChars}字 < 1,800字)`;
+    criticalReason = `設問の字数条件違反: ${lengths.filter(c => !c.pass).map(c => c.value).join(" / ")}`;
   } else if (matchedTerms.length === 0) {
     isCritical = true;
-    criticalReason = "業種固有制度名ゼロ";
+    criticalReason = "業種固有の制度・業務用語ゼロ";
   } else if (score < 4) {
     isCritical = true;
     criticalReason = `合格項目 ${score}/7 (閾値4)`;
@@ -411,7 +438,7 @@ async function main(): Promise<void> {
   }
 }
 
-main().catch((e) => {
+if (process.argv[1] && pathToFileURL(resolve(process.argv[1])).href === import.meta.url) main().catch((e) => {
   console.error("[FATAL]", e);
   process.exit(1);
 });

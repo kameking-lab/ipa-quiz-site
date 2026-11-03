@@ -1,0 +1,56 @@
+{
+  "baseCommit": "646437edfe1020afa315ab1445d53f5b958aaf67",
+  "questionId": "radio21-riku-tech1-2026-07-law-q18",
+  "dataPath": "data/questions/riku-tech1/2026-july-houki.json",
+  "dataBeforeSha256": "a948b66fb751920c81c86bcdfe1510cb3812141dac69f9643d84bc0b2325e884",
+  "dataAfterSha256": "a0a2553509d7475ab9e84c29ee593cf9e14a3d2976bb47463c6e2bb0abd0df42",
+  "dataBeforeGitBlob": "029543500291a565da666bbdee9262a055c9430d",
+  "dataAfterGitBlob": "cda1e73655958f3bec99e2461f64c2427a991db1",
+  "exactFields": [
+    {
+      "pointer": "/17/hasImage",
+      "before": false,
+      "after": true
+    },
+    {
+      "pointer": "/17/imageUrls",
+      "beforeExists": false,
+      "after": [
+        "/images/questions/riku-tech1/radio21-riku-tech1-2026-07-law-q18-original.png"
+      ]
+    },
+    {
+      "pointer": "/17/imageAltTexts",
+      "beforeExists": false,
+      "after": [
+        "公式原問 B3の電波の型式分類表と空欄ア〜オ、候補1〜10（原典配置）"
+      ]
+    }
+  ],
+  "allOtherDataDeepEqual": true,
+  "all190OriginalsUnchanged": true,
+  "all2854ReasonBindingsUnchanged": true,
+  "all350OfficialKeysUnchanged": true,
+  "asset": {
+    "path": "public/images/questions/riku-tech1/radio21-riku-tech1-2026-07-law-q18-original.png",
+    "publicUrl": "/images/questions/riku-tech1/radio21-riku-tech1-2026-07-law-q18-original.png",
+    "sha256": "dfa70aaf1243885afb4d7f1ce41fddb9344e6059307d594033a1e5c10cb6f3e7",
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/riku-gi-1-hoki.pdf",
+    "sourcePdfSha256": "7a1eb8b196532db95a79a08ff44cf51f58ccb99a9b49b6be84e062360eb09d4d",
+    "sourcePdfPage1Based": 7,
+    "pdfRect": [
+      45,
+      207,
+      688.5040283203125,
+      748
+    ],
+    "renderScale": 2,
+    "originalPixelsOnly": true,
+    "singleQuestionOnly": true,
+    "noOtherQuestionOrAnswerImage": true
+  },
+  "originalPacketManifestUnchanged": "4fc37c7d72a6cb95e072030554726a6d2b3bd3da451cb316382904ea6c65fe49",
+  "guardChanged": false,
+  "wholeBuilds": 0,
+  "publicGo": false
+}

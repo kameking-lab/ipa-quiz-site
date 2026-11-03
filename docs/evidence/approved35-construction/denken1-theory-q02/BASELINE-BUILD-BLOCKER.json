@@ -1,0 +1,25 @@
+{
+  "atUtc": "2026-10-07T12:50:22.213373+00:00",
+  "result": "HOLD_EXISTING_BUILD_ERROR_OUTSIDE_SLICE",
+  "baseCommit": "9e8f37c0e7b13f703f21dd1c2bfc95ca891fbf2c",
+  "baselineProblemPath": "app/api/copilot/route.ts",
+  "baselineNormalizedSha256": "ad0db66b6d502b552bbb599547d7c4ffad5b956b18235230dc4df44b4168ba17",
+  "currentNormalizedSha256": "ad0db66b6d502b552bbb599547d7c4ffad5b956b18235230dc4df44b4168ba17",
+  "baselineBytesEquivalentWithNativeLineEndings": true,
+  "exportLines": [
+    {
+      "line": 22,
+      "text": "export { COPILOT_MODEL } from \"@/lib/copilot/model\";"
+    }
+  ],
+  "error": "Next generated route export contract rejects COPILOT_MODEL constant; compiled successfully then fails route-type check.",
+  "authoredRouteChanges": 0,
+  "buildCommand": "pnpm build --webpack",
+  "buildExit": 1,
+  "compiledSuccessfullySeconds": 77,
+  "ordinaryBuildFailedDependencyJunction": true,
+  "strictGuardNotRelaxed": true,
+  "publicAllowed": false,
+  "draftPrCreated": false,
+  "whyNoDraftPrYet": "Repository CLAUDE.md requires typecheck/build/test/lint passing before PR; this build is blocked by unchanged baseline export."
+}

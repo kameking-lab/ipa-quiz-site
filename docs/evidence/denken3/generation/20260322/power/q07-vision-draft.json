@@ -1,0 +1,94 @@
+{
+  "questionNumber": 7,
+  "sharedContext": null,
+  "units": [
+    {
+      "part": null,
+      "question": "6.6 kV 非接地方式配電線及び高圧受電設備の保護に関する記述として，誤っているものを次の(1)～(5)のうちから一つ選べ。",
+      "choices": {
+        "1": "高圧受電設備における地絡保護装置は，零相変流器により零相電流を検出して動作させる地絡過電流継電器や，接地用変圧器により零相電圧を検出して零相電流と零相電圧を組み合わせて動作させる地絡方向継電器が用いられる。",
+        "2": "配電線の保護方式として，故障遮断による供給支障を極力少なくする目的で，故障遮断後に電源側から健全な区間を選別して再送電する時限順送式故障区間分離方式がある。",
+        "3": "高圧受電設備における地絡保護装置において，地絡過電流継電器は無方向性のため，構内の高圧ケーブルのこう長が短い場合は外部事故時に大きな零相電流が流れて不要動作することがある。",
+        "4": "地絡事故の保護のため，配電用変電所において各配電線に地絡方向継電器と地絡過電圧継電器を組み合わせて設置される。",
+        "5": "短絡事故の保護のため，配電用変電所において各配電線に過電流継電器が設置される。"
+      },
+      "officialAnswer": "3",
+      "explanation": "非接地方式の 6.6 kV 系統では、地絡電流は主に系統の対地静電容量を通って流れる充電電流です。\n\n高圧受電設備の外部（他の需要家や配電線の別の箇所）で地絡事故が起きると、系統全体に零相電圧 V₀ が現れます。このとき構内の高圧ケーブルの対地静電容量を通して充電電流が流れ、この電流が構内の零相変流器（ZCT）を通過します。\n\nこの電流の大きさはおおよそ I₀ ≒ 3ωC·V₀ です（C：構内ケーブルの 1 線あたり対地静電容量）。C はケーブルのこう長に比例するので、こう長が長いほど外部事故時に ZCT を通過する零相電流は大きくなります。\n\n地絡過電流継電器（GR）は電流の大きさだけで動作し、方向を判別できません。そのため構内ケーブルが長いと、外部事故時の充電電流が整定値を超えて不要動作（いわゆるもらい事故）することがあります。このような場合は、零相電圧と零相電流の位相関係から事故の方向を判別できる地絡方向継電器（DGR）を用います。\n\n選択肢(3)は「こう長が短い場合」としている点が誤りで、正しくは「こう長が長い場合」です。よって正答は(3)です。",
+      "choiceExplanations": {
+        "1": "正しい。高圧受電設備の地絡保護には、零相変流器（ZCT）で零相電流を検出する地絡過電流継電器（GR）と、零相電流と零相電圧を組み合わせて地絡の方向を判別する地絡方向継電器（DGR）が用いられる。なお、受電設備で零相電圧を検出する手段としては、コンデンサ分圧形の零相基準入力装置（ZPD）も広く用いられている。",
+        "2": "正しい。時限順送式故障区間分離方式では、事故時に変電所の遮断器が遮断し、配電線上の区分開閉器が無電圧で開放する。再閉路後、区分開閉器が電源側から一定の時限で順次投入され、事故区間に送電した時点で再び遮断される。これにより事故区間の電源側の開閉器が投入ロックされ、再度の送電で事故区間より電源側の健全区間に送電が回復する。事故区間より負荷側の健全区間は、連系開閉器による他配電線からの切替送電で復旧できる。停電範囲を極力縮小し、供給支障を少なくするための方式である。",
+        "3": "誤り。外部事故時に構内ケーブルの対地静電容量を通して流れる零相電流（充電電流）は、ケーブルのこう長が長いほど大きい。したがって、無方向性の地絡過電流継電器が不要動作するおそれがあるのは、こう長が「長い」場合である。「短い場合」とした本肢は誤りである。",
+        "4": "正しい。非接地方式の配電用変電所では、接地形計器用変圧器などで検出した零相電圧により地絡過電圧継電器（OVGR）で系統内の地絡発生を検出する。あわせて、各配電線の零相電流と零相電圧の位相関係から地絡方向継電器（DGR）で事故配電線を選択する。両者を組み合わせて地絡保護を行う。",
+        "5": "正しい。配電用変電所では、短絡事故の保護のため、各配電線の送り出しに過電流継電器（OCR）を設置し、短絡電流を検出して遮断器を動作させる。"
+      },
+      "figureDescription": "本問には図・表はない。問題文と選択肢(1)～(5)の文章のみで構成されている。",
+      "officialReferenceUrls": [],
+      "uncertainty": "なし",
+      "needsReview": true,
+      "sourceQuestionPdfUrl": "https://www.shiken.or.jp/chief/upload/20260322_ch_third_q02.pdf",
+      "sourceAnswerPdfUrl": "https://www.shiken.or.jp/chief/upload/20260322_ch_third_a01.pdf",
+      "reviewedFromPage": [
+        10
+      ]
+    }
+  ],
+  "draftModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 3843,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 9309,
+      "webSearchRequests": 0,
+      "costUSD": 0.1515958,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 2133,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "59196fd20593cd90348ca4ea44836c7ad5d622d79c54890aa2b94d465b2eccf8",
+  "inputRequestSha256": "3ec462e4557bf53a4db3a795cedaac135f28f00291426fecd02e7411ed7a2bd9",
+  "sourceQuestionPdfSha256": "9733341a0f293f068c9a665d5a9a90f1aabf3a2db5d79cd530643cdea241f7b7",
+  "sourceAnswerPdfSha256": "cc2890296d06a4823df5697a78a1c01ddfd39f041c51f48c87984daa3a5707c6",
+  "sourcePageImageSha256": {
+    "data/raw_pdfs/denken3/review/20260322/power/p10.png": "ccbdcb03a7f7c0d4c62988274ef6e0edf48ed641b796a80b77b4038e11191ec6"
+  },
+  "revisionHistory": [
+    {
+      "version": 1,
+      "model": "claude-opus-5-5",
+      "resolvedModel": "claude-opus-5-5",
+      "modelUsage": {
+        "claude-opus-5-5": {
+          "inputTokens": 2,
+          "outputTokens": 2805,
+          "cacheReadInputTokens": 1279,
+          "cacheCreationInputTokens": 12748,
+          "webSearchRequests": 0,
+          "costUSD": 0.1583478,
+          "contextWindow": 1000000,
+          "maxOutputTokens": 128000,
+          "thinkingTokens": 972,
+          "canonicalModel": "claude-opus-5-5",
+          "provider": "firstParty",
+          "costBasis": "list"
+        }
+      },
+      "rawResponseSha256": "94ff6617b6875989f141f1606b183bb2ecffbff0e3b0cd6dfe3c89ad358b7658",
+      "inputRequestSha256": "962bba60aa7a5527c06923c0dedd83eca000152fa04d73a11fae1bd703493104",
+      "previousDraftSha256": "2f7a40f66941f1c0b30ab628ff5c6414954028d03269a6cde80ee6739e2f6df3",
+      "previousDraft": "data/raw_pdfs/denken3/review/20260322/power/archive/q07-vision-draft-v1.json",
+      "answeredReviewSha256": "9fa76f399ed852767acef75ca137e3263f2a4a0db37295cf3a407ae4414cb828",
+      "answeredReview": "data/raw_pdfs/denken3/review/20260322/power/archive/q07-opus-review-v1.json",
+      "answeredStrictReceipt": "docs/evidence/denken3/strict/20260322-power-s1-q07-opus.json",
+      "answeredStrictReceiptSha256": "775d647fb6d31ee7cfb66ddc3899f7f2d7b6cb8df61e83065a7252350315fc83",
+      "figureSha256": {},
+      "referenceHashes": {},
+      "operatorNote": ""
+    }
+  ]
+}

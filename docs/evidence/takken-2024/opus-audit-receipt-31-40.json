@@ -1,0 +1,24 @@
+{
+  "model": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 25922,
+      "cacheReadInputTokens": 1862,
+      "cacheCreationInputTokens": 21197,
+      "webSearchRequests": 0,
+      "costUSD": 0.6883964,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 15598,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "inputSha256": "4b347c696277c1e37be5dd50abce653e898a5094e39ead8292f0d43b345b31f5",
+  "rawStreamSha256": "52211bbfbd2ac22d2c70e1cf543c56967cf29a3a82c6bd8b57a9d671d6249c46",
+  "result": "{\"items\": [{\"qNumber\": 31, \"verdict\": \"PASS\", \"issues\": [], \"correctedExplanation\": \"\", \"correctedChoiceExplanations\": {}}, {\"qNumber\": 32, \"verdict\": \"PASS\", \"issues\": [], \"correctedExplanation\": \"\", \"correctedChoiceExplanations\": {}}, {\"qNumber\": 33, \"verdict\": \"PASS\", \"issues\": [], \"correctedExplanation\": \"\", \"correctedChoiceExplanations\": {}}, {\"qNumber\": 34, \"verdict\": \"HOLD\", \"issues\": [\"選択肢ア（肢1）の解説が「完成物件で100万円（代金の10%以下）」と、問題文にない完成物件という前提を付け加えている。肢1は完成・未完成を特定していない。手付金100万円は代金4,000万円の5%（200万円）以下かつ1,000万円以下なので、完成・未完成を問わず保全措置は不要である。この点を前提に説明すべきである。結論（正しい）と条文（法35条1項10号・37条1項）は妥当。\"], \"correctedExplanation\": \"\", \"correctedChoiceExplanations\": {\"ア\": \"正しい。手付金等の保全措置の概要は重要事項説明事項である（法35条1項10号）。本肢の手付金100万円は、代金4,000万円の5%（200万円）以下かつ1,000万円以下である。したがって完成・未完成を問わず、保全措置は不要である（法41条1項・41条の2第1項、施行令3条の5）。保全措置を講じないときは、その旨を重要事項説明書で明らかにする。一方、保全措置に関する事項は法37条1項の37条書面記載事項に含まれないため、37条書面への記載は不要である。\"}}, {\"qNumber\": 35, \"verdict\": \"PASS\", \"issues\": [], \"correctedExplanation\": \"\", \"correctedChoiceExplanations\": {}}, {\"qNumber\": 36, \"verdict\": \"PASS\", \"issues\": [], \"correctedExplanation\": \"\", \"correctedChoiceExplanations\": {}}, {\"qNumber\": 37, \"verdict\": \"PASS\", \"issues\": [\"法的内容は妥当で、修正不要。非ブロッキングの注意点：choiceExplanations のキーが、選択肢（1一つ〜4四つ）ではなく記述ア〜エに対応している。Q40の形式（キー＝選択肢番号）と揃っていないため、表示時の対応を確認することを推奨。\"], \"correctedExplanation\": \"\", \"correctedChoiceExplanations\": {}}, {\"qNumber\": 38, \"verdict\": \"PASS\", \"issues\": [], \"correctedExplanation\": \"\", \"correctedChoiceExplanations\": {}}, {\"qNumber\": 39, \"verdict\": \"PASS\", \"issues\": [], \"correctedExplanation\": \"\", \"correctedChoiceExplanations\": {}}, {\"qNumber\": 40, \"verdict\": \"HOLD\", \"issues\": [\"条項番号の誤り：「借賃以外の金銭の授受に関する定めがあるときは、その額並びに当該金銭の授受の時期及び目的」は法37条2項3号である。2項2号は「借賃の額並びにその支払の時期及び方法」。主解説・選択肢イ解説・legalBasis の「37条2項2号」はいずれも「37条2項3号」に修正が必要（legalBasis は「宅地建物取引業法37条2項1号・3号」）。その他の内容は妥当：損害賠償額の予定等は2項1号で1項8号を準用し、租税公課（1項12号）と既存建物の確認事項（1項2号の2）は準用されない。\"], \"correctedExplanation\": \"正解は2（イ、ウ）。貸借の37条書面の記載事項は法37条2項に定められている。借賃以外の金銭の授受に関する定め（同項3号）と、損害賠償額の予定・違約金に関する定め（同項1号による1項8号の準用）は、定めがあれば必ず記載しなければならない。租税公課の負担（1項12号）と、既存建物の構造耐力上主要な部分等の状況について当事者双方が確認した事項（1項2号の2）は、貸借には準用されず記載不要である。\", \"correctedChoiceExplanations\": {\"イ\": \"選択肢2（イ、ウ）：正答。イは、借賃以外の金銭の授受に関する定めがあるときのその額・授受の時期・目的である（法37条2項3号）。ウは、損害賠償額の予定・違約金に関する定めがあるときのその内容である（法37条2項1号による1項8号の準用）。いずれも貸借の37条書面に必ず記載すべき事項である。\"}}]}",
+  "is_error": false
+}

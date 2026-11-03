@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "batch": "20241027-q11-20",
+  "status": "accepted",
+  "questionOriginalVisualQc": 10,
+  "choiceTextOriginalVisualQc": 40,
+  "choiceExplanationQc": 40,
+  "figureAndPhotoQc": 3,
+  "governmentSourceQc": 3,
+  "reviewedQuestionNumbers": [
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20
+  ],
+  "unresolved": [],
+  "sourceDate": "2024-10-27",
+  "sourceQuestionPdfSha256": "24810bc348b169ac0acda3ba0ace038f3e7947772963bbdfe5b4dd550fb466cb",
+  "sourceAnswerPdfSha256": "221233ea508b81be22cfa5c0e472477f054492bc2fa21ec01a664c54ebefc582",
+  "sourceQuestionNumbers": [
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20
+  ],
+  "sourceOfficialAnswerCount": 10,
+  "visionDraftQuestionCount": 10,
+  "publishGate": "notification-required-and-two-full-years-required",
+  "governmentSourceApplicableQuestions": [
+    15,
+    19,
+    20
+  ],
+  "governmentSourceVersion": "経済産業省・2023-12-26改正（2024-10-27試験以前）",
+  "governmentSourceUrl": "https://www.meti.go.jp/policy/safety_security/industrial_safety/sangyo/electric/files/20231226-2.pdf",
+  "reviewMethod": "公式設問行画像と15頁配線図を原本として全文・四肢・正答・全肢解説・図表を照合し、Sonnet訂正とOpus独立監査をPASSまで反復。",
+  "independentVisionReview": {
+    "model": "claude-opus-5-5",
+    "passedQuestions": 10,
+    "totalQuestions": 10,
+    "receipts": [
+      "docs/evidence/denko2-final-review/accepted/20241027-q11-20.json"
+    ],
+    "sourceReceipts": [
+      "docs/evidence/denko2-final-review/round3/20241027-q11-15-opus.json",
+      "docs/evidence/denko2-final-review/round3/20241027-q16-20-opus.json",
+      "docs/evidence/denko2-final-review/round4-target/20241027-q06-q08-q15-q16-q17-opus.json",
+      "docs/evidence/denko2-final-review/round5-target/20241027-q18-q21-q31-q33-opus.json"
+    ]
+  }
+}

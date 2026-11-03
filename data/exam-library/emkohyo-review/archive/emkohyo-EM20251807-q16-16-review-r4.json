@@ -1,0 +1,58 @@
+{
+  "reviewModel": "claude-opus-5-5",
+  "requestedModel": "claude-opus-5-5",
+  "canonicalModel": "claude-opus-5-5",
+  "provider": "firstParty",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 3532,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 13535,
+      "webSearchRequests": 0,
+      "costUSD": 0.1791838,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 2683,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponsePath": "data/exam-library/emkohyo-review/emkohyo-EM20251807-q16-16-raw-response.txt",
+  "rawResponseSha256": "c1353108a39066d242ff842308dbda908ee7680378f40b67e063043e24b0b01a",
+  "paperId": "emkohyo-EM20251807",
+  "ids": [
+    "emkohyo-EM20251807-q16"
+  ],
+  "figureSha256": {
+    "emkohyo-EM20251807-q16": {}
+  },
+  "officialRowImageSha256": {
+    "emkohyo-EM20251807-q16": {
+      "/exam-library/emkohyo-EM20251807/q16-p10-0.webp": "e7410b335c9cead50bbf96066f31bfb5d188e2e45cfaa1b674a412db0ada6b51"
+    }
+  },
+  "officialPageImageSha256": {},
+  "governmentSourceImageSha256": {},
+  "candidateSha256": {
+    "emkohyo-EM20251807-q16": "e33c08a2163598fd1e8c74191bfce77c8b86949dd4a30d15758d77ab68cd79eb"
+  },
+  "sourcePackPath": "docs/evidence/emkohyo-choice-sources/emkohyo-EM20251807-q16-16.json",
+  "sourcePackSha256": "e16f83257f3e5c6d215f819a4071a704c7cf7c3fe564e1a20bceae1cccb49e83",
+  "assessment": {
+    "emkohyo-EM20251807-q16": {
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "reasonIssues": [],
+      "sourceIssues": [
+        "肢1・肢2の理由と sources[0].title は、標準塩素水を「別表第3 1(17)」、でんぷん指示薬を用いるチオ硫酸ナトリウム溶液の標定を「別表第2 1(5)」と、別の別表として引いている。しかし提示された抜粋（claimedExcerpts）には別表番号が一つも現れない。項番号も、文脈の「7)標準塩素水」から(17)と推定できるだけである。さらに、標準塩素水の算式「有効塩素(mg／L)＝3.545×g×f1×1000／検水(ml)」はファクターf1を使っている。f1を定めるチオ硫酸ナトリウム溶液の標定は、同じ別表の試薬項にある可能性が高く、両者を別の別表とする記載は整合性に疑義がある。別表番号・項番号を削るか、原文で確認した番号に直す必要がある。",
+        "平成15年厚労省告示第318号は、水道水の遊離残留塩素・結合残留塩素の検査方法であり、作業環境測定における塩素濃度測定用の次亜塩素酸ナトリウム溶液の標定を直接定めたものではない。また告示は硫酸酸性とし、でんぷんを先に加える手順である。本問は塩酸を用いる。候補は「原理は同じヨウ素滴定」「本問では塩酸がこの役割」と明示しており、結論（I₂／チオ硫酸ナトリウム／でんぷん）の支持には足りる。ただし、作業環境測定の手順そのものの根拠ではないことを出典表記上も明確にすべきである。"
+      ],
+      "needsExternalCheck": [
+        "https://www.mhlw.go.jp/web/t_doc?dataId=79aa5327&dataType=0&pageNo=1 の原文で、「標準塩素水」と「チオ硫酸ナトリウム溶液(0.1mol／L)」（ヨウ素酸カリウムによるファクターf1の標定）が、それぞれどの別表・どの項番号に置かれているかを確認すること。候補の「別表第2 1(5)」「別表第3 1(17)」が正しいかどうかの確認である。"
+      ]
+    }
+  }
+}

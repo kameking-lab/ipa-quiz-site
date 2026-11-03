@@ -1,0 +1,71 @@
+{
+  "schemaVersion": 1,
+  "reviewModel": "claude-opus-5-5",
+  "inputHashes": {
+    "reviewedSha256": "9d1c96dfa10d66488944b4b837ebb9a4a688463aa07721554183d2ce1d2eb52f",
+    "rowSha256": {
+      "11": "cb160799f1d4ba848ad3945ae628e105eaf0de0756bdc6b0d3bf729825d7e064",
+      "12": "b1cb420488b09248068e05369da9c2d36a5b43195df4d1a68c9bd2bd3c325f91",
+      "13": "d625c7ab7cecd664225765f2bf011db797ea4a7dc6b8524e5764f1cbd7ef29fe",
+      "14": "20fe3194d8ffeab319a549029e49076061753b9aab0a1e30215eccfa4fd3b754",
+      "15": "7f27799f3c4098c0b45326ef80a08df46d97cfe5a33db25ef8843cf5380f17e5"
+    }
+  },
+  "assessment": [
+    {
+      "number": 11,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "visualIssues": [],
+      "lawIssues": []
+    },
+    {
+      "number": 12,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "visualIssues": [],
+      "lawIssues": []
+    },
+    {
+      "number": 13,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "visualIssues": [],
+      "lawIssues": []
+    },
+    {
+      "number": 14,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "visualIssues": [],
+      "lawIssues": []
+    },
+    {
+      "number": 15,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [
+        "explanation、choiceExplanations.イ、choiceExplanations.ハでは、配線用遮断器の条項を「第33条第4項・第33-2表」としている。電技解釈第33条では、第2項がヒューズ（33-1表）、第3項が配線用遮断器（33-2表）、第4項が電動機回路用の過負荷保護装置と短絡保護専用遮断器・ヒューズの組合せ装置を定めている。このため配線用遮断器の根拠は「第33条第3項・第33-2表」とするのが正しい。officialReferenceUrls の METI PDF と照合したうえで3か所とも直すこと。"
+      ],
+      "visualIssues": [],
+      "lawIssues": [
+        "条項番号の誤り：配線用遮断器の動作時間を定めるのは電技解釈第33条第4項ではなく第3項（33-2表：30A以下は1.25倍で60分、2倍で2分）である。",
+        "解釈第33条第3項は「電気用品安全法の適用を受けるもの」を対象から除いている。一般的な20Aの配線用遮断器は同法の対象で、同じ値を定める同法側の技術基準を受ける。解説の「解釈により…と定められている」は、試験上の根拠として解釈33-2表の値を用いている、という表現に改めるとよい。"
+      ]
+    }
+  ]
+}

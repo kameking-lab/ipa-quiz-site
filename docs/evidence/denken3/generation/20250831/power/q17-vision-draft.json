@@ -1,0 +1,123 @@
+{
+  "questionNumber": 17,
+  "sharedContext": "定格容量750 kV·Aの三相変圧器に遅れ力率0.9の三相負荷500 kWが接続されている。この三相変圧器に新たに遅れ力率0.8の三相負荷200 kWを接続する場合，次の(a)及び(b)の問に答えよ。",
+  "units": [
+    {
+      "part": "a",
+      "question": "定格容量750 kV·Aの三相変圧器に遅れ力率0.9の三相負荷500 kWが接続されている。この三相変圧器に新たに遅れ力率0.8の三相負荷200 kWを接続する場合，次の(a)及び(b)の問に答えよ。\n\n(a) 負荷を追加した後の無効電力の値[kvar]として，最も近いものを次の(1)～(5)のうちから一つ選べ。",
+      "choices": {
+        "1": "472",
+        "2": "525",
+        "3": "339",
+        "4": "392",
+        "5": "610"
+      },
+      "officialAnswer": "4",
+      "explanation": "各負荷の無効電力を求めて合計する。どちらも遅れ力率なので同符号で加算できる（変圧器自体の無効電力損失は考慮しない）。\n\n既設負荷（500 kW，遅れ力率0.9）:\nsinθ₁ = √(1 − 0.9²) = √0.19 ≒ 0.4359\nQ₁ = P₁ × sinθ₁ / cosθ₁ = 500 × 0.4359 / 0.9 ≒ 242.2 kvar\n\n追加負荷（200 kW，遅れ力率0.8）:\nsinθ₂ = √(1 − 0.8²) = 0.6\nQ₂ = 200 × 0.6 / 0.8 = 150 kvar\n\n負荷追加後の無効電力:\nQ = Q₁ + Q₂ ≒ 242.2 + 150 = 392.2 kvar\n\nよって最も近いのは (4) 392 kvar。",
+      "choiceExplanations": {
+        "1": "誤り。正しい合計無効電力は Q₁ + Q₂ ≒ 242.2 + 150 = 392.2 kvar であり，472 kvar とは一致しない。",
+        "2": "誤り。525 kvar は合計有効電力700 kWをすべて力率0.8として計算した値（700 × 0.6/0.8 = 525）に等しいが，既設500 kWの力率は0.9なので，負荷ごとに分けて計算すると392.2 kvarになる。",
+        "3": "誤り。339 kvar は合計有効電力700 kWをすべて力率0.9として計算した値（700 × 0.4359/0.9 ≒ 339）に等しいが，追加200 kWの力率は0.8なので，負荷ごとに分けて計算すると392.2 kvarになる。",
+        "4": "正しい。Q₁ ≒ 242.2 kvar（500 kW・力率0.9）と Q₂ = 150 kvar（200 kW・力率0.8）の和は約392.2 kvarで，最も近い。",
+        "5": "誤り。正しい合計無効電力は約392.2 kvarであり，610 kvar とは一致しない。"
+      },
+      "figureDescription": "本問に図はない（文章と数値のみで出題されている）。",
+      "officialReferenceUrls": [],
+      "uncertainty": "なし",
+      "needsReview": true,
+      "sourceQuestionPdfUrl": "https://www.shiken.or.jp/chief/upload/20250831_ch_third_q02.pdf",
+      "sourceAnswerPdfUrl": "https://www.shiken.or.jp/chief/upload/20250831_ch_third_a01.pdf",
+      "reviewedFromPage": [
+        21
+      ]
+    },
+    {
+      "part": "b",
+      "question": "定格容量750 kV·Aの三相変圧器に遅れ力率0.9の三相負荷500 kWが接続されている。この三相変圧器に新たに遅れ力率0.8の三相負荷200 kWを接続する場合，次の(a)及び(b)の問に答えよ。\n\n(b) この変圧器の過負荷運転を回避するために，変圧器の二次側に設置が必要な最小の電力用コンデンサ容量の値[kvar]として，最も近いものを次の(1)～(5)のうちから一つ選べ。",
+      "choices": {
+        "1": "70",
+        "2": "256",
+        "3": "203",
+        "4": "123",
+        "5": "50"
+      },
+      "officialAnswer": "4",
+      "explanation": "負荷追加後の皮相電力を確認する。(a)より P = 500 + 200 = 700 kW，Q ≒ 392.2 kvar。\nS = √(700² + 392.2²) = √(490000 + 153800) ≒ 802.4 kV·A\nこれは定格容量750 kV·Aを超えるので過負荷となる。\n\n過負荷を回避するには，変圧器の皮相電力を定格容量750 kV·A以下にすればよい（変圧器損失は無視する）。電力用コンデンサは有効電力を変えずに遅れ無効電力だけを減らすので，有効電力700 kWのまま許容される無効電力は\nQ' = √(750² − 700²) = √(562500 − 490000) = √72500 ≒ 269.3 kvar\n\n必要な最小コンデンサ容量は\nQc = Q − Q' ≒ 392.2 − 269.3 = 122.9 kvar\n\nよって最も近いのは (4) 123 kvar。",
+      "choiceExplanations": {
+        "1": "誤り。70 kvar を設置すると Q ≒ 392.2 − 70 = 322.2 kvar，S = √(700² + 322.2²) ≒ 770.6 kV·A となり，定格750 kV·Aを超えて過負荷が解消しない。",
+        "2": "誤り。256 kvar を設置すると Q ≒ 136.2 kvar，S = √(700² + 136.2²) ≒ 713.1 kV·A となり過負荷は回避できるが，必要な最小容量（約122.9 kvar）より大きく，「最小」の値ではない。",
+        "3": "誤り。203 kvar を設置すると Q ≒ 189.2 kvar，S = √(700² + 189.2²) ≒ 725.1 kV·A となり過負荷は回避できるが，必要な最小容量（約122.9 kvar）より大きく，「最小」の値ではない。",
+        "4": "正しい。許容無効電力 √(750² − 700²) ≒ 269.3 kvar まで無効電力を減らす必要があり，392.2 − 269.3 ≒ 122.9 kvar が最小のコンデンサ容量で，最も近い。",
+        "5": "誤り。50 kvar を設置すると Q ≒ 392.2 − 50 = 342.2 kvar，S = √(700² + 342.2²) ≒ 779.1 kV·A となり，定格750 kV·Aを超えて過負荷が解消しない。"
+      },
+      "figureDescription": "本問に図はない（文章と数値のみで出題されている）。",
+      "officialReferenceUrls": [],
+      "uncertainty": "なし",
+      "needsReview": true,
+      "sourceQuestionPdfUrl": "https://www.shiken.or.jp/chief/upload/20250831_ch_third_q02.pdf",
+      "sourceAnswerPdfUrl": "https://www.shiken.or.jp/chief/upload/20250831_ch_third_a01.pdf",
+      "reviewedFromPage": [
+        21
+      ]
+    }
+  ],
+  "draftModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 4764,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 9337,
+      "webSearchRequests": 0,
+      "costUSD": 0.1702398,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 2179,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "4d811ffc662d5c4685bc5b7bbdfb395d8cafde311327df521ab8affcd72ba71c",
+  "inputRequestSha256": "5662a32fef4153a39531ef4c09d6a5165f788fc83146a8112d60216c94678ea0",
+  "sourceQuestionPdfSha256": "567aac1df6dc0c0950d04e90a1ad03231427c518eede92559effe01e2b97a2c9",
+  "sourceAnswerPdfSha256": "76fd3715ed487d19a56b387fb402de20ee09474e9fa55b0413f9037b96af06c9",
+  "sourcePageImageSha256": {
+    "data/raw_pdfs/denken3/review/20250831/power/p21.png": "7a7b0a824a7be438a4818ae53c74e56b7f22bbeee4c2a02873c531d73e014845"
+  },
+  "revisionHistory": [
+    {
+      "version": 1,
+      "model": "claude-opus-5-5",
+      "resolvedModel": "claude-opus-5-5",
+      "modelUsage": {
+        "claude-opus-5-5": {
+          "inputTokens": 2,
+          "outputTokens": 3567,
+          "cacheReadInputTokens": 1279,
+          "cacheCreationInputTokens": 13771,
+          "webSearchRequests": 0,
+          "costUSD": 0.18177179999999998,
+          "contextWindow": 1000000,
+          "maxOutputTokens": 128000,
+          "thinkingTokens": 1152,
+          "canonicalModel": "claude-opus-5-5",
+          "provider": "firstParty",
+          "costBasis": "list"
+        }
+      },
+      "rawResponseSha256": "337a102052cda2ce271a9769cee7a9c9c6dbd7bb9243ab7f28bf13826916bd8a",
+      "inputRequestSha256": "0c603bc14df9613c03f0f45e0dde8e4fd610dbe62e22a64c4438fcb297d2ed97",
+      "previousDraftSha256": "3d45bfd08a7400d6b03f6cd2d486c7fd0ceb16f7b1304058ea58534889c4343f",
+      "previousDraft": "data/raw_pdfs/denken3/review/20250831/power/archive/q17-vision-draft-v1.json",
+      "answeredReviewSha256": "fef21342e947613260a25f5bda7aa4e03269611d3c45e5cb3a8517cb05065e68",
+      "answeredReview": "data/raw_pdfs/denken3/review/20250831/power/archive/q17-opus-review-v1.json",
+      "answeredStrictReceipt": "docs/evidence/denken3/strict/20250831-power-s1-q17a-q17b-opus.json",
+      "answeredStrictReceiptSha256": "0dadb1125d1ffefdc53e442189cc8e72f6de557a4272b197f2d809d3d71bca04",
+      "figureSha256": {},
+      "referenceHashes": {},
+      "operatorNote": ""
+    }
+  ]
+}

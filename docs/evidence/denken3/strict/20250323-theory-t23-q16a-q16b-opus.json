@@ -1,0 +1,90 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20250323",
+  "subject": "theory",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 14611,
+      "cacheReadInputTokens": 2155,
+      "cacheCreationInputTokens": 18291,
+      "webSearchRequests": 0,
+      "costUSD": 0.43898700000000007,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 2656,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "12cee73f635ad65ce2c904069b0317b8acf9fc91065a35370b743278e9539ec1",
+  "inputRequestSha256": "f5c6c09e6e300d283a7a0ee8f346b1780925e2bb8c70579e30a538c6c5d6802a",
+  "inputHashes": {
+    "candidateSha256": {
+      "q16a": "23654dbf079f5b338a179281291fe4ba1233fba24493b9737856a8665ba14cfd",
+      "q16b": "19980c55ff6b09ec63b3611027a19d413152735c7b5c871545b4209b2876624b"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20250323/theory/p20.png": "bea562c8fed5fb25fecd812041d5eed51e1bc29c08c6dafbfaf4fac327b08415",
+      "data/raw_pdfs/denken3/review/20250323/theory/p21.png": "41e4fa7290d142a73f6eee919fedcf3f83e1f9a7092c99881947001703fd7c4b"
+    },
+    "figureSha256": {
+      "public/images/denken3/20250323/theory/20250323-theory-q16-bridge-circuit.png": "cee8edd83316f3d571e0cbb72e05953def9f81af6bd7026c745d5e2934409419"
+    },
+    "sourceQuestionPdfSha256": "8817012cb55eed9c83bb1e68df138909b1e03a81f7ed48a9893a219e1d2a76ca",
+    "sourceAnswerPdfSha256": "4c3b38fcf1405766fafaa78b1b05b867a3d48307a670b9d354476bc6b32acd4c",
+    "officialAnswerUnitsSha256": "ce98d57b37fbcbfec07706eb108ac8ffc5f165350c17c5937badca5fa6526b2e",
+    "referencePdfSha256": {},
+    "referencePageSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q16a",
+      "questionNumber": 16,
+      "part": "a",
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "原図の頁下の管理番号はT2−R 020とT2−R 021で、reviewedFromPage [20, 21]と一致する。印刷頁番号は-17-と-18-である。",
+        "問題文は原図と一致する。R1=3 kΩ、R2=2 kΩ、R4=3 kΩ、R3=6 kΩ、接点Cが中央、Rac=Rbc=3 kΩ、直流電圧源6 V、電流計の内部抵抗は無視、の各条件を確認した。(a)の設問文にある単位[kΩ]と『最も近いもの』の表現も原図と一致する。",
+        "選択肢(1)0.1、(2)0.5、(3)1.0、(4)1.5、(5)2.0は、原図の(a)の全肢と一致する。",
+        "原図の接続を確認した。左節点PからR1が上節点Tへ、R2が下節点Bへつながる。TからR4を経て端aへ、BからRxを経て端bへつながる。検流計はT–B間にある。接触子cは右の導線、電流計、6 V電源を経てPへ戻る。候補の説明と一致する。",
+        "平衡条件を検算した。V_T=V_Bより R1/(R1+R4+Rac)=R2/(R2+Rx+Rbc)、これを整理すると R1(Rx+Rbc)=R2(R4+Rac) となる。3(Rx+3)=2×6=12 から Rx=1.0 kΩ。公式正答(3)と一致する。",
+        "別解を検算した。上側の枝で3:6となるので、P–T間の電圧は6×3/9=2 Vである。下側で2:(Rx+3)=1:2とすれば Rx=1 となり、正しい。",
+        "誤答肢の検算: (1) 3×3.1=9.3、(2) 3×3.5=10.5、(4) 3×4.5=13.5、(5) 3×5=15。いずれも12にならず、各肢の理由は正確である。",
+        "公開候補図には、原図の回路全体と滑り抵抗器の詳細図が欠落なく含まれている。R1、R2、R3、R4、Rx[kΩ]、a、b、c、Rac、Rbc、検流計、電流計、6 Vの全ラベルと接続・矢印を確認した。問題文は含まれていない。この図だけで接続関係を理解できる。",
+        "officialReferenceUrlsは空で、検証を要する外部の独立主張はない。公式正答3は、提示されたmanifestの正答単位と一致する。"
+      ]
+    },
+    {
+      "unitKey": "q16b",
+      "questionNumber": 16,
+      "part": "b",
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "(b)の設問文『平衡時の電流計の指示値[mA]として，最も近いもの』は原図(T2−R 021)と一致する。共通の前文は(a)と同一で、原図と一致する。",
+        "選択肢(1)0、(2)0.4、(3)1.5、(4)1.7、(5)2.0は、原図の(b)の全肢と一致する。",
+        "平衡時は検流計の電流が0なので、両枝は独立に6 Vを受ける。電流計の内部抵抗は無視でき、電源は理想電圧源として扱える。上側の枝は3+3+3=9 kΩで0.667 mA、下側の枝は2+1+3=6 kΩで1.0 mA、合計は1.667 mAとなり、最も近いのは1.7 mAである。公式正答(4)と一致する。",
+        "別解を検算した。9 kΩと6 kΩの並列は54/15=3.6 kΩで、6/3.6=1.667 mAとなり一致する。",
+        "誤答肢の理由を検算した。(1)の0は検流計の値である。(2)の0.4は、各枝の電流(0.667 mAと1.0 mA)を単独で見ても下回る。(3)は差0.167、(4)は差0.033、(5)は差0.333で、いずれも正確である。",
+        "電流計Aは6 V電源と直列で、P–c間の総電流が流れる位置にある。原図と公開候補図の両方で確認し、figureDescriptionと一致する。",
+        "公開候補図は(a)と同一の画像で、電流計・電源・接触子cの経路が完全に含まれている。この図だけで解答できる。",
+        "officialReferenceUrlsは空で、外部の独立主張はない。公式正答4は、提示されたmanifestの正答単位と一致する。"
+      ]
+    }
+  ]
+}

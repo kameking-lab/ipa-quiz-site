@@ -1,11 +1,11 @@
+import { questionSourceEdition, questionSourceExam } from "@/lib/questions/source-label";
 import type { ChatSession } from "./types";
 import type { Question } from "@/lib/questions/types";
 import { SITE_BASE_URL } from "@/lib/seo/config";
-import { examLabel, formatYearSeason } from "@/lib/utils";
 
 export function buildMarkdown(session: ChatSession, question: Question): string {
-  const examName = examLabel(question.exam);
-  const yearSeason = formatYearSeason(question.year, question.season);
+  const examName = questionSourceExam(question);
+  const yearSeason = questionSourceEdition(question);
 
   const choicesText = question.choices
     ? Object.entries(question.choices)

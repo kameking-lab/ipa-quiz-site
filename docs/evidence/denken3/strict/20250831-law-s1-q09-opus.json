@@ -1,0 +1,68 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20250831",
+  "subject": "law",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 3993,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 16574,
+      "webSearchRequests": 0,
+      "costUSD": 0.21271579999999998,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 2386,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "056889a53e07d4699b849fa18b645c429668fd228939c4bb44071f2ae30b16be",
+  "inputRequestSha256": "69dc587feadaab7bb21823c8f8455bda27104626f87306a217c35bc35fb8f5fc",
+  "inputHashes": {
+    "candidateSha256": {
+      "q09": "5a8ee24515c95aa10bfbc8767f155b7b609ab4c7768aeb20d47b549534062ee6"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20250831/law/p13.png": "99f9f280579f40fc38cdbb04b9f0691be4f0c4173c180dd6af791bacc9a7e606",
+      "data/raw_pdfs/denken3/review/20250831/law/p04.png": "38045ec67d58396f98ae270d13322f49aa0291474ec50e346ecabbd47a85dfbe"
+    },
+    "figureSha256": {},
+    "sourceQuestionPdfSha256": "51aeb8f1cbfe8e6d3667c2848a3d9fccff40a967f48aafc292fa13a13a6efbb0",
+    "sourceAnswerPdfSha256": "76fd3715ed487d19a56b387fb402de20ee09474e9fa55b0413f9037b96af06c9",
+    "officialAnswerUnitsSha256": "917e1486284718adf6e6e68c7abfdcf23663c59f2395264650ab1a97d3d48db9",
+    "referencePdfSha256": {},
+    "referencePageSha256": {},
+    "referenceJsonSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q09",
+      "questionNumber": 9,
+      "part": null,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [
+        "uncertainty に「現行の条番号では第162条と認識している」という条番号の主張がある。添付の公式原図（問題PDF第13頁・注意書き頁・解答表）では検証できない。officialReferenceUrls も空で、裏付けとなる公式参考資料の原頁は添付されていない。未検証の外部確認事項が残るためPASSにできない。添付の公式参考資料で原頁を確認して条番号を確定するか、条番号の記載を削除すること。",
+        "uncertainty の「学習時は最新版の条文で確認すること」は、法規科目注意書き頁の注3と整合しない。注3は「問題は，令和7年4月1日現在，効力のある法令（「電気設備の技術基準の解釈」を含む。）に基づいて作成している」と定めている。本問の正答はこの効力基準日の解釈に基づくため、解釈がその後改正されると最新版の条文と食い違うおそれがある。基準日（令和7年4月1日現在）を明記する形に修正すること。",
+        "uncertainty の「原本ページから試験年度は判読できない」は、問題PDF第13頁単体についての記述としては事実である。ただし、年度は manifest（2025年度上期、試験日2025-08-31）と公式解答表の表題（令和7年度 第三種電気主任技術者上期試験解答）で確定している。未確定事項のように読める記述は、読者に誤った不確実性を示すため整理が望ましい。"
+      ],
+      "verifiedEvidence": [
+        "出典メタデータ: fiscalYear=2025、term=upper、examDate=2025-08-31、subject=law、sourceQuestionPdfUrl=…/20250831_ch_third_q04.pdf、sourceAnswerPdfUrl=…/20250831_ch_third_a01.pdf、reviewedFromPage=[13] は manifest と一致する。原図のフッタ「T1－H 013」（印刷頁番号 -10-）は PDF第13頁と整合する。scoringPoints=6 は公式解答表の配点6と一致する。sourceAttribution の「令和7年度上期…法規科目 問9」も一致する。",
+        "問題文: 導入文、a)〜e)、結びの設問文を原図と一字単位で照合し、一致を確認した。a) の断面積総和と電光サイン装置・制御回路等の緩和規定、b) のダクト相互の接続、c) の支持点間距離（3m／取扱者以外の者が出入りできない場所での垂直取付けは6m）、d) の300V以下はD種、e) の300V超はC種で防護措置によるD種緩和（除外条件の括弧書きを含む）が該当する。空欄(ウ)と(エ)がそれぞれ2箇所に出現する点も原図どおり再現されている。",
+        "選択肢: (1) 20/50/電気的/使用/接触、(2) 32/48/電気的/対地/簡易接触、(3) 32/48/機械的/使用/接触、(4) 32/48/機械的/使用/簡易接触、(5) 20/50/電気的/対地/簡易接触。原図の表の全25セルと一致する。",
+        "公式正答: 公式解答表の法規 問9 は解答1・配点6。officialAnswer=\"1\" は manifest 固定の正答単位と一致する。",
+        "総合解説: (ア)20・(イ)50・(ウ)電気的・(エ)使用・(オ)接触は、公式正答(1)の組合せと一致し、問題文の各空欄に代入しても文意が通る。(オ)の除外条件（金属製で、防護措置を施すダクトと電気的に接続するおそれがあるもの）も問題文e)の括弧書きと整合する。",
+        "各肢解説: 各肢の正誤判定を空欄ごとに検算し、すべて正確であることを確認した。(2)は(ウ)のみ正、(3)は(エ)(オ)が正、(4)は(エ)のみ正、(5)は(ア)(イ)(ウ)が正。",
+        "図: 原図に回路図・構造図はなく、選択肢の表のみである。表は choices に完全に文字化されているため、figureUrls と choiceFigureUrls が空であることは妥当。figureDescription の記述も正確である。"
+      ]
+    }
+  ]
+}

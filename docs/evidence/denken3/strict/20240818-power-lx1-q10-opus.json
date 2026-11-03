@@ -1,0 +1,70 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20240818",
+  "subject": "power",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 7148,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 17774,
+      "webSearchRequests": 0,
+      "costUSD": 0.2854158,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 5504,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "86a006aed7366709dfa2d4c48d7f3cd78225a791e1f8865fc93993fd8519ec6d",
+  "inputRequestSha256": "2d4b9540022353f75960d1526e496726e748e5e75d3998630e5328381b509ce6",
+  "inputHashes": {
+    "candidateSha256": {
+      "q10": "05d64d271d8016d0945331621d5376810b140b936eff76b1215d4cbc7575c553"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20240818/power/p14.png": "8c66580e003a678df27ba9b992032a7a967a3e9f90fcb6bb5131777edf526cac",
+      "data/raw_pdfs/denken3/review/20240818/power/p15.png": "3ac69c08afcff83f88241ac07b3f48d79b44ba9ac95c786789ab798a311ca5d4"
+    },
+    "figureSha256": {
+      "public/images/denken3/20240818/power/20240818-power-q10-murray-loop.png": "8aa1a3a8e3522f0bf196a564c58c7bf0af93572f4a5c1a3c56f40ecc8b2d5d2a"
+    },
+    "sourceQuestionPdfSha256": "0bc54a85819b9d9c80d1574c5b8c02a3c28976565d8c9068a3dd0344a3db5700",
+    "sourceAnswerPdfSha256": "f72ecbc3a477e64948388b69cf78cb931032c9f0c688639836c8d533a949cd0f",
+    "officialAnswerUnitsSha256": "d21b233ae17741c69fbe9f2345a20308d79fe9e9b03e94f4cac2adbe2ce4fc5b",
+    "referencePdfSha256": {},
+    "referencePageSha256": {},
+    "referenceJsonSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q10",
+      "questionNumber": 10,
+      "part": null,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [
+        "figureDescriptionの「遠端では両導体が接続線で結ばれる」は、原図・公開候補図に描かれていない内容を断定している。図の遠端側には、各ケーブル端部から引き出された太線と開いた端子対があり、そこを「接続線」と指しているだけである。導体どうしか遮へい層どうしかは図から読み取れない。何どうしを接続するかは空欄(イ)そのもので、この記述は図の説明ではなく正答（導体）の開示になっている。解答前に表示すると(イ)が漏洩する。修正案: 「遠端側では各ケーブル端部から引き出された線が『接続線』で示される端子対に至る（何どうしを接続するかは本文(イ)で問われている）」のような中立的な記述にする。"
+      ],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "出典: manifestの2024年度上期、試験日2024-08-18、科目=電力、問題PDF 20240818_ch_third_q02.pdf、解答PDF 20240818_ch_third_a01.pdf と、候補のfiscalYear=2024・term=upper・examDate・subject=power・sourceQuestionPdfUrl・sourceAnswerPdfUrlは一致する。reviewedFromPage=[14,15]も、原図のT1−D 014（冊子頁11、問題文と図）およびT1−D 015（冊子頁12、選択肢表）と一致する。sourceAttributionも「令和6年度上期 電力 問10」で整合する。",
+        "問題文: 原図と照合した。(ア)〜(エ)の空欄位置、「導体と遮へい層の間に地絡故障」、L・x・全目盛1000・a の定義（ケーブルAに接続されたブリッジ端子までの目盛の読み）、なお書き（地絡抵抗）、ただし書き（同一仕様・同一長、接続線インピーダンス無視）はすべて一致する。句読点（，→、）と段落の統合は整形の範囲内で、意味の改変はない。",
+        "選択肢: (1)ホイートストン/遮へい層/aL/500/十分低い、(2)シェーリング/導体/2L−aL/500/十分高い、(3)シェーリング/遮へい層/2L−aL/500/十分高い、(4)ホイートストン/導体/aL/500/十分低い、(5)ホイートストン/導体/aL/500/十分高い。原図の表と全肢・全列が一致する。",
+        "公式正答: 公式解答表の＜電力＞問10は4で、候補のofficialAnswer=\"4\"と一致する。",
+        "計算検算: 電源は摺動端子Sと大地の間にあり、帰路は故障点経由となる。検流計はA・B端子間にある。ブリッジの4辺は、S→A端子がa、S→B端子が1000−a、A端子→故障点がx、B端子→故障点が(L)+(L−x)=2L−x である。平衡条件は a(2L−x)=(1000−a)x で、これより 2aL=1000x、x=aL/500 となる。候補の a/x=(1000−a)/(2L−x) はこれと等価で、式変形の各段も正しい。",
+        "因果検算: 地絡抵抗は電源と直列に入り、ブリッジ4辺には入らないため、平衡条件には影響しない。一方で高抵抗だと検流計感度が低下するので、(エ)十分低いという説明は妥当である。シェーリングブリッジは交流で静電容量・誘電正接を測るブリッジであり、マーレーループ法の原理ではない。",
+        "肢別解説: 1〜5の各肢について、正しい列と誤っている列の指摘は選択肢表・導出と整合しており、事実誤りは見当たらない。",
+        "公開候補図: 原図下部の回路図を忠実に切り出している。マーレーループ装置の破線枠、1 000/0/a の目盛、指針、検流計と接続点、接地付き電源、ケーブル線路L、ケーブルB（上）とケーブルA（下）、接続線、x、故障点×、各接地記号はすべて存在する。0側がケーブルA端子、1000側がケーブルB端子である点も原図と一致し、本文と併せれば図単体で解答に必要な情報は読み取れる。",
+        "officialReferenceUrlsは空で、検証を要する外部の独立主張はない。"
+      ]
+    }
+  ]
+}

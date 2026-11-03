@@ -1,0 +1,55 @@
+{
+  "reviewModel": "claude-opus-5-5",
+  "requestedModel": "claude-opus-5-5",
+  "canonicalModel": "claude-opus-5-5",
+  "provider": "firstParty",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 1481,
+      "cacheReadInputTokens": 133532,
+      "cacheCreationInputTokens": 14564,
+      "webSearchRequests": 0,
+      "costUSD": 0.1728464,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 911,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "paperId": "emkohyo-EM20251807",
+  "ids": [
+    "emkohyo-EM20251807-q19"
+  ],
+  "figureSha256": {
+    "emkohyo-EM20251807-q19": {}
+  },
+  "officialRowImageSha256": {
+    "emkohyo-EM20251807-q19": {
+      "/exam-library/emkohyo-EM20251807/q19-p11-1.webp": "ceb54dce91a199a9e3d322adeec22abcc311f5f8aaf202a81cdb030144aa87af"
+    }
+  },
+  "governmentSourceImageSha256": {},
+  "candidateSha256": {
+    "emkohyo-EM20251807-q19": "34f978ae444cb2a2043275dccc97a9632db7d1409b2d0f857a69af81707a67b5"
+  },
+  "sourcePackPath": "docs/evidence/emkohyo-choice-sources/emkohyo-EM20251807-q19-19.json",
+  "sourcePackSha256": "8cd2f4903705af26ad5f749f46951e4c8dcf4df53798747b91431b20fe44aa48",
+  "assessment": {
+    "emkohyo-EM20251807-q19": {
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "reasonIssues": [
+        "肢5の理由にある「別表の組合せを問う本問では」は問題文と合っていない。問題文は『固体捕集法による捕集が不適切なもの』を問うており、作業環境測定基準の別表の組合せを問うとは書かれていない。この一文を削除し、『作業環境測定基準の別表でオーラミンの試料採取方法はろ過捕集方法のみとされ、固体捕集方法は規定されていないため、固体捕集法による捕集は不適切である』のように、問いに直接答える形へ改めること。",
+        "肢5と要約の説明は『別表に掲げられていない』という規定の有無だけで判定しており、なぜ固体捕集が不適切なのかという測定上の理由は示していない。オーラミンは粉状の粒子として存在する物質なのでろ過捕集が適する、という物性上の理由を補う場合は、その記述を直接支える出典を追加すること。追加しない場合は、規定に基づく判定であることが読み取れる表現にとどめること。"
+      ],
+      "sourceIssues": [
+        "厚生労働省『作業環境測定基準』(dataId=74087000)の別表は、5物質の試料採取方法を直接示しているので規定上の判定根拠にはなる。ただし、オーラミンに固体捕集が適さない物性上の理由(粒子状物質であること、蒸気圧が低いこと等)を直接述べた記述はない。物性の因果を解説に書く場合、この資料だけでは根拠が足りない。"
+      ],
+      "needsExternalCheck": []
+    }
+  }
+}

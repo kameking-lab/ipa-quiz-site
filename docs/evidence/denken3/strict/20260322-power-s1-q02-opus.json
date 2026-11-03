@@ -1,0 +1,69 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20260322",
+  "subject": "power",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 2967,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 13550,
+      "webSearchRequests": 0,
+      "costUSD": 0.1680038,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 1472,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "7c7d6a9f57caeb99aed8793fd1957f2845c5a124f111bce5fcaa1dbc0013643f",
+  "inputRequestSha256": "fd55f6e36270c63954158bd1cc8d8566b51ba2f2239e26e6fde1f73195315135",
+  "inputHashes": {
+    "candidateSha256": {
+      "q02": "c3ad9f816fd91f821264056c17f6435b86874a4af97809c8636118c477dd99cc"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20260322/power/p05.png": "9d6c460e542224ba03241ab31d89a0f66ec3b8bee368564f08f9d6608c76e4b9"
+    },
+    "figureSha256": {},
+    "sourceQuestionPdfSha256": "9733341a0f293f068c9a665d5a9a90f1aabf3a2db5d79cd530643cdea241f7b7",
+    "sourceAnswerPdfSha256": "cc2890296d06a4823df5697a78a1c01ddfd39f041c51f48c87984daa3a5707c6",
+    "officialAnswerUnitsSha256": "7c7d2fc7117b235ffae6e42b9d4935c5414f4d5dbe6c85f2cadd47a39e60fae2",
+    "referencePdfSha256": {},
+    "referencePageSha256": {},
+    "referenceJsonSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q02",
+      "questionNumber": 2,
+      "part": null,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "問題文: 公式原図（PDF第5頁、印刷頁「- 2 -」、下部表記「T2－D 005」）と照合した。候補の本文は、句読点・改行の整形を除き原図と一致する。「単位体積当たり」「運動エネルギー[J/m³]」、ただし書き（同一断面で管路方向に速度均一）、ρ[kg/m³]、v[m/s] の定義、単位表記にも欠落や改変はない。",
+        "選択肢: 原図は (1) ½ρv²、(2) ½ρ²v、(3) 2ρv、(4) √(2ρv)、(5) ½ρ²v² である。候補の choices 1〜5 と、係数・指数・根号の範囲（(4) は 2ρv 全体に根号）まで一致する。",
+        "公式正答: 公式解答表（令和7年度 第三種電気主任技術者下期試験解答）の＜電力＞欄では問2の解答が1、配点が5である。manifest固定の正答単位 {question:2, part:null, answer:\"1\", points:5} と、候補の officialAnswer=\"1\"・scoringPoints=5 はいずれも一致する。",
+        "総合解説の検算: 運動エネルギー ½mv² に、1 m³ の水の質量 m=ρ を代入すると ½ρv² [J/m³] になる。単位は ρv²: [kg/m³]·[m²/s²] = [kg/(m·s²)]、J/m³: [kg·m²/s²]/[m³] = [kg/(m·s²)] で一致する。因果・計算に誤りはない。",
+        "肢(1)の理由: m=ρ の代入と単位一致の説明は正しい。",
+        "肢(2)の理由: ρ²v の単位 [kg²/m⁶]·[m/s] = [kg²/(m⁵·s)] は正しく、[J/m³] と不一致である。「密度2乗・速度1乗」という指摘も式と一致する。",
+        "肢(3)の理由: ρv の単位 [kg/m³]·[m/s] = [kg/(m²·s)] は正しい。単位体積当たり運動量（質量×速度÷体積）という物理的解釈も正しく、係数2は次元に影響しない。",
+        "肢(4)の理由: √([kg/(m²·s)]) = [kg^(1/2)/(m·s^(1/2))] は正しく、[J/m³] と不一致である。",
+        "肢(5)の理由: ρ²v² の単位 [kg²/m⁶]·[m²/s²] = [kg²/(m⁴·s²)] は正しく、[J/m³] と不一致である。運動エネルギーが密度の1乗に比例するという指摘も正しい。",
+        "図: 原図に図・表はなく、解答に図は不要である。候補の figureDescription（図なし）、figureUrls=[]、choiceFigureUrls={} は妥当である。",
+        "出典メタデータ: fiscalYear=2025（解答表見出し「令和7年度」と一致）、term=lower（「下期」と一致）、examDate=2026-03-22、subject=power、sourceQuestionPdfUrl=…20260322_ch_third_q02.pdf、sourceAnswerPdfUrl=…20260322_ch_third_a01.pdf、reviewedFromPage=[5] の全項目がmanifestと一致する。sourceAttribution（令和7年度下期 電力科目 問2）も一致する。",
+        "officialReferenceUrls: 空配列であり、検証を要する独立主張はない。",
+        "uncertainty欄: 原図単頁に年度・科目の記載がないという記述は事実として正しい。ただし出典はmanifest固定情報（問題PDF・第5頁・解答PDF）で確定しており、未解決の外部確認事項は残っていない。本文・数式の判読にも曖昧箇所はない。"
+      ]
+    }
+  ]
+}

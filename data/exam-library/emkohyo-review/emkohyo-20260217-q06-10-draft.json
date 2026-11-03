@@ -1,0 +1,935 @@
+{
+  "candidateModel": "claude-opus-5-5",
+  "paperId": "emkohyo-20260217",
+  "governmentSourceCandidates": [
+    {
+      "title": "厚生労働省 職場における労働衛生対策",
+      "url": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/koyou_roudou/roudoukijun/anzen/anzeneisei02.html"
+    },
+    {
+      "title": "厚生労働省 労働安全衛生法",
+      "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74001000"
+    }
+  ],
+  "questions": {
+    "emkohyo-20260217-q6": {
+      "overlay": {
+        "sourceHash": "cafca47a67c607a7339271d2b20138c2824b0d0c736f058fccd83d424331960e",
+        "correctChoice": 3,
+        "summary": "告示はトリレンジイソシアネート（TDI）の疾病を皮膚障害、前眼部障害又は気道・肺障害とし、モデルSDSも喘息・呼吸器感作性を挙げる。メトヘモグロビン血はアニリン等の障害であり、TDIに結び付けた肢3が誤り。",
+        "choices": [
+          {
+            "number": 1,
+            "verdict": "incorrect",
+            "reason": "この記述は正しい。厚労省モデルSDSでは二酸化窒素は帯赤～茶色の気体で、ヒトで長期ばく露により肺疾患を起こし、影響は気道・気管支にも及ぶ。告示も前眼部障害と気道・肺障害を掲げる。また水と反応して硝酸を生成し、硝酸は告示で歯牙酸蝕を起こす物質とされ、安衛令も硝酸のガスを歯に有害な物としている。"
+          },
+          {
+            "number": 2,
+            "verdict": "incorrect",
+            "reason": "この記述は正しい。厚労省モデルSDSでエチレンイミンは無色の液体でアンモニア類似臭をもち、眼に対する重篤な損傷性は区分1、反復ばく露で呼吸器・肝臓・腎臓の障害が区分1とされる。職業ばく露で皮膚感作性と難治性の皮膚炎を起こすとの記載もあり、告示も腎障害を掲げている。"
+          },
+          {
+            "number": 3,
+            "verdict": "correct",
+            "reason": "これが誤り。告示はトリレンジイソシアネート（TDI）による疾病を皮膚障害、前眼部障害又は気道・肺障害とし、モデルSDSも喘息を発症させ呼吸器感作性を示すとする。メトヘモグロビン血や溶血性貧血は、告示上アニリンやニトロベンゼンなど芳香族のアミノ・ニトロ誘導体の障害であり、TDIの特徴ではない。"
+          },
+          {
+            "number": 4,
+            "verdict": "incorrect",
+            "reason": "この記述は正しい。厚労省モデルSDSでナフタレンは白色の固体で特徴的な臭気をもち、室温で昇華する。単回ばく露の標的臓器に眼が含まれ、眼の充血・刺激や角膜炎・角膜混濁、白内障の報告がある。皮膚感作性は区分1で急性皮膚炎の再発例も記載されており、眼の障害と皮膚炎を起こすとの記述に合う。"
+          },
+          {
+            "number": 5,
+            "verdict": "incorrect",
+            "reason": "この記述は正しい。厚労省モデルSDSでベンゾトリクロリドは透明の液体で、慢性影響として皮膚及び粘膜への刺激が記載され、発がん性は区分1Aである。労働基準法施行規則別表第一の二も「ベンゾトリクロライドにさらされる業務による肺がん」を業務上の疾病として掲げている。"
+          }
+        ],
+        "sources": [
+          {
+            "title": "厚生労働省 モデルSDS 二酸化窒素",
+            "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/10102-44-0.html"
+          },
+          {
+            "title": "厚生労働省 労働基準法施行規則別表第一の二第四号の規定に基づく厚生労働大臣が指定する単体たる化学物質及び化合物（合金を含む。）並びに厚生労働大臣が定める疾病（平成25年厚生労働省告示第316号）",
+            "url": "https://www.mhlw.go.jp/web/t_doc?dataId=73ab3583&dataType=0&pageNo=1"
+          },
+          {
+            "title": "厚生労働省 労働安全衛生法施行令",
+            "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74002000&dataType=0&pageNo=1"
+          },
+          {
+            "title": "厚生労働省 モデルSDS エチレンイミン",
+            "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/151-56-4.html"
+          },
+          {
+            "title": "厚生労働省 モデルSDS 2,4-トリレンジイソシアネート",
+            "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/584-84-9.html"
+          },
+          {
+            "title": "厚生労働省 モデルSDS ナフタレン",
+            "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/91-20-3.html"
+          },
+          {
+            "title": "厚生労働省 モデルSDS ベンゾトリクロリド",
+            "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/98-07-7.html"
+          },
+          {
+            "title": "e-Gov法令検索 労働基準法施行規則（2026年2月17日時点の版）",
+            "url": "https://laws.e-gov.go.jp/api/2/law_data/322M40000100023?asof=2026-02-17"
+          }
+        ]
+      },
+      "sourceEvidence": [
+        {
+          "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/10102-44-0.html",
+          "excerpt": "色帯赤～茶色",
+          "choiceNumbers": [
+            1
+          ]
+        },
+        {
+          "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/10102-44-0.html",
+          "excerpt": "水と反応し、硝酸、酸化窒素を生成する。",
+          "choiceNumbers": [
+            1
+          ]
+        },
+        {
+          "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/10102-44-0.html",
+          "excerpt": "ヒトで長期ばく露により肺疾患を起こすとの記述",
+          "choiceNumbers": [
+            1
+          ]
+        },
+        {
+          "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/10102-44-0.html",
+          "excerpt": "影響は肺だけでなく気道、喉頭、気管支等にもみとめられた",
+          "choiceNumbers": [
+            1
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=73ab3583&dataType=0&pageNo=1",
+          "excerpt": "二酸化窒素前眼部障害又は気道・肺障害",
+          "choiceNumbers": [
+            1
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=73ab3583&dataType=0&pageNo=1",
+          "excerpt": "硝酸皮膚障害、前眼部障害、気道・肺障害又は歯牙酸蝕",
+          "choiceNumbers": [
+            1
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74002000&dataType=0&pageNo=1",
+          "excerpt": "塩酸、硝酸、硫酸、亜硫酸、弗化水素、黄りんその他歯又はその支持組織に有害な物のガス、蒸気又は粉じんを発散する場所における業務",
+          "choiceNumbers": [
+            1
+          ]
+        },
+        {
+          "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/151-56-4.html",
+          "excerpt": "液体(20℃、1気圧)(GHS判定)色無色臭いアンモニア類似臭",
+          "choiceNumbers": [
+            2
+          ]
+        },
+        {
+          "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/151-56-4.html",
+          "excerpt": "眼に対する重篤な損傷性／眼刺激性区分1",
+          "choiceNumbers": [
+            2
+          ]
+        },
+        {
+          "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/151-56-4.html",
+          "excerpt": "特定標的臓器毒性(反復ばく露)区分1(呼吸器、肝臓、腎臓)",
+          "choiceNumbers": [
+            2
+          ]
+        },
+        {
+          "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/151-56-4.html",
+          "excerpt": "本物質への職業ばく露は、皮膚感作性及び難治性の皮膚炎を引き起こす",
+          "choiceNumbers": [
+            2
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=73ab3583&dataType=0&pageNo=1",
+          "excerpt": "エチレンイミン皮膚障害、前眼部障害、気道・肺障害又は腎障害",
+          "choiceNumbers": [
+            2
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=73ab3583&dataType=0&pageNo=1",
+          "excerpt": "トリレンジイソシアネート(別名TDI)皮膚障害、前眼部障害又は気道・肺障害",
+          "choiceNumbers": [
+            3
+          ]
+        },
+        {
+          "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/584-84-9.html",
+          "excerpt": "喘息を発症させ、呼吸器刺激性と呼吸器感作性を示し",
+          "choiceNumbers": [
+            3
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=73ab3583&dataType=0&pageNo=1",
+          "excerpt": "アニリン頭痛、めまい、嘔吐等の自覚症状、溶血性貧血又はメトヘモグロビン血",
+          "choiceNumbers": [
+            3
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=73ab3583&dataType=0&pageNo=1",
+          "excerpt": "ニトロベンゼン頭痛、めまい、嘔吐等の自覚症状、溶血性貧血又はメトヘモグロビン血",
+          "choiceNumbers": [
+            3
+          ]
+        },
+        {
+          "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/91-20-3.html",
+          "excerpt": "物理状態固体色白色臭い特徴的な臭気",
+          "choiceNumbers": [
+            4
+          ]
+        },
+        {
+          "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/91-20-3.html",
+          "excerpt": "室温で昇華する",
+          "choiceNumbers": [
+            4
+          ]
+        },
+        {
+          "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/91-20-3.html",
+          "excerpt": "区分1（血液、眼、気道）",
+          "choiceNumbers": [
+            4
+          ]
+        },
+        {
+          "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/91-20-3.html",
+          "excerpt": "眼：充血、軽度の刺激。微結晶が比較的長期間残る場合は角膜炎、角膜混濁。",
+          "choiceNumbers": [
+            4
+          ]
+        },
+        {
+          "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/91-20-3.html",
+          "excerpt": "ヒトで経口摂取により白内障発症の報告例",
+          "choiceNumbers": [
+            4
+          ]
+        },
+        {
+          "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/91-20-3.html",
+          "excerpt": "ヒトで急性皮膚炎を再発する43歳の患者",
+          "choiceNumbers": [
+            4
+          ]
+        },
+        {
+          "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/98-07-7.html",
+          "excerpt": "物理状態液体色透明～白色",
+          "choiceNumbers": [
+            5
+          ]
+        },
+        {
+          "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/98-07-7.html",
+          "excerpt": "慢性：皮膚および粘膜への刺激",
+          "choiceNumbers": [
+            5
+          ]
+        },
+        {
+          "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/98-07-7.html",
+          "excerpt": "発がん性区分1A",
+          "choiceNumbers": [
+            5
+          ]
+        },
+        {
+          "url": "https://laws.e-gov.go.jp/api/2/law_data/322M40000100023?asof=2026-02-17",
+          "excerpt": "ベンゾトリクロライドにさらされる業務による肺がん",
+          "choiceNumbers": [
+            5
+          ]
+        }
+      ],
+      "reviewIssues": [
+        "【HOLD】独立審査（claude-opus-5-5、emkohyo-20260217-q06-06-review.json）でFIX。肢1の『慢性中毒では歯牙酸蝕症や慢性気管支炎』を二酸化窒素について直接述べた政府資料がない（告示の二酸化窒素欄は前眼部障害又は気道・肺障害のみで、歯牙酸蝕は硝酸経由の推論、モデルSDSは長期ばく露の肺疾患まで）。肢4のナフタレンの『眼の痛み・かすみ・流涙』もモデルSDSは充血・軽度の刺激・角膜炎等で直接一致しない。Web検索上限のため追加の一次資料探索ができず保留する。 第2パス（2026-09-24）: site:go.jp検索でも二酸化窒素の慢性影響としての歯牙酸蝕を述べた政府資料は見つからず、保留を継続する。"
+      ]
+    },
+    "emkohyo-20260217-q7": {
+      "overlay": {
+        "sourceHash": "95ef420bfd61fef6a0115fec303860740a096761af9c3a48d06d54554581bfed",
+        "correctChoice": 3,
+        "summary": "労働基準法施行規則の職業がんの規定と厚労省モデルSDSでは、オーラミン・トリクロロエチレン・無機ヒ素化合物・ベリリウムに設問のがんが対応する。ニトログリコールの主な障害は狭心症様発作で、肝臓がんとの組合せの肢3が誤り。",
+        "choices": [
+          {
+            "number": 1,
+            "verdict": "incorrect",
+            "reason": "この組合せは正しい。労働基準法施行規則別表第一の二第七号は「オーラミンを製造する工程における業務による尿路系腫瘍」を業務上の疾病と定めており、膀胱がんは尿路系腫瘍に含まれる。厚労省モデルSDSも製造従事者での膀胱腫瘍の過剰発生を記載するが、他の膀胱がん物質との同時ばく露の可能性という留保付きである。"
+          },
+          {
+            "number": 2,
+            "verdict": "incorrect",
+            "reason": "この組合せは正しい。厚労省のトリクロロエチレンのモデルSDSによれば、IARCは本物質がヒトで腎臓がんを生じることなどから発がん性の十分な証拠があるとしてグループ1に分類しており、GHS分類も発がん性区分1Aである。主要ながんを腎臓がんとする組合せに合う。"
+          },
+          {
+            "number": 3,
+            "verdict": "correct",
+            "reason": "これが誤り。告示はニトログリコールによる疾病を頭痛、めまい、嘔吐等の自覚症状又は狭心症様発作と定めており、モデルSDSも主な中毒症状を血管拡張による頭痛等とする。ヒトに生じる主要な障害は循環器系であり、肝臓がんではない。なお同SDSの発がん性欄は「データなし」で、肝臓がんを示す記載はない。"
+          },
+          {
+            "number": 4,
+            "verdict": "incorrect",
+            "reason": "この組合せは正しい。労働基準法施行規則別表第一の二は、砒素を含有する鉱石を原料とする製錬・精錬の工程や無機砒素化合物を製造する工程における業務による肺がん又は皮膚がんを業務上の疾病と定めている。無機ヒ素化合物と皮膚がんの組合せはこの規定と一致する。"
+          },
+          {
+            "number": 5,
+            "verdict": "incorrect",
+            "reason": "この組合せは正しい。労働基準法施行規則別表第一の二は「ベリリウムにさらされる業務による肺がん」を職業がんとして明記している。ベリリウムによってヒトに生じる主要ながんを肺がんとする組合せはこの規定のとおりであり、誤りではない。"
+          }
+        ],
+        "sources": [
+          {
+            "title": "厚生労働省 労働基準法施行規則別表第一の二第四号の規定に基づく厚生労働大臣が指定する単体たる化学物質及び化合物（合金を含む。）並びに厚生労働大臣が定める疾病（平成25年厚生労働省告示第316号）",
+            "url": "https://www.mhlw.go.jp/web/t_doc?dataId=73ab3583&dataType=0&pageNo=1"
+          },
+          {
+            "title": "e-Gov法令検索 労働基準法施行規則（2026年2月17日時点の版）",
+            "url": "https://laws.e-gov.go.jp/api/2/law_data/322M40000100023?asof=2026-02-17"
+          },
+          {
+            "title": "厚生労働省 モデルSDS オーラミン",
+            "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/492-80-8.html"
+          },
+          {
+            "title": "厚生労働省 モデルSDS トリクロロエチレン",
+            "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/79-01-6.html"
+          },
+          {
+            "title": "厚生労働省 モデルSDS ニトログリコール",
+            "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/628-96-6.html"
+          }
+        ]
+      },
+      "sourceEvidence": [
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=73ab3583&dataType=0&pageNo=1",
+          "excerpt": "(◆平成25年09月30日厚生労働省告示第316号)",
+          "choiceNumbers": [
+            3
+          ]
+        },
+        {
+          "url": "https://laws.e-gov.go.jp/api/2/law_data/322M40000100023?asof=2026-02-17",
+          "excerpt": "オーラミンを製造する工程における業務による尿路系腫瘍",
+          "choiceNumbers": [
+            1
+          ]
+        },
+        {
+          "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/492-80-8.html",
+          "excerpt": "本物質の製造に従事した作業者の集団で膀胱腫瘍の過剰発生がみられたが、1-、2-ナフチルアミンやベンジジンなどの膀胱がん発生物質に同時ばく露された作業者を含めた統計解析の可能性が指摘されている",
+          "choiceNumbers": [
+            1
+          ]
+        },
+        {
+          "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/79-01-6.html",
+          "excerpt": "IARCは本物質はヒトで腎臓がんを生じること",
+          "choiceNumbers": [
+            2
+          ]
+        },
+        {
+          "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/79-01-6.html",
+          "excerpt": "発がん性GHS分類:区分1A",
+          "choiceNumbers": [
+            2
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=73ab3583&dataType=0&pageNo=1",
+          "excerpt": "ニトログリコール頭痛、めまい、嘔吐等の自覚症状又は狭心症様発作",
+          "choiceNumbers": [
+            3
+          ]
+        },
+        {
+          "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/628-96-6.html",
+          "excerpt": "発がん性データなし",
+          "choiceNumbers": [
+            3
+          ]
+        },
+        {
+          "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/628-96-6.html",
+          "excerpt": "本物質中毒の主な症状は、血管拡張による頭痛",
+          "choiceNumbers": [
+            3
+          ]
+        },
+        {
+          "url": "https://laws.e-gov.go.jp/api/2/law_data/322M40000100023?asof=2026-02-17",
+          "excerpt": "無機砒ひ素化合物を製造する工程における業務による肺がん又は皮膚がん",
+          "choiceNumbers": [
+            4
+          ]
+        },
+        {
+          "url": "https://laws.e-gov.go.jp/api/2/law_data/322M40000100023?asof=2026-02-17",
+          "excerpt": "ベリリウムにさらされる業務による肺がん",
+          "choiceNumbers": [
+            5
+          ]
+        }
+      ],
+      "reviewIssues": []
+    },
+    "emkohyo-20260217-q8": {
+      "overlay": {
+        "sourceHash": "974d354c1033d5eb9e2a44e437d441591898069702552428d2428c1229faf717",
+        "correctChoice": 5,
+        "summary": "石綿肺は石綿を吸入して発症するじん肺の一病型で、石綿による肺がんや中皮腫は労働基準法施行規則でも別の疾病として定められている。石綿関連の肺の障害を総称して石綿肺とした肢5が誤り。",
+        "choices": [
+          {
+            "number": 1,
+            "verdict": "incorrect",
+            "reason": "この記述は正しい。環境省の粒子状物質の資料は、空気動力学径を「密度が１で終末沈降速度が問題とする粒子と同じ球形粒子径」と定義している。密度１は1 g・cm-3を指し、形や密度の異なる粒子を同じ沈降挙動の単位密度の球に置き換えた直径という設問の説明と一致する。"
+          },
+          {
+            "number": 2,
+            "verdict": "incorrect",
+            "reason": "この記述は正しい。労働安全衛生総合研究所の資料は、粉じんを呼吸器への到達の程度で分け、吸引性粉じんを鼻孔または口を通過する粒子（100μm以下）とする。厚労省通達も吸引性の粉じんを100μm50％カットの分粒特性をもつサンプラーで捕集される粉じんとしている。"
+          },
+          {
+            "number": 3,
+            "verdict": "incorrect",
+            "reason": "この記述は正しい。作業環境測定基準は鉱物性粉じん等の濃度測定を「分粒装置を用いるろ過捕集方法及び重量分析方法」によると定める。労働安全衛生総合研究所の解説は、この分粒装置の特性を空気動力学的粒子径4μmで50％透過とし、肺胞まで到達する吸入性粉じんを捕集するものと説明している。"
+          },
+          {
+            "number": 4,
+            "verdict": "incorrect",
+            "reason": "この記述は正しい。じん肺法第2条はじん肺を「粉じんを吸入することによつて肺に生じた線維増殖性変化を主体とする疾病」と定義している。厚労省通達も、粉じんが肺内に蓄積すると肺の繊維化とこれによる呼吸困難、肺機能の低下などの肺障害を起こすとしており、記述と一致する。"
+          },
+          {
+            "number": 5,
+            "verdict": "correct",
+            "reason": "これが誤り。じん肺診査ハンドブックは石綿肺を石綿を吸入して発症するじん肺と説明しており、石綿肺はじん肺の一病型である。労働基準法施行規則も石綿による肺がん・中皮腫をがんの号に、良性石綿胸水・びまん性胸膜肥厚を別の号に分けて定めており、これらを総称して石綿肺と呼ぶのは誤り。"
+          }
+        ],
+        "sources": [
+          {
+            "title": "環境省 粒子状物質の特性に関する知見の整理",
+            "url": "https://www.env.go.jp/air/report/h20-01/mat02_1.pdf"
+          },
+          {
+            "title": "労働安全衛生総合研究所 作業環境中の粉じん測定とばく露対策",
+            "url": "https://www.jniosh.johas.go.jp/publication/mail_mag/2017/pdf_109/siryou_5.pdf"
+          },
+          {
+            "title": "厚生労働省 粉状物質の有害性情報の伝達による健康障害防止のための取組について（基安発1024第1号）",
+            "url": "https://www.mhlw.go.jp/web/t_doc?dataId=00tc2991&dataType=1&pageNo=1"
+          },
+          {
+            "title": "厚生労働省 作業環境測定基準",
+            "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74087000"
+          },
+          {
+            "title": "労働安全衛生総合研究所 粉じんの吸入ばく露による健康障害を評価する",
+            "url": "https://www.jniosh.johas.go.jp/publication/mail_mag/2013/58-column.html"
+          },
+          {
+            "title": "厚生労働省 じん肺法",
+            "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74164000&dataType=0&pageNo=1"
+          },
+          {
+            "title": "厚生労働省 じん肺診査ハンドブック",
+            "url": "https://www.mhlw.go.jp/content/11201250/001640056.pdf"
+          },
+          {
+            "title": "e-Gov法令検索 労働基準法施行規則（2026年2月17日時点の版）",
+            "url": "https://laws.e-gov.go.jp/api/2/law_data/322M40000100023?asof=2026-02-17"
+          }
+        ]
+      },
+      "sourceEvidence": [
+        {
+          "url": "https://www.env.go.jp/air/report/h20-01/mat02_1.pdf",
+          "excerpt": "空気動力学径は密度が１で終末沈降速度が問題とする粒子と同じ球形粒子径",
+          "choiceNumbers": [
+            1
+          ]
+        },
+        {
+          "url": "https://www.jniosh.johas.go.jp/publication/mail_mag/2017/pdf_109/siryou_5.pdf",
+          "excerpt": "1.吸引性粉じん：鼻孔または口を通過する粒子。（100μm以下）",
+          "choiceNumbers": [
+            2
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=00tc2991&dataType=1&pageNo=1",
+          "excerpt": "吸引性の粉じん。100μm50％カットの分粒特性を有するサンプラーで",
+          "choiceNumbers": [
+            2
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74087000",
+          "excerpt": "分粒装置を用いるろ過捕集方法及び重量分析方法",
+          "choiceNumbers": [
+            3
+          ]
+        },
+        {
+          "url": "https://www.jniosh.johas.go.jp/publication/mail_mag/2013/58-column.html",
+          "excerpt": "粉じんの大きさを分ける装置（分粒装置）の特性を空気動力学的粒子径が4μmの粒子の場合、その50%が透過するものに変更しています",
+          "choiceNumbers": [
+            3
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=00tc2991&dataType=1&pageNo=1",
+          "excerpt": "肺胞まで到達する吸入性の粉じん。4μm50％カットの分粒特性を有するサンプラーで捕集された粉じんをいう。",
+          "choiceNumbers": [
+            3
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74164000&dataType=0&pageNo=1",
+          "excerpt": "粉じんを吸入することによつて肺に生じた線維増殖性変化を主体とする疾病をいう",
+          "choiceNumbers": [
+            4
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=00tc2991&dataType=1&pageNo=1",
+          "excerpt": "肺の繊維化及びこれによる咳、痰、息切れ、呼吸困難、肺機能の低下",
+          "choiceNumbers": [
+            4
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/content/11201250/001640056.pdf",
+          "excerpt": "石綿肺（Asbestosis）けい酸塩の一種である石綿を吸入して発症するじん肺であり",
+          "choiceNumbers": [
+            5
+          ]
+        },
+        {
+          "url": "https://laws.e-gov.go.jp/api/2/law_data/322M40000100023?asof=2026-02-17",
+          "excerpt": "石綿にさらされる業務による肺がん又は中皮腫",
+          "choiceNumbers": [
+            5
+          ]
+        },
+        {
+          "url": "https://laws.e-gov.go.jp/api/2/law_data/322M40000100023?asof=2026-02-17",
+          "excerpt": "石綿にさらされる業務による良性石綿胸水又はびまん性胸膜肥厚",
+          "choiceNumbers": [
+            5
+          ]
+        }
+      ],
+      "reviewIssues": []
+    },
+    "emkohyo-20260217-q9": {
+      "overlay": {
+        "sourceHash": "f2cc53edcbb8e895b0839d533b48282c3a151f01038ab5973383980fc3e20033",
+        "correctChoice": 4,
+        "summary": "告示ではコバルト及びその化合物の疾病は皮膚障害又は気道・肺障害とされ、モデルSDSの反復ばく露の標的臓器も呼吸器・心臓・甲状腺・血液系・男性生殖器である。末梢神経障害や腎機能障害を挙げた肢4が誤り。",
+        "choices": [
+          {
+            "number": 1,
+            "verdict": "incorrect",
+            "reason": "この記述は正しい。環境省資料は水俣病をメチル水銀化合物に汚染された魚介類を食べて起こった中毒性の神経系疾患とし、主な症候に感覚障害、運動失調、求心性視野狭窄を挙げる。国立水俣病総合研究センターもメチル水銀が脳など神経系を傷害し聴力障害等を起こすとし、告示も視覚障害・聴力障害を掲げる。"
+          },
+          {
+            "number": 2,
+            "verdict": "incorrect",
+            "reason": "この記述は正しい。告示はカドミウム及びその化合物による疾病に腎障害を掲げ、特定化学物質の健康診断ではカドミウムについて血液中のカドミウムの量と尿中のベータ2-ミクログロブリンの量を検査する。腎障害で増える低分子たんぱく質を生物学的モニタリングの指標とする記述と一致する。"
+          },
+          {
+            "number": 3,
+            "verdict": "incorrect",
+            "reason": "この記述は正しい。告示はクロム及びその化合物の疾病を皮膚障害、気道・肺障害、鼻中隔穿孔又は嗅覚障害とし、健康診断ではクロム酸等について鼻中隔穿孔等の鼻腔所見と皮膚炎・潰瘍等の皮膚所見を調べる。労働基準法施行規則もクロム酸塩又は重クロム酸塩の製造工程による肺がんを職業がんとする。"
+          },
+          {
+            "number": 4,
+            "verdict": "correct",
+            "reason": "これが誤り。告示はコバルト及びその化合物による疾病を皮膚障害又は気道・肺障害とし、モデルSDSの反復ばく露の標的臓器も呼吸器、心臓、甲状腺、血液系、男性生殖器で、末梢神経や腎臓は挙がっていない。末梢神経障害は告示では鉛の疾病に掲げられる。生殖毒性区分1Bの記載はあるが、神経・腎障害を含む記述全体は誤り。"
+          },
+          {
+            "number": 5,
+            "verdict": "incorrect",
+            "reason": "この記述は正しい。厚労省モデルSDSでニッケルは呼吸器感作性区分1、皮膚感作性区分1とされ、単回ばく露による「呼吸器、腎臓の障害」が危険有害性情報として表示されている。告示もニッケル及びその化合物の疾病に皮膚障害を掲げており、感作性と腎臓への障害を挙げた記述に合う。"
+          }
+        ],
+        "sources": [
+          {
+            "title": "厚生労働省 労働基準法施行規則別表第一の二第四号の規定に基づく厚生労働大臣が指定する単体たる化学物質及び化合物（合金を含む。）並びに厚生労働大臣が定める疾病（平成25年厚生労働省告示第316号）",
+            "url": "https://www.mhlw.go.jp/web/t_doc?dataId=73ab3583&dataType=0&pageNo=1"
+          },
+          {
+            "title": "環境省 水俣病の経験と教訓",
+            "url": "https://www.env.go.jp/content/900414996.pdf"
+          },
+          {
+            "title": "国立水俣病総合研究センター 水俣病と水銀について",
+            "url": "https://nimd.env.go.jp/archives/minamata_disease_in_depth/"
+          },
+          {
+            "title": "厚生労働省 職場のあんぜんサイト 生物学的モニタリング",
+            "url": "https://anzeninfo.mhlw.go.jp/yougo/yougo21_1.html"
+          },
+          {
+            "title": "e-Gov法令検索 労働基準法施行規則（2026年2月17日時点の版）",
+            "url": "https://laws.e-gov.go.jp/api/2/law_data/322M40000100023?asof=2026-02-17"
+          },
+          {
+            "title": "厚生労働省 モデルSDS コバルト",
+            "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/7440-48-4.html"
+          },
+          {
+            "title": "厚生労働省 モデルSDS ニッケル",
+            "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/7440-02-0.html"
+          }
+        ]
+      },
+      "sourceEvidence": [
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=73ab3583&dataType=0&pageNo=1",
+          "excerpt": "(◆平成25年09月30日厚生労働省告示第316号)",
+          "choiceNumbers": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ]
+        },
+        {
+          "url": "https://www.env.go.jp/content/900414996.pdf",
+          "excerpt": "メチル水銀化合物に汚染された魚介類を食べることによって起こった中毒性の神経系疾患です",
+          "choiceNumbers": [
+            1
+          ]
+        },
+        {
+          "url": "https://www.env.go.jp/content/900414996.pdf",
+          "excerpt": "その主な症候としては、感覚障害、運動失調、求心性視野狭窄",
+          "choiceNumbers": [
+            1
+          ]
+        },
+        {
+          "url": "https://nimd.env.go.jp/archives/minamata_disease_in_depth/",
+          "excerpt": "メチル水銀は神経系の特定部位に強い傷害を起こします",
+          "choiceNumbers": [
+            1
+          ]
+        },
+        {
+          "url": "https://nimd.env.go.jp/archives/minamata_disease_in_depth/",
+          "excerpt": "聴力障害音の識別ができない",
+          "choiceNumbers": [
+            1
+          ]
+        },
+        {
+          "url": "https://nimd.env.go.jp/archives/minamata_disease_in_depth/",
+          "excerpt": "メチル水銀におかされた脳",
+          "choiceNumbers": [
+            1
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=73ab3583&dataType=0&pageNo=1",
+          "excerpt": "四肢末端若しくは口囲の知覚障害、視覚障害、運動失調、平衡障害、構語障害又は聴力障害",
+          "choiceNumbers": [
+            1
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=73ab3583&dataType=0&pageNo=1",
+          "excerpt": "カドミウム及びその化合物気道・肺障害、腎障害又は骨軟化",
+          "choiceNumbers": [
+            2
+          ]
+        },
+        {
+          "url": "https://anzeninfo.mhlw.go.jp/yougo/yougo21_1.html",
+          "excerpt": "血液中のカドミウムの量尿中のベータ2―ミクログロブリンの量",
+          "choiceNumbers": [
+            2
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=73ab3583&dataType=0&pageNo=1",
+          "excerpt": "クロム及びその化合物皮膚障害、気道・肺障害、鼻中隔穿孔又は嗅覚障害",
+          "choiceNumbers": [
+            3
+          ]
+        },
+        {
+          "url": "https://anzeninfo.mhlw.go.jp/yougo/yougo21_1.html",
+          "excerpt": "クロム酸等鼻粘膜の異常、鼻中隔穿孔等の鼻腔の所見の有無、皮膚炎、潰瘍等の皮膚所見の有無",
+          "choiceNumbers": [
+            3
+          ]
+        },
+        {
+          "url": "https://laws.e-gov.go.jp/api/2/law_data/322M40000100023?asof=2026-02-17",
+          "excerpt": "クロム酸塩又は重クロム酸塩を製造する工程における業務による肺がん又は上気道のがん",
+          "choiceNumbers": [
+            3
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=73ab3583&dataType=0&pageNo=1",
+          "excerpt": "コバルト及びその化合物皮膚障害又は気道・肺障害",
+          "choiceNumbers": [
+            4
+          ]
+        },
+        {
+          "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/7440-48-4.html",
+          "excerpt": "特定標的臓器毒性(反復ばく露)区分1（呼吸器、心臓、甲状腺、血液系、生殖器（男性））",
+          "choiceNumbers": [
+            4
+          ]
+        },
+        {
+          "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/7440-48-4.html",
+          "excerpt": "生殖毒性区分1B",
+          "choiceNumbers": [
+            4
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=73ab3583&dataType=0&pageNo=1",
+          "excerpt": "鉛及びその化合物(四アルキル鉛化合物を除く。)頭痛、めまい、嘔吐等の自覚症状、造血器障害、末梢神経障害又は疝痛、便秘等の胃腸障害",
+          "choiceNumbers": [
+            4
+          ]
+        },
+        {
+          "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/7440-02-0.html",
+          "excerpt": "呼吸器感作性区分1皮膚感作性区分1",
+          "choiceNumbers": [
+            5
+          ]
+        },
+        {
+          "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/7440-02-0.html",
+          "excerpt": "呼吸器、腎臓の障害",
+          "choiceNumbers": [
+            5
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=73ab3583&dataType=0&pageNo=1",
+          "excerpt": "ニッケル及びその化合物(ニッケルカルボニルを除く。)皮膚障害",
+          "choiceNumbers": [
+            5
+          ]
+        }
+      ],
+      "reviewIssues": [
+        "【HOLD】独立審査（claude-opus-5-5、emkohyo-20260217-q09-09-review.json）でFIX。肢2の『β2-ミクログロブリンは低分子たんぱく質で、カドミウムによる腎尿細管障害で尿中排泄が増える』機序を述べた政府資料がない（あんぜんサイトは健診項目名の列挙のみ、塩化カドミウムSDSは動物の近位尿細管壊死まで）。肢3の『6価クロムの皮膚接触による充血』も政府資料で未確認（三酸化クロムSDSは鼻腔粘膜の潰瘍・鼻中隔穿孔、重クロム酸カリウムSDSは6価クロムによる潰瘍・瘢痕まで）。肢4は塩化コバルトSDSの多血症の記載で補強可能。Web検索上限のため追加探索ができず保留する。 第2パス（2026-09-24）: 食品安全委員会の資料（fsc.go.jp）でβ2-ミクログロブリンの記述候補はあるが、肢3（6価クロムの皮膚接触による充血）を述べた政府資料が依然見つからず、保留を継続する。"
+      ]
+    },
+    "emkohyo-20260217-q10": {
+      "overlay": {
+        "sourceHash": "4f0dbbff8df50b57a3ee3e34311d8b09fd3b6edb8717213696b876127f7e3d68",
+        "correctChoice": 3,
+        "summary": "告示ではトルエンによる疾病は頭痛等の自覚症状又は中枢神経系抑制で、再生不良性貧血等の造血器障害はベンゼンの疾病として掲げられている。トルエンに造血器障害を結び付けた肢3が誤り。",
+        "choices": [
+          {
+            "number": 1,
+            "verdict": "incorrect",
+            "reason": "この記述は正しい。厚労省のパンフレットは有機溶剤が油脂に溶ける性質をもつとし、厚労省資料は有機則が中枢神経系に対する中毒を予防する措置を義務付けていると述べる。食品安全委員会の評価書でも、トルエンを投与したラットの臓器濃度は脂肪組織で最も高く、脂溶性の溶剤が脂肪に富む組織に分布しやすいことを示す。"
+          },
+          {
+            "number": 2,
+            "verdict": "incorrect",
+            "reason": "この記述は正しい。告示は酢酸メチルによる疾病を中枢神経系抑制、視神経障害又は気道障害とする。厚労省モデルSDSも酢酸メチルの標的臓器を視神経とし、ヒトで両眼視力の一過性喪失、視神経の両側性萎縮、視野狭窄の報告があるとしており、視力低下や視野狭窄を生じるとの記述と一致する。"
+          },
+          {
+            "number": 3,
+            "verdict": "correct",
+            "reason": "これが誤り。告示はトルエンによる疾病を頭痛、めまい、嘔吐等の自覚症状又は中枢神経系抑制とし、モデルSDSでも反復ばく露の標的臓器は中枢神経系と腎臓である。再生不良性貧血等の造血器障害は、告示ではベンゼンの疾病として掲げられており、トルエンの健康障害とするのは誤り。"
+          },
+          {
+            "number": 4,
+            "verdict": "incorrect",
+            "reason": "この記述は正しい。告示の脂肪族炭化水素及びそのハロゲン化合物の欄では、クロロホルム、四塩化炭素など多くの塩素化炭化水素に肝障害が掲げられている。労働安全衛生総合研究所の解説も、四塩化炭素のように中枢神経系抑制と肝障害が記載された物質が多数存在するとしており、肝毒性が強いという記述に合う。"
+          },
+          {
+            "number": 5,
+            "verdict": "incorrect",
+            "reason": "この記述は正しい。告示はノルマルヘキサンによる疾病を末梢神経障害と定め、厚労省モデルSDSも、n-ヘキサンを含む洗浄剤にばく露した作業者に多発性ニューロパチー（多発性神経炎）が発症した職業ばく露研究を記載している。n-ヘキサンの代表的な健康障害を多発性神経炎とする記述と一致する。"
+          }
+        ],
+        "sources": [
+          {
+            "title": "厚生労働省 労働基準法施行規則別表第一の二第四号の規定に基づく厚生労働大臣が指定する単体たる化学物質及び化合物（合金を含む。）並びに厚生労働大臣が定める疾病（平成25年厚生労働省告示第316号）",
+            "url": "https://www.mhlw.go.jp/web/t_doc?dataId=73ab3583&dataType=0&pageNo=1"
+          },
+          {
+            "title": "厚生労働省 有機溶剤を正しく使いましょう",
+            "url": "https://www.mhlw.go.jp/new-info/kobetu/roudou/gyousei/anzen/dl/120815-01.pdf"
+          },
+          {
+            "title": "厚生労働省 発がん性を有する有機溶剤の今後の対応について（案）",
+            "url": "https://www.mhlw.go.jp/content/11201000/001359346.pdf"
+          },
+          {
+            "title": "食品安全委員会 清涼飲料水評価書（案）トルエン",
+            "url": "https://www.fsc.go.jp/iken-bosyu/pc7_kagaku_osen_toluene_200925.pdf"
+          },
+          {
+            "title": "厚生労働省 モデルSDS 酢酸メチル",
+            "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/79-20-9.html"
+          },
+          {
+            "title": "厚生労働省 モデルSDS トルエン",
+            "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/108-88-3.html"
+          },
+          {
+            "title": "労働安全衛生総合研究所 化学物質の毒性作用メカニズムの解明",
+            "url": "https://www.jniosh.johas.go.jp/publication/mail_mag/2012/47-column.html"
+          },
+          {
+            "title": "厚生労働省 モデルSDS ノルマルヘキサン",
+            "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/110-54-3.html"
+          }
+        ]
+      },
+      "sourceEvidence": [
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=73ab3583&dataType=0&pageNo=1",
+          "excerpt": "(◆平成25年09月30日厚生労働省告示第316号)",
+          "choiceNumbers": [
+            2,
+            3,
+            4,
+            5
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/new-info/kobetu/roudou/gyousei/anzen/dl/120815-01.pdf",
+          "excerpt": "油脂に溶ける性質があることから皮膚からも吸収されます",
+          "choiceNumbers": [
+            1
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/content/11201000/001359346.pdf",
+          "excerpt": "有機溶剤中毒予防規則で規制の対象としている有機溶剤については、中枢神経系に対する中毒を予防するための措置を義務付けている",
+          "choiceNumbers": [
+            1
+          ]
+        },
+        {
+          "url": "https://www.fsc.go.jp/iken-bosyu/pc7_kagaku_osen_toluene_200925.pdf",
+          "excerpt": "各臓器の濃度は、脂肪組織で最も高く",
+          "choiceNumbers": [
+            1
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=73ab3583&dataType=0&pageNo=1",
+          "excerpt": "酢酸メチル中枢神経系抑制、視神経障害又は気道障害",
+          "choiceNumbers": [
+            2
+          ]
+        },
+        {
+          "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/79-20-9.html",
+          "excerpt": "視神経障害として、両眼視力の一過性喪失、視神経の両側性萎縮、視野狭窄の報告がある",
+          "choiceNumbers": [
+            2
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=73ab3583&dataType=0&pageNo=1",
+          "excerpt": "トルエン頭痛、めまい、嘔吐等の自覚症状又は中枢神経系抑制",
+          "choiceNumbers": [
+            3
+          ]
+        },
+        {
+          "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/108-88-3.html",
+          "excerpt": "特定標的臓器毒性（反復ばく露）区分1（中枢神経系、腎臓）",
+          "choiceNumbers": [
+            3
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=73ab3583&dataType=0&pageNo=1",
+          "excerpt": "ベンゼン頭痛、めまい、嘔吐等の自覚症状、中枢神経系抑制又は再生不良性貧血等の造血器障害",
+          "choiceNumbers": [
+            3
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=73ab3583&dataType=0&pageNo=1",
+          "excerpt": "脂肪族炭化水素及びそのハロゲン化合物",
+          "choiceNumbers": [
+            4
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=73ab3583&dataType=0&pageNo=1",
+          "excerpt": "クロロホルム頭痛、めまい、嘔吐等の自覚症状、中枢神経系抑制又は肝障害",
+          "choiceNumbers": [
+            4
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=73ab3583&dataType=0&pageNo=1",
+          "excerpt": "四塩化炭素頭痛、めまい、嘔吐等の自覚症状、中枢神経系抑制又は肝障害",
+          "choiceNumbers": [
+            4
+          ]
+        },
+        {
+          "url": "https://www.jniosh.johas.go.jp/publication/mail_mag/2012/47-column.html",
+          "excerpt": "例えば四塩化炭素のように、「起因する症状又は障害」として「中枢神経系抑制」と「肝障害」が記載されているものが多数存在します",
+          "choiceNumbers": [
+            4
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=73ab3583&dataType=0&pageNo=1",
+          "excerpt": "ノルマルヘキサン末梢神経障害",
+          "choiceNumbers": [
+            5
+          ]
+        },
+        {
+          "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/110-54-3.html",
+          "excerpt": "n-ヘキサンを10～65%の濃度で含む洗浄剤にばく露によって、15人に多発性ニューロパチーの発症",
+          "choiceNumbers": [
+            5
+          ]
+        }
+      ],
+      "reviewIssues": [
+        "【HOLD】独立審査（claude-opus-5-5、emkohyo-20260217-q10-10-review.json）でFIX。肢1の『有機溶剤は脂溶性が高く、中枢神経系など脂肪に富んだ組織に蓄積しやすい』を直接述べた政府資料がない（厚労省パンフレットは油脂に溶けるため皮膚吸収されるとの記述、食品安全委員会のトルエン評価書案はラット脂肪組織の濃度が最高との記述のみで、中枢神経系への蓄積に触れない）。肢2〜5は告示・モデルSDSで裏付け済み。Web検索上限のため追加探索ができず保留する。presentationの『n- ヘキサン』の空白は修正済み。 第2パス（2026-09-24）: 昭和51年基発第122号（有機溶剤の認定基準）にも脂溶性・脂肪組織への蓄積の記述はなく、肢1の根拠は依然未取得。"
+      ]
+    }
+  }
+}

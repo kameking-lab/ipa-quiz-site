@@ -1,0 +1,72 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20260322",
+  "subject": "power",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 3248,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 14273,
+      "webSearchRequests": 0,
+      "costUSD": 0.1794078,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 1463,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "ddbc553b5941132a256a880c9e0d04317129e7eab43244c5ca94506a04e21a29",
+  "inputRequestSha256": "c9e135b605fe56bfb202b5fe34b09f03a6a0be0e3e64d8c5d6ce30384f511105",
+  "inputHashes": {
+    "candidateSha256": {
+      "q08": "603c3502fc963ab3a89d03a6727ee3992ae194b2a96a964fbea0893430bddcb4"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20260322/power/p11.png": "b728d81f3ef55bf53e73c18bf505a384fd416c77d4b57449d7375d9972ce37e1"
+    },
+    "figureSha256": {},
+    "sourceQuestionPdfSha256": "9733341a0f293f068c9a665d5a9a90f1aabf3a2db5d79cd530643cdea241f7b7",
+    "sourceAnswerPdfSha256": "cc2890296d06a4823df5697a78a1c01ddfd39f041c51f48c87984daa3a5707c6",
+    "officialAnswerUnitsSha256": "46f4d90a3c1180dce614fde96a74d4263e44eac234d5d6095af187716864ef3f",
+    "referencePdfSha256": {},
+    "referencePageSha256": {},
+    "referenceJsonSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q08",
+      "questionNumber": 8,
+      "part": null,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [
+        "choiceExplanations[3]の最後は「〜にも効果があるとされる」と伝聞形で終わっており、根拠が示されていない。一方でuncertaintyには「スペーサ単独の効果の程度は設備構成により異なる」「公式正答が(4)であることから(3)は正しい記述として扱われている」とあり、(3)が正しいことを公式正答からの逆算でしか裏付けていない。解説ではスペーサがギャロッピング抑制に効く根拠を明記すること。具体的には、素導体の間隔を保持すること、素導体全体のねじれを抑えて着氷雪の翼形化を抑制すること、相間スペーサが相間短絡を防止すること、を挙げる。そのうえで(3)を断定的に「正しい」と説明し、uncertaintyからこの留保を除くこと。"
+      ],
+      "figureIssues": [],
+      "sourceIssues": [
+        "uncertaintyの記述が出典メタデータと矛盾しているため、削除または修正が必要。uncertaintyには「原本ページには試験年度・回の表記がなく、本問の出題年度・回は特定できない」「科目は記述内容から『電力』と考えられるが、ページ上に科目名の明記はない」とある。しかしfiscalYear=2025、term=lower、examDate=2026-03-22、subject=power、sourceAttribution「令和7年度下期…電力科目 問8」はいずれもmanifestの出典情報と一致しており確定している。問題PDFは電力冊子q02、解答表の見出しは「令和7年度 第三種電気主任技術者下期試験解答」である。needsReview=falseとも整合しない。",
+        "sourceAttributionの「問題文・選択肢を読みやすく整形」は実態と合っていない。候補の問題文と(1)〜(5)は原図と句読点（，。）まで同一で、整形は行われていない。「原文どおり」などの正確な表現に改めることが望ましい。"
+      ],
+      "verifiedEvidence": [
+        "問題文：原図（PDF第11頁、印字頁番号「- 8 -」、T2−D 011）の「架空送電線路に関連する設備に関する記述として，誤っているものを次の(1)〜(5)のうちから一つ選べ。」と候補は一字一句一致する。",
+        "選択肢(1)〜(5)：原図の各肢と候補の本文は全文一致する。欠落・改変・順序の入れ替わりはない。",
+        "公式正答：解答表の＜電力＞問8は解答4・配点5で、manifestの公式正答単位 {question:8, part:null, answer:'4', points:5} と一致する。候補のofficialAnswer='4'、scoringPoints=5も一致する。",
+        "出典メタデータ：reviewedFromPage=[11]はmanifestの「問8の原図はPDF第[11]頁」と一致する。sourceQuestionPdfUrl（20260322_ch_third_q02.pdf）とsourceAnswerPdfUrl（20260322_ch_third_a01.pdf）もmanifestと一致する。fiscalYear=2025、term=lower、examDate=2026-03-22、subject=powerも一致する。",
+        "総合解説：(4)の誤りは次のとおり正しく特定されている。一様な微風によるカルマン渦で電線が上下に振動する現象は「微風振動」であって「サブスパン振動」ではない。サブスパン振動は、多導体のスペーサ間区間で風上側素導体の後流により風下側素導体が振動する現象で、比較的強風時に生じる。微風振動の対策としてダンパ（ストックブリッジダンパ等）やアーマロッドを用い、支持点付近の疲労断線を防ぐという記述は妥当である。",
+        "肢(1)の解説：アークホーンがフラッシオーバ時のアークをがいし表面から離し、がいしの損傷を防ぐという説明は正しい。",
+        "肢(2)の解説：遮へい角は架空地線と最外側電線を結ぶ線が鉛直線となす角であり、小さいほど遮へい効果が大きいという説明は正しい。",
+        "肢(3)の解説：多導体化により等価半径が増し、電線表面の電位の傾きが下がってコロナ放電が抑制されるという説明は正しい。",
+        "肢(5)の解説：直撃雷による鉄塔電位の上昇→逆フラッシオーバという因果、および埋設地線（カウンタポイズ）で塔脚接地抵抗を下げて抑制するという説明は正しい。",
+        "図：原図に図はなく、解答に図は不要である。figureUrls=[]、choiceFigureUrls={}、figureDescriptionは妥当。",
+        "officialReferenceUrls=[]で、独立主張を伴う参照URLはなく、外部検証を要する事項はない。"
+      ]
+    }
+  ]
+}

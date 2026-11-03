@@ -42,7 +42,7 @@ pnpm dev
 | `NEXT_PUBLIC_POSTHOG_KEY` | PostHog プロジェクト API キー | — |
 | `NEXT_PUBLIC_POSTHOG_HOST` | PostHog ホスト | `https://us.i.posthog.com` |
 | `NEXT_PUBLIC_SENTRY_DSN` | Sentry DSN | — |
-| `NEXT_PUBLIC_AMAZON_ASSOCIATE_TAG` | Amazon アソシエイト ID | — |
+| `NEXT_PUBLIC_AMAZON_ASSOCIATE_TAG` | 任意のAmazon紹介タグ。閉鎖済み `safeaisite22-22` は無効化され通常商品リンクになる | — |
 | `NEXT_PUBLIC_RAKUTEN_AFFILIATE_ID` | 楽天アフィリエイト ID | — |
 | `ADMIN_BASIC_USER` | 管理画面 Basic 認証ユーザー | — |
 | `ADMIN_BASIC_PASS` | 管理画面 Basic 認証パスワード | — |

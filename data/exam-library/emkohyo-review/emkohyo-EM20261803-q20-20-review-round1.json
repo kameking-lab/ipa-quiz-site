@@ -1,0 +1,56 @@
+{
+  "reviewModel": "claude-opus-5-5",
+  "requestedModel": "claude-opus-5-5",
+  "canonicalModel": "claude-opus-5-5",
+  "provider": "firstParty",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 3010,
+      "cacheReadInputTokens": 143524,
+      "cacheCreationInputTokens": 17043,
+      "webSearchRequests": 0,
+      "costUSD": 0.2252568,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 2463,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "paperId": "emkohyo-EM20261803",
+  "ids": [
+    "emkohyo-EM20261803-q20"
+  ],
+  "figureSha256": {
+    "emkohyo-EM20261803-q20": {}
+  },
+  "officialRowImageSha256": {
+    "emkohyo-EM20261803-q20": {
+      "/exam-library/emkohyo-EM20261803/q20-p12-0.webp": "1a78c69c503dd6d1ca4126fe1293a2226b1291cb4a94ff755afa6bb9bee02533"
+    }
+  },
+  "governmentSourceImageSha256": {},
+  "candidateSha256": {
+    "emkohyo-EM20261803-q20": "ea5bc831577b3da3a0a63a19ecc512e9520a9f010c06b2bcd40f0bd8247e8134"
+  },
+  "sourcePackPath": "docs/evidence/emkohyo-choice-sources/emkohyo-EM20261803-q20-20.json",
+  "sourcePackSha256": "5a613f7a9fa2ab17eff300252e852d598f1540fbbc53c9890bfb7f8ee529d051",
+  "assessment": {
+    "emkohyo-EM20261803-q20": {
+      "status": "FIX",
+      "textIssues": [
+        "summary の「上側95％点の係数は1.645」は用語として誤り。1.645 は標準正規分布の上側5％点（＝95パーセント点）であり、「上側95％点」は −1.645 を指すことになる。肢1の reason は正しく「上側5％点」と書いているため、同じ解説の中で言い方が食い違っている。「95％上限値を与える係数（標準正規分布の上側5％点）1.645」などに直すこと。"
+      ],
+      "choiceIssues": [],
+      "reasonIssues": [
+        "肢3の reason にある「上側95％点の係数である㋺は1.645」も summary と同じ用語の誤り。「上側5％点（95％上限値の係数）」に直すこと。数値と正誤の結論はどちらも正しい。"
+      ],
+      "sourceIssues": [
+        "添付の政府資料には、㋑の値 σ_D＝1.95 を「日間変動の上側90％推定値」と直接書いた記述がない。作業環境評価基準第3条は計算式中の定数 0.084 を示すだけ。1.95 という値は、問題文が与える log²㋑＝0.084 と計算 (log1.95)²≒0.0841 だけで成り立つため、正誤判定には支障ない。ただし「1.95 は上側90％推定値」という説明は、問題文を根拠にしたものであって政府資料の裏付けはない。"
+      ],
+      "needsExternalCheck": []
+    }
+  }
+}

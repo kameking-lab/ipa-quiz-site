@@ -1,0 +1,69 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20250323",
+  "subject": "theory",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 4370,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 14158,
+      "webSearchRequests": 0,
+      "costUSD": 0.2009278,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 1807,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "aba8cb2fc5b415eac29f59ad6faf3504971418f1b8b604a701777d82571e18e0",
+  "inputRequestSha256": "929912eeb8cc15073829f794f93f82727d743fd317f275d73ead2ac608c74059",
+  "inputHashes": {
+    "candidateSha256": {
+      "q06": "d10501923f8c4da018c17b5b615ca99153d153432b60fafea62801a6144c3e6e"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20250323/theory/p09.png": "5532f8893806118cca9c9e9aba1ffd29096959334d416f60cd9f7f974925990b"
+    },
+    "figureSha256": {
+      "public/images/denken3/20250323/theory/20250323-theory-q06-dc-circuit.png": "d9f695d62954c89bbd44ccb7ff751e9580f04b5e6eeb80ac4ea082207e81844f"
+    },
+    "sourceQuestionPdfSha256": "8817012cb55eed9c83bb1e68df138909b1e03a81f7ed48a9893a219e1d2a76ca",
+    "sourceAnswerPdfSha256": "4c3b38fcf1405766fafaa78b1b05b867a3d48307a670b9d354476bc6b32acd4c",
+    "officialAnswerUnitsSha256": "f69cdce00335e73d0ab011e409db14b13a16a45448c67fb52a8e40bd8a46661c",
+    "referencePdfSha256": {},
+    "referencePageSha256": {},
+    "referenceJsonSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q06",
+      "questionNumber": 6,
+      "part": null,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "出典メタデータ: fiscalYear=2024（令和6年度）、term=lower（下期）、examDate=2025-03-23、subject=theory、sourceQuestionPdfUrl・sourceAnswerPdfUrl、reviewedFromPage=[9] はいずれもmanifestと一致する。sourceAttributionの『令和6年度下期第三種電気主任技術者試験 理論科目 問6』も正しい。",
+        "問題文: 公式原図と照合した。『二つの直流電源と三つの抵抗』『図に示す向きに定義』『I₁, I₂, I₃ の値[A]の組合せ』『(1)〜(5)のうちから一つ選べ』は、句読点の整形を除き一致する。",
+        "選択肢: 公式表 (1) −1,−1,0 / (2) −1,1,−2 / (3) 2,1,1 / (4) 1,1,0 / (5) 1,−1,2 と、候補の全5肢の符号・数値が一致する。",
+        "公式正答: 公式解答表の理論 問6=4、公式正答単位 answer=\"4\"、候補 officialAnswer=\"4\" の三者が一致する。",
+        "極性: 目視では、公式原図・公開候補図とも左4 V電源は上側の極板が長い（上が正）。右2 V電源は下側の極板が長い（下が正）。なお画素計測スクリプトは出力が得られなかったため、判定は目視による。",
+        "極性の独立検証: 右電源を上側正と仮定すると、(4−V)/4=(V−2)/2+V/5 から V=40/19 となり、どの選択肢とも一致しない。候補記載の極性（右は下側正、上端 −2 V）でのみ公式正答(4)が導かれるため、候補の極性記述は妥当である。",
+        "総合解説の検算: I₁=(4−V)/4、I₂=(V+2)/2、I₃=V/5 と置く。KCL I₁=I₂+I₃ の両辺を20倍して 20−5V=14V+20 となり、V=0。よって I₁=1、I₂=1、I₃=0 で、計算・因果とも正しい。",
+        "各肢解説の検算: (1) KCLは −1=−1+0 で成立するが、I₁=1 に反する。(2) V=−10 から I₁=3.5 で、−1 と矛盾する。(3) V=5 から I₁=−0.25 で、2 と矛盾する。(5) V=10 から I₁=−1.5 で、1 と矛盾する。(4) KCLと各枝の式をすべて満たす。各肢の固有理由はいずれも数値的に正しい。",
+        "公開候補図: 公式原図の回路部分をそのまま切り出したもので、次の要素がすべて保持されている。接続では、4 Ω（左上辺）・2 Ω（右上辺）・5 Ω（中央縦枝）、上下の接続点の黒丸、下辺の共通導線。ラベルでは 4 V・2 V・4 Ω・2 Ω・5 Ω・I₁[A]・I₂[A]・I₃[A]。電流矢印の向きは I₁→右、I₂→右、I₃→下。解答に必要な情報は公開候補図だけで読み取れる。",
+        "figureDescription: 抵抗の位置、電流の向き、電源極性の記述はいずれも原図と一致する。",
+        "officialReferenceUrls は空であり、独立した外部主張はないため、外部確認事項はない。"
+      ]
+    }
+  ]
+}

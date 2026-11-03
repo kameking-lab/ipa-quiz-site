@@ -44,9 +44,9 @@ import {
   writeMotivationSettings,
   type MotivationSettings,
 } from "@/lib/motivation/combo";
-import { LS_KEYS } from "@/lib/storage/keys";
 import { NotificationSettings } from "@/app/account/notifications/NotificationSettings";
 import { CloudSyncPanel } from "@/components/account/CloudSyncPanel";
+import { MobileInstallControl } from "@/components/pwa/MobileInstallControl";
 
 type Theme = "light" | "dark" | "system";
 
@@ -57,6 +57,7 @@ const THEME_OPTIONS: { value: Theme; label: string; icon: React.ReactNode }[] = 
 ];
 
 const SECTIONS = [
+  { id: "home-screen", label: "ホーム画面に追加", icon: <Download className="h-3.5 w-3.5" /> },
   { id: "appearance", label: "外観", icon: <Palette className="h-3.5 w-3.5" /> },
   { id: "character", label: "AIキャラ", icon: <Sparkles className="h-3.5 w-3.5" /> },
   { id: "quiz-options", label: "クイズオプション", icon: <Sliders className="h-3.5 w-3.5" /> },
@@ -119,25 +120,6 @@ function SettingRow({
   );
 }
 
-function readExamDate(): string {
-  if (typeof window === "undefined") return "";
-  try {
-    return window.localStorage.getItem(LS_KEYS.examDate) ?? "";
-  } catch {
-    return "";
-  }
-}
-
-function writeExamDate(date: string): void {
-  if (typeof window === "undefined") return;
-  try {
-    if (!date) window.localStorage.removeItem(LS_KEYS.examDate);
-    else window.localStorage.setItem(LS_KEYS.examDate, date);
-  } catch {
-    // ignore
-  }
-}
-
 export default function SettingsPage() {
   const { theme, setTheme } = useTheme();
   const { getRadioProps: getThemeRadioProps } = useRovingRadioGroup(
@@ -158,7 +140,6 @@ export default function SettingsPage() {
   const [stats, setStats] = useState({ total: 0, correct: 0, accuracy: 0, uniqueAnswered: 0 });
   const [characterId, setCharacterId] = useState<CharacterId>(DEFAULT_CHARACTER_ID);
   const [characterEnabled, setCharacterEnabledState] = useState(true);
-  const [examDate, setExamDate] = useState("");
   const [toast, setToast] = useState<{ type: "ok" | "err"; msg: string } | null>(null);
   const fileInputRef = useRef<HTMLInputElement>(null);
 
@@ -171,7 +152,6 @@ export default function SettingsPage() {
     const cs = readCharacterState();
     setCharacterId(cs.id);
     setCharacterEnabledState(cs.enabled);
-    setExamDate(readExamDate());
   }, []);
 
   function updateMotivation<K extends keyof MotivationSettings>(
@@ -191,11 +171,6 @@ export default function SettingsPage() {
   function handleCharacterEnabledChange(on: boolean) {
     setCharacterEnabledState(on);
     writeCharacterEnabled(on);
-  }
-
-  function handleExamDateChange(value: string) {
-    setExamDate(value);
-    writeExamDate(value);
   }
 
   function showToast(type: "ok" | "err", msg: string) {
@@ -288,7 +263,7 @@ export default function SettingsPage() {
             設定とプリファレンス
           </h1>
           <p className="mt-2 text-sm text-muted-foreground">
-            7 つのセクションで全機能を一元管理できます。
+            {SECTIONS.length} つのセクションで全機能を一元管理できます。
           </p>
         </header>
 
@@ -310,6 +285,14 @@ export default function SettingsPage() {
         </nav>
 
         <div className="space-y-6">
+          <section aria-labelledby="home-screen">
+            <SectionTitle id="home-screen" icon={<Download className="h-5 w-5" />}>
+              ホーム画面に追加
+            </SectionTitle>
+            <div className="rounded-2xl border border-border bg-card p-5 shadow-sm">
+              <MobileInstallControl />
+            </div>
+          </section>
           {/* Appearance */}
           <section>
             <SectionTitle
@@ -453,24 +436,15 @@ export default function SettingsPage() {
             <SectionTitle
               id="exam-schedule"
               icon={<CalendarClock className="h-5 w-5" />}
-              description="次の試験日を登録するとカウントダウンが有効化"
+              description="試験日・申込締切は次の資格で確認"
             >
               試験予定
             </SectionTitle>
             <div className="rounded-2xl border border-border bg-card p-5 shadow-sm">
-              <label className="mb-2 block text-sm font-medium" htmlFor="exam-date">
-                次の受験予定日
-              </label>
-              <input
-                id="exam-date"
-                type="date"
-                value={examDate}
-                onChange={(e) => handleExamDateChange(e.target.value)}
-                className="w-full rounded-xl border border-border bg-background px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-ring"
-              />
               <p className="mt-2 text-xs text-muted-foreground">
-                ダッシュボードや AI チューターでこの日付までの残り日数が表示されます。
+                資格ごとの試験日と申込締切を確認できます。
               </p>
+              <a href="https://tsugino-shikaku.jp/calendar" target="_blank" rel="noopener noreferrer" className="mt-3 inline-block text-sm font-semibold text-primary underline underline-offset-4">次の資格で日程を見る ↗</a>
             </div>
           </section>
 

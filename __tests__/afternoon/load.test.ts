@@ -1,3 +1,4 @@
+// Archived editorial fixture coverage only; public availability is tested separately.
 import { describe, expect, it } from "vitest";
 
 import {
@@ -5,7 +6,7 @@ import {
   getAfternoonByYearSeason,
   getAfternoonQuestions,
   getAfternoonYearSeasons,
-} from "@/lib/afternoon/load";
+} from "@/__tests__/fixtures/archived-afternoon-load";
 
 // These accessors back the 午後AI採点 routes (C軸 differentiation):
 // getAfternoonYearSeasons drives generateStaticParams for
@@ -97,5 +98,18 @@ describe("findAfternoonQuestion", () => {
 
   it("returns undefined for an unknown id", () => {
     expect(findAfternoonQuestion("ap-9999z-pm-q99")).toBeUndefined();
+  });
+});
+
+describe("public afternoon supply boundary", () => {
+  it.each(["ap", "fe", "st", "sa", "pm", "sm", "au", "nw", "db", "es", "sc", "ip", "sg"] as const)("%s supplies no retired originals or sittings", async exam => {
+    const publicLoad = await import("@/lib/afternoon/load");
+    expect(publicLoad.getAfternoonQuestions(exam)).toEqual([]);
+    expect(publicLoad.getAfternoonYearSeasons(exam)).toEqual([]);
+    for (const archived of getAfternoonQuestions(exam)) {
+      expect(publicLoad.getAfternoonByYearSeason(exam, archived.year, archived.season)).toEqual([]);
+      expect(publicLoad.findAfternoonQuestion(archived.id)).toBeUndefined();
+    }
+    expect(publicLoad.getAfternoonByYearSeason(exam, 1999, "spring")).toEqual([]);
   });
 });

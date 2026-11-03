@@ -1,0 +1,94 @@
+{
+  "questionNumber": 2,
+  "sharedContext": null,
+  "units": [
+    {
+      "part": null,
+      "question": "界磁に永久磁石を用いた小形直流電動機がある。この電動機の電機子に 12 V の電圧を加えたところ，無負荷の状態で 3 000 min⁻¹ で回転した。この電圧を維持したまま負荷を与えて，2 A の電機子電流を流したところ，損失が 3 W 発生した。このときの回転数[min⁻¹]として，最も近いものを次の(1)〜(5)のうちから一つ選べ。\nただし，ブラシによる電圧降下及び電機子反作用は無視できるものとし，損失は電機子巻線の銅損しか存在しないものとする。",
+      "choices": {
+        "1": "3 429",
+        "2": "3 000",
+        "3": "2 813",
+        "4": "2 625",
+        "5": "2 250"
+      },
+      "officialAnswer": "4",
+      "explanation": "界磁は永久磁石なので、磁束 Φ は一定です。このため逆起電力 E は回転数 N に比例します（E = kΦN、kΦ は一定）。\n\n【無負荷時】損失は電機子巻線の銅損だけで、機械損（摩擦損・風損）も鉄損もありません。そのため無負荷では、損失を補うためのトルクが要りません。発生トルクは T = kΦIa なので、トルクが 0 なら電機子電流も Ia = 0 です。電流が流れないので電機子抵抗での電圧降下も 0 になり、逆起電力は電源電圧と等しく E₀ = 12 V です。このときの回転数は N₀ = 3 000 min⁻¹ です。\n\n【負荷時】電機子電流は Ia = 2 A、銅損は Ia²·Ra = 3 W です。\n電機子抵抗：Ra = 3 ÷ 2² = 0.75 Ω\n電機子抵抗での電圧降下：Ia·Ra = 2 × 0.75 = 1.5 V\n逆起電力：E = V − Ia·Ra = 12 − 1.5 = 10.5 V\n\n【回転数】E ∝ N なので\nN = N₀ × E ÷ E₀ = 3 000 × 10.5 ÷ 12 = 2 625 min⁻¹\n\nよって正答は (4) です。",
+      "choiceExplanations": {
+        "1": "誤り。3 429 ≒ 3 000 × 12 ÷ 10.5 で、逆起電力の比を逆向きに掛けた値です。磁束が一定の直流電動機に負荷をかけると、電機子抵抗での電圧降下で逆起電力が下がるため、回転数も下がります。電源電圧が一定なら、無負荷時の 3 000 min⁻¹ を上回ることはありません。",
+        "2": "誤り。無負荷時の回転数そのものです。負荷時は 2 A の電機子電流が流れ、1.5 V の電圧降下が生じます。逆起電力が 10.5 V に下がるので、回転数は 3 000 min⁻¹ を下回ります。",
+        "3": "誤り。2 813 ≒ 3 000 × 11.25 ÷ 12 で、電圧降下を 0.75 V（逆起電力 11.25 V）とした値です。これは電機子抵抗 Ra = 0.75 Ω の数値を、そのまま電圧降下とした場合に相当します。実際の電圧降下は Ia·Ra = 2 × 0.75 = 1.5 V です。",
+        "4": "正しい。Ra = 3 ÷ 2² = 0.75 Ω なので、逆起電力は E = 12 − 2 × 0.75 = 10.5 V です。回転数は N = 3 000 × 10.5 ÷ 12 = 2 625 min⁻¹ となります。",
+        "5": "誤り。2 250 = 3 000 × 9 ÷ 12 で、電圧降下を 3 V（逆起電力 9 V）とした値です。これは正しい電圧降下 1.5 V の 2 倍で、条件と合いません。"
+      },
+      "figureDescription": null,
+      "officialReferenceUrls": [],
+      "uncertainty": "なし",
+      "needsReview": true,
+      "sourceQuestionPdfUrl": "https://www.shiken.or.jp/chief/upload/20260322_ch_third_q03.pdf",
+      "sourceAnswerPdfUrl": "https://www.shiken.or.jp/chief/upload/20260322_ch_third_a01.pdf",
+      "reviewedFromPage": [
+        5
+      ]
+    }
+  ],
+  "draftModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 2229,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 9309,
+      "webSearchRequests": 0,
+      "costUSD": 0.1193158,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 714,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "bf39f112cb9a5a3cb804a5365df9af78798cad14ada4ed1db617b7b0529a5578",
+  "inputRequestSha256": "669ceed0253a997262a0034134007ed21248458b4f74df7eb4b85650675c8152",
+  "sourceQuestionPdfSha256": "a89c7dc2b9a305f9db83f2f78195f0df8a0da5aeec6b8e66cfd40fb028d146fb",
+  "sourceAnswerPdfSha256": "cc2890296d06a4823df5697a78a1c01ddfd39f041c51f48c87984daa3a5707c6",
+  "sourcePageImageSha256": {
+    "data/raw_pdfs/denken3/review/20260322/machinery/p05.png": "c313f564875072db2f3d859e93d883636029eaa14285da5af98b1a5d9876369b"
+  },
+  "revisionHistory": [
+    {
+      "version": 1,
+      "model": "claude-opus-5-5",
+      "resolvedModel": "claude-opus-5-5",
+      "modelUsage": {
+        "claude-opus-5-5": {
+          "inputTokens": 2,
+          "outputTokens": 2384,
+          "cacheReadInputTokens": 1279,
+          "cacheCreationInputTokens": 12268,
+          "webSearchRequests": 0,
+          "costUSD": 0.1460878,
+          "contextWindow": 1000000,
+          "maxOutputTokens": 128000,
+          "thinkingTokens": 884,
+          "canonicalModel": "claude-opus-5-5",
+          "provider": "firstParty",
+          "costBasis": "list"
+        }
+      },
+      "rawResponseSha256": "3620768ba2b017f3e6a56f6ce5a711b52659482d32b729713af2f69b77053b84",
+      "inputRequestSha256": "9ccd4bf2069a5b63cd7b5188bb425f3e164c9dadb4f077026c4918b6db715204",
+      "previousDraftSha256": "fb1ae65f76a6b184ec3014a0ef21af6a219193c3b1ed9622222f3f0a217c08f0",
+      "previousDraft": "data/raw_pdfs/denken3/review/20260322/machinery/archive/q02-vision-draft-v1.json",
+      "answeredReviewSha256": "6c441fe64ddd91be5525fec6663c3a3f429e41a5c4c6bd176674108ea8afdd43",
+      "answeredReview": "data/raw_pdfs/denken3/review/20260322/machinery/archive/q02-opus-review-v1.json",
+      "answeredStrictReceipt": "docs/evidence/denken3/strict/20260322-machinery-s1-q02-opus.json",
+      "answeredStrictReceiptSha256": "0525eb9dda21df8557fb51612ae3c5975eab73b90434d18f5e96f9083e1c6208",
+      "figureSha256": {},
+      "referenceHashes": {},
+      "operatorNote": ""
+    }
+  ]
+}

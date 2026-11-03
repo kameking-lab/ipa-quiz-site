@@ -1,0 +1,71 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20250831",
+  "subject": "power",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 3784,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 15113,
+      "webSearchRequests": 0,
+      "costUSD": 0.1968478,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 2244,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "9c7ae1c2c4bf43db521ce5aaea186ed217c2374ab2b46eb4e2e39705aa356445",
+  "inputRequestSha256": "ec3d57904e81ce7cdfcb022f93ae62f7b784bda7abc470f48a4154a63eecbc41",
+  "inputHashes": {
+    "candidateSha256": {
+      "q09": "cce7cd782a98bb1e08e7e49941f6d4e4c0f95112bd26cc8ce12cd0b00b4eaa95"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20250831/power/p12.png": "c11da27465f7c455d64e7b0a4a906fe3726e9ceb4214091c3c5cc5b187eaee92"
+    },
+    "figureSha256": {},
+    "sourceQuestionPdfSha256": "567aac1df6dc0c0950d04e90a1ad03231427c518eede92559effe01e2b97a2c9",
+    "sourceAnswerPdfSha256": "76fd3715ed487d19a56b387fb402de20ee09474e9fa55b0413f9037b96af06c9",
+    "officialAnswerUnitsSha256": "92f80b2c8107abde786e8ae42c1215b00cf9791c7ea0854a0986b008387c9c38",
+    "referencePdfSha256": {},
+    "referencePageSha256": {},
+    "referenceJsonSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q09",
+      "questionNumber": 9,
+      "part": null,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "問題文：公式問題原図（頁下部「- 9 -」「T1－D 012」）と照合。導入文、①（ア）、②（イ）（ウ）、平常時の（エ）、事故時の（オ）、設問文は一字一句一致する。空欄枠は［(ア)］等で表記しており、意味は変わらない。",
+        "選択肢：原図の表5行×5列を全セル照合し、すべて一致した。(1) 磁気誘導／誘導リアクタンス／ファラデー／大きさの差／三相短絡。(2) 静電誘導／自己インダクタンス／電磁誘導／大きさの和／1線地絡。(3) 静電誘導／相互インダクタンス／電磁誘導／ベクトルの和／1線地絡。(4) 磁気誘導／相互インダクタンス／電荷誘導／ベクトルの和／三相短絡。(5) 磁気誘導／誘導リアクタンス／ファラデー／ベクトルの差／2線地絡。",
+        "公式正答：公式解答表「令和7年度 第三種電気主任技術者上期試験解答」の＜電力＞列、問9の解答は3、配点は5。manifestの{question:9, part:null, answer:\"3\", points:5}、候補のofficialAnswer=\"3\"、scoringPoints=5と一致する。なお理論・機械の問9も解答は3だが、本問は架空送電線路の誘導障害を扱っており、電力科目への帰属は内容から妥当。",
+        "総合解説の検算（静電誘導）：Vs=(CaVa+CbVb+CcVc)/(Ca+Cb+Cc+C0) は静電誘導電圧の標準式として正しい。",
+        "総合解説の検算（電磁誘導）：Em=jωl(MaIa+MbIb+McIc) は正しい。Ma等を単位長さ当たり[H/m]、lを[m]と定義しており、単位は整合する。",
+        "総合解説の検算（ねん架）：ねん架してCa=Cb=Cc、Ma=Mb=Mc=Mとすると、Vs∝Va+Vb+Vc、Em=jωMl(Ia+Ib+Ic) となる。平衡時は120°位相差によりベクトル和が0になる。この因果は正しい。",
+        "総合解説の検算（1線地絡）：Ia+Ib+Ic=3I0≠0 となり零相電圧も生じる。地絡電流による電磁誘導電圧が大きくなるという記述は正しい。",
+        "肢(1)の誤答理由：(ア)(イ)(ウ)(エ)(オ)の各誤りを固有に指摘している。三相短絡は対称故障で零相分が生じない、という理由も正しい。",
+        "肢(2)の誤答理由：正しい語（ア・ウ・オ）と誤りの語（イ：自己インダクタンス、エ：大きさの和）を正しく切り分けている。",
+        "肢(3)の正答理由：5語すべてが記述に合う根拠を述べており、正しい。",
+        "肢(4)の誤答理由：正しい語（イ・エ）と誤りの語（ア・ウ・オ）を正しく切り分けている。",
+        "肢(5)の誤答理由：|Va−Vb|=√3|V| の計算は正しい。2線地絡も不平衡事故であると認めたうえで、(ア)～(エ)が誤りなので組合せとして不可、という論理も妥当。",
+        "図：本問は語句組合せの表形式のみで、解答に必要な回路図はない。figureDescriptionの記述は原図と一致し、figureUrls・choiceFigureUrlsが空であることも適切。",
+        "出典：officialReferenceUrlsは空で、検証を要する独立主張はない。sourceAttributionは原図の科目・問番号と整合する。",
+        "reviewedFromPage=[12]：原図の頁コード「T1－D 012」と整合する。印刷頁番号は「- 9 -」。"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,34 @@
+.reader {
+  display: block;
+  line-height: 1.85;
+  overflow-wrap: anywhere;
+}
+.notice {
+  position: sticky;
+  top: 3.5rem;
+  z-index: 10;
+  display: block;
+  margin-block: 1.25rem;
+  padding: 0.75rem 1rem;
+  border: 2px solid var(--warning);
+  border-radius: 0.75rem;
+  background: var(--background);
+  color: var(--foreground);
+  font-size: 0.875rem;
+}
+.section {
+  display: grid;
+  gap: 1rem;
+  margin-block: 2rem;
+  scroll-margin-top: 18rem;
+}
+.verbatim { white-space: pre-wrap; overflow-wrap: anywhere; }
+.link { color: var(--primary); text-decoration: underline; text-underline-offset: 0.2em; }
+.printNotice { display: none; }
+.endNotice { border-top: 2px solid var(--warning); padding-top: 1rem; }
+@media print {
+  .notice { position: static; display: block; break-inside: avoid; }
+  .printNotice { display: block; border: 2px solid #333; padding: 0.5rem; break-after: avoid; }
+  .section { display: block; }
+  .section > * { margin-block: 0.75rem; }
+}

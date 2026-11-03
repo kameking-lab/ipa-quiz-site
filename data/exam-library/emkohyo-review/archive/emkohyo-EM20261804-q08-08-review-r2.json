@@ -1,0 +1,62 @@
+{
+  "reviewModel": "claude-opus-5-5",
+  "requestedModel": "claude-opus-5-5",
+  "canonicalModel": "claude-opus-5-5",
+  "provider": "firstParty",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 2741,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 15125,
+      "webSearchRequests": 0,
+      "costUSD": 0.1760838,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 1965,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponsePath": "data/exam-library/emkohyo-review/emkohyo-EM20261804-q08-08-raw-response.txt",
+  "rawResponseSha256": "7e30397549adf7005e7aff8147f21b3689133ae611cf1d1c0c0743806847acb5",
+  "paperId": "emkohyo-EM20261804",
+  "ids": [
+    "emkohyo-EM20261804-q8"
+  ],
+  "figureSha256": {
+    "emkohyo-EM20261804-q8": {}
+  },
+  "officialRowImageSha256": {
+    "emkohyo-EM20261804-q8": {
+      "/exam-library/emkohyo-EM20261804/q8-p6-1.webp": "386e4b5a6abe3c2e6ef595857e9825ddc49e41a8dbb32ca879079421c05e3d95"
+    }
+  },
+  "officialPageImageSha256": {},
+  "governmentSourceImageSha256": {
+    "docs/evidence/emkohyo-choice-sources/EM20261804-q8-jniosh-diffusion-cell-p77.png": "b0e392f822484cf2eb4d08a2c03ffb4fb3fdc3e990a43dad28a30031a1e3d092"
+  },
+  "candidateSha256": {
+    "emkohyo-EM20261804-q8": "0f70ce2a9f2bee590267402f6d708410132201755630b8285003f01a20529711"
+  },
+  "sourcePackPath": "docs/evidence/emkohyo-choice-sources/emkohyo-EM20261804-q08-08.json",
+  "sourcePackSha256": "c1b3e0d4f49b08295f53b1d95b128b89cea5029d8882bc6c4bd71a26a94f40b5",
+  "assessment": {
+    "emkohyo-EM20261804-q8": {
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "reasonIssues": [
+        "肢3の理由は因果の説明が不完全。式(1) v₀=(A/L)·P·D·(T₀/T)·ln[(P−p)/(P−p₀)] には温度依存項が3つある。p₀（温度上昇で増大）、D（系の温度Tにおける拡散定数で、温度上昇で増大）、T₀/T（温度上昇で減少）である。理由は p₀→対数項の増大だけで『拡散速度は大きくなる』と結論しており、T₀/T の減少とDの温度依存に触れていない。これでは記載した式だけから結論が導けない。『Dも温度とともに増加し、p₀は温度に対してほぼ指数関数的に増加するため、T₀/T の減少を上回って正味の拡散速度は増大する』旨を補う必要がある。"
+      ],
+      "sourceIssues": [
+        "肢3の『温度が高いほど拡散速度が大きくなる』を直接述べる政府資料が無い。JOGMEC用語辞典は『蒸気圧は一般に温度が高いほど高くなる』のみを支え、産業医学総合研究所年報は式(1)とDが温度Tでの値であることを示すに留まる。拡散定数Dの温度依存性、およびT₀/T項を含めた正味の増減は、どの出典も直接支えていない。",
+        "厚生労働省『個人サンプラーを用いた測定法の基盤整備報告書』p39は、パッシブサンプラー（拡散式捕集）のサンプリング速度式の文脈である。拡散セルによる標準ガス発生そのものの資料ではない。肢4の『拡散係数Dは物質ごとに定まる』の補強としては使えるが、拡散セルの濃度式の根拠は産業医学総合研究所年報の式(1)であることを明示するのが望ましい。"
+      ],
+      "needsExternalCheck": [
+        "気相拡散係数Dの温度依存性（例: Fuller式等で D∝T^1.75 程度）を示す信頼できる資料で、温度上昇時に D・p₀ の増大が T₀/T の減少を上回ることを確認すること"
+      ]
+    }
+  }
+}

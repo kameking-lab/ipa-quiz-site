@@ -1,0 +1,70 @@
+{
+  "schemaVersion": 1,
+  "reviewModel": "claude-opus-5-5",
+  "inputHashes": {
+    "reviewedSha256": "d86bb51ed91ca9e648adcc891e0a30f054519351763deaf4adb7a3c29a8238cb",
+    "rowSha256": {
+      "6": "bcc2bd9122b481937d934e4fb3c244669e85e73448323d8b119d07bbdf23bb24",
+      "7": "fbc7e8806ec02c53dd40aff859d7ae74a714ea0c89afe8b1bf8acab437387ddb",
+      "8": "4211b49adba44f74f0c3cbb8e29da36e736c96fe3ce540477eb88c8374bb1347",
+      "9": "2e19f593ad5851f2b9323f407e9c0d1d65d917cdef2af890b9bfe1688f0de304",
+      "10": "b1fef79f68688379ebd1e630b5a7748aca4241c8bf9de6d66e448becde8fd981"
+    }
+  },
+  "assessment": [
+    {
+      "number": 6,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [
+        "choiceExplanations.ハに根拠のない誤答の由来が書かれている。『b-b'間101Vにa-b・a'-b'区間の電圧降下を合計3Vとして加えた』『3Vとなるには1線当たり15Aが必要でキルヒホッフの電流則と矛盾』は推測の筋書きで、理屈も回りくどい。『正しい電圧降下の合計は6V（2+1+1+2）なので、a-a'間は105Vになる。104Vは降下を5Vとした値で、正しい値と合わない』のように、正しい計算との差だけで否定する書き方に改めること。"
+      ],
+      "visualIssues": [],
+      "lawIssues": []
+    },
+    {
+      "number": 7,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "visualIssues": [],
+      "lawIssues": []
+    },
+    {
+      "number": 8,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [
+        "choiceExplanations.イに根拠のない誤答の由来が書かれている。『電流減少係数0.63を2回掛けた49×0.63×0.63≒19.4（または41〜60本の場合の0.39を用いた49×0.39≒19.1）』は、どちらか分からない推測を2つ並べているだけである。『正しい値は49×0.63＝30.87を7捨8入した31Aで、19Aはこれより大幅に小さく条件に合わない』のように、正しい計算との比較で否定する書き方に改めること。"
+      ],
+      "visualIssues": [],
+      "lawIssues": []
+    },
+    {
+      "number": 9,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "visualIssues": [],
+      "lawIssues": []
+    },
+    {
+      "number": 10,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "visualIssues": [],
+      "lawIssues": []
+    }
+  ]
+}

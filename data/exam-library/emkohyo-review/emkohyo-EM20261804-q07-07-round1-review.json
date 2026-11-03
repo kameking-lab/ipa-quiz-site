@@ -1,0 +1,62 @@
+{
+  "reviewModel": "claude-opus-5-5",
+  "requestedModel": "claude-opus-5-5",
+  "canonicalModel": "claude-opus-5-5",
+  "provider": "firstParty",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 3475,
+      "cacheReadInputTokens": 133532,
+      "cacheCreationInputTokens": 13520,
+      "webSearchRequests": 0,
+      "costUSD": 0.2043744,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 2630,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "paperId": "emkohyo-EM20261804",
+  "ids": [
+    "emkohyo-EM20261804-q7"
+  ],
+  "figureSha256": {
+    "emkohyo-EM20261804-q7": {
+      "/exam-library/emkohyo-EM20261804/text-q7-p6-fig1.webp": "368c64cc29911ddb5cb6ac5679d57bfddeb5d68872eeaf44808ce307a8e66556"
+    }
+  },
+  "officialRowImageSha256": {
+    "emkohyo-EM20261804-q7": {
+      "/exam-library/emkohyo-EM20261804/q7-p6-0.webp": "d308f44d47778ce8080bf8eddcbce7369bb1b3ef14cba9ac8ba4db1c1a3b44b1"
+    }
+  },
+  "officialPageImageSha256": {},
+  "governmentSourceImageSha256": {},
+  "candidateSha256": {
+    "emkohyo-EM20261804-q7": "0c98af15667f717fc0b6c0e72052a9a0c83697f5aa6f0887776ae12cd8e3b0ef"
+  },
+  "sourcePackPath": "docs/evidence/emkohyo-choice-sources/emkohyo-EM20261804-q07-07.json",
+  "sourcePackSha256": "c7cfee59efb552702d1d549d2e841b33e8c3d8a5349b8cfec795e069d2ee2b8e",
+  "assessment": {
+    "emkohyo-EM20261804-q7": {
+      "status": "FIX",
+      "textIssues": [
+        "肢5の「丸い胴」は原図と合わない。原図(5)の胴は丸底ではなく、下に向かって広がる洋梨形・三角形状に描かれている。「下広がりの胴と細い首を持ち」などに直す。",
+        "肢3は慣用名の「ホールピペット」、肢5はJIS R 3505の用語の「全量フラスコ」を使っており、表記がそろっていない。問題文は「ガラス製体積計」というJIS R 3505の名称を使っているので、肢3は「全量ピペット（ホールピペット）」とするのが望ましい。"
+      ],
+      "choiceIssues": [],
+      "reasonIssues": [],
+      "sourceIssues": [
+        "添付資料は肢2（ビュレット）の用途と構造しか支えていない。JSTの手引きは「滴下した溶液の体積を正確に測定する器具」と「ストップコック」を、厚労省の滴定法ページは「滴定量をビュレットの目盛りより読み取る」ことを裏付ける。肢1・3・4・5で器具をメスシリンダー、ホールピペット、メスピペット、全量フラスコと同定していることと、それぞれの用途（肢1の液量の読み取り、肢3の一定体積の分取、肢4の液量の選択、肢5の溶液の調製）の説明を直接支える出典がない。",
+        "科学の甲子園の実験の手引きは、国立研究開発法人JSTが高校生の競技用に作った資料で、政府（省庁）の一次資料ではない。本文の「公的な実験の手引き」という表現は正確だが、器具の定義の典拠としては弱い。",
+        "厚労省の食品添加物規格基準の滴定法ページは、ビュレットの目盛で滴定量を読むことしか述べていない。本文にある下端のコックや細い吐出口という構造は、このページでは裏付けられない。"
+      ],
+      "needsExternalCheck": [
+        "JIS R 3505（ガラス製体積計）か日本薬局方などの政府・公的規格で、ビュレット・メスシリンダー・全量ピペット・メスピペット・全量フラスコの名称と用途（受用・出用、一定体積か可変体積か）を確認し、肢1・3・4・5の出典として追加する。"
+      ]
+    }
+  }
+}

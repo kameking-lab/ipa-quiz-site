@@ -1,0 +1,68 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20240818",
+  "subject": "power",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 3383,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 13951,
+      "webSearchRequests": 0,
+      "costUSD": 0.1795318,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 1996,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "bccd7333ebf9dc956eed98611bd5eb673f599f631957e0790da9f6c3c50f0d0c",
+  "inputRequestSha256": "810a1e5ddd152888483c743fc0ca25e83050b8cf19e3d17ede2d0fb3e8b0f332",
+  "inputHashes": {
+    "candidateSha256": {
+      "q01": "76c48aa7d579ce13838eb0eaabf3cbb363e0bbdf29e1b37bffffe04f06eef238"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20240818/power/p04.png": "dd48c01c19f711fb482394b411d662c3968a4855adb044582cb4e21e326e49ac"
+    },
+    "figureSha256": {},
+    "sourceQuestionPdfSha256": "0bc54a85819b9d9c80d1574c5b8c02a3c28976565d8c9068a3dd0344a3db5700",
+    "sourceAnswerPdfSha256": "f72ecbc3a477e64948388b69cf78cb931032c9f0c688639836c8d533a949cd0f",
+    "officialAnswerUnitsSha256": "dec1fc8f040da0d081293d374bbb5d81bc964c442bcfc5ad9cd4f35fe93b9cd6",
+    "referencePdfSha256": {},
+    "referencePageSha256": {},
+    "referenceJsonSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q01",
+      "questionNumber": 1,
+      "part": null,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "出典メタデータ: fiscalYear=2024, term=upper, examDate=2024-08-18, subject=power, sourceQuestionPdfUrl=20240818_ch_third_q02.pdf, sourceAnswerPdfUrl=20240818_ch_third_a01.pdf, reviewedFromPage=[4] はいずれも manifest と一致する。添付原図は冊子ノンブル『-1-』だが、PDF頁は manifest の第4頁で矛盾しない。sourceAttribution『令和6年度上期第三種電気主任技術者試験 電力科目 問1』も一致する。",
+        "問題文: 原図『水力発電所に関する記述として，誤っているものを次の(1)〜(5)のうちから一つ選べ。』と一致する。相違は読点『，』→『、』の整形のみで、sourceAttribution に整形の旨が明記されている。",
+        "(1): 原図『衝動水車にはペルトン水車などがある。』と一致する。",
+        "(2): 原図『ペルトン水車の水圧管の先端ノズル内にはニードル弁があり，通常運転時は出力変化に応じて流量調整を行う。』と一致する。",
+        "(3): 原図『故障発生時などでペルトン水車を急停止させるときは，ニードル弁でノズルから出る噴流を急速に止めると同時にデフレクタを停止位置にして噴流を完全に遮断する。』と一致する。",
+        "(4): 原図の2文『小水力発電は，主に流れ込み式，水路式が多く，比較的小規模な発電設備で発電を行う。一般河川の水のエネルギーの利用だけでなく，農業用水，上下水道など低落差あるいは少流量の水のエネルギーも活用している。』と一致する。",
+        "(5): 原図の2文『クロスフロー水車は小水力発電で多く用いられ，円筒状のランナの軸に直角方向から流水が流入しランナ内を貫通して流出する水車である。ガイドベーンを有し低流量時でも効率低下が小さい。』と一致する。",
+        "公式正答: 令和6年度上期解答表の＜電力＞問1は『3』で、officialAnswer='3' および manifest 固定値と一致する。",
+        "総合解説・(3)固有理由: 急停止時はデフレクタを急速に作動させて噴流をランナから逸らし、速度上昇を防ぐ。ニードル弁は水撃作用（水圧管内の圧力上昇）を避けるため緩やかに閉じる。この説明は正しく、肢(3)の『ニードル弁で噴流を急速に止める』が誤りである因果も正しく示されている。",
+        "(1)(2)(4)(5)の固有理由: いずれも各肢の記述内容に即しており、事実誤認はない。具体的には、ペルトン水車は衝動水車であること、ニードル弁の開度で流量を調整すること、小水力発電は流れ込み式・水路式が多く低落差・少流量源を活用すること、クロスフロー水車の貫流構造とガイドベーンによる低流量時効率特性を確認した。",
+        "図: 原図は文章のみの頁で、図は存在せず解答にも不要である。figureUrls=[]・choiceFigureUrls={} は妥当である。figureDescription の頁構成の記述（『第3種 電力』見出し、A問題区分、問1本文と(1)〜(5)）も原図と一致する。",
+        "参照URL: officialReferenceUrls=[] のため、検証を要する独立主張はない。needsReview=false は本監査結果と整合する。"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,85 @@
+{
+  "status": "partial-accepted",
+  "date": "20250323",
+  "subject": "machinery",
+  "questionCount": 3,
+  "answerUnitCount": 3,
+  "choiceCount": 15,
+  "sourceQuestionPdfSha256": "66e8b0070a314cd78ed9b9f3edd3d75eeaf442b258fd0aacab0e7d9620c75b9f",
+  "sourceAnswerPdfSha256": "4c3b38fcf1405766fafaa78b1b05b867a3d48307a670b9d354476bc6b32acd4c",
+  "reviewedDataSha256": "231c2672f08cffa8efc5e112176bc479e004e3de54918c9f5c28ae47a9948a04",
+  "questions": [
+    {
+      "number": 10,
+      "sourceDraftSha256": "83e86707cf2d4e44352261a68e0c512e0cc26ba9798f023a2fdbc786f4c198e4",
+      "opusReceipt": "data/raw_pdfs/denken3/review/20250323/machinery/q10-11-12-opus-review.json",
+      "opusReceiptSha256": "1a74e468ea2e500ad7a8c5f49c10e120758dca8d1b4b3627090ea4aedfd8ee71",
+      "assessment": {
+        "number": 10,
+        "status": "PASS",
+        "textIssues": [],
+        "choiceIssues": [],
+        "explanationIssues": [],
+        "figureIssues": [],
+        "externalSourceIssues": []
+      },
+      "figureSha256": {
+        "20250323-machinery-q10-pcs-circuit": "c7fcfb14c6d9dec2f4f9b4e8bff426426f822c005e164d466daaeaf00e56e3e4"
+      }
+    },
+    {
+      "number": 11,
+      "sourceDraftSha256": "f9902d6616d6c02719ce01679b5f0356b98af8c6a8606b527b4af884a2351a47",
+      "opusReceipt": "data/raw_pdfs/denken3/review/20250323/machinery/q10-11-12-opus-review.json",
+      "opusReceiptSha256": "1a74e468ea2e500ad7a8c5f49c10e120758dca8d1b4b3627090ea4aedfd8ee71",
+      "assessment": {
+        "number": 11,
+        "status": "PASS",
+        "textIssues": [],
+        "choiceIssues": [],
+        "explanationIssues": [],
+        "figureIssues": [],
+        "externalSourceIssues": []
+      },
+      "figureSha256": {
+        "20250323-machinery-q11-gear-load": "8e4c1ca26c86b74238619e82821e50d0bc979611543cf4833cddb9c0741c0c00"
+      }
+    },
+    {
+      "number": 12,
+      "sourceDraftSha256": "47de16b812ba27f36a3030f95d384bc40d4c91d519daebfa2ddd148a4b8ebe8a",
+      "opusReceipt": "data/raw_pdfs/denken3/review/20250323/machinery/q10-11-12-opus-review.json",
+      "opusReceiptSha256": "1a74e468ea2e500ad7a8c5f49c10e120758dca8d1b4b3627090ea4aedfd8ee71",
+      "assessment": {
+        "number": 12,
+        "status": "PASS",
+        "textIssues": [],
+        "choiceIssues": [],
+        "explanationIssues": [],
+        "figureIssues": [],
+        "externalSourceIssues": []
+      },
+      "figureSha256": {}
+    }
+  ],
+  "strictReview": {
+    "q11": {
+      "path": "docs/evidence/denken3/strict/20250323-machinery-m8-q10-q11-q12-opus.json",
+      "sha256": "c610d7e0813f9c87373a5f54a699809bb3fb1fa8cec96b5b88b8a49c04d08843",
+      "status": "PASS",
+      "resolvedModel": "claude-opus-5-5"
+    },
+    "q12": {
+      "path": "docs/evidence/denken3/strict/20250323-machinery-m8-q10-q11-q12-opus.json",
+      "sha256": "c610d7e0813f9c87373a5f54a699809bb3fb1fa8cec96b5b88b8a49c04d08843",
+      "status": "PASS",
+      "resolvedModel": "claude-opus-5-5"
+    },
+    "q10": {
+      "path": "docs/evidence/denken3/strict/20250323-machinery-m9-q10-opus.json",
+      "sha256": "74f3a74bfc6b764a0ab0da82010470b5e9c3f18839ec37f795274bdaa95688a2",
+      "status": "PASS",
+      "resolvedModel": "claude-opus-5-5"
+    }
+  }
+}

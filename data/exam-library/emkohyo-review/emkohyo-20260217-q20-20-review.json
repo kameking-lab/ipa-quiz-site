@@ -1,0 +1,57 @@
+{
+  "reviewModel": "claude-opus-5-5",
+  "requestedModel": "claude-opus-5-5",
+  "canonicalModel": "claude-opus-5-5",
+  "provider": "firstParty",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 1853,
+      "cacheReadInputTokens": 139443,
+      "cacheCreationInputTokens": 29071,
+      "webSearchRequests": 0,
+      "costUSD": 0.29752460000000003,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 1771,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "paperId": "emkohyo-20260217",
+  "ids": [
+    "emkohyo-20260217-q20"
+  ],
+  "figureSha256": {
+    "emkohyo-20260217-q20": {}
+  },
+  "officialRowImageSha256": {
+    "emkohyo-20260217-q20": {
+      "/exam-library/emkohyo-20260217/q20-p15-0.webp": "7d5c7725b774c8bb4b2aebcc80734d0768544a20bb7492a4ba4c34389d8cf529"
+    }
+  },
+  "officialPageImageSha256": {},
+  "governmentSourceImageSha256": {
+    "docs/evidence/emkohyo-choice-sources/20260217-q20-dust-standard-p1.png": "861f2e8becbd23d356459630e6a46871f5571aa0d1128741cd5dc7f604bd784f",
+    "docs/evidence/emkohyo-choice-sources/20260217-q20-jsoh-classification-p424.png": "257b85d4f4a98720acfe1fec71b92ba300280d08623d6f1d489d82ceeebf5702",
+    "docs/evidence/emkohyo-choice-sources/20260217-q20-jsoh-2019-p1.png": "561b97bfbd386308bf1ebcd55c3735f718b36cf22565b29463b12407ec8eb918",
+    "docs/evidence/emkohyo-choice-sources/20260217-q20-jsoh-2019-p18.png": "9e2398b3e2bc03d520605414ea116ba8d0eb34182bcc6a7f381931ff79456998",
+    "docs/evidence/emkohyo-choice-sources/20260217-q20-jsoh-2019-p10.png": "c3a8116f01aa3849783a07a03eb3ab9839ab46e445a3b24fbfa7db7d4edd05ee"
+  },
+  "candidateSha256": {
+    "emkohyo-20260217-q20": "5522b24342440899b9fe6718fe7514f0afa4a53f84ffb60e03cb83a0cbf22d93"
+  },
+  "sourcePackPath": "docs/evidence/emkohyo-choice-sources/emkohyo-20260217-q20-20.json",
+  "sourcePackSha256": "69dededd47561b9f29bff4542f66d54fff2b15ae58e3a4d26fe6874176d284d3",
+  "assessment": {
+    "emkohyo-20260217-q20": {
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "reasonIssues": [],
+      "sourceIssues": [],
+      "needsExternalCheck": []
+    }
+  }
+}

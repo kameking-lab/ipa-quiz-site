@@ -1,167 +1,41 @@
-import * as React from "react";
+import "./home-study.css";
 import type { Metadata } from "next";
-import { ALL_QUESTIONS } from "@/data/questions";
-import { SessionSummaryGate } from "@/components/motivation/SessionSummaryGate";
-import { SiteLogo } from "@/components/SiteLogo";
-import { HomeExamGrid } from "@/components/home/HomeExamGrid";
-import { HomeHeroLede } from "@/components/home/HomeHeroLede";
-import { HomeQuickTrialCta } from "@/components/home/HomeQuickTrialCta";
-import { HomeFlagshipEssay } from "@/components/home/HomeFlagshipEssay";
-import { HomeFoundationKamokuB } from "@/components/home/HomeFoundationKamokuB";
-import { HomeTopicGrid } from "@/components/home/HomeTopicGrid";
-import {
-  HomeReturningHeader,
-  type RecommendationItem,
-} from "@/components/home/HomeReturningHeader";
-import { LearningCalendar } from "@/components/home/LearningCalendar";
-import { HomeAuxSection } from "@/components/home/HomeAuxSection";
-import { ContinueFromLast } from "@/components/ContinueFromLast";
 import { TotalAnswerCounter } from "@/components/home/TotalAnswerCounter";
-import { HeroAiDemo } from "@/components/home/HeroAiDemo";
+import { HomeDirectory } from "@/components/home/landing/HomeDirectory";
+import { HomeScheduleLink } from "@/components/home/landing/HomeScheduleLink";
+import { HomeNoteGuides, HomeTrust } from "@/components/home/landing/HomeGuidesAndTrust";
+import { HomeHero } from "@/components/home/landing/HomeHero";
 import { JsonLd } from "@/components/seo/JsonLd";
-import { SITE_BASE_URL } from "@/lib/seo/config";
+import { getHomeDirectory } from "@/lib/home/home-directory";
 import { buildOrgNode, buildWebsiteNode } from "@/lib/seo/structured-data";
-import { examLabel } from "@/lib/utils";
-import type { ExamCode } from "@/lib/questions/types";
-import { EXAM_QUESTION_COUNTS } from "@/lib/constants/exam-question-counts";
-import {
-  APPROX_QUESTION_COUNT_LABEL,
-  TOTAL_QUESTIONS_PUBLISHED,
-} from "@/lib/constants/question-counts";
 
-const HOME_TITLE = "国家資格の過去問×AI、無料で全機能 — 過去問AI";
-// Snippet-optimised: front-load the value prop + count and drop the 13-code list
-// （IP/SG/FE/…）— that list ate ~40 low-value chars of the visible SERP window and
-// pushed Google toward synthesising a worse snippet from the page body. Kept
-// under the ~150 full-width-char budget. (empirical review 致命傷⑦)
-const HOME_DESCRIPTION = `IPA情報処理技術者試験13区分と、FP3級・電験三種の公式公開過去問をAI解説付きで無料提供。${APPROX_QUESTION_COUNT_LABEL}問超を年度別・分野別・模試・復習モードで学べます。登録不要、スマホ対応。`;
-
+const title = "資格の公開過去問と学習用解説 — 過去問AI";
+const description = "IPA・FP・電気・医療・福祉・不動産・安全衛生等の資格の公開過去問を無料で学習。資格と実施回から問題を選び、公式出典・正答とAI支援で編集した学習用解説を確認して演習・復習を進められます。";
 export const metadata: Metadata = {
-  title: HOME_TITLE,
-  description: HOME_DESCRIPTION,
-  alternates: {
-    canonical: "/",
-    // Feed readers / browser "subscribe" tools fetch the bare domain first and
-    // look for autodiscovery in <head>; /blog and /blog/[slug] already declare
-    // it, but the home page defines its own alternates which REPLACES (not
-    // merges) the root layout's — so the most-checked surface emitted none.
-    types: { "application/rss+xml": "/feed.xml" },
-  },
-  // Override the root-layout openGraph/twitter so social shares of the
-  // landing page get the same keyword-rich title/description users see in
-  // SERPs, not the generic site-wide fallback.
-  openGraph: {
-    title: HOME_TITLE,
-    description: HOME_DESCRIPTION,
-    url: "/",
-  },
-  twitter: {
-    title: HOME_TITLE,
-    description: HOME_DESCRIPTION,
-  },
+  title, description,
+  alternates: { canonical: "/", types: { "application/rss+xml": "/feed.xml" } },
+  openGraph: { title, description, url: "/" },
+  twitter: { title, description },
 };
 
 export default function HomePage() {
-  const questionCounts = EXAM_QUESTION_COUNTS;
-
-  // Published (answerable/indexable) total — the only count shown to users.
-  const totalQuestions = TOTAL_QUESTIONS_PUBLISHED;
-
-  const availableExamEntries = (
-    Object.entries(questionCounts) as Array<[ExamCode, number]>
-  )
-    .filter(([, count]) => count > 0)
-    .sort(([, a], [, b]) => b - a);
-
-  // Stable pool for the returning-user 'today's picks' carousel. The
-  // client component picks 5 per calendar date from this server-prepared
-  // list so we do not ship the full ALL_QUESTIONS payload to the bundle.
-  const recommendationPool: RecommendationItem[] = ALL_QUESTIONS
-    .filter((q) => !q.needsReview && q.choices && q.year >= 2020)
-    .slice(0, 200)
-    .map((q) => ({
-      id: q.id,
-      exam: q.exam,
-      year: q.year,
-      season: q.season,
-      session: q.session,
-      qNumber: q.qNumber,
-      category: q.category,
-    }));
-
-  const jsonLd = {
-    "@context": "https://schema.org",
-    "@graph": [
-      buildWebsiteNode(
-        `IPA 13区分とFP3級・電験三種の公式公開過去問、計${APPROX_QUESTION_COUNT_LABEL}問超をAIコパイロット付きで学べる無料サイト。`,
-      ),
-      {
-        ...buildOrgNode(),
-        hasOfferCatalog: {
-          "@type": "OfferCatalog",
-          name: "資格試験対策コース一覧",
-          url: SITE_BASE_URL,
-        },
-      },
-      {
-        "@type": "ItemList",
-        "@id": `${SITE_BASE_URL}/#exam-list`,
-        name: "資格試験 過去問一覧",
-        numberOfItems: availableExamEntries.length,
-        itemListElement: availableExamEntries.map(([code, count], idx) => ({
-          "@type": "ListItem",
-          position: idx + 1,
-          url: `${SITE_BASE_URL}/${code}`,
-          name: `${examLabel(code)}（${count.toLocaleString("ja-JP")}問）`,
-        })),
-      },
-    ],
-  };
+  const domains = getHomeDirectory();
+  const roomItems = domains.flatMap(domain => domain.featured.slice(0, 1));
+  const roomKeys = new Set(roomItems.map(item => item.key));
+  roomItems.push(...domains.flatMap(domain => [...domain.featured, ...domain.compact]).filter(item => !roomKeys.has(item.key)));
 
   return (
-    <main className="mx-auto w-full max-w-3xl flex-1 px-4 pb-10 pt-6 sm:px-6 sm:pt-8">
-      <JsonLd data={jsonLd} />
-      <React.Suspense fallback={null}>
-        <SessionSummaryGate />
-      </React.Suspense>
-
-      <div className="mb-6">
-        <SiteLogo />
+    <main className="study-home mx-auto w-full max-w-6xl flex-1 px-5 pb-12 pt-6 sm:px-10 sm:pt-12">
+      <JsonLd data={{ "@context": "https://schema.org", "@graph": [buildWebsiteNode(description), buildOrgNode()] }} />
+      <HomeHero domains={domains} />
+      <TotalAnswerCounter suggestions={roomItems.filter(item => item.questionCount > 0)
+        .map(({ name, href }) => ({ name, href }))} />
+      <HomeDirectory domains={domains} />
+      <div className="study-context">
+      <HomeScheduleLink />
+      <HomeNoteGuides />
+      <HomeTrust />
       </div>
-
-      <HomeReturningHeader recommendationPool={recommendationPool} />
-
-      <section aria-label="試験を選んで学習を始める" className="mb-6">
-        <HomeHeroLede totalQuestions={totalQuestions} />
-        {/* CTA sits directly under the (SSR-stable) lede so its on-screen
-            position never moves. HeroAiDemo and TotalAnswerCounter render null
-            during SSR and pop in only after hydration / an async fetch; placing
-            them ABOVE the CTA shoved it down ~200-290px post-load, so a real
-            mouse/agent click computed on the first-paint position landed on the
-            shifted-in content instead of the link (empirical review F-2). They
-            now mount below the CTA, where their pop-in shifts only the exam
-            grid. */}
-        <HomeQuickTrialCta />
-        <HeroAiDemo />
-        <TotalAnswerCounter />
-        <HomeExamGrid questionCounts={questionCounts} />
-      </section>
-
-      <HomeFlagshipEssay />
-
-      <HomeFoundationKamokuB />
-
-      <HomeTopicGrid />
-
-      <section className="mb-6" aria-label="続きから">
-        <ContinueFromLast />
-      </section>
-
-      <section className="mb-6">
-        <LearningCalendar />
-      </section>
-
-      <HomeAuxSection />
     </main>
   );
 }

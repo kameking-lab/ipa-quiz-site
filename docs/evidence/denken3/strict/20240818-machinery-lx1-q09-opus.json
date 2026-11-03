@@ -1,0 +1,67 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20240818",
+  "subject": "machinery",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 2678,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 13571,
+      "webSearchRequests": 0,
+      "costUSD": 0.1623918,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 1357,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "4c14c451895aebc646a29d790932ba572a78783a153ee07091655decd49cb26b",
+  "inputRequestSha256": "5492ce0ffaeddd54a512a7a013f366589c9b1c56e59b2f685ac3db8ea6dd6265",
+  "inputHashes": {
+    "candidateSha256": {
+      "q09": "812b9d732003eaf3de38c8c5623ad2a82af83305114cc8b27740284564691de6"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20240818/machinery/p13.png": "5245f2dc6a130762a3e0fac1a1520e5f28bbdbc8f487721316360fe575bd7914"
+    },
+    "figureSha256": {},
+    "sourceQuestionPdfSha256": "ff8ff270bbe1ea125e92f213d011afde969d0d2b9fa2e17a7caa2b5cd6673e2a",
+    "sourceAnswerPdfSha256": "f72ecbc3a477e64948388b69cf78cb931032c9f0c688639836c8d533a949cd0f",
+    "officialAnswerUnitsSha256": "a238be2ab01c15ea1b22801a7d1f4025c86bfad1116569afbe7256d0ceab0948",
+    "referencePdfSha256": {},
+    "referencePageSha256": {},
+    "referenceJsonSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q09",
+      "questionNumber": 9,
+      "part": null,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "問題文: 公式原図（PDF第13頁、頁下部表記『-10-』『T1－K 013』）と照合した。『単相変圧器の一次側に電流計，電圧計及び電力計を接続して，二次側を短絡し，一次側に定格周波数の電圧を供給し，電流計が40Aを示すよう一次側の電圧を調整したところ，電圧計は80V，電力計は1200Wを示した。』『一次側からみた漏れリアクタンス[Ω]』『最も近いもの』『ただし，電流計，電圧計及び電力計は理想的な計器であるものとする。』の数値・単位・条件はすべて一致した。原図の段落改行（ただし書き）を1段落に結合している点は、sourceAttributionの『読みやすく整形』の範囲内で、意味は変わらない。",
+        "選択肢: (1)1.28 (2)1.85 (3)2.00 (4)2.36 (5)2.57 は原図と完全に一致した。",
+        "公式正答: 公式解答表（令和6年度上期、機械列、問9）の値は『2』。candidate.officialAnswer='2' と manifest の正答単位 answer='2' に一致した。",
+        "総合解説の検算: Z=80/40=2.0Ω。cosθ=1200/(80×40)=0.375。sinθ=√(1−0.140625)=√0.859375≈0.927025。X=2.0×0.927025≈1.85405Ω。別法も R=P/I²=1200/1600=0.75Ω（Z·cosθ と同じ値）、X=√(4−0.5625)=√3.4375≈1.85405Ω で一致した。短絡試験では励磁回路を無視し、電力計の指示を銅損とみなす。これは標準的な前提で、問題の意図とも整合する。",
+        "肢(1)の理由の検算: R=√(4−1.6384)=√2.3616≈1.5367Ω。P=1600×1.5367≈2459W で、実測の1200Wと矛盾する。記載値は正しい。",
+        "肢(2)の理由: 総合解説と同じ計算で、X≈1.854Ωに最も近いのは1.85。正しい。",
+        "肢(3)の理由: 2.00ΩはZ=V/Iそのもの。R=0.75Ω>0なので X<Z になる。論理は正しい。",
+        "肢(4)(5)の理由: 2.36Ω・2.57Ωはいずれも|Z|=2.0Ωを超える。X≤|Z|なので不可能。論理は正しい。",
+        "図: 原図に図は無く、本文だけで解答できる。figureDescription=null、figureUrls=[]、choiceFigureUrls={} は適切。",
+        "出典メタデータ: fiscalYear=2024、term=upper、examDate=2024-08-18、subject=machinery は manifest と一致した。sourceQuestionPdfUrl=…20240818_ch_third_q03.pdf、sourceAnswerPdfUrl=…20240818_ch_third_a01.pdf も manifest と一致した。reviewedFromPage=[13] は manifest の原図頁 PDF第13頁 と一致した。sourceAttribution『令和6年度上期第三種電気主任技術者試験 機械科目 問9』も一致した。",
+        "officialReferenceUrls は空で、外部の独立主張は無いため、外部確認事項は無い。"
+      ]
+    }
+  ]
+}

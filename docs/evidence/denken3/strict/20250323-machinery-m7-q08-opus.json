@@ -1,0 +1,62 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20250323",
+  "subject": "machinery",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 3187,
+      "cacheReadInputTokens": 140024,
+      "cacheCreationInputTokens": 15501,
+      "webSearchRequests": 0,
+      "costUSD": 0.21576079999999997,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 1886,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "706f1fcd6f7d99972cfb8aca84dc1b98d22e99446ebbe081e1e1946fe000cc7b",
+  "inputRequestSha256": "b776747cd582f7c0d710b92dfab5e870d0f2c837403f521527c5b869526fbfe3",
+  "inputHashes": {
+    "candidateSha256": {
+      "q08": "7fee41d9f9dcb55853de39fef4c25f15803611c2f2c36d096161eed88ca82255"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20250323/machinery/p11.png": "27d5995042dfb34575c27bbd9eef1ef18e684126c7ebff32c4031cf8e7037e1b"
+    },
+    "figureSha256": {},
+    "sourceQuestionPdfSha256": "66e8b0070a314cd78ed9b9f3edd3d75eeaf442b258fd0aacab0e7d9620c75b9f",
+    "sourceAnswerPdfSha256": "4c3b38fcf1405766fafaa78b1b05b867a3d48307a670b9d354476bc6b32acd4c",
+    "officialAnswerUnitsSha256": "5afb14eda25be23a2790bfc590815aa5f61eb80863a5d493ead2015ebdfb77e9",
+    "referencePdfSha256": {},
+    "referencePageSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q08",
+      "questionNumber": 8,
+      "part": null,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "問題文を原図の問8と一文ずつ照合した。導入文、単巻変圧器の定義、(ア)共通部分と(イ)非共通部分、(ア)の端子を一次側・(イ)の端子を二次側に接続する記述、(ウ)の二次端子電圧×二次電流、(エ)漏れ磁束、(オ)電圧変動率、設問文のいずれも一致した。欠落・改変・語順の誤りはない。「問8」の番号を除いたことと、空欄枠を括弧表記にしたことは、整形の範囲に収まっている。",
+        "選択肢(1)〜(5)を原図の組合せ表と行・列ごとに照合した。(1)は分路巻線/直列巻線/負荷容量/多く/小さい、(2)は直列巻線/分路巻線/自己容量/少なく/小さい、(3)は分路巻線/直列巻線/負荷容量/少なく/小さい、(4)は分路巻線/直列巻線/定格容量/多く/大きい、(5)は直列巻線/分路巻線/定格容量/多く/大きいで、すべて一致した。原図の「多　く」の字間空白を詰めて「多く」と書いたことは、意味を変えない整形である。",
+        "officialAnswer=3 は、manifest で固定された公式正答単位 {question:8, part:null, answer:\"3\"} と一致する。",
+        "総合解説を検算した。共通部分が分路巻線、非共通部分が直列巻線という定義は正しい。V₂I₂ を負荷容量（線路容量）とする扱いは正しい。昇圧時の自己容量は (V₂−V₁)I₂ で、直列巻線が負担する容量である。これは分路巻線の負担 V₁(I₁−I₂) と等しい値になるため、式として正しい。巻線を共用する単巻変圧器は、同じ負荷容量の二巻線変圧器より漏れ磁束が少ない。したがって漏れリアクタンスが小さく、電圧変動率も小さい。この因果関係も正しい。以上から (3) に至る結論は、公式正答と一致する。",
+        "各肢固有の理由を確認した。(1)は(エ)の「多く」だけが誤りで、その指摘は正確である。(2)は(ア)(イ)が逆で、(ウ)の自己容量も誤りであり、その指摘は正確である。(2)の(エ)(オ)は正しい内容なので、誤りとして扱っていない点も適切である。(4)は(ア)(イ)が正しく、(ウ)(エ)(オ)が誤りである。(5)は(ア)(イ)が逆で、(ウ)(エ)(オ)も誤りである。どの肢の説明も誤答要素の特定が正確で、正しい要素を誤りとした記述はない。",
+        "図はない。原図は文章と組合せ表だけで構成されている。figureUrls=[] と choiceFigureUrls={} は妥当で、図がなくても理解できる。",
+        "出典を確認した。原図フッタ「T2−K 011」は reviewedFromPage=[11] と整合する。試験日 2025-03-23 は令和6年度下期で、fiscalYear=2024、term=lower、subject=machinery、sourceAttribution の記載と整合する。officialReferenceUrls は空なので、独立主張の外部確認事項はない。"
+      ]
+    }
+  ]
+}

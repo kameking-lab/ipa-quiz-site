@@ -210,7 +210,7 @@ export function HomeReturningHeader({ recommendationPool }: Props) {
           </h1>
           <p className="mt-1 text-sm font-medium text-foreground">
             {formatYearSeason(lastQuestion.year, lastQuestion.season)}{" "}
-            {examLabel(lastQuestion.exam)} 問 {lastQuestion.qNumber}
+            {examLabel(lastQuestion.exam)} 問 {lastQuestion.qNumber}{lastQuestion.part ? `(${lastQuestion.part})` : ""}
           </p>
           {(accuracy || streak > 0) && (
             <div className="mt-3 flex flex-wrap items-center gap-2 text-xs">
@@ -235,6 +235,7 @@ export function HomeReturningHeader({ recommendationPool }: Props) {
               season: lastQuestion.season,
               session: lastQuestion.session,
               qNumber: lastQuestion.qNumber,
+              part: lastQuestion.part,
             })}
             className="mt-4 inline-flex min-h-[48px] w-full items-center justify-center gap-1.5 rounded-full bg-primary px-5 py-3 text-sm font-bold text-primary-foreground shadow-sm transition hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background sm:w-auto"
           >

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20250323",
+  "subject": "power",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 2372,
+      "cacheReadInputTokens": 140024,
+      "cacheCreationInputTokens": 15422,
+      "webSearchRequests": 0,
+      "costUSD": 0.1988288,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 1245,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "801fa3ef7ed48b94c35b22d82e189d45c509eaefff80c86e6080ef8a5f8db6ea",
+  "inputRequestSha256": "90301f6ec054fb80a44979483ecb8cc7bd1e9a96ba532203190c8c82e2057f4b",
+  "inputHashes": {
+    "candidateSha256": {
+      "q17b": "187a24f931b87fba34695a31a9a59e126d134463d44220ca10b741c8c0cdebc8"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20250323/power/p20.png": "8cf37a02453885efee12ba6420f44186ae496f98df6578c9c0a65e5548355c7d"
+    },
+    "figureSha256": {
+      "public/images/denken3/20250323/power/20250323-power-q17-feranti-pi-circuit.png": "b0a8aaf091ed77ad3e2045be3aca501018e90dfcb7cd2ffde5c612b0b5f909a5"
+    },
+    "sourceQuestionPdfSha256": "892785e0f1035bcb239eb30fa903d4c88adbcfdaa1b5b0edea2d1907fd887114",
+    "sourceAnswerPdfSha256": "4c3b38fcf1405766fafaa78b1b05b867a3d48307a670b9d354476bc6b32acd4c",
+    "officialAnswerUnitsSha256": "c0264b08f6e43a38070f8e17a0bf92604977bc2e2a59aa705d91044b39ac2870",
+    "referencePdfSha256": {},
+    "referencePageSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q17b",
+      "questionNumber": 17,
+      "part": "b",
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "Question text checked against the official question page (printed page -17-, footer T2-D 020): jX=j200 Ω, jB=j0.800 mS, sending-end line voltage 66.0 kV, receiving end unloaded, and the (b) prompt '1線当たりの送電端電流の値[A]' all match. The only change is added spaces between numbers and units.",
+        "The five choices match the original: (1)15.2, (2)16.6, (3)28.7, (4)31.8, (5)55.1. The candidate's officialAnswer is '4', which matches the manifest-fixed official answer {question:17, part:b, answer:4}.",
+        "Recalculated the overall explanation. B/2=0.400 mS. XB/2=200×0.400×10⁻³=0.08. Es=Er+jX·j(B/2)Er=Er(1−XB/2)=0.92Er. Receiving-end line voltage = 66.0/0.92 = 71.74 kV. Es=66.0/√3=38.105 kV and Er=71.74/√3=41.418 kV. Is=j(B/2)(Es+Er) has magnitude 0.400×10⁻³×79.52×10³=31.81 A, which gives choice (4). The explanation also correctly notes that the factor 0.92 is a positive real number, so the two voltages are in phase and their magnitudes can be added.",
+        "Recalculated each wrong choice. (1) 0.4 mS×38.105 kV=15.24 A is only the current in the sending-end B/2. (2) 0.4 mS×41.418 kV=16.57 A is only the current in the receiving-end B/2, which is also the current through the line. (3) 0.4 mS×71.74 kV=28.70 A uses the line voltage instead of the phase voltage and counts only the receiving-end side. (5) 31.81×√3=55.09 A, and 0.4 mS×(66.0+71.74) kV=55.10 A. Each reason given for these choices is numerically correct and specific to that choice.",
+        "Compared the public figure 20250323-power-q17-feranti-pi-circuit.png with the original drawing. The layout matches: sending end (open terminal), a node, series inductor jX, a node, receiving end (open terminal). Each node has a shunt capacitor jB/2 to ground. The labels 送電端, jX, 受電端 and both j B/2 labels are present, and the connections and orientation are the same. The public figure alone is enough to see that the sending-end current is the sum of the two shunt branch currents.",
+        "Source metadata checked. The exam date 2025-03-23 corresponds to 令和6年度下期, which matches fiscalYear 2024, term lower and subject power. reviewedFromPage [20] agrees with the footer code T2-D 020 on the attached page. officialReferenceUrls is empty, so there is no independent claim that needs outside verification. uncertainty is empty and needsReview is false."
+      ]
+    }
+  ]
+}

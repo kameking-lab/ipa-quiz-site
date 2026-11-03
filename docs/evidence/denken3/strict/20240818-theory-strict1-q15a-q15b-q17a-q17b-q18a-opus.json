@@ -1,0 +1,146 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20240818",
+  "subject": "theory",
+  "reviewModel": "claude-opus-5-5",
+  "inputHashes": {
+    "candidateSha256": {
+      "q15a": "e15d334f6db837ada9f3b9f7c9b039378d90979c2f54c0b1e0fe22cfe9b5e5a8",
+      "q15b": "7c4da2a17954e38d1fd8c213fe8e9da7efd611e7bab2064eac26cbd3f570b16d",
+      "q17a": "e9d93cd37a6a5c795da2ab4211034915ef17603aed2b3db5ce3622efa8007527",
+      "q17b": "7281953d8cc2a3bd583df7b417a6648cf1109964a68900d0f883ef7017c4785c",
+      "q18a": "5a0e0e91e0175782e40eb6ae37d517c00cbe4234dd91f2ade44203b09243ce54"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20240818/theory/p19.png": "7dd8b5e9903630242b620cff2d52909aa9e2389354731235d185d1b755ce1c08",
+      "data/raw_pdfs/denken3/review/20240818/theory/p22.png": "d9f046962f51fd98ab8a972b9218f8352f8e18c03e513bd48c0ccde000247cbb",
+      "data/raw_pdfs/denken3/review/20240818/theory/p23.png": "659a3972ec4c17be381241744852f11f1cab2dc08b0822d7245315296427ab85",
+      "data/raw_pdfs/denken3/review/20240818/theory/p24.png": "8a6dad9542b6b51fd4f923ecddb22ee0f4531fb02fda441375139b79d0068d33",
+      "data/raw_pdfs/denken3/review/20240818/theory/p25.png": "619d2ae5a3f2fdb36ed1f6f69db70975fb8efe983c88ec17afaca826617f80ba"
+    },
+    "figureSha256": {
+      "public/images/denken3/20240818/theory/20240818-theory-q15-ac-circuit.png": "3c017b72e88229b876cc59eff777c6a35f495f27fae0d39f50cccc78a09dae02",
+      "public/images/denken3/20240818/theory/20240818-theory-q17-capacitor-networks.png": "8ff60c1a5c6f23abf5e90be4cd13724eb74cd582339fd2dabcfed8891d5acaf2",
+      "public/images/denken3/20240818/theory/20240818-theory-q18-am-circuit-waveforms.png": "27d643514d4dc897f88d431bf620d534aa8d08f45b62c459909a6a543bb49fa9"
+    },
+    "sourceQuestionPdfSha256": "236be905e93a023cf3c65c1e22c45c24dc42b910151c51f8ed023247793d1d29",
+    "sourceAnswerPdfSha256": "f72ecbc3a477e64948388b69cf78cb931032c9f0c688639836c8d533a949cd0f",
+    "officialAnswerUnitsSha256": "a6d5cdbd8d585e03003713bc8613dd3402773a529156960f43141c26645c7224"
+  },
+  "assessment": [
+    {
+      "unitKey": "q15a",
+      "questionNumber": 15,
+      "part": "a",
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [
+        "uncertaintyに、図のv矢印の極性は『標準的な扱いに基づく前提』だと未解決のまま書かれている。原図で確認すると、iは上辺を右向きに流れ（時計回り）、電源の下を通る電流は右から左へ向かう。v矢印は左向きなので、電源の左端子が＋側になる。電流は＋端子から出て回路素子を通るため、回路素子の電圧はvそのものになる（受動符号規約と一致する）。したがって、v・iの式をそのまま位相比較に使ってよい。この確認を解説か確認メモに書き、uncertaintyからこの前提の記述を削除すること。",
+        "『i = 50 sin(1000t−90°)』は、ラジアン単位の1000tと度単位の90°を混ぜて書いている。『50 sin(1000t − π/2)』（電流は90°＝π/2 rad遅れ）のように単位をそろえて書くことが望ましい。"
+      ],
+      "figureIssues": [],
+      "sourceIssues": [
+        "uncertaintyに『T1−R 019からは出典年度・試験回を特定できない』とある。しかし同じJSONのfiscalYear=2024、term=upper、examDate=2024-08-18、sourceAttribution『令和6年度上期』と矛盾している。公式解答表の見出しは『令和6年度 上期 第三種電気主任技術者試験解答』で、理論の問15(a)の正答は4と記載されており、出典は確定している。この古い不確実性の記述は削除すること。"
+      ],
+      "verifiedEvidence": [
+        "問題文とv=500 sin(1000t)[V]、i=−50 cos(1000t)[A]は、原図と一致する。",
+        "−cosθ=sin(θ−π/2)なので、電流は電圧より90°遅れる。したがって素子は誘導性（コイル）である。",
+        "|Z|=500/50=10Ω。ωL=10なので、L=10/1000=0.01H=10mHとなり、(4)と一致する。",
+        "誤答肢の計算を検算した。(1) X_C=1/(10³×10×10⁻⁹)=100kΩ、(2) 10kΩ、(3) 100Ω、(5) X_L=100Ω。いずれも数値は正しく、各肢固有の理由として成り立っている。",
+        "公開候補図は原図の回路（i矢印、回路素子、交流電源、左向きのv矢印）を欠けなく再現している。",
+        "公式解答表では、理論の問15(a)の正答は4。"
+      ]
+    },
+    {
+      "unitKey": "q15b",
+      "questionNumber": 15,
+      "part": "b",
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [
+        "肢(1) 2.5の解説は『12.5 Jとは一致しない』と書いているだけで、この肢に固有の理由になっていない。例えば次のように、この数値を成り立たせる条件と矛盾を具体的に示すこと。『(1/2)L·Im²=2.5 Jとなるには、Im=50 AならL=2 mHが必要で、(a)のL=10 mHと矛盾する。L=10 mHならImは約22.4 Aが必要で、i=−50cos(1000t)の振幅50 Aと矛盾する。』"
+      ],
+      "answerIssues": [],
+      "explanationIssues": [
+        "uncertaintyに、肢(1)の誤答の導き方を特定できないという未解決メモが残っている。上記のとおり固有の理由を書いたうえで、このメモは削除すること。"
+      ],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "問題文、ただし書き（1/2 Li²、1/2 Cv²）、選択肢(1)〜(5)（2.5、6.25、12.5、25、125）は原図と一致する。",
+        "W_max=(1/2)×0.01×50²=12.5 Jなので(3)。",
+        "(2) 6.25は、実効値を使った場合の(1/2)×0.01×1250。(4) 25は1/2を掛け忘れた値。(5) 125はL=0.1 Hを使った値。いずれも検算で一致した。",
+        "公式解答表では、理論の問15(b)の正答は3。"
+      ]
+    },
+    {
+      "unitKey": "q17a",
+      "questionNumber": 17,
+      "part": "a",
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [
+        "肢(2) 2.0の解説は『計算過程を照合しても導出できる値ではなく』という曖昧な主張にとどまっている。『C=2.0 μFなら、c開放時のb-d間はY側でC/2=1.0 μFになり、Δ側の4.5 μFと一致しない』のように、具体的な数値で否定すること。",
+        "肢(4) 6.0の解説にある『設問(b)の中間値(a-c-o間の直列合成容量)と数値が一致する』は、(a)の答えの9 μFを前提にした(b)の値である。(a)を解く段階で取り違える理由にはならず、根拠にならない偶然の一致である。『C=6.0 μFならC/2=3.0 μFで、4.5 μFと一致しない』のように、この肢に固有の数値的な理由へ置き換えること。"
+      ],
+      "answerIssues": [],
+      "explanationIssues": [
+        "解説では、中性点を定義しないまま『o』と呼んでいる。『図3の中性点を以下oとする（原図には記号なし）』と明記すること。"
+      ],
+      "figureIssues": [
+        "uncertaintyに『図2・図3のコンデンサ記号の向き・描画を忠実に文字化できていない可能性』という未解決メモがある。原図で確認すると、図2・図3のコンデンサはすべて無極性の平行板記号である。図2はb-c、b-d、c-dの3辺がすべて3 μF、図3は3本の枝がすべてC[μF]で、公開候補図とも一致する。確認済みとして、このメモは削除すること。"
+      ],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "図2の接続を確認した。bは頂点、cは左下、dは右下につながる。左辺b-c、右辺b-d、底辺c-dの容量はすべて3 μF。",
+        "Δ側でc開放時のb-d間は3+1.5=4.5 μF、Y側はC/2。したがってC=9.0 μF。公式C_Y=(3·3×3)/3=9 μFとも一致する。",
+        "肢(1) 1.0は、抵抗のR/3則を誤って容量に当てはめた値。肢(3) 4.5は、Δ側の合成容量とCを混同した値。どちらも理由は妥当である。",
+        "公開候補図は、原図の図1〜3とそのラベルを欠けなく再現している。",
+        "公式解答表では、理論の問17(a)の正答は5。"
+      ]
+    },
+    {
+      "unitKey": "q17b",
+      "questionNumber": 17,
+      "part": "b",
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [
+        "肢(1) 3.0の解説は『一致しない』と書いているだけで、この肢に固有の理由になっていない。3.0は、a-o間をa-b-o経路（4.5 μF）だけとし、並列のa-c-o経路（6.0 μF）を見落として、o-d間の9 μFと直列にした値である。4.5×9/(4.5+9)=3.0 μFとなる。この誤りの型を具体的に示すこと。"
+      ],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [
+        "uncertaintyに『b-c間コンデンサの接続点(黒丸の有無)を完全に保証しない』という未解決メモがある。原図の図1では、b、c、左側の分岐点（a側）、右側の分岐点（d側）のすべてに接続点の黒丸があり、a-b 9 μF、b-d 3 μF、a-c 18 μF、c-d 3 μF、b-c 3 μFの接続が確定する。公開候補図にも同じ黒丸がある。確認済みとして、このメモは削除すること。"
+      ],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "図1の読み取りを確認した。上段はa側分岐点→9 μF→b→3 μF→d側分岐点、下段は同じく→18 μF→c→3 μF→d側分岐点、bとcの間に3 μF。b-c-d間の3本の3 μFは図2と同じΔを構成する。",
+        "Y変換後、a-b-oは4.5 μF、a-c-oは6.0 μFで、並列にすると10.5 μF。これとo-d間の9 μFを直列にして、C0=94.5/19.5≈4.846 μF。最も近いのは(3) 4.8。",
+        "肢(2) 4.5、(4) 6.0、(5) 9.0は、それぞれ途中の値や(a)の答えと混同した値で、理由は数値的に正しい。",
+        "公式解答表では、理論の問17(b)の正答は3。"
+      ]
+    },
+    {
+      "unitKey": "q18a",
+      "questionNumber": 18,
+      "part": "a",
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [
+        "figureUrlsに(b)専用の図（20240818-theory-q18-am-circuit-waveforms.png、図1の振幅変調回路と図2の波形）が設定されている。一方でfigureDescriptionには『(a)の解答には図を用いない』とあり、両者が矛盾している。(a)で(b)の図を出すと学習者が混乱するため、(a)のfigureUrlsは空配列にすること。"
+      ],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "問題文の空欄(ア)〜(エ)と、選択肢表(1)〜(5)の各組合せは、原図と一致する。",
+        "正しい組合せは(ア)高い、(イ)信号波、(ウ)正弦波、(エ)検波で、(2)に当たる。各誤答肢について、どの空欄が誤りかの指摘も正しい。",
+        "公式解答表では、理論の問18(a)の正答は2。"
+      ]
+    }
+  ]
+}

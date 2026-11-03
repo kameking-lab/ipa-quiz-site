@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "receiptKind": "canonicalized-direct-review",
+  "paper": "20240526",
+  "reviewModel": "claude-opus-5-5",
+  "upstreamReviewReceipt": "docs/evidence/denko2-strict-20240526/round2-q20-21-22-23-26-opus.json",
+  "upstreamReviewSha256": "1e35bbbdfc5bbb82145adb8d14f4d0a31776ea8c937c1e8526623d846af81b7a",
+  "candidateEquivalenceProof": "current per-question candidate hash equals a clean source-aware direct Opus input hash",
+  "inputHashes": {
+    "draftSha256": "0a729a420f0010f854d9f71d71a48a7e1ccfe87f2c02d4dd0ae0ff415e6f5919",
+    "rowSha256": {
+      "23": "43207929873fa2835b435a8a512884fdd8f59f4621e1ce9a66fbbedb7a7b2c71"
+    },
+    "detailFigureSha256": {},
+    "sharedFigureSha256": {},
+    "legalReceiptSha256": {}
+  },
+  "assessment": [
+    {
+      "number": 23,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "visualIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": "公式原図（問23）および公式正答イと照合済み。解釈 第158条（20231226-2.pdf の公式抜粋 p.153–154）で次を確認: 第3項第三号 支持点間1.5m以下。第3項第二号 差込み深さは管外径の1.2倍以上、接着剤を使う場合は0.8倍以上。第3項第四号 湿気の多い場所では防湿装置。第3項第五号イ 使用電圧300V以下で金属製ボックスに接続する場合はD種接地が原則（省略できるのは乾燥した場所、または対地電圧150V以下で簡易接触防護措置を施す場合）。"
+    }
+  ]
+}

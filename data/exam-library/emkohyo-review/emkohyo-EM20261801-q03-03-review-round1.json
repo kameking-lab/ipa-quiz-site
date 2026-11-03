@@ -1,0 +1,60 @@
+{
+  "reviewModel": "claude-opus-5-5",
+  "requestedModel": "claude-opus-5-5",
+  "canonicalModel": "claude-opus-5-5",
+  "provider": "firstParty",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 2425,
+      "cacheReadInputTokens": 139443,
+      "cacheCreationInputTokens": 16473,
+      "webSearchRequests": 0,
+      "costUSD": 0.20818060000000002,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 1458,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "paperId": "emkohyo-EM20261801",
+  "ids": [
+    "emkohyo-EM20261801-q3"
+  ],
+  "figureSha256": {
+    "emkohyo-EM20261801-q3": {}
+  },
+  "officialRowImageSha256": {
+    "emkohyo-EM20261801-q3": {
+      "/exam-library/emkohyo-EM20261801/q3-p4-0.webp": "91a4d8ebfd61c8c37cb80cd7f4968ea77bc108929ac0b005791d97f947549a7b"
+    }
+  },
+  "officialPageImageSha256": {},
+  "governmentSourceImageSha256": {},
+  "candidateSha256": {
+    "emkohyo-EM20261801-q3": "ae8cffc7ea94938217263df8cb450f4e3a8897b9e8b01e1a23ceced2baf26982"
+  },
+  "sourcePackPath": "docs/evidence/emkohyo-choice-sources/emkohyo-EM20261801-q03-03.json",
+  "sourcePackSha256": "ad7708c778c68fd5453b73342cbd2affce4bcc96b3c0618f4ae90024a7b6a777",
+  "assessment": {
+    "emkohyo-EM20261801-q3": {
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [
+        "肢3の理由だけ、他の肢と違って冒頭に「正しい記述。」がない。肢3が正しい記述であること（したがって正答ではないこと）を最初に言い切る形にそろえるべき。"
+      ],
+      "reasonIssues": [
+        "肢1：「」で引用している「生涯にわたり摂取した場合のリスクが許容できるレベルとなるばく露量」は、食品安全委員会の原文「生涯にわたり摂取した場合のリスクが、許容できるレベルとなるようなばく露量」と一致しない（読点と「ような」が抜けている）。原文どおりに引用するか、「」を外して要約と分かる書き方にする。",
+        "肢3：『慢性毒性専用とは述べておらず、公式正答の誤りは肢2である』という理由付けは、公式正答を根拠に肢3を正しいとしている循環論法で、個別の理由として成り立っていない。出典を使って肯定的に説明すべき。厚生労働省の「慢性毒性」の項は、慢性毒性試験で「毒性影響が認められる量（毒性発現量）及び影響が発現しない量（無影響量…）を明らかにする」と書いている。LOEL（何らかの影響が認められた最低のばく露量）とNOEL（影響が認められなかった最高のばく露量）が、どちらも慢性毒性試験で求める指標だから正しい記述、という形に書き直す。",
+        "肢4：「」の引用「性的機能と妊孕性（妊娠能力）及び児の発生・発達への有害影響」は、原文にある英語の括弧書き（sexual function and fertility）（development of offspring）を断りなく省いている。原文どおりに引用するか、省略したことを明示する。",
+        "肢5：「細菌を使う試験は短期間で行えるため、発がん性のスクリーニングに広く使われる」という因果（短期間だから）は、添付の政府資料には書かれていない。出典が直接支えているのは次の2点なので、これに差し替えるべき。(1) 物質の発がん性スクリーニング試験として、変異原性の有無を調べる方法が種々開発されている。(2) 化審法・安衛法の新規化学物質届出では、微生物を用いる復帰突然変異原性試験（エームス試験）が行われる。"
+      ],
+      "sourceIssues": [
+        "肢5：職場のあんぜんサイトの記載は「微生物を用いる」であり、本肢の「細菌を用いた」と、細菌の試験が短期間で済むことは、この政府ページで直接確認できない。"
+      ],
+      "needsExternalCheck": []
+    }
+  }
+}

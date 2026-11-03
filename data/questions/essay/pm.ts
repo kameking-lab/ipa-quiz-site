@@ -75,10 +75,10 @@ export const PM_ESSAY_QUESTIONS: EssayQuestion[] = [
         ],
       },
     ],
-    officialReview: `リスク特定・評価・対応の論理的な流れ、対応策の具体性、モニタリング体制の構築が評価ポイントである。
+    editorialReview: `リスク特定・評価・対応の論理的な流れ、対応策の具体性、モニタリング体制の構築が評価ポイントである。
 「リスクが発生したので対応した」という後追い的な記述ではなく、事前予測と計画的対応を示すことが重要である。`,
     pdfUrl: "https://www.ipa.go.jp/shiken/mondai-kaiotu/2024r06.html",
-    license: "IPA-public",
+    license: "original",
   },
   {
     id: "pm-2024a-pm2-q2",
@@ -155,10 +155,10 @@ export const PM_ESSAY_QUESTIONS: EssayQuestion[] = [
         ],
       },
     ],
-    officialReview: `遅延原因の分析の深さ、対応策選定の論理的根拠、ステークホルダ合意形成プロセスが評価される。
+    editorialReview: `遅延原因の分析の深さ、対応策選定の論理的根拠、ステークホルダ合意形成プロセスが評価される。
 人員追加だけに頼った安直な対応ではなく、QCD のトレードオフを意識した戦略的な選択が求められる。`,
     pdfUrl: "https://www.ipa.go.jp/shiken/mondai-kaiotu/2024r06.html",
-    license: "IPA-public",
+    license: "original",
   },
   {
     id: "pm-2023a-pm2-q1",
@@ -230,8 +230,8 @@ export const PM_ESSAY_QUESTIONS: EssayQuestion[] = [
         ],
       },
     ],
-    officialReview: `ステークホルダ分析の論理性、エンゲージメント戦略の具体性、対立解消能力が評価ポイントとなる。`,
+    editorialReview: `ステークホルダ分析の論理性、エンゲージメント戦略の具体性、対立解消能力が評価ポイントとなる。`,
     pdfUrl: "https://www.ipa.go.jp/shiken/mondai-kaiotu/2023r05.html",
-    license: "IPA-public",
+    license: "original",
   },
 ];

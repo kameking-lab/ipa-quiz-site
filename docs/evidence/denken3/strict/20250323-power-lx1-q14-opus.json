@@ -1,0 +1,66 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20250323",
+  "subject": "power",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 4041,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 13528,
+      "webSearchRequests": 0,
+      "costUSD": 0.1893078,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 2752,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "71fd52d8d67c84be3609e8e9b4be3341c5e3a26230155dfb016b80191487d2bb",
+  "inputRequestSha256": "f5375796c8f7edbb1de7a6dc2badd8901f146ae28cc4e089564ee0358c8a945f",
+  "inputHashes": {
+    "candidateSha256": {
+      "q14": "122628ebf1cf1203b5f310a89f6031914e87e32d193d9bc5e01442ccbfa24c6e"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20250323/power/p17.png": "0040151e41162e286f2a62c75a51919c0d1fca8cd8816f3e96a0cac10c76b8eb"
+    },
+    "figureSha256": {},
+    "sourceQuestionPdfSha256": "892785e0f1035bcb239eb30fa903d4c88adbcfdaa1b5b0edea2d1907fd887114",
+    "sourceAnswerPdfSha256": "4c3b38fcf1405766fafaa78b1b05b867a3d48307a670b9d354476bc6b32acd4c",
+    "officialAnswerUnitsSha256": "380edeccbdad94f2c7a64be341a05ee0868bf7212dbea0104b329173546e98c4",
+    "referencePdfSha256": {},
+    "referencePageSha256": {},
+    "referenceJsonSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q14",
+      "questionNumber": 14,
+      "part": null,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [
+        "uncertaintyの「一次資料URLは未特定のため空配列とした」は、sourceQuestionPdfUrl（20250323_ch_third_q02.pdf）とsourceAnswerPdfUrl（2024_3_2.pdf）に一次資料URLが入っていることと矛盾して読める。officialReferenceUrlsを空にした理由は、問題文・正答以外の公式参考資料に依拠する独立主張がないためである。uncertaintyは「公式問題PDF第17頁の原図と公式解答表（令和6年度下期・電力・問14＝4）で照合済み。追加の公式参考資料には依拠していないためofficialReferenceUrlsは空配列」のように書き換えること。"
+      ],
+      "verifiedEvidence": [
+        "問題文：原図と一致した。「送電線路及び配電線路で導電材料として利用される銅に関する記述として，誤っているものを次の(1)〜(5)のうちから一つ選べ。」問われているのは誤っているもの（否定極性）である。",
+        "選択肢(1)〜(5)：原図と文言が一致した。候補は「20 ℃」「100 ％」のように空白と全角記号へ整形しているが、sourceAttributionに整形の旨が明記されており、意味の変化はない。",
+        "公式正答：解答表原図の「令和6年度 下期」＜電力＞問14は4である。manifest固定の正答単位（answer=\"4\"、part=null）およびofficialAnswer=\"4\"と一致した。",
+        "出典メタデータ：fiscalYear=2024、term=lower、examDate=2025-03-23、subject=power、sourceQuestionPdfUrl、sourceAnswerPdfUrlはmanifestと一致した。reviewedFromPage=[17]もmanifestのPDF第17頁と一致した。原図の印刷頁番号は「-14-」だが、フッタ「T2−D 017」と整合する。sourceAttribution「令和6年度下期…電力科目 問14」も一致した。",
+        "総合解説の検算：硬銅線は冷間引抜きで加工ひずみが入り、機械的強度は高いが導電率は約97 %IACSとやや低い。焼なましでひずみが除去されると可とう性が増し、導電率は約100 %IACSへ回復する。したがって(4)の「導電率は低くなる」が誤りという因果は正しく、公式正答4と整合する。",
+        "肢別解説：(1) 銅は銀に次ぐ導電率の金属であり、正しい。(2) IACSは20 ℃における焼なまし標準軟銅（58 MS/m）を100 %とする百分率であり、正しい。(3) 公式に正しい肢とされる記述を言い換えたもので、矛盾はない。(4) 正答肢の理由は、焼なましで導電率が上がる点であり適切である。(5) CVケーブルは可とう性の必要から軟銅線、架空送電線は張力に耐える必要から硬銅線を用いるという説明であり、正しい。",
+        "図：原図は文章のみで、図・表・回路図はない。figureDescription、figureUrls=[]、choiceFigureUrls={}は妥当である。",
+        "officialReferenceUrlsは空である。公式参考資料に依拠する独立主張はなく、検証を要する外部主張はない。"
+      ]
+    }
+  ]
+}

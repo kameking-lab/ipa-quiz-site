@@ -11,12 +11,13 @@ import type { ReactElement } from "react";
 
 type Block =
   | { kind: "p"; text: string }
+  | { kind: "code"; text: string }
   | { kind: "table"; header: string[]; rows: string[][] };
 
 // 区切り行 (`---|---` や `| :--- | ---: |`)。標準的な Markdown テーブルは
 // 前後にパイプを付ける (`|---|---|`) ため、先頭/末尾の任意パイプも許容する。
 // これが無いと PDF 由来の前後パイプ付きテーブルが平文段落に化けて描画される。
-const TABLE_SEPARATOR_RE = /^\s*\|?\s*:?-{2,}:?\s*(\|\s*:?-{2,}:?\s*)+\|?\s*$/;
+const TABLE_SEPARATOR_RE = /^\s*\|?\s*:?-{2,}:?\s*(\|\s*:?-{2,}:?\s*)*\|?\s*$/;
 
 function splitCells(line: string): string[] {
   // Trim leading/trailing pipe so "| a | b |" -> ["a", "b"].
@@ -42,6 +43,8 @@ function tryConsumeTable(
   const headerLine = lines[start];
   const sepLine = lines[start + 1];
   if (!looksLikePipeRow(headerLine)) return null;
+  // 単列表は | 見出し | / | --- | のように明示する。通常の --- は表にしない。
+  if (!looksLikePipeRow(sepLine)) return null;
   if (!TABLE_SEPARATOR_RE.test(sepLine)) return null;
 
   const header = splitCells(headerLine);
@@ -66,6 +69,19 @@ export function parseQuestionBlocks(text: string): Block[] {
       i += 1;
       continue;
     }
+    const fence = line.trim().match(/^(`{3,}|~{3,})[\w+-]*\s*$/);
+    if (fence) {
+      const marker = fence[1];
+      const code: string[] = [];
+      i += 1;
+      while (i < lines.length && !new RegExp(`^${marker[0]}{${marker.length},}\\s*$`).test(lines[i].trim())) {
+        code.push(lines[i]);
+        i += 1;
+      }
+      blocks.push({ kind: "code", text: code.join("\n") });
+      if (i < lines.length) i += 1;
+      continue;
+    }
     const tableAttempt = tryConsumeTable(lines, i);
     if (tableAttempt) {
       blocks.push(tableAttempt.block);
@@ -78,15 +94,60 @@ export function parseQuestionBlocks(text: string): Block[] {
   return blocks;
 }
 
+// Deliberately treat angle brackets as literal exam text (BNF, HTML examples),
+// while supporting the inline notation used in reviewed transcriptions.
+/**
+ * 公式問題のふりがな。社会福祉振興・試験センターの読み上げ用テキストと同じ
+ * 「親文字｛よみ｝」表記で保持し、直前の漢字列を親文字としてルビ表示する。
+ * 親文字の範囲は公式PDFのルビ位置と全件照合済み（scripts/sssc-welfare-extract.py）。
+ */
+export const RUBY_RE = /([㐀-鿿々〆豈-﫿]+)｛([^｝]+)｝/g;
+
+function RubyText({ text }: { text: string }) {
+  const nodes: (string | ReactElement)[] = [];
+  let last = 0;
+  for (const match of text.matchAll(RUBY_RE)) {
+    const index = match.index ?? 0;
+    if (index > last) nodes.push(text.slice(last, index));
+    nodes.push(
+      <ruby key={index}>
+        {match[1]}
+        <rp>｛</rp>
+        <rt className="text-[0.6em]">{match[2]}</rt>
+        <rp>｝</rp>
+      </ruby>,
+    );
+    last = index + match[0].length;
+  }
+  if (last === 0) return text;
+  if (last < text.length) nodes.push(text.slice(last));
+  return <>{nodes}</>;
+}
+
+function InlineText({ text }: { text: string }) {
+  return text.split(/(`[^`]+`|\*\*[^*]+\*\*)/g).map((part, i) => {
+    if (part.startsWith("`") && part.endsWith("`")) {
+      return <code key={i} className="rounded bg-muted px-1 font-mono">{part.slice(1, -1)}</code>;
+    }
+    if (part.startsWith("**") && part.endsWith("**")) {
+      return <strong key={i}>{part.slice(2, -2)}</strong>;
+    }
+    return part.includes("｛") ? <RubyText key={i} text={part} /> : part;
+  });
+}
+
 export function QuestionBody({ text }: { text: string }): ReactElement {
   const blocks = parseQuestionBlocks(text);
   return (
     <>
       {blocks.map((b, i) => {
+        if (b.kind === "code") {
+          return <pre key={i} className="my-3 overflow-x-auto rounded-lg bg-muted p-3 text-sm"><code>{b.text}</code></pre>;
+        }
         if (b.kind === "p") {
           return (
             <p key={i} className="mb-3 last:mb-0">
-              {b.text}
+              <InlineText text={b.text} />
             </p>
           );
         }
@@ -101,7 +162,7 @@ export function QuestionBody({ text }: { text: string }): ReactElement {
                       scope="col"
                       className="border border-border bg-muted/50 px-3 py-2 text-left font-semibold"
                     >
-                      {h}
+                      <InlineText text={h} />
                     </th>
                   ))}
                 </tr>
@@ -114,7 +175,7 @@ export function QuestionBody({ text }: { text: string }): ReactElement {
                         key={ci}
                         className="border border-border px-3 py-2 align-top"
                       >
-                        {cell}
+                        <InlineText text={cell} />
                       </td>
                     ))}
                   </tr>

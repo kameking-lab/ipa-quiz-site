@@ -1,0 +1,198 @@
+{
+  "questionNumber": 12,
+  "sharedContext": null,
+  "units": [
+    {
+      "part": null,
+      "question": "図に示すような幅 6 m，奥行き 8 m の長方形の駐車場の四隅に柱を立て，各柱の地上から 5 m の頂点に全光束 5 000 lm のランプを設置した。駐車場の中心 O の水平面照度[lx]の値として，最も近いものを次の(1)〜(5)のうちから一つ選べ。\nただし，各ランプは均等光源とする。",
+      "choices": {
+        "1": "283",
+        "2": "141",
+        "3": "31.8",
+        "4": "22.5",
+        "5": "5.6"
+      },
+      "officialAnswer": "4",
+      "explanation": "【光度】均等光源（全方向に一様に光を出す点光源）の光度 I は、全光束 F を全立体角 4π sr で割って求める。\nI = F / (4π) = 5000 / (4π) ≒ 397.9 cd\n\n【光源から O までの距離】長方形の対角線の長さは √(6² + 8²) = √100 = 10 m。中心 O は対角線の中点なので、各柱の根元から O までの水平距離は 5 m。ランプの高さは 5 m なので、ランプから O までの距離 r は\nr = √(5² + 5²) = 5√2 m、r² = 50 m²\n\n【入射角】水平面の法線（鉛直方向）と光線のなす角を θ とすると\ncos θ = 高さ / r = 5 / (5√2) = 1/√2 ≒ 0.7071\n\n【ランプ 1 灯による水平面照度】\nEh1 = (I / r²) × cos θ = (397.9 / 50) × 0.7071 ≒ 7.958 × 0.7071 ≒ 5.63 lx\n\n【4 灯の合計】4 本の柱は O から等距離・同じ高さにあるので、各灯の寄与は等しい。\nEh = 4 × 5.63 ≒ 22.5 lx\n\nよって最も近いのは (4) 22.5 である。",
+      "choiceExplanations": {
+        "1": "誤り。正しい水平面照度は約 22.5 lx である。283 は、全光束 5 000 lm をそのまま光度 5 000 cd とみなして 4 × (5000/50) × (1/√2) ≒ 283 と計算した値に一致する。均等光源の光度は I = F/(4π) ≒ 398 cd であり、4π で割る必要がある。",
+        "2": "誤り。141 は 100√2 ≒ 141.4 に相当し、数値上は次のような誤算と一致する。(a) 全光束 5 000 lm をそのまま光度 5 000 cd とみなし、しかも 2 灯分だけ合計した 2 × (5000/50) × (1/√2) ≒ 141。(b) 同じく光度を 5 000 cd とみなし、1 灯について cos θ を掛けるべきところを割った (5000/50) ÷ (1/√2) ≒ 141。正しくは、光度は I = F/(4π) ≒ 397.9 cd、水平面照度は法線照度に cos θ を掛けて求め、O から等距離にある 4 灯すべての寄与を合計するので、約 22.5 lx となる。",
+        "3": "誤り。31.8 は 4 × (397.9/50) ≒ 31.8 lx で、光線に垂直な面の照度（法線照度）を 4 灯分合計した値である。問われているのは水平面照度なので、入射角の余弦 cos θ = 1/√2 を掛ける必要があり、31.8 × 0.7071 ≒ 22.5 lx となる。",
+        "4": "正しい。I = 5000/(4π) ≒ 397.9 cd、r² = 5² + 5² = 50 m²、cos θ = 1/√2 より、1 灯あたり 397.9/50 × 0.7071 ≒ 5.63 lx、4 灯で 5.63 × 4 ≒ 22.5 lx となる。",
+        "5": "誤り。5.6 lx はランプ 1 灯による水平面照度（約 5.63 lx）に相当する。駐車場の四隅に 4 灯あり、いずれも O から等距離なので、合計は 4 倍の約 22.5 lx となる。"
+      },
+      "figureDescription": "駐車場を上から見た平面図。長方形の四隅に左下から反時計回りに A（左下）、B（右下）、C（右上）、D（左上）のラベルがある。下辺 A–B の下側に寸法線「6m」、右辺 B–C の右側に縦書きの寸法線「8m」が記されている。対角線 A–C と B–D が破線で描かれ、その交点に黒点があり、その下に「O」のラベルがある。図は平面図のみで、柱の高さ（5 m）は図中に示されておらず問題文で与えられている。",
+      "officialReferenceUrls": [],
+      "uncertainty": "なし",
+      "needsReview": true,
+      "sourceQuestionPdfUrl": "https://www.shiken.or.jp/chief/upload/20250831_ch_third_q03.pdf",
+      "sourceAnswerPdfUrl": "https://www.shiken.or.jp/chief/upload/20250831_ch_third_a01.pdf",
+      "reviewedFromPage": [
+        15
+      ]
+    }
+  ],
+  "draftModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 2759,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 9309,
+      "webSearchRequests": 0,
+      "costUSD": 0.1299158,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 1009,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "6e1d9818569f85d6791dd22ba9c2a4647e5beec4b130d2bc53387be231c055fd",
+  "inputRequestSha256": "8197ae22df09cdd73abb8ecc92075cdd2d9588163bcf1c725ebc12785b8bf762",
+  "sourceQuestionPdfSha256": "2a73a24594cc2b8bb7504b9a0ff15e001b2bb56b830572ce2be853f7116f26d8",
+  "sourceAnswerPdfSha256": "76fd3715ed487d19a56b387fb402de20ee09474e9fa55b0413f9037b96af06c9",
+  "sourcePageImageSha256": {
+    "data/raw_pdfs/denken3/review/20250831/machinery/p15.png": "f1d7cd8aa55019e2d74c10897bdf029dd9d24ed6ab4e187d83bbfa58928d6a12"
+  },
+  "revisionHistory": [
+    {
+      "version": 1,
+      "model": "claude-opus-5-5",
+      "resolvedModel": "claude-opus-5-5",
+      "modelUsage": {
+        "claude-opus-5-5": {
+          "inputTokens": 2,
+          "outputTokens": 3687,
+          "cacheReadInputTokens": 1279,
+          "cacheCreationInputTokens": 13214,
+          "webSearchRequests": 0,
+          "costUSD": 0.17971579999999998,
+          "contextWindow": 1000000,
+          "maxOutputTokens": 128000,
+          "thinkingTokens": 2174,
+          "canonicalModel": "claude-opus-5-5",
+          "provider": "firstParty",
+          "costBasis": "list"
+        }
+      },
+      "rawResponseSha256": "dcf71c9f67070c922c469e715b42db848d5e885d4fa8406a826692fea54de57d",
+      "inputRequestSha256": "b78e2204c8b820842e913edf390ca1868399a878e951956b00bb0c3027c729d7",
+      "previousDraftSha256": "f57fdf4864e5ad457370e3f28b93f4c9d56a511391806733d614327c4adaffc9",
+      "previousDraft": "data/raw_pdfs/denken3/review/20250831/machinery/archive/q12-vision-draft-v1.json",
+      "answeredReviewSha256": "fc19f10dd3339c77493437526cf4b79c1bc82a96966e6968e60522c4c8736204",
+      "answeredReview": "data/raw_pdfs/denken3/review/20250831/machinery/archive/q12-opus-review-v1.json",
+      "answeredStrictReceipt": "docs/evidence/denken3/strict/20250831-machinery-s1-q12-opus.json",
+      "answeredStrictReceiptSha256": "960a57bb8c51e2af82dd2e4d0b3c6ec3b83983c6ca5618330bef9a0109f24ed1",
+      "figureSha256": {
+        "20250831-machinery-q12-fig1": "892104fc4744097fab40eab152560cc65a5e50ee3fccc62babd78effb2982c3d"
+      },
+      "referenceHashes": {},
+      "operatorNote": ""
+    },
+    {
+      "version": 2,
+      "model": "claude-opus-5-5",
+      "resolvedModel": "claude-opus-5-5",
+      "modelUsage": {
+        "claude-opus-5-5": {
+          "inputTokens": 2,
+          "outputTokens": 2709,
+          "cacheReadInputTokens": 1279,
+          "cacheCreationInputTokens": 12944,
+          "webSearchRequests": 0,
+          "costUSD": 0.15799580000000002,
+          "contextWindow": 1000000,
+          "maxOutputTokens": 128000,
+          "thinkingTokens": 1031,
+          "canonicalModel": "claude-opus-5-5",
+          "provider": "firstParty",
+          "costBasis": "list"
+        }
+      },
+      "rawResponseSha256": "705ce56f51fcbcd9d4aa82efc9092d0b7068d0c04f1ac5ae8946d0c7c195b980",
+      "inputRequestSha256": "e25ab7d8413d95e48a21e5ef5fcb6d8e1ff04a2ed6cee335aaaeb72d111974c4",
+      "previousDraftSha256": "380bb6e25ea1e38dbbf9aba7e5486fb128fc1e45901332289c5a1245fb2534b4",
+      "previousDraft": "data/raw_pdfs/denken3/review/20250831/machinery/archive/q12-vision-draft-v2.json",
+      "answeredReviewSha256": "7e8e49f973cd88ef73b451e96a0fab381d33902a2e468fd09ae2388660f8e9f8",
+      "answeredReview": "data/raw_pdfs/denken3/review/20250831/machinery/archive/q12-opus-review-v2.json",
+      "answeredStrictReceipt": "docs/evidence/denken3/strict/20250831-machinery-s2-q12-opus.json",
+      "answeredStrictReceiptSha256": "38e66492d914a2821a10a8e6acadc94e3682642c9dbcf6d1964607becb4b2923",
+      "figureSha256": {
+        "20250831-machinery-q12-fig1": "892104fc4744097fab40eab152560cc65a5e50ee3fccc62babd78effb2982c3d"
+      },
+      "referenceHashes": {},
+      "operatorNote": ""
+    },
+    {
+      "version": 3,
+      "model": "claude-opus-5-5",
+      "resolvedModel": "claude-opus-5-5",
+      "modelUsage": {
+        "claude-opus-5-5": {
+          "inputTokens": 2,
+          "outputTokens": 2795,
+          "cacheReadInputTokens": 1279,
+          "cacheCreationInputTokens": 13164,
+          "webSearchRequests": 0,
+          "costUSD": 0.1614758,
+          "contextWindow": 1000000,
+          "maxOutputTokens": 128000,
+          "thinkingTokens": 1173,
+          "canonicalModel": "claude-opus-5-5",
+          "provider": "firstParty",
+          "costBasis": "list"
+        }
+      },
+      "rawResponseSha256": "fa4f3cfc68a2be420a8dd3930cacc3f09b1a7eb727e53302906697ef0977dfc2",
+      "inputRequestSha256": "0b13f724f91cc593379519adf689fde9f0f1230e0c06a44f1d389ecb25c06d82",
+      "previousDraftSha256": "7ca26c003a3fde46caf4644ef4a8bef875b039119d2fc51f01d1d4f8f949c131",
+      "previousDraft": "data/raw_pdfs/denken3/review/20250831/machinery/archive/q12-vision-draft-v3.json",
+      "answeredReviewSha256": "bf1cef81fe610a9accd0d527e3963d5b851783ce4a7ee679e6272d7055321e3d",
+      "answeredReview": "data/raw_pdfs/denken3/review/20250831/machinery/archive/q12-opus-review-v3.json",
+      "answeredStrictReceipt": "docs/evidence/denken3/strict/20250831-machinery-s3-q12-opus.json",
+      "answeredStrictReceiptSha256": "884a656af2d49e0efc093a94a96ee8ad062bd6c7e29685e29a7f8d2eff65639f",
+      "figureSha256": {
+        "20250831-machinery-q12-fig1": "892104fc4744097fab40eab152560cc65a5e50ee3fccc62babd78effb2982c3d"
+      },
+      "referenceHashes": {},
+      "operatorNote": ""
+    },
+    {
+      "version": 4,
+      "model": "claude-opus-5-5",
+      "resolvedModel": "claude-opus-5-5",
+      "modelUsage": {
+        "claude-opus-5-5": {
+          "inputTokens": 2,
+          "outputTokens": 2293,
+          "cacheReadInputTokens": 1279,
+          "cacheCreationInputTokens": 12952,
+          "webSearchRequests": 0,
+          "costUSD": 0.1497398,
+          "contextWindow": 1000000,
+          "maxOutputTokens": 128000,
+          "thinkingTokens": 536,
+          "canonicalModel": "claude-opus-5-5",
+          "provider": "firstParty",
+          "costBasis": "list"
+        }
+      },
+      "rawResponseSha256": "bcd9cc2eb57aee2dab774776d4c62cfee5f6dce6646a11b1828de015e2079d66",
+      "inputRequestSha256": "d5ebfed2562b0a5428ed32f93830af84f0c30013a84051fadb78e06118c8a31c",
+      "previousDraftSha256": "c504149355e2a63cfbd93be601b2385bbfdd247496e88b2b7b2cab6eb8ce2172",
+      "previousDraft": "data/raw_pdfs/denken3/review/20250831/machinery/archive/q12-vision-draft-v4.json",
+      "answeredReviewSha256": "48bbc80f08bbc698fa49b218fbfff61031fef4f76bb4a57f659f8bab586e7202",
+      "answeredReview": "data/raw_pdfs/denken3/review/20250831/machinery/archive/q12-opus-review-v4.json",
+      "answeredStrictReceipt": "docs/evidence/denken3/strict/20250831-machinery-s11-q12-opus.json",
+      "answeredStrictReceiptSha256": "07356193d706c7cbf8e135e57310f22f6df1056eda3b77b974e907ecf03a63f5",
+      "figureSha256": {
+        "20250831-machinery-q12-fig1": "892104fc4744097fab40eab152560cc65a5e50ee3fccc62babd78effb2982c3d"
+      },
+      "referenceHashes": {},
+      "operatorNote": ""
+    }
+  ]
+}

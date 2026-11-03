@@ -1,0 +1,123 @@
+{
+  "reviewModel": "claude-opus-5-5",
+  "requestedModel": "claude-opus-5-5",
+  "canonicalModel": "claude-opus-5-5",
+  "provider": "firstParty",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 11206,
+      "cacheReadInputTokens": 143524,
+      "cacheCreationInputTokens": 41141,
+      "webSearchRequests": 0,
+      "costUSD": 0.5819608000000001,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 9676,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "paperId": "emkohyo-20260217-2",
+  "ids": [
+    "emkohyo-20260217-2-q16",
+    "emkohyo-20260217-2-q17",
+    "emkohyo-20260217-2-q18",
+    "emkohyo-20260217-2-q19",
+    "emkohyo-20260217-2-q20"
+  ],
+  "figureSha256": {
+    "emkohyo-20260217-2-q16": {},
+    "emkohyo-20260217-2-q17": {},
+    "emkohyo-20260217-2-q18": {},
+    "emkohyo-20260217-2-q19": {},
+    "emkohyo-20260217-2-q20": {}
+  },
+  "officialRowImageSha256": {
+    "emkohyo-20260217-2-q16": {
+      "/exam-library/emkohyo-20260217-2/q16-p11-0.webp": "8f88c1a4ccc9b3dba0a8c8491efbe578adfa728fb55bf36de6eaed2031b51c2f"
+    },
+    "emkohyo-20260217-2-q17": {
+      "/exam-library/emkohyo-20260217-2/q17-p12-0.webp": "c9272a0ceeb68059e89211267ffbc745b22a73696741b3bb74f5a82aa9f7e35c"
+    },
+    "emkohyo-20260217-2-q18": {
+      "/exam-library/emkohyo-20260217-2/q18-p13-0.webp": "5e6707d93ae08266cdbfd5d8c629784ed11d88f1bd8cee366a3482866f6d7745"
+    },
+    "emkohyo-20260217-2-q19": {
+      "/exam-library/emkohyo-20260217-2/q19-p14-0.webp": "634d8aa9289ff7107505c20dcf6166177492ff75deb4648d1741a07624508dc6"
+    },
+    "emkohyo-20260217-2-q20": {
+      "/exam-library/emkohyo-20260217-2/q20-p15-0.webp": "f2079fd7c7be8a00c9664b15800030fc92a2f177d02a623bf2ffbfcb49581f63"
+    }
+  },
+  "governmentSourceImageSha256": {},
+  "candidateSha256": {
+    "emkohyo-20260217-2-q16": "02c37accac6aefa941c03b9f25df3c98af429f428336e4720b83298dcd868a43",
+    "emkohyo-20260217-2-q17": "66932fb06d502a66998ed9d9e69e9fed7ae672d72d025e3e053382014d4c2ee1",
+    "emkohyo-20260217-2-q18": "8c0f3a488e9415a26d14fe733f9833ff2f072fb826cdcc6517010e40eb637b6c",
+    "emkohyo-20260217-2-q19": "d5a9829414bd1ddcc563ea9e2b7198b4a16450cebffea7224deddf8e28d5f735",
+    "emkohyo-20260217-2-q20": "cd7d266d75a8702b4d7bcb49137a0756b3c4e260858a6cd884c1cb34b2170ff6"
+  },
+  "sourcePackPath": "docs/evidence/emkohyo-choice-sources/emkohyo-20260217-2-q16-20.json",
+  "sourcePackSha256": "a25110936bec7a98e2d04d352a92823e13720211efb511a7274285eccfa87fa7",
+  "assessment": {
+    "emkohyo-20260217-2-q16": {
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "reasonIssues": [
+        "肢3の理由は、電離則に「放射性物質取扱作業主任者」の制度がないことを、第6章の章見出しだけで示している。作業主任者の選任義務の法的根拠は安衛法第14条と安衛令第6条である。電離放射線関係で作業主任者を置く作業は、令第6条第5号（エックス線）と第5号の2（ガンマ線透過写真撮影）だけであり、この点を理由に明記すべき。また、この二つの作業主任者はいずれも免許を受けた者から選任する。肢の「技能講習を修了した者」という資格要件も制度と合わない。この点を補うと、誤りである理由がより明確になる。"
+      ],
+      "sourceIssues": [
+        "肢3が誤りである決め手は「その作業主任者制度がない」という不存在の主張だが、証拠は電離則第6章の見出し『エツクス線作業主任者及びガンマ線透過写真撮影作業主任者』と第46条冒頭しかない。見出しだけでは、安衛令第6条を含む法令全体でその制度がないことまでは直接には支えられない。安衛令第6条第5号・第5号の2の本文抜粋を追加すべき。",
+        "理由には「「放射性物質取扱作業室」自体は電離則上の用語」とあるが、その定義規定（電離則第22条）の抜粋が証拠にない。",
+        "出典名に『第46・52・56・57条』とあるが、第52条（ガンマ線透過写真撮影作業主任者の選任は第52条の2ではないか）の本文抜粋がなく、条番号の正確性を確認できない。"
+      ],
+      "needsExternalCheck": [
+        "安衛令第6条第5号・第5号の2の本文（試験日2026-02-17時点）",
+        "電離則第22条（放射性物質取扱作業室の定義）の本文",
+        "電離則のガンマ線透過写真撮影作業主任者の選任条項の条番号（第52条か第52条の2か）"
+      ]
+    },
+    "emkohyo-20260217-2-q17": {
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "reasonIssues": [],
+      "sourceIssues": [],
+      "needsExternalCheck": []
+    },
+    "emkohyo-20260217-2-q18": {
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "reasonIssues": [],
+      "sourceIssues": [],
+      "needsExternalCheck": []
+    },
+    "emkohyo-20260217-2-q19": {
+      "status": "FIX",
+      "textIssues": [
+        "肢5の理由だけが敬体（「求めます」「示しています」）で、他の全肢は常体（「である」「正しい」）になっている。常体にそろえるべき。"
+      ],
+      "choiceIssues": [],
+      "reasonIssues": [],
+      "sourceIssues": [
+        "肢3の理由にある「第2種では酸素と硫化水素の濃度」の測定は、酸欠則第3条に基づく内容である。しかし出典名は『第2・4・11・21条』で第3条を含まず、同条の抜粋もない。第4条の「前条第一項の規定による測定」が指す内容を支えるために、第3条第1項の抜粋を追加すべき。",
+        "肢4の理由の括弧書き『酸素欠乏・硫化水素危険作業主任者技能講習修了者』は酸欠則第11条第1項第2号に基づく内容だが、証拠に同号の抜粋がない。"
+      ],
+      "needsExternalCheck": []
+    },
+    "emkohyo-20260217-2-q20": {
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "reasonIssues": [
+        "肢3の理由は『設問は適用除外・特例がないと指定しており』を正しいとする根拠のように書いているが、因果関係が合っていない。適用除外・特例がないという前提は、第26条の対象範囲を広げたり確定したりしない。第26条は、表に掲げる鉛業務と設備（局所排気装置・プッシュプル型換気装置など）に限って除じん装置を求める規定である。肢3は、その法定の除じん装置の方式がろ過除じん方式又は同等以上であることと一致するから正しい、と説明すべき。あわせて、全ての局所排気装置に除じん装置が必要という意味ではないことも付記すべき（問17肢1と同じ構造の論点）。"
+      ],
+      "sourceIssues": [],
+      "needsExternalCheck": []
+    }
+  }
+}

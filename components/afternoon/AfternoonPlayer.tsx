@@ -1,5 +1,7 @@
 "use client";
 
+import { isGradedAfternoon } from "@/lib/ai/grading-contract";
+
 import { useEffect, useMemo, useRef, useState } from "react";
 import { Clock, Send, ChevronRight } from "lucide-react";
 
@@ -115,6 +117,12 @@ export function AfternoonPlayer({ questions }: Props) {
         if (!m) throw new Error("invalid response");
         parsed = JSON.parse(m[1]) as AfternoonScoringResult;
       }
+      if (!isGradedAfternoon(parsed) || parsed.questionId !== active.id
+        || parsed.subResults.length !== active.subQuestions.length
+        || parsed.subResults.some((s) => !active.subQuestions.some((q) => q.label === s.label))) {
+        setErrors((e) => ({ ...e, [active.id]: "内容の評価を完了できませんでした。答案はそのまま残っています。" }));
+        return;
+      }
       setResults((prev) => ({ ...prev, [active.id]: parsed }));
     } catch {
       setErrors((e) => ({
@@ -141,7 +149,7 @@ export function AfternoonPlayer({ questions }: Props) {
       : "";
 
   return (
-    <div className="space-y-4">
+    <div data-study-presence-exam={active.exam} className="space-y-4">
       <div className="flex items-center justify-between gap-3 rounded-xl border border-zinc-200 bg-white px-3 py-2 text-sm dark:border-zinc-800 dark:bg-zinc-950">
         <div className="flex items-center gap-2 text-zinc-700 dark:text-zinc-200">
           <Clock className="h-4 w-4" aria-hidden="true" />
@@ -260,7 +268,7 @@ export function AfternoonPlayer({ questions }: Props) {
                         ? `afternoon-${sub.label}-count`
                         : undefined
                     }
-                    placeholder={isEssay ? "論述（2,000〜3,000字）をここに入力" : "ここに解答を入力"}
+                    placeholder={isEssay ? "この設問の字数条件に沿って論述を入力" : "ここに解答を入力"}
                     className={
                       "w-full rounded-xl border px-3 py-2 text-sm leading-relaxed shadow-sm focus:outline-none focus:ring-2 focus:ring-sky-500 dark:bg-zinc-900 dark:text-zinc-50 " +
                       (over || under
@@ -268,6 +276,15 @@ export function AfternoonPlayer({ questions }: Props) {
                         : "border-zinc-300 dark:border-zinc-700")
                     }
                   />
+                  <details className="rounded-lg border border-sky-200 bg-sky-50 p-3 text-sm dark:border-sky-900 dark:bg-sky-950/40">
+                    <summary className="cursor-pointer font-semibold text-sky-800 dark:text-sky-200">
+                      参考解答・採点観点を読む（採点不要）
+                    </summary>
+                    <p className="mt-2 text-xs text-zinc-500">編集者作成の解答例です。設問条件を満たす別の表現も認められます。</p>
+                    <p className="mt-3 whitespace-pre-wrap leading-relaxed">{sub.modelAnswer}</p>
+                    <h3 className="mt-4 font-semibold">採点の観点</h3>
+                    <p className="mt-2 whitespace-pre-wrap text-xs leading-relaxed">{sub.scoringRubric}</p>
+                  </details>
                 </li>
               );
             })}

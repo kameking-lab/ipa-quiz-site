@@ -12,7 +12,7 @@ import { getSafePdfUrl } from "@/lib/exam-config";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { SimplifiedGradingNotice } from "@/components/SimplifiedGradingNotice";
+
 import { AfternoonDisclaimer } from "./AfternoonDisclaimer";
 
 interface Props {
@@ -52,6 +52,10 @@ export function AfternoonResultView({ question, result }: Props) {
   const [showAiNote, setShowAiNote] = useState(false);
   const [industryTab, setIndustryTab] = useState<IndustryTab>("common");
 
+  if (result.gradingMode === "simplified") {
+    return <p role="status">この結果は内容を評価したものではありません。答案を確認して、AI評価を再度お試しください。</p>;
+  }
+
   const variants = question.industryVariants ?? [];
   const hasVariants = variants.length > 0;
   const activeVariant =
@@ -76,7 +80,7 @@ export function AfternoonResultView({ question, result }: Props) {
 
         <AfternoonDisclaimer />
 
-        {result.gradingMode === "simplified" && <SimplifiedGradingNotice />}
+
 
         {result.overallComment && (
           <p className="rounded-lg border border-sky-200 bg-sky-50 p-3 text-sm leading-relaxed text-sky-900 dark:border-sky-900/40 dark:bg-sky-900/20 dark:text-sky-100">
@@ -199,7 +203,9 @@ export function AfternoonResultView({ question, result }: Props) {
                       ? activeVariant
                         ? `模範解答（${activeVariant.industryName} 版）`
                         : "模範解答（論述例）"
-                      : "IPA解答例"}
+                      : question.license === "original"
+                        ? "編集者作成の参考解答"
+                        : "IPA解答例"}
                   </p>
                   <p className="whitespace-pre-wrap rounded-md bg-zinc-50 p-2 text-sm text-zinc-800 dark:bg-zinc-900 dark:text-zinc-100">
                     {(activeVariant && sub?.type === "essay-text"
@@ -250,7 +256,7 @@ export function AfternoonResultView({ question, result }: Props) {
               className="inline-flex"
             >
               <Button type="button" variant="ghost" size="md">
-                出典 PDF を開く
+                {question.license === "original" ? "IPAの公式過去問を確認" : "出典 PDF を開く"}
               </Button>
             </a>
           </div>
@@ -259,7 +265,7 @@ export function AfternoonResultView({ question, result }: Props) {
               id={`ai-note-${question.id}`}
               className="rounded-md border border-zinc-200 bg-zinc-50 p-2 text-xs text-zinc-700 dark:border-zinc-800 dark:bg-zinc-900 dark:text-zinc-200"
             >
-              午後問題のAIコパイロット対話は近日対応予定です。当面は採点結果のコメントと出典PDFを参照してください。
+              採点結果のコメントと参考解答・採点観点を見比べて復習できます。
             </p>
           )}
         </div>

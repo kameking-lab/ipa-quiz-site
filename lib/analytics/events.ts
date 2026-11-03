@@ -21,6 +21,49 @@ export type AnalyticsEvent =
   | { name: "email_signup"; source: "pricing" | "upsell-dialog" | "other"; plan?: string }
   | { name: "streak_milestone"; days: 3 | 7 | 14 | 30 | 100 }
   | { name: "exam_select"; exam: string }
+  | {
+      name: "note_outbound_click";
+      source:
+        | "footer"
+        | "home"
+        | "operator"
+        | "exam_sa"
+        | "exam_st"
+        | "exam_nw"
+        | "exam_au"
+        | "exam_sc"
+        | "exam_pm"
+        | "exam_pm_paid"
+        | "exam_ip_paid"
+        | "exam_ip_paid_security"
+        | "exam_sg_paid"
+        | "exam_fe_paid"
+        | "exam_ap_paid"
+        | "exam_ap_paid_strategy_b"
+        | "exam_ap_paid_project"
+        | "exam_db"
+        | "exam_sm"
+        | "exam_es"
+        | "exam_sg"
+        | "exam_ap"
+        | "exam_fe"
+        | "exam_ip"
+        | "exam_ip_score_report"
+        | "exam_ip_management"
+        | "exam_sg_law"
+        | "exam_fe_legacy_questions"
+        | "exam_civil2"
+        | "exam_eisei1"
+        | "exam_library";
+      account: "ipa_quiz_ai" | "sikaku_rakutoru" | "anzen_ai_jp";
+    }
+  | {
+      name: "book_click";
+      exam: string;
+      bookId: string;
+      retailer: "amazon" | "rakuten";
+      placement: "recommended_books_page" | "quiz_inline_hint";
+    }
   // ----- CVR funnel -----
   | { name: "signin_started"; provider: "google" | "github" | "email"; source?: string }
   | { name: "signin_completed"; provider: string; firstTime?: boolean }

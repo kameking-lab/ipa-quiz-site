@@ -1,0 +1,75 @@
+{
+  "status": "partial-accepted",
+  "date": "20240818",
+  "subject": "theory",
+  "questionCount": 2,
+  "answerUnitCount": 4,
+  "choiceCount": 20,
+  "sourceQuestionPdfSha256": "236be905e93a023cf3c65c1e22c45c24dc42b910151c51f8ed023247793d1d29",
+  "sourceAnswerPdfSha256": "f72ecbc3a477e64948388b69cf78cb931032c9f0c688639836c8d533a949cd0f",
+  "reviewedDataSha256": "7a15b07c64522b2e632999640d9bc69e843247a1290a9e6a9b92011e36b3fca5",
+  "questions": [
+    {
+      "number": 17,
+      "sourceDraftSha256": "2d3fb9044b40668b3844ca58e6d7bf8443d89c33ee9c5949f563a9707a444bec",
+      "opusReceipt": "data/raw_pdfs/denken3/review/20240818/theory/q17-opus-review.json",
+      "opusReceiptSha256": "0af40255af3abf137a286cb4d5599e4710ffd2fb080b7bbef96ff7fdc1165f4f",
+      "assessment": {
+        "number": 17,
+        "status": "PASS",
+        "textIssues": [],
+        "choiceIssues": [],
+        "explanationIssues": [],
+        "figureIssues": [],
+        "externalSourceIssues": []
+      },
+      "figureSha256": {
+        "20240818-theory-q17-capacitor-networks": "8ff60c1a5c6f23abf5e90be4cd13724eb74cd582339fd2dabcfed8891d5acaf2"
+      }
+    },
+    {
+      "number": 18,
+      "sourceDraftSha256": "d4cd6c357b66d5f3588ee82c5e82af7a66406c75266488d228bdf0df55ac2ceb",
+      "opusReceipt": "data/raw_pdfs/denken3/review/20240818/theory/q18-opus-review.json",
+      "opusReceiptSha256": "c7533a7e52dd999d6a58fa5381a53bfed74552f587cd596e368163cb8b16d04a",
+      "assessment": {
+        "number": 18,
+        "status": "PASS",
+        "textIssues": [],
+        "choiceIssues": [],
+        "explanationIssues": [],
+        "figureIssues": [],
+        "externalSourceIssues": []
+      },
+      "figureSha256": {
+        "20240818-theory-q18-am-circuit-waveforms": "27d643514d4dc897f88d431bf620d534aa8d08f45b62c459909a6a543bb49fa9"
+      }
+    }
+  ],
+  "strictReview": {
+    "q17a": {
+      "path": "docs/evidence/denken3/strict/20240818-theory-s16-q17a-q17b-q18a-opus.json",
+      "sha256": "9990b7f5cf1d8ad772d67df7795230d545625a87b4ae884a34b86bda201485b2",
+      "status": "PASS",
+      "resolvedModel": "claude-opus-5-5"
+    },
+    "q17b": {
+      "path": "docs/evidence/denken3/strict/20240818-theory-s16-q17a-q17b-q18a-opus.json",
+      "sha256": "9990b7f5cf1d8ad772d67df7795230d545625a87b4ae884a34b86bda201485b2",
+      "status": "PASS",
+      "resolvedModel": "claude-opus-5-5"
+    },
+    "q18a": {
+      "path": "docs/evidence/denken3/strict/20240818-theory-s16-q17a-q17b-q18a-opus.json",
+      "sha256": "9990b7f5cf1d8ad772d67df7795230d545625a87b4ae884a34b86bda201485b2",
+      "status": "PASS",
+      "resolvedModel": "claude-opus-5-5"
+    },
+    "q18b": {
+      "path": "docs/evidence/denken3/strict/20240818-theory-s17-q18b-opus.json",
+      "sha256": "5533dd00bbb3c54cc2ad11c4badb05ccc1132e7805ed4a94eaeea49b03a94902",
+      "status": "PASS",
+      "resolvedModel": "claude-opus-5-5"
+    }
+  }
+}

@@ -1,0 +1,1262 @@
+{
+  "atUtc": "2026-10-07T17:48:52.537063+00:00",
+  "scope": {
+    "qualification": "denken1",
+    "year": 2026,
+    "season": "primary",
+    "subject": "theory",
+    "qNumber": 3,
+    "officialOriginals": 1,
+    "blanks": 5,
+    "sharedChoices": 15,
+    "choiceExplanations": 75
+  },
+  "candidate": {
+    "path": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\qualification-expansion-20261007\\approved35\\construction\\denken1-q03-next\\CANDIDATE-5-UNITS-v2.json",
+    "sha256": "56e8dd0ac6268274219170ec1bb14737e82ee06efb98622e4196abb4cf81a930",
+    "bytes": 42914
+  },
+  "candidateIntegratedFile": {
+    "path": "C:\\wt\\denken1-theory-q03-20261008\\data\\questions\\denken1\\theory-aq03.json",
+    "sha256": "56e8dd0ac6268274219170ec1bb14737e82ee06efb98622e4196abb4cf81a930",
+    "bytes": 42914
+  },
+  "firstAuthorFreeze": {
+    "path": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\qualification-expansion-20261007\\approved35\\construction\\denken1-q03-next\\FIRST-AUTHOR-FROZEN.json",
+    "sha256": "829ca98fd78f119922078e15914b8201cad7032de63b64a536631aea1f458153",
+    "bytes": 6727
+  },
+  "sourceReconciledAuthor": {
+    "path": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\qualification-expansion-20261007\\approved35\\construction\\denken1-q03-next\\FIRST-AUTHOR-SOURCE-RECONCILED-V2.json",
+    "sha256": "476d06e41b6e0409825788430cdd9c8603df8cdbd8714db543787697a87c2d3d",
+    "bytes": 7861
+  },
+  "rootRecords": {
+    "ROOT-MACHINE-DIFF.json": {
+      "pin": {
+        "path": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\qualification-expansion-20261007\\approved35\\construction\\denken1-q03-next\\ROOT-MACHINE-DIFF.json",
+        "sha256": "f5a0e030a3f53927c7fc372f8f3d5048d0657a427db1b994c77475b59e6a2ea4",
+        "bytes": 6045
+      },
+      "record": {
+        "atUtc": "2026-10-07T17:34:15.722920+00:00",
+        "status": "HOLD_TRANSCRIPTION_DIFFERENCE",
+        "authorPin": {
+          "path": "reports\\qualification-expansion-20261007\\approved35\\construction\\denken1-q03-next\\FIRST-AUTHOR-FROZEN.json",
+          "sha256": "829ca98fd78f119922078e15914b8201cad7032de63b64a536631aea1f458153"
+        },
+        "independentPin": {
+          "path": "reports\\licensed-source-independent-denken1-q3-20261007\\transcription-frozen-v2.json",
+          "sha256": "81e15fe325c4b8c64f2bb85ea0cf0761893cdda26622de76b043389c3960acc4"
+        },
+        "bothFrozenBeforePeerRead": true,
+        "sourceHashEqual": true,
+        "questionProseNormalizedEqual": false,
+        "proseDifferences": [
+          {
+            "operation": "replace",
+            "author": "。",
+            "blind": "と,",
+            "authorOffset": [
+              519,
+              520
+            ],
+            "blindOffset": [
+              519,
+              521
+            ],
+            "authorContext": "V_B=V_Hの状態でV_Aが正の値から減少する場合を考える。V_Aが[BLANK:3]となると,V_BはV_Hから-V_",
+            "blindContext": "V_B=V_Hの状態でV_Aが正の値から減少する場合を考えると,V_Aが[BLANK:3]となると,V_BはV_Hから-V_"
+          }
+        ],
+        "allFifteenChoicesAlgebraExactEqual": true,
+        "choices": [
+          {
+            "label": "イ",
+            "authorFormula": "0",
+            "blindFormula": "0",
+            "algebraExactEqual": true,
+            "canonicalAuthor": "0",
+            "canonicalBlind": "0"
+          },
+          {
+            "label": "ロ",
+            "authorFormula": "(C R_2 R_3/R_1) (V_H+V_L)^2/(V_H V_L)",
+            "blindFormula": "\\frac{CR_2R_3}{R_1}\\frac{(V_H+V_L)^2}{V_HV_L}",
+            "algebraExactEqual": true,
+            "canonicalAuthor": "C*R_2*R_3*(V_H + V_L)**2/(R_1*V_H*V_L)",
+            "canonicalBlind": "C*R_2*R_3*(V_H + V_L)**2/(R_1*V_H*V_L)"
+          },
+          {
+            "label": "ハ",
+            "authorFormula": "(R_1/R_2) V_L",
+            "blindFormula": "\\frac{R_1}{R_2}V_L",
+            "algebraExactEqual": true,
+            "canonicalAuthor": "R_1*V_L/R_2",
+            "canonicalBlind": "R_1*V_L/R_2"
+          },
+          {
+            "label": "ニ",
+            "authorFormula": "(C R_1 R_3/(R_2 V_L)) (V_H−V_L)",
+            "blindFormula": "\\frac{CR_1R_3}{R_2V_L}(V_H-V_L)",
+            "algebraExactEqual": true,
+            "canonicalAuthor": "C*R_1*R_3*(V_H - V_L)/(R_2*V_L)",
+            "canonicalBlind": "C*R_1*R_3*(V_H - V_L)/(R_2*V_L)"
+          },
+          {
+            "label": "ホ",
+            "authorFormula": "−(R_1/R_2) V_L",
+            "blindFormula": "-\\frac{R_1}{R_2}V_L",
+            "algebraExactEqual": true,
+            "canonicalAuthor": "-R_1*V_L/R_2",
+            "canonicalBlind": "-R_1*V_L/R_2"
+          },
+          {
+            "label": "ヘ",
+            "authorFormula": "(R_2/(R_1+R_2)) V_A+(R_1/(R_1+R_2)) V_B",
+            "blindFormula": "\\frac{R_2}{R_1+R_2}V_A+\\frac{R_1}{R_1+R_2}V_B",
+            "algebraExactEqual": true,
+            "canonicalAuthor": "R_1*V_B/(R_1 + R_2) + R_2*V_A/(R_1 + R_2)",
+            "canonicalBlind": "R_1*V_B/(R_1 + R_2) + R_2*V_A/(R_1 + R_2)"
+          },
+          {
+            "label": "ト",
+            "authorFormula": "(R_1/R_2) V_H",
+            "blindFormula": "\\frac{R_1}{R_2}V_H",
+            "algebraExactEqual": true,
+            "canonicalAuthor": "R_1*V_H/R_2",
+            "canonicalBlind": "R_1*V_H/R_2"
+          },
+          {
+            "label": "チ",
+            "authorFormula": "(C R_2 R_3/(R_1 V_L)) (V_H+V_L)",
+            "blindFormula": "\\frac{CR_2R_3}{R_1V_L}(V_H+V_L)",
+            "algebraExactEqual": true,
+            "canonicalAuthor": "C*R_2*R_3*(V_H + V_L)/(R_1*V_L)",
+            "canonicalBlind": "C*R_2*R_3*(V_H + V_L)/(R_1*V_L)"
+          },
+          {
+            "label": "リ",
+            "authorFormula": "−(R_2/R_1) V_H",
+            "blindFormula": "-\\frac{R_2}{R_1}V_H",
+            "algebraExactEqual": true,
+            "canonicalAuthor": "-R_2*V_H/R_1",
+            "canonicalBlind": "-R_2*V_H/R_1"
+          },
+          {
+            "label": "ヌ",
+            "authorFormula": "(C R_1 R_3/R_2) (V_H+V_L)^2/(V_H V_L)",
+            "blindFormula": "\\frac{CR_1R_3}{R_2}\\frac{(V_H+V_L)^2}{V_HV_L}",
+            "algebraExactEqual": true,
+            "canonicalAuthor": "C*R_1*R_3*(V_H + V_L)**2/(R_2*V_H*V_L)",
+            "canonicalBlind": "C*R_1*R_3*(V_H + V_L)**2/(R_2*V_H*V_L)"
+          },
+          {
+            "label": "ル",
+            "authorFormula": "(R_2/R_1) V_L",
+            "blindFormula": "\\frac{R_2}{R_1}V_L",
+            "algebraExactEqual": true,
+            "canonicalAuthor": "R_2*V_L/R_1",
+            "canonicalBlind": "R_2*V_L/R_1"
+          },
+          {
+            "label": "ヲ",
+            "authorFormula": "(C R_1 R_3/(R_2 V_L)) (V_H+V_L)",
+            "blindFormula": "\\frac{CR_1R_3}{R_2V_L}(V_H+V_L)",
+            "algebraExactEqual": true,
+            "canonicalAuthor": "C*R_1*R_3*(V_H + V_L)/(R_2*V_L)",
+            "canonicalBlind": "C*R_1*R_3*(V_H + V_L)/(R_2*V_L)"
+          },
+          {
+            "label": "ワ",
+            "authorFormula": "(C R_1 R_3/R_2) (V_H−V_L)^2/(V_H V_L)",
+            "blindFormula": "\\frac{CR_1R_3}{R_2}\\frac{(V_H-V_L)^2}{V_HV_L}",
+            "algebraExactEqual": true,
+            "canonicalAuthor": "C*R_1*R_3*(V_H - V_L)**2/(R_2*V_H*V_L)",
+            "canonicalBlind": "C*R_1*R_3*(V_H - V_L)**2/(R_2*V_H*V_L)"
+          },
+          {
+            "label": "カ",
+            "authorFormula": "−(R_1/R_2) V_H",
+            "blindFormula": "-\\frac{R_1}{R_2}V_H",
+            "algebraExactEqual": true,
+            "canonicalAuthor": "-R_1*V_H/R_2",
+            "canonicalBlind": "-R_1*V_H/R_2"
+          },
+          {
+            "label": "ヨ",
+            "authorFormula": "(R_1/(R_1+R_2)) V_A+(R_2/(R_1+R_2)) V_B",
+            "blindFormula": "\\frac{R_1}{R_1+R_2}V_A+\\frac{R_2}{R_1+R_2}V_B",
+            "algebraExactEqual": true,
+            "canonicalAuthor": "R_1*V_A/(R_1 + R_2) + R_2*V_B/(R_1 + R_2)",
+            "canonicalBlind": "R_1*V_A/(R_1 + R_2) + R_2*V_B/(R_1 + R_2)"
+          }
+        ],
+        "normalizations": [
+          "NFKC for printed fullwidth glyphs",
+          "Whitespace/linewrap removal",
+          "Declared blank-box representation",
+          "Minus glyph - versus U+2212",
+          "Declared LaTeX/plain fraction rendering",
+          "Choices only: exact symbolic algebra with restricted AST, no eval"
+        ],
+        "normalizationsDoNotDeleteJapaneseWords": true,
+        "officialAnswersCompared": false,
+        "diagramVisualFinalReviewRequired": true,
+        "publishAllowed": false
+      }
+    },
+    "ROOT-MACHINE-DIFF-RECONCILED.json": {
+      "pin": {
+        "path": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\qualification-expansion-20261007\\approved35\\construction\\denken1-q03-next\\ROOT-MACHINE-DIFF-RECONCILED.json",
+        "sha256": "1d90dd7c88df1c80c8e7010a3f8bcaad201ea9482c62a8d0cbb36aeabbffc5db",
+        "bytes": 5556
+      },
+      "record": {
+        "atUtc": "2026-10-07T17:39:08.883787+00:00",
+        "status": "PASS",
+        "authorPin": {
+          "path": "reports\\qualification-expansion-20261007\\approved35\\construction\\denken1-q03-next\\FIRST-AUTHOR-FROZEN.json",
+          "sha256": "829ca98fd78f119922078e15914b8201cad7032de63b64a536631aea1f458153"
+        },
+        "independentPin": {
+          "path": "reports\\licensed-source-independent-denken1-q3-20261007\\corrected-v3.json",
+          "sha256": "0891dfa49204414a646c54a04b259fe0b21f25a43947b0c6064f877b01155689"
+        },
+        "bothInitialTranscriptionsFrozenBeforePeerRead": true,
+        "postDiffBlindErratumApplied": true,
+        "sourceHashEqual": true,
+        "questionProseNormalizedEqual": true,
+        "proseDifferences": [],
+        "allFifteenChoicesAlgebraExactEqual": true,
+        "choices": [
+          {
+            "label": "イ",
+            "authorFormula": "0",
+            "blindFormula": "0",
+            "algebraExactEqual": true,
+            "canonicalAuthor": "0",
+            "canonicalBlind": "0"
+          },
+          {
+            "label": "ロ",
+            "authorFormula": "(C R_2 R_3/R_1) (V_H+V_L)^2/(V_H V_L)",
+            "blindFormula": "\\frac{CR_2R_3}{R_1}\\frac{(V_H+V_L)^2}{V_HV_L}",
+            "algebraExactEqual": true,
+            "canonicalAuthor": "C*R_2*R_3*(V_H + V_L)**2/(R_1*V_H*V_L)",
+            "canonicalBlind": "C*R_2*R_3*(V_H + V_L)**2/(R_1*V_H*V_L)"
+          },
+          {
+            "label": "ハ",
+            "authorFormula": "(R_1/R_2) V_L",
+            "blindFormula": "\\frac{R_1}{R_2}V_L",
+            "algebraExactEqual": true,
+            "canonicalAuthor": "R_1*V_L/R_2",
+            "canonicalBlind": "R_1*V_L/R_2"
+          },
+          {
+            "label": "ニ",
+            "authorFormula": "(C R_1 R_3/(R_2 V_L)) (V_H−V_L)",
+            "blindFormula": "\\frac{CR_1R_3}{R_2V_L}(V_H-V_L)",
+            "algebraExactEqual": true,
+            "canonicalAuthor": "C*R_1*R_3*(V_H - V_L)/(R_2*V_L)",
+            "canonicalBlind": "C*R_1*R_3*(V_H - V_L)/(R_2*V_L)"
+          },
+          {
+            "label": "ホ",
+            "authorFormula": "−(R_1/R_2) V_L",
+            "blindFormula": "-\\frac{R_1}{R_2}V_L",
+            "algebraExactEqual": true,
+            "canonicalAuthor": "-R_1*V_L/R_2",
+            "canonicalBlind": "-R_1*V_L/R_2"
+          },
+          {
+            "label": "ヘ",
+            "authorFormula": "(R_2/(R_1+R_2)) V_A+(R_1/(R_1+R_2)) V_B",
+            "blindFormula": "\\frac{R_2}{R_1+R_2}V_A+\\frac{R_1}{R_1+R_2}V_B",
+            "algebraExactEqual": true,
+            "canonicalAuthor": "R_1*V_B/(R_1 + R_2) + R_2*V_A/(R_1 + R_2)",
+            "canonicalBlind": "R_1*V_B/(R_1 + R_2) + R_2*V_A/(R_1 + R_2)"
+          },
+          {
+            "label": "ト",
+            "authorFormula": "(R_1/R_2) V_H",
+            "blindFormula": "\\frac{R_1}{R_2}V_H",
+            "algebraExactEqual": true,
+            "canonicalAuthor": "R_1*V_H/R_2",
+            "canonicalBlind": "R_1*V_H/R_2"
+          },
+          {
+            "label": "チ",
+            "authorFormula": "(C R_2 R_3/(R_1 V_L)) (V_H+V_L)",
+            "blindFormula": "\\frac{CR_2R_3}{R_1V_L}(V_H+V_L)",
+            "algebraExactEqual": true,
+            "canonicalAuthor": "C*R_2*R_3*(V_H + V_L)/(R_1*V_L)",
+            "canonicalBlind": "C*R_2*R_3*(V_H + V_L)/(R_1*V_L)"
+          },
+          {
+            "label": "リ",
+            "authorFormula": "−(R_2/R_1) V_H",
+            "blindFormula": "-\\frac{R_2}{R_1}V_H",
+            "algebraExactEqual": true,
+            "canonicalAuthor": "-R_2*V_H/R_1",
+            "canonicalBlind": "-R_2*V_H/R_1"
+          },
+          {
+            "label": "ヌ",
+            "authorFormula": "(C R_1 R_3/R_2) (V_H+V_L)^2/(V_H V_L)",
+            "blindFormula": "\\frac{CR_1R_3}{R_2}\\frac{(V_H+V_L)^2}{V_HV_L}",
+            "algebraExactEqual": true,
+            "canonicalAuthor": "C*R_1*R_3*(V_H + V_L)**2/(R_2*V_H*V_L)",
+            "canonicalBlind": "C*R_1*R_3*(V_H + V_L)**2/(R_2*V_H*V_L)"
+          },
+          {
+            "label": "ル",
+            "authorFormula": "(R_2/R_1) V_L",
+            "blindFormula": "\\frac{R_2}{R_1}V_L",
+            "algebraExactEqual": true,
+            "canonicalAuthor": "R_2*V_L/R_1",
+            "canonicalBlind": "R_2*V_L/R_1"
+          },
+          {
+            "label": "ヲ",
+            "authorFormula": "(C R_1 R_3/(R_2 V_L)) (V_H+V_L)",
+            "blindFormula": "\\frac{CR_1R_3}{R_2V_L}(V_H+V_L)",
+            "algebraExactEqual": true,
+            "canonicalAuthor": "C*R_1*R_3*(V_H + V_L)/(R_2*V_L)",
+            "canonicalBlind": "C*R_1*R_3*(V_H + V_L)/(R_2*V_L)"
+          },
+          {
+            "label": "ワ",
+            "authorFormula": "(C R_1 R_3/R_2) (V_H−V_L)^2/(V_H V_L)",
+            "blindFormula": "\\frac{CR_1R_3}{R_2}\\frac{(V_H-V_L)^2}{V_HV_L}",
+            "algebraExactEqual": true,
+            "canonicalAuthor": "C*R_1*R_3*(V_H - V_L)**2/(R_2*V_H*V_L)",
+            "canonicalBlind": "C*R_1*R_3*(V_H - V_L)**2/(R_2*V_H*V_L)"
+          },
+          {
+            "label": "カ",
+            "authorFormula": "−(R_1/R_2) V_H",
+            "blindFormula": "-\\frac{R_1}{R_2}V_H",
+            "algebraExactEqual": true,
+            "canonicalAuthor": "-R_1*V_H/R_2",
+            "canonicalBlind": "-R_1*V_H/R_2"
+          },
+          {
+            "label": "ヨ",
+            "authorFormula": "(R_1/(R_1+R_2)) V_A+(R_2/(R_1+R_2)) V_B",
+            "blindFormula": "\\frac{R_1}{R_1+R_2}V_A+\\frac{R_2}{R_1+R_2}V_B",
+            "algebraExactEqual": true,
+            "canonicalAuthor": "R_1*V_A/(R_1 + R_2) + R_2*V_B/(R_1 + R_2)",
+            "canonicalBlind": "R_1*V_A/(R_1 + R_2) + R_2*V_B/(R_1 + R_2)"
+          }
+        ],
+        "normalizations": [
+          "NFKC for printed fullwidth glyphs",
+          "Whitespace/linewrap removal",
+          "Declared blank-box representation",
+          "Minus glyph - versus U+2212",
+          "Declared LaTeX/plain fraction rendering",
+          "Choices only: exact symbolic algebra with restricted AST, no eval"
+        ],
+        "normalizationsDoNotDeleteJapaneseWords": true,
+        "officialAnswersCompared": false,
+        "diagramVisualFinalReviewRequired": true,
+        "publishAllowed": false
+      }
+    },
+    "ROOT-OFFICIAL-ANSWER-AND-CANDIDATE-VERIFICATION.json": {
+      "pin": {
+        "path": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\qualification-expansion-20261007\\approved35\\construction\\denken1-q03-next\\ROOT-OFFICIAL-ANSWER-AND-CANDIDATE-VERIFICATION.json",
+        "sha256": "421e3351049130e396ab6f1cd6e8c5640ca3d31f5963e9ef1fd2a54d5acafc4c",
+        "bytes": 1600
+      },
+      "record": {
+        "status": "PASS_SOURCE_FIELDS_ANSWERS_COMPLETENESS_ONLY",
+        "candidateSha256": "56e8dd0ac6268274219170ec1bb14737e82ee06efb98622e4196abb4cf81a930",
+        "independentOfficialAnswerSha256": "2af183101533985407d28466e90845b090d61ffaa7c2ea050ee16b166c324dad",
+        "originalQuestions": 1,
+        "practiceBlanks": 5,
+        "choiceExplanationCount": 75,
+        "items": [
+          {
+            "part": 1,
+            "officialKana": "ヘ",
+            "candidateAnswerKey": "カ",
+            "choiceIndex0Based": 5,
+            "stemExact": true,
+            "fifteenChoicesExactOrder": true,
+            "explanationsPresent": 15
+          },
+          {
+            "part": 2,
+            "officialKana": "ハ",
+            "candidateAnswerKey": "ウ",
+            "choiceIndex0Based": 2,
+            "stemExact": true,
+            "fifteenChoicesExactOrder": true,
+            "explanationsPresent": 15
+          },
+          {
+            "part": 3,
+            "officialKana": "カ",
+            "candidateAnswerKey": "セ",
+            "choiceIndex0Based": 13,
+            "stemExact": true,
+            "fifteenChoicesExactOrder": true,
+            "explanationsPresent": 15
+          },
+          {
+            "part": 4,
+            "officialKana": "ヲ",
+            "candidateAnswerKey": "シ",
+            "choiceIndex0Based": 11,
+            "stemExact": true,
+            "fifteenChoicesExactOrder": true,
+            "explanationsPresent": 15
+          },
+          {
+            "part": 5,
+            "officialKana": "ヌ",
+            "candidateAnswerKey": "コ",
+            "choiceIndex0Based": 9,
+            "stemExact": true,
+            "fifteenChoicesExactOrder": true,
+            "explanationsPresent": 15
+          }
+        ],
+        "primaryExplanationFinalReviewStillRequired": true,
+        "publishAllowed": false
+      }
+    },
+    "NUMERICAL-CIRCUIT-INVARIANTS.json": {
+      "pin": {
+        "path": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\qualification-expansion-20261007\\approved35\\construction\\denken1-q03-next\\NUMERICAL-CIRCUIT-INVARIANTS.json",
+        "sha256": "66b8984974e58315a2e071880cb6d8728d18360307602bbe5282609f8c29d2da",
+        "bytes": 4406
+      },
+      "record": {
+        "atUtc": "2026-10-07T17:45:59.750045+00:00",
+        "status": "PASS_NUMERICAL_CIRCUIT_INVARIANTS",
+        "candidateSha256": "56e8dd0ac6268274219170ec1bb14737e82ee06efb98622e4196abb4cf81a930",
+        "rootExactAlgebraDiffSha256": "1d90dd7c88df1c80c8e7010a3f8bcaad201ea9482c62a8d0cbb36aeabbffc5db",
+        "primaryBasis": "Official Q physical8 slope−V_B/(CR_3), switching input0, physical9 figure1 resistance topology",
+        "cases": [
+          {
+            "parameters": {
+              "R_1": 20000,
+              "R_2": 10000,
+              "R_3": 30000,
+              "C": 1e-06,
+              "V_H": 8,
+              "V_L": 3,
+              "V_A": -2,
+              "V_B": 5
+            },
+            "selectedValues": [
+              2.666666666666667,
+              6.0,
+              -16.0,
+              0.22,
+              0.3025
+            ],
+            "returnTime": 0.08249999999999999,
+            "circuitResiduals": {
+              "inputKcl": -5.421010862427522e-20,
+              "upperSwitchKcl": 0.0,
+              "lowerSwitchKcl": 0.0,
+              "risingEndpoint": 0.0,
+              "fallingEndpoint": 0.0
+            },
+            "asymmetricOutputCase": true,
+            "pass": true
+          },
+          {
+            "parameters": {
+              "R_1": 11000,
+              "R_2": 33000,
+              "R_3": 51000,
+              "C": 2e-06,
+              "V_H": 4,
+              "V_L": 9,
+              "V_A": 7,
+              "V_B": -6
+            },
+            "selectedValues": [
+              3.75,
+              3.0,
+              -1.3333333333333333,
+              0.04911111111111111,
+              0.15961111111111112
+            ],
+            "returnTime": 0.11050000000000001,
+            "circuitResiduals": {
+              "inputKcl": 0.0,
+              "upperSwitchKcl": 0.0,
+              "lowerSwitchKcl": 0.0,
+              "risingEndpoint": 0.0,
+              "fallingEndpoint": -6.661338147750939e-16
+            },
+            "asymmetricOutputCase": true,
+            "pass": true
+          },
+          {
+            "parameters": {
+              "R_1": 17000,
+              "R_2": 23000,
+              "R_3": 19000,
+              "C": 3e-07,
+              "V_H": 6,
+              "V_L": 6,
+              "V_A": 11,
+              "V_B": -3
+            },
+            "selectedValues": [
+              5.050000000000001,
+              4.434782608695652,
+              -4.434782608695652,
+              0.00842608695652174,
+              0.016852173913043476
+            ],
+            "returnTime": 0.008426086956521736,
+            "circuitResiduals": {
+              "inputKcl": -1.0842021724855044e-19,
+              "upperSwitchKcl": 5.421010862427522e-20,
+              "lowerSwitchKcl": -5.421010862427522e-20,
+              "risingEndpoint": 1.7763568394002505e-15,
+              "fallingEndpoint": 1.7763568394002505e-15
+            },
+            "asymmetricOutputCase": false,
+            "pass": true
+          },
+          {
+            "parameters": {
+              "R_1": 40000,
+              "R_2": 10000,
+              "R_3": 75000,
+              "C": 5e-08,
+              "V_H": 12,
+              "V_L": 2,
+              "V_A": -8,
+              "V_B": 3
+            },
+            "selectedValues": [
+              0.7999999999999998,
+              8.0,
+              -48.0,
+              0.105,
+              0.1225
+            ],
+            "returnTime": 0.0175,
+            "circuitResiduals": {
+              "inputKcl": 0.0,
+              "upperSwitchKcl": 0.0,
+              "lowerSwitchKcl": 0.0,
+              "risingEndpoint": 0.0,
+              "fallingEndpoint": -7.105427357601002e-15
+            },
+            "asymmetricOutputCase": true,
+            "pass": true
+          },
+          {
+            "parameters": {
+              "R_1": 13000,
+              "R_2": 29000,
+              "R_3": 37000,
+              "C": 8e-07,
+              "V_H": 5,
+              "V_L": 7,
+              "V_A": 2,
+              "V_B": 10
+            },
+            "selectedValues": [
+              4.476190476190476,
+              3.1379310344827585,
+              -2.2413793103448274,
+              0.022746798029556647,
+              0.05459231527093596
+            ],
+            "returnTime": 0.03184551724137931,
+            "circuitResiduals": {
+              "inputKcl": 0.0,
+              "upperSwitchKcl": -2.710505431213761e-20,
+              "lowerSwitchKcl": 0.0,
+              "risingEndpoint": 4.440892098500626e-16,
+              "fallingEndpoint": -4.440892098500626e-16
+            },
+            "asymmetricOutputCase": true,
+            "pass": true
+          }
+        ],
+        "wrongOptionBlankPairsRejectedAcrossCases": 70,
+        "meaningfulChecks": [
+          "Comparator input Kirchhoff residual",
+          "Both switching boundary signs",
+          "Integrator rising and falling endpoints",
+          "Unequal positive/negative saturation timing",
+          "Symmetric output nonzero period",
+          "Each of 70 wrong blank-choice pairings differs from required value for at least one case"
+        ],
+        "independentAstraContentVerdict": null,
+        "publicAllowed": false
+      }
+    }
+  },
+  "independentRecords": {
+    "question-freeze.json": {
+      "pin": {
+        "path": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\licensed-source-independent-denken1-q3-20261007\\question-freeze.json",
+        "sha256": "6714ef427184225f52ab4dee07e0a1140a0e076595076095dc5a5fb56df9ea7e",
+        "bytes": 1099
+      },
+      "record": {
+        "recordType": "blind-question-freeze",
+        "frozenAt": "2026-10-07T17:28:57.868503+00:00",
+        "transcriptionFile": "transcription-frozen-v2.json",
+        "transcriptionSha256": "81e15fe325c4b8c64f2bb85ea0cf0761893cdda26622de76b043389c3960acc4",
+        "draftSuperseded": [
+          "transcription.json"
+        ],
+        "draftCorrection": "Japanese visual recheck corrected one draft phrase before sharing: 変化するしきい値",
+        "sourceSha256": "6a6a509a9cd2e9a36c79e90561345e0fc093389796ffd482833109057b0aa7f5",
+        "blankCount": 5,
+        "sharedChoiceCount": 15,
+        "blindState": {
+          "authorCandidateRead": false,
+          "authorTranscriptionRead": false,
+          "authorAnswerRead": false,
+          "authorExplanationRead": false,
+          "authorTestOutputRead": false,
+          "officialAnswerRead": false
+        },
+        "additionalDetailCapture": {
+          "file": "question-text-detail.png",
+          "sourcePhysicalPage": 8,
+          "clipPdfCoordinates": [
+            75,
+            315,
+            520,
+            430
+          ],
+          "sha256": "56e09da6eb2478c91c177379bc704284d8d197eab48e8da1c1e320893bdbbe47"
+        },
+        "officialAnswerRead": false
+      }
+    },
+    "transcription-frozen-v2.json": {
+      "pin": {
+        "path": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\licensed-source-independent-denken1-q3-20261007\\transcription-frozen-v2.json",
+        "sha256": "81e15fe325c4b8c64f2bb85ea0cf0761893cdda26622de76b043389c3960acc4",
+        "bytes": 7662
+      },
+      "record": {
+        "recordType": "blind-independent-official-question-transcription",
+        "agent": "licensed_source_independent",
+        "scope": {
+          "exam": "denken1",
+          "year": 2026,
+          "eraYear": "令和8年度",
+          "examDate": "2026-08-30",
+          "stage": "一次",
+          "subject": "理論",
+          "section": "A",
+          "questionNumber": 3,
+          "blankCount": 5,
+          "sharedChoiceCount": 15
+        },
+        "source": {
+          "url": "https://www.shiken.or.jp/chief/upload/20260830_ch_first_q01.pdf",
+          "sha256": "6a6a509a9cd2e9a36c79e90561345e0fc093389796ffd482833109057b0aa7f5",
+          "physicalPages": [
+            8,
+            9
+          ],
+          "pageIndices": [
+            7,
+            8
+          ],
+          "printedPages": [
+            5,
+            6
+          ],
+          "printedSheetIds": [
+            "F1-R 008",
+            "F1-R 009"
+          ],
+          "inspectionMethod": "Visual inspection of 2x fitz renders of original official PDF; PDF hash matched root's frozen source hash"
+        },
+        "blindStateAtFreeze": {
+          "authorCandidateRead": false,
+          "authorTranscriptionRead": false,
+          "authorAnswerRead": false,
+          "authorExplanationRead": false,
+          "authorTestOutputRead": false,
+          "officialAnswerRead": false
+        },
+        "transcriptionConventions": "Original Japanese wording and punctuation retained; inline mathematical typography encoded as LaTeX. Line/page wraps removed. Blank boxes encoded as [BLANK:n]; unnumbered introductory box encoded [BLANK]. Figure description is a separate independent visual account, not original prose.",
+        "instruction": "問３　次の文章は，発振回路に関する記述である。文中の [BLANK] に当てはまる最も適切なものを解答群の中から選べ。",
+        "paragraphs": [
+          "図１の回路はヒステリシスコンパレータと積分回路からなる発振回路である。各素子の値は図内に示した変数で表され，電圧，抵抗値及び静電容量の単位はそれぞれ[V]，[Ω]，[F]である。また，演算増幅器の非反転入力端子の電位 V_+ と反転入力端子の電位 V_- の電位差 V_+-V_- と出力電圧 V_o の間には図２の関係があり，その他の特性は理想とする。",
+          "まず，ヒステリシスコンパレータの動作を考える。演算増幅器１の非反転入力端子の電位 V_{+,1} は，節点Ａの電位 V_A と節点Ｂの電位 V_B を R_1 と R_2 で分圧した電圧であるから，V_{+,1}=[BLANK:1] となる。演算増幅器１の出力 V_B は，V_{+,1} の値に応じて -V_L または V_H となる。まず V_B=-V_L のときに V_A が負の値から時間とともに増加する場合を考える。V_A が [BLANK:2] となるとき V_{+,1} は 0 V となるため，[BLANK:2] は V_B が -V_L から V_H に変化するしきい値であることがわかる。同様に，V_B=V_H の状態で V_A が正の値から減少する場合を考えると，V_A が [BLANK:3] となると，V_B は V_H から -V_L に変化する。以上より，ヒステリシスコンパレータは，現在の出力に応じて，しきい値が変わることがわかる。",
+          "ヒステリシスコンパレータの出力 V_B は積分回路に入力される。積分回路の入力電圧を V_B とすると積分回路の出力電圧 V_A は傾き -\\frac{V_B}{CR_3} [V/s]で時間とともに変化する。",
+          "以上の性質を用いて図１の発振回路の発振周期を求める。回路は安定した発振動作をしており，ある時刻でヒステリシスコンパレータの出力 V_B が V_H から -V_L に変化したとする。このときの V_A は [BLANK:3] である。V_B=-V_L であるとき，V_A は \\frac{V_L}{CR_3} の傾きで増加するため V_A が [BLANK:3] から [BLANK:2] まで変化するために要する時間は [BLANK:4] [s]となる。V_A が [BLANK:2] となると V_B は -V_L から V_H に変化するため V_A は減少に転じ，その傾きは -\\frac{V_H}{CR_3} となる。この発振回路の周期は，V_A が [BLANK:2] から再び [BLANK:3] まで変化するために要する時間と [BLANK:4] の和から，[BLANK:5] [s]と求まる。"
+        ],
+        "blankLabels": [
+          "(1)",
+          "(2)",
+          "(3)",
+          "(4)",
+          "(5)"
+        ],
+        "sharedChoiceHeading": "〔問３の解答群〕",
+        "sharedChoices": [
+          {
+            "label": "イ",
+            "formula": "0"
+          },
+          {
+            "label": "ロ",
+            "formula": "\\frac{CR_2R_3}{R_1}\\frac{(V_H+V_L)^2}{V_HV_L}"
+          },
+          {
+            "label": "ハ",
+            "formula": "\\frac{R_1}{R_2}V_L"
+          },
+          {
+            "label": "ニ",
+            "formula": "\\frac{CR_1R_3}{R_2V_L}(V_H-V_L)"
+          },
+          {
+            "label": "ホ",
+            "formula": "-\\frac{R_1}{R_2}V_L"
+          },
+          {
+            "label": "ヘ",
+            "formula": "\\frac{R_2}{R_1+R_2}V_A+\\frac{R_1}{R_1+R_2}V_B"
+          },
+          {
+            "label": "ト",
+            "formula": "\\frac{R_1}{R_2}V_H"
+          },
+          {
+            "label": "チ",
+            "formula": "\\frac{CR_2R_3}{R_1V_L}(V_H+V_L)"
+          },
+          {
+            "label": "リ",
+            "formula": "-\\frac{R_2}{R_1}V_H"
+          },
+          {
+            "label": "ヌ",
+            "formula": "\\frac{CR_1R_3}{R_2}\\frac{(V_H+V_L)^2}{V_HV_L}"
+          },
+          {
+            "label": "ル",
+            "formula": "\\frac{R_2}{R_1}V_L"
+          },
+          {
+            "label": "ヲ",
+            "formula": "\\frac{CR_1R_3}{R_2V_L}(V_H+V_L)"
+          },
+          {
+            "label": "ワ",
+            "formula": "\\frac{CR_1R_3}{R_2}\\frac{(V_H-V_L)^2}{V_HV_L}"
+          },
+          {
+            "label": "カ",
+            "formula": "-\\frac{R_1}{R_2}V_H"
+          },
+          {
+            "label": "ヨ",
+            "formula": "\\frac{R_1}{R_1+R_2}V_A+\\frac{R_2}{R_1+R_2}V_B"
+          }
+        ],
+        "figures": [
+          {
+            "label": "図１",
+            "sourcePhysicalPage": 9,
+            "visualConditions": [
+              "節点Ａの電圧V_A，節点Ｂの電圧V_Bはそれぞれ接地を基準に上向き矢印で示される。",
+              "下側破線枠はヒステリシスコンパレータ。演算増幅器１の反転入力は接地，非反転入力V_{+,1}は節点ＡからR_1を経た節点，その節点はR_2を通じて節点Ｂに接続。演算増幅器１の出力は節点Ｂ。",
+              "上側破線枠は積分回路。節点ＢからR_3を通じて演算増幅器２の反転入力に接続。非反転入力は接地。演算増幅器２の出力は節点Ａ。Cは節点Ａと演算増幅器２の反転入力を結ぶ帰還コンデンサ。",
+              "演算増幅器１/２は∞表示，三角の向きは１が右向き，２が左向き。破線枠以外に追加の素子値や電源値の表示はない。"
+            ]
+          },
+          {
+            "label": "図２",
+            "sourcePhysicalPage": 9,
+            "visualConditions": [
+              "縦軸V_o，横軸V_+-V_-。原点0を表示。",
+              "V_+-V_-が正の側でV_o=V_Hの水平線，負の側でV_o=-V_Lの水平線。V_+-V_-=0の位置に両水平線を結ぶ縦の線。",
+              "図に正のV_L/V_Hの数値・同値条件は表示されていない。特性のその他の部分は本文の理想条件に従う。"
+            ]
+          }
+        ],
+        "captures": [
+          {
+            "sourcePhysicalPage": 8,
+            "pageIndex": 7,
+            "file": "question-physical-8.png",
+            "sha256": "c04e4260711186a3fbebb10d3926f8796b253bdf246bfc44457ce0db4de869e6"
+          },
+          {
+            "sourcePhysicalPage": 9,
+            "pageIndex": 8,
+            "file": "question-physical-9.png",
+            "sha256": "bc8ccd1109f0463659cfbf93958904bec21e7bf900cca913567e636fb825f31e"
+          }
+        ],
+        "rightsEvidence": "../licensed-source-independent-rights-20261007T172331Z.json",
+        "officialAnswerStatus": "NOT_ACQUIRED_BEFORE_QUESTION_FREEZE"
+      }
+    },
+    "corrected-v3.json": {
+      "pin": {
+        "path": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\licensed-source-independent-denken1-q3-20261007\\corrected-v3.json",
+        "sha256": "0891dfa49204414a646c54a04b259fe0b21f25a43947b0c6064f877b01155689",
+        "bytes": 9159
+      },
+      "record": {
+        "recordType": "blind-independent-official-question-transcription",
+        "agent": "licensed_source_independent",
+        "scope": {
+          "exam": "denken1",
+          "year": 2026,
+          "eraYear": "令和8年度",
+          "examDate": "2026-08-30",
+          "stage": "一次",
+          "subject": "理論",
+          "section": "A",
+          "questionNumber": 3,
+          "blankCount": 5,
+          "sharedChoiceCount": 15
+        },
+        "source": {
+          "url": "https://www.shiken.or.jp/chief/upload/20260830_ch_first_q01.pdf",
+          "sha256": "6a6a509a9cd2e9a36c79e90561345e0fc093389796ffd482833109057b0aa7f5",
+          "physicalPages": [
+            8,
+            9
+          ],
+          "pageIndices": [
+            7,
+            8
+          ],
+          "printedPages": [
+            5,
+            6
+          ],
+          "printedSheetIds": [
+            "F1-R 008",
+            "F1-R 009"
+          ],
+          "inspectionMethod": "Visual inspection of 2x fitz renders of original official PDF; PDF hash matched root's frozen source hash"
+        },
+        "blindStateAtFreeze": {
+          "authorCandidateRead": false,
+          "authorTranscriptionRead": false,
+          "authorAnswerRead": false,
+          "authorExplanationRead": false,
+          "authorTestOutputRead": false,
+          "officialAnswerRead": false
+        },
+        "transcriptionConventions": "Original Japanese wording and punctuation retained; inline mathematical typography encoded as LaTeX. Line/page wraps removed. Blank boxes encoded as [BLANK:n]; unnumbered introductory box encoded [BLANK]. Figure description is a separate independent visual account, not original prose.",
+        "instruction": "問３　次の文章は，発振回路に関する記述である。文中の [BLANK] に当てはまる最も適切なものを解答群の中から選べ。",
+        "paragraphs": [
+          "図１の回路はヒステリシスコンパレータと積分回路からなる発振回路である。各素子の値は図内に示した変数で表され，電圧，抵抗値及び静電容量の単位はそれぞれ[V]，[Ω]，[F]である。また，演算増幅器の非反転入力端子の電位 V_+ と反転入力端子の電位 V_- の電位差 V_+-V_- と出力電圧 V_o の間には図２の関係があり，その他の特性は理想とする。",
+          "まず，ヒステリシスコンパレータの動作を考える。演算増幅器１の非反転入力端子の電位 V_{+,1} は，節点Ａの電位 V_A と節点Ｂの電位 V_B を R_1 と R_2 で分圧した電圧であるから，V_{+,1}=[BLANK:1] となる。演算増幅器１の出力 V_B は，V_{+,1} の値に応じて -V_L または V_H となる。まず V_B=-V_L のときに V_A が負の値から時間とともに増加する場合を考える。V_A が [BLANK:2] となるとき V_{+,1} は 0 V となるため，[BLANK:2] は V_B が -V_L から V_H に変化するしきい値であることがわかる。同様に，V_B=V_H の状態で V_A が正の値から減少する場合を考える。V_A が [BLANK:3] となると，V_B は V_H から -V_L に変化する。以上より，ヒステリシスコンパレータは，現在の出力に応じて，しきい値が変わることがわかる。",
+          "ヒステリシスコンパレータの出力 V_B は積分回路に入力される。積分回路の入力電圧を V_B とすると積分回路の出力電圧 V_A は傾き -\\frac{V_B}{CR_3} [V/s]で時間とともに変化する。",
+          "以上の性質を用いて図１の発振回路の発振周期を求める。回路は安定した発振動作をしており，ある時刻でヒステリシスコンパレータの出力 V_B が V_H から -V_L に変化したとする。このときの V_A は [BLANK:3] である。V_B=-V_L であるとき，V_A は \\frac{V_L}{CR_3} の傾きで増加するため V_A が [BLANK:3] から [BLANK:2] まで変化するために要する時間は [BLANK:4] [s]となる。V_A が [BLANK:2] となると V_B は -V_L から V_H に変化するため V_A は減少に転じ，その傾きは -\\frac{V_H}{CR_3} となる。この発振回路の周期は，V_A が [BLANK:2] から再び [BLANK:3] まで変化するために要する時間と [BLANK:4] の和から，[BLANK:5] [s]と求まる。"
+        ],
+        "blankLabels": [
+          "(1)",
+          "(2)",
+          "(3)",
+          "(4)",
+          "(5)"
+        ],
+        "sharedChoiceHeading": "〔問３の解答群〕",
+        "sharedChoices": [
+          {
+            "label": "イ",
+            "formula": "0"
+          },
+          {
+            "label": "ロ",
+            "formula": "\\frac{CR_2R_3}{R_1}\\frac{(V_H+V_L)^2}{V_HV_L}"
+          },
+          {
+            "label": "ハ",
+            "formula": "\\frac{R_1}{R_2}V_L"
+          },
+          {
+            "label": "ニ",
+            "formula": "\\frac{CR_1R_3}{R_2V_L}(V_H-V_L)"
+          },
+          {
+            "label": "ホ",
+            "formula": "-\\frac{R_1}{R_2}V_L"
+          },
+          {
+            "label": "ヘ",
+            "formula": "\\frac{R_2}{R_1+R_2}V_A+\\frac{R_1}{R_1+R_2}V_B"
+          },
+          {
+            "label": "ト",
+            "formula": "\\frac{R_1}{R_2}V_H"
+          },
+          {
+            "label": "チ",
+            "formula": "\\frac{CR_2R_3}{R_1V_L}(V_H+V_L)"
+          },
+          {
+            "label": "リ",
+            "formula": "-\\frac{R_2}{R_1}V_H"
+          },
+          {
+            "label": "ヌ",
+            "formula": "\\frac{CR_1R_3}{R_2}\\frac{(V_H+V_L)^2}{V_HV_L}"
+          },
+          {
+            "label": "ル",
+            "formula": "\\frac{R_2}{R_1}V_L"
+          },
+          {
+            "label": "ヲ",
+            "formula": "\\frac{CR_1R_3}{R_2V_L}(V_H+V_L)"
+          },
+          {
+            "label": "ワ",
+            "formula": "\\frac{CR_1R_3}{R_2}\\frac{(V_H-V_L)^2}{V_HV_L}"
+          },
+          {
+            "label": "カ",
+            "formula": "-\\frac{R_1}{R_2}V_H"
+          },
+          {
+            "label": "ヨ",
+            "formula": "\\frac{R_1}{R_1+R_2}V_A+\\frac{R_2}{R_1+R_2}V_B"
+          }
+        ],
+        "figures": [
+          {
+            "label": "図１",
+            "sourcePhysicalPage": 9,
+            "visualConditions": [
+              "節点Ａの電圧V_A，節点Ｂの電圧V_Bはそれぞれ接地を基準に上向き矢印で示される。",
+              "下側破線枠はヒステリシスコンパレータ。演算増幅器１の反転入力は接地，非反転入力V_{+,1}は節点ＡからR_1を経た節点，その節点はR_2を通じて節点Ｂに接続。演算増幅器１の出力は節点Ｂ。",
+              "上側破線枠は積分回路。節点ＢからR_3を通じて演算増幅器２の反転入力に接続。非反転入力は接地。演算増幅器２の出力は節点Ａ。Cは節点Ａと演算増幅器２の反転入力を結ぶ帰還コンデンサ。",
+              "演算増幅器１/２は∞表示，三角の向きは１が右向き，２が左向き。破線枠以外に追加の素子値や電源値の表示はない。"
+            ]
+          },
+          {
+            "label": "図２",
+            "sourcePhysicalPage": 9,
+            "visualConditions": [
+              "縦軸V_o，横軸V_+-V_-。原点0を表示。",
+              "V_+-V_-が正の側でV_o=V_Hの水平線，負の側でV_o=-V_Lの水平線。V_+-V_-=0の位置に両水平線を結ぶ縦の線。",
+              "図に正のV_L/V_Hの数値・同値条件は表示されていない。特性のその他の部分は本文の理想条件に従う。"
+            ]
+          }
+        ],
+        "captures": [
+          {
+            "sourcePhysicalPage": 8,
+            "pageIndex": 7,
+            "file": "question-physical-8.png",
+            "sha256": "c04e4260711186a3fbebb10d3926f8796b253bdf246bfc44457ce0db4de869e6"
+          },
+          {
+            "sourcePhysicalPage": 9,
+            "pageIndex": 8,
+            "file": "question-physical-9.png",
+            "sha256": "bc8ccd1109f0463659cfbf93958904bec21e7bf900cca913567e636fb825f31e"
+          }
+        ],
+        "rightsEvidence": "../licensed-source-independent-rights-20261007T172331Z.json",
+        "officialAnswerStatus": "NOT_ACQUIRED_BEFORE_QUESTION_FREEZE",
+        "postDiffSourceVerification": {
+          "recordType": "post-diff-source-verified-correction-copy",
+          "verifiedAt": "2026-10-07T17:38:18.209345+00:00",
+          "parentFile": "transcription-frozen-v2.json",
+          "parentSha256": "81e15fe325c4b8c64f2bb85ea0cf0761893cdda26622de76b043389c3960acc4",
+          "changedSourceFields": [
+            "paragraphs[1]"
+          ],
+          "changedSourceFieldCount": 1,
+          "replacementCount": 1,
+          "replacement": {
+            "before": "減少する場合を考えると，V_A が [BLANK:3] となると，",
+            "after": "減少する場合を考える。V_A が [BLANK:3] となると，"
+          },
+          "erratumFile": "question-post-diff-erratum.json",
+          "erratumSha256": "a9b9ffb09cbb050bc48a851f904efe23d893dc95a98c88974f3372a779d50d3a",
+          "sourceCrop": {
+            "file": "question-text-detail.png",
+            "sourcePhysicalPage": 8,
+            "clipPdfCoordinates": [
+              75,
+              315,
+              520,
+              430
+            ],
+            "sha256": "56e09da6eb2478c91c177379bc704284d8d197eab48e8da1c1e320893bdbbe47"
+          },
+          "historicalBlindMetadata": "blindStateAtFreeze is preserved as the historical state at the original question freeze; it is not a new blind second-freeze assertion. This correction follows root comparison and official answer acquisition.",
+          "rootComparisonSeen": true,
+          "officialAnswerPreviouslyAcquired": true,
+          "officialAnswerReacquired": false,
+          "authorCandidateFullTextRead": false,
+          "authorExplanationRead": false
+        }
+      }
+    },
+    "question-post-diff-erratum.json": {
+      "pin": {
+        "path": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\licensed-source-independent-denken1-q3-20261007\\question-post-diff-erratum.json",
+        "sha256": "a9b9ffb09cbb050bc48a851f904efe23d893dc95a98c88974f3372a779d50d3a",
+        "bytes": 1338
+      },
+      "record": {
+        "recordType": "append-only-official-question-reinspection-erratum",
+        "agent": "licensed_source_independent",
+        "reason": "Root machine comparison identified a prose disagreement; independent visual reinspection confirms the frozen independent transcription contained one wording error.",
+        "frozenOriginalFile": "transcription-frozen-v2.json",
+        "frozenOriginalSha256": "81e15fe325c4b8c64f2bb85ea0cf0761893cdda26622de76b043389c3960acc4",
+        "sourcePhysicalPage": 8,
+        "sourcePrintedPage": 5,
+        "sourceSha256": "6a6a509a9cd2e9a36c79e90561345e0fc093389796ffd482833109057b0aa7f5",
+        "locator": "Paragraph starting まず，ヒステリシスコンパレータ; sentence beginning 同様に",
+        "frozenIncorrectPhrase": "減少する場合を考えると，V_A が [BLANK:3] となると，",
+        "officialCorrectPhrase": "減少する場合を考える。V_A が [BLANK:3] となると，",
+        "requiredCorrection": "Replace the frozen independent phrase 場合を考えると， with 場合を考える。 No formula or answer changes.",
+        "evidenceCapture": "question-text-detail.png",
+        "evidenceCaptureSha256": "56e09da6eb2478c91c177379bc704284d8d197eab48e8da1c1e320893bdbbe47",
+        "rawFreezeOverwritten": false,
+        "authorPacketRead": false,
+        "reviewStatus": "OFFICIAL_VISUAL_REINSPECTION_CONFIRMED; not a final publication approval"
+      }
+    },
+    "question-capture-manifest.json": {
+      "pin": {
+        "path": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\licensed-source-independent-denken1-q3-20261007\\question-capture-manifest.json",
+        "sha256": "623209891a89850a0819e4e3f884fd21ea22ecedaea5329f0bd7ef9334fd1ec1",
+        "bytes": 589
+      },
+      "record": {
+        "sourceUrl": "https://www.shiken.or.jp/chief/upload/20260830_ch_first_q01.pdf",
+        "sourceSha256": "6a6a509a9cd2e9a36c79e90561345e0fc093389796ffd482833109057b0aa7f5",
+        "captures": [
+          {
+            "pageIndex": 7,
+            "physicalPage": 8,
+            "captureFile": "question-physical-8.png",
+            "sha256": "c04e4260711186a3fbebb10d3926f8796b253bdf246bfc44457ce0db4de869e6"
+          },
+          {
+            "pageIndex": 8,
+            "physicalPage": 9,
+            "captureFile": "question-physical-9.png",
+            "sha256": "bc8ccd1109f0463659cfbf93958904bec21e7bf900cca913567e636fb825f31e"
+          }
+        ]
+      }
+    },
+    "answer-freeze.json": {
+      "pin": {
+        "path": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\licensed-source-independent-denken1-q3-20261007\\answer-freeze.json",
+        "sha256": "522973e81ad9973c0887e539c2b63ba9c88cdc505b7439f5db647ab215016d93",
+        "bytes": 845
+      },
+      "record": {
+        "recordType": "independent-official-answer-freeze",
+        "frozenAt": "2026-10-07T17:36:19.414365+00:00",
+        "file": "official-answer.json",
+        "sha256": "2af183101533985407d28466e90845b090d61ffaa7c2ea050ee16b166c324dad",
+        "answersKana": [
+          "ヘ",
+          "ハ",
+          "カ",
+          "ヲ",
+          "ヌ"
+        ],
+        "indices0Based": [
+          5,
+          2,
+          13,
+          11,
+          9
+        ],
+        "indices1Based": [
+          6,
+          3,
+          14,
+          12,
+          10
+        ],
+        "boundQuestionSha256": "81e15fe325c4b8c64f2bb85ea0cf0761893cdda26622de76b043389c3960acc4",
+        "sourceSha256": "3bc785220c48393abb9f0612d5966634a17e1fc57c11a892378cf0c7a325a77e",
+        "allKanaIndicesBoundToFrozenQuestion": true,
+        "authorRead": false,
+        "erratumFile": "question-post-diff-erratum.json",
+        "erratumSha256": "a9b9ffb09cbb050bc48a851f904efe23d893dc95a98c88974f3372a779d50d3a"
+      }
+    },
+    "official-answer.json": {
+      "pin": {
+        "path": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\licensed-source-independent-denken1-q3-20261007\\official-answer.json",
+        "sha256": "2af183101533985407d28466e90845b090d61ffaa7c2ea050ee16b166c324dad",
+        "bytes": 2524
+      },
+      "record": {
+        "recordType": "independent-official-answer-visual-transcription",
+        "agent": "licensed_source_independent",
+        "scope": {
+          "exam": "denken1",
+          "year": 2026,
+          "stage": "一次",
+          "subject": "理論",
+          "questionNumber": 3,
+          "blankCount": 5
+        },
+        "source": {
+          "url": "https://www.shiken.or.jp/chief/upload/20260830_ch_first_a01.pdf",
+          "sha256": "3bc785220c48393abb9f0612d5966634a17e1fc57c11a892378cf0c7a325a77e",
+          "physicalPage": 1,
+          "pageIndex": 0,
+          "title": "令和８年度 第一種電気主任技術者一次試験解答",
+          "locator": "Leftmost 理論 column, 問３, rows (1) through (5)",
+          "inspectionMethod": "Visual inspection of original official PDF 2x full-page and 4x target-row renders; hash matched root's frozen official answer source"
+        },
+        "acquisitionOrder": "After blind question freeze and explicit root machine-diff-completed notification; no author candidate, explanation, answer or test output read.",
+        "boundQuestionFile": "transcription-frozen-v2.json",
+        "boundQuestionSha256": "81e15fe325c4b8c64f2bb85ea0cf0761893cdda26622de76b043389c3960acc4",
+        "choiceIndexConvention": "Index follows original iroha row order: イ ロ ハ ニ ホ ヘ ト チ リ ヌ ル ヲ ワ カ ヨ. Both 0-based and 1-based indices supplied; official PDF itself supplies kana, not numeric choice indices.",
+        "answers": [
+          {
+            "blankNumber": 1,
+            "officialKana": "ヘ",
+            "choiceIndex0Based": 5,
+            "choiceIndex1Based": 6,
+            "points": 2
+          },
+          {
+            "blankNumber": 2,
+            "officialKana": "ハ",
+            "choiceIndex0Based": 2,
+            "choiceIndex1Based": 3,
+            "points": 2
+          },
+          {
+            "blankNumber": 3,
+            "officialKana": "カ",
+            "choiceIndex0Based": 13,
+            "choiceIndex1Based": 14,
+            "points": 2
+          },
+          {
+            "blankNumber": 4,
+            "officialKana": "ヲ",
+            "choiceIndex0Based": 11,
+            "choiceIndex1Based": 12,
+            "points": 2
+          },
+          {
+            "blankNumber": 5,
+            "officialKana": "ヌ",
+            "choiceIndex0Based": 9,
+            "choiceIndex1Based": 10,
+            "points": 2
+          }
+        ],
+        "totalPoints": 10,
+        "captures": [
+          {
+            "file": "answer-physical-1.png",
+            "physicalPage": 1,
+            "pageIndex": 0,
+            "sha256": "491cce14e01df47e0bd6f76243e463faed2af5625677ba6f5ef3620b09b30b1e"
+          },
+          {
+            "file": "answer-q3-detail.png",
+            "physicalPage": 1,
+            "pageIndex": 0,
+            "clipPdfCoordinates": [
+              55,
+              225,
+              165,
+              307
+            ],
+            "sha256": "c438a7e61cab1986b3225df8e3ea06545ae943530a50034c6aa399a994467d79"
+          }
+        ],
+        "blindState": {
+          "authorCandidateRead": false,
+          "authorTranscriptionRead": false,
+          "authorAnswerRead": false,
+          "authorExplanationRead": false,
+          "authorTestOutputRead": false
+        },
+        "status": "OFFICIAL_TARGET_ROWS_VISUALLY_VERIFIED; independent evidence, not final publication judgment"
+      }
+    }
+  },
+  "independentAnswerCapture": {
+    "path": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\licensed-source-independent-denken1-q3-20261007\\answer-q3-detail.png",
+    "sha256": "c438a7e61cab1986b3225df8e3ea06545ae943530a50034c6aa399a994467d79",
+    "bytes": 16203
+  },
+  "finalImages": [
+    {
+      "path": "C:\\wt\\denken1-theory-q03-20261008\\public\\images\\denken1\\20260830\\theory\\q03-figure1-original.png",
+      "sha256": "bde1519fc062e6c4712c7c2d55a9276129e68bdc10950b208f26f8576a2606e6",
+      "bytes": 40526
+    },
+    {
+      "path": "C:\\wt\\denken1-theory-q03-20261008\\public\\images\\denken1\\20260830\\theory\\q03-figure2-original.png",
+      "sha256": "7672f8232e0205f82a6dc80f69bc7b1f4602bb98dd0b5777c982f11b2d7263f0",
+      "bytes": 9105
+    }
+  ],
+  "actualRightsFreshCapture": {
+    "path": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\qualification-expansion-20261007\\approved35\\construction\\denken1-q03-next\\faq277-20261007.html",
+    "sha256": "d599a12c16a952059849eb99e2f5ce12fb2ade45c2694bdb55208682baf03b1e",
+    "bytes": 23624
+  },
+  "existingIndependentAstraRightsReceipt": {
+    "path": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\qualification-expansion-20261007\\approved35\\astra\\EEC-FAQ277-RIGHTS-INTERPRETATION.json",
+    "sha256": "efecdf83bc14c641bfb14325b6f151dcff4a353844207d923a258f07ff87ac1c",
+    "bytes": 2030
+  },
+  "thirdPartyMarkAbsenceIsNotThirdPartyRightsGuarantee": true,
+  "noticeRequested": true,
+  "noticeSentReceipt": null,
+  "newOpusRequirementInvented": false,
+  "meaningfulCaseCount": 5,
+  "old20Preservation": {
+    "baseCommit": "464db752369400e3f64b861f28520543051ceeeb",
+    "worktree": "C:\\wt\\denken1-theory-q03-20261008",
+    "preservedDataSha256": {
+      "launch.json": "cfde0172bcad28dd371acc495b413b87e126d6448284961a62f4b262da64202e",
+      "theory-aq02.json": "a38a116d0ba3a187a13250fd33e54f9abe8889dfe96df367d5bc505f1f19c8b6",
+      "build-launch.py": "2189be90eb3382c58935c9146a06d3c83297537793b2e80f110d02e20eda96dc"
+    },
+    "publicTotalBefore": {
+      "practiceBlanks": 20,
+      "originalQuestions": 4
+    },
+    "localCandidateTotal": {
+      "practiceBlanks": 25,
+      "originalQuestions": 5
+    },
+    "fullTwoSittingCompletion": false,
+    "delete": 0,
+    "push": 0,
+    "merge": 0
+  },
+  "fullLatestTwoSittingsCompleted": false,
+  "independentAstra75AndFiguresReview": "PENDING",
+  "publicAllowed": false,
+  "delete": 0,
+  "merge": 0
+}

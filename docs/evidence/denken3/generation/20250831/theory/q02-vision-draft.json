@@ -1,0 +1,94 @@
+{
+  "questionNumber": 2,
+  "sharedContext": null,
+  "units": [
+    {
+      "part": null,
+      "question": "真空中に Q [C] の電荷をもつ半径 r [m] の球状導体がある。ここで，真空の空間を比誘電率 2 の絶縁体の液体で満たしたとすると，静電気に関する記述として，正しいものを次の(1)〜(5)のうちから一つ選べ。ただし，無限遠点の電位を零電位とする。",
+      "choices": {
+        "1": "球状導体表面の電位は，液体を満たす前の 2 倍になった。",
+        "2": "球状導体表面の電界の強さは，液体を満たす前の 2 倍になった。",
+        "3": "球状導体表面の電束密度は，液体を満たす前の 2 倍になった。",
+        "4": "球状導体から出る電気力線の本数は，液体を満たす前の 2 倍になった。",
+        "5": "球状導体の静電容量は，液体を満たす前の 2 倍になった。"
+      },
+      "officialAnswer": "5",
+      "explanation": "球状導体は孤立しているので，液体を満たしても電荷 Q [C] は変わらない。周囲の誘電率を ε = ε₀ε_r（ε_r = 2）とすると，球状導体表面およびその外側の各量は次のとおり。\n\n・電束密度：ガウスの定理より D = Q / (4πr²)。誘電率に依存しないので変化しない。\n・電界の強さ：E = D / ε = Q / (4πε₀ε_r r²)。ε_r = 2 で 1/2 倍になる。\n・電位：V = Q / (4πε₀ε_r r)。1/2 倍になる。\n・電気力線の本数：N = Q / ε = Q / (ε₀ε_r)。1/2 倍になる。\n・静電容量：C = Q / V = 4πε₀ε_r r。電荷 Q にはよらず，半径 r と周囲の誘電率で決まる。半径 r は変わらないので，誘電率に比例して 2 倍になる。\n\nしたがって正しいのは(5)である。",
+      "choiceExplanations": {
+        "1": "誤り。表面電位は V = Q / (4πε₀ε_r r) で，ε_r が 1 から 2 になると 1/2 倍になる。2 倍ではない。",
+        "2": "誤り。表面の電界の強さは E = Q / (4πε₀ε_r r²) で，ε_r が 1 から 2 になると 1/2 倍になる。2 倍ではない。",
+        "3": "誤り。表面の電束密度は D = Q / (4πr²) で誘電率に依存しないため，変化しない（1 倍）。",
+        "4": "誤り。電気力線の本数は Q / ε = Q / (ε₀ε_r) で，1/2 倍になる。なお，誘電率に依存しない電束の本数（Q 本）とは区別すること。",
+        "5": "正しい。球状導体の静電容量は C = 4πε₀ε_r r で，半径 r が同じなら誘電率に比例するため，ε_r = 2 で液体を満たす前の 2 倍になる。"
+      },
+      "figureDescription": null,
+      "officialReferenceUrls": [],
+      "uncertainty": "なし",
+      "needsReview": true,
+      "sourceQuestionPdfUrl": "https://www.shiken.or.jp/chief/upload/20250831_ch_third_q01.pdf",
+      "sourceAnswerPdfUrl": "https://www.shiken.or.jp/chief/upload/20250831_ch_third_a01.pdf",
+      "reviewedFromPage": [
+        5
+      ]
+    }
+  ],
+  "draftModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 1807,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 9309,
+      "webSearchRequests": 0,
+      "costUSD": 0.1108758,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 629,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "1bdfab2a58f592d10866fb5acdd54ad0d35270713882272cdb7e20fdedf03901",
+  "inputRequestSha256": "d76a44971880e2f765ddef9c156d3d8eb7f32652a19fe69d933df244bcc0ce8c",
+  "sourceQuestionPdfSha256": "11a75ffd5dd2b5309ad75370bb963c4fda9e12a812174cfa2c2237383c3a964d",
+  "sourceAnswerPdfSha256": "76fd3715ed487d19a56b387fb402de20ee09474e9fa55b0413f9037b96af06c9",
+  "sourcePageImageSha256": {
+    "data/raw_pdfs/denken3/review/20250831/theory/p05.png": "c466e827967c8856d73d749c5ccb74156588528cde33984eb9a5a9601363a4e4"
+  },
+  "revisionHistory": [
+    {
+      "version": 1,
+      "model": "claude-opus-5-5",
+      "resolvedModel": "claude-opus-5-5",
+      "modelUsage": {
+        "claude-opus-5-5": {
+          "inputTokens": 2,
+          "outputTokens": 1704,
+          "cacheReadInputTokens": 1279,
+          "cacheCreationInputTokens": 10766,
+          "webSearchRequests": 0,
+          "costUSD": 0.12047179999999999,
+          "contextWindow": 1000000,
+          "maxOutputTokens": 128000,
+          "thinkingTokens": 597,
+          "canonicalModel": "claude-opus-5-5",
+          "provider": "firstParty",
+          "costBasis": "list"
+        }
+      },
+      "rawResponseSha256": "ca426e205b6325913af1cd8cc47780bd3955300cdda84f1bac72a1734ceb0c00",
+      "inputRequestSha256": "a80eb03839661f6e15b712cedec615f8ba5a6cfb2e41e81b3c52bcce6baa813e",
+      "previousDraftSha256": "c3ba1859bb4d0116c6d025d985928c38a4eaefd870d6c66e7d6ba00bb3dd6195",
+      "previousDraft": "data/raw_pdfs/denken3/review/20250831/theory/archive/q02-vision-draft-v1.json",
+      "answeredReviewSha256": "101dd2688b5c567bac6d54ae6f031c7449671eaa829e6838e9361b42b85a07e1",
+      "answeredReview": "data/raw_pdfs/denken3/review/20250831/theory/archive/q02-opus-review-v1.json",
+      "answeredStrictReceipt": null,
+      "answeredStrictReceiptSha256": null,
+      "figureSha256": {},
+      "referenceHashes": {},
+      "operatorNote": ""
+    }
+  ]
+}

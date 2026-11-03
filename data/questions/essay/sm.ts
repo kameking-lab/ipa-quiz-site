@@ -72,10 +72,10 @@ SLA / SLO に基づいて目標可用性を設定し、システム構成、運�
         ],
       },
     ],
-    officialReview: `SLA／SLO の妥当性、可用性確保策の具体性、障害対応プロセスの体系性が評価される。
+    editorialReview: `SLA／SLO の妥当性、可用性確保策の具体性、障害対応プロセスの体系性が評価される。
 机上のフレームワーク列挙ではなく、実際のサービス特性に応じた可用性設計を論述する必要がある。`,
     pdfUrl: "https://www.ipa.go.jp/shiken/mondai-kaiotu/2024r06.html",
-    license: "IPA-public",
+    license: "original",
   },
   {
     id: "sm-2024a-pm2-q2",
@@ -147,9 +147,9 @@ SLA / SLO に基づいて目標可用性を設定し、システム構成、運�
         ],
       },
     ],
-    officialReview: `初動対応の迅速性、関係者連絡の網羅性、根本原因分析の論理性、再発防止策の妥当性が総合的に評価される。
+    editorialReview: `初動対応の迅速性、関係者連絡の網羅性、根本原因分析の論理性、再発防止策の妥当性が総合的に評価される。
 個人技に頼った対応ではなく、組織的な仕組みで再発を防ぐ視点が求められる。`,
     pdfUrl: "https://www.ipa.go.jp/shiken/mondai-kaiotu/2024r06.html",
-    license: "IPA-public",
+    license: "original",
   },
 ];

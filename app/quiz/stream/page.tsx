@@ -1,24 +1,34 @@
+import { defaultPracticeSession, parsePracticeSession, quizBackHref, PRACTICE_SESSIONS } from "@/lib/questions/practice-session";
+import { PracticeSessionTabs } from "@/components/quiz/PracticeSessionTabs";
 import type { Metadata } from "next";
 import type { ExamCode } from "@/lib/questions/types";
 import { getQuestionsForExam } from "@/lib/questions/get-questions";
 import { filterQuestions } from "@/lib/questions/filter";
 import { StreamQuizLoader } from "@/components/quiz/stream/StreamQuizLoader";
 import { QuizModeTabs } from "@/components/quiz/QuizModeTabs";
+import { EXAM_CONFIGS } from "@/lib/exam-config";
+import { streamAccess } from "@/lib/billing/stream-access";
+import Link from "next/link";
+import { practiceGateEnabled } from "@/lib/billing/practice-access";
+import { QuizClient } from "../QuizClient";
 
 export const metadata: Metadata = {
-  title: "ストリーム学習 — TikTok風連続UI",
+  title: "ストリーム学習 — 自分のペースで連続演習",
   description:
-    "縦スワイプで次々と問題を解く、TikTok風の連続学習モード。10問ごとにWordle風サマリでシェア。",
+    "問題を解き、解説を確認してから次へ進む連続学習モード。10問ごとに学習結果を振り返り、共有できます。",
   alternates: { canonical: "/quiz/stream" },
+  robots: { index: false, follow: true },
 };
 
-const VALID_EXAMS = new Set<string>(["ap","ip","sg","fe","sc","nw","db","st","sa","pm","es","sm","au"]);
+const VALID_EXAMS = new Set<string>(["kanteishi", "kaikeishi", "land-special1","riku-tech1","maritime4","aviation-comm","amateur1","maritime-special1","riku-tech2","amateur2","maritime-radar", "maritime3", "maritime2", "maritime1", "general3", "general2", "general1", "land-special2", "land-special3","riku-toku-kokunai","kai-toku2", "kai-toku3","koku-toku","ap","ip","sg","fe","sc","nw","db","st","sa","pm","es","sm","au","chosashi"]);
 const STREAM_POOL_SIZE = 60;
 
 interface SearchParams {
   exam?: string;
   topic?: string;
   category?: string;
+  session?: string;
+  returnTo?: string;
 }
 
 export default async function StreamQuizPage({
@@ -29,18 +39,37 @@ export default async function StreamQuizPage({
   const sp = await searchParams;
   const exam = (VALID_EXAMS.has(sp.exam ?? "") ? sp.exam : "ap") as ExamCode;
 
+  if (!(await streamAccess())) {
+    const trial = new URLSearchParams({ mode: "random", exam });
+    for (const key of ["session", "topic", "category", "returnTo"] as const) if (sp[key]) trial.set(key, sp[key]);
+    return <main className="mx-auto max-w-2xl space-y-4 p-6"><h1 className="text-2xl font-bold">連続演習の利用条件</h1>
+      <p>ストリーム学習には有効な利用権が必要です。無料試用は通常の演習から続けられます。</p>
+      <Link className="block underline" href={`/quiz?${trial}`}>同じ学習条件で無料試用を続ける</Link>
+      <Link className="block underline" href="/billing">料金・移行期間を確認</Link><Link className="block underline" href="/review">保存済み履歴の復習</Link></main>;
+  }
+
   const all = await getQuestionsForExam(exam);
+  const session = parsePracticeSession(sp.session) ?? defaultPracticeSession(exam);
+  const sessions = PRACTICE_SESSIONS.filter((s) => all.some((q) => q.session === s));
   const pool = filterQuestions(all, {
     mode: "random",
     exam,
+    session,
     topicTag: sp.topic,
     category: sp.category,
-  }).slice(0, STREAM_POOL_SIZE);
+  })
+    // ストリーム演習は1肢選択のUIのみ。「二つとも答えなさい」形式は /quiz と /q で解く。
+    .filter((q) => (q.requiredSelections ?? 1) === 1)
+    .slice(0, STREAM_POOL_SIZE);
 
   return (
     <>
+      <h1 className="sr-only">{EXAM_CONFIGS[exam].nameFull} ストリーム過去問演習</h1>
       <QuizModeTabs active="stream" exam={exam} />
-      <StreamQuizLoader pool={pool} />
+      <PracticeSessionTabs sessions={[...sessions]} selected={session} />
+      {practiceGateEnabled()
+        ? <QuizClient billingGateEnabled poolIds={pool.map(q => q.id)} mode="random" exam={exam} backHref={quizBackHref({ exam, returnTo: sp.returnTo })} />
+        : <StreamQuizLoader pool={pool} backHref={quizBackHref({ exam, returnTo: sp.returnTo })} />}
     </>
   );
 }

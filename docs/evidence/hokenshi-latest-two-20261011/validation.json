@@ -1,0 +1,73 @@
+{
+  "checkedAtUtc": "2026-10-11T02:22:38.059919+00:00",
+  "baseMain": "52953d4e66389b492e13f5d9040fffbb581755a1",
+  "status": "PASS_WITH_ENVIRONMENT_NOTE",
+  "commands": [
+    {
+      "command": "pnpm validate:questions --exam=hokenshi",
+      "exitCode": 0,
+      "log": "validate-questions.log",
+      "logSha256": "bd0cc4d52c85380259fde57536fe0b0c0d58b35ad6fe11d2138feb4bef3355ab",
+      "questions": 202,
+      "ok": 202,
+      "fail": 0,
+      "warnings": 0
+    },
+    {
+      "command": "pnpm typecheck",
+      "exitCode": 0,
+      "log": "typecheck.log",
+      "logSha256": "448d2f511f9a6980639f31fffec538c1c862354e53b81f687beb0cdcabe084e6"
+    },
+    {
+      "command": "pnpm lint",
+      "exitCode": 0,
+      "log": "lint.log",
+      "logSha256": "65e217cba615bf63f1318e6b916f8f09cb52302d4c88c29723b3e14742989856",
+      "existingWarnings": 1,
+      "warningFile": "reports/civil2-2026-completion-20260926/parse-fenced-results.mjs"
+    },
+    {
+      "command": "pnpm exec vitest run __tests__/questions/hokenshi-latest-two.test.tsx __tests__/questions/medical44-prepublication.test.ts --maxWorkers=2",
+      "exitCode": 0,
+      "log": "test-focused.log",
+      "logSha256": "49413bf23a311e3f615530d9d6d4299c1c3b75305d451e89b3b0343e87d65e32",
+      "testFiles": 2,
+      "tests": 9
+    },
+    {
+      "command": "pnpm run test --maxWorkers=2",
+      "exitCode": 0,
+      "log": "test-all.log",
+      "logSha256": "3f1d369026aeb9fbdc92a5626064d7a18adaad4e50562661e85a81da8fe370bd",
+      "testFiles": 516,
+      "tests": 4771
+    },
+    {
+      "command": "pnpm build",
+      "exitCode": 1,
+      "log": "build.log",
+      "logSha256": "c42e7e3796556f55b48fc2b2e6ab264dcbba4dfde8659462ddb9f87c0a01c85e",
+      "environmentLimitation": "Turbopack rejects the pre-existing shared dependency junction outside the worktree root"
+    },
+    {
+      "command": "pnpm run build --webpack",
+      "exitCode": 0,
+      "log": "build-webpack.log",
+      "logSha256": "686328de47ec1ce8889aeca08a836a44be17d6fe1c2585675c4df1ed05865f56",
+      "bundler": "Next.js standard webpack mode",
+      "existingWarnings": [
+        "middleware convention",
+        "Sentry/OpenTelemetry dynamic dependency",
+        "Recharts dimensions during static rendering"
+      ]
+    }
+  ],
+  "additionalChecks": {
+    "gitDiffCheck": "PASS",
+    "numericIndependentArithmetic": "PASS",
+    "existing16Unchanged": "PASS",
+    "excludedExistingPrivate18": "PASS"
+  },
+  "productionDeploymentVerified": false
+}

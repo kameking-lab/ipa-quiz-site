@@ -1,0 +1,190 @@
+{
+  "questionNumber": 1,
+  "sharedContext": null,
+  "units": [
+    {
+      "part": null,
+      "question": "水力発電所の理論水力 P は位置エネルギーの式から P=ρgQH と表される。ここで H[m]は有効落差，Q[m³/s]は流量，g は重力加速度=9.8 m/s²，ρは水の密度=1 000 kg/m³ である。以下に理論水力 P の単位を検証することとする。なお，Pa は「パスカル」，N は「ニュートン」，W は「ワット」，J は「ジュール」である。\n\nP=ρgQH の単位はρ，g，Q，H の単位の積であるから，kg/m³·m/s²·m³/s·m となる。これを変形すると，（ア）·m/s となるが，（ア）は力の単位（イ）と等しい。すなわち P=ρgQH の単位は（イ）·m/s となる。ここで（イ）·m は仕事（エネルギー）の単位である（ウ）と等しいことから P=ρgQH の単位は（ウ）/s と表せ，これは仕事率（動力）の単位である（エ）と等しい。ゆえに，理論水力 P=ρgQH の単位は（エ）となるが，重力加速度 g=9.8 m/s² と水の密度ρ=1 000 kg/m³ の数値 9.8 と 1 000 を考慮すると P=9.8QH［（オ）］と表せる。\n\n上記の記述中の空白箇所（ア）～（オ）に当てはまる組合せとして，正しいものを次の(1)～(5)のうちから一つ選べ。",
+      "choices": {
+        "1": "（ア）kg·m　（イ）Pa　（ウ）W　（エ）J　（オ）kJ",
+        "2": "（ア）kg·m/s²　（イ）N　（ウ）J　（エ）W　（オ）kW",
+        "3": "（ア）kg·m/s²　（イ）Pa　（ウ）J　（エ）W　（オ）kW",
+        "4": "（ア）kg·m　（イ）N　（ウ）J　（エ）W　（オ）kW",
+        "5": "（ア）kg·m/s²　（イ）N　（ウ）W　（エ）J　（オ）kJ"
+      },
+      "officialAnswer": "2",
+      "explanation": "各量の単位を掛け合わせて整理する。\n\n(kg/m³)·(m/s²)·(m³/s)·(m) = kg·m^(−3+1+3+1)·s^(−2−1) = kg·m²/s³\n\nこれを（ア）·m/s の形に分けると kg·m²/s³ = (kg·m/s²)·(m/s) なので，（ア）= kg·m/s²。\nニュートンの運動方程式 F=ma より，kg·m/s² は力の単位 N に等しい → （イ）= N。\n力×距離 N·m は仕事（エネルギー）の単位 J に等しい → （ウ）= J。\n単位時間当たりの仕事 J/s は仕事率（動力）の単位 W に等しい → （エ）= W。\n\n数値を代入すると ρg = 1 000 × 9.8 = 9 800 なので，\nP = 9 800·QH [W] = 9.8·QH [kW] → （オ）= kW。\n\nよって正しい組合せは (2) である。",
+      "choiceExplanations": {
+        "1": "誤り。（ア）kg·m を用いると kg·m·m/s = kg·m²/s となり，求めた kg·m²/s³ と一致しない。（イ）Pa は圧力の単位（N/m²）で力の単位ではない。（ウ）W は仕事率の単位で仕事の単位ではなく，（エ）J は仕事の単位で仕事率の単位ではない。（オ）kJ はエネルギーの単位で，P=9.8QH の単位としては kW が正しい。",
+        "2": "正しい。（ア）kg·m/s² を用いると (kg·m/s²)·(m/s) = kg·m²/s³ となり単位積と一致する。kg·m/s² は力の単位 N（イ），N·m は仕事の単位 J（ウ），J/s は仕事率の単位 W（エ）に等しく，9 800QH [W] = 9.8QH [kW] より（オ）は kW となる。",
+        "3": "誤り。（イ）Pa は圧力の単位（1 Pa = 1 N/m²）であり，力の単位ではない。力の単位 kg·m/s² に等しいのは N である。その他の（ア）（ウ）（エ）（オ）は正しい。",
+        "4": "誤り。（ア）kg·m を用いると kg·m·m/s = kg·m²/s となり，kg·m²/s³ と一致しない。また kg·m は力の単位 N と等しくない。（イ）～（オ）は正しい。",
+        "5": "誤り。（ア）（イ）は正しいが，（ウ）と（エ）が入れ替わっている。N·m に等しい仕事の単位は J，J/s に等しい仕事率の単位は W である。また（オ）kJ はエネルギーの単位であり，9 800QH [W] = 9.8QH [kW] となるので kW が正しい。"
+      },
+      "figureDescription": "回路図などの図はない。選択肢は，列見出し（ア）（イ）（ウ）（エ）（オ），行見出し(1)～(5)からなる5行×5列の表で示されており，その全内容を choices に記載している。",
+      "officialReferenceUrls": [],
+      "uncertainty": "なし",
+      "needsReview": true,
+      "sourceQuestionPdfUrl": "https://www.shiken.or.jp/chief/upload/20250831_ch_third_q02.pdf",
+      "sourceAnswerPdfUrl": "https://www.shiken.or.jp/chief/upload/20250831_ch_third_a01.pdf",
+      "reviewedFromPage": [
+        4
+      ]
+    }
+  ],
+  "draftModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 3279,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 9309,
+      "webSearchRequests": 0,
+      "costUSD": 0.1403158,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 1376,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "8191209c5cad0d128050168046efc4f8451146bbe88dabac53e2e4c9c338e01a",
+  "inputRequestSha256": "301b6accf5d14b20da63fa2e5598d341143bf822065aeac338aa53c45b3ab979",
+  "sourceQuestionPdfSha256": "567aac1df6dc0c0950d04e90a1ad03231427c518eede92559effe01e2b97a2c9",
+  "sourceAnswerPdfSha256": "76fd3715ed487d19a56b387fb402de20ee09474e9fa55b0413f9037b96af06c9",
+  "sourcePageImageSha256": {
+    "data/raw_pdfs/denken3/review/20250831/power/p04.png": "72bc4af39cf6dc628296f245bfd4ca4b925ff68a272c2831603070a87c95354b"
+  },
+  "revisionHistory": [
+    {
+      "version": 1,
+      "model": "claude-opus-5-5",
+      "resolvedModel": "claude-opus-5-5",
+      "modelUsage": {
+        "claude-opus-5-5": {
+          "inputTokens": 2,
+          "outputTokens": 3171,
+          "cacheReadInputTokens": 1279,
+          "cacheCreationInputTokens": 12760,
+          "webSearchRequests": 0,
+          "costUSD": 0.16576380000000002,
+          "contextWindow": 1000000,
+          "maxOutputTokens": 128000,
+          "thinkingTokens": 1311,
+          "canonicalModel": "claude-opus-5-5",
+          "provider": "firstParty",
+          "costBasis": "list"
+        }
+      },
+      "rawResponseSha256": "14f77d43d112792db70b5bd381158df98c982c67f4d066cc9cffe59d0ba53348",
+      "inputRequestSha256": "0115dfd5d6958c41a8a6b1f62348e329cf4bb0029a25f014f16f40a6777f5998",
+      "previousDraftSha256": "68a60d2527854bff40f7c36145a903e238004ab7c5e7dd62b9e7d511a8ddf3a2",
+      "previousDraft": "data/raw_pdfs/denken3/review/20250831/power/archive/q01-vision-draft-v1.json",
+      "answeredReviewSha256": "bbd89b88cb6ab2a8aa57166b8d4b877f8c795d4e66891c9048f2b36fd9568070",
+      "answeredReview": "data/raw_pdfs/denken3/review/20250831/power/archive/q01-opus-review-v1.json",
+      "answeredStrictReceipt": "docs/evidence/denken3/strict/20250831-power-s1-q01-opus.json",
+      "answeredStrictReceiptSha256": "77dca2b089ab2e1c3597f10fcce6d790256fef78c4a93dac2855ca7d65389b9b",
+      "figureSha256": {},
+      "referenceHashes": {},
+      "operatorNote": ""
+    },
+    {
+      "version": 2,
+      "model": "claude-opus-5-5",
+      "resolvedModel": "claude-opus-5-5",
+      "modelUsage": {
+        "claude-opus-5-5": {
+          "inputTokens": 2,
+          "outputTokens": 3339,
+          "cacheReadInputTokens": 1279,
+          "cacheCreationInputTokens": 12761,
+          "webSearchRequests": 0,
+          "costUSD": 0.1691318,
+          "contextWindow": 1000000,
+          "maxOutputTokens": 128000,
+          "thinkingTokens": 1427,
+          "canonicalModel": "claude-opus-5-5",
+          "provider": "firstParty",
+          "costBasis": "list"
+        }
+      },
+      "rawResponseSha256": "b1163aee527bc93ca19df17d1581a6fdf68ce8b8cb6d686b86b5372b7dc63b32",
+      "inputRequestSha256": "97a90678370eeb0d5b406b3da5334ef639a5da69d05830a24aecbcfb3f4742f5",
+      "previousDraftSha256": "3be58cc3aecf4c1f833152b45706f8b6cb277c1056958e5fec305fd130d08381",
+      "previousDraft": "data/raw_pdfs/denken3/review/20250831/power/archive/q01-vision-draft-v2.json",
+      "answeredReviewSha256": "2ba506d435921c3cef8f29b208e7b9118432b9654d0e7f75c858fb1a4d59f36e",
+      "answeredReview": "data/raw_pdfs/denken3/review/20250831/power/archive/q01-opus-review-v2.json",
+      "answeredStrictReceipt": "docs/evidence/denken3/strict/20250831-power-s2-q01-opus.json",
+      "answeredStrictReceiptSha256": "24fe6cd9118b416040ca7c1e8974e69f31f54b8a1f122a86146582e17e19fb20",
+      "figureSha256": {},
+      "referenceHashes": {},
+      "operatorNote": ""
+    },
+    {
+      "version": 3,
+      "model": "claude-opus-5-5",
+      "resolvedModel": "claude-opus-5-5",
+      "modelUsage": {
+        "claude-opus-5-5": {
+          "inputTokens": 2,
+          "outputTokens": 3299,
+          "cacheReadInputTokens": 1279,
+          "cacheCreationInputTokens": 12679,
+          "webSearchRequests": 0,
+          "costUSD": 0.16767579999999999,
+          "contextWindow": 1000000,
+          "maxOutputTokens": 128000,
+          "thinkingTokens": 1407,
+          "canonicalModel": "claude-opus-5-5",
+          "provider": "firstParty",
+          "costBasis": "list"
+        }
+      },
+      "rawResponseSha256": "863b2fc59e690c4d054470c273e7b88658523cd91b86e2919eb41893fbcbd5b8",
+      "inputRequestSha256": "509e8489c86bc88d625101b2493dc3cf2328594ed2b839be4c34aad1247e340a",
+      "previousDraftSha256": "cdaa4795bd4bc0ea12286f4a2db015c4a627f9988dce705d05cb6104658f6427",
+      "previousDraft": "data/raw_pdfs/denken3/review/20250831/power/archive/q01-vision-draft-v3.json",
+      "answeredReviewSha256": "73cfcea5f845ba4063afd4d88de41ce7c04a9081e54ad11ca6109d5c8e2cc44f",
+      "answeredReview": "data/raw_pdfs/denken3/review/20250831/power/archive/q01-opus-review-v3.json",
+      "answeredStrictReceipt": "docs/evidence/denken3/strict/20250831-power-s3-q01-opus.json",
+      "answeredStrictReceiptSha256": "b3b5ae041f83da08be118b933c58f17547f1ce34c3bf64847996cacff1dbf429",
+      "figureSha256": {},
+      "referenceHashes": {},
+      "operatorNote": ""
+    },
+    {
+      "version": 4,
+      "model": "claude-opus-5-5",
+      "resolvedModel": "claude-opus-5-5",
+      "modelUsage": {
+        "claude-opus-5-5": {
+          "inputTokens": 2,
+          "outputTokens": 3073,
+          "cacheReadInputTokens": 1279,
+          "cacheCreationInputTokens": 12762,
+          "webSearchRequests": 0,
+          "costUSD": 0.16381980000000002,
+          "contextWindow": 1000000,
+          "maxOutputTokens": 128000,
+          "thinkingTokens": 1167,
+          "canonicalModel": "claude-opus-5-5",
+          "provider": "firstParty",
+          "costBasis": "list"
+        }
+      },
+      "rawResponseSha256": "dbb14846c1a01ae48e88de6b7f630db2c64e5901f86f962838595d7db4eb91d2",
+      "inputRequestSha256": "ec53613bbb1b070fceaea8f2a93dc2b342b5dd9a3750a8ee1f4b0749e0f1743d",
+      "previousDraftSha256": "3f8c6c21b415cade4acae7a36fa7e89183c2e599be60da79c3e4fee28bfcfc1d",
+      "previousDraft": "data/raw_pdfs/denken3/review/20250831/power/archive/q01-vision-draft-v4.json",
+      "answeredReviewSha256": "9a7572e1f0d03b6d51b2b4bcc9dbe5440008c5aece1856572474b040a558a447",
+      "answeredReview": "data/raw_pdfs/denken3/review/20250831/power/archive/q01-opus-review-v4.json",
+      "answeredStrictReceipt": "docs/evidence/denken3/strict/20250831-power-s11-q01-opus.json",
+      "answeredStrictReceiptSha256": "e6fefe2a5c08b8a98267c1a30ad3f1be4c42433d954f60c681003e4eac1bd360",
+      "figureSha256": {},
+      "referenceHashes": {},
+      "operatorNote": ""
+    }
+  ]
+}

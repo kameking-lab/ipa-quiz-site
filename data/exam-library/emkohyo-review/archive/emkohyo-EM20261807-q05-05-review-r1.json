@@ -1,0 +1,58 @@
+{
+  "reviewModel": "claude-opus-5-5",
+  "requestedModel": "claude-opus-5-5",
+  "canonicalModel": "claude-opus-5-5",
+  "provider": "firstParty",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 2243,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 14031,
+      "webSearchRequests": 0,
+      "costUSD": 0.1573718,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 1582,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponsePath": "data/exam-library/emkohyo-review/emkohyo-EM20261807-q05-05-raw-response.txt",
+  "rawResponseSha256": "e20579d3e9149a8e7a71d3888e03e8b1ff45d0a2f284004938444e6ce4a14390",
+  "paperId": "emkohyo-EM20261807",
+  "ids": [
+    "emkohyo-EM20261807-q5"
+  ],
+  "figureSha256": {
+    "emkohyo-EM20261807-q5": {}
+  },
+  "officialRowImageSha256": {
+    "emkohyo-EM20261807-q5": {
+      "/exam-library/emkohyo-EM20261807/q5-p4-0.webp": "c05921123e5d5184832e10bbaa170b440b4315e8bf01db97db951d129856c47a"
+    }
+  },
+  "officialPageImageSha256": {},
+  "governmentSourceImageSha256": {},
+  "candidateSha256": {
+    "emkohyo-EM20261807-q5": "e33b0e595e8134e0a128474295d866c46cc0d013b85915eb0ce506e3c79c913a"
+  },
+  "sourcePackPath": "docs/evidence/emkohyo-choice-sources/emkohyo-EM20261807-q05-05.json",
+  "sourcePackSha256": "6f906885f6660a51d3be787ae95a6baa3cff7878423d01b22d717b75a1bb1f6a",
+  "assessment": {
+    "emkohyo-EM20261807-q5": {
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "reasonIssues": [],
+      "sourceIssues": [
+        "肢4の核心は「FPDの選択性は硫黄とりんであり、窒素ではない」という点だが、添付の政府資料はこれを直接述べていない。env.go.jp/content/900400286.pdf は、FPDで硫黄化合物を測定する手順を示すだけである。env.go.jp/content/900540410.pdf は、FPDにりん用干渉フィルターを付けて農薬を測定する手順を示すだけである。どちらもFPDの使用例にとどまり、FPDが窒素に選択性を持たないことは記載していない。",
+        "env.go.jp/content/900402504.pdf p.27 は「FTDは含窒素化合物と含りん化合物に高感度で選択的に応答する」と述べるが、ここで挙げられた検出器（FID・ECD・FTD・ELCD・PID）にFPDは含まれていない。このため「窒素選択性はFTDの特性であり、FPDのものではない」という対比は、資料からの推論にとどまり、直接の記載ではない。解説本文は「選択性を持つのは硫黄とりんである」と断定しているが、それを直接支える政府資料が添付されていない。"
+      ],
+      "needsExternalCheck": [
+        "FPD（炎光光度検出器）の選択対象が硫黄・りん（・すず）の化合物であり、窒素化合物には選択性がないことを明記した一次資料を追加すること。候補は、環境省の測定方法マニュアルでFPDの特徴を記した箇所、または JIS K 0114 ガスクロマトグラフィー通則の検出器の項。追加後、肢4の解説の出典をその資料に差し替えること。"
+      ]
+    }
+  }
+}

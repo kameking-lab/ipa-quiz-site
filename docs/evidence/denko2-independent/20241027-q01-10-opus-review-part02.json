@@ -1,0 +1,76 @@
+{
+  "inputHashes": {
+    "draftSha256": "59853e4f66fcf9404e1a901510655eeeb0a121a7c721ae09f3a75a1164d60aa2",
+    "rowSha256": {
+      "6": "bcc2bd9122b481937d934e4fb3c244669e85e73448323d8b119d07bbdf23bb24",
+      "7": "fbc7e8806ec02c53dd40aff859d7ae74a714ea0c89afe8b1bf8acab437387ddb",
+      "8": "4211b49adba44f74f0c3cbb8e29da36e736c96fe3ce540477eb88c8374bb1347",
+      "9": "2e19f593ad5851f2b9323f407e9c0d1d65d917cdef2af890b9bfe1688f0de304",
+      "10": "b1fef79f68688379ebd1e630b5a7748aca4241c8bf9de6d66e448becde8fd981"
+    },
+    "detailFigureSha256": {
+      "public/images/denko2/2024-second/q6-1.png": "02eb60075a06e17bde8dbdfad4c4389ccde91d0f91aa453d0b26780c9936a16c",
+      "public/images/denko2/2024-second/q7-1.png": "fb3254149af910da97ff86fcfad0fdb27b1025e93ccb55b2429e5abbde5e81e0",
+      "public/images/denko2/2024-second/q7-2.png": "947c9a81ab71a82c9f1f7e5efd47f47aad87607bc0ac88fe399e8d3c67d2fd4e",
+      "public/images/denko2/2024-second/q9-1.png": "80e651fcc96d8908ae2679898656ff168cc7817497e09da21c33d4dc52830e7e",
+      "public/images/denko2/2024-second/q10-1.png": "dc9cd34dfcf02fd15da6da2b2af8fbe0f992ca48ffd14f604c7016625ddd0ff8"
+    }
+  },
+  "reviewModel": "claude-opus-5-5",
+  "assessment": [
+    {
+      "number": 6,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "lawNeedsExternalCheck": []
+    },
+    {
+      "number": 7,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "lawNeedsExternalCheck": []
+    },
+    {
+      "number": 8,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "lawNeedsExternalCheck": [
+        "電技解釈第146条 表146-1: 600Vビニル絶縁電線(軟銅線)5.5mm²の許容電流が49Aであること（照合receipt未添付）",
+        "電流減少係数0.49が同一管内7〜15本に適用される値であること（ロの誤答由来の根拠。照合receipt未添付）",
+        "内線規程1340-1: 許容電流の小数点以下1位を7捨8入する規定（内線規程は民間規格で、officialReferenceUrlsの電技解釈PDFには含まれない）"
+      ]
+    },
+    {
+      "number": 9,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "lawNeedsExternalCheck": [
+        "電技解釈第149条第1項: 分岐点から過電流遮断器までの長さが8mを超える場合は幹線過電流遮断器定格電流の55%以上、3mを超え8m以下の場合は35%以上であること（照合receipt未添付）"
+      ]
+    },
+    {
+      "number": 10,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "lawNeedsExternalCheck": [
+        "電技解釈第149条 表149-3: 20A配線用遮断器の分岐回路は電線1.6mm以上・コンセント20A以下、30A配線用遮断器の分岐回路は電線2.6mm(5.5mm²)以上・コンセント20A以上30A以下であること（照合receipt未添付）",
+        "電技解釈第149条第1項: 分岐点から3m以下の箇所に分岐回路用の過電流遮断器を施設する規定（照合receipt未添付）"
+      ]
+    }
+  ]
+}

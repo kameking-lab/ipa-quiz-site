@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "receiptKind": "canonicalized-direct-review",
+  "paper": "20240526",
+  "reviewModel": "claude-opus-5-5",
+  "upstreamReviewReceipt": "docs/evidence/denko2-strict-20240526/finalpin-q15-16-17-18-24-opus.json",
+  "upstreamReviewSha256": "503cacf6807f77d4bcc5193f2845178a8670c8e7339159c04eda7c31bf6bfa90",
+  "candidateEquivalenceProof": "current per-question candidate hash equals a clean source-aware direct Opus input hash",
+  "inputHashes": {
+    "draftSha256": "86cf68b07c8663772a3bcc18879722150a1266323212f63f2e644c85c018b99e",
+    "rowSha256": {
+      "15": "911c8f3ec36ddf3a3990e1db6f124796bc6dd4a6d3ed311ea6125939b74ad047"
+    },
+    "detailFigureSha256": {},
+    "sharedFigureSha256": {},
+    "legalReceiptSha256": {}
+  },
+  "assessment": [
+    {
+      "number": 15,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "visualIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": "公式原図と公式正答（イ）を照合。問題文の否定語「誤っているもの」とイロハニ全肢の文言は原図と一致（読点「，」が「、」になっているだけ）。単一正答がイなので、ロ・ハ・ニが正しい組合せであるという候補の説明と矛盾しない。図表なし。"
+    }
+  ]
+}

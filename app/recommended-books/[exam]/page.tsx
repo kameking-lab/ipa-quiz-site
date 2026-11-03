@@ -7,9 +7,12 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { JsonLd } from "@/components/seo/JsonLd";
+import { TrackedBookLink } from "@/components/analytics/TrackedBookLink";
 import {
   RECOMMENDED_BOOKS,
   buildAmazonUrl,
+  getAmazonAssociateTag,
+  getAmazonLinkDisclosure,
   buildRakutenUrl,
   getDifficultyLabel,
   isAsinFilled,
@@ -143,7 +146,7 @@ export default async function RecommendedBooksExamPage({
         url: absUrl,
         itemListElement: books.map((book, index) => {
           const productUrl = isAsinFilled(book.asin)
-            ? buildAmazonUrl(book.asin)
+            ? buildAmazonUrl(book.asin, `/recommended-books/${exam}`)
             : `${absUrl}#${book.id}`;
           const product: Record<string, unknown> = {
             "@type": "Product",
@@ -248,7 +251,7 @@ export default async function RecommendedBooksExamPage({
         <h2 className="mb-3 text-lg font-bold">推薦書籍</h2>
         <div className="flex flex-col gap-4">
           {books.map((book) => (
-            <BookCard key={book.id} book={book} />
+            <BookCard key={book.id} book={book} exam={code} />
           ))}
         </div>
       </section>
@@ -258,6 +261,15 @@ export default async function RecommendedBooksExamPage({
         className="mb-10 rounded-2xl border border-zinc-200 bg-white p-4 shadow-sm dark:border-zinc-800 dark:bg-zinc-950"
       >
         <h2 className="mb-3 text-lg font-bold">書籍の使い分け</h2>
+        <p className="mb-3 text-xs leading-relaxed text-zinc-600 dark:text-zinc-400">
+          迷ったら難度で選べます。
+          <span className="font-semibold text-emerald-700 dark:text-emerald-400">入門</span>
+          ＝この分野を初めて学ぶ・過去問の正答率が5割未満、
+          <span className="font-semibold text-zinc-700 dark:text-zinc-300">中級</span>
+          ＝一読済みで過去問6〜7割は解ける、
+          <span className="font-semibold text-amber-700 dark:text-amber-400">上級</span>
+          ＝午後・論文など仕上げ段階が目安です。
+        </p>
         <div className="overflow-x-auto">
           <table className="w-full text-xs">
             <thead>
@@ -395,8 +407,8 @@ export default async function RecommendedBooksExamPage({
       <section className="mb-8 rounded-2xl border border-amber-200 bg-amber-50 p-4 text-xs leading-relaxed text-amber-900 dark:border-amber-900/50 dark:bg-amber-950/30 dark:text-amber-200">
         <p className="font-semibold">アフィリエイトに関する表示</p>
         <p className="mt-1">
-          本ページのリンクにはAmazon/楽天のアフィリエイトリンクが含まれます。
-          ご購入いただいた場合、当サービス運営費の一部として収益が発生します。
+          {getAmazonLinkDisclosure(`/recommended-books/${exam}`)}
+          楽天のアフィリエイトリンクを経由してご購入いただいた場合、運営費の一部として収益が発生することがあります。
           価格・在庫・最新版情報はリンク先の表示が最新です。
         </p>
       </section>
@@ -404,10 +416,10 @@ export default async function RecommendedBooksExamPage({
   );
 }
 
-function BookCard({ book }: { book: RecommendedBook }) {
+function BookCard({ book, exam }: { book: RecommendedBook; exam: ExamCode }) {
   const amazonReady = isAsinFilled(book.asin);
   const rakutenReady = isRakutenIdFilled(book.rakutenId);
-  const amazonUrl = amazonReady ? buildAmazonUrl(book.asin) : null;
+  const amazonUrl = amazonReady ? buildAmazonUrl(book.asin, `/recommended-books/${exam}`) : null;
   const rakutenUrl = rakutenReady ? buildRakutenUrl(book.rakutenId) : null;
 
   return (
@@ -449,31 +461,39 @@ function BookCard({ book }: { book: RecommendedBook }) {
         {(amazonUrl || rakutenUrl) ? (
           <div>
             <p className="mb-1.5 text-[10px] text-zinc-400 dark:text-zinc-500">
-              PR（アフィリエイトリンク）
+              {getAmazonAssociateTag(`/recommended-books/${exam}`) ? "PR（アフィリエイトリンク）" : rakutenUrl ? "購入先（楽天はPR）" : "購入先"}
             </p>
             <div className="flex flex-wrap gap-2">
               {amazonUrl && (
                 <Button asChild size="lg" variant="primary">
-                  <a
+                  <TrackedBookLink
                     href={amazonUrl}
+                    exam={exam}
+                    bookId={book.id}
+                    retailer="amazon"
+                    placement="recommended_books_page"
                     target="_blank"
-                    rel="noopener noreferrer sponsored"
+                    rel={getAmazonAssociateTag(`/recommended-books/${exam}`) ? "noopener noreferrer sponsored" : "noopener noreferrer"}
                   >
                     Amazonで見る
                     <ExternalLink className="h-3.5 w-3.5" />
-                  </a>
+                  </TrackedBookLink>
                 </Button>
               )}
               {rakutenUrl && (
                 <Button asChild size="lg" variant="outline">
-                  <a
+                  <TrackedBookLink
                     href={rakutenUrl}
+                    exam={exam}
+                    bookId={book.id}
+                    retailer="rakuten"
+                    placement="recommended_books_page"
                     target="_blank"
                     rel="noopener noreferrer sponsored"
                   >
                     楽天で見る
                     <ExternalLink className="h-3.5 w-3.5" />
-                  </a>
+                  </TrackedBookLink>
                 </Button>
               )}
             </div>

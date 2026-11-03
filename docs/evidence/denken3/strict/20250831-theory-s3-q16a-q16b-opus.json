@@ -1,0 +1,104 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20250831",
+  "subject": "theory",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 6338,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 18826,
+      "webSearchRequests": 0,
+      "costUSD": 0.2776318,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 3460,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "abfe21aea225b6a23237d0172f07e525c3f5921051e5c4fcfdf443a346b7be05",
+  "inputRequestSha256": "c5223f47edb8cf79eb28af3b618f106f2cf4baaa7942726370c41f72fff823de",
+  "inputHashes": {
+    "candidateSha256": {
+      "q16a": "a5bf4b2ec245ff24ee9950dc59aad935134ac08be79db22a42c9b26ea3299deb",
+      "q16b": "66071d193410514bd8566302e509e42b3739cac1552270ff41009ada86796e07"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20250831/theory/p19.png": "5885bbad7b51bf9f4f172e31bd3a2e5e19bc033244c18d33de09777edbfca849"
+    },
+    "figureSha256": {
+      "public/images/denken3/20250831/theory/20250831-theory-q16-fig1.png": "076f6ef5cbb10352f9de60450fc60e54d042a5642c8750951fa743c2dad6eb50"
+    },
+    "sourceQuestionPdfSha256": "11a75ffd5dd2b5309ad75370bb963c4fda9e12a812174cfa2c2237383c3a964d",
+    "sourceAnswerPdfSha256": "76fd3715ed487d19a56b387fb402de20ee09474e9fa55b0413f9037b96af06c9",
+    "officialAnswerUnitsSha256": "a56a1e28c8a1e77d4386ae0febe4357f89bd3b41749030699517cd0838f3ee5e",
+    "referencePdfSha256": {},
+    "referencePageSha256": {},
+    "referenceJsonSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q16a",
+      "questionNumber": 16,
+      "part": "a",
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [
+        "uncertainty フィールドの記述が他のフィールドと矛盾している。uncertainty は「実施年度・回次・試験日を確定情報として扱わない」と述べているが、fiscalYear=2025・term=upper・examDate=2025-08-31 はいずれも確定値として格納されている。sourceAttribution も「令和7年度上期」と断定している。",
+        "年度と回次は、添付の公式解答表ヘッダ「令和7年度 第三種電気主任技術者上期試験解答」で確認できる（令和7年度＝2025、上期）。したがって uncertainty の「年度・回次は記載されていない」という説明は、公式解答表に対しては不正確である。",
+        "examDate=2025-08-31 は、添付した問題原図（印刷頁「- 16 -」、フッタ「T1－R 019」）にも公式解答表にも印字がない。根拠は sourceQuestionPdfUrl／sourceAnswerPdfUrl のファイル名「20250831」だけである。添付原頁で検証できないため外部確認事項として残る。試験センター公式ページ等の原頁で試験日を確認するか、examDate を未確定扱いにして uncertainty との整合を取る必要がある。"
+      ],
+      "verifiedEvidence": [
+        "問題文：前文・ただし書き（r = 5 Ω、最大 4 mA）・条件Ⅰ（A、1 A）・条件Ⅱ（B、100 mA）・条件Ⅲ（C、1.2 V）・設問(a)の文言は、公式問題原図と一致する。",
+        "選択肢：(1)0.1 (2)0.9 (3)4 (4)9.6 (5)9.96 は原図と一致する。",
+        "公式正答：公式解答表の理論 問16(a) は解答 1・配点 5 で、manifest の正答単位 {answer:1, points:5}、officialAnswer=1、scoringPoints=5 と一致する。",
+        "スイッチ B の検算：－端子は節点 Q につながる。経路は r+R₀=24 Ω（4 mA、0.096 V）と R₁+R₂（0.096 A）の 2 本で、R₁+R₂=1 Ω となる。端子 A と C は開放なので R₃ には電流が流れない。",
+        "スイッチ A の検算：－端子は節点 M につながる。経路は R₁（0.996 A）と r+R₀+R₂=24+R₂（4 mA）の 2 本。0.004(25−R₁)=0.996R₁ より R₁=0.1 Ω、R₂=0.9 Ω。検算すると 0.004×24.9=0.0996 V、0.0996/0.1=0.996 A、合計 1 A となる。",
+        "肢(2)：R₁=0.9、R₂=0.1 のとき 0.004+0.004×24.1/0.9=0.1111 A となり、1 A を満たさない。解説の数値は正しい。",
+        "肢(3)〜(5)：いずれも R₁+R₂=1 Ω に反し、R₂ はそれぞれ −3、−8.6、−8.96 Ω となる。解説の数値は正しい。",
+        "公開候補図：原図の回路部分を切り出したもので、欠落はない。ラベル（4 mA 右向き矢印、r=5 Ω、コイル、R₃[Ω]、R₀=19 Ω、R₁[Ω]、R₂[Ω]、A、B、C、切り替えスイッチ、＋、－）、黒丸 4 個、接続、可動片が A 側に倒れて描かれていることは、すべて原図と一致する。公開候補図だけで解答に必要な接続を読み取れる。",
+        "figureDescription：接続・向き・ラベルの記述は候補図と一致する。節点 P・M・Q が図中に書かれていない呼称であることも明記されている。",
+        "reviewedFromPage=[19]：原図の印刷頁は「- 16 -」だが、フッタ「T1－R 019」と整合しており、矛盾はない。",
+        "officialReferenceUrls は空で、検証を要する独立主張はない。"
+      ]
+    },
+    {
+      "unitKey": "q16b",
+      "questionNumber": 16,
+      "part": "b",
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [
+        "uncertainty フィールドの記述が他のフィールドと矛盾している。uncertainty は「実施年度・回次・試験日を確定情報として扱わない」と述べているが、fiscalYear=2025・term=upper・examDate=2025-08-31 はいずれも確定値として格納されている。sourceAttribution も「令和7年度上期」と断定している。",
+        "年度と回次は、添付の公式解答表ヘッダ「令和7年度 第三種電気主任技術者上期試験解答」で確認できる。したがって uncertainty の「年度・回次は記載されていない」という説明は、公式解答表に対しては不正確である。",
+        "examDate=2025-08-31 は、添付した問題原図にも公式解答表にも印字がない。根拠は PDF URL のファイル名「20250831」だけであり、添付原頁で検証できない外部確認事項として残る。"
+      ],
+      "verifiedEvidence": [
+        "問題文：前文・ただし書き・条件Ⅰ〜Ⅲ・設問(b)の文言は、公式問題原図と一致する。",
+        "選択肢：(1)2.36 (2)23.6 (3)25 (4)236 (5)2360 は原図と一致する。",
+        "公式正答：公式解答表の理論 問16(b) は解答 4・配点 5 で、manifest の正答単位 {answer:4, points:5}、officialAnswer=4、scoringPoints=5 と一致する。",
+        "スイッチ C の検算：－端子は端子 C につながり、端子 A・B は開放となる。コイル r=5 Ω と経路 P→R₀→Q→R₂→M→R₁→＋側（19+1=20 Ω）が並列になる。コイルに 4 mA が流れるとき両端電圧は 0.02 V、並列経路の電流は 1 mA で、R₃ を流れる電流は 5 mA。0.02+0.005R₃=1.2 より R₃=236 Ω。",
+        "別解による検算：5∥20=4 Ω、全抵抗 240 Ω、電流 5 mA。コイル分流は 5×20/25=4 mA となり一致する。",
+        "R₁+R₂=1 Ω の導出（スイッチ B）は (a) と同じで正しい。",
+        "肢(1)：0.02+0.0118≒0.032 V。肢(2)：0.138 V。肢(3)：0.145 V。いずれも 1.2 V に届かないという理由付けと数値は正しい。",
+        "肢(5)：全抵抗 2364 Ω、1.2 V を加えたときの全電流は約 0.508 mA、コイル電流は約 0.406 mA。コイル 4 mA 時の端子間電圧は 11.82 V となる。いずれの数値も正しい。",
+        "公開候補図：原図と同一の回路を切り出したもので、ラベル・黒丸 4 個・接続・向きは原図と一致する。スイッチ C の経路（P→R₃→右辺→C）は公開候補図だけで判別できる。",
+        "figureDescription：接続の記述と「必要性」の記述（R₀・R₂・R₁ の直列経路 20 Ω がコイルと並列になり、R₃ が倍率器として直列に入ること）は、候補図および計算と一致する。",
+        "reviewedFromPage=[19]：原図フッタ「T1－R 019」と整合する。",
+        "officialReferenceUrls は空で、検証を要する独立主張はない。"
+      ]
+    }
+  ]
+}

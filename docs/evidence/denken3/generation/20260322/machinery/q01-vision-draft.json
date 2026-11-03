@@ -1,0 +1,164 @@
+{
+  "questionNumber": 1,
+  "sharedContext": null,
+  "units": [
+    {
+      "part": null,
+      "question": "直流電動機などの原動機では，負荷の増減によって，回転速度やトルクが変化する。直流分巻電動機の速度特性とトルク特性を示す正しい図に最も近いものを次の(1)〜(5)のうちから一つ選べ。\nただし，図の負荷電流は電機子電流と界磁電流の和であり，I₀ は無負荷電流の値である。端子電圧と界磁調整器の抵抗値は一定であるとする。",
+      "choices": {
+        "1": "図(1)：T は負荷電流の小さい側で大きく，負荷電流の増加とともに双曲線状に減少する曲線。n は I₀ の点で 0 から直線的に増加し，大電流域で頭打ちになる曲線。",
+        "2": "図(2)：n は負荷電流の小さい側で大きく，負荷電流の増加とともに双曲線状に減少する曲線。T は I₀ の点で 0 から直線的に増加し，大電流域で頭打ちになる曲線。",
+        "3": "図(3)：n は負荷電流の小さい側で大きく，負荷電流の増加とともに双曲線状に減少する曲線。T は I₀ の点で 0 から下に凸の放物線状に増加し，右上へ急上昇する曲線。",
+        "4": "図(4)：T は負荷電流によらずほぼ一定で，右へ行くにつれわずかに下がる曲線。n は I₀ の点で 0 から直線的に増加し，大電流域で頭打ちになる曲線。",
+        "5": "図(5)：n は負荷電流によらずほぼ一定で，右へ行くにつれわずかに下がる曲線。T は I₀ の点で 0 から直線的に増加し，大電流域で頭打ちになる曲線。"
+      },
+      "officialAnswer": "5",
+      "explanation": "分巻電動機では界磁巻線が電機子と並列に端子電圧 V へ接続される。V と界磁調整器の抵抗が一定なので界磁電流 I_f は一定であり，磁束 Φ もほぼ一定とみなせる。\n\n【速度特性】逆起電力は E = K₁Φn（K₁ は機械の構造で決まる定数）であり，E = V − R_a·I_a なので\n n = (V − R_a·I_a) / (K₁Φ)\nΦ がほぼ一定で，電機子抵抗による電圧降下 R_a·I_a は V に比べて小さいため，負荷電流が増えても回転速度はわずかに低下するだけで，ほぼ一定となる（定速度特性）。\n\n【トルク特性】電動機内部で発生するトルクは T = K₂Φ·I_a（K₂ は機械の構造で決まる定数）であり，Φ がほぼ一定なので電機子電流 I_a にほぼ比例する。\nなお，K₁ と K₂ の関係は電力の関係 E·I_a = T·ω（ω は角速度 [rad/s]）から決まる。回転速度 n を [s⁻¹] で表すと ω = 2πn より K₁ = 2πK₂，n を [min⁻¹] で表すと ω = 2πn/60 より K₁ = (2π/60)K₂ となる。角速度 ω を用いて E = KΦω と書けば，トルクは同じ定数で T = KΦ·I_a と表せる。\nただし，無負荷電流 I₀ のときも電機子電流 I₀ − I_f は 0 ではないので，発生トルクは 0 にならない。無負荷時の電機子電流は，機械損や鉄損に相当するトルクを賄う分だけ流れている。図のトルク T は負荷（軸出力）トルクとして読む。軸トルクは発生トルクからこの損失分を差し引いたものなので，I₀ で 0 となる。\n負荷電流 I = I_a + I_f で I_f は一定なので，軸トルクは近似的に K₂Φ(I − I₀) となり，負荷電流に対して I₀ からほぼ直線的に増加する。負荷電流が大きくなると電機子反作用により磁束が減少し，トルクの増え方は比例よりやや緩やかになる。\n\nしたがって，n がほぼ一定でわずかに下降し，T が I₀ からほぼ直線的に増加する図(5)が正しい。",
+      "choiceExplanations": {
+        "1": "誤り。分巻電動機では Φ がほぼ一定なので，T = K₂Φ·I_a は負荷電流とともに増加する。負荷電流の増加とともに T が減少するこの図は，トルク特性と合わない。また回転速度は無負荷時に最も高く，負荷とともにわずかに低下する。I₀ で n = 0 から増加する形も誤りである。",
+        "2": "誤り。n が負荷電流の増加とともに双曲線状に大きく低下する特性は，磁束が負荷電流とともに増える直巻電動機の速度特性である。分巻電動機では Φ がほぼ一定なので，速度はほぼ一定でわずかに低下するだけである。",
+        "3": "誤り。これは直巻電動機の特性である。直巻電動機では磁気飽和しない範囲で Φ ∝ I_a となる。そのため T ∝ I_a² となり，T は放物線状に増加する。また n はおおむね I_a に反比例し，双曲線状に低下する。界磁電流一定の分巻電動機には当てはまらない。",
+        "4": "誤り。曲線の形は分巻電動機の特性に近いが，T と n のラベルが逆である。この図では T がほぼ一定で，n が 0 から増加することになる。これは T = K₂Φ·I_a（トルクは電流にほぼ比例）とも，n = (V − R_a·I_a)/(K₁Φ)（速度はほぼ一定）とも合わない。",
+        "5": "正しい。n = (V − R_a·I_a)/(K₁Φ) は Φ ほぼ一定のもとで R_a·I_a の電圧降下分だけわずかに低下し，ほぼ一定となる。軸トルク T は Φ ほぼ一定のもとで I₀ で 0 となり，近似的に K₂Φ(I − I₀) として負荷電流とともに増加する。どちらも分巻電動機の速度特性・トルク特性と一致する。"
+      },
+      "figureDescription": "問題文の下に選択肢となる5つのグラフ(1)〜(5)がある（上段に(1)(2)(3)，下段に(4)(5)）。各グラフの縦軸は「トルク T，回転速度 n」，横軸は「負荷電流」である。横軸の下，縦軸との交点付近（交点よりわずかに右）に I₀ と記され，I₀ から立ち上がる曲線はその位置の横軸上から始まる。目盛や数値はない。\n(1)：T と記された曲線は左上から右下へ双曲線状に減少する。n と記された曲線は I₀ から直線的に上昇し，右側で曲がって水平に近づく。二曲線は中央付近で交わる。\n(2)：(1)と同じ形の2曲線で，ラベルが入れ替わっている。減少する曲線が n，I₀ から上昇して飽和する曲線が T である。\n(3)：n と記された曲線は縦軸の上端付近から始まり，左上から右下へ双曲線状に減少する。T と記された曲線は I₀ の位置の横軸上から下に凸の形で立ち上がり，右端で急上昇する。二曲線は右寄りで交わる。\n(4)：T と記された曲線はグラフ上部をほぼ水平に，右へ行くにつれわずかに下がる。n と記された曲線は I₀ から直線的に上昇し，右上で曲がって水平に近づく。右端付近で T の曲線と交わる。\n(5)：(4)と同じ形の2曲線で，ラベルが入れ替わっている。ほぼ水平でわずかに下がる曲線が n，I₀ から直線的に上昇して右上で飽和する曲線が T である。\n選択肢そのものが図であり，各曲線の形状とラベルの対応が解答に必要なため，図の参照が不可欠である。",
+      "officialReferenceUrls": [],
+      "uncertainty": "なし",
+      "needsReview": true,
+      "sourceQuestionPdfUrl": "https://www.shiken.or.jp/chief/upload/20260322_ch_third_q03.pdf",
+      "sourceAnswerPdfUrl": "https://www.shiken.or.jp/chief/upload/20260322_ch_third_a01.pdf",
+      "reviewedFromPage": [
+        4
+      ]
+    }
+  ],
+  "draftModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 4024,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 9309,
+      "webSearchRequests": 0,
+      "costUSD": 0.1552158,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 1522,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "cf0b5cd4e624b8f724bc9b6a4adb0e78668132e91c2dbbfcfd4f04ee14d95fcf",
+  "inputRequestSha256": "7c6999dcab41a01718a253c08e3d78831ca8e02515afc3af4823e69274a52302",
+  "sourceQuestionPdfSha256": "a89c7dc2b9a305f9db83f2f78195f0df8a0da5aeec6b8e66cfd40fb028d146fb",
+  "sourceAnswerPdfSha256": "cc2890296d06a4823df5697a78a1c01ddfd39f041c51f48c87984daa3a5707c6",
+  "sourcePageImageSha256": {
+    "data/raw_pdfs/denken3/review/20260322/machinery/p04.png": "884246d34d90d44d6195fd268503ed99ba93288c87403fca4844370d1e945797"
+  },
+  "revisionHistory": [
+    {
+      "version": 1,
+      "model": "claude-opus-5-5",
+      "resolvedModel": "claude-opus-5-5",
+      "modelUsage": {
+        "claude-opus-5-5": {
+          "inputTokens": 2,
+          "outputTokens": 3749,
+          "cacheReadInputTokens": 1279,
+          "cacheCreationInputTokens": 15245,
+          "webSearchRequests": 0,
+          "costUSD": 0.19720379999999998,
+          "contextWindow": 1000000,
+          "maxOutputTokens": 128000,
+          "thinkingTokens": 1203,
+          "canonicalModel": "claude-opus-5-5",
+          "provider": "firstParty",
+          "costBasis": "list"
+        }
+      },
+      "rawResponseSha256": "47d3b06a73160f85f631c9a1130f8e86165df7cf9c73b9790158d8d475764488",
+      "inputRequestSha256": "441e1a98ae318441c97971a353292fc3a18291f814b9bc0d5c5aa523a94d234f",
+      "previousDraftSha256": "405e9db02ced025dddc158174c948cc77cd85a2c8956de3359a0732d3eba3ef9",
+      "previousDraft": "data/raw_pdfs/denken3/review/20260322/machinery/archive/q01-vision-draft-v1.json",
+      "answeredReviewSha256": "1054de44242b0cd8758ab88a678749015a159831b7d688521b8c498e3871e8d6",
+      "answeredReview": "data/raw_pdfs/denken3/review/20260322/machinery/archive/q01-opus-review-v1.json",
+      "answeredStrictReceipt": "docs/evidence/denken3/strict/20260322-machinery-s1-q01-opus.json",
+      "answeredStrictReceiptSha256": "4fd816a73e6fe7a00dd457f164bc1afe7b5718f1c5f90c8f82fff65158cc7476",
+      "figureSha256": {
+        "20260322-machinery-q01-fig1": "41f349c14a80838e35591bec17866a5c5ba02b692b596d46bb9dc0f9fcb55546"
+      },
+      "referenceHashes": {},
+      "operatorNote": ""
+    },
+    {
+      "version": 2,
+      "model": "claude-opus-5-5",
+      "resolvedModel": "claude-opus-5-5",
+      "modelUsage": {
+        "claude-opus-5-5": {
+          "inputTokens": 2,
+          "outputTokens": 4916,
+          "cacheReadInputTokens": 1279,
+          "cacheCreationInputTokens": 15211,
+          "webSearchRequests": 0,
+          "costUSD": 0.22027180000000002,
+          "contextWindow": 1000000,
+          "maxOutputTokens": 128000,
+          "thinkingTokens": 1925,
+          "canonicalModel": "claude-opus-5-5",
+          "provider": "firstParty",
+          "costBasis": "list"
+        }
+      },
+      "rawResponseSha256": "eff7f1f5e43ac682a6da30309e15fcf33ee308a79928f728e1dc2af88a38f8fe",
+      "inputRequestSha256": "67c2a5694ed1c48cad247aeca89b0ad025671730a2f04b0c0c570efd6f952442",
+      "previousDraftSha256": "2e0119e21475a34f9a2881d3f3328b3f8f11ebd01d8b78f432a967d0dde60466",
+      "previousDraft": "data/raw_pdfs/denken3/review/20260322/machinery/archive/q01-vision-draft-v2.json",
+      "answeredReviewSha256": "760c4bf4c118dd485bf6365264f23e448d0d3cee704e5f5ce66026f05bce29f9",
+      "answeredReview": "data/raw_pdfs/denken3/review/20260322/machinery/archive/q01-opus-review-v2.json",
+      "answeredStrictReceipt": "docs/evidence/denken3/strict/20260322-machinery-s2-q01-opus.json",
+      "answeredStrictReceiptSha256": "fdb0536102416cea371da9119d7b2e82cfb34c0dae1398396a7ea58a68d31b28",
+      "figureSha256": {
+        "20260322-machinery-q01-fig1": "41f349c14a80838e35591bec17866a5c5ba02b692b596d46bb9dc0f9fcb55546"
+      },
+      "referenceHashes": {},
+      "operatorNote": ""
+    },
+    {
+      "version": 3,
+      "model": "claude-opus-5-5",
+      "resolvedModel": "claude-opus-5-5",
+      "modelUsage": {
+        "claude-opus-5-5": {
+          "inputTokens": 2,
+          "outputTokens": 3988,
+          "cacheReadInputTokens": 1279,
+          "cacheCreationInputTokens": 15583,
+          "webSearchRequests": 0,
+          "costUSD": 0.20468779999999998,
+          "contextWindow": 1000000,
+          "maxOutputTokens": 128000,
+          "thinkingTokens": 1112,
+          "canonicalModel": "claude-opus-5-5",
+          "provider": "firstParty",
+          "costBasis": "list"
+        }
+      },
+      "rawResponseSha256": "2b470e1bd6c702b534489155fbc00093b57fbbb96d8b745ecf8f614c384c14a8",
+      "inputRequestSha256": "8da2f5a5865390256b508f3e467e0467357ee0b22933ac7570c6bad16715bb72",
+      "previousDraftSha256": "9b39fc032c018325d281edf082edc255be402ed5f1f94bb5179f414301d6394d",
+      "previousDraft": "data/raw_pdfs/denken3/review/20260322/machinery/archive/q01-vision-draft-v3.json",
+      "answeredReviewSha256": "6526b8580b5631783586aaa5d181b32baaae92c8419a4a08d5856c6d2509cad4",
+      "answeredReview": "data/raw_pdfs/denken3/review/20260322/machinery/archive/q01-opus-review-v3.json",
+      "answeredStrictReceipt": "docs/evidence/denken3/strict/20260322-machinery-s3-q01-opus.json",
+      "answeredStrictReceiptSha256": "e3477b2c29ca68b1c9066a9abd74db0d3715a2a472cbe342723d9764d7de9376",
+      "figureSha256": {
+        "20260322-machinery-q01-fig1": "41f349c14a80838e35591bec17866a5c5ba02b692b596d46bb9dc0f9fcb55546"
+      },
+      "referenceHashes": {},
+      "operatorNote": ""
+    }
+  ]
+}

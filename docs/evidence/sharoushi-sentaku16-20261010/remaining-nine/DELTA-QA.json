@@ -1,0 +1,141 @@
+{
+  "createdAt": "2026-10-10T04:59:06.268103+00:00",
+  "scope": "Only nine held originals; no full manuscript regeneration or full re-review",
+  "result": "GO_CONTENT_DELTA",
+  "originals": 9,
+  "fields": 45,
+  "changedFieldExplanations": 12,
+  "unchangedOtherFieldEvidenceStatuses": 33,
+  "freezeSevenUnchanged": true,
+  "frozenInputSha256": "47297b8e5b815af91548eb71e9c912c36fed19c2a4ac984769e175acf8fdd991",
+  "deltaSha256": "5392804b178bbfe91fa1f3225b11c7a6c84352e7fb81ae4c2df37ca1285675cd",
+  "perOriginal": [
+    {
+      "id": "sharoushi-2025-sentaku-q01",
+      "result": "GO",
+      "lawAsOf": "2025-04-11",
+      "fields": 5,
+      "officialKeysUnchanged": true,
+      "originalBodyBanksSourceUnchanged": true,
+      "targetedFields": [
+        "C"
+      ]
+    },
+    {
+      "id": "sharoushi-2025-sentaku-q02",
+      "result": "GO",
+      "lawAsOf": "2025-04-11",
+      "fields": 5,
+      "officialKeysUnchanged": true,
+      "originalBodyBanksSourceUnchanged": true,
+      "targetedFields": [
+        "C"
+      ]
+    },
+    {
+      "id": "sharoushi-2025-sentaku-q03",
+      "result": "GO",
+      "lawAsOf": "2025-04-11",
+      "fields": 5,
+      "officialKeysUnchanged": true,
+      "originalBodyBanksSourceUnchanged": true,
+      "targetedFields": [
+        "A"
+      ]
+    },
+    {
+      "id": "sharoushi-2025-sentaku-q06",
+      "result": "GO",
+      "lawAsOf": "2025-04-11",
+      "fields": 5,
+      "officialKeysUnchanged": true,
+      "originalBodyBanksSourceUnchanged": true,
+      "targetedFields": [
+        "A",
+        "B"
+      ]
+    },
+    {
+      "id": "sharoushi-2025-sentaku-q07",
+      "result": "GO",
+      "lawAsOf": "2025-04-11",
+      "fields": 5,
+      "officialKeysUnchanged": true,
+      "originalBodyBanksSourceUnchanged": true,
+      "targetedFields": [
+        "D"
+      ]
+    },
+    {
+      "id": "sharoushi-2025-sentaku-q08",
+      "result": "GO",
+      "lawAsOf": "2025-04-11",
+      "fields": 5,
+      "officialKeysUnchanged": true,
+      "originalBodyBanksSourceUnchanged": true,
+      "targetedFields": [
+        "D",
+        "E"
+      ]
+    },
+    {
+      "id": "sharoushi-2026-sentaku-q01",
+      "result": "GO",
+      "lawAsOf": "2026-04-10",
+      "fields": 5,
+      "officialKeysUnchanged": true,
+      "originalBodyBanksSourceUnchanged": true,
+      "targetedFields": [
+        "B",
+        "D"
+      ]
+    },
+    {
+      "id": "sharoushi-2026-sentaku-q06",
+      "result": "GO",
+      "lawAsOf": "2026-04-10",
+      "fields": 5,
+      "officialKeysUnchanged": true,
+      "originalBodyBanksSourceUnchanged": true,
+      "targetedFields": [
+        "E"
+      ]
+    },
+    {
+      "id": "sharoushi-2026-sentaku-q08",
+      "result": "GO",
+      "lawAsOf": "2026-04-10",
+      "fields": 5,
+      "officialKeysUnchanged": true,
+      "originalBodyBanksSourceUnchanged": true,
+      "targetedFields": [
+        "C"
+      ]
+    }
+  ],
+  "publication": {
+    "newlyPublished": 0,
+    "appArrayChanged": false,
+    "rootBranchChanged": false,
+    "push": false
+  },
+  "modelCalls": 0,
+  "actualCodexModelVariant": "not observable",
+  "limitations": [
+    "2025Q1C uses MHLW official judgment summary, not a direct Supreme Court original; question wording and key remain from frozen official question/answer PDFs.",
+    "Only targeted fields became direct-primary-verified; no claim all45 fields were independently re-reviewed."
+  ],
+  "sourceReceipts": [
+    "211AC0000000070-2026-04-10-receipt.json",
+    "215IO0000000243-2025-04-11-receipt.json",
+    "329AC0000000115-2025-04-11-receipt.json",
+    "330M50002000022-2025-04-11-receipt.json",
+    "334AC0000000141-2026-04-10-receipt.json",
+    "334CO0000000184-2025-04-11-receipt.json",
+    "347CO0000000318-2026-04-10-receipt.json",
+    "349AC0000000116-2025-04-11-receipt.json",
+    "globe-court-receipt.json",
+    "ikujitan-mhlw.html.receipt.json",
+    "toho-mhlw.html.receipt.json"
+  ]
+}

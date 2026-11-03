@@ -1,0 +1,66 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20260322",
+  "subject": "theory",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 3054,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 14127,
+      "webSearchRequests": 0,
+      "costUSD": 0.1743598,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 1622,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "1df14d9c0aaa5c9b021f2133fdae805f210251c1eed20b16117600eb1fc9e9f2",
+  "inputRequestSha256": "27dba9f6ae101d1404209081114c7334c037c3faaae0cb6726c30b2b489d0503",
+  "inputHashes": {
+    "candidateSha256": {
+      "q12": "dd7e259671556df414923b2669f4549f1dedf08e4ca5a9896d2fa5f4aa99831c"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20260322/theory/p17.png": "5a8896de78b35539efccde17253b46c19106109ad2f85e597b7fa594eae4788e"
+    },
+    "figureSha256": {
+      "public/images/denken3/20260322/theory/20260322-theory-q12-fig1.png": "a7677ea1d8ad1b892bc429eaac84071ce0c738ce86dd45b13ddf1e1fb22cfcec"
+    },
+    "sourceQuestionPdfSha256": "c83e7c7350d98b65f5d8da0b93e4a2581a19dd250be320fb7fc492c9b34a29c1",
+    "sourceAnswerPdfSha256": "cc2890296d06a4823df5697a78a1c01ddfd39f041c51f48c87984daa3a5707c6",
+    "officialAnswerUnitsSha256": "d9d7530ffe7330870cfb5b3140683d0ec62b319454d9d16788e82d7b17c79821",
+    "referencePdfSha256": {},
+    "referencePageSha256": {},
+    "referenceJsonSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q12",
+      "questionNumber": 12,
+      "part": null,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "出典照合: manifest（2025年度下期・試験日2026-03-22・理論・問題PDF 20260322_ch_third_q01.pdf・解答PDF 20260322_ch_third_a01.pdf・PDF第17頁）と候補の fiscalYear=2025, term=lower, examDate=2026-03-22, subject=theory, sourceQuestionPdfUrl, sourceAnswerPdfUrl, reviewedFromPage=[17] がすべて一致。原図の冊子頁番号「-14-」とフッタ「T2－R 017」は、PDF第17頁であることと矛盾しない。sourceAttribution の「令和7年度下期…理論科目 問12」も一致する。",
+        "問題文照合: 原図の本文（電極間隔 d[m]、平行板電極、陰極板上の電子、陽極板に電圧 V[V]、力 F[N]、質量 m[kg]、電気素量 e[C]、端効果無視）と候補の question が語句・記号・単位まで一致する。欠落・改変はない。",
+        "選択肢照合: 原図は (1) V/d·e、(2) V/d²·e、(3) V/d²·m/e、(4) V/d²·em、(5) V²/d·e。候補の choices 1〜5 と、指数・分母分子の配置まで一致する。",
+        "公式正答照合: 公式解答表（令和7年度 第三種電気主任技術者下期試験解答）の＜理論＞問12は解答1・配点5。manifest の公式正答単位 {question:12, part:null, answer:\"1\", points:5}、候補の officialAnswer=\"1\"、scoringPoints=5 と一致する。",
+        "総合解説の検算: 端効果を無視すると平行板間の電界は一様で E=V/d。F=qE に |q|=e を代入すると F=eV/d となり、選択肢(1)と一致する。単位は (V/m)·C=J/m=N で整合する。陰極板は接地、陽極板は +V なので電界は陽極→陰極の向きになり、負電荷の電子は陽極向きの力を受ける。これは図の F 矢印（上向き）と整合する。質量 m は力に関与せず加速度 a=F/m で用いる、という記述も正しい。",
+        "各肢固有理由の検算: (2) V·C/m²=J/m²=N/m で N にならない、正しい。(3) 力に m は入らず、e が分母にあるのは F=eE と矛盾する。単位 V·kg/(m²·C) は N にならない、正しい。(4) m の混入と V/d² の二重誤り、単位 J·kg/m² で N にならない、正しい。(5) V²·C/m=V·J/m=V·N で N にならず、E は V の1乗に比例する、正しい。",
+        "図照合: 公開候補図 20260322-theory-q12-fig1.png は原図の図部分を欠けなく切り出している。上板「陽極板」、下板「陰極板」、陰極板下中央の接地記号、左側の破線補助線と両端矢印「d[m]」、陰極板上面左寄りの黒丸（電子）と引出線付き「電子」ラベル、黒丸から上向きの「F[N]」矢印、右側の陰極板→陽極板の上向き「V[V]」矢印がすべて含まれ、向き・接続・ラベルは原図と一致する。figureDescription の記述もこれらと一致する。解答は本文だけでも導けるが、公開候補図だけで状況は完全に理解できる。",
+        "参考資料: officialReferenceUrls は空配列で、検証が必要な独立主張はない。uncertainty=\"なし\"、needsReview=false は監査結果と矛盾しない。"
+      ]
+    }
+  ]
+}

@@ -76,7 +76,7 @@ export function ScheduleCalendar({ plan }: Props) {
     return (
       <Card>
         <CardContent className="py-6 text-sm text-muted-foreground">
-          試験日までの日数が足りません。試験日を見直してください。
+          学習タスクがありません。学習期間を変更して再作成してください。
         </CardContent>
       </Card>
     );
@@ -96,7 +96,7 @@ export function ScheduleCalendar({ plan }: Props) {
             </div>
           </div>
           <div className="text-right">
-            <div className="text-xs text-muted-foreground">残り</div>
+            <div className="text-xs text-muted-foreground">計画期間</div>
             <div className="text-lg font-semibold tabular-nums">
               {plan.summary.daysRemaining} 日
             </div>

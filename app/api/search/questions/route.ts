@@ -5,7 +5,8 @@ import type { ExamCode, Season, Session, Difficulty } from "@/lib/questions/type
 
 export const runtime = "nodejs";
 
-const EXAM_CODES = [
+const EXAM_CODES = ["kanteishi", "kaikeishi",
+  "land-special1", "riku-tech1", "maritime4", "aviation-comm", "amateur1", "maritime-special1", "riku-tech2", "amateur2", "maritime-radar", "maritime3", "maritime2", "maritime1", "general3", "general2", "general1", "land-special2", "land-special3", "kai-toku2",
   "ip",
   "sg",
   "fe",
@@ -19,12 +20,12 @@ const EXAM_CODES = [
   "sc",
   "sm",
   "au",
-  "fp3",
-  "denken3",
+  "fp1", "fp2", "fp3", "takken", "tohan", "kanri",
 ] as const;
 
-const SEASONS = ["spring", "autumn", "cbt", "published", "first", "second"] as const;
-const SESSIONS = [
+const SEASONS = ["spring", "autumn", "cbt", "published", "first", "second", "early", "may", "september", "january", "october", "late", "annual", "july", "primary", "kansai", "february", "june", "august", "march", "round1", "round2"] as const;
+const SESSIONS = ["gyosei", "kanri", "kansa", "kigyo", "zaimu",
+  "houki", "hoki", "kogaku", "kiso", "kogaku-a", "kogaku-b",
   "am",
   "am1",
   "am2",
@@ -54,6 +55,9 @@ const QuerySchema = z.object({
     .union([z.literal("true"), z.literal("false"), z.boolean()])
     .transform((v) => v === true || v === "true")
     .optional(),
+  // Public /search URLs use the compact `calc=1` form. Keep the longer API
+  // parameter too for backwards compatibility with direct consumers.
+  calc: z.enum(["0", "1"]).transform((value) => value === "1").optional(),
   sort: z.enum(["relevance", "year_desc", "category", "random"]).optional(),
   limit: z.coerce.number().int().min(1).max(60).optional(),
   offset: z.coerce.number().int().min(0).max(5000).optional(),
@@ -84,7 +88,7 @@ export async function GET(req: Request) {
     topicTag: data.topicTag,
     difficulty: data.difficulty as Difficulty | undefined,
     hasImage: data.hasImage,
-    calculationOnly: data.calculationOnly,
+    calculationOnly: data.calculationOnly ?? data.calc,
     sort: data.sort,
     limit: data.limit,
     offset: data.offset,

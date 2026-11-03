@@ -131,7 +131,8 @@ describe("buildGradingFallbackAlert — 通知だけで次の手が決まる", (
       usage: { truncated: false, finishReason: "STOP" },
       rawChars: 80,
     });
-    expect(text).toContain("課金は発生済み");
+    expect(text).toContain("呼出し使用量は記録済み");
+    expect(text).toContain("評価不能");
     expect(text).toContain("解析に失敗");
   });
 });

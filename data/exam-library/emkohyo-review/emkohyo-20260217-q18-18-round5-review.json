@@ -1,0 +1,58 @@
+{
+  "reviewModel": "claude-opus-5-5",
+  "requestedModel": "claude-opus-5-5",
+  "canonicalModel": "claude-opus-5-5",
+  "provider": "firstParty",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 4134,
+      "cacheReadInputTokens": 139443,
+      "cacheCreationInputTokens": 27368,
+      "webSearchRequests": 0,
+      "costUSD": 0.3295206,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 3402,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "paperId": "emkohyo-20260217",
+  "ids": [
+    "emkohyo-20260217-q18"
+  ],
+  "figureSha256": {
+    "emkohyo-20260217-q18": {}
+  },
+  "officialRowImageSha256": {
+    "emkohyo-20260217-q18": {
+      "/exam-library/emkohyo-20260217/q18-p13-0.webp": "b07f89006170466bf75c04c3974928911c946037c805e0c5fc3acd07eedaa8e2"
+    }
+  },
+  "officialPageImageSha256": {},
+  "governmentSourceImageSha256": {},
+  "candidateSha256": {
+    "emkohyo-20260217-q18": "d4d8c1b7bb3ac1a9b882e84d759776d98858d4e754dea383162d9cc8ec37a995"
+  },
+  "sourcePackPath": "docs/evidence/emkohyo-choice-sources/emkohyo-20260217-q18-18.json",
+  "sourcePackSha256": "4639260bc5d20bbf4f3885d34c27200da2966b6d9d6367137f38cd89e52b01f2",
+  "assessment": {
+    "emkohyo-20260217-q18": {
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "reasonIssues": [
+        "肢1: 理由では「施行令第13条第3項の追加対象34種類には呼吸用保護具がありません」と言い切っている。しかし同項第21号には「潜水器」があり、呼吸用の器具とも読める。潜水器が労働衛生保護具としての呼吸用保護具に入らない理由を示すか、主張の範囲を法別表第二の防じんマスク・防毒マスク・電動ファン付き呼吸用保護具に絞る必要がある。今の書き方では、この点が暗黙の前提のまま残っている。"
+      ],
+      "sourceIssues": [
+        "肢2: 引用した送気マスク通達（00tb9667）の抜粋で直接言えるのは2点だけである。「給気式呼吸用保護具(送気マスク又は自給式呼吸器)」と2つが別の区分として並んでいること、送気マスクは「空気源、ホースなどを備えること」である。理由にある「外部の空気源から」という表現は、抜粋に書かれていない。誤りの核心は「自給式」の意味で、自給式呼吸器は着用者が空気源を携行するという定義にある。この定義を示す政府資料も出典に入っていない。"
+      ],
+      "needsExternalCheck": [
+        "施行令第13条第3項第21号の「潜水器」について、試験や行政上の分類で呼吸用保護具に含まれないことを確かめる。また、潜水器に法第42条の厚生労働大臣の規格が定められているかも確認する。規格があり、しかも型式検定の対象外であれば、肢1の「正しい」とする理由の立て方を見直す必要がある。",
+        "自給式呼吸器を「着用者が空気源（空気ボンベ・酸素）を携行する給気式呼吸用保護具」と定義した政府一次資料（厚生労働省の通達など）を探す。見つかれば肢2の理由の根拠に加える。"
+      ]
+    }
+  }
+}

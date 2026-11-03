@@ -1,0 +1,21 @@
+{
+  "sourcePdfSha256": "635c811dbee7dd6c5605c856a8250285a4c99ef80a0609793600cb0d011ef451",
+  "sourceUrl": "https://www.shiken.or.jp/construction/upload/20251005_co_first_q01.pdf",
+  "reviewedAt": "2026-09-28",
+  "status": "VISUAL_REVIEW_ONLY_PUBLICATION_HOLD",
+  "pages": [3, 4, 5],
+  "visualReviewedCount": 10,
+  "choiceReasonApprovedCount": 0,
+  "questions": [
+    { "number": 1, "page": 3, "officialAnswer": "ニ", "verified": "電極間100 V、距離d=1×10^-3 m、選択肢は10^2・10^3・10^4・10^5 V/m。", "extractIssue": "questionRawから指数の負号と上付きが脱落。choicesRawも上付き指数が分離。" },
+    { "number": 2, "page": 3, "officialAnswer": "ニ", "verified": "60 V、上流2 Ω、抵抗RとスイッチS・6 Ω枝が並列。選択肢3・12・24・30 V。", "extractIssue": "PDF抽出では図の接続を再現できず、ΩがWになる。" },
+    { "number": 3, "page": 3, "officialAnswer": "ハ", "verified": "100 V交流、ω=500 rad/s、R=3 Ω、L=8 mHの直列。選択肢9・14・20・33 A。", "extractIssue": "図の100 VがquestionRaw末尾で「10 V」「0」に分断、Ωとωも欠落。" },
+    { "number": 4, "page": 3, "officialAnswer": "ハ", "verified": "100 V交流電源、理想ダイオードと10 Ω抵抗の直列。選択肢100・200・500・1000 W。", "extractIssue": "図の100 VがquestionRawで「10 V」「0」に分断、ΩがWになる。" },
+    { "number": 5, "page": 4, "officialAnswer": "イ", "verified": "三相3線、線間電圧V、5 Ω抵抗のΔと3 ΩリアクタンスのYを並列接続。選択肢は3V²/5、V²/3、V²/5、V²。", "extractIssue": "抽出テキストだけではΔ・Y配線と分数・上付きが分からない。" },
+    { "number": 6, "page": 4, "officialAnswer": "イ", "verified": "単相3線、各電源104 V、線抵抗3本各0.2 Ω、負荷2本各10.2 Ω、A/Bスイッチ。選択肢2 V下がる・不変・1 V上がる・3 V上がる。", "extractIssue": "抽出テキストでは中性線の接続とA/B位置が失われ、ΩがWになる。" },
+    { "number": 7, "page": 4, "officialAnswer": "ハ", "verified": "単相3線、負荷A/Bそれぞれ800 W・力率0.8遅れ・100 V。外線と中性線の各抵抗0.4 Ω。選択肢40・60・80・120 W。", "extractIssue": "抽出テキストでは回路図と外線・中性線の抵抗位置が失われる。" },
+    { "number": 8, "page": 5, "officialAnswer": "ロ", "verified": "単相2線6,000 V一次、100 V+100 V二次、中点に50 A/70 A負荷。選択肢1・2・3・4 A。", "extractIssue": "questionRawに変圧器の6,000 Vと二次100 V×2の図中数値がない。" },
+    { "number": 9, "page": 5, "officialAnswer": "ロ", "verified": "100 A幹線保護、分岐長2/5/7/10 m、ケーブル2.0 mm径・5.5/8/14 mm²。許容電流24/34/42/61 Aの表を確認。", "extractIssue": "questionRawに図の200 V三相3線と許容電流表がない。法令適用理由は未査読。" },
+    { "number": 10, "page": 5, "officialAnswer": "ロ", "verified": "22 kW・4極・60 Hz・すべり5%。選択肢1620・1710・1800・1890 min^-1。", "extractIssue": "特段の図表欠落なし。" }
+  ]
+}

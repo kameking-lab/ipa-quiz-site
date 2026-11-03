@@ -1,0 +1,61 @@
+{
+  "reviewModel": "claude-opus-5-5",
+  "requestedModel": "claude-opus-5-5",
+  "canonicalModel": "claude-opus-5-5",
+  "provider": "firstParty",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 2417,
+      "cacheReadInputTokens": 0,
+      "cacheCreationInputTokens": 126971,
+      "webSearchRequests": 0,
+      "costUSD": 1.064116,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 1342,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "paperId": "emkohyo-20260217-4",
+  "ids": [
+    "emkohyo-20260217-4-q3"
+  ],
+  "figureSha256": {
+    "emkohyo-20260217-4-q3": {}
+  },
+  "officialRowImageSha256": {
+    "emkohyo-20260217-4-q3": {
+      "/exam-library/emkohyo-20260217-4/q3-p3-0.webp": "2e8dc3daabe742f91a9cfdee8bb06f8fd41962ed997078afa7142313f037c4cc"
+    }
+  },
+  "governmentSourceImageSha256": {},
+  "candidateSha256": {
+    "emkohyo-20260217-4-q3": "32ef7f72ab594bec6f513a2a31a3b8e6775235cde13455a368c8154123887993"
+  },
+  "sourcePackPath": "docs/evidence/emkohyo-choice-sources/emkohyo-20260217-4-q03-03.json",
+  "sourcePackSha256": "ea8f019bbe355e1346072ea5d82ad1f379025d198a61b616e131dd1705a016e6",
+  "assessment": {
+    "emkohyo-20260217-4-q3": {
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [
+        "肢3の理由は『水中でプロピオン酸イオンと水素イオンに電離する』と書いており、完全に電離するように読める。プロピオン酸は弱酸（pKa 約4.9）で、水中では一部しか電離しない。肢1で『一部電離し』と書いているのとも表現がそろっていない。『水中で一部電離してプロピオン酸イオンと水素イオンを生じるため、弱い酸性を示す』に直すべき。"
+      ],
+      "reasonIssues": [],
+      "sourceIssues": [
+        "肢1：フェノールSDSの根拠は『pH：6.0(水溶液)』だけで、濃度と温度が書かれていない。pH 6.0 は中性に近く、酸性であることの裏付けとしては弱い。また、ヒドロキシ基が電離してフェノキシドイオンを生じるという仕組みの説明は、このSDSでは直接支えられていない。",
+        "肢2：アニリンSDSの『pH ca. 8.8』は、濃度と温度が書かれていない値（GESTISからの転記）。アルカリ性であることは支えられるが、窒素の非共有電子対がH⁺を受け取ってアニリニウムイオンと水酸化物イオンを生じるという仕組みは、このSDSでは直接支えられていない。",
+        "肢3：根拠として引いた『中程度の強さの酸である。塩基、強酸化剤、アミンと反応し』は、SDSの火災・反応性の項目にある文（ICSCの定型句）で、水溶液の性質を書いたものではない。水溶液のpHや電離のデータではないので、『水溶液は酸性を示す』ことを直接には支えていない。また、『中程度の強さの酸』という表現は、化学でいう弱酸（pKa 約4.9）と誤解されるおそれがある。",
+        "肢4：トルエンSDSの『水：526mg/L（25℃）』は、『水にはわずかしか溶けない』ことを温度と単位込みで支えている。ただし、極性が小さいことや水素結合を作る官能基がないことで溶けにくさを説明する部分は、SDSでは直接支えられていない（一般的な化学の知識による説明）。",
+        "肢5：アセトンSDSの『水に易溶』と『1*10^(6)mg/L』は、よく溶けることを支えている。ただし、カルボニル基の酸素が水素結合に関与するという仕組みの説明は、SDSでは直接支えられていない。"
+      ],
+      "needsExternalCheck": [
+        "プロピオン酸水溶液のpH、またはpKaを示す政府一次資料（ICSC日本語版の物理化学的性質欄など）があれば、肢3の根拠を反応性の項目の定型句から差し替える。",
+        "フェノール水溶液のpH 6.0が、どの濃度・温度で測った値かを出典（SDSの注6）で確認する。"
+      ]
+    }
+  }
+}

@@ -1,0 +1,98 @@
+{
+  "group": "a3",
+  "startedAt": "2026-09-26T10:13:32.618Z",
+  "finishedAt": "2026-09-26T10:15:14.200Z",
+  "requestedModel": "claude-opus-5-5",
+  "provider": "firstParty",
+  "exitCode": 0,
+  "isError": false,
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 9444,
+      "cacheReadInputTokens": 138670,
+      "cacheCreationInputTokens": 12368,
+      "webSearchRequests": 0,
+      "costUSD": 0.315566,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 3197,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "totalCostUsd": 0.315566,
+  "correctModel": true,
+  "stderr": "",
+  "questionKeys": [
+    "A21",
+    "A22",
+    "A23",
+    "A24",
+    "A25",
+    "A26",
+    "A27",
+    "A28",
+    "A29",
+    "A30",
+    "A31",
+    "A32"
+  ],
+  "statuses": [
+    [
+      "A21",
+      "PASS"
+    ],
+    [
+      "A22",
+      "PASS"
+    ],
+    [
+      "A23",
+      "PASS"
+    ],
+    [
+      "A24",
+      "PASS"
+    ],
+    [
+      "A25",
+      "PASS"
+    ],
+    [
+      "A26",
+      "PASS"
+    ],
+    [
+      "A27",
+      "PASS"
+    ],
+    [
+      "A28",
+      "PASS"
+    ],
+    [
+      "A29",
+      "HOLD"
+    ],
+    [
+      "A30",
+      "PASS"
+    ],
+    [
+      "A31",
+      "PASS"
+    ],
+    [
+      "A32",
+      "PASS"
+    ]
+  ],
+  "globalIssues": [
+    "A-29はHOLDとした。公式正答の記述（砂礫基礎面の洗浄・水切り）は妥当と判断しているが、(4)（透水性・パイピング対策）が不適当とされる根拠を確証をもって示せないため、公開前に原典で確認する必要がある。",
+    "A-32(2)の「30cm程度」とA-32(3)の「20cm以下」は一般的な舗装施工の標準値として記載しているが、入力以外の資料は照合していない。",
+    "計画モードの指示とExitPlanMode等のツールが利用できない環境の制約により、ファイルは作成せず、JSONの出力のみとした。"
+  ],
+  "parseError": null
+}

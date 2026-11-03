@@ -1,0 +1,44 @@
+{
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 2469,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 14658,
+      "webSearchRequests": 0,
+      "costUSD": 0.1669078,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 2377,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "6565cdb381be10565ab68725f58d88eb23cf0ebb673d0534148e32fba8bc1c6f",
+  "draftSha256": {
+    "14": "d4cbc3e6f994c4ab447e8881afc886bb850fc5a261221010403809c7be7b6818"
+  },
+  "figureSha256": {
+    "20250831-machinery-q14-fig1": "52944839483df2bc36cf155d16f64583d9f79d35a1ef5dd3d8b72c9a33319a5a"
+  },
+  "basisPageSha256": {},
+  "referenceJsonSha256": {},
+  "referencePdfSha256": {},
+  "referencePageSha256": {},
+  "sourceQuestionPdfSha256": "2a73a24594cc2b8bb7504b9a0ff15e001b2bb56b830572ce2be853f7116f26d8",
+  "sourceAnswerPdfSha256": "76fd3715ed487d19a56b387fb402de20ee09474e9fa55b0413f9037b96af06c9",
+  "assessment": [
+    {
+      "number": 14,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "externalSourceIssues": []
+    }
+  ]
+}

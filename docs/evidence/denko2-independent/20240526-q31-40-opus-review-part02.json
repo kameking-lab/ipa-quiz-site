@@ -1,0 +1,82 @@
+{
+  "inputHashes": {
+    "draftSha256": "65790a190b62bf0fadd1370c5849d7b612fc47ffb4aef5a2c415e5e19ba6562f",
+    "rowSha256": {
+      "36": "772a6ef60f211e50748c4c270a7405a81988e41d73abec05d59950a175574f4a",
+      "37": "e70d42abd34150abad527ab4faff97ea7c46386dbd34229f258ed55ec73ea401",
+      "38": "43facd4cb31a3514b972c488b78da382ee40be9f75665c16ef3897bcd6de3a4b",
+      "39": "e947e42663d3b4af0edf496907ee42c833fef6531cc0c0d40ded65f03c648fd1",
+      "40": "11ab6a50bdf06fa5afa47f6df80cc329bbd6b917d8eed7c6db12cc857dd97e96"
+    },
+    "sharedFigureSha256": {
+      "public/images/denko2/2024-first/wiring-main.png": "96f2acfccdeb2327128a8106364d853365146f947233b9b231a3b1a48d4173b7",
+      "public/images/denko2/2024-first/wiring-panels.png": "17d82087689eb0571154d640cc3822ce5a9c3d7355a0ad1ac7a22577d8e986fe"
+    },
+    "detailFigureSha256": {
+      "public/images/denko2/2024-first/q37-i.png": "6c41cf8c6295da7c8fb5258ac1c0938512efeee3b342245f1fd1ef3f76effe82",
+      "public/images/denko2/2024-first/q37-ro.png": "1ac24639de622b74dc1c387f82d3e6f403082e4a48a2fdff0a59d62fb4b29ff2",
+      "public/images/denko2/2024-first/q37-ha.png": "8ed27b157ad385c2a9152d6faf8d487d1732e8c76f76a523b2a8af08ccdb5dbc",
+      "public/images/denko2/2024-first/q37-ni.png": "854405a993711851de2336272eefb540f8308dcef5c0c2f62e9fcd476246c39e"
+    }
+  },
+  "reviewModel": "claude-opus-5-5",
+  "assessment": [
+    {
+      "number": 36,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "lawNeedsExternalCheck": [
+        "電気設備の技術基準の解釈第17条のD種接地工事の原則値100Ωと、地絡時0.5秒以内の自動遮断装置がある場合の500Ω緩和の条文は、画像では判定できないため原文で要確認",
+        "C種接地工事の原則値10Ωと、C種の適用範囲（300Vを超える低圧機器）の条文も要確認",
+        "officialReferenceUrls の METI PDF（20231226-2.pdf）が第17条を含む現行版かどうか要確認"
+      ]
+    },
+    {
+      "number": 37,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "lawNeedsExternalCheck": [
+        "図記号の意味（Tに傍記B＝ベル変圧器、Tに傍記R＝リモコン変圧器、●D＝遅延スイッチ、●R＝リモコンスイッチ）は JIS C 0303 で要確認",
+        "officialReferenceUrls の2件（hrr.mlit.go.jp 要知仕様書、mlit.go.jp/koku 資料）に上記4記号の定義が実際に載っているか要確認"
+      ]
+    },
+    {
+      "number": 38,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "lawNeedsExternalCheck": [
+        "電気設備に関する技術基準を定める省令第58条の区分と値（対地電圧150V以下で0.1MΩ、300V以下のその他で0.2MΩ、300V超で0.4MΩ）は原文で要確認",
+        "e-Gov URL の版（20230320_504M60000400096）が現行条文かどうか要確認"
+      ]
+    },
+    {
+      "number": 39,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "lawNeedsExternalCheck": [
+        "平面図⑨の記号は原画像で四角の中に丸囲みのsとして描かれ、傍記はf20A。これを「開閉器（ヒューズ付、20A）」と読む根拠は JIS C 0303 の図記号定義で要確認"
+      ]
+    },
+    {
+      "number": 40,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "lawNeedsExternalCheck": []
+    }
+  ]
+}

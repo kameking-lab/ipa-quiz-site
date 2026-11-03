@@ -1,0 +1,127 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20240818",
+  "subject": "machinery",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 6543,
+      "cacheReadInputTokens": 139443,
+      "cacheCreationInputTokens": 31243,
+      "webSearchRequests": 0,
+      "costUSD": 0.4087006,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 3371,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "4df9633aaa87baaf4846eb902cefb4d1cd3f371167942d19cb072eb423b536af",
+  "inputRequestSha256": "4d0e059a61520bed5c8b7ea3bedfb0ecfff49cb5154827105e66837ac6f45e84",
+  "inputHashes": {
+    "candidateSha256": {
+      "q01": "2b3a71b02c72d476c1181732375739614dcb2788805d060a335c280190af6f68",
+      "q02": "ef68bd3ea6c1fce85112da1aac114ac563c26085766bfc1145712bc9f5093a69",
+      "q03": "3e47bd2b0e8e211c058503e78277d5d1a430e277b8330fa1b1e879c5a2f9190f",
+      "q05": "0c54dca78a47fa80fc59ed40ee3293478cf5576458da8355d58eb490b6449a3b"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20240818/machinery/p04.png": "7fca54a8a3c64e7f6fc345589ef4a04bd160ed64b330729d909e75fe908585f9",
+      "data/raw_pdfs/denken3/review/20240818/machinery/p05.png": "26d1f39e615932b6c25fa90d01d7ce75246527ebc461d2e28ce1d0d718437e0f",
+      "data/raw_pdfs/denken3/review/20240818/machinery/p06.png": "a830098afd833626b91be26fdfacbc9ae0693c6d4a5733f151d389281f11a1b3",
+      "data/raw_pdfs/denken3/review/20240818/machinery/p08.png": "317b959180e779f9e3cf120875d4c7f8e50b878166a391b5b70bca74cf16465a"
+    },
+    "figureSha256": {},
+    "sourceQuestionPdfSha256": "ff8ff270bbe1ea125e92f213d011afde969d0d2b9fa2e17a7caa2b5cd6673e2a",
+    "sourceAnswerPdfSha256": "f72ecbc3a477e64948388b69cf78cb931032c9f0c688639836c8d533a949cd0f",
+    "officialAnswerUnitsSha256": "92b3aa816589083f732156a266d18e7688bb4e1e9250d0d20a10259e630b2a76",
+    "referencePdfSha256": {},
+    "referencePageSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q01",
+      "questionNumber": 1,
+      "part": null,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "The attached official original (page numbered -1-, footer T1-K 004, so PDF page 4) was compared word for word with the candidate. The question stem matches the original. The only changes are the comma style (，→、) and the removal of the boxes around the blanks. The wording '界磁巻線に直流の界磁電流を流し，(ア)を回転子とする', 'ブラシと整流子を用いる場合には，補極や補償巻線を設けないと', '固定子から見た(イ)中性軸', '(ウ)が生じて整流子片を損傷する' and '補償巻線と補極のうち(エ)' all matches.",
+        "All five choice rows match the original table: (1) 界磁/電気的/火花/補償巻線; (2) 界磁/幾何学的/応力/補極; (3) 電機子/幾何学的/応力/補償巻線; (4) 電機子/電気的/火花/補償巻線; (5) 電機子/電気的/火花/補極.",
+        "In the official answer table for 機械, 問1 is 5. This matches both the manifest and the candidate's officialAnswer of '5'.",
+        "The explanation's physics is correct. In a DC machine with brushes and a commutator, the rotor is the armature (電機子). Armature reaction shifts the electrical neutral axis away from the geometric neutral axis. If the brushes are not moved to follow it, commutation fails and sparks (火花) form. Compensating windings (補償巻線) are mainly used in large machines, and interpoles (補極) are the usual choice in small machines.",
+        "Each wrong choice is refuted for its specific wrong blanks. Choice (1) is wrong on (ア) and (エ). Choice (2) is wrong on (ア), (イ) and (ウ), and the explanation correctly notes that its (エ) 補極 is right. Choice (3) is wrong on (イ), (ウ) and (エ). Choice (4) is wrong only on (エ). None of these reasons conflicts with the table.",
+        "No figure is needed to answer this question. The only table is the choice table, which has been copied into choices, so figureUrls being empty is appropriate. officialReferenceUrls is empty, so there are no independent claims to check."
+      ]
+    },
+    {
+      "unitKey": "q02",
+      "questionNumber": 2,
+      "part": null,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "The attached official original (page numbered -2-, footer T1-K 005, so PDF page 5) was compared with the candidate. The values match the original: 0.20 Ω, a separately excited DC motor (他励電動機), 50 A, 1200 min⁻¹, 110 V and 80 V. The conditions also match: field current and armature current held constant, no armature reaction, and brush resistance neglected.",
+        "The choices match the original: (1) 764, (2) 840, (3) 873, (4) 900, (5) 960.",
+        "In the official answer table for 機械, 問2 is 2. This matches both the manifest and the candidate's officialAnswer of '2'.",
+        "The calculation was redone and is correct. The voltage drop is Ia·Ra = 50×0.20 = 10 V, so E₁ = 110−10 = 100 V and E₂ = 80−10 = 70 V. With constant flux, E is proportional to N, so N₂ = 1200×70/100 = 840 min⁻¹.",
+        "Each distractor's derivation was checked. (1) 1200×70/110 = 763.6 ≈ 764. (3) 1200×80/110 = 872.7 ≈ 873. (4) 1200×90/120 = 900. (5) 1200×80/100 = 960. Each explanation correctly identifies the specific mistake that produces that value.",
+        "There is no figure, so figureUrls being empty is appropriate. officialReferenceUrls is empty."
+      ]
+    },
+    {
+      "unitKey": "q03",
+      "questionNumber": 3,
+      "part": null,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "The attached official original (page numbered -3-, footer T1-K 006, so PDF page 6) was compared with the candidate. The stem matches, including '同期速度の(ア)と回転子との速度の差（相対速度）', 'ブラシと(イ)で外部に引き出して二次抵抗値を調整', '停止（滑りs=1）から同期速度（滑りs=0）の間，すなわち，1＞s＞0', '(ウ)となる' and '回転子の回転方向とは逆の方向にトルクが発生し，誘導機は(エ)となる'.",
+        "All five choice rows match the original table: (1) 交番磁界/スリップリング/電動機/発電機; (2) 交番磁界/整流子/発電機/電動機; (3) 回転磁界/スリップリング/電動機/発電機; (4) 回転磁界/スリップリング/発電機/電動機; (5) 交番磁界/整流子/電動機/発電機.",
+        "In the official answer table for 機械, 問3 is 3. This matches both the manifest and the candidate's officialAnswer of '3'.",
+        "The explanation's physics is correct. Three-phase windings produce a rotating magnetic field (回転磁界). A wound-rotor induction machine brings its secondary circuit out through slip rings and brushes, not through a commutator. When 1>s>0 the machine runs as a motor, and when s<0 (above synchronous speed) it runs as a generator.",
+        "Each wrong choice is refuted for its specific wrong blanks. Choice (1) is wrong only on (ア). Choice (2) is wrong on (ア) and (イ), and its (ウ) and (エ) are reversed. Choice (4) has (ウ) and (エ) reversed. Choice (5) is wrong on (ア) and (イ). Each reason is correct.",
+        "No figure is needed to answer this question. The only table is the choice table, which has been copied into choices. officialReferenceUrls is empty."
+      ]
+    },
+    {
+      "unitKey": "q05",
+      "questionNumber": 5,
+      "part": null,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "The attached official original (page numbered -5-, footer T1-K 008, so PDF page 8) was compared with the candidate. The stem matches, including '回転界磁形同期電動機が停止している状態で', 'その平均トルクは零になり電動機は起動しない', '回転子の磁極面に(ア)を施す', '(イ)と同じ起動原理を利用したもので，誘導トルクによって', '(ウ)を抵抗で短絡して起動する' and 'この短絡を切り放し(エ)で励磁すると，回転子は同期速度に引き込まれる'.",
+        "All five choice rows match the original table: (1) 補償巻線/巻線形誘導電動機/界磁巻線/交流; (2) 制動巻線/かご形誘導電動機/界磁巻線/直流; (3) 制動巻線/巻線形誘導電動機/界磁巻線/交流; (4) 制動巻線/かご形誘導電動機/固定子巻線/直流; (5) 補償巻線/かご形誘導電動機/固定子巻線/直流.",
+        "In the official answer table for 機械, 問5 is 2. This matches both the manifest and the candidate's officialAnswer of '2'.",
+        "The explanation's physics is correct. The damper winding (制動巻線) is a squirrel-cage conductor, so the machine starts on the same principle as a squirrel-cage induction motor. To protect insulation from the high voltage induced during starting, the field winding is short-circuited through a resistor. Near synchronous speed the short is removed and DC excitation pulls the rotor into synchronism.",
+        "Each wrong choice is refuted for its specific wrong blanks. Choice (1) is wrong on (ア), (イ) and (エ), and its (ウ) is right. Choice (3) is wrong on (イ) and (エ). Choice (4) is wrong only on (ウ). Choice (5) is wrong on (ア) and (ウ). The explanations correctly count and name the wrong blanks in every case.",
+        "No figure is needed to answer this question. The only table is the choice table, which has been copied into choices. officialReferenceUrls is empty."
+      ]
+    }
+  ]
+}

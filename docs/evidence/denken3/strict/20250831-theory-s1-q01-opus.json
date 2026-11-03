@@ -1,0 +1,71 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20250831",
+  "subject": "theory",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 3067,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 13475,
+      "webSearchRequests": 0,
+      "costUSD": 0.1694038,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 1389,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "de723b65bdfe6ee06590d5b3b2dd3bec2bbc34caa0ef23b9ed5a8f158c11a0fc",
+  "inputRequestSha256": "cb2952e483d8e8b5f56a7b62f8fc0556c332df1354c42d160020b4bb92046010",
+  "inputHashes": {
+    "candidateSha256": {
+      "q01": "d3068ca81b2b83361d91dfaaab9b60d27e37ff89d3f363214b642215c16ba71c"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20250831/theory/p04.png": "c3261add3f9d4c07593bd3319b5b7da51184ee8f0e1b77704bbe839a18f7a93d"
+    },
+    "figureSha256": {},
+    "sourceQuestionPdfSha256": "11a75ffd5dd2b5309ad75370bb963c4fda9e12a812174cfa2c2237383c3a964d",
+    "sourceAnswerPdfSha256": "76fd3715ed487d19a56b387fb402de20ee09474e9fa55b0413f9037b96af06c9",
+    "officialAnswerUnitsSha256": "ede5a6c9b946b89ca7e631c8cee0d4d3531929f8ffbb96c1c4e69ce7b4cc71d8",
+    "referencePdfSha256": {},
+    "referencePageSha256": {},
+    "referenceJsonSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q01",
+      "questionNumber": 1,
+      "part": null,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [
+        "choiceExplanations[3]: 肢(3)『(2/9)CV²』が誤りである理由が『計算結果と一致しない』という一般論だけで、この肢に固有の誤り方を示していない。(2/9)CV² は、2C 側のエネルギーを 1/2 を付けずに 2C·(V/3)² と計算した値に等しい。また、C 側の電圧を 2V/3 と誤って (1/2)·C·(2V/3)² とした値にも等しい。このように誤答が生じる経路を具体的に示すべきである。",
+        "choiceExplanations[5]: 肢(5)の理由『接続後のエネルギーは接続前の (1/2)CV² を超えることはなく』は、(3/8)CV² を除外する根拠にならない。3/8 < 1/2 なので、この条件は満たされている。そのため、上限条件で排除できるかのように読める誤導的な記述になっている。上限の論法は削除し、肢固有の理由を記述すべきである。例えば、合成容量 3C ではなく他の値で計算した場合との対比や、損失が (1/3)CV² なので残りは (1/6)CV² に限られる、といった理由である。"
+      ],
+      "figureIssues": [],
+      "sourceIssues": [
+        "uncertainty: 『掲載ページには実施年度・回の記載がないため、出典の試験年度は本ページからは特定できない』と記載している。一方で fiscalYear=2025・term=upper・sourceAttribution『令和7年度上期』は断定的に記載しており、内部で矛盾している。問題原図の頁（-1-、T1−R 004）には確かに年度表記がない。しかし、添付の公式解答表原図には『令和7年度 第三種電気主任技術者上期試験解答』と明記されており、理論 問1=2 が manifest の公式正答と一致する。したがって、年度の根拠は解答表原図と manifest であると uncertainty に明記し、記述を整合させるべきである。",
+        "needsReview=false であるのに、uncertainty に出典年度が特定できないという留保が残っている。留保を解消するか、needsReview と整合させる必要がある。",
+        "examDate=2025-08-31 は添付原図（問題頁・解答表）のいずれにも記載がない。根拠は sourceQuestionPdfUrl／sourceAnswerPdfUrl のファイル名 '20250831' だけである。添付した公式資料の原頁では検証できないため、外部確認事項として記録する。"
+      ],
+      "verifiedEvidence": [
+        "問題文: 原図の『電圧 V[V]に充電された静電容量 C[F]のコンデンサと全く充電されていない静電容量 2C[F]のコンデンサとがある。これら二つのコンデンサを並列に接続したとき，これらのコンデンサに蓄えられる全静電エネルギー[J]の値として，正しいものは次のうちどれか。』と逐語一致する（句読点の整形のみ）。",
+        "選択肢: 原図の (1) 1/9 CV²、(2) 1/6 CV²、(3) 2/9 CV²、(4) 1/3 CV²、(5) 3/8 CV² と全肢一致する。",
+        "公式正答: 解答表原図の＜理論＞問1 は解答 2・配点 5 である。manifest（answer=2, points=5）、officialAnswer=2、scoringPoints=5 と一致する。",
+        "計算検算: 接続前の電荷は Q=CV、合成容量は 3C、共通電圧は V'=V/3 である。W=(1/2)·3C·(V/3)²=CV²/6 となり、別解 Q²/(2·3C)=CV²/6 と一致する。内訳は C 側 CV²/18、2C 側 CV²/9 で、合計 3/18=1/6 となり正しい。接続損失は 1/2−1/6=1/3 で正しい。",
+        "肢(1)の理由（2C 側単体のエネルギー CV²/9 に等しい）と肢(4)の理由（接続損失 CV²/3 に等しい）は、数値・因果とも正しい。",
+        "図: 原図に図はない。figureUrls=[]、choiceFigureUrls={}、figureDescription『本問に図はない』は妥当である。",
+        "officialReferenceUrls=[] のため、独立主張の検証対象はない。",
+        "reviewedFromPage=[4]: 原図の印刷頁番号は『-1-』である。表紙・注意事項頁の後に置かれた PDF 頁として矛盾はない。"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,69 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20250831",
+  "subject": "theory",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 3221,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 14586,
+      "webSearchRequests": 0,
+      "costUSD": 0.1813718,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 1817,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "2d2a069b4aced096d79b69acac66e178926284d50d956e1b54546c5e4b36ddbf",
+  "inputRequestSha256": "c0e9f57c55959766bbdc7d597cffbdce0d25588a2a50609381bf20aa63739353",
+  "inputHashes": {
+    "candidateSha256": {
+      "q07": "3c4163aa217ef618070e609d9ec1d4f48816b96dbc1b7de923ebbf3cb6342cd0"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20250831/theory/p10.png": "6dfdba488e2d253d508595df3695e2a4bd3eaba8960e7b00933a82dd882225d5"
+    },
+    "figureSha256": {
+      "public/images/denken3/20250831/theory/20250831-theory-q07-fig1.png": "f5f4265f2e4377beadf69b9ea13c8b4c9d786f54b68e9f7fad963f4809587aa4"
+    },
+    "sourceQuestionPdfSha256": "11a75ffd5dd2b5309ad75370bb963c4fda9e12a812174cfa2c2237383c3a964d",
+    "sourceAnswerPdfSha256": "76fd3715ed487d19a56b387fb402de20ee09474e9fa55b0413f9037b96af06c9",
+    "officialAnswerUnitsSha256": "9a5cbdec7f18539027226f8bbaae0f1be131e67b15b2b1ed459765dc3e52aa61",
+    "referencePdfSha256": {},
+    "referencePageSha256": {},
+    "referenceJsonSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q07",
+      "questionNumber": 7,
+      "part": null,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [
+        "uncertainty 欄が「試験年度・期・試験日は…ここでは特定しない」と述べているが、同じ候補の fiscalYear=2025・term=upper・examDate=2025-08-31・sourceAttribution「令和7年度上期…理論科目 問7」はこれらを特定しており、候補内で自己矛盾している。これらのメタデータは manifest（2025年度上期、試験日2025-08-31、理論、問題PDF 20250831_ch_third_q01.pdf、解答PDF 20250831_ch_third_a01.pdf）と公式解答表の見出し「令和７年度 第三種電気主任技術者上期試験解答」で裏付けられる。uncertainty 欄は空にするか、「年度・期・試験日は manifest 固定の出典情報と公式解答表の見出しに基づく（問題頁自体には表記なし）」という趣旨に改めること。"
+      ],
+      "verifiedEvidence": [
+        "問題文：原図の本文と一致する（直流回路、S閉時の2Ω電流がS開時の3倍、R[Ω]に最も近いもの、(1)〜(5)から一つ選べ）。",
+        "選択肢：原図の (1)2.5 (2)3.5 (3)0.5 (4)1.5 (5)4.5 と、順序・値ともに一致する。",
+        "公式正答：解答表〈理論〉問7は解答1・配点5である。候補の officialAnswer=\"1\"・scoringPoints=5、manifest 固定単位 {question:7, part:null, answer:\"1\", points:5} と一致する。",
+        "総合解説の検算：I_開=E/12。I_閉=E/(2+10R/(10+R))。I_閉=3I_開 から 2+R_p=4、R_p=2。10R=2(10+R) より R=2.5Ω。検算として R_p=25/12.5=2、全抵抗4Ω、比12/4=3 となり正しい。",
+        "誤答肢の検算：(2) R_p=35/13.5≒2.593、全抵抗≒4.593、比≒2.61。(3) R_p=5/10.5≒0.476、全抵抗≒2.476、比≒4.85。(4) R_p=15/11.5≒1.304、全抵抗≒3.304、比≒3.63。(5) R_p=45/14.5≒3.103、全抵抗≒5.103、比≒2.35。すべて候補の記載値と一致し、3倍との大小関係の記述も正しい。",
+        "図の照合：公開候補図は原図の回路部分を欠落なく含む。E（電池記号、左側ラベル）、上側導線の右向き矢印とI、2Ω（上方ラベル）、上下の接続点黒丸、10Ω（左側ラベル）、開状態のスイッチと曲線矢印・下方ラベルS、右辺のR（右側ラベル）が原図と一致する。接続は、S閉で R∥10Ω にさらに2Ωが直列、S開で2Ω+10Ωの直列となる。公開候補図だけで解答に必要な接続関係が読み取れる。",
+        "figureDescription：接続・向き・全ラベルの記述が図と一致する。電源極性は記述されていないが、本問は電流比のみを用いるため解答に影響しない。",
+        "出典メタデータ：reviewedFromPage=[10] は manifest の「問7原図はPDF第10頁」と一致する。頁フッタ「T1－R 010」とも整合する。sourceQuestionPdfUrl・sourceAnswerPdfUrl は manifest と一致する。",
+        "officialReferenceUrls は空で、検証を要する独立主張はない。"
+      ]
+    }
+  ]
+}

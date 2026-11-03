@@ -1,0 +1,58 @@
+{
+  "reviewModel": "claude-opus-5-5",
+  "requestedModel": "claude-opus-5-5",
+  "canonicalModel": "claude-opus-5-5",
+  "provider": "firstParty",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 3778,
+      "cacheReadInputTokens": 139443,
+      "cacheCreationInputTokens": 20055,
+      "webSearchRequests": 0,
+      "costUSD": 0.2638966,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 2839,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "paperId": "emkohyo-EM20261802",
+  "ids": [
+    "emkohyo-EM20261802-q6"
+  ],
+  "figureSha256": {
+    "emkohyo-EM20261802-q6": {}
+  },
+  "officialRowImageSha256": {
+    "emkohyo-EM20261802-q6": {
+      "/exam-library/emkohyo-EM20261802/q6-p5-1.webp": "9c3c87bf92b01ee0b2006bcbe46c0dea99de4214943e2599b11fdcb29badca56"
+    }
+  },
+  "officialPageImageSha256": {},
+  "governmentSourceImageSha256": {},
+  "candidateSha256": {
+    "emkohyo-EM20261802-q6": "2ea2e3304128954b777c07a072d0b9213f08125778f13a25102c71a97e18bf9a"
+  },
+  "sourcePackPath": "docs/evidence/emkohyo-choice-sources/emkohyo-EM20261802-q06-06.json",
+  "sourcePackSha256": "20cdbba1181c46ebce2201ebd769aa5a9873c4f9397b41fe7f9a4df4f0b8cc40",
+  "assessment": {
+    "emkohyo-EM20261802-q6": {
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "reasonIssues": [
+        "肢3の理由は結論と前提が噛み合っていない。理由自体が、測定法施行規則別表第5号には特定有機溶剤混合物の規定もあると認めている。添付資料の第5号の抜粋にも「同表第一号から第四十七号までに掲げる有機溶剤を含有する特定有機溶剤混合物…を製造し、又は取り扱う作業場」とある。特定有機溶剤混合物は、エチルベンゼンなどの特別有機溶剤を含むものとして定義される。そのため第5号の登録だけでも、特定有機溶剤混合物を扱う作業場ではエチルベンゼンを含めて測定できる余地がある。それでも肢3の「行うことができない」が正しいと言える理由が書かれていない。「エチルベンゼンそのものを第5号登録だけで測定できるわけではない」という一文は曖昧で、根拠規定もない。書き直す内容は次の3点。(1) エチルベンゼン単体、または特定有機溶剤混合物に当たらない特別有機溶剤等を扱う作業場は、別表第3号の登録範囲である。(2) 第5号に入るのは特定有機溶剤混合物を扱う作業場に限られる。(3) 設問は前者の一般的な場合を問うているので肢3は正しい。この3点を規定に基づいて書き分ける。"
+      ],
+      "sourceIssues": [
+        "特定有機溶剤混合物を定義する特定化学物質障害予防規則第36条の5が出典にも証拠抜粋にも無い。肢3の理由はこの概念に触れているのに、定義と適用範囲を政府一次資料で確認できない。",
+        "肢3の結論、つまり第5号の登録だけではエチルベンゼンの測定ができないことを直接支える政府資料が無い。添付された第5号の抜粋は、特定有機溶剤混合物の作業場を含むことを示しており、むしろ反対方向の事情を示している。第5号の登録者が特別有機溶剤を測定できる範囲について、厚生労働省の施行通達（平成26年の特別有機溶剤規制導入時の通達など）を根拠に加えるべき。"
+      ],
+      "needsExternalCheck": [
+        "第5号（有機溶剤）の登録だけを受けた第1種作業環境測定士が、特定有機溶剤混合物を扱う作業場でエチルベンゼンを含めた作業環境測定を行えるかどうか。これを厚生労働省の通達や測定法施行規則の運用解釈で確認し、肢3の理由の書き方を確定する必要がある。"
+      ]
+    }
+  }
+}

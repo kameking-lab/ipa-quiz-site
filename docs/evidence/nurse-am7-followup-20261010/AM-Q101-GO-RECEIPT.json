@@ -1,0 +1,35 @@
+{
+  "scope": "Separate source-only GO; no site registration or publication",
+  "id": "kangoshi-2024-annual-am-q101",
+  "sourcePacketSha256": "8b9960a0d8674827e881cd4364034a3f8bea7956e026f4c1fac75ccb194577e6",
+  "existingCandidateSha256": "097e1d8a1a9606dc835bc419cf54cc33d96c07bfd52fcd26aaf66a60a1d247b0",
+  "officialQuestionPdfSha256": "03733e97bcbc54eb6ea74727daf57aaf8a094d1746879d10b4451efc361a981f",
+  "officialAnswerPdfSha256": "706f6fe6ab34e9849755874132ad98ac55a32d9b83fa7e37c8e58c7ad07921db",
+  "sourcePages": [
+    40,
+    41
+  ],
+  "sourcePageImageSha256": [
+    "7cba6f4b61cd02e039cbec4c905a9832701c1c619c90635287ff2af3d086aa70",
+    "ac38c4adddb9caaf8d7201cb9116a480fb02c5f878972e089c31adf912593f76"
+  ],
+  "priorQuestion100Raw": "100\n術後1日。朝6時のA さんのバイタルサインは、体温36.5 ℃、呼吸数18/分、\n脈拍64/分、血圧120/82 mmHg、経皮的動脈血酸素飽和度〈SpO2〉97 %（room air）\nであった。膀胱留置カテーテルが挿入されていて夜間の尿の流出は良好であった。\n腸蠕動音が確認できたため朝食が開始された。食事時にA さんが顔をしかめてい\nたため、夜勤の看護師が鎮痛薬の内服を勧めたがA さんは｢痛みはそれほど強くな\nい｣と言った。朝食後に点滴静脈内注射と吸引式ドレーンが抜去された。\n午前9時の看護師の観察項目で優先度が高いのはどれか。\n1．意識レベル\n2．酸素飽和度\n3．創部痛\n4．血\n圧\n5．尿\n量",
+  "rawQuestion101AndAllChoices": "101\n術後1日。午前中に看護師がA さんのバイタルサインを測定しているときは\n眠っていた。昼食後に看護師が訪室すると、A さんは多弁で、落ち着かない様子\nがみられた。\n看護師のA さんへの対応で適切なのはどれか。2つ選べ。\n1．医師に抗不安薬の処方を依頼する。\n2．ベッド上で安静に過ごしてもらう。\n3．膀胱留置カテーテルを抜去する。\n4．ベッド周囲をカーテンで囲む。\n5．補聴器の装着を確認する。",
+  "officialAnswerDigits": "35",
+  "sharedContextTreatment": "The preceding original Q100 clinical course is included as context, not counted as a new Q101 choice or a separate original.",
+  "rubyRepair": {
+    "field": "fullSharedPremiseText",
+    "removedStandaloneRuby": "femoral neck fracture",
+    "count": 1
+  },
+  "clinicalSources": [
+    {
+      "url": "https://www.cdc.gov/infection-control/hcp/cauti/summary-of-recommendations.html",
+      "finding": "For operative patients, remove an indwelling catheter promptly, preferably within 24 h, unless continued use is indicated."
+    },
+    {
+      "url": "https://www.nice.org.uk/guidance/cg103/chapter/Recommendations",
+      "finding": "Delirium prevention guidance calls for hearing and visual aids to be available and used."
+    }
+  ]
+}

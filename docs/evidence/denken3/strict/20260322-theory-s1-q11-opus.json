@@ -1,0 +1,66 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20260322",
+  "subject": "theory",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 2602,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 14326,
+      "webSearchRequests": 0,
+      "costUSD": 0.1669118,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 1210,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "9b11ea419a371a1b42a70b7321eefa8ec6e29b73e81d282f8add07dbf0614cce",
+  "inputRequestSha256": "fa26bfe3b415a7720ab361d0d84251ac2668b62f7691fc0923ada49befbc8501",
+  "inputHashes": {
+    "candidateSha256": {
+      "q11": "427d0fe5b385ed1057f32d314d20213f99abd2933601fe607d531afaaecb5b3f"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20260322/theory/p16.png": "f5e891d4e2ca3306e36ea0bbfeef1fff1209ad2eb45785cf5aba19fb9fda15a6"
+    },
+    "figureSha256": {},
+    "sourceQuestionPdfSha256": "c83e7c7350d98b65f5d8da0b93e4a2581a19dd250be320fb7fc492c9b34a29c1",
+    "sourceAnswerPdfSha256": "cc2890296d06a4823df5697a78a1c01ddfd39f041c51f48c87984daa3a5707c6",
+    "officialAnswerUnitsSha256": "65afb8e3d36137529c3bb300808b62f0b8e8e56726a521de92f48fc9467a567e",
+    "referencePdfSha256": {},
+    "referencePageSha256": {},
+    "referenceJsonSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q11",
+      "questionNumber": 11,
+      "part": null,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [
+        "uncertainty フィールドの記述が候補データ自体と矛盾している。「原本ページからは試験年度・回を特定する記載が確認できないため，出典の年度・回は本データでは示していない」とあるが、候補は fiscalYear=2025・term=lower・examDate=2026-03-22 を持ち、sourceAttribution にも「令和7年度下期」と明記している。年度・回は manifest（試験センター公式過去問一覧 https://www.shiken.or.jp/chief/third/qa/ ）と公式解答表見出し「令和7年度 第三種電気主任技術者下期試験解答」で確定しているので、この一文を削除し、出典はmanifestと公式解答PDFで確定済みである旨に改めること（例:「問題文・選択肢の判読および正答の検証に不確実な点はない。」のみとする）。"
+      ],
+      "verifiedEvidence": [
+        "問題文: 添付原図（PDF第16頁、下部印字 '- 13 -'／'T2-R 016'）の問11と照合した。前文、a（可変容量ダイオード・同調回路・pn接合に(ア)電圧）、b（pn接合に(イ)電圧・降伏現象・降伏電圧付近で電圧ほぼ一定・定電圧ダイオード）、c（レーザダイオード・光通信や光情報機器の光源・pn接合に(ウ)電圧）、設問文のいずれも、語句と空欄位置が一致する。",
+        "選択肢: 原図の表と照合した。(1) 順・順・逆、(2) 逆・逆・順、(3) 逆・順・逆、(4) 順・逆・順、(5) 逆・逆・逆。5肢とも候補 choices と一致する。",
+        "公式正答: 公式解答表の＜理論＞問11は解答2・配点5。manifest固定単位 {question:11, part:null, answer:'2', points:5} とも一致し、候補の officialAnswer='2'・scoringPoints=5 も一致する。",
+        "総合解説の検算: (ア) 可変容量ダイオードは逆バイアスで使う。逆電圧を大きくすると空乏層が広がり、接合容量は減少する。(イ) 降伏現象は逆方向電圧で起き、降伏領域では定電圧特性を示す。(ウ) レーザダイオードは順方向電流によるキャリア注入で発光し、しきい値以上で誘導放出が支配的になる。以上により組合せは逆・逆・順＝(2) となり、解説の因果・結論と整合する。",
+        "肢別解説: (1) は3項目とも誤り、(3) は(ア)のみ正で(イ)(ウ)が誤り、(4) は(ア)のみ誤り、(5) は(ウ)のみ誤り。各肢の正誤の指摘と理由は選択肢表と物理的根拠に整合する。(2) の正解理由も妥当である。",
+        "図: 原図に回路図・図版はなく、選択肢表のみである。表の内容は choices に全て文字化されている。figureUrls=[]・choiceFigureUrls={} で解答に必要な情報の欠落はない。",
+        "出典メタデータ: fiscalYear=2025（令和7年度）、term=lower（下期）、examDate=2026-03-22、subject=theory、sourceQuestionPdfUrl、sourceAnswerPdfUrl、reviewedFromPage=[16] は manifest と一致する。sourceAttribution の「令和7年度下期…理論科目 問11」は公式解答表見出しと一致する。",
+        "officialReferenceUrls は空で、独立主張の外部確認事項はない。"
+      ]
+    }
+  ]
+}

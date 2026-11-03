@@ -1,0 +1,34 @@
+{
+  "schemaVersion": 1,
+  "receiptKind": "canonicalized-direct-review",
+  "paper": "20241027",
+  "reviewModel": "claude-opus-5-5",
+  "upstreamReviewReceipt": "docs/evidence/denko2-strict-20241027-q41-50/direct2-q41-42-43-44-45-opus.json",
+  "upstreamReviewSha256": "f4fe3c532cb2e6fc49e01b6bbe6aec9c7e262dd260c521af98e91595549d6cb5",
+  "candidateEquivalenceProof": "current per-question candidate hash equals a clean source-aware direct Opus input hash",
+  "inputHashes": {
+    "draftSha256": "f714b62120e7af8f6ab17ba0eecfd2d865a2bf580a2f4326657f65df27c813a2",
+    "rowSha256": {
+      "43": "e194236db9bc347e8821cbaa5ad8385859d9ea46f90f08a4402b4520a5311cf8"
+    },
+    "detailFigureSha256": {
+      "public/images/denko2/2024-second/wiring-diagram.png": "4b4d474a8fde227349db77620ddece4a673956783b85384b48d2247572adcc32",
+      "public/images/denko2/2024-second/q43-1.png": "1523ed076653edf7544f9ad220e6f7adbdc3e21636d68f567dc4d59aaaaf3fc0"
+    },
+    "sharedFigureSha256": {},
+    "legalReceiptSha256": {}
+  },
+  "assessment": [
+    {
+      "number": 43,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "visualIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": "I checked the question line and q43-1.png against the original. The question text, including the condition 「ただし，使用する電線はすべてVVF1.6とする」, matches. The choice labels match: イ red 3 + yellow 1, ロ red 2 + pale blue 2, ハ red 3 + pale blue 1, ニ red 2 + yellow 1.\n\nOfficial p.15, 2F plan: ⑬ is the hatched-circle VVF joint box (about x505, y180). Four cables connect to it:\n- L-2 circuit ⓒ.\n- The イ fluorescent group on the left.\n- The right-hand fluorescent group, labelled ロ with small katakana next to the lamps.\n- The line through ① to the ⑭ switch group (イロハ, with ハ marked 3 for a 3-way switch).\n\nThe ハ 3-way switch runs down the riser (arrow at about x618, y130) to the 1F stair lamp ハ (about x605, y505). On 1F, that lamp connects only to the riser and to the 1F 3-way switch (3ハ). Its supply and neutral therefore come through ⑭, ① and ⑬ from L-2 circuit c.\n\nSo ① carries four wires: live, neutral, the イ return and the ロ return. Inside ⑬, the neutrals form one 4-wire joint, and the live, イ-return and ロ-return each form a 2-wire joint (three joints). The photos show red with 2 ports, clear/pale blue with 3 ports and yellow with 4 ports. That gives red ×3 + yellow ×1, matching the official answer イ. The shortfall or surplus reasons given for ロ, ハ and ニ are correct. The candidate makes no independent legal or standards claim."
+    }
+  ]
+}

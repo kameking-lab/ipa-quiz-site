@@ -1,0 +1,59 @@
+{
+  "schemaVersion": 1,
+  "question": "20260401-q45",
+  "status": "official-source-verified",
+  "checkedAtUtc": "2026-09-26T10:36:39.516748+00:00",
+  "sources": {
+    "解釈": {
+      "title": "電気設備の技術基準の解釈",
+      "url": "https://www.meti.go.jp/policy/safety_security/industrial_safety/law/files/dengikaishaku.pdf",
+      "sha256": "7e0c8969263999fdfccf843d987ca8429ea2823aee1004e70471e6d4d812f7fd",
+      "fetchedVia": "direct-download",
+      "revision": "改正 20251104保局第2号 令和7年11月20日付け"
+    },
+    "大阪府 共通仕様書 第3編 電気設備工事": {
+      "title": "大阪府 共通仕様書 第3編 電気設備工事",
+      "url": "https://www.pref.osaka.lg.jp/documents/61933/0509kyoutusiyousyodennkisetsubi.pdf",
+      "sha256": "b167f47fe790ecff88b500c7b98f2ed9832d2a13805a4b3c535765c63f8c5787"
+    },
+    "エナジーサポート 高圧カットアウト カタログ": {
+      "title": "エナジーサポート 高圧カットアウト カタログ",
+      "url": "https://www.energys.co.jp/denzai/pdf/catalog_05_pc.pdf",
+      "sha256": "8f8f48a162d271e2ee74d8d29ee4d30fb56084308a0e958ad9c1602d58ab0efb"
+    }
+  },
+  "checks": {
+    "A種接地工事の接地線": {
+      "source": "解釈",
+      "clauses": [
+        "【接地工事の種類及び施設方法】（省令第11条）第17条A種接地工事は、次の各号によること。",
+        "ロハに規定する場合を除き、引張強さ1.04kN以上の容易に腐食し難い金属線又は直径2.6mm以上の軟銅線であること。"
+      ],
+      "applies": "解釈のA種接地線の最低条件は直径2.6mm以上の軟銅線等で、14mm²は定めていない。"
+    },
+    "避雷器の接地線": {
+      "source": "大阪府 共通仕様書 第3編 電気設備工事",
+      "clauses": [
+        "(1)Ａ種接地工事は次による。1)高圧の場合の接地線の太さは、表32による。",
+        "2)接地母線及び避雷器は、14mm2以上とする。"
+      ],
+      "applies": "避雷器の接地線は14mm²以上。"
+    },
+    "避雷器の断路": {
+      "source": "エナジーサポート 高圧カットアウト カタログ",
+      "clauses": [
+        "また素通し線を用いることでアレスターの一次側断路器としても利用できます。"
+      ],
+      "applies": "避雷器の一次側には断路器(ヒューズを入れない素通し)を用いる。"
+    },
+    "避雷器の接地": {
+      "source": "解釈",
+      "clauses": [
+        "【避雷器等の施設】（省令第49条）第37条高圧及び特別高圧の電路中、次の各号に掲げる箇所又はこれに近接する箇所には、避雷器を施設すること。",
+        "3高圧及び特別高圧の電路に施設する避雷器には、A種接地工事を施すこと。"
+      ],
+      "applies": "第37条第3項。避雷器はA種接地工事。"
+    }
+  },
+  "unresolved": []
+}

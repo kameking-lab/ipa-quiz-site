@@ -1,0 +1,106 @@
+{
+  "questions": [
+    {
+      "number": 14,
+      "status": "PASS",
+      "problems": "",
+      "fixes": {},
+      "evidence": []
+    },
+    {
+      "number": 15,
+      "status": "FIX",
+      "problems": "肢2の理由に誤字がある。「国土面积」の「积」は簡体字で、正しくは「面積」。数値に関する記述（人口は全人口の約1割、市町村数は約半数、面積は過半）は総務省資料と合っている。",
+      "fixes": {
+        "2": "過疎地域は国土面積の過半を占めるが、2020年国勢調査時点の人口は全人口の1割程度にとどまる。2割に満たないという記述は適切である。",
+        "lawSensitive": false
+      },
+      "evidence": [
+        {
+          "url": "https://www.soumu.go.jp/main_content/000944362.pdf",
+          "checked": "令和4年度版 過疎対策の現況（概要版）。PDF本文は取得できず、検索結果の抜粋で確認した。過疎地域の人口は全国の約9%、面積は63.2%、過疎関係市町村は885で全市町村の51.5%（2023年4月1日時点）。"
+        }
+      ]
+    },
+    {
+      "number": 16,
+      "status": "PASS",
+      "problems": "",
+      "fixes": {},
+      "evidence": [
+        {
+          "url": "https://www.mhlw.go.jp/toukei/saikin/hw/k-tyosa/k-tyosa22/dl/03.pdf",
+          "checked": "2022年国民生活基礎調査の概況（所得等）。PDF本文は文字化けで読めず、検索結果の抜粋で確認した。平均所得金額は545万7千円、中央値は423万円、生活が「苦しい」は51.3%、相対的貧困率は15.4%、子どもの貧困率は11.5%で2018年から2.5ポイント低下。"
+        }
+      ]
+    },
+    {
+      "number": 17,
+      "status": "PASS",
+      "problems": "",
+      "fixes": {},
+      "evidence": []
+    },
+    {
+      "number": 18,
+      "status": "PASS",
+      "problems": "",
+      "fixes": {},
+      "evidence": []
+    },
+    {
+      "number": 19,
+      "status": "PASS",
+      "problems": "",
+      "fixes": {},
+      "evidence": []
+    },
+    {
+      "number": 20,
+      "status": "PASS",
+      "problems": "",
+      "fixes": {},
+      "evidence": []
+    },
+    {
+      "number": 21,
+      "status": "PASS",
+      "problems": "",
+      "fixes": {},
+      "evidence": []
+    },
+    {
+      "number": 22,
+      "status": "PASS",
+      "problems": "",
+      "fixes": {},
+      "evidence": []
+    },
+    {
+      "number": 23,
+      "status": "PASS",
+      "problems": "",
+      "fixes": {},
+      "evidence": [
+        {
+          "url": "https://www.soumu.go.jp/menu_seisaku/chiho/132137.html",
+          "checked": "災害時外国人支援情報コーディネーター養成研修。検索結果の抜粋で確認した。研修の対象は自治体職員または地域国際化協会等の職員で、外国語を母語とする者に限る要件は示されていない。"
+        }
+      ]
+    },
+    {
+      "number": 24,
+      "status": "PASS",
+      "problems": "",
+      "fixes": {},
+      "evidence": []
+    },
+    {
+      "number": 25,
+      "status": "PASS",
+      "problems": "",
+      "fixes": {},
+      "evidence": []
+    }
+  ]
+}

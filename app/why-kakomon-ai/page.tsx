@@ -1,12 +1,14 @@
+import { AI_ACCESS_DESCRIPTION, AI_ATTEMPT_DESCRIPTION, BROWSER_AUDIO_DESCRIPTION, aiAccessClaimsEnabled } from "@/components/ai/ai-access-copy";
+import { MONTHLY_PUBLIC_OFFER } from "@/lib/billing/subscription/public-offer";
 import type { Metadata } from "next";
 import Link from "next/link";
+import { PRICE_PAGE_LINK } from "@/lib/billing/price-page-link";
 import { ArrowRight, Check, ExternalLink, Sparkles } from "lucide-react";
 
 import { JsonLd } from "@/components/seo/JsonLd";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { SITE_BASE_URL, SITE_NAME } from "@/lib/seo/config";
-import { FREE_AI_DAILY_LIMIT } from "@/lib/constants/ai-quota";
 
 const PAGE_PATH = "/why-kakomon-ai";
 const PAGE_TITLE = "過去問AI を選ぶ理由 ── IPA 試験対策サービス比較";
@@ -82,7 +84,7 @@ const COMPARISON_ROWS: ComparisonRow[] = [
   },
   {
     label: "料金",
-    kakomonAi: `無料で全機能。AI コパイロットは初回 ${FREE_AI_DAILY_LIMIT} 回まで無料（フィードバック後ほぼ無制限）`,
+    kakomonAi: "料金と利用条件は各案内をご確認ください。",
     doujou: "基本無料（広告表示あり）",
     yobikou: "月数千円〜数万円の有料モデルが中心",
   },
@@ -97,7 +99,7 @@ const COMPARISON_ROWS: ComparisonRow[] = [
 const STRENGTH_CARDS = [
   {
     title: "AI コパイロットが常駐",
-    body: "Google Gemini に IPA 公式問題・解答を入力し、引用元つきで回答。誤答理由の可視化・類題生成・用語解説をワンタップで呼び出せる。",
+    body: "Google Gemini に IPA 公式問題・解答を入力し、引用元つきで回答。誤答理由の可視化・用語解説をワンタップで呼び出せる。",
     href: "/features/copilot",
     label: "コパイロットの仕組み",
   },
@@ -141,8 +143,8 @@ const RESPECT_POINTS = [
 
 const FAQS = [
   {
-    q: "本当に無料で全機能使えますか？",
-    a: `はい。教育貢献プロジェクトとして、AI コパイロット以外のすべての機能を無料で公開しています。AI コパイロットは API コスト管理のため初回 ${FREE_AI_DAILY_LIMIT} 回までを無料枠とし、フィードバックを投稿いただくとその後はほぼ無制限でご利用いただけます。`,
+    q: "無料と有料の範囲は？",
+    a: "料金と利用条件は各案内をご確認ください。",
   },
   {
     q: "AI 解説の精度はどの程度信頼できますか？",
@@ -154,11 +156,18 @@ const FAQS = [
   },
   {
     q: "将来的に有料化されますか？",
-    a: "無料枠は維持する方針です。プレミアム（月 300 円相当）は AI コパイロットの無制限利用・広告非表示を予定していますが、本実装はフェーズ 4 以降の検討で、現時点では未着手です。",
+    a: "連続演習とAIの利用条件は各案内をご確認ください。",
   },
 ];
 
 export default function WhyKakomonAiPage() {
+  const activeAiPolicy = aiAccessClaimsEnabled();
+  const activeAiCopy = (activeAiPolicy ? "無料AIの新規生成にはログインが必要です。" + AI_ACCESS_DESCRIPTION : "AI コパイロットは無料で試用できます。その他のAI機能は各画面の利用条件をご確認ください。AI応答の利用条件は連続演習の月額プランとは別に管理しています。") + " " + BROWSER_AUDIO_DESCRIPTION;
+  const currentOfferCopy = `対象の連続演習の月額プランの案内額は税込${MONTHLY_PUBLIC_OFFER.priceYen.toLocaleString("ja-JP")}円です。販売状況・対象範囲・契約条件は月額プランの案内でご確認ください。`;
+  const comparisonRows = COMPARISON_ROWS.map(row => row.label === "料金" ? {...row, kakomonAi: activeAiCopy + " " + currentOfferCopy} : row);
+  const faqs = FAQS.map((faq, index) => index === 0
+    ? {q: "無料と有料の範囲は？", a: "個別問題・保存済み履歴の閲覧と復習は無料です。" + activeAiCopy + " " + currentOfferCopy}
+    : index === 3 ? {q: "月額プランとAIの利用条件は？", a: currentOfferCopy + " " + activeAiCopy + (activeAiPolicy ? " " + AI_ATTEMPT_DESCRIPTION : "")} : faq);
   const absUrl = `${SITE_BASE_URL}${PAGE_PATH}`;
 
   const jsonLd = {
@@ -174,7 +183,7 @@ export default function WhyKakomonAiPage() {
       },
       {
         "@type": "FAQPage",
-        mainEntity: FAQS.map((f) => ({
+        mainEntity: faqs.map((f) => ({
           "@type": "Question",
           name: f.q,
           acceptedAnswer: { "@type": "Answer", text: f.a },
@@ -280,7 +289,7 @@ export default function WhyKakomonAiPage() {
               </tr>
             </thead>
             <tbody className="divide-y divide-border">
-              {COMPARISON_ROWS.map((row) => (
+              {comparisonRows.map((row) => (
                 <tr key={row.label}>
                   <th scope="row" className="px-3 py-3 text-left align-top font-medium text-foreground">{row.label}</th>
                   <td className="px-3 py-3 align-top text-muted-foreground">{row.kakomonAi}</td>
@@ -315,7 +324,7 @@ export default function WhyKakomonAiPage() {
           よくある質問
         </h2>
         <ul className="space-y-3">
-          {FAQS.map((f, i) => (
+          {faqs.map((f, i) => (
             <li key={i}>
               <details className="group rounded-2xl border border-border bg-card p-4 transition open:border-primary/40 open:shadow-md sm:p-5">
                 <summary className="cursor-pointer text-sm font-semibold text-foreground">
@@ -391,7 +400,7 @@ export default function WhyKakomonAiPage() {
           まずは 1 問だけ試してみる
         </h2>
         <p className="mt-1 text-xs text-muted-foreground">
-          会員登録不要・無料。AI コパイロットの引用カードは初回 10 問まで体感できます。
+          {activeAiCopy} <Link href={PRICE_PAGE_LINK.href} className="underline">{PRICE_PAGE_LINK.label}</Link>
         </p>
         <Button asChild variant="primary" size="lg" className="mt-4 font-semibold">
           <Link href="/ap">

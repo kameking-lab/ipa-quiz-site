@@ -1,0 +1,67 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20260322",
+  "subject": "machinery",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 3577,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 14581,
+      "webSearchRequests": 0,
+      "costUSD": 0.1884518,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 1881,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "914eb4df88e55206f65922d3fa170ee7bbb17452215987a37f5f61671b215b75",
+  "inputRequestSha256": "73134756fd1077bc96f0779e22be572c048dbdcab3394ef01c4ab5dc738a165b",
+  "inputHashes": {
+    "candidateSha256": {
+      "q05": "8969e6f3405dbfad6a313a575a57e76f5171fe1c9f39b4ef2c4b2e756d60410b"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20260322/machinery/p08.png": "9b060fb3e4569f292e3fdbbdb458505411aca252e0c69b2aba1fe886b1aa123d"
+    },
+    "figureSha256": {},
+    "sourceQuestionPdfSha256": "a89c7dc2b9a305f9db83f2f78195f0df8a0da5aeec6b8e66cfd40fb028d146fb",
+    "sourceAnswerPdfSha256": "cc2890296d06a4823df5697a78a1c01ddfd39f041c51f48c87984daa3a5707c6",
+    "officialAnswerUnitsSha256": "9caccf2fd122a97218bf3ac96a785d070c620e4be7cc9c5f1ddb43533263025e",
+    "referencePdfSha256": {},
+    "referencePageSha256": {},
+    "referenceJsonSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q05",
+      "questionNumber": 5,
+      "part": null,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [
+        "choiceExplanations[1]と[2]で、巻線形を退ける理由を「原理」の違いとしている箇所がある（[1]「かご形誘導電動機と同じ原理である」、[2]「構造・原理はかご形誘導電動機と同じであり巻線形誘導電動機ではない」）。巻線形誘導電動機も誘導トルクで回るので、誘導トルクという原理そのものは巻線形と共通である。両者を分けるのは回転子の構造で、制動巻線は導体棒を短絡環で常時短絡した構造であり、スリップリングや外部抵抗を持たない。誤答理由は「構造がかご形回転子と同じ」ことに寄せて書くべきで、現状の書き方は読者に誤解を与えうる。"
+      ],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [
+        "uncertaintyの記述が他のメタデータと矛盾している。uncertaintyには「試験の実施年度・回を特定できないため，出典年度は未記載」とあるが、候補にはfiscalYear=2025、term=lower、examDate=2026-03-22が記録済みで、sourceAttributionにも「令和7年度下期」と明記されている。いずれもmanifest（問題PDF 20260322_ch_third_q03.pdf／解答PDF 20260322_ch_third_a01.pdf、2025年度下期、試験日2026-03-22）と一致しているので、uncertaintyの年度・回に関する記述は古い内容が残ったものと判断した。削除するか、manifest由来で確定済みである旨に書き換えること。"
+      ],
+      "verifiedEvidence": [
+        "問題文：添付原図（下部表記「- 5 -」「T2－K 008」＝manifest指定のPDF第8頁）と一字ずつ照合した。「回転界磁形同期電動機」「対称三相交流電圧」「平均トルクは零」「回転子の磁極面に(ア)を施す」「(イ)と同じ起動原理」「誘導トルク」「(ウ)を抵抗で短絡して起動する」「この短絡を切り放し(エ)で励磁する」「同期速度に引き込まれる」まで、表記の差異はない。空欄記号［(ア)］〜［(エ)］は原図の枠付き空欄に対応している。",
+        "選択肢：(1)補償巻線/巻線形誘導電動機/界磁巻線/交流、(2)制動巻線/巻線形誘導電動機/界磁巻線/交流、(3)制動巻線/かご形誘導電動機/界磁巻線/直流、(4)制動巻線/かご形誘導電動機/固定子巻線/直流、(5)補償巻線/かご形誘導電動機/固定子巻線/直流。5肢とも原図の表と一致する。",
+        "公式正答：解答表原図の＜機械＞問5は解答3・配点5で、manifestの正答単位{question:5, part:null, answer:\"3\", points:5}と一致する。候補のofficialAnswer=\"3\"、scoringPoints=5とも一致している。",
+        "総合解説：次の4点を技術的に検算し、誤りは見つからなかった。(ア)制動巻線は磁極面の導体棒と短絡環で構成される。(イ)その構造はかご形回転子と同等で、誘導トルクによって自己始動する。(ウ)起動時は巻数の多い界磁巻線に高電圧が誘起されるため、抵抗で短絡して絶縁を保護する。(エ)同期速度付近で短絡を開き、直流で励磁して同期へ引き入れる。誘導トルクだけではすべりが残るという記述、制動巻線が運転中の乱調を抑制するという補足も正しい。",
+        "誤答肢の固有理由を確認した。(1)(5)の補償巻線が直流機の電機子反作用対策であること、(4)(5)の固定子巻線が回転磁界を作る電源側の巻線で短絡対象ではないこと、(1)(2)の交流励磁の誤りは、いずれも正確である。巻線形の否定理由の書き方だけをchoiceIssuesに記録した。",
+        "図：本問に図はなく、選択肢の表はchoicesにすべて転記されている。figureUrls=[]、choiceFigureUrls={}は妥当である。",
+        "出典：officialReferenceUrlsは空で、検証が必要な独立主張はない。reviewedFromPage=[8]はmanifestの原図頁と一致する。subject=machineryは機械科目の冊子（q03）と一致する。"
+      ]
+    }
+  ]
+}

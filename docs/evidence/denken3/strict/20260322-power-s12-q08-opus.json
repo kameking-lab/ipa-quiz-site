@@ -1,0 +1,72 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20260322",
+  "subject": "power",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 4243,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 14357,
+      "webSearchRequests": 0,
+      "costUSD": 0.19997979999999999,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 2505,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "4ca2ca5de8adfbdf4f23863ab5a7d3019743d3b8934ec0fa0622cc4274b06039",
+  "inputRequestSha256": "94b4b42d6d1df13707faf4b2bb2ad325546e7e81af1f21f67565e391bc77cfc5",
+  "inputHashes": {
+    "candidateSha256": {
+      "q08": "a76ee4d4cd82818fa1820aa6b888cd5a4db45e8b282be9c4ab47f4db999b01a1"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20260322/power/p11.png": "b728d81f3ef55bf53e73c18bf505a384fd416c77d4b57449d7375d9972ce37e1"
+    },
+    "figureSha256": {},
+    "sourceQuestionPdfSha256": "9733341a0f293f068c9a665d5a9a90f1aabf3a2db5d79cd530643cdea241f7b7",
+    "sourceAnswerPdfSha256": "cc2890296d06a4823df5697a78a1c01ddfd39f041c51f48c87984daa3a5707c6",
+    "officialAnswerUnitsSha256": "46f4d90a3c1180dce614fde96a74d4263e44eac234d5d6095af187716864ef3f",
+    "referencePdfSha256": {},
+    "referencePageSha256": {},
+    "referenceJsonSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q08",
+      "questionNumber": 8,
+      "part": null,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "問題文: 公式原図の「架空送電線路に関連する設備に関する記述として，誤っているものを次の(1)～(5)のうちから一つ選べ。」と一致する。「～」を「〜」に置き換えただけの表記差で、意味は変わらない。",
+        "選択肢(1): がいし、アークホーンの併設、アーク放電からのがいし保護の2文とも原図と一致する。",
+        "選択肢(2): 架空地線、遮へい角、「小さいほど雷撃防止の効果が大きい」の各記述が原図と一致する。",
+        "選択肢(3): 超高圧、スペーサによる多導体化、コロナ放電の抑制、「スペーサはギャロッピングの防止にも効果的である」の各記述が原図と一致する。",
+        "選択肢(4): 一様な微風、電線背後の空気の渦、上下振動、サブスパン振動、ダンパ、断線防止の各記述が原図と一致する。",
+        "選択肢(5): 直撃雷、鉄塔から送電線への逆フラッシオーバ、埋設地線、接地抵抗の低減、逆フラッシオーバの抑制の各記述が原図と一致する。句読点「，」「。」も原図どおりである。",
+        "公式正答: 公式解答表の＜電力＞問8は解答4・配点5である。manifest固定の正答単位 {question:8, part:null, answer:\"4\", points:5}、候補の officialAnswer=\"4\"、scoringPoints=5 とすべて一致する。",
+        "出典情報: 解答表の見出しは「令和7年度 第三種電気主任技術者下期試験解答」である。候補の fiscalYear=2025、term=lower、examDate=2026-03-22、subject=power、sourceQuestionPdfUrl=…q02.pdf、sourceAnswerPdfUrl=…a01.pdf、reviewedFromPage=[11] は manifest とすべて一致する。原図フッタの「- 8 -」は冊子内のページ番号であり、PDF第11頁と矛盾しない。",
+        "総合解説: 一様な微風によるカルマン渦で電線が上下に振動する現象は微風振動であり、サブスパン振動（多導体のスペーサ間区間で、風上側素導体の後流により生じる振動）ではない。したがって(4)は振動の名称が誤っており、正答4と因果が整合する。微風振動の対策としてのダンパやアーマロッド、支持点付近での疲労断線の記述も妥当である。",
+        "肢(1)の解説: アークホーンはがいし連の両端に付ける電極で、フラッシオーバ時のアークをがいし表面から離し、熱的損傷を防ぐ。正しいと判定した理由として適切である。",
+        "肢(2)の解説: 遮へい角の定義（架空地線と電線を結ぶ線が鉛直線となす角）と、角が小さいほど遮へい効果が大きいという関係はいずれも正しい。",
+        "肢(3)の解説: 多導体化で等価半径が増え、電線表面の電位の傾きが下がってコロナ放電が抑制される点は正しい。ギャロッピングの定義（着氷雪で翼状になった電線に揚力が働き、大振幅で振動する現象）も正しい。ルーズスペーサで翼状着氷を防ぐ点、相間スペーサで相間短絡を防ぐ点も正しい。「構造を工夫することで」と条件を付けて第2文を正しいとしており、公式正答（(3)は正しい肢）と整合する。スペーサダンパと不等間隔配置を主にサブスパン振動対策と区別している点も妥当である。",
+        "肢(4)の解説: 誤りは振動の名称だけであり、後半のダンパによる対策は微風振動の対策として妥当であると切り分けている。誤答肢に固有の理由として正確である。",
+        "肢(5)の解説: 雷電流によって塔脚接地抵抗で鉄塔電位が上昇し、アーム側から電線側へフラッシオーバする機構は正しい。埋設地線（カウンタポイズ）による接地抵抗低減で逆フラッシオーバを抑制できる点も正しい。",
+        "図: 公式原図に図はなく、文章のみの問題である。figureDescription、figureUrls=[]、choiceFigureUrls={} はこれと整合する。",
+        "参照: officialReferenceUrls は空配列である。検証を要する独立した公式主張はない。uncertainty=\"なし\"、needsReview=false にも矛盾はない。"
+      ]
+    }
+  ]
+}

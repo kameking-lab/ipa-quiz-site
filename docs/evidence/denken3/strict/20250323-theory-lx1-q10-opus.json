@@ -1,0 +1,70 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20250323",
+  "subject": "theory",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 2755,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 14351,
+      "webSearchRequests": 0,
+      "costUSD": 0.17017179999999998,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 1239,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "0e81f3a46add47b575359163f5c5d64cc5765200da678998fb09141057f683b0",
+  "inputRequestSha256": "3149450c5295d8238aac3bfd89495c07b2ce31d9613456c1c60aae2adfd538c2",
+  "inputHashes": {
+    "candidateSha256": {
+      "q10": "b2426e59284758d186c7e7250520ec8e9add511486b97bde4bccb83f8e82cea7"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20250323/theory/p13.png": "b5d04d5e7e431a0b8a5a5caae8d5e5c49bb122cec7dace22859b90a1d6228c6f"
+    },
+    "figureSha256": {
+      "public/images/denken3/20250323/theory/20250323-theory-q10-switch-rc-network.png": "38c907d539717313edbb769db84d90c263b4f384c0dee740c1b3c30eb5630597"
+    },
+    "sourceQuestionPdfSha256": "8817012cb55eed9c83bb1e68df138909b1e03a81f7ed48a9893a219e1d2a76ca",
+    "sourceAnswerPdfSha256": "4c3b38fcf1405766fafaa78b1b05b867a3d48307a670b9d354476bc6b32acd4c",
+    "officialAnswerUnitsSha256": "d21b233ae17741c69fbe9f2345a20308d79fe9e9b03e94f4cac2adbe2ce4fc5b",
+    "referencePdfSha256": {},
+    "referencePageSha256": {},
+    "referenceJsonSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q10",
+      "questionNumber": 10,
+      "part": null,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "出典メタデータ: fiscalYear=2024, term=lower, examDate=2025-03-23, subject=theory, sourceQuestionPdfUrl, sourceAnswerPdfUrl は manifest 固定値と一致。reviewedFromPage=[13] は manifest の問10原図PDF第13頁と一致。原図下部の印字『- 10 -』は冊子のページ番号、『T2−R 013』は通し番号で、いずれも PDF 第13頁と矛盾しない。sourceAttribution『令和6年度下期第三種電気主任技術者試験 理論科目 問10』は2024年度下期・理論に対応する。",
+        "問題文: 原図の『スイッチSを閉じた瞬間(時刻t=0)に点Aを流れる電流をI0[A]』『十分に時間が経ち，定常状態に達したのちに点Aを流れる電流をI[A]』『電流比I0/Iの値として，最も近いもの』『ただし，コンデンサの初期電荷は零とする。』と、文言・記号・単位がすべて一致する。分数表記を I₀/I とインライン化しているが、意味は変わらない。",
+        "選択肢: 原図は (1)0.5 (2)1.0 (3)1.5 (4)2.0 (5)2.5。候補の全5肢と一致する。",
+        "公式正答: 試験センター公式解答表『令和6年度 下期』理論 問10 の欄は 4。manifest の q10 answer=\"4\" および候補 officialAnswer=\"4\" と一致する。",
+        "回路構成（原図）: 左上の6Ω → 点A → 分岐。上枝は C[F] と 4Ω の直列、下枝は 12Ω。右で合流し、右辺を下って電源 E[V] に至り、下辺のスイッチS、左辺を経て6Ωへ戻る単一ループである。点Aは6Ωと分岐点の間にあり、全電流が通る。",
+        "検算 t=0: 初期電荷0のため C は短絡扱い。4∥12 = 48/16 = 3Ω、全抵抗 6+3 = 9Ω、I₀ = E/9。",
+        "検算 定常: 直流定常では C 枝の電流が0で開放扱い。全抵抗 6+12 = 18Ω、I = E/18。",
+        "検算 比: I₀/I = 18/9 = 2.0 で (4) と一致する。電源極性は分子と分母の両方に同符号でかかるため比に影響しない。総合解説の計算と因果（短絡→開放）は正しい。",
+        "誤答肢の理由: (1) 0.5 = 1/2.0 は逆比 I/I₀ で正しい。(2) 1.0 は I₀=I を意味するが E/9≠E/18 で正しい。(3) 18/1.5 = 12Ω、実際は9Ωで正しい。(5) 18/2.5 = 7.2Ω、並列部に 7.2−6 = 1.2Ω が必要となるが実際は3Ωで正しい。正答肢(4)の説明も検算値と一致する。",
+        "公開候補図: 原図の回路部分と同一の構成である。6Ω、黒丸の点A、分岐・合流点の黒丸、上枝の C[F]→4Ω、下枝の 12Ω、S（開いた状態）、E[V] の電池記号とその配置がすべて保持され、ラベル欠落・接続の改変・向きの変化はない。この図だけで直並列関係と点Aの位置を判別でき、解答に十分である。",
+        "figureDescription: 素子の直並列関係、点Aの位置、C と 4Ω が同一枝にあることの記述は原図と一致する。",
+        "参照URL: officialReferenceUrls は空で、解説は回路図と基本的な過渡現象の性質のみに依拠している。外部資料に依存する独立主張はなく、sourceIssues に該当する事項はない。"
+      ]
+    }
+  ]
+}

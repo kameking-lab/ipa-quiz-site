@@ -1,0 +1,706 @@
+{
+  "candidateModel": "claude-opus-5-5",
+  "paperId": "emkohyo-EM20251809",
+  "governmentSourceCandidates": [
+    {
+      "title": "原子力規制委員会 放射線の基礎知識（原子力災害医療 基礎研修資料）",
+      "url": "https://www.nra.go.jp/data/000186586.pdf"
+    },
+    {
+      "title": "原子力規制庁 放射能測定法シリーズNo.7 ゲルマニウム半導体検出器によるγ線スペクトロメトリー",
+      "url": "https://www.envraddb.go.jp/wp-content/uploads/2020/12/No7.pdf"
+    },
+    {
+      "title": "日本原子力研究開発機構 ATOMICA ヘリウム３中性子計数管",
+      "url": "https://atomica.jaea.go.jp/dic/detail/dic_detail_1194.html"
+    },
+    {
+      "title": "日本原子力研究開発機構 ATOMICA 自発核分裂",
+      "url": "https://atomica.jaea.go.jp/dic/detail/dic_detail_332.html"
+    },
+    {
+      "title": "日本原子力研究開発機構 ATOMICA サーベイメータ",
+      "url": "https://atomica.jaea.go.jp/dic/detail/dic_detail_1397.html"
+    },
+    {
+      "title": "日本原子力研究開発機構 ATOMICA 中性子モニタ",
+      "url": "https://atomica.jaea.go.jp/dic/detail/dic_detail_1504.html"
+    },
+    {
+      "title": "日本原子力研究開発機構 ATOMICA β線放出核種",
+      "url": "https://atomica.jaea.go.jp/dic/detail/dic_detail_1185.html"
+    },
+    {
+      "title": "原子力規制庁 放射能測定法シリーズNo.36 大気中放射性物質測定法",
+      "url": "https://www.envraddb.go.jp/wp-content/uploads/2022/06/No36_R408.pdf"
+    },
+    {
+      "title": "日本原子力研究開発機構 ATOMICA スペクトロメトリ（α線、β線、γ線、中性子）",
+      "url": "https://atomica.jaea.go.jp/data/detail/dat_detail_09-04-03-19.html"
+    },
+    {
+      "title": "原子力規制庁 放射能測定法シリーズNo.6 NaI(Tl)シンチレーションスペクトロメータ機器分析法",
+      "url": "https://www.envraddb.go.jp/wp-content/uploads/No6_202606.pdf"
+    },
+    {
+      "title": "日本原子力研究開発機構 ATOMICA ポロニウム",
+      "url": "https://atomica.jaea.go.jp/dic/detail/dic_detail_1291.html"
+    },
+    {
+      "title": "厚生労働省 食品中の放射性セシウムスクリーニング法（別添）",
+      "url": "https://www.mhlw.go.jp/stf/houdou/2r985200000246ev-att/2r985200000246iu.pdf"
+    },
+    {
+      "title": "原子力規制庁 放射能測定法シリーズNo.12 プルトニウム分析法",
+      "url": "https://www.envraddb.go.jp/wp-content/uploads/2020/12/No12.pdf"
+    },
+    {
+      "title": "日本原子力研究開発機構 ATOMICA 放射線防護上の遮へい",
+      "url": "https://atomica.jaea.go.jp/data/detail/dat_detail_09-04-10-03.html"
+    }
+  ],
+  "questions": {
+    "emkohyo-EM20251809-q6": {
+      "overlay": {
+        "sourceHash": "eb51e137f37db56430c786b08e0c97d9fd9dd9726b4d3cbbd17f4fb41f3bd0bb",
+        "correctChoice": 2,
+        "summary": "0.412MeV準位へ遷移する割合は0.67＋0.24×2/3＝0.83。ce放出率20%をこの準位の遷移のうち内部転換となる割合と読むとγ₁は0.83×0.8＝0.664/壊変で放射能≒301Bq、1壊変当たり0.20と読むとγ₁は0.63/壊変で≒317Bq。いずれでも最も近いのは肢2の3.0×10²Bq。",
+        "choices": [
+          {
+            "number": 1,
+            "verdict": "incorrect",
+            "reason": "2.4×10²Bqは200÷0.83≒241Bqで、0.412MeV準位への遷移がすべてγ₁になるとした値である。問題はce（内部転換電子）の放出率を20%と与えており、内部転換はγ線放出と競合するのでその分γ₁は減る。遷移割合と読めば0.664、1壊変当たりと読めば0.63がγ₁放出率となり、放射能は約301〜317Bqで3.0×10²Bqに最も近い。"
+          },
+          {
+            "number": 2,
+            "verdict": "correct",
+            "reason": "1Bqは1秒間に1個の壊変。0.412MeV準位へはβ₂の67%と、β₁(24%)で1.088MeVへ行きγ₂:γ₃＝2:1のうちγ₂(2/3)が来るので0.67＋0.24×2/3＝0.83。ce20%を遷移の割合とすればγ₁放出率0.83×0.8＝0.664で200÷0.664≒301Bq、1壊変当たり0.20とすれば0.63で≒317Bq。どちらも3.0×10²Bqが最も近く正しい。"
+          },
+          {
+            "number": 3,
+            "verdict": "incorrect",
+            "reason": "1.5×10³Bqは正しい値（約301〜317Bq）の約5倍で、γ₁放出率を約0.13/壊変とした場合の値に当たる。γ線放出率は1壊変当たり放出されるγ線の割合であり、この壊変図ではγ₁放出率は0.63〜0.664/壊変となるので、放射能は約3.0×10²Bqにしかならない。"
+          },
+          {
+            "number": 4,
+            "verdict": "incorrect",
+            "reason": "2.4×10³Bqは正しい値（約301〜317Bq）の約8倍で、ce分を差し引かない値241Bqの10倍にも当たり、桁を誤った値である。γ₁放出率は1壊変当たり0.63〜0.664なので、毎秒200個のγ₁を出す線源の放射能は約3.0×10²Bqとなる。"
+          },
+          {
+            "number": 5,
+            "verdict": "incorrect",
+            "reason": "3.0×10³Bqは正しい値3.0×10²Bqの10倍で、桁を誤った値である。γ₁の放出率(1壊変当たり)は、ce20%を遷移割合と読めば(0.67＋0.24×2/3)×0.8＝0.664、1壊変当たりと読めば0.83−0.20＝0.63で、γ₁が毎秒2.0×10²個なら放射能は約3.0×10²Bqとなる。"
+          }
+        ],
+        "sources": [
+          {
+            "title": "原子力規制委員会 放射線の基礎知識（原子力災害医療 基礎研修資料）",
+            "url": "https://www.nra.go.jp/data/000186586.pdf"
+          },
+          {
+            "title": "原子力規制庁 放射能測定法シリーズNo.7 ゲルマニウム半導体検出器によるγ線スペクトロメトリー",
+            "url": "https://www.envraddb.go.jp/wp-content/uploads/2020/12/No7.pdf"
+          }
+        ]
+      },
+      "sourceEvidence": [
+        {
+          "url": "https://www.nra.go.jp/data/000186586.pdf",
+          "excerpt": "1Bqとは、1秒間に平均1個の原子核が壊変を起こす場合の放射能の強さを表す",
+          "choiceNumbers": [
+            2,
+            5
+          ]
+        },
+        {
+          "url": "https://www.envraddb.go.jp/wp-content/uploads/2020/12/No7.pdf",
+          "excerpt": "γ線放出率（gamma ray emission ratio）1壊変（Bq）当たり放出されるγ線の割合で、そのγ線に固有な値である",
+          "choiceNumbers": [
+            2,
+            3,
+            4,
+            5
+          ]
+        },
+        {
+          "url": "https://www.envraddb.go.jp/wp-content/uploads/2020/12/No7.pdf",
+          "excerpt": "内部転換とγ線の放出は競合過程にあり",
+          "choiceNumbers": [
+            1,
+            2
+          ]
+        },
+        {
+          "url": "https://www.envraddb.go.jp/wp-content/uploads/2020/12/No7.pdf",
+          "excerpt": "励起状態にある原子核が、軌道電子（K殻の軌道電子等）にエネルギーを与え、より低いエネルギー準位に遷移する現象。結果として軌道電子が放出される",
+          "choiceNumbers": [
+            1,
+            2
+          ]
+        },
+        {
+          "url": "https://www.envraddb.go.jp/wp-content/uploads/2020/12/No7.pdf",
+          "excerpt": "137Csの662keVγ線の場合、137Csの壊変を基準にすると、γ線放出率は0.851であるが、137mBaを基準にすると0.899である",
+          "choiceNumbers": [
+            2,
+            4
+          ]
+        }
+      ],
+      "reviewIssues": []
+    },
+    "emkohyo-EM20251809-q7": {
+      "overlay": {
+        "sourceHash": "65d1881da68e99ee1d8d9c531d56fe995d3a734563364736fce597cd18ffa621",
+        "correctChoice": 2,
+        "summary": "³²Pはγ線を放出しない純β線放出核種であり、γ線スペクトロメトリ用のGe半導体検出器による測定対象として適切でない。肢2が答え。",
+        "choices": [
+          {
+            "number": 1,
+            "verdict": "incorrect",
+            "reason": "ATOMICAは²⁵²Cfを自発核分裂による中性子源（原子炉の起動用中性子源等に利用）としている。³He計数管は³He(n,p)³H反応で熱中性子を検出し、速中性子はこの比例計数管をパラフィン等の減速材で覆って熱中性子化して測定する。中性子を出す²⁵²Cfの測定に³He比例計数管を用いる組合せは適切である。"
+          },
+          {
+            "number": 2,
+            "verdict": "correct",
+            "reason": "ATOMICAは³²Pを、³H・¹⁴C等と並ぶ「β線のみを放出する核種」の代表例に挙げている。Ge半導体検出器は光電ピークでγ線のエネルギーを分析する検出器であり、γ線を出さない純β線放出核種の³²P（β線最大1711keV）の測定には適さない。組合せとして適切でない。"
+          },
+          {
+            "number": 3,
+            "verdict": "incorrect",
+            "reason": "⁴⁰Kは1461keVのγ線を放出し、規制庁No.6は塩化カリウム中の⁴⁰KをNaI(Tl)スペクトロメータのエネルギー確認用γ線源に使えるとしている。NaI(Tl)シンチレーション検出器はγ線測定に広く用いられ、⁴⁰Kの測定に用いる組合せは適切である。"
+          },
+          {
+            "number": 4,
+            "verdict": "incorrect",
+            "reason": "ATOMICAは「Ｐｏ−２１０はα線源としてよく用いられる」とし、α線スペクトロメトリの検出器として表面障壁型・イオン注入型のシリコン(Si)半導体を挙げている。²¹⁰Poのα線をSi半導体検出器で測る組合せは適切である。"
+          },
+          {
+            "number": 5,
+            "verdict": "incorrect",
+            "reason": "²⁴¹Amは59.5keVのγ線を放出し、ATOMICAはγ線スペクトロメトリの検出器として沃化セシウム(CsI)のシンチレーション検出器を挙げている。CsI(Tl)シンチレーション検出器で²⁴¹Amのγ線を測る組合せは適切である。"
+          }
+        ],
+        "sources": [
+          {
+            "title": "日本原子力研究開発機構 ATOMICA ヘリウム３中性子計数管",
+            "url": "https://atomica.jaea.go.jp/dic/detail/dic_detail_1194.html"
+          },
+          {
+            "title": "日本原子力研究開発機構 ATOMICA 自発核分裂",
+            "url": "https://atomica.jaea.go.jp/dic/detail/dic_detail_332.html"
+          },
+          {
+            "title": "日本原子力研究開発機構 ATOMICA サーベイメータ",
+            "url": "https://atomica.jaea.go.jp/dic/detail/dic_detail_1397.html"
+          },
+          {
+            "title": "日本原子力研究開発機構 ATOMICA 中性子モニタ",
+            "url": "https://atomica.jaea.go.jp/dic/detail/dic_detail_1504.html"
+          },
+          {
+            "title": "日本原子力研究開発機構 ATOMICA β線放出核種",
+            "url": "https://atomica.jaea.go.jp/dic/detail/dic_detail_1185.html"
+          },
+          {
+            "title": "原子力規制庁 放射能測定法シリーズNo.36 大気中放射性物質測定法",
+            "url": "https://www.envraddb.go.jp/wp-content/uploads/2022/06/No36_R408.pdf"
+          },
+          {
+            "title": "日本原子力研究開発機構 ATOMICA スペクトロメトリ（α線、β線、γ線、中性子）",
+            "url": "https://atomica.jaea.go.jp/data/detail/dat_detail_09-04-03-19.html"
+          },
+          {
+            "title": "原子力規制庁 放射能測定法シリーズNo.6 NaI(Tl)シンチレーションスペクトロメータ機器分析法",
+            "url": "https://www.envraddb.go.jp/wp-content/uploads/No6_202606.pdf"
+          },
+          {
+            "title": "日本原子力研究開発機構 ATOMICA ポロニウム",
+            "url": "https://atomica.jaea.go.jp/dic/detail/dic_detail_1291.html"
+          },
+          {
+            "title": "原子力規制庁 放射能測定法シリーズNo.7 ゲルマニウム半導体検出器によるγ線スペクトロメトリー",
+            "url": "https://www.envraddb.go.jp/wp-content/uploads/2020/12/No7.pdf"
+          }
+        ]
+      },
+      "sourceEvidence": [
+        {
+          "url": "https://atomica.jaea.go.jp/dic/detail/dic_detail_332.html",
+          "excerpt": "人工の自発核分裂性核種の 252 Cf（カリホルニウム252）は、原子炉の起動用中性子源や中性子ラジオグラフィなど各種の用途に広く用いられる",
+          "choiceNumbers": [
+            1
+          ]
+        },
+        {
+          "url": "https://atomica.jaea.go.jp/dic/detail/dic_detail_1397.html",
+          "excerpt": "熱中性子の測定にはBF3ガス、またはＨｅ−3ガスを充填した比例計数管式が用いられ、速中性子の測定にはこの比例計数管を中性子減速材（パラフィン、プラスチックなど）で覆い、速中性子を熱中性子化して測定する",
+          "choiceNumbers": [
+            1
+          ]
+        },
+        {
+          "url": "https://atomica.jaea.go.jp/dic/detail/dic_detail_1194.html",
+          "excerpt": "熱中性子を検出するための計数管である",
+          "choiceNumbers": [
+            1
+          ]
+        },
+        {
+          "url": "https://atomica.jaea.go.jp/dic/detail/dic_detail_1194.html",
+          "excerpt": "熱中性子が通過すると、 3 He（n,p） 3 Hの核反応が起こり",
+          "choiceNumbers": [
+            1
+          ]
+        },
+        {
+          "url": "https://atomica.jaea.go.jp/dic/detail/dic_detail_1504.html",
+          "excerpt": "BF3計数管（B-10を中性子コンバーターとする）、He-3計数管（He-3）",
+          "choiceNumbers": [
+            1
+          ]
+        },
+        {
+          "url": "https://atomica.jaea.go.jp/dic/detail/dic_detail_1504.html",
+          "excerpt": "速中性子をパラフィンでおおい減速させて計測する方法",
+          "choiceNumbers": [
+            1
+          ]
+        },
+        {
+          "url": "https://atomica.jaea.go.jp/dic/detail/dic_detail_1185.html",
+          "excerpt": "一般的にはβ線のみを放出する核種を指し、代表的なものとして 3 Ｈ、 14 Ｃ、 32 Ｐ、 35 Ｓ、 90 Sr、 99 Tc等が挙げられる",
+          "choiceNumbers": [
+            2
+          ]
+        },
+        {
+          "url": "https://www.envraddb.go.jp/wp-content/uploads/2022/06/No36_R408.pdf",
+          "excerpt": "P-32 \n14.26 日 \n1711",
+          "choiceNumbers": [
+            2
+          ]
+        },
+        {
+          "url": "https://atomica.jaea.go.jp/data/detail/dat_detail_09-04-03-19.html",
+          "excerpt": "同定、定量にはγ線の全エネルギー損失により生じる全吸収ピーク（光電ピークとも言う）に着目する",
+          "choiceNumbers": [
+            2,
+            3,
+            5
+          ]
+        },
+        {
+          "url": "https://www.envraddb.go.jp/wp-content/uploads/2020/12/No7.pdf",
+          "excerpt": "ゲルマニウム半導体検出器等を用いてγ線スペクトルを測定する技術およびスペクトルを解析して放射能を決定する方法",
+          "choiceNumbers": [
+            2
+          ]
+        },
+        {
+          "url": "https://atomica.jaea.go.jp/data/detail/dat_detail_09-04-03-19.html",
+          "excerpt": "沃化ナトリウム（NaI）か、沃化セシウム（CsI）のシンチレーション検出器、ゲルマニウム（Ge）半導体検出器などが用いられる",
+          "choiceNumbers": [
+            2,
+            3,
+            5
+          ]
+        },
+        {
+          "url": "https://www.envraddb.go.jp/wp-content/uploads/No6_202606.pdf",
+          "excerpt": "塩化カリウム試薬（カリウムの放射性同位体である40K（1461keVのγ線を放出する）が約0.0117%含まれている）を利用できる",
+          "choiceNumbers": [
+            3
+          ]
+        },
+        {
+          "url": "https://atomica.jaea.go.jp/dic/detail/dic_detail_1291.html",
+          "excerpt": "人工放射性核種のＰｏ−２１０はα線源としてよく用いられる",
+          "choiceNumbers": [
+            4
+          ]
+        },
+        {
+          "url": "https://atomica.jaea.go.jp/data/detail/dat_detail_09-04-03-19.html",
+          "excerpt": "検出器にはグリッド付電離箱、表面障壁型又はイオン注入型のシリコン（Si）半導体が用いられる",
+          "choiceNumbers": [
+            4
+          ]
+        },
+        {
+          "url": "https://www.envraddb.go.jp/wp-content/uploads/2020/12/No7.pdf",
+          "excerpt": "241Am（59.5keV）",
+          "choiceNumbers": [
+            5
+          ]
+        }
+      ],
+      "reviewIssues": []
+    },
+    "emkohyo-EM20251809-q8": {
+      "overlay": {
+        "sourceHash": "36456684a31664e7f9b43a2f80d636f499b979636f03b590aef069d69e8bb36b",
+        "correctChoice": 3,
+        "summary": "バックグラウンド計数率の標準偏差σ＝√(150cpm/30min)＝√5≒2.24cpm。3√2σ≒9.49cpm＝0.158s⁻¹を検出効率0.10で割ると約1.6Bqで、肢3が正しい。",
+        "choices": [
+          {
+            "number": 1,
+            "verdict": "incorrect",
+            "reason": "1.6×10⁻¹Bqは、3√2σ＝9.49cpm＝0.158s⁻¹を放射能に換算する際に検出効率10%で割るのを忘れた値である。計数効率は正味計数率と放射能の比なので、0.158÷0.10≒1.6Bqとしなければならない。"
+          },
+          {
+            "number": 2,
+            "verdict": "incorrect",
+            "reason": "8.6×10⁻¹Bqは、σを計数率の標準偏差√(150/30)ではなく√150≒12.2として3√2×12.2≒52cpm＝0.87s⁻¹とし、さらに検出効率で割らなかった値である。計数率の標準偏差は√(計数率/測定時間)であり、この値は誤り。"
+          },
+          {
+            "number": 3,
+            "verdict": "correct",
+            "reason": "計数値Nの標準偏差は√Nなので、計数率nb＝150cpmを30分測った場合の計数率の標準偏差は√(nb/tb)＝√(150/30)≒2.236cpm。3√2σ＝3×1.414×2.236≒9.49cpm＝0.158s⁻¹。検出効率0.10で割り、0.158÷0.10≒1.58Bq≒1.6×10⁰Bqで正しい。"
+          },
+          {
+            "number": 4,
+            "verdict": "incorrect",
+            "reason": "8.6×10⁰Bqは、σを√150≒12.2cpmとし、測定時間30分による平均化を考慮しなかった値（52cpm＝0.87s⁻¹を効率0.10で割った値）である。計数率の標準偏差は√(nb/tb)＝√(150/30)cpmであり、正しくは約1.6Bqとなる。"
+          },
+          {
+            "number": 5,
+            "verdict": "incorrect",
+            "reason": "1.6×10¹Bqは正しい値1.6Bqの10倍で、検出効率10%を二重に割るなど桁を誤った値である。3√2σ＝3√2×√(150/30)cpm≒9.49cpm＝0.158s⁻¹を検出効率0.10で一度だけ割れば1.6Bqとなる。"
+          }
+        ],
+        "sources": [
+          {
+            "title": "原子力規制庁 放射能測定法シリーズNo.7 ゲルマニウム半導体検出器によるγ線スペクトロメトリー",
+            "url": "https://www.envraddb.go.jp/wp-content/uploads/2020/12/No7.pdf"
+          },
+          {
+            "title": "厚生労働省 食品中の放射性セシウムスクリーニング法（別添）",
+            "url": "https://www.mhlw.go.jp/stf/houdou/2r985200000246ev-att/2r985200000246iu.pdf"
+          }
+        ]
+      },
+      "sourceEvidence": [
+        {
+          "url": "https://www.envraddb.go.jp/wp-content/uploads/2020/12/No7.pdf",
+          "excerpt": "計数値の統計処理においては、計数値がポアソン分布に従うとすると、計数値𝑁の標準偏差𝜎𝑁は、𝜎𝑁=√𝑁なる関係で表される",
+          "choiceNumbers": [
+            2,
+            3,
+            4
+          ]
+        },
+        {
+          "url": "https://www.envraddb.go.jp/wp-content/uploads/2020/12/No7.pdf",
+          "excerpt": "計数率（counting rate）計数値を測定時間で除した値。単位はs-1を用いる",
+          "choiceNumbers": [
+            3,
+            4
+          ]
+        },
+        {
+          "url": "https://www.envraddb.go.jp/wp-content/uploads/2020/12/No7.pdf",
+          "excerpt": "慣用的に、cps(count per second）、cpm(count per minute）等の単位が使われる",
+          "choiceNumbers": [
+            3
+          ]
+        },
+        {
+          "url": "https://www.envraddb.go.jp/wp-content/uploads/2020/12/No7.pdf",
+          "excerpt": "放射能を𝐴（Bq）、測定する放射線の放出率を𝐼𝛾、正味計数率を𝑁（s-1）とすると計数効率𝜀は𝜀=𝑁𝐴∙𝐼𝛾",
+          "choiceNumbers": [
+            1,
+            3,
+            5
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/stf/houdou/2r985200000246ev-att/2r985200000246iu.pdf",
+          "excerpt": "正味計数率の誤差の標準偏差σは次式より求められる",
+          "choiceNumbers": [
+            2,
+            3,
+            4
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/stf/houdou/2r985200000246ev-att/2r985200000246iu.pdf",
+          "excerpt": "ただし、ts,tb：試料およびバックグラウンドの計数時間sNs：試料の計数値Nb：バックグラウンドの計数値ns：試料の計数率cpsnb：バックグラウンドの計数率cps",
+          "choiceNumbers": [
+            2,
+            3,
+            4
+          ]
+        }
+      ],
+      "reviewIssues": []
+    },
+    "emkohyo-EM20251809-q9": {
+      "overlay": {
+        "sourceHash": "6920911424d154111111e645e918d54841128fc63c0593d5cbdbd0f8a81f3aa3",
+        "correctChoice": 1,
+        "summary": "正味計数率の標準偏差σ＝√(Ns/ts²＋Nb/tb²)＝√(6400/1000²＋350/4000²)＝√(0.0064＋0.0000219)≒0.080s⁻¹。肢1が正しい。",
+        "choices": [
+          {
+            "number": 1,
+            "verdict": "correct",
+            "reason": "厚労省の式1より、正味計数率の標準偏差σ＝√(Ns/ts²＋Nb/tb²)。Ns＝6400、ts＝1000s、Nb＝350、tb＝4000sを代入すると√(6.4×10⁻³＋2.19×10⁻⁵)＝√(6.42×10⁻³)≒0.0801s⁻¹≒8.0×10⁻²s⁻¹となり、正しい。"
+          },
+          {
+            "number": 2,
+            "verdict": "incorrect",
+            "reason": "2.5×10⁻²s⁻¹は、試料計数率6.4s⁻¹の平方根√6.4≒2.53を1/100にしたような値で、正しい計算式から得られる値ではない。σ＝√(6400/1000²＋350/4000²)≒0.080s⁻¹であり、この値は約3分の1にずれている。"
+          },
+          {
+            "number": 3,
+            "verdict": "incorrect",
+            "reason": "8.0×10⁻¹s⁻¹は正しい値0.080s⁻¹の10倍で、計数の標準偏差√6400＝80を測定時間1000sで割らずに1/100にするなど、桁を誤った値である。計数率の標準偏差は√Ns/tsであり、正しくは約0.080s⁻¹となる。"
+          },
+          {
+            "number": 4,
+            "verdict": "incorrect",
+            "reason": "2.5×10⁰s⁻¹は、試料計数率6.4s⁻¹をそのまま計数値とみなして√6.4≒2.53とした値に当たる。ポアソン統計の√Nは計数値Nに適用するもので、計数率の標準偏差は√(ns/ts)＝√(6.4/1000)≒0.080s⁻¹となる。"
+          },
+          {
+            "number": 5,
+            "verdict": "incorrect",
+            "reason": "8.0×10⁰s⁻¹は、試料の計数値の標準偏差√6400＝80を測定時間で割る際に1/10しかしなかったような値で、正しい値の100倍である。σ＝√(Ns/ts²＋Nb/tb²)≒0.080s⁻¹が正しい。"
+          }
+        ],
+        "sources": [
+          {
+            "title": "厚生労働省 食品中の放射性セシウムスクリーニング法（別添）",
+            "url": "https://www.mhlw.go.jp/stf/houdou/2r985200000246ev-att/2r985200000246iu.pdf"
+          },
+          {
+            "title": "原子力規制庁 放射能測定法シリーズNo.7 ゲルマニウム半導体検出器によるγ線スペクトロメトリー",
+            "url": "https://www.envraddb.go.jp/wp-content/uploads/2020/12/No7.pdf"
+          }
+        ]
+      },
+      "sourceEvidence": [
+        {
+          "url": "https://www.mhlw.go.jp/stf/houdou/2r985200000246ev-att/2r985200000246iu.pdf",
+          "excerpt": "正味計数率の誤差の標準偏差σは次式より求められる",
+          "choiceNumbers": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/stf/houdou/2r985200000246ev-att/2r985200000246iu.pdf",
+          "excerpt": "ただし、ts,tb：試料およびバックグラウンドの計数時間sNs：試料の計数値Nb：バックグラウンドの計数値ns：試料の計数率cpsnb：バックグラウンドの計数率cps",
+          "choiceNumbers": [
+            1,
+            5
+          ]
+        },
+        {
+          "url": "https://www.envraddb.go.jp/wp-content/uploads/2020/12/No7.pdf",
+          "excerpt": "計数値の統計処理においては、計数値がポアソン分布に従うとすると、計数値𝑁の標準偏差𝜎𝑁は、𝜎𝑁=√𝑁なる関係で表される",
+          "choiceNumbers": [
+            3,
+            4,
+            5
+          ]
+        },
+        {
+          "url": "https://www.envraddb.go.jp/wp-content/uploads/2020/12/No7.pdf",
+          "excerpt": "計数率（counting rate）計数値を測定時間で除した値。単位はs-1を用いる",
+          "choiceNumbers": [
+            2,
+            3,
+            4
+          ]
+        }
+      ],
+      "reviewIssues": []
+    },
+    "emkohyo-EM20251809-q10": {
+      "overlay": {
+        "sourceHash": "0ca68c32f456b93215f16e6f43600502de3bdccdb2754a471557bd5660a84d6d",
+        "correctChoice": 1,
+        "summary": "Si半導体検出器によるα線スペクトル分析で、²³⁹Puの約5MeV（5.16MeV等）の領域をラドン・トロン壊変生成物（6.0〜8.8MeV）と分けて計数する。α線放出核種の直接測定では表面捕集率の高いろ紙を使う。肢1が正しい。",
+        "choices": [
+          {
+            "number": 1,
+            "verdict": "correct",
+            "reason": "規制庁No.36は、Si半導体検出器のスペクトルでPuとラドン・トロン壊変生成物のα線をピークとして弁別できるとし、No.12の核データで²³⁹Puのα線は5.16MeV等（約5MeV）。No.36は表面捕集効率をα線スペクトルの広がり具合から評価し、高い表面捕集率のろ紙をα線ダストモニタ向きとする。ろ材内部の粒子のα線はエネルギーを失ってピークが広がるので、面積を正しく測るには表面捕集率の高いろ紙が要る。正しい組合せ。"
+          },
+          {
+            "number": 2,
+            "verdict": "incorrect",
+            "reason": "㋑Si半導体と㋩高いは正しいが、㋺の8MeVが誤り。²³⁹Puのα線は5.16MeV・5.14MeV・5.11MeVで約5MeVである。8MeV付近はトロン壊変生成物のPo-212(8.8MeV)やラドン壊変生成物のPo-214(7.7MeV)の領域で、弁別すべき自然核種側のエネルギーである。"
+          },
+          {
+            "number": 3,
+            "verdict": "incorrect",
+            "reason": "㋑㋺㋩すべて誤り。No.36はダストモニタの検出器として、α線用にZnS(Ag)シンチレーション検出器とシリコン半導体検出器、γ線用にNaI(Tl)シンチレーション検出器を挙げており、NaI(Tl)はα線スペクトル分析の検出器ではない。8MeVはPo-212・Po-214側で²³⁹Pu（約5MeV）ではない。No.36はろ材の中に粒子が入り込むと計数できない等の可能性を指摘しており、表面捕集率（表面付近で捕らえた粒子の割合）が低いろ紙ほどその影響が大きくなる（定義からの説明）。"
+          },
+          {
+            "number": 4,
+            "verdict": "incorrect",
+            "reason": "㋺5MeVと㋩高いは正しいが、㋑のGe半導体検出器が誤り。α線スペクトル分析の検出器として、No.36はシリコン半導体検出器を、No.12はシリコン半導体検出器によるα線スペクトル測定を挙げる。Ge半導体検出器はNo.7でγ線スペクトロメトリーに用いる検出器とされる（これらの組合せからの判断）。"
+          },
+          {
+            "number": 5,
+            "verdict": "incorrect",
+            "reason": "㋑㋺㋩すべて誤り。α線スペクトル分析にはNo.36・No.12の示すシリコン半導体検出器を用い、Ge半導体検出器はγ線用である（組合せからの判断）。8MeVは²³⁹Pu（5.16MeV等）ではなくPo-212(8.8MeV)等の自然核種側である。No.36はろ材の中に粒子が入り込むと計数できない等の可能性を指摘し、表面捕集率の高いろ紙をα線ダストモニタ向きとする。"
+          }
+        ],
+        "sources": [
+          {
+            "title": "原子力規制庁 放射能測定法シリーズNo.36 大気中放射性物質測定法（令和4年6月制定）",
+            "url": "https://www.envraddb.go.jp/wp-content/uploads/2022/06/No36_R408.pdf"
+          },
+          {
+            "title": "放射能測定法シリーズNo.12 プルトニウム分析法（平成2年改訂。掲載PDF表紙の発行者表記は文部科学省。原子力規制庁 環境放射線データベース掲載）",
+            "url": "https://www.envraddb.go.jp/wp-content/uploads/2020/12/No12.pdf"
+          },
+          {
+            "title": "日本原子力研究開発機構 ATOMICA スペクトロメトリ（α線、β線、γ線、中性子）",
+            "url": "https://atomica.jaea.go.jp/data/detail/dat_detail_09-04-03-19.html"
+          },
+          {
+            "title": "原子力規制庁 放射能測定法シリーズNo.7 ゲルマニウム半導体検出器によるγ線スペクトロメトリー",
+            "url": "https://www.envraddb.go.jp/wp-content/uploads/2020/12/No7.pdf"
+          }
+        ]
+      },
+      "sourceEvidence": [
+        {
+          "url": "https://www.envraddb.go.jp/wp-content/uploads/2022/06/No36_R408.pdf",
+          "excerpt": "シリコン半導体検出器で測定したスペクトルの解析により、ラドン・トロン壊変生成物（自然放射性物質）の影響を補正することで",
+          "choiceNumbers": [
+            1,
+            2
+          ]
+        },
+        {
+          "url": "https://www.envraddb.go.jp/wp-content/uploads/2022/06/No36_R408.pdf",
+          "excerpt": "ウラン及びプルトニウムと、ラドン・トロン壊変生成物では放出するα線エネルギーが異なるため、スペクトル上ではピークとして弁別することが可能である",
+          "choiceNumbers": [
+            1,
+            2,
+            3,
+            5
+          ]
+        },
+        {
+          "url": "https://www.envraddb.go.jp/wp-content/uploads/2022/06/No36_R408.pdf",
+          "excerpt": "RaA：Po-218（6.0 MeV）、RaC’：Po-214（7.7 MeV）、 ThC：Bi-212（6.1 MeV）、ThC’：Po-212（8.8 MeV）",
+          "choiceNumbers": [
+            2,
+            3,
+            5
+          ]
+        },
+        {
+          "url": "https://www.envraddb.go.jp/wp-content/uploads/2020/12/No12.pdf",
+          "excerpt": "核 種 α線エネルギー（MeV） 放出率（％） 半減期（y）",
+          "choiceNumbers": [
+            1,
+            2
+          ]
+        },
+        {
+          "url": "https://www.envraddb.go.jp/wp-content/uploads/2020/12/No12.pdf",
+          "excerpt": "5．16 73．1 23gpu 5．11 11．5 2．411×104 5．14 15．0",
+          "choiceNumbers": [
+            1,
+            2,
+            3,
+            5
+          ]
+        },
+        {
+          "url": "https://www.envraddb.go.jp/wp-content/uploads/2020/12/No12.pdf",
+          "excerpt": "シリコン半導体検出器によるα線スペクトル測定を行うことによりプルトニウムを定量する",
+          "choiceNumbers": [
+            1,
+            4,
+            5
+          ]
+        },
+        {
+          "url": "https://atomica.jaea.go.jp/data/detail/dat_detail_09-04-03-19.html",
+          "excerpt": "検出器にはグリッド付電離箱、表面障壁型又はイオン注入型のシリコン（Si）半導体が用いられる",
+          "choiceNumbers": [
+            1,
+            4,
+            5
+          ]
+        },
+        {
+          "url": "https://www.envraddb.go.jp/wp-content/uploads/2020/12/No7.pdf",
+          "excerpt": "ゲルマニウム半導体検出器等を用いてγ線スペクトルを測定する技術およびスペクトルを解析して放射能を決定する方法",
+          "choiceNumbers": [
+            4,
+            5
+          ]
+        },
+        {
+          "url": "https://www.envraddb.go.jp/wp-content/uploads/2022/06/No36_R408.pdf",
+          "excerpt": "α線放出核種を対象として捕集、測定する場合は、ろ材の中に粒子が入り込んで計数できない等の可能性があり",
+          "choiceNumbers": [
+            1,
+            3,
+            5
+          ]
+        },
+        {
+          "url": "https://www.envraddb.go.jp/wp-content/uploads/2022/06/No36_R408.pdf",
+          "excerpt": "α 線放出核種の直接測定においては、ろ紙の表面捕集率*が重要な要素である。",
+          "choiceNumbers": [
+            1,
+            3,
+            5
+          ]
+        },
+        {
+          "url": "https://www.envraddb.go.jp/wp-content/uploads/2022/06/No36_R408.pdf",
+          "excerpt": "ろ紙に捕集された粒子のうち、ろ紙の表面付近で捕らえられた粒子の割合",
+          "choiceNumbers": [
+            1
+          ]
+        },
+        {
+          "url": "https://www.envraddb.go.jp/wp-content/uploads/2022/06/No36_R408.pdf",
+          "excerpt": "高い表面捕集率と低い圧力損失の製品があり、α 線ダストモニタでの使用に適している",
+          "choiceNumbers": [
+            1
+          ]
+        },
+        {
+          "url": "https://www.envraddb.go.jp/wp-content/uploads/2022/06/No36_R408.pdf",
+          "excerpt": "α線検出器 ZnS(Ag)シンチレーション検出器 シリコン半導体検出器",
+          "choiceNumbers": [
+            3,
+            4,
+            5
+          ]
+        },
+        {
+          "url": "https://www.envraddb.go.jp/wp-content/uploads/2022/06/No36_R408.pdf",
+          "excerpt": "(3) γ線検出器 ① NaI(Tl)シンチレーション検出器",
+          "choiceNumbers": [
+            3
+          ]
+        },
+        {
+          "url": "https://www.envraddb.go.jp/wp-content/uploads/2022/06/No36_R408.pdf",
+          "excerpt": "トロン壊変生成物のα線スぺクトルの広がり具合から評価した値",
+          "choiceNumbers": [
+            1,
+            3,
+            5
+          ]
+        }
+      ],
+      "reviewIssues": []
+    }
+  }
+}

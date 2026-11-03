@@ -1,0 +1,64 @@
+{
+  "reviewModel": "claude-opus-5-5",
+  "requestedModel": "claude-opus-5-5",
+  "canonicalModel": "claude-opus-5-5",
+  "provider": "firstParty",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 3592,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 12418,
+      "webSearchRequests": 0,
+      "costUSD": 0.17144779999999998,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 2336,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponsePath": "data/exam-library/emkohyo-review/emkohyo-EM20251806-q11-11-raw-response.txt",
+  "rawResponseSha256": "eb1875424460d8553b7f3ac00d7759f9ffd3c38e19f0621dc8e34e6cb8b2902c",
+  "paperId": "emkohyo-EM20251806",
+  "ids": [
+    "emkohyo-EM20251806-q11"
+  ],
+  "figureSha256": {
+    "emkohyo-EM20251806-q11": {}
+  },
+  "officialRowImageSha256": {
+    "emkohyo-EM20251806-q11": {
+      "/exam-library/emkohyo-EM20251806/q11-p7-0.webp": "470805a4688c0758d9cc160eb656fca24bd657408374c98c93f7b782bb7f2bfb"
+    }
+  },
+  "officialPageImageSha256": {},
+  "governmentSourceImageSha256": {},
+  "candidateSha256": {
+    "emkohyo-EM20251806-q11": "87223220a1d5176e9b09998fa0736a0adb10b33cf9f0d21d26cf962e8f03a3f8"
+  },
+  "sourcePackPath": "docs/evidence/emkohyo-choice-sources/emkohyo-EM20251806-q11-11.json",
+  "sourcePackSha256": "dcf24db0575c7b50e7d29a6b993d8408f7d6618db7fbe8f0f49fee74f9f1a93e",
+  "assessment": {
+    "emkohyo-EM20251806-q11": {
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "reasonIssues": [
+        "summary「流量計の指示値は捕集量を反映しない」は断定が強すぎ、出典にも直接の記載がない。出典（p.33・p.34）が支えるのは次の2点だけである。(1) 面積式流量計は吸引流量を分粒装置の規定流量に保つための監視に使う。(2) 採取量の目安は差圧計の差圧目盛り値と捕集粉じん量の関係から得る。summaryは例えば「流量は規定値に一定に保つため、流量計の指示値からは採取量を推定できない。採取量の目安は差圧計の目盛値との関係から得る」のように、出典に沿った因果で記すべきである。",
+        "肢4の理由にある「床面ではなく」は出典にない語句で、校閲者の補足になっている。出典p.41は「梁や設置機械の上部等にたい積している粉じん」を採取するとするだけで、問題文の「腰より高い位置」という基準にも触れていない。「梁・機械上部＝腰より高い位置」とする対応づけは推論である旨を明記するか、この基準を直接示す資料で補強すること。",
+        "肢5の理由は、りん酸法（液相沈降法で粒度調整）については出典p.40で直接支えられている。一方、堆積粉じんをX線回折分析法の試料とする経路は説明されていない。出典の枠組みでは、堆積粉じんを再発じんさせ、分粒装置付サンプラーでろ紙に捕集してX線回折法にかける。つまり分粒による粒径選別が粒度調整に当たる。この経路を明示しないと、「X線回折分析法又はりん酸法」の前半を正しいとする根拠が理由文から読み取れない。"
+      ],
+      "sourceIssues": [
+        "唯一の出典は経済産業省「鉱山における粉じん濃度測定マニュアル」で、鉱山保安法の枠組みの資料である。第一種作業環境測定士試験が前提とする労働安全衛生法・粉じん則・作業環境測定基準に基づく資料ではない。各肢の記述内容とは整合するが、試験の準拠体系に直接対応する政府資料（厚生労働省告示・通達等）による裏付けがない。",
+        "肢4の「腰より高い位置」という具体的基準は、提示の政府資料のどこにも記載がない（p.41は「梁や設置機械の上部等」のみ）。肢4を正しいとする判定は、出典の直接記述ではなく解釈で成り立っている。"
+      ],
+      "needsExternalCheck": [
+        "肢4：堆積粉じんを「単位作業場所内の腰より高い位置」から採取する基準が、厚生労働省の告示・通達等の一次資料に明記されているか確認する（作業環境測定の標準的手順では、床面から一定高さ以上の梁・窓枠等に堆積したものを採取するとされる）。",
+        "肢5：労働安全衛生法体系で、堆積粉じん試料を粒度調整（再発じん・分粒または液相沈降）したうえでX線回折分析法又はりん酸法に供する手順を示す厚生労働省側の一次資料を確認する。",
+        "肢2：作業環境測定の標準手順で、採取量の目安を差圧計の指示値（ろ紙の圧力損失）と採取粉じん量の関係から得るとする記述を、労働安全衛生法体系の資料で確認する。"
+      ]
+    }
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "baseHead": "6e233788b161b60b77fde9958f0998a109aee029",
+  "baselineObjectsPreserved": {
+    "kangoshi": 99,
+    "sharoushi": 10,
+    "fp1": 65
+  },
+  "baselineDeletionCount": 0,
+  "qualificationCounts": {
+    "kangoshi": 149,
+    "sharoushi": 16,
+    "fp1MayBasic": 50,
+    "fp1MayApplied": 15,
+    "fp1SeptemberBasic": 3
+  },
+  "newQuestionCount": 59,
+  "newChoiceCount": 244,
+  "newOfficialAnswersMatched": 59,
+  "newChoiceExplanationsComplete": 244,
+  "newFigureAssetSha256": {
+    "/questions/kangoshi/2024-annual/q51-1-figure.png": "a15008edf424de4319e30b13dce72a34696550b1c11b3bc16c3f904ff005de7f",
+    "/questions/kangoshi/2024-annual/q54-1-figure.png": "586c563e4279c39bbc0d7e19669bf75991e9e77f3f7e5515c8ef952760ba26a2",
+    "/questions/kangoshi/2025-annual/q63-1-figure.png": "260a3c5e0d838951acfbc4124b4644cdf49fc9bbf90c451421942da1fe92fa3f",
+    "/questions/kangoshi/2025-annual/q63-2-figure.png": "2ffd9502728a381495e715234e1b528e417cd2d588b19455957179d612949295"
+  },
+  "newFigureAssetsMatchOriginalCommit": true,
+  "round115Q32Excluded": true,
+  "validation": {
+    "typecheck": "PASS",
+    "questionValidator": "PASS: 17781 ok, 0 fail; 14649 warnings total, including one known Q52 wording heuristic",
+    "changedFileLint": "PASS",
+    "targetedUnitTests": "PASS: 14 files, 81 tests"
+  },
+  "scope": "local integration candidate; no push, PR, Cloud submission or new model call"
+}

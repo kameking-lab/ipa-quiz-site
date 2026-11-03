@@ -1,0 +1,64 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20240818",
+  "subject": "theory",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 2671,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 13998,
+      "webSearchRequests": 0,
+      "costUSD": 0.1656678,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 1546,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "86b81215375de2ee9aab6ab9023dd8015bbff60f96e0080e1cfb554547b08794",
+  "inputRequestSha256": "52d11d71b4aeaa32e4080a360e00d1a47652c5f75b0a26253766e38ad603a936",
+  "inputHashes": {
+    "candidateSha256": {
+      "q14": "b5c3da55f937e2ae24ff2504582701dccf73f478cd6390fcb275232533570569"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20240818/theory/p18.png": "b484dd4e07cea07919760c6b1cb2650f5799145e2a293fa9cf40d2e479f8b5e5"
+    },
+    "figureSha256": {},
+    "sourceQuestionPdfSha256": "236be905e93a023cf3c65c1e22c45c24dc42b910151c51f8ed023247793d1d29",
+    "sourceAnswerPdfSha256": "f72ecbc3a477e64948388b69cf78cb931032c9f0c688639836c8d533a949cd0f",
+    "officialAnswerUnitsSha256": "1a5d472524bca04e1d08ab4758d54c067795d3166fcc5a8cab123230c18bd373",
+    "referencePdfSha256": {},
+    "referencePageSha256": {},
+    "referenceJsonSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q14",
+      "questionNumber": 14,
+      "part": null,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "Question stem checked against the official original (page footer '- 15 -', T1-R 018): '電気計器に関する記述として，正しいものを次の(1)～(5)のうちから一つ選べ。' The candidate matches. The only differences are full-width comma normalization and the tilde character, which the sourceAttribution discloses as reformatting ('読みやすく整形').",
+        "Choices (1)–(5) compared with the original character by character. All five match, including '電線1本のみをクランプする', '数μVから100V程度' (unit μV, value 100 V), 'ホイートストンブリッジは抵抗を精密に測定できる', and the swapped descriptions of the ground resistance tester and insulation resistance tester. No omissions or alterations.",
+        "Official answer key (令和6年度 上期 理論 問14 = 3) matches the manifest-fixed official answer unit {question:14, part:null, answer:'3', points:null} and the candidate officialAnswer '3'. scoringPoints=null also matches points=null.",
+        "Overall explanation: (1) The actual principle is the reverse of the choice's reasoning: a single conductor is clamped so the fields do NOT cancel, and clamping both outgoing and return conductors would cancel the fields. Correct. (2) The error is that an electronic voltmeter has a large input impedance (internal resistance), not a small one. Correct. (3) Precise measurement of an unknown resistance from the bridge balance condition. Correct. (4)(5) The two instruments' descriptions are swapped. Correct. The conclusion that only (3) is correct is consistent with the official answer.",
+        "Per-choice explanations: (1) gives a choice-specific reason, noting that clamping both conductors together is the principle used for leakage-current (differential) detection. This is technically accurate. (2) correctly separates the true part (amplifier plus moving-coil meter) from the false part (small internal resistance). (3) gives the reason it is correct: null-balance of the galvanometer and computation from known resistances. (4)(5) each identify the swapped description. No contradictions with the overall explanation.",
+        "Figures: the original contains only text, with no figures or illustrations. figureDescription says no figure; figureUrls=[] and choiceFigureUrls={} are appropriate. No figure is needed to answer.",
+        "Source metadata: fiscalYear=2024 (令和6年度), term=upper (上期), examDate=2024-08-18, subject=theory. sourceQuestionPdfUrl and sourceAnswerPdfUrl match the manifest. reviewedFromPage=[18] matches the manifest's PDF page 18; the printed page number '15' in the original is a booklet page number, not the PDF page.",
+        "officialReferenceUrls=[], so there are no independent claims requiring external verification. The uncertainty field ('no unresolved items') and needsReview=false agree with the audit result."
+      ]
+    }
+  ]
+}

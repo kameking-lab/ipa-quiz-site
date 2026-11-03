@@ -78,7 +78,8 @@ async function fetchTraffic24h(): Promise<Traffic24h> {
     const quizCompleted = counts["quiz_completed"] ?? 0;
     return {
       posthogConfigured: true,
-      pageviews: counts["$pageview"] ?? 0,
+      // クライアントは `$pageview` ではなく `page_view` を送る (lib/admin/funnel/posthog.ts 参照)。
+      pageviews: counts["page_view"] ?? 0,
       quizStarts,
       quizCompleted,
       aiQueries: counts["ai_query_sent"] ?? 0,

@@ -1,19 +1,26 @@
 import { ALL_QUESTIONS } from "@/data/questions";
-import { isPlaceholderExplanation } from "@/lib/questions/filter";
+import { isPracticeReadyQuestion } from "@/lib/questions/filter";
+import { isQuestionCanonicalRepresentative } from "@/lib/seo/question-canonical";
 
 export const SITEMAP_CHUNK_SIZE = 10000;
 
-// Only emit URLs we actually want indexed. The /q/* page sets robots: noindex
-// for placeholder explanations, so listing those URLs in the sitemap creates
-// Search Console "Submitted URL marked 'noindex'" warnings and wastes crawl
-// budget. As of 2026-05-26 ~1,742 questions carry placeholder explanations
-// (noindex), so this filter is load-bearing, not theoretical.
-// needsReview questions 404 at /q/* (see app/q/.../page.tsx), so exclude them
-// here too — otherwise the sitemap advertises URLs that resolve to 404.
+// Match the direct question route exactly. This is also the published/usable
+// count source; the canonical-only sitemap subset is derived separately below.
 export function getIndexableQuestions() {
-  return ALL_QUESTIONS.filter((q) => !isPlaceholderExplanation(q) && !q.needsReview);
+  return ALL_QUESTIONS.filter(isPracticeReadyQuestion);
+}
+
+/**
+ * Sitemap URLs are canonical destinations only. Morning-I alias pages remain
+ * playable and keep their exam-specific UI, but exact source duplicates point
+ * at one representative and therefore must not be advertised independently.
+ */
+export function getSitemapQuestions() {
+  return getIndexableQuestions().filter((q) =>
+    isQuestionCanonicalRepresentative(ALL_QUESTIONS, q),
+  );
 }
 
 export function getSitemapChunkCount(): number {
-  return Math.max(1, Math.ceil(getIndexableQuestions().length / SITEMAP_CHUNK_SIZE));
+  return Math.max(1, Math.ceil(getSitemapQuestions().length / SITEMAP_CHUNK_SIZE));
 }

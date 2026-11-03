@@ -1,0 +1,66 @@
+{
+  "reviewModel": "claude-opus-5-5",
+  "requestedModel": "claude-opus-5-5",
+  "canonicalModel": "claude-opus-5-5",
+  "provider": "firstParty",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 3540,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 16112,
+      "webSearchRequests": 0,
+      "costUSD": 0.19995980000000002,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 2194,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponsePath": "data/exam-library/emkohyo-review/emkohyo-EM20261801-q08-08-raw-response.txt",
+  "rawResponseSha256": "dd4eda2759497a28461f708fd6699b97de8e8460ec3b858d0d498005c14061d6",
+  "paperId": "emkohyo-EM20261801",
+  "ids": [
+    "emkohyo-EM20261801-q8"
+  ],
+  "figureSha256": {
+    "emkohyo-EM20261801-q8": {}
+  },
+  "officialRowImageSha256": {
+    "emkohyo-EM20261801-q8": {
+      "/exam-library/emkohyo-EM20261801/q8-p6-1.webp": "c1f5e2eb7c2bb88eebee08d6859728a2c5f5b778ef8419366248dfed3202bc47"
+    }
+  },
+  "officialPageImageSha256": {},
+  "governmentSourceImageSha256": {},
+  "candidateSha256": {
+    "emkohyo-EM20261801-q8": "4b77e6b83c7bfc004b446842f94bb54bd31e271fac7b77767da5a47529cebc9b"
+  },
+  "sourcePackPath": "docs/evidence/emkohyo-choice-sources/emkohyo-EM20261801-q08-08.json",
+  "sourcePackSha256": "bf310b92bf955463fd473fb145fb5376c31de304736ac1e0a1500190864f971d",
+  "assessment": {
+    "emkohyo-EM20261801-q8": {
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "reasonIssues": [
+        "肢1: 「労働安全衛生総合研究所は、ISO 7708に基づく区分を…と説明する」としているが、根拠に挙げたJNIOSH 2017年資料の該当箇所（p.10）は「呼吸器への到達の程度により、粒子のサイズの基準を以下の３つに分けている」と書くだけで、ISO 7708には触れていない。ISO 7708への帰属を削除するか、ISO 7708に言及している箇所を別途示す必要がある。",
+        "肢1: 3区分が入れ子（吸引性⊃咽頭通過性⊃吸入性）であり、大小の範囲を順に切り分けたものではないという説明を直接支えるのは、2013年JNIOSHメールマガジンのコラム（「吸引性粉じんの中で咽頭を通過して…さらにその中で肺胞まで到達する粒子を『吸入性粉じん』」）である。2017年資料の数値とあわせて、どちらの資料に基づく説明かを明記すべき。",
+        "肢2: 岡山労働局資料の「粒径0.1～1μm」は溶接ヒュームに限った記述である。これを根拠に、ヒューム一般の一次粒子径が「一般に1μm以下」と結論づけるのは一般化の飛躍がある。また「蒸気が凝縮してできるヒュームの粒子は1μm程度以下の微細なもの」という一般命題には出典が付いていない。「一次粒子」（凝集前の粒子）と、資料のいう粒子径の関係にも触れていない。",
+        "肢3: 粉じん則別表第一の「金属をアーク溶接する作業」が粉じん作業に当たるという事実を示すだけで、「じん肺の原因になる」との因果の橋渡しがない。じん肺法施行規則別表（同じ作業をじん肺法上の粉じん作業として定める）を示すか、溶接ヒュームがじん肺（溶接工肺）の原因となることを明記すべき。"
+      ],
+      "sourceIssues": [
+        "JNIOSH 2017年資料（siryou_5.pdf）の照合済み抜粋には「ISO 7708」の語が無い。肢1の理由にあるISO 7708への帰属を、この政府資料は直接支えていない。",
+        "肢2について、ヒューム一般の一次粒子径が1μm以下であることを直接述べた政府資料が無い。JNIOSH 2017年資料p.6のヒュームの定義には粒径が書かれておらず、岡山労働局資料は溶接ヒュームに限った記述である。",
+        "肢3の「じん肺の原因」について、提示資料のうち粉じん則別表第一は粉じん作業の指定にとどまり、じん肺の原因となることを直接述べていない。じん肺法施行規則（e-Gov）の別表のうちアーク溶接作業の該当号の抜粋が証拠に含まれていない。"
+      ],
+      "needsExternalCheck": [
+        "JNIOSH 2017年資料（siryou_5.pdf）全44ページのどこかでISO 7708に言及しているか確認すること。言及が無ければ、肢1の理由からISO 7708を削除する。",
+        "ヒューム一般の一次粒子径（一般に1μm以下）を直接記述する政府系資料（作業環境測定ガイドブック準拠のJNIOSH・厚労省資料など）があるか確認すること。",
+        "じん肺法施行規則（現行版、令和8年4月1日施行）の別表で、金属をアーク溶接する作業が粉じん作業として掲げられている号番号と原文を確認し、肢3の根拠として抜粋すること。"
+      ]
+    }
+  }
+}

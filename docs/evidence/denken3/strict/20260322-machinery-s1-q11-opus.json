@@ -1,0 +1,72 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20260322",
+  "subject": "machinery",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 4399,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 14952,
+      "webSearchRequests": 0,
+      "costUSD": 0.20785979999999998,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 2600,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "60451210f54544d77f4aee836e22d99999f10e78af15b4380510ac44559d65ad",
+  "inputRequestSha256": "f294f0999ba98ef42a8eee0f585aee32c9b974c54e716b210ea79c1d2109af55",
+  "inputHashes": {
+    "candidateSha256": {
+      "q11": "053c797662aa3bc570fe9b8b0c6e8264ceee0a7e98ebcbcb46e986462ddb089b"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20260322/machinery/p14.png": "8d50c1279a9f792d1cfa85d2ca877e638886b5b9a3a87bf02d0668da2eb385c8"
+    },
+    "figureSha256": {
+      "public/images/denken3/20260322/machinery/20260322-machinery-q11-fig1.png": "c5a7aa2a708f008da6e11d7f64d168ba957e4b692606477df0d3868a2a361a5a"
+    },
+    "sourceQuestionPdfSha256": "a89c7dc2b9a305f9db83f2f78195f0df8a0da5aeec6b8e66cfd40fb028d146fb",
+    "sourceAnswerPdfSha256": "cc2890296d06a4823df5697a78a1c01ddfd39f041c51f48c87984daa3a5707c6",
+    "officialAnswerUnitsSha256": "891d270b55d8d0ff3a567794aecc9e9da0c0d1659b3fc543616507a13d2a490f",
+    "referencePdfSha256": {},
+    "referencePageSha256": {},
+    "referenceJsonSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q11",
+      "questionNumber": 11,
+      "part": null,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [
+        "uncertainty 欄の「このページには実施年度・試験回の表記がないため，出典の公式URLは特定していない。」は、候補 JSON 自身の値と矛盾している。候補の sourceQuestionPdfUrl は manifest 固定の 20260322_ch_third_q03.pdf、sourceAnswerPdfUrl は 20260322_ch_third_a01.pdf になっている。また、公式解答表の見出しは「令和７年度 第三種電気主任技術者下期試験解答」で、候補の fiscalYear・term・sourceAttribution もこれと一致する。出典 URL は特定済みなので、この記述は古い注記が残ったものと判断した。削除するか、「出典は manifest 固定の公式問題 PDF・解答 PDF で確認済み」という趣旨に更新する必要がある。"
+      ],
+      "verifiedEvidence": [
+        "公式正答: 公式解答表の＜機械＞列、問11 の解答は 5、配点は 5。候補の officialAnswer=\"5\"、scoringPoints=5 と一致する。",
+        "出典メタデータ: fiscalYear=2025、term=lower、examDate=2026-03-22、subject=machinery は manifest（2025年度下期・試験日 2026-03-22・機械）と一致する。解答表見出しの「令和７年度…下期」とも一致する。reviewedFromPage=[14] は manifest の「問11 原図は PDF 第[14]頁」と一致する（原図の冊子頁表記は「- 11 -」、欄外は「T2－K 014」）。問題・解答 PDF の URL も manifest と一致する。",
+        "問題文: 原図と照合した。n_m=1 200 min⁻¹、T_m=100 N·m、減速比 6、効率 0.96、求める量 n_L [min⁻¹]・T_L [N·m]・軸入力 P_L [kW]、「最も近いものを組み合わせたのは次のうちどれか」。数値・単位・記号・添字はすべて一致し、脱字・改変はない。",
+        "選択肢: 原図の表と照合した。(1) 7 200 / 576 / 4 147、(2) 7 200 / 16.0 / 12.1、(3) 7 200 / 16.0 / 4 147、(4) 200 / 16.0 / 12.1、(5) 200 / 576 / 12.1。5 肢とも列の対応（n_L, T_L, P_L）・数値・単位が一致する。",
+        "総合解説の検算: n_L=1 200/6=200 min⁻¹。T_L=0.96×6×100=576 N·m（動力の釣合い ω_L·T_L=0.96·ω_m·T_m と n_m/n_L=6 から導出され、因果も正しい）。ω_L=2π×200/60≒20.944 rad/s、P_L≒20.944×576≒12 064 W≒12.1 kW。検算の P_m=125.66×100≒12 566 W、×0.96≒12 064 W も一致する。正答 (5) と整合する。",
+        "肢(1)理由: 1 200×6=7 200（増速扱い）は正しい。7 200×576/1 000=4 147.2≒4 147 も数値上正しい。T_L=576 は正しいとの記述も妥当。",
+        "肢(2)理由: 100/6×0.96=16.0 は正しい。P_L=12.1 kW 自体は正しいが、n_L と T_L が誤りとの指摘も妥当。",
+        "肢(3)理由: n_L・T_L・P_L の 3 値がいずれも誤りとの指摘は正しい（電動機出力 約 12.6 kW×0.96=12.1 kW）。",
+        "肢(4)理由: (2π×200/60)×16.0≒335 W は正しく、P_L=12.1 kW と整合しないとの指摘も妥当。正しい T_L=576 N·m の記述も正しい。",
+        "肢(5)理由: 3 値の導出はいずれも正しい。",
+        "図: 公開候補図 20260322-machinery-q11-fig1.png は原図の構成図部分を欠けなく切り出している。電動機（左下）、電動機軸、かみ合う歯車、負荷軸（左端の軸受け表示を含む）、負荷（右上）、右端の軸端が確認できる。ラベル n_m・T_m（電動機下）と n_L・T_L・P_L（負荷上）もすべて含まれ、位置も原図と一致する。解答に必要な数値は問題文にあり、選択肢の表は choices にテキストで収録されているので、公開図だけで理解に支障はない。figureDescription の配置・ラベル・減速構成の記述も原図と矛盾しない。",
+        "officialReferenceUrls は空で、独立主張の検証対象はない。"
+      ]
+    }
+  ]
+}

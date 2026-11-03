@@ -1,0 +1,106 @@
+{
+  "inputHashes": {
+    "draftSha256": "fd7866c5f4ebde44f79bed44edaa1ec0ccca6709cb05913d1bddd5070e4f49dc",
+    "candidateSha256": {
+      "41": "c6a5e415c58422a4b6709dbfd61efbb47feb3904864c84ace7d6bf72697394ef",
+      "42": "ec29416e03cb3b5ceac9c79a333487be560338a50d20d1b7438da31e50e39dc4",
+      "43": "3473f79a64008b1a6ce8ddd4e5f50a9c2133784227efcad63c8ca31f107fb937",
+      "44": "99e19075b93c85684525c075ee1c62ca018304c506c10482209724a01ba1a32b",
+      "45": "c21e1bebc8cbce59610f64952961dfee1b9e3b6bc4fdd6fae73083fb38dfd464"
+    },
+    "rowSha256": {
+      "41": "bb7635923462126a350c8e5dfe9e7c401047a22128b17f3301d21af72d9b5644",
+      "42": "6dc0f71054c75d350aa35fea50e983946e92ddb76f60c9660364ee5da23f47a5",
+      "43": "c124a437e575d1c6f3c78e8dfbc56d7e4e3ce94ae589d12f46b3d9081acea61d",
+      "44": "96693d321f1615c9d9d4ba7f078fa082454c0bf880fb2c39127f4a119e62f646",
+      "45": "df8db84376d7ae3369a680d757196053550371535830caf546124ca7aae24407"
+    },
+    "figureSha256": {
+      "public/images/denko1/2026-first/single-line.png": "edf9a94244f6e0366aecf728f4666df608ba167a19674052d58a58e1cbc2a07d",
+      "public/images/denko1/2026-first/q42-i.png": "7ce22f9789bf40e28adba6a1a39569429039865a3b7e0aa7967d2b57fecb116b",
+      "public/images/denko1/2026-first/q42-ro.png": "a72e7639d36f33797655a3c187fe13a4e44f7cbf697b29e24b8c847e6917e5bb",
+      "public/images/denko1/2026-first/q42-ha.png": "0ee1b622c01b0b59463ef19c8209f37b1a27e827b276541330d25ed234a39cd6",
+      "public/images/denko1/2026-first/q42-ni.png": "ca3cb3aa071c51eb1051095664f2f2548bc8f16acdec508b7b48eb4e7faaf736",
+      "public/images/denko1/2026-first/q45-i.png": "b3da496160e1409c708ab75ae17e7e593822c260bc667a5bf0a2f73cf984bab8",
+      "public/images/denko1/2026-first/q45-ro.png": "5be4542958652b7acee2c13a4da6d8cfb9a40db8bba90f950aaa98fd3fadeb78",
+      "public/images/denko1/2026-first/q45-ha.png": "2787dcd0a6e8baebf043555117a9d2ed048f33b389b8730fa086dfabdd071138",
+      "public/images/denko1/2026-first/q45-ni.png": "dc5e01eafb1a1a212df4463d86be1c5bdf2bfcc4ac4125c9f3ade032173c21e0"
+    },
+    "legalReceiptSha256": {
+      "docs/evidence/denko1-law/20260401-q45.json": "5e4e09ff3dd6179445be50dcb07aad37435e3ff6404b70d88f41b0b6fe9b65b3"
+    }
+  },
+  "reviewModel": "claude-opus-5-5",
+  "cliInitModel": "claude-opus-5-5",
+  "sessionId": "c775727e-9f46-4ca9-9c5e-56916aeba425",
+  "assessment": [
+    {
+      "number": 41,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "explanationIssues": [
+        "explanationでは①を「地絡継電装置付高圧交流負荷開閉器(GR付PAS)」に内蔵されたものとしているが、共通図と合わない。図の継電器記号は「I⏚>」の下に矢印があり、地絡方向継電装置を表している。またPAS箱内には、電路と接地の間にコンデンサ記号(—||—)があり、零相電圧を取り込む零相電圧検出装置(ZPD)と読める。このため図の機器は地絡方向継電装置付高圧交流負荷開閉器(DGR付PAS)であり、「GR付PAS」は誤り。①が零相変流器(ZCT)で零相電流を検出するという結論は正しい。"
+      ],
+      "figureIssues": [
+        "共通diagramDescriptionの「地絡継電装置I⏚>に接続」は図と一致しない。図では「I⏚>」の下に方向を示す矢印がある(地絡方向継電装置)。PAS箱内のコンデンサ記号(—||—、接地側へ接続)と2つの円の変圧器記号(制御電源用)も記述から抜けている。",
+        "共通diagramDescriptionに、⑥の上にある遮断器(×付き開閉器記号。I>から破線で引外し)と、母線から分岐するヒューズ→計器用変圧器→VS→V の電圧計回路が書かれていない。また⑥の変流器とAの間にあるAS(電流計切換スイッチ)も省略されている。"
+      ],
+      "lawNeedsExternalCheck": []
+    },
+    {
+      "number": 42,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [
+        "共通diagramDescription(問41〜50で同一)の「地絡継電装置I⏚>に接続」は図と一致しない。図の継電器記号は「I⏚>」の下に矢印があり、地絡方向継電装置を表す。PAS箱内のコンデンサ記号(ZPD)も記述から抜けている。",
+        "共通diagramDescriptionに、⑥の上の遮断器(×付き開閉器記号)と、ヒューズ→計器用変圧器→VS→V の電圧計回路が書かれていない。"
+      ],
+      "lawNeedsExternalCheck": []
+    },
+    {
+      "number": 43,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "explanationIssues": [
+        "choiceExplanations.ハは、肢の「地絡電圧を検出する」に対して「地絡の検出は零相変流器と地絡継電器などで行い」と書いている。零相変流器が検出するのは零相電流であり、電圧ではないので、肢の内容とずれている。地絡時の電圧(零相電圧)を検出するのは、接地形計器用変圧器(EVT)や零相電圧検出装置(ZPD)であると書くべき。"
+      ],
+      "figureIssues": [
+        "共通diagramDescription(問41〜50で同一)の「地絡継電装置I⏚>に接続」は図と一致しない。図の継電器記号は「I⏚>」の下に矢印があり、地絡方向継電装置を表す。PAS箱内のコンデンサ記号(ZPD)も記述から抜けている。",
+        "共通diagramDescriptionに、⑥の上の遮断器(×付き開閉器記号)と、ヒューズ→計器用変圧器→VS→V の電圧計回路が書かれていない。"
+      ],
+      "lawNeedsExternalCheck": []
+    },
+    {
+      "number": 44,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [
+        "共通diagramDescriptionで④を「④の開閉器」とだけ書いている一方、その下にある遮断器(×付き開閉器記号。I>から破線で引外し)は記述にない。断路器(④)と遮断器を区別する問いなので、遮断器が抜けていると図の読み取りとして不十分。",
+        "共通diagramDescriptionの「地絡継電装置I⏚>に接続」は図と一致しない。図の継電器記号は「I⏚>」の下に矢印があり、地絡方向継電装置を表す。PAS箱内のコンデンサ記号(ZPD)と、ヒューズ→計器用変圧器→VS→V の電圧計回路も記述から抜けている。"
+      ],
+      "lawNeedsExternalCheck": []
+    },
+    {
+      "number": 45,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [
+        "共通diagramDescription(問41〜50で同一)の「地絡継電装置I⏚>に接続」は図と一致しない。図の継電器記号は「I⏚>」の下に矢印があり、地絡方向継電装置を表す。PAS箱内のコンデンサ記号(ZPD)も記述から抜けている。",
+        "共通diagramDescriptionに、⑥の上の遮断器(×付き開閉器記号)と、ヒューズ→計器用変圧器→VS→V の電圧計回路が書かれていない。"
+      ],
+      "lawNeedsExternalCheck": [
+        "explanationの「高圧受電設備の避雷器の接地線には14mm²以上の太さが用いられる」と、choiceExplanations.ロ・ニの「接地線8mm²は細い」は、receiptで照合されていない。receiptが確認しているのは、解釈【避雷器等の施設】第3項のA種接地工事だけ。14mm²は高圧受電設備規程などによる数値と考えられるので、出典と数値の確認が必要。",
+        "explanationの「断路器を介して接続し…ヒューズを入れない」という施設方法は、receiptで照合されていない。高圧受電設備規程などの規程に基づく断定なので、確認が必要。",
+        "explanationの条番号「電気設備の技術基準の解釈第37条第3項」のうち「第37条」は、receiptに記載がない。receiptにあるのは見出し【避雷器等の施設】と第3項の文言だけなので、条番号の照合が必要。"
+      ]
+    }
+  ]
+}

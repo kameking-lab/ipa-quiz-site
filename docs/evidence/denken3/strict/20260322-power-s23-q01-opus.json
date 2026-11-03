@@ -1,0 +1,69 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20260322",
+  "subject": "power",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 4747,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 15760,
+      "webSearchRequests": 0,
+      "costUSD": 0.2212838,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 3092,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "b985f323ccbf0a46a8ef476bb59493fcd4a9b9258bd51dffce62357fcbe8be36",
+  "inputRequestSha256": "f13969477c36ea9bdbf09c0fe0e591dff4564f333191ba5da5208abcf91d68b2",
+  "inputHashes": {
+    "candidateSha256": {
+      "q01": "4336b2e98aa09b1a3da8a15b26d663f9e28853e7f6381976cfba68196abd8309"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20260322/power/p04.png": "b5db000e4206d9200a3d5b80001dc23907f06ab38b8c96f60dfae6d1219fab96"
+    },
+    "figureSha256": {},
+    "sourceQuestionPdfSha256": "9733341a0f293f068c9a665d5a9a90f1aabf3a2db5d79cd530643cdea241f7b7",
+    "sourceAnswerPdfSha256": "cc2890296d06a4823df5697a78a1c01ddfd39f041c51f48c87984daa3a5707c6",
+    "officialAnswerUnitsSha256": "a7fe1c20f1fe2d13156ebd8ba1ed6e10dd89989f2411fd92dd3be8b2117e0239",
+    "referencePdfSha256": {},
+    "referencePageSha256": {},
+    "referenceJsonSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q01",
+      "questionNumber": 1,
+      "part": null,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [
+        "(エ)の説明が欠けている。explanation と choiceExplanations は、正答(3)の(エ)「高落差を得にくい」の技術的根拠を示していない。誤答肢の(エ)（「建設期間が長い」「建設期間が短い」「高落差を得やすい」「建設費が安い」）の正誤も判定していない。4語句の空欄の説明が学習者に一切示されず、解答単位として未完結である。",
+        "(エ)には技術的な曖昧さが残っている。一般的な教科書では、水路式は河川勾配の急な上流部で長い導水路により落差を得る方式として説明されることが多い。この記述と公式正答(3)の(エ)「高落差を得にくい」とは緊張関係にある。候補は断定を避けているだけで、この曖昧さを解消していない。公式正答は変更せず、次の2点を明示するよう修正が必要である。(i) 本問は(ア)(イ)(ウ)(オ)だけで(3)に一意に定まること。(ii) (エ)の語句は公式正答の組合せに含まれるが、その技術的な妥当性は外部資料で確認中であること。ただし、この確認は外部資料で済ませてから公開すべきである。",
+        "メタデータが自己矛盾している。uncertainty 欄には(エ)の根拠が未確認であることが記載されているのに、needsReview=false となっている。未解消の不確実性がある以上、needsReview は true とすべきである。"
+      ],
+      "figureIssues": [],
+      "sourceIssues": [
+        "(エ)「高落差を得にくい」の技術的根拠を検証できる公式資料が添付されていない。試験センターの出題意図・正誤訂正、公式参考資料の原頁のいずれもない。officialReferenceUrls も空である。そのため、(エ)の妥当性は外部確認事項として残る。添付の公式解答表（電力 問1=3、配点5）には正誤訂正・注記は見当たらない。"
+      ],
+      "verifiedEvidence": [
+        "出典メタデータは manifest と一致する。fiscalYear=2025（令和7年度）、term=lower（下期）、examDate=2026-03-22、subject=power、sourceQuestionPdfUrl=…/20260322_ch_third_q02.pdf、sourceAnswerPdfUrl=…/20260322_ch_third_a01.pdf、reviewedFromPage=[4]。原図の印字頁は「-1-」だが、PDF第4頁という manifest 指定と矛盾しない。",
+        "公式解答表（令和7年度 第三種電気主任技術者下期試験解答）の＜電力＞問1は解答3・配点5である。候補の officialAnswer=\"3\"、scoringPoints=5 と一致する。",
+        "問題文は原図と全文一致する。4段落の本文、空欄(ア)〜(オ)の位置、(イ)(ウ)の再出現箇所、「1 日又は数日程度」、末尾の設問文を照合した。",
+        "選択肢(1)〜(5)の全25セルは原図の表と一致する。(1) 落差/流速/自然放流式/建設期間が長い/ダム式。(2) 流速/落差/自然放流式/建設期間が短い/ダム式。(3) 落差/流量/流込み式/高落差を得にくい/調整池式。(4) 流量/落差/流込み式/高落差を得やすい/調整池式。(5) 落差/流量/流込み式/建設費が安い/貯水池式。",
+        "消去法を検算した。(ア)落差→(2)(4)除外。(イ)流量→(1)(2)(4)除外。(ウ)流込み式→(1)(2)除外。(オ)調整池式→(1)(2)(5)除外。残りは(3)のみで、公式正答と一致する。",
+        "各誤答肢の固有理由を検算し、いずれも正しいことを確認した。(1)は(イ)(ウ)(オ)が誤り。(2)は(ア)(イ)(ウ)(オ)が誤り。(4)は(ア)(イ)の入替わり。(5)は(オ)貯水池式が誤りで、貯水池式は季節的な長期調整を行い、1日〜数日規模の調整を行うのは調整池式である。",
+        "図の扱いに問題はない。回路図・写真はなく、選択肢表のみである。表の内容は choices に全て転記済みで、figureUrls が空でも理解に支障はない。"
+      ]
+    }
+  ]
+}

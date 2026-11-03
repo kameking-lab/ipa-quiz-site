@@ -1,0 +1,80 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20250323",
+  "subject": "machinery",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 6136,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 16983,
+      "webSearchRequests": 0,
+      "costUSD": 0.2588478,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 4209,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "fc5b60ce09bca908dba199125a41c41b24b2519c8d536e09a24d82bffaa7d094",
+  "inputRequestSha256": "d6aa5c2b280d779f4f9bc0235c66a1d2d479a718e78dcb7f871dde94ac88720f",
+  "inputHashes": {
+    "candidateSha256": {
+      "q14": "58acacf4f5f0fa53736c1ad6f1b544937178021526ccdf19bb5175f10391cf34"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20250323/machinery/p17.png": "b72dba494ccd6ffa84c857323a72b621a51ca1949e58db014e27d1e0a4efe292"
+    },
+    "figureSha256": {
+      "public/images/denken3/20250323/machinery/20250323-machinery-q14-logic-circuit.png": "8b26facc733cbed9f9c9bd2dbecff411aa1c421c0d83d0dfe7c5c867ea2ab33b",
+      "public/images/denken3/20250323/machinery/20250323-machinery-q14-input-chart.png": "b1c976a5736a3fad4f9df25da69115c756c86fbdf4a999c008bc2d797b100970",
+      "public/images/denken3/20250323/machinery/20250323-machinery-q14-choice-1.png": "3e1f2f45d2fa22ebaa4c0330a2637df8932e41cbf2c776c3fc93757a10e9167b",
+      "public/images/denken3/20250323/machinery/20250323-machinery-q14-choice-2.png": "e3fa9226cd854994e877850715f66ee14ead52b2710c512253e129dd6853f531",
+      "public/images/denken3/20250323/machinery/20250323-machinery-q14-choice-3.png": "a57c670a1f9adf0b5a7d74acbf14de5047c7c2d583bba8fb70e5b323739ab30c",
+      "public/images/denken3/20250323/machinery/20250323-machinery-q14-choice-4.png": "33e5bb39b4d84c7e3cac9ec83c87d3bdf23b5428e5d8e8caa504ea26fddefcf2",
+      "public/images/denken3/20250323/machinery/20250323-machinery-q14-choice-5.png": "a12d99354e65a8384ef865d4c61e3497560e802b1ff5b2e4bdb03d5793b2587c"
+    },
+    "sourceQuestionPdfSha256": "66e8b0070a314cd78ed9b9f3edd3d75eeaf442b258fd0aacab0e7d9620c75b9f",
+    "sourceAnswerPdfSha256": "4c3b38fcf1405766fafaa78b1b05b867a3d48307a670b9d354476bc6b32acd4c",
+    "officialAnswerUnitsSha256": "1a5d472524bca04e1d08ab4758d54c067795d3166fcc5a8cab123230c18bd373",
+    "referencePdfSha256": {},
+    "referencePageSha256": {},
+    "referenceJsonSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q14",
+      "questionNumber": 14,
+      "part": null,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [
+        "総合解説の結論文「C=0区間終盤の1個」は、C=0区間が2回あるためどちらを指すか曖昧である。「2回目のC=0区間（Cが再び0になった区間）の終盤の1個」と明記すべき（③の区間分けや各肢説明の表記とも揃う）。",
+        "choiceExplanations[1] の「C=1に戻った後の最初のパルスが欠けている」は曖昧である。C=1に戻った後に最初に現れるパルスはBの単独パルス（Xに現れないもの）であり、欠けているのはその次の、A・Bが同時に1になる位置のパルス（C=1再開後のAの1個目）である。「C=1に戻った後のAの1個目のパルス（後半のA・Bがともに1になる位置）が欠けている」などと特定すべき。",
+        "choiceExplanations[1] の「前半〜C=0区間の4個は正しい」も、どのC=0区間を指すか曖昧である。「最初の3個と2回目のC=0区間終盤の1個の計4個は正しい」と書くべき。"
+      ],
+      "figureIssues": [
+        "選択肢波形の切り出し画像で、左端に写り込む原図の装飾が肢ごとに不揃いである。(3)だけ「出力{」ラベルが写り、(1)と(5)には波括弧の断片が写っている。正答肢(3)だけが識別的な見た目になり、答えの手掛かりになり得る。5枚とも同じ範囲（肢番号・0/1目盛・波形のみ）で切り出し、括弧とラベルを除いて統一すべき。"
+      ],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "出典メタデータ：fiscalYear=2024、term=lower、examDate=2025-03-23、subject=machinery、sourceQuestionPdfUrl、sourceAnswerPdfUrl、reviewedFromPage=[17] はいずれも manifest と一致する。原図の頁下端は印刷頁「-14-」、識別子「T2-K 017」で、PDF第17頁と整合する。sourceAttribution の「令和6年度下期 機械 問14」も一致する。",
+        "問題文：原図の「図の論理回路に，図に示す入力A，B及びCを加えたとき，出力Xとして正しいものを次の(1)～(5)のうちから一つ選べ。」と一致する。括弧内の補足は編集注記で、内容に誤りはない。",
+        "回路図：Aと、Cの分岐点から上に引いた線が上側ANDに入る。BとNOT Cが下側ANDに入る。2つのANDの出力がORに入り、ORの出力がXとなる。公開候補図 logic-circuit.png は原図と接続・分岐点・NOT記号・ラベル（A, B, C, 入力, 出力X）がすべて一致する。よって X = A·C + B·C̄ となり、C=1のときX=A、C=0のときX=Bとなる。",
+        "入力波形（原図の座標で読み取り）：Aのパルスは300–329、358–386、414–443、527–556、698–727、756–784。Bのパルスは300–329、358–386、471–499、585–613、641–670、698–727。Cは〜343で0、343〜512で1、512〜625で0、625〜で1。公開候補図 input-chart.png は原図の縮尺約1.5倍で、パルス位置と3本の縦破線が原図と一致する。",
+        "正しいXの導出：C=0区間ではX=Bなので300–329の1個。C=1区間ではX=Aなので358–386と414–443の2個（Bの単独パルス471–499は出ない）。2回目のC=0区間ではX=Bなので585–613の1個（Aの単独パルス527–556は出ない）。C=1再開後はX=Aなので698–727と756–784の2個（Bの単独パルス641–670は出ない）。合計6個。",
+        "肢(3)の波形は300、358、414、585、698、756の6パルスで、上記の導出と完全に一致する。公式正答3とも一致する。",
+        "誤答肢の検算：(1)は300、358、414、585、756の5個で、698–727が欠落している。(2)は300、358、414、698の4個で、585と756が欠落している。(4)は300、358、585、698の4個で、414と756が欠落している。(5)は300、358、471、585、698の5個で、471は不要なB単独パルスであり、414と756が欠落している。choices の各波形記述と choiceExplanations[2][4][5] の誤り理由はこの結果と一致する。",
+        "総合解説の①〜④の区間別パルス数（B1個／A2個・B2個／B1個・A単独1個／A2個・B単独1個）は、すべて原図の読み取りと一致する。",
+        "公開図：figureUrls の2枚と choiceFigureUrls の5枚で計7枚となり、figureDescription の記述と一致する。選択肢の切り出しは入力図とほぼ同じ縮尺・左端位置（軸x≈187〜190、1個目パルス立上りx≈222〜225）であり、公開図だけで位置を突き合わせて解答できる。",
+        "officialReferenceUrls は空で、検証が必要な独立主張はない。"
+      ]
+    }
+  ]
+}

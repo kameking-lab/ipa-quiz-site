@@ -1,0 +1,22 @@
+{
+  "emkohyo-EM20261803-q8": {
+    "status": "PASS",
+    "textIssues": [],
+    "choiceIssues": [],
+    "reasonIssues": [],
+    "sourceIssues": [],
+    "needsExternalCheck": []
+  },
+  "emkohyo-EM20261803-q9": {
+    "status": "FIX",
+    "textIssues": [
+      "presentation.promptの末尾に表の列見出し「Ⓐ」「Ⓑ」が単独の2行として残っている。figuresが空で表レイアウトも無いため、ユーザー画面では意味のない孤立記号として表示される。これらの行は削除する。表形式を保つ場合は、各選択肢を「Ⓐ アクリロニトリル／Ⓑ 捕集袋」のように書き、見出しと値の対応を明示する。"
+    ],
+    "choiceIssues": [
+      "選択肢5のtextが「水銀グラスファイバーフィルター」となっており、ⒶとⒷの間の区切りが欠落している。公式原図と公式テキストはどちらも「水銀」と「グラスファイバーフィルター」を別の列に置いている。選択肢1〜4と同じく「水銀 グラスファイバーフィルター」と半角スペースで区切る必要がある。"
+    ],
+    "reasonIssues": [],
+    "sourceIssues": [],
+    "needsExternalCheck": []
+  }
+}

@@ -1,14 +1,24 @@
+import { nativeBQuestionIssue } from "./native-b";
+import { numericQuestionIssue } from "./numeric";
+import { orderingQuestionIssue } from "./ordering";
+import { hasUnrenderableContent } from "./content-quality";
 import type { Question, QuizFilter } from "./types";
-import { getChoiceKeys } from "./choices";
 import type { HistoryStore } from "@/lib/storage/history";
 
-function hasUnrenderableContent(q: Question): boolean {
-  const tableOrFigurePattern = /次の表|以下の表|下の表|表のように|表に示す|次の図|以下の図|下の図|図のように|図に示す|図中の|次の条件|以下の条件/;
-  return tableOrFigurePattern.test(q.question) && !q.hasImage;
-}
+
 
 export function isPlaceholderExplanation(q: Question): boolean {
-  return /^正解は[アイウエ]です[。.]/.test(q.explanation) || q.explanation.trim() === "";
+  const explanation = q.explanation.trim();
+  return /^正解は[アイウエ]です[。.]?$/.test(explanation) || explanation === "";
+}
+
+/**
+ * A question can be advertised in an IPA paper list only when the interactive
+ * player can render and explain it. Keeping this predicate shared prevents a
+ * paper page from promising more questions than the quiz can actually serve.
+ */
+export function isPracticeReadyQuestion(q: Question): boolean {
+  return !nativeBQuestionIssue(q) && !numericQuestionIssue(q) && !orderingQuestionIssue(q) && !hasUnrenderableContent(q) && !q.needsReview && !isPlaceholderExplanation(q);
 }
 
 export function filterQuestions(
@@ -26,6 +36,7 @@ export function filterQuestions(
   }
   if (filter.year) pool = pool.filter((q) => q.year === filter.year);
   if (filter.season) pool = pool.filter((q) => q.season === filter.season);
+  if (filter.session) pool = pool.filter((q) => q.session === filter.session);
   if (filter.topicTag) {
     pool = pool.filter((q) => q.topicTags.includes(filter.topicTag!));
   }
@@ -52,20 +63,12 @@ export function filterQuestions(
     pool = pool.filter((q) => !recent.has(q.id));
   }
 
-  // Exclude questions that reference tables/figures but have no image data
-  pool = pool.filter((q) => !hasUnrenderableContent(q));
-
-  // Exclude questions flagged for review (low-quality explanations, etc.)
-  pool = pool.filter((q) => !q.needsReview);
-
-  // Remove placeholder explanations if real explanations are available
-  const withReal = pool.filter((q) => !isPlaceholderExplanation(q));
-  if (withReal.length > 0) pool = withReal;
+  pool = pool.filter(isPracticeReadyQuestion);
 
   if (filter.mode === "random") {
     shuffle(pool);
   } else if (filter.inOrder) {
-    pool.sort((a, b) => a.qNumber - b.qNumber);
+    pool.sort((a, b) => a.qNumber - b.qNumber || (a.part ?? "").localeCompare(b.part ?? ""));
   }
 
   return pool;
@@ -80,29 +83,31 @@ export function shuffle<T>(arr: T[]): T[] {
 }
 
 export function shuffleChoices(q: Question): Question {
+  // These explanations or answer metadata refer to the official choice numbers.
+  // Preserve their order in shuffled quiz and API requests.
+  if (q.exam === "kanteishi" || q.exam === "kaikeishi" || q.exam === "judo-seifukushi" || q.exam === "riku-toku-kokunai" || q.exam === "kai-toku2" || q.exam === "kai-toku3" || q.exam === "koku-toku" || q.exam === "land-special1" || q.exam === "riku-tech1" || q.exam === "maritime4" || q.exam === "aviation-comm" || q.exam === "amateur1" || q.exam === "maritime-special1" || q.exam === "riku-tech2" || q.exam === "amateur2" || q.exam === "maritime-radar" || q.exam === "maritime3" || q.exam === "maritime2" || q.exam === "maritime1" || q.exam === "general3" || q.exam === "general2" || q.exam === "general1" || q.exam === "land-special2" || q.exam === "land-special3") return q;
   if (!q.choices) return q;
-  const keys = getChoiceKeys(q.choices);
-  const options = keys.map((key) => ({
-    originalKey: key,
-    value: q.choices![key]!,
-    explanation: q.choiceExplanations?.[key],
-  }));
-  shuffle(options);
-  const newChoices: Question["choices"] = {};
-  const newChoiceExplanations: Question["choiceExplanations"] = q.choiceExplanations ? {} : undefined;
-  keys.forEach((key, index) => {
-    const option = options[index]!;
-    newChoices[key] = option.value;
-    if (newChoiceExplanations && option.explanation) {
-      newChoiceExplanations[key] = option.explanation;
-    }
-  });
-  const originalAnswerKey = Array.isArray(q.answer) ? q.answer[0] : q.answer;
-  const newAnswerKey = keys[options.findIndex((option) => option.originalKey === originalAnswerKey)];
-  return {
-    ...q,
-    choices: newChoices,
-    answer: newAnswerKey,
-    ...(newChoiceExplanations ? { choiceExplanations: newChoiceExplanations } : {}),
+  // Labels in authored prose refer to the original choices. Reordering only the
+  // answer map would silently contradict the explanation (for example AP 2017秋 問2).
+  const prose = [q.question, q.explanation, ...Object.values(q.choices), ...Object.values(q.choiceExplanations ?? {})].join("\n");
+  if (/(?:^|[^ァ-ヶー])[アイウエオカキクケコ](?![ァ-ヶー])/u.test(prose) || Array.isArray(q.answer) || Object.keys(q.choices).length !== 4) return q;
+  const keys: Array<"ア" | "イ" | "ウ" | "エ"> = ["ア", "イ", "ウ", "エ"];
+  const originalKeys = [...keys];
+  shuffle(originalKeys);
+  const values = originalKeys.map((k) => q.choices![k]!);
+  const newChoices: Record<"ア" | "イ" | "ウ" | "エ", string> = {
+    ア: values[0],
+    イ: values[1],
+    ウ: values[2],
+    エ: values[3],
   };
+  const originalAnswerKey = Array.isArray(q.answer) ? q.answer[0] : q.answer;
+  const newAnswerKey = keys[originalKeys.indexOf(originalAnswerKey as "ア" | "イ" | "ウ" | "エ")];
+  const choiceExplanations = q.choiceExplanations
+    ? Object.fromEntries(keys.map((key, index) => [key, q.choiceExplanations![originalKeys[index]]]))
+    : undefined;
+  const choiceImageUrls = q.choiceImageUrls
+    ? Object.fromEntries(keys.map((key, index) => [key, q.choiceImageUrls![originalKeys[index]]]))
+    : undefined;
+  return { ...q, choices: newChoices, answer: newAnswerKey, choiceExplanations, choiceImageUrls };
 }

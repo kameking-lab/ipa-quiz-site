@@ -50,6 +50,15 @@ afterEach(() => {
 // 字数制限つき設問の textarea は aria-invalid だけでなく、なぜ無効かを
 // スクリーンリーダーが説明できるよう、字数カウンタを aria-describedby で参照する。
 describe("AfternoonPlayer — 字数制限の aria-describedby 連携", () => {
+  it("未回答でも採点APIを呼ばず参考解答を読める", () => {
+    const fetchMock = vi.fn();
+    vi.stubGlobal("fetch", fetchMock);
+    render(<AfternoonPlayer questions={[makeQuestion()]} />);
+    const disclosure = screen.getAllByText("参考解答・採点観点を読む（採点不要）")[0];
+    expect(disclosure.closest("details")?.textContent).toContain("模範解答");
+    expect(disclosure.closest("details")?.textContent).toContain("ルーブリック");
+    expect(fetchMock).not.toHaveBeenCalled();
+  });
   it("字数制限つき設問の textarea がカウンタ span を aria-describedby で参照する", () => {
     render(<AfternoonPlayer questions={[makeQuestion()]} />);
 
@@ -91,5 +100,16 @@ describe("AfternoonPlayer — 採点進行状況の live region 通知", () => {
     fireEvent.click(screen.getByRole("button", { name: /採点する/ }));
 
     await waitFor(() => expect(status).toHaveTextContent("採点中"));
+  });
+});
+
+describe("AfternoonPlayer ungraded response", () => {
+  it.each([{status:"unavailable"},{gradingMode:"simplified",totalScore:70,subResults:[]},{status:"graded",gradingMode:"ai",questionId:"ap-2024a-pm-q1",totalScore:70,subResults:[{label:"設問1",score:20,goodPoints:[],improvements:[]}],overallComment:"partial"}])("never shows fabricated scores and retains answers", async body => {
+    vi.stubGlobal("fetch",vi.fn().mockResolvedValue(new Response(JSON.stringify(body))));
+    render(<AfternoonPlayer questions={[makeQuestion()]} />);
+    const input=screen.getByLabelText("設問1 の解答"); fireEvent.change(input,{target:{value:"保持する答案"}});
+    fireEvent.click(screen.getByRole("button",{name:/採点する/}));
+    await waitFor(()=>expect(screen.getByText(/内容の評価を完了できませんでした/)).toBeInTheDocument());
+    expect(input).toHaveValue("保持する答案"); expect(screen.queryByText(/総合 70/)).toBeNull();
   });
 });

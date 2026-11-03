@@ -1,0 +1,44 @@
+{
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 1052,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 12821,
+      "webSearchRequests": 0,
+      "costUSD": 0.1238718,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 960,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "f5f809c66bea5ceb9792310f6da2fbeac47cf80d6803a062ead12c2800a0dd9a",
+  "draftSha256": {
+    "9": "1169a61423877a81f73548495e3a586c5b57ce631202728143a1aa4feca95e07"
+  },
+  "figureSha256": {
+    "20250831-theory-q09-fig1": "dd4e9d188e96c1190a9b87c8f2605a1c2839862705d06fbba63718e325d9bbd6"
+  },
+  "basisPageSha256": {},
+  "referenceJsonSha256": {},
+  "referencePdfSha256": {},
+  "referencePageSha256": {},
+  "sourceQuestionPdfSha256": "11a75ffd5dd2b5309ad75370bb963c4fda9e12a812174cfa2c2237383c3a964d",
+  "sourceAnswerPdfSha256": "76fd3715ed487d19a56b387fb402de20ee09474e9fa55b0413f9037b96af06c9",
+  "assessment": [
+    {
+      "number": 9,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "externalSourceIssues": []
+    }
+  ]
+}

@@ -1,0 +1,58 @@
+{
+  "atUtc": "2026-10-07T12:35:47.026971+00:00",
+  "author": "/root/purchase_construction",
+  "original": "denken1-2026-theory-Aq02",
+  "question": "次の文章は，n形半導体中の電子濃度及びキャリヤ輸送機構に関する記述である。文中の空欄に当てはまる最も適切なものを解答群の中から選べ。\n図のように，n形半導体中の電子濃度nがx軸に沿って一様ではない場合，電子濃度の高い方から低い方へ向けて電子の流れが生じる。この電流を〔(1)〕電流と呼ぶ。この大きさが濃度勾配dn/dxに比例すると仮定すると，電流密度の式は次のように表される。\n① e D_e (dn/dx)\nただし，eは電気素量，D_eは電子の〔(1)〕定数と呼ばれる比例係数である。\n一方，半導体中の電界をEとすると，電界から受ける力と，散乱等による摩擦力のつり合いにより，定常状態では電子は一定の平均速度vで運動する。vとEの関係は次の式で表される。\n② v=−μ_e E\nただし，μ_eは電子の〔(2)〕と呼ばれる。この場合の電流密度は，v，n及びeを用いて次の式で表される。\n③ 〔(3)〕\n熱平衡状態においては，①式と③式で表される電流密度の和が0であることから，D_e，μ_e，E等を用いた次の式が成り立つ。\n④ dn/dx=−〔(4)〕n\n電位Vと電界Eの関係は次のように表される。\n⑤ E=−dV/dx\n熱平衡状態における半導体中の電子のエネルギー分布をボルツマン分布と仮定すると，nとVの関係は次のように表される。\n⑥ n=N_F exp(eV/(k_B T))\nただし，Tは絶対温度，k_Bはボルツマン定数であり，N_Fは定数と考えてよい。\n④式に，⑤式及び⑥式を適用すると，D_eとμ_eの間に次の関係があることが導かれる。\nD_e/μ_e=〔(5)〕\nこの関係はアインシュタインの関係式と呼ばれる。",
+  "choices": {
+    "イ": "k_B T/e",
+    "ロ": "拡散",
+    "ハ": "−env/2",
+    "ニ": "摩擦係数",
+    "ホ": "−env",
+    "ヘ": "移動度",
+    "ト": "−nv/e",
+    "チ": "透磁率",
+    "リ": "e k_B T",
+    "ヌ": "μ_e/(D_e E)",
+    "ル": "D_e E/μ_e",
+    "ヲ": "再結合",
+    "ワ": "ドリフト",
+    "カ": "μ_e E/D_e",
+    "ヨ": "e/(k_B T)"
+  },
+  "officialBlanks": [
+    "ロ",
+    "ヘ",
+    "ホ",
+    "カ",
+    "イ"
+  ],
+  "diagram": {
+    "upper": "n形半導体内の電子の点が左に密，右に疎",
+    "lower": {
+      "vertical": "n(x)",
+      "horizontal": "x",
+      "curve": "左から右へ減少する電子濃度。両図の左右端が破線で対応。"
+    },
+    "numericScale": null
+  },
+  "sourceQuestionSha256": "6a6a509a9cd2e9a36c79e90561345e0fc093389796ffd482833109057b0aa7f5",
+  "sourceAnswerSha256": "3bc785220c48393abb9f0612d5966634a17e1fc57c11a892378cf0c7a325a77e",
+  "physicalPages": [
+    6,
+    7
+  ],
+  "method": "manual visual original PDF pages + official answer; formulas converted to text with explicit subscripts",
+  "candidatePriorRead": false,
+  "limitations": [
+    "No second independent transcription claimed.",
+    "Original five blanks share all 15 choices.",
+    "Educational EEC grant is conditional; final independent technical and generation contract acceptance still pending."
+  ],
+  "publishAllowed": false,
+  "revisionOf": {
+    "path": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\qualification-expansion-20261007\\approved35\\construction\\denken1-candidate\\FIRST-AUTHOR-FROZEN.json",
+    "sha256": "6ddbaf3420b5cea804380deaf8b4005824d2fad58d18e60703db517945b7a673"
+  },
+  "correction": "Restore exact original 比例係数; v1 freeze remains immutable."
+}

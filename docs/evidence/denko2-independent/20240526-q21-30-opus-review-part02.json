@@ -1,0 +1,78 @@
+{
+  "inputHashes": {
+    "draftSha256": "3a555c540236bb4608255371abb013c6d6ee05a446ccbb84a168ae86cc60f36e",
+    "rowSha256": {
+      "26": "a6f969fb16f19bec5d06d7ef3f24094759195fc92531c21c5ea688c65453d540",
+      "27": "6baa411f7c1814ccce7e8ed1646bb4c1be4b79dab52fc98343b6206f6cd46fba",
+      "28": "c8f9ada308739b0dacedfde70f2dec9fcc7c1d46e7209aee47233c9731ebd034",
+      "29": "6068d13943df545a05548befb34e702e76d5a624ab8d6a5f9d68f0e90ba787cb",
+      "30": "d70dd2e1228265381c5c2258c50501f40ce03078bc0b8bad81744814d2453d03"
+    }
+  },
+  "reviewModel": "claude-opus-5-5",
+  "assessment": [
+    {
+      "number": 26,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "lawNeedsExternalCheck": [
+        "要確認：解釈第17条のD種接地工事の基準。原則は100Ω以下で、地絡時に0.5秒以内に自動遮断する装置がある場合は500Ω以下となる。本問の0.1秒はこの緩和条件を満たすため、判定の基準は500Ωになる。",
+        "要確認：省令第58条の絶縁抵抗の値。使用電圧300V以下で対地電圧150V以下の区分は0.1MΩ以上。解説は『100Vの低圧電路では』と書いているが、条文の区分は『対地電圧150V以下』なので、表現と条文の対応を原文で確認する。"
+      ]
+    },
+    {
+      "number": 27,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [
+        "要確認：imageUrls『/images/denko2/2024-first/q27.png』は、目盛板の図だけを切り出した画像である必要がある。設問文や選択肢の行を含む全文画像になっていないか、実ファイルで確認する。JSONだけでは判定できない。"
+      ],
+      "lawNeedsExternalCheck": [
+        "要確認：左下の記号の解釈。元画像の記号は可動鉄片形、『⊓』は水平置き、『1.0』は階級を表すと読める。この読み取りはJIS C 1102の記号表と照合して確定させる。"
+      ]
+    },
+    {
+      "number": 28,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "lawNeedsExternalCheck": [
+        "要確認：電気工事士法施行規則第2条第1項で、次の4作業が電気工事士の作業として挙がっているか、原文の号番号で確認する。配電盤を造営材へ取り付ける作業、電線管を曲げる作業、電線管に電線を収める作業、接地極を地面に埋設する作業。",
+        "要確認：電気工事士法施行令第1条の軽微な工事に、次の4つが含まれるか確認する。600V以下の差込み接続器へのコード接続、600V以下の電力量計の取付け、地中電線用の管の設置、電線を支持する柱の設置。"
+      ]
+    },
+    {
+      "number": 29,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [
+        "要確認（誤りではない）：イとハの原本は、本文中に菱形PSE・丸形PSEの図記号を置いている。JSONはこれを『菱形PSE』『丸形PSE』という文字に置き換え、choiceImageUrlsで補っている。画像ファイル2点が、それぞれ正しい図記号の切り出しになっているか確認する。"
+      ],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "lawNeedsExternalCheck": [
+        "要確認：電気用品安全法施行規則の表示様式を確認する。特定電気用品は菱形PSE、それ以外の電気用品は丸形PSEか。部品材料の場合に文字表記<PS>Eで代えられるか。販売制限（法第27条）の例外規定はどうなっているか。"
+      ]
+    },
+    {
+      "number": 30,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "explanationIssues": [
+        "改善提案（誤りではない）：ニの肢別理由は、『電路』の定義との取り違えを指摘しているだけで、省令第1条にある『電線』の定義そのものを示していない。『強電流電気の伝送に使用する電気導体、絶縁物で被覆した電気導体…』などの正しい定義を添えると、誤りの根拠がはっきりする。"
+      ],
+      "figureIssues": [],
+      "lawNeedsExternalCheck": [
+        "要確認：電気設備に関する技術基準を定める省令の次の条文を原文で照合する。第1条の電路・電気機械器具・電線の定義文言、第2条の電圧の種別、第4条の感電・火災等の防止の文言。"
+      ]
+    }
+  ]
+}

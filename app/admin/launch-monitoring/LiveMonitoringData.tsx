@@ -253,7 +253,7 @@ export function LiveMonitoringData() {
         <KpiCard
           label="推定コスト 24h"
           value={fmtJpy(apiUsage.costJpy24h)}
-          sub="Gemini 2.5 Flash-Lite"
+          sub="固定単価の概算。モデル別実費ではありません"
           icon={<Activity className="h-3.5 w-3.5" />}
           highlight={costHighlight}
         />

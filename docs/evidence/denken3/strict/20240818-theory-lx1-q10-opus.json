@@ -1,0 +1,83 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20240818",
+  "subject": "theory",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 6027,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 17839,
+      "webSearchRequests": 0,
+      "costUSD": 0.2635158,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 3805,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "bf3d2f109b2d0e5e9c24bb114128e297b63bab2ba80bb7023b3ce45daa365703",
+  "inputRequestSha256": "5f0123a4d2a3a939e94c5638f6845198b167618f1686cb298443ee0c843359c3",
+  "inputHashes": {
+    "candidateSha256": {
+      "q10": "b551dc043553fcb818664ffa01d05a02c1861c6932b1455993fbfb5ec6260288"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20240818/theory/p14.png": "a6c9df027158ecd96f19e5ee91bcbc9f9729a775cff7068325fa035936a1bd10"
+    },
+    "figureSha256": {
+      "public/images/denken3/20240818/theory/20240818-theory-q10-circuit.png": "cb67b95891607c677132cb3b5be2dd66ada665a9b5225859dd6ba2fb8d63d690",
+      "public/images/denken3/20240818/theory/20240818-theory-q10-choice-1.png": "20d6f8792c510ed1ff463c63e24b51563ad936705e2d82fdb19cd0b513b5c671",
+      "public/images/denken3/20240818/theory/20240818-theory-q10-choice-2.png": "2bd033962f44af5de0520be02dd45708c421b6eedefe4bf1832a919448b531ef",
+      "public/images/denken3/20240818/theory/20240818-theory-q10-choice-3.png": "082370f355b7b7643c4fefa772c7f064e381cbff2cf2ca82fb5b9d35f2abe61b",
+      "public/images/denken3/20240818/theory/20240818-theory-q10-choice-4.png": "d050ebe7c1a3bb2fa8a93d900fd485b4665270e693f61ac31253757199c57aa0",
+      "public/images/denken3/20240818/theory/20240818-theory-q10-choice-5.png": "fba89be6eea186566435f220ec33aa118ceec5d02f2796bcb4f9d95a1f635139"
+    },
+    "sourceQuestionPdfSha256": "236be905e93a023cf3c65c1e22c45c24dc42b910151c51f8ed023247793d1d29",
+    "sourceAnswerPdfSha256": "f72ecbc3a477e64948388b69cf78cb931032c9f0c688639836c8d533a949cd0f",
+    "officialAnswerUnitsSha256": "73eb308a56261e2789cc1512cff0db86ec2a8341f2dd86c5aa62d6a24566d93e",
+    "referencePdfSha256": {},
+    "referencePageSha256": {},
+    "referenceJsonSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q10",
+      "questionNumber": 10,
+      "part": null,
+      "status": "FIX",
+      "textIssues": [
+        "sourceAttributionは『問題文・選択肢を読みやすく整形』としているが、選択肢(1)〜(5)の原典は波形図である。候補のchoicesテキストは編者が波形を言葉で説明したもので、原文の整形ではない。『選択肢の文章は原図波形を編者が説明したもの。正式な選択肢は各波形図』と明記すべき。"
+      ],
+      "choiceIssues": [
+        "選択肢(2)の『上に凸の指数関数形で』：原図(2)からは上に凸の単調増加曲線であることしか読み取れず、『指数関数形』は図にない解釈である。figureDescriptionの同じ肢の記述（『0から上に凸の単調増加』）とも一致しないため、『上に凸の曲線で単調に増加して1へ近づく波形』に改めるべき。",
+        "t<0の記述が肢ごとにそろっていない。(1)(3)(5)は『t<0でi_S=0(0)』を明記し、(2)(4)は省略している。原図では全肢にt<0の0 A太線があるので、全肢で同じ書き方にそろえるべき。",
+        "縦軸の値の表記がそろっていない。(1)〜(4)は『1』、(5)は『1A』。全肢で『1 A』などに統一すべき。"
+      ],
+      "answerIssues": [],
+      "explanationIssues": [
+        "choiceExplanations(2)だけ判定語が『不正解。』で、他の誤答肢(1)(4)(5)は『誤り。』。『誤り。』に統一すべき。"
+      ],
+      "figureIssues": [
+        "figureDescriptionが『節点X』『節点Y』を図中の既存ラベルのように使っているが、公開候補図にも原図にもX・Yのラベルはない。『インダクタ右端・コンデンサ左端・S上端が接続する黒丸の節点（以下X）』『コンデンサ右端と右側1Ω上端の接続点（以下Y）』のように、編者が付けた呼称であることと位置を明示すべき。explanation側は括弧書きで定義しているので問題ない。"
+      ],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "出典：manifestの2024年度上期・試験日2024-08-18・理論・問題PDF q01・解答PDF a01と、候補のfiscalYear=2024、term=upper、examDate=2024-08-18、subject=theory、sourceQuestionPdfUrl、sourceAnswerPdfUrlが一致。原図フッター『T1−R 014』から、reviewedFromPage=[14]がPDF第14頁（冊子ノンブル-11-）に対応することを確認。",
+        "公式正答：解答表『令和6年度 上期』<理論>問10=3。manifest固定の正答単位answer=\"3\"およびofficialAnswer=\"3\"と一致。",
+        "問題文：原図の『図の回路のスイッチSをt=0sで閉じる。電流i_S[A]の波形として最も適切に表すものを次の(1)〜(5)のうちから一つ選べ。ただし，スイッチSを閉じる直前に，回路は定常状態にあったとする。』と候補questionが一致。",
+        "回路図：公開候補図circuit.pngは原図と同じ構成。上辺に1Ω・1H、黒丸節点から右へ2F、右辺に1Ω、節点から下へi_S矢印とS、左辺に1V電源、下辺の黒丸で共通線に接続。電源の極性は上側が長線（正極）。ラベル（1Ω, 1H, 2F, 1Ω, 1V, S, i_S）の欠落や誤りはない。回路図は公開候補図だけで理解できる。",
+        "選択肢図：choice-1〜5.pngは原図(1)〜(5)をそれぞれ切り出したもので、軸ラベルi_S[A]・t[s]・1・0、破線の1 A目盛り、t<0の0 A太線、各波形の形状（(1)は跳躍後に谷、(2)は0から単調増加、(3)は跳躍後に山、(4)は0から連続して上昇し1を超える山、(5)は跳躍後に一定）が一致。",
+        "t<0の検算：S開放時は1V—1Ω—1H—2F—1Ωの直列ループのみ。直流定常ではCが開放となるので電流0、i_L(0⁻)=0、V_C(0⁻)=1V（インダクタ側が高電位）。",
+        "t>0の検算：X=0Vに固定され、RL枝はdi_L/dt+i_L=1からi_L=1−e^(−t)。CR枝はi₂=C·dV_C/dt、V_C=−R·i₂、i₂(0)=−1からi₂=−e^(−t/2)、V_C=e^(−t/2)（RC=2 s）。節点XのKCLでi_S=i_L−i₂=1+e^(−t/2)−e^(−t)。explanationの式と一致。",
+        "特性値の検算：i_S(0⁺)=1 A、di_S/dt|₀=+0.5 A/s。極大はe^(−t/2)=0.5のt=2ln2≈1.386 sでi_S=1.25 A。それ以降はdi_S/dt=e^(−t/2)(e^(−t/2)−0.5)<0で単調減少し、t→∞で1 A。t≥0では常にe^(−t/2)≥e^(−t)なのでi_S≥1。以上から、跳躍後に単峰の山を作って1へ戻る(3)が正しく、公式正答と整合する。",
+        "誤答肢の理由：(1)はi_S≥1と初期傾き正に反する。(2)(4)はi_S(0⁺)=1 A（コンデンサ放電による跳躍）に反し、(2)はさらに1.25 Aへの山がない。(5)は1 Aを超える山がない。いずれも各肢固有の理由として正しい。",
+        "officialReferenceUrlsは空で、検証すべき外部の独立主張はない。uncertaintyの『1.25 A・2ln2 sは図の読取りではなく回路式からの値』という記述は妥当。"
+      ]
+    }
+  ]
+}

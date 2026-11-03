@@ -23,6 +23,7 @@ import {
   FREE_ESSAY_LIMIT_PER_MONTH,
 } from "@/lib/storage/essay-rate-limit";
 import { LS_KEYS } from "@/lib/storage/keys";
+import { isGradedEssay } from "@/lib/ai/grading-contract";
 import { EssayResultView } from "./EssayResultView";
 
 const INDUSTRY_OPTIONS: Industry[] = [
@@ -98,7 +99,7 @@ export function EssayEditor({ question }: Props) {
     if (!canSubmit) return;
     if (!isPremium && remaining <= 0) {
       setError(
-        "今月の AI 添削上限（月3回）に達しました。Premium にアップグレードすると無制限です。",
+        "今月の AI 添削上限（月3回）に達しました。翌月に利用枠が更新されます。",
       );
       return;
     }
@@ -115,7 +116,10 @@ export function EssayEditor({ question }: Props) {
         const data = (await res.json().catch(() => null)) as { message?: string } | null;
         throw new Error(data?.message ?? `採点に失敗しました（HTTP ${res.status}）`);
       }
-      const data = (await res.json()) as EssayGradingResult;
+      const data: unknown = await res.json();
+      if (!isGradedEssay(data) || data.questionId !== question.id || data.industry !== industry) {
+        throw new Error("内容の評価を確認できませんでした。答案・利用回数・履歴は変更していません。");
+      }
       setResult(data);
 
       // Persist usage + history
@@ -157,7 +161,7 @@ export function EssayEditor({ question }: Props) {
   }, [canSubmit, isPremium, remaining, question, industry, answers]);
 
   return (
-    <div className="space-y-6">
+    <div data-study-presence-exam={question.exam} className="space-y-6">
       <Card>
         <CardHeader>
           <div className="flex items-center justify-between gap-2">
@@ -204,7 +208,7 @@ export function EssayEditor({ question }: Props) {
             </span>
             <span>
               {isPremium ? (
-                <Badge variant="success">Premium · 無制限</Badge>
+                <Badge variant="success">無料で利用できます</Badge>
               ) : (
                 <Badge variant={remaining > 0 ? "outline" : "danger"}>
                   今月残り {remaining} / {FREE_ESSAY_LIMIT_PER_MONTH} 回
@@ -314,13 +318,13 @@ function SubPromptEditor({
             aria-expanded={showHint}
             className="text-sky-600 hover:underline dark:text-sky-400"
           >
-            {showHint ? "ヒントを隠す" : "論述要素のヒントを表示"}
+            {showHint ? "解答骨子を閉じる" : "参考解答の骨子を読む（採点不要）"}
           </button>
           <span className={`tabular-nums ${status.color}`}>{status.message}</span>
         </div>
         {showHint && (
           <div className="mt-3 rounded-lg border border-sky-200 bg-sky-50 p-3 text-xs text-sky-900 dark:border-sky-900 dark:bg-sky-950/50 dark:text-sky-100">
-            <p className="mb-1 font-semibold">想定される論述要素</p>
+            <p className="mb-1 font-semibold">編集者作成の解答骨子（一例）</p>
             <p className="leading-relaxed whitespace-pre-wrap">{modelOutline}</p>
           </div>
         )}

@@ -9,9 +9,10 @@ interface Props {
   category: string;
   question: string;
   answer: string;
+  sources?: { label: string; href: string }[];
 }
 
-export function FaqItem({ index, category, question, answer }: Props) {
+export function FaqItem({ index, category, question, answer, sources }: Props) {
   const handleToggle = useCallback(
     (e: React.SyntheticEvent<HTMLDetailsElement>) => {
       if (e.currentTarget.open) {
@@ -45,6 +46,17 @@ export function FaqItem({ index, category, question, answer }: Props) {
       </summary>
       <div className="mt-4 border-t border-border pt-4 pl-10 text-sm leading-relaxed text-muted-foreground">
         {answer}
+        {sources && sources.length > 0 && (
+          <ul aria-label="参照資料" className="mt-3 space-y-1">
+            {sources.map((source) => (
+              <li key={source.href}>
+                <a href={source.href} className="inline-flex min-h-11 items-center text-primary underline underline-offset-4">
+                  {source.label}
+                </a>
+              </li>
+            ))}
+          </ul>
+        )}
       </div>
     </details>
   );

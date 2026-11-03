@@ -1,0 +1,69 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20250323",
+  "subject": "machinery",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 3352,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 14507,
+      "webSearchRequests": 0,
+      "costUSD": 0.18335980000000002,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 1955,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "baeceb454f05aa05341cb3f13be32bfc2d330b0cb00ef225625eeb1c6b23a147",
+  "inputRequestSha256": "6fd973b82b022874bc060f9556977bd531a3c17c3d4148e6d711117103a2f3ee",
+  "inputHashes": {
+    "candidateSha256": {
+      "q11": "9e700a9ecc542c8a917124b176e2f3d015d3f2aa943a7b05c3e41e5468f05b1d"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20250323/machinery/p14.png": "c76709447403ead0e5d0af06e5edbf47c42edb99c42e07812257d6cc73682899"
+    },
+    "figureSha256": {
+      "public/images/denken3/20250323/machinery/20250323-machinery-q11-gear-load.png": "8e4c1ca26c86b74238619e82821e50d0bc979611543cf4833cddb9c0741c0c00"
+    },
+    "sourceQuestionPdfSha256": "66e8b0070a314cd78ed9b9f3edd3d75eeaf442b258fd0aacab0e7d9620c75b9f",
+    "sourceAnswerPdfSha256": "4c3b38fcf1405766fafaa78b1b05b867a3d48307a670b9d354476bc6b32acd4c",
+    "officialAnswerUnitsSha256": "82984db468eb18c12cb5e7cd2a652fa8e40c122d4b0b3cede7eeb7e318706e9f",
+    "referencePdfSha256": {},
+    "referencePageSha256": {},
+    "referenceJsonSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q11",
+      "questionNumber": 11,
+      "part": null,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [
+        "choiceExplanations[\"1\"] だけ句読点が全角カンマ「，」で、近似記号も「≈」になっている。ほかの解説は「、」「≒」なので、表記を統一すること（内容の誤りではない）。"
+      ],
+      "figureIssues": [],
+      "sourceIssues": [
+        "uncertainty に「政府の一次資料 URL は確実に特定できていない」とあるが、候補の sourceQuestionPdfUrl と sourceAnswerPdfUrl は manifest 固定の試験センター公式 PDF と一致しており、どちらも特定済みである。この記述は事実と食い違う古い注記なので、削除または修正すること。officialReferenceUrls は空で、ほかに検証を要する独立主張はない。"
+      ],
+      "verifiedEvidence": [
+        "出典メタデータ: fiscalYear=2024、term=lower、examDate=2025-03-23、subject=machinery、reviewedFromPage=[14]、sourceQuestionPdfUrl=20250323_ch_third_q03.pdf、sourceAnswerPdfUrl=2024_3_2.pdf は、いずれも manifest と一致する。sourceAttribution の「令和6年度下期 機械科目 問11」は 2024年度下期に対応し、公式解答表の表題「令和6年度 下期」とも一致する。",
+        "問題文: 原図と照合し、nm=1 200 min⁻¹、Tm=100 N·m、減速比 6、効率 0.96、求める量 nL[min⁻¹]・TL[N·m]・PL[kW]（軸入力）が一致した。句読点の「，」→「、」は整形の範囲内。",
+        "選択肢: 原図の表と照合し、(1) 200/16.0/12.1、(2) 200/576/12.1、(3) 7 200/576/4 147、(4) 7 200/16.0/12.1、(5) 7 200/16.0/4 147 の全 15 値と単位が一致した。",
+        "公式正答: 公式解答表の〈機械〉問11 は 2 で、候補の officialAnswer=\"2\" と manifest の answer=\"2\" に一致する。",
+        "総合解説の検算: nL=1 200/6=200 min⁻¹。Pm=2π×20×100=12 566.4 W。PL=0.96×12 566.4=12 063.7 W≒12.1 kW。ω_L=2π×200/60=20.944 rad/s。TL=12 063.7/20.944=576.0 N·m で、6×0.96×100=576 N·m とも一致する。因果関係（減速で回転は 1/6、トルクは 6×η 倍）も正しい。",
+        "誤答肢の理由: (1) の 0.96×100/6=16.0 N·m と 2π×(200/60)×16.0=335 W は正しい。(3)(5) の 4 147 kW は電動機出力の約 12.6 kW を上回るため不成立で、理由付けは正しい（参考: 4 147 は 7 200×576/1 000 で、2π/60 を落とした値に一致する）。(4) の 7 200 min⁻¹ は増速との取り違え、16.0 N·m はトルク関係の誤りで、指摘は正しい。",
+        "図: 公開候補図は原図の図部分と同一の構成である。左下に電動機（nm, Tm）、その出力軸が歯車部を経由して右上の負荷（nL, TL, PL）の軸につながる接続関係、配置、全 5 ラベルが原図と一致し、欠落や誤記はない。数値は問題文にあるため、公開図だけで解答に必要な対応関係を理解できる。figureDescription の内容も図と矛盾しない。"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,74 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20260322",
+  "subject": "theory",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 2927,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 16895,
+      "webSearchRequests": 0,
+      "costUSD": 0.1939638,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 1190,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "efcd60d387a97cd9d68bcd9d09024cffe97cff56e0f5bb067c86c083890ac4c9",
+  "inputRequestSha256": "36010fffd5f4c87bb74ef2ba49d1f074bf9008fbd9a2534db465517b7c42318d",
+  "inputHashes": {
+    "candidateSha256": {
+      "q09": "88a4dc0c11ba30a71d3eaa33afeee3e198970fee6b8fdf5b440d335876559500"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20260322/theory/p12.png": "03b86990d644ffa5943cc530e56b1ecb0c82a60e2db653c5211f156e9436f862",
+      "data/raw_pdfs/denken3/review/20260322/theory/p13.png": "ab1bd6daba85b8979bcde3f21178befb196cf1ce6c1114ae9d34bdb7c786ecac"
+    },
+    "figureSha256": {
+      "public/images/denken3/20260322/theory/20260322-theory-q09-fig1.png": "cf834ef0dba7034ee9681340ae18f05b8b26eff681b7db47edbb28d1b42186b4"
+    },
+    "sourceQuestionPdfSha256": "c83e7c7350d98b65f5d8da0b93e4a2581a19dd250be320fb7fc492c9b34a29c1",
+    "sourceAnswerPdfSha256": "cc2890296d06a4823df5697a78a1c01ddfd39f041c51f48c87984daa3a5707c6",
+    "officialAnswerUnitsSha256": "a4db2b2235ea554af32edf48625bae15ba4bb0ca1609b0d5c56a6a7fbbc1a63a",
+    "referencePdfSha256": {},
+    "referencePageSha256": {},
+    "referenceJsonSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q09",
+      "questionNumber": 9,
+      "part": null,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "問題文: 原図PDF第12頁（印字頁 -9-, T2-R 012）と照合。抵抗R[Ω]・誘導性リアクタンスX[Ω]の直列回路、E＝100 V、電流10 A、抵抗11 Ωを更に直列接続して5 A、『抵抗R[Ω]の値として最も近いもの』、(1)～(5)から一つ選ぶ、の各要素が一致する。数値、単位、記号(R, X, E)のいずれにも欠落や改変はない。",
+        "選択肢: 原図PDF第13頁（印字頁 -10-, T2-R 013）と照合。(1)16.7 (2)5.5 (3)11.4 (4)8.6 (5)8.1 で、候補の choices 1～5 と完全に一致する。",
+        "公式正答: 公式解答表（令和7年度 第三種電気主任技術者下期試験解答）の<理論>問9は解答5・配点5である。manifest固定単位 {question:9, part:null, answer:'5', points:5} と、候補の officialAnswer='5'、scoringPoints=5 はいずれもこれと一致する。",
+        "総合解説の計算: |Z₁|=100/10=10 Ω なので R²+X²=100 …①。|Z₂|=100/5=20 Ω なので (R+11)²+X²=400 …②。②−①から 22R+121=300、R=179/22=8.136… Ω。最も近い選択肢は8.1で、正答(5)と整合する。",
+        "解説の検算部分: (179/22)²=32041/484 なので X²=(48400−32041)/484=16359/484≈33.80、X≈5.81 Ω。(421/22)²=177241/484≈366.20。16359+177241=193600 から 193600/484=400、|Z₂|=20 Ω、I=5 A となり、数値はすべて正しい。",
+        "補足の因果: |Z₁|=10 Ω かつ誘導性リアクタンス X>0 なので R<10 Ω となる。この論理は正しい。",
+        "肢(1): 16.7>10 のため X²<0 となり成立しない。理由は正しい。",
+        "肢(2): X²=100−30.25=69.75、16.5²=272.25、合計342、√342≈18.49 Ω、I≈5.41 A。記載値（√342≈18.5 Ω、≈5.4 A）は正しい。",
+        "肢(3): 11.4>10 のため実数Xが存在しない。理由は正しい。",
+        "肢(4): X²=100−73.96=26.04、19.6²=384.16、合計410.2、√410.2≈20.25 Ω、I≈4.94 A。R=8.1のときの I≈5.005 A のほうが5 Aに近いという比較と、|8.14−8.1|=0.04 < |8.6−8.14|=0.46 という比較はともに正しい。",
+        "肢(5): X²=100−65.61=34.39、19.1²=364.81、合計399.2、√399.2≈19.98 Ω、I≈5.0 A。記載値は正しい。",
+        "公開候補図 20260322-theory-q09-fig1.png: 原図PDF第13頁の図1・図2と照合した。図1は、上辺に右向き矢印『10 A』、R[Ω]（抵抗記号）、X[Ω]（コイル記号）が直列に並び、下辺中央に交流電源と『E＝100 V』、キャプション『図1』がある。図2は、右向き矢印『5 A』、R[Ω]・X[Ω]・11 Ω（抵抗記号）の3素子直列、交流電源『E＝100 V』、キャプション『図2』がある。接続、矢印の向き、全ラベルに欠落や改変はなく、公開候補図だけで回路構成を理解できる。",
+        "figureDescription: 素子の配置順（R→X→11 Ω）、電流矢印の位置と向き、電源の位置とラベル、キャプションの記述は、いずれも原図と一致する。",
+        "出典メタデータ: fiscalYear=2025（令和7年度）、term=lower（下期）、examDate=2026-03-22、subject=theory、sourceQuestionPdfUrl と sourceAnswerPdfUrl、reviewedFromPage=[12,13] がすべて manifest と一致する。sourceAttribution『令和7年度下期第三種電気主任技術者試験 理論科目 問9』も正しい。",
+        "officialReferenceUrls は空配列で、検証を要する独立主張はない。uncertainty='なし'、needsReview=false は監査結果と矛盾しない。"
+      ]
+    }
+  ]
+}

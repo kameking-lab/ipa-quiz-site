@@ -1,6 +1,6 @@
-import type { ChoiceKey, Question } from "@/lib/questions/types";
+import type { Question } from "@/lib/questions/types";
 
-const CHOICE_KEYS = "アイウエオカキクコ";
+const CHOICE_KEYS = "アイウエオカキクケコ";
 
 /**
  * High-confidence "the explanation disputes the official answer" detector.
@@ -43,14 +43,15 @@ export function detectAnswerDispute(q: Question): string | null {
  * another choice in passing), so this is report-only — never a CI gate.
  */
 export function detectStatedAnswerMismatch(q: Question): string | null {
+  if (q.type === "ordering") return null;
   const text = q.explanation ?? "";
-  const answerKey = Array.isArray(q.answer) ? q.answer[0] : q.answer;
-  if (typeof answerKey !== "string" || !CHOICE_KEYS.includes(answerKey)) return null;
+  const answerKeys = Array.isArray(q.answer) ? q.answer : [q.answer];
+  if (!answerKeys.length || answerKeys.some(key => !CHOICE_KEYS.includes(key))) return null;
 
   const re = new RegExp(`(?:正解|正答|答え)は[「『]?([${CHOICE_KEYS}])`);
   const m = re.exec(text);
-  if (m && m[1] !== answerKey) {
-    return `explanation states 正解は${m[1]} but answer key is ${answerKey as ChoiceKey}`;
+  if (m && !answerKeys.some(key => key === m[1])) {
+    return `explanation states 正解は${m[1]} but answer key is ${answerKeys.join("・")}`;
   }
   return null;
 }

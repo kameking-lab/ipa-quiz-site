@@ -1,0 +1,87 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20250323",
+  "subject": "power",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 4878,
+      "cacheReadInputTokens": 139443,
+      "cacheCreationInputTokens": 19286,
+      "webSearchRequests": 0,
+      "costUSD": 0.2797446,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 3232,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "db8cd72c1c01bdcc401fe80d720fffd98e6e4455746ab4110d9e087cabc2be5c",
+  "inputRequestSha256": "160a7a640b57f2d5bc68785778a07ec07a9b4f51297f27f8e3431fce03897a78",
+  "inputHashes": {
+    "candidateSha256": {
+      "q08": "f054fe6e6751e5c5bae6c3789dc1b0f54c46059982a2e4eb455d993e3e9f799d",
+      "q09": "0b21741f8d178c2cb41a85a90d13f6adb31a7d96407c1c6f65755d860943d711"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20250323/power/p11.png": "c07453578f871084ce1e2a0863cd669be1e2388a27228aed3a48d88d9fcab2aa",
+      "data/raw_pdfs/denken3/review/20250323/power/p12.png": "1ac09fc4288e46111cc156ff703dae78ff40a9f2e18c6cd9137dac1f942f4265"
+    },
+    "figureSha256": {},
+    "sourceQuestionPdfSha256": "892785e0f1035bcb239eb30fa903d4c88adbcfdaa1b5b0edea2d1907fd887114",
+    "sourceAnswerPdfSha256": "4c3b38fcf1405766fafaa78b1b05b867a3d48307a670b9d354476bc6b32acd4c",
+    "officialAnswerUnitsSha256": "609278f172a7ebb35b73a9257d8b6f53fdc8ab21935fd0be037babb55a6e3a23",
+    "referencePdfSha256": {},
+    "referencePageSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q08",
+      "questionNumber": 8,
+      "part": null,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "The question stem matches the official source image word for word: 送配電線路や変電所におけるがいしの塩害とその対策に関する記述として，誤っているものを…一つ選べ. The question asks for the incorrect statement.",
+        "Choices (1) to (5) match the official source image word for word. The ruby reading じんあい over 塵埃 in (2) is written as 塵埃（じんあい）, which keeps the meaning.",
+        "officialAnswer=4 matches the official answer unit in the manifest (question 8, answer 4).",
+        "Overall explanation: stating that (4) is wrong because adopting insulated wire does not address flashover on a contaminated insulator surface is consistent with the official answer. The listed insulator-side measures (longer creepage distance, more insulators in the string, water-repellent coating, washing) are technically correct.",
+        "Choices (1), (2), (3) and (5) each give their own correct reason: (1) longer creepage distance and more insulators in the string; (2) salt contamination is measured by ESDD (equivalent salt deposit density) and NSDD (non-soluble deposit density) is also considered; (3) leakage current and partial discharge cause audible noise and radio interference; (5) contamination remains after a fault, so flashover recurs and reclosing tends to fail. None of these reasons contradicts another.",
+        "The official source image has no figures, tables or circuit diagrams, so figureDescription and the empty figureUrls are appropriate.",
+        "officialReferenceUrls is an empty array, so there is no independent claim that needs checking.",
+        "The printed page number is -8-. reviewedFromPage=[11] is consistent with the PDF page offset: question 9 is printed -9- and reviewed from page 12."
+      ]
+    },
+    {
+      "unitKey": "q09",
+      "questionNumber": 9,
+      "part": null,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "The question text matches the official source image in all four paragraphs and the instruction sentence: 6.6 kV, 60 kV以上, 1線地絡電流を(ア)するため(イ)方式, 地絡方向継電器, (ウ), (エ), 柱上変圧器の(オ)側. The candidate only merges the paragraphs with line breaks.",
+        "All five rows of the combination table match the original image, row by row and column by column: (1) 小さく/非接地/同位相/高圧カットアウト/二次, (2) 大きく/接地/逆位相/ケッチヒューズ/一次, (3) 大きく/非接地/逆位相/高圧カットアウト/二次, (4) 小さく/非接地/逆位相/高圧カットアウト/一次, (5) 小さく/接地/同位相/ケッチヒューズ/一次.",
+        "officialAnswer=4 matches the official answer unit in the manifest (question 9, answer 4).",
+        "Overall explanation: (ア) 小さく and (イ) 非接地 are correct because the ungrounded system limits the ground-fault current to a small value that flows through the line-to-ground capacitance. (ウ) 逆位相 is correct because the zero-sequence current flows in opposite directions on the faulted and healthy lines, and the directional ground relay compares it with the zero-sequence voltage. (エ) 高圧カットアウト and (オ) 一次 are correct because the cutout sits on the high-voltage side of the pole transformer. There are no logical errors.",
+        "For each wrong choice, the explanation points out every wrong blank: (1) (ウ) and (オ); (2) (ア) and (イ), plus a fuse from the low-voltage service drop (ケッチヒューズ) paired with the primary side; (3) (ア) and (オ); (5) (イ), (ウ), and ケッチヒューズ paired with the primary side. Each explanation also correctly lists which blanks in that choice are right.",
+        "No figure is needed. figureDescription accurately describes the column order of the combination table, and the empty figureUrls is appropriate.",
+        "officialReferenceUrls is an empty array, so there is no independent claim that needs checking.",
+        "The printed page number is -9-. reviewedFromPage=[12] is consistent with the offset used for question 8."
+      ]
+    }
+  ]
+}

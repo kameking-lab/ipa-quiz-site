@@ -1,0 +1,65 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20250323",
+  "subject": "power",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 3313,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 13797,
+      "webSearchRequests": 0,
+      "costUSD": 0.1768998,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 1908,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "c419d04bb07286f5834c8e7c29a7a7dd4a50a6c5ab254c849bb53e834efcb444",
+  "inputRequestSha256": "3878af3fa296d9a8c7e81449cf653c713d3eb16311300017fdd741528bfe403e",
+  "inputHashes": {
+    "candidateSha256": {
+      "q11": "c6035f42645893cf1654b45309877402dd7da73ea02eb2f44e051a2ffb6bf8fe"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20250323/power/p14.png": "7977a2161153b016b64361a48ec48f3aa77ad46723994bdca2ae8bd1f54d2a9e"
+    },
+    "figureSha256": {},
+    "sourceQuestionPdfSha256": "892785e0f1035bcb239eb30fa903d4c88adbcfdaa1b5b0edea2d1907fd887114",
+    "sourceAnswerPdfSha256": "4c3b38fcf1405766fafaa78b1b05b867a3d48307a670b9d354476bc6b32acd4c",
+    "officialAnswerUnitsSha256": "a8e095946113c9b3777414985cf15919d05720f0b3801c059671cdbd01cc66ef",
+    "referencePdfSha256": {},
+    "referencePageSha256": {},
+    "referenceJsonSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q11",
+      "questionNumber": 11,
+      "part": null,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [
+        "uncertainty に「一次資料URLは特定できていないため空配列とした。」とあるが、事実と食い違う。sourceQuestionPdfUrl(https://www.shiken.or.jp/chief/upload/20250323_ch_third_q02.pdf)と sourceAnswerPdfUrl(https://www.shiken.or.jp/chief/upload/2024_3_2.pdf)は manifest 固定値と一致して特定済みである。また officialReferenceUrls が空なので、検証すべき独立主張もない。未解決事項が残っているように読めるうえ、needsReview=false とも矛盾する。uncertainty は空文字にするか、「公式参考資料の参照なし(officialReferenceUrlsは意図的に空)」のような事実どおりの記述に改めること。"
+      ],
+      "verifiedEvidence": [
+        "問題文: 添付原図(PDF第14頁、冊子頁 -11-、下部コード T2-D 014)の問11本文「高圧受電設備を構成する機器に関する記述として，誤っているものを次の(1)～(5)のうちから一つ選べ。」と一致する(原図は「〜」、候補は全角「～」で、表記揺れのみ)。極性は「誤っているもの」で、解説の極性認識も一致する。",
+        "選択肢(1)〜(5): 原図と一字一句照合し、脱字・誤字・略号(LA/LBS/CB/VCT/SC)の誤りはない。(5)の括弧書き「(すなわち，遅れ無効電力を供給)」も一致する。",
+        "公式正答: 公式解答表(令和6年度 下期 第三種電気主任技術者試験解答)の＜電力＞問11は「3」。manifest 固定の公式正答単位 answer=\"3\" と候補 officialAnswer=\"3\" は一致する。",
+        "出典メタデータ: fiscalYear=2024・term=lower・examDate=2025-03-23・subject=power・reviewedFromPage=[14] は manifest(2024年度下期、試験日2025-03-23、電力、原図PDF第14頁)と一致する。解答表の見出し「令和6年度 下期」とも整合する。sourceAttribution は令和6年度下期 電力科目 問11 で正しい。",
+        "解説の技術内容: (1) 避雷器は引込口付近に設置して異常電圧を大地へ放電し、A種接地工事を施す。記述は正しい。(2) LBSは定格電流以下の負荷電流・励磁電流・線路電流などを開閉するもので、LBS本体は短絡電流を遮断できない。記述は正しい。(3) 無負荷状態で点検・修理時に電源から切り離し、回路の接続を変更する用途は断路器(DS)の機能である。遮断器は負荷電流の開閉と短絡などの故障電流の遮断を担う。誤りとする理由は正確で、正答肢の固有理由として妥当。(4) VCTはVTとCTを一体化したもので、電力量計と組み合わせて取引用計量を行う。記述は正しい。(5) 進相コンデンサは進み電流を流す。進み無効電力の消費と遅れ無効電力の供給は符号表現上同値で、遅れ負荷を補償して力率を改善する。記述は正しい。総合解説と各肢解説の間に因果・結論の矛盾はない。",
+        "図: 原図第14頁に図はなく、本文と選択肢のみで解答できる。figureDescription「図はなし」、figureUrls=[]、choiceFigureUrls={} は妥当。",
+        "officialReferenceUrls=[] のため、外部参照上の独立主張で検証を要するものはない。"
+      ]
+    }
+  ]
+}

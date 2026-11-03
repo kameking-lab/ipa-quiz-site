@@ -1,0 +1,59 @@
+{
+  "schemaVersion": 1,
+  "batch": "20251026-q21-30",
+  "status": "accepted",
+  "publishGate": "notification-required-and-two-full-years-required",
+  "questionOriginalVisualQc": 10,
+  "choiceTextOriginalVisualQc": 40,
+  "choiceExplanationQc": 40,
+  "figureAndPhotoQc": 5,
+  "governmentSourceQc": 6,
+  "governmentSourceApplicableQuestions": [
+    21,
+    22,
+    25,
+    28,
+    29,
+    30
+  ],
+  "independentVisionReview": {
+    "model": "claude-opus-5-5",
+    "passedQuestions": 10,
+    "totalQuestions": 10,
+    "receipts": [
+      "docs/evidence/denko2-independent/20251026-q21-30-opus-review-part01.json",
+      "docs/evidence/denko2-independent/20251026-q21-30-opus-review-part02.json"
+    ]
+  },
+  "reviewMethod": "公式設問画像と図表部分のみの公開cropを別々に照合。全文・四肢・正答・各肢解説をOpus独立視認。法令を述べる設問は経産省又はe-Gov一次資料の原文句と照合。",
+  "reviewedQuestionNumbers": [
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    29,
+    30
+  ],
+  "unresolved": [],
+  "sourceDate": "2025-10-26",
+  "sourceQuestionPdfSha256": "127d4b6084db9cea6247428410fd734ae255acba56be18d03c2b5ee07a9c4499",
+  "sourceAnswerPdfSha256": "e9ec83247fc97e8e315a8272bf53b75cdb45d6682502ab7120809cd337d91efd",
+  "sourceQuestionNumbers": [
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    29,
+    30
+  ],
+  "sourceOfficialAnswerCount": 10,
+  "visionDraftQuestionCount": 10
+}

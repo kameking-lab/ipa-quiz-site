@@ -1,0 +1,104 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20250831",
+  "subject": "theory",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 6444,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 18660,
+      "webSearchRequests": 0,
+      "costUSD": 0.2784238,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 3852,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "cdf598dde29d90068e93dce82f35dcec83ea773bab16d9c6479a2dfb4055e95f",
+  "inputRequestSha256": "eff69dc096c381fd34c62f5cb916cc561e1dbd973d9d2dd1f23733da8ca598bb",
+  "inputHashes": {
+    "candidateSha256": {
+      "q16a": "a3f1ef0dcbefc80ae478394586c250afa211125baf91eb35e5ddf79495ff3d7a",
+      "q16b": "bcab609e934a0288fc1208ff3d90588daa40ced4bcc8ace9ac88584a2023551a"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20250831/theory/p19.png": "5885bbad7b51bf9f4f172e31bd3a2e5e19bc033244c18d33de09777edbfca849"
+    },
+    "figureSha256": {
+      "public/images/denken3/20250831/theory/20250831-theory-q16-fig1.png": "076f6ef5cbb10352f9de60450fc60e54d042a5642c8750951fa743c2dad6eb50"
+    },
+    "sourceQuestionPdfSha256": "11a75ffd5dd2b5309ad75370bb963c4fda9e12a812174cfa2c2237383c3a964d",
+    "sourceAnswerPdfSha256": "76fd3715ed487d19a56b387fb402de20ee09474e9fa55b0413f9037b96af06c9",
+    "officialAnswerUnitsSha256": "a56a1e28c8a1e77d4386ae0febe4357f89bd3b41749030699517cd0838f3ee5e",
+    "referencePdfSha256": {},
+    "referencePageSha256": {},
+    "referenceJsonSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q16a",
+      "questionNumber": 16,
+      "part": "a",
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [
+        "uncertainty 欄は「出題年度・回次は問題ページからは確認できない」と未解消事項のように書いている。一方、sourceAttribution・fiscalYear・term はそれを確定として記載しており、両者が食い違っている。年度・回次は、添付の公式解答表見出し「令和7年度 第三種電気主任技術者上期試験解答」で確認できる。加えて、同表の理論 問16(a)=1・(b)=4 が本問の検算結果と一致するため、紐付けは裏付けられる。uncertainty 欄は「年度・回次は公式解答表見出しと正答一致で確認済み」に改めること。",
+        "examDate=2025-08-31 は sourceQuestionPdfUrl / sourceAnswerPdfUrl のファイル名『20250831』にしか根拠がない。添付の問題原図にも解答表原図にも試験日の記載がない。manifest 由来として根拠を明記するか、外部確認事項として uncertainty に記録すること。"
+      ],
+      "verifiedEvidence": [
+        "問題文：原図と一字一句照合し、改変はなかった。照合した箇所は、柱書、r=5Ω、最大4mA、条件Ⅰ 1A(A)、条件Ⅱ 100mA(B)、条件Ⅲ 1.2V(C)、設問(a)。",
+        "選択肢：(1)0.1 (2)0.9 (3)4 (4)9.6 (5)9.96 で、原図と一致する。",
+        "公式正答：解答表の理論 問16(a)=1、配点5 で、候補の officialAnswer=1・scoringPoints=5 と一致する。",
+        "回路接続：原図で次のように確認した。＋端子は左縦線を通ってコイル r 左端と R₁ 左端（黒丸）につながる。r 右端の節点 P は R₃→C と R₀→Q に分かれる。Q は端子 B につながり、M–Q 間には R₂ が入る。M は端子 A につながる。可動片は－端子側にある。",
+        "B 位置の検算：0.004×(5+19)=0.096V、分流電流は 0.1−0.004=0.096A で、R₁+R₂=1Ω。",
+        "A 位置の検算：0.004×(24+R₂)=0.996R₁ に R₂=1−R₁ を代入すると 0.1=R₁ となり、R₁=0.1Ω、R₂=0.9Ω。検算では 0.004×24.9=0.0996V、0.0996/0.1=0.996A、合計 1A となる。",
+        "誤答肢(2)：R₁=0.9、R₂=0.1 とすると、0.004×24.1/0.9=0.1071A、合計 ≒0.111A となり、記載値と一致する。",
+        "誤答肢(3)〜(5)：R₁>1Ω では R₂ が負になるという理由は正しい。",
+        "公開候補図：原図の回路部分をそのまま切り出したもので、次の要素がすべて原図と一致する。抵抗 r・R₀・R₁・R₂・R₃、4mA 右向き矢印、黒丸4個、端子 A・B・C・＋・－、破線枠、可動片の A 側描画。この図だけで解答に必要な接続を判読できる。",
+        "figureDescription：接続・ラベルの記述は原図と一致する。",
+        "reviewedFromPage=[19]：原図の印刷頁は「-16-」、フッタは「T1−R 019」で、PDF 19頁という記載と矛盾しない。",
+        "officialReferenceUrls は空であり、検証が必要な独立主張はない。"
+      ]
+    },
+    {
+      "unitKey": "q16b",
+      "questionNumber": 16,
+      "part": "b",
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [
+        "figureDescription の必要性欄にある「R₀・R₂・R₁ がコイルと並列になり」は、各抵抗が個別にコイルと並列になるとも読めて曖昧である。「直列につながった R₀・R₂・R₁ の経路（計20Ω）がコイルと並列になり」と明確化すること。"
+      ],
+      "sourceIssues": [
+        "uncertainty 欄は「出題年度・回次は問題ページからは確認できない」と未解消事項のように書いているが、sourceAttribution・fiscalYear・term はそれを確定として記載しており、食い違っている。添付の公式解答表見出し（令和7年度 上期）と、理論 問16(b)=4 と検算結果の一致で確認できるので、その旨に改めること。",
+        "examDate=2025-08-31 はソースPDFのファイル名『20250831』にしか根拠がなく、添付原図・解答表原図では確認できない。manifest 由来として根拠を明記するか、外部確認事項として uncertainty に記録すること。"
+      ],
+      "verifiedEvidence": [
+        "問題文：原図と一字一句照合し、改変はなかった。照合した箇所は、柱書、条件Ⅰ〜Ⅲ、設問(b)「抵抗 R₃ の値[Ω]」。",
+        "選択肢：(1)2.36 (2)23.6 (3)25 (4)236 (5)2360 で、原図と一致する。",
+        "公式正答：解答表の理論 問16(b)=4、配点5 で、候補と一致する。",
+        "C 位置の接続：－端子は C につながり、A・B は開放となる。このとき＋側から P までの間は、コイル r=5Ω と経路 R₁→M→R₂→Q→R₀→P（1+19=20Ω）の並列になり、その先に R₃ が直列に入る。原図の接続から確認した。",
+        "C 位置の検算：コイル電圧は 0.004×5=0.02V、並列経路は 0.02/20=1mA、R₃ 電流は 5mA。R₃=(1.2−0.02)/0.005=236Ω。",
+        "別検算：並列部の合成は 5∥20=4Ω、全抵抗 240Ω で全電流 5mA、コイル分流は 5×20/25=4mA となり、一致する。",
+        "誤答肢(1)(2)(3)：端子電圧はそれぞれ 0.0318≒0.032V、0.138V、0.145V で、いずれも 1.2V 未満。記載値と一致する。",
+        "誤答肢(5)：全抵抗 2364Ω で全電流 ≒0.508mA、コイル電流 ≒0.406mA。4mA に達する電圧は 0.02+11.8=11.82V で、記載値と一致する。",
+        "公開候補図：原図の回路部分と同一で、R₃ から右辺を下って C に至る経路と P の黒丸を判読できる。この図だけで解答できる。",
+        "reviewedFromPage=[19]：原図フッタ「T1−R 019」と矛盾しない。",
+        "officialReferenceUrls は空である。"
+      ]
+    }
+  ]
+}

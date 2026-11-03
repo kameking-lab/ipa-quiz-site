@@ -1,0 +1,68 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20240818",
+  "subject": "law",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 2218,
+      "cacheReadInputTokens": 129451,
+      "cacheCreationInputTokens": 22995,
+      "webSearchRequests": 0,
+      "costUSD": 0.2542182,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 840,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "81c4d49ef063454dd5e8d5dcf1bd537afd567bcb9799922bd67fb1996d799978",
+  "inputRequestSha256": "d0694b6689f6185d530c8492b9e2e10c3d5a2d5a9d0128f8a6beec996dc2fb8d",
+  "inputHashes": {
+    "candidateSha256": {
+      "q05": "acc7671982482aefd384e88895c3bc526f8f1a17ffc6523dd17045e9b485297a"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20240818/law/p09.png": "27de758ce0308b26cb09cbda5016d174d958d73f6463fcbace99d331a770a1c4"
+    },
+    "figureSha256": {},
+    "sourceQuestionPdfSha256": "5dbba8b8e4ec681d2d5f0645a3895a6e218d936519ddd18ac544ddc461a1ae78",
+    "sourceAnswerPdfSha256": "f72ecbc3a477e64948388b69cf78cb931032c9f0c688639836c8d533a949cd0f",
+    "officialAnswerUnitsSha256": "c8caad6503d02d34b3573915492391186e4ca243d509f912b508fedc46eb81f6",
+    "referencePdfSha256": {
+      "data/raw_pdfs/denken3/review/meti-wind-standards-guide.pdf": "e2a7df24343994ebf6e118fbc5afe3780d911d832bcf4821d83f0a98c2c7d29d"
+    },
+    "referencePageSha256": {
+      "data/raw_pdfs/denken3/review/references/meti-wind-standards-guide-p006.png": "b1179d7ba69edb02fdfa55ae1d01230e29546023c1c64dbe7235de654da46d26",
+      "data/raw_pdfs/denken3/review/references/meti-wind-standards-guide-p007.png": "e6cccb1274130391466c343386a78573f5ec7a2994c8f55eb9b9c214d893d892"
+    }
+  },
+  "assessment": [
+    {
+      "unitKey": "q05",
+      "questionNumber": 5,
+      "part": null,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "問題文: 公式問題原図（頁下部の印字は「- 6 -」、原稿コードは「T1-H 009」）と照合した。前文、a)①②、b)の読み替え規定、c)本文とただし書、設問文は語句・順序ともに一致する。(エ)が二箇所ある構成も原図どおり。数値は20 mだけで、単位も一致する。",
+        "選択肢: (1)〜(5)の(ア)〜(エ)を原図の表と1セルずつ照合し、全20セルの一致を確認した。(1)は回転速度・制御装置・ロータ最低部・雷撃、(2)は発電電圧・圧油装置・地表・雷撃、(3)は回転速度・制御装置・地表・雷撃、(4)は発電電圧・制御装置・ロータ最低部・強風、(5)は回転速度・圧油装置・ロータ最低部・強風。",
+        "公式正答: 令和6年度上期の公式解答表で、法規の問5は3。候補JSONのofficialAnswer=\"3\"およびmanifest固定の公式正答（answer=\"3\"）と一致する。",
+        "根拠条文: 経済産業省の逐条解説PDF第6頁の[省令]枠で、省令第5条第1項「一 回転速度が著しく上昇した場合」「二 風車の制御装置の機能が著しく低下した場合」を確認した。同頁で第2項の読み替え規定と、第3項冒頭の「最高部の地表からの高さが二十メートルを超える発電用風力設備には、雷撃か」も確認した。第3項の続き「ら風車を保護するような措置…周囲の状況によって雷撃が風車を損傷するおそれがない場合においては、この限りでない」はPDF第7頁で確認した。以上から、(ア)は回転速度、(イ)は制御装置、(ウ)は地表、(エ)は雷撃となる。",
+        "総合解説: 条項の引用（第5条第1項第1号・第2号、第3項）と空欄の対応は、根拠条文と一致する。4語すべてが一致するのは(3)だけで、結論は公式正答と整合する。",
+        "肢別解説: (1)の誤りは(ウ)のロータ最低部だけであり、記述は正しい。(2)の誤りは(ア)発電電圧と(イ)圧油装置で、正しい。(2)の「圧油装置は制御装置を構成する場合がある」という補足は、PDF第7頁の解釈第7条第3項「風車の制御用圧油装置の油圧」で裏付けられ、推測ではない。(3)は4語すべてが一致しており、正しい。(4)の誤りは(ア)、(ウ)、(エ)の3箇所で、正しい。(5)の誤りは(イ)、(ウ)、(エ)の3箇所で、正しい。どの肢も、実際の誤り箇所と解説の指摘が過不足なく対応している。",
+        "図: この問は文章と表だけで、解答に図を必要としない。figureDescription=null、figureUrls=[]、choiceFigureUrls={} は妥当。",
+        "出典: officialReferenceUrls の2件（#page=6、#page=7）は、添付された逐条解説の原頁で独立に検証した。検証できない外部主張はない。sourceQuestionPdfUrl（q04 は法規）と sourceAnswerPdfUrl（a01）は公式原図の内容と矛盾しない。reviewedFromPage=[9] は原図の原稿コード「T1-H 009」と整合する。"
+      ]
+    }
+  ]
+}

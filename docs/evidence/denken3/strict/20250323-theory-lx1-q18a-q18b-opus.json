@@ -1,0 +1,97 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20250323",
+  "subject": "theory",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 5026,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 19125,
+      "webSearchRequests": 0,
+      "costUSD": 0.2537838,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 2638,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "46543bbf1575d3ae7b0cfed61d264c5372d472d2b5567e3f27015e27276cfa46",
+  "inputRequestSha256": "9ff138d2d92593e9ad34def1082554958d9dc608d411c73f230891873fc2b983",
+  "inputHashes": {
+    "candidateSha256": {
+      "q18a": "52236572397f5b31a8c8d5a66bd8321e2eb927a711f2975a7e756e981251e10c",
+      "q18b": "db91b32e8390a14ad6861233ccf22f0e0adf9699c5b862be4650ea35d843fe6f"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20250323/theory/p24.png": "405f2a5753c5abf546b0b8ac13bc8c9bbcf354346fb686573b038e20d6872bbe",
+      "data/raw_pdfs/denken3/review/20250323/theory/p25.png": "b74c08845a39e2e36fb2f28c741b80980e73b9f26be230e4a1c3289c0dddb2a9"
+    },
+    "figureSha256": {
+      "public/images/denken3/20250323/theory/20250323-theory-q18-opamp-circuit-1.png": "7c97c06ecab5c4d359a55724576681ba410d1f324ab98c3c6a54a56b72211265",
+      "public/images/denken3/20250323/theory/20250323-theory-q18-opamp-circuit-2.png": "3071295684759173abe617193bfbc53d6ac7853ff515a57942ca57100768d9fb"
+    },
+    "sourceQuestionPdfSha256": "8817012cb55eed9c83bb1e68df138909b1e03a81f7ed48a9893a219e1d2a76ca",
+    "sourceAnswerPdfSha256": "4c3b38fcf1405766fafaa78b1b05b867a3d48307a670b9d354476bc6b32acd4c",
+    "officialAnswerUnitsSha256": "9f59c387771ed4d5f76df335f1e0d815e3a04649fa5979ac9381704112e754f2",
+    "referencePdfSha256": {},
+    "referencePageSha256": {},
+    "referenceJsonSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q18a",
+      "questionNumber": 18,
+      "part": "a",
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "出典メタデータ: fiscalYear=2024, term=lower, examDate=2025-03-23, subject=theory, sourceQuestionPdfUrl=20250323_ch_third_q01.pdf, sourceAnswerPdfUrl=2024_3_2.pdf, reviewedFromPage=[24,25] はいずれもmanifestと一致する。sourceAttribution『令和6年度下期…理論科目 問18(a)』も整合する。原図の印刷頁番号は -21-/-22- だが、これは冊子の頁でありPDF頁24・25とは別物で矛盾しない。",
+        "問題文: 選択問題の注記、問18柱書、(a)の設問文『誤っているものを次の(1)〜(5)のうちから一つ選べ』が原図第24頁と一致する。",
+        "選択肢(1)〜(5): 『アナログICの一種である』『入力インピーダンスが小さくて出力インピーダンスが大きい』『反転並びに非反転の二つの入力端子と一つの出力端子がある』『入力端子間の電圧のみを増幅して出力する』『増幅度が非常に大きい』の5肢が、原図と文言単位で一致する。",
+        "公式正答: 解答表の理論 問18(a)=2 と、officialAnswer='2' が一致する。",
+        "総合解説: 理想オペアンプは入力インピーダンス∞・出力インピーダンス0である。したがって(2)は大小が逆で誤り、という因果は正しい。",
+        "肢別解説: (1)アナログIC、(3)反転(−)・非反転(+)の2入力と1出力、(4)差動入力電圧(V₊−V₋)のみを増幅、(5)開ループ利得が非常に大きく理想では∞。いずれも固有の理由で正しい記述と判定しており、誤りはない。",
+        "図: この小問には原図に図がない。figureUrls=[] および figureDescription『図はない』は適切である。",
+        "officialReferenceUrlsは空で、外部確認を要する独立主張はない。"
+      ]
+    },
+    {
+      "unitKey": "q18b",
+      "questionNumber": 18,
+      "part": "b",
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "出典メタデータ: fiscalYear・term・examDate・subject・両PDF URL・reviewedFromPage=[24,25] はmanifestと一致する。sourceAttribution『問18(b)』も整合する。",
+        "問題文: 『図1及び図2のような直流増幅回路…出力電圧Vo1, Vo2の値[V]の組合せ…ただし、演算増幅器は理想的なものとし、Vi1=0.6 V及びVi2=0.45 Vは直流の入力電圧である』が原図第24頁と一致する。数値・単位・添字(i1, i2, o1, o2)の欠落や改変はない。",
+        "選択肢: 原図第25頁の表は (1)6.6/−3.0、(2)6.6/3.0、(3)−6.6/3.0、(4)−4.5/9.0、(5)4.5/−9.0 である。候補の各肢はVo1・Vo2の順序と符号を含めてこれと一致する。",
+        "公式正答: 解答表の理論 問18(b)=1 と、officialAnswer='1' が一致する。",
+        "図1の結線(原図): 上側入力端子からの水平線は、半円の跨ぎ記号で縦線と非接続のまま+端子へ入る。縦線は下側共通線上の接続点(黒丸)から立ち上がり、10 kΩを経て−端子の接続点へ至る。−端子と出力の間には100 kΩと1 μFが並列に接続され、両端に黒丸がある。以上から図1は非反転増幅回路と確定する。",
+        "図1の検算: Vo1=(1+100/10)×0.6=11×0.6=6.6 V。電流表現でも、0.6 V/10 kΩ=0.06 mA、0.06 mA×100 kΩ=6 V、0.6+6=6.6 V となり一致する。",
+        "図2の結線(原図): Vi2は30 kΩを経て−端子へ入る。+端子は共通線上の接続点(黒丸)に接続される。帰還は200 kΩと1 μFの並列である。以上から図2は反転増幅回路と確定する。",
+        "図2の検算: Vo2=−(200/30)×0.45=−3.0 V。電流表現でも、0.45 V/30 kΩ=0.015 mA、0−0.015 mA×200 kΩ=−3.0 V となり一致する。",
+        "直流入力の定常状態では、帰還コンデンサ1 μFを開放として扱えるため結果に影響しない。解説の扱いは妥当である。",
+        "肢別解説: (2)はVo2の極性誤り、(3)は両方の極性誤り(非反転→正、反転→負)、(4)は両値とも不一致、(5)はVo2の符号は合うが大きさ(−9.0≠−3.0)とVo1(4.5≠6.6)が不一致。いずれも計算結果と照合して正しい。",
+        "公開候補図 circuit-1.png は原図図1と照合して次の点が一致する。1 μF、100 kΩ、10 kΩ、跨ぎ記号、接続点黒丸5箇所(帰還両端2、−端子、出力、共通線)、−/+端子表記、▷∞、Vi1=0.6 V、Vo1 [V]、両矢印の向き(下→上)、キャプション『図1』。欠落・反転はない。",
+        "公開候補図 circuit-2.png は原図図2と照合して次の点が一致する。1 μF、200 kΩ、30 kΩ、接続点黒丸5箇所、+端子の共通線接続、Vi2=0.45 V、Vo2 [V]、矢印の向き、キャプション『図2』。公開図だけで回路形式を判別でき、解答可能である。",
+        "figureDescription: 跨ぎ記号による非接続、各端子への接続、帰還素子の並列関係、上側端子を正とする電圧矢印の極性基準の記述が、原図と一致する。",
+        "officialReferenceUrlsは空で、外部確認を要する独立主張はない。"
+      ]
+    }
+  ]
+}

@@ -1,4 +1,6 @@
-import { describe, expect, it } from "vitest";
+// TEST ONLY: retained original corpus quality, not public availability.
+vi.mock("@/lib/afternoon/load", async () => await import("@/__tests__/fixtures/archived-afternoon-load"));
+import { describe, expect, it, vi } from "vitest";
 
 import {
   ESSAY_EXAM_CODES,
@@ -98,3 +100,5 @@ describe("essay industry corpus integrity (all exam codes)", () => {
     }
   });
 });
+
+it.each(ESSAY_EXAM_CODES)("archived fixture preserves %s coverage", exam => { expect(getEssayQuestionsByExam(exam).length).toBeGreaterThan(0); });

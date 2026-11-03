@@ -1,0 +1,659 @@
+{
+  "schemaVersion": 1,
+  "paper": "20260401",
+  "finalizedAtUtc": "2026-09-26T10:42:15.275501+00:00",
+  "reviewModel": "claude-opus-5-5",
+  "assessment": [
+    {
+      "number": 1,
+      "status": "clean-direct-pass",
+      "officialAnswer": "ハ",
+      "currentCandidateSha256": "036e7ac1bd47ec2601570c657a9b97ce7324be6682c38e022d2b63582d4335c7",
+      "originalRowSha256": "075dc7fcb006c33e37caae7649d50c158e2e9382747a3318815d4776a2a93e56",
+      "figureSha256": {
+        "public/images/denko1/2026-first/q1.png": "54d0af65431cebd9c1db99181af16800cea9d1e0d4e477c710e05666ca2447b8"
+      },
+      "directReviewReceipt": "docs/evidence/denko1-independent/20260401-q01-10-opus-review-part01.json",
+      "directReviewSha256": "175efd200a90448215a26585f0a0d51237ba68a1ec9dd2a084c2ef7d0f2a44ac"
+    },
+    {
+      "number": 2,
+      "status": "clean-direct-pass",
+      "officialAnswer": "ロ",
+      "currentCandidateSha256": "655440a00a45e73fb282d8ff16cbf3c0d68fa3ad4a7f74961d27d9108a14d3c3",
+      "originalRowSha256": "a7a7e9d4406da88f3eecaff493502d4a7281d49699ab12694eb5798dae3afe03",
+      "figureSha256": {
+        "public/images/denko1/2026-first/q2.png": "79373c3439fb683aeabbfb037e04afb6ce7312de1739de26ef23509d0855ddcb"
+      },
+      "directReviewReceipt": "docs/evidence/denko1-independent/20260401-q01-10-opus-review-part01.json",
+      "directReviewSha256": "175efd200a90448215a26585f0a0d51237ba68a1ec9dd2a084c2ef7d0f2a44ac"
+    },
+    {
+      "number": 3,
+      "status": "clean-direct-pass",
+      "officialAnswer": "ハ",
+      "currentCandidateSha256": "333bb749bb51bc2885136dbc9b0b1ecf59456d6b6771519534c6428741b764af",
+      "originalRowSha256": "af4f3dda493b9447184d903bfbe3b7ba920e2376dd0cabf62d4a89a563fcd66c",
+      "figureSha256": {
+        "public/images/denko1/2026-first/q3.png": "9f53a8f40b96ef56f37bdda6521061aeed2fc16096c13dd2eb9c6b116f57216e"
+      },
+      "directReviewReceipt": "docs/evidence/denko1-independent/20260401-q01-10-opus-review-part01.json",
+      "directReviewSha256": "175efd200a90448215a26585f0a0d51237ba68a1ec9dd2a084c2ef7d0f2a44ac"
+    },
+    {
+      "number": 4,
+      "status": "clean-direct-pass",
+      "officialAnswer": "ニ",
+      "currentCandidateSha256": "c9a6546ba2f063aa9bc9245a1fdf3e26a5f72ba9865281c8dc80f281ba488a48",
+      "originalRowSha256": "ef767ea920c47e19bfd457dd1b6626fe9809c1ccbb300f1664f53c69a56c8152",
+      "figureSha256": {
+        "public/images/denko1/2026-first/q4.png": "860882738da1898530163c6b4f5dcea2ff82d4f23c5cbd78c45f7e029eec9b5b"
+      },
+      "directReviewReceipt": "docs/evidence/denko1-independent/20260401-q01-10-opus-review-part01.json",
+      "directReviewSha256": "175efd200a90448215a26585f0a0d51237ba68a1ec9dd2a084c2ef7d0f2a44ac"
+    },
+    {
+      "number": 5,
+      "status": "clean-direct-pass",
+      "officialAnswer": "ニ",
+      "currentCandidateSha256": "15fb0e53530eb7c103d04638d53d122118c5c66b80943ca2d15d5293355e26df",
+      "originalRowSha256": "a7e591711a86f396aee3c1079c1eb2aa1cd8794f7c42f009fd16f9a57981e3fb",
+      "figureSha256": {
+        "public/images/denko1/2026-first/q5.png": "ae2b29866bf273c9c2f0a16ac94da9a526f9d5221932658843dbbd0734087ab8"
+      },
+      "directReviewReceipt": "docs/evidence/denko1-independent/20260401-q01-10-opus-review-part01.json",
+      "directReviewSha256": "175efd200a90448215a26585f0a0d51237ba68a1ec9dd2a084c2ef7d0f2a44ac"
+    },
+    {
+      "number": 6,
+      "status": "clean-direct-pass",
+      "officialAnswer": "ロ",
+      "currentCandidateSha256": "415c6fe66c14da28afbabbf097f0359352badd3c4c800bec421bac36a7ea5671",
+      "originalRowSha256": "617601d354db94cc07c758f869cda1b420e51b3971ac3d6d082e1484f7828580",
+      "figureSha256": {
+        "public/images/denko1/2026-first/q6.png": "2d1feeb97101d6a32d75839e442a9267e8905142956bafd181ecddda2b06d204"
+      },
+      "directReviewReceipt": "docs/evidence/denko1-independent/20260401-q01-10-opus-review-part02.json",
+      "directReviewSha256": "f9a77330f719087ef2e688e0cf3fcb827a53f6574709290013f4cf1b9888a038"
+    },
+    {
+      "number": 7,
+      "status": "clean-direct-pass",
+      "officialAnswer": "イ",
+      "currentCandidateSha256": "36b8ac7d9826181dd9bee79d2f662dd06f9ca4188c41dc90e232070fcd3151fc",
+      "originalRowSha256": "07c61d7a2c1c560a404cd9438e58eae208deaa8781f79bc3ddfd8976fe9be071",
+      "figureSha256": {
+        "public/images/denko1/2026-first/q7.png": "de3094d9717f1351a39d85f474e6c18a8c546a80a32d640b0c39407746ff733c"
+      },
+      "directReviewReceipt": "docs/evidence/denko1-independent/20260401-q01-10-opus-review-part02.json",
+      "directReviewSha256": "f9a77330f719087ef2e688e0cf3fcb827a53f6574709290013f4cf1b9888a038"
+    },
+    {
+      "number": 8,
+      "status": "clean-direct-pass",
+      "officialAnswer": "ハ",
+      "currentCandidateSha256": "811142b17f049baa08f3802ce69dce0eba704f744ce6311121e309e08e0a6077",
+      "originalRowSha256": "4709b1f559051672dea801f236904efa7d91e5e170778be1f3d50fa7bcd4fd8f",
+      "figureSha256": {
+        "public/images/denko1/2026-first/q8.png": "a7c8169576b770705a57912a4e871e02dbf36fc734eed28f8831c89dc41d57fd"
+      },
+      "directReviewReceipt": "docs/evidence/denko1-independent/20260401-q01-10-opus-review-part02.json",
+      "directReviewSha256": "f9a77330f719087ef2e688e0cf3fcb827a53f6574709290013f4cf1b9888a038"
+    },
+    {
+      "number": 9,
+      "status": "clean-direct-pass",
+      "officialAnswer": "ニ",
+      "currentCandidateSha256": "02a537d6f44b32956cbc803bf7015f4e9341eeffc06d19607b4e2b7c2b8d7ea9",
+      "originalRowSha256": "d9ad83bb31aa8f0e23c859a87ee26e45c92942e9bb78ea6f1faebd5b3e8d2037",
+      "figureSha256": {
+        "public/images/denko1/2026-first/q9.png": "609b7002f3e80fd671d14fd7d7561e37fe1d0428a76f7e2adad562bdd82473f1"
+      },
+      "directReviewReceipt": "docs/evidence/denko1-independent/20260401-q01-10-opus-review-part02.json",
+      "directReviewSha256": "f9a77330f719087ef2e688e0cf3fcb827a53f6574709290013f4cf1b9888a038"
+    },
+    {
+      "number": 10,
+      "status": "clean-direct-pass",
+      "officialAnswer": "イ",
+      "currentCandidateSha256": "53dfdb96e8b47bed7c57d696e3296d68ab4a04e177190d56f18edd9045646c71",
+      "originalRowSha256": "5cbec0609e2d270d865b6526db1f8bed25136ca73a84e0d484e99a13540927a3",
+      "figureSha256": {},
+      "directReviewReceipt": "docs/evidence/denko1-independent/20260401-q01-10-opus-review-part02.json",
+      "directReviewSha256": "f9a77330f719087ef2e688e0cf3fcb827a53f6574709290013f4cf1b9888a038"
+    },
+    {
+      "number": 11,
+      "status": "clean-direct-pass",
+      "officialAnswer": "ニ",
+      "currentCandidateSha256": "451ddcd2f834586cc16fcd62fd2ce40c56fcf315d430bfd8437a10fd3f8e6edd",
+      "originalRowSha256": "7c6506190145ebbebe95f887ce509639dfa1987e448a6fa3c7b4e6b6ef35699e",
+      "figureSha256": {
+        "public/images/denko1/2026-first/q11-i.png": "b70e7d4be1fe68a9c34d948aa88996629d617038c3f1a1d2bfd6dc17428377bd",
+        "public/images/denko1/2026-first/q11-ro.png": "7dccd59e97c1f3cc0dfdb456a84cf876bc9d14fc6451f04bd7dbaab474e1f05f",
+        "public/images/denko1/2026-first/q11-ha.png": "c5539349c69686291a80bee28c58a558544102e3b1024c9506d3ec46e3e043cd",
+        "public/images/denko1/2026-first/q11-ni.png": "62863c57a0404ed9184cad5cc2359812b733079902c4d9d14092ae419f04886e"
+      },
+      "directReviewReceipt": "docs/evidence/denko1-independent/20260401-q11-20-opus-review-part01.json",
+      "directReviewSha256": "7c197b37d0f50d30840c3deb66546aea5c208416c93d44100fd854709a231115"
+    },
+    {
+      "number": 12,
+      "status": "clean-direct-pass",
+      "officialAnswer": "ニ",
+      "currentCandidateSha256": "3e7b0cecf2da9d93f28f5eb243b88a3a0220ecee37cb1bf9c271680ebbe2043e",
+      "originalRowSha256": "427fa1d0d6ce0e384ca2773b7e22dff0c10e4134830e83c9f768978264ae55fd",
+      "figureSha256": {},
+      "directReviewReceipt": "docs/evidence/denko1-independent/20260401-q11-20-opus-review-part01.json",
+      "directReviewSha256": "7c197b37d0f50d30840c3deb66546aea5c208416c93d44100fd854709a231115"
+    },
+    {
+      "number": 13,
+      "status": "clean-direct-pass",
+      "officialAnswer": "ニ",
+      "currentCandidateSha256": "36df58eca7e79ee3548e1134086dd8206b95b1a89212f7ade60598861fe0b3e5",
+      "originalRowSha256": "bf22f65e1600d7d9cdd2cfbcf65f90ee9ad5f5a1b502cee1b3078bb09d99db5d",
+      "figureSha256": {},
+      "directReviewReceipt": "docs/evidence/denko1-independent/20260401-q11-20-opus-review-part01.json",
+      "directReviewSha256": "7c197b37d0f50d30840c3deb66546aea5c208416c93d44100fd854709a231115"
+    },
+    {
+      "number": 14,
+      "status": "clean-direct-pass",
+      "officialAnswer": "ニ",
+      "currentCandidateSha256": "4cc3af2757c357c32404a09ac787e6fc883863a95537d83b00ee74bc2126605f",
+      "originalRowSha256": "2908324bca00b4f797a2e08bddf3eae1ad6c790367fb29340620280b6bb6ffa8",
+      "figureSha256": {
+        "public/images/denko1/2026-first/q14.png": "c14c3d70f278f820a10bc5a5b6e334429f84a859202162ffc80af2d77d03c3c7"
+      },
+      "directReviewReceipt": "docs/evidence/denko1-independent/20260401-q11-20-opus-review-part01.json",
+      "directReviewSha256": "7c197b37d0f50d30840c3deb66546aea5c208416c93d44100fd854709a231115"
+    },
+    {
+      "number": 15,
+      "status": "clean-direct-pass",
+      "officialAnswer": "イ",
+      "currentCandidateSha256": "eb7d3862a0510f402792dddb3b03e9c2c1e8f4a947ea616208c90e385ff9a1f3",
+      "originalRowSha256": "98dbf9a1a757b764fd52c7a5245ecafd0435818eb1b4f1e414dc2f32732710d7",
+      "figureSha256": {
+        "public/images/denko1/2026-first/q15.png": "150df0e33b6d367957c727c32a199adbb5cf9178f6d8b4350c06b7fe8e5abdc8"
+      },
+      "directReviewReceipt": "docs/evidence/denko1-independent/20260401-q11-20-opus-review-part01.json",
+      "directReviewSha256": "7c197b37d0f50d30840c3deb66546aea5c208416c93d44100fd854709a231115"
+    },
+    {
+      "number": 16,
+      "status": "clean-direct-pass",
+      "officialAnswer": "ニ",
+      "currentCandidateSha256": "9c6d1ee2d384b20426d693a3c3fb47cb3c1bf901d21c058510001aa5e8221adf",
+      "originalRowSha256": "f3437f3b5bcf3a17dc19e24a61026cf932eaf29972f585ca6ea183d0b392a252",
+      "figureSha256": {
+        "public/images/denko1/2026-first/q16.png": "fde0d2e5e20a87e8d21326d561a51214354503db238e8f342e56611f49926136"
+      },
+      "directReviewReceipt": "docs/evidence/denko1-independent/20260401-q11-20-opus-review-part02.json",
+      "directReviewSha256": "7fe40ca0d438242e18e7b5062c6026acbb8c32487e2ee16fdcb4671cf25255db"
+    },
+    {
+      "number": 17,
+      "status": "clean-direct-pass",
+      "officialAnswer": "ハ",
+      "currentCandidateSha256": "dcba007c78c5454edc889c5d6188bc867bd5e590326b446a826844ccba5eed81",
+      "originalRowSha256": "78d1eeb7983a0128e1cfd66dd3b361f4396e65d85058393815325d7016e33441",
+      "figureSha256": {},
+      "directReviewReceipt": "docs/evidence/denko1-independent/20260401-q11-20-opus-review-part02.json",
+      "directReviewSha256": "7fe40ca0d438242e18e7b5062c6026acbb8c32487e2ee16fdcb4671cf25255db"
+    },
+    {
+      "number": 18,
+      "status": "clean-direct-pass",
+      "officialAnswer": "ハ",
+      "currentCandidateSha256": "c376502c9a5cbd4229aa5e7c9ed216b759fdd07989f44d07d91ea079fbbeff18",
+      "originalRowSha256": "c7ea648e28b862125a9d49ab582e7c6ba56eabd99a0e5ee4c78517ffc2c18ebe",
+      "figureSha256": {},
+      "directReviewReceipt": "docs/evidence/denko1-independent/20260401-q11-20-opus-review-part02.json",
+      "directReviewSha256": "7fe40ca0d438242e18e7b5062c6026acbb8c32487e2ee16fdcb4671cf25255db"
+    },
+    {
+      "number": 19,
+      "status": "clean-direct-pass",
+      "officialAnswer": "ハ",
+      "currentCandidateSha256": "81ec9fde6e39ac2bfd71db19126f57693517b46955881e0cc21a9a6b65c6725d",
+      "originalRowSha256": "7e58fc4dd3f184fc5cc5f1f6da8d4382299249e24bb164c510b3842160680517",
+      "figureSha256": {},
+      "directReviewReceipt": "docs/evidence/denko1-independent/20260401-q11-20-opus-review-part02.json",
+      "directReviewSha256": "7fe40ca0d438242e18e7b5062c6026acbb8c32487e2ee16fdcb4671cf25255db"
+    },
+    {
+      "number": 20,
+      "status": "clean-direct-pass",
+      "officialAnswer": "イ",
+      "currentCandidateSha256": "b65af807d17d1e9792dd6b87b5d6bcad6e1bff1538e93dce6b1fe1b59cef283d",
+      "originalRowSha256": "c9b13f9f19b5fe2035153aefd9aa8f5a47107c0428a499ce15d701c63deb6fd0",
+      "figureSha256": {},
+      "directReviewReceipt": "docs/evidence/denko1-independent/20260401-q11-20-opus-review-part02.json",
+      "directReviewSha256": "7fe40ca0d438242e18e7b5062c6026acbb8c32487e2ee16fdcb4671cf25255db"
+    },
+    {
+      "number": 21,
+      "status": "clean-direct-pass",
+      "officialAnswer": "ニ",
+      "currentCandidateSha256": "ec65ff9af8f7e550200c39ddde5b6f82e04a323daf852f92ae20bb73e56d078e",
+      "originalRowSha256": "ed08212b35a74911744e3f58895ca9d88b5fec9ed42fb8530516a5e65b6d6c67",
+      "figureSha256": {},
+      "directReviewReceipt": "docs/evidence/denko1-independent/20260401-q21-30-opus-review-part01.json",
+      "directReviewSha256": "81b5afe8c5473c8a3e8b82cfb055b73ca8266a6a82c967324c35f4b2177d1a08",
+      "lawReceipt": {
+        "path": "docs/evidence/denko1-law/20260401-q21.json",
+        "sha256": "4cdd20a1c9175ee25d6d9f71f87f31556516e1bda566dd77911ac7279c3d9b62"
+      }
+    },
+    {
+      "number": 22,
+      "status": "clean-direct-pass",
+      "officialAnswer": "ロ",
+      "currentCandidateSha256": "ca20cb46bdc0395f875aa277a6d070dd80b200034c97b18ad6c89baa1c31d656",
+      "originalRowSha256": "9a5d24f51e4f8f445f8d7e04bf098e68544384632870adee740198aaacdea578",
+      "figureSha256": {
+        "public/images/denko1/2026-first/q22.png": "4ee4290437c1b320bec8ab001a1626b865b29e3a14c608a92ad2d14c705eb5b5"
+      },
+      "directReviewReceipt": "docs/evidence/denko1-independent/20260401-q21-30-opus-review-part01.json",
+      "directReviewSha256": "81b5afe8c5473c8a3e8b82cfb055b73ca8266a6a82c967324c35f4b2177d1a08"
+    },
+    {
+      "number": 23,
+      "status": "clean-direct-pass",
+      "officialAnswer": "ニ",
+      "currentCandidateSha256": "134db4af146882b8d4d3c4c06875aa7ba48e78f87e32bb3c154ac2be6461c048",
+      "originalRowSha256": "25b7b6901e41decc3b2081c86dad4c7cbc40c44b4dbddc5796319aa22c196134",
+      "figureSha256": {
+        "public/images/denko1/2026-first/q23.png": "897432bde33cf76b9adb99670e0a2f8560444235b4e12d57f192fb9d1593f4f5"
+      },
+      "directReviewReceipt": "docs/evidence/denko1-independent/20260401-q21-30-opus-review-part01.json",
+      "directReviewSha256": "81b5afe8c5473c8a3e8b82cfb055b73ca8266a6a82c967324c35f4b2177d1a08"
+    },
+    {
+      "number": 24,
+      "status": "clean-direct-pass",
+      "officialAnswer": "イ",
+      "currentCandidateSha256": "cf89e9b456088d15973f679ae727e80b4925834b210346ca39b9abe975603cd2",
+      "originalRowSha256": "cbf0e2f404993732b0bd065a1d19a54fe38aaf5801639c35c296a3d5a19264f1",
+      "figureSha256": {},
+      "directReviewReceipt": "docs/evidence/denko1-independent/20260401-q21-30-opus-review-part01.json",
+      "directReviewSha256": "81b5afe8c5473c8a3e8b82cfb055b73ca8266a6a82c967324c35f4b2177d1a08"
+    },
+    {
+      "number": 25,
+      "status": "clean-direct-pass",
+      "officialAnswer": "ニ",
+      "currentCandidateSha256": "f65e132eee47185edbf6d30a1360218fe2c1a0843ba3e548e5159e07026ca216",
+      "originalRowSha256": "40b8d9b7b82c191f3623af68fb6c9392c4a5770f1516e1810efde3c62de7af84",
+      "figureSha256": {
+        "public/images/denko1/2026-first/q25.png": "3d53236da0c57252ee92cb3b6609f6296b04bb80ddd6a8028dd0ae4dd62c689b"
+      },
+      "directReviewReceipt": "docs/evidence/denko1-independent/20260401-q21-30-opus-review-part01.json",
+      "directReviewSha256": "81b5afe8c5473c8a3e8b82cfb055b73ca8266a6a82c967324c35f4b2177d1a08"
+    },
+    {
+      "number": 26,
+      "status": "clean-direct-pass",
+      "officialAnswer": "ニ",
+      "currentCandidateSha256": "46d2a2723c23e4d5abc17365f00e7471d77eb107b172b74736464493302b373c",
+      "originalRowSha256": "ac3fcce996143a94c68466dca69b48221a92233326a2122e79b444b5f9a17c06",
+      "figureSha256": {
+        "public/images/denko1/2026-first/q26.png": "9653965b9f18a949ede9d185c20aaf23f070b1652debbfa916789776c949bb49"
+      },
+      "directReviewReceipt": "docs/evidence/denko1-independent/20260401-q21-30-opus-review-part02.json",
+      "directReviewSha256": "6226557cbfffd012c733d4ea5641a4baefd7345656b66feb0cca8761d49157f1"
+    },
+    {
+      "number": 27,
+      "status": "clean-direct-pass",
+      "officialAnswer": "ニ",
+      "currentCandidateSha256": "b8fa59d7b671cab68a22ea207df97d30f054cc172e58b73296bd990e4823d55f",
+      "originalRowSha256": "6c741c459114843bab939583e4ac52397122d2e66b920ca6fb8c57a55a397dcf",
+      "figureSha256": {},
+      "directReviewReceipt": "docs/evidence/denko1-independent/20260401-q21-30-opus-review-part02.json",
+      "directReviewSha256": "6226557cbfffd012c733d4ea5641a4baefd7345656b66feb0cca8761d49157f1",
+      "lawReceipt": {
+        "path": "docs/evidence/denko1-law/20260401-q27.json",
+        "sha256": "401bbd9d46bf8e041d9c6a0e61083050de3d4ea27493873008012794810b0610"
+      }
+    },
+    {
+      "number": 28,
+      "status": "clean-direct-pass",
+      "officialAnswer": "イ",
+      "currentCandidateSha256": "59c4b5a4448919ec628d7b4c1e7a557a78d309b2b07480e02c26c5770602a5cb",
+      "originalRowSha256": "c94bce534ec8b3b10471162cf8ebaf584eb6524904879fdf0323c41c40db8cac",
+      "figureSha256": {},
+      "directReviewReceipt": "docs/evidence/denko1-independent/20260401-q21-30-opus-review-part02.json",
+      "directReviewSha256": "6226557cbfffd012c733d4ea5641a4baefd7345656b66feb0cca8761d49157f1",
+      "lawReceipt": {
+        "path": "docs/evidence/denko1-law/20260401-q28.json",
+        "sha256": "fe67878c6e0ed35387c4e70bb3c32e43ef7e6b407a5604a44ec606eb76c086ba"
+      }
+    },
+    {
+      "number": 29,
+      "status": "clean-direct-pass",
+      "officialAnswer": "イ",
+      "currentCandidateSha256": "7f5c734de4fc85e77b5632f09e5ef5eb585a100ebb131cd163585de03c84b79c",
+      "originalRowSha256": "0723ff70f4035f0e1d94d4e98c99ac90bf292bd377503567de26f6f8d13063f8",
+      "figureSha256": {},
+      "directReviewReceipt": "docs/evidence/denko1-independent/20260401-q21-30-opus-review-part02.json",
+      "directReviewSha256": "6226557cbfffd012c733d4ea5641a4baefd7345656b66feb0cca8761d49157f1",
+      "lawReceipt": {
+        "path": "docs/evidence/denko1-law/20260401-q29.json",
+        "sha256": "1337d846a3d77676b7c22d66acc83969db82bc9997d0213a5afaff7cdaf0e614"
+      }
+    },
+    {
+      "number": 30,
+      "status": "clean-direct-pass",
+      "officialAnswer": "ハ",
+      "currentCandidateSha256": "6fc2f04c0aec3e2699bd840407f0cb9f4fd65e012d630012c34b6ecb4db6bdec",
+      "originalRowSha256": "72cf628e7dcbfdc49d39a5d4f84a4196a014ad7e853cfb41230c1c38c5bae868",
+      "figureSha256": {
+        "public/images/denko1/2026-first/facility-plan.png": "8e17a9515926bc82c7afb6f6df4cb65eb076f74a7d9327dedf7a74c30cee55a5"
+      },
+      "directReviewReceipt": "docs/evidence/denko1-independent/20260401-q21-30-opus-review-part02.json",
+      "directReviewSha256": "6226557cbfffd012c733d4ea5641a4baefd7345656b66feb0cca8761d49157f1"
+    },
+    {
+      "number": 31,
+      "status": "clean-direct-pass",
+      "officialAnswer": "ニ",
+      "currentCandidateSha256": "a8022ebcf9f78cd3efc10021d9a921d0539fb8d61911e39be1675cce8f5e9157",
+      "originalRowSha256": "2269dab487b75e8fd31aba305064e4328273e6426dcbe5d49b46a6306277cca7",
+      "figureSha256": {
+        "public/images/denko1/2026-first/facility-plan.png": "8e17a9515926bc82c7afb6f6df4cb65eb076f74a7d9327dedf7a74c30cee55a5"
+      },
+      "directReviewReceipt": "docs/evidence/denko1-independent/20260401-q31-40-opus-review-part01.json",
+      "directReviewSha256": "1942b969cc7ae3b6a2c72b394de120d685b2827ad37c9b49dcfc0888d56c398c",
+      "lawReceipt": {
+        "path": "docs/evidence/denko1-law/20260401-q31.json",
+        "sha256": "b76a9df8bd9c5c929021e461da676284e77c18c4f4477aa7a95612a57c21e0d8"
+      }
+    },
+    {
+      "number": 32,
+      "status": "clean-direct-pass",
+      "officialAnswer": "ハ",
+      "currentCandidateSha256": "c483e8eb720995d62774a19f744adc3e226a96ea17343d071935bf122916b158",
+      "originalRowSha256": "f68991a83c96c794b08a555c3f28bb80a808b0c42ecab6c81f26975f01b2fdbe",
+      "figureSha256": {
+        "public/images/denko1/2026-first/facility-plan.png": "8e17a9515926bc82c7afb6f6df4cb65eb076f74a7d9327dedf7a74c30cee55a5"
+      },
+      "directReviewReceipt": "docs/evidence/denko1-independent/20260401-q31-40-opus-review-part01.json",
+      "directReviewSha256": "1942b969cc7ae3b6a2c72b394de120d685b2827ad37c9b49dcfc0888d56c398c",
+      "lawReceipt": {
+        "path": "docs/evidence/denko1-law/20260401-q32.json",
+        "sha256": "bcf503d73d320681e3bbe59cabd3ff6f519d9671c7c04e512c69fc121a4cd5de"
+      }
+    },
+    {
+      "number": 33,
+      "status": "clean-direct-pass",
+      "officialAnswer": "ロ",
+      "currentCandidateSha256": "15123bbe314cdb390332f66f713dade48711e66ff90d33f7898aaed2724532b7",
+      "originalRowSha256": "fc9c89c464ff34e69d34e371265b4880afdaad3503069d1cc93c61af64b2b065",
+      "figureSha256": {
+        "public/images/denko1/2026-first/facility-plan.png": "8e17a9515926bc82c7afb6f6df4cb65eb076f74a7d9327dedf7a74c30cee55a5"
+      },
+      "directReviewReceipt": "docs/evidence/denko1-independent/20260401-q31-40-opus-review-part01.json",
+      "directReviewSha256": "1942b969cc7ae3b6a2c72b394de120d685b2827ad37c9b49dcfc0888d56c398c",
+      "lawReceipt": {
+        "path": "docs/evidence/denko1-law/20260401-q33.json",
+        "sha256": "62d00a16006dbac1ff05a038b0f8dce7c1252725e7e81d4a6af5499b97ed42d7"
+      }
+    },
+    {
+      "number": 34,
+      "status": "clean-direct-pass",
+      "officialAnswer": "イ",
+      "currentCandidateSha256": "bc3ef7262e9d05fc1dd4a80c6d81c821a177b3486522a3a7af76a57951932250",
+      "originalRowSha256": "76435bf6144f79f8f211357b7fae3cc7d1e0941ac8eed475f3f6fd7b0ff7e495",
+      "figureSha256": {
+        "public/images/denko1/2026-first/facility-plan.png": "8e17a9515926bc82c7afb6f6df4cb65eb076f74a7d9327dedf7a74c30cee55a5"
+      },
+      "directReviewReceipt": "docs/evidence/denko1-independent/20260401-q31-40-opus-review-part01.json",
+      "directReviewSha256": "1942b969cc7ae3b6a2c72b394de120d685b2827ad37c9b49dcfc0888d56c398c",
+      "lawReceipt": {
+        "path": "docs/evidence/denko1-law/20260401-q34.json",
+        "sha256": "d33430f73cad791ddb8d65353a2f6dfab6c0aaa52ed9bdb0b4f0d42857f70bd4"
+      }
+    },
+    {
+      "number": 35,
+      "status": "clean-direct-pass",
+      "officialAnswer": "ニ",
+      "currentCandidateSha256": "ebe223228d200b1bd8ed769cf755dab4e0957ad9f338d76bd3a8e9232a00f40b",
+      "originalRowSha256": "e8c8de66d63c2e1fea2f68d2038cf3df22a76589b60a6541bc606f0330f91bb2",
+      "figureSha256": {},
+      "directReviewReceipt": "docs/evidence/denko1-independent/20260401-q31-40-opus-review-part01.json",
+      "directReviewSha256": "1942b969cc7ae3b6a2c72b394de120d685b2827ad37c9b49dcfc0888d56c398c",
+      "lawReceipt": {
+        "path": "docs/evidence/denko1-law/20260401-q35.json",
+        "sha256": "e5440e27f300cdf5294b0490effa5e57646e6d45fdd0777a9f688392ce7bdcb1"
+      }
+    },
+    {
+      "number": 36,
+      "status": "clean-direct-pass",
+      "officialAnswer": "ロ",
+      "currentCandidateSha256": "cb7ab25221b77ecdb2f47c58e85cc9ad6d3ef983156e4b98cc0d7be87917a83a",
+      "originalRowSha256": "68b239e1520d493f9dba5b16790a9c70fcf238d5ee2f2f2f2142e0a700f0ea36",
+      "figureSha256": {},
+      "directReviewReceipt": "docs/evidence/denko1-independent/20260401-q31-40-opus-review-part02.json",
+      "directReviewSha256": "11da14e333cfd90be0d4f0f4863c248e06268bb424a373b972884a0fe8d374d2"
+    },
+    {
+      "number": 37,
+      "status": "clean-direct-pass",
+      "officialAnswer": "ロ",
+      "currentCandidateSha256": "f61b17dbf9dec7759850cbbc6b0c853a293123a6d15f3f9b7a64ad0749ddc693",
+      "originalRowSha256": "9e8f740699016efa69eab2e625f9d3660a78456223e724528c66be7f50b10d17",
+      "figureSha256": {},
+      "directReviewReceipt": "docs/evidence/denko1-independent/20260401-q31-40-opus-review-part02.json",
+      "directReviewSha256": "11da14e333cfd90be0d4f0f4863c248e06268bb424a373b972884a0fe8d374d2"
+    },
+    {
+      "number": 38,
+      "status": "clean-direct-pass",
+      "officialAnswer": "ロ",
+      "currentCandidateSha256": "acc19408c1e6dc8ee58723406eb13492688e6fb7212e49d02e63e986265096ff",
+      "originalRowSha256": "46ff39d386416cfeec0fceaec2032ab2c727bd4624ad6bcddbbdeac5a7d8eb75",
+      "figureSha256": {},
+      "directReviewReceipt": "docs/evidence/denko1-independent/20260401-q31-40-opus-review-part02.json",
+      "directReviewSha256": "11da14e333cfd90be0d4f0f4863c248e06268bb424a373b972884a0fe8d374d2",
+      "lawReceipt": {
+        "path": "docs/evidence/denko1-law/20260401-q38.json",
+        "sha256": "cf950f950dc8d2dbb737f05d2a5384460f3bdbfb5c466e1611e9e0332ef4f86e"
+      }
+    },
+    {
+      "number": 39,
+      "status": "clean-direct-pass",
+      "officialAnswer": "ハ",
+      "currentCandidateSha256": "e3c8fc17e62ce54c42220c7f22723df4ae4745a51d4cc0b2ad9a2c5e4970fb57",
+      "originalRowSha256": "92998b36f311c3b92dab39ef7169129cf8a44da8d6c04085891cd38a8526e157",
+      "figureSha256": {},
+      "directReviewReceipt": "docs/evidence/denko1-independent/20260401-q31-40-opus-review-part02.json",
+      "directReviewSha256": "11da14e333cfd90be0d4f0f4863c248e06268bb424a373b972884a0fe8d374d2",
+      "lawReceipt": {
+        "path": "docs/evidence/denko1-law/20260401-q39.json",
+        "sha256": "48a849d3bed1b975aed7679e42e469a71437233a20ebe30683137ee80021c6f4"
+      }
+    },
+    {
+      "number": 40,
+      "status": "clean-direct-pass",
+      "officialAnswer": "ニ",
+      "currentCandidateSha256": "256627d90d76796dc348af4523da9070838c134d40d5c4226aa502f548601925",
+      "originalRowSha256": "d88b59d81fa5f3a6b7d3b7dfba5c5b60bea88a303583ae89825e0453cb86673b",
+      "figureSha256": {},
+      "directReviewReceipt": "docs/evidence/denko1-independent/20260401-q31-40-opus-review-part02.json",
+      "directReviewSha256": "11da14e333cfd90be0d4f0f4863c248e06268bb424a373b972884a0fe8d374d2",
+      "lawReceipt": {
+        "path": "docs/evidence/denko1-law/20260401-q40.json",
+        "sha256": "66ca42765140771494bdcd90bb09ceb094a14c9235b6cc5902ca1276c9ab434b"
+      }
+    },
+    {
+      "number": 41,
+      "status": "clean-direct-pass",
+      "officialAnswer": "イ",
+      "currentCandidateSha256": "b89f3af1067d42346c7335f51517436fa6801cae6ce71e30ba31315ed7371a27",
+      "originalRowSha256": "bb7635923462126a350c8e5dfe9e7c401047a22128b17f3301d21af72d9b5644",
+      "figureSha256": {
+        "public/images/denko1/2026-first/single-line.png": "edf9a94244f6e0366aecf728f4666df608ba167a19674052d58a58e1cbc2a07d"
+      },
+      "directReviewReceipt": "docs/evidence/denko1-independent/20260401-q41-50-opus-review-part01.json",
+      "directReviewSha256": "58b10f97519d443a172bd449c488a9aaab39320d988942827194fa034e85c38d"
+    },
+    {
+      "number": 42,
+      "status": "clean-direct-pass",
+      "officialAnswer": "ロ",
+      "currentCandidateSha256": "f11e6af41bbdd0b32f57c73ce20f51e31abdd770498244149f60665653d780a0",
+      "originalRowSha256": "6dc0f71054c75d350aa35fea50e983946e92ddb76f60c9660364ee5da23f47a5",
+      "figureSha256": {
+        "public/images/denko1/2026-first/single-line.png": "edf9a94244f6e0366aecf728f4666df608ba167a19674052d58a58e1cbc2a07d",
+        "public/images/denko1/2026-first/q42-i.png": "7ce22f9789bf40e28adba6a1a39569429039865a3b7e0aa7967d2b57fecb116b",
+        "public/images/denko1/2026-first/q42-ro.png": "a72e7639d36f33797655a3c187fe13a4e44f7cbf697b29e24b8c847e6917e5bb",
+        "public/images/denko1/2026-first/q42-ha.png": "0ee1b622c01b0b59463ef19c8209f37b1a27e827b276541330d25ed234a39cd6",
+        "public/images/denko1/2026-first/q42-ni.png": "ca3cb3aa071c51eb1051095664f2f2548bc8f16acdec508b7b48eb4e7faaf736"
+      },
+      "directReviewReceipt": "docs/evidence/denko1-independent/20260401-q41-50-opus-review-part01.json",
+      "directReviewSha256": "58b10f97519d443a172bd449c488a9aaab39320d988942827194fa034e85c38d"
+    },
+    {
+      "number": 43,
+      "status": "clean-direct-pass",
+      "officialAnswer": "イ",
+      "currentCandidateSha256": "47e28d58bbedab700d2a5d578487da3355930929ba8cea2f7b32d4b64f0b3c59",
+      "originalRowSha256": "c124a437e575d1c6f3c78e8dfbc56d7e4e3ce94ae589d12f46b3d9081acea61d",
+      "figureSha256": {
+        "public/images/denko1/2026-first/single-line.png": "edf9a94244f6e0366aecf728f4666df608ba167a19674052d58a58e1cbc2a07d"
+      },
+      "directReviewReceipt": "docs/evidence/denko1-independent/20260401-q41-50-opus-review-part01.json",
+      "directReviewSha256": "58b10f97519d443a172bd449c488a9aaab39320d988942827194fa034e85c38d"
+    },
+    {
+      "number": 44,
+      "status": "clean-direct-pass",
+      "officialAnswer": "ニ",
+      "currentCandidateSha256": "97a647a7826a608a5f93e4c7076eda728e3ba377615cb932f3df59c84c00939f",
+      "originalRowSha256": "96693d321f1615c9d9d4ba7f078fa082454c0bf880fb2c39127f4a119e62f646",
+      "figureSha256": {
+        "public/images/denko1/2026-first/single-line.png": "edf9a94244f6e0366aecf728f4666df608ba167a19674052d58a58e1cbc2a07d"
+      },
+      "directReviewReceipt": "docs/evidence/denko1-independent/20260401-q41-50-opus-review-part01.json",
+      "directReviewSha256": "58b10f97519d443a172bd449c488a9aaab39320d988942827194fa034e85c38d"
+    },
+    {
+      "number": 45,
+      "status": "clean-direct-pass",
+      "officialAnswer": "イ",
+      "currentCandidateSha256": "f3905a78dfb02c268f9c17501f40f59113af7cda660ae6df4c26d38ab4dda676",
+      "originalRowSha256": "df8db84376d7ae3369a680d757196053550371535830caf546124ca7aae24407",
+      "figureSha256": {
+        "public/images/denko1/2026-first/single-line.png": "edf9a94244f6e0366aecf728f4666df608ba167a19674052d58a58e1cbc2a07d",
+        "public/images/denko1/2026-first/q45-i.png": "b3da496160e1409c708ab75ae17e7e593822c260bc667a5bf0a2f73cf984bab8",
+        "public/images/denko1/2026-first/q45-ro.png": "5be4542958652b7acee2c13a4da6d8cfb9a40db8bba90f950aaa98fd3fadeb78",
+        "public/images/denko1/2026-first/q45-ha.png": "2787dcd0a6e8baebf043555117a9d2ed048f33b389b8730fa086dfabdd071138",
+        "public/images/denko1/2026-first/q45-ni.png": "dc5e01eafb1a1a212df4463d86be1c5bdf2bfcc4ac4125c9f3ade032173c21e0"
+      },
+      "directReviewReceipt": "docs/evidence/denko1-independent/20260401-q41-50-opus-review-part01.json",
+      "directReviewSha256": "58b10f97519d443a172bd449c488a9aaab39320d988942827194fa034e85c38d",
+      "lawReceipt": {
+        "path": "docs/evidence/denko1-law/20260401-q45.json",
+        "sha256": "d85110d8ab23a169c7618bd713fac302ddb05065206b292d4eb0a2d8ac9fa9c7"
+      }
+    },
+    {
+      "number": 46,
+      "status": "clean-direct-pass",
+      "officialAnswer": "ロ",
+      "currentCandidateSha256": "bb66fb436a5c3c4dc6f197cc2a19d7a4d559eb6ea6a5d1326e0ca3fe64a0bd8f",
+      "originalRowSha256": "f56aa4244ef2bb255abd83168bb9959391b9fa990de006396fca31a827203b1a",
+      "figureSha256": {
+        "public/images/denko1/2026-first/single-line.png": "edf9a94244f6e0366aecf728f4666df608ba167a19674052d58a58e1cbc2a07d",
+        "public/images/denko1/2026-first/q46-i.png": "fe07bcf483f8541ea8be2a53412e42a1125fb2647b5e128499cc82d4044fc016",
+        "public/images/denko1/2026-first/q46-ro.png": "bee4314613fa5bc2ae3f23562d15b7e3afe30e583f1188e3b5bde4b3f5b9ff07",
+        "public/images/denko1/2026-first/q46-ha.png": "053ce58caecc191533b29f4b679d71553aab60d12dde7d81a342d27b05c408e7",
+        "public/images/denko1/2026-first/q46-ni.png": "2090220b028bcc311c72386d38c1e2c59e45c397794ffd6dc1dc0173549d8b6b"
+      },
+      "directReviewReceipt": "docs/evidence/denko1-independent/20260401-q41-50-opus-review-part02.json",
+      "directReviewSha256": "92b885b8c0f5befdf330dc001cc591086f53ee632f39c612599286dae426c475"
+    },
+    {
+      "number": 47,
+      "status": "clean-direct-pass",
+      "officialAnswer": "ロ",
+      "currentCandidateSha256": "16cf1613e6ccf7eb975d2663daeb4002321e0d57558f49f5236fe85488e63e3b",
+      "originalRowSha256": "0c4ccfca787047831140496619219a9250ac1a553148818e749a57f2f9cb415c",
+      "figureSha256": {
+        "public/images/denko1/2026-first/single-line.png": "edf9a94244f6e0366aecf728f4666df608ba167a19674052d58a58e1cbc2a07d",
+        "public/images/denko1/2026-first/q47-i.png": "24c63b91056c65851c10823646e2fdd6bab9bcd2f41869bb66d0caf3007554a8",
+        "public/images/denko1/2026-first/q47-ro.png": "2079788b9b97c4c8d823e4239eb467c2730e51dc1cfe95b25a2eed1421654ce1",
+        "public/images/denko1/2026-first/q47-ha.png": "f0a74fbf1debaddb4984676bf9a0a81a882471bec19acddcf12d7675fe86c075",
+        "public/images/denko1/2026-first/q47-ni.png": "f20876b53fef03c7890e558043bb09b107bfc6b51c1afb46996e90acb92e734f"
+      },
+      "directReviewReceipt": "docs/evidence/denko1-independent/20260401-q41-50-opus-review-part02.json",
+      "directReviewSha256": "92b885b8c0f5befdf330dc001cc591086f53ee632f39c612599286dae426c475"
+    },
+    {
+      "number": 48,
+      "status": "clean-direct-pass",
+      "officialAnswer": "ロ",
+      "currentCandidateSha256": "600c46f1bd72d6945683213fee7472c3f42bd9b7a1c2cd8770276c519dd9dcf1",
+      "originalRowSha256": "94b38f640911dababee1673607ba862fbfcfe202836d7e3ed116819ec6f7c978",
+      "figureSha256": {
+        "public/images/denko1/2026-first/single-line.png": "edf9a94244f6e0366aecf728f4666df608ba167a19674052d58a58e1cbc2a07d",
+        "public/images/denko1/2026-first/q48-i.png": "786f37818b7b3278f2a2bd418d5b8b830d6001d9acb1ffccdbf35368479bb081",
+        "public/images/denko1/2026-first/q48-ro.png": "7e00c080387ff4d54ee9193653b9e9eb65dd33bc0f6cdad756da9315df5a82b8",
+        "public/images/denko1/2026-first/q48-ha.png": "9e12f7c85e408dcd1e63987667a0c8af2081651115bb6bd7281dd24808988883",
+        "public/images/denko1/2026-first/q48-ni.png": "1dfb5e0e25fa033c160c633be2273ae479c3e8702d0b5f5226c9142df9746a8a"
+      },
+      "directReviewReceipt": "docs/evidence/denko1-independent/20260401-q41-50-opus-review-part02.json",
+      "directReviewSha256": "92b885b8c0f5befdf330dc001cc591086f53ee632f39c612599286dae426c475",
+      "lawReceipt": {
+        "path": "docs/evidence/denko1-law/20260401-q48.json",
+        "sha256": "be5db4c8e9d6542994a34dc06cb4ab2a2a6ddaac3c398f197ff6c910835f6cf5"
+      }
+    },
+    {
+      "number": 49,
+      "status": "clean-direct-pass",
+      "officialAnswer": "イ",
+      "currentCandidateSha256": "fa7a3a136cd66549c8f9dde8015058c27cc96cc8b0c8dd6a09f1ac6b7a9556ab",
+      "originalRowSha256": "f57a4f09d1bd9cbbc18ddb7f25685462f79bbf3293d24feeef5ce24094ea36e2",
+      "figureSha256": {
+        "public/images/denko1/2026-first/single-line.png": "edf9a94244f6e0366aecf728f4666df608ba167a19674052d58a58e1cbc2a07d",
+        "public/images/denko1/2026-first/q49-i.png": "9ac4f226f059a4b2d6fcdf9d8a29cf352b747ce43b476b61fa27822c7ced003a",
+        "public/images/denko1/2026-first/q49-ro.png": "70ca617e0341dbc9fa8cebddcc7fde3e1fbe3f0b297ca363c6b35cfa426cab31",
+        "public/images/denko1/2026-first/q49-ha.png": "9a6209a0b11a546876707bf083785542df2d867b1b5f9346ffb285d95f5dd500",
+        "public/images/denko1/2026-first/q49-ni.png": "49776f4face0abab0bbe3c9ebf8f07e9ab16f68c52c5da902320e2916704c934"
+      },
+      "directReviewReceipt": "docs/evidence/denko1-independent/20260401-q41-50-opus-review-part02.json",
+      "directReviewSha256": "92b885b8c0f5befdf330dc001cc591086f53ee632f39c612599286dae426c475",
+      "lawReceipt": {
+        "path": "docs/evidence/denko1-law/20260401-q49.json",
+        "sha256": "4a9df61bc3c469f048809e12e1288bc9f69d54e7f9580493b196f144edba4f79"
+      }
+    },
+    {
+      "number": 50,
+      "status": "clean-direct-pass",
+      "officialAnswer": "ハ",
+      "currentCandidateSha256": "c3896625576ede7cd151a14b43d04a9bd430c42b69279a25ea006ed5dd045557",
+      "originalRowSha256": "b0be98a6458d6b720856561ef302f77447cd18f9e883c0298554a997cf6f849e",
+      "figureSha256": {
+        "public/images/denko1/2026-first/single-line.png": "edf9a94244f6e0366aecf728f4666df608ba167a19674052d58a58e1cbc2a07d"
+      },
+      "directReviewReceipt": "docs/evidence/denko1-independent/20260401-q41-50-opus-review-part02.json",
+      "directReviewSha256": "92b885b8c0f5befdf330dc001cc591086f53ee632f39c612599286dae426c475"
+    }
+  ]
+}

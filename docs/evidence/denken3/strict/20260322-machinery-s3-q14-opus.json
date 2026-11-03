@@ -1,0 +1,72 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20260322",
+  "subject": "machinery",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 3141,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 15135,
+      "webSearchRequests": 0,
+      "costUSD": 0.1841638,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 1543,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "0809b33d316f08940781076e6980c8a55aecb925d86aa0fd8cce30c01e128e05",
+  "inputRequestSha256": "56f0ae587d9207c339293655d54a63db5b944e2189f31a69648f2b55be7ea813",
+  "inputHashes": {
+    "candidateSha256": {
+      "q14": "68775aea47c7ed6a6fea18725d49a39737ebb7dce54ee2c0fb11037eea14370c"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20260322/machinery/p17.png": "c472ba6bc4468c06d1df8935197e3cf488b38ed9828e8130175ecc371e856db4"
+    },
+    "figureSha256": {
+      "public/images/denken3/20260322/machinery/20260322-machinery-q14-fig1.png": "86fe4a492344e7978a2b7453410b5aafa53a31582a02afad8ba64f3aabf777cd"
+    },
+    "sourceQuestionPdfSha256": "a89c7dc2b9a305f9db83f2f78195f0df8a0da5aeec6b8e66cfd40fb028d146fb",
+    "sourceAnswerPdfSha256": "cc2890296d06a4823df5697a78a1c01ddfd39f041c51f48c87984daa3a5707c6",
+    "officialAnswerUnitsSha256": "750989bea9cca378a8b76af6e3fda7861878ab9b9f2775221bb07cacc14e9837",
+    "referencePdfSha256": {},
+    "referencePageSha256": {},
+    "referenceJsonSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q14",
+      "questionNumber": 14,
+      "part": null,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "出典メタデータ: fiscalYear=2025（令和7年度）、term=lower（下期）、examDate=2026-03-22、subject=machinery、sourceQuestionPdfUrl=…/20260322_ch_third_q03.pdf、sourceAnswerPdfUrl=…/20260322_ch_third_a01.pdf、reviewedFromPage=[17]。いずれもmanifestと一致する。原図の下部にある印刷ノンブル「-14-」は冊子の頁番号で、PDF第17頁とは別物であり矛盾しない。",
+        "sourceAttribution「令和7年度下期第三種電気主任技術者試験 機械科目 問14」: 解答表の見出し「令和7年度 第三種電気主任技術者下期試験解答」および＜機械＞列と整合する。",
+        "問題文: 原図の「次のフローチャートに従って作成したプログラムを実行したとき，印字されるA，Bの値として，正しい組合せを次の(1)〜(5)のうちから一つ選べ。」と字句が一致する。",
+        "選択肢: 原図の表と全5肢のA・Bの値が一致する。(1) A=43, B=26、(2) A=51, B=47、(3) A=51, B=23、(4) A=98, B=47、(5) A=98, B=95。",
+        "公式正答: 解答表＜機械＞問14の解答は3、配点は5。候補のofficialAnswer=\"3\"、scoringPoints=5、およびmanifestの公式正答単位{question:14, part:null, answer:\"3\", points:5}と一致する。",
+        "独立トレース: 初期値はA=10, B=2。A=12（≦40, YES）→B=5、A=17（YES）→B=11、A=28（YES）→B=23、A=51（NO）→印字。印字値A=51, B=23は(3)で、公式正答と一致する。総合解説の各ステップの数値と分岐判定もすべて正しい。",
+        "総合解説の要点: 「NOのときB←2B+1は実行されない」「A更新直後に判定する」という処理順序の説明は、図の接続（A←A+B→判断→YESのみB更新）と一致する。",
+        "肢(1)の理由: Aの推移12→17→28→51、Bの推移2→5→11→23は正しい。「更新後のBは常に奇数」（2B+1は奇数）も正しい。初回判定は必ずYESなので、印字されるBは必ず更新後の値となり、偶数の26は不可能という論理が成立する。",
+        "肢(2)の理由: 47=2×23+1であり、NO分岐後にBを更新した誤トレースの値だという説明は正しい。",
+        "肢(4)の理由: 98=51+47、47はA=51到達後にBを更新した値だという説明は正しい。",
+        "肢(5)の理由: 47=2×23+1、98=51+47、95=2×47+1。NOでもループを継続・更新した誤トレースの値だという説明は数値的・因果的に正しい。",
+        "figureDescription: 開始→[A←10/B←2]→[A←A+B]→◇A≦40（下YES、右NO）→[B←2B+1]という順序を記述している。ループ線（下→左→左端を上昇→右向き矢印でA←A+B直前に合流）と、NO経路（右→下→書類記号「A,Bを印字」→下→左→下→終了）も記述している。これらの接続・向き・全ラベルは原図と一致する。",
+        "公開候補図fig1: 原図のフローチャート部分を切り出したもので、開始・A←10・B←2・A←A+B・A≦40・YES・NO・B←2B+1・A,Bを印字・終了の全ラベルを含む。ループの右向き矢印、左端の帰還線、NO経路、書類記号の波形下辺も欠けずに含まれ、この図だけで解答に必要な処理を追える。選択肢表は図に含まれないが、choicesのテキストに完全に収録されているため問題ない。",
+        "officialReferenceUrlsは空で、独立主張の外部確認事項はない。uncertaintyは「なし」、needsReview=falseで、監査結果と矛盾しない。"
+      ]
+    }
+  ]
+}

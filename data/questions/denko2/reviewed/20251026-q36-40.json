@@ -1,0 +1,132 @@
+[
+  {
+    "number": 36,
+    "question": "⑥で示す図記号の名称は。",
+    "choices": {
+      "イ": "ジャンクションボックス",
+      "ロ": "ジョイントボックス",
+      "ハ": "VVF用ジョイントボックス",
+      "ニ": "プルボックス"
+    },
+    "officialAnswer": "ハ",
+    "explanation": "⑥の斜線入り円形記号はVVF用ジョイントボックス。『VVF用』という文字の傍記ではなく、記号の形で判別する。",
+    "choiceExplanations": {
+      "イ": "ジャンクションボックスはフロアダクト等に用いる箱で、⑥のVVF用ジョイントボックスの斜線入り円形記号を指す名称ではない。",
+      "ロ": "通常のジョイントボックスは□で、別の2階平面図の⑫が例。1階平面図の⑥は斜線入り円形なのでVVF用。",
+      "ハ": "正解。図の斜線入り円形はVVF用ジョイントボックスを示す。",
+      "ニ": "プルボックスは□に×を入れる記号で、⑥の斜線入り円形とは形が異なる。"
+    },
+    "diagramDescription": "⑥は1階の階段下、和室との境付近にある斜線入りの円形図記号を指す。",
+    "uncertainty": "",
+    "reviewedFromCrop": "data/raw_pdfs/denko2/review/20251026/q36.png",
+    "imageUrls": [
+      "/images/denko2/2025-second/wiring-first-floor.png"
+    ],
+    "officialReferenceUrls": [
+      "https://www.mlit.go.jp/gobuild/content/001879783.pdf"
+    ]
+  },
+  {
+    "number": 37,
+    "question": "⑦で示す部分の最少電線本数(心線数)は。",
+    "choices": {
+      "イ": "2",
+      "ロ": "3",
+      "ハ": "4",
+      "ニ": "5"
+    },
+    "officialAnswer": "ロ",
+    "explanation": "⑦では2個の点滅器に、非接地側の共通線1本と各点滅器から戻る帰り線2本が必要。合計3本となる。",
+    "choiceExplanations": {
+      "イ": "2本では共通線1本と帰り線1本までで、2個の点滅器それぞれの帰り線を確保できない。",
+      "ロ": "正解。共通線1本＋1個目の帰り線1本＋2個目の帰り線1本＝3本。",
+      "ハ": "4本なら配線できても、必要な共通線1本と帰り線2本の合計3本より多く、最少本数ではない。",
+      "ニ": "5本は必要な3本を2本上回り、最少本数ではない。"
+    },
+    "diagramDescription": "2階洋室の⑦はVVF用ジョイントボックス⑪から黒いひし形の点滅器2個へ至る区間を指す。",
+    "uncertainty": "",
+    "reviewedFromCrop": "data/raw_pdfs/denko2/review/20251026/q37.png",
+    "imageUrls": [
+      "/images/denko2/2025-second/wiring-second-floor.png"
+    ]
+  },
+  {
+    "number": 38,
+    "question": "⑧で示す図記号の名称は。",
+    "choices": {
+      "イ": "一般形調光器",
+      "ロ": "ワイド形調光器",
+      "ハ": "一般形点滅器",
+      "ニ": "ワイドハンドル形点滅器"
+    },
+    "officialAnswer": "ニ",
+    "explanation": "⑧は黒塗りのひし形◆で、ワイドハンドル形点滅器を示す。一般形点滅器の●や、矢印が付く調光器とは形が異なる。",
+    "choiceExplanations": {
+      "イ": "一般形調光器は調光を示す斜め矢印が付く。⑧は矢印のない◆なので違う。",
+      "ロ": "ワイド形調光器なら調光の矢印が必要。⑧の◆には矢印がない。",
+      "ハ": "一般形点滅器は●で示し、⑧の◆はワイドハンドル形。",
+      "ニ": "正解。矢印のない黒塗りの◆はワイドハンドル形点滅器。"
+    },
+    "diagramDescription": "2階の⑧は傍記ハのある黒塗りのひし形◆を指し、斜め矢印は付かない。",
+    "uncertainty": "",
+    "reviewedFromCrop": "data/raw_pdfs/denko2/review/20251026/q38.png",
+    "imageUrls": [
+      "/images/denko2/2025-second/wiring-second-floor.png"
+    ]
+  },
+  {
+    "number": 39,
+    "question": "⑨で示す部分の電路と大地間の絶縁抵抗として,許容される最小値［MΩ］は。",
+    "choices": {
+      "イ": "0.1",
+      "ロ": "0.2",
+      "ハ": "0.3",
+      "ニ": "0.4"
+    },
+    "officialAnswer": "イ",
+    "explanation": "⑨の使用電圧は200Vでも、単相3線式100/200Vの中性線を接地するため対地電圧は100V。電技省令第58条の『対地電圧150V以下』に該当し、絶縁抵抗の最小値は0.1MΩ。",
+    "choiceExplanations": {
+      "イ": "正解。単相3線式200V回路の対地電圧は接地中性線に対して100Vで、150V以下の区分は0.1MΩ。",
+      "ロ": "0.2MΩは使用電圧300V以下かつ対地電圧150V超の区分。⑨は使用電圧200Vでも対地電圧は100V。",
+      "ハ": "0.3MΩは電技省令第58条の基準値として設定されていない。",
+      "ニ": "0.4MΩは使用電圧300V超の低圧電路の区分。⑨の使用電圧は200V。"
+    },
+    "diagramDescription": "⑨は電灯分電盤から分岐するルームエアコン用200V・2P20A回路を指す。電源は1φ3W 100/200V。",
+    "uncertainty": "",
+    "reviewedFromCrop": "data/raw_pdfs/denko2/review/20251026/q39.png",
+    "imageUrls": [
+      "/images/denko2/2025-second/wiring-panel.png"
+    ],
+    "officialReferenceUrls": [
+      "https://laws.e-gov.go.jp/law/409M50000400052/",
+      "https://www.meti.go.jp/policy/safety_security/industrial_safety/sangyo/electric/files/20231226-2.pdf"
+    ]
+  },
+  {
+    "number": 40,
+    "question": "⑩で示す部分の接地工事の種類及びその接地抵抗の許容される最大値［Ω］の組合せとして,正しいものは。",
+    "choices": {
+      "イ": "C種接地工事　10Ω",
+      "ロ": "C種接地工事　50Ω",
+      "ハ": "D種接地工事　100Ω",
+      "ニ": "D種接地工事　500Ω"
+    },
+    "officialAnswer": "ニ",
+    "explanation": "⑩は電灯分電盤の接地端子から大地へ向かう接地線。使用電圧が100/200Vで300V以下の低圧設備なのでD種接地に該当する。主幹BEは30mAの漏電遮断器で、共通注意3に動作時間0.1秒以内と明記されるため、電技解釈第17条の0.5秒以内遮断条件を満たし、上限は500Ω。",
+    "choiceExplanations": {
+      "イ": "C種接地は300V超の低圧設備に用いる。⑩の回路の使用電圧は100/200Vで300V以下なのでD種。",
+      "ロ": "⑩はD種接地対象でC種ではない。C種50Ωという組合せも第17条の基準にない。",
+      "ハ": "D種という種類は合うが、100Ωは通常の上限。共通注意3の0.1秒以内遮断は緩和条件の0.5秒以内を満たし、500Ωまで認められる。",
+      "ニ": "正解。D種接地で、共通注意3の0.1秒以内動作の漏電遮断器があるため、接地抵抗は500Ω以下。"
+    },
+    "diagramDescription": "⑩は電灯分電盤結線図の接地端子記号から大地へ向かう接地線を指す。主幹はBE 3P 50AF 50A 30mA。共通注意3は漏電遮断器の動作時間を0.1秒以内と指定する。",
+    "uncertainty": "",
+    "reviewedFromCrop": "data/raw_pdfs/denko2/review/20251026/q40.png",
+    "imageUrls": [
+      "/images/denko2/2025-second/wiring-panel.png"
+    ],
+    "officialReferenceUrls": [
+      "https://www.meti.go.jp/policy/safety_security/industrial_safety/sangyo/electric/files/20231226-2.pdf"
+    ]
+  }
+]

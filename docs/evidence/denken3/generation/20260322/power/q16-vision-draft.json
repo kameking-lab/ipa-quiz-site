@@ -1,0 +1,123 @@
+{
+  "questionNumber": 16,
+  "sharedContext": "三相3線式1回線の専用配電線がある。変電所の送り出し電圧が6 600 V，末端にある負荷の端子電圧が6 450 V，力率が遅れの70 %であるとき，次の(a)及び(b)の問に答えよ。\nただし，電線1線当たりの抵抗は0.5 Ω/km，リアクタンスは0.4 Ω/km，線路のこう長は5 kmとする。また，送電端電圧と受電端電圧との相差角は小さいものとする。",
+  "units": [
+    {
+      "part": "a",
+      "question": "三相3線式1回線の専用配電線がある。変電所の送り出し電圧が6 600 V，末端にある負荷の端子電圧が6 450 V，力率が遅れの70 %であるとき，次の(a)及び(b)の問に答えよ。\nただし，電線1線当たりの抵抗は0.5 Ω/km，リアクタンスは0.4 Ω/km，線路のこう長は5 kmとする。また，送電端電圧と受電端電圧との相差角は小さいものとする。\n\n(a) この負荷に供給される電力 W₁ の値[kW]として，最も近いものを次の(1)〜(5)のうちから一つ選べ。",
+      "choices": {
+        "1": "369",
+        "2": "180",
+        "3": "123",
+        "4": "213",
+        "5": "240"
+      },
+      "officialAnswer": "4",
+      "explanation": "1線当たりの線路定数: R = 0.5 × 5 = 2.5 Ω，X = 0.4 × 5 = 2.0 Ω。\n力率 cosθ = 0.7（遅れ）より sinθ = √(1 − 0.7²) = √0.51 ≈ 0.714。\n相差角が小さいので，三相線路の電圧降下の近似式 ΔV = Vs − Vr ≈ √3·I·(R cosθ + X sinθ) を用いる。\nΔV = 6 600 − 6 450 = 150 V\nR cosθ + X sinθ = 2.5 × 0.7 + 2.0 × 0.714 = 1.75 + 1.428 ≈ 3.178 Ω\nI = 150 ÷ (√3 × 3.178) ≈ 27.25 A\n負荷に供給される電力（受電端電力）:\nW₁ = √3·Vr·I·cosθ = √3 × 6 450 × 27.25 × 0.7 ≈ 213.1 × 10³ W ≈ 213 kW\nよって最も近いのは (4) 213。",
+      "choiceExplanations": {
+        "1": "誤り。電圧降下の式の√3を落として ΔV = I(R cosθ + X sinθ) とすると，I = 150 ÷ 3.178 ≈ 47.2 A と過大になり，W = √3 × 6 450 × 47.2 × 0.7 ≈ 369 kW となる。三相線路の線間電圧の降下は √3·I·(R cosθ + X sinθ) であり，正しくは約213 kW。",
+        "2": "誤り。正しい計算値は約213 kWで，180 kWとは一致しない。この値を与える典型的な計算誤りは検算では特定できない。",
+        "3": "誤り。電力の式の√3を落として W = Vr·I·cosθ = 6 450 × 27.25 × 0.7 ≈ 123 kW とした値である。三相電力は √3·Vr·I·cosθ であり，正しくは約213 kW。",
+        "4": "正しい。ΔV ≈ √3·I·(R cosθ + X sinθ) から I ≈ 27.25 A を求め，W₁ = √3 × 6 450 × 27.25 × 0.7 ≈ 213 kW となる。",
+        "5": "誤り。正しい計算値は約213 kWで，240 kWとは一致しない。この値を与える典型的な計算誤りは検算では特定できない。"
+      },
+      "figureDescription": "図なし。本問は文章と数値のみで構成され，解答に図は不要。",
+      "officialReferenceUrls": [],
+      "uncertainty": "計算は問題文の「相差角は小さい」との条件に基づく電圧降下の近似式によるもので，厳密解とはわずかに異なり得るが，選択肢の判別には影響しない。(2)180 および (5)240 について，これらの値を与える典型的な計算誤りは特定できていない。",
+      "needsReview": true,
+      "sourceQuestionPdfUrl": "https://www.shiken.or.jp/chief/upload/20260322_ch_third_q02.pdf",
+      "sourceAnswerPdfUrl": "https://www.shiken.or.jp/chief/upload/20260322_ch_third_a01.pdf",
+      "reviewedFromPage": [
+        19
+      ]
+    },
+    {
+      "part": "b",
+      "question": "三相3線式1回線の専用配電線がある。変電所の送り出し電圧が6 600 V，末端にある負荷の端子電圧が6 450 V，力率が遅れの70 %であるとき，次の(a)及び(b)の問に答えよ。\nただし，電線1線当たりの抵抗は0.5 Ω/km，リアクタンスは0.4 Ω/km，線路のこう長は5 kmとする。また，送電端電圧と受電端電圧との相差角は小さいものとする。\n\n(b) 負荷が遅れ力率80 %，W₂[kW]に変化したが線路損失は変わらなかった。W₂の値[kW]として，最も近いものを次の(1)〜(5)のうちから一つ選べ。",
+      "choices": {
+        "1": "141",
+        "2": "243",
+        "3": "274",
+        "4": "415",
+        "5": "334"
+      },
+      "officialAnswer": "2",
+      "explanation": "線路損失は Pₗ = 3I²R で，R は変わらないので，線路損失が変わらなければ線電流 I も変わらない。よって I ≈ 27.25 A（(a)で求めた値）。\n受電端電圧を6 450 Vとすると，\nW₂ = √3·Vr·I·cosθ₂ = √3 × 6 450 × 27.25 × 0.8 ≈ 243.5 × 10³ W ≈ 243 kW\n（電圧と電流が同じなので W₂ = W₁ × 0.8 ÷ 0.7 ≈ 213.1 × 1.143 ≈ 243.5 kW としても同じ。）\n確認: 力率0.8では sinθ₂ = 0.6，R cosθ₂ + X sinθ₂ = 2.5 × 0.8 + 2.0 × 0.6 = 3.2 Ω，ΔV ≈ √3 × 27.25 × 3.2 ≈ 151 V。送り出し電圧6 600 Vのままなら受電端電圧は約6 449 Vで，W₂ ≈ 243.5 kW と結果はほぼ変わらない。\nよって最も近いのは (2) 243。",
+      "choiceExplanations": {
+        "1": "誤り。電力の式の√3を落として W = Vr·I·cosθ₂ = 6 450 × 27.25 × 0.8 ≈ 141 kW とした値である。三相電力は √3·Vr·I·cosθ₂ であり，正しくは約243 kW。",
+        "2": "正しい。線路損失一定より電流 I ≈ 27.25 A が不変で，W₂ = √3 × 6 450 × 27.25 × 0.8 ≈ 243 kW となる。",
+        "3": "誤り。正しい計算値は約243 kWで，274 kWとは一致しない。この値を与える典型的な計算誤りは検算では特定できない。",
+        "4": "誤り。正しい計算値は約243 kWで，415 kWとは一致しない。電圧降下の式の√3を落とした電流を用いる計算では，(a)の I ≈ 47.2 A を流用すると約422 kW，力率0.8で I = 150 ÷ 3.2 ≈ 46.9 A と求め直すと約419 kW となり近い値にはなるが，いずれも415 kWには一致せず，この値を与える計算誤りは特定できない。",
+        "5": "誤り。正しい計算値は約243 kWで，334 kWとは一致しない。この値を与える典型的な計算誤りは検算では特定できない。"
+      },
+      "figureDescription": "図なし。本問は文章と数値のみで構成され，解答に図は不要。",
+      "officialReferenceUrls": [],
+      "uncertainty": "問題文は力率変化後の受電端電圧を明示していないため，解説では6 450 Vとして計算した。送り出し電圧6 600 V一定とした場合の受電端電圧は約6 449 Vで，W₂への影響は選択肢の判別に関係しない程度である。(3)274，(4)415，(5)334 について，これらの値を与える典型的な計算誤りは特定できていない。",
+      "needsReview": true,
+      "sourceQuestionPdfUrl": "https://www.shiken.or.jp/chief/upload/20260322_ch_third_q02.pdf",
+      "sourceAnswerPdfUrl": "https://www.shiken.or.jp/chief/upload/20260322_ch_third_a01.pdf",
+      "reviewedFromPage": [
+        19
+      ]
+    }
+  ],
+  "draftModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 5419,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 9337,
+      "webSearchRequests": 0,
+      "costUSD": 0.1833398,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 2924,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "466f341718990430f937264a55ba6304f5318076f6f74050e1cd5bcb21742cf2",
+  "inputRequestSha256": "2942d47d6e0b4676ad6e50c80131e7a676004e35bf7a569b2cf305c15d45e9e2",
+  "sourceQuestionPdfSha256": "9733341a0f293f068c9a665d5a9a90f1aabf3a2db5d79cd530643cdea241f7b7",
+  "sourceAnswerPdfSha256": "cc2890296d06a4823df5697a78a1c01ddfd39f041c51f48c87984daa3a5707c6",
+  "sourcePageImageSha256": {
+    "data/raw_pdfs/denken3/review/20260322/power/p19.png": "1b5808af30b6ddee6506d04b15094bf0118fa43924946d38decc4bed5f76f899"
+  },
+  "revisionHistory": [
+    {
+      "version": 1,
+      "model": "claude-opus-5-5",
+      "resolvedModel": "claude-opus-5-5",
+      "modelUsage": {
+        "claude-opus-5-5": {
+          "inputTokens": 2,
+          "outputTokens": 4905,
+          "cacheReadInputTokens": 1279,
+          "cacheCreationInputTokens": 14389,
+          "webSearchRequests": 0,
+          "costUSD": 0.2134758,
+          "contextWindow": 1000000,
+          "maxOutputTokens": 128000,
+          "thinkingTokens": 1987,
+          "canonicalModel": "claude-opus-5-5",
+          "provider": "firstParty",
+          "costBasis": "list"
+        }
+      },
+      "rawResponseSha256": "67cc25690bc4d0ff7e7220fc464bd6624250a35b755b60ff949d4ccd81c6a6a6",
+      "inputRequestSha256": "e4369e45cd9e9ec7f042aee2c06586eee0e955f1293d1e4903ff4eae71e14526",
+      "previousDraftSha256": "5ccd0df0a07e082f0a184f02b9fe4f6f791b250ac518682a3d44acfe7e47a411",
+      "previousDraft": "data/raw_pdfs/denken3/review/20260322/power/archive/q16-vision-draft-v1.json",
+      "answeredReviewSha256": "82f8801f1b01621e270e469425415963e524a5a3b491a65feea1b579e69331c6",
+      "answeredReview": "data/raw_pdfs/denken3/review/20260322/power/archive/q16-opus-review-v1.json",
+      "answeredStrictReceipt": "docs/evidence/denken3/strict/20260322-power-s1-q16a-q16b-opus.json",
+      "answeredStrictReceiptSha256": "5f33812b7e27342762cd958b6f137446bc7a062742c905b6334dbc3910a18461",
+      "figureSha256": {},
+      "referenceHashes": {},
+      "operatorNote": ""
+    }
+  ]
+}

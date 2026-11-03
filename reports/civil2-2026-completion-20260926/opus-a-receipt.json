@@ -1,0 +1,57 @@
+{
+  "startedAt": "2026-09-25T15:14:17.810Z",
+  "finishedAt": "2026-09-25T15:14:48.741Z",
+  "requestedModel": "claude-opus-5-5",
+  "provider": "firstParty",
+  "exitCode": 0,
+  "isError": false,
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 2521,
+      "cacheReadInputTokens": 128370,
+      "cacheCreationInputTokens": 14228,
+      "webSearchRequests": 0,
+      "costUSD": 0.18992599999999998,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 628,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "correctModel": true,
+  "stderr": "",
+  "questionNumbers": [
+    1,
+    2,
+    3,
+    4,
+    5
+  ],
+  "statuses": [
+    [
+      1,
+      "PASS"
+    ],
+    [
+      2,
+      "PASS"
+    ],
+    [
+      3,
+      "PASS"
+    ],
+    [
+      4,
+      "PASS"
+    ],
+    [
+      5,
+      "PASS"
+    ]
+  ],
+  "globalIssues": [],
+  "parsedFromMarkdownFence": true
+}

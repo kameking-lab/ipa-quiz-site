@@ -1,0 +1,72 @@
+{
+  "schemaVersion": 1,
+  "reviewModel": "claude-opus-5-5",
+  "inputHashes": {
+    "reviewedSha256": "e5405c83fda67a61eac5ee2c433dc9f57ea389f521c2958e24398b08bd28b595",
+    "rowSha256": {
+      "11": "cb160799f1d4ba848ad3945ae628e105eaf0de0756bdc6b0d3bf729825d7e064",
+      "12": "b1cb420488b09248068e05369da9c2d36a5b43195df4d1a68c9bd2bd3c325f91",
+      "13": "d625c7ab7cecd664225765f2bf011db797ea4a7dc6b8524e5764f1cbd7ef29fe",
+      "14": "20fe3194d8ffeab319a549029e49076061753b9aab0a1e30215eccfa4fd3b754",
+      "15": "7f27799f3c4098c0b45326ef80a08df46d97cfe5a33db25ef8843cf5380f17e5"
+    }
+  },
+  "assessment": [
+    {
+      "number": 11,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "visualIssues": [],
+      "lawIssues": []
+    },
+    {
+      "number": 12,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "visualIssues": [],
+      "lawIssues": []
+    },
+    {
+      "number": 13,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "visualIssues": [],
+      "lawIssues": []
+    },
+    {
+      "number": 14,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "visualIssues": [],
+      "lawIssues": []
+    },
+    {
+      "number": 15,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [
+        "総合解説の「電気用品安全法の対象となる一般的な配線用遮断器も同じ技術基準の値によることとなる」は誤りで、根拠もない。解釈第33条第3項は電気用品安全法の適用を受ける配線用遮断器を適用対象から明示的に除いている。これらは電気用品安全法側の技術基準（電気用品の技術上の基準）で規律され、定格電流30A以下で1.25倍電流60分以内という同じ数値を別途定めているにすぎない。『同じ技術基準によることとなる』のではなく、『電気用品安全法の技術基準にも同じ値が定められている』と書き直すこと。",
+        "イ・ロの理由は、表にない数値だから誤りという消去法だけで書かれている。『定格電流30A以下の区分で1.25倍電流時の限度は60分と定められており、20分・30分はこれと一致しない』のように、正しい規定値と対比して説明すること。"
+      ],
+      "visualIssues": [],
+      "lawIssues": [
+        "解釈第33条第3項・第33-2表の適用範囲の説明が不正確。電気用品安全法適用品を除外する条文なのに、同法適用品も『同じ技術基準の値による』としており、法令の適用関係を取り違えている。電気用品安全法適用品の根拠は、電気用品の技術上の基準を定める省令の解釈（配線用遮断器の動作特性）として別に示す必要がある。",
+        "officialReferenceUrls の METI PDF（20231226-2.pdf）が、解釈第33条第33-2表を収録した版かどうかを確認すること。本監査では内容を照合できていないため、第33条の該当頁か条文番号を併記することが望ましい。"
+      ]
+    }
+  ]
+}

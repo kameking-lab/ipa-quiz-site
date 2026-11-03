@@ -1,0 +1,33 @@
+{
+  "reviewDate": "2026-10-11",
+  "reviewType": "Read-only recheck of corrected 118C30 and 118C80 author rows",
+  "priorReport": "C30-C80-local-source-check.json",
+  "decision": "LOCAL GO",
+  "remainingLocalBlockers": [],
+  "C30": {
+    "authorFile": "authors/c/118-c021-030.json",
+    "decision": "GO",
+    "closedFindings": [
+      "Explanation explicitly preserves maxillary +1 mm and mandibular +3 mm and no longer asserts mandibular space deficiency.",
+      "Choice a now addresses chin-cap indication rather than relying on a nonexistent mandibular space shortage.",
+      "All five Japanese tooth-notation expansions remain consistent with the previously inspected original crop; original image remains authoritative."
+    ],
+    "officialAnswer": "E"
+  },
+  "C80": {
+    "authorFile": "authors/c/118-c071-080.json",
+    "decision": "GO as an explicitly limited, source-backed explanation",
+    "closedFindings": [
+      "The explanation and choice a now expressly reject making extraction decisions from grade-2 mobility alone.",
+      "The extraction answer is attributed to this examination's official E rather than claimed as a rule for all mobile primary teeth.",
+      "The text distinguishes a possible oblique root-region radiolucency from a definite fracture-level diagnosis.",
+      "The promise that extraction avoids injury to the permanent successor has been removed.",
+      "The author records the IADT 2020 primary source used for the treatment distinctions."
+    ],
+    "acceptanceScope": "All five choices are addressed with the evidentiary limits stated. This is acceptable for publication as a cautious explanation of the official case answer and the relevant general distinctions. It is not acceptance of a definitive radiographic fracture diagnosis or a fully established case-specific mechanism excluding every alternative treatment.",
+    "retainedUncertainty": "Exact root-fracture level and full clinical extraction indication remain unconfirmed by this reviewer and are correctly not asserted in the corrected text.",
+    "primaryReference": "https://onlinelibrary.wiley.com/doi/10.1111/edt.12576",
+    "officialAnswer": "E"
+  },
+  "limits": "This local GO closes the two content-review findings only. It does not approve the unpublished corpus, runtime candidate commit, publication rights, merge, or deployment."
+}

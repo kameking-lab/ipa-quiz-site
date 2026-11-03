@@ -1,0 +1,60 @@
+{
+  "reviewModel": "claude-opus-5-5",
+  "requestedModel": "claude-opus-5-5",
+  "canonicalModel": "claude-opus-5-5",
+  "provider": "firstParty",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 3914,
+      "cacheReadInputTokens": 139443,
+      "cacheCreationInputTokens": 17007,
+      "webSearchRequests": 0,
+      "costUSD": 0.24223260000000002,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 3048,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "paperId": "emkohyo-EM20261802",
+  "ids": [
+    "emkohyo-EM20261802-q19"
+  ],
+  "figureSha256": {
+    "emkohyo-EM20261802-q19": {}
+  },
+  "officialRowImageSha256": {
+    "emkohyo-EM20261802-q19": {
+      "/exam-library/emkohyo-EM20261802/q19-p15-0.webp": "36edfa4eb25906407d40cec49ae1f30860ecdd3edfbda7c8d84b8593ef581573"
+    }
+  },
+  "officialPageImageSha256": {},
+  "governmentSourceImageSha256": {},
+  "candidateSha256": {
+    "emkohyo-EM20261802-q19": "9f9ab8712357b5af9a44482060867dd9c2e0e079b16f3f515663755f2ef51c39"
+  },
+  "sourcePackPath": "docs/evidence/emkohyo-choice-sources/emkohyo-EM20261802-q19-19.json",
+  "sourcePackSha256": "3680d0793eec395770a350f0c8bec4e01050e9ddc8a9affba35f47082cf1fb58",
+  "assessment": {
+    "emkohyo-EM20261802-q19": {
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "reasonIssues": [
+        "肢2の理由は、第2種の対象を「安衛令別表第6第3号の3、第9号、所定の第12号」と号番号だけで示している。各号がどんな場所かを書いていないため、硫化水素を製造・取り扱う屋内作業場がなぜどれにも当たらないのか、利用者には分からない。各号の中身を簡潔に書き足すべき。例：第3号の3は海水が滞留している、または滞留したことのある熱交換器・管・暗きょ等の内部。第9号はし尿・腐泥・汚水・パルプ液など腐敗・分解しやすい物質を入れてある、または入れたことのあるタンク・槽・管等の内部。第12号は厚生労働大臣が定める場所（酸素欠乏症と硫化水素中毒の両方のおそれがある場所に限る）。",
+        "肢2と肢1の理由にある「所定の第12号」という書き方はあいまいである。酸欠則第2条第8号の括弧書きどおり、「第12号の場所のうち、酸素欠乏症及び硫化水素中毒にかかるおそれのある場所として厚生労働大臣が定める場所」と書くべき。"
+      ],
+      "sourceIssues": [
+        "政府資料証拠のうち、安衛令別表第6からの抜粋は第1号の本文（ずい道を含む井戸等の定義と、ホ 腐泥層）だけである。第3号の3、第9号、第12号の本文は抜粋されていない。肢2の否定判断（硫化水素を製造・取り扱う屋内作業場はこれらの号に含まれない）を、提示された抜粋では直接確かめられない。該当する号の本文を抜粋に加えるべき。",
+        "第12号の場所は厚生労働大臣告示で定まる。しかし出典に告示がない。硫化水素を製造・取り扱う屋内作業場が第12号の大臣指定場所に当たらないことは、現在の出典では裏付けられない。"
+      ],
+      "needsExternalCheck": [
+        "安衛令別表第6第3号の3、第9号、第12号の現行本文を、厚生労働省の法令等データベースで確認すること。",
+        "令別表第6第12号と、酸欠則第2条第8号にいう厚生労働大臣が定める場所の告示について、有無と内容を確認すること。硫化水素を製造・取り扱う屋内作業場が含まれないことも確かめる。"
+      ]
+    }
+  }
+}

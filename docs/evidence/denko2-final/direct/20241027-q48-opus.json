@@ -1,0 +1,34 @@
+{
+  "schemaVersion": 1,
+  "receiptKind": "canonicalized-direct-review",
+  "paper": "20241027",
+  "reviewModel": "claude-opus-5-5",
+  "upstreamReviewReceipt": "docs/evidence/denko2-strict-20241027-q41-50/direct2-q46-47-48-49-50-opus.json",
+  "upstreamReviewSha256": "024f404b9618d30ea8a305a6375f5b63fec80d53956bd7d585dfe6e2097a93fb",
+  "candidateEquivalenceProof": "current per-question candidate hash equals a clean source-aware direct Opus input hash",
+  "inputHashes": {
+    "draftSha256": "f9ad10ebdb164aed9bd47715e32c8e6b425ac6fb19d8d3cad5f71da39afbffc1",
+    "rowSha256": {
+      "48": "88e91f93570239cfdd049e2031252513b593754c9da04594bff78ca6358e40cc"
+    },
+    "detailFigureSha256": {
+      "public/images/denko2/2024-second/wiring-diagram.png": "4b4d474a8fde227349db77620ddece4a673956783b85384b48d2247572adcc32",
+      "public/images/denko2/2024-second/q48-1.png": "7fca21f1925b5608946fd72420c39097515843dad8c26b39355e59a6cd672a0a"
+    },
+    "sharedFigureSha256": {},
+    "legalReceiptSha256": {}
+  },
+  "assessment": [
+    {
+      "number": 48,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "visualIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": "問題文を公式問題の問48設問行原図と照合した。『⑱で示す図記号の機器は。』で一致する。公式正答はイで、候補もイである。公式15頁の配線図では、⑱の引出線が1階工場の1.5kW電動機Mの右にあるコンデンサ図記号を指している。この図記号は、M上方の接続点（黒丸）から分岐して接続されている。同じ回路には開閉器Sと、四角枠のbが付いている。凡例では四角枠のa〜eが三相200V回路で、動力分電盤P-1結線図のbは『3P 30A → 1階工場』である。したがって三相200V回路という記述は正しい。写真は原図と公開用q48-1.pngの両方で照合した。イ＝上部に3個の突起（端子カバー）がある箱型で、ラベルに『⚠危険』『40μF』『三相200V』が読める。ロ＝円筒形の灰色本体に『15』ラベルがあり、下部から灰色コード2本が出ている。ハ＝型番『BBW-30CM』と『10A』の表示があり、上下に3極の端子ねじがある。ニ＝上部に橙・黒の部分を持つ本体と、下部の熱動継電器状の部分を組み合わせた機器。⑱の器具がイ（三相200V・40μFのコンデンサ）であることは、公式正答で直接裏付けられる。各肢の記述と正誤理由はいずれも写真と矛盾しない。"
+    }
+  ]
+}

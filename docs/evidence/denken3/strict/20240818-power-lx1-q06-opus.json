@@ -1,0 +1,64 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20240818",
+  "subject": "power",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 2724,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 14181,
+      "webSearchRequests": 0,
+      "costUSD": 0.1681918,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 1501,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "6a282664ae3dd2824048725c1aa53a6b2938f93a0991a0fe0ad4621f14c59c08",
+  "inputRequestSha256": "cbc2dc7d7544970ef9f228907ef41211d109d761d9ab17e261a330fc0596b53d",
+  "inputHashes": {
+    "candidateSha256": {
+      "q06": "6f7f5e6541f7ef2fa39835e4639665e4c0ee8bf4cce569e89f3835869de89c9b"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20240818/power/p09.png": "7a11c5556d7e3f98f645b27734ddd54e8d131b60d71436ece65c2b10fe4d0fd2"
+    },
+    "figureSha256": {},
+    "sourceQuestionPdfSha256": "0bc54a85819b9d9c80d1574c5b8c02a3c28976565d8c9068a3dd0344a3db5700",
+    "sourceAnswerPdfSha256": "f72ecbc3a477e64948388b69cf78cb931032c9f0c688639836c8d533a949cd0f",
+    "officialAnswerUnitsSha256": "5905f14edb964bff4a29354a2ea7558252b9eb42038fcd4144dc5a878e5c5ccc",
+    "referencePdfSha256": {},
+    "referencePageSha256": {},
+    "referenceJsonSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q06",
+      "questionNumber": 6,
+      "part": null,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "出典メタデータ: fiscalYear=2024, term=upper, examDate=2024-08-18, subject=power, sourceQuestionPdfUrl=20240818_ch_third_q02.pdf, sourceAnswerPdfUrl=20240818_ch_third_a01.pdf, reviewedFromPage=[9] はいずれも manifest と一致する。原図の印刷ノンブル『-6-』は冊子内頁で、PDF第9頁という manifest 指定と矛盾しない。sourceAttribution『令和6年度上期…電力科目 問6』も一致する。",
+        "問題文: 原図と照合した。導入文、本文（金属容器に遮断器・断路器・母線などを収納／絶縁耐力及び消弧能力の優れた(ア)を充填／充電部を支持するスペーサなどの絶縁物には主に(イ)）、特徴①〜④、設問文のすべてで語句欠落・改変はない。句読点の『，』→『、』とSF₆表記は整形の範囲内で、意味は変わらない。",
+        "選択肢: 原図表の5行を照合し、全肢一致を確認した。(1) SF₆ガス/エポキシ樹脂/低い/短い、(2) SF₆ガス/エポキシ樹脂/高い/長い、(3) 窒素ガス/磁器がいし/低い/長い、(4) 窒素ガス/エポキシ樹脂/高い/短い、(5) SF₆ガス/磁器がいし/高い/短い。",
+        "公式正答: 令和6年度上期解答表の電力 問6 は『2』。manifest固定単位 answer=\"2\"、候補 officialAnswer=\"2\" と一致する。",
+        "総合解説: 内容を検証した。(ア)は絶縁耐力・消弧能力に優れたSF₆ガス、(イ)のスペーサ絶縁物は主にエポキシ樹脂である。(ウ)は密閉構造で大気汚染物の影響を受けないため信頼性が高い。(エ)は内部事故時にガス回収・容器開放・点検清掃・再充填を要するため、復旧時間が気中絶縁設備より長い。いずれも正しく、結論(2)は公式正答と一致する。",
+        "各肢解説: 正誤判定を空欄ごとに検算し、全肢で正しいことを確認した。(1)はウ・エ誤。(3)はア・イ・ウ誤でエのみ正。(4)はア・エ誤でイ・ウ正。(5)はイ・エ誤でア・ウ正。(2)は全空欄正。窒素ガスについての記述は『GISの主要充填ガスとしては』と限定されており、従来型GISの一般論として妥当である。",
+        "図: 原図の唯一の図表は選択肢組合せ表で、choices に全行が転記済みである。回路図・構造図はなく、figureUrls=[] で解答理解に支障はない。figureDescription の記述は正確である。",
+        "参考資料: officialReferenceUrls=[] のため、外部の独立主張で検証を要するものはない。"
+      ]
+    }
+  ]
+}

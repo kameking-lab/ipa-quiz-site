@@ -1,7 +1,7 @@
-import { examLabelAt } from "@/lib/exam-naming/history";
+import { questionSourceEdition, questionSourceExam } from "@/lib/questions/source-label";
 import type { Question } from "@/lib/questions/types";
 import { sessionLabel } from "@/lib/seo/question-jsonld";
-import { formatYearSeason } from "@/lib/utils";
+import { questionNumberLabel } from "@/lib/questions/display";
 
 const DESCRIPTION_MAX = 158;
 
@@ -28,7 +28,7 @@ function truncate(s: string, n: number): string {
 
 /** Page <title> for a single question. */
 export function questionTitle(q: Question): string {
-  const core = `${formatYearSeason(q.year, q.season)} ${examLabelAt(q.exam, q.year, q.season)} ${sessionLabel(q.session)} 問${q.qNumber}`;
+  const core = `${questionSourceEdition(q)} ${questionSourceExam(q)} ${sessionLabel(q.session)} 問${questionNumberLabel(q)}`;
   const withCategory = `${core} ${q.category} 解説`;
   // Keep the category only while the whole title stays within budget; once it
   // would push the title past TITLE_MAX, drop it and fall back to the core.
@@ -46,11 +46,12 @@ export function questionTitle(q: Question): string {
  * reserved so it always survives truncation.
  */
 export function questionSnippet(q: Question): string {
-  const examStr = examLabelAt(q.exam, q.year, q.season);
-  const ys = formatYearSeason(q.year, q.season);
+  const examStr = questionSourceExam(q);
+  const ys = questionSourceEdition(q);
   const ss = sessionLabel(q.session);
-  const prefix = `【${examStr} ${ys} ${ss} 問${q.qNumber}・${q.category}】`;
-  const budget = DESCRIPTION_MAX - prefix.length - CTA.length - 1;
+  const prefix = `【${examStr} ${ys} ${ss} 問${questionNumberLabel(q)}・${q.category}】`;
+  const cta = q.explanationCoverage === "official-summary" ? "公式正答と一般解説を確認し、無料で演習できます。" : CTA;
+  const budget = DESCRIPTION_MAX - prefix.length - cta.length - 1;
   const qPreview = truncate(q.question.replace(/\s+/g, " "), Math.max(20, budget));
-  return truncate(`${prefix}${qPreview} ${CTA}`, DESCRIPTION_MAX);
+  return truncate(`${prefix}${qPreview} ${cta}`, DESCRIPTION_MAX);
 }

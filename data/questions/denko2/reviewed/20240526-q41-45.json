@@ -1,0 +1,168 @@
+[
+  {
+    "number": 41,
+    "question": "⑪で示すボックス内の接続をすべて差込形コネクタとする場合、使用する差込形コネクタの種類と最少個数の組合せで、正しいものは。",
+    "choices": {
+      "イ": "写真：橙色の2本用差込形コネクタを3個。",
+      "ロ": "写真：橙色の2本用を1個と水色の3本用を2個。",
+      "ハ": "写真：橙色の2本用を2個と水色の3本用を1個。",
+      "ニ": "写真：橙色の2本用を2個と黄緑色の4本用を1個。"
+    },
+    "officialAnswer": "ロ",
+    "explanation": "⑪のボックスには、左からVVF2.0の電源側、下へVVF2.0のコンセント側、上へVVF1.6のスイッチ『カ』、右へVVF1.6の照明『カ』の4本の2心ケーブルが入る。非接地側は電源・コンセント・スイッチ送りの3本、接地側は電源・コンセント・照明の3本、スイッチから照明への帰り線は2本を結ぶ。接続点は3本用2か所と2本用1か所。写真の水色は差込口3つ、橙色は2つなのでロ。",
+    "choiceExplanations": {
+      "イ": "橙色は2本用。3本を結ぶ非接地側と接地側の2か所を2本用では接続できない。",
+      "ロ": "3本接続2か所に水色3本用を2個、2本接続1か所に橙色2本用を1個使うため、⑪の3接続点と一致する。",
+      "ハ": "橙色2本用が2個、水色3本用が1個では、3本接続が必要な2か所のうち1か所が足りない。",
+      "ニ": "黄緑色4本用を使う4本接続点は⑪にない。3本接続点が2か所必要なのに3本用がない。"
+    },
+    "diagramDescription": "共通配線図⑪は店舗右上の斜線入りボックス。左はコンセント経由の電源側VVF2.0、下はコンセント側VVF2.0、上のスイッチ『カ』と右の照明『カ』にはVVF1.6の4方向。肢の写真では橙色に差込口2つ、水色に3つ、黄緑色に4つ。",
+    "uncertainty": "",
+    "reviewedFromCrop": "data/raw_pdfs/denko2/review/20240526/q41.png",
+    "imageUrls": [
+      "/images/denko2/2024-first/wiring-main.png",
+      "/images/denko2/2024-first/wiring-panels.png"
+    ],
+    "choiceImageUrls": {
+      "イ": "/images/denko2/2024-first/q41-i.png",
+      "ロ": "/images/denko2/2024-first/q41-ro.png",
+      "ハ": "/images/denko2/2024-first/q41-ha.png",
+      "ニ": "/images/denko2/2024-first/q41-ni.png"
+    },
+    "officialReferenceUrls": []
+  },
+  {
+    "number": 42,
+    "question": "⑫で示す電線管相互を接続するために使用されるものは。",
+    "choices": {
+      "イ": "写真：灰褐色の樹脂製で、両端に細かな凹凸、中央に太い帯がある直線継手。",
+      "ロ": "写真：銀色の金属製で、外周に複数の止めねじがある直線継手。",
+      "ハ": "写真：滑らかな灰色の樹脂製で、中央に段がある直線継手。",
+      "ニ": "写真：銀色の金属製で、片側内面にらせん状の溝、外周に止めねじがある継手。"
+    },
+    "officialAnswer": "ハ",
+    "explanation": "⑫の引出線は『600V CV 5.5-2C（VE28）』。国土交通省仕様書1.2.3はVEをJIS C 8430の硬質ポリ塩化ビニル電線管とし、地中管路について2.12.4(4)は管内に水が入りにくい接続を求める。同仕様書の硬質ビニル管相互の一般的な接続方法2.4.5(1)はTSカップリングに接着剤を塗布する方法。公式問題・正答でこの接続器具に示されるのは、滑らかな樹脂製直線継手のハ。",
+    "choiceExplanations": {
+      "イ": "両端に凹凸、中央に太い帯がある別形状の樹脂製継手で、滑らかな受口に接着剤を塗ってVE管を差し込むTSカップリングではない。",
+      "ロ": "金属製で複数の止めねじにより管を保持する構造で、VE管相互を接着する樹脂製TSカップリングではない。",
+      "ハ": "滑らかな樹脂製の受口へVE管を差し込み、接着剤で接続するTSカップリングの形状に一致する。",
+      "ニ": "金属製で片側内面にらせん溝、外周に止めねじを持つ形であり、VE管相互を接着する滑らかな樹脂製TSカップリングではない。"
+    },
+    "diagramDescription": "平面図下端の⑫は『600V CV 5.5-2C（VE28）』と傍記された管路を指す。4肢は、灰褐色で端部に凹凸がある樹脂製、複数の止めねじがある金属製、滑らかな灰色樹脂製、らせん溝と止めねじがある金属製の各直線継手。",
+    "uncertainty": "",
+    "reviewedFromCrop": "data/raw_pdfs/denko2/review/20240526/q42.png",
+    "imageUrls": [
+      "/images/denko2/2024-first/wiring-main.png",
+      "/images/denko2/2024-first/wiring-panels.png"
+    ],
+    "choiceImageUrls": {
+      "イ": "/images/denko2/2024-first/q42-i.png",
+      "ロ": "/images/denko2/2024-first/q42-ro.png",
+      "ハ": "/images/denko2/2024-first/q42-ha.png",
+      "ニ": "/images/denko2/2024-first/q42-ni.png"
+    },
+    "officialReferenceUrls": [
+      "https://www.mlit.go.jp/gobuild/content/001888825.pdf"
+    ]
+  },
+  {
+    "number": 43,
+    "question": "⑬で示す部分の配線工事で一般的に使用されることのない工具は。",
+    "choices": {
+      "イ": "写真：赤い柄の先に、銀色の調整部と歯付きのあごを持つ把持工具。",
+      "ロ": "写真：赤い柄の、はさみ形の切断工具。",
+      "ハ": "写真：円筒の内側に刃が並ぶ工具。",
+      "ニ": "写真：取っ手付きの青い本体にバーナーノズルを備えた加熱工具。"
+    },
+    "officialAnswer": "イ",
+    "explanation": "⑬の管路はVE28。国土交通省仕様書1.2.3によりVEは硬質ビニル管で、地中管路2.12.4(8)にも硬質ビニル管の敷設が規定される。同仕様書は硬質ビニル管工事の施工方法として、2.4.3(2)で切口の平滑化、同(5)で加熱曲げ、2.4.5(1)でTSカップリングと接着剤による管相互の接続を示す。したがって切断・面取り・加熱の工具は使用し得る一方、歯付きのあごで管やねじ接合部を回すイの把持工具はこの工事に一般的に用いず、公式正答もイ。",
+    "choiceExplanations": {
+      "イ": "歯付きのあごで管やねじ接合部を回す工具。VE管相互はTSカップリングと接着剤で接続するため一般には用いない。",
+      "ロ": "はさみ形の切断工具で、VE管を所要長さに切断する工程に用いる。切断後は切口を平滑にする。",
+      "ハ": "円筒内側の刃で切断後の管端を整える工具。仕様書が求める切口の平滑化に用いる。",
+      "ニ": "VE管を曲げるための加熱に用いる工具。仕様書も、管を加熱する場合は過熱や焼けこげを避けるよう定めている。"
+    },
+    "diagramDescription": "⑬は共通配線図下端に『（VE28）』と傍記された管路を指す。肢の写真は順に歯付きのあごを持つ把持工具、はさみ形切断工具、円筒内側に刃を持つ面取り工具、バーナーノズルを備えた加熱工具。",
+    "uncertainty": "",
+    "reviewedFromCrop": "data/raw_pdfs/denko2/review/20240526/q43.png",
+    "imageUrls": [
+      "/images/denko2/2024-first/wiring-main.png",
+      "/images/denko2/2024-first/wiring-panels.png"
+    ],
+    "choiceImageUrls": {
+      "イ": "/images/denko2/2024-first/q43-i.png",
+      "ロ": "/images/denko2/2024-first/q43-ro.png",
+      "ハ": "/images/denko2/2024-first/q43-ha.png",
+      "ニ": "/images/denko2/2024-first/q43-ni.png"
+    },
+    "officialReferenceUrls": [
+      "https://www.mlit.go.jp/gobuild/content/001888825.pdf"
+    ]
+  },
+  {
+    "number": 44,
+    "question": "⑭で示す回路の漏れ電流を測定できるものは。",
+    "choices": {
+      "イ": "写真：クランプ部とデジタル表示を持つ漏れ電流測定用クランプメータ。下部にストラップ。",
+      "ロ": "写真：ダイヤル切替式のアナログ回路計と赤黒のテストリード。",
+      "ハ": "写真：黒い細いペン型と黄色い本体の低圧検電器2点。",
+      "ニ": "写真：アナログ表示の絶縁抵抗計と赤黒の測定リード。"
+    },
+    "officialAnswer": "イ",
+    "explanation": "公式写真でイは漏れ電流測定用クランプメータ。⑭の回路の漏れ電流値を測定できる器具なのでイが正答。ロは回路計、ハは検電器、ニは絶縁抵抗計であり、それぞれ用途が異なる。",
+    "choiceExplanations": {
+      "イ": "漏れ電流値を測定するためのクランプメータなので正しい。",
+      "ロ": "回路計は電圧・抵抗等を端子で測る器具。運転中の三相3線を一括クランプして漏れ電流を測る器具ではない。",
+      "ハ": "検電器は活線の有無を調べる器具で、漏れ電流値を測定できない。",
+      "ニ": "絶縁抵抗計は停電状態で電路の絶縁抵抗を測る器具で、通電中の漏れ電流値を測る器具ではない。"
+    },
+    "diagramDescription": "動力分電盤の⑭はBE 3P30Aから空調機aへ向かう三相200V分岐。写真はクランプメータ、アナログ回路計、黒と黄の検電器2点、アナログ絶縁抵抗計。",
+    "uncertainty": "",
+    "reviewedFromCrop": "data/raw_pdfs/denko2/review/20240526/q44.png",
+    "imageUrls": [
+      "/images/denko2/2024-first/wiring-main.png",
+      "/images/denko2/2024-first/wiring-panels.png"
+    ],
+    "choiceImageUrls": {
+      "イ": "/images/denko2/2024-first/q44-i.png",
+      "ロ": "/images/denko2/2024-first/q44-ro.png",
+      "ハ": "/images/denko2/2024-first/q44-ha.png",
+      "ニ": "/images/denko2/2024-first/q44-ni.png"
+    },
+    "officialReferenceUrls": []
+  },
+  {
+    "number": 45,
+    "question": "⑮で示す図記号の部分に使用される機器は。",
+    "choices": {
+      "イ": "写真：銘板『小形リモコントランス』、一次100V・二次24V、ヒューズ容量2Aの機器。",
+      "ロ": "写真：時刻ダイヤルとON/OFF操作部を持つタイムスイッチ。",
+      "ハ": "写真：手動レバーとOFF表示があり、下部の主回路端子が2点のリモコンリレー。",
+      "ニ": "写真：手動レバーとOFF表示があり、下部の主回路端子が4点のリモコンリレー。"
+    },
+    "officialAnswer": "ニ",
+    "explanation": "⑮は電灯分電盤結線図の三角記号と傍記『6』で示されたリモコンリレー6個の位置。二重丸a〜fはすべて単相200V回路で、単相3線式の200V回路では両線が非接地側となるため2極を開閉する。写真ニは『主回路側』に2組の接点記号と4端子があり、写真ハは1組・2端子なので、ニが2極リモコンリレーに対応する。",
+    "choiceExplanations": {
+      "イ": "リモコントランスは100Vを24Vに変換し操作回路へ供給する器具。分電盤の⑦に対応し、⑮の三角記号のリレー本体ではない。",
+      "ロ": "時刻ダイヤルのあるタイムスイッチ。結線図では『TS』として別に示され、⑮のリモコンリレーと異なる。",
+      "ハ": "『主回路側』の接点記号が1組で端子が2点の1極リモコンリレー。⑮の単相200V回路を両極開閉する器具ではない。",
+      "ニ": "『主回路側』の接点記号が2組で端子が4点の2極リモコンリレー。⑮の単相200V回路に対応する。"
+    },
+    "diagramDescription": "電灯分電盤の⑮は描かれた三角印と傍記『6』（リモコンリレー6個）の位置。イは100V/24Vの小形リモコントランス、ロは時刻ダイヤル付き、ハは主回路端子2点、ニは主回路端子4点の器具写真。",
+    "uncertainty": "",
+    "reviewedFromCrop": "data/raw_pdfs/denko2/review/20240526/q45.png",
+    "imageUrls": [
+      "/images/denko2/2024-first/wiring-main.png",
+      "/images/denko2/2024-first/wiring-panels.png"
+    ],
+    "choiceImageUrls": {
+      "イ": "/images/denko2/2024-first/q45-i.png",
+      "ロ": "/images/denko2/2024-first/q45-ro.png",
+      "ハ": "/images/denko2/2024-first/q45-ha.png",
+      "ニ": "/images/denko2/2024-first/q45-ni.png"
+    },
+    "officialReferenceUrls": [],
+    "sourceQuestionPdfUrl": "https://www.shiken.or.jp/construction/upload/20240526_co_second_q01.pdf",
+    "sourceAnswerPdfUrl": "https://www.shiken.or.jp/construction/upload/20240526_co_second_a01.pdf"
+  }
+]

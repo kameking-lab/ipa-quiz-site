@@ -1,31 +1,57 @@
 "use client";
 
+import { QuestionBody } from "./QuestionBody";
+import { RikuTech2CylinderGuide } from "./RikuTech2CylinderGuide";
+import { isReferenceOnlyQuestionId } from "@/lib/questions/assessment";
+
 import * as React from "react";
+import type { NativeBGrade } from "@/lib/questions/types";
+import { gradeNativeB, serializeNativeBSelections, formatNativeBAnswer, type NativeBSelections } from "@/lib/questions/native-b";
+import { NativeBAnswerInput, NativeBFeedback } from "./NativeBAnswer";
+import dynamic from "next/dynamic";
+import { isAcceptedAnswer, formatAcceptedAnswers, CHOICE_SHORTCUTS, getChoiceKeys, isCompleteSelectionCorrect, formatSelection, selectionInstruction } from "@/lib/questions/answers";
 import Link from "next/link";
-import { ArrowRight, BookOpenCheck, Eye } from "lucide-react";
+import { ArrowRight, BookOpenCheck, Eye, Sparkles } from "lucide-react";
 
 import { ChoiceButton } from "./ChoiceButton";
+import { NumericAnswerInput } from "./NumericAnswerInput";
+import { OrderingAnswerInput } from "./OrderingAnswerInput";
+import { formatOrderingAnswer, isOrderingAnswerCorrect } from "@/lib/questions/ordering";
+import { formatNumericAnswer, isNumericAnswerCorrect } from "@/lib/questions/numeric";
 import { useQuizChoiceRoving } from "@/lib/a11y/use-quiz-choice-roving";
 import { createHistoryStore } from "@/lib/storage/history";
 import { writeLastQuestion } from "@/lib/storage/last-question";
 import { recordReview } from "@/lib/learning/spaced-repetition";
 import { recordStudyOnDate } from "@/lib/motivation/heatmap";
 import { readSettings } from "@/lib/storage/settings";
-import type { ChoiceKey, ExamCode, Season, Session } from "@/lib/questions/types";
-import { getChoiceKeys, keyboardChoiceIndex } from "@/lib/questions/choices";
+import { posthogCapture } from "@/lib/posthog";
+import type { ChoiceKey, ExamCode, Question, QuestionPart, Season, Session } from "@/lib/questions/types";
+import { choiceDisplayLabel, choiceImageAlt, usesNumberedChoices } from "@/lib/questions/display";
+
+const CopilotInline = dynamic(
+  () => import("@/components/copilot/CopilotPanel").then((module) => module.CopilotInline),
+  { ssr: false },
+);
+
 
 interface Props {
+  /** Present on real question pages; enables a one-click, in-place AI follow-up. */
+  question?: Question;
   questionId: string;
-  choices: Partial<Record<ChoiceKey, string>>;
-  answerKey: ChoiceKey;
+  choices?: Partial<Record<ChoiceKey, string>>;
+  choiceImageUrls?: Partial<Record<ChoiceKey, string>>;
+  answerKey: Question["answer"];
   answerText?: string;
   exam: ExamCode;
   year: number;
   season: Season;
   session: Session;
   qNumber: number;
+  part?: QuestionPart;
   /** /q path of the next question in the same session, if any. */
   nextHref?: string;
+  /** 1問で選ぶ肢の数。2以上なら answerKey の全肢をそろえて選ぶと正解。 */
+  requiredSelections?: number;
 }
 
 /**
@@ -47,9 +73,18 @@ interface Props {
  *   - A "just reveal" path is preserved for pure readers, and is NOT recorded
  *     so stats stay honest.
  */
-export function QuestionAnswerCard({
+export function QuestionAnswerCard(props: Props) {
+  if (isReferenceOnlyQuestionId(props.questionId) || isReferenceOnlyQuestionId(props.question?.id)) {
+    return <p role="note">この問題は参照専用です。採点・学習記録・報酬の対象には含まれません。</p>;
+  }
+  return <ScoredQuestionAnswerCard {...props} />;
+}
+
+function ScoredQuestionAnswerCard({
+  question,
   questionId,
   choices,
+  choiceImageUrls,
   answerKey,
   answerText,
   exam,
@@ -57,10 +92,33 @@ export function QuestionAnswerCard({
   season,
   session,
   qNumber,
+  part,
   nextHref,
+  requiredSelections = 1,
 }: Props) {
+  const native = question?.type === "native-b";
+  const [nativeBResult, setNativeBResult] = React.useState<NativeBGrade | undefined>();
+  const numeric = question?.type === "numeric";
+  const ordering = question?.type === "ordering";
+  const multiSelect = !numeric && !ordering && requiredSelections > 1;
   const [selected, setSelected] = React.useState<ChoiceKey | undefined>(undefined);
+  // 「二つとも答えなさい」形式で選択中の肢（採点前は何度でも選び直せる）。
+  const [picked, setPicked] = React.useState<ChoiceKey[]>([]);
+  const [numericSelected, setNumericSelected] = React.useState<string | undefined>(undefined);
+  const [orderedSelected, setOrderedSelected] = React.useState<ChoiceKey[] | undefined>(undefined);
   const [revealed, setRevealed] = React.useState(false);
+  const [shortcutsReady, setShortcutsReady] = React.useState(false);
+  const [copilotRequest, setCopilotRequest] = React.useState<{ questionId: string; sequence: number; prompt?: string } | null>(null);
+
+  React.useEffect(() => {
+    setNativeBResult(undefined);
+    setSelected(undefined);
+    setPicked([]);
+    setNumericSelected(undefined);
+    setOrderedSelected(undefined);
+    setRevealed(false);
+    setCopilotRequest(null);
+  }, [questionId]);
 
   const keys = React.useMemo(
     () => getChoiceKeys(choices),
@@ -70,95 +128,158 @@ export function QuestionAnswerCard({
   const roving = useQuizChoiceRoving(keys.length, selectedIndex, revealed, questionId);
 
   const recordOutcome = React.useCallback(
-    (key: ChoiceKey) => {
-      const correct = key === answerKey;
+    (selection: string, correct: boolean, nativeBResult?: NativeBGrade) => {
+      if (isReferenceOnlyQuestionId(questionId) || isReferenceOnlyQuestionId(question?.id)) return;
       const now = Date.now();
       // localStorage may be disabled/full; the answer UX must still work.
       try {
         if (readSettings().recordHistory) {
-          createHistoryStore().record({ id: questionId, selected: key, correct, at: now });
+          createHistoryStore().record({ id: questionId, selected: selection, correct, at: now, ...(nativeBResult ? { nativeBResult } : {}) });
         }
-        writeLastQuestion({ exam, year, season, session, qNumber, answeredAt: now });
+        writeLastQuestion({ exam, year, season, session, qNumber, part, answeredAt: now });
         recordStudyOnDate();
         recordReview(questionId, correct);
       } catch {
         /* ignore storage errors */
       }
+      // /q/* の inline 回答は元々未計測だった。QuizPlayer と同じイベント名を使うことで、
+      // admin/exam-usage の資格別回答数ランキングに自動的に合算される。
+      posthogCapture("question_answered", { questionId, exam, correct });
     },
-    [answerKey, questionId, exam, year, season, session, qNumber],
+    [questionId, question, exam, year, season, session, qNumber, part],
   );
+
+  const onNativeBAnswer = React.useCallback((selections: NativeBSelections) => {
+    if (isReferenceOnlyQuestionId(questionId) || isReferenceOnlyQuestionId(question?.id) || !question?.nativeB || !native || revealed) return;
+    const result = gradeNativeB(question.nativeB, selections);
+    setNativeBResult(result);
+    setRevealed(true);
+    recordOutcome(serializeNativeBSelections(question.nativeB, selections), result.isCorrect, result);
+  }, [questionId, question, native, revealed, recordOutcome]);
 
   const onSelect = React.useCallback(
     (key: ChoiceKey) => {
-      if (revealed) return;
+      if (isReferenceOnlyQuestionId(questionId) || isReferenceOnlyQuestionId(question?.id) || revealed || ordering) return;
+      if (multiSelect) {
+        const next = picked.includes(key) ? picked.filter((k) => k !== key) : [...picked, key];
+        setPicked(next);
+        if (next.length === requiredSelections) {
+          setRevealed(true);
+          recordOutcome(formatSelection(next), isCompleteSelectionCorrect(answerKey, next, requiredSelections));
+        }
+        return;
+      }
       setSelected(key);
       setRevealed(true);
-      recordOutcome(key);
+      recordOutcome(key, isAcceptedAnswer(answerKey, key));
     },
-    [revealed, recordOutcome],
+    [questionId, question, revealed, ordering, recordOutcome, multiSelect, picked, requiredSelections, answerKey],
   );
+
+  const onNumericAnswer = React.useCallback((value: string) => {
+    if (isReferenceOnlyQuestionId(questionId) || !question || isReferenceOnlyQuestionId(question.id) || !numeric || revealed) return;
+    setNumericSelected(value);
+    setRevealed(true);
+    recordOutcome(value, isNumericAnswerCorrect(question, value));
+  }, [questionId, question, numeric, revealed, recordOutcome]);
+
+  const onOrderingAnswer = React.useCallback((value: ChoiceKey[]) => {
+    if (isReferenceOnlyQuestionId(questionId) || !question || isReferenceOnlyQuestionId(question.id) || !ordering || revealed) return;
+    setOrderedSelected(value);
+    setRevealed(true);
+    recordOutcome(value.join("→"), isOrderingAnswerCorrect(question, value));
+  }, [questionId, question, ordering, revealed, recordOutcome]);
 
   // Pure-reader path: reveal the answer without committing/recording.
   const revealOnly = React.useCallback(() => {
     if (revealed) return;
     setSelected(undefined);
+    setPicked([]);
+    setNumericSelected(undefined);
+    setOrderedSelected(undefined);
     setRevealed(true);
   }, [revealed]);
 
-  // Number-key selection (1–9), mirroring QuizPlayer; ignore when typing in a
+  // Number-key selection (1–4), mirroring QuizPlayer; ignore when typing in a
   // field so the AI copilot input etc. are unaffected.
   React.useEffect(() => {
-    if (revealed) return;
+    if (revealed || ordering) return;
     const handler = (e: KeyboardEvent) => {
       if (e.target instanceof HTMLElement) {
         const tag = e.target.tagName;
-        if (tag === "INPUT" || tag === "TEXTAREA" || e.target.isContentEditable) return;
+        if (tag === "INPUT" || tag === "TEXTAREA" || tag === "SELECT" || e.target.isContentEditable) return;
       }
-      // Don't hijack browser/OS shortcuts: Ctrl/Cmd+number switches tabs, etc.
+      // Don't hijack browser/OS shortcuts: Ctrl/Cmd+1–4 switches tabs, etc.
       if (e.metaKey || e.ctrlKey || e.altKey) return;
-      const i = keyboardChoiceIndex(e.key);
+      const i = CHOICE_SHORTCUTS.indexOf(e.key);
       if (i >= 0 && i < keys.length) {
         e.preventDefault();
         onSelect(keys[i]);
       }
     };
     window.addEventListener("keydown", handler);
-    return () => window.removeEventListener("keydown", handler);
-  }, [revealed, keys, onSelect]);
+    setShortcutsReady(true);
+    return () => {
+      window.removeEventListener("keydown", handler);
+      setShortcutsReady(false);
+    };
+  }, [revealed, ordering, keys, onSelect]);
 
-  const isCorrect = selected !== undefined && selected === answerKey;
+  const answered = native ? nativeBResult !== undefined : ordering ? orderedSelected !== undefined : numeric ? numericSelected !== undefined : multiSelect ? picked.length === requiredSelections : selected !== undefined;
+  const isCorrect = native ? nativeBResult?.isCorrect === true : ordering ? isOrderingAnswerCorrect(question!, orderedSelected ?? []) : numeric ? isNumericAnswerCorrect(question!, numericSelected ?? "") : multiSelect ? isCompleteSelectionCorrect(answerKey, picked, requiredSelections) : isAcceptedAnswer(answerKey, selected);
+  const answerLabel = native ? formatNativeBAnswer(question!.nativeB!) : ordering ? formatOrderingAnswer(exam, answerKey as ChoiceKey[]) : numeric ? formatNumericAnswer(question!) : usesNumberedChoices(exam)
+    ? (Array.isArray(answerKey) ? answerKey : [answerKey]).map((key) => choiceDisplayLabel(exam, key as ChoiceKey)).join("・")
+    : formatAcceptedAnswers(answerKey);
 
   return (
-    <div className="space-y-4">
-      <div
-        role="radiogroup"
-        aria-label={`選択肢（矢印キーで移動、数字キー1〜${keys.length}・Enter/スペースで選択）`}
+    <div data-study-presence-exam={exam} className="space-y-4">
+      {multiSelect && !revealed && (
+        <p className="rounded-xl border border-amber-300/60 bg-amber-50 px-3 py-2 text-sm font-semibold text-amber-900 dark:border-amber-700/50 dark:bg-amber-950/40 dark:text-amber-100" data-testid="multi-select-hint">
+          {selectionInstruction(answerKey, requiredSelections)}（選択中 {picked.length}/{requiredSelections}）
+        </p>
+      )}
+      {native ? (
+        <NativeBAnswerInput key={questionId} data={question!.nativeB!} displayedImageUrls={question!.imageUrls} disabled={revealed} onAnswer={onNativeBAnswer} />
+      ) : ordering ? (
+        <OrderingAnswerInput key={questionId} question={question!} disabled={revealed} onAnswer={onOrderingAnswer} />
+      ) : numeric ? (
+        <NumericAnswerInput key={questionId} unit={question!.numericAnswer!.unit} specification={question!.numericAnswer} disabled={revealed} onAnswer={onNumericAnswer} />
+      ) : <div
+        role={multiSelect ? "group" : "radiogroup"}
+        data-shortcuts-ready={shortcutsReady}
+        aria-label={multiSelect ? `選択肢（${requiredSelections}つ選ぶ。数字キー1〜9・0・Enter/スペースで選択・解除）` : "選択肢（矢印キーで移動、数字キー1〜9・0・Enter/スペースで選択）"}
         className="flex flex-col gap-2.5"
       >
         {keys.map((key, idx) => (
           <ChoiceButton
             key={key}
             choiceKey={key}
-            text={choices[key]!}
+            displayLabel={choiceDisplayLabel(exam, key)}
+            text={choices![key]!}
+            imageUrl={choiceImageUrls?.[key]}
+            imageAlt={choiceImageAlt(exam, key)}
             revealed={revealed}
-            selected={selected === key}
-            correct={answerKey === key}
+            selected={multiSelect ? picked.includes(key) : selected === key}
+            correct={isAcceptedAnswer(answerKey, key)}
             disabled={revealed}
             onClick={() => onSelect(key)}
-            shortcutIndex={idx + 1}
+            shortcutIndex={idx < 10 ? (idx + 1) % 10 : null}
+            multiSelect={multiSelect}
             {...roving.getRadioProps(idx)}
           />
         ))}
-      </div>
+      </div>}
+
+      {native && revealed && <NativeBFeedback data={question!.nativeB!} result={nativeBResult} />}
 
       {/* Screen-reader announcement of the outcome. */}
       <div role="status" aria-live="polite" aria-atomic="true" className="sr-only">
-        {revealed
-          ? selected === undefined
-            ? `正解は ${answerKey} です。下に解説があります。`
+        {native ? "" : revealed
+          ? !answered
+            ? `正解は ${answerLabel} です。下に解説があります。`
             : isCorrect
               ? "正解です。下に解説があります。"
-              : `不正解です。正解は ${answerKey} です。下に解説があります。`
+              : `不正解です。正解は ${answerLabel} です。下に解説があります。`
           : ""}
       </div>
 
@@ -174,35 +295,50 @@ export function QuestionAnswerCard({
       ) : (
         <div
           className={
-            selected === undefined || isCorrect
+            !answered || isCorrect
               ? "rounded-2xl border border-emerald-300/60 bg-emerald-50 p-4 dark:border-emerald-700/50 dark:bg-emerald-950/40"
               : "rounded-2xl border border-red-300/60 bg-red-50 p-4 dark:border-red-700/50 dark:bg-red-950/40"
           }
         >
-          <p className="text-sm font-bold">
-            {selected === undefined ? (
-              <span className="text-emerald-800 dark:text-emerald-200">正解は {answerKey}</span>
+          <div className="text-sm font-bold">
+            {!answered ? (
+              <span className="text-emerald-800 dark:text-emerald-200">正解は {answerLabel}</span>
             ) : isCorrect ? (
-              <span className="text-emerald-800 dark:text-emerald-200">正解！</span>
+              <>
+                <span className="text-emerald-800 dark:text-emerald-200">正解！</span>
+                {usesNumberedChoices(exam) && <span className="ml-2 text-emerald-800 dark:text-emerald-200">正答は {answerLabel}</span>}
+              </>
             ) : (
-              <span className="text-red-800 dark:text-red-200">不正解 — 正解は {answerKey}</span>
+              <span className="text-red-800 dark:text-red-200">不正解 — 正解は {answerLabel}</span>
             )}
-            {answerText && (
+            {answerText && (answerText.includes("\n") ? (
+              <div className="mt-2 min-w-0 font-normal text-foreground"><QuestionBody text={answerText} /></div>
+            ) : (
               <span className="ml-1 font-normal text-foreground">：{answerText}</span>
-            )}
-          </p>
+            ))}
+          </div>
           <div className="mt-3 flex flex-wrap items-center gap-2">
             <a
               href="#explanation"
-              className="inline-flex min-h-[44px] items-center gap-1.5 rounded-full border border-border bg-card px-4 py-2 text-sm font-semibold text-foreground transition hover:bg-muted"
+              className="inline-flex min-h-[44px] items-center gap-1.5 rounded-full bg-primary px-5 py-2 text-sm font-bold text-primary-foreground shadow-sm transition hover:bg-primary/90"
             >
-              <BookOpenCheck className="h-4 w-4 text-primary" aria-hidden="true" />
+              <BookOpenCheck className="h-4 w-4 text-primary-foreground" aria-hidden="true" />
               解説を読む
             </a>
+            {question && !native && (
+              <button
+                type="button"
+                onClick={() => setCopilotRequest((value) => ({ questionId, sequence: (value?.sequence ?? 0) + 1, prompt: answered && !isCorrect ? "私が選んだ答えがなぜ違うのか、正解との違いをこの問題に沿って説明してください。" : undefined }))}
+                className="inline-flex min-h-[44px] items-center gap-1.5 rounded-full border border-primary/40 bg-card px-4 py-2 text-sm font-semibold text-primary transition hover:bg-primary-soft"
+              >
+                <Sparkles className="h-4 w-4" aria-hidden="true" />
+                {answered && !isCorrect ? "誤答をAIに質問" : "この問題をAIに質問"}
+              </button>
+            )}
             {nextHref && (
               <Link
                 href={nextHref}
-                className="inline-flex min-h-[44px] items-center gap-1.5 rounded-full bg-primary px-5 py-2 text-sm font-bold text-primary-foreground shadow-sm transition hover:bg-primary/90"
+                className="inline-flex min-h-[44px] items-center gap-1.5 rounded-full border border-border bg-card px-4 py-2 text-sm font-semibold text-foreground transition hover:bg-muted"
               >
                 次の問題へ
                 <ArrowRight className="h-4 w-4" aria-hidden="true" />
@@ -210,6 +346,15 @@ export function QuestionAnswerCard({
             )}
           </div>
         </div>
+      )}
+      {revealed && <RikuTech2CylinderGuide questionId={questionId} revealed={revealed} />}
+      {question && !native && (
+        <CopilotInline
+          question={question}
+          selectedChoice={answered ? (ordering ? orderedSelected?.join("→") : numeric ? numericSelected : multiSelect ? formatSelection(picked) : selected) : undefined}
+          isCorrect={answered ? isCorrect : undefined}
+          focusRequest={{ sequence: copilotRequest?.questionId === question.id ? copilotRequest.sequence : 0, prompt: copilotRequest?.prompt }}
+        />
       )}
     </div>
   );

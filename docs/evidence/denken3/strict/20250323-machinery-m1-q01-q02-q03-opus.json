@@ -1,0 +1,107 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20250323",
+  "subject": "machinery",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 6551,
+      "cacheReadInputTokens": 130032,
+      "cacheCreationInputTokens": 22808,
+      "webSearchRequests": 0,
+      "costUSD": 0.3394984,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 4053,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "d4dcad5309e7bbbb4cdd8b815b04301df6b9a130414ccff5d1271f17d11e8bd5",
+  "inputRequestSha256": "c2a42a5bf29e4ea31343c1abb6bec70ab254c22534fd2af95ee8c18f76a3f50d",
+  "inputHashes": {
+    "candidateSha256": {
+      "q01": "39f17d5f9391b11070ae0c023cab770883c3da8bba3a1f0210f9876aabcd4550",
+      "q02": "5ca0de5d43781f7d70a2a4ca31aefbe2efa962a35118a46dd740f18a708bc777",
+      "q03": "308209cab32d8b646efb1ae0fd0edc417712e19de540e5594647e57d16645367"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20250323/machinery/p04.png": "d63f104017cf31be1ef1f998731858ddd7d34359433f3dd44dc9e03a0af986e2",
+      "data/raw_pdfs/denken3/review/20250323/machinery/p05.png": "23b1b2809a9e3026ceb6b108a08fbdfa201451c1650083c58b68f35902c4f98e",
+      "data/raw_pdfs/denken3/review/20250323/machinery/p06.png": "a66071d41414913896439d724444e65cb9301485fc3e8f3bfb9ffd27351cbc72"
+    },
+    "figureSha256": {},
+    "sourceQuestionPdfSha256": "66e8b0070a314cd78ed9b9f3edd3d75eeaf442b258fd0aacab0e7d9620c75b9f",
+    "sourceAnswerPdfSha256": "4c3b38fcf1405766fafaa78b1b05b867a3d48307a670b9d354476bc6b32acd4c",
+    "officialAnswerUnitsSha256": "fffdef42333c8abe5c606739c39a764c0638e713eb68538b4b828af811967b95",
+    "referencePdfSha256": {},
+    "referencePageSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q01",
+      "questionNumber": 1,
+      "part": null,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [
+        "（オ）の導出で、一様な磁界の B と直流機の磁束密度 B が同じ記号のまま使われている。『B·(πD·l) = pΦ』が成り立つのは、B をエアギャップの平均磁束密度、l を電機子の有効軸長（導体の有効長）と読む場合だけである。一様磁界の B のままだと、極の下と極の間の区別がなくなり、式の意味がはっきりしない。例えば『電機子周辺の平均磁束密度を B_av、導体の有効長を l とすると B_av·πD·l = pΦ』のように、平均値であることと l の意味を書き足すべきである。その後の『各導体の平均起電力 e_av = B_av·l·v = pΦn/60』も同じ記号にそろえる。結論の pZΦn/(60a) は正しい。"
+      ],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "問題文は添付原図（フッター T2-K 004、reviewedFromPage [4]）と一致する。l[m]、B[T]、v[m/s]、Φ[Wb]、p、Z、a、D[m]、n[min⁻¹]、v=πD·n/60 [m/s]、空欄(ア)〜(オ)の位置をすべて確認した。",
+        "(1)〜(5) の全セルを原図と照合した。(1) 左手/Bv/l/Z/a/直列/Z/(60pa)Φn、(2) 左手/Blv/Za/直列/pZa/60·Φn、(3) 右手/Bv/l/Za/並列/pZa/60·Φn、(4) 右手/Blv/a/Z/並列/pZ/(60a)Φn、(5) 右手/Blv/Z/a/直列/pZ/(60a)Φn。いずれも一致する。",
+        "公式正答は 5 で、候補JSONの officialAnswer も 5。E=(Z/a)·(pΦn/60)=pZΦn/(60a) は独立に検算しても一致する。",
+        "各誤答肢の理由を確認した。(1)(2) は左手・Bv/l・Za・p や a の位置が違う。(3) は Bv/l・Za・並列。(4) は a/Z・並列。いずれも正しい指摘である。Bv/l の単位は T·s⁻¹ = V/m² で、V にならないことも確かめた。",
+        "図はなく、figureUrls が空であることは妥当。officialReferenceUrls も空なので、確認が必要な外部主張はない。"
+      ]
+    },
+    {
+      "unitKey": "q02",
+      "questionNumber": 2,
+      "part": null,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "問題文とただし書きは添付原図（フッター T2-K 005、reviewedFromPage [5]）と一致する。24 V、3.0 A、1 500 min⁻¹、0.4 N·m、ブラシ電圧降下と電機子反作用は無視、損失は電機子銅損のみ、の各条件を確認した。",
+        "選択肢は (1)1.0 (2)2.3 (3)3.1 (4)4.5 (5)6.9 で、原図と一致する。",
+        "検算：P_in=72 W、ω=50π≒157.08 rad/s、P_out=0.4×157.08≒62.83 W、銅損≒9.17 W、Ra=9.17/9≒1.019 Ω。公式正答 (1) と一致する。別解の E=62.83/3≒20.94 V、Ra=(24−20.94)/3≒1.02 Ω でも同じ値になる。",
+        "誤答肢ごとの逆算を確認した。2.3 Ω→20.7 W/51.3 W/0.33 N·m、3.1 Ω→27.9 W/44.1 W/0.28 N·m、4.5 Ω→40.5 W/31.5 W/0.20 N·m、6.9 Ω→62.1 W/9.9 W/0.06 N·m。数値はすべて正しい。",
+        "図はない。officialReferenceUrls も空なので、確認が必要な外部主張はない。"
+      ]
+    },
+    {
+      "unitKey": "q03",
+      "questionNumber": 3,
+      "part": null,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [
+        "トルクの式 T=(p/ω)·3V²·(r₂/s)/[(r₁+r₂/s)²+(x₁+x₂)²] が、厳密式のように『となる』と書かれている。実際には励磁回路を無視した（または電源側へ移した）簡易等価回路での近似式である。この前提を明記すべきである。あわせて、x₂ も r₂ と同じく一次側換算値であることを書く。なお、最大トルクが二次抵抗に依存しないこと、比例推移が成り立つことは厳密な等価回路でも同じなので、結論は変わらない。"
+      ],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "問題文 3 段落は添付原図（フッター T2-K 006、reviewedFromPage [6]）と一致する。(ア)〜(エ) の空欄位置、(ウ) が 3 回出ること、『前の滑りの k 倍』の記述を確認した。",
+        "(1)〜(5) の組合せ表を原図と照合した。(1) 電源周波数/停動/二次/比例推移、(2) 電源周波数/停動/一次/二次励磁、(3) 負荷/臨界/一次/比例推移、(4) 電源周波数/臨界/二次/二次励磁、(5) 負荷/臨界/二次/比例推移。いずれも一致する。",
+        "公式正答は 1 で、候補JSONの officialAnswer も 1。",
+        "最大トルクの条件を検算した。X=r₂/s とおくと、X=√(r₁²+(x₁+x₂)²) のとき分母は 2Z(Z+r₁) となり、T_max=(p/ω)·3V²/{2[r₁+√(r₁²+(x₁+x₂)²)]} で r₂ を含まない。解説の記載と一致する。",
+        "誤答肢ごとの理由を確認した。(2) は一次・二次励磁、(3) は負荷・臨界・一次、(4) は臨界・二次励磁、(5) は負荷・臨界。どれも誤りの空欄を正しく指摘している。",
+        "図はない。officialReferenceUrls も空なので、確認が必要な外部主張はない。"
+      ]
+    }
+  ]
+}

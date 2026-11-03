@@ -1,0 +1,66 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20260322",
+  "subject": "power",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 3043,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 13932,
+      "webSearchRequests": 0,
+      "costUSD": 0.1725798,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 1637,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "a18771320f9479b0e7dbb6ff403330a587357604bc2aef1ef7b38ed0440ec8a5",
+  "inputRequestSha256": "34c82beb1d22f376ae851a3f770a0e00cf071d3a50e6879048ee0c31347bf4c6",
+  "inputHashes": {
+    "candidateSha256": {
+      "q14": "de9093709f743b1eb014676b91070f27ceb81148b8b8542e5805d9e595e19983"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20260322/power/p17.png": "cef08a7bfbffbd610c7403bf88377337cab1328c42bb2466340f2db8d1280a86"
+    },
+    "figureSha256": {},
+    "sourceQuestionPdfSha256": "9733341a0f293f068c9a665d5a9a90f1aabf3a2db5d79cd530643cdea241f7b7",
+    "sourceAnswerPdfSha256": "cc2890296d06a4823df5697a78a1c01ddfd39f041c51f48c87984daa3a5707c6",
+    "officialAnswerUnitsSha256": "750989bea9cca378a8b76af6e3fda7861878ab9b9f2775221bb07cacc14e9837",
+    "referencePdfSha256": {},
+    "referencePageSha256": {},
+    "referenceJsonSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q14",
+      "questionNumber": 14,
+      "part": null,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "問題文: 添付原図（ページ下部印字『- 14 -』『T2－D 017』、manifest固定のPDF第17頁）の『磁性材料に関する記述として，誤っているものを次の(1)～(5)のうちから一つ選べ。』と一致する。波ダッシュの字形差（〜/～）は表記上の差で、意味は変わらない。",
+        "選択肢(1)〜(5): 原図と一字ずつ照合した。脱字・語順変更・否定の反転はない。(4)『交番磁界の大きさと強磁性体中の磁束密度の大きさとの関係を示す軌跡曲線の囲む面積と交番磁界の周波数に比例する』、(5)『磁束方向に対して平行に積層する構造』も原文どおりである。",
+        "公式正答: 添付解答表（令和7年度 第三種電気主任技術者下期試験解答）の＜電力＞欄で問14の解答は3、配点は5。候補の officialAnswer='3'、scoringPoints=5 と一致する。理論欄の問14（解答4）とは取り違えていない。",
+        "出典メタデータ: fiscalYear=2025（令和7年度）、term=lower（下期）、examDate=2026-03-22、subject=power、sourceQuestionPdfUrl=…20260322_ch_third_q02.pdf、sourceAnswerPdfUrl=…20260322_ch_third_a01.pdf、reviewedFromPage=[17] はいずれも manifest と一致する。sourceAttribution の年度・期・科目・問番号も一致する。",
+        "総合解説の検算（ヒステリシス損）: B-Hループの1周期あたり単位体積の損失エネルギーは ∮H dB [J/m³] である。毎秒 f 回繰り返すので、Pₕ = f∮H dB [W/m³] となる。ループ面積と周波数に比例するという記述は正しく、選択肢(4)が正しいことの根拠として整合している。",
+        "総合解説の検算（渦電流損）: Pₑ = π²σt²f²Bₘ²/6 より Pₑ ∝ (t·f·Bₘ)² である（σ一定）。板厚の2乗に比例するという記述は正しい。",
+        "正答肢(3)の理由: 磁束の周りに誘導起電力が生じ、それによる渦電流のジュール熱が損失になるのは渦電流損の機構である。これをヒステリシス損の原因とした点が誤り、という因果説明は正しい。",
+        "誤答肢の理由: (1) Fe・Ni・Co は常温で強磁性であり、解説は合金について『これらを主成分とする合金（例：パーマロイ）』と限定して述べているため過度な一般化はない。(2) 鉄損はヒステリシス損と渦電流損の和で、熱として消費される。(4) 前述の Pₕ = f∮H dB と整合する。(5) 渦電流は磁束に垂直な面内を循環するため、絶縁した薄板を磁束方向と平行に積層すると経路が板厚方向で分断され、損失が低減する。積層鉄心の例も適切である。各肢固有の理由として誤りはない。",
+        "図: 原図は文章のみで図・表・数式図はない。figureDescription『図なし』、figureUrls=[]、choiceFigureUrls={} は妥当で、解答に図は不要である。",
+        "参考資料: officialReferenceUrls は空配列で、外部の独立主張はない。そのため追加の原頁検証を要する事項はない。uncertainty='なし'、needsReview=false も監査結果と矛盾しない。"
+      ]
+    }
+  ]
+}

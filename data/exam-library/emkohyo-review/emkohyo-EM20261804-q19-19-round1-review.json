@@ -1,0 +1,62 @@
+{
+  "reviewModel": "claude-opus-5-5",
+  "requestedModel": "claude-opus-5-5",
+  "canonicalModel": "claude-opus-5-5",
+  "provider": "firstParty",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 2882,
+      "cacheReadInputTokens": 143524,
+      "cacheCreationInputTokens": 14635,
+      "webSearchRequests": 0,
+      "costUSD": 0.20343280000000002,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 1716,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "paperId": "emkohyo-EM20261804",
+  "ids": [
+    "emkohyo-EM20261804-q19"
+  ],
+  "figureSha256": {
+    "emkohyo-EM20261804-q19": {}
+  },
+  "officialRowImageSha256": {
+    "emkohyo-EM20261804-q19": {
+      "/exam-library/emkohyo-EM20261804/q19-p12-0.webp": "c215a446f82906582d462ff965c264fc9a3b419b7706f8b5bdd5639087917897"
+    }
+  },
+  "officialPageImageSha256": {},
+  "governmentSourceImageSha256": {},
+  "candidateSha256": {
+    "emkohyo-EM20261804-q19": "feea4ad5e6b57edfd1d2a741b57b28c9596fcb146cd5086bd7e6100dd5fd0a51"
+  },
+  "sourcePackPath": "docs/evidence/emkohyo-choice-sources/emkohyo-EM20261804-q19-19.json",
+  "sourcePackSha256": "34fa075be59ecf7881595ec097ee6f8a1351827a65ef1930480ebbeb2c1579c0",
+  "assessment": {
+    "emkohyo-EM20261804-q19": {
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "reasonIssues": [
+        "肢4: 「厚生労働省の測定法では」と書いているが、根拠は第十八改正日本薬局方第一追補の一般試験法「粉末X線回折測定法」（医薬品の試験法）である。作業環境測定の測定法と誤解される書き方なので、『日本薬局方の粉末X線回折測定法では、相の同定には通例50 μm程度の粒子径で十分とされる』のように出典名を正しく書く。",
+        "肢4: 因果の説明「粗い粒子が少数だけ入ると結晶の向きが偏り」は不正確である。出典（p.35）は、粒子径が大きいとX線が当たる範囲の微結晶の数が不足し、選択配向も起きて回折強度の再現性が落ちるので、粒子を小さくするのが最良の方法だと述べている。『粗い粉末（0.1〜1 mm）では照射体積中の微結晶の数が少なくなり、結晶の向きがランダムにならない（粒子統計の不足・選択配向）ため、回折強度が再現しにくい』と、出典の説明に合わせて書き直す。",
+        "肢4: 作業環境測定の現場との対応が書かれていない。作業環境測定でX線回折にかける試料は、ろ過材に捕集した吸入性粉じん（おおむね10 μm以下）である。0.1〜1 mmはこの測定対象の粒径から大きく外れる、という点を補うと誤りの理由がより直接になる（ただし出典で裏付けられる場合に限る）。"
+      ],
+      "sourceIssues": [
+        "肢4の根拠は日本薬局方（医薬品の粉末X線回折）の記述で、作業環境測定の試料粒径を直接述べた政府資料ではない。遊離けい酸のX線回折分析法など、作業環境測定に関する厚生労働省の資料で粒径や試料調製を示すものがあれば、差し替えるか併記する。",
+        "肢5の根拠は建材中の石綿分析（第3部、粉砕した建材試料）での基底標準吸収補正法である。作業環境測定で捕集量に応じて吸収を補正すること自体を直接述べた資料ではない。補正の原理は同じなので結論は支持されるが、適用場面が違うことを本文で断るか、作業環境測定（遊離けい酸分析）の資料を追加する。",
+        "肢2の「標準試料で作成した検量線」「遊離けい酸などの測定物質」と、肢3の「石英・クリストバライト」は、照合済みの抜粋では裏付けられていない。抜粋が支えているのは、回折線の角度と強度を相の同定・定量に使うという一般的な記述までである。",
+        "肢1の「単色化して」は、照合済みの抜粋（特性X線のみを用いる）より踏み込んだ記述で、抜粋では直接裏付けられていない。"
+      ],
+      "needsExternalCheck": [
+        "作業環境測定で遊離けい酸をX線回折で分析する方法について、試料の粒径条件と基底標準吸収補正の適用を示す厚生労働省（またはそれに準じる公的）資料の確認"
+      ]
+    }
+  }
+}

@@ -68,11 +68,11 @@ describe("questionTitle", () => {
     // long category the full title overflows the 40-char budget.
     const longExam: Question = {
       ...baseQuestion,
-      id: "es-2024s-am1-q18",
+      id: "es-2024a-am2-q18",
       exam: "es",
-      session: "am1",
+      session: "am2",
       year: 2024,
-      season: "spring",
+      season: "autumn",
       qNumber: 18,
       category: "プロジェクトマネジメント",
     };
@@ -82,5 +82,11 @@ describe("questionTitle", () => {
     // The supplementary category is dropped (it has its own badge/link + lives
     // in the description) so the identifying core survives in the SERP.
     expect(title).not.toContain("プロジェクトマネジメント");
+  });
+
+  it("identifies AM1 as a common paper rather than attributing it to the study filter", () => {
+    const title = questionTitle({ ...baseQuestion, exam: "es", session: "am1" });
+    expect(title).toContain("高度試験共通 午前I");
+    expect(title).not.toContain("エンベデッド");
   });
 });

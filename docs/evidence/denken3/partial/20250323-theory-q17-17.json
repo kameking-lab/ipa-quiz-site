@@ -1,0 +1,45 @@
+{
+  "status": "partial-accepted",
+  "date": "20250323",
+  "subject": "theory",
+  "questionCount": 1,
+  "answerUnitCount": 2,
+  "choiceCount": 10,
+  "sourceQuestionPdfSha256": "8817012cb55eed9c83bb1e68df138909b1e03a81f7ed48a9893a219e1d2a76ca",
+  "sourceAnswerPdfSha256": "4c3b38fcf1405766fafaa78b1b05b867a3d48307a670b9d354476bc6b32acd4c",
+  "reviewedDataSha256": "63b3728c2fdef9b04b85aa5a8098d319a34e466d228de432a2f2a9e3df83b977",
+  "questions": [
+    {
+      "number": 17,
+      "sourceDraftSha256": "4d79f4eeab100700a65eb46905d3f78e21c1065d6e45e468d993abcb33a87cc1",
+      "opusReceipt": "data/raw_pdfs/denken3/review/20250323/theory/q17-opus-review.json",
+      "opusReceiptSha256": "e644d6d58b8e5f2e6fea678f7e1dccdf48fa2386d49c1f6c579820d28c6c9356",
+      "assessment": {
+        "number": 17,
+        "status": "PASS",
+        "textIssues": [],
+        "choiceIssues": [],
+        "explanationIssues": [],
+        "figureIssues": [],
+        "externalSourceIssues": []
+      },
+      "figureSha256": {
+        "20250323-theory-q17-two-floor-capacitors": "1e687b3872eb8c597e016fe907de0fff954b6e7562725968c4d62418a94101bc"
+      }
+    }
+  ],
+  "strictReview": {
+    "q17a": {
+      "path": "docs/evidence/denken3/strict/20250323-theory-t26-q17a-q17b-opus.json",
+      "sha256": "cbb7a0888f036f3caec4e72c91603a7934de0ee768872c440b31df2c8e58a5eb",
+      "status": "PASS",
+      "resolvedModel": "claude-opus-5-5"
+    },
+    "q17b": {
+      "path": "docs/evidence/denken3/strict/20250323-theory-t26-q17a-q17b-opus.json",
+      "sha256": "cbb7a0888f036f3caec4e72c91603a7934de0ee768872c440b31df2c8e58a5eb",
+      "status": "PASS",
+      "resolvedModel": "claude-opus-5-5"
+    }
+  }
+}

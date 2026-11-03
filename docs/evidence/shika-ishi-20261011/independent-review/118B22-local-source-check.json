@@ -1,0 +1,77 @@
+{
+  "id": "118B022",
+  "reviewDate": "2026-10-11",
+  "scope": "Independent local source reading of tooth-notation strokes and side/quadrant; not replacement medical authorship or a new answer key",
+  "decision": "PASS for b-e glyph/quadrant identification; source crop must remain attached",
+  "officialAnswer": "ABD",
+  "officialAnswerChanged": false,
+  "sourceEvidence": [
+    {
+      "path": "source-evidence/118-b-q22-original-page.png",
+      "sourcePdf": "sources/pdf/118-problem-tp250428-02b_01.pdf",
+      "physicalPdfPage": 20,
+      "printedPage": 8,
+      "inspection": "Full original-resolution page visually inspected; question 22, choices a-e, and appendix No.2 A/B reference are legible"
+    },
+    {
+      "path": "rendered-assets/118-b-appendix-p006.webp",
+      "sourcePdf": "sources/pdf/118-problem-tp250428-02b_02.pdf",
+      "physicalPdfPage": 6,
+      "printedPage": 2,
+      "inspection": "Full original-resolution page visually inspected; heading explicitly says No.2 (B question 22), with intraoral photos A and panoramic image B"
+    }
+  ],
+  "readingRule": "The printed horizontal stroke divides upper/lower jaws. Characters above that stroke denote the upper jaw; characters below denote the lower jaw. The printed vertical stroke is the midline: characters to its left denote the patient's right, and characters to its right denote the patient's left. Right/left refer to the patient, not the viewer.",
+  "choices": [
+    {
+      "label": "b",
+      "literalVisibleText": "2 / 先天欠如",
+      "visibleStrokes": "Horizontal stroke immediately below 2; vertical stroke immediately to the right of 2 rising above the horizontal stroke",
+      "characterPositionRelativeToMidline": "above horizontal, left of vertical",
+      "patientQuadrant": "上顎右側",
+      "toothName": "上顎右側側切歯（右上2）",
+      "plainJapaneseReading": "上顎右側側切歯の先天欠如",
+      "confidence": "high; both lines visible in original question page"
+    },
+    {
+      "label": "c",
+      "literalVisibleText": "D / 晩期残存",
+      "visibleStrokes": "Vertical stroke immediately left of D; horizontal stroke below D extends right from that vertical stroke",
+      "characterPositionRelativeToMidline": "above horizontal, right of vertical",
+      "patientQuadrant": "上顎左側",
+      "toothName": "上顎左側第一乳臼歯（左上D）",
+      "plainJapaneseReading": "上顎左側第一乳臼歯の晩期残存",
+      "confidence": "high; both lines visible in original question page"
+    },
+    {
+      "label": "d",
+      "literalVisibleText": "4 5 / 先天欠如",
+      "visibleStrokes": "Vertical stroke immediately left of 4 descends from an upper horizontal stroke; that upper horizontal stroke spans both 4 and 5",
+      "characterPositionRelativeToMidline": "below horizontal, right of vertical",
+      "patientQuadrant": "下顎左側",
+      "toothName": "下顎左側第一・第二小臼歯（左下4・5）",
+      "plainJapaneseReading": "下顎左側第一・第二小臼歯の先天欠如",
+      "confidence": "high; shared upper stroke over both numerals is visible"
+    },
+    {
+      "label": "e",
+      "literalVisibleText": "D / 晩期残存",
+      "visibleStrokes": "Horizontal stroke above D; vertical stroke immediately right of D descends from that upper horizontal stroke",
+      "characterPositionRelativeToMidline": "below horizontal, left of vertical",
+      "patientQuadrant": "下顎右側",
+      "toothName": "下顎右側第一乳臼歯（右下D）",
+      "plainJapaneseReading": "下顎右側第一乳臼歯の晩期残存",
+      "confidence": "high; both lines visible in original question page"
+    }
+  ],
+  "appendixCorroboration": {
+    "sourceIdentity": "No.2 A/B matches question 22; no other question's figure was substituted",
+    "b": "The patient's upper right anterior region (left side of the frontal/panoramic display) shows the absent lateral incisor position; consistent with b being right upper 2 rather than a lower tooth or opposite side.",
+    "d": "The patient's lower left premolar region (right side of panoramic display) shows retained primary molar forms without visible successor premolars; consistent with d referring to lower left 4 and 5.",
+    "limitation": "This cross-check establishes no contradiction with the source notation and official ABD key. It is not an independent diagnostic determination of congenital absence from radiography alone. Detailed Angle-class and distractor explanations remain the medical author's responsibility."
+  },
+  "unresolvedGlyphs": [],
+  "authorComparison": "Independent visual stroke reading agrees with the supplied latest author mapping for b, c, d and e.",
+  "publicationHandling": "Keep exact original question crop with the printed tooth notation. Use the plain Japanese quadrant/tooth names for explanation if needed. Do not invent private-use Unicode characters or substitute approximate line glyphs for the original notation.",
+  "remainingBlockerForThisLocalTask": null
+}

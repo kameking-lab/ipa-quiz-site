@@ -1,0 +1,125 @@
+{
+  "questionNumber": 16,
+  "sharedContext": "図のように他励直流機を直流チョッパで駆動する。電源電圧は E = 200 V で一定とし，直流機の電機子電圧を V とする。IGBT Q₁ 及び Q₂ をオンオフ動作させるときのスイッチング周波数は 500 Hz であるとする。なお，本問では直流機の定常状態だけを扱うものとする。次の(a)及び(b)の問に答えよ。",
+  "units": [
+    {
+      "part": "a",
+      "question": "図のように他励直流機を直流チョッパで駆動する。電源電圧は E = 200 V で一定とし，直流機の電機子電圧を V とする。IGBT Q₁ 及び Q₂ をオンオフ動作させるときのスイッチング周波数は 500 Hz であるとする。なお，本問では直流機の定常状態だけを扱うものとする。\n\n(a) この直流機を電動機として駆動する場合，Q₂ をオフとし，Q₁ をオンオフ制御することで，V を調整することができる。電圧 V₁ の平均値が 150 V のとき，1 周期の中で Q₁ がオンになっている時間の値[ms]として，最も近いものを次の(1)〜(5)のうちから一つ選べ。",
+      "choices": {
+        "1": "1.75",
+        "2": "1.50",
+        "3": "1.25",
+        "4": "1.00",
+        "5": "0.7"
+      },
+      "officialAnswer": "2",
+      "explanation": "スイッチング周期は T = 1/f = 1/500 Hz = 2 ms。\nQ₂ をオフとして Q₁ をオンオフ制御する場合，回路は降圧チョッパとして動作する。ここでは IGBT・ダイオードを理想素子(オン時の電圧降下 0)とし，平滑リアクトルにより電機子電流は途切れず連続して流れるものとする。\n・Q₁ オンの期間:中点が上側レール(電源の正極側)につながり V₁ = E。\n・Q₁ オフの期間:電機子電流は平滑リアクトルの働きで流れ続け，下側のダイオードを通って環流するので V₁ = 0。\n(電流が途切れる期間があると，その間の V₁ は 0 ではなく直流機の逆起電力に等しくなり，以下の式は成り立たない。)\nしたがって V₁ の平均値は\n  V₁(平均) = E × T_on / T\nとなる。V₁(平均) = 150 V，E = 200 V，T = 2 ms を代入すると\n  T_on = T × V₁(平均) / E = 2 ms × 150 / 200 = 1.50 ms\nよって正答は(2)。",
+      "choiceExplanations": {
+        "1": "誤り。T_on = 1.75 ms とすると V₁(平均) = 200 V × 1.75/2 = 175 V となり，150 V にならない。",
+        "2": "正しい。T_on = 1.50 ms のとき V₁(平均) = 200 V × 1.50/2 = 150 V となり，条件に一致する。",
+        "3": "誤り。T_on = 1.25 ms とすると V₁(平均) = 200 V × 1.25/2 = 125 V となり，150 V にならない。",
+        "4": "誤り。T_on = 1.00 ms とすると V₁(平均) = 200 V × 1.00/2 = 100 V となり，150 V にならない。",
+        "5": "誤り。T_on = 0.7 ms とすると V₁(平均) = 200 V × 0.7/2 = 70 V となり，150 V にならない。"
+      },
+      "figureDescription": "回路図(回路部分のみ)。左側に電池記号の直流電源があり，ラベル「電源電圧 E = 200 V」が付く。電源の上側レールと下側レールの間に，IGBT Q₁(上アーム，コレクタが上側レール側)と IGBT Q₂(下アーム)が直列に接続され，両者の接続点が中点となる。Q₁ と並列(中点〜上側レール間)にダイオードが，Q₂ と並列(下側レール〜中点間)にダイオードが接続され，いずれのダイオードも下から上へ導通する向き(カソードが上)に描かれている。図中に＋・−の文字表記はないが，2 個のダイオードがカソード上向きに直列接続されていること(下側レールが正極なら両ダイオードが順方向となり電源を短絡してしまう)と Q₁ のコレクタが上側にあることから，上側レールが電源の正極側である。中点から「平滑リアクトル」を介して直流機(円内に M と直流記号)の上側端子へ接続され，直流機の下側端子は下側レールに接続されている。下側レールから中点側の節点に向かう上向き矢印で電圧 V₁ が，直流機の両端に上向き矢印で電機子電圧 V が示されている。接続点には黒丸が付されている。",
+      "officialReferenceUrls": [],
+      "uncertainty": "なし",
+      "needsReview": true,
+      "sourceQuestionPdfUrl": "https://www.shiken.or.jp/chief/upload/20250831_ch_third_q03.pdf",
+      "sourceAnswerPdfUrl": "https://www.shiken.or.jp/chief/upload/20250831_ch_third_a01.pdf",
+      "reviewedFromPage": [
+        19
+      ]
+    },
+    {
+      "part": "b",
+      "question": "図のように他励直流機を直流チョッパで駆動する。電源電圧は E = 200 V で一定とし，直流機の電機子電圧を V とする。IGBT Q₁ 及び Q₂ をオンオフ動作させるときのスイッチング周波数は 500 Hz であるとする。なお，本問では直流機の定常状態だけを扱うものとする。\n\n(b) Q₁ をオフして Q₂ をオンオフ制御することで，電機子電流の向きを(a)の場合と反対にし，直流機に発電動作(回生制動)をさせることができる。この制御において，スイッチングの 1 周期の間で Q₂ がオンになっている時間が 0.4 ms のとき，この直流機の電機子電圧 V の値[V]として，最も近いものを次の(1)〜(5)のうちから一つ選べ。",
+      "choices": {
+        "1": "1 000",
+        "2": "250",
+        "3": "200",
+        "4": "160",
+        "5": "40"
+      },
+      "officialAnswer": "4",
+      "explanation": "スイッチング周期は T = 1/500 Hz = 2 ms。Q₂ のオン時間は 0.4 ms なので，オフ時間は T_off = 2 − 0.4 = 1.6 ms。\nQ₁ をオフにして Q₂ をオンオフ制御すると，回路は直流機側から電源側へ電力を送る昇圧チョッパとして動作する(電機子電流は直流機 → 平滑リアクトル → 中点の向き)。ここでは IGBT・ダイオードを理想素子とし，平滑リアクトルにより電機子電流は途切れず連続して流れるものとする。\n・Q₂ オンの期間:中点が下側レールと短絡され V₁ = 0。直流機の起電力により電流がリアクトルと Q₂ を流れ，リアクトルにエネルギーが蓄えられる。\n・Q₂ オフの期間:リアクトルの電流は上側のダイオードを通って電源の正極側へ流れ込み，V₁ = E となる。\nしたがって V₁ の平均値は\n  V₁(平均) = E × T_off / T = 200 V × 1.6/2 = 160 V\n定常状態では平滑リアクトルの両端電圧の平均値は 0(リアクトルの抵抗を無視)なので，電機子の端子電圧 V は V₁ の平均値に等しい。\n  V = 160 V\nよって正答は(4)。",
+      "choiceExplanations": {
+        "1": "誤り。電機子電流が連続している場合，V₁ は 0 か E(200 V)のいずれかの値しかとらないため，その平均値に等しい V が E = 200 V を超えることはない。1 000 V は 200 V × 2/0.4 に相当する値である。",
+        "2": "誤り。(1)と同様に V は E = 200 V を超えられない。250 V は 200 V × 2/1.6 に相当する値である。",
+        "3": "誤り。V = 200 V となるのは T_off = T，すなわち Q₂ のオン時間が 0 の場合であり，オン時間 0.4 ms の条件に合わない。",
+        "4": "正しい。V = E × T_off / T = 200 V × 1.6 ms / 2 ms = 160 V。",
+        "5": "誤り。40 V は 200 V × 0.4/2 であり，Q₂ のオフ時間が 0.4 ms(オン時間 1.6 ms)の場合の値にあたる。本問では Q₂ のオン時間が 0.4 ms なので合わない。"
+      },
+      "figureDescription": "回路図(回路部分のみ)。左側に電池記号の直流電源があり，ラベル「電源電圧 E = 200 V」が付く。電源の上側レールと下側レールの間に，IGBT Q₁(上アーム，コレクタが上側レール側)と IGBT Q₂(下アーム)が直列に接続され，両者の接続点が中点となる。Q₁ と並列(中点〜上側レール間)にダイオードが，Q₂ と並列(下側レール〜中点間)にダイオードが接続され，いずれのダイオードも下から上へ導通する向き(カソードが上)に描かれている。図中に＋・−の文字表記はないが，2 個のダイオードがカソード上向きに直列接続されていること(下側レールが正極なら両ダイオードが順方向となり電源を短絡してしまう)と Q₁ のコレクタが上側にあることから，上側レールが電源の正極側である。したがって回生時には，Q₂ オフの期間に電流が中点から上側のダイオードを通って電源の正極へ流れ込む。中点から「平滑リアクトル」を介して直流機(円内に M と直流記号)の上側端子へ接続され，直流機の下側端子は下側レールに接続されている。下側レールから中点側の節点に向かう上向き矢印で電圧 V₁ が，直流機の両端に上向き矢印で電機子電圧 V が示されている。接続点には黒丸が付されている。",
+      "officialReferenceUrls": [],
+      "uncertainty": "なし",
+      "needsReview": true,
+      "sourceQuestionPdfUrl": "https://www.shiken.or.jp/chief/upload/20250831_ch_third_q03.pdf",
+      "sourceAnswerPdfUrl": "https://www.shiken.or.jp/chief/upload/20250831_ch_third_a01.pdf",
+      "reviewedFromPage": [
+        19
+      ]
+    }
+  ],
+  "draftModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 5349,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 9337,
+      "webSearchRequests": 0,
+      "costUSD": 0.18193979999999998,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 1959,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "cea30053eab49258f8c39efc31a944b11bc0196b2c630542774e00b03c957f48",
+  "inputRequestSha256": "adede68b475d20543f3af02e6f82dd6350617b4b7e641a95b99201823407a093",
+  "sourceQuestionPdfSha256": "2a73a24594cc2b8bb7504b9a0ff15e001b2bb56b830572ce2be853f7116f26d8",
+  "sourceAnswerPdfSha256": "76fd3715ed487d19a56b387fb402de20ee09474e9fa55b0413f9037b96af06c9",
+  "sourcePageImageSha256": {
+    "data/raw_pdfs/denken3/review/20250831/machinery/p19.png": "f6fa2f4b8a07190f9b245f99c54b83b9cfcef3ab39f51474c490014459edefac"
+  },
+  "revisionHistory": [
+    {
+      "version": 1,
+      "model": "claude-opus-5-5",
+      "resolvedModel": "claude-opus-5-5",
+      "modelUsage": {
+        "claude-opus-5-5": {
+          "inputTokens": 2,
+          "outputTokens": 5687,
+          "cacheReadInputTokens": 1279,
+          "cacheCreationInputTokens": 16215,
+          "webSearchRequests": 0,
+          "costUSD": 0.2437238,
+          "contextWindow": 1000000,
+          "maxOutputTokens": 128000,
+          "thinkingTokens": 2215,
+          "canonicalModel": "claude-opus-5-5",
+          "provider": "firstParty",
+          "costBasis": "list"
+        }
+      },
+      "rawResponseSha256": "ab0e81a6aee664d98dc50f264cbcde15ef2790459af663e278d3b5b68e9b807e",
+      "inputRequestSha256": "869ab1e2315736e6de316ae6e39cb2abf2a974e31d056ea7b138bbe2524922f7",
+      "previousDraftSha256": "82a475cd7a76bf4707c67032bf309097df6169b6f8a64150e36281988415d1d4",
+      "previousDraft": "data/raw_pdfs/denken3/review/20250831/machinery/archive/q16-vision-draft-v1.json",
+      "answeredReviewSha256": "7116856a18cdfb76d61b0f96c5b4d8767527ce6b96ae32d580c409a4cf3dc9cd",
+      "answeredReview": "data/raw_pdfs/denken3/review/20250831/machinery/archive/q16-opus-review-v1.json",
+      "answeredStrictReceipt": "docs/evidence/denken3/strict/20250831-machinery-s1-q16a-q16b-opus.json",
+      "answeredStrictReceiptSha256": "462fee721ee09fe27c3bca222af916bff9c4ffc0ce63fe8c26f54631067aefae",
+      "figureSha256": {
+        "20250831-machinery-q16-fig1": "9416c7dfd1ae642ef9d7607e42641aac27f1199060819439782b0e4b68d4ed49"
+      },
+      "referenceHashes": {},
+      "operatorNote": ""
+    }
+  ]
+}

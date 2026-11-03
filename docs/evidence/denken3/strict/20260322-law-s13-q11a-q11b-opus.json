@@ -1,0 +1,104 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20260322",
+  "subject": "law",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 7504,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 25887,
+      "webSearchRequests": 0,
+      "costUSD": 0.3574398,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 3892,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "2045792ea0157942971b7708102b37904fbf18026f35b31ba167a7da930fd3ce",
+  "inputRequestSha256": "d9290f3dcf08f4ce7c96c3a300e11068a094c6fe85d357b55d90dd582ecc9c64",
+  "inputHashes": {
+    "candidateSha256": {
+      "q11a": "0b80beec240fbcc6809a6f41ee7681a4255269aadb6d2047698b7a00efe81e66",
+      "q11b": "d1394dd15e68c210d8c8bf9598ce32d65647d4ffe55d80f37e3167d4f1fbec5a"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20260322/law/p18.png": "293edd44b7d9a4f91a7116e994e555a5751a9c50b25c681e8a5088299bb87df3",
+      "data/raw_pdfs/denken3/review/20260322/law/p19.png": "8f3a361d3ba805fbbf76580833f25d0b14dacad04e1175dad66c03e9ef628723",
+      "data/raw_pdfs/denken3/review/20260322/law/p04.png": "4e55d96c3f339921b9301997fede371d8891bc2fd296b7ad5c0cbdf5bb675366"
+    },
+    "figureSha256": {
+      "public/images/denken3/20260322/law/20260322-law-q11-fig1.png": "411d59cecbf3fd4c6c5dcbe7ee5233b641155da038fc6796ca311a65a75b7ee4",
+      "public/images/denken3/20260322/law/20260322-law-q11-fig2.png": "5b032693784c78282070356c8948ef427b7ac52707bf3d3138f727e1d673ab69",
+      "public/images/denken3/20260322/law/20260322-law-q11-fig3.png": "7c0e381861d6ba75d1b36db584a8848d82bf06342d8bd5fc168f20b4fcee11da"
+    },
+    "sourceQuestionPdfSha256": "945e325f0fe221645f898efebe0dbcac32e1605a962a6850493895a67df0885e",
+    "sourceAnswerPdfSha256": "cc2890296d06a4823df5697a78a1c01ddfd39f041c51f48c87984daa3a5707c6",
+    "officialAnswerUnitsSha256": "e923b45d160c52a9453a74e7bdfe0f653184973814f5482e7a9421971bd127d7",
+    "referencePdfSha256": {},
+    "referencePageSha256": {},
+    "referenceJsonSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q11a",
+      "questionNumber": 11,
+      "part": "a",
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [
+        "figureUrls に 20260322-law-q11-fig3.png（(b) の選択肢(1)〜(5)の補助接地極配置図）が含まれている。この図は (a) の解答に無関係である。しかも図中の (1)〜(5) ラベルが (a) の選択肢番号 (1) 0.7〜(5) 2.0 と衝突するため、学習者が図と選択肢を取り違えるおそれがある。(a) の figureUrls は fig1（図1）と fig2（図2）の2点に限定すべき。",
+        "figureDescription は図1・図2だけを説明しており、添付された fig3 には触れていない。figureUrls と figureDescription が一致していない（上記の fig3 除外で解消する）。"
+      ],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "問題文：原図 PDF 第18頁（T2−H 018、印字頁 -15-）と照合した。以下の要素はすべて原文と一致する。共通柱書『接地極及び接地抵抗測定について，次の(a)及び(b)の問に答えよ。』、①式 R=ρ/(2πL)・ln(4L/d)、記号定義（L：長さ[m]、d：直径[m]、π：円周率）、x=4L/d による②式 R=(2ρ/(πd))・(ln(x)/x)、条件『L≫d として 200≦x≦1 000 の範囲で図2の値』、ρ=150 Ω・m、d=14×10⁻³ m、R を 100 Ω 以下、『L の最小長さ[m]として最も近いもの』、『ρ は深さによらず一定』。",
+        "選択肢：原図の (1) 0.7、(2) 1.0、(3) 1.2、(4) 1.5、(5) 2.0 と一致する。",
+        "公式正答：解答 PDF 原図の法規 問11(a) は解答 4・配点 6 で、候補の officialAnswer=4・scoringPoints=6 と一致する。",
+        "②式の導出を検算した。L=xd/4 を①式に代入すると 2πL=πxd/2 となり、R=2ρ·ln(x)/(πxd) が得られる。候補の導出は正しい。",
+        "係数を検算した。2ρ/(πd)=300/(π×0.014)=300/0.043982≈6 820.9 Ω で、候補の≈6 821 Ω は正しい。100/6 820.9≈0.014661 で、候補の≈0.01466 は正しい。",
+        "ln(x)/x=0.014661 の解を数値で確認した。x=410 で 6.01616/410≈0.014674、x=411 で 6.01859/411≈0.014644 となり、x≈410.4 である。L=410.4×0.014/4≈1.436 m で、候補の≈1.44 m は正しい。",
+        "図2の読み取りを確認した。x=400 で約 0.015、x=410 付近で約 0.0147 と読め、x≈410 の読取りと整合する。ln(x)/x は x>e で単調減少するため、200≦x≦1 000 の区間では『x が大きいほど R は小さい』という因果は正しい（d が一定なので x は L に比例する）。",
+        "各肢の R を検算した。(1) L=0.7：x=200、ln200/200≈0.02649、R≈180.7 Ω（候補≈181 Ω）。(2) L=1.0：x≈285.7、≈0.01979、R≈135.0 Ω。(3) L=1.2：x≈342.9、≈0.01703、R≈116.1 Ω。(4) L=1.5：x≈428.6、≈0.01414、R≈96.5 Ω（候補≈96 Ω）。(5) L=2.0：x≈571.4、≈0.01111、R≈75.8 Ω（候補≈76 Ω）。いずれも候補値と整合し、全肢の x は図2の範囲 200〜1 000 内にある。",
+        "必要最小長さ 1.436 m と各肢の差（(3) 約0.24 m、(4) 約0.06 m、(5) 約0.56 m）は候補の記述と整合する。(4) が最も近く、かつ条件 R≦100 Ω を満たす。",
+        "公開候補図 fig1 を原図 PDF 第18頁の図1と照合した。以下が原図と一致し、欠落はない：点描の土壌、『大地抵抗率 ρ[Ω・m]』、引出線付き『棒状接地極』、上端幅の寸法『d[m]』、地表から先端までの寸法『L[m]』、尖った先端、キャプション『図1』。",
+        "公開候補図 fig2 を原図 PDF 第19頁の図2と照合した。以下が原図と一致する：縦軸 ln(x)/x（0〜0.03、0.005 刻み）、横軸 x（200〜1 000、100 刻み）、補助方眼、曲線形状（x=200 で約0.0265、x=1 000 で約0.0069）、キャプション『図2』。この公開図だけで x≈410 の読み取りが可能である。",
+        "メタデータを manifest と照合した。fiscalYear=2025（令和7年度）、term=lower、examDate=2026-03-22、subject=law、問題 PDF・解答 PDF の URL、reviewedFromPage=[18,19]、sourceAttribution『令和7年度下期…法規科目 問11(a)』はいずれも manifest と一致する。",
+        "officialReferenceUrls は空で、検証を要する外部の独立主張はない。本問は計算問題で、注3（令和7年4月1日現在の法令に基づく旨）の法令基準日に依存する記述はない。"
+      ]
+    },
+    {
+      "unitKey": "q11b",
+      "questionNumber": 11,
+      "part": "b",
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [
+        "figureUrls に 20260322-law-q11-fig1.png（図1：棒状接地極）と 20260322-law-q11-fig2.png（図2：ln(x)/x グラフ）が含まれている。これらは (a) 専用の図で、(b) の解答には不要である。figureDescription も fig3 の配置図だけを説明しており、添付図と一致していない。(b) の figureUrls は fig3（選択肢配置図）だけに限定すべき。choiceFigureUrls を使う設計なら、fig3 をそちらへ紐付けることも検討する。"
+      ],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "問題文：原図 PDF 第19頁（T2−H 019、印字頁 -16-）の (b) 本文『直読式接地抵抗計を用いて，接地抵抗を測定する場合，被測定接地極 E に対する，二つの補助接地極 S(電圧用)及び H(電流用)の地表面配置として，最も適切なものを次の(1)〜(5)のうちから一つ選べ。』と一致する。",
+        "選択肢のテキスト化を原図の配置図と1点ずつ照合し、すべて一致した。(1) 左 S・右上 H・右下 E、S–H 10 m、S–E 10 m、H–E 2 m。(2) 左 E・右上 H・右下 S、E–H 10 m、E–S 10 m、H–S 2 m。(3) 一直線に E・H・S、E–H 4 m、H–S 2 m。(4) 一直線に E・S・H、E–S 10 m、S–H 10 m。(5) 一直線に S・E・H、S–E 10 m、E–H 2 m。",
+        "公式正答：解答 PDF 原図の法規 問11(b) は解答 4・配点 7 で、候補の officialAnswer=4・scoringPoints=7 と一致する。",
+        "総合解説の原理記述を確認した。E–H 間に測定電流を流し、E–S 間の電位差から接地抵抗を求める電位降下法であり、E と H の抵抗区域が重ならないよう離し、S を両者の間の電位平坦部に置いて、E・S・H を一直線上に約10 m 間隔で配置する。これは標準的な測定方法の説明として正しい。",
+        "各配置の E–H 距離を検算した。(1) 2 m、(2) 10 m、(3) 4 m、(4) 20 m、(5) 2 m で、『E–H 間が選択肢中最大（20 m）』という記述は正しい。E・S・H がこの順で一直線に並ぶのは (4) だけであることも正しい。",
+        "誤答肢の固有理由を確認した。(1)：E–H が 2 m で近接し、S が E・H の間にない。(2)：S が H から 2 m で H の抵抗区域内にあり、一直線配置でない。(3)：間隔が小さく、S が H の外側にあるため E–S 間の電圧に H 近傍の電位変化が含まれる。(5)：E–H が 2 m で近接し、S が E を挟んで H の反対側にある。いずれも各図の配置と整合し、因果にも誤りはない。",
+        "公開候補図 fig3 を原図 PDF 第19頁の選択肢図と照合した。(1)〜(5) の各点ラベル（E/S/H）、位置、破線接続、寸法値（10 m・2 m・4 m）、寸法線の向きがすべて一致しており、欠落や取り違えはない。この公開図だけで解答可能である。",
+        "メタデータを manifest と照合した。fiscalYear=2025、term=lower、examDate=2026-03-22、subject=law、問題 PDF・解答 PDF の URL、reviewedFromPage=[18,19]、sourceAttribution『令和7年度下期…法規科目 問11(b)』はいずれも manifest と一致する。",
+        "officialReferenceUrls は空で、外部の独立主張はない。解説は法令条文に依拠しておらず、注3の法令基準日（令和7年4月1日）との齟齬もない。"
+      ]
+    }
+  ]
+}

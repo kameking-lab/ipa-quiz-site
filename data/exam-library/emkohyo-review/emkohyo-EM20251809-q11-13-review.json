@@ -1,0 +1,102 @@
+{
+  "reviewModel": "claude-opus-5-5",
+  "requestedModel": "claude-opus-5-5",
+  "canonicalModel": "claude-opus-5-5",
+  "provider": "firstParty",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 5063,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 28068,
+      "webSearchRequests": 0,
+      "costUSD": 0.32606779999999996,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 3364,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponsePath": "data/exam-library/emkohyo-review/emkohyo-EM20251809-q11-13-raw-response.txt",
+  "rawResponseSha256": "e449cb1fdde6ef39f4a8ea2d59cdd8598887688b6f79b01fc60570ca0648b6e1",
+  "paperId": "emkohyo-EM20251809",
+  "ids": [
+    "emkohyo-EM20251809-q11",
+    "emkohyo-EM20251809-q12",
+    "emkohyo-EM20251809-q13"
+  ],
+  "figureSha256": {
+    "emkohyo-EM20251809-q11": {},
+    "emkohyo-EM20251809-q12": {},
+    "emkohyo-EM20251809-q13": {}
+  },
+  "officialRowImageSha256": {
+    "emkohyo-EM20251809-q11": {
+      "/exam-library/emkohyo-EM20251809/q11-p8-0.webp": "b1783bf63850cb2cbbbc198b3ee403a2fab29217004d481ff7a899895d3fff23"
+    },
+    "emkohyo-EM20251809-q12": {
+      "/exam-library/emkohyo-EM20251809/q12-p8-1.webp": "49b07a205826b74989bfc6fa59050f73c227643c357d5d526a0721b0210ee95c"
+    },
+    "emkohyo-EM20251809-q13": {
+      "/exam-library/emkohyo-EM20251809/q13-p9-0.webp": "9d3ee81bb320c2fb97d82246cf86cb374da15702cfcdffe4c5ddfed65b26be5a"
+    }
+  },
+  "officialPageImageSha256": {},
+  "governmentSourceImageSha256": {},
+  "candidateSha256": {
+    "emkohyo-EM20251809-q11": "177f06de7bc682956fda6f6085a17d521a5adcad9fb4e408440912271d9ccfcb",
+    "emkohyo-EM20251809-q12": "0592ff5b85e1c985fac9123589f3dc35e3186bcbe672b9bd8ad15aea80dd71aa",
+    "emkohyo-EM20251809-q13": "3d419c7b8fcebfb0b10bde7949627f5c4ef6213b224f66642987e5016cc5e0d1"
+  },
+  "sourcePackPath": "docs/evidence/emkohyo-choice-sources/emkohyo-EM20251809-q11-13.json",
+  "sourcePackSha256": "13bbe53233757a3a00c92ab23d4b452214a105addc73cf0428b1384cfb159073",
+  "assessment": {
+    "emkohyo-EM20251809-q11": {
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "reasonIssues": [],
+      "sourceIssues": [],
+      "needsExternalCheck": []
+    },
+    "emkohyo-EM20251809-q12": {
+      "status": "FIX",
+      "textIssues": [
+        "summaryの「単色のγ線・X線を出し」は不正確。²²Naは0.511MeV消滅放射線と1.275MeVの2本を出し、¹⁰⁹Cdも88.0keVγ線とAg特性X線（約22keV）を出すため「単色」ではない。「特定エネルギーのγ線・X線（光電ピーク）を出し」等に改めるべき。"
+      ],
+      "choiceIssues": [],
+      "reasonIssues": [
+        "肢1：「³H・¹⁴C・¹⁴⁷Pmはいずれもγ線を出さない純β線放出核種」と断定しているが、¹⁴⁷Pmは極めて低い放出率（約0.003%）ながら121keVのγ線を伴う。「γ線をほとんど出さず、校正に使える光電ピークが得られない」等の表現に弱めるべき。",
+        "肢3：厚労省の放射性医薬品基準の105〜115分は確認試験で実測半減期が入るべき許容範囲であり、¹⁸Fの半減期そのものを規定した記述ではない。「基準は…半減期を105〜115分とし」は出典の性格を誤って要約している（¹⁸Fの半減期は約110分と書き、基準は確認試験の許容範囲として引用すべき）。",
+        "肢3：「γ線は0.511MeVの消滅放射線のみである」は、出典の「0.511MeVにピークを認める」を超えた断定。出典に合わせるか、「のみ」を支える別資料を示すこと。",
+        "肢4：²⁵²Cfが不適切な理由を「ATOMICAの列挙に含まれない」という不在論証に依存しており、因果として弱い。自発核分裂による中性子と連続的な核分裂γ線を伴い、単一エネルギーの校正ピークを与えない線源である、等の積極的理由を示すべき。"
+      ],
+      "sourceIssues": [
+        "¹⁴⁷Pmがγ線を出さないことを直接支える政府資料が無い。ATOMICA「β線放出核種」の代表例は³H、¹⁴C、³²P等で、¹⁴⁷Pmは含まれない。「標準線源」ページもβ線標準線源として列挙するのみ。",
+        "²⁵²Cfがγ線エネルギー校正に不適である理由を直接述べる政府資料が無い。ATOMICA「自発核分裂」「中性子源」は用途を述べるだけで、校正用線源として不適切だとは書いていない。"
+      ],
+      "needsExternalCheck": [
+        "¹⁴⁷Pmのγ線放出（121.2keV、放出率約0.003%）の核データ（ENSDF/NNDC等）での確認",
+        "²²Na（0.511MeV・1.275MeV）および¹⁰⁹Cd（88.0keVγ線・Ag K X線）の放出エネルギーの核データでの確認",
+        "²⁵²Cfが校正用線源に不適な理由（自発核分裂中性子・連続γ線）を支える一次資料の追加"
+      ]
+    },
+    "emkohyo-EM20251809-q13": {
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "reasonIssues": [
+        "肢3：本文で「規制庁No.23」と表記しているが、sources欄では「文部科学省 放射能測定法シリーズNo.23」となっており矛盾する。No.23は原子力規制庁発足（2012年）前に刊行された文書である。発行機関の表記を資料の実際の発行者に揃えるべき。"
+      ],
+      "sourceIssues": [
+        "No.23の同時定量法の解説は⁸⁹Sr＋⁹⁰Sr（＋⁹⁰Y）を想定したもので、³Hと¹⁴Cの同時測定を直接述べていない。肢3・肢5の「³Hと¹⁴Cも同様に同時測定できる」は原理からの類推であり、政府資料による直接の裏付けは無い。³H/¹⁴Cの二重標識測定を直接述べる資料があれば追加が望ましい。"
+      ],
+      "needsExternalCheck": [
+        "放射能測定法シリーズNo.23の発行機関・刊行年の確認（科学技術庁／文部科学省）",
+        "液体シンチレーションカウンタによる³H・¹⁴C同時（二重標識）測定を直接記述する公的資料の有無の確認"
+      ]
+    }
+  }
+}

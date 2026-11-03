@@ -1,0 +1,87 @@
+{
+  "inputHashes": {
+    "draftSha256": "1c81123ef8155f4c9bb1efe2e7ed44db7290397ac7bed985af844271f38769fe",
+    "rowSha256": {
+      "31": "c6da9adf8194f386abcb376bdc819a1c46dbe4539fe0acf2387382c657a5d66b",
+      "32": "73d0c10007ac0fa68fc52330cedf5557c53ed4edc17ffbe220ddf1b5ed524de8",
+      "33": "dcf083e379423a3c397d08800e2514989642bb532e6bdecd6b26c7dd37e571fe",
+      "34": "3fd8f3bc1a35953677bd51115b93da0130451829070d32173b9be3a29ec92932",
+      "35": "e5bf6fa656c6a19a41d350290c2fde70209c139b6d822b69430c84d2cae1c00f"
+    },
+    "sharedFigureSha256": {
+      "public/images/denko2/2025-first/wiring-main.png": "9a24f0c440f8551855249e8768d44fb15bbe7db7aff283ebfffe950cfcae4277"
+    }
+  },
+  "reviewModel": "claude-opus-5-5",
+  "assessment": [
+    {
+      "number": 31,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "lawNeedsExternalCheck": [
+        "解説にある「道路を横断しない場合は原則4m以上、技術上やむを得ず交通に支障がなければ2.5m以上」の根拠条項（uncertaintyにある電技解釈第116条など）は、画像だけでは真偽を判定できないため要確認。",
+        "ハ（3m）の理由は「本問条件に対応する規定値ではない」としか書いていない。3mが別の条件（例: 横断歩道橋の上など）の規定値かどうかは画像では判定できないため要確認。",
+        "officialReferenceUrls（METI 20241022-2.pdf）が本問の根拠資料として正しいかは画像では判定できないため要確認。",
+        "imageUrls の wiring-main.png（共通配線図の全体）を公開してよいかは本監査では判断しない。要確認。"
+      ]
+    },
+    {
+      "number": 32,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "lawNeedsExternalCheck": [
+        "「地中埋設配線にはケーブルを使い、絶縁電線（EM-IE）は使えない」という根拠条項（uncertaintyにある電技解釈第120条など）は、画像だけでは真偽を判定できないため要確認。",
+        "肢別理由にある各記号の正式名称（EM-EEF=平形、EM-EE=丸形、EM-CE=架橋ポリエチレン絶縁、EM-IE=耐燃性ポリエチレン絶縁電線）は画像に書かれていないため、JIS等で要確認。",
+        "officialReferenceUrls（METI 20241022-2.pdf）が本問の根拠資料として正しいかは画像では判定できないため要確認。",
+        "imageUrls の wiring-main.png を公開してよいかは本監査では判断しない。要確認。"
+      ]
+    },
+    {
+      "number": 33,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "lawNeedsExternalCheck": [
+        "図記号の対応（●H=位置表示灯内蔵、●L=確認表示灯内蔵、●D=遅延、●RAS=熱線式自動スイッチ）と点灯のタイミング（位置表示灯はオフ時に点灯、確認表示灯はオン時に点灯）は、JIS C 0303の原典で要確認。",
+        "imageUrls の wiring-main.png を公開してよいかは本監査では判断しない。要確認。"
+      ]
+    },
+    {
+      "number": 34,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [
+        "誤りではない（補足の提案）。配線図では、P-1と●BLを結ぶ(E19)の破線のそばに「※2」がある。P-1結線図の下段のS（3P20A、回路b）から出ている制御配線※2につながっていることを diagramDescription に書き足すと、図との照合がより正確になる。"
+      ],
+      "lawNeedsExternalCheck": [
+        "図記号の対応（●B=電磁開閉器用押しボタン、●BL=確認表示灯付、●P=圧力スイッチ、●D=遅延スイッチ）は、JIS C 0303の原典で要確認。",
+        "imageUrls の wiring-main.png を公開してよいかは本監査では判断しない。要確認。"
+      ]
+    },
+    {
+      "number": 35,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "explanationIssues": [
+        "誤りではない（注記）。解説の根拠は「Sの負荷側から制御配線※1（圧力スイッチ●Pへ）が分岐している」という図からの推論だけで、「□S」が電磁開閉器を表すという図記号の定義には触れていない。図の読み取り（3P50A B→BE 3P30A→S→a／※1、※1は給水加圧ポンプ横の●Pへ）は原図と一致している。"
+      ],
+      "figureIssues": [],
+      "lawNeedsExternalCheck": [
+        "ロの理由にある「電流計付箱開閉器ならSの箱に電流計Aが付記される」という記号の形は、画像からは確認できないため、JIS C 0303で要確認。",
+        "□S単独の記号が電磁開閉器を表すのか、開閉器一般を表すのかというJIS上の区分は要確認（公式正答イとは矛盾しない）。",
+        "imageUrls の wiring-main.png を公開してよいかは本監査では判断しない。要確認。"
+      ]
+    }
+  ]
+}

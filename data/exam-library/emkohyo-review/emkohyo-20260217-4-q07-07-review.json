@@ -1,0 +1,65 @@
+{
+  "reviewModel": "claude-opus-5-5",
+  "requestedModel": "claude-opus-5-5",
+  "canonicalModel": "claude-opus-5-5",
+  "provider": "firstParty",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 3041,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 15783,
+      "webSearchRequests": 0,
+      "costUSD": 0.18734779999999998,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 1657,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponsePath": "data/exam-library/emkohyo-review/emkohyo-20260217-4-q07-07-raw-response.txt",
+  "rawResponseSha256": "7e5f00aa110846ff8346b09473695a4a06352720a43c4f129cc88595daa4af45",
+  "paperId": "emkohyo-20260217-4",
+  "ids": [
+    "emkohyo-20260217-4-q7"
+  ],
+  "figureSha256": {
+    "emkohyo-20260217-4-q7": {}
+  },
+  "officialRowImageSha256": {
+    "emkohyo-20260217-4-q7": {
+      "/exam-library/emkohyo-20260217-4/q7-p5-0.webp": "98be0528926c982be674f7d4aae0e9f211ec104a8848e886ed1ebd172356f3b2"
+    }
+  },
+  "officialPageImageSha256": {},
+  "governmentSourceImageSha256": {},
+  "candidateSha256": {
+    "emkohyo-20260217-4-q7": "97382ee46dbc8bbe49f8ca6ef90a554594fd27591c093f3b0f961e538e0c36bf"
+  },
+  "sourcePackPath": "docs/evidence/emkohyo-choice-sources/emkohyo-20260217-4-q07-07.json",
+  "sourcePackSha256": "b3376a377cd74cd0efb9964774de9de23ded9eb7d71142cf1b82e3dae4d442b2",
+  "assessment": {
+    "emkohyo-20260217-4-q7": {
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "reasonIssues": [
+        "肢3の理由は、科学の甲子園の手引きが「ピペットの液だめを手のひらで温めると中身が膨張して液が押し出されることを注意している」と書いているが、出典を誤読している。該当箇所（pdfPage 12、手順⑹）は「ピペットポンプを装着した状態で液だめの部分を手のひらで温めて押し出してもよい」であり、排出後に残った液を押し出すための許容操作として書かれている。警告や注意ではない。この箇所が支えるのは「手の温度で内容物が膨張し、液が押し出される」という物理現象だけである。したがって「注意している」という表現を削除し、「残液を押し出す操作として手のひらで温める方法が示されており、手の温度で液が押し出されることがわかる。吸引・標線合わせの段階で液だめを握れば同じ効果で体積が狂う」のように、推論であることが明示された書き方に改める必要がある。",
+        "肢3の理由は、環境省教材の「加熱による膨張と冷却による収縮によって容積に狂いが生じる」を根拠の一つとして使っている。しかしこの記述の文脈は、洗浄後に加熱乾燥器を使わないという乾燥工程の注意（解説-23）である。手で握ることによる液温変化について述べたものではない。この記述は肢5の根拠として使い、肢3からは外すか、「文脈は乾燥工程である」と明記すべきである。",
+        "肢3の理由が挙げる環境省の「上端を人差し指で押さえます」は、吸い上げ後に上端をふさぐ操作を述べたものである。「上部の細い管を持つ」という持ち位置を直接示してはいない。結論の「上部の細い管を持つのが正しい」は根拠の範囲を超えているので、出典が示す内容と一般的な操作法の区別を明確にすること。"
+      ],
+      "sourceIssues": [
+        "肢3の正誤判定の核心は「ホールピペットは膨らんだ部分を持たず、上部を持つ」という点である。添付の政府系資料には、これを直接述べる記述がない。JSTの記述は許容操作としての加温、ビュレット目盛部の把持回避、環境省の記述は加熱乾燥の禁止と上端を指で押さえる操作であり、いずれも間接的な根拠にとどまる。",
+        "肢2・肢4で引用している産総研資料（pdfPage 9）の10 mL全量ピペット±0.02 mLについて、抜粋にはクラスA／Bの別が明記されていない。一方、比較相手のメスピペット10 mL ±0.05 mL（NITE資料）はJIS R 3505-1994付表2のクラスAと明記されている。同一等級どうしの比較であることは出典上で確認できないので、クラスAの全量ピペット値が明記された出典に差し替えるか、補う必要がある。",
+        "肢4の許容差はJIS R 3505-1994（NITE資料が引用する版）に基づく。現行版での数値が同じかどうかは添付資料では確認できない。"
+      ],
+      "needsExternalCheck": [
+        "ホールピペットの正しい持ち位置（膨らみ部を握らず上部を持つ）を直接記述した一次資料（JIS K 0050、公的機関の分析操作マニュアル等）を確認し、肢3の根拠に加えること。",
+        "JST手引きpdfPage 12〜13の手順⑹がホールピペットの操作手順か（直後の見出し「■メ…」はメスピペット節と推定される）を原文で確認し、肢3理由での引用が正確かを検証すること。",
+        "JIS R 3505のクラスA全量ピペット10 mLの許容差（±0.02 mL）を、等級が明記された出典で確認すること。"
+      ]
+    }
+  }
+}

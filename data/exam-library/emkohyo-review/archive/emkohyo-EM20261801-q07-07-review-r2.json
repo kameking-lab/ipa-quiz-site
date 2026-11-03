@@ -1,0 +1,62 @@
+{
+  "reviewModel": "claude-opus-5-5",
+  "requestedModel": "claude-opus-5-5",
+  "canonicalModel": "claude-opus-5-5",
+  "provider": "firstParty",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 3621,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 15749,
+      "webSearchRequests": 0,
+      "costUSD": 0.19867579999999999,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 2825,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponsePath": "data/exam-library/emkohyo-review/emkohyo-EM20261801-q07-07-raw-response.txt",
+  "rawResponseSha256": "d37031d86659d5d9c247503d3aa1cd781545d85728c224fe0967063af2d569fd",
+  "paperId": "emkohyo-EM20261801",
+  "ids": [
+    "emkohyo-EM20261801-q7"
+  ],
+  "figureSha256": {
+    "emkohyo-EM20261801-q7": {}
+  },
+  "officialRowImageSha256": {
+    "emkohyo-EM20261801-q7": {
+      "/exam-library/emkohyo-EM20261801/q7-p6-0.webp": "9a59a50c2b30da8d990148a64b74c00dd38d22db9f9cc5765e938fb56b2dab6e"
+    }
+  },
+  "officialPageImageSha256": {},
+  "governmentSourceImageSha256": {},
+  "candidateSha256": {
+    "emkohyo-EM20261801-q7": "0631d29968e19763610ae16f71fb8585697018f6e4c898a0915d7dc2ced61e07"
+  },
+  "sourcePackPath": "docs/evidence/emkohyo-choice-sources/emkohyo-EM20261801-q07-07.json",
+  "sourcePackSha256": "60cdebf8bb26390a74789e049490e2341da8b593eac344f31056d53e57b5da4b",
+  "assessment": {
+    "emkohyo-EM20261801-q7": {
+      "status": "FIX",
+      "textIssues": [
+        "summaryの「甲状腺がんを生じる主要ながんとする（5）が誤り」は日本語として不自然。例:「ヨウ化メチルはIARCでグループ3（ヒトに対する発がん性について分類できない）であり、主要ながんを甲状腺がんとする5が誤り」に直す。"
+      ],
+      "choiceIssues": [],
+      "reasonIssues": [
+        "肢4: 厚労省モデルSDS（オーラミン）の「製造作業者集団で膀胱腫瘍の過剰発生がみられた」は【参考データ等】欄の記載である。同じ文は続けて、1-/2-ナフチルアミンやベンジジンなどの膀胱がん物質に同時ばく露した作業者を含む統計解析の可能性を指摘している。この留保を省き、肯定的な根拠として示すのは出典の趣旨を一部欠いている。主根拠を労基則別表第1の2（オーラミン製造工程の業務による尿路系腫瘍）に置き、SDSの記載は交絡の可能性の注記と併せて示すよう修正する。",
+        "肢4: 「主な根拠は製造工程でのばく露」は、何の根拠かが曖昧である。膀胱がんとの関連の根拠が、オーラミン単体ではなく製造工程でのばく露にあるという趣旨だと明記する。"
+      ],
+      "sourceIssues": [
+        "肢5: 理由は甲状腺影響を「ラット」の所見としている。しかし照合済み抜粋の文脈は「…気を90日間及び1年間吸入ばく露した試験において」で始まり、動物種が抜粋内で確認できない。モデルSDS（74-88-4）で試験動物種の記載を確認し、該当箇所を抜粋に含める必要がある。"
+      ],
+      "needsExternalCheck": [
+        "https://anzeninfo.mhlw.go.jp/anzen/gmsds/74-88-4.html の特定標的臓器毒性（反復ばく露）欄で、60ppm・1年間吸入ばく露による甲状腺影響の試験動物がラットであることを確認する。"
+      ]
+    }
+  }
+}

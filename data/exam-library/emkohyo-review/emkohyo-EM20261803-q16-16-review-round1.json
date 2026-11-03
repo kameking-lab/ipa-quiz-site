@@ -1,0 +1,54 @@
+{
+  "reviewModel": "claude-opus-5-5",
+  "requestedModel": "claude-opus-5-5",
+  "canonicalModel": "claude-opus-5-5",
+  "provider": "firstParty",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 2290,
+      "cacheReadInputTokens": 143524,
+      "cacheCreationInputTokens": 15683,
+      "webSearchRequests": 0,
+      "costUSD": 0.1999768,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 1763,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "paperId": "emkohyo-EM20261803",
+  "ids": [
+    "emkohyo-EM20261803-q16"
+  ],
+  "figureSha256": {
+    "emkohyo-EM20261803-q16": {}
+  },
+  "officialRowImageSha256": {
+    "emkohyo-EM20261803-q16": {
+      "/exam-library/emkohyo-EM20261803/q16-p10-0.webp": "ee71698f15732f9bee7ee411e2e49d012e398622b6f1fe7ae60dc6d6ba878aeb"
+    }
+  },
+  "governmentSourceImageSha256": {},
+  "candidateSha256": {
+    "emkohyo-EM20261803-q16": "57b6985925f00c820ab6d58e2b389a1b293be1646fa1a32a327e1daf45b25a25"
+  },
+  "sourcePackPath": "docs/evidence/emkohyo-choice-sources/emkohyo-EM20261803-q16-16.json",
+  "sourcePackSha256": "da79f6a686017ca4350a3fd70e7aa8f60f8a98a6bb6417596641743b7ab4adfc",
+  "assessment": {
+    "emkohyo-EM20261803-q16": {
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "reasonIssues": [],
+      "sourceIssues": [
+        "肢2の理由にある「固体捕集方法は、固体の粒子の層に吸着などをさせて捕集する方法」と、肢3の理由にある「捕集袋や捕集びんへそのまま採る」（直接捕集方法）は、どちらも捕集方法の定義を述べている。定義の出典は作業環境測定基準第1条（定義）と考えられるが、sourcesの表題は「作業環境測定基準第9条」だけで、claimedExcerptsも第9条の表（粒子状の行とガス状の行）の2件しかない。定義の記述は照合済みの抜粋で裏付けられていない。第1条の定義の抜粋を証拠に加えるか、表題を「作業環境測定基準（第1条・第9条）」とするか、定義の記述を理由から外して第9条の表だけで説明すること。"
+      ],
+      "needsExternalCheck": [
+        "キャッシュ済み本文（cachedTextSha256=55fd2bfb…）に作業環境測定基準第1条の定義が入っているかを確かめる。確かめる定義は、固体捕集方法の「固体の粒子の層を通して吸引すること等により…吸着等をさせて捕集する方法」と、直接捕集方法の「溶液、固体の粒子等に通すことなく、直接、捕集袋、捕集びん等に捕集する方法」の2つ。"
+      ]
+    }
+  }
+}

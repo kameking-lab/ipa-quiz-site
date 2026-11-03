@@ -1,0 +1,101 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20250831",
+  "subject": "theory",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 7133,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 20801,
+      "webSearchRequests": 0,
+      "costUSD": 0.3093318,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 4253,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "1d0af3f1682f3d38c3b5c9d74c29d3bf243f8fb6c739b43b6d09fb3515ec7022",
+  "inputRequestSha256": "de06428defe4217bb6d108a72f859c0822ca74403203cb373885c1b3e83e4fdf",
+  "inputHashes": {
+    "candidateSha256": {
+      "q18a": "049a8e119db5efd1a57021bdd2b54cbd7ea0e89d5163b7f3c3db333f3348a36c",
+      "q18b": "cb2c0dc60187ee4bc5aa610dcb7b82032f4c6a095850c047c9357b073244c881"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20250831/theory/p22.png": "d593ba1982a20ab338fddb7770923567b8b68cbff632c96fb759ec150247166b",
+      "data/raw_pdfs/denken3/review/20250831/theory/p23.png": "2419acf01bb613dae3019dbf561cdeb296f98e8868a0683e5d8f2b1daae6076a"
+    },
+    "figureSha256": {
+      "public/images/denken3/20250831/theory/20250831-theory-q18-fig1.png": "cdd5be0830205019b6944d3fec900a0e1e00637e20185504ced750d713968aad",
+      "public/images/denken3/20250831/theory/20250831-theory-q18-fig2.png": "ebfcb62a2b2bcdccd45ed0ebc203925d9119d6ebf38aed985591a3f0a015cfda"
+    },
+    "sourceQuestionPdfSha256": "11a75ffd5dd2b5309ad75370bb963c4fda9e12a812174cfa2c2237383c3a964d",
+    "sourceAnswerPdfSha256": "76fd3715ed487d19a56b387fb402de20ee09474e9fa55b0413f9037b96af06c9",
+    "officialAnswerUnitsSha256": "d3251e676823903af9fc1ef94e0f100a589b049aade12ecf2914fd706b604fa3",
+    "referencePdfSha256": {},
+    "referencePageSha256": {},
+    "referenceJsonSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q18a",
+      "questionNumber": 18,
+      "part": "a",
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [
+        "figureUrls に 20250831-theory-q18-fig2.png（図2：小問(b)の交流等価回路）が含まれている。しかし小問(a)の問題文は図1しか参照しておらず、figureDescription も図1しか説明していない。(a)単体で表示すると、説明のない図2が添付される。figureUrls を fig1 のみにするか、図2は小問(b)用である旨を明記すること。"
+      ],
+      "sourceIssues": [
+        "uncertainty の記述が他のメタデータと矛盾している。uncertainty には「掲載ページからは試験の実施年度・回を特定できない」「公式の問題・解答の一次資料URLは記載していない」とある。一方、fiscalYear=2025、term=upper、examDate、sourceQuestionPdfUrl、sourceAnswerPdfUrl、sourceAttribution（令和7年度上期）がすでに設定されている。また添付の公式解答表原図の表題「令和7年度 第三種電気主任技術者上期試験解答」から、令和7年度上期であることは確認できる。uncertainty を実態に合わせて書き換えること。",
+        "examDate=2025-08-31 と、sourceQuestionPdfUrl / sourceAnswerPdfUrl のファイル名（20250831_ch_third_q01/a01）が指す実体は、添付原図からは直接確認できない。解答表原図に試験日の記載はなく、問題原図にも年度・日付の表記はない（T1−R 022 と -19- のみ）。公式サイト上で URL と試験日の対応を確認するまでは、外部確認事項として残る。",
+        "reviewedFromPage=[22,23] について。小問(a)の問題文・選択肢・図1はすべて T1−R 022（印刷頁 -19-）の頁にあり、23頁は小問(b)の頁である。(a)単位としては [22] が正確。"
+      ],
+      "verifiedEvidence": [
+        "公式解答表原図の＜理論＞問18(a)の解答は 3、配点は 5。manifest の answer=3・points=5、および候補の officialAnswer=3・scoringPoints=5 と一致する。",
+        "問題文を原図と照合した。VCC=9 V、R1=3 kΩ、R2=6 kΩ、IE=2 mA、RE[kΩ]、ベース電流は R2 の直流電流に比べ無視、VBE=0.7 V。いずれも一致する。",
+        "選択肢 (1)0.36、(2)1.5、(3)2.7、(4)4.7、(5)7.5 は原図と一致する。",
+        "計算を検算した。VB=9×6/(3+6)=6.0 V、VE=6.0−0.7=5.3 V、RE=5.3/2=2.65 kΩ で、最も近い選択肢は 2.7 kΩ＝(3)。",
+        "各肢の IE と差を検算した。5.3/0.36≈14.72 mA（差 2.29）、5.3/1.5≈3.53 mA（差 1.15）、5.3/2.7≈1.96 mA（差 0.05）、5.3/4.7≈1.13 mA（差 2.05）、5.3/7.5≈0.707 mA（差 4.85）。いずれも正しい。",
+        "公開候補図 fig1 は原図の図1と同一の切り出しである。C1、R1、R2、RE、C2、vi、vo、VCC、NPN 記号（エミッタ外向き矢印）、コレクタの上側配線への直結、各接続点、キャプション「図1」を確認し、欠落はない。",
+        "figureDescription の接続関係の記述（R1・R2 分圧バイアス、コレクタ直結、エミッタに RE と C2、vi・vo の矢印の向き、VCC の位置）は原図と一致する。",
+        "officialReferenceUrls は空で、検証を要する独立主張はない。"
+      ]
+    },
+    {
+      "unitKey": "q18b",
+      "questionNumber": 18,
+      "part": "b",
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [
+        "uncertainty の記述が他のメタデータと矛盾している。uncertainty には「掲載ページからは試験の実施年度・回を特定できない」「公式の問題・解答の一次資料URLは記載していない」とある。一方、fiscalYear=2025、term=upper、examDate、sourceQuestionPdfUrl、sourceAnswerPdfUrl、sourceAttribution（令和7年度上期）がすでに設定されており、公式解答表原図の表題からも令和7年度上期であることは確認できる。uncertainty を実態に合わせて書き換えること。RE の解釈（2.7 と 2.65 のどちらでも正答は不変）に関する記述は妥当なので残してよい。",
+        "examDate=2025-08-31 と、sourceQuestionPdfUrl / sourceAnswerPdfUrl のファイル名（20250831_ch_third_q01/a01）が指す実体は、添付原図からは直接確認できない。解答表原図に試験日の記載はなく、問題原図の表記は T1−R 023 と -20- のみ。公式サイトで確認するまでは外部確認事項として残る。"
+      ],
+      "verifiedEvidence": [
+        "公式解答表原図の＜理論＞問18(b)の解答は 1、配点は 5。manifest の answer=1・points=5、および候補の officialAnswer=1・scoringPoints=5 と一致する。",
+        "問題文を原図と照合した。図2は交流等価回路であること、二つのコンデンサのインピーダンスが十分小さいこと、hie=2.5 kΩ、hfe=300、RE は小問(a)の値、vi/ii[kΩ]。いずれも一致する。冒頭の「（小問(a)の条件: …）」は括弧付きの補足で、内容も原文と一致しており、(a)の正答値は含まれていない。",
+        "選択肢 (1)2.0、(2)15、(3)80、(4)300、(5)750 は原図と一致する。",
+        "電流源の向きを図から確認した。電流源の上端は右側配線を経て下側配線につながり、下端はエミッタ節点につながる。hfe·ib の矢印は下向きなので、電流はエミッタ節点へ流れ込み、RE の電流は (1+hfe)ib となる。解説の因果と一致する。",
+        "計算を検算した。RB=3×6/9=2.0 kΩ。Zb=2.5+301×2.7=815.2 kΩ（RE=2.65 kΩ なら 800.15 kΩ）。RB∥Zb=1630.4/817.2≈1.995 kΩ（RE=2.65 kΩ なら 1600.3/802.15≈1.995 kΩ）。最も近いのは (1)2.0。",
+        "誤答肢の理由を検証した。並列合成値は RB=2.0 kΩ を超えないので、(2)(3)(4) は不成立。(4) の 300 は hfe の数値と一致する。(5) は Zb 単独（約 815 kΩ）なら選択肢中で 750 が最も近いが、RB の並列接続を無視した値である。いずれも正しい。",
+        "公開候補図 fig2 は原図の図2と同一の切り出しである。ii、ib の矢印、R1R2/(R1+R2)、hie、電流源と hfe·ib の下向き矢印、RE、vo、各接続点、右側の帰路配線、キャプション「図2」を確認し、欠落はない。問題文が図1のコンデンサに言及しているので、fig1 を併載するのは適切。",
+        "figureDescription の接続・向きの記述は原図と一致する。",
+        "officialReferenceUrls は空で、検証を要する独立主張はない。"
+      ]
+    }
+  ]
+}

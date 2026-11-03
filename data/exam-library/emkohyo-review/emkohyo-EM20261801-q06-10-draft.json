@@ -1,0 +1,668 @@
+{
+  "candidateModel": "claude-opus-5-5",
+  "paperId": "emkohyo-EM20261801",
+  "governmentSourceCandidates": [
+    {
+      "title": "厚生労働省 作業環境測定基準",
+      "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74087000"
+    }
+  ],
+  "questions": {
+    "emkohyo-EM20261801-q6": {
+      "overlay": {
+        "sourceHash": "72f93b96d022784bace61ea2cfc4a7d01634ae04a99089a5739c4f2c0d254093",
+        "correctChoice": 4,
+        "summary": "フッ化水素の慢性中毒による骨・歯の障害は正しいが、発がん性は確認されておらず、がんを生じるとする（4）が誤り",
+        "choices": [
+          {
+            "number": 1,
+            "verdict": "incorrect",
+            "reason": "正しい。環境省のアクリロニトリル健康リスク評価資料は、液が皮膚に触れると熱感とともに赤くなり、さらに水泡やかさぶたができることがあると記す。高濃度の蒸気を吸入した例では頭痛、めまい、嘔吐、震えが起きたとされ、中枢神経症状を生じるという記述と合う。"
+          },
+          {
+            "number": 2,
+            "verdict": "incorrect",
+            "reason": "正しい。厚労省モデルSDS（トリレンジイソシアネート）は、眼・鼻・咽頭・気管等への刺激を挙げ、呼吸器感作性区分1とする。臭気や刺激を感じない濃度でも敏感な人は喘息様症状を起こすことがあるとし、喘息様の急性発作の報告も記すため、低濃度ばく露でぜんそく様発作を呈するという記述と合う。"
+          },
+          {
+            "number": 3,
+            "verdict": "incorrect",
+            "reason": "正しい。化学熱傷の総説（日本熱傷学会誌）は、フェノールが強力な蛋白変性作用をもち、解離したフェノールがさらに浸透して深達性障害をきたすとする。はじめ疼痛、灼熱感を訴えるが、間もなく知覚神経末端の局所麻酔作用で無感覚になることもあると記しており、本肢と一致する。"
+          },
+          {
+            "number": 4,
+            "verdict": "correct",
+            "reason": "誤り。厚労省モデルSDSは、フッ素が骨と歯芽に蓄積し、フッ化水素への慢性ばく露で骨フッ素症（骨の硬化などの骨格変化）が起こるとし、反復ばく露の標的臓器を歯と骨とする。一方、同SDSは発がん性を「データ不足のため分類できない」としており、慢性中毒でがんを生じるとする部分が誤り。"
+          },
+          {
+            "number": 5,
+            "verdict": "incorrect",
+            "reason": "正しい。化学熱傷の総説は、硫酸の皮膚曝露でまず激痛を伴い、濃硫酸ではその脱水・炭化作用により受傷面が黒褐色調を示すと記す。厚労省モデルSDSも、皮膚の腐食性損傷が最初は白化し、その後茶色から黒色に変色するとしており、本肢と一致する。"
+          }
+        ],
+        "sources": [
+          {
+            "title": "環境省 アクリロニトリルに係る健康リスク評価について（別添2-1）",
+            "url": "https://www.env.go.jp/council/toshin/t07-h1503/mat_02-1.pdf"
+          },
+          {
+            "title": "職場のあんぜんサイト モデルSDS トリレンジイソシアネート",
+            "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/0208.html"
+          },
+          {
+            "title": "山元修「化学熱傷：誰もが知っておきたい知識」熱傷46巻1号（J-STAGE）",
+            "url": "https://www.jstage.jst.go.jp/article/jburn/46/1/46_1/_pdf"
+          },
+          {
+            "title": "職場のあんぜんサイト モデルSDS フッ化水素",
+            "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/7664-39-3.html"
+          },
+          {
+            "title": "職場のあんぜんサイト モデルSDS 硫酸",
+            "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/7664-93-9.html"
+          }
+        ]
+      },
+      "reviewIssues": [
+        "【HOLD】肢3（フェノールの蛋白変性作用、はじめ疼痛・灼熱感を生じ知覚神経末端の局所麻酔作用で無感覚になる）と肢5（濃硫酸の脱水・炭化作用による受傷面の黒褐色化）は、本文どおりの記述が日本熱傷学会誌の総説（J-STAGE）にしかなく、政府一次資料では確認できない。環境省初期評価（フェノール：無痛の漂白作用〜深部の壊死、局部麻酔剤用途）と厚労省モデルSDS（硫酸：白化後に茶色から黒色へ変色）は一部しか支えない。独立審査r1（FIX）もこの点をsourceIssuesに挙げた。肢1・2・4の根拠は政府資料で揃っている。 2026-09-24再探索（Web検索上限到達後はキャッシュ済み政府資料・既知URLのみで確認）でも、該当箇所を直接述べる政府一次資料は見つからなかった。"
+      ],
+      "sourceEvidence": [
+        {
+          "url": "https://www.env.go.jp/council/toshin/t07-h1503/mat_02-1.pdf",
+          "excerpt": "皮膚にアクリロニトリル液が接触すると、すこし後で熱感とともに皮膚が赤くなり、更に水泡、かさぶたが出来ることがある",
+          "choiceNumbers": [
+            1
+          ]
+        },
+        {
+          "url": "https://www.env.go.jp/council/toshin/t07-h1503/mat_02-1.pdf",
+          "excerpt": "高濃度のアクリロニトリル蒸気に曝露した一例では、頭痛、めまい、嘔吐、震え、不随意運動、痙攣を起こした。",
+          "choiceNumbers": [
+            1
+          ]
+        },
+        {
+          "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/0208.html",
+          "excerpt": "眼、鼻、咽頭、気管等に対する刺激は、ＴＤＩの蒸気が空気中に存在する事を示す。",
+          "choiceNumbers": [
+            2
+          ]
+        },
+        {
+          "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/0208.html",
+          "excerpt": "刺激あるいは臭気を感じない濃度でも、敏感な人は、喘息様症状を起こすことがある。",
+          "choiceNumbers": [
+            2
+          ]
+        },
+        {
+          "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/0208.html",
+          "excerpt": "喘息様の急性発作、重篤な気管支痙攣を伴った気管支炎、肺水腫、肺炎を生じるなどの報告が見られる。",
+          "choiceNumbers": [
+            2
+          ]
+        },
+        {
+          "url": "https://www.jstage.jst.go.jp/article/jburn/46/1/46_1/_pdf",
+          "excerpt": "フェノールとクレゾールの性状は中毒学的にほぼ同一で，ともに強力な蛋白変性作用を有し細胞質毒となる",
+          "choiceNumbers": [
+            3
+          ]
+        },
+        {
+          "url": "https://www.jstage.jst.go.jp/article/jburn/46/1/46_1/_pdf",
+          "excerpt": "解離したフェノールがさらに浸透し深達性障害をきたす",
+          "choiceNumbers": [
+            3
+          ]
+        },
+        {
+          "url": "https://www.jstage.jst.go.jp/article/jburn/46/1/46_1/_pdf",
+          "excerpt": "はじめ疼痛，灼熱感を訴えるが，間もなく知覚神経末端の局所麻酔作用（脱ミエリン作用）により無感覚になることもある",
+          "choiceNumbers": [
+            3
+          ]
+        },
+        {
+          "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/7664-39-3.html",
+          "excerpt": "フッ素は骨及び歯芽に蓄積し、高レベルのフッ化物及びフッ化水素への慢性ばく露により、骨フッ素症が発生するとの報告がある",
+          "choiceNumbers": [
+            4
+          ]
+        },
+        {
+          "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/7664-39-3.html",
+          "excerpt": "発がん性【分類根拠】データ不足のため分類できない。",
+          "choiceNumbers": [
+            4
+          ]
+        },
+        {
+          "url": "https://www.jstage.jst.go.jp/article/jburn/46/1/46_1/_pdf",
+          "excerpt": "まず激痛を伴い白色〜黄褐色の痂皮を形成し，濃硫酸ではその脱水・炭化作用により受傷面が黒褐色調を示す",
+          "choiceNumbers": [
+            5
+          ]
+        },
+        {
+          "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/7664-93-9.html",
+          "excerpt": "皮膚：熱傷のように急速に現れる腐食性損傷（最初は白化、その後茶色から黒色の変色、後に潰瘍、化膿性炎症）",
+          "choiceNumbers": [
+            5
+          ]
+        },
+        {
+          "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/7664-39-3.html",
+          "excerpt": "区分1（歯、呼吸器、骨、神経系）とした。",
+          "choiceNumbers": [
+            4
+          ]
+        }
+      ]
+    },
+    "emkohyo-EM20261801-q7": {
+      "overlay": {
+        "sourceHash": "9685d5ebfe3e2dcbe452766f92e79637034c273d1e1081548293da022bcf43f3",
+        "correctChoice": 5,
+        "summary": "ヨウ化メチルはIARCでグループ3（ヒトに対する発がん性について分類できない）であり、主要ながんを甲状腺がんとする（5）が誤り",
+        "choices": [
+          {
+            "number": 1,
+            "verdict": "incorrect",
+            "reason": "正しい。厚労省モデルSDS（水酸化カドミウム）は、IARCがカドミウム及びカドミウム化合物へのばく露をヒトの肺がんリスクの増加と関連づけ、十分な証拠ありと結論したと記す。食品安全委員会も、職業曝露による肺がんリスクの研究に基づきIARCがグループ1に分類したとしている。"
+          },
+          {
+            "number": 2,
+            "verdict": "incorrect",
+            "reason": "正しい。労働基準法施行規則別表第1の2は、ニッケルの製錬・精錬工程の業務による肺がん又は上気道のがんを業務上疾病としている。厚労省モデルSDS（亜硫化ニッケル）もニッケル化合物をIARCグループ1とする。ラット吸入試験で肺の腺腫・癌腫が増えたという記載は動物での補足データである。"
+          },
+          {
+            "number": 3,
+            "verdict": "incorrect",
+            "reason": "正しい。厚労省モデルSDS（三酸化二ヒ素）は、IARCの評価として、亜ヒ酸塩やヒ酸塩を含む無機ヒ素化合物は肺がん、膀胱がん及び皮膚がんを生じることが明らかにされたと記す。無機ヒ素化合物と膀胱がんの組合せは正しい。"
+          },
+          {
+            "number": 4,
+            "verdict": "incorrect",
+            "reason": "正しい。労働基準法施行規則別表第1の2は、オーラミンを製造する工程の業務による尿路系腫瘍（膀胱がんを含む）を業務上疾病としており、これが主な根拠となる。膀胱がんとの関連の根拠はオーラミン単体（IARC分類2B）ではなく製造工程でのばく露にある。モデルSDSも製造作業者集団の膀胱腫瘍増加を記すが、他の膀胱発がん物質との同時ばく露の可能性を注記している。"
+          },
+          {
+            "number": 5,
+            "verdict": "correct",
+            "reason": "誤り。ヨウ化メチルはIARCでグループ3であり、これを受けて厚労省モデルSDSはGHS分類の発がん性を「分類できない」としている。ヒトでの発がん性の証拠は不十分で、甲状腺がんを主要ながんとする根拠はない。同SDSにあるラットの甲状腺重量増加・濾胞上皮過形成などは動物の反復ばく露影響で、ヒトの主要ながんの根拠にはならない。"
+          }
+        ],
+        "sources": [
+          {
+            "title": "職場のあんぜんサイト モデルSDS 水酸化カドミウム",
+            "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/21041-95-2.html"
+          },
+          {
+            "title": "食品安全委員会 汚染物質評価書 食品からのカドミウム摂取の現状に係る安全性確保について（概要版）",
+            "url": "https://www.fsc.go.jp/hyouka/hy/hy-gaiyou-cadmium.pdf"
+          },
+          {
+            "title": "労働基準法施行規則 別表第1の2（e-Gov法令API・現行版本文）",
+            "url": "https://laws.e-gov.go.jp/api/2/law_data/322M40000100023"
+          },
+          {
+            "title": "職場のあんぜんサイト モデルSDS 亜硫化ニッケル",
+            "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/12035-72-2.html"
+          },
+          {
+            "title": "職場のあんぜんサイト モデルSDS 三酸化二ヒ素",
+            "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/1327-53-3.html"
+          },
+          {
+            "title": "職場のあんぜんサイト モデルSDS オーラミン",
+            "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/492-80-8.html"
+          },
+          {
+            "title": "職場のあんぜんサイト モデルSDS ヨウ化メチル",
+            "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/74-88-4.html"
+          }
+        ]
+      },
+      "reviewIssues": [],
+      "sourceEvidence": [
+        {
+          "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/21041-95-2.html",
+          "excerpt": "カドミウム及びカドミウム化合物へのばく露はヒトの肺がんリスクの増加に関連し",
+          "choiceNumbers": [
+            1
+          ]
+        },
+        {
+          "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/21041-95-2.html",
+          "excerpt": "カドミウム及びカドミウム化合物はヒトで発がん性を有するとの十分な証拠があると結論された",
+          "choiceNumbers": [
+            1
+          ]
+        },
+        {
+          "url": "https://www.fsc.go.jp/hyouka/hy/hy-gaiyou-cadmium.pdf",
+          "excerpt": "IARCの専門家委員会では、職業曝露による肺がんリスクが高いとする複数の研究報告に基づいてグループ１（ヒトに対して発がん性がある）に分類",
+          "choiceNumbers": [
+            1
+          ]
+        },
+        {
+          "url": "https://laws.e-gov.go.jp/api/2/law_data/322M40000100023",
+          "excerpt": "ニッケルの製錬又は精錬を行う工程における業務による肺がん又は上気道のがん",
+          "choiceNumbers": [
+            2
+          ]
+        },
+        {
+          "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/12035-72-2.html",
+          "excerpt": "発がん性ニッケル化合物についてIARCでグループ１",
+          "choiceNumbers": [
+            2
+          ]
+        },
+        {
+          "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/12035-72-2.html",
+          "excerpt": "ばく露に関連する肺胞・細気管支の腺腫、癌腫の発生頻度の増加",
+          "choiceNumbers": [
+            2
+          ]
+        },
+        {
+          "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/1327-53-3.html",
+          "excerpt": "本物質、亜ヒ酸塩及びヒ酸塩を含め無機ヒ素化合物への混合ばく露の発がん性について、これらの無機ヒ素化合物は肺がん、膀胱がん及び皮膚がんを生じることが明らかにされた。",
+          "choiceNumbers": [
+            3
+          ]
+        },
+        {
+          "url": "https://laws.e-gov.go.jp/api/2/law_data/322M40000100023",
+          "excerpt": "オーラミンを製造する工程における業務による尿路系腫瘍",
+          "choiceNumbers": [
+            4
+          ]
+        },
+        {
+          "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/492-80-8.html",
+          "excerpt": "本物質の製造に従事した作業者の集団で膀胱腫瘍の過剰発生がみられたが、1-、2-ナフチルアミンやベンジジンなどの膀胱がん発生物質に同時ばく露された作業者を含めた統計解析の可能性が指摘されている",
+          "choiceNumbers": [
+            4
+          ]
+        },
+        {
+          "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/492-80-8.html",
+          "excerpt": "IARCでグループ2B",
+          "choiceNumbers": [
+            4
+          ]
+        },
+        {
+          "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/74-88-4.html",
+          "excerpt": "発がん性IARCでグループ3(IARC71(1999))であるため、「分類できない」とした。",
+          "choiceNumbers": [
+            5
+          ]
+        },
+        {
+          "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/74-88-4.html",
+          "excerpt": "実験動物ではラットに本物質蒸気を90日間及び1年間吸入ばく露した試験において",
+          "choiceNumbers": [
+            5
+          ]
+        },
+        {
+          "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/74-88-4.html",
+          "excerpt": "1年間ばく露では加えて60ppm(0.35mg/L/6時間:区分2相当)で甲状腺への影響(重量増加、濾胞上皮細胞の細胞質空胞化及び過形成)が認められた",
+          "choiceNumbers": [
+            5
+          ]
+        }
+      ]
+    },
+    "emkohyo-EM20261801-q8": {
+      "overlay": {
+        "sourceHash": "afdaf894ef15a7b06e65b2a7d1c299bcd2c8e76c9a11cedce9499ea39572f914",
+        "correctChoice": 1,
+        "summary": "吸引性粉じんは100μm以下、咽頭通過性粉じんは10μm以下、吸入性粉じんは4μm以下で肺胞まで達する粒子であり、区分と粒径の対応を誤っている（1）が誤り",
+        "choices": [
+          {
+            "number": 1,
+            "verdict": "correct",
+            "reason": "誤り。労働安全衛生総合研究所の2017年資料は、吸引性粉じん（鼻孔または口を通過、100μm以下）、咽頭通過性粉じん（咽頭を通過し肺に向かう、10μm以下）、吸入性粉じん（肺胞まで達する、4μm以下）に分ける。同所の2013年コラム（ISO 7708に基づく）は、吸引性の中に咽頭通過性、その中に吸入性が含まれると説明しており、本肢の区分と粒径は誤り。"
+          },
+          {
+            "number": 2,
+            "verdict": "incorrect",
+            "reason": "正しい。労働安全衛生総合研究所はヒュームを「固体が蒸発し、その後凝縮したもの」と定義する。環境省の粒子状物質資料は、最初は蒸気の状態で存在し凝縮等で粒子化する粒子を核形成モード（0.015～0.04μmにピーク）と蓄積モード（0.15～0.5μmにピーク）に位置付け、どちらも1μmを下回る。溶接ヒュームも粒径0.1～1μm（岡山労働局）で、小さい粒子が集まった凝集体を含む（同研究所）ため、凝集前の一次粒子は一般に1μm以下といえる。"
+          },
+          {
+            "number": 3,
+            "verdict": "incorrect",
+            "reason": "正しい。職場のあんぜんサイトは、アーク溶接のヒューム等の微細な粉じんが肺胞に入り込み、吸い続けると線維増殖で肺が固くなる「じん肺」になるとし、ヒュームばく露は肺がんの原因となり、IARCが溶接ヒュームをグループ1に分類したとする。溶接ヒュームは蒸気が空気中で凝固した固体の粒子（岡山労働局）で、じん肺法施行規則別表も「金属をアーク溶接する作業」を粉じん作業に掲げる。"
+          },
+          {
+            "number": 4,
+            "verdict": "incorrect",
+            "reason": "正しい。じん肺法施行規則第1条は、じん肺管理区分が管理二又は管理三の者のじん肺と合併した肺結核、結核性胸膜炎、続発性気管支炎、続発性気管支拡張症、続発性気胸、原発性肺がんを合併症と定めている。肺結核、気管支炎、肺がんを合併症として挙げた本肢と一致する。"
+          },
+          {
+            "number": 5,
+            "verdict": "incorrect",
+            "reason": "正しい。厚生労働省の検証報告は、1977年のEC委員会の報告で、発がん性の強さがクロシドライト、アモサイト、クリソタイルの順であることが専門家間で確認されていたと記す。WHOもクロシドライトとアモサイトを有害性が著しく高いとして使用禁止を勧告しており、青石綿・茶石綿の方が白石綿より有害性が高い。"
+          }
+        ],
+        "sources": [
+          {
+            "title": "労働安全衛生総合研究所 作業環境中の粉じん測定とばく露対策（2017年）",
+            "url": "https://www.jniosh.johas.go.jp/publication/mail_mag/2017/pdf_109/siryou_5.pdf"
+          },
+          {
+            "title": "労働安全衛生総合研究所 メールマガジン「粉じんの吸入ばく露による健康障害を評価する」",
+            "url": "https://www.jniosh.johas.go.jp/publication/mail_mag/2013/58-column.html"
+          },
+          {
+            "title": "岡山労働局 溶接ヒューム等に係る健康障害防止対策について",
+            "url": "https://jsite.mhlw.go.jp/okayama-roudoukyoku/content/contents/001247447.pdf"
+          },
+          {
+            "title": "厚生労働省 令和元年度 化学物質による労働者の健康障害防止措置に係る検討会報告書（マンガン及びその化合物並びに溶接ヒューム）",
+            "url": "https://www.mhlw.go.jp/content/11302000/000593564.pdf"
+          },
+          {
+            "title": "じん肺法施行規則（e-Gov法令API・現行版本文）",
+            "url": "https://laws.e-gov.go.jp/api/2/law_data/335M50002000006"
+          },
+          {
+            "title": "厚生労働省 アスベスト問題に関する厚生労働省の過去の対応の検証（追加）平成17年9月29日",
+            "url": "https://www.mhlw.go.jp/new-info/kobetu/roudou/sekimen/topics/dl/050929-1f.pdf"
+          },
+          {
+            "title": "じん肺法（第2条 定義）",
+            "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74164000&dataType=0&pageNo=1"
+          },
+          {
+            "title": "環境省 粒子状物質の特性に関する知見の整理（微小粒子状物質健康影響評価検討会報告書 資料2-1）",
+            "url": "https://www.env.go.jp/air/report/h20-01/mat02_1.pdf"
+          },
+          {
+            "title": "労働安全衛生総合研究所 メールマガジン コラム「ポリカーボネートメンブレンフィルターの捕集効率について」（2022年）",
+            "url": "https://www.jniosh.johas.go.jp/publication/mail_mag/2022/167-column-1.html"
+          },
+          {
+            "title": "職場のあんぜんサイト 安全衛生キーワード「アーク溶接」",
+            "url": "https://anzeninfo.mhlw.go.jp/yougo/yougo81_1.html"
+          }
+        ]
+      },
+      "reviewIssues": [
+        "【HOLD】第2パス独立審査（新r1、2026-09-24）もFIX。肢2「ヒュームの一次粒子の粒径は、一般に、１μm以下」をヒューム一般について直接述べた政府一次資料がない。今回追加した環境省PM資料（核形成モード0.015～0.04μm・蓄積モード0.15～0.5μmはピーク位置で、蓄積モードは凝集後の粒子を含む）、岡山労働局（溶接ヒュームの粒径0.1～1μmで一次粒子の記述なし）、JNIOSH 2022年コラム（凝集体の存在のみで一次粒子の数値なし）では推論の飛躍が残ると指摘された。Web検索上限に達し、作業環境測定関係の政府資料で追加探索できなかった。他の残課題：sourcesの厚労省検討会報告書（000593564.pdf）が理由本文で未参照、肢1の『4μm以下』等は50%カット径の簡略表記である旨の注記要否。"
+      ],
+      "sourceEvidence": [
+        {
+          "url": "https://www.jniosh.johas.go.jp/publication/mail_mag/2017/pdf_109/siryou_5.pdf",
+          "excerpt": "1.吸引性粉じん：鼻孔または口を通過する粒子。（100μm以下）2.咽頭通過性粉じん：咽頭を通過し、肺に向かう粒子。（10μm以下）3.吸入性粉じん：肺胞まで達する粒子。（4μm以下）",
+          "choiceNumbers": [
+            1
+          ]
+        },
+        {
+          "url": "https://www.jniosh.johas.go.jp/publication/mail_mag/2013/58-column.html",
+          "excerpt": "「咽頭通過性粉じん」は、吸引性粉じんの中で咽頭を通過して肺に向かう粒子であり、さらにその中で肺胞まで到達する粒子を「吸入性粉じん」といいます。",
+          "choiceNumbers": [
+            1
+          ]
+        },
+        {
+          "url": "https://www.jniosh.johas.go.jp/publication/mail_mag/2013/58-column.html",
+          "excerpt": "国際基準であるISO7708で粉じんは、吸入した場合の呼吸器への到達の程度に応じて",
+          "choiceNumbers": [
+            1
+          ]
+        },
+        {
+          "url": "https://www.jniosh.johas.go.jp/publication/mail_mag/2017/pdf_109/siryou_5.pdf",
+          "excerpt": "ヒューム：固体が蒸発し、その後凝縮したものであり金属の加熱溶解、溶接、溶断などで生じる。",
+          "choiceNumbers": [
+            2,
+            3
+          ]
+        },
+        {
+          "url": "https://jsite.mhlw.go.jp/okayama-roudoukyoku/content/contents/001247447.pdf",
+          "excerpt": "アーク溶接により生じた蒸気が空気中で凝固した固体の粒子（粒径0.1～１μm）。",
+          "choiceNumbers": [
+            2,
+            3
+          ]
+        },
+        {
+          "url": "https://jsite.mhlw.go.jp/okayama-roudoukyoku/content/contents/001247447.pdf",
+          "excerpt": "国際がん研究機関（IARC）では人に対する発がん性があるグループ１に分類。",
+          "choiceNumbers": [
+            3
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/content/11302000/000593564.pdf",
+          "excerpt": "溶接ヒュームは、疫学研究によって発がん性があることが示されたが、原因物質は特定されず、じん肺を機序とする原発性肺がんとの区別もついていない",
+          "choiceNumbers": [
+            3
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74164000&dataType=0&pageNo=1",
+          "excerpt": "三粉じん作業当該作業に従事する労働者がじん肺にかかるおそれがあると認められる作業をいう",
+          "choiceNumbers": [
+            3
+          ]
+        },
+        {
+          "url": "https://laws.e-gov.go.jp/api/2/law_data/335M50002000006",
+          "excerpt": "二十の二金属をアーク溶接する作業",
+          "choiceNumbers": [
+            3
+          ]
+        },
+        {
+          "url": "https://laws.e-gov.go.jp/api/2/law_data/335M50002000006",
+          "excerpt": "じん肺管理区分が管理二又は管理三と決定された者に係るじん肺と合併した次に掲げる疾病とする。一肺結核二結核性胸膜炎三続発性気管支炎四続発性気管支拡張症五続発性気胸六原発性肺がん",
+          "choiceNumbers": [
+            4
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/new-info/kobetu/roudou/sekimen/topics/dl/050929-1f.pdf",
+          "excerpt": "既にその発がん性の強さがクロシドライト、アモサイト、クリソタイルの順であることが専門家の間で確認されていた",
+          "choiceNumbers": [
+            5
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/new-info/kobetu/roudou/sekimen/topics/dl/050929-1f.pdf",
+          "excerpt": "有害性が著しく高くばく露限界の提案ができないクロシドライト及びアモサイトの使用禁止を勧告している",
+          "choiceNumbers": [
+            5
+          ]
+        },
+        {
+          "url": "https://www.env.go.jp/air/report/h20-01/mat02_1.pdf",
+          "excerpt": "核形成モードや蓄積モードの粒子の多くは、最初は蒸気の状態で存在し大気中で凝集や凝縮により粒子化する。",
+          "choiceNumbers": [
+            2
+          ]
+        },
+        {
+          "url": "https://www.env.go.jp/air/report/h20-01/mat02_1.pdf",
+          "excerpt": "凝縮や凝固によって形成され、0.15～0.5μｍにピークを持つ蓄積モード",
+          "choiceNumbers": [
+            2
+          ]
+        },
+        {
+          "url": "https://www.env.go.jp/air/report/h20-01/mat02_1.pdf",
+          "excerpt": "微小粒子領域である0.015～0.04μｍにピークを持つ核形成モード",
+          "choiceNumbers": [
+            2
+          ]
+        },
+        {
+          "url": "https://www.jniosh.johas.go.jp/publication/mail_mag/2022/167-column-1.html",
+          "excerpt": "溶接ヒュームは気体（ガス）が冷却されて固体（粒子）に変化するため、非常に小さい粒子から、小さい粒子が集まった大きな粒子（凝集体）まで、様々な大きさの粒子が存在します。",
+          "choiceNumbers": [
+            2
+          ]
+        },
+        {
+          "url": "https://anzeninfo.mhlw.go.jp/yougo/yougo81_1.html",
+          "excerpt": "アーク溶接のヒューム等の粉じんのうち、微細な粉じんは肺の奥深くの肺胞にまで入り込み、そこに付着します。",
+          "choiceNumbers": [
+            3
+          ]
+        },
+        {
+          "url": "https://anzeninfo.mhlw.go.jp/yougo/yougo81_1.html",
+          "excerpt": "これらの粉じんを吸い続けると、肺内では、線維増殖が起こり、肺が固くなって呼吸が困難となります。これが、「じん肺」です。",
+          "choiceNumbers": [
+            3
+          ]
+        },
+        {
+          "url": "https://anzeninfo.mhlw.go.jp/yougo/yougo81_1.html",
+          "excerpt": "じん肺の他、ヒュームばく露は、肺がんの原因となります。",
+          "choiceNumbers": [
+            3
+          ]
+        },
+        {
+          "url": "https://anzeninfo.mhlw.go.jp/yougo/yougo81_1.html",
+          "excerpt": "溶接ヒューム及び溶接におけるアーク光がヒトへの発がん性あり（グループ1）と分類しています。",
+          "choiceNumbers": [
+            3
+          ]
+        }
+      ]
+    },
+    "emkohyo-EM20261801-q9": {
+      "overlay": {
+        "sourceHash": "ad00dc95c5069b409565daeb881d3e6697d029053f622543b9ef2f105ad36a0d",
+        "correctChoice": 3,
+        "summary": "金属水銀は消化管からほとんど吸収されず、水銀の吸収は化学形態と経路で大きく異なる。全形態が経口で吸収されるとする肢3が誤り。",
+        "choices": [
+          {
+            "number": 1,
+            "verdict": "incorrect",
+            "reason": "記述は正しい。政府GHS分類は、IARCが金属クロム及び三価クロム化合物をグループ3としていることから、金属クロムの発がん性を「分類できない」としている。一方で皮膚感作性は区分1A、吸入時の気道刺激性は区分3としており、六価のクロム酸・重クロム酸とは区別される。"
+          },
+          {
+            "number": 2,
+            "verdict": "incorrect",
+            "reason": "記述は正しい。政府GHS分類はコバルトを呼吸器感作性・皮膚感作性ともに区分1Aとしている。根拠は、様々な形態のコバルトにばく露された作業者の気管支喘息や、旋盤工などのコバルトアレルギーである。特化則の健診にも喘鳴・皮膚炎等の検査がある。"
+          },
+          {
+            "number": 3,
+            "verdict": "correct",
+            "reason": "記述は誤り。国立水俣病総合研究センターによれば、金属水銀は消化管からほとんど吸収されない（蒸気は肺から約80%吸収）。無機水銀塩は数%、メチル水銀はほとんどが吸収される。形態によって大きく違うのに、いずれも経口で吸収されると一括した点が誤りである。"
+          },
+          {
+            "number": 4,
+            "verdict": "incorrect",
+            "reason": "記述は正しい。特化則別表第三の五酸化バナジウムの健診には、せき・たん等の呼吸器症状、手指の振戦、舌の緑着色などの有無の検査が含まれる。政府GHS分類も吸入による咽頭痛・咳・気管支炎を挙げている。心悸亢進は読んだ政府資料では確認できていない。"
+          },
+          {
+            "number": 5,
+            "verdict": "incorrect",
+            "reason": "記述は正しい。金属熱は亜鉛や銅の酸化物ヒュームを吸入して数時間後に悪寒・発熱・関節痛などが出る急性の疾病で、その後は発汗とともに解熱して回復する。職場のあんぜんサイトにも、酸化亜鉛ヒュームを吸入した作業者が帰宅後に悪寒と40℃の発熱を起こした事例がある。"
+          }
+        ],
+        "sources": [
+          {
+            "title": "国立水俣病総合研究センター 体の中の水銀",
+            "url": "https://nimd.env.go.jp/archives/faq/mercury_in_human_body/"
+          },
+          {
+            "title": "NITE 政府GHS分類結果 水銀",
+            "url": "https://www.chem-info.nite.go.jp/chem/ghs/m-nite-7439-97-6.html"
+          },
+          {
+            "title": "NITE 政府GHS分類結果 金属クロム",
+            "url": "https://www.chem-info.nite.go.jp/chem/ghs/m-nite-7440-47-3.html"
+          },
+          {
+            "title": "NITE 政府GHS分類結果 コバルト",
+            "url": "https://www.chem-info.nite.go.jp/chem/ghs/m-nite-7440-48-4.html"
+          },
+          {
+            "title": "NITE 政府GHS分類結果 五酸化バナジウム",
+            "url": "https://www.chem-info.nite.go.jp/chem/ghs/m-nite-1314-62-1.html"
+          },
+          {
+            "title": "厚生労働省 特定化学物質障害予防規則（別表第三）",
+            "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74097000&dataType=0&pageNo=3"
+          },
+          {
+            "title": "職場のあんぜんサイト 災害事例 亜鉛びき配管の溶断作業中、酸化亜鉛ヒュームにより中毒",
+            "url": "https://anzeninfo.mhlw.go.jp/anzen_pg/SAI_DET.aspx?joho_no=000877"
+          }
+        ]
+      },
+      "reviewIssues": [
+        "【HOLD】肢3の誤り（無機水銀塩は消化管から数パーセントしか吸収されない）は国立水俣病総合研究センターFAQで確認でき、肢1（金属クロムはIARCグループ3、皮膚感作性・気道刺激性）・肢2（コバルトの喘息・皮膚感作性）はモデルSDSで確認できた。しかし肢4のバナジウム中毒の「心悸亢進」（特化則別表第三の健診項目にあるのは手指の振戦・舌の緑着色等）と、肢5の金属熱の経過（数時間～数日後に発汗とともに解熱し回復）を述べた政府一次資料が見つからない。 2026-09-24再探索（Web検索上限到達後はキャッシュ済み政府資料・既知URLのみで確認）でも、該当箇所を直接述べる政府一次資料は見つからなかった。労基則別表第1の2第4号の告示（平成25年）はバナジウム及びその化合物の疾病を皮膚障害・前眼部障害・気道・肺障害とし、亜鉛等の金属ヒュームによる金属熱を挙げるが、心悸亢進や金属熱の経過（発汗とともに解熱）は記載がない。",
+        "バナジウム中毒の心悸亢進、金属熱が発汗とともに自然に解熱する経過は、政府資料本文で確認できていない。",
+        "特化則別表第三の五酸化バナジウムの項は、取得ツールの抽出結果で確認した。一字一句は照合できていない。"
+      ]
+    },
+    "emkohyo-EM20261801-q10": {
+      "overlay": {
+        "sourceHash": "7db6ab982b9142e6d7f56e3d21ce934040004248241635b569407fa7b9522fbe",
+        "correctChoice": 1,
+        "summary": "テトラクロロエチレンのように不燃性の有機溶剤もある。全ての有機溶剤が引火性を有するとした肢1が誤り。",
+        "choices": [
+          {
+            "number": 1,
+            "verdict": "correct",
+            "reason": "記述は誤り。有機溶剤は脂溶性と揮発性を共通にもつが、引火性まで全てにあるわけではない。政府GHS分類は、テトラクロロエチレンを「不燃性」として引火性液体の「区分に該当しない」としている。全ての有機溶剤が引火性を有するという断定が誤りである。"
+          },
+          {
+            "number": 2,
+            "verdict": "incorrect",
+            "reason": "記述は正しい。皮膚表面の水分層と角質層の脂質の両方を通り抜けやすいため、水溶性と脂溶性を併せもつ溶剤（N,N-ジメチルホルムアミド等）は経皮吸収されやすい。気中濃度だけではばく露を評価しきれない。この一般原則は政府資料本文で確認できていない。"
+          },
+          {
+            "number": 3,
+            "verdict": "incorrect",
+            "reason": "記述は正しい。有機溶剤の蒸気は粘膜を刺激するため、吸入すると咳や上気道の刺激・炎症を起こすことがある。麻酔作用などの中枢神経症状とは別の局所的な作用である。ただし、有機溶剤全般についてのこの記述は政府資料本文で直接確認できていない。"
+          },
+          {
+            "number": 4,
+            "verdict": "incorrect",
+            "reason": "記述は正しい。1,4-ジオキサンは環状エーテルで、密度は約1.03g/cm³と水とほぼ同じである。政府GHS分類では水への溶解度が1,000,000mg/L（水と自由に混ざる）とされ、有機溶剤として脂溶性ももつ。密度の数値は政府ページで直接確認できていない。"
+          },
+          {
+            "number": 5,
+            "verdict": "incorrect",
+            "reason": "記述は正しい。二硫化炭素の労災認定基準（昭和51年基発第123号）は、長期ばく露で起こる網膜症の特徴を「微細動脈瘤あるいは点状出血」とし、糖尿病性網膜症によく似ると記している。二硫化炭素の健診で眼底検査を行う理由にあたる。"
+          }
+        ],
+        "sources": [
+          {
+            "title": "NITE 政府GHS分類結果 テトラクロロエチレン",
+            "url": "https://www.chem-info.nite.go.jp/chem/ghs/m-nite-127-18-4.html"
+          },
+          {
+            "title": "NITE 政府GHS分類結果 1,4-ジオキサン",
+            "url": "https://www.chem-info.nite.go.jp/chem/ghs/m-nite-123-91-1.html"
+          },
+          {
+            "title": "厚生労働省 二硫化炭素による疾病の認定基準について（昭和51年基発第123号）",
+            "url": "https://www.mhlw.go.jp/web/t_doc?dataId=00tc0357&dataType=1&pageNo=1"
+          }
+        ]
+      },
+      "reviewIssues": [
+        "【HOLD】肢1（テトラクロロエチレンは不燃性）・肢4（1,4-ジオキサンの水溶性）・肢5（二硫化炭素の網膜微細動脈瘤・眼底検査）は政府資料候補があるが、肢2（水溶性と脂溶性を併せもつ有機溶剤は皮膚・粘膜から吸収されやすい）と肢3（有機溶剤蒸気による咳・上気道炎症）を有機溶剤一般について述べた政府一次資料が見つからず、sourceEvidenceも未作成。1,4-ジオキサンの密度値も政府資料で未確認。 2026-09-24再探索（Web検索上限到達後はキャッシュ済み政府資料・既知URLのみで確認）でも、該当箇所を直接述べる政府一次資料は見つからなかった。補足：有機則別表で二硫化炭素の健診項目「眼底検査」はe-Gov本文で確認できた。厚労省パンフレット（120815-01.pdf）は有機溶剤が「油脂に溶ける性質があることから皮膚からも吸収」とするが、水溶性と脂溶性を併せもつ溶剤の吸収性には触れていない。有機溶剤健診の自覚症状表に「上気道又は眼の刺激症状」がある（平成元年基発通達）。",
+        "二硫化炭素の健診項目に眼底検査が含まれることは、有機則の別表が画像のため本文で確認できていない。認定基準の網膜症の記述を根拠にした。",
+        "肢2（水溶性と脂溶性を併せもつ溶剤の経皮吸収）、肢3（蒸気による上気道刺激）、1,4-ジオキサンの密度は、政府資料本文で確認できていない。",
+        "候補の「作業環境測定基準」はこの設問の判断根拠にならないため使っていない。"
+      ]
+    }
+  }
+}

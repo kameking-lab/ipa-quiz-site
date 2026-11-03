@@ -1,0 +1,106 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20250323",
+  "subject": "law",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 10419,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 36088,
+      "webSearchRequests": 0,
+      "costUSD": 0.4973478,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 7559,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "8de4ac7b363f26a6db9a6ba9018eeb662eccb1e7dc32ab96fe5a78a9e709ac9a",
+  "inputRequestSha256": "f6efbeb83b1d4cb7501987d7225af65f968faab8530575c844d6aaf377f1b935",
+  "inputHashes": {
+    "candidateSha256": {
+      "q12a": "b567007c5c27152c29f19b0b5e6119353eaf16dd02ad70ddfb3d8fc427247241",
+      "q12b": "3b8218af509fb2f30997fb0f8655f82ac005021900393409049183f702e2551b"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20250323/law/p16.png": "5af7917f97beaf4ab5395cee76e4ef5ad43475347a66c951b43f4971ae1fe2cf"
+    },
+    "figureSha256": {
+      "public/images/denken3/20250323/law/20250323-law-q12-grounding-circuit.png": "b870c3b304192394c6a79b593343f7d0e94db8deb02e418ada08c761214421e8"
+    },
+    "sourceQuestionPdfSha256": "6b47d422b7fb05b949f366b2c550a00365e1bdffa5c2800368fab9f29d79c84e",
+    "sourceAnswerPdfSha256": "4c3b38fcf1405766fafaa78b1b05b867a3d48307a670b9d354476bc6b32acd4c",
+    "officialAnswerUnitsSha256": "284c5b7a4baa4000d8405f1a7c79625134657648c1f2bdf6dabc86c6bd3a445e",
+    "referencePdfSha256": {
+      "data/raw_pdfs/denken3/review/meti-denki-interpretation-20241022.pdf": "36e17607076ed99d7eaf3b503093c03276018f6797a2edd2bf3df28038fcb6bb"
+    },
+    "referencePageSha256": {
+      "data/raw_pdfs/denken3/review/references/meti-denki-interpretation-20241022-p001.png": "e64019c681c6cc325beb0664a147140aa060ae3e7190ec54e3a3724e3c60667c",
+      "data/raw_pdfs/denken3/review/references/meti-denki-interpretation-20241022-p024.png": "3da40fc702fc25235afca8968c3013463e6a4339c0c492b80685509551d05a23",
+      "data/raw_pdfs/denken3/review/references/meti-denki-interpretation-20241022-p025.png": "08745f2224f21a8da0466bc7eeb04ecd07ea8768eca49fa99a6695d28be81a0b",
+      "data/raw_pdfs/denken3/review/references/meti-denki-interpretation-20241022-p026.png": "dd4a1bf3471fe64dd94fa95c510f4532fe8ac63bab9e537b2b5d72da313eb295",
+      "data/raw_pdfs/denken3/review/references/meti-denki-interpretation-20241022-p031.png": "0fe2689718a3d17aba7224c5a92d39dce17fcb15ed018e9eadc89a9d146fc3d4",
+      "data/raw_pdfs/denken3/review/references/meti-denki-interpretation-20241022-p032.png": "7d63f5c353ca89aa07a6d518495c103d5e80caeab816cd8c3fa8f30c5bd2f850"
+    },
+    "referenceJsonSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q12a",
+      "questionNumber": 12,
+      "part": "a",
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [
+        "uncertainty フィールドに未解決の確認事項が残っている。候補自身が「同日（令和6年10月22日）以降試験日までに改正がなかったことは添付資料では確認できない」と明記している。添付の公式参考資料PDF第1頁の改正履歴で確認できるのは、最終行が「改正 20241004保局第1号 令和6年10月22日付け」であることだけである。その版が2025-03-23時点の施行版であること（以後の改正がないこと）は、添付原頁のどこにも記載がない。この点の根拠は参考資料の表題メタデータしかなく、原頁で検証できない外部確認事項としてここに記録する。",
+        "uncertainty フィールドは、添付されていない資料（作業者メモの「次の改正は令和7年11月20日付け」、新旧対照表PDF第1頁の第16条第6項の掲載、同PDF第2・4・6・8・10頁が空であること）に言及している。これらは本監査の添付原頁では検証できない。記録に残すなら該当資料を添付して検証するか、検証済みの事実（第1頁改正履歴の最終行、第32頁の第17条第2項第一号・17-1表・備考）だけに書き直すこと。",
+        "未解決の確認事項を uncertainty に残したまま needsReview=false としており、記録内で整合していない。確認事項が解消するまでは needsReview=true とするか、確認事項を解消してから false にすること。",
+        "補足：本問の解答・解説が依拠する内容は、添付PDF第32頁の第17条第2項第一号「接地抵抗値は、17-1表に規定する値以下であること」、17-1表（下記以外の場合 150/Ig、高圧又は35,000V以下の特別高圧の電路と低圧電路を結合するもので1秒を超え2秒以下 300/Ig、1秒以下 600/Ig）、備考の Ig 定義であり、いずれも原頁で直接確認できた。上記の指摘は解説本文・正答の誤りではなく、出典メタデータの確認事項に限られる。"
+      ],
+      "verifiedEvidence": [
+        "問題文：原図と照合し、リード文、条件(ア)(イ)、設問(a)の文言・数値（200 V、50 Hz、0.1 μF、5 A、150 V、1.3秒）・単位[Ω]が一致した。",
+        "選択肢：(1)20 (2)30 (3)40 (4)60 (5)100 が原図と一致した。",
+        "公式正答：試験センター解答表『令和6年度 下期』法規 問12(a)=4 が officialAnswer '4' と一致した。",
+        "解説の計算：遮断時間1.3秒は17-1表の「1秒を超え2秒以下」に該当し、R_B ≦ 300/I_g = 300/5 = 60 Ω となる。検算で一致した。",
+        "法令根拠：添付PDF第31頁で第17条【接地工事の種類及び施設方法】の見出しを確認した。第32頁で第2項第一号・17-1表の3区分の値・備考『Igは当該変圧器の高圧側又は特別高圧側の電路の1線地絡電流（単位：A）』を原文どおり確認した。",
+        "誤答肢の理由：(1)20=100/5、(2)30=150/5（「下記以外の場合」）、(3)40=200/5、(5)100>60 かつ 600/5=120 と不一致であることを検算した。いずれも17-1表の区分と整合し、正答肢(4)の理由も表の該当区分と一致する。",
+        "(2)の「下記以外の場合」の説明（35,000 V以下の特別高圧・高圧と低圧を結合し2秒以下で自動遮断するもの以外の全て）は、17-1表の構成から論理的に導ける。",
+        "図：公開候補図を原図と接続・ラベル単位で照合した。Δ頂点3点の黒丸、Δ底辺と中段線が同一直線上にあること、左下頂点から下段線への接続、右下頂点からの縦線が下段線と非接続で交差（黒丸なし）すること、上向き矢印 I_B、R_B、接地記号、上段・中段・下段の各分岐点黒丸からのC×3と接地、黒丸計6・接地記号計4のすべてが一致した。(a)の解答に図は不要である。",
+        "出典メタデータ：原図フッタ『T2－H 016』は reviewedFromPage [16] と整合する。解答表の表題『令和6年度 下期』は sourceAttribution と整合する。"
+      ]
+    },
+    {
+      "unitKey": "q12b",
+      "questionNumber": 12,
+      "part": "b",
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "問題文：原図と照合し、リード文・条件(ア)(イ)に加え、設問(b)『接地抵抗R_Bの抵抗値を10 Ωとしたときに，R_Bに常時流れる電流I_Bの値[mA]』と但し書き『記載以外のインピーダンスは無視する』が一致した。",
+        "選択肢：(1)11 (2)19 (3)33 (4)65 (5)192 が原図と一致した。",
+        "公式正答：試験センター解答表 法規 問12(b)=1 が officialAnswer '1' と一致した。",
+        "解説の計算：ω=2π×50=314.16 rad/s、ω・3C=314.16×0.3×10⁻⁶=94.25×10⁻⁶ S、X=1/(ω・3C)≒10 610 Ω、E=200/√3≒115.47 V、I_B=115.47/√(10²+10 610²)≒10.88 mA≒11 mA。すべて検算で一致した。",
+        "テブナン等価の因果：開放時は3相の対地容量が等しいため大地電位がΔの中性点電位となり、接地端子の開放電圧は相電圧になる。電源短絡時は3つのCが並列になる。いずれも正しい。R_B=10 Ω が X に比べ無視できることも正しい。",
+        "別解の検算：接地線に対する非接地2線の対地電圧は、共通頂点からの線間電圧であり大きさ200 V・位相差60°である。各Cの電流 200×ωC≒6.283 mA の合成は 2×6.283×cos30°≒10.88 mA となり一致した。",
+        "誤答肢の理由：(2) 200×ω・3C≒18.85 mA、(3) 200√3×ω・3C≒32.65 mA、(4) 115.5/0.065≒1.78 kΩ（計算値の約6.0倍）、(5) 115.5/0.192≒601 Ω（約17.6倍≒18倍）。いずれも数値として正しい。(4)(5)の誤計算パターンを特定していない旨は uncertainty に明示されており、断定していない。",
+        "図：公開候補図を原図と照合した。R_B は右下頂点（中段線）にのみ接続され、下段線との交差は黒丸なしで非接続である。I_B の矢印は上向きで、下段線より下の R_B 側導線上にある。C×3 は上段・中段・下段の各分岐点黒丸から接地へつながる。いずれも一致し、原図にない追加・欠落ラベルはない。",
+        "公開候補図と問題文だけで、接地点（中段線）と非接地2線のC経由の帰路を読み取れ、(b)の解答に必要な情報は揃っている。",
+        "officialReferenceUrls は空で、解説に外部資料依存の独立主張はない。uncertainty に記されたΔ底辺の解釈は原図と整合し、結果に影響しない旨の記述も正しい。"
+      ]
+    }
+  ]
+}

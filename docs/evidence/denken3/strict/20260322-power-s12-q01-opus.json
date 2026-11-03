@@ -1,0 +1,75 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20260322",
+  "subject": "power",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 5661,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 15550,
+      "webSearchRequests": 0,
+      "costUSD": 0.23788379999999998,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 3422,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "05a923b691459cf60092745f3f25b95732bfe11ad433177d5791943b2e065008",
+  "inputRequestSha256": "f68d39d2bfc6bfc906ffb778558dee73ae082c81e73c445dd8400b373d8dc263",
+  "inputHashes": {
+    "candidateSha256": {
+      "q01": "1357f6c83bc0a9a2841b3b687bd39916d6e61a77a33e8698a26d39cd24504d68"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20260322/power/p04.png": "b5db000e4206d9200a3d5b80001dc23907f06ab38b8c96f60dfae6d1219fab96"
+    },
+    "figureSha256": {},
+    "sourceQuestionPdfSha256": "9733341a0f293f068c9a665d5a9a90f1aabf3a2db5d79cd530643cdea241f7b7",
+    "sourceAnswerPdfSha256": "cc2890296d06a4823df5697a78a1c01ddfd39f041c51f48c87984daa3a5707c6",
+    "officialAnswerUnitsSha256": "a7fe1c20f1fe2d13156ebd8ba1ed6e10dd89989f2411fd92dd3be8b2117e0239",
+    "referencePdfSha256": {},
+    "referencePageSha256": {},
+    "referenceJsonSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q01",
+      "questionNumber": 1,
+      "part": null,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [
+        "choiceExplanations[\"4\"]: (4) は (ア)(イ) の誤りだけで確実に除外できる。それなのに「(エ)『高落差を得やすい』は…本文で (エ) の直後に水路式の不利な点が続く流れとも合わない」と、文脈を根拠に (エ) の語句を否定している。「また」は並列・追加を示す接続詞にすぎず、直前の (エ) が不利な点であることまでは本文から導けない。水路式が高落差を得やすいかどうかの技術的当否は添付の公式資料で検証できない（sourceIssues 参照）。そのため、(エ) を否定する根拠として使うと学習者を誤導するおそれがある。(4) の誤りの根拠は (ア)(イ) の入替えに限定し、(エ) は「正答 (3) の (エ) とは異なる語句」とだけ記述すべき。",
+        "choiceExplanations[\"3\"]: 「(エ)『高落差を得にくい』は，直後の…と並ぶ水路式の不利な点として置かれている」は、本文の接続詞からの推測を事実のように述べている。「正答 (3) の組合せでは (エ) に『高落差を得にくい』が入る」という事実の記述にとどめるべき。"
+      ],
+      "answerIssues": [],
+      "explanationIssues": [
+        "explanation の (エ) 段落:「(3) の (エ) もこれと並ぶ水路式の不利な点として置かれている」は、choiceIssues と同じく文脈推測を断定している。「また」から (エ) が不利な点であるとは確定できないため、断定表現を削除するか推測である旨を明示すべき。",
+        "explanation の (エ) 段落:「技術的な根拠は公表されていない」は、公表物全体についての否定の断定であり、添付資料からは検証できない。「添付の公式問題・公式解答（正答番号のみ）からは確認できない」に改めるべき。",
+        "explanation の (エ) 段落:「(4) の『高落差を得やすい』はこれと正反対の内容である」は、語句の対比としては正しい。ただし、直前の文脈推測と組み合わさると「(4) の (エ) は技術的に誤り」と読める。(エ) の当否は判断材料にしないという結論部分との整合が取れるよう、表現を調整すべき。"
+      ],
+      "figureIssues": [],
+      "sourceIssues": [
+        "(エ) の技術的当否は外部確認事項として未解決である。一般的な教科書的説明では、水路式は河川勾配の急な上流部で長い導水路により大きな落差を得る方式とされることが多い。これは「水路式はダム式・ダム水路式に比べ高落差を得にくい」という公式正答 (3) の (エ) の語句と緊張関係にある。添付の公式問題原図と公式解答表（正答番号のみ）ではこの点を検証できないため、推測で PASS にはできない。正答番号 (3) は (ア)(イ)(ウ)(オ) だけで一意に定まるので、公式正答は変更しない。",
+        "uncertainty に未解決事項が明記されているにもかかわらず needsReview=false になっている。外部確認事項が残る以上、needsReview=true とすべき。"
+      ],
+      "verifiedEvidence": [
+        "出典メタデータ: fiscalYear=2025（令和7年度）、term=lower（下期）、examDate=2026-03-22、subject=power、sourceQuestionPdfUrl=…/20260322_ch_third_q02.pdf、sourceAnswerPdfUrl=…/20260322_ch_third_a01.pdf がすべて manifest と一致する。",
+        "reviewedFromPage=[4] は manifest の PDF 第4頁と一致する。原図の頁下部表記「-1-」「T2-D 004」とも整合する。",
+        "問題文: 原図の全文（分類の2段落、(エ) 直後の「また，貯水ができないので発生電力の調整には適さない。」、(イ) の再出現、(ウ) の定義文と「貯水池などを持たない水路式発電所がこれに相当する。」、(オ) の定義文、設問指示）と逐語照合し、一致した。空欄の枠表記を「(ア)」等に置き換えた点のみが整形上の差分である。",
+        "選択肢 (1)〜(5): 原図の表の全25セルと照合し、一致した。(1) 落差/流速/自然放流式/建設期間が長い/ダム式、(2) 流速/落差/自然放流式/建設期間が短い/ダム式、(3) 落差/流量/流込み式/高落差を得にくい/調整池式、(4) 流量/落差/流込み式/高落差を得やすい/調整池式、(5) 落差/流量/流込み式/建設費が安い/貯水池式。",
+        "公式正答: 公式解答表の＜電力＞問1 の解答は 3、配点は 5。候補の officialAnswer=\"3\"、scoringPoints=5 と一致する。",
+        "消去法の検算: (ア) 落差で (2)(4) を除外、(イ) 流量で (1)(2)(4) を除外、(ウ) 流込み式で (1)(2) を除外、(オ) 調整池式で (1)(2)(5) を除外すると、(3) のみが残る。explanation の記述と一致する。",
+        "分類の定義（落差を得る方法: 水路式・ダム式・ダム水路式、流量の利用方法: 流込み式・調整池式・貯水池式・揚水式、流込み式は貯水・調整池なし、調整池式は日〜数日単位の調整、貯水池式は季節的な長期調整）は正しい。各誤答肢の (ア)(イ)(ウ)(オ) に関する誤り指摘も正しい。",
+        "(1)(2)(5) の choiceExplanations は、(エ) の語句（建設期間が長い／短い、建設費が安い）の当否を断定しておらず、適切である。",
+        "図: 原図に図はなく、選択肢表は choices に完全に転記されている。figureUrls=[] と figureDescription は妥当。officialReferenceUrls=[] で、検証すべき独立主張はない。"
+      ]
+    }
+  ]
+}

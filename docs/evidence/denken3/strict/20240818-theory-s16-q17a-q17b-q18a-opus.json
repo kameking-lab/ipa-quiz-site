@@ -1,0 +1,112 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20240818",
+  "subject": "theory",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 4,
+      "outputTokens": 5484,
+      "cacheReadInputTokens": 310013,
+      "cacheCreationInputTokens": 33409,
+      "webSearchRequests": 0,
+      "costUSD": 0.4389706,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 3392,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "c8cc97db82effff2996cabd1cf708646b423c6fe443390a14da7462deefa24c1",
+  "inputRequestSha256": "bdaefbf0de881db84b82edf6098ef365c883ba17b8adfef82fd52a701f51cc20",
+  "inputHashes": {
+    "candidateSha256": {
+      "q17a": "64e21fbadbaa7e290d1e95cae31b2a970e32bd6d1c876f9adeb6241a01120b09",
+      "q17b": "1049cd774d4fa8945b558455c1a1b026f4ed05aa12e91c83831f52d21ad22e30",
+      "q18a": "32ba52ece47c5e8c5fa41f1b8ece1a2d57a616da5b33dfb56f10f8982572f57a"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20240818/theory/p22.png": "d9f046962f51fd98ab8a972b9218f8352f8e18c03e513bd48c0ccde000247cbb",
+      "data/raw_pdfs/denken3/review/20240818/theory/p23.png": "659a3972ec4c17be381241744852f11f1cab2dc08b0822d7245315296427ab85",
+      "data/raw_pdfs/denken3/review/20240818/theory/p24.png": "8a6dad9542b6b51fd4f923ecddb22ee0f4531fb02fda441375139b79d0068d33",
+      "data/raw_pdfs/denken3/review/20240818/theory/p25.png": "619d2ae5a3f2fdb36ed1f6f69db70975fb8efe983c88ec17afaca826617f80ba"
+    },
+    "figureSha256": {
+      "public/images/denken3/20240818/theory/20240818-theory-q17-capacitor-networks.png": "8ff60c1a5c6f23abf5e90be4cd13724eb74cd582339fd2dabcfed8891d5acaf2"
+    },
+    "sourceQuestionPdfSha256": "236be905e93a023cf3c65c1e22c45c24dc42b910151c51f8ed023247793d1d29",
+    "sourceAnswerPdfSha256": "f72ecbc3a477e64948388b69cf78cb931032c9f0c688639836c8d533a949cd0f",
+    "officialAnswerUnitsSha256": "fd3c02093536f87b19d67a88ce24b2104c353e6171e773680efa4bfbfd905608"
+  },
+  "assessment": [
+    {
+      "unitKey": "q17a",
+      "questionNumber": 17,
+      "part": "a",
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "I compared the (a) question text with the official original page (printed page -20-, T1-R 023). The wording, the Δ and Y terms, and the unit [μF] all match.",
+        "All five choices match the original: (1) 1.0, (2) 2.0, (3) 4.5, (4) 6.0, (5) 9.0.",
+        "The official answer table (R6 first half, theory, 問17(a)) gives 5, which matches officialAnswer=5.",
+        "Figure 2 in the original: terminal b goes to the top vertex, c to the bottom-left vertex and d to the bottom-right vertex. The left side (b-c), right side (b-d) and bottom side (c-d) are each 3μF. The public candidate figure shows the same connections, labels and values.",
+        "Figure 3 in the original: capacitors of C[μF] run from an unlabelled centre node to b, c and d. The candidate figure matches.",
+        "Recalculation: with c open, the Δ side between b and d is 3 + 3·3/(3+3) = 4.5μF. The Y side is C/2. Setting them equal gives C = 9.0μF. This agrees with the symmetric-network rule C_Y = 3C_Δ.",
+        "Symmetry makes all three terminal pairs give the same condition, so checking one pair (b-d) is enough. The explanation's reasoning is sound.",
+        "Each wrong choice has a correct reason. (1) applies the resistor rule R_Y = R_Δ/3 to capacitors, giving 3/3 = 1.0. (2) gives C/2 = 1.0, which does not equal 4.5. (3) confuses the Δ-side combined capacitance 4.5 with C. (4) gives C/2 = 3.0, which does not equal 4.5.",
+        "officialReferenceUrls is empty, so there were no independent claims to check against primary sources. The page numbers [22, 23] match the T1-R 022/023 codes on the original pages."
+      ]
+    },
+    {
+      "unitKey": "q17b",
+      "questionNumber": 17,
+      "part": "b",
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "I compared the (b) question text with the original page. The references to Figure 1 and Figure 3, the symbol C0 and the unit [μF] all match.",
+        "All five choices match the original: (1) 3.0, (2) 4.5, (3) 4.8, (4) 6.0, (5) 9.0.",
+        "The official answer table gives 3 for 問17(b), which matches officialAnswer=3.",
+        "Figure 1 in the original: the junction on the a side connects to b through 9μF and to c through 18μF. b and c each connect to the junction on the d side through 3μF, and b-c is 3μF. The public candidate figure shows the same connections, values and labels.",
+        "b-d, c-d and b-c are all 3μF, so the Δ part between b, c and d is the same as Figure 2. Replacing it with the Y network from (a) gives b-o = c-o = d-o = 9μF.",
+        "Recalculation: the a-b-o path is 9·9/18 = 4.5μF and the a-c-o path is 18·9/27 = 6.0μF. In parallel they give 10.5μF. In series with o-d (9μF): C0 = 94.5/19.5 = 4.846…μF, closest to 4.8.",
+        "Each wrong choice has a correct reason. (1) drops the a-c-o path: 4.5·9/13.5 = 3.0. (2) and (4) are partial results for a single path. (5) confuses the answer with C from (a).",
+        "officialReferenceUrls is empty, so there were no independent claims to check against primary sources."
+      ]
+    },
+    {
+      "unitKey": "q18a",
+      "questionNumber": 18,
+      "part": "a",
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "I compared the (a) passage with the original page (printed page -21-, T1-R 024). The positions of blanks (ア) to (エ) and the terms AM, FM and PM all match.",
+        "All five combinations match the original table: (1) 高い/信号波/三角波/検波, (2) 高い/信号波/正弦波/検波, (3) 高い/搬送波/三角波/増幅, (4) 低い/信号波/三角波/増幅, (5) 低い/搬送波/正弦波/検波.",
+        "The official answer table gives 2 for 問18(a), which matches officialAnswer=2.",
+        "Content check: the carrier has a higher frequency than the signal wave, the receiver extracts the signal-wave component, AM/FM/PM use a sine-wave carrier, and demodulation is also called detection (検波). This agrees with the combination in (2).",
+        "For every wrong choice, the explanation correctly identifies which blanks are wrong.",
+        "(a) can be answered from the text alone. The note that Figures 1 and 2 are used only in (b) matches the original layout, and figureUrls being empty is appropriate.",
+        "officialReferenceUrls is empty, so there were no independent claims to check against primary sources. The page numbers [24, 25] match the T1-R 024/025 codes on the original pages."
+      ]
+    }
+  ]
+}

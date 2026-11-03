@@ -1,0 +1,76 @@
+{
+  "inputHashes": {
+    "draftSha256": "8fcfbcf81a21205a2d30926678c24ce1d48e4f9aded3f4920812b7a994393359",
+    "rowSha256": {
+      "16": "f81ad71274efeeb6806b95e1ff3ccee921ca2539c378853779c34fca7a45c7a6",
+      "17": "069bf08143232b1374f52543ceba6ff7346ba56e6a7f6277fb51f5cebfb227d2",
+      "18": "94a4df8aeccb5ab1de7899686ef90e345f9cc79a1c57168695ecf819eb3034ca",
+      "19": "1354aee1ee26fd27bb412384067fcde04b27ab1150d3a4c6f39ae9d19294f85d",
+      "20": "b364702f1e5c02fe510a1dfd204dd1b604db8e37c62ecbdafd8312a72253ea91"
+    },
+    "detailFigureSha256": {
+      "public/images/denko2/2024-second/q16-1.png": "534a9cc3d4514e023723a3ce614ec34cb838b8a1ed6e824a7bcd97e92b426d37",
+      "public/images/denko2/2024-second/q17-1.png": "1a83eef800d296666919983b6f3a3b4042252508f71fa7049f95a023cbcfc89d",
+      "public/images/denko2/2024-second/q18-1.png": "e3de262ce5f6cec773060e0876e7015ce3d89b6935eab38c41354c91004ff30a"
+    },
+    "legalReceiptSha256": {
+      "docs/evidence/denko2-law/20241027-q19.json": "5bd198e6a81400da11a7d5a7c936753f939fb9e21f188bc34a547c8e2451c7ff",
+      "docs/evidence/denko2-law/20241027-q20.json": "45d9c05e4964f496899697106aea9bc1c08243f2cac7c5deb49514d82fd251ad"
+    }
+  },
+  "reviewModel": "claude-opus-5-5",
+  "assessment": [
+    {
+      "number": 16,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "lawNeedsExternalCheck": []
+    },
+    {
+      "number": 17,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "lawNeedsExternalCheck": []
+    },
+    {
+      "number": 18,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "explanationIssues": [
+        "肢ニの理由は「写真は手動油圧式圧着器であり、圧縮器とは異なる」と正答を前提にして判定しており、循環論法になっている。圧縮器ではないと言える写真上の根拠（ヘッドやダイスの形状の違い）を挙げていない。",
+        "肢ニの「スリーブを六角形等に圧縮成形する」を圧縮器だけの特徴としているが、圧着器でも六角形のダイスでかしめる製品がある。この点は両者を見分ける根拠にならない。「加工対象・ダイスの構造が異なる」も、写真のどの部分から読み取ったのかが示されていない。"
+      ],
+      "figureIssues": [],
+      "lawNeedsExternalCheck": []
+    },
+    {
+      "number": 19,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "explanationIssues": [
+        "解説の後半で同じ内容を2回続けて書いている。「半幅以上重ねて1回巻くだけでは、接続部分を覆う層が薄い。」の直後に「半幅以上重ねて1回(2層)巻いただけでは絶縁層の厚さが不足し…」とあるため、片方を削る必要がある。",
+        "照合済みの解釈第12条が定めているのは「電線の絶縁物と同等以上の絶縁効力」と「十分に被覆すること」だけで、テープの厚さや巻き回数は書かれていない。それなのに解説と肢ハの理由は、ビニルテープ（厚さ約0.2mm）を2層巻いただけでは不足、という結論を第12条が直接定めているように書いている。条文の要求と、厚さ・巻き回数による実務上の判断基準（ビニルテープなら半幅以上重ねて2回＝4層巻くのが相当）を分けて書き、2層では足りない理由を示す必要がある。",
+        "肢ロの理由「半幅以上重ねて1回(2層)巻くだけで必要な絶縁性能を満たす」も同じ問題がある。厚さ約0.5mmのテープを2層巻けば適合とする基準がどこから来ているのかが書かれておらず、肢ハの判定との数値上の対比（0.5mm×2層と0.2mm×2層）も示されていない。"
+      ],
+      "figureIssues": [],
+      "lawNeedsExternalCheck": []
+    },
+    {
+      "number": 20,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "lawNeedsExternalCheck": []
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "inputHashes": {
+    "reviewPromptVersion": "skill-source-v4",
+    "questionPdfSha256": "c87f2567f49e826d5b96526017b1acf1ecd7360d572d9af4c71413b92336d818",
+    "answerPdfSha256": "a2bc23461fed2f1eb6bd3cfb9c18670f14953603891e4bfca2a87dd5a66938d4",
+    "extractedRecordSha256": "0f43088458a4f35fc7da709631a2f2762eaa31cdc492fc0440d9ad41541c5fb1"
+  },
+  "reviewModel": "claude-opus-5-5",
+  "sourceItemId": "denko2-2024-07-20-skill-10",
+  "assessment": {
+    "status": "PASS",
+    "textIssues": [],
+    "diagramIssues": [],
+    "modelAnswerIssues": [],
+    "notes": [
+      "I checked instructionText against problem page 2. The 40-minute header, the instruction to use all materials except spares, and items 1-4 all match the original. The original's dash-dot line is transcribed as '―・―・―'. That is a notation substitution, not a content difference.",
+      "materialsText matches the materials table on problem page 1 for all 13 items. I checked item 1 (blue sheath, 2.0mm, 2-core, about 300mm), item 2 (1.6mm, 2-core, about 650mm) and item 3 (1.6mm, 3-core, about 450mm). I also checked the breaker (100V, 2-pole 1-element), the lamp receptacle without cover and the hook ceiling rosette (square body only). The concealed tumbler switch, pilot lamp, outlet and one mounting frame match. The small and medium ring sleeves (2 each, spares included) and the one 3-wire push-in connector match. The exam number tag and vinyl bag are correctly excluded. The '‥' in item 1 is the original's leader-dot remnant and does not change the content.",
+      "conditionsText matches problem page 3 for conditions 1-4. That covers simultaneous on/off of the pilot lamp with the rosette and the receptacle. It covers white for the grounded side and black for the ungrounded side. It covers white at W, at the lamp base screw terminal, at the rosette's grounded-side terminal and at the breaker's N terminal. It covers the push-in connector for 3-wire joints and ring sleeves for all other joints.",
+      "diagramNotesText matches the note below the figure: JIS C 0303:2000, omission or simplification of parts not directly related to the work, and Ⓡ meaning lamp receptacle.",
+      "The diagramImage crop fits the whole wiring diagram. It shows the dash-dot omitted-work area and the power source label (1φ2W 100V). It shows the four VVF labels: the 2.0-2C to breaker B and the three 1.6-2C/1.6-3C runs. It shows the ceiling rosette, the joint box and Ⓡ. It shows the pilot lamp, switch and outlet at the bottom, the three 150mm dimensions and every 'イ' label, all legible. The note below the figure is left out of the crop and given as text, so nothing is duplicated. There is no figure 2 in this item, so secondFigureImage is not needed.",
+      "The answer PDF header reads '令和6年度第二種上期技能試験の解答 候補No.10', which matches number 10 in the 2024 first-half exam. The concept diagram, the double-line wiring diagram and the finished-work example all use the same breaker, rosette, receptacle and pilot lamp/switch/outlet layout.",
+      "I checked the double-line diagram's joints against the materials. The 3-wire joint takes the red wire from the switch plus the black wires to the rosette and the receptacle, so it uses the one 3-wire push-in connector. The grounded side joins 4 white wires, which fits a medium ring sleeve. The power black joins one 2.0mm and one 1.6mm wire, which fits a small sleeve. This matches the materials list and condition 4.",
+      "The text layer did not lose any formulas or in-figure characters needed for extraction. The in-figure strings (1φ2W, VVF 2.0-2C and the others) are all readable in the image.",
+      "This check covers only agreement with the official PDFs. I did not grade an actual physical work."
+    ]
+  }
+}

@@ -1,0 +1,483 @@
+{
+  "candidateModel": "claude-opus-5-5",
+  "paperId": "emkohyo-EM20261803",
+  "governmentSourceCandidates": [
+    {
+      "title": "厚生労働省 個人サンプラーを用いた測定法の基盤整備報告書",
+      "url": "https://www.mhlw.go.jp/content/000616847.pdf"
+    },
+    {
+      "title": "厚生労働省 作業環境測定基準",
+      "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74087000"
+    },
+    {
+      "title": "厚生労働省 作業環境評価基準",
+      "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74088000&dataType=0&pageNo=1"
+    }
+  ],
+  "questions": {
+    "emkohyo-EM20261803-q1": {
+      "overlay": {
+        "sourceHash": "79bd6d9ae67373fb3ab789ef8bfb711f6a5bf7787b848678b9bc5fa34972b88b",
+        "correctChoice": 2,
+        "summary": "25℃・1気圧のモル体積24.45 L/molとメタノールのモル質量32.04 g/molで換算すると約99 ppmになり、最も近いのは100 ppmである。",
+        "choices": [
+          {
+            "number": 1,
+            "verdict": "incorrect",
+            "reason": "50 ppmを25℃・1気圧で質量濃度に戻すと、50×32.04÷24.45≒65.5 mg/m³になる。問題の130 mg/m³の約半分しかないため、最も近い値ではない。"
+          },
+          {
+            "number": 2,
+            "verdict": "correct",
+            "reason": "ppm＝130×24.45÷32.04≒99.2 ppmとなる。逆に100 ppmを戻すと約131.0 mg/m³で、条件とほぼ一致する。0℃の22.4 Lを使っても約90.9 ppmで最寄りは同じだが、指定された25℃の24.45 Lで計算するのが正しい。"
+          },
+          {
+            "number": 3,
+            "verdict": "incorrect",
+            "reason": "200 ppmは200×32.04÷24.45≒262 mg/m³に当たり、130 mg/m³の約2倍になる。換算式を逆にして130×32.04÷24.45とすると約170 ppmとなり200に近づくが、その式自体が誤りである。"
+          },
+          {
+            "number": 4,
+            "verdict": "incorrect",
+            "reason": "300 ppmを質量濃度に戻すと300×32.04÷24.45≒393 mg/m³で、問題の130 mg/m³の約3倍となる。換算した約99 ppmに最も近い値ではない。"
+          },
+          {
+            "number": 5,
+            "verdict": "incorrect",
+            "reason": "400 ppmは400×32.04÷24.45≒524 mg/m³に当たり、与えられた130 mg/m³の約4倍になる。計算値の約99 ppmとの差は最も大きく、最も近い値にはならない。"
+          }
+        ],
+        "sources": [
+          {
+            "title": "厚生労働省・室内空気中化学物質の濃度換算式",
+            "url": "https://www.mhlw.go.jp/houdou/0107/h0724-1c.html"
+          },
+          {
+            "title": "厚生労働省・職場のあんぜんサイト、メタノールSDS",
+            "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/67-56-1.html"
+          }
+        ]
+      },
+      "sourceEvidence": [
+        {
+          "url": "https://www.mhlw.go.jp/houdou/0107/h0724-1c.html",
+          "excerpt": "ppm ≒ mg/m3 × 24.45／分子量 （25℃）",
+          "choiceNumbers": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ]
+        },
+        {
+          "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/67-56-1.html",
+          "excerpt": "分子式 (分子量) CH4O(32.04)",
+          "choiceNumbers": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ]
+        }
+      ],
+      "reviewIssues": []
+    },
+    "emkohyo-EM20261803-q2": {
+      "overlay": {
+        "sourceHash": "414b22218bd274c2556e11c863ac177601f1110581028302eeaa9ef194571e0d",
+        "correctChoice": 4,
+        "summary": "単位作業場所は行動範囲と有害物の分布で定める。C測定をばく露が『異なる』作業で設定するという肢4が誤り。",
+        "choices": [
+          {
+            "number": 1,
+            "verdict": "incorrect",
+            "reason": "発生源の位置や発散の状況から、常に濃度が高い場所や低い場所が予測できる場合は、有害物の分布の状況を基に別の単位作業場所に分ける。基準の定義に沿った適切な記述で、正答ではない。"
+          },
+          {
+            "number": 2,
+            "verdict": "incorrect",
+            "reason": "作業者の行動範囲が工場全体でも、測定対象物質が発生源の周辺にしか分布しないなら、行動範囲と分布の両方を踏まえて発生源周辺を単位作業場所にできる。適切な記述で正答ではない。"
+          },
+          {
+            "number": 3,
+            "verdict": "incorrect",
+            "reason": "A測定の点数が多く1作業日にサンプリングを終えられない場合は、1日に採取できる点数に収まるよう単位作業場所をさらに区分けする。公式正答でも適切とされる記述である。"
+          },
+          {
+            "number": 4,
+            "verdict": "correct",
+            "reason": "C測定でも、単位作業場所は行動範囲と有害物の分布等に基づく区域である。その中で、ばく露量がほぼ均一と見込まれる作業ごとに対象者を選ぶ。ばく露が『異なる』作業を選んで設定するという点が誤りである。"
+          },
+          {
+            "number": 5,
+            "verdict": "incorrect",
+            "reason": "C測定では、個人サンプラーを着けた労働者と一緒に採取位置が動く。このため、固定点で測るA測定より広い行動範囲を一つの単位作業場所とする場合がある。適切な記述である。"
+          }
+        ],
+        "sources": [
+          {
+            "title": "厚生労働省 作業環境測定基準",
+            "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74087000"
+          }
+        ]
+      },
+      "sourceEvidence": [
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74087000",
+          "excerpt": "労働者の作業中の行動範囲、有害物の分布等の状況等に基づき定められる",
+          "choiceNumbers": [
+            1,
+            2,
+            4
+          ]
+        }
+      ],
+      "reviewIssues": [
+        "【HOLD】肢1（常に濃度が高い・低い場所は別の単位作業場所とする）、肢2（作業者の行動範囲が工場全体でも発生源周辺だけを単位作業場所としてよい）、肢3（1作業日でサンプリングを終えられないときは単位作業場所をさらに区分する）の考え方を直接述べた政府一次資料が見つからない。作業環境測定基準第2条は単位作業場所の定義だけで、個人サンプリング法ガイドライン・基発0127第12号・中災防の講習用教材（mhlw掲載）はC測定の単位作業場所しか扱っていない。A測定の単位作業場所設定を説明する政府通達又は政府掲載資料を確認できるまで保留する。"
+      ]
+    },
+    "emkohyo-EM20261803-q3": {
+      "overlay": {
+        "sourceHash": "698d4d8ebf2098e3590dca500f0fb594fb4994ff534c8fef18598ced5e08249a",
+        "correctChoice": 3,
+        "summary": "A測定の測定点は、6m以下の等間隔で引いた2方向の線の交点のうち、設備等で測定が著しく困難な位置を除いたすべてとし、5点以上とする。横の線の間隔がそろっていないロと、設備に重なる交点を除かずに●を交点以外へずらしたニが誤りである。",
+        "choices": [
+          {
+            "number": 1,
+            "verdict": "incorrect",
+            "reason": "ロは誤りだが、イは誤りではない。イは縦4本・横2本の点線がそれぞれ等間隔で、●は交点上にある。下段の交点のうち中央の2つはL字形の設備に重なるので●を置かず、残る6つの交点を測定点としている。通達は、困難な位置を除いたすべての交点を測定点とする趣旨だとしている。イはこの扱いどおりで、5点以上も満たす。"
+          },
+          {
+            "number": 2,
+            "verdict": "incorrect",
+            "reason": "イもハも誤りではない。イは設備に重なる2交点だけを除いて6点を確保している。ハは縦2本・横2本の点線の交点が4つしかなく、基準により測定点を5以上とする必要がある。通達は線の間隔の変更や起点の移動「など」で5以上にするとしており、ハは4交点を結ぶ対角線（細い実線）の交点に1点を足して5点にしている。"
+          },
+          {
+            "number": 3,
+            "verdict": "correct",
+            "reason": "ロとニが誤りなので、これが正答である。ロは縦の点線は等間隔だが、横の点線3本は下側の間隔が上側より広い。通達は縦方向・横方向のそれぞれの間隔を同一にするよう求めている。ニは交点が9つで、設備に重なる1つを除いても8つ残り5以上を満たすので補充は不要だが、L字形の設備に重なる交点を除かず、●を斜めの点線上の交点でない位置へずらしている。"
+          },
+          {
+            "number": 4,
+            "verdict": "incorrect",
+            "reason": "ハとホはどちらも誤りではない。ハは交点4つに対角線の交点1点を足して5点としている。ホは平行四辺形の区域の辺に沿って、斜めの点線と横の点線をそれぞれ等間隔に引いている。通達は平行線を単位作業場所の形に沿わせることを認めている。●はすべて交点上にあり、右上の設備に重なる2交点だけを除いた7点で5以上も満たす。"
+          },
+          {
+            "number": 5,
+            "verdict": "incorrect",
+            "reason": "ニは誤りだが、ホは誤りではない。ニは設備に重なる交点を除かず、●を交点以外の位置へずらしている。ニは設備に重なる1交点を除いても交点が8つ残るので、5未満の場合の補充にも当たらない。ホは区域の形に沿った2方向の点線をそれぞれ等間隔に引き、設備に重なる2交点を除いた7つの交点すべてに●を置いている。ホにはニのような誤りはない。"
+          }
+        ],
+        "sources": [
+          {
+            "title": "厚生労働省 作業環境測定基準第2条",
+            "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74087000"
+          },
+          {
+            "title": "厚生労働省 作業環境測定基準の一部改正について（昭和63年9月16日基発第604号）",
+            "url": "https://www.mhlw.go.jp/web/t_doc?dataId=00tb2157&dataType=1&pageNo=1"
+          }
+        ]
+      },
+      "sourceEvidence": [
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74087000",
+          "excerpt": "床面上に六メートル以下の等間隔で引いた縦の線と横の線との交点の床上五十センチメートル以上百五十センチメートル以下の位置(設備等があつて測定が著しく困難な位置を除く。)",
+          "choiceNumbers": [
+            1,
+            3,
+            4,
+            5
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74087000",
+          "excerpt": "同号の規定により測定点が五に満たないこととなる場合にあつても、測定点は、単位作業場所について五以上とすること",
+          "choiceNumbers": [
+            2,
+            4,
+            5
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=00tb2157&dataType=1&pageNo=1",
+          "excerpt": "本号は、設備等があって測定が著しく困難な位置を除いたすべての交点を測定点とする趣旨のものであること。",
+          "choiceNumbers": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=00tb2157&dataType=1&pageNo=1",
+          "excerpt": "縦の線の間隔と横の線の間隔とは、必ずしも同一である必要はないが、縦方向及び横方向のそれぞれの間隔は同一としなければならないものであること。",
+          "choiceNumbers": [
+            1,
+            3,
+            4,
+            5
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=00tb2157&dataType=1&pageNo=1",
+          "excerpt": "単位作業場所が直線で区切れない場合にあつては、平行線は単位作業場所の形に沿って曲率をもっても差し支えないこと。",
+          "choiceNumbers": [
+            4,
+            5
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=00tb2157&dataType=1&pageNo=1",
+          "excerpt": "本号本文の場合には、縦の線若しくは横の線の間隔の変更又は交点の起点の移動を行うことなどにより、測定点を五以上としなければならないものであること。",
+          "choiceNumbers": [
+            2,
+            4
+          ]
+        }
+      ],
+      "reviewIssues": [
+        "【HOLD】第二パス（2026-09-24）で基発第604号（昭和63年9月16日）を追加し、ロ（縦横それぞれの間隔を同一にする）とニ（困難な位置を除いたすべての交点を測定点とする趣旨）は政府一次資料で支えたが、独立審査4回目もFIX。残る指摘: (1) ハのように4交点を結ぶ対角線の交点に1点を足して5点とする方法を明記した政府資料がない（基発第604号 第二 2(1)の例示は線の間隔の変更と交点の起点の移動のみ）。(2) ニ・ホのように直交しない斜めの線（平行四辺形の辺に平行な線）を用いてよいことを直接述べた政府資料がない（第二 1(3)は直線で区切れない場合の曲率の規定で射程外）。ホの下段の点線がL字形設備に重なるかの確認も求められた。これらの政府一次資料が得られるまで保留する。"
+      ]
+    },
+    "emkohyo-EM20261803-q4": {
+      "overlay": {
+        "sourceHash": "7f3531322a85cd36295df0fad29360a66b3ab5b2ae9a0d3055e939470f49ff3f",
+        "correctChoice": 4,
+        "summary": "検知管のB測定で5本の合計が10分未満なら、10分間に均等に5回測り平均値をとる。最大値とする肢4が誤り。",
+        "choices": [
+          {
+            "number": 1,
+            "verdict": "incorrect",
+            "reason": "B測定はA測定を補完する測定で、通達は、発散源と共に移動する作業や間けつ的に発散を伴う作業など「発散源に近接する場所における作業」がある単位作業場所で行うとしている。そうした作業がなければ実施しなくてよく、適切な記述で正答ではない。"
+          },
+          {
+            "number": 2,
+            "verdict": "incorrect",
+            "reason": "通達は、B測定の「当該作業が行われる位置」について、A測定と同様に床上50cm以上150cm以下の範囲で作業の実態に応じて選ぶのが望ましいとしている。高さを床上50cm以上150cm以下とする記述は適切で、正答ではない。"
+          },
+          {
+            "number": 3,
+            "verdict": "incorrect",
+            "reason": "分粒装置を使って捕集すると定められた特定化学物質は、B測定でも同じ捕集条件で採取しなければ、管理濃度と同じ基準で比較できない。適切な記述である。"
+          },
+          {
+            "number": 4,
+            "verdict": "correct",
+            "reason": "検知管5本の測定時間の合計が10分に満たない場合は、10分間に均等な間隔で5回測り、その平均値をB測定値とする。5本の指示値のうち『最大値』をとるという点が誤りである。"
+          },
+          {
+            "number": 5,
+            "verdict": "incorrect",
+            "reason": "作業環境評価基準の適用通達は、「二以上の測定点においてB測定を実施した場合」には、連続する2作業日に測定して2以上のB測定値が得られた場合も含むとしている。評価基準はその場合の最大値をB測定値とするので、適切な記述である。"
+          }
+        ],
+        "sources": [
+          {
+            "title": "厚生労働省 作業環境測定基準",
+            "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74087000"
+          },
+          {
+            "title": "厚生労働省 作業環境評価基準",
+            "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74088000&dataType=0&pageNo=1"
+          },
+          {
+            "title": "厚生労働省 作業環境測定基準の一部改正について（昭和59年4月13日基発第182号）",
+            "url": "https://www.mhlw.go.jp/web/t_doc?dataId=00tb2165&dataType=1&pageNo=1"
+          },
+          {
+            "title": "厚生労働省 作業環境評価基準の適用について（昭和63年9月16日基発第605号）",
+            "url": "https://www.mhlw.go.jp/web/t_doc?dataId=00tb2166&dataType=1&pageNo=1"
+          }
+        ]
+      },
+      "sourceEvidence": [
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=00tb2165&dataType=1&pageNo=1",
+          "excerpt": "B測定は、A測定を補完するための測定であるのでA測定の測定点のほかにB測定の測定点を追加して行うべきものであること。",
+          "choiceNumbers": [
+            1
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=00tb2165&dataType=1&pageNo=1",
+          "excerpt": "①　発散源と共に労働者が移動しながら行う作業 ②　原材料等の投入、設備の点検等間けつ的に有害物の発散を伴う作業 ③　有害物を発散するおそれのある装置、設備等の近くで行う作業",
+          "choiceNumbers": [
+            1
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=00tb2165&dataType=1&pageNo=1",
+          "excerpt": "A測定と同様に床上五〇cm以上一五〇cm以下の範囲で、作業の実態に応じて選定することが望ましいこと。",
+          "choiceNumbers": [
+            2
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=00tb2166&dataType=1&pageNo=1",
+          "excerpt": "「二以上の測定点においてB測定を実施した場合」には、連続する二作業日に測定を行い、二以上のB測定値が得られた場合も含むものであること。",
+          "choiceNumbers": [
+            5
+          ]
+        }
+      ],
+      "reviewIssues": [
+        "【HOLD】正答肢4の根拠、すなわち検知管5本の合計測定時間が10分に満たないとき、10分間に均等な間隔で測った5本の指示値を『最大値』ではなく『平均値』としてB測定値にする扱いを定めた政府一次資料（通達・告示・政府掲載資料）が見つからない。基発第182号はB測定の採取時間を『一〇分間の継続した時間で足りる』とし、基発第412号は検知管等で1測定点10分未満とする場合の扱いをA測定（測定点数と1時間以上）についてだけ示しており、B測定値の求め方は定めていない。肢3（分粒装置を使う特定化学物質はB測定でも分粒装置で捕集）も直接述べた資料が未確認。肢1・2は基発第182号、肢5は基発第605号で支えられる（2026-09-24 第二パス）。"
+      ]
+    },
+    "emkohyo-EM20261803-q5": {
+      "overlay": {
+        "sourceHash": "17876ec1adaa14c0325b12931880da463b4d8586736474838aade45bcbbddbf3",
+        "correctChoice": 2,
+        "summary": "C・D測定（個人サンプリング法）の対象は、個人サンプリング法対象特化物・鉛・有機溶剤等・粉じんである。対象特化物の番号には令別表第3第2号14のコールタールが含まれないので、答えはコールタールである。",
+        "choices": [
+          {
+            "number": 1,
+            "verdict": "incorrect",
+            "reason": "クレゾールは令別表第6の2第12号の有機溶剤である。ガイドラインは同表第1号から第47号までの有機溶剤に係る測定を個人サンプリング法の対象としており、別紙1の有機溶剤の表にも「12 クレゾール 5ppm」が載っている。よってC・D測定の対象である。"
+          },
+          {
+            "number": 2,
+            "verdict": "correct",
+            "reason": "コールタールは令別表第3第2号14の特定化学物質である。ガイドラインが個人サンプリング法の対象とする特定化学物質は同号の「5から11まで、13、13の2、15から18まで」などと番号で限られており、14は含まれない。別紙1の管理濃度の表も13の2の次が15で、コールタールが載っていない。よってC・D測定の対象でないのはコールタールである。"
+          },
+          {
+            "number": 3,
+            "verdict": "incorrect",
+            "reason": "シアン化カリウムは令別表第3第2号16の特定化学物質で、対象特化物の「15から18まで」に入る。ガイドライン別紙1の表にも「16 シアン化カリウム シアンとして3mg／m3」として管理濃度が示されているので、C・D測定の対象である。"
+          },
+          {
+            "number": 4,
+            "verdict": "incorrect",
+            "reason": "N,N-ジメチルホルムアミドは令別表第6の2第30号の有機溶剤である。有機溶剤は第1号から第47号まで個人サンプリング法の対象で、ガイドライン別紙1の有機溶剤の表にも「30 N，N―ジメチルホルムアミド 10ppm」とある。よってC・D測定の対象である。"
+          },
+          {
+            "number": 5,
+            "verdict": "incorrect",
+            "reason": "リフラクトリーセラミックファイバーは令別表第3第2号34の3の特定化学物質で、対象特化物の番号に「34の3」が明記されている。ガイドライン別紙1にも5µm以上の繊維として0.3本/cm3の管理濃度が示されているので、C・D測定の対象である。"
+          }
+        ],
+        "sources": [
+          {
+            "title": "厚生労働省 個人サンプリング法による作業環境測定及びその結果の評価に関するガイドライン（令和6年4月10日基発0410第2号別添2）",
+            "url": "https://www.mhlw.go.jp/web/t_doc?dataId=00tc8503&dataType=1&pageNo=1"
+          },
+          {
+            "title": "厚生労働省 労働安全衛生法施行令 別表第3・別表第6の2",
+            "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74002000&dataType=0&pageNo=2"
+          }
+        ]
+      },
+      "sourceEvidence": [
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=00tc8503&dataType=1&pageNo=1",
+          "excerpt": "同表第2号1、2、3の2、5から11まで、13、13の2、15から18まで、19、19の4から22まで、23から23の3まで、25から27の2まで、30、31の2から33まで、34の3若しくは36に掲げる物(以下「個人サンプリング法対象特化物」という。)",
+          "choiceNumbers": [
+            2,
+            3,
+            5
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=00tc8503&dataType=1&pageNo=1",
+          "excerpt": "令別表第6の2第1号から第47号までに掲げる有機溶剤及び特定化学物質障害予防規則",
+          "choiceNumbers": [
+            1,
+            4
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=00tc8503&dataType=1&pageNo=1",
+          "excerpt": "12 クレゾール 5ppm",
+          "choiceNumbers": [
+            1
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=00tc8503&dataType=1&pageNo=1",
+          "excerpt": "16 シアン化カリウム シアンとして3mg／m 3",
+          "choiceNumbers": [
+            3
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=00tc8503&dataType=1&pageNo=1",
+          "excerpt": "30 N，N―ジメチルホルムアミド 10ppm",
+          "choiceNumbers": [
+            4
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=00tc8503&dataType=1&pageNo=1",
+          "excerpt": "34の3 リフラクトリーセラミックファイバー 5マイクロメートル以上の繊維として0.3本毎立方センチメートル",
+          "choiceNumbers": [
+            5
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=00tc8503&dataType=1&pageNo=1",
+          "excerpt": "13の2 コバルト及びその無機化合物 コバルトとして0.02mg／m 3 15 酸化プロピレン 2ppm",
+          "choiceNumbers": [
+            2
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74002000&dataType=0&pageNo=2",
+          "excerpt": "１３の２　コバルト及びその無機化合物 １４　コールタール １５　酸化プロピレン",
+          "choiceNumbers": [
+            2
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74002000&dataType=0&pageNo=2",
+          "excerpt": "十一　キシレン 十二　クレゾール 十三　クロルベンゼン",
+          "choiceNumbers": [
+            1
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74002000&dataType=0&pageNo=2",
+          "excerpt": "二十九　削除 三十　N・N―ジメチルホルムアミド",
+          "choiceNumbers": [
+            4
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74002000&dataType=0&pageNo=2",
+          "excerpt": "別表第六の二　有機溶剤(第六条、第二十一条、第二十二条関係)",
+          "choiceNumbers": [
+            1,
+            4
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=00tc8503&dataType=1&pageNo=1",
+          "excerpt": "令和2年2月17日 改正　令和5年4月17日 改正　令和6年4月10日 個人サンプリング法による作業環境測定及びその結果の評価に関するガイドライン",
+          "choiceNumbers": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=00tc8503&dataType=1&pageNo=1",
+          "excerpt": "(令和6年4月10日) (基発0410第2号)",
+          "choiceNumbers": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ]
+        }
+      ],
+      "reviewIssues": []
+    }
+  }
+}

@@ -1,0 +1,70 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20250831",
+  "subject": "theory",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 3082,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 13249,
+      "webSearchRequests": 0,
+      "costUSD": 0.1678958,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 1626,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "d18be7d26f54c35efe87808022d49684224c8c1f1037d13ef65fb68672d6f80d",
+  "inputRequestSha256": "72ab8f82aad4e9ac70b990a34c69be5bc672d8ab98bcb61937375ad5a94f7ebf",
+  "inputHashes": {
+    "candidateSha256": {
+      "q14": "c457faf45ca7e24a9c6685684bca5254fbb7b888fd541f517d8e916dc25cf6e9"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20250831/theory/p17.png": "a3f52a4ad999d13530e3ce5ac650d60b105237355ea64933a650e9956af4dd76"
+    },
+    "figureSha256": {},
+    "sourceQuestionPdfSha256": "11a75ffd5dd2b5309ad75370bb963c4fda9e12a812174cfa2c2237383c3a964d",
+    "sourceAnswerPdfSha256": "76fd3715ed487d19a56b387fb402de20ee09474e9fa55b0413f9037b96af06c9",
+    "officialAnswerUnitsSha256": "97d49bef9f28bb2cc1753dcd38e0cda70e3580d1c533e752778d504fab108739",
+    "referencePdfSha256": {},
+    "referencePageSha256": {},
+    "referenceJsonSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q14",
+      "questionNumber": 14,
+      "part": null,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "問題文: 原図の『電気及び磁気に関する量とその単位記号(これと同じ内容を表す単位記号を含む。)の組み合わせとして，誤っているのは次のうちどれか。』と候補 question の文言が一致する。括弧と読点の全角化は整形の範囲で、意味の変化はない。",
+        "表・全肢: 原図の各行と候補の choices および question 内の表が一致する。(1) 電流 C/s、(2) 磁気抵抗 H⁻¹（原図は H^-1 の上付き表記）、(3) 電力量 W·s（原図は W・s）、(4) 磁束 T、(5) 電界の強さ V/m。量・単位記号・指数の符号に転記誤りはない。",
+        "公式正答: 公式解答表（令和7年度 第三種電気主任技術者上期試験解答）の＜理論＞列で、問14 の解答は 4、配点は 5。manifest 固定単位 {question:14, part:null, answer:'4', points:5}、候補の officialAnswer='4'、scoringPoints=5 のすべてと一致する。",
+        "科目の特定: 同じ解答表で問14 の解答は、電力が 2、機械が 3 で、4 になるのは理論列だけである。問題内容（電磁気量の単位）も理論科目に合致し、subject='theory' と整合する。",
+        "正答の検算: 磁束の SI 単位は Wb で、T は磁束密度の単位（1 T = 1 Wb/m²）である。したがって (4) だけが誤りで、公式正答 4 と一致する。",
+        "誤答肢(1)の検算: I = Q/t より A = C/s。組み合わせは正しく、choiceExplanations[1] の理由も正確である。",
+        "誤答肢(2)の検算: R_m = F/Φ の単位は A/Wb である。L = NΦ/I より H = Wb/A なので、A/Wb = H⁻¹ となる。組み合わせは正しく、choiceExplanations[2] の導出（巻数 N は無次元）も正確である。",
+        "誤答肢(3)の検算: 電力量 = P·t の単位は W·s = J。組み合わせは正しく、kW·h への言及も正確である。",
+        "誤答肢(5)の検算: E = V/d の単位は V/m で、F = qE より N/C と同じ次元である。組み合わせは正しく、choiceExplanations[5] も正確である。",
+        "総合解説: explanation の因果関係（磁束は Wb、T は磁束密度で 1 T = 1 Wb/m²、したがって (4) が誤り）に誤りはない。各肢の個別解説とも矛盾しない。",
+        "図: 原図に図版はなく、表だけである。表の全内容が question と choices に文字で再現されているため、figureUrls=[] で解答に支障はない。figureDescription の記述も原図と一致する。",
+        "出典・頁: 原図フッターの『T1－R 017』は reviewedFromPage=[17] と整合する（印刷頁番号は『- 14 -』）。sourceQuestionPdfUrl（20250831_ch_third_q01）と sourceAnswerPdfUrl（20250831_ch_third_a01）は同一試験日の対になっている。解答表の表題も『令和7年度 上期』で、fiscalYear=2025、term=upper、examDate=2025-08-31 と整合する。",
+        "参考URL: officialReferenceUrls は空で、検証を要する独立主張はない。",
+        "uncertainty 欄: 候補の uncertainty 欄は『原本頁から年度・科目を直接確認できない』としていたが、上記の解答表照合と科目の特定によってこの懸念は解消された。そのうえで needsReview=false は妥当である。"
+      ]
+    }
+  ]
+}

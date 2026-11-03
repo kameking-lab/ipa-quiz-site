@@ -1,0 +1,71 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20260322",
+  "subject": "law",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 3157,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 18397,
+      "webSearchRequests": 0,
+      "costUSD": 0.21057979999999998,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 1411,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "40cf1c9e264a8536fbdb9923505c0b6656d1085c0769814be3d12d0692772ba9",
+  "inputRequestSha256": "0283b10900d7302f3fe5940aaa6d2491353858b253851e046f4d15fa03954a5e",
+  "inputHashes": {
+    "candidateSha256": {
+      "q08": "e8809d30df5078a712620df6667200b15775769823293267d574ac8cf010725a"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20260322/law/p14.png": "71d8230c53184fc7fd0e059a24e14d34280973195fd2318796ba4dbf979fe9d9",
+      "data/raw_pdfs/denken3/review/20260322/law/p04.png": "4e55d96c3f339921b9301997fede371d8891bc2fd296b7ad5c0cbdf5bb675366"
+    },
+    "figureSha256": {},
+    "sourceQuestionPdfSha256": "945e325f0fe221645f898efebe0dbcac32e1605a962a6850493895a67df0885e",
+    "sourceAnswerPdfSha256": "cc2890296d06a4823df5697a78a1c01ddfd39f041c51f48c87984daa3a5707c6",
+    "officialAnswerUnitsSha256": "b252c3a6fd3da3485959d645da1d9ee5130a710670c3067d63a838a73188bf82",
+    "referencePdfSha256": {},
+    "referencePageSha256": {},
+    "referenceJsonSha256": {
+      "data/raw_pdfs/denken3/review/egov/409M50000400052-20250401.json": "fc3f322dccf59132c0267e8d9fe62d33eb62f4a8cd382cf5b9e084746f6bafe2"
+    }
+  },
+  "assessment": [
+    {
+      "unitKey": "q08",
+      "questionNumber": 8,
+      "part": null,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "出典メタデータ: fiscalYear=2025、term=lower、examDate=2026-03-22、subject=law、sourceQuestionPdfUrl=…20260322_ch_third_q04.pdf、sourceAnswerPdfUrl=…20260322_ch_third_a01.pdf、reviewedFromPage=[14] は manifest と一致する。原図のフッター『T2－H 014』（冊子ノンブル『-11-』）も PDF 第14頁と整合する。sourceAttribution『令和7年度下期第三種電気主任技術者試験 法規科目 問8』は公式解答表の見出し『令和7年度 第三種電気主任技術者下期試験解答』と整合する。",
+        "問題文: 柱書と a)〜d) を原図と逐語照合した。(ア) は a) に2箇所ある。語句・句読点に相違はない。d) の『電路であって常用電源側のもの』は原図どおり読点なしで転記されている。末尾の設問文も一致する。",
+        "選択肢: (1)〜(5) の全20セルを原図の表と照合し、すべて一致した。(1) は 感電／感電又は火災／一般用電気工作物／需要場所以外の場所。(2) は 感電又は火災／感電又は火災／自家用電気工作物／需要場所。(3) は 感電／火災／自家用電気工作物／需要場所以外の場所。(4) は 感電又は火災／火災／自家用電気工作物／需要場所以外の場所。(5) は 感電／火災／一般用電気工作物／需要場所。",
+        "公式正答: 公式解答表の法規 問8 は解答1・配点6 である。manifest の {question:8, part:null, answer:'1', points:6} と、候補の officialAnswer='1'・scoringPoints=6・part=null は一致する。",
+        "総合解説の前提: 『電気設備技術基準』＝電技の略であることは注意書き頁の注1で確認した。令和7年4月1日現在の法令に基づくことは注3で確認した。",
+        "a) 電技第21条第1項: 添付の e-Gov 条文（施行時点2025-04-01）と引用文が一致する。『感電のおそれ』が2回出ることから (ア)=感電 である。条見出しは『架空電線及び地中電線の感電の防止』で、同条の第1項・第2項に『火災』の語がないことも確認した。",
+        "b) 電技第56条第2項: 『接続不良による感電又は火災のおそれがないように』と引用文が一致し、(イ)=感電又は火災 である。条見出し『配線の感電又は火災の防止』も一致する。",
+        "c) 電技第59条第2項: 『燃料電池発電設備が一般用電気工作物である場合には、運転状態を表示する装置を施設しなければならない』と引用文が一致し、(ウ)=一般用電気工作物 である。条見出し『電気使用場所に施設する電気機械器具の感電、火災等の防止』も一致する。",
+        "d) 電技第61条: 『需要場所以外の場所に施設する電路であって、常用電源側のものと電気的に接続しないように』と引用文が一致し、(エ)=需要場所以外の場所 である。解説の趣旨説明（需要場所の非常用予備電源を、需要場所外にある常用電源側の電路と電気的に接続しない）は条文の構造と矛盾しない。",
+        "正答肢・誤答肢の理由: 誤答肢ごとに、正しい空欄と誤っている空欄の指摘を表と条文で検算した。(2) は (イ)のみ正しく、(ア)(ウ)(エ)が誤り。(3) は (ア)(エ)が正しく、(イ)(ウ)が誤り。(4) は (エ)のみ正しく、(ア)(イ)(ウ)が誤り。(5) は (ア)(ウ)が正しく、(イ)(エ)が誤り。各肢固有の理由の記述はいずれも条文と一致する。(1) の正答理由も4条文すべてと一致する。",
+        "図: 原図に回路図等はなく、選択肢表のみである。figureDescription（列(ア)〜(エ)・行(1)〜(5)の表）、figureUrls=[]、choiceFigureUrls={} は妥当で、解答に図は不要である。",
+        "公式参考URL: officialReferenceUrls の e-Gov URL（409M50000400052, occasion_date=20250401）について、解説が依拠する独立主張はすべて添付の e-Gov 条文原文（第21条・第56条・第59条・第61条）で検証済みである。未検証の外部主張はない。"
+      ]
+    }
+  ]
+}

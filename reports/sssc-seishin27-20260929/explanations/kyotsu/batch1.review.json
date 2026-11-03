@@ -1,0 +1,106 @@
+{
+  "questions": [
+    {
+      "number": 1,
+      "status": "PASS",
+      "problems": "",
+      "fixes": {},
+      "evidence": [
+        {
+          "url": "https://jscp.or.jp/overview/reality/",
+          "checked": "2024年の年齢階級別死因で、男女計では10〜39歳の第1位が自殺と記載。肢5の「青年期の死因の上位は自殺・不慮の事故で、心疾患が最多は誤り」と一致する。"
+        }
+      ]
+    },
+    {
+      "number": 2,
+      "status": "FIX",
+      "problems": "肢4の理由が「8剤以下を目安にするのは多すぎで、薬剤数はさらに少なく抑えることが求められる」と断定している。厚労省指針は「6種類以上で有害事象が特に増えたというデータもある」と述べるだけで、一律の剤数目標は置いていない。同指針は「6種類以上が必要な場合もあれば、3種類で問題が起きる場合もあり、中身が重要」とし、剤数だけでなく処方内容の適正化を求めている。そのため、より少ない剤数を目安として求めるという断定は根拠がなく、改める。",
+      "fixes": {
+        "4": "厚生労働省の「高齢者の医薬品適正使用の指針」は、6種類以上で有害事象の発生が特に増えたというデータがあるとしつつ、一律の剤数の目安は置いていない。本質は処方の中身であり、剤数だけを基準に「8剤以下」とする考え方は適切でない。",
+        "lawSensitive": false
+      },
+      "evidence": [
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=00tc3422&dataType=1&pageNo=1",
+          "checked": "指針（総論編）の通知で次を確認。①「薬物有害事象は薬剤数にほぼ比例して増加し、6種類以上が特に薬物有害事象の発生増加に関連したというデータもある」。②処方カスケードの記述。③服用回数を減らすなどでアドヒアランスが改善すること。④少量（1/2〜1/3量）から開始するのが原則。"
+        }
+      ]
+    },
+    {
+      "number": 3,
+      "status": "PASS",
+      "problems": "",
+      "fixes": {},
+      "evidence": []
+    },
+    {
+      "number": 5,
+      "status": "PASS",
+      "problems": "",
+      "fixes": {},
+      "evidence": []
+    },
+    {
+      "number": 6,
+      "status": "PASS",
+      "problems": "",
+      "fixes": {},
+      "evidence": [
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=80126000&dataType=0&pageNo=1",
+          "checked": "精神保健福祉法の条文で次を確認。第20条：本人の同意に基づく入院の努力義務。第29条第2項：指定医2人以上の診察結果の一致。第29条の2：急速を要する場合に指定医の診察で行い、72時間以内。第33条：家族等のいずれかの同意、または市町村長の同意による医療保護入院。第33条の6：急速を要し家族等の同意を得られない場合の応急入院で、72時間以内。"
+        }
+      ]
+    },
+    {
+      "number": 7,
+      "status": "PASS",
+      "problems": "",
+      "fixes": {},
+      "evidence": []
+    },
+    {
+      "number": 8,
+      "status": "PASS",
+      "problems": "",
+      "fixes": {},
+      "evidence": []
+    },
+    {
+      "number": 9,
+      "status": "PASS",
+      "problems": "",
+      "fixes": {},
+      "evidence": []
+    },
+    {
+      "number": 10,
+      "status": "PASS",
+      "problems": "",
+      "fixes": {},
+      "evidence": []
+    },
+    {
+      "number": 11,
+      "status": "PASS",
+      "problems": "",
+      "fixes": {},
+      "evidence": []
+    },
+    {
+      "number": 12,
+      "status": "PASS",
+      "problems": "",
+      "fixes": {},
+      "evidence": []
+    },
+    {
+      "number": 13,
+      "status": "PASS",
+      "problems": "",
+      "fixes": {},
+      "evidence": []
+    }
+  ]
+}

@@ -1,0 +1,34 @@
+{
+  "schemaVersion": 1,
+  "receiptKind": "canonicalized-direct-review",
+  "paper": "20240526",
+  "reviewModel": "claude-opus-5-5",
+  "upstreamReviewReceipt": "docs/evidence/denko2-strict-20240526/round2-q27-28-29-31-32-opus.json",
+  "upstreamReviewSha256": "97a916bbd3c5bc6f09c9884ec9baf5509928f3e7e9d707028f14c5d3c8f771f9",
+  "candidateEquivalenceProof": "current per-question candidate hash equals a clean source-aware direct Opus input hash",
+  "inputHashes": {
+    "draftSha256": "48b54600026fd59acbecfe840f706924071e66a328ff745cc975b73ea65b8d86",
+    "rowSha256": {
+      "29": "6068d13943df545a05548befb34e702e76d5a624ab8d6a5f9d68f0e90ba787cb"
+    },
+    "detailFigureSha256": {
+      "public/images/denko2/2024-first/q29-diamond-pse.png": "89902eb73c8fb821c03f15b60e0574a67860a797130aea82901ac2c89602009c",
+      "public/images/denko2/2024-first/q29-circle-pse.png": "dc131044a558f611ffa6081fe429dcee7f5a0e0fb024940a6ed9206d22587828"
+    },
+    "sharedFigureSha256": {},
+    "legalReceiptSha256": {}
+  },
+  "assessment": [
+    {
+      "number": 29,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "visualIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": "METI『販売事業者の皆様へ』https://www.meti.go.jp/policy/consumer/seian/denan/file/06_guide/hanbai.pdf（SHA256 75a6c759…）を確認した。p.6：製造・輸入事業者は法第8条・第9条の義務を果たしたうえで法第10条の表示を付す。p.8：表示スペースがない電線・ヒューズ・配線器具等は、特定電気用品なら<PS>E、それ以外なら(PS)Eの簡易表示が使える。p.9：販売事業者は法第27条により表示を確認する義務がある。電気用品安全法（e-Gov API https://laws.e-gov.go.jp/api/1/lawdata/336AC0000000234）では、第9条・第10条と、第27条第1項（表示がない電気用品の販売禁止）・第2項（経済産業大臣の承認などの例外）を確認した。公式問題の菱形・丸形の図記号と正答ハが一致し、選択肢画像の切出し2点も原図と一致している。"
+    }
+  ]
+}

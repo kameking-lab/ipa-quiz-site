@@ -3,7 +3,29 @@ import { render, screen, cleanup } from "@testing-library/react";
 
 import { QuestionBody } from "@/components/quiz/QuestionBody";
 
+it("preserves literal BNF and code indentation without displaying fences", () => {
+  const { container } = render(<QuestionBody text={'`<DNA>` を選ぶ。\n\n```text\n<DNA> ::= A|T\n  <DNA>\n```\n\n**条件**'} />);
+  expect(container.querySelector("pre code")?.textContent).toBe("<DNA> ::= A|T\n  <DNA>");
+  expect(container.textContent).not.toContain("```");
+  expect(container.querySelector("p code")?.textContent).toBe("<DNA>");
+  expect(container.querySelector("strong")?.textContent).toBe("条件");
+});
+
 afterEach(cleanup);
+
+it.each(["| --- |", "| :---: |"])("renders a single-column table with separator %s", (separator) => {
+  render(<QuestionBody text={`関係S\n| C |\n${separator}\n| x |\n| y |\n\n次の条件`} />);
+  expect(screen.getAllByRole("table")).toHaveLength(1);
+  expect(screen.getAllByRole("columnheader").map((cell) => cell.textContent)).toEqual(["C"]);
+  expect(screen.getAllByRole("cell").map((cell) => cell.textContent)).toEqual(["x", "y"]);
+  expect(screen.getByText("次の条件").tagName).toBe("P");
+});
+
+it("does not consume a plain separator following pipe-containing prose", () => {
+  render(<QuestionBody text={"A | B の条件\n---\nC | D の条件"} />);
+  expect(screen.queryByRole("table")).toBeNull();
+  expect(screen.getByText("---").tagName).toBe("P");
+});
 
 // 問題本文のパイプテーブルは列見出しのみを持つ単一ヘッダ行テーブル。
 // 列見出しの <th> は scope="col" を持たないと、SR がデータセルと列見出しの

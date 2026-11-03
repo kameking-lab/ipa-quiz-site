@@ -1,0 +1,69 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20250831",
+  "subject": "law",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 4365,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 16401,
+      "webSearchRequests": 0,
+      "costUSD": 0.2187718,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 2900,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "3360b74a6bbd4f2553f960b2b73e67c0f52f6ac628f1532affed805c2b2c3b3f",
+  "inputRequestSha256": "5feb96672b513df81df04c9559ab7bf0d16f987d89395a73e4299db742d22d0f",
+  "inputHashes": {
+    "candidateSha256": {
+      "q10": "75dd23ab14e3bddf05c4f7bc65cc4d89f5e3f40decc39f618c31f40af8a559d0"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20250831/law/p14.png": "c5f77d654f7b8e5a15ad6d5ff27c61a659272605556ec0065cd85294e689a8e0",
+      "data/raw_pdfs/denken3/review/20250831/law/p04.png": "38045ec67d58396f98ae270d13322f49aa0291474ec50e346ecabbd47a85dfbe"
+    },
+    "figureSha256": {},
+    "sourceQuestionPdfSha256": "51aeb8f1cbfe8e6d3667c2848a3d9fccff40a967f48aafc292fa13a13a6efbb0",
+    "sourceAnswerPdfSha256": "76fd3715ed487d19a56b387fb402de20ee09474e9fa55b0413f9037b96af06c9",
+    "officialAnswerUnitsSha256": "54153b5a719e7c6661b9372493142473cb6ef20527e4ba77b99992a1fd68197c",
+    "referencePdfSha256": {},
+    "referencePageSha256": {},
+    "referenceJsonSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q10",
+      "questionNumber": 10,
+      "part": null,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [
+        "choiceExplanations[\"1\"] の「『配電線事故』という語はこの文脈には当てはまらない」は、理由を示さずに言い切っている。実際には SO 動作の過程で配電用変電所の遮断器がいったん動作し、配電線は瞬時停電する。このため「配電線は停電しない」という理由では(エ)配電線を否定できない。(エ)が問うのは、需要設備側の事故が一般送配電事業者の配電線に供給支障を及ぼす『波及事故』として扱われるかどうかである。再閉路が成功するため、その扱いを受けない、という対比で誤りの理由を書き直すべきである。"
+      ],
+      "figureIssues": [],
+      "sourceIssues": [
+        "uncertainty 欄の記述がメタデータと矛盾しており、古い内容のまま残っている。同欄は『出典年度と公式資料の URL は特定していない』としている。しかし候補自身は fiscalYear=2025、term=upper、examDate=2025-08-31、sourceQuestionPdfUrl、sourceAnswerPdfUrl、sourceAttribution（令和7年度上期）を manifest どおりに保持している。年度・URL は manifest（試験センター公式過去問一覧）で確定済みである。uncertainty は『原頁に年度表記はないが、manifest と公式解答表見出し「令和7年度 第三種電気主任技術者上期試験解答」で確定』という趣旨に改めるか、空にすべきである。needsReview=false との整合も取ること。"
+      ],
+      "verifiedEvidence": [
+        "問題文の照合：添付原図（PDF第14頁、頁下部「- 11 -」「■T1－H 014」）の問10本文と一字一句照合した。空欄の配置（ア×2、イ×1、ウ×3、エ×1）、『GR 付 PAS』『受電用遮断器』『配電用変電所の遮断器が再投入』などの語句、句読点に相違はない。",
+        "選択肢の照合：(1)短絡・負荷・開放・配電線、(2)短絡・電源・遮断・波及、(3)地絡・電源・遮断・波及、(4)地絡・電源・遮断・配電線、(5)短絡・負荷・開放・波及。原図の表と全肢・全列が一致する。",
+        "公式正答：公式解答表の＜法規＞列で『問10 解答5 配点6』。候補の officialAnswer=\"5\"、scoringPoints=6 と一致する。",
+        "正答の妥当性：PAS は負荷開閉器であり短絡電流を遮断できない。このため負荷側（PAS〜受電用遮断器間）の短絡では開放命令を蓄勢し、配電用変電所遮断器の動作による無電圧を確認してから開放する（SO 動作）。その結果、再閉路が成功し、波及事故とならない。(5)の語句の組合せは本文と整合している。",
+        "誤答肢の固有理由：(2) は(イ)(ウ)が誤り、(3) は(ア)(イ)(ウ)が誤り、(4) は全語が誤りで、各肢の説明内容は正しい。(3) の『地絡は G 機能が対応』も SOG 機能の構成と整合する。",
+        "メタデータ：reviewedFromPage=[14] は manifest の原図頁と一致する（注意書き頁が『- 1 -』『T1－H 004』であり、頁番号の対応も整合）。subject=law、term=upper、examDate=2025-08-31、fiscalYear=2025（令和7年度）、問題PDF・解答PDFの URL は manifest と一致する。",
+        "図：問10に回路図はない。語句の組合せ表は choices に完全に転記されており、figureUrls を空にしているのは妥当である。",
+        "officialReferenceUrls は空である。外部の独立主張はなく、追加で検証すべき参照はない。"
+      ]
+    }
+  ]
+}

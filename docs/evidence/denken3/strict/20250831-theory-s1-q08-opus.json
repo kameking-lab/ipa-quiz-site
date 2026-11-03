@@ -1,0 +1,67 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20250831",
+  "subject": "theory",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 2908,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 13457,
+      "webSearchRequests": 0,
+      "costUSD": 0.1660798,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 1555,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "3fcecc477470864bf45f97ebed9671764fbc3ee52d349b4e6689c9b3f7849aa1",
+  "inputRequestSha256": "7423edb58f2a3f7ac7e097bdcc7e21e391e89d997a2e238310f27a2d1bff4e8c",
+  "inputHashes": {
+    "candidateSha256": {
+      "q08": "0bd49220798e8f804e971d72663e6f310226c11fb8eab9235b2aabc5480de03d"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20250831/theory/p11.png": "efd6e3d71e5b5b3fadca9bbc2198810bebe8925d950b1b88ee9baafdcaea37bd"
+    },
+    "figureSha256": {},
+    "sourceQuestionPdfSha256": "11a75ffd5dd2b5309ad75370bb963c4fda9e12a812174cfa2c2237383c3a964d",
+    "sourceAnswerPdfSha256": "76fd3715ed487d19a56b387fb402de20ee09474e9fa55b0413f9037b96af06c9",
+    "officialAnswerUnitsSha256": "4dd5f10bb958691663384bf0945338d80c77a34eb553e04244da8315a1656ac7",
+    "referencePdfSha256": {},
+    "referencePageSha256": {},
+    "referenceJsonSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q08",
+      "questionNumber": 8,
+      "part": null,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "問題文照合: 公式問題原図の「ある回路に，i=4√2 sin120πt [A]の電流が流れている。この電流の瞬時値が，時刻 t=0 s 以降に初めて 4 A となるのは，時刻 t=t₁ [s]である。t₁ [s]の値として，正しいものを次の(1)〜(5)のうちから一つ選べ。」と候補の問題文を照合した。数式、振幅 4√2、角周波数 120π、単位 [A]・[s]、条件「t=0 s 以降に初めて」がすべて一致する。句読点の「，」から「、」への置換は sourceAttribution の「読みやすく整形」の範囲内である。",
+        "選択肢照合: 原図は (1) 1/120、(2) 1/160、(3) 1/240、(4) 1/360、(5) 1/480。候補 choices 1〜5 と全肢一致する。",
+        "公式正答照合: 公式解答表（令和7年度 第三種電気主任技術者上期試験解答）の＜理論＞問8は解答 5・配点 5。manifest 固定単位 {question:8, part:null, answer:\"5\", points:5}、候補の officialAnswer=\"5\"、scoringPoints=5 と一致する。",
+        "総合解説の検算: 4√2 sin120πt = 4 から sin120πt = 1/√2 となる。t≥0 で位相 0→π/2 の区間は sin が単調増加するので、最初の解は 120πt₁ = π/4、t₁ = 1/480 s。参考値の f = 120π/2π = 60 Hz、T = 1/60 s、t₁ = T/8（位相 45°）も正しい。",
+        "(1) の検算: 120π×1/120 = π、sinπ = 0 で i = 0 A。「半周期で電流がゼロに戻る時刻」とする記述は正しい。",
+        "(2) の検算: 120π×1/160 = 3π/4、sin(3π/4) = 1/√2 で i = 4 A。最大値通過後の2回目の到達であり「初めて」ではない、とする理由は正しい。",
+        "(3) の検算: 120π×1/240 = π/2 で i = 4√2 ≈ 5.657 A（最大値）。記載の ≒5.66 A は正しい。",
+        "(4) の検算: 120π×1/360 = π/3 で i = 4√2×√3/2 = 2√6 ≈ 4.899 A。記載の ≒4.90 A は正しく、4 A を超えるので不正解とする理由も正しい。",
+        "(5) の検算: 120π×1/480 = π/4 で i = 4√2×1/√2 = 4 A。単調増加区間内の最初の到達時刻であり、正解とする理由は正しい。",
+        "図の確認: 原図に図・グラフはなく、解答に図は不要。figureDescription「図なし」、figureUrls=[]、choiceFigureUrls={} は妥当。",
+        "出典の確認: officialReferenceUrls は空で、独立主張の検証対象はない。原図フッター「- 8 -」「T1−R 011」は印刷頁番号であり、reviewedFromPage=[11]（PDF頁）との差は表紙等によるもので矛盾しない。年度・期（令和7年度上期＝fiscalYear 2025, term upper）は添付の公式解答表見出しで裏付けられ、uncertainty の「本ページのみからは年度を特定できない」という記述も事実として正確である。"
+      ]
+    }
+  ]
+}

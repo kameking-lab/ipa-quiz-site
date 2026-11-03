@@ -1,0 +1,103 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20240818",
+  "subject": "power",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 4,
+      "outputTokens": 4259,
+      "cacheReadInputTokens": 304506,
+      "cacheCreationInputTokens": 27830,
+      "webSearchRequests": 0,
+      "costUSD": 0.3687372,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 2520,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "0ba2b589af7834236c377f776180fa735edcf81653b84de95d2958ce60283b7d",
+  "inputRequestSha256": "b0e1595476a23ab48c0cea26915fa5d8dd62f6272b63cc7f730576ba77225ee0",
+  "inputHashes": {
+    "candidateSha256": {
+      "q01": "76c48aa7d579ce13838eb0eaabf3cbb363e0bbdf29e1b37bffffe04f06eef238",
+      "q02": "24a196604b9ed9827ff0ef21c3b63cc3927ea52e15613f91490da01eff4c5f72",
+      "q03": "506245932af0bbcc91a9f4502c118f7bb934ecd2b6355e4254fa3c9a7752956f"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20240818/power/p04.png": "dd48c01c19f711fb482394b411d662c3968a4855adb044582cb4e21e326e49ac",
+      "data/raw_pdfs/denken3/review/20240818/power/p05.png": "0bdccad05e205f9085e15fbdca7c9016263d02ca04d2ee2feac995c0b5018d3b",
+      "data/raw_pdfs/denken3/review/20240818/power/p06.png": "a5794ede5140cdc093d1cbd03a4f6c85443e6554fa73d771ff5e681fb6b5de25"
+    },
+    "figureSha256": {},
+    "sourceQuestionPdfSha256": "0bc54a85819b9d9c80d1574c5b8c02a3c28976565d8c9068a3dd0344a3db5700",
+    "sourceAnswerPdfSha256": "f72ecbc3a477e64948388b69cf78cb931032c9f0c688639836c8d533a949cd0f",
+    "officialAnswerUnitsSha256": "bae577710a0a43d3482dfa0c9988b343d55beee48fe8b8a6877a238a679be1db"
+  },
+  "assessment": [
+    {
+      "unitKey": "q01",
+      "questionNumber": 1,
+      "part": null,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "The question text and options (1)–(5) match the official source image for Q1 (footer T1-D 004, page -1-) word for word. The only change is that the full-width commas (，) became 、.",
+        "The official answer table (Power, Q1) gives 3, which matches officialAnswer=3.",
+        "The key error in (3) is checked. To stop the runner speeding up, the deflector acts fast and turns the jet away from the runner. The needle valve closes slowly to prevent water hammer. The option says the needle valve stops the jet quickly, which is backwards. The overall explanation and the per-option explanation both state this correctly.",
+        "(1) The Pelton wheel is an impulse turbine. (2) The needle valve adjusts the flow. (4) Small hydro is mostly run-of-river and waterway type, and also uses agricultural and water/sewer flows. (5) The cross-flow turbine has flow at right angles to the shaft, passing through the runner, with guide vanes, and its efficiency falls little at low flow. Each option's reason for being correct is valid.",
+        "The question needs no figure, and figureUrls is empty. The figureDescription matches the text-only page.",
+        "reviewedFromPage=[4] matches the footer T1-D 004. officialReferenceUrls is empty, so no separate claims need checking."
+      ]
+    },
+    {
+      "unitKey": "q02",
+      "questionNumber": 2,
+      "part": null,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "The following conditions match the official source image for Q2 (footer T1-D 005): total head 200 m, flow 100 m³/s, loss head 2.5%, pump and turbine efficiencies 85%, generation and motor efficiencies 98%, and that these values stay constant.",
+        "The official answer table (Power, Q2) gives 4, which matches officialAnswer=4.",
+        "Recalculated: loss head 5 m. Pumping: 9.8×100×205 = 200,900 kW, ÷0.85÷0.98 = 241,176 kW ≈ 241 MW. Generating: 9.8×100×195 = 191,100 kW, ×0.85×0.98 = 159,186 kW ≈ 159 MW. This matches (4).",
+        "The wrong options' causes are checked by calculation. With 200 m for both modes, pumping gives 235.3 MW and generating gives 163.3 MW, which explains (1), (2) and (3). With the heads swapped (pumping 195 m, generating 205 m), pumping gives 229.4 MW and generating gives 167.4 MW, which explains (5). Each option's explanation holds.",
+        "The values of all 5 rows in the options table (235/163, 235/159, 241/163, 241/159, 229/167) match the source.",
+        "reviewedFromPage=[5] matches the footer T1-D 005. There is no figure, and the figureDescription (only a 5-row, 2-column table) is correct."
+      ]
+    },
+    {
+      "unitKey": "q03",
+      "questionNumber": 3,
+      "part": null,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "The question text and options (1)–(5) match the official source image for Q3 (footer T1-D 006) word for word.",
+        "The official answer table (Power, Q3) gives 4, which matches officialAnswer=4.",
+        "The error in (4) is checked. When outside air is hotter, its density falls, so less air mass flows through the gas turbine compressor and output drops. A combined cycle is therefore affected more by outside temperature than a steam power plant. The explanation's cause-and-effect is correct.",
+        "(1) Start/stop is fast. (2) Load following is good. (3) Thermal efficiency is higher because the Brayton and Rankine cycles are combined. (5) The steam turbine carries only part of the output, so less heat is rejected at the condenser and less warm water is discharged. Each option's reason for being correct is valid.",
+        "The question needs no figure, and figureUrls is empty. The figureDescription matches the text-only page.",
+        "reviewedFromPage=[6] matches the footer T1-D 006. officialReferenceUrls is empty, so no separate claims need checking."
+      ]
+    }
+  ]
+}

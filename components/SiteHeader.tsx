@@ -1,8 +1,11 @@
 "use client";
+import { SafetySiteHeader } from "@/components/SafetySiteHeader";
 
 import * as React from "react";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { PRICE_PAGE_LINK } from "@/lib/billing/price-page-link";
+import { useMobileMenu } from "@/components/useMobileMenu";
+import { usePathname, useSearchParams } from "next/navigation";
 import {
   Menu,
   Settings,
@@ -21,7 +24,8 @@ import {
 import { SiteLogo } from "./SiteLogo";
 import { StreakBadge } from "@/lib/streak/StreakBadge";
 import { ThemeToggle } from "./ThemeToggle";
-import { cn } from "@/lib/utils";
+import { cn, EXAM_LABELS } from "@/lib/utils";
+import { isMockExamCode } from "@/lib/mock-exam/config";
 import {
   Sheet,
   SheetContent,
@@ -31,19 +35,61 @@ import {
   SheetTitle,
 } from "./ui/sheet";
 
-const QUIZ_MODES = [
-  { href: "/quiz?mode=random&exam=ap", label: "通常クイズ" },
-  { href: "/quiz/stream", label: "ストリームモード" },
-  { href: "/quiz?mode=review&exam=ap", label: "復習モード" },
-  { href: "/quiz?mode=weakness&exam=ap", label: "弱点克服" },
-  { href: "/essay", label: "午後論述AI採点" },
-] as const;
-
 export function SiteHeader() {
+  return (
+    <React.Suspense fallback={<SiteHeaderContent search={null} />}>
+      <SearchAwareSiteHeader />
+    </React.Suspense>
+  );
+}
+
+function SearchAwareSiteHeader() {
+  return <SiteHeaderContent search={useSearchParams()} />;
+}
+
+function SiteHeaderContent({ search }: { search: Pick<URLSearchParams, "get"> | null }) {
   const pathname = usePathname();
   const [scrolled, setScrolled] = React.useState(false);
-  const [open, setOpen] = React.useState(false);
+  const [open, setOpen] = useMobileMenu(pathname);
   const [dropOpen, setDropOpen] = React.useState(false);
+
+  const segments = pathname?.split("/") ?? [];
+  const pathExam = segments[1] === "q" ? segments[2] : segments[1];
+  const queryExam = search?.get("exam");
+  const hasPathExam = !!pathExam && Object.hasOwn(EXAM_LABELS, pathExam);
+  const exam = hasPathExam
+    ? pathExam
+    : queryExam && Object.hasOwn(EXAM_LABELS, queryExam) ? queryExam : null;
+  const returnTo = search?.get("returnTo") || (hasPathExam && pathname ? pathname : undefined);
+  const session = search?.get("session") || (segments[1] === "q" ? segments[4] : undefined);
+  function learningHref(mode: "random" | "review" | "weakness" | "stream") {
+    if (!exam) return "/#choose-qualification";
+    const params = new URLSearchParams({ exam });
+    if (mode !== "stream") params.set("mode", mode);
+    if (session) params.set("session", session);
+    if (returnTo) params.set("returnTo", returnTo);
+    if (mode === "random") {
+      for (const key of ["year", "season", "question"]) {
+        const value = search?.get(key);
+        if (value) params.set(key, value);
+      }
+    }
+    return `${mode === "stream" ? "/quiz/stream" : "/quiz"}?${params}`;
+  }
+  const quizModes = exam ? [
+    { href: learningHref("random"), label: "通常クイズ" },
+    ...(exam === "shika-ishi" ? [] : [{ href: learningHref("stream"), label: "ストリームモード" }]),
+    { href: learningHref("review"), label: "復習モード" },
+    { href: learningHref("weakness"), label: "弱点克服" },
+    ...(isMockExamCode(exam) ? [{ href: "/essay", label: "IPA 午後論述AI採点" }] : []),
+  ] : [
+    { href: "/#choose-qualification", label: "資格を選んで問題を解く" },
+    { href: "/essay", label: "IPA 午後論述AI採点" },
+  ];
+  const showMockExam = !exam || isMockExamCode(exam);
+  const mockHref = exam
+    ? `/mock-exam?${new URLSearchParams({ exam, ...(returnTo ? { returnTo } : {}) })}`
+    : "/mock-exam";
 
   React.useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 4);
@@ -59,6 +105,9 @@ export function SiteHeader() {
   const isSearchActive = pathname?.startsWith("/search");
   const isBookmarksActive = pathname?.startsWith("/bookmarks");
   const isMockExamActive = pathname?.startsWith("/mock-exam");
+
+  if (pathname?.startsWith("/e-learning")) return <SafetySiteHeader />;
+  if (pathname === "/") return <SafetySiteHeader home />;
 
   return (
     <header
@@ -84,6 +133,7 @@ export function SiteHeader() {
             className="hidden items-center gap-0.5 md:flex"
             aria-label="グローバルナビゲーション"
           >
+            <Link href={PRICE_PAGE_LINK.href} className="rounded-md px-3 py-1.5 text-sm font-medium hover:bg-muted" aria-current={pathname === PRICE_PAGE_LINK.href ? "page" : undefined}>{PRICE_PAGE_LINK.label}</Link>
             {/* 問題を解く dropdown */}
             <div
               className="relative"
@@ -117,7 +167,7 @@ export function SiteHeader() {
                   className="absolute left-0 top-full z-50 mt-1 w-48 list-none rounded-xl border border-border bg-background py-1 shadow-lg"
                   aria-label="問題を解くメニュー"
                 >
-                  {QUIZ_MODES.map((m) => (
+                  {quizModes.map((m) => (
                     <li key={m.href}>
                       <Link
                         href={m.href}
@@ -132,8 +182,8 @@ export function SiteHeader() {
               )}
             </div>
 
-            <Link
-              href="/mock-exam"
+            {showMockExam && <Link
+              href={mockHref}
               className={cn(
                 "flex items-center gap-1.5 rounded-md px-3 py-1.5 text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background",
                 isMockExamActive
@@ -143,8 +193,8 @@ export function SiteHeader() {
               aria-current={isMockExamActive ? "page" : undefined}
             >
               <ClipboardList className="h-4 w-4" aria-hidden="true" />
-              模試
-            </Link>
+              {exam ? "模試" : "IPA 模試"}
+            </Link>}
             <Link
               href="/search"
               className={cn(
@@ -212,29 +262,30 @@ export function SiteHeader() {
           <Sheet open={open} onOpenChange={setOpen}>
             <SheetTrigger asChild>
               <button
-                className="inline-flex h-11 w-11 items-center justify-center rounded-md text-muted-foreground transition hover:bg-muted hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring md:hidden"
+                className="inline-flex min-h-11 items-center justify-center gap-1 rounded-md px-2 text-muted-foreground transition hover:bg-muted hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring md:hidden"
                 aria-label="メニューを開く"
               >
-                <Menu className="h-5 w-5" />
+                <Menu className="h-5 w-5" aria-hidden="true" /><span className="text-sm font-medium">メニュー</span>
               </button>
             </SheetTrigger>
             <SheetContent
               side="right"
-              className="flex w-[80vw] max-w-sm flex-col gap-6"
+              className="flex h-dvh w-[min(90vw,24rem)] flex-col gap-4 overflow-hidden pb-[max(1.5rem,env(safe-area-inset-bottom))] [&>button]:flex [&>button]:min-h-11 [&>button]:min-w-11 [&>button]:items-center [&>button]:justify-center [&>button]:gap-1 [&>button]:px-2 [&>button>span]:not-sr-only"
             >
-              <SheetHeader>
+              <SheetHeader className="shrink-0 pr-20">
                 <SheetTitle className="flex items-center gap-2">
                   <SiteLogo />
                 </SheetTitle>
               </SheetHeader>
               <nav
-                className="flex flex-col gap-1 overflow-y-auto"
+                className="flex min-h-0 flex-1 flex-col gap-1 overflow-y-auto overscroll-contain"
                 aria-label="モバイルナビゲーション"
               >
+                  <SheetClose asChild><Link href={PRICE_PAGE_LINK.href} className="rounded-lg px-3 py-3 text-sm font-medium hover:bg-muted">{PRICE_PAGE_LINK.label}</Link></SheetClose>
                 <p className="px-3 pb-1 pt-0.5 text-[10px] font-semibold uppercase tracking-widest text-muted-foreground">
                   問題演習
                 </p>
-                {QUIZ_MODES.map((m) => (
+                {quizModes.map((m) => (
                   <SheetClose asChild key={m.href}>
                     <Link
                       href={m.href}
@@ -248,18 +299,18 @@ export function SiteHeader() {
                     </Link>
                   </SheetClose>
                 ))}
-                <SheetClose asChild>
+                {showMockExam && <SheetClose asChild>
                   <Link
-                    href="/mock-exam"
+                    href={mockHref}
                     className="flex min-h-[44px] items-center gap-3 rounded-lg px-3 py-2.5 text-sm font-medium text-foreground transition-colors hover:bg-muted"
                   >
                     <ClipboardList
                       className="h-4 w-4 text-muted-foreground"
                       aria-hidden="true"
                     />
-                    模試
+                    {exam ? "模試" : "IPA 模試"}
                   </Link>
-                </SheetClose>
+                </SheetClose>}
                 <SheetClose asChild>
                   <Link
                     href="/search"
@@ -397,7 +448,7 @@ export function SiteHeader() {
                   <ThemeToggle />
                 </div>
               </nav>
-              <div className="mt-auto">
+              <div className="mt-auto shrink-0">
                 <StreakBadge className="w-full justify-center" />
               </div>
             </SheetContent>

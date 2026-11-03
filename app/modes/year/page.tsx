@@ -6,6 +6,7 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { examLabel, formatYearSeason } from "@/lib/utils";
 import type { ExamCode, Season, Session } from "@/lib/questions/types";
+import { practiceSessionLabel } from "@/lib/questions/practice-session";
 import { countByExam, examMetaDescription } from "@/lib/seo/exam-meta";
 
 const DEFAULT_EXAM: ExamCode = "ap";
@@ -29,7 +30,11 @@ export async function generateMetadata({
   };
 }
 
-const VALID_EXAMS: ExamCode[] = [
+const VALID_EXAMS: ExamCode[] = ["kanteishi", "kaikeishi",
+  "land-special1", "riku-tech1", "maritime4", "aviation-comm", "amateur1", "maritime-special1", "riku-tech2", "amateur2", "maritime-radar", "maritime3", "maritime2", "maritime1", "general3", "general2", "general1", "land-special2", "land-special3", "kai-toku2",
+  "riku-toku-kokunai",
+  "kai-toku3",
+  "koku-toku",
   "ip",
   "sg",
   "fe",
@@ -43,13 +48,21 @@ const VALID_EXAMS: ExamCode[] = [
   "sc",
   "sm",
   "au",
+  "takken",
+  "tohan",
+  "kanri",
+  "chusho-kigyo-shindanshi",
 ];
 
 function isExamCode(s: unknown): s is ExamCode {
   return typeof s === "string" && (VALID_EXAMS as string[]).includes(s);
 }
 
-function sessionLabel(session: Session): string {
+function sessionLabel(session: Session, exam: ExamCode): string {
+  if (exam === "kanteishi" || exam === "kaikeishi") return practiceSessionLabel(session, exam);
+  if (session === "houki" || session === "hoki" || session === "kogaku" || session === "kiso" || session === "kogaku-a" || session === "kogaku-b") return practiceSessionLabel(session);
+  if (["keizai", "zaimu", "kigyo", "unei", "keiei-houmu", "keiei-joho", "chusho-seisaku"].includes(session)) return practiceSessionLabel(session);
+  if (session === "rousai" || session === "koyou" || session === "kenpo" || session === "kounen" || session === "kokunen" || session === "ippan" || session === "sentaku") return practiceSessionLabel(session);
   switch (session) {
     case "am":
       return "午前";
@@ -124,9 +137,9 @@ export default async function YearModePage({
 
       <div className="relative mx-auto w-full max-w-3xl px-4 pb-20 pt-6 sm:px-6 sm:pt-10">
         <Button asChild variant="ghost" size="sm" className="mb-4">
-          <Link href="/">
+          <Link href={`/${exam}`}>
             <ArrowLeft className="h-4 w-4" />
-            戻る
+            試験ページに戻る
           </Link>
         </Button>
 
@@ -141,7 +154,7 @@ export default async function YearModePage({
             </span>
           </h1>
           <p className="mt-3 max-w-xl text-pretty text-sm text-muted-foreground sm:text-base">
-            {label}の午前過去問を年度・季節ごとに選んで学習できます。
+            {label}の過去問を年度・科目ごとに選んで学習できます。
           </p>
           <div className="mt-3 flex flex-wrap gap-2 text-xs">
             <Badge variant="outline">{items.length} 期分</Badge>
@@ -168,10 +181,10 @@ export default async function YearModePage({
                       #{String(idx + 1).padStart(2, "0")}
                     </div>
                     <div className="text-base font-semibold text-foreground">
-                      {label} {sessionLabel(item.session)}
+                      {label} {sessionLabel(item.session, exam)}
                     </div>
                     <div className="mt-1 text-lg font-bold text-primary">
-                      {formatYearSeason(item.year, item.season)}
+                      {exam === "riku-tech1" && item.season === "july" ? `${item.year}年7月試験` : formatYearSeason(item.year, item.season)}
                     </div>
                     <div className="mt-1 text-xs text-muted-foreground">
                       収録 {item.count} 問

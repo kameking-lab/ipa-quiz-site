@@ -1,0 +1,94 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20240818",
+  "subject": "law",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 4207,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 19314,
+      "webSearchRequests": 0,
+      "costUSD": 0.2389158,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 2294,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "15aaecf301a485e7ca2f3c5232f7868eda4b5e925b75354e5d56e84c2e441e5b",
+  "inputRequestSha256": "6bc2fd19aad2f677e2dbca318f57b8cd437f875b015196a8cef6d6d515864eae",
+  "inputHashes": {
+    "candidateSha256": {
+      "q12a": "c514e9b4ad96b562fe2655c50a78cbbbfcaad97163d8083dbac74d71f7766f2c",
+      "q12b": "f5f381837b686e65266a6e6372e5f8f22209b78101efbf1e0c29d525b566cba2"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20240818/law/p18.png": "dbb30b2a3225d622c667fce434ec5934613a3010997ae9db72e9ed51747a990a",
+      "data/raw_pdfs/denken3/review/20240818/law/p04.png": "0ac887459630a5c0c2df2467c4d93b5fadc651a9001ea1230c14caa8f8b4c9d1"
+    },
+    "figureSha256": {
+      "public/images/denken3/20240818/law/20240818-law-q12-power-factor-circuit.png": "0acdc68d49f6f5d667d789a70764dd3318ee155ef02cf6dbe22d12ccaed7b221"
+    },
+    "sourceQuestionPdfSha256": "5dbba8b8e4ec681d2d5f0645a3895a6e218d936519ddd18ac544ddc461a1ae78",
+    "sourceAnswerPdfSha256": "f72ecbc3a477e64948388b69cf78cb931032c9f0c688639836c8d533a949cd0f",
+    "officialAnswerUnitsSha256": "c961a3d48f29e54a390d0ef35e01ef1e238f2dbd19b953800762a15a66ff1512",
+    "referencePdfSha256": {},
+    "referencePageSha256": {},
+    "referenceJsonSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q12a",
+      "questionNumber": 12,
+      "part": "a",
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "出典メタデータは manifest と一致する：fiscalYear=2024（令和6年度）、term=upper、examDate=2024-08-18、subject=law。問題PDFは 20240818_ch_third_q04.pdf、解答PDFは 20240818_ch_third_a01.pdf。reviewedFromPage=[18] は manifest 指定のPDF第18頁と一致する。原図の印刷頁番号は -15-、原図下部の表記は T1−H 018 である。",
+        "問題文は原図と一致する。300 kW、遅れ力率0.6、並列接続の進相コンデンサ設備、直列リアクトル付三相コンデンサ、X_L は X_C の6%、線間電圧6600 V、無効電力による電圧変動なし、の各条件を確認した。(a) の設問文も同様に一致する。",
+        "選択肢 (1)6410、(2)6795、(3)6807、(4)6995、(5)7021 は原図と一致する。",
+        "公式解答表の法規 問12(a)=5 と、候補の officialAnswer=5 が一致する。",
+        "検算：V_C=6600×X_C/(X_C−X_L)=6600/(1−0.06)=6600/0.94=7021.28 V。したがって選択肢(5)の7021が最も近い。",
+        "総合解説の因果関係を確認した。X_C>X_L なので回路は容量性で、電流は進み電流になる。相電流は I=(6600/√3)/(X_C−X_L)。線間換算の端子電圧は √3·I·X_C。電圧上昇率は 1/(1−h) で表せる。いずれも正しい。",
+        "各肢の差分を検算した。(1)は6600 Vより低く、方向が逆。(2)は7021.28−6795≈226 V低い。(3)は約214 V低い。(4)は約26 V低い。いずれも正しい。",
+        "公開候補図は原図の結線図部分と一致する。確認した要素：母線ラベル「高圧電路 6 600 V」、分岐点の黒丸、破線枠「進相コンデンサ設備」、SR X_L[Ω] と SC X_C[Ω] の直列接続、凡例「SR：直列リアクトル」「SC：三相コンデンサ」、三相負荷の「300 kW 力率0.6(遅れ)」。欠落や改変はなく、公開図だけで直列構成と並列接続を理解できる。",
+        "figureDescription の接続・向き・ラベルの記述は原図と矛盾しない。",
+        "officialReferenceUrls は空で、検証を要する独立主張はない。法規科目の注3（令和6年4月1日現在の法令基準）は、本計算問題の正誤判定に影響しない。"
+      ]
+    },
+    {
+      "unitKey": "q12b",
+      "questionNumber": 12,
+      "part": "b",
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "出典メタデータは (a) と同様に manifest と一致する：2024 / upper / 2024-08-18 / law / q04・a01 / reviewedFromPage=[18]。",
+        "設問文は原図と一致する。内容は、進相コンデンサ設備を並列接続して力率を遅れ0.6から遅れ0.8に改善したときの、三相コンデンサSCの容量[kvar]を問うもの。",
+        "選択肢 (1)170、(2)180、(3)186、(4)192、(5)208 は原図と一致する。",
+        "公式解答表の法規 問12(b)=3 と、候補の officialAnswer=3 が一致する。",
+        "必要な正味無効電力を検算した：tanθ1=4/3、tanθ2=3/4 より、Q=300×(4/3−3/4)=300×7/12=175 kvar。",
+        "SC容量を検算した。直列回路では電流が共通なので、Q_L=3I²X_L=0.06Q_C となる。正味の出力は Q_C−Q_L=0.94Q_C=175 なので、Q_C=175/0.94=186.17 kvar。したがって選択肢(3)が最も近い。",
+        "各肢の数値を検算した。(1)170は必要量175未満。(2)0.94×180=169.2 kvar で不足。(4)0.94×192=180.48 kvar で約5.48 kvar過剰。(5)0.94×208=195.52 kvar で約20.52 kvar過剰。いずれも正しい。",
+        "SC容量は運転時（端子電圧約7021 V）の発生無効電力として算出されており、(a) と整合する。この扱いは公式正答186の導出とも整合する。",
+        "公開候補図は (a) と同一の図で、原図と一致する。負荷の 300 kW・力率0.6(遅れ) と、設備の並列接続を図だけで確認できる。",
+        "officialReferenceUrls は空で、検証を要する独立主張はない。"
+      ]
+    }
+  ]
+}

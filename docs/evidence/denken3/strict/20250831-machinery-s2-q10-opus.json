@@ -1,0 +1,70 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20250831",
+  "subject": "machinery",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 5576,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 14327,
+      "webSearchRequests": 0,
+      "costUSD": 0.22639979999999998,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 3910,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "0682170123cdd806f27254bb505c4edb4553393fb2f91af29f6a99f13d4b7a8f",
+  "inputRequestSha256": "14b422f3b12b45d29ad1434dfabac8a6b29fba1dcda6cff06cffe1e21687d0ed",
+  "inputHashes": {
+    "candidateSha256": {
+      "q10": "eaf55f0759c45a64342c87b6dff014ab27d7f14bb4658d3803ea34d647c27532"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20250831/machinery/p13.png": "1cb2bd6a22c5769315b87c84cee28a068ad372ec999daa27a2fa074abfb085d3"
+    },
+    "figureSha256": {
+      "public/images/denken3/20250831/machinery/20250831-machinery-q10-fig1.png": "01abbf7e34b16b0915465273656a013ec3f6a29d08337f46e2408b8c93573cbd"
+    },
+    "sourceQuestionPdfSha256": "2a73a24594cc2b8bb7504b9a0ff15e001b2bb56b830572ce2be853f7116f26d8",
+    "sourceAnswerPdfSha256": "76fd3715ed487d19a56b387fb402de20ee09474e9fa55b0413f9037b96af06c9",
+    "officialAnswerUnitsSha256": "95638092e114170a332e710f1d4875873d08af6659d2017919978a70ace83047",
+    "referencePdfSha256": {},
+    "referencePageSha256": {},
+    "referenceJsonSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q10",
+      "questionNumber": 10,
+      "part": null,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [
+        "choiceExplanations[4] の「定常状態では、L の平均電圧が 0 になるため、L は電流の平均値に影響しません」は無条件の一般論として書かれているが、正しいのは電流連続モードの場合だけである。電流不連続モードでは D の非導通期間に D の両端電圧が 0 にならないため、Vo は dE にならず L・R・f に依存する。つまり L は平均電流に影響する。本問は総合解説で連続モードを確認済みなので結論 24.0 A は正しいが、記述は修正が必要。修正案：「電流が連続している本問の条件では、定常状態で L の平均電圧が 0 になり、負荷電圧の平均値は dE で決まります。したがって負荷電流の平均値は Vo/R = 24.0 A で、L の値によりません。」",
+        "choiceExplanations[4] の 3.8 A の由来は一意でない。240/(2πfL) = 240/62.83 ≈ 3.82 A のほか、240/√(R² + (2πfL)²) = 240/63.62 ≈ 3.77 A も 3.8 に丸まる。(5) には「（推測）」と明記しているのに (4) は「と考えられます」だけで表記がそろっていない。(4) にも「（推測）」を付ける。"
+      ],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "公式解答表（令和7年度 第三種電気主任技術者上期試験解答）の＜機械＞列で 問10 = 2、配点 5 を確認。manifest の {question:10, answer:\"2\", points:5}、候補の officialAnswer=\"2\"、scoringPoints=5 と一致。",
+        "問題原図のフッター『T1−K 013』（K = 機械）が subject=machinery、reviewedFromPage=[13] と整合する。印刷頁番号は『- 10 -』で、PDF頁 13 とは別物であることも確認。",
+        "問題文を原図と照合：E=400 V、L=1 mH、R=10 Ω、f=10 kHz、d=0.6、定常状態、D はダイオード、負荷抵抗電流の平均値[A]。数値・単位・文意に相違なし（句読点の整形のみ）。",
+        "選択肢を原図と照合：(1)40.0 (2)24.0 (3)16.0 (4)3.8 (5)2.5。すべて一致。",
+        "総合解説の計算を検算：Vo = dE = 0.6×400 = 240 V、Io = 240/10 = 24.0 A。T = 100 μs、ton = 60 μs。線形近似で ΔI = 160×60e-6/1e-3 = 9.6 A、オフ側 240×40e-6/1e-3 = 9.6 A も一致。L/R = 100 μs を用いた指数解では Imax ≈ 28.5 A、Imin ≈ 19.1 A。解説の『およそ 19.2 A > 0』は近似として妥当で、連続モードの結論は正しい。vD = vL + vR と L 平均電圧 0 から Vo = 平均vD を導く因果も正しい。",
+        "誤答肢の検算：(1) E/R = 40 A（d=1 相当）、(3) (1−d)E/R = 16 A、(4) 2πfL ≈ 62.83 Ω で 240/62.83 ≈ 3.82 A、(5) 1/(1−d) = 2.5（無次元の昇圧比）。数値はすべて正しい。",
+        "図を照合：公開候補図は原図の回路部分と同一。E（上側の長い極板＝正極）→ S → 黒丸接続点 → L → R 上端、接続点と下側線路の間に D（三角形が上向きでバーが上＝カソード上、アノード下）、下側接続点にも黒丸、下側線路は E・D・R に共通。ラベル E, S, D, L, R をすべて確認し、figureDescription の記述と一致。",
+        "公開候補図だけで回路構成（降圧チョッパ）、素子接続、ダイオードの向きが判読でき、解答に必要な図情報は欠けていない。",
+        "officialReferenceUrls は空で、検証すべき独立主張はない。fiscalYear=2025（令和7年度）と term=upper（上期）は解答表見出しと整合。examDate と PDF の URL は添付原図に記載がなく、画像からは直接確認していない（ファイル名の 20250831 と整合するのみ）。"
+      ]
+    }
+  ]
+}

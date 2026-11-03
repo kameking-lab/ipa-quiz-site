@@ -1,0 +1,44 @@
+{
+  "inputHashes": {
+    "draftSha256": "2a3de1c0eea3254c2b4083d2727d4143c94397d426fc1a41fac9db7e323ab77d",
+    "candidateSha256": {
+      "21": "7a74cab352e173347ac49e19897c7e67a4fff5a3e4612b83467bc9743851fb30",
+      "22": "2e203de38989dc07a6d633ddd76624d075eb5d6424b1e276d806f7187371669b"
+    },
+    "rowSha256": {
+      "21": "83ddeea08afb41e39fb88c869c30a63d71257131ae4c708bfbf5e211534fb3b8",
+      "22": "bfdab4a9c496175eb620384bbe1f9b9a11ed88d483577a2ff7769b5d7b1ce382"
+    },
+    "legalReceiptSha256": {
+      "docs/evidence/denko2-law/20241027-q21.json": "1a633917e399fa1e38d67d64f31d17e7d0091fa3cafdd198244698bf0b0c046c",
+      "docs/evidence/denko2-law/20241027-q22.json": "fc885871fef7e8fb408527e461a6d87cd53a27dfe63f143053e0d416369b100d"
+    },
+    "sourcePackSha256": {},
+    "sourceFigureSha256": {}
+  },
+  "reviewModel": "claude-opus-5-5",
+  "assessment": [
+    {
+      "number": 21,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "explanationIssues": [
+        "解説冒頭の括弧書き「住宅(店舗付き住宅の住宅部分を含む)」は、原本の問題文と合っていない。原本は「店舗付き住宅の屋内に…施設した」とだけ書いており、エアコンが住宅部分にあるとは書いていない。括弧書きのままだと、店舗部分なら第143条が適用されないかのように読める。店舗付き住宅の屋内電路がどの範囲まで第143条の「住宅の屋内電路」に当たるかを、条文か公式解説で確認できた表現に直すこと。"
+      ],
+      "figureIssues": [],
+      "lawNeedsExternalCheck": [
+        "「店舗付き住宅」が第143条第1項の「住宅の屋内電路」に当たるか(住宅部分だけか、建物全体か)は、receiptのverifiedClausesで照合されていない。receiptで照合済みなのは、第143条柱書きの住宅150V原則と第1号イ〜トの条文だけである。解説の括弧書き「店舗付き住宅の住宅部分を含む」の根拠となる一次資料との照合が要る。"
+      ]
+    },
+    {
+      "number": 22,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "lawNeedsExternalCheck": []
+    }
+  ]
+}

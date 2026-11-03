@@ -45,13 +45,32 @@ test.describe("home SERP snippet", () => {
     expect(metaContent(html, "name", "twitter:description")).toBe(desc);
   });
 
-  test("the AI demo widget is marked data-nosnippet (excluded from SERP)", async ({ page }) => {
-    await page.goto("/");
-    // The demo renders client-side for first-time visitors (no answer history).
-    const demo = page.locator("[data-nosnippet].hero-ai-demo");
-    await expect(demo).toBeVisible();
-    // Sanity: it really is the demo (carries the wording we want kept out of SERPs).
-    await expect(demo).toContainText("AI 解説デモ");
-    await expect(demo).toContainText("サンプル");
+  test("qualification catalog replaces the demo while preserving IPA structured data", async ({ page }) => {
+    await page.goto("/ipa");
+    await expect(page.locator(".hero-ai-demo")).toHaveCount(0);
+    await expect(page.getByRole("heading", { name: "資格を選ぶ", exact: true })).toBeVisible();
+    const nodes = await page.locator('script[type="application/ld+json"]').evaluateAll(scripts => scripts.flatMap(script => {
+      const data = JSON.parse(script.textContent ?? "{}");
+      return data["@graph"] ?? [data];
+    }));
+    const list = nodes.find(node => node["@type"] === "ItemList");
+    expect(list?.numberOfItems).toBe(list?.itemListElement.length);
+    expect(list?.itemListElement.length).toBeGreaterThanOrEqual(29);
+    expect(list?.itemListElement.some((item: { url: string }) => item.url.endsWith("/ip"))).toBe(true);
+    expect(list?.itemListElement.some((item: { url: string }) => item.url.endsWith("/fp3"))).toBe(true);
+    expect(list?.itemListElement.some((item: { url: string }) => item.url.endsWith("/denko2"))).toBe(true);
+    expect(list?.itemListElement.some((item: { url: string }) => item.url.endsWith("/denken3"))).toBe(true);
+    expect(list?.itemListElement.some((item: { url: string }) => item.url.endsWith("/denken2"))).toBe(true);
+    expect(list?.itemListElement.some((item: { url: string }) => item.url.endsWith("/takken"))).toBe(true);
+    expect(list?.itemListElement.some((item: { url: string }) => item.url.endsWith("/civil2"))).toBe(true);
+    expect(list?.itemListElement.some((item: { url: string }) => item.url.endsWith("/kankoji2"))).toBe(true);
+    expect(list?.itemListElement.some((item: { url: string }) => item.url.endsWith("/zoen2"))).toBe(true);
+    expect(list?.itemListElement.some((item: { url: string }) => item.url.endsWith("/tsushin2"))).toBe(true);
+    expect(list?.itemListElement.some((item: { url: string }) => item.url.endsWith("/kaigo"))).toBe(true);
+    expect(list?.itemListElement.some((item: { url: string }) => item.url.endsWith("/civil1"))).toBe(true);
+    expect(list?.itemListElement.some((item: { url: string }) => item.url.endsWith("/denko1"))).toBe(true);
+    expect(list?.itemListElement.some((item: { url: string }) => item.url.endsWith("/shakai"))).toBe(true);
+    expect(list?.itemListElement.some((item: { url: string }) => item.url.endsWith("/seishin"))).toBe(true);
+    expect(list?.itemListElement.some((item: { url: string }) => item.url.endsWith("/tohan"))).toBe(true);
   });
 });

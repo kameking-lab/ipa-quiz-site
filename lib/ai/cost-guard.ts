@@ -12,11 +12,9 @@
 // The monthly bucket key (ai_cost:YYYY-MM, JST) rotates at month start, which is
 // the reset mechanism; a 70-day TTL is set on first write for cleanup hygiene.
 //
-// Degradation: when KV is not configured (local dev / CI), there is no real spend
-// to track (no GEMINI_API_KEY → mock provider), so the cap allows requests and
-// recording is a no-op. When KV is configured but transiently unreachable, the
-// cap allows the request (matching the rate limiter's graceful degradation) — the
-// cap is a backstop, not a transactional gate. The Slack path never fails silently:
+// Real providers stop when the cost state cannot be verified. Mock requests do
+// not incur provider spend. This check remains a backstop, not an atomic spend
+// reservation; concurrent requests can still cross the threshold. The Slack path:
 // if SLACK_WEBHOOK_URL is unset when a threshold is crossed, the breach is logged
 // via console.error (no fail-open swallow).
 
@@ -54,11 +52,16 @@ async function kvFetch<T>(path: string, method: "GET" | "POST" = "POST"): Promis
   }
 }
 
-async function kvGetNumber(key: string): Promise<number | null> {
-  const data = await kvFetch<{ result: string | null }>(`/get/${encodeURIComponent(key)}`, "GET");
-  if (data?.result == null) return null;
-  const n = Number(data.result);
-  return Number.isFinite(n) ? n : null;
+async function readMonthlyCost(key: string): Promise<number | null> {
+  const data = await kvFetch<unknown>(`/get/${encodeURIComponent(key)}`, "GET");
+  if (typeof data !== "object" || data === null || !("result" in data) || "error" in data) return null;
+  const raw = data.result;
+  // A successful Redis GET of a missing bucket is known zero, not an outage.
+  if (raw === null) return 0;
+  if (typeof raw !== "number" && typeof raw !== "string") return null;
+  if (typeof raw === "string" && !/^(?:\d+(?:\.\d*)?|\.\d+)(?:[eE][+-]?\d+)?$/.test(raw)) return null;
+  const n = Number(raw);
+  return Number.isFinite(n) && n >= 0 ? n : null;
 }
 
 async function kvIncrByFloat(key: string, amount: number): Promise<number | null> {
@@ -106,23 +109,28 @@ export function estimateTokens(charCount: number): number {
 
 export interface CostCapStatus {
   allowed: boolean;
-  totalJpy: number;
+  totalJpy: number | null;
   capJpy: number;
+  reason?: "cost_capped" | "budget_unavailable";
 }
 
 /**
  * Read the running monthly total and decide whether a new AI request may proceed.
- * Allows when KV is absent/unreachable (see module header on degradation).
+ * The caller supplies its resolved provider name, never API-key presence.
  */
-export async function checkMonthlyCostCap(): Promise<CostCapStatus> {
-  if (!kvConfig()) {
+export async function checkMonthlyCostCap(providerName?: string): Promise<CostCapStatus> {
+  if (providerName === "mock") {
     return { allowed: true, totalJpy: 0, capJpy: MONTHLY_COST_CAP_JPY };
   }
-  const total = (await kvGetNumber(monthlyCostKey())) ?? 0;
+  const total = await readMonthlyCost(monthlyCostKey());
+  if (total === null) return {
+    allowed: false, totalJpy: null, capJpy: MONTHLY_COST_CAP_JPY, reason: "budget_unavailable",
+  };
   return {
     allowed: total < MONTHLY_COST_CAP_JPY,
     totalJpy: total,
     capJpy: MONTHLY_COST_CAP_JPY,
+    ...(total >= MONTHLY_COST_CAP_JPY ? { reason: "cost_capped" as const } : {}),
   };
 }
 

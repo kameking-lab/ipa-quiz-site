@@ -1,0 +1,72 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20240818",
+  "subject": "power",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 4181,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 14333,
+      "webSearchRequests": 0,
+      "costUSD": 0.1985478,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 2681,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "9600247e87a7841f764f848f73f0e471ee137853b0f1ac7000d77e7b0d08bf3a",
+  "inputRequestSha256": "3f3f819a723503eb2f54e9a203d18ce50560d310ae8f627aad29282b61b34c1f",
+  "inputHashes": {
+    "candidateSha256": {
+      "q11": "72be05431d89d3503a1413c4eccdf074b11d6cb8aab909b64c9d533360cd3e68"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20240818/power/p16.png": "ca7d77cee3f252a58afd1273ef0f78316df974c1823524db404f1ebdb8135b66"
+    },
+    "figureSha256": {},
+    "sourceQuestionPdfSha256": "0bc54a85819b9d9c80d1574c5b8c02a3c28976565d8c9068a3dd0344a3db5700",
+    "sourceAnswerPdfSha256": "f72ecbc3a477e64948388b69cf78cb931032c9f0c688639836c8d533a949cd0f",
+    "officialAnswerUnitsSha256": "82984db468eb18c12cb5e7cd2a652fa8e40c122d4b0b3cede7eeb7e318706e9f",
+    "referencePdfSha256": {},
+    "referencePageSha256": {},
+    "referenceJsonSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q11",
+      "questionNumber": 11,
+      "part": null,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [
+        "総合解説の「電線の断面積(=導電材料の使用量)」は不正確。断面積は使用量そのものではなく、長さと比抵抗・密度が同一の条件で使用量が断面積に比例するだけである。「電線1条の重量は断面積に比例し（長さ・材料が同一のため）、総重量は断面積×線数に比例する」のように修正すべき。",
+        "総合解説の句読点が混在している。第2段落（力率の前提）だけ全角カンマ「，」で、他の段落は読点「、」である。整形方針に合わせて「、」に統一すべき。",
+        "選択肢(1)の個別解説で括弧が混在している。「相線（電力線）」だけ全角括弧で、他の箇所は半角括弧である。表記を統一すべき。",
+        "選択肢(1)の個別解説「実際に低圧配電で広く用いられる方式」は範囲が曖昧である。国内の低圧配電では単相3線式や三相3線式200Vが主流で、三相4線式は400V級ビル配電や海外（400/230V等）で用いられる。「400V級配電などで用いられる方式」のように適用範囲を限定すべき。",
+        "選択肢(4)の個別解説で記号Vp・Ip・φが未定義のまま使われている。「相電圧実効値Vp、相電流実効値Ip、力率角φ」と定義を添えるべき。"
+      ],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "問題文・(1)〜(5)全肢を公式原図PDF第16頁（印刷頁 -13-、フッター T1-D 016）と照合した。文言は一致し、差異は「，」→「、」の句読点整形のみ。これは sourceAttribution の「読みやすく整形」の範囲内。",
+        "公式解答表（令和6年度上期・電力・問11）の正答は2で、候補 officialAnswer=\"2\" および manifest の answer=\"2\" と一致する。",
+        "電線総重量比を検算した。単相2線式は I₁=P/(Vcosφ)、損失2I₁²R₁。三相3線式は I₃=P/(√3Vcosφ)、損失3I₃²R₃。損失を等しいとおくと R₁/R₃=3I₃²/(2I₁²)=1/2。A∝1/R より W₃/W₁=(3/R₃)/(2/R₁)=(3/2)(R₁/R₃)=3/4。cosφは相殺されるため、力率によらないという記述も正しい。",
+        "(1) Y結線の三相4線式では相電圧と線間電圧（√3倍）の両方を取り出せる。記述は正しい。",
+        "(3) 空間的に120°ずれた三相巻線に三相交流を流すと回転磁界が生じ、三相誘導電動機が自己始動できる。記述は正しい。",
+        "(4) 平衡三相の瞬時電力の和は 3VpIpcosφ で一定。2倍周波数の脈動成分は120°ずつずれて打ち消し合う。単相の瞬時電力は2倍周波数で脈動する。記述は正しい。",
+        "(5) 三相機は巻線・鉄心の利用率が高く、単相機に比べ小形・高効率に設計できる。記述は正しい。",
+        "図は存在せず、figureUrls・choiceFigureUrls が空で整合している。figureDescription の頁情報（p.16、-13-、T1-D 016）は原図と一致する。",
+        "メタデータを manifest と照合した。fiscalYear=2024、term=upper、examDate=2024-08-18、subject=power、問題PDF=20240818_ch_third_q02.pdf、解答PDF=20240818_ch_third_a01.pdf、reviewedFromPage=[16]、sourceAttribution（令和6年度上期・電力科目・問11）はすべて一致する。",
+        "officialReferenceUrls は空で、外部で確認すべき独立主張はない。"
+      ]
+    }
+  ]
+}

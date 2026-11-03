@@ -1,0 +1,72 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20250831",
+  "subject": "theory",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 4520,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 15384,
+      "webSearchRequests": 0,
+      "costUSD": 0.21373579999999998,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 2800,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "e45118796684271ecddb80bc8b0c1a292c2e61aeb4ad055ac2d8201a02a4ef22",
+  "inputRequestSha256": "71ad385e9681e8f539752468022d38a3191fdef6adfb2be9c71d86c3528d0f20",
+  "inputHashes": {
+    "candidateSha256": {
+      "q12": "98606e1a181e0055829f54cc2292018b0311a4aaddc27210dd0863d5ddbdbdc8"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20250831/theory/p15.png": "634999524efd70de1cfb1048f422273f4125a7b9fffc7761e52a620d12134190"
+    },
+    "figureSha256": {
+      "public/images/denken3/20250831/theory/20250831-theory-q12-fig1.png": "401249874076d5a2b6ea42e6a4f28accedfd38698fb6a010b958397cb2f32262"
+    },
+    "sourceQuestionPdfSha256": "11a75ffd5dd2b5309ad75370bb963c4fda9e12a812174cfa2c2237383c3a964d",
+    "sourceAnswerPdfSha256": "76fd3715ed487d19a56b387fb402de20ee09474e9fa55b0413f9037b96af06c9",
+    "officialAnswerUnitsSha256": "219e536a730d8971e180344786240e6d57210b9b13b250f598dde7f8b5db139f",
+    "referencePdfSha256": {},
+    "referencePageSha256": {},
+    "referenceJsonSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q12",
+      "questionNumber": 12,
+      "part": null,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [
+        "(ウ)の括弧書き「図の直流電源も、電極K側を負極、電極P側を正極として接続されている」は図の電池記号の長線・短線の配置に依拠した主張である。添付原図（PDF第15頁）の解像度では、電池記号のどちらの線が長線（正極）かを確実に判読できなかったため、この記述を原図で検証できない。本問の解答はこの記述に依存しない。問題文の前提（初速度零の電子が電極Pに達する）から、電極Pが高電位であることは導ける。そのため、この括弧書きは削除し、物理的根拠のみで説明することを推奨する。極性を記載する場合は、高解像度の原図で電池記号の長短を確認してから記載すること。"
+      ],
+      "figureIssues": [
+        "figureDescription の「電池記号は、左側（電極K側）が短線（負極）、右側（電極P・接地側）が長線（正極）である」「電極P側を正極として直流電源が接続され」は、添付原図・公開候補図の解像度では長線と短線の区別を確実に判読できず、検証できない。高解像度の原図で確認するまで、極性の断定は避けるか、確認後に記載すること。極性以外の記述（コの字形の電極Kと内側のヒータ、ヒータ引出線2本の左端開放、「ヒータ」ラベル、電極K・P対向面間の両矢印「6 mm」、電極K下辺の黒丸から下へ伸び右へ折れて電池へ至る導線、電極P下端の黒丸、その下の分岐点の黒丸、分岐点下の接地記号）は原図と一致する。"
+      ],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "出典: 公式原図の問12（PDF第15頁、頁内表記 -12-、T1-R 015）と照合した。fiscalYear=2025、term=upper、examDate=2025-08-31、subject=theory、reviewedFromPage=[15] は manifest と一致する。sourceQuestionPdfUrl と sourceAnswerPdfUrl は manifest と一致する。sourceAttribution「令和7年度上期第三種電気主任技術者試験 理論科目 問12」は正しい。",
+        "問題文: 真空中、電極間隔6 mm、面積十分広い平行平板、2 000 V直流、空白(ア)(イ)(ウ)、電界一様、e=1.6×10⁻¹⁹ C、選択指示文を原図と逐語照合した。脱落・改変はない。",
+        "選択肢: (1)〜(5)の(ア)(イ)(ウ)を原図の表と照合した。(1) 3.3×10²/光電子/1.6×10⁻¹⁶、(2) 3.3×10⁵/熱電子/1.6×10⁻¹⁶、(3) 3.3×10²/光電子/3.2×10⁻¹⁶、(4) 3.3×10²/熱電子/1.6×10⁻¹⁶、(5) 3.3×10⁵/熱電子/3.2×10⁻¹⁶ で、全肢一致する。指数の上付きも正しい。",
+        "公式正答: 公式解答表の理論・問12の解答は5、配点は5である。officialAnswer=\"5\"、scoringPoints=5 と一致する。",
+        "検算(ア): E=V/d=2000/(6×10⁻³)=3.333…×10⁵ V/m≒3.3×10⁵ V/m。",
+        "検算(イ): ヒータによる加熱で陰極表面から放出されるのは熱電子（熱電子放出）であり、光電子ではない。",
+        "検算(ウ): W=eV=1.6×10⁻¹⁹×2000=3.2×10⁻¹⁶ J。eEd による別解も同値であり、W は間隔 d によらない旨も正しい。",
+        "誤答肢の理由: (1)は3要素とも誤り（3.3×10²は2000÷6でmm未換算）。(2)は(ウ)のみ誤り。(3)は(ア)(イ)が誤り。(4)は(ア)(ウ)が誤り。各肢の誤りの指摘はいずれも正確である。",
+        "公開候補図: 原図の回路図部分を過不足なくトリミングしている。ラベル「電極K」「電極P」「ヒータ」「6 mm」、接続点の黒丸3個、接地記号、電池記号の位置と接続関係は原図と一致する。図がなくても解答可能だが、公開候補図だけで構成を理解できる。",
+        "officialReferenceUrls は空であり、検証を要する外部主張はない。"
+      ]
+    }
+  ]
+}

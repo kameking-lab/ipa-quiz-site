@@ -1,0 +1,96 @@
+{
+  "questionNumber": 12,
+  "sharedContext": null,
+  "units": [
+    {
+      "part": null,
+      "question": "図のように，真空中に電極間隔 d [m] の平行板電極があり，陰極板上に電子を置いた。陽極板に電圧 V [V] を加えたとき，この電子に加わる力 F [N] の式として，正しいのは次のうちどれか。\nただし，電子の質量を m [kg]，電気素量を e [C] とする。また，電極板の端効果は無視できるものとする。",
+      "choices": {
+        "1": "(V/d)·e",
+        "2": "(V/d²)·e",
+        "3": "(V/d²)·(m/e)",
+        "4": "(V/d²)·e·m",
+        "5": "(V²/d)·e"
+      },
+      "officialAnswer": "1",
+      "explanation": "端効果を無視できる平行板電極の間には一様な電界ができる。電極間の電位差が V [V]、電極間隔が d [m] なので、電界の大きさは\nE = V/d [V/m]\nである。電荷 q [C] が電界 E から受ける力は F = qE であり、電子の電荷の大きさは e [C] なので、電子に加わる力の大きさは\nF = eE = (V/d)·e [N]\nとなる。\n向きについては、電界は高電位の陽極板から陰極板へ向かい、電子は負電荷なので電界と逆向き、すなわち陽極板の方向に力を受ける。これは図の F [N] の矢印（陰極板から陽極板へ向かう向き）と一致する。\n電界から受ける力は電荷と電界だけで決まり、質量 m は関係しない（質量は加速度 a = F/m を求めるときに用いる）。\n単位の確認：V/d の単位は V/m、これに C を掛けると (V·C)/m = J/m = N となり、力の単位に一致する。",
+      "choiceExplanations": {
+        "1": "正しい。電界 E = V/d と電子の電荷 e から F = eE = (V/d)·e [N] となる。単位も (V/m)·C = J/m = N で力の単位に一致する。",
+        "2": "誤り。平行板間の電界は V/d であり、V/d² ではない。(V/d²)·e の単位は V·C/m² = J/m² = N/m となり、力の単位 N にならない。",
+        "3": "誤り。電界から電荷が受ける力は F = eE で表され、質量 m は含まれない。また e が分母にあり、電荷が大きいほど力が小さくなる形になっていて F = eE と矛盾する。単位も V·kg/(m²·C) で N にならない。",
+        "4": "誤り。電界から受ける力に質量 m は関係しない。さらに電界を V/d² としている点も誤りである。単位は V·C·kg/m² = J·kg/m² で N にならない。",
+        "5": "誤り。電界 E = V/d は電圧の 1 乗に比例し、V² にはならない。(V²/d)·e の単位は V²·C/m = V·J/m = V·N で、力の単位 N にならない。"
+      },
+      "figureDescription": "平行に置かれた上下 2 枚の横長の電極板を示す図。上の板に「陽極板」、下の板に「陰極板」のラベルがあり、陰極板の下側中央に接地記号が付いている。左側には両板の内側の面から左へ延びる破線の補助線があり、その間を結ぶ両端矢印の寸法線に「d[m]」と記されている。陰極板の上面の左寄りに黒丸で示された電子があり、「電子」のラベルから引出線で指されている。その黒丸から上向き（陽極板の方向）に矢印が伸びて「F[N]」と記されている。右側には陰極板から陽極板へ向かう上向きの矢印があり「V[V]」と記されている。",
+      "officialReferenceUrls": [],
+      "uncertainty": "なし",
+      "needsReview": true,
+      "sourceQuestionPdfUrl": "https://www.shiken.or.jp/chief/upload/20260322_ch_third_q01.pdf",
+      "sourceAnswerPdfUrl": "https://www.shiken.or.jp/chief/upload/20260322_ch_third_a01.pdf",
+      "reviewedFromPage": [
+        17
+      ]
+    }
+  ],
+  "draftModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 2173,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 9309,
+      "webSearchRequests": 0,
+      "costUSD": 0.11819579999999999,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 722,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "a56688f1826b21b304fcf6343da94b1bbc203bb126faba6fdbd919c90f1a92cc",
+  "inputRequestSha256": "83d09502cec902cb4d00a4104042713487bd1cf615f5d29e2e74f21e183c27b3",
+  "sourceQuestionPdfSha256": "c83e7c7350d98b65f5d8da0b93e4a2581a19dd250be320fb7fc492c9b34a29c1",
+  "sourceAnswerPdfSha256": "cc2890296d06a4823df5697a78a1c01ddfd39f041c51f48c87984daa3a5707c6",
+  "sourcePageImageSha256": {
+    "data/raw_pdfs/denken3/review/20260322/theory/p17.png": "5a8896de78b35539efccde17253b46c19106109ad2f85e597b7fa594eae4788e"
+  },
+  "revisionHistory": [
+    {
+      "version": 1,
+      "model": "claude-opus-5-5",
+      "resolvedModel": "claude-opus-5-5",
+      "modelUsage": {
+        "claude-opus-5-5": {
+          "inputTokens": 2,
+          "outputTokens": 2147,
+          "cacheReadInputTokens": 1279,
+          "cacheCreationInputTokens": 12927,
+          "webSearchRequests": 0,
+          "costUSD": 0.1466198,
+          "contextWindow": 1000000,
+          "maxOutputTokens": 128000,
+          "thinkingTokens": 771,
+          "canonicalModel": "claude-opus-5-5",
+          "provider": "firstParty",
+          "costBasis": "list"
+        }
+      },
+      "rawResponseSha256": "94593602fe5decad7617d8b642d499d6b6ab3578771f49341fa19f35cd9b9609",
+      "inputRequestSha256": "07e15f1abc9cb7e8e1a9584fefe841527fcb74481bc4e6879c7b47d469946d4a",
+      "previousDraftSha256": "93740ecb209b779a852dbb2471f0a1cb22b6ad4ae7df8d153884f8321b040a48",
+      "previousDraft": "data/raw_pdfs/denken3/review/20260322/theory/archive/q12-vision-draft-v1.json",
+      "answeredReviewSha256": "c784eddb17709916ec0113e4f4bed8e816949068092d6692b46c6b0643c1ebd9",
+      "answeredReview": "data/raw_pdfs/denken3/review/20260322/theory/archive/q12-opus-review-v1.json",
+      "answeredStrictReceipt": "docs/evidence/denken3/strict/20260322-theory-s1-q12-opus.json",
+      "answeredStrictReceiptSha256": "bb72a4b3a89283e30c8fa9408654556a635e57dc87d7bc2ebc9babfd0e484a79",
+      "figureSha256": {
+        "20260322-theory-q12-fig1": "a7677ea1d8ad1b892bc429eaac84071ce0c738ce86dd45b13ddf1e1fb22cfcec"
+      },
+      "referenceHashes": {},
+      "operatorNote": ""
+    }
+  ]
+}

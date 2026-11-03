@@ -1,3 +1,11 @@
+import { chushoSitemapPaths } from "@/lib/chusho-secondary/data";
+import { sentakuSitemapPaths } from "@/lib/sharoushi/sentaku";
+import { NATIVE_QUESTIONS, nativeQuestionPaths, nativeSubjectPath } from "@/lib/denken2/native";
+import { secondarySitemapPaths } from "@/lib/denken2/secondary";
+import { DENKEN1_NATIVE_QUESTIONS, denken1NativeQuestionPaths, denken1NativeSubjectPath } from "@/lib/denken1/native";
+import { DENKEN3_NATIVE_QUESTIONS, denken3NativeQuestionPaths, denken3NativeSubjectPath } from "@/lib/denken3/native";
+import { getFp1ExtensionQuestions } from "@/lib/fp1/published-extension";
+import { publicBlogDates } from "@/lib/blog/editorial";
 import { getAllBlogSummaries } from "@/data/blog";
 import { getLastUpdatedISO } from "@/lib/questions/last-updated";
 import { SITE_BASE_URL } from "./config";
@@ -11,12 +19,22 @@ import { questionPagePath } from "./question-url";
 import {
   SITEMAP_CHUNK_SIZE,
   getIndexableQuestions,
+  getSitemapQuestions,
   getSitemapChunkCount,
 } from "./sitemap-pagination";
 import { getHubTopics } from "./topics";
 import { KEYWORD_PAGES } from "@/data/keywords";
 import { FEATURE_LANDING_PAGES } from "@/data/features";
 import { getAllEssayQuestions } from "@/lib/essay/load";
+import { FP2_PRACTICAL_EDITIONS, getPracticalEdition as getFp2PracticalEdition } from "@/lib/fp2/practical";
+import { FP3_PRACTICAL_EDITIONS, getPracticalEdition as getFp3PracticalEdition } from "@/lib/fp3/practical";
+import { FP1_APPLIED_EDITIONS, fp1AppliedQuestionPath, getFp1AppliedEdition } from "@/lib/fp1/applied";
+import { EXAM_CATALOG } from "@/lib/exam-library-catalog";
+import {
+  QUALIFICATION_HUBS,
+  qualificationHubPath,
+} from "@/lib/exam-qualification-hubs";
+import { getQualificationHubEntries } from "@/lib/exam-qualification-hub-data";
 
 // Build date (YYYY-MM-DD). Auto-advances every deploy, so genuinely static
 // pages no longer carry a hand-maintained literal that goes stale (E-5).
@@ -72,6 +90,19 @@ const RECOMMENDED_BOOKS_EXAMS = [
 // they carry `robots: { index: false }` in their page metadata or are blocked
 // by robots.txt. Including them here would contradict crawler signals.
 const STATIC_ROUTES: UrlEntry[] = [
+  { url: `${SITE_BASE_URL}/e-learning/exams`, lastModified: "2026-09-11", changeFrequency: "monthly", priority: 0.8 },
+  ...QUALIFICATION_HUBS.map((hub): UrlEntry => ({
+    url: `${SITE_BASE_URL}${qualificationHubPath(hub.slug)}`,
+    lastModified: getQualificationHubEntries(hub).reduce(
+      (latest, entry) => entry.checkedAt > latest ? entry.checkedAt : latest,
+      "",
+    ),
+    changeFrequency: "monthly",
+    priority: 0.8,
+  })),
+  ...EXAM_CATALOG.map((entry): UrlEntry => ({ url: `${SITE_BASE_URL}/e-learning/exams/${entry.id}`, lastModified: entry.checkedAt, changeFrequency: "monthly", priority: 0.7 })),
+  { url: `${SITE_BASE_URL}/ipa`, lastModified: STATIC_CONTENT_DATE, changeFrequency: "daily", priority: 0.9 },
+  { url: `${SITE_BASE_URL}/qualifications`, lastModified: STATIC_CONTENT_DATE, changeFrequency: "monthly", priority: 0.8 },
   { url: SITE_BASE_URL, lastModified: STATIC_CONTENT_DATE, changeFrequency: "daily", priority: 1 },
   { url: `${SITE_BASE_URL}/search`, lastModified: STATIC_CONTENT_DATE, changeFrequency: "weekly", priority: 0.7 },
   { url: `${SITE_BASE_URL}/modes/year`, lastModified: STATIC_CONTENT_DATE, changeFrequency: "monthly", priority: 0.8 },
@@ -103,7 +134,6 @@ const STATIC_ROUTES: UrlEntry[] = [
   { url: `${SITE_BASE_URL}/mock-exam`, lastModified: STATIC_CONTENT_DATE, changeFrequency: "monthly", priority: 0.6 },
   { url: `${SITE_BASE_URL}/challenge`, changeFrequency: "daily", priority: 0.6 },
   { url: `${SITE_BASE_URL}/essay`, lastModified: STATIC_CONTENT_DATE, changeFrequency: "monthly", priority: 0.6 },
-  { url: `${SITE_BASE_URL}/quiz/stream`, lastModified: STATIC_CONTENT_DATE, changeFrequency: "monthly", priority: 0.6 },
   { url: `${SITE_BASE_URL}/study-plan`, lastModified: STATIC_CONTENT_DATE, changeFrequency: "monthly", priority: 0.7 },
   { url: `${SITE_BASE_URL}/student`, lastModified: STATIC_CONTENT_DATE, changeFrequency: "monthly", priority: 0.6 },
   { url: `${SITE_BASE_URL}/referral`, lastModified: STATIC_CONTENT_DATE, changeFrequency: "monthly", priority: 0.4 },
@@ -125,7 +155,7 @@ const STATIC_ROUTES: UrlEntry[] = [
 function getBlogRoutes(): UrlEntry[] {
   return getAllBlogSummaries().map((p) => ({
     url: `${SITE_BASE_URL}/blog/${p.slug}`,
-    lastModified: p.updatedAt ?? p.publishedAt,
+    lastModified: publicBlogDates(p).modified ?? publicBlogDates(p).published,
     changeFrequency: "monthly",
     priority: HUB_BLOG_SLUGS.has(p.slug) ? 0.8 : 0.7,
   }));
@@ -170,6 +200,42 @@ function getExamHubRoutes(): UrlEntry[] {
         changeFrequency: "monthly",
         priority: 0.65,
       });
+    }
+  }
+  return entries;
+}
+
+function getFpPracticalRoutes(): UrlEntry[] {
+  const entries: UrlEntry[] = [];
+  const append = (
+    exam: "fp2" | "fp3",
+    editions: readonly string[],
+    getEdition: (edition: string) => { questions: { number: number }[] } | null,
+  ) => {
+    entries.push({ url: `${SITE_BASE_URL}/${exam}/practical`, changeFrequency: "yearly", priority: 0.7 });
+    for (const edition of editions) {
+      const data = getEdition(edition);
+      if (!data) throw new Error(`Missing ${exam} practical edition: ${edition}`);
+      entries.push({ url: `${SITE_BASE_URL}/${exam}/practical/${edition}`, changeFrequency: "yearly", priority: 0.6 });
+      for (const question of data.questions) {
+        entries.push({
+          url: `${SITE_BASE_URL}/${exam}/practical/${edition}/${question.number}`,
+          changeFrequency: "yearly",
+          priority: 0.5,
+        });
+      }
+    }
+  };
+  append("fp2", FP2_PRACTICAL_EDITIONS, getFp2PracticalEdition);
+  append("fp3", FP3_PRACTICAL_EDITIONS, getFp3PracticalEdition);
+  entries.push({ url: `${SITE_BASE_URL}/fp1/applied`, changeFrequency: "yearly", priority: 0.7 });
+  for (const edition of FP1_APPLIED_EDITIONS) {
+    const data = getFp1AppliedEdition(edition);
+    const questions = [...(data?.questions ?? []), ...getFp1ExtensionQuestions(edition)];
+    if (questions.length === 0) throw new Error(`Missing fp1 applied edition: ${edition}`);
+    entries.push({ url: `${SITE_BASE_URL}/fp1/applied/${edition}`, changeFrequency: "yearly", priority: 0.6 });
+    for (const question of questions) {
+      entries.push({ url: `${SITE_BASE_URL}${fp1AppliedQuestionPath(edition, question.number)}`, changeFrequency: "yearly", priority: 0.5 });
     }
   }
   return entries;
@@ -232,6 +298,7 @@ export function renderSitemapIndexXml(): string {
   const entries: string[] = [
     `${SITE_BASE_URL}/sitemap/main.xml`,
     `${SITE_BASE_URL}/sitemap/exams.xml`,
+    `${SITE_BASE_URL}/sitemap/fp-practical.xml`,
     `${SITE_BASE_URL}/sitemap/topics.xml`,
     `${SITE_BASE_URL}/sitemap/blog.xml`,
     `${SITE_BASE_URL}/sitemap/books.xml`,
@@ -268,7 +335,16 @@ export function renderMainSitemapXml(): string {
 
 export function renderExamsSitemapXml(): string {
   // Exam routes already carry per-entry lastModified from getExamHubRoutes().
-  return renderUrlSet(getExamHubRoutes());
+  const nativeSubjects = [...new Set(NATIVE_QUESTIONS.map(q => nativeSubjectPath(q.year, q.subject)))];
+  const denken1Subjects = [...new Set(DENKEN1_NATIVE_QUESTIONS.map(q => denken1NativeSubjectPath(q.year, q.subject)))];
+  const denken3Subjects = [...new Set(DENKEN3_NATIVE_QUESTIONS.map(q => denken3NativeSubjectPath(q.sitting, q.subject)))];
+  const nativeRoutes = [...chushoSitemapPaths(), ...nativeSubjects, ...nativeQuestionPaths(), ...secondarySitemapPaths(), ...denken1Subjects, ...denken1NativeQuestionPaths(), ...denken3Subjects, ...denken3NativeQuestionPaths()]
+    .map(path => ({ url: `${SITE_BASE_URL}${path}`, changeFrequency: "yearly" as const, priority: 0.6 }));
+  return renderUrlSet([...getExamHubRoutes(), ...sentakuSitemapPaths().map(path => ({ url: `${SITE_BASE_URL}${path}`, changeFrequency: "yearly", priority: 0.6 })), ...nativeRoutes]);
+}
+
+export function renderFpPracticalSitemapXml(): string {
+  return renderUrlSet(getFpPracticalRoutes());
 }
 
 export function renderTopicsSitemapXml(): string {
@@ -285,7 +361,7 @@ export function renderBooksSitemapXml(): string {
 }
 
 export function renderQuestionsSitemapChunkXml(pageIndex: number): string {
-  const indexable = getIndexableQuestions();
+  const indexable = getSitemapQuestions();
   const start = pageIndex * SITEMAP_CHUNK_SIZE;
   const slice = indexable.slice(start, start + SITEMAP_CHUNK_SIZE);
   return renderUrlSet(

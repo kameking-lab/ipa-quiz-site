@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20250323",
+  "subject": "power",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 2635,
+      "cacheReadInputTokens": 139443,
+      "cacheCreationInputTokens": 15776,
+      "webSearchRequests": 0,
+      "costUSD": 0.2068046,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 1384,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "24ee5addcff416092f755fc2f683c5826bd62cea4122a194e2202915d961a898",
+  "inputRequestSha256": "710a8033fc98c1e97d2b041488a6b0223df2fedd284ad275fd7955030ff9eab0",
+  "inputHashes": {
+    "candidateSha256": {
+      "q03": "6a92e4c52b0cf6cab1659f46e849aab7fa1a42fbc9b01f29244f7d7fd0840778"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20250323/power/p06.png": "af228ec19b8ed8624561c2a17171e003d69fbd1c3b18ffffd9ca177fef29921b"
+    },
+    "figureSha256": {},
+    "sourceQuestionPdfSha256": "892785e0f1035bcb239eb30fa903d4c88adbcfdaa1b5b0edea2d1907fd887114",
+    "sourceAnswerPdfSha256": "4c3b38fcf1405766fafaa78b1b05b867a3d48307a670b9d354476bc6b32acd4c",
+    "officialAnswerUnitsSha256": "4414c96a09f308a64b976addb0f5702c995851818bd30490c952687509606a16",
+    "referencePdfSha256": {},
+    "referencePageSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q03",
+      "questionNumber": 3,
+      "part": null,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "Question text: checked sentence by sentence against the official page (printed page -3-, footer T2-D 006). The wording matches, including 「高温・高圧の蒸気」, 「ランナ」, 「羽根を通過する蒸気の通路の断面積が一様であり」, 「固定羽根で膨張させた蒸気」, 「ランナの内部で蒸気を（エ）させ」, and blanks (ア)–(オ) in the same positions. The only changes are presentational: the boxed blanks are written as （ア） etc.",
+        "Choices (1)–(5): all 25 cells match the original table. (1) 上昇/等しい/高圧/膨張/中低圧, (2) 上昇/異なる/中低圧/凝縮/高圧, (3) 上昇/等しい/中低圧/膨張/高圧, (4) 降下/異なる/中低圧/凝縮/高圧, (5) 降下/等しい/高圧/膨張/中低圧.",
+        "Official answer: officialAnswer = 5 matches the manifest's official answer unit {question: 3, part: null, answer: \"5\"}. Choice (5) is the only row that is correct in every column: 降下, 等しい, 高圧, 膨張, 中低圧.",
+        "Explanation, principles: (ア) steam expands in the nozzle and pressure energy becomes velocity energy, so the pressure falls. (イ) Constant blade-passage area means no further expansion in the blades, so inlet and outlet pressures are equal. (エ) The reaction turbine also expands steam in the moving blades. All three are correct.",
+        "Explanation, why each type suits its pressure range: (ウ) With no pressure difference across the moving blades, little steam leaks past the blade tips, so the impulse turbine suits high pressure. (オ) The reaction turbine has a pressure difference across the moving blades. In high-pressure stages the specific volume is small and the blades are short, so tip leakage is a larger share of the flow, and the reaction turbine therefore suits medium and low pressure. Both cause-and-effect explanations are correct.",
+        "Per-choice explanations: every wrong term is named correctly. (1): only (ア) is wrong. (2): all five terms are wrong. (3): (ア), (ウ) and (オ) are wrong; (イ) and (エ) are correct. (4): (イ), (ウ), (エ) and (オ) are wrong; (ア) is correct. (5): every term is correct. None of these explanations misses a wrong term, and none marks a correct term as wrong.",
+        "Figures: the original page has no figure, only the combination table. figureUrls and choiceFigureUrls are both empty, and the table is fully reproduced in the choice text, so no figure is needed.",
+        "Sources: officialReferenceUrls is empty, and the explanation makes no claim that would need an external official reference. Its content is standard steam-turbine principle and can be checked against the problem's own logic. sourceAttribution (令和6年度下期, 電力科目, 問3) is consistent with examDate 2025-03-23, fiscalYear 2024, term lower and subject power. The attached image carries printed page -3-, and reviewedFromPage [6] is consistent with it once the cover and instruction pages are counted."
+      ]
+    }
+  ]
+}

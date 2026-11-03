@@ -1,0 +1,65 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20260322",
+  "subject": "theory",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 2500,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 14275,
+      "webSearchRequests": 0,
+      "costUSD": 0.1644638,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 1205,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "6adc964527dad6a81f0aaccc42e93a8277f63873fd9ffa5896b5a447a366e28f",
+  "inputRequestSha256": "11459a75b7c40eefca40fb8087126f589ff4b143a54b413f75c23772226d8497",
+  "inputHashes": {
+    "candidateSha256": {
+      "q11": "e57cfd209e2393d53add698b470a08262be1cd4744ba91f9e2ec01885ad507f8"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20260322/theory/p16.png": "f5e891d4e2ca3306e36ea0bbfeef1fff1209ad2eb45785cf5aba19fb9fda15a6"
+    },
+    "figureSha256": {},
+    "sourceQuestionPdfSha256": "c83e7c7350d98b65f5d8da0b93e4a2581a19dd250be320fb7fc492c9b34a29c1",
+    "sourceAnswerPdfSha256": "cc2890296d06a4823df5697a78a1c01ddfd39f041c51f48c87984daa3a5707c6",
+    "officialAnswerUnitsSha256": "65afb8e3d36137529c3bb300808b62f0b8e8e56726a521de92f48fc9467a567e",
+    "referencePdfSha256": {},
+    "referencePageSha256": {},
+    "referenceJsonSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q11",
+      "questionNumber": 11,
+      "part": null,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "出典メタデータ: 公式解答表の表題『令和７年度 第三種電気主任技術者下期試験解答』と manifest（2025年度下期・試験日2026-03-22・理論）に対し、候補の fiscalYear=2025、term=lower、examDate=2026-03-22、subject=theory、sourceQuestionPdfUrl、sourceAnswerPdfUrl がすべて一致した。sourceAttribution『令和7年度下期…理論科目 問11』も一致した。",
+        "reviewedFromPage: 原図の下部表記は『T2-R 016』、印刷頁は『- 13 -』である。manifest の PDF 第16頁と候補の reviewedFromPage=[16] が一致した。印刷頁の13は PDF 頁番号ではない。",
+        "問題文: 導入文、a（可変容量ダイオード・同調回路・pn接合に(ア)電圧）、b（pn接合に(イ)電圧・降伏現象・降伏電圧付近で電圧ほぼ一定・定電圧ダイオード）、c（レーザダイオード・光通信や光情報機器の光源・pn接合に(ウ)電圧）、設問文『空白箇所(ア)～(ウ)に当てはまる語句として，正しいものを組み合わせたのは次のうちどれか。』を原図と一字ずつ照合した。語句・句読点に実質的な差異はなかった。",
+        "選択肢: 原図の表を行ごとに照合し、全5肢が一致した。(1) 順方向/順方向/逆方向、(2) 逆方向/逆方向/順方向、(3) 逆方向/順方向/逆方向、(4) 順方向/逆方向/順方向、(5) 逆方向/逆方向/逆方向。",
+        "公式正答: 公式解答表の理論・問11の行は解答2・配点5である。候補の officialAnswer='2' と scoringPoints=5 が一致した。",
+        "総合解説の検算: 可変容量ダイオードは逆バイアスで使い、逆電圧を大きくすると空乏層が広がって容量が減少する。定電圧ダイオードは逆バイアスの降伏領域で端子電圧がほぼ一定になる性質を使う。レーザダイオードは順バイアスでキャリアを注入し、しきい値電流以上で誘導放出が支配的になる。いずれも物理的に正しく、結論(2)と整合する。",
+        "肢別解説の検算: (1)は3箇所とも誤り、(3)は(ア)のみ正しく(イ)(ウ)が誤り、(4)は(ア)のみ誤り、(5)は(ウ)のみ誤りである。各肢の正誤の判定と、誤りとされた語句の理由が正答の組合せ(逆・逆・順)と整合する。(2)の正答理由も3空欄それぞれについて固有の根拠を示している。",
+        "図: 原図に回路図・図版はない。選択肢の表(3列×5行)は choices に完全に転記されている。figureUrls=[] で解答に支障はなく、figureDescription の記述も正確である。",
+        "参考資料: officialReferenceUrls は空で、検証を要する外部の独立主張はない。uncertainty『なし』と needsReview=false も上記の検証結果と矛盾しない。"
+      ]
+    }
+  ]
+}

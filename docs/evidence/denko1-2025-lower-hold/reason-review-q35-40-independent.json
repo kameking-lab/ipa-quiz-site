@@ -1,0 +1,115 @@
+{
+  "review": "independent-primary-source-audit",
+  "reviewDate": "2026-09-28",
+  "examDate": "2025-10-05",
+  "status": "REVIEWED_PUBLICATION_HOLD",
+  "publicationHold": true,
+  "draftEdited": false,
+  "draftFile": "reason-draft-q35-40.json",
+  "draftSha256": "331BA65E4C5FB47367A7F0DD63AA4DDB3564D4B8592586FAD53689F62AE1977F",
+  "officialQuestion": {
+    "url": "https://www.shiken.or.jp/construction/upload/20251005_co_first_q01.pdf",
+    "sha256": "635c811dbee7dd6c5605c856a8250285a4c99ef80a0609793600cb0d011ef451",
+    "printedPage": 12,
+    "visualCheck": "原本ページ画像を目視確認。問39ハは100 μFでありPDF文字抽出の100 Fは欠落。"
+  },
+  "officialAnswer": {
+    "url": "https://www.shiken.or.jp/construction/upload/20251005_co_first_a01.pdf",
+    "sha256": "F377A1DB85DB4544C7C0D5B443CB7D6C139BA90F87826523EB6444625C8C8A56"
+  },
+  "legalVersion": {
+    "date": "2024-10-22",
+    "interpretation": "https://www.meti.go.jp/policy/safety_security/industrial_safety/sangyo/electric/files/20241022-2.pdf",
+    "commentary": "https://www.meti.go.jp/policy/safety_security/industrial_safety/sangyo/electric/files/20241022-3.pdf",
+    "ordinance": "https://laws.e-gov.go.jp/law/409M50000400052/20210401_503M60000400012"
+  },
+  "otherPrimarySources": [
+    "https://www.meti.go.jp/information/license/c_text26.html",
+    "https://www.meti.go.jp/policy/consumer/seian/denan/file/06_guide/seller_guide.pdf",
+    "https://www.meti.go.jp/policy/consumer/seian/denan/non_specified_electrical.html",
+    "https://www.meti.go.jp/policy/consumer/seian/denan/subject01.html",
+    "https://www.meti.go.jp/policy/consumer/seian/denan/file/06_guide/denan_guide_ver501.pdf"
+  ],
+  "reviewedQuestions": 6,
+  "reviewedChoices": 24,
+  "questionReviews": [
+    {
+      "number": 35,
+      "officialAnswer": "ハ",
+      "draftAnswerMatches": true,
+      "source": "2024-10-22版解釈24条1項、28条1項、29条1項・29-1表",
+      "choiceChecks": {
+        "イ": "D種ではない。外箱のない変圧器の鉄心は29条の接地対象で、高圧機器はA種。",
+        "ロ": "D種ではない。400V電動機の鉄台は使用電圧300V超の機器金属製台で、原則C種。設問に省略特例の条件なし。",
+        "ハ": "D種。28条1項が高圧計器用変成器の二次側電路にD種を指定。",
+        "ニ": "D種ではない。6.6kV/210V変圧器の低圧側中性点は24条1項1号イでB種。"
+      },
+      "draftFinding": "正誤一致。初稿イの『より高い区分』は執筆担当がA種と具体化済み。"
+    },
+    {
+      "number": 36,
+      "officialAnswer": "ロ",
+      "draftAnswerMatches": true,
+      "source": "公式問題・解答PDF、期間の有効電力量と無効電力量による力率計算",
+      "choiceChecks": {
+        "イ": "不十分。電力計の瞬時電力と電力量計からは期間の無効電力量を得られない。",
+        "ロ": "適切。有効電力量Whと無効電力量varhからWh/√(Wh²+varh²)を計算できる。",
+        "ハ": "不十分。最大需要電力は期間の有効電力量ではない。",
+        "ニ": "不十分。期間の有効・無効電力量が揃わない。"
+      },
+      "draftFinding": "実質的な誤りなし。"
+    },
+    {
+      "number": 37,
+      "officialAnswer": "ハ",
+      "draftAnswerMatches": true,
+      "source": "2024-10-22版解釈14条1項2号",
+      "choiceChecks": {
+        "イ": "0.1mAは規定の上限値ではない。",
+        "ロ": "0.2mAは規定の上限値ではない。",
+        "ハ": "1.0mAが使用電圧印加中に測る漏えい電流の規定上限値。",
+        "ニ": "2.0mAは1mAの上限超過。"
+      },
+      "draftFinding": "実質的な誤りなし。"
+    },
+    {
+      "number": 38,
+      "officialAnswer": "イ",
+      "draftAnswerMatches": true,
+      "source": "https://www.meti.go.jp/information/license/c_text26.html と https://www.safety-kanto.meti.go.jp/electric/data/sikaku/tokushuword.pdf",
+      "choiceChecks": {
+        "イ": "適切。特種電気工事資格者は認定証に記載されたネオン又は非常用予備発電装置の該当工事に従事できる。",
+        "ロ": "不適切。認定電気工事従事者は特種工事の認定証の代替にならない。",
+        "ハ": "不適切。第一種電気工事士免状だけではこの特種工事に従事できない。",
+        "ニ": "不適切。第三種電気主任技術者免状だけではこの特種工事に従事できない。"
+      },
+      "draftFinding": "実質的な誤りなし。"
+    },
+    {
+      "number": 39,
+      "officialAnswer": "イ",
+      "draftAnswerMatches": true,
+      "source": "経産省電気用品安全法対象非対象解釈例一覧（配線器具・小形交流電動機）、特定/特定以外一覧、表示手引書Ver.5.0.1。いずれも試験前から存在する区分を照合。",
+      "choiceChecks": {
+        "イ": "特定電気用品。配線用遮断器は定格電流100A以下の開閉器区分に含まれ、設問60Aは範囲内。",
+        "ロ": "特定ではない。定格100～300Vの単相電動機は小形交流電動機として特定電気用品以外の区分。",
+        "ハ": "特定ではない。原本は100 μF。進相コンデンサは経産省の特定電気用品品目一覧にない。静電容量のμを落とさない。",
+        "ニ": "特定ではない。丸形(PS)Eは特定電気用品以外、菱形PSEが特定電気用品。"
+      },
+      "draftFinding": "正誤一致。ハのμは原本で確認済み。初稿イの60Aが100A以下に入る点、ロの単相電動機が特定以外である点は執筆担当が追記済み。"
+    },
+    {
+      "number": 40,
+      "officialAnswer": "イ",
+      "draftAnswerMatches": true,
+      "source": "e-Gov電気設備に関する技術基準を定める省令12条1項、2024-10-22版解釈24条1項",
+      "choiceChecks": {
+        "イ": "正しい。省令12条1項の文言は『接地を施さなければならない』。",
+        "ロ": "誤り。断路器の施設という文言ではない。",
+        "ハ": "誤り。開閉器の施設という文言ではない。",
+        "ニ": "誤り。遮断器の施設という文言ではない。"
+      },
+      "draftFinding": "実質的な誤りなし。"
+    }
+  ]
+}

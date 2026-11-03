@@ -1,0 +1,63 @@
+{
+  "reviewModel": "claude-opus-5-5",
+  "requestedModel": "claude-opus-5-5",
+  "canonicalModel": "claude-opus-5-5",
+  "provider": "firstParty",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 4558,
+      "cacheReadInputTokens": 2155,
+      "cacheCreationInputTokens": 15700,
+      "webSearchRequests": 0,
+      "costUSD": 0.21719899999999998,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 3426,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "paperId": "emkohyo-EM20261804",
+  "ids": [
+    "emkohyo-EM20261804-q15"
+  ],
+  "figureSha256": {
+    "emkohyo-EM20261804-q15": {}
+  },
+  "officialRowImageSha256": {
+    "emkohyo-EM20261804-q15": {
+      "/exam-library/emkohyo-EM20261804/q15-p10-0.webp": "cd2d7842c628894ca12772eddcfe9d93353521c69691614d37ec4001d0bd8eef"
+    }
+  },
+  "officialPageImageSha256": {},
+  "governmentSourceImageSha256": {
+    "docs/evidence/emkohyo-choice-sources/images/emkohyo-EM20261804-q15-jaea-p23.png": "7fabcbccbf63e3707649e2b7f5d7f9b431b1d638f44cf91ff475f09e98aa679a"
+  },
+  "candidateSha256": {
+    "emkohyo-EM20261804-q15": "48724fd5b66183812a14a6f90ccfd1c16d2e1cef1ecdcba90e6599dfe44a6f0a"
+  },
+  "sourcePackPath": "docs/evidence/emkohyo-choice-sources/emkohyo-EM20261804-q15-15.json",
+  "sourcePackSha256": "bd33e064867755ecf4d8c1578d526e0d6782ec9784f6a786496e387a6fefabcc",
+  "assessment": {
+    "emkohyo-EM20261804-q15": {
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "reasonIssues": [
+        "肢2: 「被検元素用の中空陰極ランプと重水素ランプの指示値の差を用いる例もあり」は出典を一般化しすぎている。環境省 底質調査方法の該当箇所は「水銀中空陰極ランプと重水素ランプを用いて指示値の差を求めておき、次に塩化すず（Ⅱ）溶液の添加を省略して同様の測定を行い、両指示値の差から水銀を定量する」である。これは揮発性有機物を含む試験溶液について、還元気化の水銀測定に限定された操作である。任意の被検元素に一般化せず、「水銀の還元気化測定で揮発性有機物の妨害を補正する操作例」と限定して書くこと。",
+        "肢2: 環境省資料に帰属させた「妨害物質による見かけの吸収を補正するため」という目的の記述は、証拠の抜粋文脈（「この種の揮発性有機物を含む試験溶液に対しては…」以降）に字句として現れない。直前段落で揮発性有機物が測定波長で吸収を示す旨が書かれているなら、その文を抜粋して根拠を明示すること。確認できないなら、同省資料の記述として断定しない表現に改めること。"
+      ],
+      "sourceIssues": [
+        "環境省 底質調査方法（https://www.env.go.jp/hourei/05/000178.html）: 照合済み抜粋は「重水素ランプなどによるバックグラウンド補正を行う」と操作(3)の文のみで、肢2理由の「見かけの吸収」という因果を直接は支えていない。「この種の揮発性有機物」が指す前文の抜粋が証拠に無い。",
+        "食品安全委員会 評価書（fileId=201&retrievalId=kya20030703091）: 出典タイトルと肢4理由で「確定版」と明記しているが、証拠の revisionInfo が null で、確定版であること（案・パブコメ版でないこと）が検証されていない。版を確認して記録するか、「確定版」の語を外すこと。なお抜粋自体（p.37「炭素管…大電流を流し、発生したジュール熱で炉温を高温に…グラファイト炉原子化法」）は肢4の理由を直接支えている。",
+        "動燃 PNC-TN841-71-36（JAEA公開）: claimedExcerpts が空で、テキストの機械照合がない。根拠はページ画像 p.23 §3-5「熱解離した原子は大部分基底状態にある」のみである。画像で内容は確認でき肢3を支えるが、再現性のため抜粋を claimedExcerpts に登録すること。"
+      ],
+      "needsExternalCheck": [
+        "環境省 底質調査方法 000178.html の該当節（水銀・揮発性有機物の前処理）直前段落に、揮発性有機物による見かけの吸収（正の誤差）を述べる文があるかを確認する。",
+        "食品安全委員会 kya20030703091 の fileId=201 文書が確定版評価書か、版・日付を確認する。"
+      ]
+    }
+  }
+}

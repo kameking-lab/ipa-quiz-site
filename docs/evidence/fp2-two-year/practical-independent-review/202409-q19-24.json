@@ -1,0 +1,88 @@
+[
+  {
+    "number": 19,
+    "approved": true,
+    "issues": [
+      "Minor: explain why (ア) is not 1月1日, which is the start date for refund returns only. Obligated taxpayers file from 2月16日 to 3月15日.",
+      "Minor: add that the 3-year period for (エ) is the general rule. Special cases such as 特定非常災害 are outside this question."
+    ],
+    "suggestedCorrection": "(ア) An obligated taxpayer files from 2月16日 to 3月15日 of the following year, so the answer is 3. 1月1日 is the start date for refund returns only. (イ)(ウ) A person with no filing obligation can file a refund return for 5 years starting 1月1日 of the following year, so the answers are 1 and 7. (エ) A blue-return filer can carry forward a net loss for up to 3 years from the following year as a general rule, so the answer is 6.",
+    "sourceQueries": [
+      "国税庁 タックスアンサー 確定申告 期間 2月16日 3月15日",
+      "国税庁 タックスアンサー 還付申告 5年間",
+      "国税庁 タックスアンサー 純損失の繰越控除 青色申告 3年"
+    ]
+  },
+  {
+    "number": 20,
+    "approved": true,
+    "issues": [
+      "Terminology: the explanation and choice 1 say 現金, but the question says 現預金. Use 現預金.",
+      "Minor: state the basis for 3 legal heirs (the spouse, the eldest daughter and the second daughter, with no renunciations). Also state that the spouse who receives the insurance is an heir, so the non-taxable limit applies.",
+      "Checked: 800+200+3,000+(3,000−500×3)−200 = 5,300万円. Choice 2 = 5,300+200. Choice 3 = 5,300+1,500. Choice 4 = 5,300+(4,000−800) = 8,500. All four choice reasons are consistent."
+    ],
+    "suggestedCorrection": "The legal heirs are the spouse, the eldest daughter and the second daughter, so there are 3. The non-taxable limit for life insurance is 500万円×3人 = 1,500万円, so 3,000−1,500 = 1,500万円 of the death benefit is taxable. The total taxable value is 土地800万円 (after the 小規模宅地等 special rule) + 建物200万円 + 現預金3,000万円 + 1,500万円 − 債務・葬式費用200万円 = 5,300万円. The answer is 1.",
+    "sourceQueries": [
+      "国税庁 タックスアンサー 相続税がかかる財産 生命保険金 非課税限度額 500万円×法定相続人の数",
+      "国税庁 タックスアンサー 相続財産から控除できる債務 葬式費用"
+    ]
+  },
+  {
+    "number": 21,
+    "approved": true,
+    "issues": [
+      "Minor: 準確定申告 counts from the day after the heir learned the inheritance began. 相続放棄 counts from when the heir learned it began. Keep the two starting points clearly separate in the explanation."
+    ],
+    "suggestedCorrection": "(ア) The inheritance-tax return is due within 10ヵ月 from the day after learning the inheritance began, so the answer is 4. (イ) The 準確定申告 is due within 4ヵ月 from the same day, so the answer is 3. (ウ)(エ) Renunciation must be declared to the 家庭裁判所 within 3ヵ月 from learning, for oneself, that the inheritance began (民法915条・938条), so the answers are 2 and 8.",
+    "sourceQueries": [
+      "国税庁 タックスアンサー 相続税の申告と納税 10か月以内",
+      "国税庁 タックスアンサー 準確定申告 4か月以内",
+      "裁判所 相続の放棄の申述 3か月以内 家庭裁判所"
+    ]
+  },
+  {
+    "number": 22,
+    "approved": false,
+    "issues": [
+      "Diagram placement not settled: the OCR shows only three 「(すでに死亡)」 markers. The text alone does not show which of the father, the older sister and the sister's husband each marker belongs to. It therefore cannot confirm whether the older sister is dead (the premise for the nephew and niece taking by representation).",
+      "Premises missing: the explanation does not state that there are no children (first-order heirs), that the older sister's husband is not an heir (he is an in-law), or that all siblings share both parents.",
+      "The draft itself has needsReview=true, and the question's figure image has not been checked."
+    ],
+    "suggestedCorrection": "After checking the figure image, state the premises: no children; the father and mother are dead; the older sister died before the deceased; her children, the nephew and the niece, inherit by representation. Explanation: the heirs are the spouse and the siblings. The spouse's share is 3/4 and the siblings share 1/4. The younger brother gets 1/4×1/2 = 1/8, so (ア) is 5. The nephew gets 1/8×1/2 = 1/16, so (イ) is 9. Siblings have no reserved share (遺留分). The overall reserved share is 1/2, and the spouse is the only person entitled to it, so the spouse's reserved share is 1/2 and (ウ) is 2.",
+    "sourceQueries": [
+      "日本FP協会 2級 実技 資産設計提案業務 2024年9月 問22 親族関係図",
+      "民法 900条 法定相続分 兄弟姉妹 代襲相続 887条 889条",
+      "民法 1042条 遺留分 兄弟姉妹 遺留分なし"
+    ]
+  },
+  {
+    "number": 23,
+    "approved": false,
+    "issues": [
+      "Diagram placement: the question field mixes in the 露木家 family data and cash-flow table, which belong to Q24 and later. The shared context needs to be split out.",
+      "Weak reason for choice 2: 350,000×1.00×300×70% is the 借地権 value itself (自用地価額×借地権割合). The draft's wording 「減額要素として乗じている」 does not explain this accurately.",
+      "Imprecise reason for choice 3: ×(1−70%) is exactly the formula for 貸宅地 (底地), where a ground lease is set. It is not 「近い式」, and the reason should say it is not the formula for 貸家建付地.",
+      "Checked: the 路線価 of 350C means 350千円/m², and C means a 借地権割合 of 70%. With 20m×15m = 300m², all units and conditions are consistent."
+    ],
+    "suggestedCorrection": "Choice 1 values the land as 自用地 (owner-used land), with no deduction for the rented building on it, so it is wrong. Choice 2 is 自用地価額×借地権割合, which is the value of a 借地権 (land-lease right), so it is wrong. Choice 3 is 自用地価額×(1−借地権割合), the formula for 貸宅地 (底地). Here the owner's own rental building stands on the land, so that formula does not apply and the choice is wrong. Choice 4 is correct: 貸家建付地 = 自用地価額×(1−借地権割合×借家権割合×賃貸割合). Every unit is rented, so the 賃貸割合 is 100%.",
+    "sourceQueries": [
+      "国税庁 タックスアンサー 貸家建付地の評価 借地権割合×借家権割合×賃貸割合",
+      "国税庁 タックスアンサー 貸宅地の評価 自用地価額×(1-借地権割合)",
+      "国税庁 路線価図 借地権割合 記号 C 70%"
+    ]
+  },
+  {
+    "number": 24,
+    "approved": false,
+    "issues": [
+      "Table placement not settled: the cash-flow table sits in Q23's question field. In the OCR the column for (ア) in the 基本生活費 row is unclear, so the text alone cannot confirm that it is the 2027 column (4 years after the base year).",
+      "Calculation checked: 312×1.02^4 = 337.72…, which rounds to 338万円 and matches the official answer. For comparison, 3 years gives 331 and 5 years gives 344, so only 4 years fits. Confirm against the image that the draft did not work backward from the answer.",
+      "Minor: the explanation should say that no rounding is done midway."
+    ],
+    "suggestedCorrection": "After confirming from the table image that (ア) is in the 2027 column: 基本生活費 = 312万円 in the base year × (1+2%)^4 = 337.718…万円. The question says not to round during the calculation and to round the result to the nearest 万円, so the answer is 338万円.",
+    "sourceQueries": [
+      "日本FP協会 2級 実技 資産設計提案業務 2024年9月 問24 キャッシュフロー表 基本生活費",
+      "キャッシュフロー表 将来値 計算式 現在値×(1+変動率)^経過年数"
+    ]
+  }
+]

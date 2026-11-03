@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20250323",
+  "subject": "theory",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 5210,
+      "cacheReadInputTokens": 2155,
+      "cacheCreationInputTokens": 18015,
+      "webSearchRequests": 0,
+      "costUSD": 0.248759,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 2877,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "cdb4525510791cea82fa6d717eb39f127d413e26b68d46c63a5724a14faa00fb",
+  "inputRequestSha256": "9c9d6d2f73bd3161c45fd6793e5a37634e36b502e3d35d0b66607893ce336d10",
+  "inputHashes": {
+    "candidateSha256": {
+      "q18a": "52236572397f5b31a8c8d5a66bd8321e2eb927a711f2975a7e756e981251e10c",
+      "q18b": "36d9b680582b0b89e6d042e21228efb41394d734c997b5790a9bd51820159e89"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20250323/theory/p24.png": "405f2a5753c5abf546b0b8ac13bc8c9bbcf354346fb686573b038e20d6872bbe",
+      "data/raw_pdfs/denken3/review/20250323/theory/p25.png": "b74c08845a39e2e36fb2f28c741b80980e73b9f26be230e4a1c3289c0dddb2a9"
+    },
+    "figureSha256": {
+      "public/images/denken3/20250323/theory/20250323-theory-q18-opamp-circuit-1.png": "7c97c06ecab5c4d359a55724576681ba410d1f324ab98c3c6a54a56b72211265",
+      "public/images/denken3/20250323/theory/20250323-theory-q18-opamp-circuit-2.png": "3071295684759173abe617193bfbc53d6ac7853ff515a57942ca57100768d9fb"
+    },
+    "sourceQuestionPdfSha256": "8817012cb55eed9c83bb1e68df138909b1e03a81f7ed48a9893a219e1d2a76ca",
+    "sourceAnswerPdfSha256": "4c3b38fcf1405766fafaa78b1b05b867a3d48307a670b9d354476bc6b32acd4c",
+    "officialAnswerUnitsSha256": "9f59c387771ed4d5f76df335f1e0d815e3a04649fa5979ac9381704112e754f2",
+    "referencePdfSha256": {},
+    "referencePageSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q18a",
+      "questionNumber": 18,
+      "part": "a",
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "原図の印刷頁は -21-／-22- で、下部の頁コードは T2−R 024／T2−R 025。reviewedFromPage [24, 25] と一致する。",
+        "選択問題の注記、問18の柱書、(a)の問題文（「誤っているもの」）を原図と照合した。文言の脱落や改変はない。",
+        "(1)〜(5)の全肢を原図と一字ずつ照合した。いずれも一致する。",
+        "公式正答単位は answer=2 で、officialAnswer=\"2\" と一致する。",
+        "総合解説の技術的内容は正しい。理想演算増幅器は入力インピーダンス∞・出力インピーダンス0であり、(2)は大小が逆なので誤りの記述になる。",
+        "(1)を検算した。演算増幅器はアナログICである。",
+        "(3)を検算した。反転（−）・非反転（+）の二入力と一出力をもつ。",
+        "(4)を検算した。出力は差動入力 V₊−V₋ を増幅したもので、理想では同相分を増幅しない。",
+        "(5)を検算した。開ループ利得は非常に大きく、理想では∞として扱う。",
+        "各肢の固有理由はいずれも妥当である。",
+        "この小問は図を使わず、figureUrls が空であることは正当である。",
+        "officialReferenceUrls は空で、検証を要する独立主張はない。",
+        "出典表記「令和6年度下期」は試験日 2025-03-23 と整合する。fiscalYear=2024・term=lower も整合する。"
+      ]
+    },
+    {
+      "unitKey": "q18b",
+      "questionNumber": 18,
+      "part": "b",
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [
+        "figureDescription に電圧矢印の向き（極性基準）の記述がない。原図では、Vᵢ₁・Vᵢ₂・Vₒ₁・Vₒ₂ の矢印はいずれも下側の共通線側から上側端子へ向いている。つまり上側端子が共通線に対して正となる基準である。正答(1)と誤答(2)(3)の区別は出力の極性だけで決まるため、この基準が文章説明に欠けていると文字情報だけでは符号が定まらない。図1・図2それぞれに「矢印は共通線から上側端子へ向き、上側端子が正の基準」を追記すること。公開候補図そのものには矢印が正しく描かれており、図の差し替えは不要である。"
+      ],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "原図の頁コード T2−R 024／025 と reviewedFromPage [24, 25] が一致する。",
+        "問題文を原図と照合した。Vₒ₁・Vₒ₂ の[V]、「理想的なもの」、Vᵢ₁=0.6 V、Vᵢ₂=0.45 V、「直流の入力電圧」のいずれも一致する。",
+        "(1)〜(5)の数値と符号を原図の表と全肢照合した。(1) 6.6/−3.0、(2) 6.6/3.0、(3) −6.6/3.0、(4) −4.5/9.0、(5) 4.5/−9.0 で、いずれも一致する。",
+        "公式正答単位は answer=1 で、officialAnswer=\"1\" と一致する。",
+        "図1の結線を原図と照合した。上側入力端子から+端子への水平配線は、共通線から立ち上がる縦配線を半円の跨ぎ記号で越えており、非接続である。縦配線は共通線の接続点から10 kΩを経て−端子に至る。−端子と出力の間では100 kΩと1 μFが並列で、両端に接続点がある。出力節点は接続点を経て Vₒ₁ 端子に出る。以上から非反転増幅回路と確定した。",
+        "図2の結線を原図と照合した。上側入力端子は30 kΩを経て−端子に至る。+端子は共通線上の接続点に接続される。−端子と出力の間では200 kΩと1 μFが並列である。以上から反転増幅回路と確定した。",
+        "図1を検算した。V₋=V₊=0.6 V、I=0.6/10 kΩ=0.06 mA、100 kΩ の降下は 6 V、Vₒ₁=6.6 V=(1+100/10)×0.6 となり、解説の計算は正しい。",
+        "図2を検算した。V₋=0 V、I=0.45/30 kΩ=0.015 mA で、この電流が200 kΩを出力側へ流れる。Vₒ₂=−0.015 mA×200 kΩ=−3.0 V=−(200/30)×0.45 となり、解説の計算と電流の向きは正しい。",
+        "直流定常状態では1 μFは開放として扱える。この扱いは設問の「直流の入力電圧」と整合する。",
+        "(1)は正答で、両値が計算と一致する。",
+        "(2)は Vₒ₂ の極性が誤りである。",
+        "(3)は両方の極性が誤りである。",
+        "(4)は両値とも不一致である。",
+        "(5)は Vₒ₂ の符号は合うが大きさが異なり、Vₒ₁ も不一致である。",
+        "各誤答肢の固有理由はいずれも正確である。",
+        "公開候補図1を原図と比較した。1 μF、100 kΩ、10 kΩ、−、+、▷∞、Vᵢ₁=0.6 V、Vₒ₁ [V]、図1 の全ラベル、跨ぎ記号、全接続点、両矢印を保持しており、欠落も改変もない。",
+        "公開候補図2を原図と比較した。1 μF、200 kΩ、30 kΩ、−、+、▷∞、Vᵢ₂=0.45 V、Vₒ₂ [V]、図2 の全ラベル、共通線上の接続点、両矢印を保持しており、欠落も改変もない。",
+        "公開候補図だけで解答に必要な結線と極性を判読できる。",
+        "officialReferenceUrls は空で、検証を要する独立主張はない。"
+      ]
+    }
+  ]
+}

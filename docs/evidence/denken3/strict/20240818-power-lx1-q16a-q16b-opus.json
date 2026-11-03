@@ -1,0 +1,92 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20240818",
+  "subject": "power",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 3828,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 15492,
+      "webSearchRequests": 0,
+      "costUSD": 0.2007598,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 2008,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "1e188f71fc43baf58d72a7ed3d2b2368caa6b1460ddfa9cb9479245b4ffd392e",
+  "inputRequestSha256": "15699db43808245277bc4ffd775faf43aa0423afe919de7a5f190f1c58b8019a",
+  "inputHashes": {
+    "candidateSha256": {
+      "q16a": "050e33fe5569fc902c811899fb59348f80464259d355dadcfc315ee5b4b2b16a",
+      "q16b": "e43d44632a4d500792a2c79558f9ebc4b184036e02900bdaf8073564e658ee45"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20240818/power/p21.png": "a1aadb2e71dc0b3b1d2c83eb148814a7e270bef5085b70445d5024004a8b1ec2"
+    },
+    "figureSha256": {},
+    "sourceQuestionPdfSha256": "0bc54a85819b9d9c80d1574c5b8c02a3c28976565d8c9068a3dd0344a3db5700",
+    "sourceAnswerPdfSha256": "f72ecbc3a477e64948388b69cf78cb931032c9f0c688639836c8d533a949cd0f",
+    "officialAnswerUnitsSha256": "b1151483ff8a005ba22c2aa5747bd44c31cc92fb735d317a4bae9d992b2de7b7",
+    "referencePdfSha256": {},
+    "referencePageSha256": {},
+    "referenceJsonSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q16a",
+      "questionNumber": 16,
+      "part": "a",
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [
+        "figureDescriptionの頁構成の記述が原図と一致しない。「問題文(共通条件)と(a)の設問文・選択肢(1)〜(5)の表のみで構成されている」とあるが、原図PDF第21頁(冊子頁-18-)には(b)の設問文と選択肢も掲載されている。",
+        "figureDescriptionが選択肢を「表」と記述しているが、原図では選択肢(1)5 (2)8 (3)12.5 (4)20 (5)25 は表ではなく一行に並べて列挙されている。「図なし。共通問題文と(a)(b)の設問文・選択肢の文章のみ」などへ修正が必要。"
+      ],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "原図PDF第21頁(冊子頁-18-、T1−D 021)で確認した。問題文は定格容量80MV・A、33kV/11kV、%Z=18.3%(定格容量ベース)、電源%Z=1.5%(系統基準容量80MV・Aベース)で、抵抗分等は無視。候補の本文は数値・単位・添字TAを含めて原図と一致する。",
+        "選択肢(1)5 (2)8 (3)12.5 (4)20 (5)25 [kA] は原図と一致する。",
+        "公式解答表の電力・問16(a)は5で、候補のofficialAnswer=5と一致する。",
+        "検算した。Ib=80×10^6/(√3×11×10^3)=80×10^6/19052.6≒4198.9A。%Z=18.3+1.5=19.8%(同一80MV・A基準のため単純加算可)。Isc=4198.9×100/19.8≒21206A≒21.21kA。",
+        "定格遮断電流は短絡電流以上である必要がある。20kAは不足し、25kAが最小の充足値である。各肢の理由(5/8/12.5/20kAは21.2kA未満で不足、25kAのみ充足)は正しい。",
+        "解答に必要な図は存在せず、figureUrls=[]は妥当である。",
+        "メタデータを照合した。fiscalYear=2024(令和6年度)、term=upper、examDate=2024-08-18、subject=power、reviewedFromPage=[21]、問題PDF/解答PDFのURLはいずれもmanifestと一致する。officialReferenceUrlsは空で、独立主張はない。"
+      ]
+    },
+    {
+      "unitKey": "q16b",
+      "questionNumber": 16,
+      "part": "b",
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [
+        "figureDescriptionの頁構成の記述が原図と一致しない。「(b)の設問文・選択肢(1)〜(5)の表のみで構成されている」とあるが、原図PDF第21頁には共通問題文と(a)の設問文・選択肢も掲載されている。",
+        "figureDescriptionが選択肢を「表」と記述しているが、原図では選択肢(1)15.8〜(5)24.6は表ではなく一行に列挙されている。"
+      ],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "原図PDF第21頁で確認した。(b)はTB(50MV・A、%Z=12.0%定格容量ベース)をTAと並列接続し、40MW負荷、TAとTBにはこの負荷のみ接続、抵抗分等は無視。候補の本文(共通条件+(b))は原図と一致する。",
+        "選択肢(1)15.8 (2)19.5 (3)20.5 (4)24.2 (5)24.6 [MW] は原図と一致する。",
+        "公式解答表の電力・問16(b)は3で、候補のofficialAnswer=3と一致する。",
+        "検算した。%Z_B(80MV・A基準)=12.0×80/50=19.2%。P_A=40×19.2/(18.3+19.2)=40×0.512=20.48MW≒20.5。",
+        "誤答肢の数値対応を検算し、すべて正しかった。(1) 40×12.0/30.3=15.84。(2) 40×18.3/37.5=19.52(TB分担)。(4) 40×18.3/30.3=24.16(基準未統一時のTB分担)。(5) 40×80/130=24.62。",
+        "uncertaintyに、誤答の想定経路は出題者意図を保証しないと明記されており、断定の過剰はない。",
+        "解答に必要な図は存在せず、figureUrls=[]は妥当である。",
+        "メタデータ(fiscalYear/term/examDate/subject/reviewedFromPage=[21]/PDF URL/sourceAttribution)はmanifestと一致する。officialReferenceUrlsは空で、独立主張はない。"
+      ]
+    }
+  ]
+}

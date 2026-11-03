@@ -127,7 +127,7 @@ export function buildGradingFallbackAlert(input: GradingFallbackAlertInput): str
     ? "出力上限で応答が途中終了（truncated）"
     : "AI 応答の解析に失敗";
   return [
-    `⚠️ [過去問AI] ${input.route} が簡易判定にフォールバックしました（課金は発生済み・利用者には simplified と開示）。`,
+    `⚠️ [過去問AI] ${input.route} のAI評価を完了できませんでした（呼出し使用量は記録済み・利用者には評価不能と表示）。`,
     `原因: ${cause}`,
     `問題: ${input.questionId} / モデル: ${input.model}`,
     `finishReason=${usage?.finishReason ?? "不明"} outputTokens=${usage?.outputTokens ?? "不明"} thoughtsTokens=${usage?.thoughtsTokens ?? "不明"} 応答文字数=${input.rawChars}`,

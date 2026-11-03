@@ -1,0 +1,25 @@
+{
+  "inputHashes": {
+    "reviewPromptVersion": "skill-source-v4",
+    "questionPdfSha256": "c2be902873d657feaad01f69d2c45e6c2d50eb275ca9302562decce350988c14",
+    "answerPdfSha256": "cf53df58412a0309e8f03c43f9e5c12a962c065160ddc43abb01dfe0f77c8a0b",
+    "extractedRecordSha256": "04b3cde7e3b8dc9cb2ac021c3e17668d4853f228ae5736e011b93c4636269790"
+  },
+  "reviewModel": "claude-opus-5-5",
+  "sourceItemId": "denko2-2025-07-20-skill-10",
+  "assessment": {
+    "status": "PASS",
+    "textIssues": [],
+    "diagramIssues": [],
+    "modelAnswerIssues": [],
+    "notes": [
+      "The exam instructions (40-minute limit, use every material except spares, and the four omission items 1–4 including the ―・―・― section) match page 2 of the problem PDF.",
+      "All 13 supplied materials match page 1 of the problem PDF. This covers wire size and core count (2.0mm-2C with a blue sheath, about 300mm; 1.6mm-2C, about 650mm; 1.6mm-3C, about 450mm), device names, the small and medium ring sleeves (2 each, spares included), and the 3-wire push-in connector (1). The '‥' before '１本' in item 1 is left over from the leader dots, so it is only a notation difference.",
+      "The installation conditions match page 3 of the problem PDF. This covers the pilot lamp switching on and off together with the ceiling rosette and lamp receptacle, the white and black wire colours, the four white-wire terminals (W, lamp base screw terminal, grounded side, and N), and the joint rules (3-wire joints by push-in connector, all other joints by ring sleeve).",
+      "The notes below the diagram (1. JIS C 0303:2000 and simplification; 2. Ⓡ means lamp receptacle) match the original.",
+      "The cropped diagramImage contains all of these without cut-offs: the ceiling rosette with its イ label, the B breaker, the power label 1φ2W 100V, the dash-dot construction-omitted area, the joint box, Ⓡ, the pilot lamp, switch and outlet, VVF 2.0-2C, VVF 1.6-2C ×2 and VVF 1.6-3C, and all four 150mm dimensions. The bottom of the outlet symbol sits right at the lower edge with almost no margin, but it is still readable. No secondFigureImage is needed because the problem has no figure 2.",
+      "The model answer PDF is labelled 令和7年度第二種上期 candidate No.10, so it is the same number as this problem. The concept diagram, wiring diagram and completed-work example all use the same layout: rosette at the top, breaker on the left, Ⓡ on the right, and pilot lamp, switch and outlet at the bottom. The connection points in the wiring diagram also match the supplied materials and conditions. The white wires are joined at one point with a medium sleeve (VVF2.0 plus 1.6). The black wires are joined at one point with a small sleeve. The switch return wire (red), the rosette black wire and the Ⓡ black wire are joined with the 3-wire push-in connector.",
+      "All numbers and wording in this problem appear as plain text in the original. No formulas or in-figure characters needed checking because they could not be extracted. This check covers only whether the extraction matches the original; no physical work was graded."
+    ]
+  }
+}

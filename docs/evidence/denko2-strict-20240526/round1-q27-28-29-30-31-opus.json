@@ -1,0 +1,86 @@
+{
+  "schemaVersion": 1,
+  "reviewModel": "claude-opus-5-5",
+  "inputHashes": {
+    "candidateSha256": {
+      "27": "5840c9cb414165f9af5ec2371c693ae987ab723822f4e4a8295f8b9d5470321a",
+      "28": "e7045ac7d5c88d9e4a3a37d41b6b338b9172ce9035678e64f44ccd371cf38d8d",
+      "29": "487863f520876d383fdc5d8277aa0b7862cbad7cd76e28f8f2faba7b53a4e9ae",
+      "30": "257b1d667f47a0d38df0969cdefe2c40abc7dbc60de53bc1bdd3b8055c279551",
+      "31": "ddedae556219f22a0218a54cd70e7e3ef1a39c17a05280aecb5ce5e6b4999ded"
+    },
+    "sourceCropSha256": {
+      "27": "6baa411f7c1814ccce7e8ed1646bb4c1be4b79dab52fc98343b6206f6cd46fba",
+      "28": "c8f9ada308739b0dacedfde70f2dec9fcc7c1d46e7209aee47233c9731ebd034",
+      "29": "6068d13943df545a05548befb34e702e76d5a624ab8d6a5f9d68f0e90ba787cb",
+      "30": "d70dd2e1228265381c5c2258c50501f40ce03078bc0b8bad81744814d2453d03",
+      "31": "b580dcd00adf46a8be8ae893fb54cda930b70a0feb12572cf4dd22c7ebf8dde3"
+    }
+  },
+  "assessment": [
+    {
+      "number": 27,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "visualIssues": [],
+      "sourceIssues": [
+        "explanation・choiceExplanations.ロ・diagramDescriptionは、左下の記号を『可動鉄片形の動作原理記号』と断定している。しかしこの図記号の主張には、officialReferenceUrlsがない。官公庁ドメイン（meti.go.jp、mlit.go.jp、e-gov.go.jp、shiken.or.jp）も検索したが、計器の動作原理記号（可動鉄片形・永久磁石可動コイル形）や水平置き記号を定義した一次資料は見つからなかった。公式正答ロからは『永久磁石可動コイル形ではない』ことと、イ・ハ・ニが正しい記述であることまでは言える。しかし記号が可動鉄片形だという特定は裏付けがない。一次資料のURLを追加するか、記述を公式正答から導ける範囲に絞る必要がある。"
+      ],
+      "verifiedEvidence": "公式原図（目盛板のV・交流の波線・左下記号・水平記号・階級1.0）と公式正答ロを照合。問題文・全肢・図切出しq27.pngは原図と一致。官公庁ドメインでは可動鉄片形記号の一次資料を確認できず。"
+    },
+    {
+      "number": 28,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "visualIssues": [],
+      "sourceIssues": [
+        "施行規則の参照URL（335M50000400097/20220401_503M60000400021）は令和3年省令第21号による2022-04-01版を指している。この版はその後、2022-04-01（令和4年省令33号）、2022-12-01、2023-03-20（令和4年省令96号。『一般用電気工作物等』へ改正）、2023-04-01、2023-07-05、2023-12-28（令和5年省令63号）に改正されている。2024年度上期試験の時点で効力のある版は20231228_505M60000400063版なので、そちらへ差し替えるべき（条文の内容は現行版で確認済み）。"
+      ],
+      "verifiedEvidence": "e-Gov 電気工事士法施行規則（現行版をAPIで取得）第2条第2項第一号を確認。同号イは第1項第一号イ〜ヌ及びヲを準用する。そのうちニ『電線管、線樋、ダクト等に電線を収める作業』、ヘ『電線管を曲げ…る作業』、ヌ『配電盤を造営材に取り付け…る作業』が該当する。同号ロ『接地極を地面に埋設する作業』も確認した。いずれも軽微な作業から除かれる。施行令第1条（20230401_504CO0000000365版は試験時点で効力あり）では、第一号（600V以下の差込み接続器へのコード接続）、第三号（600V以下の電力量計の取付け）、第五号（電線を支持する柱の設置）、第六号（地中電線用の暗渠又は管の設置）を確認した。以上から正答イと全肢の理由が正しいことを確認。"
+    },
+    {
+      "number": 29,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "visualIssues": [],
+      "sourceIssues": [
+        "officialReferenceUrlsのMETIガイド（denan_guide_ver501.pdf）はWebFetchでHTTP 403となり、内容を確認できない。METIのサイトには2023-10-01付の『法令業務実施手引書 Ver5.0.2』（denan_guide_ver502.pdf）があり、ver501はそれより古い版とみられる。",
+        "ロの根拠となる『電線、ヒューズ、配線器具等の部品材料であって構造上表示スペースを確保することが困難なものは記号に代えて<PS>Eとできる』旨を一次資料で確認できなかった。e-Govの電気用品安全法施行規則では別表第六・第七がPDF図版で、本文を抽出できず、METIの資料は403だった。e-Govの施行規則別表第六を直接示すURLなど、取得して確認できる一次資料の追加が必要。"
+      ],
+      "verifiedEvidence": "e-Gov 電気用品安全法で以下を確認：第8条（基準適合義務・自主検査）、第9条（特定電気用品の登録検査機関による適合性検査と証明書の保存）、第10条（表示）、第27条第1項（表示のない電気用品の販売・陳列の禁止）。e-Gov 同法施行規則第17条第1項第一号で、特定電気用品の表示は別表第六の記号（菱形PSE）、同第二号で特定電気用品以外は別表第七の記号（丸形PSE）と確認。公式原図の菱形・丸形記号と図切出し2点が一致し、公式正答はハ。"
+    },
+    {
+      "number": 30,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "visualIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": "e-Gov 電気設備に関する技術基準を定める省令（20230320_504M60000400096。改正履歴上、これが最新で試験時点でも効力あり）で以下を確認：第1条第一号『電路とは通常の使用状態で電気が通じているところ』、第二号『電気機械器具とは電路を構成する機械器具』、電線の定義（強電流電気の伝送に使用する電気導体等）、第2条第1項（低圧・高圧・特別高圧の三種別）、第4条（感電・火災等の防止）。公式正答ニと全肢の理由が一致。"
+    },
+    {
+      "number": 31,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "visualIssues": [],
+      "sourceIssues": [
+        "officialReferenceUrlsのhttps://www.mlit.go.jp/koku/content/001611774.pdfは、官公庁ドメインの検索で『令和５年版 航空無線工事標準図面集（国土交通省航空局交通管制部管制技術課）』と判明した。屋内配線図記号（リモコンセレクタスイッチ等）の定義資料ではない。WebFetchでも本文を抽出できず、①の記号がリモコンセレクタスイッチであることを直接裏付けると確認できなかった。屋内配線用図記号を直接示す一次資料に差し替える必要がある。"
+      ],
+      "verifiedEvidence": "公式共通配線図（15頁）を照合した。①の引出線は『分電盤へ』矢印の右端にある、円内に交差線を持つ記号（傍記『6 ⓐ～ⓕ用』）を指している。電灯分電盤結線図ではリモコンリレー群（▲）に『6』と傍記があり、出力は◎a～◎fである。凡例では◎a～◎gが単相200V回路。図切出しwiring-main.png・wiring-panels.png・q31-symbol.pngは原図と一致。公式正答イと整合。"
+    }
+  ]
+}

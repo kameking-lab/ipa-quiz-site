@@ -1,0 +1,75 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20250831",
+  "subject": "theory",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 4888,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 15210,
+      "webSearchRequests": 0,
+      "costUSD": 0.2197038,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 2924,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "56197e2a37643424576f532c40ba4cdacad09dc3f46409417a87a453086942ca",
+  "inputRequestSha256": "db9b26ffe9512438fe1eb00e34695d4ab0157e1c2537a9b105a892a1e471afeb",
+  "inputHashes": {
+    "candidateSha256": {
+      "q06": "a825772e6c2f7658784815ef66ffdd9416d6627594000aca4517f6443deba659"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20250831/theory/p09.png": "e6797a2124a054d2e52e4c8a187e7793938af0cfbab27c65183d22f6e327755b"
+    },
+    "figureSha256": {
+      "public/images/denken3/20250831/theory/20250831-theory-q06-fig1.png": "3a011f065dbee57f39a979aa38798d2131fe62d9fac426851b2bdf35c9ee8677"
+    },
+    "sourceQuestionPdfSha256": "11a75ffd5dd2b5309ad75370bb963c4fda9e12a812174cfa2c2237383c3a964d",
+    "sourceAnswerPdfSha256": "76fd3715ed487d19a56b387fb402de20ee09474e9fa55b0413f9037b96af06c9",
+    "officialAnswerUnitsSha256": "f54a6b7f2a8c8cf03afc87bea8677f943a595f0cdc61d70f34b47500927eb0b3",
+    "referencePdfSha256": {},
+    "referencePageSha256": {},
+    "referenceJsonSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q06",
+      "questionNumber": 6,
+      "part": null,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [
+        "choiceExplanations[3]（0.32）は「計算結果 I ≒ 0.444 A と一致しない」だけで、この肢に固有の誤りの理由がない。修正案：『誤り。b–c間を短絡すると回路の合成抵抗は図1の250 Ωから225 Ωへ減るので、電流は図1の0.40 Aより大きくなるはずである。0.32 Aは0.40 Aより小さく、短絡で電流が増えるという関係と逆になっている。正しくは I = 100/225 ≒ 0.444 A。』",
+        "choiceExplanations[5]（0.10）も「計算結果と一致しない」だけで、固有の理由がない。修正案：『誤り。0.10 Aは図1の電流0.40 Aのさらに1/4であり、短絡で合成抵抗が減り電流が増えるという関係に反する。短絡後は100 VがR₁(225 Ω)だけに加わるので I = 100/225 ≒ 0.444 A。』"
+      ],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [
+        "uncertaintyの「電源記号に＋／－の表記はない」は不正確。電池記号の長い極板・短い極板で極性は判別できる（原図・公開候補図とも、長い極板が上側で端子a側）。a側が正極なら電流は a→R₁→b→短絡線→c と流れ、図3の下向き矢印 I と同じ向きになる。したがって I は正の値 0.444 A となる。uncertaintyの記述を『電源記号の長い極板（正極）がa側にあり、Iの矢印方向（b→c）と電流の向きは一致する』に改めるべき。"
+      ],
+      "sourceIssues": [
+        "uncertaintyに「試験年度・実施回および科目名はこのページ内に明記されていないため特定できない」とある一方、同じレコードの fiscalYear=2025 / term=upper / subject=theory / sourceAttribution「令和7年度上期…理論科目 問6」はそれらを確定値として扱っており、記述が矛盾している。添付の公式解答表見出し『令和7年度 第三種電気主任技術者上期試験解答』で年度・実施回は確認できる。科目も、理論列の問6の解答=2が manifest の公式正答と一致し、出題内容も直流回路で理論分野に合致する。uncertaintyを確認済みの内容に更新するか、この記述を削除すべき。また、不確実事項を残したまま needsReview=false としている点も整合していない。"
+      ],
+      "verifiedEvidence": [
+        "問題文：原図の問6本文と一字一句照合した。100 V、10 V、15 Ω、4 V、端子a–c／b–c、『並列に追加』『短絡』、電流I[A]、『最も近いもの』『(1)～(5)のうちから一つ選べ』がすべて一致した。",
+        "選択肢：原図の (1) 0.0、(2) 0.44、(3) 0.32、(4) 0.40、(5) 0.10 と候補の choices が完全に一致した。",
+        "公式正答：公式解答表の理論・問6の解答は2（配点5）。manifest の q06 単位 {answer:'2', points:5}、候補の officialAnswer='2'、scoringPoints=5 と一致した。",
+        "計算の検算：図1より R₁:R₂=90:10 なので R₁=9R₂。図2より R₁=24Rₚ、Rₚ=15R₂/(R₂+15) なので 9(R₂+15)=360 となり、R₂=25 Ω、R₁=225 Ω。図1では 100×25/250=10 V、図2では Rₚ=9.375 Ω、100×9.375/234.375=4.00 V となり、どちらも問題文と一致した。図3では I=100/225=0.4444 A で、最も近い肢は (2) 0.44。",
+        "総合解説の因果：短絡によりR₂の両端電圧が0 Vになり、全電流が短絡線を流れるので I=100/R₁ となる。この論理は正しい。",
+        "choiceExplanations の (1)(2)(4)：内容は正しい。(4) の『図1の回路電流 100/250=0.40 A』は、この肢に固有の誤答の由来として妥当である。",
+        "公開候補図 fig1.png：原図の図1〜図3を過不足なく切り出している。接続（R₁・R₂の直列、図2の15 ΩとR₂の並列、図3のb–c短絡線）、端子a・b・c、R₁[Ω]・R₂[Ω]・100 V・10 V・15Ω・4 V・I[A]の全ラベル、Iの矢印（下向き、b→c）が原図と一致した。本文や選択肢は混入しておらず、この図だけで解答に必要な情報が読み取れる。",
+        "figureDescription：図1〜図3の構成、測定箇所、Iの矢印の向き（b→c）の記述は原図と一致した。",
+        "出典ページ：原図の印刷ページ番号は『- 6 -』（ページ下部に『T1－R 009』）。reviewedFromPage=[9] はPDFのページ番号であり、表紙や注意事項のページを含むPDFで印刷ページ6がPDFの9ページ目になることと矛盾しない。",
+        "officialReferenceUrls は空配列で、検証が必要な独立主張はない。"
+      ]
+    }
+  ]
+}

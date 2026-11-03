@@ -1,0 +1,39 @@
+{
+  "status": "partial-accepted",
+  "date": "20240818",
+  "subject": "law",
+  "questionCount": 1,
+  "answerUnitCount": 1,
+  "choiceCount": 5,
+  "sourceQuestionPdfSha256": "5dbba8b8e4ec681d2d5f0645a3895a6e218d936519ddd18ac544ddc461a1ae78",
+  "sourceAnswerPdfSha256": "f72ecbc3a477e64948388b69cf78cb931032c9f0c688639836c8d533a949cd0f",
+  "reviewedDataSha256": "7240768f2b9cbe74509346b55cb94589375ac988c16c2aabf92cf8ed4c051c2d",
+  "questions": [
+    {
+      "number": 5,
+      "sourceDraftSha256": "cbc4a5be896e80a3d703ccdc8a5fe286d318de70781f98a2edc433263bda5cd6",
+      "opusReceipt": "data/raw_pdfs/denken3/review/20240818/law/q05-opus-review.json",
+      "opusReceiptSha256": "db27158b97674bdcf0f1e7605c76051872f00631bd6d9cd530cd309bf896e65e",
+      "assessment": {
+        "number": 5,
+        "status": "PASS",
+        "textIssues": [],
+        "choiceIssues": [],
+        "explanationIssues": [],
+        "figureIssues": [],
+        "externalSourceIssues": [
+          "choiceExplanations(2)(4)で示す条項番号（省令第5条第1項第1号・第2号、同条第3項）と、officialReferenceUrls（METI逐条解説PDF 6〜7頁）が正しいかは、問題画像だけでは確認できない。現行の省令条文と照らし合わせて外部確認が必要。"
+        ]
+      },
+      "figureSha256": {}
+    }
+  ],
+  "strictReview": {
+    "q05": {
+      "path": "docs/evidence/denken3/strict/20240818-law-l14-q05-opus.json",
+      "sha256": "50c36aeb22e5d529563a0c0958aa983465eb2b04ce82e4156612271324b0b8e8",
+      "status": "PASS",
+      "resolvedModel": "claude-opus-5-5"
+    }
+  }
+}

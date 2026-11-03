@@ -1,0 +1,46 @@
+{
+  "paperId": "emkohyo-EM20251805",
+  "molarVolumeLiterPerMol25C1Atm": 24.46540369703822,
+  "formula": "ppm=(collected microgram / sampled liter / molecular weight gram per mol) * molar volume liter per mol",
+  "questions": {
+    "18": {
+      "recoveredMicrogram": 23.333333333333332,
+      "sampledLiter": 0.18,
+      "molecularWeight": 72.1,
+      "officialChoice": 2,
+      "choicePpm": [
+        22,
+        44,
+        66,
+        88,
+        110
+      ],
+      "ppm": 43.9867020802557,
+      "nearestChoice": 2,
+      "rowTextSha256": "e6829f296107bf837018b7e7bf06c166031282bfcbab79fdb3f324d5a17fc9a9",
+      "officialImageSha256": {
+        "/exam-library/emkohyo-EM20251805/q18-p10-1.webp": "03e2918329a3b1f0b628fa5d0714ea7800d92fa53b2c3750193b3611d3e368ea"
+      }
+    },
+    "19": {
+      "recoveredMicrogram": 677.8947368421053,
+      "sampledLiter": 6.0,
+      "molecularWeight": 92.1,
+      "officialChoice": 5,
+      "choicePpm": [
+        3,
+        5,
+        10,
+        20,
+        30
+      ],
+      "ppm": 30.01261020799782,
+      "nearestChoice": 5,
+      "rowTextSha256": "01055d87fb6f293b785e70a42edb023d87069e315f99f9f4fdb68c135b9b4168",
+      "officialImageSha256": {
+        "/exam-library/emkohyo-EM20251805/q19-p11-0.webp": "c2077b1446d9211917a448545904d9c5599b157f5aaea9bbb5616c6255c53953"
+      }
+    }
+  },
+  "acceptance": "arithmetic audit only; independent five-choice/source review required"
+}

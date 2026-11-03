@@ -1,0 +1,76 @@
+{
+  "status": "INDEPENDENT_REVIEW_COMPLETED_PUBLICATION_HOLD",
+  "reviewedAt": "2026-09-28",
+  "scope": "令和7年度第一種電気工事士下期学科試験・問21〜24および26の解説草案20肢",
+  "draftPath": "docs/evidence/denko1-2025-lower-hold/reason-draft-q21-24-26.json",
+  "draftSha256": "10de47476e9503e7613a31d9acd6231375785bddf5f63851954f7e301e03ee77",
+  "officialQuestionPdf": "https://www.shiken.or.jp/construction/upload/20251005_co_first_q01.pdf",
+  "officialQuestionPdfSha256": "635c811dbee7dd6c5605c856a8250285a4c99ef80a0609793600cb0d011ef451",
+  "officialAnswerPdf": "https://www.shiken.or.jp/construction/upload/20251005_co_first_a01.pdf",
+  "reviewedQuestionCount": 5,
+  "reviewedChoiceCount": 20,
+  "answerKeyMismatchCount": 0,
+  "materialCorrectionCount": 0,
+  "precisionSuggestionCount": 2,
+  "publicationApprovedCount": 0,
+  "publicationNote": "公式図・解答との独立照合結果であり、公開承認ではない。元の草案と公開設定は未変更。公開HOLDを維持する。",
+  "sources": [
+    { "url": "https://jeea.or.jp/course/contents/05204/", "supports": "JISキュービクルのCB形4000kVA以下、PF・S形300kVA以下" },
+    { "url": "https://alma-prod.nichicon.co.jp/products/power_solution/phase_leading.html", "supports": "高圧進相コンデンサ用直列リアクトルの高調波ひずみ改善用途" },
+    { "url": "https://www.safety-shikoku.meti.go.jp/03_electric/electric_hyosyo_seminar/electric_seminar/r7_seminar/2025semina.pdf", "supports": "SOGのG動作とSO動作。SOは電力側変電所の動作による無電圧後にPAS開放し、配電線は一度停電する" },
+    { "url": "https://www.meti.go.jp/policy/safety_security/industrial_safety/oshirase/2018/09/300928-5.pdf", "supports": "2種金属製可とう電線管の機械的強度・耐水性能は1種より優れる" },
+    { "url": "https://www.meti.go.jp/policy/safety_security/industrial_safety/oshirase/2011/07/230701-2-5.pdf", "supports": "1種金属製可とう電線管の厚さ0.8mm以上" }
+  ],
+  "questions": [
+    {
+      "number": 21, "questionPdfPage": 7, "officialAnswer": "ロ", "draftAnswerMatches": true,
+      "choiceReviews": {
+        "イ": "PASS: 500kVAのCB形はJISキュービクルCB形の4000kVA以下に入る。",
+        "ロ": "PASS: 400kVAのPF・S形は300kVA上限を超え、不適切。",
+        "ハ": "PASS: 300kVAのCB形は4000kVA以下に入る。",
+        "ニ": "PASS: 200kVAのPF・S形は300kVA以下に入る。"
+      }
+    },
+    {
+      "number": 22, "questionPdfPage": 8, "officialAnswer": "ロ", "draftAnswerMatches": true,
+      "figureCheck": "公式PDF p.8の写真を高解像度で視認。上部に6つの同形端子を備える箱形機器で、直列リアクトルの外観・公式正答ロの高調波抑制用途と整合する。銘板が読めず、メーカー・型式・内部構造は確定できない。",
+      "choiceReviews": {
+        "イ": "PASS: 大電流を小電流に変成するのは変流器の用途で、公式写真の正答用途ではない。",
+        "ロ": "PASS_WITH_PRECISION_SUGGESTION: 高調波抑制は公式解答ロ。直列リアクトルと整合するが、型式・構造は写真のみでは特定しない草案の留保は適切。",
+        "ハ": "PASS: 力率改善は主に進相コンデンサの役割で、写真の機器の直接用途としての公式正答ではない。",
+        "ニ": "PASS: 高電圧を低電圧に変成するのは変圧器等の用途で、公式正答ではない。"
+      },
+      "proposedPrecisionEdit": { "choice": "ロ", "replaceWith": "写真は上部に同形の端子を複数備えた機器で、高圧進相コンデンサ用直列リアクトルの外観・高調波抑制用途と整合する。公式正答はロ。銘板が読めないため、型式やメーカーは特定しない。" }
+    },
+    {
+      "number": 23, "questionPdfPage": 8, "officialAnswer": "ニ", "draftAnswerMatches": true,
+      "figureCheck": "公式PDF p.8にGR付PASの写真とSOGの四肢を確認。短絡に関するハとニの違いは、一般送配電事業者の配電線が一時停止するかどうか。",
+      "choiceReviews": {
+        "イ": "PASS: 需要家事故を切り離し波及事故を抑える目的に合う。",
+        "ロ": "PASS: G動作は地絡を検出してPASを開放し、配電線の停電を避けるという資料の説明に合う。正常動作・保護協調が前提。",
+        "ハ": "PASS: SO動作はロック電流値以上の短絡事故時にPASを通電中に開かず、電力側の上流遮断で配電線が一時停電・無電圧になった後にPASを開放する。",
+        "ニ": "PASS: SO動作では上流側の一時停電を伴うため、『配電線を停止させることなく短絡電流を自動遮断』は誤り。PAS単独で短絡大電流を遮断する説明にもならない。"
+      },
+      "proposedPrecisionEdit": { "scope": "principle", "replaceWith": "SOGのG動作は需要家側地絡時にPASを開放する。SO動作はロック電流値以上の短絡過電流時にPASの通電中開放を避け、上流の電力側遮断器による一時停電・無電圧を受けてPASを開放し、再送電前に事故点を切り離す。配電線は一度停電する。" }
+    },
+    {
+      "number": 24, "questionPdfPage": 8, "officialAnswer": "イ", "draftAnswerMatches": true,
+      "choiceReviews": {
+        "イ": "PASS: 1種が2種より耐水性に優れるという記述は逆。METI解説は2種の優位を明示。",
+        "ロ": "PASS: METI電技解釈第160条解説は金属製可とう電線管への電気用品安全法適用を示す。",
+        "ハ": "PASS: 1種の厚さ0.8mm以上はMETI電技解釈に合う。",
+        "ニ": "PASS: 金属製可とう電線管の可とう性を説明している。"
+      }
+    },
+    {
+      "number": 26, "questionPdfPage": 8, "officialAnswer": "ニ", "draftAnswerMatches": true,
+      "figureCheck": "公式PDF p.8の写真を視認。ロープ・把持金具・レバー付きの手持ち張力工具。",
+      "choiceReviews": {
+        "イ": "PASS: ねじ締付けトルクを管理するレンチの形状・用途ではない。",
+        "ロ": "PASS: 管路へ呼び線を送り込む器具の形状・用途ではない。",
+        "ハ": "PASS: ドラムを支持するケーブルジャッキの形状・用途ではない。",
+        "ニ": "PASS: 張線器のロープ・把持金具・レバーによる引張り機構に合う。"
+      }
+    }
+  ]
+}

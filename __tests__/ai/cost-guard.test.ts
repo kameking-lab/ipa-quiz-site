@@ -98,13 +98,18 @@ describe("cost-guard monthly cap", () => {
     expect(status.allowed).toBe(false);
   });
 
-  it("allows (degrades open) when KV is not configured", async () => {
+  it("fails closed for real providers when KV is not configured; mock incurs no spend", async () => {
     vi.stubEnv("KV_REST_API_URL", "");
     vi.stubEnv("KV_REST_API_TOKEN", "");
-    installKvMock();
+    const { fetchMock } = installKvMock();
     const { checkMonthlyCostCap } = await import("@/lib/ai/cost-guard");
-    const status = await checkMonthlyCostCap();
-    expect(status.allowed).toBe(true);
+    for (const provider of [undefined, "gemini"]) {
+      expect(await checkMonthlyCostCap(provider)).toEqual({
+        allowed: false, totalJpy: null, capJpy: 50_000, reason: "budget_unavailable",
+      });
+    }
+    expect(await checkMonthlyCostCap("mock")).toEqual({ allowed: true, totalJpy: 0, capJpy: 50_000 });
+    expect(fetchMock).not.toHaveBeenCalled();
   });
 
   it("sends a Slack warning the first time ¥40,000 is crossed, once only", async () => {

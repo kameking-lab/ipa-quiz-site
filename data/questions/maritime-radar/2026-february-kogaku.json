@@ -1,0 +1,476 @@
+[
+  {
+    "id": "radio21-maritime-radar-2026-02-kogaku-q13",
+    "exam": "maritime-radar",
+    "session": "kogaku",
+    "year": 2026,
+    "season": "february",
+    "qNumber": 13,
+    "officialAnswerNumber": "3",
+    "type": "multiple-choice",
+    "category": "無線工学",
+    "subject": "無線工学",
+    "topicTags": [
+      "無線工学"
+    ],
+    "difficulty": 2,
+    "question": "図に示す電気回路において、電源電圧Eの大きさを2分の1倍（1/2倍）にすると、抵抗Rで消費される電力は、何倍になるか。次のうちから選べ。",
+    "choices": {
+      "ア": "2倍",
+      "イ": "1/2倍",
+      "ウ": "1/4倍",
+      "エ": "1/8倍"
+    },
+    "answer": "ウ",
+    "explanation": "P=E²/RにE'=E/2を代入すると、P'=(E/2)²/R=P/4となるため正しい。",
+    "choiceExplanations": {
+      "ア": "電圧を低下させると抵抗の消費電力も低下する。P=E²/Rから計算される値はP/4であり、2倍ではない。",
+      "イ": "抵抗値一定では電力は電圧に単純比例せず、電圧の2乗に比例するため、1/2倍ではない。",
+      "ウ": "P=E²/RにE'=E/2を代入すると、P'=(E/2)²/R=P/4となるため正しい。",
+      "エ": "電圧を半分にしたときの電力比は(E/2)²/E²=1/4であり、1/8ではない。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kai-toku-re-kogaku.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kai-toku-re-kogaku-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 レーダー級海上特殊無線技士試験 2026年2月期 無線工学 問13（問題・正答）。解説は過去問AIが独自作成。図は原典から切り出し。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-10-15",
+    "imageUrls": [
+      "/images/questions/maritime-radar/radio21-maritime-radar-2026-02-kogaku-q13-original.png"
+    ],
+    "imageAltTexts": [
+      "公式問13の図と選択肢（原典配置）"
+    ]
+  },
+  {
+    "id": "radio21-maritime-radar-2026-02-kogaku-q14",
+    "exam": "maritime-radar",
+    "session": "kogaku",
+    "year": 2026,
+    "season": "february",
+    "qNumber": 14,
+    "officialAnswerNumber": "3",
+    "type": "multiple-choice",
+    "category": "無線工学",
+    "subject": "無線工学",
+    "topicTags": [
+      "無線工学"
+    ],
+    "difficulty": 2,
+    "question": "船舶用レーダーにマイクロ波が用いられる理由で、誤っているのはどれか。次のうちから選べ。",
+    "choices": {
+      "ア": "小さな物標からでも反射がある。",
+      "イ": "尖鋭なビームを得ることが容易である。",
+      "ウ": "豪雨、豪雪でも小さな物標が見分けられる。",
+      "エ": "空電の妨害を受けることが少ない。"
+    },
+    "answer": "ウ",
+    "explanation": "豪雨や豪雪からも反射が生じ、雨雪クラッタによって小さな物標の識別が困難になることがあるため、この記述が誤りである。",
+    "choiceExplanations": {
+      "ア": "マイクロ波は波長が短く、小さな物標からの反射を得やすいため、用いられる理由として正しい。",
+      "イ": "波長が短いため、実用的な寸法のアンテナで狭いビーム幅を得やすく、用いられる理由として正しい。",
+      "ウ": "豪雨や豪雪からも反射が生じ、雨雪クラッタによって小さな物標の識別が困難になることがあるため、この記述が誤りである。",
+      "エ": "マイクロ波帯では空電の影響が比較的小さいため、用いられる理由として正しい。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kai-toku-re-kogaku.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kai-toku-re-kogaku-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 レーダー級海上特殊無線技士試験 2026年2月期 無線工学 問14（問題・正答）。解説は過去問AIが独自作成。図は原典から切り出し。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-10-15"
+  },
+  {
+    "id": "radio21-maritime-radar-2026-02-kogaku-q15",
+    "exam": "maritime-radar",
+    "session": "kogaku",
+    "year": 2026,
+    "season": "february",
+    "qNumber": 15,
+    "officialAnswerNumber": "3",
+    "type": "multiple-choice",
+    "category": "無線工学",
+    "subject": "無線工学",
+    "topicTags": [
+      "無線工学"
+    ],
+    "difficulty": 2,
+    "question": "次の記述において［　］内に入れるべき字句の正しい組合せを下の番号から選べ。\n\nレーダーのパルス変調器は、0.1～1［μs］のような極めて短い時間だけ持続する高圧を発生し、この期間だけ［A］を動作させ［B］波を発振させる。",
+    "choices": {
+      "ア": "A：進行波管　B：UHF",
+      "イ": "A：マグネトロン　B：VHF",
+      "ウ": "A：マグネトロン　B：マイクロ",
+      "エ": "A：進行波管　B：マイクロ"
+    },
+    "answer": "ウ",
+    "explanation": "短時間の高圧パルスでマグネトロンを動作させ、マイクロ波パルスを発振させる組合せであり正しい。",
+    "choiceExplanations": {
+      "ア": "パルス変調器で駆動される代表的な船舶用レーダー送信発振器はマグネトロンであり、発生させるのはマイクロ波であるため誤り。",
+      "イ": "Aは合うが、船舶用レーダーの送信波はVHFではなくマイクロ波であるため誤り。",
+      "ウ": "短時間の高圧パルスでマグネトロンを動作させ、マイクロ波パルスを発振させる組合せであり正しい。",
+      "エ": "Bは合うが、ここでパルス変調器によって動作させる発振器として示されるのは進行波管ではなくマグネトロンであるため誤り。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kai-toku-re-kogaku.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kai-toku-re-kogaku-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 レーダー級海上特殊無線技士試験 2026年2月期 無線工学 問15（問題・正答）。解説は過去問AIが独自作成。図は原典から切り出し。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-10-15"
+  },
+  {
+    "id": "radio21-maritime-radar-2026-02-kogaku-q16",
+    "exam": "maritime-radar",
+    "session": "kogaku",
+    "year": 2026,
+    "season": "february",
+    "qNumber": 16,
+    "officialAnswerNumber": "4",
+    "type": "multiple-choice",
+    "category": "無線工学",
+    "subject": "無線工学",
+    "topicTags": [
+      "無線工学"
+    ],
+    "difficulty": 2,
+    "question": "船舶用レーダーで、船体の大きな揺れにより物標を見失わないようにするため、どのような対策がとられているか。次のうちから選べ。",
+    "choices": {
+      "ア": "パルス幅を広くする。",
+      "イ": "アンテナの水平面内のビーム幅を広くする。",
+      "ウ": "アンテナの取付け位置を低くする。",
+      "エ": "アンテナの垂直面内のビーム幅を広くする。"
+    },
+    "answer": "エ",
+    "explanation": "垂直面内ビーム幅を広くすれば船体が大きく揺れても物標がビームから外れにくくなるため正しい。",
+    "choiceExplanations": {
+      "ア": "パルス幅は主として送信パルスのエネルギー、距離分解能および最小探知距離に関係し、船体の揺れに伴う上下方向の照射外れを直接防ぐ対策ではない。",
+      "イ": "船体の横揺れや縦揺れによる主な照射方向の変化は垂直方向に現れるため、水平面内ビーム幅を広げる対策ではない。",
+      "ウ": "取付け位置を低くするとレーダー見通し距離が短くなり得るうえ、揺れによる照射外れへの基本的対策ではない。",
+      "エ": "垂直面内ビーム幅を広くすれば船体が大きく揺れても物標がビームから外れにくくなるため正しい。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kai-toku-re-kogaku.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kai-toku-re-kogaku-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 レーダー級海上特殊無線技士試験 2026年2月期 無線工学 問16（問題・正答）。解説は過去問AIが独自作成。図は原典から切り出し。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-10-15"
+  },
+  {
+    "id": "radio21-maritime-radar-2026-02-kogaku-q17",
+    "exam": "maritime-radar",
+    "session": "kogaku",
+    "year": 2026,
+    "season": "february",
+    "qNumber": 17,
+    "officialAnswerNumber": "1",
+    "type": "multiple-choice",
+    "category": "無線工学",
+    "subject": "無線工学",
+    "topicTags": [
+      "無線工学"
+    ],
+    "difficulty": 2,
+    "question": "レーダーの最大探知距離を長くするための条件で、誤っているのはどれか。次のうちから選べ。",
+    "choices": {
+      "ア": "パルス幅を狭くし、パルス繰返し周波数を高くする。",
+      "イ": "送信電力を大きくする。",
+      "ウ": "受信機の感度を良くする。",
+      "エ": "アンテナの高さを高くする。"
+    },
+    "answer": "ア",
+    "explanation": "狭いパルス幅は1パルス当たりのエネルギーを小さくしやすく、高いパルス繰返し周波数では最大無曖昧距離が短くなるため、最大探知距離を長くする条件として誤りである。",
+    "choiceExplanations": {
+      "ア": "狭いパルス幅は1パルス当たりのエネルギーを小さくしやすく、高いパルス繰返し周波数では最大無曖昧距離が短くなるため、最大探知距離を長くする条件として誤りである。",
+      "イ": "送信電力を大きくすると遠距離物標からの受信電力も増えるため、最大探知距離を長くする条件として正しい。",
+      "ウ": "弱い反射信号を検出しやすくなるため、最大探知距離を長くする条件として正しい。",
+      "エ": "アンテナを高くするとレーダー見通し距離が伸びるため、最大探知距離を長くする条件として正しい。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kai-toku-re-kogaku.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kai-toku-re-kogaku-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 レーダー級海上特殊無線技士試験 2026年2月期 無線工学 問17（問題・正答）。解説は過去問AIが独自作成。図は原典から切り出し。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-10-15"
+  },
+  {
+    "id": "radio21-maritime-radar-2026-02-kogaku-q18",
+    "exam": "maritime-radar",
+    "session": "kogaku",
+    "year": 2026,
+    "season": "february",
+    "qNumber": 18,
+    "officialAnswerNumber": "1",
+    "type": "multiple-choice",
+    "category": "無線工学",
+    "subject": "無線工学",
+    "topicTags": [
+      "無線工学"
+    ],
+    "difficulty": 2,
+    "question": "レーダーの距離分解能を表す式で、正しいのはどれか。次のうちから選べ。",
+    "choices": {
+      "ア": "電波の速度×パルス幅×1/2",
+      "イ": "電波の強さ×パルス幅",
+      "ウ": "電波の周波数×パルス幅",
+      "エ": "電波の波長×パルス幅"
+    },
+    "answer": "ア",
+    "explanation": "パルス幅をτ［s］、電波速度をc［m/s］とすると、パルスの空間長はcτ［m］である。往復伝搬時間から距離を求めるため2で割り、距離分解能ΔR=cτ/2［m］となるので正しい。",
+    "choiceExplanations": {
+      "ア": "パルス幅をτ［s］、電波速度をc［m/s］とすると、パルスの空間長はcτ［m］である。往復伝搬時間から距離を求めるため2で割り、距離分解能ΔR=cτ/2［m］となるので正しい。",
+      "イ": "電波の強さと時間の積は距離の次元にならず、距離分解能を表す式ではない。",
+      "ウ": "周波数［1/s］とパルス幅［s］の積は無次元であり、距離［m］を表さないため誤り。",
+      "エ": "波長［m］とパルス幅［s］の積はm·sとなり距離の次元にならないため、距離分解能を表す式ではない。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kai-toku-re-kogaku.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kai-toku-re-kogaku-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 レーダー級海上特殊無線技士試験 2026年2月期 無線工学 問18（問題・正答）。解説は過去問AIが独自作成。図は原典から切り出し。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-10-15"
+  },
+  {
+    "id": "radio21-maritime-radar-2026-02-kogaku-q19",
+    "exam": "maritime-radar",
+    "session": "kogaku",
+    "year": 2026,
+    "season": "february",
+    "qNumber": 19,
+    "officialAnswerNumber": "3",
+    "type": "multiple-choice",
+    "category": "無線工学",
+    "subject": "無線工学",
+    "topicTags": [
+      "無線工学"
+    ],
+    "difficulty": 2,
+    "question": "船舶用レーダーアンテナの特性として、特に必要としないのはどれか。次のうちから選べ。",
+    "choices": {
+      "ア": "水平面内のビーム幅は、できるだけ狭いこと。",
+      "イ": "必要な利得が得られること。",
+      "ウ": "垂直面内のビーム幅は、できるだけ狭いこと。",
+      "エ": "サイドローブは、できるだけ抑制すること。"
+    },
+    "answer": "ウ",
+    "explanation": "船体の動揺や海面の傾斜があっても物標を継続して照射できるよう、垂直面内には相応の広いビーム幅が必要である。したがって、できるだけ狭くすることは特に必要な特性ではない。",
+    "choiceExplanations": {
+      "ア": "水平面内のビーム幅が狭いほど方位分解能が高まり、近い方位にある複数の物標を区別しやすくなるため、船舶用レーダーアンテナに必要な特性である。",
+      "イ": "必要なアンテナ利得を確保することは、送信電力を所要方向へ集中させ、微弱な反射波を有効に受信するために必要である。",
+      "ウ": "船体の動揺や海面の傾斜があっても物標を継続して照射できるよう、垂直面内には相応の広いビーム幅が必要である。したがって、できるだけ狭くすることは特に必要な特性ではない。",
+      "エ": "サイドローブが大きいと主ビーム以外の方向にある強い物標からも反射波を受け、誤った方位に偽像が表示される原因となるため、できるだけ抑制する必要がある。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kai-toku-re-kogaku.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kai-toku-re-kogaku-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 レーダー級海上特殊無線技士試験 2026年2月期 無線工学 問19（問題・正答）。解説は過去問AIが独自作成。図は原典から切り出し。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-10-15"
+  },
+  {
+    "id": "radio21-maritime-radar-2026-02-kogaku-q20",
+    "exam": "maritime-radar",
+    "session": "kogaku",
+    "year": 2026,
+    "season": "february",
+    "qNumber": 20,
+    "officialAnswerNumber": "1",
+    "type": "multiple-choice",
+    "category": "無線工学",
+    "subject": "無線工学",
+    "topicTags": [
+      "無線工学"
+    ],
+    "difficulty": 2,
+    "question": "レーダーの画面に図のような捜索救助用レーダートランスポンダ(SART)の信号が表示された。SART の位置はどこか。次のうちから選べ。",
+    "choices": {
+      "ア": "B",
+      "イ": "C",
+      "ウ": "D",
+      "エ": "A"
+    },
+    "answer": "ア",
+    "explanation": "SARTの応答は、自船から見たSARTの位置を起点として、その外方に連なる点列として表示される。図では自船を示すAに最も近い点列端がBであるため、SARTの位置はBである。",
+    "choiceExplanations": {
+      "ア": "SARTの応答は、自船から見たSARTの位置を起点として、その外方に連なる点列として表示される。図では自船を示すAに最も近い点列端がBであるため、SARTの位置はBである。",
+      "イ": "Cは点列の途中を示しており、SARTまでの実距離を表す自船側の点列端ではない。",
+      "ウ": "Dは自船Aから最も遠い側の点列端であり、SARTの実位置ではなく外方へ連なる応答点側である。",
+      "エ": "AはPPI画面上の自船位置を示す点であり、離れた位置に表示されたSARTの位置ではない。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kai-toku-re-kogaku.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kai-toku-re-kogaku-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 レーダー級海上特殊無線技士試験 2026年2月期 無線工学 問20（問題・正答）。解説は過去問AIが独自作成。図は原典から切り出し。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-10-15",
+    "imageUrls": [
+      "/images/questions/maritime-radar/radio21-maritime-radar-2026-02-kogaku-q20-original.png"
+    ],
+    "imageAltTexts": [
+      "公式問20の図と選択肢（原典配置）"
+    ]
+  },
+  {
+    "id": "radio21-maritime-radar-2026-02-kogaku-q21",
+    "exam": "maritime-radar",
+    "session": "kogaku",
+    "year": 2026,
+    "season": "february",
+    "qNumber": 21,
+    "officialAnswerNumber": "4",
+    "type": "multiple-choice",
+    "category": "無線工学",
+    "subject": "無線工学",
+    "topicTags": [
+      "無線工学"
+    ],
+    "difficulty": 2,
+    "question": "レーダー受信機において、最も影響の大きい雑音はどれか。次のうちから選べ。",
+    "choices": {
+      "ア": "電気器具による雑音",
+      "イ": "電動機による雑音",
+      "ウ": "空電による雑音",
+      "エ": "受信機の内部雑音"
+    },
+    "answer": "エ",
+    "explanation": "レーダーが使用するマイクロ波帯では外来雑音の影響が比較的小さく、受信回路素子などで生じる熱雑音を含む内部雑音が受信感度を主に制限する。",
+    "choiceExplanations": {
+      "ア": "電気器具から雑音が発生することはあるが、レーダーの使用周波数帯では受信機内部雑音より支配的とは限らない。",
+      "イ": "電動機の整流や接点などに起因する雑音は外来雑音の一種だが、レーダー受信機で最も影響が大きい雑音ではない。",
+      "ウ": "雷などによる空電雑音は低い周波数帯で大きな影響を与えるが、レーダーのマイクロ波帯では相対的に影響が小さい。",
+      "エ": "レーダーが使用するマイクロ波帯では外来雑音の影響が比較的小さく、受信回路素子などで生じる熱雑音を含む内部雑音が受信感度を主に制限する。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kai-toku-re-kogaku.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kai-toku-re-kogaku-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 レーダー級海上特殊無線技士試験 2026年2月期 無線工学 問21（問題・正答）。解説は過去問AIが独自作成。図は原典から切り出し。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-10-15"
+  },
+  {
+    "id": "radio21-maritime-radar-2026-02-kogaku-q22",
+    "exam": "maritime-radar",
+    "session": "kogaku",
+    "year": 2026,
+    "season": "february",
+    "qNumber": 22,
+    "officialAnswerNumber": "1",
+    "type": "multiple-choice",
+    "category": "無線工学",
+    "subject": "無線工学",
+    "topicTags": [
+      "無線工学"
+    ],
+    "difficulty": 2,
+    "question": "図はPPI 表示レーダーの映像である。物標までの距離を正しく測定するには、可変距離目盛をどのように合わせればよいか。次のうちから選べ。",
+    "choices": {
+      "ア": "図1",
+      "イ": "図2",
+      "ウ": "図3",
+      "エ": "図4"
+    },
+    "answer": "ア",
+    "explanation": "可変距離目盛の外縁を物標映像の自船側の縁に接するように合わせている。レーダー距離は自船から物標映像の近距離側までで読むため、この合わせ方が正しい。",
+    "choiceExplanations": {
+      "ア": "可変距離目盛の外縁を物標映像の自船側の縁に接するように合わせている。レーダー距離は自船から物標映像の近距離側までで読むため、この合わせ方が正しい。",
+      "イ": "可変距離目盛が物標映像の中心付近を通っており、自船側の縁に接する正しい合わせ方ではないため、距離を過大に読む。",
+      "ウ": "可変距離目盛が物標映像の遠距離側の縁に接している。自船側の縁で測るべきところを遠距離側で測るため、距離を過大に読む。",
+      "エ": "可変距離目盛が物標映像より自船側に離れており、物標映像の近距離側の縁にも達していないため、距離を過小に読む。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kai-toku-re-kogaku.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kai-toku-re-kogaku-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 レーダー級海上特殊無線技士試験 2026年2月期 無線工学 問22（問題・正答）。解説は過去問AIが独自作成。図は原典から切り出し。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-10-15",
+    "imageUrls": [
+      "/images/questions/maritime-radar/radio21-maritime-radar-2026-02-kogaku-q22-original.png"
+    ],
+    "imageAltTexts": [
+      "公式問22の図と選択肢（原典配置）"
+    ]
+  },
+  {
+    "id": "radio21-maritime-radar-2026-02-kogaku-q23",
+    "exam": "maritime-radar",
+    "session": "kogaku",
+    "year": 2026,
+    "season": "february",
+    "qNumber": 23,
+    "officialAnswerNumber": "2",
+    "type": "multiple-choice",
+    "category": "無線工学",
+    "subject": "無線工学",
+    "topicTags": [
+      "無線工学"
+    ],
+    "difficulty": 2,
+    "question": "PPI 方式のレーダー装置の画面に偽像が現れるとき、考えられる原因として誤っているものはどれか。次のうちから選べ。",
+    "choices": {
+      "ア": "自船と平行して大型船が航行している。",
+      "イ": "付近にスコールをもつ大気団がある。",
+      "ウ": "レーダー装置のアンテナの位置が自船の煙突やマストより低い。",
+      "エ": "アンテナ指向特性にサイドローブがある。"
+    },
+    "answer": "イ",
+    "explanation": "スコールに伴う雨滴などは気象反射波によるクラッタを生じさせるが、ここで問われる偽像の発生原因そのものではない。したがって、原因として誤っている選択肢である。",
+    "choiceExplanations": {
+      "ア": "近くを平行して航行する大型船が電波の反射体となり、自船、大型船及び物標の間で間接反射が生じると、実在しない位置に偽像が現れることがあるため、原因として考えられる。",
+      "イ": "スコールに伴う雨滴などは気象反射波によるクラッタを生じさせるが、ここで問われる偽像の発生原因そのものではない。したがって、原因として誤っている選択肢である。",
+      "ウ": "アンテナより高い煙突やマストが送受信電波を反射すると、間接反射によって誤った方位に物標像が表示されることがあるため、偽像の原因として考えられる。",
+      "エ": "強い物標をサイドローブで受信すると、その反射波が主ビーム方向から来たものとして表示され、誤った方位に偽像が現れることがあるため、原因として考えられる。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kai-toku-re-kogaku.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kai-toku-re-kogaku-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 レーダー級海上特殊無線技士試験 2026年2月期 無線工学 問23（問題・正答）。解説は過去問AIが独自作成。図は原典から切り出し。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-10-15"
+  },
+  {
+    "id": "radio21-maritime-radar-2026-02-kogaku-q24",
+    "exam": "maritime-radar",
+    "session": "kogaku",
+    "year": 2026,
+    "season": "february",
+    "qNumber": 24,
+    "officialAnswerNumber": "3",
+    "type": "multiple-choice",
+    "category": "無線工学",
+    "subject": "無線工学",
+    "topicTags": [
+      "無線工学"
+    ],
+    "difficulty": 2,
+    "question": "船舶用レーダーにおいて、FTC つまみを調整する必要があるのはどれか。次のうちから選べ。",
+    "choices": {
+      "ア": "映像が暗いため、物標の識別が困難なとき。",
+      "イ": "指示器の中心付近が明るすぎて、物標の識別が困難なとき。",
+      "ウ": "雨や雪による反射波のため、物標の識別が困難なとき。",
+      "エ": "掃引線が見えないため、物標の識別が困難なとき。"
+    },
+    "answer": "ウ",
+    "explanation": "FTCは受信信号の長い成分を抑えて雨や雪による広がりのある反射を軽減し、その中にある物標を識別しやすくするため、この場合に調整する。",
+    "choiceExplanations": {
+      "ア": "映像全体の明るさは主に輝度調整の対象であり、雨雪反射を抑制するFTCつまみで補正する状態ではない。",
+      "イ": "中心付近を覆う海面反射などの近距離クラッタには主としてSTC又は海面反射抑制の調整を用いるため、FTCつまみを調整する状態ではない。",
+      "ウ": "FTCは受信信号の長い成分を抑えて雨や雪による広がりのある反射を軽減し、その中にある物標を識別しやすくするため、この場合に調整する。",
+      "エ": "掃引線の見え方は表示器の輝度や表示回路に関係するものであり、雨雪反射を抑制するFTCつまみの用途ではない。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kai-toku-re-kogaku.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kai-toku-re-kogaku-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 レーダー級海上特殊無線技士試験 2026年2月期 無線工学 問24（問題・正答）。解説は過去問AIが独自作成。図は原典から切り出し。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-10-15"
+  }
+]

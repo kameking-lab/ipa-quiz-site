@@ -1,0 +1,27 @@
+{
+  "questionId": "emkohyo-EM20251805-q1",
+  "purpose": "Resolve the 25 °C methanol comparison without inventing a 25 °C methanol point value",
+  "officialAnswer": 4,
+  "governmentSources": [
+    {
+      "title": "消防研究所報告 第129号 表1 アルコールの性質",
+      "url": "https://nrifd.fdma.go.jp/publication/houkoku/121-160/files/shoho_129s.pdf",
+      "sha256": "ac5faabe7eab78eaa76f32da0bf6dc89a3c70f1a54de5bd659f57f6881cffa3c",
+      "pdfPage": 41,
+      "printedPage": 35,
+      "fact": "The methanol column lists 200 mmHg at 34.8 °C and 100 mmHg at 21.2 °C.",
+      "shortExcerpt": "100 (21.2)\n200 (34.8)"
+    },
+    {
+      "title": "環境省 化学物質の環境リスク評価 酢酸メチル",
+      "url": "https://www.env.go.jp/chemi/report/h21-01/pdf/chpt2/2-2-2-12.pdf",
+      "sha256": "45b5f206fbb2f97ee9df12dce0195955b822359d1e85fbd44271416b5e21d0b1",
+      "pdfPage": 1,
+      "fact": "Methyl acetate has measured vapor pressure 216 mmHg at 25 °C.",
+      "shortExcerpt": "2.16×102 mmHg (25℃、実測値)"
+    }
+  ],
+  "inference": "For methanol, 25 °C lies below 34.8 °C, where vapor pressure is 200 mmHg; saturation vapor pressure rises with temperature, so methanol at 25 °C is below 200 mmHg. Methyl acetate is 216 mmHg at 25 °C and therefore exceeds methanol at the exam's temperature.",
+  "limitations": "This proves the comparison, not an exact methanol vapor pressure at 25 °C. It does not itself approve all five choice explanations or change any public overlay.",
+  "acceptance": "source research only; independent direct review and candidate correction pending"
+}

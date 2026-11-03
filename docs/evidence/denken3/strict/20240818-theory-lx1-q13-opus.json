@@ -1,0 +1,70 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20240818",
+  "subject": "theory",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 3447,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 14849,
+      "webSearchRequests": 0,
+      "costUSD": 0.1879958,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 1999,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "4edcbd41767ff59997bc223b527258199ab52ab24116b219f0225cb39409d81a",
+  "inputRequestSha256": "c1910115020da563567c2834fe0c98b1e4b420600d00b3380c8a927a1d35514e",
+  "inputHashes": {
+    "candidateSha256": {
+      "q13": "3f1ec1922f82586451f946f62c6408e77ad5a420f7e94bd6159466ce4098a764"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20240818/theory/p17.png": "f6aea8619b55ee48bd70c4cbd5a066479b262bb6451d4f0826e9e60789af6c4b"
+    },
+    "figureSha256": {
+      "public/images/denken3/20240818/theory/20240818-theory-q13-equivalent-circuits.png": "0c141134fa8994907c0decfa4b38945e9c276ac3364bfac965a305d303747358"
+    },
+    "sourceQuestionPdfSha256": "236be905e93a023cf3c65c1e22c45c24dc42b910151c51f8ed023247793d1d29",
+    "sourceAnswerPdfSha256": "f72ecbc3a477e64948388b69cf78cb931032c9f0c688639836c8d533a949cd0f",
+    "officialAnswerUnitsSha256": "84f7db1bad4b3b8730a19849a04607326073f6561014cf4661987a2cdb08aeb9",
+    "referencePdfSha256": {},
+    "referencePageSha256": {},
+    "referenceJsonSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q13",
+      "questionNumber": 13,
+      "part": null,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [
+        "choiceExplanations[1] の「近似展開の過程にも現れない形であり」は誤解を招く記述であり、削除または修正が必要。ωL/r はコイルのQ値そのもので、Rp = (ωL)^2/r = Q^2·r = Q·ωL と書けるため、標準的な導出過程に現れうる量である。誤答理由は「無次元量であり、抵抗Rp[Ω]の式として次元が合わない」だけで十分に成立する。必要なら「ωL/r はQ値であり、Rp = Q·ωL の係数部分にすぎない」と補足する。"
+      ],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "公式解答表（令和6年度上期 理論）の問13は3。候補の officialAnswer=\"3\" および公式正答単位 {question:13, part:null, answer:\"3\", points:null} と一致する。候補の scoringPoints=null も points=null と整合する。",
+        "問題原図の頁下部には「-14-」「T1−R 017」とあり、PDF第17頁と整合する。候補の reviewedFromPage=[17] は manifest と一致する。",
+        "候補のメタデータ fiscalYear=2024（令和6年度）、term=upper、examDate=2024-08-18、subject=theory、sourceQuestionPdfUrl=…_q01.pdf、sourceAnswerPdfUrl=…_a01.pdf、sourceAttribution は、いずれも manifest と一致する。",
+        "問題文は原図と照合した。C[F]、r[Ω]、L[H]、ωL[Ω]、Rp[Ω]、「r が ωL に比べて十分小さい」という条件、Ic[A] の但し書きをすべて欠落・改変なく転記している。句読点の軽微な差（原文の「r[Ω]が，誘導性…」の読点の省略）は意味に影響しない。",
+        "選択肢は原図と一致する。(1) ωL/r、(2) r/(ωL)^2、(3) (ωL)^2/r、(4) r^2/ωL、(5) r(ωL)^2。",
+        "総合解説の計算を検算した。Z = r + jωL、Y = (r − jωL)/(r^2 + (ωL)^2) であり、実部は 1/Rp、虚部は −1/(ωLp) に対応する。r ≪ ωL より 1/Rp ≈ r/(ωL)^2 となり、Rp ≈ (ωL)^2/r = (3)。Lp ≈ L も正しく、図2でLが据え置かれていることとの整合の説明も妥当である。",
+        "各誤答肢の次元を検算した。(1) 無次元、(2) S（近似後の 1/Rp）、(4) Ω だが r と ωL が入れ替わった誤式、(5) Ω^3。いずれも候補の記述どおりである。(3) は Ω^2/Ω = Ω で正答である。",
+        "公開候補図を原図と照合した。図1は Ic[A]、C[F]、L[H]（上）と r[Ω]（下）の直列枝の並列回路で、接続点のドットは C 枝の上下にある。図2は Ic[A]、C[F]、Rp[Ω]、L[H] の4並列で、ドットは C 枝と Rp 枝の上下にある。電流源の記号形状、全ラベル、「図1」「図2」のキャプション、素子の順序と向きがすべて一致し、欠落や改変はない。公開候補図だけで回路構成を理解できる。",
+        "figureDescription の接続説明（L が上、r が下の直列枝、図2の要素順）は原図と一致する。",
+        "officialReferenceUrls は空である。解説は回路計算のみで構成され、外部資料に依拠する独立主張はないため、sourceIssues はない。"
+      ]
+    }
+  ]
+}

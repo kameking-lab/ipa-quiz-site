@@ -1,0 +1,54 @@
+{
+  "reviewModel": "claude-opus-5-5",
+  "requestedModel": "claude-opus-5-5",
+  "canonicalModel": "claude-opus-5-5",
+  "provider": "firstParty",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 1944,
+      "cacheReadInputTokens": 139443,
+      "cacheCreationInputTokens": 15004,
+      "webSearchRequests": 0,
+      "costUSD": 0.1868086,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 1674,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "paperId": "emkohyo-EM20261805",
+  "ids": [
+    "emkohyo-EM20261805-q6"
+  ],
+  "figureSha256": {
+    "emkohyo-EM20261805-q6": {}
+  },
+  "officialRowImageSha256": {
+    "emkohyo-EM20261805-q6": {
+      "/exam-library/emkohyo-EM20261805/q6-p4-1.webp": "3028e3f49c6d94a83f582a8c127a584b0099fea0e98e7b87c780c47d22013eb2"
+    }
+  },
+  "officialPageImageSha256": {},
+  "governmentSourceImageSha256": {},
+  "candidateSha256": {
+    "emkohyo-EM20261805-q6": "acb8d0f412dbda599164d9edae04379c8eb7f365dd2cfacc6e41a34b620ed3a8"
+  },
+  "sourcePackPath": "docs/evidence/emkohyo-choice-sources/emkohyo-EM20261805-q06-06.json",
+  "sourcePackSha256": "0344f649c8079e09ee2831742f75f8912b27eab5887befc0074ad2f36c80ac51",
+  "assessment": {
+    "emkohyo-EM20261805-q6": {
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [
+        "肢3の理由だけが丁寧語（「明記しています」「分かります」）で書かれている。肢1・2・4・5は常体（「〜である」「〜する」）なので、画面上で文体が混在する。常体にそろえる。",
+        "肢3の理由には、ほかの肢の「この記述は正しい。」に対応する冒頭の判定文がない。「この記述は誤り。」から書き始めて、判定と根拠の書き方をほかの肢と合わせる。"
+      ],
+      "reasonIssues": [],
+      "sourceIssues": [],
+      "needsExternalCheck": []
+    }
+  }
+}

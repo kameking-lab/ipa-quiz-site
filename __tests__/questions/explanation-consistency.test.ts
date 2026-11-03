@@ -92,3 +92,13 @@ describe("corpus is free of answer disputes (CI gate)", () => {
     expect(disputes.map((d) => d.id)).toEqual([]);
   });
 });
+
+describe("corpus is free of assistant meta-output (CI gate)", () => {
+  it("does not expose refusal or assistant identity text in question explanations", () => {
+    const metaOutput = /\b(?:as an ai|i am a large language model|cannot assist with requests|firstly, your understanding)\b/i;
+    const affected = ALL_QUESTIONS.filter((question) =>
+      metaOutput.test(question.explanation ?? ""),
+    ).map((question) => question.id);
+    expect(affected).toEqual([]);
+  });
+});

@@ -1,0 +1,64 @@
+{
+  "reviewModel": "claude-opus-5-5",
+  "requestedModel": "claude-opus-5-5",
+  "canonicalModel": "claude-opus-5-5",
+  "provider": "firstParty",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 2628,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 12918,
+      "webSearchRequests": 0,
+      "costUSD": 0.15616780000000002,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 1359,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponsePath": "data/exam-library/emkohyo-review/emkohyo-EM20261807-q07-07-raw-response.txt",
+  "rawResponseSha256": "861305a2f4914583e7e5f19675c0131a0aab55b5a07b2adcbf81f2247ce30739",
+  "paperId": "emkohyo-EM20261807",
+  "ids": [
+    "emkohyo-EM20261807-q7"
+  ],
+  "figureSha256": {
+    "emkohyo-EM20261807-q7": {}
+  },
+  "officialRowImageSha256": {
+    "emkohyo-EM20261807-q7": {
+      "/exam-library/emkohyo-EM20261807/q7-p5-0.webp": "0d280d56e3fcad1e2acc6eae4a466c70f22a1fde0c9ec153f9b2ea470d5bae03"
+    }
+  },
+  "officialPageImageSha256": {},
+  "governmentSourceImageSha256": {},
+  "candidateSha256": {
+    "emkohyo-EM20261807-q7": "d3e1ec95565db5ea9f733720a4d98e6be7525a5826dc8248c59c173ad3b1514f"
+  },
+  "sourcePackPath": "docs/evidence/emkohyo-choice-sources/emkohyo-EM20261807-q07-07.json",
+  "sourcePackSha256": "8d4cff8c0d20d5f1599a48ebff5ec87d77c0fa1c85d32348059bea26e8216244",
+  "assessment": {
+    "emkohyo-EM20261807-q7": {
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "reasonIssues": [
+        "肢2: 『PTVは全量近くを導入する方式なので高濃度試料向けではない』という因果は不正確。PTV注入口は昇温気化を行う注入口で、スプリット／スプリットレス／ソルベントベントの各モードで運用できる。本質的に全量導入の方式とは言えない。誤りとする理由は、たとえば次のように書き換えるべき。『PTVは低温で注入してから昇温気化し、熱分解や高沸点成分の discrimination を抑える方式（大量注入にも用いる）である。試料を分割してカラム負荷を下げることを本旨とするスプリット注入法の方が、高濃度試料にはより直接的に適する』。",
+        "肢5: 『直接注入法』を無条件に『オンカラム注入』と同一視している。キャピラリーGCの直接注入法は、ワイドボアカラムを用いたダイレクト注入（ライナー内で気化させて全量をカラムへ送る方式）を指す場合もあり、オンカラム注入と常に同義ではない。『試料を分割せず全量をカラムへ導入する方式（オンカラム注入等）』程度に表現を改め、全量導入ゆえに高濃度試料ではカラム過負荷を招くという因果に絞るべき。",
+        "肢3: 『1/50〜1/100だけをカラムに導入』は農研機構ページの例示値であり、スプリット比は分析条件で変わる。『例えば1/50〜1/100程度』のように例示であると明記するのが望ましい。"
+      ],
+      "sourceIssues": [
+        "肢2・肢5で根拠とする環境省マニュアル m05_6.pdf p.14『試験液1μL程度をカラムに全量又は大部分が入れられる構造のもの（スプリット/スプリットレス注入口、PTV或いはオンカラム等）』は、スプリット注入口も同じ括弧内に列挙している。このため、PTVやオンカラムを『全量導入方式としてスプリット注入法と対比する』根拠にはならない。この資料が述べるのは、使用できる試料導入部の例示だけである。肢2・肢5の誤りの理由を直接支える資料としては不適格。",
+        "肢1の根拠 env.go.jp/content/900402504.pdf p.21・p.45は、大気試料の捕集・前処理法（固体吸着－加熱脱着法）について述べた記述である。GC試料導入法としての比較そのものではないが、『全量を分析に供するので低濃度向き、高濃度ではカラム負荷量超過のおそれ』という記述は肢1の理由を直接支えており、許容範囲。",
+        "農研機構（国立研究開発法人）の解説ページは、省庁の一次資料ではなく公的研究機関の解説資料である。肢3・肢4の理由（スプリット＝高濃度向き、スプリットレス＝微量分析向き）は直接支持されている。"
+      ],
+      "needsExternalCheck": [
+        "PTV注入口がスプリット／スプリットレス等の複数モードで運用される方式であることを、公的資料（JIS K 0114 ガスクロマトグラフィー通則等）で確認し、肢2の理由の根拠に差し替える。",
+        "『直接注入法』の定義（オンカラム注入と同義か、ワイドボアカラムへのダイレクト注入を含むか）を、JIS K 0114 または作業環境測定関連の公的テキストで確認する。"
+      ]
+    }
+  }
+}

@@ -1,0 +1,70 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20250831",
+  "subject": "machinery",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 3250,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 13694,
+      "webSearchRequests": 0,
+      "costUSD": 0.1748158,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 1853,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "e461c8160a08f42cd02cdcae29c2ee682a219aeb6fec0916da7390f49fb43579",
+  "inputRequestSha256": "e06d3e473edf5bf4d6635c7a26d7cd0d18fc58e7de8ce403c1f1f2b2dd6c387b",
+  "inputHashes": {
+    "candidateSha256": {
+      "q06": "f1eea4eae359109328d0cfbf8afcbb407b1ab04c606c56ff035cdeea997b54ec"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20250831/machinery/p09.png": "443bc2f9ac0e5bd6a5d833839d2f54c5f91a2f47af2f32737eb7d3db55878d0d"
+    },
+    "figureSha256": {},
+    "sourceQuestionPdfSha256": "2a73a24594cc2b8bb7504b9a0ff15e001b2bb56b830572ce2be853f7116f26d8",
+    "sourceAnswerPdfSha256": "76fd3715ed487d19a56b387fb402de20ee09474e9fa55b0413f9037b96af06c9",
+    "officialAnswerUnitsSha256": "f54a6b7f2a8c8cf03afc87bea8677f943a595f0cdc61d70f34b47500927eb0b3",
+    "referencePdfSha256": {},
+    "referencePageSha256": {},
+    "referenceJsonSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q06",
+      "questionNumber": 6,
+      "part": null,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "問題文: 公式問題原図（印刷頁 -6-、T1－K 009）と照合。7 500 kV·A、線間電圧 3 300 V、星形結線三相同期発電機、界磁電流 200 A（定格電流に等しい持続短絡電流）、240 A（無負荷定格電圧）、出力端三相短絡、巻線の持続短絡電流の実効値[A]。数値、単位、条件は全て一致し、脱落も改変もない。",
+        "選択肢: (1)1 100 (2)1 600 (3)1 900 (4)2 700 (5)3 400。原図と全肢一致。",
+        "公式正答: 公式解答表（令和7年度上期）の＜機械＞列で問6は解答2、配点5。候補の officialAnswer=\"2\"、scoringPoints=5、manifest固定単位 {question:6, part:null, answer:\"2\", points:5} と一致する。",
+        "定格電流の検算: In = 7.5×10^6 / (√3×3 300) = 7.5×10^6 / 5 715.8 ≈ 1 312.2 A。星形結線なので巻線電流は線電流と等しいという記述も正しい。",
+        "短絡比の検算: Ks = 240/200 = 1.2。定義（無負荷定格電圧時の界磁電流 ÷ 定格電流短絡時の界磁電流）の向きも正しい。",
+        "持続短絡電流の検算: Is = Ks×In = 1.2×1 312.2 ≈ 1 574.6 A。最も近い肢は 1 600 A で(2)。公式正答と整合する。",
+        "解説の前提: 事故前の励磁を無負荷定格電圧相当（界磁電流 240 A）とする仮定を明示している。短絡特性がほぼ直線であることから比例計算する因果も妥当。",
+        "別解の検算: Zs = 1/Ks ≈ 0.833 p.u.、Is = 1/0.833 = 1.2 p.u. ≈ 1 575 A。本解と一致する。",
+        "肢(1)の誤答理由: In×200/240 = 1 312×0.833 ≈ 1 093 A で、短絡比を逆数で用いた誤りとして妥当。",
+        "肢(3)の誤答理由: 1 312×1.2² = 1 312×1.44 ≈ 1 889 A で、短絡比を二重に掛けた誤りとして妥当。",
+        "肢(4)の誤答理由: 1 575×√3 ≈ 2 727 A。P/V = 7.5×10^6/3 300 ≈ 2 273 A を1.2倍しても ≈ 2 727 A となり、両経路とも正しい。星形結線で追加の√3換算が不要という理由も正しい。",
+        "肢(5)の誤答理由: 3 400 > 2×1 575 = 3 150 なので「2倍以上」の記述は正しい。数値比較による除外理由として成立する。",
+        "図: 原図に図はなく、解答にも図は不要。figureDescription（図なし）、figureUrls=[]、choiceFigureUrls={} で整合。",
+        "出典: officialReferenceUrls=[] で、検証を要する独立主張はない。subject=machinery、fiscalYear=2025（令和7年度）、term=upper、examDate=2025-08-31 は解答表の表題（令和7年度上期）および PDF URL の日付 20250831 と整合する。reviewedFromPage=[9] は添付原図の頁に対応するものとして扱った（印刷頁 -6- は PDF 頁番号ではない）。"
+      ]
+    }
+  ]
+}

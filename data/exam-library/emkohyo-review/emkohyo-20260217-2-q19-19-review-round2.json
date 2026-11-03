@@ -1,0 +1,53 @@
+{
+  "reviewModel": "claude-opus-5-5",
+  "requestedModel": "claude-opus-5-5",
+  "canonicalModel": "claude-opus-5-5",
+  "provider": "firstParty",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 2441,
+      "cacheReadInputTokens": 143524,
+      "cacheCreationInputTokens": 21531,
+      "webSearchRequests": 0,
+      "costUSD": 0.24978080000000003,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 1973,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "paperId": "emkohyo-20260217-2",
+  "ids": [
+    "emkohyo-20260217-2-q19"
+  ],
+  "figureSha256": {
+    "emkohyo-20260217-2-q19": {}
+  },
+  "officialRowImageSha256": {
+    "emkohyo-20260217-2-q19": {
+      "/exam-library/emkohyo-20260217-2/q19-p14-0.webp": "634d8aa9289ff7107505c20dcf6166177492ff75deb4648d1741a07624508dc6"
+    }
+  },
+  "governmentSourceImageSha256": {},
+  "candidateSha256": {
+    "emkohyo-20260217-2-q19": "e4118da758600143f0314fd1ee0738abd78107637352d7cdae2e601157d2af66"
+  },
+  "sourcePackPath": "docs/evidence/emkohyo-choice-sources/emkohyo-20260217-2-q19-19.json",
+  "sourcePackSha256": "f10f7d59119579e866f957ea0f371dff13b35b0a7a5c99c05ae5223095debbfc",
+  "assessment": {
+    "emkohyo-20260217-2-q19": {
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "reasonIssues": [
+        "肢4: 解説は、第2種の作業主任者が酸素と硫化水素の両方を測る理由を、括弧書きの資格（酸素欠乏・硫化水素危険作業主任者技能講習修了者）に結び付けて読める書き方になっている。法令上の根拠は資格ではない。根拠は酸欠則第11条第2項第2号（第1種の作業主任者が酸素濃度を測る職務）と、同条第3項（第2種へ準用し、「酸素」を「酸素及び硫化水素」と読み替える規定）である。条項番号を示し、この準用と読替えを因果として明記すべき。現状は肢の命題をなぞって正しいとしているだけで、法的な理由付けになっていない。",
+        "肢3: 他の肢では条番号を示しているのに、この肢の解説は根拠条文（酸欠則第4条）を示していない。第4条は「前条第一項の規定による測定を行うため必要な測定器具」を備えるよう求めている。解説は、第3条第1項の測定（第2種では酸素と硫化水素）に対応する器具であるという関係を、条番号付きで示すべき。"
+      ],
+      "sourceIssues": [],
+      "needsExternalCheck": []
+    }
+  }
+}

@@ -1,11 +1,14 @@
 import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import Link from "next/link";
+import { SourceRelationshipFooter } from "@/components/question-provenance/SourceRelationshipFooter";
+import { PRICE_PAGE_LINK } from "@/lib/billing/price-page-link";
 import "./globals.css";
 import { ThemeProvider, THEME_BOOTSTRAP_SCRIPT } from "@/components/theme-provider";
 import { ThemeToggle } from "@/components/ThemeToggle";
 import { SiteHeader } from "@/components/SiteHeader";
 import { ServiceWorkerRegistration } from "@/components/ServiceWorkerRegistration";
+import { MobileInstallProvider } from "@/components/pwa/MobileInstallProvider";
 import { DeferredLayoutWidgets } from "@/components/DeferredLayoutWidgets";
 import { OnboardingTour } from "@/components/onboarding/OnboardingTour";
 import { MobileBottomNav } from "@/components/MobileBottomNav";
@@ -13,9 +16,12 @@ import { VercelAnalyticsWithPrivacy } from "@/components/analytics/VercelAnalyti
 import { Suspense } from "react";
 import { EmailLeadCapture } from "@/components/EmailLeadCapture";
 import { PostHogProvider } from "@/components/PostHogProvider";
+import { StudyPresence } from "@/components/StudyPresence";
 import { EmergencyBanner } from "@/components/EmergencyBanner";
-import { APPROX_QUESTION_COUNT_LABEL } from "@/lib/constants/question-counts";
 import { SITE_BASE_URL } from "@/lib/seo/config";
+import { NOTE_PROFILE_URL } from "@/lib/external-links";
+import { TrackedNoteLink } from "@/components/analytics/TrackedNoteLink";
+import { FeedbackAccountClaim } from "@/components/quiz/FeedbackAccountClaim";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -32,7 +38,7 @@ const geistMono = Geist_Mono({
 
 const BASE_URL = SITE_BASE_URL;
 
-const ROOT_DESCRIPTION = `IPA 13区分とFP3級・電験三種の公式公開過去問、計${APPROX_QUESTION_COUNT_LABEL}問超。AIコパイロットが選択肢ごとに解説。全機能無料。`;
+const ROOT_DESCRIPTION = `IPA・FP・電気・医療・福祉・不動産等の資格の公開過去問と学習用解説。資格・実施回ごとに公式出典を確認し、無料で演習・復習を進められます。`;
 
 export const metadata: Metadata = {
   title: {
@@ -53,12 +59,11 @@ export const metadata: Metadata = {
   },
   icons: {
     icon: [
-      { url: "/favicon.svg", type: "image/svg+xml" },
-      { url: "/icon-192.svg", type: "image/svg+xml", sizes: "192x192" },
-      { url: "/icon-512.svg", type: "image/svg+xml", sizes: "512x512" },
+      { url: "/favicon.png?v=chihuahua", type: "image/png", sizes: "64x64" },
+      { url: "/brand/chihuahua-icon-192.png", type: "image/png", sizes: "192x192" },
     ],
     apple: [
-      { url: "/icon-192.svg", sizes: "192x192", type: "image/svg+xml" },
+      { url: "/apple-icon.png", sizes: "180x180", type: "image/png" },
     ],
   },
   openGraph: {
@@ -91,6 +96,9 @@ export const metadata: Metadata = {
       "msvalidate.01": process.env.BING_SITE_VERIFICATION ?? "",
     },
   },
+  other: {
+    "google-adsense-account": "ca-pub-8751260838396451",
+  },
 };
 
 export const viewport: Viewport = {
@@ -120,7 +128,10 @@ export default function RootLayout({
         <link rel="preconnect" href="https://us.i.posthog.com" />
       </head>
       <body className="min-h-[100dvh] antialiased">
+        {process.env.FEEDBACK_UNLOCK_ENABLED === "true" && <FeedbackAccountClaim />}
         <ThemeProvider>
+          <MobileInstallProvider>
+          <StudyPresence />
           {/* Skip link first in the DOM so a single Tab reaches it before any
               header/widget (WCAG 2.4.1 Bypass Blocks). Targets #main-content. */}
           <a
@@ -143,16 +154,19 @@ export default function RootLayout({
             <div className="print:hidden">
               <SiteHeader />
             </div>
-            <div id="main-content" tabIndex={-1} className="flex flex-1 flex-col overflow-x-clip outline-none">
+            <div
+              id="main-content"
+              tabIndex={-1}
+              className="mobile-bottom-nav-reserve flex flex-1 flex-col overflow-x-clip outline-none"
+            >
               {children}
             </div>
-            <footer className="pb-safe mt-auto border-t border-border bg-background/60 px-4 py-8 text-xs text-muted-foreground">
+            <footer className="mobile-bottom-nav-footer-reserve mt-auto border-t border-border bg-background/60 px-4 pt-8 text-xs text-muted-foreground">
               <div className="mx-auto max-w-5xl">
-                {/* 5-column nav grid — hidden in print */}
-                <div className="print:hidden grid grid-cols-2 gap-6 sm:grid-cols-3 lg:grid-cols-5">
+                <div className="print:hidden grid grid-cols-2 gap-6 sm:grid-cols-3 lg:grid-cols-6">
                   <nav aria-labelledby="footer-nav-exams">
                     <h3 id="footer-nav-exams" className="mb-2.5 text-[11px] font-semibold uppercase tracking-wide text-foreground">
-                      試験区分
+                      IPAの試験
                     </h3>
                     <ul className="space-y-0">
                       <li><Link href="/ip" className="block py-2.5 hover:text-foreground">IP ITパスポート</Link></li>
@@ -162,7 +176,19 @@ export default function RootLayout({
                       <li><Link href="/nw" className="block py-2.5 hover:text-foreground">NW ネットワーク</Link></li>
                       <li><Link href="/sc" className="block py-2.5 hover:text-foreground">SC セキュリティ</Link></li>
                       <li><Link href="/db" className="block py-2.5 hover:text-foreground">DB データベース</Link></li>
-                      <li><Link href="/" className="block py-2.5 font-medium hover:text-foreground">全試験一覧 →</Link></li>
+                      <li><Link href="/ipa" className="block py-2.5 font-medium hover:text-foreground">IPAの全試験 →</Link></li>
+                      <li><Link href="/" className="block py-2.5 font-medium hover:text-foreground">IPA・安全を選ぶ →</Link></li>
+                    </ul>
+                  </nav>
+                  <nav aria-labelledby="footer-nav-safety">
+                    <h3 id="footer-nav-safety" className="mb-2.5 text-[11px] font-semibold uppercase tracking-wide text-foreground">安全衛生の試験</h3>
+                    <ul className="space-y-0">
+                      <li><Link href="/e-learning/exams#licenses" className="block py-2.5 hover:text-foreground">免許試験</Link></li>
+                      <li><Link href="/e-learning/exams#measurement" className="block py-2.5 hover:text-foreground">作業環境測定士</Link></li>
+                      <li><Link href="/e-learning/exams#safety-consultant" className="block py-2.5 hover:text-foreground">労働安全コンサルタント</Link></li>
+                      <li><Link href="/e-learning/exams#health-consultant" className="block py-2.5 hover:text-foreground">労働衛生コンサルタント</Link></li>
+                      <li><Link href="/e-learning/search" className="block py-2.5 hover:text-foreground">安全衛生の問題検索</Link></li>
+                      <li><Link href="/e-learning/progress" className="block py-2.5 hover:text-foreground">安全衛生の進捗・復習</Link></li>
                     </ul>
                   </nav>
                   <nav aria-labelledby="footer-nav-service">
@@ -170,10 +196,11 @@ export default function RootLayout({
                       サービス
                     </h3>
                     <ul className="space-y-0">
-                      <li><Link href="/essay" className="block py-2.5 hover:text-foreground">午後論述AI採点</Link></li>
-                      <li><Link href="/challenge" className="block py-2.5 hover:text-foreground">デイリーチャレンジ</Link></li>
-                      <li><Link href="/mock-exam" className="block py-2.5 hover:text-foreground">模試モード</Link></li>
-                      <li><Link href="/ranking" className="block py-2.5 hover:text-foreground">ランキング</Link></li>
+                      <li><Link href="/essay" className="block py-2.5 hover:text-foreground">IPA 午後論述AI採点</Link></li>
+                      <li><Link href="/challenge" className="block py-2.5 hover:text-foreground">IPA デイリーチャレンジ</Link></li>
+                      <li><Link href="/mock-exam" className="block py-2.5 hover:text-foreground">IPA 模試モード</Link></li>
+                      <li><Link href="/ranking" className="block py-2.5 hover:text-foreground">IPA ランキング</Link></li>
+                      <li><Link href={PRICE_PAGE_LINK.href} className="block py-2.5 hover:text-foreground">{PRICE_PAGE_LINK.label}</Link></li>
                       <li><Link href="/faq" className="block py-2.5 hover:text-foreground">FAQ</Link></li>
                       <li><Link href="/features" className="block py-2.5 hover:text-foreground">機能特集</Link></li>
                       <li><Link href="/glossary" className="block py-2.5 hover:text-foreground">用語集</Link></li>
@@ -212,16 +239,22 @@ export default function RootLayout({
                         </a>
                       </li>
                       <li>
-                        <a
-                          href="https://note.com/kakomon_ai"
+                        <TrackedNoteLink
+                          href={NOTE_PROFILE_URL}
+                          source="footer"
+                          account="ipa_quiz_ai"
                           target="_blank"
                           rel="noopener noreferrer"
-                          aria-label="note を読む（新しいタブで開く）"
+                          aria-label="note 資格の記事一覧（新しいタブで開く）"
                           className="block py-2.5 hover:text-foreground"
                         >
                           note
-                        </a>
+                        </TrackedNoteLink>
                       </li>
+                      <li><a href="https://tsugino-shikaku.jp/?utm_source=kakomon_ai&utm_medium=referral&utm_campaign=learning_network" target="_blank" rel="noopener noreferrer" className="block py-2.5 hover:text-foreground">日程・締切を探す・次の資格</a></li>
+                      <li><a href="https://www.youtube.com/channel/UCrR65J1ZQ6Zzr0Gs70YPHNA?utm_source=kakomon_ai&utm_medium=referral&utm_campaign=learning_network" target="_blank" rel="noopener noreferrer" className="block py-2.5 hover:text-foreground">耳で復習・ミナト資格ラジオ</a></li>
+
+                      <li><a href="https://www.instagram.com/kakomon_ipa_jp/" target="_blank" rel="noopener noreferrer" className="block py-2.5 hover:text-foreground">Instagramで毎日1問</a></li>
                       <li><Link href="/contact" className="block py-2.5 hover:text-foreground">フィードバック</Link></li>
                       <li><Link href="/community-guidelines" className="block py-2.5 hover:text-foreground">コミュニティガイドライン</Link></li>
                     </ul>
@@ -233,7 +266,7 @@ export default function RootLayout({
                     <ul className="space-y-0">
                       <li><Link href="/terms" className="block py-2.5 hover:text-foreground">利用規約</Link></li>
                       <li><Link href="/privacy" className="block py-2.5 hover:text-foreground">プライバシーポリシー</Link></li>
-                      <li><Link href="/license" className="block py-2.5 hover:text-foreground">コンテンツ利用方針</Link></li>
+                      <li><Link href="/license" className="block py-2.5 hover:text-foreground">コンテンツ方針</Link></li>
                       <li><Link href="/operator" className="block py-2.5 hover:text-foreground">運営者情報・特商法</Link></li>
                       <li><Link href="/about#attribution" className="block py-2.5 hover:text-foreground">公式問題の著作権・出典</Link></li>
                     </ul>
@@ -254,36 +287,12 @@ export default function RootLayout({
                   </div>
                 </div>
 
-                {/* IPA attribution (required) */}
-                <div className="mt-6 border-t border-border pt-4 text-center text-[11px] text-muted-foreground sm:text-left">
-                  出典: IPA 情報処理技術者試験（
-                  <a
-                    href="https://www.ipa.go.jp/shiken/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="underline decoration-border hover:text-foreground"
-                  >
-                    ipa.go.jp
-                  </a>
-                  ） /{" "}
-                  <Link
-                    href="/license"
-                    className="underline decoration-border hover:text-foreground"
-                  >
-                    著作権・利用条件
-                  </Link>
-                  <span className="ml-3 text-zinc-500 dark:text-zinc-500">
-                    その他資格の出典・利用条件は「著作権・利用条件」に記載しています。本サービスは各試験実施団体とは独立した非公式の学習支援サービスです。
-                  </span>
-                </div>
+                <SourceRelationshipFooter />
               </div>
             </footer>
-            {/* Spacer so content above the fixed mobile bottom nav stays */}
-            {/* visible on the smallest viewports; hidden once md+ exposes */}
-            {/* the top SiteHeader as the primary nav. */}
-            <div aria-hidden="true" className="h-14 md:hidden print:hidden" />
           </div>
           <MobileBottomNav />
+          </MobileInstallProvider>
         </ThemeProvider>
       </body>
     </html>

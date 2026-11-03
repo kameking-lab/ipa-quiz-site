@@ -1,0 +1,117 @@
+{
+  "duration_api_ms": 194866,
+  "stop_reason": "end_turn",
+  "session_id": "b29fc8fc-a7d6-4d11-8009-c70fa2c23386",
+  "total_cost_usd": 1.3504452000000002,
+  "usage": {
+    "input_tokens": 34,
+    "cache_creation_input_tokens": 58340,
+    "cache_read_input_tokens": 1131831,
+    "output_tokens": 16203,
+    "output_tokens_details": {
+      "thinking_tokens": 3710
+    },
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 58340,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "not_available",
+    "iterations": [
+      {
+        "input_tokens": 2,
+        "output_tokens": 7385,
+        "cache_read_input_tokens": 85164,
+        "cache_creation_input_tokens": 1268,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 1268
+        },
+        "type": "message"
+      }
+    ],
+    "speed": "standard"
+  },
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 34,
+      "outputTokens": 16203,
+      "cacheReadInputTokens": 1131831,
+      "cacheCreationInputTokens": 58340,
+      "webSearchRequests": 0,
+      "costUSD": 1.0172822,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 3710,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    },
+    "claude-haiku-4-5-20251001": {
+      "inputTokens": 265598,
+      "outputTokens": 3513,
+      "cacheReadInputTokens": 0,
+      "cacheCreationInputTokens": 0,
+      "webSearchRequests": 5,
+      "costUSD": 0.333163,
+      "contextWindow": 200000,
+      "maxOutputTokens": 32000,
+      "thinkingTokens": 0,
+      "canonicalModel": "claude-haiku-4-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+    "spawned": 0,
+    "requested": {
+      "background": 0,
+      "foreground": 0,
+      "unset": 0
+    },
+    "started_in_background": 0,
+    "max_depth": 0,
+    "spawned_by_subagents": 0,
+    "completed": 0,
+    "failed": 0,
+    "killed": {
+      "parent": 0,
+      "user": 0,
+      "system": 0
+    },
+    "refused": {
+      "depth_limit": 0,
+      "concurrency_limit": 0,
+      "budget": 0
+    },
+    "by_type": {}
+  },
+  "is_error": false,
+  "num_turns": 23,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "{\"1\":{\"status\":\"PASS\",\"choiceStatus\":{\"ア\":\"PASS\",\"イ\":\"PASS\",\"ウ\":\"PASS\",\"エ\":\"PASS\"},\"fixedChoiceExplanations\":{},\"evidence\":[{\"url\":\"https://laws.e-gov.go.jp/api/2/law_data/337AC0000000069?asof=2024-04-01&law_full_text_format=xml&response_format=xml\",\"excerpt\":\"区分所有者は、全員で、建物並びにその敷地及び附属施設の管理を行うための団体を構成し、この法律の定めるところにより、集会を開き、規約を定め、及び管理者を置くことができる。\"},{\"url\":\"https://laws.e-gov.go.jp/api/2/law_data/337AC0000000069?asof=2024-04-01&law_full_text_format=xml&response_format=xml\",\"excerpt\":\"一部共用部分の管理のうち、区分所有者全員の利害に関係するもの又は第三十一条第二項の規約に定めがあるものは区分所有者全員で、その他のものはこれを共用すべき区分所有者のみで行う。\"},{\"url\":\"https://laws.e-gov.go.jp/api/2/law_data/337AC0000000069?asof=2024-04-01&law_full_text_format=xml&response_format=xml\",\"excerpt\":\"一団地内に数棟の建物があつて、その団地内の土地又は附属施設（これらに関する権利を含む。）がそれらの建物の所有者（専有部分のある建物にあつては、区分所有者）の共有に属する場合には、それらの所有者（以下「団地建物所有者」という。）は、全員で、その団地内の土地、附属施設及び専有部分のある建物の管理を行うための団体を構成し、この法律の定めるところにより、集会を開き、規約を定め、及び管理者を置くことができる。\"}]},\"2\":{\"status\":\"PASS\",\"choiceStatus\":{\"ア\":\"PASS\",\"イ\":\"PASS\",\"ウ\":\"PASS\",\"エ\":\"PASS\"},\"fixedChoiceExplanations\":{},\"evidence\":[{\"url\":\"https://laws.e-gov.go.jp/api/2/law_data/337AC0000000069?asof=2024-04-01&law_full_text_format=xml&response_format=xml\",\"excerpt\":\"各共有者は、共用部分をその用方に従つて使用することができる。\"},{\"url\":\"https://laws.e-gov.go.jp/api/2/law_data/337AC0000000069?asof=2024-04-01&law_full_text_format=xml&response_format=xml\",\"excerpt\":\"民法第百七十七条の規定は、共用部分には適用しない。\"},{\"url\":\"https://laws.e-gov.go.jp/api/2/law_data/337AC0000000069?asof=2024-04-01&law_full_text_format=xml&response_format=xml\",\"excerpt\":\"各共有者の持分は、その有する専有部分の床面積の割合による。\"},{\"url\":\"https://laws.e-gov.go.jp/api/2/law_data/337AC0000000069?asof=2024-04-01&law_full_text_format=xml&response_format=xml\",\"excerpt\":\"共用部分の変更（その形状又は効用の著しい変更を伴わないものを除く。）は、区分所有者及び議決権の各四分の三以上の多数による集会の決議で決する。ただし、この区分所有者の定数は、規約でその過半数まで減ずることができる。\"},{\"url\":\"https://laws.e-gov.go.jp/api/2/law_data/129AC0000000089?asof=2024-04-01&law_full_text_format=xml&response_format=xml\",\"excerpt\":\"各共有者は、共有物の全部について、その持分に応じた使用をすることができる。\"}]},\"3\":{\"status\":\"PASS\",\"choiceStatus\":{\"ア\":\"PASS\",\"イ\":\"PASS\",\"ウ\":\"PASS\",\"エ\":\"PASS\"},\"fixedChoiceExplanations\":{},\"evidence\":[{\"url\":\"https://laws.e-gov.go.jp/api/2/law_data/337AC0000000069?asof=2024-04-01&law_full_text_format=xml&response_format=xml\",\"excerpt\":\"敷地利用権が数人で有する所有権その他の権利である場合には、区分所有者は、その有する専有部分とその専有部分に係る敷地利用権とを分離して処分することができない。ただし、規約に別段の定めがあるときは、この限りでない。\"},{\"url\":\"https://laws.e-gov.go.jp/api/2/law_data/129AC0000000089?asof=2024-04-01&law_full_text_format=xml&response_format=xml\",\"excerpt\":\"第一項又は前項後段の規定による賃貸人たる地位の移転は、賃貸物である不動産について所有権の移転の登記をしなければ、賃借人に対抗することができない。\"},{\"url\":\"https://laws.e-gov.go.jp/api/2/law_data/129AC0000000089?asof=2024-04-01&law_full_text_format=xml&response_format=xml\",\"excerpt\":\"賃借人は、賃貸人の承諾を得なければ、その賃借権を譲り渡し、又は賃借物を転貸することができない。\"}]},\"4\":{\"status\":\"PASS\",\"choiceStatus\":{\"ア\":\"PASS\",\"イ\":\"PASS\",\"ウ\":\"PASS\",\"エ\":\"PASS\"},\"fixedChoiceExplanations\":{},\"evidence\":[{\"url\":\"https://laws.e-gov.go.jp/api/2/law_data/337AC0000000069?asof=2024-04-01&law_full_text_format=xml&response_format=xml\",\"excerpt\":\"区分所有者は、規約に別段の定めがない限り集会の決議によつて、管理者を選任し、又は解任することができる。\"},{\"url\":\"https://laws.e-gov.go.jp/api/2/law_data/337AC0000000069?asof=2024-04-01&law_full_text_format=xml&response_format=xml\",\"excerpt\":\"管理者に不正な行為その他その職務を行うに適しない事情があるときは、各区分所有者は、その解任を裁判所に請求することができる。\"},{\"url\":\"https://laws.e-gov.go.jp/api/2/law_data/337AC0000000069?asof=2024-04-01&law_full_text_format=xml&response_format=xml\",\"excerpt\":\"管理者は、規約又は集会の決議により、その職務（第二項後段に規定する事項を含む。）に関し、区分所有者のために、原告又は被告となることができる。\"}]},\"5\":{\"status\":\"PASS\",\"choiceStatus\":{\"ア\":\"PASS\",\"イ\":\"PASS\",\"ウ\":\"PASS\",\"エ\":\"PASS\"},\"fixedChoiceExplanations\":{},\"evidence\":[{\"url\":\"https://laws.e-gov.go.jp/api/2/law_data/337AC0000000069?asof=2024-04-01&law_full_text_format=xml&response_format=xml\",\"excerpt\":\"規約の設定、変更又は廃止は、区分所有者及び議決権の各四分の三以上の多数による集会の決議によつてする。この場合において、規約の設定、変更又は廃止が一部の区分所有者の権利に特別の影響を及ぼすべきときは、その承諾を得なければならない。\"},{\"url\":\"https://mezase-mansion.jp/hanrei/hanre-h10-chushaba.html\",\"excerpt\":\"規約の設定、変更等の必要性及び合理性とこれによって一部の区分所有者が受ける不利益とを比較衡量し、当該区分所有関係の実態に照らして、その不利益が受忍すべき限度を超えると認められる場合\"},{\"url\":\"https://mezase-mansion.jp/hanrei/hanre-h10-chushaba.html\",\"excerpt\":\"専用使用権者が訴訟において使用料増額の効力を争っているような場合には、裁判所の判断を待つことなく、駐車場使用契約を解除し、専用使用権を失わせることは、契約の解除を相当とするに足りる特段の事情がない限り、許されない\"}]},\"6\":{\"status\":\"PASS\",\"choiceStatus\":{\"ア\":\"PASS\",\"イ\":\"PASS\",\"ウ\":\"PASS\",\"エ\":\"PASS\"},\"fixedChoiceExplanations\":{},\"evidence\":[{\"url\":\"https://laws.e-gov.go.jp/api/2/law_data/337AC0000000069?asof=2024-04-01&law_full_text_format=xml&response_format=xml\",\"excerpt\":\"共用部分の管理に関する事項は、前条の場合を除いて、集会の決議で決する。ただし、保存行為は、各共有者がすることができる。\"},{\"url\":\"https://laws.e-gov.go.jp/api/2/law_data/337AC0000000069?asof=2024-04-01&law_full_text_format=xml&response_format=xml\",\"excerpt\":\"共用部分の変更（その形状又は効用の著しい変更を伴わないものを除く。）は、区分所有者及び議決権の各四分の三以上の多数による集会の決議で決する。ただし、この区分所有者の定数は、規約でその過半数まで減ずることができる。\"},{\"url\":\"https://laws.e-gov.go.jp/api/2/law_data/337AC0000000069?asof=2024-04-01&law_full_text_format=xml&response_format=xml\",\"excerpt\":\"第一項本文に規定する場合を除いて、建物の一部が滅失したときは、集会において、区分所有者及び議決権の各四分の三以上の多数で、滅失した共用部分を復旧する旨の決議をすることができる。\"}]},\"7\":{\"status\":\"FIX\",\"choiceStatus\":{\"ア\":\"PASS\",\"イ\":\"PASS\",\"ウ\":\"PASS\",\"エ\":\"FIX\"},\"fixedChoiceExplanations\":{\"エ\":\"正しい。屋上を携帯電話基地局の設置場所として賃貸して得る収入は、法人税法上の収益事業（不動産貸付業）に当たる。管理組合法人は法人税法上の公益法人等とみなされ、収益事業から生じた所得だけが課税対象となるが、区分所有法第47条第13項の読替えにより、法人税法第66条の税率は「普通法人（管理組合法人を含む。）」として適用される。したがって、設置料収入には普通法人と同じ税率で課税される。\"},\"evidence\":[{\"url\":\"https://laws.e-gov.go.jp/api/2/law_data/337AC0000000069?asof=2024-04-01&law_full_text_format=xml&response_format=xml\",\"excerpt\":\"理事の代理権に加えた制限は、善意の第三者に対抗することができない。\"},{\"url\":\"https://laws.e-gov.go.jp/api/2/law_data/337AC0000000069?asof=2024-04-01&law_full_text_format=xml&response_format=xml\",\"excerpt\":\"理事が数人あるときは、各自管理組合法人を代表する。\"},{\"url\":\"https://laws.e-gov.go.jp/api/2/law_data/337AC0000000069?asof=2024-04-01&law_full_text_format=xml&response_format=xml\",\"excerpt\":\"管理組合法人は、法人税法（昭和四十年法律第三十四号）その他法人税に関する法令の規定の適用については、同法第二条第六号に規定する公益法人等とみなす。この場合において、同法第三十七条の規定を適用する場合には同条第四項中「公益法人等（」とあるのは「公益法人等（管理組合法人並びに」と、同法第六十六条の規定を適用する場合には同条第一項中「普通法人」とあるのは「普通法人（管理組合法人を含む。）」と、同条第二項中「除く」とあるのは「除くものとし、管理組合法人を含む」と、同条第三項中「公益法人等（」とあるのは「公益法人等（管理組合法人及び」とする。\"}]},\"8\":{\"status\":\"PASS\",\"choiceStatus\":{\"ア\":\"PASS\",\"イ\":\"PASS\",\"ウ\":\"PASS\",\"エ\":\"PASS\"},\"fixedChoiceExplanations\":{},\"evidence\":[{\"url\":\"https://laws.e-gov.go.jp/api/2/law_data/337AC0000000069?asof=2024-04-01&law_full_text_format=xml&response_format=xml\",\"excerpt\":\"前条第一項に規定する債権は、債務者たる区分所有者の特定承継人に対しても行うことができる。\"},{\"url\":\"https://laws.e-gov.go.jp/api/2/law_data/337AC0000000069?asof=2024-04-01&law_full_text_format=xml&response_format=xml\",\"excerpt\":\"前項の先取特権は、優先権の順位及び効力については、共益費用の先取特権とみなす。\"},{\"url\":\"https://laws.e-gov.go.jp/api/2/law_data/337AC0000000069?asof=2024-04-01&law_full_text_format=xml&response_format=xml\",\"excerpt\":\"第五十七条第一項に規定する場合において、第六条第一項に規定する行為による区分所有者の共同生活上の障害が著しく、他の方法によつてはその障害を除去して共用部分の利用の確保その他の区分所有者の共同生活の維持を図ることが困難であるときは、他の区分所有者の全員又は管理組合法人は、集会の決議に基づき、訴えをもつて、当該行為に係る区分所有者の区分所有権及び敷地利用権の競売を請求することができる。\"},{\"url\":\"https://laws.e-gov.go.jp/api/2/law_data/337AC0000000069?asof=2024-04-01&law_full_text_format=xml&response_format=xml\",\"excerpt\":\"第五十七条第三項の規定は前項の訴えの提起に、前条第二項及び第三項の規定は前項の決議に準用する。\"}]},\"9\":{\"status\":\"PASS\",\"choiceStatus\":{\"ア\":\"PASS\",\"イ\":\"PASS\",\"ウ\":\"PASS\",\"エ\":\"PASS\"},\"fixedChoiceExplanations\":{},\"evidence\":[{\"url\":\"https://laws.e-gov.go.jp/api/2/law_data/337AC0000000069?asof=2024-04-01&law_full_text_format=xml&response_format=xml\",\"excerpt\":\"前条第一項に規定する場合において、第六条第一項に規定する行為による区分所有者の共同生活上の障害が著しく、前条第一項に規定する請求によつてはその障害を除去して共用部分の利用の確保その他の区分所有者の共同生活の維持を図ることが困難であるときは、他の区分所有者の全員又は管理組合法人は、集会の決議に基づき、訴えをもつて、相当の期間の当該行為に係る区分所有者による専有部分の使用の禁止を請求することができる。\"},{\"url\":\"https://laws.e-gov.go.jp/api/2/law_data/337AC0000000069?asof=2024-04-01&law_full_text_format=xml&response_format=xml\",\"excerpt\":\"区分所有者の全員又は管理組合法人は、集会の決議に基づき、訴えをもつて、当該行為に係る占有者が占有する専有部分の使用又は収益を目的とする契約の解除及びその専有部分の引渡しを請求することができる。\"},{\"url\":\"https://laws.e-gov.go.jp/api/2/law_data/354AC0000000004?asof=2024-04-01&law_full_text_format=xml&response_format=xml\",\"excerpt\":\"作為又は不作為を目的とする債務で前条第一項の強制執行ができないものについての強制執行は、執行裁判所が、債務者に対し、遅延の期間に応じ、又は相当と認める一定の期間内に履行しないときは直ちに、債務の履行を確保するために相当と認める一定の額の金銭を債権者に支払うべき旨を命ずる方法により行う。\"}]},\"10\":{\"status\":\"FIX\",\"choiceStatus\":{\"ア\":\"PASS\",\"イ\":\"FIX\",\"ウ\":\"FIX\",\"エ\":\"FIX\"},\"fixedChoiceExplanations\":{\"イ\":\"誤り。決議賛成者以外の区分所有者は、復旧決議の日から2週間を経過すると買取請求ができる（区分所有法第61条第7項）。決議の日から4月が経過しただけで請求できなくなる、という規定はない。請求できなくなるのは、集会を招集した者（買取指定者がいるときは買取指定者）が4月以上の期間を定めて請求するかどうかの確答を書面で催告し、その期間が経過したときである（同条第11項・第13項）。\",\"ウ\":\"正しい。区分所有法第61条第10項により、買取指定者が代金債務の全部又は一部を弁済しないときは、決議賛成者（買取指定者となったものを除く。）は連帯してその弁済の責任を負う。ただし、決議賛成者が、買取指定者に資力があり、かつ執行が容易であることを証明したときは、この限りでない。\",\"エ\":\"誤り。区分所有法第61条第14項により、建物の一部が滅失した日から「6月」以内に復旧決議や建替え決議（団地内の建物の一括建替え決議を含む）がないときに、各区分所有者は他の区分所有者に対して買取請求ができる。「2年」ではない。\"},\"evidence\":[{\"url\":\"https://laws.e-gov.go.jp/api/2/law_data/337AC0000000069?asof=2024-04-01&law_full_text_format=xml&response_format=xml\",\"excerpt\":\"買取指定者が第七項前段に規定する請求に基づく売買の代金に係る債務の全部又は一部の弁済をしないときは、決議賛成者（買取指定者となつたものを除く。以下この項及び第十五項において同じ。）は、連帯してその債務の全部又は一部の弁済の責めに任ずる。ただし、決議賛成者が買取指定者に資力があり、かつ、執行が容易であることを証明したときは、この限りでない。\"},{\"url\":\"https://laws.e-gov.go.jp/api/2/law_data/337AC0000000069?asof=2024-04-01&law_full_text_format=xml&response_format=xml\",\"excerpt\":\"第五項に規定する場合において、建物の一部が滅失した日から六月以内に同項、次条第一項又は第七十条第一項の決議がないときは、各区分所有者は、他の区分所有者に対し、建物及びその敷地に関する権利を時価で買い取るべきことを請求することができる。\"},{\"url\":\"https://laws.e-gov.go.jp/api/2/law_data/337AC0000000069?asof=2024-04-01&law_full_text_format=xml&response_format=xml\",\"excerpt\":\"第五項の集会を招集した者（買取指定者の指定がされているときは、当該買取指定者。次項において同じ。）は、決議賛成者以外の区分所有者に対し、四月以上の期間を定めて、第七項前段に規定する請求をするか否かを確答すべき旨を書面で催告することができる。\"},{\"url\":\"https://laws.e-gov.go.jp/api/2/law_data/337AC0000000069?asof=2024-04-01&law_full_text_format=xml&response_format=xml\",\"excerpt\":\"第一項に規定する決議事項を会議の目的とする集会を招集するときは、第三十五条第一項の通知は、同項の規定にかかわらず、当該集会の会日より少なくとも二月前に発しなければならない。ただし、この期間は、規約で伸長することができる。\"}]}}",
+  "ttft_ms": 3605,
+  "type": "result",
+  "duration_ms": 187827,
+  "uuid": "a9ef6237-0910-4c0d-b95d-d0c49be48409",
+  "ttft_stream_ms": 1153,
+  "time_to_request_ms": 178,
+  "first_content_frame_ms": 1153,
+  "queued_turn_count": 0,
+  "result_index": 0,
+  "_exitCode": 0,
+  "_requestedModel": "claude-opus-5-5",
+  "_toolsAllowed": [
+    "WebFetch",
+    "WebSearch"
+  ]
+}

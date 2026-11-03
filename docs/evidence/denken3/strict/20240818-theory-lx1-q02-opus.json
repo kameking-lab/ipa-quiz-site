@@ -1,0 +1,69 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20240818",
+  "subject": "theory",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 3200,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 13370,
+      "webSearchRequests": 0,
+      "costUSD": 0.17122379999999998,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 1761,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "209fc56ec14074b74ee5d6e6955206aa595a26e599c7432878885adaa0330124",
+  "inputRequestSha256": "38e85cbf116462986a62f22db2387a8477c3c3321c8628bca6acf6a3fcdb3e06",
+  "inputHashes": {
+    "candidateSha256": {
+      "q02": "c3599e2086447c666b4916e3138135b1b7619c2055636164d58b00f7b5fe88cf"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20240818/theory/p06.png": "e7ff1759cb8fb193aa44392b84c2579d2b77086fe0522e04ed51146f03d35cba"
+    },
+    "figureSha256": {},
+    "sourceQuestionPdfSha256": "236be905e93a023cf3c65c1e22c45c24dc42b910151c51f8ed023247793d1d29",
+    "sourceAnswerPdfSha256": "f72ecbc3a477e64948388b69cf78cb931032c9f0c688639836c8d533a949cd0f",
+    "officialAnswerUnitsSha256": "e7ec82631490ca53cc72fca622cf5fd252fdb8243298d6500a584abacb476fe3",
+    "referencePdfSha256": {},
+    "referencePageSha256": {},
+    "referenceJsonSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q02",
+      "questionNumber": 2,
+      "part": null,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [
+        "choiceExplanations.2 が不正確。『正しい関係Q=4πε₀a²Eₘに対してε₀とaを分母側に反転している』とあるが、実際には 4π・ε₀・a がすべて分母に移っており、4π が抜けている。さらに a² を単に反転すると 1/(4πε₀a²) となり、これは肢(1)の形である。肢(2)は反転に加えて a の次数も 2→1 に変わっている。現行の『aの次数も合わず』は、この二重のずれを特定していない。修正案：『誤り。Eₘ/(4πε₀a) は正しい式 Q=4πε₀a²Eₘ の係数 4πε₀a² を分母に移し、さらに a の次数を 1 に下げた形で、どの段階の式変形からも得られない。単位は (V/m)/(F/m·m)=V/(F·m)=V²/(C·m) となり、電荷[C]にならない。』"
+      ],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "問題文：添付原図（冊子印字 -3-、T1-R 006。manifest で PDF 第6頁）と照合した。『空気中に孤立した半径 a[m]の導体球に帯電できる最大の電荷の値[C]として，正しいものを次の(1)～(5)のうちから一つ選べ。ただし，空気の絶縁耐力及び誘電率はそれぞれ Eₘ[V/m]及び ε₀[F/m]とする。』と候補は一致した。句読点の全角・半角の整形のみで、意味の差異はない。",
+        "選択肢：原図の (1) Eₘ/(4πε₀a²)、(2) Eₘ/(4πε₀a)、(3) 4πε₀aEₘ、(4) 4πε₀a²Eₘ、(5) 4πε₀a³Eₘ と候補5肢はすべて一致した。上付き・下付きの判読にも誤りはない。",
+        "公式正答：公式解答表『令和6年度 上期 第三種電気主任技術者試験解答』の＜理論＞問2 は 4。manifest の answer=\"4\" および候補 officialAnswer=\"4\" と一致した。",
+        "総合解説の検算：球表面の電界は E=Q/(4πε₀a²)。E=Eₘ とおくと Q_max=4πε₀a²Eₘ となる。単位は (F/m)·m²·(V/m)=F·V=C で整合する。因果（表面電界が絶縁耐力に達する時点が最大帯電量）も正しい。",
+        "choiceExplanations.1：Eₘ/(4πε₀a²) の単位は V/(F·m²)=V²/(C·m²) で [C] にならない。記述は妥当である。",
+        "choiceExplanations.3：4πε₀aEₘ は a の次数が1不足している。単位は C/m で [C] にならない。記述は正しい。",
+        "choiceExplanations.4：正答の理由は総合解説と整合する。",
+        "choiceExplanations.5：4πε₀a³Eₘ は a の次数が1過剰である（単位 C·m）。記述は正しい。",
+        "図：原図に図版はなく、figureDescription『図はなし』、figureUrls=[]、choiceFigureUrls={} は妥当である。",
+        "出典メタデータ：fiscalYear=2024、term=upper、examDate=2024-08-18、subject=theory、sourceQuestionPdfUrl=…20240818_ch_third_q01.pdf、sourceAnswerPdfUrl=…20240818_ch_third_a01.pdf、reviewedFromPage=[6] はいずれも manifest と一致した。",
+        "officialReferenceUrls は空のため、独立主張の外部検証事項はない。"
+      ]
+    }
+  ]
+}

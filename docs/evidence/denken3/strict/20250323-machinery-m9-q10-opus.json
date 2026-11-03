@@ -1,0 +1,69 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20250323",
+  "subject": "machinery",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 4,
+      "outputTokens": 4007,
+      "cacheReadInputTokens": 275955,
+      "cacheCreationInputTokens": 29525,
+      "webSearchRequests": 0,
+      "costUSD": 0.371547,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 2250,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "2f7fea0633070c2ac70300d98378800e4dc4b2f72c74dafc595ff7fa0a5d2dde",
+  "inputRequestSha256": "26cb34dc2e8c9f4a08c9e3aac15941eea4df35297e75a56f661f10422fd13a47",
+  "inputHashes": {
+    "candidateSha256": {
+      "q10": "58ab2edf9d32ccef0d6a739a293debf55ac57df15494c5eb1657c7ade1978029"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20250323/machinery/p13.png": "3106a7a5d743c05344733ea038a7517041ca4988052e6521d113a1e676dfb468"
+    },
+    "figureSha256": {
+      "public/images/denken3/20250323/machinery/20250323-machinery-q10-pcs-circuit.png": "c7fcfb14c6d9dec2f4f9b4e8bff426426f822c005e164d466daaeaf00e56e3e4"
+    },
+    "sourceQuestionPdfSha256": "66e8b0070a314cd78ed9b9f3edd3d75eeaf442b258fd0aacab0e7d9620c75b9f",
+    "sourceAnswerPdfSha256": "4c3b38fcf1405766fafaa78b1b05b867a3d48307a670b9d354476bc6b32acd4c",
+    "officialAnswerUnitsSha256": "645fce39114d52abdbc2a3630bb35d137618e4f31628a2adb8c76f40542005aa",
+    "referencePdfSha256": {},
+    "referencePageSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q10",
+      "questionNumber": 10,
+      "part": null,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "The question stem matches the official original page word for word: 図に示す太陽光発電用パワーコンディショナに関する記述として，誤っているものを次の(1)〜(5)のうちから一つ選べ。 The only differences are normalized punctuation (，→、).",
+        "Choices (1) to (5) were each compared with the original text. The only differences are normalized punctuation and full-width/half-width characters. (1)「降圧チョッパとインバータを組み合わせて…変換制御する機器」, (2) MPPT, (3) the smoothing capacitor between chopper and inverter and ripple, (4) the harmonic-suppression filter and PWM, and (5) grid-interconnection protection and shutdown all have no dropped or changed words.",
+        "The official answer unit is {question:10, part:null, answer:'1'}. It matches officialAnswer='1', and the answer was not changed.",
+        "Circuit check against the original figure: the solar cell output terminals connect to a parallel capacitor. A series reactor sits on the upper line. The reactor output connects to the midpoint of two series IGBTs, both with antiparallel diodes. The upper IGBT's collector connects to the DC-link positive rail, and the lower IGBT's emitter connects to the negative rail. The reactor is in series on the input side, current is switched to the negative rail at the midpoint, and energy is sent to the DC link through the upper diode. This is a boost chopper in the direction from the solar cell to the DC link. So the statement '降圧チョッパ' in (1) is incorrect, and answer 1 is consistent.",
+        "The DC-link capacitor sits between the chopper and the inverter. The inverter is a single-phase full bridge with 4 IGBTs (2 legs). The two output lines each have a series reactor, followed by a capacitor across the lines and the 'to power grid' terminals. This matches the configuration in the explanation. The claim in (4) that 'the figure also shows output-side reactors and a parallel capacitor' is consistent with the original figure.",
+        "In the overall explanation, the causal chain for (1) is correct: lower IGBT as main switch, energy stored in the reactor, sent to the DC link through the upper diode, which is a boost configuration. The line '(2)〜(5)は一般的説明として正しい' is also appropriate.",
+        "The per-choice reasons are correct. (2): the maximum power point shifts with irradiance and temperature, so MPPT is needed. (3): ΔV=ΔQ/C, so a larger capacity gives smaller ripple. (4): PWM plus the LC filter reduces harmonic outflow. (5): the unit disconnects from the grid on an abnormality. None of these contains a mistake in the physics or the causal chain.",
+        "The public candidate figure 20250323-machinery-q10-pcs-circuit.png matches the original figure in the frame 'パワーコンディショナ', the 'solar cell' and 'to power grid' labels, the open-circle terminals, all 6 IGBTs and diodes, the 3 capacitors, the 3 reactors, and the positions of all junction dots. Where the output line from the left leg's midpoint crosses the right leg's vertical wire, there is no junction dot, the same as in the original. So the connection relationships are reproduced accurately. The crop contains no question text or choice text, and the figure alone is enough to understand the circuit needed to answer.",
+        "The figureDescription (series reactor on the input side, two-IGBT chopper arm, DC-link capacitor, 4-IGBT full-bridge inverter, series reactor on each output line plus a parallel capacitor, the 'to power grid' terminal, and the dashed frame) matches the original figure.",
+        "officialReferenceUrls is an empty array, and the explanation contains no independent claims that rely on an external reference, so there is nothing requiring external confirmation.",
+        "The printed page number on the original is '-10-'. That matches reviewedFromPage=[13] under the usual 3-page offset in this exam's PDFs, where the front matter precedes body page 1. The page content, question 10 with its figure, also matches.",
+        "sourceAttribution (令和6年度下期 機械 問10) and examDate=2025-03-23 match fiscalYear=2024 and term=lower."
+      ]
+    }
+  ]
+}

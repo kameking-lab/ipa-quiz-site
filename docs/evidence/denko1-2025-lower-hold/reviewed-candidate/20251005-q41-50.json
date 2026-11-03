@@ -1,0 +1,316 @@
+[
+  {
+    "number": 41,
+    "question": "①で示す機器の動作特性試験に用いるものは。",
+    "choices": {
+      "イ": "漏えい電流・動作時間の試験器の写真",
+      "ロ": "V・A・φの計器を持つ地絡継電器試験器の写真",
+      "ハ": "mA・kV計器を持つ試験器の写真",
+      "ニ": "11 kV・5 kVAと表示された耐電圧試験用機器の写真"
+    },
+    "officialAnswer": "ロ",
+    "explanation": "共有図①は受電点の地絡継電装置。公式問題14ページの試験器写真を確認し、地絡継電器の動作特性に必要な電圧・電流・位相角を調整・測定できる器具を選ぶ。",
+    "choiceExplanations": {
+      "イ": "写真の前面は漏えい電流や動作時間を測る器具であり、地絡継電器の電圧・電流・位相角を個別に設定する写真ロの器具とは異なる。",
+      "ロ": "写真にV、A、φの計器があり、地絡継電器へ試験電圧・試験電流を与え位相角も確認して動作特性を調べられる。",
+      "ハ": "写真にはmAとkVの計器が見える。高電圧と漏れ電流の試験をする器具で、V・A・φを使う①の動作特性試験器ではない。",
+      "ニ": "写真には11 kV・5 kVAの高電圧出力仕様が見える。耐電圧試験用電源側の器具で、①の継電器特性試験器ではない。"
+    },
+    "reviewedFromCrop": "media/q41.png",
+    "imageUrls": [
+      "media/shared-q41-50.png",
+      "media/q41.png"
+    ],
+    "sourcePage": 14,
+    "sourceAttribution": "出典：令和7年度下期第一種電気工事士学科試験 問41（電気技術者試験センター）。設問の改行・空白と表記を整え、図のみの選択肢は識別用の説明を追加。原本図版を切り出した。",
+    "sourceQuestionPdfUrl": "https://www.shiken.or.jp/construction/upload/20251005_co_first_q01.pdf",
+    "sourceAnswerPdfUrl": "https://www.shiken.or.jp/construction/upload/20251005_co_first_a01.pdf",
+    "publicationStatus": "HOLD",
+    "normalizationStatus": "CANDIDATE_PENDING_FINAL_QA",
+    "choiceImageUrls": {
+      "イ": "media/q41-i.png",
+      "ロ": "media/q41-ro.png",
+      "ハ": "media/q41-ha.png",
+      "ニ": "media/q41-ni.png"
+    }
+  },
+  {
+    "number": 42,
+    "question": "②で示す部分の施工で使用しないものは。",
+    "choices": {
+      "イ": "ラチェット式工具の写真",
+      "ロ": "黄色グリップのE形リングスリーブ用圧着工具の写真",
+      "ハ": "ケーブル外装・絶縁体処理工具の写真",
+      "ニ": "ケーブル切断・外装処理工具の写真"
+    },
+    "officialAnswer": "ロ",
+    "explanation": "共有図②は6.6 kVの屋外引込ケーブルが建物内へ入る箇所。公式問題14ページの工具写真を、高圧ケーブル終端・接続施工に用いるかで判定する。",
+    "choiceExplanations": {
+      "イ": "写真はケーブル施工で締付け作業に使えるラチェット式工具で、図②の施工と無関係ではない。",
+      "ロ": "黄色グリップの写真は屋内低圧配線のE形リングスリーブ用圧着工具。高圧引込ケーブルの終端処理には用いない。",
+      "ハ": "写真はケーブルの外装や絶縁体を処理する施工工具で、終端施工に使用できる。",
+      "ニ": "写真はケーブルの切断・外装処理に用いる施工工具で、高圧ケーブルの終端施工から除外できない。"
+    },
+    "reviewedFromCrop": "media/q42.png",
+    "imageUrls": [
+      "media/shared-q41-50.png",
+      "media/q42.png"
+    ],
+    "sourcePage": 14,
+    "sourceAttribution": "出典：令和7年度下期第一種電気工事士学科試験 問42（電気技術者試験センター）。設問の改行・空白と表記を整え、図のみの選択肢は識別用の説明を追加。原本図版を切り出した。",
+    "sourceQuestionPdfUrl": "https://www.shiken.or.jp/construction/upload/20251005_co_first_q01.pdf",
+    "sourceAnswerPdfUrl": "https://www.shiken.or.jp/construction/upload/20251005_co_first_a01.pdf",
+    "publicationStatus": "HOLD",
+    "normalizationStatus": "CANDIDATE_PENDING_FINAL_QA",
+    "choiceImageUrls": {
+      "イ": "media/q42-i.png",
+      "ロ": "media/q42-ro.png",
+      "ハ": "media/q42-ha.png",
+      "ニ": "media/q42-ni.png"
+    }
+  },
+  {
+    "number": 43,
+    "question": "③で示すa、b、cの機器について、点検時に停電させるための開路手順として最も不適切なものは。",
+    "choices": {
+      "イ": "b→a→c",
+      "ロ": "c→b→a",
+      "ハ": "a→b→c",
+      "ニ": "c→a→b"
+    },
+    "officialAnswer": "イ",
+    "explanation": "共有単線図③のaは屋外区分開閉器（負荷開閉器）、bは断路器、cは受電用交流遮断器。停止時に断路器bを開く前に負荷電流を切る。公式PDF14ページの矢印順を選択肢ごとに確認する。",
+    "choiceExplanations": {
+      "イ": "b→a→cは断路器bを最初に開く。bには負荷電流を遮断する能力がないため、この順序は最も不適切。",
+      "ロ": "c→b→aは遮断器cで負荷電流を切ってから断路器bを開くので、bの無負荷開路条件を満たす。",
+      "ハ": "a→b→cは負荷開閉器aで先に受電を止め、無負荷を確認してからbを開く順序。bを通電中に先行開路しない。",
+      "ニ": "c→a→bは遮断器cで負荷電流を切り、さらに区分開閉器aを開いてからbを開く。bは無負荷で開路する。"
+    },
+    "reviewedFromCrop": "media/q43.png",
+    "imageUrls": [
+      "media/shared-q41-50.png",
+      "media/q43.png"
+    ],
+    "sourcePage": 14,
+    "sourceAttribution": "出典：令和7年度下期第一種電気工事士学科試験 問43（電気技術者試験センター）。設問の改行・空白と表記を整え、図のみの選択肢は識別用の説明を追加。原本図版を切り出した。",
+    "sourceQuestionPdfUrl": "https://www.shiken.or.jp/construction/upload/20251005_co_first_q01.pdf",
+    "sourceAnswerPdfUrl": "https://www.shiken.or.jp/construction/upload/20251005_co_first_a01.pdf",
+    "publicationStatus": "HOLD",
+    "normalizationStatus": "CANDIDATE_PENDING_FINAL_QA"
+  },
+  {
+    "number": 44,
+    "question": "④で示す装置を使用する主な目的は。",
+    "choices": {
+      "イ": "計器用変圧器の欠相を防止する。",
+      "ロ": "計器用変圧器の過負荷を防止する。",
+      "ハ": "計器用変圧器を雷サージから保護する。",
+      "ニ": "計器用変圧器の内部短絡事故が主回路に波及することを防止する。"
+    },
+    "officialAnswer": "ニ",
+    "explanation": "共有単線図④は計器用変圧器の一次側に直列に置かれた保護用ヒューズ。計器用変圧器の内部短絡を主回路へ波及させない役割を選ぶ。",
+    "choiceExplanations": {
+      "イ": "欠相の監視・保護が主目的の器具ではない。④は計器用変圧器の一次側に直列に入るヒューズ。",
+      "ロ": "計器用変圧器の過負荷防止だけを主目的とする説明ではなく、一次側の短絡事故時の切離しを考える。",
+      "ハ": "雷サージを吸収するのは避雷器等の役割で、④の一次側ヒューズの主目的ではない。",
+      "ニ": "計器用変圧器の内部短絡時にヒューズが溶断し、事故が高圧主回路へ波及するのを抑える。"
+    },
+    "reviewedFromCrop": "media/q44.png",
+    "imageUrls": [
+      "media/shared-q41-50.png",
+      "media/q44.png"
+    ],
+    "sourcePage": 14,
+    "sourceAttribution": "出典：令和7年度下期第一種電気工事士学科試験 問44（電気技術者試験センター）。設問の改行・空白と表記を整え、図のみの選択肢は識別用の説明を追加。原本図版を切り出した。",
+    "sourceQuestionPdfUrl": "https://www.shiken.or.jp/construction/upload/20251005_co_first_q01.pdf",
+    "sourceAnswerPdfUrl": "https://www.shiken.or.jp/construction/upload/20251005_co_first_a01.pdf",
+    "publicationStatus": "HOLD",
+    "normalizationStatus": "CANDIDATE_PENDING_FINAL_QA"
+  },
+  {
+    "number": 45,
+    "question": "⑤で示す図記号の器具の名称は。",
+    "choices": {
+      "イ": "試験用電流切換スイッチ",
+      "ロ": "試験用電圧切換スイッチ",
+      "ハ": "試験用端子（電流端子）",
+      "ニ": "試験用端子（電圧端子）"
+    },
+    "officialAnswer": "ニ",
+    "explanation": "共有単線図⑤は計器用変圧器から電圧計へ至る試験用の電圧端子。切換スイッチや電流端子と区別する。",
+    "choiceExplanations": {
+      "イ": "試験用電流切換スイッチであり、電圧計回路の⑤に描かれた端子記号ではない。",
+      "ロ": "試験用電圧切換スイッチであり、共有図⑤の端子記号と器具の種類が異なる。",
+      "ハ": "試験用端子でも電流端子を指す。⑤は計器用変圧器と電圧計の間なので電圧端子を選ぶ。",
+      "ニ": "試験用端子の電圧端子であり、計器用変圧器と電圧計の間にある⑤の位置・記号に一致する。"
+    },
+    "reviewedFromCrop": "media/q45.png",
+    "imageUrls": [
+      "media/shared-q41-50.png",
+      "media/q45.png"
+    ],
+    "sourcePage": 15,
+    "sourceAttribution": "出典：令和7年度下期第一種電気工事士学科試験 問45（電気技術者試験センター）。設問の改行・空白と表記を整え、図のみの選択肢は識別用の説明を追加。原本図版を切り出した。",
+    "sourceQuestionPdfUrl": "https://www.shiken.or.jp/construction/upload/20251005_co_first_q01.pdf",
+    "sourceAnswerPdfUrl": "https://www.shiken.or.jp/construction/upload/20251005_co_first_a01.pdf",
+    "publicationStatus": "HOLD",
+    "normalizationStatus": "CANDIDATE_PENDING_FINAL_QA"
+  },
+  {
+    "number": 46,
+    "question": "⑥に設置する機器として一般的に使用されるものの図記号は。",
+    "choices": {
+      "イ": "電磁接触器と避雷器の図記号",
+      "ロ": "交流遮断器と避雷器の図記号",
+      "ハ": "負荷開閉器と避雷器の図記号",
+      "ニ": "断路器と避雷器の図記号"
+    },
+    "officialAnswer": "ニ",
+    "explanation": "共有単線図⑥は主回路と大地の間に接続される避雷器の空欄。点検・絶縁測定で避雷器を電路から切り離せるよう、避雷器の前に断路器を置く図記号の組合せを探す。公式図15ページの上部4記号はJIS C 0617に照合し、電磁接触器・交流遮断器・負荷開閉器・断路器の順と確認した。",
+    "choiceExplanations": {
+      "イ": "下部は避雷器、上部は電磁接触器の図記号。点検時の切離し用に求める断路器ではない。",
+      "ロ": "下部は避雷器、上部は交流遮断器の図記号。断路器と組み合わせたものではない。",
+      "ハ": "下部は避雷器、上部は負荷開閉器の図記号。断路器と組み合わせたものではない。",
+      "ニ": "避雷器に断路器を直列に組み合わせた図記号。点検時に避雷器を主回路から切り離せる。"
+    },
+    "reviewedFromCrop": "media/q46.png",
+    "imageUrls": [
+      "media/shared-q41-50.png",
+      "media/q46.png"
+    ],
+    "sourcePage": 15,
+    "sourceAttribution": "出典：令和7年度下期第一種電気工事士学科試験 問46（電気技術者試験センター）。設問の改行・空白と表記を整え、図のみの選択肢は識別用の説明を追加。原本図版を切り出した。",
+    "sourceQuestionPdfUrl": "https://www.shiken.or.jp/construction/upload/20251005_co_first_q01.pdf",
+    "sourceAnswerPdfUrl": "https://www.shiken.or.jp/construction/upload/20251005_co_first_a01.pdf",
+    "publicationStatus": "HOLD",
+    "normalizationStatus": "CANDIDATE_PENDING_FINAL_QA",
+    "choiceImageUrls": {
+      "イ": "media/q46-i.png",
+      "ロ": "media/q46-ro.png",
+      "ハ": "media/q46-ha.png",
+      "ニ": "media/q46-ni.png"
+    }
+  },
+  {
+    "number": 47,
+    "question": "⑦で示す機器の役割は。",
+    "choices": {
+      "イ": "地絡電流を検出する。",
+      "ロ": "高電圧を低電圧に変成する。",
+      "ハ": "高圧電路の電流を変成する。",
+      "ニ": "電路に侵入した過電圧を抑制する。"
+    },
+    "officialAnswer": "ハ",
+    "explanation": "共有単線図⑦は主回路の導体を囲む変流器で、二次側を過電流継電器・電流計へ接続する。",
+    "choiceExplanations": {
+      "イ": "地絡電流の検出は零相変流器などの役割。⑦は三相主回路電流を変流する変流器として描かれている。",
+      "ロ": "高電圧を低電圧へ変成するのは計器用変圧器の役割。⑦は導体を囲む変流器の記号。",
+      "ハ": "主回路の高圧電流を計測・保護に使える電流へ変流し、継電器と電流計へ渡す。",
+      "ニ": "過電圧抑制は避雷器などの役割であり、主回路電流を変成する⑦の機器の作用ではない。"
+    },
+    "reviewedFromCrop": "media/q47.png",
+    "imageUrls": [
+      "media/shared-q41-50.png",
+      "media/q47.png"
+    ],
+    "sourcePage": 15,
+    "sourceAttribution": "出典：令和7年度下期第一種電気工事士学科試験 問47（電気技術者試験センター）。設問の改行・空白と表記を整え、図のみの選択肢は識別用の説明を追加。原本図版を切り出した。",
+    "sourceQuestionPdfUrl": "https://www.shiken.or.jp/construction/upload/20251005_co_first_q01.pdf",
+    "sourceAnswerPdfUrl": "https://www.shiken.or.jp/construction/upload/20251005_co_first_a01.pdf",
+    "publicationStatus": "HOLD",
+    "normalizationStatus": "CANDIDATE_PENDING_FINAL_QA"
+  },
+  {
+    "number": 48,
+    "question": "⑧で示す機器の名称は。",
+    "choices": {
+      "イ": "ヒューズ付断路器",
+      "ロ": "ヒューズ付高圧カットアウト",
+      "ハ": "限流ヒューズ付高圧交流遮断器",
+      "ニ": "限流ヒューズ付高圧交流負荷開閉器"
+    },
+    "officialAnswer": "ニ",
+    "explanation": "共有単線図⑧はLBSの開閉器記号にヒューズ記号が一体で描かれている。",
+    "choiceExplanations": {
+      "イ": "ヒューズ付断路器は断路を目的とする機器で、図に明示された負荷開閉器LBSとは名称が異なる。",
+      "ロ": "ヒューズ付高圧カットアウトはPC系の機器であり、⑧に明記されたLBSの名称ではない。",
+      "ハ": "限流ヒューズ付高圧交流遮断器は遮断器を主体とする。図は遮断器ではなくLBS。",
+      "ニ": "限流ヒューズを組み合わせた高圧交流負荷開閉器で、図のLBSとヒューズ記号に一致する。"
+    },
+    "reviewedFromCrop": "media/q48.png",
+    "imageUrls": [
+      "media/shared-q41-50.png",
+      "media/q48.png"
+    ],
+    "sourcePage": 15,
+    "sourceAttribution": "出典：令和7年度下期第一種電気工事士学科試験 問48（電気技術者試験センター）。設問の改行・空白と表記を整え、図のみの選択肢は識別用の説明を追加。原本図版を切り出した。",
+    "sourceQuestionPdfUrl": "https://www.shiken.or.jp/construction/upload/20251005_co_first_q01.pdf",
+    "sourceAnswerPdfUrl": "https://www.shiken.or.jp/construction/upload/20251005_co_first_a01.pdf",
+    "publicationStatus": "HOLD",
+    "normalizationStatus": "CANDIDATE_PENDING_FINAL_QA"
+  },
+  {
+    "number": 49,
+    "question": "⑨で示す部分に使用するCVTケーブルとして適切なものは。",
+    "choices": {
+      "イ": "三心を共通外装に収め、各心に半導電層・銅シールドがある断面図",
+      "ロ": "架橋ポリエチレン絶縁・ビニルシースの単心CVケーブル3本をより合わせた断面図",
+      "ハ": "各心に半導電層・銅シールドを持つ高圧ケーブルの断面図",
+      "ニ": "ビニル絶縁の三心を共通シースに収めた断面図"
+    },
+    "officialAnswer": "ロ",
+    "explanation": "原本15ページの断面図を判定する。低圧側のCVTは架橋ポリエチレン絶縁・ビニルシースを持つ単心CVケーブル3本をより合わせた形。",
+    "choiceExplanations": {
+      "イ": "各心に半導電層・銅シールドがあり、3心が共通の外装内に収まる断面図。独立した低圧単心CV 3条のロとは構造が異なる。",
+      "ロ": "各心が導体、架橋ポリエチレン絶縁体、ビニルシースを独立して備え、単心3条のCVTを示す。",
+      "ハ": "各心に内部・外部半導電層と銅シールドがある高圧系ケーブルの断面で、設問のCVT構造とは異なる。",
+      "ニ": "共通のビニルシース内に3心を収めたビニル絶縁のケーブルで、単心CVを3条より合わせたCVTではない。"
+    },
+    "reviewedFromCrop": "media/q49.png",
+    "imageUrls": [
+      "media/shared-q41-50.png",
+      "media/q49.png"
+    ],
+    "sourcePage": 15,
+    "sourceAttribution": "出典：令和7年度下期第一種電気工事士学科試験 問49（電気技術者試験センター）。設問の改行・空白と表記を整え、図のみの選択肢は識別用の説明を追加。原本図版を切り出した。",
+    "sourceQuestionPdfUrl": "https://www.shiken.or.jp/construction/upload/20251005_co_first_q01.pdf",
+    "sourceAnswerPdfUrl": "https://www.shiken.or.jp/construction/upload/20251005_co_first_a01.pdf",
+    "publicationStatus": "HOLD",
+    "normalizationStatus": "CANDIDATE_PENDING_FINAL_QA",
+    "choiceImageUrls": {
+      "イ": "media/q49-i.png",
+      "ロ": "media/q49-ro.png",
+      "ハ": "media/q49-ha.png",
+      "ニ": "media/q49-ni.png"
+    }
+  },
+  {
+    "number": 50,
+    "question": "⑩で示す動力制御盤内から電動機に至る配線で必要な電線本数（心線数）は。",
+    "choices": {
+      "イ": "3",
+      "ロ": "4",
+      "ハ": "5",
+      "ニ": "6"
+    },
+    "officialAnswer": "ニ",
+    "explanation": "共有図⑩は三相電動機の始動方式を示す動力制御盤から電動機への配線。各相巻線の両端を制御盤へ戻すので、接地を除いて6本必要。",
+    "choiceExplanations": {
+      "イ": "3本は三相の通常運転用の線数で、各巻線の両端を制御盤で切り替える⑩には足りない。",
+      "ロ": "4本としても巻線端子6点を盤へ引き出せず、接地線は設問の心線数から除外する。",
+      "ハ": "5本では3つの巻線の両端を独立して6点とも接続できない。",
+      "ニ": "三相巻線3組の両端計6点を動力制御盤へ接続するため、接地線を除く電線本数は6本。"
+    },
+    "reviewedFromCrop": "media/q50.png",
+    "imageUrls": [
+      "media/shared-q41-50.png",
+      "media/q50.png"
+    ],
+    "sourcePage": 15,
+    "sourceAttribution": "出典：令和7年度下期第一種電気工事士学科試験 問50（電気技術者試験センター）。設問の改行・空白と表記を整え、図のみの選択肢は識別用の説明を追加。原本図版を切り出した。",
+    "sourceQuestionPdfUrl": "https://www.shiken.or.jp/construction/upload/20251005_co_first_q01.pdf",
+    "sourceAnswerPdfUrl": "https://www.shiken.or.jp/construction/upload/20251005_co_first_a01.pdf",
+    "publicationStatus": "HOLD",
+    "normalizationStatus": "CANDIDATE_PENDING_FINAL_QA"
+  }
+]

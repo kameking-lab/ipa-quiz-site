@@ -1,0 +1,72 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20260322",
+  "subject": "machinery",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 3756,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 14868,
+      "webSearchRequests": 0,
+      "costUSD": 0.1943278,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 1806,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "50915857b24d853e78144e49486b29a6932d506d2d535b0c51f3d7d02a75e464",
+  "inputRequestSha256": "371fec1edd5e6873ed13d1032d4c92d1fbecf0b31495c7597ce65a5754452ba9",
+  "inputHashes": {
+    "candidateSha256": {
+      "q03": "2184cbf7c6ae20cdaea26698bfa8e7925010542f739c5bf4c2d50e7924256255"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20260322/machinery/p06.png": "56b4fd624e6bdd91f04e29c5c63903eacbe5183b381cdbd0a1527cafb4ffae27"
+    },
+    "figureSha256": {},
+    "sourceQuestionPdfSha256": "a89c7dc2b9a305f9db83f2f78195f0df8a0da5aeec6b8e66cfd40fb028d146fb",
+    "sourceAnswerPdfSha256": "cc2890296d06a4823df5697a78a1c01ddfd39f041c51f48c87984daa3a5707c6",
+    "officialAnswerUnitsSha256": "a0c22d2fffbf8863bafd0ba0d4cd547765c3a7aa47341166c162c7a5136832a7",
+    "referencePdfSha256": {},
+    "referencePageSha256": {},
+    "referenceJsonSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q03",
+      "questionNumber": 3,
+      "part": null,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [
+        "総合解説の(ウ)の項は正しい語句（始動補償器）の説明しかしておらず、肢(1)(2)(5)にある「始動抵抗器」がなぜ(ウ)に当てはまらないかを説明していない。かご形誘導電動機には一次抵抗始動（電源と電動機の間に抵抗を挿入して端子電圧を下げる方法）も実在する。そのため(ウ)の文言だけでは始動抵抗器を明確に否定できない。解説では次の2点を明記する必要がある。①本問で想定する語句は単巻変圧器による始動補償器であること。②正答は(イ)・(エ)・(オ)から一つに定まり、(ウ)単独では正誤判定の決め手にならないこと。",
+        "choiceExplanations[1]：(ア)(イ)(エ)(オ)には言及しているが、(ウ)始動抵抗器に一切触れていない。各肢の全空欄について判定を示す形に揃えるべき。",
+        "choiceExplanations[2]：「(オ) 位相のみ正しい」は、(ウ)始動抵抗器が誤りであると断定している。これは uncertainty 欄の「(ウ)の語句単独では正誤を断定しにくい」と矛盾する。しかも(ウ)について理由を示していない。",
+        "choiceExplanations[5]：「(ウ) は本問の正答の組合せでは始動補償器である」は理由の説明になっていない。正答肢と違うという事実を述べているだけで、始動抵抗器が(ウ)として不適切である理由も、判定の決め手にならないという位置づけも示していない。肢(1)(2)と同じ方針で書き直すべき。"
+      ],
+      "figureIssues": [],
+      "sourceIssues": [
+        "uncertainty 欄に「出典の年度・試験科目名は原本ページ内に明記されていない…ため特定していない」とある。一方、sourceAttribution は「令和7年度下期…機械科目 問3」と特定しており、候補内で矛盾している。manifest 固定の出典（2025年度下期・2026-03-22・機械・問題PDF第6頁）と公式解答表の見出し「令和7年度 第三種電気主任技術者下期試験解答」の＜機械＞欄により出典は確定しているので、この記述は削除または更新すべき。",
+        "uncertainty 欄が(ウ)の曖昧さを認めているにもかかわらず、needsReview=false になっている。解説の修正で曖昧さへの対応を明示するまでは、この不整合が残る。"
+      ],
+      "verifiedEvidence": [
+        "問題原図（PDF第6頁、ページ下部の頁番号「-3-」、識別記号「T2－K 006」）と照合し、問題文a〜cと末尾の指示文が候補の question と一致することを確認した（Y結線／Δ結線、各空欄の位置を含む）。",
+        "選択肢表と照合し、(1)〜(5)の(ア)〜(オ)の全語句が choices と一致することを確認した。(1) 1/スリップリング/始動抵抗器/始動コンデンサ/周波数、(2) 0/整流子/始動抵抗器/始動コンデンサ/位相、(3) 0/スリップリング/始動補償器/インバータ/周波数、(4) 1/スリップリング/始動補償器/インバータ/位相、(5) 1/整流子/始動抵抗器/インバータ/位相。",
+        "公式解答表（令和7年度 第三種電気主任技術者下期試験解答、＜機械＞問3：解答4、配点5）と照合し、officialAnswer=\"4\" および scoringPoints=5 が manifest 固定の正答単位と一致することを確認した。",
+        "fiscalYear=2025、term=lower、examDate=2026-03-22、subject=machinery、reviewedFromPage=[6]、sourceQuestionPdfUrl、sourceAnswerPdfUrl が manifest と一致することを確認した。",
+        "総合解説の技術内容を検算し、誤りがないことを確認した。確認した内容は次のとおり。始動時の滑り s=1。比例推移により、最大トルクを生じる滑り sₘ は二次抵抗に比例し、最大トルク値は二次抵抗によらない。巻線形の二次回路はスリップリングとブラシで引き出す（整流子は不使用）。始動補償器は単巻変圧器による減電圧始動である。インバータは V/f 制御で電圧と周波数を同時に下げる。単相機の補助コイルは主コイルと同一周波数で位相が異なり、くま取りコイルは誘導電流の位相遅れで移動磁界を作る。",
+        "選択肢表の各語句と公式正答(4)を照合し、正答が一意に定まることを確認した。(ア)=1 により(2)(3)が除外され、(イ)=スリップリングにより(5)が、(エ)=インバータ・(オ)=位相により(1)が除外される。(ウ)に依存せず(4)に定まる。",
+        "原図には問題文と選択肢表しかなく、解答に必要な図はないことを確認した。figureUrls=[] と figureDescription の記述は妥当である。",
+        "officialReferenceUrls は空であり、検証が必要な独立主張はない。"
+      ]
+    }
+  ]
+}

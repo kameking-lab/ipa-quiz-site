@@ -1,0 +1,61 @@
+{
+  "reviewModel": "claude-opus-5-5",
+  "requestedModel": "claude-opus-5-5",
+  "canonicalModel": "claude-opus-5-5",
+  "provider": "firstParty",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 3214,
+      "cacheReadInputTokens": 129451,
+      "cacheCreationInputTokens": 20671,
+      "webSearchRequests": 0,
+      "costUSD": 0.2555462,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 2381,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "paperId": "emkohyo-20260217",
+  "ids": [
+    "emkohyo-20260217-q16"
+  ],
+  "figureSha256": {
+    "emkohyo-20260217-q16": {}
+  },
+  "officialRowImageSha256": {
+    "emkohyo-20260217-q16": {
+      "/exam-library/emkohyo-20260217/q16-p11-1.webp": "512a853a02c96546158ca29609e30ee8954280e1d9156ee4800a713458235a2b"
+    }
+  },
+  "officialPageImageSha256": {},
+  "governmentSourceImageSha256": {
+    "docs/evidence/emkohyo-choice-sources/20260217-q16-alpha-decay.png": "50ac4e2623f565d80e6df71f2f0996b5ac7a2c45cac5311129c17f325dc077e5",
+    "docs/evidence/emkohyo-choice-sources/20260217-q16-radiation-impact-classification.png": "c14e00f13961ae1447047606b56d47a19a42d1d339f2341046b81941d6260da2",
+    "docs/evidence/emkohyo-choice-sources/20260217-q16-tissue-sensitivity.png": "16156317513a4811d561fe148d2ba13fef7c5e1312b7ddea6a2afaf9a9dbf8f2"
+  },
+  "candidateSha256": {
+    "emkohyo-20260217-q16": "2c634e74484f6ea8c9494beafafc62ba6ac48ea25c67806718c421d54ce37ded"
+  },
+  "sourcePackPath": "docs/evidence/emkohyo-choice-sources/emkohyo-20260217-q16-16.json",
+  "sourcePackSha256": "112647a75cdacc6d27b635ec2d30928037c5314eaf3bc0444676e8144ac69f6c",
+  "assessment": {
+    "emkohyo-20260217-q16": {
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "reasonIssues": [
+        "肢4の理由にある「環境省の分類では、がん・白血病は確率的影響で、他の身体的障害は確定的影響（組織反応）として示されます」は、資料の内容より強い言い方になっている。環境省の分類図（03-01-03）の身体的影響の「例」欄に並ぶのは、急性放射線症候群・急性皮膚障害・胎児の発生・発達異常・水晶体の混濁・がん・白血病という具体例だけで、「他の身体的障害」を一つの区分として確定的影響に当てた記述はない。本肢で正誤を分けるのは「悪性腫瘍を除く全ての身体的影響」の「全て」なので、理由は例の列挙ではなく、機序による二分から導くべき。具体的には、影響は機序で確定的影響（細胞死・変性）と確率的影響（突然変異）に分かれ、確率的影響の身体的影響はがん・白血病に限られるので、それ以外の身体的影響は確定的影響になる、という流れで書き直すこと。"
+      ],
+      "sourceIssues": [
+        "肢4: 引用した環境省03-01-03の本文は「確率的影響は、がんや遺伝性影響といった…影響」という例示形（「といった」）で、確率的影響をがん・遺伝性影響に限るとは書いていない。分類図も例の列挙なので、肢4の「全ての身体的影響は確定的影響」という全称の主張を、どの政府ページも直接には支えていない。後半の「しきい線量を超えると線量の増加に伴い重症度が重くなる」は03-01-04が直接支えており、問題はない。"
+      ],
+      "needsExternalCheck": [
+        "肢4の「悪性腫瘍を除く全ての身体的影響は確定的影響」を直接支える政府一次資料の記述を探して差し替えるか、追加すること。求めるのは、確率的影響の範囲をがん・白血病と遺伝性影響に限るか、それ以外の身体的影響を組織反応（確定的影響）とする明示的な記述。候補は環境省の統一的な基礎資料の他ページや、原子力規制委員会・厚生労働省の電離放射線関連資料。"
+      ]
+    }
+  }
+}

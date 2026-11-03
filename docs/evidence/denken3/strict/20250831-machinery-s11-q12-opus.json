@@ -1,0 +1,71 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20250831",
+  "subject": "machinery",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 3132,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 14281,
+      "webSearchRequests": 0,
+      "costUSD": 0.1771518,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 1542,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "51612d233dce3034b2e612b9eab487853eb3b9fa2aedc20020759fb4d2b4f2fb",
+  "inputRequestSha256": "d0999da5f6f0009b4bb9b1f1da0e91e8cfdb233ba844efde7edfb4a08d2964ca",
+  "inputHashes": {
+    "candidateSha256": {
+      "q12": "d9c2349164072909944f1e84d1ac0d5b137827d680b7330ebe5306212424cbf9"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20250831/machinery/p15.png": "f1d7cd8aa55019e2d74c10897bdf029dd9d24ed6ab4e187d83bbfa58928d6a12"
+    },
+    "figureSha256": {
+      "public/images/denken3/20250831/machinery/20250831-machinery-q12-fig1.png": "892104fc4744097fab40eab152560cc65a5e50ee3fccc62babd78effb2982c3d"
+    },
+    "sourceQuestionPdfSha256": "2a73a24594cc2b8bb7504b9a0ff15e001b2bb56b830572ce2be853f7116f26d8",
+    "sourceAnswerPdfSha256": "76fd3715ed487d19a56b387fb402de20ee09474e9fa55b0413f9037b96af06c9",
+    "officialAnswerUnitsSha256": "bcc1652930f4fa8d416837cb3f6297397bfb88ad0044ea461ecfde42ce2c71cd",
+    "referencePdfSha256": {},
+    "referencePageSha256": {},
+    "referenceJsonSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q12",
+      "questionNumber": 12,
+      "part": null,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [
+        "choiceExplanations[\"2\"]（141）に誤答肢固有の理由がない。現状は「正しい値と一致しない」と述べて正解の計算を繰り返しているだけで、141 がどの誤りから生じるかを示していない。検算すると 141 ≒ 141.4 = 283/2 = 100√2 である。これは次のいずれの計算とも数値上一致する：(a) 全光束 5000 lm をそのまま光度 5000 cd とみなし、2 灯分だけ合計する（2 × 5000/50 × 1/√2 ≒ 141.4）。(b) 同じく光度 5000 cd とみなし、1 灯について cos θ を掛けるべきところを割る（5000/50 ÷ (1/√2) ≒ 141.4）。出題者の意図は公式資料で確認できないため、断定せず「数値上一致する誤算例」として固有理由を記載する修正が必要。"
+      ],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "公式解答表（令和7年度 第三種電気主任技術者上期試験解答）の＜機械＞欄で、問12＝解答4・配点5を確認した。候補の officialAnswer=\"4\" と scoringPoints=5 に一致する。",
+        "問題原図（印字頁 -12-、manifest 上の PDF 第15頁）の問題文と照合した。『幅 6 m，奥行き 8 m の長方形の駐車場の四隅に柱を立て，各柱の地上から 5 m の頂点に全光束 5 000 lm のランプを設置した。駐車場の中心 O の水平面照度[lx]…ただし，各ランプは均等光源とする。』と、数値・単位・条件がすべて候補と一致する。",
+        "選択肢を原図と照合した。(1) 283、(2) 141、(3) 31.8、(4) 22.5、(5) 5.6 で候補と一致する。",
+        "総合解説を検算した。I = 5000/(4π) ≒ 397.89 cd。半対角線 = √(6²+8²)/2 = 5 m、r² = 5²+5² = 50 m²、cos θ = 5/(5√2) = 1/√2 ≒ 0.7071。1 灯あたり 397.89/50 × 0.7071 ≒ 5.627 lx、4 灯で ≒ 22.51 lx となり、正答(4)と整合する。4 灯が O から等距離で寄与が等しいとする因果も正しい。",
+        "誤答肢(1)を検算した。4 × 5000/50 × 1/√2 ≒ 282.8 ≒ 283 で、全光束を光度とみなした誤りの説明と一致する。",
+        "誤答肢(3)を検算した。4 × 397.89/50 ≒ 31.83 ≒ 31.8 で、法線照度（cos θ を掛け忘れた値）という説明と一致する。",
+        "誤答肢(5)を検算した。1 灯分 ≒ 5.63 ≒ 5.6 で、1 灯のみの値という説明と一致する。",
+        "公開候補図を原図と照合した。ラベル A（左下）、B（右下）、C（右上）、D（左上）、O、寸法『6m』（A–B 下側）と『8m』（B–C 右側、縦書き）、破線の対角線 A–C・B–D、交点の黒点と O ラベルがすべて一致し、欠落・改変はない。図は問題文と併せれば単独で理解できる。",
+        "figureDescription を照合した。A→B→C→D が反時計回りである点、寸法線の位置、柱の高さ 5 m が図中に無く問題文で与えられている点の記述が、原図と一致する。",
+        "出典情報を manifest と照合した。fiscalYear=2025、term=upper、examDate=2025-08-31、subject=machinery、問題 PDF=20250831_ch_third_q03.pdf、解答 PDF=20250831_ch_third_a01.pdf、reviewedFromPage=[15] で一致する。sourceAttribution『令和7年度上期…機械科目 問12』も解答表見出しと整合する。",
+        "officialReferenceUrls は空であり、検証を要する独立主張はない。"
+      ]
+    }
+  ]
+}

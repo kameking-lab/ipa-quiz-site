@@ -1,0 +1,69 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20250831",
+  "subject": "law",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 2979,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 16161,
+      "webSearchRequests": 0,
+      "costUSD": 0.1891318,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 1430,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "bca16dc1f33499bfe95ebbf30cdf08b136cd536a809073f2f6ba38a3546e972e",
+  "inputRequestSha256": "81bb4160447ca088bdad348881d9202feca3ce98f76e993b66ca43479d7daa72",
+  "inputHashes": {
+    "candidateSha256": {
+      "q05": "32bf66541b89be229bfb30754204424c2ebfe7a279a2af54fee9b583bda96401"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20250831/law/p09.png": "7c7efe462634a91db4f3468807b0248ebd9b76ee17e0b997354e505385d90daa",
+      "data/raw_pdfs/denken3/review/20250831/law/p04.png": "38045ec67d58396f98ae270d13322f49aa0291474ec50e346ecabbd47a85dfbe"
+    },
+    "figureSha256": {},
+    "sourceQuestionPdfSha256": "51aeb8f1cbfe8e6d3667c2848a3d9fccff40a967f48aafc292fa13a13a6efbb0",
+    "sourceAnswerPdfSha256": "76fd3715ed487d19a56b387fb402de20ee09474e9fa55b0413f9037b96af06c9",
+    "officialAnswerUnitsSha256": "d62bd3f7a758d8d07ed503d1af89bf8f8f963f957b28dbd57ae1e2cc0ba019a9",
+    "referencePdfSha256": {},
+    "referencePageSha256": {},
+    "referenceJsonSha256": {
+      "data/raw_pdfs/denken3/review/egov/409M50000400053-20250401.json": "d7b70dc42ee1cb9603a7d67e8145fcc854b5cbc7adf1ddb4a0ff88dc72cbfe56"
+    }
+  },
+  "assessment": [
+    {
+      "unitKey": "q05",
+      "questionNumber": 5,
+      "part": null,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "出典メタデータ: fiscalYear=2025, term=upper, examDate=2025-08-31, subject=law, sourceQuestionPdfUrl=…20250831_ch_third_q04.pdf, sourceAnswerPdfUrl=…20250831_ch_third_a01.pdf は、いずれも manifest と一致する。reviewedFromPage=[9] は manifest の PDF 第9頁と一致する。添付原図の頁番号は印刷上「-6-」だが、フッタは「T1-H 009」で、PDF第9頁とも整合する。sourceAttribution の「令和7年度上期 第三種 法規 問5」も正しい。",
+        "問題文: 導入文、a）、b）、設問文を原図と字句単位で照合した。「自重，積載荷重，(ア)及び風圧並びに地震その他の振動及び(イ)に対して構造上安全でなければならない」と「取扱者以外の者が容易に(ウ)ことができないように適切な措置を講じること」は原図と一致する。空欄を［］で表記している点は整形の範囲内で、意味の変化はない。",
+        "選択肢: 原図の表と照合し、(1)〜(5)の全肢が一致した。(1) 飛来物/衝撃/登る、(2) 積雪/腐食/接近する、(3) 飛来物/衝撃/接近する、(4) 積雪/衝撃/登る、(5) 飛来物/腐食/接近する。",
+        "公式正答: 公式解答表の＜法規＞問5は解答4・配点6である。これは manifest 固定の正答単位 {question:5, part:null, answer:\"4\", points:6} と一致する。候補の officialAnswer=\"4\" と scoringPoints=6 も一致する。",
+        "条文照合: 添付の e-Gov 法令API v2 の条文（施行時点 2025-04-01、第7条）を確認した。第1項は「…積載荷重，積雪及び風圧並びに地震その他の振動及び衝撃…」、第2項は「…容易に登ることができないように…」である。したがって (ア)積雪・(イ)衝撃・(ウ)登る となり、該当する肢は(4)だけである。公式正答と矛盾しない。",
+        "法令基準日: 解説の「令和7年4月1日現在効力のある法令に基づいて作成」は、添付の法規注意書き頁の注3（令和7年4月1日現在効力のある法令に基づいて作成）で裏付けられる。officialReferenceUrls の occasion_date=20250401 もこの基準日と一致する。",
+        "総合解説: 引用した第1項・第2項の文言は、添付の e-Gov 条文と完全に一致する。「並びに」で「自重，積載荷重，積雪及び風圧」と「地震その他の振動及び衝撃」の2群に分かれるという説明は、条文の字句構造（及び＜並びに の接続階層）から直接確認できる。「飛来物」「腐食」が第1項に無いこと、第2項の語が「接近する」ではなく「登る」であることも、条文で確認した。",
+        "各肢解説: (1) (ア)だけが誤り。(2) (イ)と(ウ)が誤り。(3) (ア)と(ウ)が誤り。(5) 三つとも誤り。(4) 全て一致する。各肢解説が挙げる誤り箇所・一致箇所は、上記の条文照合結果とすべて一致し、過不足はない。",
+        "図: 原図に図は無く、選択肢は語句の表だけである。figureDescription の記述（図なし、表内容は choices に記録済み）と、figureUrls=[]、choiceFigureUrls={} は適切である。",
+        "参照URL: officialReferenceUrls は e-Gov の同省令（法令ID 409M50000400053）1件だけである。その独立主張（第7条の文言）は、添付した公式参考資料（e-Gov API v2、施行時点2025-04-01の条文）で全文を検証できた。外部で別途確認すべき事項は残っていない。"
+      ]
+    }
+  ]
+}

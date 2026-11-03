@@ -1,0 +1,76 @@
+{
+  "schemaVersion": 1,
+  "reviewModel": "claude-opus-5-5",
+  "inputHashes": {
+    "reviewedSha256": "a96f1f1f2579f221f39d176bf0768a9f6b70c37d1b7a67eac7a54261cbb2097a",
+    "rowSha256": {
+      "16": "f81ad71274efeeb6806b95e1ff3ccee921ca2539c378853779c34fca7a45c7a6",
+      "17": "069bf08143232b1374f52543ceba6ff7346ba56e6a7f6277fb51f5cebfb227d2",
+      "18": "94a4df8aeccb5ab1de7899686ef90e345f9cc79a1c57168695ecf819eb3034ca",
+      "19": "1354aee1ee26fd27bb412384067fcde04b27ab1150d3a4c6f39ae9d19294f85d",
+      "20": "b364702f1e5c02fe510a1dfd204dd1b604db8e37c62ecbdafd8312a72253ea91"
+    }
+  },
+  "assessment": [
+    {
+      "number": 16,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [
+        "総合解説は「EEF」を E(ポリエチレン絶縁)・E(ポリエチレンシース)・F(平形) と読み、「選択肢ハの名称と一文字ずつ対応する」と書いているが、これは言い過ぎ。ハの名称にある「耐燃性」に当たる文字は EEF に含まれない。表示の「EEF/F」のうち、後ろの「/F」が耐燃性を表す記号である(EM-EEF/F)。この「/F」の説明が抜けている。一文字ずつ対応するという記述は削り、「/F=耐燃性」を書き足すこと。",
+        "肢ハの理由は、耐燃性の根拠を「タイネン」表示だけに置いている。記号「/F」が耐燃性を示すことも併記すること。"
+      ],
+      "visualIssues": [
+        "diagramDescription はケーブルを「白色」としているが、写真のシースは明るい灰色(ライトグレー)に見える。「灰白色」などに改めること。"
+      ],
+      "lawIssues": []
+    },
+    {
+      "number": 17,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [
+        "総合解説の「過負荷電流を検知して接点を開放する」は、主回路を熱動継電器が直接遮断するように読めて不正確。実際は、熱動継電器が過負荷を検知すると自らの補助接点(b接点)が開く。これで電磁接触器の操作コイル回路が切れ、主接点が開く。この仕組みが分かるように書き直すこと。",
+        "肢ニの理由と総合解説は「復帰ボタン」があると断定している。写真で確認できる形状(ダイヤル右下にある小さな橙色の部分)と対応づけて記述すること。確認できないのであれば、断定を弱めること。"
+      ],
+      "visualIssues": [],
+      "lawIssues": []
+    },
+    {
+      "number": 18,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [
+        "肢ニの理由は「写真の工具はダイスで挟んでかしめる圧着器の構造と一致し」と結論を先に置いた循環論法になっている。圧縮器と区別できる写真上の特徴が示されていない。写真から読み取れる区別点を具体的に書くこと(ヘッド形状、ダイスの溝形状など)。読み取れない場合は、用途の違いの説明にとどめること。正答から逆算して埋めた説明になっている。"
+      ],
+      "visualIssues": [],
+      "lawIssues": []
+    },
+    {
+      "number": 19,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "visualIssues": [],
+      "lawIssues": []
+    },
+    {
+      "number": 20,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "visualIssues": [],
+      "lawIssues": []
+    }
+  ]
+}

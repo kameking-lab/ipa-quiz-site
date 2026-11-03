@@ -1,0 +1,68 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20240818",
+  "subject": "power",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 2569,
+      "cacheReadInputTokens": 1482,
+      "cacheCreationInputTokens": 16629,
+      "webSearchRequests": 0,
+      "costUSD": 0.1847164,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 1172,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "030035e291b8b019cd77d17030d17c1f684d7b8edae70055faa972a27fef4ee2",
+  "inputRequestSha256": "dcd50ce95debf1d942436d6739edf52bb614f430b5f589d6e0119ba193df6d5b",
+  "inputHashes": {
+    "candidateSha256": {
+      "q08": "1e7b949560073c129819c7407cbc63af85254dab3fcfcde3f6c817c5e992cc28"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20240818/power/p11.png": "c6a33a2f41cf8c228764b26715f6b3e99d158d31a3f5816a0917587d614ece46"
+    },
+    "figureSha256": {},
+    "sourceQuestionPdfSha256": "0bc54a85819b9d9c80d1574c5b8c02a3c28976565d8c9068a3dd0344a3db5700",
+    "sourceAnswerPdfSha256": "f72ecbc3a477e64948388b69cf78cb931032c9f0c688639836c8d533a949cd0f",
+    "officialAnswerUnitsSha256": "5afb14eda25be23a2790bfc590815aa5f61eb80863a5d493ead2015ebdfb77e9"
+  },
+  "assessment": [
+    {
+      "unitKey": "q08",
+      "questionNumber": 8,
+      "part": null,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "問題文: 公式問題原図（印刷ページ8、T1－D 011）の問8と一字ずつ照合し、「架空送電線の振動の特徴と対策に関する記述として，誤っているものを次の(1)〜(5)のうちから一つ選べ。」が一致した。",
+        "肢(1): 「送電線の上下配列にオフセットを設けて，電線どうしが接触しないようにする方法がある。」が原図と一致した。",
+        "肢(2): 「一様な微風」「電線の背後に空気の渦」「上下に振動」「微風振動」「ダンパの取付け」が原図と一致した。",
+        "肢(3): 「氷雪の断面が非対称」「揚力の影響」「ギャロッピング」「多導体では発生しにくい」が原図と一致した。",
+        "肢(4): 「多導体の送電線に風速10 m/sを超える風」「素導体が不安定」「サブスパン振動」が原図と一致した。数値10と単位m/sも一致した。原図の数値と単位の間の空白が整形で詰められているだけで、意味は変わらない。",
+        "肢(5): 「氷雪が脱落し，その反動で電線がはね上がる現象をスリートジャンプ」が原図と一致した。",
+        "公式正答: 令和6年度上期の公式解答表で、電力の問8は3である。manifest固定の正答単位 {question:8, part:null, answer:'3'} とも、候補の officialAnswer '3' とも一致した。",
+        "総合解説の因果: 多導体では素導体がスペーサで拘束されるため、電線がねじれて回転しにくい。そのため着氷雪が非対称な断面のまま成長し、単導体よりギャロッピングが起きやすい。この一般的な技術知見と、(3)の後半が誤りだとする結論は矛盾しない。0.1〜1 Hz程度の低周波・大振幅で起きる自励振動という特徴づけも妥当である。",
+        "肢別解説(1): オフセットは、スリートジャンプやギャロッピングで上下の電線が接触・混触するのを防ぐ対策であり、正しい。",
+        "肢別解説(2): 微風振動は、カルマン渦による高周波・小振幅の振動である。ストックブリッジダンパ等で抑制するという説明は正しい。",
+        "肢別解説(3): 前半の定義は正しく、後半の「多導体では発生しにくい」が誤りの核心だと特定しており、正答肢を選ぶ理由として十分である。",
+        "肢別解説(4): サブスパン振動は、風上側素導体の後流（ウェーク）で風下側素導体が不安定になる、スペーサ間の径間の振動である。この多導体特有の機構説明は正しい。",
+        "肢別解説(5): 氷雪脱落による荷重の急減で電線が跳ね上がるというスリートジャンプの説明は正しい。",
+        "図: 原図の問8は文章だけで、図版はない。figureUrls=[]、choiceFigureUrls={} と「図なし」の記述は原図と整合し、解答に図は不要である。",
+        "出典: officialReferenceUrls は空で、独立主張はないため一次資料の追加確認は不要である。sourceQuestionPdfUrl と sourceAnswerPdfUrl は試験センターのドメイン上にあり、examDate 2024-08-18、fiscalYear 2024、term upper、subject power は公式解答表の「令和6年度 上期」表記と矛盾しない。原図フッタは T1－D 011 で、reviewedFromPage [11] と対応する。"
+      ]
+    }
+  ]
+}

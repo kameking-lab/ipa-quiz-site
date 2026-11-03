@@ -1,0 +1,57 @@
+{
+  "status": "LOCAL_PARTIAL_LIVE_34_READY_FOR_PARENT_REVIEW",
+  "baseCommit": "23180e27757a3aabb71ee46921278958585d9aee",
+  "sourceMedicalCommit": "03fdcdf4184a229c3359804d2f1722f409adfd8b",
+  "qualificationCodes": 47,
+  "newReadyOriginals": {
+    "hokenshi": 16,
+    "josanshi": 18,
+    "total": 34,
+    "choiceCount": 142
+  },
+  "excludedLocalHolds": {
+    "hokenshi": 6,
+    "josanshi": 4,
+    "total": 10
+  },
+  "retainedOriginals": {
+    "kangoshi": 463,
+    "yakuzaishi": 306,
+    "ahaki-anma": 286,
+    "ahaki-hari-kyu": 322,
+    "ahakiTotal": 608
+  },
+  "unchangedPriorDataDirectories": [
+    "data/questions/kangoshi",
+    "data/questions/yakuzaishi",
+    "data/questions/ahaki"
+  ],
+  "deletedTrackedPaths": 0,
+  "source44RawSha256": {
+    "hokenshi": "f722b6b47f8c69466800be71c1e3ca6b66038788866ac9774ed4b55c4d8a1f3c",
+    "josanshi": "725f468f266c8efa491d243765f7837b6c9ccb84b7868d8e8d3c3fece56659ac"
+  },
+  "medical34ManifestSha256": "3bddeb859d409b8e009e26594d19388f9f40e0ba83e30b3e07d49c7b27c6c83d",
+  "sourceStop": "The hokenshi 112 AM Q36–38 private-source STOP is outside Q45–55 and untouched.",
+  "quality": {
+    "focusedUnit": "5/5 PASS",
+    "typescript": "PASS",
+    "scopedLint": "PASS",
+    "diffCheck": "PASS"
+  },
+  "push": false,
+  "deployment": false,
+  "liveDataSha256": {
+    "hokenshi": "226594e3d0e6d4de21fd176729b95bad625d742d7367c9e2019280132fd11035",
+    "josanshi": "ba4c2bddddd47af50e2436cf0dac5d1e0943bee24213e6d627e9f111e9c92d8f"
+  },
+  "runtimeBoundary": "The two index.ts modules import only medical34-live.json arrays. The 44-row historical raw files are test/evidence inputs, not runtime imports; all 10 held rows and their three source-page images are absent from the public branch output.",
+  "publicImagesForHeldRows": 0,
+  "browserTargetBundleCheck": {
+    "tool": "esbuild --bundle --platform=browser --format=esm data/questions/index.ts",
+    "bundleSha256": "e5b12841416a75b29e7e412dd0c0433443e79330bc697fa1fa1ea013fb841898",
+    "readyIdsPresent": 34,
+    "heldIdsPresent": 0,
+    "heldFigurePathsPresent": 0
+  }
+}

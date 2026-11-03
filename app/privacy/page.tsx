@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
+import { AI_RATE_LIMIT_PRIVACY_COPY } from "@/lib/privacy/disclosure";
 import Link from "next/link";
+import { AMAZON_ASSOCIATE_DISCLOSURE } from "@/data/recommended-books";
 import {
   AlertCircle,
   ArrowLeft,
@@ -24,11 +26,11 @@ const PRIVACY_OG_URL = `${SITE_BASE_URL}/api/og?${new URLSearchParams({
   type: "default",
   title: "プライバシーポリシー",
   subtitle: "データ保護方針",
-  body: "匿名利用はブラウザ localStorage のみ。クラウド同期・AI 利用時のデータ管理・Cookie・削除方法について。",
+  body: "匿名利用の学習履歴はブラウザに保存。クラウド同期・AI 利用時のデータ管理・Cookie・削除方法について。",
 }).toString()}`;
 
 const PRIVACY_DESC =
-  "過去問AI のプライバシーポリシー。匿名利用時はブラウザ localStorage のみ。ログイン時のクラウド同期・AI コパイロット利用時のデータ送信・Cookie・データ削除方法について。";
+  "過去問AI のプライバシーポリシー。匿名利用の学習履歴はブラウザに保存。ログイン時のクラウド同期・AI コパイロット利用時のデータ送信・Cookie・データ削除方法について。";
 
 export const metadata: Metadata = {
   title: "プライバシーポリシー",
@@ -37,7 +39,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "プライバシーポリシー | 過去問AI",
     description:
-      "匿名利用はブラウザ localStorage のみ。クラウド同期・AI 利用時のデータ管理・Cookie・削除方法について。",
+      "匿名利用の学習履歴はブラウザに保存。クラウド同期・AI 利用時のデータ管理・Cookie・削除方法について。",
     url: `${SITE_BASE_URL}/privacy`,
     type: "website",
     siteName: SITE_NAME,
@@ -48,7 +50,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "プライバシーポリシー | 過去問AI",
     description:
-      "匿名利用はブラウザ localStorage のみ。クラウド同期・AI 利用時のデータ管理・Cookie・削除方法について。",
+      "匿名利用の学習履歴はブラウザに保存。クラウド同期・AI 利用時のデータ管理・Cookie・削除方法について。",
     images: [PRIVACY_OG_URL],
   },
 };
@@ -95,7 +97,7 @@ export default function PrivacyPage() {
           <h1 className="text-balance text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
             プライバシーポリシー
           </h1>
-          <p className="mt-3 text-xs text-muted-foreground">最終更新: 2026年5月17日</p>
+          <p className="mt-3 text-xs text-muted-foreground">最終更新: 2026年10月29日</p>
           <p className="mt-4 max-w-2xl text-pretty text-sm leading-relaxed text-muted-foreground sm:text-base">
             過去問AI（以下「本サービス」）は、ユーザーのプライバシーを尊重し、
             個人情報の適切な取り扱いに努めます。
@@ -116,6 +118,10 @@ export default function PrivacyPage() {
             <p>
               任意でログイン（Google / GitHub / メールリンク）された場合は、認証プロバイダから
               提供されるメールアドレス・表示名・プロフィール画像 URL を当社サーバーに保存します。
+              外部アカウントの認証識別子と、プロバイダから返却された場合には認証処理に必要な
+              アクセストークン・IDトークン・更新トークン・有効期限等も保存します。
+              これらは認証、アカウント表示、学習履歴との紐付けのために利用し、
+              サービスの運用基盤であるVercelおよびNeonに処理・保管を委託します。
               ログイン後は学習履歴・回答履歴を当社サーバーに同期し、複数端末間で共有できます
               （詳細は{" "}
               <Link
@@ -127,7 +133,7 @@ export default function PrivacyPage() {
               {" "}より管理可能）。
             </p>
             <p>
-              本サービスは教育貢献プロジェクトとして全機能を無料で提供しており、決済情報を取得・処理する機能はありません。
+              月額プランの決済にはStripeを利用します。アプリからStripeへ顧客・申込の識別子と同意確認情報等を送信し、決済画面で入力されたメールアドレス等はStripeが処理します。当社は申込・契約・請求・返金の識別子、金額、支払状態、利用対象期間、通知処理記録を保存して利用権を管理します。カード番号やセキュリティコードはStripeの決済画面で入力し、当社アプリは受け取りません。
               公開通知メールリストへの登録時は、入力されたメールアドレスを当社サーバーに保存します。
             </p>
           </Section>
@@ -151,7 +157,7 @@ export default function PrivacyPage() {
               </li>
             </ul>
             <p>
-              氏名・メールアドレスなど個人を特定できる情報は送信しません。
+              アカウントの氏名・メールアドレスを問題コンテキストに自動付加しません。ただし、ご自身が質問に入力した個人情報は質問内容として送信されるため、入力を避けてください。
               送信データは{" "}
               <a
                 href="https://policies.google.com/privacy"
@@ -165,8 +171,7 @@ export default function PrivacyPage() {
               {" "}に基づき処理されます。
             </p>
             <p>
-              レート制限の管理のため、AI リクエスト時に IP アドレスをサーバー内メモリで一時的に保持します。
-              IP アドレスはログへの記録・永続化は行いません。
+              {AI_RATE_LIMIT_PRIVACY_COPY}
             </p>
           </Section>
 
@@ -189,7 +194,37 @@ export default function PrivacyPage() {
             <p>
               Vercel Analytics・Speed Insights はいずれも <strong>Cookie を使用しない</strong> プライバシー重視設計です（IP ハッシュ化・国レベル集計のみ。Speed Insights は LCP・FID・CLS 等の Core Web Vitals を集計）。
               PostHog は <code className="rounded bg-zinc-100 px-1 text-xs dark:bg-zinc-800">localStorage</code> に匿名 ID を保存してセッションを識別します。
-              第三者 Cookie の発行はありません。
+            </p>
+            <p>
+              現在の利用人数を表示するため、表示中のページから匿名のブラウザ識別子と最終操作からの経過時間を送信します。
+              識別子はブラウザに保存し、日ごとに更新します。サーバーはハッシュ化した識別子と最終利用時刻だけを保持し、
+              直近2分の利用を集計します。期限を過ぎた記録は次の集計時に削除します。
+              氏名・メールアドレス・回答内容はこの集計に含めません。
+              この説明はアクセス解析に関するものです。
+            </p>
+            <p>
+              本文と出典の確認記録がある学習記事の末尾を <strong>Google AdSense</strong> の広告対象とします。確認記録のない資格トップ・記事には広告枠を表示しません。
+              広告が配信される場合、Google などの第三者配信事業者は、広告配信・効果測定・不正利用防止のため、Cookie、ウェブビーコン、IPアドレスなどの技術で閲覧情報を取得し、本サイトや他のサイトへの過去のアクセス情報に基づいて広告を配信することがあります。
+              Google が広告 Cookie を使用することで、Google とそのパートナーは利用者に適した広告を表示できます。
+              利用者は{" "}
+              <a
+                href="https://adssettings.google.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-medium text-primary underline-offset-4 hover:underline"
+              >
+                Google の広告設定
+              </a>
+              {" "}でパーソナライズド広告を無効にできます。第三者配信事業者の Cookie は{" "}
+              <a
+                href="https://optout.aboutads.info/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-medium text-primary underline-offset-4 hover:underline"
+              >
+                AboutAds のオプトアウトページ
+              </a>
+              {" "}から無効にできる場合があります。
             </p>
             <p>
               テーマ設定・学習履歴（匿名利用時）は localStorage を使用します。
@@ -278,7 +313,7 @@ export default function PrivacyPage() {
               This service is primarily intended for users in Japan and operates in accordance with the Japanese Act on the Protection of Personal Information (個人情報保護法).
             </p>
             <p>
-              <strong>EU / EEA residents (GDPR):</strong> If you are located in the European Economic Area, you may have rights under the General Data Protection Regulation, including the right to access, correct, or request deletion of your personal data. Because this service does not collect personal data without login and does not serve targeted advertising, most anonymous interactions fall outside the scope of GDPR data-subject rights. For any request, please contact us via{" "}
+              <strong>EU / EEA residents (GDPR):</strong> If you are located in the European Economic Area, you may have rights under the General Data Protection Regulation, including the right to access, correct, or request deletion of your personal data. When advertising is enabled, Google and its partners may use cookies and other identifiers for personalized or non-personalized ads, as described in Section 3. For any request, please contact us via{" "}
               <a
                 href="https://github.com/kameking-lab/ipa-quiz-site/issues"
                 target="_blank"
@@ -307,8 +342,8 @@ export default function PrivacyPage() {
               >
                 /recommended-books
               </Link>
-              ）および試験区分別ページ・クイズ解説ページの一部に、Amazon アソシエイト・楽天アフィリエイトのリンクを掲載しています。
-              これらのリンクを経由して商品をご購入いただいた場合、当サービスの運営費の一部として収益が発生することがあります。
+              ）および試験区分別ページ・クイズ解説ページの一部に、楽天アフィリエイトのリンクを掲載しています。{AMAZON_ASSOCIATE_DISCLOSURE}
+              アフィリエイトリンクを経由して商品をご購入いただいた場合、当サービスの運営費の一部として収益が発生することがあります。
               アフィリエイトリンクには <code className="rounded bg-zinc-100 px-1 text-xs dark:bg-zinc-800">rel=&quot;sponsored&quot;</code> 属性を付与しており、リンク近くに「PR」と明示しています。
               アフィリエイト収入は教育コンテンツの維持・改善に充てており、紹介する書籍の選定はアフィリエイト報酬の有無に左右されません。
               詳細は{" "}

@@ -1,5 +1,5 @@
 import { describe, it, expect, beforeEach, vi } from "vitest";
-import { render, fireEvent, cleanup } from "@testing-library/react";
+import { render, fireEvent, cleanup, act, screen } from "@testing-library/react";
 
 // StreamQuizPlayer uses next/navigation's useRouter; stub it for jsdom.
 vi.mock("next/navigation", () => ({
@@ -32,6 +32,30 @@ const questions: Question[] = [
   },
 ];
 
+it("keeps an unanswered ordering question on screen for Enter, Space and ArrowRight", () => {
+  vi.useFakeTimers();
+  try {
+    const ordering: Question = { ...questions[0]!, id: "ordering-1", type: "ordering", answer: ["ア", "イ", "ウ", "エ"] };
+    render(<StreamQuizPlayer questions={[ordering, { ...questions[0]!, id: "next-question", question: "NEXT_QUESTION" }]} />);
+    const body = screen.getByText(ordering.question);
+    for (const key of ["Enter", " ", "ArrowRight"]) {
+      fireEvent.keyDown(body, { key });
+      fireEvent.keyDown(window, { key });
+    }
+    const slot = screen.getAllByRole("combobox")[0]!;
+    for (const key of ["Enter", " ", "ArrowRight", "ArrowDown"]) {
+      expect(fireEvent.keyDown(slot, { key })).toBe(true);
+    }
+    act(() => vi.advanceTimersByTime(300));
+    expect(screen.getByText(ordering.question)).toBeInTheDocument();
+    expect(screen.queryByText("NEXT_QUESTION")).not.toBeInTheDocument();
+    expect(createHistoryStore().getAllEntries()).toHaveLength(0);
+  } finally {
+    cleanup();
+    vi.useRealTimers();
+  }
+});
+
 beforeEach(() => {
   cleanup();
   window.localStorage.clear();
@@ -42,6 +66,39 @@ beforeEach(() => {
 // (browser tab switching). Selections are recorded to history, so absence of a
 // recorded entry proves the choice was not selected.
 describe("StreamQuizPlayer — keyboard does not hijack browser shortcuts", () => {
+  it("keeps the full explanation while reading and ignores rapid duplicate next actions", () => {
+    vi.useFakeTimers();
+    try {
+      render(<StreamQuizPlayer questions={[...questions, { ...questions[0]!, id: "q2", question: "次の設問" }, { ...questions[0]!, id: "q3", question: "飛ばしてはいけない設問" }]} />);
+      fireEvent.keyDown(window, { key: "2" });
+      act(() => vi.advanceTimersByTime(10_000));
+      expect(screen.getByText("これはテスト問題です。")).toBeInTheDocument();
+      fireEvent.keyDown(window, { key: "ArrowDown" });
+      fireEvent.keyDown(window, { key: " " });
+      act(() => vi.advanceTimersByTime(500));
+      expect(screen.getByText("これはテスト問題です。")).toBeInTheDocument();
+      const next = screen.getByRole("button", { name: "次の問題へ" });
+      fireEvent.click(next);
+      fireEvent.click(next);
+      act(() => vi.advanceTimersByTime(300));
+      expect(screen.getByText("次の設問")).toBeInTheDocument();
+      expect(screen.queryByText("飛ばしてはいけない設問")).not.toBeInTheDocument();
+    } finally {
+      cleanup();
+      vi.useRealTimers();
+    }
+  });
+  it("records either official answer as correct", () => {
+    render(<StreamQuizPlayer questions={[{ ...questions[0]!, answer: ["ア", "イ"] }]} />);
+    fireEvent.keyDown(window, { key: "2" });
+    expect(createHistoryStore().getAllEntries()[0]?.correct).toBe(true);
+  });
+
+  it("can answer the tenth choice", () => {
+    render(<StreamQuizPlayer questions={[{ ...questions[0]!, answer: "コ", choices: { ...questions[0]!.choices!, オ: "五", カ: "六", キ: "七", ク: "八", ケ: "九", コ: "十" } }]} />);
+    fireEvent.keyDown(window, { key: "0" });
+    expect(createHistoryStore().getAllEntries()[0]?.correct).toBe(true);
+  });
   it("Ctrl+1 does not select a choice (tab-switch stays intact)", () => {
     render(<StreamQuizPlayer questions={questions} />);
     fireEvent.keyDown(window, { key: "1", ctrlKey: true });

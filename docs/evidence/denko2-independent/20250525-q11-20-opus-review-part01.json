@@ -1,0 +1,64 @@
+{
+  "inputHashes": {
+    "draftSha256": "d512d66a43e0bc94cd1c0b90633116b56ac5e94535e9370aecf48654a4dc5f8a",
+    "rowSha256": {
+      "11": "2e2391b6893728216427651a7a6bf0af1129144876d19e6ba26140a88da4915c",
+      "12": "d95741b919e4435b2b86e396c8df3644966708f008783326e22cf93de21b216c",
+      "13": "8ec64525de97fd1d2b74fe91004d69b648b31d8cc4a484b22f263374dd420118",
+      "14": "bb2c55b802ab2a38776f36d24a35424db2fd846d1f3f46a1656eb43fc2076408",
+      "15": "e002796ab642a3258973fe559f112fde2ff5d50095cd1381316c9b85b13b76ed"
+    }
+  },
+  "reviewModel": "claude-opus-5-5",
+  "assessment": [
+    {
+      "number": 11,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "lawNeedsExternalCheck": []
+    },
+    {
+      "number": 12,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "lawNeedsExternalCheck": [
+        "ゴムコード1.25 mm²（天然ゴム混合物）の許容電流12 Aは画像内に表が無い。電技解釈のコード許容電流表（または内線規程の表）の現行値と注記（周囲温度30 ℃以下、天然ゴム混合物）が一致するか、外部で確認が必要。",
+        "解説は根拠を「内線規程・電技解釈」とまとめて書いている。どの表の値なのか、条項番号・表番号の特定が要確認。",
+        "officialReferenceUrls（meti.go.jp/…/20241022-2.pdf）が許容電流表を載せた資料かどうか、画像からは判断できないため要確認。"
+      ]
+    },
+    {
+      "number": 13,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "lawNeedsExternalCheck": []
+    },
+    {
+      "number": 14,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "lawNeedsExternalCheck": []
+    },
+    {
+      "number": 15,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "lawNeedsExternalCheck": []
+    }
+  ]
+}

@@ -1,0 +1,72 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20240818",
+  "subject": "law",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 5221,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 21276,
+      "webSearchRequests": 0,
+      "costUSD": 0.2748918,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 3826,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "22e3a19a4dd0add447679b1388219f3933913a89edd5739a494b6e2134732f0d",
+  "inputRequestSha256": "917e7fbd0ffdc833d6039c361c75b9f47f7bd395c4ff9dcd1654fd6aa05180b7",
+  "inputHashes": {
+    "candidateSha256": {
+      "q08": "266ff0247466defcf8f91aece2b83a5973277b2daf04808f286ec98df553eb80"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20240818/law/p14.png": "6873c711b98a2e64665f8a6b097bc9726d41e0fd98d91fc98aafbad455375762",
+      "data/raw_pdfs/denken3/review/20240818/law/p04.png": "0ac887459630a5c0c2df2467c4d93b5fadc651a9001ea1230c14caa8f8b4c9d1"
+    },
+    "figureSha256": {},
+    "sourceQuestionPdfSha256": "5dbba8b8e4ec681d2d5f0645a3895a6e218d936519ddd18ac544ddc461a1ae78",
+    "sourceAnswerPdfSha256": "f72ecbc3a477e64948388b69cf78cb931032c9f0c688639836c8d533a949cd0f",
+    "officialAnswerUnitsSha256": "5afb14eda25be23a2790bfc590815aa5f61eb80863a5d493ead2015ebdfb77e9",
+    "referencePdfSha256": {
+      "data/raw_pdfs/denken3/review/egov-insulation-extract.pdf": "69372b4939f111086609bd29d53fbbd7fb66131ef29996e7b732091d51211447",
+      "data/raw_pdfs/denken3/review/meti-insulation-r5fy.pdf": "434ae666ac4db4ce9001abd73ee820e651a78d88ac0dd1b60b2c3e2edce12d2a"
+    },
+    "referencePageSha256": {
+      "data/raw_pdfs/denken3/review/references/egov-insulation-extract-p014.png": "507378e51262139c5c9e7ea59d1f5b68b71ac4c479132107ef5685e22f6a40f9",
+      "data/raw_pdfs/denken3/review/references/meti-insulation-r5fy-p099.png": "986d1b8b4bda7ec1fdbe06e941e9f93f2a58ce819690a5c90fb3d667bfeb552d"
+    },
+    "referenceJsonSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q08",
+      "questionNumber": 8,
+      "part": null,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "出典メタデータ: 公式解答表の見出し「令和6年度 上期」は fiscalYear=2024・term=upper と一致する。examDate=2024-08-18、subject=law、sourceQuestionPdfUrl(q04)、sourceAnswerPdfUrl(a01) は manifest と一致する。sourceAttribution「令和6年度上期第三種電気主任技術者試験 法規科目 問8」も一致する。",
+        "reviewedFromPage=[14] は manifest の PDF第14頁と一致する。原図のフッタは「-11-」「T1-H 014」である。注意書き頁のフッタは「-1-」「T1-H 004」で、PDF第4頁に当たる。この対応関係からも、問8が PDF第14頁にあることと整合する。",
+        "問題文: 原図の本文（電線相互間及び(ア)と大地との間…開閉器又は(イ)で区切ることのできる電路ごとに…左欄／右欄…値以上でなければならない）と、候補の文言が一致する。表も原図と一致する。構造は「(ウ)V以下」の中に「(エ)…150V以下の場合→0.1MΩ」と「その他の場合→0.2MΩ」があり、別行に「(ウ)Vを超えるもの→(オ)MΩ」がある。括弧内の定義文と単位(V, MΩ)も一致する。",
+        "選択肢: 原図の(1)〜(5)各行と候補の全25セルが一致する。(1) 電線/配線用遮断器/400/公称電圧/0.3、(2) 電線路/漏電遮断器/400/公称電圧/0.3、(3) 電路/過電流遮断器/300/対地電圧/0.4、(4) 電線/過電流遮断器/300/最大使用電圧/0.4、(5) 電路/配線用遮断器/400/対地電圧/0.4。",
+        "公式正答: 公式解答表の＜法規＞問8は「3」である。候補の officialAnswer=\"3\" および manifest 固定の正答単位と一致する。",
+        "総合解説: e-Gov資料 PDF第14頁（省令第58条本文と表: 過電流遮断器、三百ボルト以下、対地電圧百五十ボルト以下0.1MΩ、その他0.2MΩ、三百ボルト超0.4MΩ）と照合し、記載内容はすべて原頁で確認できた。関東東北産業保安監督部資料 PDF第99頁（第58条の表: 300V以下／150V以下 0.1MΩ／その他 0.2MΩ／300V超 0.4MΩ、右欄表記）とも一致する。いずれも公式正答(3)の組合せと整合する。",
+        "肢別解説: (1)(2)は5箇所すべて不一致とし、(4)は(ア)(エ)の2箇所、(5)は(イ)(ウ)の2箇所を不一致とする。各肢の実際の値と照合し、誤り箇所の特定と数はすべて正しい。(3)の「全空白一致」も正しい。",
+        "効力基準日: 注意書き頁の注3は令和6年4月1日現在の法令を基準とする。解説の主張は公式正答が確定させる内容の範囲内にとどまり、2023年度の監督部資料とも一致する。このため、基準日との齟齬を示す要素はない。",
+        "図: 図の要素は表のみで、候補は本文中に表の階層構造を保ったまま文字で再現している。表だけで解答に必要な情報が揃うので、figureUrls=[]、figureDescription=null で問題ない。"
+      ]
+    }
+  ]
+}

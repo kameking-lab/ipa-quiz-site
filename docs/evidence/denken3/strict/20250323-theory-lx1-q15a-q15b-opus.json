@@ -1,0 +1,97 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20250323",
+  "subject": "theory",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 6391,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 16923,
+      "webSearchRequests": 0,
+      "costUSD": 0.26346780000000003,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 4017,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "8fd44c4d1250a54561c62483322ff2686afec7b64b71d71253cf419731a2f790",
+  "inputRequestSha256": "b59851f67c3a3790a2e2af18520ffc32d65a426ed0dc4a94e479eed09374fb4f",
+  "inputHashes": {
+    "candidateSha256": {
+      "q15a": "92214e3a0fd5e6d654cef25cdb06b0d073e5f1942691cba5e0bb55d8326c7819",
+      "q15b": "f7a1672a12eb2ca00a1eccc74660f210283bfe7b5414c414d793accceb13ac4b"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20250323/theory/p19.png": "a4c655560617cd7dfacdab046dd1273dd0d851c88af89cab57281679c863ff23"
+    },
+    "figureSha256": {
+      "public/images/denken3/20250323/theory/20250323-theory-q15-three-phase-source-load.png": "33a9bf3966fbd468b49981fd23af86ac5ced4558b732281d6260aaabe3407336"
+    },
+    "sourceQuestionPdfSha256": "8817012cb55eed9c83bb1e68df138909b1e03a81f7ed48a9893a219e1d2a76ca",
+    "sourceAnswerPdfSha256": "4c3b38fcf1405766fafaa78b1b05b867a3d48307a670b9d354476bc6b32acd4c",
+    "officialAnswerUnitsSha256": "8dfe7871c0507d574887dc1aad87ed8b4b7f0bacc21a1b3ad76e92556c0137ca",
+    "referencePdfSha256": {},
+    "referencePageSha256": {},
+    "referenceJsonSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q15a",
+      "questionNumber": 15,
+      "part": "a",
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "出典メタデータ: fiscalYear=2024、term=lower、examDate=2025-03-23、subject=theory、sourceQuestionPdfUrl、sourceAnswerPdfUrl、reviewedFromPage=[19] はすべてmanifestと一致する。原図の頁下部は冊子ノンブル「- 16 -」と「T2−R 019」で、PDF第19頁の指定と整合する。sourceAttribution「令和6年度下期 理論 問15(a)」も一致する。",
+        "問題文: 原図の柱書「相電圧200V，周波数50Hzの対称三相交流電源に，抵抗とインダクタンスからなる三相平衡負荷を接続」と(a)の設問「負荷電流Iの値[A]として，最も近いもの」は、語句・数値・単位とも一致する。読点の「，」と「、」の混在は整形上の差で、意味は変わらない。",
+        "選択肢: (1)22.2 (2)23.1 (3)40 (4)66.6 (5)69.2 は原図と完全に一致する。",
+        "公式正答: 解答表<理論>の問15(a)は2で、officialAnswer=\"2\" と一致する。",
+        "検算(正答): X_L=2π×50×12.75×10⁻³=4.0055Ω、|Z|=√(3²+4.0055²)=5.0044Ω。電源はΔ結線で線間電圧は200V、Y負荷の相電圧は115.47Vとなり、I=115.47/5.0044=23.07A≒23.1A で正答(2)と一致する。",
+        "検算(誤答肢): (1)115.5/22.2=5.20Ωで、実際の|Z|≒5.00Ωと合わない。(3)200/5.00≒40A で、相電圧を200Vとした誤りに当たる。(4)200/3=66.67A で、線間電圧を抵抗だけで割った値。(5)√3×200/|Z|=69.2A で、Δ負荷として線電流を換算した値。各誤答肢の理由は数値・因果とも正しい。(5)の説明は丸めた|Z|=5を使うため「約69.3」と書いているが、選択肢との対応判断に誤りはない。",
+        "図: 公開候補図は原図の図1・図2部分をそのまま切り出したものである。以下を原図と照合し、すべて一致した。",
+        "・Δ電源の3辺の交流源記号と200V表示、電圧矢印の向き(左辺は左下向き、右辺は右上向き、底辺は右向き)。",
+        "・電源上頂点からa線へ、左下頂点からc線へ、右下頂点からb線への接続。",
+        "・Y負荷の各相にR=3Ω、L=12.75mHが直列に入り、左相はc線、右相はb線、上相はa線に接続していること。",
+        "・a線上のI[A]矢印が右向きであること。",
+        "・a/a′、b/b′、c/c′の端子と、図2のC[F]×3(a′は上頂点、c′は左下頂点、b′は右下頂点)。",
+        "判定に必要な電源Δ・負荷Yの識別は、公開候補図だけで可能である。figureDescriptionの記述も図と一致する。",
+        "officialReferenceUrlsは空で、検証すべき外部主張はない。"
+      ]
+    },
+    {
+      "unitKey": "q15b",
+      "questionNumber": 15,
+      "part": "b",
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "出典メタデータ: fiscalYear、term、examDate、subject、両PDF URL、reviewedFromPage=[19]はmanifestと一致する。sourceAttribution「令和6年度下期 理論 問15(b)」も一致する。",
+        "問題文: (b)の設問「静電容量C[F]のコンデンサをΔ結線して，その端子a′，b′及びc′をそれぞれ図1の端子a，b及びcに接続…三相交流電源から見た負荷の力率は1…静電容量Cの値[F]」は、原図と語句・記号・単位とも一致する。柱書も一致する。",
+        "選択肢: (1)1.9×10⁻⁶ (2)1.7×10⁻⁴ (3)2.1×10⁻⁴ (4)7.4×10⁻⁴ (5)5.9×10⁻² は、指数の符号・桁とも原図と一致する。",
+        "公式正答: 解答表<理論>の問15(b)は2で、officialAnswer=\"2\" と一致する。",
+        "検算(負荷の無効電力): Q=3·V_p²·X_L/|Z|²=40000×4.0055/25.044=6397.6 var≒6.4kvar。候補の近似計算3×533×4≒6.4×10³ varとも整合する。",
+        "検算(コンデンサ容量): Δ結線コンデンサの各辺には線間電圧200Vが加わり、Qc=3ωCV²となる。C=6397.6/(3×314.16×40000)=1.698×10⁻⁴F≒1.7×10⁻⁴F で正答(2)と一致する。力率1の条件Qc=Qという因果も正しい。",
+        "検算(誤答肢の比率): 必要容量1.698×10⁻⁴Fに対し、(1)1.9×10⁻⁶は約1.1%、(3)2.1×10⁻⁴は約1.24倍、(4)7.4×10⁻⁴は約4.36倍、(5)5.9×10⁻²は約347倍となる。候補記載の比率と補償の過不足の判定(不足なら遅れ残り、過大なら進み残り)はすべて正しい。",
+        "図: 公開候補図の図2は原図と一致する。3個のC[F]がΔ結線され、a′は上頂点、c′は左下頂点、b′は右下頂点につながる。各コンデンサに線間電圧が加わることは公開候補図だけで判別できる。figureDescriptionも正確である。",
+        "uncertaintyの「X_L≒4Ωに近似しても判定に影響しない」は、検算値1.698×10⁻⁴Fにより確認できた。",
+        "officialReferenceUrlsは空で、検証すべき外部主張はない。"
+      ]
+    }
+  ]
+}

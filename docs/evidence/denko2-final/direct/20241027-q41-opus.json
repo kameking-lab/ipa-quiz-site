@@ -1,0 +1,34 @@
+{
+  "schemaVersion": 1,
+  "receiptKind": "canonicalized-direct-review",
+  "paper": "20241027",
+  "reviewModel": "claude-opus-5-5",
+  "upstreamReviewReceipt": "docs/evidence/denko2-strict-20241027-q41-50/direct2-q41-42-43-44-45-opus.json",
+  "upstreamReviewSha256": "f4fe3c532cb2e6fc49e01b6bbe6aec9c7e262dd260c521af98e91595549d6cb5",
+  "candidateEquivalenceProof": "current per-question candidate hash equals a clean source-aware direct Opus input hash",
+  "inputHashes": {
+    "draftSha256": "95b2d339104dc134cd1003a4aa8a2ffecd08d162698b0045cb092cb3362ca4de",
+    "rowSha256": {
+      "41": "98057e09381dbcbe719e08dc3c5eac4d02ff3925aa6859be5d26e0acb815ce06"
+    },
+    "detailFigureSha256": {
+      "public/images/denko2/2024-second/wiring-diagram.png": "4b4d474a8fde227349db77620ddece4a673956783b85384b48d2247572adcc32",
+      "public/images/denko2/2024-second/q41-1.png": "6dceebc5af0038d78f3ab910a9f417fb2de7392cbc0c2131d6581a94926b09bc"
+    },
+    "sharedFigureSha256": {},
+    "legalReceiptSha256": {}
+  },
+  "assessment": [
+    {
+      "number": 41,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "visualIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": "I checked the question line and the published figure q41-1.png against the official question crop. The question text matches the original: 「⑪で示す部分の接地抵抗を測定するものは。」 It has no negation, number or unit. On official p.15 (2F plan, lower left), ⑪ is the ground symbol that hangs off the left outdoor unit, RC 0 (about x365, y390 in the common diagram). The candidate's location for ⑪ is correct. Each photo matches the original: イ is an analog insulation tester with an MΩ dial, a red rod probe and a black alligator clip. ロ is a phase-sequence tester with a round window and red, white and blue clip leads. ハ is an analog multimeter with DCV, ACV, DCA and Ω ranges and two rod test leads. ニ is an earth tester: a column of buttons on the front, a meter, three terminals on top, two T-shaped auxiliary earth rods, and green, yellow and red leads. The front plate reads EARTH TESTER. The official answer is ニ, and it agrees with the choice analysis. Every per-choice reason is based on what the photo shows. The candidate makes no independent legal or standards claim, so officialReferenceUrls is empty, and that is appropriate."
+    }
+  ]
+}

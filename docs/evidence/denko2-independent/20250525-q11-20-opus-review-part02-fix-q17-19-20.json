@@ -1,0 +1,51 @@
+{
+  "inputHashes": {
+    "draftSha256": "b9590a3fbc7145c0758e9045e42134e947ddb11d974390173c780f1804e5f7da",
+    "rowSha256": {
+      "17": "8b13b572d6b573231d85028dda06409b8a4fa6b978bcfab6e929a7271e123c49",
+      "19": "543a910c1b9c22166fb6509c644d3e0a3d56f8317c34e13f99b9cf61fba8c5eb",
+      "20": "441a83294562dd83d7bac1174358b56ccd0016ad84fd4a9c024b94275095988e"
+    },
+    "detailFigureSha256": {
+      "public/images/denko2/2025-first/q17.png": "08b29bcaa5a06c3c51f8a83d53b0076045cd69916095f8390f013b6ebb81e5e8"
+    },
+    "sourcePackSha256": {
+      "19": "596a7346f3e5cfb68a31339c2b10e208ade3dd280a19bcc3fbfbadf4d6003446",
+      "20": "d08bdeea3f744bf29b730b5d8cc836b938f175f561b71c2ab8b219f586d989c8"
+    }
+  },
+  "reviewModel": "claude-opus-5-5",
+  "assessment": [
+    {
+      "number": 17,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [
+        "diagramDescriptionが写真の左側の銘板を一切書いていない。原本の写真には「Ui AC 500V」「10 A」（大きな表示）「AC220V Icu 2.5kA」、JETマーク（JET MCM）、「3P」がある。ところがexplanationとchoiceExplanations.ハは、根拠として「AC220V Icu 2.5kA」を挙げている。図の説明に無い表示を根拠にしているので、図の説明と解説が一致していない。左銘板の記載をdiagramDescriptionに加えること。",
+        "diagramDescriptionの右銘板の説明に、上段の「JIS C 8201-2-1 Ann2 40℃」「50/60Hz」「Cat.A」が抜けている。さらにkW相当の欄は、原本では「200V 2.2kW相当」の下に空欄の行「V kW相当」がある2段の欄だが、1行の表示として書かれている。",
+        "「中央に緑色の「OFF」表示のスイッチハンドルと定格電流表示「10A」」の部分で、原本の「10A」はハンドルの下にある小さな表示である。左銘板の大きな「10 A」と区別して書かれていない。"
+      ],
+      "lawNeedsExternalCheck": []
+    },
+    {
+      "number": 19,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "lawNeedsExternalCheck": []
+    },
+    {
+      "number": 20,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "lawNeedsExternalCheck": []
+    }
+  ]
+}

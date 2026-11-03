@@ -1,0 +1,21 @@
+{
+  "sourcePdfSha256": "635c811dbee7dd6c5605c856a8250285a4c99ef80a0609793600cb0d011ef451",
+  "sourceUrl": "https://www.shiken.or.jp/construction/upload/20251005_co_first_q01.pdf",
+  "reviewedAt": "2026-09-28",
+  "status": "VISUAL_REVIEW_ONLY_PUBLICATION_HOLD",
+  "pages": [10, 11, 12],
+  "visualReviewedCount": 10,
+  "choiceReasonApprovedCount": 0,
+  "questions": [
+    { "number": 31, "page": 11, "sharedFigurePage": 10, "officialAnswer": "ロ", "verified": "共有断面図②の構内地中引込線と四肢（FEP、20 m直接埋設と表示省略、鋼管、1.2 m土冠）を確認。", "extractIssue": "共有図の引込経路・②位置が抽出にない。" },
+    { "number": 32, "page": 11, "sharedFigurePage": 10, "officialAnswer": "ロ", "verified": "共有断面図③の受電室への貫通・接地経路と四肢を確認。", "extractIssue": "共有図の貫通部・接地端子盤・③位置が抽出にない。" },
+    { "number": 33, "page": 11, "sharedFigurePage": 10, "officialAnswer": "ニ", "verified": "共有断面図④のケーブルラック位置と四肢（防火措置、セパレータ、支持、15 mと接地省略）を確認。", "extractIssue": "共有図のケーブルラック位置が抽出にない。" },
+    { "number": 34, "page": 11, "sharedFigurePage": 10, "officialAnswer": "ハ", "verified": "共有断面図⑤の高圧受電設備と絶縁耐力試験の四肢を確認。", "extractIssue": "choicesRaw先頭に別領域の『に』が混入。共有図の⑤位置が抽出にない。" },
+    { "number": 35, "page": 12, "officialAnswer": "ハ", "verified": "D種接地の対象を問う四肢は変圧器鉄心、400 V電動機鉄台、高圧計器用変成器二次側、6.6 kV/210 V変圧器中性点。", "extractIssue": "特段の図表欠落なし。法令根拠は未査読。" },
+    { "number": 36, "page": 12, "officialAnswer": "ロ", "verified": "月間平均力率の計器組合せ四肢を原本で確認。ロは電力量計と無効電力量計。", "extractIssue": "特段の図表欠落なし。" },
+    { "number": 37, "page": 12, "officialAnswer": "ハ", "verified": "100 V電路の漏えい電流上限の選択肢0.1・0.2・1.0・2.0 mAを確認。", "extractIssue": "特段の図表欠落なし。法令時点は未査読。" },
+    { "number": 38, "page": 12, "officialAnswer": "イ", "verified": "500 kW未満の自家用工作物のネオン/非常用予備発電装置工事。四肢は特種電気工事資格者等。", "extractIssue": "特段の図表欠落なし。法令時点は未査読。" },
+    { "number": 39, "page": 12, "officialAnswer": "イ", "verified": "特定電気用品の四肢。ハは『定格静電容量100 μFの進相コンデンサ』。", "extractIssue": "choicesRawのハでμが脱落して100 Fとなり、原本と単位が異なる。" },
+    { "number": 40, "page": 12, "officialAnswer": "イ", "verified": "技術基準省令の空欄は原本で枠として表示。選択肢は接地・断路器・開閉器・遮断器。", "extractIssue": "questionRawは空欄の矩形位置を示さない。法令時点は未査読。" }
+  ]
+}

@@ -1,0 +1,66 @@
+{
+  "reviewModel": "claude-opus-5-5",
+  "requestedModel": "claude-opus-5-5",
+  "canonicalModel": "claude-opus-5-5",
+  "provider": "firstParty",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 3329,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 15352,
+      "webSearchRequests": 0,
+      "costUSD": 0.1896598,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 1996,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponsePath": "data/exam-library/emkohyo-review/emkohyo-20260217-4-q07-07-raw-response.txt",
+  "rawResponseSha256": "c6bff35e76ae696caec9a74df31f30ec12e1da57a755026498bebc8f021cd255",
+  "paperId": "emkohyo-20260217-4",
+  "ids": [
+    "emkohyo-20260217-4-q7"
+  ],
+  "figureSha256": {
+    "emkohyo-20260217-4-q7": {}
+  },
+  "officialRowImageSha256": {
+    "emkohyo-20260217-4-q7": {
+      "/exam-library/emkohyo-20260217-4/q7-p5-0.webp": "98be0528926c982be674f7d4aae0e9f211ec104a8848e886ed1ebd172356f3b2"
+    }
+  },
+  "officialPageImageSha256": {},
+  "governmentSourceImageSha256": {},
+  "candidateSha256": {
+    "emkohyo-20260217-4-q7": "1f23547cdbb7e721c49b87b1cec1a2cc39532de112352d346b784955515850cf"
+  },
+  "sourcePackPath": "docs/evidence/emkohyo-choice-sources/emkohyo-20260217-4-q07-07.json",
+  "sourcePackSha256": "1e89d67d21838dfe5cf1399ad69e3d640509cffa8407797e564509129135c956",
+  "assessment": {
+    "emkohyo-20260217-4-q7": {
+      "status": "FIX",
+      "textIssues": [
+        "presentation.choices[0]（肢1）の文字起こしが「ビュレットは最小目盛の1/ 10 までを読みとる。」となっており、「1/」の後と「10」の後に原図に無い空白が混入している。公式原文・原図どおり「ビュレットは最小目盛の1/10までを読みとる。」に修正すること。"
+      ],
+      "choiceIssues": [],
+      "reasonIssues": [
+        "肢3の理由は「科学の甲子園の手引きは、目盛部分を手で握ると液温が変化するので避けるよう求め」としているが、証拠の原文（pdfPage 6）は「ビュレットの目盛部分を手で握ると液温が変化するので，なるべく避ける」であり、ビュレットについての注意である。ホールピペットの注意であるかのように読める書き方になっているため、「ビュレットについて」と対象を明記したうえで、ピペットにも同じ理屈が及ぶという推論であることが分かる表現に改めること。",
+        "肢3の「液だめを手のひらで温めれば中の液を押し出せる」は、原文（pdfPage 12）ではピペットポンプ装着下で排出後の残液を押し出す操作として書かれている。吸引時に膨らみを持つことの可否を直接述べた記述ではないため、「手の温度で内部の空気・液が膨張し液面が動くことを示す記述」として位置付けを明確にすること。",
+        "summaryと肢3の理由は「膨らんだ部分を持つのは誤り」とするだけで、正しい持ち方（標線より上の細い管部を指で持つ）を示していない。誤りの肢の対比として正しい操作を1文添えるのが望ましい。"
+      ],
+      "sourceIssues": [
+        "肢3の核心である「ホールピペットの吸引時に中間の膨らんだ部分（液だめ）を持つべきでない／標線より上を持つ」という操作指示を直接述べる政府系一次資料が、添付の中に無い。JSTの手引きの該当箇所はビュレットの目盛部分の注意と、残液排出の操作であり、どちらも間接的な根拠にとどまる。",
+        "肢2の理由は産総研資料の10 mL ±0.02 mLを「JIS R 3505クラスA」の値として引いているが、抽出された産総研の記述（pdfPage 9）には「JIS R 3505に許容誤差が規定されている」とあるだけでクラスAの明示が無い。値自体はクラスAと整合するが、クラス表記の根拠をNITE資料など明示のある資料に揃えるか、表現を「JIS R 3505に規定される」に弱めること。",
+        "肢2の「一般に、容量が小さい方が割合が大きい」を支える根拠が5 mLと10 mLの2点だけで、一般傾向の論拠としては薄い。JIS R 3505の許容誤差表（1〜100 mL）など、複数容量を一覧できる資料があれば補強が望ましい。"
+      ],
+      "needsExternalCheck": [
+        "ホールピペットの持ち方（標線より上部を持ち、液だめを握らない）を明記した公的資料（環境省『化学分析の基本操作』の該当ページ、JIS K 0050 等）が存在するかを確認し、肢3の直接根拠として追加できるか調べること。",
+        "JIS R 3505の全量ピペット許容誤差表（クラスA：1 mL ±0.01、2 mL ±0.01、5 mL ±0.015、10 mL ±0.02、20 mL ±0.03、50 mL ±0.05 等）を一次資料で確認し、肢2の一般傾向の根拠として引用できるか確認すること。"
+      ]
+    }
+  }
+}

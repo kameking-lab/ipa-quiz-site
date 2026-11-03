@@ -1,0 +1,73 @@
+{
+  "inputHashes": {
+    "draftSha256": "d27d7ad502564d33a3f84317ab3f60820838cf76572223554dea5deb81e2420f",
+    "candidateSha256": {
+      "26": "e1937f0e1e465732cca573dd4cc8c09f050edcb195118f71ecd8306d0eb9a45b",
+      "27": "15e5c72865a31c1d45e3b2f85629e814da9ba21dbc5e29749a0eebabfd043c98",
+      "28": "a7518b14234809e26a1e278ee29392de6c2ee47a2e48acb546267c6c3eaf5f0a",
+      "29": "ee8cb12297ee22c850bd3eea322f11b1f0e9daf622cadecb8165205fbfe81342"
+    },
+    "rowSha256": {
+      "26": "b618521625fbc6d2f21c8e65c2bd5608d0c13968c56176897dc0c871967c27a2",
+      "27": "2046d471e29a2f7dd78295044b62fb9f623a18c3cac69fae3e8a3170a017a258",
+      "28": "7ed62d27ff2832b1d7b882689ef5aa58f7adf40c7cb3f6b301e40c551f367c9c",
+      "29": "be4c33d822baf67a78e572d7cd91d166f2c876bf988d51604b65e30583e3a7f4"
+    },
+    "detailFigureSha256": {
+      "public/images/denko2/2024-second/q27-1.png": "9a771acb88775a1afd095ba3ea77805305ed28ecdf3166b377baae38b37ee705"
+    },
+    "legalReceiptSha256": {
+      "docs/evidence/denko2-law/20241027-q26.json": "88b06eeaebee611bef6a5b466b370d26eafe0c16dabea065a5b75b6a603e2c6a",
+      "docs/evidence/denko2-law/20241027-q28.json": "5a75ec7477dc235050cee222a5d619945dad6e1a0d1d89610967b9d4d23cb450",
+      "docs/evidence/denko2-law/20241027-q29.json": "a920913edd45f5bcfe949a76b270307addf000901533ab980d8d7393d31dbc69"
+    },
+    "sourcePackSha256": {},
+    "sourceFigureSha256": {}
+  },
+  "reviewModel": "claude-opus-5-5",
+  "assessment": [
+    {
+      "number": 26,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "lawNeedsExternalCheck": []
+    },
+    {
+      "number": 27,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "explanationIssues": [
+        "explanationの「負荷が不平衡なため中性線を流れる電流は負荷電流の一部であり」は、負荷が不平衡であることを前提として断定している。問題文にはその条件が書かれていない。中性線に流れるのは不平衡の場合の差電流で、平衡時は0になる。「負荷が不平衡な場合、中性線には両電圧線の負荷電流の差が流れるが、3線を一括すればこれも相殺される」のように、条件付きの記述に改める必要がある。"
+      ],
+      "figureIssues": [],
+      "lawNeedsExternalCheck": []
+    },
+    {
+      "number": 28,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "lawNeedsExternalCheck": [
+        "choiceExplanations.ハの「電線管に電線を収める作業は施行規則第2条第1項第1号ニ」は照合receiptに含まれていない。receiptで照合済みなのは第1号ヘ・ヌと第2項第1号ロだけで、号ニの文言と号番号は照合されていない。",
+        "施行令第1条の号番号（第1号＝差込み接続器、第3号＝電力量計、第5号＝電線を支持する柱、第6号＝地中電線用の管）は照合receiptで検証されていない。receiptで照合済みなのは第1条内の語句だけである。第1号・第3号の適用条件である電圧600V以下も照合されていない。この条件は選択肢ロbの200V、ニbの125Vが該当するかの判断根拠になる。"
+      ]
+    },
+    {
+      "number": 29,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "explanationIssues": [
+        "explanationとchoiceExplanations.ロは、差込み接続器が特定電気用品になる範囲を「定格電圧100V以上300V以下・定格電流50A以下」とだけ書いている。照合receiptで検証済みの別表第一第三号(四)の要件のうち、極数5以下の条件が抜けており、指定範囲の記述として不完全である。「極数5以下」を追記する必要がある。"
+      ],
+      "figureIssues": [],
+      "lawNeedsExternalCheck": []
+    }
+  ]
+}

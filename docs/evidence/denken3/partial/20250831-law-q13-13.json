@@ -1,0 +1,45 @@
+{
+  "status": "partial-accepted",
+  "date": "20250831",
+  "subject": "law",
+  "questionCount": 1,
+  "answerUnitCount": 2,
+  "choiceCount": 10,
+  "sourceQuestionPdfSha256": "51aeb8f1cbfe8e6d3667c2848a3d9fccff40a967f48aafc292fa13a13a6efbb0",
+  "sourceAnswerPdfSha256": "76fd3715ed487d19a56b387fb402de20ee09474e9fa55b0413f9037b96af06c9",
+  "reviewedDataSha256": "da746704a14855a4ef02a45d1c03d16291fc056479842a0f7cdc56307130b0a4",
+  "questions": [
+    {
+      "number": 13,
+      "sourceDraftSha256": "e5cbf9579720456c783832eb2eba75df7b76f962bf8d828a8a917b71bc3e80d0",
+      "opusReceipt": "data/raw_pdfs/denken3/review/20250831/law/q13-opus-review.json",
+      "opusReceiptSha256": "6d03a83d741468903f533f0da13885474b4eba934f160625968c906229563421",
+      "assessment": {
+        "number": 13,
+        "status": "PASS",
+        "textIssues": [],
+        "choiceIssues": [],
+        "explanationIssues": [],
+        "figureIssues": [],
+        "externalSourceIssues": []
+      },
+      "figureSha256": {
+        "20250831-law-q13-fig1": "ac0ab4c395dadae3c47f75237bf8e511fc1e98775ae93ae72d34ddb142997330"
+      }
+    }
+  ],
+  "strictReview": {
+    "q13a": {
+      "path": "docs/evidence/denken3/strict/20250831-law-s1-q13a-q13b-opus.json",
+      "sha256": "98154358bfd530dc89ce6eb974d47abd66e2e0cd27f11c8583bcbe96bb4ed708",
+      "status": "PASS",
+      "resolvedModel": "claude-opus-5-5"
+    },
+    "q13b": {
+      "path": "docs/evidence/denken3/strict/20250831-law-s1-q13a-q13b-opus.json",
+      "sha256": "98154358bfd530dc89ce6eb974d47abd66e2e0cd27f11c8583bcbe96bb4ed708",
+      "status": "PASS",
+      "resolvedModel": "claude-opus-5-5"
+    }
+  }
+}

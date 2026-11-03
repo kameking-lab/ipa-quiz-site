@@ -1,0 +1,69 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20240818",
+  "subject": "theory",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 3884,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 15143,
+      "webSearchRequests": 0,
+      "costUSD": 0.19908779999999998,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 2387,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "c7329ca6200a655cee54cbd8497818dfa84eb8f869a2a623e1ee8747c0f60296",
+  "inputRequestSha256": "689c554eacb06df1d4ef85bf8dd62f860a20140391d81e1a2058a6efb0e3f831",
+  "inputHashes": {
+    "candidateSha256": {
+      "q08": "c854adf86a3337b98b041eae6e7e3ddf588a226834aa105b9c28ff5d7d8aa03e"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20240818/theory/p12.png": "c497c07748cfe015eb46adcff33d893da533a1853102ce9d75865353d5a3ee24"
+    },
+    "figureSha256": {
+      "public/images/denken3/20240818/theory/20240818-theory-q08-circuits.png": "fd0e7c87a02f2cf1aebd3d2c1a0eef7c80100a006059a0cc958da540da4aa651"
+    },
+    "sourceQuestionPdfSha256": "236be905e93a023cf3c65c1e22c45c24dc42b910151c51f8ed023247793d1d29",
+    "sourceAnswerPdfSha256": "f72ecbc3a477e64948388b69cf78cb931032c9f0c688639836c8d533a949cd0f",
+    "officialAnswerUnitsSha256": "5afb14eda25be23a2790bfc590815aa5f61eb80863a5d493ead2015ebdfb77e9",
+    "referencePdfSha256": {},
+    "referencePageSha256": {},
+    "referenceJsonSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q08",
+      "questionNumber": 8,
+      "part": null,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [
+        "uncertaintyフィールドの「本文も「回路Aと回路Bの直列回路」と明記している」は出典箇所の記述が誤っている。公式原図では「回路Aと回路Bの直列回路」は図のキャプション（第3図のラベル）であり、問題本文の表現は「これらA，Bをさらに直列に接続した場合」である。「図ラベルに「回路Aと回路Bの直列回路」、本文に「A，Bをさらに直列に接続した場合」と明記されている」などに訂正すること。公開向けの問題文・解説・図には影響しない。"
+      ],
+      "verifiedEvidence": [
+        "出典メタデータ: fiscalYear=2024、term=upper、examDate=2024-08-18、subject=theory、sourceQuestionPdfUrl=…/20240818_ch_third_q01.pdf、sourceAnswerPdfUrl=…/20240818_ch_third_a01.pdf はmanifestと一致する。reviewedFromPage=[12]はmanifest指定のPDF第12頁と一致する。原図の頁フッタ「T1－R 012」（印字頁は「- 9 -」）とも整合する。sourceAttributionの『令和6年度上期』は2024年度上期に対応する。",
+        "問題文: 候補の問題文は原図の問8本文と語句・記号（f_A[Hz]、f_B[Hz]、f_AB[Hz]、LC直列共振回路A、B、直列接続）が一致し、脱落や改変はない。",
+        "選択肢: (1) f_A<f_B<f_AB、(2) f_A<f_AB<f_B、(3) f_B<f_AB<f_A、(4) f_AB<f_A<f_B、(5) f_AB<f_B<f_A。5肢とも原図と一致する。",
+        "公式正答: 公式解答表『令和6年度 上期 第三種電気主任技術者試験解答』の〈理論〉問8は3である。候補のofficialAnswer=\"3\"はmanifest固定の公式正答単位と一致する。",
+        "総合解説の検算: f_A=1/(2π√(LC))、f_B=1/(2π√(2LC))。直列接続ではL=L+2L=3Lとなり、1/C_total=2/CよりC_total=C/2、積は1.5LCになる。リアクタンス和 ω·3L−2/(ωC)=0 からも ω²=2/(3LC)=1/(1.5LC) で同じ結果になる。LC<1.5LC<2LC であり、fは√(LC)に反比例するので f_B<f_AB<f_A となり正答(3)と一致する。",
+        "数値例の検算: 1/(2π)=0.15915。÷√1.5(1.2247)=0.12995≈0.130、÷√2=0.11254≈0.113。候補の値0.159/0.130/0.113は正しい。",
+        "肢別解説: (1)はf_A最小・f_AB最大とする誤り、(2)はLC積の順をそのまま周波数順としている誤り、(4)はf_AB最小・f_B最大とする誤り、(5)はf_ABを最小とする誤りを、それぞれ固有の理由で正しく指摘している。(3)の正答理由も正しい。",
+        "図: 公開候補図は原図の3回路を過不足なく再現している。回路AはL[H]–C[F]、回路Bは2L[H]–C[F]、直列回路は上からL[H]、C[F]、接続点の黒丸、2L[H]、C[F]の順。端子の白丸、ラベル『回路A』『回路B』『回路Aと回路Bの直列回路』も含め、接続・順序・全ラベルが一致する。公開候補図だけで解答に必要な情報（各L・Cの値と直列構成）が読み取れる。figureDescriptionも図と一致している。",
+        "officialReferenceUrlsは空で、検証を要する外部の独立主張はない。"
+      ]
+    }
+  ]
+}

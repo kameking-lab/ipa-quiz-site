@@ -1,0 +1,36 @@
+{
+  "inputHashes": {
+    "draftSha256": "f091c87c4c6f946c3806663b28aac182691defe30e32f441f0b8e3eb490cd826",
+    "rowSha256": {
+      "42": "d0966102c1d0c8b0dcddba3b2cf0f82a0dc9fd0c78a068425ac44df37ca1cee3"
+    },
+    "sharedFigureSha256": {
+      "public/images/denko2/2025-first/wiring-main.png": "9a24f0c440f8551855249e8768d44fb15bbe7db7aff283ebfffe950cfcae4277"
+    },
+    "detailFigureSha256": {
+      "public/images/denko2/2025-first/q42-i.png": "ca76c1d4046175a91a453e01738c628faf6d2655725a3915ce5edc8f35b9021e",
+      "public/images/denko2/2025-first/q42-ro.png": "a47558c97318cbcbd9ffa06f637a2094843ad3e7bac61aef72984a64a9ee7511",
+      "public/images/denko2/2025-first/q42-ha.png": "1616a217abb62a2d9e339bd937ecf6120686f2eb7e24802fb20a66f3dd28ffc5",
+      "public/images/denko2/2025-first/q42-ni.png": "e1c8fadad3df886332c107c9ac6b75fc0781f8a8376f8ee3acec266eede219f9"
+    }
+  },
+  "reviewModel": "claude-opus-5-5",
+  "assessment": [
+    {
+      "number": 42,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [
+        "差分なし。確認した内容：⑫は地下1階ポンプ室と階段の境にあるボックス（□）。ここから地下の3アスイッチ（階段下部）と地下の灯アへ実線が出ており、⑫上部に立上り記号（○↗）がある。1階側では⑰のジョイントボックスの近くに引下げ記号（○↙）、3アスイッチ、1階の灯アがある。これは解説の前提と一致する。⑫近くの●オスイッチは点線(E19)の配管上にあり、⑫のボックスは通らない。したがって⑫の接続点に入らないと判断した。",
+        "肢の写真と清書JSONを照合し、一致を確認した。イは上段 小・小、下段 ○・小、見出し「小 4個」。ロは上段 ○・小、下段 ○・○、「小 4個」。ハは4個すべて 小、「小 4個」。ニは中1個（「中 1個」）と小3個（「小 3個」）。",
+        "diagramDescription（図の説明文）に誤りはない。ただし写真の下にある見出し文字（「小 4個」「中 1個」「小 3個」）が書かれていない。任意で補うとよい。"
+      ],
+      "lawNeedsExternalCheck": [
+        "VVF1.6の刻印区分（2本→○、3〜4本→小、5〜6本→中）はJIS C 2806や圧着工具の規格に基づく。画像だけでは真偽を確定できないため、規格書との照合が必要。",
+        "結論が正答ロと一致することは、配線図から独立に確認した。Lを1階の3路スイッチ共通端子へ入れる構成では、地下へ降りる線は渡り線2本・N・1階の灯アへの返り線の計4本になる。逆にLを地下へ降ろすと、渡り線2本・N・L・返り線の5本が必要になるので、4本が最少で正しい。⑫の接続は、渡り線2箇所とNがそれぞれ2本ずつで○が3個、点滅線（地下スイッチ共通端子・地下の灯ア・1階への返り線）が3本で小が1個、合計4個になり、ロと一致する。"
+      ]
+    }
+  ]
+}

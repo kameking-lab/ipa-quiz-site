@@ -1,0 +1,2151 @@
+{
+  "generatedAt": "2026-10-11T01:29:48.358457+00:00",
+  "scopeCount": 19,
+  "contentCompleted": 19,
+  "publicationGo": 0,
+  "originalArtifactsUnmodified": true,
+  "originalFirstPartyReceiptsUnmodified": true,
+  "ownership": "19 saved nonfigure specialist items only; excluded existing PR682/692 and other parent assignments",
+  "retrievalLimit": "shell downloads failed configured proxy; no proxy change or bypass. Supplemental sources read through normal web tool. No local SHA claimed for supplemental remote texts.",
+  "items": [
+    {
+      "identity": "shinryo-hoshasengishi-77-pm-1",
+      "candidateId": "shinryo-hoshasengishi-2025-annual-pm-q1",
+      "candidateCanonicalSha256": "6b9d207145142ac58c2c12170ce0dd23238e1b521402d661924f69b33fdffc57",
+      "contentStatus": "completed",
+      "publicationGo": 0,
+      "publicationOwner": "parent integration task",
+      "previousTechnicalHolds": [
+        "選択肢5の解説で使った0.5 mT境界の根拠規格（JIS Z 4951／IEC 60601-2-33）について、規格番号と現行版の記載を原典で確認する必要がある"
+      ],
+      "previousMechanicallySafe": false,
+      "technicalHoldResolution": "現行JISの数値を根拠なく断定した箇所を除去。取得したFDA文書に従いIEC版差を明示した局所修正で解決。",
+      "remainingContentBlockers": [],
+      "originalDraft": {
+        "path": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\claude-capacity-20261010\\opus-controller-20261010\\author-shinryo-hoshasengishi-77-pm-q001-006-new-opus-first-draft\\OFFLINE-STRUCTURED-RESULT.json",
+        "sha256": "289ef7c137db3ce1de6f46fb1260600a8a26947b91a80f942f0896426d45a1b3",
+        "unchanged": true
+      },
+      "originalFirstPartyReceipt": {
+        "path": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\claude-capacity-20261010\\opus-controller-20261010\\author-shinryo-hoshasengishi-77-pm-q001-006-new-opus-first-draft\\receipt.json",
+        "sha256": "ff2a757722efe22c43749261dc266a9951702e55b0dcc10b6cddfd5cc45e2573",
+        "unchanged": true,
+        "newModelReceiptClaimed": false
+      },
+      "sourcePacket": {
+        "path": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\claude-capacity-20261010\\opus-controller-20261010\\readable-sources\\shinryo-hoshasengishi-77-pm-q001-006-new-opus-first-draft\\SOURCE-PACKET.json",
+        "sha256": "2fc5ef3d362a1a5965888ab121513f1d6e6b1703e168a395ef3c48a356e412c8",
+        "unchanged": true
+      },
+      "officialQuestion": {
+        "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-06b_01.pdf",
+        "sha256": "3c73ae3583e3518f9a362811b1aae3459a037dd29d75129a8137a896a07e8be6",
+        "physicalPage": 5
+      },
+      "officialAnswer": {
+        "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-06seitou.pdf",
+        "sha256": "49587140cc1124392177a1d03e69e7ccdf7c8ab72f52c8b1b06de3d70d4d3937",
+        "cell": "PM1",
+        "oneBasedAcceptedChoices": [
+          "4"
+        ]
+      },
+      "qa": {
+        "questionAndAllFiveChoicesFromOriginal": true,
+        "officialAnswerPdfCellIndependentlyRechecked": true,
+        "originalTypographyBoundaryTextExactlyMatchedPacket": true,
+        "originalCropVisualReview": "completed via four locally rendered contact sheets",
+        "originalCropPath": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\qualification-expansion-20261007\\radiology-latest-two-20261011\\saved-specialist\\original-77-pm-q1.png",
+        "originalCropSha256": "d53136ca8ffba45b17f273db9ec4d1a851c2e6595dcd450cbb6e9121962a1a2c",
+        "allFiveChoiceExplanationsPresent": true,
+        "requiredSelectionsMatch": true,
+        "nonfigureVerified": true,
+        "rootArtifactHashesRechecked": true
+      },
+      "originalTypographyRestoration": [],
+      "savedTextReuse": {
+        "retainedExplanation": true,
+        "retainedChoiceExplanationKeys": [
+          "1",
+          "4"
+        ]
+      },
+      "localEditor": "Codex local specialist evidence review; no new full-draft model generation",
+      "localEdits": [
+        {
+          "field": "choiceExplanations.2",
+          "before": "誤り。MRI は RF パルスを使う高周波利用設備であり、電波法の手続きが必要かどうかは静磁場強度では決まりません。0.4 T 以下の装置でも申請は必要です。",
+          "after": "誤り。MRIはRFパルスを使う高周波利用設備です。電波法上の手続きの要否は設備の条件によるため、静磁場が0.4 T以下という条件だけで不要とはいえません。",
+          "reason": "現行JISの数値を根拠なく断定した箇所を除去。取得したFDA文書に従いIEC版差を明示した局所修正で解決。",
+          "evidenceUrls": [
+            "https://www.fda.gov/media/92921/download"
+          ]
+        },
+        {
+          "field": "choiceExplanations.3",
+          "before": "誤り。クエンチとは、超電導磁石の超電導状態が壊れ、液体ヘリウムが急に気化する現象です。そのため強制クエンチ（緊急減磁）の装置やヘリウムの排気設備が必要なのは超電導型装置です。永久磁石型装置は磁場を消すことができず、クエンチもありません。",
+          "after": "誤り。クエンチは超電導磁石の超電導状態が失われ、冷却用の液体ヘリウムが急に気化する現象です。永久磁石型装置ではこの現象は起こらず、強制クエンチ用の設備を設けるという記述は不適切です。",
+          "reason": "現行JISの数値を根拠なく断定した箇所を除去。取得したFDA文書に従いIEC版差を明示した局所修正で解決。",
+          "evidenceUrls": [
+            "https://www.fda.gov/media/92921/download"
+          ]
+        },
+        {
+          "field": "choiceExplanations.5",
+          "before": "誤り。JIS（IEC 60601-2-33 に対応する規格）では、立入制限区域の境界は漏えい磁場 0.5 mT（5 ガウス）の線で定めます。0.2 mT ではありません。",
+          "after": "誤り。0.2 mTという記述は誤りです。境界値は適用する規格の版に従って確認します。IEC 60601-2-33第4版（2022年）では0.9 mTが扱われ、従来の0.5 mTの扱いと区別する必要があります。",
+          "reason": "現行JISの数値を根拠なく断定した箇所を除去。取得したFDA文書に従いIEC版差を明示した局所修正で解決。",
+          "evidenceUrls": [
+            "https://www.fda.gov/media/92921/download"
+          ]
+        }
+      ],
+      "primaryEvidence": [
+        {
+          "url": "https://www.fda.gov/media/92921/download",
+          "title": "FDA: Testing and Labeling Medical Devices for Safety in the Magnetic Resonance (MR) Environment (2023)",
+          "locator": "physical pp.4,19-20; IEC 60601-2-33 edition 4 (2022) discussion",
+          "accessed": "2026-10-11",
+          "accessMethod": "normal web tool; primary document text read",
+          "confirms": "IEC第4版の0.9 mTと旧版の0.5 mTを区別する必要がある。超電導装置のクエンチ排気に言及。",
+          "qualification": "日本の現行JIS本文を取得したとは主張しない。候補では未確認の現行JIS境界値を断定しない。"
+        }
+      ]
+    },
+    {
+      "identity": "shinryo-hoshasengishi-77-pm-2",
+      "candidateId": "shinryo-hoshasengishi-2025-annual-pm-q2",
+      "candidateCanonicalSha256": "f1999e5466b22aee2a1f64816528306e86d3843e02e19a4ac0214fe0f24b0336",
+      "contentStatus": "completed",
+      "publicationGo": 0,
+      "publicationOwner": "parent integration task",
+      "previousTechnicalHolds": [
+        "実際の急性期脳卒中MRIの撮影順は施設のプロトコルによって異なる（例：FLAIR像とT₂*強調像の順序）。正答は公式正答値表PM2に従っており、解説中の各シーケンスの優先順の根拠が一般的な臨床指針と一致しているか確認が必要"
+      ],
+      "previousMechanicallySafe": false,
+      "technicalHoldResolution": "各系列の診断目的を指針で確認。公式正答の選択肢比較という説明に限定し、施設共通の固定順序という誤解を除去。",
+      "remainingContentBlockers": [],
+      "originalDraft": {
+        "path": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\claude-capacity-20261010\\opus-controller-20261010\\author-shinryo-hoshasengishi-77-pm-q001-006-new-opus-first-draft\\OFFLINE-STRUCTURED-RESULT.json",
+        "sha256": "289ef7c137db3ce1de6f46fb1260600a8a26947b91a80f942f0896426d45a1b3",
+        "unchanged": true
+      },
+      "originalFirstPartyReceipt": {
+        "path": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\claude-capacity-20261010\\opus-controller-20261010\\author-shinryo-hoshasengishi-77-pm-q001-006-new-opus-first-draft\\receipt.json",
+        "sha256": "ff2a757722efe22c43749261dc266a9951702e55b0dcc10b6cddfd5cc45e2573",
+        "unchanged": true,
+        "newModelReceiptClaimed": false
+      },
+      "sourcePacket": {
+        "path": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\claude-capacity-20261010\\opus-controller-20261010\\readable-sources\\shinryo-hoshasengishi-77-pm-q001-006-new-opus-first-draft\\SOURCE-PACKET.json",
+        "sha256": "2fc5ef3d362a1a5965888ab121513f1d6e6b1703e168a395ef3c48a356e412c8",
+        "unchanged": true
+      },
+      "officialQuestion": {
+        "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-06b_01.pdf",
+        "sha256": "3c73ae3583e3518f9a362811b1aae3459a037dd29d75129a8137a896a07e8be6",
+        "physicalPage": 5
+      },
+      "officialAnswer": {
+        "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-06seitou.pdf",
+        "sha256": "49587140cc1124392177a1d03e69e7ccdf7c8ab72f52c8b1b06de3d70d4d3937",
+        "cell": "PM2",
+        "oneBasedAcceptedChoices": [
+          "4"
+        ]
+      },
+      "qa": {
+        "questionAndAllFiveChoicesFromOriginal": true,
+        "officialAnswerPdfCellIndependentlyRechecked": true,
+        "originalTypographyBoundaryTextExactlyMatchedPacket": true,
+        "originalCropVisualReview": "completed via four locally rendered contact sheets",
+        "originalCropPath": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\qualification-expansion-20261007\\radiology-latest-two-20261011\\saved-specialist\\original-77-pm-q2.png",
+        "originalCropSha256": "f6b00a7ab821f49d205889b4fabe0e76799a28b939bbb1c07b1a43bebde7609d",
+        "allFiveChoiceExplanationsPresent": true,
+        "requiredSelectionsMatch": true,
+        "nonfigureVerified": true,
+        "rootArtifactHashesRechecked": true
+      },
+      "originalTypographyRestoration": [],
+      "savedTextReuse": {
+        "retainedExplanation": false,
+        "retainedChoiceExplanationKeys": []
+      },
+      "localEditor": "Codex local specialist evidence review; no new full-draft model generation",
+      "localEdits": [
+        {
+          "field": "explanation",
+          "before": "脳卒中が疑われる急性期の患者は、途中で状態が悪化したり体が動いたりして、検査を続けられなくなることがあります。そのため、治療方針（血栓溶解療法や血栓回収療法をするかどうか）に直結する画像から順に撮ります。\n・まず拡散強調像で、超急性期の脳梗塞を見つけます。\n・次に MRA で、主幹動脈が詰まっているかを評価します。\n・続いて FLAIR 像で、くも膜下出血や陳旧性病変を確認し、拡散強調像との所見の差（DWI-FLAIR ミスマッチ）を見ます。\n・T₂*強調像で、出血や微小出血を確認します。\n・最後に T₂ 強調像、T₁ 強調像で補足的な情報を得ます。\nこの順になっている選択肢4が適切です。公式正答値表の PM2 も「4」です。",
+          "after": "脳卒中が疑われる急性期の患者は、途中で状態が悪化したり体が動いたりして、検査を続けられなくなることがあります。そのため、治療判断に必要な情報を迅速に得ることが重要です。本問の選択肢では、次の順になっている4が適切です。\n・拡散強調像で、急性期の脳梗塞を評価します。\n・MRAで、主幹動脈の閉塞を評価します。\n・FLAIR像で病変を確認し、拡散強調像との所見の差（DWI-FLAIRミスマッチ）を評価します。\n・T₂*強調像で、出血や微小出血を確認します。\n・T₂強調像、T₁強調像で補足的な情報を得ます。\n実際の撮影順は患者の状態や施設のプロトコルによって異なり、出血の迅速な評価も必要です。公式正答値表のPM2は4です。",
+          "reason": "各系列の診断目的を指針で確認。公式正答の選択肢比較という説明に限定し、施設共通の固定順序という誤解を除去。",
+          "evidenceUrls": [
+            "https://pubmed.ncbi.nlm.nih.gov/23907247/"
+          ]
+        },
+        {
+          "field": "choiceExplanations.1",
+          "before": "不適切。最初に MRA を撮ると、最も重要な急性期梗塞の検出（拡散強調像）が遅れます。また、出血を評価する T₂*強調像が最後になっています。",
+          "after": "本問の比較では不適切です。拡散強調像よりMRAが先で、出血を評価するT₂*強調像も最後になっています。選択肢4は梗塞・血管閉塞を早く評価できます。",
+          "reason": "各系列の診断目的を指針で確認。公式正答の選択肢比較という説明に限定し、施設共通の固定順序という誤解を除去。",
+          "evidenceUrls": [
+            "https://pubmed.ncbi.nlm.nih.gov/23907247/"
+          ]
+        },
+        {
+          "field": "choiceExplanations.2",
+          "before": "不適切。超急性期の診断にあまり役立たない T₁ 強調像から始めており、最重要の拡散強調像が最後になっています。途中で検査を中止すると、梗塞を評価できません。",
+          "after": "本問の比較では不適切です。T₁強調像から始めており、急性期梗塞を評価する拡散強調像が最後になっています。途中で検査を中止すると重要な情報が得られません。",
+          "reason": "各系列の診断目的を指針で確認。公式正答の選択肢比較という説明に限定し、施設共通の固定順序という誤解を除去。",
+          "evidenceUrls": [
+            "https://pubmed.ncbi.nlm.nih.gov/23907247/"
+          ]
+        },
+        {
+          "field": "choiceExplanations.3",
+          "before": "不適切。T₁ 強調像・T₂ 強調像を先に撮っているため、拡散強調像と MRA が後回しになり、治療判断が遅れます。",
+          "after": "本問の比較では不適切です。T₁強調像・T₂強調像を先に撮るため、拡散強調像とMRAの情報が後回しになります。",
+          "reason": "各系列の診断目的を指針で確認。公式正答の選択肢比較という説明に限定し、施設共通の固定順序という誤解を除去。",
+          "evidenceUrls": [
+            "https://pubmed.ncbi.nlm.nih.gov/23907247/"
+          ]
+        },
+        {
+          "field": "choiceExplanations.4",
+          "before": "適切。拡散強調像（梗塞の検出）→MRA（血管閉塞）→FLAIR 像→T₂*強調像（出血）→T₂ 強調像→T₁ 強調像と、治療判断に必要な順に並んでいます。",
+          "after": "本問で適切です。拡散強調像（梗塞）とMRA（血管閉塞）を先に評価し、FLAIR像、T₂*強調像、T₂強調像、T₁強調像を続ける順です。全施設共通の固定順序という意味ではありません。",
+          "reason": "各系列の診断目的を指針で確認。公式正答の選択肢比較という説明に限定し、施設共通の固定順序という誤解を除去。",
+          "evidenceUrls": [
+            "https://pubmed.ncbi.nlm.nih.gov/23907247/"
+          ]
+        },
+        {
+          "field": "choiceExplanations.5",
+          "before": "不適切。拡散強調像から始めている点はよいですが、血管閉塞を評価する MRA が最後です。血栓回収療法の適応判断に必要な情報が遅れます。",
+          "after": "本問の比較では不適切です。拡散強調像から始める点は適切ですが、血管閉塞を評価するMRAが最後になり、治療判断に必要な情報が遅れます。",
+          "reason": "各系列の診断目的を指針で確認。公式正答の選択肢比較という説明に限定し、施設共通の固定順序という誤解を除去。",
+          "evidenceUrls": [
+            "https://pubmed.ncbi.nlm.nih.gov/23907247/"
+          ]
+        }
+      ],
+      "primaryEvidence": [
+        {
+          "url": "https://pubmed.ncbi.nlm.nih.gov/23907247/",
+          "title": "ASNR/ACR/SNIS: Imaging recommendations for acute stroke and transient ischemic attack patients (2013)",
+          "locator": "author abstract and Figure 1 caption; doi:10.3174/ajnr.A3690",
+          "accessed": "2026-10-11",
+          "accessMethod": "normal web tool; primary document text read",
+          "confirms": "DWI、FLAIR、GRE/SWI、MRAの診断目的と施設の資源に応じた迅速な検査選択。",
+          "qualification": "選択肢4は公式正答による。本資料は全施設で固定された撮影順を規定していない。"
+        }
+      ]
+    },
+    {
+      "identity": "shinryo-hoshasengishi-77-pm-12",
+      "candidateId": "shinryo-hoshasengishi-2025-annual-pm-q12",
+      "candidateCanonicalSha256": "58b1147cc3c79b2c0cec4496faa04c71ac76f1cfb06ad35f2b0b19b63d29b03a",
+      "contentStatus": "completed",
+      "publicationGo": 0,
+      "publicationOwner": "parent integration task",
+      "previousTechnicalHolds": [
+        "選択肢2の解説について：現在のデジタル型ガンマカメラでは、光電子増倍管ごとにA/D変換してデジタルで位置を計算する方式も使われています。抵抗マトリクス方式は古典的なアンガー型の方式として説明しているので、この書き方でよいか専門家の確認が必要です。",
+        "original PNG layout QA pending",
+        "literal question/all-choice original comparison pending"
+      ],
+      "previousMechanicallySafe": false,
+      "technicalHoldResolution": "古典的アンガー型と限定し、機器方式差の懸念を解決。厚さは製造元の実例で確認。紙面・全文比較も完了。",
+      "remainingContentBlockers": [],
+      "originalDraft": {
+        "path": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\claude-capacity-20261010\\opus-controller-20261010\\author-shinryo-hoshasengishi-77-pm-q007-012-new-opus-first-draft\\OFFLINE-STRUCTURED-RESULT.json",
+        "sha256": "a51d4048360f615ca461965524aff4f088ff8cff95a2e66fef0426cbaf339317",
+        "unchanged": true
+      },
+      "originalFirstPartyReceipt": {
+        "path": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\claude-capacity-20261010\\opus-controller-20261010\\author-shinryo-hoshasengishi-77-pm-q007-012-new-opus-first-draft\\receipt.json",
+        "sha256": "e44088e040c73f41cfc2775dd34423ff5111f5790da5866c4d5f1dfaed8f2f46",
+        "unchanged": true,
+        "newModelReceiptClaimed": false
+      },
+      "sourcePacket": {
+        "path": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\claude-capacity-20261010\\opus-controller-20261010\\readable-sources\\shinryo-hoshasengishi-77-pm-q007-012-new-opus-first-draft\\SOURCE-PACKET.json",
+        "sha256": "2262205c7b5b1952977a2912ed110b5abb232e0d430d89183426b216edfd1914",
+        "unchanged": true
+      },
+      "officialQuestion": {
+        "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-06b_01.pdf",
+        "sha256": "3c73ae3583e3518f9a362811b1aae3459a037dd29d75129a8137a896a07e8be6",
+        "physicalPage": 9
+      },
+      "officialAnswer": {
+        "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-06seitou.pdf",
+        "sha256": "49587140cc1124392177a1d03e69e7ccdf7c8ab72f52c8b1b06de3d70d4d3937",
+        "cell": "PM12",
+        "oneBasedAcceptedChoices": [
+          "2",
+          "4"
+        ]
+      },
+      "qa": {
+        "questionAndAllFiveChoicesFromOriginal": true,
+        "officialAnswerPdfCellIndependentlyRechecked": true,
+        "originalTypographyBoundaryTextExactlyMatchedPacket": true,
+        "originalCropVisualReview": "completed via four locally rendered contact sheets",
+        "originalCropPath": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\qualification-expansion-20261007\\radiology-latest-two-20261011\\saved-specialist\\original-77-pm-q12.png",
+        "originalCropSha256": "b02763a544fa6bc5bc3e746bb51a42bcc8e35cb5044bbef2b721de9ea6762315",
+        "allFiveChoiceExplanationsPresent": true,
+        "requiredSelectionsMatch": true,
+        "nonfigureVerified": true,
+        "rootArtifactHashesRechecked": true
+      },
+      "originalTypographyRestoration": [],
+      "savedTextReuse": {
+        "retainedExplanation": false,
+        "retainedChoiceExplanationKeys": [
+          "1",
+          "4",
+          "5"
+        ]
+      },
+      "localEditor": "Codex local specialist evidence review; no new full-draft model generation",
+      "localEdits": [
+        {
+          "field": "explanation",
+          "before": "アンガー型ガンマカメラは、複数の光電子増倍管の出力を抵抗マトリクスで重み付けして足し合わせ、X・Y位置信号を求めます。エネルギーは、全光電子増倍管の出力を足したZ信号を波高分析器に通して求め、目的のエネルギーの窓に入るイベントだけを選びます。したがって正答は2と4です。",
+          "after": "古典的なアンガー型ガンマカメラは、複数の光電子増倍管の出力を抵抗マトリクスで重み付けして足し合わせ、X・Y位置信号を求めます。エネルギーは、全光電子増倍管の出力を足したZ信号を波高分析器に通して求め、目的のエネルギーの窓に入るイベントだけを選びます。したがって正答は2と4です。デジタル処理などを採用する機器もあるため、ここでは古典的なアンガー型の構成を説明しています。",
+          "reason": "古典的アンガー型と限定し、機器方式差の懸念を解決。厚さは製造元の実例で確認。紙面・全文比較も完了。",
+          "evidenceUrls": [
+            "https://www.aapm.org/pubs/reports/RPT_177.pdf",
+            "https://www.siemens-healthineers.com/fr-dz/molecular-imaging/spect-and-spect-ct/symbia-evo"
+          ]
+        },
+        {
+          "field": "choiceExplanations.2",
+          "before": "正しい。アンガー型では、抵抗マトリクス方式で光電子増倍管の出力を重み付けして加算し、入射位置を計算します。",
+          "after": "正しい。古典的なアンガー型では、抵抗マトリクス方式で光電子増倍管の出力を重み付けして加算し、入射位置を計算します。",
+          "reason": "古典的アンガー型と限定し、機器方式差の懸念を解決。厚さは製造元の実例で確認。紙面・全文比較も完了。",
+          "evidenceUrls": [
+            "https://www.aapm.org/pubs/reports/RPT_177.pdf",
+            "https://www.siemens-healthineers.com/fr-dz/molecular-imaging/spect-and-spect-ct/symbia-evo"
+          ]
+        },
+        {
+          "field": "choiceExplanations.3",
+          "before": "誤り。一般的なガンマカメラのNaI(Tl)シンチレータの厚さは3/8インチ（約9.5 mm）程度です。2インチもありません。",
+          "after": "誤り。代表的な装置ではNaI(Tl)結晶厚に3/8インチ（約9.5 mm）や5/8インチなどが使われます。2インチ程度という記述は不適切です。",
+          "reason": "古典的アンガー型と限定し、機器方式差の懸念を解決。厚さは製造元の実例で確認。紙面・全文比較も完了。",
+          "evidenceUrls": [
+            "https://www.aapm.org/pubs/reports/RPT_177.pdf",
+            "https://www.siemens-healthineers.com/fr-dz/molecular-imaging/spect-and-spect-ct/symbia-evo"
+          ]
+        }
+      ],
+      "primaryEvidence": [
+        {
+          "url": "https://www.aapm.org/pubs/reports/RPT_177.pdf",
+          "title": "AAPM Task Group 177: Acceptance Testing and Annual Physics Survey Recommendations for Gamma Camera, SPECT, and SPECT/CT Systems (2019)",
+          "locator": "section 5, physical pp.14-15; digital signal processing discussion p.31",
+          "accessed": "2026-10-11",
+          "accessMethod": "normal web tool; primary document text read",
+          "confirms": "単一結晶アンガー型と多結晶・デジタル機器の構成を区別。旧原稿を古典的アンガー型に限定。"
+        },
+        {
+          "url": "https://www.siemens-healthineers.com/fr-dz/molecular-imaging/spect-and-spect-ct/symbia-evo",
+          "title": "Siemens Healthineers: Symbia Evo",
+          "locator": "Detector technology: crystal thickness 3/8 or 5/8 inch",
+          "accessed": "2026-10-11",
+          "accessMethod": "normal web tool; primary document text read",
+          "confirms": "代表的なNaI結晶厚の製造元実例を確認。"
+        }
+      ]
+    },
+    {
+      "identity": "shinryo-hoshasengishi-77-pm-13",
+      "candidateId": "shinryo-hoshasengishi-2025-annual-pm-q13",
+      "candidateCanonicalSha256": "73dad787c410ff3ab412b508ffc1dd94ade7d5f3fd6505cb1d44b5d4d58088fa",
+      "contentStatus": "completed",
+      "publicationGo": 0,
+      "publicationOwner": "parent integration task",
+      "previousTechnicalHolds": [
+        "均一性が NEMA NU 2-1994 には含まれ、2001 年版以降で除かれたという改訂の経緯は、提供資料では確認できない専門的な事実です。規格本文との照合が必要です。"
+      ],
+      "previousMechanicallySafe": false,
+      "technicalHoldResolution": "出題に不要で裏付けのない旧版改訂経緯を削除。2018版に沿った測定論文と公式正答に説明を限定。",
+      "remainingContentBlockers": [],
+      "originalDraft": {
+        "path": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\claude-capacity-20261010\\opus-controller-20261010\\author-shinryo-hoshasengishi-77-pm-q013-018-new-opus-first-draft\\STRUCTURED-RESULT.json",
+        "sha256": "af0db390b49942277d48572db5634edd5f68fcc491a2c63dea9887e2d48ddbff",
+        "unchanged": true
+      },
+      "originalFirstPartyReceipt": {
+        "path": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\claude-capacity-20261010\\opus-controller-20261010\\author-shinryo-hoshasengishi-77-pm-q013-018-new-opus-first-draft\\receipt.json",
+        "sha256": "f07841c334760dae87c453e4b078c01b26631c4f23a399edc8c9af11625f0faf",
+        "unchanged": true,
+        "newModelReceiptClaimed": false
+      },
+      "sourcePacket": {
+        "path": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\claude-capacity-20261010\\opus-controller-20261010\\readable-sources\\shinryo-hoshasengishi-77-pm-q013-018-new-opus-first-draft\\SOURCE-PACKET.json",
+        "sha256": "9ec1c7ba08637ab3a73f3ab0ae7b310072538ad431dc7c37a2e921a09fd40005",
+        "unchanged": true
+      },
+      "officialQuestion": {
+        "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-06b_01.pdf",
+        "sha256": "3c73ae3583e3518f9a362811b1aae3459a037dd29d75129a8137a896a07e8be6",
+        "physicalPage": 10
+      },
+      "officialAnswer": {
+        "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-06seitou.pdf",
+        "sha256": "49587140cc1124392177a1d03e69e7ccdf7c8ab72f52c8b1b06de3d70d4d3937",
+        "cell": "PM13",
+        "oneBasedAcceptedChoices": [
+          "2"
+        ]
+      },
+      "qa": {
+        "questionAndAllFiveChoicesFromOriginal": true,
+        "officialAnswerPdfCellIndependentlyRechecked": true,
+        "originalTypographyBoundaryTextExactlyMatchedPacket": true,
+        "originalCropVisualReview": "completed via four locally rendered contact sheets",
+        "originalCropPath": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\qualification-expansion-20261007\\radiology-latest-two-20261011\\saved-specialist\\original-77-pm-q13.png",
+        "originalCropSha256": "416b1ff64dc9d5f93d8387e797959d40a5f017f327fc8c810c59c5fca64cb396",
+        "allFiveChoiceExplanationsPresent": true,
+        "requiredSelectionsMatch": true,
+        "nonfigureVerified": true,
+        "rootArtifactHashesRechecked": true
+      },
+      "originalTypographyRestoration": [],
+      "savedTextReuse": {
+        "retainedExplanation": false,
+        "retainedChoiceExplanationKeys": [
+          "1",
+          "2",
+          "3",
+          "4",
+          "5"
+        ]
+      },
+      "localEditor": "Codex local specialist evidence review; no new full-draft model generation",
+      "localEdits": [
+        {
+          "field": "explanation",
+          "before": "NEMA NU 2-2018 は PET 装置の性能を評価するための規格です。主な評価項目は、空間分解能、散乱フラクション・計数損失・偶発同時計数、感度、計数損失および偶発同時計数補正の精度、画質（減弱・散乱補正の精度を含む）、TOF 分解能、PET/CT の重ね合わせ精度です。「均一性」は旧版の NEMA NU 2-1994 には含まれていましたが、2001 年版以降は独立した項目ではなくなり、2018 年版にも含まれていません。したがって、この規格の項目でないのは 2 の均一性です。",
+          "after": "NEMA NU 2-2018はPET装置の性能を評価するための規格です。評価項目には、空間分解能、散乱フラクション・計数損失・偶発同時計数、感度、計数損失および偶発同時計数補正の精度、画質、TOF分解能（対応装置）、PET/CTの重ね合わせ精度があります。均一性は独立した評価項目に含まれません。したがって、この規格の項目でないのは2の均一性です。",
+          "reason": "出題に不要で裏付けのない旧版改訂経緯を削除。2018版に沿った測定論文と公式正答に説明を限定。",
+          "evidenceUrls": [
+            "https://arxiv.org/pdf/2308.06255"
+          ]
+        }
+      ],
+      "primaryEvidence": [
+        {
+          "url": "https://arxiv.org/pdf/2308.06255",
+          "title": "Smith et al.: NEMA NU 2-2018 performance evaluation of the GE HealthCare Omni Legend 32 cm PET-CT",
+          "locator": "arXiv:2308.06255 (2023); abstract, introduction, methods 2.2-2.8",
+          "accessed": "2026-10-11",
+          "accessMethod": "normal web tool; primary document text read",
+          "confirms": "2018版で評価される空間分解能、散乱、感度、補正精度、画質、PET/CT重ね合わせ等を実測。",
+          "qualification": "1994→2001の改訂経緯は候補から削除。規格全文を読んだとは主張しない。"
+        }
+      ]
+    },
+    {
+      "identity": "shinryo-hoshasengishi-77-pm-20",
+      "candidateId": "shinryo-hoshasengishi-2025-annual-pm-q20",
+      "candidateCanonicalSha256": "5813239301a36ecf79ac09eef2230e83b131d5cb85001e476a979a65294ed591",
+      "contentStatus": "completed",
+      "publicationGo": 0,
+      "publicationOwner": "parent integration task",
+      "previousTechnicalHolds": [
+        "選択肢5の解説では、111In-ペンテトレオチドの腸管への生理的集積が早期像（約4時間後）より後期像（24時間後）で多くみられるとしています。撮影時刻と頻度の関係は、添付文書や核医学の成書と照らし合わせて確認が必要です。"
+      ],
+      "previousMechanicallySafe": false,
+      "technicalHoldResolution": "製造元の規制当局掲載モノグラフで撮影時刻・肝胆道排泄・腸管生理集積鑑別を確認。出現頻度の一律断定を避けた最小修正で完成。別SPC候補URLは404で確認できず、証拠に採用しない。",
+      "remainingContentBlockers": [],
+      "originalDraft": {
+        "path": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\claude-capacity-20261010\\opus-controller-20261010\\author-shinryo-hoshasengishi-77-pm-q019-024-new-opus-first-draft\\OFFLINE-STRUCTURED-RESULT.json",
+        "sha256": "9669584b996f5ad6a7b48a1195e195241dcbf99a29f23c59c09c18ee35fc7738",
+        "unchanged": true
+      },
+      "originalFirstPartyReceipt": {
+        "path": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\claude-capacity-20261010\\opus-controller-20261010\\author-shinryo-hoshasengishi-77-pm-q019-024-new-opus-first-draft\\receipt.json",
+        "sha256": "65ff41693656f9569b75e2c0dbdf2db240359760993c4b34c419d12c1506d078",
+        "unchanged": true,
+        "newModelReceiptClaimed": false
+      },
+      "sourcePacket": {
+        "path": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\claude-capacity-20261010\\opus-controller-20261010\\readable-sources\\shinryo-hoshasengishi-77-pm-q019-024-new-opus-first-draft\\SOURCE-PACKET.json",
+        "sha256": "0f50c5984b8521c2b75aa0c1da096a4370d66f8c9a81cc72ead9f9447f7fa6c3",
+        "unchanged": true
+      },
+      "officialQuestion": {
+        "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-06b_01.pdf",
+        "sha256": "3c73ae3583e3518f9a362811b1aae3459a037dd29d75129a8137a896a07e8be6",
+        "physicalPage": 12
+      },
+      "officialAnswer": {
+        "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-06seitou.pdf",
+        "sha256": "49587140cc1124392177a1d03e69e7ccdf7c8ab72f52c8b1b06de3d70d4d3937",
+        "cell": "PM20",
+        "oneBasedAcceptedChoices": [
+          "2",
+          "3"
+        ]
+      },
+      "qa": {
+        "questionAndAllFiveChoicesFromOriginal": true,
+        "officialAnswerPdfCellIndependentlyRechecked": true,
+        "originalTypographyBoundaryTextExactlyMatchedPacket": true,
+        "originalCropVisualReview": "completed via four locally rendered contact sheets",
+        "originalCropPath": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\qualification-expansion-20261007\\radiology-latest-two-20261011\\saved-specialist\\original-77-pm-q20.png",
+        "originalCropSha256": "b800b244d9c26d6a904e48ad1ac1c005b65f00e97112649df46ed08dd3e9b3f2",
+        "allFiveChoiceExplanationsPresent": true,
+        "requiredSelectionsMatch": true,
+        "nonfigureVerified": true,
+        "rootArtifactHashesRechecked": true
+      },
+      "originalTypographyRestoration": [],
+      "savedTextReuse": {
+        "retainedExplanation": true,
+        "retainedChoiceExplanationKeys": [
+          "1",
+          "2",
+          "3",
+          "4"
+        ]
+      },
+      "localEditor": "Codex local specialist evidence review; no new full-draft model generation",
+      "localEdits": [
+        {
+          "field": "choiceExplanations.5",
+          "before": "誤り。薬剤の一部は胆汁を経て腸管に排泄されます。そのため消化管の生理的集積は、時間がたった後期像（24時間後など）でより多くみられます。早期像のほうが頻度が高いわけではありません。",
+          "after": "誤り。薬剤は主に尿路から排泄されますが、少量の肝胆道排泄もあり、遅延像で腸管の生理的集積が問題となることがあります。24時間像で腫瘍と腸管集積を区別しにくい場合は48時間像も用います。早期像の方が生理的集積の頻度が高いという記述は適切ではありません。",
+          "reason": "製造元の規制当局掲載モノグラフで撮影時刻・肝胆道排泄・腸管生理集積鑑別を確認。出現頻度の一律断定を避けた最小修正で完成。別SPC候補URLは404で確認できず、証拠に採用しない。",
+          "evidenceUrls": [
+            "https://pdf.hres.ca/dpd_pm/00062509.PDF"
+          ]
+        }
+      ],
+      "primaryEvidence": [
+        {
+          "url": "https://pdf.hres.ca/dpd_pm/00062509.PDF",
+          "title": "Curium Canada: OCTREOSCAN Product Monograph (2021-08-13)",
+          "locator": "sections 1,4.1,4.4,4.6,5,10.3; physical pp.5-9,12,18",
+          "accessed": "2026-10-11",
+          "accessMethod": "normal web tool; primary document text read",
+          "confirms": "111Inペンテトレオチド、神経内分泌腫瘍、尿路及び少量の肝胆道排泄、24時間像と腸管集積鑑別のための48時間像。",
+          "qualification": "24時間時点の正確な発現頻度の数値は追加せず、原典にある腸管集積の鑑別を説明。候補正答の2・3は公式正答と一致。"
+        }
+      ]
+    },
+    {
+      "identity": "shinryo-hoshasengishi-77-pm-27",
+      "candidateId": "shinryo-hoshasengishi-2025-annual-pm-q27",
+      "candidateCanonicalSha256": "8283d32c2682082a3f6619a1fa49907995fc8e99a81a0636f45f9362e9b312b4",
+      "contentStatus": "completed",
+      "publicationGo": 0,
+      "publicationOwner": "parent integration task",
+      "previousTechnicalHolds": [
+        "選択肢4・5の解説：TPR_{20,10}は幾何学的中心で測り、TMRなどの深部線量分布は実効中心で測るという区別は、標準計測法（JSMP標準計測法12等）の規定によるものです。準拠する標準計測法の版と、どの条項に当たるかを専門家が確認する必要があります。",
+        "original PNG layout QA pending",
+        "literal question/all-choice original comparison pending"
+      ],
+      "previousMechanicallySafe": false,
+      "technicalHoldResolution": "IAEA TRS398の明示版・条項で幾何学的中心と実効中心の区別を確認。照射野依存を単調な関係としない修正。",
+      "remainingContentBlockers": [],
+      "originalDraft": {
+        "path": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\claude-capacity-20261010\\opus-controller-20261010\\author-shinryo-hoshasengishi-77-pm-q025-030-new-opus-first-draft\\OFFLINE-STRUCTURED-RESULT.json",
+        "sha256": "4d20d805aeefebe0be8578e4059fd2a1de23316dbe8c389bc567b8ed5d3071e7",
+        "unchanged": true
+      },
+      "originalFirstPartyReceipt": {
+        "path": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\claude-capacity-20261010\\opus-controller-20261010\\author-shinryo-hoshasengishi-77-pm-q025-030-new-opus-first-draft\\receipt.json",
+        "sha256": "de65f620730ab87d83818f8fa0169e4b2eaaaa9f15017f56c3e32c6003f1d106",
+        "unchanged": true,
+        "newModelReceiptClaimed": false
+      },
+      "sourcePacket": {
+        "path": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\claude-capacity-20261010\\opus-controller-20261010\\readable-sources\\shinryo-hoshasengishi-77-pm-q025-030-new-opus-first-draft\\SOURCE-PACKET.json",
+        "sha256": "0506f1f5c870813f94597b74d9f9ba3d4655bb5b8cf59f558cd5bb3bb3338f4f",
+        "unchanged": true
+      },
+      "officialQuestion": {
+        "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-06b_01.pdf",
+        "sha256": "3c73ae3583e3518f9a362811b1aae3459a037dd29d75129a8137a896a07e8be6",
+        "physicalPage": 14
+      },
+      "officialAnswer": {
+        "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-06seitou.pdf",
+        "sha256": "49587140cc1124392177a1d03e69e7ccdf7c8ab72f52c8b1b06de3d70d4d3937",
+        "cell": "PM27",
+        "oneBasedAcceptedChoices": [
+          "2"
+        ]
+      },
+      "qa": {
+        "questionAndAllFiveChoicesFromOriginal": true,
+        "officialAnswerPdfCellIndependentlyRechecked": true,
+        "originalTypographyBoundaryTextExactlyMatchedPacket": true,
+        "originalCropVisualReview": "completed via four locally rendered contact sheets",
+        "originalCropPath": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\qualification-expansion-20261007\\radiology-latest-two-20261011\\saved-specialist\\original-77-pm-q27.png",
+        "originalCropSha256": "30596f9b9b64def9b13ed9fe664f622e3c404b8b5e036e43fc6c5fcb70064c5c",
+        "allFiveChoiceExplanationsPresent": true,
+        "requiredSelectionsMatch": true,
+        "nonfigureVerified": true,
+        "rootArtifactHashesRechecked": true
+      },
+      "originalTypographyRestoration": [
+        {
+          "field": "choices.3",
+          "before": "k_Q はエネルギーの大きさに比例する。",
+          "after": "kQ はエネルギーの大きさに比例する。"
+        },
+        {
+          "field": "choices.4",
+          "before": "TPR_{20,10} の測定は電離箱線量計の実効中心で行われる。",
+          "after": "TPR20,10 の測定は電離箱線量計の実効中心で行われる。"
+        }
+      ],
+      "savedTextReuse": {
+        "retainedExplanation": false,
+        "retainedChoiceExplanationKeys": [
+          "1",
+          "3"
+        ]
+      },
+      "localEditor": "Codex local specialist evidence review; no new full-draft model generation",
+      "localEdits": [
+        {
+          "field": "explanation",
+          "before": "正しいのは2です。最大線量深は照射野によって変わります。照射野が大きくなると、コリメータなどから出る混入電子や散乱線が増えます。そのため最大線量深は浅い方へ移ります。PDDは逆二乗則の影響でSSDに依存し、k_Qはエネルギーに比例しません。TPR_{20,10}の測定は、円筒形電離箱の幾何学的中心を測定点に合わせて行います。TMRのように深さとともに線量が変わる分布を測る場合は、実効中心（変位補正後の点）を測定点とします。",
+          "after": "正しいのは2です。最大線量深はエネルギーだけでなく照射野によっても変わります。照射野による散乱や混入電子などの影響があるため、全ての照射野で同じ深さになるわけではありません。PDDはSSDに依存し、線質変換係数kQはエネルギーに比例しません。IAEA TRS398（2000年版）では、TPR20,10測定時は円筒形電離箱の幾何学的中心を測定深に合わせます。深部線量分布の測定では電離箱の実効測定点を考慮します。",
+          "reason": "IAEA TRS398の明示版・条項で幾何学的中心と実効中心の区別を確認。照射野依存を単調な関係としない修正。",
+          "evidenceUrls": [
+            "https://www-pub.iaea.org/MTCD/Publications/PDF/TRS398_scr.pdf",
+            "https://www-pub.iaea.org/MTCD/Publications/PDF/Pub1196_web.pdf"
+          ]
+        },
+        {
+          "field": "choiceExplanations.2",
+          "before": "正しい。最大線量深はエネルギーだけでなく照射野でも変わります。照射野が大きいと混入電子や散乱線が増えて、浅くなります。",
+          "after": "正しい。最大線量深はエネルギーだけでなく照射野でも変わります。散乱や混入電子などの影響による変化であり、照射野を大きくすれば全ての範囲で一方向に変化する、という単純な関係ではありません。",
+          "reason": "IAEA TRS398の明示版・条項で幾何学的中心と実効中心の区別を確認。照射野依存を単調な関係としない修正。",
+          "evidenceUrls": [
+            "https://www-pub.iaea.org/MTCD/Publications/PDF/TRS398_scr.pdf",
+            "https://www-pub.iaea.org/MTCD/Publications/PDF/Pub1196_web.pdf"
+          ]
+        },
+        {
+          "field": "choiceExplanations.4",
+          "before": "誤り。TPR_{20,10}は深さ20 cmと10 cmでの電離量の比です。円筒形電離箱の幾何学的中心を測定深に置いて測ります。",
+          "after": "誤り。IAEA TRS398（2000年版）のTPR20,10の測定では、円筒形電離箱の幾何学的中心を深さ20 cmと10 cmに置いて電離量比を求めます。",
+          "reason": "IAEA TRS398の明示版・条項で幾何学的中心と実効中心の区別を確認。照射野依存を単調な関係としない修正。",
+          "evidenceUrls": [
+            "https://www-pub.iaea.org/MTCD/Publications/PDF/TRS398_scr.pdf",
+            "https://www-pub.iaea.org/MTCD/Publications/PDF/Pub1196_web.pdf"
+          ]
+        },
+        {
+          "field": "choiceExplanations.5",
+          "before": "誤り。TMRやPDDのような深部線量分布の測定では、電離箱の変位による影響を補正するため、幾何学的中心ではなく実効中心を測定点とします。",
+          "after": "誤り。円筒形電離箱でTMRやPDDなどの深部線量分布を測る場合は、電離箱の変位の影響を考慮し、実効中心（実効測定点）を測定深に対応させます。",
+          "reason": "IAEA TRS398の明示版・条項で幾何学的中心と実効中心の区別を確認。照射野依存を単調な関係としない修正。",
+          "evidenceUrls": [
+            "https://www-pub.iaea.org/MTCD/Publications/PDF/TRS398_scr.pdf",
+            "https://www-pub.iaea.org/MTCD/Publications/PDF/Pub1196_web.pdf"
+          ]
+        }
+      ],
+      "primaryEvidence": [
+        {
+          "url": "https://www-pub.iaea.org/MTCD/Publications/PDF/TRS398_scr.pdf",
+          "title": "IAEA Technical Reports Series No.398: Absorbed Dose Determination in External Beam Radiotherapy (2000 edition)",
+          "locator": "section 6.3.2/Table 12 printed p.70; section 6.7.1 printed p.78",
+          "accessed": "2026-10-11",
+          "accessMethod": "normal web tool; primary document text read",
+          "confirms": "円筒形電離箱でTPR20,10の線質測定は幾何学的中心、深部線量分布は実効測定点を使用。",
+          "qualification": "この検証は明示したIAEA版の原典。JSMP標準計測法12の条文を閲覧したとの主張はしない。"
+        },
+        {
+          "url": "https://www-pub.iaea.org/MTCD/Publications/PDF/Pub1196_web.pdf",
+          "title": "IAEA: Radiation Oncology Physics: A Handbook for Teachers and Students (2005)",
+          "locator": "section 6.5.3, printed p.172",
+          "accessed": "2026-10-11",
+          "accessMethod": "normal web tool; primary document text read",
+          "confirms": "光子最大線量深はエネルギーと照射野に依存し、全照射野域での単調な変化ではない。"
+        }
+      ]
+    },
+    {
+      "identity": "shinryo-hoshasengishi-77-pm-36",
+      "candidateId": "shinryo-hoshasengishi-2025-annual-pm-q36",
+      "candidateCanonicalSha256": "2fb5dd6a766d220b9b2f5465fe08d2166d178b973154228ee003aae9e5ff2222",
+      "contentStatus": "completed",
+      "publicationGo": 0,
+      "publicationOwner": "parent integration task",
+      "previousTechnicalHolds": [
+        "選択肢3の解説にある「即時型の造影剤副作用は量に左右されないことが多い」という内容は、問題冊子に書かれていない専門的な医学的記述のため、ガイドラインなどで確認が必要です。",
+        "正解の解説にある「副作用を起こした造影剤を別の製品に変えると再発の予防につながる」という内容も、問題冊子に根拠がないため、ガイドラインなどで確認が必要です。",
+        "original PNG layout QA pending",
+        "literal question/all-choice original comparison pending"
+      ],
+      "previousMechanicallySafe": false,
+      "technicalHoldResolution": "ESUR原典で原因製品記録と変更検討を確認。不要な量非依存の一般化と一律前投薬表現を除去。",
+      "remainingContentBlockers": [],
+      "originalDraft": {
+        "path": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\claude-capacity-20261010\\opus-controller-20261010\\author-shinryo-hoshasengishi-77-pm-q031-036-new-opus-first-draft\\OFFLINE-STRUCTURED-RESULT.json",
+        "sha256": "d294bf1a1584e6e71da5d792f3f945550fec1dee9553389b5017ade966192e5f",
+        "unchanged": true
+      },
+      "originalFirstPartyReceipt": {
+        "path": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\claude-capacity-20261010\\opus-controller-20261010\\author-shinryo-hoshasengishi-77-pm-q031-036-new-opus-first-draft\\receipt.json",
+        "sha256": "cb50d43be796b0842062df9c82278754ea46f4363144823235701459986a73fa",
+        "unchanged": true,
+        "newModelReceiptClaimed": false
+      },
+      "sourcePacket": {
+        "path": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\claude-capacity-20261010\\opus-controller-20261010\\readable-sources\\shinryo-hoshasengishi-77-pm-q031-036-new-opus-first-draft\\SOURCE-PACKET.json",
+        "sha256": "6d694d6bd2b7d22035e9ee593c361bafecdfd544442e1b5ad4bdc5e952a83dd7",
+        "unchanged": true
+      },
+      "officialQuestion": {
+        "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-06b_01.pdf",
+        "sha256": "3c73ae3583e3518f9a362811b1aae3459a037dd29d75129a8137a896a07e8be6",
+        "physicalPage": 18
+      },
+      "officialAnswer": {
+        "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-06seitou.pdf",
+        "sha256": "49587140cc1124392177a1d03e69e7ccdf7c8ab72f52c8b1b06de3d70d4d3937",
+        "cell": "PM36",
+        "oneBasedAcceptedChoices": [
+          "4"
+        ]
+      },
+      "qa": {
+        "questionAndAllFiveChoicesFromOriginal": true,
+        "officialAnswerPdfCellIndependentlyRechecked": true,
+        "originalTypographyBoundaryTextExactlyMatchedPacket": true,
+        "originalCropVisualReview": "completed via four locally rendered contact sheets",
+        "originalCropPath": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\qualification-expansion-20261007\\radiology-latest-two-20261011\\saved-specialist\\original-77-pm-q36.png",
+        "originalCropSha256": "37c6b77dd37bfb017b39cd8e02df1d00ec9018156bd4f1d07fb5d8418ab36c16",
+        "allFiveChoiceExplanationsPresent": true,
+        "requiredSelectionsMatch": true,
+        "nonfigureVerified": true,
+        "rootArtifactHashesRechecked": true
+      },
+      "originalTypographyRestoration": [],
+      "savedTextReuse": {
+        "retainedExplanation": false,
+        "retainedChoiceExplanationKeys": []
+      },
+      "localEditor": "Codex local specialist evidence review; no new full-draft model generation",
+      "localEdits": [
+        {
+          "field": "explanation",
+          "before": "造影CTの後に起きた一過性の血圧低下は、造影剤による副作用の可能性があります。次回の検査で同じ造影剤を避けて別の製品に変えるか、前投薬などの対策を検討するには、どの製品で副作用が起きたかが分かっていなければなりません。そのため、投与した造影剤の製品名を記録し、共有することが重要です。",
+          "after": "造影CT後の一過性の血圧低下は、造影剤による有害反応の可能性があります。次回の検査に備え、使用した造影剤の製品名を記録して共有することが重要です。原因となった製品が分かれば、反応の内容や重症度に応じて別の造影剤や代替検査を検討できます。製品名とともに症状や処置も記録します。",
+          "reason": "ESUR原典で原因製品記録と変更検討を確認。不要な量非依存の一般化と一律前投薬表現を除去。",
+          "evidenceUrls": [
+            "https://pmc.ncbi.nlm.nih.gov/articles/PMC12559128/"
+          ]
+        },
+        {
+          "field": "choiceExplanations.1",
+          "before": "誤り。体重は造影剤の量を決めるのに使いますが、次回の検査時にあらためて測ればよい情報です。今回の副作用を再び起こさないための情報ではありません。",
+          "after": "誤り。体重は造影剤量を決めるための情報ですが、どの造影剤で反応が起きたかは特定できません。本問では製品名の共有が最も直接的です。",
+          "reason": "ESUR原典で原因製品記録と変更検討を確認。不要な量非依存の一般化と一律前投薬表現を除去。",
+          "evidenceUrls": [
+            "https://pmc.ncbi.nlm.nih.gov/articles/PMC12559128/"
+          ]
+        },
+        {
+          "field": "choiceExplanations.2",
+          "before": "誤り。管電圧は撮影条件であり、造影剤の副作用とは関係しません。",
+          "after": "誤り。管電圧は撮影条件です。今回使った造影剤を特定する情報ではなく、次回の薬剤選択には製品名が必要です。",
+          "reason": "ESUR原典で原因製品記録と変更検討を確認。不要な量非依存の一般化と一律前投薬表現を除去。",
+          "evidenceUrls": [
+            "https://pmc.ncbi.nlm.nih.gov/articles/PMC12559128/"
+          ]
+        },
+        {
+          "field": "choiceExplanations.3",
+          "before": "誤り。即時型の造影剤副作用は量に左右されないことが多いとされます。総量を共有しても、次回同じ製品を使えば再発を防ぐことにはつながりにくいと考えられます。",
+          "after": "誤り。総量も診療記録に残す情報ですが、総量だけでは原因となった製品を特定できません。次回の薬剤選択に直接役立つのは製品名です。",
+          "reason": "ESUR原典で原因製品記録と変更検討を確認。不要な量非依存の一般化と一律前投薬表現を除去。",
+          "evidenceUrls": [
+            "https://pmc.ncbi.nlm.nih.gov/articles/PMC12559128/"
+          ]
+        },
+        {
+          "field": "choiceExplanations.4",
+          "before": "正しい。副作用を起こした造影剤の製品名を共有すれば、次回は別の製品を選ぶ、前投薬を検討するなどの対策が取れます。",
+          "after": "正しい。使用した製品名を共有すれば原因薬剤を特定でき、反応の内容と重症度に応じた次回の造影剤選択や検査計画に役立ちます。",
+          "reason": "ESUR原典で原因製品記録と変更検討を確認。不要な量非依存の一般化と一律前投薬表現を除去。",
+          "evidenceUrls": [
+            "https://pmc.ncbi.nlm.nih.gov/articles/PMC12559128/"
+          ]
+        },
+        {
+          "field": "choiceExplanations.5",
+          "before": "誤り。eGFRは腎機能の指標で、造影剤腎症のリスク評価に使います。値は変わるため、次回の検査前にあらためて測るべきものです。今回起きた血圧低下という副作用への備えにはなりません。",
+          "after": "誤り。eGFRは腎機能の評価に使う指標ですが、今回の有害反応の原因となった製品は分かりません。本問では製品名を共有します。",
+          "reason": "ESUR原典で原因製品記録と変更検討を確認。不要な量非依存の一般化と一律前投薬表現を除去。",
+          "evidenceUrls": [
+            "https://pmc.ncbi.nlm.nih.gov/articles/PMC12559128/"
+          ]
+        }
+      ],
+      "primaryEvidence": [
+        {
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12559128/",
+          "title": "ESUR Contrast Media Safety Committee: Hypersensitivity reactions to contrast media, Part 2: Prevention of recurrent hypersensitivity reactions in adults (2025)",
+          "locator": "Changing the specific contrast medium; Table 2",
+          "accessed": "2026-10-11",
+          "accessMethod": "normal web tool; primary document text read",
+          "confirms": "原因製品の特定・記録、反応の重症度に応じた再検査計画と薬剤変更の検討。",
+          "qualification": "副作用が全て投与量非依存との主張、前投薬の一律推奨を候補から除く。"
+        }
+      ]
+    },
+    {
+      "identity": "shinryo-hoshasengishi-77-pm-41",
+      "candidateId": "shinryo-hoshasengishi-2025-annual-pm-q41",
+      "candidateCanonicalSha256": "604fd3a5ba3287ad2af5626f048ceb0cad23a17232f4b79a830fe746ffb50c83",
+      "contentStatus": "completed",
+      "publicationGo": 0,
+      "publicationOwner": "parent integration task",
+      "previousTechnicalHolds": [
+        "解説中の成人女性の基準範囲（赤血球数・ヘモグロビン・ヘマトクリット・白血球数・血小板数）は、JCCLS共用基準範囲などに基づく概数として記載しており、本ソースパケットには根拠資料が含まれない。採用する基準範囲の出典と数値の照合が必要。"
+      ],
+      "previousMechanicallySafe": false,
+      "technicalHoldResolution": "一次公表の実施設基準範囲を5項目全て照合。概数を公表例の正確な値に修正。",
+      "remainingContentBlockers": [],
+      "originalDraft": {
+        "path": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\claude-capacity-20261010\\opus-controller-20261010\\author-shinryo-hoshasengishi-77-pm-q037-042-new-opus-first-draft\\OFFLINE-STRUCTURED-RESULT.json",
+        "sha256": "3d0cd26c2b3b38b604244fe72a874cb81a3fdc2afa30118dd4549a91f3fa4120",
+        "unchanged": true
+      },
+      "originalFirstPartyReceipt": {
+        "path": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\claude-capacity-20261010\\opus-controller-20261010\\author-shinryo-hoshasengishi-77-pm-q037-042-new-opus-first-draft\\receipt.json",
+        "sha256": "7f5b4573b4b6816cfc2766f8c5a0f63eaa13e1b6b02f2a0d66c59d9a4f11c91a",
+        "unchanged": true,
+        "newModelReceiptClaimed": false
+      },
+      "sourcePacket": {
+        "path": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\claude-capacity-20261010\\opus-controller-20261010\\readable-sources\\shinryo-hoshasengishi-77-pm-q037-042-new-opus-first-draft\\SOURCE-PACKET.json",
+        "sha256": "39538678037f5a6c8e97aaca4afcca99f298714a0897074ffeba79b74064e13d",
+        "unchanged": true
+      },
+      "officialQuestion": {
+        "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-06b_01.pdf",
+        "sha256": "3c73ae3583e3518f9a362811b1aae3459a037dd29d75129a8137a896a07e8be6",
+        "physicalPage": 20
+      },
+      "officialAnswer": {
+        "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-06seitou.pdf",
+        "sha256": "49587140cc1124392177a1d03e69e7ccdf7c8ab72f52c8b1b06de3d70d4d3937",
+        "cell": "PM41",
+        "oneBasedAcceptedChoices": [
+          "2"
+        ]
+      },
+      "qa": {
+        "questionAndAllFiveChoicesFromOriginal": true,
+        "officialAnswerPdfCellIndependentlyRechecked": true,
+        "originalTypographyBoundaryTextExactlyMatchedPacket": true,
+        "originalCropVisualReview": "completed via four locally rendered contact sheets",
+        "originalCropPath": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\qualification-expansion-20261007\\radiology-latest-two-20261011\\saved-specialist\\original-77-pm-q41.png",
+        "originalCropSha256": "d9ba8bf26e88c48106f43b03f8dbf3a023d42bd1365cb6e916c96965e76d4d42",
+        "allFiveChoiceExplanationsPresent": true,
+        "requiredSelectionsMatch": true,
+        "nonfigureVerified": true,
+        "rootArtifactHashesRechecked": true
+      },
+      "originalTypographyRestoration": [],
+      "savedTextReuse": {
+        "retainedExplanation": false,
+        "retainedChoiceExplanationKeys": []
+      },
+      "localEditor": "Codex local specialist evidence review; no new full-draft model generation",
+      "localEdits": [
+        {
+          "field": "explanation",
+          "before": "成人女性のヘモグロビンの基準値は、おおむね11〜12 g/dL台から15 g/dL程度です。8.0 g/dLは明らかに基準値より低く、貧血を示します。ほかの選択肢の値は、いずれも成人女性の基準範囲内です。したがって2が正解です。",
+          "after": "基準範囲は施設によって差があります。佐世保市総合医療センターの公表例では、成人女性のヘモグロビン基準範囲は11.6〜14.8 g/dLです。8.0 g/dLはこれを明らかに下回り、貧血を示します。他の選択肢の値はいずれも公表された基準範囲内にあり、正答は2です。",
+          "reason": "一次公表の実施設基準範囲を5項目全て照合。概数を公表例の正確な値に修正。",
+          "evidenceUrls": [
+            "https://www.hospital.sasebo.nagasaki.jp/shinryoka/bumon/kentai-kensa-kijunchi/"
+          ]
+        },
+        {
+          "field": "choiceExplanations.1",
+          "before": "成人女性の赤血球数の基準値は約380万〜490万/µL程度です。400万/µLは基準範囲内です。",
+          "after": "基準範囲内です。公表例の女性赤血球数は386万〜492万/µLで、400万/µLはこの範囲に入ります。",
+          "reason": "一次公表の実施設基準範囲を5項目全て照合。概数を公表例の正確な値に修正。",
+          "evidenceUrls": [
+            "https://www.hospital.sasebo.nagasaki.jp/shinryoka/bumon/kentai-kensa-kijunchi/"
+          ]
+        },
+        {
+          "field": "choiceExplanations.2",
+          "before": "成人女性のヘモグロビンの基準値は約11.5〜15 g/dL程度です。8.0 g/dLは基準値を下回っており、これが正解です。",
+          "after": "正答です。公表例の女性ヘモグロビンは11.6〜14.8 g/dLで、8.0 g/dLは低値です。",
+          "reason": "一次公表の実施設基準範囲を5項目全て照合。概数を公表例の正確な値に修正。",
+          "evidenceUrls": [
+            "https://www.hospital.sasebo.nagasaki.jp/shinryoka/bumon/kentai-kensa-kijunchi/"
+          ]
+        },
+        {
+          "field": "choiceExplanations.3",
+          "before": "成人女性のヘマトクリットの基準値は約35〜45％程度です。40.0％は基準範囲内です。",
+          "after": "基準範囲内です。公表例の女性ヘマトクリットは35.1〜44.4％で、40.0％はこの範囲に入ります。",
+          "reason": "一次公表の実施設基準範囲を5項目全て照合。概数を公表例の正確な値に修正。",
+          "evidenceUrls": [
+            "https://www.hospital.sasebo.nagasaki.jp/shinryoka/bumon/kentai-kensa-kijunchi/"
+          ]
+        },
+        {
+          "field": "choiceExplanations.4",
+          "before": "白血球数の基準値は約3,300〜8,600/µL程度です。5,000/µLは基準範囲内です。",
+          "after": "基準範囲内です。公表例の白血球数は3,300〜8,600/µLで、5,000/µLはこの範囲に入ります。",
+          "reason": "一次公表の実施設基準範囲を5項目全て照合。概数を公表例の正確な値に修正。",
+          "evidenceUrls": [
+            "https://www.hospital.sasebo.nagasaki.jp/shinryoka/bumon/kentai-kensa-kijunchi/"
+          ]
+        },
+        {
+          "field": "choiceExplanations.5",
+          "before": "血小板数の基準値は約15万〜35万/µL程度です。20万/µLは基準範囲内です。",
+          "after": "基準範囲内です。公表例の血小板数は15.8万〜34.8万/µLで、20万/µLはこの範囲に入ります。",
+          "reason": "一次公表の実施設基準範囲を5項目全て照合。概数を公表例の正確な値に修正。",
+          "evidenceUrls": [
+            "https://www.hospital.sasebo.nagasaki.jp/shinryoka/bumon/kentai-kensa-kijunchi/"
+          ]
+        }
+      ],
+      "primaryEvidence": [
+        {
+          "url": "https://www.hospital.sasebo.nagasaki.jp/shinryoka/bumon/kentai-kensa-kijunchi/",
+          "title": "佐世保市総合医療センター: 検体検査基準値",
+          "locator": "血液一般: RBC female 3.86-4.92; Hb female 11.6-14.8; Hct female 35.1-44.4; WBC 3.3-8.6; platelets 158-348",
+          "accessed": "2026-10-11",
+          "accessMethod": "normal web tool; primary document text read",
+          "confirms": "本問の5検査値の単位と基準範囲を照合。Hb8.0だけが低値。",
+          "qualification": "施設による基準範囲の差を明記し、この施設の公表例として提示。"
+        }
+      ]
+    },
+    {
+      "identity": "shinryo-hoshasengishi-78-pm-13",
+      "candidateId": "shinryo-hoshasengishi-2026-annual-pm-q13",
+      "candidateCanonicalSha256": "a065a67bd37e6c2c0a7c48ef739b0dc130480a1edcd8d9ad58347b37fd8fc5f3",
+      "contentStatus": "completed",
+      "publicationGo": 0,
+      "publicationOwner": "parent integration task",
+      "previousTechnicalHolds": [
+        "選択肢3の解説：Zスコアの符号の定義（正常平均−患者値か、その逆か）はソフトウェアによって異なります。萎縮があると血流低下のZスコアが高くなるという説明が、出題が想定する定義と合っているか、専門家の確認が必要です。"
+      ],
+      "previousMechanicallySafe": false,
+      "technicalHoldResolution": "eZIS原著の式に符号定義を限定。有意閾値の一律断定を除去。",
+      "remainingContentBlockers": [],
+      "originalDraft": {
+        "path": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\claude-capacity-20261010\\opus-controller-20261010\\author-shinryo-hoshasengishi-78-pm-q013-018-new-opus-first-draft\\OFFLINE-STRUCTURED-RESULT.json",
+        "sha256": "4623000d04ee63bd92d95c9b24ed669eda0ded4ba8bd7147cb55c50f12f436c5",
+        "unchanged": true
+      },
+      "originalFirstPartyReceipt": {
+        "path": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\claude-capacity-20261010\\opus-controller-20261010\\author-shinryo-hoshasengishi-78-pm-q013-018-new-opus-first-draft\\receipt.json",
+        "sha256": "4fe0140bcfe6f0902f8ee358ad1cb70f55624f7874a9e3158466266c6f4f218e",
+        "unchanged": true,
+        "newModelReceiptClaimed": false
+      },
+      "sourcePacket": {
+        "path": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\claude-capacity-20261010\\opus-controller-20261010\\readable-sources\\shinryo-hoshasengishi-78-pm-q013-018-new-opus-first-draft\\SOURCE-PACKET.json",
+        "sha256": "959b2dc8339775b986d9bc143fe51fca49c0d36ec2ac5d07cc8c6dda27fc84ee",
+        "unchanged": true
+      },
+      "officialQuestion": {
+        "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-06b_01.pdf",
+        "sha256": "fef27a4a6b91f7783e4958c40154891706de77f6d151a679eb313992233b0d52",
+        "physicalPage": 11
+      },
+      "officialAnswer": {
+        "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-06seitou.pdf",
+        "sha256": "09bc1518c5e3dbc9beeb740097d884ca9270089802ae4a924c8975d85efec658",
+        "cell": "PM13",
+        "oneBasedAcceptedChoices": [
+          "5"
+        ]
+      },
+      "qa": {
+        "questionAndAllFiveChoicesFromOriginal": true,
+        "officialAnswerPdfCellIndependentlyRechecked": true,
+        "originalTypographyBoundaryTextExactlyMatchedPacket": true,
+        "originalCropVisualReview": "completed via four locally rendered contact sheets",
+        "originalCropPath": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\qualification-expansion-20261007\\radiology-latest-two-20261011\\saved-specialist\\original-78-pm-q13.png",
+        "originalCropSha256": "100c9b2573ab2b001fad266757650447c81e8cc171444d83f889fe4717a70a89",
+        "allFiveChoiceExplanationsPresent": true,
+        "requiredSelectionsMatch": true,
+        "nonfigureVerified": true,
+        "rootArtifactHashesRechecked": true
+      },
+      "originalTypographyRestoration": [],
+      "savedTextReuse": {
+        "retainedExplanation": false,
+        "retainedChoiceExplanationKeys": [
+          "1",
+          "3",
+          "4",
+          "5"
+        ]
+      },
+      "localEditor": "Codex local specialist evidence review; no new full-draft model generation",
+      "localEdits": [
+        {
+          "field": "explanation",
+          "before": "脳血流SPECTのZスコアは、eZISや3D-SSPなどの統計画像解析で使います。患者画像を解剖学的に標準化し、ボクセルごとに次の式で求めます。Zスコア＝（正常群平均値−患者値）／正常群標準偏差。正常群の平均値と標準偏差を使うため、年齢をそろえた正常データベースが必要です。したがって5が正しい選択肢です。",
+          "after": "脳血流SPECTのZスコアは、患者の画像を正常データベースと比較する統計画像解析で使います。例えばeZISで血流低下を評価する定義は、Zスコア＝（正常群平均値−患者値）／正常群標準偏差です。正常群の平均値と標準偏差を使うため、適切な正常データベースが必要です。したがって5が正しい選択肢です。符号の定義は解析法を確認して扱います。",
+          "reason": "eZIS原著の式に符号定義を限定。有意閾値の一律断定を除去。",
+          "evidenceUrls": [
+            "https://karger.com/dee/article/10/2/63/95645/Utility-of-Easy-Z-Score-Imaging-System-Assisted"
+          ]
+        },
+        {
+          "field": "choiceExplanations.2",
+          "before": "誤り。Zスコア1は正常群平均から標準偏差1つ分の偏りにすぎず、正常範囲に含まれます。臨床では一般に2前後以上を有意な低下の目安とします。1以上を有意とはしません。",
+          "after": "誤り。Zスコア1は正常群平均から標準偏差1つ分の偏りを表します。それだけで一律に有意な異常とは評価しません。有意とする閾値は解析の目的や設定によって定めます。",
+          "reason": "eZIS原著の式に符号定義を限定。有意閾値の一律断定を除去。",
+          "evidenceUrls": [
+            "https://karger.com/dee/article/10/2/63/95645/Utility-of-Easy-Z-Score-Imaging-System-Assisted"
+          ]
+        }
+      ],
+      "primaryEvidence": [
+        {
+          "url": "https://karger.com/dee/article/10/2/63/95645/Utility-of-Easy-Z-Score-Imaging-System-Assisted",
+          "title": "Hayashi et al.: Utility of Easy Z-Score Imaging System-Assisted Brain Perfusion SPECT in Differentiating Alzheimer Disease with Amyloid Accumulation (2020)",
+          "locator": "statistical analysis; doi:10.1159/000507654",
+          "accessed": "2026-10-11",
+          "accessMethod": "normal web tool; primary document text read",
+          "confirms": "eZIS血流低下のZ=(正常群平均−患者値)/正常群SD、正常DB、画像正規化。",
+          "qualification": "eZISでの定義に限定し、全ソフト共通の符号・一律の有意閾値とはしない。"
+        }
+      ]
+    },
+    {
+      "identity": "shinryo-hoshasengishi-78-pm-14",
+      "candidateId": "shinryo-hoshasengishi-2026-annual-pm-q14",
+      "candidateCanonicalSha256": "f481fe48485aa1fe7c23331d106f83683a5bcfe9cd148a4b8d735f1025275339",
+      "contentStatus": "completed",
+      "publicationGo": 0,
+      "publicationOwner": "parent integration task",
+      "previousTechnicalHolds": [
+        "選択肢3の解説：体軸方向視野を長くしたときに散乱フラクションが増えるのか、ほぼ変わらないのかは、装置の構成やエネルギーウィンドウによります。「低下しない」という記述でよいか、専門家の確認が必要です。"
+      ],
+      "previousMechanicallySafe": false,
+      "technicalHoldResolution": "AFOV単独で散乱フラクションの増減を断定しない条件付き説明に修正し、構成/ウィンドウの影響を原著で確認。",
+      "remainingContentBlockers": [],
+      "originalDraft": {
+        "path": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\claude-capacity-20261010\\opus-controller-20261010\\author-shinryo-hoshasengishi-78-pm-q013-018-new-opus-first-draft\\OFFLINE-STRUCTURED-RESULT.json",
+        "sha256": "4623000d04ee63bd92d95c9b24ed669eda0ded4ba8bd7147cb55c50f12f436c5",
+        "unchanged": true
+      },
+      "originalFirstPartyReceipt": {
+        "path": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\claude-capacity-20261010\\opus-controller-20261010\\author-shinryo-hoshasengishi-78-pm-q013-018-new-opus-first-draft\\receipt.json",
+        "sha256": "4fe0140bcfe6f0902f8ee358ad1cb70f55624f7874a9e3158466266c6f4f218e",
+        "unchanged": true,
+        "newModelReceiptClaimed": false
+      },
+      "sourcePacket": {
+        "path": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\claude-capacity-20261010\\opus-controller-20261010\\readable-sources\\shinryo-hoshasengishi-78-pm-q013-018-new-opus-first-draft\\SOURCE-PACKET.json",
+        "sha256": "959b2dc8339775b986d9bc143fe51fca49c0d36ec2ac5d07cc8c6dda27fc84ee",
+        "unchanged": true
+      },
+      "officialQuestion": {
+        "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-06b_01.pdf",
+        "sha256": "fef27a4a6b91f7783e4958c40154891706de77f6d151a679eb313992233b0d52",
+        "physicalPage": 11
+      },
+      "officialAnswer": {
+        "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-06seitou.pdf",
+        "sha256": "09bc1518c5e3dbc9beeb740097d884ca9270089802ae4a924c8975d85efec658",
+        "cell": "PM14",
+        "oneBasedAcceptedChoices": [
+          "5"
+        ]
+      },
+      "qa": {
+        "questionAndAllFiveChoicesFromOriginal": true,
+        "officialAnswerPdfCellIndependentlyRechecked": true,
+        "originalTypographyBoundaryTextExactlyMatchedPacket": true,
+        "originalCropVisualReview": "completed via four locally rendered contact sheets",
+        "originalCropPath": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\qualification-expansion-20261007\\radiology-latest-two-20261011\\saved-specialist\\original-78-pm-q14.png",
+        "originalCropSha256": "83f066100a66dedeca7876f05b724caf1a984c2ea366b48fbada6bb2e56718b5",
+        "allFiveChoiceExplanationsPresent": true,
+        "requiredSelectionsMatch": true,
+        "nonfigureVerified": true,
+        "rootArtifactHashesRechecked": true
+      },
+      "originalTypographyRestoration": [],
+      "savedTextReuse": {
+        "retainedExplanation": true,
+        "retainedChoiceExplanationKeys": [
+          "1",
+          "2",
+          "4",
+          "5"
+        ]
+      },
+      "localEditor": "Codex local specialist evidence review; no new full-draft model generation",
+      "localEdits": [
+        {
+          "field": "choiceExplanations.3",
+          "before": "誤り。体軸方向視野を長くすると、斜め方向の同時計数線を多く受け付けるようになり、感度が上がります。一方で散乱同時計数も増えるため、散乱フラクションは下がりません。",
+          "after": "誤り。体軸方向視野を長くすると斜めの同時計数線を収集しやすくなりますが、散乱フラクションが必ず低下するとはいえません。散乱の割合は装置構成やエネルギーウィンドウ等にも依存します。",
+          "reason": "AFOV単独で散乱フラクションの増減を断定しない条件付き説明に修正し、構成/ウィンドウの影響を原著で確認。",
+          "evidenceUrls": [
+            "https://arxiv.org/pdf/2308.06255"
+          ]
+        }
+      ],
+      "primaryEvidence": [
+        {
+          "url": "https://arxiv.org/pdf/2308.06255",
+          "title": "Smith et al.: NEMA NU 2-2018 performance evaluation of Omni Legend 32 cm PET-CT",
+          "locator": "sections 2.5,3 and discussion of comparison systems/energy windows",
+          "accessed": "2026-10-11",
+          "accessMethod": "normal web tool; primary document text read",
+          "confirms": "散乱フラクションは散乱と真同時計数の比率で、検出器構成やエネルギーウィンドウを伴って評価する。",
+          "qualification": "体軸視野だけで散乱フラクションの必然的減少又は増加を断定しない。"
+        }
+      ]
+    },
+    {
+      "identity": "shinryo-hoshasengishi-78-pm-20",
+      "candidateId": "shinryo-hoshasengishi-2026-annual-pm-q20",
+      "candidateCanonicalSha256": "3384bce45b60dd71be8d596a359ec9d87520146ecdb545c4b8a49e2c8f40e6a3",
+      "contentStatus": "completed",
+      "publicationGo": 0,
+      "publicationOwner": "parent integration task",
+      "previousTechnicalHolds": [
+        "選択肢4の30 μSv/h（131I）と選択肢5の500（131Iの外来投与量500 MBq）の対応は、出典に記載がなく解説者の知識に基づいています。根拠となる通知（『放射性医薬品を投与された患者の退出について』とその改正）による確認が必要です。"
+      ],
+      "previousMechanicallySafe": false,
+      "technicalHoldResolution": "厚労省退出通知で18 μSv/h、131Iの30 μSv/h/500 MBqを直接確認。500の意味を投与量又は残留量による退出基準へ修正。",
+      "remainingContentBlockers": [],
+      "originalDraft": {
+        "path": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\claude-capacity-20261010\\opus-controller-20261010\\author-shinryo-hoshasengishi-78-pm-q019-024-new-opus-first-draft\\OFFLINE-STRUCTURED-RESULT.json",
+        "sha256": "da931fc7a624fa43d5518ec8a0173d503a1c3d4842c38bbcbf260bb6d3906e3e",
+        "unchanged": true
+      },
+      "originalFirstPartyReceipt": {
+        "path": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\claude-capacity-20261010\\opus-controller-20261010\\author-shinryo-hoshasengishi-78-pm-q019-024-new-opus-first-draft\\receipt.json",
+        "sha256": "98175041d6deb45d5fb79806674d29206df8d2cfc018b516be55101bf209bd3f",
+        "unchanged": true,
+        "newModelReceiptClaimed": false
+      },
+      "sourcePacket": {
+        "path": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\claude-capacity-20261010\\opus-controller-20261010\\readable-sources\\shinryo-hoshasengishi-78-pm-q019-024-new-opus-first-draft\\SOURCE-PACKET.json",
+        "sha256": "01c869b116ab0923f2e2dec919523216d0c65ae20dcf803d769b82e81278a94f",
+        "unchanged": true
+      },
+      "officialQuestion": {
+        "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-06b_01.pdf",
+        "sha256": "fef27a4a6b91f7783e4958c40154891706de77f6d151a679eb313992233b0d52",
+        "physicalPage": 13
+      },
+      "officialAnswer": {
+        "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-06seitou.pdf",
+        "sha256": "09bc1518c5e3dbc9beeb740097d884ca9270089802ae4a924c8975d85efec658",
+        "cell": "PM20",
+        "oneBasedAcceptedChoices": [
+          "3"
+        ]
+      },
+      "qa": {
+        "questionAndAllFiveChoicesFromOriginal": true,
+        "officialAnswerPdfCellIndependentlyRechecked": true,
+        "originalTypographyBoundaryTextExactlyMatchedPacket": true,
+        "originalCropVisualReview": "completed via four locally rendered contact sheets",
+        "originalCropPath": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\qualification-expansion-20261007\\radiology-latest-two-20261011\\saved-specialist\\original-78-pm-q20.png",
+        "originalCropSha256": "3e961424225b329b119026f5b778d830a9aef19abe4a7b9524a5884d8818c65e",
+        "allFiveChoiceExplanationsPresent": true,
+        "requiredSelectionsMatch": true,
+        "nonfigureVerified": true,
+        "rootArtifactHashesRechecked": true
+      },
+      "originalTypographyRestoration": [],
+      "savedTextReuse": {
+        "retainedExplanation": false,
+        "retainedChoiceExplanationKeys": [
+          "2"
+        ]
+      },
+      "localEditor": "Codex local specialist evidence review; no new full-draft model generation",
+      "localEdits": [
+        {
+          "field": "explanation",
+          "before": "放射性医薬品を投与した患者が病院から退出（帰宅）してよいかを判断する基準の一つに、患者の体表面から1 mの点で測った1 cm線量当量率があります。この基準は、介護者や公衆が受ける線量を一定の値以下に抑えることを前提に、核種ごとに決められています。177Lu－オキソドトレオチド（神経内分泌腫瘍に対するPRRT）の場合、この値は18 μSv/hとされています。正解は3です。",
+          "after": "放射性医薬品を投与した患者の退出を判断する基準の一つに、患者の体表面から1 mの点で測った1 cm線量当量率があります。厚生労働省の退出通知では、所定の実施条件に従う177Lu－オキソドトレオチド治療後の基準は18 μSv/h以下とされています。本問で該当する値は3の18です。",
+          "reason": "厚労省退出通知で18 μSv/h、131Iの30 μSv/h/500 MBqを直接確認。500の意味を投与量又は残留量による退出基準へ修正。",
+          "evidenceUrls": [
+            "https://www.mhlw.go.jp/content/10800000/001063188.pdf"
+          ]
+        },
+        {
+          "field": "choiceExplanations.1",
+          "before": "誤り。1 μSv/hは、177Luの退出基準として定められた線量当量率ではありません。",
+          "after": "誤り。1 μSv/hは177Lu－オキソドトレオチドのこの退出基準の値ではありません。",
+          "reason": "厚労省退出通知で18 μSv/h、131Iの30 μSv/h/500 MBqを直接確認。500の意味を投与量又は残留量による退出基準へ修正。",
+          "evidenceUrls": [
+            "https://www.mhlw.go.jp/content/10800000/001063188.pdf"
+          ]
+        },
+        {
+          "field": "choiceExplanations.3",
+          "before": "正しい。177Lu－オキソドトレオチド投与後の退出基準は、体表面から1 mの点で18 μSv/hです。",
+          "after": "正しい。177Lu－オキソドトレオチド治療後の基準は、患者の体表面から1 mの点で18 μSv/h以下です。",
+          "reason": "厚労省退出通知で18 μSv/h、131Iの30 μSv/h/500 MBqを直接確認。500の意味を投与量又は残留量による退出基準へ修正。",
+          "evidenceUrls": [
+            "https://www.mhlw.go.jp/content/10800000/001063188.pdf"
+          ]
+        },
+        {
+          "field": "choiceExplanations.4",
+          "before": "誤り。30 μSv/hは、131I（ヨウ素）を投与した患者の退出基準として知られている値です。177Luの値ではありません。",
+          "after": "誤り。30 μSv/hは131Iの線量率による退出基準として示される値です。177Lu－オキソドトレオチドの値ではありません。",
+          "reason": "厚労省退出通知で18 μSv/h、131Iの30 μSv/h/500 MBqを直接確認。500の意味を投与量又は残留量による退出基準へ修正。",
+          "evidenceUrls": [
+            "https://www.mhlw.go.jp/content/10800000/001063188.pdf"
+          ]
+        },
+        {
+          "field": "choiceExplanations.5",
+          "before": "誤り。500という数値は、131Iの外来投与で目安とされる投与量の上限（500 MBq）としてよく知られている値です。1 cm線量当量率［μSv/h］の基準値ではありません。",
+          "after": "誤り。500 MBqは、131Iについて投与量又は体内残留放射能量に基づく退出基準として示される値です。本問の単位μSv/hとは異なり、177Lu－オキソドトレオチドの線量率基準ではありません。",
+          "reason": "厚労省退出通知で18 μSv/h、131Iの30 μSv/h/500 MBqを直接確認。500の意味を投与量又は残留量による退出基準へ修正。",
+          "evidenceUrls": [
+            "https://www.mhlw.go.jp/content/10800000/001063188.pdf"
+          ]
+        }
+      ],
+      "primaryEvidence": [
+        {
+          "url": "https://www.mhlw.go.jp/content/10800000/001063188.pdf",
+          "title": "厚生労働省: 放射性医薬品を投与された患者の退出について (2021改正通知添付)",
+          "locator": "printed pp.3-4, tables and 177Lu-oxodotreotide section",
+          "accessed": "2026-10-11",
+          "accessMethod": "normal web tool; primary document text read",
+          "confirms": "177Luオキソドトレオチド:体表面1 mで18 μSv/h以下。131Iは500 MBqと30 μSv/hの異なる退出基準。",
+          "qualification": "通知の実施条件に従う退出基準。500 MBqを全ての外来投与の上限と表現しない。"
+        }
+      ]
+    },
+    {
+      "identity": "shinryo-hoshasengishi-78-pm-23",
+      "candidateId": "shinryo-hoshasengishi-2026-annual-pm-q23",
+      "candidateCanonicalSha256": "1f342c79f2db45d7aeb9ffce4a6629063d67db0bdfc320eeddc96e1eba519cde",
+      "contentStatus": "completed",
+      "publicationGo": 0,
+      "publicationOwner": "parent integration task",
+      "previousTechnicalHolds": [
+        "2023年の部位別死亡数の順位（肺癌の次に大腸癌、胃癌が続くこと）は、出典ではなく解説者の知識に基づいています。人口動態統計（国立がん研究センターのがん統計）による確認が必要です。"
+      ],
+      "previousMechanicallySafe": false,
+      "technicalHoldResolution": "2023年死亡統計表で確認。誤っていた肺→大腸→胃の順位を肺→大腸→膵臓→胃→肝臓へ修正。",
+      "remainingContentBlockers": [],
+      "originalDraft": {
+        "path": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\claude-capacity-20261010\\opus-controller-20261010\\author-shinryo-hoshasengishi-78-pm-q019-024-new-opus-first-draft\\OFFLINE-STRUCTURED-RESULT.json",
+        "sha256": "da931fc7a624fa43d5518ec8a0173d503a1c3d4842c38bbcbf260bb6d3906e3e",
+        "unchanged": true
+      },
+      "originalFirstPartyReceipt": {
+        "path": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\claude-capacity-20261010\\opus-controller-20261010\\author-shinryo-hoshasengishi-78-pm-q019-024-new-opus-first-draft\\receipt.json",
+        "sha256": "98175041d6deb45d5fb79806674d29206df8d2cfc018b516be55101bf209bd3f",
+        "unchanged": true,
+        "newModelReceiptClaimed": false
+      },
+      "sourcePacket": {
+        "path": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\claude-capacity-20261010\\opus-controller-20261010\\readable-sources\\shinryo-hoshasengishi-78-pm-q019-024-new-opus-first-draft\\SOURCE-PACKET.json",
+        "sha256": "01c869b116ab0923f2e2dec919523216d0c65ae20dcf803d769b82e81278a94f",
+        "unchanged": true
+      },
+      "officialQuestion": {
+        "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-06b_01.pdf",
+        "sha256": "fef27a4a6b91f7783e4958c40154891706de77f6d151a679eb313992233b0d52",
+        "physicalPage": 14
+      },
+      "officialAnswer": {
+        "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-06seitou.pdf",
+        "sha256": "09bc1518c5e3dbc9beeb740097d884ca9270089802ae4a924c8975d85efec658",
+        "cell": "PM23",
+        "oneBasedAcceptedChoices": [
+          "2"
+        ]
+      },
+      "qa": {
+        "questionAndAllFiveChoicesFromOriginal": true,
+        "officialAnswerPdfCellIndependentlyRechecked": true,
+        "originalTypographyBoundaryTextExactlyMatchedPacket": true,
+        "originalCropVisualReview": "completed via four locally rendered contact sheets",
+        "originalCropPath": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\qualification-expansion-20261007\\radiology-latest-two-20261011\\saved-specialist\\original-78-pm-q23.png",
+        "originalCropSha256": "ad420fa7becb4ed4f211f842b542765c95c9d43d90b1f35f54f31548d389916a",
+        "allFiveChoiceExplanationsPresent": true,
+        "requiredSelectionsMatch": true,
+        "nonfigureVerified": true,
+        "rootArtifactHashesRechecked": true
+      },
+      "originalTypographyRestoration": [],
+      "savedTextReuse": {
+        "retainedExplanation": false,
+        "retainedChoiceExplanationKeys": [
+          "1",
+          "2",
+          "5"
+        ]
+      },
+      "localEditor": "Codex local specialist evidence review; no new full-draft model generation",
+      "localEdits": [
+        {
+          "field": "explanation",
+          "before": "日本の部位別がん死亡数を男女の合計で見ると、肺癌が最も多く、大腸癌と胃癌がその次に続きます。2023年時点でも肺癌が1位です。正解は2です。",
+          "after": "2023年の部位別がん死亡数を男女合計で見ると、肺癌が最も多く、続いて大腸癌、膵臓癌、胃癌、肝臓癌の順です。国立がん研究センター「がんの統計2025」に掲載された2023年死亡統計で確認できます。選択肢では2の肺癌が正答です。",
+          "reason": "2023年死亡統計表で確認。誤っていた肺→大腸→胃の順位を肺→大腸→膵臓→胃→肝臓へ修正。",
+          "evidenceUrls": [
+            "https://ganjoho.jp/public/qa_links/report/statistics/pdf/cancer_statistics_2025_fig_J.pdf"
+          ]
+        },
+        {
+          "field": "choiceExplanations.3",
+          "before": "誤り。肝臓癌は、肝炎ウイルス対策などによって死亡数が減ってきており、1位ではありません。",
+          "after": "誤り。2023年の男女合計のがん死亡数で、肝臓癌は肺癌より少なく、1位ではありません。",
+          "reason": "2023年死亡統計表で確認。誤っていた肺→大腸→胃の順位を肺→大腸→膵臓→胃→肝臓へ修正。",
+          "evidenceUrls": [
+            "https://ganjoho.jp/public/qa_links/report/statistics/pdf/cancer_statistics_2025_fig_J.pdf"
+          ]
+        },
+        {
+          "field": "choiceExplanations.4",
+          "before": "誤り。甲状腺癌は予後が良いものが多く、死亡数は少ない部位です。",
+          "after": "誤り。2023年の甲状腺癌の死亡数は肺癌より少なく、1位ではありません。",
+          "reason": "2023年死亡統計表で確認。誤っていた肺→大腸→胃の順位を肺→大腸→膵臓→胃→肝臓へ修正。",
+          "evidenceUrls": [
+            "https://ganjoho.jp/public/qa_links/report/statistics/pdf/cancer_statistics_2025_fig_J.pdf"
+          ]
+        }
+      ],
+      "primaryEvidence": [
+        {
+          "url": "https://ganjoho.jp/public/qa_links/report/statistics/pdf/cancer_statistics_2025_fig_J.pdf",
+          "title": "国立がん研究センター: がんの統計2025 図表編",
+          "locator": "printed p.15 (physical page 5), 2023年 部位別がん死亡数順位",
+          "accessed": "2026-10-11",
+          "accessMethod": "normal web tool; primary document text read",
+          "confirms": "2023年男女計の順位は肺、大腸、膵臓、胃、肝臓。選択肢では肺が最多。",
+          "qualification": "掲載年2025と死亡統計の対象年2023を区別。"
+        }
+      ]
+    },
+    {
+      "identity": "shinryo-hoshasengishi-78-pm-24",
+      "candidateId": "shinryo-hoshasengishi-2026-annual-pm-q24",
+      "candidateCanonicalSha256": "628c964dc755fc0230cf37856d7338d406b565d3db0d1f4d345caf07775041fd",
+      "contentStatus": "completed",
+      "publicationGo": 0,
+      "publicationOwner": "parent integration task",
+      "previousTechnicalHolds": [
+        "問題文の『電位計のガイドライン』の正式名称と発行元（日本医学物理学会などによるものか）は、出典に記載がなく特定できていません。ユーザー点検項目の一覧（繰返し性、電荷漏れ、ゼロ点シフト、ゼロ点ドリフト）を原典で確認する必要があります。",
+        "original PNG layout QA pending",
+        "literal question/all-choice original comparison pending"
+      ],
+      "previousMechanicallySafe": false,
+      "technicalHoldResolution": "JSMP2024ガイドライン8.4のユーザー点検一覧を確認。温度特性全体の不在を主張せず、一覧上の点検対象を説明。",
+      "remainingContentBlockers": [],
+      "originalDraft": {
+        "path": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\claude-capacity-20261010\\opus-controller-20261010\\author-shinryo-hoshasengishi-78-pm-q019-024-new-opus-first-draft\\OFFLINE-STRUCTURED-RESULT.json",
+        "sha256": "da931fc7a624fa43d5518ec8a0173d503a1c3d4842c38bbcbf260bb6d3906e3e",
+        "unchanged": true
+      },
+      "originalFirstPartyReceipt": {
+        "path": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\claude-capacity-20261010\\opus-controller-20261010\\author-shinryo-hoshasengishi-78-pm-q019-024-new-opus-first-draft\\receipt.json",
+        "sha256": "98175041d6deb45d5fb79806674d29206df8d2cfc018b516be55101bf209bd3f",
+        "unchanged": true,
+        "newModelReceiptClaimed": false
+      },
+      "sourcePacket": {
+        "path": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\claude-capacity-20261010\\opus-controller-20261010\\readable-sources\\shinryo-hoshasengishi-78-pm-q019-024-new-opus-first-draft\\SOURCE-PACKET.json",
+        "sha256": "01c869b116ab0923f2e2dec919523216d0c65ae20dcf803d769b82e81278a94f",
+        "unchanged": true
+      },
+      "officialQuestion": {
+        "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-06b_01.pdf",
+        "sha256": "fef27a4a6b91f7783e4958c40154891706de77f6d151a679eb313992233b0d52",
+        "physicalPage": 14
+      },
+      "officialAnswer": {
+        "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-06seitou.pdf",
+        "sha256": "09bc1518c5e3dbc9beeb740097d884ca9270089802ae4a924c8975d85efec658",
+        "cell": "PM24",
+        "oneBasedAcceptedChoices": [
+          "5"
+        ]
+      },
+      "qa": {
+        "questionAndAllFiveChoicesFromOriginal": true,
+        "officialAnswerPdfCellIndependentlyRechecked": true,
+        "originalTypographyBoundaryTextExactlyMatchedPacket": true,
+        "originalCropVisualReview": "completed via four locally rendered contact sheets",
+        "originalCropPath": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\qualification-expansion-20261007\\radiology-latest-two-20261011\\saved-specialist\\original-78-pm-q24.png",
+        "originalCropSha256": "da9b3cc52dd59cec5170462b9db72cbf76caa6cf4009644362d0eb61d94e10eb",
+        "allFiveChoiceExplanationsPresent": true,
+        "requiredSelectionsMatch": true,
+        "nonfigureVerified": true,
+        "rootArtifactHashesRechecked": true
+      },
+      "originalTypographyRestoration": [],
+      "savedTextReuse": {
+        "retainedExplanation": false,
+        "retainedChoiceExplanationKeys": [
+          "1",
+          "2",
+          "3",
+          "4"
+        ]
+      },
+      "localEditor": "Codex local specialist evidence review; no new full-draft model generation",
+      "localEdits": [
+        {
+          "field": "explanation",
+          "before": "放射線治療用の線量計は、電離箱と電位計の組合せでできています。電位計のユーザー点検では、電位計そのものの電気的な性能を確認します。具体的には、繰返し性、電荷漏れ（リーク）、ゼロ点シフト、ゼロ点ドリフトといった項目です。これに対して温度・圧力依存性は、電離箱の空洞にある空気の密度が変わることで生じる影響です。この影響は温度気圧補正係数（kTP）で補正するものなので、電位計の点検項目には含まれません。正解は5です。",
+          "after": "日本医学物理学会「放射線治療用線量計に用いられる電位計のガイドライン」（2024年改訂）の8.4「ユーザーによる点検」では、繰返し性、ゼロ点ドリフト、ゼロ点シフト、電荷漏れ等を確認します。温度・圧力依存性はこのユーザー点検一覧に含まれず、正答は5です。電離箱の空気密度に対する温度気圧補正kTPと、電位計のユーザー点検対象は区別して考えます。",
+          "reason": "JSMP2024ガイドライン8.4のユーザー点検一覧を確認。温度特性全体の不在を主張せず、一覧上の点検対象を説明。",
+          "evidenceUrls": [
+            "https://www.jsmp.org/wp-content/uploads/JSMP_electrometer_guideline_2024.pdf"
+          ]
+        },
+        {
+          "field": "choiceExplanations.5",
+          "before": "正しい（含まれない）。温度・圧力依存性は、電離箱の空気密度に関する影響で、kTPによって補正するものです。電位計のユーザー点検項目ではありません。",
+          "after": "正しい（点検項目に含まれない）。温度・圧力依存性はガイドライン8.4のユーザー点検一覧に含まれません。電離箱の空気密度に対するkTP補正とは点検対象を区別します。",
+          "reason": "JSMP2024ガイドライン8.4のユーザー点検一覧を確認。温度特性全体の不在を主張せず、一覧上の点検対象を説明。",
+          "evidenceUrls": [
+            "https://www.jsmp.org/wp-content/uploads/JSMP_electrometer_guideline_2024.pdf"
+          ]
+        }
+      ],
+      "primaryEvidence": [
+        {
+          "url": "https://www.jsmp.org/wp-content/uploads/JSMP_electrometer_guideline_2024.pdf",
+          "title": "日本医学物理学会: 放射線治療用線量計に用いられる電位計のガイドライン (2024年改訂)",
+          "locator": "section 8.4 ユーザーによる点検; printed pp.59-66",
+          "accessed": "2026-10-11",
+          "accessMethod": "normal web tool; primary document text read",
+          "confirms": "繰返し性、ゼロ点ドリフト、ゼロ点シフト、電荷漏れを原典のユーザー点検項目で確認。",
+          "qualification": "電子回路に温度特性がないとは説明せず、この点検一覧に温度・圧力依存性が含まれない点を説明。"
+        }
+      ]
+    },
+    {
+      "identity": "shinryo-hoshasengishi-78-pm-28",
+      "candidateId": "shinryo-hoshasengishi-2026-annual-pm-q28",
+      "candidateCanonicalSha256": "cc2a0b6f1f67c43886f14ec4a31fe0e335eaf84807651eaf33ea2bbfddeb6769",
+      "contentStatus": "completed",
+      "publicationGo": 0,
+      "publicationOwner": "parent integration task",
+      "previousTechnicalHolds": [
+        "選択肢1：照射野が小さい（実用飛程程度以下）領域では、照射野の拡大に伴い最大線量深が深くなる傾向が知られています。選択肢1を誤りとする根拠（十分大きな照射野では依存しない）の記述の適否について、専門的な確認が必要です。"
+      ],
+      "previousMechanicallySafe": false,
+      "technicalHoldResolution": "IAEA原典で大照射野/小照射野の違いを確認し、小照射野例外を説明に追加。",
+      "remainingContentBlockers": [],
+      "originalDraft": {
+        "path": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\claude-capacity-20261010\\opus-controller-20261010\\author-shinryo-hoshasengishi-78-pm-q025-030-new-opus-first-draft\\OFFLINE-STRUCTURED-RESULT.json",
+        "sha256": "615c5175958fa8da3f79ea97c82d5403a6c21074f6385502c61d36b20ce1879d",
+        "unchanged": true
+      },
+      "originalFirstPartyReceipt": {
+        "path": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\claude-capacity-20261010\\opus-controller-20261010\\author-shinryo-hoshasengishi-78-pm-q025-030-new-opus-first-draft\\receipt.json",
+        "sha256": "6a7a3aff0e973cafef428489ad381a6779b61af8ea5515df1d9b5b22d78688a9",
+        "unchanged": true,
+        "newModelReceiptClaimed": false
+      },
+      "sourcePacket": {
+        "path": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\claude-capacity-20261010\\opus-controller-20261010\\readable-sources\\shinryo-hoshasengishi-78-pm-q025-030-new-opus-first-draft\\SOURCE-PACKET.json",
+        "sha256": "b1952f4b493f5b5f42a23ff4f9ecc9c8ed08aa427064dc168b5e593fd05a8faf",
+        "unchanged": true
+      },
+      "officialQuestion": {
+        "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-06b_01.pdf",
+        "sha256": "fef27a4a6b91f7783e4958c40154891706de77f6d151a679eb313992233b0d52",
+        "physicalPage": 16
+      },
+      "officialAnswer": {
+        "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-06seitou.pdf",
+        "sha256": "09bc1518c5e3dbc9beeb740097d884ca9270089802ae4a924c8975d85efec658",
+        "cell": "PM28",
+        "oneBasedAcceptedChoices": [
+          "4"
+        ]
+      },
+      "qa": {
+        "questionAndAllFiveChoicesFromOriginal": true,
+        "officialAnswerPdfCellIndependentlyRechecked": true,
+        "originalTypographyBoundaryTextExactlyMatchedPacket": true,
+        "originalCropVisualReview": "completed via four locally rendered contact sheets",
+        "originalCropPath": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\qualification-expansion-20261007\\radiology-latest-two-20261011\\saved-specialist\\original-78-pm-q28.png",
+        "originalCropSha256": "ef6f317e2c7e8e9d9886f8dea28cdbc1895078099fa0ef7d730626c5c5073193",
+        "allFiveChoiceExplanationsPresent": true,
+        "requiredSelectionsMatch": true,
+        "nonfigureVerified": true,
+        "rootArtifactHashesRechecked": true
+      },
+      "originalTypographyRestoration": [],
+      "savedTextReuse": {
+        "retainedExplanation": true,
+        "retainedChoiceExplanationKeys": [
+          "2",
+          "3",
+          "4",
+          "5"
+        ]
+      },
+      "localEditor": "Codex local specialist evidence review; no new full-draft model generation",
+      "localEdits": [
+        {
+          "field": "choiceExplanations.1",
+          "before": "誤り（公式正答は4）です。電子線の最大線量深は主にエネルギーで決まります。側方の散乱平衡が成り立つ十分な大きさの照射野では、照射野サイズにほとんど依存しません。照射野が大きくなれば最大線量深が深くなる、という一般的な特徴にはなりません。",
+          "after": "誤り（公式正答は4）です。側方散乱平衡が成り立つ十分な大きさの照射野では、電子線の最大線量深は照射野サイズにほとんど依存しません。一方、小照射野では縮小によって最大線量深が浅くなる場合があります。したがって、照射野を大きくすれば常に最大線量深が深くなるという一般則にはできません。",
+          "reason": "IAEA原典で大照射野/小照射野の違いを確認し、小照射野例外を説明に追加。",
+          "evidenceUrls": [
+            "https://www-pub.iaea.org/MTCD/Publications/PDF/Pub1196_web.pdf"
+          ]
+        }
+      ],
+      "primaryEvidence": [
+        {
+          "url": "https://www-pub.iaea.org/MTCD/Publications/PDF/Pub1196_web.pdf",
+          "title": "IAEA: Radiation Oncology Physics: A Handbook for Teachers and Students (2005)",
+          "locator": "section 8.2.2 printed pp.279-280; section 10.4.2.2 printed p.380",
+          "accessed": "2026-10-11",
+          "accessMethod": "normal web tool; primary document text read",
+          "confirms": "低エネルギー電子線の急峻なビルドアップ。小照射野の縮小は最大線量深を浅くするが、十分な照射野ではほぼ一定。"
+        }
+      ]
+    },
+    {
+      "identity": "shinryo-hoshasengishi-78-pm-30",
+      "candidateId": "shinryo-hoshasengishi-2026-annual-pm-q30",
+      "candidateCanonicalSha256": "c0ca254da3f095d430134af831ea46893e40478cad4ad86fe994ef439b4a9118",
+      "contentStatus": "completed",
+      "publicationGo": 0,
+      "publicationOwner": "parent integration task",
+      "previousTechnicalHolds": [
+        "選択肢3：標準計測法12で高エネルギー光子線に用いる深さスケーリング係数 c_pl が、線質（エネルギー）依存の値として示されているのか、材質ごとの電子密度比などによるほぼ一定値なのかを確認する必要があります。誤りとする根拠の記述は専門的な確認が必要です。"
+      ],
+      "previousMechanicallySafe": false,
+      "technicalHoldResolution": "光子線を実測した国内原著の表4と式9で確認。材質で差は小さくても線質依存ゼロではないという説明に精密化。",
+      "remainingContentBlockers": [],
+      "originalDraft": {
+        "path": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\claude-capacity-20261010\\opus-controller-20261010\\author-shinryo-hoshasengishi-78-pm-q025-030-new-opus-first-draft\\OFFLINE-STRUCTURED-RESULT.json",
+        "sha256": "615c5175958fa8da3f79ea97c82d5403a6c21074f6385502c61d36b20ce1879d",
+        "unchanged": true
+      },
+      "originalFirstPartyReceipt": {
+        "path": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\claude-capacity-20261010\\opus-controller-20261010\\author-shinryo-hoshasengishi-78-pm-q025-030-new-opus-first-draft\\receipt.json",
+        "sha256": "6a7a3aff0e973cafef428489ad381a6779b61af8ea5515df1d9b5b22d78688a9",
+        "unchanged": true,
+        "newModelReceiptClaimed": false
+      },
+      "sourcePacket": {
+        "path": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\claude-capacity-20261010\\opus-controller-20261010\\readable-sources\\shinryo-hoshasengishi-78-pm-q025-030-new-opus-first-draft\\SOURCE-PACKET.json",
+        "sha256": "b1952f4b493f5b5f42a23ff4f9ecc9c8ed08aa427064dc168b5e593fd05a8faf",
+        "unchanged": true
+      },
+      "officialQuestion": {
+        "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-06b_01.pdf",
+        "sha256": "fef27a4a6b91f7783e4958c40154891706de77f6d151a679eb313992233b0d52",
+        "physicalPage": 17
+      },
+      "officialAnswer": {
+        "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-06seitou.pdf",
+        "sha256": "09bc1518c5e3dbc9beeb740097d884ca9270089802ae4a924c8975d85efec658",
+        "cell": "PM30",
+        "oneBasedAcceptedChoices": [
+          "4"
+        ]
+      },
+      "qa": {
+        "questionAndAllFiveChoicesFromOriginal": true,
+        "officialAnswerPdfCellIndependentlyRechecked": true,
+        "originalTypographyBoundaryTextExactlyMatchedPacket": true,
+        "originalCropVisualReview": "completed via four locally rendered contact sheets",
+        "originalCropPath": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\qualification-expansion-20261007\\radiology-latest-two-20261011\\saved-specialist\\original-78-pm-q30.png",
+        "originalCropSha256": "e38c8de1f22ade0a776327cc7f17b16bd769465ff188686fbebad27fbd0972df",
+        "allFiveChoiceExplanationsPresent": true,
+        "requiredSelectionsMatch": true,
+        "nonfigureVerified": true,
+        "rootArtifactHashesRechecked": true
+      },
+      "originalTypographyRestoration": [],
+      "savedTextReuse": {
+        "retainedExplanation": true,
+        "retainedChoiceExplanationKeys": [
+          "1",
+          "2",
+          "4",
+          "5"
+        ]
+      },
+      "localEditor": "Codex local specialist evidence review; no new full-draft model generation",
+      "localEdits": [
+        {
+          "field": "choiceExplanations.3",
+          "before": "誤りです。深さスケーリング係数は、水と固体ファントムの減弱係数の比などで決まります。そのため、ファントム材質や入射光子線のエネルギーに依存しうる量であり、「依存しない」と断定はできません。",
+          "after": "誤りです。光子線用の深さスケーリング係数は材質に加えて線質によっても変化し得ます。線質による差が小さい材質でも、エネルギーに依存しないと一律には断定できません。",
+          "reason": "光子線を実測した国内原著の表4と式9で確認。材質で差は小さくても線質依存ゼロではないという説明に精密化。",
+          "evidenceUrls": [
+            "https://www.jstage.jst.go.jp/article/jastro/19/2/19_2_99/_pdf/-char/en"
+          ]
+        }
+      ],
+      "primaryEvidence": [
+        {
+          "url": "https://www.jstage.jst.go.jp/article/jastro/19/2/19_2_99/_pdf/-char/en",
+          "title": "荒木不次男: 光子ビームにおける水等価固体ファントムを用いた水吸収線量測定に関する研究 (JASTRO 19:99-107,2007)",
+          "locator": "equation 9 printed p.102; Table 4 and discussion printed p.103",
+          "accessed": "2026-10-11",
+          "accessMethod": "normal web tool; primary document text read",
+          "confirms": "高エネルギー光子線について等価深さの換算と材質・線質別のスケーリング係数の小さな差を実測。",
+          "qualification": "電子線の換算規定を光子線の根拠として流用しない。"
+        }
+      ]
+    },
+    {
+      "identity": "shinryo-hoshasengishi-78-pm-38",
+      "candidateId": "shinryo-hoshasengishi-2026-annual-pm-q38",
+      "candidateCanonicalSha256": "bc5615435a48ef2a0db5e3486fd2e958830a0f7213a6e3c560023e4bdd83fecb",
+      "contentStatus": "completed",
+      "publicationGo": 0,
+      "publicationOwner": "parent integration task",
+      "previousTechnicalHolds": [
+        "テクネチウムMIBIキットが毒薬に指定されていること、およびDMSA・MAA・MAG3・PYPの各キットが毒薬ではないこと（それぞれの規制区分）は、提供資料に書かれていません。最新の添付文書で確認が必要です。",
+        "original PNG layout QA pending",
+        "literal question/all-choice original comparison pending"
+      ],
+      "previousMechanicallySafe": false,
+      "technicalHoldResolution": "5製品のメーカー電子添文の規制区分を閲覧し毒薬区分を確認。DMSAは2022年原文公開ミラーであることを証跡に明示。毒薬の施錠法規と対応。",
+      "remainingContentBlockers": [],
+      "originalDraft": {
+        "path": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\claude-capacity-20261010\\opus-controller-20261010\\author-shinryo-hoshasengishi-78-pm-q037-042-new-opus-first-draft\\OFFLINE-STRUCTURED-RESULT.json",
+        "sha256": "1de700648272061a81b0579225bfce65c333aa164effaf8edf4ad056be56e9f1",
+        "unchanged": true
+      },
+      "originalFirstPartyReceipt": {
+        "path": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\claude-capacity-20261010\\opus-controller-20261010\\author-shinryo-hoshasengishi-78-pm-q037-042-new-opus-first-draft\\receipt.json",
+        "sha256": "a1c42be29f4beeefaec080d0e1bd375d6b24eb8c2fdd6817b40a2268e84d85d3",
+        "unchanged": true,
+        "newModelReceiptClaimed": false
+      },
+      "sourcePacket": {
+        "path": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\claude-capacity-20261010\\opus-controller-20261010\\readable-sources\\shinryo-hoshasengishi-78-pm-q037-042-new-opus-first-draft\\SOURCE-PACKET.json",
+        "sha256": "0dad0a187be1bd5be4ce37512dee772ddcf58debc57ae635549daab313f004c4",
+        "unchanged": true
+      },
+      "officialQuestion": {
+        "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-06b_01.pdf",
+        "sha256": "fef27a4a6b91f7783e4958c40154891706de77f6d151a679eb313992233b0d52",
+        "physicalPage": 19
+      },
+      "officialAnswer": {
+        "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-06seitou.pdf",
+        "sha256": "09bc1518c5e3dbc9beeb740097d884ca9270089802ae4a924c8975d85efec658",
+        "cell": "PM38",
+        "oneBasedAcceptedChoices": [
+          "4"
+        ]
+      },
+      "qa": {
+        "questionAndAllFiveChoicesFromOriginal": true,
+        "officialAnswerPdfCellIndependentlyRechecked": true,
+        "originalTypographyBoundaryTextExactlyMatchedPacket": true,
+        "originalCropVisualReview": "completed via four locally rendered contact sheets",
+        "originalCropPath": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\qualification-expansion-20261007\\radiology-latest-two-20261011\\saved-specialist\\original-78-pm-q38.png",
+        "originalCropSha256": "2959bf2038ab0d052ac91ffc77320be3447b31d4329c3897b016fa34c2d019cc",
+        "allFiveChoiceExplanationsPresent": true,
+        "requiredSelectionsMatch": true,
+        "nonfigureVerified": true,
+        "rootArtifactHashesRechecked": true
+      },
+      "originalTypographyRestoration": [],
+      "savedTextReuse": {
+        "retainedExplanation": false,
+        "retainedChoiceExplanationKeys": []
+      },
+      "localEditor": "Codex local specialist evidence review; no new full-draft model generation",
+      "localEdits": [
+        {
+          "field": "explanation",
+          "before": "正答は4です。医薬品医療機器等法では、毒薬は他の物と区別して、鍵をかけた場所に保管しなければなりません。テクネチウムMIBI注射液調製用キット（ヘキサキス(2-メトキシイソブチルイソニトリル)テクネチウム(99mTc)の調製用キット）は毒薬に指定されているため、鍵をかけて管理する必要があります。",
+          "after": "正答は4です。医薬品医療機器等法第48条第2項は、毒薬の貯蔵又は陳列場所に鍵をかけることを定めています。MIBI注射液調製用キットのカーディオライト第一は、電子添文の規制区分に「毒薬」と記載されています。本問はこの毒薬としての施錠管理を問うものです。",
+          "reason": "5製品のメーカー電子添文の規制区分を閲覧し毒薬区分を確認。DMSAは2022年原文公開ミラーであることを証跡に明示。毒薬の施錠法規と対応。",
+          "evidenceUrls": [
+            "https://www.pdradiopharma.com/uploads/mibivial%20_pi.pdf",
+            "https://www.pdradiopharma.com/uploads/maa_pi.pdf",
+            "https://www.pdradiopharma.com/uploads/magkit_pi.pdf",
+            "https://www.pdradiopharma.com/uploads/pypkit_pi.pdf",
+            "https://cdn.medley.life/uploads/medicines/prescription/pdf/651410_4300401D1027_2_01.pdf",
+            "https://laws.e-gov.go.jp/law/335AC0000000145"
+          ]
+        },
+        {
+          "field": "choiceExplanations.1",
+          "before": "誤りです。DMSA（腎皮質シンチグラフィ用）のキットは、施錠管理が必要な毒薬には当たらないとされています。",
+          "after": "誤りです。DMSAキットは腎皮質シンチグラフィに用います。確認したテクネDMSAキット電子添文では規制区分に毒薬の指定がありません。",
+          "reason": "5製品のメーカー電子添文の規制区分を閲覧し毒薬区分を確認。DMSAは2022年原文公開ミラーであることを証跡に明示。毒薬の施錠法規と対応。",
+          "evidenceUrls": [
+            "https://www.pdradiopharma.com/uploads/mibivial%20_pi.pdf",
+            "https://www.pdradiopharma.com/uploads/maa_pi.pdf",
+            "https://www.pdradiopharma.com/uploads/magkit_pi.pdf",
+            "https://www.pdradiopharma.com/uploads/pypkit_pi.pdf",
+            "https://cdn.medley.life/uploads/medicines/prescription/pdf/651410_4300401D1027_2_01.pdf",
+            "https://laws.e-gov.go.jp/law/335AC0000000145"
+          ]
+        },
+        {
+          "field": "choiceExplanations.2",
+          "before": "誤りです。MAA（肺血流シンチグラフィ用）のキットは、施錠管理が必要な毒薬には当たらないとされています。",
+          "after": "誤りです。MAAキットは肺血流シンチグラフィに用います。テクネMAAキット電子添文では規制区分に毒薬の指定がありません。",
+          "reason": "5製品のメーカー電子添文の規制区分を閲覧し毒薬区分を確認。DMSAは2022年原文公開ミラーであることを証跡に明示。毒薬の施錠法規と対応。",
+          "evidenceUrls": [
+            "https://www.pdradiopharma.com/uploads/mibivial%20_pi.pdf",
+            "https://www.pdradiopharma.com/uploads/maa_pi.pdf",
+            "https://www.pdradiopharma.com/uploads/magkit_pi.pdf",
+            "https://www.pdradiopharma.com/uploads/pypkit_pi.pdf",
+            "https://cdn.medley.life/uploads/medicines/prescription/pdf/651410_4300401D1027_2_01.pdf",
+            "https://laws.e-gov.go.jp/law/335AC0000000145"
+          ]
+        },
+        {
+          "field": "choiceExplanations.3",
+          "before": "誤りです。原本の表記は MAG3（3は下付き文字）です。MAG3（腎動態シンチグラフィ用）のキットは、施錠管理が必要な毒薬には当たらないとされています。",
+          "after": "誤りです。MAG3キットは腎動態シンチグラフィに用います。テクネMAG3キット電子添文では規制区分に毒薬の指定がありません。",
+          "reason": "5製品のメーカー電子添文の規制区分を閲覧し毒薬区分を確認。DMSAは2022年原文公開ミラーであることを証跡に明示。毒薬の施錠法規と対応。",
+          "evidenceUrls": [
+            "https://www.pdradiopharma.com/uploads/mibivial%20_pi.pdf",
+            "https://www.pdradiopharma.com/uploads/maa_pi.pdf",
+            "https://www.pdradiopharma.com/uploads/magkit_pi.pdf",
+            "https://www.pdradiopharma.com/uploads/pypkit_pi.pdf",
+            "https://cdn.medley.life/uploads/medicines/prescription/pdf/651410_4300401D1027_2_01.pdf",
+            "https://laws.e-gov.go.jp/law/335AC0000000145"
+          ]
+        },
+        {
+          "field": "choiceExplanations.4",
+          "before": "正しいです。MIBI（心筋血流シンチグラフィなどに使う）のキットは毒薬に指定されているため、鍵をかけて保管する必要があります。",
+          "after": "正しいです。MIBIキットのカーディオライト第一は毒薬であり、医薬品医療機器等法に従った施錠管理が必要です。",
+          "reason": "5製品のメーカー電子添文の規制区分を閲覧し毒薬区分を確認。DMSAは2022年原文公開ミラーであることを証跡に明示。毒薬の施錠法規と対応。",
+          "evidenceUrls": [
+            "https://www.pdradiopharma.com/uploads/mibivial%20_pi.pdf",
+            "https://www.pdradiopharma.com/uploads/maa_pi.pdf",
+            "https://www.pdradiopharma.com/uploads/magkit_pi.pdf",
+            "https://www.pdradiopharma.com/uploads/pypkit_pi.pdf",
+            "https://cdn.medley.life/uploads/medicines/prescription/pdf/651410_4300401D1027_2_01.pdf",
+            "https://laws.e-gov.go.jp/law/335AC0000000145"
+          ]
+        },
+        {
+          "field": "choiceExplanations.5",
+          "before": "誤りです。PYP（骨シンチグラフィや心筋梗塞のシンチグラフィに使う）のキットは、施錠管理が必要な毒薬には当たらないとされています。",
+          "after": "誤りです。PYPはピロリン酸のキットです。テクネピロリン酸キット電子添文では規制区分に毒薬の指定がありません。",
+          "reason": "5製品のメーカー電子添文の規制区分を閲覧し毒薬区分を確認。DMSAは2022年原文公開ミラーであることを証跡に明示。毒薬の施錠法規と対応。",
+          "evidenceUrls": [
+            "https://www.pdradiopharma.com/uploads/mibivial%20_pi.pdf",
+            "https://www.pdradiopharma.com/uploads/maa_pi.pdf",
+            "https://www.pdradiopharma.com/uploads/magkit_pi.pdf",
+            "https://www.pdradiopharma.com/uploads/pypkit_pi.pdf",
+            "https://cdn.medley.life/uploads/medicines/prescription/pdf/651410_4300401D1027_2_01.pdf",
+            "https://laws.e-gov.go.jp/law/335AC0000000145"
+          ]
+        }
+      ],
+      "primaryEvidence": [
+        {
+          "url": "https://www.pdradiopharma.com/uploads/mibivial%20_pi.pdf",
+          "title": "PDRファーマ: カーディオライト第一 電子添文 (2026年6月第3版)",
+          "locator": "physical p.1 規制区分",
+          "accessed": "2026-10-11",
+          "accessMethod": "normal web tool; primary document text read",
+          "confirms": "MIBIキットは毒薬・処方箋医薬品。"
+        },
+        {
+          "url": "https://www.pdradiopharma.com/uploads/maa_pi.pdf",
+          "title": "PDRファーマ: テクネMAAキット 電子添文",
+          "locator": "physical p.1 規制区分",
+          "accessed": "2026-10-11",
+          "accessMethod": "normal web tool; primary document text read",
+          "confirms": "MAAキットの規制区分に毒薬表示はない。"
+        },
+        {
+          "url": "https://www.pdradiopharma.com/uploads/magkit_pi.pdf",
+          "title": "PDRファーマ: テクネMAG3キット 電子添文 (2022年3月第2版)",
+          "locator": "physical p.1 規制区分",
+          "accessed": "2026-10-11",
+          "accessMethod": "normal web tool; primary document text read",
+          "confirms": "MAG3キットの規制区分に毒薬表示はない。"
+        },
+        {
+          "url": "https://www.pdradiopharma.com/uploads/pypkit_pi.pdf",
+          "title": "PDRファーマ: テクネピロリン酸キット 電子添文 (2022年3月第2版)",
+          "locator": "physical p.1 規制区分",
+          "accessed": "2026-10-11",
+          "accessMethod": "normal web tool; primary document text read",
+          "confirms": "PYPキットの規制区分に毒薬表示はない。"
+        },
+        {
+          "url": "https://cdn.medley.life/uploads/medicines/prescription/pdf/651410_4300401D1027_2_01.pdf",
+          "title": "PDRファーマ: テクネDMSAキット 電子添文 (2022年3月第2版、公開ミラー)",
+          "locator": "physical p.1 規制区分; p.2製造販売元",
+          "accessed": "2026-10-11",
+          "accessMethod": "normal web tool; primary document text read",
+          "confirms": "DMSAキットのメーカー原文に毒薬表示はない。",
+          "qualification": "メーカー原文の公開ミラーで閲覧。PMDAから直接取得した、又はこれが最新版だとは主張しない。"
+        },
+        {
+          "url": "https://laws.e-gov.go.jp/law/335AC0000000145",
+          "title": "医薬品医療機器等法",
+          "locator": "第48条第2項",
+          "accessed": "2026-10-11",
+          "accessMethod": "official e-Gov search extract; page text unavailable in web renderer",
+          "confirms": "毒薬の貯蔵又は陳列場所の施錠義務。"
+        }
+      ]
+    },
+    {
+      "identity": "shinryo-hoshasengishi-78-pm-39",
+      "candidateId": "shinryo-hoshasengishi-2026-annual-pm-q39",
+      "candidateCanonicalSha256": "3ed1ea6e38b48c2bba3b906d1a265d700eee9ddfbdefc9f482320bee46abda9b",
+      "contentStatus": "completed",
+      "publicationGo": 0,
+      "publicationOwner": "parent integration task",
+      "previousTechnicalHolds": [
+        "診療放射線技師法施行令・施行規則（令和3年改正）で定められた業務範囲の条文の正確な文言は、提供資料に書かれていません。原文で確認が必要です。"
+      ],
+      "previousMechanicallySafe": false,
+      "technicalHoldResolution": "厚労省改正通知と学会業務範囲ガイドラインの核医学節を確認し、具体的指示・必要な研修等の前提を明示。",
+      "remainingContentBlockers": [],
+      "originalDraft": {
+        "path": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\claude-capacity-20261010\\opus-controller-20261010\\author-shinryo-hoshasengishi-78-pm-q037-042-new-opus-first-draft\\OFFLINE-STRUCTURED-RESULT.json",
+        "sha256": "1de700648272061a81b0579225bfce65c333aa164effaf8edf4ad056be56e9f1",
+        "unchanged": true
+      },
+      "originalFirstPartyReceipt": {
+        "path": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\claude-capacity-20261010\\opus-controller-20261010\\author-shinryo-hoshasengishi-78-pm-q037-042-new-opus-first-draft\\receipt.json",
+        "sha256": "a1c42be29f4beeefaec080d0e1bd375d6b24eb8c2fdd6817b40a2268e84d85d3",
+        "unchanged": true,
+        "newModelReceiptClaimed": false
+      },
+      "sourcePacket": {
+        "path": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\claude-capacity-20261010\\opus-controller-20261010\\readable-sources\\shinryo-hoshasengishi-78-pm-q037-042-new-opus-first-draft\\SOURCE-PACKET.json",
+        "sha256": "0dad0a187be1bd5be4ce37512dee772ddcf58debc57ae635549daab313f004c4",
+        "unchanged": true
+      },
+      "officialQuestion": {
+        "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-06b_01.pdf",
+        "sha256": "fef27a4a6b91f7783e4958c40154891706de77f6d151a679eb313992233b0d52",
+        "physicalPage": 20
+      },
+      "officialAnswer": {
+        "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-06seitou.pdf",
+        "sha256": "09bc1518c5e3dbc9beeb740097d884ca9270089802ae4a924c8975d85efec658",
+        "cell": "PM39",
+        "oneBasedAcceptedChoices": [
+          "3"
+        ]
+      },
+      "qa": {
+        "questionAndAllFiveChoicesFromOriginal": true,
+        "officialAnswerPdfCellIndependentlyRechecked": true,
+        "originalTypographyBoundaryTextExactlyMatchedPacket": true,
+        "originalCropVisualReview": "completed via four locally rendered contact sheets",
+        "originalCropPath": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\qualification-expansion-20261007\\radiology-latest-two-20261011\\saved-specialist\\original-78-pm-q39.png",
+        "originalCropSha256": "979df9e14997626c53388555d9ab601b8bf89f1002c0bcc3e5859b126f14c1fe",
+        "allFiveChoiceExplanationsPresent": true,
+        "requiredSelectionsMatch": true,
+        "nonfigureVerified": true,
+        "rootArtifactHashesRechecked": true
+      },
+      "originalTypographyRestoration": [],
+      "savedTextReuse": {
+        "retainedExplanation": false,
+        "retainedChoiceExplanationKeys": [
+          "3"
+        ]
+      },
+      "localEditor": "Codex local specialist evidence review; no new full-draft model generation",
+      "localEdits": [
+        {
+          "field": "explanation",
+          "before": "正答は3です。診療放射線技師は、医師または歯科医師の指示のもとで、核医学「検査」に関する一連の行為を行えます。具体的には、静脈路の確保、注入装置の接続と操作、投与後の抜針と止血、ガス状放射性医薬品の吸入です。一方、核医学「治療」のための放射性医薬品の投与は、技師の業務には含まれません。",
+          "after": "正答は3です。診療放射線技師は、医師又は歯科医師の具体的な指示のもとで、必要な研修等の条件を満たし、核医学「検査」の静脈路確保、注入装置の接続と操作、投与後の抜針と止血、ガス状放射性医薬品の吸入補助を行えます。一方、核医学「治療」用の放射性医薬品の投与は、これらの検査業務の範囲には含まれません。",
+          "reason": "厚労省改正通知と学会業務範囲ガイドラインの核医学節を確認し、具体的指示・必要な研修等の前提を明示。",
+          "evidenceUrls": [
+            "https://iryou-kinmukankyou.mhlw.go.jp/files/Attachment/222/%E8%87%A8%E5%BA%8A%E6%A4%9C%E6%9F%BB%E6%8A%80%E5%B8%AB%E7%AD%89%E3%81%AB%E9%96%A2%E3%81%99%E3%82%8B%E6%B3%95%E5%BE%8B%E6%96%BD%E8%A1%8C%E4%BB%A4%E3%81%AE%E4%B8%80%E9%83%A8%E3%82%92%E6%94%B9%E6%AD%A3%E3%81%99%E3%82%8B%E6%94%BF%E4%BB%A4%E7%AD%89%E3%81%AE%E5%85%AC%E5%B8%83%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6%EF%BC%88%E5%8C%BB%E6%94%BF%E7%99%BA%EF%BC%90%EF%BC%97%EF%BC%90%EF%BC%99%E7%AC%AC%EF%BC%97%E5%8F%B7%EF%BC%89.pdf",
+            "https://www.radiology.jp/content/files/RadTechTaskShiftShareGL_Ver03-2_20260521.pdf"
+          ]
+        },
+        {
+          "field": "choiceExplanations.1",
+          "before": "正しい行為です。ガス状の放射性医薬品を吸入させることは、診療放射線技師が行える業務です。",
+          "after": "正しい行為です。医師等の指示のもとで行うガス状放射性医薬品の吸入補助は、診療放射線技師の核医学検査業務です。",
+          "reason": "厚労省改正通知と学会業務範囲ガイドラインの核医学節を確認し、具体的指示・必要な研修等の前提を明示。",
+          "evidenceUrls": [
+            "https://iryou-kinmukankyou.mhlw.go.jp/files/Attachment/222/%E8%87%A8%E5%BA%8A%E6%A4%9C%E6%9F%BB%E6%8A%80%E5%B8%AB%E7%AD%89%E3%81%AB%E9%96%A2%E3%81%99%E3%82%8B%E6%B3%95%E5%BE%8B%E6%96%BD%E8%A1%8C%E4%BB%A4%E3%81%AE%E4%B8%80%E9%83%A8%E3%82%92%E6%94%B9%E6%AD%A3%E3%81%99%E3%82%8B%E6%94%BF%E4%BB%A4%E7%AD%89%E3%81%AE%E5%85%AC%E5%B8%83%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6%EF%BC%88%E5%8C%BB%E6%94%BF%E7%99%BA%EF%BC%90%EF%BC%97%EF%BC%90%EF%BC%99%E7%AC%AC%EF%BC%97%E5%8F%B7%EF%BC%89.pdf",
+            "https://www.radiology.jp/content/files/RadTechTaskShiftShareGL_Ver03-2_20260521.pdf"
+          ]
+        },
+        {
+          "field": "choiceExplanations.2",
+          "before": "正しい行為です。核医学検査のために静脈路を確保することは、法改正（業務範囲の拡大）によって技師が行えるようになりました。",
+          "after": "正しい行為です。具体的な医師等の指示と必要な研修等の条件のもとで、核医学検査のための静脈路確保は技師が行える業務です。",
+          "reason": "厚労省改正通知と学会業務範囲ガイドラインの核医学節を確認し、具体的指示・必要な研修等の前提を明示。",
+          "evidenceUrls": [
+            "https://iryou-kinmukankyou.mhlw.go.jp/files/Attachment/222/%E8%87%A8%E5%BA%8A%E6%A4%9C%E6%9F%BB%E6%8A%80%E5%B8%AB%E7%AD%89%E3%81%AB%E9%96%A2%E3%81%99%E3%82%8B%E6%B3%95%E5%BE%8B%E6%96%BD%E8%A1%8C%E4%BB%A4%E3%81%AE%E4%B8%80%E9%83%A8%E3%82%92%E6%94%B9%E6%AD%A3%E3%81%99%E3%82%8B%E6%94%BF%E4%BB%A4%E7%AD%89%E3%81%AE%E5%85%AC%E5%B8%83%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6%EF%BC%88%E5%8C%BB%E6%94%BF%E7%99%BA%EF%BC%90%EF%BC%97%EF%BC%90%EF%BC%99%E7%AC%AC%EF%BC%97%E5%8F%B7%EF%BC%89.pdf",
+            "https://www.radiology.jp/content/files/RadTechTaskShiftShareGL_Ver03-2_20260521.pdf"
+          ]
+        },
+        {
+          "field": "choiceExplanations.4",
+          "before": "正しい行為です。検査用の放射性医薬品を注入するために、注入装置を接続し操作することは、技師が行えます。",
+          "after": "正しい行為です。検査用の放射性医薬品を注入するための装置の接続・操作は、具体的な医師等の指示のもとで技師が行えます。",
+          "reason": "厚労省改正通知と学会業務範囲ガイドラインの核医学節を確認し、具体的指示・必要な研修等の前提を明示。",
+          "evidenceUrls": [
+            "https://iryou-kinmukankyou.mhlw.go.jp/files/Attachment/222/%E8%87%A8%E5%BA%8A%E6%A4%9C%E6%9F%BB%E6%8A%80%E5%B8%AB%E7%AD%89%E3%81%AB%E9%96%A2%E3%81%99%E3%82%8B%E6%B3%95%E5%BE%8B%E6%96%BD%E8%A1%8C%E4%BB%A4%E3%81%AE%E4%B8%80%E9%83%A8%E3%82%92%E6%94%B9%E6%AD%A3%E3%81%99%E3%82%8B%E6%94%BF%E4%BB%A4%E7%AD%89%E3%81%AE%E5%85%AC%E5%B8%83%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6%EF%BC%88%E5%8C%BB%E6%94%BF%E7%99%BA%EF%BC%90%EF%BC%97%EF%BC%90%EF%BC%99%E7%AC%AC%EF%BC%97%E5%8F%B7%EF%BC%89.pdf",
+            "https://www.radiology.jp/content/files/RadTechTaskShiftShareGL_Ver03-2_20260521.pdf"
+          ]
+        },
+        {
+          "field": "choiceExplanations.5",
+          "before": "正しい行為です。放射性医薬品の投与が終わった後の抜針と止血も、技師が行える業務に含まれます。",
+          "after": "正しい行為です。検査用の放射性医薬品の投与後に行う抜針・止血も、具体的な医師等の指示のもとで技師が行える業務です。",
+          "reason": "厚労省改正通知と学会業務範囲ガイドラインの核医学節を確認し、具体的指示・必要な研修等の前提を明示。",
+          "evidenceUrls": [
+            "https://iryou-kinmukankyou.mhlw.go.jp/files/Attachment/222/%E8%87%A8%E5%BA%8A%E6%A4%9C%E6%9F%BB%E6%8A%80%E5%B8%AB%E7%AD%89%E3%81%AB%E9%96%A2%E3%81%99%E3%82%8B%E6%B3%95%E5%BE%8B%E6%96%BD%E8%A1%8C%E4%BB%A4%E3%81%AE%E4%B8%80%E9%83%A8%E3%82%92%E6%94%B9%E6%AD%A3%E3%81%99%E3%82%8B%E6%94%BF%E4%BB%A4%E7%AD%89%E3%81%AE%E5%85%AC%E5%B8%83%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6%EF%BC%88%E5%8C%BB%E6%94%BF%E7%99%BA%EF%BC%90%EF%BC%97%EF%BC%90%EF%BC%99%E7%AC%AC%EF%BC%97%E5%8F%B7%EF%BC%89.pdf",
+            "https://www.radiology.jp/content/files/RadTechTaskShiftShareGL_Ver03-2_20260521.pdf"
+          ]
+        }
+      ],
+      "primaryEvidence": [
+        {
+          "url": "https://iryou-kinmukankyou.mhlw.go.jp/files/Attachment/222/%E8%87%A8%E5%BA%8A%E6%A4%9C%E6%9F%BB%E6%8A%80%E5%B8%AB%E7%AD%89%E3%81%AB%E9%96%A2%E3%81%99%E3%82%8B%E6%B3%95%E5%BE%8B%E6%96%BD%E8%A1%8C%E4%BB%A4%E3%81%AE%E4%B8%80%E9%83%A8%E3%82%92%E6%94%B9%E6%AD%A3%E3%81%99%E3%82%8B%E6%94%BF%E4%BB%A4%E7%AD%89%E3%81%AE%E5%85%AC%E5%B8%83%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6%EF%BC%88%E5%8C%BB%E6%94%BF%E7%99%BA%EF%BC%90%EF%BC%97%EF%BC%90%EF%BC%99%E7%AC%AC%EF%BC%97%E5%8F%B7%EF%BC%89.pdf",
+          "title": "厚生労働省 医政発0709第7号 (2021年7月9日)",
+          "locator": "physical p.2, 診療放射線技師法施行規則15条の2の改正内容",
+          "accessed": "2026-10-11",
+          "accessMethod": "normal web tool; primary document text read",
+          "confirms": "核医学検査の静脈路確保、注入装置接続操作、抜針止血、具体的な医師又は歯科医師指示を確認。"
+        },
+        {
+          "url": "https://www.radiology.jp/content/files/RadTechTaskShiftShareGL_Ver03-2_20260521.pdf",
+          "title": "日本医学放射線学会: 診療放射線技師へのタスク・シフト/シェア ガイドライン Ver.03-2 (2026年5月21日)",
+          "locator": "printed p.29, 核医学検査",
+          "accessed": "2026-10-11",
+          "accessMethod": "normal web tool; primary document text read",
+          "confirms": "検査での吸入補助等と、放射性医薬品による内用療法の静脈路確保・投与禁止を区別。"
+        }
+      ]
+    },
+    {
+      "identity": "shinryo-hoshasengishi-78-pm-45",
+      "candidateId": "shinryo-hoshasengishi-2026-annual-pm-q45",
+      "candidateCanonicalSha256": "fb7cea904659ebbae93ed5bddd3f2eef575c61c70fff96609e3b1be3ba569697",
+      "contentStatus": "completed",
+      "publicationGo": 0,
+      "publicationOwner": "parent integration task",
+      "previousTechnicalHolds": [
+        "選択肢2〜4は原本どおり「G 2 前期」「G 2 中期」「G 2 後期」と転記した。一般的な細胞周期の用語ではG2期を前期・中期・後期に分けないため、出題意図（M期の各時期を指しているのかどうか）の確認が必要。"
+      ],
+      "previousMechanicallySafe": false,
+      "technicalHoldResolution": "公式原本のG2表記を目視確認し維持。NHGRIでS期DNA複製を確認し染色体数の倍増という誤記を修正。出題意図の推測は不要。",
+      "remainingContentBlockers": [],
+      "originalDraft": {
+        "path": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\claude-capacity-20261010\\opus-controller-20261010\\author-shinryo-hoshasengishi-78-pm-q043-048-new-opus-first-draft\\OFFLINE-STRUCTURED-RESULT.json",
+        "sha256": "50cfafa774e1167a1132dfada2f558086d9969a143e501856ce614dadbed9993",
+        "unchanged": true
+      },
+      "originalFirstPartyReceipt": {
+        "path": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\claude-capacity-20261010\\opus-controller-20261010\\author-shinryo-hoshasengishi-78-pm-q043-048-new-opus-first-draft\\receipt.json",
+        "sha256": "c83bb69171f4cf0af139e763d18c8ecec9095ee83cd26fe6523642c2481f2859",
+        "unchanged": true,
+        "newModelReceiptClaimed": false
+      },
+      "sourcePacket": {
+        "path": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\claude-capacity-20261010\\opus-controller-20261010\\readable-sources\\shinryo-hoshasengishi-78-pm-q043-048-new-opus-first-draft\\SOURCE-PACKET.json",
+        "sha256": "3705794f957a3d9144e73b2669be088ae9699bf0632602eb429782338cbbadbc",
+        "unchanged": true
+      },
+      "officialQuestion": {
+        "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-06b_01.pdf",
+        "sha256": "fef27a4a6b91f7783e4958c40154891706de77f6d151a679eb313992233b0d52",
+        "physicalPage": 22
+      },
+      "officialAnswer": {
+        "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-06seitou.pdf",
+        "sha256": "09bc1518c5e3dbc9beeb740097d884ca9270089802ae4a924c8975d85efec658",
+        "cell": "PM45",
+        "oneBasedAcceptedChoices": [
+          "5"
+        ]
+      },
+      "qa": {
+        "questionAndAllFiveChoicesFromOriginal": true,
+        "officialAnswerPdfCellIndependentlyRechecked": true,
+        "originalTypographyBoundaryTextExactlyMatchedPacket": true,
+        "originalCropVisualReview": "completed via four locally rendered contact sheets",
+        "originalCropPath": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\qualification-expansion-20261007\\radiology-latest-two-20261011\\saved-specialist\\original-78-pm-q45.png",
+        "originalCropSha256": "1899fcf99d6c85d044deeeec233156d776117e8d958157a87e98555d7d4bc4ed",
+        "allFiveChoiceExplanationsPresent": true,
+        "requiredSelectionsMatch": true,
+        "nonfigureVerified": true,
+        "rootArtifactHashesRechecked": true
+      },
+      "originalTypographyRestoration": [],
+      "savedTextReuse": {
+        "retainedExplanation": false,
+        "retainedChoiceExplanationKeys": [
+          "1",
+          "2",
+          "3",
+          "4"
+        ]
+      },
+      "localEditor": "Codex local specialist evidence review; no new full-draft model generation",
+      "localEdits": [
+        {
+          "field": "explanation",
+          "before": "細胞周期はG1期→S期→G2期→M期（分裂期）の順に進む。DNAが複製され、染色体（染色分体）が倍になるのはS期（DNA合成期）である。G1期はDNA合成の準備期、G2期は分裂の準備期である。M期は前期・中期・後期・終期に分けられ、複製された染色体を2つの娘細胞に分配する。",
+          "after": "細胞周期はG1期→S期→G2期→M期（分裂期）の順に進みます。DNAが複製され、各染色体に2本の姉妹染色分体が形成されるのはS期（DNA合成期）です。DNA量は倍になりますが、これは染色体数自体が倍になるという意味ではありません。G1期はDNA合成の準備期、G2期は分裂の準備期です。M期には複製後の染色体が娘細胞に分配されます。",
+          "reason": "公式原本のG2表記を目視確認し維持。NHGRIでS期DNA複製を確認し染色体数の倍増という誤記を修正。出題意図の推測は不要。",
+          "evidenceUrls": [
+            "https://www.genome.gov/genetics-glossary/Cell-Cycle",
+            "https://www.genome.gov/genetics-glossary/Chromatid"
+          ]
+        },
+        {
+          "field": "choiceExplanations.5",
+          "before": "正しい。S期（synthesis期）にDNAが複製され、染色体が倍になる。",
+          "after": "正しい。S期（DNA合成期）にDNAが複製され、各染色体に2本の姉妹染色分体が形成されます。DNA量の倍増と染色体数は区別します。",
+          "reason": "公式原本のG2表記を目視確認し維持。NHGRIでS期DNA複製を確認し染色体数の倍増という誤記を修正。出題意図の推測は不要。",
+          "evidenceUrls": [
+            "https://www.genome.gov/genetics-glossary/Cell-Cycle",
+            "https://www.genome.gov/genetics-glossary/Chromatid"
+          ]
+        }
+      ],
+      "primaryEvidence": [
+        {
+          "url": "https://www.genome.gov/genetics-glossary/Cell-Cycle",
+          "title": "NHGRI: Cell Cycle",
+          "locator": "definition/narration",
+          "accessed": "2026-10-11",
+          "accessMethod": "normal web tool; primary document text read",
+          "confirms": "細胞周期G1→S→G2→M、S期のDNA複製。"
+        },
+        {
+          "url": "https://www.genome.gov/genetics-glossary/Chromatid",
+          "title": "NHGRI: Chromatid",
+          "locator": "definition/narration",
+          "accessed": "2026-10-11",
+          "accessMethod": "normal web tool; primary document text read",
+          "confirms": "DNA複製後はセントロメアで結ばれた姉妹染色分体となる。",
+          "qualification": "DNA量の倍増と染色体数の倍増を混同しない。選択肢G2前期/中期/後期は公式紙面どおり保持。"
+        }
+      ]
+    },
+    {
+      "identity": "shinryo-hoshasengishi-78-pm-48",
+      "candidateId": "shinryo-hoshasengishi-2026-annual-pm-q48",
+      "candidateCanonicalSha256": "cfdc869c5162cefd531625a3470b1c90a3bf1cc0af1259815596c1e9c76b9994",
+      "contentStatus": "completed",
+      "publicationGo": 0,
+      "publicationOwner": "parent integration task",
+      "previousTechnicalHolds": [
+        "eGFRとNSFリスクの関係について、具体的な数値の閾値（ガイドラインで用いられるeGFR区分）は原本に印字されていない。そのため解説には数値を記載していない。数値を加える場合は最新ガイドラインでの確認が必要。"
+      ],
+      "previousMechanicallySafe": false,
+      "technicalHoldResolution": "実際には数値の追加が不要な条件付き旧hold。最新国内第3版でeGFR評価を確認し数値追加なしで完成。",
+      "remainingContentBlockers": [],
+      "originalDraft": {
+        "path": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\claude-capacity-20261010\\opus-controller-20261010\\author-shinryo-hoshasengishi-78-pm-q043-048-new-opus-first-draft\\OFFLINE-STRUCTURED-RESULT.json",
+        "sha256": "50cfafa774e1167a1132dfada2f558086d9969a143e501856ce614dadbed9993",
+        "unchanged": true
+      },
+      "originalFirstPartyReceipt": {
+        "path": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\claude-capacity-20261010\\opus-controller-20261010\\author-shinryo-hoshasengishi-78-pm-q043-048-new-opus-first-draft\\receipt.json",
+        "sha256": "c83bb69171f4cf0af139e763d18c8ecec9095ee83cd26fe6523642c2481f2859",
+        "unchanged": true,
+        "newModelReceiptClaimed": false
+      },
+      "sourcePacket": {
+        "path": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\claude-capacity-20261010\\opus-controller-20261010\\readable-sources\\shinryo-hoshasengishi-78-pm-q043-048-new-opus-first-draft\\SOURCE-PACKET.json",
+        "sha256": "3705794f957a3d9144e73b2669be088ae9699bf0632602eb429782338cbbadbc",
+        "unchanged": true
+      },
+      "officialQuestion": {
+        "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-06b_01.pdf",
+        "sha256": "fef27a4a6b91f7783e4958c40154891706de77f6d151a679eb313992233b0d52",
+        "physicalPage": 23
+      },
+      "officialAnswer": {
+        "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-06seitou.pdf",
+        "sha256": "09bc1518c5e3dbc9beeb740097d884ca9270089802ae4a924c8975d85efec658",
+        "cell": "PM48",
+        "oneBasedAcceptedChoices": [
+          "4"
+        ]
+      },
+      "qa": {
+        "questionAndAllFiveChoicesFromOriginal": true,
+        "officialAnswerPdfCellIndependentlyRechecked": true,
+        "originalTypographyBoundaryTextExactlyMatchedPacket": true,
+        "originalCropVisualReview": "completed via four locally rendered contact sheets",
+        "originalCropPath": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\qualification-expansion-20261007\\radiology-latest-two-20261011\\saved-specialist\\original-78-pm-q48.png",
+        "originalCropSha256": "fac6568694b5d328dc23a3a499c68437001dd867a2062f9dfaf466458c66e4ee",
+        "allFiveChoiceExplanationsPresent": true,
+        "requiredSelectionsMatch": true,
+        "nonfigureVerified": true,
+        "rootArtifactHashesRechecked": true
+      },
+      "originalTypographyRestoration": [],
+      "savedTextReuse": {
+        "retainedExplanation": false,
+        "retainedChoiceExplanationKeys": [
+          "1",
+          "2",
+          "3",
+          "4",
+          "5"
+        ]
+      },
+      "localEditor": "Codex local specialist evidence review; no new full-draft model generation",
+      "localEdits": [
+        {
+          "field": "explanation",
+          "before": "MRIの細胞外液性造影剤（ガドリニウム造影剤）は主に腎臓から排泄される。腎機能が落ちている患者では、腎性全身性線維症（NSF）を起こす危険がある。そのため検査前にはeGFR（推算糸球体濾過量）で腎機能を確認し、造影剤を使ってよいか判断する。",
+          "after": "MRIの細胞外液性ガドリニウム造影剤は主に腎臓から排泄されます。高度腎障害などでは腎性全身性線維症（NSF）のリスクを考慮するため、緊急検査などやむを得ない場合を除き、投与前にeGFR（推算糸球体濾過量）で腎機能を評価します。腎機能、造影剤の種類、検査の必要性を踏まえて使用を判断します。",
+          "reason": "実際には数値の追加が不要な条件付き旧hold。最新国内第3版でeGFR評価を確認し数値追加なしで完成。",
+          "evidenceUrls": [
+            "https://cdn.jsn.or.jp/data/guideline_nsf_20240520.pdf"
+          ]
+        }
+      ],
+      "primaryEvidence": [
+        {
+          "url": "https://cdn.jsn.or.jp/data/guideline_nsf_20240520.pdf",
+          "title": "日本医学放射線学会・日本腎臓学会: 腎障害患者におけるガドリニウム造影剤使用に関するガイドライン 第3版 (2024年5月20日)",
+          "locator": "p.1本文2-3; p.2改訂理由",
+          "accessed": "2026-10-11",
+          "accessMethod": "normal web tool; primary document text read",
+          "confirms": "緊急等やむを得ない場合を除き、使用前にeGFR評価。腎機能・造影剤安定性に応じNSFリスクを検討。",
+          "qualification": "問題に不要な具体的eGFR閾値は追加しない。"
+        }
+      ]
+    }
+  ]
+}

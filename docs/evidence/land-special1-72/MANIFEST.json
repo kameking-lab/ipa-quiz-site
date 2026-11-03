@@ -1,0 +1,203 @@
+{
+  "base": "bbfa350f8eb3692ae3f0ce356fef3080922a8842",
+  "branch": "codex/land72-candidate-20261015",
+  "scope": "2026-02 09:30 A and2026-06 09:30 A, all subjects72 originals",
+  "questionCount": 72,
+  "reasonCount": 320,
+  "figureCount": 21,
+  "publicationApproval": false,
+  "files": [
+    {
+      "path": "__tests__/land72-integration.test.ts",
+      "sha256": "ba26d04ea229966c81b288b517f681dba4d24e0a0f701fa560502485bb672b02"
+    },
+    {
+      "path": "__tests__/questions/get-questions.test.ts",
+      "sha256": "8b27d092a2e67b916fc6bef6e119f07ec940e3a07e261878e60e00c3daaecbc9"
+    },
+    {
+      "path": "data/questions/index.ts",
+      "sha256": "c6ed3127c309327ab145b61f9db69eb288e96624ec56a5b399ef19922a46d1f5"
+    },
+    {
+      "path": "data/questions/land-special1/2026-february-houki.json",
+      "sha256": "8cc769ee2ea55f383d9eee9b9133050bf2493e2d5444344a5e51e14a2879b399"
+    },
+    {
+      "path": "data/questions/land-special1/2026-february-kogaku.json",
+      "sha256": "9a185c61f46f3730f6965fe504cba9f3dcc976b8ddb3a81fef44a75419559710"
+    },
+    {
+      "path": "data/questions/land-special1/2026-june-houki.json",
+      "sha256": "a759c0c618dd0e3063f3009ae42251a47c67729e365f957621203632661b793c"
+    },
+    {
+      "path": "data/questions/land-special1/2026-june-kogaku.json",
+      "sha256": "7781655c3d6b22432fc4f7bd51c1eb9ca8ad1abc4ce9e7c563f4c4516de76cb1"
+    },
+    {
+      "path": "data/questions/land-special1/index.ts",
+      "sha256": "a6bf6d104dd1c0bd979da6d2313a2e50d6451c54b9094ad8c070cf19bc3bb458"
+    },
+    {
+      "path": "docs/evidence/land-special1-72/FIGURE-ASSETS.json",
+      "sha256": "5ac790f7d0f562c3dbcbfd01be48491fff188c989571fab5624724475188d23a"
+    },
+    {
+      "path": "docs/evidence/land-special1-72/NATIVE-RUNTIME-BINDINGS.json",
+      "sha256": "e15f81117d51ecbebe2b95372f38d9be93a288cc94de6b5da7ea5f74d9cd8193"
+    },
+    {
+      "path": "docs/evidence/land-special1-72/README.md",
+      "sha256": "003bee1d07a03fa12435504cff16f1b0c476e8f0eb4b779eb4a3b18940989f52"
+    },
+    {
+      "path": "docs/evidence/land-special1-72/RIGHTS-SCOPE.json",
+      "sha256": "d84f7068fccdd235a7487cb2b62ab908810dcea40da93b36f8ed8c26a8fc7ae7"
+    },
+    {
+      "path": "docs/evidence/land-special1-72/SCOPE.json",
+      "sha256": "a8143f4fe8e9a5a680c24846fda41f82fb1ce868979ed6be92277d1e72a49ce2"
+    },
+    {
+      "path": "docs/evidence/land-special1-72/SOURCE-PINS.json",
+      "sha256": "d27040ee90c586a68156ce202d51489f5433a462ec9c29450dcb3dd42fed7ac9"
+    },
+    {
+      "path": "docs/evidence/land-special1-72/VALIDATION.json",
+      "sha256": "67c939d375ad6aa82d2391cdc3950a365534ea26d3ddb08e9876e6b2abdb3c87"
+    },
+    {
+      "path": "lib/exam-config.ts",
+      "sha256": "be350e176e8a16af545e3cdc02b429602c4ecdec5b458569c00b44d50d6dc05f"
+    },
+    {
+      "path": "lib/qualifications/catalog.ts",
+      "sha256": "c7e39ce5d6126c3014aea20491c09a4ff8f9f1d6d3324d610c4397540e5992b0"
+    },
+    {
+      "path": "lib/questions/display.ts",
+      "sha256": "52696fb7d644f0791fcf1ce41e85ec0d714b4a0a06db5fd0b9869ae7d5dea378"
+    },
+    {
+      "path": "lib/questions/filter.ts",
+      "sha256": "7f8c5c2d31d6184ac0e842d8ef4a2a8c6a6cc7e1126183f96c7da80e16908592"
+    },
+    {
+      "path": "lib/questions/get-questions.ts",
+      "sha256": "d8e04fca27673cf82ea0f9158a27c87b40b77b99b8c97736103f86db42027ac2"
+    },
+    {
+      "path": "lib/questions/practice-session.ts",
+      "sha256": "9cf82a76e07d5acfb898300d620f6d8a882019c7b0f5ab55f4c0ef6312aec998"
+    },
+    {
+      "path": "lib/questions/types.ts",
+      "sha256": "4b92de841011c825f853e35056b22778bb7f7ae1c3b2b2917815c23ebc81376f"
+    },
+    {
+      "path": "lib/seo/exam-meta.ts",
+      "sha256": "84c59d3bff2763286bae34d9a42be3d14fcbf74338f484f80f352544a6ce122d"
+    },
+    {
+      "path": "lib/seo/exam-resources.ts",
+      "sha256": "3afb5cc7e5cb0b71d57253ea34f9160cff1e50c1e8893daa4920c7aae9003bfb"
+    },
+    {
+      "path": "lib/seo/question-jsonld.ts",
+      "sha256": "3dc52c384ce81a2077f6cd6adeac4d7481617427b3fd571cad285d1757fd5ecb"
+    },
+    {
+      "path": "lib/utils.ts",
+      "sha256": "7b45b41913d6c01a001af0f93db52783c8ff5b1339ef26a28f2912ee66b2af50"
+    },
+    {
+      "path": "public/images/questions/land-special1/2026-02-kogaku-q03.png",
+      "sha256": "e9e4c84d80b7fcf84974ca119e0c55dad895c37fabd56c623f14730a8ab95375"
+    },
+    {
+      "path": "public/images/questions/land-special1/2026-02-kogaku-q04.png",
+      "sha256": "0b98ff2c8e4af659238be5f646f6ef2e86d05eecd68765c4e2c349ef23299d6b"
+    },
+    {
+      "path": "public/images/questions/land-special1/2026-02-kogaku-q05.png",
+      "sha256": "d2a6f776bcef557cac4769e431c4f11866bd34c8838665cec473f24a64c1baae"
+    },
+    {
+      "path": "public/images/questions/land-special1/2026-02-kogaku-q07.png",
+      "sha256": "5c3772faf022b52d47351b23257c77ee2c87e8f9c2be6d3ee5a4269fa43c3176"
+    },
+    {
+      "path": "public/images/questions/land-special1/2026-02-kogaku-q08.png",
+      "sha256": "21a310f6eec1d9c1a7cbf0b72aaf737814937084126e43cfc7ed54ec5e4c2890"
+    },
+    {
+      "path": "public/images/questions/land-special1/2026-02-kogaku-q11.png",
+      "sha256": "38e66d471418d8cd5f7d5eb169ea42dcaf693fea215c652101eb84944b8cddb3"
+    },
+    {
+      "path": "public/images/questions/land-special1/2026-02-kogaku-q13.png",
+      "sha256": "ddf759c034fbbcb4c1f695de655ffb1323cdb91f13bbfbf9d24da31e5ba1284b"
+    },
+    {
+      "path": "public/images/questions/land-special1/2026-02-kogaku-q16.png",
+      "sha256": "0ccb6dfe51e44f4c6f1b5c7db5c227f285a8bc4495cb305e50a97827223e46ff"
+    },
+    {
+      "path": "public/images/questions/land-special1/2026-02-kogaku-q18.png",
+      "sha256": "500b332518f53f046f7ac9710503df5c6046a1e0bb4a11edd4fd42f989c745f3"
+    },
+    {
+      "path": "public/images/questions/land-special1/2026-02-kogaku-q20.png",
+      "sha256": "ae643a4d1ee2813b60c7653e9ad42f7e6cd67648ac62a89f84645dc4b3a05cc2"
+    },
+    {
+      "path": "public/images/questions/land-special1/2026-02-kogaku-q22.png",
+      "sha256": "6359a8da053a38c4f20cd806c7970591f85c58e50d926cdfef084ba64b3e5900"
+    },
+    {
+      "path": "public/images/questions/land-special1/2026-02-kogaku-q23.png",
+      "sha256": "af450cb9ba795ea46a9f31ee97b2f9ca9394812ffacd55ef62e9673696882772"
+    },
+    {
+      "path": "public/images/questions/land-special1/2026-06-kogaku-q03.png",
+      "sha256": "d30d8d5b08faef05039ee1b5c8923cb49c1638c7553af22c83f42124ae0c1488"
+    },
+    {
+      "path": "public/images/questions/land-special1/2026-06-kogaku-q05.png",
+      "sha256": "a4f89b78b3c9bb235d14f3bb445ea3f497563a034cc4e01a0919c7abcd5eb002"
+    },
+    {
+      "path": "public/images/questions/land-special1/2026-06-kogaku-q06.png",
+      "sha256": "91566744778e592ac49932efd0b6452a2ae420d736ce24ea06fe9772df4cc9e3"
+    },
+    {
+      "path": "public/images/questions/land-special1/2026-06-kogaku-q07.png",
+      "sha256": "c96b3acd0b96c61511f33552ec9620bb4fce2203d3aa93b93ee4f2443f8a8228"
+    },
+    {
+      "path": "public/images/questions/land-special1/2026-06-kogaku-q08.png",
+      "sha256": "8906c25f2962e695f55274cf05167247d11da9bc52dd029d01888267ed573bf8"
+    },
+    {
+      "path": "public/images/questions/land-special1/2026-06-kogaku-q10.png",
+      "sha256": "4db8832e7371f726fa8bd0a4c5b994446955312e9c1e8061fef625b2d64f99cf"
+    },
+    {
+      "path": "public/images/questions/land-special1/2026-06-kogaku-q13.png",
+      "sha256": "a0967913bae593cce60677108c82084332f4aac6b9bb23c3833b4a94583b958b"
+    },
+    {
+      "path": "public/images/questions/land-special1/2026-06-kogaku-q18.png",
+      "sha256": "541fa236c4ff554982ee7cfd96eec0032e28ecb6371e78f6d3c4610c6523357b"
+    },
+    {
+      "path": "public/images/questions/land-special1/2026-06-kogaku-q22.png",
+      "sha256": "a4872c34778728e99b9fe5d9afa3cb580b85c7f71f7aa2b692aa3a86485f52cc"
+    },
+    {
+      "path": "scripts/validate-questions.ts",
+      "sha256": "3da6de7667d940d4f42aef6ecb7867f062cc24c031a52ca8355a8008324b7624"
+    }
+  ]
+}

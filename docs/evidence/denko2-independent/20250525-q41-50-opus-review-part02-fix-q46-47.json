@@ -1,0 +1,56 @@
+{
+  "inputHashes": {
+    "draftSha256": "42133c6451819fa07b080cec763dd08387d3e06df70adbcbdace3e8935abc445",
+    "candidateSha256": {
+      "46": "490e9689831cd9ee55f9ea8de02ac127cab1f5f5d37b4acda6a04753f9a418bf",
+      "47": "94987ec9f613da10cd494d5fe6c1e022da5dc3ce47f02ceab55830dde4a065a1"
+    },
+    "rowSha256": {
+      "46": "b93ea2bc7319c16951490ff929c72cf5528d8ab14d151df99577b55179c0adb5",
+      "47": "3dfcbb7195fdf300f31310481d58f765e9200338ffc5fa12d3a70adf15e76e71"
+    },
+    "sharedFigureSha256": {
+      "public/images/denko2/2025-first/wiring-main.png": "9a24f0c440f8551855249e8768d44fb15bbe7db7aff283ebfffe950cfcae4277"
+    },
+    "detailFigureSha256": {
+      "public/images/denko2/2025-first/q46-i.png": "bbaf106c6fd0fa9ce9e4212c8d18f59cd1cafbf96a1abdf61d93f9045e9a4a05",
+      "public/images/denko2/2025-first/q46-ro.png": "a12ac33502eb3e1177422ef9e6a826b9e775cc151826237928c36b706f15ccf7",
+      "public/images/denko2/2025-first/q46-ha.png": "837ac0f790519a3689445c0b040f3324301df4906a74c229892e9c1dd00a0b7c",
+      "public/images/denko2/2025-first/q46-ni.png": "6bf6f46e90e7c4c72db80a614f2b4a9792bf097ca63ac6416df9c5970fb12120",
+      "public/images/denko2/2025-first/q47-i.png": "63fee5dcefba77b4ef4317cd0c2eed6aa5885b2c525593098a3b12c1550d67b3",
+      "public/images/denko2/2025-first/q47-ro.png": "9ed0e6a375443baa2538a1ccd0435593374ca751dd684ff7444097963b3da06e",
+      "public/images/denko2/2025-first/q47-ha.png": "89fb6220f34bd72da4c1716c43442fc9f23df2f29eb5d1ae403939563ca0c2e3",
+      "public/images/denko2/2025-first/q47-ni.png": "3eccf2b2afa831fdc0dfead76614500eb161e3ee6e028a38455b3060f658d30d"
+    },
+    "sourcePackSha256": {
+      "46": "8b57d2c7d73d07d255cb4a2e29826ae636dd7dca7b8f7c3db3cf81b1bc410b0e",
+      "47": "d6d7dd53bdc66cda53087c49e320d02d70bf447b1839a20efe4a834bfc99db73"
+    },
+    "sourceFigureSha256": {}
+  },
+  "reviewModel": "claude-opus-5-5",
+  "assessment": [
+    {
+      "number": 46,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [
+        "ニの肢文に「下部のねじ部でボックス等にねじ込んで使用する部品」とあるが、写真から読み取れるのは下部外周の雄ねじだけである。ねじなしボックスコネクタのこの雄ねじは、ボックスのノックアウトに通してロックナットで締め付けるためのもので、ボックスにねじ込むものではない。「ねじ込んで使用する」という用途の記述は誤りなので削除するか、「下部外周に雄ねじを持つ管端部品」のように形状の記述だけに改める。"
+      ],
+      "explanationIssues": [
+        "choiceExplanations.ニ は「止めねじ（及び接地端子と見られるねじ）を備えた」と、2本のねじの役割を正誤理由に使っている。一方、diagramDescription には「写真だけではニの各ねじの役割を断定しない」、editorialReviewNotes には「ニの上面ねじ2本の役割…正誤理由にも使わない」とあり、JSONの中で矛盾している。ニが使用されるものである理由は、ねじなし電線管をボックスへ接続するねじなしボックスコネクタであることだけで足りる。ねじの役割の記述は削除して整合させる。"
+      ],
+      "figureIssues": [],
+      "lawNeedsExternalCheck": []
+    },
+    {
+      "number": 47,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "lawNeedsExternalCheck": []
+    }
+  ]
+}

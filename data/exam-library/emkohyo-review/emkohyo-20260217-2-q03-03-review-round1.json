@@ -1,0 +1,54 @@
+{
+  "reviewModel": "claude-opus-5-5",
+  "requestedModel": "claude-opus-5-5",
+  "canonicalModel": "claude-opus-5-5",
+  "provider": "firstParty",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 2693,
+      "cacheReadInputTokens": 143524,
+      "cacheCreationInputTokens": 26526,
+      "webSearchRequests": 0,
+      "costUSD": 0.2947808,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 2314,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "paperId": "emkohyo-20260217-2",
+  "ids": [
+    "emkohyo-20260217-2-q3"
+  ],
+  "figureSha256": {
+    "emkohyo-20260217-2-q3": {}
+  },
+  "officialRowImageSha256": {
+    "emkohyo-20260217-2-q3": {
+      "/exam-library/emkohyo-20260217-2/q3-p3-1.webp": "9cdcd2c7b0cb91cc5f0ec0192caf02878c8517448f889c0e21e9a4879f800bc1"
+    }
+  },
+  "governmentSourceImageSha256": {},
+  "candidateSha256": {
+    "emkohyo-20260217-2-q3": "c5ef2e6e2a1e2530cf7b16e63e99b920a93e97f14f9acb50be379ccd9877be44"
+  },
+  "sourcePackPath": "docs/evidence/emkohyo-choice-sources/emkohyo-20260217-2-q03-03.json",
+  "sourcePackSha256": "ada5cd0f094f3038fb6e06c4687b0034878e69e750bb61001ea569f919085b95",
+  "assessment": {
+    "emkohyo-20260217-2-q3": {
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "reasonIssues": [
+        "肢1の理由では、除外される作業を「指定作業」と呼んでいる。しかし添付の安衛則第36条第29号の条文は「設備による注水又は注油をしながら行う粉じん則第三条各号に掲げる作業に該当するもの」を除くとしており、「指定作業」という語は使っていない。定義のない語で言い換えず、「粉じん則第3条各号に掲げる作業を、設備による注水又は注油をしながら行うもの」と条文どおりに書くこと。"
+      ],
+      "sourceIssues": [
+        "肢1の理由は除外範囲を粉じん則第3条に頼っているが、粉じん則第3条の本文は添付資料に含まれていない。除外作業の範囲を具体的に説明するなら、試験日に適用される版の粉じん則を出典に加えること。今の書き方のように第29号の条文を言い換えるだけなら、安衛則だけで足りる。"
+      ],
+      "needsExternalCheck": []
+    }
+  }
+}

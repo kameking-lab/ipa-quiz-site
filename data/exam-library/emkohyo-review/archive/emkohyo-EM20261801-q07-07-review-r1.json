@@ -1,0 +1,63 @@
+{
+  "reviewModel": "claude-opus-5-5",
+  "requestedModel": "claude-opus-5-5",
+  "canonicalModel": "claude-opus-5-5",
+  "provider": "firstParty",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 3475,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 15648,
+      "webSearchRequests": 0,
+      "costUSD": 0.19494779999999998,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 2141,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponsePath": "data/exam-library/emkohyo-review/emkohyo-EM20261801-q07-07-raw-response.txt",
+  "rawResponseSha256": "07a11b667a4fdc4ac7686d574264982b6aafa57d0ad483e7ee269929607cce8a",
+  "paperId": "emkohyo-EM20261801",
+  "ids": [
+    "emkohyo-EM20261801-q7"
+  ],
+  "figureSha256": {
+    "emkohyo-EM20261801-q7": {}
+  },
+  "officialRowImageSha256": {
+    "emkohyo-EM20261801-q7": {
+      "/exam-library/emkohyo-EM20261801/q7-p6-0.webp": "9a59a50c2b30da8d990148a64b74c00dd38d22db9f9cc5765e938fb56b2dab6e"
+    }
+  },
+  "officialPageImageSha256": {},
+  "governmentSourceImageSha256": {},
+  "candidateSha256": {
+    "emkohyo-EM20261801-q7": "57fe8a1d109a980b279a4d4eb86f51754770131e801aa6b73ea0074139859586"
+  },
+  "sourcePackPath": "docs/evidence/emkohyo-choice-sources/emkohyo-EM20261801-q07-07.json",
+  "sourcePackSha256": "0ce5f84a9b5472a0632910b5b4227df6fdf17f83de1e0fc815eba39614ef27e2",
+  "assessment": {
+    "emkohyo-EM20261801-q7": {
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "reasonIssues": [
+        "肢5: 「ラットの反復吸入で重量増加や濾胞上皮細胞の過形成など非腫瘍性の影響が記されているだけ」は、提示抜粋の範囲を超えた断定である。抜粋は反復ばく露の特定標的臓器毒性の記述であり、発がん性の項の全文を示していない。また、ヨウ化メチルでは米国EPAの農薬登録評価で、ラット2年間吸入試験における甲状腺濾胞細胞腫瘍の発生が報告されている（甲状腺ホルモン恒常性の攪乱を介する機序とされる）。そのため「非腫瘍性の影響だけ」は事実と食い違うおそれがある。「だけ」を削除し、誤りの根拠は「IARCグループ3で、ヒトでの発がん性の証拠が不十分であり、甲状腺がんを主要ながんとする根拠がない」に限定すべき。甲状腺所見に触れる場合は「動物での甲状腺への影響はヒトの主要ながんの根拠とはならない」程度にとどめるべき。",
+        "肢5: 「IARCでグループ3のため発がん性は『分類できない』とされている」の『分類できない』は、モデルSDSにおけるGHS分類の判定結果である。IARCグループ3の定義（ヒトに対する発がん性について分類できない）とは別物である。『IARCグループ3であることから、GHS分類でも発がん性は「分類できない」とされている』のように主体を区別して記すべき。",
+        "肢2: 亜硫化ニッケルSDSから引用したラット2年間吸入試験の肺腫瘍は動物データであり、ヒトの主要ながんの直接根拠にはならない。ヒトでの根拠は労基則別表第1の2（ニッケル製錬・精錬工程による肺がん又は上気道のがん）とIARCグループ1分類で足りる。動物データは補足扱いと明記するか削除するのが望ましい。"
+      ],
+      "sourceIssues": [
+        "労働基準法施行規則のURL（https://laws.e-gov.go.jp/api/2/law_data/322M40000100023）はe-Gov法令APIのJSONエンドポイントであり、利用者がリンクを開くと生JSONが表示される。閲覧用URL（https://laws.e-gov.go.jp/law/322M40000100023）に差し替えるべき。取得版（2026-04-01施行、CurrentEnforced）は試験日2026-08-19時点の現行版であり、内容上の問題はない。",
+        "ヨウ化メチルSDS（74-88-4）の抜粋は、GHS発がん性分類の結論と反復ばく露毒性の甲状腺所見のみである。肢5の「非腫瘍性の影響だけ」という断定を直接支える記述（発がん性試験で甲状腺腫瘍の記載がないこと）は、提示証拠に含まれない。"
+      ],
+      "needsExternalCheck": [
+        "職場のあんぜんサイト モデルSDS ヨウ化メチル（https://anzeninfo.mhlw.go.jp/anzen/gmsds/74-88-4.html）の全文で、発がん性の項および農薬抄録(2012)引用部分にラット甲状腺腫瘍（濾胞細胞腺腫・癌）の記載があるかを確認すること。",
+        "肢5の理由文を修正する場合、ラット長期吸入試験での甲状腺腫瘍の有無と評価（EPA/農薬抄録/食品安全委員会のヨウ化メチル評価書等）を政府一次資料で確認すること。"
+      ]
+    }
+  }
+}

@@ -1,0 +1,130 @@
+{
+  "questionNumber": 14,
+  "sharedContext": null,
+  "units": [
+    {
+      "part": null,
+      "question": "目盛が正弦波交流に対する実効値になる整流形の電圧計(全波整流形)がある。この電圧計で図のような周期 20 ms の繰り返し波形電圧を測定した。\nこのとき，電圧計の指示の値 [V]として，最も近いものを次の(1)〜(5)のうちから一つ選べ。",
+      "choices": {
+        "1": "5.66",
+        "2": "5.14",
+        "3": "4.62",
+        "4": "4.44",
+        "5": "4.00"
+      },
+      "officialAnswer": "4",
+      "explanation": "整流形電圧計(全波整流形)の可動コイル形指示計器は、整流後の電圧の平均値に応答する。目盛は、正弦波交流の実効値を示すように定められている。そのため、指示値は次の式で求まる。\n\n指示値 = (被測定電圧の絶対値の平均値) × (正弦波の波形率)\n\n正弦波の波形率 = 実効値 / 平均値 = (Vm/√2) / (2Vm/π) = π/(2√2) ≈ 1.1107\n\n図の波形は方形波である。0〜10 ms で 8 V、10〜20 ms で 0 V となり、これを周期 20 ms で繰り返す。電圧は負にならないので、全波整流しても波形は変わらない。\n\n平均値 = (8 V × 10 ms + 0 V × 10 ms) / 20 ms = 4 V\n\n指示値 = 4 × π/(2√2) ≈ 4 × 1.1107 ≈ 4.44 V\n\nよって最も近いのは (4) 4.44 である。\n\n参考として、この波形の真の実効値は √{(8² × 10 + 0² × 10) / 20} = √32 ≈ 5.66 V である。整流形電圧計は正弦波を前提に目盛られている。そのため、正弦波以外の波形では真の実効値を示さない。",
+      "choiceExplanations": {
+        "1": "誤り。5.66 V は √{(8² × 10 + 0² × 10)/20} = √32 ≈ 5.66 で、この波形の真の実効値である。整流形電圧計は平均値に応答し、それに正弦波の波形率を掛けた値を指示する。そのため、真の実効値は指示されない。",
+        "2": "誤り。5.14 V は正しい指示値 4.44 V より約 0.70 V 大きい。指示値 4.44 V と真の実効値 5.66 V の間の範囲にある値だが、両者の中点(≈ 5.05 V)とも一致しない。この電圧計の指示は、平均値 4 V × 正弦波の波形率 π/(2√2) ≈ 1.1107 で決まる。5.14 V はこの計算結果とも、真の実効値とも一致しない。",
+        "3": "誤り。4.62 V は正しい指示値 4.44 V より約 0.18 V 大きい。数値の上では、平均値 4 V に三角波の波形率 2/√3 ≈ 1.155 を掛けた値(≈ 4.62 V)と一致する。しかし、この電圧計の目盛は正弦波を基準にしている。したがって、平均値に掛けるべき係数は正弦波の波形率 π/(2√2) ≈ 1.1107 である。",
+        "4": "正しい。全波整流後の平均値は (8 × 10 + 0 × 10)/20 = 4 V である。これに正弦波の波形率 π/(2√2) ≈ 1.1107 を掛けると約 4.44 V となり、これが指示値である。",
+        "5": "誤り。4.00 V は波形の平均値そのものである。整流形電圧計の目盛は正弦波の実効値を表示するように定められている。そのため、平均値に波形率 ≈ 1.11 を掛けた値が指示される。"
+      },
+      "figureDescription": "電圧波形のグラフである。縦軸は V [V](上向き矢印付き)、横軸は t [ms](右向き矢印付き)。縦軸の目盛は 0 と 8 のみ、横軸の目盛は 0, 10, 20, 30, 40 が記されている。波形は t = 0〜10 ms で 8 V、10〜20 ms で 0 V、20〜30 ms で 8 V、30〜40 ms で 0 V となり、40 ms で再び 8 V に立ち上がる。その後は「…」で繰り返しが示されている。つまり振幅 8 V、周期 20 ms、デューティ比 50 % の方形波で、0 V と 8 V の間で変化し、負の値をとらない。電圧値と時間区間は図からしか読み取れないため、図は解答に必要である。",
+      "officialReferenceUrls": [],
+      "uncertainty": "選択肢(2) 5.14 と(3) 4.62 が、出題者がどのような誤った計算を想定した値かは、問題原図からは確認できない。(3) が三角波の波形率を用いた値と数値的に一致するのは、計算上の対応にすぎない。",
+      "needsReview": true,
+      "sourceQuestionPdfUrl": "https://www.shiken.or.jp/chief/upload/20260322_ch_third_q01.pdf",
+      "sourceAnswerPdfUrl": "https://www.shiken.or.jp/chief/upload/20260322_ch_third_a01.pdf",
+      "reviewedFromPage": [
+        19
+      ]
+    }
+  ],
+  "draftModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 2550,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 9309,
+      "webSearchRequests": 0,
+      "costUSD": 0.1257358,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 912,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "831425fe63d907336e54092fecfa96e2a5cdd5cc89faba86118c7c6097880069",
+  "inputRequestSha256": "6694dda761abadb794217918ece1851fd744d6a12e298cfd59a29df9b612147b",
+  "sourceQuestionPdfSha256": "c83e7c7350d98b65f5d8da0b93e4a2581a19dd250be320fb7fc492c9b34a29c1",
+  "sourceAnswerPdfSha256": "cc2890296d06a4823df5697a78a1c01ddfd39f041c51f48c87984daa3a5707c6",
+  "sourcePageImageSha256": {
+    "data/raw_pdfs/denken3/review/20260322/theory/p19.png": "8c9b996e94978927f49273c81a417c493746a4e223b97f9de11d0a5e2eaf6d80"
+  },
+  "revisionHistory": [
+    {
+      "version": 1,
+      "model": "claude-opus-5-5",
+      "resolvedModel": "claude-opus-5-5",
+      "modelUsage": {
+        "claude-opus-5-5": {
+          "inputTokens": 2,
+          "outputTokens": 3253,
+          "cacheReadInputTokens": 1279,
+          "cacheCreationInputTokens": 12940,
+          "webSearchRequests": 0,
+          "costUSD": 0.1688438,
+          "contextWindow": 1000000,
+          "maxOutputTokens": 128000,
+          "thinkingTokens": 1537,
+          "canonicalModel": "claude-opus-5-5",
+          "provider": "firstParty",
+          "costBasis": "list"
+        }
+      },
+      "rawResponseSha256": "09fc74dd092f30218a4f8181c13db6dfb9f6ae042da2937b4a5bdca4db77a1bd",
+      "inputRequestSha256": "ace1728dd699f91024a6641d7cd7c1faf23db54dec4246d19e7a9f91db22081b",
+      "previousDraftSha256": "0b51733787d429b16afdbdc4bf38e8c214af840509a47bb48029e20815a75120",
+      "previousDraft": "data/raw_pdfs/denken3/review/20260322/theory/archive/q14-vision-draft-v1.json",
+      "answeredReviewSha256": "53ad264ddbe67190a155d293c94106615b5c784279651bfc2a569273bcea8a40",
+      "answeredReview": "data/raw_pdfs/denken3/review/20260322/theory/archive/q14-opus-review-v1.json",
+      "answeredStrictReceipt": "docs/evidence/denken3/strict/20260322-theory-s1-q14-opus.json",
+      "answeredStrictReceiptSha256": "e69e66565e27beaf3a095589035db6089eb9d3dab23098cc6860443adb83643a",
+      "figureSha256": {
+        "20260322-theory-q14-fig1": "fada36d722d29a59ae6ee1e4f0b60e61b3a87b122d7340a6436f66761e871f6b"
+      },
+      "referenceHashes": {},
+      "operatorNote": ""
+    },
+    {
+      "version": 2,
+      "model": "claude-opus-5-5",
+      "resolvedModel": "claude-opus-5-5",
+      "modelUsage": {
+        "claude-opus-5-5": {
+          "inputTokens": 2,
+          "outputTokens": 2482,
+          "cacheReadInputTokens": 1279,
+          "cacheCreationInputTokens": 12818,
+          "webSearchRequests": 0,
+          "costUSD": 0.1524478,
+          "contextWindow": 1000000,
+          "maxOutputTokens": 128000,
+          "thinkingTokens": 739,
+          "canonicalModel": "claude-opus-5-5",
+          "provider": "firstParty",
+          "costBasis": "list"
+        }
+      },
+      "rawResponseSha256": "848b7b1aaf89fada48ceba00d8a24b91662f83ec129e42943064086e5f900509",
+      "inputRequestSha256": "237a08c3b2e9f4ee9814f52941dcaf5571cab5b0e5fedff17851ef03f1020f72",
+      "previousDraftSha256": "8df4d105892302711875deb49b8f2beef98c2ca42a2b35ca4ea91f14d729782a",
+      "previousDraft": "data/raw_pdfs/denken3/review/20260322/theory/archive/q14-vision-draft-v2.json",
+      "answeredReviewSha256": "f7ad5c02023b3c640ce7fa290ce2e30d6cd3a49996cf5eb41148e19eebbfae08",
+      "answeredReview": "data/raw_pdfs/denken3/review/20260322/theory/archive/q14-opus-review-v2.json",
+      "answeredStrictReceipt": "docs/evidence/denken3/strict/20260322-theory-s2-q14-opus.json",
+      "answeredStrictReceiptSha256": "8ab92695b4382a3428083d159be50e84fb30ec7de281933890e81a7297c348f1",
+      "figureSha256": {
+        "20260322-theory-q14-fig1": "fada36d722d29a59ae6ee1e4f0b60e61b3a87b122d7340a6436f66761e871f6b"
+      },
+      "referenceHashes": {},
+      "operatorNote": ""
+    }
+  ]
+}

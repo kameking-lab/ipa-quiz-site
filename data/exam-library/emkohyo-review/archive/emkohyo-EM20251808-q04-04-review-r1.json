@@ -1,0 +1,61 @@
+{
+  "reviewModel": "claude-opus-5-5",
+  "requestedModel": "claude-opus-5-5",
+  "canonicalModel": "claude-opus-5-5",
+  "provider": "firstParty",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 2574,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 12755,
+      "webSearchRequests": 0,
+      "costUSD": 0.1537838,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 1751,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponsePath": "data/exam-library/emkohyo-review/emkohyo-EM20251808-q04-04-raw-response.txt",
+  "rawResponseSha256": "4f2b8e8e65c99ece1c9da171de6bc79ed857fd795fd44ac39ec6688df4cfefe6",
+  "paperId": "emkohyo-EM20251808",
+  "ids": [
+    "emkohyo-EM20251808-q4"
+  ],
+  "figureSha256": {
+    "emkohyo-EM20251808-q4": {}
+  },
+  "officialRowImageSha256": {
+    "emkohyo-EM20251808-q4": {
+      "/exam-library/emkohyo-EM20251808/q4-p3-1.webp": "a506480db6f40f9fdd8cab82ead49e131d1cbef83a253ab130bb2a629ad1635a"
+    }
+  },
+  "officialPageImageSha256": {},
+  "governmentSourceImageSha256": {},
+  "candidateSha256": {
+    "emkohyo-EM20251808-q4": "586bbaf5170cec59e05d56511bdd3d8911ee2573f38a2c33e390ff8fa7505773"
+  },
+  "sourcePackPath": "docs/evidence/emkohyo-choice-sources/emkohyo-EM20251808-q04-04.json",
+  "sourcePackSha256": "7fac2884ccc69d5ede9fc3f3cb89cfd4c996da19269309f3f9e5cb6c09d0b6d9",
+  "assessment": {
+    "emkohyo-EM20251808-q4": {
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "reasonIssues": [
+        "肢4の理由は『原子化・励起し、そこから出る発光スペクトル線の強度で定量する』と原子の発光しか説明していないのに、肢Ⓑの『励起された原子及びイオンの発光』全体を正しいと結論している。ICP の高温プラズマでは原子の一部がイオン化し、励起イオンの発光線（イオン線）も測定に用いられる。この点を理由に加えないと、『イオンの発光』の部分が正しい根拠が示されない。"
+      ],
+      "sourceIssues": [
+        "肢4の根拠である厚生労働省 食品添加物公定書『39．誘導結合プラズマ発光強度測定法』の抜粋は『原子化し，及び励起し…原子発光スペクトル線の発光強度』とだけ述べ、イオンの励起・発光には触れていない。肢Ⓑの『及びイオンの発光』を直接支える政府資料がない。",
+        "肢1の根拠である農研機構『色素の基礎知識』の抜粋『吸収された残りの波長の光が反射し、人間の目に色として映ります』は、植物色素による反射光の説明である。理由文の『溶液に見える色は…透過…して残った波長の光の色』という溶液（透過光）の補色関係は直接述べていない。厚生労働省『紫外可視吸光度測定法』の定義も吸収の度合を測る方法とするだけで、溶液色と吸収波長が補色関係にあることは述べていない。肢1が誤りである因果は一般原理として正しいが、政府資料による直接の裏付けは部分的である。"
+      ],
+      "needsExternalCheck": [
+        "ICP発光分析法で励起された原子だけでなくイオンの発光（イオン線）も測定に用いることを明記した政府一次資料（例：環境省・厚生労働省の ICP 発光分光分析法の告示・マニュアル等）を確認し、肢4の根拠に追加する。",
+        "吸光光度法で溶液が吸収する光は溶液の色の補色の波長であり、見える色は透過光の色であることを明記した政府資料があれば確認し、肢1の根拠を補強する。"
+      ]
+    }
+  }
+}

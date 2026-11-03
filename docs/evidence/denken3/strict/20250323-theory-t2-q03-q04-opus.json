@@ -1,0 +1,93 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20250323",
+  "subject": "theory",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 5182,
+      "cacheReadInputTokens": 129451,
+      "cacheCreationInputTokens": 17792,
+      "webSearchRequests": 0,
+      "costUSD": 0.27187419999999995,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 3007,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "d7d4996d169007584d5ccd193527ffbc13a751ee6757cdd8c16eb397d06122b4",
+  "inputRequestSha256": "cd99f76e42c1abc46bf351e006091843e9d54ad8440a6eb4197c91119a56d452",
+  "inputHashes": {
+    "candidateSha256": {
+      "q03": "ec12310d32dd49a09ff7c8ec83308fce51faf8962b61ecf05da84945dc88155d",
+      "q04": "a5971ca050126432258116d28de538884dbc1b5349d0a41cdad85d68c27dc7b7"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20250323/theory/p06.png": "5377ea6a69c2146e02ce02468f83b29c8e12c330a6c0fb0d9a7260317ed52ad1",
+      "data/raw_pdfs/denken3/review/20250323/theory/p07.png": "aed50f63915af6d55ada3b212947cb7fc3f6cf28bdb9438edc26db9d2c423e74"
+    },
+    "figureSha256": {},
+    "sourceQuestionPdfSha256": "8817012cb55eed9c83bb1e68df138909b1e03a81f7ed48a9893a219e1d2a76ca",
+    "sourceAnswerPdfSha256": "4c3b38fcf1405766fafaa78b1b05b867a3d48307a670b9d354476bc6b32acd4c",
+    "officialAnswerUnitsSha256": "a46839b23214617f74828671c7aa5ce001e755fa6d4442bdd30d56b4785e6b87",
+    "referencePdfSha256": {},
+    "referencePageSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q03",
+      "questionNumber": 3,
+      "part": null,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "問題文: 添付原図（印刷頁 -3-、reviewedFromPage=6）と照合した。巻数30、0.1秒間、1 Wb、『直線的に変化』、『起電力の大きさ[V]』、『最も近いもの』まで一致。句読点が全角読点になっているのは表記整形の範囲。",
+        "選択肢: (1)250 (2)300 (3)350 (4)400 (5)450 が原図と完全に一致。",
+        "公式正答: manifest の answer=\"2\" と候補の officialAnswer=\"2\" が一致。",
+        "計算: ΔΦ/Δt = 1/0.1 = 10 Wb/s、e = N|ΔΦ/Δt| = 30×10 = 300 V → (2)。総合解説・正答肢解説とも正しい。",
+        "誤答肢: 250/350/400/450 はどれも 300 V と一致しないという数値比較の理由を肢ごとに示しており、誤りはない（典型的な誤算で導かれる値でもない）。",
+        "図: 原図は問題文と選択肢だけで図・表がない。figureUrls=[] と figureDescription の記述は妥当。",
+        "出典: officialReferenceUrls は空で、解説は外部資料を要しない基本法則（ファラデーの法則）だけに依拠している。外部確認事項はない。令和6年度下期＝2025-03-23 実施、fiscalYear=2024、term=lower の対応も整合。"
+      ]
+    },
+    {
+      "unitKey": "q04",
+      "questionNumber": 4,
+      "part": null,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [
+        "選択肢(5)の解説で『電磁力（ローレンツ力）』と併記しているが、通電導体に働く力は電磁力（アンペール力）と呼ぶのが通例。ローレンツ力は荷電粒子1個に働く力を指すので、併記は用語として不正確。『電磁力』だけにするか、『電荷に働くローレンツ力の総和としての電磁力』と明記すべき。",
+        "選択肢(5)の解説にある『力が働かないのは、電流が0のときなどに限られる』は『など』が曖昧で、根拠のない一般化になっている。本問では I≠0 で距離 d も有限なので F=μ0I²/(2πd)≠0、と本問の条件に即して書くべき。"
+      ],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [
+        "解答に図が必須（Aが左・Bが右という配置と、座標軸 x右・z上・y紙面裏向き）で、候補の figureDescription 自身も『文章だけでは代替できない』と書いている。それなのに figureUrls=[] で公開候補図がない。公開候補図だけでは問題を理解できないので、原図から導体A・B、電流Iラベル、破線、座標定義枠（z上・x右・y⊗）を含む図を作成・掲載する必要がある。",
+        "figureDescription に『(5)は表の外に「どちらの導体にも力は働かない。」と書かれている』とあるが、原図では(5)は表の最終行（列を結合した行で、上下に罫線あり）として表の中にある。記述が原図と一致しない。",
+        "figureDescription は座標定義枠を『右上の破線の枠内』としているが、原図の枠は導体A・Bと同じ高さの右側にあり、枠の中心は導体の破線とほぼ同じ高さ。『右側』とするのが正確。",
+        "図が未掲載なのに uncertainty が『特になし』、needsReview=false になっている。図の欠落が解消するまで needsReview=true とし、uncertainty に図が未掲載であることを記録すべき。"
+      ],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "問題文: 添付原図（印刷頁 -4-、reviewedFromPage=7）と照合した。『y方向に平行に配置』『同じ大きさの電流Iが共に+y方向』『各導体に加わる力の方向』『なお，xyz座標の定義は，破線の枠内の図で示したとおり』まで一致。",
+        "選択肢: 原図の表（列は導体A／導体B）で、(1)+x/+x (2)+x/−x (3)−x/+x (4)−x/−x (5)どちらの導体にも力は働かない。候補の『導体A：…、導体B：…』形式への変換は内容が完全に一致。",
+        "公式正答: manifest の answer=\"2\" と候補の officialAnswer=\"2\" が一致。",
+        "座標系: 紙面の右を e1、上を e2、手前を e3 とすると x=e1、z=e2、y=−e3。x×y = e1×(−e3) = e2 = z となり右手系。原図の枠内定義（z上、x右、y⊗）と整合。",
+        "検算: 電流が+y（紙面裏向き）なので、紙面手前から見た磁界は時計回り。Aの右側にあるBの位置では磁界が−z、F ∝ y×(−z) = −x。Bの左側にあるAの位置では磁界が+z、F ∝ y×z = +x。よってA:+x、B:−x → (2)。総合解説の因果・向き・大きさ μ0I²/(2πd) はすべて正しい。",
+        "誤答肢(1)(3)(4)の解説はそれぞれ固有の誤り（(1) Bの向き・同じ向きの力、(3) 反発は逆向き電流の場合、(4) Aの向き・同じ向きの力）を正しく指摘している。",
+        "出典: officialReferenceUrls は空で、解説は基本法則（右ねじの法則、F=IL×B、平行電流間の力）だけに依拠している。外部確認事項はない。"
+      ]
+    }
+  ]
+}

@@ -1,5 +1,5 @@
 import { ALL_QUESTIONS } from "@/data/questions";
-import { isPlaceholderExplanation } from "@/lib/questions/filter";
+import { isPracticeReadyQuestion } from "@/lib/questions/filter";
 import type { ExamCode, Question } from "@/lib/questions/types";
 
 /**
@@ -18,9 +18,8 @@ export function getRelatedQuestionsForPost(
   const pool = ALL_QUESTIONS.filter(
     (q) =>
       q.exam === exam &&
-      !q.needsReview &&
       !!q.choices &&
-      !isPlaceholderExplanation(q),
+      isPracticeReadyQuestion(q),
   );
   const scored = pool.map((q) => {
     let score = 0;

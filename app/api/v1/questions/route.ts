@@ -22,14 +22,13 @@ const ExamCodeSchema = z.enum([
   "sc",
   "sm",
   "au",
-  "fp3",
-  "denken3",
+  "fp1", "fp2", "fp3", "takken", "tohan", "kanri",
 ]);
 
 const QuerySchema = z.object({
   exam: ExamCodeSchema,
   year: z.coerce.number().int().min(1990).max(2100).optional(),
-  season: z.enum(["spring", "autumn", "cbt", "published", "first", "second"]).optional(),
+  season: z.enum(["spring", "autumn", "cbt", "published", "first", "second", "early", "may", "september", "january", "october", "late", "annual", "july", "primary", "kansai"]).optional(),
   session: z.string().min(1).max(20).optional(),
   category: z.string().min(1).max(60).optional(),
   limit: z.coerce.number().int().min(1).max(100).default(20),
@@ -104,6 +103,7 @@ function toPublic(q: Question) {
     season: q.season,
     qNumber: q.qNumber,
     type: q.type,
+    ...(q.type === "numeric" ? { numericAnswer: q.numericAnswer } : {}),
     category: q.category,
     topicTags: q.topicTags,
     difficulty: q.difficulty,

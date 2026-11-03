@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 import { getRelatedQuestionsForPost } from "@/lib/blog/related-questions";
-import { isPlaceholderExplanation } from "@/lib/questions/filter";
+import { isPracticeReadyQuestion } from "@/lib/questions/filter";
 import { ALL_QUESTIONS } from "@/data/questions";
 
 // "ap" always has a populated question pool in the bundled data.
@@ -11,9 +11,8 @@ const EXAM = "ap" as const;
 const LINKABLE_AP = ALL_QUESTIONS.filter(
   (q) =>
     q.exam === EXAM &&
-    !q.needsReview &&
     !!q.choices &&
-    !isPlaceholderExplanation(q),
+    isPracticeReadyQuestion(q),
 );
 
 describe("getRelatedQuestionsForPost (blog → /q internal-link network)", () => {
@@ -31,9 +30,8 @@ describe("getRelatedQuestionsForPost (blog → /q internal-link network)", () =>
     // explanation — these all become live /q/* landing pages.
     for (const q of getRelatedQuestionsForPost(EXAM, [], 50)) {
       expect(q.exam).toBe(EXAM);
-      expect(q.needsReview).not.toBe(true);
       expect(q.choices).toBeTruthy();
-      expect(isPlaceholderExplanation(q)).toBe(false);
+      expect(isPracticeReadyQuestion(q)).toBe(true);
     }
   });
 

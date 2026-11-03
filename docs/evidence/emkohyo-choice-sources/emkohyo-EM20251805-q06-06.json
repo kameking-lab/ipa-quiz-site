@@ -1,0 +1,72 @@
+{
+  "paperId": "emkohyo-EM20251805",
+  "range": [
+    6,
+    6
+  ],
+  "draftSha256": "3a6854ae20d1720b13bba8115dae5e0ee578d046b93d87f96492e1f0ed23c19b",
+  "sources": [
+    {
+      "url": "https://jopss.jaea.go.jp/pdfdata/JAEA-Data-Code-2013-011.pdf",
+      "status": 200,
+      "finalUrl": "https://jopss.jaea.go.jp/pdfdata/JAEA-Data-Code-2013-011.pdf",
+      "sha256": "f83b8374559e76f5b8573602b5e2187c58b7b005dc7f8985c82c017c998d3c1b",
+      "contentType": "application/pdf",
+      "pages": 64,
+      "revisionInfo": null,
+      "claimedExcerpts": [
+        {
+          "questionId": "emkohyo-EM20251805-q6",
+          "excerpt": "空気中の水素ガス、酸素、アルゴン拡散係数",
+          "matched": true,
+          "pdfPage": 23,
+          "context": "i：化学種iの熱伝導率Yi：化学種iの質量分率・混合気体の粘度μ：成分気体の混合則(mass-weighted-mixing-law)μi：化学種iの粘度Yi：化学種iの質量分率・混合気体の拡散係数（空気中の水素ガス、酸素、アルゴン拡散係数）：成分気体の混合則による拡散係数（multi-component）Dij：2成分物質拡散係数X：モル分率→V：拡散速度各化学種成分の相互拡散係数は、以下の多項式近似（温度関数）を文献値21)から算出"
+        }
+      ]
+    },
+    {
+      "url": "https://www.mhlw.go.jp/content/000616847.pdf",
+      "status": 200,
+      "finalUrl": "https://www.mhlw.go.jp/content/000616847.pdf",
+      "sha256": "c449a05c096d33015429d43b963e8bd336771483e66cdfa9d6e5eef76f688a87",
+      "contentType": "application/pdf",
+      "pages": 147,
+      "revisionInfo": null,
+      "sourceMode": "sha-pinned-text-cache",
+      "cachedTextSha256": "e96ac4d587e100b2c5dfa9f76af8ca4000f52e5304e414754be59a4cb24d97ed",
+      "claimedExcerpts": [
+        {
+          "questionId": "emkohyo-EM20251805-q6",
+          "excerpt": "サンプリング速度（D・A/L）は",
+          "matched": true,
+          "pdfPage": 39,
+          "context": "中濃度の計算式3.2式になる。C=MDAL∙t(3.2式)3.2式で、捕集量（M）は、捕集剤に吸着した測定対象物の質量で、捕集後、分析により求め、捕集時間（ｔは、測定時の記録により確認する。3.2式のサンプリング速度（D・A/L）は、捕集対象物質の拡散係数（D）と受動型試料採取機器の形状（A、L）によって求めることができるが、実際のサンプリング速度は、この値と若干異なるので、メーカーが示した物質ごとのサンプリング速度の実験値があ"
+        },
+        {
+          "questionId": "emkohyo-EM20251805-q6",
+          "excerpt": "拡散長（L）",
+          "matched": true,
+          "pdfPage": 38,
+          "context": "が安定しなくなることから定量的な捕集ができなくなってしまう。そのため、拡散部が気流の影響を受けないように捕集面に膜を設けたり、開口面を図3-3受動型試料採取機器の構造と捕集原理（矢印は物質の移動方向）拡散長（L）拡散面積(A)捕集剤拡散部捕集面捕集量（M）気中濃度(C)34分割して小さな開口部を多数設けたりするなどの対策がとられている。この膜や開口面に溶剤等が直接付着すると正確な測定はできないので注意する必要"
+        },
+        {
+          "questionId": "emkohyo-EM20251805-q6",
+          "excerpt": "拡散面積(A)",
+          "matched": true,
+          "pdfPage": 38,
+          "context": "なることから定量的な捕集ができなくなってしまう。そのため、拡散部が気流の影響を受けないように捕集面に膜を設けたり、開口面を図3-3受動型試料採取機器の構造と捕集原理（矢印は物質の移動方向）拡散長（L）拡散面積(A)捕集剤拡散部捕集面捕集量（M）気中濃度(C)34分割して小さな開口部を多数設けたりするなどの対策がとられている。この膜や開口面に溶剤等が直接付着すると正確な測定はできないので注意する必要がある。受動型"
+        },
+        {
+          "questionId": "emkohyo-EM20251805-q6",
+          "excerpt": "実際のサンプリング速度は、この値と若干異なる",
+          "matched": true,
+          "pdfPage": 39,
+          "context": "、分析により求め、捕集時間（ｔは、測定時の記録により確認する。3.2式のサンプリング速度（D・A/L）は、捕集対象物質の拡散係数（D）と受動型試料採取機器の形状（A、L）によって求めることができるが、実際のサンプリング速度は、この値と若干異なるので、メーカーが示した物質ごとのサンプリング速度の実験値があればその値を優先して用いるべきである。受動型試料採取機器による個人サンプリング法は、測定開始時刻と測定終了時刻を記録しておき、捕集時間（ｔ）"
+        }
+      ]
+    }
+  ],
+  "claimedExcerpts": 5,
+  "missingEvidenceQuestions": [],
+  "unverifiedExcerpts": 0
+}

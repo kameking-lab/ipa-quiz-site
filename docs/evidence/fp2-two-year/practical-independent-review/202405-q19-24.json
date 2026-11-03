@@ -1,0 +1,91 @@
+[
+  {
+    "number": 19,
+    "approved": false,
+    "issues": [
+      "The family tree image cannot be checked. From the OCR text alone, we cannot tell whether '(相続放棄)' and each '(すでに死亡)' belong to the older brother, the parents, the spouse, or the older brother's wife.",
+      "The official answer, (ア)3/4 and (イ)1/4, holds only if the older brother renounced and the parents are dead. If the spouse had renounced, (ア) would be 0. If the older brother had died before the decedent, nephews A and B would inherit by representation and the younger brother's share would be 1/8. The layout is only inferred backwards from the answer.",
+      "The explanation does not state why nephews A and B do not inherit. Renunciation does not trigger inheritance by representation (Civil Code Article 887(2), applied to siblings through Article 889(2)). It also does not state that the older brother's wife is not an heir.",
+      "Blank (ウ) should cite the rule that siblings have no reserved share (Civil Code Article 1042)."
+    ],
+    "suggestedCorrection": "Check the image to confirm who each mark in the tree belongs to: '(すでに死亡)' should be the father and mother, and '(相続放棄)' should be the older brother. Then write: 'The decedent has no children and both parents are dead, so the heirs are the spouse and the siblings (Civil Code Articles 889 and 890). The older brother renounced, so he is treated as never having been an heir (Article 939). Renunciation is not a cause of inheritance by representation, so nephews A and B do not inherit in his place (Articles 887(2) and 889(2)). The older brother's wife is not an heir. (ア): the spouse's statutory share with siblings is 3/4. (イ): the younger brother is the only sibling heir and takes the siblings' whole 1/4. (ウ): siblings have no reserved share (Article 1042), so zero.'",
+    "sourceQueries": [
+      "日本FP協会 2級 実技 資産設計提案業務 2024年5月 問19 親族関係図",
+      "民法 939条 相続放棄の効力 代襲相続 887条2項 889条2項",
+      "民法 1042条 兄弟姉妹 遺留分なし"
+    ]
+  },
+  {
+    "number": 20,
+    "approved": false,
+    "issues": [
+      "Choice 1 (40,000 yen) is explained only in general terms and does not say which mistake produces it. It can be reproduced by using 25 million yen as the spousal deduction, which is the special deduction of the settlement taxation system: (26.5M − 25M − 1.1M) × 10% = 40,000 yen. The explanation should give this.",
+      "The explanation does not state the conditions for the spousal gift deduction. These are a marriage of at least 20 years and continued residence in the property. The question only says 'if the deduction is applied', so the explanation should say these conditions are assumed to be met.",
+      "The explanation does not state that the 1.1 million yen basic exemption can be combined with the spousal deduction, which gives the 21.1 million yen total deduction mentioned in the question's 'lowest tax' instruction.",
+      "The calculations are correct: the general rate 540万円×30%−65万円=97万円 (answer 3); choice 2 is 540万円×20%−30万円=78万円; choice 4 is 650万円×40%−125万円=135万円."
+    ],
+    "suggestedCorrection": "Change choice 1 to: 'Wrong. This amount comes from mistaking the spousal deduction for 25 million yen, the special deduction of the settlement taxation system: (2,650万円−2,500万円−110万円)×10%=4万円. The spousal deduction is capped at 20 million yen.' Add to the explanation: 'The spousal deduction requires a marriage of at least 20 years, among other conditions; the question assumes these are met. It can be combined with the 1.1 million yen basic exemption (Inheritance Tax Act Article 21-6 and Special Taxation Measures Act Article 70-2-4). A gift between spouses is not a gift from a lineal ascendant, so the general rate applies.'",
+    "sourceQueries": [
+      "相続税法 21条の6 贈与税の配偶者控除 婚姻期間20年",
+      "租税特別措置法 70条の2の4 贈与税 基礎控除 110万円",
+      "贈与税 一般税率 特例税率 速算表 国税庁 タックスアンサー"
+    ]
+  },
+  {
+    "number": 21,
+    "approved": true,
+    "issues": [
+      "The explanation should say that the 'C' in the '300C' road-price mark stands for a 70% leasehold ratio, and that this matches note 2.",
+      "The frontage is 10m and the depth 15m. The depth falls in the 14m–16m band, which gives the depth adjustment factor of 1.00. The OCR has the dimensions in an unclear order, but the area of 150m² and the factor do not change either way."
+    ],
+    "suggestedCorrection": "Add to the explanation: 'The C in the road-price mark 300C means a leasehold ratio of 70% (matching note 2). The depth is 15m, so the adjustment factor is 1.00.' The choice explanations can stay as they are.",
+    "sourceQueries": [
+      "財産評価基本通達 27 借地権の評価",
+      "財産評価基本通達 26 貸家建付地の評価",
+      "路線価図 借地権割合 記号 C 70%"
+    ]
+  },
+  {
+    "number": 22,
+    "approved": true,
+    "issues": [
+      "The question text OCR has the Koyama family data and cash-flow table from the next questions (23–24) mixed in. This needs cleaning up.",
+      "The explanation should give the rule for the tax-free life insurance limit. It is ¥5 million × the number of statutory heirs, and a person who renounced still counts (Inheritance Tax Act Article 15(2)). The tax-free amount can be used only by heirs, not by a renouncer. It is shared out as 1,500万円 × each heir's payout ÷ total payouts to heirs (1,200万円). Because 1,500万円 ≥ 1,200万円, all of the heirs' payouts are tax-free.",
+      "The explanation should state that the renouncing eldest daughter bears no debts or funeral costs, so none are deducted from her amount.",
+      "Choices 2, 3 and 4 do not say which mistake produces them. Choice 2 applies the ¥5 million tax-free amount to each of the three, including the renouncer. Choices 3 and 4 are best described as failing to share out the tax-free amount properly or to deduct debts. The explanation should show each calculation."
+    ],
+    "suggestedCorrection": "Replace the explanation with: 'Tax-free limit = ¥5M × 3 statutory heirs (the renouncer counts) = ¥15M. The eldest daughter renounced, is not an heir, and cannot use the tax-free amount. The payouts to heirs (spouse and eldest son) total ¥12M, which is within ¥15M, so all of it is tax-free. Spouse: land 3,000 + building 500 + cash 400 − debts and funeral costs 100 = ¥38M. Eldest son: cash 400 − 100 = ¥3M. Eldest daughter: insurance ¥6M, all taxable. Answer: 1.' For choice 2, add: 'This gives ¥5M of tax-free amount to each of the three, including the renouncer: spouse 3,900, eldest son 400, eldest daughter 100.'",
+    "sourceQueries": [
+      "相続税法 12条1項5号 15条2項 生命保険金 非課税限度額 相続放棄",
+      "相続税法 13条 債務控除 相続放棄者",
+      "国税庁 タックスアンサー 相続税の課税対象になる死亡保険金"
+    ]
+  },
+  {
+    "number": 23,
+    "approved": false,
+    "issues": [
+      "In the OCR, (ア) appears right after 384, so it could be in the 2025 column (year 1). The text does not show which column it is in, and the draft picks '2 years' only by working back from the official answer. If it were year 1, the answer would be 384×1.02=391.68→392万円.",
+      "If (ア) is year 2 (2026), the calculation is correct: 384×1.02²=384×1.0404=399.5136 → rounded to the nearest 10,000 yen = 400万円. The unit (万円), the compound growth rate of 2% and the rounding are all handled correctly."
+    ],
+    "suggestedCorrection": "Check the image to confirm that (ア) is in the 2026 (year 2) column. Then write: 'Basic living costs grow at 2% a year, compounded from the base year (2024) value of 384万円. (ア) is two years later (2026): 384万円 × (1+0.02)² = 399.5136万円, rounded to 400万円.'",
+    "sourceQueries": [
+      "日本FP協会 2級 実技 資産設計提案業務 2024年5月 問23 キャッシュフロー表 基本生活費",
+      "キャッシュフロー表 変動率 将来値 計算式 基準年の金額×(1+変動率)^経過年数"
+    ]
+  },
+  {
+    "number": 24,
+    "approved": false,
+    "issues": [
+      "The OCR does not show which column (イ) is in. The draft picks 2027 by working back from the official answer.",
+      "The schools each child attends each year can be worked out from the birth dates and the life events, and the explanation should show this. Naoya, born September 2010, enters high school in April 2026, so he is in his second year of high school (Private B) in 2027. Nana, born April 2012, enters junior high in April 2025 and high school in 2028, so she is in her third year of junior high (Private A) in 2027.",
+      "The calculation is correct: (1,466,909 + 1,243,500) × 1.01³ = 2,710,409 yen × 1.030301 = 2,792,537 yen ≈ 279万円. Checking the other columns: 2026 gives 276万円, and 2028 (C high + B high) gives 245万円. Only 2027 matches 279."
+    ],
+    "suggestedCorrection": "Check the image to confirm that (イ) is in the 2027 (year 3) column. Then add the enrollment reasoning: 'From the birth dates, in 2027 Naoya (age 17) is in his second year at Private B High School and Nana (age 15) is in her third year at Private A Junior High School. (イ) = (1,466,909 + 1,243,500) × 1.01³ = 2,792,537 yen ≈ 279万円. Public school costs are not given, so they are not included.'",
+    "sourceQueries": [
+      "日本FP協会 2級 実技 資産設計提案業務 2024年5月 問24 教育費 キャッシュフロー表",
+      "キャッシュフロー表 教育費 変動率 複利計算"
+    ]
+  }
+]

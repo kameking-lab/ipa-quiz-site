@@ -6,8 +6,9 @@ export const contentType = "image/png";
 
 const ALLOWED_DAYS = new Set(["7", "30", "100"]);
 
-export default function StreakOgImage({ params }: { params: { days: string } }) {
-  const safeDays = ALLOWED_DAYS.has(params.days) ? params.days : "7";
+export default async function StreakOgImage({ params }: { params: Promise<{ days: string }> }) {
+  const { days } = await params;
+  const safeDays = ALLOWED_DAYS.has(days) ? days : "7";
   const heroLabel =
     safeDays === "100" ? "100日連続学習達成🔥" :
     safeDays === "30" ? "30日連続学習達成🔥" :
@@ -63,7 +64,7 @@ export default function StreakOgImage({ params }: { params: { days: string } }) 
               fontWeight: 800,
             }}
           >
-            {safeDays}日達成
+            {`${safeDays}日達成`}
           </div>
         </div>
         <div

@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "receiptKind": "canonicalized-direct-review",
+  "paper": "20240526",
+  "reviewModel": "claude-opus-5-5",
+  "upstreamReviewReceipt": "docs/evidence/denko2-strict-20240526/round2-q39-45-46-47-48-opus.json",
+  "upstreamReviewSha256": "49643193ed92ec7141da14e27847ec576742a9787849efec851a4b656d3b613d",
+  "candidateEquivalenceProof": "current per-question candidate hash equals a clean source-aware direct Opus input hash",
+  "inputHashes": {
+    "draftSha256": "9fd5aeb384f5d781f91135cc9289f847517ec7b898cc9f0bd1db305dc4683a6d",
+    "rowSha256": {
+      "47": "79d2ad79c8fb9e001e754612f7e96e94eef7d6c06fcb1b8b3ac552867eab2751"
+    },
+    "detailFigureSha256": {
+      "public/images/denko2/2024-first/wiring-main.png": "96f2acfccdeb2327128a8106364d853365146f947233b9b231a3b1a48d4173b7",
+      "public/images/denko2/2024-first/wiring-panels.png": "17d82087689eb0571154d640cc3822ce5a9c3d7355a0ad1ac7a22577d8e986fe",
+      "public/images/denko2/2024-first/q47-i.png": "d4b86d4c1184ed6cab0621a9dcf076e8bafcfd9638c5a99589795728aae0bb82",
+      "public/images/denko2/2024-first/q47-ro.png": "a903622c0dd9e940422ad7d06a160dac21089231ba734025c4b6abcb078c8576",
+      "public/images/denko2/2024-first/q47-ha.png": "2a68f631b8be021bd03167c10effd1f88b37b92806d020cb747d965428bd6f5f",
+      "public/images/denko2/2024-first/q47-ni.png": "ab5752a4b8ecd16a366841e55507b8260e6b14854da326ae2af5b1a61ca067c4"
+    },
+    "sharedFigureSha256": {},
+    "legalReceiptSha256": {}
+  },
+  "assessment": [
+    {
+      "number": 47,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "visualIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": "Checked against the official question PDF (common wiring diagram p.15: ⑰ = the ●● with L and エオ near the toilet/wash-area partition; 問47 photos and contact diagrams) and the official answer (問47=ニ). The contact diagrams are, in order: イ 3-way, ロ lamp in parallel with the contacts, ハ single-pole without lamp, ニ lamp branching from the load side to terminal 3. The crops match the original."
+    }
+  ]
+}

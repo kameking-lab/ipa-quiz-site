@@ -11,7 +11,7 @@ import { ESSAY_EXAM_CODES, getEssayQuestionsByExam } from "@/lib/essay/load";
 import { examLabel } from "@/lib/utils";
 
 const ESSAY_DESCRIPTION =
-  "ST/SA/PM/SM/AU の午後II論述問題を AI が IPA 元採点者プロンプトで添削。設問ア・イ・ウを業種別にフィードバック。";
+  "ST/SA/PM/SM/AU の午後II論述問題を AI が学習用の4観点で添削。設問ア・イ・ウを業種別にフィードバック。";
 
 const ESSAY_OG_TITLE = "AI 論述添削（午後II）";
 const ESSAY_OG_IMAGE = `${SITE_BASE_URL}/api/og?${new URLSearchParams({
@@ -34,7 +34,7 @@ const ESSAY_FAQ: { question: string; answer: string }[] = [
   {
     question: "AI の採点はどのくらい正確ですか？",
     answer:
-      "AI（Gemini Flash-Lite）による参考評価です。「適合度・論理性・具体性・業種事例」の4軸でフィードバックしますが、IPA 公式の採点基準とは異なる場合があります。合否判定の根拠にはご利用にならず、学習の参考としてお使いください。",
+      "AIによる参考評価です。「適合度・論理性・具体性・業種事例」の4軸でフィードバックしますが、掲載問題・解答骨子・評価観点は編集者作成のオリジナル教材です。年度は整理用のラベルで、公式過去問・公式採点講評ではありません。合否判定の根拠にはご利用にならず、学習の参考としてお使いください。",
   },
   {
     question: "ほかの過去問サイトと何が違うのですか？",
@@ -158,8 +158,8 @@ export default function EssayHomePage() {
       >
         <AlertTriangle className="mt-0.5 h-4 w-4 shrink-0 text-amber-600 dark:text-amber-300" />
         <p>
-          <strong>本機能は AI（Gemini Flash-Lite）による参考評価です。</strong>
-          IPA 公式の採点基準とは異なる場合があります。合否判定の根拠としてはご利用にならず、
+          <strong>本機能は AIによる参考評価です。</strong>
+          掲載問題・解答骨子・評価観点は編集者作成のオリジナル教材です。年度は整理用のラベルで、公式過去問・公式採点講評ではありません。合否判定の根拠としてはご利用にならず、
           学習の参考としてご活用ください。
         </p>
       </div>
@@ -173,8 +173,12 @@ export default function EssayHomePage() {
           AI 論述添削 <span className="text-sky-600 dark:text-sky-400">（午後II）</span>
         </h1>
         <p className="mx-auto max-w-2xl text-sm leading-relaxed text-zinc-600 dark:text-zinc-400 sm:text-base">
-          高度試験の合否を分ける論述。IPA 元採点者プロンプトで AI が「適合度／論理性／具体性／業種事例」の 4 軸で採点。
+          高度試験の合否を分ける論述を、AI が学習用の「適合度／論理性／具体性／業種事例」の 4 観点で評価。
           設問ア・イ・ウそれぞれに、良かった点・改善点・足りなかった要素を提示します。
+        </p>
+        <p className="mx-auto mt-2 max-w-2xl text-xs leading-relaxed text-zinc-500 dark:text-zinc-400">
+          編集者が作成した独自の練習問題で、論述の構成と具体性を学べます。
+          年度は教材を整理するためのラベルです。
         </p>
         <div className="mt-5 flex justify-center gap-3">
           <Button asChild variant="outline" size="sm">
@@ -231,7 +235,7 @@ export default function EssayHomePage() {
         <h2 className="mb-2 text-base font-semibold">AI 添削の仕組み</h2>
         <ol className="list-decimal space-y-1 pl-5 text-zinc-600 dark:text-zinc-400">
           <li>業種を選択して、設問ア・イ・ウを記述（自動保存）</li>
-          <li>AI（IPA 元採点者プロンプト）が 4 軸で採点 → A/B/C/不合格 のランク判定</li>
+          <li>AI が学習用の 4 観点で評価 → A/B/C/不合格 の参考ランクを表示</li>
           <li>設問ごとの良かった点・改善点・不足要素・改善版例を表示</li>
           <li>採点結果は履歴に保存され、ランク推移を確認可能</li>
         </ol>
@@ -298,7 +302,7 @@ export default function EssayHomePage() {
       </p>
 
       <p className="mt-6 text-center text-xs text-zinc-500 dark:text-zinc-400">
-        出典: IPA 情報処理技術者試験
+        問題・解答骨子・評価観点: 過去問AIのオリジナル教材
       </p>
     </main>
   );

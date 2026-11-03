@@ -1,0 +1,45 @@
+{
+  "paperId": "emkohyo-20260217-4",
+  "range": [
+    14,
+    14
+  ],
+  "draftSha256": "d4c0f85345f54b96b05307300ccf8357e2f583a44e6d9bf9d972e7fbf6489154",
+  "sources": [
+    {
+      "url": "https://riss.aist.go.jp/wp-content/uploads/2021/08/CNF_Hazard_Assessment_Procedure_20200409.pdf",
+      "status": 200,
+      "finalUrl": "https://riss.aist.go.jp/wp-content/uploads/2021/08/CNF_Hazard_Assessment_Procedure_20200409.pdf",
+      "sha256": "55ca52aa984ee2893dec64485532d695e2e342296b65e3ac48bbb5f3927194e2",
+      "contentType": "application/pdf",
+      "pages": 128,
+      "revisionInfo": null,
+      "sourceMode": "sha-pinned-text-cache",
+      "cachedTextSha256": "dcb0b5cb8821922286fd388f488fd2f7b0c0f91afc15f534d2f4733491490425",
+      "claimedExcerpts": [
+        {
+          "questionId": "emkohyo-20260217-4-q14",
+          "excerpt": "8.2 原理 \n液体中に分散されたCNF またはその凝集体に光を照射すると、CNF に応じた特定の波長の光が吸\n収され、透過光は入射光とは異なる波長分布を持つ。このとき、吸収される光強度はランバート－ベ\nールの法則に従い、吸光度A はCNF の濃度C に比例する。 \n \n𝐴𝐴= 𝜖𝜖𝜖𝜖𝜖𝜖  \n \n \n \n(2) \nここに、𝜖𝜖は吸光係数、l は光路長である。 \n透過光強度および入射光強度から式(1)で定義される吸光度は求められ、ランバート－ベールの式\n(2)に基づいてCNF 濃度を決定する。 \n",
+          "matched": true,
+          "pdfPage": 111,
+          "context": "投与されたCNFは、染色されたCNF（手順資料§1.2「染色CNF分散液」参照）手順資料103であり、可視域において染料固有の吸収波長を有する。そこで、CNF含有量の測定では可視域の吸光度に着目する。8.2原理液体中に分散されたCNFまたはその凝集体に光を照射すると、CNFに応じた特定の波長の光が吸収され、透過光は入射光とは異なる波長分布を持つ。このとき、吸収される光強度はランバート-ベールの法則に従い、吸光度AはCNFの濃度Cに比例する。𝐴𝐴=𝜖𝜖𝜖𝜖𝜖𝜖(2)ここに、𝜖𝜖は吸光係数、lは光路長である。透過光強度および入射光強度から式(1)で定義される吸光度は求められ、ランバート-ベールの式(2)に基づいてCNF濃度を決定する。8.3標準分散液の調製CNFの濃度評価に用いる標準分散液の調製は以下による。a)所定量の染色CNFを入れたビーカーに分散媒を加え、所定濃度の標準分散液を作成する。b)適当な分散方法によって、染色CNF"
+        }
+      ]
+    }
+  ],
+  "claimedExcerpts": 1,
+  "missingEvidenceQuestions": [],
+  "unverifiedExcerpts": 0,
+  "sourcePageImages": [
+    {
+      "path": "docs/evidence/emkohyo-choice-sources/aist-absorbance-p109.png",
+      "sha256": "b7a837d1579876d4ace0ed0f2820ea581b9f410310a4fa6fe161d05307225dde",
+      "description": "産総研吸光光度原資料 PDF p109 原式・本文"
+    },
+    {
+      "path": "docs/evidence/emkohyo-choice-sources/aist-absorbance-p111.png",
+      "sha256": "ed701f0c354da0ea65a289ff76d27b4f49979aecdce1ce0390f8f6a73da0e3d2",
+      "description": "産総研吸光光度原資料 PDF p111 原式・本文"
+    }
+  ]
+}

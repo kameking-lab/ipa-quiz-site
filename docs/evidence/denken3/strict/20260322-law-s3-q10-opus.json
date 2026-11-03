@@ -1,0 +1,71 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20260322",
+  "subject": "law",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 7142,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 20800,
+      "webSearchRequests": 0,
+      "costUSD": 0.3095038,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 5474,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "bab19ecab6dfbc311dfc06402f972b35273aedc86aed79f14dc898b1646e6931",
+  "inputRequestSha256": "3ef9a622301d5a422393cc48b70d60cf13eca0d20768b1360008f05a7fcd19db",
+  "inputHashes": {
+    "candidateSha256": {
+      "q10": "799930454f724ffba86de0390ac0a957e7171b2caf6e7ad726a2798e8d8d2b84"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20260322/law/p16.png": "56f0da401c073fd5b9b47af6552abae49a6110df6c334cd9f8b4df190b520ea5",
+      "data/raw_pdfs/denken3/review/20260322/law/p17.png": "e561760291030e8f517c8b91800ed16e9811575b3eb939c617c49776630f24fe",
+      "data/raw_pdfs/denken3/review/20260322/law/p04.png": "4e55d96c3f339921b9301997fede371d8891bc2fd296b7ad5c0cbdf5bb675366"
+    },
+    "figureSha256": {
+      "public/images/denken3/20260322/law/20260322-law-q10-fig1.png": "6369bc70e6ddf3c535a30c296facd7eb0c0bcda4e92c4995868a3375c9b705ad"
+    },
+    "sourceQuestionPdfSha256": "945e325f0fe221645f898efebe0dbcac32e1605a962a6850493895a67df0885e",
+    "sourceAnswerPdfSha256": "cc2890296d06a4823df5697a78a1c01ddfd39f041c51f48c87984daa3a5707c6",
+    "officialAnswerUnitsSha256": "54153b5a719e7c6661b9372493142473cb6ef20527e4ba77b99992a1fd68197c",
+    "referencePdfSha256": {},
+    "referencePageSha256": {},
+    "referenceJsonSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q10",
+      "questionNumber": 10,
+      "part": null,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "出典メタデータ: fiscalYear=2025（令和7年度）、term=lower（下期）、examDate=2026-03-22、subject=law、sourceQuestionPdfUrl=…20260322_ch_third_q04.pdf、sourceAnswerPdfUrl=…20260322_ch_third_a01.pdf、reviewedFromPage=[16,17] はいずれも manifest と一致する。原図頁の管理番号 T2-H 016 / T2-H 017 とも整合する。sourceAttribution の「令和7年度下期…法規科目 問10」も正しい。",
+        "公式正答: 解答表原図（令和7年度 第三種電気主任技術者下期試験解答）の＜法規＞問10は解答5・配点6。officialAnswer=\"5\"、scoringPoints=6 と一致する。",
+        "問題文: 原図第16頁「図は，高圧受電設備の単線結線図の一部である。」と第17頁「図の空白箇所(ア)〜(ウ)に設置する機器又は計器として，正しいものを組み合わせたのは次のうちどれか。」を照合し、文言は一致する。",
+        "選択肢: 原図第17頁の表の(1)〜(5)の(ア)(イ)(ウ)各欄を照合し、全15セルが候補と一致する。(1)地絡/過電圧/周波数計、(2)過電圧/過電流/周波数計、(3)過電流/地絡/周波数計、(4)過電流/地絡/力率計、(5)地絡/過電流/力率計。",
+        "図の接続(ア): 添字3付き円形記号（零相変流器）の二次側はy≈303を右へ進み、x≈640で下へ折れて(ア)上辺に入る。開閉器から(ア)へは破線が引かれている。枠内の変圧器記号の出力はx≈608で下へ折れて(ア)に入る。コンデンサ右側は枠右辺上の黒丸を経て接地記号へ至る。候補の記述と一致する。",
+        "図の接続(イ)(ウ): ×印付き開閉器（遮断器）から(イ)へ破線が引かれている。変流器二次側は(イ)→W→(ウ)→AS→Aの順に直列に接続される。VT二次側は接続点を経てVS→Vへ至り、その接続点から下降した線が途中で左へ分岐してWへ入り、さらに下って(ウ)に入る。候補の記述と一致する。",
+        "解説の因果: ZCT二次側を入力とし受電点開閉器を引き外すので(ア)は地絡継電器。CT二次側を入力とし遮断器を引き外すので(イ)は過電流継電器。CT二次回路に直列に入り、VT二次回路からも入力を受けるので(ウ)は力率計。周波数計は電圧のみ、過電圧継電器はVT電圧入力であり、それぞれ不適とする理由も正しい。結論(5)は公式正答と一致する。",
+        "肢別解説: (1)〜(4)の誤り理由は各肢の誤った欄を正確に指摘している。(4)は(ア)(イ)の入替えという指摘で正しい。(5)の正答理由も正しい。",
+        "公開候補図 20260322-law-q10-fig1.png: 原図第16頁の結線図と照合した。3φ3W 6 600 V、ZCT(添字3・//)、開閉器小円、破線2本、コンデンサ・変圧器・接地、(ア)、ケーブル端末三角、VCTとWh、断路器、ヒューズ・VT・VS・V、避雷器・接地、遮断器×印、CT(//)、(イ)・W・破線円(ウ)・AS・A、高圧母線矢印のすべての要素・ラベル・接続・向きに欠落や改変はない。公開図だけで解答に必要な接続関係を読み取れる。",
+        "uncertainty 欄: 未ラベル記号（ZCT・避雷器・ケーブル端末）の解釈と、コンデンサ分岐側の判読不能を正直に記載している。正答判断がその点に依存しないことも正しく説明している。原図由来の表現上の留保であり、候補の誤りではない。",
+        "officialReferenceUrls は空で、独立主張の外部確認事項はない。注3（令和7年4月1日現在の法令基準）について、本問は条文数値を問わないため影響はない。"
+      ]
+    }
+  ]
+}

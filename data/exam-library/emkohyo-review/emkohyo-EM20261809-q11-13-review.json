@@ -1,0 +1,94 @@
+{
+  "reviewModel": "claude-opus-5-5",
+  "requestedModel": "claude-opus-5-5",
+  "canonicalModel": "claude-opus-5-5",
+  "provider": "firstParty",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 4304,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 29097,
+      "webSearchRequests": 0,
+      "costUSD": 0.3191198,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 2793,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponsePath": "data/exam-library/emkohyo-review/emkohyo-EM20261809-q11-13-raw-response.txt",
+  "rawResponseSha256": "f66e2ce3a044b391a460fdeda220551dc46d27cef4be075ae27ceb709e86756b",
+  "paperId": "emkohyo-EM20261809",
+  "ids": [
+    "emkohyo-EM20261809-q11",
+    "emkohyo-EM20261809-q12",
+    "emkohyo-EM20261809-q13"
+  ],
+  "figureSha256": {
+    "emkohyo-EM20261809-q11": {},
+    "emkohyo-EM20261809-q12": {},
+    "emkohyo-EM20261809-q13": {}
+  },
+  "officialRowImageSha256": {
+    "emkohyo-EM20261809-q11": {
+      "/exam-library/emkohyo-EM20261809/q11-p7-0.webp": "fee66db42d6f6be475ba1393e69b499a99c42aba6d64193179cddc78480ca2c4"
+    },
+    "emkohyo-EM20261809-q12": {
+      "/exam-library/emkohyo-EM20261809/q12-p7-1.webp": "1818a4a7df3af475ce987008715c8d02e29f3cf22db4da19044070f1b42826da"
+    },
+    "emkohyo-EM20261809-q13": {
+      "/exam-library/emkohyo-EM20261809/q13-p8-0.webp": "f1657aba1c07ba3911727a714dc0e0fbf216e6d93514d25178e9883b9e08f2b2"
+    }
+  },
+  "officialPageImageSha256": {},
+  "governmentSourceImageSha256": {},
+  "candidateSha256": {
+    "emkohyo-EM20261809-q11": "0c39506ce7eb17a970f30d1854668f39c797e954510ec9ae4d9faa3225c342c6",
+    "emkohyo-EM20261809-q12": "4b6cff274da5f37a139ecbbd8d04f92a7bc240e4aa1a04eca8c1e4caddb0d698",
+    "emkohyo-EM20261809-q13": "35e74c2cb35b6d86a67f41b01b143f71d3cc3cd113c9b9475303b00b1409bae0"
+  },
+  "sourcePackPath": "docs/evidence/emkohyo-choice-sources/emkohyo-EM20261809-q11-13.json",
+  "sourcePackSha256": "dc23fce79db3926aaf8e5c865065a394eca503288abf217114d67b8ab51a673f",
+  "assessment": {
+    "emkohyo-EM20261809-q11": {
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "reasonIssues": [],
+      "sourceIssues": [],
+      "needsExternalCheck": []
+    },
+    "emkohyo-EM20261809-q12": {
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "reasonIssues": [],
+      "sourceIssues": [
+        "肢1の理由は「γ線を放出しないβ線源ばかり」と断定しているが、²⁰⁴Tlについて添付資料（ATOMICA「RIの工業計測機器への応用原理」）が支えるのは「β線厚さ計の線源として使われる」ことだけで、γ線を放出しないことは直接支えていない。¹⁴C・³⁵Sは「ベータ線放出核種」の記載で支えられており、肢1が誤りという結論は変わらない。ただし²⁰⁴Tlのγ非放出を根拠として残すなら、それを明記した資料を追加するか、「²⁰⁴Tlもβ線源として使われる核種」の記述に留めること。",
+        "肢5の²¹⁰Biについて、添付資料（No.7 p.31）が支えるのは「β線による制動放射線」を出すことだけで、γ線校正用線源に適さない理由を直接支えていない。³²P・⁹⁰Yで肢5が誤りという結論は成立するため結論に影響はないが、²¹⁰Biの記述は「β線を出す核種」に留めるか、別の根拠を示すこと。"
+      ],
+      "needsExternalCheck": [
+        "²⁰⁴Tlの壊変形式（β⁻約97%・EC約3%でいずれも基底状態へ遷移し、γ線を実質放出しない。EC由来のHg特性X線はある）を核データ（JAEA核データ表等）で確認し、「γ線を放出しない」との表現が妥当か検証すること。"
+      ]
+    },
+    "emkohyo-EM20261809-q13": {
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "reasonIssues": [
+        "肢1（㋑㋩、verdict=correct）の理由が「しかし㋥は誤りで…組合せとして誤り」となっており、㋑㋥の組合せ（肢2）の説明になっている。verdict「correct」と理由本文が矛盾している。肢1には「㋑正（試料を溶媒に溶解、水試料は乳化シンチレータ）・㋩正（γ線外部標準線源による外部標準チャネル比で計数効率を補正）であり、正しい組合せで、これが正解」という趣旨の理由を置くこと。",
+        "肢2（㋑㋥、verdict=incorrect）の理由が「㋑正…㋩正。正しい組合せ」となっており、肢1の理由と入れ替わっている。verdict「incorrect」と理由本文が矛盾している。肢2には「㋑は正しいが、㋥は誤り（³Hと¹⁴CはEmaxの違いを利用したチャネル設定で同時測定される）ので組合せとして誤り」という趣旨の理由を置くこと。"
+      ],
+      "sourceIssues": [
+        "㋥の根拠として挙げた日本薬学会『薬学雑誌』88巻5号は、照合された抜粋が論文題目「3H,14Cの同時測定法」だけで、見出しのみの資料にあたり根拠として通せない。削除するか、本文の該当記述を抜粋として示すこと。",
+        "㋥を実質的に支えているのは日本アイソトープ協会『RADIOISOTOPES』15巻5号（1966年）の学術論文だけで、政府一次資料ではない。³H/¹⁴C同時測定（ダブルラベル測定）を記載した政府系資料（例：放射能測定法シリーズ等の該当箇所）があれば追加することが望ましい。"
+      ],
+      "needsExternalCheck": [
+        "³Hと¹⁴Cの同時測定（ダブルラベル法）が可能であることを記載した政府一次資料（原子力規制庁 放射能測定法シリーズ、ATOMICA等）の該当記述があるか確認すること。"
+      ]
+    }
+  }
+}

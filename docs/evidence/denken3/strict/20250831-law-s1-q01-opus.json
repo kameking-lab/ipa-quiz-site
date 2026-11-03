@@ -1,0 +1,74 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20250831",
+  "subject": "law",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 5447,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 20752,
+      "webSearchRequests": 0,
+      "costUSD": 0.2752198,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 3404,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "40f39cd1f67737e7582d83a556299c726ddb2bd4716830d14639a9ce4bdc3f64",
+  "inputRequestSha256": "1a4c20877442166e2da414400a5f71eb25dad33851b4afe98b219efd66f27a55",
+  "inputHashes": {
+    "candidateSha256": {
+      "q01": "2bca2ec2ffcd713fa0dd5c6a24f3ecbbd59b79dd937c0adfefe7f2b3951ca66d"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20250831/law/p04.png": "38045ec67d58396f98ae270d13322f49aa0291474ec50e346ecabbd47a85dfbe",
+      "data/raw_pdfs/denken3/review/20250831/law/p05.png": "d0a3b0e702a7d10c4bc35d51d6ca370b4b1f76dda9b6e09b1edb93cdd0e162ac"
+    },
+    "figureSha256": {},
+    "sourceQuestionPdfSha256": "51aeb8f1cbfe8e6d3667c2848a3d9fccff40a967f48aafc292fa13a13a6efbb0",
+    "sourceAnswerPdfSha256": "76fd3715ed487d19a56b387fb402de20ee09474e9fa55b0413f9037b96af06c9",
+    "officialAnswerUnitsSha256": "c98c3800e2485a6fe3ab2f0e50a30ac3808618cdda96a7241de506e92857a39c",
+    "referencePdfSha256": {},
+    "referencePageSha256": {},
+    "referenceJsonSha256": {
+      "data/raw_pdfs/denken3/review/egov/339AC0000000170-20250401.json": "55f64ea6eb17ad9b55658807bbe1699cfaec03f85398c50e70c83e1ee737fe77"
+    }
+  },
+  "assessment": [
+    {
+      "unitKey": "q01",
+      "questionNumber": 1,
+      "part": null,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [
+        "総合解説で第28条の44第1項の指示事項を「会員に振替供給を行うこと」と要約しているが、添付条文の第2号は「小売電気事業者である会員、一般送配電事業者である会員、配電事業者である会員又は特定送配電事業者である会員に振替供給を行うこと」である。振替供給の受け手は4種の会員に限られるため、この要約は条文より広い。条文どおりの受け手に修正すべき。",
+        "総合解説は第28条の44第1項について「会員に対し，次の事項を指示することができる」とだけ述べ、ただし書を落としている。ただし書は、第1号を送電事業者である会員に、第2号を小売電気事業者・発電事業者・特定卸供給事業者である会員に、第3号を送電事業者・発電事業者・特定卸供給事業者である会員に対しては指示できないと定める。このため現状の記述では、すべての会員にすべての事項を指示できるように読める。ただし書で相手方が制限される旨を一文追記すべき（第31条第1項の要約も同様にただし書を省略しているため、併せて追記が望ましい）。"
+      ],
+      "figureIssues": [],
+      "sourceIssues": [
+        "総合解説は「推進機関（電力広域的運営推進機関）」と、第28条の44の「推進機関」を電力広域的運営推進機関と同定している。この略称の定義規定（電気事業法第28条の4と推定される）は、添付された公式参考資料（第28条の44、第31条、第34条の2）に含まれておらず、添付資料の原頁では検証できない。問題文の「電力広域的運営推進機関の(ア)」と第28条の44の「推進機関…業務規程」との結び付けがこの同定に依存するため、外部確認事項として記録する。定義条文を参考資料に追加して確認するか、解説で根拠条文を明示すること。"
+      ],
+      "verifiedEvidence": [
+        "出典メタデータ: fiscalYear=2025、term=upper、examDate=2025-08-31、subject=law、sourceQuestionPdfUrl=…20250831_ch_third_q04.pdf、sourceAnswerPdfUrl=…20250831_ch_third_a01.pdf、reviewedFromPage=[4,5] はいずれもmanifestと一致。原図の頁番号「-1-（T1−H 004）」「-2-（T1−H 005）」が問1の2頁分に対応する。",
+        "問題文: 原図第4頁の本文（OCCTOの指示に関する段落、経済産業大臣の命令に関する段落）と、第5頁の設問文「上記の記述中の空白箇所(ア)〜(ウ)に当てはまる組合せとして…一つ選べ。」を逐語照合し、脱字・改変なし。空欄(ア)(イ)(ウ)の位置も一致。",
+        "選択肢: 原図第5頁の表の5行×3列（(1)保安規程/会員/電気事業者、(2)保安規程/事業者/一般送配電事業者、(3)送配電等業務指針/特定事業者/特定自家用電気工作物設置者、(4)業務規程/事業者/特定自家用電気工作物設置者、(5)業務規程/会員/電気事業者）がchoicesと完全一致。",
+        "公式正答: 試験センター公式解答表＜法規＞の問1は解答5・配点6。officialAnswer=\"5\"、scoringPoints=6はmanifest固定の正答単位と一致しており、変更していない。",
+        "(ア)(イ)の根拠: 添付の電気事業法第28条の44第1項（施行時点2025-04-01）に「業務規程で定めるところにより、会員に対し、次に掲げる事項を指示することができる」とある。第1号（電気の供給）と第4号（電気工作物の共用等）が、問題文の「相互に電気の供給をすることや電気工作物を共用すること」に対応する。",
+        "(ウ)の根拠: 添付の同法第31条第1項に「経済産業大臣は、電気の安定供給の確保に支障が生じ、又は生ずるおそれがある場合において公共の利益を確保するため特に必要があり、かつ、適切であると認めるときは電気事業者に対し、次に掲げる事項を命ずることができる」とある。",
+        "誤答肢の理由: 同法第31条第2項は、特定自家用電気工作物設置者に対して「勧告することができる」とする規定であり、命令の相手方ではない。(3)(4)の誤答理由はこれと整合する。(1)(2)の「保安規程」と(3)の「送配電等業務指針」は第28条の44第1項の「業務規程」と不一致。(2)(4)の「事業者」と(3)の「特定事業者」は同項の「会員」と不一致。(2)の「一般送配電事業者」は第31条第1項の「電気事業者」と不一致。各肢説明の論理はいずれも添付条文で確認できた。",
+        "効力基準日: 法規科目の注意書き頁の注3「令和7年4月1日現在, 効力のある法令」と、officialReferenceUrlsのoccasion_date=20250401および添付条文の施行時点2025-04-01が一致。",
+        "第34条の2（電気の使用制限等）は添付されているが、候補の解説では引用されておらず、本問の空欄判定にも関与しない。",
+        "図: 本問に回路図などの図はなく、選択肢の表はchoicesに全て転記済み。figureUrls=[]、choiceFigureUrls={}、figureDescriptionの記述は適切。"
+      ]
+    }
+  ]
+}

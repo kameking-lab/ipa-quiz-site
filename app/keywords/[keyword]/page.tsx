@@ -1,3 +1,4 @@
+import { CurrentLearningLinks } from "@/components/term-relations/CurrentLearningLinks";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
@@ -22,6 +23,10 @@ import { examLabel } from "@/lib/utils";
 import type { ExamCode } from "@/lib/questions/types";
 
 export const dynamicParams = false;
+
+// Only the reviewed AP article source is linked; body text stays React-escaped.
+const AP_2026_SOURCE_URL =
+  "https://www.ipa.go.jp/shiken/2026/ap_koudo_sc_kikan.html";
 
 interface RouteParams {
   keyword: string;
@@ -192,10 +197,21 @@ export default async function KeywordPage({
       <article className="prose prose-sm max-w-none space-y-4 text-card-foreground">
         {page.body.map((p, i) => (
           <p key={i} className="text-sm leading-[1.85]">
-            {p}
+            {page.slug === "ap-chokuzen-1week" && p.endsWith(AP_2026_SOURCE_URL) ? (
+              <>
+                {p.slice(0, -AP_2026_SOURCE_URL.length)}
+                <a href={AP_2026_SOURCE_URL} className="break-all underline underline-offset-2">
+                  {AP_2026_SOURCE_URL}
+                </a>
+              </>
+            ) : (
+              p
+            )}
           </p>
         ))}
       </article>
+
+      <CurrentLearningLinks origin={{kind: "keyword", id: page.slug}} headingId="keyword-learning-links" />
 
       {essayExam ? <AfternoonEssayHint exam={essayExam} /> : null}
       {page.strategicCta === "kamoku-b" ? (
@@ -244,7 +260,7 @@ export default async function KeywordPage({
           このトピックの過去問でアウトプットしましょう
         </p>
         <p className="mt-1 text-xs text-muted-foreground">
-          AI コパイロットに『このトピックの典型問題を 1 問つくって』と頼むと、その場で類題演習ができます。
+          AI コパイロットには、掲載された原問の用語や解き方について質問できます。
         </p>
         <Button asChild variant="primary" size="md" className="mt-3">
           <Link href={`/${page.exams[0]}`}>

@@ -1,0 +1,158 @@
+{
+  "questionNumber": 13,
+  "sharedContext": null,
+  "units": [
+    {
+      "part": null,
+      "question": "三相3線式配電線により遅れ力率70 %，W₁ [kW]の負荷に電力を供給している。負荷が遅れ力率91 %，W₂ [kW]に変化したが線路損失は変わらなかった。W₂はW₁の何倍か。最も近いものを次の(1)〜(5)のうちから一つ選べ。ただし，負荷の端子電圧は変わらないものとする。",
+      "choices": {
+        "1": "0.77",
+        "2": "1.3",
+        "3": "2.3",
+        "4": "1.1",
+        "5": "1.7"
+      },
+      "officialAnswer": "2",
+      "explanation": "負荷の端子電圧（線間電圧）を V、線電流を I、力率を cosθ とする。三相負荷の電力は W = √3·V·I·cosθ なので、I = W / (√3·V·cosθ) となる。\n線路の1線あたりの抵抗を R とすると、三相3線式の線路損失は Pₗ = 3·I²·R である。\n線路損失が変わらず、R も変わらないので、線電流 I は変化前後で等しい。さらに端子電圧 V も変わらないので、次の式が成り立つ。\nW₁ / (√3·V·0.70) = W₂ / (√3·V·0.91)\nよって W₂ / W₁ = 0.91 / 0.70 = 1.3\nしたがって W₂ は W₁ の 1.3 倍であり、正答は (2) である。\n（考え方：電流と電圧が同じなら、皮相電力 √3·V·I も同じである。力率が改善された分だけ、同じ皮相電力で送れる有効電力が増える。）",
+      "choiceExplanations": {
+        "1": "誤り。0.77 は 0.70 / 0.91 ≈ 0.769 に相当する値で、比が逆になっている。力率が 70 % から 91 % へ改善されると、同じ電流で送れる有効電力は増える。したがって W₂ / W₁ は 1 より大きくなる。",
+        "2": "正しい。線路損失 3·I²·R が不変なので、線電流 I も不変である。端子電圧も不変なので W は力率に比例し、W₂ / W₁ = 0.91 / 0.70 = 1.3 となる。",
+        "3": "誤り。線電流と端子電圧が一定なら皮相電力 √3·V·I は一定で、有効電力は皮相電力と力率の積になる。仮に力率を 1（100 %）まで改善しても W₂ / W₁ は 1 / 0.70 ≈ 1.43 が上限であり、2.3 倍になることはない。",
+        "4": "誤り。1.1 は √(0.91 / 0.70) ≈ 1.14 に近い値である。電流が一定なら W は力率に比例するので、比の平方根にはならない。",
+        "5": "誤り。1.7 は (0.91 / 0.70)² ≈ 1.69 に相当する値である。この条件では W₂ / W₁ は力率の比そのもの（1.3）になり、2乗にはならない。"
+      },
+      "figureDescription": "本問に図はない。問題文と選択肢のみで解答できる。",
+      "officialReferenceUrls": [],
+      "uncertainty": "問題ページには科目名・実施年度・実施回の表記がなく、印字頁「- 13 -」と識別記号「T1−D 016」のみが記載されている。そのため、出題科目と実施回は問題ページの表記からは特定できない。問題文・数値・選択肢・公式正答 (2) と、計算 0.91 / 0.70 = 1.3 との整合には不確実性はない。",
+      "needsReview": true,
+      "sourceQuestionPdfUrl": "https://www.shiken.or.jp/chief/upload/20250831_ch_third_q02.pdf",
+      "sourceAnswerPdfUrl": "https://www.shiken.or.jp/chief/upload/20250831_ch_third_a01.pdf",
+      "reviewedFromPage": [
+        16
+      ]
+    }
+  ],
+  "draftModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 2022,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 9309,
+      "webSearchRequests": 0,
+      "costUSD": 0.1151758,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 767,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "e76be1ae83c22a4d80c9c83549201495e6cae559bf70b19501928eb118a09b86",
+  "inputRequestSha256": "b0799b0c6874e66cd7826ae55694e4a8f4f6c8bb309f9b16479ac78d4640c3e5",
+  "sourceQuestionPdfSha256": "567aac1df6dc0c0950d04e90a1ad03231427c518eede92559effe01e2b97a2c9",
+  "sourceAnswerPdfSha256": "76fd3715ed487d19a56b387fb402de20ee09474e9fa55b0413f9037b96af06c9",
+  "sourcePageImageSha256": {
+    "data/raw_pdfs/denken3/review/20250831/power/p16.png": "5cfb51266a279d19b9f1243316f50ce88274279a9c311c1a59d0dd92b123ab88"
+  },
+  "revisionHistory": [
+    {
+      "version": 1,
+      "model": "claude-opus-5-5",
+      "resolvedModel": "claude-opus-5-5",
+      "modelUsage": {
+        "claude-opus-5-5": {
+          "inputTokens": 2,
+          "outputTokens": 3158,
+          "cacheReadInputTokens": 1279,
+          "cacheCreationInputTokens": 12149,
+          "webSearchRequests": 0,
+          "costUSD": 0.1606158,
+          "contextWindow": 1000000,
+          "maxOutputTokens": 128000,
+          "thinkingTokens": 1754,
+          "canonicalModel": "claude-opus-5-5",
+          "provider": "firstParty",
+          "costBasis": "list"
+        }
+      },
+      "rawResponseSha256": "e010df8b5d40356c3c8a06cc622107fe22e33ddcec18c273505022926cf1baba",
+      "inputRequestSha256": "0c0f12e45a095073187927812a9929c02d37c74b850d0ea86bef7e191520d6c7",
+      "previousDraftSha256": "ff5b3641ee270b6b21e290b97de9414b7e75aeab2ef87629280b7d31f6d28066",
+      "previousDraft": "data/raw_pdfs/denken3/review/20250831/power/archive/q13-vision-draft-v1.json",
+      "answeredReviewSha256": "303a34aa0d227cf207c37bafdec3874e6f44b69c27f5af2c7f88b6abdd0101a2",
+      "answeredReview": "data/raw_pdfs/denken3/review/20250831/power/archive/q13-opus-review-v1.json",
+      "answeredStrictReceipt": "docs/evidence/denken3/strict/20250831-power-s1-q13-opus.json",
+      "answeredStrictReceiptSha256": "96d8b159e56cdbe3132cdd89a372a2440e5493ffc81d35b70b5d3603a4d2c8aa",
+      "figureSha256": {},
+      "referenceHashes": {},
+      "operatorNote": ""
+    },
+    {
+      "version": 2,
+      "model": "claude-opus-5-5",
+      "resolvedModel": "claude-opus-5-5",
+      "modelUsage": {
+        "claude-opus-5-5": {
+          "inputTokens": 2,
+          "outputTokens": 2656,
+          "cacheReadInputTokens": 1279,
+          "cacheCreationInputTokens": 12008,
+          "webSearchRequests": 0,
+          "costUSD": 0.1494478,
+          "contextWindow": 1000000,
+          "maxOutputTokens": 128000,
+          "thinkingTokens": 1352,
+          "canonicalModel": "claude-opus-5-5",
+          "provider": "firstParty",
+          "costBasis": "list"
+        }
+      },
+      "rawResponseSha256": "7aaf03ff235b2f0ee5b10a10cbeffc765ee773922963cd53b510dead0058b560",
+      "inputRequestSha256": "39e5c87fb7fb12dcca962f3821da58246180454aeaf7d40b372ebbdacad39a6a",
+      "previousDraftSha256": "deeda1bcd7af2c17421a32b47a91a51712859928968bbfad74fe2db225585ac8",
+      "previousDraft": "data/raw_pdfs/denken3/review/20250831/power/archive/q13-vision-draft-v2.json",
+      "answeredReviewSha256": "22f1beb0eae0dc0072ac60dc6d86eca047540bd2b480f7c0c449b06bdb1b2544",
+      "answeredReview": "data/raw_pdfs/denken3/review/20250831/power/archive/q13-opus-review-v2.json",
+      "answeredStrictReceipt": "docs/evidence/denken3/strict/20250831-power-s2-q13-opus.json",
+      "answeredStrictReceiptSha256": "6cbdeb8462fb7a401625a633555e5325fd0cbe76beb15ad492c45dae07daf996",
+      "figureSha256": {},
+      "referenceHashes": {},
+      "operatorNote": ""
+    },
+    {
+      "version": 3,
+      "model": "claude-opus-5-5",
+      "resolvedModel": "claude-opus-5-5",
+      "modelUsage": {
+        "claude-opus-5-5": {
+          "inputTokens": 2,
+          "outputTokens": 2453,
+          "cacheReadInputTokens": 1279,
+          "cacheCreationInputTokens": 11917,
+          "webSearchRequests": 0,
+          "costUSD": 0.1446598,
+          "contextWindow": 1000000,
+          "maxOutputTokens": 128000,
+          "thinkingTokens": 1133,
+          "canonicalModel": "claude-opus-5-5",
+          "provider": "firstParty",
+          "costBasis": "list"
+        }
+      },
+      "rawResponseSha256": "b5d8ef6250b3ea8e40d4513a9f86987d3034b2ae7dfff83a67f6a9296cf9eda3",
+      "inputRequestSha256": "97df43db38541a84df265dcb9d0b8c7dbe6741a53e5fbe06304827fc3d99150a",
+      "previousDraftSha256": "75f762232c92460a2a450238784b66aaae34766d2c33094ae8b6bd3e570b0bd2",
+      "previousDraft": "data/raw_pdfs/denken3/review/20250831/power/archive/q13-vision-draft-v3.json",
+      "answeredReviewSha256": "68b5c56157b821de1c99c9bbf3eae92637109f9037acb8ee164eedf26d56d16f",
+      "answeredReview": "data/raw_pdfs/denken3/review/20250831/power/archive/q13-opus-review-v3.json",
+      "answeredStrictReceipt": "docs/evidence/denken3/strict/20250831-power-s3-q13-opus.json",
+      "answeredStrictReceiptSha256": "0f91e63a7faa4a013cb8e2a46667c67b4a9966f9999f395a75f023d2d85215fe",
+      "figureSha256": {},
+      "referenceHashes": {},
+      "operatorNote": ""
+    }
+  ]
+}

@@ -1,0 +1,74 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20250831",
+  "subject": "theory",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 4884,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 14261,
+      "webSearchRequests": 0,
+      "costUSD": 0.2120318,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 3136,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "e5467490b5545994197dfd3f793536dacfa1be3bc3267c6e8c1b88aec0f9a0e4",
+  "inputRequestSha256": "49aad8eb5775ec1977b18cb8978ba43948af19a52704d50f63673986751f9b91",
+  "inputHashes": {
+    "candidateSha256": {
+      "q05": "679fdaaf7e20c6bcf113c2304cd0048e2a8438fa669d901dd55913c26a873dce"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20250831/theory/p08.png": "797f131ba4217622fc70a7bbb7f71deec050e936ce9276a4554fab649566cc89"
+    },
+    "figureSha256": {
+      "public/images/denken3/20250831/theory/20250831-theory-q05-fig1.png": "834d9c40099a65dcbdb9bc2954bc1f97da086330cbd50699ffc283bc0a722359"
+    },
+    "sourceQuestionPdfSha256": "11a75ffd5dd2b5309ad75370bb963c4fda9e12a812174cfa2c2237383c3a964d",
+    "sourceAnswerPdfSha256": "76fd3715ed487d19a56b387fb402de20ee09474e9fa55b0413f9037b96af06c9",
+    "officialAnswerUnitsSha256": "1042d224d762b9a6826cae3f4f7efcc1aa21b3f05ea736a4de5e887bb730a999",
+    "referencePdfSha256": {},
+    "referencePageSha256": {},
+    "referenceJsonSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q05",
+      "questionNumber": 5,
+      "part": null,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [
+        "肢(1)の誤答理由で『F·V = C（クーロン）』と書いているが、本問では C を静電容量の量記号として使っている。括弧書きで区別してはいるものの、学習者が量記号と単位記号を取り違えるおそれがある。『F·V = A·s（クーロン）なので F²·V = F·A·s となり J = V·A·s にならない』のように、単位記号 C を使わない書き方にすることを推奨する。",
+        "肢(4)の誤答理由で『W（ワット）』と書いているが、本問では W[J] を消費エネルギーの量記号として使っている。量記号と単位記号が衝突して紛らわしいため、『V²/Ω は電力の単位（ワット）であり、エネルギー[J]ではない』のように記号 W を使わない書き方にすることを推奨する。"
+      ],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [
+        "uncertainty 欄には『このページだけからは出題年度を特定できない』とある。一方で fiscalYear=2025、term=upper、examDate=2025-08-31、sourceAttribution『令和7年度上期』は確定値として記載され、needsReview=false になっている。未解決事項を自己申告しながら確定扱いしており、整合していない。問題原図は『- 5 -』『T1－R 008』のみで年度表記を含まないので、同定の根拠（manifest 固定の出典 URL と公式解答表『令和7年度 第三種電気主任技術者上期試験解答』）を uncertainty 欄に明記すべき。",
+        "examDate=2025-08-31 の根拠は、添付資料の中では sourceQuestionPdfUrl／sourceAnswerPdfUrl のファイル名『20250831_』だけである。添付した問題原図にも公式解答表原図にも試験日の記載はなく、添付原頁では検証できない。"
+      ],
+      "verifiedEvidence": [
+        "公式解答表原図の＜理論＞問5は解答5・配点5。manifest の公式正答単位 {question:5, part:null, answer:\"5\", points:5}、候補の officialAnswer=\"5\"、scoringPoints=5 と一致する。",
+        "問題文は原図と一致する。RLC 回路、C[F]、V[V] に充電、スイッチ S を閉じる、端子電圧が最終的に零、抵抗 R[Ω] で消費された電気エネルギー W[J]、いずれも改変・欠落はない。",
+        "選択肢(1)〜(5)は原図の (1)½C²V、(2)½LV²、(3)½L²V、(4)½·V²/R、(5)½CV² と、係数・指数・変数の位置まで一致する。",
+        "総合解説を検算した。エネルギー収支 d/dt{½Cv_C²+½Li²}=−Ri² は直列 RLC で正しい。初期状態は S 開のため i=0（L の電流連続性により閉路直後も i=0）で、蓄積エネルギーは ½CV²。最終状態は v_C=0、i=0（R>0 で減衰）で 0。よって W=½CV² となり、振動・非振動によらず R・L にも依存しないという記述も正しい。",
+        "誤答肢の次元検算: C²V→F²·V≠J、L·V²→H·V²=V³·s/A≠J、L²V→H²·V≠J、V²/R→V²/Ω=電力でありエネルギーではない。いずれも記述は正しい。肢(4)の『抵抗の端子電圧は一定値 V ではない』も正しい（閉路直後は i=0 のため抵抗電圧 0）。肢(2)の『エネルギーは ½LI²、本問では初期・最終とも 0』も正しい。",
+        "正答肢(5)の理由（コンデンサの初期静電エネルギー ½CV² が全て R で消費される）は総合解説と整合している。",
+        "公開候補図 20250831-theory-q05-fig1.png は原図と一致する。単一閉ループで、左辺にコンデンサ（ラベル C[F]）、上辺に左から S（開状態）・R[Ω]（矩形）・L[H]（コイル）、右辺と下辺は導線。全ラベルが欠けずに収まっており、接続・順序の相違はない。公開候補図だけで直列 CRL 回路であることが把握できる。",
+        "figureDescription の接続・ラベル・S の開状態、および充電極性が図に示されていないという記述は原図と一致する（極性は解答に影響しない）。",
+        "officialReferenceUrls は空で、検証すべき独立主張はない。",
+        "reviewedFromPage=[8] は、問題原図の頁下部表記『T1－R 008』と矛盾しない。"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,53 @@
+{
+  "reviewModel": "claude-opus-5-5",
+  "requestedModel": "claude-opus-5-5",
+  "canonicalModel": "claude-opus-5-5",
+  "provider": "firstParty",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 1947,
+      "cacheReadInputTokens": 143524,
+      "cacheCreationInputTokens": 17611,
+      "webSearchRequests": 0,
+      "costUSD": 0.20854080000000003,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 1575,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "paperId": "emkohyo-20260217-2",
+  "ids": [
+    "emkohyo-20260217-2-q1"
+  ],
+  "figureSha256": {
+    "emkohyo-20260217-2-q1": {}
+  },
+  "officialRowImageSha256": {
+    "emkohyo-20260217-2-q1": {
+      "/exam-library/emkohyo-20260217-2/q1-p2-0.webp": "c21401afc3cee3a948f26db214347b8d99293cf2924b9e004682060c153fc342"
+    }
+  },
+  "governmentSourceImageSha256": {},
+  "candidateSha256": {
+    "emkohyo-20260217-2-q1": "8d11cd63617483f90aa1ccd2eae6cd9909281bbcb323a020fad3574af0e8c098"
+  },
+  "sourcePackPath": "docs/evidence/emkohyo-choice-sources/emkohyo-20260217-2-q01-01.json",
+  "sourcePackSha256": "1389087a24254007fe61d5f656c2143387084a2b76ecc8b75e423e4ec92a604f",
+  "assessment": {
+    "emkohyo-20260217-2-q1": {
+      "status": "FIX",
+      "textIssues": [
+        "summaryでは専任要件を「常時500人超で有害業務に30人以上が従事する事業場に限られる」と書いているが、要件を限定的に言い切っているのに法令の表現と一致していない。安衛則第7条第1項第5号ロの要件は「坑内労働又は労働基準法施行規則第18条各号に掲げる業務に常時30人以上」である。坑内労働が抜けており、法令にない「有害業務」という語で言い換えている。肢3の理由と同じく「坑内労働または労基則第18条各号の業務」と書くよう修正すべき。",
+        "文体が統一されていない。肢1の理由だけが「です・ます」調（「選任可能です」「正しい記述です」）で、summaryと肢2〜5の理由は「である」調。"
+      ],
+      "choiceIssues": [],
+      "reasonIssues": [],
+      "sourceIssues": [],
+      "needsExternalCheck": []
+    }
+  }
+}

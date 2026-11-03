@@ -1,0 +1,59 @@
+{
+  "reviewModel": "claude-opus-5-5",
+  "requestedModel": "claude-opus-5-5",
+  "canonicalModel": "claude-opus-5-5",
+  "provider": "firstParty",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 2199,
+      "cacheReadInputTokens": 143524,
+      "cacheCreationInputTokens": 17549,
+      "webSearchRequests": 0,
+      "costUSD": 0.2130848,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 1339,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "paperId": "emkohyo-EM20261808",
+  "ids": [
+    "emkohyo-EM20261808-q20"
+  ],
+  "figureSha256": {
+    "emkohyo-EM20261808-q20": {}
+  },
+  "officialRowImageSha256": {
+    "emkohyo-EM20261808-q20": {
+      "/exam-library/emkohyo-EM20261808/q20-p11-1.webp": "3f49d4a95dfe130946dd80ae4c48c7667064533acc5ba2048e31b679f628cd62"
+    }
+  },
+  "governmentSourceImageSha256": {
+    "docs/evidence/emkohyo-choice-sources/mhlw-lead-air-concentration-p24.png": "b60d34dc39ab7513805ed6ad387b6c5a06461983eea7ac0f40b9654adeb4caff"
+  },
+  "candidateSha256": {
+    "emkohyo-EM20261808-q20": "6bb0a77561bae8976f065dad928e61db49bbf7b4f38a31deaa5313323c861427"
+  },
+  "sourcePackPath": "docs/evidence/emkohyo-choice-sources/emkohyo-EM20261808-q20-20.json",
+  "sourcePackSha256": "1042c989c3cc4166ba2009532dbce0b9680e0fe78dc1e9867564d613ddd1eaf2",
+  "assessment": {
+    "emkohyo-EM20261808-q20": {
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "reasonIssues": [
+        "肢2の理由にある「採気量を400 Lとするか、鉛量を4 µgとしない限り出ない値」は言い過ぎで、厳密には誤りである。0.02 mg/m³（＝20 µg/m³）は他の組み合わせでも出る。例として、鉛量2 µgを採気量100 Lで割る、試料液量を50 mLとして4 µgとする、捕集時間を20分として400 Lとする、などがある。『例えば採気量を400 L（捕集20分相当）とした場合や、鉛量を4 µg（試料液量50 mL相当）とした場合の値であり、問題の条件とは整合しない』のように、誤りの一例として示す書き方に直すべき。"
+      ],
+      "sourceIssues": [
+        "引用した厚労省資料（001096484.pdf、PDF p.24＝ページ下部の表示p.80）は、ICP-MSによる鉛の測定法の計算式である。問題文にある電気加熱原子化原子吸光分析法の資料ではない。式 C＝c×q×(1/Q)×10⁻³ は測定法に関係なく使えるので計算の裏付けにはなるが、出典の説明に『測定法はICP-MSだが、気中濃度の換算式は共通』と一言添えるのが望ましい。",
+        "原資料では、試料液中の鉛濃度を表す記号が大文字の『C』になっており、環境気中濃度の『C』と重なる誤植がある（正しくは小文字c、単位ng/mL）。この式を引用するなら、c＝0.08 µg/mL＝80 ng/mL、q＝100 mL、Q＝200 L を入れて 80×100/200×10⁻³＝0.04 mg/m³ となる対応を示すと、出典と正解の数値のつながりが直接わかる。現候補の解説はµg・m³で計算しており、式の単位系（ng/mL、L、10⁻³）とのつながりが書かれていない。"
+      ],
+      "needsExternalCheck": [
+        "出典名『作業環境測定方法検討報告』が001096484.pdfの正式な表題と一致するか、表紙か厚労省の掲載ページで確認する必要がある。今回提供されたのはp.80の本文だけで、表題は確認できない。"
+      ]
+    }
+  }
+}

@@ -1,0 +1,159 @@
+{
+  "questionNumber": 15,
+  "sharedContext": "B問題（配点は1問題当たり(a)5点，(b)5点，計10点）。問15 図のように線間電圧200 V，周波数50 Hzの対称三相交流電源にRLC負荷が接続されている。R＝10 Ω，電源角周波数をω [rad/s]として，ωL＝20 Ω，1/(ωC)＝20 Ωである。次の(a)及び(b)の問に答えよ。",
+  "units": [
+    {
+      "part": "a",
+      "question": "図のように線間電圧200 V，周波数50 Hzの対称三相交流電源にRLC負荷が接続されている。R＝10 Ω，電源角周波数をω [rad/s]として，ωL＝20 Ω，1/(ωC)＝20 Ωである。\n(a) 電源電流 I の値[A]として，最も近いものを次の(1)〜(5)のうちから一つ選べ。",
+      "choices": {
+        "1": "5.77",
+        "2": "7.00",
+        "3": "11.5",
+        "4": "14.0",
+        "5": "22.5"
+      },
+      "officialAnswer": "3",
+      "explanation": "図の負荷はY結線で，各相は R，L，C の3素子が並列に接続されている。電源中性点と負荷中性点は結ばれていないが，負荷は3相とも同じ構成の平衡負荷なので，各相の負荷には相電圧 E = 200/√3 V が加わる。\n\n各相のアドミタンス：\nY = 1/R + 1/(jωL) + jωC = 1/10 − j(1/20) + j(1/20) = 0.1 S（純抵抗）\n\nωL＝1/(ωC)＝20 Ω なので，L と C は50 Hzで並列共振しており，L に流れる電流と C に流れる電流は大きさが等しく位相が逆で打ち消し合う。したがって各相の負荷は R＝10 Ω だけと等価になる。\n\n相電圧：E = 200/√3 ≒ 115.5 V\n電源電流（線電流＝相電流）：I = E/R = 115.5/10 ≒ 11.55 A → 最も近いのは 11.5 A\n\nなお，各相の L（または C）にはそれぞれ 115.5/20 ≒ 5.77 A が流れているが，互いに打ち消し合うため電源側の電流には現れない。",
+      "choiceExplanations": {
+        "1": "誤り。5.77 A は相電圧115.5 Vを20 Ωで割った値で，各相の L（または C）単独に流れる電流の大きさに一致する。L と C の電流は逆位相で打ち消し合うため，電源電流にはならない。",
+        "2": "誤り。7.00 A は正しい電源電流 11.55 A の約0.6倍で小さすぎる。相電圧115.5 Vからこの電流が流れるには各相のインピーダンスが約16.5 Ωである必要があるが，本問の各相は L・C の並列共振により R＝10 Ω と等価であり，この値にはならない。この値に対応する典型的な誤った計算経路は特定できない。",
+        "3": "正しい。L と C の並列共振により各相は R＝10 Ω と等価になり，I＝(200/√3)/10 ≒ 11.55 A で，11.5 A が最も近い。",
+        "4": "誤り。14.0 A は正しい電源電流 11.55 A より約2.5 A 大きい。相電圧115.5 Vからこの電流が流れるには各相のインピーダンスが約8.25 Ωである必要があるが，各相の等価インピーダンスは R＝10 Ω であり，この値にはならない。この値に対応する典型的な誤った計算経路は特定できない。",
+        "5": "誤り。22.5 A は正しい電源電流 11.55 A の約2倍である。相電圧115.5 Vからこの電流が流れるには各相のインピーダンスが約5.1 Ωである必要があるが，L と C の電流は打ち消し合って電源電流に加わらないため，各相の等価インピーダンスは R＝10 Ω であり，この値にはならない。この値に対応する典型的な誤った計算経路は特定できない。"
+      },
+      "figureDescription": "三相電源と三相負荷を結ぶ回路図。左側に〜記号の交流電源3個があり，中性点（黒丸）で結ばれたY結線になっている（上に1個，左下と右下に1個ずつ）。上側の電源から出る線は図の上端を右へ延び，この線の上に右向き矢印と電流 I の表示がある。右側には負荷があり，負荷中性点（黒丸）から3本の枝が出たY結線になっている。上の枝は R，L，C の3素子が並列（上下両端の接続点に黒丸），左下の枝は C，L，R の3素子が並列，右下の枝は R，L，C の3素子が並列に接続されている。上側の電源の線は上の枝の上端へ，左下の電源の線は下へ回って左下の枝の端へ，右下の電源の線は図の下端を回って右下の枝の端へ接続されている。左下の電源からの線と右下の電源からの線は途中で交差するが，交差点に接続点（黒丸）はなく電気的に非接続である。電源中性点と負荷中性点を結ぶ線はない。",
+      "officialReferenceUrls": [],
+      "uncertainty": "誤答肢(2) 7.00，(4) 14.0，(5) 22.5 がどのような誤った計算を想定した値かは特定できない。",
+      "needsReview": true,
+      "sourceQuestionPdfUrl": "https://www.shiken.or.jp/chief/upload/20260322_ch_third_q01.pdf",
+      "sourceAnswerPdfUrl": "https://www.shiken.or.jp/chief/upload/20260322_ch_third_a01.pdf",
+      "reviewedFromPage": [
+        20
+      ]
+    },
+    {
+      "part": "b",
+      "question": "図のように線間電圧200 V，周波数50 Hzの対称三相交流電源にRLC負荷が接続されている。R＝10 Ω，電源角周波数をω [rad/s]として，ωL＝20 Ω，1/(ωC)＝20 Ωである。\n(b) 三相負荷の有効電力 P の値[kW]として，最も近いものを次の(1)〜(5)のうちから一つ選べ。",
+      "choices": {
+        "1": "2.6",
+        "2": "1.3",
+        "3": "4.0",
+        "4": "3.5",
+        "5": "12"
+      },
+      "officialAnswer": "3",
+      "explanation": "有効電力を消費するのは各相の抵抗 R のみである（L と C は有効電力を消費しない）。\n\n各相の R には相電圧 E = 200/√3 V が加わるので，\n1相分：P₁ = E²/R = (200/√3)²/10 = (40000/3)/10 ≒ 1333 W\n三相分：P = 3P₁ = 3 × 1333 ≒ 4000 W = 4.0 kW\n\n(a)の結果を用いても，P = 3I²R = 3 × (11.55)² × 10 ≒ 4000 W，または各相が純抵抗で力率1なので P = √3 × 200 × 11.55 × 1 ≒ 4000 W となり一致する。",
+      "choiceExplanations": {
+        "1": "誤り。三相とも各相の R に相電圧 200/√3 V が加わるので，P = 3 × (200/√3)²/10 ≒ 4000 W = 4.0 kW となり，2.6 kW にはならない。",
+        "2": "誤り。1.3 kW は1相分の有効電力（(200/√3)²/10 ≒ 1.33 kW）に相当する値であり，三相負荷全体の有効電力ではない。",
+        "3": "正しい。P = 3 × (200/√3)²/10 = 4000 W = 4.0 kW。",
+        "4": "誤り。3.5 kW は数値上 √3 × 200 V × 10 A ≒ 3.46 kW に相当する値であるが，電源電流は10 Aではなく約11.55 Aなので，正しくは √3 × 200 × 11.55 × 1 ≒ 4.0 kW となる。",
+        "5": "誤り。12 kW は各相の R に線間電圧200 Vが加わるとして 3 × 200²/10 を計算した値に一致するが，Y結線の各相に加わるのは相電圧 200/√3 V である。"
+      },
+      "figureDescription": "三相電源と三相負荷を結ぶ回路図。左側に〜記号の交流電源3個があり，中性点（黒丸）で結ばれたY結線になっている（上に1個，左下と右下に1個ずつ）。上側の電源から出る線は図の上端を右へ延び，この線の上に右向き矢印と電流 I の表示がある。右側には負荷があり，負荷中性点（黒丸）から3本の枝が出たY結線になっている。上の枝は R，L，C の3素子が並列（上下両端の接続点に黒丸），左下の枝は C，L，R の3素子が並列，右下の枝は R，L，C の3素子が並列に接続されている。上側の電源の線は上の枝の上端へ，左下の電源の線は下へ回って左下の枝の端へ，右下の電源の線は図の下端を回って右下の枝の端へ接続されている。左下の電源からの線と右下の電源からの線は途中で交差するが，交差点に接続点（黒丸）はなく電気的に非接続である。電源中性点と負荷中性点を結ぶ線はない。",
+      "officialReferenceUrls": [],
+      "uncertainty": "誤答肢(1) 2.6 がどのような誤った計算を想定した値かは特定できない。誤答肢(4) 3.5 について示した数値の対応は計算上の一致であり，出題者が想定した誤答経路であるかは確認できない。",
+      "needsReview": true,
+      "sourceQuestionPdfUrl": "https://www.shiken.or.jp/chief/upload/20260322_ch_third_q01.pdf",
+      "sourceAnswerPdfUrl": "https://www.shiken.or.jp/chief/upload/20260322_ch_third_a01.pdf",
+      "reviewedFromPage": [
+        20
+      ]
+    }
+  ],
+  "draftModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 4245,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 9337,
+      "webSearchRequests": 0,
+      "costUSD": 0.1598598,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 1677,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "5e288d64c77e81a0da1120dea6c65395ff77ea5cffc2293927acf699da6a9d8b",
+  "inputRequestSha256": "a6c352da073798d5e4b66c0b455cac39e907c8fbfd3827be12a737167e3eef2c",
+  "sourceQuestionPdfSha256": "c83e7c7350d98b65f5d8da0b93e4a2581a19dd250be320fb7fc492c9b34a29c1",
+  "sourceAnswerPdfSha256": "cc2890296d06a4823df5697a78a1c01ddfd39f041c51f48c87984daa3a5707c6",
+  "sourcePageImageSha256": {
+    "data/raw_pdfs/denken3/review/20260322/theory/p20.png": "c427a0a2647ca64f3b09acc8409a50181b0ac8099f9a51e6938f2999eb18b9c4"
+  },
+  "revisionHistory": [
+    {
+      "version": 1,
+      "model": "claude-opus-5-5",
+      "resolvedModel": "claude-opus-5-5",
+      "modelUsage": {
+        "claude-opus-5-5": {
+          "inputTokens": 2,
+          "outputTokens": 5597,
+          "cacheReadInputTokens": 1279,
+          "cacheCreationInputTokens": 15660,
+          "webSearchRequests": 0,
+          "costUSD": 0.23748380000000002,
+          "contextWindow": 1000000,
+          "maxOutputTokens": 128000,
+          "thinkingTokens": 2257,
+          "canonicalModel": "claude-opus-5-5",
+          "provider": "firstParty",
+          "costBasis": "list"
+        }
+      },
+      "rawResponseSha256": "0a87c6e2673e1db7f3c5c24892bbee5e446fcd2c8822ba48a1cd46b9aa01ae38",
+      "inputRequestSha256": "a9a9d1873d42e44f596c82d62d895b5b6857c65ef2c0f3071c0899aa4d1fc466",
+      "previousDraftSha256": "dd5394cbb8bd26ef9e174ee905b0a06cdb91d37312c49af5c12bd8ee9c5bfc79",
+      "previousDraft": "data/raw_pdfs/denken3/review/20260322/theory/archive/q15-vision-draft-v1.json",
+      "answeredReviewSha256": "40d7a7195653a21091cdb5e356ebfb418300972856245efd5a176b6f321038bd",
+      "answeredReview": "data/raw_pdfs/denken3/review/20260322/theory/archive/q15-opus-review-v1.json",
+      "answeredStrictReceipt": "docs/evidence/denken3/strict/20260322-theory-s1-q15a-q15b-opus.json",
+      "answeredStrictReceiptSha256": "d8ee9bb611220633109bffe7264a651134f1f7266300dc536d5154623fffb6bf",
+      "figureSha256": {
+        "20260322-theory-q15-fig1": "d036e13d4ec825e3de682280ceac8ec48c0afd3ae3050a5caf32f6d16829902c"
+      },
+      "referenceHashes": {},
+      "operatorNote": ""
+    },
+    {
+      "version": 2,
+      "model": "claude-opus-5-5",
+      "resolvedModel": "claude-opus-5-5",
+      "modelUsage": {
+        "claude-opus-5-5": {
+          "inputTokens": 2,
+          "outputTokens": 4870,
+          "cacheReadInputTokens": 1279,
+          "cacheCreationInputTokens": 14373,
+          "webSearchRequests": 0,
+          "costUSD": 0.2126478,
+          "contextWindow": 1000000,
+          "maxOutputTokens": 128000,
+          "thinkingTokens": 1517,
+          "canonicalModel": "claude-opus-5-5",
+          "provider": "firstParty",
+          "costBasis": "list"
+        }
+      },
+      "rawResponseSha256": "5980bb1bdf30466bfb650de6459a50a9676ef606124da137741e156b1ef20f0d",
+      "inputRequestSha256": "0504c4a045459ffe4c2866d169a24c0d3368a99bb96ce48ce341c6e760a99553",
+      "previousDraftSha256": "f965baf642bc8f985692e4ad7d5d535a5a8367d22ac42520521c712715be8eb8",
+      "previousDraft": "data/raw_pdfs/denken3/review/20260322/theory/archive/q15-vision-draft-v2.json",
+      "answeredReviewSha256": "2dc1d1bed77588f7ffb4550bab84c9cdfefefc5548ff20318d9574fbc5f9b056",
+      "answeredReview": "data/raw_pdfs/denken3/review/20260322/theory/archive/q15-opus-review-v2.json",
+      "answeredStrictReceipt": null,
+      "answeredStrictReceiptSha256": null,
+      "figureSha256": {
+        "20260322-theory-q15-fig1": "d036e13d4ec825e3de682280ceac8ec48c0afd3ae3050a5caf32f6d16829902c"
+      },
+      "referenceHashes": {},
+      "operatorNote": ""
+    }
+  ]
+}

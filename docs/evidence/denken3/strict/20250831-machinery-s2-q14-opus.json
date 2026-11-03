@@ -1,0 +1,68 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20250831",
+  "subject": "machinery",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 4874,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 16212,
+      "webSearchRequests": 0,
+      "costUSD": 0.2274398,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 3261,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "2c76a4882e503d5f3a88ab5ab295735da1aa4761e0a19b51925095526d047865",
+  "inputRequestSha256": "9b3b554f72223129275b9a3d317b2579e7e5ebace46c08a91ea738d430f3c63f",
+  "inputHashes": {
+    "candidateSha256": {
+      "q14": "fe667aea64e55879eb13d1876dd0863bdf72a854e74f7caaae0f1a7b8b4a187f"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20250831/machinery/p17.png": "e2a5c65116db7a8b183d673f6943a0733a543c4eaa6585e701e20733e1a10645"
+    },
+    "figureSha256": {
+      "public/images/denken3/20250831/machinery/20250831-machinery-q14-fig1.png": "52944839483df2bc36cf155d16f64583d9f79d35a1ef5dd3d8b72c9a33319a5a"
+    },
+    "sourceQuestionPdfSha256": "2a73a24594cc2b8bb7504b9a0ff15e001b2bb56b830572ce2be853f7116f26d8",
+    "sourceAnswerPdfSha256": "76fd3715ed487d19a56b387fb402de20ee09474e9fa55b0413f9037b96af06c9",
+    "officialAnswerUnitsSha256": "750989bea9cca378a8b76af6e3fda7861878ab9b9f2775221bb07cacc14e9837",
+    "referencePdfSha256": {},
+    "referencePageSha256": {},
+    "referenceJsonSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q14",
+      "questionNumber": 14,
+      "part": null,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "問題文: 公式原図の問14本文「図の論理回路に，図に示す入力A，B及びCを加えたとき，出力Xとして正しいものを次の(1)〜(5)のうちから一つ選べ。」と候補questionが一字一句一致する。",
+        "科目・公式正答: 公式解答表の＜機械＞列で問14の解答は3、配点は5。manifest固定単位{question:14, part:null, answer:'3', points:5}、候補のofficialAnswer='3'、scoringPoints=5がいずれも一致する。原図フッター『T1−K 017』は機械科目の冊子であることと整合する。理論問14（正答4）とは別単位であり、混同はない。",
+        "回路接続(原図と公開候補図の両方で照合): 上側ANDゲートの入力はAとCで、Cは分岐点の黒丸から上方へ伸びる。下側ANDゲートの入力はBとNOT(C)。両ANDゲートの出力は2入力ORゲートに入り、その出力が出力X。C線とB線の交差点には黒丸がなく、非接続である。したがって X = A·C + B·C̄ となり、候補の論理式・マルチプレクサ解釈は正しい。",
+        "入力波形(パルス幅単位で左端から区間1〜19): Aが1になる区間は2,4,6,10,16,18。Bが1になる区間は2,4,8,12,14,16。Cは区間3の中央で立ち上がり、区間9の中央で立ち下がり、区間13の中央で再び立ち上がる。区間3・9・13ではA=B=0なので、Cの切替位置は出力に影響しない。以上はいずれも候補の記述と一致する。",
+        "出力の検算: C=0の区間(1〜3途中)ではX=Bなので区間2が1。C=1の区間(3途中〜9途中)ではX=Aなので区間4と6が1で、区間8(A=0,B=1)は0。C=0の区間(9途中〜13途中)ではX=Bなので区間12が1で、区間10(A=1,B=0)は0。C=1の区間(13途中以降)ではX=Aなので区間16と18が1で、区間14(A=0,B=1)は0。よってX=1となるのは区間2,4,6,12,16,18である。",
+        "選択肢波形の読み取り(原図・公開候補図とも同じ): (1)は区間2,4,6,12,18、(2)は区間2,4,6,16、(3)は区間2,4,6,12,16,18、(4)は区間2,4,12,16、(5)は区間2,4,8,12,16。いずれも候補choicesの括弧内記述と一致する。完全に一致するのは(3)だけで、公式正答3と整合する。",
+        "誤答理由: (1)は区間16(A=B=C=1、A·C=1)が0になっている。(2)は区間12(B·C̄=1)と区間18(A·C=1)が0になっている。(4)は区間6と区間18(A=1,C=1)が0になっている。(5)は区間8(A=0,B=1,C=1なのでX=0)が1になっており、さらに区間6と区間18が0になっている。各肢に固有の理由と、そこに記載された入力値はすべて図と一致する。",
+        "公開候補図: 原図の回路図とタイムチャートを欠落なく含む。確認したラベルは、A・B・C、入力の括弧、出力X、時間の矢印、各段の1/0目盛、(1)〜(5)、出力の括弧。パルス位置、入力側破線(Cの切替位置の3本)、出力側破線(選択肢に現れるパルスの境界)は原図と相対位置が一致する。問題文は候補のquestionで補われるため、図と組み合わせれば単独で解答できる。",
+        "figureDescription: 接続・交差の非接続・破線の位置・区間番号が説明用であることの注記が、いずれも原図と一致する。区間番号が原図にないことはuncertaintyにも明記されており、利用者を誤導しない。",
+        "出典: officialReferenceUrlsは空で、検証を要する独立主張はない。reviewedFromPage=[17]は、原図フッター『T1−K 017』(印刷頁は-14-)と整合する。"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+[
+  {
+    "number": 13,
+    "explanation": "The question sets the premise that the insured person and the recipient of the insurance money and benefits are the same person. The designated proxy claim rider (指定代理請求特約) exists for this situation. If the insured is also the recipient but cannot make a claim because of a special circumstance, such as being unable to express their will due to illness, the pre-designated proxy (指定代理請求人) can claim on their behalf. The policyholder can change the designated proxy during the policy term by following the prescribed procedure. This normally requires the insured person's consent. Choice 3 says the proxy cannot be changed during the policy term, so it is the least appropriate statement. The official answer is 3.",
+    "choiceExplanations": {
+      "1": "Appropriate. Under this question's premise (insured = recipient), hospitalization benefits, specified-disease insurance money, severe-disability insurance money, and living-needs rider money are all paid to the insured. If a special circumstance prevents the insured from claiming, such as being unable to express their will due to illness, the pre-designated proxy can claim on their behalf.",
+      "2": "Appropriate. The designated proxy claim rider only lets someone else make claims on the insured's behalf, so it adds no separate insurance coverage. It can be attached without any rider premium.",
+      "3": "Not appropriate, so this is the answer. The policyholder can change the designated proxy during the policy term by following the prescribed procedure, normally with the insured person's consent. Saying it cannot be changed is wrong.",
+      "4": "Appropriate. When the policyholder and the insured are the same person, the premium-waiver claim is also the insured's own claim. It is therefore covered by the proxy claim. If the prescribed requirements are met, the designated proxy can claim the premium waiver on the insured's behalf."
+    },
+    "cleared": true,
+    "remainingConcern": ""
+  },
+  {
+    "number": 16,
+    "explanation": "The question's conditions are: declining-balance method (定率法, rate 0.333), acquisition cost 4,200,000円, 100% business use, placed in business use in July 2023, used for the whole of 2024, and the depreciation guarantee amount is ignored. Round up any fraction below 1円 at each step.\n\n① 2023 depreciation (prorated by month): July to December is 6 months. 4,200,000円 × 0.333 × 6/12 = 699,300円.\n② Unamortized balance at end of 2023: 4,200,000円 − 699,300円 = 3,500,700円.\n③ 2024 depreciation (in use all year, so 12 months): 3,500,700円 × 0.333 = 1,165,733.1円. Rounding up gives 1,165,734円.\n\nBusiness use is 100%, so the whole amount is a necessary expense. Because the question says to ignore the guarantee amount, there is no need to check against it or switch to the revised depreciation rate. The official answer is 3.",
+    "choiceExplanations": {
+      "1": "Wrong. 4,200,000円 × 0.167 = 701,400円 is one full year of straight-line depreciation (定額法). The question says the declining-balance method (定率法) was chosen.",
+      "2": "Wrong. This treats 2023 as a full 12 months: 4,200,000円 × 0.333 = 1,398,600円, then takes the remaining 2,801,400円 × 0.333 = 932,866.2円 and rounds up to 932,867円. The 2023 amount should have been prorated for 6 months (6/12).",
+      "3": "Correct. 2023 prorated for 6 months: 699,300円. Unamortized balance at end of 2023: 3,500,700円. Multiplied by 0.333 = 1,165,733.1円, rounded up to 1,165,734円.",
+      "4": "Wrong. 4,200,000円 × 0.333 = 1,398,600円 is the acquisition cost times the rate for a full 12 months. It does not deduct the 2023 depreciation (699,300円). It is not the same as the actual 2023 depreciation, which was 699,300円 after proration."
+    },
+    "cleared": true,
+    "remainingConcern": ""
+  }
+]

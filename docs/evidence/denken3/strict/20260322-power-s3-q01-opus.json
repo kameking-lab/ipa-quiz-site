@@ -1,0 +1,72 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20260322",
+  "subject": "power",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 5462,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 15298,
+      "webSearchRequests": 0,
+      "costUSD": 0.2318878,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 3242,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "1f98779f9d35f0f7a1fb76c7d322d6a8e7ab5e708b220395a074c755168e10e8",
+  "inputRequestSha256": "793ac92697cdfc2f7afbf901f943603271bc5d18406202f55137f23e6580480d",
+  "inputHashes": {
+    "candidateSha256": {
+      "q01": "4450880009f0bf5d75307c0f1b7fb5a4d98b941557c2f7e1c47d166c5e8aab5a"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20260322/power/p04.png": "b5db000e4206d9200a3d5b80001dc23907f06ab38b8c96f60dfae6d1219fab96"
+    },
+    "figureSha256": {},
+    "sourceQuestionPdfSha256": "9733341a0f293f068c9a665d5a9a90f1aabf3a2db5d79cd530643cdea241f7b7",
+    "sourceAnswerPdfSha256": "cc2890296d06a4823df5697a78a1c01ddfd39f041c51f48c87984daa3a5707c6",
+    "officialAnswerUnitsSha256": "a7fe1c20f1fe2d13156ebd8ba1ed6e10dd89989f2411fd92dd3be8b2117e0239",
+    "referencePdfSha256": {},
+    "referencePageSha256": {},
+    "referenceJsonSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q01",
+      "questionNumber": 1,
+      "part": null,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [
+        "choiceExplanations[4] は、(エ)「高落差を得やすい」が誤りである理由を「公式正答の組合せにある『高落差を得にくい』と逆の内容である」としている。これは公式正答を根拠にした循環論法で、固有の理由になっていない。(4) の誤答理由は、(ア)(イ) が入れ替わっている点だけで十分に成立する。そのため (エ) への言及は、「(エ) は本問の判定に不要」と中立に書くか、削除するべきである。",
+        "choiceExplanations[3] は、(エ)「高落差を得にくい」の根拠を、確定した事実であるかのように説明している。根拠は「水路式はダムで水位を高めず、河川の自然な高低差だけで落差を得るため」というものである。しかしこの根拠は添付の公式資料では検証できない。また、水路式は急勾配の上流部で長い導水路により高落差を得る方式である、という一般的な教科書の説明とも緊張関係にある（explanationIssues 参照）。正答肢の理由は、(ア)(イ)(ウ)(オ) が本文の分類・定義と一致することに限定するべきである。そのうえで (エ) は「本問の組合せで出題者が置いた語句」であることを示す程度にとどめるべきである。"
+      ],
+      "answerIssues": [],
+      "explanationIssues": [
+        "総合解説の「(エ) の考え方」段落は問題を含む。まず、水路式がダム式・ダム水路式より「高落差を得にくい」理由を、「ダムで水位を高められない」という独自の整理で断定調に導いている。ところが直後の段落では、「水路式は急勾配の上流部で長い導水路により大きな落差を得る方式として説明されることも多い」と自らその整理を否定している。このため、学習者には相反する二つの説明が同時に提示される。一般的な教科書では、水路式は高落差を得やすく、ダム式は比較的低〜中落差になりやすいとも説明される。したがって、公式資料で裏付けられない物理的根拠を事実として書くべきではない。修正方針は次のとおり。(1) 正答は (ア)(イ)(ウ)(オ) の分類名・定義で一意に定まることを主軸にする。(2) (エ) については、公式解答が正答番号のみを示し語句の根拠を公表していないことを明記する。(3) 独自の因果説明は削除するか、根拠となる出典を付けて示す。",
+        "消去法の記述（(ア)「落差」で (2)(4)、(イ)「流量」で (1)、(オ)「調整池式」で (5) が外れる）は正しい。ただし (ウ)「流込み式」でも (1)(2) が外れる。そのため、「4 つの空欄から一意に定まる」との表現に対して (ウ) による消去が列挙されていない。軽微だが、(ウ) による消去も明示するとよい。"
+      ],
+      "figureIssues": [],
+      "sourceIssues": [
+        "候補の uncertainty 欄は、(エ)「高落差を得にくい」の出題意図が「未確認」であると自ら記載している。一方で needsReview=false となっており、不整合である。添付の公式問題原図と公式解答表（正答番号・配点のみ）では、(エ) の語句の根拠を検証できない。これは外部確認事項が残っている状態であり、needsReview=true とするか、解説から未検証の断定を除去する必要がある。"
+      ],
+      "verifiedEvidence": [
+        "出典：公式問題原図の冊子見出しは『第3種 電力』、A問題、問1で、頁下部に『-1-』『T2-D 004』とある。manifest の PDF 第[4]頁と整合し、reviewedFromPage=[4] は妥当である。",
+        "公式解答表は『令和7年度 第三種電気主任技術者下期試験解答』の＜電 力＞列で、問1 の解答=3、配点=5 である。manifest 固定の正答単位 {question:1, part:null, answer:'3', points:5} と、候補の officialAnswer='3'・scoringPoints=5 に一致する。",
+        "fiscalYear=2025（令和7年度）、term=lower（下期）、examDate=2026-03-22、subject=power、sourceQuestionPdfUrl・sourceAnswerPdfUrl は manifest と一致する。sourceAttribution『令和7年度下期第三種電気主任技術者試験 電力科目 問1』も整合する。",
+        "問題文を原図と一文ずつ照合した。対象は、分類の導入文、(エ)を含む水路式の段落、(ウ)の定義段落、(オ)の定義段落（『1 日又は数日程度の河川流量を調整できる大きさの池』）、および設問指示文である。脱落・改変はない。空欄 (イ)・(ウ) が本文中で2回ずつ出現する点も原図どおりである。",
+        "選択肢 (1)〜(5) の (ア)〜(オ) 全25セルを原図の表と照合し、すべて一致した。(1) 落差/流速/自然放流式/建設期間が長い/ダム式、(2) 流速/落差/自然放流式/建設期間が短い/ダム式、(3) 落差/流量/流込み式/高落差を得にくい/調整池式、(4) 流量/落差/流込み式/高落差を得やすい/調整池式、(5) 落差/流量/流込み式/建設費が安い/貯水池式。",
+        "(ア)落差・(イ)流量・(ウ)流込み式・(オ)調整池式の組を満たす肢は (3) のみで、公式正答 3 と整合する。",
+        "choiceExplanations の分類名に関する誤答理由は正確である。(1)(2) の自然放流式・ダム式、(4) の (ア)(イ) 入替、(5) の貯水池式（季節的調整）と調整池式（日〜数日調整）の区別がこれに当たる。",
+        "図は選択肢表のみで、その内容は choices に完全に転記されている。figureUrls=[] と figureDescription『図なし』は妥当である。officialReferenceUrls=[] のため、検証すべき独立主張はない。"
+      ]
+    }
+  ]
+}

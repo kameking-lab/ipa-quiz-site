@@ -1,0 +1,65 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20250323",
+  "subject": "machinery",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 2797,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 14122,
+      "webSearchRequests": 0,
+      "costUSD": 0.1691798,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 1503,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "2398ce8fe34e4689c5a593ed266f2acee2e074b7462d97413ab5184b63dac0e8",
+  "inputRequestSha256": "bba1d653f6f6764d9682df9800262dec0704ca669cd8f160c1c92f8279de3bc5",
+  "inputHashes": {
+    "candidateSha256": {
+      "q05": "afe88d655ea3e28d3160d77573f38086ac169643df837d879bc10d1f50c25207"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20250323/machinery/p08.png": "adc484a243f59f13e7ba8811a6129ad443438a5a24033ebad5c3dcef79d87df4"
+    },
+    "figureSha256": {},
+    "sourceQuestionPdfSha256": "66e8b0070a314cd78ed9b9f3edd3d75eeaf442b258fd0aacab0e7d9620c75b9f",
+    "sourceAnswerPdfSha256": "4c3b38fcf1405766fafaa78b1b05b867a3d48307a670b9d354476bc6b32acd4c",
+    "officialAnswerUnitsSha256": "74034d68d165e617b6ba06f82ee41a74292d153fc1b24f88ecadb5cd72a10a11",
+    "referencePdfSha256": {},
+    "referencePageSha256": {},
+    "referenceJsonSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q05",
+      "questionNumber": 5,
+      "part": null,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "出典メタデータ: fiscalYear=2024, term=lower, examDate=2025-03-23, subject=machinery, sourceQuestionPdfUrl=https://www.shiken.or.jp/chief/upload/20250323_ch_third_q03.pdf, sourceAnswerPdfUrl=https://www.shiken.or.jp/chief/upload/2024_3_2.pdf は manifest と一致する。sourceAttribution『令和6年度下期…機械科目 問5』も一致する。",
+        "reviewedFromPage=[8] は manifest の問5原図頁（PDF第8頁）と一致する。原図のフッタは冊子頁『-5-』と『T2－K 008』で、PDF第8頁と矛盾しない。",
+        "問題文: 導入文『次の文章は，三相同期発電機に関する記述である。』、第1段落の(ア)(イ)(ウ)を含む3文、第2段落の(エ)(オ)を含む文、設問文を原図と一字ずつ照合した。語句・句読点・空欄位置はすべて一致する。空欄の枠表記を(ア)等にし、全角『～』を『〜』にした差は整形の範囲で、意味は変わらない。",
+        "選択肢表を原図と照合した。(1) 小さい/小さく/大きく/大きい/大きく、(2) 小さい/大きく/大きく/大きい/小さく、(3) 小さい/大きく/大きく/小さい/大きく、(4) 大きい/大きく/小さく/大きい/小さく、(5) 大きい/小さく/小さく/小さい/大きく。5肢×5欄の全25語が一致する。",
+        "公式正答: 令和6年度下期解答表の〈機械〉問5=2 は、候補の officialAnswer='2' および manifest の q05 answer='2' と一致する。",
+        "総合解説: N=120f/p [min⁻¹] から、周波数一定なら極数が多いほど低速になる。したがって低速の水車では多極が必要で、(ア)小さい・(イ)大きく となる。多極のため直径が大きく扁平になり、(ウ)大きく となる。タービン発電機は高速（2極・4極）で、(エ)大きい となる。遠心力に対する機械的強度の制約から直径を小さく細長くするので、(オ)小さく となる。以上の因果と結論(2)に誤りはない。突極形・2極/4極の記述も標準的な事実と整合する。",
+        "肢別解説: 正解組合せ（小さい/大きく/大きく/大きい/小さく）と各肢を空欄ごとに比較した。(1)の誤りは(イ)(オ)、(3)の誤りは(エ)(オ)、(4)の誤りは(ア)(ウ)、(5)は全欄が誤りであり、各肢の指摘と完全に一致する。正誤の判定とそれぞれの理由も正しい。",
+        "図: 原図には選択肢表以外の図がなく、解答に図は不要である。figureDescription、空の figureUrls、空の choiceFigureUrls は妥当である。",
+        "officialReferenceUrls は空配列で、検証を要する独立主張の参照はない。解説の主張は問題文と N=120f/p の基本関係の範囲に収まっており、外部確認事項はない。"
+      ]
+    }
+  ]
+}

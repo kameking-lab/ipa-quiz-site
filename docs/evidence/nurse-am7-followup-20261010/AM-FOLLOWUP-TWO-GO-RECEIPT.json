@@ -1,0 +1,89 @@
+{
+  "scope": "Source-only; no site registration, Git commit, push, or publication",
+  "baseline": "N451 site candidate at b6943bc5 plus fixed PM GO9",
+  "baselineRegisteredQuestionCount": 451,
+  "newQuestionCount": 2,
+  "newIds": [
+    "kangoshi-2024-annual-am-q109",
+    "kangoshi-2025-annual-am-q92"
+  ],
+  "blockedContracts": [
+    "kangoshi-2025-annual-am-q32",
+    "kangoshi-2025-annual-am-q79",
+    "kangoshi-2024-annual-pm-q70",
+    "kangoshi-2025-annual-pm-q77"
+  ],
+  "sourceChecks": [
+    {
+      "id": "kangoshi-2024-annual-am-q109",
+      "sourcePhysicalPage": 46,
+      "sourceImagePath": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\claude-capacity-20261010\\nurse-am91-120\\rendered\\114-am-physical-p46.png",
+      "sourceImageSha256": "e355be76ae33799fd68e9ed3cbb1cc6f097e56b8dde778cf658cf9d11a483594",
+      "rawQuestionAndAllChoices": "109\nA さんへの活動に関する助言で適切なのはどれか。\n1．｢仕事は辞めましょう｣\n2．｢ウォーキングを再開しましょう｣\n3．｢週1回バスケットボールをやりましょう｣\n4．｢ご家族の言うように安静にしていましょう｣",
+      "sharedPremiseBeforeRubyRepair": "次の文を読み109〜111 の問いに答えよ。\nA さん（41 歳、初妊婦、会社員）は夫（42 歳、会社員）と2人で暮らしている。身長\nは158 cm、非妊時体重55 kg である。A さんは妊娠16 週3日に妊婦健康診査を受診\nし順調な経過と診断された。妊婦健康診査後｢夫から、高齢妊娠だから安静にするよ\nう言われ、夫が家事をしてくれています。妊娠前はバスケットボールを週に3回、毎\n日夕方に夫とウォーキングをしていました。今は仕事に行く以外は、家でなるべく動\nかないようにしています｣とA さんが看護師に話した。",
+      "rubyRepairs": [],
+      "officialAnswerDigits": "2",
+      "observedChoiceNumbers": [
+        "1",
+        "2",
+        "3",
+        "4"
+      ],
+      "primaryEvidence": [
+        {
+          "url": "https://www.nhs.uk/pregnancy/keeping-well/exercise/",
+          "finding": "NHS guidance supports walking as moderate activity during uncomplicated pregnancy."
+        },
+        {
+          "url": "https://www.acog.org/womens-health/faqs/exercise-during-pregnancy",
+          "finding": "ACOG lists walking as suitable and basketball among contact sports to avoid; search-index text reviewed (direct fetch unavailable)."
+        }
+      ],
+      "sourcePacketSha256": "8b9960a0d8674827e881cd4364034a3f8bea7956e026f4c1fac75ccb194577e6",
+      "existingCandidateSha256": "097e1d8a1a9606dc835bc419cf54cc33d96c07bfd52fcd26aaf66a60a1d247b0",
+      "officialQuestionPdfSha256": "03733e97bcbc54eb6ea74727daf57aaf8a094d1746879d10b4451efc361a981f",
+      "officialAnswerPdfSha256": "706f6fe6ab34e9849755874132ad98ac55a32d9b83fa7e37c8e58c7ad07921db"
+    },
+    {
+      "id": "kangoshi-2025-annual-am-q92",
+      "sourcePhysicalPage": 36,
+      "sourceImagePath": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\claude-capacity-20261010\\nurse-am91-120\\rendered\\115-am-physical-p36.png",
+      "sourceImageSha256": "32c5e60c226fe18b754e3c48bd4d7ac7455bfe764715b124ff850aef33c4737b",
+      "rawQuestionAndAllChoices": "92 退院1 か月後、隣町に住んでいる長男がA さん宅を訪ねると、A さんは嘔吐と\n下痢をしていた。長男が付き添ってかかりつけの診療所を受診したところ、A さ\nんは\ninfectious gastroenteritis\n感染性胃腸炎と診断された。A さんの長男から依頼を受け、訪問看護師はA\nさんの体調確認のために臨時で訪問した。\n　このときの訪問看護師の対応で正しいのはどれか。\n 1．保健所に\ninfectious gastroenteritis\n感染性胃腸炎の発生届を提出する。\n 2．A さんが石鹸と流水で手洗いできているか確認する。\n 3．介護支援専門員に訪問介護を中止するよう連絡する。\n 4．長男に吐物で汚染した衣類は洗濯して室内に干すよう伝える。",
+      "sharedPremiseBeforeRubyRepair": "次の文を読み91～93 の問いに答えよ。\n　A さん（80 歳、男性、要介護2 ）は1 人で暮らしている。\ncerebral hemorrhage\n脳出血を発症し、急性期\n病院で地域連携クリニカルパスに沿って治療が行われた。軽度の右不全麻痺と失語が\nあるため、回復期リハビリテーション病院に転院した。A さんは自宅退院を希望し\nている。退院後はかかりつけの診療所へ通院し、訪問看護と訪問介護を利用する予定\nである。",
+      "rubyRepairs": [
+        {
+          "field": "fullSharedPremiseText",
+          "removedStandaloneRuby": "cerebral hemorrhage",
+          "count": 1
+        },
+        {
+          "field": "rawQuestionAndAllChoices",
+          "removedStandaloneRuby": "infectious gastroenteritis",
+          "count": 2
+        }
+      ],
+      "officialAnswerDigits": "2",
+      "observedChoiceNumbers": [
+        "1",
+        "2",
+        "3",
+        "4"
+      ],
+      "primaryEvidence": [
+        {
+          "url": "https://id-info.jihs.go.jp/niid/ja/intestinal-m/intestinal-idwrc/10991-idwrc-2205.html",
+          "finding": "JIHS says infectious gastroenteritis is a Category 5 sentinel-report condition; designated institutions report weekly, and handwashing/vomit handling matter."
+        },
+        {
+          "url": "https://www.cdc.gov/norovirus/prevention/index.html",
+          "finding": "CDC supports soap-and-water handwashing and careful handling/washing/drying of vomit-contaminated laundry; norovirus is an example cause, not a diagnosis in this question."
+        }
+      ],
+      "sourcePacketSha256": "40fac0f7b6143b2e9c64e719e5049e37800f568b6c8135ca54c2075022316c36",
+      "existingCandidateSha256": "28ccb86d5191d67d06e5815fe63a8f101521b390dc544bf5279cbad8f587bdfb",
+      "officialQuestionPdfSha256": "24ee4a497b9d4b04035f5feed2cac0242bfc95b2cae00e2df69ad31e44994ef1",
+      "officialAnswerPdfSha256": "cd006ca5e9ef8d327a5e9415fd948817c6b572699c57ecfdfa86904569895d66"
+    }
+  ]
+}

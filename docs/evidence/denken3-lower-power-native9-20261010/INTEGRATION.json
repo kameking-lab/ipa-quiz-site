@@ -1,0 +1,491 @@
+{
+  "status": "LOCAL_INTEGRATION_NOT_PUBLISHED",
+  "base": "e8ab7e2c00655c42f7092d12f542378b5d9825eb",
+  "newNativeOriginals": 9,
+  "newNativeFields": 12,
+  "newChoiceExplanations": 60,
+  "newSourceImages": 9,
+  "nativeOriginals": 121,
+  "nativeFields": 148,
+  "nativeImages": 141,
+  "legacyRecords": 320,
+  "legacyUniqueOriginals": 264,
+  "nativeLegacyOverlap": 60,
+  "unionOriginals": 325,
+  "pureNewOriginals": 0,
+  "old112NativeAnd320LegacyFilesGitBlobSha256": {
+    "data/questions/denken3/launch.json": "683c2d57cb82e91d0bb2a8685aac70a7d34cb50fb67c4bb09e9091a3886d4f73",
+    "data/questions/denken3/native-2025-lower-law-next.json": "2cc186e8b86b9202b504c569e94e23e16aa24e6edac2c7de4bff47cb507a940c",
+    "data/questions/denken3/native-2025-lower-law.json": "5664344348f4bd58a59661ccaffd6206f6f6bdcbbfbb58a359bdbcfaa614eef5",
+    "data/questions/denken3/native-2025-lower-machine-follow.json": "4abd97549fc2c68c65f184ff68f9f8cff8cb82e8948b83ac59b0416cbcb59755",
+    "data/questions/denken3/native-2025-lower-power-next.json": "4cd78efc4f90fa1eba5924483cbb6b5a514f94192cac1e101aa5c7f6b29b6125",
+    "data/questions/denken3/native-2025-lower-theory-follow.json": "756f90cf735d57dce108a758515436b5fac0c05c91afd7a8e25866d16e16c806",
+    "data/questions/denken3/native-2026-upper-law-next.json": "7583062db36cd97e351106f86b425bbe01fb635b818f673f6df5d1e67546784b",
+    "data/questions/denken3/native-2026-upper-law.json": "67f9e41a2ab73ae942be13ba64dedc6fe84d57d5c638e08df4db433887a410d7",
+    "data/questions/denken3/native-2026-upper-machine-follow.json": "6fdc3eb0cca5f615bbf5fba5f4500ab981d861cb3dfa280734af0653d3b11de7",
+    "data/questions/denken3/native-2026-upper-machine-next.json": "da432439cad350e6eeab63b5498f6894e187836989abe2d8b13f383e9a02ed65",
+    "data/questions/denken3/native-2026-upper-power-next.json": "4c7e07cb17cb422a6ddddc9d8af7d98653fa622d71f98337a0e3fc62d91dbb9a",
+    "data/questions/denken3/native-2026-upper-power.json": "95a28beed4e54d49e1987c4657d1c47805be1c887201aae54f2ae4c6f6edc26d",
+    "data/questions/denken3/native-2026-upper-theory.json": "1280e99ed52c47ffa38ced8cd5d533545af609d23a49dda5e02f063f5cd76fb1"
+  },
+  "newPartPath": "data/questions/denken3/native-2025-lower-power-follow.json",
+  "newPartSha256": "f3dd7c8133e21aca39a33579091b24e6d6cf23ecae53f50b863447ea4fa9b8e9",
+  "bindings": [
+    {
+      "id": "denken3-2025-lower-power-q09",
+      "reviewed": {
+        "gitPath": "data/questions/denken3/reviewed/20260322-power-q09-09.json",
+        "sha256": "95de16160b0ac7a06e2c97f12cde2ff54a48b9689747b7b00a56ce515c22a032",
+        "revision": "e8ab7e2c00655c42f7092d12f542378b5d9825eb"
+      },
+      "strictReceipts": [
+        {
+          "gitPath": "docs/evidence/denken3/strict/20260322-power-s2-q09-opus.json",
+          "sha256": "82d33f0dae69bd710fd4d0665229370991fa5910fba51cb5acf6341745f71e73",
+          "revision": "e8ab7e2c00655c42f7092d12f542378b5d9825eb"
+        }
+      ],
+      "rawModelReceipts": [
+        {
+          "gitPath": "docs/evidence/denken3/raw/20260322/power/20260322-power-s2-q09-opus-raw.jsonl",
+          "sha256": "6297b0840131ce2b06b6ac9fe284cfe61d970e73e825f1097f6f27eb27fbb34a",
+          "revision": "e8ab7e2c00655c42f7092d12f542378b5d9825eb",
+          "servedModelUsage": {
+            "claude-opus-5-5": {
+              "inputTokens": 2,
+              "outputTokens": 3204,
+              "cacheReadInputTokens": 1279,
+              "cacheCreationInputTokens": 13889,
+              "webSearchRequests": 0,
+              "costUSD": 0.1754558,
+              "contextWindow": 1000000,
+              "maxOutputTokens": 128000,
+              "thinkingTokens": 1740,
+              "canonicalModel": "claude-opus-5-5",
+              "provider": "firstParty",
+              "costBasis": "list"
+            }
+          },
+          "turns": 1
+        }
+      ],
+      "sourcePages": [
+        {
+          "physicalPage": 12,
+          "url": "/images/denken3/2025-lower-native/power-q09-p12.png",
+          "sha256": "bf50b010cf8eb9613dda0c608ad94e9f913ff9aa1ccd2c8feff0be859cc0a834"
+        }
+      ],
+      "retainedUncertainty": [
+        "なし"
+      ]
+    },
+    {
+      "id": "denken3-2025-lower-power-q10",
+      "reviewed": {
+        "gitPath": "data/questions/denken3/reviewed/20260322-power-q10-10.json",
+        "sha256": "595511e7f8d278c877ce4a1e7adf2f953971c4e374e2312a88fdb022f9db0247",
+        "revision": "e8ab7e2c00655c42f7092d12f542378b5d9825eb"
+      },
+      "strictReceipts": [
+        {
+          "gitPath": "docs/evidence/denken3/strict/20260322-power-s1-q10-opus.json",
+          "sha256": "92533b7e386767861aea6aa1e0e6d2fd34c7c53c3342019f25c99238abaadf09",
+          "revision": "e8ab7e2c00655c42f7092d12f542378b5d9825eb"
+        }
+      ],
+      "rawModelReceipts": [
+        {
+          "gitPath": "docs/evidence/denken3/raw/20260322/power/20260322-power-s1-q10-opus-raw.jsonl",
+          "sha256": "a4311354a638fac33ea1369c13f13415abe6900480263bf87f62f8cbd9aa9883",
+          "revision": "e8ab7e2c00655c42f7092d12f542378b5d9825eb",
+          "servedModelUsage": {
+            "claude-opus-5-5": {
+              "inputTokens": 2,
+              "outputTokens": 2749,
+              "cacheReadInputTokens": 1279,
+              "cacheCreationInputTokens": 13841,
+              "webSearchRequests": 0,
+              "costUSD": 0.1659718,
+              "contextWindow": 1000000,
+              "maxOutputTokens": 128000,
+              "thinkingTokens": 1506,
+              "canonicalModel": "claude-opus-5-5",
+              "provider": "firstParty",
+              "costBasis": "list"
+            }
+          },
+          "turns": 1
+        }
+      ],
+      "sourcePages": [
+        {
+          "physicalPage": 13,
+          "url": "/images/denken3/2025-lower-native/power-q10-p13.png",
+          "sha256": "02ac49ebf97e248853512f67c4a2b1eafd215219826f029c9a6845d36665026d"
+        }
+      ],
+      "retainedUncertainty": [
+        "問題文・選択肢の判読に不確実な箇所はない。出題年度・試験回は本ページの記載（ページ番号「- 10 -」、識別記号「T2－D 013」）からは特定できない。"
+      ]
+    },
+    {
+      "id": "denken3-2025-lower-power-q11",
+      "reviewed": {
+        "gitPath": "data/questions/denken3/reviewed/20260322-power-q11-11.json",
+        "sha256": "cc748f6c3410bf34da0390d904000a45ec3eb34d914aed9c8b0040aae58dbee4",
+        "revision": "e8ab7e2c00655c42f7092d12f542378b5d9825eb"
+      },
+      "strictReceipts": [
+        {
+          "gitPath": "docs/evidence/denken3/strict/20260322-power-s1-q11-opus.json",
+          "sha256": "3d5bc1576b17df342f27aec9e8fef84538872f07a9cd6baed19aad4abae6ec28",
+          "revision": "e8ab7e2c00655c42f7092d12f542378b5d9825eb"
+        }
+      ],
+      "rawModelReceipts": [
+        {
+          "gitPath": "docs/evidence/denken3/raw/20260322/power/20260322-power-s1-q11-opus-raw.jsonl",
+          "sha256": "04f0c4f095b0ff10865c667f4c1b43886cd8da0a338691004220d7fbc59ac95a",
+          "revision": "e8ab7e2c00655c42f7092d12f542378b5d9825eb",
+          "servedModelUsage": {
+            "claude-opus-5-5": {
+              "inputTokens": 2,
+              "outputTokens": 2433,
+              "cacheReadInputTokens": 1279,
+              "cacheCreationInputTokens": 13610,
+              "webSearchRequests": 0,
+              "costUSD": 0.1578038,
+              "contextWindow": 1000000,
+              "maxOutputTokens": 128000,
+              "thinkingTokens": 1056,
+              "canonicalModel": "claude-opus-5-5",
+              "provider": "firstParty",
+              "costBasis": "list"
+            }
+          },
+          "turns": 1
+        }
+      ],
+      "sourcePages": [
+        {
+          "physicalPage": 14,
+          "url": "/images/denken3/2025-lower-native/power-q11-p14.png",
+          "sha256": "e8b887e4bdc33aac0e9e1326ed3e913dbfc3ab99d5dc4202fd25453efbc76d9e"
+        }
+      ],
+      "retainedUncertainty": [
+        "問題ページには出題年度・試験回の表記がなく、このページだけでは出典の年度・回を特定できない。問題文と選択肢の判読については、不確実な箇所はない。"
+      ]
+    },
+    {
+      "id": "denken3-2025-lower-power-q12",
+      "reviewed": {
+        "gitPath": "data/questions/denken3/reviewed/20260322-power-q12-12.json",
+        "sha256": "f0de8d4d82277be845e48ff02d5e540abc204bd7f8bc3b9b686a8d4eafd59fcd",
+        "revision": "e8ab7e2c00655c42f7092d12f542378b5d9825eb"
+      },
+      "strictReceipts": [
+        {
+          "gitPath": "docs/evidence/denken3/strict/20260322-power-s2-q12-opus.json",
+          "sha256": "19ac6183252e972a57a6f71938a12feb657c453889b9ba8a00e5b5418caf535f",
+          "revision": "e8ab7e2c00655c42f7092d12f542378b5d9825eb"
+        }
+      ],
+      "rawModelReceipts": [
+        {
+          "gitPath": "docs/evidence/denken3/raw/20260322/power/20260322-power-s2-q12-opus-raw.jsonl",
+          "sha256": "fd0f76b88df42698f13945aaef40f1133ba36ff128b5e523f78b31528b62c340",
+          "revision": "e8ab7e2c00655c42f7092d12f542378b5d9825eb",
+          "servedModelUsage": {
+            "claude-opus-5-5": {
+              "inputTokens": 2,
+              "outputTokens": 2664,
+              "cacheReadInputTokens": 1279,
+              "cacheCreationInputTokens": 13900,
+              "webSearchRequests": 0,
+              "costUSD": 0.1647438,
+              "contextWindow": 1000000,
+              "maxOutputTokens": 128000,
+              "thinkingTokens": 1456,
+              "canonicalModel": "claude-opus-5-5",
+              "provider": "firstParty",
+              "costBasis": "list"
+            }
+          },
+          "turns": 1
+        }
+      ],
+      "sourcePages": [
+        {
+          "physicalPage": 15,
+          "url": "/images/denken3/2025-lower-native/power-q12-p15.png",
+          "sha256": "491efced03572396898cad6a616d3219ca53b95b084f91e2dbbb93397c317ba2"
+        }
+      ],
+      "retainedUncertainty": [
+        "なし"
+      ]
+    },
+    {
+      "id": "denken3-2025-lower-power-q13",
+      "reviewed": {
+        "gitPath": "data/questions/denken3/reviewed/20260322-power-q13-13.json",
+        "sha256": "162fca436802bd0ceea3bbf23f54d083db7f0d04cb69c933344047daaabebff7",
+        "revision": "e8ab7e2c00655c42f7092d12f542378b5d9825eb"
+      },
+      "strictReceipts": [
+        {
+          "gitPath": "docs/evidence/denken3/strict/20260322-power-s11-q13-opus.json",
+          "sha256": "7e1d543164069cb05a48a56a3336c798f20d29f4c0ce182bac1613caef3b8df8",
+          "revision": "e8ab7e2c00655c42f7092d12f542378b5d9825eb"
+        }
+      ],
+      "rawModelReceipts": [
+        {
+          "gitPath": "docs/evidence/denken3/raw/20260322/power/20260322-power-s11-q13-opus-raw.jsonl",
+          "sha256": "8e4104e5192f9c42792df483f64c473890f36724254a80a85d369aeb58afc4ea",
+          "revision": "e8ab7e2c00655c42f7092d12f542378b5d9825eb",
+          "servedModelUsage": {
+            "claude-opus-5-5": {
+              "inputTokens": 2,
+              "outputTokens": 2653,
+              "cacheReadInputTokens": 1279,
+              "cacheCreationInputTokens": 14885,
+              "webSearchRequests": 0,
+              "costUSD": 0.1724038,
+              "contextWindow": 1000000,
+              "maxOutputTokens": 128000,
+              "thinkingTokens": 1191,
+              "canonicalModel": "claude-opus-5-5",
+              "provider": "firstParty",
+              "costBasis": "list"
+            }
+          },
+          "turns": 1
+        }
+      ],
+      "sourcePages": [
+        {
+          "physicalPage": 16,
+          "url": "/images/denken3/2025-lower-native/power-q13-p16.png",
+          "sha256": "07364a3cf3c0ba302e72a923c28aa4f5ccecef5d2b12c46bc5af3a7eeed76b35"
+        }
+      ],
+      "retainedUncertainty": [
+        "なし"
+      ]
+    },
+    {
+      "id": "denken3-2025-lower-power-q14",
+      "reviewed": {
+        "gitPath": "data/questions/denken3/reviewed/20260322-power-q14-14.json",
+        "sha256": "f9df44162068d94caf3b458427454dbc6165b5aee91ce39a7be74844761cc75e",
+        "revision": "e8ab7e2c00655c42f7092d12f542378b5d9825eb"
+      },
+      "strictReceipts": [
+        {
+          "gitPath": "docs/evidence/denken3/strict/20260322-power-s2-q14-opus.json",
+          "sha256": "f26636e92640c1ab5c484bf73e757995fae8c553886aafef3d2a2f22f5816105",
+          "revision": "e8ab7e2c00655c42f7092d12f542378b5d9825eb"
+        }
+      ],
+      "rawModelReceipts": [
+        {
+          "gitPath": "docs/evidence/denken3/raw/20260322/power/20260322-power-s2-q14-opus-raw.jsonl",
+          "sha256": "a18771320f9479b0e7dbb6ff403330a587357604bc2aef1ef7b38ed0440ec8a5",
+          "revision": "e8ab7e2c00655c42f7092d12f542378b5d9825eb",
+          "servedModelUsage": {
+            "claude-opus-5-5": {
+              "inputTokens": 2,
+              "outputTokens": 3043,
+              "cacheReadInputTokens": 1279,
+              "cacheCreationInputTokens": 13932,
+              "webSearchRequests": 0,
+              "costUSD": 0.1725798,
+              "contextWindow": 1000000,
+              "maxOutputTokens": 128000,
+              "thinkingTokens": 1637,
+              "canonicalModel": "claude-opus-5-5",
+              "provider": "firstParty",
+              "costBasis": "list"
+            }
+          },
+          "turns": 1
+        }
+      ],
+      "sourcePages": [
+        {
+          "physicalPage": 17,
+          "url": "/images/denken3/2025-lower-native/power-q14-p17.png",
+          "sha256": "4c8e2797dc24ab7c491cb258cf703446c5a10bbcb55f167c3755538d1776c20b"
+        }
+      ],
+      "retainedUncertainty": [
+        "なし"
+      ]
+    },
+    {
+      "id": "denken3-2025-lower-power-q15",
+      "reviewed": {
+        "gitPath": "data/questions/denken3/reviewed/20260322-power-q15-15.json",
+        "sha256": "56dda3e274f20c197142daf94f579af40b6db85ffe30009686f31ded24f0906c",
+        "revision": "e8ab7e2c00655c42f7092d12f542378b5d9825eb"
+      },
+      "strictReceipts": [
+        {
+          "gitPath": "docs/evidence/denken3/strict/20260322-power-s1-q15a-q15b-opus.json",
+          "sha256": "cfff79797d5c66c8a272361f2bbe5278f08cb58735e60c93c706afb9a582eb29",
+          "revision": "e8ab7e2c00655c42f7092d12f542378b5d9825eb"
+        }
+      ],
+      "rawModelReceipts": [
+        {
+          "gitPath": "docs/evidence/denken3/raw/20260322/power/20260322-power-s1-q15a-q15b-opus-raw.jsonl",
+          "sha256": "a8d9169a24bac3beda50afba2d24b9618509843e91544da44bce418ed38cefe5",
+          "revision": "e8ab7e2c00655c42f7092d12f542378b5d9825eb",
+          "servedModelUsage": {
+            "claude-opus-5-5": {
+              "inputTokens": 2,
+              "outputTokens": 4598,
+              "cacheReadInputTokens": 1279,
+              "cacheCreationInputTokens": 15139,
+              "webSearchRequests": 0,
+              "costUSD": 0.21333579999999996,
+              "contextWindow": 1000000,
+              "maxOutputTokens": 128000,
+              "thinkingTokens": 2506,
+              "canonicalModel": "claude-opus-5-5",
+              "provider": "firstParty",
+              "costBasis": "list"
+            }
+          },
+          "turns": 1
+        }
+      ],
+      "sourcePages": [
+        {
+          "physicalPage": 18,
+          "url": "/images/denken3/2025-lower-native/power-q15-p18.png",
+          "sha256": "bab196f674495ac3e8a1995396f06272c2316897e35cc5e08402be1f6e4975a1"
+        }
+      ],
+      "retainedUncertainty": [
+        "原本ページには試験年度・科目名の明記がなく（ページ下部の表記は「- 15 -」「T2－D 018」のみ），出典年度をこのページからは特定できない。重油消費量の指数は原本の上付き文字を「10³」と判読しており，この値で計算すると公式正答 (4) と整合する。",
+        "原本ページには試験年度・科目名の明記がなく（ページ下部の表記は「- 15 -」「T2－D 018」のみ），出典年度をこのページからは特定できない。選択肢の指数（10²，10³，10⁴）は原本の上付き文字からの判読であり，計算値 8.16×10³ t と公式正答 (3) は整合する。"
+      ]
+    },
+    {
+      "id": "denken3-2025-lower-power-q16",
+      "reviewed": {
+        "gitPath": "data/questions/denken3/reviewed/20260322-power-q16-16.json",
+        "sha256": "5828a46888c260477e092fc656b56ebd82b67712a6128fbd3753291be6f0b96d",
+        "revision": "e8ab7e2c00655c42f7092d12f542378b5d9825eb"
+      },
+      "strictReceipts": [
+        {
+          "gitPath": "docs/evidence/denken3/strict/20260322-power-s2-q16a-q16b-opus.json",
+          "sha256": "3cbf1463af841078ce49b6a749a3c6a7e938458eb1b306ea9fc5bdc9cb87b140",
+          "revision": "e8ab7e2c00655c42f7092d12f542378b5d9825eb"
+        }
+      ],
+      "rawModelReceipts": [
+        {
+          "gitPath": "docs/evidence/denken3/raw/20260322/power/20260322-power-s2-q16a-q16b-opus-raw.jsonl",
+          "sha256": "a89e9de27b291f7cf512687112a7130f1154c6c81e7ba3911bf49f3f4d61a341",
+          "revision": "e8ab7e2c00655c42f7092d12f542378b5d9825eb",
+          "servedModelUsage": {
+            "claude-opus-5-5": {
+              "inputTokens": 2,
+              "outputTokens": 5725,
+              "cacheReadInputTokens": 1279,
+              "cacheCreationInputTokens": 15446,
+              "webSearchRequests": 0,
+              "costUSD": 0.23833179999999998,
+              "contextWindow": 1000000,
+              "maxOutputTokens": 128000,
+              "thinkingTokens": 3446,
+              "canonicalModel": "claude-opus-5-5",
+              "provider": "firstParty",
+              "costBasis": "list"
+            }
+          },
+          "turns": 1
+        }
+      ],
+      "sourcePages": [
+        {
+          "physicalPage": 19,
+          "url": "/images/denken3/2025-lower-native/power-q16-p19.png",
+          "sha256": "3c182b47751ef4604102ae4af0e64e523fcc6453f9b4256c44e25390ddd911e9"
+        }
+      ],
+      "retainedUncertainty": [
+        "計算は問題文の「相差角は小さい」との条件に基づく電圧降下の近似式によるもので，厳密解とはわずかに異なり得るが，選択肢の判別には影響しない。(2)180 および (5)240 について，これらの値を与える典型的な計算誤りは特定できていない。",
+        "問題文は力率変化後の受電端電圧を明示していないため，解説では6 450 Vとして計算した。送り出し電圧6 600 V一定とした場合の受電端電圧は約6 449 Vで，W₂への影響は選択肢の判別に関係しない程度である。(3)274，(4)415，(5)334 について，これらの値を与える典型的な計算誤りは特定できていない。"
+      ]
+    },
+    {
+      "id": "denken3-2025-lower-power-q17",
+      "reviewed": {
+        "gitPath": "data/questions/denken3/reviewed/20260322-power-q17-17.json",
+        "sha256": "b507de6eb9379ffecb4542990b4027b1c556de9b10ab5ac2c5d3d697999209b2",
+        "revision": "e8ab7e2c00655c42f7092d12f542378b5d9825eb"
+      },
+      "strictReceipts": [
+        {
+          "gitPath": "docs/evidence/denken3/strict/20260322-power-s3-q17a-q17b-opus.json",
+          "sha256": "1372caca0acb0faba4f99339851899a50ce477907a90db21c27513e76b9c6409",
+          "revision": "e8ab7e2c00655c42f7092d12f542378b5d9825eb"
+        }
+      ],
+      "rawModelReceipts": [
+        {
+          "gitPath": "docs/evidence/denken3/raw/20260322/power/20260322-power-s3-q17a-q17b-opus-raw.jsonl",
+          "sha256": "618483bb2ea1cd194b09c53917e938b5fbec8e6e09d648d219104386b31aea44",
+          "revision": "e8ab7e2c00655c42f7092d12f542378b5d9825eb",
+          "servedModelUsage": {
+            "claude-opus-5-5": {
+              "inputTokens": 2,
+              "outputTokens": 5110,
+              "cacheReadInputTokens": 1279,
+              "cacheCreationInputTokens": 17754,
+              "webSearchRequests": 0,
+              "costUSD": 0.24449579999999999,
+              "contextWindow": 1000000,
+              "maxOutputTokens": 128000,
+              "thinkingTokens": 2920,
+              "canonicalModel": "claude-opus-5-5",
+              "provider": "firstParty",
+              "costBasis": "list"
+            }
+          },
+          "turns": 1
+        }
+      ],
+      "sourcePages": [
+        {
+          "physicalPage": 20,
+          "url": "/images/denken3/2025-lower-native/power-q17-p20.png",
+          "sha256": "a797d488f9416823a03c24b14a001aef2f21a42bdd73d75463fe13149906bb60"
+        }
+      ],
+      "retainedUncertainty": [
+        "誤答肢(2)240 A・(5)140 Aについて示した計算上の一致は、出題者が想定した誤答の経路であるとは確定できない。",
+        "誤答肢(2)5 770 V・(3)6 460 V・(4)6 130 V・(5)6 260 Vについて示した計算上の一致は、出題者が想定した誤答の経路であるとは確定できない。"
+      ]
+    }
+  ],
+  "limitedCalculationQA": {
+    "q15a_percent": 40.45954045954046,
+    "q15b_co2_t": 8160.0,
+    "q16a_kW": 213.08657149522836,
+    "q16b_kW_assuming6450V": 243.52751028026103,
+    "q16b_kW_fixed6600V_approx": 243.48881724842263,
+    "q17a_activeA": 220.0,
+    "q17b_V": 6018.030928656857
+  },
+  "modelsCalled": 0,
+  "imageProvenance": "New PNG render hashes retained. Source PDF SHA matches saved review. Historical receipt image hashes are not asserted to equal new render hashes.",
+  "allSourceNotesRetainedInReceipt": true
+}

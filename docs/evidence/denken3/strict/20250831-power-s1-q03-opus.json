@@ -1,0 +1,64 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20250831",
+  "subject": "power",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 3583,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 13659,
+      "webSearchRequests": 0,
+      "costUSD": 0.1811958,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 2216,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "d1f506c6a8bd9741d772fc5eeb5ef583a6a35c27d2f56079076707a66e0a11f3",
+  "inputRequestSha256": "5b840f5e9a1e2e4c6df723ae39a4fcf4f4cde5c915c47ad97b8d580940f08ce6",
+  "inputHashes": {
+    "candidateSha256": {
+      "q03": "06bf3db9e24be42ecb30091785a70528d019533990218df756f2de7d980e742c"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20250831/power/p06.png": "526b45598be1425966d727f6d00d8438ea1921665c8c08847a0d14b0915a0aa0"
+    },
+    "figureSha256": {},
+    "sourceQuestionPdfSha256": "567aac1df6dc0c0950d04e90a1ad03231427c518eede92559effe01e2b97a2c9",
+    "sourceAnswerPdfSha256": "76fd3715ed487d19a56b387fb402de20ee09474e9fa55b0413f9037b96af06c9",
+    "officialAnswerUnitsSha256": "d639f32748d03bf3b157da7c8fbfe5a1b4f6bd5f1a854713b4743380173afaa5",
+    "referencePdfSha256": {},
+    "referencePageSha256": {},
+    "referenceJsonSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q03",
+      "questionNumber": 3,
+      "part": null,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "問題文: 原図の問3本文と完全一致（「汽力発電設備において，水，蒸気，燃焼ガスが，ボイラ及びタービンを構成する主要設備を通過する一般的な順序の記述として，誤っているものを次の(1)～(5)のうちから一つ選べ。」）。「誤っているもの」の極性も一致。",
+        "選択肢: 原図の5行表と区分・設備名・矢印の向きがすべて一致。(1)水：給水ポンプ→節炭器→蒸気ドラム、(2)蒸気：蒸気ドラム→過熱器→高圧タービン、(3)蒸気：再熱器→低圧タービン→復水器、(4)燃焼ガス：火炉→過熱器→節炭器、(5)燃焼ガス：節炭器→電気集じん装置→空気予熱器。",
+        "公式正答: 公式解答表（令和7年度 第三種電気主任技術者上期試験解答）の＜電力＞列で問3＝解答5・配点5。manifest単位 {question:3, part:null, answer:\"5\", points:5}、候補の officialAnswer=\"5\"、scoringPoints=5 と一致。",
+        "総合解説: 水・蒸気系統（復水器→復水ポンプ→低圧給水加熱器→脱気器→給水ポンプ→高圧給水加熱器→節炭器→蒸気ドラム→降水管・水冷壁→蒸気ドラム→過熱器→高圧タービン→再熱器→(中圧タービン→)低圧タービン→復水器）と、燃焼ガス系統（火炉→過熱器→再熱器→節炭器→空気予熱器→電気集じん装置→煙突）はドラムボイラをもつ再熱式汽力発電の一般的な流れとして正しい。脱硝装置を節炭器と空気予熱器の間に置くという補足も一般的配置として正しい。「(5)は空気予熱器と電気集じん装置の順序が逆」という結論が公式正答(5)と整合する。",
+        "肢別解説: (1)〜(4)を正しいとする理由はいずれも各肢固有の流れ（給水の予熱、飽和蒸気の過熱、再熱蒸気の経路と中圧タービンの扱い、燃焼ガスの高温側から低温側への流れ）に基づいており正確。(5)の誤り理由（一般的順序は節炭器→空気予熱器→電気集じん装置）は正答理由として固有かつ正確。",
+        "図: 原図は図ではなく文字のみの表であり、figureDescription の記述（5行の表・すべて文字で表現可能）は正しい。figureUrls・choiceFigureUrls が空でも解答に支障はない。",
+        "出典: officialReferenceUrls は空で、検証を要する独立主張はない。原図フッターは印刷頁「- 3 -」（識別記号 T1−D 006）。reviewedFromPage=[6] は表紙・注意事項頁を含むPDF頁番号として矛盾しない。sourceQuestionPdfUrl(q02＝第2科目の電力)・sourceAnswerPdfUrl(a01)・examDate 2025-08-31 は、URLのファイル名、解答表の年度・区分、subject=power の各表記と整合する。",
+        "uncertainty 欄: 高温電気集じん装置の存在への言及は事実として正しい。ただし本問は「一般的な順序」を問うため、正答判定に曖昧さは生じない。"
+      ]
+    }
+  ]
+}

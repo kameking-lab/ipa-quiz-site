@@ -1,0 +1,65 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20250831",
+  "subject": "machinery",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 3001,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 14424,
+      "webSearchRequests": 0,
+      "costUSD": 0.1756758,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 1791,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "d66e8628d30c4cb5917e39b09f0e0ef2faaf3c8c781a7b7703f283c7799796e6",
+  "inputRequestSha256": "89f11ee18b7c7da83066bcd482aae51499b63a729e16755902e6bbc5851df7e1",
+  "inputHashes": {
+    "candidateSha256": {
+      "q10": "38cbdb206f21dff6e37465af7284b7d81b3a2855d09de9588cfc23cad06719ce"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20250831/machinery/p13.png": "1cb2bd6a22c5769315b87c84cee28a068ad372ec999daa27a2fa074abfb085d3"
+    },
+    "figureSha256": {
+      "public/images/denken3/20250831/machinery/20250831-machinery-q10-fig1.png": "01abbf7e34b16b0915465273656a013ec3f6a29d08337f46e2408b8c93573cbd"
+    },
+    "sourceQuestionPdfSha256": "2a73a24594cc2b8bb7504b9a0ff15e001b2bb56b830572ce2be853f7116f26d8",
+    "sourceAnswerPdfSha256": "76fd3715ed487d19a56b387fb402de20ee09474e9fa55b0413f9037b96af06c9",
+    "officialAnswerUnitsSha256": "95638092e114170a332e710f1d4875873d08af6659d2017919978a70ace83047",
+    "referencePdfSha256": {},
+    "referencePageSha256": {},
+    "referenceJsonSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q10",
+      "questionNumber": 10,
+      "part": null,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "公式正答: 添付の公式解答表原図〈機械〉問10の解答は2（配点5）。manifest固定の公式正答単位 {question:10, part:null, answer:\"2\", points:5}、および候補の officialAnswer=\"2\"・scoringPoints=5 と一致する。",
+        "問題文: 原図の E=400 V、L=1 mH、R=10 Ω、f=10 kHz、d=0.6、定常状態、D はダイオード、負荷抵抗電流の平均値[A]と照合し、数値・記号・単位・問い方がすべて一致する（改行と句読点の整形のみ）。",
+        "選択肢: 原図の (1)40.0 (2)24.0 (3)16.0 (4)3.8 (5)2.5 と、候補の全5肢が一致する。",
+        "総合解説の検算: Vo=dE=0.6×400=240 V、Io=240/10=24.0 A。T=1/f=100 μs、dT=60 μs、ΔI≈160×60e-6/1e-3=9.6 A、最小値≈19.2 A>0 で電流は連続する。厳密な一次RL応答でも ΔI=40×(1−e^-0.6)(1−e^-0.4)/(1−e^-1)≈9.4 A で連続し、『およそ』の近似は妥当。L の平均電圧0 → D 両端平均電圧=R 両端平均電圧という因果も正しい。",
+        "肢別解説の検算: (1) E/R=40 A は d=1 相当で正しく否定している。(3) (1−d)E/R=16 A はオフ期間比率の取り違えとして正しい。(4) 240/(2π×10e3×1e-3)=240/62.83≈3.82 A、240/√(10²+62.83²)=240/63.6≈3.77 A。いずれも推測である旨を明示しており、平均電流が L に依存しないという否定理由も正しい。(5) 1/(1−d)=2.5 は昇圧チョッパの電圧比（無次元）で、推測である旨を明示しており、否定理由も正しい。",
+        "図の照合: 公開候補図は原図の回路図と同一である。E の上端 → S → 黒丸接続点 → L → R 上端、R 下端 → 下側線路 → E 下端。接続点と下側線路の黒丸との間に D が接続され、D はカソードが上（S・L 接続点側）の還流ダイオード向き。ラベル E・S・D・L・R はすべて存在し、欠落や付加はない。figureDescription の接続・向き・ラベルの記述も図と一致する。公開候補図だけで回路構成を理解して解答できる。",
+        "出典: 原図ページのフッター『T1−K 013』（K=機械、013）が reviewedFromPage=[13] と整合する。印字ページ番号『-10-』は PDF ページ番号ではない。officialReferenceUrls は空で、検証を要する外部の独立主張はない。subject=machinery、examDate=2025-08-31、令和7年度上期であることは解答表の表題と一致する。"
+      ]
+    }
+  ]
+}

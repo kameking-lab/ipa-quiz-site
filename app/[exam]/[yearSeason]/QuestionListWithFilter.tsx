@@ -1,7 +1,8 @@
 "use client";
 
 import * as React from "react";
-import Link from "next/link";
+import { parsePracticeSession, practiceSessionLabel } from "@/lib/questions/practice-session";
+import type { ExamCode } from "@/lib/questions/types";
 import { Check, ChevronRight, X } from "lucide-react";
 import { LS_KEYS } from "@/lib/storage/keys";
 import { Badge } from "@/components/ui/badge";
@@ -15,11 +16,18 @@ export interface QuestionListItem {
   isPlaceholder: boolean;
   questionPreview: string;
   href: string;
+  explanationHref?: string;
 }
 
 export interface SessionGroup {
   session: string;
+  id?: string;
   items: QuestionListItem[];
+}
+
+function sessionLabel(session: string, exam?: ExamCode): string {
+  const parsed = parsePracticeSession(session);
+  return parsed ? practiceSessionLabel(parsed, exam) : session;
 }
 
 type Filter = "all" | "unanswered" | "wrong";
@@ -48,7 +56,7 @@ function readSolvedMap(): SolvedMap {
   }
 }
 
-export function QuestionListWithFilter({ groups }: { groups: SessionGroup[] }) {
+export function QuestionListWithFilter({ groups, exam, showSectionNavigation = false }: { groups: SessionGroup[]; exam?: ExamCode; showSectionNavigation?: boolean }) {
   const [solved, setSolved] = React.useState<SolvedMap>({});
   const [hydrated, setHydrated] = React.useState(false);
   const [filter, setFilter] = React.useState<Filter>("all");
@@ -85,6 +93,10 @@ export function QuestionListWithFilter({ groups }: { groups: SessionGroup[] }) {
     return true;
   }
 
+  const visibleSectionGroups = showSectionNavigation
+    ? groups.filter((group) => group.id && group.items.some(shouldShow))
+    : [];
+
   return (
     <div>
       {hydrated && answered > 0 && (
@@ -117,22 +129,36 @@ export function QuestionListWithFilter({ groups }: { groups: SessionGroup[] }) {
         </div>
       )}
 
-      {groups.map(({ session, items }) => {
+      {visibleSectionGroups.length > 0 && (
+        <nav aria-label="出題区分へ移動" className="mb-6 rounded-2xl border border-border bg-card p-4">
+          <p className="mb-3 text-sm font-semibold">見たい区分へ移動</p>
+          <div className="grid gap-2 sm:grid-cols-2">
+            {visibleSectionGroups.map((group) => (
+              <a key={group.id} href={`#${group.id}`} className="rounded-xl border border-border px-3 py-2.5 text-sm font-medium text-foreground hover:border-primary/40 hover:bg-primary-soft focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary">
+                {sessionLabel(group.session, exam)}
+              </a>
+            ))}
+          </div>
+        </nav>
+      )}
+
+      {groups.map(({ session, id, items }) => {
         const filtered = items.filter(shouldShow);
         if (filtered.length === 0) return null;
         return (
-          <section key={session} aria-label={session} className="mb-8">
-            <h2 className="mb-3 flex items-center gap-2 text-sm font-semibold uppercase tracking-wider text-muted-foreground">
+          <section key={session} id={id} aria-label={sessionLabel(session, exam)} className="mb-8 scroll-mt-6">
+            <h2 className="mb-3 flex items-center gap-2 text-sm font-semibold tracking-wider text-muted-foreground">
               <span className="h-1 w-1 rounded-full bg-primary" />
-              {session.toUpperCase()}
+              {sessionLabel(session, exam)}
             </h2>
             <ul className="space-y-2">
               {filtered.map((q) => {
                 const status = solved[q.id];
                 return (
                   <li key={q.id}>
-                    <Link
+                    <a
                       href={q.href}
+                      aria-label={`問${q.qNumber}を解く`}
                       className={cn(
                         "group flex items-start gap-3 rounded-2xl border p-4 transition-all hover:-translate-y-0.5 hover:shadow-md",
                         status
@@ -186,8 +212,13 @@ export function QuestionListWithFilter({ groups }: { groups: SessionGroup[] }) {
                           {q.questionPreview}
                         </span>
                       </span>
-                      <ChevronRight className="mt-2 h-4 w-4 shrink-0 text-muted-foreground transition-transform group-hover:translate-x-0.5 group-hover:text-primary" />
-                    </Link>
+                      <span className="mt-2 flex shrink-0 items-center gap-1 text-xs font-medium text-primary">解く<ChevronRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" /></span>
+                    </a>
+                    {q.explanationHref && (
+                      <div className="flex flex-wrap gap-3 px-4 pb-2 pt-1 text-xs">
+                        <a href={q.explanationHref} className="inline-flex min-h-11 items-center font-medium text-primary underline underline-offset-4">問{q.qNumber}の解説を見る</a>
+                      </div>
+                    )}
                   </li>
                 );
               })}

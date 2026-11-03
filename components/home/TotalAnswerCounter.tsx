@@ -1,65 +1,27 @@
 "use client";
 
-import * as React from "react";
-import { Users } from "lucide-react";
+import { useEffect, useState } from "react";
+import { parseMeasuredPresence, PRESENCE_STATE_EVENT, type MeasuredPresence } from "@/lib/study-presence-contract";
+import { StudyRoom } from "@/components/home/StudyRoom";
 
-interface AnswerCountResponse {
-  count: number;
-  source: "db" | "baseline";
-}
+export interface StudySuggestion { name: string; href: string }
 
-const COUNTUP_DURATION_MS = 1500;
-
-export function TotalAnswerCounter() {
-  const [target, setTarget] = React.useState<number | null>(null);
-  const [displayed, setDisplayed] = React.useState(0);
-
-  React.useEffect(() => {
-    let cancelled = false;
-    fetch("/api/stats/answer-count", { cache: "no-store" })
-      .then((r) => (r.ok ? (r.json() as Promise<AnswerCountResponse>) : null))
-      .then((data) => {
-        if (!cancelled && data) setTarget(data.count);
-      })
-      .catch(() => {
-        // silent fail — counter just won't show
-      });
-    return () => {
-      cancelled = true;
+export function TotalAnswerCounter({ suggestions = [] }: { suggestions?: readonly StudySuggestion[] }) {
+  const [snapshot, setSnapshot] = useState<MeasuredPresence | null>(null);
+  useEffect(() => {
+    const update = (event: Event) => {
+      const detail: unknown = (event as CustomEvent<unknown>).detail;
+      const state = detail && typeof detail === "object" ? detail as Record<string, unknown> : null;
+      // The room labels this as a historical sample, including after expiry,
+      // idle or a failed refresh. Never replace its time with receipt time.
+      const measured = state?.mode === "measured" ? parseMeasuredPresence(state.snapshot)
+        : state?.mode === "stale" ? parseMeasuredPresence(state.previous) : null;
+      setSnapshot(measured);
     };
+    window.addEventListener(PRESENCE_STATE_EVENT, update);
+    return () => { window.removeEventListener(PRESENCE_STATE_EVENT, update); };
   }, []);
-
-  React.useEffect(() => {
-    if (target === null) return;
-    const start = performance.now();
-    const startVal = 0;
-    let raf = 0;
-    const tick = (now: number) => {
-      const t = Math.min(1, (now - start) / COUNTUP_DURATION_MS);
-      const eased = 1 - Math.pow(1 - t, 3); // easeOutCubic
-      setDisplayed(Math.round(startVal + (target - startVal) * eased));
-      if (t < 1) raf = requestAnimationFrame(tick);
-    };
-    raf = requestAnimationFrame(tick);
-    return () => cancelAnimationFrame(raf);
-  }, [target]);
-
-  if (target === null) return null;
-
-  return (
-    <div
-      role="status"
-      aria-live="polite"
-      className="mb-4 flex items-center gap-2 rounded-xl border border-emerald-200 bg-emerald-50/60 px-3 py-2 text-xs text-emerald-900 shadow-sm dark:border-emerald-900/60 dark:bg-emerald-950/30 dark:text-emerald-100"
-    >
-      <Users className="h-3.5 w-3.5 text-emerald-600 dark:text-emerald-400" aria-hidden="true" />
-      <span>
-        累計{" "}
-        <strong className="tabular-nums text-emerald-700 dark:text-emerald-300">
-          {displayed.toLocaleString("ja-JP")}
-        </strong>
-        {" "}回の回答が共有されています
-      </span>
-    </div>
-  );
+  return <section id="study-room" data-study-presence-viewer aria-label={snapshot === null ? "学習のご案内" : "前回取得時点の学習状況"} aria-live="off" className="study-room scroll-mt-24">
+    <StudyRoom snapshot={snapshot} suggestions={suggestions} />
+  </section>;
 }

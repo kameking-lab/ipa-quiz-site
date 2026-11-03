@@ -1,0 +1,68 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20260322",
+  "subject": "machinery",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 2514,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 13837,
+      "webSearchRequests": 0,
+      "costUSD": 0.16123980000000002,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 1230,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "0f3e9a39ac3c0b1965bb41c7fd77fe08b57cd97a8d92cd2c0f79db64f20f0ee5",
+  "inputRequestSha256": "fbe3bb10e437c2b423fc51e86a8d2d5c89ff037503013197f6e120b75e22a72d",
+  "inputHashes": {
+    "candidateSha256": {
+      "q02": "b1d3e6e9a5aec4f62c7ab6552d32f3817db07a6b6e18f756f3763718cc46aaa9"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20260322/machinery/p05.png": "c313f564875072db2f3d859e93d883636029eaa14285da5af98b1a5d9876369b"
+    },
+    "figureSha256": {},
+    "sourceQuestionPdfSha256": "a89c7dc2b9a305f9db83f2f78195f0df8a0da5aeec6b8e66cfd40fb028d146fb",
+    "sourceAnswerPdfSha256": "cc2890296d06a4823df5697a78a1c01ddfd39f041c51f48c87984daa3a5707c6",
+    "officialAnswerUnitsSha256": "4f7244c29a6df7721b1c1cbabdb25b09d1b4b9eed759d835affc715cf117a803",
+    "referencePdfSha256": {},
+    "referencePageSha256": {},
+    "referenceJsonSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q02",
+      "questionNumber": 2,
+      "part": null,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "問題文: 添付原図（PDF第5頁、冊子ノンブル -2-、T2−K 005）と照合した。12 V、無負荷 3 000 min⁻¹、2 A、損失 3 W、回転数[min⁻¹]、ただし書き（ブラシ電圧降下・電機子反作用を無視、損失は電機子巻線の銅損のみ）の数値・単位・条件がすべて一致する。min⁻¹ の上付き表記と段落改行は整形上の差にとどまり、意味は変わらない。",
+        "選択肢: (1)3 429 (2)3 000 (3)2 813 (4)2 625 (5)2 250 で、原図と全肢一致する。",
+        "公式正答: 公式解答表の原図（令和7年度 第三種電気主任技術者下期試験解答）の＜機械＞問2は解答4・配点5。manifest固定値 answer=4、points=5 および候補の officialAnswer=4、scoringPoints=5 と一致する。",
+        "総合解説の検算: Ra = 3 ÷ 2² = 0.75 Ω、Ia·Ra = 1.5 V、E = 12 − 1.5 = 10.5 V、N = 3 000 × 10.5 ÷ 12 = 2 625 min⁻¹。いずれも正しい。無負荷時の因果（機械損・鉄損なし → 必要トルク0 → T = kΦIa より Ia = 0 → E₀ = V = 12 V）は、ただし書きの仮定と整合する。永久磁石界磁で Φ 一定、よって E ∝ N とする前提も正しい。",
+        "肢(1): 3 000 × 12 ÷ 10.5 = 3 428.6 ≒ 3 429 で、比を逆に掛けた値と確認した。電動機運転で Ia > 0 なら E < V となり、無負荷回転数を上回らないという理由も正しい。",
+        "肢(2): 無負荷回転数そのものである。1.5 V の降下で E = 10.5 V に下がるという理由は正しい。",
+        "肢(3): 3 000 × 11.25 ÷ 12 = 2 812.5 ≒ 2 813 で、降下を 0.75 V（Ra の数値をそのまま電圧とした値）とした場合に相当することを確認した。誤答の成因は『相当します』と推定の形で書かれており、断定していない。",
+        "肢(4): 正答の計算が総合解説と一致する。",
+        "肢(5): 3 000 × 9 ÷ 12 = 2 250 で、降下 3 V（正しい値 1.5 V の2倍）に相当することを確認した。",
+        "図: 原図に図はない。figureDescription=null、figureUrls=[]、choiceFigureUrls={} で整合する。",
+        "出典メタデータ: fiscalYear=2025（令和7年度）、term=lower（下期）、examDate=2026-03-22、subject=machinery、問題PDF q03・解答PDF a01 のURL、reviewedFromPage=[5]、sourceAttribution の年度・期・科目・問番号が、いずれも manifest と一致する。",
+        "officialReferenceUrls は空で、外部の独立主張はない。検証が必要な外部確認事項もない。"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,73 @@
+{
+  "inputHashes": {
+    "draftSha256": "2969fc3860192a286a061d6237d359242e6df9e7f34be45c8a20f9a97f018c59",
+    "candidateSha256": {
+      "21": "7a74cab352e173347ac49e19897c7e67a4fff5a3e4612b83467bc9743851fb30",
+      "22": "2e203de38989dc07a6d633ddd76624d075eb5d6424b1e276d806f7187371669b",
+      "24": "1a52d614f11f5b2a5c34432df520bc123f22ff8ed14a21caa9b70da1b468d7ef",
+      "25": "2ed4280a57da3edb7da7c0b96928955f9a016653645d2dc54ef36c2ba940cf5e"
+    },
+    "rowSha256": {
+      "21": "83ddeea08afb41e39fb88c869c30a63d71257131ae4c708bfbf5e211534fb3b8",
+      "22": "bfdab4a9c496175eb620384bbe1f9b9a11ed88d483577a2ff7769b5d7b1ce382",
+      "24": "1c614a97f27faca58368132891717aea42466657633abfbef2214e640507e6c8",
+      "25": "b382fc93bb72bd9fa11c63996e475fd5d1cc003ed839401f4560dd32e65f6e19"
+    },
+    "detailFigureSha256": {
+      "public/images/denko2/2024-second/q24-1.png": "68ca5e7f1f4c42b19c2f850a25a101d99835969bf2452cbb8088656b79e9b401"
+    },
+    "legalReceiptSha256": {
+      "docs/evidence/denko2-law/20241027-q21.json": "aac74223328687bfc728bff4f10b6b1376faf4cf30b99f6b5fca4b637addfdd0",
+      "docs/evidence/denko2-law/20241027-q22.json": "8d97737b51aed23c140fede8874f9860fdb5016f46a3a8c291d6549c89192733"
+    },
+    "sourcePackSha256": {},
+    "sourceFigureSha256": {}
+  },
+  "reviewModel": "claude-opus-5-5",
+  "assessment": [
+    {
+      "number": 21,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "lawNeedsExternalCheck": [
+        "解説は第143条第1項第一号イ(屋内配線が当該電気機械器具のみに電気を供給する専用のものであること)を根拠にしているが、receiptの照合句にこの文言が含まれていない",
+        "解説は同号ハ(屋内配線に簡易接触防護措置を施す)と同号ニ(電気機械器具に簡易接触防護措置を施す)を根拠にしている。ニについては括弧書きで、ただし書きの内容(絶縁性のある材料で堅ろうに作られている場合はこの限りでない)も引用している。しかしreceiptの照合句に「簡易接触防護措置」の文言も、ただし書きの原文も含まれていない。問題文の前提2点がハ・ニを満たすという対応付けが、未照合のまま残っている",
+        "条項の位置(第1項柱書き、第1項第一号、号内のイ〜トの割り当て)がreceiptで確認されていない。receiptで確認できているのは第143条に句が存在することだけである"
+      ]
+    },
+    {
+      "number": 22,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "lawNeedsExternalCheck": [
+        "ロを省略できない主な理由として、解説・肢別理由(ロ)は第29条第2項第一号の「交流の対地電圧が150V以下…乾燥した場所」を挙げている。しかし第29条のreceipt照合句は「乾燥した木製の床」「水気のある場所以外」「15mA以下」「0.1秒以下」だけで、第29条の「150V以下」は照合されていない",
+        "第29条第2項の号番号(第一号=対地150V以下・乾燥、第二号=乾燥した木製の床、第五号=水気のある場所以外に漏電遮断器を施設)がreceiptで確認されていない。「第1項が原則D種接地」という項構成も同様に未確認である",
+        "解説・肢別理由(イ)は、第159条第3項の4m以下で省略できる条件に「使用電圧300V以下」を含めている。receiptで照合されているのは「4m以下」だけで、「300V以下」の要件と「第3項」という項番号は照合句に含まれていない"
+      ]
+    },
+    {
+      "number": 24,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "lawNeedsExternalCheck": []
+    },
+    {
+      "number": 25,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "lawNeedsExternalCheck": []
+    }
+  ]
+}

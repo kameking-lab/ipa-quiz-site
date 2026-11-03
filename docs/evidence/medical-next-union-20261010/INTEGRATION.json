@@ -1,0 +1,87 @@
+{
+  "status": "LOCAL_CANDIDATE_NOT_PUBLISHED",
+  "baseCommit": "e989687f44c1d554ca39cf6e17e49ba12ae6aba4",
+  "normalMergedSourceCommits": [
+    "5f8aa9dcd10de64e3f66170a12abace49eb4dcf7",
+    "9a565583f668c56fc44619aeecf8e475e2d20335",
+    "0ccadf10caf28fbc9f66e1fdb884f8660179c302",
+    "6d0fa8ce28d288d5b83423513b828250f122d6b6",
+    "88143a08bbef5fcd638d4a7736f2d30cb7fbff24",
+    "bfc3dc979db68abd429ed7bc6b0a346a5b0772e3"
+  ],
+  "newOriginalsFromBase": 220,
+  "nurse": {
+    "registered": 464,
+    "choices": 1918,
+    "newIds": [
+      "kangoshi-2024-annual-pm-q107"
+    ],
+    "older463CanonicalSha256": "f7c99f97fefb0084cd97e708b5b876668e0a37ce1fe3d59fde3bfc5e04a7f64e",
+    "individualStopsRetained": 5,
+    "twoRoundsComplete": false
+  },
+  "ahaki": {
+    "officialBookletOriginals": 680,
+    "registered": 677,
+    "anma": 318,
+    "hariKyu": 359,
+    "heldIds": [
+      "33-anma-massage-shiatsushi-124",
+      "33-hari-kyu-156",
+      "34-anma-massage-shiatsushi-147"
+    ],
+    "old608ObjectHashesVerifiedBy": "__tests__/questions/ahaki-literal67.test.ts",
+    "new67OriginalsManifest": "docs/evidence/ahaki-literal67-20261010/INTEGRATION.json",
+    "local2SourceManifestSha256": "bdf208ddfd89087282d8111a68e48d5edab579e2e477838909737f8368102425",
+    "twoRoundsComplete": false
+  },
+  "rehabilitation": {
+    "physicalTherapy": 29,
+    "occupationalTherapy": 60,
+    "orthoptist": 60,
+    "registeredExamCodes": 50,
+    "latestTwoRoundsComplete": false
+  },
+  "pharmacy": {
+    "registered": 307,
+    "choiceExplanations": 1537,
+    "newIds": [
+      "yakuzaishi-2025-annual-theory-q127"
+    ],
+    "old306CanonicalSha256": "a37415aa4e027f7ab06da4aacffc16df025ba666e9df7719cb3d04c4762165f8",
+    "newFigureSha256": "ace061ab91bcd303f089edba73c751d1607b8f93224de7ede377f9f8cfe16e40",
+    "heldNumbers": [
+      128,
+      129,
+      130,
+      131,
+      132
+    ],
+    "twoRoundsComplete": false
+  },
+  "preservation": {
+    "hokenshiAndJosanshiDataDiffFromBase": 0,
+    "oldPharmacyAnnualDataDiffFromBase": 0,
+    "oldRegisteredQuestionDeletionCount": 0,
+    "oldNurseAndAhakiObjectTestsPass": true
+  },
+  "validation": {
+    "focusedFiles": 8,
+    "focusedTests": 31,
+    "typecheck": "PASS",
+    "scopedLint": "PASS",
+    "datasetQuestions": 19401,
+    "datasetFail": 0,
+    "datasetWarn": 14761
+  },
+  "providerHtmlLabel": {
+    "hosts": [
+      "ahaki.or.jp",
+      "www.ahaki.or.jp"
+    ],
+    "question": "試験実施機関の公式問題",
+    "answer": "試験実施機関の公式正答",
+    "ipaAndPdfBranchesPreserved": true
+  },
+  "publishOrPushPerformed": false
+}

@@ -1,0 +1,105 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20260322",
+  "subject": "power",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 7893,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 16898,
+      "webSearchRequests": 0,
+      "costUSD": 0.2933078,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 4466,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "4273ccbf25fa47488f0f296fafe86e8ff43e912a3671ebc4c71813e9312b102e",
+  "inputRequestSha256": "7a6c58e9cf5dd7070bd10285717cb30eb7653f4598bc48abcbbf08f5d3b61a4b",
+  "inputHashes": {
+    "candidateSha256": {
+      "q17a": "d0a647fc49eba883d54585a168b69190abad731ad3abc377bc203155d2f76487",
+      "q17b": "0104ff402c364c101104cc68c80ffd5ef53ec5159079a57cce1d5ab20f77245c"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20260322/power/p20.png": "36d5835cf9cf7fbfe60e0dbea0e74aac99e127d7fe3920d1b413f7bff1033e25"
+    },
+    "figureSha256": {
+      "public/images/denken3/20260322/power/20260322-power-q17-fig1.png": "314a001ab23942d5cff2a3917ab6dba490f998682a17965fc9c7f661f604339b"
+    },
+    "sourceQuestionPdfSha256": "9733341a0f293f068c9a665d5a9a90f1aabf3a2db5d79cd530643cdea241f7b7",
+    "sourceAnswerPdfSha256": "cc2890296d06a4823df5697a78a1c01ddfd39f041c51f48c87984daa3a5707c6",
+    "officialAnswerUnitsSha256": "960c15f04204b41d1b37e548f53283fff78a5b1c6e6183cc828689c7cb8cda1a",
+    "referencePdfSha256": {},
+    "referencePageSha256": {},
+    "referenceJsonSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q17a",
+      "questionNumber": 17,
+      "part": "a",
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [
+        "choiceExplanations[2]（240 A）は「和は220 Aであり240 Aにはならない」と計算結果を言い直しているだけで、この肢に固有の誤りの理由を示していない。典型的な誤りは、B点負荷の有効成分を力率と無効率を取り違えて 100 × 0.8 = 80 A とし、160 + 80 = 240 A とするものである。この理由を明記すべき。",
+        "choiceExplanations[5]（140 A）も「一致しない」とだけ述べ、固有の理由がない。140 A は B点負荷の有効成分60 Aと無効成分80 Aの和（60 + 80）と一致する。ただし出題意図として確定はできない。根拠のない誤答原因を断定しないよう注意しつつ、少なくとも正解値との差を生む取り違えの類型を示すか、固有理由が特定できない旨を明示すべき。"
+      ],
+      "figureIssues": [
+        "figureDescription の「区間の距離と、どの点にどの負荷があるかはこの図だけで示されている」は不正確である。候補の question 本文には図の内容（S—2 km—A—2 km—B、各負荷の電流・力率）が既に文字で転記されており、「この図だけで」には当たらない。また(a)の解答に区間距離は不要である。(a)に必要なのは、A・B両負荷がS-A区間より負荷側にあるという配置情報である。記述を修正すべき。"
+      ],
+      "sourceIssues": [
+        "uncertainty に「原本ページには試験年度・科目名が記載されていないため、出典の一次資料URLは特定していない」とある。しかし sourceQuestionPdfUrl／sourceAnswerPdfUrl には manifest 固定の公式URL（20260322_ch_third_q02.pdf／20260322_ch_third_a01.pdf）が設定されており、記述が候補自身のフィールドと矛盾する。manifest（試験センター公式過去問一覧で2025年度下期・電力と特定）に基づき出典を特定済みである旨に改めるべき。"
+      ],
+      "verifiedEvidence": [
+        "出典：manifest の 2025年度下期・試験日2026-03-22・科目=電力・問題PDF q02・解答PDF a01 と、候補の fiscalYear=2025、term=lower、examDate=2026-03-22、subject=power、sourceQuestionPdfUrl、sourceAnswerPdfUrl が一致する。",
+        "頁：添付原図の下端は印刷頁「- 17 -」、管理番号「T2－D 020」であり、PDF第20頁（manifest）と reviewedFromPage=[20] は整合する。",
+        "公式正答：解答表原図の見出しは「令和7年度 第三種電気主任技術者下期試験解答」で、＜電力＞欄の問17(a)は解答3・配点5。候補の officialAnswer=3、scoringPoints=5 と一致する。sourceAttribution の「令和7年度下期…電力科目 問17(a)」も整合する。",
+        "問題文：原図と照合した。S点線間電圧6 600 V、1線当たり抵抗・リアクタンス各0.3 Ω/km、(a)の設問文が一致する。「次の(a)及び(b)の問に答えよ」を「次の問に答えよ」とした点は小問分割に伴う整形であり、意味は変わらない。",
+        "選択肢：(1)160、(2)240、(3)220、(4)200、(5)140 は原図と完全に一致する。",
+        "計算：A点負荷の有効成分 200×0.8=160 A、無効成分 200×0.6=120 A。B点負荷の有効成分 100×0.6=60 A、無効成分 100×0.8=80 A。S-A間の有効成分は 160+60=220 A で(3)、無効成分は 120+80=200 A。(4)200 A が無効成分であるとの説明、(1)160 A がA点分のみであるとの説明は正しい。",
+        "図：公開候補図は原図の図部分と一致する。S・A・Bの3点、各区間2 km、A・B点の下向き矢印、「負荷電流200A 力率(遅れ)0.8」「負荷電流100A 力率(遅れ)0.6」のラベル・配置・向きに差異はなく、公開候補図単独で解答に必要な情報を読み取れる。",
+        "officialReferenceUrls は空であり、独立主張の検証対象はない。"
+      ]
+    },
+    {
+      "unitKey": "q17b",
+      "questionNumber": 17,
+      "part": "b",
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [
+        "explanation の「S-A間の電流は、(a)より有効成分220 A、無効成分200 A」は(a)の解説に依存している。無効成分200 A は(a)の設問では問われず、(a)の解説中でしか導出されていない。(b)単独で表示される場合でも読めるよう、有効成分 160+60=220 A、無効成分 120+80=200 A の導出を(b)の解説内に明記すべき。",
+        "choiceExplanations[3]（6 460 V）は「電圧降下が140 Vの場合に相当」と逆算を示すのみで、固有の理由がない。この値は A-B 区間の電圧降下 √3×84 ≒ 145.5 V だけを差し引いた 6 600−145.5 ≒ 6 454.5 V に最も近い選択肢である。S-A区間の降下を落とした誤りとして説明すべき。",
+        "choiceExplanations[4]（6 130 V）の「A点の線間電圧は…≒6 164 Vであり、この値とも一致しない」は数値としては正しい。ただし 6 164 V に最も近い選択肢は(4)6 130 V である（(5)6 260 V より近い）。S-A区間の降下のみでB点電圧としてしまう誤りの受け皿になっている点を「一致しない」で片付けるのは誤解を招く。「S-A間の降下だけを考えるとA点電圧約6 164 Vとなり(4)が最も近くなるが、B点ではA-B間の降下も加わる」と説明すべき。",
+        "choiceExplanations[2]（5 770 V）は「電圧降下が830 Vの場合に相当」と逆算のみで、固有の理由を示していない。特定できる誤答原因がない場合は、根拠のない原因を推測で書かず、その旨を明示するのが適切である。"
+      ],
+      "figureIssues": [
+        "figureDescription の「区間ごとに流れる電流の構成はこの図だけで示されている」は不正確である。図が示すのは負荷の位置・電流・力率と区間長のみであり、区間電流は図から導出するものである。また図の内容は question 本文にも文字で転記されているため、「この図だけで」は候補自身と矛盾する。「区間長と負荷の接続位置が図で示され、そこから各区間の電流を求める」旨に修正すべき。"
+      ],
+      "sourceIssues": [
+        "uncertainty に「原本ページには試験年度・科目名が記載されていないため、出典の一次資料URLは特定していない」とある。しかし sourceQuestionPdfUrl／sourceAnswerPdfUrl には manifest 固定の公式URLが設定されており、記述が候補自身のフィールドと矛盾する。manifest に基づき出典を特定済みである旨に改めるべき。"
+      ],
+      "verifiedEvidence": [
+        "出典：manifest の 2025年度下期・2026-03-22・電力・q02／a01 と、候補の fiscalYear、term、examDate、subject、各PDF URL が一致する。reviewedFromPage=[20] は原図の管理番号「T2－D 020」（印刷頁「- 17 -」）と整合する。",
+        "公式正答：解答表原図の＜電力＞欄の問17(b)は解答1・配点5。候補の officialAnswer=1、scoringPoints=5 と一致する。＜機械＞欄の問17(b)=4 などとは混同していない。",
+        "問題文：(b)の設問文「B点における線間電圧の値[V]として、最も近いもの」、S点6 600 V、0.3 Ω/km の条件は原図と一致する。",
+        "選択肢：(1)6 020、(2)5 770、(3)6 460、(4)6 130、(5)6 260 は原図と完全に一致する。",
+        "計算：各区間の値は R = X = 0.3×2 = 0.6 Ω。v_SA = √3×0.6×(220+200) = √3×252 ≒ 436.5 V。v_AB = √3×0.6×(60+80) = √3×84 ≒ 145.5 V。合計は √3×336 ≒ 582.0 V、V_B = 6 600−582.0 ≒ 6 018 V で、最も近いのは(1)6 020 V。公式正答と一致し、近似式 √3·I(Rcosθ+Xsinθ) の適用と遅れ力率の符号も正しい。",
+        "choiceExplanations[5]：√3を掛けない場合 6 600−336 = 6 264 V となり(5)6 260 V に最も近い、という固有理由は正しい。",
+        "図：公開候補図は原図と一致する。S・A・B、区間各2 km、両負荷の矢印・ラベルに差異はなく、公開候補図単独で解答に必要な区間長と負荷配置を読み取れる。",
+        "officialReferenceUrls は空であり、独立主張の検証対象はない。"
+      ]
+    }
+  ]
+}

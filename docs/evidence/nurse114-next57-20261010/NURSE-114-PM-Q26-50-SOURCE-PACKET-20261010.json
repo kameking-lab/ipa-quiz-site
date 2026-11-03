@@ -1,0 +1,732 @@
+{
+  "scope": "MHLW 114th nursing exam afternoon original Q26-50",
+  "status": "source-only; 25 originals, all choices and 25 official keys checked against rendered pages",
+  "questionCount": 25,
+  "officialAnswerKeyCount": 25,
+  "choiceCount": 100,
+  "figureQuestionCount": 2,
+  "pdfTextGlyphRepairs": [
+    {
+      "question": 26,
+      "field": "choice3",
+      "visualReading": "重篤な1型糖尿病",
+      "sourcePage": 13
+    },
+    {
+      "question": 27,
+      "field": "stem",
+      "visualReading": "A君（15歳、男子）",
+      "sourcePage": 14
+    },
+    {
+      "question": 30,
+      "field": "choices3-4",
+      "visualReading": "令和4年度（2022年度）、特定医療費（指定難病）",
+      "sourcePage": 15
+    },
+    {
+      "question": 40,
+      "field": "choice4",
+      "visualReading": "臨床経験5年以上",
+      "sourcePage": 17
+    },
+    {
+      "question": 42,
+      "field": "choices1,3",
+      "visualReading": "流動（ミキサー）食、週に1回",
+      "sourcePage": 18
+    },
+    {
+      "question": 43,
+      "field": "stem",
+      "visualReading": "Aちゃん（1歳7か月、女児）は先天性水頭症のため脳室-腹腔シャント造設術を受け、母親が1人で育てている",
+      "sourceAnnotation": "congenital hydrocephalus",
+      "sourcePage": 18
+    },
+    {
+      "question": 50,
+      "field": "stem",
+      "visualReading": "Aさん（42歳、男性）",
+      "sourcePage": 21
+    }
+  ],
+  "questionPdf": {
+    "officialUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-05c_01.pdf",
+    "localPath": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\claude-capacity-20261010\\nurse-q76-100\\official-pm-pdfs\\tp250428-05c_01.pdf",
+    "sha256": "3c55c7bc2b88612a57afa2b5c1a58dc7dd36b00ca7693d56c7cc44c706ce5adb"
+  },
+  "officialAnswerPdf": {
+    "officialUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-05seitou.pdf",
+    "localPath": "C:\\Users\\kanet\\20260522\\note-automation\\.cache\\nurse-next-source-20261010\\tp250428-05seitou.pdf",
+    "sha256": "706f6fe6ab34e9849755874132ad98ac55a32d9b83fa7e37c8e58c7ad07921db"
+  },
+  "questions": [
+    {
+      "round": 114,
+      "session": "afternoon",
+      "question": 26,
+      "questionPdfPhysicalPage": 13,
+      "questionPdfPrintedPage": 7,
+      "stem": "血漿中の重炭酸イオン濃度が基準値よりも高くなるのはどれか。",
+      "choices": [
+        "過換気",
+        "腎不全\nrenal failure",
+        "重篤な1型糖尿病\ntype1diabetes mellitus",
+        "慢性的な換気障害"
+      ],
+      "choiceCount": 4,
+      "officialAcceptedAnswerNumbers": [
+        "4"
+      ],
+      "answerKind": "select_one",
+      "requiredSelections": 1,
+      "sourcePageImage": {
+        "path": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\claude-capacity-20261010\\nurse-q76-100\\pm114-q26-50-renders\\114-pm-physical-p13.png",
+        "sha256": "e9562f1406436ae75960a32369912ae06963703c5610850219a4a58bf85d477b"
+      },
+      "figurePresent": false,
+      "transcriptionStatus": "visually verified against original PDF page"
+    },
+    {
+      "round": 114,
+      "session": "afternoon",
+      "question": 27,
+      "questionPdfPhysicalPage": 14,
+      "questionPdfPrintedPage": 8,
+      "stem": "A君（15歳、男子）は、蒸し暑い夏の午後に行われたサッカーの試合に出ていた。\nA 君は試合中に大量の汗をかいて、気分が悪くなったので多量の水道水を飲み、\n日陰で休んでいたが、突然、意識消失して倒れた。このときのA 君の細胞外液の\nナトリウムイオン濃度と水分量の正常時に対する割合を図に示す。\nこのときのA 君の体液の状態で正しいのはどれか。",
+      "choices": [
+        "細胞内液は減少している。",
+        "血漿浸透圧は上昇している。",
+        "循環血液量は減少している。",
+        "ヘマトクリットは低下している。"
+      ],
+      "choiceCount": 4,
+      "officialAcceptedAnswerNumbers": [
+        "3"
+      ],
+      "answerKind": "select_one",
+      "requiredSelections": 1,
+      "sourcePageImage": {
+        "path": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\claude-capacity-20261010\\nurse-q76-100\\pm114-q26-50-renders\\114-pm-physical-p14.png",
+        "sha256": "09782c815d4d84f51830a74892da57c357ed35dc931c607548cb00da9ad66e9b"
+      },
+      "figurePresent": true,
+      "transcriptionStatus": "visually verified against original PDF page",
+      "figure": {
+        "kind": "original chart comparing sodium-ion concentration and water amount at baseline and collapse",
+        "sourcePageImage": {
+          "path": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\claude-capacity-20261010\\nurse-q76-100\\pm114-q26-50-renders\\114-pm-physical-p14.png",
+          "sha256": "09782c815d4d84f51830a74892da57c357ed35dc931c607548cb00da9ad66e9b"
+        },
+        "visualCheck": "Both baseline bars are 100%; at collapse sodium-ion concentration is lower while water amount is slightly lower but exceeds sodium as a relative proportion. Preserve original labels and axis."
+      }
+    },
+    {
+      "round": 114,
+      "session": "afternoon",
+      "question": 28,
+      "questionPdfPhysicalPage": 14,
+      "questionPdfPrintedPage": 8,
+      "stem": "ヘリコバクター・ピロリ感染症\nHelicobacter pylori infection\nで正しいのはどれか。",
+      "choices": [
+        "尿素呼気検査は診断に有用である。",
+        "除菌後の判定は除菌終了後の翌日に行う。",
+        "ヘリコバクター・ピロリ〈Helicobacter pylori〉は胃の粘膜下層に生息する。",
+        "ヘリコバクター・ピロリ〈Helicobacter pylori〉は尿素を作り出して胃酸から\n身を守る。"
+      ],
+      "choiceCount": 4,
+      "officialAcceptedAnswerNumbers": [
+        "1"
+      ],
+      "answerKind": "select_one",
+      "requiredSelections": 1,
+      "sourcePageImage": {
+        "path": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\claude-capacity-20261010\\nurse-q76-100\\pm114-q26-50-renders\\114-pm-physical-p14.png",
+        "sha256": "09782c815d4d84f51830a74892da57c357ed35dc931c607548cb00da9ad66e9b"
+      },
+      "figurePresent": false,
+      "transcriptionStatus": "visually verified against original PDF page"
+    },
+    {
+      "round": 114,
+      "session": "afternoon",
+      "question": 29,
+      "questionPdfPhysicalPage": 15,
+      "questionPdfPrintedPage": 9,
+      "stem": "高齢者虐待の防止、高齢者の養護者に対する支援等に関する法律〈高齢者虐待防\n止法〉で保護された高齢者が入所する社会福祉施設はどれか。",
+      "choices": [
+        "軽費老人ホーム",
+        "有料老人ホーム",
+        "特別養護老人ホーム",
+        "サービス付き高齢者向け住宅"
+      ],
+      "choiceCount": 4,
+      "officialAcceptedAnswerNumbers": [
+        "3"
+      ],
+      "answerKind": "select_one",
+      "requiredSelections": 1,
+      "sourcePageImage": {
+        "path": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\claude-capacity-20261010\\nurse-q76-100\\pm114-q26-50-renders\\114-pm-physical-p15.png",
+        "sha256": "848b3dc097f5d34e664de0c6a60e73edeaa0006b6ddc4a84012c2bc0b8f7ac5c"
+      },
+      "figurePresent": false,
+      "transcriptionStatus": "visually verified against original PDF page"
+    },
+    {
+      "round": 114,
+      "session": "afternoon",
+      "question": 30,
+      "questionPdfPhysicalPage": 15,
+      "questionPdfPrintedPage": 9,
+      "stem": "難病の患者に対する医療等に関する法律〈難病法〉に規定されているのはどれか。",
+      "choices": [
+        "市町村が難病相談支援センターを設置する。",
+        "指定難病の医療費は全額を公費で負担する。",
+        "令和4年度（2022年度）の指定難病数は56 疾病である。",
+        "特定医療費（指定難病）の支給認定は居住地の都道府県・指定都市が行う。"
+      ],
+      "choiceCount": 4,
+      "officialAcceptedAnswerNumbers": [
+        "4"
+      ],
+      "answerKind": "select_one",
+      "requiredSelections": 1,
+      "sourcePageImage": {
+        "path": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\claude-capacity-20261010\\nurse-q76-100\\pm114-q26-50-renders\\114-pm-physical-p15.png",
+        "sha256": "848b3dc097f5d34e664de0c6a60e73edeaa0006b6ddc4a84012c2bc0b8f7ac5c"
+      },
+      "figurePresent": false,
+      "transcriptionStatus": "visually verified against original PDF page"
+    },
+    {
+      "round": 114,
+      "session": "afternoon",
+      "question": 31,
+      "questionPdfPhysicalPage": 15,
+      "questionPdfPrintedPage": 9,
+      "stem": "フィンク, S. L.\nFink, S. L.\nが提唱した危機モデルの最終段階はどれか。",
+      "choices": [
+        "受\n容",
+        "適\n応",
+        "問題解決",
+        "ラポール"
+      ],
+      "choiceCount": 4,
+      "officialAcceptedAnswerNumbers": [
+        "2"
+      ],
+      "answerKind": "select_one",
+      "requiredSelections": 1,
+      "sourcePageImage": {
+        "path": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\claude-capacity-20261010\\nurse-q76-100\\pm114-q26-50-renders\\114-pm-physical-p15.png",
+        "sha256": "848b3dc097f5d34e664de0c6a60e73edeaa0006b6ddc4a84012c2bc0b8f7ac5c"
+      },
+      "figurePresent": false,
+      "transcriptionStatus": "visually verified against original PDF page"
+    },
+    {
+      "round": 114,
+      "session": "afternoon",
+      "question": 32,
+      "questionPdfPhysicalPage": 15,
+      "questionPdfPrintedPage": 9,
+      "stem": "入院して間もない片麻痺がある患者から｢着替えがうまくできない。ひとりでで\nきるようになりたい｣と訴えがあった。\n最初に行う看護師の対応で最も適切なのはどれか。",
+      "choices": [
+        "｢繰り返し練習しましょう｣",
+        "｢できないところは手伝います｣",
+        "｢着替えるところを見せてください｣",
+        "｢着替えのパンフレットを参考にしましょう｣"
+      ],
+      "choiceCount": 4,
+      "officialAcceptedAnswerNumbers": [
+        "3"
+      ],
+      "answerKind": "select_one",
+      "requiredSelections": 1,
+      "sourcePageImage": {
+        "path": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\claude-capacity-20261010\\nurse-q76-100\\pm114-q26-50-renders\\114-pm-physical-p15.png",
+        "sha256": "848b3dc097f5d34e664de0c6a60e73edeaa0006b6ddc4a84012c2bc0b8f7ac5c"
+      },
+      "figurePresent": false,
+      "transcriptionStatus": "visually verified against original PDF page"
+    },
+    {
+      "round": 114,
+      "session": "afternoon",
+      "question": 33,
+      "questionPdfPhysicalPage": 16,
+      "questionPdfPrintedPage": 10,
+      "stem": "うっ血乳頭が出現するのはどれか。",
+      "choices": [
+        "舌\n癌\ntongue cancer",
+        "貧\n血",
+        "門脈圧亢進",
+        "頭蓋内圧亢進"
+      ],
+      "choiceCount": 4,
+      "officialAcceptedAnswerNumbers": [
+        "4"
+      ],
+      "answerKind": "select_one",
+      "requiredSelections": 1,
+      "sourcePageImage": {
+        "path": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\claude-capacity-20261010\\nurse-q76-100\\pm114-q26-50-renders\\114-pm-physical-p16.png",
+        "sha256": "538504d0a19adfbb0177b17af2d64cc1991f637cc1f0dd33f825f2a99ee06885"
+      },
+      "figurePresent": false,
+      "transcriptionStatus": "visually verified against original PDF page"
+    },
+    {
+      "round": 114,
+      "session": "afternoon",
+      "question": 34,
+      "questionPdfPhysicalPage": 16,
+      "questionPdfPrintedPage": 10,
+      "stem": "シリンジポンプを使用する際に生じるサイフォニング現象の原因はどれか。",
+      "choices": [
+        "内蔵バッテリーの残量が少ない。",
+        "輸液ラインに血液の逆流がある。",
+        "輸液ラインに大量の空気がある。",
+        "刺入部とシリンジに高低差がある。"
+      ],
+      "choiceCount": 4,
+      "officialAcceptedAnswerNumbers": [
+        "4"
+      ],
+      "answerKind": "select_one",
+      "requiredSelections": 1,
+      "sourcePageImage": {
+        "path": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\claude-capacity-20261010\\nurse-q76-100\\pm114-q26-50-renders\\114-pm-physical-p16.png",
+        "sha256": "538504d0a19adfbb0177b17af2d64cc1991f637cc1f0dd33f825f2a99ee06885"
+      },
+      "figurePresent": false,
+      "transcriptionStatus": "visually verified against original PDF page"
+    },
+    {
+      "round": 114,
+      "session": "afternoon",
+      "question": 35,
+      "questionPdfPhysicalPage": 16,
+      "questionPdfPrintedPage": 10,
+      "stem": "嚥下障害を評価する改訂水飲みテストで正しいのはどれか。",
+      "choices": [
+        "嚥下後10 秒間で評価する。",
+        "嚥下後の呼吸状態を評価する。",
+        "嚥下動作の準備期を評価する。",
+        "80 mL の水で嚥下状態を評価する。"
+      ],
+      "choiceCount": 4,
+      "officialAcceptedAnswerNumbers": [
+        "2"
+      ],
+      "answerKind": "select_one",
+      "requiredSelections": 1,
+      "sourcePageImage": {
+        "path": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\claude-capacity-20261010\\nurse-q76-100\\pm114-q26-50-renders\\114-pm-physical-p16.png",
+        "sha256": "538504d0a19adfbb0177b17af2d64cc1991f637cc1f0dd33f825f2a99ee06885"
+      },
+      "figurePresent": false,
+      "transcriptionStatus": "visually verified against original PDF page"
+    },
+    {
+      "round": 114,
+      "session": "afternoon",
+      "question": 36,
+      "questionPdfPhysicalPage": 16,
+      "questionPdfPrintedPage": 10,
+      "stem": "人工肛門周囲の皮膚を清潔にする方法で適切なのはどれか。",
+      "choices": [
+        "装具を外して洗浄する。",
+        "石けんは使用しない。",
+        "洗浄後に消毒をする。",
+        "洗浄後はドライヤーで乾燥させる。"
+      ],
+      "choiceCount": 4,
+      "officialAcceptedAnswerNumbers": [
+        "1"
+      ],
+      "answerKind": "select_one",
+      "requiredSelections": 1,
+      "sourcePageImage": {
+        "path": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\claude-capacity-20261010\\nurse-q76-100\\pm114-q26-50-renders\\114-pm-physical-p16.png",
+        "sha256": "538504d0a19adfbb0177b17af2d64cc1991f637cc1f0dd33f825f2a99ee06885"
+      },
+      "figurePresent": false,
+      "transcriptionStatus": "visually verified against original PDF page"
+    },
+    {
+      "round": 114,
+      "session": "afternoon",
+      "question": 37,
+      "questionPdfPhysicalPage": 17,
+      "questionPdfPrintedPage": 11,
+      "stem": "半座位で頸静脈怒張がみられるのはどれか。",
+      "choices": [
+        "右心不全\nright heart failure",
+        "広範囲熱傷\nextensive burns",
+        "大動脈瘤破裂\nruptured aortic aneurysm",
+        "アナフィラキシーショック\nanaphylactic shock"
+      ],
+      "choiceCount": 4,
+      "officialAcceptedAnswerNumbers": [
+        "1"
+      ],
+      "answerKind": "select_one",
+      "requiredSelections": 1,
+      "sourcePageImage": {
+        "path": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\claude-capacity-20261010\\nurse-q76-100\\pm114-q26-50-renders\\114-pm-physical-p17.png",
+        "sha256": "b940205c54ed4c98a8de3303cd5c5ad1a78c1868ab3ab6f08f878a38663e8269"
+      },
+      "figurePresent": false,
+      "transcriptionStatus": "visually verified against original PDF page"
+    },
+    {
+      "round": 114,
+      "session": "afternoon",
+      "question": 38,
+      "questionPdfPhysicalPage": 17,
+      "questionPdfPrintedPage": 11,
+      "stem": "経口薬と飲料の関係で正しいのはどれか。",
+      "choices": [
+        "テトラサイクリン系抗菌薬は、牛乳によって作用が減弱される。",
+        "非ステロイド性抗炎症薬は、炭酸飲料によって吸収速度が速まる。",
+        "テオフィリンは、カフェインを含む飲料によって作用が減弱される。",
+        "カルシウム拮抗薬は、グレープフルーツジュースによって作用が減弱され\nる。"
+      ],
+      "choiceCount": 4,
+      "officialAcceptedAnswerNumbers": [
+        "1"
+      ],
+      "answerKind": "select_one",
+      "requiredSelections": 1,
+      "sourcePageImage": {
+        "path": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\claude-capacity-20261010\\nurse-q76-100\\pm114-q26-50-renders\\114-pm-physical-p17.png",
+        "sha256": "b940205c54ed4c98a8de3303cd5c5ad1a78c1868ab3ab6f08f878a38663e8269"
+      },
+      "figurePresent": false,
+      "transcriptionStatus": "visually verified against original PDF page"
+    },
+    {
+      "round": 114,
+      "session": "afternoon",
+      "question": 39,
+      "questionPdfPhysicalPage": 17,
+      "questionPdfPrintedPage": 11,
+      "stem": "Holter〈ホルター〉心電図検査の説明で正しいのはどれか。",
+      "choices": [
+        "就寝時は電極を外す。",
+        "電極は四肢に装着する。",
+        "検査中は電気カーペットを使用しない。",
+        "検査中は普段の生活よりも活動量を減らす。"
+      ],
+      "choiceCount": 4,
+      "officialAcceptedAnswerNumbers": [
+        "3"
+      ],
+      "answerKind": "select_one",
+      "requiredSelections": 1,
+      "sourcePageImage": {
+        "path": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\claude-capacity-20261010\\nurse-q76-100\\pm114-q26-50-renders\\114-pm-physical-p17.png",
+        "sha256": "b940205c54ed4c98a8de3303cd5c5ad1a78c1868ab3ab6f08f878a38663e8269"
+      },
+      "figurePresent": false,
+      "transcriptionStatus": "visually verified against original PDF page"
+    },
+    {
+      "round": 114,
+      "session": "afternoon",
+      "question": 40,
+      "questionPdfPhysicalPage": 17,
+      "questionPdfPrintedPage": 11,
+      "stem": "訪問看護事業所について正しいのはどれか。",
+      "choices": [
+        "24 時間対応が義務付けられている。",
+        "自宅以外への訪問看護は認められない。",
+        "特定非営利活動法人〈NPO〉は事業所を開設できる。",
+        "従事する看護師は臨床経験5年以上と定められている。"
+      ],
+      "choiceCount": 4,
+      "officialAcceptedAnswerNumbers": [
+        "3"
+      ],
+      "answerKind": "select_one",
+      "requiredSelections": 1,
+      "sourcePageImage": {
+        "path": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\claude-capacity-20261010\\nurse-q76-100\\pm114-q26-50-renders\\114-pm-physical-p17.png",
+        "sha256": "b940205c54ed4c98a8de3303cd5c5ad1a78c1868ab3ab6f08f878a38663e8269"
+      },
+      "figurePresent": false,
+      "transcriptionStatus": "visually verified against original PDF page"
+    },
+    {
+      "round": 114,
+      "session": "afternoon",
+      "question": 41,
+      "questionPdfPhysicalPage": 18,
+      "questionPdfPrintedPage": 12,
+      "stem": "糖尿病の在\ndiabetes mellitus宅療養者に行うフットケアの説明で適切なのはどれか。",
+      "choices": [
+        "｢素足で過ごしましょう｣",
+        "｢足の皮膚を保湿してください｣",
+        "｢足浴には42 ℃のお湯を使ってください｣",
+        "｢爪は指の先端よりも短く切ってください｣"
+      ],
+      "choiceCount": 4,
+      "officialAcceptedAnswerNumbers": [
+        "2"
+      ],
+      "answerKind": "select_one",
+      "requiredSelections": 1,
+      "sourcePageImage": {
+        "path": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\claude-capacity-20261010\\nurse-q76-100\\pm114-q26-50-renders\\114-pm-physical-p18.png",
+        "sha256": "9c9a6606ab01ecb73ec654d560cbd28c9d19f582059c03455c36ffb51ba5702b"
+      },
+      "figurePresent": false,
+      "transcriptionStatus": "visually verified against original PDF page"
+    },
+    {
+      "round": 114,
+      "session": "afternoon",
+      "question": 42,
+      "questionPdfPhysicalPage": 18,
+      "questionPdfPrintedPage": 12,
+      "stem": "胃瘻からの経管栄養を行う在宅療養者の家族に説明する内容で正しいのはどれ\nか。",
+      "choices": [
+        "流動（ミキサー）食は注入できる。",
+        "注入前に胃瘻の瘻孔部を消毒する。",
+        "胃瘻カテーテルは週に1回交換する。",
+        "注入中は体位を15 度のFowler〈ファウラー〉位にする。"
+      ],
+      "choiceCount": 4,
+      "officialAcceptedAnswerNumbers": [
+        "1"
+      ],
+      "answerKind": "select_one",
+      "requiredSelections": 1,
+      "sourcePageImage": {
+        "path": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\claude-capacity-20261010\\nurse-q76-100\\pm114-q26-50-renders\\114-pm-physical-p18.png",
+        "sha256": "9c9a6606ab01ecb73ec654d560cbd28c9d19f582059c03455c36ffb51ba5702b"
+      },
+      "figurePresent": false,
+      "transcriptionStatus": "visually verified against original PDF page"
+    },
+    {
+      "round": 114,
+      "session": "afternoon",
+      "question": 43,
+      "questionPdfPhysicalPage": 18,
+      "questionPdfPrintedPage": 12,
+      "stem": "Aちゃん（1歳7か月、女児）は先天性水頭症のため脳室―腹腔〈V-P〉シャント造\n設術を受けて退院した。A ちゃんは歩行障害があり、母親が1人で育てている。\n退院後、訪問看護師が訪問すると、A ちゃんの母親は｢子どもが泣くとイライラし\nます。この先A を育てていく自信がなく、経済的にも生活していけるか不安です｣\nと話した。\nこのとき、訪問看護師が母親に勧める相談先で最も適切なのはどれか。",
+      "choices": [
+        "居住地の社会福祉協議会",
+        "居住地の保健センター",
+        "障害児の子育てグループ",
+        "入院していた病院の医療相談室"
+      ],
+      "choiceCount": 4,
+      "officialAcceptedAnswerNumbers": [
+        "2"
+      ],
+      "answerKind": "select_one",
+      "requiredSelections": 1,
+      "sourcePageImage": {
+        "path": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\claude-capacity-20261010\\nurse-q76-100\\pm114-q26-50-renders\\114-pm-physical-p18.png",
+        "sha256": "9c9a6606ab01ecb73ec654d560cbd28c9d19f582059c03455c36ffb51ba5702b"
+      },
+      "figurePresent": false,
+      "transcriptionStatus": "visually verified against original PDF page",
+      "sourceAnnotation": "congenital hydrocephalus"
+    },
+    {
+      "round": 114,
+      "session": "afternoon",
+      "question": 44,
+      "questionPdfPhysicalPage": 19,
+      "questionPdfPrintedPage": 13,
+      "stem": "地域包括ケアシステムの構成要素はどれか。",
+      "choices": [
+        "交\n通",
+        "雇\n用",
+        "情\n報",
+        "住まい"
+      ],
+      "choiceCount": 4,
+      "officialAcceptedAnswerNumbers": [
+        "4"
+      ],
+      "answerKind": "select_one",
+      "requiredSelections": 1,
+      "sourcePageImage": {
+        "path": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\claude-capacity-20261010\\nurse-q76-100\\pm114-q26-50-renders\\114-pm-physical-p19.png",
+        "sha256": "f3cedf4367da8b138754a2b26d777fff5a6ac9d13d64746d60cff00aa8ab718b"
+      },
+      "figurePresent": false,
+      "transcriptionStatus": "visually verified against original PDF page"
+    },
+    {
+      "round": 114,
+      "session": "afternoon",
+      "question": 45,
+      "questionPdfPhysicalPage": 19,
+      "questionPdfPrintedPage": 13,
+      "stem": "成人の心肺蘇生法における圧迫部位を図に示す。\n正しいのはどれか。",
+      "choices": [
+        "①",
+        "②",
+        "③",
+        "④"
+      ],
+      "choiceCount": 4,
+      "officialAcceptedAnswerNumbers": [
+        "4"
+      ],
+      "answerKind": "select_one",
+      "requiredSelections": 1,
+      "sourcePageImage": {
+        "path": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\claude-capacity-20261010\\nurse-q76-100\\pm114-q26-50-renders\\114-pm-physical-p19.png",
+        "sha256": "f3cedf4367da8b138754a2b26d777fff5a6ac9d13d64746d60cff00aa8ab718b"
+      },
+      "figurePresent": true,
+      "transcriptionStatus": "visually verified against original PDF page",
+      "figure": {
+        "kind": "original adult chest diagram with four numbered compression locations",
+        "sourcePageImage": {
+          "path": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\claude-capacity-20261010\\nurse-q76-100\\pm114-q26-50-renders\\114-pm-physical-p19.png",
+          "sha256": "f3cedf4367da8b138754a2b26d777fff5a6ac9d13d64746d60cff00aa8ab718b"
+        },
+        "visualCheck": "Numbered dots 1 upper-left, 2 right-chest, 3 low sternum, 4 mid sternum; preserve exact diagram and labels when publishing."
+      }
+    },
+    {
+      "round": 114,
+      "session": "afternoon",
+      "question": 46,
+      "questionPdfPhysicalPage": 19,
+      "questionPdfPrintedPage": 13,
+      "stem": "高次脳機能障害のある患者が買い物に行った際に示す行動で失行はどれか。",
+      "choices": [
+        "何を買いに来たのか忘れる。",
+        "買い物かごの使い方が分からない。",
+        "献立に合わせた買い物ができない。",
+        "スーパーと自宅の往復で道に迷う。"
+      ],
+      "choiceCount": 4,
+      "officialAcceptedAnswerNumbers": [
+        "2"
+      ],
+      "answerKind": "select_one",
+      "requiredSelections": 1,
+      "sourcePageImage": {
+        "path": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\claude-capacity-20261010\\nurse-q76-100\\pm114-q26-50-renders\\114-pm-physical-p19.png",
+        "sha256": "f3cedf4367da8b138754a2b26d777fff5a6ac9d13d64746d60cff00aa8ab718b"
+      },
+      "figurePresent": false,
+      "transcriptionStatus": "visually verified against original PDF page"
+    },
+    {
+      "round": 114,
+      "session": "afternoon",
+      "question": 47,
+      "questionPdfPhysicalPage": 20,
+      "questionPdfPrintedPage": 14,
+      "stem": "乳房温存療法で放射線治療を受ける乳癌患者へ\nbreast cancer\nの説明で適切なのはどれか。",
+      "choices": [
+        "｢頭髪の脱毛が生じます｣",
+        "｢嚥下障害が予測されます｣",
+        "｢皮膚にマーキングを行います｣",
+        "｢同居家族への被曝に注意してください｣"
+      ],
+      "choiceCount": 4,
+      "officialAcceptedAnswerNumbers": [
+        "3"
+      ],
+      "answerKind": "select_one",
+      "requiredSelections": 1,
+      "sourcePageImage": {
+        "path": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\claude-capacity-20261010\\nurse-q76-100\\pm114-q26-50-renders\\114-pm-physical-p20.png",
+        "sha256": "6c35e30d5a9398d518908a6c35f5edb0925c67f1b552c9b536389337271398ce"
+      },
+      "figurePresent": false,
+      "transcriptionStatus": "visually verified against original PDF page"
+    },
+    {
+      "round": 114,
+      "session": "afternoon",
+      "question": 48,
+      "questionPdfPhysicalPage": 20,
+      "questionPdfPrintedPage": 14,
+      "stem": "臨死期にある患者に出現する呼吸の変化で正しいのはどれか。",
+      "choices": [
+        "過呼吸",
+        "奇異呼吸",
+        "Kussmaul〈クスマウル〉呼吸",
+        "Cheyne-Stokes〈チェーン-ストークス〉呼吸"
+      ],
+      "choiceCount": 4,
+      "officialAcceptedAnswerNumbers": [
+        "4"
+      ],
+      "answerKind": "select_one",
+      "requiredSelections": 1,
+      "sourcePageImage": {
+        "path": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\claude-capacity-20261010\\nurse-q76-100\\pm114-q26-50-renders\\114-pm-physical-p20.png",
+        "sha256": "6c35e30d5a9398d518908a6c35f5edb0925c67f1b552c9b536389337271398ce"
+      },
+      "figurePresent": false,
+      "transcriptionStatus": "visually verified against original PDF page"
+    },
+    {
+      "round": 114,
+      "session": "afternoon",
+      "question": 49,
+      "questionPdfPhysicalPage": 20,
+      "questionPdfPrintedPage": 14,
+      "stem": "超音波ガイド下で肝生検を受ける成人への説明で正しいのはどれか。",
+      "choices": [
+        "｢検査前の絶食は不要です｣",
+        "｢検査はうつぶせで実施します｣",
+        "｢検査中は指示に合わせて息を止めてください｣",
+        "｢検査後すぐに歩行できます｣"
+      ],
+      "choiceCount": 4,
+      "officialAcceptedAnswerNumbers": [
+        "3"
+      ],
+      "answerKind": "select_one",
+      "requiredSelections": 1,
+      "sourcePageImage": {
+        "path": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\claude-capacity-20261010\\nurse-q76-100\\pm114-q26-50-renders\\114-pm-physical-p20.png",
+        "sha256": "6c35e30d5a9398d518908a6c35f5edb0925c67f1b552c9b536389337271398ce"
+      },
+      "figurePresent": false,
+      "transcriptionStatus": "visually verified against original PDF page"
+    },
+    {
+      "round": 114,
+      "session": "afternoon",
+      "question": 50,
+      "questionPdfPhysicalPage": 21,
+      "questionPdfPrintedPage": 15,
+      "stem": "Aさん（42歳、男性）は、同僚との飲酒中に上腹部から背部の激しい痛みと嘔吐\nがあり、救急搬送された。搬送時の心電図には異常を認めない。\nA さんの状態をアセスメントするための血液検査項目で優先度が高いのはどれ\nか。",
+      "choices": [
+        "アルブミン",
+        "トロポニン",
+        "中性脂肪",
+        "リパーゼ"
+      ],
+      "choiceCount": 4,
+      "officialAcceptedAnswerNumbers": [
+        "4"
+      ],
+      "answerKind": "select_one",
+      "requiredSelections": 1,
+      "sourcePageImage": {
+        "path": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\claude-capacity-20261010\\nurse-q76-100\\pm114-q26-50-renders\\114-pm-physical-p21.png",
+        "sha256": "0ca04ade8691aa2deade19c75b4ed28e7f50a174c1cc6870ae7bfbc288783917"
+      },
+      "figurePresent": false,
+      "transcriptionStatus": "visually verified against original PDF page"
+    }
+  ]
+}

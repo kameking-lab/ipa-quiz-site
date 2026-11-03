@@ -1,0 +1,476 @@
+[
+  {
+    "id": "radio21-land2-2022-02-kogaku-q13",
+    "exam": "land-special2",
+    "session": "kogaku",
+    "year": 2022,
+    "season": "february",
+    "qNumber": 13,
+    "officialAnswerNumber": "3",
+    "type": "multiple-choice",
+    "category": "無線工学",
+    "subject": "無線工学",
+    "topicTags": [
+      "無線工学"
+    ],
+    "difficulty": 2,
+    "question": "図に示す電気回路において、抵抗Rを2分の1倍にすると回路に流れる電流Iは元の値の何倍になるか。",
+    "choices": {
+      "ア": "1/2倍",
+      "イ": "1/4倍",
+      "ウ": "2倍",
+      "エ": "4倍"
+    },
+    "answer": "ウ",
+    "explanation": "電源電圧一定ならRの半減によりI=V/Rは２倍。",
+    "choiceExplanations": {
+      "ア": "抵抗が半分なら一定電圧下の電流は２倍であり、半分ではない。",
+      "イ": "電流I=V/Rなので、Rを1/2にすればIは２倍で、1/4ではない。",
+      "ウ": "電源電圧一定ならRの半減によりI=V/Rは２倍。",
+      "エ": "４倍にはならない。抵抗の倍率1/2の逆数は２。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/riku-toku-2-kogaku.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/riku-toku-2-kogaku-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第二級陸上特殊無線技士試験 2022年2月期筆記 無線工学 問13（問題・正答）。解説は過去問AIが独自作成。図は原典から切り出し。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-10-15",
+    "imageUrls": [
+      "/images/questions/land-special2/radio21-land2-2022-02-kogaku-q13-original.png"
+    ],
+    "imageAltTexts": [
+      "公式問13の図と選択肢（原典配置）"
+    ]
+  },
+  {
+    "id": "radio21-land2-2022-02-kogaku-q14",
+    "exam": "land-special2",
+    "session": "kogaku",
+    "year": 2022,
+    "season": "february",
+    "qNumber": 14,
+    "officialAnswerNumber": "4",
+    "type": "multiple-choice",
+    "category": "無線工学",
+    "subject": "無線工学",
+    "topicTags": [
+      "無線工学"
+    ],
+    "difficulty": 2,
+    "question": "図に示すNPN形トランジスタの①②③の電極名の正しい組合せはどれか。",
+    "choices": {
+      "ア": "ベース エミッタ コレクタ",
+      "イ": "エミッタ コレクタ ベース",
+      "ウ": "ベース コレクタ エミッタ",
+      "エ": "コレクタ ベース エミッタ"
+    },
+    "answer": "エ",
+    "explanation": "NPN記号の左がベース②、矢印がある下側がエミッタ③、上側がコレクタ①。",
+    "choiceExplanations": {
+      "ア": "①は上側のコレクタでありベースではない。",
+      "イ": "②は左のベースでありコレクタではない。",
+      "ウ": "①はコレクタであり、②をコレクタとするのも誤り。",
+      "エ": "NPN記号の左がベース②、矢印がある下側がエミッタ③、上側がコレクタ①。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/riku-toku-2-kogaku.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/riku-toku-2-kogaku-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第二級陸上特殊無線技士試験 2022年2月期筆記 無線工学 問14（問題・正答）。解説は過去問AIが独自作成。図は原典から切り出し。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-10-15",
+    "imageUrls": [
+      "/images/questions/land-special2/radio21-land2-2022-02-kogaku-q14-original.png"
+    ],
+    "imageAltTexts": [
+      "公式問14の図と選択肢（原典配置）"
+    ]
+  },
+  {
+    "id": "radio21-land2-2022-02-kogaku-q15",
+    "exam": "land-special2",
+    "session": "kogaku",
+    "year": 2022,
+    "season": "february",
+    "qNumber": 15,
+    "officialAnswerNumber": "2",
+    "type": "multiple-choice",
+    "category": "無線工学",
+    "subject": "無線工学",
+    "topicTags": [
+      "無線工学"
+    ],
+    "difficulty": 2,
+    "question": "1/4波長垂直接地アンテナについて、誤っているのはどれか。",
+    "choices": {
+      "ア": "固有周波数の奇数倍の周波数にも同調する。",
+      "イ": "電流分布は先端で最大、底部で零となる。",
+      "ウ": "指向特性は、水平面内では全方向性（無指向性） である。",
+      "エ": "接地抵抗が小さいほど効率がよい。"
+    },
+    "answer": "イ",
+    "explanation": "電流は給電点の底部で最大、開放端の先端でほぼ零となる。記述は逆。",
+    "choiceExplanations": {
+      "ア": "1/4波長垂直接地アンテナは奇数次の共振を持つ。",
+      "イ": "電流は給電点の底部で最大、開放端の先端でほぼ零となる。記述は逆。",
+      "ウ": "垂直モノポールの水平面指向性はほぼ無指向性。",
+      "エ": "接地抵抗を下げると接地損失が減り効率が上がる。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/riku-toku-2-kogaku.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/riku-toku-2-kogaku-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第二級陸上特殊無線技士試験 2022年2月期筆記 無線工学 問15（問題・正答）。解説は過去問AIが独自作成。図は原典から切り出し。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-10-15"
+  },
+  {
+    "id": "radio21-land2-2022-02-kogaku-q16",
+    "exam": "land-special2",
+    "session": "kogaku",
+    "year": 2022,
+    "season": "february",
+    "qNumber": 16,
+    "officialAnswerNumber": "2",
+    "type": "multiple-choice",
+    "category": "無線工学",
+    "subject": "無線工学",
+    "topicTags": [
+      "無線工学"
+    ],
+    "difficulty": 2,
+    "question": "次の記述は、超短波(VHF)帯の電波の伝わり方につ いて述べたものである。誤っているのはどれか。",
+    "choices": {
+      "ア": "通常、電離層を突き抜けてしまう。",
+      "イ": "伝搬途中の地形や建物の影響を受けない。",
+      "ウ": "見通し距離内の通信に適する。",
+      "エ": "光に似た性質で、直進する。"
+    },
+    "answer": "イ",
+    "explanation": "VHFも地形・建物による遮蔽や反射などの影響を受ける。『影響を受けない』が誤り。",
+    "choiceExplanations": {
+      "ア": "通常のVHFは電離層を透過しやすい。",
+      "イ": "VHFも地形・建物による遮蔽や反射などの影響を受ける。『影響を受けない』が誤り。",
+      "ウ": "直進性が強いので見通し内通信に適する。",
+      "エ": "VHFは光に似た直進性を持つ。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/riku-toku-2-kogaku.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/riku-toku-2-kogaku-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第二級陸上特殊無線技士試験 2022年2月期筆記 無線工学 問16（問題・正答）。解説は過去問AIが独自作成。図は原典から切り出し。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-10-15"
+  },
+  {
+    "id": "radio21-land2-2022-02-kogaku-q17",
+    "exam": "land-special2",
+    "session": "kogaku",
+    "year": 2022,
+    "season": "february",
+    "qNumber": 17,
+    "officialAnswerNumber": "1",
+    "type": "multiple-choice",
+    "category": "無線工学",
+    "subject": "無線工学",
+    "topicTags": [
+      "無線工学"
+    ],
+    "difficulty": 2,
+    "question": "端子電圧6〔V〕、容量(10 時間率)30〔Ah〕の充電 済みの鉛蓄電池に、3〔A〕で動作する装置を接続す ると、通常何時間まで連続動作をさせることができ るか。",
+    "choices": {
+      "ア": "10 時間",
+      "イ": "5 時間",
+      "ウ": "2 時間",
+      "エ": "1 時間"
+    },
+    "answer": "ア",
+    "explanation": "10時間率30Ahを3Aで使うと30Ah÷3A=10時間が目安。",
+    "choiceExplanations": {
+      "ア": "10時間率30Ahを3Aで使うと30Ah÷3A=10時間が目安。",
+      "イ": "５時間では容量の半分しか使っていない。",
+      "ウ": "２時間では6Ah分であり30Ahに達しない。",
+      "エ": "１時間では3Ah分であり30Ahに達しない。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/riku-toku-2-kogaku.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/riku-toku-2-kogaku-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第二級陸上特殊無線技士試験 2022年2月期筆記 無線工学 問17（問題・正答）。解説は過去問AIが独自作成。図は原典から切り出し。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-10-15"
+  },
+  {
+    "id": "radio21-land2-2022-02-kogaku-q18",
+    "exam": "land-special2",
+    "session": "kogaku",
+    "year": 2022,
+    "season": "february",
+    "qNumber": 18,
+    "officialAnswerNumber": "3",
+    "type": "multiple-choice",
+    "category": "無線工学",
+    "subject": "無線工学",
+    "topicTags": [
+      "無線工学"
+    ],
+    "difficulty": 2,
+    "question": "高周波電流を測定するのに最も適している指示計 器は、次のうちどれか。",
+    "choices": {
+      "ア": "可動鉄片形電流計",
+      "イ": "電流力計形電流計",
+      "ウ": "熱電対形電流計",
+      "エ": "整流形電流計"
+    },
+    "answer": "ウ",
+    "explanation": "熱電対形は高周波電流による発熱を測るため周波数に依存しにくい。",
+    "choiceExplanations": {
+      "ア": "可動鉄片形は高周波で周波数特性や損失の制約を受けやすい。",
+      "イ": "電流力計形は高周波電流の直接測定に最適とはいえない。",
+      "ウ": "熱電対形は高周波電流による発熱を測るため周波数に依存しにくい。",
+      "エ": "整流形は整流器の高周波特性による制約を受ける。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/riku-toku-2-kogaku.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/riku-toku-2-kogaku-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第二級陸上特殊無線技士試験 2022年2月期筆記 無線工学 問18（問題・正答）。解説は過去問AIが独自作成。図は原典から切り出し。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-10-15"
+  },
+  {
+    "id": "radio21-land2-2022-02-kogaku-q19",
+    "exam": "land-special2",
+    "session": "kogaku",
+    "year": 2022,
+    "season": "february",
+    "qNumber": 19,
+    "officialAnswerNumber": "1",
+    "type": "multiple-choice",
+    "category": "無線工学",
+    "subject": "無線工学",
+    "topicTags": [
+      "無線工学"
+    ],
+    "difficulty": 2,
+    "question": "周波数fCの搬送波を周波数fSの信号波で振幅変調 (DSB)を行ったときの占有周波数帯幅は、次のうちど れか。",
+    "choices": {
+      "ア": "2 fS",
+      "イ": "2 fC",
+      "ウ": "fC ＋ fS",
+      "エ": "fC － fS"
+    },
+    "answer": "ア",
+    "explanation": "DSBではfc−fsとfc+fsに側波帯ができ、その差が2fs。",
+    "choiceExplanations": {
+      "ア": "DSBではfc−fsとfc+fsに側波帯ができ、その差が2fs。",
+      "イ": "2fcは搬送周波数の倍であり側波帯間隔ではない。",
+      "ウ": "fc+fsは上側波帯の周波数で、帯域幅ではない。",
+      "エ": "fc−fsは下側波帯の周波数で、帯域幅ではない。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/riku-toku-2-kogaku.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/riku-toku-2-kogaku-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第二級陸上特殊無線技士試験 2022年2月期筆記 無線工学 問19（問題・正答）。解説は過去問AIが独自作成。図は原典から切り出し。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-10-15"
+  },
+  {
+    "id": "radio21-land2-2022-02-kogaku-q20",
+    "exam": "land-special2",
+    "session": "kogaku",
+    "year": 2022,
+    "season": "february",
+    "qNumber": 20,
+    "officialAnswerNumber": "4",
+    "type": "multiple-choice",
+    "category": "無線工学",
+    "subject": "無線工学",
+    "topicTags": [
+      "無線工学"
+    ],
+    "difficulty": 2,
+    "question": "次の記述は、アナログ通信方式と比べたときのデ ジタル通信方式の一般的な特徴について述べたもの である。誤っているものを下の番号から選べ。",
+    "choices": {
+      "ア": "雑音の影響を受けにくい。",
+      "イ": "ネットワークやコンピュータとの親和性がよい。",
+      "ウ": "受信側で誤り訂正を行うことができる。",
+      "エ": "信号処理による遅延がない。"
+    },
+    "answer": "エ",
+    "explanation": "符号化・復号・バッファ等の信号処理には遅延が生じ得るため『遅延がない』は誤り。",
+    "choiceExplanations": {
+      "ア": "再生・判定可能な範囲ではデジタル方式は雑音に強い。",
+      "イ": "デジタル信号は計算機やネットワーク処理と親和性が高い。",
+      "ウ": "符号化により受信側で誤り検出・訂正ができる。",
+      "エ": "符号化・復号・バッファ等の信号処理には遅延が生じ得るため『遅延がない』は誤り。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/riku-toku-2-kogaku.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/riku-toku-2-kogaku-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第二級陸上特殊無線技士試験 2022年2月期筆記 無線工学 問20（問題・正答）。解説は過去問AIが独自作成。図は原典から切り出し。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-10-15"
+  },
+  {
+    "id": "radio21-land2-2022-02-kogaku-q21",
+    "exam": "land-special2",
+    "session": "kogaku",
+    "year": 2022,
+    "season": "february",
+    "qNumber": 21,
+    "officialAnswerNumber": "3",
+    "type": "multiple-choice",
+    "category": "無線工学",
+    "subject": "無線工学",
+    "topicTags": [
+      "無線工学"
+    ],
+    "difficulty": 2,
+    "question": "図に示すPCM伝送系の送信側で、量子化回路の前に入る名称はどれか。",
+    "choices": {
+      "ア": "高域フィルタ(H P F)",
+      "イ": "識別回路",
+      "ウ": "標本化回路",
+      "エ": "A F C 回路"
+    },
+    "answer": "ウ",
+    "explanation": "アナログ入力を標本化し、次に量子化・符号化する。",
+    "choiceExplanations": {
+      "ア": "高域フィルタは低周波を除くが、PCM送信の最初の標本化ではない。",
+      "イ": "識別回路は量子化前のアナログ信号を周期的に標本化する回路ではない。",
+      "ウ": "アナログ入力を標本化し、次に量子化・符号化する。",
+      "エ": "AFCは周波数を自動制御する回路でPCMの標本化段ではない。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/riku-toku-2-kogaku.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/riku-toku-2-kogaku-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第二級陸上特殊無線技士試験 2022年2月期筆記 無線工学 問21（問題・正答）。解説は過去問AIが独自作成。図は原典から切り出し。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-10-15",
+    "imageUrls": [
+      "/images/questions/land-special2/radio21-land2-2022-02-kogaku-q21-original.png"
+    ],
+    "imageAltTexts": [
+      "公式問21の図と選択肢（原典配置）"
+    ]
+  },
+  {
+    "id": "radio21-land2-2022-02-kogaku-q22",
+    "exam": "land-special2",
+    "session": "kogaku",
+    "year": 2022,
+    "season": "february",
+    "qNumber": 22,
+    "officialAnswerNumber": "4",
+    "type": "multiple-choice",
+    "category": "無線工学",
+    "subject": "無線工学",
+    "topicTags": [
+      "無線工学"
+    ],
+    "difficulty": 2,
+    "question": "次の記述は、静止衛星通信について述べたもので ある。正しいのはどれか。",
+    "choices": {
+      "ア": "衛星の太陽電池の機能が停止する食は、夏至及 び冬至の時期に発生する。",
+      "イ": "使用周波数が低くなるほど、降雨による影響が 大きくなる。",
+      "ウ": "静止衛星通信では、極軌道衛星が用いられてい る。",
+      "エ": "地上での自然災害の影響を受けにくい。"
+    },
+    "answer": "エ",
+    "explanation": "衛星中継は地上長距離設備が受ける災害の影響を比較的受けにくい。",
+    "choiceExplanations": {
+      "ア": "静止衛星の食は春分・秋分頃で、夏至・冬至ではない。",
+      "イ": "雨による減衰は一般に周波数が高いほど大きい。",
+      "ウ": "静止衛星は赤道上の地球同期軌道で、極軌道ではない。",
+      "エ": "衛星中継は地上長距離設備が受ける災害の影響を比較的受けにくい。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/riku-toku-2-kogaku.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/riku-toku-2-kogaku-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第二級陸上特殊無線技士試験 2022年2月期筆記 無線工学 問22（問題・正答）。解説は過去問AIが独自作成。図は原典から切り出し。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-10-15"
+  },
+  {
+    "id": "radio21-land2-2022-02-kogaku-q23",
+    "exam": "land-special2",
+    "session": "kogaku",
+    "year": 2022,
+    "season": "february",
+    "qNumber": 23,
+    "officialAnswerNumber": "1",
+    "type": "multiple-choice",
+    "category": "無線工学",
+    "subject": "無線工学",
+    "topicTags": [
+      "無線工学"
+    ],
+    "difficulty": 2,
+    "question": "パルスレーダーの最小探知距離に最も影響を与え る要素は、次のうちどれか。",
+    "choices": {
+      "ア": "パルス幅",
+      "イ": "送信周波数",
+      "ウ": "パルス繰返し周波数",
+      "エ": "送信電力"
+    },
+    "answer": "ア",
+    "explanation": "送信中は近距離反射を受信できないため、送信パルス幅が最小探知距離を支配する。",
+    "choiceExplanations": {
+      "ア": "送信中は近距離反射を受信できないため、送信パルス幅が最小探知距離を支配する。",
+      "イ": "送信周波数はアンテナや伝搬に関係するが、この最小距離の主因ではない。",
+      "ウ": "パルス繰返し周波数は主に無曖昧最大距離との関係が大きい。",
+      "エ": "送信電力は検出可能な遠距離に影響するが、送信中の近距離受信不能時間を決めない。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/riku-toku-2-kogaku.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/riku-toku-2-kogaku-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第二級陸上特殊無線技士試験 2022年2月期筆記 無線工学 問23（問題・正答）。解説は過去問AIが独自作成。図は原典から切り出し。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-10-15"
+  },
+  {
+    "id": "radio21-land2-2022-02-kogaku-q24",
+    "exam": "land-special2",
+    "session": "kogaku",
+    "year": 2022,
+    "season": "february",
+    "qNumber": 24,
+    "officialAnswerNumber": "2",
+    "type": "multiple-choice",
+    "category": "無線工学",
+    "subject": "無線工学",
+    "topicTags": [
+      "無線工学"
+    ],
+    "difficulty": 2,
+    "question": "FM(F3E)送信機において、大きな音声信号が加わっ ても一定の周波数偏移内に収めるためには、次のう ちどれを用いればよいか。",
+    "choices": {
+      "ア": "AGC 回路",
+      "イ": "IDC 回路",
+      "ウ": "音声増幅器",
+      "エ": "緩衝増幅器"
+    },
+    "answer": "イ",
+    "explanation": "IDCは音声レベルを制限して過大な周波数偏移を防ぐ。",
+    "choiceExplanations": {
+      "ア": "AGCは主に利得を自動調整するもので、過大なFM周波数偏移の制限ではない。",
+      "イ": "IDCは音声レベルを制限して過大な周波数偏移を防ぐ。",
+      "ウ": "音声増幅器だけでは偏移上限を一定範囲に抑えない。",
+      "エ": "緩衝増幅器は段間の結合・隔離に用い、偏移制限の主回路ではない。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/riku-toku-2-kogaku.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/riku-toku-2-kogaku-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第二級陸上特殊無線技士試験 2022年2月期筆記 無線工学 問24（問題・正答）。解説は過去問AIが独自作成。図は原典から切り出し。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-10-15"
+  }
+]

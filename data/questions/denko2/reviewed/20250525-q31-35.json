@@ -1,0 +1,137 @@
+[
+  {
+    "number": 31,
+    "question": "①で示す引込線取付点の地表上の高さの最低値[m]は。ただし、引込線は道路を横断せず、技術上やむを得ない場合で、交通に支障がないものとする。",
+    "choices": {
+      "イ": "2",
+      "ロ": "2.5",
+      "ハ": "3",
+      "ニ": "4"
+    },
+    "officialAnswer": "ロ",
+    "explanation": "低圧引込線の取付点の高さは、道路を横断しない場合、原則として地表上4m以上とされる。ただし技術上やむを得ず、かつ交通に支障がないときは、この値を2.5mまで低くすることが認められている。設問は「道路を横断せず」「技術上やむを得ない」「交通に支障がない」という緩和条件を明示しているため、最低値は2.5mとなる。",
+    "choiceExplanations": {
+      "イ": "2mは示された緩和条件下の最低値である2.5mを下回っており、規定を満たさない。",
+      "ロ": "道路を横断せず、技術上やむを得ない場合で交通に支障がないときの引込線取付点の高さの最低値として認められている値。",
+      "ハ": "3mは道路を横断する場合のやむを得ない条件、または横断歩道橋上の路面上高さの値。道路を横断しない本問の条件とは異なる。",
+      "ニ": "4mは道路を横断しない場合の一般的な取付点高さの最低値であり、本問のように緩和条件が明示されている場合の答えにはならない。"
+    },
+    "diagramDescription": "①の矢印は共通配線図の1階平面図、管理室上部にある引込口を指している。1φ3W100/200Vと3φ3W200Vの2系統の引込線が引き込まれ、近傍にP-Lが示されている。",
+    "uncertainty": "",
+    "reviewedFromCrop": "data/raw_pdfs/denko2/review/20250525/q31.png",
+    "imageUrls": [
+      "/images/denko2/2025-first/wiring-main.png"
+    ],
+    "officialReferenceUrls": [
+      "https://www.meti.go.jp/policy/safety_security/industrial_safety/sangyo/electric/files/20241022-2.pdf"
+    ],
+    "editorialReviewNotes": "経産省・電技解釈第116条第1項第六号、116-1表（PDF119頁）で2.5mと4mの条件を照合済み。"
+  },
+  {
+    "number": 32,
+    "question": "②で示す部分の配線工事にEM電線を使用した場合、使用できない電線の記号(種類)は。",
+    "choices": {
+      "イ": "EM-EEF",
+      "ロ": "EM-CE",
+      "ハ": "EM-EE",
+      "ニ": "EM-IE"
+    },
+    "officialAnswer": "ニ",
+    "explanation": "②は同じ構内の庭園灯間を地中のFEP管で結ぶ。農水省の設計技術資料は、FEP管による構内配線を管路式の地中電線路に分類する。経産省の電技解釈第120条は地中電線路の電線にケーブルを要求する。国交省の電線種別表ではEM-EEF・EM-CE・EM-EEはケーブルで、EM-IEだけはシースのない絶縁電線。よって本問で使用できない電線種別はEM-IE。個別製品の地中敷設可否には別途仕様・施工条件がある。",
+    "choiceExplanations": {
+      "イ": "EM-EEFは600Vポリエチレン絶縁耐燃性ポリエチレンシースケーブル平形。EM-IEと異なりケーブルのため、この設問の電線種別による除外対象ではない。",
+      "ロ": "EM-CEは600V架橋ポリエチレン絶縁耐燃性ポリエチレンシースケーブル。ケーブルのため、電線種別による除外対象ではない。",
+      "ハ": "EM-EEは600Vポリエチレン絶縁耐燃性ポリエチレンシースケーブル。ケーブルのため、電線種別による除外対象ではない。",
+      "ニ": "EM-IEは600V耐燃性ポリエチレン絶縁電線であり、絶縁電線のため地中埋設配線には使用できない。"
+    },
+    "diagramDescription": "②の矢印は共通配線図の1階平面図上部、屋外灯(庭園灯)間を結ぶ一点鎖線(— ・ —)を指しており、線上に(FEP)の表記がある。これは地中埋設配線を示す。",
+    "uncertainty": "",
+    "reviewedFromCrop": "data/raw_pdfs/denko2/review/20250525/q32.png",
+    "imageUrls": [
+      "/images/denko2/2025-first/wiring-main.png"
+    ],
+    "officialReferenceUrls": [
+      "https://www.meti.go.jp/policy/safety_security/industrial_safety/sangyo/electric/files/20241022-2.pdf"
+    ],
+    "editorialReviewNotes": "農水省・ポンプ場技術書表10.26（PDF14頁）でFEP管路の構内配線を地中電線路に分類、経産省・電技解釈第120条第1項（PDF121頁）でケーブル使用、国交省・標準図（PDF24頁）でEM各種の分類を照合。個別製品の地中施工条件は断定しない。",
+    "officialReferenceUrls": ["https://www.maff.go.jp/j/nousin/pompjyo/attach/pdf/ponnpu-4.pdf", "https://www.meti.go.jp/policy/safety_security/industrial_safety/sangyo/electric/files/20241022-2.pdf", "https://www.mlit.go.jp/common/001108579.pdf"]
+  },
+  {
+    "number": 33,
+    "question": "③で示す図記号の器具の種類は。",
+    "choices": {
+      "イ": "遅延スイッチ",
+      "ロ": "位置表示灯を内蔵する点滅器",
+      "ハ": "確認表示灯を内蔵する点滅器",
+      "ニ": "熱線式自動スイッチ"
+    },
+    "officialAnswer": "ロ",
+    "explanation": "図記号③は点滅器にHを傍記した「●H」。JIS C 0303の点滅器の傍記ではHは位置表示灯内蔵、Lは確認表示灯内蔵を示す。よってロを選ぶ。",
+    "choiceExplanations": {
+      "イ": "遅延スイッチは動作に時間差を持たせる器具。原図③には位置表示灯を表すHが明記されており、遅延スイッチではない。",
+      "ロ": "JIS C 0303で点滅器のH傍記は位置表示灯内蔵を示す。原図③の●Hと一致する。",
+      "ハ": "確認表示灯内蔵の点滅器はJIS C 0303でLを傍記する。原図③はLでなくHなので該当しない。",
+      "ニ": "熱線式自動スイッチは熱線を検知して動作する器具。原図③には位置表示灯内蔵のH傍記があるため該当しない。"
+    },
+    "diagramDescription": "③の矢印は共通配線図の1階平面図、集会所下側の壁・自販機付近にある「●H エ」を指している。これは傍記Hの点滅器であり、「エ」の蛍光灯群を点滅する。",
+    "uncertainty": "",
+    "reviewedFromCrop": "data/raw_pdfs/denko2/review/20250525/q33.png",
+    "imageUrls": [
+      "/images/denko2/2025-first/wiring-main.png"
+    ],
+    "editorialReviewNotes": "JISC公式閲覧のJIS C 0303:2000 PDF12頁4.3でH＝位置表示灯内蔵、L＝確認表示灯内蔵を確認。点灯タイミングはこの根拠からは断定しない。",
+    "officialReferenceUrls": ["https://www.jisc.go.jp/app/jis/general/GnrJISSearch.html"]
+  },
+  {
+    "number": 34,
+    "question": "④で示す図記号の名称は。",
+    "choices": {
+      "イ": "電磁開閉器用押しボタン",
+      "ロ": "遅延スイッチ",
+      "ハ": "圧力スイッチ",
+      "ニ": "確認表示灯付電磁開閉器用押しボタン"
+    },
+    "officialAnswer": "ニ",
+    "explanation": "図記号④は丸の中に点を持つ押しボタン記号「◉BL」。JIS C 0303の電磁開閉器用押しボタンで、L傍記は確認表示灯付を示す。したがってニに該当する。",
+    "choiceExplanations": {
+      "イ": "表示灯を持たない電磁開閉器用押しボタンは◉B。原図④にはさらにLが傍記されている。",
+      "ロ": "遅延スイッチは動作に時間差を設ける点滅器。原図④は電磁開閉器用押しボタンの◉にBLの傍記であり異なる。",
+      "ハ": "圧力スイッチは同じ配線図の給水加圧ポンプ付近に◉Pで描かれる。④の◉BLとは傍記が異なる。",
+      "ニ": "電磁開閉器用押しボタンの◉BにLを傍記した◉BLは確認表示灯付。原図④に一致する。"
+    },
+    "diagramDescription": "④の矢印は共通配線図の地下1階平面図、受水槽室右上にある「◉BL」を指しており、P-1結線図の下段S（3P20A、回路b）からの制御配線※2が(E19)で接続されている。",
+    "uncertainty": "",
+    "reviewedFromCrop": "data/raw_pdfs/denko2/review/20250525/q34.png",
+    "imageUrls": [
+      "/images/denko2/2025-first/wiring-main.png"
+    ],
+    "editorialReviewNotes": "JISC公式閲覧のJIS C 0303:2000 PDF14頁4.4で電磁開閉器用押しボタンのL傍記を確認。圧力スイッチとの区別は原図のP/BL傍記で照合。",
+    "officialReferenceUrls": ["https://www.jisc.go.jp/app/jis/general/GnrJISSearch.html"]
+  },
+  {
+    "number": 35,
+    "question": "⑤で示す図記号の機器は。",
+    "choices": {
+      "イ": "制御配線の信号により動作する開閉器(電磁開閉器)",
+      "ロ": "電流計付箱開閉器",
+      "ハ": "電動機の始動装置",
+      "ニ": "電動機の力率を改善する低圧進相用コンデンサ"
+    },
+    "officialAnswer": "イ",
+    "explanation": "⑤はP-1結線図の箱で囲まれたS。B 3P50Aから分岐したBE 3P30Aの負荷側にあり、三相200Vのポンプ回路aと圧力スイッチ◉Pへ向かう制御配線※1が接続される。箱Sの形だけでは機器を断定できないが、制御配線の信号でポンプ主回路を開閉する位置にあるため、電磁開閉器に該当する。公式正答はイ。",
+    "choiceExplanations": {
+      "イ": "圧力スイッチ◉Pにつながる制御配線※1でポンプの三相主回路aを開閉する構成と一致する。",
+      "ロ": "国交省九州地方整備局の図記号表では、電流計箱付開閉器には囲みの中で円を伴うSが用いられる。元の試験図⑤には電流計もその図記号も示されず、制御配線でポンプ回路を開閉する構成である。",
+      "ハ": "原図⑤は圧力スイッチ◉Pからの制御配線※1で主回路aを開閉する位置にある。始動方式や始動装置を示す構成は描かれていない。",
+      "ニ": "進相用コンデンサは力率改善用の並列機器であり、原図⑤のようにポンプ主回路へ直列に入る開閉器とは接続位置が異なる。"
+    },
+    "diagramDescription": "⑤の矢印は共通配線図のP-1結線図上段(B 3P50A→BE 3P30A→S→a／※1)にある箱Sを指している。Sから三相200V回路aと制御配線※1（圧力スイッチ◉Pへ）がつながる。",
+    "uncertainty": "",
+    "reviewedFromCrop": "data/raw_pdfs/denko2/review/20250525/q35.png",
+    "imageUrls": [
+      "/images/denko2/2025-first/wiring-main.png"
+    ],
+    "editorialReviewNotes": "九州地方整備局の共通仕様書PDF191頁で開閉器箱と電流計箱付開閉器の図記号を照合。元の試験結線図の制御配線とポンプ主回路、公式正答を併せて判断。図記号の箱Sだけで電磁開閉器とは断定しない。",
+    "officialReferenceUrls": ["https://www.qsr.mlit.go.jp/n-youchi/kokyo-youchi/site_files/file/pdf/kyoutuu2022.pdf"]
+  }
+]

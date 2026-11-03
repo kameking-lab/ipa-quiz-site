@@ -1,0 +1,74 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20250831",
+  "subject": "machinery",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 3127,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 14026,
+      "webSearchRequests": 0,
+      "costUSD": 0.1750118,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 1383,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "efae27a3f06ae24f65b9b6140476abac183a1a75bc07c52fae4596d8e42a1fd9",
+  "inputRequestSha256": "7166aa97f2e7ad1fe46efa22837539c7f8010659b360514da023a0be03259fd9",
+  "inputHashes": {
+    "candidateSha256": {
+      "q01": "5cd269b290b261e38e08e984045368c577e9b4fe22157850647830d3ac58fd83"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20250831/machinery/p04.png": "c30e4cb759dd20425a45a9d0be444773072a0863069a360072288b53b4723046"
+    },
+    "figureSha256": {},
+    "sourceQuestionPdfSha256": "2a73a24594cc2b8bb7504b9a0ff15e001b2bb56b830572ce2be853f7116f26d8",
+    "sourceAnswerPdfSha256": "76fd3715ed487d19a56b387fb402de20ee09474e9fa55b0413f9037b96af06c9",
+    "officialAnswerUnitsSha256": "10d5afd93743aa0b59bdfdafbe9472a9d67618ae102f53b59f5e2154710369a5",
+    "referencePdfSha256": {},
+    "referencePageSha256": {},
+    "referenceJsonSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q01",
+      "questionNumber": 1,
+      "part": null,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [
+        "総合解説の基本式が E = kΦN と T = kΦIₐ で同じ定数 k を使っている。N を回転速度 [min⁻¹] とすると、E = (pZ/60a)ΦN、T = (pZ/2πa)ΦIₐ となり比例定数が一致しない。k₁、k₂ のように別定数とするか、N を角速度 ω [rad/s] に置き換えて E = kΦω、T = kΦIₐ とする修正が必要。結論（未飽和時 T ∝ I²、(5) が誤り）には影響しない。",
+        "総合解説は Rₐ を『電機子回路抵抗』と定義している。一方、選択肢(1)の解説では N = {V − I(Rₐ + Rₛ)}/(kΦ) として直巻界磁抵抗 Rₛ を別に加えている。このため Rₐ に直巻界磁抵抗が含まれるのかが曖昧になっている。総合解説側を『Rₐ：電機子抵抗』とするなど、定義を統一すること。"
+      ],
+      "figureIssues": [],
+      "sourceIssues": [
+        "uncertainty 欄に『実施年度・回を特定する記載がないため，一次資料のURLは特定できず空配列とした』とある。しかし同じ候補JSON内で sourceQuestionPdfUrl、sourceAnswerPdfUrl、fiscalYear=2025、term=upper、examDate、sourceAttribution（令和7年度上期）が特定済みとして記載されており、自己矛盾している。uncertainty 欄を実態に合わせて書き直すこと。",
+        "添付の問題原図には『第3種 機械』『A問題』『T1－K 004』『-1-』の表記しかなく、年度・回・試験日は記載されていない。問題原図単体では、sourceQuestionPdfUrl（20250831_ch_third_q03.pdf）および examDate=2025-08-31 との対応を検証できない。manifest 側の紐付けで確認すること。",
+        "年度・回の根拠として検証できるのは、添付の公式解答表見出し『令和7年度 第三種電気主任技術者上期試験解答』だけである。examDate=2025-08-31 はファイル名に由来するとみられ、実施日そのものは添付資料で確認できない。",
+        "reviewedFromPage=[4] について、原図の印刷ページ番号は『-1-』である。PDF 物理ページが 4 であることは識別コード『T1－K 004』と整合するが、PDF の頁送り自体は添付資料からは確認できない。"
+      ],
+      "verifiedEvidence": [
+        "問題文『直流電動機に関する記述として，誤っているものを次の(1)～(5)のうちから一つ選べ。』を原図と照合し、一致を確認した。",
+        "選択肢(1)〜(5)の全文を原図と一字単位で照合し、脱字・誤字・語順の相違がないことを確認した。(5)の括弧書き『(電動機に流れる電流)』も一致している。",
+        "公式解答表の＜機械＞列で問1=解答5、配点5を確認した。manifest の公式正答単位 {answer:\"5\", points:5}、候補JSONの officialAnswer=\"5\"、scoringPoints=5 と一致している。",
+        "(5)が誤りである理由を検算した。直巻では界磁電流=負荷電流 I で、未飽和時 Φ∝I のため T=kΦI∝I² となり、『トルクも負荷電流に比例』は誤り。飽和域では Φ≒一定のため T≒∝I となる、という補足も正しい。",
+        "(1)の解説を検算した。軽負荷では Φ が小さく速度が大きく上昇し、始動時（N=0）は大電流のため T∝I² で始動トルクが大きく、クレーン・巻上機に適する。いずれも正しい。",
+        "(2)の解説を検算した。界磁抵抗を増やすと Φ が減り、N=(V−IₐRₐ)/(kΦ) より速度は上昇する。方向性は正しい。",
+        "(3)の解説を検算した。V 一定なら分巻界磁電流と Φ はほぼ一定で、IₐRₐ≪V のため速度はわずかに減少するにとどまり、定速度電動機と呼ばれる。正しい。",
+        "(4)の解説で、和動＝磁束が加わり合う、差動＝打ち消し合う、という定義が原文と整合していることを確認した。",
+        "原図に図はない。figureUrls=[]、choiceFigureUrls={}、figureDescription『本問に図はない。』は妥当。",
+        "officialReferenceUrls=[] で、独立した外部主張がないことを確認した。"
+      ]
+    }
+  ]
+}

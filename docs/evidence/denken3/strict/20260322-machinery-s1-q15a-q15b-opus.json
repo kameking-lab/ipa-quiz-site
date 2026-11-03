@@ -1,0 +1,88 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20260322",
+  "subject": "machinery",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 3092,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 16709,
+      "webSearchRequests": 0,
+      "costUSD": 0.19577580000000003,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 1377,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "3b106a3789d792b0a89472a02f34006e6e89e24faa2400696a704083e1ee4312",
+  "inputRequestSha256": "69d7fb0b7fde5599ac81288f5f16839cdf171b0a182fb0eb122917c500149a83",
+  "inputHashes": {
+    "candidateSha256": {
+      "q15a": "57895189b0b968b318ca0e3391eefbc10258c5ee9d84e4301c27494a036f19e9",
+      "q15b": "e8280970f9699be538c4c644eeb1736cf0f746536ed68227f8d8654f380d0103"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20260322/machinery/p18.png": "cd23d5878fbcb880e744ca1c40e60db25739506e4777ed57216661aaaa57f58e",
+      "data/raw_pdfs/denken3/review/20260322/machinery/p19.png": "88f5adcc1e009ae7dd6046c4beba6b8cad47b7406a1c83dc2bd53842d431cfa9"
+    },
+    "figureSha256": {},
+    "sourceQuestionPdfSha256": "a89c7dc2b9a305f9db83f2f78195f0df8a0da5aeec6b8e66cfd40fb028d146fb",
+    "sourceAnswerPdfSha256": "cc2890296d06a4823df5697a78a1c01ddfd39f041c51f48c87984daa3a5707c6",
+    "officialAnswerUnitsSha256": "a96705f7c915ad61a8c2943162f42f375e6100f0eb91de91ff16dbe1eed27aa3",
+    "referencePdfSha256": {},
+    "referencePageSha256": {},
+    "referenceJsonSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q15a",
+      "questionNumber": 15,
+      "part": "a",
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "問題文: 原図（冊子p.15、フッタ T2−K 018）と照合。定格容量50 kV·A、単相変圧器、定格電圧、力率100 %、全負荷の3/4で鉄損=銅損、効率98.2 %、鉄損・銅損以外の損失は無視、の条件はすべて一致。(a)の設問文「鉄損[W]の値として，最も近いもの」も一致。3/4の分数表記を「3/4」とした整形のみで、意味の変更はない。",
+        "選択肢: (1)536 (2)472 (3)425 (4)382 (5)344。原図と全肢一致。",
+        "公式正答: 解答表（令和7年度 第三種電気主任技術者下期試験解答）の＜機械＞問15(a)は5、配点5。候補の officialAnswer=5、scoringPoints=5 と一致。",
+        "総合解説の検算: P=50×3/4×1.0=37.5 kW。37 500/0.982=38 187.37 W、2Pᵢ=687.37 W、Pᵢ=343.69 W≒344 W→(5)。数式・単位・因果（3/4負荷で銅損=鉄損のため全損失=2Pᵢ）は正しい。",
+        "誤答肢の検算: (1) 37 500/38 572=97.22 %。(2) 37 500/38 444=97.54 %。(3) 37 500/38 350=97.78 %。(4) 37 500/38 264=98.00 %。いずれも98.2 %と不一致で、記載値（97.2/97.5/97.8/98.0 %）は正しい。(5) Pᵢ≒343.7 W は正しい。",
+        "図: 原図の問題頁2頁（PDF第18・19頁）に図はない。figureUrls=[]、choiceFigureUrls={}、figureDescription『図なし』は妥当。",
+        "出典メタデータ: fiscalYear=2025、term=lower、examDate=2026-03-22、subject=machinery、問題PDF q03・解答PDF a01、reviewedFromPage=[18,19] は manifest と一致。原図フッタ T2−K 018/019 とも整合する。sourceAttribution『令和7年度下期…機械科目 問15(a)』も解答表見出しと整合。",
+        "officialReferenceUrls=[] のため、検証を要する独立主張はない。"
+      ]
+    },
+    {
+      "unitKey": "q15b",
+      "questionNumber": 15,
+      "part": "b",
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "問題文: 共通リード文は原図（冊子p.15、T2−K 018）と一致。(b)の設問文「この変圧器を全負荷，力率100 %で運転したときの銅損[W]の値として，最も近いもの」は原図（冊子p.16、T2−K 019）と一致。",
+        "選択肢: (1)712 (2)611 (3)579 (4)453 (5)325。原図と全肢一致。",
+        "公式正答: 解答表＜機械＞問15(b)は2、配点5。候補の officialAnswer=2、scoringPoints=5 と一致。",
+        "総合解説の検算: 定格電圧下では負荷電流は負荷率に比例し、銅損は電流の2乗に比例するので α²Pcn となる。(3/4)²Pcn=Pᵢ=343.69 W から Pcn=343.69×16/9=610.99 W≒611 W→(2)。343.7 を用いても 611.02 W≒611.0 W で、記載と整合する。",
+        "誤答肢の検算: (1) 712×9/16=400.5 W。(3) 579×9/16=325.69≒325.7 W。(4) 453×9/16=254.81≒254.8 W。(5) 325×9/16=182.81≒182.8 W。いずれも343.7 Wと不一致で記載は正しい。(2) 343.7×16/9≒611.0 W は正しい。",
+        "図: 原図に図はなく、図なしの記載は妥当。",
+        "出典メタデータ: fiscalYear・term・examDate・subject・問題/解答PDF URL・reviewedFromPage=[18,19] は manifest と一致。sourceAttribution の問15(b)表記も正しい。",
+        "officialReferenceUrls=[] のため、検証を要する独立主張はない。"
+      ]
+    }
+  ]
+}

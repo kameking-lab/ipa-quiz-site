@@ -1,0 +1,508 @@
+{
+  "candidateModel": "claude-opus-5-5",
+  "paperId": "emkohyo-EM20261803",
+  "governmentSourceCandidates": [
+    {
+      "title": "厚生労働省 個人サンプラーを用いた測定法の基盤整備報告書",
+      "url": "https://www.mhlw.go.jp/content/000616847.pdf"
+    },
+    {
+      "title": "厚生労働省 作業環境測定基準",
+      "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74087000"
+    },
+    {
+      "title": "厚生労働省 作業環境評価基準",
+      "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74088000&dataType=0&pageNo=1"
+    }
+  ],
+  "questions": {
+    "emkohyo-EM20261803-q16": {
+      "overlay": {
+        "sourceHash": "13822d1ac4999e6c23d429fba0e1b2e49ce8880bcb52a9434dd8cc5fa3af79fc",
+        "correctChoice": 1,
+        "summary": "作業環境測定基準第9条の表では、放射性物質が粒子状なら液体捕集方法又はろ過捕集方法、ガス状なら液体・固体・直接・冷却凝縮捕集方法を指定する。",
+        "choices": [
+          {
+            "number": 1,
+            "verdict": "correct",
+            "reason": "㋑に粒子状、㋺にろ過捕集法を入れると、粒子状の方法は「ろ過捕集法又は液体捕集法」になり、作業環境測定基準の表で粒子状の欄にある液体捕集方法とろ過捕集方法の2つと一致する。㋩にガス状、㋥に液体捕集法を入れると、液体・固体・直接・冷却凝縮の4方法がガス状の欄とそろう。"
+          },
+          {
+            "number": 2,
+            "verdict": "incorrect",
+            "reason": "㋺に固体捕集法を入れると、粒子状の方法が「固体捕集法又は液体捕集法」になる。しかし、基準の表で粒子状の欄にあるのは液体捕集方法とろ過捕集方法である。固体捕集方法は、固体の粒子の層に吸着などをさせて捕集する方法で、ガス状の欄に置かれている。つまり行を取り違えている。"
+          },
+          {
+            "number": 3,
+            "verdict": "incorrect",
+            "reason": "㋺に直接捕集法を入れると、粒子状の試料を捕集袋や捕集びんへそのまま採ることになる。しかし、基準の表で直接捕集方法があるのはガス状の欄だけである。粒子状の欄はろ過捕集方法と液体捕集方法の2つなので、ろ過捕集方法が抜けている点でも誤りである。"
+          },
+          {
+            "number": 4,
+            "verdict": "incorrect",
+            "reason": "㋑をガス状、㋺を直接捕集法とすると、ガス状の方法が直接捕集と液体捕集の2つだけになり、固体捕集方法と冷却凝縮捕集方法が抜ける。さらに㋩の粒子状に固体・直接・冷却凝縮捕集法を当てることになる。粒子状を液体捕集とろ過捕集の2方法とする基準の表とは、行が逆になっている。"
+          },
+          {
+            "number": 5,
+            "verdict": "incorrect",
+            "reason": "㋺に冷却凝縮捕集法を入れると、ガス状の方法は冷却凝縮捕集と液体捕集の2つだけになり、基準にある固体捕集方法と直接捕集方法が抜ける。後半では粒子状に固体・直接・冷却凝縮捕集法を並べることになり、粒子状を液体捕集方法又はろ過捕集方法に限る表と合わない。"
+          }
+        ],
+        "sources": [
+          {
+            "title": "厚生労働省 作業環境測定基準第1条・第9条",
+            "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74087000"
+          }
+        ]
+      },
+      "sourceEvidence": [
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74087000",
+          "excerpt": "粒子状 液体捕集方法又はろ過捕集方法",
+          "choiceNumbers": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74087000",
+          "excerpt": "ガス状 液体捕集方法、固体捕集方法、直接捕集方法又は冷却凝縮捕集方法",
+          "choiceNumbers": [
+            1,
+            4,
+            5
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74087000",
+          "excerpt": "固体の粒子の層を通して吸引すること等により吸着等をさせて",
+          "choiceNumbers": [
+            2
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74087000",
+          "excerpt": "直接、捕集袋、捕集びん等に捕集する方法",
+          "choiceNumbers": [
+            3
+          ]
+        }
+      ],
+      "reviewIssues": []
+    },
+    "emkohyo-EM20261803-q17": {
+      "overlay": {
+        "sourceHash": "03b723e8a21d3d7c83198ffb0547a9c315265148bd10b2da0bd5d62b8789615a",
+        "correctChoice": 4,
+        "summary": "目標濃度2.0×10⁻⁷ Bq/cm³の空気を60 L/min（6.0×10⁴ cm³/min）で吸引し捕集率85％で集めると、捕集放射能は0.0102t Bq（tは分）。計数効率35％を掛けた計数率3.57×10⁻³t s⁻¹が検出下限2.3 s⁻¹に達するのはt≒644分≒10.7時間で、最も近いのは11時間である。",
+        "choices": [
+          {
+            "number": 1,
+            "verdict": "incorrect",
+            "reason": "57分では足りない。計数率は3.57×10⁻³×57≒0.20 s⁻¹で、検出下限計数率2.3 s⁻¹の1割にも届かない。必要時間は2.3÷3.57×10⁻³≒644分（約10.7時間）であり、57分はその約9％にすぎない。"
+          },
+          {
+            "number": 2,
+            "verdict": "incorrect",
+            "reason": "79分では足りない。計数率は3.57×10⁻³×79≒0.28 s⁻¹で、検出下限計数率2.3 s⁻¹に届かない。濃度限度の1/100、吸引流量、捕集率、計数効率をすべて掛けて求めた必要時間は約644分（約10.7時間）で、79分はその約8分の1である。"
+          },
+          {
+            "number": 3,
+            "verdict": "incorrect",
+            "reason": "8時間（480分）では足りない。計数率は3.57×10⁻³×480≒1.71 s⁻¹で、検出下限計数率2.3 s⁻¹より小さい。必要時間約644分（10.7時間）との差は約2.7時間あり、11時間（差約0.3時間）の方が近い。"
+          },
+          {
+            "number": 4,
+            "verdict": "correct",
+            "reason": "目標濃度は2.0×10⁻⁵÷100＝2.0×10⁻⁷ Bq/cm³、吸引流量は60 L/min＝6.0×10⁴ cm³/min。t分間の捕集放射能は2.0×10⁻⁷×6.0×10⁴×0.85×t＝0.0102t Bq、計数率は0.0102t×0.35＝3.57×10⁻³t s⁻¹となる。これが2.3 s⁻¹に達するのはt＝2.3÷3.57×10⁻³≒644分で、1 h＝60 minから約10.7時間なので、最も近いのは11時間である。"
+          },
+          {
+            "number": 5,
+            "verdict": "incorrect",
+            "reason": "644時間は、644という数値は計算結果と同じだが単位を取り違えている。必要時間は約644「分」で、1 h＝60 minから約10.7時間にあたる。644時間はその60倍の長さで、最小試料採取時間とはいえない。"
+          }
+        ],
+        "sources": [
+          {
+            "title": "日本原子力研究開発機構 ATOMICA 中性子放射化分析（放射能と計数率の関係）",
+            "url": "https://atomica.jaea.go.jp/data/detail/dat_detail_08-04-01-27.html"
+          },
+          {
+            "title": "日本原子力研究開発機構 ATOMICA ベクレル",
+            "url": "https://atomica.jaea.go.jp/dic/detail/dic_detail_1188.html"
+          },
+          {
+            "title": "産業技術総合研究所 計量標準総合センター 国際単位系（SI）",
+            "url": "https://unit.aist.go.jp/nmij/library/si-units/"
+          }
+        ]
+      },
+      "sourceEvidence": [
+        {
+          "url": "https://atomica.jaea.go.jp/data/detail/dat_detail_08-04-01-27.html",
+          "excerpt": "ここで、eは測定する放射線に対する測定器の 検出効率",
+          "choiceNumbers": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ]
+        },
+        {
+          "url": "https://atomica.jaea.go.jp/data/detail/dat_detail_08-04-01-27.html",
+          "excerpt": "Ｄにベクレル（Bq；1秒あたりの壊変率（dps））を用いれば、Ｃはcps（1秒あたりの計数率）で与えられる",
+          "choiceNumbers": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ]
+        },
+        {
+          "url": "https://atomica.jaea.go.jp/dic/detail/dic_detail_1188.html",
+          "excerpt": "単位時間（１秒間）内に原子核が崩壊する数を表す",
+          "choiceNumbers": [
+            4
+          ]
+        },
+        {
+          "url": "https://unit.aist.go.jp/nmij/library/si-units/",
+          "excerpt": "1 l = 1 L = 1 dm 3 = 10 3 cm 3",
+          "choiceNumbers": [
+            4
+          ]
+        },
+        {
+          "url": "https://unit.aist.go.jp/nmij/library/si-units/",
+          "excerpt": "1 h = 60 min = 3600 s",
+          "choiceNumbers": [
+            3,
+            4,
+            5
+          ]
+        }
+      ],
+      "reviewIssues": []
+    },
+    "emkohyo-EM20261803-q18": {
+      "overlay": {
+        "sourceHash": "d90d0c11af362c946d8b929061e2a6dcfa1d6aa7f4f31994bd16f06716246958",
+        "correctChoice": 2,
+        "summary": "騒音障害防止のためのガイドラインは、A測定平均値の算定に80dB未満の測定値を含めないとしており、単位作業場所の目安を「おおむね70dB以上の区域」とする肢2が誤りである。他の肢は作業環境測定基準の各条どおりである。",
+        "choices": [
+          {
+            "number": 1,
+            "verdict": "incorrect",
+            "reason": "正しい。作業環境測定基準第3条は、暑熱の屋内作業場の気温及び湿度の測定を、0.5度目盛のアスマン通風乾湿計又はこれと同等以上の性能を有する測定機器で行うとしている。記述はこれと一致する。"
+          },
+          {
+            "number": 2,
+            "verdict": "correct",
+            "reason": "誤り。騒音障害防止のためのガイドラインは、A測定平均値の算定に80dB未満の測定値を含めないとし、管理区分を85dBと90dBで分けている。評価の対象となる騒音の下限は80dBであり、70dBを目安に単位作業場所を定めることを示した規定はない。「おおむね70dB以上の区域」とする点が誤りである。"
+          },
+          {
+            "number": 3,
+            "verdict": "incorrect",
+            "reason": "正しい。労働安全衛生法施行令第21条第5号は、中央管理方式の空気調和設備を設けた建築物の室で事務所の用に供されるものを作業環境測定の対象とし、作業環境測定基準第6条は一酸化炭素と炭酸ガスの含有率を検知管方式の検定器又は同等以上の機器で測るとしている。"
+          },
+          {
+            "number": 4,
+            "verdict": "incorrect",
+            "reason": "正しい。作業環境測定基準第12条は、酸素欠乏危険場所で作業を行う場合の作業場について、酸素及び硫化水素の濃度の測定点を、濃度の分布の状況を知るために適当な位置に5以上とするとしている。硫化水素の測定点も5以上である。"
+          },
+          {
+            "number": 5,
+            "verdict": "incorrect",
+            "reason": "正しい。作業環境測定基準第8条は、管理区域に当たる作業場の外部放射線の線量当量率等の測定機器について、ベータ線は70マイクロメートル線量当量率又は70マイクロメートル線量当量を適切に測定できるものとしている。"
+          }
+        ],
+        "sources": [
+          {
+            "title": "厚生労働省 作業環境測定基準第3条・第6条・第8条・第12条",
+            "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74087000"
+          },
+          {
+            "title": "厚生労働省 騒音障害防止のためのガイドラインの改訂について（令和5年4月20日基発0420第2号）",
+            "url": "https://www.mhlw.go.jp/web/t_doc?dataId=00tc7618&dataType=1&pageNo=1"
+          },
+          {
+            "title": "厚生労働省 労働安全衛生法施行令第21条",
+            "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74002000&dataType=0&pageNo=1"
+          }
+        ]
+      },
+      "sourceEvidence": [
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74087000",
+          "excerpt": "区分 測定機器 気温及び湿度 〇・五度目盛のアスマン通風乾湿計",
+          "choiceNumbers": [
+            1
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=00tc7618&dataType=1&pageNo=1",
+          "excerpt": "「A測定平均値」の算定には、80dB未満の測定値は含めないこと。",
+          "choiceNumbers": [
+            2
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=00tc7618&dataType=1&pageNo=1",
+          "excerpt": "B測定 85dB未満 85dB以上90dB未満 90dB以上 A測定平均値 85dB未満 第Ⅰ管理区分",
+          "choiceNumbers": [
+            2
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74002000&dataType=0&pageNo=1",
+          "excerpt": "五　中央管理方式の空気調和設備(空気を浄化し、その温度、湿度及び流量を調節して供給することができる設備をいう。)を設けている建築物の室で、事務所の用に供されるもの",
+          "choiceNumbers": [
+            3
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74087000",
+          "excerpt": "一酸化炭素の含有率 検知管方式による一酸化炭素検定器 炭酸ガスの含有率 検知管方式による炭酸ガス検定器",
+          "choiceNumbers": [
+            3
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74087000",
+          "excerpt": "測定点は、当該作業場における空気中の酸素及び硫化水素の濃度の分布の状況を知るために適当な位置に、五以上とすること",
+          "choiceNumbers": [
+            4
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74087000",
+          "excerpt": "ベータ線　七十マイクロメートル線量当量率又は七十マイクロメートル線量当量を適切に測定できるもの",
+          "choiceNumbers": [
+            5
+          ]
+        }
+      ],
+      "reviewIssues": [
+        "【HOLD】独立審査（2026-09-24、17-19）でFIX。正答肢2の核心である『騒音の単位作業場所はおおむね80dB以上の区域とする』旨を直接述べた政府一次資料が見つからない。騒音障害防止のためのガイドライン（令和5年4月20日基発0420第2号）本文と解説はA測定平均値の算定で80dB未満の値を除くことと85・90dBの管理区分を定めるだけで、単位作業場所の範囲の目安を示していない。作業環境測定基準第4条にも区域のdB目安はない。単位作業場所の範囲の目安を示す政府資料が得られるまで保留する。肢1・3・4・5は作業環境測定基準第3・6・8・12条と施行令第21条第5号で支えられる。"
+      ]
+    },
+    "emkohyo-EM20261803-q19": {
+      "overlay": {
+        "sourceHash": "0161b23f41e838ded81c8e829502480bfd6fb7b682d5a85b0d96fcd45f94886c",
+        "correctChoice": 4,
+        "summary": "作業環境評価基準の別表は、リフラクトリーセラミックファイバーの管理濃度を「5マイクロメートル以上の繊維として0.3本/cm³」と定めるので、長さ5µm未満の繊維を計数するとした肢4が誤りである。",
+        "choices": [
+          {
+            "number": 1,
+            "verdict": "incorrect",
+            "reason": "正しい。ppmはparts per millionの略で百万分の一を表すので、100 ppmは100÷1,000,000＝0.0001で、百分率では0.01％になる。国立環境研究所の解説も、大気成分の濃度を全分子に対する混合比で表し、それを百万倍してppmで表記すると説明している。"
+          },
+          {
+            "number": 2,
+            "verdict": "incorrect",
+            "reason": "正しい。作業環境評価基準の別表は、アセトン500ppmからメチル―ノルマル―ブチルケトン5ppmまで有機溶剤の管理濃度をすべてppmで示し、備考で温度25度・1気圧の空気中の濃度としている。ppmは全分子数に対する混合比の百万分率で、同じ温度・圧力の気体ではPV＝nRTにより体積が物質量に比例するから、この値は体積の割合（体積分率）にあたる。"
+          },
+          {
+            "number": 3,
+            "verdict": "incorrect",
+            "reason": "正しい。個人サンプリング法ガイドライン別紙1の管理濃度の表では、ジクロルベンジジン及びその塩などの特定化学物質の管理濃度欄が「―」となっている。特定化学物質の中には管理濃度が定められていないものがある。"
+          },
+          {
+            "number": 4,
+            "verdict": "correct",
+            "reason": "誤り。作業環境評価基準の別表は、リフラクトリーセラミックファイバーの管理濃度を「五マイクロメートル以上の繊維として〇・三本毎立方センチメートル」と定めている。濃度は長さ5µm以上の繊維を数えて求めるので、5µm未満の繊維を計数するとした点が誤りである。"
+          },
+          {
+            "number": 5,
+            "verdict": "incorrect",
+            "reason": "正しい。作業環境評価基準の別表は、石綿の管理濃度を「五マイクロメートル以上の繊維として〇・一五本毎立方センチメートル」と定めている。本／cm³（本毎立方センチメートル）で表されているので、記述は正しい。"
+          }
+        ],
+        "sources": [
+          {
+            "title": "厚生労働省 作業環境評価基準 別表",
+            "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74088000&dataType=0&pageNo=1"
+          },
+          {
+            "title": "厚生労働省 個人サンプリング法による作業環境測定及びその結果の評価に関するガイドライン 別紙1",
+            "url": "https://www.mhlw.go.jp/web/t_doc?dataId=00tc8503&dataType=1&pageNo=1"
+          },
+          {
+            "title": "国立環境研究所 地球環境研究センターニュース 大気中の酸素の測定",
+            "url": "https://cger.nies.go.jp/cgernews/201606/306003.html"
+          },
+          {
+            "title": "科学技術振興機構 科学の甲子園 筆記競技 解答例と解説（理想気体の状態方程式）",
+            "url": "https://koushien.jst.go.jp/koushien/pastexam/2013/files/1-3.A-hikki.pdf"
+          }
+        ]
+      },
+      "sourceEvidence": [
+        {
+          "url": "https://cger.nies.go.jp/cgernews/201606/306003.html",
+          "excerpt": "ppmはparts per millionを省略したもので百万分の一であることを表します",
+          "choiceNumbers": [
+            1,
+            2
+          ]
+        },
+        {
+          "url": "https://cger.nies.go.jp/cgernews/201606/306003.html",
+          "excerpt": "一般に、大気成分の濃度を表すには空気を構成する全分子に対する混合比が用いられます",
+          "choiceNumbers": [
+            1,
+            2
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74088000&dataType=0&pageNo=1",
+          "excerpt": "三十五　アセトン 五〇〇ppm",
+          "choiceNumbers": [
+            2
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74088000&dataType=0&pageNo=1",
+          "excerpt": "七十一　メチル―ノルマル―ブチルケトン 五ppm",
+          "choiceNumbers": [
+            2
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=00tc8503&dataType=1&pageNo=1",
+          "excerpt": "1 ジクロルベンジジン及びその塩 ― 3 塩素化ビフェニル(別名PCB) 0.01mg／m 3",
+          "choiceNumbers": [
+            3
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74088000&dataType=0&pageNo=1",
+          "excerpt": "リフラクトリーセラミックファイバー 五マイクロメートル以上の繊維として〇・三本毎立方センチメートル",
+          "choiceNumbers": [
+            4
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74088000&dataType=0&pageNo=1",
+          "excerpt": "石綿 五マイクロメートル以上の繊維として〇・一五本毎立方センチメートル",
+          "choiceNumbers": [
+            5
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74088000&dataType=0&pageNo=1",
+          "excerpt": "備考　この表の下欄の値は、温度二十五度、一気圧の空気中における濃度を示す。",
+          "choiceNumbers": [
+            2
+          ]
+        },
+        {
+          "url": "https://koushien.jst.go.jp/koushien/pastexam/2013/files/1-3.A-hikki.pdf",
+          "excerpt": "理想気体は，PV＝nRT（S1）の式にしたがう",
+          "choiceNumbers": [
+            2
+          ]
+        }
+      ],
+      "reviewIssues": []
+    },
+    "emkohyo-EM20261803-q20": {
+      "overlay": {
+        "sourceHash": "c1fec506c82c84b9b1aa7e120d77e1dcf69e760902ba456c506be35dc9928a1a",
+        "correctChoice": 3,
+        "summary": "設問中の(logσD)²＝0.084からσDは約1.95。第1評価値の式に使う1.645は標準正規分布の上側5％点で、第2評価値は算術平均濃度の推定値、判定は第2管理区分となる。",
+        "choices": [
+          {
+            "number": 1,
+            "verdict": "incorrect",
+            "reason": "㋑に1.645を入れると(log1.645)²≒0.047となり、本文の「log²㋑＝0.084」と合わない。0.084に一致するのは(log1.95)²≒0.0841である。1.645は正規分布の上側5％点で㋺に入る係数なので、この肢は㋑と㋺を入れ替えた組合せであり誤り。"
+          },
+          {
+            "number": 2,
+            "verdict": "incorrect",
+            "reason": "㋑と㋺の1.645と1.95が入れ替わっているうえ、㋩の第2評価値は幾何平均ではなく算術平均濃度の推定値である。管理区分も、A測定の第2評価値9.2 ppmが管理濃度10 ppm以下で、B測定値13.5 ppmが15 ppm以下なので、第3管理区分にはならない。"
+          },
+          {
+            "number": 3,
+            "verdict": "correct",
+            "reason": "設問が与える(log㋑)²＝0.084から(log1.95)²≒0.084なので㋑は1.95、第1評価値の式に使う標準正規分布の上側5％点の係数㋺は1.645、第2評価値は算術平均濃度の推定値なので㋩は算術である。第1評価値24.6≧10、第2評価値9.2≦10、B測定値13.5≦10×1.5＝15なので、㋥は第2管理区分となる。"
+          },
+          {
+            "number": 4,
+            "verdict": "incorrect",
+            "reason": "㋑の1.95と㋺の1.645は正しいが、㋩を幾何とした点が誤り。A測定値5つの幾何平均は約6.8 ppmで、第2評価値9.2 ppmはそれより大きい。第2評価値は対数正規分布の算術平均にあたる logEA2＝logM＋1.151log²σ で求める値であり、幾何平均の推定値ではない。"
+          },
+          {
+            "number": 5,
+            "verdict": "incorrect",
+            "reason": "㋩を幾何平均、㋥を第3管理区分とした2点が誤り。第3管理区分になるのは、第2評価値が管理濃度を超える場合か、B測定値が管理濃度の1.5倍を超える場合である。本問は9.2 ppm≦10 ppm、13.5 ppm≦15 ppmなので当てはまらない。"
+          }
+        ],
+        "sources": [
+          {
+            "title": "厚生労働省 作業環境評価基準 第2条・第3条",
+            "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74088000&dataType=0&pageNo=1"
+          },
+          {
+            "title": "厚生労働省 作業環境評価基準の適用について",
+            "url": "https://www.mhlw.go.jp/web/t_doc?dataId=00tb2166&dataType=1&pageNo=1"
+          }
+        ]
+      },
+      "sourceEvidence": [
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74088000&dataType=0&pageNo=1",
+          "excerpt": "第二評価値が管理濃度以下であり",
+          "choiceNumbers": [
+            2,
+            3,
+            5
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74088000&dataType=0&pageNo=1",
+          "excerpt": "B測定の測定値が管理濃度の一・五倍以下である場合",
+          "choiceNumbers": [
+            2,
+            3,
+            5
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74088000&dataType=0&pageNo=1",
+          "excerpt": "1.645√(log 2 σ 1 ＋0.084)",
+          "choiceNumbers": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74088000&dataType=0&pageNo=1",
+          "excerpt": "1.151(log 2 σ 1 ＋0.084)",
+          "choiceNumbers": [
+            4
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=00tb2166&dataType=1&pageNo=1",
+          "excerpt": "気中有害物質の算術平均濃度の推定値",
+          "choiceNumbers": [
+            2,
+            3,
+            4,
+            5
+          ]
+        }
+      ],
+      "reviewIssues": []
+    }
+  }
+}

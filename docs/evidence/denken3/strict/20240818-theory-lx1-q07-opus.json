@@ -1,0 +1,69 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20240818",
+  "subject": "theory",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 3525,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 13811,
+      "webSearchRequests": 0,
+      "costUSD": 0.1812518,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 1844,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "8b317f42d5b4837f1c87e347ec98d23fc97f83dbd9a5b8cbf519ac82ab46c904",
+  "inputRequestSha256": "04178184dcf06e7fc94bd7493f76a833c119e2bd763cb981442c3c89176d0ca3",
+  "inputHashes": {
+    "candidateSha256": {
+      "q07": "0953138776c81675fabc44fc51c4746ed4735444bbceb56d139baaece4bb99dc"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20240818/theory/p11.png": "8adfe6bf40401a6a4b0cddd87071912ad55ae37f684bf547ccf135b4674f1ccd"
+    },
+    "figureSha256": {},
+    "sourceQuestionPdfSha256": "236be905e93a023cf3c65c1e22c45c24dc42b910151c51f8ed023247793d1d29",
+    "sourceAnswerPdfSha256": "f72ecbc3a477e64948388b69cf78cb931032c9f0c688639836c8d533a949cd0f",
+    "officialAnswerUnitsSha256": "f7623a08eccd8866769978068e67ab7f239595b159118d91e91863f7cd4b41a1",
+    "referencePdfSha256": {},
+    "referencePageSha256": {},
+    "referenceJsonSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q07",
+      "questionNumber": 7,
+      "part": null,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [
+        "choiceExplanations[4] の「r と R1 の値によっては分母が0または負になり得る非物理的な式である」は誤解を招く。R1 > r なら R2 = rR1/(R1−r) は正の有限値であり、物理的に実現できる。検算すると 1/R2 + 1/R1 = (R1−r)/(rR1) + 1/R1 = 1/r となる。つまりこの式は R1∥R2 = r を満たす条件で、外部負荷全体（R1 と R2 の並列合成）への供給電力が最大になる条件である。R2 単独の消費電力を最大にする条件（R2 = r∥R1）とは異なる。これがこの誤答肢固有の典型的な誤りで、候補解説はこの点を説明していない。「非物理的」という断定を削除し、「R1∥R2 = r（負荷全体の最大電力条件）と R2 単独の最大電力条件を混同した式」という固有の誤り理由に差し替える必要がある。"
+      ],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "出典メタデータ: 公式問題原図の問7（冊子下部の印字頁「- 8 -」、管理番号 T1−R 011）が manifest 固定の PDF 第11頁と一致した。fiscalYear=2024、term=upper、examDate=2024-08-18、subject=theory、reviewedFromPage=[11]、sourceQuestionPdfUrl と sourceAnswerPdfUrl、sourceAttribution（令和6年度上期・理論・問7）はいずれも manifest と一致した。",
+        "問題文: 原図の「起電力が E[V]で内部抵抗が r[Ω]の電池がある。この電池に抵抗 R1[Ω]と可変抵抗 R2[Ω]を並列につないだとき、抵抗 R2[Ω]から発生するジュール熱が最大となるときの抵抗 R2 の値[Ω]を表す式として、正しいものを次の(1)〜(5)のうちから一つ選べ。」と候補の文言・記号・単位が一致した。差異は空白と下付き文字の平文化のみ。",
+        "選択肢: 原図の (1) R2=r、(2) R2=R1、(3) R2=rR1/(r+R1)、(4) R2=rR1/(R1−r)、(5) R2=rR1/(r−R1) と、候補の5肢が分子・分母・符号とも一致した。線形表記は括弧付きで曖昧さがない。",
+        "公式正答: 公式解答表（令和6年度上期・理論）の問7は「3」。manifest の q07 公式正答単位 answer=\"3\" および候補の officialAnswer=\"3\" と一致した。",
+        "総合解説の検算: R2 を外すと E–r–R1 の直列回路になり、開放電圧は V_th = E·R1/(r+R1) で正しい。E を短絡すると R_th = rR1/(r+R1) で正しい。P = V_th²·R2/(R_th+R2)² を微分すると、dP/dR2 ∝ (R_th+R2) − 2R2 = R_th − R2 = 0 から R2 = R_th が得られ、最大条件は選択肢(3)と一致した。",
+        "choiceExplanations[1]: R2=r は R1 が存在しない場合の整合条件であり、R1 を無視しているという理由は正しい。",
+        "choiceExplanations[2]: r, R1 > 0 のとき rR1/(r+R1) < R1 が常に成り立つため、R2=R1 は最適値と一致しないという理由は正しい。",
+        "choiceExplanations[3]: テブナン抵抗 r∥R1 との整合という理由は正しい。",
+        "choiceExplanations[5]: 分母 (r−R1) は r<R1 で負になるという記述は正しい。r>R1 の場合も R_th と一致しないため、誤りの結論は妥当。",
+        "図: 原図の問7ページに回路図はなく、接続関係は問題文だけで一意に定まる（電池 E・内部抵抗 r に R1 と R2 を並列接続）。figureDescription の「回路図なし」は正確で、解答に図は不要。figureUrls=[] と choiceFigureUrls={} は妥当。",
+        "参照: officialReferenceUrls は空で、解説は問題文と標準的な回路理論（テブナンの定理・最大電力伝送）のみに依拠している。外部確認を要する独立主張はない。"
+      ]
+    }
+  ]
+}

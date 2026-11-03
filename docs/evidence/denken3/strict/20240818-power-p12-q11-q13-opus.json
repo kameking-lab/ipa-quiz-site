@@ -1,0 +1,88 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20240818",
+  "subject": "power",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 4924,
+      "cacheReadInputTokens": 140085,
+      "cacheCreationInputTokens": 21482,
+      "webSearchRequests": 0,
+      "costUSD": 0.298361,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 3196,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "60d50e25ac6cbbbfd4de2b25d8efd852d4d8c7a109e28c50d399f7a3d5a69990",
+  "inputRequestSha256": "7f5d62efb99310a6a2f378325e9d0db053c1e9ec2f8483129d5f1ac965054520",
+  "inputHashes": {
+    "candidateSha256": {
+      "q11": "72be05431d89d3503a1413c4eccdf074b11d6cb8aab909b64c9d533360cd3e68",
+      "q13": "58d0864a7e5939d65540b3543b22e346676a276532b56e3e0408233f2cc4b8b7"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20240818/power/p16.png": "ca7d77cee3f252a58afd1273ef0f78316df974c1823524db404f1ebdb8135b66",
+      "data/raw_pdfs/denken3/review/20240818/power/p18.png": "73e145495f9f7a60dcd0d04bd46d36ddac8a5e696a1d72732b57ee7558de5859"
+    },
+    "figureSha256": {},
+    "sourceQuestionPdfSha256": "0bc54a85819b9d9c80d1574c5b8c02a3c28976565d8c9068a3dd0344a3db5700",
+    "sourceAnswerPdfSha256": "f72ecbc3a477e64948388b69cf78cb931032c9f0c688639836c8d533a949cd0f",
+    "officialAnswerUnitsSha256": "570a8366d51f6ed5b13156235a745f7290cfaa29822ba31b7a2d227f111ffdac"
+  },
+  "assessment": [
+    {
+      "unitKey": "q11",
+      "questionNumber": 11,
+      "part": null,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "問題文は公式原図（-13-、T1-D 016）と一致する。読点「，」を「、」に変えた整形のみで、意味の変更はない。",
+        "(1)〜(5)の全肢を原図と照合した。文言は一致し、欠落・改変はない。",
+        "公式解答表では電力 問11 = 2。manifestの正答単位 answer=2 とも、候補の officialAnswer=2 とも一致する。",
+        "重量比を検算した。単相: I₁=P/V、損失2I₁²R₁。三相: I₃=P/(√3V)、損失3I₃²R₃。損失が等しいので R₁/R₃=3I₃²/(2I₁²)=1/2。重量はA∝1/R なので W₃/W₁=(3/R₃)/(2/R₁)=(3/2)(1/2)=3/4。計算は正しい。",
+        "力率が等しければ両方式の電流はどちらも1/cosφ倍になるので、3/4 は力率によらない。この記述は正しい。",
+        "肢(1)の理由を確認した。Y結線4線式では相電圧と線間電圧（相電圧の√3倍）の両方を取り出せる。正しい。",
+        "肢(3)の理由を確認した。三相巻線で回転磁界が生じ、誘導電動機が自己始動する。正しい。",
+        "肢(4)の理由を確認した。平衡三相の瞬時電力の和は一定値3VpIp cosφになり、単相は2倍周波数で脈動する。正しい。",
+        "肢(5)の理由を確認した。三相機は巻線と鉄心の利用率が高く、同一出力なら小形・高効率に設計できる。正しい。",
+        "図なし問題であることを原図で確認した。figureUrls が空であることと整合する。officialReferenceUrls は空なので、一次資料で確認すべき独立主張はない。"
+      ]
+    },
+    {
+      "unitKey": "q13",
+      "questionNumber": 13,
+      "part": null,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [
+        "中間値「1.5 × 16,460.9 × 20,000 / 35 = 14,109,334」は計算誤り。I² = 6.6e6² / (3 × 33000² × 0.81) = 40000/2.43 ≒ 16,460.905 なので、1.5 × 16,460.905 × 20,000/35 ≒ 14,109,347 が正しい。表記の16,460.9で計算しても約14,109,343になり、14,109,334にはならない。最終値 A ≒ 42.76 mm²（正確には42.7565）と正答(4)は変わらないが、表示値を14,109,347に訂正する必要がある。閉形式 A = 1.5 × (40000/2.43) × (20000/35) / 330000 で示してもよい。"
+      ],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "問題文は公式原図（-15-、T1-D 018）と一致する。こう長20km、三相3線式2回線、33kV、6600kW、力率0.9、損失5%以下、1/35 Ω/(mm²·m) のいずれも一致している。",
+        "選択肢の14.3 / 23.4 / 24.7 / 42.8 / 171 は原図と一致する。",
+        "公式解答表では電力 問13 = 4。manifestの正答単位 answer=4 とも、候補の officialAnswer=4 とも一致する。",
+        "電流を検算した。I = 6.6e6/(√3×33000×0.9) ≒ 128.30 A、1回線あたり64.15 A。",
+        "損失式を検算した。全損失 = 2回線×3線×(I/2)²R = 1.5I²R。R = 20000/(35A) で、電線長はこう長に等しい。許容損失は 0.05×6600 kW = 330 kW。A ≥ 14,109,347/330,000 ≒ 42.76 mm²。",
+        "各肢の損失率を検算した。損失はA^-1に比例するので、損失率 = 5% × 42.76 / A となる。14.3→14.95%、23.4→9.14%、24.7→8.66%、42.8→4.995%、171→1.25%。いずれも候補の記載と一致する。",
+        "図なし問題であることを原図で確認した。数式表記 1/35 Ω のみで、figureUrls が空であることと整合する。officialReferenceUrls は空。"
+      ]
+    }
+  ]
+}

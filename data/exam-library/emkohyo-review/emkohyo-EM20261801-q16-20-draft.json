@@ -1,0 +1,641 @@
+{
+  "candidateModel": "claude-opus-5-5",
+  "paperId": "emkohyo-EM20261801",
+  "governmentSourceCandidates": [
+    {
+      "title": "厚生労働省 作業環境測定基準",
+      "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74087000"
+    }
+  ],
+  "questions": {
+    "emkohyo-EM20261801-q16": {
+      "overlay": {
+        "sourceHash": "7d3808379bfdb13c8af61ef2972b532b87fe11feac3898f26b55ce5cc90592c0",
+        "correctChoice": 1,
+        "summary": "物理学的半減期は核種ごとに決まった値であり、温度が上がれば短くなるという記述が誤り。",
+        "choices": [
+          {
+            "number": 1,
+            "verdict": "correct",
+            "reason": "これが誤りの記述。日本原子力研究開発機構の報告は、原子核の半減期は周囲の温度、圧力、化学環境を変えても変化しないと明示する。温度で変わる化学反応速度と、核種に固有の確率で起こる放射性壊変を混同しているため、この選択肢が誤りである。"
+          },
+          {
+            "number": 2,
+            "verdict": "incorrect",
+            "reason": "文自体は正しい。環境省の透過力の説明では、α線は空気中で数cm程度しか進まず紙一枚で止まり、β線はα線より遠くまで進む。一方、γ線とX線は透過力が強く体の奥まで届く。したがって列挙されたα・β・γのうち最も透過力が大きいのはγ線である。"
+          },
+          {
+            "number": 3,
+            "verdict": "incorrect",
+            "reason": "文自体は正しい。PMDAの粉末X線回折測定法は、波長λ、原子面の面間隔d、回折角θにnλ＝2d sinθが成り立つと記す。sinθは1以下なのでλ≦2dであり、原子面の間隔と同程度またはそれより短い波長のX線なら回折条件を満たせる。その回折強度を角度ごとに測り、固体中の結晶相の同定や定量的な相分析に使える。"
+          },
+          {
+            "number": 4,
+            "verdict": "incorrect",
+            "reason": "文自体は正しい。環境省の資料p.3のICRP勧告・報告書118に基づくしきい線量表は、白内障による視力低下を約0.5 Gy、一時的脱毛を約4 Gyと示す。同じ表に載る二つの組織反応を線量で比べると、白内障の方が小さい。"
+          },
+          {
+            "number": 5,
+            "verdict": "incorrect",
+            "reason": "文自体は正しい。国立保健医療科学院が公開する労災疾病臨床研究の報告では、確率的影響は線量が増すと発生確率が上がる一方、起きた影響の重篤度は変わらないと説明する。がんなどは発生するリスクと症状の重さを区別するため、この記述は正しい。"
+          }
+        ],
+        "sources": [
+          {
+            "title": "日本原子力研究開発機構 JAEA-Research 2008-042",
+            "url": "https://jopss.jaea.go.jp/pdfdata/JAEA-Research-2008-042.pdf"
+          },
+          {
+            "title": "環境省 放射線の体内での透過力",
+            "url": "https://www.env.go.jp/chemi/rhm/current/01-03-09.html"
+          },
+          {
+            "title": "PMDA 粉末X線回折測定法",
+            "url": "https://www.pmda.go.jp/files/000240227.pdf"
+          },
+          {
+            "title": "環境省 放射線基礎資料・様々な影響のしきい値",
+            "url": "https://www.env.go.jp/chemi/rhm/r1kisoshiryo/attach/r1kiso-slide03-03.pdf"
+          },
+          {
+            "title": "国立保健医療科学院 労災疾病臨床研究・放射線業務の線量と健康影響",
+            "url": "https://www.niph.go.jp/soshiki/09seikatsu/EMA/radiation/pdf/occupational_radiation_kunugita_fy2018.pdf"
+          }
+        ]
+      },
+      "sourceEvidence": [
+        {
+          "url": "https://jopss.jaea.go.jp/pdfdata/JAEA-Research-2008-042.pdf",
+          "excerpt": "半減期は原子核の不安定性によって決まる",
+          "choiceNumbers": [
+            1
+          ]
+        },
+        {
+          "url": "https://jopss.jaea.go.jp/pdfdata/JAEA-Research-2008-042.pdf",
+          "excerpt": "周囲の温度や圧力，化学環境などによって変えることはできない",
+          "choiceNumbers": [
+            1
+          ]
+        },
+        {
+          "url": "https://www.env.go.jp/chemi/rhm/current/01-03-09.html",
+          "excerpt": "紙一枚で止めることができます",
+          "choiceNumbers": [
+            2
+          ]
+        },
+        {
+          "url": "https://www.env.go.jp/chemi/rhm/current/01-03-09.html",
+          "excerpt": "γ線・Ｘ",
+          "choiceNumbers": [
+            2
+          ]
+        },
+        {
+          "url": "https://www.pmda.go.jp/files/000240227.pdf",
+          "excerpt": "結晶相の同定",
+          "choiceNumbers": [
+            3
+          ]
+        },
+        {
+          "url": "https://www.pmda.go.jp/files/000240227.pdf",
+          "excerpt": "定量的な相分析",
+          "choiceNumbers": [
+            3
+          ]
+        },
+        {
+          "url": "https://www.pmda.go.jp/files/000240227.pdf",
+          "excerpt": "nλ＝2d sinθ",
+          "choiceNumbers": [
+            3
+          ]
+        },
+        {
+          "url": "https://www.env.go.jp/chemi/rhm/r1kisoshiryo/attach/r1kiso-slide03-03.pdf",
+          "excerpt": "一時的脱毛\n皮膚\n２～３週\n約４",
+          "choiceNumbers": [
+            4
+          ]
+        },
+        {
+          "url": "https://www.env.go.jp/chemi/rhm/r1kisoshiryo/attach/r1kiso-slide03-03.pdf",
+          "excerpt": "白内障",
+          "choiceNumbers": [
+            4
+          ]
+        },
+        {
+          "url": "https://www.niph.go.jp/soshiki/09seikatsu/EMA/radiation/pdf/occupational_radiation_kunugita_fy2018.pdf",
+          "excerpt": "重篤度は変わらず，発生確率だけが増加する",
+          "choiceNumbers": [
+            5
+          ]
+        }
+      ],
+      "reviewIssues": []
+    },
+    "emkohyo-EM20261801-q17": {
+      "overlay": {
+        "sourceHash": "47cd69868e012422b83215cfa1be47e615fca99ff548c1e24536b1f3cee8d982",
+        "correctChoice": 3,
+        "summary": "制御風速は作業者の呼吸位置ではなく、フードの形式ごとに決められた位置で測る風速である。",
+        "choices": [
+          {
+            "number": 1,
+            "verdict": "incorrect",
+            "reason": "厚生労働省の換気装置解説では、全体換気装置を希釈換気装置とも呼び、外気の清浄空気と作業場の汚染空気が混ざって薄まり、最後に換気扇等で排気されると説明する。発散源付近の有害物質を希釈するという肢の説明は正しい。"
+          },
+          {
+            "number": 2,
+            "verdict": "incorrect",
+            "reason": "有機則第16条は下方吸引型に0.5 m/s、上方吸引型に1.0 m/sの制御風速を求め、上方型では同じ捕捉のためより大きい風速を要する。厚生労働省の対策例は、払拭作業では側方・下方吸引を勧め、開放式洗浄槽では上方吸引を避ける。肢は温熱上昇気流の場合を例外とし、有機則にもその気流を利用する規定があるため整合する。"
+          },
+          {
+            "number": 3,
+            "verdict": "correct",
+            "reason": "有機溶剤中毒予防規則第16条は、囲い式フードなら開口面の最小風速、外付け式フードなら開口面から最も離れた作業位置の風速を制御風速の基準位置とする。作業者の呼吸位置で測る最小風速という定義ではないため、この肢が誤りである。"
+          },
+          {
+            "number": 4,
+            "verdict": "incorrect",
+            "reason": "有機則第16条の2に基づく告示は、密閉式と開放式の両方で捕捉面を原則16以上の等面積四辺形に分ける。各四辺形の中心点で捕捉面に垂直な風速を測り、その平均が0.2 m/s以上という式を置くため、この肢は正しい。"
+          },
+          {
+            "number": 5,
+            "verdict": "incorrect",
+            "reason": "特定化学物質障害予防規則の排ガス処理装置の表は、吸収方式、直接燃焼方式、酸化・還元方式、吸着方式を物質別の処理方式として挙げる。これらの方式が存在するという肢の列挙は正しい。"
+          }
+        ],
+        "sources": [
+          {
+            "title": "厚生労働省・換気装置の技術解説",
+            "url": "https://www.mhlw.go.jp/content/11300000/001240051.pdf"
+          },
+          {
+            "title": "厚生労働省・洗浄・払拭作業のばく露防止対策",
+            "url": "https://anzeninfo.mhlw.go.jp/horei/hor1-29/hor1-29-32-1-3.html"
+          },
+          {
+            "title": "厚生労働省・有機溶剤中毒予防規則",
+            "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74090000&dataType=0&pageNo=1"
+          },
+          {
+            "title": "厚生労働省・プッシュプル型換気装置の構造・性能告示",
+            "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74997368&dataType=0&pageNo=1"
+          },
+          {
+            "title": "厚生労働省・特定化学物質障害予防規則",
+            "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74097000&dataType=0&pageNo=1"
+          }
+        ]
+      },
+      "sourceEvidence": [
+        {
+          "url": "https://www.mhlw.go.jp/content/11300000/001240051.pdf",
+          "excerpt": "全体換気装置は、希釈換気装置とも呼ばれており",
+          "choiceNumbers": [
+            1
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/content/11300000/001240051.pdf",
+          "excerpt": "最終的には換気扇等により屋外に排気される",
+          "choiceNumbers": [
+            1
+          ]
+        },
+        {
+          "url": "https://anzeninfo.mhlw.go.jp/horei/hor1-29/hor1-29-32-1-3.html",
+          "excerpt": "側方又は下方吸引型の外付け式フード",
+          "choiceNumbers": [
+            2
+          ]
+        },
+        {
+          "url": "https://anzeninfo.mhlw.go.jp/horei/hor1-29/hor1-29-32-1-3.html",
+          "excerpt": "上方吸引型フードは使用しない",
+          "choiceNumbers": [
+            2
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74090000&dataType=0&pageNo=1",
+          "excerpt": "下方吸引型 〇・五",
+          "choiceNumbers": [
+            2
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74090000&dataType=0&pageNo=1",
+          "excerpt": "上方吸引型 一・〇",
+          "choiceNumbers": [
+            2
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74090000&dataType=0&pageNo=1",
+          "excerpt": "温熱により生ずる上昇気流を利用",
+          "choiceNumbers": [
+            2
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74090000&dataType=0&pageNo=1",
+          "excerpt": "フードの開口面から最も離れた作業位置の風速",
+          "choiceNumbers": [
+            3
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74090000&dataType=0&pageNo=1",
+          "excerpt": "囲い式フードにあつては、フードの開口面における最小風速",
+          "choiceNumbers": [
+            3
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74997368&dataType=0&pageNo=1",
+          "excerpt": "捕捉面を十六以上の等面積の四辺形",
+          "choiceNumbers": [
+            4
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74997368&dataType=0&pageNo=1",
+          "excerpt": "≧0.2",
+          "choiceNumbers": [
+            4
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74997368&dataType=0&pageNo=1",
+          "excerpt": "四辺形の中心点における捕捉面に垂直な方向の風速",
+          "choiceNumbers": [
+            4
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74997368&dataType=0&pageNo=1",
+          "excerpt": "密閉式プッシュプル型換気装置の性能",
+          "choiceNumbers": [
+            4
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74997368&dataType=0&pageNo=1",
+          "excerpt": "開放式プッシュプル型換気装置の性能",
+          "choiceNumbers": [
+            4
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74097000&dataType=0&pageNo=1",
+          "excerpt": "酸化・還元方式",
+          "choiceNumbers": [
+            5
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74097000&dataType=0&pageNo=1",
+          "excerpt": "直接燃焼方式",
+          "choiceNumbers": [
+            5
+          ]
+        }
+      ],
+      "reviewIssues": []
+    },
+    "emkohyo-EM20261801-q18": {
+      "overlay": {
+        "sourceHash": "ec12196aaa96b7fc8126efd59fdd14aa4658574b17216d047c05df5325eb524e",
+        "correctChoice": 3,
+        "summary": "化学防護手袋は、内部に入り込んだ化学物質を洗浄しても除けないため、溶剤に浸して洗ってから再使用する方法が誤り。",
+        "choices": [
+          {
+            "number": 1,
+            "verdict": "incorrect",
+            "reason": "告示では、顔面と面体との密着の程度を示す係数をフィットファクタ（面体の外側濃度÷内側濃度）とし、それが要求フィットファクタ（全面形500、半面形100）を上回ることをフィットテストで確認する。記述は正しい。"
+          },
+          {
+            "number": 2,
+            "verdict": "incorrect",
+            "reason": "電動ファン付き呼吸用保護具の規格では、防じん機能をもつものを漏れ率でS級、A級、B級に分ける。漏れ率はS級0.1%、A級1.0%、B級5.0%なので、性能が高い順にS級、A級、B級で正しい。"
+          },
+          {
+            "number": 3,
+            "verdict": "correct",
+            "reason": "通達では、乾燥や洗浄をしても手袋の内部に入り込んだ化学物質は除けないとし、使用可能時間を超えた手袋は再使用させないよう定めている。溶剤に8時間以上浸せば再使用できるという記述は誤り。"
+          },
+          {
+            "number": 4,
+            "verdict": "incorrect",
+            "reason": "防振手袋は、手のひら側の緩衝材で振動を吸収するように作られている。内側や外側に別の手袋を重ねると、手と工具の間の条件が変わり、想定した振動吸収性能が出ないおそれがある。この注意は正しい。"
+          },
+          {
+            "number": 5,
+            "verdict": "incorrect",
+            "reason": "H・M・L値で遮音性能を示す方式（HML法）では、騒音のC特性とA特性の差を使って予測遮音量を計算し、環境騒音レベルから差し引いて装着時の耳に届く音の大きさを見積もる。記述は正しい。"
+          }
+        ],
+        "sources": [
+          {
+            "title": "厚生労働省 金属アーク溶接等作業を継続して行う屋内作業場に係る溶接ヒュームの濃度の測定の方法等（令和2年厚生労働省告示第286号）",
+            "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74ab7765&dataType=0&pageNo=1"
+          },
+          {
+            "title": "厚生労働省 電動ファン付き呼吸用保護具の規格",
+            "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74ab4390&dataType=0&pageNo=1"
+          },
+          {
+            "title": "厚生労働省 化学防護手袋の選択、使用等について（平成29年1月12日基発0112第6号）",
+            "url": "https://www.mhlw.go.jp/web/t_doc?dataId=00tc2426&dataType=1&pageNo=1"
+          },
+          {
+            "title": "厚生労働省 騒音障害防止のためのガイドラインの改訂について（令和5年4月20日基発0420第2号）",
+            "url": "https://www.mhlw.go.jp/web/t_doc?dataId=00tc7618&dataType=1&pageNo=1"
+          }
+        ]
+      },
+      "sourceEvidence": [
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74ab7765&dataType=0&pageNo=1",
+          "excerpt": "当該労働者の顔面と当該呼吸用保護具の面体との密着の程度を示す係数",
+          "choiceNumbers": [
+            1
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74ab4390&dataType=0&pageNo=1",
+          "excerpt": "その漏れ率に係る性能により、S級、A級及びB級に区分する",
+          "choiceNumbers": [
+            2
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=00tc2426&dataType=1&pageNo=1",
+          "excerpt": "乾燥、洗浄等を行っても化学防護手袋の内部に侵入している化学物質は除去できない",
+          "choiceNumbers": [
+            3
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=00tc2426&dataType=1&pageNo=1",
+          "excerpt": "使用可能時間を超えた化学防護手袋は再使用させないこと",
+          "choiceNumbers": [
+            3
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=00tc7618&dataType=1&pageNo=1",
+          "excerpt": "遮音値を目安に、必要かつ十分な遮音値のものを選定すること",
+          "choiceNumbers": [
+            5
+          ]
+        }
+      ],
+      "reviewIssues": [
+        "【HOLD】肢1（フィットファクタと要求フィットファクタ：令和2年厚労告286号）、肢2（電動ファン付き呼吸用保護具のS級0.1%・A級1.0%・B級5.0%：同規格第2条・漏れ率表）、正答肢3（乾燥・洗浄等を行っても内部に侵入した化学物質は除去できず再使用させない：基発0112第6号）は政府資料で確認できた。しかし肢4（防振手袋に他の手袋を重ねると振動吸収性能が損なわれる）と肢5（H・M・L値による遮音計算）を直接述べた政府一次資料が見つからない。 2026-09-24再探索（Web検索上限到達後はキャッシュ済み政府資料・既知URLのみで確認）でも不足点は解消しなかった。振動障害予防対策指針（平成21年基発0710第2号）は「軟質の厚い防振手袋等を支給」とするのみで重ね着の影響に触れず、騒音ガイドライン通達にもHML法の計算方法の記述は見当たらない。",
+        "肢1〜4の抜粋のうち2件は40字の上限を少し超えている（肢3の「乾燥、洗浄等を…」、肢1の「当該労働者の顔面と…」）。字数を削ると意味が変わるため全文のまま残した。上限を厳守する場合は短縮が必要。",
+        "肢1の出典は溶接ヒュームに関する告示で、フィットテスト全般の根拠である令和5年5月25日基発0525第3号（PDF）は本文を読み取れなかった。",
+        "肢4（防振手袋に別の手袋を重ねると性能が落ちる）を直接書いた政府資料は本文で確認できていない。平成21年の振動障害対策通達には該当する記述がなかった。",
+        "肢5：ガイドラインの本文で確認できたのはJIS T8161-1の遮音値で選ぶという点までで、H・M・L値を使った計算方法の記述は確認できていない。HML法の説明はJIS／ISO 4869-2の一般知識によるもので、正誤判断の直接根拠は不足している。"
+      ]
+    },
+    "emkohyo-EM20261801-q19": {
+      "overlay": {
+        "sourceHash": "18dbaf2ed1de807cf7c4dd10d701d027216246eda6eaaaec07a9bec0c916a65b",
+        "correctChoice": 1,
+        "summary": "型式検定合格標章の年表示は検定に関する表示であり、製品の使用期限を示すものではない。",
+        "choices": [
+          {
+            "number": 1,
+            "verdict": "correct",
+            "reason": "厚生労働省の型式検定合格標章の様式は、「国(年)検」の年を型式検定または更新検定に合格した年と定め、平成30年の通達は西暦年の下2桁の略号も認めている。図の「'26」は2026年に合格したことを示す年表示であり、使用期限ではない。"
+          },
+          {
+            "number": 2,
+            "verdict": "incorrect",
+            "reason": "原図の下段を確認すると「DR 直 RS3」とある。厚生労働省の標章様式ではDRは防じんマスク、「直」は取替え式の直結式、RS3は性能区分と定める。したがって図の保護具を取替え式防じんマスクとする記述は正しい。"
+          },
+          {
+            "number": 3,
+            "verdict": "incorrect",
+            "reason": "厚生労働省通達は吸気補助具付き防じんマスクの型式検定合格標章に「補」を表示すると定める。原図の下段には「DR 直 RS3」だけがあり「補」はないため、図示された標章では吸気補助具付きではないという記述は正しい。"
+          },
+          {
+            "number": 4,
+            "verdict": "incorrect",
+            "reason": "原図はRS3区分である。厚生労働省の令和5年通達本文は、粉じん等とオイルミストが混在する場合にLタイプ（RL3・RL2・RL1・DL3・DL2・DL1）を選ぶと明記する。RS3はLタイプではないため、オイルミスト混在場所では使えないという記述は正しい。"
+          },
+          {
+            "number": 5,
+            "verdict": "incorrect",
+            "reason": "防じんマスクの規格第6条の塩化ナトリウム試験表では、RS1が80.0%以上、RS2が95.0%以上、RS3が99.9%以上である。原図の記号はRS3なので、定められた3段階の中で最も高い粒子捕集効率という記述は正しい。"
+          }
+        ],
+        "sources": [
+          {
+            "title": "厚生労働省 機械等検定規則の一部を改正する省令の施行及び防じんマスクの規格の適用について（平成30年4月26日基発0426第5号）",
+            "url": "https://www.mhlw.go.jp/web/t_doc?dataId=00tc3389&dataType=1&pageNo=1"
+          },
+          {
+            "title": "厚生労働省 防じんマスクの規格",
+            "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74041000"
+          },
+          {
+            "title": "厚生労働省 機械等検定規則様式第11号改正資料",
+            "url": "https://www.mhlw.go.jp/content/11300000/0000068269.pdf"
+          },
+          {
+            "title": "厚生労働省 防じんマスク等の選択・使用に関する令和5年通達",
+            "url": "https://www.mhlw.go.jp/content/11300000/001100843.pdf"
+          }
+        ]
+      },
+      "sourceEvidence": [
+        {
+          "url": "https://www.mhlw.go.jp/content/11300000/0000068269.pdf",
+          "excerpt": "型式検定に合格した年(有効期間が更新されたときにあつては、当該更新に係る更新検定に合格した年)",
+          "choiceNumbers": [
+            1
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/content/11300000/0000068269.pdf",
+          "excerpt": "品名は、DR と表示し、種類は、取替え式のもののうち直結式にあつては「直」",
+          "choiceNumbers": [
+            2
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=00tc3389&dataType=1&pageNo=1",
+          "excerpt": "(年)に西暦年の下2桁の数字を用いた略号についても認めた",
+          "choiceNumbers": [
+            1
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=00tc3389&dataType=1&pageNo=1",
+          "excerpt": "吸気補助具付き防じんマスクについては「補」と表示することとした",
+          "choiceNumbers": [
+            3
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/content/11300000/001100843.pdf",
+          "excerpt": "粉じん等とオイルミストが混在する場合には、区分がＬタイプ（RL3、",
+          "choiceNumbers": [
+            4
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74041000",
+          "excerpt": "第六条　防じんマスクの性能は、次の表の上欄に掲げる試験方法による試験を行つた場合に",
+          "choiceNumbers": [
+            5
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74041000",
+          "excerpt": "一　試験粒子が塩化ナトリウムの場合",
+          "choiceNumbers": [
+            4,
+            5
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74041000",
+          "excerpt": "二　試験粒子がフタル酸ジオクチルの場合",
+          "choiceNumbers": [
+            4
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74041000",
+          "excerpt": "RS一  八〇・〇",
+          "choiceNumbers": [
+            5
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74041000",
+          "excerpt": "RS三  九九・九",
+          "choiceNumbers": [
+            5
+          ]
+        }
+      ],
+      "reviewIssues": []
+    },
+    "emkohyo-EM20261801-q20": {
+      "overlay": {
+        "sourceHash": "4aebd5001a83a4b9a28c2e445003eff92692c944d1650f2d1855e6e7451c6d1c",
+        "correctChoice": 2,
+        "summary": "混合有機溶剤は各成分の測定値を管理濃度で割った比の和（換算値）で評価し、管理濃度に相当する値は1とする。",
+        "choices": [
+          {
+            "number": 1,
+            "verdict": "incorrect",
+            "reason": "第1評価値は、単位作業場所の考え得るすべての測定点の濃度分布で高濃度側から5%にあたる値の推定値である。A測定の幾何平均・幾何標準偏差から計算し、第4条でC測定にも準用される。記述は正しい。"
+          },
+          {
+            "number": 2,
+            "verdict": "correct",
+            "reason": "作業環境評価基準では、測定点ごとに換算値C＝C1/E1＋C2/E2＋…（C:測定値、E:成分ごとの管理濃度）を求め、管理濃度に相当する値を1とする。含有率を掛けて合計する方法ではないので、この肢が誤り。"
+          },
+          {
+            "number": 3,
+            "verdict": "incorrect",
+            "reason": "技術上の指針では、8時間濃度基準値を、長期間ばく露することで健康障害が生じることが知られている物質について、その障害を防ぐために定めるとしている。記述は指針の趣旨どおりで正しい。"
+          },
+          {
+            "number": 4,
+            "verdict": "incorrect",
+            "reason": "短時間濃度基準値は、濃度が最も高くなると思われる15分間の時間加重平均値で定めるものが基本で、一部の物質は、いかなる短時間のばく露でも超えてはならない天井値として定められている。記述は正しい。"
+          },
+          {
+            "number": 5,
+            "verdict": "incorrect",
+            "reason": "指針では、ヒトに対する発がん性が明確な物質は、発がんが確率的影響であるため安全な閾値を設定しにくいとし、濃度基準値を設定していない。記述は正しい。"
+          }
+        ],
+        "sources": [
+          {
+            "title": "厚生労働省 作業環境評価基準（昭和63年労働省告示第79号）",
+            "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74088000&dataType=0&pageNo=1"
+          },
+          {
+            "title": "厚生労働省 「化学物質による健康障害防止のための濃度の基準の適用等に関する技術上の指針」の制定について（令和5年4月27日基発0427第2号）",
+            "url": "https://www.mhlw.go.jp/web/t_doc?dataId=00tc7653&dataType=1&pageNo=1"
+          },
+          {
+            "title": "厚生労働省 労働安全衛生規則第五百七十七条の二第二項の規定に基づき厚生労働大臣が定める物及び厚生労働大臣が定める濃度の基準",
+            "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74ab9254&dataType=0&pageNo=1"
+          }
+        ]
+      },
+      "sourceEvidence": [
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74088000&dataType=0&pageNo=1",
+          "excerpt": "有機溶剤の種類ごとの管理濃度",
+          "choiceNumbers": [
+            2
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74088000&dataType=0&pageNo=1",
+          "excerpt": "管理濃度に相当する値は、一とするものとする。",
+          "choiceNumbers": [
+            2
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74088000&dataType=0&pageNo=1",
+          "excerpt": "A測定の測定値の幾何平均値",
+          "choiceNumbers": [
+            1
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74088000&dataType=0&pageNo=1",
+          "excerpt": "前二条の規定は、C測定",
+          "choiceNumbers": [
+            1
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=00tc7653&dataType=1&pageNo=1",
+          "excerpt": "長期間ばく露することにより健康障害が生ずることが知られている物質",
+          "choiceNumbers": [
+            3
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=00tc7653&dataType=1&pageNo=1",
+          "excerpt": "いかなる短時間のばく露においても超えてはならない基準値",
+          "choiceNumbers": [
+            4
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74ab9254&dataType=0&pageNo=1",
+          "excerpt": "濃度が最も高くなると思われる十五分間のばく露",
+          "choiceNumbers": [
+            4
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=00tc7653&dataType=1&pageNo=1",
+          "excerpt": "当該物質には、濃度基準値の設定がなされていない",
+          "choiceNumbers": [
+            5
+          ]
+        }
+      ],
+      "reviewIssues": []
+    }
+  }
+}

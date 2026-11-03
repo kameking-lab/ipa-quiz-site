@@ -1,0 +1,61 @@
+{
+  "atUtc": "2026-10-07T12:36:46.572110+00:00",
+  "result": "LOCAL_CHECK_PASS",
+  "candidateSha256": "a38a116d0ba3a187a13250fd33e54f9abe8889dfe96df367d5bc505f1f19c8b6",
+  "units": 5,
+  "options": 75,
+  "officialKanaAnswers": [
+    "ロ",
+    "ヘ",
+    "ホ",
+    "カ",
+    "イ"
+  ],
+  "nativeAnswerKeys": [
+    "イ",
+    "カ",
+    "オ",
+    "セ",
+    "ア"
+  ],
+  "numericalSubstitutions": [
+    {
+      "e": 2,
+      "n": 7,
+      "mu": 3,
+      "E": 5,
+      "D": 11,
+      "v": -15,
+      "current": 210,
+      "dnDx": "-105/11",
+      "balance": "0"
+    },
+    {
+      "e": 3,
+      "n": 13,
+      "mu": 5,
+      "E": -2,
+      "D": 7,
+      "v": 10,
+      "current": -390,
+      "dnDx": "130/7",
+      "balance": "0"
+    },
+    {
+      "e": 1,
+      "n": 17,
+      "mu": 2,
+      "E": 0,
+      "D": 3,
+      "v": 0,
+      "current": 0,
+      "dnDx": "0",
+      "balance": "0"
+    }
+  ],
+  "einsteinCoefficientComparison": true,
+  "zeroFieldInferenceLimitation": "At E=0 both currents vanish; identify coefficients for general E, not divide by zero.",
+  "independentReviewPass": false,
+  "strictGenerationReceipt": null,
+  "publishAllowed": false
+}

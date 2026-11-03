@@ -19,6 +19,9 @@ vi.mock("@/lib/monitoring/sentry", () => ({
 // import 後にモックを効かせるため動的 import
 import { createCopilotResponseStream } from "@/lib/copilot/streaming";
 import type { LLMProvider } from "@/lib/ai/provider";
+import { CITATION_UNVERIFIED_NOTICE } from "@/lib/copilot/citations";
+
+const SOURCE_FOOTER = "\n---\n**参照資料（引用番号に対応）**\n- [1] [問題](/q/ip/2024-cbt/am/q1)";
 
 function chunkProvider(chunks: string[]): LLMProvider {
   return {
@@ -71,16 +74,16 @@ beforeEach(() => {
 describe("createCopilotResponseStream — 正常系", () => {
   it("チャンクをそのまま結合して流す", async () => {
     const out = await readAll(createCopilotResponseStream(baseInput()));
-    expect(out).toBe("ABC");
+    expect(out).toBe("ABC" + CITATION_UNVERIFIED_NOTICE);
   });
 
   it("hasGrounding=true かつ footer ありなら末尾に引用フッターを付与", async () => {
     const out = await readAll(
       createCopilotResponseStream(
-        baseInput({ hasGrounding: true, citationFooter: "\n\n[出典]" }),
+        baseInput({ provider: chunkProvider(["ABC [", "1]"]), hasGrounding: true, citationFooter: SOURCE_FOOTER }),
       ),
     );
-    expect(out).toBe("ABC\n\n[出典]");
+    expect(out).toBe("ABC [1]" + SOURCE_FOOTER);
   });
 
   it("hasGrounding=false なら footer があっても付与しない", async () => {
@@ -89,7 +92,7 @@ describe("createCopilotResponseStream — 正常系", () => {
         baseInput({ hasGrounding: false, citationFooter: "\n\n[出典]" }),
       ),
     );
-    expect(out).toBe("ABC");
+    expect(out).toBe("ABC" + CITATION_UNVERIFIED_NOTICE);
   });
 
   it("hasGrounding=true でも footer が空なら付与しない", async () => {
@@ -98,7 +101,7 @@ describe("createCopilotResponseStream — 正常系", () => {
         baseInput({ hasGrounding: true, citationFooter: "" }),
       ),
     );
-    expect(out).toBe("ABC");
+    expect(out).toBe("ABC" + CITATION_UNVERIFIED_NOTICE);
   });
 
   it("onComplete はフッターを除いた出力文字数で1回だけ呼ばれる", async () => {
@@ -113,7 +116,7 @@ describe("createCopilotResponseStream — 正常系", () => {
       ),
     );
     expect(onComplete).toHaveBeenCalledTimes(1);
-    expect(onComplete).toHaveBeenCalledWith(3); // "ABC" のみ（フッター除外）
+    expect(onComplete).toHaveBeenCalledWith(3, undefined); // "ABC" のみ（フッター除外）
   });
 });
 
@@ -139,6 +142,21 @@ describe("createCopilotResponseStream — エラー系", () => {
       ),
     );
     expect(onComplete).toHaveBeenCalledTimes(1);
-    expect(onComplete).toHaveBeenCalledWith(0); // throw 前に何も出ていない
+    expect(onComplete).toHaveBeenCalledWith(0, undefined); // throw 前に何も出ていない
   });
+});
+
+it("出力上限による切断を表示し、実測使用量を計上側に引き渡す", async () => {
+  const usage = { finishReason: "MAX_TOKENS", truncated: true, promptTokens: 120, outputTokens: 4, thoughtsTokens: 8 };
+  const provider: LLMProvider = {
+    name: "gemini",
+    async *streamChat(params) {
+      yield "途中";
+      params.onComplete?.(usage);
+    },
+  };
+  const onComplete = vi.fn();
+  const out = await readAll(createCopilotResponseStream(baseInput({ provider, onComplete })));
+  expect(out).toContain("[応答の途中終了]");
+  expect(onComplete).toHaveBeenCalledExactlyOnceWith(2, usage);
 });

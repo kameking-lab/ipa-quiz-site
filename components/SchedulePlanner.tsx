@@ -11,7 +11,8 @@ import {
   LEVEL_LABELS,
   REQUIRED_HOURS,
 } from "@/lib/study-plan/constants";
-import { generateStudyPlan, todayLocalDate } from "@/lib/study-plan/generator";
+import { generateStudyPlan } from "@/lib/study-plan/generator";
+import { tsuginoScheduleUrl } from "@/lib/tsugino-qualification";
 import { savePlan } from "@/lib/study-plan/storage";
 import type { KnowledgeLevel, StudyPlanInput } from "@/lib/study-plan/types";
 import { Button } from "@/components/ui/button";
@@ -56,15 +57,15 @@ const RECOMMENDED_LEVEL: KnowledgeLevel = "foundation";
 const TOTAL_STEPS = 4;
 const STEP_TITLES = [
   "受験予定の試験区分",
-  "試験日",
+  "学習期間",
   "現在の知識レベル",
   "1日の学習可能時間",
 ] as const;
 
-function defaultExamDate(): string {
+function studyEndDate(weeks: number): string {
   const d = new Date();
-  d.setMonth(d.getMonth() + 3);
-  return d.toISOString().slice(0, 10);
+  d.setDate(d.getDate() + weeks * 7);
+  return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, "0")}-${String(d.getDate()).padStart(2, "0")}`;
 }
 
 function collectCategories(exam: ExamCode): string[] {
@@ -82,7 +83,7 @@ export function SchedulePlanner() {
   const router = useRouter();
   const [step, setStep] = React.useState(1);
   const [exam, setExam] = React.useState<ExamCode>("ap");
-  const [examDate, setExamDate] = React.useState<string>(defaultExamDate());
+  const [studyWeeks, setStudyWeeks] = React.useState(4);
   const [level, setLevel] = React.useState<KnowledgeLevel>("foundation");
   const [weekdayMinutes, setWeekdayMinutes] = React.useState<number>(60);
   const [weekendMinutes, setWeekendMinutes] = React.useState<number>(180);
@@ -104,21 +105,18 @@ export function SchedulePlanner() {
     });
   };
 
-  const today = todayLocalDate();
-  const examDateInvalid = examDate <= today;
-
   const canAdvance =
     step === 1 ? Boolean(exam) :
-    step === 2 ? !examDateInvalid :
+    step === 2 ? true :
     step === 3 ? Boolean(level) :
-    step === 4 ? !examDateInvalid : false;
+    step === 4 ? true : false;
 
   const handleGenerate = () => {
-    if (examDateInvalid || submitting) return;
+    if (submitting) return;
     setSubmitting(true);
     const input: StudyPlanInput = {
       exam,
-      examDate,
+      examDate: studyEndDate(studyWeeks),
       level,
       weekdayMinutes,
       weekendMinutes,
@@ -178,26 +176,15 @@ export function SchedulePlanner() {
       {step === 2 && (
         <Card>
           <CardHeader>
-            <CardTitle>試験日</CardTitle>
+            <CardTitle>学習期間</CardTitle>
           </CardHeader>
           <CardContent>
-            <input
-              type="date"
-              value={examDate}
-              min={today}
-              onChange={(e) => setExamDate(e.target.value)}
-              aria-label="試験日"
-              aria-required="true"
-              aria-invalid={examDateInvalid || undefined}
-              aria-describedby={examDateInvalid ? "exam-date-error" : undefined}
-              className="h-12 w-full max-w-xs rounded-xl border border-border bg-background px-3 text-base focus:outline-none focus:ring-2 focus:ring-ring"
-              required
-            />
-            {examDateInvalid && (
-              <p id="exam-date-error" role="alert" className="mt-2 text-xs text-destructive">
-                試験日は明日以降を指定してください。
-              </p>
-            )}
+            <p className="mb-3 text-sm text-muted-foreground">演習を続ける期間を選んでください。実際の試験日・申込締切は <a href={tsuginoScheduleUrl(exam)} target="_blank" rel="noopener noreferrer" className="text-primary underline">次の資格</a> で確認できます。</p>
+            <select value={studyWeeks} onChange={(e) => setStudyWeeks(Number(e.target.value))} aria-label="学習期間" className="h-12 w-full max-w-xs rounded-xl border border-border bg-background px-3 text-base focus:outline-none focus:ring-2 focus:ring-ring">
+              <option value={2}>2週間</option>
+              <option value={4}>4週間</option>
+              <option value={8}>8週間</option>
+            </select>
           </CardContent>
         </Card>
       )}
@@ -349,7 +336,7 @@ export function SchedulePlanner() {
             type="submit"
             variant="primary"
             size="xl"
-            disabled={examDateInvalid || submitting}
+            disabled={submitting}
             className="w-full sm:w-auto sm:min-w-[240px]"
           >
             {submitting ? "生成中..." : "学習スケジュールを生成"}

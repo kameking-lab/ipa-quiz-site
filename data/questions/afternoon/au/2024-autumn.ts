@@ -27,7 +27,6 @@ export const AU_AFTERNOON_2024_AUTUMN: AfternoonQuestion[] = [
           "あなたが携わったシステム監査の対象組織の概要と、対象としたクラウドサービスの利用状況及び監査の背景について、800字以内で述べよ。",
         type: "essay-text",
         maxLength: 800,
-        minLength: 600,
         modelAnswer: `私が携わったシステム監査の対象は、中堅生命保険会社C社の本社及び全国12営業本部における、SaaSを中心としたクラウドサービス利用全般である。C社は保有契約件数約240万件、従業員数約3,400名の生命保険会社で、私はC社の内部監査部門に所属するシステム監査人として、本監査の主任監査人を担った。
 
 C社のクラウドサービス利用は、過去5年間で急速に拡大していた。代表的なサービスとして、(1)営業職員向けのCRM／SFA SaaS、(2)人事業務向けの人事管理SaaS、(3)会議・コラボレーションSaaS、(4)業務分析向けのBI SaaS、(5)請求書受領業務向けの電子帳票SaaSがあり、合計17サービスが本社及び営業本部で稼働していた。さらに、各部門が独自に契約している小規模SaaSが約30件存在し、情報システム部門の把握外で利用されているシャドーITが課題となっていた。
@@ -160,7 +159,7 @@ C社のクラウドサービス利用は、過去5年間で急速に拡大して
     ],
     pdfUrl:
       "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2024a05_1/2024a05a_au_pm2_qs.pdf",
-    license: "IPA-public",
+    license: "original",
     totalTimeMinutes: 120,
     industryVariants: AU_2024_AUTUMN_Q1_INDUSTRIES,
   },

@@ -1,0 +1,39 @@
+{
+  "status": "partial-accepted",
+  "date": "20240818",
+  "subject": "law",
+  "questionCount": 1,
+  "answerUnitCount": 1,
+  "choiceCount": 5,
+  "sourceQuestionPdfSha256": "5dbba8b8e4ec681d2d5f0645a3895a6e218d936519ddd18ac544ddc461a1ae78",
+  "sourceAnswerPdfSha256": "f72ecbc3a477e64948388b69cf78cb931032c9f0c688639836c8d533a949cd0f",
+  "reviewedDataSha256": "7c6f0e62f0f0081019df81999f995113bed0c63890ec6a09f583c050d083c02d",
+  "questions": [
+    {
+      "number": 7,
+      "sourceDraftSha256": "8424c6ad02171222bf672224d212a25d78b8f1af5eb8e320d7060023555fd22a",
+      "opusReceipt": "data/raw_pdfs/denken3/review/20240818/law/q07-opus-review.json",
+      "opusReceiptSha256": "ee508b885eae1156c5728f6332b1a24b7f733b19014426872f13dd6f4bad22f3",
+      "assessment": {
+        "number": 7,
+        "status": "PASS",
+        "textIssues": [],
+        "choiceIssues": [],
+        "explanationIssues": [],
+        "figureIssues": [],
+        "externalSourceIssues": [
+          "要外部確認: 解説で引用している「電気設備技術基準の解釈」第229条・229-1表の異常名称（「発電電圧異常上昇/異常低下」）と、参照URLの経済産業省PDF 224〜225頁という条番号・頁位置は、問題PDF画像だけでは確定できない。最新版の解釈原文で確認が必要。"
+        ]
+      },
+      "figureSha256": {}
+    }
+  ],
+  "strictReview": {
+    "q07": {
+      "path": "docs/evidence/denken3/strict/20240818-law-l18-q07-opus.json",
+      "sha256": "5b2be9039904e0b5c68cf1cd670a28afae4b4e308ccfa927b5aef4be3f8df5bf",
+      "status": "PASS",
+      "resolvedModel": "claude-opus-5-5"
+    }
+  }
+}

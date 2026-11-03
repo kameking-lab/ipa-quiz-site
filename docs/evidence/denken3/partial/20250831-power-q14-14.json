@@ -1,0 +1,37 @@
+{
+  "status": "partial-accepted",
+  "date": "20250831",
+  "subject": "power",
+  "questionCount": 1,
+  "answerUnitCount": 1,
+  "choiceCount": 5,
+  "sourceQuestionPdfSha256": "567aac1df6dc0c0950d04e90a1ad03231427c518eede92559effe01e2b97a2c9",
+  "sourceAnswerPdfSha256": "76fd3715ed487d19a56b387fb402de20ee09474e9fa55b0413f9037b96af06c9",
+  "reviewedDataSha256": "4ddac8860ddf3d138e151af6c54a09c33cb9ad5c49b6467bff7f6694871a057a",
+  "questions": [
+    {
+      "number": 14,
+      "sourceDraftSha256": "fc51501402cff17ceb885e1ae527419a7e234da74044bd8acb5a8b5b73e52809",
+      "opusReceipt": "data/raw_pdfs/denken3/review/20250831/power/q14-opus-review.json",
+      "opusReceiptSha256": "d1ac102ae4511e61bef2873642a49357cb1683e63e39c164e94b20d9ea6e1c03",
+      "assessment": {
+        "number": 14,
+        "status": "PASS",
+        "textIssues": [],
+        "choiceIssues": [],
+        "explanationIssues": [],
+        "figureIssues": [],
+        "externalSourceIssues": []
+      },
+      "figureSha256": {}
+    }
+  ],
+  "strictReview": {
+    "q14": {
+      "path": "docs/evidence/denken3/strict/20250831-power-s2-q14-opus.json",
+      "sha256": "9b29fede3d75f74b78f4ff5fd2baba7434292007d78ff34db640aa4beef6dec8",
+      "status": "PASS",
+      "resolvedModel": "claude-opus-5-5"
+    }
+  }
+}

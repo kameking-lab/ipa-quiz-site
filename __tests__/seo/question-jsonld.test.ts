@@ -2,6 +2,8 @@ import { describe, expect, it } from "vitest";
 
 import { buildQuestionJsonLd, sessionLabel } from "@/lib/seo/question-jsonld";
 import type { Question, Session } from "@/lib/questions/types";
+import { SHIKA_ISHI_QUESTIONS } from "@/data/questions/shika-ishi";
+import { JUDO_SEIFUKUSHI_QUESTIONS } from "@/data/questions/judo-seifukushi";
 
 const baseQuestion: Question = {
   id: "ap-2024s-am-q1",
@@ -33,138 +35,129 @@ function build(q: Question = baseQuestion) {
 }
 
 describe("buildQuestionJsonLd", () => {
-  it("emits exactly QAPage, LearningResource, and BreadcrumbList (no Quiz)", () => {
+  it("models an editorial problem as a LearningResource, never a QAPage", () => {
     const graph = build()["@graph"];
-    const types = graph.map((n) => (n as { "@type": string })["@type"]);
-    expect(types).toEqual(["QAPage", "LearningResource", "BreadcrumbList"]);
-    expect(types).not.toContain("Quiz");
+    const types = graph.map((node) => (node as { "@type": string })["@type"]);
+    expect(types).toEqual(["LearningResource", "BreadcrumbList"]);
+    expect(types).not.toContain("QAPage");
   });
 
-  it("does not list the accepted answer inside suggestedAnswer", () => {
-    const graph = build()["@graph"];
-    const qapage = graph[0] as {
-      mainEntity: {
-        acceptedAnswer: { text: string };
-        suggestedAnswer: { text: string }[];
+  it("nests the real Question and only its published accepted answer", () => {
+    const resource = build()["@graph"][0] as {
+      hasPart: {
+        "@type": string;
+        answerCount?: number;
+        suggestedAnswer?: unknown;
+        acceptedAnswer: { "@type": string; text: string; url: string };
       };
     };
-    expect(qapage.mainEntity.acceptedAnswer.text).toBe("ウ: 選択肢C");
-
-    const suggested = qapage.mainEntity.suggestedAnswer.map((a) => a.text);
-    // The correct choice (ウ) must be excluded; the other three remain.
-    expect(suggested).toHaveLength(3);
-    expect(suggested.some((t) => t.startsWith("ウ:"))).toBe(false);
-    expect(suggested).toContain("ア: 選択肢A");
+    expect(resource.hasPart["@type"]).toBe("Question");
+    expect(resource.hasPart.acceptedAnswer).toMatchObject({
+      "@type": "Answer",
+      text: "ウ: 選択肢C",
+      url: "https://www.kakomon-ai.jp/q/ap/2024-spring/am/q1#explanation",
+    });
+    expect(resource.hasPart.suggestedAnswer).toBeUndefined();
+    expect(resource.hasPart.answerCount).toBeUndefined();
   });
 
-  it("omits suggestedAnswer when there are no other choices", () => {
-    const single: Question = { ...baseQuestion, choices: { ウ: "選択肢C" } };
-    const qapage = build(single)["@graph"][0] as {
-      mainEntity: Record<string, unknown>;
-    };
-    expect(qapage.mainEntity.suggestedAnswer).toBeUndefined();
+  it("keeps dates, authorship and publisher metadata on the resource", () => {
+    const resource = build()["@graph"][0];
+    if (!("hasPart" in resource) || !("publisher" in resource)) throw new Error("Missing learning resource metadata");
+    if (!("acceptedAnswer" in resource.hasPart)) throw new Error("Missing accepted answer");
+    const answer = resource.hasPart.acceptedAnswer;
+    if (!answer || Array.isArray(answer)) throw new Error("Expected one published accepted answer");
+    expect(resource.dateModified).toBe("2026-05-23T00:00:00+09:00");
+    expect(resource.publisher["@id"]).toMatch(/#organization$/);
+    expect(resource.publisher.name).toBe("過去問AI");
+    expect(resource.publisher.url).toMatch(/^https?:\/\//);
+    expect(resource.hasPart.author.name).toBe("情報処理推進機構 (IPA)");
+    expect(resource.creator).toMatchObject({ name: "情報処理推進機構 (IPA)" });
+    expect(resource.hasPart).not.toHaveProperty("datePublished");
+    expect(resource.hasPart).not.toHaveProperty("dateCreated");
+    expect(answer.author.name).toBe("過去問AI");
+    expect(answer).not.toHaveProperty("datePublished");
+    expect(answer.upvoteCount).toBe(0);
   });
 
-  it("carries a timezone-qualified dateModified on the QAPage node", () => {
-    const qapage = build()["@graph"][0] as { dateModified: string };
-    expect(qapage.dateModified).toBe("2026-05-23T00:00:00+09:00");
-  });
-
-  // The /q page does not embed the full Organization node, so the
-  // LearningResource publisher's @id reference must self-resolve (name + url)
-  // or it dangles — the same defect fixed for the exam-hub Course.provider.
-  // A revert to a bare {@type,@id} stub re-breaks this.
-  it("the LearningResource publisher @id reference self-resolves (name + url)", () => {
-    const learningResource = build()["@graph"][1] as {
-      "@type": string;
-      publisher: { "@type": string; "@id": string; name?: string; url?: string };
-    };
-    expect(learningResource["@type"]).toBe("LearningResource");
-    expect(learningResource.publisher["@id"]).toMatch(/#organization$/);
-    expect(learningResource.publisher.name).toBe("過去問AI");
-    expect(typeof learningResource.publisher.url).toBe("string");
-    expect(learningResource.publisher.url).toMatch(/^https?:\/\//);
-  });
-});
-
-// Google Q&A rich-result compliance — the critical error (missing answerCount)
-// plus the recommended-field warnings (author / datePublished / upvoteCount /
-// url) on the Question and every Answer (phase 14 / 致命傷⑥).
-describe("buildQuestionJsonLd — Q&A rich-result compliance", () => {
-  type Answer = {
-    "@type": "Answer";
-    text: string;
-    url?: string;
-    author?: { "@type": string; name: string; url: string };
-    datePublished?: string;
-    upvoteCount?: number;
-  };
-  type QuestionNode = {
-    answerCount?: number;
-    author?: { "@type": string; name: string; url: string };
-    datePublished?: string;
-    dateCreated?: string;
-    upvoteCount?: number;
-    url?: string;
-    acceptedAnswer: Answer;
-    suggestedAnswer?: Answer[];
-  };
-
-  const question = () =>
-    (build()["@graph"][0] as { mainEntity: QuestionNode }).mainEntity;
-
-  it("sets the required answerCount = correct + distractors", () => {
-    expect(question().answerCount).toBe(4); // 1 accepted + 3 suggested
-  });
-
-  it("answerCount is 1 when the question has only the correct choice", () => {
-    const single: Question = { ...baseQuestion, choices: { ウ: "選択肢C" } };
-    const q = (build(single)["@graph"][0] as { mainEntity: QuestionNode }).mainEntity;
-    expect(q.answerCount).toBe(1);
-    expect(q.suggestedAnswer).toBeUndefined();
-  });
-
-  it("the Question carries every recommended field (clears the warnings)", () => {
-    const q = question();
-    expect(q.author).toMatchObject({ "@type": "Organization", name: "情報処理推進機構 (IPA)" });
-    expect(q.upvoteCount).toBe(0);
-    expect(q.url).toBe("https://www.kakomon-ai.jp/q/ap/2024-spring/am/q1");
-    // datePublished/dateCreated are timezone-qualified ISO 8601 datetimes
-    // anchored to the exam year (clears Google's "no timezone" warnings).
-    expect(q.datePublished).toMatch(/^2024-\d{2}-\d{2}T00:00:00\+09:00$/);
-    expect(q.dateCreated).toBe(q.datePublished);
-  });
-
-  it("the accepted answer carries author/date/upvote and links to #explanation", () => {
-    const a = question().acceptedAnswer;
-    expect(a.url).toBe("https://www.kakomon-ai.jp/q/ap/2024-spring/am/q1#explanation");
-    expect(a.author).toMatchObject({ "@type": "Organization", name: "過去問AI" });
-    expect(a.datePublished).toBe("2026-05-23T00:00:00+09:00");
-    expect(a.upvoteCount).toBe(0);
-  });
-
-  it("every suggested answer also carries the recommended fields", () => {
-    const suggested = question().suggestedAnswer ?? [];
-    expect(suggested).toHaveLength(3);
-    for (const a of suggested) {
-      expect(typeof a.url).toBe("string");
-      expect(a.author).toMatchObject({ "@type": "Organization", name: "過去問AI" });
-      expect(a.datePublished).toBe("2026-05-23T00:00:00+09:00");
-      expect(a.upvoteCount).toBe(0);
+  it("omits unknown or invalid recorded dates instead of inventing publication dates", () => {
+    for (const lastUpdatedISO of [undefined, "", "2026-02-30"]) {
+      const graph = buildQuestionJsonLd({
+        question: baseQuestion,
+        pageUrlAbs: "https://www.kakomon-ai.jp/q/ap/2024-spring/am/q1",
+        title: "テストタイトル",
+        lastUpdatedISO,
+      })["@graph"];
+      const resource = graph[0];
+      if (!("hasPart" in resource)) throw new Error("Missing question");
+      expect(resource).not.toHaveProperty("dateModified");
+      expect(resource.hasPart).not.toHaveProperty("datePublished");
+      expect(resource.hasPart).toHaveProperty("acceptedAnswer");
+      expect(resource.hasPart).not.toHaveProperty("acceptedAnswer.datePublished");
     }
   });
 
-  it("no Question/Answer recommended field is left undefined (zero-warning guard)", () => {
-    const q = question();
-    const required = (a: Answer) =>
-      [a.text, a.url, a.author, a.datePublished, a.upvoteCount].every(
-        (v) => v !== undefined && v !== null,
-      );
-    expect(required(q.acceptedAnswer)).toBe(true);
-    for (const a of q.suggestedAnswer ?? []) expect(required(a)).toBe(true);
-    for (const v of [q.answerCount, q.author, q.datePublished, q.dateCreated, q.upvoteCount, q.url]) {
-      expect(v).not.toBeUndefined();
-    }
+  it("keeps the public canonical resource distinct from requested breadcrumb context", () => {
+    const canonical = "https://www.kakomon-ai.jp/q/ap/2024-spring/am/q1";
+    const requested = "https://www.kakomon-ai.jp/q/ap/2025-spring/am/q1";
+    const graph = buildQuestionJsonLd({
+      question: baseQuestion,
+      pageUrlAbs: canonical,
+      requestedPageUrlAbs: requested,
+      title: "テストタイトル",
+    })["@graph"];
+    const resource = graph[0];
+    if (!("hasPart" in resource)) throw new Error("Missing question");
+    expect(resource["@id"]).toBe(`${canonical}#learning-resource`);
+    expect(resource.url).toBe(canonical);
+    expect(resource.isAccessibleForFree).toBe(true);
+    expect(resource.hasPart.url).toBe(canonical);
+    expect(resource.hasPart).toMatchObject({ acceptedAnswer: { url: `${canonical}#explanation` } });
+    const breadcrumbs = graph[1];
+    if (!("itemListElement" in breadcrumbs)) throw new Error("Missing breadcrumbs");
+    expect(breadcrumbs.itemListElement.at(-1)?.item).toBe(requested);
+    expect(resource).not.toHaveProperty("dateModified");
+  });
+  it("attributes a published dental question to MHLW without an IPA license URL", () => {
+    const dental = SHIKA_ISHI_QUESTIONS[0];
+    if (!dental) throw new Error("Missing published dental question");
+    const resource = buildQuestionJsonLd({
+      question: dental,
+      pageUrlAbs: "https://www.kakomon-ai.jp/q/" + dental.exam + "/" + dental.year + "-" + dental.season + "/" + dental.session + "/q" + dental.qNumber,
+      title: "Dental exam question",
+      lastUpdatedISO: "2026-10-11",
+    })["@graph"][0] as {
+      hasPart: { author: { name: string; url: string } };
+      license?: string;
+    };
+    expect(resource.hasPart.author).toMatchObject({
+      name: "厚生労働省",
+      url: "https://www.mhlw.go.jp/",
+    });
+    expect(resource.license).toBeUndefined();
+    expect(JSON.stringify(resource)).not.toContain("https://www.ipa.go.jp/shiken/faq.html");
+  });
+  it("attributes a published judo question to ZAIJUSEI without inventing a license", () => {
+    const judo = JUDO_SEIFUKUSHI_QUESTIONS[0];
+    if (!judo) throw new Error("Missing published judo question");
+    const resource = buildQuestionJsonLd({
+      question: judo,
+      pageUrlAbs: `https://www.kakomon-ai.jp/q/${judo.exam}/${judo.year}-${judo.season}/${judo.session}/q${judo.qNumber}`,
+      title: "Judo exam question",
+      lastUpdatedISO: "2026-10-11",
+    })["@graph"][0] as {
+      hasPart: { author: { name: string; url: string } };
+      creator: { name: string; url: string };
+      license?: string;
+    };
+    const expectedAuthor = {
+      name: "公益財団法人柔道整復研修試験財団",
+      url: "https://www.zaijusei.com/",
+    };
+    expect(resource.hasPart.author).toMatchObject(expectedAuthor);
+    expect(resource.creator).toMatchObject(expectedAuthor);
+    expect(resource.license).toBeUndefined();
+    expect(JSON.stringify(resource)).not.toContain("https://www.ipa.go.jp/shiken/faq.html");
   });
 });
 
@@ -179,16 +172,9 @@ describe("sessionLabel", () => {
     expect(sessionLabel("xyz")).toBe("XYZ");
   });
 
-  // The label map is typed Record<string,string> and takes `session: string`,
-  // so it is NOT bound to the Session union — a dropped/typo'd key or a newly
-  // added union member silently falls through to the raw-code fallback
-  // (`session.toUpperCase()`), leaking "AM2" instead of "午前II" into the
-  // question-page breadcrumb and Q&A JSON-LD (SEO-visible). The exhaustive
-  // Record<Session,true> below is a compile-time guard: adding a Session member
-  // without listing it here is a typecheck error, forcing the label coverage
-  // check to follow. (Same class as EXAM_LABELS, S93.)
-  it("maps every Session union member to a real label, never the raw-code fallback", () => {
+  it("maps every Session union member to a real label", () => {
     const SESSION_PRESENCE: Record<Session, true> = {
+      gyosei: true, kanri: true, kansa: true,
       am: true,
       am1: true,
       am2: true,
@@ -198,15 +184,54 @@ describe("sessionLabel", () => {
       "kamoku-a": true,
       "kamoku-b": true,
       gakka: true,
-      riron: true,
+      rousai: true,
+      koyou: true,
+      kenpo: true,
+      kounen: true,
+      kokunen: true,
+      ippan: true,
+      sentaku: true,
+      required: true,
+      theory: true,
+      practical: true,
+          riron: true,
+          denryoku: true,
+          kikai: true,
+          houki: true,
+          kogaku: true,
+      hoki: true,
+      tiri: true,
+      kiso: true,
+      "kogaku-a": true,
+      "kogaku-b": true,
+      "mondai-a": true,
+      "mondai-b": true,
+      "mondai-c": true,
+      "mondai-d": true,
+          kyotsu: true,
+          senmon: true,
+          "hoiku-genri": true,
+          "kyoiku-genri": true,
+          "shakaiteki-yougo": true,
+          "kodomo-katei-fukushi": true,
+          "shakai-fukushi": true,
+          "hoiku-shinrigaku": true,
+          "kodomo-hoken": true,
+          "kodomo-shokueiyou": true,
+          "hoiku-jisshu-riron": true,
+      keizai: true,
+      zaimu: true,
+      kigyo: true,
+      unei: true,
+      "keiei-houmu": true,
+      "keiei-joho": true,
+      "chusho-seisaku": true,
+      "gas-law": true,
+      "gas-basic": true,
+      "gas-technology": true,
     };
-    const ALL_SESSIONS = Object.keys(SESSION_PRESENCE) as Session[];
-    for (const s of ALL_SESSIONS) {
-      const label = sessionLabel(s);
-      expect(label.length).toBeGreaterThan(0);
-      // A label resolved from the map is the Japanese name; the fallback would
-      // be the upper-cased raw code. They must differ for every union member.
-      expect(label).not.toBe(s.toUpperCase());
+    for (const session of Object.keys(SESSION_PRESENCE) as Session[]) {
+      expect(sessionLabel(session)).not.toBe(session.toUpperCase());
     }
   });
 });

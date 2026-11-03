@@ -1,0 +1,55 @@
+{
+  "reviewModel": "claude-opus-5-5",
+  "requestedModel": "claude-opus-5-5",
+  "canonicalModel": "claude-opus-5-5",
+  "provider": "firstParty",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 1743,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 11481,
+      "webSearchRequests": 0,
+      "costUSD": 0.1269718,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 1447,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponsePath": "data/exam-library/emkohyo-review/emkohyo-EM20261806-q18-18-raw-response.txt",
+  "rawResponseSha256": "816f22adba24d4cdd6c1b68f3b2e8ec8022ce011f2b3894112c75d1e5fd97356",
+  "paperId": "emkohyo-EM20261806",
+  "ids": [
+    "emkohyo-EM20261806-q18"
+  ],
+  "figureSha256": {
+    "emkohyo-EM20261806-q18": {}
+  },
+  "officialRowImageSha256": {
+    "emkohyo-EM20261806-q18": {
+      "/exam-library/emkohyo-EM20261806/q18-p11-1.webp": "0c52a4c4e1d309d34d046cd8ea9c8731f4d515f2828b5cb18593407c27a0e320"
+    }
+  },
+  "officialPageImageSha256": {},
+  "governmentSourceImageSha256": {},
+  "candidateSha256": {
+    "emkohyo-EM20261806-q18": "64c08aa893ec3d2cf51cc03190fa4ee69021350ee73426cec8d070efb95eb03c"
+  },
+  "sourcePackPath": "docs/evidence/emkohyo-choice-sources/emkohyo-EM20261806-q18-18.json",
+  "sourcePackSha256": "b3b90d9a2fe028955e19a56a70464e0c8e7aee82d0a9d006851004e7fbedab0a",
+  "assessment": {
+    "emkohyo-EM20261806-q18": {
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "reasonIssues": [
+        "選択肢1の理由は「3.2 %はこの計算結果と一致しない」とだけ書いており、この誤答が生じる原因を説明していない。3.2 %は、補正係数1.25を掛けない誤りと、有効面積を掛けない誤りを両方犯した場合の値である。計算は280÷7000＝0.04 mg・cm⁻²、これを石英量0.04 mgとみなして0.04÷1.26≈3.17 %≈3.2 %となる。選択肢2・4と同じ水準で原因を明記すべきである。"
+      ],
+      "sourceIssues": [],
+      "needsExternalCheck": []
+    }
+  }
+}

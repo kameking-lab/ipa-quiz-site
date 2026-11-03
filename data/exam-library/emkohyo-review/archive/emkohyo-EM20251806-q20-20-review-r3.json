@@ -1,0 +1,65 @@
+{
+  "reviewModel": "claude-opus-5-5",
+  "requestedModel": "claude-opus-5-5",
+  "canonicalModel": "claude-opus-5-5",
+  "provider": "firstParty",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 3409,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 14084,
+      "webSearchRequests": 0,
+      "costUSD": 0.1811158,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 2067,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponsePath": "data/exam-library/emkohyo-review/emkohyo-EM20251806-q20-20-raw-response.txt",
+  "rawResponseSha256": "883f7a2a1b731822f3041a493c1677084c1fc3dff2bbe90aa1c7af2c46799540",
+  "paperId": "emkohyo-EM20251806",
+  "ids": [
+    "emkohyo-EM20251806-q20"
+  ],
+  "figureSha256": {
+    "emkohyo-EM20251806-q20": {}
+  },
+  "officialRowImageSha256": {
+    "emkohyo-EM20251806-q20": {
+      "/exam-library/emkohyo-EM20251806/q20-p11-1.webp": "75f2069c146cebd674c20b8b0ea5ccba7d196c9cd5564d581bbc7e403f86f4a5"
+    }
+  },
+  "officialPageImageSha256": {},
+  "governmentSourceImageSha256": {},
+  "candidateSha256": {
+    "emkohyo-EM20251806-q20": "8ae42a90495f3195293e7ff30365b1e0d5d36633d23f9f069c96a567d140344c"
+  },
+  "sourcePackPath": "docs/evidence/emkohyo-choice-sources/emkohyo-EM20251806-q20-20.json",
+  "sourcePackSha256": "919ec50508e99f5c2bf62530292f5322ae10aae958e8dd5fcb6df9f49db3475a",
+  "assessment": {
+    "emkohyo-EM20251806-q20": {
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "reasonIssues": [
+        "肢5: 環境省マニュアル（p.25）の終了条件は「100視野になるまで、あるいは繊維数が200本以上になるまで」。本肢の視野数条件（100視野）はこれと一致し、誤りは繊維数（100本→正しくは200本）だけである。理由文はこの点を明示していない。代わりに告示の50視野や厚労省資料の50視野を並べて「視野数の条件は資料で異なる」としており、どこが誤りかの因果がぼやけている。「視野数100は正しく、繊維数200本を100本とした点が誤り」と明記すべき。",
+        "肢5: 結びの「小円（直径0.1 mm）で計数する場合だけに適用される別の終了条件を定めた政府資料は確認できなかった」は、本肢の前提（小円内で計数）と引用根拠との対応を自ら否定する書き方になっている。環境省マニュアルの計数視野（アイピースグレーティクルの円の直径）が0.1 mm（100 μm）であることを確認できれば、マニュアルの終了条件をそのまま本肢に当てられる。確認して根拠として書くか、この一文を削除すべき。",
+        "肢5: 告示第93号の引用が原文と一致しない。原文は「計数繊維製の合計」（原文の誤字）だが、理由文では鉤括弧内を「計数繊維数の合計」に改めている。鉤括弧で引用する以上、原文どおり記すか、括弧を外して要約表現にすべき。",
+        "肢5: 環境庁告示第93号は大気環境（敷地境界等）の測定法、厚労省資料は解体工事現場向けの計数条件（50視野）である。いずれも作業環境測定の位相差顕微鏡計数とは適用場面や計数視野の面積が異なりうる。視野数が異なる理由の説明がないまま並列しているため、読者が視野数条件を誤解しうる。"
+      ],
+      "sourceIssues": [
+        "https://www.mhlw.go.jp/shingi/2007/11/dl/s1126-8i.pdf: 抽出文脈の直後に「平成19年版公共建築改修工事標準仕様書（建築工事編）（抜粋）」とある。資料題名「建築物の解体等工事における石綿粉じんへのばく露防止マニュアル抜粋」が、該当表（計数条件：総アスベスト繊維数200本又は視野数50視野）の出典として正確か、証拠からは確認できない。",
+        "https://www.env.go.jp/hourei/04/000055.html: 大気汚染防止法に基づく特定粉じん（敷地境界基準）の測定法であり、作業環境測定における小円内計数の終了条件を直接定めた資料ではない。繊維数200本という補強材料にはなるが、本肢の直接根拠は環境省マニュアルp.25に限られる。"
+      ],
+      "needsExternalCheck": [
+        "環境省アスベストモニタリングマニュアル第4.2版で、計数視野とするアイピースグレーティクルの円の直径が100 μm（0.1 mm）と定められているか（同マニュアルの「100視野／200本以上」が小円内計数の条件として本肢に直接対応するかの確認）。",
+        "作業環境測定ガイドブック1（日本作業環境測定協会）で、アイピースグレーティクルの大円・小円ごとに視野数の終了条件が区別されているか（小円：100視野／200本以上か）。",
+        "mhlw s1126-8i.pdf の p.4 にある計数条件表の原典が、ばく露防止マニュアルなのか公共建築改修工事標準仕様書なのか。"
+      ]
+    }
+  }
+}

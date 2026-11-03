@@ -1,0 +1,45 @@
+{
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 2976,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 21658,
+      "webSearchRequests": 0,
+      "costUSD": 0.2330478,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 2884,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "f065c5b1d1b7eeae0ae95c14f62831a9a8e648ae5319ecbc5a97d6a4324298b9",
+  "draftSha256": {
+    "18": "8cf7e7d2b53efe4f726df45da589da92a793a721a73868a7d284de4b6b62bc89"
+  },
+  "figureSha256": {
+    "20260322-theory-q18-fig1": "5e0a6667c08ffaf11f170910763b08f03cb02ad9a2424c2b453860059f524982",
+    "20260322-theory-q18-fig2": "7f460ebdc0778aae5c836fc2b6c8b47e36173da5e49ada080aef54b9b2ed67ba"
+  },
+  "basisPageSha256": {},
+  "referenceJsonSha256": {},
+  "referencePdfSha256": {},
+  "referencePageSha256": {},
+  "sourceQuestionPdfSha256": "c83e7c7350d98b65f5d8da0b93e4a2581a19dd250be320fb7fc492c9b34a29c1",
+  "sourceAnswerPdfSha256": "cc2890296d06a4823df5697a78a1c01ddfd39f041c51f48c87984daa3a5707c6",
+  "assessment": [
+    {
+      "number": 18,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "externalSourceIssues": []
+    }
+  ]
+}

@@ -1,0 +1,58 @@
+{
+  "reviewModel": "claude-opus-5-5",
+  "requestedModel": "claude-opus-5-5",
+  "canonicalModel": "claude-opus-5-5",
+  "provider": "firstParty",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 1492,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 15672,
+      "webSearchRequests": 0,
+      "costUSD": 0.1554798,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 1408,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponsePath": "data/exam-library/emkohyo-review/emkohyo-EM20261807-q15-15-raw-response.txt",
+  "rawResponseSha256": "29e0df0e57d60a64c82ff706fde07bd1d8966098d842e6cc6ced292fe50ebd98",
+  "paperId": "emkohyo-EM20261807",
+  "ids": [
+    "emkohyo-EM20261807-q15"
+  ],
+  "figureSha256": {
+    "emkohyo-EM20261807-q15": {
+      "/exam-library/emkohyo-EM20261807/text-q15-p10-fig1.webp": "02d11c59f12dcc5fe2a66401987c836a68b23eaf111c64ccb232b825ce4d1936",
+      "/exam-library/emkohyo-EM20261807/text-q15-p10-fig3.webp": "4cbc01c98a2e82e8238de4fdac4ac47c48ae95ffa8210f7c74b0e690f9c7c55e",
+      "/exam-library/emkohyo-EM20261807/text-q15-p10-fig2.webp": "7c07adc1f9f7c59e26f0729a3fabbf5e0933240c5a3e571f873ef538f2dc25ca",
+      "/exam-library/emkohyo-EM20261807/text-q15-p10-fig4.webp": "de7bac9f2448599754787e7ee05eefe430636a276e43c5f6185182d7ed35cd44"
+    }
+  },
+  "officialRowImageSha256": {
+    "emkohyo-EM20261807-q15": {
+      "/exam-library/emkohyo-EM20261807/q15-p10-0.webp": "e02100fe0d572db147b1059306a026ab7accfc71b0129c3df82fdd6e132e7985"
+    }
+  },
+  "officialPageImageSha256": {},
+  "governmentSourceImageSha256": {},
+  "candidateSha256": {
+    "emkohyo-EM20261807-q15": "09915a19373113e843209b6d650ad832dec71fc0adeb4a72fcbdfe4879079bc9"
+  },
+  "sourcePackPath": "docs/evidence/emkohyo-choice-sources/emkohyo-EM20261807-q15-15.json",
+  "sourcePackSha256": "c15275431a2b9efb51fbfa489592d3b1096fc796d509cf1806cdcdef7fd67188",
+  "assessment": {
+    "emkohyo-EM20261807-q15": {
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "reasonIssues": [],
+      "sourceIssues": [],
+      "needsExternalCheck": []
+    }
+  }
+}

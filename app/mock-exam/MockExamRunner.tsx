@@ -1,4 +1,5 @@
 "use client";
+import { isAcceptedAnswer, formatAcceptedAnswers, getChoiceKeys } from "@/lib/questions/answers";
 
 import * as React from "react";
 import type { ChoiceKey } from "@/lib/questions/types";
@@ -20,7 +21,7 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { addGold, addXp } from "@/lib/gamification/economy";
 import { evaluateAchievementsAfterMock } from "@/lib/gamification/achievements";
-import { getChoiceKeys } from "@/lib/questions/choices";
+
 
 interface Props {
   questions: SlimMockQuestion[];
@@ -104,8 +105,7 @@ export function MockExamRunner({ questions, config, onFinish, resumeFrom }: Prop
       for (let i = 0; i < questions.length; i++) {
         const q = questions[i];
         const ans = answers[i];
-        const correctKey = Array.isArray(q.answer) ? q.answer[0] : q.answer;
-        const isCorrect = ans === correctKey;
+        const isCorrect = isAcceptedAnswer(q.answer, ans);
         if (isCorrect) correct++;
         else wrongQuestionIds.push(q.id);
         const cat = q.category || "その他";
@@ -184,8 +184,6 @@ export function MockExamRunner({ questions, config, onFinish, resumeFrom }: Prop
   }
 
   const q = questions[index];
-  const correctKey = Array.isArray(q.answer) ? q.answer[0] : (q.answer as ChoiceKey);
-  void correctKey;
   const answered = answers.filter((a) => a !== undefined).length;
   const m = Math.floor(remaining / 60);
   const s = remaining % 60;
@@ -193,7 +191,7 @@ export function MockExamRunner({ questions, config, onFinish, resumeFrom }: Prop
   const warn = remaining <= 1800 && !danger;
 
   return (
-    <main className="mx-auto w-full max-w-3xl flex-1 px-4 pb-24 pt-4 sm:px-6">
+    <main data-study-presence-exam={q ? config.exam : undefined} className="mx-auto w-full max-w-3xl flex-1 px-4 pb-24 pt-4 sm:px-6">
       <div className="sticky top-0 z-10 -mx-4 mb-4 border-b border-zinc-200 bg-white/95 px-4 py-3 backdrop-blur dark:border-zinc-800 dark:bg-zinc-950/95 sm:-mx-6 sm:px-6">
         <div className="flex items-center justify-between gap-3">
           <div>
@@ -414,8 +412,7 @@ function ResultView({
   const wrongQuestions = questions
     .map((q, i) => ({ q, i, userAns: answers[i] }))
     .filter(({ q, userAns }) => {
-      const correctKey = Array.isArray(q.answer) ? q.answer[0] : q.answer;
-      return userAns !== correctKey;
+      return !isAcceptedAnswer(q.answer, userAns);
     });
 
   const weakCatParam = weakCats.map(([cat]) => cat).join(",");
@@ -450,14 +447,14 @@ function ResultView({
             {verdict === "合格圏内" && "🎉 "}
             {verdict === "あと一歩" && "📈 "}
             {verdict === "要対策" && "📚 "}
-            {verdict}
+            {config.exam === "sg" && verdict === "合格圏内" ? "演習目標達成" : verdict}
           </span>
           <div className="mt-3 text-xs text-zinc-500">
             {result.correct}/{result.totalQuestions}問正解 ・{" "}
             {Math.round(result.timeUsedSec / 60)}分{result.timeUsedSec % 60}秒使用
           </div>
           <div className="mt-1 text-xs text-zinc-400">
-            合格基準: {Math.round(config.passThreshold * 100)}点以上
+            {config.exam === "sg" ? "この演習の目標" : "合格基準"}: {Math.round(config.passThreshold * 100)}点以上
           </div>
         </div>
       </Card>
@@ -606,10 +603,8 @@ function ResultView({
               aria-labelledby="result-wrong"
             >
               {displayWrong.map(({ q, i, userAns }) => {
-                const correctKey = Array.isArray(q.answer)
-                  ? (q.answer[0] as ChoiceKey)
-                  : (q.answer as ChoiceKey);
-                const correctText = q.choices?.[correctKey];
+                const correctKey = formatAcceptedAnswers(q.answer);
+                const correctText = (Array.isArray(q.answer) ? q.answer : [q.answer]).map(key => q.choices?.[key as ChoiceKey]).filter(Boolean).join(" ／ ");
                 const userText = userAns ? q.choices?.[userAns] : undefined;
                 return (
                   <li

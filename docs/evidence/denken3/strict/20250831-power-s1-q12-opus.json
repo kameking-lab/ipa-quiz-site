@@ -1,0 +1,70 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20250831",
+  "subject": "power",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 2874,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 13546,
+      "webSearchRequests": 0,
+      "costUSD": 0.1661118,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 1454,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "9b0f9bc86c6e0d4a996536f5200693e6319017c26484e51662ef74f678450c32",
+  "inputRequestSha256": "bca24b6e45a1f336c2a0ea4c72945b6f2a1615f76b73776957f2dc9516ab22cc",
+  "inputHashes": {
+    "candidateSha256": {
+      "q12": "42fe91a0cd257f7930edd313d664559211b7e0c336328d33379b58aef7301e73"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20250831/power/p15.png": "fcd58cbc319bebddfa7e49c5100ff69184d787698acabe2649988054749a95a4"
+    },
+    "figureSha256": {},
+    "sourceQuestionPdfSha256": "567aac1df6dc0c0950d04e90a1ad03231427c518eede92559effe01e2b97a2c9",
+    "sourceAnswerPdfSha256": "76fd3715ed487d19a56b387fb402de20ee09474e9fa55b0413f9037b96af06c9",
+    "officialAnswerUnitsSha256": "bcc1652930f4fa8d416837cb3f6297397bfb88ad0044ea461ecfde42ce2c71cd",
+    "referencePdfSha256": {},
+    "referencePageSha256": {},
+    "referenceJsonSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q12",
+      "questionNumber": 12,
+      "part": null,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [
+        "uncertainty 欄に「出典年度は特定していない」とあるが、fiscalYear=2025・term=upper・examDate=2025-08-31・subject=power・sourceAttribution「令和7年度上期 電力科目 問12」を確定値として記載しており、候補内で矛盾している。これらのメタデータは次の根拠で裏付けられるため、uncertainty の当該文を削除するか「原本問題頁に年度表記はないが、manifest の問題PDF(20250831_ch_third_q02=電力)と公式解答表(令和7年度上期・電力 問12=4)で特定」と書き換えること。根拠は、公式解答表原図の見出し「令和7年度 第三種電気主任技術者上期試験解答」、同表の電力列 問12=4、配点5。さらに本問の計算結果 240.207 m が(4)と一致し、理論列 問12=5 の 240.25 とは一致しない。"
+      ],
+      "verifiedEvidence": [
+        "問題文: 原図と照合し、支持点間200 m、たるみ3.0 m、単位長さあたり重量が同一、水平方向引張強さが同一、支持点間240 m、実長L[m]、二支持点同高の条件がすべて一致。欠落・改変はない。",
+        "選択肢: (1)240.04 (2)240.05 (3)240.14 (4)240.21 (5)240.25 が原図と一致。",
+        "公式正答: 公式解答表原図の電力列 問12 は 解答4・配点5。候補の officialAnswer=4、scoringPoints=5、manifest の公式正答単位 {answer:4, points:5} と一致。",
+        "総合解説の検算: D=wS²/(8T) より w・T が一定なら D∝S²。D₂=3.0×(240/200)²=3.0×1.44=4.32 m。4.32²=18.6624、8×18.6624=149.2992、3×240=720、149.2992/720=0.20736 なので L=240.207 m となり、最も近いのは(4)240.21。式・数値・因果に誤りはない。",
+        "(1): 240.207−240.04=0.167 m で、「約0.17 m短く、最も近い肢ではない」との記述は正確。",
+        "(2): 反比例と誤認した場合、D=3.0×(200/240)²=2.0833 m、2.0833²=4.3403、×8=34.722、/720=0.04823 で L=240.048≒240.05 となり、記述と一致。",
+        "(3): 1乗比例と誤認した場合、D=3.6 m、3.6²=12.96、×8=103.68、/720=0.144 で L=240.144≒240.14 となり、記述と一致。",
+        "(4): 正答理由(D∝S²、D₂=4.32 m、L≒240.207 m)は正しい。",
+        "(5): 実長式の分母に旧径間を使った場合、149.2992/(3×200)=0.24883 で L=240.249≒240.25 となり、記述と一致。",
+        "図: 原図に図はなく、figureUrls=[]・choiceFigureUrls={}・figureDescription「図なし」は妥当。解答に図は不要。",
+        "出典: officialReferenceUrls=[] で、検証すべき独立主張はない。sourceQuestionPdfUrl(q02=電力)と sourceAnswerPdfUrl(a01)は試験日20250831・上期と整合。reviewedFromPage=[15] は、原図の印刷頁番号「-12-」とは別の PDF 頁番号として矛盾しない(原図フッタ T1−D 015)。",
+        "近似式の注記: たるみ・実長の式が放物線近似であるとの uncertainty の注記は正確で、解答に影響しない。"
+      ]
+    }
+  ]
+}

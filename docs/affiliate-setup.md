@@ -9,11 +9,13 @@
 `.env.local`（および Vercel の Environment Variables）に以下を設定してください。
 
 ```bash
-NEXT_PUBLIC_AMAZON_ASSOCIATE_TAG=safeaisite22-22
+NEXT_PUBLIC_AMAZON_ASSOCIATE_TAG=
 NEXT_PUBLIC_RAKUTEN_AFFILIATE_ID=5291f19d.a0fc3c16.5291f19e.b91d11f6
 ```
 
 `NEXT_PUBLIC_` プレフィックスがあるため、ブラウザ側のリンク生成にも反映されます。
+
+過去問AIの旧Amazon紹介タグ `safeaisite22-22` は2026-10-03に閉鎖が確認されました。Amazonは通常商品リンクで案内します。旧値が本番設定に残っていてもhelperがこのタグだけを除外します。別タグや他サイトの設定・アカウントは変更しません。
 
 ## 2. Amazon ASIN の取得
 
@@ -60,10 +62,10 @@ pnpm dev
 
 ## 5. リンク仕様
 
-- Amazon: `https://www.amazon.co.jp/dp/{ASIN}?tag={NEXT_PUBLIC_AMAZON_ASSOCIATE_TAG}`
+- Amazon: 通常は `https://www.amazon.co.jp/dp/{ASIN}`。空でなく閉鎖済みタグとも異なる設定値だけ、従来どおり `?tag={NEXT_PUBLIC_AMAZON_ASSOCIATE_TAG}` を付けます。
 - 楽天: `https://hb.afl.rakuten.co.jp/hgc/{NEXT_PUBLIC_RAKUTEN_AFFILIATE_ID}/?pc={商品URL}`
 
-リンクには必ず `rel="noopener noreferrer sponsored"` と `target="_blank"` を付与しています
+外部リンクには `rel="noopener noreferrer"` と `target="_blank"` を付与し、アフィリエイトリンクだけに `sponsored` とPR表示を付けます
 （`app/recommended-books/[exam]/page.tsx` の `BookCard` コンポーネント参照）。
 
 ## 6. プレースホルダー判定
@@ -79,13 +81,13 @@ pnpm dev
 - [x] 各 `/recommended-books/*` ページにアフィリエイト免責文を表示
 - [x] `/terms` の「アフィリエイトリンクについて」項目を最新化
 - [x] `rel="sponsored"` をリンクに付与（Google ガイドライン準拠）
-- [x] Amazon アソシエイト規約に基づく開示文を `/terms` に明記
+- [x] Amazon通常商品リンクと残るアフィリエイトリンクを `/terms` などで区別
 - [ ] 価格・在庫はリンク先表示が正であることをページに明示（実装済み）
 - [ ] 商品画像を本サイトに転載しない（規約遵守のためテキストのみ運用）
 
 ## 8. 効果計測
 
-- Amazon: Amazon アソシエイトの「リンクタイプレポート」で `recommended-books` 流入を確認
+- Amazon: 現在は紹介料の対象外。通常商品リンクのクリック計測と紹介料を混同しません。
 - 楽天: 楽天アフィリエイトのレポートで参照元 URL ごとに集計
 
-タグやチャネルを試験区分別に分けたい場合は、Amazon の SiteStripe 機能で個別タグを発行することも検討できます。
+Amazonタグの交換・再申請・別アカウント導入は本変更に含めません。

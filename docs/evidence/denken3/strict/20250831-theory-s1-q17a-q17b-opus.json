@@ -1,0 +1,95 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20250831",
+  "subject": "theory",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 6602,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 17937,
+      "webSearchRequests": 0,
+      "costUSD": 0.27579980000000004,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 4188,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "7168137bb7bdf9f5991ea9c8df419b06bc4912e68bb041e95e4227d182b4c606",
+  "inputRequestSha256": "93f7c3cbd75ede25ee47c29f7f42ce85b98f88f421a29e5d5cd7b53319571437",
+  "inputHashes": {
+    "candidateSha256": {
+      "q17a": "7ba17b6aa6e36d8d36e6a8b1fa1c550b90069d5b505dd5579d61d3b356783997",
+      "q17b": "7da68b6bf2ff9aeb2996b665ab9c3c8ff85bcab866878270d1e9cdf2d12daeaf"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20250831/theory/p20.png": "20e16e9ab09a70c05700dbd1c2c4e3feedbcc063db6609c6f0bf39ed8aca2313",
+      "data/raw_pdfs/denken3/review/20250831/theory/p21.png": "2039165de350f1b64fe5f0b4a455955da7a4a4d06224d107183f46e6fdedb4de"
+    },
+    "figureSha256": {},
+    "sourceQuestionPdfSha256": "11a75ffd5dd2b5309ad75370bb963c4fda9e12a812174cfa2c2237383c3a964d",
+    "sourceAnswerPdfSha256": "76fd3715ed487d19a56b387fb402de20ee09474e9fa55b0413f9037b96af06c9",
+    "officialAnswerUnitsSha256": "723f804e39b6cc35155267f08de69882b8683939c8065af5cda0e16fee07fb00",
+    "referencePdfSha256": {},
+    "referencePageSha256": {},
+    "referenceJsonSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q17a",
+      "questionNumber": 17,
+      "part": "a",
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [
+        "uncertainty に『出題年度・回は掲載ページ（-17-、T1−R 020）からは特定できない』とあるが、同じ候補の fiscalYear=2025、term=upper、sourceAttribution『令和7年度上期…理論科目 問17(a)』と矛盾している。添付の公式解答表の原図には『令和7年度 第三種電気主任技術者上期試験解答』と明記されており、理論 問17(a)=3 は候補の officialAnswer と一致する。この記述は古いまま残ったものなので、『年度・回は manifest と公式解答表（令和7年度上期）で確認済み』といった表現に改めるか、削除すること。",
+        "examDate=2025-08-31 は、添付の問題原図（p.-17-/-18-）にも解答表原図にも記載がなく、添付資料だけでは検証できない（根拠は sourceQuestionPdfUrl のファイル名『20250831』のみ）。manifest または試験センターの公式実施日程で確認するまで、確認済みの扱いにしないこと。"
+      ],
+      "verifiedEvidence": [
+        "問題文は添付原図 -17-（T1−R 020）と照合した。電荷 +4×10⁻⁸ C／+6×10⁻⁸ C、中心間距離 0.3 m、反発力 2.4×10⁻⁴ N、単位 [N·m²/C²]、ただし書き（初期電荷零、大きさは 0.3 m に比べて極めて小さい）がすべて一致する。",
+        "選択肢(1)3×10⁹、(2)4×10⁹、(3)9×10⁹、(4)12×10⁹、(5)15×10⁹ は原図と一致する。",
+        "公式解答表の原図（令和7年度上期）で理論 問17(a)=3、配点5 を確認した。manifest の answer=3、points=5 と一致する。",
+        "検算：Q_A·Q_B=2.4×10⁻¹⁵ C²、F·r²=2.4×10⁻⁴×0.09=2.16×10⁻⁵ N·m²、k=2.16×10⁻⁵/2.4×10⁻¹⁵=9×10⁹ N·m²/C²。正答(3)と一致する。",
+        "各誤答肢の逆算値を確認した。(1) 8.0×10⁻⁵ N、(2) ≒1.07×10⁻⁴ N、(3) 2.4×10⁻⁴ N、(4) 3.2×10⁻⁴ N、(5) 4.0×10⁻⁴ N。いずれも正しい。",
+        "原図に図はない。figureUrls が空で、figureDescription の『図なし』は妥当。",
+        "reviewedFromPage [20,21] は原図下部の T1−R 020／021 と整合する。(a) の本文は 020 頁で完結している。",
+        "officialReferenceUrls は空なので、独立主張の検証対象はない。"
+      ]
+    },
+    {
+      "unitKey": "q17b",
+      "questionNumber": 17,
+      "part": "b",
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [
+        "uncertainty に『出題年度・回は掲載ページ（-18-、T1−R 021）からは特定できない』とあるが、fiscalYear=2025、term=upper、sourceAttribution『令和7年度上期…理論科目 問17(b)』と矛盾している。公式解答表の原図は令和7年度上期のもので、理論 問17(b)=5 は officialAnswer と一致する。この記述は修正するか削除すること。接触時の等分配についての注記は、そのまま残してよい。",
+        "examDate=2025-08-31 は、添付の問題原図にも解答表原図にも記載がなく、添付資料だけでは検証できない（根拠は URL のファイル名『20250831』のみ）。manifest または公式実施日程で確認すること。"
+      ],
+      "verifiedEvidence": [
+        "(b) の本文は添付原図 -18-（T1−R 021）と照合し、一致した。『電荷を保持したままで0.3 mの中心間距離を隔てて固定』『大きさが等しく電荷を持たない導体球C』『まずAに接触させ、次にBに接触』『AとBの間の直線上』『Aとの中心間距離』[m] のいずれも一致する。冒頭の〔(a)の条件〕は候補側で補った文脈で、原図 -17- の記述と数値が一致しており、改変はない。",
+        "選択肢(1)0.062、(2)0.095、(3)0.105、(4)0.115、(5)0.124 は原図と一致する。",
+        "公式解答表の原図で理論 問17(b)=5、配点5 を確認した。manifest の answer=5、points=5 と一致する。",
+        "検算（電荷）：C を A に接触させると A=C=2×10⁻⁸ C、続いて C を B に接触させると B=C=(6+2)/2×10⁻⁸=4×10⁻⁸ C。",
+        "検算（釣合い）：2/x²=4/(0.3−x)² より (0.3−x)=√2·x となり、x=0.3/(1+√2)=0.12426 m。選択肢(5) 0.124 と一致する。力の向き（全電荷が正で、A からの反発は B 向き、B からの反発は A 向き）の因果の説明も正しい。k と Q_C に依存しないという記述も正しい。",
+        "各肢の比較値を検算した。(1) 5.20×10⁻⁶ 対 7.06×10⁻⁷、(2) 2.22×10⁻⁶ 対 9.52×10⁻⁷、(3) 1.81×10⁻⁶ 対 1.05×10⁻⁶、(4) 1.51×10⁻⁶ 対 1.17×10⁻⁶、(5) 1.30×10⁻⁶ 対 1.29×10⁻⁶。いずれも正しい。(1)〜(4) はすべて釣合い点より A 側にあり、A からの反発力が大きいという理由は各肢で正しく成り立つ。",
+        "原図に図はない。figureUrls が空で、figureDescription の『図なし』は妥当。",
+        "reviewedFromPage [20,21] は T1−R 020／021 と整合する（(a) の条件は 020 頁、(b) の本文は 021 頁）。",
+        "officialReferenceUrls は空なので、独立主張の検証対象はない。"
+      ]
+    }
+  ]
+}

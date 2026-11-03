@@ -1,0 +1,98 @@
+{
+  "exam": "令和8年度第二種電気工事士上期学科試験（2026-05-24実施）",
+  "scope": "配線図問題31〜50の原典目視転記。写真・図記号の選択肢は画像中の文字と客観的外観を記述する。",
+  "sources": {
+    "questionPdf": "../official/20260524_q01.pdf",
+    "answerPdf": "../official/20260524_a01.pdf",
+    "commonDiagram": "../wiring-source.png",
+    "commonInstructions": "../wiring-instructions.png",
+    "questionCrops": "../official/review/20260524/q31.png〜q50.png"
+  },
+  "commonInstructionsTranscribed": [
+    "図は、鉄筋コンクリート造集合住宅の1戸部分の配線図である。この図に関する次の各問いには4通りの答え（イ、ロ、ハ、ニ）が示してある。それぞれの問いに対して、答えを1つ選びなさい。",
+    "屋内配線の工事は、特記のある場合を除き600Vビニル絶縁ビニルシースケーブル平形（VVF）を用いたケーブル工事である。",
+    "屋内配線等の電線の本数、電線の太さ、その他、問いに直接関係のない部分等は省略又は簡略化してある。",
+    "漏電遮断器は、定格感度電流30mA、動作時間0.1秒以内のものを使用している。",
+    "選択肢（答え）の写真にある点滅器は、特記のある場合を除き『JIS C 0303：2000 構内電気設備の配線用図記号』で示す『一般形』である。",
+    "図記号で示す一般用照明にはLED照明器具を使用することとし、選択肢（答え）の写真にある照明器具は、すべてLED照明器具とする。",
+    "ジョイントボックスを経由する電線は、すべて接続箇所を設けている。",
+    "3路スイッチの記号『0』の端子には、電源側又は負荷側の電線を結線する。"
+  ],
+  "questions": [
+    {"number":31,"sourceCrop":"../official/review/20260524/q31.png","question":"①で示す部分の小勢力回路で使用できる電圧の最大値［V］は。","choices":[{"label":"イ","text":"24"},{"label":"ロ","text":"30"},{"label":"ハ","text":"40"},{"label":"ニ","text":"60"}],"officialAnswer":"ニ"},
+    {"number":32,"sourceCrop":"../official/review/20260524/q32.png","question":"②で示す部分の最少電線本数（心線数）は。","choices":[{"label":"イ","text":"3"},{"label":"ロ","text":"4"},{"label":"ハ","text":"5"},{"label":"ニ","text":"6"}],"officialAnswer":"ハ","diagramObservationRef":"q32"},
+    {"number":33,"sourceCrop":"../official/review/20260524/q33.png","question":"③で示す図記号の器具の種類は。","choices":[{"label":"イ","text":"遅延スイッチ"},{"label":"ロ","text":"熱線式自動スイッチ"},{"label":"ハ","text":"位置表示灯を内蔵する点滅器"},{"label":"ニ","text":"確認表示灯を内蔵する点滅器"}],"officialAnswer":"ニ"},
+    {"number":34,"sourceCrop":"../official/review/20260524/q34.png","question":"④で示す図記号の器具の種類は。","choices":[{"label":"イ","text":"接地極付接地端子付漏電遮断器付コンセント"},{"label":"ロ","text":"接地極付コンセント"},{"label":"ハ","text":"接地極付接地端子付コンセント"},{"label":"ニ","text":"接地端子付コンセント"}],"officialAnswer":"イ"},
+    {"number":35,"sourceCrop":"../official/review/20260524/q35.png","question":"⑤で示す部分にペンダントを取り付けたい。図記号は。","choices":[{"label":"イ","imageDescription":"円内に『CL』。"},{"label":"ロ","imageDescription":"円の中央に水平線1本。"},{"label":"ハ","imageDescription":"円内に向かい合う二つの円弧。"},{"label":"ニ","imageDescription":"円内に『CH』。"}],"officialAnswer":"ロ"},
+    {"number":36,"sourceCrop":"../official/review/20260524/q36.png","question":"⑥で示す部分はルームエアコンの屋内ユニットである。その図記号の傍記表示は。","choices":[{"label":"イ","text":"B"},{"label":"ロ","text":"O"},{"label":"ハ","text":"I"},{"label":"ニ","text":"R"}],"officialAnswer":"ハ"},
+    {"number":37,"sourceCrop":"../official/review/20260524/q37.png","question":"⑦で示すコンセントの極配置（刃受）は。","choices":[{"label":"イ","imageDescription":"円内に縦長の平行2極と下側の接地極。"},{"label":"ロ","imageDescription":"円内に左側の横向きT字状極、右側の縦長極。"},{"label":"ハ","imageDescription":"円内に左側のL字状極、右側の横長極。"},{"label":"ニ","imageDescription":"円内に横長の平行2極と下側の接地極。"}],"officialAnswer":"ニ"},
+    {"number":38,"sourceCrop":"../official/review/20260524/q38.png","question":"⑧で示す器具は抜け止め形の防雨形コンセントである。その図記号の傍記表示は。","choices":[{"label":"イ","text":"K"},{"label":"ロ","text":"LK"},{"label":"ハ","text":"L"},{"label":"ニ","text":"T"}],"officialAnswer":"ロ"},
+    {"number":39,"sourceCrop":"../official/review/20260524/q39.png","question":"⑨で示す部分の電路と大地間の絶縁抵抗として、許容される最小値［MΩ］は。","choices":[{"label":"イ","text":"0.1"},{"label":"ロ","text":"0.2"},{"label":"ハ","text":"0.4"},{"label":"ニ","text":"1.0"}],"officialAnswer":"イ"},
+    {"number":40,"sourceCrop":"../official/review/20260524/q40.png","question":"⑩で示す図記号の器具の種類は。","choices":[{"label":"イ","text":"引掛シーリング（丸）"},{"label":"ロ","text":"シーリング（天井直付）"},{"label":"ハ","text":"天井コンセント（引掛形）"},{"label":"ニ","text":"埋込器具"}],"officialAnswer":"ニ"},
+    {"number":41,"sourceCrop":"../official/review/20260524/q41.png","question":"⑪で示すボックス内の接続をすべて圧着接続とする場合、使用するリングスリーブの種類と最小個数の組合せで、正しいものは。ただし、使用する電線はすべてVVF1.6とする。","choices":[{"label":"イ","imageDescription":"リングスリーブ小3個。"},{"label":"ロ","imageDescription":"リングスリーブ小4個。"},{"label":"ハ","imageDescription":"リングスリーブ小3個、中1個。"},{"label":"ニ","imageDescription":"リングスリーブ小1個、中2個。"}],"officialAnswer":"ニ","diagramObservationRef":"q41"},
+    {"number":42,"sourceCrop":"../official/review/20260524/q42.png","question":"⑫で示す部分の配線工事に必要なケーブルは。ただし、使用するケーブルの心線数は最少とする。","choices":[{"label":"イ","imageDescription":"赤・白・黒の3心ケーブル1本。"},{"label":"ロ","imageDescription":"赤・白・黒の3心ケーブル1本と白・黒の2心ケーブル1本。"},{"label":"ハ","imageDescription":"白・黒の2心ケーブル2本。"},{"label":"ニ","imageDescription":"赤・白・黒の3心ケーブル2本。"}],"officialAnswer":"ハ","diagramObservationRef":"q42"},
+    {"number":43,"sourceCrop":"../official/review/20260524/q43.png","question":"⑬で示す部分に取り付ける機器は。","choices":[{"label":"イ","imageDescription":"50A表示の3極配線用遮断器。"},{"label":"ロ","imageDescription":"50A表示、N極、試験ボタンおよび白い引出し線を備える遮断器。"},{"label":"ハ","imageDescription":"輪状の変流器と別体の表示・操作器の組。"},{"label":"ニ","imageDescription":"上部に接触器、下部に調整つまみ付き過負荷継電器を備える機器。"}],"officialAnswer":"ロ"},
+    {"number":44,"sourceCrop":"../official/review/20260524/q44.png","question":"⑭で示す回路の負荷電流を測定するものは。","choices":[{"label":"イ","imageDescription":"先端に開閉できるクランプを持つ指針式測定器。"},{"label":"ロ","imageDescription":"先端に白い受光部を持つ指針式測定器。"},{"label":"ハ","imageDescription":"2本の測定リードを持つ指針式マルチメータ。"},{"label":"ニ","imageDescription":"R・S・T端子と3本の測定リードを持つ小型器具。"}],"officialAnswer":"イ"},
+    {"number":45,"sourceCrop":"../official/review/20260524/q45.png","question":"⑮で示す図記号の器具は。","choices":[{"label":"イ","imageDescription":"天井から細い吊り棒・コードで下がる円盤形の照明器具。"},{"label":"ロ","imageDescription":"四角い枠を持ち天井に埋め込む小型照明器具。"},{"label":"ハ","imageDescription":"複数の灯具が枝分かれするシャンデリア形照明器具。"},{"label":"ニ","imageDescription":"丸い薄型の天井直付け照明器具。"}],"officialAnswer":"ロ"},
+    {"number":46,"sourceCrop":"../official/review/20260524/q46.png","question":"⑯で示す図記号の器具は。ただし、写真に示す点滅器は、『ワイド形』である。","choices":[{"label":"イ","imageDescription":"大きな片切形操作面に小窓。写真注記は『切』で点灯。"},{"label":"ロ","imageDescription":"『切 自動 連続入』表示と人感検知用と思われる窓のある操作器。"},{"label":"ハ","imageDescription":"大きな片切形操作面に小窓。写真注記は『入』で点灯。"},{"label":"ニ","imageDescription":"丸い回転つまみを持つ調光器。"}],"officialAnswer":"ニ"},
+    {"number":47,"sourceCrop":"../official/review/20260524/q47.png","question":"⑰で示すボックス内の接続をリングスリーブで圧着接続した場合のリングスリーブの種類、個数及び圧着接続後の刻印との組合せで、正しいものは。ただし、使用する電線はすべてVVF1.6とする。また、写真に示すリングスリーブ中央の○、小、中は刻印を表す。","choices":[{"label":"イ","imageDescription":"中1個（刻印『中』）と小3個（刻印『○』）。"},{"label":"ロ","imageDescription":"小4個（すべて刻印『○』）。"},{"label":"ハ","imageDescription":"小1個（刻印『小』）と小4個（刻印『○』）。"},{"label":"ニ","imageDescription":"小2個（刻印『小』）と小4個（刻印『○』）。"}],"officialAnswer":"ハ","diagramObservationRef":"q47"},
+    {"number":48,"sourceCrop":"../official/review/20260524/q48.png","question":"⑱で示す図記号のものは。","choices":[{"label":"イ","imageDescription":"金属製の浅い正方形ボックスと平らな金属ふた。"},{"label":"ロ","imageDescription":"透明樹脂製の縦長で片側が丸いカバー状部材。"},{"label":"ハ","imageDescription":"金属製の縦長・角形の開口ボックス。"},{"label":"ニ","imageDescription":"金属製の深い正方形ボックスと平らな金属ふた。"}],"officialAnswer":"ロ"},
+    {"number":49,"sourceCrop":"../official/review/20260524/q49.png","question":"⑲で示すボックス内の接続をすべて差込形コネクタとする場合、使用する差込形コネクタの種類と最小個数の組合せで、正しいものは。ただし、使用する電線はすべてVVF1.6とする。","choices":[{"label":"イ","imageDescription":"小型の2差込口コネクタ1個と大型の5差込口コネクタ2個。"},{"label":"ロ","imageDescription":"小型の2差込口コネクタ2個と緑色の4差込口コネクタ1個。"},{"label":"ハ","imageDescription":"小型の2差込口コネクタ2個と大型の5差込口コネクタ1個。"},{"label":"ニ","imageDescription":"小型の2差込口コネクタ1個と緑色の4差込口コネクタ2個。"}],"officialAnswer":"イ","diagramObservationRef":"q49"},
+    {"number":50,"sourceCrop":"../official/review/20260524/q50.png","question":"この配線図の図記号で使用されていないスイッチは。ただし、写真下の図は、接点の構成を示す。","choices":[{"label":"イ","imageDescription":"無表示のワイド形スイッチ。接点構成図は0共通端子と1・3端子を持つ切換接点。"},{"label":"ロ","imageDescription":"小窓を備えるワイド形スイッチ。接点構成図は表示灯を含む単極開閉接点。"},{"label":"ハ","imageDescription":"小窓を備えるワイド形スイッチ。接点構成図は0共通端子と1・3端子を持ち、表示灯も含む切換接点。"},{"label":"ニ","imageDescription":"無表示のワイド形スイッチ。接点構成図は1・2・3・4端子を持つ交差接点。"}],"officialAnswer":"ニ"}
+  ],
+  "diagramObservations": {
+    "q32": {
+      "markedPart": "玄関脇の接続ボックスbから、イ・ロ・3ハと傍記されたスイッチ群へ向かう②の配線区間。",
+      "visibleElements": ["点滅器の傍記はイ、ロ、3ハ。", "『3ハ』はハの3路点滅器を表す。", "同じ区間にイとロの点滅器もある。"],
+      "minimumCoreAccounting": {"sharedFeed":1,"singlePoleSwitchedReturnsForIAndRo":2,"threeWayTravelerConductorsForHa":2,"total":5},
+      "verification": "5心＝公式解答ハの数値。分岐前後で共用できる電源1心、イ・ロの戻り2心、ハの3路渡り2心を区別した。3路共通端子の接続位置は図の注記7に従う。"
+    },
+    "q41": {
+      "markedPart": "台所の接続ボックスd（⑪の矢印先）。",
+      "visibleBranches": ["回路dからの供給。", "上側に『2』を伴う台所のコンセント。", "下側に二つの差込口を描いた台所のコンセント。", "右側に『ヘ』を伴う長方形の照明器具。", "下側の『ヘ』点滅器。", "下右側の台所換気扇につながる枝線。", "分電盤の回路表ではdが100V・2P・20Aで『台所・コンセント・換気扇』の負荷。"],
+      "sourceConductorSize": "設問はすべてVVF1.6と指定。",
+      "officialOptionConsequence": {"sleeveSmall":1,"sleeveMedium":2},
+      "independentlyTracedConductorGroups": [
+        {"function":"常時電源","contributors":"供給1、二つのコンセント2、換気扇1、ヘ点滅器への送り1","count":5},
+        {"function":"中性線","contributors":"供給1、二つのコンセント2、換気扇1、ヘ照明1","count":5},
+        {"function":"ヘの点滅器から照明への戻り","contributors":"ヘ点滅器1、ヘ照明1","count":2}
+      ],
+      "independentConnectionAccountingStatus": "枝線の機能から5・5・2の接続組を検算。小1個・中2個の公式解答と整合する。リングスリーブの適用本数表自体の外部規格確認は本記録の対象外。",
+      "authoringCaution": "図の注記2で各心線の描画は省略されている。各器具の識別と回路dの供給を明示して説明し、写真の解答だけを根拠にしない。"
+    },
+    "q42": {
+      "markedPart": "接続ボックスbから⑰の接続ボックスへ降りる、廊下西側の縦配線区間（⑫の矢印先）。右側の回路e・EETコンセントではない。",
+      "arrowEvidence": "../q42-arrow.png。右の⑫から左へ伸びる水平引出線の矢頭は、bと⑰の間の縦幹線を指す。e/EETへの斜め矢印は回路eを示す別の矢印。",
+      "visibleElements": ["bのそばに廊下照明DL・ハがある。", "b近くのスイッチ群に『3ハ』があり、⑰より下のスイッチ群にも『ハ』と『3』がある。", "⑰のそばにもDL・ハがある。", "共通注記7は3路スイッチの0端子に電源側又は負荷側の電線を結線すると定める。"],
+      "officialOptionConsequence": {"vvf2CoreCables":2,"vvf3CoreCables":0},
+      "minimumCoreAccounting": {"travelersBetweenTheHaThreeWaySwitches":2,"switchedReturnToUpperDlHa":1,"neutralForLowerDlHa":1,"total":4},
+      "independentConnectionAccountingStatus": "bと⑰を両端とする区間で、ハの3路渡り2心、下側の3路から上側DL・ハへ戻る1心、下側DL・ハ用の中性線1心＝計4心。選択肢ハのVVF2心2本と一致。",
+      "authoringCaution": "⑫をEETコンセントとする前版の観察は誤り。回路eの接地方法はこの設問の説明に使わない。"
+    },
+    "q47": {
+      "markedPart": "和室・台所境の接続ボックス（⑰の矢印先）。",
+      "visibleBranches": ["上側の接続ボックスbから⑫の縦配線を経て入る。", "直上のDL・ハ表示の照明に線が出る。", "下側の『ハ・ト』点滅器群へ線が出る。", "和室の『リ』点滅器に向かう線は左側の黒丸で終わり、⑰の斜線円への接続線とは認められない。", "『ト』点滅器から下側のfボックスへ向かう線は⑰のボックスを通らない。"],
+      "sourceConductorSize": "設問はすべてVVF1.6と指定。",
+      "officialOptionConsequence": {"smallSleeveWithSmallMark":1,"smallSleeveWithCircleMark":4,"mediumSleeve":0},
+      "independentlyTracedConnections": ["ハの3路渡り2心はbから⑰を経由して下側のハ3路へ進むため、渡り線ごとに2本接続となる（○2か所）。", "下側ハ3路の0端子からの戻りを上下のDL・ハへ分ける場合は3本接続となる（小1か所）。", "下側DL・ハに必要な中性線はbから⑫の区間を経由する。これを⑰で直上のDL・ハへ接続する2本組（○1か所）までは追える。"],
+      "independentConnectionAccountingStatus": "独立の結線追跡では○3か所・小1か所まで。公式解答ハの○4か所・小1か所とは○1か所不足する。下側fへの中性線継続を仮定すれば回路bとfを混ぜるおそれがあり、原図からは根拠を確認できない。残る○1か所は未確定とし、問47の結線検算は未完了。",
+      "authoringCaution": "和室リの線を⑰の接続へ数えない。f回路をb回路の中性線へ安易に接続しない。公式解答の個数は確定しているが、全接続の説明を原典目視だけでPASSとしない。"
+    },
+    "q49": {
+      "markedPart": "左上の洋室の接続ボックスa（⑲の矢印先）。",
+      "visibleBranches": ["上側の『2』コンセント。", "右側の『2』コンセント。", "左側のル表示を伴う照明図記号。", "下側の洋室・和室方向への幹線。", "下右のル表示を伴う点滅器。", "接続ボックスaに回路aの供給が入る。"],
+      "sourceConductorSize": "設問はすべてVVF1.6と指定。",
+      "connectionGroupsTracked": [
+        {"function":"非接地側の常時給電","contributors":"回路aからの供給、コンセント2箇所、下流の配線、ル点滅器への送り","conductorCount":5},
+        {"function":"接地側の共通戻り","contributors":"回路aからの供給、コンセント2箇所、下流の配線、照明器具","conductorCount":5},
+        {"function":"ル点滅器から照明への返り","contributors":"ル点滅器、ル表示の照明器具","conductorCount":2}
+      ],
+      "minimumConnectorAccounting": {"twoPort":1,"fivePort":2},
+      "verification": "5・5・2の接続組に対し差込口数5のコネクタ2個、差込口数2のコネクタ1個。公式解答イおよび写真表示と一致。"
+    }
+  },
+  "unverifiedExternalRuleClaims": [
+    "問31の小勢力回路の電圧上限について、規格・条文の改訂確認はこの原典転記に含めない。公式解答は60V。",
+    "問39の絶縁抵抗最小値について、規格・条文の改訂確認はこの原典転記に含めない。公式解答は0.1MΩ。"
+  ]
+}

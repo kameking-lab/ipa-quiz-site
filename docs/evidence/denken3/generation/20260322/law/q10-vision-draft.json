@@ -1,0 +1,166 @@
+{
+  "questionNumber": 10,
+  "sharedContext": null,
+  "units": [
+    {
+      "part": null,
+      "question": "図は，高圧受電設備の単線結線図の一部である。\n\n図の空白箇所(ア)〜(ウ)に設置する機器又は計器として，正しいものを組み合わせたのは次のうちどれか。",
+      "choices": {
+        "1": "(ア) 地絡継電器　(イ) 過電圧継電器　(ウ) 周波数計",
+        "2": "(ア) 過電圧継電器　(イ) 過電流継電器　(ウ) 周波数計",
+        "3": "(ア) 過電流継電器　(イ) 地絡継電器　(ウ) 周波数計",
+        "4": "(ア) 過電流継電器　(イ) 地絡継電器　(ウ) 力率計",
+        "5": "(ア) 地絡継電器　(イ) 過電流継電器　(ウ) 力率計"
+      },
+      "officialAnswer": "5",
+      "explanation": "図の接続関係から各空白箇所の機器・計器を判断する。\n\n(ア)：受電点直下の枠内に、斜線と添字「3」の付いた円形記号があり、主回路の線がこれを貫いている。三相一括で零相電流を検出する零相変流器（ZCT）とみられ、その二次側が右へ延びて(ア)に接続されている。(ア)にはもう一つ入力がある。開閉器の下の接続点からコンデンサ記号が右へ延び、その反対側は接地記号に至る。このコンデンサ付近から分岐した線が変圧器記号（二つの円の重なり）に入り、その出力も(ア)に接続されている。つまり(ア)には、零相変流器からの電流の入力に加えて、電圧系の入力もある。さらに(ア)から枠内の開閉器へ破線（引外し指令）が引かれている。\n\n零相変流器の零相電流を入力として受電点の開閉器を引き外す機器は、選択肢の中では地絡継電器である。電圧系の入力の役割は図中に明記されていない。零相電圧の検出に関わるものであれば、零相電流と零相電圧の両方を用いる地絡方向継電器に当たる。継電器の動作電源などを得るための計器用変圧器であれば、地絡継電器に電源を供給する回路となる。どちらの場合も、零相電流を入力とする地絡保護用の継電器であることに変わりはない。過電圧継電器は計器用変圧器で得た電圧の上昇を検出する継電器である。零相変流器の零相電流を入力とするものではないので、(ア)に電圧系の入力があっても過電圧継電器には当たらない。\n\n(イ)：遮断器（×印の付いた開閉器記号）の下に変流器（CT）がある。その二次側が(イ)に入り、(イ)から遮断器へ破線（引外し指令）が引かれている。変流器の電流を入力として遮断器を引き外す継電器は過電流継電器である。過電圧継電器は計器用変圧器（VT）の電圧を入力とするもので、CT 二次回路に直列に置かれるものではない。\n\n(ウ)：(ウ)は CT 二次回路に直列に入っている。この電流回路は (イ)→W→(ウ)→AS→A と続く。同時に(ウ)には、VT 二次回路（VS→V へ向かう線）からも配線されている。すなわち電流と電圧の両方を入力とする計器であり、電力計 W と同様の接続となる。これに該当するのは力率計である。周波数計は電圧だけを入力とする計器なので、CT 二次回路に直列には接続しない。\n\nよって (ア) 地絡継電器、(イ) 過電流継電器、(ウ) 力率計 の組合せ (5) が正しい。",
+      "choiceExplanations": {
+        "1": "誤り。(ア)の地絡継電器は正しい。(イ)は CT 二次回路に入って遮断器を引き外すので過電流継電器であり、VT の電圧を入力とする過電圧継電器ではない。(ウ)は電流回路と電圧回路の両方に接続されているので力率計であり、電圧のみを入力とする周波数計ではない。",
+        "2": "誤り。(イ)の過電流継電器は正しい。(ア)には零相変流器の出力（零相電流）が入り、(ア)は受電点の開閉器を引き外すので地絡継電器である。(ア)にはコンデンサと変圧器記号からなる回路の電圧系の入力もある。しかし過電圧継電器は零相変流器の零相電流を入力としないので、(ア)には該当しない。(ウ)は電流・電圧の両方を入力とするので力率計であり、周波数計ではない。",
+        "3": "誤り。(ア)は零相変流器の出力（零相電流）を入力とするので地絡継電器であり、相電流を入力とする過電流継電器ではない。(イ)は通常の CT（相電流）を入力として遮断器を引き外すので過電流継電器であり、地絡継電器ではない。(ウ)は電流・電圧の両方を入力とするので力率計であり、周波数計ではない。",
+        "4": "誤り。(ウ)の力率計は正しいが、(ア)と(イ)が入れ替わっている。(ア)は零相変流器の出力（零相電流）を入力として開閉器を引き外すので地絡継電器である。(イ)は CT の相電流を入力として遮断器を引き外すので過電流継電器である。",
+        "5": "正しい。(ア)は零相変流器の出力（零相電流）を入力として受電点の開閉器を引き外す地絡継電器である。(イ)は CT の電流を入力として遮断器を引き外す過電流継電器である。(ウ)は CT 二次回路と VT 二次回路の両方に接続される力率計である。"
+      },
+      "figureDescription": "単線結線図（縦方向）。上端に「3φ3W 6 600 V」の表記。上から順に次の構成が描かれている。\n①枠で囲まれた部分。\n・主回路が貫く、斜線と添字「3」が付いた円形記号。二次側に「//」の配線表示があり、右へ延びてから下へ折れ、(ア)の枠に接続する。\n・その下に開閉器（接点上部に小円）。\n・開閉器の下の接続点から右へコンデンサ記号がある。その右側は枠の右辺上の接続点（黒丸）を経て枠外へ出て、右へ進んでから下へ折れ、接地記号に至る。\n・コンデンサ付近から下へ分岐した線が変圧器記号（二つの円の重なり）に入る。その出力は右へ進んでから下へ折れ、(ア)に接続する。\n・開閉器から(ア)へ破線が引かれている。\n・空白箇所(ア)は枠外右下の四角。\n②下向き三角と上向き三角の記号（ケーブル端末とみられる）。\n③枠で囲まれた部分。主回路上の接続点につながる変圧器記号（二つの円）と、円に縦線が通り「//」が付いた記号がある。いずれの出力も右側の「Wh」の計器箱に接続する。\n④開閉器（断路器とみられる）。\n⑤接続点からヒューズ記号→変圧器記号（計器用変圧器）が右へ延び、接続点を経て「VS」表示のスイッチ→電圧計(V)へ接続する。その接続点から下へ線が延び、途中の接続点から左へ分岐して電力計(W)へ、さらに下へ(ウ)（破線の円）へ接続する。\n⑥その下の接続点から左へ分岐し、開閉器を経て、矢印付きの縦長四角の記号（避雷器とみられる）から接地記号へ至る。\n⑦×印の付いた開閉器（遮断器）。遮断器から(イ)へ破線が引かれている。\n⑧円に縦線が通り「//」が付いた記号（変流器）。その二次側が右へ、(イ)（四角）→電力計(W)→(ウ)（破線の円）→「AS」表示のスイッチ→電流計(A)の順に直列に接続する。\n⑨下端に矢印と「高圧母線」の表記。\n図は、(ア)〜(ウ)それぞれがどの変成器から入力を受け、どの開閉器・遮断器に引外し指令（破線）を送るかという接続関係を読み取るために必要であり、文章だけでは問題が成立しない。",
+      "officialReferenceUrls": [],
+      "uncertainty": "図中の一部記号には名称が書かれていない。次の解釈は、一般的な高圧受電設備の構成と図記号の形状から判断したもので、図中に明記されたものではない。\n・最上部の、斜線と添字「3」の付いた円形記号を零相変流器とする解釈\n・矢印付き縦長四角を避雷器とする解釈\n・三角記号をケーブル端末とする解釈\nまた、(ア)に接続される枠内の変圧器記号について、その分岐線がコンデンサのどちらの極板側から出ているかは図からは読み取れない。そのため、この回路の役割は特定できない。零相電圧の検出に関わるものか、継電器の動作電源・電圧入力用の計器用変圧器かは不明である。ただし、(ア)が地絡継電器であるという判断はこの点に依存しない。この判断は、零相変流器の二次側が(ア)に入り、(ア)から開閉器へ引外しの破線が引かれていることに基づく。",
+      "needsReview": true,
+      "sourceQuestionPdfUrl": "https://www.shiken.or.jp/chief/upload/20260322_ch_third_q04.pdf",
+      "sourceAnswerPdfUrl": "https://www.shiken.or.jp/chief/upload/20260322_ch_third_a01.pdf",
+      "reviewedFromPage": [
+        16,
+        17
+      ]
+    }
+  ],
+  "draftModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 5020,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 11351,
+      "webSearchRequests": 0,
+      "costUSD": 0.1914718,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 2209,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "7c7a68f94c7ab776112a0758d31b9dffb07daed22a1e10ac35aee8eb14c96935",
+  "inputRequestSha256": "770514e6f9044efd54ab5b31793cfc9b2126976d1e040b705717183bc9c9fe6b",
+  "sourceQuestionPdfSha256": "945e325f0fe221645f898efebe0dbcac32e1605a962a6850493895a67df0885e",
+  "sourceAnswerPdfSha256": "cc2890296d06a4823df5697a78a1c01ddfd39f041c51f48c87984daa3a5707c6",
+  "sourcePageImageSha256": {
+    "data/raw_pdfs/denken3/review/20260322/law/p16.png": "56f0da401c073fd5b9b47af6552abae49a6110df6c334cd9f8b4df190b520ea5",
+    "data/raw_pdfs/denken3/review/20260322/law/p17.png": "e561760291030e8f517c8b91800ed16e9811575b3eb939c617c49776630f24fe"
+  },
+  "revisionHistory": [
+    {
+      "version": 1,
+      "model": "claude-opus-5-5",
+      "resolvedModel": "claude-opus-5-5",
+      "modelUsage": {
+        "claude-opus-5-5": {
+          "inputTokens": 2,
+          "outputTokens": 5310,
+          "cacheReadInputTokens": 1279,
+          "cacheCreationInputTokens": 18409,
+          "webSearchRequests": 0,
+          "costUSD": 0.25373579999999996,
+          "contextWindow": 1000000,
+          "maxOutputTokens": 128000,
+          "thinkingTokens": 2486,
+          "canonicalModel": "claude-opus-5-5",
+          "provider": "firstParty",
+          "costBasis": "list"
+        }
+      },
+      "rawResponseSha256": "934e95a2608e9d45944d6c7623a514bb79e69f68775401a586a9b36168ff9caf",
+      "inputRequestSha256": "34e978024ba8b2ab76b65bab9171edffe7ddc01a56d878ab6bea055db28d1fed",
+      "previousDraftSha256": "ec2a991cbabb4306eb7bcb2b3c0405a7a78fd6d078a9b1a797f75367f5c9394a",
+      "previousDraft": "data/raw_pdfs/denken3/review/20260322/law/archive/q10-vision-draft-v1.json",
+      "answeredReviewSha256": "0ec05351f265816b8dafb4f6ff765982bef332364a223464bf5ce6e0e2f3c325",
+      "answeredReview": "data/raw_pdfs/denken3/review/20260322/law/archive/q10-opus-review-v1.json",
+      "answeredStrictReceipt": null,
+      "answeredStrictReceiptSha256": null,
+      "figureSha256": {
+        "20260322-law-q10-fig1": "6369bc70e6ddf3c535a30c296facd7eb0c0bcda4e92c4995868a3375c9b705ad"
+      },
+      "referenceHashes": {},
+      "operatorNote": "法令の基準日：添付の法規科目注意書き注3は『令和7年4月1日現在、効力のある法令（「電気設備の技術基準の解釈」を含む）』とする。法令はe-Gov法令API v2の2025-04-01時点の条文で確認する。電気設備技術基準の解釈は、令和6年10月22日改正版（20241022-2.pdf）第237頁の附則一覧で20241004保局第1号が令和6年10月22日施行、令和7年11月20日改正版（dengikaishaku.pdf、2026-09-24取得のSHA固定版。URLは最新版に差し替わる）第239頁で次の20251104保局第2号が令和7年11月20日施行と確認できるので、令和7年4月1日時点の施行版は令和6年10月22日改正版であり、条文の引用・頁番号はこの版に揃える。根拠が確定している事項について版の留保を書かない。"
+    },
+    {
+      "version": 2,
+      "model": "claude-opus-5-5",
+      "resolvedModel": "claude-opus-5-5",
+      "modelUsage": {
+        "claude-opus-5-5": {
+          "inputTokens": 2,
+          "outputTokens": 5330,
+          "cacheReadInputTokens": 1279,
+          "cacheCreationInputTokens": 19813,
+          "webSearchRequests": 0,
+          "costUSD": 0.2653678,
+          "contextWindow": 1000000,
+          "maxOutputTokens": 128000,
+          "thinkingTokens": 2507,
+          "canonicalModel": "claude-opus-5-5",
+          "provider": "firstParty",
+          "costBasis": "list"
+        }
+      },
+      "rawResponseSha256": "ad1757d7b77f9c0c6c4b323c81d827487227d12b4dc3e9ac4fec5e715dd1af4f",
+      "inputRequestSha256": "591c120c0eeb4eecfa0f426b2a52c63a68d633d6ec1ccab97cb00d665cb9abf1",
+      "previousDraftSha256": "5463142d5d51acb85e9abc26a779495482a1fb6a264c626b9be1e672b2ac1237",
+      "previousDraft": "data/raw_pdfs/denken3/review/20260322/law/archive/q10-vision-draft-v2.json",
+      "answeredReviewSha256": "934c65541f1a0495fe11a4469f7c0af7d3da46cd34e7138e7ffcb53dc3b0f0d5",
+      "answeredReview": "data/raw_pdfs/denken3/review/20260322/law/archive/q10-opus-review-v2.json",
+      "answeredStrictReceipt": "docs/evidence/denken3/strict/20260322-law-s1-q10-opus.json",
+      "answeredStrictReceiptSha256": "15a83eb4fc211cd117ea0031d6277a22adf4b8102db99a9ef86202e60903ab6a",
+      "figureSha256": {
+        "20260322-law-q10-fig1": "6369bc70e6ddf3c535a30c296facd7eb0c0bcda4e92c4995868a3375c9b705ad"
+      },
+      "referenceHashes": {},
+      "operatorNote": "法令の基準日：添付の法規科目注意書き注3は『令和7年4月1日現在、効力のある法令（「電気設備の技術基準の解釈」を含む）』とする。法令はe-Gov法令API v2の2025-04-01時点の条文で確認する。電気設備技術基準の解釈は、令和6年10月22日改正版（20241022-2.pdf）第237頁の附則一覧で20241004保局第1号が令和6年10月22日施行、令和7年11月20日改正版（dengikaishaku.pdf、2026-09-24取得のSHA固定版。URLは最新版に差し替わる）第239頁で次の20251104保局第2号が令和7年11月20日施行と確認できるので、令和7年4月1日時点の施行版は令和6年10月22日改正版であり、条文の引用・頁番号はこの版に揃える。根拠が確定している事項について版の留保を書かない。"
+    },
+    {
+      "version": 3,
+      "model": "claude-opus-5-5",
+      "resolvedModel": "claude-opus-5-5",
+      "modelUsage": {
+        "claude-opus-5-5": {
+          "inputTokens": 2,
+          "outputTokens": 6487,
+          "cacheReadInputTokens": 1279,
+          "cacheCreationInputTokens": 19553,
+          "webSearchRequests": 0,
+          "costUSD": 0.2864278,
+          "contextWindow": 1000000,
+          "maxOutputTokens": 128000,
+          "thinkingTokens": 3189,
+          "canonicalModel": "claude-opus-5-5",
+          "provider": "firstParty",
+          "costBasis": "list"
+        }
+      },
+      "rawResponseSha256": "1cdd5a3c3a7496584a83d357a2041fdb060f10a9915339eb1986501204e4e6af",
+      "inputRequestSha256": "502697fac07b5856ff85ef8f0bff1b4acbdaef64d2806bdd2c7ac072a5a2b2e4",
+      "previousDraftSha256": "e399f1e2a90706fdb7fd49b81f9e1f23c529c1c0f8b35f7e619a0fba11eecce7",
+      "previousDraft": "data/raw_pdfs/denken3/review/20260322/law/archive/q10-vision-draft-v3.json",
+      "answeredReviewSha256": "a3e4d9ac55d2d3727381e4f012d0cec065e71f9c8f56783a16a298dd0603d117",
+      "answeredReview": "data/raw_pdfs/denken3/review/20260322/law/archive/q10-opus-review-v3.json",
+      "answeredStrictReceipt": "docs/evidence/denken3/strict/20260322-law-s2-q10-opus.json",
+      "answeredStrictReceiptSha256": "e0bbb6df37e707d8f57a9d1c48680e460e3c784a00a8caa067a7792923ca1ea7",
+      "figureSha256": {
+        "20260322-law-q10-fig1": "6369bc70e6ddf3c535a30c296facd7eb0c0bcda4e92c4995868a3375c9b705ad"
+      },
+      "referenceHashes": {},
+      "operatorNote": "法令の基準日：添付の法規科目注意書き注3は『令和7年4月1日現在、効力のある法令（「電気設備の技術基準の解釈」を含む）』とする。法令はe-Gov法令API v2の2025-04-01時点の条文で確認する。電気設備技術基準の解釈は、令和6年10月22日改正版（20241022-2.pdf）第237頁の附則一覧で20241004保局第1号が令和6年10月22日施行、令和7年11月20日改正版（dengikaishaku.pdf、2026-09-24取得のSHA固定版。URLは最新版に差し替わる）第239頁で次の20251104保局第2号が令和7年11月20日施行と確認できるので、令和7年4月1日時点の施行版は令和6年10月22日改正版であり、条文の引用・頁番号はこの版に揃える。根拠が確定している事項について版の留保を書かない。"
+    }
+  ]
+}

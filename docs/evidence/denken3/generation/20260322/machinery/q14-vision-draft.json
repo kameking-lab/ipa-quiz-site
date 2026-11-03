@@ -1,0 +1,130 @@
+{
+  "questionNumber": 14,
+  "sharedContext": null,
+  "units": [
+    {
+      "part": null,
+      "question": "次のフローチャートに従って作成したプログラムを実行したとき，印字されるA，Bの値として，正しい組合せを次の(1)〜(5)のうちから一つ選べ。",
+      "choices": {
+        "1": "A = 43，B = 26",
+        "2": "A = 51，B = 47",
+        "3": "A = 51，B = 23",
+        "4": "A = 98，B = 47",
+        "5": "A = 98，B = 95"
+      },
+      "officialAnswer": "3",
+      "explanation": "フローチャートを順にトレースする。\n\n初期値：A = 10，B = 2\n\n1回目：A ← 10 + 2 = 12。12 ≦ 40 は YES なので B ← 2×2 + 1 = 5\n2回目：A ← 12 + 5 = 17。17 ≦ 40 は YES なので B ← 2×5 + 1 = 11\n3回目：A ← 17 + 11 = 28。28 ≦ 40 は YES なので B ← 2×11 + 1 = 23\n4回目：A ← 28 + 23 = 51。51 ≦ 40 は NO なので，B は更新されずに印字へ進む\n\nしたがって印字される値は A = 51，B = 23 であり，正解は(3)。\n\n要点：判断「A ≦ 40」が NO になった時点では B ← 2B + 1 は実行されない。A を更新した直後に判定し，YES のときだけ B を更新するという処理の順序を正確に追うことが重要である。",
+      "choiceExplanations": {
+        "1": "誤り。トレースすると A は 12 → 17 → 28 → 51 と変化し，43 になることはない。また B は 2 → 5 → 11 → 23 と変化し，26 になることもない（B ← 2B + 1 の更新後の B は常に奇数である）。",
+        "2": "誤り。A = 51 は正しいが，A = 51 のとき判断「A ≦ 40」は NO となり，B ← 2B + 1 は実行されない。B = 47 は B = 23 からさらにもう一度 2×23 + 1 を計算した値であり，実際の処理順序と一致しない。",
+        "3": "正しい。A = 28，B = 23 の状態から A ← 28 + 23 = 51 となり，51 ≦ 40 が NO となって B は更新されずに印字されるため，A = 51，B = 23 となる。",
+        "4": "誤り。A = 98 は 51 + 47 に相当するが，A = 51 の時点で判断が NO となりループを抜けるため，A がそれ以上加算されることはない。B = 47 も A = 51 の後に B が更新された場合の値であり，実際には起こらない。",
+        "5": "誤り。A = 98 は，A = 51 で判断が NO なのにループを続けた場合（B ← 2×23 + 1 = 47，A ← 51 + 47 = 98）に現れる値であり，B = 95（= 2×47 + 1）は，さらに A = 98 の後にも B ← 2B + 1 を実行した場合に現れる値である。いずれも判断が NO でも B を更新してしまう誤ったトレースから生じる。正しくは A = 51 の時点で NO となり，B は更新されずに A = 51，B = 23 が印字される。"
+      },
+      "figureDescription": "フローチャート1つの図。上から順に，端子記号「開 始」，処理記号「A ← 10 / B ← 2」（2行），処理記号「A ← A + B」，判断記号（ひし形）「A ≦ 40」，処理記号「B ← 2B + 1」が縦に線で接続されている。判断記号の下側の出口には「YES」，右側の出口には「NO」と記されている。「B ← 2B + 1」の下から出た線は下へ進んだ後に左へ回り込み，図の左端を上昇して右へ折れ，「A ← A + B」の直前（初期値設定の処理記号の下の線）に右向きの矢印で合流してループを形成している。NO の出口から出た線は右へ進んで下に折れ，書類記号（下辺が波形）「A, Bを印字」に接続する。そこから下へ進み，左へ折れてさらに下へ進み，図の最下部の端子記号「終 了」に至る。",
+      "officialReferenceUrls": [],
+      "uncertainty": "なし",
+      "needsReview": true,
+      "sourceQuestionPdfUrl": "https://www.shiken.or.jp/chief/upload/20260322_ch_third_q03.pdf",
+      "sourceAnswerPdfUrl": "https://www.shiken.or.jp/chief/upload/20260322_ch_third_a01.pdf",
+      "reviewedFromPage": [
+        17
+      ]
+    }
+  ],
+  "draftModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 2297,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 9309,
+      "webSearchRequests": 0,
+      "costUSD": 0.1206758,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 491,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "5a8972b0e062f917b66562558c5b234619198b375eee31412ca510e474284699",
+  "inputRequestSha256": "e2fe3dfe1a0b37a9d99204dfc6daddd94ed00e161dccd9679c82181f2b07377d",
+  "sourceQuestionPdfSha256": "a89c7dc2b9a305f9db83f2f78195f0df8a0da5aeec6b8e66cfd40fb028d146fb",
+  "sourceAnswerPdfSha256": "cc2890296d06a4823df5697a78a1c01ddfd39f041c51f48c87984daa3a5707c6",
+  "sourcePageImageSha256": {
+    "data/raw_pdfs/denken3/review/20260322/machinery/p17.png": "c472ba6bc4468c06d1df8935197e3cf488b38ed9828e8130175ecc371e856db4"
+  },
+  "revisionHistory": [
+    {
+      "version": 1,
+      "model": "claude-opus-5-5",
+      "resolvedModel": "claude-opus-5-5",
+      "modelUsage": {
+        "claude-opus-5-5": {
+          "inputTokens": 2,
+          "outputTokens": 2362,
+          "cacheReadInputTokens": 1279,
+          "cacheCreationInputTokens": 14137,
+          "webSearchRequests": 0,
+          "costUSD": 0.16059980000000001,
+          "contextWindow": 1000000,
+          "maxOutputTokens": 128000,
+          "thinkingTokens": 807,
+          "canonicalModel": "claude-opus-5-5",
+          "provider": "firstParty",
+          "costBasis": "list"
+        }
+      },
+      "rawResponseSha256": "4c65be22bad061e1059869bc80b1eeb4d812bc62034c5fad5dc16979566c4cf7",
+      "inputRequestSha256": "8cceb342a6be79c582ce30ad7bc2a28eb2a7ebe7e5b5ab8c8ba8fb88726b30fb",
+      "previousDraftSha256": "6e36979d86197a0920320f0fd6e0d44003b743251da31cb1f07197e0a59255b7",
+      "previousDraft": "data/raw_pdfs/denken3/review/20260322/machinery/archive/q14-vision-draft-v1.json",
+      "answeredReviewSha256": "d3f255e7d14ca4192843ef56bb9d9e37b79ba4af18eb5a9056639cee2484ff90",
+      "answeredReview": "data/raw_pdfs/denken3/review/20260322/machinery/archive/q14-opus-review-v1.json",
+      "answeredStrictReceipt": "docs/evidence/denken3/strict/20260322-machinery-s1-q14-opus.json",
+      "answeredStrictReceiptSha256": "f344b3f97cc7b9f7ddfd1355f6424bfa52cff58d841f8d72d3ca3be9937c7b3d",
+      "figureSha256": {
+        "20260322-machinery-q14-fig1": "86fe4a492344e7978a2b7453410b5aafa53a31582a02afad8ba64f3aabf777cd"
+      },
+      "referenceHashes": {},
+      "operatorNote": ""
+    },
+    {
+      "version": 2,
+      "model": "claude-opus-5-5",
+      "resolvedModel": "claude-opus-5-5",
+      "modelUsage": {
+        "claude-opus-5-5": {
+          "inputTokens": 2,
+          "outputTokens": 2872,
+          "cacheReadInputTokens": 1279,
+          "cacheCreationInputTokens": 13717,
+          "webSearchRequests": 0,
+          "costUSD": 0.1674398,
+          "contextWindow": 1000000,
+          "maxOutputTokens": 128000,
+          "thinkingTokens": 1314,
+          "canonicalModel": "claude-opus-5-5",
+          "provider": "firstParty",
+          "costBasis": "list"
+        }
+      },
+      "rawResponseSha256": "19d157af9fb2c79cddf9359d678b62b2e9f9785d2d21a7afd792e083fefd4237",
+      "inputRequestSha256": "c09aaa03934f646a03be0dfa3739771939dc75f3b001d60f869ea5100ebfd355",
+      "previousDraftSha256": "3183d76595cdd3a008d51eff453e239faf137d95762be02ba640f66b079f0725",
+      "previousDraft": "data/raw_pdfs/denken3/review/20260322/machinery/archive/q14-vision-draft-v2.json",
+      "answeredReviewSha256": "6c5f8fab11975e53d764c165b5d97126d4ebffc20ba9f666d7b839bdcce4a95f",
+      "answeredReview": "data/raw_pdfs/denken3/review/20260322/machinery/archive/q14-opus-review-v2.json",
+      "answeredStrictReceipt": "docs/evidence/denken3/strict/20260322-machinery-s2-q14-opus.json",
+      "answeredStrictReceiptSha256": "ee4ad9aeeea8d1a011d7175bb209f8be26df8c316a2b088790904e637dd5d6eb",
+      "figureSha256": {
+        "20260322-machinery-q14-fig1": "86fe4a492344e7978a2b7453410b5aafa53a31582a02afad8ba64f3aabf777cd"
+      },
+      "referenceHashes": {},
+      "operatorNote": ""
+    }
+  ]
+}

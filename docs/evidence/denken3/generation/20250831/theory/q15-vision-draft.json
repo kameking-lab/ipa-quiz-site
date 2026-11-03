@@ -1,0 +1,159 @@
+{
+  "questionNumber": 15,
+  "sharedContext": "B問題（配点は1問題当たり(a)5点，(b)5点，計10点）\n問15 図のように，相電圧 200 V の対称三相交流電源に，複素インピーダンス Ż = 5√3 + j5 [Ω] の負荷が Y 結線された平衡三相負荷を接続した回路がある。次の(a)及び(b)の問に答えよ。\n【図より】電源は Δ 結線（頂点 a, b, c）。辺 a–b の起電力 Ėa = 200∠0 V は矢印が b から a へ向く（矢印の先端側 a が高電位），電流 İab [A] は a 向き。辺 b–c の起電力 Ėb = 200∠−2π/3 V は矢印が c から b へ向く（b が高電位），電流 İbc [A] は b 向き。辺 c–a の起電力 Ėc = 200∠−4π/3 V は矢印が a から c へ向く（c が高電位），電流 İca [A] は c 向き。端子 a, b, c から線電流 İ1, İ2, İ3 [A] がそれぞれ負荷端子 a', b', c' へ流れ，各相 Ż の Y 結線負荷に接続されている。",
+  "units": [
+    {
+      "part": "a",
+      "question": "図のように，相電圧 200 V の対称三相交流電源に，複素インピーダンス Ż = 5√3 + j5 [Ω] の負荷が Y 結線された平衡三相負荷を接続した回路がある。\n【図より】電源は Δ 結線で，Ėa = 200∠0 V は矢印が b から a へ向き（a 側が高電位），Ėb = 200∠−2π/3 V は矢印が c から b へ向き（b 側が高電位），Ėc = 200∠−4π/3 V は矢印が a から c へ向く（c 側が高電位）。線電流 İ1 は a から a' へ流れる。\n(a) 電流 İ1 の値[A]として，最も近いものを次の(1)〜(5)のうちから一つ選べ。",
+      "choices": {
+        "1": "20.00∠−π/3",
+        "2": "11.55∠−π/3",
+        "3": "16.51∠−π/6",
+        "4": "20.00∠−π/6",
+        "5": "11.55∠−π/6"
+      },
+      "officialAnswer": "2",
+      "explanation": "Δ 結線電源では，各相の起電力がそのまま線間電圧になる。起電力の矢印は先端側が高電位を表す。節点 a, b, c の電位を V̇a, V̇b, V̇c とし，線間電圧を V̇ab = V̇a − V̇b のように定義すると，図の矢印の向きから\nV̇ab = Ėa = 200∠0 V，V̇bc = Ėb = 200∠−2π/3 V，V̇ca = Ėc = 200∠−4π/3 V\nとなる。これらの総和は 0 で，a→b→c の正相順である。\n正相順では，Y 結線負荷の相電圧（負荷の中性点 n を基準とする電圧）は，大きさが線間電圧の 1/√3，位相が線間電圧より π/6 遅れる。よって\nV̇a'n = (200/√3)∠−π/6 ≈ 115.47∠−π/6 V\n負荷インピーダンスの大きさと偏角は\n|Ż| = √((5√3)² + 5²) = √(75 + 25) = 10 Ω，偏角 = tan⁻¹(5 / 5√3) = tan⁻¹(1/√3) = π/6\nであり，Ż = 10∠π/6 Ω となる。\nİ1 = V̇a'n / Ż = 115.47∠−π/6 ÷ 10∠π/6 = 11.547∠−π/3 ≈ 11.55∠−π/3 A\nしたがって正解は(2)。",
+      "choiceExplanations": {
+        "1": "誤り。大きさ 20.00 A は，線間電圧 200 V をそのまま |Ż| = 10 Ω で割った値に相当する。Y 負荷の各相にかかる電圧は 200/√3 ≈ 115.47 V なので，大きさは 11.55 A となる。位相 −π/3 は正しい。",
+        "2": "正しい。V̇a'n = 115.47∠−π/6 V を Ż = 10∠π/6 Ω で割ると，İ1 = 11.55∠−π/3 A となる。",
+        "3": "誤り。位相 −π/6 は負荷相電圧 V̇a'n の位相であり，Ż = 10∠π/6 Ω による π/6 の遅れを反映していない（正しくは −π/3）。大きさ 16.51 A も正しい値 11.55 A と一致しない。",
+        "4": "誤り。大きさ 20.00 A は 200 V を 10 Ω で割った値に相当し，負荷相電圧 200/√3 V を用いていない。位相 −π/6 は負荷相電圧 V̇a'n の位相である。電流は負荷の偏角 π/6 だけさらに遅れるので，−π/3 となる。",
+        "5": "誤り。大きさ 11.55 A は正しいが，位相 −π/6 は負荷相電圧 V̇a'n の位相である。誘導性負荷 Ż = 10∠π/6 Ω により電流はさらに π/6 遅れ，−π/3 となる。"
+      },
+      "figureDescription": "回路図。左側に Δ 結線の三相電源があり，頂点 a が上，c が左下，b が右下にある（a, b, c は黒丸の節点）。\n・右辺 a–b：交流電源記号があり，その右に Ėa = 200∠0 V と表記されている。起電力の矢印は b から a へ向く。辺の上部に電流 İab [A] の矢印があり，これも a 向き。\n・左辺 a–c：交流電源記号があり，その左に Ėc = 200∠−4π/3 V と表記されている。起電力の矢印は a から c へ向く。電源記号の下に電流 İca [A] の矢印があり，c 向き。\n・下辺 c–b：交流電源記号がある。記号の上に電流 İbc [A] の矢印（b 向き）があり，記号の下に起電力の矢印（c から b へ向く）がある。その下に Ėb = 200∠−2π/3 V と表記されている。\n・線路：a から右へ延びる線が a' に至り，その上に İ1 [A] の右向き矢印がある。b から下へ出て右へ延びる線が b' に至り，その上に İ2 [A] の右向き矢印がある。c から下へ出て最下段を右へ延びる線が c' に至り，その上に İ3 [A] の右向き矢印がある。c' へ上がる縦線は b–b' 間の横線と交差するが，交差点に接続点の黒丸はない。\n・右側に Y 結線負荷がある。a', b', c' は白丸の端子。a' から下へ延びる相に Ż = 5√3 + j5 [Ω] と表記されている。中性点（黒丸）から左下の c' へ向かう相と右下の b' へ向かう相には，それぞれ Ż とだけ表記されている。",
+      "officialReferenceUrls": [],
+      "uncertainty": "なし",
+      "needsReview": true,
+      "sourceQuestionPdfUrl": "https://www.shiken.or.jp/chief/upload/20250831_ch_third_q01.pdf",
+      "sourceAnswerPdfUrl": "https://www.shiken.or.jp/chief/upload/20250831_ch_third_a01.pdf",
+      "reviewedFromPage": [
+        18
+      ]
+    },
+    {
+      "part": "b",
+      "question": "図のように，相電圧 200 V の対称三相交流電源に，複素インピーダンス Ż = 5√3 + j5 [Ω] の負荷が Y 結線された平衡三相負荷を接続した回路がある。\n【図より】電源は Δ 結線で，Ėa = 200∠0 V は矢印が b から a へ向き（a 側が高電位），電流 İab は a 向きに流れる。Ėb = 200∠−2π/3 V は矢印が c から b へ向き（b 側が高電位），電流 İbc は b 向きに流れる。Ėc = 200∠−4π/3 V は矢印が a から c へ向き（c 側が高電位），電流 İca は c 向きに流れる。線電流 İ1 は a から a' へ流れる。\n(b) 電流 İab の値[A]として，最も近いものを次の(1)〜(5)のうちから一つ選べ。",
+      "choices": {
+        "1": "20.00∠−π/6",
+        "2": "6.67∠−π/6",
+        "3": "11.55∠−π/6",
+        "4": "6.67∠−π/3",
+        "5": "11.55∠−π/3"
+      },
+      "officialAnswer": "2",
+      "explanation": "(a) より İ1 = 11.547∠−π/3 A である。\n図の電流の向きでは，節点 a に İab が流れ込み，İca が a から c へ向かって流れ出し，İ1 が a' へ向かって流れ出す。キルヒホッフの電流則より\nİ1 = İab − İca\nとなる。\n対称三相電源に平衡負荷がつながっているので，電源の各相電流も対称な正相順の三相電流になる。各相電流は起電力と同じ向きを正にとっているので，İca = İab∠(−4π/3) = İab∠(2π/3) である。よって\nİ1 = İab (1 − 1∠2π/3) = İab {1 − (−1/2 + j√3/2)} = İab (3/2 − j√3/2) = İab · √3∠−π/6\nİab = İ1 / (√3∠−π/6) = (11.547/√3)∠(−π/3 + π/6) = 6.667∠−π/6 ≈ 6.67∠−π/6 A\n検算（有効電力）：電源側は 3 × 200 × 6.667 × cos(π/6) ≈ 3464 W，負荷側は 3 × 11.547² × 5√3 ≈ 3464 W で，両者は一致する。\nしたがって正解は(2)。",
+      "choiceExplanations": {
+        "1": "誤り。大きさ 20.00 A は，線間電圧 200 V を |Ż| = 10 Ω で割った値に相当する。Δ 結線電源の相電流の大きさは線電流 11.55 A の 1/√3 なので，6.67 A となる。",
+        "2": "正しい。İab = İ1 / (√3∠−π/6) = 11.547/√3 ∠(−π/3 + π/6) = 6.67∠−π/6 A となる。",
+        "3": "誤り。位相 −π/6 は正しいが，大きさ 11.55 A は線電流 İ1 の大きさである。Δ 結線電源の相電流は線電流の 1/√3 なので，6.67 A となる。",
+        "4": "誤り。大きさ 6.67 A は正しいが，位相が İ1 と同じ −π/3 になっている。図の向きでは İ1 = √3∠−π/6 · İab なので，İab は İ1 より π/6 進んだ −π/6 となる。",
+        "5": "誤り。これは線電流 İ1 そのもの（11.55∠−π/3 A）であり，Δ 結線電源内部を流れる相電流 İab ではない。"
+      },
+      "figureDescription": "回路図。左側に Δ 結線の三相電源があり，頂点 a が上，c が左下，b が右下にある（a, b, c は黒丸の節点）。\n・右辺 a–b：交流電源記号があり，その右に Ėa = 200∠0 V と表記されている。起電力の矢印は b から a へ向く。辺の上部に電流 İab [A] の矢印があり，これも a 向き。\n・左辺 a–c：交流電源記号があり，その左に Ėc = 200∠−4π/3 V と表記されている。起電力の矢印は a から c へ向く。電源記号の下に電流 İca [A] の矢印があり，c 向き。\n・下辺 c–b：交流電源記号がある。記号の上に電流 İbc [A] の矢印（b 向き）があり，記号の下に起電力の矢印（c から b へ向く）がある。その下に Ėb = 200∠−2π/3 V と表記されている。\n・線路：a から右へ延びる線が a' に至り，その上に İ1 [A] の右向き矢印がある。b から下へ出て右へ延びる線が b' に至り，その上に İ2 [A] の右向き矢印がある。c から下へ出て最下段を右へ延びる線が c' に至り，その上に İ3 [A] の右向き矢印がある。c' へ上がる縦線は b–b' 間の横線と交差するが，交差点に接続点の黒丸はない。\n・右側に Y 結線負荷がある。a', b', c' は白丸の端子。a' から下へ延びる相に Ż = 5√3 + j5 [Ω] と表記されている。中性点（黒丸）から左下の c' へ向かう相と右下の b' へ向かう相には，それぞれ Ż とだけ表記されている。",
+      "officialReferenceUrls": [],
+      "uncertainty": "なし",
+      "needsReview": true,
+      "sourceQuestionPdfUrl": "https://www.shiken.or.jp/chief/upload/20250831_ch_third_q01.pdf",
+      "sourceAnswerPdfUrl": "https://www.shiken.or.jp/chief/upload/20250831_ch_third_a01.pdf",
+      "reviewedFromPage": [
+        18
+      ]
+    }
+  ],
+  "draftModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 6109,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 9337,
+      "webSearchRequests": 0,
+      "costUSD": 0.19713979999999998,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 2483,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "0d48f7bc665b2e75f8d0893065a212b21080dc6ce4de585b1f1bf91aa794271f",
+  "inputRequestSha256": "cdcae4eef19fc4e88a2b1808208681781e08a1a025c813b6fbfd725c5e65440d",
+  "sourceQuestionPdfSha256": "11a75ffd5dd2b5309ad75370bb963c4fda9e12a812174cfa2c2237383c3a964d",
+  "sourceAnswerPdfSha256": "76fd3715ed487d19a56b387fb402de20ee09474e9fa55b0413f9037b96af06c9",
+  "sourcePageImageSha256": {
+    "data/raw_pdfs/denken3/review/20250831/theory/p18.png": "5d6497754eadcd9c47e9435c4a7d0d62e70994d302ecdf3fef6657f5dce19749"
+  },
+  "revisionHistory": [
+    {
+      "version": 1,
+      "model": "claude-opus-5-5",
+      "resolvedModel": "claude-opus-5-5",
+      "modelUsage": {
+        "claude-opus-5-5": {
+          "inputTokens": 2,
+          "outputTokens": 7196,
+          "cacheReadInputTokens": 1279,
+          "cacheCreationInputTokens": 16813,
+          "webSearchRequests": 0,
+          "costUSD": 0.27868780000000004,
+          "contextWindow": 1000000,
+          "maxOutputTokens": 128000,
+          "thinkingTokens": 2695,
+          "canonicalModel": "claude-opus-5-5",
+          "provider": "firstParty",
+          "costBasis": "list"
+        }
+      },
+      "rawResponseSha256": "5031640c18682a4aeb883575fa2bbfb5ed3200d90497fbd866d2df632ec0e202",
+      "inputRequestSha256": "c8c026dc5e67850574067f2777073ec95e532148f95b361519c45eac8812b0c1",
+      "previousDraftSha256": "e9ce923d2316c8a694c0e94ffc6f1abe87695abbc0368f1fe73b452f5fb5e57c",
+      "previousDraft": "data/raw_pdfs/denken3/review/20250831/theory/archive/q15-vision-draft-v1.json",
+      "answeredReviewSha256": "6b0ed1af4ef919fe3ed24a4a54fbedde61a0c9b3fbdd3a9ed6c696681434460b",
+      "answeredReview": "data/raw_pdfs/denken3/review/20250831/theory/archive/q15-opus-review-v1.json",
+      "answeredStrictReceipt": "docs/evidence/denken3/strict/20250831-theory-s1-q15a-q15b-opus.json",
+      "answeredStrictReceiptSha256": "34390f49728d048594c12f5acb7b1851c18b6e5c51676c43abca0d18d9900123",
+      "figureSha256": {
+        "20250831-theory-q15-fig1": "f557e71f2e9ee846d78933b4c3824505518d8a177f1866e06ddc3672bdd9cec2"
+      },
+      "referenceHashes": {},
+      "operatorNote": ""
+    },
+    {
+      "version": 2,
+      "model": "claude-opus-5-5",
+      "resolvedModel": "claude-opus-5-5",
+      "modelUsage": {
+        "claude-opus-5-5": {
+          "inputTokens": 2,
+          "outputTokens": 5701,
+          "cacheReadInputTokens": 1279,
+          "cacheCreationInputTokens": 16296,
+          "webSearchRequests": 0,
+          "costUSD": 0.24465180000000003,
+          "contextWindow": 1000000,
+          "maxOutputTokens": 128000,
+          "thinkingTokens": 1160,
+          "canonicalModel": "claude-opus-5-5",
+          "provider": "firstParty",
+          "costBasis": "list"
+        }
+      },
+      "rawResponseSha256": "a8bca697e7e87b0af801d2ea1d642ffb8202024a4a5b6226d72a081d53759a29",
+      "inputRequestSha256": "bfe4c2ea7859f5494352087137f375cdddcb605acc6fcaac86c401ddc1a8eabb",
+      "previousDraftSha256": "814d8382bf8960d4459ce7ac13d9c4a2215dc79df5432a2510f92d30a85db871",
+      "previousDraft": "data/raw_pdfs/denken3/review/20250831/theory/archive/q15-vision-draft-v2.json",
+      "answeredReviewSha256": "b49e70d3f601aca0e0b50d12d077ccf412ebbb6f539e2afb6e7d60d75f6d19e4",
+      "answeredReview": "data/raw_pdfs/denken3/review/20250831/theory/archive/q15-opus-review-v2.json",
+      "answeredStrictReceipt": "docs/evidence/denken3/strict/20250831-theory-s2-q15a-q15b-opus.json",
+      "answeredStrictReceiptSha256": "94a5131fc8c405d66306bb0a1673408e865cb3f3c44138dee32fbc2d0eac5860",
+      "figureSha256": {
+        "20250831-theory-q15-fig1": "f557e71f2e9ee846d78933b4c3824505518d8a177f1866e06ddc3672bdd9cec2"
+      },
+      "referenceHashes": {},
+      "operatorNote": ""
+    }
+  ]
+}

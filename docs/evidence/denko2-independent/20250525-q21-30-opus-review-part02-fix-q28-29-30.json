@@ -1,0 +1,48 @@
+{
+  "inputHashes": {
+    "draftSha256": "9ec6f82cd9ad6aa3b0ab282caae67dc97a081dffd222b12800f9647b9b275361",
+    "rowSha256": {
+      "28": "c94a8d57b3680c322ef6ab2c0119eeccececa0462d255efe83f7229471d74de5",
+      "29": "803830a430be6dc8f4caa6811ffc6d049976806d682e8da92a26c07b073e734b",
+      "30": "7f51cbbc7041c3d4ec63befdc15a08c8d17e404d186a19d31110f4aab890f55c"
+    },
+    "sourcePackSha256": {
+      "28": "27bc2d0c045102b5c7d79019ae9b7692694533d309e9c59723c885a8d4915206",
+      "29": "95dde62a77fba65b47fb2bdf85e6c20e91cf2af88c3148bac4bd44409de4e646",
+      "30": "d0a06a89878b1884c2a6870547f97c012df7e2835b73892ac6abb608d40e1eb1"
+    }
+  },
+  "reviewModel": "claude-opus-5-5",
+  "assessment": [
+    {
+      "number": 28,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "lawNeedsExternalCheck": []
+    },
+    {
+      "number": 29,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "explanationIssues": [
+        "editorialReviewNotes says the text was checked against e-Gov 電気用品安全法施行令 (別表第一 第1号・第3号 and 別表第二 第2号・第8号). But officialReferenceUrls lists only the METI guide PDF (denan_guide_ver50.pdf). The 施行令 (https://laws.e-gov.go.jp/law/337CO0000000324) is missing, so the listed source does not match the claimed check. Add the 施行令 URL to officialReferenceUrls.",
+        "For C, the explanation and the ロ reason only say the cable is 'within the specified-product range'. They never show the numbers from the source pack: 2.0mm diameter gives about 3.14mm² of conductor (π×1.0²), which is within 22mm²; 3 cores is within 7; the sheath is synthetic resin. Without these, the explanation does not actually show why C qualifies. Add the numbers."
+      ],
+      "figureIssues": [],
+      "lawNeedsExternalCheck": []
+    },
+    {
+      "number": 30,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "lawNeedsExternalCheck": []
+    }
+  ]
+}

@@ -6,6 +6,8 @@ import {
   getQuestionCountsByExam,
 } from "@/lib/questions/get-questions";
 import type { ExamCode } from "@/lib/questions/types";
+import { EXAM_CONFIGS } from "@/lib/exam-config";
+import { isExamPublished } from "@/lib/qualifications/catalog";
 
 /**
  * questions/get-questions.ts は試験ごとに遅延ロードする問題データの入口。
@@ -31,24 +33,75 @@ describe("getQuestionsForExam", () => {
   // その場合 getQuestionsForExam(code) が他区分の問題を静かに返し、クイズ母集団が
   // 区分を取り違える実害になる。ap 単体は上で pin 済だが、全登録区分について
   // 「ロードされた全問の exam がキーと一致」を回帰固定する。
-  it("全登録区分でロードされた問題は exam フィールドがキーと一致する", async () => {
-    for (const code of getRegisteredExamCodes()) {
-      const qs = await getQuestionsForExam(code);
-      expect(qs.length, `${code} は非空`).toBeGreaterThan(0);
-      const mismatched = qs.filter((q) => q.exam !== code).map((q) => q.id);
-      expect(mismatched, `${code} ローダが返した他区分の問題`).toEqual([]);
-    }
+  it.each(getRegisteredExamCodes())("全登録区分でロードされた問題は exam フィールドがキーと一致する (%s)", async (code) => {
+    const qs = await getQuestionsForExam(code);
+    expect(qs.length, `${code} は非空`).toBeGreaterThan(0);
+    const mismatched = qs.filter((q) => q.exam !== code).map((q) => q.id);
+    expect(mismatched, `${code} ローダが返した他区分の問題`).toEqual([]);
   });
 });
 
 describe("getRegisteredExamCodes", () => {
-  it("登録済み試験コードを列挙する（IPA 13区分＋追加2資格）", () => {
+  it("公開済み試験コードだけを重複なく列挙する", () => {
     const codes = getRegisteredExamCodes();
     expect(codes).toContain("ap");
     expect(codes).toContain("ip");
+    expect(codes).toContain("fp2");
+    expect(codes).toContain("fp1");
     expect(codes).toContain("fp3");
+    expect(codes).toContain("denko2");
     expect(codes).toContain("denken3");
-    expect(codes.length).toBe(15);
+    expect(codes).toContain("denken2");
+    expect(codes).toContain("takken");
+    expect(codes).toContain("civil2");
+    expect(codes).toContain("kaigo");
+    expect(codes).toContain("shakai");
+    expect(codes).toContain("seishin");
+    expect(codes).toContain("kankoji2");
+    expect(codes).toContain("zoen2");
+    expect(codes).toContain("zoen1");
+    expect(codes).toContain("tsushin2");
+    expect(codes).toContain("tsushin1");
+    expect(codes).toContain("civil1");
+    expect(codes).toContain("denko1");
+    expect(codes).toContain("tohan");
+    expect(codes).toContain("denken1");
+    expect(codes).toContain("kanri");
+    expect(codes).toContain("eisei1");
+    expect(codes).toContain("eisei2");
+    expect(codes).toContain("soukan");
+    expect(codes).toContain("hoikushi");
+    expect(codes).toContain("mankan");
+    expect(codes).toContain("kashikin");
+    expect(codes).toContain("sharoushi");
+    expect(codes).toContain("kangoshi");
+    expect(codes).toContain("yakuzaishi");
+    expect(codes).toContain("hokenshi");
+    expect(codes).toContain("josanshi");
+    expect(codes).toContain("rigaku-ryohoshi");
+    expect(codes).toContain("sagyo-ryohoshi");
+    expect(codes).toContain("shino-kunrenshi");
+    expect(codes).toContain("rinsho-kensagishi");
+    expect(codes).toContain("shinryo-hoshasengishi");
+    expect(codes).toContain("rinsho-kogishi");
+    expect(codes).toContain("judo-seifukushi");
+    expect(codes).toContain("chosashi");
+    expect(codes).toContain("shika-ishi");
+    expect(codes).toContain("riyoshi");
+    expect(codes).toContain("chusho-kigyo-shindanshi");
+    expect(codes).toContain("riku-toku-kokunai");
+    expect(codes).toContain("kai-toku3");
+    expect(codes).toContain("land-special1");
+    expect(codes).toContain("riku-tech1");
+    expect(codes).toContain("maritime4");
+    expect(codes).toContain("aviation-comm");
+    expect(codes).toContain("gas-kou");
+    expect(codes).toContain("gas-otsu");
+    expect(codes).toContain("gas-hei");
+    const configuredPublishedCodes = (Object.keys(EXAM_CONFIGS) as ExamCode[]).filter(isExamPublished);
+    expect([...codes].sort()).toEqual(configuredPublishedCodes.sort());
+    expect(codes).toContain("ahaki-anma");
+    expect(codes).toContain("ahaki-hari-kyu");
     // 重複なし
     expect(new Set(codes).size).toBe(codes.length);
   });

@@ -1,0 +1,41 @@
+I checked all three corrected explanations against the primary sources, and all three now pass. I made no further changes, so `fixed` holds each explanation exactly as you sent it.
+
+| Question | Result | What I checked in the primary sources |
+|---|---|---|
+| 13 | PASS | 貸金業法第24条第１項〜第４項 and 第24条の6の4第１項 (第２・３・４・９号) from the e-Gov API; 施行令第3条の7第１号 |
+| 16 | PASS | 貸金業法第10条第１項・第２項 and 第43条 from the e-Gov API |
+| 17 | PASS | 金融庁「貸金業者向けの総合的な監督指針」 (the page with the 取引時確認等の措置 points) and 金融庁「疑わしい取引の参考事例」 (the preamble note) |
+
+**Q13**
+- **①** Correct. Under 第24条第１項, the transferor must notify every transferee, and there is no exception when the transferee is a 貸金業者.
+- **②** Correct. 第24条第２項 applies 第17条 (except 第６項) to the transferee, so Ｂ must deliver the document.
+- **③ (the answer)** Correct.
+  - **The rule:** 第24条第３項 forbids the transfer when Ａ "知り、若しくは知ることができるとき" that a 取立て制限者 will later receive the claim. 暴力団員等 falls under 第１号 of that definition.
+  - **Punishment route:** 第24条の6の4第１項第２号 explicitly excludes 第24条第３項 and 第４項 from general 法令違反, so the explanation is right to point to the dedicated 第３号 and 第４号.
+  - **Nuance:** 第４号 applies only when both イ (Ａ cannot prove it had good reason not to know) and ロ (the 取立て制限者 violates 第21条第１項 or commits a crime) are met. The explanation says "対象となり得る", and it spells out both conditions, so it is accurate.
+- **④** Correct. The 親族 of an individual 貸金業者 counts as 密接な関係 under 施行令第3条の7第１号. Under 第24条の6の4第１項第９号, the 貸金業者 is punished only if it cannot prove it took 相当の注意, so whether Ａ took care matters.
+
+**Q16**
+- **①** Correct. 第10条第１項第１号: the heir files within 30 days of learning of the death.
+- **② (the answer)** Correct. Under 第１項第２号, the person who files is "その法人を代表する役員であつた者", meaning the officer of the dissolved company Ａ, within 30 days of the merger.
+- **③** Correct. Under 第１項第３号, the 破産管財人 files, and under 第２項 the registration lapses.
+- **④** Correct. The closure of business is 第１項第５号 and the lapse is 第２項. 第43条 covers "第十条第二項の規定により登録が効力を失つたとき" and treats the former lender as a 貸金業者 only within the scope of 取引を結了する目的.
+
+**Q17**
+- **The guideline:** it requires the reporting decision to be made under 犯収法第８条第２項 and 同法施行規則第26条・第27条, "総合的に勘案した上で", which matches ③.
+- **The FSA reference cases:** the preamble says "これらの事例に形式的に合致するものが全て疑わしい取引に該当するものではない一方、これに該当しない取引であっても…届出の対象となる", which also matches ③. That reference also tells 特定事業者 other than 預金取扱い金融機関 and the like, including 貸金業者, to follow those reference cases.
+- **①②④:** the guideline confirms the parts about 特定事業者作成書面等 and 犯罪収益移転危険度調査書, about 実質的支配者, 外国PEPs, 個人番号 and 基礎年金番号, and about the 一体的・一元的 internal system.
+
+```json
+[
+ {"number":"13","verdict":"PASS","fixed":null},
+ {"number":"16","verdict":"PASS","fixed":null},
+ {"number":"17","verdict":"PASS","fixed":null}
+]
+```
+
+Sources:
+- [e-Gov法令API 貸金業法](https://laws.e-gov.go.jp/api/1/lawdata/358AC1000000032)
+- [e-Gov法令API 貸金業法施行令](https://laws.e-gov.go.jp/api/1/lawdata/358CO0000000181)
+- [金融庁 貸金業者向けの総合的な監督指針 II](https://www.fsa.go.jp/common/law/guide/kashikin/02.html)
+- [金融庁 疑わしい取引の参考事例](https://www.fsa.go.jp/str/jirei/index.html)

@@ -1,0 +1,24 @@
+{
+  "schemaVersion": 1,
+  "question": "20260401-q48",
+  "status": "official-source-verified",
+  "checkedAtUtc": "2026-09-26T10:35:43.429914+00:00",
+  "sources": {
+    "エナジーサポート 高圧カットアウト カタログ": {
+      "title": "エナジーサポート 高圧カットアウト カタログ",
+      "url": "https://www.energys.co.jp/denzai/pdf/catalog_05_pc.pdf",
+      "sha256": "8f8f48a162d271e2ee74d8d29ee4d30fb56084308a0e958ad9c1602d58ab0efb"
+    }
+  },
+  "checks": {
+    "PCの適用容量": {
+      "source": "エナジーサポート 高圧カットアウト カタログ",
+      "clauses": [
+        "高圧カットアウト高圧配電線路または変圧器（300kVAまで）又はコンデンサ（75kVA）の一次側開閉",
+        "Aトランス保護用として使用する場合※トランス容量300kVA以下まで対応可能"
+      ],
+      "applies": "500kV・Aの変圧器はPCの適用範囲外。"
+    }
+  },
+  "unresolved": []
+}

@@ -1,0 +1,52 @@
+{
+  "reviewModel": "claude-opus-5-5",
+  "requestedModel": "claude-opus-5-5",
+  "canonicalModel": "claude-opus-5-5",
+  "provider": "firstParty",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 1614,
+      "cacheReadInputTokens": 143524,
+      "cacheCreationInputTokens": 13200,
+      "webSearchRequests": 0,
+      "costUSD": 0.1665928,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 1222,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "paperId": "emkohyo-EM20261804",
+  "ids": [
+    "emkohyo-EM20261804-q5"
+  ],
+  "figureSha256": {
+    "emkohyo-EM20261804-q5": {}
+  },
+  "officialRowImageSha256": {
+    "emkohyo-EM20261804-q5": {
+      "/exam-library/emkohyo-EM20261804/q5-p5-0.webp": "0b17f169c1c3c36be14e881fd5428ef5ed6d2439c4fbc817d0eeca9e194286ac"
+    }
+  },
+  "governmentSourceImageSha256": {},
+  "candidateSha256": {
+    "emkohyo-EM20261804-q5": "bace6b79940672f4cbf79e46260af878a99442f3fdf92181f1b800dcd5ea1fe1"
+  },
+  "sourcePackPath": "docs/evidence/emkohyo-choice-sources/emkohyo-EM20261804-q05-05.json",
+  "sourcePackSha256": "41191bc82a2663f33b96bb7fccfa5cf45735b38305366c049662e0bf147f0867",
+  "assessment": {
+    "emkohyo-EM20261804-q5": {
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "reasonIssues": [],
+      "sourceIssues": [
+        "添付の政府資料（国立教育政策研究所 全国学力・学習状況調査報告書 p.35）が直接支えているのは「質量パーセント濃度＝溶液の質量に対する溶質の質量の割合」という定義だけである。肢1〜5の理由と要約は、次の2点にも依拠している。(1) mol·L⁻¹（モル濃度）は溶液1 Lあたりの溶質の物質量を表す。(2) 溶質の質量は物質量×モル質量で求める。どちらもこの資料には書かれておらず、特に肢1の「0.5 mol/Lは溶液1 L中に0.5 mol含むという条件」の根拠がない。モル濃度の定義を直接述べた政府一次資料（例: 計量単位令・JIS等の公的定義を示す頁）を追加するか、この部分は設問の与条件と単位の定義から導いたと明記すべきである。"
+      ],
+      "needsExternalCheck": []
+    }
+  }
+}

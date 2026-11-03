@@ -1,0 +1,339 @@
+import { CHUSHO_SECONDARY_ORIGINAL_COUNT, CHUSHO_SECONDARY_SOLUTION_COUNT } from "@/lib/chusho-secondary/data";
+import { PUBLISHED_SENTAKU } from "@/lib/sharoushi/sentaku";
+import "server-only";
+
+import { EXAM_QUESTION_COUNTS } from "@/lib/constants/exam-question-counts";
+import { getExamPaperStats } from "@/lib/exam-library-papers";
+import { getQualificationHubEntries } from "@/lib/exam-qualification-hub-data";
+import { EXAM_CATALOG, EXAM_LIBRARY_PATH } from "@/lib/exam-library-catalog";
+import {
+  QUALIFICATION_HUBS,
+  qualificationHubForEntry,
+  qualificationHubPath,
+} from "@/lib/exam-qualification-hubs";
+import { FP2_PRACTICAL_EDITIONS, getPracticalEdition as getFp2PracticalEdition } from "@/lib/fp2/practical";
+import { FP3_PRACTICAL_EDITIONS, getPracticalEdition as getFp3PracticalEdition } from "@/lib/fp3/practical";
+import { QUALIFICATION_CATALOG } from "@/lib/qualifications/catalog";
+import type { ExamCode } from "@/lib/questions/types";
+import { getQuestionsByExamStrict, groupByYearSeason } from "@/lib/seo/exam-meta";
+
+/**
+ * トップページの「分野から選ぶ」ディレクトリ。
+ * 数値はすべて収録データから算出する（手入力の件数・年度を持たない）。
+ *  - IPA / その他資格の問題数: EXAM_QUESTION_COUNTS（/ipa の資格カードと同じ集計）
+ *  - 期分: 各資格ページの「N 期分」バッジと同じ groupByYearSeason
+ *  - 安全衛生: 各資格ハブと同じ getExamPaperStats の合計
+ */
+
+export type HomeDomainId = "it" | "safety" | "electrical" | "construction" | "money" | "welfare";
+
+export interface HomeDirectoryItem {
+  key: string;
+  href: string;
+  /** カード見出し（略称を含む短い名前） */
+  name: string;
+  /** 略称バッジ（IPA区分など） */
+  abbr?: string;
+  /** 補足の1行 */
+  sub?: string;
+  questionCount: number;
+  /** 「N期分」「N回分」の表示用 */
+  periodLabel: string;
+  /** カードの下に出す補助バッジ（実技・学科など、データで裏付けがあるものだけ） */
+  extra?: string;
+}
+
+export interface HomeDirectoryDomain {
+  id: HomeDomainId;
+  title: string;
+  lead: string;
+  /** 一覧ページ */
+  allHref: string;
+  allLabel: string;
+  featured: HomeDirectoryItem[];
+  /** 小さいチップで並べる残り（IPA高度試験など） */
+  compact: HomeDirectoryItem[];
+  totalQuestions: number;
+  qualificationCount: number;
+}
+
+interface IpaCardDef {
+  code: ExamCode;
+  abbr: string;
+  name: string;
+  sub?: string;
+}
+
+const IPA_FEATURED: readonly IpaCardDef[] = [
+  { code: "ip", abbr: "IP", name: "ITパスポート", sub: "ITの基礎知識" },
+  { code: "sg", abbr: "SG", name: "情報セキュリティマネジメント", sub: "情報セキュリティの基本" },
+  { code: "fe", abbr: "FE", name: "基本情報技術者", sub: "IT技術者の基本" },
+  { code: "ap", abbr: "AP", name: "応用情報技術者", sub: "技術と管理の応用" },
+];
+
+const IPA_ADVANCED: readonly IpaCardDef[] = [
+  { code: "sc", abbr: "SC", name: "情報処理安全確保支援士" },
+  { code: "nw", abbr: "NW", name: "ネットワークスペシャリスト" },
+  { code: "db", abbr: "DB", name: "データベーススペシャリスト" },
+  { code: "es", abbr: "ES", name: "エンベデッドシステムスペシャリスト" },
+  { code: "st", abbr: "ST", name: "ITストラテジスト" },
+  { code: "sa", abbr: "SA", name: "システムアーキテクト" },
+  { code: "pm", abbr: "PM", name: "プロジェクトマネージャ" },
+  { code: "sm", abbr: "SM", name: "ITサービスマネージャ" },
+  { code: "au", abbr: "AU", name: "システム監査技術者" },
+];
+
+function examQuestionCount(code: ExamCode): number {
+  return EXAM_QUESTION_COUNTS[code] ?? 0;
+}
+
+function examPeriodCount(code: ExamCode): number {
+  return groupByYearSeason(getQuestionsByExamStrict(code)).length;
+}
+
+function ipaItem(def: IpaCardDef): HomeDirectoryItem {
+  return {
+    key: def.code,
+    href: `/${def.code}`,
+    name: def.name,
+    abbr: def.abbr,
+    sub: def.sub,
+    questionCount: examQuestionCount(def.code),
+    periodLabel: `${examPeriodCount(def.code)}期分`,
+  };
+}
+
+function isLiveExam(code: ExamCode): boolean {
+  return QUALIFICATION_CATALOG.some((item) => item.examCode === code && item.status === "live");
+}
+
+const fp2PracticalCount = (): number =>
+  FP2_PRACTICAL_EDITIONS.reduce((sum, edition) => sum + (getFp2PracticalEdition(edition)?.questions.length ?? 0), 0);
+const fp3PracticalCount = (): number =>
+  FP3_PRACTICAL_EDITIONS.reduce((sum, edition) => sum + (getFp3PracticalEdition(edition)?.questions.length ?? 0), 0);
+
+interface OtherCardDef {
+  code: ExamCode;
+  name: string;
+  sub: string;
+  domain: Exclude<HomeDomainId, "it">;
+}
+
+const OTHER_CARDS: readonly OtherCardDef[] = [
+  { code: "kanteishi", name: "不動産鑑定士", sub: "令和7・8年度 短答式160問・全肢解説", domain: "money" },
+  { code: "kaikeishi", name: "公認会計士", sub: "令和8年試験 第I・II回 短答式186問・全肢解説", domain: "money" },
+  { code: "maritime1", name: "第一級海上無線通信士", sub: "2026年3月・9月 日本語筆記4科目190問・全肢解説・原図209枚、B40問は各5枠", domain: "electrical" },
+  { code: "maritime2", name: "第二級海上無線通信士", sub: "2026年3月・9月 基礎・工学A・工学B・法規190原問、B40原問は各5枠", domain: "electrical" },
+  { code: "general1", name: "第一級総合無線通信士", sub: "2026年3月・9月 日本語筆記280原問を保存、270原問を無料・回数制限なしで演習（地理10原問は保留）", domain: "electrical" },
+  { code: "general2", name: "第二級総合無線通信士", sub: "2026年3月・9月 日本語筆記の5科目280原問、無料・回数制限なし", domain: "electrical" },
+  { code: "general3", name: "第三級総合無線通信士", sub: "2026年3月・9月 日本語筆記の基礎・工学・法規140原問、無料・回数制限なし", domain: "electrical" },
+  { code: "maritime3", name: "第三級海上無線通信士", sub: "2026年3月・9月の無線工学・法規70原問・全肢解説", domain: "electrical" },
+  { code: "land-special2", name: "第二級陸上特殊無線技士", sub: "2021年10月・2022年2月の旧筆記試験48原問・全肢解説", domain: "electrical" },
+  { code: "land-special3", name: "第三級陸上特殊無線技士", sub: "2021年10月・2022年2月の旧筆記試験48原問・全肢解説", domain: "electrical" },
+  { code: "riku-tech2", name: "第二級陸上無線技術士", sub: "2026年2回分・全肢解説（確認中1原問を除く）", domain: "electrical" },
+  { code: "amateur2", name: "第二級アマチュア無線技士", sub: "2026年2回分・全肢解説（確認中1原問を除く）", domain: "electrical" },
+  { code: "maritime-radar", name: "レーダー級海上特殊無線技士", sub: "2026年2月・6月の法規・無線工学48原問・全肢解説", domain: "electrical" },
+  { code: "amateur1", name: "第一級アマチュア無線技士", sub: "2026年5月・8月 119原問・全肢解説（確認中1原問を除く）", domain: "electrical" },
+  { code: "maritime-special1", name: "第一級海上特殊無線技士", sub: "2026年2月・6月 日本語の無線工学・法規48原問・全肢解説", domain: "electrical" },
+  { code: "aviation-comm", name: "航空無線通信士", sub: "2026年2月・8月 日本語の無線工学・法規68原問・全肢解説", domain: "electrical" },
+  { code: "riku-tech1", name: "第一級陸上無線技術士", sub: "2026年1月・7月の4科目190原問・全肢解説", domain: "electrical" },
+  { code: "maritime4", name: "第四級海上無線通信士", sub: "2026年2月・8月の無線工学・法規76原問・全肢解説", domain: "electrical" },
+  { code: "land-special1", name: "第一級陸上特殊無線技士", sub: "2026年2月・6月09:30 A版72原問（13:30 B版は未収録）", domain: "electrical" },
+  { code: "riku-toku-kokunai", name: "国内電信級陸上特殊無線技士", sub: "2026年2月・6月 法規の全24問", domain: "electrical" },
+  { code: "koku-toku", name: "航空特殊無線技士", sub: "2026年2月・6月 法規・無線工学の全48問", domain: "electrical" },
+  { code: "kai-toku2", name: "第二級海上特殊無線技士", sub: "2022年10月・2023年2月の旧筆記 確認済み48問", domain: "electrical" },
+  { code: "kai-toku3", name: "第三級海上特殊無線技士", sub: "2022年10月・2023年2月の旧筆記試験60問", domain: "electrical" },
+  { code: "chosashi", name: "土地家屋調査士", sub: "令和7・6年度 午前・午後（択一・記述）", domain: "money" },
+  { code: "chusho-kigyo-shindanshi", name: "中小企業診断士", sub: "第1次試験・2026／2025年度 全7科目", domain: "money" },
+  { code: "denken3", name: "電験三種", sub: "第三種電気主任技術者", domain: "electrical" },
+  { code: "denken2", name: "電験二種", sub: "一次試験（理論・電力・機械・法規）", domain: "electrical" },
+  { code: "denken1", name: "電験一種", sub: "一次試験（理論・電力・機械・法規の各1問）", domain: "electrical" },
+  { code: "denko2", name: "第二種電気工事士", sub: "学科試験", domain: "electrical" },
+  { code: "civil1", name: "1級土木施工管理", sub: "第一次検定（問題A・B）", domain: "construction" },
+  { code: "denko1", name: "第一種電気工事士", sub: "学科試験", domain: "electrical" },
+  { code: "civil2", name: "2級土木施工管理", sub: "第一次検定（土木）", domain: "construction" },
+  { code: "kankoji2", name: "2級管工事施工管理", sub: "第一次検定", domain: "construction" },
+  { code: "zoen2", name: "2級造園施工管理", sub: "第一次検定（前期・後期）", domain: "construction" },
+  { code: "zoen1", name: "1級造園施工管理", sub: "第一次検定（問題A・B）", domain: "construction" },
+  { code: "tsushin2", name: "2級電気通信工事施工管理", sub: "第一次検定（前期）", domain: "construction" },
+  { code: "tsushin1", name: "1級電気通信工事施工管理", sub: "第一次検定（問題A・B）", domain: "construction" },
+  { code: "fp3", name: "FP3級", sub: "FP技能検定3級（学科・実技）", domain: "money" },
+  { code: "fp2", name: "FP2級", sub: "FP技能検定2級（学科・実技）", domain: "money" },
+  { code: "fp1", name: "FP1級", sub: "2026年5月 基礎50問・応用15原問／9月 基礎50問・応用15原問", domain: "money" },
+  { code: "takken", name: "宅建", sub: "宅地建物取引士資格試験", domain: "money" },
+  { code: "kaigo", name: "介護福祉士", sub: "国家試験（総合問題を含む）", domain: "welfare" },
+  { code: "shakai", name: "社会福祉士", sub: "国家試験（共通・専門科目）", domain: "welfare" },
+  { code: "seishin", name: "精神保健福祉士", sub: "国家試験（専門・共通科目）", domain: "welfare" },
+  { code: "tohan", name: "登録販売者", sub: "関西広域連合（前半・後半）", domain: "welfare" },
+  { code: "kanri", name: "管理業務主任者", sub: "2024・2025年度の公式公開問題", domain: "money" },
+  { code: "eisei1", name: "第一種衛生管理者", sub: "2025年10月・2026年4月公表（88問）", domain: "safety" },
+  { code: "eisei2", name: "第二種衛生管理者", sub: "2025年10月・2026年4月公表（60問）", domain: "safety" },
+  { code: "soukan", name: "技術士 総合技術監理部門", sub: "第二次試験 択一式（令和7・8年度）", domain: "construction" },
+  { code: "hoikushi", name: "保育士試験", sub: "筆記9科目（令和8年度前期・154問）", domain: "welfare" },
+  { code: "mankan", name: "マンション管理士", sub: "令和6・7年度公式問題（100問）", domain: "money" },
+  { code: "kashikin", name: "貸金業務取扱主任者", sub: "第20回・第19回公式問題（100問）", domain: "money" },
+  { code: "sharoushi", name: "社会保険労務士", sub: "第58・57回 択一式・選択式を部分収録", domain: "welfare" },
+  { code: "kangoshi", name: "看護師", sub: "第115・114回 午前・午後の確認済み原問を部分収録", domain: "welfare" },
+  { code: "riyoshi", name: "理容師", sub: "第54・53回の全110原問・全肢解説", domain: "welfare" },
+  { code: "hokenshi", name: "保健師", sub: "国家試験の確認済み原問を部分収録", domain: "welfare" },
+  { code: "josanshi", name: "助産師", sub: "国家試験の確認済み原問を部分収録", domain: "welfare" },
+  { code: "rigaku-ryohoshi", name: "理学療法士", sub: "第61・60回 午前・午後の確認済み原問を部分収録", domain: "welfare" },
+  { code: "sagyo-ryohoshi", name: "作業療法士", sub: "第61・60回 午前・午後の確認済み310原問を部分収録", domain: "welfare" },
+  { code: "judo-seifukushi", name: "柔道整復師", sub: "第34・33回 午前・午後の原問と全肢解説", domain: "welfare" },
+  { code: "rinsho-kogishi", name: "臨床工学技士", sub: "第39・38回の午前・午後から確認済み220問を部分収録", domain: "welfare" },
+  { code: "gas-kou", name: "ガス主任技術者 甲種", sub: "令和8・7年度 法令・基礎・ガス技術", domain: "safety" },
+  { code: "gas-otsu", name: "ガス主任技術者 乙種", sub: "令和8・7年度 法令・基礎・ガス技術", domain: "safety" },
+  { code: "gas-hei", name: "ガス主任技術者 丙種", sub: "令和8・7年度 法令・基礎・ガス技術", domain: "safety" },
+  { code: "shino-kunrenshi", name: "視能訓練士", sub: "第56・55回 午前・午後の確認済み220原問を部分収録", domain: "welfare" },
+  { code: "rinsho-kensagishi", name: "臨床検査技師", sub: "\u7b2c72\u30fb71\u56de\uff082026\u30fb2025\u5e74\u5b9f\u65bd\uff09\u5348\u524d\u30fb\u5348\u5f8c\u306e\u78ba\u8a8d\u6e08\u307f\u539f\u554f\u3092\u90e8\u5206\u53ce\u9332", domain: "welfare" },
+  { code: "shinryo-hoshasengishi", name: "診療放射線技師", sub: "第77・78回の午前・午後398原問と全肢解説", domain: "welfare" },
+  { code: "shika-ishi", name: "歯科医師", sub: "第119・118回の問題A〜D（公式採点除外を除く）", domain: "welfare" },
+  { code: "yakuzaishi", name: "薬剤師", sub: "第111・110回の確認済み359原問を部分収録", domain: "welfare" },
+  { code: "ahaki-anma", name: "あん摩マッサージ指圧師", sub: "第34・33回の確認済み318原問を部分収録", domain: "welfare" },
+  { code: "ahaki-hari-kyu", name: "はり師・きゅう師", sub: "第34・33回の共通・専用360原問", domain: "welfare" },
+];
+
+function otherItem(def: OtherCardDef): HomeDirectoryItem {
+  const practical = def.code === "fp2" ? fp2PracticalCount() : def.code === "fp3" ? fp3PracticalCount() : 0;
+  return {
+    key: def.code,
+    href: `/${def.code}`,
+    name: def.name,
+    sub: def.sub,
+    questionCount: examQuestionCount(def.code) + practical + (def.code === "sharoushi" ? PUBLISHED_SENTAKU.length : 0),
+    periodLabel: `${examPeriodCount(def.code)}期分`,
+    extra: def.code === "chusho-kigyo-shindanshi" ? "417原問・454設問" : def.code === "sharoushi" ? `択一式${examQuestionCount(def.code)}原問・選択式${PUBLISHED_SENTAKU.length}原問` : practical > 0 ? `学科${examQuestionCount(def.code)}問・実技${practical}問` : undefined,
+  };
+}
+
+function safetyItems(): HomeDirectoryItem[] {
+  return QUALIFICATION_HUBS.flatMap((hub) => {
+    const papers = getQualificationHubEntries(hub).flatMap((entry) => {
+      const stats = getExamPaperStats(entry.id);
+      return stats ? [stats] : [];
+    });
+    if (papers.length === 0) return [];
+    return [{
+      key: hub.slug,
+      href: qualificationHubPath(hub.slug),
+      name: hub.name,
+      questionCount: papers.reduce((sum, paper) => sum + paper.questionCount, 0),
+      periodLabel: `${papers.length}回分`,
+    }];
+  });
+}
+
+/**
+ * 恒久ハブを持たない免許試験（特級ボイラー技士・潜水士など）。
+ * 公表問題ライブラリの科目絞り込みURLへ案内する（ハブがある科目はハブへ301される）。
+ */
+function safetyOtherItems(): HomeDirectoryItem[] {
+  const bySubject = new Map<string, { group: string; questionCount: number; papers: number }>();
+  for (const entry of EXAM_CATALOG) {
+    if (qualificationHubForEntry(entry)) continue;
+    const stats = getExamPaperStats(entry.id);
+    if (!stats) continue;
+    const current = bySubject.get(entry.subject) ?? { group: entry.group, questionCount: 0, papers: 0 };
+    current.questionCount += stats.questionCount;
+    current.papers += 1;
+    bySubject.set(entry.subject, current);
+  }
+  return [...bySubject.entries()].map(([subject, value]) => ({
+    key: `${value.group}-${subject}`,
+    href: `${EXAM_LIBRARY_PATH}?group=${value.group}&subject=${encodeURIComponent(subject)}`,
+    name: subject,
+    questionCount: value.questionCount,
+    periodLabel: `${value.papers}回分`,
+  }));
+}
+
+function sumQuestions(items: readonly HomeDirectoryItem[]): number {
+  return items.reduce((sum, item) => sum + item.questionCount, 0);
+}
+
+function domain(
+  base: Omit<HomeDirectoryDomain, "totalQuestions" | "qualificationCount" | "featured" | "compact">,
+  featured: HomeDirectoryItem[],
+  compact: HomeDirectoryItem[] = [],
+): HomeDirectoryDomain {
+  const visibleFeatured = featured.filter((item) => item.questionCount > 0);
+  const visibleCompact = compact.filter((item) => item.questionCount > 0);
+  return {
+    ...base,
+    featured: visibleFeatured,
+    compact: visibleCompact,
+    totalQuestions: sumQuestions(visibleFeatured) + sumQuestions(visibleCompact),
+    qualificationCount: visibleFeatured.length + visibleCompact.length,
+  };
+}
+
+export function getHomeDirectory(): HomeDirectoryDomain[] {
+  const others = OTHER_CARDS.filter((def) => isLiveExam(def.code)).map((def) => ({ def, item: otherItem(def) }));
+  const byDomain = (id: OtherCardDef["domain"]) => others.filter(({ def }) => def.domain === id).map(({ item }) => item);
+
+  const domains = [
+    domain(
+      {
+        id: "it",
+        title: "IT・情報処理",
+        lead: "IPA 情報処理技術者試験。ITパスポートから高度試験まで。",
+        allHref: "/ipa",
+        allLabel: "IPAの試験をすべて見る",
+      },
+      IPA_FEATURED.map(ipaItem),
+      IPA_ADVANCED.map(ipaItem),
+    ),
+    domain(
+      {
+        id: "safety",
+        title: "安全衛生",
+        lead: "安全衛生技術試験協会の免許試験、作業環境測定士、労働安全・労働衛生コンサルタント。",
+        allHref: "/e-learning/exams",
+        allLabel: "安全衛生の試験をすべて見る",
+      },
+      [...byDomain("safety").filter((item) => item.key !== "eisei1" && item.key !== "eisei2"), ...safetyItems()],
+      safetyOtherItems(),
+    ),
+    domain(
+      {
+        id: "electrical",
+        title: "電気",
+        lead: "電験三種と第二種電気工事士の公式公開問題。",
+        allHref: "/qualifications",
+        allLabel: "その他資格の一覧",
+      },
+      byDomain("electrical"),
+    ),
+    domain(
+      {
+        id: "construction",
+        title: "建設・施工管理",
+        lead: "1級・2級土木と2級管工事施工管理技術検定の第一次検定。",
+        allHref: "/qualifications",
+        allLabel: "その他資格の一覧",
+      },
+      byDomain("construction"),
+    ),
+    domain(
+      {
+        id: "money",
+        title: "お金・不動産・経営",
+        lead: "FP技能検定（学科・実技）、宅建、中小企業診断士など。",
+        allHref: "/qualifications",
+        allLabel: "その他資格の一覧",
+      },
+      [...byDomain("money"), { key: "chusho-secondary", href: "/chusho-secondary", name: "中小企業診断士二次", sub: "2025・2024年度の全8事例と独自解答例", questionCount: CHUSHO_SECONDARY_ORIGINAL_COUNT, periodLabel: "2回分", extra: `${CHUSHO_SECONDARY_SOLUTION_COUNT}解答例・記述練習` }],
+    ),
+    domain(
+      {
+        id: "welfare",
+        title: "医療・福祉",
+        lead: "医療・福祉の国家試験と登録販売者試験。",
+        allHref: "/qualifications",
+        allLabel: "その他資格の一覧",
+      },
+      byDomain("welfare"),
+    ),
+  ];
+  return domains.filter((d) => d.qualificationCount > 0);
+}

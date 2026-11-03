@@ -1,0 +1,57 @@
+{
+  "reviewModel": "claude-opus-5-5",
+  "requestedModel": "claude-opus-5-5",
+  "canonicalModel": "claude-opus-5-5",
+  "provider": "firstParty",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 4000,
+      "cacheReadInputTokens": 139443,
+      "cacheCreationInputTokens": 17721,
+      "webSearchRequests": 0,
+      "costUSD": 0.24966460000000001,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 3305,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "paperId": "emkohyo-EM20261802",
+  "ids": [
+    "emkohyo-EM20261802-q8"
+  ],
+  "figureSha256": {
+    "emkohyo-EM20261802-q8": {}
+  },
+  "officialRowImageSha256": {
+    "emkohyo-EM20261802-q8": {
+      "/exam-library/emkohyo-EM20261802/q8-p6-1.webp": "9d9b421b406ad290f9088828c4acac4a65499aa4208bb2d3702c370803eadd8c"
+    }
+  },
+  "officialPageImageSha256": {},
+  "governmentSourceImageSha256": {},
+  "candidateSha256": {
+    "emkohyo-EM20261802-q8": "28de1d721ae29e0ca6aff97d0f3acbc5471a2368eeb5c7c817cc5fd36fe3d262"
+  },
+  "sourcePackPath": "docs/evidence/emkohyo-choice-sources/emkohyo-EM20261802-q08-08.json",
+  "sourcePackSha256": "712a6d74b8989d909a90baafeceee7037829f832fa7bbcfbd99227409f52ff8b",
+  "assessment": {
+    "emkohyo-EM20261802-q8": {
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "reasonIssues": [
+        "肢4の理由「肢4は規定の項目と時点を取り違えている」は言い過ぎ。取り違えと言うには、別の項目・時点で定めた測定規定が存在する必要がある。挙げている第15条は分圧の範囲を保つための送気・換気等の措置、第17条は作業中の換気・有害ガスの測定等の措置であり、どちらも作業開始前の定期測定規定ではない。肢4の誤りは、高圧則に作業開始前の気温・湿度・気圧の測定義務が存在しない点にある。「高圧則はそのような測定義務を定めていない（作業中はガス分圧の管理と有害ガス対策を求める）」のように、義務が存在しないことを誤りの理由として書くべきである。summaryも同じ趣旨に揃えるとよい。"
+      ],
+      "sourceIssues": [
+        "肢4とsummaryの核心は「高圧則に作業開始前の気温・湿度・気圧測定義務が存在しない」という不存在の主張である。添付の証拠は第15条・第17条の抜粋だけで、他の条にそのような規定が無いことは直接示していない。存在する条文の抜粋では、不存在を直接支えられない。規則の全文を確認した旨を示すか、作業環境測定の対象（労働安全衛生法施行令第21条）に高圧室内作業室が含まれない点など、不存在を支える根拠を足す必要がある。"
+      ],
+      "needsExternalCheck": [
+        "試験日2026-08-19時点の現行の高気圧作業安全衛生規則（令和8年厚労令3号による改正後）の全文を通読し、作業開始前に作業室の気温・湿度・気圧を測定する義務規定がどの条にも無いことを確認すること。第12条前後の圧力計・設備、第20条の2の作業状況の記録、第22条前後の点検規定なども確認対象に含める。"
+      ]
+    }
+  }
+}

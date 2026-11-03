@@ -1,0 +1,107 @@
+{
+  "schemaVersion": 1,
+  "paper": "20241027",
+  "reviewModel": "claude-opus-5-5",
+  "inputHashes": {
+    "draftSha256": "eba00f36f26e661fcb54e438e051e02265e93482ae60acd2466e76dfa5637918",
+    "candidateSha256": {
+      "41": "9b5675b2975c6856043a4a287e2fe6bc71bd0d0b71c3cdfc436058b82da48848",
+      "42": "9b36b3f2a7782de9a39a2cbde3b6796818619117bdb4d8a094d45dbc61524f62",
+      "43": "70c6fe5cbeed859431a5f8656f84ecce0769b2cda89e09bdc2c70f604ab47f25",
+      "44": "8f6680c0c2029ceb9007e87d497c6a63f1320a0c89f1fa0fce436eb196abd2f0",
+      "45": "e0cc2445522ac6f6007cd79e01d5a8f48ab3eaf68867b733b01f8dd7e84428ed"
+    },
+    "rowSha256": {
+      "41": "98057e09381dbcbe719e08dc3c5eac4d02ff3925aa6859be5d26e0acb815ce06",
+      "42": "7e826e9149de5cabe1b0c0b542924839808ebd584451f11ae8ada28b479df89f",
+      "43": "e194236db9bc347e8821cbaa5ad8385859d9ea46f90f08a4402b4520a5311cf8",
+      "44": "8836bd96d6f1e29497531e7acfbd1a07f31d01cfa357dc5a67d4934f550cad61",
+      "45": "a58985359ef31dbfd80c46b40fa544e89bab733dabee9f348e0a5141c97f1408"
+    },
+    "detailFigureSha256": {
+      "public/images/denko2/2024-second/q41-1.png": "6dceebc5af0038d78f3ab910a9f417fb2de7392cbc0c2131d6581a94926b09bc",
+      "public/images/denko2/2024-second/q42-1.png": "d91117e59cb8631ab2925a57a18e1876674f4c85c1df9914c03609b0dd16e6fc",
+      "public/images/denko2/2024-second/q43-1.png": "1523ed076653edf7544f9ad220e6f7adbdc3e21636d68f567dc4d59aaaaf3fc0",
+      "public/images/denko2/2024-second/q44-1.png": "985b3d46dbcbb5dc05ccf0bbc9dae717c77fbc007d140d707b24766444720245",
+      "public/images/denko2/2024-second/q45-1.png": "e7d633839afd0e40df25808eba2a298ed2135c53cd2d61691c67a5b53dfb6dad"
+    },
+    "sharedFigureSha256": {
+      "public/images/denko2/2024-second/wiring-diagram.png": "4b4d474a8fde227349db77620ddece4a673956783b85384b48d2247572adcc32"
+    },
+    "legalReceiptSha256": {},
+    "sourcePackSha256": {
+      "42": "24bd16ebd64fe2a6fe13c1ae3e6e57817ca37d8b6e7a4044b86460edda7177b9"
+    }
+  },
+  "assessment": [
+    {
+      "number": 41,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "visualIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": "I checked the question line and the published figure q41-1.png against the official question crop. The question text matches the original: 「⑪で示す部分の接地抵抗を測定するものは。」 It has no negation, number or unit. On official p.15 (2F plan, lower left), ⑪ is the ground symbol that hangs off the left outdoor unit, RC 0 (about x365, y390 in the common diagram). The candidate's location for ⑪ is correct. Each photo matches the original: イ is an analog insulation tester with an MΩ dial, a red rod probe and a black alligator clip. ロ is a phase-sequence tester with a round window and red, white and blue clip leads. ハ is an analog multimeter with DCV, ACV, DCA and Ω ranges and two rod test leads. ニ is an earth tester: a column of buttons on the front, a meter, three terminals on top, two T-shaped auxiliary earth rods, and green, yellow and red leads. The front plate reads EARTH TESTER. The official answer is ニ, and it agrees with the choice analysis. Every per-choice reason is based on what the photo shows. The candidate makes no independent legal or standards claim, so officialReferenceUrls is empty, and that is appropriate."
+    },
+    {
+      "number": 42,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "visualIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": "I checked the question line and q42-1.png against the original. The question is: 「⑫で示すジョイントボックス内の接続をすべて圧着接続とする場合，使用するリングスリーブの種類と最少個数の組合せで，正しいものは。」 The choices are イ small ×6, ロ medium ×3, ハ large ×3, ニ small ×3. The sleeves in the photos have no markings.\n\nOfficial p.15, 2F plan: the ⑫ box (about x480, y330) joins three CV 5.5-3C cables. One goes right to the up-riser for circuit a; per the P-1 panel diagram this is P-1 circuit a (3P 30A, to 2F). The other two go to the left and right switches (S) for the RC units. That means three 5.5mm² wires meet in each of the R, S and T phases, giving three joints.\n\nSource checked: Electrical Technician Examination Center, 「技能試験の概要と注意すべきポイント」 (https://www.shiken.or.jp/construction/upload/point2024.pdf, pinned SHA256 0b40cdd6…5717), p.25 table 「リングスリーブ（Ｅ形）と電線の組合せ(JIS C 2806 準拠)」. For identical φ2.6mm or 5.5mm² wires the table gives: small, not allowed; medium, 2 wires; large, 3 wires. I re-fetched the URL with WebFetch, but the PDF text could not be extracted. I therefore used the same text in the SHA-pinned pack you supplied.\n\nThe official answer is ハ (large ×3), which matches. The per-choice reasons for イ, ロ and ニ are all consistent with the same table."
+    },
+    {
+      "number": 43,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "visualIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": "I checked the question line and q43-1.png against the original. The question text, including the condition 「ただし，使用する電線はすべてVVF1.6とする」, matches. The choice labels match: イ red 3 + yellow 1, ロ red 2 + pale blue 2, ハ red 3 + pale blue 1, ニ red 2 + yellow 1.\n\nOfficial p.15, 2F plan: ⑬ is the hatched-circle VVF joint box (about x505, y180). Four cables connect to it:\n- L-2 circuit ⓒ.\n- The イ fluorescent group on the left.\n- The right-hand fluorescent group, labelled ロ with small katakana next to the lamps.\n- The line through ① to the ⑭ switch group (イロハ, with ハ marked 3 for a 3-way switch).\n\nThe ハ 3-way switch runs down the riser (arrow at about x618, y130) to the 1F stair lamp ハ (about x605, y505). On 1F, that lamp connects only to the riser and to the 1F 3-way switch (3ハ). Its supply and neutral therefore come through ⑭, ① and ⑬ from L-2 circuit c.\n\nSo ① carries four wires: live, neutral, the イ return and the ロ return. Inside ⑬, the neutrals form one 4-wire joint, and the live, イ-return and ロ-return each form a 2-wire joint (three joints). The photos show red with 2 ports, clear/pale blue with 3 ports and yellow with 4 ports. That gives red ×3 + yellow ×1, matching the official answer イ. The shortfall or surplus reasons given for ロ, ハ and ニ are correct. The candidate makes no independent legal or standards claim."
+    },
+    {
+      "number": 44,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [
+        "Choice ニ says the box has a conduit hub 「(止めねじ付き)」 and that 「固定ねじが見える」. In the official photo, the hub on top is visible, but neither a set screw nor any fixing screws can be clearly confirmed, and it is unclear which part 「固定ねじ」 refers to. Only the holes inside the box are visible. Rewrite it as something the photo confirms, e.g. 「角の丸い金属製の露出形スイッチボックスで、上部に電線管接続用のハブがある。」"
+      ],
+      "answerIssues": [],
+      "explanationIssues": [
+        "The general explanation says 「VVFケーブル配線の点滅器取付けには、アウトレットボックス、塗代カバー、配線器具用取付枠を用いる」. That is an over-generalisation: a switch on a VVF run does not necessarily need an outlet box or a plaster ring cover. Limit it to this question, e.g. 「⑭（イ・ロ・ハの3個用）の埋込取付けでは、四角アウトレットボックス＋塗代カバー＋取付枠の組合せが使える」.",
+        "The ニ reason and the general explanation both describe the hub with 「止めねじ付き」. The photo does not confirm this, so it should be changed to just 「電線管接続用のハブ」.",
+        "The explanation concludes that ⑭ is not conduit work because 「電線管の表記がない」. If it relies on the question booklet's general note (wiring is VVF cable work unless otherwise noted), cite that official note so the conclusion does not rest only on the drawing."
+      ],
+      "visualIssues": [
+        "In the diagramDescription for ニ, 「止めねじ付きの電線管接続用ハブ」 goes beyond what the official photo shows. Change it to 「電線管接続用ハブ」."
+      ],
+      "sourceIssues": [],
+      "verifiedEvidence": "I checked the question line and q44-1.png against the original. The question includes the negation 「使用されることのない」. The photos show: イ, a metal square outlet box with knockouts; ロ, a metal plaster ring cover with a raised-lip rounded-rectangle opening, small holes at the top and bottom, and slots near the corners; ハ, a wiring-device mounting frame; ニ, an exposed switch box with a conduit hub on top. On official p.15 (2F plan), ⑭ is the three-switch group (イロハ, with ハ as a 3-way switch). It is joined to the ⑬ VVF joint box by the solid line ①, and no conduit is marked. The official answer is ニ, and I have not changed it. The problems are limited to over-described photo details and an over-general statement in the explanation."
+    },
+    {
+      "number": 45,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [
+        "The reason given for ニ, 「公式正答ハとは接地極穴の有無が異なる」, is circular: it uses the official answer as its own justification. It is not a reason specific to that choice. What separates ハ from ニ is what the annotation ET on ⑮ means: an earthing terminal only. An outlet with both an earthing contact and an earthing terminal would be annotated EET. Add that reasoning with a primary source. The question booklet states that its symbols follow JIS C 0303:2000 as a rule (official question booklet on shiken.or.jp).",
+        "The reason for ロ is written the same way, 「公式正答ハの…器具とは異なる」. Base it on the drawing instead: no 「2」 is marked, so ⑮ is a single outlet, and ロ has two outlets. It should also say that ET does not indicate an earthing contact.",
+        "The general explanation also just leans on 「公式正答はハであり」. It should first explain what the symbol means: a single wall outlet, and ET meaning the earthing terminal type. Then it should match that to the photos."
+      ],
+      "visualIssues": [],
+      "sourceIssues": [
+        "officialReferenceUrls is empty. The reasoning for this question depends on the meaning of the symbol annotation ET under JIS C 0303:2000. The candidate needs to add the question booklet's note saying the symbols follow JIS C 0303:2000, and a primary source for the meaning of ET."
+      ],
+      "verifiedEvidence": "I checked the question line and q45-1.png against the original. The photos show: イ, two outlets with no earthing contact or terminal; ロ, two outlets, each with a D-shaped earthing-contact hole below it; ハ, one outlet with an exposed screw earthing terminal below it; ニ, one outlet with an earthing-contact hole and a screw earthing terminal. On official p.15 (1F plan, top wall, just right of 洗面所), ⑮ (about x505, y505) is a wall outlet annotated ET, with a ground-wire line; no 「2」 is marked. The official answer is ハ, and it matches the drawing. For the primary source, a WebSearch limited to shiken.or.jp found an official question booklet stating that its symbols follow JIS C 0303:2000 as a rule (e.g. https://www.shiken.or.jp/construction/upload/20240526_co_second_q01.pdf). The candidate does not cite it."
+    }
+  ]
+}

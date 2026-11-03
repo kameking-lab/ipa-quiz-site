@@ -1,0 +1,92 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20250831",
+  "subject": "theory",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 8518,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 18253,
+      "webSearchRequests": 0,
+      "costUSD": 0.3166478,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 6225,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "75fc0b1c1555e9ca56f68ee8a6683f93ef7d32b895fce3ddf832da3d151e9c20",
+  "inputRequestSha256": "3777304961d3914408dac5c0ccd347d0e1ddedba388f00f2b7256d552137b758",
+  "inputHashes": {
+    "candidateSha256": {
+      "q15a": "364b805fc4136572348f9dbcb1df68ba4b026e923201c6c466f6835379661362",
+      "q15b": "ba08be1f7f9765a93a0fc03668f66da9e69e8226c1be18caca3b166f9c5bdb8f"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20250831/theory/p18.png": "5d6497754eadcd9c47e9435c4a7d0d62e70994d302ecdf3fef6657f5dce19749"
+    },
+    "figureSha256": {
+      "public/images/denken3/20250831/theory/20250831-theory-q15-fig1.png": "f557e71f2e9ee846d78933b4c3824505518d8a177f1866e06ddc3672bdd9cec2"
+    },
+    "sourceQuestionPdfSha256": "11a75ffd5dd2b5309ad75370bb963c4fda9e12a812174cfa2c2237383c3a964d",
+    "sourceAnswerPdfSha256": "76fd3715ed487d19a56b387fb402de20ee09474e9fa55b0413f9037b96af06c9",
+    "officialAnswerUnitsSha256": "fdd40eff13ecf390daa1a4dcc3322659b81fbfcac48606a59b3b91a478504445",
+    "referencePdfSha256": {},
+    "referencePageSha256": {},
+    "referenceJsonSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q15a",
+      "questionNumber": 15,
+      "part": "a",
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [
+        "choiceExplanations[3] が肢固有の理由になっていない。現状は「大きさ 16.51 A と位相 −π/6 のどちらも本回路の計算結果と一致しない」とだけ述べ、正解値を示すにとどまる。位相 −π/6 には特定できる誤りの理由がある。−π/6 は負荷相電圧 V̇a'n の位相で、Ż の偏角 π/6 による電流の遅れを反映していない（肢(5)と同じ誤り）。この理由を明記すべき。大きさ 16.51 A は原図・公式資料から導出根拠を特定できないため、由来を推測で書かず「正しい値 11.55 A と一致しない」とだけ述べること。修正案：「誤り。位相 −π/6 は負荷相電圧 V̇a'n の位相であり、Ż = 10∠π/6 Ω による π/6 の遅れを反映していない（正しくは −π/3）。大きさ 16.51 A も正しい値 11.55 A と一致しない。」"
+      ],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "問題文：原図の「相電圧 200 V の対称三相交流電源」「Ż = 5√3 + j5 [Ω]」「Y 結線された平衡三相負荷」および(a)の設問文と一致する。小問分割に伴う「次の(a)及び(b)の問に答えよ。」の省略は許容範囲。",
+        "選択肢：原図の(1) 20.00∠−π/3、(2) 11.55∠−π/3、(3) 16.51∠−π/6、(4) 20.00∠−π/6、(5) 11.55∠−π/6 と全肢一致する。",
+        "公式正答：公式解答表の理論 問15(a) は解答 2・配点 5 で、officialAnswer=\"2\"・scoringPoints=5 と一致する。",
+        "極性：原図で Ėa の矢印は b→a、Ėb の矢印は c→b、Ėc の矢印は a→c。矢印先端を高電位とすると V̇ab = 200∠0、V̇bc = 200∠−2π/3、V̇ca = 200∠−4π/3 で、総和 0 の正相順になる。逆の極性解釈では İ1 = 11.55∠2π/3 となり該当肢がないため、公式正答からも解釈の妥当性を確認できる。",
+        "検算：V̇a'n = (200/√3)∠−π/6 = 115.47∠−π/6 V、Ż = 10∠π/6 Ω（√(75+25) = 10、tan⁻¹(1/√3) = π/6）。İ1 = 11.547∠−π/3 A で、肢(2)と一致する。",
+        "誤答肢(1)(4)(5)の理由（200/10 = 20 A の誤り、位相 −π/6 は電圧位相で Ż の偏角ぶんの遅れを欠く）は正確かつ肢固有である。",
+        "図：公開候補図は原図の回路部分を欠落なく切り出している。ラベル a, b, c, a', b', c'、İ1, İ2, İ3, İab, İbc, İca、Ėa, Ėb, Ėc、Ż = 5√3 + j5 [Ω] と 2 つの Ż、起電力矢印 3 本と電流矢印 6 本の向き、c'–b' 線路交差部に接続点がないことを確認した。figureDescription の記述もすべて図と一致する。",
+        "出典：原図フッター「T1−R 018」（印刷頁 -15-）は reviewedFromPage=[18] と整合する。officialReferenceUrls は空で、検証すべき独立主張はない。"
+      ]
+    },
+    {
+      "unitKey": "q15b",
+      "questionNumber": 15,
+      "part": "b",
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "問題文：原図の共通前文および(b)の設問文「電流 İab の値[A]として…」と一致する。【図より】の電流・起電力の向きの記述は原図と一致する（İab は a 向き、İbc は b 向き、İca は c 向き）。",
+        "選択肢：原図の(1) 20.00∠−π/6、(2) 6.67∠−π/6、(3) 11.55∠−π/6、(4) 6.67∠−π/3、(5) 11.55∠−π/3 と全肢一致する。",
+        "公式正答：公式解答表の理論 問15(b) は解答 2・配点 5 で、officialAnswer=\"2\"・scoringPoints=5 と一致する。",
+        "KCL：節点 a では İab が流入し、İca（a→c）と İ1（a→a'）が流出する。よって İ1 = İab − İca で、図の向きと整合する。",
+        "対称性：各相電流を起電力と同じ向きで正にとると、İca = İab∠(−4π/3) = İab∠(2π/3)。1 − 1∠2π/3 = 3/2 − j√3/2 = √3∠−π/6 なので、İab = 11.547/√3 ∠(−π/3 + π/6) = 6.667∠−π/6 A となり、肢(2)と一致する。",
+        "電力検算：電源側 3 × 200 × 6.667 × cos(π/6) ≈ 3464 W、負荷側 3 × 11.547² × 5√3 ≈ 3464 W で一致する。",
+        "誤答肢(1)(3)(4)(5)の理由（20 A = 200/10、11.55 A は線電流の大きさ、−π/3 は İ1 の位相で İab は π/6 進み、肢(5)は İ1 そのもの）は正確かつ肢固有である。",
+        "図：公開候補図は原図と同内容で全ラベル・全矢印を保持している。İab, İbc, İca の向きは公開候補図だけで判読でき、figureDescription の記述と一致する。",
+        "出典：reviewedFromPage=[18] は原図フッター「T1−R 018」と整合する。officialReferenceUrls は空で、外部確認事項はない。"
+      ]
+    }
+  ]
+}

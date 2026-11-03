@@ -1,0 +1,102 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20260322",
+  "subject": "theory",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 9474,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 22176,
+      "webSearchRequests": 0,
+      "costUSD": 0.36715180000000003,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 6537,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "1eeb44f83cde95d1a6fbff589bf208eb8c532d36993feebf963032623f72291e",
+  "inputRequestSha256": "fe9d0a82c58adef4a97f6270198e50d63cc2b3aae13bb8a7e1bc7a7613988d83",
+  "inputHashes": {
+    "candidateSha256": {
+      "q18a": "e530bf898656101e5fd10f1b607382336af0bef8d8745ce37a6ef72b25400c9c",
+      "q18b": "9176059e2dacf19e6f7b84d68d88757f6401d33f855b8ca79cbb0e68d760618a"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20260322/theory/p24.png": "f0248faa43969ff60b60a0df44fe9cea2b7dbc39aacc3a540954b9557909a7b2",
+      "data/raw_pdfs/denken3/review/20260322/theory/p25.png": "619a0b682ebab7ae038c1f6d6228d2301d059041040d931283bbee800837c5cb"
+    },
+    "figureSha256": {
+      "public/images/denken3/20260322/theory/20260322-theory-q18-fig1.png": "5e0a6667c08ffaf11f170910763b08f03cb02ad9a2424c2b453860059f524982",
+      "public/images/denken3/20260322/theory/20260322-theory-q18-fig2.png": "7f460ebdc0778aae5c836fc2b6c8b47e36173da5e49ada080aef54b9b2ed67ba"
+    },
+    "sourceQuestionPdfSha256": "c83e7c7350d98b65f5d8da0b93e4a2581a19dd250be320fb7fc492c9b34a29c1",
+    "sourceAnswerPdfSha256": "cc2890296d06a4823df5697a78a1c01ddfd39f041c51f48c87984daa3a5707c6",
+    "officialAnswerUnitsSha256": "cafd9c546d7c8f20aba510fc0eebd9fcc28e7537c08ad37df631a85f7c3c8051",
+    "referencePdfSha256": {},
+    "referencePageSha256": {},
+    "referenceJsonSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q18a",
+      "questionNumber": 18,
+      "part": "a",
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [
+        "figureUrls に 20260322-theory-q18-fig2.png が含まれているが、この画像の中身は図3（(ニ)(ホ)(ヘ)）で、(b) 専用の図である。候補自身の figureDescription も「(a) で用いる図は図1と図2である（図3は (b) で用いる）」と書いており、添付画像と記述が食い違っている。(a) の問題文は図3に一切言及しないので、学習者に無関係な回路図を見せることになる。figureUrls は fig1.png（図1・図2を収録）だけにするべきである。",
+        "ファイル名と図番号が対応していない。fig1.png には図1と図2の両方が、fig2.png には図3が入っている。(a) と (b) で図を取り違える原因になるので、figureUrls を上記のとおり分けたうえで命名も見直すのが望ましい。"
+      ],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "書誌情報：原図の解答表の見出しは「令和7年度 第三種電気主任技術者下期試験解答」。候補の fiscalYear=2025、term=lower、examDate=2026-03-22、subject=theory、reviewedFromPage=[24,25] は manifest と一致する。原図に印刷された頁番号 -21-/-22- は冊子の頁番号であり、PDF の頁番号とは別物である。",
+        "公式正答：解答表の理論 問18(a)＝5、配点5。候補の officialAnswer=5、scoringPoints=5 と一致する。",
+        "問題文：(a) の本文は原図と一致する。冒頭の選択問題に関する注記（問17と問18のどちらかを選ぶ旨）は省かれているが、解答には影響しないので整形の範囲とみなした。",
+        "選択肢：(1)(イ) (2)(ロ) (3)(ハ) (4)(イ),(ロ) (5)(イ),(ハ)。原図と一致する。",
+        "図1の極性：上側 MOS FET の矢印はチャネルから外向き（右向き）なので p チャネルで、ソースが電源につながる。下側の矢印は内向き（左向き）なので n チャネルで、ソースが接地につながる。ゲートは共通の入力に、ドレインの接続点は出力に引き出されている。よって図1は CMOS インバータ（NOT）であり、候補の説明と一致する。",
+        "検算：(イ) ¬(A·A)=¬A、(ロ) ¬(A·0)=1（常に1）、(ハ) ¬(A·1)=¬A。NOT と一致するのは (イ) と (ハ) で、答えは (5)。総合解説も各肢の誤りの理由も正しい。",
+        "公開候補図 fig1.png は原図の図1・図2を忠実に切り出したもので、矢印の向き、接続、「0」「1」「入力」「出力」「電源」の各ラベルが全て読み取れる。この図だけで (a) は解答できる。",
+        "officialReferenceUrls は空で、検証が必要な独立の主張はない。"
+      ]
+    },
+    {
+      "unitKey": "q18b",
+      "questionNumber": 18,
+      "part": "b",
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [
+        "(ホ) の解説は「外部入力に加わるトリガにより左の NAND の出力が「1」に変わると」と書くだけで、トリガの向きを示していない。しかし向きは回路から一意に決まる。安定状態では NOT2 の出力が「1」なので、左の NAND の出力は ¬(入力) になる。したがって左の出力が 0→1 に変わるのは、入力が「1」→「0」に下がったときである。uncertainty 欄の「トリガの極性が示されていない」も、極性が決められないかのように読めて誤解を招く。解説にトリガの向きを明記し、uncertainty 欄から極性に関する記述を削るべきである。"
+      ],
+      "figureIssues": [
+        "figureUrls に 20260322-theory-q18-fig1.png が含まれているが、この画像の中身は図1・図2で、(a) 専用の図である。候補自身の figureDescription も「(b) で用いる図は図3のみである」と書いており、添付画像と記述が食い違っている。figureUrls は fig2.png（図3を収録）だけにするべきである。",
+        "ファイル名 fig2.png の中身が図3であり、図番号と一致しない。(a) との取り違えを防ぐため、命名を見直すのが望ましい。"
+      ],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "書誌情報：fiscalYear=2025、term=lower、examDate=2026-03-22、subject=theory、reviewedFromPage=[24,25]。いずれも manifest と一致する。",
+        "公式正答：解答表の理論 問18(b)＝2、配点5。候補の officialAnswer=2、scoringPoints=5 と一致する。",
+        "問題文：(b) の本文、性質Ⅰ、性質Ⅱは原図と一致する（「ディジタル回路」「フリップフロップ」の表記も含む）。",
+        "選択肢：原表は (1) ニ/ホ、(2) ニ/ヘ、(3) ホ/ニ、(4) ホ/ヘ、(5) ヘ/ホ（性質Ⅰ/性質Ⅱの順）。候補と一致する。",
+        "図3(ニ) の接続：左 NAND は入力が短絡されており、上部配線につながる。その出力はコンデンサを経て接続点に至る。接続点は抵抗を介して上部配線（接続点に黒丸あり）に、また右 NAND（入力短絡）の入力につながる。右 NAND の出力は上部配線に戻る。つまり抵抗は NOT2 の出力と入力の間に入っている。候補の図の説明はこの接続と一致する。",
+        "(ニ) の動作を検算した。NOT2 の出力が1のとき、抵抗経由でコンデンサが充電されて NOT2 の入力が上昇し、しきい値を超えると反転する。すると NOT1 の出力が 0→1 に変わり、コンデンサ経由で NOT2 の入力をさらに押し上げる正帰還がかかる。その後は抵抗経由で入力が低下し、再び反転する。安定状態を持たないので無安定マルチバイブレータで、性質Ⅰに当たる。候補の因果説明は正しい。",
+        "図3(ホ) の接続：左 NAND の上側入力は上部配線に、下側入力は「入力」につながる。出力はコンデンサを経て接続点に至る。接続点は抵抗を介して接地され、右 NAND（入力短絡）の入力にもつながる。右 NAND の出力は上部配線に戻る。安定状態は NOT2 の入力が0、出力が1。トリガが入ると一時的に反転し、その後 RC 時定数で元に戻る。これは単安定マルチバイブレータであり、候補の説明は正しい。",
+        "図3(ヘ) の接続：左 NAND の出力は右 NAND の上側入力に（配線に段差あり）、右 NAND の出力は上部配線を経て左 NAND の上側入力につながる。外部入力は「入力1」と「入力2」。これは交差結合した NAND 形 RS ラッチ（双安定）であり、性質Ⅱに当たる。",
+        "結論として性質Ⅰ＝(ニ)、性質Ⅱ＝(ヘ) で、答えは (2)。誤答肢 (1)(3)(4)(5) それぞれに付けられた誤りの理由も正しい。",
+        "公開候補図 fig2.png は原図の図3を忠実に切り出したもので、黒丸、コンデンサ、抵抗、接地の位置、「入力」「入力1」「入力2」の各ラベルが原図と一致する。この図だけで (b) は解答できる。",
+        "officialReferenceUrls は空で、検証が必要な独立の主張はない。"
+      ]
+    }
+  ]
+}

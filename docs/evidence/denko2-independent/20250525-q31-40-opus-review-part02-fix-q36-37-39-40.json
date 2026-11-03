@@ -1,0 +1,59 @@
+{
+  "inputHashes": {
+    "draftSha256": "479539d23f2b7b40e6f6e302d7b56534f99e4708322c42875d0673fea23ec6a3",
+    "rowSha256": {
+      "36": "21409814d4d6c32a9e46067f372467313edf1c61e456c5bacfe92b1c2411b4b7",
+      "37": "bc4fb0152288bf7aafcc3d59cbb85c5bbba493fd9f10239b6c8152c57825b55e",
+      "39": "00444bd44316cc242f04745e47f5cc8539aee3c6def6bef9286f2fb2deda82a5",
+      "40": "dd5b217d6d3cf3e61705714d918711c5b1cf3b246fa46f7def9c899b7b124df2"
+    },
+    "sharedFigureSha256": {
+      "public/images/denko2/2025-first/wiring-main.png": "9a24f0c440f8551855249e8768d44fb15bbe7db7aff283ebfffe950cfcae4277"
+    }
+  },
+  "reviewModel": "claude-opus-5-5",
+  "assessment": [
+    {
+      "number": 36,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "lawNeedsExternalCheck": [
+        "『電気設備の技術基準の解釈』第149条の分岐回路の組合せ表で、15Aコンセントだけをつなぐ回路の配線用遮断器が20A以下であることを条文で確かめる必要がある（画像からは判定できない）"
+      ]
+    },
+    {
+      "number": 37,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "lawNeedsExternalCheck": [
+        "『電気設備の技術基準の解釈』第17条で、D種接地工事の原則が100Ω以下であること、0.5秒以内の自動遮断があるときに500Ω以下へ緩和されること、A種とC種の基準が10Ωであることを条文で確かめる必要がある"
+      ]
+    },
+    {
+      "number": 39,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "lawNeedsExternalCheck": []
+    },
+    {
+      "number": 40,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "lawNeedsExternalCheck": [
+        "JIS C 0303のコンセント傍記（T=引掛形、LK=抜け止め形、EL=漏電遮断器付、H=医用）を規格原文で確かめる必要がある"
+      ]
+    }
+  ]
+}

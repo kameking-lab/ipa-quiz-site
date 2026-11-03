@@ -1,3 +1,5 @@
+import { GlossaryFinder } from "@/components/glossary/GlossaryFinder";
+import { CurrentLearningLinks } from "@/components/term-relations/CurrentLearningLinks";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { BookA } from "lucide-react";
@@ -111,14 +113,12 @@ export default function GlossaryPage() {
         </p>
       </header>
 
-      <div className="space-y-10">
-        {[...grouped.entries()].map(([cat, items]) => (
-          <section key={cat} aria-label={GLOSSARY_CATEGORY_LABELS[cat as keyof typeof GLOSSARY_CATEGORY_LABELS]} id={`g-${cat}`}>
-            <h2 className="mb-3 text-base font-bold tracking-tight text-foreground sm:text-lg">
-              {GLOSSARY_CATEGORY_LABELS[cat as keyof typeof GLOSSARY_CATEGORY_LABELS]}
-            </h2>
-            <dl className="space-y-3">
-              {items.map((t) => (
+      <GlossaryFinder groups={[...grouped.entries()].map(([cat, items]) => ({
+        id: `g-${cat}`,
+        label: GLOSSARY_CATEGORY_LABELS[cat as keyof typeof GLOSSARY_CATEGORY_LABELS],
+        terms: items.map((t) => ({
+          term: t.term, reading: t.reading, english: t.english,
+          content: (
                 <div
                   key={t.term}
                   id={`term-${encodeURIComponent(t.term)}`}
@@ -140,6 +140,9 @@ export default function GlossaryPage() {
                   <dd className="mt-1.5 text-xs leading-relaxed text-muted-foreground">
                     {t.detail}
                   </dd>
+                  <dd className="mt-3 text-sm">
+                    <CurrentLearningLinks origin={{kind: "glossary", id: t.term}} placement="glossary-examples" headingId={`learning-${encodeURIComponent(t.term)}`} />
+                  </dd>
                   {t.relatedTopics && t.relatedTopics.length > 0 && (
                     <dd className="mt-2 flex flex-wrap gap-1.5">
                       {t.relatedTopics.map((r) => (
@@ -154,11 +157,9 @@ export default function GlossaryPage() {
                     </dd>
                   )}
                 </div>
-              ))}
-            </dl>
-          </section>
-        ))}
-      </div>
+          ),
+        })),
+      }))} />
     </main>
   );
 }

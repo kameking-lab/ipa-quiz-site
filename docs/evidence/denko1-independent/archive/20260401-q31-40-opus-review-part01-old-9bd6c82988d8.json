@@ -1,0 +1,98 @@
+{
+  "inputHashes": {
+    "draftSha256": "fdb7a749667f9d545ce2a7c9c43de44f4056d26e35f6a20761dc37ec29af2fb0",
+    "candidateSha256": {
+      "31": "46da6fe259a4cf6d9e1b8c5d0b3f4f9fec92c1a9890eb7242ef00cda435b6f77",
+      "32": "014509c7d620f5018b9751f187187d2ab8a67d60a8139e10863814e9915a1c7a",
+      "33": "b9dc78e449883ea152d91b4cd78d17cb5a180fd112d98370136f7ced12b73967",
+      "34": "2950a26d68042b2149a0c3dc25d02eeb17d55533a057bc14fd658aa358a66d78",
+      "35": "ebe223228d200b1bd8ed769cf755dab4e0957ad9f338d76bd3a8e9232a00f40b"
+    },
+    "rowSha256": {
+      "31": "2269dab487b75e8fd31aba305064e4328273e6426dcbe5d49b46a6306277cca7",
+      "32": "f68991a83c96c794b08a555c3f28bb80a808b0c42ecab6c81f26975f01b2fdbe",
+      "33": "fc9c89c464ff34e69d34e371265b4880afdaad3503069d1cc93c61af64b2b065",
+      "34": "76435bf6144f79f8f211357b7fae3cc7d1e0941ac8eed475f3f6fd7b0ff7e495",
+      "35": "e8c8de66d63c2e1fea2f68d2038cf3df22a76589b60a6541bc606f0330f91bb2"
+    },
+    "figureSha256": {
+      "public/images/denko1/2026-first/facility-plan.png": "8e17a9515926bc82c7afb6f6df4cb65eb076f74a7d9327dedf7a74c30cee55a5"
+    },
+    "legalReceiptSha256": {
+      "docs/evidence/denko1-law/20260401-q31.json": "05a2443535686988f047a3152f155af2aec831c39b54582b196959767c7b4d97",
+      "docs/evidence/denko1-law/20260401-q32.json": "66abe5a33abf4838f41cb9f85986f16cfdf66807c7145b19efeb0575aa5bc6a9",
+      "docs/evidence/denko1-law/20260401-q33.json": "bdfcba854794a47c01382945c073d5a1e6198cfbb1da57c9302df490a9079e3d",
+      "docs/evidence/denko1-law/20260401-q34.json": "6e83ad4b4b7842f3bd4c67c7858ee32d63bbb3a02c5aec9d42ab855a2ff2e29c",
+      "docs/evidence/denko1-law/20260401-q35.json": "73dbb89b997d9703ff1b35d4f3bbea66434b0e383961c135facb2ea0db862cd1"
+    }
+  },
+  "reviewModel": "claude-opus-5-5",
+  "cliInitModel": "claude-opus-5-5",
+  "sessionId": "cd8e7f37-b9aa-4b37-bb6c-e92d23a77b92",
+  "assessment": [
+    {
+      "number": 31,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [
+        "diagramDescriptionの「④の部分で立ち上がって」は図と合わない。下部は「平面図」であり、④のバスダクトは紙面の上方向へ折れ曲がって延びているだけで、鉛直に立ち上がることを示す表示は図にない。「④の部分で紙面上方向へ折れ曲がり」などに直すべき。",
+        "diagramDescriptionの「上側を右へ延び(途中省略)」は、省略の位置が図とずれている。図の省略記号(波線)は、壁を貫通した後の水平区間(④の手前)と、上側区間の右端にある。上側区間の途中が省略されているわけではない。"
+      ],
+      "lawNeedsExternalCheck": [
+        "explanationとchoiceExplanations.ニの「第117条(第1項第四号)」という条番号は、receiptで照合されていない。receiptにあるのは見出し【高圧架空引込線等の施設】と、号の文言「三…」「四…」だけで、第117条・第1項の番号は含まれていない。",
+        "choiceExplanations.イの「第67条第五号」という号番号は、receiptで照合されていない。receiptは67-1表の安全率(2.2/2.5)だけを照合しており、安全率を定める号が第五号であることは確認されていない。"
+      ]
+    },
+    {
+      "number": 32,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [
+        "共通図のdiagramDescriptionの「④の部分で立ち上がって」は、平面図の読み取りとして誤り。④は紙面の上方向へ折れ曲がる水平方向の区間であり、鉛直の立ち上がりではない。",
+        "diagramDescriptionの「(途中省略)」の位置が図とずれている。省略記号は、壁の貫通部から④までの水平区間と、上側区間の右端にある。"
+      ],
+      "lawNeedsExternalCheck": [
+        "choiceExplanations.イの「500kW未満でも雷害の多い地区で架空電線路に接続される受電設備では、避雷器の施設が推奨される」は、解釈第37条ではなく高圧受電設備規程などの民間規程に基づく断定であり、receiptで照合されていない。規程での表現(「施設すること」なのか「望ましい」なのか)も未確認。"
+      ]
+    },
+    {
+      "number": 33,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [
+        "diagramDescriptionの「④の部分で立ち上がって」は誤り。図は平面図で、④は紙面の上方向へ曲がる水平方向の区間である。本問は水平支持間隔(3m)と垂直取付け(6m)の区別を問うので、「立ち上がり」と書くと④が垂直部分であるかのように読めてしまい、正答の根拠と矛盾する。「紙面上方向へ折れ曲がり」などに直すべき。",
+        "diagramDescriptionの「(途中省略)」の位置が図とずれている。省略記号は、壁の貫通部から④までの水平区間と、上側区間の右端にある。"
+      ],
+      "lawNeedsExternalCheck": []
+    },
+    {
+      "number": 34,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [
+        "共通図のdiagramDescriptionの「④の部分で立ち上がって」は、平面図の読み取りとして誤り。④は紙面の上方向へ折れ曲がる水平方向の区間である。",
+        "diagramDescriptionの「(途中省略)」の位置が図とずれている。省略記号は、壁の貫通部から④までの水平区間と、上側区間の右端にある。"
+      ],
+      "lawNeedsExternalCheck": [
+        "explanationとchoiceExplanations.ロ・ハの「解釈第149条第2項第二号ロ」という条・項の番号は、receiptで照合されていない。receiptは号「二 電動機等のみに至る低圧分岐回路」とその「ロ」の文言(1.25倍/50A超は1.1倍)だけを照合しており、それが第149条第2項にあることは確認されていない。"
+      ]
+    },
+    {
+      "number": 35,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "lawNeedsExternalCheck": []
+    }
+  ]
+}

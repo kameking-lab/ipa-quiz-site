@@ -1,0 +1,113 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20250323",
+  "subject": "power",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 4,
+      "outputTokens": 6042,
+      "cacheReadInputTokens": 302019,
+      "cacheCreationInputTokens": 27002,
+      "webSearchRequests": 0,
+      "costUSD": 0.39727579999999996,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 3641,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "3d212aa4f3cba0d8dd8d2a01b7e2f9ce66ec60fa512b168cdab0bd42108e5095",
+  "inputRequestSha256": "061a8582dbae02cb16e6072088daec16847e9de5235977355a40808d0dfd0fd6",
+  "inputHashes": {
+    "candidateSha256": {
+      "q05": "9628330f276c723da48b23e7e9a3cefd012bb40bf87bd057775ff8e0d396f8a5",
+      "q06": "3360a1f9dbff749147826d92d907faf4e1cbb9ece640634c81093ec9a92db507",
+      "q07": "a5ee483f7a63d488c000809ee67f59c29f02c35fc3cb331b110012f59e72d4d6"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20250323/power/p08.png": "dbbae4689b4603965e1467241704a88bc108ce1766577df6e6e8b7bf696acdb7",
+      "data/raw_pdfs/denken3/review/20250323/power/p09.png": "bda80c2da1e9b666c28b008f542b3ad82e510ff9a84805851cb45ab1b30f7cdf",
+      "data/raw_pdfs/denken3/review/20250323/power/p10.png": "30db255e5db414a28482b222eab91f9f7534f4aaece888e91a17a49ba15abec9"
+    },
+    "figureSha256": {},
+    "sourceQuestionPdfSha256": "892785e0f1035bcb239eb30fa903d4c88adbcfdaa1b5b0edea2d1907fd887114",
+    "sourceAnswerPdfSha256": "4c3b38fcf1405766fafaa78b1b05b867a3d48307a670b9d354476bc6b32acd4c",
+    "officialAnswerUnitsSha256": "81d59560d6fcd07394a2795920073bc069b34919d7ed7d927a69dc29f321ef64",
+    "referencePdfSha256": {},
+    "referencePageSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q05",
+      "questionNumber": 5,
+      "part": null,
+      "status": "FIX",
+      "textIssues": [
+        "The question field ends with the combination table \"組合せ（(ア) / (イ) / (ウ) / (エ)）：(1)…(5)…\", and the same content is also in the choices field. When the question is shown, the options appear twice. The same exam's q06 and q07 keep the table only in choices, so this format is also inconsistent. Delete everything from \"組合せ（\" to the end of the question field."
+      ],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "Checked the question text against the official page (footer -5- / T2-D 008) word for word, including (ア) 地下から取り出した, (イ) 地熱資源は…に多く存在, (ウ) 植物や動物が生成・排出する, and (エ) 家畜の糞から作られる. The wording matches.",
+        "All five rows of options (1)-(5) match the official table for (ア)-(エ).",
+        "The official answer (3) matches the manifest's answer=3, and officialAnswer is \"3\".",
+        "Main explanation: (ア) steam drives the turbine, (イ) volcanic areas, (ウ) organic matter (biomass), and (エ) livestock manure → methane fermentation → biogas (gaseous fuel). The technical facts are correct and match (3).",
+        "Why each wrong option is wrong: (1) only (エ) is wrong. (2) (ア), (イ) and (ウ) are wrong; (エ) is correct. (4) only (イ) is wrong. (5) (ア), (ウ) and (エ) are wrong; (イ) is correct. I checked every blank of every option, and all of this matches the table.",
+        "No figure is needed. The original page has only the combination table, and figureUrls is empty. This is consistent.",
+        "officialReferenceUrls is empty, so there are no independent claims to verify.",
+        "reviewedFromPage=[8] matches the page ID T2-D 008 on the attached original."
+      ]
+    },
+    {
+      "unitKey": "q06",
+      "questionNumber": 6,
+      "part": null,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "Checked the question text against the official page (footer -6- / T2-D 009) word for word, including 受電端電圧を一定に保つため, 負荷と(ア)に接続, 力率を(イ)/(ウ)ために, その(エ)を加減, and (オ)でリアクトルに流れる電流を調整. The wording matches.",
+        "Options (1)-(5) match the official table for all five blanks (ア)-(オ).",
+        "The official answer (1) matches the manifest's answer=1.",
+        "Main explanation: (ア) connection in parallel (shunt), (イ) a capacitor supplies leading reactive power and advances the power factor, (ウ) a shunt reactor retards the power factor and suppresses the Ferranti effect, (エ) a synchronous condenser adjusts continuously through its field current (overexcited gives leading, underexcited gives lagging), and (オ) an SVC controls the phase of the reactor current with thyristors or other semiconductor switches. The explanation uses one sign convention throughout and has no technical errors.",
+        "Why each wrong option is wrong: (2) all five blanks (ア)-(オ) are wrong. (3) (イ), (ウ) and (エ) are wrong; (ア) and (オ) are correct. (4) (ア), (エ) and (オ) are wrong; (イ) and (ウ) are correct. (5) (イ) and (ウ) are wrong; (ア), (エ) and (オ) are correct. I checked every blank of every option against the table, and all of this is accurate.",
+        "No figure is needed, and figureUrls is empty. This is consistent.",
+        "officialReferenceUrls is empty, so there are no independent claims to verify.",
+        "reviewedFromPage=[9] matches T2-D 009 on the attached original."
+      ]
+    },
+    {
+      "unitKey": "q07",
+      "questionNumber": 7,
+      "part": null,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "Checked the question text against the official page (footer -7- / T2-D 010) word for word, including 常に(ア)負荷を接続, 一次電流（負荷電流）が流れている状態では, 二次回路を(イ)してはならない, 大きな(ウ)が発生し(エ)が過大, and 被測定線路に(オ)に接続. The wording matches.",
+        "Options (1)-(5) match the official table for all five blanks (ア)-(オ). (1) high impedance / short circuit / voltage / iron loss / series. (2) low / short circuit / induced current / copper loss / parallel. (3) high / short circuit / induced current / copper loss / series. (4) low / open / voltage / iron loss / series. (5) high / open / voltage / copper loss / parallel.",
+        "The official answer (4) matches the manifest's answer=4.",
+        "Main explanation: if the secondary is opened, the cancelling magnetomotive force disappears and the primary current acts as excitation current. The core saturates, a high voltage appears on the secondary, and iron loss becomes excessive. A current transformer with primary terminals is connected in series with the measured line. The cause-and-effect chain is correct.",
+        "Why each wrong option is wrong: (1) (ア) and (イ) are wrong; the other three are correct. (2) only (ア) is correct. (3) only (オ) is correct. (5) (ア), (エ) and (オ) are wrong; (イ) and (ウ) are correct. I checked every blank of every option against the table, and all of this is accurate.",
+        "No figure is needed, and figureUrls is empty. This is consistent.",
+        "officialReferenceUrls is empty, so there are no independent claims to verify.",
+        "reviewedFromPage=[10] matches T2-D 010 on the attached original."
+      ]
+    }
+  ]
+}

@@ -5,7 +5,9 @@ import { test, expect } from "@playwright/test";
 const EXAM = "/ap";
 const YEAR_LIST = "/ap/2024-spring";
 const QUESTION = "/q/ap/2024-spring/am/q1";
-const QUESTION_MID = "/q/ap/2024-spring/am/q5";
+// q5 and q6 depend on figures that are not yet renderable, so the shared
+// practice-ready boundary intentionally removes them from both routes and nav.
+const QUESTION_MID = "/q/ap/2024-spring/am/q4";
 
 // needsReview: true → notFound() in page.tsx → 404
 const NEEDS_REVIEW_QUESTION = "/q/fe/2019-spring/am/q5";
@@ -47,11 +49,24 @@ test.describe("user journey: quiz page content", () => {
     await expect(h1).toContainText("応用情報技術者");
   });
 
-  test("year/season list /ap/2024-spring has links to question pages", async ({ page }) => {
+  test("year/season list /ap/2024-spring opens its selected question in unanswered quiz", async ({ page }) => {
     await page.goto(YEAR_LIST);
-    // Should link to at least one /q/ap/... page
-    const questionLink = page.locator("a[href*='/q/ap/']").first();
+    const questionLink = page.locator('a[href*="question=ap-2024h-am-q1&"]');
     await expect(questionLink).toBeVisible();
+    await questionLink.click();
+    const url = new URL(page.url());
+    expect(url.pathname).toBe("/quiz");
+    expect(url.searchParams.get("mode")).toBe("year");
+    expect(url.searchParams.get("exam")).toBe("ap");
+    expect(url.searchParams.get("year")).toBe("2024");
+    expect(url.searchParams.get("season")).toBe("spring");
+    expect(url.searchParams.get("session")).toBe("am");
+    expect(url.searchParams.get("question")).toBe("ap-2024h-am-q1");
+    expect(url.searchParams.get("returnTo")).toBe(YEAR_LIST);
+    await expect(page.getByText("問1", { exact: true })).toBeVisible();
+    await expect(page.getByRole("radiogroup", { name: /選択肢/ }).getByRole("radio")).toHaveCount(4);
+    await expect(page.getByRole("region", { name: "正解の解説" })).toHaveCount(0);
+    await expect(page.getByRole("progressbar", { name: "クイズ進捗" })).toHaveAttribute("aria-valuenow", "1");
   });
 
   test("question page has choices section with ア イ ウ エ", async ({ page }) => {
@@ -77,9 +92,9 @@ test.describe("user journey: quiz page content", () => {
 
   test("question page has adjacent question navigation", async ({ page }) => {
     await page.goto(QUESTION_MID);
-    // q5 should have both prev (q4) and next (q6) links
-    const prevLink = page.locator("a[href*='/q/ap/2024-spring/am/q4']");
-    const nextLink = page.locator("a[href*='/q/ap/2024-spring/am/q6']");
+    // q4 should link back to q3 and skip unavailable q5/q6 on the way to q7.
+    const prevLink = page.locator("a[href*='/q/ap/2024-spring/am/q3']");
+    const nextLink = page.locator("a[href*='/q/ap/2024-spring/am/q7']");
     const hasPrev = (await prevLink.count()) > 0;
     const hasNext = (await nextLink.count()) > 0;
     expect(hasPrev || hasNext).toBe(true);

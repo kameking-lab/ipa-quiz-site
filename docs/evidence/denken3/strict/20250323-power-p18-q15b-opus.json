@@ -1,0 +1,66 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20250323",
+  "subject": "power",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 2880,
+      "cacheReadInputTokens": 130032,
+      "cacheCreationInputTokens": 14244,
+      "webSearchRequests": 0,
+      "costUSD": 0.1975664,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 1643,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "12de7cc785e49625ba7c07a798a75f86d5a7332ae23ab12dfa4c03cba980e2e2",
+  "inputRequestSha256": "24f0ed5655102febb465e84d40caf6c5ebd6b1a47be1344f25abacd9fabd349c",
+  "inputHashes": {
+    "candidateSha256": {
+      "q15b": "41bc9713a4784f8dd2ab96b15a2a897756aa5698a7057f84357cd6ab8ef84355"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20250323/power/p18.png": "2fe923b923dd1b8f7825942c5bf27b7769977294de13fb8763c750f8e9df7076"
+    },
+    "figureSha256": {},
+    "sourceQuestionPdfSha256": "892785e0f1035bcb239eb30fa903d4c88adbcfdaa1b5b0edea2d1907fd887114",
+    "sourceAnswerPdfSha256": "4c3b38fcf1405766fafaa78b1b05b867a3d48307a670b9d354476bc6b32acd4c",
+    "officialAnswerUnitsSha256": "7f9a7e1fe41aeab8dfbbeef25f7a61c5c6a718b7e41fa5c8da1f49f95697d858",
+    "referencePdfSha256": {},
+    "referencePageSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q15b",
+      "questionNumber": 15,
+      "part": "b",
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "問題文: 添付原図の問15の共通文と一致する（出力1 000 MW、発電端効率41 %、重油発熱量44 000 kJ/kg、炭素85 %・水素15 %の重量比、原子量C=12・O=16）。小問(b)の問い『1日に発生する二酸化炭素の重量の値[t]』も一致する。共通文を(b)に取り込んだ整形は意味を変えていない。",
+        "選択肢: (1)9.5×10³、(2)12.8×10³、(3)15.0×10³、(4)17.6×10³、(5)28.0×10³ の5肢とも、添付原図と数値・指数の表記が一致する。",
+        "公式正答: manifestでは q15b answer=3。候補の officialAnswer='3' と一致する。",
+        "総合解説の検算（重油消費量）: 1 000×10³ kW×3 600 s/h = 3.6×10⁹ kJ/h。0.41×44 000 = 18 040 kJ/kg なので、3.6×10⁹÷18 040 = 199 557 kg/h ≒ 199.6 t/h。(a)の正答肢200 t/hと整合する。",
+        "総合解説の検算（炭素量）: 199.56×0.85 = 169.62 t/h。C+O₂→CO₂ より質量比は44/12 なので、169.62×44/12 = 621.95 t/h。これに24 hを掛けて 14 927 t ≒ 14.9×10³ t となり、最も近い肢は(3)。解説の値・因果とも正しい。水素がH₂OになりCO₂を生じないという記述も正しく、問題文に水素の原子量が与えられていないことにも合っている。",
+        "(1)の誤答理由: 169.62×28/12×24 = 9 498.7 t ≒ 9.50×10³ t。CO生成とみなした誤算経路として数値が再現できる。",
+        "(2)の誤答理由: 12.8/14.93 = 0.857 で、約14 %小さいという記述は正しい。『最も近い』を選ぶ数値問題なので、正しい計算値に最も近くないことが誤答理由として成立する。誤算経路を推測で断定していない点も適切。",
+        "(4)の誤答理由: 199.56×44/12×24 = 17 561 t ≒ 17.56×10³ t。炭素比率0.85を掛け忘れた場合の値として再現できる。",
+        "(5)の誤答理由: 28.0/14.93 = 1.88 で、約1.9倍という記述は正しい。最も近い値でないことが誤答理由として成立する。",
+        "図: 原図の問15に図はない。figureDescription『図なし』、figureUrls=[]、choiceFigureUrls={} はいずれも原図と一致する。",
+        "出典: examDate 2025-03-23 は令和6年度下期にあたり、sourceAttribution の年度・科目・問番号と一致する。原図の紙面番号は『-15-』、印刷コードは『T2−D 018』で、reviewedFromPage [18] と矛盾しない。officialReferenceUrls は空なので、外部の独立主張はない。"
+      ]
+    }
+  ]
+}

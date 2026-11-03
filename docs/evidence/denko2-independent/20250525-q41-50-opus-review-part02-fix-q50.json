@@ -1,0 +1,31 @@
+{
+  "inputHashes": {
+    "draftSha256": "45f59a33f41b649bdb45c5561e2f1a82a80bae3625688685e8f1f62f18ecc234",
+    "rowSha256": {
+      "50": "1622980b713b7bf06dbc36d227f5b50e587f98653b5ee887d1ebd102f4174703"
+    },
+    "sharedFigureSha256": {
+      "public/images/denko2/2025-first/wiring-main.png": "9a24f0c440f8551855249e8768d44fb15bbe7db7aff283ebfffe950cfcae4277"
+    },
+    "detailFigureSha256": {
+      "public/images/denko2/2025-first/q50-i.png": "329b2ce4e094ba321dd82fed886fc11b3122e525621790da9cd8b76e8f8c2624",
+      "public/images/denko2/2025-first/q50-ro.png": "674164e2237ff47463a52d33089d426fda8f886275348ec4b3f1d751f7e4cc6b",
+      "public/images/denko2/2025-first/q50-ha.png": "5fd9c2732ae1a8315d81fffdd2d4d60bc794b0d6fcddcbc14c3d8455572ab46c",
+      "public/images/denko2/2025-first/q50-ni.png": "37f4486b50ae91e2cb81ee3169ba82631b112430a0334dd3213fc985842b33d7"
+    }
+  },
+  "reviewModel": "claude-opus-5-5",
+  "assessment": [
+    {
+      "number": 50,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "lawNeedsExternalCheck": [
+        "The answer depends on what the JIS C 0303 annotation letters mean: H = position indicator lamp, L = confirmation indicator lamp, B/BL = push button for an electromagnetic switch, with a confirmation lamp, and LF3 = floatless switch with 3 electrodes. This is standard symbol knowledge that the image cannot prove. It is not a regulation clause, but it still needs an external check."
+      ]
+    }
+  ]
+}

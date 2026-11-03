@@ -1,0 +1,71 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20250831",
+  "subject": "power",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 3426,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 13681,
+      "webSearchRequests": 0,
+      "costUSD": 0.1782318,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 1949,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "f06538e7b3c6e5eb54516394e7527b22386ebaaf20e885afd7a3fe46694dc7b2",
+  "inputRequestSha256": "e25418971c94cb9776f3264d0408615cd4d49ca1ca24a5335cddc6f03508f522",
+  "inputHashes": {
+    "candidateSha256": {
+      "q11": "5516dc1a07c73dc2ff43d0cafabd93b8c43ba9f7b82e2e0e7726478b3a85e105"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20250831/power/p14.png": "1261e3aa4fc68d29a992e50d0d229b8408731e020b01050862d262ac6ad04122"
+    },
+    "figureSha256": {},
+    "sourceQuestionPdfSha256": "567aac1df6dc0c0950d04e90a1ad03231427c518eede92559effe01e2b97a2c9",
+    "sourceAnswerPdfSha256": "76fd3715ed487d19a56b387fb402de20ee09474e9fa55b0413f9037b96af06c9",
+    "officialAnswerUnitsSha256": "e64097c3cb9e033009fcd95e1057e5e03640ef8bfac7f50f7fcb206e9b7d4d5c",
+    "referencePdfSha256": {},
+    "referencePageSha256": {},
+    "referenceJsonSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q11",
+      "questionNumber": 11,
+      "part": null,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [
+        "choiceExplanations[2] は比較条件として『電力・電圧（対地電圧100 V）・電力損失・こう長・3線同一太さ』を挙げるが、3/8（37.5 %）の前提である『負荷平衡（中性線電流0）』と『力率が等しい』を欠く。総合解説の【参考】には両条件があり、肢別解説と前提が一致していない。『負荷が平衡し力率が等しい条件で』を追記すること。"
+      ],
+      "figureIssues": [],
+      "sourceIssues": [
+        "uncertainty に『本ページには実施年度・科目名の明記がなく，出題年度は特定していない』とあるが、fiscalYear=2025、term=upper、examDate=2025-08-31、subject=power、sourceAttribution『令和7年度上期…電力科目 問11』と年度・科目を断定しており、候補内で矛盾している。年度・科目は添付の公式解答表（令和7年度 第三種電気主任技術者上期試験解答、＜電力＞問11=3・配点5）と、問題PDFのURL（20250831_ch_third_q02）で裏付けられる。uncertainty の該当文は削除するか『問題頁単体には年度・科目の記載がないが、公式解答表とPDFのURLで照合済み』に改めること。"
+      ],
+      "verifiedEvidence": [
+        "問題文：添付原図『問11 100/200 V単相3線式配電方式に関する記述として，誤っているものを次の(1)～(5)のうちから一つ選べ。』と一致（語句・数値・単位に差異なし）。",
+        "選択肢(1)〜(5)：原図の全文と一致。(2)の『100 V単相2線式配電方式より電線の銅量が少なくてすむ』も原文どおり。",
+        "公式正答：公式解答表＜電力＞問11の解答=3、配点=5。manifest単位 {question:11, part:null, answer:\"3\", points:5}、officialAnswer=\"3\"、scoringPoints=5 といずれも一致。＜理論＞問11=4、＜機械＞問11=2、＜法規＞問11は(a)(b)構成で、単独正答3に合うのは電力のみ。",
+        "頁：原図の印刷頁は『- 11 -』、フッターは『T1−D 014』。reviewedFromPage=[14] と矛盾しない。",
+        "総合解説・肢(3)：バランサ（巻数比1:1の単巻変圧器、両外側線間に接続し中点を中性線へ）は線路末端（負荷側）に設けると不平衡電流を分担し、線路の中性線電流をほぼ0にして電圧を平衡させる。電源側に設けても線路の中性線電流は減らず効果は小さい。したがって(3)が誤りで、因果関係は正しい。",
+        "銅量比の検算：単相2線式 I₂=P/V、損失2I₂²R₂。単相3線式（平衡）I₃=P/(2V)、損失2I₃²R₃。損失を等しくおくと R₃=4R₂、A₃=A₂/4。銅量比 3A₃/(2A₂)=3/8=37.5 %。正しい。",
+        "肢(1)：外側線間200 Vで単相200 V負荷を使用可能。正しい。",
+        "肢(4)：両側の100 V負荷が不均等だと中性線に電流が流れ、電圧降下が異なって負荷電圧が不平衡になる。正しい。",
+        "肢(5)：中性線が断線すると両側負荷が200 Vに直列接続され、インピーダンス比で分圧される。軽負荷側（高インピーダンス側）に100 V超の異常電圧が加わる。正しい。",
+        "図：原図に図はなく、figureUrls=[]、choiceFigureUrls={}、figureDescription『本問には図はない。』と整合。",
+        "officialReferenceUrls=[] のため、検証すべき外部の独立主張はない。"
+      ]
+    }
+  ]
+}

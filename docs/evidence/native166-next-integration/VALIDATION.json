@@ -1,0 +1,64 @@
+{
+  "base": "8fc0646606da456b8d49d107964f200237636d3b",
+  "originals": 166,
+  "perExam": {
+    "maritime3": 70,
+    "land-special2": 48,
+    "land-special3": 48
+  },
+  "singleChoiceOriginals": 148,
+  "nativeBOriginals": 18,
+  "nativeBSlots": 90,
+  "actualPaperGroups": 12,
+  "canonicalRoutesUnique": 166,
+  "registeredExamsBefore": 64,
+  "registeredExamsAfter": 67,
+  "assets": 82,
+  "typecheck": {
+    "command": "tsc --noEmit --incremental false",
+    "exitCode": 0
+  },
+  "focusedTests": {
+    "command": "vitest run __tests__/native166-integration.test.ts __tests__/native338-integration.test.ts __tests__/questions/get-questions.test.ts --maxWorkers=1 --minWorkers=1 --no-file-parallelism --cache=false",
+    "filesPassed": 3,
+    "testsPassed": 85,
+    "failed": 0
+  },
+  "existing338EntrypointsRegression": {
+    "filesPassed": 1,
+    "testsPassed": 6,
+    "failed": 0
+  },
+  "schema": {
+    "maritime3": {
+      "ok": 70,
+      "fail": 0,
+      "warn": 1
+    },
+    "land-special2": {
+      "ok": 48,
+      "fail": 0,
+      "warn": 47
+    },
+    "land-special3": {
+      "ok": 48,
+      "fail": 0,
+      "warn": 47
+    },
+    "warningMeaning": "Existing independently accepted short reasons only; no content rewritten to satisfy length heuristics."
+  },
+  "data100GitBlobExact": true,
+  "base338Json13GitBlobExact": true,
+  "sourceCoreUnchanged": true,
+  "marchAddedToCurrentConsumerRoutesAndSearch": true,
+  "originalPartAndQuestionNumbersUnchanged": true,
+  "numberedChoicesAndStableOrderRegistered": true,
+  "existingLicenseAliasRegisteredWithoutChangingSource": true,
+  "fullBuildRuns": 0,
+  "externalActions": 0,
+  "publicationApproval": false,
+  "historicalLand2Land3PublicationRightsDecision": false,
+  "rawRightsFlagsChanged": false,
+  "catalogLiveIsLocalCandidateOnly": true,
+  "legacyApiV1Scope": "Unchanged legacy contract; new qualifications not exposed or advertised there. Current practice/search/question/paper entrypoints connected."
+}

@@ -1,0 +1,66 @@
+{
+  "inputHashes": {
+    "draftSha256": "90ecd85be672b2ce57a3fb4ab8f288c61127bd25e6e93223a03312014cc630aa",
+    "rowSha256": {
+      "16": "a9a523c997ccd022d3b321c4155de4e9c2a6a53780bc58cb89a424e5e57a7970",
+      "17": "7fe09a0490ce0517ab9d363544fffe68c1de51832a0f09d1109ad106f432d651",
+      "18": "1388285992baea9156bc645705d5dd7f41d13357edd8488716f8cf22916b2f06",
+      "19": "433a205c23e3826c693a0001f88f9dc20f8d902ea351ab0f6f91478bfbedbeca",
+      "20": "93b922c4ad186e2275926159d0b83a2e6ac9cf47e2b510ef3133309f60ce58a5"
+    }
+  },
+  "reviewModel": "claude-opus-5-5",
+  "assessment": [
+    {
+      "number": 16,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "lawNeedsExternalCheck": []
+    },
+    {
+      "number": 17,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "lawNeedsExternalCheck": []
+    },
+    {
+      "number": 18,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "lawNeedsExternalCheck": []
+    },
+    {
+      "number": 19,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "lawNeedsExternalCheck": [
+        "解説は試験センターのリングスリーブ適用表を根拠にしているが、元画像だけではその表を確認できない。解説の判定は、一般に知られる適用区分と照合すると合っている。b（1.6mm×2と2.0mm×1）は小・小、c（1.6mm×4）は小・小、d（1.6mm×1と2.0mm×2）は中・中。ただし、sourceForInternalQcOnly の point2024.pdf の表でも同じか、要確認。"
+      ]
+    },
+    {
+      "number": 20,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "lawNeedsExternalCheck": [
+        "電気設備の技術基準の解釈のライティングダクト工事の条項（第185条と思われる）について、支持点間距離が2m以下であることを官公庁の原文で要確認。",
+        "同条項で、ダクトの終端部を閉そくすること、造営材を貫通しないことを要確認。",
+        "D種接地工事を省略できる条件が「対地電圧150V以下かつ全長4m以下」であることを要確認。使用電圧100Vなら対地電圧150V以下とみなしてよいかも含む。"
+      ]
+    }
+  ]
+}

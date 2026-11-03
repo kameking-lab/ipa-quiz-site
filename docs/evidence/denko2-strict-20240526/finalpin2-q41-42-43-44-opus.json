@@ -1,0 +1,72 @@
+{
+  "schemaVersion": 1,
+  "reviewModel": "claude-opus-5-5",
+  "inputHashes": {
+    "candidateSha256": {
+      "41": "112ae502efba9eb7859bbdeee3ddaf36e7bad73e88e35059bee7c2d8afb41bef",
+      "42": "1c058355c81e155fb522ea54bd3aeb79f49e341c7a50420eb9252da195cea6ea",
+      "43": "9af4d0dc10797dd2ed6a6b0213875565c6e1aa0b970898a3d20501ccac3ff7c3",
+      "44": "32be073d40ac56f3f1ddadcf1371844b9e6725f46014034e02879841ff099b64"
+    },
+    "sourceCropSha256": {
+      "41": "b56695a09bf3299e9d38262cae0f600005962c3214ca7e9e8c3b58b2ce719c84",
+      "42": "9bdf5036b52062b923b8c9d599a15ba6179281f036f206bd3c0766602ae27317",
+      "43": "07948aac1410e898f37fff9574a2d62d2f07d73abd32d2b826d8f22e886181a7",
+      "44": "fbd85396920b36199ef1267c58c156a10c0a4792174b5a9655905ec4d80fc609"
+    }
+  },
+  "assessment": [
+    {
+      "number": 41,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "visualIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": "公式原図と公式正答を照合。公式問題15頁の共通配線図で、⑪のボックスには4本のケーブルが入る。左はコンセント経由の電源側VVF2.0、下はコンセント側VVF2.0、上はスイッチ『カ』へのVVF1.6、右は照明『カ』へのVVF1.6。接続点は、非接地側の3本、接地側の3本、スイッチから照明への帰り線の2本で、3本接続2か所と2本接続1か所になる。問41の公式写真では、橙色の差込口が2つ、水色が3つ、黄緑色が4つ。公式正答ロ（橙1個・水色2個）と一致する。肢の切出しq41-i/ro/ha/ni.pngは、公式写真の個数表記（3個／1個・2個／2個・1個／2個・1個）と一致する。"
+    },
+    {
+      "number": 42,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [
+        "choiceExplanations.ニの『可とう電線管とねじなし金属電線管をつなぐ』は、どの可とう管か曖昧。写真の内側のらせん溝は金属製可とう電線管用で、合成樹脂製可とう管（PF/CD）と読み違える余地がある。『2種金属製可とう電線管とねじなし電線管を接続するコンビネーションカップリング』と明記すべき。"
+      ],
+      "visualIssues": [],
+      "sourceIssues": [
+        "officialReferenceUrlsが空配列。一方で、解説は『VEは硬質ポリ塩化ビニル電線管』と記号の意味を主張し、diagramDescriptionも一点鎖線を『地中管路』と解釈している（いずれもJIS C 0303の図記号に基づく主張）。公式問題・公式正答は写真の分類を裏付けるが、記号『VE』の定義や一点鎖線が地中埋設配線であることを直接には示さない。",
+        "官公庁ドメインの一次資料で確認を試みたが、今回の環境では確認できなかった。対象は国交省『公共建築設備工事標準図（電気設備工事編）』https://www.mlit.go.jp/gobuild/content/001879783.pdf、『公共建築工事標準仕様書（電気設備工事編）令和7年版』https://www.mlit.go.jp/gobuild/content/001888825.pdf、試験センター『配線図』資料 https://www.shiken.or.jp/construction/upload/kex06.pdf。いずれもWebFetchではPDF本文を解読できず、VE・一点鎖線を定義する条項・図表を特定できなかった。確認できる一次資料の該当箇所を、SHA固定の本文抜粋付きでofficialReferenceUrlsに追加する必要がある。"
+      ],
+      "verifiedEvidence": "公式原図と公式正答を照合。公式問題15頁の共通配線図で、⑫⑬⑤は共通の引出線で『600V CV 5.5-2C (VE28)』の一点鎖線の管路を指す。問42の公式写真は、イ＝樹脂製カップリング、ロ＝止めねじ4本の金属カップリング、ハ＝灰色の樹脂製TSカップリング、ニ＝内側にらせん溝があり止めねじ1本の金属カップリング。公式正答ハと一致し、肢の切出しq42-i/ro/ha/ni.pngも公式写真と一致する。ただし記号VE・一点鎖線の定義は、官公庁資料では確認できていない（sourceIssues参照）。"
+    },
+    {
+      "number": 43,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "visualIssues": [],
+      "sourceIssues": [
+        "officialReferenceUrlsが空配列。解説とdiagramDescriptionは、⑬を『VE28＝硬質ポリ塩化ビニル電線管』の『地中管路』と特定し、これを前提に使用する工具・使用しない工具を判定している。公式正答イは『パイプレンチは使用されない』ことを裏付けるが、記号VEの意味と一点鎖線＝地中埋設配線という図記号の主張は直接裏付けない。",
+        "国交省の公共建築設備工事標準図 https://www.mlit.go.jp/gobuild/content/001879783.pdf、同標準仕様書 https://www.mlit.go.jp/gobuild/content/001888825.pdf、試験センター https://www.shiken.or.jp/construction/upload/kex06.pdf で確認を試みたが、PDF本文を取得・解読できず、該当する条項・図表を確認できなかった。問42と同じ一次資料の根拠を追加する必要がある。"
+      ],
+      "verifiedEvidence": "公式原図と公式正答を照合。⑬は共通配線図下端の『600V CV 5.5-2C (VE28)』の引出線を指す。問43の公式写真は、イ＝赤柄のパイプレンチ、ロ＝赤柄のハサミ形カッター、ハ＝円筒の内側に刃が並ぶ面取器、ニ＝青い本体のトーチランプ。公式正答イ（使用されることのない工具）と一致し、肢の切出しq43-i/ro/ha/ni.pngも公式写真と一致する。記号VE・一点鎖線の定義は未確認（sourceIssues参照）。"
+    },
+    {
+      "number": 44,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "visualIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": "公式原図と公式正答を照合。公式問題15頁の動力分電盤結線図で、⑭はBE 3P30Aから空調機aへ向かう三相200Vの分岐を指す。問44の公式写真は、イ＝クランプ部とデジタル表示を持つクランプ形測定器、ロ＝ACV/DCV切替ダイヤルとテストリードのアナログ回路計、ハ＝ペン形と黄色本体の検電器2点、ニ＝目盛にMΩ表示のある絶縁抵抗計。公式正答イ（漏れ電流を測定できるもの）と一致し、肢の切出しq44-i/ro/ha/ni.pngも公式写真と一致する。"
+    }
+  ]
+}

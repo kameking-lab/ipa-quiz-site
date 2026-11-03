@@ -1,5 +1,8 @@
+import { AI_ACCESS_DESCRIPTION, AI_ATTEMPT_DESCRIPTION, BROWSER_AUDIO_DESCRIPTION, aiAccessClaimsEnabled } from "@/components/ai/ai-access-copy";
 import Link from "next/link";
+import { PRICE_PAGE_LINK } from "@/lib/billing/price-page-link";
 import type { Metadata } from "next";
+import { HISTORY_PRIVACY_COPY, AI_RATE_LIMIT_PRIVACY_COPY } from "@/lib/privacy/disclosure";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { ArrowLeft, Heart, BookOpen, MessageSquare, Share2, Users } from "lucide-react";
@@ -10,13 +13,13 @@ import { buildOrgNode, buildWebPageNode } from "@/lib/seo/structured-data";
 
 const PAGE_URL = `${SITE_BASE_URL}/about`;
 const PAGE_DESCRIPTION =
-  "過去問 AI プロジェクトは、IPA 情報処理技術者試験（全 13 区分）の対策を誰もが平等に学べる場として運営する教育貢献プロジェクトです。AI コパイロット・模試・午後 AI 採点を含む全機能を無料公開しています。";
+  "過去問AIは、IPA・FP・電気・医療・福祉・不動産等の公開過去問を資格ごとに学べるサービスです。収録範囲・公式出典・独自解説の確認範囲を表示し、無料の学習機能と月額プランを提供しています。";
 
 const ABOUT_OG_URL = `${SITE_BASE_URL}/api/og?${new URLSearchParams({
   type: "home",
   title: "過去問AIについて",
   subtitle: "教育貢献プロジェクト",
-  body: "IPA 全 13 試験区分・AI コパイロット・模試・午後採点を含む全機能を無料公開。",
+  body: "資格別の過去問・復習と、無料枠・月額プランを提供。",
 }).toString()}`;
 
 export const metadata: Metadata = {
@@ -26,7 +29,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "過去問 AI プロジェクトについて",
     description:
-      "IPA 全 13 区分の過去問・AI コパイロット・模試・午後 AI 採点を含む全機能を無料公開する教育貢献プロジェクト。",
+      "資格別の公開過去問・独自解説・学習履歴、無料枠と月額プランを提供。出典・確認範囲と運営方針を公開しています。",
     url: `${SITE_BASE_URL}/about`,
     type: "website",
     siteName: "過去問AI",
@@ -37,7 +40,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "過去問 AI プロジェクトについて",
     description:
-      "IPA 全 13 区分の過去問・AI コパイロット・模試・午後 AI 採点を含む全機能を無料公開する教育貢献プロジェクト。",
+      "資格別の公開過去問・独自解説・学習履歴、無料枠と月額プランを提供。出典・確認範囲と運営方針を公開しています。",
     images: [ABOUT_OG_URL],
   },
 };
@@ -83,23 +86,21 @@ export default function AboutPage() {
 
       <section className="mb-8 space-y-3 text-sm leading-relaxed text-zinc-700 dark:text-zinc-300">
         <p>
-          過去問 AI プロジェクトは、IPA（情報処理推進機構）が実施する情報処理技術者試験の対策を、
+          過去問AIは、IPAの情報処理技術者試験に加え、FP・電気・医療・福祉・不動産等の公開過去問を、
           <strong>誰もが平等に学べる場</strong>として公開している教育貢献プロジェクトです。
         </p>
         <p>
-          全 13 試験区分の過去問・全モード・AI コパイロット・午後 AI 採点を含む、
-          すべての学習機能を<strong>無料</strong>で公開しています。受験生の経済状況や所属に
-          関わらず、最善の対策ツールを使えるようにすることがプロジェクトの目的です。
+          個別問題・原紙・保存済み履歴の閲覧と復習は<strong>無料</strong>です。
+          連続演習には無料枠と月額プランがあり、学習機会を広げながら運営を継続することを目指しています。
         </p>
       </section>
 
       <h2 className="mb-2 text-lg font-semibold">運営について</h2>
       <section className="mb-8 space-y-3 text-sm leading-relaxed text-zinc-700 dark:text-zinc-300">
         <p>
-          本プロジェクトは特定の法人・営利組織には属さず、
-          <strong>ボランティア有志により運営</strong>されています。
-          サーバー費用や AI 利用料を含む運営コストは、有志による持ち出しと、
-          一部の任意応援（<Link href="/about#support" className="underline">応援する</Link>）で賄っています。
+          本プロジェクトの公開運営ハンドルは<strong>kameking-lab</strong>です。
+          サーバー費用・AI利用料について確認できた情報と未確認事項は、
+          <Link href="/transparency" className="underline">透明性レポート</Link>で区別して表示します。
         </p>
         <p>
           運営の透明性レポート・直近の活動状況は{" "}
@@ -114,8 +115,8 @@ export default function AboutPage() {
         {[
           {
             icon: <BookOpen className="h-4 w-4 text-emerald-600 dark:text-emerald-400" />,
-            title: "全機能を無料公開",
-            text: "全 13 試験区分・全モードに料金は一切かかりません。学習に必要なものはすべて開放しています。",
+            title: "無料の学習機能と月額プラン",
+            text: "個別問題・原紙・保存済み履歴の閲覧と復習は無料です。連続演習の無料枠と月額プラン、AI機能の対応範囲は各案内で確認できます。",
           },
           {
             icon: <MessageSquare className="h-4 w-4 text-sky-600 dark:text-sky-400" />,
@@ -130,7 +131,7 @@ export default function AboutPage() {
           {
             icon: <Heart className="h-4 w-4 text-rose-600 dark:text-rose-400" />,
             title: "持続可能性を保つ",
-            text: "AI 利用は初回 10 回まで自由、フィードバック投稿後はほぼ無制限です。運営費を抑えつつ持続可能に。",
+            text: "AI コパイロットは無料で続けて質問できます。連続利用・大量送信を制限し、運営費を管理します。",
           },
         ].map((c) => (
           <div
@@ -153,32 +154,28 @@ export default function AboutPage() {
           公開している過去問題 PDF を原典としています。各問の解説末尾から原典 PDF へリンクしています。
         </p>
         <p>
-          IPA は、試験問題の使用に関し、利用の許諾は不要・使用料も不要である旨を公式に明示しています
-          （詳細は
+          本サイトはフッターおよび各問の解説内に「出典: IPA 情報処理技術者試験」を明示しています。
+          試験制度については
           <a
             className="underline"
             href="https://www.ipa.go.jp/shiken/faq.html"
             target="_blank"
             rel="noopener noreferrer"
           >
-            IPA 過去問題の使用について
+            IPA 公式サイトのよくある質問
           </a>
-          を参照）。
-          一方で、引用・二次利用の際には「出典: IPA 情報処理技術者試験」の明記が求められます。
-          本サイトはフッターおよび各問の解説内に出典を明示しています。
+          もご確認ください。
         </p>
         <p>
           解説本文・AI による応答・本サイト独自の UI・タグ付けデータなどは、IPA の著作権とは独立した
           本サイト運営者の著作物です。無断転載を禁じます。
         </p>
         <p>
-          FP技能検定は日本FP協会の公式公表問題を、同協会の利用条件に従い出典を明記して掲載しています。
-          電気主任技術者試験は電気技術者試験センターが教育目的での利用を認める公式過去問題を、指定の出典表記とともに掲載しています。
+          FP技能検定・電気主任技術者試験・電気工事士試験・施工管理技術検定などの問題は、各試験実施団体が公表した問題を出典を明記して掲載しています。
           各問には問題PDFと公式正答へのリンクがあります。
         </p>
         <p>
-          施工管理技術検定・宅建など、公式問題と正答が公開されていても再掲載条件が未確認または許諾必須の資格は、
-          許諾を得るまで問題本文を掲載しません。
+          施工管理技術検定など、掲載条件の確認が必要な資格の問題本文は、確認が完了するまで掲載しません。
         </p>
       </section>
 
@@ -186,29 +183,34 @@ export default function AboutPage() {
       <section className="mb-8 space-y-3 text-sm leading-relaxed text-zinc-700 dark:text-zinc-300">
         <p>
           AI コパイロットは生成 AI を用いて応答を生成しています。生成 AI の性質上、
-          内容に誤りが含まれる可能性があります。重要な判断の根拠とする場合は、IPA の公式資料や
+          内容に誤りが含まれる可能性があります。重要な判断の根拠とする場合は、当該試験実施団体の公式資料や
           信頼できる書籍で確認してください。
         </p>
         <p>
-          AI コパイロットは初回 10 回まではどなたでもご利用いただけます。1 度フィードバックを
-          投稿いただくと、これ以降ほぼ無制限でご利用いただけます。
+          {aiAccessClaimsEnabled() ? <>{AI_ACCESS_DESCRIPTION} {AI_ATTEMPT_DESCRIPTION} {BROWSER_AUDIO_DESCRIPTION}</> : <>          AI コパイロットに初回10回の質問上限はありません。連続利用や大量送信には
+          適正利用制限があります。
+</>}
         </p>
       </section>
 
       <h2 className="mb-2 text-lg font-semibold">AI コンテンツ取扱方針・査読体制</h2>
       <section className="mb-8 space-y-3 text-sm leading-relaxed text-zinc-700 dark:text-zinc-300">
         <p>
-          本サービスでは、次の 3 種類のコンテンツに生成 AI を活用しています。
+          本サービスでは、コンテンツの種類ごとにAIの利用と確認範囲を区別しています。
         </p>
         <ul className="list-disc space-y-1 pl-5">
           <li>
             <strong>AI コパイロット（問題解説・質問応答）</strong>：
             ユーザーの質問に応じてリアルタイムで AI が応答を生成します。
-            内容は自動審査を通過したうえで提供しますが、誤りが含まれる可能性があります。
+            各応答を公開前に人が査読する方式ではありません。誤りが含まれる可能性があります。
+          </li>
+          <li>
+            <strong>収録問題の静的解説</strong>：AIの支援を用いた独自解説です。原文・図版・公式正答の照合と、解説内容の編集は別の工程です。
+            全件の人による確認・専門家監修を保証していません。保存された確認範囲と訂正手順は<Link href="/transparency#static-explanations" className="underline">透明性ページ</Link>で公開します。
           </li>
           <li>
             <strong>業種別合格答案サンプル（essays）</strong>：
-            AI が生成した論述例を、運営者が確認・公開しています。
+            AI が生成した論述例を掲載しています。人による全件確認・専門家監修の証跡は提示していません。
             IPA 公式の合格答案ではなく、論述構成の参考用です。各ページにその旨を明示しています。
           </li>
           <li>
@@ -232,28 +234,33 @@ export default function AboutPage() {
         <p>
           IPA Quiz は IPA 情報処理技術者試験の学習機会を広げることを目的とした
           <strong>教育貢献プロジェクト</strong>として運営されています。
-          現在、料金プランは設定しておらず、すべての機能を完全無料でご利用いただけます。
+          個別問題・原紙・保存済み履歴の閲覧と復習は無料です。連続演習はログインなしでも1日10問まで無料で、日本時間0時に更新されます。履歴の同期などは無料ログインで利用できます。
         </p>
         <p>
-          AI コパイロットの利用回数には公平利用のための日次上限を設けていますが、
-          試験区分・問題数・モード・履歴・出題機能など、学習に必要な機能はすべて無料で開放しています。
-          α 期間からのご利用者の方は、今後も継続して無料でお使いいただけます。
+          {aiAccessClaimsEnabled() ? <>無料AIには1日3回の共通上限があります。有料会員の通常利用には個人の日次上限を設けません。</> : <>AI コパイロットの利用回数には公平利用のための日次上限を設けていますが、</>}
+          対象の連続演習を回数制限なく使う月額プランは税込980円で毎月自動更新され、期間末解約を予約できます。
+          {aiAccessClaimsEnabled() ? <>AI応答の利用条件は上記の無料・有料の区分をご確認ください。ブラウザー音声は無料です。</> : <>AI応答や音声の利用権は月額プランに含みません。</>}既存の保存済み履歴を課金のために削除することはありません。
         </p>
         <p className="text-xs text-zinc-500 dark:text-zinc-400">
-          将来的に運営コストを賄うための仕組みを検討する可能性はありますが、
-          既存ユーザーの学習体験を損なう変更は行いません。
+          販売状況、対象範囲、日割返金なし・重複誤請求や当社障害時の個別返金、事業者情報の開示請求は
+          <Link href={PRICE_PAGE_LINK.href} className="underline">{PRICE_PAGE_LINK.label}</Link>をご確認ください。法令上の権利は制限しません。
         </p>
       </section>
 
       <h2 className="mb-2 text-lg font-semibold">プライバシー</h2>
       <section className="mb-8 space-y-3 text-sm leading-relaxed text-zinc-700 dark:text-zinc-300">
         <p>
-          学習履歴・回答履歴は、お使いのブラウザの localStorage にのみ保存され、
-          サーバーには送信されません。端末・ブラウザを変更すると履歴は引き継がれません。
+          {HISTORY_PRIVACY_COPY}
         </p>
         <p>
-          AI コパイロット機能では、質問文と該当問題のコンテキストが AI API に送信されます。
-          個人を特定する情報は送信しません。
+          {AI_RATE_LIMIT_PRIVACY_COPY}
+        </p>
+        <p>
+          AI コパイロット機能では、質問文・直近の会話履歴・該当問題のコンテキストなどが AI API に送信されます。
+        </p>
+        <p>
+          アカウントの氏名・メールアドレスを問題コンテキストに自動付加しません。
+          ただし、質問や会話履歴に含めた個人情報は送信されるため、氏名・メールアドレスなどは質問に入力しないでください。
         </p>
       </section>
 
@@ -281,7 +288,7 @@ export default function AboutPage() {
         過去問 AI を応援する
       </h2>
       <p className="mb-4 text-sm leading-relaxed text-zinc-600 dark:text-zinc-400">
-        全機能を無料で公開しているため、金銭的なご支援はお願いしていません。
+        月額プランとは別の寄付や金銭的なご支援はお願いしていません。
         かわりに、もっと届けたい人へつないでくださると、運営の励みになります。
       </p>
       <section className="mb-8 space-y-3">
@@ -299,7 +306,7 @@ export default function AboutPage() {
             </p>
             <ShareButtons
               url={`${SITE_BASE_URL}/`}
-              text="IPA 試験対策が全機能無料で使える教育貢献プロジェクト「過去問 AI」を応援しています。"
+              text="無料の学習機能と月額プランを提供する教育貢献プロジェクト「過去問 AI」を応援しています。"
               hashtags={["過去問AI", "IPA試験", "応用情報"]}
             />
           </CardContent>
@@ -334,7 +341,7 @@ export default function AboutPage() {
             <ul className="space-y-2 text-sm text-zinc-700 dark:text-zinc-300">
               <li>所属する勉強会・社内チャットで紹介する</li>
               <li>note・ブログ・YouTube などで取り上げる</li>
-              <li>学校・専門学校・社内研修の補助教材として活用する（無料・許諾不要）</li>
+              <li>学校・専門学校・社内研修の補助教材として活用する（無料範囲・月額条件は各案内を確認）</li>
             </ul>
           </CardContent>
         </Card>
@@ -348,7 +355,7 @@ export default function AboutPage() {
           </CardHeader>
           <CardContent>
             <p className="text-sm text-zinc-700 dark:text-zinc-300">
-              学校・専門学校・社内研修などでご活用いただく場合も、料金は一切かかりません。
+              学校・専門学校・社内研修でのご利用にも、各機能の無料範囲と月額プランの条件が適用されます。
               活用事例の共有や、運用上のご相談がありましたら{" "}
               <Link href="/contact" className="underline hover:text-zinc-900 dark:hover:text-zinc-50">
                 お問い合わせフォーム

@@ -1,0 +1,72 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20260322",
+  "subject": "theory",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 3633,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 14566,
+      "webSearchRequests": 0,
+      "costUSD": 0.1894518,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 2018,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "38867710fbe1df6c5e65b7959e83c9c14fc8e439b0e7b0a69cfd81ea1fe1f8c5",
+  "inputRequestSha256": "bcba1b284381120bfd22012d091f75213c8276a043165fcd073534accf55d081",
+  "inputHashes": {
+    "candidateSha256": {
+      "q06": "38082ea8904e5d668700defe2cea8f55565e71dee867ed88fad265d53822a64b"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20260322/theory/p09.png": "092cf9ee3ad42ea8da3801fabdbfc08a7d26c6637757a40b0dd53bf3c4c13747"
+    },
+    "figureSha256": {
+      "public/images/denken3/20260322/theory/20260322-theory-q06-fig1.png": "166c2dc656a9c681638bf67a3dfc3f1adf6707950a1b8c5c2481e8896e91550b"
+    },
+    "sourceQuestionPdfSha256": "c83e7c7350d98b65f5d8da0b93e4a2581a19dd250be320fb7fc492c9b34a29c1",
+    "sourceAnswerPdfSha256": "cc2890296d06a4823df5697a78a1c01ddfd39f041c51f48c87984daa3a5707c6",
+    "officialAnswerUnitsSha256": "f54a6b7f2a8c8cf03afc87bea8677f943a595f0cdc61d70f34b47500927eb0b3",
+    "referencePdfSha256": {},
+    "referencePageSha256": {},
+    "referenceJsonSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q06",
+      "questionNumber": 6,
+      "part": null,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "問題文: 公式原図（PDF第9頁、頁下部の印字は『-6-』『T2−R 009』）と照合した。内部抵抗 r[Ω]、起電力 E[V]、可変抵抗器 R[Ω]、R=2.25 Ω・I=3 A、R=3.45 Ω・I=2 A、問い『起電力E[V]の値として最も近いもの』は、数値・記号・単位とも原文と一致する。変更は全角・半角と空白の整形だけで、意味の変化はない。",
+        "選択肢: (1)9.30 (2)7.20 (3)7.05 (4)6.90 (5)6.75 は、原図の5肢と順序・数値とも一致する。",
+        "公式正答: 公式解答表（令和7年度 第三種電気主任技術者下期試験解答）の＜理論＞問6は解答2・配点5である。manifest固定の {question:6, part:null, answer:'2', points:5}、候補の officialAnswer='2'、scoringPoints=5 のいずれとも一致する。",
+        "総合解説の検算: E=I(r+R) から 3r+6.75=2r+6.90 となり r=0.15 Ω を得る。E=3×2.40=7.20 V、検算 2×3.60=7.20 V で一致し、正答(2)と整合する。因果は『直列1ループ』→『E=I(r+R)』→『E共通で連立』で、正しい。",
+        "(1)の理由: 9.30/3−2.25=0.85 Ω、9.30/2−3.45=1.20 Ω。値は正しく、r が不一致なので不適とする論理も正当である。",
+        "(2)の理由: r=0.15 Ω、E=7.20 V で両条件を満たす。正当である。",
+        "(3)の理由: 7.05/3−2.25=0.10 Ω、7.05/2−3.45=0.075 Ω。値は正しく、r が不一致とする論理も正当である。",
+        "(4)の理由: 3.45×2=6.90 V は2つ目の条件での端子電圧である。内部降下 0.15×2=0.30 V を足すと 6.90+0.30=7.20 V になり整合する。r=0.05 Ω と r=0 Ω の値も正しい。",
+        "(5)の理由: 2.25×3=6.75 V は1つ目の条件での端子電圧である。内部降下 0.15×3=0.45 V を足すと 6.75+0.45=7.20 V になり整合する。r=0 Ω と r=−0.075 Ω の値も正しく、負の抵抗なので物理的に不成立とする記述も妥当である。",
+        "公開候補図: 公式原図の回路部分を忠実に切り出している。含まれる要素は、電池枠（ラベル『電池』、内部に上から r[Ω] 抵抗記号と E[V] 電池記号が直列）、右側の可変抵抗器（斜め矢印付き、R[Ω]）、上下導線による単一閉ループ、上側導線上の右向き矢印 I[A] である。接続・向き・全ラベルに欠落や改変はなく、公開候補図だけで E=I(r+R) を立てられる。",
+        "figureDescription: 接続（r・E・R の直列1ループ）、電流 I の向き（上側導線を電池側から可変抵抗器側へ右向き）、全ラベルの記述は原図と一致する。",
+        "出典メタデータ: fiscalYear=2025、term=lower、examDate=2026-03-22、subject=theory、reviewedFromPage=[9]、sourceQuestionPdfUrl、sourceAnswerPdfUrl はすべて manifest と一致する。sourceAttribution の『令和7年度下期 理論科目 問6』も、2025年度下期と公式解答表見出しに整合する。",
+        "uncertainty 欄の2点はいずれも未解決事項に当たらない。年度・科目が頁上で直接確認できない点は、manifest と頁下部の『T2−R 009』（理論冊子の第9頁）で解消される。電池記号の極板向きは、解答が電流の大きさだけで決まるため結論に影響しない。",
+        "officialReferenceUrls は空配列で、検証を要する独立主張はない。"
+      ]
+    }
+  ]
+}

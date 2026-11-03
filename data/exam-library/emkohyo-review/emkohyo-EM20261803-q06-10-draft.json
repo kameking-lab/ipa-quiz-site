@@ -1,0 +1,532 @@
+{
+  "candidateModel": "claude-opus-5-5",
+  "paperId": "emkohyo-EM20261803",
+  "governmentSourceCandidates": [
+    {
+      "title": "厚生労働省 個人サンプラーを用いた測定法の基盤整備報告書",
+      "url": "https://www.mhlw.go.jp/content/000616847.pdf"
+    },
+    {
+      "title": "厚生労働省 作業環境測定基準",
+      "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74087000"
+    },
+    {
+      "title": "厚生労働省 作業環境評価基準",
+      "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74088000&dataType=0&pageNo=1"
+    }
+  ],
+  "questions": {
+    "emkohyo-EM20261803-q6": {
+      "overlay": {
+        "sourceHash": "cc131099d0b1f47e0cf0adb140b9621138b6719e87a94acf38ba2755f2969c51",
+        "correctChoice": 2,
+        "summary": "C測定とD測定は同じ労働者に試料採取機器を2台装着して行ってもよいので、C測定とD測定の装着者を別の労働者にしなければならないとする肢2が誤りである。",
+        "choices": [
+          {
+            "number": 1,
+            "verdict": "incorrect",
+            "reason": "正しい。作業環境測定基準は、単位作業場所の労働者が5人を下回るとき、1人の作業時間を分割して2以上の試料空気を採取すれば、その数と同数の労働者に行ったものとみなせるとしている。厚労省掲載の講習用教材も、労働者が1名なら作業時間を5分割して測定値を5つにする例を示している。"
+          },
+          {
+            "number": 2,
+            "verdict": "correct",
+            "reason": "誤り。厚労省掲載の個人サンプリング法講習用教材は、D測定の対象者はC測定の対象者であっても構わず、その場合は試料採取機器を2台装着して測定すると述べている。C測定とD測定の装着者を別の労働者にしなければならないという定めはないので、この記述が誤りである。"
+          },
+          {
+            "number": 3,
+            "verdict": "incorrect",
+            "reason": "正しい。ガイドラインはD測定の試料空気の採取等の時間を「連続した15分間」とする必要があるとし、施行通達もD測定の時間は短時間ばく露限度の15分間を踏まえ連続した15分間とすると説明している。15分未満の作業を何回か合わせて計15分としても、連続した15分間の採取にならないのでD測定にはできない。"
+          },
+          {
+            "number": 4,
+            "verdict": "incorrect",
+            "reason": "正しい。厚労省掲載の講習用教材は、C測定中に単位作業場所外へ移動しても測定結果に影響を与えない場合は測定を継続でき、その際は単位作業場所での滞在時間を把握して、測定値を滞在時間での時間加重平均値とすると述べている。記述はこれと一致する。"
+          },
+          {
+            "number": 5,
+            "verdict": "incorrect",
+            "reason": "正しい。作業環境測定基準は分粒装置を方式ではなく透過率の特性で定めており、厚労省掲載の講習用教材は、個人サンプリング法の分粒装置は小型・軽量である必要からサイクロン式や慣性衝突式が用いられると述べている。したがってサイクロン式を使用できる。"
+          }
+        ],
+        "sources": [
+          {
+            "title": "厚生労働省 作業環境測定基準第2条・第10条",
+            "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74087000"
+          },
+          {
+            "title": "厚生労働省 個人サンプリング法による作業環境測定及びその結果の評価に関するガイドライン",
+            "url": "https://www.mhlw.go.jp/web/t_doc?dataId=00tc8503&dataType=1&pageNo=1"
+          },
+          {
+            "title": "厚生労働省 作業環境測定法施行規則の一部を改正する省令等の施行等について（令和2年1月27日基発0127第12号）",
+            "url": "https://www.mhlw.go.jp/web/t_doc?dataId=00tc4800&dataType=1&pageNo=1"
+          },
+          {
+            "title": "厚生労働省掲載 個人サンプラーを用いた測定法に係る基盤整備事業 報告書 第2部（講習用教材）",
+            "url": "https://www.mhlw.go.jp/content/000616847.pdf"
+          }
+        ]
+      },
+      "sourceEvidence": [
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74087000",
+          "excerpt": "単位作業場所において作業に従事する労働者の数が五人を下回る場合にあつては、第二号ただし書及び前号本文の規定にかかわらず、一の労働者が一の作業日のうち単位作業場所において作業に従事する時間を分割し、二以上の第一号の規定による試料空気の採取等が行われたときは、当該試料空気の採取等は、当該二以上の採取された試料空気の数と同数の労働者に対して行われたものとみなすことができること",
+          "choiceNumbers": [
+            1
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/content/000616847.pdf",
+          "excerpt": "例えば、均等ばく露作業の労働者が１名の場合は、作業時間を５分割して測定を行い",
+          "choiceNumbers": [
+            1
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/content/000616847.pdf",
+          "excerpt": "なお、D測定対象者は、C測定対象者であっても構わないが、その場合、試料採取機器を２台装着して測定を行うことになる。",
+          "choiceNumbers": [
+            2
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=00tc8503&dataType=1&pageNo=1",
+          "excerpt": "試料空気の採取等の時間は、連続した15分間とする必要があること",
+          "choiceNumbers": [
+            3
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=00tc4800&dataType=1&pageNo=1",
+          "excerpt": "この趣旨から、D測定に係る試料空気の採取等の時間は、連続した15分間とする必要があること",
+          "choiceNumbers": [
+            3
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/content/000616847.pdf",
+          "excerpt": "測定結果に影響を与えない場合は、測定を継続することができる。その際、単位作業場所での滞在時間を把握し、測定値は滞在時間での時間加重平均値とする。",
+          "choiceNumbers": [
+            4
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/content/000616847.pdf",
+          "excerpt": "個人サンプリング法に用いる分粒装置は、小型・軽量でなければならないことから、サイクロン式や慣性衝突式の分粒装置が用いられる。",
+          "choiceNumbers": [
+            5
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74087000",
+          "excerpt": "前項第四号イの分粒装置は、その透過率が次の図で表される特性を有するもの",
+          "choiceNumbers": [
+            5
+          ]
+        }
+      ],
+      "reviewIssues": []
+    },
+    "emkohyo-EM20261803-q7": {
+      "overlay": {
+        "sourceHash": "c9497d18853345b80ffd2f9ab8edcca02db20e20f2c530caf2824347caac2aca",
+        "correctChoice": 5,
+        "summary": "25℃の飽和蒸気圧が最大なのはホルムアルデヒド。厚労省SDSは20℃ですでに約438～442 kPaと記載し、25℃より低い温度でもほかの選択肢を大きく上回る。",
+        "choices": [
+          {
+            "number": 1,
+            "verdict": "incorrect",
+            "reason": "アクリルアミドは25℃で蒸気圧約0.9 Paの固体である。厚労省SDSの実測値はホルムアルデヒドの20℃で約438～442 kPaより桁違いに低く、最大にならない。"
+          },
+          {
+            "number": 2,
+            "verdict": "incorrect",
+            "reason": "アセトンのSDSにある20℃の蒸気圧は239.5 hPa（約24 kPa）。25℃では上がるが、沸点56℃未満なので大気圧には達しない。20℃ですでに約438～442 kPaのホルムアルデヒドが上回る。"
+          },
+          {
+            "number": 3,
+            "verdict": "incorrect",
+            "reason": "クロロホルムはSDSの25℃の蒸気圧が197 mmHg（約26 kPa）である。同じ25℃でホルムアルデヒドは沸点−20℃を大きく超えており、この値を上回る。"
+          },
+          {
+            "number": 4,
+            "verdict": "incorrect",
+            "reason": "テトラヒドロフランはSDSで20℃の蒸気圧が145 mmHg（約19 kPa）、沸点は約65℃である。25℃でも沸点未満なので大気圧以下で、ホルムアルデヒドより低い。"
+          },
+          {
+            "number": 5,
+            "verdict": "correct",
+            "reason": "ホルムアルデヒドのSDSには20℃で4378～4420 hPa（約438～442 kPa）の蒸気圧と、−20℃の沸点が記されている。25℃では沸点を超え、ほかの4物質より蒸気圧が高い。ホルマリン水溶液とは区別する。"
+          }
+        ],
+        "sources": [
+          {
+            "title": "厚生労働省・職場のあんぜんサイト SDS（acrylamide）",
+            "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/79-06-1.html"
+          },
+          {
+            "title": "厚生労働省・職場のあんぜんサイト SDS（acetone）",
+            "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/67-64-1.html"
+          },
+          {
+            "title": "厚生労働省・職場のあんぜんサイト SDS（chloroform）",
+            "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/67-66-3.html"
+          },
+          {
+            "title": "厚生労働省・職場のあんぜんサイト SDS（thf）",
+            "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/109-99-9.html"
+          },
+          {
+            "title": "厚生労働省・職場のあんぜんサイト SDS（formaldehyde）",
+            "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/50-00-0.html"
+          }
+        ]
+      },
+      "sourceEvidence": [
+        {
+          "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/79-06-1.html",
+          "excerpt": "蒸気圧 0.9 Pa（25℃）",
+          "choiceNumbers": [
+            1
+          ]
+        },
+        {
+          "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/67-64-1.html",
+          "excerpt": "蒸気圧 239.5hPa(239.5mber)(20℃）",
+          "choiceNumbers": [
+            2
+          ]
+        },
+        {
+          "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/67-64-1.html",
+          "excerpt": "56℃(沸点)",
+          "choiceNumbers": [
+            2
+          ]
+        },
+        {
+          "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/67-66-3.html",
+          "excerpt": "197 mm Hg（25℃）",
+          "choiceNumbers": [
+            3
+          ]
+        },
+        {
+          "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/109-99-9.html",
+          "excerpt": "蒸気圧 145mmHg(20℃) [換算値 19328Pa(20℃)]",
+          "choiceNumbers": [
+            4
+          ]
+        },
+        {
+          "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/109-99-9.html",
+          "excerpt": "65℃ (沸点）",
+          "choiceNumbers": [
+            4
+          ]
+        },
+        {
+          "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/50-00-0.html",
+          "excerpt": "蒸気圧 4378～4420 hPa（20℃）",
+          "choiceNumbers": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ]
+        },
+        {
+          "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/50-00-0.html",
+          "excerpt": "沸点、初留点及び沸騰範囲 -20 ℃",
+          "choiceNumbers": [
+            2,
+            3,
+            4,
+            5
+          ]
+        }
+      ],
+      "reviewIssues": []
+    },
+    "emkohyo-EM20261803-q8": {
+      "overlay": {
+        "sourceHash": "04ee8af4648efad62222474391e09d3e30c01252558c3b0297182c5e280ad8b3",
+        "correctChoice": 3,
+        "summary": "ナフタレンは室温で昇華するが、融点は80℃なので1気圧で加熱すれば液体になる。「液体となることはない」とする肢3が誤りである。",
+        "choices": [
+          {
+            "number": 1,
+            "verdict": "incorrect",
+            "reason": "正しい。職場のあんぜんサイトの塩化ビニルのモデルSDSは、物理状態を「気体」とし、沸点を-13.4℃としている。沸点が常温より低いので、常温・常圧では気体である。"
+          },
+          {
+            "number": 2,
+            "verdict": "incorrect",
+            "reason": "正しい。環境省の化学物質の環境リスク評価は、1,4-ジオキサンの水溶性を「任意の割合で溶解」としている。水と任意の割合で混ざり合うという記述と一致する。"
+          },
+          {
+            "number": 3,
+            "verdict": "correct",
+            "reason": "誤り。ナフタレンのモデルSDSは、室温で昇華するとしつつ、融点を80℃、沸点を218℃としている。1気圧で常温から温度を上げると、80℃で融けて液体になり、218℃で沸騰する。昇華性があっても液体にならないわけではないので、この記述が誤りである。"
+          },
+          {
+            "number": 4,
+            "verdict": "incorrect",
+            "reason": "正しい。二硫化炭素のモデルSDSは比重（相対密度）を1.2632（20℃/4℃）としている。4℃の水を1とした値が1より大きいので、二硫化炭素は水より密度が大きい。"
+          },
+          {
+            "number": 5,
+            "verdict": "incorrect",
+            "reason": "正しい。奈良国立博物館の用語解説は、瑪瑙を玉髄（石英の微小結晶の集合体）の一種としている。厚労省の作業環境測定結果報告書の様式では、遊離けい酸含有率を石英・クリストバライト・トリジマイトの含有率の合計として求めるので、石英の微細結晶からなる玉ずいやメノウの粉じんも遊離けい酸含有率の測定対象になる。"
+          }
+        ],
+        "sources": [
+          {
+            "title": "厚生労働省 職場のあんぜんサイト モデルSDS 塩化ビニル",
+            "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/75-01-4.html"
+          },
+          {
+            "title": "環境省 化学物質の環境リスク評価 1,4-ジオキサン",
+            "url": "https://www.env.go.jp/chemi/report/h15-01/pdf/chap01/02-2/09.pdf"
+          },
+          {
+            "title": "厚生労働省 職場のあんぜんサイト モデルSDS ナフタレン",
+            "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/91-20-3.html"
+          },
+          {
+            "title": "厚生労働省 職場のあんぜんサイト モデルSDS 二硫化炭素",
+            "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/75-15-0.html"
+          },
+          {
+            "title": "奈良国立博物館 正倉院展用語解説 瑪瑙",
+            "url": "https://shosointen-glossary.narahaku.go.jp/meno/"
+          },
+          {
+            "title": "厚生労働省 作業環境測定結果報告書（証明書）様式",
+            "url": "https://www.mhlw.go.jp/bunya/roudoukijun/anzeneisei17/dl/21.pdf"
+          },
+          {
+            "title": "厚生労働省 作業環境測定基準第2条の2",
+            "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74087000"
+          }
+        ]
+      },
+      "sourceEvidence": [
+        {
+          "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/75-01-4.html",
+          "excerpt": "物理状態 気体",
+          "choiceNumbers": [
+            1
+          ]
+        },
+        {
+          "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/75-01-4.html",
+          "excerpt": "沸点、初留点及び沸騰範囲 -13.4 ℃（GESTIS(2023)）",
+          "choiceNumbers": [
+            1
+          ]
+        },
+        {
+          "url": "https://www.env.go.jp/chemi/report/h15-01/pdf/chap01/02-2/09.pdf",
+          "excerpt": "水溶性任意の割合で溶解",
+          "choiceNumbers": [
+            2
+          ]
+        },
+        {
+          "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/91-20-3.html",
+          "excerpt": "融点／凝固点 80 ℃（GESTIS(2023), ICSC(2021)） 室温で昇華する（ ICSC(2021)） 沸点、初留点及び沸騰範囲 218 ℃（GESTIS(2023), ICSC(2021)）",
+          "choiceNumbers": [
+            3
+          ]
+        },
+        {
+          "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/75-15-0.html",
+          "excerpt": "比重（相対密度） 1.2632 (20℃/4℃)",
+          "choiceNumbers": [
+            4
+          ]
+        },
+        {
+          "url": "https://shosointen-glossary.narahaku.go.jp/meno/",
+          "excerpt": "玉髄(ぎょくずい)（石英の微小結晶の集合体）の一種で、層状または縞状の模様のある鉱物",
+          "choiceNumbers": [
+            5
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/bunya/roudoukijun/anzeneisei17/dl/21.pdf",
+          "excerpt": "遊離けい酸含有率Q=％(石英％＋クリストバライト％＋トリジマイト％)",
+          "choiceNumbers": [
+            5
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74087000",
+          "excerpt": "土石、岩石又は鉱物の粉じん中の遊離けい酸の含有率の測定は、エツクス線回折分析方法又は重量分析方法によらなければならない",
+          "choiceNumbers": [
+            5
+          ]
+        }
+      ],
+      "reviewIssues": []
+    },
+    "emkohyo-EM20261803-q9": {
+      "overlay": {
+        "sourceHash": "ab458f32e9837c4e462559e269d3df862b37a171695cfae49d1c30782e79bd65",
+        "correctChoice": 5,
+        "summary": "作業環境測定基準の別表で、水銀及びその無機化合物の試料採取方法は液体捕集方法又は固体捕集方法に限られ、ろ過捕集方法はない。ろ過材であるグラスファイバーフィルターを組み合わせた肢5が不適当である。",
+        "choices": [
+          {
+            "number": 1,
+            "verdict": "incorrect",
+            "reason": "適当。作業環境測定基準の別表第1は、アクリロニトリルの試料採取方法に直接捕集方法を含めている。直接捕集方法は試料空気をそのまま捕集袋や捕集びん等に捕集する方法なので、捕集袋との組合せは基準に合う。"
+          },
+          {
+            "number": 2,
+            "verdict": "incorrect",
+            "reason": "適当。作業環境測定基準の別表第2は、エチルエーテルの試料採取方法を固体捕集方法又は直接捕集方法としている。厚労省掲載の講習用教材は固体捕集方法の器具として活性炭管を挙げているので、活性炭管との組合せは基準に合う。"
+          },
+          {
+            "number": 3,
+            "verdict": "incorrect",
+            "reason": "適当。作業環境測定基準の別表第1は、エチレンイミンの試料採取方法を液体捕集方法としている。厚労省掲載の講習用教材は液体捕集方法の器具として小型ガス吸収管、バブラー、ミゼットインピンジャーを挙げているので、ミゼットインピンジャーとの組合せは基準に合う。"
+          },
+          {
+            "number": 4,
+            "verdict": "incorrect",
+            "reason": "適当。作業環境測定基準の別表第1は、コバルト及びその無機化合物の試料採取方法をろ過捕集方法としている。厚労省掲載の講習用教材は、ろ過捕集で金属類にはMCEメンブレンフィルター（セルロース混合エステル）などを使うと述べているので、メンブランフィルターとの組合せは基準に合う。"
+          },
+          {
+            "number": 5,
+            "verdict": "correct",
+            "reason": "不適当。作業環境測定基準の別表第1は、水銀及びその無機化合物（硫化水銀を除く。）の試料採取方法を液体捕集方法又は固体捕集方法としており、ろ過捕集方法を定めていない。グラスファイバーフィルターはろ過捕集方法に使うろ過材なので、水銀の捕集には適さない。"
+          }
+        ],
+        "sources": [
+          {
+            "title": "厚生労働省 作業環境測定基準第1条・別表第1・別表第2",
+            "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74087000"
+          },
+          {
+            "title": "厚生労働省掲載 個人サンプラーを用いた測定法に係る基盤整備事業 報告書 第2部（講習用教材）",
+            "url": "https://www.mhlw.go.jp/content/000616847.pdf"
+          }
+        ]
+      },
+      "sourceEvidence": [
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74087000",
+          "excerpt": "アクリロニトリル 液体捕集方法、固体捕集方法又は直接捕集方法",
+          "choiceNumbers": [
+            1
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74087000",
+          "excerpt": "直接捕集方法　試料空気を溶解、反応、吸着等をさせないで、直接、捕集袋、捕集びん等に捕集する方法をいう",
+          "choiceNumbers": [
+            1
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74087000",
+          "excerpt": "エチルエーテル 固体捕集方法又は直接捕集方法 ガスクロマトグラフ分析方法",
+          "choiceNumbers": [
+            2
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/content/000616847.pdf",
+          "excerpt": "固体捕集方法活性炭管など活性炭管など",
+          "choiceNumbers": [
+            2
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74087000",
+          "excerpt": "エチレンイミン 液体捕集方法 吸光光度分析方法又は高速液体クロマトグラフ分析方法",
+          "choiceNumbers": [
+            3
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/content/000616847.pdf",
+          "excerpt": "液体捕集方法小型ガス吸収管、バブラー、ミゼットインピンジャーなど",
+          "choiceNumbers": [
+            3
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74087000",
+          "excerpt": "コバルト及びその無機化合物 ろ過捕集方法 原子吸光分析方法又は誘導結合プラズマ質量分析方法",
+          "choiceNumbers": [
+            4
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/content/000616847.pdf",
+          "excerpt": "金属類にはMCEメンブレンフィルター（セルロース混合エステル）",
+          "choiceNumbers": [
+            4
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74087000",
+          "excerpt": "水銀及びその無機化合物(硫化水銀を除く。) 液体捕集方法又は固体捕集方法",
+          "choiceNumbers": [
+            5
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74087000",
+          "excerpt": "ろ過捕集方法　試料空気をろ過材(〇・三マイクロメートルの粒子を九十五パーセント以上捕集する性能を有するものに限る。)を通して吸引することにより当該ろ過材に測定しようとする物を捕集する方法をいう",
+          "choiceNumbers": [
+            5
+          ]
+        }
+      ],
+      "reviewIssues": []
+    },
+    "emkohyo-EM20261803-q10": {
+      "overlay": {
+        "sourceHash": "6c6e0c3249f6de0953ccc11df6a68f31389351c7316b7e4f8e1ee2918b97f59a",
+        "correctChoice": 1,
+        "summary": "石けん膜流量計は、既知の容積を膜が通過する時間から流量を求めます。石けん液の密度を使うとした肢1が誤りです。",
+        "choices": [
+          {
+            "number": 1,
+            "verdict": "correct",
+            "reason": "この記述は誤りで、本問の正答です。石けん膜流量計は、目盛間の既知の容積Vを石けん膜が通過する時間tを測り、Q＝V/tで体積流量を求めます。例えば100 mLを6秒で通過すれば1000 mL/minです。石けん液の密度は計算に使いません。"
+          },
+          {
+            "number": 2,
+            "verdict": "incorrect",
+            "reason": "この記述は正しいです。面積式流量計は標準状態の空気で目盛られており、フロートの位置が同じなら、流れる気体の体積流量は気体密度の平方根に反比例します。高温で密度が下がると、標準状態に換算した真の流量は指示値×√(T標準/T使用)となり、指示値より小さくなります。例えば20℃で目盛った流量計を40℃で使うと、約3%大きく表示されます。"
+          },
+          {
+            "number": 3,
+            "verdict": "incorrect",
+            "reason": "この記述は正しいです。ハイボリウムエアサンプラーは毎分数百〜千数百リットルの大流量で吸引します。そのため、容積の基準として精度の高いルーツメーターで校正したオリフィスなどの絞り式流量計を二次標準とし、その差圧から流量を校正できます。"
+          },
+          {
+            "number": 4,
+            "verdict": "incorrect",
+            "reason": "この記述は正しいです。ローボリウムエアサンプラーの流量計は、次のどちらかの方式で校正されます。ガスメーターを基準にして空気を送り込む押し込み方式と、校正済みの面積式流量計を基準器として直列につなぎ、ポンプで吸引する吸引方式です。どちらも基準器の読みと比較して校正します。"
+          },
+          {
+            "number": 5,
+            "verdict": "incorrect",
+            "reason": "この記述は正しいです。ろ紙や捕集管などの捕集装置は圧力損失を生じ、流量計の部分の圧力やポンプの実際の流量を変えます。そのため、流量計の校正は実際に使う捕集装置を取り付けた状態で行い、使用時と同じ抵抗条件での流量を把握します。"
+          }
+        ],
+        "sources": []
+      },
+      "sourceEvidence": [],
+      "reviewIssues": [
+        "【HOLD】肢2（面積式流量計では試料空気の温度が標準状態より高いほど指示値が真の流量より大きくなる）の温度影響の向きと、『真の流量』の定義を直接述べた政府一次資料が見つからない。環境省『有害大気汚染物質等測定方法マニュアル』第1部第2章は、精密膜流量計の標線間通過時間による校正（肢1）、ルーツメータで校正したオリフィスによるハイボリウムエアサンプラの校正（肢3）、排気側の湿式ガスメータ・吸引側の基準流量計による校正（肢4）、捕集剤の圧力損失を含めた流量補正（肢5）を支えるが、肢2の根拠がないため保留する。"
+      ]
+    }
+  }
+}

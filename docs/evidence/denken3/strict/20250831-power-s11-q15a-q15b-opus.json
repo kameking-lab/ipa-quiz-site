@@ -1,0 +1,96 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20250831",
+  "subject": "power",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 6936,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 20561,
+      "webSearchRequests": 0,
+      "costUSD": 0.3034718,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 4431,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "7458583e2eaefe6353fcb7939222dfc4139a6f7adf3c13b97056cd28fbb38618",
+  "inputRequestSha256": "87017b18297c5c58bd927a489e395400e09dac70484ac3bdbff6ec4623a827cd",
+  "inputHashes": {
+    "candidateSha256": {
+      "q15a": "a6a7fe31d8482804b24034c8008c0561e57e837e606ccd2947e349a6da1da464",
+      "q15b": "b793ab2c3193fd6a7ebb3d70f5ef0e53f8bdef022afef56afa61f8b7204d1c6f"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20250831/power/p18.png": "cacafad1925ec7467ad801b5acce0a4d23f73cf6945d59ad6c3befc49e4e6319",
+      "data/raw_pdfs/denken3/review/20250831/power/p19.png": "85d46b9ff897a25039ee91dc689fedba571f4750fa73a22d944ff0f9deb44670"
+    },
+    "figureSha256": {
+      "public/images/denken3/20250831/power/20250831-power-q15-fig1.png": "ed7610d8df2b88fea373eae49b0a882578b28eecabd7d1ea3542dd501cfba9d0"
+    },
+    "sourceQuestionPdfSha256": "567aac1df6dc0c0950d04e90a1ad03231427c518eede92559effe01e2b97a2c9",
+    "sourceAnswerPdfSha256": "76fd3715ed487d19a56b387fb402de20ee09474e9fa55b0413f9037b96af06c9",
+    "officialAnswerUnitsSha256": "062d7fd05ece9726a1d56b6206c96ca7bb6d1b6cde164ca3d67bbafabc9b868b",
+    "referencePdfSha256": {},
+    "referencePageSha256": {},
+    "referenceJsonSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q15a",
+      "questionNumber": 15,
+      "part": "a",
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [
+        "figureDescriptionの横軸の説明が原図と一致しない。「目盛ラベルは0〜350（50刻み）」と書いているため、通常の目盛行に200があるように読める。原図では通常の目盛行は0・50・100・150・250・300・350で、200の位置は空いている。「200」は「355」と同じく一段下の行にだけ表記されている。修正案：「目盛ラベルは0・50・100・150・250・300・350（200の位置は通常行に表記なし），横軸の下段に破線に対応する『200』『355』が特記されている」。"
+      ],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "公式解答表（令和7年度上期・電力）の問15(a)は解答5・配点5。officialAnswer=\"5\"、scoringPoints=5と一致する。",
+        "原図PDF第19頁（冊子p.16）と照合した。(a)の設問文と但し書き（「当該6時間の最大使用流量での運転以外の時間は，水車・発電機を停止して調整池に河川の全流量を貯水する」）は一字一句一致する。第18頁（冊子p.15）の大問リード文も一致する。",
+        "選択肢表(1)22.8/410 400、(2)28.8/518 400、(3)34.8/518 400、(4)28.8/410 400、(5)32.0/518 400は原図と一致する。",
+        "計算を検算した。停止18時間の貯水量は8×18×3600=518 400 m³。1日の流入量は8×86 400=691 200 m³、これを21 600 sで割ると32.0 m³/s。別解の8+518 400/21 600=8+24=32.0も成立する。",
+        "誤答肢の数値を検算した。22.8×21 600=492 480、28.8×21 600=622 080（691 200との差69 120）、34.8×21 600=751 680。いずれも正しい。(3)の運転不能の理由は、貯水518 400に運転中の流入172 800を加えた691 200が751 680を下回ることと整合する。",
+        "公開候補図は原図第18頁の流況曲線を欠落なく切り出している。縦軸・横軸のラベル、単位、曲線、破線2組（14→200、8→355）、特記ラベル14・8・200・355、キャプション「図　流況曲線」をすべて含む。(a)の解答に必要な8 m³/sは問題文にも数値で示されている。",
+        "メタデータを照合した。fiscalYear=2025、term=upper、examDate=2025-08-31、subject=power、問題PDF/解答PDFのURL、reviewedFromPage=[18,19]はmanifestと一致する。officialReferenceUrlsは空なので、外部確認事項はない。"
+      ]
+    },
+    {
+      "unitKey": "q15b",
+      "questionNumber": 15,
+      "part": "b",
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [
+        "誤答肢(1)〜(4)の理由は「32.0 m³/sでの8時間運転ができない」と無条件に書いている。実際に運転できないのは、河川流量が設計流量14 m³/sの日（14 m³/s付近の日）に限られる。流量がより多い日には、少ない容量でも運転が成立しうる。「河川流量14 m³/sの日には」などの条件を明記すべきである。"
+      ],
+      "answerIssues": [],
+      "explanationIssues": [
+        "総合解説で「14 m³/sは…『200日以上発生する流量』の下限である」「200日以上発生する流量の範囲では下限の14 m³/sのときに必要容量が最大となり」と書いているのは、大小関係が逆である。流況曲線上で、年間200日以上その値以上の流量が得られるのは14 m³/s以下の流量である。14 m³/sはその集合の上限（200日目の流量）であって、下限ではない。また、流量14 m³/s以上の日は年間約200日であり、「200日以上」ではない。修正案：「日数200日に対応する流量14 m³/sは，1年のうち200日はこれ以上の流量が得られる値である。この14 m³/sを基準に容量を決めれば，流量が14 m³/s以上となる約200日間は8時間運転が可能となる」。",
+        "上記の誤りから導かれている「それ以上の流量のどの日でも8時間運転ができる」という結論自体は正しい（河川流量Qが大きいほど不足分(32−Q)×28 800は小さくなるため）。修正は、200日以上発生する流量の範囲をどう特徴づけるかの部分に限ればよい。"
+      ],
+      "figureIssues": [
+        "figureDescriptionの横軸の説明が原図と一致しない。「目盛ラベルは0〜350（50刻み）」では通常の目盛行に200があるように読めるが、原図では通常行の200の位置は空いており、「200」は下段にのみ特記されている。(b)は200日目の流量14 m³/sの読み取りが解答の鍵なので、正確に記述すべきである（q15aと同じ修正案）。"
+      ],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "公式解答表（令和7年度上期・電力）の問15(b)は解答5・配点5。officialAnswer=\"5\"、scoringPoints=5と一致する。",
+        "原図PDF第19頁（冊子p.16）と照合した。(b)の設問文と選択肢(1)420 000、(2)500 000、(3)440 000、(4)460 000、(5)520 000は原図の順序・数値と一致する。",
+        "原図と公開候補図の両方で確認した。破線が縦軸の14から曲線上の200日点まで水平に延び、そこから200まで垂直に下りている。したがって設計流量は14 m³/sと読める。公開候補図だけでこの読み取りは可能である。",
+        "計算を検算した。(32.0−14)×8×3600=18×28 800=518 400 m³。1日流入量は14×86 400=1 209 600 m³、8時間使用水量は32.0×28 800=921 600 m³、停止16時間の流入量は14×57 600=806 400 m³で、518 400以上。いずれも正しい。",
+        "518 400以上となる最小の選択肢は520 000の(5)で、公式正答と一致する。不足量は420 000で98 400、440 000で78 400、460 000で58 400、500 000で18 400。いずれも正しい。500 000が(1)〜(4)の中で最大であるという記述も正しい。",
+        "メタデータを照合した。fiscalYear=2025、term=upper、examDate=2025-08-31、subject=power、問題PDF/解答PDFのURL、reviewedFromPage=[18,19]、sourceAttributionの「令和7年度上期…電力科目 問15(b)」はmanifestと一致する。officialReferenceUrlsは空なので、外部確認事項はない。"
+      ]
+    }
+  ]
+}

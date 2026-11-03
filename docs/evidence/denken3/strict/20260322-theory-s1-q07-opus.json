@@ -1,0 +1,74 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20260322",
+  "subject": "theory",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 3969,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 14927,
+      "webSearchRequests": 0,
+      "costUSD": 0.1990598,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 2307,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "b3eeccd4498389e5934ff867d179dd0c2d6c6710f9d0da688f5553a2e27a7302",
+  "inputRequestSha256": "88f1c72effdab4ac57b3f8a06185e268c27d377e7aac1a68842e229980feebab",
+  "inputHashes": {
+    "candidateSha256": {
+      "q07": "00006d4ca76888668b35e2b86844c740e2701d06b05e09e771399abcd31d61c6"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20260322/theory/p10.png": "9439d9398f2561502a81f1893da217f32c65be8151b2e827d47d7929a7078e35"
+    },
+    "figureSha256": {
+      "public/images/denken3/20260322/theory/20260322-theory-q07-fig1.png": "1620b26edd3e9e837c164090040ab3540d892f49f9406dbdb939f68dd259bb77"
+    },
+    "sourceQuestionPdfSha256": "c83e7c7350d98b65f5d8da0b93e4a2581a19dd250be320fb7fc492c9b34a29c1",
+    "sourceAnswerPdfSha256": "cc2890296d06a4823df5697a78a1c01ddfd39f041c51f48c87984daa3a5707c6",
+    "officialAnswerUnitsSha256": "74609833c989aa5dd20df5defcb7ea8fc6872343c1d673f954077b6afd089f15",
+    "referencePdfSha256": {},
+    "referencePageSha256": {},
+    "referenceJsonSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q07",
+      "questionNumber": 7,
+      "part": null,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "出典: manifest（2025年度下期・試験日2026-03-22・理論・問題PDF 20260322_ch_third_q01.pdf・解答PDF 20260322_ch_third_a01.pdf）と候補の fiscalYear=2025, term=lower, examDate=2026-03-22, subject=theory, sourceQuestionPdfUrl, sourceAnswerPdfUrl が一致する。解答表原図の見出し「令和7年度 第三種電気主任技術者下期試験解答」とも整合し、sourceAttribution『令和7年度下期…理論科目 問7』も正しい。",
+        "頁: reviewedFromPage=[10] は manifest の PDF 第10頁と一致する。原図の刷り頁は「-7-」で、フッター「T2-R 010」とも矛盾しない。",
+        "問題文: 原図と照合した。可変抵抗R₁・R₂、抵抗Rₓ、電源E、『Rₓに流れる電流I』、『最も近いもの』、条件1（R₁=90Ω, R₂=6Ω）、条件2（R₁=70Ω, R₂=3Ω）がすべて一致する。単位の表記[Ω]・[A]・[V]も一致する。",
+        "選択肢: (1)1.5 (2)2.4 (3)4.0 (4)8.5 (5)11.6 が原図と完全に一致する。",
+        "公式正答: 解答表原図の理論・問7は解答2・配点5。manifest の固定単位 answer=\"2\", points=5 と、候補の officialAnswer=\"2\", scoringPoints=5 が一致する。",
+        "総合解説の検算: I = E·R₂/{R₁(R₂+Rₓ)+R₂Rₓ} は、全電流と分流則から正しく導かれている。条件1の分母は 90(6+Rₓ)+6Rₓ = 540+96Rₓ、条件2の分母は 70(3+Rₓ)+3Rₓ = 210+73Rₓ で、いずれも正しい。6(210+73Rₓ) = 3(540+96Rₓ) を解くと 1260+438Rₓ = 1620+288Rₓ、150Rₓ = 360、Rₓ = 2.4Ω となる。検算も成り立つ: 770.4/6 = 128.4、385.2/3 = 128.4。",
+        "各肢の検算（条件1の分母/6 と 条件2の分母/3 を比較）:",
+        "(1) Rₓ=1.5: 684/6=114、319.5/3=106.5 → 条件2の電流が大きく、記述どおり。",
+        "(3) Rₓ=4.0: 924/6=154、502/3≒167.3 → 条件1の電流が大きい。",
+        "(4) Rₓ=8.5: 1356/6=226、830.5/3≒276.8 → 条件1の電流が大きい。",
+        "(5) Rₓ=11.6: 1653.6/6=275.6、1056.8/3≒352.3 → 条件1の電流が大きい。",
+        "各肢の大小関係の記述はすべて正しい。Rₓ=2.4 で両条件の電流が一致し、正答肢(2)の理由も正しい。",
+        "公開候補図: 原図の回路部分を過不足なく切り出している。R₁（斜め矢印付き）が直列に入り、2つの黒丸接続点の間で上枝R₂（斜め矢印付き）と下枝Rₓ（矢印なし）が並列になる。下枝の左下に右向き矢印と I[A]、下辺中央に電池記号 E[V] がある。接続・向き・全ラベル（R₁[Ω], R₂[Ω], Rₓ[Ω], I[A], E[V]）が原図と一致し、この図だけで回路構成と I の定義を理解できる。",
+        "figureDescription: 公開候補図と一致する。",
+        "uncertainty欄: 電池記号は左側の極板が長く、右側が短く太いと判読できる。左側が正極となり、電流は R₁ と Rₓ を左から右へ流れ、I の矢印の向きと整合する。極性は解答にも影響しない。年度・回は manifest と解答表見出しで確定している。したがって、未解決の曖昧さは残っていない。",
+        "officialReferenceUrls は空で、検証を要する独立主張はない。"
+      ]
+    }
+  ]
+}

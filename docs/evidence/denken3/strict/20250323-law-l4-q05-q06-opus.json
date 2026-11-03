@@ -1,0 +1,109 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20250323",
+  "subject": "law",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 4117,
+      "cacheReadInputTokens": 140024,
+      "cacheCreationInputTokens": 54440,
+      "webSearchRequests": 0,
+      "costUSD": 0.5458728,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 2044,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "1e2c816d41e37f03e803f88fc8dcd0433bfb60225485d46e12045341b3571435",
+  "inputRequestSha256": "3bca47248761b3a346191c6a5b5f4173e46e58f2180488a737691ea175565017",
+  "inputHashes": {
+    "candidateSha256": {
+      "q05": "f1a944a9daba6f95d8e205ee538b6da04ab6d0cbba7035f4d8a7d9980d9e46c9",
+      "q06": "049b3ab616a696486dc844545ab230a0b7202d136546f144d75ec510edfcd4a2"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20250323/law/p08.png": "589486c3538e726678793c40dad8d65b09c815c62db40320401cb6d3499e7e81",
+      "data/raw_pdfs/denken3/review/20250323/law/p09.png": "660061a358bd4d66d8d25bfbfbabf4f67baace6dee6e39cdbfcda174637cd3b1"
+    },
+    "figureSha256": {},
+    "sourceQuestionPdfSha256": "6b47d422b7fb05b949f366b2c550a00365e1bdffa5c2800368fab9f29d79c84e",
+    "sourceAnswerPdfSha256": "4c3b38fcf1405766fafaa78b1b05b867a3d48307a670b9d354476bc6b32acd4c",
+    "officialAnswerUnitsSha256": "7b8d761ca96e6a3ad97343fdfaebc695cc3d7e56456d1cf8b08d833221e73146",
+    "referencePdfSha256": {
+      "data/raw_pdfs/denken3/review/meti-denki-interpretation-20231226.pdf": "7ff56485cb405ecef67c5f81181370396e2cbb245e6fee41b926c0f5f1a73b43"
+    },
+    "referencePageSha256": {
+      "data/raw_pdfs/denken3/review/references/meti-denki-interpretation-20231226-p004.png": "402d8c15127dcfa17da93c61138d44f644a1768f03d445233677240716850d20",
+      "data/raw_pdfs/denken3/review/references/meti-denki-interpretation-20231226-p031.png": "344d29b99f18c6f6b320defbdb781e35eeef581039155a49309548b6e11f7787",
+      "data/raw_pdfs/denken3/review/references/meti-denki-interpretation-20231226-p032.png": "2c4f847af1edf4e145047129b40452ff0b0e8a6e4b7236564f63cf4f9944d82d",
+      "data/raw_pdfs/denken3/review/references/meti-denki-interpretation-20231226-p035.png": "30fb3e3df4d90ccc71c8cb273da74fe1b2e4d2c73425c1553f9dddb8c96be994",
+      "data/raw_pdfs/denken3/review/references/meti-denki-interpretation-20231226-p120.png": "d1ebf5a32b74f27487b31ee7b7bd31fead63219c962e4fc733a326754c4e18c3",
+      "data/raw_pdfs/denken3/review/references/meti-denki-interpretation-20231226-p125.png": "6abd7fc7680a529ad67c3a0aa36737e87f3cbd03fd18f8a76595f07e9965e334",
+      "data/raw_pdfs/denken3/review/references/meti-denki-interpretation-20231226-p150.png": "ad5c9495cffc4f7448c50c0595e67284aaf8b159a11aba9b825b637efdaec994",
+      "data/raw_pdfs/denken3/review/references/meti-denki-interpretation-20231226-p168.png": "55929b470c08a64af93dd82258ce635c1464cf6ce1b7e37bf68a0b91206ab410",
+      "data/raw_pdfs/denken3/review/references/meti-denki-interpretation-20231226-p192.png": "11d4c1cd17aadcff521ecd8501e7492900f6374cde4162906db1b55c39d512d7",
+      "data/raw_pdfs/denken3/review/references/meti-denki-interpretation-20231226-p221.png": "8004a8254e30cb2866fac97a7c731e012a52121ee02f887f99e3bcb01b4ec821",
+      "data/raw_pdfs/denken3/review/references/meti-denki-interpretation-20231226-p224.png": "b817d46e9cba75eb0dd97f10478db04cfb3bf46424cbe2db5e7a3cb174ec1e6d",
+      "data/raw_pdfs/denken3/review/references/meti-denki-interpretation-20231226-p225.png": "ee6c622f1f2e6d801473f7db3c704d0e8812ad5554b5254e1679700aa05b8a72"
+    },
+    "referenceJsonSha256": {
+      "data/raw_pdfs/denken3/review/egov/409M50000400052-20240401.json": "fc3f322dccf59132c0267e8d9fe62d33eb62f4a8cd382cf5b9e084746f6bafe2"
+    }
+  },
+  "assessment": [
+    {
+      "unitKey": "q05",
+      "questionNumber": 5,
+      "part": null,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [
+        "総合解説の最後の単位の説明（「A/m は磁界の強さの単位であり、(ウ)が「磁界の強さ」の肢とは単位が対応する」）は趣旨が読み取りにくい。肢(1)〜(3)は(ウ)磁界の強さと(エ)A/m の組で単位が合っており、肢(4)(5)は(ウ)磁束密度と(エ)μT の組で合っている。つまり単位の整合だけでは正答を絞れず、決め手は条文の文言だという点を明記すること。",
+        "根拠条文の番号（電気設備に関する技術基準を定める省令 第27条の2第2項）が総合解説に書かれていない。e-Gov で確認できたので、条番号を明記することを推奨する。"
+      ],
+      "figureIssues": [],
+      "sourceIssues": [
+        "uncertainty 欄が古いままで、needsReview=false と矛盾している。欄には「e-Gov の当該ページを取得して照合していない。記憶に基づく内容…条文の最終確認は取り込み前に必要」と書かれ、外部確認が未了のままになっている。添付の e-Gov法令API v2（施行時点 2024-04-01）で、省令 第27条の2第2項の本文を確認した。本文は「変電所又は開閉所は、通常の使用状態において、当該施設からの電磁誘導作用により人の健康に影響を及ぼすおそれがないよう、当該施設の付近において、人によって占められる空間に相当する空間の磁束密度の平均値が、商用周波数において二百マイクロテスラ以下になるように施設しなければならない。」で、問題文・正答と一致する。uncertainty 欄は、この照合を済ませた旨（条項・施行時点・URL）に書き換えること。"
+      ],
+      "verifiedEvidence": [
+        "問題文：原図（T2-H 008、印刷頁 -5-）と照合した。導入文、本文の空欄の位置（(ア)は2か所）、「当該施設の付近において，」、設問文はすべて一致する。",
+        "選択肢(1)〜(5)：原図の表と照合した。(ア)〜(エ)の語句と単位（A/m、μT）はすべての肢で一致する。",
+        "公式正答：manifest の answer=5 と officialAnswer=5 が一致する。",
+        "正答の根拠：e-Gov（2024-04-01 時点）の省令 第27条の2第2項で、(ア)人、(イ)健康、(ウ)磁束密度、(エ)200 μT（二百マイクロテスラ）であることを確認した。",
+        "各肢の解説：(1)は4か所とも誤り、(2)は(ウ)(エ)が誤り、(3)は4か所とも誤り、(4)は(ア)(イ)が誤り、(5)はすべて正しい。いずれも条文に照らして正しい。",
+        "図：原図に図はなく、figureDescription・figureUrls が空であることは妥当。",
+        "reviewedFromPage=[8]：原図フッター T2-H 008 と整合する。"
+      ]
+    },
+    {
+      "unitKey": "q06",
+      "questionNumber": 6,
+      "part": null,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "問題文：原図（T2-H 009、印刷頁 -6-）と照合した。「高圧地中電線と特別高圧地中電線とが接近又は交差する場合において，次に該当する場合，地中電線相互の離隔距離を0m以上で施設することができるとされているが，その条件として不適切なもの」まで一字一句一致する。",
+        "選択肢(1)〜(5)：原図と一致する。「それぞれ」と「いずれか」の区別、「被覆」と「管」の区別、「自消性のある難燃性」と「不燃性」の区別もすべて一致している。",
+        "公式正答：manifest の answer=4 と officialAnswer=4 が一致する。",
+        "根拠：添付の経済産業省「電気設備の技術基準の解釈」（20231226-2.pdf）PDF第125頁、第125条で確認した。第二号は0.3m以上、第三号は暗きょ内0.1m以上、第四号は堅ろうな耐火性の隔壁である。第五号（いずれかの地中電線が イ 不燃性の被覆 ／ ロ 堅ろうな不燃性の管）と第六号（それぞれの地中電線が イ 自消性のある難燃性の被覆 ／ ロ 堅ろうな自消性のある難燃性の管）は、どちらも離隔距離0m以上である。",
+        "肢の対応：(1)は第六号イ、(2)は第六号ロ、(3)は第五号イ、(5)は第五号ロに当たる。(4)の危険表示の埋設標識はどの号にも規定がないため不適切で、正答となる。総合解説・各肢解説とも正しい。第四号の隔壁と混同しないよう区別している点も正確である。",
+        "用語の定義：PDF第4頁の解釈第1条 第三十三号（自消性のある難燃性）・第三十四号（不燃性）の定義とも矛盾しない。",
+        "図：原図に図はなく、figureDescription・figureUrls が空であることは妥当。",
+        "reviewedFromPage=[9]：原図フッター T2-H 009 と整合する。uncertainty 欄の「原頁125頁で照合済み」も添付の PDF第125頁で確認できる。"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,130 @@
+{
+  "questionNumber": 5,
+  "sharedContext": null,
+  "units": [
+    {
+      "part": null,
+      "question": "図に示す RLC 回路において，静電容量 C[F] のコンデンサが電圧 V[V] に充電されている。この状態でスイッチ S を閉じて，それから時間が十分に経過してコンデンサの端子電圧が最終的に零となった。この間に抵抗 R[Ω] で消費された電気エネルギー W[J] を表す式として，正しいものを次の(1)～(5)のうちから一つ選べ。",
+      "choices": {
+        "1": "(1/2)·C²·V",
+        "2": "(1/2)·L·V²",
+        "3": "(1/2)·L²·V",
+        "4": "(1/2)·V²/R",
+        "5": "(1/2)·C·V²"
+      },
+      "officialAnswer": "5",
+      "explanation": "回路は C，S，R，L の直列ループである。回路内でエネルギーを蓄えるのはコンデンサ（電界エネルギー (1/2)·C·v_C²）とインダクタ（磁界エネルギー (1/2)·L·i²）であり，エネルギーを消費するのは抵抗だけである。\n\n直列回路の電流を i，コンデンサ電圧を v_C とすると，エネルギー収支は\n  d/dt { (1/2)·C·v_C² + (1/2)·L·i² } = −R·i²\nとなる。これを S を閉じた瞬間から十分時間が経過するまで積分すると，\n  W = ∫ R·i² dt = （初期の蓄積エネルギー）−（最終の蓄積エネルギー）\n\n・初期状態：コンデンサは電圧 V に充電されているので (1/2)·C·V²。S を閉じた瞬間はインダクタの電流が急変できないので i = 0 で，インダクタの蓄積エネルギーは 0。\n・最終状態：コンデンサの端子電圧は 0 なので電界エネルギーは 0。R > 0 のため電流も時間とともに減衰して 0 となり，インダクタの蓄積エネルギーも 0。\n\nしたがって\n  W = (1/2)·C·V² − 0 = (1/2)·C·V² [J]\nとなる。この結果は，回路が振動的に減衰する場合でも非振動的に減衰する場合でも変わらず，R や L の値にも依存しない。インダクタはエネルギーを一時的に蓄えて返すだけで，最終的にはコンデンサの初期エネルギーがすべて抵抗で熱として消費される。正解は (5) である。",
+      "choiceExplanations": {
+        "1": "誤り。C²·V の単位は F²·V である。F·V = A·s なので F²·V = F·A·s となり，エネルギーの単位 J = V·A·s と一致しない。エネルギーを表す式として次元が合わない。",
+        "2": "誤り。L·V² の単位は H·V² = (V·s/A)·V² = V³·s/A となり，ジュール [J] にならない。インダクタの蓄積エネルギーは電流 I を用いた (1/2)·L·I² であり，電圧 V で置き換えることはできない。また本問ではインダクタの蓄積エネルギーは初期・最終とも 0 であり，消費エネルギーには寄与しない。",
+        "3": "誤り。L²·V の単位は H²·V であり，ジュール [J] にならない。次元が合わず，エネルギーを表す式ではない。",
+        "4": "誤り。V²/R の単位は V²/Ω = V·A であり，これは電力の単位（ワット）で，エネルギーの単位 [J]（= V·A·s）ではない。また抵抗の端子電圧は時間とともに変化し一定値 V ではない（閉じた直後は電流 0 なので抵抗の端子電圧も 0）ので，この形の式で消費エネルギーは求められない。",
+        "5": "正しい。コンデンサに初期に蓄えられていた静電エネルギー (1/2)·C·V² が，最終的にコンデンサ電圧・回路電流がともに 0 になるまでの間に，すべて抵抗 R で消費される。したがって W = (1/2)·C·V² [J] である。"
+      },
+      "figureDescription": "1 つの閉ループからなる直列回路図。左辺に縦向きにコンデンサ（ラベル「C[F]」）がある。上辺は左から順にスイッチ S（開いた状態で描かれている），抵抗（ラベル「R[Ω]」），インダクタ（ラベル「L[H]」）が直列に並び，右辺の導線を経て下辺の導線でコンデンサの下端に戻る。コンデンサの充電極性（どちらの極板が正か）は図中に示されていない。回路が C・R・L の直列接続であることを把握するために必要な図である。",
+      "officialReferenceUrls": [],
+      "uncertainty": "なし",
+      "needsReview": true,
+      "sourceQuestionPdfUrl": "https://www.shiken.or.jp/chief/upload/20250831_ch_third_q01.pdf",
+      "sourceAnswerPdfUrl": "https://www.shiken.or.jp/chief/upload/20250831_ch_third_a01.pdf",
+      "reviewedFromPage": [
+        8
+      ]
+    }
+  ],
+  "draftModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 2883,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 9309,
+      "webSearchRequests": 0,
+      "costUSD": 0.1323958,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 1131,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "aedfec88c83a0234d01ad7ac2868667c95efbb48d5b2d8b254083ca1928681d4",
+  "inputRequestSha256": "eb27ef3d80af40496717e3a2a5c6045c0686e07a6cfda8570d7abff5a929490f",
+  "sourceQuestionPdfSha256": "11a75ffd5dd2b5309ad75370bb963c4fda9e12a812174cfa2c2237383c3a964d",
+  "sourceAnswerPdfSha256": "76fd3715ed487d19a56b387fb402de20ee09474e9fa55b0413f9037b96af06c9",
+  "sourcePageImageSha256": {
+    "data/raw_pdfs/denken3/review/20250831/theory/p08.png": "797f131ba4217622fc70a7bbb7f71deec050e936ce9276a4554fab649566cc89"
+  },
+  "revisionHistory": [
+    {
+      "version": 1,
+      "model": "claude-opus-5-5",
+      "resolvedModel": "claude-opus-5-5",
+      "modelUsage": {
+        "claude-opus-5-5": {
+          "inputTokens": 2,
+          "outputTokens": 3234,
+          "cacheReadInputTokens": 1279,
+          "cacheCreationInputTokens": 13275,
+          "webSearchRequests": 0,
+          "costUSD": 0.1711438,
+          "contextWindow": 1000000,
+          "maxOutputTokens": 128000,
+          "thinkingTokens": 1411,
+          "canonicalModel": "claude-opus-5-5",
+          "provider": "firstParty",
+          "costBasis": "list"
+        }
+      },
+      "rawResponseSha256": "6dfe5d33c541d9e30628e03a508f0ae4ace15dce6c8b23ba4c18e52438c8652b",
+      "inputRequestSha256": "cfbfe94d7980260b2bf3a6da980ec5b0c95dddd7caaaa02f887a55dba6b8a380",
+      "previousDraftSha256": "7089f2bd037ed2301b4b3bee7453bc5b9f791a068323d55de2f7133246827203",
+      "previousDraft": "data/raw_pdfs/denken3/review/20250831/theory/archive/q05-vision-draft-v1.json",
+      "answeredReviewSha256": "053f42536cf825c35551cbb1d418c50904d6fad1bbc9b2e35b91662260f76cd1",
+      "answeredReview": "data/raw_pdfs/denken3/review/20250831/theory/archive/q05-opus-review-v1.json",
+      "answeredStrictReceipt": "docs/evidence/denken3/strict/20250831-theory-s1-q05-opus.json",
+      "answeredStrictReceiptSha256": "d5305f6b9bf348c1399f69e9025bc14709c75f82302f46ec7d924f15eca4c1d8",
+      "figureSha256": {
+        "20250831-theory-q05-fig1": "834d9c40099a65dcbdb9bc2954bc1f97da086330cbd50699ffc283bc0a722359"
+      },
+      "referenceHashes": {},
+      "operatorNote": ""
+    },
+    {
+      "version": 2,
+      "model": "claude-opus-5-5",
+      "resolvedModel": "claude-opus-5-5",
+      "modelUsage": {
+        "claude-opus-5-5": {
+          "inputTokens": 2,
+          "outputTokens": 3128,
+          "cacheReadInputTokens": 1279,
+          "cacheCreationInputTokens": 13016,
+          "webSearchRequests": 0,
+          "costUSD": 0.16695179999999998,
+          "contextWindow": 1000000,
+          "maxOutputTokens": 128000,
+          "thinkingTokens": 1394,
+          "canonicalModel": "claude-opus-5-5",
+          "provider": "firstParty",
+          "costBasis": "list"
+        }
+      },
+      "rawResponseSha256": "7c952dbe95fae8dd3ec656820da09fc3a41534177c435478dff19b930094026e",
+      "inputRequestSha256": "2ceff3c8122dd66f5f04a3141239f277a6de057496d4bce5d52f4ae084ff5f82",
+      "previousDraftSha256": "1d01cebf06f0b0e0ec9e25784e5048c8be5f3b0902d9e21774cf669c505e0c3c",
+      "previousDraft": "data/raw_pdfs/denken3/review/20250831/theory/archive/q05-vision-draft-v2.json",
+      "answeredReviewSha256": "a931d08a662bd53d880727f48da3a8e1c640c87ebcf5940b71e2543f84e6c5ea",
+      "answeredReview": "data/raw_pdfs/denken3/review/20250831/theory/archive/q05-opus-review-v2.json",
+      "answeredStrictReceipt": "docs/evidence/denken3/strict/20250831-theory-s2-q05-opus.json",
+      "answeredStrictReceiptSha256": "5bda69521f664b041e2e6841df5d01f7db366762e4708db75b612ad57139bac7",
+      "figureSha256": {
+        "20250831-theory-q05-fig1": "834d9c40099a65dcbdb9bc2954bc1f97da086330cbd50699ffc283bc0a722359"
+      },
+      "referenceHashes": {},
+      "operatorNote": ""
+    }
+  ]
+}

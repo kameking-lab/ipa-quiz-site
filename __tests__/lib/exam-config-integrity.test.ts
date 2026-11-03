@@ -2,10 +2,12 @@ import { describe, expect, it } from "vitest";
 
 import {
   ALL_EXAM_CODES,
+  ALL_QUIZ_EXAM_CODES,
   EXAM_CONFIGS,
   type ExamConfig,
   type SessionConfig,
 } from "@/lib/exam-config";
+import { isExamPublished } from "@/lib/qualifications/catalog";
 import type { ExamCode } from "@/lib/questions/types";
 
 // EXAM_CONFIGS は全試験区分の中核設定レジストリで、PDF 出典 URL(urlSlug)・学習プラン
@@ -40,9 +42,17 @@ describe("EXAM_CONFIGS のデータ整合性", () => {
     }
   });
 
-  it("ALL_EXAM_CODES は EXAM_CONFIGS のキー集合と一致する", () => {
+  it("ALL_QUIZ_EXAM_CODES は公開設定、ALL_EXAM_CODES はIPA設定を列挙する", () => {
     const keys = ENTRIES.map(([k]) => k);
-    expect([...ALL_EXAM_CODES].sort()).toEqual([...keys].sort());
+    expect([...ALL_QUIZ_EXAM_CODES].sort()).toEqual(keys.filter(isExamPublished).sort());
+    expect(ALL_QUIZ_EXAM_CODES).toContain("fp3");
+    expect(ALL_QUIZ_EXAM_CODES).toContain("denken3");
+    expect(ALL_QUIZ_EXAM_CODES).toContain("denko2");
+    expect(ALL_QUIZ_EXAM_CODES).toContain("fp2");
+    expect(ALL_EXAM_CODES).not.toContain("fp2");
+    expect(ALL_EXAM_CODES).not.toContain("fp3");
+    expect(ALL_EXAM_CODES).not.toContain("denken3");
+    expect(ALL_EXAM_CODES).not.toContain("denko2");
     // 各コードは実在キーであり重複しない
     expect(new Set(ALL_EXAM_CODES).size).toBe(ALL_EXAM_CODES.length);
   });

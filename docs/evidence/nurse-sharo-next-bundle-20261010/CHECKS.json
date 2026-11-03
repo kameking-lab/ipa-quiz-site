@@ -1,0 +1,88 @@
+{
+  "status": "PASS",
+  "unit": {
+    "passed": 4610,
+    "failed": 0,
+    "total": 4610,
+    "workers": 4,
+    "testTimeoutMs": 15000,
+    "reportSha256": "40bfd7b494ad976c99c8b69f08dffd81a75087a81478febe32c27dfc9fc0237b",
+    "reportPath": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\claude-capacity-20261010\\NURSE-SHARO-NEXT-FULLUNIT-FINAL-20261010.json",
+    "firstRunPassed": 4606,
+    "firstRunTotal": 4610,
+    "firstRunFailures": [
+      {
+        "file": "cost-record-durability.test.ts",
+        "test": "コスト計上はレスポンス完了前に永続化を終える /api/copilot — ストリームが閉じる時点で recordAiCost が解決済み",
+        "durationMs": 15265.732100000001,
+        "failureType": "15-second timeout under default concurrency"
+      },
+      {
+        "file": "get-questions.test.ts",
+        "test": "getQuestionsForExam 全登録区分でロードされた問題は exam フィールドがキーと一致する",
+        "durationMs": 15161.625000000002,
+        "failureType": "15-second timeout under default concurrency"
+      },
+      {
+        "file": "kangoshi-pm115-q1-50.test.tsx",
+        "test": "saved 115th afternoon Q1–50 registration reports the current partial originals without advertising two complete sittings",
+        "durationMs": 34.179400000000896,
+        "failureType": "historical scope expectation corrected"
+      },
+      {
+        "file": "sharoushi-kangoshi-routes.test.ts",
+        "test": "merged labor consultant and nurse routes serves every sharoushi question route and keeps quiz pools in the selected session",
+        "durationMs": 1019.058100000002,
+        "failureType": "historical scope expectation corrected"
+      }
+    ]
+  },
+  "typecheck": {
+    "status": "PASS",
+    "exitCode": 0
+  },
+  "lint": {
+    "status": "PASS",
+    "errors": 0,
+    "warnings": 1,
+    "warningFile": "reports/civil2-2026-completion-20260926/parse-fenced-results.mjs",
+    "warning": "Existing unused base variable; source unchanged."
+  },
+  "dataValidator": {
+    "status": "PASS",
+    "validated": 513,
+    "ok": 513,
+    "failed": 0,
+    "warnings": 37,
+    "byExam": {
+      "kangoshi": 387,
+      "sharoushi": 27,
+      "fp1Basic": 99
+    },
+    "warningBreakdown": {
+      "nurse": 32,
+      "fp1Basic": 5,
+      "sharoushi": 0
+    },
+    "warningMeaning": "36 short-main-explanation heuristics and1 existing MRI wording heuristic; every registered choice has its explanation. No raw draft regeneration."
+  },
+  "fp1Applied": {
+    "status": "PASS",
+    "originals": 30,
+    "totalFp1Originals": 129,
+    "evidence": "Unchanged source/lib files plus existing applied schema/route unit coverage."
+  },
+  "figure107": {
+    "status": "PASS",
+    "evidence": "../nurse-am49-next-20261010/FIGURE-UI.json",
+    "productionBuild": false
+  },
+  "decimalAndInteger": {
+    "status": "PASS",
+    "evidence": "Whole unit suite includes numeric validation,IME/blank/Enter/history/remount and public API400 boundary."
+  },
+  "publicPushes": 0,
+  "pullRequests": 0,
+  "modelCalls": 0,
+  "deletions": 0
+}

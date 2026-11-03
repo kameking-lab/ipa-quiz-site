@@ -1,0 +1,64 @@
+{
+  "reviewModel": "claude-opus-5-5",
+  "requestedModel": "claude-opus-5-5",
+  "canonicalModel": "claude-opus-5-5",
+  "provider": "firstParty",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 4977,
+      "cacheReadInputTokens": 143524,
+      "cacheCreationInputTokens": 26477,
+      "webSearchRequests": 0,
+      "costUSD": 0.3400688,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 3854,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "paperId": "emkohyo-20260217-2",
+  "ids": [
+    "emkohyo-20260217-2-q10"
+  ],
+  "figureSha256": {
+    "emkohyo-20260217-2-q10": {}
+  },
+  "officialRowImageSha256": {
+    "emkohyo-20260217-2-q10": {
+      "/exam-library/emkohyo-20260217-2/q10-p8-0.webp": "116538c2fe19da922facc41581f283a5fde835cde2b85426a37f6d1d7691dc48"
+    }
+  },
+  "governmentSourceImageSha256": {
+    "docs/evidence/emkohyo-choice-sources/mhlw-74087000-image7552191.png": "5c4f8ae2f7b2dc981e4795acada6739d5e6655fb28d2a6ef52663396565c4ad0",
+    "docs/evidence/emkohyo-choice-sources/mhlw-74087000-image7552192.png": "f7b3be8b9f648ea033072416ce27ce79f32c9f2ce303e13ccdefb33ae31be509",
+    "docs/evidence/emkohyo-choice-sources/mhlw-74087000-image7552193.png": "2de87020ef308ff7ea2fd41d11730a457cc388bfe74b1ffa5f3108dff2e5ce72"
+  },
+  "candidateSha256": {
+    "emkohyo-20260217-2-q10": "14501d559f15466a6a27f7a3617fef42606170d9ab0d9fa9a9d82daa0aa20d3b"
+  },
+  "sourcePackPath": "docs/evidence/emkohyo-choice-sources/emkohyo-20260217-2-q10-10.json",
+  "sourcePackSha256": "4e627ef4eb6b86420e24b95d30e63c4aa32c7909046252e68cc563f484372120",
+  "assessment": {
+    "emkohyo-20260217-2-q10": {
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "reasonIssues": [
+        "肢5: 最後の一文「これは他物質への物理的使用まで禁止する意味ではない」は、肢の「ガス状の放射性物質を捕集する場合のみに行うことができる」を正しいとする判定と食い違う。これでは読者は、肢の限定が正しいのか否かを判断できない。さらに第10条・第13条には「これと同等以上の性能を有する試料採取方法」も認める規定がある。したがって、法令上の許可の範囲として「のみ行うことができる」を正しいと言い切る根拠は示されていない。理由は次の形に改めるべき。①基準が試料採取方法として冷却凝縮捕集方法を名指しするのは、第9条第1項第1号の表のガス状放射性物質の欄だけである。②公式正答は4であり、本肢はこの規定上の対応を述べたものとして正しい扱いになる。最後の一文のような含みのある但し書きは削る。"
+      ],
+      "sourceIssues": [
+        "肢5: 理由の「同基準の他の測定対象でこの方法を名指しする規定もない」は、全体に該当する規定が無いという否定の主張である。これを支える抜粋が無い。別表第一（1/2ページ所収）と別表第二（2/2ページ）の全行を走査し、「冷却凝縮捕集方法」が現れないことを示す証拠が必要である。2/2ページについて示された抜粋は見出し「別表第二(第十三条関係)」とアセトンの1行だけで、見出しだけの資料として根拠にならない。",
+        "肢2: 第3条の本文は「令第二十一条第二号の屋内作業場(労働安全衛生規則第五百八十七条各号に掲げる屋内作業場に限る。)」とするだけで、「暑熱」の語はない。肢の「暑熱の屋内作業場」が第3条の対象に当たることを直接示す政府資料が添付されていない（安衛則第587条が必要）。",
+        "肢3: 第4条の対象である「労働安全衛生規則第五百八十八条各号に掲げる屋内作業場」が「著しい騒音を発する屋内作業場」に当たることを示す一次資料がない（安衛則第588条が必要）。",
+        "肢1: 第5条の対象である「労働安全衛生規則第五百八十九条各号に掲げる坑内の作業場」に「炭酸ガスが停滞するおそれのある坑内の作業場」が含まれることを示す一次資料がない（安衛則第589条第1号が必要）。"
+      ],
+      "needsExternalCheck": [
+        "作業環境測定基準 別表第一・別表第二の全行で「冷却凝縮捕集方法」が使われていないこと（厚労省 dataId=74087000 の pageNo=1・2 の全文検索）",
+        "労働安全衛生規則 第587条・第588条・第589条の条文（暑熱・著しい騒音・炭酸ガスが停滞する坑内の各作業場と、基準第3条・第4条・第5条の対象との対応）"
+      ]
+    }
+  }
+}

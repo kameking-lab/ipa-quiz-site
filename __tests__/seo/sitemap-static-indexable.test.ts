@@ -36,6 +36,7 @@ function locs(xml: string): string[] {
 
 // データ駆動（1 slug/exam/id = 1 エントリ）の動的ルート接頭辞。具象 static のみ残す。
 const DYNAMIC_PREFIXES: RegExp[] = [
+  /^\/e-learning\/exams\/.+/,
   /^\/blog\/.+/,
   /^\/keywords\/.+/,
   /^\/features\/.+/,
@@ -125,7 +126,7 @@ describe("sitemap が載せる具象 static ルートは全て indexable（noind
       if (isNoindex(md?.robots)) bad.push(p);
     }
     expect(bad).toEqual([]);
-  });
+  }, 30_000); // Cold page imports take about 20s on the Windows development host.
 
   // canonical が別URLを指すと、そのページは「自分でなく別ページが正規」と宣言し、
   // sitemap に載せていても deindex され crawl 資産が無駄になる（激辛レビュー: /quiz の

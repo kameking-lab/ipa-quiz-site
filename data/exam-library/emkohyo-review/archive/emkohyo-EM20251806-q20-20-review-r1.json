@@ -1,0 +1,62 @@
+{
+  "reviewModel": "claude-opus-5-5",
+  "requestedModel": "claude-opus-5-5",
+  "canonicalModel": "claude-opus-5-5",
+  "provider": "firstParty",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 3025,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 12393,
+      "webSearchRequests": 0,
+      "costUSD": 0.1599078,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 2101,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponsePath": "data/exam-library/emkohyo-review/emkohyo-EM20251806-q20-20-raw-response.txt",
+  "rawResponseSha256": "6047221cce76eac44a79689f86b5aafad687a333342cec261a47ed04dbccb2d6",
+  "paperId": "emkohyo-EM20251806",
+  "ids": [
+    "emkohyo-EM20251806-q20"
+  ],
+  "figureSha256": {
+    "emkohyo-EM20251806-q20": {}
+  },
+  "officialRowImageSha256": {
+    "emkohyo-EM20251806-q20": {
+      "/exam-library/emkohyo-EM20251806/q20-p11-1.webp": "75f2069c146cebd674c20b8b0ea5ccba7d196c9cd5564d581bbc7e403f86f4a5"
+    }
+  },
+  "officialPageImageSha256": {},
+  "governmentSourceImageSha256": {},
+  "candidateSha256": {
+    "emkohyo-EM20251806-q20": "f9f4f46f64096f646bf440c63ac2800f2080c7a38d6859757efa1f8bd2bd2255"
+  },
+  "sourcePackPath": "docs/evidence/emkohyo-choice-sources/emkohyo-EM20251806-q20-20.json",
+  "sourcePackSha256": "4c650c50b2ba3ffddb51a07b136d7ba0b2fb1fa14ebe1b4b41f1f89d5df06b0c",
+  "assessment": {
+    "emkohyo-EM20251806-q20": {
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "reasonIssues": [
+        "肢1: 環境省マニュアルp.25には「ただし、繊維の両端が粒子に隠れず、１本につながって見える場合は、粒子に隠れている部分も含めて長さを求める」という例外がある。理由はこの例外に触れていない。本肢は『片方の端が隠れている』ので両端が見えるという例外条件を満たさず、原則どおり見える部分の長さだけで判断する。この因果を一文加えるべき。",
+        "肢5: 問題文は『アイピースグレーティクルの小円内（直径0.1 mm）を計数する場合』という条件付きで終了条件を問うている。理由は終了条件（100視野／200本以上）だけを述べている。引用規定が小円（直径0.1 mm）を計数視野とする場合の規定であることを示しておらず、問題文の前提との対応が説明されていない。"
+      ],
+      "sourceIssues": [
+        "claimedExcerpts（p.25『繊維の計数は、検鏡した視野の数が100視野になるまで、あるいは繊維数が200本以上になるまで行う』）の周辺文脈には、計数視野がアイピースグレーティクルの小円（直径0.1 mm）であることが含まれていない。肢5の前提条件『小円内（直径0.1 mm）を計数する場合』を政府資料が直接支えているか、証拠からは確認できない。",
+        "出典の環境省アスベストモニタリングマニュアルは大気環境・解体現場周辺等のモニタリング用で、作業環境測定（作業環境測定基準に基づく石綿測定）の規定そのものではない。同マニュアルの図10も日本作業環境測定協会『作業環境測定ガイドブック１』を出典としている。作業環境測定士試験の根拠として同一規定が適用されることを示す記載か、補足説明が必要。"
+      ],
+      "needsExternalCheck": [
+        "環境省アスベストモニタリングマニュアル第4.2版 p.24–25付近で、計数視野範囲がアイピースグレーティクルの小円（直径100 μm＝0.1 mm）と定義され、100視野／200本の終了条件がその小円での計数に対する規定であることを確認する。",
+        "作業環境測定ガイドブック１（鉱物性粉じん・石綿）またはJIS K 3850-1で、作業環境測定における位相差顕微鏡計数の終了条件（100視野または200本以上）が同一であることを確認する。"
+      ]
+    }
+  }
+}

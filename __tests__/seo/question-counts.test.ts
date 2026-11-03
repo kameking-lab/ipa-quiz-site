@@ -15,7 +15,7 @@ describe("question-counts single source of truth", () => {
     expect(TOTAL_QUESTIONS_RAW).toBe(ALL_QUESTIONS.length);
   });
 
-  it("PUBLISHED equals the indexable (sitemap) set length", () => {
+  it("PUBLISHED equals the usable question set length", () => {
     expect(TOTAL_QUESTIONS_PUBLISHED).toBe(getIndexableQuestions().length);
   });
 

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20250831",
+  "subject": "machinery",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 2281,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 13309,
+      "webSearchRequests": 0,
+      "costUSD": 0.15235579999999999,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 1126,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "8bdedae3baa1da7ba1c847a4127bfbae69eacba56ff5a809370b04b1519e9d89",
+  "inputRequestSha256": "b75bcf7a3ac2b95427b0c01f85ce86d140c8646ceba0b86872b9129f8d7a9063",
+  "inputHashes": {
+    "candidateSha256": {
+      "q02": "f98761e6ca09928219389677850ec684f3aecfbcf8fcb17e10b1c4988f66266b"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20250831/machinery/p05.png": "c0fa4c98a2a52ae27360f1a3b68210977f35515e6032756cb1206b397715ae53"
+    },
+    "figureSha256": {},
+    "sourceQuestionPdfSha256": "2a73a24594cc2b8bb7504b9a0ff15e001b2bb56b830572ce2be853f7116f26d8",
+    "sourceAnswerPdfSha256": "76fd3715ed487d19a56b387fb402de20ee09474e9fa55b0413f9037b96af06c9",
+    "officialAnswerUnitsSha256": "c270e17a1dbd9dc6565efd78ec73e424a194fad43b56d7f5237350cf0b316048",
+    "referencePdfSha256": {},
+    "referencePageSha256": {},
+    "referenceJsonSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q02",
+      "questionNumber": 2,
+      "part": null,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [
+        "uncertainty欄の「掲載ページには実施年度・回の記載がないため，出典年度は特定していません。」が、sourceAttribution（令和7年度上期 機械科目 問2）、fiscalYear=2025、term=upper、examDate=2025-08-31 と矛盾する。問題原図の頁（下部『-2-』『T1－K 005』）には確かに年度表記はない。一方、添付の公式解答表の見出し『令和7年度 第三種電気主任技術者上期試験解答』では機械 問2＝2 であり、manifest固定の公式正答（answer=\"2\", points=5）と一致する。したがって年度・回は公式解答表で特定済みである。uncertainty欄は、問題頁単体に年度表記はないが公式解答表見出しとの照合で令和7年度上期機械と特定した旨に改めるべきである。"
+      ],
+      "verifiedEvidence": [
+        "問題文: 原図と全文照合し一致した（永久磁石界磁、定格12 V、静止状態の始動電流4 A、定格電流1 A、効率[%]、ブラシ電圧降下・電機子反作用は無視、損失は電機子巻線の銅損のみ）。原図の2段落構成は候補JSONの改行で再現されている。",
+        "選択肢: (1)80 (2)75 (3)70 (4)65 (5)60 が原図と一致した。単位[%]は問題文側にあり、原図と同じ扱いである。",
+        "科目・問番号: 原図フッター『T1－K』（K=機械）とsubject=machineryが整合する。公式解答表の機械列 問2＝2・配点5 がofficialAnswer=\"2\"、scoringPoints=5と一致する（理論列 問2＝5 との取り違えはない）。",
+        "総合解説の検算: 静止時はE=0なので Ra=12/4=3 Ω。定格時の入力は12×1=12 W、銅損は1²×3=3 W、出力は12−3=9 W（別解 E=12−1×3=9 V、E·I=9 W）で、η=9/12=75 %。正答(2)と一致し、因果（静止→逆起電力0→電源電圧が全て抵抗にかかる）も正しい。",
+        "誤答肢の理由を検算した: 80 %→出力9.6 W/損失2.4 W、70 %→8.4 W/3.6 W、65 %→7.8 W/4.2 W、60 %→7.2 W/4.8 W。いずれも入力12 Wに対して正しく、銅損3 Wと不一致とする論拠も妥当である。",
+        "図: 原図に図はない。figureDescription=null、figureUrls=[]、choiceFigureUrls={} で整合する。",
+        "officialReferenceUrls は空配列で、検証が必要な独立主張はない。",
+        "reviewedFromPage=[5] は添付原図の頁（印刷頁番号『-2-』）として扱った。"
+      ]
+    }
+  ]
+}

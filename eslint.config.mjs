@@ -32,6 +32,8 @@ const eslintConfig = defineConfig([
     ".next/**",
     "out/**",
     "build/**",
+    // Local PDF/OCR outputs and one-off audit bundles are not application code.
+    "tmp/**",
     "next-env.d.ts",
   ]),
 ]);

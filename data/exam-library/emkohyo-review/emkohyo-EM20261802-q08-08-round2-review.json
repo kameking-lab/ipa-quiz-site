@@ -1,0 +1,55 @@
+{
+  "reviewModel": "claude-opus-5-5",
+  "requestedModel": "claude-opus-5-5",
+  "canonicalModel": "claude-opus-5-5",
+  "provider": "firstParty",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 4125,
+      "cacheReadInputTokens": 139443,
+      "cacheCreationInputTokens": 18104,
+      "webSearchRequests": 0,
+      "costUSD": 0.25522859999999997,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 3578,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "paperId": "emkohyo-EM20261802",
+  "ids": [
+    "emkohyo-EM20261802-q8"
+  ],
+  "figureSha256": {
+    "emkohyo-EM20261802-q8": {}
+  },
+  "officialRowImageSha256": {
+    "emkohyo-EM20261802-q8": {
+      "/exam-library/emkohyo-EM20261802/q8-p6-1.webp": "9d9b421b406ad290f9088828c4acac4a65499aa4208bb2d3702c370803eadd8c"
+    }
+  },
+  "officialPageImageSha256": {},
+  "governmentSourceImageSha256": {},
+  "candidateSha256": {
+    "emkohyo-EM20261802-q8": "d2abd9e08c544dfd52f42040595cb143b1d54f8ece103a0e0188f76a912378c4"
+  },
+  "sourcePackPath": "docs/evidence/emkohyo-choice-sources/emkohyo-EM20261802-q08-08.json",
+  "sourcePackSha256": "e9c69d4b812d616870e77d8c038cda97e79f54d545c56e93bce023a29c7a8293",
+  "assessment": {
+    "emkohyo-EM20261802-q8": {
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "reasonIssues": [],
+      "sourceIssues": [
+        "肢5の理由では、第592条の2第2項の「第三十六条第三十六号に掲げる業務」を「廃棄物焼却炉の解体等に係る業務」と言い換えている。しかし、添付した政府資料の抜粋（pageNo=10）にある第592条の2・第592条の3の本文は、「第三十六条第三十六号」と「設備の内部」としか書いていない。第36条第36号が廃棄物焼却炉などの設備の解体等の業務を指すことを示す条文は、添付資料に入っていない。問題文の「焼却炉の内部に付着した物」と条文の「設備の内部」を結びつける部分に、政府資料の直接の裏付けがない。労働安全衛生規則第36条（第36号）を収録したページを出典に加え、抜粋の証拠も付ける必要がある。"
+      ],
+      "needsExternalCheck": [
+        "厚生労働省法令等データベースで、労働安全衛生規則第36条第36号の現行条文が、ダイオキシン類対策特別措置法施行令別表第一第五号の廃棄物焼却炉を持つ廃棄物焼却施設の焼却炉・集じん機等の設備の解体等の業務を定めていることを確認する。あわせて、その条文を収録したページのURLとSHA256を証拠に追加する。"
+      ]
+    }
+  }
+}

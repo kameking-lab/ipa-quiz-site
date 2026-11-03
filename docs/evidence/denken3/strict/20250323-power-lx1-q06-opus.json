@@ -1,0 +1,67 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20250323",
+  "subject": "power",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 5124,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 13961,
+      "webSearchRequests": 0,
+      "costUSD": 0.2144318,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 3499,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "930c8501d2c1749e918e48fee75dc9f65efeaeb66637a7d6d4d23c3fcdd204ce",
+  "inputRequestSha256": "ee955d206aaf01fbbea65b52db360f79997e89470205ea3d01e5a192e9f5bcdb",
+  "inputHashes": {
+    "candidateSha256": {
+      "q06": "3360a1f9dbff749147826d92d907faf4e1cbb9ece640634c81093ec9a92db507"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20250323/power/p09.png": "bda80c2da1e9b666c28b008f542b3ad82e510ff9a84805851cb45ab1b30f7cdf"
+    },
+    "figureSha256": {},
+    "sourceQuestionPdfSha256": "892785e0f1035bcb239eb30fa903d4c88adbcfdaa1b5b0edea2d1907fd887114",
+    "sourceAnswerPdfSha256": "4c3b38fcf1405766fafaa78b1b05b867a3d48307a670b9d354476bc6b32acd4c",
+    "officialAnswerUnitsSha256": "8f048241dfea414bc8ceb31eacd1ada87b1ffe90694e652f02c567888a3e22a1",
+    "referencePdfSha256": {},
+    "referencePageSha256": {},
+    "referenceJsonSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q06",
+      "questionNumber": 6,
+      "part": null,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [
+        "総合解説(イ)(ウ)で無効電力の符号規約が混在している。(イ)は電力用コンデンサを『進み無効電力を供給する』と供給側表現で書いている。一方(ウ)は分路リアクトルを『遅れ無効電力を吸収する』と消費側表現で書いている。供給側表現で統一するなら、分路リアクトルは『遅れ無効電力を供給する（進み無効電力を吸収する）』となる。消費側表現で統一するなら、電力用コンデンサは『遅れ無効電力を供給する（進み電流をとる）』となる。現状では両者が同一規約で対比できず、学習者が混乱しうる。修正案は供給側表現への統一。(イ)は『電力用コンデンサは進み電流をとり進み無効電力を供給する』とし、(ウ)は『分路リアクトルは遅れ電流をとり遅れ無効電力を供給する（進み無効電力を吸収する）』とする。(エ)の『過励磁で進み、不足励磁で遅れ』とも整合させる。",
+        "(オ)で『半導体整流装置』が不適な理由が総合解説にない。choiceExplanations[2]・[4]も『半導体スイッチ（位相制御）が適切』と述べるだけで、誤答肢固有の理由として不十分。整流装置は交流を直流に変換する装置であり、リアクトル電流の位相制御（サイリスタの点弧角制御）を行う要素ではない。この一文を補足すること。"
+      ],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "問題文: 添付原図（PDF第9頁、印刷頁『-6-』、T2-D 009）と照合した。導入文、(ア)〜(オ)の4文、設問指示文は一字一句一致しており、空白の位置も正しい。",
+        "選択肢: (1)〜(5)全肢の5語を原図の表と照合し、全て一致した。確認した内容は(1)並列/進める/遅らせる/界磁電流/半導体スイッチ、(2)直列/遅らせる/進める/電機子電流/半導体整流装置、(3)並列/遅らせる/進める/電機子電流/半導体スイッチ、(4)直列/進める/遅らせる/電機子電流/半導体整流装置、(5)並列/遅らせる/進める/界磁電流/半導体スイッチ。",
+        "公式正答: 添付の公式解答表『令和6年度 下期 第三種電気主任技術者試験解答』の電力欄で問6=1を確認した。manifest固定値answer=\"1\"とも一致し、候補officialAnswer=\"1\"と一致する。",
+        "技術内容: 次の各点を検算し、いずれも正答(1)と整合することを確認した。調相設備は負荷と並列（分路）に接続する。電力用コンデンサは力率を進め、分路リアクトルは力率を遅らせる（軽負荷時のフェランチ効果対策）。同期調相機は無負荷同期電動機であり、界磁電流で過励磁なら進み、不足励磁なら遅れの無効電力を連続調整する。SVCはサイリスタ等の半導体スイッチでリアクトル電流を位相制御する。",
+        "choiceExplanations: 各誤答肢で指摘している誤り箇所を検証し、いずれも正しいことを確認した。(2)は5項目全て誤り。(3)は(イ)(ウ)(エ)が誤りで(ア)(オ)が正しい。(4)は(ア)(エ)(オ)が誤りで(イ)(ウ)が正しい。(5)は(イ)(ウ)が誤りで他は正しい。",
+        "図: 原図に図はなく、組合せ表のみ。figureDescriptionの『図なし』、figureUrls=[]、choiceFigureUrls={}は妥当。",
+        "出典メタデータ: fiscalYear=2024（令和6年度）、term=lower、examDate=2025-03-23、subject=power、sourceQuestionPdfUrl、sourceAnswerPdfUrl、reviewedFromPage=[9]の全項目がmanifestと一致する。sourceAttributionの『令和6年度下期…電力科目 問6』も一致する。",
+        "officialReferenceUrls: 空配列であり、検証を要する独立主張はない。"
+      ]
+    }
+  ]
+}

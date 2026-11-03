@@ -1,0 +1,45 @@
+{
+  "schema": "bounded-local-q156-integration/1",
+  "base": "020cf0b2d564722211fb33341387d9c9ca7c68ac",
+  "cutoffUtc": "2026-10-23T11:34:00Z",
+  "id": "ahaki-hari-kyu-2025-annual-pm-q156",
+  "deltaPath": "delta/data/questions/ahaki/q156.json",
+  "deltaSha256": "ac7ac3778e614797d6c094ff182d24256fe8c26ccc5254b2f4fb44468f845fe3",
+  "independentReceiptPath": "C:/Users/kanet/Documents/Codex/2026-10-23/task-9/output/independent-acceptance-20261023/ACCEPTANCE.json",
+  "independentReceiptSha256": "f9815a1f4dc1fcd20db16f12d358b61b5aa71904e18b92672171a01997b52e72",
+  "independentVerificationSha256": "b6d98d880c62906666c100126584ac52715b5b6426ec61dba1e3ce1eec21addf",
+  "acceptedScopeOnly": {
+    "id": "ahaki-hari-kyu-2025-annual-pm-q156",
+    "decision": "ACCEPT_CONTENT",
+    "candidateSha256": "ac7ac3778e614797d6c094ff182d24256fe8c26ccc5254b2f4fb44468f845fe3",
+    "officialPaper": {
+      "pdf": "C:/Users/kanet/Documents/Codex/2026-10-23/task-7/output/hari-kyu-q156-20261023/evidence/official-33-harikyu-pm.pdf",
+      "sha256": "a1beb8986d6c5cca6cd1ab2c19863f1087a039f68eb024df049e9b017179e9eb",
+      "physicalPage": 21,
+      "printedPage": 18,
+      "finding": "Shared case, Q156 stem and all four choices match the preserved page image; required figures 0."
+    },
+    "officialKey": {
+      "url": "https://ahaki.or.jp/examination/data/seito_33_hk.html",
+      "savedSha256": "78c3a63e9efe838c144d4deed0edf3dd27a31c323ed54dacfeb038055ac9bdfd",
+      "q155": "2, vitamin B1",
+      "q156": "4, 上巨虚"
+    },
+    "directTeachingSources": [
+      "https://mr.meiji-u.ac.jp/mr_keiketsu/yoketsu/kakke.html",
+      "https://mr.meiji-u.ac.jp/mr_keiketsu/yoketsu/hachieketsu.html"
+    ],
+    "reasoning": "The university's eight-point set includes 上巨虚 but excludes 膝陽関, 内膝眼 and 陽陵泉. It includes 外膝眼, which is distinct from 内膝眼. The other university page classifies 陽陵泉 as 筋会. Identifying the Q156 set as 脚気八処 is an interpretation supported by the shared case and Q155 key, not an assertion that the paper literally names the set or that clinical efficacy was proven.",
+    "baselineReuse": "12/12 pinned files rehashed and matched; prior substantive acceptance of 359 reused",
+    "exactUniqueIdsAfterDelta": 360,
+    "remainingLocalContentGaps": 0,
+    "integration": "NOT_DONE",
+    "publication": "NO_GO_ISSUED"
+  },
+  "preservedExistingOriginals": 359,
+  "preservedExistingCanonicalSha256": "83ef1b6398e87b8e6a39c47851b83fa6b1612ac7dae4c974aa1b4582771dd592",
+  "newOriginals": 1,
+  "uniqueHariKyuOriginals": 360,
+  "historicalSourceReceiptsRetained": true,
+  "productionPublished": false
+}

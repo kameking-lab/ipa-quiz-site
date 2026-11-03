@@ -1,0 +1,85 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20260322",
+  "subject": "power",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 5477,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 30329,
+      "webSearchRequests": 0,
+      "costUSD": 0.35243579999999997,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 3080,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "926482dc3b03f1b028f8ef15c29c48f93094bcbf56e52f113b6e5e8f838d8b72",
+  "inputRequestSha256": "e4d1bfab160a1873019ddfa2fd974695b2ed1f1ef2fa6bd09723c204f79ee44e",
+  "inputHashes": {
+    "candidateSha256": {
+      "q01": "814cef8d459a1316b76e605cf6875514bdfb3f343d9e68f9d3ed79621207df12"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20260322/power/p04.png": "b5db000e4206d9200a3d5b80001dc23907f06ab38b8c96f60dfae6d1219fab96"
+    },
+    "figureSha256": {},
+    "sourceQuestionPdfSha256": "9733341a0f293f068c9a665d5a9a90f1aabf3a2db5d79cd530643cdea241f7b7",
+    "sourceAnswerPdfSha256": "cc2890296d06a4823df5697a78a1c01ddfd39f041c51f48c87984daa3a5707c6",
+    "officialAnswerUnitsSha256": "a7fe1c20f1fe2d13156ebd8ba1ed6e10dd89989f2411fd92dd3be8b2117e0239",
+    "referencePdfSha256": {
+      "data/raw_pdfs/denken3/review/jica-hydro-guide-0000256044_01.pdf": "d8e0afaf5a053797c729cc1fb3246e09d16856e8274d32c16e56828714484728"
+    },
+    "referencePageSha256": {
+      "data/raw_pdfs/denken3/review/references/jica-hydro-guide-0000256044_01-p015.png": "810848fc35bf2936b6b6413679db686d29b4d4261be5923284fd5bc6eb3869c4",
+      "data/raw_pdfs/denken3/review/references/jica-hydro-guide-0000256044_01-p016.png": "0ab2e93d9e998a3ed45198c273346251288178db2092e7d92c13f33c78d99d02",
+      "data/raw_pdfs/denken3/review/references/jica-hydro-guide-0000256044_01-p017.png": "5e328125993dda765d3387f91bd4b6a3dfa8a18880e0c4f7ff66690b246887d1",
+      "data/raw_pdfs/denken3/review/references/jica-hydro-guide-0000256044_01-p294.png": "e0df26a9f8a81ef87b5c695078de89084da7a2c0aed4c6b708948d2a2d3a03c8",
+      "data/raw_pdfs/denken3/review/references/jica-hydro-guide-0000256044_01-p295.png": "d2efaee49bbb5325dc486caa15bba27233d7094866270e3cdf726cef70775be6"
+    },
+    "referenceJsonSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q01",
+      "questionNumber": 1,
+      "part": null,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [
+        "choiceExplanations.1 の (ウ) で「「自然放流式」という方式はない」と存在自体を否定している。添付した公式参考資料（JICA 3.2.1、PDF第15〜16頁）から確認できるのは、分類として流れ込み式・調整池式・貯水池式・揚水式が挙げられ、自然放流式が挙げられていないことだけである。choiceExplanations.2 と同じく「分類に含まれない／挙げられていない」という表現に弱めるべき。",
+        "choiceExplanations.1 に「流れ込み式・調整池式・貯水池式・揚水式」と参考資料の表記がそのまま入っており、同じ肢の後半や他の箇所の「流込み式」（問題文の表記）と混在している。問題文の表記「流込み式」に統一すべき。",
+        "公式正答 (3) の構成語句である (エ)「高落差を得にくい」について、explanation と choiceExplanations.3 は技術的根拠を示していない。消去法で正答が一意に定まる論理は正しい（(ア)で(2)(4)、(イ)で(1)(2)(4)、(ウ)で(1)(2)、(オ)で(1)(2)(5)が外れ、(3)のみ残る）。ただし正答肢の一部が未説明のまま公開されることになるため、sourceIssues の解消が必要。"
+      ],
+      "figureIssues": [],
+      "sourceIssues": [
+        "(エ)「水路式はダム式，ダム水路式に比べ高落差を得にくい」は、公式正答 (3) の組合せに含まれる技術的主張である。しかし添付の公式参考資料（JICA 水力開発ガイドマニュアル第1分冊 3.2.2、PDF第17頁）は各方式の落差の得方を説明するだけで、方式間の落差の大小を比較していない。添付原図と添付資料の原頁ではこの主張を検証できない。他肢の (エ) の語句（建設期間が長い・建設期間が短い・高落差を得やすい・建設費が安い）の当否も同様に検証できない。推測で補完せず、比較を記述した公式資料を追加するまで未確認事項として残す。",
+        "候補の uncertainty には (エ) に関する未確認事項が 2 点明記されているが、needsReview=false になっている。未確認の外部確認事項が残る以上、needsReview=true にすべき。",
+        "officialReferenceUrls の参考資料見出しには「水車選定説明・図12-17（10MW以上）」が含まれ、添付頁には PDF第294〜295頁（12.1.2 水車の選定、図12-16・図12-17）もある。しかし本問の解説はこれらの頁に依拠しておらず、本問と関係しない。本問の根拠として使えるのは PDF第15〜17頁（3.2 水力の発電方式）だけである。"
+      ],
+      "verifiedEvidence": [
+        "問題文：候補の question は公式問題原図（電力冊子 PDF第[4]頁、印刷頁 -1-）の問1本文と一致した。対象は (ア)〜(オ) の空欄位置、(イ)(ウ) の再出、「1 日又は数日程度」「貯水池などを持たない水路式発電所」などの文言である。",
+        "選択肢：(1)〜(5) の全 25 セルを原図の表と照合し、すべて一致した。(1) 落差/流速/自然放流式/建設期間が長い/ダム式、(2) 流速/落差/自然放流式/建設期間が短い/ダム式、(3) 落差/流量/流込み式/高落差を得にくい/調整池式、(4) 流量/落差/流込み式/高落差を得やすい/調整池式、(5) 落差/流量/流込み式/建設費が安い/貯水池式。",
+        "公式正答：解答表原図（令和7年度 第三種電気主任技術者下期試験解答）の＜電力＞問1は解答 3、配点 5 である。候補の officialAnswer=3、scoringPoints=5、および manifest の公式正答単位と一致した。",
+        "出典メタデータ：令和7年度下期は fiscalYear=2025、term=lower に対応する。examDate=2026-03-22、subject=power、reviewedFromPage=[4]、問題PDF・解答PDFの URL はいずれも manifest と一致した。",
+        "JICA 第15頁 3.2：水力の発電方式には「発電所の運用上の特性による分類と落差を得る方法による分類がある」。これにより (ア)=落差 を確認した。",
+        "JICA 第15頁 3.2.1(1)1)：流れ込み式は「河川の自然流量の範囲内で取水し、発電する形式」で、「3.2.2(1)の水路式がこれに相当」する。これにより (ウ)=流込み式 を確認した。",
+        "JICA 第15頁 3.2.1(1)2)：調整池式は「1 日ないし数日の河川流量を調整できる容量の池（調整池）を持ったもの」である。これにより (オ)=調整池式 を確認した。",
+        "JICA 第15頁 3.2.1(1)3)：貯水池式は「年間調整または季節調整の可能な池」を持ち、「豊水期の水を貯留し渇水期に使用」する。これにより肢(5)の (オ) 誤りの理由を確認した。",
+        "JICA 第16頁 3.2.1(2)：揚水式水力は運用上の特性による分類に含まれる。",
+        "JICA 第17頁 3.2.2：水路式は「流量を調整できるダムを有しないので、河川流量によって出力が左右される」。ダム式は「貯水池により河川流量を調整することができるので、電力負荷の変動に応じた出力調整ができる」。これにより (イ)=流量、および本文の「貯水ができないので発生電力の調整には適さない」との対応を確認した。",
+        "JICA 第17頁 3.2.2(2)：ダム式は落差を得る方法による分類の方式名である。これにより肢(1)(2)の (オ)「ダム式」が誤りである理由を確認した。",
+        "消去法の検算：(ア)落差で(2)(4)、(イ)流量で(1)(2)(4)、(ウ)流込み式で(1)(2)、(オ)調整池式で(1)(2)(5)が除外され、(3)のみが残る。(エ) を用いなくても正答 (3) は一意に定まる。",
+        "図：本問には回路図・写真はなく、選択肢表だけである。figureDescription の記述と figureUrls=[] は妥当で、図がなくても解答できる。"
+      ]
+    }
+  ]
+}

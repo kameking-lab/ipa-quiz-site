@@ -1,0 +1,129 @@
+{
+  "questionNumber": 18,
+  "sharedContext": "問17及び問18は選択問題であり，問17又は問18のどちらかを選んで解答すること。両方解答すると採点されません。\n\n（選択問題）\n問18 エミッタホロワ回路について，次の(a)及び(b)の問に答えよ。\n\n小問(a)の条件（図1）: VCC = 9 V，R1 = 3 kΩ，R2 = 6 kΩ。動作点におけるエミッタ電流を 2 mA としたい。動作点において，ベース電流は R2 を流れる直流電流より十分小さく無視できるものとし，ベース-エミッタ間電圧は 0.7 V とする。\n小問(b)では，図2（エミッタホロワ回路の交流等価回路）を用い，hie = 2.5 kΩ，hfe = 300，RE は小問(a)で求めた値とする。",
+  "units": [
+    {
+      "part": "a",
+      "question": "問18 エミッタホロワ回路について，次の(a)及び(b)の問に答えよ。\n\n(a) 図1の回路で VCC = 9 V，R1 = 3 kΩ，R2 = 6 kΩ とする。動作点におけるエミッタ電流を 2 mA としたい。抵抗 RE の値[kΩ]として，最も近いものを次の(1)〜(5)のうちから一つ選べ。ただし，動作点において，ベース電流は R2 を流れる直流電流より十分小さく無視できるものとし，ベース-エミッタ間電圧は 0.7 V とする。",
+      "choices": {
+        "1": "0.36",
+        "2": "1.5",
+        "3": "2.7",
+        "4": "4.7",
+        "5": "7.5"
+      },
+      "officialAnswer": "3",
+      "explanation": "ベース電流を無視できるので，ベース電位 VB は R1 と R2 による VCC の分圧で決まる。\nVB = VCC × R2 / (R1 + R2) = 9 × 6 / (3 + 6) = 6.0 V\nエミッタ電位 VE はベース電位からベース-エミッタ間電圧を引いたもの。\nVE = VB − VBE = 6.0 − 0.7 = 5.3 V\nエミッタ電流 IE = 2 mA とするには\nRE = VE / IE = 5.3 V / 2 mA = 2.65 kΩ\n選択肢の中で 2.65 kΩ に最も近いのは 2.7 kΩ であり，正解は(3)。",
+      "choiceExplanations": {
+        "1": "誤り。RE = 0.36 kΩ とすると IE = 5.3 V / 0.36 kΩ ≈ 14.7 mA となり，目標の 2 mA から大きく外れる。必要な RE = 2.65 kΩ との差も約 2.29 kΩ と大きい。",
+        "2": "誤り。RE = 1.5 kΩ とすると IE = 5.3 V / 1.5 kΩ ≈ 3.53 mA となり，2 mA より大きい。必要な RE = 2.65 kΩ との差は約 1.15 kΩ。",
+        "3": "正しい。RE = 2.7 kΩ とすると IE = 5.3 V / 2.7 kΩ ≈ 1.96 mA で，ほぼ 2 mA となる。計算値 2.65 kΩ との差は 0.05 kΩ で，選択肢中最も近い。",
+        "4": "誤り。RE = 4.7 kΩ とすると IE = 5.3 V / 4.7 kΩ ≈ 1.13 mA となり，2 mA より小さい。必要な RE = 2.65 kΩ との差は約 2.05 kΩ。",
+        "5": "誤り。RE = 7.5 kΩ とすると IE = 5.3 V / 7.5 kΩ ≈ 0.71 mA となり，2 mA より大幅に小さい。必要な RE = 2.65 kΩ との差は約 4.85 kΩ。"
+      },
+      "figureDescription": "図1（エミッタホロワ回路）。左端に交流電圧源（〜記号）があり，その両端の端子間に入力電圧 vi（下から上向きの矢印）が示される。上側端子からコンデンサ C1 を直列に通ってトランジスタのベース節点に接続される。ベース節点と上側の電源配線の間に抵抗 R1，ベース節点と下側配線（共通線）の間に抵抗 R2 が接続される。トランジスタはエミッタに外向き矢印をもつ NPN 形の記号で，コレクタは上側の電源配線に直結されている。エミッタ節点は抵抗 RE を介して下側配線に接続され，同時にコンデンサ C2 を介して出力端子に接続される。出力端子と下側配線の間に出力電圧 vo（下から上向きの矢印）が示される。右端には直流電源 VCC（電池記号）が上側配線と下側配線の間に接続されている。ベースのバイアスが R1・R2 の分圧で与えられ，負荷抵抗がエミッタ側の RE であるという接続関係は図からのみ読み取れるため，解答に図が必要。なお，図2は小問(b)で用いる交流等価回路であり，本小問では用いない。",
+      "officialReferenceUrls": [],
+      "uncertainty": "なし",
+      "needsReview": true,
+      "sourceQuestionPdfUrl": "https://www.shiken.or.jp/chief/upload/20250831_ch_third_q01.pdf",
+      "sourceAnswerPdfUrl": "https://www.shiken.or.jp/chief/upload/20250831_ch_third_a01.pdf",
+      "reviewedFromPage": [
+        22,
+        23
+      ]
+    },
+    {
+      "part": "b",
+      "question": "問18 エミッタホロワ回路について，次の(a)及び(b)の問に答えよ。\n（小問(a)の条件: 図1の回路で VCC = 9 V，R1 = 3 kΩ，R2 = 6 kΩ，動作点におけるエミッタ電流 2 mA，ベース電流は無視，ベース-エミッタ間電圧 0.7 V）\n\n(b) 図2は，エミッタホロワ回路の交流等価回路である。ただし，使用する周波数において図1の二つのコンデンサのインピーダンスが十分に小さい場合を考えている。ここで，hie = 2.5 kΩ，hfe = 300 であり，RE は小問(a)で求めた値とする。入力インピーダンス vi / ii の値[kΩ]として，最も近いものを次の(1)〜(5)のうちから一つ選べ。ただし，vi と ii はそれぞれ図2に示す入力電圧と入力電流である。",
+      "choices": {
+        "1": "2.0",
+        "2": "15",
+        "3": "80",
+        "4": "300",
+        "5": "750"
+      },
+      "officialAnswer": "1",
+      "explanation": "図2で，入力端子には抵抗 R1R2/(R1 + R2) と，トランジスタ側の枝（hie と RE）が並列に接続されている。\n\n① バイアス抵抗の合成値\nRB = R1R2 / (R1 + R2) = 3 × 6 / (3 + 6) = 2.0 kΩ\n\n② トランジスタ側から見た入力インピーダンス Zb\n電流源 hfe·ib は（右側の配線を通じて下側配線につながる上側から）エミッタ節点へ向かって流れ込むので，RE を流れる電流は ib + hfe·ib = (1 + hfe)ib となる。\nvi = hie·ib + RE·(1 + hfe)ib\nZb = vi / ib = hie + (1 + hfe)RE\n小問(a)の RE = 2.7 kΩ を用いると\nZb = 2.5 + 301 × 2.7 = 2.5 + 812.7 = 815.2 kΩ\n（計算値 RE = 2.65 kΩ を用いても Zb = 2.5 + 301 × 2.65 ≈ 800 kΩ）\n\n③ 入力インピーダンス\nvi / ii = RB ∥ Zb = 2.0 × 815.2 / (2.0 + 815.2) ≈ 1.995 kΩ ≈ 2.0 kΩ\n（RE = 2.65 kΩ の場合も 2.0 × 800.15 / 802.15 ≈ 1.995 kΩ）\n\nZb が RB に比べて非常に大きいため，入力インピーダンスはほぼ RB で決まる。正解は(1)。",
+      "choiceExplanations": {
+        "1": "正しい。RB = 2.0 kΩ と Zb = hie + (1 + hfe)RE ≈ 815 kΩ の並列合成で vi/ii ≈ 1.995 kΩ となり，2.0 kΩ に最も近い。",
+        "2": "誤り。入力端子には 2.0 kΩ の RB が直接並列に入っているため，vi/ii は 2.0 kΩ を超えることがない。15 kΩ はこの上限を超えている。",
+        "3": "誤り。選択肢(2)と同様，並列に入る RB = 2.0 kΩ より大きい値にはならないため，80 kΩ はあり得ない。",
+        "4": "誤り。300 は電流増幅率 hfe の数値（単位のない比）と同じ値であり，入力インピーダンス[kΩ]の計算結果ではない。また RB = 2.0 kΩ を超える値にはならない。",
+        "5": "誤り。RB を除いたトランジスタ側の Zb = hie + (1 + hfe)RE は約 815 kΩ（RE = 2.65 kΩ なら約 800 kΩ）で，この値だけなら 750 が近い。しかし図2では入力端子に RB = 2.0 kΩ が並列に接続されているので，vi/ii はそれよりはるかに小さい約 2.0 kΩ となる。"
+      },
+      "figureDescription": "図2（エミッタホロワ回路の交流等価回路）。左側の2つの入力端子間に入力電圧 vi（下から上向きの矢印）が示され，上側配線に入力電流 ii（右向き矢印）が示される。入力端子のすぐ右で，上側配線と下側配線の間に抵抗 R1R2/(R1 + R2) が接続される。その先の上側配線にベース電流 ib（右向き矢印）が示され，抵抗 hie を上から下へ通ってエミッタ節点に至る。hie の右隣には電流源（円に横線の記号）があり，その横に hfe·ib と下向き矢印が記されている。電流源の上端は配線で右へ延び，右端を下って下側配線に接続され，下端はエミッタ節点に接続される。エミッタ節点と下側配線の間に抵抗 RE が接続され，エミッタ節点から右へ出た出力端子と下側配線の間に出力電圧 vo（下から上向きの矢印）が示される。電流源の向き（エミッタ節点へ流れ込む）と，バイアス抵抗が入力端子に並列に入っている接続関係は図からのみ読み取れ，RE を流れる電流が (1 + hfe)ib になることと並列合成の構成を判断するのに図が必要。問題文が図1の二つのコンデンサに言及しているため，図1も併せて参照する。",
+      "officialReferenceUrls": [],
+      "uncertainty": "「RE は小問(a)で求めた値」が選択肢値 2.7 kΩ と計算値 2.65 kΩ のどちらを指すかは問題文から明確でないが，いずれを用いても vi/ii ≈ 1.995 kΩ となり，正答は変わらない。",
+      "needsReview": true,
+      "sourceQuestionPdfUrl": "https://www.shiken.or.jp/chief/upload/20250831_ch_third_q01.pdf",
+      "sourceAnswerPdfUrl": "https://www.shiken.or.jp/chief/upload/20250831_ch_third_a01.pdf",
+      "reviewedFromPage": [
+        22,
+        23
+      ]
+    }
+  ],
+  "draftModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 7106,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 11379,
+      "webSearchRequests": 0,
+      "costUSD": 0.2334158,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 2973,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "8434c328595dfcefda1432e9b15458204a238d3e3783e8e0357eb74674c44b85",
+  "inputRequestSha256": "b65385a1bf3be4e8c681a8c299c568c5d470196b849795624cbd66accd3ebbfb",
+  "sourceQuestionPdfSha256": "11a75ffd5dd2b5309ad75370bb963c4fda9e12a812174cfa2c2237383c3a964d",
+  "sourceAnswerPdfSha256": "76fd3715ed487d19a56b387fb402de20ee09474e9fa55b0413f9037b96af06c9",
+  "sourcePageImageSha256": {
+    "data/raw_pdfs/denken3/review/20250831/theory/p22.png": "d593ba1982a20ab338fddb7770923567b8b68cbff632c96fb759ec150247166b",
+    "data/raw_pdfs/denken3/review/20250831/theory/p23.png": "2419acf01bb613dae3019dbf561cdeb296f98e8868a0683e5d8f2b1daae6076a"
+  },
+  "revisionHistory": [
+    {
+      "version": 1,
+      "model": "claude-opus-5-5",
+      "resolvedModel": "claude-opus-5-5",
+      "modelUsage": {
+        "claude-opus-5-5": {
+          "inputTokens": 2,
+          "outputTokens": 6046,
+          "cacheReadInputTokens": 1279,
+          "cacheCreationInputTokens": 19777,
+          "webSearchRequests": 0,
+          "costUSD": 0.2793998,
+          "contextWindow": 1000000,
+          "maxOutputTokens": 128000,
+          "thinkingTokens": 2051,
+          "canonicalModel": "claude-opus-5-5",
+          "provider": "firstParty",
+          "costBasis": "list"
+        }
+      },
+      "rawResponseSha256": "4814f9ea826fba31ba0934d86ba93af9e37f022ad1e3e032ed31d64250c27197",
+      "inputRequestSha256": "52e21ed4aaeb7c482cd0fcc92abaa9fd710a3eb5893d3afdb6ef4334f6321104",
+      "previousDraftSha256": "d8b48cd3c0c3c8c87f4a7d8b541f9b55419858c7353779963a1715ff5150b79e",
+      "previousDraft": "data/raw_pdfs/denken3/review/20250831/theory/archive/q18-vision-draft-v1.json",
+      "answeredReviewSha256": "6f542502e4259c33921e4d853b40ef09967423df576f7091e46aeea06c3ed2ac",
+      "answeredReview": "data/raw_pdfs/denken3/review/20250831/theory/archive/q18-opus-review-v1.json",
+      "answeredStrictReceipt": "docs/evidence/denken3/strict/20250831-theory-s1-q18a-q18b-opus.json",
+      "answeredStrictReceiptSha256": "50eafffac562fa5024718b32d306866d595fd8719701c46f92a70da183d868fc",
+      "figureSha256": {
+        "20250831-theory-q18-fig1": "cdd5be0830205019b6944d3fec900a0e1e00637e20185504ced750d713968aad",
+        "20250831-theory-q18-fig2": "ebfcb62a2b2bcdccd45ed0ebc203925d9119d6ebf38aed985591a3f0a015cfda"
+      },
+      "referenceHashes": {},
+      "operatorNote": ""
+    }
+  ]
+}

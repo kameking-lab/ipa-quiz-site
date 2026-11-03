@@ -1,0 +1,76 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20240818",
+  "subject": "law",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 4,
+      "outputTokens": 3347,
+      "cacheReadInputTokens": 292904,
+      "cacheCreationInputTokens": 47993,
+      "webSearchRequests": 0,
+      "costUSD": 0.5094808,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 1804,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "9bad3742bd9ad9e82eca4e8805f9201b3e0129dbfc9b331a2878e8b91d413c2b",
+  "inputRequestSha256": "c67ca24d6e5f68cc872e04cde007e2cd8c56f725826c98e308cb3cbac8001879",
+  "inputHashes": {
+    "candidateSha256": {
+      "q07": "24596a347bca83c1db2d902715f292795e61bc809930e721d087c10fbc29f896"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20240818/law/p12.png": "b08a56424a77bc4adf5b6ce15e9e0841e6f7669e1999bfb19d33398dd1e1767f",
+      "data/raw_pdfs/denken3/review/20240818/law/p13.png": "6d48200b89c6090ff16352295aa1ae760c671c14ff4c0b2a2b2c922244c69571"
+    },
+    "figureSha256": {},
+    "sourceQuestionPdfSha256": "5dbba8b8e4ec681d2d5f0645a3895a6e218d936519ddd18ac544ddc461a1ae78",
+    "sourceAnswerPdfSha256": "f72ecbc3a477e64948388b69cf78cb931032c9f0c688639836c8d533a949cd0f",
+    "officialAnswerUnitsSha256": "de2520b3047d59147c23c352ff61012b6336a43d0888892826fef5e44778de7a",
+    "referencePdfSha256": {
+      "data/raw_pdfs/denken3/review/meti-denki-interpretation-20231226.pdf": "7ff56485cb405ecef67c5f81181370396e2cbb245e6fee41b926c0f5f1a73b43"
+    },
+    "referencePageSha256": {
+      "data/raw_pdfs/denken3/review/references/meti-denki-interpretation-20231226-p004.png": "402d8c15127dcfa17da93c61138d44f644a1768f03d445233677240716850d20",
+      "data/raw_pdfs/denken3/review/references/meti-denki-interpretation-20231226-p035.png": "30fb3e3df4d90ccc71c8cb273da74fe1b2e4d2c73425c1553f9dddb8c96be994",
+      "data/raw_pdfs/denken3/review/references/meti-denki-interpretation-20231226-p120.png": "d1ebf5a32b74f27487b31ee7b7bd31fead63219c962e4fc733a326754c4e18c3",
+      "data/raw_pdfs/denken3/review/references/meti-denki-interpretation-20231226-p224.png": "b817d46e9cba75eb0dd97f10478db04cfb3bf46424cbe2db5e7a3cb174ec1e6d",
+      "data/raw_pdfs/denken3/review/references/meti-denki-interpretation-20231226-p225.png": "ee6c622f1f2e6d801473f7db3c704d0e8812ad5554b5254e1679700aa05b8a72"
+    }
+  },
+  "assessment": [
+    {
+      "unitKey": "q07",
+      "questionNumber": 7,
+      "part": null,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "The question text matches the official original (the PDF pages printed as -9- and -10-, footer T1-H 012/013, i.e. reviewedFromPage [12,13]). Checked against it: the preamble (the 解釈-based sentence, the 逆変換装置 and 逆潮流有り conditions, and the sentence about installing relays at the 受電点 or another place where the abnormality can be detected); every cell of the table titled 「表 高圧連系時の保護リレー」 (seven rows, including where each blank sits and the ※1–※6 in the 補足事項 column); and the full text of ※1–※6 and a)–c), including where the blanks (ア), (ウ) and (エ) appear in the notes.",
+        "The candidate adds an editorial note that (エ) in the left column is a merged cell spanning three rows. This matches the merged cell in the original table and changes no meaning.",
+        "All five choices (1)–(5) for (ア)–(エ) match the official choice table cell by cell.",
+        "The official answer table (令和6年度上期 法規) gives 問7 = 5, which matches the candidate's officialAnswer of 5.",
+        "Checked against METI 解釈 第229条, PDF page 224. 一号イ covers 分散型電源の異常又は故障 and 一号ロ covers 連系している電力系統の短絡事故又は地絡事故. The 229-1 table's detected-abnormality names are 発電電圧異常上昇, 発電電圧異常低下, 系統側短絡事故, 系統側地絡事故 and 単独運転. The relay listed under 系統側地絡事故 is the 地絡過電圧リレー. Under 単独運転, the entries for 逆変換装置あり・逆潮流有り are 周波数上昇リレー ○※4, 周波数低下リレー ○, and 転送遮断装置又は単独運転検出装置 ○※5※6. This confirms (ア)発電電圧, (イ)系統側, (ウ)地絡過電圧 and (エ)単独運転.",
+        "Also on PDF page 224: the original ※3 says 「単独運転検出装置等により高速に単独運転を検出し…零相電圧を地絡過電圧リレーに取り込む場合は、省略できる」, and ※6 says 「単独運転検出装置は、能動的方式を1方式以上含む」. PDF page 225 contains ※6 items (1)–(3). All of these match the question's ※3 and ※6 a)–c) with the blanks filled in. The (ウ) and (エ) reasoning in the overall explanation can be verified directly from these original pages.",
+        "Explanation for choice 1: its only error is (ウ)電流差動. Correct.",
+        "Explanation for choice 2: its only error is (エ)逆充電. Correct.",
+        "Explanation for choice 3: all four of (ア)系統電圧, (イ)発電側, (ウ)電流差動 and (エ)逆充電 are wrong. Correct.",
+        "Explanation for choice 4: its errors are (ア)系統電圧 and (イ)発電側, while (ウ) and (エ) are right. Correct.",
+        "Explanation for choice 5: all four blanks are consistent with the 229-1 table and the notes. Correct.",
+        "Every claim in the explanations can be checked against the attached original pages (PDF pp. 224–225) at the pinned officialReferenceUrls, so no external confirmation is needed. The question uses a table only and has no figure, so figureUrls being empty is appropriate. The attached PDF pages 4, 35 and 120 (第1条, 第21条, 第117条) are not referenced by this question."
+      ]
+    }
+  ]
+}

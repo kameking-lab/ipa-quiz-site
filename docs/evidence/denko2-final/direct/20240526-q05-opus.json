@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "receiptKind": "canonicalized-direct-review",
+  "paper": "20240526",
+  "reviewModel": "claude-opus-5-5",
+  "upstreamReviewReceipt": "docs/evidence/denko2-strict-20240526/finalpin4-q05-16-42-43-opus.json",
+  "upstreamReviewSha256": "0803706f3aaac06e1a991caf82ac595e7b808c468ed7293d32bd3ae4785488da",
+  "candidateEquivalenceProof": "current per-question candidate hash equals a clean source-aware direct Opus input hash",
+  "inputHashes": {
+    "draftSha256": "59026be427204bd70e25f441475e78a112c12a222b32f290504e7339296555bb",
+    "rowSha256": {
+      "5": "416ca8c0ee369a56acd30921c00401dbef5072d939dbc1214dd7aa1d6eec0ac9"
+    },
+    "detailFigureSha256": {
+      "public/images/denko2/2024-first/q5.png": "57e1d0b947eb40d0969ab27e67cca4e763582e68e819750124274c0b86346fb7"
+    },
+    "sharedFigureSha256": {},
+    "legalReceiptSha256": {}
+  },
+  "assessment": [
+    {
+      "number": 5,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "visualIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": "Checked against the official figure and the official answer (ロ). The source figure shows a 3φ3W 200 V supply with three 10 Ω resistors in Y connection. The three 200 V arrows run upper–middle, middle–lower, and the outer upper–lower span. I is shown on the top line. Recalculated: 200/√3 ≈ 115.47 V, and 115.47/10 ≈ 11.55 A, which matches ロ 11.6. The reasons given for イ, ハ and ニ are numerically correct. The q5.png crop covers the whole source figure with nothing missing. The question makes no legal claims."
+    }
+  ]
+}

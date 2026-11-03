@@ -1,0 +1,61 @@
+{
+  "reviewModel": "claude-opus-5-5",
+  "requestedModel": "claude-opus-5-5",
+  "canonicalModel": "claude-opus-5-5",
+  "provider": "firstParty",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 3892,
+      "cacheReadInputTokens": 2155,
+      "cacheCreationInputTokens": 16214,
+      "webSearchRequests": 0,
+      "costUSD": 0.20799099999999998,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 2821,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "paperId": "emkohyo-20260217",
+  "ids": [
+    "emkohyo-20260217-q5"
+  ],
+  "figureSha256": {
+    "emkohyo-20260217-q5": {}
+  },
+  "officialRowImageSha256": {
+    "emkohyo-20260217-q5": {
+      "/exam-library/emkohyo-20260217/q5-p5-0.webp": "cb5db5581fc744d19d73d153843aa9d61944117825eb6009d7ffe2170a568827"
+    }
+  },
+  "officialPageImageSha256": {},
+  "governmentSourceImageSha256": {},
+  "candidateSha256": {
+    "emkohyo-20260217-q5": "e14ab18339e5b823316f4dbb0d5a9426e2b725279aca18cf87617621d0189f81"
+  },
+  "sourcePackPath": "docs/evidence/emkohyo-choice-sources/emkohyo-20260217-q05-05.json",
+  "sourcePackSha256": "f4b337e9c1f2fa7f64bc57afc0b2db1eb58c3d6e839c4b1372a07d55dc771c61",
+  "assessment": {
+    "emkohyo-20260217-q5": {
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "reasonIssues": [
+        "肢1: 「温度が一定なら比例定数は一定なので、液体と反応せず、溶解度が小さい気体では、溶液が希薄という条件を満たす」は因果がつながっていない。『なので』の前は比例定数が一定であること、後ろは希薄溶液の条件を満たすことで、無関係な二つの事実を因果で結んでいる。次の二文に分けるべき。①溶解度が小さく反応しない気体では、溶液が希薄で、溶質が溶液中で化学変化しないというヘンリーの法則の前提を満たす。②温度が一定なら比例定数も一定なので、濃度（一定量の液体では溶解質量）が圧力に比例する。",
+        "肢4: 蒸気密度の比較の根拠である「同温同圧の気体の密度は分子量に比例する」（理想気体の法則）は、引用した環境省の表には書かれていない一般原理である。一般原理であることを明示すること。たとえば『気体の状態方程式より同温同圧では密度∝分子量』と書く。"
+      ],
+      "sourceIssues": [
+        "肢4: 環境省測定マニュアル p.4 の抜粋に表の列見出しが含まれず、58.0／3.79 の単位が kPa であることを証拠上確認できない。同じ列どうしの比較なので大小の結論は単位に依存せず支持される。ただし肢4の理由文にある『kPa』と、summary の『約435mmHg／約28mmHg』への換算（58.0kPa≒435mmHg、3.79kPa≒28.4mmHg。換算自体は正しい）は、単位が kPa であることを前提にしている。",
+        "肢4: 蒸気密度∝分子量という原理を直接支える政府資料が sources にない。表は分子量の数値を支えるだけである。",
+        "肢5: 厚労省意見交換会資料（001343235.pdf p.20）は、DMF をトルエンと緩衝液 PBS のそれぞれに混合した経皮透過実験の口述記録である。『脂溶性と水溶性をともに有する』ことを直接述べていない。実験条件から間接的に読み取れるだけなので、補強資料と位置づけるか削除すべき。主根拠は国立環境研究所 KIS-NET の『水、多くの有機溶媒に易溶』で足りる。",
+        "肢2・肢5: 産総研用語集と国立環境研究所は国立研究開発法人の資料で、狭義の政府（省庁）一次資料ではない。記述内容は定義・物性を直接示しており、根拠としての適格性に問題はない。"
+      ],
+      "needsExternalCheck": [
+        "環境省 有害大気汚染物質測定方法マニュアル（01_chpt1-2-1.pdf）p.4 の物理的性質表で、蒸気圧列の見出し単位が kPa であることを原本で確認する。"
+      ]
+    }
+  }
+}

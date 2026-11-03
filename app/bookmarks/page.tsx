@@ -24,6 +24,8 @@ import type { Question, Season, Session } from "@/lib/questions/types";
  * Falls back to "am" for any non-conforming id.
  */
 function sessionFromId(id: string): Session {
+  const scoped = /^(?:kaikeishi-\d{4}-(?:I|II)-(kigyo|kanri|kansa|zaimu)|kanteishi-\d{4}-(gyosei|riron))-q\d+$/.exec(id);
+  if (scoped) return (scoped[1] ?? scoped[2]) as Session;
   const match = /^[a-z]+-\d{4}[a-z]-(am\d?|pm\d?)-q\d+$/.exec(id);
   return (match?.[1] ?? "am") as Session;
 }
@@ -206,7 +208,7 @@ export default function BookmarksPage() {
               : "ブックマークがありません"}
           </p>
           <Link
-            href="/"
+            href="/ipa"
             className="mt-2 rounded-lg bg-blue-600 px-4 py-2 text-sm font-medium text-white transition hover:bg-blue-700"
           >
             問題を解く

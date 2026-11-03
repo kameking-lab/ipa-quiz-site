@@ -1,3 +1,5 @@
+import { PUBLISHED_SENTAKU } from "@/lib/sharoushi/sentaku";
+import { practiceSessionLabel } from "@/lib/questions/practice-session";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
@@ -8,6 +10,8 @@ import { examLabel } from "@/lib/utils";
 import { SITE_BASE_URL, SITE_NAME } from "@/lib/seo/config";
 import { ORG_ID, buildOrgNode } from "@/lib/seo/structured-data";
 import { EXAM_STATS } from "@/lib/seo/exam-stats";
+import { FP2_PRACTICAL_EDITIONS, getPracticalEdition } from "@/lib/fp2/practical";
+import { FP3_PRACTICAL_EDITIONS, getPracticalEdition as getFp3PracticalEdition } from "@/lib/fp3/practical";
 import {
   EXAM_DESCRIPTIONS,
   examFullName,
@@ -24,6 +28,8 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import dynamic from "next/dynamic";
 import { ExamAiTransparencyNote } from "@/components/exam/ExamAiTransparencyNote";
+import { KanriCoverageNote } from "@/components/exam/KanriCoverageNote";
+import { Tsushin1CoverageNote } from "@/components/exam/Tsushin1CoverageNote";
 const ExamBrowseTabs = dynamic(
   () => import("@/components/exam/ExamBrowseTabs").then((m) => m.ExamBrowseTabs),
   {
@@ -34,6 +40,8 @@ const ExamBrowseTabs = dynamic(
 );
 import { ExamOfficialResources } from "@/components/exam/ExamOfficialResources";
 import { ExamRoadmap } from "@/components/exam/ExamRoadmap";
+import { ExamNoteGuide } from "@/components/exam/ExamNoteGuide";
+import { ExamNoteMaterialIndex } from "@/components/exam/ExamNoteMaterialIndex";
 import {
   ExamDeepLead,
   ExamMainTopics,
@@ -53,6 +61,8 @@ const ExamProgressBar = dynamic(
 import {
   RECOMMENDED_BOOKS,
   buildAmazonUrl,
+  getAmazonAssociateTag,
+  getAmazonLinkDisclosure,
   getDifficultyLabel,
   isAsinFilled,
 } from "@/data/recommended-books";
@@ -60,15 +70,27 @@ import { getBlogPostsByExam } from "@/data/blog";
 import { getRelatedSuccessStoriesByExam } from "@/lib/success-stories/related-content";
 import { EXAM_ROADMAP } from "@/lib/seo/exam-resources";
 import { getQualificationByExamCode } from "@/lib/qualifications/catalog";
+import ahakiCoverage from "@/data/questions/ahaki/held-ids.json";
 
 export const dynamicParams = false;
+const fp2PracticalCount = FP2_PRACTICAL_EDITIONS.reduce(
+  (sum, edition) => sum + (getPracticalEdition(edition)?.questions.length ?? 0), 0,
+);
+const fp3PracticalCount = FP3_PRACTICAL_EDITIONS.reduce(
+  (sum, edition) => sum + (getFp3PracticalEdition(edition)?.questions.length ?? 0), 0,
+);
 
 interface RouteParams {
   exam: string;
 }
 
 export async function generateStaticParams(): Promise<RouteParams[]> {
-  return getAvailableExams().map((exam) => ({ exam }));
+  // Denken exams have dedicated launch pages under app/. Including them
+  // in this catch-all route's static params makes Next emit a conflicting
+  // fallback entry, which turns unknown one-segment URLs into soft 404s (200).
+  return getAvailableExams()
+    .filter((exam) => exam !== "denken3" && exam !== "denken2" && exam !== "denken1")
+    .map((exam) => ({ exam }));
 }
 
 export async function generateMetadata({
@@ -83,13 +105,15 @@ export async function generateMetadata({
   const code = exam as ExamCode;
   const count = getQuestionsByExamStrict(code).length;
   const title = examTopTitle(code);
-  const description = examMetaDescription(code, count);
+  const description = code === "sharoushi"
+    ? `第58・57回の全156原問から、択一式${count}原問と選択式${PUBLISHED_SENTAKU.length}原問、計${count + PUBLISHED_SENTAKU.length}原問を部分収録。選択式は1原問5空欄の原形で、公式正答と解説を確認できます。`
+    : examMetaDescription(code, count);
   const ogParams = new URLSearchParams({
     type: "exam",
     title: examLabel(code),
     subtitle: `${examLabel(code)} 過去問一覧`,
     body: description,
-    count: String(count),
+    count: String(count + (code === "sharoushi" ? PUBLISHED_SENTAKU.length : 0)),
   });
   const ogImageUrl = `${SITE_BASE_URL}/api/og?${ogParams.toString()}`;
   return {
@@ -118,7 +142,31 @@ export default async function ExamTopPage({
   if (!getAvailableExams().includes(exam as ExamCode)) notFound();
   const code = exam as ExamCode;
   const questions = getQuestionsByExamStrict(code);
-  const years = groupByYearSeason(questions);
+  const rigakuCoverage = code === "rigaku-ryohoshi" ? {
+    sixtyFirstAm: questions.filter((question) => question.year === 2026 && question.session === "am").length,
+    sixtyFirstPm: questions.filter((question) => question.year === 2026 && question.session === "pm").length,
+    sixtiethAm: questions.filter((question) => question.year === 2025 && question.session === "am").length,
+    sixtiethPm: questions.filter((question) => question.year === 2025 && question.session === "pm").length,
+    remaining: 400 - questions.length,
+  } : null;
+  const publishedOriginalCount = questions.length + (code === "sharoushi" ? PUBLISHED_SENTAKU.length : 0);
+  const years = groupByYearSeason(questions).map((group) => {
+    const items = questions.filter((q) => q.year === group.year && q.season === group.season);
+    const sessions = [...new Set(items.map((q) => q.session))];
+    const coverageLabels = sessions.map((session) => practiceSessionLabel(session, code));
+    return {
+      ...group,
+      // The card's badge owns the total question count. Keep this line for the
+      // covered range only so assistive technology and visual readers do not
+      // encounter a duplicated value such as "67問 67問".
+      coverage: code === "zoen2" || code === "zoen1" || code === "tsushin2" || code === "tsushin1"
+        ? "第一次検定の収録済み設問"
+        : coverageLabels.length === 1
+          ? `${coverageLabels[0]}のみ`
+          : coverageLabels.join("・"),
+      missingSpecialist: sessions.includes("am1") && !sessions.includes("am2"),
+    };
+  });
   const categories = groupByCategory(questions);
   const books = (RECOMMENDED_BOOKS[code] ?? []).slice(0, 3);
   const posts = getBlogPostsByExam(code).slice(0, 3);
@@ -132,7 +180,7 @@ export default async function ExamTopPage({
     "@type": "Course",
     "@id": `${absUrl}#course`,
     name: `${examFullName(code)} 過去問学習コース`,
-    description: examTopDescription(code, questions.length),
+    description: examTopDescription(code, publishedOriginalCount),
     url: absUrl,
     inLanguage: "ja",
     courseCode: code.toUpperCase(),
@@ -187,7 +235,7 @@ export default async function ExamTopPage({
         "@type": "CollectionPage",
         "@id": `${absUrl}#collection`,
         name: examTopTitle(code),
-        description: examTopDescription(code, questions.length),
+        description: examTopDescription(code, publishedOriginalCount),
         url: absUrl,
         inLanguage: "ja",
         about: { "@id": credentialId },
@@ -228,7 +276,11 @@ export default async function ExamTopPage({
   const hasAm1 = questions.some((q) => q.session === "am1");
   const hasAm2 = questions.some((q) => q.session === "am2");
   const isHighLevel = hasAm1 && hasAm2;
-  const summary = EXAM_DESCRIPTIONS[code] ?? `${examLabel(code)}の過去問演習。`;
+  const summary = code === "sc"
+    ? "掲載済みの午前I・午前II過去問を、年度・分野を選んで学べます。AI支援で作成した学習用解説と公式出典を確認できます。"
+    : code === "hokenshi" || code === "josanshi" || code === "rinsho-kensagishi" || code === "shinryo-hoshasengishi" || code === "sagyo-ryohoshi"
+    ? examMetaDescription(code, publishedOriginalCount)
+    : EXAM_DESCRIPTIONS[code] ?? `${examLabel(code)}の過去問演習。`;
 
   return (
     <main className="relative flex-1">
@@ -248,6 +300,15 @@ export default async function ExamTopPage({
               </Link>
             </li>
             <li aria-hidden="true">/</li>
+            <li>
+              <Link
+                href={externalQualification ? "/qualifications" : "/ipa"}
+                className="inline-block py-1.5 hover:underline"
+              >
+                {externalQualification ? "その他資格" : "IPA"}
+              </Link>
+            </li>
+            <li aria-hidden="true">/</li>
             <li aria-current="page" className="text-foreground">
               {examLabel(code)}
             </li>
@@ -264,20 +325,141 @@ export default async function ExamTopPage({
           </h1>
           <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{summary}</p>
           <div className="mt-3 flex flex-wrap gap-2 text-xs">
-            <Badge variant="outline">収録 {questions.length} 問</Badge>
+            <Badge variant="outline">収録 {publishedOriginalCount} 問</Badge>
             <Badge variant="outline">{years.length} 期分</Badge>
             <Badge variant="outline">{categories.length} 分野</Badge>
           </div>
+          {code === "fp1" && <p className="mt-3 text-sm text-muted-foreground">金融財政事情研究会の1級学科試験を収録。2026年5月は基礎全50問と応用全15原問62回答欄、2026年9月は基礎全50問と応用全15原問57回答欄を掲載しています。</p>}
+          {code === "fp1" && <p className="mt-3 text-sm">
+            <Link href="/fp1/applied/202605" className="inline-flex min-h-[44px] items-center text-primary underline">2026年5月 学科応用編の問題一覧を見る（問51〜65・15原問・62回答欄）</Link>
+          </p>}
+          {code === "fp1" && <p className="mt-2 text-sm">
+            <Link href="/fp1/2026-september" className="inline-flex min-h-[44px] items-center text-primary underline">2026年9月 学科基礎編を解く（50問）</Link>
+          </p>}
+          {code === "fp1" && <p className="mt-2 text-sm"><Link href="/fp1/applied/202609" className="inline-flex min-h-[44px] items-center text-primary underline">2026年9月 学科応用編を解く（問51–65・15原問57回答欄）</Link></p>}
+          {code === "denko1" && <p className="mt-3 text-sm text-muted-foreground">令和7年度下期の学科試験50問と、令和8年度上期CBT方式で試験センターが公表した出題例50問を収録しています。いずれも一般問題40問・配線図問題10問です。</p>}
+          {code === "shakai" && <p className="mt-3 text-sm leading-relaxed text-muted-foreground">第38回（令和7年度）社会福祉士国家試験の全129問（共通科目84問・専門科目45問）を収録しています。「2つ選びなさい」の問題は2つ選ぶと採点します。出典は公益財団法人社会福祉振興・試験センター。解説は過去問AIが独自に作成したもので、同センターとは関係ありません。過去問題には、その後の法改正等により現時点では問題として成立していないものが含まれる場合があります。</p>}
+          {code === "seishin" && <p className="mt-3 text-sm leading-relaxed text-muted-foreground">第27回・第28回（令和6・7年度）精神保健福祉士国家試験の専門科目（各48問）と、社会福祉士と同じ共通科目（第28回84問、第27回は掲載保留3問を除く81問）を収録しています。出典は公益財団法人社会福祉振興・試験センター。解説は過去問AIが独自に作成したもので、同センターとは関係ありません。過去問題には、その後の法改正等により現時点では問題として成立していないものが含まれる場合があります。</p>}
+          {code === "kaigo" && <p className="mt-3 text-sm leading-relaxed text-muted-foreground">第37回・第38回（令和6・7年度）介護福祉士国家試験の全250問（各125問、総合問題を含む）を収録しています。出典は公益財団法人社会福祉振興・試験センター。解説は過去問AIが独自に作成したもので、同センターとは関係ありません。過去問題には、その後の法改正等により現時点では問題として成立していないものが含まれる場合があります。</p>}
+          {code === "tohan" && <p className="mt-3 text-sm text-muted-foreground">関西広域連合（滋賀・京都・大阪・兵庫・和歌山・奈良・徳島）が令和7年8月23日に実施した試験の全120問を収録しています。解説は厚生労働省「試験問題の作成に関する手引き（令和7年4月）」に沿って作成しています。</p>}
+          {code === "kanri" && <KanriCoverageNote questions={questions} />}
+          {code === "civil2" && <p className="mt-3 text-sm text-muted-foreground">令和8年度前期と令和7年度10月実施分の第一次検定（土木）各全66問を収録。実試験ではNo.1〜5とNo.48〜66が必須、No.6〜16から9問、No.17〜36から6問、No.37〜47から6問を選びます。演習では全問を自由に解けます。</p>}
+          {code === "kankoji2" && <p className="mt-3 text-sm text-muted-foreground">令和8年度前期と令和7年度後期の第一次検定を各全52問収録。実試験ではNo.1〜6・No.24〜28・No.49〜52が必須、No.7〜23から9問、No.29〜38から8問、No.39〜48から8問を選びます。No.49〜52は正解が二つあり、両方を選ぶと正解です。演習では全問を自由に解けます。</p>}
+          {code === "zoen2" && <p className="mt-3 text-sm text-muted-foreground">令和8年度前期と令和7年度後期の第一次検定を各全40問、計80問収録しています。各回とも実試験は40問全て必須です。公式問題・正答、図表、全選択肢の解説を確認できます。No.37〜40は複数の正答を全て選ぶ形式です。</p>}
+          {code === "zoen1" && <p className="mt-3 text-sm text-muted-foreground">令和8年度の第一次検定から、公式問題・正答と照合した設問を順次収録しています。実試験は問題Aの36問と問題Bの29問が全て必須です。問題BのNo.24〜29は正解番号を全て選びます。ここでは収録済み設問のみを演習できます。</p>}
+          {code === "tsushin2" && <p className="mt-3 text-sm text-muted-foreground">令和8年度前期の第一次検定から、公式問題・正答と照合した設問を順次収録しています。実試験は全65問のうち、設問群ごとの選択・必須条件に従って40問を解答します。現在の収録数は上記のバッジをご確認ください。</p>}
+          {code === "tsushin1" && <Tsushin1CoverageNote questionCount={questions.length} />}
+          {code === "soukan" && <p className="mt-3 text-sm leading-relaxed text-muted-foreground">公益社団法人日本技術士会が公表した令和7年度・令和8年度の技術士第二次試験 総合技術監理部門 必須科目Ⅰ－1（択一式、各年度40問・五肢択一）から{questions.length}問を収録。法令・制度は各年度の問題冊子が示す基準日（令和7年度は2025年4月1日、令和8年度は2026年4月1日）時点です。出典：公益社団法人日本技術士会。解説は過去問AIの独自作成で、日本技術士会とは関係ありません。</p>}
+          {code === "civil1" && <p className="mt-3 text-sm text-muted-foreground">令和8年度（7月5日実施）の第一次検定を収録。試験問題AはNo.1〜5が必須、No.6〜20から12問、No.21〜54から10問、No.55〜66から8問を選び、試験問題BはNo.1〜35の全問が必須です。演習では全問を自由に解けます。問題BのNo.7は解説の確認中のため未収録です。</p>}
+          {code === "mankan" && <p className="mt-3 text-sm leading-relaxed text-muted-foreground">公益財団法人マンション管理センターが公表した令和6年度・令和7年度のマンション管理士試験（各50問・四肢択一）から{questions.length}問を収録。法令・制度は各年度の問題冊子が示す基準日（令和6年度は2024年4月1日、令和7年度は2025年4月1日）時点です。令和6年度問40は公式正解の法的根拠に一次資料で到達できず保留しています。出典：公益財団法人マンション管理センター。解説は過去問AIの独自作成で、同センターとは関係ありません。</p>}
+          {code === "kashikin" && <p className="mt-3 text-sm leading-relaxed text-muted-foreground">一般社団法人日本貸金業協会が公表した第20回（令和7年度）・第19回（令和6年度）の貸金業務取扱主任者資格試験問題（各回50問・四肢択一）から{questions.length}問を収録。法令・制度は各回の試験実施日時点です。出典：一般社団法人日本貸金業協会。解説は過去問AIの独自作成で、日本貸金業協会とは関係ありません。</p>}
+          {code === "sharoushi" && <p className="mt-3 text-sm leading-relaxed text-muted-foreground">第58・57回の全156原問のうち、択一式{questions.length}原問と選択式{PUBLISHED_SENTAKU.length}原問、計{questions.length + PUBLISHED_SENTAKU.length}原問を部分収録しています。選択式は1原問に5空欄あり、空欄を原問数に加算しません。労基安衛は両回で16問、労災保険法・雇用保険法・健康保険法・一般常識は一次根拠を確認できた問題だけを収録しています。択一式は各回7科目70問で、科目ごとに問1〜10があります。このサイトでは科目別に番号を保持し、選択式とは分けて表示します。選択肢は原本どおりA〜Eで表示します。法令・行政解釈は第58回が2026年4月10日、第57回が2025年4月11日時点です。統計問題は各問題文が指定する調査年度の原表に基づきます。出典：全国社会保険労務士会連合会 試験センター（問題・正答）。解説は過去問AIの独自作成です。</p>}
+          {code === "sharoushi" && <p className="mt-3 text-sm"><Link href="/sharoushi/sentaku" className="inline-flex min-h-[44px] items-center text-primary underline">選択式の問題一覧（{PUBLISHED_SENTAKU.length}原問・{PUBLISHED_SENTAKU.length * 5}空欄）</Link></p>}
+          {code === "kangoshi" && <p className="mt-3 text-sm leading-relaxed text-muted-foreground">午前235問と午後229問、計{questions.length}原問を部分収録しています。第115・114回 午前 問1〜90のうち178問収録。午前 問91〜120の確認済み57原問と午後229原問を加え、計464原問を部分収録。第115回は午前117問・午後115問、第114回は午前118問・午後114問です。全1918肢の正誤理由と数値記入2問の計算過程を確認できます。第115回午前 問32は厚生労働省が採点対象から除外したため収録していません。第115回午前 問79と未確認問題・未整備図は未収録です。共通症例は各原問に保持し、図のある問は原本画像を表示します。出典：厚生労働省。問題文は改行・空白・番号整理のみ調整し、解説は過去問AIが独自に作成しています。</p>}
+          {rigakuCoverage && <p className="mt-3 text-sm leading-relaxed text-muted-foreground">第61・60回の午前・午後、計400原問のうち、原文・公式正答・五肢の解説を照合した{questions.length}原問を部分収録しています。第61回は午前{rigakuCoverage.sixtyFirstAm}問・午後{rigakuCoverage.sixtyFirstPm}問、第60回は午前{rigakuCoverage.sixtiethAm}問・午後{rigakuCoverage.sixtiethPm}問です。未収録{rigakuCoverage.remaining}原問には図表、公式正答の代替記載、説明根拠の確認待ちがあり、両回の完備ではありません。出典：厚生労働省。解説は過去問AIの独自作成です。</p>}
+          {code === "sagyo-ryohoshi" && <p className="mt-3 text-sm leading-relaxed text-muted-foreground">第61・60回の午前・午後問題から、原文・公式正答・全五肢の解説を確認した{questions.length}原問を部分収録しています。図・専門根拠・代替正答を確認中の問は未収録で、最新2回の午前・午後全体は未完備です。出典：厚生労働省。解説は過去問AIの独自作成です。</p>}
+          {code === "shino-kunrenshi" && <p className="mt-3 text-sm leading-relaxed text-muted-foreground">第56・55回の午前・午後問題から、原文・公式正答・全五肢の解説を確認した{questions.length}原問を部分収録しています。別冊図・専門根拠を確認中の問は未収録で、最新2回の午前・午後全体は未完備です。出典：厚生労働省。解説は過去問AIの独自作成です。</p>}
+          {code === "judo-seifukushi" && <p className="mt-3 text-sm leading-relaxed text-muted-foreground">第34・33回の午前128問・午後122問、各250原問のうち、原本・最終正答・全四肢の解説を確認した{questions.length}問を収録しています。必修は各回の午前問1〜50、一般は午前問51〜128と午後全問です。二つ選ぶ問題は両肢を選択し、第34回午前問67・第33回午前問39は公式に認められたいずれか一肢を選ぶ形式です。出典：公益財団法人柔道整復研修試験財団（問題）、厚生労働省（最終正答）。解説は過去問AIの独自作成です。</p>}
+{code === "rinsho-kogishi" && <p className="mt-3 text-sm leading-relaxed text-muted-foreground">第39・38回の午前・午後、全360問のうち原本・正答・全肢解説を確認した{questions.length}問を部分収録しています。図・専門根拠・原文の確認が残る問題は掲載していません。出典：公益財団法人医療機器センター。解説は過去問AIの独自作成です。</p>}
+          {(code === "gas-kou" || code === "gas-otsu" || code === "gas-hei") && <p className="mt-3 text-sm leading-relaxed text-muted-foreground">令和8・7年度の法令・基礎・ガス技術を科目別に収録しています。各年度の原問は法令16問、基礎15問、ガス技術27問です。実試験では法令16問に加え、基礎から10問、ガス技術から20問を選んで解答します。演習では全問を自由に解けます。出典：一般財団法人日本ガス機器検査協会。解説は過去問AIの独自作成です。 <Link href={`/${code}/essay`} className="font-medium underline">論述原問8題と独自解答例を読む</Link></p>}
+          {code === "ahaki-anma" && <p className="mt-3 text-sm leading-relaxed text-muted-foreground">第34・33回の全320原問から、原文と公式正答を照合した{questions.length}原問を部分収録しています（第34回159問・第33回159問）。未収録2原問は原文の字形または解説の根拠を確認中です。出典：公益財団法人東洋療法研修試験財団。解説は過去問AIの独自作成です。</p>}
+          {code === "ahaki-hari-kyu" && <p className="mt-3 text-sm leading-relaxed text-muted-foreground">第34・33回の全360原問から、原文と公式正答を照合した{questions.length}原問を部分収録しています（第34回180問・第33回179問）。午後問161〜170ははり師専用、問171〜180はきゅう師専用で、共通問題とともに一冊の原問として数え、二つの試験へ重複計上していません。未収録1原問は原文の字形または解説の根拠を確認中です。出典：公益財団法人東洋療法研修試験財団。解説は過去問AIの独自作成です。</p>}
+          {(code === "ahaki-anma" || code === "ahaki-hari-kyu") && (
+            <details className="mt-3 rounded-xl border border-border p-3 text-sm text-muted-foreground">
+              <summary className="cursor-pointer text-foreground">未収録の原問番号</summary>
+              <ul className="mt-2 space-y-1">
+                {ahakiCoverage.sections.filter((section) => section.exam === code).map((section) => (
+                  <li key={`${section.exam}-${section.year}-${section.session}`}>
+                    {section.year}年 {section.session === "am" ? "午前" : "午後"}：問{section.numbers.join("・")}
+                  </li>
+                ))}
+              </ul>
+            </details>
+          )}
         </header>
+
+        {code === "soukan" && (
+          <section aria-label="受験日程と受験条件" className="mb-8 rounded-2xl border border-border bg-card p-5">
+            <h2 className="font-semibold text-foreground">第二次試験の日程を確認する</h2>
+            <p className="mt-2 text-sm text-muted-foreground">
+              択一式の演習を進めながら、次の資格で技術士第二次試験の申込期間と試験日を確認できます。
+            </p>
+            <a
+              href="https://tsugino-shikaku.jp/shikaku/gijutsushi-second?utm_source=kakomon_ai&utm_medium=referral&utm_campaign=soukan_two_rounds"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-3 inline-flex min-h-11 items-center font-medium text-primary underline-offset-4 hover:underline"
+            >
+              次の資格で技術士第二次試験の日程を見る ↗
+            </a>
+          </section>
+        )}
+
+        {code === "eisei2" && (
+          <section aria-label="受験日程と受験条件" className="mb-8 rounded-2xl border border-border bg-card p-5">
+            <h2 className="font-semibold text-foreground">受験日程と受験条件を確認する</h2>
+            <p className="mt-2 text-sm text-muted-foreground">
+              公表問題の演習を進めながら、次の資格で今後の日程と申込条件を確認できます。
+            </p>
+            <a
+              href="https://tsugino-shikaku.jp/shikaku/eisei-kanrisha-2shu?utm_source=kakomon_ai&utm_medium=referral&utm_campaign=eisei2_two_editions"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-3 inline-flex min-h-11 items-center font-medium text-primary underline-offset-4 hover:underline"
+            >
+              次の資格で第二種衛生管理者の日程を見る ↗
+            </a>
+          </section>
+        )}
 
         {/* Big CTA */}
         <section aria-label="今すぐ解く" className="mb-8">
-          {isHighLevel ? (
+          {code === "sc" ? (
+            <div className="rounded-2xl border border-border bg-card p-4 shadow-sm sm:p-5">
+              <h2 className="text-sm font-semibold text-foreground">年度・分野を選んで始める</h2>
+              <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+                個別問題の閲覧は無料です。年度別で実施回を開き、午前I・午前IIの各問の「解説を見る」から問題・正答・解説を確認できます。
+              </p>
+              <nav aria-label="SCの問題を選ぶ" className="mt-3 grid gap-2 sm:grid-cols-2">
+                <Button asChild variant="outline" size="lg" className="w-full">
+                  <a href="#years">年度から問題を選ぶ</a>
+                </Button>
+                <Button asChild variant="outline" size="lg" className="w-full">
+                  <a href="#topics">分野から問題を選ぶ</a>
+                </Button>
+              </nav>
+              <div className="mt-4 border-t border-border pt-4">
+                <h3 className="text-sm font-semibold text-foreground">ランダムに続けて解く</h3>
+                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+                  連続演習はログインなしでも1日10問まで無料です。午前IIは専門問題、午前Iは共通問題です。
+                </p>
+                <div className="mt-3 grid gap-2 sm:grid-cols-2">
+                  <Button asChild variant="gradient" size="lg" className="w-full font-semibold">
+                    <Link href={`/quiz?mode=random&exam=${exam}&session=am2`}>午前IIを連続演習</Link>
+                  </Button>
+                  <Button asChild variant="outline" size="lg" className="w-full">
+                    <Link href={`/quiz?mode=random&exam=${exam}&session=am1`}>午前Iを連続演習</Link>
+                  </Button>
+                </div>
+              </div>
+            </div>
+          ) : code === "fp2" || code === "fp3" ? (
+            <div className="grid gap-3 sm:grid-cols-2">
+              <Button asChild variant="gradient" size="lg" className="w-full font-semibold">
+                <Link href={`/quiz?mode=random&exam=${code}&session=gakka`}>学科を解く</Link>
+              </Button>
+              <Button asChild variant="outline" size="lg" className="w-full font-semibold">
+                <Link href={`/${code}/practical`}>
+                  実技の問題と模範解答（{code === "fp2" ? fp2PracticalCount : fp3PracticalCount}問）
+                </Link>
+              </Button>
+            </div>
+          ) : isHighLevel ? (
             <div className="rounded-2xl border border-border bg-card p-5 shadow-sm">
               <h2 className="mb-3 text-sm font-semibold text-foreground">
                 ランダム出題の範囲を選択
               </h2>
-              <div className="grid gap-2 sm:grid-cols-3">
+              <div className="grid gap-2 sm:grid-cols-2">
                 <Button asChild variant="gradient" size="lg" className="font-semibold">
                   <Link href={`/quiz?mode=random&exam=${exam}&session=am2`}>
                     午前 II
@@ -285,9 +467,6 @@ export default async function ExamTopPage({
                 </Button>
                 <Button asChild variant="outline" size="lg">
                   <Link href={`/quiz?mode=random&exam=${exam}&session=am1`}>午前 I</Link>
-                </Button>
-                <Button asChild variant="outline" size="lg">
-                  <Link href={`/quiz?mode=random&exam=${exam}`}>午前 I＋II</Link>
                 </Button>
               </div>
             </div>
@@ -299,11 +478,35 @@ export default async function ExamTopPage({
               className="w-full font-semibold shadow-md hover:shadow-lg"
             >
               <Link href={`/quiz?mode=random&exam=${exam}`}>
-                いますぐランダム出題で解く
+                今すぐ解く
                 <ChevronRight className="h-4 w-4" />
               </Link>
             </Button>
           )}
+        </section>
+
+        {code === "denko2" && (
+          <section aria-label="技能試験" className="mb-8 rounded-2xl border border-blue-200 bg-blue-50 p-5">
+            <h2 className="text-lg font-bold text-slate-950">技能試験の問題図・完成例</h2>
+            <p className="mt-1 text-sm text-slate-700">試験日と候補No.から、施工条件、公式の概念図・複線図・完成作品例を確認できます。</p>
+            <Button asChild variant="outline" className="mt-4 bg-white">
+              <Link href="/denko2/skill">技能試験を探す <ChevronRight className="h-4 w-4" /></Link>
+            </Button>
+          </section>
+        )}
+
+        {/* Browse tabs */}
+        <section aria-label="問題を探す" className="mb-8">
+          {/* Deep-link targets for sitemap "年度別一覧 (#years)" / "分野別一覧 (#topics)".
+              ExamBrowseTabs reads the hash to pre-select the matching tab. */}
+          <span id="years" aria-hidden className="block scroll-mt-20" />
+          <span id="topics" aria-hidden className="block scroll-mt-20" />
+          <ExamBrowseTabs exam={code} years={years} categories={categories} />
+        </section>
+
+        {/* Progress */}
+        <section aria-label="進捗" className="mb-8">
+          <ExamProgressBar exam={code} totalQuestions={questions.length} />
         </section>
 
         {/* Stats: pass rate / study hours / topic trend */}
@@ -385,19 +588,8 @@ export default async function ExamTopPage({
         {/* Official IPA resources — E-E-A-T */}
         <ExamOfficialResources exam={code} />
 
-        {/* Browse tabs */}
-        <section aria-label="問題を探す" className="mb-8">
-          {/* Deep-link targets for sitemap "年度別一覧 (#years)" / "分野別一覧 (#topics)".
-              ExamBrowseTabs reads the hash to pre-select the matching tab. */}
-          <span id="years" aria-hidden className="block scroll-mt-20" />
-          <span id="topics" aria-hidden className="block scroll-mt-20" />
-          <ExamBrowseTabs exam={code} years={years} categories={categories} />
-        </section>
-
-        {/* Progress */}
-        <section aria-label="進捗" className="mb-8">
-          <ExamProgressBar exam={code} totalQuestions={questions.length} />
-        </section>
+        <ExamNoteGuide exam={code} />
+        <ExamNoteMaterialIndex exam={code} />
 
         {/* Recommended books */}
         {books.length > 0 && (
@@ -433,11 +625,11 @@ export default async function ExamTopPage({
                     </div>
                     {isAsinFilled(b.asin) && (
                       <div className="flex shrink-0 flex-col items-end gap-0.5">
-                        <span className="text-[9px] text-zinc-400 dark:text-zinc-500">PR</span>
+                        {getAmazonAssociateTag(`/${code}`) && <span className="text-[9px] text-zinc-400 dark:text-zinc-500">PR</span>}
                         <a
-                          href={buildAmazonUrl(b.asin)}
+                          href={buildAmazonUrl(b.asin, `/${code}`)}
                           target="_blank"
-                          rel="noopener noreferrer sponsored"
+                          rel={getAmazonAssociateTag(`/${code}`) ? "noopener noreferrer sponsored" : "noopener noreferrer"}
                           className="inline-flex items-center justify-center rounded-lg bg-amber-500 px-3 py-2 text-xs font-semibold text-white hover:bg-amber-600"
                           style={{ minWidth: 88, minHeight: 44 }}
                         >
@@ -449,6 +641,11 @@ export default async function ExamTopPage({
                 </li>
               ))}
             </ul>
+            {code === "ip" && (
+              <p className="mt-3 text-xs leading-relaxed text-muted-foreground">
+                {getAmazonLinkDisclosure(`/${code}`)}
+              </p>
+            )}
           </section>
         )}
 
@@ -470,7 +667,7 @@ export default async function ExamTopPage({
             {(["st", "sa", "pm", "sm", "au"] as ExamCode[]).includes(code) ? (
               <>
                 <p className="mb-3 text-sm leading-relaxed text-muted-foreground">
-                  IPA 元採点者プロンプトで AI が「適合度／論理性／具体性／業種事例」の 4 軸で採点。
+                  AI が学習用の「適合度／論理性／具体性／業種事例」の 4 観点で評価。
                   業種別の合格答案サンプルも参照しながら、設問ア・イ・ウを段階的に仕上げます。
                 </p>
                 <div className="flex flex-wrap gap-2">
@@ -598,21 +795,24 @@ export default async function ExamTopPage({
           </section>
         )}
 
-        {/* Related success stories */}
+        {/* Fictional learning cases — labels must not imply real testimonials. */}
         {successStories.length > 0 && (
-          <section aria-label="合格体験記" className="mb-8">
+          <section aria-label="架空の学習ケース" className="mb-8">
             <div className="mb-3 flex items-center justify-between">
               <h2 className="flex items-center gap-2 text-base font-semibold text-foreground">
                 <FileText className="h-4 w-4 text-muted-foreground" />
-                {examLabel(code)} 合格体験記
+                {examLabel(code)} 学習ケース（架空）
               </h2>
               <Link
                 href={`/success-stories/${exam}`}
                 className="text-xs text-sky-600 hover:underline dark:text-sky-400"
               >
-                すべて見る →
+                ケース一覧 →
               </Link>
             </div>
+            <p className="mb-3 text-xs leading-relaxed text-muted-foreground">
+              実在の合格者の証言ではなく、学習上の判断例を示す架空ケースです。
+            </p>
             <ul className="space-y-2">
               {successStories.map((s) => (
                 <li key={s.slug}>
@@ -643,6 +843,8 @@ export default async function ExamTopPage({
             </ul>
           </section>
         )}
+
+        {/* Qualification hubs have no completed page-specific ad review. */}
       </div>
     </main>
   );

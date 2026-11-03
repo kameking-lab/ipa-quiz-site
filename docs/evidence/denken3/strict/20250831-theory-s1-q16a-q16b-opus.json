@@ -1,0 +1,101 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20250831",
+  "subject": "theory",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 5402,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 18281,
+      "webSearchRequests": 0,
+      "costUSD": 0.2545518,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 3053,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "d4ed20ceb7ded06137febe4594eadc9e9445cec67fff1f98a5bef2144bd7ec47",
+  "inputRequestSha256": "bb12eae0ff5de489b2c8a39fe46dda7824666d4f3cfef57b37c1b11778eba054",
+  "inputHashes": {
+    "candidateSha256": {
+      "q16a": "e08f2c95ca85e882b3ce89836948a5613466f95406798abf6d4a26ca634401d1",
+      "q16b": "a9c3e3de4ec255cc44ec385ba8891fe1c593febe4fa6233543b4efdc8c1d8afa"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20250831/theory/p19.png": "5885bbad7b51bf9f4f172e31bd3a2e5e19bc033244c18d33de09777edbfca849"
+    },
+    "figureSha256": {
+      "public/images/denken3/20250831/theory/20250831-theory-q16-fig1.png": "076f6ef5cbb10352f9de60450fc60e54d042a5642c8750951fa743c2dad6eb50"
+    },
+    "sourceQuestionPdfSha256": "11a75ffd5dd2b5309ad75370bb963c4fda9e12a812174cfa2c2237383c3a964d",
+    "sourceAnswerPdfSha256": "76fd3715ed487d19a56b387fb402de20ee09474e9fa55b0413f9037b96af06c9",
+    "officialAnswerUnitsSha256": "a56a1e28c8a1e77d4386ae0febe4357f89bd3b41749030699517cd0838f3ee5e",
+    "referencePdfSha256": {},
+    "referencePageSha256": {},
+    "referenceJsonSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q16a",
+      "questionNumber": 16,
+      "part": "a",
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [
+        "総合解説は「節点 Q」「節点 M」を前提に説明しているが、どちらも解説本文では定義されていない。公開候補図にも P/Q/M のラベルはなく、定義は figureDescription にしかない。そのため図と解説だけを見る利用者には、どの接続点を指すのか特定できない。解説本文で定義を補うこと。例：「R₁ の右端・R₂ の左端・端子 A がつながる節点 M」「R₀ の下端・R₂ の右端・端子 B がつながる節点 Q」。"
+      ],
+      "figureIssues": [],
+      "sourceIssues": [
+        "uncertainty 欄は「公式の一次資料 URL は特定できていない」としているが、実際には sourceQuestionPdfUrl と sourceAnswerPdfUrl が設定されている。また添付の公式解答表の原図には「令和7年度 第三種電気主任技術者上期試験解答」と明記されている。メタデータと uncertainty の記述が矛盾しているので、uncertainty を実態に合わせて書き直すこと。",
+        "examDate=2025-08-31 と、2つの URL が添付原図と同一の文書を指すことは、添付資料からは検証できない。問題原図の頁に年度・日付の記載はなく、解答表にも実施日の記載がない。ファイル名 20250831 からの推定にとどまるため、外部確認事項として残る。"
+      ],
+      "verifiedEvidence": [
+        "問題文・条件Ⅰ〜Ⅲ・(a) の設問文・選択肢 (1)0.1 (2)0.9 (3)4 (4)9.6 (5)9.96 を、問題原図と一字ずつ照合して一致を確認した。",
+        "公式解答表（理論）では問16(a)=1・配点5で、officialAnswer=1、scoringPoints=5 と一致する。",
+        "原図の頁下部に「- 16 -」「T1－R 019」とあり、reviewedFromPage=[19] と整合する。",
+        "回路の接続を確認した：＋→コイル r→P、P→R₃→C、P→R₀→Q→B、＋側接続点→R₁→M→A、M→R₂→Q、可動片は－端子につながる。",
+        "スイッチ B では R₃ の経路が開放になる。0.004×24=0.096 V、0.096/0.096 A より R₁+R₂=1 Ω。",
+        "スイッチ A では 0.004(24+R₂)=0.996R₁ となる。R₂=1−R₁ を代入すると R₁=0.1 Ω、R₂=0.9 Ω。検算 0.0996/0.1+0.004=1 A も一致した。",
+        "誤答肢(2)を検算した：R₁=0.9、R₂=0.1 のとき 0.004×24.1/0.9+0.004≒0.111 A。",
+        "誤答肢(3)〜(5)は R₂ が負になり成立しないという理由が正しいことを確認した。",
+        "公開候補図は原図の回路部分と同一で、接続点の黒丸、4 mA の矢印の向き、r・R₀・R₁・R₂・R₃・A・B・C・＋・－・コイル・切り替えスイッチの全ラベルが欠けずに判読できる。",
+        "figureDescription の接続記述が図と一致することを確認した。"
+      ]
+    },
+    {
+      "unitKey": "q16b",
+      "questionNumber": 16,
+      "part": "b",
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [
+        "総合解説は「節点 P」を使っているが、解説本文でも公開候補図でも P の位置が定義されていない。定義は figureDescription にしかない。解説本文で「コイル r の右端・R₀ の上端・R₃ の左端がつながる節点 P」のように位置を補うこと。"
+      ],
+      "figureIssues": [],
+      "sourceIssues": [
+        "uncertainty 欄は「公式の一次資料 URL は特定できていない」としているが、実際には sourceQuestionPdfUrl と sourceAnswerPdfUrl が設定されている。また添付の公式解答表の原図には「令和7年度 第三種電気主任技術者上期試験解答」と明記されている。メタデータと uncertainty の記述が矛盾しているので、uncertainty を実態に合わせて書き直すこと。",
+        "examDate=2025-08-31 と、2つの URL が添付原図と同一の文書を指すことは、添付資料からは検証できない。問題原図の頁に年度・日付の記載はなく、解答表にも実施日の記載がない。ファイル名 20250831 からの推定にとどまるため、外部確認事項として残る。"
+      ],
+      "verifiedEvidence": [
+        "問題文・条件Ⅰ〜Ⅲ・(b) の設問文・選択肢 (1)2.36 (2)23.6 (3)25 (4)236 (5)2360 を、問題原図と一字ずつ照合して一致を確認した。",
+        "公式解答表（理論）では問16(b)=4・配点5で、officialAnswer=4、scoringPoints=5 と一致する。",
+        "スイッチ C では A・B が開放になり、コイル r=5 Ω に R₀+R₂+R₁=19+1=20 Ω が並列に入る。この部分の合成抵抗は 4 Ω。",
+        "コイル電流 4 mA のときの値を検算した：コイル両端 0.02 V、並列経路 1 mA、R₃ に 5 mA。0.02+0.005R₃=1.2 より R₃=236 Ω。",
+        "別経路でも検算した：1.2/(4+236)=5 mA、コイル分流は 5×20/25=4 mA で一致する。",
+        "誤答肢の数値を検算した：(1) 0.0318≒0.032 V、(2) 0.138 V、(3) 0.145 V。",
+        "誤答肢(5)を検算した：全抵抗 2364 Ω、全電流 0.508 mA、コイル電流 0.406 mA、コイル 4 mA に達する電圧 11.82 V。いずれも記載どおり。",
+        "公開候補図は原図の回路部分と同一で、全ラベル・接続点・R₃ から端子 C への配線が判読でき、(b) を図だけで解ける。"
+      ]
+    }
+  ]
+}

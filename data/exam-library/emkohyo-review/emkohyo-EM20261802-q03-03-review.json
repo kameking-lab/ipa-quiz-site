@@ -1,0 +1,50 @@
+{
+  "reviewModel": "claude-opus-5-5",
+  "requestedModel": "claude-opus-5-5",
+  "canonicalModel": "claude-opus-5-5",
+  "provider": "firstParty",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 2402,
+      "cacheReadInputTokens": 133532,
+      "cacheCreationInputTokens": 19290,
+      "webSearchRequests": 0,
+      "costUSD": 0.2290744,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 2318,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "paperId": "emkohyo-EM20261802",
+  "ids": [
+    "emkohyo-EM20261802-q3"
+  ],
+  "figureSha256": {
+    "emkohyo-EM20261802-q3": {}
+  },
+  "officialRowImageSha256": {
+    "emkohyo-EM20261802-q3": {
+      "/exam-library/emkohyo-EM20261802/q3-p4-0.webp": "103d1ccaf43cdb5493a0cea17e652db2f0c01ac9089d1667c2b97ed8faed2b7d"
+    }
+  },
+  "governmentSourceImageSha256": {},
+  "candidateSha256": {
+    "emkohyo-EM20261802-q3": "b7036cd1790436ede66fecc71625d7dfe5ae368955c74812887fe0b532bb9892"
+  },
+  "sourcePackPath": "docs/evidence/emkohyo-choice-sources/emkohyo-EM20261802-q03-03.json",
+  "sourcePackSha256": "6c3618caa8da76245d5e1fb79df520d92fe547d5d312e7604ba2e37f4b3db654",
+  "assessment": {
+    "emkohyo-EM20261802-q3": {
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "reasonIssues": [],
+      "sourceIssues": [],
+      "needsExternalCheck": []
+    }
+  }
+}

@@ -1,0 +1,153 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20250323",
+  "subject": "power",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 9853,
+      "cacheReadInputTokens": 140024,
+      "cacheCreationInputTokens": 25912,
+      "webSearchRequests": 0,
+      "costUSD": 0.4323688,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 5083,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "8e9a1fda64990718f82a6d0d904718bb292b377f1700744cce4654228aee2cdf",
+  "inputRequestSha256": "d25f497de3944dc7258d113cc3d7bf28b210adf6a1c9f8a283f35f84910fdfc0",
+  "inputHashes": {
+    "candidateSha256": {
+      "q14": "88d17672b2b6d1c974f77c54b8943f39e2701ca214ef97a5756d02a4a9cce718",
+      "q15a": "2d9a70eb6129b90f150cbed928334545aed81e2d6e84cf89b8f6aae808f9e508",
+      "q15b": "c1ca65b672e2a99fe1cae6729995eb0abfba9297c8cd27552ff2b47bc85edc31",
+      "q16a": "fd1e50aa31c09e5d57f8fa0d1bced63548e5dd28ff0b30d22fbc60915eedff4a",
+      "q16b": "884e6c40f155cde3b565cd1a7ed16279e427ab7e73910e391451bc638e3fba6b"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20250323/power/p17.png": "0040151e41162e286f2a62c75a51919c0d1fca8cd8816f3e96a0cac10c76b8eb",
+      "data/raw_pdfs/denken3/review/20250323/power/p18.png": "2fe923b923dd1b8f7825942c5bf27b7769977294de13fb8763c750f8e9df7076",
+      "data/raw_pdfs/denken3/review/20250323/power/p19.png": "14e228fd6b21309dcd6fb3c10eb58ee881c99a5c4295cac9446d133d7e60d5fd"
+    },
+    "figureSha256": {
+      "public/images/denken3/20250323/power/20250323-power-q16-t-circuit.png": "32e7cff240df97b6acfe3c978455ee11e169b4f89ad2647385ac56e2dc635314"
+    },
+    "sourceQuestionPdfSha256": "892785e0f1035bcb239eb30fa903d4c88adbcfdaa1b5b0edea2d1907fd887114",
+    "sourceAnswerPdfSha256": "4c3b38fcf1405766fafaa78b1b05b867a3d48307a670b9d354476bc6b32acd4c",
+    "officialAnswerUnitsSha256": "7a575a155bf6861bd3401cd9341ac1bd152d5facd3aefad9ebdc58f41b15a48f",
+    "referencePdfSha256": {},
+    "referencePageSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q14",
+      "questionNumber": 14,
+      "part": null,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [
+        "The explanation's numeric claims (hard-drawn copper wire about 97 %, soft-drawn copper wire about 100 %) do not appear in the official problem image, and none of the attached materials supports them. They are not needed to reach the answer. Either delete the numbers or add an official source that can be checked. (Original: 総合解説の数値「硬銅線 約97 ％」「軟銅線 約100 ％」は添付の公式問題原図にも添付資料にも根拠がなく、正答導出にも不要。数値を削除するか、検証可能な公式資料を付けること。)",
+        "The explanation ends with a meta note: 「なお数値（約97 ％、約100 ％）は一般的な知識であり、本問の原図・原文には示されていない」. This is internal review wording and should not appear in text shown to learners. It becomes unnecessary once the numbers are removed, so delete it too. (Original: 総合解説末尾のメタ注記は学習者向け本文に残すべき内容ではない。数値を削除すれば不要になるので併せて削除すること。)"
+      ],
+      "figureIssues": [],
+      "sourceIssues": [
+        "The candidate's own uncertainty field says the numbers are reference values from general knowledge. That is an outside fact that cannot be checked against the attached official image or any official reference material, so this unit cannot PASS as long as they remain. (Original: uncertainty 自身が数値を「一般知識に基づく参考値」としている。添付原図・公式参考資料で検証できない外部事項が残るため、このままでは PASS にできない。)"
+      ],
+      "verifiedEvidence": [
+        "The question text (polarity: pick the incorrect statement) and choices (1)–(5) match the official problem image exactly. (Original: 問題文「誤っているものを…一つ選べ」（否定極性）および(1)〜(5)全肢の文言が公式問題原図と一致。)",
+        "Official answer (4) is consistent with materials knowledge: annealing removes work strain, so conductivity goes up. The error in (4) is the phrase 「導電率は低くなる」 (conductivity decreases). (Original: 公式正答(4)は、焼なましで加工ひずみが除去され導電率が上がるという材料知識と整合。(4)の誤りは「導電率は低くなる」の部分。)",
+        "The reasons given for (1), (2), (3) and (5) being correct statements have no contradictions. (2) correctly uses the 20 ℃ basis stated in the original. (Original: (1)(2)(3)(5)の正しい理由に矛盾なし。(2)は原文どおり20 ℃基準を反映。)",
+        "No figure is needed, and figureUrls is empty, which is appropriate. reviewedFromPage=17 matches the page footer 「T2-D 017」 (printed page 14). (Original: 図なし・figureUrls空で妥当。reviewedFromPage=17 は原図フッタ「T2-D 017」（印刷頁14）と整合。)"
+      ]
+    },
+    {
+      "unitKey": "q15a",
+      "questionNumber": 15,
+      "part": "a",
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "The conditions (1 000 MW, efficiency 41 %, 44 000 kJ/kg, carbon 85 %, hydrogen 15 %, atomic weights C=12 and O=16), the unit t/h, and the choices 50/80/120/200/250 all match the official problem image. (Original: 条件（1 000 MW、効率41 %、44 000 kJ/kg、C85 %・H15 %、原子量C=12・O=16）、単位[t/h]、選択肢 50/80/120/200/250 が原図と一致。)",
+        "Recalculated: 1 000/0.41 = 2 439.0 MW, then ×3 600 = 8.7805×10⁹ kJ/h, then ÷44 000 = 1.99556×10⁵ kg/h, which is 199.6 t/h. That matches official answer (4) 200. (Original: 再計算 1 000/0.41=2 439.0 MW → ×3 600=8.7805×10⁹ kJ/h → ÷44 000=1.99556×10⁵ kg/h=199.6 t/h。公式正答(4) 200 と一致。)",
+        "The explanations for the wrong choices only say the value does not match, but none of them is wrong. For reference, (2) 80 matches the value you get if you leave out the efficiency: 1 000×3 600/44 000 ≈ 81.8. (Original: 誤答肢の解説は数値不一致の指摘で誤りはない（参考: (2)80 は効率を掛け忘れた 1 000×3 600/44 000≒81.8 に対応）。)",
+        "No figure, which is appropriate. reviewedFromPage=18 matches the footer 「T2-D 018」. (Original: 図なし妥当。reviewedFromPage=18 はフッタ「T2-D 018」と整合。)"
+      ]
+    },
+    {
+      "unitKey": "q15b",
+      "questionNumber": 15,
+      "part": "b",
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [
+        "The explanation writes 「622.0 × 24 ≒ 1.493×10⁴ t ≒ 15.0×10³ t」, but 1.493×10⁴ rounds to 14.9×10³ t at three significant figures. Choice explanations (1)–(5) use 「約14.9×10³ t」, so the two are inconsistent. Change it to something like 「≒ 14.9×10³ t で、最も近い選択肢は (3) 15.0×10³ t」 (about 14.9×10³ t; the closest choice is (3) 15.0×10³ t). (Original: 本文と選択肢解説(1)〜(5)の「約14.9×10³ t」が不整合。上記のように修正すること。)",
+        "Choice explanation (3) has the same problem: 「約1.49×10⁴ t ≒ 15.0×10³ t」 equates the calculated value with the choice value. Reword it to say the calculated value is about 14.9×10³ t and the closest choice is 15.0×10³ t. (Original: choiceExplanations(3) も計算値と選択肢値を等号的に結んでいる。同様に修正すること。)",
+        "Choice explanation (5) says 「ほぼ2倍」 (almost twice), but 28.0/14.93 ≈ 1.88. Change it to 「約1.9倍」 (about 1.9 times) or just state that it does not match. (Original: choiceExplanations(5) の「ほぼ2倍」を「約1.9倍」等に改めるか、単に不一致と記述すること。)"
+      ],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "The question text (CO₂ produced in one day, unit t) and choices 9.5/12.8/15.0/17.6/28.0 (×10³) match the official problem image. The candidate's added note 「(a)と同じ条件」 (same conditions as (a)) does not conflict with the original stem. (Original: 問題文（1日に発生するCO₂の重量[t]）と選択肢が原図と一致。追記の「(a)と同じ条件」は原文の柱書と矛盾しない。)",
+        "Recalculated: 199.556×0.85 = 169.62 t/h of carbon, then ×44/12 = 621.95 t/h of CO₂, then ×24 = 14 927 t ≈ 14.9×10³ t. The closest choice is (3) 15.0×10³, which matches the official answer. (Original: 再計算 炭素 169.62 t/h → CO₂ 621.95 t/h → ×24=14 927 t≒14.9×10³ t。最も近いのは(3) 15.0×10³ で公式正答と一致。)",
+        "The explanation correctly states that burning hydrogen does not produce CO₂, and the molecular weight 44 for CO₂ is correct. (Original: 水素燃焼でCO₂が生じない旨、CO₂分子量44の因果は正しい。)",
+        "No figure, which is appropriate. reviewedFromPage=18 matches the footer 「T2-D 018」. (Original: 図なし妥当。reviewedFromPage=18 はフッタ「T2-D 018」と整合。)"
+      ]
+    },
+    {
+      "unitKey": "q16a",
+      "questionNumber": 16,
+      "part": "a",
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "r=20 Ω, x=80 Ω, Y=0.0007 S, Vr1=150 kV, Ir=400 A, cosθr=√3/2 (lagging), the unit kV, and the choices 134.2/152.3/161.9/172.0/180.4 match the official problem image. (Original: 数値・力率（遅れ）・単位[kV]・選択肢が原図と一致。)",
+        "Recalculated: İr = 346.41 − j200 A (lagging, so the imaginary part is negative). (10+j40)(346.41−j200) = 11 464.1 + j11 856.4, so V̇c = 161 464.1 + j11 856.4 V and |V̇c| = 161.90 kV. That matches official answer (3). (Original: 再計算の結果 |V̇c|=161.90 kV で公式正答(3)と一致。)",
+        "In the figure, Vr1 is defined as the voltage between the line and the neutral wire N′, so using it directly as the phase voltage is correct. The current through the right-hand Z/2 is İr, so V̇c = V̇r1 + (Ż/2)İr is also correct. (Original: 図で Vr1 は線–中性線N′間電圧と定義されており、相電圧としてそのまま用いるのは正しい。右側Z/2を流れる電流は İr なので立式も正しい。)",
+        "The differences stated for each wrong choice (27.7, 9.6, 10.1, 18.5 kV) are all correct. (Original: 誤答肢の差分 27.7/9.6/10.1/18.5 kV はすべて正しい。)",
+        "The public candidate figure matches the circuit in the official image. It has every label (İs, r/2, jx/2, Ż/2 ×2, V̇s1, V̇c, İc pointing down, Ẏ as a capacitor symbol, İr, V̇r1, Ż_l, cosθr (lagging), N, N′, 中性線 (neutral wire), and the caption 「図1 T形回路(1相分)」 (Fig. 1, T-circuit, one phase)). Arrow directions and connections also match, and the question can be understood from this figure alone. (Original: 公開候補図は原図と同一の回路で、全ラベル・矢印の向き・接続が一致し、単独で理解可能。)",
+        "reviewedFromPage=19 matches the footer 「T2-D 019」. (Original: reviewedFromPage=19 はフッタ「T2-D 019」と整合。)"
+      ]
+    },
+    {
+      "unitKey": "q16b",
+      "questionNumber": 16,
+      "part": "b",
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "The question text and choices 145.9/155.4/160.6/170.1/180.7 match the official problem image. (Original: 問題文・選択肢が原図と一致。)",
+        "The figure draws Ẏ with a capacitor symbol, so treating it as the capacitive admittance Ẏ = j0.0007 S is correct. (Original: 原図で Ẏ はコンデンサ記号で描かれており、容量性 Ẏ=j0.0007 S とする扱いは正しい。)",
+        "Recalculated: İc = j0.0007×V̇c = −8.30 + j113.02 A, and İs = İr + İc = 338.11 − j86.98 A. (Original: 再計算 İc と İs の値を確認。)",
+        "(10+j40)(338.11−j86.98) = 6 860.3 + j12 654.6, so V̇s1 = 168 324.4 + j24 511.0 V and |V̇s1| = 170.10 kV. That matches official answer (4). (Original: 再計算の結果 |V̇s1|=170.10 kV で公式正答(4)と一致。)",
+        "The differences stated for each wrong choice (24.2, 14.7, 9.5, 10.6 kV) are all correct. (Original: 誤答肢の差分 24.2/14.7/9.5/10.6 kV はすべて正しい。)",
+        "The public candidate figure matches the official image in every label, direction and connection, and it is enough on its own to read the relationships needed for V̇s1 = V̇c + (Ż/2)İs. (Original: 公開候補図は原図と一致し、単独で必要な関係を読み取れる。)",
+        "reviewedFromPage=19 is consistent. (Original: reviewedFromPage=19 整合。)"
+      ]
+    }
+  ]
+}

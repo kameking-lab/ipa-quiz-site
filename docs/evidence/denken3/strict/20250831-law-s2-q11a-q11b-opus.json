@@ -1,0 +1,90 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20250831",
+  "subject": "law",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 6478,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 20208,
+      "webSearchRequests": 0,
+      "costUSD": 0.2914878,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 4520,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "e19c44657265c4191191c0dc91076760827ca06e39c049c71297c6685e3e07d8",
+  "inputRequestSha256": "6930d23062a447a5de20e2a6335d22f20ac7b244bf5720564c3dbf43d6a41950",
+  "inputHashes": {
+    "candidateSha256": {
+      "q11a": "0f5f774d5ebe73f8f5692cdb2b4400b433e0c6cbcb74929bce68333bba9dbe00",
+      "q11b": "db56f5d4a867eeac9c4239c2fb5328b44b428804007b08c971e429c0c4e63721"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20250831/law/p15.png": "343b7432975090a7bc24d4954dba52fd8a819b7ca3b74d3049c044e2aee8ff01",
+      "data/raw_pdfs/denken3/review/20250831/law/p04.png": "38045ec67d58396f98ae270d13322f49aa0291474ec50e346ecabbd47a85dfbe"
+    },
+    "figureSha256": {
+      "public/images/denken3/20250831/law/20250831-law-q11-fig1.png": "6c7ed1d8f469f68e199af47de513bd7921114b4df4430208f7c3747375afb530"
+    },
+    "sourceQuestionPdfSha256": "51aeb8f1cbfe8e6d3667c2848a3d9fccff40a967f48aafc292fa13a13a6efbb0",
+    "sourceAnswerPdfSha256": "76fd3715ed487d19a56b387fb402de20ee09474e9fa55b0413f9037b96af06c9",
+    "officialAnswerUnitsSha256": "f421374fcf2bf56e3cfdbc2ec177fd0d513db3f96086bfb58a37fea3ae104795",
+    "referencePdfSha256": {},
+    "referencePageSha256": {},
+    "referenceJsonSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q11a",
+      "questionNumber": 11,
+      "part": "a",
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "出典メタデータ: fiscalYear=2025, term=upper, examDate=2025-08-31, subject=law, sourceQuestionPdfUrl=…_q04.pdf, sourceAnswerPdfUrl=…_a01.pdf は manifest と一致する。reviewedFromPage=[15] も manifest（PDF第15頁）と一致する。原図の印刷頁は「-12-」、頁記号は「T1−H 015」。「-1-」頁が T1−H 004 なので、この頁記号の対応とも整合する。",
+        "問題文: 原図と照合した。有効落差90 m、最大使用水量=渇水量（355日確保水量）の2倍、総合効率80 %、流込式、Q=−0.05d+25.5（d≥90）、ρ=1 000 kg/m³、g=9.8 m/s²、単位[GW·h]がすべて一致する。符号・単位の誤りはない。",
+        "選択肢: (1)47.9 (2)72.8 (3)84.3 (4)94.5 (5)97.4 で、原図と全肢一致する。",
+        "公式正答: 公式解答表の法規 問11(a)=3、配点6。候補の officialAnswer=3、scoringPoints=6 と一致する。",
+        "検算: Q355=−17.75+25.5=7.75、Qmax=15.5。15.5=−0.05d+25.5 から d=200。Q365=7.25。d<90 では図より Q>21>15.5 なので頭打ちとなる。水量は 15.5×200=3 100、台形部分は (15.5+7.25)/2×165=1 876.875、合計 4 976.875 m³/s·日。係数は 9.8×90×0.8=705.6 kW/(m³/s)。W=705.6×4 976.875×24=84 280 392 kW·h≈84.3 GW·h で、(3)と一致する。",
+        "誤答肢の検算: (1) 705.6×7.75×8 760=47.90 GW·h。(2) (3 100+7.25×165)=4 296.25、×705.6×24=72.75 GW·h≈72.8。(4) 705.6×15.5×360×24=94.49 GW·h≈94.5。(5) 上限は 10 936.8×8 760=95.81 GW·h で、97.4 はこれを超える。各肢の数値と否定理由はいずれも正しい。",
+        "図: 公開候補図は原図の年間流量曲線をすべて含む。縦軸ラベル「流量Q[m³/s]」、目盛21、横軸「日数d[日]」、目盛0・90・365、(90,21)への点線補助線、365の縦線、折れ線の形状が揃っている。d<90でQ>21であることは候補図だけで読み取れる。figureDescription も図と一致する。",
+        "officialReferenceUrls は空で、検証を要する外部主張はない。"
+      ]
+    },
+    {
+      "unitKey": "q11b",
+      "questionNumber": 11,
+      "part": "b",
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "出典メタデータ: fiscalYear=2025, term=upper, examDate=2025-08-31, subject=law、各PDF URL、reviewedFromPage=[15] は manifest と一致する。sourceAttribution の「令和7年度上期…法規科目 問11(b)」も正しい。",
+        "問題文: 共通の前文は原図と一致する。(b)「この発電所の設備利用率[%]として，最も近いもの…」も原図と一致する。",
+        "選択肢: (1)50.0 (2)63.0 (3)69.5 (4)75.9 (5)88.0 で、原図と全肢一致する。",
+        "公式正答: 公式解答表の法規 問11(b)=5、配点7。候補の officialAnswer=5、scoringPoints=7 と一致する。",
+        "検算: Pmax=9.8×15.5×90×0.8=10 936.8 kW。×8 760 h=95 806 368 kW·h≈95.81 GW·h。84.28/95.81=0.8797、すなわち88.0 %。水量比 4 976.875/(15.5×365=5 657.5)=0.8797 でも同じ結果になる。(5)と一致する。",
+        "誤答肢の検算: (1) 7.75/15.5=0.500。(2)・(3) 下限は 4 296.25/5 657.5=0.7594（75.9 %）で、63.0 %・69.5 % はこれを下回るため成立しない。付記の 0.630×95.81=60.4、0.695×95.81=66.6 も正しい。(4) 72.75/95.81=0.759（長方形近似の値）。各肢の数値と否定理由はいずれも正しい。",
+        "図: 公開候補図は原図と同一内容である（ラベル・目盛・補助線・折れ線形状が一致）。解答に必要な「d<90 で Q>21」は候補図から読み取れる。",
+        "officialReferenceUrls は空で、検証を要する外部主張はない。"
+      ]
+    }
+  ]
+}

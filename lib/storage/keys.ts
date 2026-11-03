@@ -1,4 +1,12 @@
 export const LS_KEYS = {
+  petCommandReviewOutbox: "ipa-quiz:pet-command-review-outbox:v1",
+  petCommandOutbox: "ipa-quiz:pet-command-outbox:v1",
+  petLearning: "ipa-quiz:pet-learning:v1",
+  studyReward: "ipa-quiz:study-reward:v1",
+  studyRewardPreferences: "ipa-quiz:study-reward-preferences:v1",
+  studyPresenceVisitor: "study-presence-visitor",
+  examLibraryPrefix: "ipa-quiz:exam-library:v1:",
+  examLibrarySessionPrefix: "ipa-quiz:exam-library-session:v1:",
   history: "ipa-quiz:history:v1",
   starred: "ipa-quiz:starred:v1",
   premium: "ipa-quiz:premium:v1",
@@ -7,6 +15,7 @@ export const LS_KEYS = {
   settings: "ipa-quiz:settings:v1",
   swipeHintShown: "ipa-quiz:swipe-hint-shown:v1",
   feedbackSubmitted: "ipa-quiz:feedback-submitted:v1",
+  feedbackUnlockPendingClaim: "ipa-quiz:feedback-unlock-pending-claim:v1",
   feedbackGateShown: "ipa-quiz:feedback-gate-shown:v1",
   questionFeedback: "ipa-quiz:question-feedback:v1",
   publicFeedback: "ipa-quiz:public-feedback:v1",
@@ -32,6 +41,7 @@ export const LS_KEYS = {
   character: "ipa-quiz:character:v1",
   characterEnabled: "ipa-quiz:character-enabled:v1",
   copilotResponseLength: "ipa-quiz:copilot-response-length:v1",
+  reviewSchedule: "ipa-quiz:review:v1",
   reviewSeen: "ipa-quiz:review-seen:v1",
   lastQuestion: "ipa-quiz:last-question:v1",
   mockExam: "ipa-quiz:mock-exam:v1",
@@ -42,6 +52,10 @@ export const LS_KEYS = {
   dailyGoal: "ipa-quiz:daily-goal:v1",
   customTags: "ipa-quiz:custom-tags:v1",
   syncMeta: "ipa-quiz:sync-meta:v1",
+  syncMetaUserPrefix: "ipa-quiz:sync-meta-user:v1:",
+  syncLocalOwner: "ipa-quiz:sync-local-owner:v1",
+  syncSessionSuccessPrefix: "ipa-quiz:sync-session-success:v1:",
+  syncSessionInFlightPrefix: "ipa-quiz:sync-session-inflight:v1:",
 } as const;
 
 export type LSKey = (typeof LS_KEYS)[keyof typeof LS_KEYS];

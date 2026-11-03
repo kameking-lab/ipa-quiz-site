@@ -1,0 +1,27 @@
+{
+  "scope": "Source-only Q112 follow-up, no site registration or publication",
+  "id": "kangoshi-2024-annual-am-q112",
+  "originalSourcePacketSha256": "8b9960a0d8674827e881cd4364034a3f8bea7956e026f4c1fac75ccb194577e6",
+  "heldCandidateSha256": "097e1d8a1a9606dc835bc419cf54cc33d96c07bfd52fcd26aaf66a60a1d247b0",
+  "officialQuestionPdfSha256": "03733e97bcbc54eb6ea74727daf57aaf8a094d1746879d10b4451efc361a981f",
+  "officialAnswerPdfSha256": "706f6fe6ab34e9849755874132ad98ac55a32d9b83fa7e37c8e58c7ad07921db",
+  "officialAnswerRow": "AM112 35",
+  "officialPhysicalPage": 48,
+  "originalPageImageSha256": "39b0aa879570e2d0433b7d99b6eadb7a4751f16f038b102dc58a7725d383e8f0",
+  "originalQuestionAndChoices": "112\nこのときのA さんへの説明で適切なのはどれか。2つ選べ。\n1．｢痛み止めは使用できません｣\n2．｢授乳をすると痛みが和らぎます｣\n3．｢経産婦のほうが痛みを強く感じます｣\n4．｢産後5日くらいまで痛みは続きます｣\n5．｢子宮が元の大きさに戻るための痛みです｣",
+  "modelPacketSha256": "d16cdfc07f88e0499dc41a380fc2e686f7847288ee50e61627b78fe26156e035",
+  "modelRawResultSha256": "69c5abe0a80076771f1c139f68b9498f5fa1be0f337bd9caf48d26bd714f276f",
+  "actualModel": "claude-sonnet-5-5",
+  "provider": "firstParty",
+  "sourceLimits": "ACOG, Jangsten and Cochrane content was supplied as search/abstract excerpts, not full-text verification. Choice 4 must not imply pain cannot last five days.",
+  "modelMaterialIssues": [
+    "既存4の「5日までは長い」は断定的で、出典は「通常2〜3日」「数日」としか言っていない。5日までの持続を否定する記述も、肯定する記述もない。",
+    "既存2の「痛みが強まることがある」は、Mayoの「授乳中のオキシトシンが収縮を誘発する」とACOGの「授乳開始数日間に多い」から導いた解釈で、強まると明記した出典はない。",
+    "既存の説明の「子宮復古」「元の大きさに戻る」は、提供抜粋に直接の記載がない。根拠は選択肢文と公式正答のみ。",
+    "ACOGとCochraneは検索抜粋のみで、全文は未確認。Jangsten 2011は抄録抜粋のみ。",
+    "Jangsten 2011は経産婦のほうが痛みの強度が高いとする比較研究で、日本の臨床や看護教科書の根拠ではない。",
+    "既存のreviewFlagsは「選択肢3の根拠と選択肢4の期間は入力にない」としていたが、今回の抜粋で3は支持され、4は「5日までは長い」という断定を避ける形に直せる。"
+  ],
+  "remainingModelHoldReasons": [],
+  "modelTextUsedWithoutCodexRewriting": true
+}

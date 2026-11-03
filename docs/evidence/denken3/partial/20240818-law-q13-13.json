@@ -1,0 +1,45 @@
+{
+  "status": "partial-accepted",
+  "date": "20240818",
+  "subject": "law",
+  "questionCount": 1,
+  "answerUnitCount": 2,
+  "choiceCount": 10,
+  "sourceQuestionPdfSha256": "5dbba8b8e4ec681d2d5f0645a3895a6e218d936519ddd18ac544ddc461a1ae78",
+  "sourceAnswerPdfSha256": "f72ecbc3a477e64948388b69cf78cb931032c9f0c688639836c8d533a949cd0f",
+  "reviewedDataSha256": "f4dbacb4a03df3fc9237c6f085e15f43d4343e906a4014d040f5a1425c733268",
+  "questions": [
+    {
+      "number": 13,
+      "sourceDraftSha256": "2fc74712369bc43e75c5914298d20a9e5a03cc3c77e52dcb5e6bd7d0a454752d",
+      "opusReceipt": "data/raw_pdfs/denken3/review/20240818/law/q13-opus-review.json",
+      "opusReceiptSha256": "9610ac3f1739ba3aa0d1c3162ac66b752f1770c00352143bc6948461ae17e061",
+      "assessment": {
+        "number": 13,
+        "status": "PASS",
+        "textIssues": [],
+        "choiceIssues": [],
+        "explanationIssues": [],
+        "figureIssues": [],
+        "externalSourceIssues": [
+          "要外部確認: (a)の根拠は『電気設備技術基準の解釈』第17条第2項・17-1表で、B種接地抵抗の上限は150/Ig、1秒超2秒以下の遮断なら300/Ig、1秒以下の遮断なら600/Igとしている。画像だけでは、この条文と区分が現行版で変わっていないか確定できない。参照URL（meti 20231226-2.pdf#page=32）の該当ページが17-1表かどうかも未確認。"
+        ]
+      },
+      "figureSha256": {}
+    }
+  ],
+  "strictReview": {
+    "q13a": {
+      "path": "docs/evidence/denken3/strict/20240818-law-l31-q13a-q13b-opus.json",
+      "sha256": "3f761280337347063b190691b6b1143d9baa325960565db7fa8235c38726bdbd",
+      "status": "PASS",
+      "resolvedModel": "claude-opus-5-5"
+    },
+    "q13b": {
+      "path": "docs/evidence/denken3/strict/20240818-law-l31-q13a-q13b-opus.json",
+      "sha256": "3f761280337347063b190691b6b1143d9baa325960565db7fa8235c38726bdbd",
+      "status": "PASS",
+      "resolvedModel": "claude-opus-5-5"
+    }
+  }
+}

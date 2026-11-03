@@ -1,0 +1,78 @@
+{
+  "inputHashes": {
+    "draftSha256": "5781974594aeb3743260176060dc79b5bfe4644558aff263ebc781ce9cc59ab5",
+    "candidateSha256": {
+      "6": "415c6fe66c14da28afbabbf097f0359352badd3c4c800bec421bac36a7ea5671",
+      "7": "36b8ac7d9826181dd9bee79d2f662dd06f9ca4188c41dc90e232070fcd3151fc",
+      "8": "811142b17f049baa08f3802ce69dce0eba704f744ce6311121e309e08e0a6077",
+      "9": "1da5894fa1a81965ff7f6911033942c7aba3bc8bfdebfcc48db30b72bfa5da12",
+      "10": "53dfdb96e8b47bed7c57d696e3296d68ab4a04e177190d56f18edd9045646c71"
+    },
+    "rowSha256": {
+      "6": "617601d354db94cc07c758f869cda1b420e51b3971ac3d6d082e1484f7828580",
+      "7": "07c61d7a2c1c560a404cd9438e58eae208deaa8781f79bc3ddfd8976fe9be071",
+      "8": "4709b1f559051672dea801f236904efa7d91e5e170778be1f3d50fa7bcd4fd8f",
+      "9": "d9ad83bb31aa8f0e23c859a87ee26e45c92942e9bb78ea6f1faebd5b3e8d2037",
+      "10": "5cbec0609e2d270d865b6526db1f8bed25136ca73a84e0d484e99a13540927a3"
+    },
+    "figureSha256": {
+      "public/images/denko1/2026-first/q6.png": "2d1feeb97101d6a32d75839e442a9267e8905142956bafd181ecddda2b06d204",
+      "public/images/denko1/2026-first/q7.png": "de3094d9717f1351a39d85f474e6c18a8c546a80a32d640b0c39407746ff733c",
+      "public/images/denko1/2026-first/q8.png": "a7c8169576b770705a57912a4e871e02dbf36fc734eed28f8831c89dc41d57fd",
+      "public/images/denko1/2026-first/q9.png": "609b7002f3e80fd671d14fd7d7561e37fe1d0428a76f7e2adad562bdd82473f1"
+    },
+    "legalReceiptSha256": {}
+  },
+  "reviewModel": "claude-opus-5-5",
+  "cliInitModel": "claude-opus-5-5",
+  "sessionId": "d54e8023-bbf2-42a3-b942-4f3da748e2b2",
+  "assessment": [
+    {
+      "number": 6,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "lawNeedsExternalCheck": []
+    },
+    {
+      "number": 7,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "lawNeedsExternalCheck": []
+    },
+    {
+      "number": 8,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "lawNeedsExternalCheck": []
+    },
+    {
+      "number": 9,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "explanationIssues": [
+        "choiceExplanations.ロの「V²/141²は電流の2乗にあたる量」は係数が合わない。本文ではI=V/(√3×141)としているので、I²=V²/(3×141²)となり、V²/141²=3I²=(√3I)²である。「3相分の電流の2乗(3I²)にあたる量で、これに141Ωを掛けると3I²×141=V²/141になる」のように、本文の計算Q=3I²×141と一致する書き方に直す必要がある。"
+      ],
+      "figureIssues": [],
+      "lawNeedsExternalCheck": []
+    },
+    {
+      "number": 10,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "lawNeedsExternalCheck": []
+    }
+  ]
+}

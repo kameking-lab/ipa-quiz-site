@@ -1,0 +1,61 @@
+{
+  "questionId": "kangoshi-2024-annual-am-q114",
+  "round": 114,
+  "session": "am",
+  "qNumber": 114,
+  "officialQuestionUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-05a_01.pdf",
+  "officialAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-05seitou.pdf",
+  "officialQuestionPdfSha256": "03733e97bcbc54eb6ea74727daf57aaf8a094d1746879d10b4451efc361a981f",
+  "officialAnswerPdfSha256": "706f6fe6ab34e9849755874132ad98ac55a32d9b83fa7e37c8e58c7ad07921db",
+  "officialPhysicalPage": 49,
+  "officialAnswerNumber": "3",
+  "choiceCount": 4,
+  "readyForLocalCandidate": true,
+  "originalStemChoicesKeyUnchanged": true,
+  "priorHoldPreservedInSavedReports": true,
+  "calculation": {
+    "birthWeightG": 3200,
+    "day4WeightG": 3100,
+    "lossG": 100,
+    "lossPercent": 3.125,
+    "transcutaneousBilirubinMgDl": 10.0,
+    "approxMicromolL": 171.0
+  },
+  "targetedPrimaryEvidence": [
+    {
+      "url": "https://www.england.nhs.uk/wp-content/uploads/2015/07/jaundice-in-the-newborn.pdf",
+      "issuer": "NHS England / Cambridge University Hospitals",
+      "documentVersion": "2012 version 7, online since 2015",
+      "scope": "at >=96 h and >=38 weeks, phototherapy threshold above 350 micromol/L; significant weight loss above 10 percent; serum confirmation and risk assessment still matter",
+      "pdfPhysicalPages": [
+        7,
+        10
+      ]
+    },
+    {
+      "url": "https://www.who.int/data/gho/indicator-metadata-registry/imr-details/10324",
+      "issuer": "World Health Organization",
+      "scope": "newborn normothermia 36.5-37.5 C"
+    },
+    {
+      "url": "https://www.stanfordchildrens.org/en/topic/default?id=physical-exam-of-the-newborn-90-P02670",
+      "issuer": "Stanford Medicine Children’s Health",
+      "scope": "newborn heart rate 120-160 per minute and respiration 40-60 per minute"
+    },
+    {
+      "url": "https://www.uhsussex.nhs.uk/wp-content/uploads/2022/08/Breastfeeding-in-the-first-few-days.pdf",
+      "issuer": "University Hospitals Sussex NHS Foundation Trust",
+      "documentVersion": "August 2022",
+      "scope": "at least four wet nappies on day four"
+    }
+  ],
+  "guard": "Educational answer to the official examination question; 10 mg/dL transcutaneous value alone is not a universal treatment rule. Do not present this as patient-specific clinical advice.",
+  "excludedIndividualStopIds": [
+    "kangoshi-2025-annual-am-q32",
+    "kangoshi-2025-annual-am-q79",
+    "kangoshi-2024-annual-am-q112",
+    "kangoshi-2024-annual-pm-q70",
+    "kangoshi-2025-annual-pm-q77"
+  ],
+  "publication": "local candidate only; no push or deploy"
+}

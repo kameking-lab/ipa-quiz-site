@@ -1,0 +1,190 @@
+{
+  "questionNumber": 2,
+  "sharedContext": null,
+  "units": [
+    {
+      "part": null,
+      "question": "界磁に永久磁石を用いた小形直流電動機があり，電源電圧は定格の 12 V，回転を始める前の静止状態における始動電流は 4 A，定格回転数における定格電流は 1 A である。定格運転時の効率の値[%]として，最も近いものを次の(1)～(5)のうちから一つ選べ。\nただし，ブラシによる電圧降下及び電機子反作用は無視できるものとし，損失は電機子巻線による銅損しか存在しないものとする。",
+      "choices": {
+        "1": "80",
+        "2": "75",
+        "3": "70",
+        "4": "65",
+        "5": "60"
+      },
+      "officialAnswer": "2",
+      "explanation": "界磁が永久磁石なので界磁巻線の電流はなく，電源から流れる電流はすべて電機子電流 Iₐ です。\n\n【電機子巻線抵抗 Rₐ を求める】\n回転を始める前の静止状態では回転速度が 0 なので，逆起電力 E = 0 です。電源電圧はすべて電機子巻線抵抗にかかるため，\nV = Iₐ·Rₐ より Rₐ = V / I_始動 = 12 V / 4 A = 3 Ω\n\n【定格運転時の入力・損失・出力】\n入力 P_in = V × I = 12 V × 1 A = 12 W\n銅損 P_c = I² × Rₐ = 1² × 3 = 3 W\n出力 P_out = P_in − P_c = 12 − 3 = 9 W\n（別解：逆起電力 E = V − I·Rₐ = 12 − 1×3 = 9 V，出力 P_out = E × I = 9 × 1 = 9 W）\n\n【効率】\nη = P_out / P_in × 100 = 9 / 12 × 100 = 75 %\n\nよって正答は (2) です。",
+      "choiceExplanations": {
+        "1": "誤り。効率80 %は入力12 Wに対し出力9.6 W（損失2.4 W）に相当し，定格電流1 Aでは Rₐ = 2.4 Ω が必要です。始動条件から求まる Rₐ = 3 Ω・銅損3 Wと一致しません。計算値は75 %です。",
+        "2": "正しい。始動時の条件から Rₐ = 12/4 = 3 Ω，定格時の銅損は 1²×3 = 3 W，出力は 12 − 3 = 9 W となり，効率は 9/12 = 75 % です。",
+        "3": "誤り。効率70 %は入力12 Wに対し出力8.4 W（損失3.6 W）に相当し，定格電流1 Aでは Rₐ = 3.6 Ω が必要です。始動条件から求まる Rₐ = 3 Ω・銅損3 Wと一致しません。計算値は75 %です。",
+        "4": "誤り。効率65 %は入力12 Wに対し出力7.8 W（損失4.2 W）に相当し，定格電流1 Aでは Rₐ = 4.2 Ω が必要です。始動条件から求まる Rₐ = 3 Ω・銅損3 Wと一致しません。計算値は75 %です。",
+        "5": "誤り。効率60 %は入力12 Wに対し出力7.2 W（損失4.8 W）に相当し，定格電流1 Aでは Rₐ = 4.8 Ω が必要です。始動条件から求まる Rₐ = 3 Ω・銅損3 Wと一致しません。計算値は75 %です。"
+      },
+      "figureDescription": null,
+      "officialReferenceUrls": [],
+      "uncertainty": "なし",
+      "needsReview": true,
+      "sourceQuestionPdfUrl": "https://www.shiken.or.jp/chief/upload/20250831_ch_third_q03.pdf",
+      "sourceAnswerPdfUrl": "https://www.shiken.or.jp/chief/upload/20250831_ch_third_a01.pdf",
+      "reviewedFromPage": [
+        5
+      ]
+    }
+  ],
+  "draftModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 2116,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 9309,
+      "webSearchRequests": 0,
+      "costUSD": 0.11705579999999999,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 915,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "f91e2ac2941a7df3e957696fa850dd6f11bd2198d4718ec1a6305a1e655b07f2",
+  "inputRequestSha256": "0ccd77188560fdb62a84f0b4d7bf3a876facf70d83a4690242fa8275402684d3",
+  "sourceQuestionPdfSha256": "2a73a24594cc2b8bb7504b9a0ff15e001b2bb56b830572ce2be853f7116f26d8",
+  "sourceAnswerPdfSha256": "76fd3715ed487d19a56b387fb402de20ee09474e9fa55b0413f9037b96af06c9",
+  "sourcePageImageSha256": {
+    "data/raw_pdfs/denken3/review/20250831/machinery/p05.png": "c0fa4c98a2a52ae27360f1a3b68210977f35515e6032756cb1206b397715ae53"
+  },
+  "revisionHistory": [
+    {
+      "version": 1,
+      "model": "claude-opus-5-5",
+      "resolvedModel": "claude-opus-5-5",
+      "modelUsage": {
+        "claude-opus-5-5": {
+          "inputTokens": 2,
+          "outputTokens": 2778,
+          "cacheReadInputTokens": 1279,
+          "cacheCreationInputTokens": 11719,
+          "webSearchRequests": 0,
+          "costUSD": 0.1495758,
+          "contextWindow": 1000000,
+          "maxOutputTokens": 128000,
+          "thinkingTokens": 1317,
+          "canonicalModel": "claude-opus-5-5",
+          "provider": "firstParty",
+          "costBasis": "list"
+        }
+      },
+      "rawResponseSha256": "35e8f9e284024308c46e7c65f09bd893316c62cecc1d8486e2ab3b8219453566",
+      "inputRequestSha256": "92b95c4ed236273595fb5531c358cdbc1743c3a06ea638107d81ac84ebb486e3",
+      "previousDraftSha256": "d17648c689c74624d3726c352e16d841041eac60aeda5d863d04c5f956d778f0",
+      "previousDraft": "data/raw_pdfs/denken3/review/20250831/machinery/archive/q02-vision-draft-v1.json",
+      "answeredReviewSha256": "726c04ba7d2a6fcada80838ef3d6517f88f5528d722b01a223467e9a0db4bb6a",
+      "answeredReview": "data/raw_pdfs/denken3/review/20250831/machinery/archive/q02-opus-review-v1.json",
+      "answeredStrictReceipt": "docs/evidence/denken3/strict/20250831-machinery-s1-q02-opus.json",
+      "answeredStrictReceiptSha256": "b8c6c029d61adbee56e3cd2005ca12c29191efd6b9c2956effb98a18a3699e34",
+      "figureSha256": {},
+      "referenceHashes": {},
+      "operatorNote": ""
+    },
+    {
+      "version": 2,
+      "model": "claude-opus-5-5",
+      "resolvedModel": "claude-opus-5-5",
+      "modelUsage": {
+        "claude-opus-5-5": {
+          "inputTokens": 2,
+          "outputTokens": 2253,
+          "cacheReadInputTokens": 1279,
+          "cacheCreationInputTokens": 12148,
+          "webSearchRequests": 0,
+          "costUSD": 0.14250780000000002,
+          "contextWindow": 1000000,
+          "maxOutputTokens": 128000,
+          "thinkingTokens": 892,
+          "canonicalModel": "claude-opus-5-5",
+          "provider": "firstParty",
+          "costBasis": "list"
+        }
+      },
+      "rawResponseSha256": "5cd6049fa35d96caa3c1633f205c288ca58db36b6760daf60643991d63666817",
+      "inputRequestSha256": "ac901b6590845e9adf29421628ac9a5f3eb97e874e797eabb524079e1e644653",
+      "previousDraftSha256": "e0fc37ce26ed32597b918372295d64fb9fb4c6ffe13bf5bfe3789128175d861a",
+      "previousDraft": "data/raw_pdfs/denken3/review/20250831/machinery/archive/q02-vision-draft-v2.json",
+      "answeredReviewSha256": "2e212bcb029713b66c76f93ce44323c32acf4c15b6f17e6c593097579c589b27",
+      "answeredReview": "data/raw_pdfs/denken3/review/20250831/machinery/archive/q02-opus-review-v2.json",
+      "answeredStrictReceipt": "docs/evidence/denken3/strict/20250831-machinery-s2-q02-opus.json",
+      "answeredStrictReceiptSha256": "75152446fed81c0433d5e01e9cfb958e58d93faed18c30d62e130c15cf04aaf6",
+      "figureSha256": {},
+      "referenceHashes": {},
+      "operatorNote": ""
+    },
+    {
+      "version": 3,
+      "model": "claude-opus-5-5",
+      "resolvedModel": "claude-opus-5-5",
+      "modelUsage": {
+        "claude-opus-5-5": {
+          "inputTokens": 2,
+          "outputTokens": 2359,
+          "cacheReadInputTokens": 1279,
+          "cacheCreationInputTokens": 12394,
+          "webSearchRequests": 0,
+          "costUSD": 0.1465958,
+          "contextWindow": 1000000,
+          "maxOutputTokens": 128000,
+          "thinkingTokens": 996,
+          "canonicalModel": "claude-opus-5-5",
+          "provider": "firstParty",
+          "costBasis": "list"
+        }
+      },
+      "rawResponseSha256": "c3e03725ee2c86e77ed05281b0687d08d73dd314316357a4f770aaa90574ddba",
+      "inputRequestSha256": "c4d6a9ba516dd9aa0abd8a5d19798abaccded2bacd1683f685d072652831e37d",
+      "previousDraftSha256": "b70dc7f0d0db86a9ad9ecc15cca49af3c64eff89e6bf04edae6e30c2460d915e",
+      "previousDraft": "data/raw_pdfs/denken3/review/20250831/machinery/archive/q02-vision-draft-v3.json",
+      "answeredReviewSha256": "6e072fba1caaebcb11114829f2e8de45c02ff65978c9f9566f0e80cc71682d63",
+      "answeredReview": "data/raw_pdfs/denken3/review/20250831/machinery/archive/q02-opus-review-v3.json",
+      "answeredStrictReceipt": "docs/evidence/denken3/strict/20250831-machinery-s3-q02-opus.json",
+      "answeredStrictReceiptSha256": "c0b4066aa049994a48b58f3458078e13bb1d0c7616fd9084a06f452a025a6305",
+      "figureSha256": {},
+      "referenceHashes": {},
+      "operatorNote": ""
+    },
+    {
+      "version": 4,
+      "model": "claude-opus-5-5",
+      "resolvedModel": "claude-opus-5-5",
+      "modelUsage": {
+        "claude-opus-5-5": {
+          "inputTokens": 2,
+          "outputTokens": 2100,
+          "cacheReadInputTokens": 1279,
+          "cacheCreationInputTokens": 12205,
+          "webSearchRequests": 0,
+          "costUSD": 0.1399038,
+          "contextWindow": 1000000,
+          "maxOutputTokens": 128000,
+          "thinkingTokens": 824,
+          "canonicalModel": "claude-opus-5-5",
+          "provider": "firstParty",
+          "costBasis": "list"
+        }
+      },
+      "rawResponseSha256": "02feb579310fe8f8af9d75861b0b401fdcfb2c1f022206e8273759b301a8b2f7",
+      "inputRequestSha256": "c1e845e78dbf35483b76c7f65c2d5aad03d0d0f0f68182c9b8af326a49d5dc0c",
+      "previousDraftSha256": "8d49adc728086b8e71ffe16010b7c1ae199ef4bbffd8fc7380f208699c73bf3c",
+      "previousDraft": "data/raw_pdfs/denken3/review/20250831/machinery/archive/q02-vision-draft-v4.json",
+      "answeredReviewSha256": "bd30cdcb5f169b1c08e7f5469e30f6b2467965a2ad17e14ed6cdbc7929860dcb",
+      "answeredReview": "data/raw_pdfs/denken3/review/20250831/machinery/archive/q02-opus-review-v4.json",
+      "answeredStrictReceipt": "docs/evidence/denken3/strict/20250831-machinery-s11-q02-opus.json",
+      "answeredStrictReceiptSha256": "3c6fb8d767a75e775d66aef9fba11acf6cf74dc7e9d3347ae848d2ddcf1e6642",
+      "figureSha256": {},
+      "referenceHashes": {},
+      "operatorNote": ""
+    }
+  ]
+}

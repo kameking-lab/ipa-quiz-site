@@ -1,0 +1,98 @@
+{
+ "reviewedFile": "data/questions/denken2/reviewed/20260830-power-q07.json",
+ "resolvedModel": "claude-opus-5-5",
+ "modelUsage": {
+  "claude-opus-5-5": {
+   "inputTokens": 2,
+   "outputTokens": 2567,
+   "cacheReadInputTokens": 0,
+   "cacheCreationInputTokens": 154207,
+   "webSearchRequests": 0,
+   "costUSD": 1.285004,
+   "contextWindow": 1000000,
+   "maxOutputTokens": 128000,
+   "thinkingTokens": 2160,
+   "canonicalModel": "claude-opus-5-5",
+   "provider": "firstParty",
+   "costBasis": "list"
+  }
+ },
+ "effort": "high",
+ "rawResponse": "docs/evidence/denken2/raw/20260830-power-q07-opus-raw-3.jsonl",
+ "rawResponseSha256": "627c2b861695d82687112093e311ce4ad739b0a4cf37b11515fec29f91b87d3c",
+ "inputHashes": {
+  "candidateSha256": {
+   "q07-1": "0ef6bfda8dd9731af38b4a8a6ce00436dab5d03075adc13dbe7dc6b65afb746d",
+   "q07-2": "b739949e7f8c428ea822255819e331c7f8eb3bffe236fa1b28aa6a186c4489a5",
+   "q07-3": "46d5d4e2c9ed92de244c7baf535eb06f1cb32a4c44209489308125e0e4947786",
+   "q07-4": "826bb0f0afec9c8f0a4c7d521b96aaeee0c224f90cc77b5e50fae0d454b3879b",
+   "q07-5": "7ce12f3e9be75c75bba5f2fa64a549491b170c6c640daddcb9301ef7535223fb"
+  },
+  "questionPdfSha256": "4cc06e418d0416c2b538e87a7452889f90cece156ce00b1394cb45f16f07d2e3",
+  "answerPdfSha256": "96a106b2e30ba64f7ca6718356a24b530769f644ff277830ff6b82a93a91d687",
+  "renderedPageSha256": {
+   "20260830_ch_second_q02/p10.png": "f88fcbd6f313ff425b6e053cb4828650bb6e32f7df3a754533a7e3ab0110af73",
+   "20260830_ch_second_q02/p11.png": "c77bb8973010d1151b1457fd9abf7a5c3d40ee4a80833d1227357f21c5af1f30",
+   "20260830_ch_second_a01/p01.png": "43c16dc7033d842bc022cb866e33c2e1681ff02bd5a53e5a36ebe8349c6bb937"
+  },
+  "officialBlanks": [
+   "ワ",
+   "ト",
+   "ニ",
+   "リ",
+   "ル"
+  ]
+ },
+ "assessment": [
+  {
+   "unitKey": "q07-1",
+   "status": "PASS",
+   "textIssues": [],
+   "choiceIssues": [],
+   "answerIssues": [],
+   "explanationIssues": [],
+   "figureIssues": [],
+   "sourceIssues": []
+  },
+  {
+   "unitKey": "q07-2",
+   "status": "PASS",
+   "textIssues": [],
+   "choiceIssues": [],
+   "answerIssues": [],
+   "explanationIssues": [],
+   "figureIssues": [],
+   "sourceIssues": []
+  },
+  {
+   "unitKey": "q07-3",
+   "status": "PASS",
+   "textIssues": [],
+   "choiceIssues": [],
+   "answerIssues": [],
+   "explanationIssues": [],
+   "figureIssues": [],
+   "sourceIssues": []
+  },
+  {
+   "unitKey": "q07-4",
+   "status": "PASS",
+   "textIssues": [],
+   "choiceIssues": [],
+   "answerIssues": [],
+   "explanationIssues": [],
+   "figureIssues": [],
+   "sourceIssues": []
+  },
+  {
+   "unitKey": "q07-5",
+   "status": "PASS",
+   "textIssues": [],
+   "choiceIssues": [],
+   "answerIssues": [],
+   "explanationIssues": [],
+   "figureIssues": [],
+   "sourceIssues": []
+  }
+ ]
+}

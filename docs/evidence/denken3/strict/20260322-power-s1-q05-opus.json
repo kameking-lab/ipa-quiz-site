@@ -1,0 +1,68 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20260322",
+  "subject": "power",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 4158,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 13778,
+      "webSearchRequests": 0,
+      "costUSD": 0.1936478,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 2668,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "c92271a8712accdf9ce5ba4fdb1ca997da921c1ba41e41f6ac3af2f2626654b2",
+  "inputRequestSha256": "d61adc60bfe904e205fb812e0e66abd97ea9a2bf0174408d0835fb0d01f57228",
+  "inputHashes": {
+    "candidateSha256": {
+      "q05": "6fa13085430d7e6605df16cdd3b5788375639305e00881710f46d09c6f0f9dd4"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20260322/power/p08.png": "5d81dfbd88c8b411e8fdca0421441e76eaf9cb4c6790f8a18a7f705b6ec1bf7d"
+    },
+    "figureSha256": {},
+    "sourceQuestionPdfSha256": "9733341a0f293f068c9a665d5a9a90f1aabf3a2db5d79cd530643cdea241f7b7",
+    "sourceAnswerPdfSha256": "cc2890296d06a4823df5697a78a1c01ddfd39f041c51f48c87984daa3a5707c6",
+    "officialAnswerUnitsSha256": "1042d224d762b9a6826cae3f4f7efcc1aa21b3f05ea736a4de5e887bb730a999",
+    "referencePdfSha256": {},
+    "referencePageSha256": {},
+    "referenceJsonSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q05",
+      "questionNumber": 5,
+      "part": null,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [
+        "総合解説の突入電流の段落は、原因を「停止中や同期速度から外れた状態の誘導機を系統へ直接つなぐと」という条件付きで説明し、対策として「同期速度付近まで加速してから並列」を挙げている。この書き方だと、同期速度付近で並列すれば突入電流はほぼ生じない（＝同期発電機と同程度に小さい）と読めてしまい、(5)が誤りである根拠がぼやける。本質的な原因は、誘導発電機が並列前に自ら電圧を確立できない（無励磁）ことにある。このため、同期速度付近で投入しても未励磁の機械に系統電圧が直接かかり、励磁突入電流（過渡電流）が流れる。一方、同期発電機は電圧・周波数・位相を合わせてから投入するため、突入電流がほとんど流れない。総合解説はこの対比を明記すべきである。また、同期速度付近での並列や限流リアクトル・ソフトスタータ等の対策は突入電流を『抑制』するもので、『解消』するものではないと表現を改めるべきである。",
+        "総合解説（条件付きで『停止中・同期外れ時に大きい』）と choiceExplanations[5]（無条件で『並列すると励磁電流を含む大きな突入電流が流れる』）の説明が整合していない。上記の無励磁という原因に基づき、両者の記述を統一すべきである。"
+      ],
+      "figureIssues": [],
+      "sourceIssues": [
+        "uncertainty 欄に「出典の年度・科目はこのページだけでは特定できない」という未解決の確認事項が残っている。この点は manifest 固定の出典情報で解決済みである：問題PDF 20260322_ch_third_q02.pdf（電力冊子）の第8頁（頁下部『-5-』『T2－D 008』）、および公式解答表見出し『令和7年度 第三種電気主任技術者下期試験解答』の〈電力〉問5で確認できる。公開データに外部確認事項として残さず、解決済みの記述に更新するか削除すべきである。自己励磁（コンデンサ励磁）の補足は、(4)の『一般に』の趣旨と整合するため残してよい。"
+      ],
+      "verifiedEvidence": [
+        "問題文：候補の question は、添付原図（PDF第8頁、印字頁『-5-』、管理番号『T2－D 008』）の問5本文と一字一句一致する。",
+        "選択肢：(1)〜(5)の全肢が原図と一致する。欠落・改変・順序入替はない。",
+        "公式正答：公式解答表〈電力〉問5の解答は5、配点は5。候補の officialAnswer='5'、scoringPoints=5 と一致し、manifest 固定の正答単位 {question:5, part:null, answer:'5', points:5} とも一致する。",
+        "出典メタデータ：解答表見出し『令和7年度 第三種電気主任技術者下期試験解答』により、fiscalYear=2025（令和7年度）、term=lower、examDate=2026-03-22、subject=power を確認した。sourceQuestionPdfUrl・sourceAnswerPdfUrl は manifest と一致し、reviewedFromPage=[8] は manifest の原図頁と一致する。sourceAttribution『令和7年度下期…電力科目 問5』も整合する。",
+        "技術内容：同期速度を超える駆動で負のすべりとなり発電すること、励磁用無効電力を系統から受けること、励磁装置・同期投入操作が不要であること、すべりが存在すること、原則として単独運転できないこと。いずれも正しく、(1)〜(4)を正しい記述、(5)を誤りとする判定は公式正答5と整合する。",
+        "図：原図に図・表はなく、figureDescription・figureUrls=[]・choiceFigureUrls={} は妥当である。",
+        "officialReferenceUrls は空であり、検証を要する独立主張はない。"
+      ]
+    }
+  ]
+}

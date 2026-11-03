@@ -1,0 +1,92 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20260322",
+  "subject": "power",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 5725,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 15446,
+      "webSearchRequests": 0,
+      "costUSD": 0.23833179999999998,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 3446,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "a89e9de27b291f7cf512687112a7130f1154c6c81e7ba3911bf49f3f4d61a341",
+  "inputRequestSha256": "e2c087553c26ecaf277c84e0f92ddb2ead0e0b6aa212f42eab3ca7cbd5e18fd2",
+  "inputHashes": {
+    "candidateSha256": {
+      "q16a": "c5b88ad50b3371d95e6d30f5623ad70b5009810b16e8be4c752d3191b457f035",
+      "q16b": "4b831a2be85a58ddf7254674cdc2faf14e052c84c9eae1e0004d2681c09af407"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20260322/power/p19.png": "1b5808af30b6ddee6506d04b15094bf0118fa43924946d38decc4bed5f76f899"
+    },
+    "figureSha256": {},
+    "sourceQuestionPdfSha256": "9733341a0f293f068c9a665d5a9a90f1aabf3a2db5d79cd530643cdea241f7b7",
+    "sourceAnswerPdfSha256": "cc2890296d06a4823df5697a78a1c01ddfd39f041c51f48c87984daa3a5707c6",
+    "officialAnswerUnitsSha256": "9dada1a46c4ab035399fce3483f8f3f811317f0daf6581c36fd42ed9b4187b8b",
+    "referencePdfSha256": {},
+    "referencePageSha256": {},
+    "referenceJsonSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q16a",
+      "questionNumber": 16,
+      "part": "a",
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "問題文を公式原図と照合し一致を確認した。照合項目は、三相3線式1回線の専用配電線、送り出し電圧6 600 V、負荷端子電圧6 450 V、遅れ力率70 %、抵抗0.5 Ω/km、リアクタンス0.4 Ω/km、こう長5 km、相差角は小さいという条件、(a)の設問文と単位[kW]。句読点の全角化などの整形は意味を変えていない。",
+        "選択肢(1)369、(2)180、(3)123、(4)213、(5)240の数値と順序は原図と一致する。",
+        "公式解答表（令和7年度 第三種電気主任技術者下期試験解答、電力欄）では問16(a)の解答は4、配点は5。manifestの正答単位 answer=4・points=5、および候補の officialAnswer=4・scoringPoints=5 と一致する。",
+        "検算した。R=2.5 Ω、X=2.0 Ω、sinθ=√0.51=0.71414。R cosθ+X sinθ=1.75+1.42829=3.17829 Ω。I=150/(√3×3.17829)=27.248 A。W₁=√3×6450×27.248×0.7=213.09 kW≈213 kWとなり、(4)が最も近い。",
+        "誤答肢(1)の理由を検算した。電圧降下式の√3を落とすと I=150/3.17829=47.195 A、W=√3×6450×47.195×0.7=369.07 kW≈369 kWとなり、候補の説明どおり(1)と一致する。",
+        "誤答肢(3)の理由を検算した。電力式の√3を落とすと W=6450×27.248×0.7=123.03 kW≈123 kWとなり、候補の説明どおり(3)と一致する。",
+        "誤答肢(2)180・(5)240については、主要な誤計算パターンを追加検算したが、一致する誤りは見つからなかった。試したのは、送電端電圧6 600 Vの使用（218 kW）、sinθ算出時の√の落とし（約244 kW）、sinθとcosθの取り違え（約213 kW）など。候補の「正答値213 kWと一致しないため誤り、典型的誤計算は特定できない」という記述は事実として正確で、誤った根拠を捏造していない。",
+        "原図は文章と数値のみで図はない。figureDescription、空の figureUrls、空の choiceFigureUrls はいずれも適切。",
+        "出典情報を照合した。fiscalYear=2025、term=lower、examDate=2026-03-22、subject=power、問題PDF・解答PDFのURL、reviewedFromPage=[19] はmanifestと一致する。reviewedFromPage はPDF第19頁で、原図に印字された冊子頁番号「-16-」とは異なるが、これはmanifestの指定どおり。sourceAttribution の「令和7年度下期…電力科目 問16(a)」も整合する。",
+        "officialReferenceUrls は空で、検証を要する独立主張はない。"
+      ]
+    },
+    {
+      "unitKey": "q16b",
+      "questionNumber": 16,
+      "part": "b",
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "問題文を公式原図と照合し一致を確認した。照合項目は、共通前文、および(b)の「負荷が遅れ力率80 %，W₂[kW]に変化したが線路損失は変わらなかった」と、W₂の値[kW]を問う設問文。",
+        "選択肢(1)141、(2)243、(3)274、(4)415、(5)334の数値と順序は原図と一致する。",
+        "公式解答表の電力欄では問16(b)の解答は2、配点は5。manifestの answer=2・points=5、および候補の officialAnswer=2・scoringPoints=5 と一致する。",
+        "検算した。線路損失 3I²R が一定でRも不変なので、Iも不変で I=27.248 A。W₂=√3×6450×27.248×0.8=243.53 kW≈243 kWとなり、(2)が最も近い。W₁×0.8/0.7=213.09×1.142857=243.5 kW でも一致する。",
+        "候補の確認計算を検算した。sinθ₂=0.6、R cosθ₂+X sinθ₂=3.2 Ω、ΔV=√3×27.248×3.2=151.0 V で、受電端電圧は約6 449 V、W₂は約243.5 kW。受電端電圧6 450 V一定と送り出し電圧6 600 V一定のどちらの解釈でも結論は(2)で変わらない。候補はこの点を uncertainty に明示して処理しており、正答判別に曖昧さは残らない。",
+        "誤答肢(1)の理由を検算した。電力式の√3を落とすと W=6450×27.248×0.8=140.60 kW≈141 kWとなり、候補の説明どおり(1)と一致する。",
+        "誤答肢(4)の説明中の数値を検算し、正確であることを確認した。I=47.195 A を流用すると √3×6450×47.195×0.8=421.8 kW（約422 kW）。I=150/3.2=46.875 A とすると 418.9 kW（約419 kW）。いずれも415 kWとは一致しないという記述も正しい。",
+        "誤答肢(3)274・(5)334については、一致する典型的誤計算を確認できなかった。候補も「正答値243 kWと一致しないため誤り、特定できない」としており、事実に反する根拠は記載されていない。",
+        "原図に図はない。figureDescription、空の figureUrls、空の choiceFigureUrls はいずれも適切。",
+        "出典情報を照合した。fiscalYear・term・examDate・subject・PDFのURL・reviewedFromPage=[19] はmanifestと一致し、sourceAttribution の「問16(b)」も整合する。",
+        "officialReferenceUrls は空で、検証を要する独立主張はない。"
+      ]
+    }
+  ]
+}

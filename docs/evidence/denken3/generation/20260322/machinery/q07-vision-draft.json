@@ -1,0 +1,94 @@
+{
+  "questionNumber": 7,
+  "sharedContext": null,
+  "units": [
+    {
+      "part": null,
+      "question": "次の文章は，ステッピングモータに関する記述である。\n\nステッピングモータはパルスモータとも呼ばれ，駆動回路に与えられた ［(ア)］ に比例する ［(イ)］ だけ回転するものである。したがって，このモータはパルスを周期的に与えたとき，そのパルスの ［(ウ)］ に比例する回転速度で回転し，入力パルスを停止すれば回転子も停止する。\n\nステッピングモータはパルスが送られるたびに定められた角度θ［°］を1ステップとして回転する。この1パルス当たりの回転角度を ［(エ)］ という。\n\nステッピングモータには，永久磁石形，可変リラクタンス形，ハイブリッド形などがあり，永久磁石形ステッピングモータでは，無通電状態でも回転子位置を ［(オ)］ が働く特徴がある。\n\n上記の記述中の空白箇所(ア)～(オ)に当てはまる組合せとして，正しいものを次の(1)～(5)のうちから一つ選べ。",
+      "choices": {
+        "1": "(ア) パルス数　(イ) 回転速度　(ウ) 周波数　(エ) 移動角　(オ) 保持する力",
+        "2": "(ア) パルス数　(イ) 回転角度　(ウ) 幅　(エ) ステップ角　(オ) 追従する力",
+        "3": "(ア) パルス数　(イ) 回転角度　(ウ) 周波数　(エ) ステップ角　(オ) 保持する力",
+        "4": "(ア) 周波数　(イ) 回転角度　(ウ) 幅　(エ) ステップ角　(オ) 追従する力",
+        "5": "(ア) 周波数　(イ) 回転速度　(ウ) 幅　(エ) 移動角　(オ) 追従する力"
+      },
+      "officialAnswer": "3",
+      "explanation": "ステッピングモータは、パルスが1個入力されるたびに一定の角度θ［°］だけ回転します。この1パルス当たりの回転角度をステップ角といいます。\n\n・総回転角度：入力パルス数をNとすると、回転角度 = N × θ［°］です。回転角度はパルス数に比例します。→ (ア) パルス数、(イ) 回転角度\n・回転速度：パルスを周波数f［pulse/s］で周期的に与えると、1秒間の回転角度は f × θ［°/s］です。回転速度は n = f × θ ÷ 360［s⁻¹］ = 60 × f × θ ÷ 360［min⁻¹］となり、パルスの周波数に比例します。→ (ウ) 周波数\n　計算例：θ = 1.8°、f = 1000 pulse/s のとき、n = 1000 × 1.8 ÷ 360 = 5 s⁻¹ = 300 min⁻¹ です。\n・1パルス当たりの回転角度の名称はステップ角です。→ (エ) ステップ角\n・永久磁石形は回転子に永久磁石を用いています。このため、巻線に電流を流していない状態でも、磁石と固定子鉄心の間の磁気吸引力によるトルク（ディテントトルク）が生じます。このトルクが回転子位置を保持する力として働きます。→ (オ) 保持する力\n\nしたがって、正しい組合せは (ア) パルス数、(イ) 回転角度、(ウ) 周波数、(エ) ステップ角、(オ) 保持する力 の(3)です。",
+      "choiceExplanations": {
+        "1": "誤り。(イ)が誤りです。パルス数に比例するのは回転角度で、回転速度ではありません。本文は「〜だけ回転する」という回転量を述べる文なので、回転速度は当てはまりません。(エ)も誤りで、1パルス当たりの回転角度の名称は「ステップ角」です。(ア)パルス数、(ウ)周波数、(オ)保持する力は正しい語句です。",
+        "2": "誤り。(ウ)が誤りです。回転速度はパルスの周波数（単位時間当たりのパルス数）に比例し、パルスの幅には比例しません。(オ)も誤りで、永久磁石形では無通電時にも永久磁石の磁力によって回転子位置を保持する力が働きます。(ア)パルス数、(イ)回転角度、(エ)ステップ角は正しい語句です。",
+        "3": "正しい。回転角度はパルス数に比例します（N × θ）。回転速度はパルスの周波数に比例します（f × θ）。1パルス当たりの回転角度はステップ角です。永久磁石形では無通電時にも永久磁石によるディテントトルクが回転子位置を保持する力として働きます。すべての空白が正しく当てはまります。",
+        "4": "誤り。(ア)が誤りです。回転角度に比例するのはパルス数で、周波数ではありません。周波数に比例するのは回転速度です。(ウ)も誤りで、回転速度はパルスの幅ではなく周波数に比例します。(オ)も誤りで、永久磁石形の無通電時に働くのは回転子位置を保持する力です。(イ)回転角度、(エ)ステップ角は正しい語句です。",
+        "5": "誤り。(ア)周波数、(イ)回転速度 の組合せは、それだけを取り出せば「周波数に比例する回転速度」という正しい関係を表しています。しかし本文は「〜だけ回転する」という回転量を述べる文なので、当てはまるのは「パルス数に比例する回転角度」です。また、(ウ)は幅ではなく周波数、(エ)は移動角ではなくステップ角、(オ)は追従する力ではなく保持する力が正しく、すべての空白が誤りです。"
+      },
+      "figureDescription": "図はありません。選択肢は、列見出しを(ア)(イ)(ウ)(エ)(オ)、行見出しを(1)～(5)とする語句の組合せ表として示されており、各行の語句はすべて選択肢に文字で記載しています。",
+      "officialReferenceUrls": [],
+      "uncertainty": "なし",
+      "needsReview": true,
+      "sourceQuestionPdfUrl": "https://www.shiken.or.jp/chief/upload/20260322_ch_third_q03.pdf",
+      "sourceAnswerPdfUrl": "https://www.shiken.or.jp/chief/upload/20260322_ch_third_a01.pdf",
+      "reviewedFromPage": [
+        10
+      ]
+    }
+  ],
+  "draftModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 3171,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 9309,
+      "webSearchRequests": 0,
+      "costUSD": 0.1381558,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 1000,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "3fad58b87ef4b38bedc81503a1901578d373dfc92c7048117f1ac89b8661015e",
+  "inputRequestSha256": "27b3e633f6d8d5517d37731a6d346381bab876734e38139dfa9f7364af42b91d",
+  "sourceQuestionPdfSha256": "a89c7dc2b9a305f9db83f2f78195f0df8a0da5aeec6b8e66cfd40fb028d146fb",
+  "sourceAnswerPdfSha256": "cc2890296d06a4823df5697a78a1c01ddfd39f041c51f48c87984daa3a5707c6",
+  "sourcePageImageSha256": {
+    "data/raw_pdfs/denken3/review/20260322/machinery/p10.png": "a98a2df027f9599b4775df365b1839bfda13cd719c09f0d0798d524630e6109d"
+  },
+  "revisionHistory": [
+    {
+      "version": 1,
+      "model": "claude-opus-5-5",
+      "resolvedModel": "claude-opus-5-5",
+      "modelUsage": {
+        "claude-opus-5-5": {
+          "inputTokens": 2,
+          "outputTokens": 3213,
+          "cacheReadInputTokens": 1279,
+          "cacheCreationInputTokens": 13276,
+          "webSearchRequests": 0,
+          "costUSD": 0.1707318,
+          "contextWindow": 1000000,
+          "maxOutputTokens": 128000,
+          "thinkingTokens": 1008,
+          "canonicalModel": "claude-opus-5-5",
+          "provider": "firstParty",
+          "costBasis": "list"
+        }
+      },
+      "rawResponseSha256": "61b3b6c391cf76ba87271bee73532963b0e0c9983f8a4301f346e6eeb831c640",
+      "inputRequestSha256": "a8640fd167ba95ccc661bc31bc6dae58787f4a96b678282a343f3cfe871d182f",
+      "previousDraftSha256": "9e0fd0794a89f662ddc00479ee20d44561c431b5d2765078c97b5796dd68d69d",
+      "previousDraft": "data/raw_pdfs/denken3/review/20260322/machinery/archive/q07-vision-draft-v1.json",
+      "answeredReviewSha256": "3e3b79b11d54380466273540cf728856d19061995e2fcde27aa890b51211b2f0",
+      "answeredReview": "data/raw_pdfs/denken3/review/20260322/machinery/archive/q07-opus-review-v1.json",
+      "answeredStrictReceipt": "docs/evidence/denken3/strict/20260322-machinery-s1-q07-opus.json",
+      "answeredStrictReceiptSha256": "1ada767e52163ddcd87eece35e48b342c04dd5cce277a276d84bcf6dfa409cf4",
+      "figureSha256": {},
+      "referenceHashes": {},
+      "operatorNote": ""
+    }
+  ]
+}

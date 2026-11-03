@@ -1,0 +1,111 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20250323",
+  "subject": "power",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 5732,
+      "cacheReadInputTokens": 140024,
+      "cacheCreationInputTokens": 22424,
+      "webSearchRequests": 0,
+      "costUSD": 0.3220448,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 3179,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "d79ccf687d1dbbf3a5fdb16ca1f05d51b8886ad59704bf3f1353b08d2a3dc9c5",
+  "inputRequestSha256": "00ef9a44c9a4262db0a249e9327fc1ab6a417fed8df5d96f3491bf22122c1069",
+  "inputHashes": {
+    "candidateSha256": {
+      "q11": "9753cef5a49a990340f31bcc25e079bc86e868ade8e3ffa009d39add180a855a",
+      "q12": "ddec521745b1a41a9bf34b837fa446097095a03e84a89f0d4a046f8700a0550b",
+      "q13": "54155b45178d64bbaf58b305a32db1dc45dc8e976493e86781f0a3138ed48313"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20250323/power/p14.png": "7977a2161153b016b64361a48ec48f3aa77ad46723994bdca2ae8bd1f54d2a9e",
+      "data/raw_pdfs/denken3/review/20250323/power/p15.png": "c90689a466751be82e34af5cc5d58ee2a99af3e0f9150e4fccb751c31eee6034",
+      "data/raw_pdfs/denken3/review/20250323/power/p16.png": "f07eab8e9134d3bd709d5db2be11c1270a53cbe830621c0405f8959c21497cac"
+    },
+    "figureSha256": {
+      "public/images/denken3/20250323/power/20250323-power-q13-span-sag.png": "f51149e529cb216e502d91d40a7864436f169570d5a769ae51a2d7b845a1644c"
+    },
+    "sourceQuestionPdfSha256": "892785e0f1035bcb239eb30fa903d4c88adbcfdaa1b5b0edea2d1907fd887114",
+    "sourceAnswerPdfSha256": "4c3b38fcf1405766fafaa78b1b05b867a3d48307a670b9d354476bc6b32acd4c",
+    "officialAnswerUnitsSha256": "6ba8142a61b6f6bc3a8e683f7ea9129f56cb97a3b5e7804220e6aff5f2422794",
+    "referencePdfSha256": {},
+    "referencePageSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q11",
+      "questionNumber": 11,
+      "part": null,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [
+        "The overall explanation defends choice (5) by pointing to the official answer (「公式解答も(3)を正答としているため、誤りとは扱わない」). An explanation cannot rest on the answer key. Replace it with the physics. Under the usual convention, lagging reactive power is positive and inductive loads consume it. A capacitor draws leading current, so it 'consumes leading reactive power', which means it 'supplies lagging reactive power'. That is exactly what choice (5) says, so choice (5) is correct as stated.",
+        "The overall explanation and choice explanation (5) both call the wording of choice (5) 「慣用的な言い方」 or 「表現は慣用的だが趣旨は正しい」. This makes an accurate statement look doubtful. Remove the hedge and say plainly that the wording is correct.",
+        "The uncertainty field says choice (5) 「厳密には解釈が分かれうる」. Under the standard convention above, the wording has only one reading. This uncertainty is not real and should be removed. Only the note that no primary-source URL was found should stay."
+      ],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "The stem and choices (1)–(5) match the official original (page labelled -11-, T2-D 014) word for word. This includes the 'error-selection' polarity (「誤っているもの」) and the item 「線路電流」 in choice (2).",
+        "The official answer (3) matches the manifest.",
+        "Choice (3) describes the job of a disconnector (DS): isolating equipment from the supply for inspection or repair, and changing circuit connections. A circuit breaker (CB) opens and closes load current and interrupts fault current such as short-circuit current. The explanation of why (3) is wrong is accurate.",
+        "Choice (1): a lightning arrester (LA) is installed at the service entrance and needs Class A grounding work. Choice (2): a load-break switch (LBS) switches currents at or below its rating and cannot interrupt fault current. Choice (4): the VCT combines a VT and a CT and is used with a watt-hour meter for billing measurement. All three explanations are correct.",
+        "There is no figure, and the figureDescription correctly says so. officialReferenceUrls is empty and the candidate makes no independent claims. reviewedFromPage [14] matches the original's T2-D 014."
+      ]
+    },
+    {
+      "unitKey": "q12",
+      "questionNumber": 12,
+      "part": null,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "The stem matches the official original (page labelled -12-, T2-D 015). This covers R[Ω], Vr[V], the power factor cosθ, the three-phase power P[W], the definition of the three-line loss PL, the loss ratio PL/P, and the statement that inductance, capacitance and conductance are neglected.",
+        "The candidate's choices (1) RP/(3(Vr cosθ)²), (2) RP/(Vr cosθ)², (3) RP²/(Vr cosθ)², (4) 3RP/(Vr cosθ)² and (5) 3RP²/(Vr cosθ)² match the original's formulas, coefficients and exponents exactly.",
+        "Check: I = P/(√3·Vr·cosθ), PL = 3RI² = RP²/(Vr cosθ)², so PL/P = RP/(Vr cosθ)². The units work out as Ω·W/V², which is dimensionless. This matches the official answer (2).",
+        "Why each wrong choice fails: (1) has an extra factor of 1/3. (3) equals PL itself, so it has the unit of watts. (4) is three times too large. (5) equals 3PL. Each explanation is correct.",
+        "There is no figure, and the figureDescription correctly says so. reviewedFromPage [15] matches T2-D 015."
+      ]
+    },
+    {
+      "unitKey": "q13",
+      "questionNumber": 13,
+      "part": null,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [
+        "Choice explanation (1) gives the reason 「たるみは温度上昇による電線の伸びでほぼ2 mから大きく増えるため」. This is vague and inaccurate. The actual increase is about 0.385 m, roughly 19%, which does not justify 「大きく」. The sentence also gives no numerical grounds for rejecting (1). Rewrite it with numbers, like the other wrong choices: 2.05 m is about 0.335 m below the calculated 2.385 m. You can add that this value comes out close to what you get by adding the conductor elongation of about 0.045 m directly to the sag (2 + 0.045 ≈ 2.05). Present that only as an illustration of a common mistake.",
+        "The overall explanation presents L = S + 8D²/(3S) as if it were exact. It is the approximate formula for a parabolic sag, and the text should say so (for example, 「実長の近似式」). This fact appears only in the uncertainty field."
+      ],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "The stem matches the official original (page labelled -13-, T2-D 016): supports A and B at equal height, span S = 100 m, sag D = 2 m at 30 ℃, find D at 60 ℃, linear expansion coefficient 1.5×10⁻⁵ per ℃, and elongation due to tension neglected. The choices 2.05 / 2.14 / 2.39 / 2.66 / 2.89 match the original.",
+        "Check: L1 = 100 + 32/300 = 100.10667 m. ΔL = 100.10667 × 1.5×10⁻⁵ × 30 = 0.045048 m, so L2 = 100.15171 m. Then D'² = 300 × 0.15171/8 = 5.6893, giving D' = 2.3852 m ≈ 2.39. Basing the expansion on S instead of L1 gives D' = 2.3848, the same choice. This matches the official answer (3).",
+        "The gaps quoted for choices (2), (4) and (5) are correct: 2.14 is 0.245 below (stated as about 0.25), 2.66 is 0.275 above (about 0.28), and 2.89 is 0.505 above (about 0.5).",
+        "The published candidate figure 20250323-power-q13-span-sag.png matches the original figure: S=100 m dimension line with end markers, A on the left and B on the right as filled dots, a horizontal dashed line, the sagging curve, and a double-headed arrow at mid-span labelled D=2 m. All labels, positions and directions agree. With the stem, the figure alone is enough to understand the problem.",
+        "The figureDescription matches the figure. reviewedFromPage [16] matches T2-D 016. officialReferenceUrls is empty and the candidate makes no independent claims."
+      ]
+    }
+  ]
+}

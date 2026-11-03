@@ -1,0 +1,68 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20260322",
+  "subject": "theory",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 2986,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 14475,
+      "webSearchRequests": 0,
+      "costUSD": 0.1757838,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 1614,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "3807c06c5674647d21f5f439a86db59a34241352f39e0fe33fdc148f622de32a",
+  "inputRequestSha256": "83e52e7677145ca3165900a330338f58d1ba710c6389ec7c6bb8ff2f4212331d",
+  "inputHashes": {
+    "candidateSha256": {
+      "q02": "26e2f15ebd631bcd41b864d7bf705bd625872a4ebdf5f17db121d863a83ad2f9"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20260322/theory/p05.png": "402a524edad916b76773f5514176303aefc4d8889d66071ac8e6ae03e998d24a"
+    },
+    "figureSha256": {
+      "public/images/denken3/20260322/theory/20260322-theory-q02-fig1.png": "f72f2e7b4b8b2eec4ece0d76c676ac5ac174d6d40cae6f75db59ecd75be56bc5"
+    },
+    "sourceQuestionPdfSha256": "c83e7c7350d98b65f5d8da0b93e4a2581a19dd250be320fb7fc492c9b34a29c1",
+    "sourceAnswerPdfSha256": "cc2890296d06a4823df5697a78a1c01ddfd39f041c51f48c87984daa3a5707c6",
+    "officialAnswerUnitsSha256": "267d3961b13e32b8a17cbf5f19fa9aa774b6214651d57e08ead9e34ada0d1e4a",
+    "referencePdfSha256": {},
+    "referencePageSha256": {},
+    "referenceJsonSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q02",
+      "questionNumber": 2,
+      "part": null,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "出典メタデータ: fiscalYear=2025（令和7年度）、term=lower（下期）、examDate=2026-03-22、subject=theory、reviewedFromPage=[5] は manifest と一致する。sourceQuestionPdfUrl と sourceAnswerPdfUrl も manifest の URL と一致する。sourceAttribution『令和7年度下期第三種電気主任技術者試験 理論科目 問2』も整合する。",
+        "問題文: 原図 PDF 第5頁（冊子の印刷頁は -2-）と照合した。3 m、2 点 A・B、3×10⁻⁷ C の正の点電荷、A から 1 m の P 点、Q [C] の正の点電荷、B 点の方向に 5×10⁻³ N、ε₀ = 8.85×10⁻¹² F/m がすべて一致する。数値・単位・極性・力の向きに相違はない。句読点の『，』は『、』に整形されているが、意味は変わらない。",
+        "選択肢: (1) 1.2×10⁻⁹、(2) 1.8×10⁻⁸、(3) 2.5×10⁻⁶、(4) 4.4×10⁻⁵、(5) 7.3×10⁻⁵ で、全肢が原図と一致する。",
+        "公式正答: 公式解答表の理論・問2 は解答 3、配点 5 である。候補の officialAnswer='3' と scoringPoints=5 は一致する。",
+        "総合解説の検算: 1/(4π×8.85×10⁻¹²) = 8.992×10⁹。これに 3×10⁻⁷ を掛けると 2697.5 となる。A 側の力は 2697Q で B 方向、B 側の力は 674.4Q で A 方向になる。合力は 2023.1Q で B 方向である。2023.1Q = 5×10⁻³ から Q = 2.471×10⁻⁶ C ≒ 2.5×10⁻⁶ C となり、(3) に一致する。",
+        "因果の検証: 正電荷同士は斥力を及ぼし合う。A からの斥力は B 向き、B からの斥力は A 向きで、合力の向き B 方向は題意と整合する。比例定数の単位 N·m²/C² も正しい。",
+        "誤答肢の理由を検算した。(1) 2023×1.2×10⁻⁹ = 2.43×10⁻⁶ N で、5×10⁻³ N との比は約 2060 倍（約3桁小さい）。(2) 3.64×10⁻⁵ N で約 137 倍（約2桁小さい）。(4) 8.90×10⁻² N で約 17.8 倍（1桁以上大きい）。(5) 1.48×10⁻¹ N で約 29.5 倍（1桁以上大きい）。いずれも記述どおりである。正答肢 (3) の理由も計算と整合する。",
+        "公開候補図: 原図と照合した。A・P・B の並び、両端の 3×10⁻⁷ C ラベル、P 上の Q[C]、P から B 向き（右向き）の実線矢印と 5×10⁻³ N のラベルがある。寸法線は A〜P が 1 m、P〜B が 2 m である。すべて一致し、欠落や誤ラベルはない。公開候補図だけで配置・距離・力の向きを理解できる。",
+        "figureDescription: 図の内容を正確に記述しており、問題文とも矛盾しない。",
+        "officialReferenceUrls は空配列で、独立主張の検証対象はない。"
+      ]
+    }
+  ]
+}

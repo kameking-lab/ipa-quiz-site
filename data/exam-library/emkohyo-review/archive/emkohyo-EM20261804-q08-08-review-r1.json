@@ -1,0 +1,60 @@
+{
+  "reviewModel": "claude-opus-5-5",
+  "requestedModel": "claude-opus-5-5",
+  "canonicalModel": "claude-opus-5-5",
+  "provider": "firstParty",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 2477,
+      "cacheReadInputTokens": 99060,
+      "cacheCreationInputTokens": 14079,
+      "webSearchRequests": 0,
+      "costUSD": 0.181992,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 1477,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "paperId": "emkohyo-EM20261804",
+  "ids": [
+    "emkohyo-EM20261804-q8"
+  ],
+  "figureSha256": {
+    "emkohyo-EM20261804-q8": {}
+  },
+  "officialRowImageSha256": {
+    "emkohyo-EM20261804-q8": {
+      "/exam-library/emkohyo-EM20261804/q8-p6-1.webp": "386e4b5a6abe3c2e6ef595857e9825ddc49e41a8dbb32ca879079421c05e3d95"
+    }
+  },
+  "officialPageImageSha256": {},
+  "governmentSourceImageSha256": {},
+  "candidateSha256": {
+    "emkohyo-EM20261804-q8": "5f011fd958198735ab5c9dfd1e7d5fb910cd6b81c8327cea8e2d3983c7eb4012"
+  },
+  "sourcePackPath": "docs/evidence/emkohyo-choice-sources/emkohyo-EM20261804-q08-08.json",
+  "sourcePackSha256": "a7db19ab782a395562ff9b79c58a2add7c4795ddee00215c8039fe7ae300ac2e",
+  "assessment": {
+    "emkohyo-EM20261804-q8": {
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "reasonIssues": [
+        "summaryは、発生量が『蒸気圧だけでなく拡散定数や管の形状にも依存する』ので4が誤りと書いている。しかし肢4は同じ拡散セルで異なる物質を比べる設問なので、管の形状(A、L)は両者で同じになる。4が誤りになる理由は、物質ごとに拡散定数Dが違う点にある。summaryでは、同一セル・同一希釈流量でも物質によってDが違うため濃度が変わる、という因果に絞るべき(肢4の個別reasonはこの点を正しく書いている)。",
+        "肢3のreasonの末尾『このため拡散セルは恒温槽で一定温度に保って使用する』は、添付資料のどれにも書かれていない。根拠を示せないなら削る。示せるなら出典を加える。"
+      ],
+      "sourceIssues": [
+        "肢3の『温度が上がると飽和蒸気圧と気相中の拡散係数がともに増大する』を、政府資料は直接支えていない。産業医学総合研究所の昭和53年度年報p.40は、Dを『温度T(°K)における拡散定数』、Poを『その温度における飽和蒸気圧』と定義しているだけである。DやPoが温度とともに増えることも、拡散速度が温度とともに大きくなることも書かれていない。温度依存性を直接示す一次資料が必要。",
+        "厚生労働省『個人サンプラーを用いた測定法の基盤整備報告書』p.39は、受動型試料採取機器(パッシブサンプラー)のサンプリング速度D・A/Lを説明した箇所であり、拡散セルによる標準ガス発生の記述ではない。肢1・肢5の『Aに比例/Lに反比例』を直接支えるのは産業医学総合研究所の年報p.40(式(1)と『A及びLは拡散管の有効断面積と長さ』)である。厚労省資料は類推の補助にとどまる。",
+        "産業技術総合研究所の資料p.3が肢2に対して示すのは、拡散管法の濃度決定要素(拡散管の質量減少速度・希釈ガス流量速度)の箇条書きだけである。『セルごと秤量して濃度を計算できる』ことを直接述べているのは、産業医学総合研究所の年報p.40『蒸気量をセルの重量減少から測定し…稀釈気流を求めれば…濃度が算出される』の箇所である。肢2の主根拠はこちらにすべき。"
+      ],
+      "needsExternalCheck": [
+        "肢3: 拡散セルの拡散速度が温度とともに増大すること(Poと拡散係数Dの温度依存性)を直接述べる政府系一次資料(JNIOSH・厚労省・産総研など)を確認し、出典に加える。"
+      ]
+    }
+  }
+}

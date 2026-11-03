@@ -1,0 +1,53 @@
+{
+  "reviewModel": "claude-opus-5-5",
+  "requestedModel": "claude-opus-5-5",
+  "canonicalModel": "claude-opus-5-5",
+  "provider": "anthropic",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 2695,
+      "cacheReadInputTokens": 115183,
+      "cacheCreationInputTokens": 16280,
+      "webSearchRequests": 0,
+      "costUSD": 0.2071846,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 2142,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "paperId": "emkohyo-20260217-2",
+  "ids": [
+    "emkohyo-20260217-2-q12"
+  ],
+  "figureSha256": {
+    "emkohyo-20260217-2-q12": {}
+  },
+  "officialRowImageSha256": {
+    "emkohyo-20260217-2-q12": {
+      "/exam-library/emkohyo-20260217-2/q12-p9-0.webp": "c9ab7d9f6d48f3c8795cf7e760a3ebf56276a9bcf801405355e9f509cad7d81c"
+    }
+  },
+  "governmentSourceImageSha256": {},
+  "candidateSha256": {
+    "emkohyo-20260217-2-q12": "5f3659a581412d0b69438f58bfdb8560015b7c4e6bfe830048985b28704f8cdd"
+  },
+  "sourcePackPath": "docs/evidence/emkohyo-choice-sources/emkohyo-20260217-2-q12-12.json",
+  "sourcePackSha256": "9bc55655b1fde526701c73c2d33c9ce40cbced38fdb3c4eb970232b5d1dbf410",
+  "assessment": {
+    "emkohyo-20260217-2-q12": {
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "reasonIssues": [
+        "肢3の理由は、特化則第4条を『発散を抑制する設備の規定』と説明しているが、この説明は条文と合わない。第4条の見出しは『第二類物質の製造等に係る設備』である。内容も、特定第二類物質等を製造する設備を密閉式の構造にすること（第1項）と、取り扱うときは隔離室での遠隔操作によること（第2項）で、発散抑制措置ではない（それは第5条）。証拠抜粋にも『製造する設備については、密閉式の構造のものとしなければならない』とある。『製造設備を密閉式とする等の規定でまとめて扱っています』のように直すこと。",
+        "肢1の理由の『列挙物質を重量の1％超…含む製剤なども対象になります』は、条文の但し書きを落としている。施行令別表第3第一号8には『合金にあつては、ベリリウムをその重量の三パーセントを超えて含有するものに限る』とあり、ベリリウム合金は1％超でも3％以下なら第一類物質に当たらない。肢1が誤りという結論は変わらない（1％超〜5％以下の製剤が対象に入る反例が成り立つため）。ただし『列挙物質（ベリリウム合金は3％超）を1％超』のように、合金の条件を明記すべき。"
+      ],
+      "sourceIssues": [],
+      "needsExternalCheck": []
+    }
+  }
+}

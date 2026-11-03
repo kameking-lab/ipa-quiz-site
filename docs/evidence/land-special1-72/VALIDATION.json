@@ -1,0 +1,47 @@
+{
+  "scope": "2026-02 09:30 A and2026-06 09:30 A, all subjects72 originals",
+  "nativeAcceptedSha256": "8ee059ce42aecb3ecea59cc400f0f197ba3d7d3a7c1e7fd195d89daab601028c",
+  "independentAcceptanceSha256": "5d73e08422a8f52b512e335cae7858ad2d75f79b466f1dc302eaec321e9f0740",
+  "questionsExact72": true,
+  "stemBytesPreserved72": true,
+  "choiceTextBytesPreserved320": true,
+  "reasonBytesPreserved320": true,
+  "selectedExplanationReusesAcceptedReason72": true,
+  "officialAColumnKeysMatch72": true,
+  "figureAssetsVerified21": true,
+  "visualFigureQa": "All21 crops reviewed; seven margin corrections; Juneq05 uses two source-PDF rectangles to retain its complete legend and exclude adjacent prose. No diagram or label changes.",
+  "officialBookletTimeVisualQa": "All four answer page1 images show09:30 A and13:30 B columns; only A cells used.",
+  "typecheck": {
+    "command": "tsc --noEmit --incremental false",
+    "exitCode": 0
+  },
+  "focusedTests": {
+    "files": [
+      "__tests__/land72-integration.test.ts",
+      "__tests__/questions/get-questions.test.ts"
+    ],
+    "testsPassed": 72,
+    "testsFailed": 0
+  },
+  "schema": {
+    "command": "tsx scripts/validate-questions.ts --exam=land-special1",
+    "ok": 72,
+    "fail": 0,
+    "warn": 9,
+    "warningReason": "Only accepted selected explanations under50 characters; no accepted text expanded to satisfy length heuristic."
+  },
+  "sharedUiComponentsChanged": 0,
+  "fullBuildRuns": 0,
+  "networkRequests": 0,
+  "modelOrPaidApiCalls": 0,
+  "publicActions": 0,
+  "base": "bbfa350f8eb3692ae3f0ce356fef3080922a8842",
+  "baseCaveat": "Local prerequisite with one literal count change awaiting approval; not publication approval.",
+  "remainingBlockers": [
+    "Publication approval remains false",
+    "Base bbfa count literal approval pending",
+    "Full build deferred to root coordination",
+    "Independent product-conversion review pending"
+  ],
+  "outsideScope": "Both13:30 B sittings72 originals unrecorded; this candidate does not claim all published A/B144 complete."
+}

@@ -1,0 +1,94 @@
+{
+  "questionNumber": 5,
+  "sharedContext": null,
+  "units": [
+    {
+      "part": null,
+      "question": "中小水力や風力発電に使用されている誘導発電機の特徴について，同期発電機と比較した記述として，誤っているものを次の(1)～(5)のうちから一つ選べ。",
+      "choices": {
+        "1": "構造が簡単で，励磁装置が不要である。",
+        "2": "始動，系統への並列などの運転操作が簡単である。",
+        "3": "回転磁界と回転子の速度に差がある。",
+        "4": "単独で発電することができず，電力系統に並列して運転する必要がある。",
+        "5": "系統への並列時の突入電流が小さい。"
+      },
+      "officialAnswer": "5",
+      "explanation": "誘導発電機は、誘導電動機と同じ構造の機械です。回転子を同期速度より速く回すと、すべりが負になり、発電機として動作します。回転子にはかご形などを用い、界磁巻線を持ちません。励磁に必要な無効電力（磁化電流）は、接続した電力系統から受け取ります。\n\nこの性質から、同期発電機と比べて次の特徴があります。\n・構造が簡単で、励磁装置が要らない。\n・並列時に電圧・周波数・位相を合わせる同期操作が要らない。\n・回転磁界と回転子の速度に差（すべり）がある。\n・系統から励磁を受けるため、一般に単独では発電できない。\n\n一方、誘導発電機は並列前に自ら端子電圧を確立できません（無励磁の状態です）。このため系統へ投入すると、励磁されていない機械に系統電圧が直接加わり、励磁電流を含む大きな過渡的な突入電流が流れます。この突入電流は、同期速度付近まで加速してから投入しても生じ、系統に電圧降下（瞬時電圧低下）を起こす原因となります。同期速度から大きく外れた状態で投入すれば、誘導電動機の直入れ始動と同様に、突入電流はさらに大きくなります。\n\nこれに対して同期発電機は、自らの励磁で電圧を確立し、電圧の大きさ・周波数・位相を系統に合わせてから並列します。このため、並列時の突入電流はほとんど流れません。\n\n誘導発電機では、同期速度付近まで加速してから並列する、限流リアクトルやソフトスタータ（サイリスタによる限流装置）を用いる、などの対策をとります。ただし、これらは突入電流を抑制するものであり、突入電流そのものをなくすものではありません。\n\nしたがって、同期発電機と比較して「並列時の突入電流が小さい」とする(5)が誤りです。",
+      "choiceExplanations": {
+        "1": "正しい。回転子はかご形などで界磁巻線を持たず、励磁は系統から供給される無効電力でまかなわれる。このため、同期発電機のような励磁装置（励磁機・自動電圧調整装置など）は不要で、構造も簡単である。",
+        "2": "正しい。同期発電機は、並列時に電圧の大きさ・周波数・位相を系統に合わせる同期操作が必要である。誘導発電機ではこの操作が要らず、同期速度付近まで回転させて系統に接続すればよい。このため運転操作が簡単である。",
+        "3": "正しい。誘導機は、回転磁界と回転子の速度差（すべり）によって回転子に電流が誘導されて動作する。発電機運転では、回転子が同期速度よりわずかに速く回り、すべりは負となる。回転磁界と回転子の速度には常に差がある。",
+        "4": "正しい。誘導発電機は、励磁に必要な無効電力を電力系統から受け取る。このため、一般に単独では発電できず、系統に並列して運転する必要がある。なお、コンデンサを接続して自己励磁させる運転方式もあるが、系統に連系して用いる通常の誘導発電機は単独では発電できない。",
+        "5": "誤り。誘導発電機は並列前に自ら電圧を確立できない（無励磁の）ため、系統へ投入すると、励磁されていない機械に系統電圧が直接加わり、励磁電流を含む大きな過渡的な突入電流が流れる。この突入電流は同期速度付近で投入しても生じ、系統の電圧降下（瞬時電圧低下）の原因となる。一方、同期発電機は電圧・周波数・位相を合わせてから並列するため、突入電流はほとんど流れない。限流リアクトルなどの対策も突入電流を抑制するにとどまる。したがって「突入電流が小さい」は誤りであり、これが正答である。"
+      },
+      "figureDescription": "本問には図・表はない。問題文と選択肢(1)～(5)の文章のみで構成されている。",
+      "officialReferenceUrls": [],
+      "uncertainty": "なし",
+      "needsReview": true,
+      "sourceQuestionPdfUrl": "https://www.shiken.or.jp/chief/upload/20260322_ch_third_q02.pdf",
+      "sourceAnswerPdfUrl": "https://www.shiken.or.jp/chief/upload/20260322_ch_third_a01.pdf",
+      "reviewedFromPage": [
+        8
+      ]
+    }
+  ],
+  "draftModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 2117,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 9309,
+      "webSearchRequests": 0,
+      "costUSD": 0.11707580000000001,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 674,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "e9b5531270fbaa04baf0cb68565278d3575089135ec6c3fc02886486ea438ffa",
+  "inputRequestSha256": "f4895d077a7ad1c5ab45721a20f2dd47c8d1fac947b28e825afcc16a07eed78f",
+  "sourceQuestionPdfSha256": "9733341a0f293f068c9a665d5a9a90f1aabf3a2db5d79cd530643cdea241f7b7",
+  "sourceAnswerPdfSha256": "cc2890296d06a4823df5697a78a1c01ddfd39f041c51f48c87984daa3a5707c6",
+  "sourcePageImageSha256": {
+    "data/raw_pdfs/denken3/review/20260322/power/p08.png": "5d81dfbd88c8b411e8fdca0421441e76eaf9cb4c6790f8a18a7f705b6ec1bf7d"
+  },
+  "revisionHistory": [
+    {
+      "version": 1,
+      "model": "claude-opus-5-5",
+      "resolvedModel": "claude-opus-5-5",
+      "modelUsage": {
+        "claude-opus-5-5": {
+          "inputTokens": 2,
+          "outputTokens": 3775,
+          "cacheReadInputTokens": 1279,
+          "cacheCreationInputTokens": 12333,
+          "webSearchRequests": 0,
+          "costUSD": 0.1744278,
+          "contextWindow": 1000000,
+          "maxOutputTokens": 128000,
+          "thinkingTokens": 2043,
+          "canonicalModel": "claude-opus-5-5",
+          "provider": "firstParty",
+          "costBasis": "list"
+        }
+      },
+      "rawResponseSha256": "74804d4d97c0473d07d96706a896d01ead2a060fb287de352ec66dce8644a88e",
+      "inputRequestSha256": "7104208ee789956352da7d75844956c4c503364be3744e293029b184f0ca4a43",
+      "previousDraftSha256": "9483d43cd2a1ce3e581ca66c37b47055f0564c55eed9383c99c3faff55939145",
+      "previousDraft": "data/raw_pdfs/denken3/review/20260322/power/archive/q05-vision-draft-v1.json",
+      "answeredReviewSha256": "9106a313f468f33966790e138293494a7716af75435469b7854cc7aaf8094831",
+      "answeredReview": "data/raw_pdfs/denken3/review/20260322/power/archive/q05-opus-review-v1.json",
+      "answeredStrictReceipt": "docs/evidence/denken3/strict/20260322-power-s1-q05-opus.json",
+      "answeredStrictReceiptSha256": "b510a432eeb360edc8b0e8dfba486e2bde12319e0b2ff2952bcd378b6378c8a8",
+      "figureSha256": {},
+      "referenceHashes": {},
+      "operatorNote": ""
+    }
+  ]
+}

@@ -179,7 +179,7 @@ CI が緑であることは、AI 応答の中身が正しいことを何も保�
 
 無料プラン（ユーザー獲得最優先）:
 - 全試験・全機能アクセス無制限
-- AI コパイロット: 初回 10 回（JST 0:00 リセット）。フィードバック投稿後はほぼ無制限（フィードバック駆動モデル）。単一情報源は `lib/constants/ai-quota.ts` の `FREE_AI_DAILY_LIMIT`
+- AI コパイロット: 初回10回の質問ゲートなし。両コパイロットAPIにIP単位（20回/分・100回/時・500回/日）とサイト全体（500回/時・5000回/日）の適正利用制限、月間費用上限を適用。実プロバイダ利用時に共有KVが使えなければ一時停止する。他のAI機能の無料枠は `lib/constants/ai-quota.ts` の `FREE_AI_DAILY_LIMIT` を参照。
 - 広告表示あり（本文と分離、控えめ）
 - モデル: `gemini-2.5-flash-lite`
 
@@ -198,7 +198,7 @@ Stripe 本実装はフェーズ4。
 - 新規外部 API の導入（Gemini 以外の LLM など）
 - LLM プロバイダ変更（Gemini → Claude 等）
 - デフォルトモデル変更（Flash-Lite → Flash 等）
-- 無料枠の日次回数変更（現状 10。単一情報源は `lib/constants/ai-quota.ts` の `FREE_AI_DAILY_LIMIT`）
+- 他のAI機能の無料枠の日次回数変更（現状 10。単一情報源は `lib/constants/ai-quota.ts` の `FREE_AI_DAILY_LIMIT`。コパイロットの10回ゲート解除は2026-09-28にオーナーが承認済み）
 - プレミアム価格の変更（現状 300 円/月）
 - DB スキーマの新規作成・変更
 - Stripe / 認証の本実装
@@ -259,5 +259,5 @@ Stripe 本実装はフェーズ4。
 ## 14. 姉妹プロジェクトと共有する構成
 
 - ANZEN AI (safe-ai-site) と Vercel 環境・アフィリエイト枠を共有
-- アフィリエイト ID（環境変数名はコードと一致させること）: `NEXT_PUBLIC_AMAZON_ASSOCIATE_TAG=safeaisite22-22`, `NEXT_PUBLIC_RAKUTEN_AFFILIATE_ID=5291f19d.a0fc3c16.5291f19e.b91d11f6`
+- アフィリエイト ID（環境変数名はコードと一致させること）: `NEXT_PUBLIC_AMAZON_ASSOCIATE_TAG=`（過去問AIでは2026-10-03に閉鎖が確認された `safeaisite22-22` を通常商品リンクへ切り替え。再設定しない。他サイト・別IDの状態はこの変更の対象外）, `NEXT_PUBLIC_RAKUTEN_AFFILIATE_ID=5291f19d.a0fc3c16.5291f19e.b91d11f6`
 - フェーズ4 で相互送客バナーを実装

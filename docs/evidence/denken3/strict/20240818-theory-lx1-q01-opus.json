@@ -1,0 +1,74 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20240818",
+  "subject": "theory",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 3852,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 18969,
+      "webSearchRequests": 0,
+      "costUSD": 0.22905579999999998,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 2526,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "b46cbd9346dfa7b268a241378c9527f4591279092669cbc25df199c510e96dde",
+  "inputRequestSha256": "f08096e049c04db5d5752cf237406eaa9623c3ce06fb8545789ae0d07cc0449e",
+  "inputHashes": {
+    "candidateSha256": {
+      "q01": "95f0f84882fc3cd13f574463b03325359dfc8bc13190f39db2b345a9340ee2fa"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20240818/theory/p04.png": "04f91f67c32d658e6f37a2ccb478b476d00df25fdda82dbf2e75acdc2ad70ba8",
+      "data/raw_pdfs/denken3/review/20240818/theory/p05.png": "154ef918117898605602a26e4952d91780a4899c8d160a9ec4cc09036a0cf309"
+    },
+    "figureSha256": {
+      "public/images/denken3/20240818/theory/20240818-theory-q01-context.png": "891fb34761aa1426b41e7bfa468723b4502e20c367a046319fd2d27fe6d49c05",
+      "public/images/denken3/20240818/theory/20240818-theory-q01-choice-1.png": "022a3825df766d0047c64be87c5ee283db185d821d65ce3b7a564bec4230e1f3",
+      "public/images/denken3/20240818/theory/20240818-theory-q01-choice-2.png": "5b7e77ff76f3891d2693ef62cf7d99674de79c8664b7ab10b8bce55f95078210",
+      "public/images/denken3/20240818/theory/20240818-theory-q01-choice-3.png": "332e159c38b9123725397aa199357645bf0b6ccf284eb0e6c95a5757a6ab4d22",
+      "public/images/denken3/20240818/theory/20240818-theory-q01-choice-4.png": "39f0f144c285da036a2020aff3d877020e459637990d410fa462ea69df2d95af",
+      "public/images/denken3/20240818/theory/20240818-theory-q01-choice-5.png": "4b8d6b4ad83a54fd9dec0e62502816dcabaaaef806506b3f8a2e6ff43845b86c"
+    },
+    "sourceQuestionPdfSha256": "236be905e93a023cf3c65c1e22c45c24dc42b910151c51f8ed023247793d1d29",
+    "sourceAnswerPdfSha256": "f72ecbc3a477e64948388b69cf78cb931032c9f0c688639836c8d533a949cd0f",
+    "officialAnswerUnitsSha256": "f50fdd46498cf67bc8fe692426db828760078cc540f8b5e64e1bfb9bf4773e9b",
+    "referencePdfSha256": {},
+    "referencePageSha256": {},
+    "referenceJsonSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q01",
+      "questionNumber": 1,
+      "part": null,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "出典メタデータ: fiscalYear=2024（令和6年度）、term=upper（上期）、examDate=2024-08-18、subject=theory、reviewedFromPage=[4,5]、問題PDF・解答PDFのURLは manifest と一致する。scoringPoints=null は公式正答単位の points=null と一致する。officialReferenceUrls は空で、検証が必要な独立主張はない。",
+        "問題文: PDF第4頁の問1本文3段落（二層誘電体平行平板、下部電極接地、上部電極に電圧、導電性・端効果無視、図2は参考）と文言・記号が一致する。第5頁の「（注）図2と同様に下側を接地電極とする。」は問題文末尾に移して保持されており、欠落していない。",
+        "図1（原図第4頁）: 上側は比誘電率ε1=1（空気）、下側は比誘電率ε2=6（固体・網掛け）。下部電極は接地されている。原図上で空気層と固体層はほぼ同じ厚さ（各約56px）で描かれている。公開候補図 context.png は図1・図2のラベル、接地記号、「等電位面」の矢印、両キャプションをすべて保持している。",
+        "選択肢図（原図第5頁）と公開候補図 choice-1〜5.png を照合した。(1)ほぼ等間隔、(2)疎・密・疎、(3)上端付近に1本のみで下側が密（上疎・下密）、(4)密・疎・密、(5)上側約半分が密で下側は1本のみ（上密・下疎）。上下の向き、肢番号ラベル、線の粗密はいずれも原図と一致し、候補の各肢テキスト記述も図と一致する。",
+        "公式正答: 解答PDFの<理論>問1=5 と、候補 officialAnswer='5' が一致する。",
+        "物理検算: 境界に真電荷がないため D1=D2 となり、ε0·1·E1=ε0·6·E2 から E1=6E2。両層の厚さが等しいので、電圧配分は空気層6/7、固体層1/7。等電位線は電位差が等間隔なので、空気層側（上）が密、固体層側（下）が疎となり、境界で間隔が不連続に変わる。各層内の間隔は一様である。",
+        "(5)の図との定量照合: 上側は約12間隔で間隔約7px、下側は約2間隔で間隔約40px。間隔比は約6で E1/E2=6 と整合し、粗密の切替位置も図1の境界位置（中央付近）と一致する。",
+        "誤答肢の理由: (1)は一様電界で単一誘電体の場合にあたり、二層では不成立。(2)は各層内で電界一様という条件に反する（中央だけ強い）。(3)は粗密が逆転している。(4)は下部電極付近が密で、固体層の電界が1/6であることに反する。(5)の正答理由も含め、いずれも各肢固有の理由として正確である。",
+        "総合解説: D連続→E1=6E2→E=-dV/dx から等電位線の間隔が決まる、という因果が正しい。空気層=上・密、固体層=下・疎という極性・向きの記述にも誤りはない。",
+        "公開候補図だけで解答に必要な情報（層構成、比誘電率、接地側、参考分布、5肢の粗密）がすべて読み取れ、原図なしでも理解できる。"
+      ]
+    }
+  ]
+}

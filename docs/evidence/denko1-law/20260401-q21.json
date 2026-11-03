@@ -1,0 +1,24 @@
+{
+  "schemaVersion": 1,
+  "question": "20260401-q21",
+  "status": "official-source-verified",
+  "checkedAtUtc": "2026-09-26T10:35:43.429914+00:00",
+  "sources": {
+    "横浜市 電気設備工事施工マニュアル 第3編 受変電設備工事": {
+      "title": "横浜市 電気設備工事施工マニュアル 第3編 受変電設備工事",
+      "url": "https://www.city.yokohama.lg.jp/business/nyusatsu/youshiki/kenchiku/denki_sekoumanyuaru.files/0011_20230725.pdf",
+      "sha256": "af3a3b246c1247289ed4dc7cf63d23860d6c2c35652949a79d91bead132387eb"
+    }
+  },
+  "checks": {
+    "屋外キュービクルの保有距離": {
+      "source": "横浜市 電気設備工事施工マニュアル 第3編 受変電設備工事",
+      "clauses": [
+        "＊２屋外に設ける場合、キュービクルの周囲の保有距離は扉幅（１ｍ未満の場合は１ｍ）＋保安上有効な距離以上とする。",
+        "保安上有効な距離とは、人の移動に支障をきたさない距離をいう。"
+      ],
+      "applies": "0.1m+保安上有効な距離は、1m以上+保安上有効な距離に満たない。"
+    }
+  },
+  "unresolved": []
+}

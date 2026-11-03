@@ -1,0 +1,470 @@
+{
+  "questionNumber": 1,
+  "sharedContext": null,
+  "units": [
+    {
+      "part": null,
+      "question": "次の文章は，水力発電所の種類に関する記述である。\n\n水力発電所は　(ア)　を得る方法により分類すると，水路式，ダム式，ダム水路式があり，　(イ)　の利用方法により分類すると，　(ウ)　，調整池式，貯水池式，揚水式がある。\n\n一般的に，水路式はダム式，ダム水路式に比べ　(エ)　。また，貯水ができないので発生電力の調整には適さない。ダム式，ダム水路式発電では，ダムに水を蓄えることで　(イ)　の調整ができるので，電力需要が大きいときにあわせて運転することができる。\n\n河川の自然の流れをそのまま利用して発電する方式を　(ウ)　発電という。貯水池などを持たない水路式発電所がこれに相当する。\n\n1 日又は数日程度の河川流量を調整できる大きさの池を持ち，電力需要が小さいときにその池に蓄え，電力需要が大きいときに放流して発電する方式を　(オ)　発電という。\n\n上記の記述中の空白箇所(ア)～(オ)に当てはまる組合せとして，最も適切なものを次の(1)～(5)のうちから一つ選べ。",
+      "choices": {
+        "1": "(ア) 落差　(イ) 流速　(ウ) 自然放流式　(エ) 建設期間が長い　(オ) ダム式",
+        "2": "(ア) 流速　(イ) 落差　(ウ) 自然放流式　(エ) 建設期間が短い　(オ) ダム式",
+        "3": "(ア) 落差　(イ) 流量　(ウ) 流込み式　(エ) 高落差を得にくい　(オ) 調整池式",
+        "4": "(ア) 流量　(イ) 落差　(ウ) 流込み式　(エ) 高落差を得やすい　(オ) 調整池式",
+        "5": "(ア) 落差　(イ) 流量　(ウ) 流込み式　(エ) 建設費が安い　(オ) 貯水池式"
+      },
+      "officialAnswer": "3",
+      "explanation": "水力発電所の分類には，落差を得る方法による分類と，発電所の運用上の特性（河川流量の利用方法）による分類がある。\n\n・落差を得る方法による分類：水路式，ダム式，ダム水路式。よって (ア) は「落差」。\n・河川流量の利用方法による分類：流込み式，調整池式，貯水池式，揚水式。よって (イ) は「流量」，(ウ) は「流込み式」。\n\n本文の「ダムに水を蓄えることで (イ) の調整ができる」も「流量」と一致する。ダム式は貯水池により河川流量を調整できるので，電力負荷の変動に応じた出力調整ができる。また本文の「貯水ができないので発生電力の調整には適さない」は，水路式が流量を調整できるダムを持たず，出力が河川流量に左右されることに対応する。\n\n流込み式は，河川の自然流量の範囲内で取水して発電する方式であり，水路式がこれに相当する。本文の「河川の自然の流れをそのまま利用」「貯水池などを持たない水路式発電所がこれに相当する」と一致する。\n\n調整池式は，1 日ないし数日の河川流量を調整できる容量の池（調整池）を持つ方式である。需要の小さい時間帯に水を蓄え，需要の大きい時間帯に放流して発電する。よって (オ) は「調整池式」。これに対し貯水池式は，年間調整または季節調整が可能な池（貯水池）を持ち，豊水期の水を貯留して渇水期に使う方式である。「1 日又は数日程度」という記述には当てはまらない。\n\n消去法で確認する。\n・(ア)「落差」で (2)(4) が外れる。\n・(イ)「流量」で (1)(2)(4) が外れる。\n・(ウ)「流込み式」で (1)(2) が外れる。\n・(オ)「調整池式」で (1)(2)(5) が外れる。\n(ア)(イ)(ウ)(オ) の 4 つの空欄をすべて満たす組合せは (3) だけであり，正答は (3) に一意に定まる。\n\n(エ) について：(エ)「高落差を得にくい」は公式正答 (3) の組合せに含まれる記述である。参考資料は，水路式は河川勾配と水路勾配の差で，ダム式は主としてダムの高さで，ダム水路式はダムと水路の両方で落差を得ることを説明しているが，方式間で得られる落差の大小は比較していない。このため，(エ) の各語句（「建設期間が長い」「建設期間が短い」「高落差を得にくい」「高落差を得やすい」「建設費が安い」）の当否はここでは説明せず，本問の判定にも用いない。正答は (ア)(イ)(ウ)(オ) によって一意に決まる。",
+      "choiceExplanations": {
+        "1": "誤り。(ア) 落差は正しいが，(イ)(ウ)(オ) が誤っている。\n・(イ)：流込み式・調整池式などは「流量」の利用方法による分類であり，「流速」ではない。本文の「ダムに水を蓄えることで (イ) の調整ができる」にも「流速」は当てはまらない。ダムに蓄えた水で調整するのは河川流量である。\n・(ウ)：流量の利用方法（運用上の特性）による分類として挙げられているのは流込み式・調整池式・貯水池式・揚水式であり，「自然放流式」は分類に挙げられていない。河川の自然流量の範囲内で取水して発電する方式は「流込み式」である。\n・(オ)：「ダム式」は落差を得る方法による分類の方式名であり，流量の利用方法による方式名ではない。1 日ないし数日の流量を調整する池を持つ方式は「調整池式」である。\nこの肢は (イ)(ウ)(オ) の誤りによって除外される。(エ)「建設期間が長い」は判定に用いず，その当否はここでは扱わない。",
+        "2": "誤り。(ア)(イ)(ウ)(オ) のすべてが誤っている。\n・(ア)：水路式・ダム式・ダム水路式は「落差」を得る方法による分類であり，「流速」ではない。\n・(イ)：流込み式・調整池式などは「流量」の利用方法による分類であり，「落差」ではない。落差は (ア) の分類の基準である。\n・(ウ)：河川の自然流量の範囲内で取水して発電する方式は「流込み式」である。「自然放流式」は分類に挙げられていない。\n・(オ)：「ダム式」は落差を得る方法による分類の方式名である。1 日ないし数日の流量を調整する池を持つ方式は「調整池式」である。\nこの肢は (ア)(イ)(ウ)(オ) の誤りによって除外される。(エ)「建設期間が短い」は判定に用いず，その当否はここでは扱わない。",
+        "3": "正しい（公式正答）。\n・(ア) 落差：水路式・ダム式・ダム水路式は落差を得る方法による分類である。\n・(イ) 流量：流込み式・調整池式・貯水池式・揚水式は河川流量の利用方法による分類である。ダムに水を蓄えて調整するのも河川流量である。\n・(ウ) 流込み式：河川の自然流量の範囲内で取水して発電する方式で，貯水池などを持たない水路式発電所が相当する。\n・(オ) 調整池式：1 日ないし数日の河川流量を調整できる池を持つ。需要の小さいときに蓄え，大きいときに放流して発電する方式である。\nこの 4 つの空欄をすべて満たす組合せは (3) だけであり，正答は一意に決まる。\n\n(エ)「高落差を得にくい」は公式正答の組合せに含まれる記述である。参考資料は各方式の落差の得方を説明しているが，方式間の落差の大小は比較していないため，(エ) の技術的根拠はここでは説明しない。正答の判定は (ア)(イ)(ウ)(オ) によって行う。",
+        "4": "誤り。(ア) と (イ) が入れ替わっている。\n・(ア)：水路式・ダム式・ダム水路式は「落差」を得る方法による分類であり，「流量」ではない。\n・(イ)：流込み式・調整池式などは「流量」の利用方法による分類であり，「落差」ではない。本文の「ダムに水を蓄えることで (イ) の調整ができる」にも「落差」は当てはまらない。\n(ウ)「流込み式」と (オ)「調整池式」は正しいが，(ア)(イ) の誤りによりこの肢は除外される。(エ)「高落差を得やすい」は判定に用いず，その当否はここでは扱わない。",
+        "5": "誤り。(ア) 落差，(イ) 流量，(ウ) 流込み式は正しいが，(オ) の「貯水池式」が誤っている。\n・貯水池式は，年間調整または季節調整が可能な池（貯水池）を持つ方式である。豊水期の水を貯留して渇水期に使用する。\n・本文の「1 日又は数日程度の河川流量を調整できる大きさの池」を持つ方式は調整池式である。\nこの肢は (オ) の誤りによって除外される。(エ)「建設費が安い」は判定に用いず，その当否はここでは扱わない。"
+      },
+      "figureDescription": "回路図・写真などの図はない。問題文の下に選択肢の表がある。列見出しは (ア)(イ)(ウ)(エ)(オ)，行見出しは (1)〜(5) で，各セルに語句が記載されている。表の各行の語句は choices と同一である。",
+      "officialReferenceUrls": [
+        "https://openjicareport.jica.go.jp/pdf/0000256044_01.pdf"
+      ],
+      "uncertainty": "(エ)「高落差を得にくい」は公式正答 (3) の組合せに含まれる記述である。参考資料（水力開発ガイドマニュアル第1分冊 3.2.2 落差を得る方法による分類）は，水路式・ダム式・ダム水路式それぞれの落差の得方を説明するのみで，方式間の落差の大小を比較していない。このため次の 2 点は確認できていない。\n・「高落差を得にくい」の技術的根拠\n・他肢の (エ) の語句「建設期間が長い」「建設期間が短い」「高落差を得やすい」「建設費が安い」の当否\nただし正答 (3) は (ア)(イ)(ウ)(オ) によって一意に定まるため，正答の判定には影響しない。",
+      "needsReview": true,
+      "sourceQuestionPdfUrl": "https://www.shiken.or.jp/chief/upload/20260322_ch_third_q02.pdf",
+      "sourceAnswerPdfUrl": "https://www.shiken.or.jp/chief/upload/20260322_ch_third_a01.pdf",
+      "reviewedFromPage": [
+        4
+      ]
+    }
+  ],
+  "draftModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 3715,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 9309,
+      "webSearchRequests": 0,
+      "costUSD": 0.1490358,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 1522,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "46831e08590f4b00b037bcb8fa22ff3f3d75c2a48f8a52289e050f3d43293800",
+  "inputRequestSha256": "30b7099d3af5905ab34d1fd9fa4e09b7cee42a34edbf0ba2f59dbfd9ce4be68d",
+  "sourceQuestionPdfSha256": "9733341a0f293f068c9a665d5a9a90f1aabf3a2db5d79cd530643cdea241f7b7",
+  "sourceAnswerPdfSha256": "cc2890296d06a4823df5697a78a1c01ddfd39f041c51f48c87984daa3a5707c6",
+  "sourcePageImageSha256": {
+    "data/raw_pdfs/denken3/review/20260322/power/p04.png": "b5db000e4206d9200a3d5b80001dc23907f06ab38b8c96f60dfae6d1219fab96"
+  },
+  "revisionHistory": [
+    {
+      "version": 1,
+      "model": "claude-opus-5-5",
+      "resolvedModel": "claude-opus-5-5",
+      "modelUsage": {
+        "claude-opus-5-5": {
+          "inputTokens": 2,
+          "outputTokens": 4576,
+          "cacheReadInputTokens": 1279,
+          "cacheCreationInputTokens": 13599,
+          "webSearchRequests": 0,
+          "costUSD": 0.2005758,
+          "contextWindow": 1000000,
+          "maxOutputTokens": 128000,
+          "thinkingTokens": 2168,
+          "canonicalModel": "claude-opus-5-5",
+          "provider": "firstParty",
+          "costBasis": "list"
+        }
+      },
+      "rawResponseSha256": "5214650d0c5cf14f565250d64ee86a9db6e120dc6c1be56cbe844cb40706f2cc",
+      "inputRequestSha256": "d822ad3f26102e2f01a81fb90c4c8d06d8c2e86a004104b212a70017795a2c15",
+      "previousDraftSha256": "8d02e51b4a24afd6a670dec2f8375ee7b6da942891a13d442bec3b2891d00ecf",
+      "previousDraft": "data/raw_pdfs/denken3/review/20260322/power/archive/q01-vision-draft-v1.json",
+      "answeredReviewSha256": "da42249039f913959322c2eb59302dcb87f6597e6feb556bc40d4d4cb9f7587a",
+      "answeredReview": "data/raw_pdfs/denken3/review/20260322/power/archive/q01-opus-review-v1.json",
+      "answeredStrictReceipt": "docs/evidence/denken3/strict/20260322-power-s1-q01-opus.json",
+      "answeredStrictReceiptSha256": "1e7268b01380f4d1fb6e3111ba7316f0c462994aa738464bfc4ad777f5c696fc",
+      "figureSha256": {},
+      "referenceHashes": {},
+      "operatorNote": ""
+    },
+    {
+      "version": 2,
+      "model": "claude-opus-5-5",
+      "resolvedModel": "claude-opus-5-5",
+      "modelUsage": {
+        "claude-opus-5-5": {
+          "inputTokens": 2,
+          "outputTokens": 6246,
+          "cacheReadInputTokens": 1279,
+          "cacheCreationInputTokens": 13215,
+          "webSearchRequests": 0,
+          "costUSD": 0.2309038,
+          "contextWindow": 1000000,
+          "maxOutputTokens": 128000,
+          "thinkingTokens": 3342,
+          "canonicalModel": "claude-opus-5-5",
+          "provider": "firstParty",
+          "costBasis": "list"
+        }
+      },
+      "rawResponseSha256": "ef88d7438a862bdbd009b719cc4ce70b8b231c9ae3321a9833cecdbe8384886f",
+      "inputRequestSha256": "8fbe62360ab71c0e8e5a5fbd24e5208aaa6834c82deb9b8ad07df837d7fb4039",
+      "previousDraftSha256": "21d257bf8e739ac353514f6b30f79fc0f917f7a0cded14a3de555b8f260e4936",
+      "previousDraft": "data/raw_pdfs/denken3/review/20260322/power/archive/q01-vision-draft-v2.json",
+      "answeredReviewSha256": "5a76695379b42f790087090a8d98d4460c2f55d5268c08069c0c9d8839bfbf57",
+      "answeredReview": "data/raw_pdfs/denken3/review/20260322/power/archive/q01-opus-review-v2.json",
+      "answeredStrictReceipt": "docs/evidence/denken3/strict/20260322-power-s2-q01-opus.json",
+      "answeredStrictReceiptSha256": "e9b0a9534ca5c53caa27abad13dc67b78b1b17294513cecaba70d1a6d2a5ed7d",
+      "figureSha256": {},
+      "referenceHashes": {},
+      "operatorNote": ""
+    },
+    {
+      "version": 3,
+      "model": "claude-opus-5-5",
+      "resolvedModel": "claude-opus-5-5",
+      "modelUsage": {
+        "claude-opus-5-5": {
+          "inputTokens": 2,
+          "outputTokens": 6222,
+          "cacheReadInputTokens": 1279,
+          "cacheCreationInputTokens": 14582,
+          "webSearchRequests": 0,
+          "costUSD": 0.24135979999999999,
+          "contextWindow": 1000000,
+          "maxOutputTokens": 128000,
+          "thinkingTokens": 3581,
+          "canonicalModel": "claude-opus-5-5",
+          "provider": "firstParty",
+          "costBasis": "list"
+        }
+      },
+      "rawResponseSha256": "01312bd94097bec98888ec6711fbe629f0a9e2683c56018b611ebede30e5fcf5",
+      "inputRequestSha256": "95b13d411f724ad3b5703034cb3d83c90e20ca519aaee0c2a5269a9d01084d53",
+      "previousDraftSha256": "7dc41b073a3527432f46091947c140f318cb68f06f21fd4b0eff6b68ea095557",
+      "previousDraft": "data/raw_pdfs/denken3/review/20260322/power/archive/q01-vision-draft-v3.json",
+      "answeredReviewSha256": "1b2e97942e999b6e0d9101f3a2629de3ab6b5811c620ee40908f28636952ea17",
+      "answeredReview": "data/raw_pdfs/denken3/review/20260322/power/archive/q01-opus-review-v3.json",
+      "answeredStrictReceipt": "docs/evidence/denken3/strict/20260322-power-s3-q01-opus.json",
+      "answeredStrictReceiptSha256": "4dee45927669b46c7d349886aa71950ddf6060596eeb7a378fe4e898557db8b1",
+      "figureSha256": {},
+      "referenceHashes": {},
+      "operatorNote": ""
+    },
+    {
+      "version": 4,
+      "model": "claude-opus-5-5",
+      "resolvedModel": "claude-opus-5-5",
+      "modelUsage": {
+        "claude-opus-5-5": {
+          "inputTokens": 2,
+          "outputTokens": 6485,
+          "cacheReadInputTokens": 1279,
+          "cacheCreationInputTokens": 13604,
+          "webSearchRequests": 0,
+          "costUSD": 0.2387958,
+          "contextWindow": 1000000,
+          "maxOutputTokens": 128000,
+          "thinkingTokens": 3270,
+          "canonicalModel": "claude-opus-5-5",
+          "provider": "firstParty",
+          "costBasis": "list"
+        }
+      },
+      "rawResponseSha256": "a5dc16dbcb8e53ece93934fff70bd463ffef64e8c2093158a809a71844b7c9ed",
+      "inputRequestSha256": "449ddb5c61b82db9d36ead8634c1d9c3200bf5f43c8f7f27189a53aaf48443c9",
+      "previousDraftSha256": "71945996e806384071867e59e9d221105ee57e42c51fd070ec8e86f3c02eb0f5",
+      "previousDraft": "data/raw_pdfs/denken3/review/20260322/power/archive/q01-vision-draft-v4.json",
+      "answeredReviewSha256": "5c1b256707919886d464d92fefea5e838db080887455e26edc6c693d1a1d2eb0",
+      "answeredReview": "data/raw_pdfs/denken3/review/20260322/power/archive/q01-opus-review-v4.json",
+      "answeredStrictReceipt": "docs/evidence/denken3/strict/20260322-power-s11-q01-opus.json",
+      "answeredStrictReceiptSha256": "b351825e2d303fc9a4c3bf446a27cf7c2c1f413bdabd3ec3f0f57dc7ac80e315",
+      "figureSha256": {},
+      "referenceHashes": {},
+      "operatorNote": ""
+    },
+    {
+      "version": 5,
+      "model": "claude-opus-5-5",
+      "resolvedModel": "claude-opus-5-5",
+      "modelUsage": {
+        "claude-opus-5-5": {
+          "inputTokens": 2,
+          "outputTokens": 4952,
+          "cacheReadInputTokens": 1279,
+          "cacheCreationInputTokens": 14839,
+          "webSearchRequests": 0,
+          "costUSD": 0.21801579999999998,
+          "contextWindow": 1000000,
+          "maxOutputTokens": 128000,
+          "thinkingTokens": 1821,
+          "canonicalModel": "claude-opus-5-5",
+          "provider": "firstParty",
+          "costBasis": "list"
+        }
+      },
+      "rawResponseSha256": "f8abac6db6a5fe2267070dda05572f70c8cd56082bdacb6a058d1e84750cdb96",
+      "inputRequestSha256": "7951f4ef4eb338f909703b5aa08b5c192915d13242fdc635a5fe4b16e0ac0a5f",
+      "previousDraftSha256": "2b5d55a8ee9b1c7f0c5f3894abb05e686e5f2ffc6d9a2bfa0ee31b73a89a45cc",
+      "previousDraft": "data/raw_pdfs/denken3/review/20260322/power/archive/q01-vision-draft-v5.json",
+      "answeredReviewSha256": "a417a23f1cc5e38ab4a2fd33f4f96a2be5ef157574b6c210c0103c1550269c00",
+      "answeredReview": "data/raw_pdfs/denken3/review/20260322/power/archive/q01-opus-review-v5.json",
+      "answeredStrictReceipt": "docs/evidence/denken3/strict/20260322-power-s12-q01-opus.json",
+      "answeredStrictReceiptSha256": "a653427695e446fdcb89a8c31a35c4a83c838aa5228fd826729b2e60c905dd25",
+      "figureSha256": {},
+      "referenceHashes": {},
+      "operatorNote": ""
+    },
+    {
+      "version": 6,
+      "model": "claude-opus-5-5",
+      "resolvedModel": "claude-opus-5-5",
+      "modelUsage": {
+        "claude-opus-5-5": {
+          "inputTokens": 2,
+          "outputTokens": 8957,
+          "cacheReadInputTokens": 1279,
+          "cacheCreationInputTokens": 14605,
+          "webSearchRequests": 0,
+          "costUSD": 0.2962438,
+          "contextWindow": 1000000,
+          "maxOutputTokens": 128000,
+          "thinkingTokens": 5209,
+          "canonicalModel": "claude-opus-5-5",
+          "provider": "firstParty",
+          "costBasis": "list"
+        }
+      },
+      "rawResponseSha256": "4fdc1e48f8a6b69eec00ab0188e294bd675191c83de83395afeaeb77337afd1c",
+      "inputRequestSha256": "4c97615792d3193252139b846ebd61401da4707f8161646d8f01ac5722f85a52",
+      "previousDraftSha256": "4169bd8eb060019ca56058293bfb5d427d5794419dcc3df155b329e89daf81c3",
+      "previousDraft": "data/raw_pdfs/denken3/review/20260322/power/archive/q01-vision-draft-v6.json",
+      "answeredReviewSha256": "bd7de58b0761d0a9370bee838d296c4875671671ad1a7ee5cae90d45307f9967",
+      "answeredReview": "data/raw_pdfs/denken3/review/20260322/power/archive/q01-opus-review-v6.json",
+      "answeredStrictReceipt": "docs/evidence/denken3/strict/20260322-power-s13-q01-opus.json",
+      "answeredStrictReceiptSha256": "53fe79f8fcb94c9d63120b860fec93e99a9c5b72683ec082ad952520171c08af",
+      "figureSha256": {},
+      "referenceHashes": {},
+      "operatorNote": ""
+    },
+    {
+      "version": 7,
+      "model": "claude-opus-5-5",
+      "resolvedModel": "claude-opus-5-5",
+      "modelUsage": {
+        "claude-opus-5-5": {
+          "inputTokens": 2,
+          "outputTokens": 5781,
+          "cacheReadInputTokens": 1279,
+          "cacheCreationInputTokens": 14268,
+          "webSearchRequests": 0,
+          "costUSD": 0.2300278,
+          "contextWindow": 1000000,
+          "maxOutputTokens": 128000,
+          "thinkingTokens": 2697,
+          "canonicalModel": "claude-opus-5-5",
+          "provider": "firstParty",
+          "costBasis": "list"
+        }
+      },
+      "rawResponseSha256": "b5c2c119328d893ee927550192477b99215f20c417559ba17f2d4eac44a5296f",
+      "inputRequestSha256": "811c72f116b0c72445a79668ff29fcf99ee3b23b7c0ebfc59defe08bd922c754",
+      "previousDraftSha256": "3f4791bd27772fe8804042a8bc9e41dbfc23d8211b4e452c62d3d616611f15a0",
+      "previousDraft": "data/raw_pdfs/denken3/review/20260322/power/archive/q01-vision-draft-v7.json",
+      "answeredReviewSha256": "1f32ec31f893c600129335832ddaf37392d1e9c3780ae962cede6a4ccd0de9fd",
+      "answeredReview": "data/raw_pdfs/denken3/review/20260322/power/archive/q01-opus-review-v7.json",
+      "answeredStrictReceipt": null,
+      "answeredStrictReceiptSha256": null,
+      "figureSha256": {},
+      "referenceHashes": {},
+      "operatorNote": "公式正答は(3)。(ア)落差・(イ)流量・(ウ)流込み式・(オ)調整池式が本文から確定し、この4つが全て一致する肢は(3)だけなので正答は一意に決まる。(エ)『高落差を得にくい』は公式正答の組合せに含まれる語句である。添付資料だけでは(エ)の技術的根拠を独自に確認できないので、本文ではそれを断定的な技術的事実として説明せず、『(エ)は公式正答の組合せに含まれる記述で、本問は(ア)(イ)(ウ)(オ)で一意に決まる』と明示する。誤答肢の理由は(ア)(イ)(ウ)(オ)の誤りで示す。uncertaintyにも同趣旨を一文で書き、本文とuncertaintyを一致させる。"
+    },
+    {
+      "version": 8,
+      "model": "claude-opus-5-5",
+      "resolvedModel": "claude-opus-5-5",
+      "modelUsage": {
+        "claude-opus-5-5": {
+          "inputTokens": 2,
+          "outputTokens": 5444,
+          "cacheReadInputTokens": 1279,
+          "cacheCreationInputTokens": 14355,
+          "webSearchRequests": 0,
+          "costUSD": 0.2239838,
+          "contextWindow": 1000000,
+          "maxOutputTokens": 128000,
+          "thinkingTokens": 2064,
+          "canonicalModel": "claude-opus-5-5",
+          "provider": "firstParty",
+          "costBasis": "list"
+        }
+      },
+      "rawResponseSha256": "1f7e269d08fd79817494bbf1b3640b98527b35de6d5c5d29d51a94c23c5dba9a",
+      "inputRequestSha256": "b65cf46ef1fd3b1232322fb40c94ff883f2148ebb6bd87e48c78bf33fc7840df",
+      "previousDraftSha256": "f503452ec3aaf811e894d82af67d75967e56ee5c4baacd109cf730a96dd425de",
+      "previousDraft": "data/raw_pdfs/denken3/review/20260322/power/archive/q01-vision-draft-v8.json",
+      "answeredReviewSha256": "4ac7cfabaeb1e82a710e110b4876855dc614a2be08623512eacdf803814d15a5",
+      "answeredReview": "data/raw_pdfs/denken3/review/20260322/power/archive/q01-opus-review-v8.json",
+      "answeredStrictReceipt": "docs/evidence/denken3/strict/20260322-power-s21-q01-opus.json",
+      "answeredStrictReceiptSha256": "2b3a70bbb80de9359218434a5b12e131f54182d783713064516cdabcf604afae",
+      "figureSha256": {},
+      "referenceHashes": {},
+      "operatorNote": "公式正答は(3)。(ア)落差・(イ)流量・(ウ)流込み式・(オ)調整池式が本文から確定し、この4つが全て一致する肢は(3)だけなので正答は一意に決まる。(エ)『高落差を得にくい』は公式正答の組合せに含まれる語句である。添付資料だけでは(エ)の技術的根拠を独自に確認できないので、本文ではそれを断定的な技術的事実として説明せず、『(エ)は公式正答の組合せに含まれる記述で、本問は(ア)(イ)(ウ)(オ)で一意に決まる』と明示する。誤答肢の理由は(ア)(イ)(ウ)(オ)の誤りで示す。uncertaintyにも同趣旨を一文で書き、本文とuncertaintyを一致させる。"
+    },
+    {
+      "version": 9,
+      "model": "claude-opus-5-5",
+      "resolvedModel": "claude-opus-5-5",
+      "modelUsage": {
+        "claude-opus-5-5": {
+          "inputTokens": 2,
+          "outputTokens": 6089,
+          "cacheReadInputTokens": 1279,
+          "cacheCreationInputTokens": 14757,
+          "webSearchRequests": 0,
+          "costUSD": 0.24009979999999997,
+          "contextWindow": 1000000,
+          "maxOutputTokens": 128000,
+          "thinkingTokens": 2718,
+          "canonicalModel": "claude-opus-5-5",
+          "provider": "firstParty",
+          "costBasis": "list"
+        }
+      },
+      "rawResponseSha256": "4cdd36cb9e4974790b98350ddcc624404365c6afadaf9a57f2f6ba699ac9dc27",
+      "inputRequestSha256": "5f5ecab053ec6985fe30162c50f5a5f2e7ebb54903f382afe791e0e3ae53737a",
+      "previousDraftSha256": "b64ac115439834ce2ba3cf4d58eb314290d4e05be0c8d1505f89d86f5d3831b7",
+      "previousDraft": "data/raw_pdfs/denken3/review/20260322/power/archive/q01-vision-draft-v9.json",
+      "answeredReviewSha256": "a9b766fed504ae97b6e03358df02aa045acb3b5b01ab4bea4191d99ea5d6f4f1",
+      "answeredReview": "data/raw_pdfs/denken3/review/20260322/power/archive/q01-opus-review-v9.json",
+      "answeredStrictReceipt": "docs/evidence/denken3/strict/20260322-power-s22-q01-opus.json",
+      "answeredStrictReceiptSha256": "fbd5fd3296c60782926861762b8101fdb296c03b9166712cbe3388dcb53eccce",
+      "figureSha256": {},
+      "referenceHashes": {},
+      "operatorNote": "公式正答は(3)。(ア)落差・(イ)流量・(ウ)流込み式・(オ)調整池式が本文から確定し、この4つが全て一致する肢は(3)だけなので正答は一意に決まる。(エ)『高落差を得にくい』は公式正答の組合せに含まれる語句である。添付資料だけでは(エ)の技術的根拠を独自に確認できないので、本文ではそれを断定的な技術的事実として説明せず、『(エ)は公式正答の組合せに含まれる記述で、本問は(ア)(イ)(ウ)(オ)で一意に決まる』と明示する。誤答肢の理由は(ア)(イ)(ウ)(オ)の誤りで示す。uncertaintyにも同趣旨を一文で書き、本文とuncertaintyを一致させる。"
+    },
+    {
+      "version": 10,
+      "model": "claude-opus-5-5",
+      "resolvedModel": "claude-opus-5-5",
+      "modelUsage": {
+        "claude-opus-5-5": {
+          "inputTokens": 2,
+          "outputTokens": 5269,
+          "cacheReadInputTokens": 1279,
+          "cacheCreationInputTokens": 14787,
+          "webSearchRequests": 0,
+          "costUSD": 0.2239398,
+          "contextWindow": 1000000,
+          "maxOutputTokens": 128000,
+          "thinkingTokens": 1853,
+          "canonicalModel": "claude-opus-5-5",
+          "provider": "firstParty",
+          "costBasis": "list"
+        }
+      },
+      "rawResponseSha256": "087a3204a923e555d8527e6deda60308a83dcda618ac631bcbdee673ceed37e1",
+      "inputRequestSha256": "4ed2a97ae3bb62d13c2939eafcd8baa377b1079f5bf780c467a67c273839e198",
+      "previousDraftSha256": "45d1b31acbbbc105f00df43dc710c4187f9e24c8a194b01ce6fd0416996201d4",
+      "previousDraft": "data/raw_pdfs/denken3/review/20260322/power/archive/q01-vision-draft-v10.json",
+      "answeredReviewSha256": "9613c1fe509eaec3095aa64fb80813b3e2f1249fb8a4a3beacf0d20145cea8f8",
+      "answeredReview": "data/raw_pdfs/denken3/review/20260322/power/archive/q01-opus-review-v10.json",
+      "answeredStrictReceipt": "docs/evidence/denken3/strict/20260322-power-s23-q01-opus.json",
+      "answeredStrictReceiptSha256": "25803bc93ad37179966dba3e1e1797b78506e0c12ee5815bfccb2ad101b71812",
+      "figureSha256": {},
+      "referenceHashes": {},
+      "operatorNote": "公式正答は(3)。(ア)落差・(イ)流量・(ウ)流込み式・(オ)調整池式が本文から確定し、この4つが全て一致する肢は(3)だけなので正答は一意に決まる。(エ)『高落差を得にくい』は公式正答の組合せに含まれる語句である。添付資料だけでは(エ)の技術的根拠を独自に確認できないので、本文ではそれを断定的な技術的事実として説明せず、『(エ)は公式正答の組合せに含まれる記述で、本問は(ア)(イ)(ウ)(オ)で一意に決まる』と明示する。誤答肢の理由は(ア)(イ)(ウ)(オ)の誤りで示す。uncertaintyにも同趣旨を一文で書き、本文とuncertaintyを一致させる。"
+    },
+    {
+      "version": 11,
+      "model": "claude-opus-5-5",
+      "resolvedModel": "claude-opus-5-5",
+      "modelUsage": {
+        "claude-opus-5-5": {
+          "inputTokens": 2,
+          "outputTokens": 8339,
+          "cacheReadInputTokens": 1279,
+          "cacheCreationInputTokens": 28740,
+          "webSearchRequests": 0,
+          "costUSD": 0.3969638,
+          "contextWindow": 1000000,
+          "maxOutputTokens": 128000,
+          "thinkingTokens": 4529,
+          "canonicalModel": "claude-opus-5-5",
+          "provider": "firstParty",
+          "costBasis": "list"
+        }
+      },
+      "rawResponseSha256": "88b88cc210ca0e90f66605cc49a8cac760706fb0d8ff1bb84a4afe3d6a595b2a",
+      "inputRequestSha256": "bd8fd94832825e478960dea17abd84bc52a60b8bd233baa0a33a877bea0aaa19",
+      "previousDraftSha256": "32f3c0e8df1707377359281d29dafa2fb94cc601a93033e4de1e4eaf53d7aa41",
+      "previousDraft": "data/raw_pdfs/denken3/review/20260322/power/archive/q01-vision-draft-v11.json",
+      "answeredReviewSha256": "a90b9492cb92d9013ec51c7bbf59f2942cf57b8998eeb0e839c31c6a90e39791",
+      "answeredReview": "data/raw_pdfs/denken3/review/20260322/power/archive/q01-opus-review-v11.json",
+      "answeredStrictReceipt": "docs/evidence/denken3/strict/20260322-power-s31-q01-opus.json",
+      "answeredStrictReceiptSha256": "a3aee1de3f0189110e9d29f4cc00bafadc60f1c151a65ed6748c793c716b7e06",
+      "figureSha256": {},
+      "referenceHashes": {
+        "referencePdfSha256": {
+          "data/raw_pdfs/denken3/review/jica-hydro-guide-0000256044_01.pdf": "d8e0afaf5a053797c729cc1fb3246e09d16856e8274d32c16e56828714484728"
+        },
+        "referencePageSha256": {
+          "data/raw_pdfs/denken3/review/references/jica-hydro-guide-0000256044_01-p015.png": "810848fc35bf2936b6b6413679db686d29b4d4261be5923284fd5bc6eb3869c4",
+          "data/raw_pdfs/denken3/review/references/jica-hydro-guide-0000256044_01-p016.png": "0ab2e93d9e998a3ed45198c273346251288178db2092e7d92c13f33c78d99d02",
+          "data/raw_pdfs/denken3/review/references/jica-hydro-guide-0000256044_01-p017.png": "5e328125993dda765d3387f91bd4b6a3dfa8a18880e0c4f7ff66690b246887d1",
+          "data/raw_pdfs/denken3/review/references/jica-hydro-guide-0000256044_01-p294.png": "e0df26a9f8a81ef87b5c695078de89084da7a2c0aed4c6b708948d2a2d3a03c8",
+          "data/raw_pdfs/denken3/review/references/jica-hydro-guide-0000256044_01-p295.png": "d2efaee49bbb5325dc486caa15bba27233d7094866270e3cdf726cef70775be6"
+        }
+      },
+      "operatorNote": "添付のJICA水力開発ガイドマニュアル第15〜17頁（3.2 水力の発電方式）で、落差を得る方法による分類（水路式・ダム式・ダム水路式）、運用上の特性（流量の利用方法）による分類（流れ込み式・調整池式・貯水池式）、流れ込み式の定義、調整池式（1日ないし数日の河川流量を調整できる池）を確認できる。これで(ア)落差・(イ)流量・(ウ)流込み式・(オ)調整池式が確定し、4つが全て一致する肢は(3)だけ。(エ)『高落差を得にくい』について添付資料は水路式とダム式の落差の大小を比較していないので、技術的事実として断定・補強しない。本文では『(エ)は公式正答(3)の組合せに含まれる記述であり、正答は(ア)(イ)(ウ)(オ)で一意に決まる。(エ)の各語句の当否は本問の判定に用いない』と明示し、誤答肢は(ア)(イ)(ウ)(オ)の誤りで説明する。"
+    },
+    {
+      "version": 12,
+      "model": "claude-opus-5-5",
+      "resolvedModel": "claude-opus-5-5",
+      "modelUsage": {
+        "claude-opus-5-5": {
+          "inputTokens": 2,
+          "outputTokens": 5350,
+          "cacheReadInputTokens": 1279,
+          "cacheCreationInputTokens": 30194,
+          "webSearchRequests": 0,
+          "costUSD": 0.3488158,
+          "contextWindow": 1000000,
+          "maxOutputTokens": 128000,
+          "thinkingTokens": 1573,
+          "canonicalModel": "claude-opus-5-5",
+          "provider": "firstParty",
+          "costBasis": "list"
+        }
+      },
+      "rawResponseSha256": "e2d16cf5489d5f095f1c3ceac2e9de83f44914fe0bab00bb20ee779e8dd431c9",
+      "inputRequestSha256": "205b3d23f198d875932ce6864fc53241d24dff1222fa7fb0e106f9e83cbf3274",
+      "previousDraftSha256": "2135b94c2255d38f0c9b102737034c46ffb613f821cb50f727ae418eb64ae94a",
+      "previousDraft": "data/raw_pdfs/denken3/review/20260322/power/archive/q01-vision-draft-v12.json",
+      "answeredReviewSha256": "392586113c2db6350dd5f52bf6100249023704eaf65431d77aac81f9eeb049e8",
+      "answeredReview": "data/raw_pdfs/denken3/review/20260322/power/archive/q01-opus-review-v12.json",
+      "answeredStrictReceipt": "docs/evidence/denken3/strict/20260322-power-s32-q01-opus.json",
+      "answeredStrictReceiptSha256": "74173e921e88471db495d2a070913a86a1ef0e3179f07e336e14cae25d6fe3d3",
+      "figureSha256": {},
+      "referenceHashes": {
+        "referencePdfSha256": {
+          "data/raw_pdfs/denken3/review/jica-hydro-guide-0000256044_01.pdf": "d8e0afaf5a053797c729cc1fb3246e09d16856e8274d32c16e56828714484728"
+        },
+        "referencePageSha256": {
+          "data/raw_pdfs/denken3/review/references/jica-hydro-guide-0000256044_01-p015.png": "810848fc35bf2936b6b6413679db686d29b4d4261be5923284fd5bc6eb3869c4",
+          "data/raw_pdfs/denken3/review/references/jica-hydro-guide-0000256044_01-p016.png": "0ab2e93d9e998a3ed45198c273346251288178db2092e7d92c13f33c78d99d02",
+          "data/raw_pdfs/denken3/review/references/jica-hydro-guide-0000256044_01-p017.png": "5e328125993dda765d3387f91bd4b6a3dfa8a18880e0c4f7ff66690b246887d1",
+          "data/raw_pdfs/denken3/review/references/jica-hydro-guide-0000256044_01-p294.png": "e0df26a9f8a81ef87b5c695078de89084da7a2c0aed4c6b708948d2a2d3a03c8",
+          "data/raw_pdfs/denken3/review/references/jica-hydro-guide-0000256044_01-p295.png": "d2efaee49bbb5325dc486caa15bba27233d7094866270e3cdf726cef70775be6"
+        }
+      },
+      "operatorNote": "添付のJICA水力開発ガイドマニュアル第15〜17頁（3.2 水力の発電方式）で、落差を得る方法による分類（水路式・ダム式・ダム水路式）、運用上の特性（流量の利用方法）による分類（流れ込み式・調整池式・貯水池式）、流れ込み式の定義、調整池式（1日ないし数日の河川流量を調整できる池）を確認できる。これで(ア)落差・(イ)流量・(ウ)流込み式・(オ)調整池式が確定し、4つが全て一致する肢は(3)だけ。(エ)『高落差を得にくい』について添付資料は水路式とダム式の落差の大小を比較していないので、技術的事実として断定・補強しない。本文では『(エ)は公式正答(3)の組合せに含まれる記述であり、正答は(ア)(イ)(ウ)(オ)で一意に決まる。(エ)の各語句の当否は本問の判定に用いない』と明示し、誤答肢は(ア)(イ)(ウ)(オ)の誤りで説明する。"
+    }
+  ]
+}

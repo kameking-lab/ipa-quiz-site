@@ -14,6 +14,9 @@ import {
 import { postSync } from "@/lib/sync/client";
 import type { Question } from "@/lib/questions/types";
 
+const context = { userId: "user-a", ownerToken: "owner-token" };
+vi.mock("@/lib/sync/ownership", () => ({ ownsSyncContext: () => true, isSyncContextCurrent: async () => true }));
+
 function makeQuestion(id: string, overrides: Partial<Question> = {}): Question {
   return {
     id,
@@ -101,13 +104,13 @@ describe("postSync status mapping", () => {
 
   it("maps 401 to unauthenticated", async () => {
     vi.stubGlobal("fetch", vi.fn().mockResolvedValue({ status: 401, ok: false }));
-    const { status } = await postSync("/api/account/bookmark-sync", []);
+    const { status } = await postSync("/api/account/bookmark-sync", [], context);
     expect(status.state).toBe("unauthenticated");
   });
 
   it("maps 503 to unavailable", async () => {
     vi.stubGlobal("fetch", vi.fn().mockResolvedValue({ status: 503, ok: false }));
-    const { status } = await postSync("/api/account/bookmark-sync", []);
+    const { status } = await postSync("/api/account/bookmark-sync", [], context);
     expect(status.state).toBe("unavailable");
   });
 
@@ -120,27 +123,27 @@ describe("postSync status mapping", () => {
         json: async () => ({ entries: [{ questionId: "x" }], merged: 1, total: 1 }),
       }),
     );
-    const { status, entries } = await postSync("/api/account/bookmark-sync", []);
+    const { status, entries } = await postSync("/api/account/bookmark-sync", [], context);
     expect(status.state).toBe("ok");
     expect(entries).toHaveLength(1);
   });
 
   it("maps a network throw to error without throwing", async () => {
     vi.stubGlobal("fetch", vi.fn().mockRejectedValue(new Error("boom")));
-    const { status } = await postSync("/api/account/bookmark-sync", []);
+    const { status } = await postSync("/api/account/bookmark-sync", [], context);
     expect(status.state).toBe("error");
   });
 
   it("maps a generic non-401/503 HTTP failure to error with the status code", async () => {
     vi.stubGlobal("fetch", vi.fn().mockResolvedValue({ status: 500, ok: false }));
     const local = [{ questionId: "local-1" }];
-    const { status, entries } = await postSync("/api/account/bookmark-sync", local);
+    const { status, entries } = await postSync("/api/account/bookmark-sync", local, context);
     expect(status).toEqual({ state: "error", message: "HTTP 500" });
     // The local batch is echoed back unchanged so the caller keeps its data.
     expect(entries).toBe(local);
   });
 
-  it("falls back to local entries when the 200 body has a non-array entries field", async () => {
+  it("rejects malformed success bodies without replacing local entries", async () => {
     vi.stubGlobal(
       "fetch",
       vi.fn().mockResolvedValue({
@@ -150,12 +153,12 @@ describe("postSync status mapping", () => {
       }),
     );
     const local = [{ questionId: "local-1" }, { questionId: "local-2" }];
-    const { status, entries } = await postSync("/api/account/bookmark-sync", local);
-    expect(status).toEqual({ state: "ok", merged: 2, total: 3 });
+    const { status, entries } = await postSync("/api/account/bookmark-sync", local, context);
+    expect(status).toEqual({ state: "error", message: "invalid_sync_response" });
     expect(entries).toBe(local);
   });
 
-  it("defaults merged/total to 0 when the 200 body omits them", async () => {
+  it("rejects success bodies with missing counters", async () => {
     vi.stubGlobal(
       "fetch",
       vi.fn().mockResolvedValue({
@@ -164,13 +167,13 @@ describe("postSync status mapping", () => {
         json: async () => ({ entries: [] }),
       }),
     );
-    const { status } = await postSync("/api/account/bookmark-sync", []);
-    expect(status).toEqual({ state: "ok", merged: 0, total: 0 });
+    const { status } = await postSync("/api/account/bookmark-sync", [], context);
+    expect(status).toEqual({ state: "error", message: "invalid_sync_response" });
   });
 
   it("uses the 'network' message when a non-Error value is thrown", async () => {
     vi.stubGlobal("fetch", vi.fn().mockRejectedValue("offline"));
-    const { status } = await postSync("/api/account/bookmark-sync", []);
+    const { status } = await postSync("/api/account/bookmark-sync", [], context);
     expect(status).toEqual({ state: "error", message: "network" });
   });
 });

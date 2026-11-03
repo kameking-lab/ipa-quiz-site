@@ -1,0 +1,78 @@
+{
+  "reviewDate": "2026-10-11",
+  "scope": "Read-only local check of 118C30 notation expansion and 118C80 traumatic-injury reasoning. Author/repository files unchanged; no full-corpus second authorship.",
+  "overallDecision": "REVISION REQUIRED for explanation wording; original answer keys remain E/E",
+  "C30": {
+    "authorFile": "authors/c/118-c021-030.json",
+    "sourceImage": "authors/c/118-c30-notation-source-crop.png",
+    "sourcePdf": "sources/pdf/118-problem-tp250428-02c_01.pdf",
+    "sourcePhysicalPage": 25,
+    "sourcePrintedPage": 13,
+    "notationDecision": "PASS; every Japanese expansion matches the visible original notation",
+    "notationReadings": {
+      "a": "4 and 4 lie above a shared horizontal line, separated by a midline vertical stroke: upper right/left first premolars. Chin cap label matches.",
+      "b": "Same upper 4/4 notation as a: upper right/left first premolars. Rapid-expansion appliance label matches.",
+      "c": "5 and 5 lie above a shared horizontal line: upper right/left second premolars. Cervical headgear label matches.",
+      "d": "4/4 above and 4/4 below the horizontal dividing line: all four first premolars. Maxillary protraction appliance label matches.",
+      "e": "4/4 above and 5/5 below the dividing line: upper first and lower second premolars bilaterally. High-pull headgear label matches."
+    },
+    "findings": [
+      {
+        "priority": "P1",
+        "field": "explanation",
+        "currentText": "下顎の空隙不足",
+        "problem": "Original statement explicitly gives mandibular arch-length discrepancy +3 mm. Positive discrepancy describes spacing/excess available arch length, not crowding/space deficiency. The current reason reverses that condition.",
+        "requiredChange": "Remove the space-deficiency assertion. Explain the extraction/headgear choice using the verified incisor inclination and vertical-control findings, while preserving the +3 mm premise and official E. Review choice a's vague reference to the mandibular problem so it does not repeat the same error.",
+        "sourceSupport": "Original question crop gives +3 mm; positive-ALD convention independently corroborated by the primary research article https://www.nature.com/articles/s41598-026-37842-y , Digital model acquisition and palatal measurements."
+      }
+    ],
+    "publicationHandling": "Keep the original notation crop as authoritative; Japanese expansions are auxiliary. No private-use or approximate line glyphs needed."
+  },
+  "C80": {
+    "authorFile": "authors/c/118-c071-080.json",
+    "reviewNotesRead": "The author warns not to infer detailed root injury solely from the image and bases extraction on the official answer plus clinical/image findings.",
+    "sourceImage": "rendered-assets/118-c-appendix-p053.webp",
+    "sourcePdf": "sources/pdf/118-problem-tp250428-02c_02.pdf",
+    "sourcePhysicalPage": 53,
+    "sourcePrintedPage": 49,
+    "imageIdentity": "Heading is No.34 (C question 80); A intraoral and B radiographic panels match the stem.",
+    "visualObservations": [
+      "Panel A shows gingival bleeding/disruption around the patient's upper right primary central incisor; a crown fracture with visibly exposed pulp is not established by this photograph.",
+      "Panel B contains a possible oblique radiolucent discontinuity in the affected incisor root region. This reviewer does not establish exact fracture level, restorability, displacement or occlusal interference from this single rendered projection.",
+      "The official answer E remains the grading authority; the official answer alone does not prove a generalized clinical explanation."
+    ],
+    "explanationDecision": "REVISION REQUIRED; current text overgeneralizes grade-2 mobility and does not establish its specific preservation-impossible premise",
+    "findings": [
+      {
+        "priority": "P1",
+        "field": "choiceExplanations.a",
+        "currentText": "動揺2度の外傷歯で、画像評価も要するため、無処置の経過観察では対応が不十分",
+        "problem": "This gives mobility and need for imaging as sufficient grounds to reject observation, even though those conditions do not distinguish the injuries that require extraction.",
+        "requiredChange": "State that mobility alone does not decide extraction and tie the rejection of a to this case's specific radiographic/root injury, with an explicit limit if its exact subtype remains uncertain."
+      },
+      {
+        "priority": "P2",
+        "field": "explanation and choiceExplanations.e",
+        "currentText": "保存困難 / 後継歯への影響を避ける",
+        "problem": "The first claim needs a case-specific injury basis; the second reads as an assured benefit of extraction. The supplied official key validates E, not those causal claims.",
+        "requiredChange": "Keep E as the official case answer, distinguish it from general treatment indications, and say treatment must consider the permanent successor rather than promising that extraction avoids its damage. Do not invent a precise fracture level."
+      }
+    ],
+    "primaryReference": {
+      "title": "IADT 2020 guidelines, Injuries in the primary dentition",
+      "url": "https://onlinelibrary.wiley.com/doi/10.1111/edt.12576",
+      "publicationDate": "2020-05-27",
+      "checkedOn": "2026-10-11",
+      "relevantSections": "Table 5 root fractures; Table 8 subluxation; sections 1.8 and 1.9",
+      "limitedParaphrase": "Primary-tooth subluxation is generally observed. Root-fracture management depends on displacement, mobility and occlusion and may include observation, removal of a loose coronal fragment, or repositioning/splinting. Extraction is not a universal means of protecting the permanent successor. These distinctions contradict a mobility-only rule, without changing this examination's official E answer."
+    },
+    "suggestedEditorialDirection": "Retain official E; explicitly distinguish this image-dependent case from uncomplicated mobility/subluxation. Require a verified source-based root-injury explanation for a fully reasoned solution, or clearly limit the reasoning without unsupported diagnosis. The author owns the final explanation.",
+    "remainingUncertainty": "Exact root injury location/severity is not independently resolved by this reviewer; this does not create an alternative official correct answer."
+  },
+  "notified": ["root", "dentist_author_c"],
+  "completionCriteria": [
+    "C30 explanation no longer describes +3 mm mandibular ALD as space deficiency",
+    "C80 no longer infers extraction from grade-2 mobility alone or claims extraction necessarily avoids successor injury",
+    "Any specific C80 root-injury diagnosis is anchored to verified original-image/source evidence, with uncertainty retained where unresolved"
+  ]
+}

@@ -1,0 +1,126 @@
+{
+  "questionNumber": 6,
+  "sharedContext": null,
+  "units": [
+    {
+      "part": null,
+      "question": "定格出力 7 500 kV·A，定格電圧（線間電圧）3 300 V の星形結線三相同期発電機がある。また，定格電流に等しい持続短絡電流を流すのに必要な界磁電流は 200 A，無負荷で定格電圧を発生するのに必要な界磁電流は 240 A であった。発電機の出力端で三相短絡事故が発生したときに発電機の巻線に流れる持続短絡電流の実効値[A]として，最も近いものを次の(1)〜(5)のうちから一つ選べ。",
+      "choices": {
+        "1": "1 100",
+        "2": "1 600",
+        "3": "1 900",
+        "4": "2 700",
+        "5": "3 400"
+      },
+      "officialAnswer": "2",
+      "explanation": "【定格電流】\n星形結線なので、巻線に流れる電流は線電流と等しい。\nIn = P / (√3 × V) = 7 500 × 10³ / (√3 × 3 300) ≈ 7 500 000 / 5 715.8 ≈ 1 312 A\n\n【短絡比】\n短絡比 Ks = (無負荷で定格電圧を発生する界磁電流) / (定格電流に等しい持続短絡電流を流す界磁電流)\nKs = 240 / 200 = 1.2\n\n【持続短絡電流】\n問題文は事故時の界磁電流を明示していないため、短絡比の定義に対応する標準的な解釈として、事故前は無負荷で定格電圧を発生していた（界磁電流 240 A）ものとして考える。\n短絡特性曲線（界磁電流と持続短絡電流の関係）はほぼ直線とみなせるので、持続短絡電流は界磁電流に比例する。界磁電流 200 A で定格電流 In が流れるから、界磁電流 240 A のまま出力端を三相短絡したときの持続短絡電流は、\nIs = In × (240 / 200) = In × Ks ≈ 1 312 × 1.2 ≈ 1 575 A\n\nよって最も近いのは 1 600 A で、正答は(2)である。\n\n【別解：同期インピーダンスから】\n単位法の同期インピーダンス Zs = 1 / Ks = 1 / 1.2 ≈ 0.833 p.u.\n定格電圧（1 p.u.）を誘導する励磁のまま短絡すると Is = 1 / 0.833 = 1.2 p.u. = 1.2 × 1 312 ≈ 1 575 A となり、同じ結果になる。",
+      "choiceExplanations": {
+        "1": "誤り。持続短絡電流は約 1 575 A であり、1 100 A とは大きく異なる。なお In × (200/240) ≈ 1 312 × 0.833 ≈ 1 093 A となるので、短絡比を逆数（200/240）で用いるとこの値に近くなる。正しくは In × (240/200) である。",
+        "2": "正しい。定格電流 In ≈ 1 312 A、短絡比 Ks = 240/200 = 1.2 より、持続短絡電流 Is = Ks × In ≈ 1 575 A で、1 600 A が最も近い。",
+        "3": "誤り。正しい計算結果は約 1 575 A であり、1 900 A は最も近い値ではない。なお短絡比を二重に掛けると 1 312 × 1.2² ≈ 1 890 A となり、この値に近くなる。短絡比は一度だけ掛ければよい。",
+        "4": "誤り。正しい計算結果は約 1 575 A である。これに √3 を掛けると 1 575 × √3 ≈ 2 730 A となり、2 700 A に近くなる。定格電流を P/V（√3 を落として約 2 273 A）と算出し 1.2 倍した場合も同じ値になる。星形結線では巻線電流と線電流は等しく、定格電流は P/(√3V) で求め、それ以上の √3 倍の換算は不要である。",
+        "5": "誤り。正しい計算結果は約 1 575 A であり、3 400 A はその 2 倍以上の値である。この肢は計算結果との数値比較によって除外される。"
+      },
+      "figureDescription": "図なし。本問は問題文と選択肢(1)〜(5)のみで構成されている。",
+      "officialReferenceUrls": [],
+      "uncertainty": "なし",
+      "needsReview": true,
+      "sourceQuestionPdfUrl": "https://www.shiken.or.jp/chief/upload/20250831_ch_third_q03.pdf",
+      "sourceAnswerPdfUrl": "https://www.shiken.or.jp/chief/upload/20250831_ch_third_a01.pdf",
+      "reviewedFromPage": [
+        9
+      ]
+    }
+  ],
+  "draftModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 2160,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 9309,
+      "webSearchRequests": 0,
+      "costUSD": 0.11793580000000001,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 713,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "d0a28c9a3ee5305ea926d7a3d269e4b4b37b38a8be918245013e747da5875023",
+  "inputRequestSha256": "282fb757069693d7353f99bd02d453cc13692f33f4e31c70508d33e023bfd042",
+  "sourceQuestionPdfSha256": "2a73a24594cc2b8bb7504b9a0ff15e001b2bb56b830572ce2be853f7116f26d8",
+  "sourceAnswerPdfSha256": "76fd3715ed487d19a56b387fb402de20ee09474e9fa55b0413f9037b96af06c9",
+  "sourcePageImageSha256": {
+    "data/raw_pdfs/denken3/review/20250831/machinery/p09.png": "443bc2f9ac0e5bd6a5d833839d2f54c5f91a2f47af2f32737eb7d3db55878d0d"
+  },
+  "revisionHistory": [
+    {
+      "version": 1,
+      "model": "claude-opus-5-5",
+      "resolvedModel": "claude-opus-5-5",
+      "modelUsage": {
+        "claude-opus-5-5": {
+          "inputTokens": 2,
+          "outputTokens": 2714,
+          "cacheReadInputTokens": 1279,
+          "cacheCreationInputTokens": 12770,
+          "webSearchRequests": 0,
+          "costUSD": 0.1567038,
+          "contextWindow": 1000000,
+          "maxOutputTokens": 128000,
+          "thinkingTokens": 1304,
+          "canonicalModel": "claude-opus-5-5",
+          "provider": "firstParty",
+          "costBasis": "list"
+        }
+      },
+      "rawResponseSha256": "b01b03bdebc725dfd3360fa615f9ed7a6cc43ae2597bbaa3238851c1594ecc7e",
+      "inputRequestSha256": "c108ff259c873711e888e976849b1964673bc448efbdf7c5325582e4cbf4d746",
+      "previousDraftSha256": "821d8105a69be0d9fc2ee8400d701fb814f8647cb203f23c656c734b580c7e3c",
+      "previousDraft": "data/raw_pdfs/denken3/review/20250831/machinery/archive/q06-vision-draft-v1.json",
+      "answeredReviewSha256": "b6746d3cc31785497fd39bc4780b771874758a822509627785758e88f6824336",
+      "answeredReview": "data/raw_pdfs/denken3/review/20250831/machinery/archive/q06-opus-review-v1.json",
+      "answeredStrictReceipt": "docs/evidence/denken3/strict/20250831-machinery-s1-q06-opus.json",
+      "answeredStrictReceiptSha256": "acb858021221b16b70eaa8158231a3427863450e67ccb03e52a60ed5c38bbf42",
+      "figureSha256": {},
+      "referenceHashes": {},
+      "operatorNote": ""
+    },
+    {
+      "version": 2,
+      "model": "claude-opus-5-5",
+      "resolvedModel": "claude-opus-5-5",
+      "modelUsage": {
+        "claude-opus-5-5": {
+          "inputTokens": 2,
+          "outputTokens": 2372,
+          "cacheReadInputTokens": 1279,
+          "cacheCreationInputTokens": 12612,
+          "webSearchRequests": 0,
+          "costUSD": 0.1485998,
+          "contextWindow": 1000000,
+          "maxOutputTokens": 128000,
+          "thinkingTokens": 845,
+          "canonicalModel": "claude-opus-5-5",
+          "provider": "firstParty",
+          "costBasis": "list"
+        }
+      },
+      "rawResponseSha256": "afc9d26cf73f543e29e02147020b55d62b44b1c94c3e66a1d816cdde0f2b332c",
+      "inputRequestSha256": "617a256a77cb51fef83835bd121f14d42d84a521df65268f3cc7be6e56eab1ea",
+      "previousDraftSha256": "e0167665b563ab315f8ab85b973b8645b674bd6c5894e85517923a6334b6e193",
+      "previousDraft": "data/raw_pdfs/denken3/review/20250831/machinery/archive/q06-vision-draft-v2.json",
+      "answeredReviewSha256": "f4aa84fcdde3725a82665139089e16d09ede7290596356b884c7fb1be52516aa",
+      "answeredReview": "data/raw_pdfs/denken3/review/20250831/machinery/archive/q06-opus-review-v2.json",
+      "answeredStrictReceipt": "docs/evidence/denken3/strict/20250831-machinery-s2-q06-opus.json",
+      "answeredStrictReceiptSha256": "5e9bb5449c99a25605bcdbe570dde3eef73569bb1cce7a4478ce542339aedf72",
+      "figureSha256": {},
+      "referenceHashes": {},
+      "operatorNote": ""
+    }
+  ]
+}

@@ -1,3 +1,4 @@
+import { isReferenceOnlyQuestionId } from "@/lib/questions/assessment";
 import { LS_KEYS } from "@/lib/storage/keys";
 
 export interface SrsCard {
@@ -104,6 +105,8 @@ export function gradeFromCorrect(correct: boolean, accuracyHint?: number): SrsGr
 
 export function recordReview(id: string, correct: boolean, accuracyHint?: number): SrsCard {
   const state = read();
+  // Compatibility return only: no grading, timestamp update or storage write.
+  if (isReferenceOnlyQuestionId(id)) return structuredClone(state.cards[id] ?? defaultCard(id));
   const existing = state.cards[id] ?? defaultCard(id);
   const grade = gradeFromCorrect(correct, accuracyHint);
   const updated = applyGrade(existing, grade);
@@ -113,7 +116,7 @@ export function recordReview(id: string, correct: boolean, accuracyHint?: number
 }
 
 export function getCards(): SrsCard[] {
-  return Object.values(read().cards);
+  return Object.entries(read().cards).filter(([key, card]) => !isReferenceOnlyQuestionId(key) && !isReferenceOnlyQuestionId(card.id)).map(([, card]) => card);
 }
 
 export function getDueCards(now = Date.now()): SrsCard[] {
@@ -127,7 +130,7 @@ export function getDueCards(now = Date.now()): SrsCard[] {
  */
 export function orderByPriority(ids: string[], now = Date.now()): string[] {
   const state = read();
-  const decorated = ids.map((id) => {
+  const decorated = ids.filter(id => !isReferenceOnlyQuestionId(id)).map((id) => {
     const card = state.cards[id];
     if (!card) return { id, key: now, hasCard: false };
     return { id, key: card.dueAt, hasCard: true };

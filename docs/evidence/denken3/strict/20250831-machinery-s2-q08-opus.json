@@ -1,0 +1,67 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20250831",
+  "subject": "machinery",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 3643,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 14474,
+      "webSearchRequests": 0,
+      "costUSD": 0.1889158,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 2108,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "6dffd15a51e8801954b103989468bc5d6604725eb41003795f06d7734a0ab903",
+  "inputRequestSha256": "6f0447bcb38cd3848e49bcfec7a6d25d22965017ddea144d559275211539b759",
+  "inputHashes": {
+    "candidateSha256": {
+      "q08": "d47ffadfd727f355a59bb72b95f3d7f13e42b48c60d4ed47095706da231e127e"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20250831/machinery/p11.png": "300767c4d582a4b6ddd271493e54f2d6ef233263324ce63178a7fc86fc005da7"
+    },
+    "figureSha256": {},
+    "sourceQuestionPdfSha256": "2a73a24594cc2b8bb7504b9a0ff15e001b2bb56b830572ce2be853f7116f26d8",
+    "sourceAnswerPdfSha256": "76fd3715ed487d19a56b387fb402de20ee09474e9fa55b0413f9037b96af06c9",
+    "officialAnswerUnitsSha256": "3b16851c6b8738a23c93c64e68a4e38968fe89a4f644398bac6810ceb9d422ec",
+    "referencePdfSha256": {},
+    "referencePageSha256": {},
+    "referenceJsonSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q08",
+      "questionNumber": 8,
+      "part": null,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [
+        "uncertainty欄が他のフィールドと矛盾している。uncertaintyは『出題年度・試験期・科目名は…特定していない』としている。一方でfiscalYear=2025、term=upper、examDate=2025-08-31、subject=machineryが設定され、sourceAttributionも『令和7年度上期第三種電気主任技術者試験 機械科目 問8』と断定している。これらの特定の根拠は次のとおりで、問題頁そのものではない: manifestのsourceQuestionPdfUrl(20250831_ch_third_q03.pdf)、添付公式解答表の表題『令和7年度 第三種電気主任技術者上期試験解答』、機械列の問8=3という公式正答との整合。uncertaintyを、この根拠を明記した記述に改めるか空にし、needsReview=falseと整合させること。問題頁フッタの『T1－K 011』が科目を示すかどうかは添付資料から検証できないため、根拠に用いないこと。"
+      ],
+      "verifiedEvidence": [
+        "問題文: 添付原図の本文と照合した。『近年，住宅に…』から『…対策がとられている。』までの語句と句読点、空欄(ア)(イ)(イ)(ウ)(エ)の出現位置と順序(イは2回)、設問文『上記の記述中の空白箇所(ア)〜(エ)に…一つ選べ。』が一致した。",
+        "選択肢: 原図の表と全肢を照合し、一致した。(1)逆変換装置/自立運転/発電電力/停電、(2)逆変換装置/単独運転/発電電力/瞬時電圧低下、(3)逆変換装置/単独運転/周波数/瞬時電圧低下、(4)整流装置/自立運転/発電電力/停電、(5)整流装置/単独運転/周波数/停電。",
+        "公式正答: 添付公式解答表の機械列で問8の解答は3、配点は5。manifest固定の公式正答単位{question:8, part:null, answer:'3', points:5}と、候補のofficialAnswer='3'、scoringPoints=5が一致した。同じ表の問8は理論=5、電力=2、法規=4であり、候補の科目=機械とのみ整合する。",
+        "技術内容の検算: 太陽電池の出力は直流で、系統連系には直流→交流変換が必要なため(ア)は逆変換装置(インバータ)。整流装置は交流→直流変換なので当てはまらない。事故時に継続させてはならない状態は単独運転で、自立運転は解列後に特定負荷へ給電する別の運転形態。受動的方式の単独運転検出は電圧位相跳躍や周波数変化(率)を監視する。瞬時電圧低下では不要解列を避ける(FRT要件)。以上から(3)が唯一全空欄に適合し、公式正答と一致する。",
+        "総合解説: (ア)〜(エ)それぞれの理由付けに技術的誤りや因果の逆転はない。停電は単独運転が生じうる事象で解列対象であり、不要解列回避の対象ではないという整理も正しい。",
+        "各肢解説: 正誤判定を検算し、原図と一致した。(1)は(ア)のみ正で(イ)(ウ)(エ)が誤。(2)は(ウ)のみ誤。(3)は全て正。(4)は(ア)〜(エ)全て誤。(5)は(イ)(ウ)が正で(ア)(エ)が誤。",
+        "図: 原図には回路図等の図はなく、選択肢は語句の組合せ表のみ。choicesに全て文字化されており、figureUrls=[]、choiceFigureUrls={}で解答に支障はない。",
+        "参考URL: officialReferenceUrlsは空で、検証を要する独立主張はない。",
+        "頁: 原図の印刷頁番号は『- 8 -』で、候補のreviewedFromPage=[11]はPDF頁番号として記載されている。添付原図単体からは印刷頁とPDF頁の対応を否定する材料はない。"
+      ]
+    }
+  ]
+}

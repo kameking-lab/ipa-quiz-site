@@ -77,13 +77,7 @@ describe("getRelatedBlogPosts (related blog ranking for /q and /[exam])", () => 
     expect(lifted[0].slug).toBe(oldest.slug);
   });
 
-  it("returns an empty array for an exam with no posts and no hub matches", () => {
-    // An exam code that has no dedicated posts still only ever yields hub posts;
-    // a nonsense code yields none that are exam-specific.
-    const result = getRelatedBlogPosts("__no_such_exam__", 100);
-    for (const post of result) {
-      // every result must be a qualifying hub post
-      expect(!post.exam && post.tags.some((t) => HUB_TAGS.has(t))).toBe(true);
-    }
+  it("does not apply IPA hub fallbacks to unknown exam codes", () => {
+    expect(getRelatedBlogPosts("__no_such_exam__", 100)).toEqual([]);
   });
 });

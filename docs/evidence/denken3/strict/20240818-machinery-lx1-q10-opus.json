@@ -1,0 +1,76 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20240818",
+  "subject": "machinery",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 4768,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 20000,
+      "webSearchRequests": 0,
+      "costUSD": 0.2556238,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 2838,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "46697f1ff58f143ef66ff00c38e5c23a80ddc9ba6325e97d0d78654c2be4c7e4",
+  "inputRequestSha256": "a01a5a48d2df903ab67d21c2d013b92e57a4092325a23e74d58b24a4eed4baba",
+  "inputHashes": {
+    "candidateSha256": {
+      "q10": "223f994b76dbb5ae73dda0c31e761a349327b9d31a23e2e9c524a332cb275351"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20240818/machinery/p14.png": "b0ae106924c3d36d8af3fbc3810c721661c1529fbca941e674c7993917ae1bd9",
+      "data/raw_pdfs/denken3/review/20240818/machinery/p15.png": "832c30c7eda5c6a314c6d8c6630508200d4971b75d247f620bbed3539afc63ac"
+    },
+    "figureSha256": {
+      "public/images/denken3/20240818/machinery/20240818-machinery-q10-half-wave-circuit.png": "d98fb450f453116500ce9b4ca680dd99b81f736ea81e78ea20b7d6ea1a6d5c9c",
+      "public/images/denken3/20240818/machinery/20240818-machinery-q10-five-waveforms.png": "c07940fbe1a02a9a0d0cb79dccdd77f5b2c7f2c4eedfa27b9b2946605382dabc"
+    },
+    "sourceQuestionPdfSha256": "ff8ff270bbe1ea125e92f213d011afde969d0d2b9fa2e17a7caa2b5cd6673e2a",
+    "sourceAnswerPdfSha256": "f72ecbc3a477e64948388b69cf78cb931032c9f0c688639836c8d533a949cd0f",
+    "officialAnswerUnitsSha256": "73eb308a56261e2789cc1512cff0db86ec2a8341f2dd86c5aa62d6a24566d93e",
+    "referencePdfSha256": {},
+    "referencePageSha256": {},
+    "referenceJsonSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q10",
+      "questionNumber": 10,
+      "part": null,
+      "status": "FIX",
+      "textIssues": [
+        "explanation 内で負荷電流の表記が「id>0」「idがちょうど0」「idは…」（添字なし）と「i_d」とで混在している。問題文・図の表記 i_d に統一すること。",
+        "explanation・choiceExplanations の句読点が「、」と「，」で混在している（例: explanation『交流電源v_s、直列ダイオードD、』と『遅れた，なだらかな山型で、』、choiceExplanations[\"1\"]末尾の『全波整流波形であり、』）。原典に合わせて「，」に統一すること。"
+      ],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [
+        "choiceExplanations[\"1\"]：結論文「誤りの組合せ。」の後に、半角スペースを挟んで「さらに(ウ)波形3は…」が追記されている。(ア)(イ)(ウ)の誤り理由を並べてから結論を置く順序に整理すること。また、この肢で唯一正しい(エ)「長くなる」に触れていない。肢2・肢4と同様に、正しい空欄を明示すること。",
+        "choiceExplanations[\"5\"]：(ア)(ウ)(エ)の誤りは正しく指摘しているが、(イ)波形5が正しいことに触れていない。肢2・肢4と同様に、正しい空欄を明示すること。",
+        "explanation『導通中はダイオード降下0のためe_d=v_sが成立する』は理想ダイオードを前提としている。前提が書かれていないので、「理想ダイオード（順方向電圧降下0）と仮定すると」と明示すること。"
+      ],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "出典メタデータ：fiscalYear=2024、term=upper、examDate=2024-08-18、subject=machinery、sourceQuestionPdfUrl=…20240818_ch_third_q03.pdf、sourceAnswerPdfUrl=…20240818_ch_third_a01.pdf、reviewedFromPage=[14,15] はいずれも manifest と一致する。原図のページ下部表記（T1−K 014／015）とも整合する。",
+        "公式正答：解答表「令和6年度 上期」の＜機械＞列で問10=3。manifest の固定値 answer=\"3\" および候補 officialAnswer=\"3\" と一致する。",
+        "問題文：原図 p.14 と照合した。「抵抗とリアクトルとを直列接続した負荷」「スイッチSを開いて運転」「負荷力率に応じて」「負荷電圧e_d」「負荷電流i_d」「環流ダイオード」「(エ)」の空欄位置を含め、脱落・改変はない。",
+        "選択肢(1)〜(5)：原図の組合せ表と一致する（(1)2/4/3/長くなる、(2)1/5/3/短くなる、(3)1/5/2/長くなる、(4)1/4/2/長くなる、(5)2/5/3/短くなる）。",
+        "回路動作の検算（S開・RL負荷）：主ダイオード導通中は e_d=v_s。v_s<0 になってもLの蓄積エネルギーで i_d>0 が続くため e_d は負側まで追従し、i_d=0 で消弧して e_d が0へステップ変化する。これは波形1に一致する（ア）。電流は v_s より遅れ、v_s のゼロ点を越えて0に戻る。これは波形5に一致する（イ）。波形2・波形4は純抵抗負荷の波形であり、RL負荷には該当しない。",
+        "回路動作の検算（S閉・環流ダイオードあり）：v_s>0 では e_d=v_s。v_s<0 では環流ダイオードが導通してノードを帰線に固定するため e_d=0。これは波形2に一致する（ウ）。波形3は全波整流波形で、本回路では生じない。環流期間中は L·di/dt=−R·i となり、時定数 L/R で緩やかに減衰する。負電圧による強制減衰がないため、通流期間はS開時より長くなる（エ）。したがって正答(3)と整合する。",
+        "図1：公開候補図は原図と照合して一致した。電源v_s（上向き矢印）、上辺の主ダイオード（右向き＝負荷側へ順方向）、ノード黒点、スイッチS、環流ダイオード（アノード帰線側・カソードノード側、上向き）、i_d矢印（右向き）、e_d矢印（上向き）、L（上）・R（下）の直列、図1ラベル。接続・向き・ラベルに欠落はない。figureDescription の記述も整合する。",
+        "図2：公開候補図は原図と照合して一致した。波形1〜5の縦軸ラベル（e_d/v_s、i_d/v_s）、0、ωt、実線（e_d・i_d）と破線（v_s）の区別、波形1の負側ステップ、波形5の遅れ位相と裾引き、図2ラベルを確認した。公開候補図だけで解答に必要な判別が可能である。",
+        "officialReferenceUrls は空で、独立主張の外部確認事項はない。sourceAttribution（令和6年度上期 第三種電気主任技術者試験 機械科目 問10）は正しい。"
+      ]
+    }
+  ]
+}

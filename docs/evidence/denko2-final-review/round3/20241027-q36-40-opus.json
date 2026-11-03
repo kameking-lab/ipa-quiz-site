@@ -1,0 +1,74 @@
+{
+  "schemaVersion": 1,
+  "reviewModel": "claude-opus-5-5",
+  "inputHashes": {
+    "reviewedSha256": "96e0f49aa20771b3b5889555345572be248ed4ba2e99825d42e4f7afcf9a8713",
+    "rowSha256": {
+      "36": "edf1092ee2e6760670c5326e87aa04136f3fd90cd5b92eb69a87af813b866389",
+      "37": "154a9bf2be0cb1322bfd7c0a6d1025d466ba56577384d14d171cc42bc3ada1bf",
+      "38": "870227412eb79fb68d35e63c572dabd1500196f5996a9053619652ac7aa3fce0",
+      "39": "9e22d0df496cd762e69844341600223855d3009fc7bde500cdd00f21cb60cc28",
+      "40": "803effb9be243a7eded4946da32dd42cbbf4def280d536da07cd2a50c286bb9c"
+    }
+  },
+  "assessment": [
+    {
+      "number": 36,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [
+        "「対地電圧150V以下で一方の極が接地側電線である場合に限り、2極1素子が認められる」という条件を、確認できる出典なしに規定として書いている。2極1素子の配線用遮断器が使えるかどうかは、素子のない極を接地側電線につなげるかどうかで決まる。⑥の単相200V回路(ⓐ二重丸)は2線とも非接地側電線なので使えない、という筋で書き直すこと。「150V以下」を条件として断定するなら出典が必要。"
+      ],
+      "visualIssues": [],
+      "lawIssues": [
+        "根拠として「電気設備技術基準の解釈第149条」を挙げているが、第149条(低圧分岐回路等の施設)には「各極に過電流検出素子を備えること」や「2極1素子を認める条件」がこの形では書かれていない。条文番号と内容が合っていない。実際に確認できる根拠(例: 解釈第35条の接地側電線への過電流遮断器施設の禁止、内線規程の配線用遮断器の素子配置に関する規定)に差し替えるか、条文番号を削って一般原則として説明すること。officialReferenceUrls(解釈PDF)と本文の条文番号が照合できる状態にすること。"
+      ]
+    },
+    {
+      "number": 37,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "visualIssues": [],
+      "lawIssues": []
+    },
+    {
+      "number": 38,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "visualIssues": [],
+      "lawIssues": []
+    },
+    {
+      "number": 39,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [
+        "原本の選択肢は刃受形状の画像だけだが、JSONの選択肢テキストに「引掛形でない接地極付3極(3P)コンセント」「引掛形接地極付2極」「単相200V用接地極付2極」といった種類名まで入っている。⑨の傍記「3P 30A 250V E」と照らせば、画像を見なくても正答イが分かってしまう。選択肢テキストは形状の説明(刃受の数・向き・形)だけにし、種類の特定はchoiceExplanationsとexplanationへ移すこと。"
+      ],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "visualIssues": [
+        "イの4個の刃受のうち「下部中央の小さな刃受が接地極、上部の横長と左右の縦長が電圧極」と決めているが、設問行画像の解像度では、上部の刃受(⊓形)と下部の刃受のどちらが接地極かを形状から判別できない。出典(JIS C 8303の刃受配置)も示されておらず、正答から逆算して埋めた記述になっている。出典を付けて確認するか、「4個の刃受(3極+接地極)」のように極の割り当てを断定しない記述にすること。"
+      ],
+      "lawIssues": []
+    },
+    {
+      "number": 40,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "visualIssues": [],
+      "lawIssues": []
+    }
+  ]
+}

@@ -1,7 +1,9 @@
+import { questionSourceEdition, questionSourceExam } from "@/lib/questions/source-label";
+import "server-only";
+import type { RelatedQuestion } from "./header-codec";
 import { getAllQuestions } from "@/lib/questions/load";
-import { examLabel, formatYearSeason } from "@/lib/utils";
 import { questionPagePath } from "@/lib/seo/question-url";
-import type { ExamCode, Season } from "@/lib/questions/types";
+import type { ExamCode } from "@/lib/questions/types";
 import { getCorpus } from "./corpus";
 import { getCachedIndex, retrieve } from "./retriever";
 import { buildRetrievalQuery, isQueryRetrievable, type RerankContext } from "./reranker";
@@ -11,22 +13,6 @@ import { buildRetrievalQuery, isQueryRetrievable, type RerankContext } from "./r
  * AI コパイロットの回答下部に「この質問に関連する問題」セクションを
  * 描画するために使う。引用に採用された出典は除外する。
  */
-export interface RelatedQuestion {
-  questionId: string;
-  exam: ExamCode;
-  examLabel: string;
-  year: number;
-  season: Season;
-  yearSeasonLabel: string;
-  qNumber: number;
-  category: string;
-  /** 問題文の冒頭プレビュー（180 文字）。 */
-  preview: string;
-  /** 問題ページ URL（正規の indexable な静的 /q/* ページ）。 */
-  url: string;
-  /** BM25 スコア（並び順保持用）。 */
-  score: number;
-}
 
 const PREVIEW_MAX_LEN = 180;
 
@@ -59,6 +45,32 @@ export function sharesTopicOrCategory(
   return false;
 }
 
+/** Detailed tags take priority over broad categories such as ストラテジ系. */
+export function sharesSpecificTopic(candidate: TopicFields, currentCategory?: string, currentTopicTags?: string[]): boolean {
+  if (currentTopicTags?.length) {
+    return candidate.topicTags.some(tag => currentTopicTags.includes(tag));
+  }
+  return Boolean(currentCategory && candidate.category === currentCategory);
+}
+
+/** Conservative focus for untagged questions; generic instructions are not a topic. */
+export function questionFocusTerms(questionText: string): string[] {
+  return [...new Set([
+    ...(questionText.match(/[ァ-ヶー]{4,}/g) ?? []),
+    ...(questionText.match(/\b[A-Z][A-Z0-9-]{1,}\b/g) ?? []),
+  ])];
+}
+
+export function matchesQuestionTopic(candidate: TopicFields, currentCategory: string | undefined, currentTopicTags: string[] | undefined, questionText: string | undefined, candidateText: string): boolean {
+  if (currentTopicTags?.length) return sharesSpecificTopic(candidate, currentCategory, currentTopicTags);
+  if (questionText) {
+    return questionFocusTerms(questionText).some(term => /^[A-Z0-9-]+$/.test(term)
+      ? new RegExp(`\\b${term}\\b`, "i").test(candidateText)
+      : candidateText.includes(term));
+  }
+  return sharesSpecificTopic(candidate, currentCategory, currentTopicTags);
+}
+
 /**
  * Score multiplier that lifts same-category / shared-topicTag candidates so
  * BM25 surface-token overlap alone cannot outrank a true subfield match.
@@ -85,6 +97,7 @@ interface FindRelatedInput {
   currentExam?: ExamCode;
   currentCategory?: string;
   currentTopicTags?: string[];
+  currentQuestionText?: string;
   /** RAG citation に既に使われた docId 集合（重複を避ける）。 */
   excludeDocIds: ReadonlySet<string>;
   /** 返却件数。デフォルト 4。 */
@@ -110,20 +123,23 @@ export function findRelatedQuestions(input: FindRelatedInput): RelatedQuestion[]
     currentTopicTags: input.currentTopicTags,
     currentExam: input.currentExam,
   };
-  const query = buildRetrievalQuery(input.userMessage, ctx);
+  const allQuestions = getAllQuestions();
+  const currentQuestionText = input.currentQuestionText ?? allQuestions.find(q => q.id === input.currentQuestionId)?.question;
+  const focusTerms = currentQuestionText ? questionFocusTerms(currentQuestionText) : [];
+  const query = buildRetrievalQuery([input.userMessage, ...focusTerms].join(" "), ctx);
   const index = getCachedIndex(getCorpus);
 
   // citation top-N 用より少し広めに取り、フィルタ後に limit へ落とす。
   const candidates = retrieve(index, query, Math.max(limit * 4, 12));
   if (candidates.length === 0) return [];
 
-  const allQuestions = getAllQuestions();
   const questionMap = new Map(allQuestions.map((q) => [q.id, q]));
 
   // When a question is being viewed, gate to its subfield: prefer candidates
   // that share the category or a topic tag, so a surface-token BM25 hit from a
   // different subfield can't be presented as a 類題 (即修正④).
   const hasContext =
+    Boolean(currentQuestionText) ||
     Boolean(input.currentCategory) ||
     (input.currentTopicTags?.length ?? 0) > 0;
 
@@ -135,6 +151,7 @@ export function findRelatedQuestions(input: FindRelatedInput): RelatedQuestion[]
     if (input.currentQuestionId && qid === input.currentQuestionId) continue;
     const q = questionMap.get(qid);
     if (!q) continue;
+    if (input.currentExam && q.exam !== input.currentExam) continue;
     // 解説が極端に短い問題は学習教材として弱いため、関連サジェストには含めない。
     if (!q.explanation || q.explanation.trim().length < 40) continue;
     // 同一試験区分は弱優先 + 同分野 / 細分野タグ一致を強優先。
@@ -144,20 +161,22 @@ export function findRelatedQuestions(input: FindRelatedInput): RelatedQuestion[]
       input.currentCategory,
       input.currentTopicTags,
     );
-    const onTopic = sharesTopicOrCategory(
+    const onTopic = matchesQuestionTopic(
       q,
       input.currentCategory,
       input.currentTopicTags,
+      currentQuestionText,
+      `${q.question}\n${q.explanation}`,
     );
     scored.push({
       onTopic,
       item: {
         questionId: q.id,
         exam: q.exam,
-        examLabel: examLabel(q.exam),
+        examLabel: questionSourceExam(q),
         year: q.year,
         season: q.season,
-        yearSeasonLabel: formatYearSeason(q.year, q.season),
+        yearSeasonLabel: questionSourceEdition(q),
         qNumber: q.qNumber,
         category: q.category,
         preview: shortenPreview(q.question),
@@ -169,12 +188,11 @@ export function findRelatedQuestions(input: FindRelatedInput): RelatedQuestion[]
     });
   }
 
-  // With context, drop off-topic candidates entirely — *unless* none are
-  // on-topic (sparse subfield), in which case fall back to the full set so the
-  // section is not silently empty.
+  // A sparse topic is allowed to return no suggestions. Never fill it with
+  // different subjects just to make the section nonempty.
   const onTopicOnly = scored.filter((s) => s.onTopic);
   const pool =
-    hasContext && onTopicOnly.length > 0 ? onTopicOnly : scored;
+    hasContext ? onTopicOnly : scored;
 
   return pool
     .map((s) => s.item)
@@ -182,31 +200,5 @@ export function findRelatedQuestions(input: FindRelatedInput): RelatedQuestion[]
     .slice(0, limit);
 }
 
-/** HTTP ヘッダ送信用 base64 エンコード。 */
-export function encodeRelatedHeader(items: RelatedQuestion[]): string {
-  if (items.length === 0) return "";
-  const json = JSON.stringify(items);
-  return Buffer.from(json, "utf8").toString("base64");
-}
-
-/** クライアント側で X-Related-Questions ヘッダを RelatedQuestion[] に戻す。 */
-export function decodeRelatedHeader(header: string | null): RelatedQuestion[] {
-  if (!header) return [];
-  try {
-    const json =
-      typeof atob === "function"
-        ? decodeURIComponent(
-            Array.prototype.map
-              .call(atob(header), (c: string) =>
-                `%${`00${c.charCodeAt(0).toString(16)}`.slice(-2)}`,
-              )
-              .join(""),
-          )
-        : Buffer.from(header, "base64").toString("utf8");
-    const parsed = JSON.parse(json) as RelatedQuestion[];
-    if (!Array.isArray(parsed)) return [];
-    return parsed;
-  } catch {
-    return [];
-  }
-}
+export { encodeRelatedHeader, decodeRelatedHeader } from "./header-codec";
+export type { RelatedQuestion } from "./header-codec";

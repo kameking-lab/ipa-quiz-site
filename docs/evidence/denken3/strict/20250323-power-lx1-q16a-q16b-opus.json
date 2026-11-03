@@ -1,0 +1,96 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20250323",
+  "subject": "power",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 8892,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 16401,
+      "webSearchRequests": 0,
+      "costUSD": 0.3093118,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 5992,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "90094d43081250d3f885939c1568b227c86245d8ea07fead3fd3920e8c97e864",
+  "inputRequestSha256": "855da5edf398cd464fc477815a140a88605e588f6c520786377e3c1e06857b28",
+  "inputHashes": {
+    "candidateSha256": {
+      "q16a": "fd1e50aa31c09e5d57f8fa0d1bced63548e5dd28ff0b30d22fbc60915eedff4a",
+      "q16b": "884e6c40f155cde3b565cd1a7ed16279e427ab7e73910e391451bc638e3fba6b"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20250323/power/p19.png": "14e228fd6b21309dcd6fb3c10eb58ee881c99a5c4295cac9446d133d7e60d5fd"
+    },
+    "figureSha256": {
+      "public/images/denken3/20250323/power/20250323-power-q16-t-circuit.png": "32e7cff240df97b6acfe3c978455ee11e169b4f89ad2647385ac56e2dc635314"
+    },
+    "sourceQuestionPdfSha256": "892785e0f1035bcb239eb30fa903d4c88adbcfdaa1b5b0edea2d1907fd887114",
+    "sourceAnswerPdfSha256": "4c3b38fcf1405766fafaa78b1b05b867a3d48307a670b9d354476bc6b32acd4c",
+    "officialAnswerUnitsSha256": "ce98d57b37fbcbfec07706eb108ac8ffc5f165350c17c5937badca5fa6526b2e",
+    "referencePdfSha256": {},
+    "referencePageSha256": {},
+    "referenceJsonSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q16a",
+      "questionNumber": 16,
+      "part": "a",
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [
+        "記号の二重定義による曖昧さ：問題文では Ir=400 A が大きさ（スカラー）として定義されているが、総合解説では同じ記号 Ir を「Ir = 400(√3/2 − j1/2) = 346.41 − j200 [A]」とフェーザにも使っている。同様に Vc もフェーザ（161464.1 + j11856.4）と、問題が問う大きさ Vc[kV] の両方に使われている。原図に合わせ、フェーザは İr・V̇c・V̇r1・Ż（または『İr（フェーザ）』）、大きさは Ir・|V̇c| と書き分けること。",
+        "uncertainty 欄の記述が不適切：『Vr1=150 kV は…相電圧として扱った。図から読み取れる範囲では、この解釈で選択肢(3)と一致する』とあり、確定事項を未解決の不確実性のように記載している。さらに正答肢との一致を解釈の根拠にしており、循環論法になっている。原図では V̇r1 が端子と中性線 N′ の間の電圧として矢印で定義され、回路は『T形回路(1相分)』と明示されている。したがって V̇r1 は1相分（対中性線）の電圧であり、題意から一意に定まる。uncertainty は空にするか、図の定義に基づく確定的な記述に改めること。"
+      ],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "書誌情報：原図の問16はPDF第19頁（冊子ノンブル -16-、右下 T2−D 019）。候補の reviewedFromPage=[19]、fiscalYear=2024、term=lower、examDate=2025-03-23、subject=power、問題PDF・解答PDFのURL、sourceAttribution（令和6年度下期 電力 問16(a)）はいずれも manifest と一致する。",
+        "公式正答：解答表の原図で電力 問16(a)=3。候補の officialAnswer=\"3\" と一致する。",
+        "問題文：r=20 Ω、x=80 Ω、Y=0.0007 S、Vr1=150 kV、Ir=400 A、cosθr=√3/2（遅れ）、(a) Vc[kV] の問い方はいずれも原図と一致する。",
+        "選択肢：(1)134.2 (2)152.3 (3)161.9 (4)172.0 (5)180.4 は原図と一致する。",
+        "計算の検算：\n・İr = 346.410 − j200 [A]、Ż/2 = 10 + j40 [Ω]\n・(10+j40)(346.410−j200) = 11464.10 + j11856.41 [V]\n・V̇c = 161464.10 + j11856.41 [V]\n・|V̇c|² = 2.60707×10¹⁰ + 1.4057×10⁸ = 2.62113×10¹⁰ より |V̇c| ≒ 161.90 kV\n結果は選択肢(3)と一致し、解説中の各数値も正しい。",
+        "誤答肢の差分を検算した：27.7、9.6、10.1、18.5 kV はいずれも正しい。公式資料には誤答肢の作成根拠が示されていないため、数値不一致を理由とする記述は妥当である。",
+        "公開候補図：原図の回路部分と同一の切り出しである。次のラベルと接続をすべて確認した。\n・İs、r/2、jx/2、Ż/2（波括弧）、V̇s1、V̇c、İc（下向き）、コンデンサ記号 Ẏ、V̇r1、İr、Ż_l、cosθr(遅れ)、N、N′、中性線、接続点の黒丸、図1キャプション\n・電圧矢印は下から上向き\n公開候補図だけで題意を理解できる。figureDescription の内容も図と整合する。",
+        "officialReferenceUrls は空であり、検証が必要な独立主張はない。"
+      ]
+    },
+    {
+      "unitKey": "q16b",
+      "questionNumber": 16,
+      "part": "b",
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [
+        "中間式の誤り：総合解説の『Ic = Y·Vc = 0.0007 × (161464.1 + j11856.4)』は、書かれたとおりに計算すると 113.02 + j8.30 [A] になる。直後の結果『Ic = j113.02 − 8.30』と矛盾しており、途中で Y を j0.0007 に置き直す構成になっている。『İc = Ẏ·V̇c = j0.0007 × (161464.1 + j11856.4) = −8.30 + j113.02 [A]』と一本の式で正しく書くこと。",
+        "根拠の記述が仮定形になっている：『Y = j0.0007 S とすると』は仮定の言い回しである。原図では Ẏ がコンデンサ記号で示されているので、『Ẏ = j0.0007 S（容量性）』と確定的に記述すること。",
+        "uncertainty 欄の根拠が循環論法：『図と選択肢(4)との一致から妥当と判断した』と正答との一致を根拠にしている。Ẏ が容量性であることは原図のコンデンサ記号から一意に定まり、正答一致に依拠する必要はない。uncertainty は空にするか、図の記号に基づく確定的な記述に改めること。",
+        "記号の二重定義：(a)と同様に、Ir・Is・Ic・Vc・Vs1・Y が大きさ（問題文の Ir=400 A、Y=0.0007 S、問われる Vs1[kV]）とフェーザ（解説中の複素数値）の両方に同じ表記で使われている。フェーザは İ・V̇・Ẏ、大きさは |V̇s1| などと書き分けること。"
+      ],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "書誌情報：reviewedFromPage=[19]、fiscalYear=2024、term=lower、examDate=2025-03-23、subject=power、問題PDF・解答PDFのURL、sourceAttribution（令和6年度下期 電力 問16(b)）はいずれも manifest と原図に一致する。",
+        "公式正答：解答表の原図で電力 問16(b)=4。候補の officialAnswer=\"4\" と一致する。",
+        "問題文・選択肢：問題文と (b) Vs1[kV] の問い方は原図と一致する。選択肢 (1)145.9 (2)155.4 (3)160.6 (4)170.1 (5)180.7 も原図と一致する。",
+        "計算の検算：\n・İc = j0.0007 × (161464.10 + j11856.41) = −8.30 + j113.02 [A]\n・İs = İr + İc = 338.11 − j86.98 [A]（接続点のKCLと矢印の向きに整合）\n・(10+j40)(338.11−j86.98) = 6860.3 + j12654.6 [V]\n・V̇s1 = 168324.4 + j24511.0 [V]\n・|V̇s1|² = 2.83331×10¹⁰ + 6.0079×10⁸ = 2.89339×10¹⁰ より |V̇s1| ≒ 170.10 kV\n結果は選択肢(4)と一致する。",
+        "誤答肢の差分を検算した：24.2、14.7、9.5、10.6 kV はいずれも正しい。公式資料に誤答肢の作成根拠はなく、数値不一致を理由とする記述は妥当である。",
+        "公開候補図：原図と同一であり、全ラベル・接続・電流と電圧の向き、および Ẏ がコンデンサ記号であることを確認した。V̇s1 = V̇c + (Ż/2)İs の関係は図だけで読み取れる。figureDescription も図と整合する。",
+        "officialReferenceUrls は空であり、検証が必要な独立主張はない。"
+      ]
+    }
+  ]
+}

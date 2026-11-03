@@ -5,7 +5,7 @@ const SITE_URL = "https://www.kakomon-ai.jp/stats";
 export function StatsShareButtons({ impressions }: { impressions: number | null }) {
   const text = impressions
     ? `過去問AI は Google 検索で月 ${impressions.toLocaleString("ja-JP")} 回表示されている、無料の IPA 過去問学習サイトです。 #過去問AI #kakomon_ai`
-    : `過去問AI は無料・登録不要・広告なしの IPA 過去問学習サイトです。 #過去問AI #kakomon_ai`;
+    : `過去問AI は無料・登録不要の IPA 過去問学習サイトです。 #過去問AI #kakomon_ai`;
   const tweetUrl = `https://x.com/intent/tweet?text=${encodeURIComponent(text)}&url=${encodeURIComponent(SITE_URL)}`;
 
   return (

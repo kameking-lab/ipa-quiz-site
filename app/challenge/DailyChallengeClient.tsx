@@ -1,10 +1,12 @@
 "use client";
+import { isAcceptedAnswer, getChoiceKeys, CHOICE_SHORTCUTS } from "@/lib/questions/answers";
 
 import * as React from "react";
 import Link from "next/link";
 import { ArrowRight, Sparkles, Trophy, RefreshCw, CheckCircle2, XCircle } from "lucide-react";
 import type { Question, ChoiceKey } from "@/lib/questions/types";
 import { ChoiceButton } from "@/components/quiz/ChoiceButton";
+import { choiceDisplayLabel } from "@/lib/questions/display";
 import { useQuizChoiceRoving } from "@/lib/a11y/use-quiz-choice-roving";
 import { Button } from "@/components/ui/button";
 import {
@@ -16,12 +18,12 @@ import { awardXp, XP_REWARDS, xpProgress, readXp } from "@/lib/gamification/xp";
 import { unlockManual } from "@/lib/gamification/achievements";
 import { createHistoryStore } from "@/lib/storage/history";
 import { recordStudyOnDate } from "@/lib/motivation/heatmap";
-import { getChoiceKeys, keyboardChoiceIndex } from "@/lib/questions/choices";
 
 interface Props {
   questions: Question[];
   date: string;
 }
+
 
 interface FinalResult {
   correctCount: number;
@@ -41,6 +43,7 @@ export function DailyChallengeClient({ questions, date }: Props) {
   const [results, setResults] = React.useState<Array<"correct" | "incorrect">>([]);
   const [final, setFinal] = React.useState<FinalResult | null>(null);
   const [alreadyDoneOnLoad, setAlreadyDoneOnLoad] = React.useState(false);
+  const [shortcutsReady, setShortcutsReady] = React.useState(false);
   const history = React.useMemo(() => createHistoryStore(), []);
 
   React.useEffect(() => {
@@ -65,13 +68,12 @@ export function DailyChallengeClient({ questions, date }: Props) {
 
   const current = questions[index];
   const total = questions.length;
-  const choiceKeys = React.useMemo(() => getChoiceKeys(current?.choices), [current]);
 
   // Arrow-key roving for the answer radiogroup (focus-only; Enter/Space/click
   // commits). Unconditional, before the early returns, per the rules of hooks.
   const choiceRoving = useQuizChoiceRoving(
-    choiceKeys.length,
-    selected ? choiceKeys.indexOf(selected) : -1,
+    getChoiceKeys(current?.choices).length,
+    selected ? getChoiceKeys(current?.choices).indexOf(selected) : -1,
     revealed,
     current?.id ?? "",
   );
@@ -79,10 +81,7 @@ export function DailyChallengeClient({ questions, date }: Props) {
   const onSelect = React.useCallback(
     (key: ChoiceKey) => {
       if (!current || revealed) return;
-      const answerKey = Array.isArray(current.answer)
-        ? String(current.answer[0])
-        : String(current.answer);
-      const correct = key === answerKey;
+      const correct = isAcceptedAnswer(current.answer, key);
       setSelected(key);
       setRevealed(true);
       setResults((prev) => [...prev, correct ? "correct" : "incorrect"]);
@@ -92,7 +91,7 @@ export function DailyChallengeClient({ questions, date }: Props) {
     [current, revealed, history],
   );
 
-  // Number-key (1–9) selection — the ChoiceButton/radiogroup advertise
+  // Number-key (1–4) selection — the ChoiceButton/radiogroup advertise
   // aria-keyshortcuts「数字キーN でも選択できます」, so the keys must actually work
   // (致命傷⑩: the label lied here — /quiz・/q already had this handler, /challenge
   // did not). N maps to CHOICE_KEYS[N-1] (matching shortcutIndex={i+1}); only
@@ -104,17 +103,21 @@ export function DailyChallengeClient({ questions, date }: Props) {
         const tag = e.target.tagName;
         if (tag === "INPUT" || tag === "TEXTAREA" || e.target.isContentEditable) return;
       }
-      const i = keyboardChoiceIndex(e.key);
+      const i = CHOICE_SHORTCUTS.indexOf(e.key);
       if (i < 0) return;
-      const key = choiceKeys[i];
+      const key = getChoiceKeys(current.choices)[i];
       if (current.choices?.[key]) {
         e.preventDefault();
         onSelect(key);
       }
     };
     window.addEventListener("keydown", handler);
-    return () => window.removeEventListener("keydown", handler);
-  }, [revealed, current, onSelect, choiceKeys]);
+    setShortcutsReady(true);
+    return () => {
+      window.removeEventListener("keydown", handler);
+      setShortcutsReady(false);
+    };
+  }, [revealed, current, onSelect]);
 
   const onNext = React.useCallback(() => {
     if (index + 1 < total) {
@@ -213,7 +216,7 @@ export function DailyChallengeClient({ questions, date }: Props) {
 
         <div className="flex gap-2">
           <Button asChild variant="primary" className="flex-1">
-            <Link href="/">ホームへ</Link>
+            <Link href="/ipa">試験選択へ</Link>
           </Button>
           <Button asChild variant="outline" className="flex-1">
             <Link href="/account">アチーブメント確認</Link>
@@ -232,9 +235,7 @@ export function DailyChallengeClient({ questions, date }: Props) {
   if (!current) return null;
 
   const choices = current.choices ?? {};
-  const answerKey = Array.isArray(current.answer)
-    ? String(current.answer[0])
-    : String(current.answer);
+  const answerKey = (Array.isArray(current.answer) ? current.answer : [current.answer]).map((key) => choiceDisplayLabel(current.exam, key as ChoiceKey)).join("・");
 
   return (
     <div className="space-y-4">
@@ -268,23 +269,25 @@ export function DailyChallengeClient({ questions, date }: Props) {
 
       <div
         role="radiogroup"
-        aria-label={`選択肢（矢印キーで移動、数字キー1〜${choiceKeys.length}・Enter/スペースで選択）`}
+        data-shortcuts-ready={shortcutsReady}
+        aria-label="選択肢（矢印キーで移動、数字キー1〜9・0・Enter/スペースで選択）"
         className="space-y-2"
       >
-        {choiceKeys.map((k, i) => {
+        {getChoiceKeys(current.choices).map((k, i) => {
           const text = choices[k];
           if (!text) return null;
           return (
             <ChoiceButton
               key={k}
               choiceKey={k}
+              displayLabel={choiceDisplayLabel(current.exam, k)}
               text={text}
               revealed={revealed}
               selected={selected === k}
-              correct={k === answerKey}
+              correct={isAcceptedAnswer(current.answer, k)}
               disabled={revealed}
               onClick={() => onSelect(k)}
-              shortcutIndex={i + 1}
+              shortcutIndex={(i + 1) % 10}
               {...choiceRoving.getRadioProps(i)}
             />
           );
@@ -294,7 +297,7 @@ export function DailyChallengeClient({ questions, date }: Props) {
       {/* Screen-reader announcement of the outcome (parity with /quiz・/q). */}
       <div role="status" aria-live="polite" aria-atomic="true" className="sr-only">
         {revealed
-          ? selected === answerKey
+          ? isAcceptedAnswer(current.answer, selected)
             ? "正解です。下に解説があります。"
             : `不正解です。正解は ${answerKey} です。下に解説があります。`
           : ""}
@@ -303,14 +306,14 @@ export function DailyChallengeClient({ questions, date }: Props) {
       {revealed && (
         <div className="space-y-3 rounded-2xl border border-border bg-card p-4">
           <div className="flex items-start gap-2">
-            {selected === answerKey ? (
+            {isAcceptedAnswer(current.answer, selected) ? (
               <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-emerald-500" />
             ) : (
               <XCircle className="mt-0.5 h-5 w-5 shrink-0 text-rose-500" />
             )}
             <div className="flex-1 text-sm">
               <p className="mb-1 font-semibold">
-                {selected === answerKey ? "正解！" : `不正解（正解は ${answerKey}）`}
+                {isAcceptedAnswer(current.answer, selected) ? "正解！" : `不正解（正解は ${answerKey}）`}
               </p>
               <p className="leading-relaxed text-muted-foreground">{current.explanation}</p>
             </div>
@@ -324,11 +327,11 @@ export function DailyChallengeClient({ questions, date }: Props) {
 
       <div className="text-center">
         <Link
-          href="/"
+          href="/ipa"
           className="inline-flex items-center gap-1 text-xs text-muted-foreground hover:text-foreground"
         >
           <RefreshCw className="h-3 w-3" />
-          中断してホームへ戻る
+          中断して試験選択へ戻る
         </Link>
       </div>
     </div>

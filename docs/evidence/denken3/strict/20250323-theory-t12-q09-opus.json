@@ -1,0 +1,65 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20250323",
+  "subject": "theory",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 1913,
+      "cacheReadInputTokens": 139443,
+      "cacheCreationInputTokens": 15079,
+      "webSearchRequests": 0,
+      "costUSD": 0.18678860000000003,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 937,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "ed369ea997c5d3e63820b94f517b659f2f85e3ba97b015b2562a51bcc8a29c47",
+  "inputRequestSha256": "db7ffd0710ddd5e57f9c2f3a7f73e9f7dae495693641884d3a3848a6673aa5cb",
+  "inputHashes": {
+    "candidateSha256": {
+      "q09": "68755c3581f84875c85051a6e81a3682df8c59a337a299691ae24b6f81cca049"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20250323/theory/p12.png": "25fbc130a13264f29ed53f0908a6945ef14605ecd7ada65140e91b599241a2ee"
+    },
+    "figureSha256": {},
+    "sourceQuestionPdfSha256": "8817012cb55eed9c83bb1e68df138909b1e03a81f7ed48a9893a219e1d2a76ca",
+    "sourceAnswerPdfSha256": "4c3b38fcf1405766fafaa78b1b05b867a3d48307a670b9d354476bc6b32acd4c",
+    "officialAnswerUnitsSha256": "3f0f70f2daa36cb734c81e521ff1c9d9f1e7749db46dfb307185a0d6d6f2815a",
+    "referencePdfSha256": {},
+    "referencePageSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q09",
+      "questionNumber": 9,
+      "part": null,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "The question text matches the attached official page (printed page -9-, T2-R 012) word for word: 4 Ω, C [F], series RC, 50 Hz, 100 V, 20 A, 60 Hz, 100 V, and the unit [A]. The only changes are to punctuation and spacing.",
+        "Choices (1) 16.7, (2) 18.6, (3) 21.2, (4) 24.0 and (5) 25.6 match the original page exactly.",
+        "officialAnswer = 3 matches the manifest-fixed official answer {question: 9, part: null, answer: \"3\"}.",
+        "Main calculation checked: Z50 = 100/20 = 5 Ω. Xc50 = √(25−16) = 3 Ω. Xc is proportional to 1/f, so Xc60 = 3×50/60 = 2.5 Ω. Z60 = √(16+6.25) = √22.25 = 4.717 Ω. I = 100/4.717 = 21.20 A, which is option (3).",
+        "Required values for each wrong option checked. (1) Z = 5.988 Ω, Xc = √19.86 = 4.46 Ω. (2) Z = 5.376 Ω, Xc = √12.90 = 3.59 Ω. (4) Z = 4.167 Ω, Xc = √1.36 = 1.17 Ω. These match the explanation text.",
+        "(5) Checked: 25.6 A would need Z = 3.906 Ω, but a series RC circuit has Z > R = 4 Ω, so the current cannot exceed 25 A. The reason given is correct and specific to this option.",
+        "The reasons for (1) and (2) are correct and consistent: raising the frequency lowers Xc, so the current must rise above 20 A.",
+        "Figure check: the original page has no circuit diagram. It is text only, which is consistent with figureUrls being empty and figureDescription saying there is no figure. The circuit arrangement can be fully understood from the text.",
+        "officialReferenceUrls is empty and the candidate makes no independent claims from outside sources, so no external references needed checking.",
+        "Checked the metadata: examDate 2025-03-23 is the 2024 (Reiwa 6) lower-term exam, so fiscalYear 2024, term lower, subject theory and sourceAttribution agree with each other. The attached page shows printed page number 9. reviewedFromPage [12] is taken as the PDF page number, as the audit instructions specify."
+      ]
+    }
+  ]
+}

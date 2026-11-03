@@ -1,0 +1,93 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20250323",
+  "subject": "power",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 3797,
+      "cacheReadInputTokens": 139443,
+      "cacheCreationInputTokens": 19068,
+      "webSearchRequests": 0,
+      "costUSD": 0.2563806,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 1964,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "b274411cd064b9e3825ce06c3cd7f9d2922db46d2c462cf4b2c34636ae82cf54",
+  "inputRequestSha256": "ec5850b8363e088885bcae17364f400a785bfe8f7558a956b0e8c225961840ee",
+  "inputHashes": {
+    "candidateSha256": {
+      "q11": "c6035f42645893cf1654b45309877402dd7da73ea02eb2f44e051a2ffb6bf8fe",
+      "q13": "93b566eb75f114a7730e0fbaafabb04599423818676ef0b0f65fdd4dad97a638"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20250323/power/p14.png": "7977a2161153b016b64361a48ec48f3aa77ad46723994bdca2ae8bd1f54d2a9e",
+      "data/raw_pdfs/denken3/review/20250323/power/p16.png": "f07eab8e9134d3bd709d5db2be11c1270a53cbe830621c0405f8959c21497cac"
+    },
+    "figureSha256": {
+      "public/images/denken3/20250323/power/20250323-power-q13-span-sag.png": "f51149e529cb216e502d91d40a7864436f169570d5a769ae51a2d7b845a1644c"
+    },
+    "sourceQuestionPdfSha256": "892785e0f1035bcb239eb30fa903d4c88adbcfdaa1b5b0edea2d1907fd887114",
+    "sourceAnswerPdfSha256": "4c3b38fcf1405766fafaa78b1b05b867a3d48307a670b9d354476bc6b32acd4c",
+    "officialAnswerUnitsSha256": "6926f3253358e05d6b6aa08abb4e8905288e2333aec35a295a5f7782a7dac2d1",
+    "referencePdfSha256": {},
+    "referencePageSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q11",
+      "questionNumber": 11,
+      "part": null,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "The question text matches the official page (printed page -11-, marker T2-D 014). The question asks for the incorrect statement, and both the explanation and the answer follow that.",
+        "Choices (1) to (5) match the official page word for word, including LA/LBS/CB/VCT/SC, A種接地工事, 定格電流以下, and 進み力率の無効電力を消費(すなわち，遅れ無効電力を供給). No wording was added or dropped.",
+        "The official answer is 3, and the candidate's officialAnswer is also 3. The official answer is unchanged.",
+        "Choice (3): isolating equipment from the power source for inspection or repair, and changing circuit connections, is the job of a disconnector (DS), which operates with no load. A circuit breaker (CB) switches load current and interrupts fault currents such as short-circuit currents. Calling (3) the incorrect statement is therefore correct.",
+        "Choice (1): a lightning arrester discharges abnormal voltages to earth and has A種接地工事 (Class A earthing). Correct statement.",
+        "Choice (2): an LBS switches currents up to its rating, such as load current, transformer exciting current, and line current. On its own it cannot interrupt fault currents. Correct statement.",
+        "Choice (4): a VCT combines a VT and a CT. It steps down voltage and current, and with an energy meter it measures the energy used for billing. Correct statement.",
+        "Choice (5): the capacitor draws leading current. It consumes leading reactive power, which is the same as supplying lagging reactive power, and it compensates lagging loads to improve the power factor. The explanation treats this sign convention correctly. Correct statement.",
+        "The overall explanation gives a correct, question-specific reason for the correct choice and for each incorrect choice. There are no causal errors.",
+        "The question has no figure, so figureUrls=[] is correct. The explanation relies only on standard technical knowledge and makes no independent claims that would need an external reference. officialReferenceUrls=[] is acceptable.",
+        "reviewedFromPage=[14] matches the T2-D 014 marker on the original page."
+      ]
+    },
+    {
+      "unitKey": "q13",
+      "questionNumber": 13,
+      "part": null,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "The question text matches the official page (printed page -13-, marker T2-D 016): S=100 m, supports with no height difference, 30 ℃ → 2 m, 60 ℃, linear expansion coefficient 1.5×10⁻⁵ per ℃, stretching from tension ignored, unit [m]. Only the punctuation was reformatted, which the sourceAttribution discloses. The meaning is unchanged.",
+        "Choices (1) 2.05, (2) 2.14, (3) 2.39, (4) 2.66, (5) 2.89 match the official page.",
+        "The official answer is 3, and the candidate's officialAnswer is also 3.",
+        "Recalculation: L₁ = 100 + 8×2²/(3×100) = 100.10667 m. Expansion = 100.10667×1.5×10⁻⁵×30 = 0.045048 m, so L₂ = 100.15171 m. D'² = 3×100×0.15171/8 = 5.689, so D' = 2.385 m, which rounds to 2.39. Using S instead of L₁ for the expansion also gives 2.39. The explanation's figures match.",
+        "The differences in the per-choice explanations check out: (1) 2.385−2.05 = 0.335; (2) 2.385−2.14 = 0.245 ≈ 0.25; (4) 2.66−2.385 = 0.275 ≈ 0.28; (5) 2.89−2.385 = 0.505 ≈ 0.5. (1) also correctly points out the mistaken method of adding the 0.045 m expansion straight to the sag (giving about 2.045).",
+        "The published figure matches the official figure. It has the S=100 m dimension line with two-headed arrows and extension lines, the left support A and right support B shown as black dots, a horizontal dashed line joining them, the sagging conductor curve, and a vertical two-headed arrow D=2 m at the centre of the span. The D arrow sits at the span midpoint in both figures. All labels, orientation, and positions agree, and nothing is missing or extra.",
+        "The published figure alone is enough to understand what the sag D means. The figureDescription matches the figure.",
+        "Using the parabolic approximation L = S + 8D²/(3S) is the standard method for this exam. There are no independent claims that need an external reference, so officialReferenceUrls=[] is acceptable.",
+        "reviewedFromPage=[16] matches the T2-D 016 marker on the original page."
+      ]
+    }
+  ]
+}

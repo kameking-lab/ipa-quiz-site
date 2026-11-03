@@ -27,7 +27,6 @@ export const SM_AFTERNOON_2024_AUTUMN: AfternoonQuestion[] = [
           "あなたが責任を担っていたITサービスの概要と、発生した重大インシデントの内容及び業務への影響について、800字以内で述べよ。",
         type: "essay-text",
         maxLength: 800,
-        minLength: 600,
         modelAnswer: `私が責任を担っていたのは、全国展開する小売チェーンD社の店舗POSサービス及び在庫管理サービスである。D社は約1,200店舗を全国展開し、一日あたり約180万件の取引と約240万件の在庫更新を扱う。私はD社情報システム部のITサービスマネージャとして、本サービスの可用性・性能・継続性に対する責任を負っていた。
 
 サービス構成は、(1)各店舗のPOS端末（約8,000台）、(2)地域センタの集約サーバ、(3)本部のクラウド型基幹システム、(4)外部決済代行サービス、の4層からなる。POSと基幹システムは社内データセンタとパブリッククラウドのハイブリッド構成であり、SLAは可用性99.95%、平均応答時間2秒以内と定めていた。
@@ -170,7 +169,7 @@ export const SM_AFTERNOON_2024_AUTUMN: AfternoonQuestion[] = [
     ],
     pdfUrl:
       "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2024a05_1/2024a05a_sm_pm2_qs.pdf",
-    license: "IPA-public",
+    license: "original",
     totalTimeMinutes: 120,
     industryVariants: SM_2024_AUTUMN_Q1_INDUSTRIES,
   },

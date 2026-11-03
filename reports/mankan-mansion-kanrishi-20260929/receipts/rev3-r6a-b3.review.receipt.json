@@ -1,0 +1,117 @@
+{
+  "duration_api_ms": 147099,
+  "stop_reason": "end_turn",
+  "session_id": "c9ee56b7-6c0e-440e-aaf7-847b5e4b03a5",
+  "total_cost_usd": 1.0426278,
+  "usage": {
+    "input_tokens": 32,
+    "cache_creation_input_tokens": 53360,
+    "cache_read_input_tokens": 967819,
+    "output_tokens": 14232,
+    "output_tokens_details": {
+      "thinking_tokens": 4410
+    },
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 53360,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "not_available",
+    "iterations": [
+      {
+        "input_tokens": 2,
+        "output_tokens": 3642,
+        "cache_read_input_tokens": 80223,
+        "cache_creation_input_tokens": 1229,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 1229
+        },
+        "type": "message"
+      }
+    ],
+    "speed": "standard"
+  },
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 32,
+      "outputTokens": 14232,
+      "cacheReadInputTokens": 967819,
+      "cacheCreationInputTokens": 53360,
+      "webSearchRequests": 0,
+      "costUSD": 0.9052118000000002,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 4410,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    },
+    "claude-haiku-4-5-20251001": {
+      "inputTokens": 121281,
+      "outputTokens": 1227,
+      "cacheReadInputTokens": 0,
+      "cacheCreationInputTokens": 0,
+      "webSearchRequests": 1,
+      "costUSD": 0.137416,
+      "contextWindow": 200000,
+      "maxOutputTokens": 32000,
+      "thinkingTokens": 0,
+      "canonicalModel": "claude-haiku-4-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+    "spawned": 0,
+    "requested": {
+      "background": 0,
+      "foreground": 0,
+      "unset": 0
+    },
+    "started_in_background": 0,
+    "max_depth": 0,
+    "spawned_by_subagents": 0,
+    "completed": 0,
+    "failed": 0,
+    "killed": {
+      "parent": 0,
+      "user": 0,
+      "system": 0
+    },
+    "refused": {
+      "depth_limit": 0,
+      "concurrency_limit": 0,
+      "budget": 0
+    },
+    "by_type": {}
+  },
+  "is_error": false,
+  "num_turns": 19,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "{\"21\":{\"status\":\"FIX\",\"choiceStatus\":{\"ア\":\"PASS\",\"イ\":\"PASS\",\"ウ\":\"FIX\",\"エ\":\"PASS\"},\"fixedChoiceExplanations\":{\"ウ\":\"正しい。特別避難階段の階段室及び付室の天井及び壁の室内に面する部分は、仕上げを不燃材料でし、かつ、その下地を不燃材料で造らなければならない（建築基準法施行令第123条第3項第4号）。※試験の基準日（令和6年4月1日）時点の規定による。その後の政令改正で、同号は現在「国土交通大臣が定める基準に従い、仕上げを不燃材料でし、かつ、その下地を不燃材料で造ることその他これに準ずる措置を講ずること」と改められている。\"},\"evidence\":[{\"url\":\"https://laws.e-gov.go.jp/api/1/lawdata/325CO0000000338\",\"excerpt\":\"次の各号に掲げる出口に設ける戸の施錠装置は、当該建築物が法令の規定により人を拘禁する目的に供せられるものである場合を除き、屋内からかぎを用いることなく解錠できるものとし、かつ、当該戸の近くの見やすい場所にその解錠方法を表示しなければならない。\"},{\"url\":\"https://laws.e-gov.go.jp/api/2/law_data/325CO0000000338?asof=2024-04-01&response_format=xml\",\"excerpt\":\"階段室及び付室の天井及び壁の室内に面する部分は、仕上げを不燃材料でし、かつ、その下地を不燃材料で造ること。\"},{\"url\":\"https://laws.e-gov.go.jp/api/1/lawdata/325CO0000000338\",\"excerpt\":\"階段室及び付室の天井及び壁の室内に面する部分は、国土交通大臣が定める基準に従い、仕上げを不燃材料でし、かつ、その下地を不燃材料で造ることその他これに準ずる措置を講ずること。\"},{\"url\":\"https://laws.e-gov.go.jp/api/1/lawdata/325AC0000000201\",\"excerpt\":\"ただし、住居に立ち入る場合においては、あらかじめ、その居住者の承諾を得なければならない。\"},{\"url\":\"https://laws.e-gov.go.jp/api/1/lawdata/325M50004000040\",\"excerpt\":\"法第十二条第一項の規定による報告の時期は、建築物の用途、構造、延べ面積等に応じて、おおむね六月から三年までの間隔をおいて特定行政庁が定める時期（次のいずれかに該当する場合においては、その直後の時期を除く。）とする。\"}]},\"22\":{\"status\":\"FIX\",\"choiceStatus\":{\"ア\":\"PASS\",\"イ\":\"PASS\",\"ウ\":\"FIX\",\"エ\":\"PASS\"},\"fixedChoiceExplanations\":{\"ウ\":\"誤り。簡易専用水道の設置者には、二つの義務がそれぞれ別に課されている。一つは管理基準に従って水道を管理する義務で、水槽の掃除を毎年1回以上定期に行うことが含まれる（水道法第34条の2第1項、同法施行規則第55条第1号）。もう一つは、地方公共団体の機関又は登録検査機関の検査を定期に受ける義務である（同法第34条の2第2項）。検査の結果に問題がなくても、水槽の掃除を省略することはできない。\"},\"evidence\":[{\"url\":\"https://laws.e-gov.go.jp/api/1/lawdata/332CO0000000336\",\"excerpt\":\"法第三条第七項ただし書に規定する政令で定める基準は、水道事業の用に供する水道から水の供給を受けるために設けられる水槽の有効容量の合計が十立方メートルであることとする。\"},{\"url\":\"https://laws.e-gov.go.jp/api/2/law_data/332M50000100045?asof=2024-04-01&response_format=xml\",\"excerpt\":\"水槽の掃除を毎年一回以上定期に行うこと。\"},{\"url\":\"https://laws.e-gov.go.jp/api/1/lawdata/332M50000100045\",\"excerpt\":\"給水栓における水の色、濁り、臭い、味その他の状態により供給する水に異常を認めたときは、水質基準に関する省令の表の上欄に掲げる事項のうち必要なものについて検査を行うこと。\"},{\"url\":\"https://laws.e-gov.go.jp/api/1/lawdata/332AC0000000177\",\"excerpt\":\"簡易専用水道の設置者は、当該簡易専用水道の管理について、国土交通省令（簡易専用水道により供給される水の水質の検査に関する事項については、環境省令）の定めるところにより、定期に、地方公共団体の機関又は国土交通大臣及び環境大臣の登録を受けた者の検査を受けなければならない。\"},{\"url\":\"https://laws.e-gov.go.jp/api/1/lawdata/332M50000100045\",\"excerpt\":\"一 水道事業者の責任に関する事項として、必要に応じて、次に掲げる事項が定められていること。 イ 貯水槽水道の設置者に対する指導、助言及び勧告\"}]},\"23\":{\"status\":\"PASS\",\"choiceStatus\":{\"ア\":\"PASS\",\"イ\":\"PASS\",\"ウ\":\"PASS\",\"エ\":\"PASS\"},\"fixedChoiceExplanations\":{},\"evidence\":[{\"url\":\"https://laws.e-gov.go.jp/api/1/lawdata/336CO0000000037\",\"excerpt\":\"消防機関へ通報する火災報知設備は、次に掲げる防火対象物に設置するものとする。 ただし、消防機関から著しく離れた場所その他総務省令で定める場所にある防火対象物にあつては、この限りでない。\"},{\"url\":\"https://laws.e-gov.go.jp/api/1/lawdata/336CO0000000037\",\"excerpt\":\"三 別表第一（三）項、（五）項ロ、（七）項から（十一）項まで及び（十三）項から（十五）項までに掲げる防火対象物で、延べ面積が千平方メートル以上のもの\"},{\"url\":\"https://laws.e-gov.go.jp/api/1/lawdata/336CO0000000037\",\"excerpt\":\"非常警報器具は、別表第一（四）項、（六）項ロ、ハ及びニ、（九）項ロ並びに（十二）項に掲げる防火対象物で収容人員が二十人以上五十人未満のもの（次項に掲げるものを除く。）に設置するものとする。\"},{\"url\":\"https://laws.e-gov.go.jp/api/1/lawdata/336CO0000000037\",\"excerpt\":\"連結散水設備は、別表第一（一）項から（十五）項まで、（十六の二）項及び（十七）項に掲げる防火対象物で、地階の床面積の合計（同表（十六の二）項に掲げる防火対象物にあつては、延べ面積）が七百平方メートル以上のものに設置するものとする。\"},{\"url\":\"https://laws.e-gov.go.jp/api/1/lawdata/336CO0000000037\",\"excerpt\":\"一 別表第一に掲げる建築物で、地階を除く階数が七以上のもの 二 前号に掲げるもののほか、地階を除く階数が五以上の別表第一に掲げる建築物で、延べ面積が六千平方メートル以上のもの\"}]},\"24\":{\"status\":\"PASS\",\"choiceStatus\":{\"ア\":\"PASS\",\"イ\":\"PASS\",\"ウ\":\"PASS\",\"エ\":\"PASS\"},\"fixedChoiceExplanations\":{},\"evidence\":[{\"url\":\"https://www.mlit.go.jp/kisha/kisha06/07/070420/02.pdf\",\"excerpt\":\"敷地内の屋外各部及び住棟内の共用部分等は、周囲からの見通しが確保されるように、敷地内の配置計画、動線計画、住棟計画、各部位の設計等を工夫するとともに、必要に応じて防犯カメラの設置等の措置を講じたものとする。\"},{\"url\":\"https://www.mlit.go.jp/kisha/kisha06/07/070420/02.pdf\",\"excerpt\":\"共同住宅に対する居住者の帰属意識が高まるように、住棟の形態や意匠、共用部分の管理方法等を工夫する。\"},{\"url\":\"https://www.mlit.go.jp/kisha/kisha06/07/070420/02.pdf\",\"excerpt\":\"住戸の玄関扉、窓、バルコニー等は、犯罪企図者が接近しにくいように、敷地内の配置計画、動線計画、住棟計画、各部位の設計等を工夫したものとするとともに、必要に応じてオートロックシステムの導入等の措置を講じたものとする。\"}]},\"25\":{\"status\":\"PASS\",\"choiceStatus\":{\"ア\":\"PASS\",\"イ\":\"PASS\",\"ウ\":\"PASS\",\"エ\":\"PASS\"},\"fixedChoiceExplanations\":{},\"evidence\":[{\"url\":\"https://www.mlit.go.jp/jutakukentiku/house/content/001746771.pdf\",\"excerpt\":\"２理事及び監事は、総会の決議によって、組合員のうちから選任し、又は解任する。\"},{\"url\":\"https://www.mlit.go.jp/jutakukentiku/house/content/001746771.pdf\",\"excerpt\":\"ア）バリアフリー化の工事に関し、建物の基本的構造部分を取り壊す等の加工を伴わずに階段にスロープを併設し、手すりを追加する工事は普通決議により、階段室部分を改造したり、建物の外壁に新たに外付けしたりして、エレベーターを新たに設置する工事は特別多数決議により実施可能と考えられる。\"},{\"url\":\"https://www.mlit.go.jp/jutakukentiku/house/content/001417735.pdf\",\"excerpt\":\"具体例としては、床のフローリング、ユニットバスの設置、主要構造部に直接取り付けるエアコンの設置、配管（配線）の枝管（枝線）の取付け・取替え、間取りの変更等がある。\"},{\"url\":\"https://www.mlit.go.jp/jutakukentiku/house/content/001417735.pdf\",\"excerpt\":\"５組合員が代理人により議決権を行使しようとする場合において、その代理人は、以下の各号に掲げる者でなければならない。一その組合員の配偶者（婚姻の届出をしていないが事実上婚姻関係と同様の事情にある者を含む。）又は一親等の親族二その組合員の住戸に同居する親族三他の組合員\"}]}}",
+  "ttft_ms": 15295,
+  "type": "result",
+  "duration_ms": 188965,
+  "uuid": "a66e127a-b4f2-4d78-9cba-9105ef2e1c6d",
+  "ttft_stream_ms": 1515,
+  "time_to_request_ms": 614,
+  "first_content_frame_ms": 1516,
+  "queued_turn_count": 0,
+  "result_index": 0,
+  "_exitCode": 0,
+  "_requestedModel": "claude-opus-5-5",
+  "_toolsAllowed": [
+    "WebFetch",
+    "WebSearch"
+  ]
+}

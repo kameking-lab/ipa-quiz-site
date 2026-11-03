@@ -1,0 +1,42 @@
+{
+  "inputHashes": {
+    "draftSha256": "496cf7486b20fde0df9d20b33925fed46e9d5e2cdbdd03ee0dd5044302f09b90",
+    "rowSha256": {
+      "31": "88e524fa106f619d67a595c51e2137557cb915c148d0064ec4d83e515c57768f",
+      "33": "10ff9fe2b0174f279535371d448c54e1c37120c9a3905a73df7c1402a8f753b0"
+    },
+    "sharedFigureSha256": {
+      "public/images/denko2/2025-second/wiring-first-floor.png": "88f652f95103f8bcd90c110af995e65046ace5b5f38e9bceeaad6ab64d29534a",
+      "public/images/denko2/2025-second/wiring-second-floor.png": "f1076fbb7d9e11339f58b180c19a36b98f7146254572449b4b342157779a31e9",
+      "public/images/denko2/2025-second/wiring-panel.png": "2ab6ad86eea5b617f06c0619a24488a74b154265518ad9b2863bda3243aa819f"
+    },
+    "commonInstructionsSha256": "e2bb1b00f146246a003a209c7614e3c0e316f6991480b6f82e9ee5e6a18b2a5b",
+    "legalReceiptSha256": {
+      "docs/evidence/denko2-law/20251026-q31.json": "07eb6fff0d9bf24ecd17ad08edd513fbd406855b156ba88b6b2cb45e541b0d04",
+      "docs/evidence/denko2-law/20251026-q33.json": "15587ed707856b07019f93d15c45baea5ff4e1eaa96837b26eb781e2202aec90"
+    }
+  },
+  "reviewModel": "claude-opus-5-5",
+  "assessment": [
+    {
+      "number": 31,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "lawNeedsExternalCheck": [
+        "解説とイ・ロの肢別理由は、金属可とう電線管工事と金属線ぴ工事が第110条第2項に挙がっていないことを根拠にしている。receiptで照合済みなのは「五 ケーブル工事により」「三 金属管工事により」「木造以外の造営物に施設すること」の句だけで、同項の列挙に抜けや漏れが無いことまでは照合していない。二つの工事方法が同項に列挙されていないことは、一次法令で別途確認が必要。"
+      ]
+    },
+    {
+      "number": 33,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "lawNeedsExternalCheck": []
+    }
+  ]
+}

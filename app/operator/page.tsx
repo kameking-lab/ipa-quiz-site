@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { PRICE_PAGE_LINK } from "@/lib/billing/price-page-link";
 import {
   AlertTriangle,
   ArrowLeft,
@@ -15,11 +16,13 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { SITE_BASE_URL, SITE_NAME } from "@/lib/seo/config";
+import { NOTE_PROFILE_URL } from "@/lib/external-links";
+import { TrackedNoteLink } from "@/components/analytics/TrackedNoteLink";
 
 export const metadata: Metadata = {
   title: "運営者情報",
   description:
-    "過去問AI（過去問AI）の運営者情報・お問い合わせ先・免責事項。本サービスは IPA とは無関係の非公式サービスです。",
+    "過去問AIの公開運営ハンドル・お問い合わせ先・編集責任と免責事項。各試験実施機関とは無関係の学習支援サービスです。",
   alternates: { canonical: "/operator" },
 };
 
@@ -33,7 +36,7 @@ interface InfoRow {
 
 const INFO_ROWS: InfoRow[] = [
   { label: "サービス名", value: "過去問AI" },
-  { label: "運営", value: "ボランティア有志（過去問AI 教育貢献プロジェクト）" },
+  { label: "運営", value: "kameking-lab（公開運営ハンドル）" },
   {
     label: "公式X",
     value: (
@@ -51,15 +54,17 @@ const INFO_ROWS: InfoRow[] = [
   {
     label: "note",
     value: (
-      <a
-        href="https://note.com/kakomon_ai"
+      <TrackedNoteLink
+        href={NOTE_PROFILE_URL}
+        source="operator"
+        account="ipa_quiz_ai"
         target="_blank"
         rel="noopener noreferrer"
         className="inline-flex items-center gap-0.5 font-medium text-primary underline-offset-4 hover:underline"
       >
-        note.com/kakomon_ai
+        note.com/ipa_quiz_ai
         <ExternalLink className="h-3 w-3" />
-      </a>
+      </TrackedNoteLink>
     ),
   },
   {
@@ -79,7 +84,7 @@ const INFO_ROWS: InfoRow[] = [
   },
   {
     label: "プロジェクト形態",
-    value: "教育貢献プロジェクト（全機能無料・非営利）",
+    value: "教育貢献プロジェクト（一部有料プランあり）",
   },
   {
     label: "お問い合わせ",
@@ -116,7 +121,7 @@ export default function OperatorPage() {
     sameAs: [
       OPERATOR_GITHUB_URL,
       "https://x.com/kakomon_ai_jp",
-      "https://note.com/kakomon_ai",
+      NOTE_PROFILE_URL,
     ],
     jobTitle: "個人開発者・教育貢献プロジェクト運営",
     worksFor: {
@@ -156,8 +161,8 @@ export default function OperatorPage() {
             運営者情報
           </h1>
           <p className="mt-4 max-w-2xl text-pretty text-sm leading-relaxed text-muted-foreground sm:text-base">
-            本サービスは<strong>ボランティア有志により運営</strong>される教育貢献プロジェクトとして、
-            全機能無料で公開しています。IPA 試験対策を、誰もが平等に学べる場として公開することが目的です。
+            本サービスの公開運営ハンドルは<strong>kameking-lab</strong>です。資格の学習支援を目的として、
+            無料で利用できる学習機能と月額プランを提供します。IPA・FP・電気・医療・福祉・不動産等の公開過去問を、資格ごとに学べる場として提供しています。
           </p>
         </header>
 
@@ -192,12 +197,10 @@ export default function OperatorPage() {
           </div>
           <div className="space-y-3 text-sm leading-relaxed text-muted-foreground">
             <p>
-              本サービスは<strong>ボランティア有志</strong>により運営される教育貢献プロジェクトです。
-              特定の法人・営利組織には属さず、全機能無料で公開しています。
-              IPA 試験対策を、誰もが平等に学べる場として提供することが目的です。
+              問題の掲載、独自解説・図版の編集、訂正対応は公開運営ハンドル<strong>kameking-lab</strong>が管理します。無料の学習機能と月額プランがあります。解説はAIの支援を用いて作成しており、実施機関の公式解説や専門家による全件監修を意味しません。
             </p>
             <p>
-              問題データは IPA（独立行政法人情報処理推進機構）が公開する公式過去問を使用しています。
+              問題・正答の出典は各問題の公式資料リンクで確認できます。資料の利用条件は各実施機関で異なり、独自解説の確認範囲は透明性ページで公開しています。
               詳細は{" "}
               <Link
                 href="/about"
@@ -261,23 +264,9 @@ export default function OperatorPage() {
           </div>
           <div className="space-y-3 text-sm leading-relaxed text-muted-foreground">
             <p>
-              本サービスは教育貢献プロジェクトとして<strong>全機能を無料で公開</strong>しており、
-              利用者との間に物品・役務の有償取引・通信販売・有償会員登録等は一切発生しません。
-              このため、特定商取引法第 11 条（通信販売についての広告）が要請する事項の表示義務には該当しません。
+              月額プランの販売者情報、支払方法、提供期間、解約・返金条件は <Link href={PRICE_PAGE_LINK.href} className="font-medium text-primary underline-offset-4 hover:underline">{PRICE_PAGE_LINK.label}</Link> をご確認ください。販売の受付状況にかかわらず、既存契約の条件をご確認いただけます。
             </p>
-            <p>
-              将来的に有償サービスを提供する場合は、本ページに特定商取引法に基づく表記を追加し、
-              事前に <Link href="/updates" className="font-medium text-primary underline-offset-4 hover:underline">更新履歴</Link> および
-              {" "}<Link href="/transparency" className="font-medium text-primary underline-offset-4 hover:underline">透明性レポート</Link> で告知します。
-              現時点で運営に関するお問い合わせは{" "}
-              <Link
-                href="/contact"
-                className="font-medium text-primary underline-offset-4 hover:underline"
-              >
-                お問い合わせフォーム
-              </Link>
-              {" "}よりお寄せください。
-            </p>
+            <p>運営に関するお問い合わせは <Link href="/contact" className="font-medium text-primary underline-offset-4 hover:underline">お問い合わせフォーム</Link> よりお寄せください。</p>
           </div>
         </section>
 

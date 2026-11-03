@@ -1,0 +1,184 @@
+{
+  "questions": [
+    {
+      "number": 50,
+      "status": "FIX",
+      "problems": "肢3の末尾「社協は任意に運営している」は、運営の法的位置づけを一次資料で確認していない断定。災害救助法に設置義務の規定がないという要点だけ残せば、肢の正誤は説明できる。他の肢は一次資料と一致する。",
+      "fixes": {
+        "3": "災害救助法は、都道府県等が行う救助の種類や費用負担などを定める法律である。災害ボランティアセンターの設置を市町村社会福祉協議会に義務づける規定は置かれていない。"
+      },
+      "evidence": [
+        {
+          "url": "https://www.bousai.go.jp/kaigirep/kentokai/hisaishashien/pdf/dai1kai/siryo2_2.pdf",
+          "checked": "内閣府資料（検索結果の抜粋で確認）。被災者生活再建支援制度の対象は、災害救助法施行令1条1項1号・2号に該当する被害が発生した市町村、または10世帯以上の住宅全壊被害が発生した市町村などの自然災害。1000世帯以上という要件ではない"
+        },
+        {
+          "url": "https://www.mhlw.go.jp/content/12300000/001171211.pdf",
+          "checked": "厚労省の介護給付費分科会資料（検索結果の抜粋で確認）。令和3年度介護報酬改定で、全ての介護サービス事業者にBCP策定・研修・訓練を義務づけ、3年間の経過措置を設けた（令和6年3月31日まで）"
+        },
+        {
+          "url": "https://www.pref.chiba.lg.jp/kenshidou/dwat/documents/r4gyousei1-2.pdf",
+          "checked": "検索結果の抜粋で確認（自治体資料で、厚労省の一次資料ではない）。平成30年5月の厚労省ガイドラインは、一般避難所で福祉支援を行うDWATの組成を定め、要配慮者の生活機能の低下などの二次被害防止を目的とする"
+        },
+        {
+          "url": "https://www.bousai.go.jp/taisaku/hinanjo/r3_guideline.html",
+          "checked": "令和3年5月の福祉避難所ガイドライン改定ページ。検索結果の抜粋では、指定福祉避難所の指定時に受入対象者を特定し、公示する仕組みが設けられたとされる。ページ本文はテキストとして取得できなかった"
+        }
+      ]
+    },
+    {
+      "number": 51,
+      "status": "PASS",
+      "problems": "",
+      "fixes": {},
+      "evidence": []
+    },
+    {
+      "number": 52,
+      "status": "PASS",
+      "problems": "原本は「令和5年版障害者白書（厚生労働省）」と記すが、発行主体は内閣府である。草稿は発行主体に触れていないので誤りはない。肢5の「知的障害者は20〜30時間未満の割合が比較的高い」は、厚労省の報告書PDFを読めなかったため二次資料で確認した（知的29.6%）。身体障害者の該当区分は確認できていない。",
+      "fixes": {},
+      "evidence": [
+        {
+          "url": "https://www8.cao.go.jp/shougai/whitepaper/h30hakusho/zenbun/h1_01_01_01.html",
+          "checked": "障害者白書が内閣府の刊行物であること（他設問の確認時に閲覧）"
+        },
+        {
+          "url": "https://shigoto4you.com/employment-survey2023_06/",
+          "checked": "二次資料。令和5年度障害者雇用実態調査の知的障害者の週所定労働時間は、30時間以上64.2%、20〜30時間未満29.6%。厚労省の原PDF（https://www.mhlw.go.jp/content/11601000/001233721.pdf）は取得したがテキストとして読めなかった"
+        }
+      ]
+    },
+    {
+      "number": 53,
+      "status": "PASS",
+      "problems": "",
+      "fixes": {},
+      "evidence": [
+        {
+          "url": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/hukushi_kaigo/shougaishahukushi/service/kikan.html",
+          "checked": "基幹相談支援センターの役割。総合的・専門的な相談支援、障害者相談支援事業・成年後見制度利用支援事業、地域の相談支援従事者への助言・研修、協議会の運営。根拠条文が障害者総合支援法77条の2であることは、条文の原文までは確認できず、検索結果で確認した"
+        }
+      ]
+    },
+    {
+      "number": 54,
+      "status": "PASS",
+      "problems": "",
+      "fixes": {},
+      "evidence": [
+        {
+          "url": "https://www.mhlw.go.jp/stf/shingi/2r9852000001knbk-att/2r9852000001kzdp.pdf",
+          "checked": "厚労省の入院形態資料（検索結果の抜粋で確認）。措置入院は指定医2名以上の診察結果が一致した場合。緊急措置入院は指定医1名で72時間以内。応急入院は任意入院を行う状態になく、急速を要し、家族等の同意が得られない者が対象で72時間以内。e-Govの法令APIは404で、条文そのものは取得できなかった"
+        }
+      ]
+    },
+    {
+      "number": 55,
+      "status": "PASS",
+      "problems": "",
+      "fixes": {},
+      "evidence": [
+        {
+          "url": "https://laws.e-gov.go.jp/api/1/lawdata/425AC0000000065",
+          "checked": "障害者差別解消法。2条1号の障害者定義（身体・知的・精神〈発達障害を含む〉その他の心身の機能の障害、障害及び社会的障壁による相当な制限）、8条2項の事業者の合理的配慮義務（現行条文）、12条の主務大臣の報告徴収、26条の20万円以下の過料、平成28年4月1日施行"
+        },
+        {
+          "url": "https://www8.cao.go.jp/shougai/whitepaper/h30hakusho/zenbun/h1_01_01_01.html",
+          "checked": "障害者基本法の改正経緯。平成16年改正で障害者差別をしてはならない旨を基本理念として規定。平成23年改正で社会モデルと合理的配慮の概念を導入"
+        }
+      ]
+    },
+    {
+      "number": 56,
+      "status": "PASS",
+      "problems": "",
+      "fixes": {},
+      "evidence": [
+        {
+          "url": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/koyou_roudou/koyou/jigyounushi/page10.html",
+          "checked": "障害者職業生活相談員は、障害者を5人以上雇用する事業所で、資格認定講習を修了するなどした、その事業所の従業員の中から選任する"
+        }
+      ]
+    },
+    {
+      "number": 57,
+      "status": "PASS",
+      "problems": "",
+      "fixes": {},
+      "evidence": []
+    },
+    {
+      "number": 58,
+      "status": "PASS",
+      "problems": "",
+      "fixes": {},
+      "evidence": [
+        {
+          "url": "https://laws.e-gov.go.jp/api/1/lawdata/140AC0000000045",
+          "checked": "刑法。36条の正当防衛は「急迫不正の侵害」に対するもの。39条は心神喪失者の行為を罰しない、心神耗弱者の刑を減軽する。41条は14歳に満たない者の行為を罰しない"
+        }
+      ]
+    },
+    {
+      "number": 59,
+      "status": "FIX",
+      "problems": "肢3は簡易送致の送致先を「家庭裁判所」に限定している。検索結果で確認した犯罪捜査規範の規定では送致先は「検察官又は家庭裁判所」であり、限定は不正確。",
+      "fixes": {
+        "3": "簡易送致手続は、極めて軽微な少年事件などについて、警察が簡略な書類で送致する事件処理の方式である。簡易裁判所が命令で罰金を科す裁判手続ではなく、成人のAさんの事件にも当たらない。"
+      },
+      "evidence": [
+        {
+          "url": "https://www.courts.go.jp/saiban/syurui/syurui_keizi/keizi_04/index.html",
+          "checked": "略式手続は、検察官が起訴時に請求し、被疑者に異議がないことが必要。書面審理で、略式命令で科せる刑は100万円以下の罰金又は科料に限られる"
+        }
+      ]
+    },
+    {
+      "number": 60,
+      "status": "PASS",
+      "problems": "",
+      "fixes": {},
+      "evidence": [
+        {
+          "url": "https://www.moj.go.jp/hisho/saihanboushi/r06/html/n3220000.html",
+          "checked": "保護観察所の薬物再乱用防止プログラムは、コアプログラム・ステップアッププログラムの教育課程に簡易薬物検出検査を併せて行う"
+        },
+        {
+          "url": "https://laws.e-gov.go.jp/api/1/lawdata/140AC0000000045",
+          "checked": "刑法26条の2第2号。保護観察に付された者が遵守事項を遵守せず、情状が重いときは、刑の全部の執行猶予を取り消すことができる。現行条文は拘禁刑表記のため、試験時点（懲役刑）からの改正があり、lawSensitive=trueが妥当"
+        },
+        {
+          "url": "https://laws.e-gov.go.jp/api/1/lawdata/419AC0000000088",
+          "checked": "更生保護法65条の3。規制薬物等への依存がある保護観察対象者に対する指導監督の方法"
+        }
+      ]
+    },
+    {
+      "number": 61,
+      "status": "FIX",
+      "problems": "肢5の「戦後間もない時期から地域の婦人団体として活動してきた」は、設立時期を法務省の一次資料で確認できなかった。確認できる範囲の表現に改める。他の肢は一次資料と一致する。",
+      "fixes": {
+        "5": "更生保護女性会は、犯罪予防活動や非行のある少年・犯罪をした人の改善更生への協力を行うボランティア団体であり、平成19年制定の更生保護法より前から活動している。同法の制定に伴って設立されたものではない。"
+      },
+      "evidence": [
+        {
+          "url": "https://laws.e-gov.go.jp/api/1/lawdata/419AC0000000088",
+          "checked": "更生保護法31条。地方委員会の事務局及び保護観察所に保護観察官を置き、保護観察官は医学・心理学等の専門的知識に基づき更生保護の事務に従事する。法令番号から平成19年の法律と確認"
+        },
+        {
+          "url": "https://laws.e-gov.go.jp/api/1/lawdata/325AC0000000204",
+          "checked": "保護司法3条1項各号。社会的信望、熱意と時間的余裕、生活の安定、健康と活動力"
+        },
+        {
+          "url": "https://www.moj.go.jp/hogo1/kouseihogoshinkou/hogo01_00025.html",
+          "checked": "更生保護法人は、更生保護事業法に基づき法務大臣の認可を受けて更生保護事業を営む"
+        },
+        {
+          "url": "https://www.moj.go.jp/hogo1/soumu/hogo01_00028.html",
+          "checked": "更生保護女性会は犯罪予防活動・子育て支援活動などを行うボランティア団体。沿革の記載はない"
+        }
+      ]
+    }
+  ]
+}

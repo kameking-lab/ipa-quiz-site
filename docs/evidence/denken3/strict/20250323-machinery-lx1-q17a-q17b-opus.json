@@ -1,0 +1,103 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20250323",
+  "subject": "machinery",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 5195,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 18370,
+      "webSearchRequests": 0,
+      "costUSD": 0.2511238,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 2507,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "0b1ad0e12ccbb8ba093761946384e4d9e40c8ef8c0b0b952180819b1ae624550",
+  "inputRequestSha256": "c29fa21d41794594e90733b0bbeca644f5580e2db82464a0601a2ed9331cdd1a",
+  "inputHashes": {
+    "candidateSha256": {
+      "q17a": "55579d9f39fc6ac2862b41f6d5d84987447f736fb5ec708fbf3b9cfebbb54f48",
+      "q17b": "7cb3957faa6e76720a37c621eed4466d952330621d8deb8fed37101f6a10941d"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20250323/machinery/p22.png": "9f120b8be0fcdd74d5c09e5ca02a4311873eba085a046b85b08c8a5b8efc0432",
+      "data/raw_pdfs/denken3/review/20250323/machinery/p23.png": "239ac28dafbe198054b07a08f56175e3276fda8626c59cc7e7ca6ce70014b668"
+    },
+    "figureSha256": {
+      "public/images/denken3/20250323/machinery/20250323-machinery-q17-light-geometry.png": "8aedddacdb6342a9fde9428668186500f2a6f88a4c42c5b50167313819f68b2e"
+    },
+    "sourceQuestionPdfSha256": "66e8b0070a314cd78ed9b9f3edd3d75eeaf442b258fd0aacab0e7d9620c75b9f",
+    "sourceAnswerPdfSha256": "4c3b38fcf1405766fafaa78b1b05b867a3d48307a670b9d354476bc6b32acd4c",
+    "officialAnswerUnitsSha256": "b43bb818252fec0c9fcda49f57b5a55ce30b08588c5851c418eac6d03ecbc40b",
+    "referencePdfSha256": {},
+    "referencePageSha256": {},
+    "referenceJsonSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q17a",
+      "questionNumber": 17,
+      "part": "a",
+      "status": "FIX",
+      "textIssues": [
+        "候補JSONの問題文で共通リード文と設問文の区切りが \"\\\\n\"（二重エスケープ）になっている。JSONデコード後の文字列が改行ではなくリテラルの「\\n」2文字になるため、画面上に「\\n」が表示されるおそれがある。本文の文言自体は原図第22頁・第23頁と一致しているが、区切りは実改行（\"\\n\"）に修正するか、投入パイプライン側で実データを確認する必要がある。"
+      ],
+      "choiceIssues": [
+        "肢(1)の解説は 191 を「3000/(5π)」に相当するとし、「全立体角は 4π sr であって 5π sr ではない」と説明している。算術上は正しい。しかし 5π sr は物理的に意味のない立体角であり、受験者がこの誤りをする筋道として不自然で、学習者を誤導しうる。191 は I×cosθ = 238.7×0.8 ≒ 191.0 と等しい。これは(b)の cosθ=0.8 を光度に掛けてしまう混同として説明できる。架空の立体角による説明を削除し、「I=F/(4π)≒238.7 cd と一致しない」という中立的な記述にするか、上記の物理的に意味のある対応で書き直すこと。",
+        "肢(3)の解説は 318 を「3000/(3π)」に相当するとしている。3π sr も物理的に意味のない立体角で、肢(1)と同じく誤答理由として不自然である。数値一致の指摘にとどめ、「全立体角は 4π sr のため一致しない」という中立的な記述にすること。",
+        "肢(5)の解説は 955 を「3000/π」に相当するとしている。π sr を用いる誤りも物理的根拠が乏しい。数値は 4×238.7≒955 と等しい。架空の立体角を想起させない中立的な記述が望ましい。"
+      ],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "公式解答表（令和6年度下期、＜機械＞欄）の問17(a)は 2。候補の officialAnswer=\"2\" と一致する。",
+        "原図第23頁（印刷頁 -20-、T2-K 023）の(a)の選択肢は (1)191 (2)239 (3)318 (4)477 (5)955。候補の choices と完全に一致する。",
+        "原図第22頁（印刷頁 -19-、T2-K 022）のリード文と候補の問題文を照合した。一致した項目は、均等放射の点光源、全光束 3 000 lm、高さ 2 m、A–B 間 1.5 m、選択問題の注記。単位は [cd] で、原図と一致する。",
+        "検算: I = F/(4π) = 3000/12.566 = 238.73 cd。最も近い肢は(2)239 で、総合解説および肢(2)の解説と一致する。",
+        "各肢の数値を検算した: 3000/(5π)=190.99、3000/(3π)=318.31、3000/(2π)=477.46、3000/π=954.93。解説中の算術はすべて正しい。",
+        "肢(4)の解説にある「2π sr は半球の立体角」は正しい。",
+        "manifest照合: fiscalYear=2024、term=lower、examDate=2025-03-23、subject=machinery、reviewedFromPage=[22,23]、問題PDFと解答PDFのURLがいずれも manifest と一致する。「令和6年度下期」は2024年度下期に当たり、帰属表示は正しい。",
+        "公開候補図と原図を照合した。一致した要素は、「均等放射の点光源」ラベル、黒点、鉛直破線、A点の直角記号、点光源–B間の破線、2 m 寸法線（上端は光源高さの水平ティック、下端は水平面）、A–B間 1.5 m 寸法線、ラベルA・B。欠落や改変はない。",
+        "figureDescription の「(a)は図なしでも解ける」は正しい。I=F/(4π) は幾何を要しない。",
+        "officialReferenceUrls は空で、検証を要する外部の独立主張はない。"
+      ]
+    },
+    {
+      "unitKey": "q17b",
+      "questionNumber": 17,
+      "part": "b",
+      "status": "FIX",
+      "textIssues": [
+        "候補JSONの問題文で共通リード文と設問文の区切りが \"\\\\n\"（二重エスケープ）になっている。JSONデコード後の文字列がリテラルの「\\n」になり、画面表示が崩れるおそれがある。本文の文言自体は原図第22頁・第23頁と一致しているが、区切りは実改行（\"\\n\"）に修正するか、投入パイプライン側で実データを確認する必要がある。"
+      ],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "公式解答表（令和6年度下期、＜機械＞欄）の問17(b)は 3。候補の officialAnswer=\"3\" と一致する。",
+        "原図第23頁の(b)の選択肢は (1)10 (2)24 (3)31 (4)61 (5)122。候補の choices と完全に一致する。設問は「水平面 B 点における水平面照度の値[lx]」で、単位 [lx] を含め原図と一致する。",
+        "検算: r = √(2²+1.5²) = √6.25 = 2.5 m、cosθ = 2/2.5 = 0.8（θは光線と鉛直のなす角）。E_h = I·cosθ/r² = 238.73×0.8/6.25 = 30.56 lx。最も近い肢は(3)31 で、総合解説と一致する。",
+        "参考値として記載された法線照度 I/r² = 238.73/6.25 = 38.20 lx は正しい。38.20×0.8=30.56 との因果関係も正しい。",
+        "uncertainty の記述「239 cd を用いても 30.6 lx」を検算した: 239×0.8/6.25 = 30.59 lx で正しい。",
+        "肢(2)の解説にある I·cos²θ/r² = 238.73×0.64/6.25 = 24.45 lx は正しい。「水平面照度では cosθ は一乗」という因果説明も正しい。",
+        "肢(4)の「約2倍」は 61/30.56≒2.0、肢(5)の「約4倍」は 122/30.56≒3.99 で、いずれも正しい。肢(1)10 は 30.6 と一致しないという記述で正しい。",
+        "公開候補図は原図と同一の幾何を示している（2 m、1.5 m、A点の直角、点光源–B間の破線、ラベルA・B）。この図だけで r=2.5 m と cosθ=0.8 を導出できる。",
+        "figureDescription の「(b)は幾何関係の読み取りに図が必要」という判断は正しい。",
+        "manifest照合: fiscalYear=2024、term=lower、examDate=2025-03-23、subject=machinery、reviewedFromPage=[22,23]、問題PDFと解答PDFのURLが一致する。sourceAttribution の「令和6年度下期 機械科目 問17(b)」は正しい。",
+        "officialReferenceUrls は空で、検証を要する外部の独立主張はない。"
+      ]
+    }
+  ]
+}

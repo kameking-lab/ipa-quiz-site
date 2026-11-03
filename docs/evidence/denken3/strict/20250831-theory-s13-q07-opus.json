@@ -1,0 +1,76 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20250831",
+  "subject": "theory",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 3392,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 14507,
+      "webSearchRequests": 0,
+      "costUSD": 0.18415979999999998,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 1565,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "dfe2bd6eb264c32b605be09d3122ff5aa83aaf23bbe143f58b07744294d39953",
+  "inputRequestSha256": "60848054cf01615671623952ade460fa24d160545e60327735d93146835ab2fc",
+  "inputHashes": {
+    "candidateSha256": {
+      "q07": "dad70e707087aad381edbc1c30e0416d3af4e2211361f3f3747d866a95357f48"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20250831/theory/p10.png": "6dfdba488e2d253d508595df3695e2a4bd3eaba8960e7b00933a82dd882225d5"
+    },
+    "figureSha256": {
+      "public/images/denken3/20250831/theory/20250831-theory-q07-fig1.png": "f5f4265f2e4377beadf69b9ea13c8b4c9d786f54b68e9f7fad963f4809587aa4"
+    },
+    "sourceQuestionPdfSha256": "11a75ffd5dd2b5309ad75370bb963c4fda9e12a812174cfa2c2237383c3a964d",
+    "sourceAnswerPdfSha256": "76fd3715ed487d19a56b387fb402de20ee09474e9fa55b0413f9037b96af06c9",
+    "officialAnswerUnitsSha256": "9a5cbdec7f18539027226f8bbaae0f1be131e67b15b2b1ed459765dc3e52aa61",
+    "referencePdfSha256": {},
+    "referencePageSha256": {},
+    "referenceJsonSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q07",
+      "questionNumber": 7,
+      "part": null,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "問題文: 添付原図（PDF第10頁、印刷頁番号「-7-」、フッタ「T1－R 010」）の問7本文と、語句・句読点（，。）・「2Ω」「3倍」「Rの値[Ω]」「最も近いもの」まで一致する。「(1)～(5)」を「(1)〜(5)」と書いている点は波ダッシュ字形の正規化にとどまり、意味は変わらない。",
+        "選択肢: 原図の (1)2.5 (2)3.5 (3)0.5 (4)1.5 (5)4.5 と、番号・数値・並び順がすべて一致する（昇順ではない原図の順序も保持されている）。",
+        "公式正答: 公式解答表（令和7年度 第三種電気主任技術者上期試験解答）の＜理論＞問7は解答1・配点5で、manifest固定単位 {question:7, part:null, answer:\"1\", points:5}、候補の officialAnswer=\"1\"、scoringPoints=5 と一致する。",
+        "総合解説の検算（S開）: R は切り離され、2Ω と 10Ω の直列になる。I_開 = E/12。",
+        "総合解説の検算（S閉）: 10Ω と R が並列になり、2Ω と直列になる。I_閉 = E/(2 + 10R/(10+R))。",
+        "総合解説の検算（条件）: I_閉 = 3·I_開 から 2 + R_p = 4、R_p = 2Ω。10R/(10+R) = 2 → 8R = 20 → R = 2.5Ω。検算でも R_p = 25/12.5 = 2Ω、全抵抗 4Ω、比 12/4 = 3 となり正しい。",
+        "総合解説の因果: 2Ω は電源と直列なので、2Ω の電流が全電流 I に等しいという説明は正しい。E が比の計算で消去されるため E≠0 の下で R が一意に定まるという記述も正しい。",
+        "肢(1): 10×2.5/12.5 = 2Ω、全抵抗 4Ω、比 3.00。記述どおり。",
+        "肢(2): 35/13.5 = 2.593Ω、全抵抗 4.593Ω、比 12/4.593 = 2.613。記述の ≒2.59、≒4.59、≒2.61 はいずれも正しい。",
+        "肢(3): 5/10.5 = 0.4762Ω、全抵抗 2.476Ω、比 12/2.476 = 4.846。記述の ≒0.476、≒2.476、≒4.85 はいずれも正しい。",
+        "肢(4): 15/11.5 = 1.3043Ω、全抵抗 3.304Ω、比 12/3.304 = 3.632。記述の ≒1.304、≒3.304、≒3.63 はいずれも正しい。",
+        "肢(5): 45/14.5 = 3.1034Ω、全抵抗 5.103Ω、比 12/5.103 = 2.351。記述の ≒3.10、≒5.10、≒2.35 はいずれも正しい。",
+        "誤答理由の方向: 比が R の単調減少関数であり、R < 2.5 なら比 > 3、R > 2.5 なら比 < 3 となる。各誤答肢の「届かない／超える」はこの関係と整合する。",
+        "公開候補図と原図の照合（素子・ラベル）: 左辺の電源とその左の「E」、上側導線の右向き矢印と「I」（電源側の角と 2Ω の間）、「2Ω」、上側と下側の接続黒丸、中央の「10Ω」、開状態のスイッチと曲線矢印、その下方の「S」、右辺の「R」（右側ラベル）がすべて原図と一致し、欠落や切れはない。",
+        "公開候補図と原図の照合（接続）: S閉 → R ∥ 10Ω に 2Ω が直列、S開 → 2Ω と 10Ω の直列、という接続トポロジーが原図と同一。解答に必要な情報は公開候補図だけで読み取れる。",
+        "figureDescription: 各ラベルの配置、スイッチの開状態、接続関係の記述が原図・公開候補図と一致する。R と 10Ω が並列であることは図からのみ読み取れるという指摘も正しい。",
+        "出典メタデータ: fiscalYear=2025（令和7年度）、term=upper（上期）、examDate=2025-08-31、subject=theory、reviewedFromPage=[10]、問題PDF・解答PDFのURL、sourceAttribution の年度・期・科目・問番号がすべて manifest と一致する。",
+        "officialReferenceUrls は空配列で、検証が必要な外部の独立主張はない。uncertainty=\"なし\"、needsReview=false は監査結果と整合する。"
+      ]
+    }
+  ]
+}

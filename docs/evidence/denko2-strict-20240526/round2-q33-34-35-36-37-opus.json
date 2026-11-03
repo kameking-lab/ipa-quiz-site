@@ -1,0 +1,85 @@
+{
+  "schemaVersion": 1,
+  "reviewModel": "claude-opus-5-5",
+  "inputHashes": {
+    "candidateSha256": {
+      "33": "47ecf4a1d61a01f5ddb929819e22af23f5847bc2c841dc935e074e6d0d7401f4",
+      "34": "5b4c17fb18329f1becc01239c4ae1955afd430fecc86863a290d4d101e2533e6",
+      "35": "a70c4bca6151704db0bdde1638312e89cdf505694fce1f825fe4468b08aed49f",
+      "36": "418e27dcffefd4f73411ead9cbe6fed95cbaeb9031161217ed4d43c1392eea72",
+      "37": "7be4ed3200795c8ac56cdae5960ca15ebc69e6625365bb490aa54459f552e793"
+    },
+    "sourceCropSha256": {
+      "33": "04260e9557c5a7b1a32ce99062556ef7862d14a5cb3b3d20a80c96cf0ba5223b",
+      "34": "0a90448670bc7974c2b243ac35c299fe539eb18b8bbe096d24f10498abfe37a1",
+      "35": "27e65a19d859afdf2fd176e179e0202a675e8ac11c5338843f60e14202ee5bcb",
+      "36": "772a6ef60f211e50748c4c270a7405a81988e41d73abec05d59950a175574f4a",
+      "37": "e70d42abd34150abad527ab4faff97ea7c46386dbd34229f258ed55ec73ea401"
+    }
+  },
+  "assessment": [
+    {
+      "number": 33,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "visualIssues": [],
+      "sourceIssues": [
+        "officialReferenceUrls (beppyoudai4.pdf) returned HTTP 403 from WebFetch, and no SHA-pinned local excerpt of it was supplied, so the outlet ratings in the answer and choice explanations could not be checked against a primary source: イ = 250V 20A with ground, ロ = 125V 15A, ハ = 250V 15A, ニ = 125V 20A. The official answer only shows that ニ is correct for ③ (E20A). The ratings given for the wrong choices イ/ロ/ハ are not covered by it. Supply a fetchable primary source or an SHA-pinned excerpt of the relevant table or figure."
+      ],
+      "verifiedEvidence": "Official question PDF 20240526_co_second_q01.pdf, p.15 shared wiring diagram: ③ points to the right-wall outlet marked 'E20A', which is on circuit ⓘ. The lighting panel diagram shows ⓘ as 100V 20A, and the legend says ⓐ–ⓘ are single-phase 100V circuits. The candidate descriptions match the official blade-slot drawings for all four choices. Official answer 20240526_co_second_a01.pdf: Q33 = ニ. beppyoudai4.pdf could not be checked (403)."
+    },
+    {
+      "number": 34,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "visualIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": "Checked against the official drawing and official answer. Official question PDF, p.15: ④ points to the symbol above the entrance door frame (a long bar combined with a circle whose opposite sectors are filled). Its lead line runs up to single-circle ⓐ, a single-phase 100V circuit per the legend. The q34-symbol.png crop matches that position. Official answer: Q34 = イ (誘導灯)."
+    },
+    {
+      "number": 35,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "visualIssues": [
+        "diagramDescription calls ⑤ an 'underground (埋設) run'. That reading depends on interpreting the dash-dot line as the symbol for underground wiring, and neither the candidate's sources nor this question's official answer states it. Either rephrase to what the drawing shows ('the dash-dot line along the bottom of the plan to the outdoor lights on the premises, labelled 600V CV 5.5-2C (VE28)') or add a primary source for the symbol."
+      ],
+      "sourceIssues": [],
+      "verifiedEvidence": "Official question PDF, p.15: ⑤ (pointing to the same spot as ⑫⑬) marks the note '600V CV 5.5-2C (VE28)' on the dash-dot line at the bottom of the plan. Official answer: Q35 = ハ (hard PVC conduit, 28 mm inner diameter). The question wording and all four choices match the original."
+    },
+    {
+      "number": 36,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "visualIssues": [],
+      "sourceIssues": [
+        "The explanation's legal basis could not be checked against the primary source. It relies on 解釈 Art. 29 (Table 29-1: machinery at 300V or below → D-type earthing; low voltage above 300V → C-type) and Art. 17 Para. 3 and 4 (C-type 10Ω and D-type 100Ω, each relaxed to 500Ω with automatic disconnection within 0.5 s). The supplied official local excerpt (20231226-2.pdf, SHA256=7ff56485…) covers only pp.31–32 (Art. 17 Para. 1 A-type and Para. 2 B-type) and pp.44–45 (Art. 36 Para. 3 onward and Art. 37), not those provisions. WebFetch of the original URL and of METI's commentary PDFs (dengikaishakukaisetsu.pdf, 280401-3-4.pdf) all returned 403. Add a pinned excerpt of Art. 17 Para. 3–4 and Art. 29."
+      ],
+      "verifiedEvidence": "Official question PDF, p.15 lighting panel diagram: ⑥ points to the earthing electrode at the end of the E5.5 earth wire (⑯). The supply is 1φ3W 100/200V and the main breaker is 'B 3P100A' (not an earth-leakage breaker). The question text states there is no earth-fault disconnection device on the supply side of the service drop. Official answer: Q36 = ハ. The official local excerpt pp.31–32 confirms only Art. 17 Para. 1 (A-type: 10Ω or less) and Para. 2 (B-type); it does not contain the D-type or Art. 29 provisions."
+    },
+    {
+      "number": 37,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "visualIssues": [],
+      "sourceIssues": [
+        "The explanation says 'TS' in the diagram is a time switch, and the choice explanations assign meanings to the wrong choices: T in a circle with B = bell transformer, filled dot with D = delay switch, filled dot with R = remote-control switch. The official answer only shows that ロ (T_R) is correct for ⑦, so these meanings have no support in this question's primary sources. officialReferenceUrls is empty. Cite a primary source for the symbol definitions or remove those statements."
+      ],
+      "verifiedEvidence": "Official question PDF, p.15 lighting panel diagram: ⑦ points to the dashed box fed through a 100V 20A BE breaker and wired to the remote-control relay group (▲▲▲ labelled 6). The four choice crops (T_B, T_R, ●D, ●R) match the original. Official answer: Q37 = ロ."
+    }
+  ]
+}

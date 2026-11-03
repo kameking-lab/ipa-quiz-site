@@ -1,0 +1,112 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20250323",
+  "subject": "machinery",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 5267,
+      "cacheReadInputTokens": 130032,
+      "cacheCreationInputTokens": 20864,
+      "webSearchRequests": 0,
+      "costUSD": 0.29826640000000004,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 3330,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "8486cbc978a982c60da8c78dcdcf001b508d10645b20f8e01fb7a12c19b22023",
+  "inputRequestSha256": "fa1a93f1387f5b7bb8c8c7bc15c8a3e11a0aa1ee54f32b4d0e167db32efa832b",
+  "inputHashes": {
+    "candidateSha256": {
+      "q04": "89e6b800187c38fa44afe4cb252ab3f5318422a0c73a342603adb34e2aed9f13",
+      "q05": "5e33644c2d729d5122045ccbd52cc139856d3caea93333414fba771b2ef370c6",
+      "q06": "2401e3381c20e84734cda4e235e8152a8c6c03b6c2dc3f3b7d0cd8d37faf6b6d"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20250323/machinery/p07.png": "e8a2feaab84938edff7d0d0790ba2048faacd778c0fadfb74324559116ec0e0e",
+      "data/raw_pdfs/denken3/review/20250323/machinery/p08.png": "adc484a243f59f13e7ba8811a6129ad443438a5a24033ebad5c3dcef79d87df4",
+      "data/raw_pdfs/denken3/review/20250323/machinery/p09.png": "2adc07cf39865f6ae3eddc5c6516034aa6404eb505a5400fd42466845140aab7"
+    },
+    "figureSha256": {},
+    "sourceQuestionPdfSha256": "66e8b0070a314cd78ed9b9f3edd3d75eeaf442b258fd0aacab0e7d9620c75b9f",
+    "sourceAnswerPdfSha256": "4c3b38fcf1405766fafaa78b1b05b867a3d48307a670b9d354476bc6b32acd4c",
+    "officialAnswerUnitsSha256": "5271a94de2ddc2a6ff8a1215c6b8039d209943e2589ac5bbfceb3111d2b7dbfb",
+    "referencePdfSha256": {},
+    "referencePageSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q04",
+      "questionNumber": 4,
+      "part": null,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "The question text matches the official original: Vn=400 V, Il=25.8 A, power factor 0.8, s=4 %, Pi=Pc1=Pc2/2, other losses ignored.",
+        "Choices (1)318, (2)344, (3)550, (4)571, (5)596 match the original.",
+        "The official answer is 3, and the candidate's officialAnswer is also 3.",
+        "P1=√3×400×25.8×0.8=14 299.8 W. Setting x=Pc2 gives x=0.04(14 299.8−x), so x=571.99/1.04≈550.0 W. This matches choice (3).",
+        "Wrong-choice checks: (1) without √3, the input is 8 256 W and 0.04×8 256/1.04≈317.5. (2) 8 256×0.04/0.96≈344.0. (4) 0.04×14 299.8≈572.0, nearest to 571. (5) 14 299.8×0.04/0.96≈595.8. Every path matches its choice value.",
+        "The problem has no figure, so the candidate's empty figureUrls is consistent. reviewedFromPage [7] is consistent with the original page code T2-K 007."
+      ]
+    },
+    {
+      "unitKey": "q05",
+      "questionNumber": 5,
+      "part": null,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [
+        "In the overall explanation, the label '(ウ)大きく' is attached to the sentence '回転子は通常，突極形である' (the rotor is usually salient-pole). The actual reason for (ウ) is the previous sentence: many poles are needed, so the diameter must be large and the rotor has a flat shape. Being salient-pole is not the reason the diameter is large, so this blurs the causality. Move '(ウ)大きく' to the end of the previous sentence and present the salient-pole statement as supplementary information."
+      ],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "The question text (the passage with blanks (ア)–(オ) and the instruction) matches the official original.",
+        "Every row of the choice table matches the original: (1) 小さい/小さく/大きく/大きい/大きく, (2) 小さい/大きく/大きく/大きい/小さく, (3) 小さい/大きく/大きく/小さい/大きく, (4) 大きい/大きく/小さく/大きい/小さく, (5) 大きい/小さく/小さく/小さい/大きく.",
+        "The official answer is 2, and the candidate's officialAnswer is also 2.",
+        "From N=120f/p, a low-speed water turbine needs many poles, so the diameter is large. A turbine generator runs fast, so its rotor diameter is kept small to limit centrifugal force. This matches (2).",
+        "The correct/incorrect blank judgments in choiceExplanations (1)–(5) all agree with the correct answer 小さい/大きく/大きく/大きい/小さく.",
+        "The problem has no figure, and there is no independent claim that needs a ReferenceUrl."
+      ]
+    },
+    {
+      "unitKey": "q06",
+      "questionNumber": 6,
+      "part": null,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [
+        "In choiceExplanations[4], the result 54×2 886.8/750 is 207.85 (to be exact, 11 000×10³×√3/6 600 = 2 886.75 and 54×2 886.75/750 = 207.846), so it should be written '≈207.8'. The candidate's '≈207.9' is a rounding error."
+      ],
+      "answerIssues": [],
+      "explanationIssues": [
+        "choiceExplanations[2] (96) and [5] (289) only say they are 'far from about 69.3 A'. They give no reason specific to each wrong choice. Without inventing a mistaken calculation path, state which step each value does not correspond to (the ratio of rated current to 750 A), or record in uncertainty that no calculation path producing that value could be identified."
+      ],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "The question text (11 000 kV·A, 6 600 V, three-phase short-circuit current 750 A needs field current 54 A) matches the official original.",
+        "Choices (1)69, (2)96, (3)120, (4)208, (5)289 match the original.",
+        "The official answer is 1, and the candidate's officialAnswer is also 1.",
+        "In=11 000×10³/(√3×6 600)=962.25 A, and If=54×962.25/750=69.28 A. The nearest choice is (1) 69.",
+        "Choice (3) check: 11 000×10³/6 600=1 666.7 A, and 54×1 666.7/750=120.0 A, so it matches.",
+        "The physical basis for the linear short-circuit characteristic (the armature current lags by about 90° and demagnetizes the core, so it rarely saturates) is standard and correct. The uncertainty field also notes that the problem text does not state this assumption.",
+        "The problem has no figure, and reviewedFromPage [9] is consistent with the original page code T2-K 009."
+      ]
+    }
+  ]
+}

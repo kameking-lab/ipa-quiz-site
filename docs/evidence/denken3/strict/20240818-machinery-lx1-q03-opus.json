@@ -1,0 +1,74 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20240818",
+  "subject": "machinery",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 3235,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 14536,
+      "webSearchRequests": 0,
+      "costUSD": 0.18125180000000002,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 1572,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "15f6d251aaae2125f084cd7b1c0ad87d9d0049ffb7d4775bb6505eb0664e3f98",
+  "inputRequestSha256": "ffc876a733b9a525fb3880266526655d386ee2d23946020999e6ce789106e0b6",
+  "inputHashes": {
+    "candidateSha256": {
+      "q03": "3e47bd2b0e8e211c058503e78277d5d1a430e277b8330fa1b1e879c5a2f9190f"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20240818/machinery/p06.png": "a830098afd833626b91be26fdfacbc9ae0693c6d4a5733f151d389281f11a1b3"
+    },
+    "figureSha256": {},
+    "sourceQuestionPdfSha256": "ff8ff270bbe1ea125e92f213d011afde969d0d2b9fa2e17a7caa2b5cd6673e2a",
+    "sourceAnswerPdfSha256": "f72ecbc3a477e64948388b69cf78cb931032c9f0c688639836c8d533a949cd0f",
+    "officialAnswerUnitsSha256": "ba2912083993a611087d59243f807c5ed48dbd08d47532d46648719d22a3f120",
+    "referencePdfSha256": {},
+    "referencePageSha256": {},
+    "referenceJsonSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q03",
+      "questionNumber": 3,
+      "part": null,
+      "status": "FIX",
+      "textIssues": [
+        "本文中の不等式が原図では半角の『1>s>0』（s はイタリック）だが、候補は全角の『1＞s＞0』になっている。意味は変わらないが、数式表記を原図に合わせて半角『1>s>0』に統一することを推奨する（uncertainty 欄の表記も同様）。"
+      ],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [
+        "総合解説で交番磁界を『大きさが時間変化するが方向は固定の磁界』と定義しているが、不正確である。単相巻線が作る交番磁界は、空間上の軸が固定されたまま、大きさと向き（正負）が時間的に交互に反転する磁界である。『軸（方向）は固定で、大きさと向きが周期的に正負反転する磁界』のように修正すること。",
+        "choiceExplanations[1] の『方向固定で大きさのみ変動する磁界』も同じ理由で不正確。『大きさのみ』では極性の反転が抜け落ち、交番磁界と脈動する直流磁界の区別がつかなくなる。『軸が固定され、大きさと向きが周期的に反転する磁界』に修正すること。"
+      ],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "出典情報: 原図の頁番号は『- 3 -』・『T1－K 006』で、manifest 固定の PDF 第6頁と一致する。reviewedFromPage=[6] は整合している。",
+        "試験情報: fiscalYear=2024・term=upper・examDate=2024-08-18・subject=machinery は、manifest（令和6年度上期、2024-08-18、機械）と一致する。",
+        "出典 URL: sourceQuestionPdfUrl（20240818_ch_third_q03.pdf）と sourceAnswerPdfUrl（20240818_ch_third_a01.pdf）は manifest と一致する。",
+        "本文: (ア)〜(エ) の空欄位置、『ブラシと (イ) で外部に引き出して二次抵抗値を調整』、『停止（滑り s=1）から同期速度（滑り s=0）の間』、『回転子の回転方向とは逆の方向にトルクが発生』を含め、原図と文言が一致する（不等式の全角・半角のみ相違）。",
+        "選択肢: (1)〜(5) の全肢・全空欄の語句が原図の表と一致する。(1) 交番磁界/スリップリング/電動機/発電機、(2) 交番磁界/整流子/発電機/電動機、(3) 回転磁界/スリップリング/電動機/発電機、(4) 回転磁界/スリップリング/発電機/電動機、(5) 交番磁界/整流子/電動機/発電機。",
+        "公式正答: 公式解答表〈機械〉の問3は『3』で、manifest の q03 answer=\"3\" および候補 officialAnswer=\"3\" と一致する。",
+        "技術的検算（ア）: 三相巻線に三相電流を流すと同期速度の回転磁界ができ、回転磁界と回転子の相対速度で起電力が誘導されるため、(ア)=回転磁界。s=(Ns−N)/Ns の説明も正しい。",
+        "技術的検算（イ）: 巻線形誘導機は二次巻線をスリップリングとブラシで外部抵抗に接続し、比例推移を利用してトルク特性を制御する。整流子は直流機・交流整流子機の部品である。よって (イ)=スリップリングで、解説は正しい。",
+        "技術的検算（ウ）: 0<s<1 では回転方向にトルクが生じるため、(ウ)=電動機。",
+        "技術的検算（エ）: s<0（過同期）では二次電流とトルクが反転し、機械入力を電気出力へ変換するため、(エ)=発電機（誘導発電機）。",
+        "誤答肢の理由: (1) は(ア)のみ、(2) は(ア)(イ)(ウ)(エ)、(4) は(ウ)(エ)、(5) は(ア)(イ)が誤りであり、各誤答肢固有の誤り箇所の特定はすべて正しい（交番磁界の定義表現のみ要修正）。",
+        "図: 原図に回路図・構造図はなく、語句の組合せ表のみ。figureUrls=[] と figureDescription は妥当で、解答に図は不要。",
+        "参考資料: officialReferenceUrls=[] で、検証が必要な外部主張はない。"
+      ]
+    }
+  ]
+}

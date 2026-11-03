@@ -1,0 +1,450 @@
+{
+  "candidateModel": "claude-opus-5-5",
+  "paperId": "emkohyo-EM20251808",
+  "governmentSourceCandidates": [
+    {
+      "title": "厚生労働省 食品添加物公定書 B 一般試験法（原子吸光光度法・紫外可視吸光度測定法・ヒ素試験法・誘導結合プラズマ発光強度測定法）",
+      "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/shokuhin/syokuten/dl/8e01.pdf"
+    },
+    {
+      "title": "厚生労働省告示 第十八改正日本薬局方第一追補 一般試験法 2.22 蛍光光度法",
+      "url": "https://www.mhlw.go.jp/content/11120000/001022457.pdf"
+    },
+    {
+      "title": "環境省 有害大気汚染物質測定方法マニュアル 第5部第1章 大気粉じん中の重金属類の測定方法",
+      "url": "https://www.env.go.jp/content/900402514.pdf"
+    },
+    {
+      "title": "環境省 無機元素の多元素同時測定法（酸分解／ICP-MS法）",
+      "url": "https://www.env.go.jp/content/900403678.pdf"
+    },
+    {
+      "title": "国立医薬品食品衛生研究所 第15回医薬品品質フォーラム ICP-OESおよびICP-MSによる金属分析法概論",
+      "url": "https://www.nihs.go.jp/drug/PhForum/15thRecord/15Forum6.pdf"
+    },
+    {
+      "title": "厚生労働省 資料 労働安全衛生総合研究所『マンガン及びマンガン化合物の新たな測定法の検討結果報告書』",
+      "url": "https://www.mhlw.go.jp/file/05-Shingikai-11201000-Roudoukijunkyoku-Soumuka/0000149437.pdf"
+    },
+    {
+      "title": "産業技術総合研究所 計量標準総合センター 測定手順書（試案）クロメート皮膜中の6価クロムの測定",
+      "url": "https://unit.aist.go.jp/nmij/collab/bb_kai/cr6.pdf"
+    },
+    {
+      "title": "厚生労働省 作業環境測定ガイドブックに準じた形式による手順書（別紙）",
+      "url": "https://www.mhlw.go.jp/content/11300000/001096484.pdf"
+    },
+    {
+      "title": "厚生労働省 作業環境測定基準",
+      "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74087000"
+    },
+    {
+      "title": "環境省 底質調査方法",
+      "url": "https://www.env.go.jp/water/teishitsu-chousa/00_full.pdf"
+    }
+  ],
+  "questions": {
+    "emkohyo-EM20251808-q16": {
+      "overlay": {
+        "sourceHash": "3ffa07957b12ddcca41aa3076b478ee4ca0be3d28618795d0d04f53687ab6067",
+        "correctChoice": 4,
+        "summary": "ヨウ化カリウムと塩化スズ（Ⅱ）で予備還元した後に亜鉛で水素化ヒ素（アルシン）を発生させ、原子吸光法なので193.7 nmの吸光度を測る。組合せは肢4。",
+        "choices": [
+          {
+            "number": 1,
+            "verdict": "incorrect",
+            "reason": "㋑が誤り。農林水産消費安全技術センター（FAMIC）の肥料分析法（アルゴン－水素フレーム法）では、ヨウ化カリウム液と塩化スズ（Ⅱ）液を加えて放置した後に亜鉛粉末を加えて水素化ヒ素を発生させる。水素化ホウ素ナトリウム（別名テトラヒドロホウ酸ナトリウム）は、同分析法では亜鉛粉末の代わりに水素化ヒ素を発生させる側の試薬（加熱吸収セル法）であり、亜鉛末の前にヨウ化カリウムと加える㋑には当たらない。"
+          },
+          {
+            "number": 2,
+            "verdict": "incorrect",
+            "reason": "㋑は肢1のとおり塩化スズ（Ⅱ）であり、水素化ホウ素ナトリウムは誤り。㋩も誤りである。本問は『水素化物発生原子吸光分析法』で、原子吸光光度法は基底状態の原子が特有波長の光を吸収する現象を利用する方法（食品添加物公定書）なので、測定量は吸光度になる。FAMICの肥料分析法も、ガスをアルゴン－水素フレームに導き波長193.7 nmの吸光度を測定するとしている。"
+          },
+          {
+            "number": 3,
+            "verdict": "incorrect",
+            "reason": "㋑水素化ホウ素ナトリウムと㋩発光強度は肢2と同じ理由で誤り（原子吸光法なので測るのは吸光度）。さらに㋺も誤りで、スチビンは水素化アンチモン（分子式H3Sb）である。ヒ素から発生させるのは水素化ヒ素、すなわちアルシン（AsH3）である。"
+          },
+          {
+            "number": 4,
+            "verdict": "correct",
+            "reason": "正しい組合せ。FAMICの肥料分析法（アルゴン－水素フレーム法）は、試料液に塩酸・ヨウ化カリウム液・塩化スズ（Ⅱ）液を加えて放置し、亜鉛粉末で水素化ヒ素を発生させ、アルゴン－水素フレームに導いて波長193.7 nmの吸光度を測定する。水素化ヒ素の別名がアルシン（AsH3）である。作業環境測定基準も砒素及びその化合物の分析に原子吸光分析方法を定めている。よって㋑塩化スズ（Ⅱ）・㋺アルシン・㋩吸光度。"
+          },
+          {
+            "number": 5,
+            "verdict": "incorrect",
+            "reason": "㋑塩化スズ（Ⅱ）と㋩吸光度は合うが、㋺が誤り。スチビンは水素化アンチモン（分子式H3Sb）でアンチモンの水素化物である。ヒ素を亜鉛で還元して発生させるのは水素化ヒ素（別名アルシン、AsH3）なので、この組合せは誤りである。"
+          }
+        ],
+        "sources": [
+          {
+            "title": "農林水産消費安全技術センター 肥料分析法（農林水産省農業環境技術研究所法） 5.24 ヒ素",
+            "url": "https://www.famic.go.jp/ffis/fert/sub6_data/bunsekihou4.html"
+          },
+          {
+            "title": "厚生労働省 作業環境測定基準",
+            "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74087000&dataType=0&pageNo=1"
+          },
+          {
+            "title": "厚生労働省掲載 食品添加物公定書 B 一般試験法（原子吸光光度法）",
+            "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/shokuhin/syokuten/dl/8e01.pdf"
+          },
+          {
+            "title": "厚生労働省 職場のあんぜんサイト モデルSDS アルシン",
+            "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/7784-42-1.html"
+          },
+          {
+            "title": "消防庁 危険物規制関係 物性情報 水素化ヒ素",
+            "url": "https://internal.fdma.go.jp/kiken-info/material/m_01597.html"
+          },
+          {
+            "title": "厚生労働省 職場のあんぜんサイト モデルSDS スチビン（別名 水素化アンチモン）",
+            "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/7803-52-3.html"
+          },
+          {
+            "title": "厚生労働省 職場のあんぜんサイト モデルSDS 水素化ホウ素ナトリウム",
+            "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/16940-66-2.html"
+          }
+        ]
+      },
+      "sourceEvidence": [
+        {
+          "url": "https://www.famic.go.jp/ffis/fert/sub6_data/bunsekihou4.html",
+          "excerpt": "これに８Ｍ塩酸１０ｍｌ，ヨウ化カリウム液１ｍｌ及び塩化スズ（Ⅱ）液１ｍｌを加えて振り混ぜ約１５分間放置する。",
+          "choiceNumbers": [
+            1,
+            2,
+            4
+          ]
+        },
+        {
+          "url": "https://www.famic.go.jp/ffis/fert/sub6_data/bunsekihou4.html",
+          "excerpt": "亜鉛粉末（ヒ素分析用）１．０ｇを手早く反応容器中に加え，マグネチックスターラーでかき混ぜ水素化ヒ素及び水素を発生させ，その一定量を捕集する。",
+          "choiceNumbers": [
+            1,
+            4
+          ]
+        },
+        {
+          "url": "https://www.famic.go.jp/ffis/fert/sub6_data/bunsekihou4.html",
+          "excerpt": "原子吸光分析装置と接続するコックを開き発生したガスをアルゴン－水素フレームに導き， 波長１９３．７ｎｍの吸光度を 測定する。",
+          "choiceNumbers": [
+            2,
+            3,
+            4
+          ]
+        },
+        {
+          "url": "https://www.famic.go.jp/ffis/fert/sub6_data/bunsekihou4.html",
+          "excerpt": "ＪＩＳＫ０１０２の６１．２に示された亜鉛粉末を用いる装置，あるいはテトラヒドロホウ酸ナトリウムを用いる装置。",
+          "choiceNumbers": [
+            1
+          ]
+        },
+        {
+          "url": "https://www.famic.go.jp/ffis/fert/sub6_data/bunsekihou4.html",
+          "excerpt": "試料液（Ａｓとして１～５０ｎｇ／ｍｌがよい），テトラヒドロホウ酸ナトリウム液及び塩酸（１＋５）をそれぞれペリスタポンプで反応容器中に連続的に送り込み，発生する水素化ヒ素を含むガスを１０００℃前後に加熱した吸収セルに導き",
+          "choiceNumbers": [
+            1
+          ]
+        },
+        {
+          "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/16940-66-2.html",
+          "excerpt": "水素化ホウ素ナトリウム別名ナトリウムボロハイドライド、四水素化ホウ素ナトリウム、テトラヒドロホウ酸ナトリウム",
+          "choiceNumbers": [
+            1,
+            2,
+            3
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/shokuhin/syokuten/dl/8e01.pdf",
+          "excerpt": "原子吸光光度法は，光が原子蒸気層を通過するとき，基底状態の原子が特有波長の光を吸収する現象を利用し",
+          "choiceNumbers": [
+            2,
+            3,
+            4
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74087000&dataType=0&pageNo=1",
+          "excerpt": "砒素及びその化合物(アルシン及び砒化ガリウムを除く。)ろ過捕集方法吸光光度分析方法、原子吸光分析方法又は誘導結合プラズマ質量分析方法",
+          "choiceNumbers": [
+            4
+          ]
+        },
+        {
+          "url": "https://internal.fdma.go.jp/kiken-info/material/m_01597.html",
+          "excerpt": "水素化ヒ素アルシン",
+          "choiceNumbers": [
+            3,
+            4,
+            5
+          ]
+        },
+        {
+          "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/7784-42-1.html",
+          "excerpt": "AsH3(77.946)",
+          "choiceNumbers": [
+            3,
+            4,
+            5
+          ]
+        },
+        {
+          "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/7803-52-3.html",
+          "excerpt": "スチビン（別名水素化アンチモン）",
+          "choiceNumbers": [
+            3,
+            5
+          ]
+        },
+        {
+          "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/7803-52-3.html",
+          "excerpt": "分子式(分子量)H3Sb(125)",
+          "choiceNumbers": [
+            3,
+            5
+          ]
+        }
+      ],
+      "reviewIssues": []
+    },
+    "emkohyo-EM20251808-q17": {
+      "overlay": {
+        "sourceHash": "634a62ad40ec3a166755dc1d3f0b188945d65391119c29e7c43966f150088424",
+        "correctChoice": 4,
+        "summary": "過剰の過マンガン酸カリウムの還元（分解）には塩化ヒドロキシルアンモニウムを用いる。塩化スズ(Ⅱ)とした肢4が誤り。",
+        "choices": [
+          {
+            "number": 1,
+            "verdict": "incorrect",
+            "reason": "水銀蒸気は硫酸酸性の過マンガン酸カリウム溶液に通すと酸化されて水銀（Ⅱ）イオンとして捕集される。作業環境測定基準も水銀に液体捕集方法を定めており、記述は正しい。"
+          },
+          {
+            "number": 2,
+            "verdict": "incorrect",
+            "reason": "水銀の標準原液は、純度の高い塩化水銀（Ⅱ）を正確にはかり取り、硝酸酸性などの溶液に溶かして調製する。記述は正しいとされる。"
+          },
+          {
+            "number": 3,
+            "verdict": "incorrect",
+            "reason": "低濃度の水銀溶液はポリエチレン容器では壁への吸着や透過で濃度が下がるため、標準液はガラスびん等に保存する。ポリエチレン製の容器を用いないという記述は正しいとされる。"
+          },
+          {
+            "number": 4,
+            "verdict": "correct",
+            "reason": "試料液中の過剰の過マンガン酸カリウムは、塩化ヒドロキシルアンモニウム溶液を滴加して分解する。環境省の底質調査方法も同じ手順である。塩化スズ（Ⅱ）は水銀（Ⅱ）を金属水銀に還元・気化させる試薬であり、この記述が誤りである。"
+          },
+          {
+            "number": 5,
+            "verdict": "incorrect",
+            "reason": "公式正答では、原子吸光分析法での水銀（Ⅱ）イオンの還元にアスコルビン酸溶液を用いるという記述は正しい扱いとなる。"
+          }
+        ],
+        "sources": [
+          {
+            "title": "環境省 底質調査方法",
+            "url": "https://www.env.go.jp/water/teishitsu-chousa/00_full.pdf"
+          },
+          {
+            "title": "厚生労働省 作業環境測定基準",
+            "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74087000"
+          }
+        ]
+      },
+      "sourceEvidence": [
+        {
+          "url": "https://www.env.go.jp/water/teishitsu-chousa/00_full.pdf",
+          "excerpt": "塩化ヒドロキシルアンモニウム溶液(20g/L)を滴加し、過剰の過マンガン酸カリウムを分解する。",
+          "choiceNumbers": [
+            4
+          ]
+        },
+        {
+          "url": "https://www.env.go.jp/water/teishitsu-chousa/00_full.pdf",
+          "excerpt": "手早く塩化すず（Ⅱ）溶液10mLを加え",
+          "choiceNumbers": [
+            4,
+            5
+          ]
+        }
+      ],
+      "reviewIssues": [
+        "【HOLD】公式正答は肢4だが、肢5（原子吸光分析法での水銀(Ⅱ)イオンの還元にアスコルビン酸溶液を用いる）を正しいとする根拠が見つからない。環境省『底質調査方法』の総水銀（還元気化原子吸光法）は、過剰の過マンガン酸カリウムを塩化ヒドロキシルアンモニウムで分解し、水銀(Ⅱ)の還元気化には塩化すず(Ⅱ)溶液を用いるとしており、肢5の記述と整合しない。肢2（塩化水銀(Ⅱ)による標準原液）・肢3（ポリエチレン容器を用いない）の一次資料も未取得。"
+      ]
+    },
+    "emkohyo-EM20251808-q18": {
+      "overlay": {
+        "sourceHash": "97e18fc9ff5e96d8443ed489ccbcd4a3eb57a77ffe31f4aa3e21d5159e31e065",
+        "correctChoice": 4,
+        "summary": "鉛は揮発しやすく、共存物質があっても灰化温度を高くすると原子化前に失われる。『灰化温度を高くする』とした肢4が誤り。",
+        "choices": [
+          {
+            "number": 1,
+            "verdict": "incorrect",
+            "reason": "塩化鉛は揮発しやすいので、水酸化アンモニウム－過酸化水素などを加えて塩化物を除き、灰化段階での鉛の揮散を抑える。記述は正しいとされる。"
+          },
+          {
+            "number": 2,
+            "verdict": "incorrect",
+            "reason": "鉛の共鳴線には217.0 nmと283.3 nmがあり、吸収が最も強い（感度が高い）のは217.0 nmである。記述は正しい。"
+          },
+          {
+            "number": 3,
+            "verdict": "incorrect",
+            "reason": "217.0 nmは感度が高い一方、ランプ光量が小さく雑音が大きい。283.3 nmの方がS/N比が高いため、底質調査方法など多くの公定法も283.3 nmを用いている。記述は正しいとされる。"
+          },
+          {
+            "number": 4,
+            "verdict": "correct",
+            "reason": "鉛は低温で揮散しやすい元素であり、灰化温度を上げると原子化段階の前に鉛自体が失われる。共存物質があるときは灰化温度を上げるのではなく、マトリックスモディファイヤーの添加などで対処する。この記述が誤りである。"
+          },
+          {
+            "number": 5,
+            "verdict": "incorrect",
+            "reason": "原子化温度を必要以上に高くすると、黒鉛炉の劣化や原子の拡散が速くなることにより、繰り返し精度が低下する。記述は正しいとされる。"
+          }
+        ],
+        "sources": [
+          {
+            "title": "環境省 底質調査方法",
+            "url": "https://www.env.go.jp/water/teishitsu-chousa/00_full.pdf"
+          },
+          {
+            "title": "厚生労働省 食品添加物公定書 B 一般試験法（原子吸光光度法・紫外可視吸光度測定法・ヒ素試験法・誘導結合プラズマ発光強度測定法）",
+            "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/shokuhin/syokuten/dl/8e01.pdf"
+          }
+        ]
+      },
+      "sourceEvidence": [
+        {
+          "url": "https://www.env.go.jp/water/teishitsu-chousa/00_full.pdf",
+          "excerpt": "マトリックスモディファイヤーとして硝酸パラジウム(Ⅱ)を加えて電気加熱炉で原子化し、鉛による原子吸光を波長283.3nmで測定して鉛を定量する。",
+          "choiceNumbers": [
+            3,
+            4
+          ]
+        }
+      ],
+      "reviewIssues": [
+        "【HOLD】肢1（NH₄OH－H₂O₂添加の目的）、肢2（217.0 nmが最も吸収が強いこと）、肢3（283.3 nmの方がS/N比が高いこと）、正答肢4（鉛の灰化温度の上限と揮散）、肢5（原子化温度と繰り返し精度）を直接述べる政府一次資料本文を取得できていない。公定法が283.3 nmを用いることと、硝酸パラジウムをマトリックスモディファイヤーとすることは確認できる。"
+      ]
+    },
+    "emkohyo-EM20251808-q19": {
+      "overlay": {
+        "sourceHash": "ec339d92a17752bdac2009de6447cb21dff6e7e646543f835c3e8335f984a32f",
+        "correctChoice": 3,
+        "summary": "ろ紙1枚のコバルト量0.48 µg/mL×10 mL＝4.8 µg、採気量2.5 L/min×120 min＝300 L＝0.3 m³から、4.8 µg÷0.3 m³＝16 µg/m³＝0.016 mg/m³。",
+        "choices": [
+          {
+            "number": 1,
+            "verdict": "incorrect",
+            "reason": "0.003 mg/m³は、4.8 µgを2人×3回分の採気量1,800 L（1.8 m³）で割った約0.0027 mg/m³に相当する。分析したのはろ紙1枚（2時間・300 L分）なので、4.8 µg÷0.3 m³＝0.016 mg/m³が正しく、0.003は誤りである。"
+          },
+          {
+            "number": 2,
+            "verdict": "incorrect",
+            "reason": "0.005 mg/m³は、4.8 µgを3回分の採気量900 L（0.9 m³）で割った約0.0053 mg/m³に相当する。分析したろ紙1枚は1回2時間の捕集なので採気量は2.5×120＝300 Lで、濃度は0.016 mg/m³となる。"
+          },
+          {
+            "number": 3,
+            "verdict": "correct",
+            "reason": "コバルト量は0.48 µg/mL×10 mL＝4.8 µg、採気量は2.5 L/min×120 min＝300 L＝0.3 m³。C＝c×q÷Qの考え方で4.8 µg÷0.3 m³＝16 µg/m³＝0.016 mg/m³となり、これが正しい値である。"
+          },
+          {
+            "number": 4,
+            "verdict": "incorrect",
+            "reason": "0.048 mg/m³は正しい値0.016 mg/m³のちょうど3倍で、繰り返し回数3を掛けた値、又は4.8 µgを100 Lで割った値に相当する。ろ紙1枚の捕集量4.8 µgと採気量300 Lからは0.016 mg/m³となり、誤りである。"
+          },
+          {
+            "number": 5,
+            "verdict": "incorrect",
+            "reason": "0.096 mg/m³は0.016 mg/m³の6倍で、2人×3回の6を掛けた値、又は4.8 µgを50 Lで割った値に相当する。分析したのはろ紙1枚・採気量300 L分なので、4.8 µg÷0.3 m³＝0.016 mg/m³が正しい。"
+          }
+        ],
+        "sources": [
+          {
+            "title": "厚生労働省 作業環境測定ガイドブックに準じた形式による手順書（別紙）",
+            "url": "https://www.mhlw.go.jp/content/11300000/001096484.pdf"
+          }
+        ]
+      },
+      "sourceEvidence": [
+        {
+          "url": "https://www.mhlw.go.jp/content/11300000/001096484.pdf",
+          "excerpt": "C：試料液中の鉛濃度(ng/ⅿL)ｑ：試料液量(ⅿL)Ｑ：吸引試料空気量(L)",
+          "choiceNumbers": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/content/11300000/001096484.pdf",
+          "excerpt": "C：環境気中の鉛濃度(ⅿg/㎥)",
+          "choiceNumbers": [
+            3
+          ]
+        }
+      ],
+      "reviewIssues": []
+    },
+    "emkohyo-EM20251808-q20": {
+      "overlay": {
+        "sourceHash": "945359cab48eca858ac18c307f453ada698a38a737a69bf1d1f3e06c273afa61",
+        "correctChoice": 5,
+        "summary": "As₂O₃の式量は2×74.9＋3×16.0＝197.8で、ヒ素の割合は149.8/197.8。19.8 mg×149.8/197.8≒15.0 mgなので15.0 mg/L。",
+        "choices": [
+          {
+            "number": 1,
+            "verdict": "incorrect",
+            "reason": "2.5 mg/Lは正しい値15.0 mg/Lの1/6で、As₂O₃の式量197.8とヒ素2原子分149.8から得られる値と合わない。ヒ素量は19.8×149.8÷197.8≒15.0 mgで、溶液は1 Lなので15.0 mg/Lとなり、2.5は誤りである。"
+          },
+          {
+            "number": 2,
+            "verdict": "incorrect",
+            "reason": "5.0 mg/Lは15.0 mg/Lの1/3である。式量197.8のAs₂O₃ 19.8 mgは約0.100 mmolで、ヒ素は2倍の0.200 mmol×74.9＝15.0 mgになる。1 L中なので15.0 mg/Lで、5.0は誤りである。"
+          },
+          {
+            "number": 3,
+            "verdict": "incorrect",
+            "reason": "7.5 mg/Lは、As₂O₃1分子中のヒ素を1原子として19.8×74.9÷197.8≒7.50 mgと計算した値である。As₂O₃にはヒ素が2原子含まれるので、2倍の15.0 mgが正しく、7.5は誤りである。"
+          },
+          {
+            "number": 4,
+            "verdict": "incorrect",
+            "reason": "10.0 mg/Lは、式量197.8のAs₂O₃に含まれるヒ素の質量割合149.8/197.8≒0.757と合わない。19.8 mg×0.757≒15.0 mgで、溶液1 L中のヒ素濃度は15.0 mg/Lとなり、10.0は誤りである。"
+          },
+          {
+            "number": 5,
+            "verdict": "correct",
+            "reason": "As₂O₃の式量は2×74.9＋3×16.0＝197.8（厚労省モデルSDSの分子量197.84とも一致）。ヒ素は2原子で149.8なので、19.8 mg×149.8/197.8≒15.0 mg。これが水溶液1 L中にあるので15.0 mg/Lとなり、正しい。"
+          }
+        ],
+        "sources": [
+          {
+            "title": "厚生労働省 職場のあんぜんサイト モデルSDS 三酸化二ヒ素",
+            "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/1327-53-3.html"
+          }
+        ]
+      },
+      "sourceEvidence": [
+        {
+          "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/1327-53-3.html",
+          "excerpt": "分子式(分子量)As2O3(197.84)",
+          "choiceNumbers": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ]
+        }
+      ],
+      "reviewIssues": []
+    }
+  }
+}

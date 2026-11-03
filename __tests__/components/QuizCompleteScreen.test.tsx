@@ -43,6 +43,38 @@ describe("QuizCompleteScreen — コピー成功の SR 通知", () => {
   });
 });
 
+describe("QuizCompleteScreen — 検索演習の共有文脈", () => {
+  it("試験横断検索をAPと誤表示せず、検索結果URLを共有する", async () => {
+    render(
+      <QuizCompleteScreen
+        stats={{ answered: 2, correct: 1 }}
+        elapsed={30}
+        exam="search"
+        mode="random"
+        labelOverride="検索結果から選んだ問題"
+        shareHref="/search?q=SQL&recent=1"
+        onRetry={vi.fn()}
+        onBack={vi.fn()}
+      />,
+    );
+
+    const xShare = screen.getByRole("link", { name: /X でシェア/ });
+    expect(decodeURIComponent(xShare.getAttribute("href") ?? "")).toContain(
+      "検索結果から選んだ問題の過去問",
+    );
+    expect(decodeURIComponent(xShare.getAttribute("href") ?? "")).toContain(
+      "/search?q=SQL&recent=1",
+    );
+
+    fireEvent.click(screen.getByRole("button", { name: /URLコピー/ }));
+    await waitFor(() => {
+      expect(navigator.clipboard.writeText).toHaveBeenCalledWith(
+        expect.stringMatching(/\/search\?q=SQL&recent=1$/),
+      );
+    });
+  });
+});
+
 // クイズ完了画面は最大エンゲージメントの単発タイミング。論述区分(ST/SA/PM/SM/AU)を
 // 解き終えた読者にだけ旗艦=午後II論述AI採点(/essay)への導線を 1 回だけ出す
 // (解説カードと違い問題ごとに繰り返さない)。ゲートは AfternoonEssayHint 内の

@@ -4,6 +4,17 @@
 
 このファイルは、実際に収録した問題だけについて、公式公開元・正答・再利用条件を再検証できる形で記録する。PDF 本体は権利者の公式 URL を参照し、リポジトリには複製しない。SHA-256 は検証日に公式 URL から取得したバイト列に対する値である。
 
+## 管理業務主任者試験（2026-09-27検証）
+
+- 2026年度試験日: 12月6日。公式[試験概要](https://www.kanrikyo.or.jp/kanri/shiken_r08/pdf/gaiyou.pdf)で確認。
+- [公式の過去問使用条件](https://www.kanrikyo.or.jp/kanri/pdf/kakomonshiyou.pdf): 公表済み過去問題は、教育目的など試験制度の意義に反しない利用なら許諾・使用料不要。出典必須。問題を一部改変した場合は改題の表示が必要。コード上の出典表記は問題ごとに保持し、問題・選択肢の内容を変えず、改行と番号だけWeb表示へ移している。
+- [2025年度公式問題・正答PDF](https://www.kanrikyo.or.jp/kanri/mondaiseikai/pdf/r07.pdf): 36ページ、50問。問題文・4肢と巻末正答表を照合。SHA-256 `C72980C0122F865351C883807F54DB1E37201A93F3C88FF1D172E76663574BD6`。PDFはリポジトリに収録しない。
+- 第1段階のパイロット収録: 問1=4、問2=2、問3=3、問6=4、問8=3。第2段階で問4=2、問5=4、問7=1、問47=2、問48=1、問49=1、問50=2を追加。第3段階で問20=4、問21=2、問22=2、問23=1を追加し、公式50問中16問を収録。問題中の法令基準日は2025年4月1日で、2026年度問題として表示しない。
+- 全肢解説は[民法](https://laws.e-gov.go.jp/law/129AC0000000089?occasion_date=20250401)、[国交省マンション標準管理委託契約書](https://www.mlit.go.jp/tochi_fudousan_kensetsugyo/const/content/001630188.pdf)、[未完成建物の最高裁判例](https://www.courts.go.jp/assets/hanrei/hanrei-pdf-6997.pdf)の該当条文・項目に照合した。問3の所有権は原則的な帰属を述べる設問で、個別契約の結論を断定するものではない。
+- 第2段階の問4・5・7は国交省の[2023年マンション標準管理委託契約書](https://www.mlit.go.jp/tochi_fudousan_kensetsugyo/const/content/001630188.pdf)と[同コメント](https://www.mlit.go.jp/tochi_fudousan_kensetsugyo/const/content/001630190.pdf)の7・14・15・20条、各条コメントに照合。問47〜50は[マンション管理適正化法](https://laws.e-gov.go.jp/law/412AC1000000149?occasion_date=20250401)、[施行規則](https://laws.e-gov.go.jp/law/413M60000800110?occasion_date=20250401)の欠格・主任者証・従業者証明・廃業届・報告・書類保存・罰則に照合した。
+- 問20〜23の全肢は国交省[令和6年6月改定の長期修繕計画作成ガイドライン・同コメント](https://www.mlit.go.jp/jutakukentiku/house/content/001747006.pdf)に照合。計画期間30年以上、単価の地域差・諸経費、専有部分の修繕の費用負担を個別に確認した。
+- 2026年度問題は未公表。新年度の法令基準日を2025年問題の解説へ混ぜない。残る34問は未収録。
+
 ## 3級ファイナンシャル・プランニング技能検定
 
 - 公開元: 日本FP協会「試験問題・模範解答」
@@ -25,6 +36,8 @@
 
 ## 第三種電気主任技術者試験
 
+> 公開状態: `ready-to-ingest`。利用状況連絡は運営者確認済みだが、直近2年・4科目の全問検収が未完のため、検証用2問は公開問題レジストリ・静的ページ・検索・クイズ導線から除外する。
+
 - 公開元: 一般財団法人電気技術者試験センター「第三種電気主任技術者試験の問題と解答」
   - https://www.shiken.or.jp/chief/third/qa/
   - 2025年8月31日実施の理論科目問題と試験解答を公式一覧から確認した。
@@ -32,7 +45,7 @@
   - https://www.shiken.or.jp/shiken/faq/faq08/000082.html
   - 著作権は同センターに帰属する。
   - 教育目的など試験制度の意義に反しない利用は、許諾・使用料不要。出典明記が必要で、改変時はその事実も明記する。
-  - FAQ は利用状況をメールで連絡するよう案内している。外部送信は本作業の許可範囲外なので未送信。公開前の運用チェック項目とする。
+  - FAQ が案内する利用状況連絡は、2026-09-24にサイト運営者が完了済みと確認した。個人情報や送信本文はリポジトリへ保存しない。
 - 問題: 令和7年度上期 第三種 理論
   - https://www.shiken.or.jp/chief/upload/20250831_ch_third_q01.pdf
   - 問2と問14の問題文および5択を目視照合した。
@@ -46,6 +59,28 @@
 - 実装上の表記: `出典：令和7年度上期第三種電気主任技術者試験 理論科目`
 - 収録範囲: 理論科目の問2・問14の2問だけ。他科目・他年度を収録済みとは扱わない。
 
+## 2級ファイナンシャル・プランニング技能検定
+
+- 公開元: 日本FP協会「試験問題・模範解答」
+  - https://www.jafp.or.jp/exam/mohan/
+  - 2024年5月・9月、2025年1月のペーパー試験と、2025年5月・2026年5月のCBT公表セットを収録した。
+- 利用条件: 日本FP協会「FP技能検定の試験問題の利用について」
+  - https://www.jafp.or.jp/exam/mohan/files/exam_riyou.pdf
+  - 2級学科・実技の著作権者を明記し、利用申請は不要、出典明記と加工時の加工明記が必要とする条件を2026-09-26に再確認した。
+- 2024〜2025年公表分
+  - 学科4回・各60問（計240問）と実技4回・各40問（計160問）。問題・正答PDFのURL、取得日相当の公表情報、SHA-256、ページ数、法令基準日は `fp2-two-year/manifest.json` に固定した。
+  - 学科全240問は4肢すべての理由を収録し、`academic-coverage.json` の review queue は0件。実技は択一・○×・複数空欄・記述の形式に応じた解説を収録し、`practical-explanation-coverage.json` と独立レビュー群で検収した。
+- 2026年5月公表分
+  - 学科問題・正答: https://www.jafp.or.jp/exam/mohan/files/g2_202605_qa.pdf （60問、法令基準日2025-04-01）。PDFハッシュと全問抽出は `fp2-2026-may/extraction.json`、問11〜60の `claude-opus-5-5` solve/explain実応答は `fp2-2026-may/receipts/` に保存した。問1〜10は既存パイロットで、同形式のOpus receipt対象外であることを明示して過大表示を防ぐ。
+  - 実技問題: https://www.jafp.or.jp/exam/mohan/files/j2_202605_q.pdf
+  - 実技正答: https://www.jafp.or.jp/exam/mohan/files/j2_202605_a.pdf
+  - 実技40問のSHA-256・ページ数は `fp2-2026-may-practical/manifest.json`、全40問のfirst-party `claude-opus-5-5`検収は `review-coverage.json` と5件のreceiptに保存した。HOLDは0件。
+- 公開収録数: 学科300問、実技200問。2026-09-26に匿名本番 `/fp2`（学科300問）、`/fp2/practical`（5セット200問）、`/fp2/practical/202605`（40問）がHTTP 200で件数表示と一致することを確認した。
+- 今回の独立監査receipt: `fp2-coverage-audit-20260926.json`。AntigravityのHOLDのうち、古い台帳・STATUS・一次証拠欠落は本変更で解消する。2026年学科問1〜10のOpus receipt非対象は問題品質のHOLDではなく、モデル監査範囲の限定として保持する。
+
 ## 再取得とハッシュ照合
+
+第二種電気工事士の2024・2025年度学科200問・技能104課題と公開前連絡ゲートの証拠は [DENKO2_FULL_YEAR_PLAN.md](./DENKO2_FULL_YEAR_PLAN.md)、[DENKO2_REUSE_NOTICE.md](./DENKO2_REUSE_NOTICE.md) に記録した。令和8年度上期の未公開10問は [DENKO2_2026_FIRST.md](./DENKO2_2026_FIRST.md) に分離している。
+
 
 PowerShell で公式 PDF を一時ディレクトリに取得し、`Get-FileHash -Algorithm SHA256` で照合する。公式側でファイルが更新された場合は、内容を再確認してからこの記録と問題データを更新する。

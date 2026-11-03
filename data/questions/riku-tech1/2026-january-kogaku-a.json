@@ -1,0 +1,1769 @@
+[
+  {
+    "id": "radio21-riku-tech1-2026-01-engineering-a-q01",
+    "exam": "riku-tech1",
+    "session": "kogaku-a",
+    "year": 2026,
+    "season": "january",
+    "qNumber": 1,
+    "type": "multiple-choice",
+    "category": "無線工学A",
+    "subject": "無線工学A",
+    "topicTags": [
+      "無線工学A"
+    ],
+    "difficulty": 3,
+    "question": " \n \n \n \n \n \n \n \n \n \n \n \nA－1 最大周波数偏移が入力信号のレベルに比例するFM(F3E)変調器に400〔Hz〕の正弦波を変調信号として入力し、その出力をス\nペクトルアナライザで観測した。変調信号の振幅を零から徐々に大きくしたところ、1〔V〕で搬送波の振幅が零となった。図に\n示す第1 種ベッセル関数のグラフを用いて、最大周波数偏移が1,920〔Hz〕となるときの変調信号の振幅の値として、最も近い\nものを下の番号から選べ。ただし、mf は変調指数とする。 \n \n1 2〔V〕 \n2 1.92〔V〕 \n3 1.6〔V〕 \n4 1.4〔V〕 \n5 0.96〔V〕 \n \n1.0\n0.8\n0.6\n0.4\n0.2\n   0\n-0.2\n-0.4\nmf   \n J0(mf)   \n J1(mf)   \n1   2                     7  \n8 \n5\n4\n3\n6\n",
+    "explanation": "正しい。搬送波成分J₀(mf)が1Vで最初の零となるmf≈2.4。偏移は2.4×400=960Hz。偏移は入力振幅に比例するので1920Hzには2V。",
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/riku-gi-1-kogaku-a.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/riku-gi-1-kogaku-a-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第一級陸上無線技術士試験 2026年1月 無線工学A A1（問題・正答）。解説は過去問AIが独自作成。図・数式語群は原典から切り出し。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-10-15",
+    "imageUrls": [
+      "/images/questions/riku-tech1/radio21-riku-tech1-2026-01-engineering-a-q01-original.png"
+    ],
+    "imageAltTexts": [
+      "公式原問 A1 の図・数式・番号付き語群（原典配置）"
+    ],
+    "choices": {
+      "ア": "2〔V〕",
+      "イ": "1.92〔V〕",
+      "ウ": "1.6〔V〕",
+      "エ": "1.4〔V〕",
+      "オ": "0.96〔V〕"
+    },
+    "choiceExplanations": {
+      "ア": "正しい。搬送波成分J₀(mf)が1Vで最初の零となるmf≈2.4。偏移は2.4×400=960Hz。偏移は入力振幅に比例するので1920Hzには2V。",
+      "イ": "誤り。1920/960=2で、基準1Vの2倍が必要。1.92Vは偏移値の比を誤る。",
+      "ウ": "誤り。1.6Vでは偏移は約1536Hzにとどまる。",
+      "エ": "誤り。1.4Vでは約1344Hzにとどまる。",
+      "オ": "誤り。0.96Vでは偏移は約922Hzであり、目標の半分未満。"
+    },
+    "officialAnswerNumber": "1",
+    "answer": "ア"
+  },
+  {
+    "id": "radio21-riku-tech1-2026-01-engineering-a-q02",
+    "exam": "riku-tech1",
+    "session": "kogaku-a",
+    "year": 2026,
+    "season": "january",
+    "qNumber": 2,
+    "type": "multiple-choice",
+    "category": "無線工学A",
+    "subject": "無線工学A",
+    "topicTags": [
+      "無線工学A"
+    ],
+    "difficulty": 3,
+    "question": " \nA－2 次の記述は、我が国の地上系デジタル放送の標準方式(ISDB-T)に用いられているインターリーブについて述べたものである。\nこのうち誤っているものを下の番号から選べ。 \n \n1 外符号のリードソロモン符号、内符号の畳み込み符号を連結し、内符号と外符号の間にバイトインターリーブを設けるこ\nとで、内符号の復調出力におけるバースト誤りを拡散し、外符号による誤り訂正効果を高めている。 \n2 周波数インターリーブは、マルチキャリアを周波数拡散変調させることで、マルチパス等により特定のサブキャリアの信\n号レベルが著しく低下する周波数選択性フェージングを改善している。 \n3 周波数インターリーブは、複数のデータセグメントにわたるセグメント間インターリーブと、データセグメント内で行う\nセグメント内インターリーブの2段階で構成され、周波数インターリーブの効果を高めている。 \n4 時間インターリーブは、隣接しているキャリアシンボルを時間的に分散させることで、インパルス雑音等により時間的に\n発生するバースト誤りが改善される。 \n5 キャリア変調された信号は、時間的あるいは周波数的に連続した誤り対策のため、時間インターリーブ、周波数インター\nリーブを行った後にOFDMフレーム構成を行う。 \n",
+    "explanation": "誤り。周波数インターリーブはサブキャリアへのデータの割当位置を並べ替えて誤りを分散する処理であり、マルチキャリアを周波数拡散変調する処理ではない。",
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/riku-gi-1-kogaku-a.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/riku-gi-1-kogaku-a-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第一級陸上無線技術士試験 2026年1月 無線工学A A2（問題・正答）。解説は過去問AIが独自作成。図・数式語群は原典から切り出し。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-10-15",
+    "choices": {
+      "ア": "バイトインターリーブでRS符号の訂正を支援",
+      "イ": "周波数拡散変調により周波数選択性フェージングを改善",
+      "ウ": "セグメント間とセグメント内の二段階",
+      "エ": "時間的なバースト誤りを時間インターリーブで分散",
+      "オ": "時間・周波数インターリーブ後にOFDMフレームを構成"
+    },
+    "choiceExplanations": {
+      "ア": "正しい記述。畳み込み符号の復号後に偏って残る誤りをバイト単位で分散し、外符号RSの訂正範囲へ収めやすくする。",
+      "イ": "誤り。周波数インターリーブはサブキャリアへのデータの割当位置を並べ替えて誤りを分散する処理であり、マルチキャリアを周波数拡散変調する処理ではない。",
+      "ウ": "正しい記述。セグメント間とセグメント内の再配置で特定周波数帯の劣化が連続データへ集中することを避ける。",
+      "エ": "正しい記述。時間インターリーブは隣接する符号シンボルを離して配置し、短時間のインパルス雑音による連続誤りを分散する。",
+      "オ": "正しい記述。時間・周波数方向の配置を行ったキャリア情報からOFDMフレームを組み立てる。"
+    },
+    "officialAnswerNumber": "2",
+    "answer": "イ"
+  },
+  {
+    "id": "radio21-riku-tech1-2026-01-engineering-a-q03",
+    "exam": "riku-tech1",
+    "session": "kogaku-a",
+    "year": 2026,
+    "season": "january",
+    "qNumber": 3,
+    "type": "multiple-choice",
+    "category": "無線工学A",
+    "subject": "無線工学A",
+    "topicTags": [
+      "無線工学A"
+    ],
+    "difficulty": 3,
+    "question": "A－3 搬送波の位相を変調信号に比例して変調する位相変調(PM:Phase Modulation)において、位相変調波の最大の周波数帯域幅 Bw\nの大きさの値として最も近いものを下の番号から選べ。ただし、変調信号を100〔kHz〕、位相変調指数を0.4〔rad〕及び位相変\n調指数の誤差を±20〔％〕として求めるものとする。また、変調信号を周波数 fm〔Hz〕の正弦波、位相変調(PM)波の最大周波\n数偏移をFd〔Hz〕とすると、Bw は、Bw ≒ 2 (fm＋Fd)〔Hz〕で求められるものとする。 \n \n1 150〔kHz〕     2 160〔kHz〕     3 200〔kHz〕     4 280〔kHz〕     5 296〔kHz〕",
+    "explanation": "正しい。Fd=0.48×100 kHz=48 kHz、Bw≈2(100+48)=296 kHz。",
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/riku-gi-1-kogaku-a.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/riku-gi-1-kogaku-a-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第一級陸上無線技術士試験 2026年1月 無線工学A A3（問題・正答）。解説は過去問AIが独自作成。図・数式語群は原典から切り出し。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-10-15",
+    "choices": {
+      "ア": "150 kHz",
+      "イ": "160 kHz",
+      "ウ": "200 kHz",
+      "エ": "280 kHz",
+      "オ": "296 kHz"
+    },
+    "choiceExplanations": {
+      "ア": "誤り。最大位相変調指数は0.4×1.2=0.48で、最大周波数偏移は48 kHz。指定式から帯域幅は296 kHzとなり150 kHzではない。",
+      "イ": "誤り。最大偏移48 kHzを Bw≈2(100+48) kHz に代入すると296 kHzである。",
+      "ウ": "誤り。200 kHzは周波数偏移を0とした値に相当し、位相変調指数の最大誤差を反映していない。",
+      "エ": "誤り。280 kHzは偏移40 kHzを使った値で、±20%のうち最大側の48 kHzを使っていない。",
+      "オ": "正しい。Fd=0.48×100 kHz=48 kHz、Bw≈2(100+48)=296 kHz。"
+    },
+    "officialAnswerNumber": "5",
+    "answer": "オ"
+  },
+  {
+    "id": "radio21-riku-tech1-2026-01-engineering-a-q04",
+    "exam": "riku-tech1",
+    "session": "kogaku-a",
+    "year": 2026,
+    "season": "january",
+    "qNumber": 4,
+    "type": "multiple-choice",
+    "category": "無線工学A",
+    "subject": "無線工学A",
+    "topicTags": [
+      "無線工学A"
+    ],
+    "difficulty": 3,
+    "question": "(FA801-1) \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \nA－4 次の記述は、図に示すBPSK 信号及び16QAM 信号の信号点間距離等について述べたものである。    内に入れるべき字句の\n正しい組合せを下の番号から選べ。ただし、ピーク電力とは搬送波周波数帯における変調信号のピーク電力の事であり、負荷抵\n抗を1〔Ω〕、log102 ＝ 0.3 、log103 ＝ 0.5 とする。 \n \n(1) 図1 に示すBPSK 信号の信号点間距離がa のとき、BPSK 信号のピーク電力は、a を用いて  A  で表せる。 \n(2) 図2 に示す16QAM 信号の信号点間距離がb のとき、16QAM 信号のピーク電力は、b を用いて  B  で表せる。 \n(3)  妨害に対する余裕度を一定にするため、図2 のb を図1 のa と等しくしたときの16QAM 信号のピーク電力は、BPSK 信号\nのピーク電力より、約  C 〔dB〕高くなる。 \n \n \n A         B         C \n1  a 2 /4      9 b 2 /2      13 \n2  a 2 /4      9 b 2 /4      10 \n3  a 2 /8       9 b 2 /2      16 \n4  a 2 /8      9b 2 /4      13 \n5  a 2  \n9b 2 /2      7\n同相軸 I  \nb \n直交軸 Q \n図2 16QAM 信号空間ダイアグラム  \n同相軸 I  \na\n直交軸 Q \n図1 BPSK 信号空間ダイアグラム \n",
+    "explanation": "正しい。BPSKの振幅はa/2で平均ピーク電力a²/8。16QAMの角点の振幅二乗は(3b/2)²×2=9b²/2で電力9b²/4。b=aで比18、10log₁₀18≈13dB。",
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/riku-gi-1-kogaku-a.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/riku-gi-1-kogaku-a-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第一級陸上無線技術士試験 2026年1月 無線工学A A4（問題・正答）。解説は過去問AIが独自作成。図・数式語群は原典から切り出し。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-10-15",
+    "imageUrls": [
+      "/images/questions/riku-tech1/radio21-riku-tech1-2026-01-engineering-a-q04-original.png"
+    ],
+    "imageAltTexts": [
+      "公式原問 A4 の図・数式・番号付き語群（原典配置）"
+    ],
+    "choices": {
+      "ア": "A=a²/4、B=9b²/2、C=13〔dB〕",
+      "イ": "A=a²/4、B=9b²/4、C=10〔dB〕",
+      "ウ": "A=a²/8、B=9b²/2、C=16〔dB〕",
+      "エ": "A=a²/8、B=9b²/4、C=13〔dB〕",
+      "オ": "A=a²、B=9b²/2、C=7〔dB〕"
+    },
+    "choiceExplanations": {
+      "ア": "誤り。ピーク電力の正弦波平均は振幅二乗の1/2で、BPSKはa²/8、16QAMは9b²/4。",
+      "イ": "誤り。Bは正しいが、Aはa²/8であり、比は18倍約13dB。",
+      "ウ": "誤り。Aは正しいが、16QAMの最大信号点は(3b/2,3b/2)で振幅二乗9b²/2、電力は半分の9b²/4。",
+      "エ": "正しい。BPSKの振幅はa/2で平均ピーク電力a²/8。16QAMの角点の振幅二乗は(3b/2)²×2=9b²/2で電力9b²/4。b=aで比18、10log₁₀18≈13dB。",
+      "オ": "誤り。Aはa²/8、Bは9b²/4で、比は18倍約13dB。"
+    },
+    "officialAnswerNumber": "4",
+    "answer": "エ"
+  },
+  {
+    "id": "radio21-riku-tech1-2026-01-engineering-a-q05",
+    "exam": "riku-tech1",
+    "session": "kogaku-a",
+    "year": 2026,
+    "season": "january",
+    "qNumber": 5,
+    "type": "multiple-choice",
+    "category": "無線工学A",
+    "subject": "無線工学A",
+    "topicTags": [
+      "無線工学A"
+    ],
+    "difficulty": 3,
+    "question": " \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n・\n・\n・\n・\nA－5 次の記述は、図に示す直交周波数分割多重(OFDM)方式の復調プロセスの基本的な原理を述べたものである。    内に入れ\nるべき字句の正しい組合せを下の番号から選べ。ただし、各演算器の出力式の係数は無視するものとし、e は自然対数の底とす\nる。なお、同じ記号の     内には、同じ字句が入るものとする。 \n \n(1) 基本周波数fS〔Hz〕、搬送波周波数fC+n fS〔Hz〕(n = 0,1,2,…N-1)、n 番目の搬送波を変調するための複素データシンボルを\nan+jbn とすると、搬送帯域OFDM 信号S(t)は次式で表される。 \n□(□) = □\n[□□cos{2□(□□+ □□□)□} −□□sin{2□(□□+ □□□)□}]\n□□□\n□□□\n \n(2) 搬送帯域OFDM 信号S(t)に、搬送波の基準となる周波数fC〔Hz〕と同じ周波数の正弦波cos(2πfCt)と-sin(2πfCt)を乗算し、低域\nフィルタ(LPF)で高周波成分を除去することにより、実数軸（I 軸）のベースバンドOFDM 信号SBI(t)と虚数軸（Q 軸）のベース\nバンドOFDM 信号SBQ(t)がそれぞれ抽出される。 \n□□□(□) = □\n{□□cos(2□□□□□) −□□sin(2□□□□□)}                \n□□□\n□□□\n□□□(□) = □\n{□□sin(2□□□□□) + □□cos(2□□□□□)}\n□□□\n□□□\n \n(3) 従って、複素ベースバンドOFDM 信号u(t)は、u(t) = SBI(t)+ jSBQ(t)とすると、①式で表される。ここでdn=an+jbn とし、u(t)を\n1/(N fS) の標本化間隔で１シンボル長(1/fS)にわたって標本化すると、②式のN 個の標本が得られる。 \n□(□) = □□□(□) + □□□□(□) = □\n A \n□□□\n□□□\n・・・①    □□□\n□□□\n□= □\n□□□ B  \n□□□\n□□□\n(□= 0,1,2,⋯□−1)・・・② \n(4) ②式は、複素ベースバンドOFDM 信号u{k/(N fS)}のN 個の標本値がN 個の複素データシンボルdn を   C   した形で得ら\nれることを示しており、u{k/(N fS)}を③式に示す通り   D   することによってシンボルを復調できる。 \n□□= 1\n□□\n□□□\n□□□\n□□ E  \n□□□\n□□□\n(□= 0,1,2,⋯□−1)・・・③ \n \n \n \n \n \n \n \n \n \n \n \nA                         B             C                      D                      E \n1 (an+jbn){sin(2πnfSt)+jcos(2πnfSt)}   j(2πnk)/N      逆離散フーリエ変換     離散フーリエ変換       -j(2πnk)/N  \n2 (an+jbn){sin(2πnfSt)+jcos(2πnfSt)}   -j(2πnk)/N     離散フーリエ変換       逆離散フーリエ変換     j(2πnk)/N  \n3 (an+jbn){cos(2πnfSt)+jsin(2πnfSt)}   j(2πnk)/N      逆離散フーリエ変換     離散フーリエ変換       -j(2πnk)/N  \n4 (an+jbn){cos(2πnfSt)+jsin(2πnfSt)}   -j(2πnk)/N     離散フーリエ変換       逆離散フーリエ変換     j(2πnk)/N \n5 (an+jbn){cos(2πnfSt)+jsin(2πnfSt)}   -j(2πnk)/N     逆離散フーリエ変換     離散フーリエ変換       j(2πnk)/N  \n \nfC\nfC+fS \nfC+2fS \nfC+(N-1)fS\nfC+(N-2)fS\n・・・・\nOFDM 信号\n周波数\nビ\n□\nト\n列\n直\n並\n列\n変\n換\n \n D \n並\n直\n列\n変\n換\n \n判\n定\n \n・\n・\n・\n・\nLPF\n標\n本\n化\nLPF\ncos(2πfCt)\n-sin(2πfCt)\nS(t) \nI 軸\nQ 軸\n",
+    "explanation": "正しい。I/Q合成はΣdn e^{j2πnfSt}、標本化するとe^{j2πnk/N}。標本化値はdnの逆DFT、復調ではDFTとe^{-j2πnk/N}を用いる。",
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/riku-gi-1-kogaku-a.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/riku-gi-1-kogaku-a-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第一級陸上無線技術士試験 2026年1月 無線工学A A5（問題・正答）。解説は過去問AIが独自作成。図・数式語群は原典から切り出し。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-10-15",
+    "imageUrls": [
+      "/images/questions/riku-tech1/radio21-riku-tech1-2026-01-engineering-a-q05-original.png"
+    ],
+    "imageAltTexts": [
+      "公式原問 A5 の図・数式・番号付き語群（原典配置）"
+    ],
+    "choices": {
+      "ア": "A=dn{sin(2πnfSt)+jcos(2πnfSt)}、B=+j2πnk/N、C=逆離散フーリエ変換、D=離散フーリエ変換、E=−j2πnk/N",
+      "イ": "A=dn{sin(2πnfSt)+jcos(2πnfSt)}、B=−j2πnk/N、C=離散フーリエ変換、D=逆離散フーリエ変換、E=+j2πnk/N",
+      "ウ": "A=dn{cos(2πnfSt)+jsin(2πnfSt)}、B=+j2πnk/N、C=逆離散フーリエ変換、D=離散フーリエ変換、E=−j2πnk/N",
+      "エ": "A=dn{cos(2πnfSt)+jsin(2πnfSt)}、B=−j2πnk/N、C=離散フーリエ変換、D=逆離散フーリエ変換、E=+j2πnk/N",
+      "オ": "A=dn{cos(2πnfSt)+jsin(2πnfSt)}、B=−j2πnk/N、C=逆離散フーリエ変換、D=離散フーリエ変換、E=+j2πnk/N"
+    },
+    "choiceExplanations": {
+      "ア": "誤り。SBI+jSBQをまとめるとdn(cos+j sin)であり、sin+j cosではない。",
+      "イ": "誤り。Aがsin+j cosとなり、標本化指数の符号も+が正しい。",
+      "ウ": "正しい。I/Q合成はΣdn e^{j2πnfSt}、標本化するとe^{j2πnk/N}。標本化値はdnの逆DFT、復調ではDFTとe^{-j2πnk/N}を用いる。",
+      "エ": "誤り。標本化時の複素指数は+ j2πnk/N、復調時は− j2πnk/N。",
+      "オ": "誤り。AとCの逆離散フーリエ変換、Dの離散フーリエ変換は正しいが、標本化の指数Bは+j2πnk/N、復調の指数Eは−j2πnk/Nであり、BとEの符号が逆。"
+    },
+    "officialAnswerNumber": "3",
+    "answer": "ウ"
+  },
+  {
+    "id": "radio21-riku-tech1-2026-01-engineering-a-q06",
+    "exam": "riku-tech1",
+    "session": "kogaku-a",
+    "year": 2026,
+    "season": "january",
+    "qNumber": 6,
+    "type": "multiple-choice",
+    "category": "無線工学A",
+    "subject": "無線工学A",
+    "topicTags": [
+      "無線工学A"
+    ],
+    "difficulty": 3,
+    "question": "(FA801-2) \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \nA－6 図に示す通信回線において、受信機の入力に換算したC/N が65〔dB〕のときの送信機の送信電力P〔dBm〕の値として、最も\n近いものを下の番号から選べ。ただし、送信及び受信アンテナの絶対利得を共に40〔dBi〕、送信及び受信給電線の損失を共に \n4〔dB〕、両アンテナ間の伝搬路の損失を140〔dB〕とする。また、ボルツマン定数kを-228.6〔dB(W/Hz/K)〕及び受信機の雑音\n指数を4〔dB〕、周囲温度Tを24.6〔dB(K)〕及び等価雑音帯域幅を10〔MHz〕とし、log102＝0.3とする。 \n \n \n1 13〔dBm〕 \n2 23〔dBm〕 \n3 30〔dBm〕 \n4 33〔dBm〕 \n5 43〔dBm〕 \n \n伝搬路の損失140〔dB〕 \n送信給電線損失4〔dB〕\n受信給電線損失4〔dB〕 \n送信電力P〔dBm〕\n送信機\n受信機\n送信アンテナ 40〔dBi〕   \n入力信号\n受信アンテナ 40〔dBi〕  \n出力信号\nC/N  65〔dB〕 \n",
+    "explanation": "正しい。N=kTB+NF=−228.6+24.6+70+4=−130dBW=−100dBm。C/N65dBからPr=−35dBm。経路利得−68dBなのでPt=33dBm。",
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/riku-gi-1-kogaku-a.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/riku-gi-1-kogaku-a-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第一級陸上無線技術士試験 2026年1月 無線工学A A6（問題・正答）。解説は過去問AIが独自作成。図・数式語群は原典から切り出し。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-10-15",
+    "imageUrls": [
+      "/images/questions/riku-tech1/radio21-riku-tech1-2026-01-engineering-a-q06-original.png"
+    ],
+    "imageAltTexts": [
+      "公式原問 A6 の図・数式・番号付き語群（原典配置）"
+    ],
+    "choices": {
+      "ア": "13〔dBm〕",
+      "イ": "23〔dBm〕",
+      "ウ": "30〔dBm〕",
+      "エ": "33〔dBm〕",
+      "オ": "43〔dBm〕"
+    },
+    "choiceExplanations": {
+      "ア": "誤り。熱雑音は−228.6+24.6+70+4=−130dBW=−100dBm、必要受信信号は−35dBm、送信電力は33dBm。",
+      "イ": "誤り。アンテナ利得と損失の総和は40+40−4−4−140=−68dBであり、−35+68=33dBm。",
+      "ウ": "誤り。必要受信信号−35dBmから伝搬・給電線を通算すると33dBmで、30ではない。",
+      "エ": "正しい。N=kTB+NF=−228.6+24.6+70+4=−130dBW=−100dBm。C/N65dBからPr=−35dBm。経路利得−68dBなのでPt=33dBm。",
+      "オ": "誤り。給電線損失は送受各4dBで合計8dB、43dBmは過大。"
+    },
+    "officialAnswerNumber": "4",
+    "answer": "エ"
+  },
+  {
+    "id": "radio21-riku-tech1-2026-01-engineering-a-q07",
+    "exam": "riku-tech1",
+    "session": "kogaku-a",
+    "year": 2026,
+    "season": "january",
+    "qNumber": 7,
+    "type": "multiple-choice",
+    "category": "無線工学A",
+    "subject": "無線工学A",
+    "topicTags": [
+      "無線工学A"
+    ],
+    "difficulty": 3,
+    "question": " \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \nA－7 次の記述は、図1に示す逆変調形搬送波再生回路を用いたQPSK同期検波回路の原理的構成の一例について述べたものである。\n    内に入れるべき字句の正しい組合せを下の番号から選べ。ただし、各演算器の出力式の係数及び回路内の遅延は無視する\nものとし、PLLは入出力の位相差が 0〔rad〕となるよう位相ロックするものとする。 \n \n(1) QPSK 信号の搬送波の角周波数を ωc〔rad/s〕及びデータ値に応じた位相を φ〔rad〕としてQPSK 信号は、cos( ωct ＋φ )\nで表されるものとし、図2 に示す通り、送るデータが“0,0”であればφ＝π/4〔rad〕、“0,1”であればφ＝3π/4〔rad〕、\n“1,1”であればφ＝5π/4〔rad〕、“1,0”であればφ＝－π/4〔rad〕の位相変化をそれぞれ与えるものとする。 \n(2) 受信信号は同期検波回路と逆変調形搬送波再生回路に分配され、このうち同期検波回路にて同期検波された復調信号は逆\n変調器に入力される。逆変調器は復調信号から符号情報（1ビット）を判定し、入力変調波(受信信号)に対して“0”のとき\n位相はそのまま、“1”のとき位相を－π〔rad〕シフトする逆変調を行う。 \n(3) 逆変調形搬送波再生回路は、復調信号を用いて入力変調波に送信側と逆の変調を行うことで基準搬送波を再生するもの\nで、逆変調器の出力を合成した加算器の出力はφによらず  A  となり変調波は一つの位相に縮退し無変調搬送波が得られ\nる。従って、PLLにより無変調搬送波の雑音成分を取り除き、図1に示す移相器を通して同期検波を行うことで、QPSK信号の\n位相φ＝π/4〔rad〕のとき、I軸は  B  、Q軸は  C  の復調信号が得られる。 \n \n \n \n \n \n \n \n \n \n \n \n \n    A                B            C   \n1  cos(ωct ＋π/2)    cos(5π/4)     cos(3π/4) \n2  cos(ωct ＋π/2)    cos(π/4)      cos(－π/4) \n3  cos(ωct)          cos(5π/4)     cos(3π/4) \n4  cos(ωct)          cos(3π/4)     cos(π/4) \n5  cos(ωct)          cos(π/4)      cos(－π/4) \n図2\nQ\nI\n“0,1”       “0,0”\n“1,1”     “ 1,0” \n受信QPSK\n信号 \n図1\n＋π/2 移相器\nLPF1\nLPF2\nQ 軸 \nI 軸 \n復調信号\n逆変調器\n逆変調器\n－π/2 移相器\n位相\n比較器\n同期検波回路\n逆変調形搬送波再生回路\nループ\nフィルタ\nVCO\nPLL\n:乗算器 \n:加算器 \n",
+    "explanation": "正しい。二枝の逆変調でQPSKの符号位相を打ち消すとcosωctが残る。同期検波Iはcosφ、Qはcos(φ−π/2)なのでφ=π/4ならそれぞれcos(π/4),cos(−π/4)。",
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/riku-gi-1-kogaku-a.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/riku-gi-1-kogaku-a-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第一級陸上無線技術士試験 2026年1月 無線工学A A7（問題・正答）。解説は過去問AIが独自作成。図・数式語群は原典から切り出し。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-10-15",
+    "imageUrls": [
+      "/images/questions/riku-tech1/radio21-riku-tech1-2026-01-engineering-a-q07-original.png"
+    ],
+    "imageAltTexts": [
+      "公式原問 A7 の図・数式・番号付き語群（原典配置）"
+    ],
+    "choices": {
+      "ア": "A=cos(ωct+π/2)、B=cos(5π/4)、C=cos(3π/4)",
+      "イ": "A=cos(ωct+π/2)、B=cos(π/4)、C=cos(−π/4)",
+      "ウ": "A=cos(ωct)、B=cos(5π/4)、C=cos(3π/4)",
+      "エ": "A=cos(ωct)、B=cos(3π/4)、C=cos(π/4)",
+      "オ": "A=cos(ωct)、B=cos(π/4)、C=cos(−π/4)"
+    },
+    "choiceExplanations": {
+      "ア": "誤り。逆変調器でデータのπ位相を除くと搬送波はcosωctへ縮退し、π/2偏移しない。",
+      "イ": "誤り。I/Qの値は合うが、再生無変調波Aはcosωctである。",
+      "ウ": "誤り。無変調波は合うが、φ=π/4のI出力はcos(π/4)、Q出力はcos(−π/4)。",
+      "エ": "誤り。移相器の基準と受信位相の差からIはcos(π/4)、Qはcos(−π/4)となる。",
+      "オ": "正しい。二枝の逆変調でQPSKの符号位相を打ち消すとcosωctが残る。同期検波Iはcosφ、Qはcos(φ−π/2)なのでφ=π/4ならそれぞれcos(π/4),cos(−π/4)。"
+    },
+    "officialAnswerNumber": "5",
+    "answer": "オ"
+  },
+  {
+    "id": "radio21-riku-tech1-2026-01-engineering-a-q08",
+    "exam": "riku-tech1",
+    "session": "kogaku-a",
+    "year": 2026,
+    "season": "january",
+    "qNumber": 8,
+    "type": "multiple-choice",
+    "category": "無線工学A",
+    "subject": "無線工学A",
+    "topicTags": [
+      "無線工学A"
+    ],
+    "difficulty": 3,
+    "question": "A－8 次の記述は、AM(A3E)スーパヘテロダイン受信機において生じることのある、相互変調及び混変調について述べたものである。 \n    内に入れるべき字句の正しい組合せを下の番号から選べ。 \n \n(1) 受信機に周波数が f1〔Hz〕及び f2〔Hz〕の通過帯域外にある強力な妨害波が混入\nしたとき、回路の非直線性によって妨害波同士の変調積として生じる周波数成分のう\nち、 2 f1－ f2〔Hz〕及び 2 f2－ f1〔Hz〕は   A   の相互変調積である。 \n(2) 混変調は、希望波を受信している受信機に通過帯域外にある強力な妨害波が混入\nしたとき、回路の非直線性によって生じた変調積により、妨害波の変調信号成分で\n希望波の搬送波が   B   を受ける現象である。 \n(3) 希望波の搬送波の周波数が fd〔Hz〕、妨害波の搬送波の周波数が fu〔Hz〕、妨害波\nの変調信号の周波数が fm〔Hz〕及び妨害波の側波帯成分の周波数が fu ＋ fm〔Hz〕\nのとき、周波数成分   C  〔Hz〕の3 次の混変調積が生じる。 \nA        B        C \n1 2 次      変調     fd±fu \n2 2 次      抑圧     fd±fm \n3 3 次      変調     fd±fm \n4 3 次      抑圧     fd±fu \n5 5 次      変調     fd±fm \n",
+    "explanation": "正しい。2f1−f2と2f2−f1は三次、希望波は妨害波の変調で混変調を受け、fd±fmの側波帯を生む。",
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/riku-gi-1-kogaku-a.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/riku-gi-1-kogaku-a-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第一級陸上無線技術士試験 2026年1月 無線工学A A8（問題・正答）。解説は過去問AIが独自作成。図・数式語群は原典から切り出し。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-10-15",
+    "choices": {
+      "ア": "1 2 次      変調     fd±fu \n",
+      "イ": "2 2 次      抑圧     fd±fm \n",
+      "ウ": "3 3 次      変調     fd±fm \n",
+      "エ": "4 3 次      抑圧     fd±fu \n",
+      "オ": "5 5 次      変調     fd±fm \n"
+    },
+    "choiceExplanations": {
+      "ア": "誤り。2f1−f2と2f2−f1は三次の相互変調積で、二次ではない。Bの変調は合うが、Cはfd±fuではなくfd±fmである。",
+      "イ": "誤り。Aは三次であり、混変調は希望波搬送波の抑圧ではなく妨害波変調成分による変調である。",
+      "ウ": "正しい。2f1−f2と2f2−f1は三次、希望波は妨害波の変調で混変調を受け、fd±fmの側波帯を生む。",
+      "エ": "誤り。三次は合うが、Bは抑圧でなく変調、Cはfd±fuでなくfd±fmである。",
+      "オ": "誤り。Aは五次でなく三次である。B・Cが合ってもAが違う。"
+    },
+    "officialAnswerNumber": "3",
+    "answer": "ウ"
+  },
+  {
+    "id": "radio21-riku-tech1-2026-01-engineering-a-q09",
+    "exam": "riku-tech1",
+    "session": "kogaku-a",
+    "year": 2026,
+    "season": "january",
+    "qNumber": 9,
+    "type": "multiple-choice",
+    "category": "無線工学A",
+    "subject": "無線工学A",
+    "topicTags": [
+      "無線工学A"
+    ],
+    "difficulty": 3,
+    "question": "A－9 整流回路のリプル率 γ、電圧変動率 δ 及び整流効率 η を表す式の組合せとして、正しいものを下の番号から選べ。ただし、\n負荷電流に含まれる直流成分を IDC〔A〕、交流成分の実効値を ir〔A〕、無負荷電圧をVo〔V〕、負荷に定格電流を流したときの定\n格電圧をVn〔V〕とする。また、整流回路に供給される交流電力を P1〔W〕、負荷に供給される電力を P2〔W〕とする。 \n \n1 γ ＝ ( ir /IDC )×100〔%〕             δ ＝ {(Vo － Vn )/Vn}×100〔%〕     η ＝ ( P2 /P1 )×100〔%〕 \n2 γ ＝ ( ir /IDC )×100〔%〕             δ ＝ {(Vo － Vn )/Vn}×100〔%〕     η ＝ ( P1 /P2 )×100〔%〕  \n3 γ ＝ ( ir /IDC )×100〔%〕             δ ＝ {(Vo － Vn )/Vo}×100〔%〕     η ＝ ( P1 /P2 )×100〔%〕 \n4 γ ＝ {ir /( ir ＋ IDC )}×100〔%〕        δ ＝ {(Vo － Vn )/Vn}×100〔%〕     η ＝ ( P1 /P2 )×100〔%〕 \n5 γ ＝ {ir /( ir ＋ IDC )}×100〔%〕        δ ＝ {(Vo － Vn )/Vo}×100〔%〕     η ＝ ( P2 /P1 )×100〔%〕 \n",
+    "explanation": "正しい。リプルは交流実効成分/直流成分、電圧変動率は無負荷と定格の差/定格電圧、効率は出力/入力をそれぞれ百分率にする。",
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/riku-gi-1-kogaku-a.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/riku-gi-1-kogaku-a-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第一級陸上無線技術士試験 2026年1月 無線工学A A9（問題・正答）。解説は過去問AIが独自作成。図・数式語群は原典から切り出し。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-10-15",
+    "choices": {
+      "ア": "γ=(ir/IDC)×100〔%〕、δ=((Vo−Vn)/Vn)×100〔%〕、η=(P2/P1)×100〔%〕",
+      "イ": "γ=(ir/IDC)×100〔%〕、δ=((Vo−Vn)/Vn)×100〔%〕、η=(P1/P2)×100〔%〕",
+      "ウ": "γ=(ir/IDC)×100〔%〕、δ=((Vo−Vn)/Vo)×100〔%〕、η=(P1/P2)×100〔%〕",
+      "エ": "γ=(ir/(ir+IDC))×100〔%〕、δ=((Vo−Vn)/Vn)×100〔%〕、η=(P1/P2)×100〔%〕",
+      "オ": "γ=(ir/(ir+IDC))×100〔%〕、δ=((Vo−Vn)/Vo)×100〔%〕、η=(P2/P1)×100〔%〕"
+    },
+    "choiceExplanations": {
+      "ア": "正しい。リプルは交流実効成分/直流成分、電圧変動率は無負荷と定格の差/定格電圧、効率は出力/入力をそれぞれ百分率にする。",
+      "イ": "誤り。ηは負荷へ供給したP2を交流入力P1で割る。P1/P2は逆数である。",
+      "ウ": "誤り。δの基準は定格負荷時電圧VnでありVoではない。さらにηもP1/P2と逆である。",
+      "エ": "誤り。γの分母は直流成分IDCでありir+IDCではない。ηも出力/入力が逆である。",
+      "オ": "誤り。η=P2/P1だけは正しいが、γの分母とδの分母はそれぞれIDC、Vnでなければならない。"
+    },
+    "officialAnswerNumber": "1",
+    "answer": "ア"
+  },
+  {
+    "id": "radio21-riku-tech1-2026-01-engineering-a-q10",
+    "exam": "riku-tech1",
+    "session": "kogaku-a",
+    "year": 2026,
+    "season": "january",
+    "qNumber": 10,
+    "type": "multiple-choice",
+    "category": "無線工学A",
+    "subject": "無線工学A",
+    "topicTags": [
+      "無線工学A"
+    ],
+    "difficulty": 3,
+    "question": " \n \n \n \n \n \n \n \n \n \n \n \n \nA                B         C \n1 夏至又は冬至     90 分     短く \n2 夏至又は冬至     70 分     長く \n3 春分及び秋分     90 分     短く \n4 春分及び秋分     70 分     長く \n5 春分及び秋分     70 分     短く \n \nA－10 次の記述は、対地静止衛星軌道における通信衛星の食等について述べたものである。    内に入れるべき字句の正しい組\n合せを下の番号から選べ。なお、同じ記号の     内には、同じ字句が入るものとする。 \n \n(1) 衛星の主電力は、太陽電池から供給される。静止衛星では、日照時に太陽電池から衛星搭載機器に電力が供給される\nが、 A  の日を中心にして前後で 約1 箇月の間は、1 日に最長  B  程度、衛星が地球の陰に隠れる食が発生するた\nめ、太陽電池は発電ができなくなる。 \n(2) また、 A  の日とその前後に地球局アンテナと通信衛星の延長線上\nを太陽が通過することで通信品質が劣化する太陽雑音干渉は、一般的に\nアンテナ径が大きいほど干渉量が大きく、発生時間は  C  なる。 \n \n",
+    "explanation": "正しい。春分・秋分前後に衛星食と太陽雑音が起こり、最長約70分の食、アンテナ径増大で太陽横断時間は短くなる。",
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/riku-gi-1-kogaku-a.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/riku-gi-1-kogaku-a-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第一級陸上無線技術士試験 2026年1月 無線工学A A10（問題・正答）。解説は過去問AIが独自作成。図・数式語群は原典から切り出し。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-10-15",
+    "imageUrls": [
+      "/images/questions/riku-tech1/radio21-riku-tech1-2026-01-engineering-a-q10-original.png"
+    ],
+    "imageAltTexts": [
+      "公式原問 A10 の図・数式・番号付き語群（原典配置）"
+    ],
+    "choices": {
+      "ア": "夏至又は冬至／90分／短く",
+      "イ": "夏至又は冬至／70分／長く",
+      "ウ": "春分及び秋分／90分／短く",
+      "エ": "春分及び秋分／70分／長く",
+      "オ": "春分及び秋分／70分／短く"
+    },
+    "choiceExplanations": {
+      "ア": "誤り。静止衛星食と地球局の太陽雑音干渉は春分・秋分のころに生じ、夏至・冬至ではない。最長食時間も約70分。",
+      "イ": "誤り。70分は合うが時期は春分・秋分であり、大口径アンテナほど太陽がビームを横切る時間は短くなる。",
+      "ウ": "誤り。時期と短くなる点は合うが、最長食時間は約70分で90分ではない。",
+      "エ": "誤り。時期と70分は合うが、アンテナ径が大きいほどビーム幅が狭くなるため干渉時間は長くでなく短い。",
+      "オ": "正しい。春分・秋分前後に衛星食と太陽雑音が起こり、最長約70分の食、アンテナ径増大で太陽横断時間は短くなる。"
+    },
+    "officialAnswerNumber": "5",
+    "answer": "オ"
+  },
+  {
+    "id": "radio21-riku-tech1-2026-01-engineering-a-q11",
+    "exam": "riku-tech1",
+    "session": "kogaku-a",
+    "year": 2026,
+    "season": "january",
+    "qNumber": 11,
+    "type": "multiple-choice",
+    "category": "無線工学A",
+    "subject": "無線工学A",
+    "topicTags": [
+      "無線工学A"
+    ],
+    "difficulty": 3,
+    "question": " \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \nA－11 次の記述は、航法援助施設や着陸用援助施設等において一般的に用いられている航空用無線施設について述べたものであ\nる。このうち誤っているものを下の番号から選べ。 \n \n1 GBAS(Ground-Based Augmentation System)は、地上施設からGPS の測位精度や完全性を向上させる補強信号や最終進入降\n下経路信号等をUHF 帯で送信することで、GPS による空港への精密進入を補助する。 \n2 SBAS(Satellite-Based Augmentation System)は、衛星からディファレンシャル補正情報等のGPS の補強信号を放送する \nことで、航空路からターミナル進入フェーズまで広い範囲にわたって測位精度を向上させる。 \n3 DME(Distance Measuring Equipment)は、航空機から発射されたパルス（質問信号）に対して、地上局が異なる周波数の \nパルス（応答信号）を航空機に送り返すことで、信号の往復に要した時間により航空機と地上局間の距離を測定する。 \n4 ILS(Instrument Landing System)は、VHF 帯の電波により滑走路の中心線の延長上からの水平方向のずれの情報を与える \nローカライザー、UHF 帯の電波により設定された進入角からの垂直方向のずれの情報を与えるグライド・パス及びVHF 帯の \n電波により滑走路進入端からの距離の情報を与えるマーカ・ビーコンで構成され、最終進入中の航空機に滑走路に対する正\n確な進入経路を示す。 \n5 マルチラテレーションシステムは、航空機のトランスポンダから送信される信号を3 カ所以上の受信局で受信し、受信時\n刻の差から航空機の位置を算出する監視システムで、飛行場面監視においては空港面探知レーダーと比べてブラインドエリ\nアが解消される。 \n",
+    "explanation": "誤り。GBASの地上からの補強・進入情報はVHF帯のデータ放送で送られ、設問のUHF帯という点が違う。",
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/riku-gi-1-kogaku-a.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/riku-gi-1-kogaku-a-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第一級陸上無線技術士試験 2026年1月 無線工学A A11（問題・正答）。解説は過去問AIが独自作成。図・数式語群は原典から切り出し。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-10-15",
+    "choices": {
+      "ア": " \n1 GBAS(Ground-Based Augmentation System)は、地上施設からGPS の測位精度や完全性を向上させる補強信号や最終進入降\n下経路信号等をUHF 帯で送信することで、GPS による空港への精密進入を補助する。 \n",
+      "イ": "2 SBAS(Satellite-Based Augmentation System)は、衛星からディファレンシャル補正情報等のGPS の補強信号を放送する \nことで、航空路からターミナル進入フェーズまで広い範囲にわたって測位精度を向上させる。 \n",
+      "ウ": "3 DME(Distance Measuring Equipment)は、航空機から発射されたパルス（質問信号）に対して、地上局が異なる周波数の \nパルス（応答信号）を航空機に送り返すことで、信号の往復に要した時間により航空機と地上局間の距離を測定する。 \n",
+      "エ": "4 ILS(Instrument Landing System)は、VHF 帯の電波により滑走路の中心線の延長上からの水平方向のずれの情報を与える \nローカライザー、UHF 帯の電波により設定された進入角からの垂直方向のずれの情報を与えるグライド・パス及びVHF 帯の \n電波により滑走路進入端からの距離の情報を与えるマーカ・ビーコンで構成され、最終進入中の航空機に滑走路に対する正\n確な進入経路を示す。 \n",
+      "オ": "5 マルチラテレーションシステムは、航空機のトランスポンダから送信される信号を3 カ所以上の受信局で受信し、受信時\n刻の差から航空機の位置を算出する監視システムで、飛行場面監視においては空港面探知レーダーと比べてブラインドエリ\nアが解消される。 \n"
+    },
+    "choiceExplanations": {
+      "ア": "誤り。GBASの地上からの補強・進入情報はVHF帯のデータ放送で送られ、設問のUHF帯という点が違う。",
+      "イ": "正しい。SBASは衛星を経由して広域の測位補強情報を配信する。",
+      "ウ": "正しい。DMEは質問と異なる周波数の応答パルスの往復時間から距離を求め、地上局の応答遅延を考慮する。",
+      "エ": "正しい。ILSのローカライザー、グライドパス、マーカービーコンはそれぞれ滑走路方向・進入角・通過位置の情報を与える。",
+      "オ": "正しい。複数受信点の到達時刻差で航空機位置を求め、地表面監視の見通し障害を補える。"
+    },
+    "officialAnswerNumber": "1",
+    "answer": "ア"
+  },
+  {
+    "id": "radio21-riku-tech1-2026-01-engineering-a-q12",
+    "exam": "riku-tech1",
+    "session": "kogaku-a",
+    "year": 2026,
+    "season": "january",
+    "qNumber": 12,
+    "type": "multiple-choice",
+    "category": "無線工学A",
+    "subject": "無線工学A",
+    "topicTags": [
+      "無線工学A"
+    ],
+    "difficulty": 3,
+    "question": " \n \n \n \n \n \n \n \n \n \n \n \nA－12 図に示すように、ドプラレーダーを用いて移動体を前方30〔°〕の方向から測定したときのドプラ周波数が、0.8〔kHz〕で\nあった。この移動体の移動方向の速度の値として、最も近いものを下の番号から選べ。ただし、レーダーの周波数は10〔GHz〕\nとし、cos 30〔°〕＝ 0.9 とする。 \n \n1 140〔km/h〕 \n2 108〔km/h〕 \n3 48〔km/h〕 \n4 42〔km/h〕 \n5 40〔km/h〕 \n移動体\n移動方向\n30〔°〕\nレーダー \n",
+    "explanation": "正しい。v=fd c/(2f cos30°)=13.33 m/s≈48 km/h。",
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/riku-gi-1-kogaku-a.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/riku-gi-1-kogaku-a-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第一級陸上無線技術士試験 2026年1月 無線工学A A12（問題・正答）。解説は過去問AIが独自作成。図・数式語群は原典から切り出し。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-10-15",
+    "imageUrls": [
+      "/images/questions/riku-tech1/radio21-riku-tech1-2026-01-engineering-a-q12-original.png"
+    ],
+    "imageAltTexts": [
+      "公式原問 A12 の図・数式・番号付き語群（原典配置）"
+    ],
+    "choices": {
+      "ア": "140〔km/h〕",
+      "イ": "108〔km/h〕",
+      "ウ": "48〔km/h〕",
+      "エ": "42〔km/h〕",
+      "オ": "40〔km/h〕"
+    },
+    "choiceExplanations": {
+      "ア": "誤り。往復ドプラ式fd=2vf cos30°/cで速度を解くと約48 km/hで、140 km/hではない。",
+      "イ": "誤り。周波数10 GHz、fd=0.8 kHz、cos30°=0.9を使うと約48 km/h。",
+      "ウ": "正しい。v=fd c/(2f cos30°)=13.33 m/s≈48 km/h。",
+      "エ": "誤り。v≈13.33 m/sを時速へ換算すると48 km/hで、42 km/hではない。",
+      "オ": "誤り。指定のcos30°=0.9と往復係数2を適用した値は48 km/hである。"
+    },
+    "officialAnswerNumber": "3",
+    "answer": "ウ"
+  },
+  {
+    "id": "radio21-riku-tech1-2026-01-engineering-a-q13",
+    "exam": "riku-tech1",
+    "session": "kogaku-a",
+    "year": 2026,
+    "season": "january",
+    "qNumber": 13,
+    "type": "multiple-choice",
+    "category": "無線工学A",
+    "subject": "無線工学A",
+    "topicTags": [
+      "無線工学A"
+    ],
+    "difficulty": 3,
+    "question": "A－13 次の記述は、デジタル無線方式に用いられるフェージング補償(対策)技術の一般的な特徴について述べたものである。この\nうち誤っているものを下の番号から選べ。 \n \n1 スペースダイバーシティ及び周波数ダイバーシティなどのダイバーシティ方式は、互いにフェージングの相関が低い複数\nのブランチを用意し、その出力を選択又は合成することによってフェージングの影響を軽減する。 \n2 フェージングにより発生する誤りはある程度バースト性をもっているので、バースト誤りに強いBCH 符号の利用や、畳み\n込みとランダム誤り訂正を組み合わせてバースト誤りをランダム化し誤り訂正することが効果的である。 \n3 信号列をいくつかの信号列に分けて複数の副搬送波で伝送するマルチキャリア伝送方式は、波形ひずみの影響が強いマル\nチパスフェージングに対して効果的である。 \n4 周波数領域の等化を行う代表的な可変共振形自動等化器は、フェージングによる振幅及び遅延周波数特性を共振回路によ\nり補償するものであるため、例えば反射波の方が直接波より強い場合などでは原理的に補償できない場合が生じる。 \n5 トランスバーサル自動等化器などによる時間領域の等化は、符号間干渉の軽減に効果があるが、改善できる振幅や遅延ひ\nずみは等化に使用するタップ数に依存する。 \n",
+    "explanation": "誤り。BCH符号をバースト誤りに強い符号とする点が不適切。連続誤りをインターリーブで分散し、ランダム誤り訂正符号に渡すのが基本である。",
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/riku-gi-1-kogaku-a.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/riku-gi-1-kogaku-a-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第一級陸上無線技術士試験 2026年1月 無線工学A A13（問題・正答）。解説は過去問AIが独自作成。図・数式語群は原典から切り出し。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-10-15",
+    "choices": {
+      "ア": " \n1 スペースダイバーシティ及び周波数ダイバーシティなどのダイバーシティ方式は、互いにフェージングの相関が低い複数\nのブランチを用意し、その出力を選択又は合成することによってフェージングの影響を軽減する。 \n",
+      "イ": "2 フェージングにより発生する誤りはある程度バースト性をもっているので、バースト誤りに強いBCH 符号の利用や、畳み\n込みとランダム誤り訂正を組み合わせてバースト誤りをランダム化し誤り訂正することが効果的である。 \n",
+      "ウ": "3 信号列をいくつかの信号列に分けて複数の副搬送波で伝送するマルチキャリア伝送方式は、波形ひずみの影響が強いマル\nチパスフェージングに対して効果的である。 \n",
+      "エ": "4 周波数領域の等化を行う代表的な可変共振形自動等化器は、フェージングによる振幅及び遅延周波数特性を共振回路によ\nり補償するものであるため、例えば反射波の方が直接波より強い場合などでは原理的に補償できない場合が生じる。 \n",
+      "オ": "5 トランスバーサル自動等化器などによる時間領域の等化は、符号間干渉の軽減に効果があるが、改善できる振幅や遅延ひ\nずみは等化に使用するタップ数に依存する。 \n"
+    },
+    "choiceExplanations": {
+      "ア": "正しい。相関の低い空間・周波数ブランチから選択・合成すると同時劣化の確率を下げられる。",
+      "イ": "誤り。BCH符号をバースト誤りに強い符号とする点が不適切。連続誤りをインターリーブで分散し、ランダム誤り訂正符号に渡すのが基本である。",
+      "ウ": "正しい。信号を複数副搬送波へ分けると各搬送波の帯域を狭くでき、周波数選択性の影響を軽減する。",
+      "エ": "正しい。可変共振形の周波数領域等化では、直接波より反射波が強い深いひずみなど補償困難な状態がある。",
+      "オ": "正しい。トランスバーサル等化器は遅延タップで符号間干渉を補償し、扱える遅延範囲はタップ数に制約される。"
+    },
+    "officialAnswerNumber": "2",
+    "answer": "イ"
+  },
+  {
+    "id": "radio21-riku-tech1-2026-01-engineering-a-q14",
+    "exam": "riku-tech1",
+    "session": "kogaku-a",
+    "year": 2026,
+    "season": "january",
+    "qNumber": 14,
+    "type": "multiple-choice",
+    "category": "無線工学A",
+    "subject": "無線工学A",
+    "topicTags": [
+      "無線工学A"
+    ],
+    "difficulty": 3,
+    "question": " \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \nA－14 次の記述は、デジタル信号処理等で用いられる移動平均フィルタの特性等について述べたものである。    内に入れるべ\nき字句の正しい組合せを下の番号から選べ。ただし、n は整数、ω を正規化角周波数、2 cos(□) = □□□+ □□□□ とする。 \n \n(1) 移動平均フィルタはインパルス応答が有限長のFIR(Finite Impulse Response)フィルタの一種であり、一般的に  A  \nフィルタの特性を持っている。 \n(2) 図に示す3 点移動平均フィルタにおいて、インパルス応答をh(n)＝1/3,n＝0,1,2 {h(n)＝0,n<0,n>2}、入力信号をx(n)と\nすると、出力信号y(n)はインパルス応答の畳み込み和による差分方程式として①で表せる。 \n□(□) = □1\n3 □(□−□) =\n□\n□□□\n1\n3 □(□) + 1\n3 □(□−1) + 1\n3 □(□−2) = 1\n3 {□(□) + □(□−1) + □(□−2)}・・・① \n(3) ①をz 変換すると②となるため、伝達関数□(□)は③となり、□= □□□とすることで周波数特性□□□□□□が求められる。 \n□(□) = 1\n3 {□(□) + □(□)□□□+ □(□)□□□} = 1\n3 (1 + □□□+ □□□)□(□)・・・② \n□(□) = □(□)\n□(□) = 1\n3 (1 + □□□+ □□□)・・・③  \n(4) □□□□□□を極座標表現すると□□(□□□)□□□□(□)であり、振幅特性 □□(□□□)□=  B  、位相特性 □(□) =  C  となる。 \n \n \nx(n) \ny(n)\nh(0) \nh(1)\nh(2) \n:遅延素子\n:乗算器\n(定数倍)\n:加算器\nA           B              C \n1 ローパス    □1+2 cos(□)\n3\n□      −□  \n2 ローパス    □1+2 cos(□)\n3\n□      +□  \n3 ローパス    □1−2 cos(□)\n3\n□      +□  \n4 ハイパス    □1−2 cos(□)\n3\n□      −□ \n5 ハイパス    □1−2 cos(□)\n3\n□      +□  \n＋\nD\nD\nD\n＋\n＋\n＋\n",
+    "explanation": "正しい。H(e^{jω})=(1+e^{-jω}+e^{-j2ω})/3=e^{-jω}(1+2cosω)/3。したがって低域通過、振幅は絶対値、位相は線形項−ω（実係数の符号反転部を除く）。",
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/riku-gi-1-kogaku-a.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/riku-gi-1-kogaku-a-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第一級陸上無線技術士試験 2026年1月 無線工学A A14（問題・正答）。解説は過去問AIが独自作成。図・数式語群は原典から切り出し。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-10-15",
+    "imageUrls": [
+      "/images/questions/riku-tech1/radio21-riku-tech1-2026-01-engineering-a-q14-original.png"
+    ],
+    "imageAltTexts": [
+      "公式原問 A14 の図・数式・番号付き語群（原典配置）"
+    ],
+    "choices": {
+      "ア": "A=ローパス、B=|(1+2cosω)/3|、C=−ω",
+      "イ": "A=ローパス、B=|(1+2cosω)/3|、C=+ω",
+      "ウ": "A=ローパス、B=|(1−2cosω)/3|、C=+ω",
+      "エ": "A=ハイパス、B=|(1−2cosω)/3|、C=−ω",
+      "オ": "A=ハイパス、B=|(1−2cosω)/3|、C=+ω"
+    },
+    "choiceExplanations": {
+      "ア": "正しい。H(e^{jω})=(1+e^{-jω}+e^{-j2ω})/3=e^{-jω}(1+2cosω)/3。したがって低域通過、振幅は絶対値、位相は線形項−ω（実係数の符号反転部を除く）。",
+      "イ": "誤り。遅延要素e^{-jω}の位相は+ωでなく−ω。",
+      "ウ": "誤り。3点の和は1+2cosωで、1−2cosωにはならない。",
+      "エ": "誤り。平均化は低域通過であり、振幅のcos項も+。",
+      "オ": "誤り。低域通過・+2cosω・位相−ωが正しい。"
+    },
+    "officialAnswerNumber": "1",
+    "answer": "ア"
+  },
+  {
+    "id": "radio21-riku-tech1-2026-01-engineering-a-q15",
+    "exam": "riku-tech1",
+    "session": "kogaku-a",
+    "year": 2026,
+    "season": "january",
+    "qNumber": 15,
+    "type": "multiple-choice",
+    "category": "無線工学A",
+    "subject": "無線工学A",
+    "topicTags": [
+      "無線工学A"
+    ],
+    "difficulty": 3,
+    "question": " \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \nA               B         C \n1 \n□□□(□□□P)\n□□ □P\n      5 □P       狭く \n2 \n□□□ (□□ □P)\n□□ □P\n      5 □P       広く \n3 \n□□□ (□□ □P)\n□□ □P\n      5/□P      狭く \n4 \n□□ □P\n□□□ (□□ □P)      5 □P       広く \n5 \n□□ □P\n□□□(□□□P)      5/□P      狭く \n矩形波パルス列\n0\nE\n振幅〔V〕\n時間〔s〕\n0 0  f0  2f0 3f0 4f0 5f0\nG( f  )\n周波数〔Hz〕\n振幅スペクトル \nfz\n2E TP/T \n振幅〔V〕\nE TP/T\nA－15 次の記述は、図に示す矩形波パルス列とその振幅スペクトルについて述べたものである。    内に入れるべき字句の正し\nい組合せを下の番号から選べ。ただし、矩形波パルスのパルス幅をTP〔s〕、振幅をE〔V〕、繰返し周期をT〔s〕とする。 \n \n(1) 矩形波パルス列の直流成分はE TP/T〔V〕であり、基本周波数f0＝1/T の整数倍の周波数成分をもつ振幅スペクトルの包\n絡線G( f  )は、周波数をf〔Hz〕として、G( f  )＝(2 E TP/T )×  A 〔V〕で表せる。 \n(2) G( f  )の大きさが最初に零(ヌル点)になる周波数fz が5  f0〔Hz〕のとき、T の値は  B 〔s〕である。 \n(3) TP が同一でT の値を小さくしていくと振幅スペクトルの周波数間隔は  C  なっていく。 \nT\nTP/2\nTP/2\n",
+    "explanation": "正しい。矩形パルス幅Tpのフーリエ包絡線はsinc(πfTp)。最初の零はfz=1/Tp=5/TなのでT=5Tp。Tを小さくすると線間隔1/Tは広がる。",
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/riku-gi-1-kogaku-a.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/riku-gi-1-kogaku-a-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第一級陸上無線技術士試験 2026年1月 無線工学A A15（問題・正答）。解説は過去問AIが独自作成。図・数式語群は原典から切り出し。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-10-15",
+    "imageUrls": [
+      "/images/questions/riku-tech1/radio21-riku-tech1-2026-01-engineering-a-q15-original.png"
+    ],
+    "imageAltTexts": [
+      "公式原問 A15 の図・数式・番号付き語群（原典配置）"
+    ],
+    "choices": {
+      "ア": "A=sin(πfTp)/(πfTp)、B=5Tp、C=狭く",
+      "イ": "A=sin(πfTp)/(πfTp)、B=5Tp、C=広く",
+      "ウ": "A=sin(πfTp)/(πfTp)、B=5/Tp、C=狭く",
+      "エ": "A=πfTp/sin(πfTp)、B=5Tp、C=広く",
+      "オ": "A=πfTp/sin(πfTp)、B=5/Tp、C=狭く"
+    },
+    "choiceExplanations": {
+      "ア": "誤り。包絡線とTは合うが、Tを小さくすればf₀=1/Tが増え周波数間隔は広がる。",
+      "イ": "正しい。矩形パルス幅Tpのフーリエ包絡線はsinc(πfTp)。最初の零はfz=1/Tp=5/TなのでT=5Tp。Tを小さくすると線間隔1/Tは広がる。",
+      "ウ": "誤り。Tの次元は秒であり、5/Tpは逆秒。間隔の向きも逆。",
+      "エ": "誤り。sin(x)/xの逆は零で発散し、実際の包絡線と異なる。",
+      "オ": "誤り。包絡線はsincであり、T=5Tp、間隔は広がる。"
+    },
+    "officialAnswerNumber": "2",
+    "answer": "イ"
+  },
+  {
+    "id": "radio21-riku-tech1-2026-01-engineering-a-q16",
+    "exam": "riku-tech1",
+    "session": "kogaku-a",
+    "year": 2026,
+    "season": "january",
+    "qNumber": 16,
+    "type": "multiple-choice",
+    "category": "無線工学A",
+    "subject": "無線工学A",
+    "topicTags": [
+      "無線工学A"
+    ],
+    "difficulty": 3,
+    "question": "(FA801-5) \n \n \n \n \n \n \n \n \n \nA－16 図に示す構成による受信機の感度測定において、信号源として出力が電力表示(単位:〔dBm〕)の標準信号発生器(SG)を用いて\n測定した結果、SGの出力が －107〔dBm〕であった。このときの「受信機入力電圧」の値として、正しいものを下の番号から選\nべ。ただし、このときの「受信機入力電圧」とは、受信機の入力端における信号源の開放電圧とする。また、SGと受信機間の接\n続損失は無視するものとし、SGの出力インピーダンス及び受信機の入力インピーダンスをそれぞれ50〔Ω〕、log102＝0.3とする。\n \n \n \n \n1 0.5〔μV〕     2 1〔μV〕     3 2〔μV〕     4 3〔μV〕     5 6〔μV〕 \n入力端\n受信機 \nレベル計\n標準信号発生器(SG)\n－107〔dBm〕\n",
+    "explanation": "正しい。P=10^{−107/10}mW≈2×10⁻¹⁴W、50Ω負荷では√(PR)=1μVrms。SGの開放電圧は分圧前なので2μV。",
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/riku-gi-1-kogaku-a.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/riku-gi-1-kogaku-a-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第一級陸上無線技術士試験 2026年1月 無線工学A A16（問題・正答）。解説は過去問AIが独自作成。図・数式語群は原典から切り出し。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-10-15",
+    "imageUrls": [
+      "/images/questions/riku-tech1/radio21-riku-tech1-2026-01-engineering-a-q16-original.png"
+    ],
+    "imageAltTexts": [
+      "公式原問 A16 の図・数式・番号付き語群（原典配置）"
+    ],
+    "choices": {
+      "ア": "0.5〔μV〕",
+      "イ": "1〔μV〕",
+      "ウ": "2〔μV〕",
+      "エ": "3〔μV〕",
+      "オ": "6〔μV〕"
+    },
+    "choiceExplanations": {
+      "ア": "誤り。−107dBmは約2×10⁻¹⁴W、整合50Ωの負荷電圧は約1μVrms、開放電圧はその2倍。",
+      "イ": "誤り。1μVは整合負荷に現れる電圧で、設問の受信機入力電圧はSGの開放電圧。",
+      "ウ": "正しい。P=10^{−107/10}mW≈2×10⁻¹⁴W、50Ω負荷では√(PR)=1μVrms。SGの開放電圧は分圧前なので2μV。",
+      "エ": "誤り。開放電圧は負荷電圧の2倍で約2μV、3μVではない。",
+      "オ": "誤り。整合分圧による電圧比は2であり6μVにならない。"
+    },
+    "officialAnswerNumber": "3",
+    "answer": "ウ"
+  },
+  {
+    "id": "radio21-riku-tech1-2026-01-engineering-a-q17",
+    "exam": "riku-tech1",
+    "session": "kogaku-a",
+    "year": 2026,
+    "season": "january",
+    "qNumber": 17,
+    "type": "multiple-choice",
+    "category": "無線工学A",
+    "subject": "無線工学A",
+    "topicTags": [
+      "無線工学A"
+    ],
+    "difficulty": 3,
+    "question": " \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \nA                B        C \n1 折り返し雑音     低い     低域の周波数成分 \n2 折り返し雑音     低い     高域の周波数成分 \n3 折り返し雑音     高い     低域の周波数成分 \n4 補間雑音         低い     低域の周波数成分 \n5 補間雑音         高い     高域の周波数成分 \nA－17 次の記述は、デジタル通信における標本化に関連する誤差について述べたものである。    内に入れるべき字句の正しい組合せ\nを下の番号から選べ。ただし、標本化回路の入力信号の最高周波数を fO＋Δ f〔Hz〕、標本化周波数を fS〔Hz〕とする。 \n \n(1)  図は、標本化の操作における入力信号、標本化パルス及び標本化された入力信号のスペクトルをそれぞれ示したものであ\nる。この操作は入力信号を変調信号とし、標本化パルスを搬送波としたときの両者の積として振幅変調することに相当する。\n(2) fS〔Hz〕が 2fO〔Hz〕のとき、標本化回路の入力信号の最高周波数が fO〔Hz〕\nを超えると標本化による変調作用によって生じた側帯波が重なりあってしまい \n A  が生じる。fO〔Hz〕を超える周波数成分が残っている場合、図3に示すよ\nうに、その残った周波数成分が fO〔Hz〕を中心として  B  周波数の方へ見\n掛け上折り返された形となって、復調する際に遮断周波数 fO〔Hz〕の理想的な\n低域フィルタ(LPF)を通しても基本波部分のみを取り出すことが不可能となり、\n入力信号が完全には復元できなくなる。 \n(3) また、標本化パルスが理想的なインパルスでなく有限のパルス幅を持つとき、\n受信側でこれを理想的な低域フィルタ(LPF)を通しても入力信号が完全には復元で\nきなくなる。一般的にこの影響をアパーチャ効果とよんでいる。アパーチャ効果が\n生じると、標本化パルス列に含まれるアナログ信号の  C  が減衰する。 \nレ\nベ\nル\n図1  入力信号のスペクトル \n0\nfO    fO＋Δ f \n周波数〔Hz〕\nfS\n2fS\n無限大で\n繰り返す\nレ\nベ\nル\n0\n周波数〔Hz〕\n図2  標本化パルス(インパルス列) \nスペクトル \nfS\n2fS\n無限大\nまで \nレ\nベ\nル\n図3  fS = 2fO で標本化された \n入力信号のスペクトル \n0\nfO\n周波数〔Hz〕\n",
+    "explanation": "正しい。標本化条件に反した帯域外成分が低域へ折り返す。有限幅標本化のsinc形振幅特性により高域成分が減衰する。",
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/riku-gi-1-kogaku-a.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/riku-gi-1-kogaku-a-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第一級陸上無線技術士試験 2026年1月 無線工学A A17（問題・正答）。解説は過去問AIが独自作成。図・数式語群は原典から切り出し。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-10-15",
+    "imageUrls": [
+      "/images/questions/riku-tech1/radio21-riku-tech1-2026-01-engineering-a-q17-original.png"
+    ],
+    "imageAltTexts": [
+      "公式原問 A17 の図・数式・番号付き語群（原典配置）"
+    ],
+    "choices": {
+      "ア": "A=折り返し雑音、B=低い、C=低域の周波数成分",
+      "イ": "A=折り返し雑音、B=低い、C=高域の周波数成分",
+      "ウ": "A=折り返し雑音、B=高い、C=低域の周波数成分",
+      "エ": "A=補間雑音、B=低い、C=低域の周波数成分",
+      "オ": "A=補間雑音、B=高い、C=高域の周波数成分"
+    },
+    "choiceExplanations": {
+      "ア": "誤り。エイリアシングと折返し先は正しいが、有限パルス幅のアパーチャ効果は高域成分を減衰させる。",
+      "イ": "正しい。標本化条件に反した帯域外成分が低域へ折り返す。有限幅標本化のsinc形振幅特性により高域成分が減衰する。",
+      "ウ": "誤り。折り返されるのは低い周波数側、高域減衰も見落としている。",
+      "エ": "誤り。標本化時のスペクトル重畳は折り返し雑音であって補間雑音ではない。",
+      "オ": "誤り。折り返し雑音は低域に現れ、アパーチャ効果は高域減衰だがAとBが違う。"
+    },
+    "officialAnswerNumber": "2",
+    "answer": "イ"
+  },
+  {
+    "id": "radio21-riku-tech1-2026-01-engineering-a-q18",
+    "exam": "riku-tech1",
+    "session": "kogaku-a",
+    "year": 2026,
+    "season": "january",
+    "qNumber": 18,
+    "type": "multiple-choice",
+    "category": "無線工学A",
+    "subject": "無線工学A",
+    "topicTags": [
+      "無線工学A"
+    ],
+    "difficulty": 3,
+    "question": " \n \n \n \n \n \n \n \n \n \nA－18 図の回路に示す抵抗素子R1〔Ω〕及びR2〔Ω〕で構成される抵抗減衰器において、\n減衰量を14〔dB〕にするための抵抗素子R2 の値を表す式として、正しいものを下の\n番号から選べ。ただし、抵抗減衰器の入力端には出力インピーダンスがZ0〔Ω〕の信\n号源、出力端にはZ0〔Ω〕の負荷が接続され、いずれも整合しているものとする。ま\nた、Z0 は純抵抗とし、log102 ＝ 0.3 とする。 \n \n1 21Z0/20〔Ω〕     2 8Z0/15〔Ω〕     3 5Z0/12〔Ω〕     4 3Z0/2〔Ω〕     5 2Z0/3〔Ω〕 \n \nR1  \nR2 \n抵抗減衰器 \nR2  \n",
+    "explanation": "正しい。14dB≈20log₁₀5より電圧比K≈5。整合π形の両シャント抵抗R₂=Z₀(K+1)/(K−1)=3Z₀/2。",
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/riku-gi-1-kogaku-a.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/riku-gi-1-kogaku-a-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第一級陸上無線技術士試験 2026年1月 無線工学A A18（問題・正答）。解説は過去問AIが独自作成。図・数式語群は原典から切り出し。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-10-15",
+    "imageUrls": [
+      "/images/questions/riku-tech1/radio21-riku-tech1-2026-01-engineering-a-q18-original.png"
+    ],
+    "imageAltTexts": [
+      "公式原問 A18 の図・数式・番号付き語群（原典配置）"
+    ],
+    "choices": {
+      "ア": "21Z₀/20〔Ω〕",
+      "イ": "8Z₀/15〔Ω〕",
+      "ウ": "5Z₀/12〔Ω〕",
+      "エ": "3Z₀/2〔Ω〕",
+      "オ": "2Z₀/3〔Ω〕"
+    },
+    "choiceExplanations": {
+      "ア": "誤り。14dBの電圧減衰比は約5で、整合π形減衰器のシャント抵抗は(5+1)/(5−1)Z₀=1.5Z₀。",
+      "イ": "誤り。0.533Z₀ではない。必要なシャント抵抗は3Z₀/2。",
+      "ウ": "誤り。5Z₀/12は14dBの整合条件に合わない。",
+      "エ": "正しい。14dB≈20log₁₀5より電圧比K≈5。整合π形の両シャント抵抗R₂=Z₀(K+1)/(K−1)=3Z₀/2。",
+      "オ": "誤り。2Z₀/3は正値の逆数側で、必要なのは3Z₀/2。"
+    },
+    "officialAnswerNumber": "4",
+    "answer": "エ"
+  },
+  {
+    "id": "radio21-riku-tech1-2026-01-engineering-a-q19",
+    "exam": "riku-tech1",
+    "session": "kogaku-a",
+    "year": 2026,
+    "season": "january",
+    "qNumber": 19,
+    "type": "multiple-choice",
+    "category": "無線工学A",
+    "subject": "無線工学A",
+    "topicTags": [
+      "無線工学A"
+    ],
+    "difficulty": 3,
+    "question": "A－19 直接カウント方式及びレシプロカルカウント方式による周波数計の測定原理等に関する次の記述のうち、誤っているものを\n下の番号から選べ。 \n \n1 レシプロカルカウント方式による周波数計は、入力信号(被測定信号)の周期を測定し、その逆数から周波数を求めるもので\nある。 \n2 レシプロカルカウント方式は、測定時間が一定の場合、周波数計のクロック(基準信号)の周波数を高くすれば、±1 カウント\n誤差による分解能を向上させることができる。 \n3 レシプロカルカウント方式は、測定時間が一定の場合、測定する入力信号(被測定信号)の周波数に関わらず有効桁数は一定で\nある。 \n4 直接カウント方式による周波数計の±1 カウント誤差は、ゲートに入力されるパルス(被測定信号)とゲート信号の位相関係\nが一定でないために生じる。 \n5 直接カウント方式による周波数計の±1 カウント誤差による分解能は、ゲート時間が短く、測定する入力信号(被測定信号)\nの周波数が低いほど良くなる。 \n",
+    "explanation": "誤り。直接方式は入力パルス数N≈fTを数えるため、相対±1/Nはゲート時間Tが長く周波数fが高いほど小さい。短いゲート・低い周波数では悪化する。",
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/riku-gi-1-kogaku-a.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/riku-gi-1-kogaku-a-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第一級陸上無線技術士試験 2026年1月 無線工学A A19（問題・正答）。解説は過去問AIが独自作成。図・数式語群は原典から切り出し。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-10-15",
+    "choices": {
+      "ア": "レシプロカル方式は周期の逆数から周波数を求める",
+      "イ": "基準クロックを高くすると分解能が向上",
+      "ウ": "一定測定時間では周波数によらず有効桁数が一定",
+      "エ": "直接方式の±1は信号とゲート位相の不定から生じる",
+      "オ": "直接方式は短いゲート・低い周波数ほど分解能がよい"
+    },
+    "choiceExplanations": {
+      "ア": "正しい記述。入力信号の周期を時間基準で測り、その逆数を周波数とする。",
+      "イ": "正しい記述。基準クロックを高くすると同じ時間をより細かいクロック刻みで数えられ、±1カウントの時間誤差が小さくなる。",
+      "ウ": "正しい記述。一定ゲート時間を用いるレシプロカル方式では周期側の基準クロック計数で相対精度を保てる。",
+      "エ": "正しい記述。直接方式はゲートの開閉境界と入力パルスの位相が一致するとは限らず、計数に±1の不確かさが生じる。",
+      "オ": "誤り。直接方式は入力パルス数N≈fTを数えるため、相対±1/Nはゲート時間Tが長く周波数fが高いほど小さい。短いゲート・低い周波数では悪化する。"
+    },
+    "officialAnswerNumber": "5",
+    "answer": "オ"
+  },
+  {
+    "id": "radio21-riku-tech1-2026-01-engineering-a-q20",
+    "exam": "riku-tech1",
+    "session": "kogaku-a",
+    "year": 2026,
+    "season": "january",
+    "qNumber": 20,
+    "type": "multiple-choice",
+    "category": "無線工学A",
+    "subject": "無線工学A",
+    "topicTags": [
+      "無線工学A"
+    ],
+    "difficulty": 3,
+    "question": "(FA801-6) \n \n \n \n \n \n \n \nA－20 オシロスコープを用いて、真の立上がり時間 4〔ns〕のパルス波形の立上がり時間を測定したところ 5〔ns〕が得られた。\n当該オシロスコープの立上がり時間として、最も近いものを下の番号から選べ。 \n \n1 6〔ns〕     2 5〔ns〕     3 4〔ns〕     4 3〔ns〕     5 1〔ns〕 \n \n",
+    "explanation": "正しい。t測定²≈t信号²+t装置²より t装置=√(5²−4²)=3 ns。",
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/riku-gi-1-kogaku-a.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/riku-gi-1-kogaku-a-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第一級陸上無線技術士試験 2026年1月 無線工学A A20（問題・正答）。解説は過去問AIが独自作成。図・数式語群は原典から切り出し。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-10-15",
+    "choices": {
+      "ア": "6〔ns〕",
+      "イ": "5〔ns〕",
+      "ウ": "4〔ns〕",
+      "エ": "3〔ns〕",
+      "オ": "1〔ns〕"
+    },
+    "choiceExplanations": {
+      "ア": "誤り。測定立上がり時間の二乗は信号とオシロスコープの立上がり時間の二乗和で、装置分は√(25−16)=3 ns。",
+      "イ": "誤り。5 nsは観測された合成値で、装置固有の立上がり時間ではない。",
+      "ウ": "誤り。4 nsは真の信号側の立上がり時間であり装置側ではない。",
+      "エ": "正しい。t測定²≈t信号²+t装置²より t装置=√(5²−4²)=3 ns。",
+      "オ": "誤り。真値4 nsと測定値5 nsの単純差1 nsではなく二乗差の平方根を使う。"
+    },
+    "officialAnswerNumber": "4",
+    "answer": "エ"
+  },
+  {
+    "id": "radio21-riku-tech1-2026-01-engineering-a-q21",
+    "exam": "riku-tech1",
+    "session": "kogaku-a",
+    "year": 2026,
+    "season": "january",
+    "qNumber": 21,
+    "type": "native-b",
+    "category": "無線工学A",
+    "subject": "無線工学A",
+    "topicTags": [
+      "無線工学A"
+    ],
+    "difficulty": 3,
+    "question": "B－1 次の記述は、対地静止衛星を用いた通信システムの多元接続方式について述べたものである。    内に入れるべき字句を\n下の番号から選べ。 \n \n(1) 時分割多元接続(TDMA)方式は、時間を分割して各地球局に回線を割り当てる方式である。各地球局から送られる送信信号\nが衛星上で重ならないように、各地球局の  ア  を制御する必要がある。 \n(2) 周波数分割多元接続(FDMA)方式は、周波数を分割して各地球局に回線を割り当てる方式である。送信地球局では、割り当\nてられた周波数を用いて信号を伝送するので、通常、隣接するチャネル間の干渉が生じないように、 イ  設ける。 \n(3) 符号分割多元接続(CDMA)方式は、同じ周波数帯を用いて各地球局に特定の符号列を割り当てる方式である。送信地球局で\nは、この割り当てられた符号列で変調し、送信する。受信地球局では、送信側と  ウ  符号列で受信信号との相関をと\nり、自局向けの信号を取り出す。 \n(4) SCPC方式は、送出する一つのチャネルに対して  エ  の搬送波を割り当て、一つの中継器の帯域内に複数の異なる周波\n数の搬送波を等間隔に並べる方式で、 オ  一つである。 \n \n1 周波数             2 ガードタイムを     3 同じ       4 一つ      5 時分割多元接続(TDMA)方式の \n6 送信タイミング     7 ガードバンドを     8 異なる     9 複数     10 周波数分割多元接続(FDMA)方式の",
+    "explanation": "各地球局の送信タイミングを調整すると衛星でTDMAバーストが重ならない。\n\nFDMAでは隣接チャネルの周波数間にガードバンドを設けて干渉を防ぐ。\n\nCDMAの受信側は送信側と同じ拡散符号で相関を取るのでウに適合する。\n\nSCPCはSingle Channel Per Carrierであり、1チャネル当たり一つの搬送波を使う。\n\n複数の異なる周波数の搬送波を並べるSCPCはFDMA方式の一つ。",
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/riku-gi-1-kogaku-a.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/riku-gi-1-kogaku-a-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第一級陸上無線技術士試験 2026年1月 無線工学A B1（問題・正答）。解説は過去問AIが独自作成。図・数式語群は原典から切り出し。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-10-15",
+    "imageUrls": [
+      "/images/questions/riku-tech1/radio21-riku-tech1-2026-01-engineering-a-q21-original.png"
+    ],
+    "imageAltTexts": [
+      "公式原問 B1 の図・数式・番号付き語群（原典配置）"
+    ],
+    "nativeB": {
+      "mode": "shared-bank",
+      "candidates": [
+        {
+          "id": "1",
+          "label": "周波数",
+          "explanation": "周波数の割当はFDMAの軸であり、TDMAで衛星到着時にバーストを重ねない制御対象ではない。"
+        },
+        {
+          "id": "2",
+          "label": "ガードタイムを",
+          "explanation": "ガードタイムはTDMAの時間境界で使う。ここはFDMAの隣接周波数干渉を避ける箇所。"
+        },
+        {
+          "id": "3",
+          "label": "同じ",
+          "explanation": "CDMAの受信側は送信側と同じ拡散符号で相関を取るのでウに適合する。"
+        },
+        {
+          "id": "4",
+          "label": "一つ",
+          "explanation": "SCPCはSingle Channel Per Carrierであり、1チャネル当たり一つの搬送波を使う。"
+        },
+        {
+          "id": "5",
+          "label": "時分割多元接続(TDMA)方式の",
+          "explanation": "SCPCは時間分割の一方式ではなく、周波数の異なる搬送波を並べる方式。"
+        },
+        {
+          "id": "6",
+          "label": "送信タイミング",
+          "explanation": "各地球局の送信タイミングを調整すると衛星でTDMAバーストが重ならない。"
+        },
+        {
+          "id": "7",
+          "label": "ガードバンドを",
+          "explanation": "FDMAでは隣接チャネルの周波数間にガードバンドを設けて干渉を防ぐ。"
+        },
+        {
+          "id": "8",
+          "label": "異なる",
+          "explanation": "異なる符号では自局向け信号との相関が得られないためウには入らない。"
+        },
+        {
+          "id": "9",
+          "label": "複数",
+          "explanation": "一つのチャネルに複数の搬送波を割り当てる説明はSCPCと逆。"
+        },
+        {
+          "id": "10",
+          "label": "周波数分割多元接続(FDMA)方式の",
+          "explanation": "複数の異なる周波数の搬送波を並べるSCPCはFDMA方式の一つ。"
+        }
+      ],
+      "slots": [
+        {
+          "label": "ア",
+          "answer": "6",
+          "explanation": "各地球局の送信タイミングを調整すると衛星でTDMAバーストが重ならない。",
+          "candidateExplanations": {
+            "1": "原問のアは(1) TDMAで衛星上の送信バーストを重ねないため、各地球局が制御する量。送信タイミングを合わせることで到着時間が衝突しない。候補1「周波数」は周波数という量であり、TDMAの時刻制御やガード帯域・符号関係・搬送波数・方式分類そのものではない。この空欄には適合しない。",
+            "2": "原問のアは(1) TDMAで衛星上の送信バーストを重ねないため、各地球局が制御する量。送信タイミングを合わせることで到着時間が衝突しない。候補2「ガードタイムを」はガードタイムというTDMAの時間的な保護間隔であり、FDMAの周波数的な保護帯域とは異なる。この空欄には適合しない。",
+            "3": "原問のアは(1) TDMAで衛星上の送信バーストを重ねないため、各地球局が制御する量。送信タイミングを合わせることで到着時間が衝突しない。候補3「同じ」は送受信側で同一符号を用いるという関係であり、CDMAの相関に適合する。この空欄には適合しない。",
+            "4": "原問のアは(1) TDMAで衛星上の送信バーストを重ねないため、各地球局が制御する量。送信タイミングを合わせることで到着時間が衝突しない。候補4「一つ」は搬送波数が一つという数であり、SCPCの一チャネル一搬送波に適合する。この空欄には適合しない。",
+            "5": "原問のアは(1) TDMAで衛星上の送信バーストを重ねないため、各地球局が制御する量。送信タイミングを合わせることで到着時間が衝突しない。候補5「時分割多元接続(TDMA)方式の」はTDMA方式への分類であり、SCPCの周波数分割とは異なる。この空欄には適合しない。",
+            "6": "原問のアは(1) TDMAで衛星上の送信バーストを重ねないため、各地球局が制御する量。送信タイミングを合わせることで到着時間が衝突しない。候補6「送信タイミング」は送信タイミングという時間量であり、TDMAバーストを非衝突にする制御対象に適合する。適合する。",
+            "7": "原問のアは(1) TDMAで衛星上の送信バーストを重ねないため、各地球局が制御する量。送信タイミングを合わせることで到着時間が衝突しない。候補7「ガードバンドを」はガードバンドという周波数帯域の間隔であり、FDMAの隣接干渉防止に適合する。この空欄には適合しない。",
+            "8": "原問のアは(1) TDMAで衛星上の送信バーストを重ねないため、各地球局が制御する量。送信タイミングを合わせることで到着時間が衝突しない。候補8「異なる」は送受信側で異なる符号を用いるという関係であり、所望のCDMA相関を得られない。この空欄には適合しない。",
+            "9": "原問のアは(1) TDMAで衛星上の送信バーストを重ねないため、各地球局が制御する量。送信タイミングを合わせることで到着時間が衝突しない。候補9「複数」は搬送波数が複数という数であり、SCPCの一チャネル一搬送波に反する。この空欄には適合しない。",
+            "10": "原問のアは(1) TDMAで衛星上の送信バーストを重ねないため、各地球局が制御する量。送信タイミングを合わせることで到着時間が衝突しない。候補10「周波数分割多元接続(FDMA)方式の」はFDMA方式への分類であり、異なる周波数のSCPC搬送波の並置に適合する。この空欄には適合しない。"
+          }
+        },
+        {
+          "label": "イ",
+          "answer": "7",
+          "explanation": "FDMAでは隣接チャネルの周波数間にガードバンドを設けて干渉を防ぐ。",
+          "candidateExplanations": {
+            "1": "原問のイは(2) FDMAで隣接周波数チャネルの干渉を避けるため設けるもの。チャネル間にガードバンドを置き、スペクトルの重なりを減らす。候補1「周波数」は周波数という量であり、TDMAの時刻制御やガード帯域・符号関係・搬送波数・方式分類そのものではない。この空欄には適合しない。",
+            "2": "原問のイは(2) FDMAで隣接周波数チャネルの干渉を避けるため設けるもの。チャネル間にガードバンドを置き、スペクトルの重なりを減らす。候補2「ガードタイムを」はガードタイムというTDMAの時間的な保護間隔であり、FDMAの周波数的な保護帯域とは異なる。この空欄には適合しない。",
+            "3": "原問のイは(2) FDMAで隣接周波数チャネルの干渉を避けるため設けるもの。チャネル間にガードバンドを置き、スペクトルの重なりを減らす。候補3「同じ」は送受信側で同一符号を用いるという関係であり、CDMAの相関に適合する。この空欄には適合しない。",
+            "4": "原問のイは(2) FDMAで隣接周波数チャネルの干渉を避けるため設けるもの。チャネル間にガードバンドを置き、スペクトルの重なりを減らす。候補4「一つ」は搬送波数が一つという数であり、SCPCの一チャネル一搬送波に適合する。この空欄には適合しない。",
+            "5": "原問のイは(2) FDMAで隣接周波数チャネルの干渉を避けるため設けるもの。チャネル間にガードバンドを置き、スペクトルの重なりを減らす。候補5「時分割多元接続(TDMA)方式の」はTDMA方式への分類であり、SCPCの周波数分割とは異なる。この空欄には適合しない。",
+            "6": "原問のイは(2) FDMAで隣接周波数チャネルの干渉を避けるため設けるもの。チャネル間にガードバンドを置き、スペクトルの重なりを減らす。候補6「送信タイミング」は送信タイミングという時間量であり、TDMAバーストを非衝突にする制御対象に適合する。この空欄には適合しない。",
+            "7": "原問のイは(2) FDMAで隣接周波数チャネルの干渉を避けるため設けるもの。チャネル間にガードバンドを置き、スペクトルの重なりを減らす。候補7「ガードバンドを」はガードバンドという周波数帯域の間隔であり、FDMAの隣接干渉防止に適合する。適合する。",
+            "8": "原問のイは(2) FDMAで隣接周波数チャネルの干渉を避けるため設けるもの。チャネル間にガードバンドを置き、スペクトルの重なりを減らす。候補8「異なる」は送受信側で異なる符号を用いるという関係であり、所望のCDMA相関を得られない。この空欄には適合しない。",
+            "9": "原問のイは(2) FDMAで隣接周波数チャネルの干渉を避けるため設けるもの。チャネル間にガードバンドを置き、スペクトルの重なりを減らす。候補9「複数」は搬送波数が複数という数であり、SCPCの一チャネル一搬送波に反する。この空欄には適合しない。",
+            "10": "原問のイは(2) FDMAで隣接周波数チャネルの干渉を避けるため設けるもの。チャネル間にガードバンドを置き、スペクトルの重なりを減らす。候補10「周波数分割多元接続(FDMA)方式の」はFDMA方式への分類であり、異なる周波数のSCPC搬送波の並置に適合する。この空欄には適合しない。"
+          }
+        },
+        {
+          "label": "ウ",
+          "answer": "3",
+          "explanation": "CDMAの受信側は送信側と同じ拡散符号で相関を取るのでウに適合する。",
+          "candidateExplanations": {
+            "1": "原問のウは(3) CDMA受信で相関に使用する、送信側の割当符号との関係。同じ符号列を用いて初めて所望信号の相関を得る。候補1「周波数」は周波数という量であり、TDMAの時刻制御やガード帯域・符号関係・搬送波数・方式分類そのものではない。この空欄には適合しない。",
+            "2": "原問のウは(3) CDMA受信で相関に使用する、送信側の割当符号との関係。同じ符号列を用いて初めて所望信号の相関を得る。候補2「ガードタイムを」はガードタイムというTDMAの時間的な保護間隔であり、FDMAの周波数的な保護帯域とは異なる。この空欄には適合しない。",
+            "3": "原問のウは(3) CDMA受信で相関に使用する、送信側の割当符号との関係。同じ符号列を用いて初めて所望信号の相関を得る。候補3「同じ」は送受信側で同一符号を用いるという関係であり、CDMAの相関に適合する。適合する。",
+            "4": "原問のウは(3) CDMA受信で相関に使用する、送信側の割当符号との関係。同じ符号列を用いて初めて所望信号の相関を得る。候補4「一つ」は搬送波数が一つという数であり、SCPCの一チャネル一搬送波に適合する。この空欄には適合しない。",
+            "5": "原問のウは(3) CDMA受信で相関に使用する、送信側の割当符号との関係。同じ符号列を用いて初めて所望信号の相関を得る。候補5「時分割多元接続(TDMA)方式の」はTDMA方式への分類であり、SCPCの周波数分割とは異なる。この空欄には適合しない。",
+            "6": "原問のウは(3) CDMA受信で相関に使用する、送信側の割当符号との関係。同じ符号列を用いて初めて所望信号の相関を得る。候補6「送信タイミング」は送信タイミングという時間量であり、TDMAバーストを非衝突にする制御対象に適合する。この空欄には適合しない。",
+            "7": "原問のウは(3) CDMA受信で相関に使用する、送信側の割当符号との関係。同じ符号列を用いて初めて所望信号の相関を得る。候補7「ガードバンドを」はガードバンドという周波数帯域の間隔であり、FDMAの隣接干渉防止に適合する。この空欄には適合しない。",
+            "8": "原問のウは(3) CDMA受信で相関に使用する、送信側の割当符号との関係。同じ符号列を用いて初めて所望信号の相関を得る。候補8「異なる」は送受信側で異なる符号を用いるという関係であり、所望のCDMA相関を得られない。この空欄には適合しない。",
+            "9": "原問のウは(3) CDMA受信で相関に使用する、送信側の割当符号との関係。同じ符号列を用いて初めて所望信号の相関を得る。候補9「複数」は搬送波数が複数という数であり、SCPCの一チャネル一搬送波に反する。この空欄には適合しない。",
+            "10": "原問のウは(3) CDMA受信で相関に使用する、送信側の割当符号との関係。同じ符号列を用いて初めて所望信号の相関を得る。候補10「周波数分割多元接続(FDMA)方式の」はFDMA方式への分類であり、異なる周波数のSCPC搬送波の並置に適合する。この空欄には適合しない。"
+          }
+        },
+        {
+          "label": "エ",
+          "answer": "4",
+          "explanation": "SCPCはSingle Channel Per Carrierであり、1チャネル当たり一つの搬送波を使う。",
+          "candidateExplanations": {
+            "1": "原問のエは(4) SCPCで一つのチャネルに割り当てる搬送波の数。Single Channel Per Carrierなので一つの搬送波を割り当てる。候補1「周波数」は周波数という量であり、TDMAの時刻制御やガード帯域・符号関係・搬送波数・方式分類そのものではない。この空欄には適合しない。",
+            "2": "原問のエは(4) SCPCで一つのチャネルに割り当てる搬送波の数。Single Channel Per Carrierなので一つの搬送波を割り当てる。候補2「ガードタイムを」はガードタイムというTDMAの時間的な保護間隔であり、FDMAの周波数的な保護帯域とは異なる。この空欄には適合しない。",
+            "3": "原問のエは(4) SCPCで一つのチャネルに割り当てる搬送波の数。Single Channel Per Carrierなので一つの搬送波を割り当てる。候補3「同じ」は送受信側で同一符号を用いるという関係であり、CDMAの相関に適合する。この空欄には適合しない。",
+            "4": "原問のエは(4) SCPCで一つのチャネルに割り当てる搬送波の数。Single Channel Per Carrierなので一つの搬送波を割り当てる。候補4「一つ」は搬送波数が一つという数であり、SCPCの一チャネル一搬送波に適合する。適合する。",
+            "5": "原問のエは(4) SCPCで一つのチャネルに割り当てる搬送波の数。Single Channel Per Carrierなので一つの搬送波を割り当てる。候補5「時分割多元接続(TDMA)方式の」はTDMA方式への分類であり、SCPCの周波数分割とは異なる。この空欄には適合しない。",
+            "6": "原問のエは(4) SCPCで一つのチャネルに割り当てる搬送波の数。Single Channel Per Carrierなので一つの搬送波を割り当てる。候補6「送信タイミング」は送信タイミングという時間量であり、TDMAバーストを非衝突にする制御対象に適合する。この空欄には適合しない。",
+            "7": "原問のエは(4) SCPCで一つのチャネルに割り当てる搬送波の数。Single Channel Per Carrierなので一つの搬送波を割り当てる。候補7「ガードバンドを」はガードバンドという周波数帯域の間隔であり、FDMAの隣接干渉防止に適合する。この空欄には適合しない。",
+            "8": "原問のエは(4) SCPCで一つのチャネルに割り当てる搬送波の数。Single Channel Per Carrierなので一つの搬送波を割り当てる。候補8「異なる」は送受信側で異なる符号を用いるという関係であり、所望のCDMA相関を得られない。この空欄には適合しない。",
+            "9": "原問のエは(4) SCPCで一つのチャネルに割り当てる搬送波の数。Single Channel Per Carrierなので一つの搬送波を割り当てる。候補9「複数」は搬送波数が複数という数であり、SCPCの一チャネル一搬送波に反する。この空欄には適合しない。",
+            "10": "原問のエは(4) SCPCで一つのチャネルに割り当てる搬送波の数。Single Channel Per Carrierなので一つの搬送波を割り当てる。候補10「周波数分割多元接続(FDMA)方式の」はFDMA方式への分類であり、異なる周波数のSCPC搬送波の並置に適合する。この空欄には適合しない。"
+          }
+        },
+        {
+          "label": "オ",
+          "answer": "10",
+          "explanation": "複数の異なる周波数の搬送波を並べるSCPCはFDMA方式の一つ。",
+          "candidateExplanations": {
+            "1": "原問のオは(4) 複数周波数のSCPC搬送波を中継器内に並べる多元接続の分類。周波数を分けて共存するのでFDMA方式の一つ。候補1「周波数」は周波数という量であり、TDMAの時刻制御やガード帯域・符号関係・搬送波数・方式分類そのものではない。この空欄には適合しない。",
+            "2": "原問のオは(4) 複数周波数のSCPC搬送波を中継器内に並べる多元接続の分類。周波数を分けて共存するのでFDMA方式の一つ。候補2「ガードタイムを」はガードタイムというTDMAの時間的な保護間隔であり、FDMAの周波数的な保護帯域とは異なる。この空欄には適合しない。",
+            "3": "原問のオは(4) 複数周波数のSCPC搬送波を中継器内に並べる多元接続の分類。周波数を分けて共存するのでFDMA方式の一つ。候補3「同じ」は送受信側で同一符号を用いるという関係であり、CDMAの相関に適合する。この空欄には適合しない。",
+            "4": "原問のオは(4) 複数周波数のSCPC搬送波を中継器内に並べる多元接続の分類。周波数を分けて共存するのでFDMA方式の一つ。候補4「一つ」は搬送波数が一つという数であり、SCPCの一チャネル一搬送波に適合する。この空欄には適合しない。",
+            "5": "原問のオは(4) 複数周波数のSCPC搬送波を中継器内に並べる多元接続の分類。周波数を分けて共存するのでFDMA方式の一つ。候補5「時分割多元接続(TDMA)方式の」はTDMA方式への分類であり、SCPCの周波数分割とは異なる。この空欄には適合しない。",
+            "6": "原問のオは(4) 複数周波数のSCPC搬送波を中継器内に並べる多元接続の分類。周波数を分けて共存するのでFDMA方式の一つ。候補6「送信タイミング」は送信タイミングという時間量であり、TDMAバーストを非衝突にする制御対象に適合する。この空欄には適合しない。",
+            "7": "原問のオは(4) 複数周波数のSCPC搬送波を中継器内に並べる多元接続の分類。周波数を分けて共存するのでFDMA方式の一つ。候補7「ガードバンドを」はガードバンドという周波数帯域の間隔であり、FDMAの隣接干渉防止に適合する。この空欄には適合しない。",
+            "8": "原問のオは(4) 複数周波数のSCPC搬送波を中継器内に並べる多元接続の分類。周波数を分けて共存するのでFDMA方式の一つ。候補8「異なる」は送受信側で異なる符号を用いるという関係であり、所望のCDMA相関を得られない。この空欄には適合しない。",
+            "9": "原問のオは(4) 複数周波数のSCPC搬送波を中継器内に並べる多元接続の分類。周波数を分けて共存するのでFDMA方式の一つ。候補9「複数」は搬送波数が複数という数であり、SCPCの一チャネル一搬送波に反する。この空欄には適合しない。",
+            "10": "原問のオは(4) 複数周波数のSCPC搬送波を中継器内に並べる多元接続の分類。周波数を分けて共存するのでFDMA方式の一つ。候補10「周波数分割多元接続(FDMA)方式の」はFDMA方式への分類であり、異なる周波数のSCPC搬送波の並置に適合する。適合する。"
+          }
+        }
+      ],
+      "officialLabel": "B1",
+      "bankImageUrls": [
+        "/images/questions/riku-tech1/radio21-riku-tech1-2026-01-engineering-a-q21-original.png"
+      ],
+      "bankImageAltTexts": [
+        "公式原問 B1 の図・数式・番号付き語群（原典配置）"
+      ]
+    }
+  },
+  {
+    "id": "radio21-riku-tech1-2026-01-engineering-a-q22",
+    "exam": "riku-tech1",
+    "session": "kogaku-a",
+    "year": 2026,
+    "season": "january",
+    "qNumber": 22,
+    "type": "native-b",
+    "category": "無線工学A",
+    "subject": "無線工学A",
+    "topicTags": [
+      "無線工学A"
+    ],
+    "difficulty": 3,
+    "question": "B－2 次の記述は、OFDM信号を正しく受信するために必要な同期の原理について述べたものである。    内に入れるべき字句を \n下の番号から選べ。 \n \n(1) OFDM信号の受信に必要な同期処理としては、送信側のシンボルの区切りと同じタイミングを検出するためのシンボルに\n対する同期、送信側で送られた搬送波と同一周波数にするための搬送波周波数に対する同期及び  ア  フーリエ変換処\n理に必要な標本を生成するためのサンプリング周波数に対する同期がそれぞれ必要である。 \n(2) シンボルに対する同期は、シンボルの前後にある同じ情報を利用してとることができる。具体的な方法としては、受信\nしたOFDM信号と、それを  イ  有効シンボル期間長分遅延させた信号との積をとり  ウ  すれば、遅延させた信号の\nシンボルのガードインターバル期間のみは、受信したOFDM信号のシンボルの後半の一部分と相関が  エ  ため出力が現\nれる。この相関値を演算し、ピークを求めることによってシンボルの区切りを検出できる。 \n(3) 搬送波周波数に対する同期及びサンプリング周波数に対する同期は、(2)と同様にガードインターバル期間の相関を利\n用し、搬送波周波数及びサンプリング周波数の誤差によって生じる信号間の  オ  の差を利用してとることができる。 \n  \n1 離散       2 1       3 微分     4 ない(違う波形)      5 振幅  \n6 逆離散     7 1/2     8 積分     9 ある(同じ波形)     10 位相",
+    "explanation": "受信OFDMシンボルの周波数成分を得る処理は離散フーリエ変換。逆離散は送信側の生成処理。\n\n有効シンボル期間長の1倍だけ遅延するとガードインターバルと末尾の複写部分が重なる。\n\n対応する信号の積を区間で積分し、雑音を平均化しながら相関ピークを得る。\n\nガードインターバルと有効シンボル末尾は同じ波形なので相関がある。\n\n搬送波・標本化周波数の誤差は対応標本の位相差として現れ、同期補正に利用できる。",
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/riku-gi-1-kogaku-a.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/riku-gi-1-kogaku-a-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第一級陸上無線技術士試験 2026年1月 無線工学A B2（問題・正答）。解説は過去問AIが独自作成。図・数式語群は原典から切り出し。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-10-15",
+    "imageUrls": [
+      "/images/questions/riku-tech1/radio21-riku-tech1-2026-01-engineering-a-q22-original.png"
+    ],
+    "imageAltTexts": [
+      "公式原問 B2 の図・数式・番号付き語群（原典配置）"
+    ],
+    "nativeB": {
+      "mode": "shared-bank",
+      "candidates": [
+        {
+          "id": "1",
+          "label": "離散",
+          "explanation": "受信OFDMシンボルの周波数成分を得る処理は離散フーリエ変換。逆離散は送信側の生成処理。"
+        },
+        {
+          "id": "2",
+          "label": "1",
+          "explanation": "有効シンボル期間長の1倍だけ遅延するとガードインターバルと末尾の複写部分が重なる。"
+        },
+        {
+          "id": "3",
+          "label": "微分",
+          "explanation": "相関を求める積の後処理は積分であり、微分ではピークの相関量を得られない。"
+        },
+        {
+          "id": "4",
+          "label": "ない(違う波形)",
+          "explanation": "ガードインターバルは有効シンボル末尾の複写なので、対応部分に相関がないとはいえない。"
+        },
+        {
+          "id": "5",
+          "label": "振幅",
+          "explanation": "周波数誤差が対応する複素信号間にもたらすのは主として位相差であり、振幅差ではない。"
+        },
+        {
+          "id": "6",
+          "label": "逆離散",
+          "explanation": "逆離散フーリエ変換はOFDM送信波の合成側に使い、受信側の復調処理には入らない。"
+        },
+        {
+          "id": "7",
+          "label": "1/2",
+          "explanation": "1/2有効シンボル期間の遅延ではガードインターバルと複写元が一致しない。"
+        },
+        {
+          "id": "8",
+          "label": "積分",
+          "explanation": "対応する信号の積を区間で積分し、雑音を平均化しながら相関ピークを得る。"
+        },
+        {
+          "id": "9",
+          "label": "ある(同じ波形)",
+          "explanation": "ガードインターバルと有効シンボル末尾は同じ波形なので相関がある。"
+        },
+        {
+          "id": "10",
+          "label": "位相",
+          "explanation": "搬送波・標本化周波数の誤差は対応標本の位相差として現れ、同期補正に利用できる。"
+        }
+      ],
+      "slots": [
+        {
+          "label": "ア",
+          "answer": "1",
+          "explanation": "受信OFDMシンボルの周波数成分を得る処理は離散フーリエ変換。逆離散は送信側の生成処理。",
+          "candidateExplanations": {
+            "1": "原問のアは(1) OFDM受信標本から周波数成分を求めるフーリエ変換の種類。復調には離散フーリエ変換を使い、逆変換は送信側の合成に使う。候補1「離散」は離散フーリエ変換を表し、受信側の周波数分解に適合する。適合する。",
+            "2": "原問のアは(1) OFDM受信標本から周波数成分を求めるフーリエ変換の種類。復調には離散フーリエ変換を使い、逆変換は送信側の合成に使う。候補2「1」は有効シンボル期間長の1倍を表し、複写元とガードインターバルを重ねる。この空欄には適合しない。",
+            "3": "原問のアは(1) OFDM受信標本から周波数成分を求めるフーリエ変換の種類。復調には離散フーリエ変換を使い、逆変換は送信側の合成に使う。候補3「微分」は微分を表し、区間の複素積から相関値を集める処理とは異なる。この空欄には適合しない。",
+            "4": "原問のアは(1) OFDM受信標本から周波数成分を求めるフーリエ変換の種類。復調には離散フーリエ変換を使い、逆変換は送信側の合成に使う。候補4「ない(違う波形)」は違う波形で相関がないという状態を表し、ガードインターバルの複写関係に反する。この空欄には適合しない。",
+            "5": "原問のアは(1) OFDM受信標本から周波数成分を求めるフーリエ変換の種類。復調には離散フーリエ変換を使い、逆変換は送信側の合成に使う。候補5「振幅」は振幅差を表し、この同期法で周波数誤差を読む位相差とは異なる。この空欄には適合しない。",
+            "6": "原問のアは(1) OFDM受信標本から周波数成分を求めるフーリエ変換の種類。復調には離散フーリエ変換を使い、逆変換は送信側の合成に使う。候補6「逆離散」は逆離散フーリエ変換を表し、OFDM波を作る送信側の処理である。この空欄には適合しない。",
+            "7": "原問のアは(1) OFDM受信標本から周波数成分を求めるフーリエ変換の種類。復調には離散フーリエ変換を使い、逆変換は送信側の合成に使う。候補7「1/2」は有効シンボル期間長の半分を表し、複写元との対応をずらしてしまう。この空欄には適合しない。",
+            "8": "原問のアは(1) OFDM受信標本から周波数成分を求めるフーリエ変換の種類。復調には離散フーリエ変換を使い、逆変換は送信側の合成に使う。候補8「積分」は積分を表し、複素積を区間で集約して相関値を出す。この空欄には適合しない。",
+            "9": "原問のアは(1) OFDM受信標本から周波数成分を求めるフーリエ変換の種類。復調には離散フーリエ変換を使い、逆変換は送信側の合成に使う。候補9「ある(同じ波形)」は同じ波形で相関がある状態を表し、ガードインターバルの複写関係に適合する。この空欄には適合しない。",
+            "10": "原問のアは(1) OFDM受信標本から周波数成分を求めるフーリエ変換の種類。復調には離散フーリエ変換を使い、逆変換は送信側の合成に使う。候補10「位相」は位相差を表し、搬送波・標本化周波数誤差の推定に使う。この空欄には適合しない。"
+          }
+        },
+        {
+          "label": "イ",
+          "answer": "2",
+          "explanation": "有効シンボル期間長の1倍だけ遅延するとガードインターバルと末尾の複写部分が重なる。",
+          "candidateExplanations": {
+            "1": "原問のイは(2) ガードインターバルと有効シンボル末尾の複写元を重ねる遅延量。有効シンボル期間長の1倍だけ遅延する。候補1「離散」は離散フーリエ変換を表し、受信側の周波数分解に適合する。この空欄には適合しない。",
+            "2": "原問のイは(2) ガードインターバルと有効シンボル末尾の複写元を重ねる遅延量。有効シンボル期間長の1倍だけ遅延する。候補2「1」は有効シンボル期間長の1倍を表し、複写元とガードインターバルを重ねる。適合する。",
+            "3": "原問のイは(2) ガードインターバルと有効シンボル末尾の複写元を重ねる遅延量。有効シンボル期間長の1倍だけ遅延する。候補3「微分」は微分を表し、区間の複素積から相関値を集める処理とは異なる。この空欄には適合しない。",
+            "4": "原問のイは(2) ガードインターバルと有効シンボル末尾の複写元を重ねる遅延量。有効シンボル期間長の1倍だけ遅延する。候補4「ない(違う波形)」は違う波形で相関がないという状態を表し、ガードインターバルの複写関係に反する。この空欄には適合しない。",
+            "5": "原問のイは(2) ガードインターバルと有効シンボル末尾の複写元を重ねる遅延量。有効シンボル期間長の1倍だけ遅延する。候補5「振幅」は振幅差を表し、この同期法で周波数誤差を読む位相差とは異なる。この空欄には適合しない。",
+            "6": "原問のイは(2) ガードインターバルと有効シンボル末尾の複写元を重ねる遅延量。有効シンボル期間長の1倍だけ遅延する。候補6「逆離散」は逆離散フーリエ変換を表し、OFDM波を作る送信側の処理である。この空欄には適合しない。",
+            "7": "原問のイは(2) ガードインターバルと有効シンボル末尾の複写元を重ねる遅延量。有効シンボル期間長の1倍だけ遅延する。候補7「1/2」は有効シンボル期間長の半分を表し、複写元との対応をずらしてしまう。この空欄には適合しない。",
+            "8": "原問のイは(2) ガードインターバルと有効シンボル末尾の複写元を重ねる遅延量。有効シンボル期間長の1倍だけ遅延する。候補8「積分」は積分を表し、複素積を区間で集約して相関値を出す。この空欄には適合しない。",
+            "9": "原問のイは(2) ガードインターバルと有効シンボル末尾の複写元を重ねる遅延量。有効シンボル期間長の1倍だけ遅延する。候補9「ある(同じ波形)」は同じ波形で相関がある状態を表し、ガードインターバルの複写関係に適合する。この空欄には適合しない。",
+            "10": "原問のイは(2) ガードインターバルと有効シンボル末尾の複写元を重ねる遅延量。有効シンボル期間長の1倍だけ遅延する。候補10「位相」は位相差を表し、搬送波・標本化周波数誤差の推定に使う。この空欄には適合しない。"
+          }
+        },
+        {
+          "label": "ウ",
+          "answer": "8",
+          "explanation": "対応する信号の積を区間で積分し、雑音を平均化しながら相関ピークを得る。",
+          "candidateExplanations": {
+            "1": "原問のウは(2) 複素積から相関値を得てピークを検出する区間処理。積を区間で積分して相関を得る。候補1「離散」は離散フーリエ変換を表し、受信側の周波数分解に適合する。この空欄には適合しない。",
+            "2": "原問のウは(2) 複素積から相関値を得てピークを検出する区間処理。積を区間で積分して相関を得る。候補2「1」は有効シンボル期間長の1倍を表し、複写元とガードインターバルを重ねる。この空欄には適合しない。",
+            "3": "原問のウは(2) 複素積から相関値を得てピークを検出する区間処理。積を区間で積分して相関を得る。候補3「微分」は微分を表し、区間の複素積から相関値を集める処理とは異なる。この空欄には適合しない。",
+            "4": "原問のウは(2) 複素積から相関値を得てピークを検出する区間処理。積を区間で積分して相関を得る。候補4「ない(違う波形)」は違う波形で相関がないという状態を表し、ガードインターバルの複写関係に反する。この空欄には適合しない。",
+            "5": "原問のウは(2) 複素積から相関値を得てピークを検出する区間処理。積を区間で積分して相関を得る。候補5「振幅」は振幅差を表し、この同期法で周波数誤差を読む位相差とは異なる。この空欄には適合しない。",
+            "6": "原問のウは(2) 複素積から相関値を得てピークを検出する区間処理。積を区間で積分して相関を得る。候補6「逆離散」は逆離散フーリエ変換を表し、OFDM波を作る送信側の処理である。この空欄には適合しない。",
+            "7": "原問のウは(2) 複素積から相関値を得てピークを検出する区間処理。積を区間で積分して相関を得る。候補7「1/2」は有効シンボル期間長の半分を表し、複写元との対応をずらしてしまう。この空欄には適合しない。",
+            "8": "原問のウは(2) 複素積から相関値を得てピークを検出する区間処理。積を区間で積分して相関を得る。候補8「積分」は積分を表し、複素積を区間で集約して相関値を出す。適合する。",
+            "9": "原問のウは(2) 複素積から相関値を得てピークを検出する区間処理。積を区間で積分して相関を得る。候補9「ある(同じ波形)」は同じ波形で相関がある状態を表し、ガードインターバルの複写関係に適合する。この空欄には適合しない。",
+            "10": "原問のウは(2) 複素積から相関値を得てピークを検出する区間処理。積を区間で積分して相関を得る。候補10「位相」は位相差を表し、搬送波・標本化周波数誤差の推定に使う。この空欄には適合しない。"
+          }
+        },
+        {
+          "label": "エ",
+          "answer": "9",
+          "explanation": "ガードインターバルと有効シンボル末尾は同じ波形なので相関がある。",
+          "candidateExplanations": {
+            "1": "原問のエは(2) ガードインターバルと有効シンボル末尾の相関の有無。複写した同じ波形なので相関がある。候補1「離散」は離散フーリエ変換を表し、受信側の周波数分解に適合する。この空欄には適合しない。",
+            "2": "原問のエは(2) ガードインターバルと有効シンボル末尾の相関の有無。複写した同じ波形なので相関がある。候補2「1」は有効シンボル期間長の1倍を表し、複写元とガードインターバルを重ねる。この空欄には適合しない。",
+            "3": "原問のエは(2) ガードインターバルと有効シンボル末尾の相関の有無。複写した同じ波形なので相関がある。候補3「微分」は微分を表し、区間の複素積から相関値を集める処理とは異なる。この空欄には適合しない。",
+            "4": "原問のエは(2) ガードインターバルと有効シンボル末尾の相関の有無。複写した同じ波形なので相関がある。候補4「ない(違う波形)」は違う波形で相関がないという状態を表し、ガードインターバルの複写関係に反する。この空欄には適合しない。",
+            "5": "原問のエは(2) ガードインターバルと有効シンボル末尾の相関の有無。複写した同じ波形なので相関がある。候補5「振幅」は振幅差を表し、この同期法で周波数誤差を読む位相差とは異なる。この空欄には適合しない。",
+            "6": "原問のエは(2) ガードインターバルと有効シンボル末尾の相関の有無。複写した同じ波形なので相関がある。候補6「逆離散」は逆離散フーリエ変換を表し、OFDM波を作る送信側の処理である。この空欄には適合しない。",
+            "7": "原問のエは(2) ガードインターバルと有効シンボル末尾の相関の有無。複写した同じ波形なので相関がある。候補7「1/2」は有効シンボル期間長の半分を表し、複写元との対応をずらしてしまう。この空欄には適合しない。",
+            "8": "原問のエは(2) ガードインターバルと有効シンボル末尾の相関の有無。複写した同じ波形なので相関がある。候補8「積分」は積分を表し、複素積を区間で集約して相関値を出す。この空欄には適合しない。",
+            "9": "原問のエは(2) ガードインターバルと有効シンボル末尾の相関の有無。複写した同じ波形なので相関がある。候補9「ある(同じ波形)」は同じ波形で相関がある状態を表し、ガードインターバルの複写関係に適合する。適合する。",
+            "10": "原問のエは(2) ガードインターバルと有効シンボル末尾の相関の有無。複写した同じ波形なので相関がある。候補10「位相」は位相差を表し、搬送波・標本化周波数誤差の推定に使う。この空欄には適合しない。"
+          }
+        },
+        {
+          "label": "オ",
+          "answer": "10",
+          "explanation": "搬送波・標本化周波数の誤差は対応標本の位相差として現れ、同期補正に利用できる。",
+          "candidateExplanations": {
+            "1": "原問のオは(3) 搬送波・サンプリング周波数誤差が対応信号間に生む差。対応標本に位相差が生じ、同期推定に用いる。候補1「離散」は離散フーリエ変換を表し、受信側の周波数分解に適合する。この空欄には適合しない。",
+            "2": "原問のオは(3) 搬送波・サンプリング周波数誤差が対応信号間に生む差。対応標本に位相差が生じ、同期推定に用いる。候補2「1」は有効シンボル期間長の1倍を表し、複写元とガードインターバルを重ねる。この空欄には適合しない。",
+            "3": "原問のオは(3) 搬送波・サンプリング周波数誤差が対応信号間に生む差。対応標本に位相差が生じ、同期推定に用いる。候補3「微分」は微分を表し、区間の複素積から相関値を集める処理とは異なる。この空欄には適合しない。",
+            "4": "原問のオは(3) 搬送波・サンプリング周波数誤差が対応信号間に生む差。対応標本に位相差が生じ、同期推定に用いる。候補4「ない(違う波形)」は違う波形で相関がないという状態を表し、ガードインターバルの複写関係に反する。この空欄には適合しない。",
+            "5": "原問のオは(3) 搬送波・サンプリング周波数誤差が対応信号間に生む差。対応標本に位相差が生じ、同期推定に用いる。候補5「振幅」は振幅差を表し、この同期法で周波数誤差を読む位相差とは異なる。この空欄には適合しない。",
+            "6": "原問のオは(3) 搬送波・サンプリング周波数誤差が対応信号間に生む差。対応標本に位相差が生じ、同期推定に用いる。候補6「逆離散」は逆離散フーリエ変換を表し、OFDM波を作る送信側の処理である。この空欄には適合しない。",
+            "7": "原問のオは(3) 搬送波・サンプリング周波数誤差が対応信号間に生む差。対応標本に位相差が生じ、同期推定に用いる。候補7「1/2」は有効シンボル期間長の半分を表し、複写元との対応をずらしてしまう。この空欄には適合しない。",
+            "8": "原問のオは(3) 搬送波・サンプリング周波数誤差が対応信号間に生む差。対応標本に位相差が生じ、同期推定に用いる。候補8「積分」は積分を表し、複素積を区間で集約して相関値を出す。この空欄には適合しない。",
+            "9": "原問のオは(3) 搬送波・サンプリング周波数誤差が対応信号間に生む差。対応標本に位相差が生じ、同期推定に用いる。候補9「ある(同じ波形)」は同じ波形で相関がある状態を表し、ガードインターバルの複写関係に適合する。この空欄には適合しない。",
+            "10": "原問のオは(3) 搬送波・サンプリング周波数誤差が対応信号間に生む差。対応標本に位相差が生じ、同期推定に用いる。候補10「位相」は位相差を表し、搬送波・標本化周波数誤差の推定に使う。適合する。"
+          }
+        }
+      ],
+      "officialLabel": "B2",
+      "bankImageUrls": [
+        "/images/questions/riku-tech1/radio21-riku-tech1-2026-01-engineering-a-q22-original.png"
+      ],
+      "bankImageAltTexts": [
+        "公式原問 B2 の図・数式・番号付き語群（原典配置）"
+      ]
+    }
+  },
+  {
+    "id": "radio21-riku-tech1-2026-01-engineering-a-q23",
+    "exam": "riku-tech1",
+    "session": "kogaku-a",
+    "year": 2026,
+    "season": "january",
+    "qNumber": 23,
+    "type": "native-b",
+    "category": "無線工学A",
+    "subject": "無線工学A",
+    "topicTags": [
+      "無線工学A"
+    ],
+    "difficulty": 3,
+    "question": "B－3 次の記述は、法令等に基づく無線局の送信設備の「スプリアス発射の強度」及び「不要発射の強度」の測定について、図を基に\nして述べたものである。    内に入れるべき字句を下の番号から選べ。なお、同じ記号の     内には、同じ字句が入るもの\nとする。 \n \n(1) 「  ア  におけるスプリアス発射の強度」の測定は、無変調状態において、 ア  におけるスプリアス発射の強度を測\n定し、その測定値が許容値内であることを確認する。 \n(2) 「  イ  における不要発射の強度」の測定は、 ウ  状態において、中心周波数fc〔Hz〕から必要周波数帯幅BN〔Hz〕\nの±250〔％〕離れた周波数を境界とした  イ  \nにおける不要発射の強度を測定し、その測定値が \n許容値内であることを確認する。 \nこの測定では、 ウ  状態において、不要発射 \nが周波数軸上に広がって出てくる可能性が  エ  \nことから、許容値を規定するための参照帯域幅の範 \n囲内に含まれる不要発射の  オ  値を測定するこ \nととされている。 \n \n1 帯域外領域     2 スプリアス領域     3 ない     4 ある        5 電力を積分した \n6 BN             7 fc                  8 変調     9 無変調     10 中で電力が最大の \n発射の強度 \n周波数軸\n必要周波数帯幅BN 及びスプリアス領域と \n帯域外領域の境界 （イメージ図） \nBN\n帯域外領域\n帯域外領域\nスプリアス領域\nスプリアス領域\nfc-2.5BN        fc          fc+2.5BN",
+    "explanation": "図の必要帯域の外側からfc±2.5BNの境界までが帯域外領域。設問(1)では、この領域におけるスプリアス発射の強度を無変調状態で測定する。\n\n図のfc±2.5BNより外側がスプリアス領域。設問(2)では、この領域における不要発射の強度を変調状態で測定する。\n\n設問(2)はスプリアス領域の不要発射を変調状態で測る。変調時に周波数軸上へ広がる不要発射を参照帯域幅内の電力積分値で評価する。\n\n変調による不要発射は周波数軸上で広がる可能性がある。\n\n参照帯域幅に含まれる不要発射は電力を積分した値で評価する。単一ピークだけでは帯域内電力を表さない。",
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/riku-gi-1-kogaku-a.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/riku-gi-1-kogaku-a-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第一級陸上無線技術士試験 2026年1月 無線工学A B3（問題・正答）。解説は過去問AIが独自作成。図・数式語群は原典から切り出し。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-10-15",
+    "imageUrls": [
+      "/images/questions/riku-tech1/radio21-riku-tech1-2026-01-engineering-a-q23-original.png"
+    ],
+    "imageAltTexts": [
+      "公式原問 B3 の図・数式・番号付き語群（原典配置）"
+    ],
+    "nativeB": {
+      "mode": "shared-bank",
+      "candidates": [
+        {
+          "id": "1",
+          "label": "帯域外領域",
+          "explanation": "図の必要帯域の外側からfc±2.5BNの境界までが帯域外領域。設問(1)では、この領域におけるスプリアス発射の強度を無変調状態で測定する。"
+        },
+        {
+          "id": "2",
+          "label": "スプリアス領域",
+          "explanation": "図のfc±2.5BNより外側がスプリアス領域。設問(2)では、この領域における不要発射の強度を変調状態で測定する。"
+        },
+        {
+          "id": "3",
+          "label": "ない",
+          "explanation": "変調状態の不要発射が周波数軸へ広がる可能性はあるため、『ない』は逆。"
+        },
+        {
+          "id": "4",
+          "label": "ある",
+          "explanation": "変調による不要発射は周波数軸上で広がる可能性がある。"
+        },
+        {
+          "id": "5",
+          "label": "電力を積分した",
+          "explanation": "参照帯域幅に含まれる不要発射は電力を積分した値で評価する。単一ピークだけでは帯域内電力を表さない。"
+        },
+        {
+          "id": "6",
+          "label": "BN",
+          "explanation": "BNは必要周波数帯幅を表す量であり、領域名、状態、可能性、評価値のどの空欄にも入らない。"
+        },
+        {
+          "id": "7",
+          "label": "fc",
+          "explanation": "fcは中心周波数を表す量であり、領域名、状態、可能性、評価値のどの空欄にも入らない。"
+        },
+        {
+          "id": "8",
+          "label": "変調",
+          "explanation": "設問(2)はスプリアス領域の不要発射を変調状態で測る。変調時に周波数軸上へ広がる不要発射を参照帯域幅内の電力積分値で評価する。"
+        },
+        {
+          "id": "9",
+          "label": "無変調",
+          "explanation": "無変調は設問(1)の帯域外領域におけるスプリアス発射の測定条件。設問(2)のスプリアス領域における不要発射は変調状態で測定する。"
+        },
+        {
+          "id": "10",
+          "label": "中で電力が最大の",
+          "explanation": "参照帯域幅内の最大点だけを選ぶと帯域に分布した電力を拾えない。電力積分値を用いる。"
+        }
+      ],
+      "slots": [
+        {
+          "label": "ア",
+          "answer": "1",
+          "explanation": "図の必要帯域の外側からfc±2.5BNの境界までが帯域外領域。設問(1)では、この領域におけるスプリアス発射の強度を無変調状態で測定する。",
+          "candidateExplanations": {
+            "1": "原問のアは(1) 無変調でスプリアス発射を測る帯域外領域。図では必要帯域の外側からfc±2.5BNの境界までの領域である。候補1「帯域外領域」は帯域外領域を表し、図では必要帯域とfc±2.5BNの境界の間にある。適合する。",
+            "2": "原問のアは(1) 無変調でスプリアス発射を測る帯域外領域。図では必要帯域の外側からfc±2.5BNの境界までの領域である。候補2「スプリアス領域」はスプリアス領域を表し、図ではfc±2.5BNの外側にある。この空欄には適合しない。",
+            "3": "原問のアは(1) 無変調でスプリアス発射を測る帯域外領域。図では必要帯域の外側からfc±2.5BNの境界までの領域である。候補3「ない」は可能性がないことを表し、変調によるスペクトルの広がりと反する。この空欄には適合しない。",
+            "4": "原問のアは(1) 無変調でスプリアス発射を測る帯域外領域。図では必要帯域の外側からfc±2.5BNの境界までの領域である。候補4「ある」は可能性があることを表し、変調によるスペクトルの広がりに適合する。この空欄には適合しない。",
+            "5": "原問のアは(1) 無変調でスプリアス発射を測る帯域外領域。図では必要帯域の外側からfc±2.5BNの境界までの領域である。候補5「電力を積分した」は電力を積分した値を表し、参照帯域幅に分布する不要発射の総量に適合する。この空欄には適合しない。",
+            "6": "原問のアは(1) 無変調でスプリアス発射を測る帯域外領域。図では必要帯域の外側からfc±2.5BNの境界までの領域である。候補6「BN」はBNという必要周波数帯幅の量であり、領域名・送信状態・有無・測定値ではない。この空欄には適合しない。",
+            "7": "原問のアは(1) 無変調でスプリアス発射を測る帯域外領域。図では必要帯域の外側からfc±2.5BNの境界までの領域である。候補7「fc」はfcという中心周波数の量であり、領域名・送信状態・有無・測定値ではない。この空欄には適合しない。",
+            "8": "原問のアは(1) 無変調でスプリアス発射を測る帯域外領域。図では必要帯域の外側からfc±2.5BNの境界までの領域である。候補8「変調」は変調状態を表し、設問(2)のスプリアス領域における不要発射を評価する送信条件に適合する。この空欄には適合しない。",
+            "9": "原問のアは(1) 無変調でスプリアス発射を測る帯域外領域。図では必要帯域の外側からfc±2.5BNの境界までの領域である。候補9「無変調」は設問(1)の帯域外領域におけるスプリアス発射の測定条件であり、(2)のスプリアス領域における不要発射の測定条件ではない。この空欄には適合しない。",
+            "10": "原問のアは(1) 無変調でスプリアス発射を測る帯域外領域。図では必要帯域の外側からfc±2.5BNの境界までの領域である。候補10「中で電力が最大の」は帯域内で電力が最大の点の値を表し、分布する電力の積分値ではない。この空欄には適合しない。"
+          }
+        },
+        {
+          "label": "イ",
+          "answer": "2",
+          "explanation": "図のfc±2.5BNより外側がスプリアス領域。設問(2)では、この領域における不要発射の強度を変調状態で測定する。",
+          "candidateExplanations": {
+            "1": "原問のイは(2) 変調時に不要発射を測るスプリアス領域。図ではfc±2.5BNの境界より外側の領域である。候補1「帯域外領域」は帯域外領域を表し、図では必要帯域とfc±2.5BNの境界の間にある。この空欄には適合しない。",
+            "2": "原問のイは(2) 変調時に不要発射を測るスプリアス領域。図ではfc±2.5BNの境界より外側の領域である。候補2「スプリアス領域」はスプリアス領域を表し、図ではfc±2.5BNの外側にある。適合する。",
+            "3": "原問のイは(2) 変調時に不要発射を測るスプリアス領域。図ではfc±2.5BNの境界より外側の領域である。候補3「ない」は可能性がないことを表し、変調によるスペクトルの広がりと反する。この空欄には適合しない。",
+            "4": "原問のイは(2) 変調時に不要発射を測るスプリアス領域。図ではfc±2.5BNの境界より外側の領域である。候補4「ある」は可能性があることを表し、変調によるスペクトルの広がりに適合する。この空欄には適合しない。",
+            "5": "原問のイは(2) 変調時に不要発射を測るスプリアス領域。図ではfc±2.5BNの境界より外側の領域である。候補5「電力を積分した」は電力を積分した値を表し、参照帯域幅に分布する不要発射の総量に適合する。この空欄には適合しない。",
+            "6": "原問のイは(2) 変調時に不要発射を測るスプリアス領域。図ではfc±2.5BNの境界より外側の領域である。候補6「BN」はBNという必要周波数帯幅の量であり、領域名・送信状態・有無・測定値ではない。この空欄には適合しない。",
+            "7": "原問のイは(2) 変調時に不要発射を測るスプリアス領域。図ではfc±2.5BNの境界より外側の領域である。候補7「fc」はfcという中心周波数の量であり、領域名・送信状態・有無・測定値ではない。この空欄には適合しない。",
+            "8": "原問のイは(2) 変調時に不要発射を測るスプリアス領域。図ではfc±2.5BNの境界より外側の領域である。候補8「変調」は変調状態を表し、設問(2)のスプリアス領域における不要発射を評価する送信条件に適合する。この空欄には適合しない。",
+            "9": "原問のイは(2) 変調時に不要発射を測るスプリアス領域。図ではfc±2.5BNの境界より外側の領域である。候補9「無変調」は設問(1)の帯域外領域におけるスプリアス発射の測定条件であり、(2)のスプリアス領域における不要発射の測定条件ではない。この空欄には適合しない。",
+            "10": "原問のイは(2) 変調時に不要発射を測るスプリアス領域。図ではfc±2.5BNの境界より外側の領域である。候補10「中で電力が最大の」は帯域内で電力が最大の点の値を表し、分布する電力の積分値ではない。この空欄には適合しない。"
+          }
+        },
+        {
+          "label": "ウ",
+          "answer": "8",
+          "explanation": "設問(2)はスプリアス領域の不要発射を変調状態で測る。変調時に周波数軸上へ広がる不要発射を参照帯域幅内の電力積分値で評価する。",
+          "candidateExplanations": {
+            "1": "原問のウは(2) スプリアス領域の不要発射を測る送信状態。変調状態における不要発射の広がりを評価する。候補1「帯域外領域」は帯域外領域を表し、図では必要帯域とfc±2.5BNの境界の間にある。この空欄には適合しない。",
+            "2": "原問のウは(2) スプリアス領域の不要発射を測る送信状態。変調状態における不要発射の広がりを評価する。候補2「スプリアス領域」はスプリアス領域を表し、図ではfc±2.5BNの外側にある。この空欄には適合しない。",
+            "3": "原問のウは(2) スプリアス領域の不要発射を測る送信状態。変調状態における不要発射の広がりを評価する。候補3「ない」は可能性がないことを表し、変調によるスペクトルの広がりと反する。この空欄には適合しない。",
+            "4": "原問のウは(2) スプリアス領域の不要発射を測る送信状態。変調状態における不要発射の広がりを評価する。候補4「ある」は可能性があることを表し、変調によるスペクトルの広がりに適合する。この空欄には適合しない。",
+            "5": "原問のウは(2) スプリアス領域の不要発射を測る送信状態。変調状態における不要発射の広がりを評価する。候補5「電力を積分した」は電力を積分した値を表し、参照帯域幅に分布する不要発射の総量に適合する。この空欄には適合しない。",
+            "6": "原問のウは(2) スプリアス領域の不要発射を測る送信状態。変調状態における不要発射の広がりを評価する。候補6「BN」はBNという必要周波数帯幅の量であり、領域名・送信状態・有無・測定値ではない。この空欄には適合しない。",
+            "7": "原問のウは(2) スプリアス領域の不要発射を測る送信状態。変調状態における不要発射の広がりを評価する。候補7「fc」はfcという中心周波数の量であり、領域名・送信状態・有無・測定値ではない。この空欄には適合しない。",
+            "8": "原問のウは(2) スプリアス領域の不要発射を測る送信状態。変調状態における不要発射の広がりを評価する。候補8「変調」は変調状態を表し、設問(2)のスプリアス領域における不要発射を評価する送信条件に適合する。適合する。",
+            "9": "原問のウは(2) スプリアス領域の不要発射を測る送信状態。変調状態における不要発射の広がりを評価する。候補9「無変調」は設問(1)の帯域外領域におけるスプリアス発射の測定条件であり、(2)のスプリアス領域における不要発射の測定条件ではない。この空欄には適合しない。",
+            "10": "原問のウは(2) スプリアス領域の不要発射を測る送信状態。変調状態における不要発射の広がりを評価する。候補10「中で電力が最大の」は帯域内で電力が最大の点の値を表し、分布する電力の積分値ではない。この空欄には適合しない。"
+          }
+        },
+        {
+          "label": "エ",
+          "answer": "4",
+          "explanation": "変調による不要発射は周波数軸上で広がる可能性がある。",
+          "candidateExplanations": {
+            "1": "原問のエは(2) 変調した不要発射が周波数軸へ広がる可能性の有無。変調スペクトルは周波数軸方向に広がる可能性がある。候補1「帯域外領域」は帯域外領域を表し、図では必要帯域とfc±2.5BNの境界の間にある。この空欄には適合しない。",
+            "2": "原問のエは(2) 変調した不要発射が周波数軸へ広がる可能性の有無。変調スペクトルは周波数軸方向に広がる可能性がある。候補2「スプリアス領域」はスプリアス領域を表し、図ではfc±2.5BNの外側にある。この空欄には適合しない。",
+            "3": "原問のエは(2) 変調した不要発射が周波数軸へ広がる可能性の有無。変調スペクトルは周波数軸方向に広がる可能性がある。候補3「ない」は可能性がないことを表し、変調によるスペクトルの広がりと反する。この空欄には適合しない。",
+            "4": "原問のエは(2) 変調した不要発射が周波数軸へ広がる可能性の有無。変調スペクトルは周波数軸方向に広がる可能性がある。候補4「ある」は可能性があることを表し、変調によるスペクトルの広がりに適合する。適合する。",
+            "5": "原問のエは(2) 変調した不要発射が周波数軸へ広がる可能性の有無。変調スペクトルは周波数軸方向に広がる可能性がある。候補5「電力を積分した」は電力を積分した値を表し、参照帯域幅に分布する不要発射の総量に適合する。この空欄には適合しない。",
+            "6": "原問のエは(2) 変調した不要発射が周波数軸へ広がる可能性の有無。変調スペクトルは周波数軸方向に広がる可能性がある。候補6「BN」はBNという必要周波数帯幅の量であり、領域名・送信状態・有無・測定値ではない。この空欄には適合しない。",
+            "7": "原問のエは(2) 変調した不要発射が周波数軸へ広がる可能性の有無。変調スペクトルは周波数軸方向に広がる可能性がある。候補7「fc」はfcという中心周波数の量であり、領域名・送信状態・有無・測定値ではない。この空欄には適合しない。",
+            "8": "原問のエは(2) 変調した不要発射が周波数軸へ広がる可能性の有無。変調スペクトルは周波数軸方向に広がる可能性がある。候補8「変調」は変調状態を表し、設問(2)のスプリアス領域における不要発射を評価する送信条件に適合する。この空欄には適合しない。",
+            "9": "原問のエは(2) 変調した不要発射が周波数軸へ広がる可能性の有無。変調スペクトルは周波数軸方向に広がる可能性がある。候補9「無変調」は設問(1)の帯域外領域におけるスプリアス発射の測定条件であり、(2)のスプリアス領域における不要発射の測定条件ではない。この空欄には適合しない。",
+            "10": "原問のエは(2) 変調した不要発射が周波数軸へ広がる可能性の有無。変調スペクトルは周波数軸方向に広がる可能性がある。候補10「中で電力が最大の」は帯域内で電力が最大の点の値を表し、分布する電力の積分値ではない。この空欄には適合しない。"
+          }
+        },
+        {
+          "label": "オ",
+          "answer": "5",
+          "explanation": "参照帯域幅に含まれる不要発射は電力を積分した値で評価する。単一ピークだけでは帯域内電力を表さない。",
+          "candidateExplanations": {
+            "1": "原問のオは(2) 参照帯域幅内の分布した不要発射に対する測定値。帯域内に含まれる電力を積分した値で評価する。候補1「帯域外領域」は帯域外領域を表し、図では必要帯域とfc±2.5BNの境界の間にある。この空欄には適合しない。",
+            "2": "原問のオは(2) 参照帯域幅内の分布した不要発射に対する測定値。帯域内に含まれる電力を積分した値で評価する。候補2「スプリアス領域」はスプリアス領域を表し、図ではfc±2.5BNの外側にある。この空欄には適合しない。",
+            "3": "原問のオは(2) 参照帯域幅内の分布した不要発射に対する測定値。帯域内に含まれる電力を積分した値で評価する。候補3「ない」は可能性がないことを表し、変調によるスペクトルの広がりと反する。この空欄には適合しない。",
+            "4": "原問のオは(2) 参照帯域幅内の分布した不要発射に対する測定値。帯域内に含まれる電力を積分した値で評価する。候補4「ある」は可能性があることを表し、変調によるスペクトルの広がりに適合する。この空欄には適合しない。",
+            "5": "原問のオは(2) 参照帯域幅内の分布した不要発射に対する測定値。帯域内に含まれる電力を積分した値で評価する。候補5「電力を積分した」は電力を積分した値を表し、参照帯域幅に分布する不要発射の総量に適合する。適合する。",
+            "6": "原問のオは(2) 参照帯域幅内の分布した不要発射に対する測定値。帯域内に含まれる電力を積分した値で評価する。候補6「BN」はBNという必要周波数帯幅の量であり、領域名・送信状態・有無・測定値ではない。この空欄には適合しない。",
+            "7": "原問のオは(2) 参照帯域幅内の分布した不要発射に対する測定値。帯域内に含まれる電力を積分した値で評価する。候補7「fc」はfcという中心周波数の量であり、領域名・送信状態・有無・測定値ではない。この空欄には適合しない。",
+            "8": "原問のオは(2) 参照帯域幅内の分布した不要発射に対する測定値。帯域内に含まれる電力を積分した値で評価する。候補8「変調」は変調状態を表し、設問(2)のスプリアス領域における不要発射を評価する送信条件に適合する。この空欄には適合しない。",
+            "9": "原問のオは(2) 参照帯域幅内の分布した不要発射に対する測定値。帯域内に含まれる電力を積分した値で評価する。候補9「無変調」は設問(1)の帯域外領域におけるスプリアス発射の測定条件であり、(2)のスプリアス領域における不要発射の測定条件ではない。この空欄には適合しない。",
+            "10": "原問のオは(2) 参照帯域幅内の分布した不要発射に対する測定値。帯域内に含まれる電力を積分した値で評価する。候補10「中で電力が最大の」は帯域内で電力が最大の点の値を表し、分布する電力の積分値ではない。この空欄には適合しない。"
+          }
+        }
+      ],
+      "officialLabel": "B3",
+      "bankImageUrls": [
+        "/images/questions/riku-tech1/radio21-riku-tech1-2026-01-engineering-a-q23-original.png"
+      ],
+      "bankImageAltTexts": [
+        "公式原問 B3 の図・数式・番号付き語群（原典配置）"
+      ]
+    }
+  },
+  {
+    "id": "radio21-riku-tech1-2026-01-engineering-a-q24",
+    "exam": "riku-tech1",
+    "session": "kogaku-a",
+    "year": 2026,
+    "season": "january",
+    "qNumber": 24,
+    "type": "native-b",
+    "category": "無線工学A",
+    "subject": "無線工学A",
+    "topicTags": [
+      "無線工学A"
+    ],
+    "difficulty": 3,
+    "question": "B－4 次の記述は、図に示す高周波回路の設計・評価等で用いられるイミタンス・チャートについて述べたものである。    内に\n入れるべき字句を下の番号から選べ。なお、回路素子は理想的に動作するものとする。 \n \n(1) イミタンス・チャートは、インピーダンスと反射係数の関係を表すスミス・\nチャート（インピーダンス・チャート）と、アドミタンスと反射係数の関係を\n表すアドミタンス・チャートを重ね合わせたもので、インピーダンス整合回路\n設計等にも用いられる。 \n(2) イミタンス・チャートにおいて、①で示される線は  ア  円、②で示さ\nれる線は  イ  円を示しており、インピーダンス・チャートで示される③\nの点はインピーダンスが  ウ 〔Ω〕となる。 \n(3) イミタンス・チャートを利用することでキャパシタンスやインダクタンス\n素子の直並列接続の解析が可能となり、例えば周波数固定で回路に素子を直\n列接続した場合には、素子の値に応じて  エ ・チャートで示される線に\n沿って軌跡が移動し、素子の値を固定し周波数を変化させると、一般的に周\n波数の上昇に伴って  オ  方向に軌跡は回転する。 \n \n1 等コンダクタンス     2 等サセプタンス     3 ∞          4 インピーダンス     5 反時計 \n6 等レジスタンス       7 等リアクタンス     8 0（零）     9 アドミタンス      10 時計 \nイミタンス・チャートの概略図\n②\n①\n③",
+    "explanation": "①の円群は右端で接する等レジスタンス円。図の指示線と形状で確認する。\n\n②の上端へ延びる弧はアドミタンス・チャートの等サセプタンス線。図の指示線と形状で確認する。\n\nインピーダンス・チャートの右端③は開放端でインピーダンスが無限大。\n\n直列素子はインピーダンスを加算するのでインピーダンス・チャートの軌跡に従う。\n\n素子固定で周波数が上がると、一般的に反射係数の軌跡は時計方向へ回転する。",
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/riku-gi-1-kogaku-a.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/riku-gi-1-kogaku-a-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第一級陸上無線技術士試験 2026年1月 無線工学A B4（問題・正答）。解説は過去問AIが独自作成。図・数式語群は原典から切り出し。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-10-15",
+    "imageUrls": [
+      "/images/questions/riku-tech1/radio21-riku-tech1-2026-01-engineering-a-q24-original.png"
+    ],
+    "imageAltTexts": [
+      "公式原問 B4 の図・数式・番号付き語群（原典配置）"
+    ],
+    "nativeB": {
+      "mode": "shared-bank",
+      "candidates": [
+        {
+          "id": "1",
+          "label": "等コンダクタンス",
+          "explanation": "①の右端に接する円群はインピーダンス・チャートの等レジスタンス円であり、等コンダクタンスではない。"
+        },
+        {
+          "id": "2",
+          "label": "等サセプタンス",
+          "explanation": "②の上端へ延びる弧はアドミタンス・チャートの等サセプタンス線。図の指示線と形状で確認する。"
+        },
+        {
+          "id": "3",
+          "label": "∞",
+          "explanation": "インピーダンス・チャートの右端③は開放端でインピーダンスが無限大。"
+        },
+        {
+          "id": "4",
+          "label": "インピーダンス",
+          "explanation": "直列素子はインピーダンスを加算するのでインピーダンス・チャートの軌跡に従う。"
+        },
+        {
+          "id": "5",
+          "label": "反時計",
+          "explanation": "周波数上昇時の一般的な回転向きは時計方向で、反時計方向は逆。"
+        },
+        {
+          "id": "6",
+          "label": "等レジスタンス",
+          "explanation": "①の円群は右端で接する等レジスタンス円。図の指示線と形状で確認する。"
+        },
+        {
+          "id": "7",
+          "label": "等リアクタンス",
+          "explanation": "等リアクタンス線はインピーダンス側の弧だが、図の②はアドミタンス側の等サセプタンス線を指す。"
+        },
+        {
+          "id": "8",
+          "label": "0（零）",
+          "explanation": "0Ωは左端の短絡点。③は右端の開放点である。"
+        },
+        {
+          "id": "9",
+          "label": "アドミタンス",
+          "explanation": "並列素子はアドミタンス側で扱うが、設問(3)は直列接続を明記する。"
+        },
+        {
+          "id": "10",
+          "label": "時計",
+          "explanation": "素子固定で周波数が上がると、一般的に反射係数の軌跡は時計方向へ回転する。"
+        }
+      ],
+      "slots": [
+        {
+          "label": "ア",
+          "answer": "6",
+          "explanation": "①の円群は右端で接する等レジスタンス円。図の指示線と形状で確認する。",
+          "candidateExplanations": {
+            "1": "原問のアは(2) 図①の右端で接する円群の種類。インピーダンス側の等レジスタンス円を指す。候補1「等コンダクタンス」は等コンダクタンス円を表し、アドミタンス側の等実部であって図①のインピーダンス側の円ではない。この空欄には適合しない。",
+            "2": "原問のアは(2) 図①の右端で接する円群の種類。インピーダンス側の等レジスタンス円を指す。候補2「等サセプタンス」は等サセプタンス円を表し、図②のアドミタンス側の弧に適合する。この空欄には適合しない。",
+            "3": "原問のアは(2) 図①の右端で接する円群の種類。インピーダンス側の等レジスタンス円を指す。候補3「∞」は∞Ωを表し、開放点である右端③に適合する。この空欄には適合しない。",
+            "4": "原問のアは(2) 図①の右端で接する円群の種類。インピーダンス側の等レジスタンス円を指す。候補4「インピーダンス」はインピーダンス・チャートを表し、直列素子のインピーダンス加算に適合する。この空欄には適合しない。",
+            "5": "原問のアは(2) 図①の右端で接する円群の種類。インピーダンス側の等レジスタンス円を指す。候補5「反時計」は反時計方向を表し、設問が問う一般的な周波数上昇時の回転と逆である。この空欄には適合しない。",
+            "6": "原問のアは(2) 図①の右端で接する円群の種類。インピーダンス側の等レジスタンス円を指す。候補6「等レジスタンス」は等レジスタンス円を表し、図①のインピーダンス側の円群に適合する。適合する。",
+            "7": "原問のアは(2) 図①の右端で接する円群の種類。インピーダンス側の等レジスタンス円を指す。候補7「等リアクタンス」は等リアクタンス円を表し、図②のアドミタンス側の等サセプタンス弧とは異なる。この空欄には適合しない。",
+            "8": "原問のアは(2) 図①の右端で接する円群の種類。インピーダンス側の等レジスタンス円を指す。候補8「0（零）」は0Ωを表し、左端の短絡点であって右端③の開放点ではない。この空欄には適合しない。",
+            "9": "原問のアは(2) 図①の右端で接する円群の種類。インピーダンス側の等レジスタンス円を指す。候補9「アドミタンス」はアドミタンス・チャートを表し、並列素子には便利だが設問(3)の直列加算対象ではない。この空欄には適合しない。",
+            "10": "原問のアは(2) 図①の右端で接する円群の種類。インピーダンス側の等レジスタンス円を指す。候補10「時計」は時計方向を表し、設問が問う一般的な周波数上昇時の回転に適合する。この空欄には適合しない。"
+          }
+        },
+        {
+          "label": "イ",
+          "answer": "2",
+          "explanation": "②の上端へ延びる弧はアドミタンス・チャートの等サセプタンス線。図の指示線と形状で確認する。",
+          "candidateExplanations": {
+            "1": "原問のイは(2) 図②の上端へ至る弧の種類。アドミタンス側の等サセプタンス円を指す。候補1「等コンダクタンス」は等コンダクタンス円を表し、アドミタンス側の等実部であって図①のインピーダンス側の円ではない。この空欄には適合しない。",
+            "2": "原問のイは(2) 図②の上端へ至る弧の種類。アドミタンス側の等サセプタンス円を指す。候補2「等サセプタンス」は等サセプタンス円を表し、図②のアドミタンス側の弧に適合する。適合する。",
+            "3": "原問のイは(2) 図②の上端へ至る弧の種類。アドミタンス側の等サセプタンス円を指す。候補3「∞」は∞Ωを表し、開放点である右端③に適合する。この空欄には適合しない。",
+            "4": "原問のイは(2) 図②の上端へ至る弧の種類。アドミタンス側の等サセプタンス円を指す。候補4「インピーダンス」はインピーダンス・チャートを表し、直列素子のインピーダンス加算に適合する。この空欄には適合しない。",
+            "5": "原問のイは(2) 図②の上端へ至る弧の種類。アドミタンス側の等サセプタンス円を指す。候補5「反時計」は反時計方向を表し、設問が問う一般的な周波数上昇時の回転と逆である。この空欄には適合しない。",
+            "6": "原問のイは(2) 図②の上端へ至る弧の種類。アドミタンス側の等サセプタンス円を指す。候補6「等レジスタンス」は等レジスタンス円を表し、図①のインピーダンス側の円群に適合する。この空欄には適合しない。",
+            "7": "原問のイは(2) 図②の上端へ至る弧の種類。アドミタンス側の等サセプタンス円を指す。候補7「等リアクタンス」は等リアクタンス円を表し、図②のアドミタンス側の等サセプタンス弧とは異なる。この空欄には適合しない。",
+            "8": "原問のイは(2) 図②の上端へ至る弧の種類。アドミタンス側の等サセプタンス円を指す。候補8「0（零）」は0Ωを表し、左端の短絡点であって右端③の開放点ではない。この空欄には適合しない。",
+            "9": "原問のイは(2) 図②の上端へ至る弧の種類。アドミタンス側の等サセプタンス円を指す。候補9「アドミタンス」はアドミタンス・チャートを表し、並列素子には便利だが設問(3)の直列加算対象ではない。この空欄には適合しない。",
+            "10": "原問のイは(2) 図②の上端へ至る弧の種類。アドミタンス側の等サセプタンス円を指す。候補10「時計」は時計方向を表し、設問が問う一般的な周波数上昇時の回転に適合する。この空欄には適合しない。"
+          }
+        },
+        {
+          "label": "ウ",
+          "answer": "3",
+          "explanation": "インピーダンス・チャートの右端③は開放端でインピーダンスが無限大。",
+          "candidateExplanations": {
+            "1": "原問のウは(2) インピーダンス・チャート右端③のインピーダンス値。右端は開放点でインピーダンスは∞Ω。候補1「等コンダクタンス」は等コンダクタンス円を表し、アドミタンス側の等実部であって図①のインピーダンス側の円ではない。この空欄には適合しない。",
+            "2": "原問のウは(2) インピーダンス・チャート右端③のインピーダンス値。右端は開放点でインピーダンスは∞Ω。候補2「等サセプタンス」は等サセプタンス円を表し、図②のアドミタンス側の弧に適合する。この空欄には適合しない。",
+            "3": "原問のウは(2) インピーダンス・チャート右端③のインピーダンス値。右端は開放点でインピーダンスは∞Ω。候補3「∞」は∞Ωを表し、開放点である右端③に適合する。適合する。",
+            "4": "原問のウは(2) インピーダンス・チャート右端③のインピーダンス値。右端は開放点でインピーダンスは∞Ω。候補4「インピーダンス」はインピーダンス・チャートを表し、直列素子のインピーダンス加算に適合する。この空欄には適合しない。",
+            "5": "原問のウは(2) インピーダンス・チャート右端③のインピーダンス値。右端は開放点でインピーダンスは∞Ω。候補5「反時計」は反時計方向を表し、設問が問う一般的な周波数上昇時の回転と逆である。この空欄には適合しない。",
+            "6": "原問のウは(2) インピーダンス・チャート右端③のインピーダンス値。右端は開放点でインピーダンスは∞Ω。候補6「等レジスタンス」は等レジスタンス円を表し、図①のインピーダンス側の円群に適合する。この空欄には適合しない。",
+            "7": "原問のウは(2) インピーダンス・チャート右端③のインピーダンス値。右端は開放点でインピーダンスは∞Ω。候補7「等リアクタンス」は等リアクタンス円を表し、図②のアドミタンス側の等サセプタンス弧とは異なる。この空欄には適合しない。",
+            "8": "原問のウは(2) インピーダンス・チャート右端③のインピーダンス値。右端は開放点でインピーダンスは∞Ω。候補8「0（零）」は0Ωを表し、左端の短絡点であって右端③の開放点ではない。この空欄には適合しない。",
+            "9": "原問のウは(2) インピーダンス・チャート右端③のインピーダンス値。右端は開放点でインピーダンスは∞Ω。候補9「アドミタンス」はアドミタンス・チャートを表し、並列素子には便利だが設問(3)の直列加算対象ではない。この空欄には適合しない。",
+            "10": "原問のウは(2) インピーダンス・チャート右端③のインピーダンス値。右端は開放点でインピーダンスは∞Ω。候補10「時計」は時計方向を表し、設問が問う一般的な周波数上昇時の回転に適合する。この空欄には適合しない。"
+          }
+        },
+        {
+          "label": "エ",
+          "answer": "4",
+          "explanation": "直列素子はインピーダンスを加算するのでインピーダンス・チャートの軌跡に従う。",
+          "candidateExplanations": {
+            "1": "原問のエは(3) 回路素子の直列接続時に加算される量を扱うチャート。直列素子はインピーダンスを加算する。候補1「等コンダクタンス」は等コンダクタンス円を表し、アドミタンス側の等実部であって図①のインピーダンス側の円ではない。この空欄には適合しない。",
+            "2": "原問のエは(3) 回路素子の直列接続時に加算される量を扱うチャート。直列素子はインピーダンスを加算する。候補2「等サセプタンス」は等サセプタンス円を表し、図②のアドミタンス側の弧に適合する。この空欄には適合しない。",
+            "3": "原問のエは(3) 回路素子の直列接続時に加算される量を扱うチャート。直列素子はインピーダンスを加算する。候補3「∞」は∞Ωを表し、開放点である右端③に適合する。この空欄には適合しない。",
+            "4": "原問のエは(3) 回路素子の直列接続時に加算される量を扱うチャート。直列素子はインピーダンスを加算する。候補4「インピーダンス」はインピーダンス・チャートを表し、直列素子のインピーダンス加算に適合する。適合する。",
+            "5": "原問のエは(3) 回路素子の直列接続時に加算される量を扱うチャート。直列素子はインピーダンスを加算する。候補5「反時計」は反時計方向を表し、設問が問う一般的な周波数上昇時の回転と逆である。この空欄には適合しない。",
+            "6": "原問のエは(3) 回路素子の直列接続時に加算される量を扱うチャート。直列素子はインピーダンスを加算する。候補6「等レジスタンス」は等レジスタンス円を表し、図①のインピーダンス側の円群に適合する。この空欄には適合しない。",
+            "7": "原問のエは(3) 回路素子の直列接続時に加算される量を扱うチャート。直列素子はインピーダンスを加算する。候補7「等リアクタンス」は等リアクタンス円を表し、図②のアドミタンス側の等サセプタンス弧とは異なる。この空欄には適合しない。",
+            "8": "原問のエは(3) 回路素子の直列接続時に加算される量を扱うチャート。直列素子はインピーダンスを加算する。候補8「0（零）」は0Ωを表し、左端の短絡点であって右端③の開放点ではない。この空欄には適合しない。",
+            "9": "原問のエは(3) 回路素子の直列接続時に加算される量を扱うチャート。直列素子はインピーダンスを加算する。候補9「アドミタンス」はアドミタンス・チャートを表し、並列素子には便利だが設問(3)の直列加算対象ではない。この空欄には適合しない。",
+            "10": "原問のエは(3) 回路素子の直列接続時に加算される量を扱うチャート。直列素子はインピーダンスを加算する。候補10「時計」は時計方向を表し、設問が問う一般的な周波数上昇時の回転に適合する。この空欄には適合しない。"
+          }
+        },
+        {
+          "label": "オ",
+          "answer": "10",
+          "explanation": "素子固定で周波数が上がると、一般的に反射係数の軌跡は時計方向へ回転する。",
+          "candidateExplanations": {
+            "1": "原問のオは(3) 素子固定で周波数を上げるときの一般的な軌跡回転方向。反射係数の軌跡は一般に時計方向へ回転する。候補1「等コンダクタンス」は等コンダクタンス円を表し、アドミタンス側の等実部であって図①のインピーダンス側の円ではない。この空欄には適合しない。",
+            "2": "原問のオは(3) 素子固定で周波数を上げるときの一般的な軌跡回転方向。反射係数の軌跡は一般に時計方向へ回転する。候補2「等サセプタンス」は等サセプタンス円を表し、図②のアドミタンス側の弧に適合する。この空欄には適合しない。",
+            "3": "原問のオは(3) 素子固定で周波数を上げるときの一般的な軌跡回転方向。反射係数の軌跡は一般に時計方向へ回転する。候補3「∞」は∞Ωを表し、開放点である右端③に適合する。この空欄には適合しない。",
+            "4": "原問のオは(3) 素子固定で周波数を上げるときの一般的な軌跡回転方向。反射係数の軌跡は一般に時計方向へ回転する。候補4「インピーダンス」はインピーダンス・チャートを表し、直列素子のインピーダンス加算に適合する。この空欄には適合しない。",
+            "5": "原問のオは(3) 素子固定で周波数を上げるときの一般的な軌跡回転方向。反射係数の軌跡は一般に時計方向へ回転する。候補5「反時計」は反時計方向を表し、設問が問う一般的な周波数上昇時の回転と逆である。この空欄には適合しない。",
+            "6": "原問のオは(3) 素子固定で周波数を上げるときの一般的な軌跡回転方向。反射係数の軌跡は一般に時計方向へ回転する。候補6「等レジスタンス」は等レジスタンス円を表し、図①のインピーダンス側の円群に適合する。この空欄には適合しない。",
+            "7": "原問のオは(3) 素子固定で周波数を上げるときの一般的な軌跡回転方向。反射係数の軌跡は一般に時計方向へ回転する。候補7「等リアクタンス」は等リアクタンス円を表し、図②のアドミタンス側の等サセプタンス弧とは異なる。この空欄には適合しない。",
+            "8": "原問のオは(3) 素子固定で周波数を上げるときの一般的な軌跡回転方向。反射係数の軌跡は一般に時計方向へ回転する。候補8「0（零）」は0Ωを表し、左端の短絡点であって右端③の開放点ではない。この空欄には適合しない。",
+            "9": "原問のオは(3) 素子固定で周波数を上げるときの一般的な軌跡回転方向。反射係数の軌跡は一般に時計方向へ回転する。候補9「アドミタンス」はアドミタンス・チャートを表し、並列素子には便利だが設問(3)の直列加算対象ではない。この空欄には適合しない。",
+            "10": "原問のオは(3) 素子固定で周波数を上げるときの一般的な軌跡回転方向。反射係数の軌跡は一般に時計方向へ回転する。候補10「時計」は時計方向を表し、設問が問う一般的な周波数上昇時の回転に適合する。適合する。"
+          }
+        }
+      ],
+      "officialLabel": "B4",
+      "bankImageUrls": [
+        "/images/questions/riku-tech1/radio21-riku-tech1-2026-01-engineering-a-q24-original.png"
+      ],
+      "bankImageAltTexts": [
+        "公式原問 B4 の図・数式・番号付き語群（原典配置）"
+      ]
+    }
+  },
+  {
+    "id": "radio21-riku-tech1-2026-01-engineering-a-q25",
+    "exam": "riku-tech1",
+    "session": "kogaku-a",
+    "year": 2026,
+    "season": "january",
+    "qNumber": 25,
+    "type": "native-b",
+    "category": "無線工学A",
+    "subject": "無線工学A",
+    "topicTags": [
+      "無線工学A"
+    ],
+    "difficulty": 3,
+    "question": "B－5 次の記述は、振幅変調(A3E)波について述べたものである。    内に入れるべき字句を下の番号から選べ。ただし、搬送波\nをA cos ωt〔V〕、単一正弦波の変調信号をB cos pt〔V〕とし、A は搬送波、B は変調信号の振幅〔V〕を、ω は搬送波、p は\n変調信号の角周波数〔rad/s〕を表すものとし、A≧B とする。 \n \n(1) A3E波 e は、次式で表される。 \ne ＝  ア 〔V〕 \n(2) 変調度 m は、次式で表される。 \nm ＝  イ  ×100〔%〕 \n(3) 変調をかけたときとかけないときとで、搬送波の電力は  ウ  。 \n(4) 変調度が50〔%〕のとき、A3E波の上側帯波と下側帯波のそれぞれの電力の値は、搬送波電力の値の  エ  である。 \n(5) 変調度が100〔%〕のとき、A3E波の尖頭(ピーク)電力の値は、無変調時の搬送波電力の値の  オ  倍である。 \n \n1 A cos ωt ＋B cos pt cos ωt     2 (B /A)     3 異なる         4 1/8       5 2 \n6 B cos pt  ＋A cos pt cos ωt     7 (A /B)     8 変わらない     9 1/16     10 4",
+    "explanation": "搬送波に変調成分を掛け合わせ、e=(A+B cos pt)cos ωtとなる。\n\n変調度は変調信号振幅と搬送波振幅の比B/A。\n\n変調を掛けても搬送波成分の振幅Aは同じなので搬送波電力は変わらない。\n\nm=0.5で片側帯波の振幅はm/2倍、電力は(m/2)²=1/16倍。\n\n100%変調時の包絡線尖頭は2Aなので電力比は(2A/A)²=4。",
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/riku-gi-1-kogaku-a.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/riku-gi-1-kogaku-a-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第一級陸上無線技術士試験 2026年1月 無線工学A B5（問題・正答）。解説は過去問AIが独自作成。図・数式語群は原典から切り出し。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-10-15",
+    "imageUrls": [
+      "/images/questions/riku-tech1/radio21-riku-tech1-2026-01-engineering-a-q25-original.png"
+    ],
+    "imageAltTexts": [
+      "公式原問 B5 の図・数式・番号付き語群（原典配置）"
+    ],
+    "nativeB": {
+      "mode": "shared-bank",
+      "candidates": [
+        {
+          "id": "1",
+          "label": "A cos ωt ＋B cos pt cos ωt",
+          "explanation": "搬送波に変調成分を掛け合わせ、e=(A+B cos pt)cos ωtとなる。"
+        },
+        {
+          "id": "2",
+          "label": "(B /A)",
+          "explanation": "変調度は変調信号振幅と搬送波振幅の比B/A。"
+        },
+        {
+          "id": "3",
+          "label": "異なる",
+          "explanation": "AMの変調では搬送波成分A cos ωtの振幅は一定なので搬送波電力は異ならない。"
+        },
+        {
+          "id": "4",
+          "label": "1/8",
+          "explanation": "m=0.5の片側帯波電力比はm²/4=1/16であり1/8は両側帯波の合計。"
+        },
+        {
+          "id": "5",
+          "label": "2",
+          "explanation": "m=1の尖頭電力比は(1+m)²=4であり2ではない。"
+        },
+        {
+          "id": "6",
+          "label": "B cos pt ＋A cos pt cos ωt",
+          "explanation": "第1項が変調信号となる式は搬送波A cos ωtを保たず、A3E波の式ではない。"
+        },
+        {
+          "id": "7",
+          "label": "(A /B)",
+          "explanation": "A/Bは振幅比が逆であり、A≧Bで変調度を表すB/Aに合わない。"
+        },
+        {
+          "id": "8",
+          "label": "変わらない",
+          "explanation": "変調を掛けても搬送波成分の振幅Aは同じなので搬送波電力は変わらない。"
+        },
+        {
+          "id": "9",
+          "label": "1/16",
+          "explanation": "m=0.5で片側帯波の振幅はm/2倍、電力は(m/2)²=1/16倍。"
+        },
+        {
+          "id": "10",
+          "label": "4",
+          "explanation": "100%変調時の包絡線尖頭は2Aなので電力比は(2A/A)²=4。"
+        }
+      ],
+      "slots": [
+        {
+          "label": "ア",
+          "answer": "1",
+          "explanation": "搬送波に変調成分を掛け合わせ、e=(A+B cos pt)cos ωtとなる。",
+          "candidateExplanations": {
+            "1": "原問のアは(1) 搬送波A cos ωtと変調信号B cos ptからなるA3E波eの式。e=(A+B cos pt)cos ωtで搬送波に包絡線を掛ける。候補1「A cos ωt ＋B cos pt cos ωt」はA cos ωt+B cos pt cos ωtであり、(A+B cos pt)cos ωtへ整理できる。適合する。",
+            "2": "原問のアは(1) 搬送波A cos ωtと変調信号B cos ptからなるA3E波eの式。e=(A+B cos pt)cos ωtで搬送波に包絡線を掛ける。候補2「(B /A)」はB/Aであり、変調信号振幅を搬送波振幅で割った値である。この空欄には適合しない。",
+            "3": "原問のアは(1) 搬送波A cos ωtと変調信号B cos ptからなるA3E波eの式。e=(A+B cos pt)cos ωtで搬送波に包絡線を掛ける。候補3「異なる」は搬送波電力が異なるという関係であり、一定の搬送波振幅Aと反する。この空欄には適合しない。",
+            "4": "原問のアは(1) 搬送波A cos ωtと変調信号B cos ptからなるA3E波eの式。e=(A+B cos pt)cos ωtで搬送波に包絡線を掛ける。候補4「1/8」は1/8という比であり、m=0.5時の両側帯波合計m²/2に当たるが片側ではない。この空欄には適合しない。",
+            "5": "原問のアは(1) 搬送波A cos ωtと変調信号B cos ptからなるA3E波eの式。e=(A+B cos pt)cos ωtで搬送波に包絡線を掛ける。候補5「2」は2という比であり、m=1時の尖頭包絡線の振幅比であって電力比ではない。この空欄には適合しない。",
+            "6": "原問のアは(1) 搬送波A cos ωtと変調信号B cos ptからなるA3E波eの式。e=(A+B cos pt)cos ωtで搬送波に包絡線を掛ける。候補6「B cos pt ＋A cos pt cos ωt」はB cos pt+A cos pt cos ωtであり、搬送波A cos ωtの項を保持しない。この空欄には適合しない。",
+            "7": "原問のアは(1) 搬送波A cos ωtと変調信号B cos ptからなるA3E波eの式。e=(A+B cos pt)cos ωtで搬送波に包絡線を掛ける。候補7「(A /B)」はA/Bであり、変調度B/Aの分子分母が逆である。この空欄には適合しない。",
+            "8": "原問のアは(1) 搬送波A cos ωtと変調信号B cos ptからなるA3E波eの式。e=(A+B cos pt)cos ωtで搬送波に包絡線を掛ける。候補8「変わらない」は搬送波電力が変わらないという関係であり、搬送波成分A cos ωtが一定なことに合う。この空欄には適合しない。",
+            "9": "原問のアは(1) 搬送波A cos ωtと変調信号B cos ptからなるA3E波eの式。e=(A+B cos pt)cos ωtで搬送波に包絡線を掛ける。候補9「1/16」は1/16という比であり、m=0.5時の片側帯波電力m²/4に当たる。この空欄には適合しない。",
+            "10": "原問のアは(1) 搬送波A cos ωtと変調信号B cos ptからなるA3E波eの式。e=(A+B cos pt)cos ωtで搬送波に包絡線を掛ける。候補10「4」は4という比であり、m=1時の尖頭電力比(1+m)²に当たる。この空欄には適合しない。"
+          }
+        },
+        {
+          "label": "イ",
+          "answer": "2",
+          "explanation": "変調度は変調信号振幅と搬送波振幅の比B/A。",
+          "candidateExplanations": {
+            "1": "原問のイは(2) 変調度mの振幅比。m=B/Aで変調信号振幅を搬送波振幅で割る。候補1「A cos ωt ＋B cos pt cos ωt」はA cos ωt+B cos pt cos ωtであり、(A+B cos pt)cos ωtへ整理できる。この空欄には適合しない。",
+            "2": "原問のイは(2) 変調度mの振幅比。m=B/Aで変調信号振幅を搬送波振幅で割る。候補2「(B /A)」はB/Aであり、変調信号振幅を搬送波振幅で割った値である。適合する。",
+            "3": "原問のイは(2) 変調度mの振幅比。m=B/Aで変調信号振幅を搬送波振幅で割る。候補3「異なる」は搬送波電力が異なるという関係であり、一定の搬送波振幅Aと反する。この空欄には適合しない。",
+            "4": "原問のイは(2) 変調度mの振幅比。m=B/Aで変調信号振幅を搬送波振幅で割る。候補4「1/8」は1/8という比であり、m=0.5時の両側帯波合計m²/2に当たるが片側ではない。この空欄には適合しない。",
+            "5": "原問のイは(2) 変調度mの振幅比。m=B/Aで変調信号振幅を搬送波振幅で割る。候補5「2」は2という比であり、m=1時の尖頭包絡線の振幅比であって電力比ではない。この空欄には適合しない。",
+            "6": "原問のイは(2) 変調度mの振幅比。m=B/Aで変調信号振幅を搬送波振幅で割る。候補6「B cos pt ＋A cos pt cos ωt」はB cos pt+A cos pt cos ωtであり、搬送波A cos ωtの項を保持しない。この空欄には適合しない。",
+            "7": "原問のイは(2) 変調度mの振幅比。m=B/Aで変調信号振幅を搬送波振幅で割る。候補7「(A /B)」はA/Bであり、変調度B/Aの分子分母が逆である。この空欄には適合しない。",
+            "8": "原問のイは(2) 変調度mの振幅比。m=B/Aで変調信号振幅を搬送波振幅で割る。候補8「変わらない」は搬送波電力が変わらないという関係であり、搬送波成分A cos ωtが一定なことに合う。この空欄には適合しない。",
+            "9": "原問のイは(2) 変調度mの振幅比。m=B/Aで変調信号振幅を搬送波振幅で割る。候補9「1/16」は1/16という比であり、m=0.5時の片側帯波電力m²/4に当たる。この空欄には適合しない。",
+            "10": "原問のイは(2) 変調度mの振幅比。m=B/Aで変調信号振幅を搬送波振幅で割る。候補10「4」は4という比であり、m=1時の尖頭電力比(1+m)²に当たる。この空欄には適合しない。"
+          }
+        },
+        {
+          "label": "ウ",
+          "answer": "8",
+          "explanation": "変調を掛けても搬送波成分の振幅Aは同じなので搬送波電力は変わらない。",
+          "candidateExplanations": {
+            "1": "原問のウは(3) 変調の有無による搬送波電力の関係。搬送波成分の振幅Aは一定なので搬送波電力は変わらない。候補1「A cos ωt ＋B cos pt cos ωt」はA cos ωt+B cos pt cos ωtであり、(A+B cos pt)cos ωtへ整理できる。この空欄には適合しない。",
+            "2": "原問のウは(3) 変調の有無による搬送波電力の関係。搬送波成分の振幅Aは一定なので搬送波電力は変わらない。候補2「(B /A)」はB/Aであり、変調信号振幅を搬送波振幅で割った値である。この空欄には適合しない。",
+            "3": "原問のウは(3) 変調の有無による搬送波電力の関係。搬送波成分の振幅Aは一定なので搬送波電力は変わらない。候補3「異なる」は搬送波電力が異なるという関係であり、一定の搬送波振幅Aと反する。この空欄には適合しない。",
+            "4": "原問のウは(3) 変調の有無による搬送波電力の関係。搬送波成分の振幅Aは一定なので搬送波電力は変わらない。候補4「1/8」は1/8という比であり、m=0.5時の両側帯波合計m²/2に当たるが片側ではない。この空欄には適合しない。",
+            "5": "原問のウは(3) 変調の有無による搬送波電力の関係。搬送波成分の振幅Aは一定なので搬送波電力は変わらない。候補5「2」は2という比であり、m=1時の尖頭包絡線の振幅比であって電力比ではない。この空欄には適合しない。",
+            "6": "原問のウは(3) 変調の有無による搬送波電力の関係。搬送波成分の振幅Aは一定なので搬送波電力は変わらない。候補6「B cos pt ＋A cos pt cos ωt」はB cos pt+A cos pt cos ωtであり、搬送波A cos ωtの項を保持しない。この空欄には適合しない。",
+            "7": "原問のウは(3) 変調の有無による搬送波電力の関係。搬送波成分の振幅Aは一定なので搬送波電力は変わらない。候補7「(A /B)」はA/Bであり、変調度B/Aの分子分母が逆である。この空欄には適合しない。",
+            "8": "原問のウは(3) 変調の有無による搬送波電力の関係。搬送波成分の振幅Aは一定なので搬送波電力は変わらない。候補8「変わらない」は搬送波電力が変わらないという関係であり、搬送波成分A cos ωtが一定なことに合う。適合する。",
+            "9": "原問のウは(3) 変調の有無による搬送波電力の関係。搬送波成分の振幅Aは一定なので搬送波電力は変わらない。候補9「1/16」は1/16という比であり、m=0.5時の片側帯波電力m²/4に当たる。この空欄には適合しない。",
+            "10": "原問のウは(3) 変調の有無による搬送波電力の関係。搬送波成分の振幅Aは一定なので搬送波電力は変わらない。候補10「4」は4という比であり、m=1時の尖頭電力比(1+m)²に当たる。この空欄には適合しない。"
+          }
+        },
+        {
+          "label": "エ",
+          "answer": "9",
+          "explanation": "m=0.5で片側帯波の振幅はm/2倍、電力は(m/2)²=1/16倍。",
+          "candidateExplanations": {
+            "1": "原問のエは(4) m=50%時の上側帯波と下側帯波それぞれの搬送波電力比。片側帯波電力比はm²/4=1/16。候補1「A cos ωt ＋B cos pt cos ωt」はA cos ωt+B cos pt cos ωtであり、(A+B cos pt)cos ωtへ整理できる。この空欄には適合しない。",
+            "2": "原問のエは(4) m=50%時の上側帯波と下側帯波それぞれの搬送波電力比。片側帯波電力比はm²/4=1/16。候補2「(B /A)」はB/Aであり、変調信号振幅を搬送波振幅で割った値である。この空欄には適合しない。",
+            "3": "原問のエは(4) m=50%時の上側帯波と下側帯波それぞれの搬送波電力比。片側帯波電力比はm²/4=1/16。候補3「異なる」は搬送波電力が異なるという関係であり、一定の搬送波振幅Aと反する。この空欄には適合しない。",
+            "4": "原問のエは(4) m=50%時の上側帯波と下側帯波それぞれの搬送波電力比。片側帯波電力比はm²/4=1/16。候補4「1/8」は1/8という比であり、m=0.5時の両側帯波合計m²/2に当たるが片側ではない。この空欄には適合しない。",
+            "5": "原問のエは(4) m=50%時の上側帯波と下側帯波それぞれの搬送波電力比。片側帯波電力比はm²/4=1/16。候補5「2」は2という比であり、m=1時の尖頭包絡線の振幅比であって電力比ではない。この空欄には適合しない。",
+            "6": "原問のエは(4) m=50%時の上側帯波と下側帯波それぞれの搬送波電力比。片側帯波電力比はm²/4=1/16。候補6「B cos pt ＋A cos pt cos ωt」はB cos pt+A cos pt cos ωtであり、搬送波A cos ωtの項を保持しない。この空欄には適合しない。",
+            "7": "原問のエは(4) m=50%時の上側帯波と下側帯波それぞれの搬送波電力比。片側帯波電力比はm²/4=1/16。候補7「(A /B)」はA/Bであり、変調度B/Aの分子分母が逆である。この空欄には適合しない。",
+            "8": "原問のエは(4) m=50%時の上側帯波と下側帯波それぞれの搬送波電力比。片側帯波電力比はm²/4=1/16。候補8「変わらない」は搬送波電力が変わらないという関係であり、搬送波成分A cos ωtが一定なことに合う。この空欄には適合しない。",
+            "9": "原問のエは(4) m=50%時の上側帯波と下側帯波それぞれの搬送波電力比。片側帯波電力比はm²/4=1/16。候補9「1/16」は1/16という比であり、m=0.5時の片側帯波電力m²/4に当たる。適合する。",
+            "10": "原問のエは(4) m=50%時の上側帯波と下側帯波それぞれの搬送波電力比。片側帯波電力比はm²/4=1/16。候補10「4」は4という比であり、m=1時の尖頭電力比(1+m)²に当たる。この空欄には適合しない。"
+          }
+        },
+        {
+          "label": "オ",
+          "answer": "10",
+          "explanation": "100%変調時の包絡線尖頭は2Aなので電力比は(2A/A)²=4。",
+          "candidateExplanations": {
+            "1": "原問のオは(5) m=100%時の尖頭電力と無変調搬送波電力の比。尖頭包絡線振幅は2Aで電力比は(2A/A)²=4。候補1「A cos ωt ＋B cos pt cos ωt」はA cos ωt+B cos pt cos ωtであり、(A+B cos pt)cos ωtへ整理できる。この空欄には適合しない。",
+            "2": "原問のオは(5) m=100%時の尖頭電力と無変調搬送波電力の比。尖頭包絡線振幅は2Aで電力比は(2A/A)²=4。候補2「(B /A)」はB/Aであり、変調信号振幅を搬送波振幅で割った値である。この空欄には適合しない。",
+            "3": "原問のオは(5) m=100%時の尖頭電力と無変調搬送波電力の比。尖頭包絡線振幅は2Aで電力比は(2A/A)²=4。候補3「異なる」は搬送波電力が異なるという関係であり、一定の搬送波振幅Aと反する。この空欄には適合しない。",
+            "4": "原問のオは(5) m=100%時の尖頭電力と無変調搬送波電力の比。尖頭包絡線振幅は2Aで電力比は(2A/A)²=4。候補4「1/8」は1/8という比であり、m=0.5時の両側帯波合計m²/2に当たるが片側ではない。この空欄には適合しない。",
+            "5": "原問のオは(5) m=100%時の尖頭電力と無変調搬送波電力の比。尖頭包絡線振幅は2Aで電力比は(2A/A)²=4。候補5「2」は2という比であり、m=1時の尖頭包絡線の振幅比であって電力比ではない。この空欄には適合しない。",
+            "6": "原問のオは(5) m=100%時の尖頭電力と無変調搬送波電力の比。尖頭包絡線振幅は2Aで電力比は(2A/A)²=4。候補6「B cos pt ＋A cos pt cos ωt」はB cos pt+A cos pt cos ωtであり、搬送波A cos ωtの項を保持しない。この空欄には適合しない。",
+            "7": "原問のオは(5) m=100%時の尖頭電力と無変調搬送波電力の比。尖頭包絡線振幅は2Aで電力比は(2A/A)²=4。候補7「(A /B)」はA/Bであり、変調度B/Aの分子分母が逆である。この空欄には適合しない。",
+            "8": "原問のオは(5) m=100%時の尖頭電力と無変調搬送波電力の比。尖頭包絡線振幅は2Aで電力比は(2A/A)²=4。候補8「変わらない」は搬送波電力が変わらないという関係であり、搬送波成分A cos ωtが一定なことに合う。この空欄には適合しない。",
+            "9": "原問のオは(5) m=100%時の尖頭電力と無変調搬送波電力の比。尖頭包絡線振幅は2Aで電力比は(2A/A)²=4。候補9「1/16」は1/16という比であり、m=0.5時の片側帯波電力m²/4に当たる。この空欄には適合しない。",
+            "10": "原問のオは(5) m=100%時の尖頭電力と無変調搬送波電力の比。尖頭包絡線振幅は2Aで電力比は(2A/A)²=4。候補10「4」は4という比であり、m=1時の尖頭電力比(1+m)²に当たる。適合する。"
+          }
+        }
+      ],
+      "officialLabel": "B5",
+      "bankImageUrls": [
+        "/images/questions/riku-tech1/radio21-riku-tech1-2026-01-engineering-a-q25-original.png"
+      ],
+      "bankImageAltTexts": [
+        "公式原問 B5 の図・数式・番号付き語群（原典配置）"
+      ]
+    }
+  }
+]

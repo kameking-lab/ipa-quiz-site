@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import { ThumbsUp, AlertCircle, Flag, Check } from "lucide-react";
 
+import { readQuestionReportContext, questionReportContextLines, type QuestionReportContext } from "@/lib/feedback/question-report-context";
 import { LS_KEYS } from "@/lib/storage/keys";
 
 type Rating = "helpful" | "unclear" | "report";
@@ -57,7 +58,14 @@ const META: Record<
   },
 };
 
-export function QuestionFeedback({ questionId }: { questionId: string }) {
+interface QuestionFeedbackProps { questionId: string; context?: QuestionReportContext | null }
+export function QuestionFeedback({ questionId, context }: QuestionFeedbackProps) {
+  const current = readQuestionReportContext(context, questionId);
+  // Reset an unsent report when the question or its displayed metadata changes.
+  // An earlier request retains its own captured payload, never the new question's.
+  return <QuestionFeedbackForm key={JSON.stringify([questionId,current])} questionId={questionId} context={current} />;
+}
+function QuestionFeedbackForm({ questionId, context }: { questionId: string; context: QuestionReportContext | null }) {
   const [submitted, setSubmitted] = useState<Rating | null>(null);
   const [comment, setComment] = useState("");
   const [showCommentBox, setShowCommentBox] = useState(false);
@@ -79,6 +87,7 @@ export function QuestionFeedback({ questionId }: { questionId: string }) {
           kind: "question-rating",
           questionId,
           rating,
+          ...(rating !== "helpful" && context ? { context } : {}),
           comment: optionalComment?.trim() ? optionalComment.trim() : undefined,
         }),
         cache: "no-store",
@@ -151,6 +160,13 @@ export function QuestionFeedback({ questionId }: { questionId: string }) {
 
       {showCommentBox && submitted && submitted !== "helpful" && (
         <div className="mt-3 space-y-2">
+          <div aria-label="報告に添付する教材情報" className="rounded-lg border border-border bg-muted/40 p-3 text-xs">
+            <p className="font-semibold">この内容を報告に添付します</p>
+            <ul className="mt-1 space-y-1 break-words">
+              {questionReportContextLines(context, questionId).map(line => <li key={line}>{line}</li>)}
+            </ul>
+            <p className="mt-2 text-muted-foreground">表示中の教材から取得した報告情報です。更新日は版番号ではありません。</p>
+          </div>
           <label
             htmlFor={`feedback-${questionId}`}
             className="block text-[11px] text-muted-foreground"

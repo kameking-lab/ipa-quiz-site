@@ -1,0 +1,45 @@
+{
+  "scope": "Source-only Q106 GO after one initial and one evidence-delta Claude Max review; no site registration",
+  "id": "kangoshi-2024-annual-am-q106",
+  "sourcePacketSha256": "8b9960a0d8674827e881cd4364034a3f8bea7956e026f4c1fac75ccb194577e6",
+  "existingCandidateSha256": "097e1d8a1a9606dc835bc419cf54cc33d96c07bfd52fcd26aaf66a60a1d247b0",
+  "officialQuestionPdfSha256": "03733e97bcbc54eb6ea74727daf57aaf8a094d1746879d10b4451efc361a981f",
+  "officialAnswerPdfSha256": "706f6fe6ab34e9849755874132ad98ac55a32d9b83fa7e37c8e58c7ad07921db",
+  "officialPage": 44,
+  "sourcePageImageSha256": "de7383cea73cfc89278f5572d946d0fbd7d8ba075aa6fd3189b7fcc3cc94e005",
+  "rawOriginalQuestionAndAllChoices": "106\nこのときの看護師のトリアージで診察を受ける優先度が高いのはどれか。\n1．A ちゃん\n2．B 君\n3．C ちゃん\n4．D 君",
+  "officialAnswerDigits": "4",
+  "initialModelResultSha256": "2027982da8dbb28c6382a2c20efe98c1af3f6a277e16a505936aef15fcdc309f",
+  "immutableInitialHoldSha256": "a05a4e34b431e5b388786f64699e12a634217e927c26607b9abb0e45e171d9fd",
+  "independentOfficialSupplementSha256": "91db49242589233a94e9650bfaf58072d11598f01884411b944e6441996ba074",
+  "evidenceDeltaModelResultSha256": "f776dc09047163ecf6ba78872cc5340c9e647802eb078b4e779bcd2d16e2ea9d",
+  "modelFlagsClassification": [
+    {
+      "flagIndex": 1,
+      "classification": "source_gap",
+      "reason": "Aちゃんの電池誤飲について、前回は米国の資料のみで日本の基準との整合が未確認だった。今回、国民生活センター、消費者庁という日本国内の一次資料が、ボタン型電池の誤飲は無症状でも消化管の損傷を起こしうるため早急な医療評価が必要と示している。これにより出典不足は解消できる。説明文の『無症状でも緊急のX線評価を要し、安全とは言えない』という内容は国内資料と矛盾しない。ただし、これらは看護師国家試験の公式解説ではなく、日本の臨床ガイドラインでもない。そのため、公式解説との一致を主張してはならない。X線という具体的手段は、消費者庁資料が放射線検査での評価に言及している範囲で支持される。内容誤りではなく、国内資料で補完できる出典不足である。",
+      "remainingBlocker": false
+    },
+    {
+      "flagIndex": 2,
+      "classification": "explicit_limit",
+      "reason": "公式正答PDFには正答番号のみがあり、解説はない。今回の証跡で正答行 'AM106 4' が機械的に確認された。説明文は問題文の所見（5分間の初回痙攣、反復嘔吐、38.7℃、声かけで開眼してもすぐにうとうと）に基づく限定的な推論であり、出題者の意図を断定していない。公式解説がないことは資料の性質であり、内容誤りではなく、限界として明示すべき事項である。Aを安全としていない点、原因を確定していない点も保たれている。D君の優先理由は、意識低下の疑い、嘔吐の反復による気道の懸念、現在の意識・気道・呼吸・循環の評価という形で述べられており、国内の日本医師会の痙攣後の意識と呼吸・誤嚥の観察に関する記載とも矛盾しない。なお説明文本体には、これが推論であるという趣旨の明示が弱いため、必要なら下記の最小修正で限界を本文に残せる。",
+      "remainingBlocker": false
+    },
+    {
+      "flagIndex": 3,
+      "classification": "explicit_limit",
+      "reason": "D君の痙攣の原因は資料で決着せず、他の児の診断も確定していない。説明文は、原因を発熱に伴う痙攣、中枢神経感染症、頭蓋内病変などと列挙しつつ『問題文の情報だけでは確定できない』と明示し、診断を推測しない姿勢を取っている。これは適切に明示された限界であり、内容誤りでも出典不足でもない。国内の日本医師会の資料も原因を確定していない。この点は未解消の実内容問題ではない。",
+      "remainingBlocker": false
+    },
+    {
+      "flagIndex": 4,
+      "classification": "model_access_limit",
+      "reason": "前回のHOLDは、モデルがPDF本文を独立に照合していないという手続き上の限界である。今回の新証跡は、ローカルの機械検証によるSHA-256値、正答行 'AM106 4'、問題ページの目視確認という、ローカル側での確認結果である。これはモデル自身がPDFを開いた証拠ではなく、そのように主張してはならない。したがってこのフラグは説明文の内容誤りではなく、モデルのアクセス限界である。ローカル検証の証跡として扱い、モデルによる独立検証とは区別して記録する。なお、原文の数字に文字化けが検出されているが、問題文と選択肢ラベルは確認済みで、描画ページの目視確認も済んでいる。この文字化けが説明文の数値に影響するかどうかは、今回の資料だけでは確認できない。",
+      "remainingBlocker": false
+    }
+  ],
+  "modelTextChanges": 0,
+  "remainingContentFlags": [],
+  "clinicalInferenceLimit": "The explanation does not claim a diagnosed cause or official examiner rationale."
+}

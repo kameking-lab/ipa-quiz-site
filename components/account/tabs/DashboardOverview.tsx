@@ -2,27 +2,25 @@
 
 import * as React from "react";
 import Link from "next/link";
-import { BookOpen, Clock, Flame, Target, TrendingUp, ArrowRight } from "lucide-react";
+import { BookOpen, Clock, Flame, TrendingUp, ArrowRight } from "lucide-react";
 import { LS_KEYS } from "@/lib/storage/keys";
 import { readStreak } from "@/lib/streak/storage";
 import { examLabel } from "@/lib/utils";
 import {
   computeExamProbabilities,
-  daysUntilNextExam,
   estimateStudyMinutes,
   type ExamPassProbability,
   type QuestionMeta,
 } from "@/lib/dashboard/analytics";
 import type { HistoryEntry } from "@/lib/storage/history";
 import { LearningHeatmap } from "@/components/motivation/LearningHeatmap";
+import { tsuginoScheduleUrl } from "@/lib/tsugino-qualification";
 
 interface OverviewData {
   totalAnswered: number;
   studyMinutes: number;
   streak: number;
   longestStreak: number;
-  daysToExam: number;
-  examLabel: string;
   examTopProb: ExamPassProbability | undefined;
 }
 
@@ -60,26 +58,18 @@ export function DashboardOverview() {
   React.useEffect(() => {
     const entries = loadHistoryEntries();
     const streak = readStreak();
-    const exam = daysUntilNextExam();
     const uniqueIds = [...new Set(entries.map((e) => e.id))];
 
     void fetchQuestionMeta(uniqueIds).then((meta) => {
       const examProbs = computeExamProbabilities(entries, meta);
-      // Prefer exams that have crossed PROB_MIN_SAMPLE — a tiny-sample 61%
-      // outranking a meaningful 45% would surface a "計測中" placeholder
-      // even though the user has a real measurable exam.
-      const sortedProbs = [...examProbs].sort((a, b) => {
-        if (a.enoughSample !== b.enoughSample) return a.enoughSample ? -1 : 1;
-        return b.passProbability - a.passProbability;
-      });
-      const examTopProb = sortedProbs[0];
+      const sortedProbs = [...examProbs].sort((a, b) =>
+        b.answered - a.answered || b.accuracy - a.accuracy);
+      const examTopProb = sortedProbs.find((probability) => probability.answered > 0);
       setData({
         totalAnswered: entries.length,
         studyMinutes: estimateStudyMinutes(entries.length),
         streak: streak.currentStreak,
         longestStreak: streak.longestStreak,
-        daysToExam: exam.days,
-        examLabel: exam.label,
         examTopProb,
       });
     });
@@ -106,7 +96,7 @@ export function DashboardOverview() {
         </Link>
       </div>
 
-      <section className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-5">
+      <section className="grid grid-cols-2 gap-3 sm:grid-cols-4">
         <KpiCard
           icon={<BookOpen className="h-4 w-4" />}
           label="総問題数"
@@ -128,31 +118,25 @@ export function DashboardOverview() {
           tone="amber"
         />
         <KpiCard
-          icon={<Target className="h-4 w-4" />}
-          label="次の試験まで"
-          value={String(data.daysToExam)}
-          unit="日"
-          sub={data.examLabel}
-          tone="rose"
-        />
-        <KpiCard
           icon={<TrendingUp className="h-4 w-4" />}
-          label="予測合格率"
-          value={
-            data.examTopProb && data.examTopProb.enoughSample
-              ? `${data.examTopProb.passProbability}%`
-              : "計測中"
-          }
-          sub={
-            !data.examTopProb
-              ? "—"
-              : data.examTopProb.enoughSample
-                ? examLabel(data.examTopProb.exam)
-                : `あと ${data.examTopProb.answersUntilSample} 問で計測開始`
-          }
+          label="記録の正答率"
+          value={data.examTopProb ? `${Math.round(data.examTopProb.accuracy * 100)}%` : "—"}
+          sub={data.examTopProb
+            ? `${examLabel(data.examTopProb.exam)} · ${data.examTopProb.answered}問の記録`
+            : "まだ回答記録がありません"}
           tone="emerald"
         />
       </section>
+
+      <a
+        href={tsuginoScheduleUrl(data.examTopProb?.exam)}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="flex items-center justify-between rounded-xl border border-rose-200 bg-rose-50 px-4 py-3 text-sm font-semibold text-rose-900 hover:bg-rose-100 dark:border-rose-900/60 dark:bg-rose-950/30 dark:text-rose-100"
+      >
+        <span>試験日・申込締切は「次の資格」で確認</span>
+        <ArrowRight className="h-4 w-4" aria-hidden="true" />
+      </a>
 
       <section>
         <h2 className="mb-2 text-sm font-semibold text-zinc-700 dark:text-zinc-300">

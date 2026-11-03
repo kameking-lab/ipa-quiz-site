@@ -1,0 +1,70 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20250323",
+  "subject": "power",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 4309,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 13996,
+      "webSearchRequests": 0,
+      "costUSD": 0.1984118,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 2780,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "3e230365386e0d8ec2f80be41e02d7959c0bc9895e5c66c6ca1ffbbf8489290e",
+  "inputRequestSha256": "8f652b48d25999546cbebbc4a324827e1f612d3534eeca8a5f88b9ae59931d41",
+  "inputHashes": {
+    "candidateSha256": {
+      "q07": "a5ee483f7a63d488c000809ee67f59c29f02c35fc3cb331b110012f59e72d4d6"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20250323/power/p10.png": "30db255e5db414a28482b222eab91f9f7534f4aaece888e91a17a49ba15abec9"
+    },
+    "figureSha256": {},
+    "sourceQuestionPdfSha256": "892785e0f1035bcb239eb30fa903d4c88adbcfdaa1b5b0edea2d1907fd887114",
+    "sourceAnswerPdfSha256": "4c3b38fcf1405766fafaa78b1b05b867a3d48307a670b9d354476bc6b32acd4c",
+    "officialAnswerUnitsSha256": "198d0a502bfdaf7c5d3ba3d228ccb14bc4960fa6683f4800347f98df645b2ad0",
+    "referencePdfSha256": {},
+    "referencePageSha256": {},
+    "referenceJsonSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q07",
+      "questionNumber": 7,
+      "part": null,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [
+        "総合解説・肢別解説とも、(ア)「高インピーダンス」がなぜ誤りかの固有理由がない。「低インピーダンスが正しい」と言い換えているだけである。次の趣旨を補うこと: 高インピーダンス負荷では所定の二次電流を流すために高い二次電圧が必要になり、励磁電流が増えて比誤差・位相角誤差が大きくなる。極限では二次開放と同じ危険状態に近づく。",
+        "(エ)「銅損」がなぜ誤りかの固有理由がない。肢2・3・5の解説は鉄損が正しい理由（鉄心磁束の過大）だけを述べている。次の趣旨を補うこと: 二次開放時は二次電流がほぼ零なので二次銅損はむしろ減る。過大になるのは磁束密度に依存する鉄損である。",
+        "(ウ)「誘導電流」がなぜ誤りかの固有理由がない（肢2・3）。次の趣旨を補うこと: 開放された二次回路には電流が流れない。発生するのは誘起電圧（高電圧）である。",
+        "(オ)「並列」の誤り理由が「電流を測るので直列」にとどまっている。次の趣旨を補うとなおよい: 一次巻線は低インピーダンスなので、線路に並列接続すると線路を短絡するに等しい（並列接続は計器用変圧器 VT の接続方法）。",
+        "総合解説冒頭の「低インピーダンス（低い）負荷」は括弧内が冗長。「低インピーダンス負荷」に整えること。"
+      ],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "問題文: 添付原図（下部表記 -7- / T2-D 010、manifest の PDF 第10頁）と照合。(ア)〜(オ)の空欄位置と前後の文言が一致する。「一次電流(負荷電流)」の括弧の全角化は整形の範囲内。",
+        "選択肢: (1) 高インピーダンス/短絡/電圧/鉄損/直列、(2) 低インピーダンス/短絡/誘導電流/銅損/並列、(3) 高インピーダンス/短絡/誘導電流/銅損/直列、(4) 低インピーダンス/開放/電圧/鉄損/直列、(5) 高インピーダンス/開放/電圧/銅損/並列。いずれも原図の表と一致する。",
+        "公式正答: 解答PDF原図「令和6年度 下期 第三種電気主任技術者試験解答」の電力欄で問7=4。候補の officialAnswer=\"4\" と公式正答単位 answer=\"4\" に一致する。",
+        "技術内容: 次の点は正しい。CT 二次は低インピーダンス負荷とする。通電中の二次開放は禁止。開放すると二次起磁力が消え、一次電流全体が励磁電流として働き、磁束過大・飽和によって二次に高電圧が誘起され、鉄損が増えて過熱・焼損に至る。一次巻線形 CT は線路に直列接続する。以上から (4) が正しい。",
+        "肢別正誤の数え上げ: 肢1は(ア)(イ)が誤り、肢2は(ア)のみ正しい、肢3は(オ)のみ正しい、肢5は(ア)(エ)(オ)の3か所が誤り。いずれも選択肢表と一致する。",
+        "メタデータ: fiscalYear=2024（令和6年度）、term=lower、examDate=2025-03-23、subject=power、sourceQuestionPdfUrl/sourceAnswerPdfUrl、reviewedFromPage=[10] が manifest と一致する。sourceAttribution の年度・期・科目・問番号も一致する。",
+        "図: 原図に回路図はなく、語句組合せ表のみ。figureUrls=[] と figureDescription の記述は妥当で、表は choices に完全に転記されている。",
+        "出典参照: officialReferenceUrls は空で、検証を要する独立主張はない。"
+      ]
+    }
+  ]
+}

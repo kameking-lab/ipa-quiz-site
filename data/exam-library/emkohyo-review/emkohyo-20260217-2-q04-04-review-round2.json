@@ -1,0 +1,52 @@
+{
+  "reviewModel": "claude-opus-5-5",
+  "requestedModel": "claude-opus-5-5",
+  "canonicalModel": "claude-opus-5-5",
+  "provider": "firstParty",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 2626,
+      "cacheReadInputTokens": 143524,
+      "cacheCreationInputTokens": 17105,
+      "webSearchRequests": 0,
+      "costUSD": 0.21807279999999998,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 2309,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "paperId": "emkohyo-20260217-2",
+  "ids": [
+    "emkohyo-20260217-2-q4"
+  ],
+  "figureSha256": {
+    "emkohyo-20260217-2-q4": {}
+  },
+  "officialRowImageSha256": {
+    "emkohyo-20260217-2-q4": {
+      "/exam-library/emkohyo-20260217-2/q4-p4-0.webp": "ad4bb1ba907e017e9c61886a9bf94475632fe7b674164a06156d6063d4aba1b8"
+    }
+  },
+  "governmentSourceImageSha256": {},
+  "candidateSha256": {
+    "emkohyo-20260217-2-q4": "98653f76ad5aeae07c3219dbaa290e5685d8bfc73f1fac42b7a20bf2dde9df72"
+  },
+  "sourcePackPath": "docs/evidence/emkohyo-choice-sources/emkohyo-20260217-2-q04-04.json",
+  "sourcePackSha256": "8f3895ea3d2d189fd011451db02115278dd65ef78cf2372d44e513900dd53b02",
+  "assessment": {
+    "emkohyo-20260217-2-q4": {
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "reasonIssues": [
+        "肢1の理由では、使い捨て式防じんマスクが施行令第14条の2第5号の限定要件『ろ過材及び面体を有するもの』を満たす理由が書かれていない。防じんマスク規格の一種類として明記されていることを挙げるだけでは、第5号に当たることを直接説明できない。証拠の規格本文には、使い捨て式防じんマスクの形状が『一体となつたろ過材及び面体並びにしめひもからなり』と書かれている。この部分を引用し、ろ過材と面体を有するから第5号の対象になる、という因果で書き直すこと。肢2の理由は同じ論法で書かれているので、それにそろえる。"
+      ],
+      "sourceIssues": [],
+      "needsExternalCheck": []
+    }
+  }
+}

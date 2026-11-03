@@ -1,0 +1,121 @@
+{
+  "examDate": "2026-02-13",
+  "historicalTargetArticleBindings": [
+    {
+      "questionNumber": 9,
+      "lawId": "357AC0000000080",
+      "article": "50",
+      "revisionId": "357AC0000000080_20251212_507AC0000000087",
+      "enforcedAt": "2025-12-12",
+      "historicalSource": {
+        "path": "note-automation/reports/qualification-expansion-20261007/approved35/independent/hokenshi112-am-next6/historical-law-cache/357AC0000000080_20251212_507AC0000000087.json",
+        "sha256": "3a76e480b8976ef5ab01e30584c3d9d639e7ea9fa4396134c698b1aa32d88d37",
+        "bytes": 1048468
+      },
+      "comparisonLimitedToThisArticle": true,
+      "currentTargetArticleExactEqualReportedByIndependent": true
+    },
+    {
+      "questionNumber": 12,
+      "lawId": "410AC0000000114",
+      "article": "12",
+      "revisionId": "410AC0000000114_20251212_507AC0000000087",
+      "enforcedAt": "2025-12-12",
+      "historicalSource": {
+        "path": "note-automation/reports/qualification-expansion-20261007/approved35/independent/hokenshi112-am-next6/historical-law-cache/410AC0000000114_20251212_507AC0000000087.json",
+        "sha256": "31662ee88a017c416cbc7fc17039fca6b4c8e183d35756a43d7af5e6a1d1054f",
+        "bytes": 838247
+      },
+      "comparisonLimitedToThisArticle": true,
+      "currentTargetArticleExactEqualReportedByIndependent": true
+    },
+    {
+      "questionNumber": 15,
+      "lawId": "336AC0000000223",
+      "article": "49_7",
+      "revisionId": "336AC0000000223_20250701_507AC0000000051",
+      "enforcedAt": "2025-07-01",
+      "historicalSource": {
+        "path": "note-automation/reports/qualification-expansion-20261007/approved35/independent/hokenshi112-am-next6/historical-law-cache/336AC0000000223_20250701_507AC0000000051.json",
+        "sha256": "c8ab57ebf2442d659ea2b599a91ff83220e04bfb77ac8f0c2661dd887fc09535",
+        "bytes": 619208
+      },
+      "comparisonLimitedToThisArticle": true,
+      "currentTargetArticleExactEqualReportedByIndependent": true
+    },
+    {
+      "questionNumber": 20,
+      "lawId": "430AC1000000104",
+      "article": "15",
+      "revisionId": "430AC1000000104_20230401_504AC0000000076",
+      "enforcedAt": "2023-04-01",
+      "historicalSource": {
+        "path": "note-automation/reports/qualification-expansion-20261007/approved35/independent/hokenshi112-am-next6/historical-law-cache/430AC1000000104_20230401_504AC0000000076.json",
+        "sha256": "7599b1287c6ec3f4db6c6d81561194d6aa822c2a262c79959f2770f700740151",
+        "bytes": 33288
+      },
+      "comparisonLimitedToThisArticle": true,
+      "currentTargetArticleExactEqualReportedByIndependent": true
+    },
+    {
+      "questionNumber": 22,
+      "lawId": "418AC0100000085",
+      "article": "13",
+      "revisionId": "418AC0100000085_20251201_507AC0100000064",
+      "enforcedAt": "2025-12-01",
+      "historicalSource": {
+        "path": "note-automation/reports/qualification-expansion-20261007/approved35/independent/hokenshi112-am-next6/historical-law-cache/418AC0100000085_20251201_507AC0100000064.json",
+        "sha256": "0d3cfc108a981efaab065e6691d896c4f29427446499b4c19c6c47d1020c4e48",
+        "bytes": 40464
+      },
+      "comparisonLimitedToThisArticle": true,
+      "currentTargetArticleExactEqualReportedByIndependent": true
+    },
+    {
+      "questionNumber": 25,
+      "lawId": "333M50000080018",
+      "article": "19",
+      "revisionId": "333M50000080018_20230508_505M60000080022",
+      "enforcedAt": "2023-05-08",
+      "historicalSource": {
+        "path": "note-automation/reports/qualification-expansion-20261007/approved35/independent/hokenshi112-am-next6/historical-law-cache/333M50000080018_20230508_505M60000080022.json",
+        "sha256": "2b010fba153b7a9ec3823c15cc86cb086bf58fe7b7ac29f69830a208eea84a18",
+        "bytes": 135931
+      },
+      "comparisonLimitedToThisArticle": true,
+      "currentTargetArticleExactEqualReportedByIndependent": true
+    }
+  ],
+  "q15Choice2ActiveAuthority": {
+    "path": "note-automation/reports/qualification-expansion-20261007/approved35/medical/sources/q15-mhlw-business-plan-2025.pdf",
+    "sha256": "896e106bd67bad7e08f32e3b7153fc613061a7c4036954b0174b7da90ddaf052",
+    "bytes": 1355927
+  },
+  "q15Choice2Locator": "2025年4月修正、物理40/41。Astra v3差分PASSの限定主張。",
+  "q15InactiveAsExamDateAuthorities": [
+    "q15-basic-plan-index.html",
+    "q15-basic-plan.pdf",
+    "q15-hospital-index.html"
+  ],
+  "inactiveRule": "原作者候補に履歴として保持。試験日時点の根拠としてUI露出しない。作者原稿を削除/書換せず、この別policyで境界を指定。",
+  "legalTextRule": "歴史版本文全体の現在同一性は主張しない。確認済み対象条文だけ。法律全文を新packetに再掲しない。",
+  "q25RenderRequired": {
+    "days": 14,
+    "onsetDate": "1月13日",
+    "defervescenceDate": "1月18日",
+    "earliestDate": "1月21日",
+    "later22And23NotInherentlyForbidden": true
+  },
+  "mathRenderRequired": [
+    "χ²上付き・二項分布の整数範囲",
+    "独自2x2表の仮定と実測値でない表示",
+    "PPV/NPVの分母・数式",
+    "Q25曜日/14日/出来事の対応"
+  ],
+  "publicAllowed": false,
+  "next3": [
+    "Current statistical FAQ is not an exam-date frozen webpage.",
+    "Legacy checklist used for domains only, not current eligibility.",
+    "Tokyo welfare council pamphlet cited for independent explanation only; no text/image republication permission inferred."
+  ]
+}

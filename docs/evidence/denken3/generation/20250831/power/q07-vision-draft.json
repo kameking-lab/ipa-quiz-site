@@ -1,0 +1,126 @@
+{
+  "questionNumber": 7,
+  "sharedContext": null,
+  "units": [
+    {
+      "part": null,
+      "question": "分散型電源の配電系統連系に関する記述として，誤っているものを次の(1)〜(5)のうちから一つ選べ。",
+      "choices": {
+        "1": "大規模太陽光発電等の分散型電源が連系した場合，配電用変電所に設置されている変圧器に逆向きの潮流が増加し，配電線の電圧が上昇する場合がある。",
+        "2": "太陽光発電や燃料電池発電等の電源は，電力変換装置を用いて電力系統に連系されるため，高調波電流の流出を抑制するフィルタ等の設置が必要になることがある。",
+        "3": "分散型電源からの逆潮流による系統電圧の上昇を抑制するために，受電点の力率は系統側から見て進み力率とする。",
+        "4": "比較的大容量の分散型電源を連系する場合は，専用線による連系や負荷分割等配電系統側の増強が必要になることがある。",
+        "5": "分散型電源からの逆潮流等により他の低圧需要家の電圧が適正値を維持できない場合は，ステップ式自動電圧調整器(SVR)を設置する等の対策が必要になることがある。"
+      },
+      "officialAnswer": "3",
+      "explanation": "配電線の電圧降下は近似的に ΔV ≒ (PR + QX) / V で表される。ここで P は送電端から受電点へ向かう有効電力、Q は同じ向きの無効電力（遅れ無効電力を正とする）、R は線路の抵抗、X はリアクタンス、V は電圧である。分散型電源から系統へ逆潮流が生じると P が負になる。このため ΔV も負になり、受電点側の電圧が送電端より高くなる（電圧上昇）。この上昇を抑えるには QX の項を正にすればよい。つまり、受電点が系統から遅れ無効電力を受け取る（分散型電源が無効電力を吸収する）運転にする。これは系統側から見て『遅れ力率』の状態である。逆に系統側から見て進み力率にすると、受電点から系統へ遅れ無効電力を送り出すことになり、電圧はさらに上昇する。したがって(3)の『進み力率とする』が誤りで、正しくは『遅れ力率とする』である。",
+      "choiceExplanations": {
+        "1": "正しい。大規模な分散型電源の発電量が配電線の負荷を上回ると、電力は分散型電源の連系点から配電用変電所へ向かって流れる。その結果、変電所の変圧器に通常と逆向きの潮流（逆潮流）が生じる。このとき配電線の電圧は分散型電源の連系点に近いほど高くなる（連系点が末端側にあれば末端ほど高くなる）ため、電圧が上昇する場合がある。",
+        "2": "正しい。太陽光発電も燃料電池発電も直流で出力するため、インバータなどの電力変換装置で交流に変換して系統に連系する。電力変換装置はスイッチング動作によって高調波電流を発生する。そのため、系統への流出を抑えるフィルタ等の設置が必要になることがある。",
+        "3": "誤り。逆潮流による電圧上昇を抑えるには、受電点で系統から遅れ無効電力を受け取る運転、すなわち系統側から見て遅れ力率とする必要がある。系統側から見て進み力率にすると、受電点から系統へ遅れ無効電力を供給する形になる。すると ΔV ≒ (PR + QX) / V の QX 項も電圧を上げる向きに働き、電圧上昇はかえって大きくなる。",
+        "4": "正しい。比較的大容量の分散型電源を既存の一般配電線に連系すると、逆潮流による電圧上昇や、線路・設備の容量超過が生じやすい。そのため、専用の配電線で連系する、配電線の負荷を分割するなど、配電系統側の増強が必要になることがある。",
+        "5": "正しい。逆潮流などで配電線の電圧が上昇し、同じ系統につながる他の低圧需要家の電圧を適正範囲に保てなくなる場合がある。その場合には、配電線の途中にステップ式自動電圧調整器(SVR)を設置し、タップ切換で電圧を調整するなどの対策が必要になることがある。"
+      },
+      "figureDescription": "本問に図はない。",
+      "officialReferenceUrls": [],
+      "uncertainty": "なし",
+      "needsReview": true,
+      "sourceQuestionPdfUrl": "https://www.shiken.or.jp/chief/upload/20250831_ch_third_q02.pdf",
+      "sourceAnswerPdfUrl": "https://www.shiken.or.jp/chief/upload/20250831_ch_third_a01.pdf",
+      "reviewedFromPage": [
+        10
+      ]
+    }
+  ],
+  "draftModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 3146,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 9309,
+      "webSearchRequests": 0,
+      "costUSD": 0.1376558,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 1525,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "a5ca32fa437b06e2db667d7ce24dac615292f4e8e304cf29b9c5865e49bb7960",
+  "inputRequestSha256": "5dfd8b332022efb90ee129a0512d384af810e56716f51e8ada255fe36d06997e",
+  "sourceQuestionPdfSha256": "567aac1df6dc0c0950d04e90a1ad03231427c518eede92559effe01e2b97a2c9",
+  "sourceAnswerPdfSha256": "76fd3715ed487d19a56b387fb402de20ee09474e9fa55b0413f9037b96af06c9",
+  "sourcePageImageSha256": {
+    "data/raw_pdfs/denken3/review/20250831/power/p10.png": "09b6178679fcd789b29d5ec878509572046e12e2e809a7003bc98a6577c0af63"
+  },
+  "revisionHistory": [
+    {
+      "version": 1,
+      "model": "claude-opus-5-5",
+      "resolvedModel": "claude-opus-5-5",
+      "modelUsage": {
+        "claude-opus-5-5": {
+          "inputTokens": 2,
+          "outputTokens": 3189,
+          "cacheReadInputTokens": 1279,
+          "cacheCreationInputTokens": 12649,
+          "webSearchRequests": 0,
+          "costUSD": 0.1652358,
+          "contextWindow": 1000000,
+          "maxOutputTokens": 128000,
+          "thinkingTokens": 1598,
+          "canonicalModel": "claude-opus-5-5",
+          "provider": "firstParty",
+          "costBasis": "list"
+        }
+      },
+      "rawResponseSha256": "2307645bb30ba25d87291057409e51d1f485e9001c65f76ca853388c7367b9b4",
+      "inputRequestSha256": "ef50c80c370eb0ae6a7772819016a9136d3e68287db2bb7a22180b057a9ff629",
+      "previousDraftSha256": "c8eacec29934fe26347c8c5ac76fac0a9d29047923faf279eeabd7b41536153d",
+      "previousDraft": "data/raw_pdfs/denken3/review/20250831/power/archive/q07-vision-draft-v1.json",
+      "answeredReviewSha256": "a436d50e2caf90b29c0acba14224492d96036f5f94ff0491fb1f0f8a84110ada",
+      "answeredReview": "data/raw_pdfs/denken3/review/20250831/power/archive/q07-opus-review-v1.json",
+      "answeredStrictReceipt": "docs/evidence/denken3/strict/20250831-power-s1-q07-opus.json",
+      "answeredStrictReceiptSha256": "fa78ed0c680f3712a80ec8c4f3d33eee83e8581caf499b595d57787ca9b079f6",
+      "figureSha256": {},
+      "referenceHashes": {},
+      "operatorNote": ""
+    },
+    {
+      "version": 2,
+      "model": "claude-opus-5-5",
+      "resolvedModel": "claude-opus-5-5",
+      "modelUsage": {
+        "claude-opus-5-5": {
+          "inputTokens": 2,
+          "outputTokens": 3306,
+          "cacheReadInputTokens": 1279,
+          "cacheCreationInputTokens": 12447,
+          "webSearchRequests": 0,
+          "costUSD": 0.1659598,
+          "contextWindow": 1000000,
+          "maxOutputTokens": 128000,
+          "thinkingTokens": 1708,
+          "canonicalModel": "claude-opus-5-5",
+          "provider": "firstParty",
+          "costBasis": "list"
+        }
+      },
+      "rawResponseSha256": "05e287bc215da6dd669596e6f108e59dc182003cfd5cb98a4b278c3130bc37c8",
+      "inputRequestSha256": "a32ba06575147b19358fc2cf2207b93408f42f8338a548d3efc4c582f4605e7d",
+      "previousDraftSha256": "04b9ab3f5dc06b9cb550494e27df69c6ebabf6e1cea517b01d43bb6f27bfde7c",
+      "previousDraft": "data/raw_pdfs/denken3/review/20250831/power/archive/q07-vision-draft-v2.json",
+      "answeredReviewSha256": "77ee793099fa2ca87c21b180e42a080c021a2e76059fec6ffa555f64fd80e3ed",
+      "answeredReview": "data/raw_pdfs/denken3/review/20250831/power/archive/q07-opus-review-v2.json",
+      "answeredStrictReceipt": "docs/evidence/denken3/strict/20250831-power-s2-q07-opus.json",
+      "answeredStrictReceiptSha256": "ade99fb859b2389ce989c6a351027bc8e78ae8b679ce716eae904747adb89bab",
+      "figureSha256": {},
+      "referenceHashes": {},
+      "operatorNote": ""
+    }
+  ]
+}

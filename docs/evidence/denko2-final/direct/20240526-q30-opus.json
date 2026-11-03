@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "receiptKind": "canonicalized-direct-review",
+  "paper": "20240526",
+  "reviewModel": "claude-opus-5-5",
+  "upstreamReviewReceipt": "docs/evidence/denko2-strict-20240526/finalpin8-q30-38-opus.json",
+  "upstreamReviewSha256": "47104024cedd76d22eaae72dcfbc98b76cc08f660e761784f429c79b22f70f2c",
+  "candidateEquivalenceProof": "current per-question candidate hash equals a clean source-aware direct Opus input hash",
+  "inputHashes": {
+    "draftSha256": "e08fc000ce960d59c6f573186fa76c8b17376ad9567eb318616868ad8b5750ff",
+    "rowSha256": {
+      "30": "d70dd2e1228265381c5c2258c50501f40ce03078bc0b8bad81744814d2453d03"
+    },
+    "detailFigureSha256": {},
+    "sharedFigureSha256": {},
+    "legalReceiptSha256": {}
+  },
+  "assessment": [
+    {
+      "number": 30,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "visualIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": "公式問題PDFの原図（20240526_co_second_q01.pdf 問30）と公式正答（ニ）を照合し、問題文・「誤っているものは」の否定・イロハニ全肢の文言がすべて一致することを確認。法令の主張は候補の e-Gov URL（https://laws.e-gov.go.jp/law/409M50000400052/20230320_504M60000400096）で確認した。このページは JavaScript で本文を表示するため WebFetch では本文が取れず、同じ e-Gov ドメインの法令API（https://laws.e-gov.go.jp/api/1/lawdata/409M50000400052）から条文を取得した。確認した条文は次のとおり。第1条第一号「電路」＝通常の使用状態で電気が通じているところ。第1条第二号「電気機械器具」＝電路を構成する機械器具。第1条の「電線」＝強電流電気の伝送に使用する電気導体、絶縁物で被覆した電気導体、又は絶縁物で被覆した上を保護被覆で保護した電気導体。第2条は低圧・高圧・特別高圧を区分。第4条は感電・火災その他人体への危害と物件の損傷の防止を規定。よってイ・ロ・ハは正しく、ニは電路の定義を電線の定義と取り違えた誤りであり、公式正答ニと一致する。"
+    }
+  ]
+}

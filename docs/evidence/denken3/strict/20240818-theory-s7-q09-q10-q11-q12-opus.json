@@ -1,0 +1,143 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20240818",
+  "subject": "theory",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 9129,
+      "cacheReadInputTokens": 140085,
+      "cacheCreationInputTokens": 32241,
+      "webSearchRequests": 0,
+      "costUSD": 0.468533,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 5944,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "582991457ea52f68412fad2effbf1738721d8716f96e3cd296d0c6b891028c4b",
+  "inputRequestSha256": "81db946d6874d26d33512a710b5bf9317424f44428b5394be4b4f9b3427d7336",
+  "inputHashes": {
+    "candidateSha256": {
+      "q09": "cf51022e22aef759b20fe80cb35a29770369a2224b3e40ccaa7695f8cd057980",
+      "q10": "b551dc043553fcb818664ffa01d05a02c1861c6932b1455993fbfb5ec6260288",
+      "q11": "933911dd219f3a02b0299360e3fea7b172dd6391c458ab09fb59dba2b51538ea",
+      "q12": "dbe3588177c889e1efb229a82343dce955f07ceb4bfb7f1f1a015709efec9c0e"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20240818/theory/p13.png": "1b40742a8a2da60aa76e615b689fe82d479f05ec14329a6bbec7e95707cb909b",
+      "data/raw_pdfs/denken3/review/20240818/theory/p14.png": "a6c9df027158ecd96f19e5ee91bcbc9f9729a775cff7068325fa035936a1bd10",
+      "data/raw_pdfs/denken3/review/20240818/theory/p15.png": "61d54b6ef24d9c63814c1b653a02639732c93d46ab2bff87796c2da9d5ab88b6",
+      "data/raw_pdfs/denken3/review/20240818/theory/p16.png": "b41cb1143445d5f842b26034b9bffc40d254b8c57b0b6b0eccbcf2fed578c8fb"
+    },
+    "figureSha256": {
+      "public/images/denken3/20240818/theory/20240818-theory-q10-circuit.png": "cb67b95891607c677132cb3b5be2dd66ada665a9b5225859dd6ba2fb8d63d690",
+      "public/images/denken3/20240818/theory/20240818-theory-q10-choice-1.png": "20d6f8792c510ed1ff463c63e24b51563ad936705e2d82fdb19cd0b513b5c671",
+      "public/images/denken3/20240818/theory/20240818-theory-q10-choice-2.png": "2bd033962f44af5de0520be02dd45708c421b6eedefe4bf1832a919448b531ef",
+      "public/images/denken3/20240818/theory/20240818-theory-q10-choice-3.png": "082370f355b7b7643c4fefa772c7f064e381cbff2cf2ca82fb5b9d35f2abe61b",
+      "public/images/denken3/20240818/theory/20240818-theory-q10-choice-4.png": "d050ebe7c1a3bb2fa8a93d900fd485b4665270e693f61ac31253757199c57aa0",
+      "public/images/denken3/20240818/theory/20240818-theory-q10-choice-5.png": "fba89be6eea186566435f220ec33aa118ceec5d02f2796bcb4f9d95a1f635139"
+    },
+    "sourceQuestionPdfSha256": "236be905e93a023cf3c65c1e22c45c24dc42b910151c51f8ed023247793d1d29",
+    "sourceAnswerPdfSha256": "f72ecbc3a477e64948388b69cf78cb931032c9f0c688639836c8d533a949cd0f",
+    "officialAnswerUnitsSha256": "2e8292495d723ea1418e6a1e03038c8da0c7310b9c7705ac3e0174f1c0bf7668"
+  },
+  "assessment": [
+    {
+      "unitKey": "q09",
+      "questionNumber": 9,
+      "part": null,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "The candidate text matches the official original on page 10 (T1-R 013): e=100 sin ωt+50 sin(3ωt−π/6) [V], i=20 sin(ωt−π/6)+10√3 sin(3ωt+π/6) [A], and the answer is requested in [kW].",
+        "Choices (1) 0.95, (2) 1.08, (3) 1.16, (4) 1.29 and (5) 1.34 match the original.",
+        "The official answer table gives 理論 問9 = 2, which matches officialAnswer=2.",
+        "Recalculated: P1=(100·20/2)cos(π/6)=1000×0.8660≈866.0 W. P3=(50·10√3/2)cos(−π/3)=125√3≈216.5 W. P=1082.5 W≈1.08 kW.",
+        "Products of different harmonic orders average to 0 over one period, and the phase differences (+π/6 and −π/3) are correctly signed.",
+        "Distances of each wrong choice from 1.0825 kW: 0.1325, 0.0775, 0.2075 and 0.2575 kW. These match the explanations, and choice (5) is the farthest.",
+        "There is no figure, and figureUrls is empty. This is consistent with the original."
+      ]
+    },
+    {
+      "unitKey": "q10",
+      "questionNumber": 10,
+      "part": null,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "The candidate text and the proviso (steady state just before S closes) match the official original on page 11 (T1-R 014).",
+        "The official answer table gives 理論 問10 = 3, which matches officialAnswer=3.",
+        "Circuit (original and published circuit.png agree): the 1V source (long plate on top = positive) goes through the top 1Ω and 1H to node X. From X, one branch runs down through S (i_S arrow pointing down) and another runs through 2F and the right 1Ω to the bottom rail. The junction dots at X and on the bottom rail, and all labels (1Ω, 1H, 2F, 1Ω, 1V, S, i_S), are present in the published figure.",
+        "Recalculated: for t<0 the capacitor is open, so i_L(0⁻)=0 and V_C(0⁻)=1V (X side high). After closing, V_X=0, so i_L=1−e^{−t} (τ=1 s). The capacitor branch discharges on its own: V_C=e^{−t/2} and i2=C·dV_C/dt=−e^{−t/2}. KCL gives i_S=1+e^{−t/2}−e^{−t}.",
+        "i_S(0⁺)=1 A. The slope at t=0 is +0.5 A/s. The maximum is at t=2ln2≈1.386 s with i_S=1.25 A. e^{−t/2}−e^{−t}=e^{−t/2}(1−e^{−t/2})≥0, so i_S≥1 at all times. After the peak the current decreases monotonically to 1 A.",
+        "The published choice figures choice-1 to choice-5 match the original choice waveforms: the (n) labels, axes i_S[A] and t[s], the reference 1, the dashed lines and the t<0 zero lines are all present. The text descriptions of each choice waveform also match the figures.",
+        "The reasons given for each wrong choice are correct: (1) contradicts i_S≥1, (2) and (4) contradict i_S(0⁺)=1, and (5) contradicts the existence of the peak."
+      ]
+    },
+    {
+      "unitKey": "q11",
+      "questionNumber": 11,
+      "part": null,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [
+        "uncertainty says the exam year and session cannot be determined from the attached page alone, and that T1-R 015 may be an institution or management code. This contradicts the pinned metadata (fiscalYear=2024, term=upper, examDate=2024-08-18) and the official source URLs (20240818_ch_third_q01.pdf / a01.pdf). It is stale and misleading and should be replaced with an accurate statement.",
+        "uncertainty says the text was transcribed with no changes, but sourceAttribution says the question and choices were reformatted for readability. The two statements contradict each other and should be reconciled."
+      ],
+      "verifiedEvidence": [
+        "The candidate text and all five choices match the official original on page 12 (T1-R 015), including the wording ドレーン電流 and 自由電子又は正孔.",
+        "The official answer table gives 理論 問11 = 4, which matches officialAnswer=4.",
+        "Choice (4) is false: the correct pairing is bipolar = current-controlled (base current) and FET = voltage-controlled (gate voltage). The explanation and the choice explanation state this correctly.",
+        "(1) the larger drive power from base current, (2) FET vulnerability to static electricity due to its high-input-impedance gate, (3) the relative input impedances, and (5) bipolar (both carriers) vs. unipolar (single carrier) are all correct statements, and their explanations are sound.",
+        "There is no figure, and figureUrls is empty. This is consistent with the original."
+      ]
+    },
+    {
+      "unitKey": "q12",
+      "questionNumber": 12,
+      "part": null,
+      "status": "FIX",
+      "textIssues": [
+        "The question field is missing the stem entirely. It starts with 「上記の記述中の空白箇所…」, but there is no preceding text for 上記 to refer to. The following official text must be restored: 「真空中に置かれた平行電極板間に，直流電圧V[V]を加えて平等電界E[V/m]を作り，この陰極板に電子を置いた場合，初速零で出発した電子が陽極板に到達したときの速さは，v[m/s]となった。このときの電子の運動エネルギーは，電子が陽極板に到達するまでに得るエネルギーに等しいと考えられ，次の式が成立する。1/2 mv² = (ア)　ただし，電子の電気素量をe[C]，電子の質量をm[kg]とする。したがって，この式から電子の速さv[m/s]は，(イ)で表される。」",
+        "Without the stem, the definitions of V, E, e and m, and the condition of zero initial velocity, are missing. The problem cannot be solved from the text alone."
+      ],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [
+        "The note at the end says expressions using E cannot match dimensionally because the plate spacing d is not given. This reasoning is wrong. eE is a force [N] and has the wrong dimension for energy regardless of whether d is known. Rewrite the note to say that eE [N] is not energy [J] (and that eEd=eV).",
+        "Choice explanation (4) has the same problem: 「本問にdの情報はなく、この組合せは次元的に不適切」 gives the lack of d as a reason for the dimensional mismatch, which is wrong. For (イ), also note that eE/m is an acceleration [m/s²], so √(2eE/m) does not have units of speed. The cause of the error should be limited to dimensions."
+      ],
+      "figureIssues": [],
+      "sourceIssues": [
+        "uncertainty says the primary source (an official PDF URL from IPA or similar) could not be identified. The primary source for this exam is the Electrical Technician Examination Center (試験センター), not IPA, and the official URLs (sourceQuestionPdfUrl/sourceAnswerPdfUrl) are already pinned. The statement is wrong and must be corrected."
+      ],
+      "verifiedEvidence": [
+        "The choice table in the official original on page 13 (T1-R 016) matches the candidate choices: (1) eV/√(4eV/m), (2) eV/√(2eV/m), (3) 2eV/√(4eV/m), (4) eE/√(2eE/m), (5) eE/√(4eE/m).",
+        "The official answer table gives 理論 問12 = 2, which matches officialAnswer=2.",
+        "Recalculated: the field does work eV, so 1/2 mv² = eV, v² = 2eV/m and v = √(2eV/m). Only (2) matches.",
+        "The reasons for wrong choices (1) and (3) (coefficient 4, or 2eV) are correct. eE for (4) and (5) is a force [N] and has the wrong dimension for energy.",
+        "The only figure in the original is the choice table, so figureUrls being empty is appropriate."
+      ]
+    }
+  ]
+}

@@ -17,21 +17,70 @@ import { getAllBlogPosts } from "@/data/blog";
 // existing IPA path — fails this test until the author verifies the URL resolves
 // (HTTP 200, no redirect) and updates EXPECTED_EXTERNAL_URLS below.
 //
-// Verified resolving (curl, HTTP 200, no redirect) on 2026-06-03:
+// Newly added URLs verified resolving (HEAD, HTTP 200, no redirect) on 2026-09-28:
 const EXPECTED_EXTERNAL_URLS = [
+  "https://cbt-s.com/examinee/ipa_cbt-faq/detail/4342.html",
+  "https://cbt-s.com/page/itee_id",
   "https://www.ipa.go.jp/shiken/",
   "https://www.ipa.go.jp/shiken/2026/ap_koudo_sc-cbt.html",
+  "https://www.ipa.go.jp/shiken/2026/ap_koudo_sc_kikan.html",
+  "https://www.ipa.go.jp/shiken/2026/r08zen_exam.html",
   "https://www.ipa.go.jp/shiken/asia/itpe.html",
   "https://www.ipa.go.jp/shiken/about/koudo_menjo.html",
   "https://www.ipa.go.jp/shiken/about/menjo-fe.html",
   "https://www.ipa.go.jp/shiken/goukaku/index.html",
+  "https://www.ipa.go.jp/shiken/goukaku/happyobi.html",
+  "https://www.ipa.go.jp/shiken/goukaku/hassou.html",
+  "https://www.ipa.go.jp/shiken/goukaku/sg_fe_happyobi_2026.html",
   "https://www.ipa.go.jp/shiken/goukaku/shinsei_01.html",
   "https://www.ipa.go.jp/shiken/jitecinquiry_handicapped.html",
   "https://www.ipa.go.jp/shiken/kubun/list.html",
   "https://www.ipa.go.jp/shiken/mondai-kaiotu/index.html",
+  // IPA source manifest and independent FE review, verified 2026-10-08.
+  "https://www.ipa.go.jp/shiken/mondai-kaiotu/sg_fe/koukai/2025r07.html",
+  "https://www.ipa.go.jp/shiken/mondai-kaiotu/sg_fe/koukai/2026r08.html",
+  "https://www.ipa.go.jp/shiken/syllabus/henkou/2022/20221226.html",
+  "https://www.ipa.go.jp/shiken/mousikomi/cbt_sg_fe.html",
+  "https://www3.jitec.ipa.go.jp/JitesCbt/html/examination/order.html",
+  "https://www3.jitec.ipa.go.jp/JitesCbt/html/openinfo/past_pass_2026.html",
+  // Added 2026-10-11: 26 PDFs fetched; two IP sources blocked here.
+  // See reports/adsense-quality-20261011/source-check.json. This inventory
+  // pins URLs; it does not certify reachability or explanation accuracy.
+  "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07a_ap_am_ans.pdf",
+  "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07a_ap_am_qs.pdf",
+  "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07a_au_am2_ans.pdf",
+  "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07a_au_am2_qs.pdf",
+  "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07a_db_am2_ans.pdf",
+  "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07a_db_am2_qs.pdf",
+  "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07a_es_am2_ans.pdf",
+  "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07a_es_am2_qs.pdf",
+  "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07a_pm_am2_ans.pdf",
+  "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07a_pm_am2_qs.pdf",
+  "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07h_nw_am2_ans.pdf",
+  "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07h_nw_am2_qs.pdf",
+  "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07h_sa_am2_ans.pdf",
+  "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07h_sa_am2_qs.pdf",
+  "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07h_sc_am2_ans.pdf",
+  "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07h_sc_am2_qs.pdf",
+  "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07h_sm_am2_ans.pdf",
+  "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07h_sm_am2_qs.pdf",
+  "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07h_st_am2_ans.pdf",
+  "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07h_st_am2_qs.pdf",
+  "https://www.ipa.go.jp/shiken/mondai-kaiotu/sg_fe/koukai/tbl5kb0000005r9r-att/2025r07_fe_kamoku_a_ans.pdf",
+  "https://www.ipa.go.jp/shiken/mondai-kaiotu/sg_fe/koukai/tbl5kb0000005r9r-att/2025r07_fe_kamoku_a_qs.pdf",
+  "https://www.ipa.go.jp/shiken/mondai-kaiotu/sg_fe/koukai/tbl5kb0000005r9r-att/2025r07_fe_kamoku_b_ans.pdf",
+  "https://www.ipa.go.jp/shiken/mondai-kaiotu/sg_fe/koukai/tbl5kb0000005r9r-att/2025r07_fe_kamoku_b_qs.pdf",
+  "https://www.ipa.go.jp/shiken/mondai-kaiotu/sg_fe/koukai/tbl5kb0000005r9r-att/2025r07_sg_ans.pdf",
+  "https://www.ipa.go.jp/shiken/mondai-kaiotu/sg_fe/koukai/tbl5kb0000005r9r-att/2025r07_sg_qs.pdf",
+  "https://www3.jitec.ipa.go.jp/JitesCbt/html/openinfo/pdf/questions/2024r06_ip_ans.pdf",
+  "https://www3.jitec.ipa.go.jp/JitesCbt/html/openinfo/pdf/questions/2024r06_ip_qs.pdf",
 ] as const;
 
-const ALLOWED_HOSTS = new Set(["www.ipa.go.jp"]);
+const ALLOWED_HOSTS = new Set([
+  "www.ipa.go.jp",
+  "www3.jitec.ipa.go.jp",
+  "cbt-s.com",
+]);
 
 // In markdown link form `[text](url)`, the URL ends at the closing paren, so the
 // character class excludes `)`. Trailing sentence punctuation is stripped below.
@@ -66,7 +115,7 @@ describe("blog body outbound 出典 links", () => {
     }
   });
 
-  it("matches the vetted external-URL allowlist exactly", () => {
+  it("matches the recorded external-URL inventory exactly", () => {
     // If this fails, a blog body added or changed an external link. Verify the
     // new URL resolves (HTTP 200, no redirect) against the IPA site, then update
     // EXPECTED_EXTERNAL_URLS so future 出典 links stay vetted.

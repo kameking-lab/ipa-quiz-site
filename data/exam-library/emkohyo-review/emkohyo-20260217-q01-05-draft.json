@@ -1,0 +1,742 @@
+{
+  "candidateModel": "claude-opus-5-5",
+  "paperId": "emkohyo-20260217",
+  "governmentSourceCandidates": [
+    {
+      "title": "厚生労働省 作業環境測定基準",
+      "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74087000"
+    }
+  ],
+  "questions": {
+    "emkohyo-20260217-q1": {
+      "overlay": {
+        "sourceHash": "cc1dbc7047d330dfa3a4e4fd57f38be245aae7f3d930f44826c1561ad6794227",
+        "correctChoice": 5,
+        "summary": "労働災害発生時の再リスクアセスメントは「過去のリスクアセスメント等の内容に問題がある場合」という条件付きであり、休業の有無等にかかわらず必ず行うとする肢5が誤り。",
+        "choices": [
+          {
+            "number": 1,
+            "verdict": "incorrect",
+            "reason": "文自体は正しい。厚生労働省の改正指針は、総括安全衛生管理者が選任されている事業場では、その者にリスクアセスメントとリスク低減措置の実施を統括管理させると明記する。選任されていない事業場との役割分担も区別されており、設問は選任済みの場合を正しく述べている。"
+          },
+          {
+            "number": 2,
+            "verdict": "incorrect",
+            "reason": "文自体は正しい。改正指針7(2)イは作業環境測定結果等を必要に応じ入手する情報に挙げる。その施行通達は『等』に、個人ばく露測定結果、特殊健康診断結果、生物学的モニタリング結果などが入ると明示する。列挙された三つはいずれも実際のばく露や健康影響を把握するための情報なので、必要に応じて入手する。"
+          },
+          {
+            "number": 3,
+            "verdict": "incorrect",
+            "reason": "文自体は正しい。改正指針8は対象となる業務を洗い出し、原則として列挙された情報に即して危険性・有害性を特定する。管理濃度と濃度基準値が設定されている物質ではそれらの値に即して特定する。値が未設定なら許容濃度などのばく露限界を用いる区別もあり、設問は前者を述べたものである。"
+          },
+          {
+            "number": 4,
+            "verdict": "incorrect",
+            "reason": "文自体は正しい。改正指針9(1)イ(エ)は数理モデルで推定した気中濃度を濃度基準値又はばく露限界と比較する方法を認める。施行通達はCREATE-SIMPLEによる気中濃度推定とECETOC-TRAによるリスク見積りをその具体例に挙げる。前者は取扱量・換気条件・作業時間、後者は物理化学的特性・作業形態・換気条件などを入力し、推定ばく露濃度とばく露限界を比較する。"
+          },
+          {
+            "number": 5,
+            "verdict": "correct",
+            "reason": "これが誤り。改正指針5(2)は労働災害が発生し、過去のリスクアセスメント等の内容に問題が確認された場合に再度行うよう努めると記す。休業の有無や日数だけで無条件に『必ず行う』とは定めていないため、設問は実施の条件と義務の強さの両方を取り違えている。"
+          }
+        ],
+        "sources": [
+          {
+            "title": "厚生労働省 化学物質等による危険性又は有害性等の調査等に関する指針（令和5年改正）・施行通達",
+            "url": "https://www.mhlw.go.jp/content/11300000/001091755.pdf"
+          }
+        ]
+      },
+      "sourceEvidence": [
+        {
+          "url": "https://www.mhlw.go.jp/content/11300000/001091755.pdf",
+          "excerpt": "総括安全衛生管理者が選任されている場合には",
+          "choiceNumbers": [
+            1
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/content/11300000/001091755.pdf",
+          "excerpt": "個人ばく露測定結果、ばく露の推定値、特殊健康診断結果、生物学的モニタリング結果",
+          "choiceNumbers": [
+            2
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/content/11300000/001091755.pdf",
+          "excerpt": "次に掲げる情報に関する資料等を、必要に応じ入手する",
+          "choiceNumbers": [
+            2
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/content/11300000/001091755.pdf",
+          "excerpt": "リスクアセスメント等の対象となる業務を洗い出した上で",
+          "choiceNumbers": [
+            3
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/content/11300000/001091755.pdf",
+          "excerpt": "リスクアセスメント対象物の管理濃度及び濃度基準値",
+          "choiceNumbers": [
+            3
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/content/11300000/001091755.pdf",
+          "excerpt": "CREATE-SIMPLE",
+          "choiceNumbers": [
+            4
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/content/11300000/001091755.pdf",
+          "excerpt": "ECETOC-TRA",
+          "choiceNumbers": [
+            4
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/content/11300000/001091755.pdf",
+          "excerpt": "指針の９(1)イ(ｴ)の気中濃度の推定方法には",
+          "choiceNumbers": [
+            4
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/content/11300000/001091755.pdf",
+          "excerpt": "数理モデルを用いて対象の業務に係る作業を行う労働者の周辺のリスクアセスメント対象物の気中濃度を推定し、当該物質の濃度基準値又はばく露限界と比較する方法",
+          "choiceNumbers": [
+            4
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/content/11300000/001091755.pdf",
+          "excerpt": "取扱量、含有率、換気条件、作業時間・頻度、保護具の有無等",
+          "choiceNumbers": [
+            4
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/content/11300000/001091755.pdf",
+          "excerpt": "推定したばく露濃度とばく露限界等を比較する",
+          "choiceNumbers": [
+            4
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/content/11300000/001091755.pdf",
+          "excerpt": "必要な入力項目",
+          "choiceNumbers": [
+            4
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/content/11300000/001091755.pdf",
+          "excerpt": "物理化学的特性（蒸気圧など）",
+          "choiceNumbers": [
+            4
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/content/11300000/001091755.pdf",
+          "excerpt": "計算により推定ばく露濃度が算出されるので、これをばく露限界と比較する",
+          "choiceNumbers": [
+            4
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/content/11300000/001091755.pdf",
+          "excerpt": "５ 実施時期",
+          "choiceNumbers": [
+            5
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/content/11300000/001091755.pdf",
+          "excerpt": "過去のリスクアセスメント等の内容に問題があることが確認された場合",
+          "choiceNumbers": [
+            5
+          ]
+        }
+      ],
+      "reviewIssues": []
+    },
+    "emkohyo-20260217-q2": {
+      "overlay": {
+        "sourceHash": "539bdec25b5441308c487a4c846e2ae2e691bcd88ed450b77bed1d93e26e1f24",
+        "correctChoice": 1,
+        "summary": "GHSの危険有害性区分はクラスごとに異なる。厚労省掲載のGHS本文では急性毒性だけでも区分1～5があるので、全クラスに区分1～4の四区分しかないとする肢1が誤り。",
+        "choices": [
+          {
+            "number": 1,
+            "verdict": "correct",
+            "reason": "これが誤り。厚労省掲載のGHS本文は急性毒性に区分1から区分5を設けており、たとえば経口急性毒性の区分5には危険有害性情報『飲み込むと有害のおそれ』を割り当てる。クラスごとに分類方法や区分数は異なるので、すべてのクラスが一律に区分1～4の四区分とはいえない。"
+          },
+          {
+            "number": 2,
+            "verdict": "incorrect",
+            "reason": "この記述は正しい。厚労省の一覧に並ぶ絵表示を数えると全部で9種類。各絵表示の対象クラスから健康に対する有害性に用いるものを数えると、どくろ・感嘆符・腐食性・健康有害性（人体シルエット）の4種類になる。腐食性は金属腐食にも使うが、皮膚や眼の損傷にも用いる。"
+          },
+          {
+            "number": 3,
+            "verdict": "incorrect",
+            "reason": "この記述は正しい。公式問題の図を確認すると㋑がどくろ、㋺が感嘆符である。厚労省掲載のGHS本文1.4.10.5.3.1は複数絵表示の優先順位として、どくろを適用する場合は感嘆符を使用すべきでないと定める。したがって、この図の組み合わせは優先順位の規則に合う。"
+          },
+          {
+            "number": 4,
+            "verdict": "incorrect",
+            "reason": "この記述は正しい。GHSの注意喚起語は『危険』と『警告』の2種類で、GHS本文1.4.10.5.3.2は『危険』を適用するとき『警告』を使用すべきでないと示す。複数の危険有害性があっても両方を同じラベルに重ねて記載しない。"
+          },
+          {
+            "number": 5,
+            "verdict": "incorrect",
+            "reason": "この記述は正しい。厚労省資料のSDS解説は『その他の情報』を含む16項目を列挙し、項目の番号、項目名、順序を変更してはならないと明記する。同じ16番『その他の情報』は、現行のJIS Z 7253:2019に基づく労働者健康安全機構の教材でも確認できる。"
+          }
+        ],
+        "sources": [
+          {
+            "title": "厚生労働省 GHS改訂第6版和訳",
+            "url": "https://anzeninfo.mhlw.go.jp/user/anzen/kag/pdf/ghs_rev6_jp.pdf"
+          },
+          {
+            "title": "厚生労働省 GHSのシンボルと名称",
+            "url": "https://anzeninfo.mhlw.go.jp/user/anzen/kag/ghs_symbol.html"
+          },
+          {
+            "title": "厚生労働省 防水スプレー製品調査報告 付録（11）SDSについて",
+            "url": "https://www.mhlw.go.jp/content/11120000/001571853.pdf"
+          },
+          {
+            "title": "労働者健康安全機構 令和6年度化学物質管理初心者向け教材第3巻",
+            "url": "https://cheminfo.johas.go.jp/useful/book3/pageindices/index22.html"
+          }
+        ]
+      },
+      "sourceEvidence": [
+        {
+          "url": "https://anzeninfo.mhlw.go.jp/user/anzen/kag/pdf/ghs_rev6_jp.pdf",
+          "excerpt": "区分  5",
+          "choiceNumbers": [
+            1
+          ]
+        },
+        {
+          "url": "https://anzeninfo.mhlw.go.jp/user/anzen/kag/pdf/ghs_rev6_jp.pdf",
+          "excerpt": "飲み込むと有害のおそれ",
+          "choiceNumbers": [
+            1
+          ]
+        },
+        {
+          "url": "https://anzeninfo.mhlw.go.jp/user/anzen/kag/ghs_symbol.html",
+          "excerpt": "GHSのシンボルと名称",
+          "choiceNumbers": [
+            2
+          ]
+        },
+        {
+          "url": "https://anzeninfo.mhlw.go.jp/user/anzen/kag/ghs_symbol.html",
+          "excerpt": "感嘆符",
+          "choiceNumbers": [
+            2
+          ]
+        },
+        {
+          "url": "https://anzeninfo.mhlw.go.jp/user/anzen/kag/ghs_symbol.html",
+          "excerpt": "どくろ",
+          "choiceNumbers": [
+            2
+          ]
+        },
+        {
+          "url": "https://anzeninfo.mhlw.go.jp/user/anzen/kag/ghs_symbol.html",
+          "excerpt": "腐食性",
+          "choiceNumbers": [
+            2
+          ]
+        },
+        {
+          "url": "https://anzeninfo.mhlw.go.jp/user/anzen/kag/ghs_symbol.html",
+          "excerpt": "健康有害性",
+          "choiceNumbers": [
+            2
+          ]
+        },
+        {
+          "url": "https://anzeninfo.mhlw.go.jp/user/anzen/kag/ghs_symbol.html",
+          "excerpt": "急性毒性（区分4）、皮膚腐食性・刺激性",
+          "choiceNumbers": [
+            2
+          ]
+        },
+        {
+          "url": "https://anzeninfo.mhlw.go.jp/user/anzen/kag/ghs_symbol.html",
+          "excerpt": "急性毒性（区分1-3）",
+          "choiceNumbers": [
+            2
+          ]
+        },
+        {
+          "url": "https://anzeninfo.mhlw.go.jp/user/anzen/kag/ghs_symbol.html",
+          "excerpt": "皮膚腐食性・刺激性（区分1A-C）、眼に対する重篤な損傷・眼刺激性",
+          "choiceNumbers": [
+            2
+          ]
+        },
+        {
+          "url": "https://anzeninfo.mhlw.go.jp/user/anzen/kag/ghs_symbol.html",
+          "excerpt": "呼吸器感作性、生殖細胞変異原性、発がん性",
+          "choiceNumbers": [
+            2
+          ]
+        },
+        {
+          "url": "https://anzeninfo.mhlw.go.jp/user/anzen/kag/pdf/ghs_rev6_jp.pdf",
+          "excerpt": "どくろを適用する場合、感嘆符を使用するべきでない",
+          "choiceNumbers": [
+            3
+          ]
+        },
+        {
+          "url": "https://anzeninfo.mhlw.go.jp/user/anzen/kag/pdf/ghs_rev6_jp.pdf",
+          "excerpt": "注意喚起語「危険」を適用する場合、注意喚起語「警告」を使用するべきでない",
+          "choiceNumbers": [
+            4
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/content/11120000/001571853.pdf",
+          "excerpt": "これらの項目名の番号、項目名及び順序を変更してはならない",
+          "choiceNumbers": [
+            5
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/content/11120000/001571853.pdf",
+          "excerpt": "次の16項目及びその情報を記載しなければ",
+          "choiceNumbers": [
+            5
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/content/11120000/001571853.pdf",
+          "excerpt": "項目-16 その他の情報",
+          "choiceNumbers": [
+            5
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/content/11120000/001571853.pdf",
+          "excerpt": "JIS Z7253:2012",
+          "choiceNumbers": [
+            5
+          ]
+        },
+        {
+          "url": "https://cheminfo.johas.go.jp/useful/book3/pageindices/index22.html",
+          "excerpt": "JIS Z 7253:2019に規定された項目名",
+          "choiceNumbers": [
+            5
+          ]
+        },
+        {
+          "url": "https://cheminfo.johas.go.jp/useful/book3/pageindices/index22.html",
+          "excerpt": "16 その他の情報",
+          "choiceNumbers": [
+            5
+          ]
+        }
+      ],
+      "reviewIssues": []
+    },
+    "emkohyo-20260217-q3": {
+      "overlay": {
+        "sourceHash": "6762895b2645ec247fb5cd4165572ceb21ce42356804f31d50b280d843dd9846",
+        "correctChoice": 2,
+        "summary": "しきい値がないとされる発がん物質にはNOAELが存在しないため、ユニットリスクやVSD等で評価する。しきい値がある物質ではNOAELやLOAEL等を用いる。前者にNOAELを当てた肢2が誤り。",
+        "choices": [
+          {
+            "number": 1,
+            "verdict": "incorrect",
+            "reason": "この記述は正しい。厚労省の用語解説ではLC50を短時間吸入で実験動物の半数が死亡する濃度、LD50を一回投与で半数が死亡する量と定義する。いずれも短時間または一回の投与による急性毒性の大きさを表す指標で、LC50は吸入の濃度、LD50は一回投与の量とばく露経路も異なる。"
+          },
+          {
+            "number": 2,
+            "verdict": "correct",
+            "reason": "これが誤り。NITEはしきい値のない有害性ではNOAELが存在せず、発がんリスクはユニットリスクや実質安全量などで評価すると説明する。環境省の審議会議事録は、しきい値のある物質の評価にNOAELやLOAELを用いると説明する。しきい値のない発がん物質に存在しないNOAELを当てた点が設問の誤りである。"
+          },
+          {
+            "number": 3,
+            "verdict": "incorrect",
+            "reason": "この記述は正しい。厚労省の用語解説は、ばく露限界を量―反応関係等から導かれ、ほとんど全ての労働者が連日反復ばく露しても健康影響を受けないと考えられる濃度又は量のしきい値と定義する。厚労省の講義資料は量影響関係もばく露限界値を考える際の対象として示す。"
+          },
+          {
+            "number": 4,
+            "verdict": "incorrect",
+            "reason": "この記述は正しい。食品安全委員会の用語集は、変異原性試験を遺伝子突然変異や染色体異常を調べる試験と定義する。厚労省は発がん性スクリーニングの手法に微生物を用いた変異原性試験を挙げる。化学物質が遺伝子等を変化させるか調べる試験は、発がん性の候補を絞る用途にも使われる。"
+          },
+          {
+            "number": 5,
+            "verdict": "incorrect",
+            "reason": "この記述は正しい。厚労省資料はBEIをBiological Exposure Indicesの略と記し、ACGIHのBEI値を生物学的モニタリングの測定データに対するばく露レベル評価で用いる。ACGIHが示した値を生物学的モニタリングの評価指標とする設問の説明に合う。"
+          }
+        ],
+        "sources": [
+          {
+            "title": "厚生労働省 職場のあんぜんサイト 化学物質用語解説",
+            "url": "https://anzeninfo.mhlw.go.jp/user/anzen/kag/kag_yogo.html"
+          },
+          {
+            "title": "製品評価技術基盤機構 閾値のない発がん性の評価",
+            "url": "https://www.nite.go.jp/chem/shiryo/ra/about_ra5.html"
+          },
+          {
+            "title": "環境省 化学物質評価専門委員会議事録",
+            "url": "https://www.env.go.jp/council/05hoken/y052-09a.html"
+          },
+          {
+            "title": "厚生労働省 職場における化学物質のリスク評価",
+            "url": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/0000113892.html"
+          },
+          {
+            "title": "食品安全委員会 用語集（変異原性試験）",
+            "url": "https://www.fsc.go.jp/yougoshu/kensaku_dokusei.html"
+          },
+          {
+            "title": "厚生労働省掲載 化学物質リスクアセスメント演習「作業環境測定値等の比較例」",
+            "url": "https://www.mhlw.go.jp/bunya/roudoukijun/anzeneisei14/dl/kagaku4_0015.pdf"
+          },
+          {
+            "title": "厚生労働省掲載 大前和幸氏講義「我が国における化学物質管理の現状と課題」",
+            "url": "https://www.mhlw.go.jp/content/11201000/000716406.pdf"
+          }
+        ]
+      },
+      "sourceEvidence": [
+        {
+          "url": "https://anzeninfo.mhlw.go.jp/user/anzen/kag/kag_yogo.html",
+          "excerpt": "短時間の吸入ばく露（通常1時間から4時間）で1群の実験動物の50％を死亡させる",
+          "choiceNumbers": [
+            1
+          ]
+        },
+        {
+          "url": "https://anzeninfo.mhlw.go.jp/user/anzen/kag/kag_yogo.html",
+          "excerpt": "1回の投与で1群の実験動物の50％を死亡させる",
+          "choiceNumbers": [
+            1
+          ]
+        },
+        {
+          "url": "https://anzeninfo.mhlw.go.jp/user/anzen/kag/kag_yogo.html",
+          "excerpt": "急性毒性デｰタの指標",
+          "choiceNumbers": [
+            1
+          ]
+        },
+        {
+          "url": "https://www.nite.go.jp/chem/shiryo/ra/about_ra5.html",
+          "excerpt": "有害性に閾値がない場合には、NOAEL（無毒性量）やTDI",
+          "choiceNumbers": [
+            2
+          ]
+        },
+        {
+          "url": "https://www.nite.go.jp/chem/shiryo/ra/about_ra5.html",
+          "excerpt": "ユニットリスク",
+          "choiceNumbers": [
+            2
+          ]
+        },
+        {
+          "url": "https://www.nite.go.jp/chem/shiryo/ra/about_ra5.html",
+          "excerpt": "VSD（実質安全量",
+          "choiceNumbers": [
+            2
+          ]
+        },
+        {
+          "url": "https://www.env.go.jp/council/05hoken/y052-09a.html",
+          "excerpt": "閾値があると考えられるものにつきましては、ＮＯＡＥＬ、あるいはＬＯＡＥＬ",
+          "choiceNumbers": [
+            2
+          ]
+        },
+        {
+          "url": "https://anzeninfo.mhlw.go.jp/user/anzen/kag/kag_yogo.html",
+          "excerpt": "量―反応関係等から導かれる、ほとんどすべての労働者が連日繰り返しばく露されても健康に影響を受けない",
+          "choiceNumbers": [
+            3
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/content/11201000/000716406.pdf",
+          "excerpt": "量影響関係（量と健康影響の強さの関係）",
+          "choiceNumbers": [
+            3
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/content/11201000/000716406.pdf",
+          "excerpt": "ばく露限界値(仮称)が標的",
+          "choiceNumbers": [
+            3
+          ]
+        },
+        {
+          "url": "https://www.fsc.go.jp/yougoshu/kensaku_dokusei.html",
+          "excerpt": "変異原性を確認する目的で行う試験。遺伝子突然変異試験、染色体異常試験等がある",
+          "choiceNumbers": [
+            4
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/0000113892.html",
+          "excerpt": "遺伝毒性試験、中期発がん性試験等による発がん性のスクリーニング",
+          "choiceNumbers": [
+            4
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/0000113892.html",
+          "excerpt": "スクリーニング試験の手法、評価の基準等 微生物を用いた変異原性試験",
+          "choiceNumbers": [
+            4
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/bunya/roudoukijun/anzeneisei14/dl/kagaku4_0015.pdf",
+          "excerpt": "ACGIH「Biological Exposure Indices」",
+          "choiceNumbers": [
+            5
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/bunya/roudoukijun/anzeneisei14/dl/kagaku4_0015.pdf",
+          "excerpt": "生物学的モニタリングの測定データがある場合のばく露レベル",
+          "choiceNumbers": [
+            5
+          ]
+        }
+      ],
+      "reviewIssues": []
+    },
+    "emkohyo-20260217-q4": {
+      "overlay": {
+        "sourceHash": "be24d0a308e9312e2b35f198c945d8e00437ed9eb60ff16dc4f19c9bea80a512",
+        "correctChoice": 3,
+        "summary": "ベンゼンは体内で酸化されてフェノール等に代謝され、尿中に排泄される。代謝の向きを逆にして「フェノールがベンゼンとして排泄される」とした肢3が誤り。",
+        "choices": [
+          {
+            "number": 1,
+            "verdict": "incorrect",
+            "reason": "マンガンは体内で代謝されない金属元素なので、生物学的モニタリングでは代謝物でなく尿中又は血液中のマンガン量そのものを指標にする。ばく露の把握に使われるという記述は正しい。"
+          },
+          {
+            "number": 2,
+            "verdict": "incorrect",
+            "reason": "鉛にばく露すると、まず血液中の鉛濃度が速やかに上がる。尿中δ-アミノレブリン酸は、鉛がヘム合成酵素（ALA脱水酵素）を阻害した結果として増える影響指標なので、上昇は血中鉛より遅れる。記述は正しい。"
+          },
+          {
+            "number": 3,
+            "verdict": "correct",
+            "reason": "ベンゼンは主に肝臓で酸化され、フェノールやその抱合体などに代謝されて尿中に排泄される。フェノールが代謝されてベンゼンとして排泄されるという、代謝の向きを逆にしたこの記述が誤りで、正答である。"
+          },
+          {
+            "number": 4,
+            "verdict": "incorrect",
+            "reason": "有機溶剤の尿中代謝物は作業中に体内へ蓄積して増えるため、採尿は濃度が最も高くなる時期に行う。作業日が連続する場合は、後半の作業日の作業終了時に採尿するのが望ましいとされているので、記述は正しい。"
+          },
+          {
+            "number": 5,
+            "verdict": "incorrect",
+            "reason": "体内に取り込まれた物質は代謝で水溶性が高まり排泄されやすくなることが多いが、代謝活性化で毒性の強い中間体ができる場合もある。例として、ノルマルヘキサンの2,5-ヘキサンジオンがある。代謝物が障害の原因になりうるという記述は正しい。"
+          }
+        ],
+        "sources": []
+      },
+      "sourceEvidence": [],
+      "reviewIssues": [
+        "【HOLD】肢2（鉛ばく露で血中鉛濃度が先に上がり、尿中δ-アミノレブリン酸の上昇はそれより遅れる）の時間的な先後関係を述べた政府一次資料を確認できなかった。鉛則の健診項目（職場のあんぜんサイト 生物学的モニタリング）、昭和46年基発第550号、食品安全委員会の鉛評価書、産総研の鉛詳細リスク評価書を確認したが、いずれも項目や用量反応を示すだけで時間差の記述はない。肢3・5は食品安全委員会ベンゼン評価書、肢4は平成元年基発第463号（岡山産業保健総合支援センター掲載）、肢1は環境省マンガン健康リスク評価で裏付け可能だが、肢2の根拠が揃うまで保留する。 第2パス（2026-09-24）: 食品安全委員会掲載の鉛講演資料（risk200326、risk200319）も血中鉛濃度区分ごとの尿中ALA増加の有無（用量反応）を示すだけで、ばく露後の時間的な先後関係は述べておらず、肢2の根拠は依然未取得。"
+      ]
+    },
+    "emkohyo-20260217-q5": {
+      "overlay": {
+        "sourceHash": "054178a1a46834c33f6f741ff58f36bd2fb1d04e5760f3f0f9321386d0a99f16",
+        "correctChoice": 4,
+        "summary": "環境省の物性表ではジクロロメタンの分子量84.9はトルエン92.1より小さいが、25℃での蒸気圧58.0kPaはトルエン3.79kPaより大きい。蒸気圧の大小を逆にした肢4が誤り。",
+        "choices": [
+          {
+            "number": 1,
+            "verdict": "incorrect",
+            "reason": "この記述は正しい。溶解度が小さく液体と反応しない気体は、溶液が希薄で溶質も化学変化しないというヘンリーの法則の前提に合う。環境省資料は気体の分圧と液中濃度の比例を示す。温度一定なら比例定数も一定で、一定量の液体では濃度に比例して溶解質量も変わるため、気体の圧力と溶解質量が比例する。"
+          },
+          {
+            "number": 2,
+            "verdict": "incorrect",
+            "reason": "この記述は正しい。産総研の用語集は、ヒュームを蒸気の凝固等で生じる固体微粒子で粒径0.1～1µm、ミストを空気中に浮遊する液体微粒子で粒径5～10µmと定義する。厚生労働省の溶接ヒューム資料も蒸気が凝固した0.1～1µmの固体粒子と説明しており、両者を一般的な範囲で比較するとヒュームの方が小さい。"
+          },
+          {
+            "number": 3,
+            "verdict": "incorrect",
+            "reason": "厚労省のモデルSDSではアクリルアミドの融点は84.5℃で、外観は白色の固体である。25℃・1気圧では融点より十分低いので固体として存在し、記述は正しい。"
+          },
+          {
+            "number": 4,
+            "verdict": "correct",
+            "reason": "これが誤り。気体の状態方程式より同温同圧の気体の密度は分子量に比例する。環境省の測定マニュアルの表ではジクロロメタン84.9、トルエン92.1なので蒸気密度の大小は設問の前半どおり。しかし25℃の蒸気圧はジクロロメタン58.0kPa、トルエン3.79kPaで前者の方が大きい。後半の比較が逆なので、誤っている肢は4である。"
+          },
+          {
+            "number": 5,
+            "verdict": "incorrect",
+            "reason": "この記述は正しい。国立環境研究所の物性情報はN,N-ジメチルホルムアミドを『水、多くの有機溶媒に易溶』と記す。厚労省会議資料にも、トルエンに溶かしたDMFと水系緩衝液に溶かしたDMFの比較実験がある。ここでいう脂溶性は有機溶媒側にも溶ける性質を指し、水にも有機溶媒にも溶けるという設問の趣旨と一致する。"
+          }
+        ],
+        "sources": [
+          {
+            "title": "環境省 ダイオキシン類挙動モデルハンドブック",
+            "url": "https://www.env.go.jp/air/tech/kyodomoderuhandbookH16.pdf"
+          },
+          {
+            "title": "厚生労働省地方労働局 溶接ヒューム規制",
+            "url": "https://jsite.mhlw.go.jp/yamagata-roudoukyoku/taisyou-20201112.html"
+          },
+          {
+            "title": "産業技術総合研究所 詳細リスク評価書のための用語集",
+            "url": "https://unit.aist.go.jp/riss/crm/mainmenu/3-1.html"
+          },
+          {
+            "title": "厚生労働省 モデルSDS アクリルアミド",
+            "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/79-06-1.html"
+          },
+          {
+            "title": "環境省 有害大気汚染物質測定方法マニュアル 物理的性質表",
+            "url": "https://www.env.go.jp/air/osen/manual2/pdf_rev201903/01_chpt1-2-1.pdf"
+          },
+          {
+            "title": "国立環境研究所 化学物質情報 N,N-ジメチルホルムアミド",
+            "url": "https://www.nies.go.jp/kisplus/dtl/chem/YOT00201"
+          },
+          {
+            "title": "厚生労働省 化学物質管理に関する意見交換会資料",
+            "url": "https://www.mhlw.go.jp/content/11305000/001343235.pdf"
+          },
+          {
+            "title": "文部科学省 理科教材 気体の密度と分子量の比較表",
+            "url": "https://www.mext.go.jp/content/1412880_4_1.pdf"
+          }
+        ]
+      },
+      "sourceEvidence": [
+        {
+          "url": "https://www.env.go.jp/air/tech/kyodomoderuhandbookH16.pdf",
+          "excerpt": "気相内の溶質の分圧ｐは溶液中の濃度ｃに比例する",
+          "choiceNumbers": [
+            1
+          ]
+        },
+        {
+          "url": "https://jsite.mhlw.go.jp/yamagata-roudoukyoku/taisyou-20201112.html",
+          "excerpt": "溶接により生じた蒸気が空気中で凝固した個体の粒子（粒径0.1～1μm程度）",
+          "choiceNumbers": [
+            2
+          ]
+        },
+        {
+          "url": "https://unit.aist.go.jp/riss/crm/mainmenu/3-1.html",
+          "excerpt": "金属の蒸気等の気体が空気中で凝固や化学変化を起こし，固体の微粒子として空気中に浮遊しているもの",
+          "choiceNumbers": [
+            2
+          ]
+        },
+        {
+          "url": "https://unit.aist.go.jp/riss/crm/mainmenu/3-1.html",
+          "excerpt": "粒径は0.1〜１μmである",
+          "choiceNumbers": [
+            2
+          ]
+        },
+        {
+          "url": "https://unit.aist.go.jp/riss/crm/mainmenu/3-1.html",
+          "excerpt": "液体の微細な粒子で空気中に浮遊しているもの",
+          "choiceNumbers": [
+            2
+          ]
+        },
+        {
+          "url": "https://unit.aist.go.jp/riss/crm/mainmenu/3-1.html",
+          "excerpt": "粒径は5〜10μmである",
+          "choiceNumbers": [
+            2
+          ]
+        },
+        {
+          "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/79-06-1.html",
+          "excerpt": "84.5 ℃",
+          "choiceNumbers": [
+            3
+          ]
+        },
+        {
+          "url": "https://www.env.go.jp/air/osen/manual2/pdf_rev201903/01_chpt1-2-1.pdf",
+          "excerpt": "ジクロロメタン 84.9",
+          "choiceNumbers": [
+            4
+          ]
+        },
+        {
+          "url": "https://www.env.go.jp/air/osen/manual2/pdf_rev201903/01_chpt1-2-1.pdf",
+          "excerpt": "トルエン 92.1",
+          "choiceNumbers": [
+            4
+          ]
+        },
+        {
+          "url": "https://www.env.go.jp/air/osen/manual2/pdf_rev201903/01_chpt1-2-1.pdf",
+          "excerpt": "蒸気圧(kPa)",
+          "choiceNumbers": [
+            4
+          ]
+        },
+        {
+          "url": "https://www.env.go.jp/air/osen/manual2/pdf_rev201903/01_chpt1-2-1.pdf",
+          "excerpt": "58.0 （25℃)",
+          "choiceNumbers": [
+            4
+          ]
+        },
+        {
+          "url": "https://www.env.go.jp/air/osen/manual2/pdf_rev201903/01_chpt1-2-1.pdf",
+          "excerpt": "3.79 （25℃)",
+          "choiceNumbers": [
+            4
+          ]
+        },
+        {
+          "url": "https://www.mext.go.jp/content/1412880_4_1.pdf",
+          "excerpt": "標準状態における一酸化炭素と二酸化炭素の密度",
+          "choiceNumbers": [
+            4
+          ]
+        },
+        {
+          "url": "https://www.nies.go.jp/kisplus/dtl/chem/YOT00201",
+          "excerpt": "水、多くの有機溶媒に易溶",
+          "choiceNumbers": [
+            5
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/content/11305000/001343235.pdf",
+          "excerpt": "トルエンに溶かしたものの対象としまして、水溶性の溶剤",
+          "choiceNumbers": [
+            5
+          ]
+        }
+      ],
+      "reviewIssues": []
+    }
+  }
+}

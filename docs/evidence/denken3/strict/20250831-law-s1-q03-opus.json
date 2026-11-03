@@ -1,0 +1,71 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20250831",
+  "subject": "law",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 3438,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 15778,
+      "webSearchRequests": 0,
+      "costUSD": 0.1952478,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 1853,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "721fbe8bccacb954d88b1630dc128ca74cc970ba8a36af5fdb7076824efe106a",
+  "inputRequestSha256": "04c108f31e3a616c5f4d9df6e1f9175c7a1019d3c36080923c2e7868b7fbcab3",
+  "inputHashes": {
+    "candidateSha256": {
+      "q03": "49d04c70268f97aff0fa26ae3fe2aed9335ea636fd65cc479db4de70c3ef0482"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20250831/law/p07.png": "8bd1b3eb0157c356a111c1bd964bd365b313f9a6a8b20459a3d72163ff7126a5",
+      "data/raw_pdfs/denken3/review/20250831/law/p04.png": "38045ec67d58396f98ae270d13322f49aa0291474ec50e346ecabbd47a85dfbe"
+    },
+    "figureSha256": {},
+    "sourceQuestionPdfSha256": "51aeb8f1cbfe8e6d3667c2848a3d9fccff40a967f48aafc292fa13a13a6efbb0",
+    "sourceAnswerPdfSha256": "76fd3715ed487d19a56b387fb402de20ee09474e9fa55b0413f9037b96af06c9",
+    "officialAnswerUnitsSha256": "487f078b8ce8b62552fb22f8810f36d63914e995ab92ac8c9a63339a54c948fc",
+    "referencePdfSha256": {},
+    "referencePageSha256": {},
+    "referenceJsonSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q03",
+      "questionNumber": 3,
+      "part": null,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [
+        "uncertainty に「問題冊子の該当ページには出題年度が記載されておらず，本データ単独では出題回を特定できない」とあるが、manifest固定の出典情報（2025年度上期・試験日2025-08-31・法規冊子 20250831_ch_third_q04.pdf・PDF第7頁）で出題回は確定しており、候補自身の fiscalYear/term/examDate/sourceAttribution とも矛盾する。この記述は削除または更新が必要。",
+        "総合解説は根拠を「電気設備に関する技術基準を定める省令 第22条（低圧電線路の絶縁性能）」とし、条文を逐語引用している（「使用電圧に対する漏えい電流が最大供給電流の二千分の一を超えないようにしなければならない」）。しかし条番号・条見出し・逐語引用は、添付された公式原図（問題頁・注意書き頁・解答表）では検証できない。候補の uncertainty も一次資料（e-Gov法令検索）の条文を確認していないと認めている。注3の効力基準日（令和7年4月1日現在）時点の平成9年通商産業省令第52号 第22条の原文で照合するまでは、外部確認事項として未解消。",
+        "uncertainty に上記の未確認事項が残っているのに needsReview=false になっており、両者が整合しない。条文照合が完了するまでは needsReview=true とするか、照合後に uncertainty を解消すること。"
+      ],
+      "verifiedEvidence": [
+        "問題文：原図PDF第7頁（冊子頁 -4-）の問3本文と照合した。「電気設備技術基準」「低圧電線路中絶縁部分の電線と大地との間及び電線の線心相互間の絶縁抵抗は，(ア)に対する漏えい電流が(イ)の(ウ)分の1を超えないようにしなければならない。」および設問文が一致している。",
+        "選択肢：原図の表と5行×3列すべてが一致した。(1)使用電圧/最大供給電流/2 000、(2)最大使用電圧/供給電流/2 000、(3)使用電圧/使用電流/1 000、(4)対地電圧/最大供給電流/1 000、(5)対地電圧/使用電流/2 000。",
+        "公式正答：公式解答表〈法規〉問3の解答は1、配点は6。manifest固定の正答単位 {question:3, part:null, answer:\"1\", points:6}、候補の officialAnswer=\"1\"、scoringPoints=6 のいずれとも一致する。",
+        "用語：注意書き頁の注1で「電気設備技術基準」は「電気設備に関する技術基準を定める省令」の略と定義されている。解説中の省令名はこれと整合する。",
+        "解説の論理：(ア)使用電圧・(イ)最大供給電流・(ウ)2 000 の組合せは選択肢(1)にしか存在せず、公式正答1と整合する。",
+        "数値例：100 A × 1/2 000 = 0.05 A = 50 mA で計算は正しい。「超えない」を「以下」と言い換えている点も整合する。",
+        "肢別解説：各誤答肢で(ア)(イ)(ウ)の正誤判定を個別に検算した。(2)はア誤・イ誤・ウ正、(3)はア正・イ誤・ウ誤、(4)はア誤・イ正・ウ誤、(5)はア誤・イ誤・ウ正で、いずれの記述も正確だった。",
+        "図：原図には空欄の枠囲みと選択肢表のみがあり、回路図などはない。figureDescription（図なし・表内容は choices に記録済み）、figureUrls=[]、choiceFigureUrls={} は妥当。",
+        "出典メタデータ：fiscalYear=2025、term=upper、examDate=2025-08-31、subject=law、reviewedFromPage=[7]、sourceQuestionPdfUrl、sourceAnswerPdfUrl、sourceAttribution（令和7年度上期 法規 問3）は manifest とすべて一致した。",
+        "officialReferenceUrls は空配列である。独立主張を持つ公式参照URLはない。"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,90 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20260322",
+  "subject": "theory",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 7804,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 18070,
+      "webSearchRequests": 0,
+      "costUSD": 0.3009038,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 5537,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "40718b1108470d9edc3a41ae8a6f32af54f362b6f4582f06249609e573034b0f",
+  "inputRequestSha256": "fbe5a1ff465f3996df3cfb3730d13f7dce69b2385372086afdb992a599187438",
+  "inputHashes": {
+    "candidateSha256": {
+      "q15a": "735b790d898062ab38aeb00d785bbfb4f0ecf576c4d4b6b6be4c5783f4213af5",
+      "q15b": "12df7310c1e47529e13a780c1d28d9161073c652216faf40e6c72b2a33b6bd1f"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20260322/theory/p20.png": "c427a0a2647ca64f3b09acc8409a50181b0ac8099f9a51e6938f2999eb18b9c4"
+    },
+    "figureSha256": {
+      "public/images/denken3/20260322/theory/20260322-theory-q15-fig1.png": "d036e13d4ec825e3de682280ceac8ec48c0afd3ae3050a5caf32f6d16829902c"
+    },
+    "sourceQuestionPdfSha256": "c83e7c7350d98b65f5d8da0b93e4a2581a19dd250be320fb7fc492c9b34a29c1",
+    "sourceAnswerPdfSha256": "cc2890296d06a4823df5697a78a1c01ddfd39f041c51f48c87984daa3a5707c6",
+    "officialAnswerUnitsSha256": "8d83c5dea6f88c638eedf5cb361cf503e5ccd10affdb0834d3519bb0fb2b6363",
+    "referencePdfSha256": {},
+    "referencePageSha256": {},
+    "referenceJsonSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q15a",
+      "questionNumber": 15,
+      "part": "a",
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "出典照合: 原図右下の頁表示は『- 17 -』『T2－R 020』で、manifest固定のPDF第20頁と一致する。reviewedFromPage=[20] は正しい。公式解答表の見出し『令和7年度 第三種電気主任技術者下期試験解答』により、fiscalYear=2025、term=lower、examDate=2026-03-22、subject=theory、sourceAttribution『令和7年度下期…理論科目 問15(a)』はいずれも正しい。sourceQuestionPdfUrl と sourceAnswerPdfUrl は manifest と一致する。",
+        "問題文照合: 前文『線間電圧200 V，周波数50 Hz…R＝10 Ω…ωL＝20 Ω，1/(ωC)＝20 Ω』は原図の記載と一致する。『次の(a)及び(b)の問に答えよ』を省いているのは小問分割に伴う整形で、意味は変わらない。(a)の設問文と単位[A]も原図と一致する。",
+        "選択肢照合: (1)5.77 (2)7.00 (3)11.5 (4)14.0 (5)22.5 は原図と完全に一致する。",
+        "公式正答照合: 公式解答表の理論 問15(a) は解答3・配点5。officialAnswer=3、scoringPoints=5 と一致する。",
+        "検算(総合解説): 各相のアドミタンスは Y=1/10+1/(j20)+j/20=0.1 S で純抵抗になる。平衡Y負荷なので中性線がなくても相電圧は E=200/√3≒115.47 V。したがって I=E/R≒11.547 A となり、最も近いのは(3)11.5。L・C単独の電流は 115.47/20≒5.774 A で、解説の記述と一致する。",
+        "検算(誤答肢): (1) 5.77=E/ωL で、記述は正しい。(2) 7.00/11.547≒0.606、E/7.00≒16.50 Ω で、記述は正しい。(4) 14.0−11.547≒2.45 A、E/14.0≒8.25 Ω で、記述は正しい。(5) 22.5/11.547≒1.95倍、E/22.5≒5.13 Ω で、記述は正しい。(2)(4)(5)の出題意図を特定できない点は uncertainty に明示されている。どの肢も誤った計算経路を断定しておらず、数値に基づく反証として成立している。",
+        "図照合: 公開候補図は原図の回路部分を欠落なく切り出している。確認した内容は次のとおり。電源は3個の〜記号によるY結線で、中性点に黒丸がある。上端線の上に右向き矢印と I がある。負荷はY結線で、中性点に黒丸がある。3枝とも R・L・C の3素子並列(ラベル R,L,C×3)。左下電源線と右下電源線の交差点に黒丸はなく、非接続。電源中性点と負荷中性点を結ぶ線はない。figureDescription の接続・向き・ラベルの記述はすべて図と一致する。",
+        "図の自足性: 解答に必要な情報は、Y結線であること、各相がRLC並列であること、中性線がないこと、Iが線電流であることで、公開候補図だけで判読できる。",
+        "officialReferenceUrls は空で、検証すべき独立主張はない。"
+      ]
+    },
+    {
+      "unitKey": "q15b",
+      "questionNumber": 15,
+      "part": "b",
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "出典照合: 原図は PDF第20頁(頁表示『- 17 -』『T2－R 020』)で、reviewedFromPage=[20] と一致する。fiscalYear=2025、term=lower、examDate=2026-03-22、subject=theory、sourceAttribution『令和7年度下期…理論科目 問15(b)』、両PDF URL はいずれも manifest と一致する。",
+        "問題文照合: 前文は原図と一致する。(b)の設問文『三相負荷の有効電力 P の値[kW]として…』と単位[kW]も原図と一致する。",
+        "選択肢照合: (1)2.6 (2)1.3 (3)4.0 (4)3.5 (5)12 は原図と完全に一致する。",
+        "公式正答照合: 公式解答表の理論 問15(b) は解答3・配点5。officialAnswer=3、scoringPoints=5 と一致する。",
+        "検算(総合解説): 有効電力を消費するのは各相のRのみ。P=3×(200/√3)²/10=3×1333.3=4000 W=4.0 kW。別解 3I²R=3×11.547²×10≒4000 W、√3×200×11.547×1≒4000 W もいずれも一致する。力率1の根拠(LC並列共振で各相が純抵抗)も(a)と整合する。",
+        "検算(誤答肢): (1) 正しい値4.0 kWと異なることを示しており、反証として正しい。(2) 1相分 (200/√3)²/10≒1.333 kW で、記述は正しい。(4) √3×200×10≒3.46 kW は数値上の一致で、『数値上』と限定し、uncertainty で出題意図が未確認であることを明示している。そのうえで電源電流が約11.55 Aである点で正しく反証している。(5) 3×200²/10=12000 W=12 kW で、線間電圧を相に印加したとする誤りの指摘は正しい。",
+        "図照合: 公開候補図は(a)と同一ファイルで、原図の回路をすべての接続・向き・ラベル(I、R/L/C×3)を含めて保持している。figureDescription は図と一致する。有効電力の計算に必要な『Y結線・各相RLC並列・中性線なし』は公開候補図だけで判読できる。",
+        "officialReferenceUrls は空で、検証すべき独立主張はない。"
+      ]
+    }
+  ]
+}

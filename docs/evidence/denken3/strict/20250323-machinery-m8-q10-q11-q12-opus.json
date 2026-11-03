@@ -1,0 +1,115 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20250323",
+  "subject": "machinery",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 8270,
+      "cacheReadInputTokens": 2155,
+      "cacheCreationInputTokens": 21775,
+      "webSearchRequests": 0,
+      "costUSD": 0.340039,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 5909,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "4260d1d7e449d85d8ab4874541b73008dd32d04aa36d47bb42f22ea9b42f610a",
+  "inputRequestSha256": "b9f22b896d046f65248e34cd85a99eee5256951ec716b4ba10a51fe85571a8ac",
+  "inputHashes": {
+    "candidateSha256": {
+      "q10": "d13243c8e6c340211d028bcda23de0f207e2b4079865d58f35283a61229a6621",
+      "q11": "9e700a9ecc542c8a917124b176e2f3d015d3f2aa943a7b05c3e41e5468f05b1d",
+      "q12": "7307fd595c15c2a92f869fdd826278ce2ef08561fc408475a500125ffcd728ae"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20250323/machinery/p13.png": "3106a7a5d743c05344733ea038a7517041ca4988052e6521d113a1e676dfb468",
+      "data/raw_pdfs/denken3/review/20250323/machinery/p14.png": "c76709447403ead0e5d0af06e5edbf47c42edb99c42e07812257d6cc73682899",
+      "data/raw_pdfs/denken3/review/20250323/machinery/p15.png": "c71207485fddcbd586274fd00864e3a35c71136182492248c71ba690e76c3ad3"
+    },
+    "figureSha256": {
+      "public/images/denken3/20250323/machinery/20250323-machinery-q10-pcs-circuit.png": "c7fcfb14c6d9dec2f4f9b4e8bff426426f822c005e164d466daaeaf00e56e3e4",
+      "public/images/denken3/20250323/machinery/20250323-machinery-q11-gear-load.png": "8e4c1ca26c86b74238619e82821e50d0bc979611543cf4833cddb9c0741c0c00"
+    },
+    "sourceQuestionPdfSha256": "66e8b0070a314cd78ed9b9f3edd3d75eeaf442b258fd0aacab0e7d9620c75b9f",
+    "sourceAnswerPdfSha256": "4c3b38fcf1405766fafaa78b1b05b867a3d48307a670b9d354476bc6b32acd4c",
+    "officialAnswerUnitsSha256": "72daf61cd1022a9ae8d6c2c108a25e8e145beecfc4e8daed63e2e85eb3697242",
+    "referencePdfSha256": {},
+    "referencePageSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q10",
+      "questionNumber": 10,
+      "part": null,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [
+        "総合解説の「分岐点と負側ラインの間に下側IGBT、分岐点と直流リンク正側の間に上側IGBTと逆並列ダイオードがある」は、逆並列ダイオードが上側素子にだけあるようにも読める。原図では上下両方のIGBTにダイオードが逆並列に接続されている。「上下とも逆並列ダイオード付きのIGBT」と明記し、昇圧動作で導通するのは上側のダイオードであることと区別して書くべき。",
+        "「単相200V系統の波高値約283V以上」と「太陽電池の電圧は…より低いことが多く」は、問題文にも図にもない前提である。200√2≒283 の計算自体は正しい。ただし誤り判定の根拠は図のトポロジー（入力側直列リアクトル＋ハーフブリッジ脚の中点接続＝昇圧チョッパ）で完結している。数値は「例えば単相200V系統なら」と一例であることを明示すべき。"
+      ],
+      "figureIssues": [
+        "uncertainty欄の「IGBTアームの上下素子の接続関係は画像解像度上、完全には確認しきれない」は原図と矛盾する。原図では、リアクトル出力端が上下IGBT直列点に接続され、上側コレクタが直流リンク正側母線、下側エミッタが負側母線に接続されていることが明瞭に判読できる。さらに同欄は公式正答との整合を根拠に挙げており、推論が循環している。needsReview=false とも矛盾するため、図から確認済みである旨に書き換えるべき。",
+        "figureDescription の「直流リンク用の大きな並列コンデンサ」の「大きな」は、図からは読み取れない（原図の記号は入力側コンデンサと同形式）。削除するか「直流リンク用の並列コンデンサ」とすべき。"
+      ],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "問題文と(1)〜(5)全肢の文言を、原図p13（印字-10-、T2-K 013）と照合した。句読点の整形（，→、）以外は一致している。",
+        "公式正答(1)を確認した。図は太陽電池→入力並列C→直列リアクトル→2素子アーム中点、上側素子→直流リンク正側、下側素子→負側という構成で、昇圧チョッパである。したがって「降圧チョッパ」とする(1)が誤り。",
+        "(3)の ΔV=ΔQ/C による平滑とリプルの説明を検算した。正しい。",
+        "(4)の出力側各線への直列リアクトルと線間並列コンデンサによるフィルタが、原図と一致することを確認した。",
+        "(5)の系統連系保護装置による異常時の出力遮断（解列）の説明を確認した。正しい。",
+        "公開候補図は原図の回路部と一致する。確認した項目は、全素子、全接続点（黒丸）、端子（白丸）、ラベル「パワーコンディショナ」「太陽電池」「電力系統へ」、キャプション。欠落はなく、候補図だけで判断できる。",
+        "officialReferenceUrls は空で、検証すべき外部主張はない。"
+      ]
+    },
+    {
+      "unitKey": "q11",
+      "questionNumber": 11,
+      "part": null,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "問題文（nm=1 200 min⁻¹、Tm=100 N·m、減速比6、効率0.96、nL・TL・PL の単位）を原図p14（印字-11-、T2-K 014）と照合した。一致している。",
+        "表形式の(1)〜(5)全肢の数値（200/16.0/12.1、200/576/12.1、7 200/576/4 147、7 200/16.0/12.1、7 200/16.0/4 147）を照合した。一致している。",
+        "検算した。nL=1200/6=200 min⁻¹。Pm=2π×20×100=12 566 W。PL=0.96×12 566≒12 064 W≒12.1 kW。TL=6×0.96×100=576 N·m。2π×(200/60)×576≒12 064 W で整合する。公式正答(2)と一致する。",
+        "誤答肢の説明を検算した。0.96×100/6=16.0 N·m と 2π×(200/60)×16.0≒335 W はともに正しい。4 147 kW が電動機出力約12.6 kW を超えるためあり得ないという論拠も妥当。",
+        "「軸入力 PL」を負荷軸への入力（減速機出力）とする解釈は、図の PL が負荷側に付記されていることと整合する。",
+        "公開候補図は原図と一致する。電動機・歯車・負荷・各軸と、ラベル nm, Tm, nL, TL, PL の全部を含み、欠落はない。",
+        "officialReferenceUrls は空で、解説は問題文のみで完結しており、外部確認事項はない。"
+      ]
+    },
+    {
+      "unitKey": "q12",
+      "questionNumber": 12,
+      "part": null,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "問題文（25 m²、10 cm、0.4 W／(m·K)、温度差4 K、熱流[W]）と(1)16、(2)40、(3)250、(4)400、(5)2 500 を、原図p15（印字-12-、T2-K 015）と照合した。一致している。",
+        "検算した。Φ=λAΔT/d=0.4×25×4/0.1=400 W。公式正答(4)と一致する。",
+        "(2)の40 Wが厚さで割る前の値であるという説明を検算した。正しい。(5)の 2500/400=6.25 も正しい。",
+        "原図には図がなく、figureUrls=[] と figureDescription は整合する。reviewedFromPage=[15] は原図のページ構成（印字番号+3、T2-K 015）と一致する。",
+        "officialReferenceUrls は空で、解説は問題文のみで完結しており、外部確認事項はない。"
+      ]
+    }
+  ]
+}

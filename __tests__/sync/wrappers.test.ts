@@ -17,6 +17,9 @@ import type { StudyPlan } from "@/lib/study-plan/types";
  *      is never clobbered by a failed sync.
  */
 
+const context = { userId: "user-a", ownerToken: "owner-token" };
+vi.mock("@/lib/sync/ownership", () => ({ ownsSyncContext: () => true, isSyncContextCurrent: async () => true }));
+
 function okFetch(entries: unknown[]) {
   return vi.fn().mockResolvedValue({
     status: 200,
@@ -45,7 +48,7 @@ describe("syncBookmarks", () => {
     ]);
     vi.stubGlobal("fetch", fetchMock);
 
-    const status = await syncBookmarks();
+    const status = await syncBookmarks(context);
 
     expect(lastEndpoint(fetchMock)).toBe("/api/account/bookmark-sync");
     expect(status.state).toBe("ok");
@@ -64,7 +67,7 @@ describe("syncBookmarks", () => {
       }),
     );
 
-    const status = await syncBookmarks();
+    const status = await syncBookmarks(context);
 
     expect(status.state).toBe("unauthenticated");
     expect(getAllBookmarks()).toHaveLength(0);
@@ -78,7 +81,7 @@ describe("syncCustomTags", () => {
     ]);
     vi.stubGlobal("fetch", fetchMock);
 
-    const status = await syncCustomTags();
+    const status = await syncCustomTags(context);
 
     expect(lastEndpoint(fetchMock)).toBe("/api/account/custom-tag-sync");
     expect(status.state).toBe("ok");
@@ -96,7 +99,7 @@ describe("syncCustomTags", () => {
       }),
     );
 
-    const status = await syncCustomTags();
+    const status = await syncCustomTags(context);
 
     expect(status.state).toBe("unavailable");
     expect(getCustomTags().some((t) => t.name === "ghost")).toBe(false);
@@ -120,7 +123,7 @@ describe("syncStudyPlans", () => {
     ]);
     vi.stubGlobal("fetch", fetchMock);
 
-    const status = await syncStudyPlans();
+    const status = await syncStudyPlans(context);
 
     expect(lastEndpoint(fetchMock)).toBe("/api/account/study-plan-sync");
     expect(status.state).toBe("ok");
@@ -134,7 +137,7 @@ describe("syncStudyPlans", () => {
     ]);
     vi.stubGlobal("fetch", fetchMock);
 
-    await syncStudyPlans();
+    await syncStudyPlans(context);
 
     const ids = listPlans().map((p) => p.id);
     expect(ids).toContain("plan-good");
@@ -151,7 +154,7 @@ describe("syncStudyPlans", () => {
       }),
     );
 
-    const status = await syncStudyPlans();
+    const status = await syncStudyPlans(context);
 
     expect(status.state).toBe("unauthenticated");
     expect(listPlans()).toHaveLength(0);

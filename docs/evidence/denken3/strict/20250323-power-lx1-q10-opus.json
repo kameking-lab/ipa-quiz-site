@@ -1,0 +1,67 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20250323",
+  "subject": "power",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 2556,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 13451,
+      "webSearchRequests": 0,
+      "costUSD": 0.1589918,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 1378,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "e9b59bb919a010cbbf187c0e4692ebe860a6618a75dac45da32940b600137302",
+  "inputRequestSha256": "9308d9b7caa7db1b625701d0e13c14a0b8ab457851ef6340ff95d449e733af31",
+  "inputHashes": {
+    "candidateSha256": {
+      "q10": "97f0ecde0cdb12d45435dc5f4f596a447c870a100e004c41d3a5c7aeb7e565a0"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20250323/power/p13.png": "d3302c0d2d23152ad716eb74242faecf10f3e9df73cb76c38829064b7fe44adc"
+    },
+    "figureSha256": {},
+    "sourceQuestionPdfSha256": "892785e0f1035bcb239eb30fa903d4c88adbcfdaa1b5b0edea2d1907fd887114",
+    "sourceAnswerPdfSha256": "4c3b38fcf1405766fafaa78b1b05b867a3d48307a670b9d354476bc6b32acd4c",
+    "officialAnswerUnitsSha256": "73eb308a56261e2789cc1512cff0db86ec2a8341f2dd86c5aa62d6a24566d93e",
+    "referencePdfSha256": {},
+    "referencePageSha256": {},
+    "referenceJsonSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q10",
+      "questionNumber": 10,
+      "part": null,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "問題文: 公式原図（PDF第13頁、印字頁「-10-」、T2−D 013）と照合。電圧 6.6 kV、周波数 60 Hz、こう長 2 km、交流三相3線式地中電線路、心線1線当たり静電容量 0.5 μF/km、心線3線を充電する三相無負荷充電容量[kV·A]の各要素が数値・単位とも一致する。句読点（，→、）と空白の整形のみで、意味の変化はない。",
+        "選択肢: (1)5.5 (2)8.2 (3)16.4 (4)28.4 (5)49.3。原図と全5肢が一致する。",
+        "公式正答: 解答PDF（令和6年度下期）の電力欄で「問10 = 3」を確認した。候補の officialAnswer は \"3\" で、manifest 固定の正答単位とも一致する。",
+        "総合解説の検算: C = 0.5 × 2 = 1 μF、ω = 2π×60 ≒ 376.99 rad/s。Qc = 3ωCE² = ωCV² = 376.99 × 1×10⁻⁶ × 43.56×10⁶ ≒ 16,421.7 V·A ≒ 16.4 kV·A となり、(3)と一致する。E = V/√3 から 3E² = V² となる因果関係も正しい。",
+        "肢(1): 16.42/3 ≒ 5.47 ≒ 5.5。1相（1線）分 ωCE² だけを計算した場合の値に相当し、三相分を求める問題なので誤りとする理由は妥当。",
+        "肢(2): 1 km 分（C = 0.5 μF）で計算すると ωCV² ≒ 8.21 ≒ 8.2 になる。こう長 2 km を反映していないという指摘は正しい。",
+        "肢(4): 16.42 × √3 ≒ 28.44 ≒ 28.4。三相充電容量は ωCV² で √3 倍の関係にならない、という理由は正しい。",
+        "肢(5): 3ωCV² = 3 × 16.42 ≒ 49.26 ≒ 49.3。3ωCE² の E に線間電圧を代入した誤りに相当するという説明は正しい。",
+        "図: 原図は問題文と選択肢のみで図はない。figureDescription（図なし）、figureUrls = []、choiceFigureUrls = {} は妥当。",
+        "出典メタデータ: fiscalYear = 2024（令和6年度）、term = lower（下期）、examDate = 2025-03-23、subject = power、reviewedFromPage = [13]、sourceQuestionPdfUrl と sourceAnswerPdfUrl がいずれも manifest と一致する。sourceAttribution の「令和6年度下期第三種電気主任技術者試験 電力科目 問10」も正しい。",
+        "officialReferenceUrls は空で、検証を要する独立主張はない。needsReview = false は妥当。"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,58 @@
+{
+  "reviewModel": "claude-opus-5-5",
+  "requestedModel": "claude-opus-5-5",
+  "canonicalModel": "claude-opus-5-5",
+  "provider": "firstParty",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 3014,
+      "cacheReadInputTokens": 99060,
+      "cacheCreationInputTokens": 18467,
+      "webSearchRequests": 0,
+      "costUSD": 0.227836,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 2550,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "paperId": "emkohyo-20260217",
+  "ids": [
+    "emkohyo-20260217-q2"
+  ],
+  "figureSha256": {
+    "emkohyo-20260217-q2": {
+      "/exam-library/emkohyo-20260217/text-q2-p3-fig1.webp": "2e759458470bc93a542749b05f6b3e58c7e3099532b383c47751ea96632d6adc",
+      "/exam-library/emkohyo-20260217/text-q2-p3-fig2.webp": "f408df7e4c10b702b2b051fe6d5f8137fae400a178a70d7bb083b1ecda34cae5"
+    }
+  },
+  "officialRowImageSha256": {
+    "emkohyo-20260217-q2": {
+      "/exam-library/emkohyo-20260217/q2-p3-0.webp": "73a2b7d98dc5e978c56c5d2a6d938bad80bf6bf5e15998e9d55562d7f1641285"
+    }
+  },
+  "officialPageImageSha256": {},
+  "governmentSourceImageSha256": {},
+  "candidateSha256": {
+    "emkohyo-20260217-q2": "a32ddd4f7efafa49a74dc294d216ec3a33722c6dccc6e6baaaa978e715c22848"
+  },
+  "sourcePackPath": "docs/evidence/emkohyo-choice-sources/emkohyo-20260217-q02-02.json",
+  "sourcePackSha256": "cbb9a4daa39248d40c990d8eee3c08fa050f858be5e9be68c04d1b98001c9e8e",
+  "assessment": {
+    "emkohyo-20260217-q2": {
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "reasonIssues": [],
+      "sourceIssues": [
+        "肢5の理由末尾「受け手が各項目を同じ位置から探せるよう、標準の項目構成を保つ」は、なぜ変更してはならないかを説明する記述である。ところが、付録（11）SDSについて（mhlw.go.jp/content/11120000/001571853.pdf、PDF p.109）が示すのは『次の16項目及びその情報を記載しなければならない。これらの項目名の番号、項目名及び順序を変更してはならない』という規定だけで、この目的説明は書かれていない。添付の政府資料は、この目的を直接には支えていない。削除するか、目的を明記した一次資料（JIS Z 7253本文など）に差し替える必要がある。"
+      ],
+      "needsExternalCheck": [
+        "肢5の根拠資料は、GHS改訂第4版に基づくJIS Z 7253:2012に準拠している。一方、2026年2月の試験時点で有効な規格はJIS Z 7253:2019である。16項目の構成と『番号・項目名・順序を変更してはならない』という要件が2019年版でも同じであることは、添付の政府資料では確認できない。現行規格または現行の厚労省資料で照合すること。"
+      ]
+    }
+  }
+}

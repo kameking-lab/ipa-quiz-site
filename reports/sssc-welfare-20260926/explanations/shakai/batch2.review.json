@@ -1,0 +1,116 @@
+{
+  "questions": [
+    {
+      "number": 19,
+      "status": "PASS",
+      "problems": "",
+      "fixes": {}
+    },
+    {
+      "number": 20,
+      "status": "PASS",
+      "problems": "",
+      "fixes": {}
+    },
+    {
+      "number": 21,
+      "status": "PASS",
+      "problems": "",
+      "fixes": {}
+    },
+    {
+      "number": 22,
+      "status": "PASS",
+      "problems": "",
+      "fixes": {}
+    },
+    {
+      "number": 23,
+      "status": "PASS",
+      "problems": "",
+      "fixes": {}
+    },
+    {
+      "number": 24,
+      "status": "PASS",
+      "problems": "",
+      "fixes": {}
+    },
+    {
+      "number": 25,
+      "status": "PASS",
+      "problems": "",
+      "fixes": {}
+    },
+    {
+      "number": 26,
+      "status": "PASS",
+      "problems": "",
+      "fixes": {}
+    },
+    {
+      "number": 27,
+      "status": "PASS",
+      "problems": "",
+      "fixes": {}
+    },
+    {
+      "number": 28,
+      "status": "PASS",
+      "problems": "",
+      "fixes": {}
+    },
+    {
+      "number": 29,
+      "status": "PASS",
+      "problems": "",
+      "fixes": {}
+    },
+    {
+      "number": 30,
+      "status": "PASS",
+      "problems": "",
+      "fixes": {}
+    },
+    {
+      "number": 31,
+      "status": "FIX",
+      "problems": "肢3で費用徴収の要件を取り違えている。「故意または重大な過失」が要件になるのは、保険関係成立届を出していない未手続の場合や、事業主の故意・重過失で事故が起きた場合である。保険料を滞納している場合は、督促状の指定期限を過ぎた滞納期間中に起きた事故について、給付費用の一部が徴収される。",
+      "fixes": {
+        "3": "事業主が保険料を滞納していても、被災した労働者への労災保険給付は通常どおり行われる。ただし、督促状で指定した期限を過ぎた滞納期間中に起きた事故については、政府が給付に要した費用の一部を事業主から徴収することがある。"
+      }
+    },
+    {
+      "number": 32,
+      "status": "PASS",
+      "problems": "",
+      "fixes": {}
+    },
+    {
+      "number": 33,
+      "status": "PASS",
+      "problems": "",
+      "fixes": {}
+    },
+    {
+      "number": 34,
+      "status": "PASS",
+      "problems": "",
+      "fixes": {}
+    },
+    {
+      "number": 35,
+      "status": "PASS",
+      "problems": "",
+      "fixes": {}
+    },
+    {
+      "number": 36,
+      "status": "FIX",
+      "problems": "肢2で「再婚前のAさんは30歳代」と断定しているが、事例ではAさんは40歳で、5年前に夫と死別している。再婚前の年齢は35〜40歳と考えられ、30歳代とは限らない。受給できない理由は「60歳未満で支給年齢に達していない」とすべきである。",
+      "fixes": {
+        "2": "寡婦年金は、国民年金の第1号被保険者として保険料納付済期間等が10年以上ある夫が死亡した場合に、婚姻期間が10年以上ある妻に60歳から65歳になるまで支給される給付である。再婚前のAさんは60歳未満で支給年齢に達していないため、寡婦年金を受給することはできない。"
+      }
+    }
+  ]
+}

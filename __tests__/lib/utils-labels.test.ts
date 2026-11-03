@@ -56,6 +56,9 @@ describe("seasonLabel", () => {
 });
 
 describe("formatYearSeason", () => {
+  it("公表月を特定できないときは月を推測しない", () => {
+    expect(formatYearSeason(2025, "published")).toBe("2025年公表問題");
+  });
   it("令和元年(2019)以降は元号表記で整形する", () => {
     expect(formatYearSeason(2019, "spring")).toBe("令和1年度 春期");
     expect(formatYearSeason(2023, "autumn")).toBe("令和5年度 秋期");

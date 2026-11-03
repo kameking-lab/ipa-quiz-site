@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20250831",
+  "subject": "power",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 3063,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 13704,
+      "webSearchRequests": 0,
+      "costUSD": 0.1711558,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 1879,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "b071d61497b22ce48b687cfabe539142d5b4d21be933a8db7b13ce56ec4cd12a",
+  "inputRequestSha256": "6eb5bb125877e831c79e9c176a17643874ac4b79debbc7c5d91304315f306285",
+  "inputHashes": {
+    "candidateSha256": {
+      "q07": "af6448fd9ea06811f005ca70f48918f13617c7725fda02ce301887e2972f67b1"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20250831/power/p10.png": "09b6178679fcd789b29d5ec878509572046e12e2e809a7003bc98a6577c0af63"
+    },
+    "figureSha256": {},
+    "sourceQuestionPdfSha256": "567aac1df6dc0c0950d04e90a1ad03231427c518eede92559effe01e2b97a2c9",
+    "sourceAnswerPdfSha256": "76fd3715ed487d19a56b387fb402de20ee09474e9fa55b0413f9037b96af06c9",
+    "officialAnswerUnitsSha256": "957fa42f644482c35715d6e7b88d63ff23aaaad1ad79be7ee18b45b19689c5a8",
+    "referencePdfSha256": {},
+    "referencePageSha256": {},
+    "referenceJsonSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q07",
+      "questionNumber": 7,
+      "part": null,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "問題文: 添付の公式問題原図（紙面ノンブル「- 7 -」、T1-D 010）の問7本文「分散型電源の配電系統連系に関する記述として，誤っているものを次の(1)〜(5)のうちから一つ選べ。」と候補questionが一致する。「～」と「〜」の字形差のみで、意味の差はない。",
+        "選択肢: (1)〜(5)の全文を原図と一字ずつ照合し、候補choicesとの一致を確認した。対象は「逆向きの潮流」「電力変換装置」「高調波電流」「系統側から見て進み力率」「専用線による連系や負荷分割」「ステップ式自動電圧調整器(SVR)」などの語句と句読点。",
+        "公式正答: 添付の公式解答表（令和7年度 第三種電気主任技術者上期試験解答）の＜電力＞問7は解答3・配点5である。manifest単位{question:7, part:null, answer:\"3\", points:5}、候補のofficialAnswer=\"3\"、scoringPoints=5とすべて一致する。",
+        "総合解説: ΔV≒(PR+QX)/V（Qは送電端→受電点向きの遅れ無効電力を正とする）で符号を検算した。逆潮流ではP<0なのでPR<0となり、電圧は上昇する。QX>0にする、つまり受電点が系統から遅れ無効電力を受け取る（系統側から見て遅れ力率）運転にすると上昇を抑制できる。系統側から見て進み力率にするとQ<0となり、QX項も電圧上昇側に働く。以上から(3)が誤りという結論は正しく、系統連系技術要件ガイドラインの「系統側からみて遅れ力率とする」趣旨とも整合する。",
+        "肢別解説: (1)は逆潮流による変圧器の逆向き潮流と電圧上昇、(2)はPV・燃料電池がいずれも直流出力でインバータ連系のためスイッチング高調波が出てフィルタが要る点、(4)は大容量連系時の専用線・負荷分割、(5)はSVRのタップ切換による電圧調整を扱う。いずれも「正しい」とする理由が技術的に妥当である。(3)の誤り理由は総合解説と同一の符号関係で説明されており、矛盾はない。",
+        "図: 原図に図はなく、解答に図は不要である。figureDescription「本問に図はない。」、figureUrls=[]、choiceFigureUrls={}が妥当であることを確認した。",
+        "出典: officialReferenceUrlsは空のため、独立主張の検証対象はない。sourceAnswerPdfUrlは添付の解答表原図と内容が対応している。reviewedFromPage=[10]はPDFページ番号であり、添付原図の紙面ノンブル「- 7 -」とは別体系である。表紙・注意事項頁を含むPDF頁として齟齬はなく、問題内容の照合は添付原図で完結している。"
+      ]
+    }
+  ]
+}

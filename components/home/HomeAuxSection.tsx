@@ -4,9 +4,9 @@ import * as React from "react";
 import Link from "next/link";
 import { CalendarClock, MessageCircleQuestion, RotateCcw } from "lucide-react";
 import { createHistoryStore } from "@/lib/storage/history";
-import { daysUntilNextExam } from "@/lib/dashboard/analytics";
 import { EXAM_LABELS } from "@/lib/utils";
 import type { ExamCode } from "@/lib/questions/types";
+import { tsuginoScheduleUrl } from "@/lib/tsugino-qualification";
 
 const VALID_EXAM_IDS = new Set<string>(Object.keys(EXAM_LABELS));
 
@@ -34,8 +34,6 @@ export function HomeAuxSection() {
     setHydrated(true);
   }, []);
 
-  const next = daysUntilNextExam();
-
   return (
     <details className="group rounded-2xl border border-zinc-200 bg-white open:shadow-sm dark:border-zinc-800 dark:bg-zinc-950">
       <summary className="flex cursor-pointer list-none items-center justify-between px-4 py-3 text-sm font-medium text-zinc-700 dark:text-zinc-300 [&::-webkit-details-marker]:hidden">
@@ -48,9 +46,26 @@ export function HomeAuxSection() {
             <CalendarClock className="h-4 w-4" aria-hidden="true" />
           </span>
           <div className="min-w-0 flex-1">
-            <p className="text-xs text-zinc-500 dark:text-zinc-400">次回試験</p>
-            <p className="text-zinc-800 dark:text-zinc-200">
-              {next.label}まで <strong>{next.days}</strong> 日
+            <p className="text-xs text-zinc-500 dark:text-zinc-400">受験日・申込期間</p>
+            <a
+              href={tsuginoScheduleUrl(resume?.exam)}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-primary underline underline-offset-4"
+            >
+              次の資格で日程・申込締切を確認
+            </a>
+            <span className="mx-2 text-zinc-400" aria-hidden="true">·</span>
+            <a
+              href="https://www.ipa.go.jp/shiken/mousikomi/schedule.html"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-primary underline underline-offset-4"
+            >
+              IPA公式日程
+            </a>
+            <p className="mt-1 text-xs text-zinc-500 dark:text-zinc-400">
+              2026年度のAP・高度試験・SCはCBT方式。区分・科目ごとに期間が異なります。
             </p>
           </div>
         </div>
@@ -64,9 +79,9 @@ export function HomeAuxSection() {
               <RotateCcw className="h-4 w-4" aria-hidden="true" />
             </span>
             <div className="min-w-0 flex-1">
-              <p className="text-xs text-zinc-500 dark:text-zinc-400">続きから</p>
+              <p className="text-xs text-zinc-500 dark:text-zinc-400">ランダム演習</p>
               <p className="truncate text-zinc-800 dark:text-zinc-200">
-                {resume.examLabel} を再開
+                {resume.examLabel} の問題を解く
               </p>
             </div>
           </Link>

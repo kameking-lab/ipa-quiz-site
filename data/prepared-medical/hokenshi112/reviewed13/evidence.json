@@ -1,0 +1,313 @@
+{
+  "reviewedAdditionalQuestionNumbers": [
+    9,
+    12,
+    15,
+    20,
+    22,
+    25,
+    29,
+    30,
+    31,
+    32,
+    33,
+    34,
+    35
+  ],
+  "reviewedAdditionalQuestions": 13,
+  "reviewedAdditionalChoices": 60,
+  "baselinePrivateQuestions": 2,
+  "baselinePrivateChoices": 8,
+  "reviewedTotalQuestions": 15,
+  "reviewedTotalChoices": 68,
+  "questionBindings": [
+    {
+      "id": "hokenshi-112-am-q9",
+      "questionNumber": 9,
+      "choices": 4,
+      "answerCount": 1,
+      "questionObjectSha256": "16885eb4999e89631fc5c1948b6979d00bf15ca3858426cb53cf5cd3e8567bfb"
+    },
+    {
+      "id": "hokenshi-112-am-q12",
+      "questionNumber": 12,
+      "choices": 4,
+      "answerCount": 1,
+      "questionObjectSha256": "0a7973843d2371399e499be6bf65cc8ce3171e2db1e14428f34781f6463e2c5f"
+    },
+    {
+      "id": "hokenshi-112-am-q15",
+      "questionNumber": 15,
+      "choices": 4,
+      "answerCount": 1,
+      "questionObjectSha256": "a29fc4e61f1ac2d98fca20bc36786fd89f6cd1901033ebdf3437d000f6e8b839"
+    },
+    {
+      "id": "hokenshi-112-am-q20",
+      "questionNumber": 20,
+      "choices": 4,
+      "answerCount": 1,
+      "questionObjectSha256": "0b04bcd2bcbdaa9d645aeea5d4ea668b612837be0059d55b119a4076a7218fe1"
+    },
+    {
+      "id": "hokenshi-112-am-q22",
+      "questionNumber": 22,
+      "choices": 4,
+      "answerCount": 1,
+      "questionObjectSha256": "836133e1e5c4fa5f12a45560daa58b235f0c8cbbf079e0d553f68f6057ffc540"
+    },
+    {
+      "id": "hokenshi-112-am-q25",
+      "questionNumber": 25,
+      "choices": 5,
+      "answerCount": 1,
+      "questionObjectSha256": "00a85e3652658c7f73ee8ef49fc7b38832ca388c5bf84abf9a4d328c99925655"
+    },
+    {
+      "id": "hokenshi-112-am-q29",
+      "questionNumber": 29,
+      "choices": 5,
+      "answerCount": 1,
+      "questionObjectSha256": "3f9e0dcf41eb832563eb48c09b5bfdcf0fb4590364b9926d726e509200c4fc6d"
+    },
+    {
+      "id": "hokenshi-112-am-q30",
+      "questionNumber": 30,
+      "choices": 5,
+      "answerCount": 1,
+      "questionObjectSha256": "aefa01c0d655776296d8938fffbba4d28a9bd59b845bea2022e7eedf17045846"
+    },
+    {
+      "id": "hokenshi-112-am-q31",
+      "questionNumber": 31,
+      "choices": 5,
+      "answerCount": 1,
+      "questionObjectSha256": "c68748c29dadddc974db9081a68873a20d66c22b3896b4bf309f89a0915731b9"
+    },
+    {
+      "id": "hokenshi-112-am-q32",
+      "questionNumber": 32,
+      "choices": 5,
+      "answerCount": 1,
+      "questionObjectSha256": "418d2fd41e651fd476332b4555c67199f154825473c8cebeb86208b7615830e8"
+    },
+    {
+      "id": "hokenshi-112-am-q33",
+      "questionNumber": 33,
+      "choices": 5,
+      "answerCount": 1,
+      "questionObjectSha256": "27262423ebebde7cb9c32f2f1b676f86f63e0bfa6d0c95a4e28afcb375f7340b"
+    },
+    {
+      "id": "hokenshi-112-am-q34",
+      "questionNumber": 34,
+      "choices": 5,
+      "answerCount": 2,
+      "questionObjectSha256": "0ba940540887839418ac961b921628e20f023ab626b2286757dca3486d358407"
+    },
+    {
+      "id": "hokenshi-112-am-q35",
+      "questionNumber": 35,
+      "choices": 5,
+      "answerCount": 2,
+      "questionObjectSha256": "afac6aace2870571cf854662b391a0e8d65b63d5dc149bf91fc349ba61e76d95"
+    }
+  ],
+  "independentReceipts": [
+    {
+      "receiptPath": "note-automation/reports/qualification-expansion-20261007/approved35/astra/HOKENSHI112-NEXT6-V3-PRIMARY-FINAL.json",
+      "sha256": "143f343719d0ae3407d32be90c7e1634d0fbafeb6a9c498001a86fc0322900c1",
+      "reviewer": "GPT-6-Astra",
+      "scope": [
+        9,
+        12,
+        15,
+        20,
+        22,
+        25
+      ],
+      "publicAllowed": false
+    },
+    {
+      "receiptPath": "note-automation/reports/qualification-expansion-20261007/approved35/astra/HOKENSHI112-STATS4-PRIMARY-FINAL.json",
+      "sha256": "7e134cdf7be8bd7521c2bbf9f6c826429f27ff33c4f64341d8fefb7aa90145df",
+      "reviewer": "GPT-6-Astra",
+      "scope": [
+        29,
+        30,
+        31,
+        32
+      ],
+      "publicAllowed": false
+    },
+    {
+      "receiptPath": "note-automation/reports/qualification-expansion-20261007/approved35/astra/HOKENSHI112-NEXT3-PRIMARY-FINAL.json",
+      "sha256": "1b0e372a160d300dca54600fc96732c59275254812b4adfffcbce8de5ba554a2",
+      "reviewer": "GPT-6-Astra",
+      "scope": [
+        33,
+        34,
+        35
+      ],
+      "publicAllowed": false
+    }
+  ],
+  "sourceEvidence": [
+    {
+      "evidencePath": "note-automation/reports/qualification-expansion-20261007/approved35/medical/sources/hokenshi-q9-agedlaw.html",
+      "sha256": "afc9e6bb9f760b4f074b22be2f279510168f96d3fb35f3746d4002b818a7101c",
+      "url": "https://www.mhlw.go.jp/web/t_doc?dataId=82115000&dataType=0&pageNo=1"
+    },
+    {
+      "evidencePath": "note-automation/reports/qualification-expansion-20261007/approved35/medical/sources/hokenshi-q12-surveillance.html",
+      "sha256": "c6b38be90c92ea204bb8b31a88ac276ac4d237fb44e8f6f818ae89dbf09badb9",
+      "url": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/0000115283.html"
+    },
+    {
+      "evidencePath": "note-automation/reports/qualification-expansion-20261007/approved35/medical/sources/hokenshi-q12-notification.html",
+      "sha256": "f7b43cb5774f20404dea2a3959c8654d55d660c3b91cc72ced7fe82d46b69391",
+      "url": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/kenkou_iryou/kenkou/kekkaku-kansenshou/kekkaku-kansenshou11/01.html"
+    },
+    {
+      "evidencePath": "note-automation/reports/qualification-expansion-20261007/approved35/medical/sources/hokenshi-q12-infection-law.json",
+      "sha256": "0ea2ecff7e6074d9db888a7accb49945f7e6b928f3dfc56a246f67839e98d976",
+      "url": "https://laws.e-gov.go.jp/api/2/law_data/410AC0000000114"
+    },
+    {
+      "evidencePath": "note-automation/reports/qualification-expansion-20261007/approved35/medical/sources/hokenshi-q15-disaster-law.json",
+      "sha256": "f476bdb21e5d37746c555db106085f485529ae1bf09d4e5406ca86db16e97b24",
+      "url": "https://laws.e-gov.go.jp/api/2/law_data/336AC0000000223"
+    },
+    {
+      "evidencePath": "note-automation/reports/qualification-expansion-20261007/approved35/medical/sources/q15-basic-plan-index.html",
+      "sha256": "f770c284aaa04e615038f39f2862c230dee8f165922eb873d91ee369a53cea7a",
+      "url": "https://www.bousai.go.jp/taisaku/keikaku/kihon.html"
+    },
+    {
+      "evidencePath": "note-automation/reports/qualification-expansion-20261007/approved35/medical/sources/q15-basic-plan.pdf",
+      "sha256": "3277a2b047fbfa147bf51840a7a61ffbea37e0265f12b9b0cb5c19cc4aaa1d80",
+      "url": "https://www.bousai.go.jp/taisaku/keikaku/pdf/kihon_basic_plan.pdf"
+    },
+    {
+      "evidencePath": "note-automation/reports/qualification-expansion-20261007/approved35/medical/sources/q15-support-law.pdf",
+      "sha256": "f221141c285726cb4186f1d0d7065a4d8762aaf4aba86e10ed86c260a86abb49",
+      "url": "https://www.bousai.go.jp/taisaku/seikatsusaiken/pdf/201204hou.pdf"
+    },
+    {
+      "evidencePath": "note-automation/reports/qualification-expansion-20261007/approved35/medical/sources/q15-support-overview.pdf",
+      "sha256": "783ce75dda9cb18962d7871fb25c3af22f5bb96e283503387e1fc388e92e7c34",
+      "url": "https://www.bousai.go.jp/taisaku/seikatsusaiken/pdf/140612gaiyou.pdf"
+    },
+    {
+      "evidencePath": "note-automation/reports/qualification-expansion-20261007/approved35/medical/sources/q15-hospital-index.html",
+      "sha256": "3bdfdac128e5c08935db8d49ea6b2738d6f5fc7fb89de43cd7271c3af940273f",
+      "url": "https://www.mhlw.go.jp/stf/newpage_61825.html"
+    },
+    {
+      "evidencePath": "note-automation/reports/qualification-expansion-20261007/approved35/medical/sources/q15-hospital-establishment.html",
+      "sha256": "9023b3dac277896f7e275f73c54b23b94f94161cd72af9c35e198dadf36333ab",
+      "url": "https://www.mhlw.go.jp/web/t_doc?dataId=00ta6395&dataType=1&pageNo=1"
+    },
+    {
+      "evidencePath": "note-automation/reports/qualification-expansion-20261007/approved35/medical/sources/q15-hospital-2023-requirements.pdf",
+      "sha256": "2fd967c65cc46a01ea4c34e83c5626f83390ffbf104d4b1a94d2f14ef6c75888",
+      "url": "https://www.mhlw.go.jp/content/10800000/001064197.pdf"
+    },
+    {
+      "evidencePath": "note-automation/reports/qualification-expansion-20261007/approved35/medical/sources/q15-mhlw-business-plan-2025.pdf",
+      "sha256": "896e106bd67bad7e08f32e3b7153fc613061a7c4036954b0174b7da90ddaf052",
+      "url": "https://www.mhlw.go.jp/content/10600000/001591704.pdf"
+    },
+    {
+      "evidencePath": "note-automation/reports/qualification-expansion-20261007/approved35/medical/sources/hokenshi-q20-childlaw.json",
+      "sha256": "7599b1287c6ec3f4db6c6d81561194d6aa822c2a262c79959f2770f700740151",
+      "url": "https://laws.e-gov.go.jp/api/2/law_data/430AC1000000104"
+    },
+    {
+      "evidencePath": "note-automation/reports/qualification-expansion-20261007/approved35/medical/sources/hokenshi-q22-suicide-law.html",
+      "sha256": "e731a6f52047d6071fc0412c38f10896035cdcc4e957c34e82428591e0253d41",
+      "url": "https://www.mhlw.go.jp/web/t_doc?dataId=82aa8247&dataType=0&pageNo=1"
+    },
+    {
+      "evidencePath": "note-automation/reports/qualification-expansion-20261007/approved35/medical/sources/hokenshi-q25-schoolrules.json",
+      "sha256": "2b010fba153b7a9ec3823c15cc86cb086bf58fe7b7ac29f69830a208eea84a18",
+      "url": "https://laws.e-gov.go.jp/api/2/law_data/333M50000080018"
+    },
+    {
+      "evidencePath": "note-automation/reports/qualification-expansion-20261007/approved35/medical/sources/stats-cdc-analysis.html",
+      "sha256": "0f448d3dcdab07373b1af3b3a1117076c5b4862e8f16b0a30814da3da9f3f765",
+      "url": "https://www.cdc.gov/field-epi-manual/php/chapters/analyze-interpret-data.html"
+    },
+    {
+      "evidencePath": "note-automation/reports/qualification-expansion-20261007/approved35/medical/sources/stats-cdc-matching.html",
+      "sha256": "a5eb7af001572045f80b6bb7e52a900bea131453d4f9adf998bf4f748024ae28",
+      "url": "https://www.cdc.gov/field-epi-manual/php/chapters/design-conduct-analyze-field-studies.html"
+    },
+    {
+      "evidencePath": "note-automation/reports/qualification-expansion-20261007/approved35/medical/sources/stats-cdc-predictive-definitions.html",
+      "sha256": "8ff608609550e342ff9f15fd9db68c28ad6b536af91fbe002b937cfbb4dddce9",
+      "url": "https://archive.cdc.gov/www_cdc_gov/csels/dsepd/ss1978/lesson5/appendixa.html"
+    },
+    {
+      "evidencePath": "note-automation/reports/qualification-expansion-20261007/approved35/medical/sources/stats-cdc-predictive-prevalence.html",
+      "sha256": "6373a04b6716acf81d9515e1fb0f1f45cb89c1d3c5a87559bf7782f339eed0b1",
+      "url": "https://archive.cdc.gov/www_cdc_gov/csels/dsepd/ss1978/lesson5/quizanswers.html"
+    },
+    {
+      "evidencePath": "note-automation/reports/qualification-expansion-20261007/approved35/medical/sources/stats-nist-binomial.html",
+      "sha256": "3944aac11d4e4f539115905807db1a26e050fb08a46c819dba76bbefa612cb15",
+      "url": "https://www.itl.nist.gov/div898/handbook/eda/section3/eda366i.htm"
+    },
+    {
+      "evidencePath": "note-automation/reports/qualification-expansion-20261007/approved35/medical/sources/stats-nist-pvalue.html",
+      "sha256": "388fced16552298e72bc3c94252f3127b38211739a5d203bec54d7e90e27597c",
+      "url": "https://www.itl.nist.gov/div898/handbook/prc/section1/prc131.htm"
+    },
+    {
+      "evidencePath": "note-automation/reports/qualification-expansion-20261007/approved35/medical/sources/stats-nist-tests.html",
+      "sha256": "0b2b3837573ce6d399305ff074f612b90d2352f6fa79160579b8f43729a38fef",
+      "url": "https://www.itl.nist.gov/div898/handbook/prc/section1/prc13.htm"
+    },
+    {
+      "evidencePath": "note-automation/reports/qualification-expansion-20261007/approved35/medical/sources/population-stat-age-indices.html",
+      "sha256": "f6767e616e76363603a9af13e01c3915d992478d061279f34a2c1ace8b843431",
+      "url": "https://www.stat.go.jp/library/faq/faq02/faq02a11.html"
+    },
+    {
+      "evidencePath": "note-automation/reports/qualification-expansion-20261007/approved35/medical/sources/population-cao-doubling-2024.pdf",
+      "sha256": "47bc9664d90a81fa34f44bb419a93ac5aae65a4468b62805c33ae2c9c499f525",
+      "url": "https://www8.cao.go.jp/kourei/whitepaper/w-2024/zenbun/pdf/1s1s_02.pdf"
+    },
+    {
+      "evidencePath": "note-automation/reports/qualification-expansion-20261007/approved35/medical/sources/population-mhlw-age-society.pdf",
+      "sha256": "7e0ec4ddcda5bc45d5df6db086df6418d1ed8b69df9e2f7b8214c7c85c4ce5a3",
+      "url": "https://www.mhlw.go.jp/content/12000000/001135382.pdf"
+    },
+    {
+      "evidencePath": "note-automation/reports/qualification-expansion-20261007/approved35/medical/sources/promotion-who-ottawa.pdf",
+      "sha256": "c7b00a9da08c0e4ed7e1284009bc8f20b2c5e757e36f0ba602e37e9b9d1e8820",
+      "url": "https://www.afro.who.int/sites/default/files/2017-06/hpr%20ottawa_charter.pdf"
+    },
+    {
+      "evidencePath": "note-automation/reports/qualification-expansion-20261007/approved35/medical/sources/checklist-mhlw-domain-guide.pdf",
+      "sha256": "c0a4a63b4ac62549136700b0e44a9711c05054181d101dbf29ccbb182c1ab1db",
+      "url": "https://www.mhlw.go.jp/topics/2009/05/dl/tp0501-1c_0002.pdf"
+    },
+    {
+      "evidencePath": "note-automation/reports/qualification-expansion-20261007/approved35/medical/sources/checklist-mhlw-question-table.pdf",
+      "sha256": "f5f3e3857b3f1c4a582566ab82ac8a8414859856b282e3f9791c13528688035e",
+      "url": "https://www.mhlw.go.jp/content/000545093.pdf"
+    }
+  ],
+  "rightsPermissionPass": null,
+  "publicAllowed": false,
+  "whole110Complete": false,
+  "twoRoundsComplete": false,
+  "primarySourceAccuracySelfPass": false,
+  "historicalBoundaries": [
+    "No complete current law equals historical law claim.",
+    "Current statistical FAQ is not an exam-date frozen webpage.",
+    "Legacy checklist used for domains only, not current eligibility.",
+    "Tokyo welfare council pamphlet cited for independent explanation only; no text/image republication permission inferred."
+  ]
+}

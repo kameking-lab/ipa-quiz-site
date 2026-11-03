@@ -1,0 +1,52 @@
+{
+  "reviewModel": "claude-opus-5-5",
+  "requestedModel": "claude-opus-5-5",
+  "canonicalModel": "claude-opus-5-5",
+  "provider": "firstParty",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 2983,
+      "cacheReadInputTokens": 143524,
+      "cacheCreationInputTokens": 26673,
+      "webSearchRequests": 0,
+      "costUSD": 0.3017568,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 2592,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "paperId": "emkohyo-EM20261801",
+  "ids": [
+    "emkohyo-EM20261801-q1"
+  ],
+  "figureSha256": {
+    "emkohyo-EM20261801-q1": {}
+  },
+  "officialRowImageSha256": {
+    "emkohyo-EM20261801-q1": {
+      "/exam-library/emkohyo-EM20261801/q1-p2-0.webp": "eae153746f9d72a85e775089cb37180de5529e8dd0b7e903f6ecf19e535ba925"
+    }
+  },
+  "governmentSourceImageSha256": {},
+  "candidateSha256": {
+    "emkohyo-EM20261801-q1": "46addd691ffae72a3e1886dd23fcf110b9ee5fd2f84f01a090057147b7247878"
+  },
+  "sourcePackPath": "docs/evidence/emkohyo-choice-sources/emkohyo-EM20261801-q01-01.json",
+  "sourcePackSha256": "4bc994cf3e3308775d3358466d50d5d157ac99aeda31511e477c7421ad3d2a9f",
+  "assessment": {
+    "emkohyo-EM20261801-q1": {
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "reasonIssues": [
+        "肢2の説明に抜けがある。肢2は前半と後半の2つの主張でできている。前半は、濃度基準値が定められている物質について、個人ばく露測定による濃度を濃度基準値と比較する方法がある、という主張。後半は、呼吸用保護具を使っている場合は内側の濃度を算定して比較する、という主張。現行の説明は後半しか扱っておらず、前半が正しい理由を示していない。前半の根拠は、改正リスクアセスメント指針9(1)イ(イ)の『濃度基準値が設定されている物質については、個人ばく露測定により測定した当該物質の濃度を当該物質の濃度基準値と比較する方法』（基発0427第3号 00tc7654 に収録）。これを明示して、前半・後半の両方が指針に合うことを説明すべき。"
+      ],
+      "sourceIssues": [],
+      "needsExternalCheck": []
+    }
+  }
+}

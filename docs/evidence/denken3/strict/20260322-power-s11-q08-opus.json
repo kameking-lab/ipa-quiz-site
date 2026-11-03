@@ -1,0 +1,73 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20260322",
+  "subject": "power",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 4297,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 14791,
+      "webSearchRequests": 0,
+      "costUSD": 0.20453179999999999,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 2514,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "2d0f02ee60302555ac4d17e66a16f82cf26f890e88098cc96f6bc9e10fc9c976",
+  "inputRequestSha256": "dc83d25cd4df4a73d4764657e5f2735c345a5110aeb7ebab93cb6729052bd026",
+  "inputHashes": {
+    "candidateSha256": {
+      "q08": "88ae1f782d40528dd84e14a6a5cfd35282597b102b3715cdf20f311fc75da036"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20260322/power/p11.png": "b728d81f3ef55bf53e73c18bf505a384fd416c77d4b57449d7375d9972ce37e1"
+    },
+    "figureSha256": {},
+    "sourceQuestionPdfSha256": "9733341a0f293f068c9a665d5a9a90f1aabf3a2db5d79cd530643cdea241f7b7",
+    "sourceAnswerPdfSha256": "cc2890296d06a4823df5697a78a1c01ddfd39f041c51f48c87984daa3a5707c6",
+    "officialAnswerUnitsSha256": "46f4d90a3c1180dce614fde96a74d4263e44eac234d5d6095af187716864ef3f",
+    "referencePdfSha256": {},
+    "referencePageSha256": {},
+    "referenceJsonSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q08",
+      "questionNumber": 8,
+      "part": null,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [
+        "(3)の扱いが曖昧である。総合解説とchoiceExplanations[3]は冒頭で(3)を「正しい」としながら、後段で「通常のスペーサ単体ではギャロッピング防止効果は限定的であり、かえってギャロッピングを生じやすくする作用もあるとされる」と述べている。これでは学習者に対し、正しい肢の記述が技術的には不正確だと示唆することになる。しかもこの補足は公式資料で裏付けられていない（候補自身のuncertaintyでも認めている）。修正案：(3)は公式正答上「正しい記述」とだけ明示する。ギャロッピング対策としての相間スペーサ（相間短絡防止）の説明にとどめ、断定できない補足は削除するか、出典付きの注記に分離する。",
+        "choiceExplanations[3]の「ダンパ機能をもたせて振動エネルギーを吸収するスペーサダンパを想定した記述と解される」は推測である。スペーサダンパの主な対象はサブスパン振動・微風振動であり、ギャロッピング防止策として(3)の意図に結び付ける根拠は示されていない。出題意図を推定する記述は削除するか、根拠を付けること。",
+        "総合解説とchoiceExplanations[3]で、同じ(3)への注意書きがほぼ重複している。総合解説側は簡潔にし、詳細はchoiceExplanations側に一本化するのが望ましい。"
+      ],
+      "figureIssues": [],
+      "sourceIssues": [
+        "uncertaintyには公式資料で確認できない解釈（(3)で想定しているスペーサの種類、通常スペーサがギャロッピングを助長しうるという説明）が明記されている。それにもかかわらずneedsReview=falseとなっており、メタデータが矛盾している。外部確認事項が残る以上、needsReview=trueとするか、該当記述を削除してuncertaintyを解消すること。",
+        "officialReferenceUrlsは空である。(3)の補足説明（通常の素導体間スペーサがねじれを拘束し、着氷雪を翼形化させてギャロッピングを生じやすくする等）は、添付原図と公式解答表のいずれでも検証できない。このため推測による記述としてPASSにできない。"
+      ],
+      "verifiedEvidence": [
+        "出典メタデータ：公式解答表の見出し「令和7年度 第三種電気主任技術者下期試験解答」は、fiscalYear=2025・term=lowerと一致する。examDate=2026-03-22、subject=power、問題PDF・解答PDFのURLはmanifestと一致する。reviewedFromPage=[11]はmanifestのPDF第11頁と一致する（原図下部の「- 8 -」は冊子内のページ番号であり、PDFページではない）。",
+        "問題文：「架空送電線路に関連する設備に関する記述として，誤っているものを次の(1)〜(5)のうちから一つ選べ。」は原図と一字一句一致する。",
+        "選択肢(1)〜(5)：原図と照合し、全文一致を確認した（(1)アークホーン、(2)架空地線・遮へい角、(3)スペーサ・多導体化・ギャロッピング、(4)微風・空気の渦・サブスパン振動・ダンパ、(5)逆フラッシオーバ・埋設地線）。脱字・語句の差異はない。",
+        "公式正答：解答表の＜電力＞問8は解答4・配点5である。候補のofficialAnswer=\"4\"、scoringPoints=5と一致する。",
+        "(4)の誤り理由：一様な微風によるカルマン渦で上下振動する現象は微風振動であり、サブスパン振動（多導体のスペーサ間で風上側素導体の後流により生じる振動）ではない。名称の誤りという指摘は妥当である。後半のダンパによる断線防止は、微風振動対策として妥当である。",
+        "(1)：アークホーンがフラッシオーバ時のアークをがいし表面から離し、がいしの損傷を防ぐという説明は正しい。",
+        "(2)：遮へい角の定義（架空地線と最外側電線を結ぶ線が鉛直線となす角）と、小さいほど遮へい効果が大きいという説明は正しい。",
+        "(3)前半：多導体化で等価半径が増し、電線表面の電位の傾きが下がってコロナが抑制されるという説明は正しい。",
+        "(5)：直撃雷による鉄塔電位上昇で生じる逆フラッシオーバと、埋設地線（カウンタポイズ）による塔脚接地抵抗低減での抑制という説明は正しい。",
+        "図：原図に図はなく、figureDescription・figureUrls=[]・choiceFigureUrls={}は妥当である。"
+      ]
+    }
+  ]
+}

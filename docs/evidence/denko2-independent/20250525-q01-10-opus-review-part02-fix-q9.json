@@ -1,0 +1,26 @@
+{
+  "inputHashes": {
+    "draftSha256": "4e2e9ff683b7b2c572ea8e70ceeac2dc3ffda84080089ed70766d97078c5f8d3",
+    "rowSha256": {
+      "9": "556146057c5477690dd7f44a384070e525bd60a711702526f0894ba9135652e0"
+    },
+    "detailFigureSha256": {
+      "public/images/denko2/2025-first/q9.png": "32d1b98000404f451dc3c1af07e90df1510d4cd25c60fc31aa3e1ce90f29cdaa"
+    }
+  },
+  "reviewModel": "claude-opus-5-5",
+  "assessment": [
+    {
+      "number": 9,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "lawNeedsExternalCheck": [
+        "分岐点から過電流遮断器までの長さが3mを超え8m以下なら、電線の許容電流は幹線の過電流遮断器の定格電流の35%以上という規定。電技解釈第149条の分岐回路の規定と照合が必要（画像だけでは条文の真偽を判定できない）",
+        "ニの肢別理由にある『55%は8mを超える場合の基準』という規定。55%以上なら長さの制限がないという条文の書き方と合っているか、同じ条文で確認が必要"
+      ]
+    }
+  ]
+}

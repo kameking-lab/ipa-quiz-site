@@ -1,0 +1,21 @@
+{
+  "sourcePdfSha256": "635c811dbee7dd6c5605c856a8250285a4c99ef80a0609793600cb0d011ef451",
+  "sourceUrl": "https://www.shiken.or.jp/construction/upload/20251005_co_first_q01.pdf",
+  "reviewedAt": "2026-09-28",
+  "status": "VISUAL_REVIEW_ONLY_PUBLICATION_HOLD",
+  "pages": [13, 14, 15],
+  "visualReviewedCount": 10,
+  "choiceReasonApprovedCount": 0,
+  "questions": [
+    { "number": 41, "page": 14, "sharedFigurePage": 13, "officialAnswer": "ロ", "verified": "共有単線図①は地絡継電装置。四肢はすべて試験器の写真で、ロにはV・A・φの計器が見える。", "extractIssue": "写真四点と共有単線図①が抽出テキストにない。" },
+    { "number": 42, "page": 14, "sharedFigurePage": 13, "officialAnswer": "ロ", "verified": "共有単線図②は屋外・屋内境界の高圧引込施工部分。四肢は工具写真で、ロの柄には『黄色』の注記。", "extractIssue": "工具写真四点が抽出テキストにない。" },
+    { "number": 43, "page": 14, "sharedFigurePage": 13, "officialAnswer": "イ", "verified": "共有図③のa・b・cは上流から並ぶ開閉器。原本の選択肢はイ b→a→c、ロ c→b→a、ハ a→b→c、ニ c→a→b。", "extractIssue": "questionRawとchoicesRawではa・b・c、丸記号、矢印の位置関係が破損し、順序四肢が読めない。" },
+    { "number": 44, "page": 14, "sharedFigurePage": 13, "officialAnswer": "ニ", "verified": "共有図④は計器用変圧器の手前にある保護装置。四肢は欠相・過負荷・雷サージ・内部短絡波及防止。", "extractIssue": "共有図④の位置が抽出テキストにない。" },
+    { "number": 45, "page": 15, "sharedFigurePage": 13, "officialAnswer": "ニ", "verified": "共有図⑤は電圧計回路の試験用図記号。四肢は電流/電圧切換スイッチと電流/電圧端子。", "extractIssue": "共有図⑤の記号が抽出テキストにない。" },
+    { "number": 46, "page": 15, "sharedFigurePage": 13, "officialAnswer": "ニ", "verified": "共有図⑥は主回路へ接続する機器の空欄。四肢は全て電気図記号。", "extractIssue": "選択肢の図記号四点と共有図⑥位置が抽出テキストにない。" },
+    { "number": 47, "page": 15, "sharedFigurePage": 13, "officialAnswer": "ハ", "verified": "共有図⑦は主回路を囲む変流器の図記号。四肢は地絡検出・変圧・変流・過電圧抑制。", "extractIssue": "共有図⑦の位置と図記号が抽出テキストにない。" },
+    { "number": 48, "page": 15, "sharedFigurePage": 13, "officialAnswer": "ニ", "verified": "共有図⑧はLBSとヒューズを組み合わせた分岐機器。四肢はヒューズ付断路器等。", "extractIssue": "共有図⑧の記号が抽出テキストにない。" },
+    { "number": 49, "page": 15, "sharedFigurePage": 13, "officialAnswer": "ロ", "verified": "共有図⑨は動力側CVTケーブル。四肢は全てケーブル断面図で、ロは独立した三心の架橋ポリエチレン絶縁・ビニルシース。", "extractIssue": "四つの断面図の形状と層の対応がchoicesRawで失われ、ラベル文字が選択肢間で混在する。" },
+    { "number": 50, "page": 15, "sharedFigurePage": 13, "officialAnswer": "ニ", "verified": "共有図⑩は動力制御盤から三相電動機までの配線。選択肢は3・4・5・6心。", "extractIssue": "共有図⑩の動力制御盤・電動機・接地接続が抽出テキストにない。" }
+  ]
+}

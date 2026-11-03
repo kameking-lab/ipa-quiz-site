@@ -1,0 +1,112 @@
+{
+  "reviewModel": "claude-opus-5-5",
+  "requestedModel": "claude-opus-5-5",
+  "canonicalModel": "claude-opus-5-5",
+  "provider": "firstParty",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 4129,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 35039,
+      "webSearchRequests": 0,
+      "costUSD": 0.36315580000000003,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 3250,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponsePath": "data/exam-library/emkohyo-review/emkohyo-EM20261809-q16-20-raw-response.txt",
+  "rawResponseSha256": "4c960f3ac7ac016a3c4cab13813504f473c7f0a23594aada88bbc6ba6b824a76",
+  "paperId": "emkohyo-EM20261809",
+  "ids": [
+    "emkohyo-EM20261809-q16",
+    "emkohyo-EM20261809-q17",
+    "emkohyo-EM20261809-q18",
+    "emkohyo-EM20261809-q19",
+    "emkohyo-EM20261809-q20"
+  ],
+  "figureSha256": {
+    "emkohyo-EM20261809-q16": {},
+    "emkohyo-EM20261809-q17": {},
+    "emkohyo-EM20261809-q18": {},
+    "emkohyo-EM20261809-q19": {},
+    "emkohyo-EM20261809-q20": {}
+  },
+  "officialRowImageSha256": {
+    "emkohyo-EM20261809-q16": {
+      "/exam-library/emkohyo-EM20261809/q16-p9-1.webp": "e603f1cd3ecfe164755bcded87ce814c6ab911163e36bc623e44cb81831fa0dc"
+    },
+    "emkohyo-EM20261809-q17": {
+      "/exam-library/emkohyo-EM20261809/q17-p10-0.webp": "74d3586807eb31dfaee0afb68a035482921095a2ce61a7ceac2c9610e25e9374"
+    },
+    "emkohyo-EM20261809-q18": {
+      "/exam-library/emkohyo-EM20261809/q18-p10-1.webp": "647bb4e6d3e9104925da4244507e03edc0f3447bd19157d7ae55f3ef6833bd18"
+    },
+    "emkohyo-EM20261809-q19": {
+      "/exam-library/emkohyo-EM20261809/q19-p11-0.webp": "4dbdc32ecd9a6e80f8f6790b57d8078aca4ba0182c4147dfede8f8cd9d902338"
+    },
+    "emkohyo-EM20261809-q20": {
+      "/exam-library/emkohyo-EM20261809/q20-p12-0.webp": "90ccc0094d71bc58ae0a7e38a8885d4b35ede1783c1bc1673d52b3ed46e98576"
+    }
+  },
+  "officialPageImageSha256": {},
+  "governmentSourceImageSha256": {},
+  "candidateSha256": {
+    "emkohyo-EM20261809-q16": "55eaead855aaf24844f7f4b0b14ac6f4c2a5c4d95bd19a0302a1af22ebb239b9",
+    "emkohyo-EM20261809-q17": "e089be1f6a4d6376e353bfd83c1f281f83568f95c2aca6fe0875e79b81c8d465",
+    "emkohyo-EM20261809-q18": "cf0962b001d8c19a2e3bf5d86ef1869efe5b7a1c7203e26e941de29b0156e736",
+    "emkohyo-EM20261809-q19": "128c9971b591ceffb8d8cb1569bd3a9c8ebb37defc7977b00c733dc17ffbcc5c",
+    "emkohyo-EM20261809-q20": "a74f1af778e27b038ac30979e94edd2f787c54adae035d3bf126ce5431e407fd"
+  },
+  "sourcePackPath": "docs/evidence/emkohyo-choice-sources/emkohyo-EM20261809-q16-20.json",
+  "sourcePackSha256": "a22cba688952ce3dc165ca6dfd5c241c0ac66c0e2ccbbfd6f3356ae62ae099df",
+  "assessment": {
+    "emkohyo-EM20261809-q16": {
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "reasonIssues": [],
+      "sourceIssues": [],
+      "needsExternalCheck": []
+    },
+    "emkohyo-EM20261809-q17": {
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "reasonIssues": [],
+      "sourceIssues": [],
+      "needsExternalCheck": []
+    },
+    "emkohyo-EM20261809-q18": {
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "reasonIssues": [],
+      "sourceIssues": [
+        "厚生労働省 昭和63年労働省告示第93号の照合抜粋は「空気中の放射性物質の濃度に関する限度(Bq／cm3)」という表の見出しと、³Hの限度値の行だけである。解説の計算の要素を直接支えていない。計算の要素とは、平均流量(100+87)/2＝93.5L/min、吸引量9.4248×10⁸cm³、濃度限度の1/10＝7.0×10⁻⁸Bq/cm³、計数率＝放射能×計数効率の4つである。濃度限度7.0×10⁻⁷Bq･cm⁻³は問題文で与えられており、告示の表からは導かれない。見出しだけの根拠として出典から外すか、計算の根拠を直接記した一次資料に差し替えること。",
+        "計算を実質的に支えているのはATOMICA「中性子放射化分析」の式 C＝D·e·b だけである（Bq入力で計数率cpsが出る、eは検出効率）。この資料は放射化分析の文脈で、空気捕集試料の検出下限計数率の算定を直接扱ってはいない。政府の一次資料で直接支えている箇所は無い。"
+      ],
+      "needsExternalCheck": []
+    },
+    "emkohyo-EM20261809-q19": {
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "reasonIssues": [],
+      "sourceIssues": [],
+      "needsExternalCheck": []
+    },
+    "emkohyo-EM20261809-q20": {
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "reasonIssues": [],
+      "sourceIssues": [],
+      "needsExternalCheck": []
+    }
+  }
+}

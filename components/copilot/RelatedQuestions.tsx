@@ -2,7 +2,7 @@
 
 import * as React from "react";
 import { ArrowRight, Layers } from "lucide-react";
-import type { RelatedQuestion } from "@/lib/copilot/related";
+import type { RelatedQuestion } from "@/lib/copilot/header-codec";
 import { posthogCapture } from "@/lib/posthog";
 
 interface Props {

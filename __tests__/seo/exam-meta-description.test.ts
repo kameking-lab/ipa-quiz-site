@@ -29,6 +29,18 @@ describe("EXAM_DESCRIPTIONS", () => {
   });
 });
 
+describe("fe description does not claim separate-day subject A/B booking", () => {
+  it("never claims 科目A・B別受験 (contradicts the official same-day, max-10-min-break rule)", () => {
+    // Source: https://www.ipa.go.jp/shiken/about/gmcbt8000000cy3n-att/pamphlet_IP-FE.pdf
+    // 「科目A試験と科目B試験は同日で実施します。なお、科目A試験終了後、科目B試験を
+    // 開始するまでの間に、最長で10分の休憩を取ることができます。」
+    // 2026-09-13: the previous copy said "科目A・B別受験が可能", which reads as
+    // subjects A and B being independently bookable/separate-day - false.
+    expect(EXAM_DESCRIPTIONS.fe).not.toContain("科目A・B別受験");
+    expect(EXAM_DESCRIPTIONS.fe).not.toMatch(/科目A.{0,4}B.{0,4}別.{0,6}受験/);
+  });
+});
+
 describe("getAvailableExams", () => {
   it("returns only exams that actually have questions", () => {
     const available = getAvailableExams();

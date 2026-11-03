@@ -1,0 +1,64 @@
+{
+  "reviewModel": "claude-opus-5-5",
+  "requestedModel": "claude-opus-5-5",
+  "canonicalModel": "claude-opus-5-5",
+  "provider": "firstParty",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 3572,
+      "cacheReadInputTokens": 139443,
+      "cacheCreationInputTokens": 16715,
+      "webSearchRequests": 0,
+      "costUSD": 0.2330566,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 2255,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "paperId": "emkohyo-EM20251805",
+  "ids": [
+    "emkohyo-EM20251805-q10"
+  ],
+  "figureSha256": {
+    "emkohyo-EM20251805-q10": {}
+  },
+  "officialRowImageSha256": {
+    "emkohyo-EM20251805-q10": {
+      "/exam-library/emkohyo-EM20251805/q10-p6-1.webp": "a0a625ad329661a8a786446648b4fd693670813fc341adf4610abaaea1a77ed3"
+    }
+  },
+  "officialPageImageSha256": {},
+  "governmentSourceImageSha256": {},
+  "candidateSha256": {
+    "emkohyo-EM20251805-q10": "8bce62778d86f1608e248353e1985d5f7b493f29af7b4618dd6c13f95d6dda89"
+  },
+  "sourcePackPath": "docs/evidence/emkohyo-choice-sources/emkohyo-EM20251805-q10-10.json",
+  "sourcePackSha256": "97622780933b03eac0dc235497f9b43ca9d8d052e810a2ddac48c5bf4dbdd6c1",
+  "assessment": {
+    "emkohyo-EM20251805-q10": {
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "reasonIssues": [
+        "肢3: 理由の中心は「キャリアガスと試料成分の熱伝導度差を利用し、特定の元素や官能基との反応を検出条件にしない」だが、添付資料のどれもこの原理を述べていない。厚労省規格から言えるのは「TCD で窒素を測る」ことだけで、窒素を測れても物質選択性がないことの証明にはならない。「整合します」という結び方は根拠として弱い。",
+        "肢5: 理由は「有機化合物の多くを検出できる」「高感度」という設問の記述を正しいとしている。しかし引用部（紫外線でイオン化し電流値から濃度を見積もる／照射エネルギーよりイオン化エネルギーが低い物質はすべてイオン化される）は原理と対象条件を示すだけで、有機化合物の多くを検出できることも高感度であることも直接には述べていない。",
+        "肢2: 出典に挙がっているのは H2・NO・NO2・CO・CO2・H2O という個別のガスだけである。それを「無機化合物の大半」に広げるのは推論にとどまる。水や CO2 など代表的な無機ガスに FID が応答しないことを根拠にして誤りと判定する書き方に絞るほうがよい。"
+      ],
+      "sourceIssues": [
+        "厚生労働省 食品、添加物等の規格基準（pageNo=102）: 引用部は一酸化炭素試験での TCD の感度確認条件（窒素 0.02vol% を含む水素またはヘリウム 4mL を導入）にすぎない。熱伝導度差という検出原理も、物質選択性がないことも直接には支えていない。肢3の根拠としては足りない。",
+        "環境省 ETV 報告書（02_ib04.pdf p.13）: 引用部は、申請者が示した携帯型全炭化水素計（FID 方式）の製品特長の一覧であり、GC 用 FID の一般的な説明ではない。「無機ガスは検出の妨害をしない」は FID の非応答性と読めるが、一般原理として国が認定した記述ではない。",
+        "労働安全衛生総合研究所 メールマガジンのコラム: PID の原理と対象条件は直接支えている。しかし肢5の「多くの有機化合物を高感度で検出」を直接支える記述は引用部に無い。",
+        "国立環境研究所ニュース: 高分解能 GC/MS という特定装置の紹介記事である。設問の「質量分析計（MS）」一般についての記述ではない。理由文もその点を明記しているので致命的ではないが、根拠としては間接的である。"
+      ],
+      "needsExternalCheck": [
+        "TCD の検出原理（キャリアガスと試料成分の熱伝導度差）と、ほぼすべての成分に応答する汎用性（非選択性）を直接説明する政府一次資料を探す。例: 日本薬局方 一般試験法 2.02 ガスクロマトグラフィー、環境省の大気・水質測定マニュアルのうち GC 検出器を解説する節。",
+        "PID が多くの有機化合物（VOC）を高感度で検出できることを直接述べる政府・公的機関資料を探す。例: 労働安全衛生総合研究所・厚生労働省のリアルタイムモニター関連資料、環境省の VOC 測定関連資料。",
+        "GC-FID が水・CO2・N2 などの無機ガスにほとんど応答しないことを、GC 用検出器の一般原理として述べる政府一次資料を探す（今の ETV の申請者記載より直接的なもの）。"
+      ]
+    }
+  }
+}

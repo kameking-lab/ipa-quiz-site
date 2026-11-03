@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "receiptKind": "canonicalized-direct-review",
+  "paper": "20240526",
+  "reviewModel": "claude-opus-5-5",
+  "upstreamReviewReceipt": "docs/evidence/denko2-strict-20240526/round3-q09-10-12-19-22-opus.json",
+  "upstreamReviewSha256": "cd7716e9ce4b539512c92de1f215d243526953992d5174ad023db2baa83eabe0",
+  "candidateEquivalenceProof": "current per-question candidate hash equals a clean source-aware direct Opus input hash",
+  "inputHashes": {
+    "draftSha256": "ec49c3543ddf4a81fb0dfe1d1e5fffe9fdb34657ba95f25ac8f7df63ee901283",
+    "rowSha256": {
+      "22": "fca64f0eedb00f2070df4db00cd46f2a18cdc54d800b2e037163661ed17df4b7"
+    },
+    "detailFigureSha256": {},
+    "sharedFigureSha256": {},
+    "legalReceiptSha256": {}
+  },
+  "assessment": [
+    {
+      "number": 22,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "visualIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": "Checked the official figure (20240526_co_second_q01.pdf, Q22) against official answer ロ. The question text, a–d, and the choices match the original. Legal basis: https://www.meti.go.jp/policy/safety_security/industrial_safety/sangyo/electric/files/20231226-2.pdf. WebFetch returned 403, so I used the attached SHA-pinned excerpt (PDF p.164). Article 167(2): when low-voltage wiring installed by cable work comes near or crosses weak-current wires, it must be installed so the two do not touch. c (10cm clearance) and d (a sturdy barrier) avoid contact and are correct. a and b are in contact and are wrong."
+    }
+  ]
+}

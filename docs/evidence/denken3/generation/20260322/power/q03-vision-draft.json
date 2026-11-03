@@ -1,0 +1,94 @@
+{
+  "questionNumber": 3,
+  "sharedContext": null,
+  "units": [
+    {
+      "part": null,
+      "question": "次のa)～e)の文章は，汽力発電所の保護装置に関する記述である。\nこれらの文章の内容について，適切なものと不適切なものの組合せとして，正しいものを次の(1)～(5)のうちから一つ選べ。\n\na) 蒸気タービンの回転速度が定格を超える一定値以上に上昇すると，自動的に蒸気止弁を閉じて，タービンを停止する非常調速機が設置されている。\nb) ボイラ水の循環が円滑に行われないとき，水管の焼損事故を防止するため，燃料を遮断してバーナを消火させる燃料遮断弁が設置されている。\nc) 負荷の緊急遮断等によって，ボイラ内の蒸気圧力が一定限度を超えたとき，蒸気を放出させて機器の破損を防ぐため，蒸気加減弁が設置されている。\nd) 蒸気タービンの軸受油圧が異常低下したとき，タービンを停止させるトリップ装置が設置されている。\ne) 発電機固定子巻線の内部短絡を検出・保護するために，比率差動継電器が設置されている。",
+      "choices": {
+        "1": "a：適切，b：適切，c：不適切，d：適切，e：不適切",
+        "2": "a：不適切，b：不適切，c：適切，d：適切，e：不適切",
+        "3": "a：不適切，b：不適切，c：不適切，d：不適切，e：適切",
+        "4": "a：適切，b：適切，c：不適切，d：適切，e：適切",
+        "5": "a：不適切，b：適切，c：適切，d：不適切，e：適切"
+      },
+      "officialAnswer": "4",
+      "explanation": "各記述を順に判定する。\n\na) 適切。非常調速機（過速度トリップ装置）は，タービンの回転速度が定格を超える一定値に達すると動作し，蒸気止弁を閉じてタービンへの蒸気流入を断ち，タービンを停止させる保護装置である。\n\nb) 適切。ボイラ水の循環が不良になると水管内の冷却が不十分となり，管壁が過熱して焼損に至るおそれがある。これを防ぐため，燃料を遮断してバーナを消火させる燃料遮断弁が設けられる。\n\nc) 不適切。ボイラ内の蒸気圧力が一定限度を超えたときに蒸気を放出して圧力上昇による破損を防ぐのは「安全弁」である。「蒸気加減弁」はタービンに流入する蒸気量を調整して回転速度や出力を制御する弁であり，蒸気を外部へ放出して過圧を防ぐ装置ではない。\n\nd) 適切。軸受油圧が異常低下すると軸受の潤滑・冷却ができなくなり，軸受の焼損などの重大事故につながる。そのため油圧低下を検出してタービンを停止させるトリップ装置が設けられる。\n\ne) 適切。比率差動継電器は，発電機固定子巻線の両端（中性点側と出力端側）の電流を比較し，その差電流によって内部短絡を検出する。外部事故時の変流器誤差などによる誤動作を抑えるため，差電流と通過電流の比率で動作を判定する方式が用いられる。\n\n以上より，a：適切，b：適切，c：不適切，d：適切，e：適切 の組合せとなり，正答は(4)である。",
+      "choiceExplanations": {
+        "1": "a・b・c・dの判定は正しいが，eを不適切としている点が誤り。比率差動継電器は発電機固定子巻線の内部短絡保護に用いられるので，eは適切である。",
+        "2": "dの判定のみ正しい。aとbを不適切としている点が誤り（いずれも適切）。また，cを適切としている点も誤りで，過圧時に蒸気を放出するのは安全弁であり蒸気加減弁ではない。さらにeを不適切としている点も誤り（比率差動継電器は発電機固定子巻線の内部短絡保護に用いられる）。",
+        "3": "c・eの判定は正しいが，a・b・dはいずれも適切な記述であるのに不適切としている点が誤り。",
+        "4": "正しい。a（非常調速機），b（燃料遮断弁），d（軸受油圧低下トリップ），e（比率差動継電器）は適切で，cは蒸気放出による過圧防止を蒸気加減弁の役割としている点が不適切（正しくは安全弁）。",
+        "5": "b・eの判定は正しいが，aとdを不適切としている点が誤り（いずれも適切）。また，cを適切としている点も誤りで，過圧時に蒸気を放出するのは安全弁であり蒸気加減弁ではない。"
+      },
+      "figureDescription": "図はない。問題文の下に a～e の適切／不適切の組合せを示す表（行：(1)～(5)，列：a，b，c，d，e）があり，その内容は choices の各肢と同一である。",
+      "officialReferenceUrls": [],
+      "uncertainty": "なし",
+      "needsReview": true,
+      "sourceQuestionPdfUrl": "https://www.shiken.or.jp/chief/upload/20260322_ch_third_q02.pdf",
+      "sourceAnswerPdfUrl": "https://www.shiken.or.jp/chief/upload/20260322_ch_third_a01.pdf",
+      "reviewedFromPage": [
+        6
+      ]
+    }
+  ],
+  "draftModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 2750,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 9309,
+      "webSearchRequests": 0,
+      "costUSD": 0.12973579999999998,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 920,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "36ac353beb9f877db8a2a5b533c4d856f6eace603e608b4146813e33bca8226a",
+  "inputRequestSha256": "ee83ec8bb80dca7f60d5c05866f7606e17fc15b2387e88dfe3f98a036f53e523",
+  "sourceQuestionPdfSha256": "9733341a0f293f068c9a665d5a9a90f1aabf3a2db5d79cd530643cdea241f7b7",
+  "sourceAnswerPdfSha256": "cc2890296d06a4823df5697a78a1c01ddfd39f041c51f48c87984daa3a5707c6",
+  "sourcePageImageSha256": {
+    "data/raw_pdfs/denken3/review/20260322/power/p06.png": "06ec4f515574e303d77ce758ad0fd8cf731129025a516098261c1a7168d43c0b"
+  },
+  "revisionHistory": [
+    {
+      "version": 1,
+      "model": "claude-opus-5-5",
+      "resolvedModel": "claude-opus-5-5",
+      "modelUsage": {
+        "claude-opus-5-5": {
+          "inputTokens": 2,
+          "outputTokens": 2479,
+          "cacheReadInputTokens": 1279,
+          "cacheCreationInputTokens": 11431,
+          "webSearchRequests": 0,
+          "costUSD": 0.1412918,
+          "contextWindow": 1000000,
+          "maxOutputTokens": 128000,
+          "thinkingTokens": 649,
+          "canonicalModel": "claude-opus-5-5",
+          "provider": "firstParty",
+          "costBasis": "list"
+        }
+      },
+      "rawResponseSha256": "6b48a922f580d644faea8fa17c139fa9ff74c105afbc817c6331cb0d62f484dd",
+      "inputRequestSha256": "79af15b7fed41f06a2614015c147ada1b2f73ae164c989421c20889287174bd6",
+      "previousDraftSha256": "fba41227c12ef3c7a438b8ffc0093386064228d2fd174e5913d9a195128f55e8",
+      "previousDraft": "data/raw_pdfs/denken3/review/20260322/power/archive/q03-vision-draft-v1.json",
+      "answeredReviewSha256": "9947bcdf99476249dccd2c24220c2aaee07f62df5dd8ecbf9b30417983ccc1c3",
+      "answeredReview": "data/raw_pdfs/denken3/review/20260322/power/archive/q03-opus-review-v1.json",
+      "answeredStrictReceipt": null,
+      "answeredStrictReceiptSha256": null,
+      "figureSha256": {},
+      "referenceHashes": {},
+      "operatorNote": ""
+    }
+  ]
+}

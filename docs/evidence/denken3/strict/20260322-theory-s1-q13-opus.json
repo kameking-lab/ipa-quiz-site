@@ -1,0 +1,66 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20260322",
+  "subject": "theory",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 2734,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 13926,
+      "webSearchRequests": 0,
+      "costUSD": 0.1663518,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 1459,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "69df2d76ffb1fe8b79c4887802ef482bca367edbc677717708851384288a9813",
+  "inputRequestSha256": "e4e1a02096638fe6d7010bbeaf6011e79a769e08b680b1ad1cae752dd9aebd32",
+  "inputHashes": {
+    "candidateSha256": {
+      "q13": "cddec0517dbf052084108f42e5883a1b4c5c39605f5ee3a1e0146dc764694624"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20260322/theory/p18.png": "dbc674abccbc71f188e90545535e13846955f7ad39ae7eaf3109cee64b5de0c2"
+    },
+    "figureSha256": {},
+    "sourceQuestionPdfSha256": "c83e7c7350d98b65f5d8da0b93e4a2581a19dd250be320fb7fc492c9b34a29c1",
+    "sourceAnswerPdfSha256": "cc2890296d06a4823df5697a78a1c01ddfd39f041c51f48c87984daa3a5707c6",
+    "officialAnswerUnitsSha256": "97c21f64d6ba5cd59a0c133ece2b936489e9a07824b47e37615dc3e2aa9088c1",
+    "referencePdfSha256": {},
+    "referencePageSha256": {},
+    "referenceJsonSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q13",
+      "questionNumber": 13,
+      "part": null,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "問題文: 添付原図の「問13 水晶振動子と水晶発振回路に関する記述として，誤っているものを次の(1)～(5)のうちから一つ選べ。」と候補questionの文言・句読点が一致する。(1)～(5)の波ダッシュの字形差は表記上の違いで、意味は変わらない。",
+        "選択肢(1)～(5): 原図の各肢と候補choices.1～5の文言が一致する。(3)の「LC 発振回路のコンデンサを水晶振動子に置き換えたものである」は、原図の改行位置を除いて同文である。",
+        "公式正答: 添付解答表(令和７年度 第三種電気主任技術者下期試験解答)の＜理論＞問１３は解答3・配点5である。manifest固定の{question:13, part:null, answer:\"3\", points:5}と、候補のofficialAnswer=\"3\"・scoringPoints=5・part=nullが一致する。",
+        "等価回路の計算: fs=1/(2π√(L₁C₁))。並列共振では合成容量C₁C₀/(C₁+C₀)より fp=fs·√((C₁+C₀)/C₀)=fs·√(1+C₁/C₀)。C₁≪C₀の一次近似で fp≒fs(1+C₁/(2C₀))、fp−fs≒fs·C₁/(2C₀) となり、総合解説と肢(2)解説の式を検算して正しい。",
+        "正答肢(3)の理由: fsとfpの間で水晶のリアクタンスは誘導性となる。ピアース形はコルピッツ形のコイルを水晶に置き換えた構成である。したがって「コンデンサを置き換えた」は誤りであり、候補の因果説明は正しい。",
+        "誤答肢の理由: (1)水晶片を電極で挟んだ構造、(2)fs・fp差が微小、(4)高Qと狭い周波数範囲への拘束による高安定度、(5)水晶基準のPLL周波数シンセサイザが無線送信機の周波数源に使われること。いずれも正しい記述として肢固有の妥当な理由が付されている。",
+        "図: 原図に図はない。figureDescription(図なし)、figureUrls=[]、choiceFigureUrls={} は整合しており、文字情報のみで解答できる。",
+        "出典メタデータ: fiscalYear=2025、term=lower、examDate=2026-03-22、subject=theory、sourceQuestionPdfUrl、sourceAnswerPdfUrl、reviewedFromPage=[18] がmanifestと一致する。原図下部の管理記号「T2－R 018」は、PDF第18頁との対応とも整合する(印字頁番号「- 15 -」は冊子内頁番号)。sourceAttributionの「令和7年度下期…理論科目 問13」も正しい。",
+        "uncertainty欄: 記載は「問題頁単体では年度・期を特定できない」という事実の記述である。この点はmanifestと解答表見出し(令和７年度・下期)で解消済みで、未解決の外部確認事項ではない。needsReview=falseと矛盾しない。",
+        "officialReferenceUrls=[] のため、検証を要する独立主張はない。"
+      ]
+    }
+  ]
+}

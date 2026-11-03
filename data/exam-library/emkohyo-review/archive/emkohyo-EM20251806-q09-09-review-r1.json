@@ -1,0 +1,55 @@
+{
+  "reviewModel": "claude-opus-5-5",
+  "requestedModel": "claude-opus-5-5",
+  "canonicalModel": "claude-opus-5-5",
+  "provider": "firstParty",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 2661,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 12989,
+      "webSearchRequests": 0,
+      "costUSD": 0.1573958,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 2263,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponsePath": "data/exam-library/emkohyo-review/emkohyo-EM20251806-q09-09-raw-response.txt",
+  "rawResponseSha256": "f8f2a4ed5e9eac0a6fee38517edb5f3e4120d9ab9a2b313036e8c83176af5c5d",
+  "paperId": "emkohyo-EM20251806",
+  "ids": [
+    "emkohyo-EM20251806-q9"
+  ],
+  "figureSha256": {
+    "emkohyo-EM20251806-q9": {}
+  },
+  "officialRowImageSha256": {
+    "emkohyo-EM20251806-q9": {
+      "/exam-library/emkohyo-EM20251806/q9-p6-0.webp": "739c3190581689bf55441d83b167415428ec669a87dd5d43adec44c53a9e060f"
+    }
+  },
+  "officialPageImageSha256": {},
+  "governmentSourceImageSha256": {},
+  "candidateSha256": {
+    "emkohyo-EM20251806-q9": "a5d50c57df70e912a37180a3c4838d8e7f509e1d78e11729ecc1cd81698e1134"
+  },
+  "sourcePackPath": "docs/evidence/emkohyo-choice-sources/emkohyo-EM20251806-q09-09.json",
+  "sourcePackSha256": "04bf78a08097fc0b4b29229b5eb69ab3d809c866f43fb414da089d0b8d4fb4d2",
+  "assessment": {
+    "emkohyo-EM20251806-q9": {
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "reasonIssues": [
+        "肢2の理由は「同一物質では粒径が大きいほど…変換係数が大きくなる」と無条件に述べているが、引用している安衛研資料は「粒径0.3μm付近に感度のピークがあり、そこから外れるほど感度が低下」としている。これは0.3μmより小さい側でも感度が下がる（K値が大きくなる）ことを意味する。したがって0.3μm未満の範囲では、粒径が大きくなるほどK値は小さくなる方向であり、無条件の単調増加は出典と整合しない。「作業環境で対象となる0.3μmより大きい粒径域（吸入性粉じんの範囲）では」といった限定を加え、その範囲で粗大粒子は散乱寄与が小さく質量寄与が大きいため肢2が正しい記述と扱われる、という因果に修正すべき。"
+      ],
+      "sourceIssues": [],
+      "needsExternalCheck": []
+    }
+  }
+}

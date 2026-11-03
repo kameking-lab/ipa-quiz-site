@@ -1,0 +1,62 @@
+{
+  "reviewModel": "claude-opus-5-5",
+  "requestedModel": "claude-opus-5-5",
+  "canonicalModel": "claude-opus-5-5",
+  "provider": "firstParty",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 4044,
+      "cacheReadInputTokens": 139443,
+      "cacheCreationInputTokens": 19719,
+      "webSearchRequests": 0,
+      "costUSD": 0.2665286,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 2878,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "paperId": "emkohyo-20260217",
+  "ids": [
+    "emkohyo-20260217-q3"
+  ],
+  "figureSha256": {
+    "emkohyo-20260217-q3": {}
+  },
+  "officialRowImageSha256": {
+    "emkohyo-20260217-q3": {
+      "/exam-library/emkohyo-20260217/q3-p4-0.webp": "e13d502460c2e7b482db4a8cc4794629f4fee659222b351a2d6aeff16efa4fc9"
+    }
+  },
+  "officialPageImageSha256": {},
+  "governmentSourceImageSha256": {},
+  "candidateSha256": {
+    "emkohyo-20260217-q3": "b169a69e7c1499ad62a2c793d1e984b10c28bf6bcd76b5eaa3bcd879326ade0f"
+  },
+  "sourcePackPath": "docs/evidence/emkohyo-choice-sources/emkohyo-20260217-q03-03.json",
+  "sourcePackSha256": "7932b5987199eb72b771ea93ee4de599ae554f648baa994d8d1c95110aa2f9e0",
+  "assessment": {
+    "emkohyo-20260217-q3": {
+      "status": "FIX",
+      "textIssues": [
+        "summaryの「しきい値がある物質ではNOAEL（得られなければLOAEL）を用いる」のうち、「得られなければ」という優先順位は添付の抜粋では直接裏付けられない。環境省の抜粋は「ＮＯＡＥＬ、あるいはＬＯＡＥＬ、あるいはＮＯＥＬ、ＬＯＥＬの情報のうち、信頼性のある最小値から…無毒性量等を設定」と書いている。抜粋に合わせて「NOAELやLOAEL等を用いる」とするか、優先順位を直接示す出典を加えること。",
+        "肢2の理由は環境省の出典を「審議会資料」と呼んでいるが、sources のタイトルは「化学物質評価専門委員会議事録」で、実体も議事録である。「審議会の議事録」に揃えること。"
+      ],
+      "choiceIssues": [],
+      "reasonIssues": [],
+      "sourceIssues": [
+        "https://www.mhlw.go.jp/bunya/roudoukijun/anzeneisei14/dl/kagaku4_0015.pdf のタイトル「厚生労働省 生物学的ばく露指標に関する資料」は内容と合わない。抜粋を見る限り、この文書はリスク評価でばく露レベル（EL）を決める手順の資料で、BEIはEL表の脚注に略称として出てくるだけである。BEIを主題とする資料のように見える名前はやめ、文書の正式名に直すこと。",
+        "https://www.mhlw.go.jp/content/11201000/000716406.pdf のタイトル「化学物質管理リスクコミュニケーション資料」は、抜粋の内容（量影響関係の図、ばく露限界値(仮称)の臨界影響、GHS改訂7版の参照）と合わない。ばく露限界値の検討会または講義の資料とみられ、肢3の理由も「講義資料」と呼んでいて、タイトルと食い違っている。",
+        "NIHSの抜粋にある変異原性の定義は「筆者は変異原性の定義として…と定義する」という著者個人の定義で、研究所の公式定義ではない。肢4の理由は「掲載の解説」と書いており誤りではないが、厚労省のスクリーニングの抜粋と並べて一次資料として扱う際には、この点が弱い。",
+        "肢4について、厚労省ページ（0000113892.html）の抜粋が示すのは、発がん性スクリーニングの仕組みと手法に「微生物を用いた変異原性試験」が挙がっていることまでである。「変異原性試験とは化学物質が細胞の遺伝子に突然変異を引き起こすかを調べるもの」という試験の定義そのものは、政府の抜粋では直接裏付けられていない（NIHSの著者の定義に頼っている）。"
+      ],
+      "needsExternalCheck": [
+        "kagaku4_0015.pdf の正式な文書名（掲載ページの見出し）を確認し、sources のタイトルを直すこと。",
+        "000716406.pdf の正式な文書名（検討会名・回次・資料番号）を確認し、sources のタイトルと肢3の理由の呼び方を揃えること。"
+      ]
+    }
+  }
+}

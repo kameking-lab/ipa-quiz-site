@@ -1,0 +1,107 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20250831",
+  "subject": "law",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 3452,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 114964,
+      "webSearchRequests": 0,
+      "costUSD": 0.9890158,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 1762,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "cb0981de7a23628fad53d47489483e31201dd0f66b2af644327f4a0a6cd0ac2e",
+  "inputRequestSha256": "287708c1535cba8496e8928f013ab0651329734d06620d08b4d304a6c315537b",
+  "inputHashes": {
+    "candidateSha256": {
+      "q04": "e4f1a92541a913c01b81473fd6fcdf34e373b9ca7a337144c44e60dcf22ab9c6"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20250831/law/p08.png": "3503ce5c428638985c9983c2dd57dbe5260a0b72fa1e4b0aa11d7c4b49c645a3",
+      "data/raw_pdfs/denken3/review/20250831/law/p04.png": "38045ec67d58396f98ae270d13322f49aa0291474ec50e346ecabbd47a85dfbe"
+    },
+    "figureSha256": {},
+    "sourceQuestionPdfSha256": "51aeb8f1cbfe8e6d3667c2848a3d9fccff40a967f48aafc292fa13a13a6efbb0",
+    "sourceAnswerPdfSha256": "76fd3715ed487d19a56b387fb402de20ee09474e9fa55b0413f9037b96af06c9",
+    "officialAnswerUnitsSha256": "caeb954925cf85ccba39004f200aaa8ec7f11a6bf1fa4f7e034cd2c94f81c492",
+    "referencePdfSha256": {
+      "data/raw_pdfs/denken3/review/meti-denki-interpretation-20251120.pdf": "7e0c8969263999fdfccf843d987ca8429ea2823aee1004e70471e6d4d812f7fd",
+      "data/raw_pdfs/denken3/review/meti-denki-interpretation-20241022.pdf": "36e17607076ed99d7eaf3b503093c03276018f6797a2edd2bf3df28038fcb6bb"
+    },
+    "referencePageSha256": {
+      "data/raw_pdfs/denken3/review/references/meti-denki-interpretation-20251120-p001.png": "25d3a579f08558ed72f0461fcbbda4f13512778ffa6cbf2b94674d8851466dc4",
+      "data/raw_pdfs/denken3/review/references/meti-denki-interpretation-20251120-p024.png": "8ae565cedbdf3315eef21dbc4ec309e9de14cd3603b452582d559e68a7e20312",
+      "data/raw_pdfs/denken3/review/references/meti-denki-interpretation-20251120-p025.png": "ed107c8588894ba3d3e04b67c5eac902e5363232acc3ac04563296dc9fbcd7cb",
+      "data/raw_pdfs/denken3/review/references/meti-denki-interpretation-20251120-p026.png": "1891e6f9347719abf32ae8b996a33399786837a991c415cd411ebf85ffbc077d",
+      "data/raw_pdfs/denken3/review/references/meti-denki-interpretation-20251120-p031.png": "6a3bc359ec8f6f11508ff1ca4546a266b5c991530e7d50c4b02d03791284f536",
+      "data/raw_pdfs/denken3/review/references/meti-denki-interpretation-20251120-p032.png": "4be13bddc05b0b2709d10c655787e2a89927b5ec5008ad811bc3a29e5ecdd406",
+      "data/raw_pdfs/denken3/review/references/meti-denki-interpretation-20251120-p239.png": "a5f0b56fa1217ccfd1294a5feb2df8cc07e0854efb66d245f40d8ea9e85cfb65",
+      "data/raw_pdfs/denken3/review/references/meti-denki-interpretation-20241022-p001.png": "e64019c681c6cc325beb0664a147140aa060ae3e7190ec54e3a3724e3c60667c",
+      "data/raw_pdfs/denken3/review/references/meti-denki-interpretation-20241022-p024.png": "3da40fc702fc25235afca8968c3013463e6a4339c0c492b80685509551d05a23",
+      "data/raw_pdfs/denken3/review/references/meti-denki-interpretation-20241022-p025.png": "08745f2224f21a8da0466bc7eeb04ecd07ea8768eca49fa99a6695d28be81a0b",
+      "data/raw_pdfs/denken3/review/references/meti-denki-interpretation-20241022-p026.png": "dd4a1bf3471fe64dd94fa95c510f4532fe8ac63bab9e537b2b5d72da313eb295",
+      "data/raw_pdfs/denken3/review/references/meti-denki-interpretation-20241022-p031.png": "0fe2689718a3d17aba7224c5a92d39dce17fcb15ed018e9eadc89a9d146fc3d4",
+      "data/raw_pdfs/denken3/review/references/meti-denki-interpretation-20241022-p032.png": "7d63f5c353ca89aa07a6d518495c103d5e80caeab816cd8c3fa8f30c5bd2f850",
+      "data/raw_pdfs/denken3/review/references/meti-denki-interpretation-20241022-p036.png": "1731a870a9d67e1711de218cd737d61bce2c0c8a929850377b3d1094a714925f",
+      "data/raw_pdfs/denken3/review/references/meti-denki-interpretation-20241022-p037.png": "cfa15172d9db47c41b218f2cfdbd456d0b8b8f528ab3eef783912940edb6a0fe",
+      "data/raw_pdfs/denken3/review/references/meti-denki-interpretation-20241022-p038.png": "2e16ff65d55bc89261fc575d414a166146f05f6e80eb20c1e2bee90d8254a83c",
+      "data/raw_pdfs/denken3/review/references/meti-denki-interpretation-20241022-p039.png": "c566de610041cabb4d7764654b64708223fe08595289834d0279013bce987f77",
+      "data/raw_pdfs/denken3/review/references/meti-denki-interpretation-20241022-p080.png": "7195dd99c52cd0e0ec7714350389aa9ebb13ec26873f36c8c7d5f20fa0663f47",
+      "data/raw_pdfs/denken3/review/references/meti-denki-interpretation-20241022-p081.png": "203e36d8415245ed5d8b83bb0591a171f0c12c5bff9d425144f505cb52b96588",
+      "data/raw_pdfs/denken3/review/references/meti-denki-interpretation-20241022-p117.png": "f28b8b0c2236a5c470040f064421ded9a158b28095699f8aecc321c8fe9a801b",
+      "data/raw_pdfs/denken3/review/references/meti-denki-interpretation-20241022-p118.png": "f37911aa29058224a926503f5965330784be164397507971bfbfcdbb57644fc4",
+      "data/raw_pdfs/denken3/review/references/meti-denki-interpretation-20241022-p119.png": "48c819d9778ebec10ff39b6d4ded2c890fe3b7328a092607270b7340cfcddf31",
+      "data/raw_pdfs/denken3/review/references/meti-denki-interpretation-20241022-p120.png": "73bb3052f11d472ddb478c2044195ab43bb4669458e0a3b02e37daac48db4400",
+      "data/raw_pdfs/denken3/review/references/meti-denki-interpretation-20241022-p157.png": "11ba3ee957fed2080be9eed97c606b7ed7e1b24c0fa7763038a647117564ce35",
+      "data/raw_pdfs/denken3/review/references/meti-denki-interpretation-20241022-p158.png": "c72a4e0009f96a11fe81c3a8fb2035260442547213d4fb46a65a87030f67a9e6",
+      "data/raw_pdfs/denken3/review/references/meti-denki-interpretation-20241022-p164.png": "d308331d55ad51391eb6aefe6a89a6ba7f78e4f074a982cd49cbb3e0b65433d5",
+      "data/raw_pdfs/denken3/review/references/meti-denki-interpretation-20241022-p165.png": "117afe2d9b750fc6a2fee30883342f939f1e22821ee884f55e856651a2895648",
+      "data/raw_pdfs/denken3/review/references/meti-denki-interpretation-20241022-p205.png": "79790d01c4ec3635837bc709df1fbc2e547e7df37e3de130e5f429dcca6d2fec",
+      "data/raw_pdfs/denken3/review/references/meti-denki-interpretation-20241022-p206.png": "f9fb04325fc9cdee929f2b9b351671093c393972a3fe5356e87aab9aa8bf3c9a",
+      "data/raw_pdfs/denken3/review/references/meti-denki-interpretation-20241022-p216.png": "f75393bddb3362be4619b1aa17de028f5d65974313007f1d401ca17d126cde90",
+      "data/raw_pdfs/denken3/review/references/meti-denki-interpretation-20241022-p217.png": "6feb7fc6958b0ae711f638c3c0b1e301f29e0faab029eef6698204c00b668d9f",
+      "data/raw_pdfs/denken3/review/references/meti-denki-interpretation-20241022-p225.png": "a8fdb597e4d8a27ca2b19089e000fd995a043d9e1cb2908d71089b535f47cb06",
+      "data/raw_pdfs/denken3/review/references/meti-denki-interpretation-20241022-p226.png": "025f3198d25cf37b34d832e2926c366fb77197afc68e1632341f63c4746a1f63",
+      "data/raw_pdfs/denken3/review/references/meti-denki-interpretation-20241022-p237.png": "9b5f86d3ee58770d3715ead89a472eb5bf8edf9d95f6fa3e09099e54f07d7722"
+    },
+    "referenceJsonSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q04",
+      "questionNumber": 4,
+      "part": null,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [
+        "officialReferenceUrlsの2件目 https://www.meti.go.jp/policy/safety_security/industrial_safety/law/files/dengikaishaku.pdf は、令和7年11月20日改正を反映した最新統合版である。このURLは改正のたびに中身が差し替わる。本問の出題基準は令和7年4月1日時点で効力のある版であり、注意書き頁の注3でそう明記されている。令和7年11月20日改正（20251104保局第2号）の施行日は令和7年11月20日で（最新版PDF第239頁の附則）、基準日より後である。したがってこの版は出題基準版ではない。",
+        "同URLについて添付された原頁は、第1・24・25・26・31・32・239頁である。第23条・23-1表の頁は含まれていない。このURLが解説の根拠（第23条・23-1表の文言と数値）を裏づけるかは、添付資料からは検証できない。現状では、基準日と異なる版を無注記で出典に並べることになり、将来の差し替えで内容が変わるおそれもある。対応は次のいずれかとする。(a) 出題基準版の 20241022-2.pdf のみを出典とする。(b) 最新版の第23条原頁を添付して検証したうえで、『参考：最新版（令和7年11月20日改正）』と版を明示して残す。"
+      ],
+      "verifiedEvidence": [
+        "問題PDF第8頁（印刷頁 -5-、T1-H 008）の原図と照合した。問題文の柱書、a）b）の各文、表の区分（高圧／特別高圧 35 000 V以下／35 000 V超過）、空欄配置（(イ)(ウ)とも2か所ずつ）、括弧書きの文言は、候補の question と一致する。",
+        "選択肢(1)〜(5)を原図と照合した。(1) 可燃性のもの・0.5・1、(2) 造営物・0.5・1、(3) 可燃性のもの・1・2、(4) 造営物・1・2、(5) 造営物・2・3 で、候補の choices と一致する。",
+        "公式解答表（令和7年度上期・法規）では、問4の解答は3、配点は6である。候補の officialAnswer=3、scoringPoints=6 と一致する。",
+        "法規冊子の注意書き頁の注3に『令和7年4月1日現在，効力のある法令（「電気設備の技術基準の解釈」を含む。）に基づいて作成』とある。",
+        "20241022-2.pdf 第1頁の改正履歴は 20241004保局第1号（令和6年10月22日付け）が最終である。同第237頁の附則では、同規程の施行日は令和6年10月22日である。最新版第239頁の附則では、次の改正 20251104保局第2号の施行日は令和7年11月20日である。以上から、基準日（令和7年4月1日）時点の施行版は令和6年10月22日改正版であり、解説の版の記述と一致する。",
+        "20241022-2.pdf 第36頁の第23条【アークを生じる器具の施設】（省令第9条第2項）を確認した。第一号は『木製の壁又は天井その他の可燃性のものから隔離』、第二号は『可燃性のものとの離隔距離を23-1表に規定する値以上』である。23-1表の値は、高圧 1m、特別高圧 35,000V以下 2m（アークの方向及び長さを制限した場合は1m）、35,000V超過 2m である。したがって（ア）可燃性のもの、（イ）1、（ウ）2 であり、正答(3)と整合する。",
+        "解説本文、各肢の解説（(1)〜(5)）、覚え方の記述は、いずれも第23条・23-1表の内容と矛盾しない。(1)(2)は数値誤り、(2)(4)(5)は（ア）誤り、(5)の（ウ）3は表にない値である。いずれも正しい。",
+        "表は question 本文にテキストとして転記されており、解答に必要な情報はすべて本文だけで読み取れる。figureUrls=[] で支障はない。figureDescription の表構造・空欄配置の記述は原図と一致する。",
+        "メタデータを照合した。fiscalYear=2025、term=upper、examDate=2025-08-31、subject=law、reviewedFromPage=[8]、sourceQuestionPdfUrl／sourceAnswerPdfUrl は、いずれも manifest 固定の出典情報と一致する。sourceAttribution の表記にも問題はない。"
+      ]
+    }
+  ]
+}

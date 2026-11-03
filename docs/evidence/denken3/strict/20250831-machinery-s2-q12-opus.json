@@ -1,0 +1,71 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20250831",
+  "subject": "machinery",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 3312,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 14001,
+      "webSearchRequests": 0,
+      "costUSD": 0.1785118,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 1639,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "3adc55b43d22de68f580b0fcfec5320015a5552c5b535611f424d9db063e98e7",
+  "inputRequestSha256": "4eb578895517bfa455c5b19beebb065fed52aa5c0809db9547ee1a94905844b4",
+  "inputHashes": {
+    "candidateSha256": {
+      "q12": "64ce315afa25aba5fb603b38ee9f078a3221e5910a78308b1514dde3e2bd1850"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20250831/machinery/p15.png": "f1d7cd8aa55019e2d74c10897bdf029dd9d24ed6ab4e187d83bbfa58928d6a12"
+    },
+    "figureSha256": {
+      "public/images/denken3/20250831/machinery/20250831-machinery-q12-fig1.png": "892104fc4744097fab40eab152560cc65a5e50ee3fccc62babd78effb2982c3d"
+    },
+    "sourceQuestionPdfSha256": "2a73a24594cc2b8bb7504b9a0ff15e001b2bb56b830572ce2be853f7116f26d8",
+    "sourceAnswerPdfSha256": "76fd3715ed487d19a56b387fb402de20ee09474e9fa55b0413f9037b96af06c9",
+    "officialAnswerUnitsSha256": "bcc1652930f4fa8d416837cb3f6297397bfb88ad0044ea461ecfde42ce2c71cd",
+    "referencePdfSha256": {},
+    "referencePageSha256": {},
+    "referenceJsonSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q12",
+      "questionNumber": 12,
+      "part": null,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [
+        "choiceExplanations[\"2\"] に誤答肢(2) 141 固有の理由がない。記述は正答の計算（I≒397.9 cd、r²=50 m²、cosθ=1/√2、4灯合計≒22.5 lx）を繰り返し「141 lx とは一致しない」と述べるだけで、どの誤りで 141 になるかを説明していない。他の誤答肢(1)(3)(5)には誤計算の経路が示されており、(2)だけ説明の水準がそろっていない。検算で確認できる事実は、141 ≒ 283/2（肢(1)の誤算値の半分）、および 141 ≒ 100√2 = (5000/50)×√2 であること。ただしどの誤りを想定した値かは公式資料からは確定できない。修正案は二つ: (a) この算術関係を示したうえで、誤りの経路は断定しない。(b) 固有の経路を示せないなら、「光度を F/(4π) で求め、cosθ を掛け、4灯分を合計する、のいずれかを誤った場合の値である」など、正答手順のどこで外れるかが分かる形に書き直す。推測の誤算経路を事実として書かないこと。"
+      ],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "公式解答表（令和7年度 第三種電気主任技術者上期試験解答）の＜機械＞列、問12 の解答は 4、配点は 5。manifest の公式正答単位 {question:12, part:null, answer:\"4\", points:5} および候補の officialAnswer=\"4\"、scoringPoints=5 と一致。",
+        "問題文を公式問題原図と照合した。幅 6 m、奥行き 8 m の長方形駐車場、四隅の柱、地上 5 m、全光束 5 000 lm、中心 O の水平面照度[lx]、「ただし，各ランプは均等光源とする。」のいずれも一致。改行位置以外に差異はない。",
+        "選択肢 (1)283 (2)141 (3)31.8 (4)22.5 (5)5.6 を公式問題原図と照合し、全肢一致した。",
+        "総合解説の計算を検算した。I=5000/(4π)=397.89 cd。対角線 √(6²+8²)=10 m なので、柱の根元から O までの水平距離は 5 m。r²=5²+5²=50 m²、cosθ=5/(5√2)=0.7071。1灯あたり Eh1=397.89/50×0.7071=7.958×0.7071=5.627 lx、4灯で 22.51 lx。最も近い肢は (4)22.5 で、公式正答と一致する。因果（O は4灯から等距離で寄与が等しい）も正しい。",
+        "肢(1)の説明を検算した。4×(5000/50)×(1/√2)=4×100×0.7071=282.8≒283。光度を 5000 cd とみなした誤りの値として整合する。",
+        "肢(3)の説明を検算した。4×397.89/50=31.83≒31.8。cosθ を掛けない法線照度の4灯合計として整合し、31.8×0.7071=22.5 も正しい。",
+        "肢(4)の説明を検算した。5.63×4=22.5 lx で正しい。",
+        "肢(5)の説明を検算した。1灯の水平面照度 5.627≒5.6 lx で、4倍漏れの誤りとして整合する。",
+        "公開候補図 20250831-machinery-q12-fig1.png を公式問題原図と照合した。ラベル D（左上）、C（右上）、A（左下）、B（右下）、O、寸法「6m」（下辺 A–B）と「8m」（右辺 B–C）、破線の対角線 A–C と B–D、交点の黒点 O のいずれも一致し、欠落や歪みはない。この図と問題文だけで解答に必要な幾何（ランプが四隅、O が中心）を理解できる。",
+        "figureDescription を検証した。A→B→C→D は左下から反時計回りで正しい。寸法線の位置、破線の対角線、O の黒点も正しい。高さ 5 m は図になく問題文でのみ与えられる、という記述も原図と一致する。",
+        "officialReferenceUrls は空で、検証が必要な外部の独立主張はない。reviewedFromPage=[15] の公式問題原図は印字頁「- 12 -」、フッタ「T1－K 015」の頁で、問12 の全文と図を含む。"
+      ]
+    }
+  ]
+}

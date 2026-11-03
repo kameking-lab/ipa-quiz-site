@@ -1,0 +1,60 @@
+{
+  "reviewModel": "claude-opus-5-5",
+  "requestedModel": "claude-opus-5-5",
+  "canonicalModel": "claude-opus-5-5",
+  "provider": "firstParty",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 3897,
+      "cacheReadInputTokens": 531,
+      "cacheCreationInputTokens": 16262,
+      "webSearchRequests": 0,
+      "costUSD": 0.20815019999999998,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 2927,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "paperId": "emkohyo-EM20251805",
+  "ids": [
+    "emkohyo-EM20251805-q16"
+  ],
+  "figureSha256": {
+    "emkohyo-EM20251805-q16": {}
+  },
+  "officialRowImageSha256": {
+    "emkohyo-EM20251805-q16": {
+      "/exam-library/emkohyo-EM20251805/q16-p9-1.webp": "4932fd7214da96aea6251f2b02563f2b002b4f32407da347ffb4ac769ebe79d5"
+    }
+  },
+  "officialPageImageSha256": {},
+  "governmentSourceImageSha256": {},
+  "candidateSha256": {
+    "emkohyo-EM20251805-q16": "643be65474af1aa2b3ea45e2c2d52bf568434c13b54bfc4b7dd69bdfc00a2a17"
+  },
+  "sourcePackPath": "docs/evidence/emkohyo-choice-sources/emkohyo-EM20251805-q16-16.json",
+  "sourcePackSha256": "104599482f9f955909281c5f844d1d09280a8ff7d01daeb2469f95907d0e287b",
+  "assessment": {
+    "emkohyo-EM20251805-q16": {
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "reasonIssues": [
+        "肢4: 理由は「本問の約200～1000 nmの範囲にも対応する」と結論しているが、提示された根拠でカバーされるのは次の範囲までである。FAMIC は紫外部・可視部を支える。PMDA の抜粋『石英ガラスセル，フローセルなどに注入し』は、近赤外透過法で石英ガラスセルを使う例を示すだけで、近赤外の波長範囲を述べていない。このため、可視域上限(約780 nm)から1000 nmまでの区間で石英セルが使えるという因果は、抜粋からは直接導けない。PMDA 同文書中の近赤外域の波長範囲の記載を引用に追加するか、結論を『紫外域・可視域・近赤外域の測定例がある』程度にとどめること。"
+      ],
+      "sourceIssues": [
+        "肢2: 『炭素同士の二重結合にあるπ電子は紫外線吸収に関わる』と『孤立した二重結合の吸収は装置の200 nm下限より短波長の場合もあり』は、いずれも農研機構ページの抜粋に記載がない。抜粋が直接支えるのは『C=Cは紫外線を吸収し、共役が長くなると吸収波長が長くなる』だけである。この2点は化学的には妥当だが、政府資料の根拠がない。出典を追加するか、該当文を削るかのいずれかが必要。",
+        "肢4: PMDA『近赤外吸収スペクトル測定法』(files/000240775.pdf)の抜粋には『72』『73』などの行番号が混在している。意見募集用の案(ドラフト)である可能性が高いが、revisionInfo は null のままである。確定版(日本薬局方の参考情報など)かどうかを確認し、確定版の所在を示すこと。",
+        "肢1: 産総研・原子力規制委員会の資料は個別の調達仕様であり、『通常200～1000 nm』という一般的範囲を直接定義する資料ではない。理由文もその限定を明記しているため誤りではないが、根拠は実例2件にとどまる。"
+      ],
+      "needsExternalCheck": [
+        "PMDA files/000240775.pdf が確定版か意見募集案かの確認と、同文書中の近赤外域の波長範囲(例: 約750～2500 nm)の記載の有無",
+        "原子力規制委員会 data/000374571.pdf(28頁)の正式な文書名が『蛍光吸光度分光測定装置仕様書』で正しいか(抜粋は15頁の吸光度測定部の仕様のみ)"
+      ]
+    }
+  }
+}

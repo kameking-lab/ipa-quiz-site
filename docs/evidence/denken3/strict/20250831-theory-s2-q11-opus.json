@@ -1,0 +1,71 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20250831",
+  "subject": "theory",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 3645,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 15799,
+      "webSearchRequests": 0,
+      "costUSD": 0.1995558,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 1957,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "2498f3ba1f5ac6d925e116424f6fd9cb78e701f60dd811cfd8aa6ec1cd49acfb",
+  "inputRequestSha256": "4ac8f99eb20c57a95127076ef0f67bfd46c2cd208fbd1c6fe77ed2dbceb455b5",
+  "inputHashes": {
+    "candidateSha256": {
+      "q11": "b23801b98f0f0d40cf5c9e06a6c4d3f42fe9303e77ef84d81968145a33a76969"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20250831/theory/p14.png": "3fbef9d46b0019437ea557a9145515aa813aeb8c9a5db326b2b7f4a3dff2a22c"
+    },
+    "figureSha256": {
+      "public/images/denken3/20250831/theory/20250831-theory-q11-fig1.png": "0aad65645a4f0536b0bf5c115dc91bf432ffe9e3fee34a281ea86844641846a4"
+    },
+    "sourceQuestionPdfSha256": "11a75ffd5dd2b5309ad75370bb963c4fda9e12a812174cfa2c2237383c3a964d",
+    "sourceAnswerPdfSha256": "76fd3715ed487d19a56b387fb402de20ee09474e9fa55b0413f9037b96af06c9",
+    "officialAnswerUnitsSha256": "264c4d7169ad8a52205da48b78cc7ed71babbb31c1c7a05ae178cdee21d089c9",
+    "referencePdfSha256": {},
+    "referencePageSha256": {},
+    "referenceJsonSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q11",
+      "questionNumber": 11,
+      "part": null,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "出典メタデータ: fiscalYear=2025, term=upper, examDate=2025-08-31, subject=theory が manifest（2025年度上期・試験日2025-08-31・理論）と一致する。sourceQuestionPdfUrl と sourceAnswerPdfUrl も manifest の URL と完全一致する。sourceAttribution の「令和7年度上期 理論科目 問11」は 2025年度上期に対応する。",
+        "reviewedFromPage=[14] は manifest の「問11原図=PDF第14頁」と一致する。原図の頁下部も『T1−R 014』（冊子頁番号は『-11-』）で整合する。",
+        "問題文: 原図と照合した。対象は p形・n形の区別、「垂直に下から上向きに磁束密度B[T]の平等磁界」、正孔、空白(ア)〜(エ)の位置、「電極①-②間にホール電圧V_H[V]」、「直流電流I[A]にほぼ(エ)する」、設問指示文。脱落・改変・単位誤りはない。",
+        "選択肢: 原図の表と照合した。(1)負/正/同じ/反比例、(2)正/負/同じ/反比例、(3)負/正/同じ/比例、(4)正/負/反対/比例、(5)負/正/反対/比例。全5肢が一致する。",
+        "公式正答: 試験センター公式解答表（令和7年度上期・理論）で問11は解答4・配点5である。候補の officialAnswer='4'、scoringPoints=5、manifest 固定の正答単位 {question:11, part:null, answer:'4', points:5} と一致する。",
+        "物理検算（座標）: x=電極①→②（右）、y=奥向き、z=上向きとした。x̂×ŷ=ẑ なので右手系として成立する。原図では I の矢じりが奥側の辺で板側を向き、手前側の辺から線が出ているので、電流は −y 向きである。B は +z 向きである。",
+        "物理検算（p形）: 正孔の速度は −y 向きである。F=(+e)v×B=ev B(−ŷ×ẑ)=−evB x̂ となり、力は電極①側を向く。よって①が正、②が負で、(ア)正・(イ)負となる。電界は①→②向きである。",
+        "物理検算（n形）: 電子の速度は +y 向きである。F=(−e)vB(ŷ×ẑ)=−evB x̂ となり、力は同じく電極①側を向く。よって①が負、②が正で、電界は②→①向きとなる。p形と反対なので (ウ)反対。",
+        "物理検算（大きさ）: V_H=IB/(e·p·d)（n形は e·n·d）で、d は磁界方向の厚さである。I に比例するので (エ)比例。以上より正答(4)と整合し、総合解説の計算・因果に誤りはない。",
+        "各肢解説の検算: (1) ア・イ・ウ・エの誤りをすべて指摘している。(2) ア・イが正しく、ウ・エが誤りとしている。(3) エが正しく、ア・イ・ウが誤りとしている。(5) ウ・エが正しく、ア・イが逆としている。(5) の『負/正はn形の電荷分布にあたる』は n形で①負・②正であることと一致する。(4) の理由は正答根拠と整合する。いずれも正しい。",
+        "公開候補図: 原図から図1・図2を過不足なく切り出している。含まれる要素は、p形半導体/n形半導体の引出し線、B[T] の白抜き上向き矢印と板下の平行2本線、I[A] 矢印の位置と矢じりの向き、手前側の辺からの引出し線、電極①（左）・電極②（右）の網掛け帯と端子付き引出し線、キャプション図1・図2である。接続・向き・全ラベルが原図と一致する。",
+        "図の必要性: 解答には電流の向き・磁界の向き・電極①②の左右位置の読み取りが必要である。公開候補図だけでこれらをすべて判読でき、原図を参照しなくても理解できる。figureDescription の記述（奥→手前の電流、下→上の B、電極配置、極性は図中に無いこと）は図と一致する。",
+        "officialReferenceUrls は空配列であり、検証を要する外部の独立主張はない。uncertainty='なし'、needsReview=false も監査結果と矛盾しない。"
+      ]
+    }
+  ]
+}

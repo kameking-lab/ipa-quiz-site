@@ -1,0 +1,82 @@
+{
+  "inputHashes": {
+    "draftSha256": "3ad4c0be38962becb92ae4f42614bd4ff4576b5eb3b8163cbaa62d72200e555d",
+    "candidateSha256": {
+      "26": "e1937f0e1e465732cca573dd4cc8c09f050edcb195118f71ecd8306d0eb9a45b",
+      "27": "53ae0b160035ef6f365cab53840fa34aa89ed6000b047a88038b99071a452e99",
+      "28": "a7518b14234809e26a1e278ee29392de6c2ee47a2e48acb546267c6c3eaf5f0a",
+      "29": "2cb94a23fb2cca23ef0d6a30d4a9c2ce96a598875b9744d150e4d8a5affd6e78",
+      "30": "87e56c0bf59e0e599c07036b0854f1d7df02f6fc85cfadae60da2f3a8c7088ad"
+    },
+    "rowSha256": {
+      "26": "b618521625fbc6d2f21c8e65c2bd5608d0c13968c56176897dc0c871967c27a2",
+      "27": "2046d471e29a2f7dd78295044b62fb9f623a18c3cac69fae3e8a3170a017a258",
+      "28": "7ed62d27ff2832b1d7b882689ef5aa58f7adf40c7cb3f6b301e40c551f367c9c",
+      "29": "be4c33d822baf67a78e572d7cd91d166f2c876bf988d51604b65e30583e3a7f4",
+      "30": "2fc4351a425d0cc6c446212198542cbe11295ca53004b20690cf3611bb12795c"
+    },
+    "detailFigureSha256": {
+      "public/images/denko2/2024-second/q27-1.png": "9a771acb88775a1afd095ba3ea77805305ed28ecdf3166b377baae38b37ee705"
+    },
+    "legalReceiptSha256": {
+      "docs/evidence/denko2-law/20241027-q26.json": "88b06eeaebee611bef6a5b466b370d26eafe0c16dabea065a5b75b6a603e2c6a",
+      "docs/evidence/denko2-law/20241027-q28.json": "da9a1d46daeb60b92b6f8681da244470df440d867801b9622a5d3b380839b341",
+      "docs/evidence/denko2-law/20241027-q29.json": "a920913edd45f5bcfe949a76b270307addf000901533ab980d8d7393d31dbc69",
+      "docs/evidence/denko2-law/20241027-q30.json": "9f3fb22b9a14ec26733fbfc0638fa4c6bb9679e8d9e6dad43316194da62dea4d"
+    },
+    "sourcePackSha256": {},
+    "sourceFigureSha256": {}
+  },
+  "reviewModel": "claude-opus-5-5",
+  "assessment": [
+    {
+      "number": 26,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "explanationIssues": [
+        "explanationの冒頭で法令名を「電気設備技術基準を定める省令第58条」と書いているが、「に関する」が抜けている。正式名称は「電気設備に関する技術基準を定める省令」（receiptで照合した409M50000400052）なので、「電気設備に関する技術基準を定める省令第58条」に直す必要がある。"
+      ],
+      "figureIssues": [],
+      "lawNeedsExternalCheck": []
+    },
+    {
+      "number": 27,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "lawNeedsExternalCheck": []
+    },
+    {
+      "number": 28,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "lawNeedsExternalCheck": []
+    },
+    {
+      "number": 29,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "explanationIssues": [
+        "choiceExplanations.ロで、差込み接続器Dの定格範囲が「(100V以上300V以下・50A以下・極数5以下・極数5以下)」となっており、「極数5以下」が重複している。重複を削って「(100V以上300V以下・50A以下・極数5以下)」にする必要がある。"
+      ],
+      "figureIssues": [],
+      "lawNeedsExternalCheck": []
+    },
+    {
+      "number": 30,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "lawNeedsExternalCheck": []
+    }
+  ]
+}

@@ -1,0 +1,94 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20260322",
+  "subject": "theory",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 6259,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 21355,
+      "webSearchRequests": 0,
+      "costUSD": 0.2962838,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 3671,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "d808abf6d40633a844d1b1f76460df444bb3fa941183df97dc98cfde52072a5f",
+  "inputRequestSha256": "1d10ee0ee38b0bc46007ba3f1e837e26cdfa0d8d1ea5967b7c615b31e61b95a6",
+  "inputHashes": {
+    "candidateSha256": {
+      "q17a": "68d9417f029fc63af127f2ef462c5e1acfb67aa672277c8d517de46caf9796a9",
+      "q17b": "77539f726dffebed14d56824b223b7bb3a4839e53134b65e4516d77863fb1d0f"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20260322/theory/p22.png": "80bfc312c7f05f1c8f860706237552d2e83b9bcc072a12888eea060d3ff08427",
+      "data/raw_pdfs/denken3/review/20260322/theory/p23.png": "e446e4fbf7f94da7a1ccdf7cf0fb1331263fc730cb650061f8c86ff2126bc9c6"
+    },
+    "figureSha256": {
+      "public/images/denken3/20260322/theory/20260322-theory-q17-fig1.png": "d6971af7f80d96e513c3c79b4723f8db87c728435389e7f3bc4d02555e08dd7e"
+    },
+    "sourceQuestionPdfSha256": "c83e7c7350d98b65f5d8da0b93e4a2581a19dd250be320fb7fc492c9b34a29c1",
+    "sourceAnswerPdfSha256": "cc2890296d06a4823df5697a78a1c01ddfd39f041c51f48c87984daa3a5707c6",
+    "officialAnswerUnitsSha256": "28551abf828d55a1034d5e1efefd4cd15fc292d6403268e61bbd136a7d4a8f93",
+    "referencePdfSha256": {},
+    "referencePageSha256": {},
+    "referenceJsonSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q17a",
+      "questionNumber": 17,
+      "part": "a",
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [
+        "uncertainty 欄に「本問の実施年度はページからは特定できない」と書かれているが、これは解消済みの疑義である。manifest（2025年度下期、試験日2026-03-22、理論、PDF第22・23頁）と公式解答PDFの見出し「令和7年度 第三種電気主任技術者下期試験解答」で、年度・回は確定している。sourceAttribution（令和7年度下期）と矛盾して見える記述のまま公開記録に残っている。uncertainty 欄を「年度・回は manifest と公式解答PDF見出しで確定。問題文・数値・選択肢の判読に不確実な点なし」などに更新すること。内容面の誤りではなく、記録整合性の修正である。"
+      ],
+      "verifiedEvidence": [
+        "問題文：原図（印刷頁19）の問17本文と照合した。d[m]、S[m²]、3種類の誘電体、端効果・初期電荷・漏れ電流の無視、ε0[F/m]、上側極板に直流電圧V・下側極板を接地、はいずれも一致する。補足の括弧書き（Aは上から d/6・2ε0、d/3・3ε0、d/2・6ε0。Bは左から S/6・2ε0、S/3・3ε0、S/2・6ε0、間隔d）も原図と一致する。",
+        "(a)の設問文と選択肢(1)〜(5)：原図（印刷頁20）と照合した。不等号の向き、3V/(5d)・V/d・9V/(5d) の分子・分母がすべて一致する。",
+        "公式正答：解答表の理論 問17(a) は解答5・配点5で、officialAnswer=5、scoringPoints=5 と一致する。",
+        "検算：Aは直列で電束密度Dが共通である。V=(Dd/ε0)(1/12+1/9+1/12)=5Dd/(18ε0) から D=18ε0V/(5d)。E_A1=9V/(5d)、E_A2=6V/(5d)、E_A3=3V/(5d)。電圧の和は 3V/10+4V/10+3V/10=V で成立する。E_A1>E_A2>E_A3、最大値 9V/(5d) で、正答(5)は正しい。",
+        "各肢の理由を確認した。(1)は順序が逆で、3V/(5d) は最小値 E_A3。(2)は順序は正しいが値が最小値。(3)は等電界にならず、V/d は平均電界。(4)は値は正しいが順序が逆。いずれも固有の理由で正確である。",
+        "公開候補図 20260322-theory-q17-fig1.png を原図と照合した。V端子、上下極板、接地記号、寸法 d/6・d/3・d/2・S・d・S/6・S/3・S/2、ラベル E_A1,2ε0／E_A2,3ε0／E_A3,6ε0／E_B1 2ε0／E_B2 3ε0／E_B3 6ε0、コンデンサA/Bの表記がすべて欠落・改変なく含まれている。公開図だけで(a)を解ける。",
+        "書誌情報：fiscalYear=2025、term=lower、examDate=2026-03-22、subject=theory、reviewedFromPage=[22,23]、問題・解答PDFのURLは manifest と一致する。印刷頁19・20／T2-R 022・023 はPDF第22・23頁に対応する。officialReferenceUrls は空で、独立主張はない。"
+      ]
+    },
+    {
+      "unitKey": "q17b",
+      "questionNumber": 17,
+      "part": "b",
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [
+        "choiceExplanations の(1)と(5)は「65/54≒1.204 と一致しない」と書くだけで、誤答肢固有の理由になっていない。出題者が想定した誤算経路は原典から確認できないため、推測で書き込むべきではない。ただし、検証可能な固有の理由は付けられる。(1) 0.72 は1未満であり、C_B=(13/3)ε0S/d > C_A=(18/5)ε0S/d から W_B>W_A となることと矛盾する。(5) 1.38 は C_B/C_A=65/54 を大きく超え、(13/3)/(18/5) のどの項を取っても到達しない。このように、具体的な反証を添える形に改めること。"
+      ],
+      "figureIssues": [],
+      "sourceIssues": [
+        "uncertainty 欄に「本問の実施年度はページからは特定できない」とあるが、年度・回は manifest と公式解答PDF見出し「令和7年度 第三種電気主任技術者下期試験解答」で確定している。sourceAttribution と矛盾して見える、解消済みの疑義が残っているので更新すること。誤答肢(1)(5)の設定根拠が不明である旨の記述は事実として妥当なので、残してよい。"
+      ],
+      "verifiedEvidence": [
+        "問題文は q17a と同一の共通本文で、原図と一致する。(b)の設問文「コンデンサB全体の蓄積エネルギーは、コンデンサA全体の蓄積エネルギーの何倍か、最も近いもの」も原図（印刷頁20）と一致する。",
+        "選択肢：(1)0.72、(2)0.83、(3)1.00、(4)1.20、(5)1.38 が原図と一致する。",
+        "公式正答：解答表の理論 問17(b) は解答4・配点5で、officialAnswer=4、scoringPoints=5 と一致する。",
+        "検算：印加電圧が共通なので W=CV²/2 から W_B/W_A=C_B/C_A となる。C_A は直列合成で 1/C_A=(d/ε0S)(1/12+1/9+1/12)=(d/ε0S)(5/18)、よって C_A=(18/5)ε0S/d。電荷からの導出 Q_A=DS=18ε0SV/(5d) とも一致する。C_B は並列で (ε0S/d)(2/6+3/3+6/2)=(13/3)ε0S/d。比は (13/3)/(18/5)=65/54≒1.204 で、正答(4) 1.20 は正しい。",
+        "(2)の説明「0.83=54/65≒0.831 で比の向きが逆」を検算し、正しいことを確認した。(3)の説明「1.00 は容量が等しい場合で、実際は 18/5≠13/3」も正しい。",
+        "公開候補図は q17a と同一ファイルで、原図の全ラベル・寸法・接続（V端子、接地）を保持している。Bの間隔d、幅 S/6・S/3・S/2 と各誘電率も判読でき、公開図だけで(b)を解ける。",
+        "書誌情報：fiscalYear=2025、term=lower、examDate=2026-03-22、subject=theory、reviewedFromPage=[22,23]、PDFのURLは manifest と一致する。officialReferenceUrls は空で、独立主張はない。"
+      ]
+    }
+  ]
+}

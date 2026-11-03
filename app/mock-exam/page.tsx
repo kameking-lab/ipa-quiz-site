@@ -2,10 +2,12 @@ import type { Metadata } from "next";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { SITE_BASE_URL, SITE_NAME } from "@/lib/seo/config";
 import { examLabel } from "@/lib/utils";
+import { isMockExamCode } from "@/lib/mock-exam/config";
 import { MockExamLanding } from "./MockExamLanding";
 
 interface SearchParams {
   exam?: string;
+  returnTo?: string;
 }
 
 const DESCRIPTION =
@@ -18,21 +20,24 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const sp = await searchParams;
   const examCode = sp.exam;
-  const examTitle = examCode ? `${examLabel(examCode)} 模試モード` : "模試モード";
+  const unsupported = examCode !== undefined && !isMockExamCode(examCode);
+  const examTitle = unsupported ? "この資格の模試は未対応です" : examCode ? `${examLabel(examCode)} 模試モード` : "模試モード";
+  const description = unsupported ? "指定された資格の本番形式の模試は未対応です。資格ページの収録問題で演習できます。" : DESCRIPTION;
   const ogImageUrl = `${SITE_BASE_URL}/api/og?${new URLSearchParams({
     type: "mock-exam",
     title: examTitle,
-    subtitle: "本番形式・制限時間付き",
-    body: DESCRIPTION,
+    subtitle: unsupported ? "資格ページの演習をご利用ください" : "本番形式・制限時間付き",
+    body: description,
   }).toString()}`;
 
   return {
-    title: "模試モード — 本番形式・制限時間付き",
-    description: DESCRIPTION,
+    title: unsupported ? examTitle : "模試モード — 本番形式・制限時間付き",
+    description,
+    ...(unsupported ? { robots: { index: false, follow: true } } : {}),
     alternates: { canonical: "/mock-exam" },
     openGraph: {
       title: examTitle,
-      description: DESCRIPTION,
+      description,
       url: `${SITE_BASE_URL}/mock-exam`,
       type: "website",
       siteName: SITE_NAME,
@@ -42,7 +47,7 @@ export async function generateMetadata({
     twitter: {
       card: "summary_large_image",
       title: examTitle,
-      description: DESCRIPTION,
+      description,
       images: [ogImageUrl],
     },
   };
@@ -74,7 +79,7 @@ export default async function MockExamPage({
   return (
     <>
       <JsonLd data={jsonLd} />
-      <MockExamLanding examFromQuery={sp.exam} />
+      <MockExamLanding examFromQuery={sp.exam} returnTo={sp.returnTo} />
     </>
   );
 }

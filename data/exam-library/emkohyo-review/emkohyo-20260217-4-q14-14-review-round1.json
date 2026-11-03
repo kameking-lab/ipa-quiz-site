@@ -1,0 +1,59 @@
+{
+  "reviewModel": "claude-opus-5-5",
+  "requestedModel": "claude-opus-5-5",
+  "canonicalModel": "claude-opus-5-5",
+  "provider": "firstParty",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 2443,
+      "cacheReadInputTokens": 143524,
+      "cacheCreationInputTokens": 18758,
+      "webSearchRequests": 0,
+      "costUSD": 0.2276368,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 1749,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "paperId": "emkohyo-20260217-4",
+  "ids": [
+    "emkohyo-20260217-4-q14"
+  ],
+  "figureSha256": {
+    "emkohyo-20260217-4-q14": {}
+  },
+  "officialRowImageSha256": {
+    "emkohyo-20260217-4-q14": {
+      "/exam-library/emkohyo-20260217-4/q14-p8-1.webp": "3ccf581b12eb49557b5aa3875c34dae659a105237623e90a6b2c644198d67a6a"
+    }
+  },
+  "governmentSourceImageSha256": {
+    "docs/evidence/emkohyo-choice-sources/aist-absorbance-p109.png": "b7a837d1579876d4ace0ed0f2820ea581b9f410310a4fa6fe161d05307225dde",
+    "docs/evidence/emkohyo-choice-sources/aist-absorbance-p111.png": "ed701f0c354da0ea65a289ff76d27b4f49979aecdce1ce0390f8f6a73da0e3d2"
+  },
+  "candidateSha256": {
+    "emkohyo-20260217-4-q14": "48c92d1840fff30ad78f8e105acbc97bbea519d3ef684ab4bc44f164b8b386c9"
+  },
+  "sourcePackPath": "docs/evidence/emkohyo-choice-sources/emkohyo-20260217-4-q14-14.json",
+  "sourcePackSha256": "39f02d272e7cbbf649e25b47eccb4cc5c22cfcc4dab1fce748e67ff43f37084c",
+  "assessment": {
+    "emkohyo-20260217-4-q14": {
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "reasonIssues": [
+        "肢4の理由に「c＝0.480/2.0×10⁴」と書かれている。演算の優先順位どおりに読むと (0.480/2.0)×10⁴＝2400 になり、意図した 2.4×10⁻⁵ mol/L と一致しない。「c＝0.480/(2.0×10⁴×1)」または「0.480÷(2.0×10⁴)」のように括弧を付けて曖昧さをなくすこと。数値そのもの（2.4×10⁻⁵ mol/L、A＝0.960、光路長を入れ忘れると 120 µg になる）は検算で正しい。"
+      ],
+      "sourceIssues": [
+        "sources.title が「産総研 吸光光度とランベルト・ベールの式」になっているが、リンク先は CNF（セルロースナノファイバー）の有害性評価手順書で、該当箇所は手順資料§3.2「動物組織中のCNF分析」の3.4「吸光度」（PDF p109、印刷ページ101）と8.2「原理」（PDF p111、印刷ページ103）である。表示タイトルが文書の実体と合っていないので、正式な文書名と該当節（§3.2 3.4／8.2、式(1) A＝−log(I/I₀)、式(2) A＝εCl）が分かるタイトルに改めること。なお、この資料の式(2)の ε は「吸光係数」、C は「CNFの濃度」としか定義されておらず、モル吸光係数の単位 mol⁻¹·L·cm⁻¹ と光路長 cm から mol/L を導く単位の整合までは直接示していない。ただし単位は問題文で与えられているので、正誤の結論は影響を受けない。"
+      ],
+      "needsExternalCheck": [
+        "産総研PDF（sha256 55ca52aa…）の表紙・奥付で正式な文書名を確認し、sources.title を置き換える"
+      ]
+    }
+  }
+}

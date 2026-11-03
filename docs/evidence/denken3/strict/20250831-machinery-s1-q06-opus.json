@@ -1,0 +1,75 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20250831",
+  "subject": "machinery",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 4943,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 13555,
+      "webSearchRequests": 0,
+      "costUSD": 0.2075638,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 2964,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "a663a99c56f1fb237a7a61724c72ff0b9fbfef461539365aec61d7c3068daa3b",
+  "inputRequestSha256": "6fa4c48f890b27366503fbb9cdf5249cd22a5cfbe5e900c7fa608d92d0bf54c1",
+  "inputHashes": {
+    "candidateSha256": {
+      "q06": "e887eb4eeb59487621681257b6b4433cd8266c14c97a27c79f7e38c353c612ad"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20250831/machinery/p09.png": "443bc2f9ac0e5bd6a5d833839d2f54c5f91a2f47af2f32737eb7d3db55878d0d"
+    },
+    "figureSha256": {},
+    "sourceQuestionPdfSha256": "2a73a24594cc2b8bb7504b9a0ff15e001b2bb56b830572ce2be853f7116f26d8",
+    "sourceAnswerPdfSha256": "76fd3715ed487d19a56b387fb402de20ee09474e9fa55b0413f9037b96af06c9",
+    "officialAnswerUnitsSha256": "f54a6b7f2a8c8cf03afc87bea8677f943a595f0cdc61d70f34b47500927eb0b3",
+    "referencePdfSha256": {},
+    "referencePageSha256": {},
+    "referenceJsonSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q06",
+      "questionNumber": 6,
+      "part": null,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [
+        "choiceExplanations[3]（1 900 A）の理由が汎用的です。「約 1 575 A より約 2 割大きい」という数値比較しか書かれておらず、どの誤りでこの値になるかという肢固有の理由がありません。例えば短絡比を二重に掛けると 1 312 × 1.2² ≈ 1 890 A になり、相電圧 3 300/√3 ≈ 1 905 V の数値とも近くなります。ただし出題者の意図は原図から確定できません。誤答の由来として断定しない形で、固有の理由を補うか、数値比較のみであることを明示してください。",
+        "choiceExplanations[5]（3 400 A）の理由も「2 倍以上であり該当しない」という数値比較だけで、肢固有の理由がありません。典型的な誤算経路は検算でも特定できませんでした。出題者の意図を推測で書かず、比較による排除であることを明示する形に改めてください。",
+        "choiceExplanations[4] の「√3 倍などの換算は不要」は正しいです（1 575 × √3 ≈ 2 727 A ≈ 2 700 A）。ただし 2 700 A がこの誤りから生じることを数値で示していないため、1 575 × √3 ≈ 2 730 A の一文を添えると固有理由として完結します。軽微な指摘です。"
+      ],
+      "figureIssues": [],
+      "sourceIssues": [
+        "uncertainty 欄の記述がメタデータと矛盾しています。uncertainty には「実施年度・試験回を特定できないため出典URLは記載していない」とあります。一方で fiscalYear=2025、term=upper、examDate=2025-08-31、subject=machinery、sourceAttribution に「令和7年度上期 … 機械科目 問6」、sourceQuestionPdfUrl／sourceAnswerPdfUrl が記載されています。uncertainty のこの部分は削除または修正が必要です。needsReview=false とも整合していません。",
+        "添付の問題原図には、年度・試験回・科目名・PDF ページ番号が印字されていません。印字されているのは本文、印刷ページ「- 6 -」、フッタ「T1－K 009」だけです。したがって、この原図と令和7年度上期・機械科目、sourceQuestionPdfUrl（…_q03.pdf）、reviewedFromPage=[9] との対応は添付資料だけでは検証できません。manifest による紐付けに依存しています。印刷ページ 6 と PDF 9 頁の差（前付け 3 頁）は妥当に見えますが、未確認です。",
+        "examDate=2025-08-31 と sourceAnswerPdfUrl（…_a01.pdf）は、添付の公式解答表原図に日付や URL が印字されていないため検証できません。解答表原図から確認できるのは「令和7年度 第三種電気主任技術者上期試験解答」という見出しだけです。"
+      ],
+      "verifiedEvidence": [
+        "問題文：候補の問題文は原図と一致します（7 500 kV・A、線間電圧 3 300 V、星形結線、界磁電流 200 A／240 A、出力端三相短絡、巻線の持続短絡電流の実効値[A]）。「kV·A」と「kV・A」の中点の違いは表記上の差にすぎません。",
+        "選択肢：(1) 1 100、(2) 1 600、(3) 1 900、(4) 2 700、(5) 3 400 で、原図と完全に一致します。",
+        "公式正答：解答表原図の＜機械＞列 問6 は解答 2・配点 5 で、manifest の公式正答単位 {question:6, answer:\"2\", points:5}、候補の officialAnswer=\"2\"、scoringPoints=5 と一致します。",
+        "定格電流の検算：√3 × 3 300 = 5 715.8、7 500 000 / 5 715.8 = 1 312.2 A。候補の約 1 312 A は正しいです。",
+        "短絡比の検算：Ks = 240/200 = 1.2（無負荷定格電圧時の界磁電流 ÷ 定格電流短絡時の界磁電流）。定義・数値ともに正しいです。",
+        "持続短絡電流の検算：Is = Ks × In = 1.2 × 1 312.2 = 1 574.6 A ≈ 1 600 A で、正答(2)と一致します。別解（Zs = 1/Ks ≈ 0.833 p.u.、Is = 1.2 p.u.）も正しいです。",
+        "因果の確認：短絡特性をほぼ直線とみなし、短絡前を無負荷定格電圧（界磁 240 A）と解釈することは電験三種の標準的な扱いです。解説本文でもこの前提が明示されています。",
+        "星形結線では巻線電流＝線電流です。解説および肢(4)の記述は正しいです。",
+        "肢(1)の検算：In × 200/240 = 1 312.2 × 0.8333 = 1 093.5 A ≈ 1 100 A。短絡比を逆数で用いた誤りという固有理由は正しいです。",
+        "図：原図に図はなく、解答に図は不要です。figureDescription「図なし」、figureUrls=[]、choiceFigureUrls={} は妥当です。",
+        "officialReferenceUrls は空配列で、検証が必要な独立主張はありません。"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,64 @@
+{
+  "reviewModel": "claude-opus-5-5",
+  "requestedModel": "claude-opus-5-5",
+  "canonicalModel": "claude-opus-5-5",
+  "provider": "firstParty",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 4514,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 15019,
+      "webSearchRequests": 0,
+      "costUSD": 0.2106958,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 2976,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponsePath": "data/exam-library/emkohyo-review/emkohyo-EM20251808-q16-16-raw-response.txt",
+  "rawResponseSha256": "eac87c6f914c73cf7df8c37f3025dcc2c85ed10218bdac1155f54f507b50b0b8",
+  "paperId": "emkohyo-EM20251808",
+  "ids": [
+    "emkohyo-EM20251808-q16"
+  ],
+  "figureSha256": {
+    "emkohyo-EM20251808-q16": {}
+  },
+  "officialRowImageSha256": {
+    "emkohyo-EM20251808-q16": {
+      "/exam-library/emkohyo-EM20251808/q16-p9-1.webp": "fd86807f3a6b41c53efa4bed3c4a595e310c8f2af12b7a8387bab2cdfce19e40"
+    }
+  },
+  "officialPageImageSha256": {},
+  "governmentSourceImageSha256": {},
+  "candidateSha256": {
+    "emkohyo-EM20251808-q16": "da104fa2cb8df6a2aefa35c8cb45e86308958c67d307d5706237c8f40d6729f1"
+  },
+  "sourcePackPath": "docs/evidence/emkohyo-choice-sources/emkohyo-EM20251808-q16-16.json",
+  "sourcePackSha256": "8b1d9d46a955ac6f13f58e6f25feee2fb764b8532a9847642190f2713c166e5c",
+  "assessment": {
+    "emkohyo-EM20251808-q16": {
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "reasonIssues": [
+        "肢4の理由は、根拠の異なる2つの手順を「でも」でつないでおり、両者が同じ手順だと誤読されるおそれがある。『同公定書の原子吸光による方法でも、発生させた水素化ヒ素を原子吸光装置に導いて193.7 nmの指示値を読む』と書いているが、引用元（8e01.pdf p.65）の原子吸光法は手順が本問と異なる。ヨウ化カリウム溶液と加温で予備還元した後、テトラヒドロホウ酸ナトリウム（＝水素化ホウ素ナトリウム）で水素化ヒ素を発生させ、加熱吸収セルで測定している。一方、塩化スズ（Ⅱ）＋亜鉛で発生させる装置A・Bは、臭化第二水銀紙またはヒ化水素吸収液による比色判定であり、原子吸光ではない。このため、公定書の原子吸光法は㋩（吸光度・193.7 nm）を支えるだけで、㋑塩化スズ（Ⅱ）／亜鉛によるアルシン発生／水素炎という本問の組合せ全体を示すものではない。この点を明記すべきである。修正例：『原子吸光法（水素化物発生にはテトラヒドロホウ酸ナトリウムを用い、加熱吸収セルで原子化）でも、測定波長は193.7 nmの吸光である』。",
+        "肢1・肢2では『水素化ホウ素ナトリウムは誤り』と断じる一方、肢4では同じ公定書のNaBH₄使用法を根拠に挙げている。読者には矛盾に見えうる。NaBH₄は水素化物発生法で一般に使う試薬である。本問でそれが誤りになるのは、水素化物発生を亜鉛末が担うという本文の構成（KI＋㋑で静置した後に亜鉛末を加える）による。この理由を肢1・肢2か解説本文で一文補うべきである。"
+      ],
+      "sourceIssues": [
+        "本問の手順そのものを直接記述した政府資料が挙がっていない。本問の手順とは、混酸分解 → 1%KI＋塩化スズ（Ⅱ）で30分静置 → 亜鉛末懸濁液でアルシン発生 → アルゴン‐水素炎で原子化 → 193.70 nmの吸光度測定、という流れである。挙がっている資料は、公定書の比色法（装置A・B：KI＋SnCl₂＋Zn）と原子吸光法（KI＋NaBH₄＋加熱セル）の合成で根拠を組み立てており、㋑・㋺・㋩の組合せを一次資料が直接支えてはいない。",
+        "食品添加物公定書の出典URL（…/syokuten/dl/8e01.pdf）は第8版とみられるが、タイトルに版が明記されておらず、revisionInfoもnullである。現行版との差異の有無が確認されていない。",
+        "出典タイトルに『紫外可視吸光度測定法・誘導結合プラズマ発光強度測定法』とあるが、これらの項に対応する抜粋がなく、タイトルの収録範囲が検証されていない。",
+        "『作業環境測定の手法に関する科学的知見収集のための調査研究報告書』（p.145）の抜粋は、DFG法によるアンチモンの水素化物発生‐AAS法である。ヒ素の分析法の根拠ではない。NaBH₄が水素化試薬であることの一般的傍証にとどまる。"
+      ],
+      "needsExternalCheck": [
+        "本問の出題元と考えられる作業環境測定ガイドブック（日本作業環境測定協会）のヒ素の水素化物発生原子吸光法の記載と照合すること。対象は、KI＋塩化スズ（Ⅱ）による予備還元、亜鉛末による発生、アルゴン‐水素炎、193.70 nmの各点である。",
+        "食品添加物公定書の現行版（第10版等）で、ヒ素試験法の装置A・B手順と原子吸光法の記載（193.7 nm、テトラヒドロホウ酸ナトリウム）が引用どおりか確認すること。"
+      ]
+    }
+  }
+}

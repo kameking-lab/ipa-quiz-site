@@ -1,0 +1,60 @@
+{
+  "reviewModel": "claude-opus-5-5",
+  "requestedModel": "claude-opus-5-5",
+  "canonicalModel": "claude-opus-5-5",
+  "provider": "firstParty",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 3367,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 13793,
+      "webSearchRequests": 0,
+      "costUSD": 0.1779478,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 2173,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponsePath": "data/exam-library/emkohyo-review/emkohyo-EM20251808-q16-16-raw-response.txt",
+  "rawResponseSha256": "f60e3cce37206c765e4270626656d6407feb5256b63787d91a764c8f04cce422",
+  "paperId": "emkohyo-EM20251808",
+  "ids": [
+    "emkohyo-EM20251808-q16"
+  ],
+  "figureSha256": {
+    "emkohyo-EM20251808-q16": {}
+  },
+  "officialRowImageSha256": {
+    "emkohyo-EM20251808-q16": {
+      "/exam-library/emkohyo-EM20251808/q16-p9-1.webp": "fd86807f3a6b41c53efa4bed3c4a595e310c8f2af12b7a8387bab2cdfce19e40"
+    }
+  },
+  "officialPageImageSha256": {},
+  "governmentSourceImageSha256": {},
+  "candidateSha256": {
+    "emkohyo-EM20251808-q16": "b10c119d28a634db03ee1085da7a9bd8c8c944a8b77e5b618fc6f8296d666d65"
+  },
+  "sourcePackPath": "docs/evidence/emkohyo-choice-sources/emkohyo-EM20251808-q16-16.json",
+  "sourcePackSha256": "358fd280c85e506f71403eb38e209d5e40ce5bf5cc769e71bfa6c00542341a54",
+  "assessment": {
+    "emkohyo-EM20251808-q16": {
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "reasonIssues": [
+        "肢4の理由が、食品添加物公定書の別々の操作法を一つの手順のように書いている。公定書で『ヨウ化カリウム試液→酸性塩化第一スズ試液→無ヒ素亜鉛』でヒ化水素を発生させるのは装置A・Bの方法で、臭化第二水銀紙やヒ化水素吸収液の色で判定する（p.64–65）。原子吸光で193.7 nmの指示値を読む方法（p.65）は、ヨウ化カリウムで予備還元した後にテトラヒドロホウ酸ナトリウム（＝水素化ホウ素ナトリウム）で水素化ヒ素を発生させており、塩化スズ（Ⅱ）と亜鉛は使っていない。『公定書でも』に続けて『水素化ヒ素は原子吸光装置に導いて193.7 nmの吸光度を測る』と書くと、公定書の原子吸光法が塩化スズ（Ⅱ）と亜鉛を使うと誤読される。修正案：前段の公定書の記述は予備還元と亜鉛によるアルシン発生の根拠にとどめる。193.7 nmの吸光度測定は、公定書の原子吸光法（ただし水素化物の発生剤はテトラヒドロホウ酸ナトリウム）と、原子吸光光度法の原理（p.12）を別の根拠として書き分ける。",
+        "肢2の理由の『水素化ヒ素中のヒ素原子による光の吸収』は不正確。水素化ヒ素は水素炎（加熱セル）で熱分解され、生じた基底状態のヒ素原子が193.7 nmの光を吸収する。『水素化ヒ素が炎中で原子化され、生じたヒ素原子による吸収（吸光度）を測る』と書き直すこと。",
+        "肢1の理由の『水素化ホウ素ナトリウムは、それ自体がヒ素を還元して水素化ヒ素を発生させる試薬』は正しい。ただし根拠となる公定書p.65の表記はテトラヒドロホウ酸ナトリウムなので、同じ物質であることを一言添えると出典と対応がつく。"
+      ],
+      "sourceIssues": [
+        "食品添加物公定書のヒ素試験法は食品添加物の試験法であり、作業環境測定での手順（石英繊維フィルター捕集試料の混酸分解、１％KI＋塩化スズ（Ⅱ）で30分静置、亜鉛末懸濁液、アルゴンとともに水素炎へ導入）を直接述べた政府資料ではない。予備還元剤とアルシン発生の化学的な裏付けとしては使えるが、作業環境測定法そのものの根拠ではないことを踏まえた書き方にすること。",
+        "モデルSDS（アルシン、スチビン）の抜粋で確認できるのは名称と別名（ヒ化水素、水素化アンチモン）だけで、候補が書いている化学式AsH₃・SbH₃は抜粋では確認できていない。SDS本文の化学式欄を抜粋に加えるか、化学式の記載を根拠の範囲に合わせること。"
+      ],
+      "needsExternalCheck": []
+    }
+  }
+}

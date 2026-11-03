@@ -1,0 +1,91 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20250323",
+  "subject": "theory",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 4733,
+      "cacheReadInputTokens": 139443,
+      "cacheCreationInputTokens": 20649,
+      "webSearchRequests": 0,
+      "costUSD": 0.2877486,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 2699,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "45db16079ba7d6275e8850c0b9834b07f7a77a417a996612c8069434cae3ebc7",
+  "inputRequestSha256": "dab14138ea71b027ea454a0b20289a952cf862a6676c5f5f0c6f7c57061573c8",
+  "inputHashes": {
+    "candidateSha256": {
+      "q17a": "f80faf083d62990a4767dc025a9f55e97b37d7622e15371fe211181e7445b2df",
+      "q17b": "3c82c4800d93eb332ba57db040ebd4898425c75eb1a71670ae0ff1a1490ca0a6"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20250323/theory/p22.png": "6cc47825e2dd4aebd07957a968a4c052619cc1a90fac9b887129487d0096d15c",
+      "data/raw_pdfs/denken3/review/20250323/theory/p23.png": "ffd2503d0e39a615e189b9cf014a3988320991962260477137740c00101c1ef2"
+    },
+    "figureSha256": {
+      "public/images/denken3/20250323/theory/20250323-theory-q17-two-floor-capacitors.png": "1e687b3872eb8c597e016fe907de0fff954b6e7562725968c4d62418a94101bc"
+    },
+    "sourceQuestionPdfSha256": "8817012cb55eed9c83bb1e68df138909b1e03a81f7ed48a9893a219e1d2a76ca",
+    "sourceAnswerPdfSha256": "4c3b38fcf1405766fafaa78b1b05b867a3d48307a670b9d354476bc6b32acd4c",
+    "officialAnswerUnitsSha256": "5e3f6fba641e579458caf02cdc2fcb1ee50df55bdf05ded8eb25eec8616ddda5",
+    "referencePdfSha256": {},
+    "referencePageSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q17a",
+      "questionNumber": 17,
+      "part": "a",
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "The question text matches the official original (PDF p.22, printed -19-, footer T2-R 022) in both the shared lead-in and part (a) (p.23, printed -20-, T2-R 023). All values and units match: A₁=10⁻³ m², A₂=10⁻² m², d=10⁻³ m, x[m] variable, V₀=1000 V, ε=8.85×10⁻¹² F/m, edge effect ignored. Only the '(選択問題)' heading and line breaks were dropped, which is formatting only.",
+        "All five choices match the original: (1) 8.0×10⁻⁹, (2) 1.6×10⁻⁸, (3) 9.7×10⁻⁸, (4) 1.9×10⁻⁷, (5) 1.6×10⁻⁶.",
+        "officialAnswer=3 matches the manifest's official answer {question:17, part:a, answer:3}.",
+        "Recalculated: C₁=8.85×10⁻¹²×10⁻³/10⁻³=8.85×10⁻¹² F. C₂=8.85×10⁻¹²×10⁻²/10⁻³=8.85×10⁻¹¹ F. C=9.735×10⁻¹¹ F. Q=CV₀=9.735×10⁻⁸ C, which rounds to 9.7×10⁻⁸, so (3). This matches the explanation.",
+        "Choice (1): series capacitance C₁C₂/(C₁+C₂)=8.045×10⁻¹² F gives Q≈8.05×10⁻⁹ C, and the left side alone holds 8.85×10⁻⁹ C. Choice (1) is the closest option in both cases. The recalculation confirms this, and the explanation correctly says the original figure shows a parallel connection.",
+        "Ratios check out: (2) 9.735/1.6≈6.1 (about 1/6), (4) 1.9×10⁻⁷/9.735×10⁻⁸≈1.95 (about 2×), (5) 1.6×10⁻⁶/9.735×10⁻⁸≈16.4 (about 16×). The explanations give these numeric reasons correctly.",
+        "The public figure is a crop of the original figure. Its layout, wiring and every label match the original: V₀[V], battery, S, junction dot, A₁[m²], d[m], A₂[m²], x[m] with arrows, hatched metal floor, 金属床. Both electrodes connect to the same node, and the lower battery lead goes to the floor. The parallel connection can be read from this figure alone.",
+        "The figureDescription matches the figure: branch point after S, two electrodes in parallel, and the floor as the shared counter-electrode.",
+        "officialReferenceUrls is empty and the explanation makes no independent claim that needs an outside source. reviewedFromPage [22,23] matches the original's T2-R 022/023 codes."
+      ]
+    },
+    {
+      "unitKey": "q17b",
+      "questionNumber": 17,
+      "part": "b",
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "The part (b) text matches the original (p.23, printed -20-, T2-R 023): x=3.0×10⁻³ m, discharge between the left electrode and the floor, and asks for the breakdown voltage V[V] of the left gap. Only the ruby reading for 空隙 was dropped, which is formatting only.",
+        "All five choices match the original: (1) 3.3×10², (2) 2.5×10³, (3) 3.0×10³, (4) 5.1×10³, (5) 3.0×10⁴.",
+        "officialAnswer=2 matches the manifest's official answer {question:17, part:b, answer:2}.",
+        "Recalculated: with S open, the charge Q=9.735×10⁻⁸ C is conserved. C₂'=8.85×10⁻¹²×10⁻²/3.0×10⁻³=2.95×10⁻¹¹ F. C'=C₁+C₂'=3.835×10⁻¹¹ F. V=Q/C'=2538 V≈2.5×10³ V, so (2). The explanation's calculation and reasoning (charge conservation, shared voltage in parallel, breakdown at the moment of discharge) are correct.",
+        "Choice (1): V₀·d/x=1000×(1/3)=333 V≈3.3×10². Recalculation confirms this is the value you get by wrongly assuming the voltage drops.",
+        "Choice (3): C₂V₀/C₂'=V₀·x/d=3000 V. This confirms it is the value if only the right-side charge were conserved. The explanation correctly points out that charge redistributes to the left side.",
+        "Ratios check out: (4) 5.1×10³/2.54×10³≈2.0, (5) 3.0×10⁴/2538≈11.8 (about 12×). The explanations are correct.",
+        "The public figure is the same crop as in (a), and every connection and label matches the original. The figureDescription (x widened to 3.0×10⁻³ m, d fixed, S open, both capacitors still in parallel) is consistent with the question text and the figure.",
+        "officialReferenceUrls is empty and there is no independent claim that needs an outside source. reviewedFromPage [22,23] matches the original's T2-R 022/023 codes."
+      ]
+    }
+  ]
+}

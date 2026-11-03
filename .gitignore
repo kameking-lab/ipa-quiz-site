@@ -50,6 +50,7 @@ next-env.d.ts
 !/logs/auto-improve-history.json
 # regenerate-explanations backup copies of data files
 /logs/backup_*.ts
+/logs/sc-choice-explanations-2024-2025/
 
 # email-list API file-based store (app/api/email-list)
 /.data/
@@ -66,3 +67,10 @@ next-env.d.ts
 /test-results
 /playwright-report
 /playwright/.cache
+.cache/fp2-official/
+scripts/__pycache__/
+
+# locally downloaded official PDFs and Python bytecode
+/.cache/
+**/__pycache__/
+*.pyc

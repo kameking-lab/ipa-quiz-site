@@ -1,0 +1,738 @@
+{
+  "candidateModel": "claude-opus-5-5",
+  "paperId": "emkohyo-EM20261802",
+  "governmentSourceCandidates": [
+    {
+      "title": "厚生労働省 労働安全衛生法",
+      "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74001000"
+    },
+    {
+      "title": "厚生労働省 労働安全衛生規則",
+      "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74003000&dataType=0&pageNo=1"
+    },
+    {
+      "title": "厚生労働省 作業環境測定法",
+      "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74156000&dataType=0&pageNo=1"
+    },
+    {
+      "title": "厚生労働省 作業環境測定基準",
+      "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74087000"
+    }
+  ],
+  "questions": {
+    "emkohyo-EM20261802-q6": {
+      "overlay": {
+        "sourceHash": "22b77ca616ab3f7e0424b705aec25835c04ee899c2d1dc4dd7384ba97435991c",
+        "correctChoice": 2,
+        "summary": "クロム酸及びその塩は作業環境測定法施行規則別表第4号の作業場に割り当てられる。第3号だけの登録で測定できるとする肢2が誤り。",
+        "choices": [
+          {
+            "number": 1,
+            "verdict": "incorrect",
+            "reason": "作業環境測定法施行規則の別表第1号は、安衛令別表第3第2号34の3の物を扱う屋内作業場を含む。安衛令の同号はリフラクトリーセラミックファイバーであり、第1号の登録でこの測定を行えるという肢1は正しい。"
+          },
+          {
+            "number": 2,
+            "verdict": "correct",
+            "reason": "安衛令別表第3第2号11のクロム酸及びその塩は、作業環境測定法施行規則別表第4号に明示される。別表第3号は第4号に掲げる物を除くため、第3号だけの登録ではこの測定を行えない。肢2の登録範囲が誤り。"
+          },
+          {
+            "number": 3,
+            "verdict": "incorrect",
+            "reason": "現行の測定法施行規則別表では、安衛令別表第3第2号3の3のエチルベンゼンは第4号の列挙に入らず、第3号（特定化学物質）の作業場に属する。第5号は安衛令別表第6の2の有機溶剤業務等の登録で、エチルベンゼンの分析区分ではない。厚労省の案内も混合物を含めエチルベンゼンの分析可能者を第3号資格者と明示する。安衛法第2条第4号では分析は測定の一部なので、第5号のみではエチルベンゼンの測定全体を行えず、肢3は正しい。"
+          },
+          {
+            "number": 4,
+            "verdict": "incorrect",
+            "reason": "二酸化硫黄は安衛令別表第3第3号の第三類物質。安衛令第21条第7号の定期測定対象は同別表第1号・第2号であり、測定法第2条第4号と同法施行令第1条が指定作業場として取り込む同号にも第三類は含まれない。したがって二酸化硫黄濃度の測定自体に法定の作業環境測定士資格は要らず、肢4は正しい。"
+          },
+          {
+            "number": 5,
+            "verdict": "incorrect",
+            "reason": "作業環境測定法第3条が資格者等に行わせるのは指定作業場の『測定』である。安衛法第2条第4号で測定はデザイン・サンプリング・分析と定義され、『評価』は含まれない。測定結果の評価は同法第65条の2に別建てで定められ、評価者の測定士資格は要求されない。肢5は正しい。"
+          }
+        ],
+        "sources": [
+          {
+            "title": "厚生労働省・作業環境測定法施行規則別表",
+            "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74158000&dataType=0&pageNo=3"
+          },
+          {
+            "title": "厚生労働省・労働安全衛生法施行令別表第3、第21条",
+            "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74002000"
+          },
+          {
+            "title": "厚生労働省・作業環境測定法第3条",
+            "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74156000&dataType=0&pageNo=1"
+          },
+          {
+            "title": "厚生労働省・作業環境測定法施行令第1条",
+            "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74157000&dataType=0&pageNo=1"
+          },
+          {
+            "title": "厚生労働省・労働安全衛生法第65条の2",
+            "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74001000"
+          },
+          {
+            "title": "厚生労働省・特別有機溶剤の分析可能な測定士・機関の登録区分",
+            "url": "https://www.mhlw.go.jp/file/05-Shingikai-11201000-Roudoukijunkyoku-Soumuka/0000080700.pdf"
+          }
+        ]
+      },
+      "sourceEvidence": [
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74158000&dataType=0&pageNo=3",
+          "excerpt": "同令別表第三第二号34の3に掲げる物",
+          "choiceNumbers": [
+            1
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74002000",
+          "excerpt": "３４の３　リフラクトリーセラミックファイバー",
+          "choiceNumbers": [
+            1
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74158000&dataType=0&pageNo=3",
+          "excerpt": "同表第二号3の2、10、11、13、13の2",
+          "choiceNumbers": [
+            2
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74158000&dataType=0&pageNo=3",
+          "excerpt": "及び次号に掲げる物を除く",
+          "choiceNumbers": [
+            2
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74002000",
+          "excerpt": "１１　クロム酸及びその塩",
+          "choiceNumbers": [
+            2
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74002000",
+          "excerpt": "３の３　エチルベンゼン",
+          "choiceNumbers": [
+            3
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74158000&dataType=0&pageNo=3",
+          "excerpt": "三　労働安全衛生法施行令別表第三第一号若しくは第二号に掲げる特定化学物質",
+          "choiceNumbers": [
+            3
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74158000&dataType=0&pageNo=3",
+          "excerpt": "四　労働安全衛生法施行令別表第三第一号6に掲げる物若しくは同号8に掲げる物で同号6に係るもの若しくは同表第二号3の2、10、11、13、13の2、15の2、21、22、23の3、27の2若しくは33に掲げる物",
+          "choiceNumbers": [
+            3
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74158000&dataType=0&pageNo=3",
+          "excerpt": "労働安全衛生法施行令別表第六の二第一号から第四十七号までに掲げる有機溶剤",
+          "choiceNumbers": [
+            3
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74158000&dataType=0&pageNo=3",
+          "excerpt": "同表第一号から第四十七号までに掲げる有機溶剤を含有する特定有機溶剤混合物",
+          "choiceNumbers": [
+            3
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/file/05-Shingikai-11201000-Roudoukijunkyoku-Soumuka/0000080700.pdf",
+          "excerpt": "※測定対象物が「混合有機溶剤」や「特定有機溶剤混合物」である場合、それ以外の場合に共通です。",
+          "choiceNumbers": [
+            3
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/file/05-Shingikai-11201000-Roudoukijunkyoku-Soumuka/0000080700.pdf",
+          "excerpt": "【参考】エチルベンゼン １，２－ジクロロプロパン ○第３号（特化物）の資格をもつ作業環境測定士・作業環境測定機関",
+          "choiceNumbers": [
+            3
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74002000",
+          "excerpt": "別表第六の二　有機溶剤(第六条、第二十一条、第二十二条関係)",
+          "choiceNumbers": [
+            3
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74002000",
+          "excerpt": "三　第三類物質 １　アンモニア",
+          "choiceNumbers": [
+            4
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74002000",
+          "excerpt": "５　二酸化硫黄",
+          "choiceNumbers": [
+            4
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74002000",
+          "excerpt": "七　別表第三第一号若しくは第二号に掲げる特定化学物質",
+          "choiceNumbers": [
+            4
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74156000&dataType=0&pageNo=1",
+          "excerpt": "四　指定作業場　労働安全衛生法第六十五条第一項の作業場のうち政令で定めるもの",
+          "choiceNumbers": [
+            4
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74157000&dataType=0&pageNo=1",
+          "excerpt": "第二十一条第一号、第七号、第八号及び第十号に掲げる作業場",
+          "choiceNumbers": [
+            4
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74156000&dataType=0&pageNo=1",
+          "excerpt": "指定作業場について作業環境測定を行うときは、厚生労働省令で定めるところにより、その使用する作業環境測定士にこれを実施",
+          "choiceNumbers": [
+            4,
+            5
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74001000",
+          "excerpt": "デザイン、サンプリング及び分析(解析を含む。)をいう。",
+          "choiceNumbers": [
+            5
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74001000",
+          "excerpt": "事業者は、前項の評価を行うに当たつては、厚生労働省令で定めるところにより、厚生労働大臣の定める作業環境評価基準",
+          "choiceNumbers": [
+            5
+          ]
+        }
+      ],
+      "reviewIssues": []
+    },
+    "emkohyo-EM20261802-q7": {
+      "overlay": {
+        "sourceHash": "d2db1a17b6c651d2b49786bf8f41bee18d97cdc29bd535cd32f89ad2264bff94",
+        "correctChoice": 4,
+        "summary": "オルト‐ジクロルベンゼンは有機溶剤で、6か月ごとに測定した記録は3年間保存する。有機則第28条の3年を30年とした肢4が誤り。",
+        "choices": [
+          {
+            "number": 1,
+            "verdict": "incorrect",
+            "reason": "電離放射線障害防止規則第55条は、対象作業場の空気中の放射性物質濃度を1月以内ごとに1回測定し、その記録を5年間保存すると定める。肢1の測定対象・頻度・記録保存期間の組合せは条文と一致する。"
+          },
+          {
+            "number": 2,
+            "verdict": "incorrect",
+            "reason": "労働安全衛生法施行令別表第3第2号13の五酸化バナジウムは、特定化学物質障害予防規則第36条第1項の6月以内ごとの測定対象である。同条第2項は原則3年間保存とし、第3項の30年対象列挙に13はないため、肢2は正しい。"
+          },
+          {
+            "number": 3,
+            "verdict": "incorrect",
+            "reason": "同施行令別表第3第2号23のトリレンジイソシアネートには、特化則第36条第1項の6月以内ごとの定期測定と第2項の3年間保存が適用される。第3項の30年対象列挙に23は含まれず、肢3の組合せは正しい。"
+          },
+          {
+            "number": 4,
+            "verdict": "correct",
+            "reason": "同施行令別表第6の2第10号のオルト‐ジクロルベンゼンは有機溶剤で、有機溶剤中毒予防規則第28条第2項が6月以内ごとの濃度測定、第3項が記録の3年間保存を定める。30年間保存とする肢4が誤り。"
+          },
+          {
+            "number": 5,
+            "verdict": "incorrect",
+            "reason": "同施行令別表第3第2号23の2のナフタレンは、特化則第36条第1項による6月以内ごとの定期測定対象である。同条第3項は23の2から24までに掲げる物の測定記録を30年間保存すると定めるため、肢5は正しい。"
+          }
+        ],
+        "sources": [
+          {
+            "title": "厚生労働省・電離放射線障害防止規則第55条",
+            "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74101000"
+          },
+          {
+            "title": "厚生労働省・特定化学物質障害予防規則第36条",
+            "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74097000&dataType=0&pageNo=1"
+          },
+          {
+            "title": "厚生労働省・有機溶剤中毒予防規則第28条",
+            "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74090000"
+          },
+          {
+            "title": "厚生労働省・労働安全衛生法施行令別表第3・第6の2",
+            "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74002000"
+          }
+        ]
+      },
+      "sourceEvidence": [
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74101000",
+          "excerpt": "空気中の放射性物質の濃度を一月以内ごとに一回、定期に",
+          "choiceNumbers": [
+            1
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74101000",
+          "excerpt": "これを五年間保存しなければならない",
+          "choiceNumbers": [
+            1
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74002000",
+          "excerpt": "１３　五酸化バナジウム",
+          "choiceNumbers": [
+            2
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74002000",
+          "excerpt": "２３　トリレンジイソシアネート",
+          "choiceNumbers": [
+            3
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74002000",
+          "excerpt": "２３の２　ナフタレン",
+          "choiceNumbers": [
+            5
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74097000&dataType=0&pageNo=1",
+          "excerpt": "六月以内ごとに一回、定期に、第一類物質",
+          "choiceNumbers": [
+            2,
+            3,
+            5
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74097000&dataType=0&pageNo=1",
+          "excerpt": "前項の規定による測定を行つたときは、その都度次の事項を記録し、これを三年間保存",
+          "choiceNumbers": [
+            2,
+            3
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74097000&dataType=0&pageNo=1",
+          "excerpt": "23の2から24まで",
+          "choiceNumbers": [
+            2,
+            3,
+            5
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74097000&dataType=0&pageNo=1",
+          "excerpt": "三十年間保存するものとする",
+          "choiceNumbers": [
+            5
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74002000",
+          "excerpt": "十　オルト―ジクロルベンゼン",
+          "choiceNumbers": [
+            4
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74090000",
+          "excerpt": "六月以内ごとに一回、定期に、当該有機溶剤の濃度を測定",
+          "choiceNumbers": [
+            4
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74090000",
+          "excerpt": "前項の規定により測定を行なつたときは、そのつど次の事項を記録して、これを三年間保存",
+          "choiceNumbers": [
+            4
+          ]
+        }
+      ],
+      "reviewIssues": []
+    },
+    "emkohyo-EM20261802-q8": {
+      "overlay": {
+        "sourceHash": "f00f08cd97dc29f42b10c760348e6db243c51d84c9286b5246252c82eba6be3d",
+        "correctChoice": 4,
+        "summary": "高気圧作業安全衛生規則は作業中のガス分圧・有害ガスを管理するが、毎日の作業開始前に気温・湿度・気圧の3項目を測るという肢4の義務は置いていない。",
+        "choices": [
+          {
+            "number": 1,
+            "verdict": "incorrect",
+            "reason": "労働安全衛生規則第587条第9号は加硫がまでゴムを加硫する屋内作業場を測定対象に含める。第607条はその屋内作業場の気温・湿度を半月以内ごとに1回、定期測定する。肢1の対象・項目・頻度はいずれも一致する。"
+          },
+          {
+            "number": 2,
+            "verdict": "incorrect",
+            "reason": "同規則第589条第3号は通気設備がある坑内作業場を挙げ、第603条がその通気量を半月以内ごとに1回、定期測定すると定める。肢2は対象作業場も測定する量も頻度も条文どおりなので正しい。"
+          },
+          {
+            "number": 3,
+            "verdict": "incorrect",
+            "reason": "厚生労働省の酸素欠乏症等防止規則第3条の施行通達は、第二種酸素欠乏危険作業では酸素濃度と硫化水素濃度を確認し、その日の作業開始前に測定すると明示する。肢3の2項目と測定時点は一致している。"
+          },
+          {
+            "number": 4,
+            "verdict": "correct",
+            "reason": "高気圧作業安全衛生規則の全文には作業開始前に気温・湿度・気圧を一組で測る規定がない。第15条は作業中のガス分圧を適正範囲に保つ措置、第17条は作業中の有害ガス測定等を定める。したがって肢4の測定義務は同規則にない。"
+          },
+          {
+            "number": 5,
+            "verdict": "incorrect",
+            "reason": "労働安全衛生規則第592条の2第2項は、廃棄物焼却炉の解体等に係る業務の作業開始前に、対象設備内部の付着物のダイオキシン類含有率を測定すると定める。肢5は焼却炉に限定した事例としてこの義務に合う。"
+          }
+        ],
+        "sources": [
+          {
+            "title": "厚生労働省・労働安全衛生規則第587・589・592条の2・603条",
+            "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74003000&dataType=0&pageNo=10"
+          },
+          {
+            "title": "厚生労働省・労働安全衛生規則第607条",
+            "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74003000&dataType=0&pageNo=11"
+          },
+          {
+            "title": "厚生労働省・労働安全衛生規則第36条第36号",
+            "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74003000&dataType=0&pageNo=2"
+          },
+          {
+            "title": "厚生労働省・酸素欠乏症等防止規則第3条施行通達",
+            "url": "https://www.mhlw.go.jp/web/t_doc?dataId=00tb2057&dataType=1&pageNo=1"
+          },
+          {
+            "title": "厚生労働省・高気圧作業安全衛生規則第15・17条",
+            "url": "https://www.mhlw.go.jp/web/t_doc?d=&dataId=74099000"
+          }
+        ]
+      },
+      "sourceEvidence": [
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74003000&dataType=0&pageNo=10",
+          "excerpt": "加硫がまによりゴムを加硫する業務を行なう屋内作業場",
+          "choiceNumbers": [
+            1
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74003000&dataType=0&pageNo=11",
+          "excerpt": "半月以内ごとに一回、定期に、当該屋内作業場における気温、湿度及びふく射熱",
+          "choiceNumbers": [
+            1
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74003000&dataType=0&pageNo=10",
+          "excerpt": "通気設備が設けられている坑内の作業場",
+          "choiceNumbers": [
+            2
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74003000&dataType=0&pageNo=10",
+          "excerpt": "半月以内ごとに一回、定期に、当該作業場における通気量を測定",
+          "choiceNumbers": [
+            2
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=00tb2057&dataType=1&pageNo=1",
+          "excerpt": "第二種酸素欠乏危険作業にあっては空気中の酸素の濃度が一八％以上、かつ、硫化水素の濃度が一〇〇万分の一〇",
+          "choiceNumbers": [
+            3
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=00tb2057&dataType=1&pageNo=1",
+          "excerpt": "その日の作業を開始する前にこれを測定すべきこと",
+          "choiceNumbers": [
+            3
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?d=&dataId=74099000",
+          "excerpt": "高圧室内作業者が高圧室内業務に従事している間、作業室及び気こう室における次の各号に掲げる気体の分圧",
+          "choiceNumbers": [
+            4
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?d=&dataId=74099000",
+          "excerpt": "作業室における有害ガスによる高圧室内作業者の危険及び健康障害を防止するため、換気、有害ガスの測定",
+          "choiceNumbers": [
+            4
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74003000&dataType=0&pageNo=10",
+          "excerpt": "当該作業を開始する前に、当該作業に係る設備の内部に付着した物に含まれるダイオキシン類の含有率を測定",
+          "choiceNumbers": [
+            5
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74003000&dataType=0&pageNo=2",
+          "excerpt": "廃棄物の焼却施設に設置された廃棄物焼却炉、集じん機等の設備の解体等の業務",
+          "choiceNumbers": [
+            5
+          ]
+        }
+      ],
+      "reviewIssues": []
+    },
+    "emkohyo-EM20261802-q9": {
+      "overlay": {
+        "sourceHash": "0923c1e5317ffb4ab271373ba70761ca9ca87d078ddc167b65c5d15135c870a0",
+        "correctChoice": 1,
+        "summary": "作業環境測定基準第2条第4項の除外条件は『遊離けい酸の含有率が極めて高いもの』。大臣が定める値を超えるものという肢1の表現が誤り。",
+        "choices": [
+          {
+            "number": 1,
+            "verdict": "correct",
+            "reason": "作業環境測定基準第2条第4項は、個人サンプリング法を準用する粉じんから『遊離けい酸の含有率が極めて高いもの』を除く。厚生労働大臣が定める数値を超える場合と置き換えた肢1は、条文の除外条件と異なるため誤り。"
+          },
+          {
+            "number": 2,
+            "verdict": "incorrect",
+            "reason": "個人サンプリング法の特定化学物質への適用根拠となる同基準第10条第5項は、第1項に規定する測定の一部に限る。第10条第1項は石綿等を扱う屋内作業場を対象から除外しているため、石綿の測定にはこの方法を使えないという肢2は正しい。"
+          },
+          {
+            "number": 3,
+            "verdict": "incorrect",
+            "reason": "同基準第10条第5項第3号は、試料採取を作業日の従事全時間とし、従事時間が2時間を超え、濃度がほぼ均一な場合に限り2時間以上まで短縮できるとする。2時間以下なら全時間採取という肢3は、この規定と一致する。"
+          },
+          {
+            "number": 4,
+            "verdict": "incorrect",
+            "reason": "同基準第10条第5項第2号は、ばく露量がほぼ均一と見込まれる作業ごとに適切な数の労働者へ採取機器を装着し、その数は5人を下回ってはならないとする。5人以上の従事者がいる場合に5人以上で採取する肢4は正しい。"
+          },
+          {
+            "number": 5,
+            "verdict": "incorrect",
+            "reason": "同基準第10条第5項第4号は、従事者が5人未満なら1人の作業時間を分けて2以上の試料を採取し、採取試料数と同数の労働者から採取したとみなせると定める。したがって肢5の代替採取方法は正しい。"
+          }
+        ],
+        "sources": [
+          {
+            "title": "厚生労働省・作業環境測定基準第2条第4項、第10条第1・5項",
+            "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74087000"
+          }
+        ]
+      },
+      "sourceEvidence": [
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74087000",
+          "excerpt": "粉じん(遊離けい酸の含有率が極めて高いものを除く。)の濃度の測定について準用する",
+          "choiceNumbers": [
+            1
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74087000",
+          "excerpt": "石綿等(令第六条第二十三号に規定する石綿等をいう。以下同じ。)を取り扱い、又は試験研究のため製造する屋内作業場",
+          "choiceNumbers": [
+            2
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74087000",
+          "excerpt": "５　前項の規定にかかわらず、第一項に規定する測定のうち",
+          "choiceNumbers": [
+            2
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74087000",
+          "excerpt": "作業に従事する全時間とすること。ただし、当該作業に従事する時間が二時間を超える場合",
+          "choiceNumbers": [
+            3
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74087000",
+          "excerpt": "ただし、その数は、それぞれ、五人を下回つてはならない",
+          "choiceNumbers": [
+            4
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74087000",
+          "excerpt": "作業に従事する労働者の数が五人を下回る場合にあつては",
+          "choiceNumbers": [
+            5
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74087000",
+          "excerpt": "当該二以上の採取された試料空気の数と同数の労働者に対して行われたものとみなすことができる",
+          "choiceNumbers": [
+            5
+          ]
+        }
+      ],
+      "reviewIssues": []
+    },
+    "emkohyo-EM20261802-q10": {
+      "overlay": {
+        "sourceHash": "2362ac8c51e51450ce6439f82d82ab988bfbca475b5bea96396b3d215e104a0e",
+        "correctChoice": 3,
+        "summary": "6m格子の交点に5点以上という測定点の定めは粉じん等の規定で、放射性物質濃度の測定規定ではないため肢3が誤り。",
+        "choices": [
+          {
+            "number": 1,
+            "verdict": "incorrect",
+            "reason": "作業環境測定基準第2条第1項第3号は、粉じんの試料空気の採取時間を原則10分間以上としつつ、相対濃度指示方法による測定にはこの制限を適用しない。ただし書きまで含めた肢の記述は正しい。"
+          },
+          {
+            "number": 2,
+            "verdict": "incorrect",
+            "reason": "同基準第10条の特定化学物質の表は、インジウム化合物について、第2条第2項に適合する分粒装置を用いたろ過捕集方法を指定する。第2条第2項は鉱物性粉じんを捕集する分粒装置の透過率特性を定めているため、この肢は正しい。"
+          },
+          {
+            "number": 3,
+            "verdict": "correct",
+            "reason": "6 m以下の格子交点・床上50～150 cm・原則5点以上という測定点は、粉じん測定についての同基準第2条第1項第1号・第1号の2の規定である。放射性物質の濃度測定は第9条で状態別の試料採取方法と分析方法を定めるが、その格子・5点ルールを置いていないため誤りである。"
+          },
+          {
+            "number": 4,
+            "verdict": "incorrect",
+            "reason": "労働安全衛生規則第587条第6号は、加熱された金属の加工の屋内作業場を暑熱等の作業場に含める。作業環境測定基準第3条第1号は、その気温・湿度の測定点を単位作業場所の中央部、床上50 cm以上150 cm以下に1以上置くと定めており、肢は正しい。"
+          },
+          {
+            "number": 5,
+            "verdict": "incorrect",
+            "reason": "同基準第12条は、酸素濃度に酸素計または検知管方式の酸素検定器、硫化水素濃度に検知管方式の硫化水素検定器を挙げる。両物質とも検知管方式で測定できるという肢は正しい。"
+          }
+        ],
+        "sources": [
+          {
+            "title": "厚生労働省・作業環境測定基準第2・3・9・10・12条",
+            "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74087000"
+          },
+          {
+            "title": "厚生労働省・労働安全衛生規則第587条",
+            "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74003000&dataType=0&pageNo=10"
+          }
+        ]
+      },
+      "sourceEvidence": [
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74087000",
+          "excerpt": "試料空気の採取時間は、十分間以上の継続した時間とすること",
+          "choiceNumbers": [
+            1
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74087000",
+          "excerpt": "相対濃度指示方法による測定については、この限りでない",
+          "choiceNumbers": [
+            1
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74087000",
+          "excerpt": "インジウム化合物 第二条第二項の規定による要件に該当する分粒装置",
+          "choiceNumbers": [
+            2
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74087000",
+          "excerpt": "前項第四号イの分粒装置は、その透過率が次の図で表される特性",
+          "choiceNumbers": [
+            2
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74087000",
+          "excerpt": "粉じんの濃度の測定は、次に定めるところによらなければならない",
+          "choiceNumbers": [
+            3
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74087000",
+          "excerpt": "六メートル以下の等間隔で引いた縦の線と横の線との交点",
+          "choiceNumbers": [
+            3
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74087000",
+          "excerpt": "測定点は、単位作業場所について五以上とすること",
+          "choiceNumbers": [
+            3
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74087000",
+          "excerpt": "空気中の放射性物質の濃度の測定は、次の方法によらなければならない",
+          "choiceNumbers": [
+            3
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74087000",
+          "excerpt": "放射性物質の状態 試料採取方法",
+          "choiceNumbers": [
+            3
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74087000",
+          "excerpt": "中央部の床上五十センチメートル以上百五十センチメートル以下の位置に、一以上",
+          "choiceNumbers": [
+            4
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74087000",
+          "excerpt": "酸素の濃度 酸素計又は検知管方式による酸素検定器",
+          "choiceNumbers": [
+            5
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74087000",
+          "excerpt": "硫化水素の濃度 検知管方式による硫化水素検定器",
+          "choiceNumbers": [
+            5
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74003000&dataType=0&pageNo=10",
+          "excerpt": "加熱された金属の運搬又は圧延、鍛造、焼入、伸線等の加工の業務を行なう屋内作業場",
+          "choiceNumbers": [
+            4
+          ]
+        }
+      ],
+      "reviewIssues": []
+    }
+  }
+}

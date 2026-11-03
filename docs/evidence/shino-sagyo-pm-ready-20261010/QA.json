@@ -1,0 +1,34 @@
+{
+  "base": "0229b5f753d808639759a8a92ba74c31726cccfc",
+  "readyOriginals": 120,
+  "readyChoices": 600,
+  "readyByExam": {
+    "sagyo-ryohoshi": 60,
+    "shino-kunrenshi": 60
+  },
+  "holdDrafts": 15,
+  "holdBeforeDraft": 9,
+  "expectedPm21Through56Identities": 144,
+  "integrationSha256": "18ade085ae4c19793c50aaf28f693834e0938fd8c1ecb110e2d325565178cc3b",
+  "readyDataSha256": {
+    "sagyo-ryohoshi": "3f82e2a961a7b50d083bf418951becc85dfa365e8d1457d5c2e69dfc5433ef45",
+    "shino-kunrenshi": "3d132a00837f2d9bccb357b90d9626020f9dccf0103401ebf9dfa26b8dd6d993"
+  },
+  "checks": {
+    "allSavedPublicQuestionAndAnswerPdfBytesMatch": true,
+    "allReadyQuestionPagePngShaMatch": true,
+    "allReadyStemsAndFiveChoicesMatchSourceLiteralOrPrintedRule": true,
+    "all120OfficialKeysAndRequiredSelectionsMatch": true,
+    "all120HaveFiveChoiceExplanations": true,
+    "figuresAndMaterialFlagsExcluded": true,
+    "held24AbsentFromBrowserBundle": true,
+    "sourceRawAndSupplementNamesAbsentFromBrowserBundle": true,
+    "existingQuestionFilesChanged": false,
+    "trackedDeletions": 0,
+    "focusedTests": "10/10 PASS",
+    "typecheck": "PASS",
+    "scopedLint": "PASS",
+    "fullQuestionValidator": "19301 ok; 0 fail; 14755 warnings"
+  },
+  "publication": "local candidate only; no push, PR, merge, or HTTP"
+}

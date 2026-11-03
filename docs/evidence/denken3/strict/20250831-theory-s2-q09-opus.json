@@ -1,0 +1,68 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20250831",
+  "subject": "theory",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 3247,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 14367,
+      "webSearchRequests": 0,
+      "costUSD": 0.1801398,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 1765,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "64a9ae847b2ac7389be44825e55b5040111f1dd250b49176b85be7d0df96db42",
+  "inputRequestSha256": "fb1254d217ab68b132371664af4ed40637ce6f0dd6c303aad42054c6480012b3",
+  "inputHashes": {
+    "candidateSha256": {
+      "q09": "dda20368fb33a28f87032aa978a40878de99cbb6a3c8d8fa5adec0a44dff2674"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20250831/theory/p12.png": "ab88770aa5736f907e7488ea692b3f131dcc2dab065ab929ed90abdecaa6f8e1"
+    },
+    "figureSha256": {
+      "public/images/denken3/20250831/theory/20250831-theory-q09-fig1.png": "dd4e9d188e96c1190a9b87c8f2605a1c2839862705d06fbba63718e325d9bbd6"
+    },
+    "sourceQuestionPdfSha256": "11a75ffd5dd2b5309ad75370bb963c4fda9e12a812174cfa2c2237383c3a964d",
+    "sourceAnswerPdfSha256": "76fd3715ed487d19a56b387fb402de20ee09474e9fa55b0413f9037b96af06c9",
+    "officialAnswerUnitsSha256": "92f80b2c8107abde786e8ae42c1215b00cf9791c7ea0854a0986b008387c9c38",
+    "referencePdfSha256": {},
+    "referencePageSha256": {},
+    "referenceJsonSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q09",
+      "questionNumber": 9,
+      "part": null,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "問題文: 公式原図（印刷頁 -9-、T1-R 012）の問9本文と照合し、E=140 V、抵抗R₀[Ω]と誘導性リアクタンスX_L[Ω]からなる力率0.8の誘導性負荷、電流30 A、スイッチSを閉じて抵抗R[Ω]を並列接続、電流82 A、『最も近いもの』『(1)～(5)のうちから一つ選べ』まで、数値・単位・語句はすべて一致した。",
+        "選択肢: 原図の (1)1.5 (2)2.3 (3)2.5 (4)2.9 (5)3.0 と候補の choices 1～5 は完全に一致した。",
+        "公式正答: 公式解答表『令和7年度 第三種電気主任技術者上期試験解答』の理論・問9は解答3、配点5。manifest固定の正答単位 {question:9, part:null, answer:'3', points:5} と、候補の officialAnswer='3'、scoringPoints=5 はいずれも一致した。",
+        "総合解説の検算: cosθ=0.8 から sinθ=0.6。有効分 I_p=24 A、遅れ無効分 I_q=18 A。82²−18²=6724−324=6400 より 24+I_R=80、I_R=56 A。R=140/56=2.5 Ω で正答(3)と整合する。",
+        "解説の因果: 抵抗Rの電流は電圧と同相なので有効分だけを増やし、無効分18 Aは変わらない。理想電源に並列接続されるため、Sを閉じても誘導性負荷の電流30 Aは不変である。これは原図の回路構成（内部インピーダンスの記載がない電源に並列接続）と整合する。",
+        "参考値の検算: |Z|=140/30≒4.667 Ω、R₀≒4.667×0.8≒3.73 Ω、X_L≒4.667×0.6=2.8 Ω で、記載どおりである。",
+        "各肢の検算: (1) I_R≒93.3 A→√(117.33²+18²)≒118.7 A、(2) I_R≒60.9 A→≒86.8 A、(3) I_R=56 A→√6724=82 A、(4) I_R≒48.3 A→≒74.5 A、(5) I_R≒46.7 A→≒72.9 A。いずれも記載値と一致した。82 Aに最も近い（厳密に一致する）のは(3)だけで、誤答肢固有の理由も妥当である。",
+        "公開候補図: 原図の回路部分を欠けなく切り出したものと確認した。交流電源（〜、E=140 V）、上側導線の接続点（黒丸）、枠内の直列要素 R₀ と X_L、枠外左の『力率 0.8』、枠外右の縦書き『誘導性負荷』、開状態のスイッチ S、右枝の R[Ω]、下側導線の接続点（黒丸）はすべて原図と一致し、接続・配置・ラベルに欠落や改変はない。解答に必要な構成（SでRを負荷に並列投入）は公開候補図だけで理解できる。",
+        "figureDescription: 要素配置、ラベル位置（力率0.8は枠左、誘導性負荷は枠右の縦書き）、Sの開状態、上下導線の接続関係は原図・公開候補図と一致した。",
+        "出典: officialReferenceUrls は空のため、検証すべき独立主張はない。公式解答表の見出し（令和7年度上期）は fiscalYear=2025、term=upper と一致し、examDate 2025-08-31 は出典URLの日付部 20250831 と整合する。reviewedFromPage=[12] はPDFページ番号として扱い、添付原図の印刷頁『-9-』とは別物である（表紙等の前付けによるずれ）と判断した。"
+      ]
+    }
+  ]
+}

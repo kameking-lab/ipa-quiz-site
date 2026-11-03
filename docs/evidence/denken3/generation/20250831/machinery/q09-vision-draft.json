@@ -1,0 +1,94 @@
+{
+  "questionNumber": 9,
+  "sharedContext": null,
+  "units": [
+    {
+      "part": null,
+      "question": "ある変圧器の負荷力率100 %における全負荷効率は98 %である。この変圧器の負荷力率 80 %における全負荷効率[%]の値として，最も近いものを次の(1)〜(5)のうちから一つ選べ。",
+      "choices": {
+        "1": "78.4",
+        "2": "81.6",
+        "3": "97.5",
+        "4": "98.4",
+        "5": "99.6"
+      },
+      "officialAnswer": "3",
+      "explanation": "【前提】\n「全負荷」とは、変圧器を定格容量で運転している状態、つまり定格電圧で定格電流が流れている状態とみなす。本問で変わるのは負荷力率だけである。電圧と電流はどちらの場合も定格のままとして計算する。\n\n変圧器の定格容量（皮相電力）を S とする。\n\n【負荷力率100 %・全負荷のとき】\n出力 P₁ = S × 1.0 = S\n効率 η₁ = P₁ ÷ (P₁ + 損失) = 0.98 なので、\n全損失 W = S ÷ 0.98 − S = S × (1/0.98 − 1) ≒ 0.020408 S\n\n【損失は力率によって変わらない】\n前提より、力率が変わっても電圧と電流は定格のままである。このため、\n・鉄損（電圧で決まる）は同じ\n・銅損（電流の2乗で決まる）は同じ\nとなる。したがって、力率が 0.8 になっても全損失 W ≒ 0.020408 S は変わらない。\n\n【負荷力率80 %・全負荷のとき】\n出力 P₂ = S × 0.8 = 0.8 S\n効率 η₂ = 0.8 S ÷ (0.8 S + 0.020408 S)\n　　　 = 0.8 ÷ 0.820408\n　　　 ≒ 0.9751 → 97.5 %\n\nよって、最も近いものは (3) 97.5 である。\n\n要点：同じ全負荷（同じ電圧・同じ電流）で力率が下がると、損失は同じまま出力（有効電力）だけが減る。そのため効率は下がる。",
+      "choiceExplanations": {
+        "1": "誤り。78.4 は 98 × 0.8 の値で、効率に力率を掛けたものになっている。効率は 出力 ÷ (出力 + 損失) で求める量であり、力率を掛けても効率にはならない。正しく計算すると 0.8 ÷ (0.8 + 0.020408) ≒ 97.5 % である。",
+        "2": "誤り。81.6 は 0.8 ÷ 0.98 × 100 の値に一致する。これは効率の定義 出力 ÷ (出力 + 損失) に基づく計算ではない。損失 ≒ 0.020408 S を用いて計算すると、効率は約 97.5 % となる。",
+        "3": "正しい。全負荷では電圧・電流が定格のままなので、鉄損と銅損の合計は力率100 %のときと同じ（≒ 0.020408 S）である。出力は 0.8 S に減るため、効率 = 0.8 ÷ (0.8 + 0.020408) ≒ 97.5 % となる。",
+        "4": "誤り。損失が同じで出力が減るため、力率80 %での効率は力率100 %での98 %より必ず低くなる。98 %を上回る98.4 %はあり得ない。なお 98.4 % は、負荷率を80 %に下げ、全損失を銅損とみなして 0.8² 倍にした場合の計算値（0.8 ÷ (0.8 + 0.64 × 0.020408) ≒ 98.4 %）に一致する。しかし本問で変えるのは負荷率ではなく負荷力率であり、電流は全負荷のまま変わらない。",
+        "5": "誤り。力率が下がっても損失は減らず、出力だけが減るため、効率は98 %より低くなる。98 %を上回る99.6 %はあり得ない。"
+      },
+      "figureDescription": null,
+      "officialReferenceUrls": [],
+      "uncertainty": "なし",
+      "needsReview": true,
+      "sourceQuestionPdfUrl": "https://www.shiken.or.jp/chief/upload/20250831_ch_third_q03.pdf",
+      "sourceAnswerPdfUrl": "https://www.shiken.or.jp/chief/upload/20250831_ch_third_a01.pdf",
+      "reviewedFromPage": [
+        12
+      ]
+    }
+  ],
+  "draftModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 3094,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 9309,
+      "webSearchRequests": 0,
+      "costUSD": 0.1366158,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 1575,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "8c3332580142bc7a4e596ce4f4eef1596e3523e384d9332a9fe6239104c456ae",
+  "inputRequestSha256": "c04c7de2f1f8e4865b37fe3374d0adab96524d5bafc713896b5f37cbb8698dc9",
+  "sourceQuestionPdfSha256": "2a73a24594cc2b8bb7504b9a0ff15e001b2bb56b830572ce2be853f7116f26d8",
+  "sourceAnswerPdfSha256": "76fd3715ed487d19a56b387fb402de20ee09474e9fa55b0413f9037b96af06c9",
+  "sourcePageImageSha256": {
+    "data/raw_pdfs/denken3/review/20250831/machinery/p12.png": "2ad4918e6f38127c1a6ceba70b43360a7f258427fc5956228d3a4c278791f88e"
+  },
+  "revisionHistory": [
+    {
+      "version": 1,
+      "model": "claude-opus-5-5",
+      "resolvedModel": "claude-opus-5-5",
+      "modelUsage": {
+        "claude-opus-5-5": {
+          "inputTokens": 2,
+          "outputTokens": 2133,
+          "cacheReadInputTokens": 1279,
+          "cacheCreationInputTokens": 12256,
+          "webSearchRequests": 0,
+          "costUSD": 0.14097179999999998,
+          "contextWindow": 1000000,
+          "maxOutputTokens": 128000,
+          "thinkingTokens": 635,
+          "canonicalModel": "claude-opus-5-5",
+          "provider": "firstParty",
+          "costBasis": "list"
+        }
+      },
+      "rawResponseSha256": "fb06ad06a33232725fa4c7ad9a68722f7e6fd1ee50559676ebbe9282b5009c8c",
+      "inputRequestSha256": "07f7afcb60617c89f9bcef5c43eb19d72522428a6d9a94224b22401a457784e0",
+      "previousDraftSha256": "5bc2d5c36c5bc6d4d448634b040be83d1c1deb846c8a75c0c15423e8666c89e6",
+      "previousDraft": "data/raw_pdfs/denken3/review/20250831/machinery/archive/q09-vision-draft-v1.json",
+      "answeredReviewSha256": "7ead0f7fe522281403d328ce7eeac405d70ae58a548f77f0264b560e0759af2f",
+      "answeredReview": "data/raw_pdfs/denken3/review/20250831/machinery/archive/q09-opus-review-v1.json",
+      "answeredStrictReceipt": "docs/evidence/denken3/strict/20250831-machinery-s1-q09-opus.json",
+      "answeredStrictReceiptSha256": "89e8a18775a2cbcca9682312ad727951295b1b0fb43fcd6e9c8fa313bc07edf2",
+      "figureSha256": {},
+      "referenceHashes": {},
+      "operatorNote": ""
+    }
+  ]
+}

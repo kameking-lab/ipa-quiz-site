@@ -36,6 +36,15 @@ const pool: Question[] = [
 ];
 
 describe("findQuestionByRoute (indexed lookup)", () => {
+  it("keeps Denken 3 (a)/(b) answer units on distinct URLs", () => {
+    const a = q({ id: "denk-a", exam: "denken3", session: "riron", season: "first", qNumber: 8, part: "a" });
+    const b = q({ id: "denk-b", exam: "denken3", session: "riron", season: "first", qNumber: 8, part: "b" });
+    expect(questionPagePath(a)).toBe("/q/denken3/2024-first/riron/q8a");
+    expect(questionPagePath(b)).toBe("/q/denken3/2024-first/riron/q8b");
+    expect(findQuestionByRoute([a, b], { exam: "denken3", yearSeason: "2024-first", section: "riron", qnum: "q8a" })?.id).toBe("denk-a");
+    expect(findQuestionByRoute([a, b], { exam: "denken3", yearSeason: "2024-first", section: "riron", qnum: "q8b" })?.id).toBe("denk-b");
+    expect(findQuestionByRoute([a, b], { exam: "denken3", yearSeason: "2024-first", section: "riron", qnum: "q8" })).toBeUndefined();
+  });
   it("resolves a route to the exact question", () => {
     const found = findQuestionByRoute(pool, {
       exam: "ip",

@@ -1,0 +1,72 @@
+{
+  "inputHashes": {
+    "draftSha256": "417319116874e375512c41ab7a350f72bb5b35fa6783c88b8570ffaa1c051896",
+    "rowSha256": {
+      "21": "1f8a41efc18e99dcde2d0c5b29246b685292cc4e18dbca329c3714d283acc5af",
+      "22": "fca64f0eedb00f2070df4db00cd46f2a18cdc54d800b2e037163661ed17df4b7",
+      "23": "43207929873fa2835b435a8a512884fdd8f59f4621e1ce9a66fbbedb7a7b2c71",
+      "24": "a59519606f504dff3c3a3bb52fe181b2351e36955bbf880d2d5a693bd41bbb9a",
+      "25": "71e9945940ce0c0599ed2380db8c1fbd92bd702bc279522d3a6536099df8af77"
+    }
+  },
+  "reviewModel": "claude-opus-5-5",
+  "assessment": [
+    {
+      "number": 21,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "lawNeedsExternalCheck": [
+        "解説にある条項番号「電気設備の技術基準の解釈 第160条第2項第二号」と、その引用文「展開した場所又は点検できる隠ぺい場所であって、乾燥した場所」は、画像からは真偽を判定できないため、原典での確認が必要。",
+        "「第160条第3項第四号の防湿装置は、2種を湿気の多い場所に施設する場合の要件」という条項番号と内容は、原典での確認が必要。",
+        "ニの理由にある「300V以下・4m以下・乾燥した場所ならD種接地工事を省略できる」という条件と、その根拠条文（解釈第159条相当）は、原典での確認が必要。",
+        "ロの理由にある「造営材に沿うケーブルの支持点間は2m以下」という規定（解釈第164条相当）は、原典での確認が必要。"
+      ]
+    },
+    {
+      "number": 22,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "lawNeedsExternalCheck": [
+        "「ケーブル工事の低圧屋内配線は、弱電流電線と接触しないように施設する」という根拠条文（解釈第167条相当）の条項番号と規定内容は、解説に明記されていない。原典での確認が必要。",
+        "c「離隔距離10cm」が適切とされる根拠の確認が必要。ケーブル工事では接触を避けていれば足り、10cm以上の離隔はがいし引き工事の要件である、という区別が正しいかを原典で確かめる。"
+      ]
+    },
+    {
+      "number": 23,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "lawNeedsExternalCheck": [
+        "合成樹脂管の支持点間距離「1.5m以下」の根拠条文（解釈第158条相当）は、原典での確認が必要。",
+        "接着剤を使う場合の差込み深さ「管の外径の0.8倍以上」は、原典での確認が必要。",
+        "ニの理由は「D種接地が原則」とだけ書いており、簡易接触防護措置による接地省略の条件（対地電圧150V以下など）に触れていない。三相200Vの配線でこの省略が使えないことを、原典で確認する必要がある。"
+      ]
+    },
+    {
+      "number": 24,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "lawNeedsExternalCheck": []
+    },
+    {
+      "number": 25,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "lawNeedsExternalCheck": []
+    }
+  ]
+}

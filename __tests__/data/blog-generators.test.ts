@@ -1,7 +1,6 @@
 import { describe, expect, it } from "vitest";
 
 import {
-  buildAnalysisPost,
   buildFrequentTopicsPost,
   buildLastMonthPost,
   buildOverviewPost,
@@ -9,9 +8,9 @@ import {
 } from "@/data/blog/generators";
 import { getBlogPostBySlug } from "@/data/blog";
 import { EXAM_PROFILES } from "@/data/blog/exam-data";
+import { canonicalBlogSlug } from "@/lib/blog/article-aliases";
 import { ESSAY_EXAM_CODES } from "@/lib/essay/load";
-import { CURRENT_YEAR } from "@/lib/constants/current-year";
-import type { ExamCode } from "@/lib/questions/types";
+import type { IpaExamCode } from "@/lib/questions/types";
 
 // Characterization tests for the per-exam blog post generators
 // (data/blog/generators.ts). data/blog/index.ts assembles their output and
@@ -22,9 +21,9 @@ import type { ExamCode } from "@/lib/questions/types";
 // exam-scoped relatedSlugs round-trip to a slug a sibling generator for the
 // same exam actually produces. Source is unchanged — these pin current behaviour.
 
-const EXAMS = Object.keys(EXAM_PROFILES) as ExamCode[];
+const EXAMS = Object.keys(EXAM_PROFILES) as IpaExamCode[];
 
-// The five per-exam generators, paired with the slug suffix each emits.
+// Four retained routes; the generic analysis series redirects to worked guides.
 const GENERATORS = [
   { name: "overview", build: buildOverviewPost, suffix: "goukaku-benkyouhou" },
   { name: "lastMonth", build: buildLastMonthPost, suffix: "cyokusen-1kagetsu" },
@@ -34,7 +33,6 @@ const GENERATORS = [
     suffix: "hinnshutsu-ronten-toppu10",
   },
   { name: "practice", build: buildPracticePost, suffix: "yoru-tokurensyu" },
-  { name: "analysis", build: buildAnalysisPost, suffix: "jisseki-mondai-bunseki" },
 ] as const;
 
 describe("blog per-exam generators — shape & consistency", () => {
@@ -122,25 +120,13 @@ describe("blog template generators — flagship 午後論述AI採点(/essay) CTA
   }
 });
 
-describe("blog template generators — 最新 titles stay evergreen (no frozen year)", () => {
-  // The overview/analysis titles advertise themselves as 最新 and must track
-  // CURRENT_YEAR (evaluated at build time, JST) rather than freeze a calendar
-  // year — otherwise a "2024〜2025年" title silently rots while claiming 最新.
-  // generators.ts line-10 comment documents this contract; pin it.
-  const DATED = [
-    { name: "overview", build: buildOverviewPost },
-    { name: "analysis", build: buildAnalysisPost },
-  ] as const;
-
-  for (const g of DATED) {
-    it(`${g.name} title references CURRENT_YEAR and freezes no other 4-digit year`, () => {
-      const title = g.build("ap", 0).title;
-      expect(title).toContain(`${CURRENT_YEAR}年最新`);
-      // No stray 20xx that isn't CURRENT_YEAR (catches a re-frozen range).
-      const years = title.match(/20\d{2}/g) ?? [];
-      for (const y of years) {
-        expect(y).toBe(String(CURRENT_YEAR));
-      }
+describe("blog templates never advertise clock-based freshness", () => {
+  for (const g of [{name:"overview",build:buildOverviewPost}]) {
+    it(`${g.name} is a study guide without an automatic latest-year claim`, () => {
+      const post=g.build("ap",0);
+      expect(post.title).not.toMatch(/20\d{2}|最新/);
+      expect(post.editorialDates?.firstPublishedAt).toBeNull();
+      expect(post.editorialDates?.lastEditedAt).toBe("2026-10-08");
     });
   }
 });
@@ -171,7 +157,7 @@ describe("blog template generators — every per-exam post carries a FAQ (FAQPag
   // overview/lastMonth/frequentTopics were FAQ-ified earlier; practice & analysis
   // were the last two templates without it. Pin that none silently loses its FAQ
   // across all 13 区分 (a dropped section = lost structured data for 13 pages).
-  for (const g of GENERATORS) {
+  for (const g of GENERATORS.filter(g => g.name !== "frequentTopics")) {
     for (const exam of EXAMS) {
       it(`${g.name}(${exam}) contains the FAQ section`, () => {
         expect(g.build(exam, 0).body).toContain("## よくある質問");
@@ -180,14 +166,14 @@ describe("blog template generators — every per-exam post carries a FAQ (FAQPag
   }
 });
 
-describe("blog template generators — analysis never funnels to flagship /essay", () => {
+describe("worked guides never funnel to flagship /essay", () => {
   // buildAnalysisPost has no 論述 writing section (it's a 出題傾向 analysis), so it
   // funnels to 分野別モード + the /[exam] hub only — never the flagship grader,
   // for any exam (mirrors frequentTopics). Guard against a stray /essay link
   // sneaking into the FAQ or body for the 論文区分.
   for (const exam of EXAMS) {
     it(`analysis(${exam}) does NOT link to /essay`, () => {
-      expect(buildAnalysisPost(exam, 0).body).not.toContain("](/essay)");
+      expect(buildFrequentTopicsPost(exam, 0).body).not.toContain("](/essay)");
     });
   }
 });
@@ -205,7 +191,7 @@ describe("blog per-exam generators — exam-scoped relatedSlugs round-trip (no 4
         // them must resolve — otherwise the related-posts rail links to a 404.
         expect(examScoped.length).toBeGreaterThan(0);
         for (const s of examScoped) {
-          expect(family.has(s)).toBe(true);
+          expect(family.has(canonicalBlogSlug(s))).toBe(true);
         }
       }
     });
@@ -646,18 +632,18 @@ describe("blog NW post — 午後 is 記述式, not 論述", () => {
   });
 });
 
-// 応用情報(AP) exam-day schedule in ipa-shiken-moushikomi-nagare: 午前/午後 are
-// each 150分 (IPA official). The clock windows once read 10:00〜11:30 (午前) and
-// 12:30〜14:00 (午後) — both 90-minute spans contradicting their own "（150 分）"
-// labels. Pin the corrected 150-minute windows so a 90-min span labelled 150分
-// can't silently regress.
-describe("blog 申込の流れ — AP exam-day schedule windows match 150分", () => {
-  it("ipa-shiken-moushikomi-nagare shows 150-minute 午前/午後 windows", () => {
+// 2026年度 AP は科目A/Bとも150分の期間制CBTで、別々の期間に予約する。
+// 旧来の全国一斉午前・午後時刻が紛れ込まないようにする。
+describe("blog 申込の流れ — 2026 AP 科目別実施期間", () => {
+  it("ipa-shiken-moushikomi-nagare shows 150-minute A/B exams without fixed nationwide windows", () => {
     const post = getBlogPostBySlug("ipa-shiken-moushikomi-nagare");
     expect(post).toBeDefined();
     const body = post!.body;
-    expect(body).toContain("10:00〜12:30 午前試験（150 分）");
-    expect(body).toContain("13:30〜16:00 午後試験（150 分）");
+    expect(body).toContain("科目Aは150分、科目Bも150分");
+    expect(body).toContain("両科目を別々の実施期間に受けます");
+    expect(body).toContain("全国一斉の開始時刻はありません");
+    expect(body).not.toContain("10:00〜12:30 午前試験");
+    expect(body).not.toContain("13:30〜16:00 午後試験");
     expect(body).not.toContain("10:00〜11:30 午前試験");
     expect(body).not.toContain("12:30〜14:00 午後試験");
   });
@@ -731,12 +717,14 @@ describe("blog 午前I免除 post — 高度試験 spring/autumn grouping is cor
 // 「午後II：120分で1問選択」). exam-data の SC profile は既に単一午後・記述で正。
 // Pin the unified 午後 so the abolished 午後I/午後II split can't silently regress.
 describe("blog SC merit post — 午後 structure is the unified 記述式 test (post-2023)", () => {
-  it("sc-shikaku-merit describes 午前I・午前II・午後 の 3部構成, not the old 4部構成", () => {
+  it("sc-shikaku-merit describes 科目A-1・科目A-2・科目B and 2026 dates", () => {
     const post = getBlogPostBySlug("sc-shikaku-merit");
     expect(post).toBeDefined();
     const body = post!.body;
-    expect(body).toContain("午前 I・午前 II・午後（記述式）の 3 部構成");
-    expect(body).toContain("午後：150 分で 4 問中 2 問選択（記述式）");
+    expect(body).toContain("科目A-1・科目A-2・科目B（記述式）の3科目");
+    expect(body).toContain("科目Bは150分で4問中2問");
+    expect(body).toContain("10月17日〜27日");
+    expect(body).not.toContain("年 2 回開催（春期・秋期）");
     // The abolished pre-2023 split must be gone from this SC-specific article.
     expect(body).not.toContain("午前 I・午前 II・午後 I・午後 II の 4 部構成");
     expect(body).not.toContain("午後 I：90 分で 2 問選択");

@@ -17,6 +17,28 @@ export interface ExamOfficialLinks {
 const IPA_BASE = "https://www.ipa.go.jp/shiken";
 
 export const EXAM_OFFICIAL_LINKS = {
+  "riku-tech2": { overview: "https://www.nichimu.or.jp/kshiken/siken/index.html", syllabus: "https://www.nichimu.or.jp/kshiken/siken/index.html", pastQuestions: "https://www.nichimu.or.jp/kshiken/siken/index.html" },
+  "amateur2": { overview: "https://www.nichimu.or.jp/kshiken/siken/index.html", syllabus: "https://www.nichimu.or.jp/kshiken/siken/index.html", pastQuestions: "https://www.nichimu.or.jp/kshiken/siken/index.html" },
+  "maritime-radar": { overview: "https://www.nichimu.or.jp/kshiken/siken/index.html", syllabus: "https://www.nichimu.or.jp/kshiken/siken/index.html", pastQuestions: "https://www.nichimu.or.jp/kshiken/siken/index.html" },
+  "amateur1": { overview: "https://www.nichimu.or.jp/kshiken/siken/index.html", syllabus: "https://www.nichimu.or.jp/kshiken/siken/index.html", pastQuestions: "https://www.nichimu.or.jp/kshiken/siken/index.html" },
+  "maritime-special1": { overview: "https://www.nichimu.or.jp/kshiken/siken/index.html", syllabus: "https://www.nichimu.or.jp/kshiken/siken/index.html", pastQuestions: "https://www.nichimu.or.jp/kshiken/siken/index.html" },
+  "aviation-comm": { overview: "https://www.nichimu.or.jp/kshiken/siken/index.html", syllabus: "https://www.nichimu.or.jp/kshiken/siken/index.html", pastQuestions: "https://www.nichimu.or.jp/kshiken/siken/index.html" },
+  "maritime1": { overview: "https://www.nichimu.or.jp/kshiken/siken/index.html", syllabus: "https://www.nichimu.or.jp/kshiken/siken/index.html", pastQuestions: "https://www.nichimu.or.jp/kshiken/siken/index.html" },
+  "maritime2": { overview: "https://www.nichimu.or.jp/kshiken/siken/index.html", syllabus: "https://www.nichimu.or.jp/kshiken/siken/index.html", pastQuestions: "https://www.nichimu.or.jp/kshiken/siken/index.html" },
+  "general1": { overview: "https://www.nichimu.or.jp/kshiken/siken/index.html", syllabus: "https://www.nichimu.or.jp/kshiken/siken/index.html", pastQuestions: "https://www.nichimu.or.jp/kshiken/siken/index.html" },
+  "general2": { overview: "https://www.nichimu.or.jp/kshiken/siken/index.html", syllabus: "https://www.nichimu.or.jp/kshiken/siken/index.html", pastQuestions: "https://www.nichimu.or.jp/kshiken/siken/index.html" },
+  "general3": { overview: "https://www.nichimu.or.jp/kshiken/siken/index.html", syllabus: "https://www.nichimu.or.jp/kshiken/siken/index.html", pastQuestions: "https://www.nichimu.or.jp/kshiken/siken/index.html" },
+  "maritime3": { overview: "https://www.nichimu.or.jp/kshiken/siken/index.html", syllabus: "https://www.nichimu.or.jp/kshiken/siken/index.html", pastQuestions: "https://www.nichimu.or.jp/kshiken/siken/index.html" },
+  "land-special2": { overview: "https://www.nichimu.or.jp/kshiken/siken/index.html", syllabus: "https://www.nichimu.or.jp/kshiken/siken/index.html", pastQuestions: "https://www.nichimu.or.jp/kshiken/siken/index.html" },
+  "land-special3": { overview: "https://www.nichimu.or.jp/kshiken/siken/index.html", syllabus: "https://www.nichimu.or.jp/kshiken/siken/index.html", pastQuestions: "https://www.nichimu.or.jp/kshiken/siken/index.html" },
+
+  "riku-tech1": { overview: "https://www.nichimu.or.jp/kshiken/siken/index.html", syllabus: "https://www.nichimu.or.jp/kshiken/siken/index.html", pastQuestions: "https://www.nichimu.or.jp/kshiken/siken/index.html" },
+  "maritime4": { overview: "https://www.nichimu.or.jp/kshiken/siken/index.html", syllabus: "https://www.nichimu.or.jp/kshiken/siken/index.html", pastQuestions: "https://www.nichimu.or.jp/kshiken/siken/index.html" },
+  "riku-toku-kokunai": { overview: "https://www.nichimu.or.jp/kshiken/siken/index.html", syllabus: "https://www.nichimu.or.jp/kshiken/siken/index.html", pastQuestions: "https://www.nichimu.or.jp/kshiken/siken/index.html" },
+  "land-special1": { overview: "https://www.nichimu.or.jp/kshiken/siken/index.html", syllabus: "https://www.nichimu.or.jp/kshiken/siken/index.html", pastQuestions: "https://www.nichimu.or.jp/kshiken/siken/index.html" },
+  "koku-toku": { overview: "https://www.nichimu.or.jp/kshiken/siken/index.html", syllabus: "https://www.nichimu.or.jp/kshiken/siken/index.html", pastQuestions: "https://www.nichimu.or.jp/kshiken/siken/index.html" },
+  "kai-toku2": { overview: "https://www.nichimu.or.jp/kshiken/siken/index.html", syllabus: "https://www.nichimu.or.jp/kshiken/siken/index.html", pastQuestions: "https://www.nichimu.or.jp/kshiken/siken/index.html" },
+  "kai-toku3": { overview: "https://www.nichimu.or.jp/kshiken/siken/index.html", syllabus: "https://www.nichimu.or.jp/kshiken/siken/index.html", pastQuestions: "https://www.nichimu.or.jp/kshiken/siken/index.html" },
   ip: {
     overview: `${IPA_BASE}/kubun/ip.html`,
     syllabus: `${IPA_BASE}/syllabus/index.html`,
@@ -127,14 +149,14 @@ export const EXAM_ROADMAP = {
     { monthsBefore: 6, title: "経営戦略・IT 戦略の体系", body: "BSC・SWOT・5 フォースなど主要フレームワークを整理。" },
     { monthsBefore: 4, title: "午前 II 演習", body: "高度共通午前 I と午前 II 過去問を反復。" },
     { monthsBefore: 2, title: "論述事例の蓄積", body: "業務事例 5-10 件を「課題→施策→効果」の形でストック。" },
-    { monthsBefore: 1, title: "論文添削", body: "本番想定で 2,200 字を 120 分以内に書く訓練を週 1 回。" },
+    { monthsBefore: 1, title: "論文添削", body: "過去問の設問ごとの字数指定と制限時間を守って論述し、週1回は書き直す。" },
     { monthsBefore: 0, title: "総仕上げ", body: "直近の論述問題を 2-3 本書き上げ、構成パターンを完成。" },
   ],
   sa: [
     { monthsBefore: 6, title: "アーキ設計の基礎", body: "システム要件・方式設計・移行設計の論点を整理。" },
     { monthsBefore: 4, title: "午前 II 演習", body: "高度共通午前 I と午前 II 過去問を反復。" },
     { monthsBefore: 2, title: "午後 I の記述演習", body: "200-300 字の解答を粒度別に書き分ける訓練。" },
-    { monthsBefore: 1, title: "午後 II 論文", body: "業務事例を中心に 2,200 字論文の構成パターンを確立。" },
+    { monthsBefore: 1, title: "午後 II 論文", body: "業務事例を中心に、設問ごとの字数指定に合わせた論述の構成を練習。" },
     { monthsBefore: 0, title: "総仕上げ", body: "直近 2 期分を通しで解き、論文骨子を最終調整。" },
   ],
   pm: [

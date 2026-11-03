@@ -1,0 +1,58 @@
+{
+  "reviewModel": "claude-opus-5-5",
+  "requestedModel": "claude-opus-5-5",
+  "canonicalModel": "claude-opus-5-5",
+  "provider": "firstParty",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 2223,
+      "cacheReadInputTokens": 129451,
+      "cacheCreationInputTokens": 14389,
+      "webSearchRequests": 0,
+      "costUSD": 0.18547020000000003,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 1508,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "paperId": "emkohyo-20260217-4",
+  "ids": [
+    "emkohyo-20260217-4-q2"
+  ],
+  "figureSha256": {
+    "emkohyo-20260217-4-q2": {}
+  },
+  "officialRowImageSha256": {
+    "emkohyo-20260217-4-q2": {
+      "/exam-library/emkohyo-20260217-4/q2-p2-1.webp": "4cc91ed2e218427dd7806c50dae743e1af5e71922cd5d2a28e1fa82d2d26ac25"
+    }
+  },
+  "officialPageImageSha256": {},
+  "governmentSourceImageSha256": {},
+  "candidateSha256": {
+    "emkohyo-20260217-4-q2": "9c214d2c199c2abc05827026254049ae49ad005898781338f023bb56754713c4"
+  },
+  "sourcePackPath": "docs/evidence/emkohyo-choice-sources/emkohyo-20260217-4-q02-02.json",
+  "sourcePackSha256": "c98427fca403034c5f53099278fb76e47e5f2bf687778dd68805e4d69fb10868",
+  "assessment": {
+    "emkohyo-20260217-4-q2": {
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "reasonIssues": [
+        "肢5の理由で「約11.177 µg/L」と書いているが、50.30÷0.75÷6＝11.17778…なので、5桁に四捨五入すると11.178になる。11.177は四捨五入ではなく切り捨てになっている。「約11.178」または「約11.1778」に直す必要がある。",
+        "肢1の理由で「50.30×0.75÷6.00＝6.29」と等号を使っているが、実際の値は37.725÷6＝6.2875。「＝6.2875≈6.29」または「≈6.29」にしないと、途中で丸めた値を正確な値のように見せてしまう。肢2の「6.29は…6 Lで割った値」も、正確には6.2875を3桁に丸めた値であることを明記したい。"
+      ],
+      "sourceIssues": [
+        "『防じんマスクの規格』第6条の粒子捕集効率の定義は、マスクのろ過材の試験方法である。作業環境測定の捕集材の捕集効率とは場面が違い、類推でしか根拠にならない。本問の核心は、捕集量を捕集効率で割り戻して通気した空気中の全量を求める手順だが、これを直接述べた政府一次資料は添付されていない。",
+        "厚労省の個人サンプラー報告書p.43は、「濃度＝質量／(流量×時間)」の式を示すところまでしか支えない。捕集効率で補正する手順は同資料の抜粋に含まれていない。",
+        "農水省資料の乗除算の有効数字ルールは、2桁の11を選ぶ根拠にはなる。ただし「100 mL･min⁻¹」の有効桁数を決める根拠にはならない。肢3〜5で書いている「100の有効桁数は表記だけで一意に決まらない」という注記の根拠資料は無い。"
+      ],
+      "needsExternalCheck": []
+    }
+  }
+}

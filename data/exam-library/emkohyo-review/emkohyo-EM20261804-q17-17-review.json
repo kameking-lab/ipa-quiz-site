@@ -1,0 +1,66 @@
+{
+  "reviewModel": "claude-opus-5-5",
+  "requestedModel": "claude-opus-5-5",
+  "canonicalModel": "claude-opus-5-5",
+  "provider": "firstParty",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 3486,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 17335,
+      "webSearchRequests": 0,
+      "costUSD": 0.2086638,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 2380,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponsePath": "data/exam-library/emkohyo-review/emkohyo-EM20261804-q17-17-raw-response.txt",
+  "rawResponseSha256": "5a80d62ecbdac3e6a75e45b37b4d90a3825a116a11b9228bae783ccb31b50872",
+  "paperId": "emkohyo-EM20261804",
+  "ids": [
+    "emkohyo-EM20261804-q17"
+  ],
+  "figureSha256": {
+    "emkohyo-EM20261804-q17": {}
+  },
+  "officialRowImageSha256": {
+    "emkohyo-EM20261804-q17": {
+      "/exam-library/emkohyo-EM20261804/q17-p11-0.webp": "43533545d43164c624148ff181f2bda51451ba017ab5e94077c8b6e62a41c5cb"
+    }
+  },
+  "officialPageImageSha256": {},
+  "governmentSourceImageSha256": {
+    "docs/evidence/emkohyo-choice-sources/EM20261804-q17-env-fid-structure-fig2.png": "cc7bef218db7d7f1883509e785fe46832a210daf3eebd28a5b8d737519f9eaaa",
+    "docs/evidence/emkohyo-choice-sources/EM20261804-q17-env-pid-structure-fig5.png": "400817cf7aaa180c2159297254949b13c58b385b027e7531a52ad5619d6bbb97"
+  },
+  "candidateSha256": {
+    "emkohyo-EM20261804-q17": "3c854c0cc7b9faefa6f5e7675fef469d4917ec76195b9d44faa9101f1b4da980"
+  },
+  "sourcePackPath": "docs/evidence/emkohyo-choice-sources/emkohyo-EM20261804-q17-17.json",
+  "sourcePackSha256": "901b0197fcb8119b42f15f8e484e4e8096e6981f9d279b041d8d698c8c6896b8",
+  "assessment": {
+    "emkohyo-EM20261804-q17": {
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "reasonIssues": [
+        "肢3: 問題文の判定の要は『グロー放電で放射される紫外線』だが、理由文は『励起電極を備えたランプの放電で紫外線（UV）を出し』とだけ書いており、グロー放電かどうかに触れていない。放電の形式を明記するか、根拠資料で言える範囲の表現（励起電極で励起されるUVランプ）にとどめ、グロー放電の点を別資料で補うこと。",
+        "肢5: 末尾の『窒素・りん化合物の熱イオン化によるイオン電流の増加を利用する』は問題文の言い換えにすぎず、引用資料で確認できる事実（含窒素・含りん化合物に高感度で選択的に応答する）から導いた説明になっていない。アルカリ塩ビーズ表面での熱イオン化によってイオン電流が増えるという個別の因果を根拠付きで書くか、資料で言える範囲に絞ること。"
+      ],
+      "sourceIssues": [
+        "肢3: 環境省資料2の本文は『試料ガスに紫外線を照射しイオン化して測定する方法』と書くのみである。図5の画像にも『励起電極』『Lamp』『UV』『150V』『AMP』の表記しかなく、『放電』『グロー放電』の語はない。紫外線がグロー放電で放射されるという問題文の要素を政府資料は直接支えていない。",
+        "肢5: 環境省 有害大気汚染物質測定方法マニュアル p12 は FTD＝Flame Thermionic Detector という略語定義、p27 は含窒素・含りん化合物に高感度で選択的に応答するという性能記述にとどまる。熱イオン化によるイオン電流の増加という検出原理を記載していない。別称の TID も資料上で確認できない。",
+        "肢4（軽微）: 要旨の『リン・硫黄化合物に特有の発光を干渉フィルターで選んで検出する』のうち、干渉フィルターの記載はリン用（526nm、アセフェート資料）だけである。硫黄化合物の悪臭測定資料（900400286.pdf p3）は FPD を用いると書くのみで、硫黄用フィルターや発光波長には触れていない。硫黄側のフィルター記述は資料で直接支えられていない。"
+      ],
+      "needsExternalCheck": [
+        "肢3: PID の紫外線ランプがグロー放電（希ガス封入放電管）で紫外線を放射することを直接記述した一次資料（JIS K 0114 のガスクロマトグラフィー通則、または官公庁のマニュアル等）で確認すること。",
+        "肢5: 熱イオン化検出器（TID/FTD）がアルカリ金属塩の加熱ビーズ上で窒素・りん化合物を熱イオン化し、増加したイオン電流を信号とする原理を記述した一次資料で確認すること。TID と FTD が同一の検出器を指す別称であることも併せて確認すること。"
+      ]
+    }
+  }
+}

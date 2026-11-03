@@ -1,0 +1,102 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20260322",
+  "subject": "theory",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 7836,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 22456,
+      "webSearchRequests": 0,
+      "costUSD": 0.3366318,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 4961,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "cdabcf3d8b0818a87e52ad3700e4986c317a9b2fef2c7c693cd3571df1769b4c",
+  "inputRequestSha256": "5f4bdb698dd0ac84897ab3e4859cfa0c913d1ab0c9a73ed144fd298d5ca2e0a6",
+  "inputHashes": {
+    "candidateSha256": {
+      "q18a": "a56247eaac69620f70c624bcd93d5ca090d42bf5eb12655a72efba606ec0e131",
+      "q18b": "ce63ae634ce8f053beb8bf7999d02881cc965cb01a3d1c66b324ddd38a7a2579"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20260322/theory/p24.png": "f0248faa43969ff60b60a0df44fe9cea2b7dbc39aacc3a540954b9557909a7b2",
+      "data/raw_pdfs/denken3/review/20260322/theory/p25.png": "619a0b682ebab7ae038c1f6d6228d2301d059041040d931283bbee800837c5cb"
+    },
+    "figureSha256": {
+      "public/images/denken3/20260322/theory/20260322-theory-q18-fig1.png": "5e0a6667c08ffaf11f170910763b08f03cb02ad9a2424c2b453860059f524982",
+      "public/images/denken3/20260322/theory/20260322-theory-q18-fig2.png": "7f460ebdc0778aae5c836fc2b6c8b47e36173da5e49ada080aef54b9b2ed67ba"
+    },
+    "sourceQuestionPdfSha256": "c83e7c7350d98b65f5d8da0b93e4a2581a19dd250be320fb7fc492c9b34a29c1",
+    "sourceAnswerPdfSha256": "cc2890296d06a4823df5697a78a1c01ddfd39f041c51f48c87984daa3a5707c6",
+    "officialAnswerUnitsSha256": "cafd9c546d7c8f20aba510fc0eebd9fcc28e7537c08ad37df631a85f7c3c8051",
+    "referencePdfSha256": {},
+    "referencePageSha256": {},
+    "referenceJsonSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q18a",
+      "questionNumber": 18,
+      "part": "a",
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [
+        "figureUrls に、(a) の解答に使わない図3の画像 20260322-theory-q18-fig2.png が含まれている。figureDescription は図1・図2しか記述していないので、2枚目の画像には代替テキストがない。さらに (ニ)(ホ)(ヘ) の回路が (a) の図として表示され、図2の (イ)(ロ)(ハ) と並んで学習者を混乱させる。figureUrls を [\"/images/denken3/20260322/theory/20260322-theory-q18-fig1.png\"] に限定すること。",
+        "ファイル名 fig2.png の中身は原図の「図3」、fig1.png の中身は「図1」と「図2」であり、ファイル番号と図番号が一致しない。表示上の誤りではないが、上記の取り違えを招いているので、命名または紐付けを整理することが望ましい。"
+      ],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "出典メタ情報：原図解答表の見出しは「令和7年度 第三種電気主任技術者下期試験解答」、科目欄は＜理論＞である。候補の fiscalYear=2025、term=lower、examDate=2026-03-22、subject=theory、reviewedFromPage=[24,25]（原図の印刷頁は -21-・-22-、manifest指定のPDF頁は24・25）、sourceQuestionPdfUrl・sourceAnswerPdfUrl、sourceAttribution はいずれも manifest と一致する。",
+        "公式正答：解答表の理論・問18(a) は解答5・配点5である。候補の officialAnswer=5、scoringPoints=5 と一致する。",
+        "問題文：共通前文（NAND IC を用いたパルス回路／高電位「1」・低電位「0」）と (a) の設問文は原図と一致する。欠落・改変はない。",
+        "選択肢：(1)(イ)、(2)(ロ)、(3)(ハ)、(4)(イ),(ロ)、(5)(イ),(ハ) の5肢すべてが原図と一致する。",
+        "図1：上側 MOSFET の矢印はチャネルから外向き（pチャネル）で、電源側にある。下側 MOSFET の矢印は内向き（nチャネル）で、接地側にある。ゲートは共通で入力に接続され、ドレイン接続点が出力である。以上から CMOS インバータであり、真理値表は NOT である。figureDescription の記述とも整合する。",
+        "図2：(イ) は入力を2入力に分岐して短絡し、¬(A·A)=¬A となる。(ロ) は下側入力が「0」で、常に1となる。(ハ) は下側入力が「1」で、¬(A·1)=¬A となる。NOT と一致するのは (イ)(ハ) であり、正答(5) と整合する。",
+        "choiceExplanations：肢(1)〜(5) の固有理由（列挙漏れ、(ロ)の誤包含、(ハ)の欠落）をすべて検算し、誤りはなかった。",
+        "公開候補図 fig1.png：原図の図1・図2を欠落なく切り出している。「電源」「入力」「出力」「「0」」「「1」」「図1」「図2」のラベル、接続点のドット、矢印の向きが原図と一致する。この図だけで (a) を解答できる。",
+        "officialReferenceUrls は空である。検証すべき独立主張はない。"
+      ]
+    },
+    {
+      "unitKey": "q18b",
+      "questionNumber": 18,
+      "part": "b",
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [
+        "figureUrls に、(b) の解答に使わない図1・図2の画像 20260322-theory-q18-fig1.png が含まれている。figureDescription は図3しか記述していないので、1枚目の画像には代替テキストがない。さらに (b) の設問に (a) 用の CMOS 回路と (イ)(ロ)(ハ) が表示される。figureUrls を [\"/images/denken3/20260322/theory/20260322-theory-q18-fig2.png\"] に限定すること。",
+        "ファイル名 fig2.png の中身は原図の「図3」であり、番号が一致しない。命名または紐付けを整理することが望ましい。"
+      ],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "出典メタ情報：fiscalYear=2025、term=lower、examDate=2026-03-22、subject=theory、reviewedFromPage=[24,25]、PDF URL、sourceAttribution はいずれも manifest および原図と一致する。",
+        "公式正答：解答表の理論・問18(b) は解答2・配点5である。候補の officialAnswer=2、scoringPoints=5 と一致する。",
+        "問題文：(b) の設問文、「入力の数がそれぞれ 0，1，2」、性質Ⅰ・性質Ⅱ の文言は原図と一致する。",
+        "選択肢：原図の表は (1)ニ/ホ、(2)ニ/ヘ、(3)ホ/ニ、(4)ホ/ヘ、(5)ヘ/ホ である。候補の「性質Ⅰ：…　性質Ⅱ：…」形式は5肢とも一致する。",
+        "図3(ニ) の接続：左NAND（入力短絡）の入力は上部配線につながる。左NANDの出力は C を経て接続点に至り、接続点は右NAND（入力短絡）の入力につながる。R は接続点と上部配線（右NAND出力）の間にある。右NANDの出力は上部配線を経て左NAND入力に戻る。以上は原図と一致する。",
+        "(ニ) の動作を検算した。NOT2 出力=1 のとき、R を通じて C が充電され、接続点の電位が上昇する。しきい値を超えると NOT2 出力が0に反転し、NOT1 出力が1になって C 経由で接続点を押し上げる（正帰還）。その後 R を通じて接続点の電位が低下し、再び反転する。安定点がないので無安定であり、性質Ⅰに当たる。候補の記述と整合する。",
+        "図3(ホ) の接続：左NANDの入力は「入力」と上部配線である。左NANDの出力は C を経て接続点に至る。接続点は R で接地され、右NAND（入力短絡）の入力につながる。右NANDの出力は上部配線に戻る。以上は原図と一致する。",
+        "(ホ) の動作を検算した。R が接続点を0に引くので、NOT2 出力=1 で安定する。このとき左NAND=¬入力 となる。入力が1→0 に立ち下がると、左出力が1になり、C 経由で NOT2 出力が0になって保持される。RC 時定数の後に復帰するので単安定である。候補の記述と整合する。",
+        "図3(ヘ) の接続：左NANDの入力は入力1と上部配線（右出力）である。左出力は右NANDの一方の入力に、右NANDのもう一方の入力は入力2につながる。交差結合 NAND の RS ラッチ（双安定）であり、性質Ⅱに当たる。以上は原図と一致する。",
+        "総合解説と choiceExplanations の肢(1)〜(5) の固有理由をすべて検算し、誤りはなかった。正答(2) の「(ニ)＝性質Ⅰ、(ヘ)＝性質Ⅱ」と整合する。",
+        "公開候補図 fig2.png：原図の図3を欠落なく切り出している。「入力」「入力1」「入力2」「図3」のラベル、接続点のドット、C・R・接地記号の位置が原図と一致する。この図だけで (b) を解答できる。",
+        "officialReferenceUrls は空である。検証すべき独立主張はない。"
+      ]
+    }
+  ]
+}

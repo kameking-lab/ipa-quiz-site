@@ -1,0 +1,55 @@
+{
+  "reviewModel": "claude-opus-5-5",
+  "requestedModel": "claude-opus-5-5",
+  "canonicalModel": "claude-opus-5-5",
+  "provider": "firstParty",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 2587,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 15571,
+      "webSearchRequests": 0,
+      "costUSD": 0.1765718,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 2320,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponsePath": "data/exam-library/emkohyo-review/emkohyo-20260217-q12-12-raw-response.txt",
+  "rawResponseSha256": "f85d59dbc2569b8b9609b2c279b7d1864795489cd1f2a1d727d3baeff14e2df2",
+  "paperId": "emkohyo-20260217",
+  "ids": [
+    "emkohyo-20260217-q12"
+  ],
+  "figureSha256": {
+    "emkohyo-20260217-q12": {}
+  },
+  "officialRowImageSha256": {
+    "emkohyo-20260217-q12": {
+      "/exam-library/emkohyo-20260217/q12-p8-1.webp": "3b29ada33960a3f31e56faccf82687913171f277571c0d5057e15b23f64c69e6"
+    }
+  },
+  "officialPageImageSha256": {},
+  "governmentSourceImageSha256": {},
+  "candidateSha256": {
+    "emkohyo-20260217-q12": "59400d8fdc33e0a42ae3f263c991b63a2409af872afedf63dbc8423be5854408"
+  },
+  "sourcePackPath": "docs/evidence/emkohyo-choice-sources/emkohyo-20260217-q12-12.json",
+  "sourcePackSha256": "61f30f87d02ccdd300b53647534aee625dfb6bc162f4bf2ac257a27a40a7ea2d",
+  "assessment": {
+    "emkohyo-20260217-q12": {
+      "status": "FIX",
+      "textIssues": [
+        "肢5の冒頭「３軸合成値a hv が5.0 m･s⁻²」で、添字hvが半角スペース区切りのベタ打ち「a hv」になっている。原図は a に下付き hv が付いた表記で、同じ肢の後半では「aₕᵥ×√（T／8）」と下付き表記になっており、同一肢内で表記が不統一。「３軸合成値aₕᵥが5.0 m･s⁻²」に統一すべき。"
+      ],
+      "choiceIssues": [],
+      "reasonIssues": [],
+      "sourceIssues": [],
+      "needsExternalCheck": []
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20250323",
+  "subject": "machinery",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 20125,
+      "cacheReadInputTokens": 2155,
+      "cacheCreationInputTokens": 21697,
+      "webSearchRequests": 0,
+      "costUSD": 0.5765150000000001,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 5366,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "da53ec79759d93b6d1baf114dea8146fea6e3fdc6031581a59bac850e82e3c80",
+  "inputRequestSha256": "e4c7feb481007d04cfc11f5a47303884579b0b9a5c12f57823c8431755459c80",
+  "inputHashes": {
+    "candidateSha256": {
+      "q16a": "823315044e0772b7b3e8763ee2fbff8fab064bc5548a22aeaace0e0bdf472210",
+      "q16b": "65f92c6cc4cd9840d8901e27e48197929ba44ea7c84d2f56c4055d6f6c186be5"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20250323/machinery/p20.png": "049becd19a8aa16e6c6687049a209a53f63b9242766d14b85bd77959e9ab4f71",
+      "data/raw_pdfs/denken3/review/20250323/machinery/p21.png": "756ce9ca77ecc285000ec08c9223712afd3c5d6fa462497562cc64321b913ef7"
+    },
+    "figureSha256": {
+      "public/images/denken3/20250323/machinery/20250323-machinery-q16-circuit.png": "7797b2fba5e1b8bb6c6f696545816842ad56ea95045fc24fc025dc29599d9906",
+      "public/images/denken3/20250323/machinery/20250323-machinery-q16-waveform.png": "84027d21f549c1d4ac6f841e8525f8f99ff016dc08eef67c30668b4412752d62",
+      "public/images/denken3/20250323/machinery/20250323-machinery-q16-current-paths.png": "026ad5536b9f38d2474ae5a1602a26904dc4501a1e22360aa640891de0657aa4"
+    },
+    "sourceQuestionPdfSha256": "66e8b0070a314cd78ed9b9f3edd3d75eeaf442b258fd0aacab0e7d9620c75b9f",
+    "sourceAnswerPdfSha256": "4c3b38fcf1405766fafaa78b1b05b867a3d48307a670b9d354476bc6b32acd4c",
+    "officialAnswerUnitsSha256": "41d8345ba0c00be234741c15e0ca7f8fc5e821bbe2f41d013c5f3de76979371e",
+    "referencePdfSha256": {},
+    "referencePageSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q16a",
+      "questionNumber": 16,
+      "part": "a",
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [
+        "figureDescription のダイオードDの接続説明「逆並列でなく負荷側に並列に接続したダイオードD」は不正確で誤読を招く。原図のDは負荷R単独とは並列ではない。DはSのエミッタとLの接続点（カソード側）と下側共通線（アノード側）の間にあり、L–R直列枝と並列である。「逆並列でなく」という否定表現も、図に存在しない構成を持ち出しているだけで不要である。修正例：『DはカソードをSとLの接続点に、アノードを下側共通線に接続し、L–R直列枝と並列に入る還流ダイオードである』。",
+        "figureDescription は v_D の矢印の向きの意味を明示していない。原図の v_D 矢印は下から上へ向かい、矢印の先端（上側ノード＝Dのカソード側）が正の基準である。この基準があるから Sオン時に v_D=E、Sオフ時に v_D≈0 と読める。この点を1文加えるべきである。"
+      ],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "問題文：原図 p.17 の共通前文と(a)本文を照合し、候補と一致した。E・S・D・L・R・v_D・i_R・t₁・t₂ の記号と、「実線で示した回路に流れる電流のループと方向」の文言も一致した。",
+        "選択肢：原図の表の(1) C/B、(2) A/C、(3) B/A、(4) B/C、(5) A/B は、候補 choices の5肢と完全に一致した。",
+        "図1：S はトランジスタ記号で、コレクタが左上の電源正側、エミッタ矢印が右向きで D・L 接続点側にある。D は三角が上向きで、アノードが下側、カソードが上側。v_D の矢印は上向きである。i_R の矢印は L の右で右向きである。E は正側が上側で、図3の経路方向とも整合する。",
+        "図2：破線グリッドは T/4 刻みである。v_D は 0〜T/2 が E、T/2〜T が 0V の矩形波で、通流率50%と整合する。t₁ の矢印は約 T/4（v_D=E 区間）、t₂ の矢印は約 3T/4（v_D=0 区間）を指す。i_R は v_D=E 区間で増加し、0V 区間で減少する三角波で、0A より十分上にある（連続導通）。",
+        "図3(A)：太線の上辺は右向き、下辺は左向きで、E→S→L→R→E の経路である。D は点線である。図4(B)：E と S、および E 下側の配線は点線である。D→L→R→D の還流ループで、上辺は右向き、下辺は左向きである。図5(C)：上辺は左向き、下辺は右向きで、D を順方向に上り、S をエミッタ→コレクタへ逆流して E の正極へ流入する経路である。L と R は点線である。候補の図5の矢印向きの記述は正しい。",
+        "正答検算：t₁ は v_D=E なので Sオンで経路(A)、t₂ は v_D≈0 なので Sオフで D還流の経路(B)。よって(5)であり、manifest の公式正答5と一致した。",
+        "(C)の不成立理由の検算：(C)は S の逆方向導通と E 正極への流入を要する。Sオン時は D のカソードが E 電位になり D は逆バイアスである。Sオフ時は S が遮断される。どちらの状態でも成立しない。候補の説明は妥当である。",
+        "各肢の解説：(1)は t₂=(B) のみ正しいとする指摘が正しい。(2)は t₁ のみ正しい。(3)は組合せが逆。(4)は両方誤り。(5)は正しい。いずれも選択肢内容と整合した。",
+        "公開候補図3枚は原図の図1、図2、図3〜5と線種（実線・点線）、矢印の向き、全ラベル（S, L, D, R, E, v_D, i_R, E[V], 0V, I_R[A], 0A, t[s], 0, T, 2T, 時刻t₁, 時刻t₂, 図番号とキャプション）が一致した。公開図だけで解答可能である。",
+        "出典：officialReferenceUrls は空で、独立主張はない。原図フッタの印刷頁は17/18、管理番号は T2-K 020/021 で、reviewedFromPage [20,21] と矛盾しない。"
+      ]
+    },
+    {
+      "unitKey": "q16b",
+      "questionNumber": 16,
+      "part": "b",
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "問題文：原図 p.17 の(b)本文（E=100V、通流率50%、R=2Ω、周期Tの高周波スイッチング、Lの平滑作用でリプルは十分小さい、平均値I_R[A]に最も近いもの）は候補と一致した。",
+        "選択肢：(1)17.7、(2)25.0、(3)35.4、(4)50.1、(5)70.7 は原図と一致した。",
+        "正答検算：v_D の平均値は 100×0.5=50V である。定常状態では L の1周期平均電圧が0なので、R の平均電圧は50Vになる。I_R=50/2=25.0A で(2)となり、manifest の公式正答2と一致した。図2の i_R は0Aに達しない連続導通であり、この式の前提と整合する。",
+        "誤答肢の数値検算：25/√2≈17.68、50/√2≈35.36、E/R=50、100/√2≈70.71 である。各肢の解説の数値と論理（実効値換算や通流率100%相当の取り違え）は正しい。",
+        "図：本小問は問題文の数値だけで解ける。figureDescription の「図がなくても解ける」は正しい。公開候補図は原図と一致した（q16a の検証と共通）。",
+        "出典：officialReferenceUrls は空で、独立主張はない。reviewedFromPage [20,21] は原図の管理番号 T2-K 020/021 と矛盾しない。"
+      ]
+    }
+  ]
+}

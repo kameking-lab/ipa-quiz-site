@@ -52,7 +52,7 @@ C取締役は、これらの課題に対応するため、OMO（Online Merges wi
         type: "long-text",
         maxLength: 40,
         modelAnswer:
-          "ECで注文した商品を最寄り店舗で受け取れる店舗受取サービスにより、送料負担と待ち時間を削減する。",
+          "EC在庫と店舗在庫を連携して店舗受取を可能にし、送料負担を減らす。",
         scoringRubric:
           "【満点】施策名（BOPIS／店舗受取／取り置き／店舗在庫見える化／店舗から発送）＋顧客メリット（送料／待ち時間／確実な入手）を含む。\n【部分点】施策名のみ／メリットが店舗側視点に偏る。\n【0点】在庫連携と関係ない施策（ポイント施策など）／OMO の概念に該当しない。",
         points: 30,
@@ -64,7 +64,7 @@ C取締役は、これらの課題に対応するため、OMO（Online Merges wi
         type: "long-text",
         maxLength: 30,
         modelAnswer:
-          "ID統合と購買履歴の二次利用に関する利用目的を明示し、本人同意を取得する。",
+          "統合後の利用目的を明示し、目的外利用には本人同意を得る。",
         scoringRubric:
           "【満点】「利用目的の明示」＋「本人同意の取得」を含む。\n【部分点】片方のみ／プライバシーポリシー改定のみで同意取得に触れない。\n【0点】暗号化・アクセス制御など技術的対策のみで個人情報保護法上の手続きに触れない。",
         points: 20,
@@ -72,7 +72,7 @@ C取締役は、これらの課題に対応するため、OMO（Online Merges wi
     ],
     pdfUrl:
       "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2023a05_1/2023a05a_ap_pm_qs.pdf",
-    license: "IPA-public",
+    license: "original",
     totalTimeMinutes: 150,
   },
 ];

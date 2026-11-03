@@ -1,0 +1,316 @@
+[
+  {
+    "id": "sharoushi-2025-sentaku-q01",
+    "field": "C",
+    "before": {
+      "id": "C",
+      "answerOptionId": 6,
+      "answerText": "上記権利等を保障した趣旨を実質的に失わせるものと認められる",
+      "explanation": "判旨は、産前産後休業を取る権利等の行使を抑制し、その権利を保障した趣旨を実質的に失わせる場合に限って、公序違反で無効になるとする。不就労の出勤扱いは原則として労使の合意に委ねられる、という前提がある。",
+      "evidenceStatus": "not-directly-verified",
+      "reviewFlags": [
+        "judgment-wording-checked-against-stem-only"
+      ]
+    },
+    "after": {
+      "id": "C",
+      "answerOptionId": 6,
+      "answerText": "上記権利等を保障した趣旨を実質的に失わせるものと認められる",
+      "explanation": "厚生労働省の審議会資料は、東朋学園事件（最高裁平成15年12月4日判決）について、産休等の期間を出勤扱いにするかは原則として労使の合意に委ねられる一方、90％条項による賞与の全額不支給は、法が保障する権利の趣旨を実質的に失わせるほどの不利益であり公序に反すると整理している。本問の判旨では、権利行使を抑制してその保障を実質的に失わせるかが判断の要点となる。",
+      "evidenceStatus": "direct-primary-verified",
+      "reviewFlags": [],
+      "primaryRefs": [
+        "https://www.mhlw.go.jp/shingi/2005/02/s0209-5a1.html"
+      ]
+    },
+    "scope": "targeted missing primary fact; no full re-review"
+  },
+  {
+    "id": "sharoushi-2025-sentaku-q02",
+    "field": "C",
+    "before": {
+      "id": "C",
+      "answerOptionId": 4,
+      "answerText": "10年",
+      "explanation": "長期家族介護者援護金は、重度の年金(障害1・2級、傷病1・2級)を受けていた期間が10年以上の者の遺族が対象。この年数は出題時点の規則文言の暗記事項で、packetに一次条文本文はない。",
+      "evidenceStatus": "not-directly-verified",
+      "reviewFlags": [
+        "numeric-value-from-stem-and-memory-only"
+      ]
+    },
+    "after": {
+      "id": "C",
+      "answerOptionId": 4,
+      "answerText": "10年",
+      "explanation": "出題基準日（2025年4月11日）の労災保険法施行規則36条1項は、対象となる障害等級1・2級又は傷病等級1・2級の年金を受けていた期間を10年以上と定める。長期家族介護者援護金は、その遺族のうち労働基準局長が定める支援要件を満たす者に支給される。単に遺族であれば全員が対象となるわけではない。",
+      "evidenceStatus": "direct-primary-verified",
+      "reviewFlags": [],
+      "primaryRefs": [
+        "https://laws.e-gov.go.jp/law/330M50002000022_20250401_507M60000100022"
+      ]
+    },
+    "scope": "targeted missing primary fact; no full re-review"
+  },
+  {
+    "id": "sharoushi-2025-sentaku-q03",
+    "field": "A",
+    "before": {
+      "id": "A",
+      "answerOptionId": 18,
+      "answerText": "並びに労働者が子を養育するための休業及び所定労働時間を短縮することによる就業",
+      "explanation": "目的規定は、教育訓練に加え、育児休業と育児のための時短就業をした場合の給付を挙げる。時短就業の追加は令和7年4月施行の改正と理解する。介護休業は冒頭の「雇用の継続が困難となる事由」側で扱う。",
+      "evidenceStatus": "not-directly-verified",
+      "reviewFlags": [
+        "amendment-effective-date-from-memory"
+      ]
+    },
+    "after": {
+      "id": "A",
+      "answerOptionId": 18,
+      "answerText": "並びに労働者が子を養育するための休業及び所定労働時間を短縮することによる就業",
+      "explanation": "2025年4月1日施行版の雇用保険法1条は、教育訓練に加えて、育児のための休業及び所定労働時間を短縮することによる就業を給付の対象として目的規定に掲げる。厚生労働省の育児休業等給付Q&A（Q95）も、育児時短就業給付の開始を令和7年4月1日以後としている。出題基準日である同年4月11日には、この時短就業を含む条文が適用される。",
+      "evidenceStatus": "direct-primary-verified",
+      "reviewFlags": [],
+      "primaryRefs": [
+        "https://laws.e-gov.go.jp/law/349AC0000000116_20250401_506AC0000000047",
+        "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/0000158500.html"
+      ]
+    },
+    "scope": "targeted missing primary fact; no full re-review"
+  },
+  {
+    "id": "sharoushi-2025-sentaku-q06",
+    "field": "A",
+    "before": {
+      "id": "A",
+      "answerOptionId": 15,
+      "answerText": "48万8，000",
+      "explanation": "令和5年4月以降の出産育児一時金の政令額は48万8千円で、産科医療補償制度の保険料相当額の加算と合わせて50万円となる。出題時点の額を使い、旧額の42万円などと混同しない。",
+      "evidenceStatus": "not-directly-verified",
+      "reviewFlags": [
+        "amount-from-memory"
+      ]
+    },
+    "after": {
+      "id": "A",
+      "answerOptionId": 15,
+      "answerText": "48万8，000",
+      "explanation": "出題基準日（2025年4月11日）の健康保険法施行令36条本文は、出産育児一時金の政令額を48万8,000円と定める。所定の医学的管理等の要件を満たす出産については、同条ただし書の加算が別にある。ここは加算後の一般的な支給額ではなく、条文本文の額を答える。",
+      "evidenceStatus": "direct-primary-verified",
+      "reviewFlags": [],
+      "primaryRefs": [
+        "https://laws.e-gov.go.jp/law/215IO0000000243_20240401_506CO0000000125"
+      ]
+    },
+    "scope": "targeted missing primary fact; no full re-review"
+  },
+  {
+    "id": "sharoushi-2025-sentaku-q06",
+    "field": "B",
+    "before": {
+      "id": "B",
+      "answerOptionId": 4,
+      "answerText": "3",
+      "explanation": "所定の要件を満たす出産には、48万8千円に保険者が定める額が加算される。その上限を3万円とする設問。上限額の条文本文はpacketになく、加算額の細部は記憶のみで確認が必要。",
+      "evidenceStatus": "not-directly-verified",
+      "reviewFlags": [
+        "upper-limit-value-not-directly-verified"
+      ]
+    },
+    "after": {
+      "id": "B",
+      "answerOptionId": 4,
+      "answerText": "3",
+      "explanation": "健康保険法施行令36条ただし書は、同条各号の要件を満たす出産について、保険契約に関して被保険者が追加的に必要とする費用を基準に、3万円を超えない範囲で保険者が定める額を加算すると定める。3万円は常に加算される定額ではなく、条文上の上限である。",
+      "evidenceStatus": "direct-primary-verified",
+      "reviewFlags": [],
+      "primaryRefs": [
+        "https://laws.e-gov.go.jp/law/215IO0000000243_20240401_506CO0000000125"
+      ]
+    },
+    "scope": "targeted missing primary fact; no full re-review"
+  },
+  {
+    "id": "sharoushi-2025-sentaku-q07",
+    "field": "D",
+    "before": {
+      "id": "D",
+      "answerOptionId": 19,
+      "answerText": "令和4年2月",
+      "explanation": "離婚時に乙が受給中の障害厚生年金の算定基礎となった期間は、3号分割の対象とならない。基礎期間は障害認定日(令和4年2月)の属する月までと整理し、結婚月から令和4年2月までが除外。",
+      "evidenceStatus": "not-directly-verified",
+      "reviewFlags": [
+        "basis-period-boundary-from-reasoning"
+      ]
+    },
+    "after": {
+      "id": "D",
+      "answerOptionId": 19,
+      "answerText": "令和4年2月",
+      "explanation": "厚生年金保険法78条の14第1項ただし書は、分割請求時に相手方が障害厚生年金の受給権者で、その計算基礎となる特定期間を3号分割から除く。同法51条は障害認定日の属する月後の被保険者期間をその年金額の計算基礎としない。したがって本件は、婚姻中の第3号被保険者期間の始期である平成23年1月から、障害認定日の属する令和4年2月までが対象外となる。初診日の属する令和2年8月で区切るのではない。",
+      "evidenceStatus": "direct-primary-verified",
+      "reviewFlags": [],
+      "primaryRefs": [
+        "https://laws.e-gov.go.jp/law/329AC0000000115_20250401_506AC0000000047"
+      ]
+    },
+    "scope": "targeted missing primary fact; no full re-review"
+  },
+  {
+    "id": "sharoushi-2025-sentaku-q08",
+    "field": "D",
+    "before": {
+      "id": "D",
+      "answerOptionId": 7,
+      "answerText": "128",
+      "explanation": "学生納付特例の所得要件は、扶養親族等がある場合は128万円に所定額を加算した額以下とする。出題時点(令和7年4月)の基準値として128を採用する。packetに条文本文はない。",
+      "evidenceStatus": "not-directly-verified",
+      "reviewFlags": [
+        "income-limit-from-memory"
+      ]
+    },
+    "after": {
+      "id": "D",
+      "answerOptionId": 7,
+      "answerText": "128",
+      "explanation": "出題基準日（2025年4月11日）の国民年金法施行令6条の9は、学生納付特例に関する法90条の3第1項1号の所得基準の基本額を128万円と定める。扶養親族等がある場合は、この基本額に人数と区分に応じた額を加算する。",
+      "evidenceStatus": "direct-primary-verified",
+      "reviewFlags": [],
+      "primaryRefs": [
+        "https://laws.e-gov.go.jp/law/334CO0000000184_20250401_507CO0000000106"
+      ]
+    },
+    "scope": "targeted missing primary fact; no full re-review"
+  },
+  {
+    "id": "sharoushi-2025-sentaku-q08",
+    "field": "E",
+    "before": {
+      "id": "E",
+      "answerOptionId": 4,
+      "answerText": "38",
+      "explanation": "扶養親族等1人につき38万円を加算する。問題文のカッコ内にある同一生計配偶者・老人扶養親族48万円、特定扶養親族等63万円は、この38万円の例外額。基準額と加算額は別に覚える。",
+      "evidenceStatus": "not-directly-verified",
+      "reviewFlags": [
+        "income-limit-from-memory"
+      ]
+    },
+    "after": {
+      "id": "E",
+      "answerOptionId": 4,
+      "answerText": "38",
+      "explanation": "国民年金法施行令6条の9により、扶養親族等1人当たりの通常の加算額は38万円である。同一生計配偶者・老人扶養親族は48万円、特定扶養親族等は63万円とする例外があり、本問の括弧書きもこれに対応する。",
+      "evidenceStatus": "direct-primary-verified",
+      "reviewFlags": [],
+      "primaryRefs": [
+        "https://laws.e-gov.go.jp/law/334CO0000000184_20250401_507CO0000000106"
+      ]
+    },
+    "scope": "targeted missing primary fact; no full re-review"
+  },
+  {
+    "id": "sharoushi-2026-sentaku-q01",
+    "field": "B",
+    "before": {
+      "id": "B",
+      "answerOptionId": 20,
+      "answerText": "労働時間を算定し難い",
+      "explanation": "事業場外みなし労働時間制の適用要件は、事業場外で業務に従事し労働時間を算定し難いとき。判旨は、使用者が勤務状況を具体的に把握することが容易か、業務日報の正確性が担保されているかを問題にしている。",
+      "evidenceStatus": "not-directly-verified",
+      "reviewFlags": [
+        "judgment-wording-checked-against-stem-only"
+      ]
+    },
+    "after": {
+      "id": "B",
+      "answerOptionId": 20,
+      "answerText": "労働時間を算定し難い",
+      "explanation": "最高裁令和6年4月16日判決（令和5年〔受〕365号）は、業務日報による報告だけを重視し、その正確性が担保される具体的事情を十分に検討せずに「労働時間を算定し難いとき」に当たらないとした原審判断を破棄した。勤務状況を把握できるかを具体的に検討させるための差戻しであり、最高裁が本件へのみなし制の適用を最終確定したという意味ではない。",
+      "evidenceStatus": "direct-primary-verified",
+      "reviewFlags": [],
+      "primaryRefs": [
+        "https://www.courts.go.jp/assets/hanrei/hanrei-pdf-92906.pdf#page=3"
+      ]
+    },
+    "scope": "targeted missing primary fact; no full re-review"
+  },
+  {
+    "id": "sharoushi-2026-sentaku-q01",
+    "field": "D",
+    "before": {
+      "id": "D",
+      "answerOptionId": 5,
+      "answerText": "300人",
+      "explanation": "総括安全衛生管理者の選任基準は業種で異なる。製造業(物の加工業を含む)は常時300人以上、屋外産業的な業種は100人以上、その他は1,000人以上と整理する。数値は令の定めの記憶による。",
+      "evidenceStatus": "not-directly-verified",
+      "reviewFlags": [
+        "numeric-value-from-memory"
+      ]
+    },
+    "after": {
+      "id": "D",
+      "answerOptionId": 5,
+      "answerText": "300人",
+      "explanation": "出題基準日（2026年4月10日）の労働安全衛生法施行令2条2号は、製造業（物の加工業を含む。）の選任基準を常時300人以上と定める。同条1号の林業・鉱業・建設業・運送業・清掃業は100人以上、3号のその他の業種は1,000人以上であり、製造業は300人の区分に入る。",
+      "evidenceStatus": "direct-primary-verified",
+      "reviewFlags": [],
+      "primaryRefs": [
+        "https://laws.e-gov.go.jp/law/347CO0000000318_20260401_507CO0000000361"
+      ]
+    },
+    "scope": "targeted missing primary fact; no full re-review"
+  },
+  {
+    "id": "sharoushi-2026-sentaku-q06",
+    "field": "E",
+    "before": {
+      "id": "E",
+      "answerOptionId": 3,
+      "answerText": "573",
+      "explanation": "標準賞与額は年度(4月〜翌3月)の累計が573万円を超えないよう決定する。超える場合は累計573万円となる額とし、翌月以降の賞与は零。厚生年金の1回150万円上限と混同しない。",
+      "evidenceStatus": "not-directly-verified",
+      "reviewFlags": [
+        "numeric-value-from-memory"
+      ]
+    },
+    "after": {
+      "id": "E",
+      "answerOptionId": 3,
+      "answerText": "573",
+      "explanation": "健康保険法45条1項は、標準賞与額の年度（4月1日から翌年3月31日）累計上限を573万円と定める。上限に達する月は累計が573万円になる額を決定し、その翌月以降の同年度の標準賞与額は零となる。厚生年金の標準賞与額は1か月150万円が上限であり、年度単位の健康保険とは区別する。",
+      "evidenceStatus": "direct-primary-verified",
+      "reviewFlags": [],
+      "primaryRefs": [
+        "https://laws.e-gov.go.jp/law/211AC0000000070_20260401_507AC0000000087",
+        "https://www.nenkin.go.jp/service/yougo/hagyo/hyojunshoyo.html"
+      ]
+    },
+    "scope": "targeted missing primary fact; no full re-review"
+  },
+  {
+    "id": "sharoushi-2026-sentaku-q08",
+    "field": "C",
+    "before": {
+      "id": "C",
+      "answerOptionId": 2,
+      "answerText": "2年",
+      "explanation": "起算点から2年を経過したときは請求できない。請求期限は2年。出題時点(令和8年4月10日)の条文数値を採用しており、5年などへの置換は行わない。",
+      "evidenceStatus": "not-directly-verified",
+      "reviewFlags": [
+        "numeric-value-from-memory"
+      ]
+    },
+    "after": {
+      "id": "C",
+      "answerOptionId": 2,
+      "answerText": "2年",
+      "explanation": "出題基準日（2026年4月10日）の国民年金法附則9条の3の2第1項3号は、最後に被保険者資格を喪失した日から起算して2年を経過している場合を請求対象から除く。その日に国内住所があった者は、その後初めて国内住所を有しなくなった日が起算点になる。離婚時の年金分割の請求期限とは別制度である。",
+      "evidenceStatus": "direct-primary-verified",
+      "reviewFlags": [],
+      "primaryRefs": [
+        "https://laws.e-gov.go.jp/law/334AC0000000141_20260401_507AC0000000074"
+      ]
+    },
+    "scope": "targeted missing primary fact; no full re-review"
+  }
+]

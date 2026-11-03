@@ -1,0 +1,96 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20240818",
+  "subject": "machinery",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 7829,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 21860,
+      "webSearchRequests": 0,
+      "costUSD": 0.3317238,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 5541,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "9f9ff70f4ad52dfde46ebaf8d2e85d72863b599a4624a1f4d3533be95cbc8943",
+  "inputRequestSha256": "fbd759fe74a5d4b251b55e823c8a4881c9ba7f7e53451b1e1edfbd3cf13fbb4d",
+  "inputHashes": {
+    "candidateSha256": {
+      "q16a": "5e6ee6a9932b454b58454274b9c8f63f3ca6ca375fdbd41ccc72dc794b34d558",
+      "q16b": "001eca18a69ce61cf0f00d22b3b683421f4b97169ea1ff9f8356f90b9f281ae6"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20240818/machinery/p22.png": "c26606cae91acdca88de7470ef0d62542468a3965ac4c41f03d180eec351c38c",
+      "data/raw_pdfs/denken3/review/20240818/machinery/p23.png": "7a80704b9bce767025e5a36dc0f02b9c1c414054694195aaf65a825badccd9e1"
+    },
+    "figureSha256": {
+      "public/images/denken3/20240818/machinery/20240818-machinery-q16-inverter-circuit.png": "3b0bd667e5ee7feea55ce672d7b23928e89f7b9ccdba8578513d2d48cbfb63a1",
+      "public/images/denken3/20240818/machinery/20240818-machinery-q16-inverter-waveform.png": "6dec55ebdd7a6a90642fb7ee8881743b66f6c0e6b39e041051f19968bc39c883"
+    },
+    "sourceQuestionPdfSha256": "ff8ff270bbe1ea125e92f213d011afde969d0d2b9fa2e17a7caa2b5cd6673e2a",
+    "sourceAnswerPdfSha256": "f72ecbc3a477e64948388b69cf78cb931032c9f0c688639836c8d533a949cd0f",
+    "officialAnswerUnitsSha256": "41d8345ba0c00be234741c15e0ca7f8fc5e821bbe2f41d013c5f3de76979371e",
+    "referencePdfSha256": {},
+    "referencePageSha256": {},
+    "referenceJsonSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q16a",
+      "questionNumber": 16,
+      "part": "a",
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "出典メタデータ: fiscalYear=2024、term=upper、examDate=2024-08-18、subject=machinery、reviewedFromPage=[22,23]、問題PDF/解答PDFのURLがmanifestと一致する。原図頁フッタのT1-K 022/023とも整合する。sourceAttributionの『令和6年度上期』は2024年度上期に対応する。",
+        "公式解答表（令和6年度上期・機械）で問16(a)=5を確認した。候補のofficialAnswer=5と一致する。",
+        "共通問題文（IGBT単相ブリッジ電圧形インバータ、Ed一定、L・R誘導性負荷、v0・i0は図2、動作モード①〜④は周期Tで繰返し、デッドタイムは考慮しない）は原図と一致する。読点の省略のみで、意味は変わらない。",
+        "(a)の設問文は原図と一致する。選択肢(1)〜(5)の①〜④各欄（D2-D3/Q2-Q3/D1-D4/Q1-Q4、Q2-Q3/Q2-Q3/Q1-Q4/Q1-Q4、Q1-Q4/Q1-Q4/Q2-Q3/Q2-Q3、Q1-D3/Q1-Q4/Q2-D4/Q2-Q3、D1-D4/Q1-Q4/D2-D3/Q2-Q3）も原図の表と全て一致する。",
+        "極性の検算: 左脚中点は上側出力端子を経てLの上端につながる。右脚中点は下側端子を経てRの下端につながる。i0の矢印は下向き（左脚中点→負荷→右脚中点）で、v0の矢印先端は上側端子にある。したがってQ1・Q4オンでv0=+Ed、Q2・Q3オンでv0=−Edとなる。",
+        "①（v0=+Ed、i0<0）: 電流は負母線→D4（アノード負母線、カソード右中点）→負荷を上向き→左中点→D1→正母線と流れ、D1-D4経路となる。③（v0=−Ed、i0>0）: 電流は負母線→D2→左中点→負荷を下向き→右中点→D3→正母線と流れ、D2-D3経路となる。②はQ1-Q4、④はQ2-Q3が導通する。以上から正答(5)が成立する。",
+        "誤答(4)の検算: Q1-D3は両端子を正母線に、Q2-D4は両端子を負母線に接続するのでv0=0となる。また、Q1-D3はi0>0、Q2-D4はi0<0の向きにしか電流を流せない。候補の理由記述はこれと一致する。",
+        "誤答(1)(2)(3)の理由（対角割当ての逆転、半周期内でスイッチとダイオードの切替えがないこと、IGBTの逆方向導通の不成立）はいずれも正しい。",
+        "公開候補図（inverter-circuit.png）は原図図1と同一である。電源、コンデンサ、Q1〜Q4、D1〜D4、出力端子、L、R、i0、v0、Edの接続・向き・ラベルに欠落はない。",
+        "公開候補図（inverter-waveform.png）は原図図2と同一である。①〜④、±Ed、±Ip、T[s]、τ[s]の接線、t[s]軸、区間境界の破線に欠落はない。公開図だけで(a)を解答できる。",
+        "officialReferenceUrlsは空である。検証すべき独立主張はない。"
+      ]
+    },
+    {
+      "unitKey": "q16b",
+      "questionNumber": 16,
+      "part": "b",
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [
+        "総合解説の『電流が最終的に向かう定常値（Ed/R）や、その途中経過点である-Ip、+Ipの具体的な値』は不正確である。−Ipは区間①の初期値であり、定常値へ向かう途中経過点ではない。また図2ではi0が+Ipで平坦になっており、+Ipは最終値（≈Ed/R）にほぼ相当する。この点は choiceExplanations(3) の『始値−Ipや終値+Ip』という記述とも食い違う。『時定数は初期値−Ipや最終値（+Ip≈Ed/R）には依存せず、LとRのみで決まる』のように修正すること。"
+      ],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "出典メタデータ（2024年度上期、2024-08-18、機械、PDF第22〜23頁、問題/解答PDFのURL）はmanifestと一致する。",
+        "公式解答表（令和6年度上期・機械）で問16(b)=2を確認した。候補のofficialAnswer=2と一致する。",
+        "(b)の設問文（Ed=100 V、L=2 mH、R=1 Ω、区間①②で−Ipから+Ipまで時定数τで増加、τに最も近い値）は原図と一致する。選択肢0.001/0.002/0.0032/0.0063/0.02も原図と一致する。",
+        "検算: 区間①②の回路方程式はEd=L·di0/dt+R·i0である。τ=L/R=2×10⁻³ H/1 Ω=0.002 sとなり、選択肢(2)に一致する。",
+        "誤答理由の検算: 0.001は0.002の1/2、0.0032は0.002より0.0012長い、0.0063は約3.15倍、0.02は10倍である（0.02 Hではない）。いずれの数値関係も正しい。",
+        "図2のτの表示（区間①開始点での接線が+Ipレベルに達するまでの時間）は、+Ip≈Ed/R=100 Aとする一次遅れ応答の時定数の定義と整合する。",
+        "公開候補図2点は原図図1・図2と同一である。ラベル・接続・τ表示に欠落はなく、公開図だけで理解できる。",
+        "officialReferenceUrlsは空である。検証すべき独立主張はない。"
+      ]
+    }
+  ]
+}

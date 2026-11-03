@@ -1,0 +1,39 @@
+{
+  "status": "partial-accepted",
+  "date": "20240818",
+  "subject": "law",
+  "questionCount": 1,
+  "answerUnitCount": 1,
+  "choiceCount": 5,
+  "sourceQuestionPdfSha256": "5dbba8b8e4ec681d2d5f0645a3895a6e218d936519ddd18ac544ddc461a1ae78",
+  "sourceAnswerPdfSha256": "f72ecbc3a477e64948388b69cf78cb931032c9f0c688639836c8d533a949cd0f",
+  "reviewedDataSha256": "2137ddc0789ba15af5d4b30ee2ff6ed43eda24a65e7f4b22180a09d0a7a01320",
+  "questions": [
+    {
+      "number": 4,
+      "sourceDraftSha256": "e51ea138504dbcc78d538a5188e99b41d929f7899471060870cfff16925f9dc3",
+      "opusReceipt": "data/raw_pdfs/denken3/review/20240818/law/q04-opus-review.json",
+      "opusReceiptSha256": "9b9a063f8664d84274d6579c8c1560f9177fbdd77780df761a8bac8f47e7a62d",
+      "assessment": {
+        "number": 4,
+        "status": "PASS",
+        "textIssues": [],
+        "choiceIssues": [],
+        "explanationIssues": [],
+        "figureIssues": [],
+        "externalSourceIssues": [
+          "要外部確認: 解説は電気設備技術基準の解釈 第21条を根拠にしており、条番号・号番号（第1号、第2号イ〜ハ、第4号、第5号イ）、工場等の構内でロ・ハを省略できるただし書き、簡易接触防護措置の定義（第1条）を挙げている。これらは問題PDFの画像だけでは確定できない。officialReferenceUrls（経済産業省PDF #page=35）の現行版で、条文と頁番号を照合すること。"
+        ]
+      },
+      "figureSha256": {}
+    }
+  ],
+  "strictReview": {
+    "q04": {
+      "path": "docs/evidence/denken3/strict/20240818-law-l13-q04-q05-opus.json",
+      "sha256": "1d44d13b728061474e8d39a27d5b0a68fbda939c54423bead1a274f2654e42a4",
+      "status": "PASS",
+      "resolvedModel": "claude-opus-5-5"
+    }
+  }
+}

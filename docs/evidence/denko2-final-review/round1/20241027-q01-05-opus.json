@@ -1,0 +1,72 @@
+{
+  "schemaVersion": 1,
+  "reviewModel": "claude-opus-5-5",
+  "inputHashes": {
+    "reviewedSha256": "1a6631a4180b695a57e720843f227f240432b259dcde47e3eae5766ea5c1a3d8",
+    "rowSha256": {
+      "1": "63d0ef8f0f6ca411bbd33df403011756298c9db14233f7673c1b304e5a91c4ad",
+      "2": "4be56085253f9784979b7f2361caabddf295941df67f5b0f6f2f100d9a4e3beb",
+      "3": "4233bb40b72fa9ca97032d18746fe2a888800a4a182b6cafe649652f4314ba56",
+      "4": "a2f297b2b95471fd4cfa0ba00b44bd0a86df3642411bffe3e67a051708d0e974",
+      "5": "efacba95a7353368248752c6d674962cd6a1d86672b1ac72a339a748335efa69"
+    }
+  },
+  "assessment": [
+    {
+      "number": 1,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "visualIssues": [],
+      "lawIssues": []
+    },
+    {
+      "number": 2,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "visualIssues": [],
+      "lawIssues": []
+    },
+    {
+      "number": 3,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [
+        "choiceExplanations.イ: 「抵抗値を0.05Ωと誤って代入する」という誤答の由来に根拠がない。問題文に0.05Ωと取り違えるような要素はない。この推測は削除し、「720 kJと一致しない(720の1/10の値)」のように、確かめられる事実だけを書くこと。",
+        "choiceExplanations.ニ: 「時間tを2時間として計算する」という誤答の由来に根拠がない。問題文は「1時間」と明記しており、2時間と取り違える理由がない。なお1440 kJは、抵抗0.5Ωを掛けずにI²t=20²×3600=1 440 000 J=1440 kJとした値と計算上一致する。由来を書くならこの事実に置き換え、書かないなら「一致しない」だけにとどめること。"
+      ],
+      "visualIssues": [],
+      "lawIssues": []
+    },
+    {
+      "number": 4,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "visualIssues": [],
+      "lawIssues": []
+    },
+    {
+      "number": 5,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [
+        "choiceExplanations.ロ: 「力率の式の分子と分母を逆にした形(√3VI/(Wt))」は誤り。正答W/(√3VIt)の分子と分母を逆にすると√3VIt/Wになり、tが分子に来る。ロの√3VI/(Wt)ではtが分母にあるので、単純な逆数ではない。記述を正確に直すこと。例:「√3VIを分子、Wtを分母に置いた式であり、正しい式W/(√3VIt)とは構造が異なる。Wtは電力量W[kW・h]にさらに時間を掛けた量で、物理的な意味を持たない」。",
+        "choiceExplanations.ハ: 「電力量Wを時間で割って平均電力に変換する手順の省略、√3と3の取り違え、分子・分母の逆転が重なった形に一致する」は、3つの誤りが重なったという由来の推測で、根拠がない。式の形の違い(tがない、√3ではなく3、分子と分母が正しい式と逆)を書くだけにとどめることを推奨する。"
+      ],
+      "visualIssues": [],
+      "lawIssues": []
+    }
+  ]
+}

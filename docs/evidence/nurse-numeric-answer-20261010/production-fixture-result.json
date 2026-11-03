@@ -1,0 +1,76 @@
+{
+  "observedAtUtc": "2026-10-10T03:23:04.477Z",
+  "url": "http://127.0.0.1:3314/numeric-local-check",
+  "localProductionBuild": true,
+  "fixtureOnly": true,
+  "registryChanges": 0,
+  "gitPushes": 0,
+  "claudeRequests": 0,
+  "checks": [
+    {
+      "name": "original numeric form starts unanswered, with no invented choices or visible official answer",
+      "status": "PASS"
+    },
+    {
+      "name": "mixed text is rejected without grading or history",
+      "status": "PASS"
+    },
+    {
+      "name": "Enter normalizes full-width digits, grades once, reveals explanation, and does not advance",
+      "status": "PASS"
+    },
+    {
+      "name": "return navigation and reload retain history, last position and unanswered filtering",
+      "status": "PASS"
+    },
+    {
+      "name": "reentering the original resets visible input/results while retaining the saved outcome",
+      "status": "PASS"
+    },
+    {
+      "name": "production render reports no uncaught browser exceptions",
+      "status": "PASS"
+    }
+  ],
+  "screenshots": [
+    "mobile-unanswered.png",
+    "mobile-graded.png",
+    "mobile-history-return.png",
+    "desktop-unanswered-after-return.png"
+  ],
+  "consoleErrors": [],
+  "persistedOutcome": {
+    "history": {
+      "entries": [
+        {
+          "id": "kangoshi-2025-annual-am-q90",
+          "selected": "42",
+          "correct": true,
+          "at": 1791602586216
+        }
+      ],
+      "starredIds": []
+    },
+    "last": {
+      "exam": "kangoshi",
+      "year": 2025,
+      "season": "annual",
+      "session": "am",
+      "qNumber": 90,
+      "answeredAt": 1791602586216
+    },
+    "review": {
+      "cards": {
+        "kangoshi-2025-annual-am-q90": {
+          "id": "kangoshi-2025-annual-am-q90",
+          "ef": 2.5,
+          "reps": 1,
+          "intervalDays": 1,
+          "dueAt": 1791688986216,
+          "lastReviewedAt": 1791602586216
+        }
+      }
+    }
+  },
+  "status": "PASS"
+}

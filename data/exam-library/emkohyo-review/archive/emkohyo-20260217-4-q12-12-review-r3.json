@@ -1,0 +1,55 @@
+{
+  "reviewModel": "claude-opus-5-5",
+  "requestedModel": "claude-opus-5-5",
+  "canonicalModel": "claude-opus-5-5",
+  "provider": "firstParty",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 1395,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 12618,
+      "webSearchRequests": 0,
+      "costUSD": 0.1291078,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 1002,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponsePath": "data/exam-library/emkohyo-review/emkohyo-20260217-4-q12-12-raw-response.txt",
+  "rawResponseSha256": "45f2fdf7da16fb823ca83c81b2eb49604143086138b7492539766db3c4781366",
+  "paperId": "emkohyo-20260217-4",
+  "ids": [
+    "emkohyo-20260217-4-q12"
+  ],
+  "figureSha256": {
+    "emkohyo-20260217-4-q12": {}
+  },
+  "officialRowImageSha256": {
+    "emkohyo-20260217-4-q12": {
+      "/exam-library/emkohyo-20260217-4/q12-p7-1.webp": "3ab971411b472d2cf4f82d8a72aedb553aa61bb24b13d28a3545d2902f58e8a5"
+    }
+  },
+  "officialPageImageSha256": {},
+  "governmentSourceImageSha256": {},
+  "candidateSha256": {
+    "emkohyo-20260217-4-q12": "78423e927d8a6fceb6ed4a4cd7457de054813f20f1e2f5c8d56c80a65126f274"
+  },
+  "sourcePackPath": "docs/evidence/emkohyo-choice-sources/emkohyo-20260217-4-q12-12.json",
+  "sourcePackSha256": "c812ff12cbc0ce76436e733dc6c92a713c66919f2fc6443b170e6392d084c2a3",
+  "assessment": {
+    "emkohyo-20260217-4-q12": {
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "reasonIssues": [],
+      "sourceIssues": [
+        "肢5の理由のうち「平衡定数が大きい」の部分は、添付の政府資料が直接支えていない。環境省『化学分析の基本操作』p.40が挙げる滴定の条件は「1)反応が定量的に進行すること。2)反応速度が大きいこと。」だけで、平衡定数という語も、それに相当する記述もない。現候補の理由は「一般的な化学平衡の考え方による」と推論であることを明記しているので、結論（肢5は正しい記述）は妥当である。ただし出典で直接裏付けられているのは反応速度の部分だけで、平衡定数の部分は出典外の推論にとどまる。平衡定数に言及した一次資料（JIS K 8001／K 8005 等の容量分析関連規格、または政府公表の分析教材）を追加するか、sources の説明で直接支える範囲が反応速度だけであることを示す必要がある。"
+      ],
+      "needsExternalCheck": []
+    }
+  }
+}

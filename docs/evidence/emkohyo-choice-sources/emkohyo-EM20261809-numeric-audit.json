@@ -1,0 +1,21 @@
+{
+  "checks": [
+    {
+      "id": "emkohyo-EM20261809-q8",
+      "officialRowSha256": "accd5af32adb20a94f93119e1275c2dec0939e263245ee0e545f60682cd316af",
+      "formula": "3*sqrt(2)*sqrt(60*20)/20/60/0.10 Bq",
+      "result": 1.2247448713915892,
+      "choiceValues": [
+        0.012,
+        0.55,
+        1.2,
+        5.5,
+        12.0
+      ],
+      "computedChoice": 3,
+      "officialChoice": 3
+    }
+  ],
+  "passed": 1,
+  "acceptance": "none; per-choice explanation review remains required"
+}

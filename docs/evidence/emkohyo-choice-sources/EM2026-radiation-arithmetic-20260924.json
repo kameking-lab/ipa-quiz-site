@@ -1,0 +1,100 @@
+{
+  "questions": [
+    {
+      "id": "emkohyo-EM20261809-q6",
+      "formula": "250 Bq*(0.68 beta2 + 0.24 beta1*(1/2 gamma2 branch))*(1-0.50 internal conversion)",
+      "value": 100.0,
+      "unit": "photons/s",
+      "printedChoices": [
+        10,
+        15,
+        85,
+        100,
+        200
+      ],
+      "nearestChoice": 4,
+      "officialChoice": 4,
+      "rowTextSha256": "346952bc51dc678f4b1e9c0db4e239f3fe2a7401c187611ad0470e9eb6a257d8",
+      "officialImageSha256": {
+        "/exam-library/emkohyo-EM20261809/q6-p4-1.webp": "5f28e0740e6ca3cd2d0ba5698eacf62bc72b720ebe76a10c225e75ba5a5ae87e"
+      }
+    },
+    {
+      "id": "emkohyo-EM20261809-q8",
+      "formula": "(3*sqrt(2)*sqrt(60 cpm*20 min)/20 min)/(0.10*60 s/min)",
+      "value": 1.2247448713915894,
+      "unit": "Bq",
+      "printedChoices": [
+        0.012,
+        0.55,
+        1.2,
+        5.5,
+        12
+      ],
+      "nearestChoice": 3,
+      "officialChoice": 3,
+      "rowTextSha256": "accd5af32adb20a94f93119e1275c2dec0939e263245ee0e545f60682cd316af",
+      "officialImageSha256": {
+        "/exam-library/emkohyo-EM20261809/q8-p5-1.webp": "1f403326a981917ff8183de3b55eaca332caae8bfb501b01625bb1dc33688083"
+      }
+    },
+    {
+      "id": "emkohyo-EM20261809-q9",
+      "formula": "sqrt(3600/(1000 s)^2 + 900/(3000 s)^2)",
+      "value": 0.0608276253029822,
+      "unit": "s^-1",
+      "printedChoices": [
+        0.02,
+        0.06,
+        0.2,
+        0.6,
+        2
+      ],
+      "nearestChoice": 2,
+      "officialChoice": 2,
+      "rowTextSha256": "7d83a90944840803a5c19e301afd75c203a4065ffb02c0d5097f3c5c380ddbba",
+      "officialImageSha256": {
+        "/exam-library/emkohyo-EM20261809/q9-p6-0.webp": "eb97e955f7a99617f4042d02c9f212939bc14e9dd51d8a0040fcaf37326ad2f6"
+      }
+    },
+    {
+      "id": "emkohyo-EM20261809-q16",
+      "formula": "4 Bq*2^(48 h/12 h)/(1.2 L*1000 cm3/L)",
+      "value": 0.05333333333333334,
+      "unit": "Bq/cm3",
+      "printedChoices": [
+        0.053,
+        0.082,
+        0.13,
+        0.27,
+        0.64
+      ],
+      "nearestChoice": 1,
+      "officialChoice": 1,
+      "rowTextSha256": "c624a935d2af899e89c2a7687c16f861397d1a1d7a59e577412aa2d5f6f6df3b",
+      "officialImageSha256": {
+        "/exam-library/emkohyo-EM20261809/q16-p9-1.webp": "e603f1cd3ecfe164755bcded87ce814c6ab911163e36bc623e44cb81831fa0dc"
+      }
+    },
+    {
+      "id": "emkohyo-EM20261809-q18",
+      "formula": "(7.0e-7 Bq/cm3 /10)*((100+87)/2 L/min*168*60 min*1000 cm3/L)*0.22",
+      "value": 14.514192000000001,
+      "unit": "s^-1",
+      "printedChoices": [
+        0.24,
+        0.97,
+        8.3,
+        14,
+        60
+      ],
+      "nearestChoice": 4,
+      "officialChoice": 4,
+      "rowTextSha256": "9aff30552dbbc95edc8c640c01970349b7b292fd3cabf36e1ceeafb3c0c3a45d",
+      "officialImageSha256": {
+        "/exam-library/emkohyo-EM20261809/q18-p10-1.webp": "647bb4e6d3e9104925da4244507e03edc0f3447bd19157d7ae55f3ef6833bd18"
+      }
+    }
+  ],
+  "acceptance": "arithmetic only; five-choice explanations and government-source review pending"
+}

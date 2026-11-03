@@ -1,0 +1,53 @@
+{
+  "reviewModel": "claude-opus-5-5",
+  "requestedModel": "claude-opus-5-5",
+  "canonicalModel": "claude-opus-5-5",
+  "provider": "firstParty",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 2089,
+      "cacheReadInputTokens": 133532,
+      "cacheCreationInputTokens": 19922,
+      "webSearchRequests": 0,
+      "costUSD": 0.2278704,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 1727,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "paperId": "emkohyo-20260217-2",
+  "ids": [
+    "emkohyo-20260217-2-q7"
+  ],
+  "figureSha256": {
+    "emkohyo-20260217-2-q7": {}
+  },
+  "officialRowImageSha256": {
+    "emkohyo-20260217-2-q7": {
+      "/exam-library/emkohyo-20260217-2/q7-p5-1.webp": "d2ee4bac1e08d9ded231063f585238f91bbfae975ac39b9abdf4a80e7466fda5"
+    }
+  },
+  "governmentSourceImageSha256": {},
+  "candidateSha256": {
+    "emkohyo-20260217-2-q7": "c1e918ac433790aab5c7c3da29deb8bb343584c55a467d85a17d10dcb1a86a7e"
+  },
+  "sourcePackPath": "docs/evidence/emkohyo-choice-sources/emkohyo-20260217-2-q07-07.json",
+  "sourcePackSha256": "aa51013b5f80d18843ff5af92ccc1e43f8621ee947461db1a6e4a544b4f222e5",
+  "assessment": {
+    "emkohyo-20260217-2-q7": {
+      "status": "FIX",
+      "textIssues": [
+        "The reasons are written in two different styles. Choices 1, 2 and 5 use plain form (「〜ではない」「〜正しい」「〜一致する」), while choices 3 and 4 use polite form (「〜必要です」「〜合致します」「〜対象です」「〜誤りです」). Rewrite choices 3 and 4 in plain form to match the rest.",
+        "Choice 3 ends with 「表の3欄は合致します」. This can be misread as \"column 3 (Ⓒ)\" or \"row 3 of the table\" instead of \"all three columns Ⓐ, Ⓑ and Ⓒ\". Change it to 「Ⓐ・Ⓑ・Ⓒの3欄とも一致する」 to match choice 5."
+      ],
+      "choiceIssues": [],
+      "reasonIssues": [],
+      "sourceIssues": [],
+      "needsExternalCheck": []
+    }
+  }
+}

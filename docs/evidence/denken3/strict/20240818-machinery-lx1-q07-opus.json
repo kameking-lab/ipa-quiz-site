@@ -1,0 +1,70 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20240818",
+  "subject": "machinery",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 4617,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 17125,
+      "webSearchRequests": 0,
+      "costUSD": 0.2296038,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 2718,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "eb3380dd0fa5fb4fcac23f18375d9b23099cb5f57a76c52d27441a58f6f55088",
+  "inputRequestSha256": "206d1eb79dc4432c173be911a760c5b0db2cd4303da4eafdb8f16f5e160fc300",
+  "inputHashes": {
+    "candidateSha256": {
+      "q07": "3d3cb14a3e627629073768f59beedc6be2fd0ccca7c91f3b2fe281e05595364c"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20240818/machinery/p10.png": "da19b4b6f0308d29e01e1e25627621cac2aa2be99792ca58411a7cd0a3263116",
+      "data/raw_pdfs/denken3/review/20240818/machinery/p11.png": "ec51608fe3c44917a7dc851345b512b68068de72ca760c367d1307cca7db6d7f"
+    },
+    "figureSha256": {},
+    "sourceQuestionPdfSha256": "ff8ff270bbe1ea125e92f213d011afde969d0d2b9fa2e17a7caa2b5cd6673e2a",
+    "sourceAnswerPdfSha256": "f72ecbc3a477e64948388b69cf78cb931032c9f0c688639836c8d533a949cd0f",
+    "officialAnswerUnitsSha256": "de2520b3047d59147c23c352ff61012b6336a43d0888892826fef5e44778de7a",
+    "referencePdfSha256": {},
+    "referencePageSha256": {},
+    "referenceJsonSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q07",
+      "questionNumber": 7,
+      "part": null,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [
+        "総合解説の文aの直流機の説明「それに応じて電機子電流＝トルクが変化する」は、電機子電流とトルクを等号で結んでいる。正しくは、磁束一定のとき T = KΦIa によりトルクは電機子電流に比例する（T∝Ia）。『電機子電流（∝トルク）が変化する』等に修正が必要。",
+        "choiceExplanations[1] は、(ア)誘導機が文cに当たらない理由を『誘導機は電機子という概念・用語を持たず』という用語の有無だけで断定している。この断定は強すぎる（文献によっては誘導機の巻線を電機子と呼ぶ例がある）。本質的な理由は、誘導機には独立した界磁（界磁巻線・界磁磁束）がなく、ギャップ磁束が一次巻線の励磁電流でつくられる点にある。したがって文cの『界磁磁束と電機子反作用磁束のベクトル和』という構図が成立しない。この理由に基づく記述へ修正が必要。",
+        "choiceExplanations[4] は『二重に不整合』としているが、実際には文a・b・cの3つすべてに不整合がある。文a：(ア)同期機は回転速度が一定。文b：(イ)直流機は一次巻線に負荷電流と励磁電流を重畳して流す機器ではなく、直流機・誘導機の組でもない。文c：(エ)変圧器は電機子・界磁を持たない。文bの不整合が抜けているため、『三重に不整合』とし文bの理由を追記する必要がある。",
+        "choiceExplanations[5] の文aの理由は『電圧・周波数一定下で』とだけ述べ、問題文の前提『磁束の大きさ一定』が抜けている。直流機には周波数条件が適用されない点も明示されていない（問題文は『交流機では周波数も』）。『磁束一定・電源電圧（交流機の誘導機では周波数も）一定のもとで』と条件を正確に記述する必要がある。"
+      ],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "出典メタデータ：添付原図のフッターは『- 7 - / T1−K 010』『- 8 - / T1−K 011』であり、manifest の PDF 第10・11頁と一致する。reviewedFromPage=[10,11] は正しい。fiscalYear=2024（令和6年度）、term=upper（上期）、examDate=2024-08-18、subject=machinery、sourceQuestionPdfUrl（…_q03.pdf）、sourceAnswerPdfUrl（…_a01.pdf）、sourceAttribution はいずれも manifest と一致する。",
+        "問題文：原図 p.10 の柱書、文a・b・c、原図 p.11 の設問文を照合した。語句・括弧・（交流機では周波数も）の注記まで一致し、欠落・改変はない。空白箇所は（ア）〜（エ）として判別可能。",
+        "選択肢：原図 p.11 の表と5肢すべてを照合し、一致を確認した。(1)誘導機/直流機/変圧器/同期機、(2)同期機/直流機/変圧器/誘導機、(3)直流機/誘導機/同期機/変圧器、(4)同期機/直流機/誘導機/変圧器、(5)直流機/誘導機/変圧器/同期機。",
+        "公式正答：解答PDF原図の＜機械＞問7は『5』で、manifest 固定の正答単位 {question:7, answer:\"5\"} および候補の officialAnswer=\"5\" と一致する。",
+        "独立検算：文a の候補は{直流機, 誘導機}。同期機は同期速度で一定、変圧器は非回転のため除外。文b の候補は{誘導機, 変圧器}（T形等価回路が類似し、一次巻線に負荷電流と励磁電流が重畳する）。文c の候補は{直流機, 同期機}（電機子反作用と界磁磁束の合成磁束による起電力）。(ア)={直流機,誘導機}∩{直流機,同期機}=直流機、(イ)={直流機,誘導機}∩{誘導機,変圧器}=誘導機、(ウ)=変圧器、(エ)=同期機。この組合せは選択肢(5)と一致し、総合解説の論理構成と結論は正しい。",
+        "誤答肢の検算：(1)は(ア)誘導機が文c、(イ)直流機が文bに不適。(2)は(ア)同期機が文a、(イ)直流機が文b、(エ)誘導機が文cに不適。(3)は(ウ)同期機が文b、(エ)変圧器が文cに不適。(4)は文a・b・cのすべてに不適。各誤答肢の説明の結論（誤り）自体は正しい。",
+        "図：本問は文章・組合せ表のみで回路図等はない。選択肢表はテキストで完全に再現されているため、figureDescription=null、figureUrls=[] で問題ない。",
+        "参考資料：officialReferenceUrls は空で、検証を要する独立主張はない。"
+      ]
+    }
+  ]
+}

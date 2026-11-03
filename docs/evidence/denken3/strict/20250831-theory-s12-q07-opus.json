@@ -1,0 +1,84 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20250831",
+  "subject": "theory",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 4262,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 14498,
+      "webSearchRequests": 0,
+      "costUSD": 0.2014878,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 2119,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "8b0245bf2e947ee6a9f30c8e15cfd273b4e1c20802fae4270cb3be55c3ae3ed3",
+  "inputRequestSha256": "12098c22bf039ebf2506aca4ecf0c75fef0a48c579ee409720dc60c58cdb9edb",
+  "inputHashes": {
+    "candidateSha256": {
+      "q07": "3be04f9478ed9aa4ccbc8250e483134d90a76eb60957cbcce16624abcbfd9a08"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20250831/theory/p10.png": "6dfdba488e2d253d508595df3695e2a4bd3eaba8960e7b00933a82dd882225d5"
+    },
+    "figureSha256": {
+      "public/images/denken3/20250831/theory/20250831-theory-q07-fig1.png": "f5f4265f2e4377beadf69b9ea13c8b4c9d786f54b68e9f7fad963f4809587aa4"
+    },
+    "sourceQuestionPdfSha256": "11a75ffd5dd2b5309ad75370bb963c4fda9e12a812174cfa2c2237383c3a964d",
+    "sourceAnswerPdfSha256": "76fd3715ed487d19a56b387fb402de20ee09474e9fa55b0413f9037b96af06c9",
+    "officialAnswerUnitsSha256": "9a5cbdec7f18539027226f8bbaae0f1be131e67b15b2b1ed459765dc3e52aa61",
+    "referencePdfSha256": {},
+    "referencePageSha256": {},
+    "referenceJsonSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q07",
+      "questionNumber": 7,
+      "part": null,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [
+        "choiceExplanations[3]: 「電流比は 12/2.48 ≒ 4.85 倍」は表示した式どおりに計算すると一致しない。12/2.48 = 4.839… で、≒4.84 になる。4.85 は丸める前の全抵抗 2.476 Ω（12/2.476 = 4.846…）から得た値である。式と結果を揃える必要がある。修正案は「全抵抗は約 2.476 Ω、電流比は 12/2.476 ≒ 4.85 倍」、または「12/2.48 ≒ 4.84 倍」。結論（3 倍を大きく超えるので誤り）は変わらない。",
+        "choiceExplanations[4]: 「電流比は 12/3.30 ≒ 3.63 倍」は表示した式どおりに計算すると一致しない。12/3.30 = 3.636… で、四捨五入すると 3.64 になる。3.63 は丸める前の全抵抗 3.304 Ω（12/3.304 = 3.631…）から得た値である。修正案は「全抵抗は約 3.304 Ω、電流比は 12/3.304 ≒ 3.63 倍」、または「12/3.30 ≒ 3.64 倍」。結論（3 倍を超えるので誤り）は変わらない。"
+      ],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "出典メタデータ: 公式解答表の見出しは「令和7年度 第三種電気主任技術者上期試験解答」。令和7年度は2025年度なので、fiscalYear=2025、term=upper、examDate=2025-08-31、subject=theory は manifest と一致する。",
+        "sourceQuestionPdfUrl と sourceAnswerPdfUrl は manifest 記載の URL と完全に一致する。",
+        "reviewedFromPage=[10] は manifest の PDF 第10頁と一致する。原図の下部にある「-7-」は冊子のノンブル、「T1−R 010」は冊子の管理番号である。これらと PDF 頁番号の食い違いは問題にしない。",
+        "sourceAttribution の「令和7年度上期第三種電気主任技術者試験 理論科目 問7」は原図・解答表と一致する。整形した旨も明記されている。",
+        "問題文: 原図の問7本文と全文を照合した。語句・数値（2Ω、3倍）・単位[Ω]・指示文に差異はない。",
+        "選択肢: 原図の (1)2.5 (2)3.5 (3)0.5 (4)1.5 (5)4.5 と候補の choices 1〜5 は、番号と数値の対応がすべて一致する。",
+        "公式正答: 解答表の理論・問7は解答1・配点5。候補の officialAnswer=\"1\"、scoringPoints=5 と一致し、manifest の公式正答単位 {question:7, part:null, answer:\"1\", points:5} とも一致する。",
+        "総合解説の検算（S 開）: 回路は E−2Ω−10Ω の直列で、I_開 = E/12。",
+        "総合解説の検算（S 閉）: R_p = 10R/(10+R)、I_閉 = E/(2+R_p)。",
+        "条件 I_閉 = 3I_開 から 2+R_p = 4、R_p = 2 Ω。10R = 20+2R より 8R = 20、R = 2.5 Ω で、正答(1)と一致する。",
+        "総合解説の検算の記述（R_p = 25/12.5 = 2、全抵抗 4 Ω、比 3）は正しい。",
+        "電流比は E に依存しない。E≠0 の前提で E の値や極性によらないとする記述は妥当である。",
+        "肢(1)の説明は正しい。10×2.5/12.5 = 2、全抵抗 4、12/4 = 3。",
+        "肢(2)の説明は正しい。35/13.5 = 2.593、全抵抗 4.593、12/4.593 = 2.613 ≒ 2.61。",
+        "肢(3)の数値: 5/10.5 = 0.476、全抵抗 2.476、真の比は 4.846。表示した式 12/2.48 との不一致は choiceIssues に記載した。",
+        "肢(4)の数値: 15/11.5 = 1.304、全抵抗 3.304、真の比は 3.631。表示した式 12/3.30 との不一致は choiceIssues に記載した。",
+        "肢(5)の説明は正しい。45/14.5 = 3.103、全抵抗 5.103、12/5.103 = 2.351 ≒ 2.35。",
+        "各誤答肢の結論の向き（R が大きいほど比は小さい）は正しい。(2)(5) は 3 倍未満、(3)(4) は 3 倍超で、単調性とも整合する。",
+        "公開候補図と原図の照合（ラベル）: 電流記号 I と右向き矢印、2Ω、E、電池記号、10Ω、S、R の全ラベルがそろっている。",
+        "公開候補図と原図の照合（接続・向き）: 上下2つの接続点（黒丸）の位置、開状態で描かれたスイッチ S と曲線矢印、R が 10Ω と並列になる接続、I 矢印が電源側の角と 2Ω の間にあることは、いずれも原図と一致する。欠落や切れはない。",
+        "図の必要性: R が 10Ω と並列であることは問題文からは分からず、図が解答に必須である。公開候補図だけで回路構成を正しく読み取れる。",
+        "figureDescription の接続説明（S 閉で R∥10Ω に 2Ω が直列、S 開で 2Ω+10Ω の直列）は、図とも解説とも整合する。",
+        "officialReferenceUrls は空で、外部確認が必要な独立主張はない。"
+      ]
+    }
+  ]
+}

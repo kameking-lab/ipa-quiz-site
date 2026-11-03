@@ -1,13 +1,14 @@
+import { questionSourceEdition, questionSourceExam } from "@/lib/questions/source-label";
 import { getAllQuestions } from "@/lib/questions/load";
 import type { Question } from "@/lib/questions/types";
 import { GLOSSARY } from "@/data/glossary";
 import type { GlossaryTerm } from "@/data/glossary";
-import { examLabel, formatYearSeason } from "@/lib/utils";
 import { questionPagePath } from "@/lib/seo/question-url";
 import type { CorpusDoc } from "./types";
 import { GLOSSARY_ALIASES } from "./aliases";
+import { isPracticeReadyQuestion } from "@/lib/questions/filter";
 
-function buildQuestionDoc(q: Question): CorpusDoc {
+export function buildQuestionDoc(q: Question): CorpusDoc {
   // 検索対象文書は「問題文 + 選択肢 + 解説 + タグ + カテゴリ」を統合。
   // カテゴリとタグは BM25 でやや弱くなりがちなので 2 回繰り返してフィールド重みを上げる。
   const choiceText = q.choices
@@ -31,7 +32,7 @@ function buildQuestionDoc(q: Question): CorpusDoc {
   return {
     id: `q:${q.id}`,
     kind: "question",
-    title: `${examLabel(q.exam)} ${formatYearSeason(q.year, q.season)} 問${q.qNumber} / ${q.category}`,
+    title: `${questionSourceExam(q)} ${questionSourceEdition(q)} 問${q.qNumber} / ${q.category}`,
     // 引用カード/関連問題のリンク先は、正規の indexable な静的問題ページ /q/* を指す。
     // 旧 `/quiz?id=` は (1) `mode` クエリが無いと next.config.ts の 308 でホームへ
     // リダイレクトされ、(2) /quiz ページは `id` を読まない ＝ 引用した問題ではなく
@@ -95,11 +96,11 @@ export function getCorpus(): CorpusDoc[] {
   if (CACHED_CORPUS) return CACHED_CORPUS;
   const docs: CorpusDoc[] = [];
   for (const q of getAllQuestions()) {
+    // Citation cards point at the direct question route, so use the same
+    // eligibility contract and never emit a citation to a 404.
+    if (!isPracticeReadyQuestion(q)) continue;
     // 解説が空 / placeholder のものは検索対象から外す
     if (!q.explanation || q.explanation.trim().length < 20) continue;
-    // needsReview の問題は /q ページが notFound()（404）を返すため、引用/関連問題の
-    // リンク先にすると死リンクになる。検索対象からも外す（パース不全のため教材価値も低い）。
-    if (q.needsReview) continue;
     docs.push(buildQuestionDoc(q));
   }
   for (const term of GLOSSARY) {

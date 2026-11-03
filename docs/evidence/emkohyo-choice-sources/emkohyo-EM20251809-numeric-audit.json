@@ -1,0 +1,36 @@
+{
+  "checks": [
+    {
+      "id": "emkohyo-EM20251809-q8",
+      "officialRowSha256": "36456684a31664e7f9b43a2f80d636f499b979636f03b590aef069d69e8bb36b",
+      "formula": "3*sqrt(2)*sqrt(150*30)/30/60/0.10 Bq",
+      "result": 1.5811388300841895,
+      "choiceValues": [
+        0.16,
+        0.86,
+        1.6,
+        8.6,
+        16.0
+      ],
+      "computedChoice": 3,
+      "officialChoice": 3
+    },
+    {
+      "id": "emkohyo-EM20251809-q16",
+      "officialRowSha256": "507bfbd32e0023fa387c951ffc82a023c4ff90bb4368c18b26e0983ea9ac874b",
+      "formula": "3*2**(48/8)/(1.1*1000) Bq/cm3",
+      "result": 0.17454545454545456,
+      "choiceValues": [
+        0.016,
+        0.019,
+        0.02,
+        0.17,
+        0.21
+      ],
+      "computedChoice": 4,
+      "officialChoice": 4
+    }
+  ],
+  "passed": 2,
+  "acceptance": "none; per-choice explanation review remains required"
+}

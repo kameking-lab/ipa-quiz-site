@@ -1,0 +1,87 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20240818",
+  "subject": "law",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 4,
+      "outputTokens": 5300,
+      "cacheReadInputTokens": 300324,
+      "cacheCreationInputTokens": 24605,
+      "webSearchRequests": 0,
+      "costUSD": 0.36292080000000004,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 3449,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "135fa04cf9e8d48acbb333ab1112ce02a7274ffe68ad60a9639aab8b76cf549d",
+  "inputRequestSha256": "89a2dd3cd1537fad369cd9fb4bf5884cfff9cd3e9876373fe5c3156d7f6c46e3",
+  "inputHashes": {
+    "candidateSha256": {
+      "q12a": "c514e9b4ad96b562fe2655c50a78cbbbfcaad97163d8083dbac74d71f7766f2c",
+      "q12b": "f5f381837b686e65266a6e6372e5f8f22209b78101efbf1e0c29d525b566cba2"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20240818/law/p18.png": "dbb30b2a3225d622c667fce434ec5934613a3010997ae9db72e9ed51747a990a"
+    },
+    "figureSha256": {
+      "public/images/denken3/20240818/law/20240818-law-q12-power-factor-circuit.png": "0acdc68d49f6f5d667d789a70764dd3318ee155ef02cf6dbe22d12ccaed7b221"
+    },
+    "sourceQuestionPdfSha256": "5dbba8b8e4ec681d2d5f0645a3895a6e218d936519ddd18ac544ddc461a1ae78",
+    "sourceAnswerPdfSha256": "f72ecbc3a477e64948388b69cf78cb931032c9f0c688639836c8d533a949cd0f",
+    "officialAnswerUnitsSha256": "c961a3d48f29e54a390d0ef35e01ef1e238f2dbd19b953800762a15a66ff1512",
+    "referencePdfSha256": {},
+    "referencePageSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q12a",
+      "questionNumber": 12,
+      "part": "a",
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "問題文を公式問題原図と一字ずつ照合し、一致を確認した。確認した条件は、三相3線式・300kW・遅れ力率0.6・負荷と並列・直列リアクトル付三相コンデンサ・X_LはX_Cの6%・線間電圧6600V・電圧変動なし。(a)の設問文『進相コンデンサ設備を高圧電路に接続したときに三相コンデンサSCの端子電圧の値[V]』も原図と一致する。",
+        "選択肢(1)6410、(2)6795、(3)6807、(4)6995、(5)7021は原図と一致する。",
+        "公式解答表(令和6年度上期・法規)の問12(a)=5は、officialAnswer=5と一致する。",
+        "検算の結果、V_C=6600×X_C/(X_C−X_L)=6600/(1−0.06)=6600/0.94=7021.28…Vとなり、最も近い肢は(5)7021である。X_L=0.06X_C<X_Cなので分母は正で、電流は進み電流になる。この因果説明も正しい。",
+        "各誤答肢の差を検算した。(2)7021−6795≈226V、(3)7021−6807≈214V、(4)7021−6995≈26Vで、いずれも記載どおり。(1)は6600V未満で、上昇方向と矛盾する。設問が『最も近いもの』を選ばせる形式なので、差による棄却理由は妥当である。",
+        "公開候補図は原図の結線図部分を欠けなく切り出している。以下の要素がすべて原図と一致する。高圧電路6600Vの母線、接続点の黒丸、破線枠の進相コンデンサ設備、上側のSR X_L[Ω]、下側のSC X_C[Ω](SRと直列)、凡例『SR：直列リアクトル』『SC：三相コンデンサ』、右側の三相負荷ブロックと『300 kW 力率0.6(遅れ)』。SRとSCの直列関係、および設備と負荷の並列関係は、公開候補図だけで読み取れる。",
+        "figureDescriptionの接続・ラベル記述は図と矛盾しない。",
+        "reviewedFromPage=[18]は、原図下端の『T1−H 018』と整合する。原図に印刷された頁番号は-15-である。問題PDFのURLはq04(法規)で、科目とも整合する。officialReferenceUrlsは空で、検証の必要な外部の独立主張はない。"
+      ]
+    },
+    {
+      "unitKey": "q12b",
+      "questionNumber": 12,
+      "part": "b",
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "共通の前文を公式問題原図と照合し、一致を確認した。(b)の設問文『進相コンデンサ設備を負荷と並列に接続し、力率を遅れ0.6から遅れ0.8に改善した。このとき、この設備の三相コンデンサSCの容量の値[kvar]』も原図と一致する。",
+        "選択肢(1)170、(2)180、(3)186、(4)192、(5)208は原図と一致する。",
+        "公式解答表の問12(b)=3は、officialAnswer=3と一致する。",
+        "検算: tanθ1=0.8/0.6=4/3、tanθ2=0.6/0.8=3/4。Q=300×(4/3−3/4)=300×7/12=175kvar。SRとSCは同一電流の直列回路なので、Q_L=3I²X_L=0.06Q_C、設備の正味出力は0.94Q_Cとなる。よってQ_C=175/0.94=186.17…kvarで、最も近い肢は(3)186である。",
+        "各誤答肢の値を検算した。(2)0.94×180=169.2kvar<175kvar。(4)0.94×192=180.48kvarで、必要量より5.48kvar多い。(5)0.94×208=195.52kvarで、必要量より20.52kvar多い。(1)170kvarは正味必要量175kvar未満で、SRの消費分を考えると不足する。いずれも記載どおりで正しい。",
+        "公開候補図は(a)と同一で、原図の全ラベル・接続・向きと一致する。コンデンサ設備と負荷の並列関係、およびSRとSCの直列関係は、公開候補図だけで理解できる。figureDescriptionも図と矛盾しない。",
+        "reviewedFromPage=[18]、原図下端の『T1−H 018』、問題PDF(q04)・解答PDF(a01)は整合している。officialReferenceUrlsは空で、外部確認事項はない。"
+      ]
+    }
+  ]
+}
