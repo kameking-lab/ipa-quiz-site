@@ -62,6 +62,7 @@ export const EXAM_LABELS: Record<string, string> = {
   kaigo: "介護福祉士",
   civil1: "1級土木施工管理技士",
   shakai: "社会福祉士",
+  shinrishi: "公認心理師",
   seishin: "精神保健福祉士",
   tohan: "登録販売者",
   kanri: "管理業務主任者",
