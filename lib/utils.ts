@@ -27,6 +27,7 @@ export const EXAM_LABELS: Record<string, string> = {
   "maritime3": "第三級海上無線通信士",
   "land-special2": "第二級陸上特殊無線技士",
   "jken-katsuyo1": "J検 情報活用1級",
+  "jken-katsuyo2": "J検 情報活用2級",
   "land-special3": "第三級陸上特殊無線技士",
   "kai-toku2": "第二級海上特殊無線技士",
   "kai-toku3": "第三級海上特殊無線技士",

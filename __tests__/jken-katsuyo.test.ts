@@ -9,8 +9,12 @@ import { isPracticeReadyQuestion } from "@/lib/questions/filter";
 import { ALL_EXAM_CODES } from "@/lib/exam-config";
 import type { Question } from "@/lib/questions/types";
 
+import { JKEN_KATSUYO2_QUESTIONS } from "@/data/questions/jken-katsuyo2";
+import secondManifest from "@/data/exam-library/source-packs/jken-katsuyo/grade2/manifest.json";
+
 const pools: { questions: Question[]; manifest: typeof firstManifest }[] = [
   { questions: JKEN_KATSUYO1_QUESTIONS, manifest: firstManifest },
+  { questions: JKEN_KATSUYO2_QUESTIONS, manifest: secondManifest },
 ];
 describe("J検 official past questions in unpublished staging", () => {
   for (const { questions, manifest } of pools) {

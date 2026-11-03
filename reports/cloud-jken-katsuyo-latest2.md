@@ -11,6 +11,7 @@
 | 級 | 2026年前期 | 2025年後期 | 追加解答欄数 | 図表 | 状態 |
 |---|---:|---:|---:|---:|---|
 | 1級 | 43 | 42 | 85 | 15 | 未公開ステージング |
+| 2級 | 50 | 51 | 101 | 18 | 未公開ステージング |
 
 問題数は大問数とは区別し、公式正答表の解答欄を1レコードとして数える。大問・解答欄番号はsubjectとIDに保持し、ルーティング用qNumberは大問×100＋解答欄番号とする。共通問題文・全解答群はテキストとして保持し、図表部分だけ原PDFから切り出す。各問に問題・正答URL、独自の全肢解説を保持。
 
@@ -25,3 +26,11 @@
 公開管理は既存の資格台帳 `ready-to-ingest` と `isExamPublished` に従う。公開一覧・静的ルート・レジストリ・遅延ローダーからは未公開候補を返さない。将来の公開時にも生成問題を混ぜない過去問限定方針を登録。
 
 検証: pnpm install 完了。1級の `pnpm validate:questions --exam=jken-katsuyo1` は85件成功・失敗0件（解説文字数の警告あり）。全体検証・型チェック・関連テスト・独立レビューの結果は最終追記する。
+
+2級の出典（4本とも取得・全欄照合済み）:
+- https://www.jken.sgec.or.jp/common/pdf/past_test/260621_mondaijk02.pdf
+- https://www.jken.sgec.or.jp/common/pdf/past_test/260621_kaitojk02.pdf
+- https://www.jken.sgec.or.jp/common/pdf/past_test/251221_mondaijk02.pdf
+- https://www.jken.sgec.or.jp/common/pdf/past_test/251221_kaitojk02.pdf
+
+2級は全101欄を収録し除外なし。`grade2/manifest.json` に全公式正答・原本ハッシュを保持。二分木・ヒープの図選択肢は親子関係・幅優先順のテキストと原図を併用。`pnpm validate:questions --exam=jken-katsuyo2` は101件成功、失敗0・警告0。
