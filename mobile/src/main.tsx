@@ -1,4 +1,4 @@
-import React, { useEffect, useState,lazy,Suspense } from "react";
+import React, { useEffect, useRef, useState,lazy,Suspense } from "react";
 import { createRoot } from "react-dom/client";
 import { QuizPlayer } from "@/components/quiz/QuizPlayer";
 import { ExamQuestionPlayer } from "@/components/exam-library/exam-question-player";
@@ -12,7 +12,7 @@ import { startSession } from "@/lib/motivation/session";
 import type { Question, QuizMode } from "@/lib/questions/types";
 import { downloads, type DownloadIndex } from "./downloads";
 import { hydrateImages } from "./images";
-import { persistStudy, restoreStudy } from "./portable-storage";
+import { persistStudy, restoreStudy, studyOwner } from "./portable-storage";
 import { observeConnection, observeReminderTap, setReminder } from "./platform";
 import { observeLogin } from "./login";
 import { refreshDeviceRights } from "./refresh-rights";
@@ -32,32 +32,51 @@ function App() {
   const [library,setLibrary]=useState<{entry:CatalogEntry;questions:ExamQuestion[]}|null>(null);
   const [materials,setMaterials]=useState<Material[]>([]),[materialIndex,setMaterialIndex]=useState(0);
   const [owner,setOwner]=useState<string|null>(null),[time,setTime]=useState("20:00");
+  const [ready,setReady]=useState(false);
+  const ownerRef=useRef<string|null>(null),readyRef=useRef(false),reading=useRef(false),running=useRef(false);
+  useEffect(()=>{reading.current=!!(pool.length||library||materials.length);},[pool.length,library,materials.length]);
   const history=createHistoryStore(),stats=history.getStats();
   useEffect(()=>{
     let disposed=false; const disposers:Array<()=>void>=[];
     const keep=(dispose:()=>void)=>{ if(disposed) dispose(); else disposers.push(dispose); };
     void downloads.list().then(v=>{ if(!disposed) setSaved(v); }).catch(e=>setNotice(String(e)));
-    void downloads.rights().then(async r=>{ const id=r?.access.userId??null; await restoreStudy(id); if(!disposed) setOwner(id); }).catch(e=>setNotice(String(e)));
+    void downloads.rights().then(async r=>{
+      const id=await studyOwner(r?.access.userId??null);await restoreStudy(id);
+      if(!disposed){ownerRef.current=id;readyRef.current=true;setOwner(id);setReady(true);}
+    }).catch(e=>setNotice(String(e)));
     void observeConnection(setOnline).then(keep);
     void observeReminderTap(()=>{ setPool([]);setLibrary(null);setMaterials([]);setQuestion(null);setMode("review"); }).then(keep);
     if(Capacitor.isNativePlatform()) {
       void observeLogin(ORIGIN,e=>setNotice(String(e))).then(keep);
-      void NativeApp.addListener("appStateChange",s=>{ if(s.isActive) void refreshDeviceRights().then(()=>downloads.authorize()).catch(e=>{ setPool([]);setQuestion(null);setLibrary(null);setNotice(String(e)); }); }).then(h=>keep(()=>{ void h.remove(); }));
+      void NativeApp.addListener("appStateChange",s=>{
+        if(!readyRef.current)return;
+        if(!s.isActive)void persistStudy(ownerRef.current).catch(e=>setNotice(String(e)));
+        else void refreshDeviceRights().then(()=>{if(reading.current)return downloads.authorize();}).catch(e=>{setPool([]);setQuestion(null);setLibrary(null);setMaterials([]);setNotice(String(e));});
+      }).then(h=>keep(()=>{ void h.remove(); }));
     }
     const home=()=>{setPool([]);setQuestion(null);setLibrary(null);setMaterials([]);};window.addEventListener("mobile:home",home);
+    window.addEventListener("mobile:offline-rights-changed",home);
     const timer=setInterval(()=>{
-      void persistStudy(owner).catch(e=>setNotice(String(e)));
-      if(pool.length || library || materials.length) void downloads.authorize().catch(e=>{ setPool([]);setQuestion(null);setLibrary(null);setMaterials([]);setNotice(String(e)); });
+      if(!readyRef.current)return;
+      void persistStudy(ownerRef.current).catch(e=>setNotice(String(e)));
+      if(reading.current) void downloads.authorize().catch(e=>{home();setNotice(String(e));});
     },15000);
-    return()=>{disposed=true;disposers.forEach(d=>d());clearInterval(timer);window.removeEventListener("mobile:home",home);};
-  },[owner,pool.length,library,materials.length]);
+    return()=>{disposed=true;disposers.forEach(d=>d());clearInterval(timer);window.removeEventListener("mobile:home",home);window.removeEventListener("mobile:offline-rights-changed",home);};
+  },[]);
+  useEffect(()=>{
+    if(online&&ready)void refreshDeviceRights().catch(e=>{setPool([]);setQuestion(null);setLibrary(null);setMaterials([]);setNotice(String(e));});
+  },[online,ready]);
   useEffect(()=>{
     let cancelled=false;setQuestion(null);
     const current=pool[index]; if(!current)return;
     void downloads.authorize().then(()=>hydrateImages(current)).then(q=>{ if(!cancelled)setQuestion(q); }).catch(e=>{ if(!cancelled){setPool([]);setNotice(String(e));} });
     return()=>{cancelled=true;};
   },[pool,index]);
-  async function run(fn:()=>Promise<void>) { setBusy(true);setNotice("");try{await fn();}catch(e){setNotice(e instanceof Error?e.message:String(e));}finally{setBusy(false);} }
+  async function run(fn:()=>Promise<void>) {
+    if(running.current)return;
+    if(!readyRef.current){setNotice("学習履歴を準備しています。少し待ってからお試しください。");return;}
+    running.current=true;setBusy(true);setNotice("");try{await fn();}catch(e){setNotice(e instanceof Error?e.message:String(e));}finally{running.current=false;setBusy(false);}
+  }
   async function begin(code:string) {
     await refreshDeviceRights();
     if(code.startsWith("material.")) {

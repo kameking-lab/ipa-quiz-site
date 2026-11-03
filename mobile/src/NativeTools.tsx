@@ -27,13 +27,15 @@ export function NativeTools({ membershipOnly = false }: { membershipOnly?: boole
   const abort = useRef<AbortController | null>(null), user = useRef<string | null>(null);
   const studyReady = useRef(false), accessSignature = useRef("");
   const running=useRef(false);
+  const refreshing=useRef<Promise<unknown>>(Promise.resolve());
   const inSite = typeof location !== "undefined" && location.origin === SITE_ORIGIN;
-  const refresh = useCallback(async (fresh = false) => {
+  const refresh = useCallback((fresh = false) => {
+    const task=refreshing.current.then(async()=>{
     const response = await fetch("/api/mobile/entitlement", { method: fresh ? "POST" : "GET", cache: "no-store" });
     if (!response.ok) { setAccess(null); setOffer(null); await downloads.invalidate(); throw new Error("会員状態を確認できません。購入・保存の前にオンラインで再確認してください。"); }
     const result = await response.json() as { entitlement: MobileEntitlement; configuration: MobileConfiguration };
     if (studyReady.current && result.entitlement.userId !== user.current) {
-      await persistStudy(user.current); abort.current?.abort(); await downloads.invalidate(); await membership.disconnect(); studyReady.current=false;
+      abort.current?.abort(); await downloads.invalidate(); await membership.disconnect(); studyReady.current=false;
     }
     if (!studyReady.current) { await restoreStudy(result.entitlement.userId); studyReady.current=true; }
     user.current = result.entitlement.userId;
@@ -49,6 +51,9 @@ export function NativeTools({ membershipOnly = false }: { membershipOnly?: boole
     else await downloads.invalidate();
     setSaved(await downloads.list());
     return result;
+    });
+    refreshing.current=task.catch(()=>{});
+    return task;
   }, []);
   const run = useCallback(async (fn: ()=>Promise<void>)=>{
     if(running.current)return;
@@ -68,7 +73,10 @@ export function NativeTools({ membershipOnly = false }: { membershipOnly?: boole
     const keep = (dispose: ()=>void)=> { if (disposed) dispose(); else disposers.push(dispose); };
     void refresh().catch(e=>setNotice(String(e)));
     void observeLogin(SITE_ORIGIN, e=>setNotice(String(e))).then(keep);
-    void App.addListener("appStateChange", s=>{ if (s.isActive) void refresh(true).catch(e=>setNotice(String(e))); }).then(h=>keep(()=>{ void h.remove(); }));
+    void App.addListener("appStateChange", s=>{
+      if(s.isActive)void refresh(true).catch(e=>setNotice(String(e)));
+      else if(studyReady.current)void persistStudy(user.current).catch(e=>setNotice(String(e)));
+    }).then(h=>keep(()=>{ void h.remove(); }));
     void observeReminderTap(()=>window.location.assign(`${SITE_ORIGIN}/review`)).then(keep);
     void Purchases.addCustomerInfoUpdateListener(()=>{ void refresh(true).catch(e=>setNotice(String(e))); }).then(id=>keep(()=>{ void Purchases.removeCustomerInfoUpdateListener({ listenerToRemove: id }); })).catch(()=>{});
     const interval = window.setInterval(()=>{ void refresh().catch(e=>setNotice(String(e))); },60000);
