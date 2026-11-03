@@ -1,9 +1,9 @@
 {
   "slug": "kenki",
   "checkedAt": "2026-11-03",
-  "status": "source-download-blocked",
+  "status": "level1-staged-level2-in-progress",
   "ownerRightsConfirmed": true,
-  "addedQuestionCount": 0,
+  "addedQuestionCount": 112,
   "officialIndexUrl": "https://jcmanet.or.jp/kentei/",
   "officialNotices": [
     {
@@ -18,205 +18,260 @@
       "url": "https://jcmanet-shiken.jp/2025/06/16/r7_1_2kyusikennmondai_kohyo/"
     }
   ],
-  "retrievalEvidence": "A normal HTTPS request to the 2026 level-1 question PDF fails at proxy CONNECT with 403 Forbidden. This is host-level evidence, not an origin HTTP status measured separately for every listed PDF. Web browsing can read all 22 linked PDFs, but originals are not saved locally; figures and all question text have not been verified.",
+  "retrievalEvidence": "オーナー提供の公式PDF22件をローカルでSHA256照合済み。今回PDFのネットワーク取得なし。過去の403制約は解消。",
   "documents": [
     {
       "year": 2026,
       "label": "1級 問題",
       "url": "https://jcmanet-shiken.jp/gijutsu-kentei-shiken/wp-content/uploads/2026/06/1_1kyu_1ji_shikenmondai_260721.pdf",
       "webPdfAvailable": true,
-      "localPdfSaved": false,
-      "retrievalStatus": "host-proxy-connect-403",
-      "questionCount": 56
+      "localPdfSaved": true,
+      "retrievalStatus": "owner-supplied-sha256-verified",
+      "questionCount": 56,
+      "sha256": "28b237d06794ab00a3be3fc1fec42d5ebf5e5c9082c528feb8a90ccb726f58dd",
+      "file": "1_1kyu_1ji_shikenmondai_260721.pdf"
     },
     {
       "year": 2026,
       "label": "2級 共通 問題",
       "url": "https://jcmanet-shiken.jp/gijutsu-kentei-shiken/wp-content/uploads/2026/06/2_2kyu_1ji_shikenmondai.pdf",
       "webPdfAvailable": true,
-      "localPdfSaved": false,
-      "retrievalStatus": "host-proxy-connect-403",
-      "questionCount": 32
+      "localPdfSaved": true,
+      "retrievalStatus": "owner-supplied-sha256-verified",
+      "questionCount": 32,
+      "sha256": "41ade16ea6b6e00f9904386da1c8aaa3ffa6dcb8321e29bd86d4e9a7c08e72ce",
+      "file": "2_2kyu_1ji_shikenmondai.pdf"
     },
     {
       "year": 2026,
       "label": "2級 第1種 問題",
       "url": "https://jcmanet-shiken.jp/gijutsu-kentei-shiken/wp-content/uploads/2026/06/3_2kyu_1ji_1shu_shikenmondai.pdf",
       "webPdfAvailable": true,
-      "localPdfSaved": false,
-      "retrievalStatus": "host-proxy-connect-403",
-      "questionCount": 20
+      "localPdfSaved": true,
+      "retrievalStatus": "owner-supplied-sha256-verified",
+      "questionCount": 20,
+      "sha256": "10eea6c82f7f167351790de11e8c860852c68ee1dffb959155e68cad59f57eee",
+      "file": "3_2kyu_1ji_1shu_shikenmondai.pdf"
     },
     {
       "year": 2026,
       "label": "2級 第2種 問題",
       "url": "https://jcmanet-shiken.jp/gijutsu-kentei-shiken/wp-content/uploads/2026/06/4_2kyu_1ji_2shu_shikenmondai.pdf",
       "webPdfAvailable": true,
-      "localPdfSaved": false,
-      "retrievalStatus": "host-proxy-connect-403",
-      "questionCount": 20
+      "localPdfSaved": true,
+      "retrievalStatus": "owner-supplied-sha256-verified",
+      "questionCount": 20,
+      "sha256": "fcdcdb290c8f287b306d9b11282d243bdbd6a690b94beeaedc18880408cf3824",
+      "file": "4_2kyu_1ji_2shu_shikenmondai.pdf"
     },
     {
       "year": 2026,
       "label": "2級 第3種 問題",
       "url": "https://jcmanet-shiken.jp/gijutsu-kentei-shiken/wp-content/uploads/2026/06/5_2kyu_1ji_3sju_shikenmondai.pdf",
       "webPdfAvailable": true,
-      "localPdfSaved": false,
-      "retrievalStatus": "host-proxy-connect-403",
-      "questionCount": 20
+      "localPdfSaved": true,
+      "retrievalStatus": "owner-supplied-sha256-verified",
+      "questionCount": 20,
+      "sha256": "90bf1919bca1079dc7de6d19297eb50f3ae39e17dd045ce4707fa3eacc3f95f4",
+      "file": "5_2kyu_1ji_3sju_shikenmondai.pdf"
     },
     {
       "year": 2026,
       "label": "2級 第4種 問題",
       "url": "https://jcmanet-shiken.jp/gijutsu-kentei-shiken/wp-content/uploads/2026/06/6_2kyu_1ji_4sju_shikenmondai.pdf",
       "webPdfAvailable": true,
-      "localPdfSaved": false,
-      "retrievalStatus": "host-proxy-connect-403",
-      "questionCount": 20
+      "localPdfSaved": true,
+      "retrievalStatus": "owner-supplied-sha256-verified",
+      "questionCount": 20,
+      "sha256": "dc6cf45e156c5230c073d02222c0a528a25a519e5422496675e221f39706fe4a",
+      "file": "6_2kyu_1ji_4sju_shikenmondai.pdf"
     },
     {
       "year": 2026,
       "label": "2級 第5種 問題",
       "url": "https://jcmanet-shiken.jp/gijutsu-kentei-shiken/wp-content/uploads/2026/06/7_2kyu_1ji_5shu_shikenmondai.pdf",
       "webPdfAvailable": true,
-      "localPdfSaved": false,
-      "retrievalStatus": "host-proxy-connect-403",
-      "questionCount": 20
+      "localPdfSaved": true,
+      "retrievalStatus": "owner-supplied-sha256-verified",
+      "questionCount": 20,
+      "sha256": "1cd72b23fcd221af59e08175f9bc143bfb4782f77685729fd10bf13ec02a0726",
+      "file": "7_2kyu_1ji_5shu_shikenmondai.pdf"
     },
     {
       "year": 2026,
       "label": "2級 第6種 問題",
       "url": "https://jcmanet-shiken.jp/gijutsu-kentei-shiken/wp-content/uploads/2026/06/8_2kyu_1ji_6shu_shikenmondai.pdf",
       "webPdfAvailable": true,
-      "localPdfSaved": false,
-      "retrievalStatus": "host-proxy-connect-403",
-      "questionCount": 20
+      "localPdfSaved": true,
+      "retrievalStatus": "owner-supplied-sha256-verified",
+      "questionCount": 20,
+      "sha256": "cab34be052f035089bf2bc430d937482e7700895671c6a2c3257787b856a8c5f",
+      "file": "8_2kyu_1ji_6shu_shikenmondai.pdf"
     },
     {
       "year": 2026,
       "label": "1級 正答",
       "url": "https://jcmanet-shiken.jp/gijutsu-kentei-shiken/wp-content/uploads/2026/06/17_1kyu_1ji_seikai.pdf",
       "webPdfAvailable": true,
-      "localPdfSaved": false,
-      "retrievalStatus": "host-proxy-connect-403",
-      "questionCount": null
+      "localPdfSaved": true,
+      "retrievalStatus": "owner-supplied-sha256-verified",
+      "questionCount": null,
+      "sha256": "63ae0549d48889767e2949917062e00b3148b6ad602ac6effbd795b3d705b99b",
+      "file": "17_1kyu_1ji_seikai.pdf"
     },
     {
       "year": 2026,
       "label": "2級 共通 正答",
       "url": "https://jcmanet-shiken.jp/gijutsu-kentei-shiken/wp-content/uploads/2026/06/18_2kyu_1ji_seikai.pdf",
       "webPdfAvailable": true,
-      "localPdfSaved": false,
-      "retrievalStatus": "host-proxy-connect-403",
-      "questionCount": null
+      "localPdfSaved": true,
+      "retrievalStatus": "owner-supplied-sha256-verified",
+      "questionCount": null,
+      "sha256": "1ced049f9091ac2ed6297d12dda54bcef07182ce788b0ad85f509503cbeeb6e5",
+      "file": "18_2kyu_1ji_seikai.pdf"
     },
     {
       "year": 2026,
       "label": "2級 第1〜第6種 正答",
       "url": "https://jcmanet-shiken.jp/gijutsu-kentei-shiken/wp-content/uploads/2026/06/19_2kyu_1ji_seikai.pdf",
       "webPdfAvailable": true,
-      "localPdfSaved": false,
-      "retrievalStatus": "host-proxy-connect-403",
-      "questionCount": null
+      "localPdfSaved": true,
+      "retrievalStatus": "owner-supplied-sha256-verified",
+      "questionCount": null,
+      "sha256": "d597e52e2d4e7bf7423b7e1d4aa91474aabd0b1fb159186bef8c97f7d586e14b",
+      "file": "19_2kyu_1ji_seikai.pdf"
     },
     {
       "year": 2025,
       "label": "1級 問題",
       "url": "https://jcmanet-shiken.jp/gijutsu-kentei-shiken/wp-content/uploads/2025/06/%E2%91%A0%EF%BC%91%E7%B4%9A%E7%AC%AC%E4%B8%80%E6%AC%A1%E6%A4%9C%E5%AE%9A%EF%BC%88%E6%8A%9E%E4%B8%80%E5%BC%8F%EF%BC%89%E8%A9%A6%E9%A8%93%E5%95%8F%E9%A1%8C.pdf",
       "webPdfAvailable": true,
-      "localPdfSaved": false,
-      "retrievalStatus": "host-proxy-connect-403",
-      "questionCount": 56
+      "localPdfSaved": true,
+      "retrievalStatus": "owner-supplied-sha256-verified",
+      "questionCount": 56,
+      "sha256": "60adfd6a4a0af7a779e5cca080fffa852d1f994229d4b237e11f4aab87af8724",
+      "file": "①１級第一次検定（択一式）試験問題.pdf"
     },
     {
       "year": 2025,
       "label": "2級 共通 問題",
       "url": "https://jcmanet-shiken.jp/gijutsu-kentei-shiken/wp-content/uploads/2025/06/%E2%91%A1%EF%BC%92%E7%B4%9A%E7%AC%AC%E4%B8%80%E6%AC%A1%E6%A4%9C%E5%AE%9A%EF%BC%88%E6%8A%9E%E4%B8%80%E5%BC%8F%E5%85%B1%E9%80%9A%EF%BC%89%E8%A9%A6%E9%A8%93%E5%95%8F%E9%A1%8C.pdf",
       "webPdfAvailable": true,
-      "localPdfSaved": false,
-      "retrievalStatus": "host-proxy-connect-403",
-      "questionCount": 32
+      "localPdfSaved": true,
+      "retrievalStatus": "owner-supplied-sha256-verified",
+      "questionCount": 32,
+      "sha256": "25da346090b4564747cf5d9405bbad645c6d01faa590e2e9d976a979bdacac1f",
+      "file": "②２級第一次検定（択一式共通）試験問題.pdf"
     },
     {
       "year": 2025,
       "label": "2級 第1種 問題",
       "url": "https://jcmanet-shiken.jp/gijutsu-kentei-shiken/wp-content/uploads/2025/06/%E2%91%A2%EF%BC%92%E7%B4%9A%E7%AC%AC%E4%B8%80%E6%AC%A1%E6%A4%9C%E5%AE%9A%EF%BC%88%E6%8A%9E%E4%B8%80%E5%BC%8F%E7%A8%AE%E5%88%A5%E7%AC%AC%EF%BC%91%E7%A8%AE%EF%BC%89%E8%A9%A6%E9%A8%93%E5%95%8F%E9%A1%8C.pdf",
       "webPdfAvailable": true,
-      "localPdfSaved": false,
-      "retrievalStatus": "host-proxy-connect-403",
-      "questionCount": 20
+      "localPdfSaved": true,
+      "retrievalStatus": "owner-supplied-sha256-verified",
+      "questionCount": 20,
+      "sha256": "77669879380dd5ce81079cc9332af0a74f222293217230c5efc6c525c06c5c45",
+      "file": "③２級第一次検定（択一式種別第１種）試験問題.pdf"
     },
     {
       "year": 2025,
       "label": "2級 第2種 問題",
       "url": "https://jcmanet-shiken.jp/gijutsu-kentei-shiken/wp-content/uploads/2025/06/%E2%91%A3%EF%BC%92%E7%B4%9A%E7%AC%AC%E4%B8%80%E6%AC%A1%E6%A4%9C%E5%AE%9A%EF%BC%88%E6%8A%9E%E4%B8%80%E5%BC%8F%E7%A8%AE%E5%88%A5%E7%AC%AC%EF%BC%92%E7%A8%AE%EF%BC%89%E8%A9%A6%E9%A8%93%E5%95%8F%E9%A1%8C.pdf",
       "webPdfAvailable": true,
-      "localPdfSaved": false,
-      "retrievalStatus": "host-proxy-connect-403",
-      "questionCount": 20
+      "localPdfSaved": true,
+      "retrievalStatus": "owner-supplied-sha256-verified",
+      "questionCount": 20,
+      "sha256": "b89ff4bcebd78a8cf0ddca13aea7c89a57d0aee75e056b7051f253849c2f8fab",
+      "file": "④２級第一次検定（択一式種別第２種）試験問題.pdf"
     },
     {
       "year": 2025,
       "label": "2級 第3種 問題",
       "url": "https://jcmanet-shiken.jp/gijutsu-kentei-shiken/wp-content/uploads/2025/06/%E2%91%A4%EF%BC%92%E7%B4%9A%E7%AC%AC%E4%B8%80%E6%AC%A1%E6%A4%9C%E5%AE%9A%EF%BC%88%E6%8A%9E%E4%B8%80%E5%BC%8F%E7%A8%AE%E5%88%A5%E7%AC%AC%EF%BC%93%E7%A8%AE%EF%BC%89%E8%A9%A6%E9%A8%93%E5%95%8F%E9%A1%8C.pdf",
       "webPdfAvailable": true,
-      "localPdfSaved": false,
-      "retrievalStatus": "host-proxy-connect-403",
-      "questionCount": 20
+      "localPdfSaved": true,
+      "retrievalStatus": "owner-supplied-sha256-verified",
+      "questionCount": 20,
+      "sha256": "488f0ecac8dbab81e128c7013c1dfabe7a4f1bef4c33fc3f91872e6b30e4666b",
+      "file": "⑤２級第一次検定（択一式種別第３種）試験問題.pdf"
     },
     {
       "year": 2025,
       "label": "2級 第4種 問題",
       "url": "https://jcmanet-shiken.jp/gijutsu-kentei-shiken/wp-content/uploads/2025/06/%E2%91%A5%EF%BC%92%E7%B4%9A%E7%AC%AC%E4%B8%80%E6%AC%A1%E6%A4%9C%E5%AE%9A%EF%BC%88%E6%8A%9E%E4%B8%80%E5%BC%8F%E7%A8%AE%E5%88%A5%E7%AC%AC%EF%BC%94%E7%A8%AE%EF%BC%89%E8%A9%A6%E9%A8%93%E5%95%8F%E9%A1%8C.pdf",
       "webPdfAvailable": true,
-      "localPdfSaved": false,
-      "retrievalStatus": "host-proxy-connect-403",
-      "questionCount": 20
+      "localPdfSaved": true,
+      "retrievalStatus": "owner-supplied-sha256-verified",
+      "questionCount": 20,
+      "sha256": "97b39f0ce00389a062251816692001970f8ee5bdfe2d9dd322b31c5adcbae02a",
+      "file": "⑥２級第一次検定（択一式種別第４種）試験問題.pdf"
     },
     {
       "year": 2025,
       "label": "2級 第5種 問題",
       "url": "https://jcmanet-shiken.jp/gijutsu-kentei-shiken/wp-content/uploads/2025/06/%E2%91%A6%EF%BC%92%E7%B4%9A%E7%AC%AC%E4%B8%80%E6%AC%A1%E6%A4%9C%E5%AE%9A%EF%BC%88%E6%8A%9E%E4%B8%80%E5%BC%8F%E7%A8%AE%E5%88%A5%E7%AC%AC%EF%BC%95%E7%A8%AE%EF%BC%89%E8%A9%A6%E9%A8%93%E5%95%8F%E9%A1%8C.pdf",
       "webPdfAvailable": true,
-      "localPdfSaved": false,
-      "retrievalStatus": "host-proxy-connect-403",
-      "questionCount": 20
+      "localPdfSaved": true,
+      "retrievalStatus": "owner-supplied-sha256-verified",
+      "questionCount": 20,
+      "sha256": "e23b9ca9f08e9e558051e2d5e6e5dc5553188186e8c6b8b90accd23f09fa194e",
+      "file": "⑦２級第一次検定（択一式種別第５種）試験問題.pdf"
     },
     {
       "year": 2025,
       "label": "2級 第6種 問題",
       "url": "https://jcmanet-shiken.jp/gijutsu-kentei-shiken/wp-content/uploads/2025/06/%E2%91%A7%EF%BC%92%E7%B4%9A%E7%AC%AC%E4%B8%80%E6%AC%A1%E6%A4%9C%E5%AE%9A%EF%BC%88%E6%8A%9E%E4%B8%80%E5%BC%8F%E7%A8%AE%E5%88%A5%E7%AC%AC%EF%BC%96%E7%A8%AE%EF%BC%89%E8%A9%A6%E9%A8%93%E5%95%8F%E9%A1%8C.pdf",
       "webPdfAvailable": true,
-      "localPdfSaved": false,
-      "retrievalStatus": "host-proxy-connect-403",
-      "questionCount": 20
+      "localPdfSaved": true,
+      "retrievalStatus": "owner-supplied-sha256-verified",
+      "questionCount": 20,
+      "sha256": "a0da9aea3cc3e6ba3fc26fbc256db2f4cb7eaeb80fbd97daeb4cb7ce05d8e211",
+      "file": "⑧２級第一次検定（択一式種別第６種）試験問題.pdf"
     },
     {
       "year": 2025,
       "label": "1級 正答",
       "url": "https://jcmanet-shiken.jp/gijutsu-kentei-shiken/wp-content/uploads/2025/06/%E2%91%B0%EF%BC%91%E7%B4%9A%E7%AC%AC%E4%B8%80%E6%AC%A1%E6%A4%9C%E5%AE%9A%EF%BC%88%E6%8A%9E%E4%B8%80%E5%BC%8F%EF%BC%89%E6%AD%A3%E8%A7%A3.pdf",
       "webPdfAvailable": true,
-      "localPdfSaved": false,
-      "retrievalStatus": "host-proxy-connect-403",
-      "questionCount": null
+      "localPdfSaved": true,
+      "retrievalStatus": "owner-supplied-sha256-verified",
+      "questionCount": null,
+      "sha256": "495b6a6d073ff1b6db03b761778463b3bb33e118821f74fad7d3bb78c020b61a",
+      "file": "⑰１級第一次検定（択一式）正解.pdf"
     },
     {
       "year": 2025,
       "label": "2級 共通 正答",
       "url": "https://jcmanet-shiken.jp/gijutsu-kentei-shiken/wp-content/uploads/2025/06/%E2%91%B1%EF%BC%92%E7%B4%9A%E7%AC%AC%E4%B8%80%E6%AC%A1%E6%A4%9C%E5%AE%9A%EF%BC%88%E6%8A%9E%E4%B8%80%E5%BC%8F%E5%85%B1%E9%80%9A%EF%BC%89%E6%AD%A3%E8%A7%A3.pdf",
       "webPdfAvailable": true,
-      "localPdfSaved": false,
-      "retrievalStatus": "host-proxy-connect-403",
-      "questionCount": null
+      "localPdfSaved": true,
+      "retrievalStatus": "owner-supplied-sha256-verified",
+      "questionCount": null,
+      "sha256": "29a2713590f932a30349ed48c6549ffced4252672342a3e80f5aaa25a1e4447a",
+      "file": "⑱２級第一次検定（択一式共通）正解.pdf"
     },
     {
       "year": 2025,
       "label": "2級 第1〜第6種 正答",
       "url": "https://jcmanet-shiken.jp/gijutsu-kentei-shiken/wp-content/uploads/2025/06/%E2%91%B2%EF%BC%92%E7%B4%9A%E7%AC%AC%E4%B8%80%E6%AC%A1%E6%A4%9C%E5%AE%9A%EF%BC%88%E6%8A%9E%E4%B8%80%E5%BC%8F%E7%A8%AE%E5%88%A5%EF%BC%89%E6%AD%A3%E8%A7%A3.pdf",
       "webPdfAvailable": true,
-      "localPdfSaved": false,
-      "retrievalStatus": "host-proxy-connect-403",
-      "questionCount": null
+      "localPdfSaved": true,
+      "retrievalStatus": "owner-supplied-sha256-verified",
+      "questionCount": null,
+      "sha256": "fb35b6aaf5c52871d5a3441a1f12cc45f82ec13d15dc18b1e7a194c76c09d211",
+      "file": "⑲２級第一次検定（択一式種別）正解.pdf"
     }
-  ]
+  ],
+  "coverageEvidence": {
+    "sessions": [
+      "令和8年度",
+      "令和7年度"
+    ],
+    "note": "公式履歴一覧と両年度の公表ページで確認。2級は共通・第1〜6種問題、共通正答・種別正答を保存。解答用紙・第二次検定は対象外。",
+    "successful_pdf_files": 22,
+    "failed_pdf_urls": 0,
+    "complete_two_sessions": true
+  },
+  "independentReview": "監督側で別プロセス実施予定（補足指示）。未合格。"
 }
