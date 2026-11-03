@@ -29,7 +29,9 @@
       "reviewedSnapshot": "reports/lq4e-20261104/reviewed-manuscripts/review5-2024-mechanical-text.json",
       "reviewedFileSha256": "583b2deb241b9f832ad76bd8d434eaa965ba84d955025cb26c8d393239749481",
       "report": "reports/lq4e-20261104/independent-review5.md",
-      "reportSha256": "7cf60b5c05eb47aa6a0bbeb66306010597fc65095ad8970fe73ced7b3ff3d42b"
+      "reportSha256": "7cf60b5c05eb47aa6a0bbeb66306010597fc65095ad8970fe73ced7b3ff3d42b",
+      "execution": "reports/lq4e-20261104/review5-execution.json",
+      "executionSha256": "93d96521604c5ce9b3e0a86f141b57d997ed21bf079a92e59b44cc48f21e185f"
     },
     {
       "path": "data/qualification-staging/lq4e-engineer-first/2024-mechanical-figures.json",
@@ -65,10 +67,63 @@
       "reviewedSnapshot": "reports/lq4e-20261104/reviewed-manuscripts/review5-2024-mechanical-figures.json",
       "reviewedFileSha256": "2fbef5ba0f98a07e55112a272cdb79e97e5a01f1262b324017ea79095532cead",
       "report": "reports/lq4e-20261104/independent-review5.md",
-      "reportSha256": "7cf60b5c05eb47aa6a0bbeb66306010597fc65095ad8970fe73ced7b3ff3d42b"
+      "reportSha256": "7cf60b5c05eb47aa6a0bbeb66306010597fc65095ad8970fe73ced7b3ff3d42b",
+      "execution": "reports/lq4e-20261104/review5-execution.json",
+      "executionSha256": "93d96521604c5ce9b3e0a86f141b57d997ed21bf079a92e59b44cc48f21e185f"
+    },
+    {
+      "path": "data/qualification-staging/lq4e-engineer-first/2025-mechanical-figures.json",
+      "status": "PASS",
+      "model": "gpt-6-astra",
+      "originals": 35,
+      "questionIds": [
+        "gijutsushi1-kikai-2025-mechanical-III-01",
+        "gijutsushi1-kikai-2025-mechanical-III-02",
+        "gijutsushi1-kikai-2025-mechanical-III-03",
+        "gijutsushi1-kikai-2025-mechanical-III-04",
+        "gijutsushi1-kikai-2025-mechanical-III-05",
+        "gijutsushi1-kikai-2025-mechanical-III-06",
+        "gijutsushi1-kikai-2025-mechanical-III-07",
+        "gijutsushi1-kikai-2025-mechanical-III-08",
+        "gijutsushi1-kikai-2025-mechanical-III-09",
+        "gijutsushi1-kikai-2025-mechanical-III-10",
+        "gijutsushi1-kikai-2025-mechanical-III-11",
+        "gijutsushi1-kikai-2025-mechanical-III-12",
+        "gijutsushi1-kikai-2025-mechanical-III-13",
+        "gijutsushi1-kikai-2025-mechanical-III-14",
+        "gijutsushi1-kikai-2025-mechanical-III-15",
+        "gijutsushi1-kikai-2025-mechanical-III-16",
+        "gijutsushi1-kikai-2025-mechanical-III-17",
+        "gijutsushi1-kikai-2025-mechanical-III-18",
+        "gijutsushi1-kikai-2025-mechanical-III-19",
+        "gijutsushi1-kikai-2025-mechanical-III-20",
+        "gijutsushi1-kikai-2025-mechanical-III-21",
+        "gijutsushi1-kikai-2025-mechanical-III-22",
+        "gijutsushi1-kikai-2025-mechanical-III-23",
+        "gijutsushi1-kikai-2025-mechanical-III-24",
+        "gijutsushi1-kikai-2025-mechanical-III-25",
+        "gijutsushi1-kikai-2025-mechanical-III-26",
+        "gijutsushi1-kikai-2025-mechanical-III-27",
+        "gijutsushi1-kikai-2025-mechanical-III-28",
+        "gijutsushi1-kikai-2025-mechanical-III-29",
+        "gijutsushi1-kikai-2025-mechanical-III-30",
+        "gijutsushi1-kikai-2025-mechanical-III-31",
+        "gijutsushi1-kikai-2025-mechanical-III-32",
+        "gijutsushi1-kikai-2025-mechanical-III-33",
+        "gijutsushi1-kikai-2025-mechanical-III-34",
+        "gijutsushi1-kikai-2025-mechanical-III-35"
+      ],
+      "sha256": "ea3494e8113e3094d03ab6c39a11f1239180ea41339111193a8af4832c169ed0",
+      "semanticSha256": "65eb84d9dca55398700a304da343347180a07e5e35405389931ddee489d462ea",
+      "reviewedSnapshot": "reports/lq4e-20261104/reviewed-manuscripts/review7-2025-mechanical-figures.json",
+      "reviewedFileSha256": "5db46eee214fdfbe11370ea98421f0880275ee0d21a281cdce07e482e70ddf22",
+      "report": "reports/lq4e-20261104/independent-review7.md",
+      "reportSha256": "38806e5f4bca8ab11e9bef5220fe1cf8cd2db6920af715cb5e57adee035bc9b6",
+      "execution": "reports/lq4e-20261104/review7-execution.json",
+      "executionSha256": "a3bb1645115a84446fe82a9130227e0f74a6f5d790da06b82789159789d8a99b"
     }
   ],
-  "newAccepted": 35,
-  "accepted": 65,
-  "remaining": 95
+  "newAccepted": 70,
+  "accepted": 100,
+  "remaining": 60
 }
