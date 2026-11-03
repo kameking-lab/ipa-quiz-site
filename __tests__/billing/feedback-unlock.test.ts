@@ -28,6 +28,7 @@ describe("feedback acceptance", () => {
     const res = await POST(request(payload));
     expect(res.status).toBe(200); expect(res.headers.get("set-cookie")).toBeNull();
     const saved = m.submit.mock.calls[0][2];
+    expect(m.submit.mock.calls[0][0]).toEqual({ realm: "test", account: "alice", browser: null });
     expect(saved.choices).toEqual(payload.choices);
     expect(JSON.stringify(saved)).not.toContain("test@example.jp");
     expect(JSON.stringify(saved)).not.toContain("090-1234-5678");
@@ -44,6 +45,13 @@ describe("feedback acceptance", () => {
     expect((await POST(request({ choices: [], comment: "" }))).status).toBe(400);
     expect(m.submit).not.toHaveBeenCalled();
   });
+});
+
+it("does not issue a browser identity cookie for an authenticated status read", async () => {
+  m.status.mockResolvedValueOnce({ eligible: true, submitted: false, remaining: 0 });
+  const response = await GET(new Request("https://example.test/api/feedback-unlock"));
+  expect(response.status).toBe(200);
+  expect(response.headers.get("set-cookie")).toBeNull();
 });
 
 describe("bonus wallet under its SQL transaction boundary", () => {

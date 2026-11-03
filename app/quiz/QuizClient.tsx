@@ -299,7 +299,7 @@ export function QuizClient({
       {access?.kind === "guest" && !access.feedbackBonus ? (
         <aside aria-label="ログインなしの無料演習枠" className="mx-auto w-full max-w-4xl space-y-1 border-b border-border px-4 py-3 text-sm">
           <p role="status">ログインなしで無料の連続演習を利用中です。{access.remaining != null ? `今日あと${access.remaining}問（1日${access.freeDaily}問）。` : "残りの演習枠を確認できません。"}次の更新：{resetLabel(access)}</p>
-          <p>学習履歴は設定に応じてこの端末に保存されます。<Link href={`/auth/signin?callbackUrl=${encodeURIComponent(window.location.pathname + window.location.search)}`} className="underline">履歴の同期などは無料ログイン</Link>で利用できます。</p>
+          <p>学習履歴は設定に応じてこの端末に保存されます。</p>
           <p>この演習枠はAIへの質問回数とは別です。</p>
         </aside>
       ) : null}
@@ -313,6 +313,7 @@ export function QuizClient({
       exam={exam}
       completionLabel={completionLabel}
       completionShareHref={completionShareHref}
+      quiet
       onNext={handleNext}
       />
     </div>

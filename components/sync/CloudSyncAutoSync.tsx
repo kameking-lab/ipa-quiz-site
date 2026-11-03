@@ -1,6 +1,7 @@
 "use client";
 
 import * as React from "react";
+import { usePathname } from "next/navigation";
 import { Cloud, CloudUpload, CheckCircle2 } from "lucide-react";
 import { syncAll } from "@/lib/sync";
 import { LS_KEYS } from "@/lib/storage/keys";
@@ -11,6 +12,7 @@ interface Toast { message: string; tone: "info" | "success" }
 
 /** Optional browser-owned data only. Failed attempts remain eligible for retry. */
 export function CloudSyncAutoSync() {
+  const pathname = usePathname();
   const [phase, setPhase] = React.useState<Phase>("idle");
   const [toast, setToast] = React.useState<Toast | null>(null);
 
@@ -81,7 +83,7 @@ export function CloudSyncAutoSync() {
     };
   }, []);
 
-  if (phase === "idle" && !toast) return null;
+  if (pathname === "/quiz" || pathname?.startsWith("/q/") || (phase === "idle" && !toast)) return null;
   return (
     <div className="pointer-events-none fixed bottom-3 left-3 z-30" role="status" aria-live="polite">
       <div className="inline-flex items-center gap-1.5 rounded-full border border-border bg-card/95 px-3 py-1.5 text-[11px] font-medium text-foreground shadow-sm backdrop-blur-sm">

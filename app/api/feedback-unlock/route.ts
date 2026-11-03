@@ -6,7 +6,7 @@ import { getClientIp } from "@/lib/rate-limit/server";
 import { verifyTurnstileToken } from "@/lib/turnstile";
 import { maskPII } from "@/lib/feedback/pii-masker";
 import { UnlockFeedbackSchema } from "@/lib/feedback/unlock-contract";
-import { feedbackHash, feedbackStore, unlockIdentity, readFeedbackBrowser, newFeedbackBrowser, feedbackBrowserHeader } from "@/lib/feedback/unlock-runtime";
+import { feedbackHash, feedbackStore, unlockIdentity } from "@/lib/feedback/unlock-runtime";
 export const runtime = "nodejs";
 
 export async function GET(request: Request) {
@@ -15,11 +15,8 @@ export async function GET(request: Request) {
     if (!practiceGateEnabled() || !process.env.TURNSTILE_SECRET_KEY || !process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY) return json({ eligible: false, submitted: false, remaining: 0 });
     const userId = await optionalBillingIdentity();
     if (!userId) return json({ eligible: false, submitted: false, remaining: 0, requiresLogin: true });
-    const browser = readFeedbackBrowser(request) ?? newFeedbackBrowser();
-    const identity = unlockIdentity(request, userId, undefined, browser);
-    const response = json(await feedbackStore().status(identity));
-    response.headers.append("Set-Cookie", feedbackBrowserHeader(browser, new URL(request.url).protocol === "https:"));
-    return response;
+    // Existing anonymous wallets remain readable for migration; issue no new browser ID.
+    return json(await feedbackStore().status(unlockIdentity(request, userId)));
   } catch { return json({ error: "feedback_unavailable" }, 503); }
 }
 
@@ -47,14 +44,13 @@ export async function POST(request: Request) {
     try { body = JSON.parse(Buffer.concat(chunks).toString("utf8")); } catch { throw new BillingError("invalid_request", 400); }
     const data = UnlockFeedbackSchema.parse(body);
     const identity = unlockIdentity(request, userId);
-    if (!identity.account && !identity.browser) throw new BillingError("guest_cookie_required", 428);
     const ip = getClientIp(request);
     const store = feedbackStore();
     if (!await store.consumeRate(feedbackHash("network-minute", `${identity.realm}:${Math.floor(Date.now() / 60000)}:${ip}`))) throw new BillingError("rate_limited", 429);
     const bot = await verifyTurnstileToken(data.turnstileToken, ip);
     if (!bot.ok || bot.skipped) throw new BillingError("turnstile_failed", 403);
     if (identity.account) await store.claim(identity);
-    const result = await store.submit(identity,
+    const result = await store.submit({ ...identity, browser: null },
       null, {
         choices: data.choices,
         requestedQualifications: data.requestedQualifications.map(q => maskPII(q).masked.slice(0, 80)),

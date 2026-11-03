@@ -57,9 +57,10 @@ describe.skipIf(!bin)("feedback wallet on disposable PostgreSQL", () => {
     return event;
   }
   it("migrates, enforces concurrent submissions and prevents cookie/day/network reacquisition", async () => {
-    const results = await Promise.allSettled(Array.from({ length: 8 }, (_, n) => store.submit(identity("alice", `b${n}`), null, data)));
+    const results = await Promise.allSettled(Array.from({ length: 8 }, () => store.submit({ ...identity("alice"), browser: null }, null, data)));
     expect(results.filter(r => r.status === "fulfilled")).toHaveLength(1);
     expect(await db.query("SELECT count(*)::int AS n FROM feedback_unlock", [])).toEqual([{ n: 1 }]);
+    expect(await db.query("SELECT browser_hash, network_day_hash FROM feedback_unlock", [])).toEqual([{ browser_hash: null, network_day_hash: null }]);
     await expect(store.submit(identity("alice", "new-next-day"), "changed-network", data)).rejects.toMatchObject({ code: "already_submitted" });
     await expect(store.submit(identity(null, "new"), null, data)).rejects.toMatchObject({ code: "sign_in_required" });
     expect(await store.status(identity(null, "new"))).toMatchObject({ eligible: false, requiresLogin: true });

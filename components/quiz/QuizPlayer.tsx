@@ -72,6 +72,7 @@ interface Props {
   completionLabel?: string;
   completionShareHref?: string;
   onNext: () => void;
+  quiet?: boolean;
 }
 
 
@@ -93,6 +94,7 @@ function ScoredQuizPlayer({
   completionLabel,
   completionShareHref,
   onNext,
+  quiet = false,
 }: Props) {
   const router = useRouter();
   const history = React.useMemo(() => createHistoryStore(), []);
@@ -617,13 +619,13 @@ function ScoredQuizPlayer({
       </div>
 
       <FireworksBurst
-        active={burst !== null}
+        active={!quiet && burst !== null}
         level={burst?.level ?? "small"}
         onDone={() => setBurst(null)}
         key={burst?.nonce ?? 0}
       />
 
-      {pendingAchievement && (
+      {!quiet && pendingAchievement && (
         <AchievementToast
           achievementId={pendingAchievement}
           onClose={() => setPendingAchievement(null)}

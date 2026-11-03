@@ -4,7 +4,7 @@ const capture = vi.hoisted(() => vi.fn());
 vi.mock("@/lib/posthog", () => ({ posthogCapture: capture }));
 import { FeedbackUnlock } from "@/components/quiz/FeedbackUnlock";
 import { PracticeDailyLimit } from "@/components/quiz/PracticeTransition";
-beforeEach(() => { vi.stubEnv("NEXT_PUBLIC_TURNSTILE_SITE_KEY", ""); vi.clearAllMocks(); });
+beforeEach(() => { window.history.replaceState({}, "", "/quiz"); vi.stubEnv("NEXT_PUBLIC_TURNSTILE_SITE_KEY", ""); vi.clearAllMocks(); });
 afterEach(() => { cleanup(); vi.unstubAllGlobals(); vi.unstubAllEnvs(); });
 it("keeps purchase primary, accepts multiple choices, and resumes only after storage success", async () => {
   const resume = vi.fn();
@@ -42,7 +42,25 @@ it("offers login with the current question as return URL and hides anonymous sub
   window.history.replaceState({}, "", "/quiz?question=q11");
   vi.stubGlobal("fetch", vi.fn(async () => Response.json({ eligible: false, requiresLogin: true })));
   render(<FeedbackUnlock onUnlocked={vi.fn()} />);
-  const link = await screen.findByRole("link", { name: "無料ログインして、意見を送りさらに10問" });
-  expect(link).toHaveAttribute("href", "/auth/signin?callbackUrl=" + encodeURIComponent("/quiz?question=q11"));
+  const link = await screen.findByRole("link", { name: "ログインして意見を送ると、さらに10問" });
+  expect(link).toHaveAttribute("href", "/auth/signin?callbackUrl=" + encodeURIComponent("/quiz?question=q11#feedback-unlock"));
   expect(screen.queryByRole("button", { name: "意見を送って、さらに10問無料で解く" })).toBeNull();
+});
+
+it("opens the form after login without storage access, retaining the exact question", async () => {
+  window.history.replaceState({}, "", "/quiz?mode=year&question=q11#feedback-unlock");
+  vi.spyOn(Storage.prototype, "getItem").mockImplementation(() => { throw new Error("blocked"); });
+  vi.stubGlobal("fetch", vi.fn(async () => Response.json({ eligible: true, submitted: false, remaining: 0 })));
+  render(<FeedbackUnlock onUnlocked={vi.fn()} />);
+  expect(await screen.findByRole("textbox", { name: /自由記述/ })).toBeInTheDocument();
+  expect(window.location.pathname + window.location.search + window.location.hash).toBe("/quiz?mode=year&question=q11");
+  vi.restoreAllMocks();
+});
+
+it("never opens a form for a used account even with a forged return marker", async () => {
+  window.history.replaceState({}, "", "/quiz?question=q11#feedback-unlock");
+  vi.stubGlobal("fetch", vi.fn(async () => Response.json({ eligible: false, submitted: true, remaining: 0 })));
+  render(<FeedbackUnlock onUnlocked={vi.fn()} />);
+  await screen.findByText(/受け取り済み/);
+  expect(screen.queryByRole("textbox")).toBeNull();
 });

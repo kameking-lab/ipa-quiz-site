@@ -2,7 +2,6 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { IMPROVEMENT_CHOICES, UnlockFeedbackSchema, type UnlockStatus } from "@/lib/feedback/unlock-contract";
-import { LS_KEYS } from "@/lib/storage/keys";
 import { posthogCapture } from "@/lib/posthog";
 import { TurnstileWidget } from "@/components/TurnstileWidget";
 
@@ -22,7 +21,13 @@ export function FeedbackUnlock({ onUnlocked }: { onUnlocked: () => void }) {
     void fetch("/api/feedback-unlock", { cache: "no-store" }).then(async res => {
       if (!res.ok) return;
       const value = await res.json();
-      if (active) setStatus(value);
+      if (active) {
+        setStatus(value);
+        if (value.eligible && window.location.hash === "#feedback-unlock") {
+          setOpen(true);
+          window.history.replaceState(null, "", window.location.pathname + window.location.search);
+        }
+      }
     }).catch(() => {});
     return () => { active = false; };
   }, []);
@@ -44,7 +49,6 @@ export function FeedbackUnlock({ onUnlocked }: { onUnlocked: () => void }) {
         throw new Error(res.status === 429 ? "短時間に送信が集中しています。1分ほど待ってお試しください。" : "送信できませんでした。入力内容を残しています。もう一度お試しください。");
       }
       posthogCapture("practice_feedback_submitted", { choiceCount: choices.length, hasComment: !!comment.trim() });
-      try { localStorage.setItem(LS_KEYS.feedbackUnlockPendingClaim, "1"); } catch { /* Server-side identity remains authoritative. */ }
       setStatus({ submitted: true, eligible: false, remaining: 10 });
       setOpen(false);
       onUnlocked();
@@ -54,7 +58,7 @@ export function FeedbackUnlock({ onUnlocked }: { onUnlocked: () => void }) {
     } finally { setBusy(false); }
   }
   return <div className="space-y-3 text-left">
-    {status?.requiresLogin && <Link href={`/auth/signin?callbackUrl=${encodeURIComponent(window.location.pathname + window.location.search)}`} className="inline-flex min-h-11 w-full items-center justify-center rounded-xl border border-border px-4 py-3 text-sm font-semibold">無料ログインして、意見を送りさらに10問</Link>}
+    {status?.requiresLogin && <Link href={`/auth/signin?callbackUrl=${encodeURIComponent(window.location.pathname + window.location.search + "#feedback-unlock")}`} className="inline-flex min-h-11 w-full items-center justify-center rounded-xl border border-border px-4 py-3 text-sm font-semibold">ログインして意見を送ると、さらに10問</Link>}
     {status?.eligible && <button type="button" className="min-h-11 w-full rounded-xl border border-border bg-background px-4 py-3 text-sm font-semibold hover:bg-muted" onClick={() => setOpen(v => !v)} aria-expanded={open} aria-controls="feedback-unlock-form">意見を送って、さらに10問無料で解く</button>}
     {status?.submitted && <div className="text-center text-sm"><p>意見による追加枠は受け取り済みです（残り{status.remaining}問）。</p>{status.remaining > 0 && <button type="button" onClick={onUnlocked} className="min-h-11 px-3 underline">追加枠で続きを解く</button>}</div>}
     {error && <p role="alert" className="text-sm text-red-600 dark:text-red-400">{error}</p>}

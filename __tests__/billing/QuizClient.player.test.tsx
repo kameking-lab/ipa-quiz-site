@@ -48,6 +48,9 @@ describe("QuizClient with the real player and local learning stores", () => {
         expect(screen.getAllByRole("radio")[0]).not.toBeDisabled();
       });
       expect(screen.queryByText("1問、回答しました。")).toBeNull();
+      expect(screen.queryByRole("link", { name: /ログイン/ })).toBeNull();
+      expect(screen.queryByTestId("achievement-toast")).toBeNull();
+      expect(screen.queryByRole("dialog")).toBeNull();
       const choice = screen.getAllByRole("radio")[0];
       fireEvent.click(choice); fireEvent.click(choice);
       expect(screen.getByRole("region", { name: /^(正解|不正解)の解説$/ })).toBeInTheDocument();
@@ -66,6 +69,9 @@ describe("QuizClient with the real player and local learning stores", () => {
         expect(screen.getAllByRole("radio")[0]).not.toBeDisabled();
       });
       expect(screen.queryByText("1問、回答しました。")).toBeNull();
+      expect(screen.queryByRole("link", { name: /ログイン/ })).toBeNull();
+      expect(screen.queryByTestId("achievement-toast")).toBeNull();
+      expect(screen.queryByRole("dialog")).toBeNull();
       fireEvent.click(screen.getAllByRole("radio")[0]);
       expect(screen.getByRole("region", { name: /^(正解|不正解)の解説$/ })).toBeInTheDocument();
       expect(createHistoryStore().getAllEntries()).toHaveLength(i + 6);
@@ -119,8 +125,10 @@ it("submits feedback at the wall, answers bonus questions 11-20, stops at 21 and
   const ordinary = new Set(pool.slice(0, 10).map(q => q.id));
   const bonus = new Set<string>();
   let submitted = false;
+  let loggedIn = false;
   const fetcher = vi.fn(async (url: string, init?: RequestInit) => {
     if (url === "/api/feedback-unlock") {
+      if (!loggedIn) return Response.json({ eligible: false, requiresLogin: true });
       if (init?.method === "POST") { submitted = true; return Response.json({ ok: true, remaining: 10 }); }
       return Response.json({ eligible: !submitted, submitted, remaining: submitted ? 10 - bonus.size : 0 });
     }
@@ -133,8 +141,16 @@ it("submits feedback at the wall, answers bonus questions 11-20, stops at 21 and
     return Response.json({ question: questions.get(id), access: { ...baseAccess, kind: "trial", remaining: 10 - bonus.size, feedbackBonus: { remaining: 10 - bonus.size, newlyUsed } } });
   });
   vi.stubGlobal("fetch", fetcher);
+  const anonymous = render(<QuizClient billingGateEnabled poolIds={pool.map(q => q.id)} initialQuestionId={pool[10].id} mode="year" exam="fe" backHref="/fe" />);
+  const login = await screen.findByRole("link", { name: "ログインして意見を送ると、さらに10問" }, { timeout: 5000 });
+  expect(screen.queryByRole("textbox")).toBeNull();
+  const callback = new URL(login.getAttribute("href")!, window.location.origin).searchParams.get("callbackUrl")!;
+  expect(callback).toContain(`question=${pool[10].id}#feedback-unlock`);
+  anonymous.unmount();
+  loggedIn = true;
+  window.history.replaceState({}, "", callback);
   const first = render(<QuizClient billingGateEnabled poolIds={pool.map(q => q.id)} initialQuestionId={pool[10].id} mode="year" exam="fe" backHref="/fe" />);
-  fireEvent.click(await screen.findByRole("button", { name: "意見を送って、さらに10問無料で解く" }));
+  await screen.findByRole("textbox", { name: /自由記述/ });
   fireEvent.click(screen.getByLabelText("スマホでの使いやすさ"));
   fireEvent.click(screen.getByRole("button", { name: "意見を送信して10問追加" }));
   for (let n = 0; n < 10; n++) {
