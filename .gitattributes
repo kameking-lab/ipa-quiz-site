@@ -10,3 +10,8 @@ reports/qchizai2-20261103/** -text whitespace=trailing-space,space-before-tab,cr
 data/questions/chizai2/* text eol=lf
 scripts/verify-chizai2-* text eol=lf
 scripts/write-chizai2-receipt.ts text eol=lf
+
+# LQ4C acceptance binds exact UTF-8 manuscript and review bytes.
+data/qualification-staging/lq4c-*/** text eol=lf
+reports/lq4c-20261104/** -text whitespace=trailing-space,space-before-tab,cr-at-eol
+scripts/validate-lq4-staging.mjs text eol=lf
