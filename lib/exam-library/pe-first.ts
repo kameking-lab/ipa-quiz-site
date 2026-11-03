@@ -3,6 +3,7 @@ import { createHash } from "node:crypto";
 import { readFileSync } from "node:fs";
 import { join } from "node:path";
 import manifest from "@/reports/LQ3-20261104/adoption-manifest.json";
+import continuationManifest from "@/reports/LQ3B-20261104/adoption-manifest.json";
 import { PE_FIRST_CATALOG } from "./pe-first-catalog";
 import type { ExamQuestion } from "@/lib/exam-library-model";
 
@@ -16,7 +17,7 @@ export function loadPeFirstPaper(id: string): readonly ExamQuestion[] | null {
   try {
     // Git may check out text with CRLF on Windows; pins use the authored LF form.
     const raw = readFileSync(join(process.cwd(), "data/exam-library/pe-first", `${id}.json`), "utf8").replace(/\r\n/g, "\n");
-    const pin = manifest.find(item => item.paperId === id);
+    const pin = [...manifest, ...continuationManifest].find(item => item.paperId === id);
     if (pin && createHash("sha256").update(raw).digest("hex") === pin.normalizedSha256) {
       questions = JSON.parse(raw) as ExamQuestion[];
     }

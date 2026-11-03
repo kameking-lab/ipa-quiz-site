@@ -37,7 +37,7 @@ def sha(p):
     return hashlib.sha256(p.read_bytes()).hexdigest()
 
 
-def build(year, department):
+def build(year, department, refresh=False):
     slug, title = DEPARTMENTS[department]
     paperid = f'pe-first-{slug}-{year}'
     payload = REPORT / 'manuscripts' / f'{paperid}.json'
@@ -75,6 +75,13 @@ def build(year, department):
             figures.append(dict(src=url, width=pix.width, height=pix.height,
                 alt=f'{year}年度 {title}部門 専門科目 Ⅲ－{number}の公式原問（PDF {pageno}ページ）。当該番号の問題文・全選択肢・図表を確認してください。'))
             assets[url] = sha(dest)
+        if q.get('figureClip'):
+            dest = ROOT / 'public/exam-library' / paperid / f'q{number:02}-figure.png'
+            doc[page-1].get_pixmap(matrix=fitz.Matrix(2,2),clip=fitz.Rect(q['figureClip'])).save(dest)
+            pix = fitz.Pixmap(dest)
+            url = '/' + dest.relative_to(ROOT/'public').as_posix()
+            figures = [dict(src=url, width=pix.width, height=pix.height, alt=q['figureAlt'])]
+            assets[url] = sha(dest)
         prompt = q.get('text') or f'{year}年度 {title}部門 専門科目 Ⅲ－{number}。下の公式原問画像の当該番号に解答してください。同じページにある別の設問は対象外です。'
         choices = q.get('choices') or ['①', '②', '③', '④', '⑤']
         assert len(choices) == 5
@@ -91,17 +98,23 @@ def build(year, department):
                 sources=[dict(title='日本技術士会 公式問題', url=questionurl+f'#page={page}'),
                          dict(title='日本技術士会 公式正答', url=answerurl)])))
     output = OUT / f'{paperid}.json'
-    assert not output.exists(), 'An existing manuscript must not be rebuilt'
+    manifestpath = REPORT / 'adoption-manifest.json'
+    manifest = read(manifestpath) if manifestpath.exists() else []
+    old = next((x for x in manifest if x['paperId'] == paperid), None)
+    if output.exists():
+        assert refresh and old and sha(output) == old['normalizedSha256'], 'Only an unchanged LQ3B paper may be explicitly refreshed'
+    else:
+        assert not old
     write(output, normalized)
     catalog = read(OUT / 'catalog.json')
-    assert not any(x['id'] == paperid for x in catalog)
+    assert not any(x['id'] == paperid for x in catalog) or refresh and old
+    catalog = [x for x in catalog if x['id'] != paperid]
     catalog.append(dict(id=paperid, group='pe-first', subject=f'技術士第一次・{title}',
         label=f'令和{year-2018}年度 専門科目', date=f'{year}-11-{23 if year==2025 else 24}',
         dateKind='exam', pdfUrl=questionurl, indexUrl='https://www.engineer.or.jp/c_categories/index02021.html',
         answerMode='official-choice', checkedAt='2026-11-04', questionCount=35, scoredCount=35))
     write(OUT / 'catalog.json', catalog)
-    manifestpath = REPORT / 'adoption-manifest.json'
-    manifest = read(manifestpath) if manifestpath.exists() else []
+    manifest = [x for x in manifest if x['paperId'] != paperid]
     manifest.append(dict(paperId=paperid, department=department, year=year,
         payload=payload.relative_to(ROOT).as_posix(), payloadSha256=sha(payload),
         officialPdf=pdf.relative_to(ROOT).as_posix(), officialPdfSha256=sha(pdf),
@@ -116,5 +129,6 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument('year', type=int, choices=[2024,2025])
     parser.add_argument('department', type=int, choices=DEPARTMENTS)
+    parser.add_argument('--refresh', action='store_true')
     args = parser.parse_args()
-    build(args.year, args.department)
+    build(args.year, args.department, args.refresh)

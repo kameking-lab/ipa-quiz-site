@@ -7,6 +7,7 @@ import { requiredStructuredChoiceQuestionIds } from "@/lib/exam-library-coverage
 import { listAvailableExamIds, loadExamPaper } from "@/lib/exam-library-papers";
 import { isScorableQuestion } from "@/lib/exam-library-model";
 import explanations from "@/data/exam-library/explanations.json";
+import peContinuation from "@/reports/LQ3B-20261104/adoption-manifest.json";
 
 describe("official exam library integration", () => {
   it("requires every authored plain explanation to be substantive and preserves its answer-key snapshot", () => {
@@ -47,8 +48,8 @@ describe("official exam library integration", () => {
     const peIds = new Set(EXAM_CATALOG.filter(entry => entry.group === "pe-first").flatMap(entry => (loadExamPaper(entry.id) ?? []).map(question => question.id)));
     const peSnapshot = answerSnapshot.filter(([id]) => peIds.has(String(id)));
     const existingSnapshot = answerSnapshot.filter(([id]) => !String(id).startsWith("private-gsi-survey-assistant-20261021-") && !peIds.has(String(id)));
-    expect(answerSnapshot).toHaveLength(2803);
-    expect(peSnapshot).toHaveLength(594);
+    expect(answerSnapshot).toHaveLength(2803 + peContinuation.length * 35);
+    expect(peSnapshot).toHaveLength(594 + peContinuation.length * 35);
     // Preserve the previous 2,154 official keys independently of the new reviewed packet.
     expect(existingSnapshot).toHaveLength(2154);
     expect(createHash("sha256").update(JSON.stringify(existingSnapshot)).digest("hex"))
