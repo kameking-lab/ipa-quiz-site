@@ -4,6 +4,7 @@ import firstChemistry2026 from "./2026-1-kagaku.json";
 import firstBiology2026 from "./2026-1-seibutsu.json";
 import firstBiology2025 from "./2025-1-seibutsu.json";
 import firstChemistry2025 from "./2025-1-kagaku.json";
+import secondLaw2026 from "./2026-2-hourei.json";
 import second2026 from "./2026-2.json";
 import first2025 from "./2025-1.json";
 import second2025 from "./2025-2.json";
@@ -16,10 +17,10 @@ import practical2025 from "./2025-2-jitsumu.json";
 
 /** Native source staging. Deliberately absent from public registries and loaders. */
 export const HoshasenStagedQuestionSchema = z.object({
-  id: z.string().regex(/^hoshasen-[12]-202[56]-(?:butsuri|kagaku|seibutsu|jitsumu)-q\d+$/),
+  id: z.string().regex(/^hoshasen-[12]-202[56]-(?:butsuri|kagaku|seibutsu|jitsumu|hourei)-q\d+$/),
   grade: z.union([z.literal(1), z.literal(2)]),
   year: z.union([z.literal(2025), z.literal(2026)]),
-  subject: z.enum(["物理学", "化学", "生物学", "実務"]),
+  subject: z.enum(["物理学", "化学", "生物学", "実務", "法令"]),
   number: z.number().int().min(1).max(30),
   pdfPage: z.number().int().positive(),
   question: z.string().min(10),
@@ -43,4 +44,4 @@ export const HoshasenStagedQuestionSchema = z.object({
 export type HoshasenStagedQuestion = z.infer<typeof HoshasenStagedQuestionSchema>;
 export const HOSHASEN_STAGED_QUESTIONS: HoshasenStagedQuestion[] = z
   .array(HoshasenStagedQuestionSchema)
-  .parse([...first2026, ...second2026, ...first2025, ...second2025, ...chemistry2026, ...chemistry2025, ...biology2026, ...biology2025, ...practical2026, ...practical2025, ...firstChemistry2026, ...firstBiology2026, ...firstBiology2025, ...firstChemistry2025]);
+  .parse([...first2026, ...second2026, ...first2025, ...second2025, ...chemistry2026, ...chemistry2025, ...biology2026, ...biology2025, ...practical2026, ...practical2025, ...firstChemistry2026, ...firstBiology2026, ...firstBiology2025, ...firstChemistry2025, ...secondLaw2026]);
