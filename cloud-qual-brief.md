@@ -4,7 +4,8 @@
 
 ## 進め方
 1. 依頼文の TASK と、下の「作業内容」を合わせて /tmp/task.txt に書き、次を実行する:
-   `codex exec -m gpt-6.1-sol -c model_reasoning_effort=high --skip-git-repo-check -s danger-full-access -C "$PWD" -o /tmp/last.md - < /tmp/task.txt`
+   `codex exec -m gpt-6.1-sol -c model_reasoning_effort=high -c sandbox_workspace_write.network_access=true --skip-git-repo-check -s workspace-write -C "$PWD" -o /tmp/last.md - < /tmp/task.txt`
+   （サンドボックス付きの workspace-write を使う。danger-full-access は使わない。サンドボックスで動かない操作があれば、迂回せず報告する）
    長時間かかる。最後まで待つ。作業が残って止まったら、終わるか明確に詰まるまで同じ task で再実行する。
 2. Codex を1回実行するたびに、今の claude/ ブランチを push する。main には push しない。PR を作らない。デプロイも Vercel も実行しない。
 3. 最後に /tmp/last.md の内容と `git log --oneline -5` を返信する。
@@ -18,7 +19,7 @@
 - 正答は公式の正答に一致させる。解説は独自に書き、公式正答と矛盾させない。法令が関わる場合は、出題時点の法令と明記する。各問に出典URLを入れる。
 - 【オーナー決定 2026-11-04 01:30】依頼された資格は、すべてオーナーが権利確認済み。「権利未確認」「転載条件の文言」「過去の取得STOP記録」を理由に止めない（転載条件の文言は報告に記録するだけ）。ただし、公式に全問または正答が公開されていない回は作れないので、理由を報告して次へ進む。ログイン・CAPTCHA・ボット拒否は迂回しない。取得できないPDFは一覧にして報告する。
 - 公開できる状態まで仕上げる。全問の正答照合、全選択肢の解説、必要な図、問題数の照合まで行う。
-- 最後に別の Codex（`codex exec -m gpt-6-astra -c model_reasoning_effort=medium`）に独立レビューさせる。指摘を直し、再レビューで合格させる。
+- 最後に別の Codex（`codex exec -m gpt-6-astra -c model_reasoning_effort=medium -s workspace-write --skip-git-repo-check`）に独立レビューさせる。指摘を直し、再レビューで合格させる。
 - pnpm install 後に、pnpm validate:questions・pnpm typecheck・関連テストを通す。型チェックがメモリ不足なら NODE_OPTIONS=--max-old-space-size=8192 を付ける。pnpm build もデプロイもしない。
 - 監査結果を reports/cloud-<slug>-latest2.md に書いてコミットする。書く内容は、対象回と根拠URL、資格ごとの追加問数、除外とその理由。
 - 秘密値を出さない。最後に日本語で短く報告する。
