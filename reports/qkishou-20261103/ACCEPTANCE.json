@@ -1,0 +1,82 @@
+{
+  "schema": "qkishou-local-ingestion/v1",
+  "task": "qkishou",
+  "branch": "qual/qkishou-20261103",
+  "baseCommit": "00e49b94060cc2671e9d098df91d653a4ed3ffe2",
+  "fixedAcceptedCommit": "dd69af1742f44a20da7d193ff00edbc814f06742",
+  "status": "ACCEPTED_PRIVATE_EDITION_REUSED_CANDIDATE_ONLY",
+  "expected": {
+    "round65": 40,
+    "round66": 38,
+    "originals": 78,
+    "academic": 60,
+    "choiceExplanations": 300,
+    "practical": 18,
+    "practicalAnswerFields": 237,
+    "imageAssets": 130
+  },
+  "newlyAuthoredOriginals": 0,
+  "missingOriginalsWithinAcceptedTwoRounds": 0,
+  "reusedFiles": 145,
+  "unchangedAcceptedFiles": 144,
+  "changedFiles": {
+    "data/qualification-staging/kisho-65-66-private/source-pages.json": "Accepted six diagram binding postimage d9fc1a0d244f396c4f0cd218f1dafae10b0dc2e033e80b93f3af4340050f53c0"
+  },
+  "explanationOverlay": "Accepted exact six-field overlay on kisho-65-senmon-q04; applied at read time; raw preserved",
+  "originalContentReview": "Reuse pinned independent acceptance; no new or inferred question text, choices, answers or diagrams",
+  "latestOfficialArchives": {
+    "listing": "https://www.jmbsc.or.jp/jp/examination/examination-7.html",
+    "publicationDate": "2026-09-02",
+    "round65": "https://www.jmbsc.or.jp/jp/examination/z/cwfe_65_z1.zip",
+    "round66": "https://www.jmbsc.or.jp/jp/examination/z/cwfe_66_z_correction1.zip",
+    "sameAcceptedAnswerAndPracticalPdfs": true,
+    "academicPdfByteDrift": 4,
+    "latestAcademicEditionFullSemanticReacceptance": false,
+    "focusedVisualComparison": [
+      "round65 ippan physical2",
+      "round65 senmon physical12",
+      "round66 senmon physical6"
+    ],
+    "comparisonCaveat": "Text-layer and font/render differences exist. Partial visual inspection and glyph/pixel checks do not prove full latest-edition equality. Historical independent acceptance is not relabeled as latest-edition acceptance."
+  },
+  "rights": "User states obtained; no permission waiting gate. Immutable historical flags are retained without representing a new rights determination.",
+  "remaining": [
+    "Full comparison/acceptance of the four current academic PDF editions before treating current-source mapping as release-ready",
+    "Public exam registry, normal study consumer, image serving and final UI acceptance; private reader and candidate namespace retained",
+    "Release decision and production acceptance outside this task; no push, PR, deploy, production DB or settings changes",
+    "Own worktree .next cleanup remains after automatic policy rejection; no bypass attempted"
+  ],
+  "publicGo": false,
+  "publication": 0,
+  "checks": {
+    "artifactHashes": "PASS: artifact-check.log",
+    "candidateSchema": "PASS: schema.log",
+    "typecheck": "PASS: typecheck.log",
+    "relatedTests": "PASS: 2 files / 11 tests; tests.log",
+    "build": "PASS: webpack build exit 0; build-webpack.log",
+    "commands": [
+      "python scripts/verify-kisho-acceptance.py",
+      "pnpm exec tsx scripts/validate-kisho.ts",
+      "pnpm exec vitest run __tests__/kisho-private-reader.test.tsx __tests__/questions/kisho-two-rounds.test.ts",
+      "pnpm exec tsc --noEmit",
+      "pnpm exec next build --webpack"
+    ],
+    "lint": "PASS: lint.log",
+    "buildOutputCleanup": "BLOCKED: automatic approval review returned blocked by policy; own worktree .next remains"
+  },
+  "dependencyNotes": [
+    "Frozen install failed on existing manifest/lockfile override mismatch; no settings changed",
+    "Existing installed dependencies referenced through own node_modules junction",
+    "Default Turbopack rejected outside-workspace dependencies; webpack build passed",
+    "Existing middleware/edge/Recharts warnings did not fail the build"
+  ],
+  "repositoryLineEndings": {
+    "files": [
+      "data/qualification-staging/kisho-65-66-private/q04-overlay-accepted.json",
+      "data/qualification-staging/kisho-65-66-private/raw-combined.json",
+      "data/qualification-staging/kisho-65-66-private/source-pages.json"
+    ],
+    "operation": "Git normalizes CRLF to LF; JSON values unchanged; original immutable byte hashes retained as acceptedArtifactSha256 in FILES.json",
+    "settingsChanged": false
+  }
+}

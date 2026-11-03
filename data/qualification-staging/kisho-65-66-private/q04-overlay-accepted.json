@@ -1,0 +1,117 @@
+{
+  "kind": "independent-minimal-explanation-overlay-acceptance",
+  "atUtc": "2026-10-20T06:16:24.470121+00:00",
+  "questionId": "kisho-65-senmon-q04",
+  "decision": "ACCEPT_EXACT_SIX_FIELD_OVERLAY_FOR_PRIVATE_READER",
+  "currentOriginalContentStatus": "HOLD_UNTIL_OVERLAY_APPLIED_AND_VERIFIED",
+  "acceptedCorrectedContentStatus": "PASS_SCOPED_Q04",
+  "overlaySource": "reports\\qualification-finish-20261015\\kisho-private-reader-20261020\\content65-specialist\\CONTENT-REVIEW.json",
+  "overlaySourceSha256": "4557384ec03a2edff9e16c7cb40f27e76fd3129c8033a60dc6fccb3a887a2ad3",
+  "packetSha256": "e3accc6252a5467bbfd73b317e9ffcdc5278888038f1debfdff055e6d6c2a771",
+  "sources": [
+    {
+      "path": "reports\\kisho-latest-two-20261011\\drafts\\65-gakka\\senmon-p004.png",
+      "sha256": "019e6af7107edbfd7fb78fd468737f53d8c23a002f2870987b553190e81740a7"
+    },
+    {
+      "path": "reports\\kisho-latest-two-20261011\\drafts\\65-gakka\\answer-p001.png",
+      "sha256": "6a1fe54a0f07d627b83af72e1d852a54033bc81182f4a3e2654bcee15f94a5de"
+    },
+    {
+      "path": "reports\\kisho-latest-two-20261011\\sources\\round-65\\cwfe_65_z\\gakka(senmon_mondai).pdf",
+      "sha256": "5b8cbd2c4a5e50867e8195b490d3643c897af81878adc38ea4e83cda24e35902"
+    },
+    {
+      "path": "reports\\kisho-latest-two-20261011\\sources\\round-65\\cwfe_65_z\\cwfe_65_a(gakka jitsugi_kaitourei).pdf",
+      "sha256": "3651beffc525c68ee31fb508d9182871399c20986f6d0039de3f29186436cab8"
+    },
+    {
+      "path": "reports\\kisho-latest-two-20261011\\drafts\\65-gakka\\verification.json",
+      "sha256": "cf8d394f7c1292a39906f02711d44e1ff7b05f864be128e4530a1a1a3e4400c6"
+    }
+  ],
+  "directVisualReview": [
+    "専門問題冊子物理p4: (d)はアメダス湿度計データ。①は(a)(b)(c)(d)すべて正。",
+    "公式解答例物理p1: 専門問4の公式正答は①。"
+  ],
+  "reason": "元の6説明は湿度計データを温度と誤記し観測要素を変更していた。訂正後の(d)の文は設問原紙で正とされる観測資料と一致し、他の命題・選択肢判定を変更しない。",
+  "sentenceReview": {
+    "a": "第一推定値との比較による品質管理を説明し、設問(a)正と一致。",
+    "b": "解析予報サイクルで海上等の解析改善を期待できる旨は設問(b)正と一致。",
+    "c": "日々変動する状態依存背景誤差の説明は設問(c)正と一致。元の簡略説明に新しい主張を加えない。",
+    "dCorrectedExact": "メソ解析にはアメダス湿度計データ、解析雨量、レーダー反射強度など全球解析に使わない観測資料も同化する。",
+    "scope": "この試験問題の記述と公式キーとの整合を確認。最新の運用への一般化は今回の審査対象外。"
+  },
+  "choiceLogic": {
+    "ア": "正正正正: 全判定一致",
+    "イ": "正正誤誤: (c)(d)を誤とするため不正解",
+    "ウ": "正誤正誤: (b)(d)を誤とするため不正解",
+    "エ": "誤正正誤: (a)(d)を誤とするため不正解",
+    "オ": "誤誤誤誤: (a)(b)(c)(d)を誤とするため不正解"
+  },
+  "approvedEdits": [
+    {
+      "field": "explanation",
+      "oldExact": "全判定が一致する。観測値と第一推定値を照合し、基準を超える観測値を解析から除外する。 解析予報サイクルを反復することで観測の少ない海上でも改善を期待できる。 全球解析は日々変わる大気の状態に応じた背景誤差を用いる。 メソ解析にはアメダス温度、解析雨量、レーダー反射強度など全球解析に使わない観測資料も同化する。",
+      "newExact": "全判定が一致する。観測値と第一推定値を照合し、基準を超える観測値を解析から除外する。 解析予報サイクルを反復することで観測の少ない海上でも改善を期待できる。 全球解析は日々変わる大気の状態に応じた背景誤差を用いる。 メソ解析にはアメダス湿度計データ、解析雨量、レーダー反射強度など全球解析に使わない観測資料も同化する。",
+      "oldExactMatchesFixedOriginal": true,
+      "onlyNamedTermChanged": true
+    },
+    {
+      "field": "choiceExplanations.ア",
+      "oldExact": "全判定が一致する。観測値と第一推定値を照合し、基準を超える観測値を解析から除外する。 解析予報サイクルを反復することで観測の少ない海上でも改善を期待できる。 全球解析は日々変わる大気の状態に応じた背景誤差を用いる。 メソ解析にはアメダス温度、解析雨量、レーダー反射強度など全球解析に使わない観測資料も同化する。",
+      "newExact": "全判定が一致する。観測値と第一推定値を照合し、基準を超える観測値を解析から除外する。 解析予報サイクルを反復することで観測の少ない海上でも改善を期待できる。 全球解析は日々変わる大気の状態に応じた背景誤差を用いる。 メソ解析にはアメダス湿度計データ、解析雨量、レーダー反射強度など全球解析に使わない観測資料も同化する。",
+      "oldExactMatchesFixedOriginal": true,
+      "onlyNamedTermChanged": true
+    },
+    {
+      "field": "choiceExplanations.イ",
+      "oldExact": "(c)を誤とする点が違う。全球解析は日々変わる大気の状態に応じた背景誤差を用いる。 (d)を誤とする点が違う。メソ解析にはアメダス温度、解析雨量、レーダー反射強度など全球解析に使わない観測資料も同化する。",
+      "newExact": "(c)を誤とする点が違う。全球解析は日々変わる大気の状態に応じた背景誤差を用いる。 (d)を誤とする点が違う。メソ解析にはアメダス湿度計データ、解析雨量、レーダー反射強度など全球解析に使わない観測資料も同化する。",
+      "oldExactMatchesFixedOriginal": true,
+      "onlyNamedTermChanged": true
+    },
+    {
+      "field": "choiceExplanations.ウ",
+      "oldExact": "(b)を誤とする点が違う。解析予報サイクルを反復することで観測の少ない海上でも改善を期待できる。 (d)を誤とする点が違う。メソ解析にはアメダス温度、解析雨量、レーダー反射強度など全球解析に使わない観測資料も同化する。",
+      "newExact": "(b)を誤とする点が違う。解析予報サイクルを反復することで観測の少ない海上でも改善を期待できる。 (d)を誤とする点が違う。メソ解析にはアメダス湿度計データ、解析雨量、レーダー反射強度など全球解析に使わない観測資料も同化する。",
+      "oldExactMatchesFixedOriginal": true,
+      "onlyNamedTermChanged": true
+    },
+    {
+      "field": "choiceExplanations.エ",
+      "oldExact": "(a)を誤とする点が違う。観測値と第一推定値を照合し、基準を超える観測値を解析から除外する。 (d)を誤とする点が違う。メソ解析にはアメダス温度、解析雨量、レーダー反射強度など全球解析に使わない観測資料も同化する。",
+      "newExact": "(a)を誤とする点が違う。観測値と第一推定値を照合し、基準を超える観測値を解析から除外する。 (d)を誤とする点が違う。メソ解析にはアメダス湿度計データ、解析雨量、レーダー反射強度など全球解析に使わない観測資料も同化する。",
+      "oldExactMatchesFixedOriginal": true,
+      "onlyNamedTermChanged": true
+    },
+    {
+      "field": "choiceExplanations.オ",
+      "oldExact": "(a)を誤とする点が違う。観測値と第一推定値を照合し、基準を超える観測値を解析から除外する。 (b)を誤とする点が違う。解析予報サイクルを反復することで観測の少ない海上でも改善を期待できる。 (c)を誤とする点が違う。全球解析は日々変わる大気の状態に応じた背景誤差を用いる。 (d)を誤とする点が違う。メソ解析にはアメダス温度、解析雨量、レーダー反射強度など全球解析に使わない観測資料も同化する。",
+      "newExact": "(a)を誤とする点が違う。観測値と第一推定値を照合し、基準を超える観測値を解析から除外する。 (b)を誤とする点が違う。解析予報サイクルを反復することで観測の少ない海上でも改善を期待できる。 (c)を誤とする点が違う。全球解析は日々変わる大気の状態に応じた背景誤差を用いる。 (d)を誤とする点が違う。メソ解析にはアメダス湿度計データ、解析雨量、レーダー反射強度など全球解析に使わない観測資料も同化する。",
+      "oldExactMatchesFixedOriginal": true,
+      "onlyNamedTermChanged": true
+    }
+  ],
+  "immutableFieldsVerifiedInMemory": [
+    "question",
+    "choices",
+    "officialAnswerNumber",
+    "answer",
+    "sourceBindings",
+    "all other non-explanation question fields"
+  ],
+  "applicationConditions": [
+    "固定原本のSHAおよび6 oldExactを照合し、一致しない場合は適用停止",
+    "私的reader派生packetのみへ指定6フィールドを適用",
+    "原本combined.jsonを変更しない",
+    "適用後に6 newExactとその他フィールド不変を確認",
+    "q04の私的HOLD解除は適用証拠と結びつける。未適用の原本を修正済みと報告しない"
+  ],
+  "originalWritten": false,
+  "readerWritten": false,
+  "overallReaderAcceptance": "PENDING_FINAL_COMMIT_TREE_MANIFEST_BROWSER_EVIDENCE",
+  "rightsHoldPreserved": true,
+  "publicGo": false,
+  "externalHttpCloudApiModelCalls": 0
+}

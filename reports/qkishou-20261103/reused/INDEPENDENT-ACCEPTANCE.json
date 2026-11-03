@@ -1,0 +1,633 @@
+{
+  "kind": "FINAL_INDEPENDENT_PRIVATE_READER_ACCEPTANCE",
+  "atUtc": "2026-10-20T06:30:52.434795+00:00",
+  "decision": "PASS_PRIVATE_LOCAL_READER_AND_CONTENT",
+  "worktree": "C:\\wt\\qualification-kisho-private-20261020",
+  "commit": "dd69af1742f44a20da7d193ff00edbc814f06742",
+  "tree": "becc2b9a33bbd9d1f4d6ead64029e85bca47b34a",
+  "appManifestSha256": "526eea12cb5849b33e5784ffbd447273b703c1c42e7d2e9d052d9d0ce84f01b2",
+  "patchSha256": "8a51c269d66c6315cf529ff3d568b4d8fbb78af5ea6ffafbbfcb2e1a3e46ee23",
+  "scope": "Existing 78 original questions, approved six-field Q04 explanation overlay, private local Vite reader at fixed commit. No new manuscript and no production release acceptance.",
+  "counts": {
+    "acceptedOriginals": 78,
+    "round65": 40,
+    "round66": 38,
+    "academic": 60,
+    "academicChoiceExplanations": 300,
+    "practical": 18,
+    "practicalAnswerFields": 237,
+    "privateImages": 130,
+    "privateContentHolds": 0,
+    "unreviewedOriginalsWithinReusedContentAcceptance": 0
+  },
+  "acceptedContentIds": [
+    "kisho-65-ippan-q01",
+    "kisho-65-ippan-q02",
+    "kisho-65-ippan-q03",
+    "kisho-65-ippan-q04",
+    "kisho-65-ippan-q05",
+    "kisho-65-ippan-q06",
+    "kisho-65-ippan-q07",
+    "kisho-65-ippan-q08",
+    "kisho-65-ippan-q09",
+    "kisho-65-ippan-q10",
+    "kisho-65-ippan-q11",
+    "kisho-65-ippan-q12",
+    "kisho-65-ippan-q13",
+    "kisho-65-ippan-q14",
+    "kisho-65-ippan-q15",
+    "kisho-65-pm1-q01",
+    "kisho-65-pm1-q02",
+    "kisho-65-pm1-q03",
+    "kisho-65-pm1-q04",
+    "kisho-65-pm1-q05",
+    "kisho-65-pm1-q06",
+    "kisho-65-pm1-q07",
+    "kisho-65-pm2-q01",
+    "kisho-65-pm2-q02",
+    "kisho-65-pm2-q03",
+    "kisho-65-senmon-q01",
+    "kisho-65-senmon-q02",
+    "kisho-65-senmon-q03",
+    "kisho-65-senmon-q04",
+    "kisho-65-senmon-q05",
+    "kisho-65-senmon-q06",
+    "kisho-65-senmon-q07",
+    "kisho-65-senmon-q08",
+    "kisho-65-senmon-q09",
+    "kisho-65-senmon-q10",
+    "kisho-65-senmon-q11",
+    "kisho-65-senmon-q12",
+    "kisho-65-senmon-q13",
+    "kisho-65-senmon-q14",
+    "kisho-65-senmon-q15",
+    "kisho-66-ippan-q01",
+    "kisho-66-ippan-q02",
+    "kisho-66-ippan-q03",
+    "kisho-66-ippan-q04",
+    "kisho-66-ippan-q05",
+    "kisho-66-ippan-q06",
+    "kisho-66-ippan-q07",
+    "kisho-66-ippan-q08",
+    "kisho-66-ippan-q09",
+    "kisho-66-ippan-q10",
+    "kisho-66-ippan-q11",
+    "kisho-66-ippan-q12",
+    "kisho-66-ippan-q13",
+    "kisho-66-ippan-q14",
+    "kisho-66-ippan-q15",
+    "kisho-66-pm1-q01",
+    "kisho-66-pm1-q02",
+    "kisho-66-pm1-q03",
+    "kisho-66-pm1-q04",
+    "kisho-66-pm1-q05",
+    "kisho-66-pm2-q01",
+    "kisho-66-pm2-q02",
+    "kisho-66-pm2-q03",
+    "kisho-66-senmon-q01",
+    "kisho-66-senmon-q02",
+    "kisho-66-senmon-q03",
+    "kisho-66-senmon-q04",
+    "kisho-66-senmon-q05",
+    "kisho-66-senmon-q06",
+    "kisho-66-senmon-q07",
+    "kisho-66-senmon-q08",
+    "kisho-66-senmon-q09",
+    "kisho-66-senmon-q10",
+    "kisho-66-senmon-q11",
+    "kisho-66-senmon-q12",
+    "kisho-66-senmon-q13",
+    "kisho-66-senmon-q14",
+    "kisho-66-senmon-q15"
+  ],
+  "perIdEvidence": [
+    {
+      "id": "kisho-66-ippan-q01",
+      "status": "PASS",
+      "evidence": "content66/CONTENT-REVIEW.json"
+    },
+    {
+      "id": "kisho-66-ippan-q02",
+      "status": "PASS",
+      "evidence": "content66/CONTENT-REVIEW.json"
+    },
+    {
+      "id": "kisho-66-ippan-q03",
+      "status": "PASS",
+      "evidence": "content66/CONTENT-REVIEW.json"
+    },
+    {
+      "id": "kisho-66-ippan-q04",
+      "status": "PASS",
+      "evidence": "content66/CONTENT-REVIEW.json"
+    },
+    {
+      "id": "kisho-66-ippan-q05",
+      "status": "PASS",
+      "evidence": "content66/CONTENT-REVIEW.json"
+    },
+    {
+      "id": "kisho-66-ippan-q06",
+      "status": "PASS",
+      "evidence": "content66/CONTENT-REVIEW.json"
+    },
+    {
+      "id": "kisho-66-ippan-q07",
+      "status": "PASS",
+      "evidence": "content66/CONTENT-REVIEW.json"
+    },
+    {
+      "id": "kisho-66-ippan-q08",
+      "status": "PASS",
+      "evidence": "content66/CONTENT-REVIEW.json"
+    },
+    {
+      "id": "kisho-66-ippan-q09",
+      "status": "PASS",
+      "evidence": "content66/CONTENT-REVIEW.json"
+    },
+    {
+      "id": "kisho-66-ippan-q10",
+      "status": "PASS",
+      "evidence": "content66/CONTENT-REVIEW.json"
+    },
+    {
+      "id": "kisho-66-ippan-q11",
+      "status": "PASS",
+      "evidence": "content66/CONTENT-REVIEW.json"
+    },
+    {
+      "id": "kisho-66-ippan-q12",
+      "status": "PASS",
+      "evidence": "content66/CONTENT-REVIEW.json"
+    },
+    {
+      "id": "kisho-66-ippan-q13",
+      "status": "PASS",
+      "evidence": "content66/CONTENT-REVIEW.json"
+    },
+    {
+      "id": "kisho-66-ippan-q14",
+      "status": "PASS",
+      "evidence": "content66/CONTENT-REVIEW.json"
+    },
+    {
+      "id": "kisho-66-ippan-q15",
+      "status": "PASS",
+      "evidence": "content66/CONTENT-REVIEW.json"
+    },
+    {
+      "id": "kisho-66-senmon-q01",
+      "status": "PASS",
+      "evidence": "content66/CONTENT-REVIEW.json"
+    },
+    {
+      "id": "kisho-66-senmon-q02",
+      "status": "PASS",
+      "evidence": "content66/CONTENT-REVIEW.json"
+    },
+    {
+      "id": "kisho-66-senmon-q03",
+      "status": "PASS",
+      "evidence": "content66/CONTENT-REVIEW.json"
+    },
+    {
+      "id": "kisho-66-senmon-q04",
+      "status": "PASS",
+      "evidence": "content66/CONTENT-REVIEW.json"
+    },
+    {
+      "id": "kisho-66-senmon-q05",
+      "status": "PASS",
+      "evidence": "content66/CONTENT-REVIEW.json"
+    },
+    {
+      "id": "kisho-66-senmon-q06",
+      "status": "PASS",
+      "evidence": "content66/CONTENT-REVIEW.json"
+    },
+    {
+      "id": "kisho-66-senmon-q07",
+      "status": "PASS",
+      "evidence": "content66/CONTENT-REVIEW.json"
+    },
+    {
+      "id": "kisho-66-senmon-q08",
+      "status": "PASS",
+      "evidence": "content66/CONTENT-REVIEW.json"
+    },
+    {
+      "id": "kisho-66-senmon-q09",
+      "status": "PASS",
+      "evidence": "content66/CONTENT-REVIEW.json"
+    },
+    {
+      "id": "kisho-66-senmon-q10",
+      "status": "PASS",
+      "evidence": "content66/CONTENT-REVIEW.json"
+    },
+    {
+      "id": "kisho-66-senmon-q11",
+      "status": "PASS",
+      "evidence": "content66/CONTENT-REVIEW.json"
+    },
+    {
+      "id": "kisho-66-senmon-q12",
+      "status": "PASS",
+      "evidence": "content66/CONTENT-REVIEW.json"
+    },
+    {
+      "id": "kisho-66-senmon-q13",
+      "status": "PASS",
+      "evidence": "content66/CONTENT-REVIEW.json"
+    },
+    {
+      "id": "kisho-66-senmon-q14",
+      "status": "PASS",
+      "evidence": "content66/CONTENT-REVIEW.json"
+    },
+    {
+      "id": "kisho-66-senmon-q15",
+      "status": "PASS",
+      "evidence": "content66/CONTENT-REVIEW.json"
+    },
+    {
+      "id": "kisho-66-pm1-q01",
+      "status": "PASS",
+      "evidence": "content66/CONTENT-REVIEW.json"
+    },
+    {
+      "id": "kisho-66-pm1-q02",
+      "status": "PASS",
+      "evidence": "content66/CONTENT-REVIEW.json"
+    },
+    {
+      "id": "kisho-66-pm1-q03",
+      "status": "PASS",
+      "evidence": "content66/CONTENT-REVIEW.json"
+    },
+    {
+      "id": "kisho-66-pm1-q04",
+      "status": "PASS",
+      "evidence": "content66/CONTENT-REVIEW.json"
+    },
+    {
+      "id": "kisho-66-pm1-q05",
+      "status": "PASS",
+      "evidence": "content66/CONTENT-REVIEW.json"
+    },
+    {
+      "id": "kisho-66-pm2-q01",
+      "status": "PASS",
+      "evidence": "content66/CONTENT-REVIEW.json"
+    },
+    {
+      "id": "kisho-66-pm2-q02",
+      "status": "PASS",
+      "evidence": "content66/CONTENT-REVIEW.json"
+    },
+    {
+      "id": "kisho-66-pm2-q03",
+      "status": "PASS",
+      "evidence": "content66/CONTENT-REVIEW.json"
+    },
+    {
+      "id": "kisho-65-ippan-q01",
+      "status": "PASS",
+      "evidence": "content65/CONTENT65-REVIEW.json"
+    },
+    {
+      "id": "kisho-65-ippan-q02",
+      "status": "PASS",
+      "evidence": "content65/CONTENT65-REVIEW.json"
+    },
+    {
+      "id": "kisho-65-ippan-q03",
+      "status": "PASS",
+      "evidence": "content65/CONTENT65-REVIEW.json"
+    },
+    {
+      "id": "kisho-65-ippan-q04",
+      "status": "PASS",
+      "evidence": "content65/CONTENT65-REVIEW.json"
+    },
+    {
+      "id": "kisho-65-ippan-q05",
+      "status": "PASS",
+      "evidence": "content65/CONTENT65-REVIEW.json"
+    },
+    {
+      "id": "kisho-65-ippan-q06",
+      "status": "PASS",
+      "evidence": "content65/CONTENT65-REVIEW.json"
+    },
+    {
+      "id": "kisho-65-ippan-q07",
+      "status": "PASS",
+      "evidence": "content65/CONTENT65-REVIEW.json"
+    },
+    {
+      "id": "kisho-65-ippan-q08",
+      "status": "PASS",
+      "evidence": "content65/CONTENT65-REVIEW.json"
+    },
+    {
+      "id": "kisho-65-ippan-q09",
+      "status": "PASS",
+      "evidence": "content65/CONTENT65-REVIEW.json"
+    },
+    {
+      "id": "kisho-65-ippan-q10",
+      "status": "PASS",
+      "evidence": "content65/CONTENT65-REVIEW.json"
+    },
+    {
+      "id": "kisho-65-ippan-q11",
+      "status": "PASS",
+      "evidence": "content65/CONTENT65-REVIEW.json"
+    },
+    {
+      "id": "kisho-65-ippan-q12",
+      "status": "PASS",
+      "evidence": "content65/CONTENT65-REVIEW.json"
+    },
+    {
+      "id": "kisho-65-ippan-q13",
+      "status": "PASS",
+      "evidence": "content65/CONTENT65-REVIEW.json"
+    },
+    {
+      "id": "kisho-65-ippan-q14",
+      "status": "PASS",
+      "evidence": "content65/CONTENT65-REVIEW.json"
+    },
+    {
+      "id": "kisho-65-ippan-q15",
+      "status": "PASS",
+      "evidence": "content65/CONTENT65-REVIEW.json"
+    },
+    {
+      "id": "kisho-65-pm1-q01",
+      "status": "PASS",
+      "evidence": "content65/CONTENT65-REVIEW.json"
+    },
+    {
+      "id": "kisho-65-pm1-q02",
+      "status": "PASS",
+      "evidence": "content65/CONTENT65-REVIEW.json"
+    },
+    {
+      "id": "kisho-65-pm1-q03",
+      "status": "PASS",
+      "evidence": "content65/CONTENT65-REVIEW.json"
+    },
+    {
+      "id": "kisho-65-pm1-q04",
+      "status": "PASS",
+      "evidence": "content65/CONTENT65-REVIEW.json"
+    },
+    {
+      "id": "kisho-65-pm1-q05",
+      "status": "PASS",
+      "evidence": "content65/CONTENT65-REVIEW.json"
+    },
+    {
+      "id": "kisho-65-pm1-q06",
+      "status": "PASS",
+      "evidence": "content65/CONTENT65-REVIEW.json"
+    },
+    {
+      "id": "kisho-65-pm1-q07",
+      "status": "PASS",
+      "evidence": "content65/CONTENT65-REVIEW.json"
+    },
+    {
+      "id": "kisho-65-pm2-q01",
+      "status": "PASS",
+      "evidence": "content65/CONTENT65-REVIEW.json"
+    },
+    {
+      "id": "kisho-65-pm2-q02",
+      "status": "PASS",
+      "evidence": "content65/CONTENT65-REVIEW.json"
+    },
+    {
+      "id": "kisho-65-pm2-q03",
+      "status": "PASS",
+      "evidence": "content65/CONTENT65-REVIEW.json"
+    },
+    {
+      "id": "kisho-65-senmon-q01",
+      "status": "PASS",
+      "evidence": "content65-specialist/CONTENT-REVIEW.json"
+    },
+    {
+      "id": "kisho-65-senmon-q02",
+      "status": "PASS",
+      "evidence": "content65-specialist/CONTENT-REVIEW.json"
+    },
+    {
+      "id": "kisho-65-senmon-q03",
+      "status": "PASS",
+      "evidence": "content65-specialist/CONTENT-REVIEW.json"
+    },
+    {
+      "id": "kisho-65-senmon-q05",
+      "status": "PASS",
+      "evidence": "content65-specialist/CONTENT-REVIEW.json"
+    },
+    {
+      "id": "kisho-65-senmon-q06",
+      "status": "PASS",
+      "evidence": "content65-specialist/CONTENT-REVIEW.json"
+    },
+    {
+      "id": "kisho-65-senmon-q07",
+      "status": "PASS",
+      "evidence": "content65-specialist/CONTENT-REVIEW.json"
+    },
+    {
+      "id": "kisho-65-senmon-q08",
+      "status": "PASS",
+      "evidence": "content65-specialist/CONTENT-REVIEW.json"
+    },
+    {
+      "id": "kisho-65-senmon-q09",
+      "status": "PASS",
+      "evidence": "content65-specialist/CONTENT-REVIEW.json"
+    },
+    {
+      "id": "kisho-65-senmon-q10",
+      "status": "PASS",
+      "evidence": "content65-specialist/CONTENT-REVIEW.json"
+    },
+    {
+      "id": "kisho-65-senmon-q11",
+      "status": "PASS",
+      "evidence": "content65-specialist/CONTENT-REVIEW.json"
+    },
+    {
+      "id": "kisho-65-senmon-q12",
+      "status": "PASS",
+      "evidence": "content65-specialist/CONTENT-REVIEW.json"
+    },
+    {
+      "id": "kisho-65-senmon-q13",
+      "status": "PASS",
+      "evidence": "content65-specialist/CONTENT-REVIEW.json"
+    },
+    {
+      "id": "kisho-65-senmon-q14",
+      "status": "PASS",
+      "evidence": "content65-specialist/CONTENT-REVIEW.json"
+    },
+    {
+      "id": "kisho-65-senmon-q15",
+      "status": "PASS",
+      "evidence": "content65-specialist/CONTENT-REVIEW.json"
+    },
+    {
+      "id": "kisho-65-senmon-q04",
+      "status": "PASS",
+      "evidence": "final-review/Q04-OVERLAY-ACCEPTANCE.json",
+      "applicationVerified": true
+    }
+  ],
+  "independentRechecks": {
+    "headAndTreeExact": true,
+    "workingTreeClean": true,
+    "changedPathsExactlyManifest145": true,
+    "workingAndCommittedBlobShaChecks": 145,
+    "workingAndCommittedBlobFailures": 0,
+    "protectedPreviousFileShaChecks": 204,
+    "protectedPreviousFileFailures": 0,
+    "manifestAndPatchHashMatch": true,
+    "approvedQ04ReceiptByteIdenticalInCommitWorkingTree": true,
+    "rawPacketSha256": "e3accc6252a5467bbfd73b317e9ffcdc5278888038f1debfdff055e6d6c2a771",
+    "publicRouteAndBarrelChangeCount": 0,
+    "productionConfigurationChangeCount": 0,
+    "baselineDistinctIds": 3915,
+    "newDistinctIds": 78,
+    "overlap": 0,
+    "combinedDistinctIds": 3993
+  },
+  "mechanicalEvidenceReused": {
+    "checksPassed": 1248,
+    "checksFailed": 0,
+    "includes": [
+      "immutable raw bytes",
+      "exact approved Q04 six-field overlay and all other question fields unchanged",
+      "237 raw practical fields unchanged",
+      "300 academic choice combinations",
+      "130 PNG hash checks",
+      "204 prior file preservation",
+      "content acceptance union exact 78 IDs"
+    ]
+  },
+  "uxDecision": "PASS_WITHIN_PRIVATE_VITE_DEV_SCOPE",
+  "browserEvidenceReused": {
+    "checksPassed": 184,
+    "checksFailed": 0,
+    "consoleErrors": 0,
+    "externalRequests": 0,
+    "chartPanChecksPassed": 2,
+    "coverage": [
+      "all 78 question navigation controls",
+      "all 237 practical fields accessible",
+      "draft save and navigation preservation and reload restoration",
+      "editing clears manual review mark",
+      "academic wrong/right selection grading",
+      "three representative IDs at desktop1280 and mobile390",
+      "native-size charts with horizontal and vertical scrolling"
+    ]
+  },
+  "directCodeReview": [
+    "private publication flags required by adapter and fixed false in component",
+    "no practical automatic grading; manual review explicit",
+    "q04 oldExact guard and exact accepted six-field overlay",
+    "draft explicit localStorage save and edit invalidation",
+    "data/blob-only image resolver",
+    "local Vite binds 127.0.0.1, publicDir false, sensitive paths denied; asset lookup allowlisted"
+  ],
+  "directScreenshotsViewed": [
+    "browser/kisho-65-senmon-q04-live-desktop.png",
+    "browser/kisho-65-pm1-q01-live-mobile.png",
+    "browser/kisho-66-pm2-q03-live-desktop.png",
+    "browser/kisho-65-pm1-q01-mobile-chart-pan.png"
+  ],
+  "contentAdjudications": {
+    "field1-7": "False conflict resolved: official answer 6=海上台風,7=海上強風; original field remains unchanged. No active false HOLD.",
+    "q04": "Six exact explanation term changes independently accepted then application verified; source manuscript remains immutable. Specialist source review HOLD applies to raw text and is resolved only in corrected private adapter view."
+  },
+  "accounting": {
+    "eligiblePrivateCompletionIncrement": 78,
+    "priorPrivateCompleted": 3915,
+    "newPrivateCompleted": 3993,
+    "publicationIncrement": 0,
+    "publicHolds": "Rights/publication HOLD remains for all 78 originals",
+    "sheetMayBeUpdatedByRoot": true,
+    "sheetEditedByReviewer": false
+  },
+  "limits": [
+    "Full production Next application route was not tested.",
+    "Compiled production global CSS and full production build were not tested.",
+    "Behavior accepted on actual component in local Vite dev host; no production deployment/security certification.",
+    "Content acceptance reuses finite per-ID reviews; reviewer did not perform a new full 78-question re-review.",
+    "No live external source or rights permission check.",
+    "Screenshots and browser interaction evidence were produced by integration reviewer; independent reviewer inspected selected screenshots, code, hashes, and result integrity."
+  ],
+  "remainingPrivateAcceptanceBlockers": [],
+  "rightsPermissionVerified": false,
+  "publicationAllowed": false,
+  "publicGo": false,
+  "existingPublicHoldPreserved": true,
+  "newOpusContractIntroduced": false,
+  "additionalInstallBuildPushCiPreviewDeploy": 0,
+  "externalHttpCloudApiModelCallsByReviewer": 0,
+  "evidence": [
+    {
+      "path": "GIT-FIXED.json",
+      "sha256": "433350b543ce8a50d62082bcf564102570d411f0ae2e52519473c8f3c7d4437e"
+    },
+    {
+      "path": "APP-FILE-MANIFEST.json",
+      "sha256": "526eea12cb5849b33e5784ffbd447273b703c1c42e7d2e9d052d9d0ce84f01b2"
+    },
+    {
+      "path": "APPLICATION-VERIFICATION.json",
+      "sha256": "e9dec98ea5195b12df7becd9b9248c9e2d0975dd570341bf99f60a3a7be920d3"
+    },
+    {
+      "path": "PRESERVATION-BASELINE.json",
+      "sha256": "bcfb0aa2c11c9c507192a74891a9a37703c67958ec35644ecd93a7606568f6f3"
+    },
+    {
+      "path": "browser/LIVE-RESULT.json",
+      "sha256": "0dec8e100e4e433ba0a0f4678fd02770ef9f3b3689daa0480d6d4828d64f1e4f"
+    },
+    {
+      "path": "browser/CHART-PAN-RESULT.json",
+      "sha256": "54b995ac28166d1fb13c1afe3e2e8e79afaa0bf1be83e7b8b9d16c98abd4be94"
+    },
+    {
+      "path": "content65/CONTENT65-REVIEW.json",
+      "sha256": "9083bde8202a01c0666a70d7da6a402ae643442637b1162bc1ac57c73717d044"
+    },
+    {
+      "path": "content65-specialist/CONTENT-REVIEW.json",
+      "sha256": "4557384ec03a2edff9e16c7cb40f27e76fd3129c8033a60dc6fccb3a887a2ad3"
+    },
+    {
+      "path": "content66/CONTENT-REVIEW.json",
+      "sha256": "4f8e1382fbca2b99b309781adf1bd7a628f785f01653daf8572135cadbe8dae1"
+    },
+    {
+      "path": "final-review/FIELD-1-7-ADJUDICATION.json",
+      "sha256": "774c610b04000d43cd4a4057aebf188432978f0511625e318fb41996b4c5ca2e"
+    },
+    {
+      "path": "final-review/Q04-OVERLAY-ACCEPTANCE.json",
+      "sha256": "e98267f156555f7d18ae9dcb5ccff0ba0cc25b67046a49e09e03976b187d27a8"
+    }
+  ]
+}

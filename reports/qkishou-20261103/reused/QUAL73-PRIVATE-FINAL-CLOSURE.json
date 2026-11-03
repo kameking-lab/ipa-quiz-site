@@ -1,0 +1,63 @@
+{
+  "schema": "qual73-original-private-scope-close/v1",
+  "detailId": "qual:73",
+  "status": "PRIVATE_ORIGINAL_SCOPE_DELIVERED_PUBLICATION_HOLD",
+  "scope": {
+    "round65": 40,
+    "round66": 38,
+    "originals": 78,
+    "theoryQuestions": 60,
+    "practicalQuestions": 18,
+    "practicalAnswerFields": 237,
+    "privateAssets": 130
+  },
+  "evidenceChain": {
+    "originalAcceptedCandidate": {
+      "path": "C:\\Users\\kanet\\Documents\\Codex\\2026-10-31\\qual73-weather-private-finish\\outputs\\RECEIPT.json",
+      "bytes": 3709,
+      "sha256": "7b03b904195a30339642059054a041bc61923d78407060be7f50a4bd3cbc4d6e"
+    },
+    "adoptionManifest": {
+      "path": "C:\\Users\\kanet\\Documents\\Codex\\2026-10-31\\qual73-weather-private-finish\\outputs\\ADOPTION-MANIFEST.json",
+      "bytes": 84720,
+      "sha256": "ec66f054949ac6ba5738c9814bd10b7f141e99f7631b26b5e3c630188f718d60"
+    },
+    "sixBindingPatch": {
+      "path": "C:\\Users\\kanet\\Documents\\Codex\\2026-10-31\\qual73-weather-private-finish\\outputs\\integrated-binding-patch-20261101\\RECEIPT.json",
+      "bytes": 4164,
+      "sha256": "8f6256532ad1baf3381273d925c8fc8b492db44ada95237c9a77b45eef531e52"
+    },
+    "recovery": {
+      "path": "C:\\Users\\kanet\\Documents\\Codex\\2026-10-31\\qual73-weather-private-finish\\outputs\\qual73-narrow-accepted-20261101\\RECOVERY-ACCEPTANCE-REFERENCE.json",
+      "bytes": 2191,
+      "sha256": "afc6c2fb3dbad9dd5909727b62c80deae57d513f28a1cbfa382d4d7afbaaa632"
+    },
+    "desktopSixFields": {
+      "path": "C:\\Users\\kanet\\Documents\\Codex\\2026-10-31\\qual73-weather-private-finish\\outputs\\visual-six-fields-20261101\\RECEIPT.json",
+      "bytes": 11657,
+      "sha256": "d0f7947c34279adf1667fee9b71e73955e7672d414ff2a31ecdcdeb4e30a69d6"
+    },
+    "narrowSourceAdoption": {
+      "path": "C:\\Users\\kanet\\Documents\\Codex\\2026-10-30\\task-2\\resume-20261030\\original-goals-20261101\\qual73-narrow-integration\\APPLICATION.json",
+      "bytes": 990,
+      "sha256": "c42e01cec5bf6ebd5959b458705d0a9e002198aa7d81a9e61bd9792f6a2275f7"
+    },
+    "narrowSixFields": {
+      "path": "C:\\Users\\kanet\\Documents\\Codex\\2026-10-31\\qual73-weather-private-finish\\outputs\\qual73-narrow-accepted-20261101\\RECEIPT.json",
+      "bytes": 6759,
+      "sha256": "5c8badef925a365c541f55498b0d70665b448b9d12f6acf30b1a8f1c2bdc7f7e"
+    }
+  },
+  "conclusion": "Original private deliverable and known change-impact acceptance closed by reused accepted scope plus current narrow six-field pass. No further private correction identified. Publication and formal production acceptance remain separate HOLD.",
+  "existingUnknownOperation": "Old interrupted script/candidate-reconstruction result remains isolated; not retried or resolved by this receipt and not used as evidence. Fixed accepted candidate is the delivery source.",
+  "remainingPrivateChangeImpact": [],
+  "remainingReleaseOnly": [
+    "Rights/publication approval remains release owner responsibility",
+    "Production build/deployment/formal production acceptance not performed or claimed"
+  ],
+  "publicGo": false,
+  "publication": 0,
+  "newOriginals": 0,
+  "acceptanceCountInflation": 0,
+  "A5Included": false
+}
