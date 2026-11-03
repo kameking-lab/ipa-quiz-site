@@ -241,7 +241,7 @@ describe("LQ4B source metadata", () => {
     ["kisho", "JMBSC-permission-required", "https://www.jmbsc.or.jp/"],
     ["kenchiku-setsubishi", "JAEIC-permission-required", "https://www.jaeic.or.jp/"],
   ] as const)("attributes %s to its original institution", (exam, license, url) => {
-    const resource = build({ ...baseQuestion, exam, license })["@graph"][0];
+    const resource = build({ ...baseQuestion, exam, license, sourcePdfUrl: `${url}example.pdf` })["@graph"][0];
     if (!("hasPart" in resource)) throw new Error("Missing question resource");
     expect(resource.hasPart.author.url).toBe(url);
     expect(resource).not.toHaveProperty("license");
