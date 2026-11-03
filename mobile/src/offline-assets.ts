@@ -10,21 +10,8 @@ export async function localAssetSrc(asset: SavedAsset) {
   const mime=extension==="pdf"?"application/pdf":extension==="svg"?"image/svg+xml":extension==="jpg"?"image/jpeg":`image/${extension}`;
   return `data:${mime};base64,${data.data}`;
 }
-const ORIGIN = "https://www.kakomon-ai.jp";
-export function requiredImages(value: unknown): string[] {
-  const urls = new Set<string>();
-  const referencePdfs = JSON.stringify(value).includes('"originalReferenceRequired":true');
-  const visit = (v: unknown) => {
-    if (typeof v === "string") {
-      const candidates = [v, ...Array.from(v.matchAll(/(?:https?:\/\/[^\s"'<>()[\]]+|\/[\w./%-]+)\.(?:png|jpe?g|webp|gif|svg)(?:\?[^\s"'<>()[\]]*)?/gi), m=>m[0])];
-      for (const raw of candidates) {
-        try { const u = new URL(raw, ORIGIN); if (/\.(png|jpe?g|webp|gif|svg)$/i.test(u.pathname)) { if (u.origin !== ORIGIN) throw new Error("外部画像は保存できません。"); urls.add(u.href); } else if(referencePdfs && u.protocol==="https:" && u.hostname==="www.ipa.go.jp" && u.pathname.endsWith(".pdf")) urls.add(u.href); } catch (e) { if (e instanceof Error && e.message === "外部画像は保存できません。") throw e; }
-      }
-    } else if (Array.isArray(v)) v.forEach(visit);
-    else if (v && typeof v === "object") Object.values(v).forEach(visit);
-  };
-  visit(value); return [...urls].sort();
-}
+export { learningAssetUrls as requiredImages } from "@/lib/learning-assets";
+import { learningAssetUrls as requiredImages } from "@/lib/learning-assets";
 const hash = async (data: string) => {
   const bytes = Uint8Array.from(atob(data), c=>c.charCodeAt(0));
   return Array.from(new Uint8Array(await crypto.subtle.digest("SHA-256", bytes)), b=>b.toString(16).padStart(2,"0")).join("");

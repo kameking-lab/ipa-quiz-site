@@ -81,6 +81,7 @@ export interface ExamChoiceExplanation {
 }
 
 export interface ExamQuestion {
+  learningAssets?: import("./learning-assets").LearningAssets;
   referenceOnly?: boolean;
   referenceNotice?: string;
   officialKey?: number;

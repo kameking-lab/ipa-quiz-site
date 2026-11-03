@@ -26,8 +26,9 @@ import { deriveNoteAccountFromUrl } from "@/lib/note-accounts";
 import { posthogCapture } from "@/lib/posthog";
 import { findExamEntry } from "@/lib/exam-library-catalog";
 import { qualificationHubForEntry } from "@/lib/exam-qualification-hubs";
-import Image from "next/image";
-import answerFiguresJson from "@/data/exam-library/answer-figures.json";
+import { paperPlaceholder, type PaperQuestionIndex } from "@/mobile/shared/paper-index";
+import { answerFiguresFor } from "@/lib/learning-assets";
+import { AnswerFigureView } from "./answer-figure";
 import { ChihuahuaMascot } from "@/components/ChihuahuaMascot";
 import { StudyRewardCorner } from "@/components/home/StudyRewardCorner";
 import { recordStudyReward } from "@/lib/study-reward";
@@ -64,9 +65,6 @@ import {
   type ExamSessionAnswers,
 } from "@/lib/exam-library-progress";
 
-type AnswerFigure = { src: string; alt: string; width: number; height: number; official?: boolean };
-const answerFigures: Record<string, AnswerFigure[]> = answerFiguresJson;
-
 interface ExamQuestionPlayerProps {
   initialQuestionId?: string;
   initialView?: "question" | "summary";
@@ -76,6 +74,8 @@ interface ExamQuestionPlayerProps {
   sourceMode?: ExamSourceMode;
   indexUrl: string;
   questions: readonly ExamQuestion[];
+  questionIndex?: readonly PaperQuestionIndex[];
+  resolveQuestion?: (id: string, signal: AbortSignal) => Promise<ExamQuestion>;
   /** 出典: ExamCatalogEntry.noteLinks。存在すれば解答後(submitted)のみ表示する。 */
   noteLinks?: readonly ExamNoteLink[];
 }
@@ -145,9 +145,19 @@ export function ExamQuestionPlayer({
   pdfUrl,
   sourceMode = "official-pdf",
   indexUrl,
-  questions,
+  questions: sourceQuestions,
+  questionIndex,
+  resolveQuestion,
   noteLinks,
 }: ExamQuestionPlayerProps) {
+  // The paper's complete ID set owns progress; granted bodies are a separate cache.
+  const [granted, setGranted] = useState<Record<string, ExamQuestion>>({});
+  const grantedRef = useRef(granted);
+  const [contentError, setContentError] = useState("");
+  const [contentAttempt, setContentAttempt] = useState(0);
+  const questions = useMemo(() => questionIndex
+    ? questionIndex.map(item => granted[item.id] ?? paperPlaceholder(item))
+    : sourceQuestions, [questionIndex, granted, sourceQuestions]);
   const practiceQuestions = useMemo(() => questions.filter(question => !isExamReferenceOnly(question)), [questions]);
   const allIds = useMemo(() => questions.map((question) => question.id), [questions]);
   const byId = useMemo(
@@ -195,14 +205,43 @@ export function ExamQuestionPlayer({
 
   const currentId = roundIds[index];
   const current = currentId ? byId.get(currentId) : undefined;
-  const nativePermission = useNativeQuestionGrant(current?.id, examId);
+  const nativePermission = useNativeQuestionGrant(resolveQuestion ? undefined : current?.id, examId);
   const currentAnswer = currentId ? answers[currentId] : undefined;
   const referenceOnly = Boolean(current && isExamReferenceOnly(current));
   const submitted = !referenceOnly && Boolean(currentAnswer?.submitted);
   const status: AnswerStatus = current ? answerResult(current, currentAnswer) : "unanswered";
-  const summary = useMemo(() => summarizeExamProgress(questions, answers), [answers, questions]);
+  const summary = useMemo(() => ({...summarizeExamProgress(questions, answers),
+    ...(questionIndex ? {scorable:questionIndex.filter(q=>q.scorable).length} : {})}), [answers, questions, questionIndex]);
   const wrongIds = useMemo(() => wrongQuestionIds(questions, answers), [answers, questions]);
   const firstUnansweredIndex = allIds.findIndex((id) => !isExamReferenceOnly(byId.get(id)!) && !answers[id]?.submitted);
+
+  // Results revalidate only previously answered questions, through the same grant API.
+  const neededIds = resolveQuestion ? (view === "summary"
+    ? Object.keys(answers).filter(id=>answers[id].submitted)
+    : currentId ? [currentId] : []) : [];
+  const neededKey = neededIds.join("|");
+  const contentPending = neededIds.some(id=>!granted[id]);
+  useEffect(() => {
+    if (!resolveQuestion || !neededKey) return;
+    const controller = new AbortController();
+    setContentError("");
+    void Promise.all(neededKey.split("|").map(async id => {
+      if (grantedRef.current[id]) return;
+      const question = await resolveQuestion(id, controller.signal);
+      if (question.id !== id) throw new Error("問題の一致を確認できません。");
+      if (controller.signal.aborted) return;
+      grantedRef.current = {...grantedRef.current, [id]:question};
+      setGranted(grantedRef.current);
+    })).catch(error => {if (!controller.signal.aborted) setContentError(error instanceof Error ? error.message : "利用枠を確認できません。");});
+    return () => controller.abort();
+  }, [neededKey, resolveQuestion, contentAttempt]);
+  useEffect(() => {
+    if (!resolveQuestion) return;
+    const clear = () => {grantedRef.current={};setGranted({});setContentAttempt(n=>n+1);};
+    window.addEventListener("mobile:entitlement-changed", clear);
+    window.addEventListener("mobile:account-deleted", clear);
+    return () => {window.removeEventListener("mobile:entitlement-changed", clear);window.removeEventListener("mobile:account-deleted", clear);};
+  }, [resolveQuestion]);
 
   useEffect(() => {
     if (tabRestoredRef.current) return;
@@ -270,7 +309,7 @@ export function ExamQuestionPlayer({
 
   const selectChoice = useCallback(
     (choice: number) => {
-      if (!current || isExamReferenceOnly(current) || submitted || choice < 1 || choice > current.choiceCount) return;
+      if (!current || contentPending || isExamReferenceOnly(current) || submitted || choice < 1 || choice > current.choiceCount) return;
       const entry = findExamEntry(examId);
       recordStudyReward({ scope: `library:${examId}`, questionId: current.id, exam: entry ? `library:${entry.subject}` : "unknown", label: entry?.subject ?? "学習のひと休み" });
       setDraftChoice(choice);
@@ -281,11 +320,11 @@ export function ExamQuestionPlayer({
       posthogCapture("exam_library_answered", { examId, hubSlug: hubSlug ?? undefined });
       focusLater(feedbackRef);
     },
-    [answers, commit, current, currentAnswer?.memo, examId, hubSlug, submitted],
+    [answers, commit, current, currentAnswer?.memo, examId, hubSlug, submitted, contentPending],
   );
 
   const submitAnswer = useCallback(() => {
-    if (!current || isExamReferenceOnly(current) || submitted) return;
+    if (!current || contentPending || isExamReferenceOnly(current) || submitted) return;
     if (current.choiceCount > 0 && draftChoice === null) {
       firstChoiceRef.current?.focus();
       return;
@@ -308,7 +347,7 @@ export function ExamQuestionPlayer({
     );
     posthogCapture("exam_library_answered", { examId, hubSlug: hubSlug ?? undefined });
     focusLater(feedbackRef);
-  }, [answers, commit, current, currentAnswer?.memo, draftChoice, examId, hubSlug, submitted]);
+  }, [answers, commit, current, currentAnswer?.memo, draftChoice, examId, hubSlug, submitted, contentPending]);
 
   const retryCurrent = useCallback(() => {
     if (!current || isExamReferenceOnly(current)) return;
@@ -440,6 +479,11 @@ export function ExamQuestionPlayer({
   }, [current, moveNext, selectChoice, submitAnswer, submitted, view]);
 
   if (!nativePermission.allowed) return <NativeAccessState permission={nativePermission}/>;
+  if (contentPending) return <section className="space-y-4" aria-live="polite">
+    {contentError ? <p role="alert">{contentError === "daily_limit" ? "本日の無料10問を使い切りました。日本時間0時に更新されます。" : contentError}</p> : <p role="status">利用枠と回答済みの問題を確認しています…</p>}
+    {contentError && <button type="button" onClick={()=>setContentAttempt(n=>n+1)}>再確認</button>}
+    <nav className="flex flex-wrap gap-4"><button type="button" disabled={index<=0} onClick={()=>goTo(index-1)}>前の問題</button><button type="button" disabled={index>=roundIds.length-1} onClick={()=>goTo(index+1)}>次の問題</button><button type="button" onClick={showSummary}>結果を見る</button></nav>
+  </section>;
   if (questions.length === 0) return null;
 
   const scoredAnswered = summary.correct + summary.incorrect;
@@ -754,16 +798,9 @@ export function ExamQuestionPlayer({
                       {sourcePage ? `（${sourcePage}ページ）` : ""}で確認できます。
                     </p>
                   )}
-                  {answerFigures[current.id]?.length ? (
+                  {answerFiguresFor(current).length ? (
                     <div className="mt-4 grid gap-4">
-                      {answerFigures[current.id]!.map((figure) => (
-                        <figure key={figure.src}>
-                          <a href={figure.src} target="_blank" rel="noopener noreferrer" aria-label={`${figure.alt}を拡大（新しいタブ）`}>
-                            <Image src={figure.src} alt={figure.alt} width={figure.width} height={figure.height} className="h-auto max-w-full rounded-lg bg-white" />
-                          </a>
-                          <figcaption className="mt-1 text-xs">{figure.alt}：{figure.official ? "公式の正答例から抜粋" : "模範解答用の模式図（独自作成）"}。図を押すと拡大できます。</figcaption>
-                        </figure>
-                      ))}
+                      {answerFiguresFor(current).map(figure => <AnswerFigureView key={figure.src} figure={figure}/>)}
                     </div>
                   ) : null}
                   <div className="mt-1 flex flex-wrap gap-x-4">

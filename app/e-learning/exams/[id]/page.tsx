@@ -74,7 +74,10 @@ export async function generateMetadata({ params }: ExamPageProps): Promise<Metad
 }
 
 export default async function ExamPage({ params, searchParams }: ExamPageProps) {
-  if (strictContentGateEnabled()) { const gatedParams=await params; return <ContentPage path={`/e-learning/exams/${gatedParams.id}`}/>; }
+  if (strictContentGateEnabled()) {
+    const [gatedParams,query]=await Promise.all([params,searchParams]);
+    return <ContentPage path={`/e-learning/exams/${gatedParams.id}`} initialId={typeof query?.question==="string"?query.question:undefined} initialView={query?.view==="summary"?"summary":"question"}/>;
+  }
 
   const { id } = await params;
   const resolved = resolveExam(id);

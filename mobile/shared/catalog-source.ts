@@ -6,11 +6,12 @@ import type { ExamCode } from "@/lib/questions/types";
 import type { CatalogEntry } from "./contracts";
 import { EXAM_CATALOG, findExamEntry } from "@/lib/exam-library-catalog";
 import { loadExamPaper } from "@/lib/exam-library-papers";
+import { withLearningAssets } from "@/lib/learning-assets";
 import {materialGroups} from "./material-source";
 export function catalogCodes() { return [...getRegisteredExamCodes(), ...EXAM_CATALOG.filter(e=>loadExamPaper(e.id)?.length).map(e=>`library.${e.id}`),...materialGroups().map(g=>g.code)]; }
 export async function examContent(code: string) {
   if(code.startsWith("material."))return materialGroups().find(g=>g.code===code)?.items??null;
-  if (code.startsWith("library.")) return [...loadExamPaper(code.slice(8)) ?? []];
+  if (code.startsWith("library.")) return (loadExamPaper(code.slice(8)) ?? []).map(withLearningAssets);
   if (!getRegisteredExamCodes().includes(code as ExamCode)) return null;
   return (await getQuestionsForExam(code as ExamCode)).filter(isPracticeReadyQuestion);
 }

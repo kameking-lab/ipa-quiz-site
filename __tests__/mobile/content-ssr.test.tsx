@@ -11,3 +11,11 @@ it("serializes IDs and labels only for ordinary, alternative, and library SSR/RS
     expect(element.props.items).toHaveLength(1);
   }
 });
+it("validates resume IDs against the paper before sending them to the client",async()=>{
+  const valid=await ContentPage({path:"/e-learning/exams/test",initialId:"paper-1"});
+  expect(valid.props.initialId).toBe("paper-1");
+  for(const initialId of ["other-paper-q1","../../bad",""]) {
+    const invalid=await ContentPage({path:"/e-learning/exams/test",initialId});
+    expect(invalid.props.initialId).toBeUndefined();
+  }
+});
