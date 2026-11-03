@@ -42,6 +42,23 @@ export interface QualificationCatalogEntry {
  */
 export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
   {
+    slug: "benrishi",
+    shortName: "弁理士（短答式）",
+    fullName: "弁理士試験（短答式筆記試験）",
+    domain: "legal",
+    administrator: "特許庁",
+    officialQuestionsUrl: "https://www.jpo.go.jp/news/benrishi/shiken-mondai/2026tanto.html",
+    officialReuseTermsUrl: "https://www.jpo.go.jp/toppage/about/index.html",
+    status: "terms-review-required",
+    reuseSummary: "令和8・7年度の問題・正答の公式掲載を確認。公式PDFが取得時に403となり、本文照合は未実施。問題は未収録。監査記録：reports/cloud-benrishi-latest2.md。",
+    remainingWork: [
+      "公式PDFの取得と全問公開範囲・転載条件の確認",
+      "直近2回の問題文・全選択肢・必要図の照合と公式正答の突合",
+      "出題時点の法令に基づく独自解説と各問の出典URLの作成",
+      "問題データ・試験設定・ルーティングを未公開として登録し検証",
+    ],
+  },
+  {
     slug: "kanteishi", examCode: "kanteishi", shortName: "不動産鑑定士", fullName: "不動産鑑定士試験（短答式）",
     domain: "real-estate", administrator: "国土交通省",
     officialQuestionsUrl: "https://www.mlit.go.jp/totikensangyo/kanteishi/content/002001126.pdf",
