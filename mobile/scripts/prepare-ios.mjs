@@ -14,6 +14,7 @@ try { await access(new URL("../ios/App/App.xcodeproj", import.meta.url)); }
 catch { run("npx", ["--no-install", "cap", "add", "ios", "--packagemanager", "CocoaPods"]); }
 run("npx", ["--no-install", "cap", "sync", "ios"]);
 await copyFile(new URL("../ios-assets/PrivacyInfo.xcprivacy", import.meta.url), new URL("../ios/App/App/PrivacyInfo.xcprivacy", import.meta.url));
+await copyFile(new URL("../ios-assets/QualificationBridgeViewController.swift", import.meta.url), new URL("../ios/App/App/QualificationBridgeViewController.swift", import.meta.url));
 const iconDir = new URL("../ios/App/App/Assets.xcassets/AppIcon.appiconset/", import.meta.url);
 await mkdir(iconDir, { recursive: true });
 await sharp(fileURLToPath(new URL("../ios-assets/icon.svg", import.meta.url)))

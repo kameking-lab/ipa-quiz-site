@@ -17,6 +17,16 @@ group = project.main_group.find_subpath('App', false)
 raise 'App group missing' unless group
 reference = group.files.find { |file| file.path == 'PrivacyInfo.xcprivacy' } || group.new_file('PrivacyInfo.xcprivacy')
 target.resources_build_phase.add_file_reference(reference, true)
+native_source = group.files.find { |file| file.path == 'QualificationBridgeViewController.swift' } || group.new_file('QualificationBridgeViewController.swift')
+target.source_build_phase.add_file_reference(native_source, true)
+storyboard_path = 'ios/App/App/Base.lproj/Main.storyboard'
+storyboard = File.read(storyboard_path)
+unless storyboard.include?('customClass="QualificationBridgeViewController"')
+  raise 'Capacitor storyboard controller missing' unless storyboard.include?('customClass="CAPBridgeViewController"')
+  storyboard = storyboard.sub('customClass="CAPBridgeViewController" customModule="Capacitor"', 'customClass="QualificationBridgeViewController" customModule="App" customModuleProvider="target"')
+  raise 'Unsupported Capacitor storyboard module' unless storyboard.include?('customClass="QualificationBridgeViewController"')
+  File.write(storyboard_path, storyboard)
+end
 project.root_object.attributes['LastUpgradeCheck'] = '2600'
 project.root_object.attributes['TargetAttributes'] ||= {}
 project.root_object.attributes['TargetAttributes'][target.uuid] ||= {}
