@@ -1,52 +1,51 @@
-# 山口県 食品関係3資格・直近2回 監査
+# 山口県 食品関係3資格・直近2回 監査（再開）
 
-確認日: 2026-11-03（UTC）。依頼のオーナー決定「2026-11-04 01:30」は依頼文の記載として受領。
-作業ブランチ: `claude/lucid-johnson-etmru0`。基点: `00e49b94060cc2671e9d098df91d653a4ed3ffe2`。
+確認日: 2026-11-03 UTC。作業ブランチ: `claude/lucid-johnson-etmru0`。
 
-## 結果
+3資格とも直近2回を未公開ステージングに追加済み。調理師120問、製菓衛生師132問、ふぐ学科37大問（200解答欄）。計452演習単位、1,883選択肢の独自解説。全回収録、除外0。監督役による独立レビューと公開判断は未実施。
 
-**資格追加は未完了。3資格とも追加0問。** 本変更は取得状況の監査報告のみで、ステージング用問題データ・資格登録・ルートを追加していない。全問の原文・正答・図を照合できていないため、公開可能とは判定していない。
+## 根拠と取得
 
-依頼順に調理師、製菓衛生師、ふぐ処理師の各2回について取得を試みた。6件とも、実行環境からの通常のHTTPS取得が `Tunnel connection failed: 403 Forbidden` となり、PDFファイルを保存できなかった。接続トンネルの拒否であり、山口県自身によるボット拒否と断定するものではない。ログイン・CAPTCHAへの遭遇はなく、アクセス経路・プロキシ設定の変更等による拒否の迂回は行っていない。
+山口県生活衛生課の[各試験過去問について](https://www.pref.yamaguchi.lg.jp/site/syoku-anshin/320296.html)（2026-09-11更新）の保存済み公式一覧 `LISTINGS.json` と `COVERAGE.json` を確認。3資格とも令和8・7年が直近2回。調理師・製菓衛生師は「年度」、ふぐ処理師は「年」が正式表記。
 
-ブラウザツールでは各PDFの抽出テキストを参照できる。ただし調理師・製菓衛生師の正答表では設問番号と正答の配置順が崩れている。PDFのスクリーンショットも要求したが、このセッションのツール応答では画像本体を受け取れず、正答表の位置関係を確認できなかった。したがって「公式未公開」ではなく、**この環境で原本の保存・図表照合を完了できないことによる保留**である。ふぐの令和7年は抽出テキストで正答欄が比較的明瞭だが、全文・選択肢・図の照合まで完了したとは扱わない。
+今回は提供済み `/tmp/src-pdfs/yamaguchi-shoku/` の公式PDF全6件を使用し、全件でMANIFESTのSHA256と一致した。全PDFが問題・正答を同梱し、FAILED.jsonは空。旧報告の「0問・取得不可」は今回の取得済み原本による作業結果に更新する。サイト接続制限の迂回は行っていない。
 
-## 対象回の根拠
+|資格|対象回|公式PDF|今回の追加|
+|---|---|---|---:|
+|調理師（山口県）|令和8年度|[問題・正答247840](https://www.pref.yamaguchi.lg.jp/uploaded/attachment/247840.pdf)|60問|
+|調理師（山口県）|令和7年度|[問題・正答221379](https://www.pref.yamaguchi.lg.jp/uploaded/attachment/221379.pdf)|60問|
+|製菓衛生師（山口県）|令和8年度|[問題・正答247841](https://www.pref.yamaguchi.lg.jp/uploaded/attachment/247841.pdf)|66問|
+|製菓衛生師（山口県）|令和7年度|[問題・正答221380](https://www.pref.yamaguchi.lg.jp/uploaded/attachment/221380.pdf)|66問|
+|ふぐ処理師（山口県・学科）|令和8年|[問題・正答245007](https://www.pref.yamaguchi.lg.jp/uploaded/attachment/245007.pdf)|100解答欄（19大問）|
+|ふぐ処理師（山口県・学科）|令和7年|[問題・正答213285](https://www.pref.yamaguchi.lg.jp/uploaded/attachment/213285.pdf)|100解答欄（18大問）|
 
-山口県 生活衛生課の[各試験過去問について](https://www.pref.yamaguchi.lg.jp/site/syoku-anshin/320296.html)（ページ更新日2026-09-11）では、各資格とも令和8年・令和7年・令和6年・令和5年・令和4年の順に問題及び正答を掲載している。直近2回は令和8年（2026年）と令和7年（2025年）。公式一覧とリンク先をブラウザで確認し、暦だけで対象を推測していない。依頼文の部名は「健康福祉部」だが、[現行の公式組織案内](https://www.pref.yamaguchi.lg.jp/soshiki/39/index.html)上は「環境生活部 生活衛生課」である。
+## 重複確認と追加方式
 
-| 資格 | 対象 | 問題・正答の公式PDF | 原本ファイルの取得 | 追加問数 |
-| --- | --- | --- | --- | ---: |
-| 調理師（山口県） | 令和8年度 | [247840.pdf](https://www.pref.yamaguchi.lg.jp/uploaded/attachment/247840.pdf) | 接続トンネル403 | 0 |
-| 調理師（山口県） | 令和7年度 | [221379.pdf](https://www.pref.yamaguchi.lg.jp/uploaded/attachment/221379.pdf) | 接続トンネル403 | 0 |
-| 製菓衛生師（山口県） | 令和8年度 | [247841.pdf](https://www.pref.yamaguchi.lg.jp/uploaded/attachment/247841.pdf) | 接続トンネル403 | 0 |
-| 製菓衛生師（山口県） | 令和7年度 | [221380.pdf](https://www.pref.yamaguchi.lg.jp/uploaded/attachment/221380.pdf) | 接続トンネル403 | 0 |
-| ふぐ処理師（山口県・学科） | 令和8年 | [245007.pdf](https://www.pref.yamaguchi.lg.jp/uploaded/attachment/245007.pdf) | 接続トンネル403 | 0 |
-| ふぐ処理師（山口県・学科） | 令和7年 | [213285.pdf](https://www.pref.yamaguchi.lg.jp/uploaded/attachment/213285.pdf) | 接続トンネル403 | 0 |
+作業前に `data/questions`、`lib/qualifications/catalog.ts`、`data/exam-library` を検索し既存成果なし。originのclaude/*・qual/*・codex/*をライブ取得し、388ブランチ、257個の異なるdataツリーについてquestions・exam-library・qualification-stagingのパスを検索。同資格候補のパスなし。検索語はyamaguchi/shoku/chori/chouri/seika/fugu。任意の別名の全本文検索までは保証しない。ref一覧と6件の取得証跡は [evidence](./cloud-yamaguchi-shoku-evidence.json) に保存。
 
-## 既存成果・追加方式の確認
+既存の資格台帳 `ready-to-ingest` と `isExamPublished` の方式で未公開登録。型・試験設定・資格名・SEO名・同期登録・遅延ローダー・数字選択肢表示を接続し、公開一覧と公開ルートでは既存ゲートで非公開とする。問題検証には未公開候補を明示的に含める。`data/exam-library/official-catalog.json` は別の公開用カタログなので追加しない。
 
-- 作業前の `data/questions`、`lib/qualifications/catalog.ts`、`data/exam-library` を検索。同資格の登録・年度データは見つからなかった。「調理師」の本文内言及は介護福祉士の別問題であり、対象資格の既存成果ではない。
-- origin の `claude/*`・`qual/*`・`codex/*` をリモートから調査。375ブランチのうち同一dataツリーをまとめた249ツリーについて、`data/questions`・`data/exam-library`・`data/qualification-staging` のパスを確認。`yamaguchi`・`shoku`・`chori`・`seika`・`fugu` に該当するパスはなかった。このパス検索のみで、任意の別名で保存された全問題本文の不存在までは保証しない。
-- 調査対象ブランチ名・dataツリーSHA・検索条件・取得失敗・検証概要を [cloud-yamaguchi-shoku-evidence.json](./cloud-yamaguchi-shoku-evidence.json) に保存した。再集計は `git for-each-ref`、各refの `git rev-parse <ref>:data`、各代表refの `git ls-tree -r --name-only <ref> data/questions data/exam-library data/qualification-staging` で行う。リモート全カタログの本文走査は未完了であり、完了主張に含めない。
-- `data/questions/riyoshi/index.ts` は候補データと公開ゲートを分離し、`data/qualification-staging/sagyo-ryohoshi/ot13-recovered` は公開前の保存先として使われている。`data/questions/index.ts`、`lib/questions/get-questions.ts`、`lib/qualifications/catalog.ts` の `isExamPublished` で公開を制御する方式を確認した。
-- 元ワークスペースの `.git` は読み取り専用。調査用のリモート複製と、コミット用のGitメタデータは書き込み可能な `/tmp` に準備した。mainへのpush・PR作成・デプロイ・buildは実行しない。
+調理師の内部コードは `yamaguchi-chori`、各60問・計120問、全480肢に独自解説。公式正答表（最終ページ）を画像でも照合。令和7年度問14の構成図と問58の対応表を必要部分だけ切出し、hasImage・代替文・本文テキストを保持。法令・制度は出題時点と明記する。除外0問。
 
-## 権利・転載条件の記録
+## 権利・検証・引継ぎ
 
-依頼された資格の権利確認はオーナー確認済みとして扱った。[山口県「このサイトの利用について」](https://www.pref.yamaguchi.lg.jp/soshiki/21/26951.html)には、文章・写真等が著作権の対象であり、著作権法の範囲内で使用する旨が記載されている。この文言や過去のSTOP記録を保留理由にしていない。外部への連絡は行っていない。
+オーナーの権利確認済み決定を適用。[山口県サイト利用条件](https://www.pref.yamaguchi.lg.jp/soshiki/21/26951.html)の著作権に関する記述は記録のみとし、停止理由にしない。新たな許諾取得を主張していない。
 
-## 検証
+`pnpm install` は成功（CI=true、キャッシュ・storeは/tmp）。問題検証・型検査・関連テストの結果は下記に記録する。build、デプロイ、push、PR作成は実行しない。独立レビューは依頼に従い作者から起動せず、監督役の別プロセス実施を待つ。公開ステータスの切替は行わない。
 
-- `pnpm install`: 成功。Corepackとpnpmのキャッシュ先を `/tmp` に指定。
-- `pnpm validate:questions`: 成功。既存26,444問、失敗0、警告16,808件。追加問題の正答照合を意味しない。
-- `NODE_OPTIONS=--max-old-space-size=8192 pnpm typecheck`: 成功。
-- `pnpm exec vitest run __tests__/questions/get-questions.test.ts __tests__/lib/home-directory.test.ts __tests__/data/official-catalog-note-links.test.ts`: 3ファイル・107テスト成功。
-- 参考: `pnpm test -- <テストパス>` は意図に反して全体テストを起動したため中断（終了コード130）。途中で `__tests__/dentist-latest-two.test.ts` の4件中1件の失敗を観測した。全体テスト成功とは扱わず、関連テストは上記の正しいコマンドで別途確認した。本変更に歯科医師のデータ・コード変更はない。
-- 指定コマンドの `codex exec -m gpt-6-astra -c model_reasoning_effort=medium -s workspace-write --skip-git-repo-check` は、読み取り専用ファイルシステムによりapp-server初期化で失敗。`--ephemeral` と `/tmp` へのログ・SQLite保存先指定を追加した再試行も同じ結果。代替として、同じ指定モデル・推論強度（gpt-6-astra / medium）の別Codexエージェントが独立レビューした。初回の指摘は担当部名1件（環境生活部へ訂正済み）。同レビュアーが6PDFの接続トンネル403、抽出文の正答表配置崩れ、スクリーンショット画像未受領を独立に再現した。本報告の正確性をレビュー対象とし、資格の公開合格とは区別する。訂正と証跡追加後の最終再レビューは監査報告としてPASS（追加指摘なし）。資格データの追加・公開に対する合格ではない。
+元ワークスペースの.gitは読み取り専用のため、前回同様 `/tmp/yamaguchi-local-git` をGitメタデータとして、このワークスペースをwork-treeに指定して資格ごとにコミットする。
 
-## 除外・再開時の残作業
+調理師完成時: `pnpm validate:questions` は26,564問・失敗0・警告16,808（既存警告）。通常型検査は終了134のため指定の8GB上限で再実行し、`NODE_OPTIONS=--max-old-space-size=8192 pnpm typecheck` 成功。`yamaguchi-shoku`・`get-questions`・`home-directory`・`official-catalog-note-links` の4ファイル110テスト成功。
 
-調理師2回、製菓衛生師2回、ふぐ処理師学科2回を、原本ファイル取得・図表照合未完了として今回の収録対象から保留した。各資格の追加問数は0。問題数の全数照合、全問の公式正答照合、全選択肢の独自解説、法令を扱う問の出題時点注記、必要図と `hasImage` の設定、未公開資格としての登録・ルーティング・資格一覧への接続は未実施。
 
-取得可能な環境で同じ公式URLの原本を保存し、既存成果の重複確認を再実施したうえで資格ごとに作業を再開する。製菓衛生師の問58〜60は和菓子・洋菓子・製パンで番号が重複するため選択科目を区別する。ふぐ学科は○×・語群選択・対応付け形式を保持し、令和8年の鑑別フロー図を確認する。公開データが存在しないと決めつけて古い回へ置き換えたり、問題・正答を生成して補充したりしない。
+製菓衛生師の内部コードは `yamaguchi-seika`。各回の共通57問と和菓子・洋菓子・製パンの各3問、各66問・計132問を収録（実際の受験は選択1科目を含む60問）。原問58～60を科目別session・IDに分け、公式の番号を保持。全528肢に独自解説。令和7年度問17の構成図は当該PDFから切出し、本文にも分類を文字で保持。各科目の全公表問題を含め、除外0問。正答表27ページを画像照合した。
+
+製菓衛生師完成時: `pnpm validate:questions` は26,696問・失敗0・既存警告16,808。8GB上限の型チェック成功。関連4ファイル113テスト成功。追加した科目sessionの演習ラベルとSEOラベルも接続し、専用データ・SEOの2ファイル16テストを追加確認して成功。
+
+
+ふぐ処理師の内部コードは `yamaguchi-fugu`。令和8年19大問・100欄、令和7年18大問・100欄、計37大問・200解答欄を収録。演習用は原本の通し解答欄番号1～100をqNumberとし、元大問番号・科目・全文・全語群を保持する。200原大問という数え方はしない。全875選択肢の独自解説を付け、○×はア=○・イ=×で採点し、公式の○・×・カナは別途保存。対応付け・語群選択のカナの順序を保持する。令和8年の欄90～95は原本12ページから鑑別図を必要範囲だけ切出し、6分岐すべてをテキストでも保存。除外0大問・0解答欄、実技試験は依頼範囲外。正答表の令和8年13ページ・令和7年12ページを画像照合した。
+
+原本の注意点: 令和7年欄8は厚生労働大臣（イ）が公式正答。原問・公表正答を採用した旨を解説に明記し、現行法への置換で正答を改変しない。令和8年欄12は旧規格基準設定権限・審議会の記述を×とする公式採点に合わせた。
+
+
+ふぐ処理師完成時（3資格全体の最終検証）: `pnpm validate:questions` は26,896問・失敗0・警告16,808（既存分のみ）。`NODE_OPTIONS=--max-old-space-size=8192 pnpm typecheck` 成功。専用データ・ローダー・資格一覧・公開カタログのリンク・SEOの5ファイル126テスト成功。短いふぐ解説に部位別判断や鑑別根拠を補記後、問題検証と専用テストを再確認。Git差分の空白検査も成功（既存CRLFファイルはcr-at-eol指定）。

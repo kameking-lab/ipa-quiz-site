@@ -42,6 +42,36 @@ export interface QualificationCatalogEntry {
  */
 export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
   {
+    slug: "yamaguchi-fugu", examCode: "yamaguchi-fugu", shortName: "ふぐ処理師（山口県・学科）", fullName: "ふぐ処理師（山口県・学科）",
+    domain: "personal-services", administrator: "山口県 生活衛生課",
+    officialQuestionsUrl: "https://www.pref.yamaguchi.lg.jp/site/syoku-anshin/320296.html",
+    officialReuseTermsUrl: "https://www.pref.yamaguchi.lg.jp/soshiki/21/26951.html",
+    status: "ready-to-ingest",
+    reuseSummary: "令和8・7年の公表問題・正答を保存。権利確認はオーナー確認済み。解説は独自作成、法令は各出題時点。公開前ステージング。",
+    attributionTemplate: "出典：山口県 生活衛生課 ふぐ処理師（山口県・学科） 問題・正答。テキスト整形・図の切出し・解説は過去問AIが作成。",
+    remainingWork: ["監督役による独立レビューと公開判断"],
+  },
+  {
+    slug: "yamaguchi-seika", examCode: "yamaguchi-seika", shortName: "製菓衛生師（山口県）", fullName: "製菓衛生師（山口県）",
+    domain: "personal-services", administrator: "山口県 生活衛生課",
+    officialQuestionsUrl: "https://www.pref.yamaguchi.lg.jp/site/syoku-anshin/320296.html",
+    officialReuseTermsUrl: "https://www.pref.yamaguchi.lg.jp/soshiki/21/26951.html",
+    status: "ready-to-ingest",
+    reuseSummary: "令和8・7年の公表問題・正答を保存。権利確認はオーナー確認済み。解説は独自作成、法令は各出題時点。公開前ステージング。",
+    attributionTemplate: "出典：山口県 生活衛生課 製菓衛生師（山口県） 問題・正答。テキスト整形・図の切出し・解説は過去問AIが作成。",
+    remainingWork: ["監督役による独立レビューと公開判断"],
+  },
+  {
+    slug: "yamaguchi-chori", examCode: "yamaguchi-chori", shortName: "調理師（山口県）", fullName: "調理師（山口県）",
+    domain: "personal-services", administrator: "山口県 生活衛生課",
+    officialQuestionsUrl: "https://www.pref.yamaguchi.lg.jp/site/syoku-anshin/320296.html",
+    officialReuseTermsUrl: "https://www.pref.yamaguchi.lg.jp/soshiki/21/26951.html",
+    status: "ready-to-ingest",
+    reuseSummary: "令和8・7年の公表問題・正答を保存。権利確認はオーナー確認済み。解説は独自作成、法令は各出題時点。公開前ステージング。",
+    attributionTemplate: "出典：山口県 生活衛生課 調理師（山口県） 問題・正答。テキスト整形・図の切出し・解説は過去問AIが作成。",
+    remainingWork: ["監督役による独立レビューと公開判断"],
+  },
+  {
     slug: "kanteishi", examCode: "kanteishi", shortName: "不動産鑑定士", fullName: "不動産鑑定士試験（短答式）",
     domain: "real-estate", administrator: "国土交通省",
     officialQuestionsUrl: "https://www.mlit.go.jp/totikensangyo/kanteishi/content/002001126.pdf",
