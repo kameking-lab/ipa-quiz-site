@@ -174,6 +174,7 @@ describe("sessionLabel", () => {
 
   it("maps every Session union member to a real label", () => {
     const SESSION_PRESENCE: Record<Session, true> = {
+      "jken-basic": true, "jken-programming": true, "jken-design": true,
       gyosei: true, kanri: true, kansa: true,
       am: true,
       am1: true,
