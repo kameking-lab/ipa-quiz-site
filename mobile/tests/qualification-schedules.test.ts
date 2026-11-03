@@ -32,6 +32,7 @@ it("suppresses estimated event kinds, past dates and CBT ranges without inventin
   expect(confirmedSchedules(response({ estimatedEventTypes: ["exam"] }), target, today).map(e => e.startDay)).toEqual(["2026-11-20"]);
   expect(confirmedSchedules(response({ estimatedEventTypes: ["application_deadline"] }), target, today).map(e => e.startDay)).toEqual(["2027-01-31"]);
   expect(confirmedSchedules(response({ examEndAt: "2027-02-05" }), target, today).map(e => e.startDay)).toEqual(["2026-11-20"]);
+  expect(confirmedSchedules(response({ cadence: "period", examEndAt: "2027-02-05" }), target, today).map(e => e.startDay)).toEqual(["2026-11-20"]);
   expect(confirmedSchedules(response({ applicationDeadlineAt: "2026-10-20" }), target, today)).toHaveLength(1);
   expect(confirmedSchedules(response(), { ...target, calendarScope: "group" }, today)).toEqual([]);
 });

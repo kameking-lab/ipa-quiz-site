@@ -40,7 +40,7 @@ export function confirmedSchedules(value: unknown, target: QualificationTarget, 
         !safeSource(s.officialUrl) || !validDay(s.sourceVerifiedAt) || s.sourceVerifiedAt > today ||
         !validDay(s.sourceValidUntil) || s.sourceValidUntil < today || s.timezone !== "Asia/Tokyo" ||
         !Array.isArray(s.estimatedEventTypes) || s.venueDependent === true ||
-        !["fixed", "annual", "semiannual"].includes(String(s.cadence))) continue;
+        !["fixed", "period"].includes(String(s.cadence))) continue;
     const estimated = s.estimatedEventTypes as unknown[];
     if (validDay(s.applicationOpenAt) && validDay(s.applicationDeadlineAt) && s.applicationOpenAt > s.applicationDeadlineAt) continue;
     if (validDay(s.examStartAt) && validDay(s.applicationDeadlineAt) && s.applicationDeadlineAt > s.examStartAt) continue;
@@ -55,7 +55,7 @@ export function confirmedSchedules(value: unknown, target: QualificationTarget, 
     };
     if (!estimated.some(k => ["exam", "exam_period_start", "exam_period_end"].includes(String(k)))) {
       // Date ranges/individual CBT reservations are not a person's confirmed exam date.
-      if (s.examEndAt == null || s.examEndAt === s.examStartAt) add("exam", "試験日", s.examStartAt, null);
+      if (s.cadence === "fixed" && (s.examEndAt == null || s.examEndAt === s.examStartAt)) add("exam", "試験日", s.examStartAt, null);
     }
     if (!estimated.some(k => ["application_open", "application_deadline"].includes(String(k)))) {
       if (Array.isArray(s.applicationMethods) && s.applicationMethods.length) {

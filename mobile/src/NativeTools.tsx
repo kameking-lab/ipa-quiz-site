@@ -1,5 +1,5 @@
 "use client";
-import { useCallback, useEffect, useRef, useState } from "react";
+import { Suspense, useCallback, useEffect, useRef, useState } from "react";
 import { App } from "@capacitor/app";
 import { Browser } from "@capacitor/browser";
 import { Share } from "@capacitor/share";
@@ -14,6 +14,9 @@ import { beginLogin, observeLogin } from "./login";
 import { observeReminderTap, setReminder } from "./platform";
 import { persistStudy, restoreStudy } from "./portable-storage";
 import { cachedImage } from "./images";
+import { NativePageQualificationActions } from "./QualificationActions";
+import { isQualificationUrl } from "../shared/qualification-schedules";
+import { openQualificationUrl } from "./qualification-platform";
 const defaultMembership = new Membership();
 export const SITE_ORIGIN = "https://www.kakomon-ai.jp";
 const localUrl = "capacitor://localhost/index.html";
@@ -94,7 +97,7 @@ export function NativeTools({ membershipOnly = false, membership = defaultMember
       const a = (e.target as Element)?.closest?.("a[href]"); if (!a) return;
       const url = new URL(a.getAttribute("href")!, location.href);
       if (url.origin === SITE_ORIGIN && url.pathname.startsWith("/billing")) { e.preventDefault(); e.stopPropagation(); setOpen(true); }
-      else if (url.origin !== SITE_ORIGIN && url.protocol === "https:") { e.preventDefault(); e.stopPropagation(); void Browser.open({ url: url.href }); }
+      else if (url.origin !== SITE_ORIGIN && url.protocol === "https:") { e.preventDefault(); e.stopPropagation(); void (isQualificationUrl(url.href) ? openQualificationUrl(url.href) : Browser.open({ url: url.href })).catch(()=>setNotice("リンクを開けませんでした。再度お試しください。")); }
     };
     document.addEventListener("click",click,true);
     return ()=>{ disposed=true; disposers.forEach(fn=>fn()); clearInterval(interval);clearInterval(mirror);imageObserver.disconnect();document.removeEventListener("load",cacheVisibleImages,true); window.fetch=original; document.removeEventListener("click",click,true); abort.current?.abort(); };
@@ -108,6 +111,7 @@ export function NativeTools({ membershipOnly = false, membership = defaultMember
   if (!inSite) return null;
   return <aside aria-label="iPhoneの学習機能" className="border-b bg-card p-3 pt-[max(12px,env(safe-area-inset-top))]">
     {!membershipOnly && <div className="flex flex-wrap gap-3"><button onClick={()=>setOpen(!open)}>iPhone設定・会員・保存</button><button onClick={()=>void run(async()=>{await persistStudy(user.current);location.assign(localUrl);})}>端末内で学習</button><button onClick={()=>void run(async()=>{ await Share.share({ title:"過去問AI", url:location.href }); })}>共有</button></div>}
+    {!membershipOnly && <Suspense fallback={null}><NativePageQualificationActions /></Suspense>}
     {open && <section className="mx-auto max-w-2xl space-y-4 py-4">
       <h1 className="text-xl font-bold">過去問AI 有料会員・端末設定</h1>
       <p>全資格・全問題から無料で1日10問（日本時間0時リセット）。有料会員は回数無制限、資格ごとの事前ダウンロードも使えます。</p>

@@ -1,6 +1,8 @@
 import catalog from "../src/generated/catalog.json";
 import { qualificationTargets, type QualificationTarget } from "./qualification-schedules";
 import { findQualificationHub, qualificationHubMatchesEntry } from "@/lib/exam-qualification-hubs";
+import type { CatalogEntry } from "./contracts";
+const entries: CatalogEntry[] = catalog.exams as CatalogEntry[];
 
 /** Resolve actual route IDs instead of guessing qualifications from visible text. */
 export function pageQualifications(pathname: string, search = ""): QualificationTarget[] {
@@ -14,10 +16,10 @@ export function pageQualifications(pathname: string, search = ""): Qualification
     if (parts[2] === "qualifications") {
       // Qualification landing slugs live in the question library's public metadata.
       const hub = findQualificationHub(parts[3]);
-      const entries = catalog.exams.filter(e => "paper" in e && e.paper && hub && qualificationHubMatchesEntry(hub, e.paper));
-      return unique(entries.flatMap(e => qualificationTargets(e.qualification)));
+      const selected = entries.filter(e => e.paper && hub && qualificationHubMatchesEntry(hub, e.paper));
+      return unique(selected.flatMap(e => qualificationTargets(e.qualification ?? e.code)));
     }
-    const entry = catalog.exams.find(e => e.code === `library.${parts[2]}`);
+    const entry = entries.find(e => e.code === `library.${parts[2]}`);
     code = entry?.qualification;
   } else code = parts[0];
   return code ? qualificationTargets(code) : [];
