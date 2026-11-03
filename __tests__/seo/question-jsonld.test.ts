@@ -235,3 +235,20 @@ describe("sessionLabel", () => {
     }
   });
 });
+
+describe("LQ4B source metadata", () => {
+  it.each([
+    ["kisho", "JMBSC-permission-required", "https://www.jmbsc.or.jp/"],
+    ["kenchiku-setsubishi", "JAEIC-permission-required", "https://www.jaeic.or.jp/"],
+  ] as const)("attributes %s to its original institution", (exam, license, url) => {
+    const resource = build({ ...baseQuestion, exam, license })["@graph"][0];
+    if (!("hasPart" in resource)) throw new Error("Missing question resource");
+    expect(resource.hasPart.author.url).toBe(url);
+    expect(resource).not.toHaveProperty("license");
+    expect(JSON.stringify(resource)).not.toContain("https://www.ipa.go.jp/");
+  });
+  it("uses weather subject labels in question metadata", () => {
+    expect(sessionLabel("ippan", "kisho")).toBe("\u5b66\u79d1\u4e00\u822c");
+    expect(sessionLabel("senmon", "kisho")).toBe("\u5b66\u79d1\u5c02\u9580");
+  });
+});
