@@ -1,0 +1,312 @@
+[
+  {
+    "id": "hoshasen-2-2026-kagaku-q1",
+    "grade": 2,
+    "year": 2026,
+    "subject": "化学",
+    "number": 1,
+    "pdfPage": 11,
+    "question": "放射性核種A（原子番号Z₁、質量数A₁）とその娘核種B、及び核種Bの壊変生成核種C（原子番号Z₃、質量数A₃）がある。核種Aから核種Cへの原子番号の差（Z₃−Z₁）と質量数の差（A₃−A₁）がそれぞれ−3と−4となる壊変様式として、正しいものは次のうちどれか。",
+    "choices": [
+      "核種A：α壊変／核種B：β⁻壊変",
+      "核種A：α壊変／核種B：EC壊変",
+      "核種A：β⁻壊変／核種B：β⁻壊変",
+      "核種A：β⁺壊変／核種B：核異性体転移",
+      "核種A：EC壊変／核種B：β⁺壊変"
+    ],
+    "officialAnswerNumber": 2,
+    "explanation": "α壊変は原子番号を2、質量数を4減らす。電子捕獲ECは原子番号を1減らし質量数を変えないため、指定の差はこの組合せで得られる。",
+    "choiceExplanations": [
+      "αでΔZ=−2、β⁻で+1なので合計−1。質量数−4だけは一致する。",
+      "正しい。αで(ΔZ,ΔA)=(−2,−4)、ECで(−1,0)、合計(−3,−4)。",
+      "β⁻が2回ならΔZ=+2、ΔA=0となる。",
+      "β⁺と核異性体転移ではΔZ=−1、ΔA=0である。",
+      "ECとβ⁺ではΔZ=−2、ΔA=0となり、α壊変がないため質量数は変わらない。"
+    ],
+    "topic": "壊変と核種",
+    "sourcePdfUrl": "https://www.nustec.or.jp/syunin/pdf/R08_2_butsurikagakuseibutsu.pdf",
+    "sourceAnswerUrl": "https://www.nustec.or.jp/syunin/pdf/R08_2seitou.pdf",
+    "answerPdfPage": 3,
+    "sourceAttribution": "出典：公益財団法人原子力安全技術センター 令和8年度 第2種放射線取扱主任者試験 化学 問1（問題・正答）。空白・改行を整理、数式をUnicodeで表記。解説は独自作成。",
+    "hasImage": false
+  },
+  {
+    "id": "hoshasen-2-2026-kagaku-q2",
+    "grade": 2,
+    "year": 2026,
+    "subject": "化学",
+    "number": 2,
+    "pdfPage": 11,
+    "question": "30日で放射能が1000分の1になる核種がある。その核種の放射能が1 MBqであるとき、10日後の放射能 [MBq] として最も近い値は、次のうちどれか。",
+    "choices": [
+      "0.05",
+      "0.10",
+      "0.25",
+      "0.33",
+      "0.50"
+    ],
+    "officialAnswerNumber": 2,
+    "explanation": "指数減衰では等しい時間の減衰比が等しい。30日を3分割すると10日の減衰比は(1/1000)^(1/3)=1/10となる。",
+    "choiceExplanations": [
+      "30日分の減衰係数の3乗根は0.1であり、0.05ではない。",
+      "正しい。10日ごとの減衰比をrとするとr³=1/1000、r=0.1。",
+      "0.25では30日後が1/64となり、条件の1/1000と一致しない。",
+      "経過時間の比1/3をそのまま放射能の比にしてはいけない。",
+      "0.5では30日後1/8にしかならず、条件より減衰が小さい。"
+    ],
+    "topic": "放射性壊変",
+    "sourcePdfUrl": "https://www.nustec.or.jp/syunin/pdf/R08_2_butsurikagakuseibutsu.pdf",
+    "sourceAnswerUrl": "https://www.nustec.or.jp/syunin/pdf/R08_2seitou.pdf",
+    "answerPdfPage": 3,
+    "sourceAttribution": "出典：公益財団法人原子力安全技術センター 令和8年度 第2種放射線取扱主任者試験 化学 問2（問題・正答）。空白・改行を整理、数式をUnicodeで表記。解説は独自作成。",
+    "hasImage": false
+  },
+  {
+    "id": "hoshasen-2-2026-kagaku-q3",
+    "grade": 2,
+    "year": 2026,
+    "subject": "化学",
+    "number": 3,
+    "pdfPage": 11,
+    "question": "次の記述のうち、正しいものの組合せはどれか。\nA 1 MeVのα線は10 MeVのα線よりもLETが小さい。\nB β線の進行方向を磁場で変えることができる。\nC γ線は真空中でも電子対生成を起こす。\nD 熱中性子を吸収するにはカドミウムが効果的である。",
+    "choices": [
+      "AとB",
+      "AとC",
+      "BとC",
+      "BとD",
+      "CとD"
+    ],
+    "officialAnswerNumber": 4,
+    "explanation": "正しい記述はB・D。A：このエネルギー領域では低速側の1 MeV α線の方がLETが大きい。 B：β粒子は荷電粒子なのでローレンツ力により曲がる。 C：単一光子からの対生成には核や電子など運動量を受け取る相手が必要で、真空中では起こらない。 D：Cdは熱中性子捕獲断面積が大きく、吸収材に使う。",
+    "choiceExplanations": [
+      "誤り。A：このエネルギー領域では低速側の1 MeV α線の方がLETが大きい。 B：β粒子は荷電粒子なのでローレンツ力により曲がる。 正しいDを含まない。",
+      "誤り。A：このエネルギー領域では低速側の1 MeV α線の方がLETが大きい。 C：単一光子からの対生成には核や電子など運動量を受け取る相手が必要で、真空中では起こらない。 正しいB・Dを含まない。",
+      "誤り。B：β粒子は荷電粒子なのでローレンツ力により曲がる。 C：単一光子からの対生成には核や電子など運動量を受け取る相手が必要で、真空中では起こらない。 正しいDを含まない。",
+      "正しい。B：β粒子は荷電粒子なのでローレンツ力により曲がる。 D：Cdは熱中性子捕獲断面積が大きく、吸収材に使う。",
+      "誤り。C：単一光子からの対生成には核や電子など運動量を受け取る相手が必要で、真空中では起こらない。 D：Cdは熱中性子捕獲断面積が大きく、吸収材に使う。 正しいBを含まない。"
+    ],
+    "topic": "放射線の性質",
+    "sourcePdfUrl": "https://www.nustec.or.jp/syunin/pdf/R08_2_butsurikagakuseibutsu.pdf",
+    "sourceAnswerUrl": "https://www.nustec.or.jp/syunin/pdf/R08_2seitou.pdf",
+    "answerPdfPage": 3,
+    "sourceAttribution": "出典：公益財団法人原子力安全技術センター 令和8年度 第2種放射線取扱主任者試験 化学 問3（問題・正答）。空白・改行を整理、数式をUnicodeで表記。解説は独自作成。",
+    "hasImage": false
+  },
+  {
+    "id": "hoshasen-2-2026-kagaku-q4",
+    "grade": 2,
+    "year": 2026,
+    "subject": "化学",
+    "number": 4,
+    "pdfPage": 12,
+    "question": "次の2つの放射性核種が同族元素であるものの正しい組合せはどれか。\nA ¹³³Ba　²²⁶Ra\nB ⁵⁴Mn　⁹⁹ᵐTc\nC ³⁵S　¹³¹I\nD ¹⁴C　²¹⁰Pb",
+    "choices": [
+      "ABCのみ",
+      "ABDのみ",
+      "ACDのみ",
+      "BCDのみ",
+      "ABCDすべて"
+    ],
+    "officialAnswerNumber": 2,
+    "explanation": "正しい記述はA・B・D。A：BaとRaはともに周期表2族。 B：MnとTcはともに7族。 C：Sは16族、Iは17族なので同族ではない。 D：CとPbはともに14族。",
+    "choiceExplanations": [
+      "誤り。A：BaとRaはともに周期表2族。 B：MnとTcはともに7族。 C：Sは16族、Iは17族なので同族ではない。 正しいDを含まない。",
+      "正しい。A：BaとRaはともに周期表2族。 B：MnとTcはともに7族。 D：CとPbはともに14族。",
+      "誤り。A：BaとRaはともに周期表2族。 C：Sは16族、Iは17族なので同族ではない。 D：CとPbはともに14族。 正しいBを含まない。",
+      "誤り。B：MnとTcはともに7族。 C：Sは16族、Iは17族なので同族ではない。 D：CとPbはともに14族。 正しいAを含まない。",
+      "誤り。A：BaとRaはともに周期表2族。 B：MnとTcはともに7族。 C：Sは16族、Iは17族なので同族ではない。 D：CとPbはともに14族。"
+    ],
+    "topic": "周期表",
+    "sourcePdfUrl": "https://www.nustec.or.jp/syunin/pdf/R08_2_butsurikagakuseibutsu.pdf",
+    "sourceAnswerUrl": "https://www.nustec.or.jp/syunin/pdf/R08_2seitou.pdf",
+    "answerPdfPage": 3,
+    "sourceAttribution": "出典：公益財団法人原子力安全技術センター 令和8年度 第2種放射線取扱主任者試験 化学 問4（問題・正答）。空白・改行を整理、数式をUnicodeで表記。解説は独自作成。",
+    "hasImage": false
+  },
+  {
+    "id": "hoshasen-2-2026-kagaku-q5",
+    "grade": 2,
+    "year": 2026,
+    "subject": "化学",
+    "number": 5,
+    "pdfPage": 12,
+    "question": "⁹⁰Srに関する次の記述のうち、正しいものはどれか。",
+    "choices": [
+      "中性子欠損核である。",
+      "娘核種⁹⁰Yから生成した⁹⁰Zrはβ⁻壊変する。",
+      "密封線源中では⁹⁰Yと永続平衡の関係にある。",
+      "X線源として広く利用される。",
+      "検出には液体シンチレーションカウンタが必要である。"
+    ],
+    "officialAnswerNumber": 3,
+    "explanation": "⁹⁰Sr→⁹⁰Y→⁹⁰Zrとβ⁻壊変する。親が娘よりはるかに長寿命なため、密封されて娘核種が失われなければ永続平衡が成立する。",
+    "choiceExplanations": [
+      "⁹⁰Srは中性子過剰でβ⁻壊変する核種。",
+      "⁹⁰Zrは安定核種であり、この系列のβ⁻壊変はそこで終わる。",
+      "正しい。親の約29年に対し娘の約64時間が十分短く、娘の成長後に永続平衡となる。",
+      "主にβ線源として利用され、X線源という説明は適切でない。",
+      "β線を測るGM計数管や比例計数管等も利用でき、液体シンチレーション法に限らない。"
+    ],
+    "topic": "放射平衡",
+    "sourcePdfUrl": "https://www.nustec.or.jp/syunin/pdf/R08_2_butsurikagakuseibutsu.pdf",
+    "sourceAnswerUrl": "https://www.nustec.or.jp/syunin/pdf/R08_2seitou.pdf",
+    "answerPdfPage": 3,
+    "sourceAttribution": "出典：公益財団法人原子力安全技術センター 令和8年度 第2種放射線取扱主任者試験 化学 問5（問題・正答）。空白・改行を整理、数式をUnicodeで表記。解説は独自作成。",
+    "hasImage": false
+  },
+  {
+    "id": "hoshasen-2-2026-kagaku-q6",
+    "grade": 2,
+    "year": 2026,
+    "subject": "化学",
+    "number": 6,
+    "pdfPage": 12,
+    "question": "²⁵²Cfに関する次の記述のうち、正しいものの組合せはどれか。\nA 半減期はおよそ2.6年である。\nB 天然の放射性核種である。\nC β⁻壊変する。\nD 自発核分裂する。",
+    "choices": [
+      "AとC",
+      "AとD",
+      "BとC",
+      "BとD",
+      "CとD"
+    ],
+    "officialAnswerNumber": 2,
+    "explanation": "正しい記述はA・D。A：半減期は約2.65年である。 B：実用線源の²⁵²Cfは人工的に生成される。 C：主な壊変様式はα壊変と自発核分裂である。 D：自発核分裂による中性子源として利用される。",
+    "choiceExplanations": [
+      "誤り。A：半減期は約2.65年である。 C：主な壊変様式はα壊変と自発核分裂である。 正しいDを含まない。",
+      "正しい。A：半減期は約2.65年である。 D：自発核分裂による中性子源として利用される。",
+      "誤り。B：実用線源の²⁵²Cfは人工的に生成される。 C：主な壊変様式はα壊変と自発核分裂である。 正しいA・Dを含まない。",
+      "誤り。B：実用線源の²⁵²Cfは人工的に生成される。 D：自発核分裂による中性子源として利用される。 正しいAを含まない。",
+      "誤り。C：主な壊変様式はα壊変と自発核分裂である。 D：自発核分裂による中性子源として利用される。 正しいAを含まない。"
+    ],
+    "topic": "中性子源",
+    "sourcePdfUrl": "https://www.nustec.or.jp/syunin/pdf/R08_2_butsurikagakuseibutsu.pdf",
+    "sourceAnswerUrl": "https://www.nustec.or.jp/syunin/pdf/R08_2seitou.pdf",
+    "answerPdfPage": 3,
+    "sourceAttribution": "出典：公益財団法人原子力安全技術センター 令和8年度 第2種放射線取扱主任者試験 化学 問6（問題・正答）。空白・改行を整理、数式をUnicodeで表記。解説は独自作成。",
+    "hasImage": false
+  },
+  {
+    "id": "hoshasen-2-2026-kagaku-q7",
+    "grade": 2,
+    "year": 2026,
+    "subject": "化学",
+    "number": 7,
+    "pdfPage": 12,
+    "question": "校正用γ線源としてしばしば用いられる核種のうち、放出される主なγ線のエネルギーが低いものから順に並んでいるものはどれか。",
+    "choices": [
+      "¹³⁷Cs＜⁶⁰Co＜²⁴¹Am",
+      "²⁴¹Am＜⁶⁰Co＜¹³⁷Cs",
+      "¹³⁷Cs＜²⁴¹Am＜⁶⁰Co",
+      "²⁴¹Am＜¹³⁷Cs＜⁶⁰Co",
+      "⁶⁰Co＜¹³⁷Cs＜²⁴¹Am"
+    ],
+    "officialAnswerNumber": 4,
+    "explanation": "校正線源の代表的γ線エネルギーは²⁴¹Am約59.5 keV、¹³⁷Cs約662 keV、⁶⁰Co約1173・1332 keV。核種の原子番号ではなく遷移エネルギーを比較する。",
+    "choiceExplanations": [
+      "²⁴¹Am約59.5 keVを最後にしており順序が誤り。",
+      "⁶⁰Coの約1173・1332 keVは¹³⁷Cs約662 keVより高い。",
+      "²⁴¹Amを¹³⁷Csより高くしている点が誤り。",
+      "正しい。約59.5 keV、約662 keV、約1173・1332 keVの順。",
+      "主なγ線の高い側から並べた逆順になっている。"
+    ],
+    "topic": "γ線エネルギー",
+    "sourcePdfUrl": "https://www.nustec.or.jp/syunin/pdf/R08_2_butsurikagakuseibutsu.pdf",
+    "sourceAnswerUrl": "https://www.nustec.or.jp/syunin/pdf/R08_2seitou.pdf",
+    "answerPdfPage": 3,
+    "sourceAttribution": "出典：公益財団法人原子力安全技術センター 令和8年度 第2種放射線取扱主任者試験 化学 問7（問題・正答）。空白・改行を整理、数式をUnicodeで表記。解説は独自作成。",
+    "hasImage": false
+  },
+  {
+    "id": "hoshasen-2-2026-kagaku-q8",
+    "grade": 2,
+    "year": 2026,
+    "subject": "化学",
+    "number": 8,
+    "pdfPage": 13,
+    "question": "A [Bq] である放射性核種（半減期T分）の質量 [g] を示す正しい式は次のうちどれか。ただし、モル質量をM [g・mol⁻¹]、アボガドロ数をN_A、ln2は0.693とする。",
+    "choices": [
+      "A÷(0.693×T)÷N_A÷M",
+      "A÷(0.693÷T)÷N_A×M",
+      "A÷{0.693÷(T÷60)}÷N_A×M",
+      "A÷{0.693÷(T×60)}÷N_A×M",
+      "A÷{0.693÷(T×60)}÷N_A÷M"
+    ],
+    "officialAnswerNumber": 4,
+    "explanation": "A=λN、N=(質量/M)N_Aより質量=A M/(λN_A)。Bqの秒単位に合わせ、半減期T分は60T秒とする。",
+    "choiceExplanations": [
+      "壊変定数は0.693/T_secondsで、0.693×Tではない。モル質量も最後に掛ける。",
+      "モル換算は正しいが、Bqは毎秒なのでT分を秒へ換算する必要がある。",
+      "分を秒にするには60を掛けるので、T÷60ではない。",
+      "正しい。λ=0.693/(60T)、原子数A/λをN_Aで割りモル質量Mを掛ける。",
+      "時間の換算は正しいが、物質量から質量へはMを掛け、割らない。"
+    ],
+    "topic": "放射能と質量",
+    "sourcePdfUrl": "https://www.nustec.or.jp/syunin/pdf/R08_2_butsurikagakuseibutsu.pdf",
+    "sourceAnswerUrl": "https://www.nustec.or.jp/syunin/pdf/R08_2seitou.pdf",
+    "answerPdfPage": 3,
+    "sourceAttribution": "出典：公益財団法人原子力安全技術センター 令和8年度 第2種放射線取扱主任者試験 化学 問8（問題・正答）。空白・改行を整理、数式をUnicodeで表記。解説は独自作成。",
+    "hasImage": false
+  },
+  {
+    "id": "hoshasen-2-2026-kagaku-q9",
+    "grade": 2,
+    "year": 2026,
+    "subject": "化学",
+    "number": 9,
+    "pdfPage": 13,
+    "question": "次の密封線源、線源からの放射線、及びその放射線を利用する装置についての組合せのうち、正しいものはどれか。",
+    "choices": [
+      "²²Na　消滅放射線　陽電子消滅寿命測定装置",
+      "³²P　β⁻線　ECDガスクロマトグラフ",
+      "⁶⁰Co　γ線　メスバウアー分光装置",
+      "²⁴¹Am　α線　蛍光X線分析装置",
+      "²⁵²Cf　中性子線　水分計"
+    ],
+    "officialAnswerNumber": 5,
+    "explanation": "装置の名前だけでなく利用する放射線の種類を対応させる。²⁵²Cfの中性子線と中性子水分計が適切な組合せである。",
+    "choiceExplanations": [
+      "陽電子消滅寿命測定で利用する²²Naからの陽電子と、消滅後の光子との役割を取り違えている。",
+      "ECDの代表的線源は⁶³Ni等であり、³²Pではない。",
+      "代表的メスバウアー線源は⁵⁷Co等で、⁶⁰Coではない。",
+      "²⁴¹Amを蛍光X線励起に使う際は主に低エネルギーγ線・X線を用い、α線を用いる組合せではない。",
+      "正しい。²⁵²Cfの自発核分裂中性子が水素で減速される性質を利用して水分を測る。"
+    ],
+    "topic": "放射線の利用",
+    "sourcePdfUrl": "https://www.nustec.or.jp/syunin/pdf/R08_2_butsurikagakuseibutsu.pdf",
+    "sourceAnswerUrl": "https://www.nustec.or.jp/syunin/pdf/R08_2seitou.pdf",
+    "answerPdfPage": 3,
+    "sourceAttribution": "出典：公益財団法人原子力安全技術センター 令和8年度 第2種放射線取扱主任者試験 化学 問9（問題・正答）。空白・改行を整理、数式をUnicodeで表記。解説は独自作成。",
+    "hasImage": false
+  },
+  {
+    "id": "hoshasen-2-2026-kagaku-q10",
+    "grade": 2,
+    "year": 2026,
+    "subject": "化学",
+    "number": 10,
+    "pdfPage": 13,
+    "question": "放射線が物質に及ぼす効果に関する次の記述のうち、正しいものの組合せはどれか。\nA 不対電子をもつラジカル（遊離基）は反応性に乏しい。\nB LETが大きいほど単位距離あたりに生成するスプール（スパー）は多くなる。\nC 水の放射線分解生成物は、再結合して水や過酸化水素を生成する。\nD G値はγ線に対してのみ定義される。",
+    "choices": [
+      "AとB",
+      "AとC",
+      "BとC",
+      "BとD",
+      "CとD"
+    ],
+    "officialAnswerNumber": 3,
+    "explanation": "正しい記述はB・C。A：ラジカルは不対電子を持ち、一般に反応性が高い。 B：単位長さ当たりのエネルギー付与が大きいほど電離・励起の局所的な集団が密になる。 C：H・やOH・等の反応・再結合によって水、H₂、H₂O₂等を生じる。 D：G値は吸収エネルギー当たりの生成・消失量で、γ線に限らず定義される。",
+    "choiceExplanations": [
+      "誤り。A：ラジカルは不対電子を持ち、一般に反応性が高い。 B：単位長さ当たりのエネルギー付与が大きいほど電離・励起の局所的な集団が密になる。 正しいCを含まない。",
+      "誤り。A：ラジカルは不対電子を持ち、一般に反応性が高い。 C：H・やOH・等の反応・再結合によって水、H₂、H₂O₂等を生じる。 正しいBを含まない。",
+      "正しい。B：単位長さ当たりのエネルギー付与が大きいほど電離・励起の局所的な集団が密になる。 C：H・やOH・等の反応・再結合によって水、H₂、H₂O₂等を生じる。",
+      "誤り。B：単位長さ当たりのエネルギー付与が大きいほど電離・励起の局所的な集団が密になる。 D：G値は吸収エネルギー当たりの生成・消失量で、γ線に限らず定義される。 正しいCを含まない。",
+      "誤り。C：H・やOH・等の反応・再結合によって水、H₂、H₂O₂等を生じる。 D：G値は吸収エネルギー当たりの生成・消失量で、γ線に限らず定義される。 正しいBを含まない。"
+    ],
+    "topic": "放射線化学",
+    "sourcePdfUrl": "https://www.nustec.or.jp/syunin/pdf/R08_2_butsurikagakuseibutsu.pdf",
+    "sourceAnswerUrl": "https://www.nustec.or.jp/syunin/pdf/R08_2seitou.pdf",
+    "answerPdfPage": 3,
+    "sourceAttribution": "出典：公益財団法人原子力安全技術センター 令和8年度 第2種放射線取扱主任者試験 化学 問10（問題・正答）。空白・改行を整理、数式をUnicodeで表記。解説は独自作成。",
+    "hasImage": false
+  }
+]

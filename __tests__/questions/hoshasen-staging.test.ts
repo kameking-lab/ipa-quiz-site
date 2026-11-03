@@ -6,8 +6,8 @@ import { ALL_QUESTIONS } from "@/data/questions";
 
 describe("hoshasen unpublished source staging", () => {
   it("retains the four distinct source sessions without publishing candidates", () => {
-    expect(HOSHASEN_STAGED_QUESTIONS).toHaveLength(40);
-    expect(new Set(HOSHASEN_STAGED_QUESTIONS.map(q => q.id)).size).toBe(40);
+    expect(HOSHASEN_STAGED_QUESTIONS).toHaveLength(80);
+    expect(new Set(HOSHASEN_STAGED_QUESTIONS.map(q => q.id)).size).toBe(80);
     const entry = QUALIFICATION_CATALOG.find(q => q.slug === "hoshasen");
     expect(entry?.status).toBe("ready-to-ingest");
     expect(entry?.examCode).toBeUndefined();
@@ -18,7 +18,7 @@ describe("hoshasen unpublished source staging", () => {
     for (const [session, answers] of Object.entries(audit.answerKeys)) {
       const [year, grade] = session.split("-").map(Number);
       const questions = HOSHASEN_STAGED_QUESTIONS.filter(q => q.year === year && q.grade === grade);
-      expect(questions.map(q => q.number)).toEqual([1,2,3,4,5,6,7,8,9,10]);
+      expect(questions.map(q => q.number)).toEqual(Array.from({ length: answers.length }, (_, i) => i + 1));
       expect(questions.map(q => q.officialAnswerNumber)).toEqual(answers);
       for (const q of questions) {
         expect(q.sourcePdfUrl).toContain(`R0${year - 2018}_${grade}_`);
