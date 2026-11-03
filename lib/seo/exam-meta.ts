@@ -163,6 +163,11 @@ export function examTopDescription(exam: ExamCode, questionCount: number): strin
 }
 
 const EXAM_FULL_NAMES: Record<ExamCode, string> = {
+  "biyoshi": "美容師",
+  "kikenbutsu-otsu1": "危険物取扱者 乙種第1類",
+  "kikenbutsu-otsu2": "危険物取扱者 乙種第2類",
+  "kikenbutsu-otsu6": "危険物取扱者 乙種第6類",
+
   kanteishi: "不動産鑑定士試験（短答式）",
   kaikeishi: "公認会計士試験（短答式）",
   "riku-tech2": "第二級陸上無線技術士試験",
@@ -258,6 +263,10 @@ const EXAM_META_DESC_DIVERSE: Record<
   ExamCode,
   (c: string, y: number, k: number) => string
 > = {
+  biyoshi: (c) => `美容師国家試験の第53・54回筆記から確認済み${c}問を収録。4問の保留を維持し、公式出典・正答・全選択肢の解説で学べます。`,
+  "kikenbutsu-otsu1": (c) => `危険物取扱者乙種第1類の2026年6月公表版から実出題抜粋${c}問を収録。個別の出題年度・回は非公表です。公式原問・正答と全肢解説を確認できます。`,
+  "kikenbutsu-otsu2": (c) => `危険物取扱者乙種第2類の2026年6月公表版から実出題抜粋${c}問を収録。個別の出題年度・回は非公表です。公式原問・正答と全肢解説を確認できます。`,
+  "kikenbutsu-otsu6": (c) => `危険物取扱者乙種第6類の2026年6月公表版から実出題抜粋${c}問を収録。個別の出題年度・回は非公表です。公式原問・正答と全肢解説を確認できます。`,
   kanteishi: (c) => `不動産鑑定士の短答式過去問${c}問を無料・回数制限なしで演習。令和7・8年度の原文・公式正答・全肢解説・原表と原文用語の注記を確認できます。`,
   kaikeishi: (c) => `公認会計士の短答式過去問${c}問を無料・回数制限なしで演習。令和8年試験第I回・第II回の原文・公式正答・全肢解説・共通設例・図表を確認できます。`,
   "riku-toku-kokunai": (c) => `国内電信級陸上特殊無線技士の2026年2月・6月筆記法規から${c}問を収録。公式問題・正答と独自解説で無料演習できます。当時の法令に基づき、現在のCBT例題や独自問題は含みません。`,

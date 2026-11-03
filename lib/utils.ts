@@ -6,6 +6,11 @@ export function cn(...inputs: ClassValue[]) {
 }
 
 export const EXAM_LABELS: Record<string, string> = {
+  "biyoshi": "美容師",
+  "kikenbutsu-otsu1": "危険物取扱者 乙種第1類",
+  "kikenbutsu-otsu2": "危険物取扱者 乙種第2類",
+  "kikenbutsu-otsu6": "危険物取扱者 乙種第6類",
+
   kanteishi: "不動産鑑定士",
   kaikeishi: "公認会計士",
   "riku-tech2": "第二級陸上無線技術士",

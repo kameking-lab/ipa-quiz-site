@@ -41,6 +41,61 @@ export interface QualificationCatalogEntry {
  * 「公式に問題と正答がある」だけでは live にせず、転載条件まで確認する。
  */
 export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
+{
+  "slug": "biyoshi",
+  "examCode": "biyoshi",
+  "shortName": "美容師",
+  "fullName": "美容師",
+  "domain": "personal-services",
+  "administrator": "公益財団法人理容師美容師試験研修センター",
+  "officialQuestionsUrl": "https://www.rbc.or.jp/exam/past_question/",
+  "officialReuseTermsUrl": "https://www.rbc.or.jp/exam/past_question/",
+  "status": "live",
+  "reuseSummary": "第53・54回の筆記各55問から確認済み各53問（計106問）を収録。4問は図・根拠・解除拒否の既存保留を維持。実技・2暦年全体の完成を意味しません。",
+  "remainingWork": [
+    "第53回問6・48、第54回問50・55の既存保留を維持"
+  ]
+},
+{
+  "slug": "kikenbutsu-otsu1",
+  "examCode": "kikenbutsu-otsu1",
+  "shortName": "危険物取扱者 乙種第1類",
+  "fullName": "危険物取扱者 乙種第1類",
+  "domain": "safety",
+  "administrator": "一般財団法人消防試験研究センター",
+  "officialQuestionsUrl": "https://www.shoubo-shiken.or.jp/kikenbutsu/exercise.html",
+  "officialReuseTermsUrl": "https://www.shoubo-shiken.or.jp/kikenbutsu/exercise.html",
+  "status": "live",
+  "reuseSummary": "2026年6月公表版の実出題抜粋・問26〜35の10問と全50肢解説。令和7年度以前の出題で、個別年度・回は非公表。特定回全35問や最新2回の収録ではありません。",
+  "remainingWork": []
+},
+{
+  "slug": "kikenbutsu-otsu2",
+  "examCode": "kikenbutsu-otsu2",
+  "shortName": "危険物取扱者 乙種第2類",
+  "fullName": "危険物取扱者 乙種第2類",
+  "domain": "safety",
+  "administrator": "一般財団法人消防試験研究センター",
+  "officialQuestionsUrl": "https://www.shoubo-shiken.or.jp/kikenbutsu/exercise.html",
+  "officialReuseTermsUrl": "https://www.shoubo-shiken.or.jp/kikenbutsu/exercise.html",
+  "status": "live",
+  "reuseSummary": "2026年6月公表版の実出題抜粋・問26〜35の10問と全50肢解説。令和7年度以前の出題で、個別年度・回は非公表。特定回全35問や最新2回の収録ではありません。",
+  "remainingWork": []
+},
+{
+  "slug": "kikenbutsu-otsu6",
+  "examCode": "kikenbutsu-otsu6",
+  "shortName": "危険物取扱者 乙種第6類",
+  "fullName": "危険物取扱者 乙種第6類",
+  "domain": "safety",
+  "administrator": "一般財団法人消防試験研究センター",
+  "officialQuestionsUrl": "https://www.shoubo-shiken.or.jp/kikenbutsu/exercise.html",
+  "officialReuseTermsUrl": "https://www.shoubo-shiken.or.jp/kikenbutsu/exercise.html",
+  "status": "live",
+  "reuseSummary": "2026年6月公表版の実出題抜粋・問26〜35の10問と全50肢解説。令和7年度以前の出題で、個別年度・回は非公表。特定回全35問や最新2回の収録ではありません。",
+  "remainingWork": []
+},
+
   {
     slug: "kanteishi", examCode: "kanteishi", shortName: "不動産鑑定士", fullName: "不動産鑑定士試験（短答式）",
     domain: "real-estate", administrator: "国土交通省",

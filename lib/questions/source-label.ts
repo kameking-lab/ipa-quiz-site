@@ -43,6 +43,11 @@ export function questionSourceEdition(q: Pick<Question, "year" | "season" | "sou
   if (q.year === 2025 && q.season === "annual" && medical2025) {
     return `第${medical2025[1] === "07b" ? 71 : 77}回（2025年実施）`;
   }
+  if (q.exam === "biyoshi" && q.year === 2026) {
+    if (q.season === "first") return "第53回（2026年3月1日実施）";
+    if (q.season === "second") return "第54回（2026年9月6日実施）";
+  }
+  if (q.exam?.startsWith("kikenbutsu-otsu") && q.season === "published") return "2026年6月公表版（個別の出題年・回は非公表）";
   const riyoshiPaper = /^https:\/\/www\.rbc\.or\.jp\/wp-content\/uploads\/2026\/(03\/53rhikki-1|09\/54rhikki)\.pdf(?:#page=[1-9]\d*)?$/.exec(q.sourcePdfUrl);
   if (q.year === 2026 && riyoshiPaper?.[1] === "03/53rhikki-1") return "第53回（2026年3月1日実施）";
   if (q.year === 2026 && riyoshiPaper?.[1] === "09/54rhikki") return "第54回（2026年9月6日実施）";

@@ -96,7 +96,17 @@ import { MARITIME3_QUESTIONS } from "./maritime3";
 import { LAND_SPECIAL2_QUESTIONS } from "./land-special2";
 import { LAND_SPECIAL3_QUESTIONS } from "./land-special3";
 
+import { BIYOSHI_QUESTIONS } from "./biyoshi";
+import { QUESTIONS as OT1_QUESTIONS } from "./kikenbutsu-otsu1";
+import { QUESTIONS as OT2_QUESTIONS } from "./kikenbutsu-otsu2";
+import { QUESTIONS as OT6_QUESTIONS } from "./kikenbutsu-otsu6";
+
 export const QUESTIONS_BY_EXAM: Partial<Record<ExamCode, Question[]>> = {
+  biyoshi: BIYOSHI_QUESTIONS,
+  "kikenbutsu-otsu1": OT1_QUESTIONS,
+  "kikenbutsu-otsu2": OT2_QUESTIONS,
+  "kikenbutsu-otsu6": OT6_QUESTIONS,
+
   ...(isExamPublished("kanteishi") ? { kanteishi: KANTEISHI_QUESTIONS.filter(isPracticeReadyQuestion) } : {}),
   ...(isExamPublished("kaikeishi") ? { kaikeishi: KAIKEISHI_QUESTIONS.filter(isPracticeReadyQuestion) } : {}),
   ...(isExamPublished("riku-tech2") ? { "riku-tech2": RIKU_TECH2_QUESTIONS.filter(isPracticeReadyQuestion) } : {}),
