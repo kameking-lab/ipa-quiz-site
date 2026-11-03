@@ -168,6 +168,7 @@ const OTHER_CARDS: readonly OtherCardDef[] = [
   { code: "kanri", name: "管理業務主任者", sub: "2024・2025年度の公式公開問題", domain: "money" },
   { code: "diver", name: "潜水士", sub: "2026年10月・4月掲載（80問・未公開）", domain: "safety" },
   { code: "chamber", name: "高圧室内作業主任者", sub: "2026年10月・4月掲載（80問・未公開）", domain: "safety" },
+  { code: "blaster", name: "発破技士", sub: "2026年10月・4月掲載（40問・未公開）", domain: "safety" },
   { code: "eisei1", name: "第一種衛生管理者", sub: "2025年10月・2026年4月公表（88問）", domain: "safety" },
   { code: "eisei2", name: "第二種衛生管理者", sub: "2025年10月・2026年4月公表（60問）", domain: "safety" },
   { code: "soukan", name: "技術士 総合技術監理部門", sub: "第二次試験 択一式（令和7・8年度）", domain: "construction" },
