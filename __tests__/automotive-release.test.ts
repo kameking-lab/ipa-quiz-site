@@ -13,6 +13,8 @@ import { getQuestionsForExam } from "@/lib/questions/get-questions";
 import { isPracticeReadyQuestion } from "@/lib/questions/filter";
 import { isExamPublished } from "@/lib/qualifications/catalog";
 import { ALL_EXAM_CODES, EXAM_CONFIGS } from "@/lib/exam-config";
+import { questionSourceEdition } from "@/lib/questions/source-label";
+import { defaultPracticeSession } from "@/lib/questions/practice-session";
 import type { AutomotiveExamCode } from "@/lib/questions/types";
 
 describe("recovered automotive release", () => {
@@ -28,13 +30,15 @@ describe("recovered automotive release", () => {
       expect(QUESTIONS_BY_EXAM[exam], exam).toEqual(questions);
       expect(await getQuestionsForExam(exam), exam).toEqual(questions);
       expect(questions.every(isPracticeReadyQuestion), exam).toBe(true);
+      expect(defaultPracticeSession(exam), exam).toBe("gakka");
     }
   });
 
   it("preserves accepted candidate bytes with matching receipt hashes and excludes unresolved originals", () => {
-    expect(AUTOMOTIVE_QUESTIONS).toHaveLength(385);
-    expect(new Set(AUTOMOTIVE_QUESTIONS.map((q) => q.id)).size).toBe(385);
-    expect(recovery.notYetReleasedIds).toHaveLength(225);
+    expect(recovery.recoveredReviewedOriginals).toBe(385);
+    expect(AUTOMOTIVE_QUESTIONS).toHaveLength(recovery.releaseOriginals);
+    expect(new Set(AUTOMOTIVE_QUESTIONS.map((q) => q.id)).size).toBe(recovery.releaseOriginals);
+    expect(recovery.notYetReleasedIds).toHaveLength(610 - recovery.releaseOriginals);
     const ids = new Set(AUTOMOTIVE_QUESTIONS.map((q) => q.id));
     for (const id of recovery.notYetReleasedIds) expect(ids.has(id), id).toBe(false);
     for (const q of reviewed) {
@@ -58,6 +62,8 @@ describe("recovered automotive release", () => {
       expect(released.question, q.id).toBe(q.question);
       expect(released.choices, q.id).toEqual(q.choices);
       expect(released.choiceExplanations, q.id).toEqual(q.choiceExplanations);
+      expect(questionSourceEdition(released), q.id).toContain(q.term === "first" ? "第1回" : "第2回");
+      expect(EXAM_CONFIGS[released.exam].sessions[0].categories, q.id).toContain(q.category);
       for (const key of ["ア", "イ", "ウ", "エ"] as const) expect(q.choiceExplanations[key].trim().length, q.id).toBeGreaterThan(0);
       if (q.sourceFigureRequired) expect(released.imageUrls?.length, q.id).toBeGreaterThan(0);
       for (const url of released.imageUrls ?? []) {

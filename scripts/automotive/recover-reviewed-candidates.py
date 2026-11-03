@@ -119,10 +119,26 @@ for key in ('automotiveReceipt', 'automotiveUnchangedFields'):
     for id in delta['automotiveAcceptedIds']:
         ledger[id].setdefault('supportingEvidence', []).append({
             'path': str(target.relative_to(ROOT)).replace('\\', '/'), 'sha256': sha})
+
+# New independent reviews are distinct from the historical385 recovery.
+reviews = [DATA / 'qa/lq1b-astra-second.json', DATA / 'qa/lq1b-astra-third.json']
+for evidence in reviews:
+    if not evidence.exists():
+        continue
+    report = read(evidence)
+    decisions = report.get('diesel40', []) + report.get('fourRepairedDiesel', []) + report.get('additional185', [])
+    for row in decisions:
+        if row['verdict'] != 'PASS':
+            continue
+        q = baseline[row['id']]
+        assert canonical(q) == row['candidateSha256'], ('independent candidate hash', row['id'])
+        add(q, evidence)
+rows = [accepted[q['id']] for q in originals if q['id'] in accepted]
 (OUT / 'reviewed.json').write_text(json.dumps(rows, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
 result = {'sourceHead': '6f4253b9381e3030863e38dfe75b5ca4068ba526',
           'ownerDecision': '2026-11-04 01:30: 今ダッシュボードに出ている資格は全て権利問題ないので止めるな',
-          'storedOriginals': 610, 'recoveredReviewedOriginals': len(rows),
+          'storedOriginals': 610, 'recoveredReviewedOriginals': 385,
+          'releaseOriginals': len(rows), 'newIndependentAcceptedOriginals': len(rows)-385,
           'notYetReleasedIds': [q['id'] for q in originals if q['id'] not in accepted],
           'rows': [ledger[q['id']] for q in rows]}
 (DATA / 'qa/lq1b-recovery-ledger.json').write_text(json.dumps(result, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')

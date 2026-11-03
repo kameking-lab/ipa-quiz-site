@@ -28,6 +28,10 @@ const VERIFIED_MEDICAL_EDITIONS: Readonly<Record<string, Readonly<Record<string,
 };
 
 export function questionSourceEdition(q: Pick<Question, "year" | "season" | "sourcePdfUrl"> & Partial<Pick<Question, "exam">>): string {
+  if (q.exam?.startsWith("jidosha-")) {
+    if (q.year === 2026 && q.season === "first") return "令和8年度第1回（2026年10月4日実施）";
+    if (q.year === 2025 && q.season === "second") return "令和7年度第2回（2026年3月22日実施）";
+  }
   if (q.exam === "riku-tech1" && q.season === "july") return `${q.year}年7月試験`;
   if (q.exam === "shika-ishi" && q.season === "annual" && (q.year === 2025 || q.year === 2026)) {
     return `第${q.year - 1907}回（${q.year}年実施）`;

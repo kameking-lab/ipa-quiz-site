@@ -21435,8 +21435,8 @@
       "officialAnswerNumber": "3",
       "explanation": "適切なのは(3)。図のCは主噴射直後のアフタ噴射で、拡散燃焼と後処理を補助する。",
       "choiceExplanations": {
-        "ア": "Aは主噴射より大きく前のプレ噴射とされるが、図の名称・目的の組み合わせは適切でない。",
-        "イ": "主噴射前のBはパイロット噴射で、ポスト噴射は主噴射後。",
+        "ア": "Aはパイロット噴射である。メーン噴射より大きく進角した時期に噴射して燃料と空気の予混合を図るもので、プレ噴射という名称が誤り。",
+        "イ": "Bはメーン噴射に近接して先行するプレ噴射で、メーン噴射の着火遅れを短くする。ポスト噴射はメーン噴射より大きく遅い時期の噴射。",
         "ウ": "主噴射に近い後続のCがアフタ噴射。",
         "エ": "大きく遅いDはポスト噴射で、パイロット噴射は主噴射前。"
       },
@@ -21453,7 +21453,9 @@
       "isCalculation": false,
       "needsReview": false,
       "reviewNotes": [],
-      "officialReferenceUrls": [],
+      "officialReferenceUrls": [
+        "https://www.denso.com/jp/ja/-/media/Global/business/innovation/review/11-1/11-1-doc-disseration03itp6-ja.pdf#page=1"
+      ],
       "qualification": "jidousha-seibishi-gakka",
       "session": "gakka",
       "type": "multiple-choice",
@@ -21468,7 +21470,7 @@
       "sourceAnswerUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_kai.pdf",
       "sourceAttribution": "出典：日本自動車整備振興会連合会 令和7年度第2回自動車整備技能登録試験 二級ジーゼル自動車 No.13",
       "officialQuestionStatus": "normal",
-      "lastUpdated": "2026-10-11",
+      "lastUpdated": "2026-11-04",
       "permissionVerified": false,
       "publicGo": 0,
       "sourcePageReferences": [
@@ -21690,7 +21692,7 @@
       "explanationCoverage": "full",
       "hasImage": false,
       "sourcePages": [
-        9
+        8
       ],
       "sourceFigureRequired": false,
       "topicTags": [
@@ -21716,13 +21718,13 @@
       "sourceAnswerUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_kai.pdf",
       "sourceAttribution": "出典：日本自動車整備振興会連合会 令和7年度第2回自動車整備技能登録試験 二級ジーゼル自動車 No.17",
       "officialQuestionStatus": "normal",
-      "lastUpdated": "2026-10-11",
+      "lastUpdated": "2026-11-04",
       "permissionVerified": false,
       "publicGo": 0,
       "sourcePageReferences": [
         {
-          "physicalPage": 9,
-          "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_2d.pdf#page=9",
+          "physicalPage": 8,
+          "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_2d.pdf#page=8",
           "pdfSha256": "97894c45223517f7dab19340d95a1ee8db72f9c5409ee32169e41b782969e65a"
         }
       ],
@@ -22457,11 +22459,11 @@
       },
       "answer": "ア",
       "officialAnswerNumber": "1",
-      "explanation": "適切なのは(1)。ライトスイッチを通るDの電圧が10 Vへ低下しており、接点の抵抗増大で電圧降下が生じている。",
+      "explanation": "適切なのは(1)。Eを基準にCは12 V、Dは10 Vなので、リレー1のコイルC―D間には2 Vしか掛かっていない。ONのライト・コントロール・スイッチに10 Vの電圧降下が残ることから、その接点抵抗の増大が考えられる。",
       "choiceExplanations": {
-        "ア": "Dが12 Vより2 V低いのはライトスイッチ側の電圧降下と整合する。",
-        "イ": "A―Bの問題だけではDの10 V低下を説明できない。",
-        "ウ": "ヒューズ断線ならその先の通電点は0 Vとなる。",
+        "ア": "適切。ONのスイッチ接点の抵抗が増すとD―E間に10 Vの電圧降下が生じ、C―D間のコイル電圧は12−10＝2 Vとなる。",
+        "イ": "不適切。A―Bは接点側の経路であり、その抵抗増大だけではコイル側Dの対地電圧が10 Vとなる測定条件を説明できない。",
+        "ウ": "不適切。ヒューズ1はリレー1の接点BからAND回路への入力経路にあり、その断線だけでは、正常なら接地されるDの対地電圧が10 Vとなる測定条件を説明できない。",
         "エ": "Dがアース短絡ならDはほぼ0 Vで、10 Vにはならない。"
       },
       "explanationCoverage": "full",
@@ -22493,7 +22495,7 @@
       "sourceAnswerUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_kai.pdf",
       "sourceAttribution": "出典：日本自動車整備振興会連合会 令和7年度第2回自動車整備技能登録試験 二級ジーゼル自動車 No.30",
       "officialQuestionStatus": "normal",
-      "lastUpdated": "2026-10-11",
+      "lastUpdated": "2026-11-04",
       "permissionVerified": false,
       "publicGo": 0,
       "sourcePageReferences": [
@@ -23068,7 +23070,7 @@
       "choiceExplanations": {
         "ア": "赤色は合うが基準は昼間100 mでなく夜間200 m。",
         "イ": "夜間距離は200 m、灯光は橙色でなく赤色。",
-        "ウ": "距離・時間帯・色のいずれも基準と異なる。",
+        "ウ": "距離の200 mは合うが、基準は昼間でなく夜間、灯光は橙色でなく赤色。",
         "エ": "夜間200 mから確認できる赤色の灯光。"
       },
       "explanationCoverage": "full",
@@ -23085,7 +23087,9 @@
       "isCalculation": false,
       "needsReview": false,
       "reviewNotes": [],
-      "officialReferenceUrls": [],
+      "officialReferenceUrls": [
+        "https://www.mlit.go.jp/jidosha/content/S220.pdf"
+      ],
       "qualification": "jidousha-seibishi-gakka",
       "session": "gakka",
       "type": "multiple-choice",
@@ -23100,7 +23104,7 @@
       "sourceAnswerUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_kai.pdf",
       "sourceAttribution": "出典：日本自動車整備振興会連合会 令和7年度第2回自動車整備技能登録試験 二級ジーゼル自動車 No.40",
       "officialQuestionStatus": "normal",
-      "lastUpdated": "2026-10-11",
+      "lastUpdated": "2026-11-04",
       "permissionVerified": false,
       "publicGo": 0,
       "sourcePageReferences": [

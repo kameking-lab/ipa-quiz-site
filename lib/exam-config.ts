@@ -110,57 +110,57 @@ function am2(categories: string[]): SessionConfig {
 export const EXAM_CONFIGS: Record<ExamCode, ExamConfig> = {
   "jidosha-1-small-written": {
     code: "jidosha-1-small-written", nameFull: "一級小型自動車整備士（筆記）", urlSlug: "jidosha-1-small-written", level: "specialist",
-    sessions: [{ session: "gakka", urlSlug: "gakka", expectedQuestions: 50, label: "学科", categories: ["一級小型自動車整備士（筆記）"] }],
+    sessions: [{ session: "gakka", urlSlug: "gakka", expectedQuestions: 50, label: "学科", categories: ["一級小型自動車（筆記）"] }],
     seasons: ["first", "second"], yearRange: { start: 2025, end: 2026 },
   },
   "jidosha-2-gasoline": {
     code: "jidosha-2-gasoline", nameFull: "二級ガソリン自動車整備士", urlSlug: "jidosha-2-gasoline", level: "specialist",
-    sessions: [{ session: "gakka", urlSlug: "gakka", expectedQuestions: 40, label: "学科", categories: ["二級ガソリン自動車整備士"] }],
+    sessions: [{ session: "gakka", urlSlug: "gakka", expectedQuestions: 40, label: "学科", categories: ["二級ガソリン自動車"] }],
     seasons: ["first", "second"], yearRange: { start: 2025, end: 2026 },
   },
   "jidosha-2-diesel": {
     code: "jidosha-2-diesel", nameFull: "二級ジーゼル自動車整備士", urlSlug: "jidosha-2-diesel", level: "specialist",
-    sessions: [{ session: "gakka", urlSlug: "gakka", expectedQuestions: 40, label: "学科", categories: ["二級ジーゼル自動車整備士"] }],
+    sessions: [{ session: "gakka", urlSlug: "gakka", expectedQuestions: 40, label: "学科", categories: ["二級ジーゼル自動車"] }],
     seasons: ["first", "second"], yearRange: { start: 2025, end: 2026 },
   },
   "jidosha-2-chassis": {
     code: "jidosha-2-chassis", nameFull: "二級自動車シャシ整備士", urlSlug: "jidosha-2-chassis", level: "specialist",
-    sessions: [{ session: "gakka", urlSlug: "gakka", expectedQuestions: 30, label: "学科", categories: ["二級自動車シャシ整備士"] }],
+    sessions: [{ session: "gakka", urlSlug: "gakka", expectedQuestions: 30, label: "学科", categories: ["二級自動車シャシ"] }],
     seasons: ["first", "second"], yearRange: { start: 2025, end: 2026 },
   },
   "jidosha-2-motorcycle": {
     code: "jidosha-2-motorcycle", nameFull: "二級二輪自動車整備士", urlSlug: "jidosha-2-motorcycle", level: "specialist",
-    sessions: [{ session: "gakka", urlSlug: "gakka", expectedQuestions: 40, label: "学科", categories: ["二級二輪自動車整備士"] }],
+    sessions: [{ session: "gakka", urlSlug: "gakka", expectedQuestions: 40, label: "学科", categories: ["二級２輪自動車"] }],
     seasons: ["first", "second"], yearRange: { start: 2025, end: 2026 },
   },
   "jidosha-3-chassis": {
     code: "jidosha-3-chassis", nameFull: "三級自動車シャシ整備士", urlSlug: "jidosha-3-chassis", level: "specialist",
-    sessions: [{ session: "gakka", urlSlug: "gakka", expectedQuestions: 30, label: "学科", categories: ["三級自動車シャシ整備士"] }],
+    sessions: [{ session: "gakka", urlSlug: "gakka", expectedQuestions: 30, label: "学科", categories: ["三級自動車シャシ"] }],
     seasons: ["first", "second"], yearRange: { start: 2025, end: 2026 },
   },
   "jidosha-3-gasoline": {
     code: "jidosha-3-gasoline", nameFull: "三級自動車ガソリン・エンジン整備士", urlSlug: "jidosha-3-gasoline", level: "specialist",
-    sessions: [{ session: "gakka", urlSlug: "gakka", expectedQuestions: 30, label: "学科", categories: ["三級自動車ガソリン・エンジン整備士"] }],
+    sessions: [{ session: "gakka", urlSlug: "gakka", expectedQuestions: 30, label: "学科", categories: ["三級自動車ガソリン・エンジン"] }],
     seasons: ["first", "second"], yearRange: { start: 2025, end: 2026 },
   },
   "jidosha-3-diesel": {
     code: "jidosha-3-diesel", nameFull: "三級自動車ジーゼル・エンジン整備士", urlSlug: "jidosha-3-diesel", level: "specialist",
-    sessions: [{ session: "gakka", urlSlug: "gakka", expectedQuestions: 30, label: "学科", categories: ["三級自動車ジーゼル・エンジン整備士"] }],
+    sessions: [{ session: "gakka", urlSlug: "gakka", expectedQuestions: 30, label: "学科", categories: ["三級自動車ジーゼル・エンジン"] }],
     seasons: ["first", "second"], yearRange: { start: 2025, end: 2026 },
   },
   "jidosha-3-motorcycle": {
     code: "jidosha-3-motorcycle", nameFull: "三級二輪自動車整備士", urlSlug: "jidosha-3-motorcycle", level: "specialist",
-    sessions: [{ session: "gakka", urlSlug: "gakka", expectedQuestions: 30, label: "学科", categories: ["三級二輪自動車整備士"] }],
+    sessions: [{ session: "gakka", urlSlug: "gakka", expectedQuestions: 30, label: "学科", categories: ["三級２輪自動車"] }],
     seasons: ["first", "second"], yearRange: { start: 2025, end: 2026 },
   },
   "jidosha-body": {
     code: "jidosha-body", nameFull: "自動車車体整備士", urlSlug: "jidosha-body", level: "specialist",
-    sessions: [{ session: "gakka", urlSlug: "gakka", expectedQuestions: 40, label: "学科", categories: ["自動車車体整備士"] }],
+    sessions: [{ session: "gakka", urlSlug: "gakka", expectedQuestions: 40, label: "学科", categories: ["自動車車体"] }],
     seasons: ["first", "second"], yearRange: { start: 2025, end: 2026 },
   },
   "jidosha-electrical": {
     code: "jidosha-electrical", nameFull: "自動車電気装置整備士", urlSlug: "jidosha-electrical", level: "specialist",
-    sessions: [{ session: "gakka", urlSlug: "gakka", expectedQuestions: 40, label: "学科", categories: ["自動車電気装置整備士"] }],
+    sessions: [{ session: "gakka", urlSlug: "gakka", expectedQuestions: 40, label: "学科", categories: ["自動車電気装置"] }],
     seasons: ["first", "second"], yearRange: { start: 2025, end: 2026 },
   },
 

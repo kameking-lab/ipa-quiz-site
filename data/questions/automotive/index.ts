@@ -21,6 +21,7 @@ export const AUTOMOTIVE_QUESTIONS: Question[] = reviewed.map((q) => ({
   season: q.season as Season,
   // Question.term is reserved for 電験's upper/lower periods; JASPA uses season.
   term: undefined,
+  originalJaspaTerm: q.term,
   difficulty: q.difficulty as Difficulty,
   explanationCoverage: "full",
   license: "JASPA-owner-authorized",

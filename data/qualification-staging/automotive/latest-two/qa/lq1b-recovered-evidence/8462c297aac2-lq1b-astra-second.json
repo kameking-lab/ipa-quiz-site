@@ -1,0 +1,381 @@
+{
+  "release385Verdict": "PASS",
+  "release385Findings": [
+    {
+      "severity": "verification",
+      "blocking": false,
+      "finding": "All 385 candidate hashes, receipt file hashes, supporting evidence hashes and official answer keys match. Motorcycle q21/q29 evidence now verifies the accepted candidates, 3 changed fields, 87 unchanged fields and 6 carried choice explanations. The previous evidence blocker is resolved."
+    },
+    {
+      "severity": "verification",
+      "blocking": false,
+      "finding": "All 11 native exam registrations, eager/lazy loaders, publication states and question counts verified. Automotive exams are excluded from the IPA-only list. All 385 questions pass isPracticeReadyQuestion. Required figures for 101 questions and all 92 public WebPs match their source bytes."
+    },
+    {
+      "severity": "verification",
+      "blocking": false,
+      "finding": "Externally repaired metadata was reread. Final tsc --noEmit --incremental false exited 0. Existing logs confirm 9 Vitest tests, 5 Node tests and global validation of 26829 questions with fail=0."
+    },
+    {
+      "severity": "nonblocking",
+      "blocking": false,
+      "location": "lib/exam-config.ts:113",
+      "finding": "All 11 configured category names differ from candidate category values. The study planner consumes these settings; a resulting empty normal-practice pool was not demonstrated.",
+      "recommendedCorrection": "Align configured categories with the corresponding candidate category values."
+    },
+    {
+      "severity": "nonblocking",
+      "blocking": false,
+      "location": "data/questions/automotive/index.ts:23",
+      "finding": "Runtime term is undefined and originalJaspaTerm is absent. The value remains in season and the original candidate. Generic source labels use 上期/下期; sourceAttribution retains the official 第1回/第2回 wording."
+    }
+  ],
+  "diesel40": [
+    {
+      "id": "jidosha-2025-second-2-diesel-q01",
+      "verdict": "PASS",
+      "candidateSha256": "eb375dc3e02c5983cffd407b35c896440faaf3d071adc45306634145a48d1583",
+      "sourcePages": [2],
+      "findings": []
+    },
+    {
+      "id": "jidosha-2025-second-2-diesel-q02",
+      "verdict": "PASS",
+      "candidateSha256": "f6cc0dca90cba6893baabe2abf048e96978169cd6235a6e5eeba5da5a17795fe",
+      "sourcePages": [2],
+      "findings": []
+    },
+    {
+      "id": "jidosha-2025-second-2-diesel-q03",
+      "verdict": "PASS",
+      "candidateSha256": "e2c90ee7742c4ad132ed90ac62f78632fb576f3e4e33b6a1b2a9597f66ec5506",
+      "sourcePages": [2],
+      "findings": []
+    },
+    {
+      "id": "jidosha-2025-second-2-diesel-q04",
+      "verdict": "PASS",
+      "candidateSha256": "b761146a935bdbe125755a9e36159e807c1eca071989a0ce8a1a6f69916c8ef9",
+      "sourcePages": [3],
+      "findings": []
+    },
+    {
+      "id": "jidosha-2025-second-2-diesel-q05",
+      "verdict": "PASS",
+      "candidateSha256": "4ccf61cb19afeaa2445f1938e5047b72f66ecf3880967bdb407597b3cfff0ed2",
+      "sourcePages": [3],
+      "findings": []
+    },
+    {
+      "id": "jidosha-2025-second-2-diesel-q06",
+      "verdict": "PASS",
+      "candidateSha256": "cac51d5ca5d9b3ba5ad1c302b65f6a67353bc78a433afe18b89baf5180b65ff6",
+      "sourcePages": [3],
+      "findings": []
+    },
+    {
+      "id": "jidosha-2025-second-2-diesel-q07",
+      "verdict": "PASS",
+      "candidateSha256": "dfd36a8244ed351433ea6e7ebb8d8b233ec693a60b5a55bf107172dee9a954cc",
+      "sourcePages": [4],
+      "findings": []
+    },
+    {
+      "id": "jidosha-2025-second-2-diesel-q08",
+      "verdict": "PASS",
+      "candidateSha256": "924fb3e057b218adf1177cbd26261c27970135c055f49ea14f3360b9da647120",
+      "sourcePages": [4],
+      "findings": []
+    },
+    {
+      "id": "jidosha-2025-second-2-diesel-q09",
+      "verdict": "PASS",
+      "candidateSha256": "c57ea7f9323b771a377905614a60e0f7dc9e897b3c688814921445fc6b77eb86",
+      "sourcePages": [5],
+      "findings": []
+    },
+    {
+      "id": "jidosha-2025-second-2-diesel-q10",
+      "verdict": "PASS",
+      "candidateSha256": "52c64a1dea7204e59000e7f290e2e7064990f6e2dbc5c7fe64bff23da42d5a67",
+      "sourcePages": [5],
+      "findings": []
+    },
+    {
+      "id": "jidosha-2025-second-2-diesel-q11",
+      "verdict": "PASS",
+      "candidateSha256": "14ed06bded53b67047b6dcc17fab37ffbe7803e714537b2c4d8f97ea12aebab1",
+      "sourcePages": [6],
+      "findings": []
+    },
+    {
+      "id": "jidosha-2025-second-2-diesel-q12",
+      "verdict": "PASS",
+      "candidateSha256": "f2061d98ee70feb3242260baa511c433c0201cf446bcd2ad073afeaf31d9d452",
+      "sourcePages": [6],
+      "findings": []
+    },
+    {
+      "id": "jidosha-2025-second-2-diesel-q13",
+      "verdict": "FAIL",
+      "candidateSha256": "1782f164b76f96001eb857230446006d2f34d2bc47512cf386eab2e790339503",
+      "sourcePages": [7],
+      "findings": [
+        {
+          "field": "choiceExplanations.ア",
+          "issue": "Aをプレ噴射とする説明は誤り。Aはパイロット噴射。",
+          "replacement": "Aはパイロット噴射である。メーン噴射より大きく進角した時期に噴射して燃料と空気の予混合を図るもので、プレ噴射という名称が誤り。",
+          "source": "[DENSO技術資料](https://www.denso.com/jp/ja/-/media/Global/business/innovation/review/11-1/11-1-doc-disseration03itp6-ja.pdf#page=1)"
+        },
+        {
+          "field": "choiceExplanations.イ",
+          "issue": "Bをパイロット噴射とする説明は誤り。Bはプレ噴射。",
+          "replacement": "Bはメーン噴射に近接して先行するプレ噴射で、メーン噴射の着火遅れを短くする。ポスト噴射はメーン噴射より大きく遅い時期の噴射。"
+        }
+      ]
+    },
+    {
+      "id": "jidosha-2025-second-2-diesel-q14",
+      "verdict": "PASS",
+      "candidateSha256": "d1e0f837490589aedb2166c32b742b0dbdfd7ee5f5428fa14f846f3b55318d45",
+      "sourcePages": [7],
+      "findings": []
+    },
+    {
+      "id": "jidosha-2025-second-2-diesel-q15",
+      "verdict": "PASS",
+      "candidateSha256": "b227d8d0cb6b26e1f8ca837cd05a3fe7c9862aed41d16f1d62d453a0ead71ba6",
+      "sourcePages": [8],
+      "findings": []
+    },
+    {
+      "id": "jidosha-2025-second-2-diesel-q16",
+      "verdict": "PASS",
+      "candidateSha256": "d9cec7ce580784647a2d50c5f6d75be90f19fa728ba049ade9f5356f57b87f87",
+      "sourcePages": [8],
+      "findings": []
+    },
+    {
+      "id": "jidosha-2025-second-2-diesel-q17",
+      "verdict": "FAIL",
+      "candidateSha256": "7a6bdce486b2663d2cf8681786790280fa6f2f255aea8eafe2e40cf848c55d59",
+      "sourcePages": [8],
+      "findings": [
+        {
+          "field": "sourcePages",
+          "issue": "問題17は原本の物理8ページ。現行の9ページは問題18～20。",
+          "replacement": [8]
+        },
+        {
+          "field": "sourcePageReferences",
+          "issue": "物理ページ番号とPDFページリンクが9になっている。",
+          "replacement": [
+            {
+              "physicalPage": 8,
+              "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_2d.pdf#page=8",
+              "pdfSha256": "97894c45223517f7dab19340d95a1ee8db72f9c5409ee32169e41b782969e65a"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "jidosha-2025-second-2-diesel-q18",
+      "verdict": "PASS",
+      "candidateSha256": "bcca811f92d2d709e16eeef7aa6ffa62b911e8473a89ac4d8d960d0ce365d0e5",
+      "sourcePages": [9],
+      "findings": []
+    },
+    {
+      "id": "jidosha-2025-second-2-diesel-q19",
+      "verdict": "PASS",
+      "candidateSha256": "bca9450722949baefd1ceccf6263c0d49d8da0bd99b2fd6b6d24c1d672ce8d9c",
+      "sourcePages": [9],
+      "findings": []
+    },
+    {
+      "id": "jidosha-2025-second-2-diesel-q20",
+      "verdict": "PASS",
+      "candidateSha256": "bc7665dc4e6c045a2dda0fc538d62c902cfaa92fbfe9984f1fbd910eea12ac77",
+      "sourcePages": [9],
+      "findings": []
+    },
+    {
+      "id": "jidosha-2025-second-2-diesel-q21",
+      "verdict": "PASS",
+      "candidateSha256": "8d7b8d0a2392f1a4784f65c4aa516a8227d5caf21e36b07b24aa31016c28498a",
+      "sourcePages": [10],
+      "findings": []
+    },
+    {
+      "id": "jidosha-2025-second-2-diesel-q22",
+      "verdict": "PASS",
+      "candidateSha256": "dd08a4ddf51cd8c18aef29e1f73bef3f8841d61f03f8c32632d533575586922b",
+      "sourcePages": [10],
+      "findings": []
+    },
+    {
+      "id": "jidosha-2025-second-2-diesel-q23",
+      "verdict": "PASS",
+      "candidateSha256": "a7a577d41d656422217ec03643efcedf638cc11c344963f91df97d2683e908cf",
+      "sourcePages": [10],
+      "findings": []
+    },
+    {
+      "id": "jidosha-2025-second-2-diesel-q24",
+      "verdict": "PASS",
+      "candidateSha256": "0b4b06be759fb60744e44f9135698f73a610033d3cd7756b9060e2265ae5330f",
+      "sourcePages": [11],
+      "findings": []
+    },
+    {
+      "id": "jidosha-2025-second-2-diesel-q25",
+      "verdict": "PASS",
+      "candidateSha256": "6c774fcc6e9d3b891bb8e3984892979ae78b469e3a1b0ea7e50b271bf2c3fa39",
+      "sourcePages": [11],
+      "findings": []
+    },
+    {
+      "id": "jidosha-2025-second-2-diesel-q26",
+      "verdict": "PASS",
+      "candidateSha256": "dca22c502e2051d03e04ccc565becb9d6ff7613af4f6b1fe8d50ddf68d8da337",
+      "sourcePages": [12],
+      "findings": []
+    },
+    {
+      "id": "jidosha-2025-second-2-diesel-q27",
+      "verdict": "PASS",
+      "candidateSha256": "02b274b8b061d2b9d3e2658a0a44d6301325a4f0251439dc87b05420313e57a2",
+      "sourcePages": [12],
+      "findings": []
+    },
+    {
+      "id": "jidosha-2025-second-2-diesel-q28",
+      "verdict": "PASS",
+      "candidateSha256": "c8a7f3f79378a8f8b744bdd81e3a4c535c310e4b0aa2032f541d338369bbd533",
+      "sourcePages": [12],
+      "findings": []
+    },
+    {
+      "id": "jidosha-2025-second-2-diesel-q29",
+      "verdict": "PASS",
+      "candidateSha256": "e4704489736dd431981718f48d7fcb44502fa3b5b2d1552fe29c51eb31621076",
+      "sourcePages": [13],
+      "findings": []
+    },
+    {
+      "id": "jidosha-2025-second-2-diesel-q30",
+      "verdict": "FAIL",
+      "candidateSha256": "bcce885a4dfc082e3e9916264b23f7b5d75e16ef6bc8ab10ce023d4e756280d0",
+      "sourcePages": [13],
+      "findings": [
+        {
+          "field": "choiceExplanations.ウ",
+          "issue": "原本のヒューズ1の矢印は、リレー1接点BからAND回路への線上のヒューズを指す。カーテシ・スイッチからNOT回路への下側ヒューズではない。現行のコイルC―D間2 V・スイッチD―E間10 Vの説明と他の3選択肢解説は正しい。",
+          "replacement": "不適切。ヒューズ1はリレー1の接点BからAND回路への入力経路にあり、その断線だけでは、正常なら接地されるDの対地電圧が10 Vとなる測定条件を説明できない。"
+        }
+      ]
+    },
+    {
+      "id": "jidosha-2025-second-2-diesel-q31",
+      "verdict": "PASS",
+      "candidateSha256": "b0afe1629e363034f1646f74104eab88514f633e1f43e7a2885bb02b72d82457",
+      "sourcePages": [13],
+      "findings": []
+    },
+    {
+      "id": "jidosha-2025-second-2-diesel-q32",
+      "verdict": "PASS",
+      "candidateSha256": "f9c065e8032fd8a59fb58212809b9b78603d3899b0127965c31cecf14cfb5e8b",
+      "sourcePages": [14],
+      "findings": []
+    },
+    {
+      "id": "jidosha-2025-second-2-diesel-q33",
+      "verdict": "PASS",
+      "candidateSha256": "a6da7d1f4b94a180a2b22c123df41e9b9859339f9572b0f02ecdb881f52db1d9",
+      "sourcePages": [14],
+      "findings": []
+    },
+    {
+      "id": "jidosha-2025-second-2-diesel-q34",
+      "verdict": "PASS",
+      "candidateSha256": "f5171e2752aa7193743da1c4a46f4eb4a040e980adcb75459adadd9e355b8fa2",
+      "sourcePages": [14],
+      "findings": []
+    },
+    {
+      "id": "jidosha-2025-second-2-diesel-q35",
+      "verdict": "PASS",
+      "candidateSha256": "0dc405308ae117b830c4cc8c9924ea7959c4ef7a836105bdad5b7c533fdebedc",
+      "sourcePages": [14],
+      "findings": []
+    },
+    {
+      "id": "jidosha-2025-second-2-diesel-q36",
+      "verdict": "PASS",
+      "candidateSha256": "0cfcc29e91a2497a0435da86004cc106ca2812370443770160f6c6b0f1a62324",
+      "sourcePages": [15],
+      "findings": []
+    },
+    {
+      "id": "jidosha-2025-second-2-diesel-q37",
+      "verdict": "PASS",
+      "candidateSha256": "a94ebc2dc6160d33efdecd40f4cd7ae6b9f4025bfa671664bd0c4fb7839070e0",
+      "sourcePages": [15],
+      "findings": []
+    },
+    {
+      "id": "jidosha-2025-second-2-diesel-q38",
+      "verdict": "PASS",
+      "candidateSha256": "268d64c2bf79bc080c91da208c4b4d2cfb42e8e3130a8126f3969ce7059ed8c4",
+      "sourcePages": [15],
+      "findings": []
+    },
+    {
+      "id": "jidosha-2025-second-2-diesel-q39",
+      "verdict": "PASS",
+      "candidateSha256": "5ad5475498a9942383f4da3bc316fea7fdf5110ff77abba07e60439f169105f5",
+      "sourcePages": [16],
+      "findings": []
+    },
+    {
+      "id": "jidosha-2025-second-2-diesel-q40",
+      "verdict": "FAIL",
+      "candidateSha256": "5f72687f1c9f7256f99df5981e7ca1312dd278008a165a5e9571f59f135f2254",
+      "sourcePages": [16],
+      "findings": [
+        {
+          "field": "choiceExplanations.ウ",
+          "issue": "選択肢(3)の距離200 mは基準と一致する。『距離・時間帯・色のいずれも基準と異なる』は誤り。",
+          "replacement": "距離の200 mは合うが、基準は昼間でなく夜間、灯光は橙色でなく赤色。",
+          "source": "[国土交通省・非常信号用具](https://www.mlit.go.jp/jidosha/content/S220.pdf)"
+        }
+      ]
+    }
+  ],
+  "coverageNotes": {
+    "reviewModel": "gpt-6-astra",
+    "release385Blockers": [],
+    "release385Scope": "Evidence recovery, candidate integrity, native registrations, loaders, configuration, metadata, figure bindings and practice readiness. This was not a fresh technical content review of every one of the 385 questions.",
+    "diesel40Reviewed": 40,
+    "dieselChoiceExplanationsReviewed": 160,
+    "dieselPassCount": 36,
+    "dieselFailCount": 4,
+    "dieselSourceCoverage": "All 16 rendered original PDF pages visually read. All 40 question texts and four choices compared with the original, and explanations, figures, computations and legal items independently assessed. Official answers were cross-checked, not used alone to establish PASS.",
+    "originalPdfSha256": "97894c45223517f7dab19340d95a1ee8db72f9c5409ee32169e41b782969e65a",
+    "candidateHashMethod": "SHA256 of UTF-8 JSON.stringify(current staging writtenOriginals question object), preserving its field order.",
+    "sourcePagesMeaning": "Actual reviewed physical PDF pages; q17 reports the correct page 8 rather than its erroneous stored page 9.",
+    "snapshotHandling": "External edits occurred during this read-only review. Repaired metadata and q30 were reread. The listed hashes bind the final reviewed candidates; q30 refers to the repaired four-key explanation object, not its earlier corrupted version. Proposed FAIL replacements have not been applied or granted PASS.",
+    "legalPrimarySources": [
+      "[特定整備事業者の義務](https://wwwtb.mlit.go.jp/kinki/content/000356060.pdf)",
+      "[制動灯](https://www.mlit.go.jp/jidosha/content/S212.pdf)",
+      "[車体表示](https://wwwtb.mlit.go.jp/hokushin/content/000332015.pdf)",
+      "[番号灯](https://www.mlit.go.jp/jidosha/content/S205.pdf)",
+      "[非常信号用具](https://www.mlit.go.jp/jidosha/content/S220.pdf)"
+    ],
+    "rights": "The user's 2026-11-04 01:30 rights clearance and lifting of PDF STOP were honored. Historic rights flags and missing manufacturer citations alone were not treated as content defects.",
+    "limitations": "No claim of all610 completion. Browser rendering and interactive scoring were not exercised in this review.",
+    "reviewerActions": "Read-only. No file writes, push, PR operations or deployment."
+  }
+}

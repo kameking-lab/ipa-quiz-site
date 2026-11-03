@@ -5,6 +5,7 @@ export const PRACTICE_SESSIONS: readonly Session[] = ["gyosei", "kanri", "kansa"
 
 /** Specialist practice starts with the specialist paper; common AM I is explicit. */
 export function defaultPracticeSession(exam: ExamCode, year?: number): Session {
+  if (exam.startsWith("jidosha-")) return "gakka";
   if (exam === "kanteishi") return "gyosei";
   if (exam === "kaikeishi") return "kigyo";
   if (SPECIALIST_EXAMS.includes(exam)) return "am2";
