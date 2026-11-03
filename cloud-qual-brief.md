@@ -17,9 +17,10 @@
 - 作業前に data/questions、lib/qualifications/catalog.ts、data/exam-library と、origin の claude/*・qual/*・codex/* ブランチを確認する。同じ資格・同じ回の既存成果があれば作り直さず、理由を報告して止める。
 - 載せるのは実際に出題された問題だけ。問題文・選択肢は、公式PDFと照合したテキストで入れる。画像だけにしない。図が必要な部分だけ画像を併用し、hasImage を付ける。類題や生成問題を過去問として入れない。
 - 正答は公式の正答に一致させる。解説は独自に書き、公式正答と矛盾させない。法令が関わる場合は、出題時点の法令と明記する。各問に出典URLを入れる。
+- 公式PDFが取得できない（403・通信エラー）ときは、origin のブランチ `ops/source-pdfs-20261104` の `<slug>/` に置いた公式PDF（ローカルで取得済み・SHA256付き）を使う。そこにも無ければURLを一覧にして報告する。
 - 【オーナー決定 2026-11-04 01:30】依頼された資格は、すべてオーナーが権利確認済み。「権利未確認」「転載条件の文言」「過去の取得STOP記録」を理由に止めない（転載条件の文言は報告に記録するだけ）。ただし、公式に全問または正答が公開されていない回は作れないので、理由を報告して次へ進む。ログイン・CAPTCHA・ボット拒否は迂回しない。取得できないPDFは一覧にして報告する。
 - 公開できる状態まで仕上げる。全問の正答照合、全選択肢の解説、必要な図、問題数の照合まで行う。
-- 最後に別の Codex（`codex exec -m gpt-6-astra -c model_reasoning_effort=medium -s workspace-write --skip-git-repo-check`）に独立レビューさせる。指摘を直し、再レビューで合格させる。
+- 独立レビューは作者Codexの中から呼ばない（サンドボックス内では起動できない）。作者Codexが終わったら、監督役のあなたがシェルから別プロセスとして `codex exec -m gpt-6-astra -c model_reasoning_effort=medium -s read-only --skip-git-repo-check -C "$PWD" -o /tmp/review.md - < /tmp/review-task.txt`（レビュー依頼文は「この資格の追加差分を公式PDF・公式正答と照合して独立レビューし、問題点を列挙してPASS/FAILを判定。コード変更はしない」）を実行する。FAILなら指摘を作者Codexに渡して直させ、再レビューでPASSさせる。レビュー結果を reports/cloud-<slug>-review.md に保存してコミットする。
 - pnpm install 後に、pnpm validate:questions・pnpm typecheck・関連テストを通す。型チェックがメモリ不足なら NODE_OPTIONS=--max-old-space-size=8192 を付ける。pnpm build もデプロイもしない。
 - 監査結果を reports/cloud-<slug>-latest2.md に書いてコミットする。書く内容は、対象回と根拠URL、資格ごとの追加問数、除外とその理由。
 - 秘密値を出さない。最後に日本語で短く報告する。
@@ -32,5 +33,5 @@
   - 全選択肢に解説がある
   - 必要な図がある（テキスト優先）
   - 問題数を照合し、出典URLが入っている
-- 最初に別の Codex（gpt-6-astra）で独立レビューする。指摘をすべて直し、再レビューで合格するまで繰り返す。保留が必要な問題は理由つきで保留にし、件数を報告する。
+- 最初に独立レビューする（新規の場合と同じく、監督役がシェルから別プロセスで gpt-6-astra を -s read-only で起動する）。指摘をすべて直し、再レビューで合格するまで繰り返す。保留が必要な問題は理由つきで保留にし、件数を報告する。
 - 検証は新規と同じ。結果を reports/cloud-<slug>-finish.md に書いてコミットし、push する。
