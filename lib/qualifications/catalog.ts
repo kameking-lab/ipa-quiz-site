@@ -506,6 +506,7 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
   },
   {
     slug: "sekou-kenchiku1",
+    examCode: "sekou-1kenchiku",
     shortName: "1級建築施工管理",
     fullName: "1級建築施工管理技術検定（第一次検定）",
     domain: "construction",
@@ -513,8 +514,8 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     officialQuestionsUrl: "https://www.fcip-shiken.jp/about/index.html",
     officialReuseTermsUrl: "https://www.fcip-shiken.jp/about/index.html",
     status: "ready-to-ingest",
-    reuseSummary: "依頼に明記されたオーナー決定により権利確認済み。公式サイトの転載禁止表示は監査報告に記録。令和8・7年度第一次検定を対象とするが、本環境では公式PDFの直接取得が403となり、全正答・必要図版を確認できないため教材は未収録・未公開。",
-    remainingWork: ["令和8・7年度の公式問題・正答PDF原本を取得（取得拒否は迂回しない）", "両年度全問の本文・全選択肢・公式正答・必要図を照合し、全肢解説を付けてステージングへ収録", "問題数照合と独立レビューを完了（詳細は reports/cloud-sekou-1kenchiku-latest2.md）"],
+    reuseSummary: "オーナー権利確認済み。令和8・7年度の第一次検定各72問、計144問を全肢解説と必要図付きでステージング収録。公式訂正に従い令和7年度No.57は3・4のいずれも正答。公開前の独立レビューは監督役が実施。転載条件の文言は監査報告に記録。",
+    remainingWork: ["監督役による独立レビューと合格確認後の公開判断（reports/cloud-sekou-1kenchiku-latest2.md）"],
   },
   {
     slug: "sekou-denki1",
