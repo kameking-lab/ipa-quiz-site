@@ -82,7 +82,13 @@ for (const dir of dirs) {
       const text = [q.questionText, q.explanation, q.sourceAttribution, ...Object.values(q.choices ?? {}), ...Object.values(q.choiceExplanations ?? {})];
       check(text.every(t => typeof t === 'string' && t.trim().length > 0 && !/\?{2,}|\uFFFD/.test(t)), `${q.id}: missing text / encoding corruption`);
       check(typeof q.hasRequiredFigure === 'boolean', `${q.id}: figure decision missing`);
-      if (q.hasRequiredFigure) check(Array.isArray(q.figures) && q.figures.length > 0 && q.figures.every(f => existsSync(resolve(root, f.path))), `${q.id}: required figure missing`);
+      if (q.hasRequiredFigure) {
+        check(Array.isArray(q.figures) && q.figures.length > 0 && q.figures.every(f => typeof f.path === 'string' && existsSync(resolve(root, f.path))), `${q.id}: required figure missing`);
+        for (const f of q.figures ?? []) if (typeof f.path === 'string' && existsSync(resolve(root, f.path))) {
+          check(sha(readFileSync(resolve(root, f.path))) === f.sha256, `${q.id}: figure hash mismatch`);
+          check(typeof f.alt === 'string' && f.alt.trim().length > 0, `${q.id}: figure description missing`);
+        }
+      }
       const pass = isNew ? Boolean(batch?.status === 'PASS') : q.contentReview?.status === 'PASS';
       if (pass) { accepted++; if (isNew) newAccepted++; else baselineAccepted++; }
       if (isNew && pass) {

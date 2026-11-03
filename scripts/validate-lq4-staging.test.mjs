@@ -82,3 +82,12 @@ test('rejects changed explanation even if current and semantic hashes are recomp
   writeJson('reports/lq4c-20261104/acceptance.json', { ...receipt, batches: [{ ...approved, sha256: hash(bytes), semanticSha256: hash(JSON.stringify(semantic)) }], accepted: 7, remaining: 513 });
   const result = invoke(); assert.equal(result.status, 1); assert.match(result.stdout, /content differs from reviewed snapshot/);
 }));
+
+
+test('rejects changed required figure bytes', () => fixture(({ questionData, put, writeJson, invoke }) => {
+  questionData.questions[0].hasRequiredFigure = true;
+  questionData.questions[0].figures = [{ path: 'figure.png', sha256: '0'.repeat(64), alt: 'figure' }];
+  put('figure.png', 'substituted image bytes');
+  writeJson(candidatePath, questionData);
+  const result = invoke(); assert.equal(result.status, 1); assert.match(result.stdout, /figure hash mismatch/);
+}));

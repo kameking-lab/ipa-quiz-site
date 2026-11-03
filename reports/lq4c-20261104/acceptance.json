@@ -94,8 +94,77 @@
       "reviewedFileSha256": "f28bfa5c630c34e9a93fb87dfc11f2fc613456e6cf85d1c4e6c8e2aa7f24b8b1",
       "semanticSha256": "e01cf4c76ea3ae0f2ecba8978114f414ca85aac2802b8fa4b2a93d82babb24d2",
       "sha256": "86d81d593716513fa3b475af88a3a74a0da77c69c6c6c9c74e8d04ba50f54754"
+    },
+    {
+      "path": "data/qualification-staging/lq4c-biru-kan/2024-am-011-020.json",
+      "originals": 10,
+      "questionIds": [
+        "biru-kan-2024-am-011",
+        "biru-kan-2024-am-012",
+        "biru-kan-2024-am-013",
+        "biru-kan-2024-am-014",
+        "biru-kan-2024-am-015",
+        "biru-kan-2024-am-016",
+        "biru-kan-2024-am-017",
+        "biru-kan-2024-am-018",
+        "biru-kan-2024-am-019",
+        "biru-kan-2024-am-020"
+      ],
+      "status": "PASS",
+      "model": "gpt-6-astra",
+      "report": "reports/lq4c-20261104/independent-review12.md",
+      "reportSha256": "51475e192288ce1461b3aa2b1966cf5dccb9a35597d1cc0271589aede8164421",
+      "reviewedSnapshot": "reports/lq4c-20261104/reviewed-manuscripts/lq4c-biru-kan--2024-am-011-020.json",
+      "reviewedFileSha256": "450b09b6568476b913bdd834c110010b3425613ab9e7600cfa66a67e52420a0e",
+      "semanticSha256": "bc18ad79ca2d919db4d7be51a1145e5e3a6ed00c9f7c9c7aeb37428c9c452f1a",
+      "sha256": "f7198ef696d77caa82de30100b259d495665688dd5f7e119ae9aaaa50d4df47d"
+    },
+    {
+      "path": "data/qualification-staging/lq4c-engineer-first/2024-aptitude-remaining.json",
+      "originals": 9,
+      "questionIds": [
+        "gijutsushi1-kikai-2024-aptitude-II-02",
+        "gijutsushi1-kikai-2024-aptitude-II-03",
+        "gijutsushi1-kikai-2024-aptitude-II-05",
+        "gijutsushi1-kikai-2024-aptitude-II-07",
+        "gijutsushi1-kikai-2024-aptitude-II-08",
+        "gijutsushi1-kikai-2024-aptitude-II-10",
+        "gijutsushi1-kikai-2024-aptitude-II-12",
+        "gijutsushi1-kikai-2024-aptitude-II-13",
+        "gijutsushi1-kikai-2024-aptitude-II-14"
+      ],
+      "status": "PASS",
+      "model": "gpt-6-astra",
+      "report": "reports/lq4c-20261104/independent-review13.md",
+      "reportSha256": "1b8422404929c64051c1d23c36672c494ea0def4adc89804f9cb856da02f97b2",
+      "reviewedSnapshot": "reports/lq4c-20261104/reviewed-manuscripts/lq4c-engineer-first--2024-aptitude-remaining.json",
+      "reviewedFileSha256": "5da95ab9420f1bd0b188efd2375dba65089107cee289c01759924414ff88fde8",
+      "semanticSha256": "5972e1320c2cb19751c9b61933d13eaea10b3875a55b37d5974ad991a61ef4c2",
+      "sha256": "458e823f9559461ec469d8c3132ad9ee06cfcff035aeb35e4a6f259dbeb2ae86"
+    },
+    {
+      "path": "data/qualification-staging/lq4c-engineer-first/2025-aptitude-001-008.json",
+      "originals": 8,
+      "questionIds": [
+        "gijutsushi1-kikai-2025-aptitude-II-01",
+        "gijutsushi1-kikai-2025-aptitude-II-02",
+        "gijutsushi1-kikai-2025-aptitude-II-03",
+        "gijutsushi1-kikai-2025-aptitude-II-04",
+        "gijutsushi1-kikai-2025-aptitude-II-05",
+        "gijutsushi1-kikai-2025-aptitude-II-06",
+        "gijutsushi1-kikai-2025-aptitude-II-07",
+        "gijutsushi1-kikai-2025-aptitude-II-08"
+      ],
+      "status": "PASS",
+      "model": "gpt-6-astra",
+      "report": "reports/lq4c-20261104/independent-review15.md",
+      "reportSha256": "cdce57841dbc67cd8060713123aca51ea304592b3069eb1c22c082c0ddbc1a8a",
+      "reviewedSnapshot": "reports/lq4c-20261104/reviewed-manuscripts/lq4c-engineer-first--2025-aptitude-001-008.json",
+      "reviewedFileSha256": "7484f50a47d419e6c3693bb4f7157e622a3887e39de8daa88af2035150c256ed",
+      "semanticSha256": "e1d2ad0bc7a951a47faab96b4448b011d97ebd9436fa0718b586dfd692b851c7",
+      "sha256": "3e4062a7ce8725ab0bb8a2f45afa1a1c7b808a28dfbf94cbf1e2e5ecf867771b"
     }
   ],
-  "accepted": 37,
-  "remaining": 483
+  "accepted": 64,
+  "remaining": 456
 }
