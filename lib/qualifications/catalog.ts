@@ -49,7 +49,7 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     status: "ready-to-ingest",
     reuseSummary: "オーナー権利確認済み。第37回（令和8年度）・第36回（令和7年度）の学科試験を公開前ステージングで管理。法令に関する設問は出題時点の法令に基づく。",
     attributionTemplate: "出典：社会福祉法人聴力障害者情報文化センター 手話通訳技能認定試験（手話通訳士試験）学科試験問題・正答。解説は過去問AIの独自作成。",
-    remainingWork: ["全160問中、本文・全肢解説が未整備の158問を完成", "必要図の原本確認", "指定CLIでの独立レビュー合格", "監督側による公開切替"],
+    remainingWork: ["監督側による公開切替（本タスクでは実施しない）"],
   },
   {
     slug: "kanteishi", examCode: "kanteishi", shortName: "不動産鑑定士", fullName: "不動産鑑定士試験（短答式）",
