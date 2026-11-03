@@ -1,0 +1,193 @@
+{
+  "qualification": "知的財産管理技能検定2級",
+  "qualificationId": "chizai2",
+  "scope": "第54回2026-07-12、第53回2026-03-08。各学科40＋実技40、全160原問・651肢理由。",
+  "rowDecision": "記載全範囲の原稿完備への分類是正可能。通常の作者外内容確認と私有最小修正は完了。正式外部受入・原本網羅監査・掲載権利・共有接続・実UI・公開とは別。",
+  "counts": {
+    "originals": 160,
+    "savedOfficialOriginalChoiceKeyMatched": 160,
+    "generalExplanationsContentRead": 160,
+    "choiceReasonsContentRead": 651,
+    "ordinaryContentConfirmedQuestions": 160,
+    "nonScoringReferenceOnly": 0,
+    "specificContentHold": 0,
+    "uninspected": 0,
+    "pictorialFiguresRequired": 0,
+    "textualTablesPreserved": 1,
+    "historicalInstrumentAuditPartialIds": 6
+  },
+  "answerFormats": "選択・○×12・語群/理由選択・数値2を原問どおり保持。全160を4択とは数えない。数値解答208000/202612。通常160は教材区分であり現行アプリ採点poolへ適用した件数ではない。",
+  "independentCoverage": {
+    "all160": "Aが全原文・選択肢順・公式キー・一般解説160・651理由を実読。A自身が作成した初回6欄は自己受入から除外しrootの内容照合とCの適用/限定根拠確認で別に被覆。",
+    "lastQ34": "root作成の根拠欄＋エ理由はCが実ファイル・108条本文・限定時点根拠を内容確認、Aが二欄の実適用と他159問不変を独立確認。",
+    "old10": "旧選択10問32理由票は今回160集合の内数。160+10と加算しない。",
+    "figures": "保存済み4原紙PDF全76頁の図版検査票と今回原問対応を照合。絵図0、実技Q34の料金表1を見出し・2行の金額と数値解答まで保持。hasImage=falseだけで必要図なしと判断していない。"
+  },
+  "dateBasis": {
+    "path": "batches/chizai2-whole-row-20261021/FINAL-SIX-ID-DATE-BASIS.json",
+    "sha256": "871eba5357730484ae469d25804dc835eaf52592816206282bf5a8e3c0ea71e2"
+  },
+  "missingCommencementOriginalMeaning": "現行解説は取得済みの基準日版本文または当該条項の一次本文＋限定改正鎖で支持する。政令250や旧112群原本未取得は歴史原本監査の残工程であり、今回の説明を根拠なく正しいとしたものではない。完全な法令履歴・原本byte網羅の確認は未了と保持する。",
+  "privateChanges": {
+    "changedQuestions": 5,
+    "changedFields": 8,
+    "basisFields": 2,
+    "reasonFields": 6,
+    "originalKeyChoicesGeneralFigureChanges": 0,
+    "unchangedWholeRecords": 155,
+    "lastStep": "Q34二欄のみ変更、直前候補の他159問完全一致。",
+    "application": "独立した私有JSONだけ。元TS・共有loader・consumer・gate metadata変更0。"
+  },
+  "candidate": {
+    "path": "batches/chizai2-whole-row-20261021/integration/FINAL-CANDIDATE-160.json",
+    "sha256": "b4a9242837388454e5e3a53c7533e03ac1cced88d2416a3d61c9445328061323"
+  },
+  "allIds": {
+    "path": "batches/chizai2-whole-row-20261021/FINAL-ID-LEDGER-160.json",
+    "sha256": "26ccc3bf6a28fd9d6ca657d20689d5ff8d173d21b47fe7a97b75213efa0c32e0"
+  },
+  "remainingGates": [
+    "6問の歴史原本/施行政令全体の網羅監査。特許・意匠は限定改正鎖を超えた完全統合正文取得済みとはしない。",
+    "対象固有の正式所定receiptは新規発行していない。旧一般文書から一律新gateを追加せず、既存具体条件も解除しない。",
+    "IP-EDUの転載・商用掲載許諾は未確認。私有内容完備を掲載許可としない。",
+    "共有reader/loader/採点consumerへの適用、型/lint、実UI/localStorageは未実施。",
+    "push/CI/build/deploy/公開は未実施。"
+  ],
+  "accessStops": {
+    "operation": "通常web.open、各1回で403、本文0。再試行0・同内容別経路0。",
+    "exactJpo403Urls": [
+      "https://www.jpo.go.jp/system/laws/rule/seireikaisei/tokkyo/tokkyo_kaisei_20220721.html",
+      "https://www.jpo.go.jp/system/process/toroku/jitumu_qa.html",
+      "https://www.jpo.go.jp/system/laws/rule/guideline/kyusai_method2.html",
+      "https://www.jpo.go.jp/system/laws/rule/guideline/kikan_gide_faq.html"
+    ],
+    "otherStops": "既拒否の特許XML/API/PCT・旧JPO403・中止済み商標ZIPを再開せず。e-Gov本文0行/API不成立/NDL時間超過はサイト403と区別。",
+    "finalStage": "今回最終票の固定は既存ファイルのみ、追加取得0。"
+  },
+  "newOriginals": 0,
+  "publicIncrement": 0,
+  "global3994Increment": 0,
+  "commit": "NO_NEW_COMMIT_PER_INSTRUCTION",
+  "quota": {
+    "initialStart": {
+      "timeUtc": "2026-10-21 03:31:21 UTC",
+      "windowDurationMins": 10080,
+      "remainingPercent": 21
+    },
+    "finalizationStart": {
+      "timeUtc": "2026-10-21 04:28:36 UTC",
+      "windowDurationMins": 10080,
+      "remainingPercent": 16
+    },
+    "end": {
+      "timeUtc": "2026-10-21 04:32:42 UTC",
+      "windowDurationMins": 10080,
+      "remainingPercent": 16
+    }
+  },
+  "actualWorkersAtSeal": {
+    "A": "H2S Q10有限調査終了HOLD。CCl4 Q10作者外確認へ再配置依頼済み。",
+    "B": "CCl4 Q10候補固定済み。Cr Q9の有限確認へ再配置依頼済み。",
+    "C": "実行中: 知財最終票の対応確認。",
+    "browser": 0,
+    "Next": 0,
+    "cpuRam": "UNKNOWN; denied resource query not retried"
+  },
+  "evidence": [
+    {
+      "path": "batches/chizai2-whole-row-20261021/integration/BASE-160.json",
+      "sha256": "4e0f760a6beedf143b5fecb5af3bb9df9f0ff5fb0ddd92688d68750666843915"
+    },
+    {
+      "path": "batches/chizai2-whole-row-20261021/integration/CANDIDATE-160.json",
+      "sha256": "658b0dfcb14cab33fb7a8ca51e4807a55b3fd1c1104d2b2aaef09198f1701756"
+    },
+    {
+      "path": "batches/chizai2-whole-row-20261021/integration/FINAL-CANDIDATE-160.json",
+      "sha256": "b4a9242837388454e5e3a53c7533e03ac1cced88d2416a3d61c9445328061323"
+    },
+    {
+      "path": "batches/chizai2-whole-row-20261021/integration/MINIMAL-CHANGES.unapplied.json",
+      "sha256": "ccb3d6e6a30da01548bf7cc07ae3badcb24f5c3c04b7046c7e604b4e271e29aa"
+    },
+    {
+      "path": "batches/chizai2-whole-row-20261021/integration/Q34-TWO-FIELD-CHANGE.unapplied.json",
+      "sha256": "5783803a3937bb371b2fe3b7811d6ca8733eaf822d1daa3394fbfb5396ed8ff7"
+    },
+    {
+      "path": "batches/chizai2-whole-row-20261021/integration/ROOT-SIX-FIELD-DIFF-REVIEW.json",
+      "sha256": "742ff114723dd70c8ce308d2d9229d722517b15993eca8a6c56887b8e649930e"
+    },
+    {
+      "path": "batches/chizai2-whole-row-20261021/ID-LEDGER-160.json",
+      "sha256": "f0b24441874d31f5195d3e8d24bea8f79ed2859771c317cb31a7bef52bf8a04f"
+    },
+    {
+      "path": "batches/chizai2-whole-row-20261021/SOURCE-ANSWER-FORMAT-MAPPING.json",
+      "sha256": "383fe9e8a8703757d5e5f0abb2e8a4a8b1ab8c1d86481f0cb210aa8c5bdba846"
+    },
+    {
+      "path": "batches/chizai2-whole-row-20261021/ROOT-WIPO2024-108-BODY-READ.txt",
+      "sha256": "9fe8abdd3346c0b280bf6adecebfa19fd92a5d765fd940c1f07c0bc475f5757b"
+    },
+    {
+      "path": "workers/chizai2-whole-row-20261021/A-full-content/ALL160-RESULT.json",
+      "sha256": "2e81361aef346304fef94f25dc0cd06d8e6d660efbf8639b6fdabe78f5a9f8bd"
+    },
+    {
+      "path": "workers/chizai2-whole-row-20261021/A-full-content/MARCH80-RESULT.json",
+      "sha256": "3702c02021ae30815e76e135cdcd42bf68d48b2f2b93b64fa5ecd04c2f64aa81"
+    },
+    {
+      "path": "workers/chizai2-whole-row-20261021/A-full-content/JULY80-RESULT.json",
+      "sha256": "630252e24edcc492e94a2f761e190c5d07d136bbdf4a4fd20738ed68b225f6ff"
+    },
+    {
+      "path": "workers/chizai2-whole-row-20261021/A-full-content/AUTHORSHIP-BOUNDARY.json",
+      "sha256": "c4981d043ef7633fd6385f85834d09c674950552849b31990b8c050ed71e1a7d"
+    },
+    {
+      "path": "workers/chizai2-whole-row-20261021/A-full-content/FIGURE-TABLE-COVERAGE-ADDENDUM.json",
+      "sha256": "fd66dc9cf7507741b675195aeebc1e9f459bf6b0887ab8ca539427e9429fa113"
+    },
+    {
+      "path": "workers/chizai2-whole-row-20261021/A-full-content/Q34-FINAL-APPLICATION-INDEPENDENT-CHECK.json",
+      "sha256": "ecf0cead1e09cce94d472876e775b20d00e4c1ac5189ccc67fba316acbe0c969"
+    },
+    {
+      "path": "workers/chizai2-whole-row-20261021/C-application-independent/SIX-FIELD-APPLICATION-INDEPENDENT-CHECK.json",
+      "sha256": "7e0b2d43dcc9939085c65cae9cd4e8be9c844255990f0e8f5460e7820168d996"
+    },
+    {
+      "path": "workers/chizai2-whole-row-20261021/C-application-independent/DATE-APPLICABILITY-FIVE-REVIEW.json",
+      "sha256": "cf608f849bd8fbb6cba8935b20e5e719389667db657f7aed2090831d956bb7fc"
+    },
+    {
+      "path": "workers/chizai2-whole-row-20261021/C-application-independent/TWO-CLAIM-PRIMARY-CHECK.json",
+      "sha256": "dbe2614abaf2bfde8695b2c9a23efd6f1ef4d9916938ece975294b7d9b9bcda3"
+    },
+    {
+      "path": "workers/chizai2-whole-row-20261021/C-application-independent/PATENT-Q34-108-CONTENT-DATE-REVIEW.json",
+      "sha256": "5f9eee849257d309fe726785e5820287faade543743657cbf8d1cca3f67f39d8"
+    },
+    {
+      "path": "workers/chizai2-whole-row-20261021/B-design37-date/RESULT.json",
+      "sha256": "7f489b892cfc3920d64af419bca57402c9f5f640eeee85798c415d0e0563a46b"
+    },
+    {
+      "path": "workers/chizai2-whole-row-20261021/B-design37-date/EVIDENCE.json",
+      "sha256": "245f9986ddce8c41970a401e71661e7591c7f09dd9188950b7b584071b53fdea"
+    }
+  ],
+  "supersedes": [
+    {
+      "path": "batches/chizai2-whole-row-20261021/RESULT.json",
+      "sha256": "0074ce41bdb90f09028fb12c7ded617b5cafe1929a7fc4efe2a44f8600dfda93"
+    },
+    {
+      "path": "batches/chizai2-whole-row-20261021/RESULT-REV01.json",
+      "sha256": "a84100559bffc108b25248df20371473d204e93be902c02ea6843abaead242ad"
+    }
+  ],
+  "revisionReason": "旧2主張の不足を本文根拠で解消し、特許初期納付の救済を108条4項へ明確化。全量再制作やラベル変更だけによる完了ではない。"
+}

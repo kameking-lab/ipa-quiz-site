@@ -51,6 +51,16 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     remainingWork: ["令和8年建築法規問18の出題機関による訂正又は直接解釈の確認", "第二次試験は未収録"],
   },
   {
+    slug: "chizai2", examCode: "chizai2", shortName: "知的財産管理技能検定2級", fullName: "知的財産管理技能検定2級",
+    domain: "legal", administrator: "知的財産教育協会",
+    officialQuestionsUrl: "https://www.kentei-info-ip-edu.org/gakushujoho/kakomon.html",
+    officialReuseTermsUrl: "https://www.kentei-info-ip-edu.org/gakushujoho/kakomon.html",
+    status: "live",
+    reuseSummary: "第53回（2026年3月8日）・第54回（2026年7月12日）の学科・実技各40問、計160原問を収録。選択式158問の全651肢解説、数値記入2問と料金表を保持しています。法令は各試験回の基準日時点です。解説は独自作成です。",
+    attributionTemplate: "出典：知的財産教育協会 第○回 知的財産管理技能検定2級 学科・実技 問○（問題・正答）。解説は過去問AI独自作成。",
+    remainingWork: [],
+  },
+  {
     slug: "kanteishi", examCode: "kanteishi", shortName: "不動産鑑定士", fullName: "不動産鑑定士試験（短答式）",
     domain: "real-estate", administrator: "国土交通省",
     officialQuestionsUrl: "https://www.mlit.go.jp/totikensangyo/kanteishi/content/002001126.pdf",

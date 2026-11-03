@@ -1,0 +1,94 @@
+{
+  "type": "array",
+  "minItems": 160,
+  "maxItems": 160,
+  "items": {
+    "type": "object",
+    "required": [
+      "id",
+      "exam",
+      "round",
+      "section",
+      "qNumber",
+      "type",
+      "question",
+      "choices",
+      "answer",
+      "officialAnswerNumber",
+      "explanation",
+      "choiceExplanations",
+      "sourcePdfUrl",
+      "sourceAnswerUrl",
+      "sourcePdfSha256",
+      "sourceHeadingPage",
+      "sourceAttribution",
+      "lawReferenceDate",
+      "needsReview"
+    ],
+    "properties": {
+      "exam": {
+        "const": "chizai2"
+      },
+      "round": {
+        "enum": [
+          53,
+          54
+        ]
+      },
+      "section": {
+        "enum": [
+          "gakka",
+          "practical"
+        ]
+      },
+      "type": {
+        "enum": [
+          "multiple-choice",
+          "numeric"
+        ]
+      },
+      "qNumber": {
+        "type": "integer",
+        "minimum": 1,
+        "maximum": 40
+      },
+      "id": {
+        "type": "string",
+        "minLength": 1
+      },
+      "question": {
+        "type": "string",
+        "minLength": 1
+      },
+      "explanation": {
+        "type": "string",
+        "minLength": 1
+      },
+      "choices": {
+        "type": "object",
+        "additionalProperties": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "choiceExplanations": {
+        "type": "object",
+        "additionalProperties": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "sourcePdfSha256": {
+        "type": "string",
+        "pattern": "^[a-f0-9]{64}$"
+      },
+      "sourceHeadingPage": {
+        "type": "integer",
+        "minimum": 1
+      },
+      "needsReview": {
+        "const": true
+      }
+    }
+  }
+}
