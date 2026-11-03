@@ -28,6 +28,27 @@
 
 資格台帳には `kenchikushi2` / `permission-required` として記録。
 
+## 木造建築士（学科）
+
+公式一覧・利用条件: https://www.jaeic.or.jp/shiken/mk/mk-mondai.html
+
+| 対象回 | 学科I・IIの問題PDF | 学科III・IVの問題PDF | 公式正答PDF |
+| --- | --- | --- | --- |
+| 令和8年（2026年） | https://www.jaeic.or.jp/.assets/R8_mk_1_2.pdf | https://www.jaeic.or.jp/.assets/R8_mk_3_4.pdf | https://www.jaeic.or.jp/.assets/R08_mk_gokakukizyun.pdf |
+| 令和7年（2025年） | https://www.jaeic.or.jp/assets/pdf/shiken/mk/mk-mondai/mk-2025-1st-gakka1_2.pdf | https://www.jaeic.or.jp/assets/pdf/shiken/mk/mk-mondai/mk-2025-1st-gakka3_4.pdf | https://www.jaeic.or.jp/assets/pdf/shiken/mk/mk-mondai/mk-2025-1st-gokakukijun.pdf |
+
+3冊は各冊1〜25の問題番号が2組、50件ずつ抽出できた。令和8年学科III・IVはローカルのテキスト抽出では施工問12の本文が欠け49件だったが、公式PDFの別の読み取りではPDF18ページ（施工17ページ）の問12と全5肢を確認できた。抽出失敗を公式非公開と誤認しない。
+
+令和8年施工問12には、選択肢2・4の図の出典を住宅金融支援機構の仕様書として示す注記がある。これは問題を非掲載とする告知ではない。全問の本文・図版の目視校合は未完了であり、完全収録可能と確定したものではない。
+
+追加問数: **0問**（対象の問題番号は2年合計200問）。除外: 両年・全科目の本文収録を見送り。
+
+理由: 二級建築士と同様、公式一覧の注意事項3とPDF表紙に転載・複製禁止の表示があり、ユーザーから提供されていない問題文・選択肢の大量転載には対応できないため。全問非公開を理由とする除外ではない。第三者の図の利用条件も解決したものではない。
+
+法令: 令和8年問題表紙の基準日は2026-01-01。本文・解説は未作成。公式正答PDFの公開は確認したが、各問との正答照合は未実施。
+
+資格台帳には `mokuzo-kenchikushi` / `permission-required` として記録。本文を備えたステージング追加は未完了。
+
 ## 検証
 
 - `pnpm install`: 成功。
@@ -35,4 +56,5 @@
 - `pnpm typecheck`: 初回は既定ヒープ上限でOOM。`NODE_OPTIONS=--max-old-space-size=8192 pnpm typecheck` で再実行し成功。
 - `pnpm exec vitest run __tests__/lib/home-directory.test.ts __tests__/questions/live-qualification-coverage.test.ts`: 2ファイル・18テスト成功。
 - 初回の `pnpm test -- ...` は引数の区切りにより全件実行となったため停止し、上記の指定ファイルのみで再実行。
+- 木造建築士の台帳追加後も問題検証・ヒープ上限を増やした型チェック・上記18テストを再実行し、すべて成功。
 - `pnpm build`・デプロイは実行していない。
