@@ -43,6 +43,30 @@ describe("IPA official latest two public morning II papers", () => {
     expect(productivity.explanation).toContain("分子を3にはしません");
   });
 
+  it("keeps the wait graph and EVM values readable without loading images", () => {
+    const wait = DB_QUESTIONS.find(q => q.id === "db-2024a-am2-q13")!;
+    expect(wait.question).toContain("待ちグラフの全ての矢印：C→A，C→B，B→D，D→C，D→E，F→D，F→E，E→G。");
+    expect(wait.choices).toEqual({ ア: "A，B，C，D", イ: "B，C，D", ウ: "B，C，D，F", エ: "C，D，E，F，G" });
+    const evm = PM_QUESTIONS.find(q => q.id === "pm-2024a-am2-q4")!;
+    expect(evm.question).toContain("完成時総予算BAC=100。現時点のPV=50，AC=40，EV=34。");
+    expect(evm.question).toContain("PVは開始日から完了予定日まで直線状に増加し，現時点は期間の半分。");
+    expect(evm.choices).toEqual({ ア: "0.6", イ: "0.9", ウ: "1.1", エ: "1.3" });
+    for (const q of [wait, evm]) {
+      expect(q.hasImage, q.id).toBe(true);
+      expect(q.imageUrls, q.id).toHaveLength(1);
+      expect(q.imageAltTexts?.[0], q.id).toContain("本文に記載");
+    }
+  });
+
+  it("retains text stems and choices throughout DB and PM", () => {
+    for (const q of [...DB_QUESTIONS, ...PM_QUESTIONS]) {
+      expect(q.question.replace(/!\[[^\]]*\]\([^)]*\)|<[^>]*>/g, "").trim(), q.id).not.toBe("");
+      for (const [key, text] of Object.entries(q.choices ?? {})) {
+        expect(text.trim(), `${q.id}/${key}`).not.toBe("");
+      }
+    }
+  });
+
   it("preserves the distinct primary-key underlines and graphical choices", () => {
     for (const id of ["db-2025a-am2-q4", "db-2024a-am2-q3", "db-2024a-am2-q6",
       "db-2024a-am2-q9", "pm-2025a-am2-q9", "pm-2025a-am2-q18"]) {
