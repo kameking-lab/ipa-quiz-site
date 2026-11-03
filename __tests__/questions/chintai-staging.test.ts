@@ -21,6 +21,7 @@ describe("chintai unpublished staging", () => {
       { sourceAnswerUrl: ordinary.sourceAnswerUrl.replace("2024", "2025") },
       { lawAsOf: "2026-04-01" },
       { officialAnswerNumber: 2, acceptedAnswerNumbers: [2] },
+      { question: ordinary.question.replace("適切なもの", "誤っているもの") },
     ]) expect(ChintaiStagingQuestionSchema.safeParse({ ...ordinary, ...change }).success).toBe(false);
     const inner = CHINTAI_STAGING_QUESTIONS.find((q) => "statementExplanations" in q)!;
     expect(ChintaiStagingQuestionSchema.safeParse({ ...inner, statementExplanations: {} }).success).toBe(false);

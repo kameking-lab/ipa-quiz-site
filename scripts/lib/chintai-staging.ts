@@ -1,10 +1,17 @@
 import { z } from "zod";
+import { createHash } from "node:crypto";
 import questions2024 from "../../data/qualification-staging/chintai/2024.json";
 import questions2025 from "../../data/qualification-staging/chintai/2025.json";
 import manifest from "../../data/qualification-staging/chintai/manifest.json";
 import sourceAudit from "../../data/qualification-staging/chintai/source-audit.json";
 
 const officialEvidence = new Map(sourceAudit.questions.map((q) => [q.id, q]));
+
+// Match the source-audit Python JSON serialization without altering string content.
+function sourceJson(value: string | Record<string, unknown>): string {
+  if (typeof value === "string") return JSON.stringify(value);
+  return `{${Object.keys(value).sort().map((key) => `${JSON.stringify(key)}: ${sourceJson(value[key] as string | Record<string, unknown>)}`).join(", ")}}`;
+}
 
 const choices = z.object({
   "1": z.string().min(1), "2": z.string().min(1),
@@ -34,9 +41,11 @@ export const ChintaiStagingQuestionSchema = z.object({
   if (q.id !== `chintai-${q.year}-q${q.qNumber}` || q.round !== q.year - 2012)
     fail("ID/year/round mismatch");
   const evidence = officialEvidence.get(q.id);
+  const actualTextHash = createHash("sha256").update(sourceJson({ question: q.question, choices: q.choices })).digest("hex");
   if (!evidence || !evidence.textMatch || !evidence.answerMatch ||
       evidence.officialAnswerNumber !== q.officialAnswerNumber ||
-      evidence.sourcePage !== q.sourcePage || evidence.sourceTextSha256 !== q.sourceTextSha256)
+      evidence.sourcePage !== q.sourcePage || evidence.sourceTextSha256 !== q.sourceTextSha256 ||
+      actualTextHash !== q.sourceTextSha256)
     fail("question must agree with the complete official PDF audit evidence");
   if (q.lawAsOf !== `${q.year}-04-01`) fail("lawAsOf must be the examination's April 1");
   for (const [field, kind] of [["sourcePdfUrl", "question"], ["sourceAnswerUrl", "answer"]] as const)

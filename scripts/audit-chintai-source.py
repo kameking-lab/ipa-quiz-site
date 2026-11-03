@@ -90,7 +90,7 @@ def main():
     assert len(results) == 100
     evidence = {"slug": "chintai", "checkedAt": "2026-11-04", "questionCount": 100, "sources": sources, "questions": results}
     if args.write:
-        (DATA / "source-audit.json").write_text(json.dumps(evidence, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+        (DATA / "source-audit.json").write_text(json.dumps(evidence, ensure_ascii=False, indent=2) + "\n", encoding="utf-8", newline="\n")
     print("PASS: 4 PDF hashes; 100 question texts, all 400 choices, all 100 official keys, accepted answers and page references.")
 
 
