@@ -165,9 +165,31 @@
       "reportSha256": "afd8450015ea28226d639999c08d97bd626f6ee4468a30a316989fcc08be2d5d",
       "execution": "reports/lq4e-20261104/review11-execution.json",
       "executionSha256": "f5b33128a41e1739cb5449315f0a4fdacd490204139cc0cd1c697fd999dc8692"
+    },
+    {
+      "path": "data/qualification-staging/lq4e-engineer-first/2024-basis-group1.json",
+      "status": "PASS",
+      "model": "gpt-6-astra",
+      "originals": 6,
+      "questionIds": [
+        "gijutsushi1-kikai-2024-basis-I-1-1",
+        "gijutsushi1-kikai-2024-basis-I-1-2",
+        "gijutsushi1-kikai-2024-basis-I-1-3",
+        "gijutsushi1-kikai-2024-basis-I-1-4",
+        "gijutsushi1-kikai-2024-basis-I-1-5",
+        "gijutsushi1-kikai-2024-basis-I-1-6"
+      ],
+      "sha256": "6433b44cc7eaa11fcc4da1967834ef3417a8af93f37ca07fad80d77d2b6f5913",
+      "semanticSha256": "1496425fc368d11af0bef92002c0f93ce7c12578f5cfb562f1a628b4ea28d43d",
+      "reviewedSnapshot": "reports/lq4e-20261104/reviewed-manuscripts/review12-2024-basis-group1.json",
+      "reviewedFileSha256": "5cbe198608a1d472129d99f252015ca8671aac7b7f093d9f692ea5e454f4ab0d",
+      "report": "reports/lq4e-20261104/independent-review12.md",
+      "reportSha256": "938b04223723860ce92573e5c0d4c8770208d0828851ac83baa7c98e7b9a830d",
+      "execution": "reports/lq4e-20261104/review12-execution.json",
+      "executionSha256": "87ffb4b7efb9c7bf8ae82aa826bc5b15df8e2506da833e65218d72491c11b732"
     }
   ],
-  "newAccepted": 82,
-  "accepted": 112,
-  "remaining": 48
+  "newAccepted": 88,
+  "accepted": 118,
+  "remaining": 42
 }
