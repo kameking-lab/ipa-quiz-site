@@ -61,5 +61,10 @@ describe("tsushin2 latest two separate sittings", () => {
     expect(q.answer).toBe("エ");
     expect(q.choiceExplanations?.イ).toContain("翻訳先は機械語に限らず");
     expect(q.choiceExplanations?.イ).not.toContain("プログラム全体を事前に");
+    for (const explanation of [q.explanation, q.choiceExplanations?.エ]) {
+      expect(explanation).toContain("コンパイラによる翻訳やインタプリタによる解釈・実行");
+      expect(explanation).not.toContain("機械語に変換する必要");
+      expect(explanation).not.toContain("機械語に翻訳する工程が必要");
+    }
   });
 });
