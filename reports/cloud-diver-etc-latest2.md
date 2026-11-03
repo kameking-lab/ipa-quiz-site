@@ -20,3 +20,14 @@ PDFテキストを抽出し、4月は既存の独立した本文・選択肢抽�
 
 検証：`pnpm install` 完了。`pnpm validate:questions` は全26524問で fail=0（既存を含む警告16817件）。潜水士の関連テスト2件合格。`official-summary` は未公開資格についても検証対象にし、公開資格の全肢解説要件は従来どおり保持した。型チェックはNode標準の約2GBヒープで上限に達したため `NODE_OPTIONS=--max-old-space-size=8192 pnpm typecheck` で確認する。build・デプロイは実行しない。
 型チェックも上記ヒープ設定で合格。
+
+## 高圧室内作業主任者（chamber）
+
+両回とも全40問（問1～40）、5肢・○印1個を確認。計80問。非公開・欠落問題なし。
+
+- 10月：https://www.exam.or.jp/wp-content/uploads/2026/10/LC20262116.pdf
+- 4月：https://www.exam.or.jp/wp-content/uploads/2026/04/LC20260416-1.pdf
+
+4月はPDFからの独立抽出と既存の本文・選択肢データを比較。差は単位の上付き数字、空白、冊子の終端記号。法令の誤った値も出題された選択肢としてそのまま保持し、解説で訂正。図が必要な設問はない。SHA-256と正答列は `data/questions/chamber/sources.json`。登録・ルート・資格一覧は潜水士と同じ公開ゲートを適用。
+
+検証：全26604問の `pnpm validate:questions` が fail=0（警告16823件）。ヒープ8GB指定の `pnpm typecheck` 合格。潜水士・高圧室内作業主任者の関連4テスト合格。

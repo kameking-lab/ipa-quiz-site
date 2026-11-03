@@ -604,6 +604,14 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     remainingWork: ["公開前の転載条件の最終確認", "公開承認（本追加では公開しない）"],
   },
   {
+    slug: "chamber", examCode: "chamber", shortName: "高圧室内作業主任者", fullName: "高圧室内作業主任者免許試験",
+    domain: "safety", administrator: "公益財団法人安全衛生技術試験協会",
+    officialQuestionsUrl: "https://www.exam.or.jp/lckohyo/", officialReuseTermsUrl: "https://www.exam.or.jp/lckohyo/",
+    status: "ready-to-ingest",
+    reuseSummary: "2026年10月・4月掲載の公式問題各40問、計80問を未公開ステージングに収録。解説は独自作成。法令は出題時点。",
+    remainingWork: ["公開前の転載条件の最終確認", "公開承認（本追加では公開しない）"],
+  },
+  {
     slug: "eisei1",
     examCode: "eisei1",
     shortName: "第一種衛生管理者",
