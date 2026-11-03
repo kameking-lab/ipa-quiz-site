@@ -1,5 +1,6 @@
 import { XRAY_QUESTIONS } from "./xray";
 import { GAMMA_QUESTIONS } from "./gamma";
+import { GAS_WELDING_QUESTIONS } from "./gas-welding";
 import type { ExamCode, Question } from "@/lib/questions/types";
 import { isPracticeReadyQuestion } from "@/lib/questions/filter";
 import { CHOSASHI_QUESTIONS } from "./chosashi";
@@ -99,6 +100,7 @@ import { LAND_SPECIAL2_QUESTIONS } from "./land-special2";
 import { LAND_SPECIAL3_QUESTIONS } from "./land-special3";
 
 export const QUESTIONS_BY_EXAM: Partial<Record<ExamCode, Question[]>> = {
+  ...(isExamPublished("gas-welding") ? { "gas-welding": GAS_WELDING_QUESTIONS } : {}),
   ...(isExamPublished("gamma") ? { "gamma": GAMMA_QUESTIONS } : {}),
   ...(isExamPublished("xray") ? { "xray": XRAY_QUESTIONS } : {}),
   ...(isExamPublished("kanteishi") ? { kanteishi: KANTEISHI_QUESTIONS.filter(isPracticeReadyQuestion) } : {}),

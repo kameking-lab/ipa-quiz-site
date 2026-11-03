@@ -30,6 +30,7 @@ const VERIFIED_MEDICAL_EDITIONS: Readonly<Record<string, Readonly<Record<string,
 export function questionSourceEdition(q: Pick<Question, "year" | "season" | "sourcePdfUrl"> & Partial<Pick<Question, "exam">>): string {
   if (q.exam === "xray") return `${q.year}年${q.season === "spring" ? 4 : 10}月公表問題`;
   if (q.exam === "gamma") return `${q.year}年${q.season === "spring" ? 4 : 10}月公表問題`;
+  if (q.exam === "gas-welding") return `${q.year}年${q.season === "spring" ? 4 : 10}月公表問題`;
   if (q.exam === "riku-tech1" && q.season === "july") return `${q.year}年7月試験`;
   if (q.exam === "shika-ishi" && q.season === "annual" && (q.year === 2025 || q.year === 2026)) {
     return `第${q.year - 1907}回（${q.year}年実施）`;

@@ -31,3 +31,15 @@
 - PDF SHA-256 `LC20262118`: `e170493e2d7d8b541195ac32091e79864b6647a21b991473cc01b73ffd332391`
 - PDF SHA-256 `LC20260418-1`: `97524aefd7fbaffa3827843ab2ad57c2bb84717ad45d58ef7a1e2216540fb81a`
 - 検証: `pnpm validate:questions` 26604問成功（既存等の警告16809件、gammaは既存解説中の「誤り」という言い回し1件）。xray・gamma関連4テスト成功。`NODE_OPTIONS=--max-old-space-size=8192 pnpm typecheck` 成功。build・デプロイなし。
+
+## ガス溶接作業主任者（gas-welding）
+
+- 2026年10月: https://www.exam.or.jp/wp-content/uploads/2026/10/LC20262112.pdf
+- 2026年4月: https://www.exam.or.jp/wp-content/uploads/2026/04/LC20260412-1.pdf
+- 各20問（問1〜20）、計40問。公式冊子の表紙に問1〜20と明記され、免除者は問1〜10。20問は部分公開による欠落ではなく冊子の全問題数である。欠番・重複なし、全正答は○付き番号と照合。
+- 4月分の既存文字起こしと独自解説を再利用。10月分は新規文字起こし・独自解説。図表画像が必要な問題はなし。原問本文と五肢をテキストで保存し、10月問6の空欄表示を補正。
+- 各問に問題・正答URLと出典番号、出題時点の法令である旨を保存。資格台帳等の既存方式でステージング登録し、公開ゲートで除外。
+- PDF SHA-256 `LC20262112`: `b802020ebdf0a80f08b4c74ff7a0d8d6cee93c930adb6d7eff4d4cffe3283217`
+- PDF SHA-256 `LC20260412-1`: `2098042747dd465e51d313636bdb53d2fbd0f25cba0de947aa1370b56cf40ac0`
+- 検証: `pnpm validate:questions` 26644問成功（警告16809件は既存データ等、gas-welding由来の警告なし）。関連2テスト成功、`NODE_OPTIONS=--max-old-space-size=8192 pnpm typecheck` 成功。build・デプロイなし。
+- ここまでの3資格の4月PDFは今回公式から再取得し、`official-catalog.json` に保存されている既存PDFのSHA-256と完全一致した。
