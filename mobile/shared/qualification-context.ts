@@ -13,6 +13,10 @@ export function pageQualifications(pathname: string, search = ""): Qualification
   else if (["q", "essay", "essays", "recommended-books", "success-stories"].includes(parts[0])) code = parts[1];
   else if (parts[0] === "chusho-secondary") code = "chusho-kigyo-shindanshi";
   else if (parts[0] === "e-learning" && parts[1] === "exams") {
+    if (!parts[2] && query.get("group")) {
+      const selected = entries.filter(e => e.paper?.group === query.get("group") && (!query.get("subject") || e.paper?.subject === query.get("subject")));
+      return unique(selected.flatMap(e => qualificationTargets(e.qualification ?? e.code)));
+    }
     if (parts[2] === "qualifications") {
       // Qualification landing slugs live in the question library's public metadata.
       const hub = findQualificationHub(parts[3]);

@@ -7,6 +7,7 @@ import { qualificationTargets, qualificationUrl, todayJst, type CalendarDraft, t
 import { addQualificationEvent, fetchQualificationSchedules, openQualificationUrl } from "./qualification-platform";
 
 const services = { fetch: fetchQualificationSchedules, add: addQualificationEvent, open: openQualificationUrl, source: async (url: string) => { await Browser.open({ url }); } };
+const actionClass = "min-h-11 rounded-lg border px-3 py-2 text-left disabled:opacity-50";
 export function QualificationActions({ target, service = services }: { target: QualificationTarget; service?: typeof services }) {
   const [events, setEvents] = useState<CalendarDraft[]>([]), [notice, setNotice] = useState(""), [busy, setBusy] = useState(false), [loaded, setLoaded] = useState(false);
   const running = useRef(false), generation = useRef(0);
@@ -17,11 +18,11 @@ export function QualificationActions({ target, service = services }: { target: Q
     try { await work(); } catch (e) { setNotice(e instanceof Error ? e.message : "処理を完了できませんでした。"); }
     finally { running.current = false; setBusy(false); }
   }
-  return <section aria-label={`${target.name}の日程と申込情報`} className="space-y-2 rounded-xl border p-3">
+  return <section aria-label={`${target.name}の日程と申込情報`} className="space-y-2 break-words rounded-xl border p-3">
     <h2 className="font-bold">{target.name}の日程・申込情報</h2>
-    <button disabled={busy} onClick={() => void run(() => service.open(qualificationUrl(target.id)))}>次の資格で申込方法・日程・関連資格を見る</button>
-    <p className="text-sm">出典：次の資格の公開API。確定日程のみ追加できます。保存はiOS 17以降の標準編集画面で選べます。</p>
-    <button disabled={busy || target.calendarScope !== "specific"} onClick={() => void run(async () => {
+    <button className={actionClass} disabled={busy} onClick={() => void run(() => service.open(qualificationUrl(target.id)))}>次の資格で申込方法・日程・関連資格を見る</button>
+    <p className="text-sm">日程提供：次の資格。確定日程のみ追加できます。保存はiOS 17以降の標準編集画面で選べます。</p>
+    <button className={actionClass} disabled={busy || target.calendarScope !== "specific"} onClick={() => void run(async () => {
       const current = generation.current; setEvents([]); setLoaded(false);
       const fresh = await service.fetch(target);
       if (current === generation.current) { setEvents(fresh); setLoaded(true); }
@@ -31,8 +32,8 @@ export function QualificationActions({ target, service = services }: { target: Q
     {events.map(event => <div key={event.id} className="space-y-1 border-t py-2">
       <p>{event.startDay} · {event.title}</p>
       <p className="text-sm">終日 · 出典確認日：{event.verifiedAt} · 確認期限：{event.validUntil}</p>
-      <button disabled={busy} onClick={() => void run(() => service.source(event.sourceUrl))}>公式出典を確認</button>{" "}
-      <button disabled={busy || event.startDay < todayJst() || event.validUntil < todayJst()} onClick={() => void run(async () => {
+      <button className={actionClass} disabled={busy} onClick={() => void run(() => service.source(event.sourceUrl))}>公式出典を確認</button>{" "}
+      <button className={actionClass} disabled={busy || event.startDay < todayJst() || event.validUntil < todayJst()} onClick={() => void run(async () => {
         try { const saved = await service.add(event, target); setNotice(saved ? "カレンダーに保存しました。" : "保存をキャンセルしました。"); }
         catch (error) { setEvents([]); setLoaded(false); throw error; }
       })}>カレンダーに追加</button>
@@ -43,7 +44,7 @@ export function QualificationActions({ target, service = services }: { target: Q
 export function QualificationCardActions({ code }: { code: string }) {
   const [expanded, setExpanded] = useState(false);
   const targets = qualificationTargets(code);
-  return <details onToggle={e => setExpanded(e.currentTarget.open)}><summary>試験日・申込情報・カレンダー</summary>
+  return <details onToggle={e => setExpanded(e.currentTarget.open)}><summary className="min-h-11 cursor-pointer py-2">試験日・申込情報・カレンダー</summary>
     {expanded && (targets.length ? targets.map(t => <QualificationActions key={t.id} target={t}/>) : <p>該当資格の公開情報を確認できていません。日程の追加はできません。</p>)}
   </details>;
 }
@@ -51,5 +52,7 @@ export function NativePageQualificationActions() {
   const pathname = usePathname();
   const search = useSearchParams();
   const targets = pageQualifications(pathname, search.toString());
+  const unavailable = ["gas-otsu", "gas-hei"].some(code => pathname === `/${code}` || pathname.startsWith(`/${code}/`) || search.get("exam") === code);
+  if (!targets.length && unavailable) return <p className="py-3">この資格の公開ページ・確定日程を確認できていません。カレンダーへの追加はできません。</p>;
   return <div className="mx-auto max-w-2xl space-y-3 py-3">{targets.map(target => <QualificationActions key={target.id} target={target}/>)}</div>;
 }

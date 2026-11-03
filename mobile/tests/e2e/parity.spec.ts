@@ -97,3 +97,32 @@ test("restore with no verified entitlement explains the missing purchase instead
   await expect(page.getByText("無料会員",{exact:true})).toBeVisible();
   expect((await page.evaluate(()=>window.mobileTest.storeCalls())).restores).toBe(1);
 });
+
+test("qualification dates require confirmation, recheck before saving and fall back to the in-app browser",async({page,context})=>{
+  const requests=await routeLocal(context);await page.goto(ORIGIN+"/tests/e2e/harness.html");await page.waitForFunction(()=>!!window.mobileTest);
+  await page.evaluate(()=>window.mobileTest.showQualification("saved"));
+  await page.getByRole("button",{name:"次の資格で申込方法・日程・関連資格を見る"}).click();
+  await page.getByRole("button",{name:"試験日・申込締切を取得・再確認"}).click();
+  await expect(page.getByRole("button",{name:"カレンダーに追加"})).toHaveCount(2);
+  await page.getByRole("button",{name:"カレンダーに追加"}).first().click();
+  await expect(page.getByRole("status")).toHaveText("カレンダーに保存しました。");
+  expect((await page.getByRole("button",{name:"カレンダーに追加"}).first().boundingBox())!.height).toBeGreaterThanOrEqual(44);
+  expect(await page.evaluate(()=>document.documentElement.scrollWidth<=window.innerWidth)).toBe(true);
+  expect(await page.evaluate(()=>window.mobileTest.qualificationCalls())).toEqual({universal:["https://tsugino-shikaku.jp/shikaku/care-worker"],browser:["https://tsugino-shikaku.jp/shikaku/care-worker"],editors:1,fetches:2});
+  expect(requests.some(url=>url.includes("tsugino-shikaku.jp"))).toBe(false);
+  await page.screenshot({path:"test-results/qualification-calendar.png",fullPage:false});
+});
+
+test("unconfirmed dates have no add button and an installed target app avoids browser fallback",async({page,context})=>{
+  await routeLocal(context);await page.goto(ORIGIN+"/tests/e2e/harness.html");await page.waitForFunction(()=>!!window.mobileTest);
+  await page.evaluate(()=>window.mobileTest.showQualification("unconfirmed"));
+  await page.getByRole("button",{name:"試験日・申込締切を取得・再確認"}).click();
+  await expect(page.getByText(/追加できる確定日程はありません/)).toBeVisible();
+  await expect(page.getByRole("button",{name:"カレンダーに追加"})).toHaveCount(0);
+  await page.reload();await page.waitForFunction(()=>!!window.mobileTest);await page.evaluate(()=>window.mobileTest.showQualification("app-installed"));
+  await page.getByRole("button",{name:"次の資格で申込方法・日程・関連資格を見る"}).click();
+  expect((await page.evaluate(()=>window.mobileTest.qualificationCalls())).browser).toEqual([]);
+  await page.getByRole("button",{name:"試験日・申込締切を取得・再確認"}).click();
+  await page.getByRole("button",{name:"カレンダーに追加"}).first().click();
+  await expect(page.getByRole("status")).toHaveText("保存をキャンセルしました。");
+});

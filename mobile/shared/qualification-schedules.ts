@@ -42,8 +42,13 @@ export function confirmedSchedules(value: unknown, target: QualificationTarget, 
         !Array.isArray(s.estimatedEventTypes) || s.venueDependent === true ||
         !["fixed", "period"].includes(String(s.cadence))) continue;
     const estimated = s.estimatedEventTypes as unknown[];
+    if ([s.applicationOpenAt, s.applicationDeadlineAt, s.examStartAt, s.examEndAt, s.resultAnnouncementAt].some(day => day != null && !validDay(day))) continue;
+    if (s.sourceValidUntil < s.sourceVerifiedAt) continue;
     if (validDay(s.applicationOpenAt) && validDay(s.applicationDeadlineAt) && s.applicationOpenAt > s.applicationDeadlineAt) continue;
     if (validDay(s.examStartAt) && validDay(s.applicationDeadlineAt) && s.applicationDeadlineAt > s.examStartAt) continue;
+    if (validDay(s.examStartAt) && validDay(s.examEndAt) && s.examStartAt > s.examEndAt) continue;
+    const examEnd = s.examEndAt ?? s.examStartAt;
+    if (validDay(examEnd) && validDay(s.resultAnnouncementAt) && examEnd > s.resultAnnouncementAt) continue;
     const add = (kind: string, label: string, day: unknown, end: unknown, source = s.officialUrl, verified = s.sourceVerifiedAt, suffix = "") => {
       if (!validDay(day) || day < today || !safeSource(source) || !validDay(verified) || verified > today) return;
       if (end != null && (!validDay(end) || end < day)) return;

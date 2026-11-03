@@ -69,6 +69,18 @@ Appleログインを追加した。Apple未設定のアプリ用ログイン経�
 
 ## ローカル検証と配布前の確認
 
+### IOS1C: 資格の日程・申込情報とカレンダー
+
+オンラインの資格ページ・演習ページと端末内の資格カードに、日程取得・カレンダー追加・「次の資格」の資格情報ページを追加した。`shared/qualification-links.json` は2026-11-03の公開検索APIに照合した対応表。211目次のうち209件に対応し、ガス主任技術者の乙種・丙種は該当ページが確認できないため追加・誤誘導をしない。共通ページしかない級・区分は情報リンクだけを表示する。
+
+日程は `https://tsugino-shikaku.jp/api/qualification-summaries?ids={id}&schedules=1` からCapacitorのネイティブHTTPで取得する。確定状態、日付、公式出典、出典確認日、有効期限、推定フラグ、日付間の矛盾を検査し、保存直前にも再取得する。未確定・過去・期限切れ・予約者本人の日付を特定できないCBT期間は試験日として追加しない。申込方法別の締切は別々に示す。予定は終日で、締切時刻と消印・必着の条件は出典で確認する。
+
+`ios-assets/QualificationBridgeViewController.swift` のEventKitUI標準編集画面で利用者が保存・キャンセルを選ぶ。カレンダーを読まず、権限要求・直接保存は行わない。この方式はiOS 17以降限定で、既存アプリのiOS 15/16対応は保持する。iOS 15/16では追加操作時に対応OSを案内し、情報リンクを利用できる。`ios:prepare` はSwiftソースのコピー・Xcodeターゲット登録・Storyboardのカスタムコントローラー設定まで行う（Windowsでは実行しない）。
+
+資格情報のリンクは `/shikaku/{id}` のみ許可する。`UIApplication.open(..., universalLinksOnly: true)` に成功すれば相手アプリへ移動し、未インストール／関連付け不成立なら `@capacitor/browser`（iOSではSFSafariViewController）で開く。今回、遷移先サイトのAASAは `.well-known` とルートの双方が404だった。相手側のAssociated Domains/AASA公開と実機確認は残る。設定変更・公開はしていない。
+
+購入CTA・課金ページへの直接リンクは追加していない。リンクは申込方法・日程・関連資格の確認目的で、アプリ内の有料機能を外部決済で解除する導線ではない。リンク先には教材・PR案内もあるため、提出前に最新内容を再確認する。App Review 3.1の判断と未検証範囲は [IOS1C-REPORT.md](./IOS1C-REPORT.md) を参照。
+
 ```powershell
 # リポジトリのルート
 npx --yes pnpm@10.33.0 install --frozen-lockfile --ignore-scripts

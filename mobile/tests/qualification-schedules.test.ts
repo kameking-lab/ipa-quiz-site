@@ -25,6 +25,7 @@ it.each([
   { officialUrl: "http://source.test" }, { officialUrl: "https://user:pass@source.test" }, { sourceVerifiedAt: "" }, { sourceVerifiedAt: "2026-11-04" },
   { sourceValidUntil: "2026-11-02" }, { sourceValidUntil: null }, { estimatedEventTypes: undefined }, { venueDependent: true }, { cadence: "year_round" },
   { qualificationId: "another-exam" }, { applicationOpenAt: "2026-12-01" }, { applicationDeadlineAt: "2027-02-01" },
+  { examEndAt: "2027-01-30" }, { resultAnnouncementAt: "2027-01-01" }, { examStartAt: "2027-02-29" },
 ])("rejects unconfirmed, stale, unsafe or contradictory schedules %j", patch => {
   expect(confirmedSchedules(response(patch), target, today)).toEqual([]);
 });
@@ -91,6 +92,8 @@ it("resolves hub, query, question, material and library routes without unrelated
   }
   expect(pageQualifications("/account")).toEqual([]);
   expect(pageQualifications("/e-learning/exams/qualifications/ni-kyu-boiler-gishi").map(t => t.id)).toEqual(["boiler-2kyu"]);
+  expect(pageQualifications("/e-learning/exams", "?group=cskohyo&subject=労働衛生一般").map(t => t.id)).toEqual(["rodo-eisei-consultant"]);
+  expect(pageQualifications("/e-learning/exams", "?group=emkohyo&subject=労働衛生一般").map(t => t.id)).toEqual(["work-environment-measurement-expert-first", "work-environment-measurement-expert-second"]);
   expect(qualificationTargets("gas-otsu")).toEqual([]);
   expect(qualificationTargets("amateur1")[0].calendarScope).toBe("group");
 });
