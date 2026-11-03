@@ -1,6 +1,6 @@
 ﻿# LQ4B 統合・再検収 作業報告（2026-11-04 JST）
 
-作業中。最終検証の結果は後段へ追記する。
+判定：3資格の統合は合格。残る2資格は全範囲未完了で、公式原典からの補完・限定原稿の再検収まで。5資格完成とは判定しない。
 
 ## 今回の決定と作業境界
 
@@ -37,4 +37,41 @@
 
 ## 検証・レビュー
 
-最終の終了コード、検査件数、独立レビュー判定、コミット一覧は確定後に追記する。中間の失敗ログは修正前検証として区別する。
+最終ソースの実行コードは `acfaec297`。後続の実行コード変更なし。後続には報告・検証記録と、公開ローダーに登録していない技術士の限定ステージング稿のみを追加した。
+
+| 検証 | 結果 |
+| --- | --- |
+| `corepack pnpm validate:questions` | 終了0、26,873問、fail=0、warn=16,854 |
+| `corepack pnpm typecheck` | 終了0、診断なし（NODE_OPTIONS=--max-old-space-size=12288） |
+| 関連Vitest | 終了0、25ファイル・282テスト成功 |
+| 変更TS/TSX/MJSのESLint | 終了0、警告0 |
+| `corepack pnpm build` | 終了0、コンパイル・型検査・13,115/13,115静的生成・最適化完了 |
+| 建築設備士専用validator | 終了0、保存210、演習209、参照のみ1、840肢理由・32画像 |
+| 気象専用schema／既受入固定成果検査 | 各終了0、78原問、145固定成果物、130画像、237実技欄 |
+| 知財intake（既存の実PDF4本指定） | 終了0、160レコードhash・公式正答・651肢理由・4×40原問一致 |
+| 資格固有485ファイルのGit blob照合 | 建築設備士110、知財33、気象342ファイル、相違0 |
+| origin/main祖先確認 | 終了0、基点を保持 |
+
+Vitest：`corepack pnpm exec vitest run qkensetsu chizai2 kisho ReviewClient practice-session questions-filter category-pool exam-config-integrity QuizModeTabs PracticeSessionTabs QuizClient.year get-questions questions-load exam-library-coverage question-jsonld question-meta --maxWorkers=2`。
+
+ビルド時のmiddleware/Edge Runtime非推奨・既存チャート寸法の警告は残る。これらで終了失敗していない。共通validatorの警告も隠していない。中間の構文エラー・登録漏れ・テスト失敗は修正後に上記最終検証を再実行した。中間の旧ビルドは最終ソース検証のため停止し、`build-final.log` の終了0を採用する。知財intakeは初回の引数不足を解消して実PDFパス付きで再実行した。
+
+既受入のCRLF・原稿hashを保持するため、全差分の通常whitespace検査では旧受入ログの末尾空白等が出る。CRLFを考慮し既受入の3資格reportを除外したコード・今回報告差分の検査は終了0。受入済み原稿・証跡のhashを変える一括整形はしていない。
+
+独立レビューはすべて指定の `C:/Users/kanet/AppData/Roaming/npm/codex.cmd exec -m gpt-6-astra` を使用。
+
+- 第1・2回：FAIL。指摘を修正してコミット。
+- 第3回：終了0、3資格統合PASS。14PDFの実体・SHAと全520正答の独立解析一致もPASS。残る2資格の完成は未了と明示。
+- 第4回：終了0、技術士2024年適性Ⅱ-9の全文・5選択肢・公式正答5・全5肢解説・図不要を独立確認し、限定1問PASS。最終ビルドの完走と282テスト成功も確認。
+- 第5回：2025年適性Ⅱ-9の限定原稿をレビュー中。最終結果を追記する。
+
+各ログと観測した終了コード・SHAは `checks-final.json`、独立票は `independent-review1.md`〜に保存した。共通クイズ検証・282テストに未登録の技術士限定稿を含めたとは扱わない。実認証・本番同期DB・本番配信後の読戻しは今回の検証対象外。
+
+## 再開用資料と残作業
+
+`C:/Users/kanet/Documents/Codex/2026-11-02/task-2/lq4b-source-preparation.zip`（11,516,636 bytes、SHA-256 `edbbaf83aa86254b6c3bda581188c1aeb1a70d7388bbc0ffe34ddb1e113fbca1`）に14PDF、2回のOCRテキスト、正答確認画像、4索引を保存。540エントリ。問題PDF・OCR本文はGit外のまま。原典取得のやり直しは不要。アーカイブ472件の追加探索では対象稿なし（1件の語句一致は別件ST資料のハッシュ名一致）。
+
+新規補完稿は `data/qualification-staging/lq4b-engineer-first/` に年度別JSONで保存。既存稿は発見できていないので、既存完成稿の作り直しではない。2024年Ⅱ-9は内容検収済みだが未登録・未公開。2025年Ⅱ-9は独立検収待ち。公式2年160問の完備ではない。ビル管理360問は原典・正答・2回転記の準備までで、原文裁定と全肢解説は未完了。必要図の全問対応確認・公開接続も残る。
+
+公開・push・main統合・デプロイは一切行っていない。今回のローカル候補を公開するときも、オーナー承認のバッチビルドで行う。
+
