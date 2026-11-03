@@ -1,0 +1,354 @@
+{
+  "contentHead": "dfa7e4813b3b6ccaa8ce34c1f7477c4eb1104dd5",
+  "baselineHead": "82db93b10",
+  "changedPaths": [
+    "data/qualification-staging/lq4c-biru-kan/2024-am-021-032.json",
+    "data/qualification-staging/lq4c-biru-kan/2024-am-033-045.json",
+    "data/qualification-staging/lq4c-biru-kan/2024-am-046-061.json",
+    "data/qualification-staging/lq4c-biru-kan/2024-am-062-081.json",
+    "data/qualification-staging/lq4c-biru-kan/2024-am-082-090.json",
+    "data/qualification-staging/lq4c-biru-kan/2025-am-023-029-033-036.json",
+    "data/qualification-staging/lq4c-biru-kan/2025-am-037-047.json",
+    "data/qualification-staging/lq4c-biru-kan/2025-am-048-060.json",
+    "data/qualification-staging/lq4c-biru-kan/2025-am-061-073.json",
+    "data/qualification-staging/lq4c-biru-kan/2025-am-074-090.json",
+    "data/qualification-staging/lq4c-biru-kan/assets/2024-am-047-figure.png",
+    "data/qualification-staging/lq4c-biru-kan/assets/2024-am-048-figure.png",
+    "data/qualification-staging/lq4c-biru-kan/assets/2024-am-065-figure.png",
+    "data/qualification-staging/lq4c-biru-kan/assets/2024-am-085-figure.png",
+    "data/qualification-staging/lq4c-biru-kan/assets/2025-am-048-figure.png",
+    "data/qualification-staging/lq4c-biru-kan/assets/2025-am-052-figure.png",
+    "data/qualification-staging/lq4c-biru-kan/assets/2025-am-059-figure.png",
+    "data/qualification-staging/lq4c-biru-kan/assets/2025-am-068-figure.png",
+    "reports/lq4c-20261104/acceptance.json",
+    "reports/lq4d-20261104/independent-review1.md",
+    "reports/lq4d-20261104/independent-review11.md",
+    "reports/lq4d-20261104/independent-review12.md",
+    "reports/lq4d-20261104/independent-review13.md",
+    "reports/lq4d-20261104/independent-review14.md",
+    "reports/lq4d-20261104/independent-review15.md",
+    "reports/lq4d-20261104/independent-review16.md",
+    "reports/lq4d-20261104/independent-review2.md",
+    "reports/lq4d-20261104/independent-review3.md",
+    "reports/lq4d-20261104/independent-review4.md",
+    "reports/lq4d-20261104/independent-review5.md",
+    "reports/lq4d-20261104/independent-review6.md",
+    "reports/lq4d-20261104/independent-review7.md",
+    "reports/lq4d-20261104/independent-review8.md",
+    "reports/lq4d-20261104/independent-review9.md",
+    "reports/lq4d-20261104/review1-prompt.txt",
+    "reports/lq4d-20261104/review1.exit",
+    "reports/lq4d-20261104/review10-prompt.txt",
+    "reports/lq4d-20261104/review10.exit",
+    "reports/lq4d-20261104/review11-prompt.txt",
+    "reports/lq4d-20261104/review11.exit",
+    "reports/lq4d-20261104/review12-prompt.txt",
+    "reports/lq4d-20261104/review12.exit",
+    "reports/lq4d-20261104/review13-prompt.txt",
+    "reports/lq4d-20261104/review13.exit",
+    "reports/lq4d-20261104/review14-prompt.txt",
+    "reports/lq4d-20261104/review14.exit",
+    "reports/lq4d-20261104/review15-prompt.txt",
+    "reports/lq4d-20261104/review15.exit",
+    "reports/lq4d-20261104/review16-prompt.txt",
+    "reports/lq4d-20261104/review16.exit",
+    "reports/lq4d-20261104/review2-prompt.txt",
+    "reports/lq4d-20261104/review2.exit",
+    "reports/lq4d-20261104/review3-prompt.txt",
+    "reports/lq4d-20261104/review3.exit",
+    "reports/lq4d-20261104/review4-prompt.txt",
+    "reports/lq4d-20261104/review4.exit",
+    "reports/lq4d-20261104/review5-prompt.txt",
+    "reports/lq4d-20261104/review5.exit",
+    "reports/lq4d-20261104/review6-prompt.txt",
+    "reports/lq4d-20261104/review6.exit",
+    "reports/lq4d-20261104/review7-prompt.txt",
+    "reports/lq4d-20261104/review7.exit",
+    "reports/lq4d-20261104/review8-prompt.txt",
+    "reports/lq4d-20261104/review8.exit",
+    "reports/lq4d-20261104/review9-prompt.txt",
+    "reports/lq4d-20261104/review9.exit",
+    "reports/lq4d-20261104/reviewed-manuscripts/2024-am-021-032.json",
+    "reports/lq4d-20261104/reviewed-manuscripts/2024-am-033-045.json",
+    "reports/lq4d-20261104/reviewed-manuscripts/2024-am-046-061.json",
+    "reports/lq4d-20261104/reviewed-manuscripts/2024-am-062-081.json",
+    "reports/lq4d-20261104/reviewed-manuscripts/2024-am-082-090.json",
+    "reports/lq4d-20261104/reviewed-manuscripts/2025-am-023-029-033-036.json",
+    "reports/lq4d-20261104/reviewed-manuscripts/2025-am-037-047.json",
+    "reports/lq4d-20261104/reviewed-manuscripts/2025-am-048-060.json",
+    "reports/lq4d-20261104/reviewed-manuscripts/2025-am-061-073.json",
+    "reports/lq4d-20261104/reviewed-manuscripts/2025-am-074-090.json",
+    "reports/lq4d-20261104/reviewed-manuscripts/review1-before-fixes.json",
+    "reports/lq4d-20261104/reviewed-manuscripts/review11-before-fixes.json",
+    "reports/lq4d-20261104/reviewed-manuscripts/review12-before-fixes.json",
+    "reports/lq4d-20261104/reviewed-manuscripts/review14-before-fixes.json",
+    "reports/lq4d-20261104/reviewed-manuscripts/review2-before-fixes.json",
+    "reports/lq4d-20261104/reviewed-manuscripts/review5-before-fixes-2025.json",
+    "reports/lq4d-20261104/reviewed-manuscripts/review8-before-fixes.json"
+  ],
+  "engineeringReceiptBatchesUnchanged": true,
+  "engineeringContentPathsChanged": [],
+  "verified": 37,
+  "allMatch": true,
+  "records": [
+    {
+      "path": "data/qualification-staging/lq4c-biru-kan/2024-am-021-032.json",
+      "existsInHead": true,
+      "worktreeSha256": "9c71d9f7426ff965890386c58c24e9a97a01ab1dec69607600d195dc8e71e97f",
+      "gitBlobSha256": "9c71d9f7426ff965890386c58c24e9a97a01ab1dec69607600d195dc8e71e97f",
+      "match": true
+    },
+    {
+      "path": "reports/lq4d-20261104/independent-review4.md",
+      "existsInHead": true,
+      "worktreeSha256": "93b0446fdf3b8c7d993be9e451ff21e96b9e1e1eaa8f794b14fef8cdde744c10",
+      "gitBlobSha256": "93b0446fdf3b8c7d993be9e451ff21e96b9e1e1eaa8f794b14fef8cdde744c10",
+      "match": true
+    },
+    {
+      "path": "reports/lq4d-20261104/reviewed-manuscripts/2024-am-021-032.json",
+      "existsInHead": true,
+      "worktreeSha256": "8b352f70f939b9a32984a05fc1e8164c68a88ae2206c72c7eff809d9aa360686",
+      "gitBlobSha256": "8b352f70f939b9a32984a05fc1e8164c68a88ae2206c72c7eff809d9aa360686",
+      "match": true
+    },
+    {
+      "path": "data/qualification-staging/lq4c-biru-kan/2025-am-023-029-033-036.json",
+      "existsInHead": true,
+      "worktreeSha256": "89bc13c130fb9ee193ec52ef07325745e3ecba7018c9820caa0a6c02399f2f1a",
+      "gitBlobSha256": "89bc13c130fb9ee193ec52ef07325745e3ecba7018c9820caa0a6c02399f2f1a",
+      "match": true
+    },
+    {
+      "path": "reports/lq4d-20261104/independent-review3.md",
+      "existsInHead": true,
+      "worktreeSha256": "69e3c0a15b9c72ce26df471b4b6b77c67823ba92a2d55da423948abe666c27af",
+      "gitBlobSha256": "69e3c0a15b9c72ce26df471b4b6b77c67823ba92a2d55da423948abe666c27af",
+      "match": true
+    },
+    {
+      "path": "reports/lq4d-20261104/reviewed-manuscripts/2025-am-023-029-033-036.json",
+      "existsInHead": true,
+      "worktreeSha256": "bb23f21c7e09391cb60367f0662d84acd833570783388943d1cc14a5ff1b6c53",
+      "gitBlobSha256": "bb23f21c7e09391cb60367f0662d84acd833570783388943d1cc14a5ff1b6c53",
+      "match": true
+    },
+    {
+      "path": "data/qualification-staging/lq4c-biru-kan/2024-am-033-045.json",
+      "existsInHead": true,
+      "worktreeSha256": "91796c38015f6c03c9f9286428e248a9f5abcf3989390d6da1b3993faa94c3d1",
+      "gitBlobSha256": "91796c38015f6c03c9f9286428e248a9f5abcf3989390d6da1b3993faa94c3d1",
+      "match": true
+    },
+    {
+      "path": "reports/lq4d-20261104/independent-review5.md",
+      "existsInHead": true,
+      "worktreeSha256": "f83ff5286aaa7bb673b00fdf4ed4c740d7f2e6ffaa3541ff4ae67b544eebbc60",
+      "gitBlobSha256": "f83ff5286aaa7bb673b00fdf4ed4c740d7f2e6ffaa3541ff4ae67b544eebbc60",
+      "match": true
+    },
+    {
+      "path": "reports/lq4d-20261104/reviewed-manuscripts/2024-am-033-045.json",
+      "existsInHead": true,
+      "worktreeSha256": "8f367cc9ce445af3feb575d9b2f4913e465d22e0db3d9ca2b9b2874e3daa70f6",
+      "gitBlobSha256": "8f367cc9ce445af3feb575d9b2f4913e465d22e0db3d9ca2b9b2874e3daa70f6",
+      "match": true
+    },
+    {
+      "path": "data/qualification-staging/lq4c-biru-kan/2024-am-046-061.json",
+      "existsInHead": true,
+      "worktreeSha256": "db25e402923acc84b33d7213bb9582c0676574f2d55c3d891776a65ddd2754a5",
+      "gitBlobSha256": "db25e402923acc84b33d7213bb9582c0676574f2d55c3d891776a65ddd2754a5",
+      "match": true
+    },
+    {
+      "path": "reports/lq4d-20261104/independent-review6.md",
+      "existsInHead": true,
+      "worktreeSha256": "a1e20909d2455e8aafdadcff2f4acfb5382e4d77cbf67a4b1998c65b2069fcaa",
+      "gitBlobSha256": "a1e20909d2455e8aafdadcff2f4acfb5382e4d77cbf67a4b1998c65b2069fcaa",
+      "match": true
+    },
+    {
+      "path": "reports/lq4d-20261104/reviewed-manuscripts/2024-am-046-061.json",
+      "existsInHead": true,
+      "worktreeSha256": "85201c81810964ae8c707906313bbd606e7f5a686958ed39c5746bfa17fb03c3",
+      "gitBlobSha256": "85201c81810964ae8c707906313bbd606e7f5a686958ed39c5746bfa17fb03c3",
+      "match": true
+    },
+    {
+      "path": "data/qualification-staging/lq4c-biru-kan/assets/2024-am-047-figure.png",
+      "existsInHead": true,
+      "worktreeSha256": "ed9863506abaf4b26fe9736678cddc240f71bd0e6e27b47c1b8e32004147aacf",
+      "gitBlobSha256": "ed9863506abaf4b26fe9736678cddc240f71bd0e6e27b47c1b8e32004147aacf",
+      "match": true
+    },
+    {
+      "path": "data/qualification-staging/lq4c-biru-kan/assets/2024-am-048-figure.png",
+      "existsInHead": true,
+      "worktreeSha256": "cc2d5e580f207f863fe01ee786c65fe952dc610e0e97523282101cd4fe49f66d",
+      "gitBlobSha256": "cc2d5e580f207f863fe01ee786c65fe952dc610e0e97523282101cd4fe49f66d",
+      "match": true
+    },
+    {
+      "path": "data/qualification-staging/lq4c-biru-kan/2025-am-037-047.json",
+      "existsInHead": true,
+      "worktreeSha256": "e613becea2f29def475b3acddf0111f8df50aa420555097ba1044aa393141dde",
+      "gitBlobSha256": "e613becea2f29def475b3acddf0111f8df50aa420555097ba1044aa393141dde",
+      "match": true
+    },
+    {
+      "path": "reports/lq4d-20261104/independent-review7.md",
+      "existsInHead": true,
+      "worktreeSha256": "eb53a1a0e8a2984971548039a6bda567dd530025a7d6aa87ee0dfb92fb9dfb03",
+      "gitBlobSha256": "eb53a1a0e8a2984971548039a6bda567dd530025a7d6aa87ee0dfb92fb9dfb03",
+      "match": true
+    },
+    {
+      "path": "reports/lq4d-20261104/reviewed-manuscripts/2025-am-037-047.json",
+      "existsInHead": true,
+      "worktreeSha256": "18ad62a25d9502dc9d90b5324983d5f3cb81c71f2aa031deab07ddebab370b4c",
+      "gitBlobSha256": "18ad62a25d9502dc9d90b5324983d5f3cb81c71f2aa031deab07ddebab370b4c",
+      "match": true
+    },
+    {
+      "path": "data/qualification-staging/lq4c-biru-kan/2024-am-062-081.json",
+      "existsInHead": true,
+      "worktreeSha256": "7c0c3b2510fb1abb3c8430e8d0d01d064f48750705219a441acf04c4947ce549",
+      "gitBlobSha256": "7c0c3b2510fb1abb3c8430e8d0d01d064f48750705219a441acf04c4947ce549",
+      "match": true
+    },
+    {
+      "path": "reports/lq4d-20261104/independent-review9.md",
+      "existsInHead": true,
+      "worktreeSha256": "c28100813ed3361b59bd7b1df3dc83bb53c4f1f92dcc730e7124f7bc6aa04674",
+      "gitBlobSha256": "c28100813ed3361b59bd7b1df3dc83bb53c4f1f92dcc730e7124f7bc6aa04674",
+      "match": true
+    },
+    {
+      "path": "reports/lq4d-20261104/reviewed-manuscripts/2024-am-062-081.json",
+      "existsInHead": true,
+      "worktreeSha256": "f9c3f77e5899bbad765ea6e381847ad2cfdcdc8af89289d98a3d6e923d229a34",
+      "gitBlobSha256": "f9c3f77e5899bbad765ea6e381847ad2cfdcdc8af89289d98a3d6e923d229a34",
+      "match": true
+    },
+    {
+      "path": "data/qualification-staging/lq4c-biru-kan/assets/2024-am-065-figure.png",
+      "existsInHead": true,
+      "worktreeSha256": "f48ecb68ca189e464580fac00aab09e770b44eb3fd90cc1e54c3703659685863",
+      "gitBlobSha256": "f48ecb68ca189e464580fac00aab09e770b44eb3fd90cc1e54c3703659685863",
+      "match": true
+    },
+    {
+      "path": "data/qualification-staging/lq4c-biru-kan/2025-am-048-060.json",
+      "existsInHead": true,
+      "worktreeSha256": "d9244d846e902c7d838ca6f1c23a1c7b738b0807178b7fa690d37cfedd89a60c",
+      "gitBlobSha256": "d9244d846e902c7d838ca6f1c23a1c7b738b0807178b7fa690d37cfedd89a60c",
+      "match": true
+    },
+    {
+      "path": "reports/lq4d-20261104/independent-review13.md",
+      "existsInHead": true,
+      "worktreeSha256": "e56c49ed3fb90bc632a247e029d11b2ca0fd5064ffe39b02eb7dcfe7ffc90dee",
+      "gitBlobSha256": "e56c49ed3fb90bc632a247e029d11b2ca0fd5064ffe39b02eb7dcfe7ffc90dee",
+      "match": true
+    },
+    {
+      "path": "reports/lq4d-20261104/reviewed-manuscripts/2025-am-048-060.json",
+      "existsInHead": true,
+      "worktreeSha256": "3b4ae51e929e18ba3acfe655edd035c748c8b50f6c60bbf9fdb683a08e3734e2",
+      "gitBlobSha256": "3b4ae51e929e18ba3acfe655edd035c748c8b50f6c60bbf9fdb683a08e3734e2",
+      "match": true
+    },
+    {
+      "path": "data/qualification-staging/lq4c-biru-kan/assets/2025-am-048-figure.png",
+      "existsInHead": true,
+      "worktreeSha256": "6e03f05bdb8273f3d877afeb61128e2a95ed856a3dc40e73f097840aaf5d5dc0",
+      "gitBlobSha256": "6e03f05bdb8273f3d877afeb61128e2a95ed856a3dc40e73f097840aaf5d5dc0",
+      "match": true
+    },
+    {
+      "path": "data/qualification-staging/lq4c-biru-kan/assets/2025-am-052-figure.png",
+      "existsInHead": true,
+      "worktreeSha256": "fc1e111c62b7c3278e7bb32ed7a6daa0149b5d0421c30de849f4b71aecf765f0",
+      "gitBlobSha256": "fc1e111c62b7c3278e7bb32ed7a6daa0149b5d0421c30de849f4b71aecf765f0",
+      "match": true
+    },
+    {
+      "path": "data/qualification-staging/lq4c-biru-kan/assets/2025-am-059-figure.png",
+      "existsInHead": true,
+      "worktreeSha256": "39fad7c99972f968fd228a723db5bf35817ef755be15794b4d7a89b3aa58ab07",
+      "gitBlobSha256": "39fad7c99972f968fd228a723db5bf35817ef755be15794b4d7a89b3aa58ab07",
+      "match": true
+    },
+    {
+      "path": "data/qualification-staging/lq4c-biru-kan/2025-am-061-073.json",
+      "existsInHead": true,
+      "worktreeSha256": "b732bb66285864b2818fb8e9f5d4cf738557041b00a4817bcdb5d7903c0755c8",
+      "gitBlobSha256": "b732bb66285864b2818fb8e9f5d4cf738557041b00a4817bcdb5d7903c0755c8",
+      "match": true
+    },
+    {
+      "path": "reports/lq4d-20261104/independent-review15.md",
+      "existsInHead": true,
+      "worktreeSha256": "867c176b61253041c7c29d2e75ee6a4f37ca373c78ff14b8cc49925ae518eda1",
+      "gitBlobSha256": "867c176b61253041c7c29d2e75ee6a4f37ca373c78ff14b8cc49925ae518eda1",
+      "match": true
+    },
+    {
+      "path": "reports/lq4d-20261104/reviewed-manuscripts/2025-am-061-073.json",
+      "existsInHead": true,
+      "worktreeSha256": "e7efd38279d76784368e2b5b0084bb18a13bfe8c1bb50e8981a5c4f1bc29a729",
+      "gitBlobSha256": "e7efd38279d76784368e2b5b0084bb18a13bfe8c1bb50e8981a5c4f1bc29a729",
+      "match": true
+    },
+    {
+      "path": "data/qualification-staging/lq4c-biru-kan/assets/2025-am-068-figure.png",
+      "existsInHead": true,
+      "worktreeSha256": "6fa57f05e504c06f7621097b96ee5242a79e6a22e02e687c37684985415a1988",
+      "gitBlobSha256": "6fa57f05e504c06f7621097b96ee5242a79e6a22e02e687c37684985415a1988",
+      "match": true
+    },
+    {
+      "path": "data/qualification-staging/lq4c-biru-kan/2024-am-082-090.json",
+      "existsInHead": true,
+      "worktreeSha256": "0f968f81b8226d1681eff19a09db0010cd780c6802eadf363ba226bbb93f2623",
+      "gitBlobSha256": "0f968f81b8226d1681eff19a09db0010cd780c6802eadf363ba226bbb93f2623",
+      "match": true
+    },
+    {
+      "path": "reports/lq4d-20261104/reviewed-manuscripts/2024-am-082-090.json",
+      "existsInHead": true,
+      "worktreeSha256": "de498bbdbac7ac33fb9afeb6344ebf6977a3d9b544eb0442e9098eec304fde75",
+      "gitBlobSha256": "de498bbdbac7ac33fb9afeb6344ebf6977a3d9b544eb0442e9098eec304fde75",
+      "match": true
+    },
+    {
+      "path": "data/qualification-staging/lq4c-biru-kan/assets/2024-am-085-figure.png",
+      "existsInHead": true,
+      "worktreeSha256": "331553caec2788fc71bc43420963c938927697127836bde7f243ef9d443ae50b",
+      "gitBlobSha256": "331553caec2788fc71bc43420963c938927697127836bde7f243ef9d443ae50b",
+      "match": true
+    },
+    {
+      "path": "data/qualification-staging/lq4c-biru-kan/2025-am-074-090.json",
+      "existsInHead": true,
+      "worktreeSha256": "249559ec7e95480eb391ebdd5f6b723c025f5e106d5fe1f0de5fa9e37ae903fb",
+      "gitBlobSha256": "249559ec7e95480eb391ebdd5f6b723c025f5e106d5fe1f0de5fa9e37ae903fb",
+      "match": true
+    },
+    {
+      "path": "reports/lq4d-20261104/independent-review16.md",
+      "existsInHead": true,
+      "worktreeSha256": "32739c0984f2afbbebe46c9567c7e26416d85778e5e0145c103e8564a95a68f6",
+      "gitBlobSha256": "32739c0984f2afbbebe46c9567c7e26416d85778e5e0145c103e8564a95a68f6",
+      "match": true
+    },
+    {
+      "path": "reports/lq4d-20261104/reviewed-manuscripts/2025-am-074-090.json",
+      "existsInHead": true,
+      "worktreeSha256": "a3e822ceb4a6026e32bf0a10cc3776682a1e60003852bd4689f97b69a8282399",
+      "gitBlobSha256": "a3e822ceb4a6026e32bf0a10cc3776682a1e60003852bd4689f97b69a8282399",
+      "match": true
+    }
+  ]
+}
