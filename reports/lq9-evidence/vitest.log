@@ -1,0 +1,30 @@
+
+> ipa-quiz-site@1.0.0 test C:\Users\kanet\20260522\wt-LQ9
+> vitest run "__tests__/questions/lq9-staging.test.ts" "__tests__/questions/qualification-expansion.test.ts" "__tests__/questions/get-questions.test.ts"
+
+
+ RUN  v3.2.4 C:/Users/kanet/20260522/wt-LQ9
+
+ ✓ __tests__/questions/get-questions.test.ts (90 tests) 21466ms
+   ✓ getQuestionsForExam > ap は非空で、全問が exam=ap である  3325ms
+   ✓ getQuestionsForExam > 全登録区分でロードされた問題は exam フィールドがキーと一致する (riku-tech2)  353ms
+   ✓ getQuestionsForExam > 全登録区分でロードされた問題は exam フィールドがキーと一致する (ip)  546ms
+   ✓ getQuestionsForExam > 全登録区分でロードされた問題は exam フィールドがキーと一致する (fe)  736ms
+   ✓ getQuestionsForExam > 全登録区分でロードされた問題は exam フィールドがキーと一致する (sc)  2146ms
+   ✓ getQuestionsForExam > 全登録区分でロードされた問題は exam フィールドがキーと一致する (nw)  813ms
+   ✓ getQuestionsForExam > 全登録区分でロードされた問題は exam フィールドがキーと一致する (db)  814ms
+   ✓ getQuestionsForExam > 全登録区分でロードされた問題は exam フィールドがキーと一致する (st)  974ms
+   ✓ getQuestionsForExam > 全登録区分でロードされた問題は exam フィールドがキーと一致する (sa)  797ms
+   ✓ getQuestionsForExam > 全登録区分でロードされた問題は exam フィールドがキーと一致する (pm)  834ms
+   ✓ getQuestionsForExam > 全登録区分でロードされた問題は exam フィールドがキーと一致する (es)  689ms
+   ✓ getQuestionsForExam > 全登録区分でロードされた問題は exam フィールドがキーと一致する (sm)  796ms
+   ✓ getQuestionsForExam > 全登録区分でロードされた問題は exam フィールドがキーと一致する (au)  845ms
+   ✓ getQuestionsForExam > 全登録区分でロードされた問題は exam フィールドがキーと一致する (kanri)  308ms
+   ✓ getQuestionsForExam > 全登録区分でロードされた問題は exam フィールドがキーと一致する (chusho-kigyo-shindanshi)  861ms
+ ✓ __tests__/questions/lq9-staging.test.ts (6 tests) 268ms
+ ✓ __tests__/questions/qualification-expansion.test.ts (1066 tests) 484ms
+
+ Test Files  3 passed (3)
+      Tests  1162 passed (1162)
+   Start at  05:16:06
+   Duration  25.34s (transform 17.75s, setup 898ms, collect 45.16s, tests 22.22s, environment 4.57s, prepare 501ms)

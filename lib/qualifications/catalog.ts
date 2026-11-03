@@ -54,7 +54,7 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     "reuseSummary": "未公開ステージング。直近公開２回を対象に公式の全320小問を保存し、全320小問の原文・正答・全肢解説を収録。問題・正答は公式PDF、全肢解説は独自作成。オーナーが2026-11-04に権利確認済み。2024年度大問15①の口頭申立ては旧制度と確認し、出題当時の改正後条文に基づき解説。",
     "remainingWork": [
       "法令・統計の時点情報および次回公式公表分の継続確認",
-      "独立レビューおよび公開前の最終検収"
+      "公開する場合のregistry・loader統合と最終公開判断"
     ]
   },
   {
@@ -69,8 +69,8 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     "status": "ready-to-ingest",
     "reuseSummary": "未公開ステージング。直近公開２回を対象に公式問題100問を保存し、原文・公式正答・全肢解説を収録。問題・正答は公式PDF、全肢解説は独自作成。オーナーが2026-11-04に権利確認済み。学科以外の設計製図試験は対象外。",
     "remainingWork": [
-      "全問の独立レビューおよび原本との最終検収",
-      "独立レビューおよび公開前の最終検収"
+      "次回公式公表分の追加",
+      "公開する場合のregistry・loader統合と最終公開判断"
     ]
   },
 

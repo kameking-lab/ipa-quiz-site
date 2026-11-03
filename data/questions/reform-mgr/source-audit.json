@@ -29,7 +29,7 @@
     }
   ],
   "transcription": "Text extracted from official PDFs; adopted questions checked separately. Layout whitespace removed. Remaining extraction is not certified transcription.",
-  "independentReview": "review1/review2 findings corrected; gpt-6-astra read-only final review pending",
+  "independentReview": "PASS: codex.cmd exec -m gpt-6-astra -s read-only; five review rounds, required findings resolved. See reports/lq9-independent-review-5.md and reports/lq9-verification.md for scope.",
   "questions": 100,
   "choiceExplanations": 400,
   "rounds": [
@@ -58,5 +58,6 @@
       "sha256": "8d990484a349a385daffffeb0ace2f8695abb5e3ab829a02629dd2374737a1d8",
       "presentation": "Same bytes embedded as a data URI in unpublished candidate JSON; no public static asset."
     }
-  ]
+  ],
+  "reviewedContentCommit": "dd5b01dc1"
 }

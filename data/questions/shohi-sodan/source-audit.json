@@ -17,7 +17,7 @@
     }
   ],
   "transcription": "Original PDF source text; layout whitespace removed; underlines reconstructed as Markdown strong from PDF line rectangles. For 2024 only, missing ASCII ToUnicode maps restored locally as CID+29. Original downloaded PDF bytes remain unmodified and their SHA-256 is recorded.",
-  "independentReview": "review1/review2 findings corrected; gpt-6-astra read-only final review pending",
+  "independentReview": "PASS: codex.cmd exec -m gpt-6-astra -s read-only; five review rounds, required findings resolved. See reports/lq9-independent-review-5.md and reports/lq9-verification.md for scope.",
   "questions": 320,
   "choiceExplanations": 770,
   "rounds": [
@@ -40,5 +40,6 @@
       "https://www.courts.go.jp/assets/20260521minjityouteikisoku.pdf"
     ]
   },
-  "latestScope": "Official past-question index lists 2025 and 2024 as the newest public complete question/answer papers as checked 2026-11-04. 2026 is not listed there."
+  "latestScope": "Official past-question index lists 2025 and 2024 as the newest public complete question/answer papers as checked 2026-11-04. 2026 is not listed there.",
+  "reviewedContentCommit": "dd5b01dc1"
 }
