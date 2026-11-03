@@ -1,15 +1,15 @@
 import { beforeEach, expect, it, vi } from "vitest";
 import { createHash, randomBytes } from "node:crypto";
 import { decode } from "next-auth/jwt";
-const m=vi.hoisted(()=>({user:"u1" as string|null,rows:new Map<string,{userId:string;challenge:string;expiresAt:Date}>()}));
+const m=vi.hoisted(()=>({user:"u1" as string|null,rows:new Map<string,{userId:string;challenge:string;expiresAt:Date}>(),profile:vi.fn()}));
 vi.mock("@/lib/auth",()=>({auth:async()=>m.user?{user:{id:m.user}}:null}));
 vi.mock("@/lib/billing/runtime",()=>({billingFailure:(e:{status?:number;code?:string})=>Response.json({error:e.code??"unavailable"},{status:e.status??503})}));
-vi.mock("@/lib/db/prisma",()=>({prisma:{$executeRawUnsafe:async(sql:string,...values:unknown[])=>{
+vi.mock("@/lib/db/prisma",()=>({prisma:{user:{findUnique:m.profile},$executeRawUnsafe:async(sql:string,...values:unknown[])=>{
   if(sql.startsWith("INSERT"))m.rows.set(values[0] as string,{userId:values[1] as string,challenge:values[2] as string,expiresAt:values[3] as Date});return 1;
 },$queryRawUnsafe:async(_sql:string,hash:string,challenge:string)=>{const row=m.rows.get(hash);if(!row||row.challenge!==challenge||row.expiresAt.getTime()<=Date.now())return [];m.rows.delete(hash);return [{userId:row.userId}];}}}));
 import { complete, exchange } from "@/mobile/server/auth";
 const hash=(s:string)=>createHash("sha256").update(s).digest("base64url");
-beforeEach(()=>{m.user="u1";m.rows.clear();vi.stubEnv("AUTH_SECRET","mock-auth-secret-for-unit-tests-only-32chars");});
+beforeEach(()=>{m.user="u1";m.rows.clear();m.profile.mockReset();m.profile.mockResolvedValue({id:"u1",name:"Mock User",email:"mock@example.test",image:null,plan:"free"});vi.stubEnv("AUTH_SECRET","mock-auth-secret-for-unit-tests-only-32chars");});
 it("uses a one-use short-lived PKCE code without putting the session token into the app URL",async()=>{
   const verifier=randomBytes(32).toString("base64url"),state=randomBytes(32).toString("base64url");
   const address=`https://site.test/api/mobile/auth/complete?challenge=${hash(verifier)}&state=${state}`;
@@ -23,8 +23,15 @@ it("uses a one-use short-lived PKCE code without putting the session token into 
   const request=()=>new Request("https://site.test/api/mobile/auth/exchange",{method:"POST",headers:{"X-Kakomon-Native":"ios"},body:JSON.stringify({code,verifier})});
   const response=await exchange(request());expect(response.status).toBe(200);expect((await response.json()).redirectTo).toBe("https://site.test/");
   const cookie=response.headers.get("set-cookie")!;expect(cookie).toContain("HttpOnly");expect(cookie).toContain("Secure");expect(cookie).toContain("SameSite=Lax");
-  const jwt=cookie.split(";")[0].split("=")[1];expect(await decode({token:jwt,salt:"__Secure-authjs.session-token",secret:process.env.AUTH_SECRET!})).toMatchObject({id:"u1",sub:"u1"});
+  const jwt=cookie.split(";")[0].split("=")[1];expect(await decode({token:jwt,salt:"__Secure-authjs.session-token",secret:process.env.AUTH_SECRET!})).toMatchObject({id:"u1",sub:"u1",name:"Mock User",email:"mock@example.test",picture:null,plan:"free"});
+  expect(m.profile).toHaveBeenCalledWith({where:{id:"u1"},select:{id:true,name:true,email:true,image:true,plan:true}});
   expect((await exchange(request())).status).toBe(401);
+});
+it("does not mint an authenticated session for a deleted account even with an unexpired PKCE code",async()=>{
+  const code=randomBytes(32).toString("base64url"),verifier=randomBytes(32).toString("base64url");
+  m.rows.set(hash(code),{userId:"deleted",challenge:hash(verifier),expiresAt:new Date(Date.now()+60000)});m.profile.mockResolvedValue(null);
+  const response=await exchange(new Request("https://site.test/api/mobile/auth/exchange",{method:"POST",headers:{"X-Kakomon-Native":"ios"},body:JSON.stringify({code,verifier})}));
+  expect(response.status).toBe(401);expect(response.headers.has("set-cookie")).toBe(false);expect(m.rows.size).toBe(0);
 });
 it("never issues a code to a signed-out user or accepts unbounded callback input",async()=>{
   m.user=null;expect((await complete(new Request("https://site.test/api/mobile/auth/complete?challenge=x&state=y"))).headers.get("location")).toContain("/auth/signin?");expect(m.rows.size).toBe(0);

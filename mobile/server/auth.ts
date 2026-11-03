@@ -44,11 +44,13 @@ export async function exchange(request: Request) {
     if (!code || !verifier || !/^[\w-]{43}$/.test(code) || !/^[\w-]{43}$/.test(verifier)) throw new BillingError("invalid_auth_request", 400);
     const rows = await prisma.$queryRawUnsafe<Array<{ userId: string }>>('DELETE FROM "MobileAuthCode" WHERE "codeHash"=$1 AND "challenge"=$2 AND "expiresAt">NOW() RETURNING "userId"', digest(code), digest(verifier));
     if (!rows[0]) throw new BillingError("auth_code_expired", 401);
+    const user=await prisma.user.findUnique({where:{id:rows[0].userId},select:{id:true,name:true,email:true,image:true,plan:true}});
+    if(!user)throw new BillingError("auth_account_unavailable",401);
     const secret = process.env.AUTH_SECRET;
     if (!secret) throw new BillingError("auth_unavailable", 503);
     const secure = url.protocol === "https:", cookie = `${secure ? "__Secure-" : ""}authjs.session-token`;
     const maxAge = 30 * 86400;
-    const token = await encode({ secret, salt: cookie, token: { id: rows[0].userId, sub: rows[0].userId }, maxAge });
+    const token = await encode({ secret, salt: cookie, token: { id:user.id,sub:user.id,name:user.name,email:user.email,picture:user.image,plan:user.plan }, maxAge });
     const requested=typeof value.returnTo==="string"?value.returnTo:"/";
     const destination=requested.startsWith("/")&&!requested.startsWith("//")&&!requested.startsWith("/\\")?new URL(requested,url):new URL("/",url);
     return Response.json({redirectTo:destination.origin===url.origin?destination.href:new URL("/",url).href}, { headers: { "Cache-Control": "no-store", "Referrer-Policy": "no-referrer",
