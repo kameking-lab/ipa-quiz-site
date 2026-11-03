@@ -163,6 +163,7 @@ export function examTopDescription(exam: ExamCode, questionCount: number): strin
 }
 
 const EXAM_FULL_NAMES: Record<ExamCode, string> = {
+  "forestry-cable": "林業架線作業主任者免許試験",
   "gas-welding": "ガス溶接作業主任者免許試験",
   "gamma": "ガンマ線透過写真撮影作業主任者免許試験",
   "xray": "エックス線作業主任者免許試験",
@@ -261,6 +262,7 @@ const EXAM_META_DESC_DIVERSE: Record<
   ExamCode,
   (c: string, y: number, k: number) => string
 > = {
+  "forestry-cable": (c) => `林業架線作業主任者の2026年10月・4月公表問題${c}問。法令は出題時点。`,
   "gas-welding": (c) => `ガス溶接作業主任者の2026年10月・4月公表問題${c}問。法令は出題時点。`,
   gamma: (c) => `ガンマ線透過写真撮影作業主任者の2026年10月・4月公表問題${c}問。法令は出題時点。`,
   xray: (c) => `エックス線作業主任者の2026年10月・4月公表問題${c}問。法令は出題時点。`,
