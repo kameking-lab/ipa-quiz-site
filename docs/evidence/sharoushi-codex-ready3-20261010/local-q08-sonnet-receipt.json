@@ -1,0 +1,37 @@
+{
+  "scope": "sharoushi-2026-koyou-q08-flags-only",
+  "startedUtc": "2026-10-10T06:57:57.712497+00:00",
+  "endedUtc": "2026-10-10T06:58:44.796635+00:00",
+  "processId": 29892,
+  "requestedModel": "claude-sonnet-5-5",
+  "sourcePacketSha256": "5d7e14ff0c1fec850338ae31115f2e007c0fa98c6f3a92048926bb7293db07a7",
+  "requestSha256": "bfa00b276a0a563e33ed9d5fe82cf103e791881ed010bdfb6a7dd28606c8dd30",
+  "rawSha256": "ede6a45de545e48c71f7f8ae1145c90bfc39824a6fb61efb97df78cc793e139c",
+  "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "exitCode": 0,
+  "automaticRetry": false,
+  "newAuthenticationSetup": false,
+  "actualServedModels": [
+    "claude-sonnet-5-5"
+  ],
+  "modelUsage": {
+    "claude-sonnet-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 5439,
+      "cacheReadInputTokens": 131984,
+      "cacheCreationInputTokens": 10525,
+      "webSearchRequests": 0,
+      "costUSD": 0.1096924,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 2939,
+      "canonicalModel": "claude-sonnet-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "isError": false,
+  "servedExactModel": true,
+  "candidateSha256": "939e95a466265bf2f9f10911ac68e6522226a3e1481699ed3c81464767c424df",
+  "status": "SAVED_LOCAL_PATCH_QA_PENDING"
+}

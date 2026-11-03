@@ -1,0 +1,25 @@
+{
+  "owner": "sharoushi_remaining_codex",
+  "newClaudeRequests": 0,
+  "fullDraftRegenerations": 0,
+  "fixedIds": [
+    "sharoushi-2025-annual-koyou-q5",
+    "sharoushi-2026-annual-koyou-q4"
+  ],
+  "addedOriginals": 0,
+  "status": "HOLD_SPECIFIC_PRIMARY_GAPS",
+  "checks": [
+    {
+      "id": "sharoushi-2025-annual-koyou-q5",
+      "savedHoldSha256": "5d1584b90e15f758d5f8b0f982a40a76a401a8a46184779a915d6c508f2dd4d9",
+      "missing": "B and E administrative conditions applicable on 2025-04-11"
+    },
+    {
+      "id": "sharoushi-2026-annual-koyou-q4",
+      "savedPatchSha256": "61c3529bd6755d8c2b054bd182fe8d4c2e637b3e049c6cec5d3796835157a08b",
+      "sourcePacketSha256": "78d4a0ab793be6a7e22991659deca9c1d132f2cb12f09ad2b5677867b1c0ac5e",
+      "localPrimarySearch": "Entire saved PDF searched after whitespace normalization for 就職に伴う移管 and 移管の手続が終了; matches limited to physical pages 34-35.",
+      "missing": "A employment-related transfer exception for timing of benefit payment; B/C/D/E partial GO preserved"
+    }
+  ]
+}
