@@ -13,3 +13,7 @@
 試験日出典: https://www.mext.go.jp/b_menu/shingi/gijyutu/gijyutu7/toushin/1413549_00009.htm (2025-11-23) / https://www.mext.go.jp/b_menu/shingi/gijyutu/gijyutu7/toushin/3130_00008.html (2024-11-24)。公式問題索引: https://www.engineer.or.jp/c_categories/index02021.html
 
 pnpmはリポジトリ指定10.33.0をcorepack経由で使用。グローバルpnpm9のfrozen lockfile不整合は設定変更せず解消。validate:questionsは26,444問・fail=0（既存warn=16,808）。このコマンドはnative問題用なので、LQ3は別途pe-first-integrationで全件資産/解説/採点およびプレーヤー結合を検証。
+
+最終検証: 関連20ファイル146テストPASS、Prisma生成後のtypecheck終了0。Astra独立レビュー2回PASS（CLI0.166.0、gpt-6-astra、read-only）。型検査と実画面の確認結果はvalidation-summary.json / browser-acceptance.jsonを参照。原問/理由の新規制作0。
+
+後片付けの専用tree内rendered/・自動AGENTS.md削除はポリシーで拒否されたため停止し、ローカル生成物を残した。
