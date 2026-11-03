@@ -1,0 +1,292 @@
+[
+  {
+    "id": "sharoushi-2026-annual-koyou-q4",
+    "savedId": "sharoushi-2026-koyou-q04",
+    "lawAsOf": "2026-04-10",
+    "officialAnswer": "B",
+    "status": "SOURCE_COMPLETE_LOCAL_REVIEW",
+    "replacementExplanation": "誤っているものを選ぶ問題で、正答はB。雇用保険法施行規則44条の口座振込は「受給資格者の預金又は貯金」への振込みであり、本人の同意で配偶者の口座を指定できるとの記述はこれに合致しない。Aは就職移管を対象から除いた通常移管についての説明で、R8.4の業務取扱要領51502により移管手続終了後に認定・支給する。Cの往復6時間以上・承認地域・市町村長取次ぎは同要領51951・51952、Dの代理受領は施行規則46条、Eの訓練指示後の支給日変更は同43条に基づく。",
+    "replacementChoiceExplanations": {
+      "A": "正しい。業務取扱要領51502(2)ロ(ニ)（R8.4）では、他の公共職業安定所の管轄内へ住居を変更した受給資格者について、失業の認定と基本手当の支給を所定の移管手続が終了した後に行う。設問は「就職に伴う移管の場合」を対象から除いており、通常の住居変更による移管についての記述として要領に合致する。就職移管の場合の支給時期そのものを述べた記述ではない。",
+      "B": "誤り(正答)。施行規則44条は、基本手当の口座振込を「受給資格者の預金又は貯金」(日本銀行が指定した金融機関に係るもの)への振込みと定めている。配偶者名義の口座を本人の同意で指定できるという例外はない。なお条文は「普通預金」とは明記しておらず、「預金又は貯金」とだけ規定している。",
+      "C": "正しい。業務取扱要領51952(R8.4)により、安定所への出頭に通常の交通機関で往復6時間以上を要する離島等特殊遠隔地のうち職業安定局長の承認を受けた地域で、出頭に多額の費用を要する受給資格者について、市町村長の取次ぎによる失業の認定・基本手当の支給ができる(51951)。法令ではなく業務取扱要領上の取扱いで、受給資格者の承諾が必要。最終決定権は安定所長にある。",
+      "D": "正しい。施行規則46条1項により、口座振込受給資格者を除く受給資格者が、疾病、負傷、就職その他やむを得ない理由で支給日に出頭できないときは、代理人が基本手当の支給を受けられる。代理人は受給資格者証と資格を証明する書類を提出する。",
+      "E": "正しい。施行規則43条2項により、管轄公共職業安定所の長は、受給資格者に公共職業訓練等を受けることを指示したときは、その者について支給日を新たに定め、その者に通知する。"
+    },
+    "evidenceByChoice": {
+      "A": {
+        "status": "SOURCE_CONFIRMED_LOCAL",
+        "sources": [
+          "manual-R8.4:51502(2)ロ(ニ)"
+        ],
+        "reason": "「就職に伴う移管を除く」は対象限定。通常移管の手続終了後支給が明記されているため、その限定された命題は裏付けられる。除外された就職移管の挙動を証明したと主張しない。",
+        "oldHoldPreservedIn": "reports\\claude-capacity-20261010\\sharoushi-koyou20-public\\local-2026-q04-sonnet\\proposed-local-patch.json"
+      },
+      "B": {
+        "status": "SOURCE_CONFIRMED_LOCAL",
+        "sources": [
+          "雇用保険法施行規則44条 (e-Gov 2026-04-10時点, revision 350M50002000003_20260408_508M60000100077)"
+        ],
+        "supported": "基本手当の口座振込は「受給資格者の預金又は貯金(日本銀行が指定した銀行その他の金融機関に係るものに限る)」への振込みの方法による。条文に配偶者名義の口座や本人同意による例外の定めはない。",
+        "caution": "条文は「普通預金」とは書いていない。「預金又は貯金」とあるだけで、問題文の「普通預金又は普通貯金」は条文の語ではない。「同意があっても不可」という明示規定もなく、「受給資格者の預金又は貯金」という文言からの帰結である。",
+        "conclusion": "「同意があれば配偶者名義の口座を指定できる」は、44条が定める受給資格者の預金又は貯金への振込みと合わず、誤り。正答Bと整合する。",
+        "additionalSource": "雇用保険法施行規則22条1項ただし書の原本本文を補完。44条4項による準用は受給資格者証添付・個人番号カード提示を省略できる正当理由の規定で、口座名義の例外ではない。"
+      },
+      "C": {
+        "status": "SOURCE_CONFIRMED_LOCAL",
+        "sources": [
+          "MHLW manual 51951(1)イ、51952(2)イ・ヘ (PDF p.60-61, printed pp.257-258, stamped R8.4)"
+        ],
+        "supported": "安定所への出頭に通常の交通機関で往復6時間以上を要する離島等特殊遠隔地で、職業安定局長の承認を受けた地域(市町村の全部又は一部)に限り、出頭に多額の費用を要する受給資格者について、市町村長の取次ぎによる失業の認定と基本手当の支給ができる。",
+        "caution": "これは法令ではなく業務取扱要領上の取扱いである。最終決定権は安定所長にある。取扱いには受給資格者の承諾文書が必要で、拒否する者は安定所への出頭が原則となる。51951ロに「順次廃止する」とあるが、この選択肢の正誤は動かない。",
+        "conclusion": "往復6時間以上の数値と承認地域の限定は裏付けられた。誤りの要素はない。"
+      },
+      "D": {
+        "status": "SOURCE_CONFIRMED_LOCAL",
+        "sources": [
+          "雇用保険法施行規則46条1項 (e-Gov 2026-04-10時点)"
+        ],
+        "supported": "受給資格者(口座振込受給資格者を除く)が疾病、負傷、就職その他やむを得ない理由で支給日に出頭できないときは、その代理人が基本手当の支給を受けることができる。この場合、代理人は受給資格者証と資格を証明する書類を提出する。",
+        "conclusion": "条文どおりで正しい。"
+      },
+      "E": {
+        "status": "SOURCE_CONFIRMED_LOCAL",
+        "sources": [
+          "雇用保険法施行規則43条2項 (e-Gov 2026-04-10時点)"
+        ],
+        "supported": "管轄公共職業安定所の長は、受給資格者に公共職業訓練等を受けることを指示したときは、その者について支給日を新たに定め、その者に通知する。",
+        "conclusion": "条文どおりで正しい。"
+      }
+    },
+    "remainingPrimaryGaps": [],
+    "independentFinalReviewRequired": true,
+    "runtimeChanged": false,
+    "publicationGo": false,
+    "originalQuestionSha256": "b042414fb3297988645b82470716d85f08d47d9454217eabd1f9a78db34b5539",
+    "sourcePacketSha256": "5fc84b716b8f2c11ab3880ba64c85174b48c5a29877473d54ad7a65995168911",
+    "savedDraftSha256": "987528d3dd27eca406f36261e74a0889d5357883bb8b17f03e728010ce7cc2cb",
+    "reusedChoices": [
+      "B",
+      "C",
+      "D",
+      "E"
+    ],
+    "localChangedChoices": [
+      "A"
+    ],
+    "canonicalId": "sharoushi-2026-annual-koyou-q4",
+    "correctedSavedDraft": {
+      "id": "sharoushi-2026-koyou-q04",
+      "answer": "B",
+      "explanation": "誤っているものを選ぶ問題で、正答はB。雇用保険法施行規則44条の口座振込は「受給資格者の預金又は貯金」への振込みであり、本人の同意で配偶者の口座を指定できるとの記述はこれに合致しない。Aは就職移管を対象から除いた通常移管についての説明で、R8.4の業務取扱要領51502により移管手続終了後に認定・支給する。Cの往復6時間以上・承認地域・市町村長取次ぎは同要領51951・51952、Dの代理受領は施行規則46条、Eの訓練指示後の支給日変更は同43条に基づく。",
+      "choiceExplanations": {
+        "A": "正しい。業務取扱要領51502(2)ロ(ニ)（R8.4）では、他の公共職業安定所の管轄内へ住居を変更した受給資格者について、失業の認定と基本手当の支給を所定の移管手続が終了した後に行う。設問は「就職に伴う移管の場合」を対象から除いており、通常の住居変更による移管についての記述として要領に合致する。就職移管の場合の支給時期そのものを述べた記述ではない。",
+        "B": "誤り(正答)。施行規則44条は、基本手当の口座振込を「受給資格者の預金又は貯金」(日本銀行が指定した金融機関に係るもの)への振込みと定めている。配偶者名義の口座を本人の同意で指定できるという例外はない。なお条文は「普通預金」とは明記しておらず、「預金又は貯金」とだけ規定している。",
+        "C": "正しい。業務取扱要領51952(R8.4)により、安定所への出頭に通常の交通機関で往復6時間以上を要する離島等特殊遠隔地のうち職業安定局長の承認を受けた地域で、出頭に多額の費用を要する受給資格者について、市町村長の取次ぎによる失業の認定・基本手当の支給ができる(51951)。法令ではなく業務取扱要領上の取扱いで、受給資格者の承諾が必要。最終決定権は安定所長にある。",
+        "D": "正しい。施行規則46条1項により、口座振込受給資格者を除く受給資格者が、疾病、負傷、就職その他やむを得ない理由で支給日に出頭できないときは、代理人が基本手当の支給を受けられる。代理人は受給資格者証と資格を証明する書類を提出する。",
+        "E": "正しい。施行規則43条2項により、管轄公共職業安定所の長は、受給資格者に公共職業訓練等を受けることを指示したときは、その者について支給日を新たに定め、その者に通知する。"
+      },
+      "reviewFlags": [],
+      "limitedReviewNeeded": []
+    },
+    "sourceEvidenceFile": "source-evidence.json",
+    "primarySourceReferences": [
+      {
+        "key": "employment-rule-asof20260410.json",
+        "kind": "dated-egov-main-provision",
+        "file": "reports\\claude-capacity-20261010\\sharoushi-koyou20-public\\primary\\employment-rule-asof20260410.json",
+        "sha256": "09eb8c67fe866991efa450d8f9b6ff9a8616cf2047c47ca50aaf15fc5e718721",
+        "url": "https://laws.e-gov.go.jp/api/2/law_data/350M50002000003?asof=2026-04-10",
+        "revisionId": "350M50002000003_20260408_508M60000100077",
+        "enforcementDate": "2026-04-08"
+      },
+      {
+        "key": "manual-R8.4",
+        "kind": "official-manual-page-version",
+        "file": "reports\\claude-capacity-20261010\\sharoushi-koyou20-public\\primary\\mhlw-2026-04-toriatsukai-youryou-i-l.pdf",
+        "sha256": "abb9ac999093d4cfabc72812e90c59fb808727e8db0db60d2097fa88958806e0",
+        "url": "https://www.mhlw.go.jp/content/001705995.pdf",
+        "version": "R8.4 (2026年4月)、採用した各該当ページの刻印を視認",
+        "physicalPages": [
+          34,
+          35,
+          60,
+          61
+        ],
+        "printedPages": [
+          231,
+          232,
+          257,
+          258
+        ],
+        "sections": [
+          "51502(2)ロ(ニ)",
+          "51951(1)イ",
+          "51952(2)イ・ヘ"
+        ],
+        "visualChecks": [
+          "manual-q4-034.png",
+          "manual-q4-035.png"
+        ],
+        "versionLimitation": "PDF全体や現在索引の更新月を基準日版と呼ばず、R8.4の該当ページだけ採用。"
+      }
+    ],
+    "officialReferenceUrls": [
+      "https://laws.e-gov.go.jp/api/2/law_data/350M50002000003?asof=2026-04-10",
+      "https://www.mhlw.go.jp/content/001705995.pdf"
+    ]
+  },
+  {
+    "id": "sharoushi-2026-annual-koyou-q10",
+    "savedId": "sharoushi-2026-koyou-q10",
+    "lawAsOf": "2026-04-10",
+    "officialAnswer": "C",
+    "status": "SOURCE_COMPLETE_LOCAL_REVIEW",
+    "replacementExplanation": "誤っているものを選ぶ問題で、正答はC。報奨金政令1条の要件は、常時15人以下の委託事業について確定保険料等の合計額の95％以上の納付であり、設問の「すべて」とする部分が誤りである。Aの帳簿記載区分、Bの事務組合への還付、Eの60日前の廃止届は基準日版の徴収法・施行規則による。Dの被保険者届出と給付請求代行の境界は、基準日前の令和8年3月東京労働局研修資料で確認できる。",
+    "replacementChoiceExplanations": {
+      "A": "正しい。労働保険徴収法施行規則68条は、委託事業主名簿・徴収及び納付簿・雇用保険被保険者関係届出事務等処理簿の各帳簿について、5人未満委託事業、5人以上15人以下委託事業、その他の事業の別を記載するよう定めている。",
+      "B": "正しい。労働保険徴収法34条により、政府は委託事業主に対する通知や還付金の還付を労働保険事務組合に対して行うことができ、その場合は事業主に対してしたものとみなされる。",
+      "C": "誤り（正答）。基準日版の報奨金政令1条1項1号は、7月10日において常時15人以下の労働者を使用する事業の委託に係る前年度の確定保険料等について、合計額の95％以上が納付されていることを要件とする。設問の人数「15人以下」は正しいが、「すべてが納付されていること」とする点が誤りである。",
+      "D": "正しい。事務組合に委託できる範囲には、事業主が行う雇用保険の被保険者資格取得・喪失の届出などが含まれる。一方、雇用保険の保険給付に関する請求書等の事務手続及びその代行は含まれない。令和8年3月の東京労働局研修資料（印刷4ページ）は、被保険者に関する事務を委託できる範囲、保険給付の請求書等の事務手続及び代行を委託できない範囲に明記している。",
+      "E": "正しい。労働保険徴収法33条3項は業務廃止の60日前までの届出を定め、同法施行規則66条は主たる事務所所在地を管轄する都道府県労働局長に届書を提出する方法を定めている。"
+    },
+    "evidenceByChoice": {
+      "A": {
+        "status": "SOURCE_CONFIRMED_LOCAL",
+        "sources": [
+          "collection-rule-asof20260410.json:68"
+        ]
+      },
+      "B": {
+        "status": "SOURCE_CONFIRMED_LOCAL",
+        "sources": [
+          "collection-act-asof20260410.json:34"
+        ]
+      },
+      "C": {
+        "status": "SOURCE_CONFIRMED_LOCAL",
+        "sources": [
+          "reward-decree-asof20260410.json:1"
+        ],
+        "parentCorrectionReused": true
+      },
+      "D": {
+        "status": "SOURCE_CONFIRMED_LOCAL",
+        "sources": [
+          "tokyo-training-2026-03:p5/printed4",
+          "employment-rule-asof20260410.json:6,7",
+          "collection-act-asof20260410.json:33"
+        ],
+        "versionConfirmedBeforeLawAsOf": true
+      },
+      "E": {
+        "status": "SOURCE_CONFIRMED_LOCAL",
+        "sources": [
+          "collection-act-asof20260410.json:33",
+          "collection-rule-asof20260410.json:66"
+        ]
+      }
+    },
+    "remainingPrimaryGaps": [],
+    "independentFinalReviewRequired": true,
+    "runtimeChanged": false,
+    "publicationGo": false,
+    "originalQuestionSha256": "a26ef45eaf42c01729040b725d2315f6466636230d1060cd0f87525d3cf1f6db",
+    "sourcePacketSha256": "5fc84b716b8f2c11ab3880ba64c85174b48c5a29877473d54ad7a65995168911",
+    "savedDraftSha256": "987528d3dd27eca406f36261e74a0889d5357883bb8b17f03e728010ce7cc2cb",
+    "localChangedChoices": [
+      "D"
+    ],
+    "parentLocalCorrectionChoice": "C",
+    "canonicalId": "sharoushi-2026-annual-koyou-q10",
+    "correctedSavedDraft": {
+      "id": "sharoushi-2026-koyou-q10",
+      "answer": "C",
+      "explanation": "誤っているものを選ぶ問題で、正答はC。報奨金政令1条の要件は、常時15人以下の委託事業について確定保険料等の合計額の95％以上の納付であり、設問の「すべて」とする部分が誤りである。Aの帳簿記載区分、Bの事務組合への還付、Eの60日前の廃止届は基準日版の徴収法・施行規則による。Dの被保険者届出と給付請求代行の境界は、基準日前の令和8年3月東京労働局研修資料で確認できる。",
+      "choiceExplanations": {
+        "A": "正しい。労働保険徴収法施行規則68条は、委託事業主名簿・徴収及び納付簿・雇用保険被保険者関係届出事務等処理簿の各帳簿について、5人未満委託事業、5人以上15人以下委託事業、その他の事業の別を記載するよう定めている。",
+        "B": "正しい。労働保険徴収法34条により、政府は委託事業主に対する通知や還付金の還付を労働保険事務組合に対して行うことができ、その場合は事業主に対してしたものとみなされる。",
+        "C": "誤り（正答）。基準日版の報奨金政令1条1項1号は、7月10日において常時15人以下の労働者を使用する事業の委託に係る前年度の確定保険料等について、合計額の95％以上が納付されていることを要件とする。設問の人数「15人以下」は正しいが、「すべてが納付されていること」とする点が誤りである。",
+        "D": "正しい。事務組合に委託できる範囲には、事業主が行う雇用保険の被保険者資格取得・喪失の届出などが含まれる。一方、雇用保険の保険給付に関する請求書等の事務手続及びその代行は含まれない。令和8年3月の東京労働局研修資料（印刷4ページ）は、被保険者に関する事務を委託できる範囲、保険給付の請求書等の事務手続及び代行を委託できない範囲に明記している。",
+        "E": "正しい。労働保険徴収法33条3項は業務廃止の60日前までの届出を定め、同法施行規則66条は主たる事務所所在地を管轄する都道府県労働局長に届書を提出する方法を定めている。"
+      },
+      "reviewFlags": [],
+      "limitedReviewNeeded": []
+    },
+    "sourceEvidenceFile": "source-evidence.json",
+    "primarySourceReferences": [
+      {
+        "key": "employment-rule-asof20260410.json",
+        "kind": "dated-egov-main-provision",
+        "file": "reports\\claude-capacity-20261010\\sharoushi-koyou20-public\\primary\\employment-rule-asof20260410.json",
+        "sha256": "09eb8c67fe866991efa450d8f9b6ff9a8616cf2047c47ca50aaf15fc5e718721",
+        "url": "https://laws.e-gov.go.jp/api/2/law_data/350M50002000003?asof=2026-04-10",
+        "revisionId": "350M50002000003_20260408_508M60000100077",
+        "enforcementDate": "2026-04-08"
+      },
+      {
+        "key": "collection-act-asof20260410.json",
+        "kind": "dated-egov-main-provision",
+        "file": "reports\\claude-capacity-20261010\\sharoushi-koyou20-public\\primary\\collection-act-asof20260410.json",
+        "sha256": "445c50706578d81ecb8c31e6750c6504e7f685834bb68fd1002da448a3d42446",
+        "url": "https://laws.e-gov.go.jp/api/2/law_data/344AC0000000084?asof=2026-04-10",
+        "revisionId": "344AC0000000084_20251001_506AC0000000026",
+        "enforcementDate": "2025-10-01"
+      },
+      {
+        "key": "collection-rule-asof20260410.json",
+        "kind": "dated-egov-main-provision",
+        "file": "reports\\claude-capacity-20261010\\sharoushi-koyou20-public\\primary\\collection-rule-asof20260410.json",
+        "sha256": "406b31193685048caa0c430f563b6e101fe47001e91602485d1e807120070d82",
+        "url": "https://laws.e-gov.go.jp/api/2/law_data/347M50002000008?asof=2026-04-10",
+        "revisionId": "347M50002000008_20250401_507M60000100036",
+        "enforcementDate": "2025-04-01"
+      },
+      {
+        "key": "reward-decree-asof20260410.json",
+        "kind": "dated-egov-main-provision",
+        "file": "reports\\claude-capacity-20261010\\sharoushi-koyou20-public\\primary\\reward-decree-asof20260410.json",
+        "sha256": "187b5b46f69836782318cd37f7c19704fa467a48e4fda7db5f333e1ee060a422",
+        "url": "https://laws.e-gov.go.jp/api/2/law_data/348CO0000000195?asof=2026-04-10",
+        "revisionId": "348CO0000000195_20110401_423CO0000000075",
+        "enforcementDate": "2011-04-01"
+      },
+      {
+        "key": "tokyo-training-2026-03",
+        "kind": "dated-official-administrative-source",
+        "file": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\codex-takeover-20261011\\sharoushi-completion\\employment-primary\\tokyo-2026-03-association-training.pdf",
+        "sha256": "01bea47067b3cdde6bf1ce631a9dd9699c4d116fe5cd0b40d3fb455ece2fc3ef",
+        "url": "https://jsite.mhlw.go.jp/tokyo-roudoukyoku/content/contents/002589212.pdf",
+        "trainingDates": [
+          "2026-03-05",
+          "2026-03-09"
+        ],
+        "fiscalYearTitle": "令和7年度 労働保険事務組合事務担当者研修会 資料3",
+        "coverVisualCheck": "training-cover-01.png",
+        "datedOfficialIndex": {
+          "file": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\codex-takeover-20261011\\sharoushi-completion\\employment-primary\\tokyo-training-index.html",
+          "url": "https://jsite.mhlw.go.jp/tokyo-roudoukyoku/hourei_seido_tetsuzuki/roudou_hoken/0703jimukumiaitantoushakenshuu_00001.html",
+          "status": 200,
+          "sha256": "dc7d5731e3a045915e6e8d2f35d02862716a790ffd5d5ea8687f10f88ffd5bad",
+          "bytes": 40805,
+          "headers": {
+            "Content-Type": "text/html; charset=UTF-8"
+          }
+        },
+        "httpLastModified": "Tue, 10 Mar 2026 00:39:55 GMT",
+        "versionEvidence": "公式索引に令和8年3月5日・9日の研修配布資料と明示。令和7年度（2025年度）の末月開催。PDFのLast-Modifiedは2026-03-10で基準日2026-04-10より前。",
+        "physicalPage": 5,
+        "printedPage": 4,
+        "section": "委託できる労働保険事務の範囲について",
+        "visualCheck": "training-scope-05.png"
+      }
+    ],
+    "officialReferenceUrls": [
+      "https://laws.e-gov.go.jp/api/2/law_data/350M50002000003?asof=2026-04-10",
+      "https://laws.e-gov.go.jp/api/2/law_data/344AC0000000084?asof=2026-04-10",
+      "https://laws.e-gov.go.jp/api/2/law_data/347M50002000008?asof=2026-04-10",
+      "https://laws.e-gov.go.jp/api/2/law_data/348CO0000000195?asof=2026-04-10",
+      "https://jsite.mhlw.go.jp/tokyo-roudoukyoku/content/contents/002589212.pdf"
+    ]
+  }
+]

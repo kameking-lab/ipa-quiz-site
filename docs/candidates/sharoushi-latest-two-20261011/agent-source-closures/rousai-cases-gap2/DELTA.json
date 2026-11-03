@@ -1,0 +1,40 @@
+{
+  "asOf": {
+    "sharoushi-2025-annual-rousai-q2": "2025-04-11",
+    "sharoushi-2026-annual-rousai-q1": "2026-04-10"
+  },
+  "newPrimary": {
+    "title": "緊急行為の取扱いについて",
+    "issued": "2009-07-23",
+    "noticeNumber": "基発0723第14号",
+    "authority": "厚生労働省労働基準局長",
+    "url": "https://www.mhlw.go.jp/web/t_doc?dataId=00tb6424&dataType=1&pageNo=1",
+    "receipt": "emergency-action-2009-receipt.json",
+    "sha256": "4ff1e6a77a0d410ce0951cbb7ac8637e054f9fdd30005d51ab946ac4a0b7a0ea",
+    "scope": "緊急行為の一般的認定規則。個別の社宅感電事例の原判断ではない。"
+  },
+  "searches": {
+    "mhlwNoticeDb": {
+      "endpoint": "https://www.mhlw.go.jp/web/t_docsrch_keyword",
+      "terms": ["基収4028", "基発700", "基収1844", "基収2980", "社宅 類焼", "技能検定 実技 業務災害", "植生盤 落雷", "慰安旅行 鮫", "シート掛け 帽子", "骨移植片 歩行訓練"],
+      "result": "全件 HTTP 200、各該当０件。個別通達の不存在は証明しない。query-*.json に各 URL、取得時刻、SHA256 を保存。"
+    },
+    "ndl": {
+      "officialBibliography": "https://ndlsearch.ndl.go.jp/books/R100000002-I000000865850",
+      "sampleVolume": "https://ndlsearch.ndl.go.jp/books/R100000039-I9546810",
+      "publication": "労働省労働基準局編『労働者災害補償保険事業年報』1950-1968",
+      "availability": "書誌・目次は公開。本文は館内限定、図書館・個人送信対象であり公開全文として引用しない。そもそも事業年報は事例原通達そのものではない。"
+    }
+  },
+  "caseDeltas": [
+    {"questionId":"sharoushi-2025-annual-rousai-q2","case":"イ","newEvidence":"2009緊急行為通達の一般規則を原本で確認","individualOriginal":"昭24.12.15基収4028号は未取得","status":"HOLD_ORIGINAL_SOURCE","normOnlyCompletion":false},
+    {"questionId":"sharoushi-2025-annual-rousai-q2","case":"ウ","newEvidence":"番号・事例語のMHLWDB検索該当０件","individualOriginal":"昭34.10.9基発700号は未取得","status":"HOLD_ORIGINAL_SOURCE","normOnlyCompletion":false},
+    {"questionId":"sharoushi-2025-annual-rousai-q2","case":"エ","newEvidence":"番号・事例語のMHLWDB検索該当０件","individualOriginal":"昭36.3.13基収1844号は未取得","status":"HOLD_ORIGINAL_SOURCE","normOnlyCompletion":false},
+    {"questionId":"sharoushi-2026-annual-rousai-q1","case":"ア","newEvidence":"事例語のMHLWDB検索該当０件","individualOriginal":"慰安旅行ボート・鮫の原判断は未取得","status":"HOLD_ORIGINAL_SOURCE","normOnlyCompletion":false},
+    {"questionId":"sharoushi-2026-annual-rousai-q1","case":"イ","newEvidence":"番号のMHLWDB検索該当０件","individualOriginal":"昭34.7.15基収2980号は未取得","status":"HOLD_ORIGINAL_SOURCE","normOnlyCompletion":false},
+    {"questionId":"sharoushi-2026-annual-rousai-q1","case":"ウ","newEvidence":"事例語のMHLWDB検索該当０件","individualOriginal":"帽子を追った死亡事例の原判断は未取得","status":"HOLD_ORIGINAL_SOURCE","normOnlyCompletion":false},
+    {"questionId":"sharoushi-2026-annual-rousai-q1","case":"エ","newEvidence":"事例語のMHLWDB検索該当０件","individualOriginal":"医師指示の歩行訓練時骨折事例の原判断は未取得","status":"HOLD_ORIGINAL_SOURCE","normOnlyCompletion":false}
+  ],
+  "questionsCompletable": 0,
+  "sharedFilesChanged": false
+}

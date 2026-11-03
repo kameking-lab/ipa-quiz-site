@@ -1,0 +1,125 @@
+{
+  "checkedAt": "2026-10-11T03:38:44.023463+00:00",
+  "sourceVerifiedOriginals": 26,
+  "choiceExplanations": 130,
+  "publicBaselineOriginals": 123,
+  "branchOriginals": 149,
+  "separatePr680Originals": 3,
+  "combinedCandidateOriginals": 152,
+  "requiredOriginals": 156,
+  "remainingOwnedHoldOriginals": 4,
+  "privateHoldOriginals": 2,
+  "individualStopMetadataOnlyOriginals": 2,
+  "productionPublishedIncrement": 0,
+  "productionMergePerformed": false,
+  "productionDeploymentPerformed": false,
+  "independentContentReviewPending": true,
+  "latestOriginMain": "cad6ca471f10cde5122ce673197eccce5482dc9f",
+  "sourceBranch": "codex/sharoushi-latest-two-completion-20261011",
+  "runtimeJsonSha256Utf8Lf": "73d13a60d9f19bf369d6765223e63373124743f73cf18677edf19138d0dd317a",
+  "checks": {
+    "vitest": {
+      "status": "PASS",
+      "files": 10,
+      "tests": 47,
+      "maxWorkers": 1,
+      "report": "VITEST-CONTINUATION26.json",
+      "durationSeconds": 28.131
+    },
+    "typecheck": {
+      "status": "PASS",
+      "command": "pnpm typecheck",
+      "exitCode": 0
+    },
+    "eslint": {
+      "status": "PASS",
+      "changedTypeScriptFiles": 7,
+      "command": "pnpm exec node node_modules/eslint/bin/eslint.js (7 changed TS files)",
+      "exitCode": 0
+    },
+    "gitDiffCheck": {
+      "status": "PASS",
+      "command": "git diff --check",
+      "exitCode": 0
+    },
+    "frozenPublishedOriginals": {
+      "status": "PASS"
+    },
+    "originalQuestionLiteralQa": {
+      "status": "PASS",
+      "originals": 28,
+      "choices": 140
+    },
+    "officialAnswerTables": {
+      "status": "PASS",
+      "keys": 140
+    },
+    "canonicalIdDeduplication": {
+      "status": "PASS",
+      "excludesMainAndPr680": true
+    },
+    "heldRuntimeAndSitemapExclusion": {
+      "status": "PASS",
+      "originals": 4
+    }
+  },
+  "continuationIncrementOriginals": 8,
+  "continuationIncrementChoiceExplanations": 40,
+  "limitedIndependentReview": {
+    "questionId": "sharoushi-2026-annual-gakka-q2",
+    "proposition": "ウ",
+    "verdict": "PASS_LIMITED_PRIMARY_LAW_INFERENCE",
+    "directAdministrativeInterpretationVerified": false,
+    "requiredReplacementApplied": true,
+    "blanketPublicationApproval": false
+  },
+  "thisCheckpointIncrementOriginals": 7,
+  "thisCheckpointIncrementChoices": 35,
+  "limitedIndependentReviewPackets": [
+    "agent-source-closures/limited-application-review/REVIEW.json",
+    "agent-source-closures/limited-application-review/ADDENDUM-REVIEW.json"
+  ],
+  "strictDirectOriginalGateGaps": [
+    "sharoushi-2025-annual-koyou-q6",
+    "sharoushi-2025-annual-koyou-q7",
+    "sharoushi-2025-annual-rousai-q2",
+    "sharoushi-2025-annual-rousai-q8",
+    "sharoushi-2026-annual-rousai-q1"
+  ],
+  "previous19CandidatesPreserved": true,
+  "preservedStopOriginals": 4,
+  "completedIds": [
+    "sharoushi-2025-annual-gakka-q1",
+    "sharoushi-2025-annual-gakka-q7",
+    "sharoushi-2025-annual-ippan-q4",
+    "sharoushi-2025-annual-ippan-q10",
+    "sharoushi-2025-annual-kenpo-q2",
+    "sharoushi-2025-annual-kounen-q6",
+    "sharoushi-2025-annual-kounen-q8",
+    "sharoushi-2025-annual-kounen-q9",
+    "sharoushi-2025-annual-koyou-q1",
+    "sharoushi-2025-annual-koyou-q5",
+    "sharoushi-2025-annual-koyou-q6",
+    "sharoushi-2025-annual-koyou-q7",
+    "sharoushi-2025-annual-koyou-q10",
+    "sharoushi-2025-annual-rousai-q1",
+    "sharoushi-2025-annual-rousai-q2",
+    "sharoushi-2025-annual-rousai-q8",
+    "sharoushi-2026-annual-gakka-q2",
+    "sharoushi-2026-annual-gakka-q7",
+    "sharoushi-2026-annual-ippan-q4",
+    "sharoushi-2026-annual-koyou-q1",
+    "sharoushi-2026-annual-koyou-q3",
+    "sharoushi-2026-annual-koyou-q4",
+    "sharoushi-2026-annual-koyou-q10",
+    "sharoushi-2026-annual-rousai-q1",
+    "sharoushi-2026-annual-rousai-q6",
+    "sharoushi-2026-annual-rousai-q7"
+  ],
+  "holdIds": [
+    "sharoushi-2025-annual-koyou-q2",
+    "sharoushi-2026-annual-kounen-q4",
+    "sharoushi-2025-annual-ippan-q5",
+    "sharoushi-2026-annual-ippan-q5"
+  ]
+}

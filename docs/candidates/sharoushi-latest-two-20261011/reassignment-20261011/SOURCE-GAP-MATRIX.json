@@ -1,0 +1,228 @@
+{
+  "at": "2026-10-11T07:24:33.495590+00:00",
+  "qualification": "sharoushi",
+  "targetExams": [
+    {
+      "year": 2026,
+      "round": 58
+    },
+    {
+      "year": 2025,
+      "round": 57
+    }
+  ],
+  "requiredOriginals": 156,
+  "baselineMainOriginals": 123,
+  "existingPr680Originals": 3,
+  "pr722CandidateOriginals": 26,
+  "combinedOriginals": 152,
+  "candidateChoiceExplanations": 130,
+  "newlyCompletedOriginalsThisAudit": 0,
+  "newDirectOriginalGatesClearedThisAudit": 0,
+  "productionIncrement": 0,
+  "remainingStopOriginals": 4,
+  "remainingStrictDirectOriginalGates": 5,
+  "externalModelCalls": 0,
+  "newQuestionGeneration": false,
+  "sourceEvidence": [
+    {
+      "path": "employment/DIRECT-2025-Q6-Q7-RESULT.json",
+      "sha256": "5f27eac2488480db89f608e0f218d2a260d0e1f1c962158ab5b3a6bb6fd6ca85"
+    },
+    {
+      "path": "employment/OFFICIAL-AMENDMENT-CHAIN-CHECK.json",
+      "sha256": "55f7ae0b7a451d68dae523d71f45e4a280b7da630a36283aa6c8179a66ee6320"
+    },
+    {
+      "path": "rousai/DELTA.json",
+      "sha256": "2256833815e3941717ef0dfcf8f889b40a1c38ca1477d96b5ac4d09d8b6ddfed"
+    },
+    {
+      "path": "rousai/hyogo-direct-bulk.receipt.json",
+      "sha256": "0ae7b23aa4ebb27511dadb0089c99537be54553d08088928e46a9656d958bf52"
+    },
+    {
+      "path": "rousai/mhlw-index-results.json",
+      "sha256": "1e5420466b546ce653062c64cd1f5c81356f700151f4cca03a0265d217698a63"
+    },
+    {
+      "path": "general/NOTICE-RECEIPT.json",
+      "sha256": "897ed5f6d8bcc2cca9482584a78f81f666afa13b137559df01fb1bd7317cc443"
+    },
+    {
+      "path": "general/NOTICE-1986-RECEIPT.json",
+      "sha256": "ee9ce55dcef707db927b6347d63cb0aab2b720e13d037d4728622019c07b3502"
+    },
+    {
+      "path": "general/MHLW-1986-INDEX-RESULT.json",
+      "sha256": "07ed1e3bfc4e5740059e12f11052a02f4a648d3d993fa79482fd382691c05848"
+    },
+    {
+      "path": "general/notice-20070326-kihatsu0326009-choumon0326011.receipt.json",
+      "sha256": "85e63cf9ef7194230b4dba69eaa854768e931b2958eba7cc5ced4e684fcc2c1c"
+    },
+    {
+      "path": "general/notice-20060301-kihatsu0301002-choumon0301001.receipt.json",
+      "sha256": "f07d82e389cf23df7992741fb87c362638828253a2b94843db9cf20ce09501b6"
+    },
+    {
+      "path": "general/NOTICE-2003-INDEX-RESULT.json",
+      "sha256": "a1dceaff8c0200b3526aaa571363c59f110389b9fcada60941b2fd7fdcd89326"
+    }
+  ],
+  "newPresentDayOfficialExplanation": "兵庫労働局 有期事業の一括; undated, therefore not a direct 2025 edition",
+  "preservedDataFiles": [
+    "data/questions/sharoushi/2025-annual.json",
+    "data/questions/sharoushi/2026-annual.json",
+    "data/questions/sharoushi/index.ts",
+    "data/questions/sharoushi/ippan-2025-annual.json",
+    "data/questions/sharoushi/ippan-2026-annual.json",
+    "data/questions/sharoushi/kenpo-2025-annual.json",
+    "data/questions/sharoushi/kenpo-2026-annual.json",
+    "data/questions/sharoushi/kokunen-2025-annual.json",
+    "data/questions/sharoushi/kokunen-2026-annual.json",
+    "data/questions/sharoushi/kounen-2025-annual.json",
+    "data/questions/sharoushi/kounen-2026-annual.json",
+    "data/questions/sharoushi/koyou-2025-annual.json",
+    "data/questions/sharoushi/koyou-2026-annual.json",
+    "data/questions/sharoushi/remaining-verified-20261011.json",
+    "data/questions/sharoushi/rousai-2025-annual.json",
+    "data/questions/sharoushi/rousai-2026-annual.json",
+    "data/questions/sharoushi/sentaku/originals.json"
+  ],
+  "preservedFromHead": "f97f461ff84a5ffb836d3c09634dd792cd29ffff",
+  "rebasedHeadBeforeEvidenceCommit": "674d24192f85c7cb9ddda1d843b33b0bd0415d9a",
+  "mainBase": "a13ececaf3062840ba5476ce153623460b2e2981",
+  "allSharoushiDataByteIdentical": true,
+  "rows": [
+    {
+      "id": "sharoushi-2025-annual-rousai-q2",
+      "originalCountUnit": 1,
+      "classification": "DIRECT_ORIGINAL_GATE_UNCLEARED",
+      "candidateRuntimePresent": true,
+      "stopCleared": false,
+      "directOriginalGateCleared": false,
+      "newlyCompleted": false,
+      "publicationReady": false,
+      "remainingIssue": [],
+      "note": "No newly acquired exact exam-date/individual administrative original; existing disclosed inference remains."
+    },
+    {
+      "id": "sharoushi-2025-annual-rousai-q8",
+      "originalCountUnit": 1,
+      "classification": "DIRECT_ORIGINAL_GATE_UNCLEARED",
+      "candidateRuntimePresent": true,
+      "stopCleared": false,
+      "directOriginalGateCleared": false,
+      "newlyCompleted": false,
+      "publicationReady": false,
+      "remainingIssue": [],
+      "note": "No newly acquired exact exam-date/individual administrative original; existing disclosed inference remains."
+    },
+    {
+      "id": "sharoushi-2026-annual-rousai-q1",
+      "originalCountUnit": 1,
+      "classification": "DIRECT_ORIGINAL_GATE_UNCLEARED",
+      "candidateRuntimePresent": true,
+      "stopCleared": false,
+      "directOriginalGateCleared": false,
+      "newlyCompleted": false,
+      "publicationReady": false,
+      "remainingIssue": [],
+      "note": "No newly acquired exact exam-date/individual administrative original; existing disclosed inference remains."
+    },
+    {
+      "id": "sharoushi-2025-annual-koyou-q2",
+      "originalCountUnit": 1,
+      "classification": "EXISTING_STOP",
+      "candidateRuntimePresent": false,
+      "stopCleared": false,
+      "directOriginalGateCleared": false,
+      "newlyCompleted": false,
+      "publicationReady": false,
+      "remainingIssue": [
+        "2025年4月11日時点の行政手引22101・22201・22402が未固定。同じ理由の探索・モデル再送STOPを維持。"
+      ],
+      "note": "Existing stop restrictions remain; no manuscript resend, same-reason exploration/review, or runtime promotion."
+    },
+    {
+      "id": "sharoushi-2025-annual-koyou-q6",
+      "originalCountUnit": 1,
+      "classification": "DIRECT_ORIGINAL_GATE_UNCLEARED",
+      "candidateRuntimePresent": true,
+      "stopCleared": false,
+      "directOriginalGateCleared": false,
+      "newlyCompleted": false,
+      "publicationReady": false,
+      "remainingIssue": [],
+      "note": "No newly acquired exact exam-date/individual administrative original; existing disclosed inference remains."
+    },
+    {
+      "id": "sharoushi-2025-annual-koyou-q7",
+      "originalCountUnit": 1,
+      "classification": "DIRECT_ORIGINAL_GATE_UNCLEARED",
+      "candidateRuntimePresent": true,
+      "stopCleared": false,
+      "directOriginalGateCleared": false,
+      "newlyCompleted": false,
+      "publicationReady": false,
+      "remainingIssue": [],
+      "note": "No newly acquired exact exam-date/individual administrative original; existing disclosed inference remains."
+    },
+    {
+      "id": "sharoushi-2026-annual-kounen-q4",
+      "originalCountUnit": 1,
+      "classification": "EXISTING_STOP",
+      "candidateRuntimePresent": false,
+      "stopCleared": false,
+      "directOriginalGateCleared": false,
+      "newlyCompleted": false,
+      "publicationReady": false,
+      "remainingIssue": [
+        "B/C/Dは後続保存票で部分確認済み。E肢の退職改定月（4月・5月）の運用一次資料が未固定。同じ理由の再レビューSTOPを維持。"
+      ],
+      "note": "Existing stop restrictions remain; no manuscript resend, same-reason exploration/review, or runtime promotion."
+    },
+    {
+      "id": "sharoushi-2025-annual-ippan-q5",
+      "originalCountUnit": 1,
+      "classification": "EXISTING_STOP",
+      "candidateRuntimePresent": false,
+      "stopCleared": false,
+      "directOriginalGateCleared": false,
+      "newlyCompleted": false,
+      "publicationReady": false,
+      "remainingIssue": [
+        "B: direct official notice or equivalent primary text explicitly covering acceptance and rejection of a conciliation proposal by the special consultant is absent; Act article 2 covers general representation but not this specific step"
+      ],
+      "note": "Existing stop restrictions remain; no manuscript resend, same-reason exploration/review, or runtime promotion.",
+      "additionalPartialPrimaryEvidence": [
+        "general/notice-20070326-kihatsu0326009-choumon0326011.receipt.json",
+        "general/notice-20060301-kihatsu0301002-choumon0301001.receipt.json",
+        "general/NOTICE-2003-INDEX-RESULT.json"
+      ],
+      "partialPrimaryAssessment": "2007 notice directly covers mediation representation, settlement negotiation and agreement conclusion. Exact proposal acceptance/rejection is not explicitly stated. Referenced 2003 notice remains unacquired; no STOP or original-completion gate is cleared."
+    },
+    {
+      "id": "sharoushi-2026-annual-ippan-q5",
+      "originalCountUnit": 1,
+      "classification": "EXISTING_STOP",
+      "candidateRuntimePresent": false,
+      "stopCleared": false,
+      "directOriginalGateCleared": false,
+      "newlyCompleted": false,
+      "publicationReady": false,
+      "remainingIssue": [
+        "B: direct primary guidance on performing excluded medical-claim work under a private contract is absent",
+        "C: 1986 original administrative notice acquired for procedural agency, withdrawal and receipt; exam-date application and whole-choice verification remain pending under the preserved individual STOP."
+      ],
+      "note": "Existing stop restrictions remain; no manuscript resend, same-reason exploration/review, or runtime promotion."
+    }
+  ],
+  "newOfficialSourceDocuments": [
+    "1968-12-09 庁保発23号 official HTML",
+    "1986-10-01 庁保発40号 official HTML",
+    "2007-03-26 基発0326009号・庁文発0326011号 official HTML",
+    "2006-03-01 基発0301002号・庁文発0301001号 official HTML"
+  ]
+}

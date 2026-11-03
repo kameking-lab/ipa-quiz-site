@@ -1,0 +1,37 @@
+{
+  "canonicalId": "sharoushi-2025-annual-kounen-q8",
+  "choice": "D",
+  "status": "SOURCE_CLOSED_LOCAL_STATUTORY_INFERENCE",
+  "basisUrl": "https://laws.e-gov.go.jp/api/2/law_data/329AC0000000115?asof=2025-04-11",
+  "lawRevisionId": "329AC0000000115_20250401_506AC0000000047",
+  "sourceSha256": "1b19b44022e308823a0d90e6c1342286ad51b8b4ad336073692c8af973f64912",
+  "basisArticles": [
+    "本則36条1項・3項ただし書",
+    "本則78条1項・2項",
+    "本則92条"
+  ],
+  "inference": "78条による措置は支払の一時差止であり、給付を受ける権利の消滅や36条2項の支給停止とは異なる。差止のみを理由に有効な未払い分を恒久的に不支給とする規定ではない。36条1項・3項の権利と未払年金の支払規定を合わせて解除後の支払いを導く。",
+  "exceptionsChecked": [
+    "78条2項により第二号〜第四号厚生年金被保険者期間に基づく給付には一時差止規定を適用しない。原問の一般的説明をこの例外へ拡大しない。",
+    "36条1項の受給権消滅・2項の支給停止が別途生じている場合は区別する。",
+    "92条による各期の給付の時効は別の要件であり、全期間の無条件な遡及支払は主張しない。"
+  ],
+  "correctedExplanation": "誤り。法78条1項は、正当な理由なく届出・書類提出をしない受給権者の保険給付の「支払」を「一時」差し止める規定であり、受給権を消滅させたり、差止期間を不支給期間にする規定ではない。法36条1項は年金の支給を権利が消滅した月までとし、同条3項ただし書は前支払期月に支払うべきであった年金を支払期月以外にも支払うと定める。これらの条文を合わせると、差止事由が解消し、受給権・各期の支給を受ける権利が有効であれば、支払いを保留していた分も支払われると解される。「差止事由が消滅しても差止分は支給されない」とする本肢は、支払の一時差止を恒久的な不支給と混同している。なお、法92条による時効や別の受給権消滅・支給停止事由がある場合まで、無条件に全期間が支払われるという意味ではない。",
+  "priorHoldWas": "78条のみでは解除後未払分の明文がなく保留だった。今回は36条1項・3項・92条を2025施行版全文から組み合わせた推論を明示。",
+  "postCutoffFaq": {
+    "url": "https://www.nenkin.go.jp/section/faq/jukyu/jukyushatodoke/kyotsu/genkyo1/20140421-02.html",
+    "sha256": "0f5c018edf3e798c8fb423179923885de3039fd2980f5e0814edc8dc005a2fd2",
+    "updatedDate": "2025-09-01",
+    "usedAs2025CutoffEvidence": false,
+    "reason": "更新日が2025-04-11より後。試験時点根拠はこのFAQから遡及していない。"
+  },
+  "historicalOperationalNotice": {
+    "url": "https://www.mhlw.go.jp/web/t_doc?dataId=00tb1221&dataType=1&pageNo=1",
+    "sha256": "7d5484f9b9a0caf78e3e9fdb9164bcf63a02207d5951bfc4e499c6e80cb1b33f",
+    "date": "1965-01-21",
+    "noticeNumber": "庁業発第18号",
+    "usedAs2025CutoffEvidence": false,
+    "reason": "昭和40年の切替事務という限定的文脈。2025年一般則の唯一の根拠として使わない。"
+  },
+  "publicationStatus": "NOT_PUBLISHED_INDEPENDENT_FINAL_REVIEW_PENDING"
+}

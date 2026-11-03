@@ -1,0 +1,22 @@
+{
+  "checkedAt": "2026-10-11",
+  "scope": ["sharoushi-2025-annual-gakka-q1", "sharoushi-2026-annual-gakka-q2"],
+  "newPublicationReadyOriginals": 0,
+  "originalQuestionHashesFromExistingSnapshot": {
+    "sharoushi-2025-annual-gakka-q1": "3d81515f12692cfa58385abe1fe211e2924c6eddedd31ba6e99eaaa27484e73e",
+    "sharoushi-2026-annual-gakka-q2": "1e208f62bac700b5e949d105ac9aaf28ed233ad2322a058bb1660010ccc5232c"
+  },
+  "unchangedSharedInputsSha256": {
+    "payload/questions.json": "a8eb097c90685a66fe01d1a5854de407fdd93f7ee9ee13a2be8dbab784beadf2",
+    "rouki-core-primary/enforcement-19470913.html": "a4957470e316527ad7e754388f26d73ab86e1cddfb23d7e3155cbf125564f46e",
+    "rouki-core-primary/rouki-asof20250411.json": "92e9cd6f0335f2f3df48a1fae6bd446d2b5429434f9733797532be17102c64bf",
+    "rouki-core-primary/rouki-asof20260410.json": "7d261324b5af067c14d84d3e92d84265f013624f6daad9c5a2d1386736e5ad8f",
+    "rouki-q1-followup/FOLLOWUP-FINDINGS-AND-GAPS.json": "1480afa97a3b32772b19339f068ea163c8fa7ce9a8a69127ac4347b29ee4211d"
+  },
+  "guardrails": {
+    "stopFourOriginalsTouched": false,
+    "payloadOrRuntimeOrLockTouched": false,
+    "previouslyFailedSourceRetried": false,
+    "paidApiIntroduced": false
+  }
+}

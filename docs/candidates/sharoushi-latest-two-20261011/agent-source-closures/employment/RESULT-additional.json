@@ -1,0 +1,57 @@
+{
+  "completedAdditionalOriginalQuestions": 1,
+  "completedAdditionalIds": [
+    "sharoushi-2026-annual-koyou-q3"
+  ],
+  "holdAdditionalOriginalQuestions": 1,
+  "holdAdditionalIds": [
+    "sharoushi-2026-annual-koyou-q1"
+  ],
+  "confirmedChoicesInHold": [
+    "A",
+    "B",
+    "C",
+    "D"
+  ],
+  "remainingChoiceInHold": [
+    "E"
+  ],
+  "priorCompletedQuestionsUntouched": 2,
+  "totalChildCompletedCandidates": 3,
+  "newPublishedQuestions": 0,
+  "externalModelCalls": 0,
+  "runtimeEdits": 0,
+  "gitChanges": 0,
+  "stopsTouched": [],
+  "sourceChecksPassed": true,
+  "completedDeltaFile": "question-deltas-additional.json",
+  "holdDeltaFile": "question-deltas-additional-hold.json",
+  "evidenceFile": "source-evidence-additional.json",
+  "checks": [
+    "e-Gov法令は基準日指定APIとMainProvisionだけを抽出",
+    "原問・公式正答・既存完成差分を変更なし",
+    "全5肢根拠表とcanonicalId/修正保存稿/URL/SHA/版を保存",
+    "基準日以降R8.8資料は問1Eの完成根拠に不採用",
+    "停止対象2025雇用問2と他の個別STOPに未接触"
+  ],
+  "deliverableSha256": {
+    "question-deltas-additional.json": "c1c45429ca9570ab632cdc30c54ea7ad021c901a50132468af9d2b0bb2ff4dfa",
+    "question-deltas-additional-hold.json": "40e3e3019eb18e6eee9f7c4a873eb80043b28f9ce82dfd3592f3233151d0b6fe",
+    "source-evidence-additional.json": "e769592d31a2912c7ef6db7b2beeae27f0fc66b8aedca748388c05714eeaa3d3"
+  },
+  "visualReview": {
+    "completed": true,
+    "files": [
+      "q3-family-school-31.png",
+      "q3-family-school-32.png",
+      "q3-technology-36.png",
+      "q3-renewal-27.png",
+      "q3-business-stop-18.png"
+    ],
+    "checked": "全5肢の箇所とR8.4頁表示を画像目視照合。文字欠け・表罫線・原文取り違えなし。"
+  },
+  "priorDeliverableSha256": {
+    "question-deltas.json": "e5212595ef6aa18371c557ab9cfd7813089a735e29508eed1e01cd33f2ff323b",
+    "source-evidence.json": "a46c79abb6e0bb4ae26989e99388e437fc892a0b3afbea8757294ba7ca745cd8"
+  }
+}

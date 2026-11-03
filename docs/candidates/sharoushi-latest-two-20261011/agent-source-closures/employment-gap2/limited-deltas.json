@@ -1,0 +1,43 @@
+{
+  "scope": ["sharoushi-2025-annual-koyou-q6", "sharoushi-2025-annual-koyou-q7", "sharoushi-2026-annual-koyou-q1"],
+  "mode": "source-only gap supplement; no regenerated body or runtime edits",
+  "cutoffs": {"2025": "2025-04-11", "2026": "2026-04-10"},
+  "comparison": "comparison.json contains exact whitespace-normalized occurrence checks for nine material clauses in the historical MHLW PDF and the later R8.4 PDF. These checks prove those quoted clauses match at the two observed endpoints, not uninterrupted effectiveness between them.",
+  "questions": [
+    {
+      "canonicalId": "sharoushi-2025-annual-koyou-q6",
+      "status": "HOLD_DATED_ADMINISTRATIVE_SOURCE",
+      "limitedCompletionProposal": "If an independently dated 2025-04-11-or-earlier administrative copy or official continuity notice confirms 52152(2)ハ・ホ, the existing answer can be closed without regenerating it. Current endpoint agreement and the official answer alone cannot date the administrative text.",
+      "newEvidence": [
+        {"assertion": "ウ", "source": "mhlw-2013-general-i.pdf", "physicalPages": [74, 75], "section": "52152(2)ハ(ロ)", "result": "100% net-wage threshold is subject to the voluntary-move/low-wage-area exception; same material sentences appear in later R8.4 pp.80-81."},
+        {"assertion": "エ", "source": "mhlw-2013-general-i.pdf", "physicalPage": 76, "section": "52152(2)ホ(ロ)", "result": "Lawful yet unreasonably inferior non-wage conditions versus same work in the area are a legitimate-refusal category; same material sentence appears in later R8.4 p.82."},
+        {"assertion": "オ", "source": "mhlw-2013-general-i.pdf", "physicalPage": 76, "section": "52152(2)ホ(ハ)", "result": "Even after two months of nonpayment, certain timely future payment defeats the legitimate-refusal reason; same material sentence appears in later R8.4 p.82."}
+      ]
+    },
+    {
+      "canonicalId": "sharoushi-2025-annual-koyou-q7",
+      "status": "HOLD_DATED_ADMINISTRATIVE_SOURCE",
+      "limitedCompletionProposal": "Historical and later MHLW editions agree in the tested material sentences for A-E. E still requires care because the stem says a union filed, whereas 53251(1)ロ speaks of the person or employer filing; the stem's 'if other conditions are met' can include the worker's confirmation request. The dated Labor Union Act establishes the underlying unlawful dismissal and remedy procedure, but does not itself decide unemployment-benefit eligibility. Obtain a dated edition or contemporaneous official instruction before final closure.",
+      "newEvidence": [
+        {"assertion": "A", "source": "mhlw-2013-general-k.pdf", "physicalPage": 15, "section": "53302(2)ル末尾", "result": "An agreement to continue employment without wages does not relax benefit eligibility; material sentence also in later R8.4 p.16."},
+        {"assertion": "B", "source": "mhlw-2013-general-k.pdf", "physicalPages": [10, 11, 12], "sections": ["53254(4)イ", "53301(1)ロ", "53302(2)"], "result": "Retroactive wage payment under provisional order triggers cancellation/benefit return; material sentence also in later R8.4 pp.11-12."},
+        {"assertion": "C", "source": "mhlw-2013-general-k.pdf", "physicalPage": 9, "section": "53253(3)", "result": "Where closure makes restoration impossible, qualification-loss confirmation need not be rescinded; material sentence also in later R8.4 p.10."},
+        {"assertion": "D", "source": "mhlw-2013-general-k.pdf", "physicalPage": 10, "section": "53255(5)", "result": "When earnings in subsequent employment equal/exceed offset wages, worker may choose one insured relationship; material sentence also in later R8.4 p.11."},
+        {"assertion": "E", "source": "mhlw-2013-general-k.pdf", "physicalPages": [8, 11, 12], "sections": ["53201", "53251(1)イ・ロ", "53301(1)ロ", "53302(2)イ"], "result": "Provisional benefits are authorized for qualifying contested dismissal. The manual does not say that union filing alone replaces the worker's benefit confirmation request; the stem conditions benefits on the other requirements. Labor Union Act 7(1),27(1) is fixed as of 2025-04-11 in labor-union-act-asof20250411.json."}
+      ]
+    },
+    {
+      "canonicalId": "sharoushi-2026-annual-koyou-q1",
+      "status": "HOLD_E_DIRECT_PRIMARY",
+      "limitedCompletionProposal": "The categorical E statement may be false on a combined statutory/administrative reading, but the observed primary sources do not directly resolve the stated municipal secondment with Article 38 permission. Keep E held unless a reviewer accepts an explicitly conditional statutory inference; do not state a universal continuation rule.",
+      "newEvidence": [
+        {"assertion": "E", "source": "local-public-service-act-asof20260410.json", "section": "地方公務員法38(1)", "result": "Requires appointing authority permission for remunerated private work; says nothing about unemployment-insurance status."},
+        {"assertion": "E", "source": "employment-act-asof20260410.json (existing)", "section": "雇用保険法6(6)", "result": "Government employment is excluded only when specified severance/benefit conditions and ministerial-rule criteria hold; public-employee status by itself is insufficient."},
+        {"assertion": "E", "source": "mhlw-2025-04-toriatsukai-youryou-b.pdf (existing; actual relevant page edition mark 25.4)", "physicalPages": [23, 24, 25], "section": "20352(2)イ(イ)・(ロ)・(ハ), ロ, ハ", "result": "Read in full. It covers private concurrent employments, insurance transition when B gains qualification, and A continuation when B does not. It does not expressly identify municipal public employment with Article 38 permission. The filename must not be treated as an edition date."}
+      ]
+    }
+  ],
+  "prohibitedInference": ["2013 edition alone equals 2025 cutoff edition", "R8.4 edition applies retrospectively to 2025", "union filing necessarily equals worker filing", "Article 38 permission by itself decides insurance qualification"],
+  "noPublicationGo": true,
+  "excludedStoppedQuestion": "2025 employment q2 remains untouched"
+}

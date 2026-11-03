@@ -1,0 +1,357 @@
+{
+  "generatedAt": "2026-10-11T02:25:27.294854+00:00",
+  "id": "sharoushi-2026-annual-gakka-q7",
+  "lawReferenceDate": "2026-04-10",
+  "completedQuestionDelta": 1,
+  "publishedQuestionDelta": 0,
+  "runtimeImported": false,
+  "publicationReady": false,
+  "independentReviewPending": true,
+  "closedPropositions": [
+    "ア",
+    "イ",
+    "ウ",
+    "エ",
+    "オ"
+  ],
+  "remainingHeldPropositions": [],
+  "newlyClosedPropositions": [
+    "ア",
+    "ウ",
+    "オ"
+  ],
+  "reusedClosedPropositions": [
+    "イ",
+    "エ"
+  ],
+  "propositions": {
+    "ア": {
+      "status": "CLOSED_BY_STATUTORY_INFERENCE",
+      "isCorrect": true,
+      "sources": [
+        "labor-act-2026",
+        "labor-contract-act-asof20260410"
+      ],
+      "locations": [
+        "労働基準法90条1・2項",
+        "労働契約法7・10条（基準日2026-04-10）"
+      ],
+      "finding": "90条は意見聴取と意見を書いた書面の添付を要求するが、賛成・同意を要件とはしていない。周知・合理性等の他の効力要件を充足するという設問の条件下では、全面反対のみを独立の無効事由としない、という法定要件からの推論。",
+      "inferenceExplicitlyDisclosed": true,
+      "limitations": "全面反対についての昭和24年3月28日基発373号の原文は未取得。通達原文確認済みとは記さない。労契法10条の合理性判断で労働組合等との交渉状況を考慮する点を保持。"
+    },
+    "イ": {
+      "status": "PRIMARY_CONFIRMED",
+      "sources": [
+        "labor-act-2026",
+        "dispatch-notice",
+        "dispatch-notice-revision"
+      ],
+      "locations": [
+        "労基法89条",
+        "平成21年3月31日基発0331010号(8)就業規則等の作成及び周知",
+        "平成27年9月30日基発0930第5号の別添(8)"
+      ],
+      "finding": "派遣労働者とそれ以外を合わせて常時10人以上を使用する派遣元は、派遣労働者にも適用する就業規則を作成する義務。両公式通達で同文確認。",
+      "isCorrect": true,
+      "reusedPriorVerification": true
+    },
+    "ウ": {
+      "status": "PRIMARY_ADMINISTRATIVE_ORIGINAL_CONFIRMED_ARCHIVAL_HOST",
+      "isCorrect": true,
+      "sources": [
+        "labor-act-2026",
+        "childcare-care-act-asof20260410",
+        "mhlw-care-rules-treatment-202603",
+        "ministry-care-rules-199808-archive"
+      ],
+      "locations": [
+        "労基法89条1号",
+        "基準日育児・介護休業法2条・11～15条",
+        "2026年3月公式規定例／取扱いのポイント1・2(1)",
+        "労働省女性局パンフレットNo.13（H10.8）冊子2頁／PDF3頁の2"
+      ],
+      "finding": "介護休業の付与要件・手続・期間の記載義務と、育児・介護休業法によって介護休業を与える旨があればこの3事項の詳細記載を省略できるという説明を、介護専用の行政原著本文で直接確認。",
+      "noticeConflationAvoided": "平成3年基発712号は育児休業の通知であり、介護休業の根拠として流用しない。",
+      "limitations": "介護に関する通知原本は未取得。原著の旧労働省刊行物と女性労働協会の保存ホストを区別。賃金等その他の必要記載事項全体が不要になるという意味ではない。"
+    },
+    "エ": {
+      "status": "PRIMARY_CONFIRMED",
+      "sources": [
+        "labor-act-2026",
+        "tokyo-headquarters-collective-rules"
+      ],
+      "locations": [
+        "労基法90条",
+        "東京労働局・就業規則窓口一括届、物理2ページの2及びSTEP1(3)"
+      ],
+      "finding": "一括届でも意見書は事業場ごとに1部必要。公式PDFを視認確認。本社のみの意見書でよい、は誤り。",
+      "versionNote": "公開URLの数字を発行日と解釈せず、資料に年月日表示がない点を保持。",
+      "isCorrect": false,
+      "reusedPriorVerification": true
+    },
+    "オ": {
+      "status": "PRIMARY_OFFICIAL_GUIDANCE_CONFIRMED",
+      "isCorrect": false,
+      "sources": [
+        "labor-act-2026",
+        "chiba-average-wage"
+      ],
+      "locations": [
+        "労基法12・91条",
+        "千葉労働局PDF1頁／算定すべき事由発生日の例、PDF3頁／減給制裁の計算例"
+      ],
+      "finding": "限度額は91条。平均賃金の算定事由発生日は、制裁事由の発生日ではなく制裁の意思表示が相手に到達した日、と労働局原本で直接確認。",
+      "limitations": "昭和30年7月19日基収5875号の通達原本自体は未取得。同通達確認済みと記さず、到達日は12条だけから推測しない。"
+    }
+  },
+  "sources": {
+    "labor-act-2026": {
+      "path": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\codex-takeover-20261011\\sharoushi-completion\\labor-primary\\labor-act-asof20260410.html",
+      "sha256": "7d261324b5af067c14d84d3e92d84265f013624f6daad9c5a2d1386736e5ad8f",
+      "url": "https://laws.e-gov.go.jp/api/2/law_data/322AC0000000049?asof=2026-04-10",
+      "law_info": {
+        "law_type": "Act",
+        "law_id": "322AC0000000049",
+        "law_num": "昭和二十二年法律第四十九号",
+        "law_num_era": "Showa",
+        "law_num_year": 22,
+        "law_num_type": "Act",
+        "law_num_num": "049",
+        "promulgation_date": "1947-04-07"
+      },
+      "revision_info": {
+        "law_revision_id": "322AC0000000049_20250601_504AC0000000068",
+        "law_type": "Act",
+        "law_title": "労働基準法",
+        "law_title_kana": "ろうどうきじゅんほう",
+        "abbrev": "労基法",
+        "category": "労働",
+        "updated": "2024-12-11T12:59:50+09:00",
+        "amendment_promulgate_date": "2022-06-17",
+        "amendment_enforcement_date": "2025-06-01",
+        "amendment_enforcement_comment": null,
+        "amendment_scheduled_enforcement_date": null,
+        "amendment_law_id": "504AC0000000068",
+        "amendment_law_title": "刑法等の一部を改正する法律の施行に伴う関係法律の整理等に関する法律　抄",
+        "amendment_law_title_kana": null,
+        "amendment_law_num": "令和四年法律第六十八号",
+        "amendment_type": "3",
+        "repeal_status": "None",
+        "repeal_date": null,
+        "remain_in_force": false,
+        "mission": "New",
+        "current_revision_status": "PreviousEnforced"
+      },
+      "asof": "2026-04-10",
+      "articles": {
+        "12": "第十二条この法律で平均賃金とは、これを算定すべき事由の発生した日以前三箇月間にその労働者に対し支払われた賃金の総額を、その期間の総日数で除した金額をいう。ただし、その金額は、次の各号の一によつて計算した金額を下つてはならない。一賃金が、労働した日若しくは時間によつて算定され、又は出来高払制その他の請負制によつて定められた場合においては、賃金の総額をその期間中に労働した日数で除した金額の百分の六十二賃金の一部が、月、週その他一定の期間によつて定められた場合においては、その部分の総額をその期間の総日数で除した金額と前号の金額の合算額前項の期間は、賃金締切日がある場合においては、直前の賃金締切日から起算する。前二項に規定する期間中に、次の各号のいずれかに該当する期間がある場合においては、その日数及びその期間中の賃金は、前二項の期間及び賃金の総額から控除する。一業務上負傷し、又は疾病にかかり療養のために休業した期間二産前産後の女性が第六十五条の規定によつて休業した期間三使用者の責めに帰すべき事由によつて休業した期間四育児休業、介護休業等育児又は家族介護を行う労働者の福祉に関する法律（平成三年法律第七十六号）第二条第一号に規定する育児休業又は同条第二号に規定する介護休業（同法第六十一条第三項に規定する行政執行法人介護休業及び同法第六十一条の二第三項に規定する介護をするための休業を含む。第三十九条第十項において同じ。）をした期間五試みの使用期間第一項の賃金の総額には、臨時に支払われた賃金及び三箇月を超える期間ごとに支払われる賃金並びに通貨以外のもので支払われた賃金で一定の範囲に属しないものは算入しない。賃金が通貨以外のもので支払われる場合、第一項の賃金の総額に算入すべきものの範囲及び評価に関し必要な事項は、厚生労働省令で定める。雇入後三箇月に満たない者については、第一項の期間は、雇入後の期間とする。日日雇い入れられる者については、その従事する事業又は職業について、厚生労働大臣の定める金額を平均賃金とする。第一項乃至第六項によつて算定し得ない場合の平均賃金は、厚生労働大臣の定めるところによる。",
+        "89": "（作成及び届出の義務）第八十九条常時十人以上の労働者を使用する使用者は、次に掲げる事項について就業規則を作成し、行政官庁に届け出なければならない。次に掲げる事項を変更した場合においても、同様とする。一始業及び終業の時刻、休憩時間、休日、休暇並びに労働者を二組以上に分けて交替に就業させる場合においては就業時転換に関する事項二賃金（臨時の賃金等を除く。以下この号において同じ。）の決定、計算及び支払の方法、賃金の締切り及び支払の時期並びに昇給に関する事項三退職に関する事項（解雇の事由を含む。）三の二退職手当の定めをする場合においては、適用される労働者の範囲、退職手当の決定、計算及び支払の方法並びに退職手当の支払の時期に関する事項四臨時の賃金等（退職手当を除く。）及び最低賃金額の定めをする場合においては、これに関する事項五労働者に食費、作業用品その他の負担をさせる定めをする場合においては、これに関する事項六安全及び衛生に関する定めをする場合においては、これに関する事項七職業訓練に関する定めをする場合においては、これに関する事項八災害補償及び業務外の傷病扶助に関する定めをする場合においては、これに関する事項九表彰及び制裁の定めをする場合においては、その種類及び程度に関する事項十前各号に掲げるもののほか、当該事業場の労働者のすべてに適用される定めをする場合においては、これに関する事項",
+        "90": "（作成の手続）第九十条使用者は、就業規則の作成又は変更について、当該事業場に、労働者の過半数で組織する労働組合がある場合においてはその労働組合、労働者の過半数で組織する労働組合がない場合においては労働者の過半数を代表する者の意見を聴かなければならない。使用者は、前条の規定により届出をなすについて、前項の意見を記した書面を添付しなければならない。",
+        "91": "（制裁規定の制限）第九十一条就業規則で、労働者に対して減給の制裁を定める場合においては、その減給は、一回の額が平均賃金の一日分の半額を超え、総額が一賃金支払期における賃金の総額の十分の一を超えてはならない。"
+      }
+    },
+    "dispatch-notice": {
+      "url": "https://www.mhlw.go.jp/web/t_doc?dataId=00tb5424&dataType=1&pageNo=1",
+      "retrievedAt": "2026-10-11T01:34:12.771343+00:00",
+      "status": 200,
+      "finalUrl": "https://www.mhlw.go.jp/web/t_doc?dataId=00tb5424&dataType=1&pageNo=1",
+      "sha256": "a871e38b6b5772ddd089a217c62a28253cd2de22d3ac71f6f1adfe147c13b0d0",
+      "contentType": "text/html;charset=UTF-8",
+      "size": 76868,
+      "savedPath": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\codex-takeover-20261011\\sharoushi-completion\\labor-primary\\dispatch-notice.html"
+    },
+    "dispatch-notice-revision": {
+      "url": "https://www.mhlw.go.jp/web/t_doc?dataId=00tc1350&dataType=1&pageNo=1",
+      "retrievedAt": "2026-10-11T01:34:12.771343+00:00",
+      "status": 200,
+      "finalUrl": "https://www.mhlw.go.jp/web/t_doc?dataId=00tc1350&dataType=1&pageNo=1",
+      "sha256": "d8440cd701536c57b85661f10609049c101b076b086f92cffb678c8b8c5b637a",
+      "contentType": "text/html;charset=UTF-8",
+      "size": 90475,
+      "savedPath": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\codex-takeover-20261011\\sharoushi-completion\\labor-primary\\dispatch-notice-revision.html"
+    },
+    "tokyo-headquarters-collective-rules": {
+      "url": "https://jsite.mhlw.go.jp/tokyo-roudoukyoku/var/rev0/0109/3047/2013722143634.pdf",
+      "retrievedAt": "2026-10-11T01:27:14.350657+00:00",
+      "status": 200,
+      "finalUrl": "https://jsite.mhlw.go.jp/tokyo-roudoukyoku/var/rev0/0109/3047/2013722143634.pdf",
+      "sha256": "124fb4852a913439429ab33ba00e5cf9b4e9b728770e818b4e0a717f55a5a632",
+      "contentType": "application/pdf",
+      "size": 1426872,
+      "savedPath": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\codex-takeover-20261011\\sharoushi-completion\\labor-primary\\tokyo-headquarters-collective-rules.pdf"
+    },
+    "mhlw-care-rules-treatment-202603": {
+      "url": "https://www.mhlw.go.jp/content/11909000/001662495.pdf",
+      "retrievedAt": "2026-10-11T01:38:09.137401+00:00",
+      "status": 200,
+      "finalUrl": "https://www.mhlw.go.jp/content/11909000/001662495.pdf",
+      "sha256": "9f222e3355e9023772b3c95935a514824d2459ef2d5cf201b6751f5a3be504a6",
+      "contentType": "application/pdf",
+      "size": 831716,
+      "savedPath": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\codex-takeover-20261011\\sharoushi-completion\\labor-primary\\mhlw-care-rules-treatment-202603.pdf"
+    },
+    "chiba-average-wage": {
+      "url": "https://jsite.mhlw.go.jp/chiba-roudoukyoku/content/contents/heikinchingin.pdf",
+      "retrievedAt": "2026-10-11T02:18:55.743639+00:00",
+      "status": 200,
+      "finalUrl": "https://jsite.mhlw.go.jp/chiba-roudoukyoku/content/contents/heikinchingin.pdf",
+      "sha256": "e2e07475a64025302de3f22210818dfbf2e84594db5d7498fd74963c3d8a5553",
+      "contentType": "application/pdf",
+      "size": 219465,
+      "savedPath": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\codex-takeover-20261011\\sharoushi-completion\\labor-q7-followup\\chiba-average-wage.pdf",
+      "publisher": "千葉労働局",
+      "title": "平均賃金（労働基準法第12条）",
+      "version": "本文に版年月表示なし。PDF作成・更新メタデータ2020-08-07、HTTP Last-Modified 2021-02-05。公開開始日とは区別。",
+      "physicalPages1Based": [
+        1,
+        3
+      ],
+      "visuals": [
+        "chiba-average-wage-01.png",
+        "chiba-average-wage-03.png"
+      ],
+      "administrativeNoticeOriginalObtained": false,
+      "preReferenceDateVersionEvidence": {
+        "pdfCreationDate": "2020-08-07",
+        "pdfModificationDate": "2020-08-07",
+        "httpLastModified": "2021-02-05",
+        "headersFile": "chiba-average-wage-headers.json"
+      }
+    },
+    "ministry-care-rules-199808-archive": {
+      "url": "https://www.jaaww.or.jp/history/data/01199.pdf",
+      "retrievedAt": "2026-10-11T02:22:16.002614+00:00",
+      "status": 200,
+      "finalUrl": "https://www.jaaww.or.jp/history/data/01199.pdf",
+      "sha256": "69f280756e5c50ce2dfce691d12269bf19ab8ab35de642a9366cdcdd18b6d95a",
+      "contentType": "application/pdf",
+      "size": 592947,
+      "savedPath": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\codex-takeover-20261011\\sharoushi-completion\\labor-q7-followup\\ministry-care-rules-199808-archive.pdf",
+      "originalPublisher": "労働省女性局",
+      "hostingOrganization": "一般財団法人女性労働協会",
+      "hostingCollection": "女性労働アーカイブ",
+      "governmentDomainHosted": false,
+      "title": "就業規則への記載はもうお済みですか―介護休業規則の規定例―（パンフレットNo.13）",
+      "editionDate": "1998-08",
+      "dateEvidence": "裏表紙（PDF28頁）のH10.8を視認。公開書誌資料番号01199の1998年08月と一致。",
+      "physicalPages1Based": [
+        1,
+        2,
+        3,
+        28
+      ],
+      "printedPage": 2,
+      "location": "就業規則における介護休業の取扱い／ポイント2／2",
+      "visuals": [
+        "ministry-care-rules-199808-archive-01.png",
+        "ministry-care-rules-199808-archive-02.png",
+        "ministry-care-rules-199808-archive-03.png",
+        "ministry-care-rules-199808-archive-28.png"
+      ],
+      "archivalProvenance": "原著発行主体は表紙で確認。保存団体は旧厚労省事業の資料を保存公開していると説明。原著と保存ホストを区別。",
+      "administrativeNoticeOriginalObtained": false,
+      "copyrightPermissionNewlyClaimed": false
+    },
+    "labor-contract-act-asof20260410": {
+      "url": "https://laws.e-gov.go.jp/api/2/law_data/419AC0000000128?asof=2026-04-10",
+      "retrievedAt": "2026-10-11T02:18:52.976117+00:00",
+      "status": 200,
+      "finalUrl": "https://laws.e-gov.go.jp/api/2/law_data/419AC0000000128?asof=2026-04-10",
+      "sha256": "43fa0acfae9a22e9d3d8b61f7de53b6869f5d6ddd34f4d132cdd950cc4a65506",
+      "contentType": "application/json",
+      "size": 37446,
+      "savedPath": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\codex-takeover-20261011\\sharoushi-completion\\labor-q7-followup\\labor-contract-act-asof20260410.html",
+      "asof": "2026-04-10",
+      "revision_info": {
+        "law_revision_id": "419AC0000000128_20200401_430AC0000000071",
+        "law_type": "Act",
+        "law_title": "労働契約法",
+        "law_title_kana": "ろうどうけいやくほう",
+        "abbrev": "労契法",
+        "category": "労働",
+        "updated": "2024-07-22T14:14:50+09:00",
+        "amendment_promulgate_date": "2018-07-06",
+        "amendment_enforcement_date": "2020-04-01",
+        "amendment_enforcement_comment": null,
+        "amendment_scheduled_enforcement_date": null,
+        "amendment_law_id": "430AC0000000071",
+        "amendment_law_title": "働き方改革を推進するための関係法律の整備に関する法律",
+        "amendment_law_title_kana": "",
+        "amendment_law_num": "平成三十年法律第七十一号",
+        "amendment_type": "3",
+        "repeal_status": "None",
+        "repeal_date": null,
+        "remain_in_force": false,
+        "mission": "New",
+        "current_revision_status": "CurrentEnforced"
+      }
+    },
+    "childcare-care-act-asof20260410": {
+      "url": "https://laws.e-gov.go.jp/api/2/law_data/403AC0000000076?asof=2026-04-10",
+      "retrievedAt": "2026-10-11T02:21:45.750589+00:00",
+      "status": 200,
+      "finalUrl": "https://laws.e-gov.go.jp/api/2/law_data/403AC0000000076?asof=2026-04-10",
+      "sha256": "e5b2295cc286de4f5fc053d3e831df1723a19f213e6545a16cf0c02c412b5441",
+      "contentType": "application/json",
+      "size": 380987,
+      "savedPath": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\codex-takeover-20261011\\sharoushi-completion\\labor-q7-followup\\childcare-care-act-asof20260410.html",
+      "asof": "2026-04-10",
+      "revision_info": {
+        "law_revision_id": "403AC0000000076_20251001_506AC0000000042",
+        "law_type": "Act",
+        "law_title": "育児休業、介護休業等育児又は家族介護を行う労働者の福祉に関する法律",
+        "law_title_kana": "いくじきゅうぎょうかいごきゅうぎょうとういくじまたはかぞくかいごをおこなうろうどうしゃのふくしにかんするほうりつ",
+        "abbrev": "育児・介護休業法,育児介護休業法",
+        "category": "労働",
+        "updated": "2024-09-12T11:00:31+09:00",
+        "amendment_promulgate_date": "2024-05-31",
+        "amendment_enforcement_date": "2025-10-01",
+        "amendment_enforcement_comment": null,
+        "amendment_scheduled_enforcement_date": null,
+        "amendment_law_id": "506AC0000000042",
+        "amendment_law_title": "育児休業、介護休業等育児又は家族介護を行う労働者の福祉に関する法律及び次世代育成支援対策推進法の一部を改正する法律",
+        "amendment_law_title_kana": null,
+        "amendment_law_num": "令和六年法律第四十二号",
+        "amendment_type": "3",
+        "repeal_status": "None",
+        "repeal_date": null,
+        "remain_in_force": false,
+        "mission": "New",
+        "current_revision_status": "PreviousEnforced"
+      }
+    },
+    "archive-provenance": {
+      "url": "https://www.jaaww.or.jp/history/",
+      "retrievedAt": "2026-10-11T02:19:49.879752+00:00",
+      "status": 200,
+      "finalUrl": "https://www.jaaww.or.jp/history/",
+      "sha256": "b38f91ae25a0c04193bf86371fbffd4bdb6b820c3c5ade62dbab7f82a3dc9cc0",
+      "contentType": "text/html; charset=UTF-8",
+      "size": 39615,
+      "savedPath": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\codex-takeover-20261011\\sharoushi-completion\\labor-q7-followup\\archive-provenance.html"
+    },
+    "archive-care-search": {
+      "url": "https://www.jaaww.or.jp/history/gazou_kensaku.php",
+      "method": "POST_READ_ONLY_SEARCH",
+      "formParameters": {
+        "flag": "search",
+        "keyword": "就業規則への記載",
+        "btnkeyword": "検索する"
+      },
+      "retrievedAt": "2026-10-11T02:20:52.378209+00:00",
+      "status": 200,
+      "finalUrl": "https://www.jaaww.or.jp/history/gazou_kensaku_exe.php",
+      "sha256": "5c51822be97e076bb8720ad608eec56586022b41597640319152878979620a11",
+      "size": 58624,
+      "savedPath": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\codex-takeover-20261011\\sharoushi-completion\\labor-q7-followup\\archive-care-search.html"
+    }
+  },
+  "unobtainedNoticeOriginalsNotClaimedVerified": [
+    "昭和24年3月28日基発373号",
+    "介護休業の労基法上の記載事項に関する通知原本",
+    "昭和30年7月19日基収5875号"
+  ],
+  "sourceDateLimits": "千葉PDFの本文に発行年月なし。版の基準日前確認はPDFメタデータ2020-08-07とサーバLast-Modified 2021-02-05による。公開開始日そのものは未確認。",
+  "independentReviewScope": "法定推論の範囲、歴史的行政原著と基準日法との対応、原著保存ホストの明示を公開前に独立査読する。"
+}

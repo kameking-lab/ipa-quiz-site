@@ -73,7 +73,8 @@ describe("frozen later 15 social-insurance originals", () => {
 
   it("keeps unrelated unpublished originals out of this frozen batch", () => {
     for (const id of ["sharoushi-2025-annual-ippan-q4", "sharoushi-2026-annual-ippan-q4"]) {
-      expect(byId.has(id), id).toBe(false);
+      const batchIds = new Set([...ippan.map(row => row.registryId), ...kokunen.added.map(row => row.registryId)]);
+      expect(batchIds.has(id), id).toBe(false);
     }
   });
 });

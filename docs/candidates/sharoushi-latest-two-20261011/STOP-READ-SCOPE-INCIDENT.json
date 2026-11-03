@@ -1,0 +1,12 @@
+{
+  "recordedAt": "2026-10-11T03:28:32.994847+00:00",
+  "questionId": "sharoushi-2025-annual-koyou-q2",
+  "operation": "A local payload read selected all 2025 koyou rows instead of the authorized q6/q7 ID allowlist; the existing stopped q2 was included in tool output.",
+  "questionTextCopiedIntoThisRecord": false,
+  "newExternalApiOrModelCall": false,
+  "sourceRetrievalAttempted": false,
+  "runtimeOrQuestionMutation": false,
+  "STOPUnchanged": true,
+  "correctiveScope": "Every subsequent question read uses explicit allowed canonical IDs. Do not redisplay, investigate or promote the stopped q2.",
+  "remainingAllowedWorkContinues": true
+}
