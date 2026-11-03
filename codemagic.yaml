@@ -3,6 +3,20 @@ workflows:
     name: Kakomon AI - TestFlight
     instance_type: mac_mini_m2
     max_build_duration: 60
+    triggering:
+      # Every push to an iOS branch builds and uploads automatically. Web-only commits do not.
+      events:
+        - push
+      branch_patterns:
+        - pattern: "feat/ios-app-*"
+          include: true
+          source: true
+      cancel_previous_builds: true
+    when:
+      changeset:
+        includes:
+          - "mobile/**"
+          - "codemagic.yaml"
     integrations:
       app_store_connect: App Store Key
     environment:
