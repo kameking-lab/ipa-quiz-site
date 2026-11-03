@@ -49,6 +49,7 @@ import { isExamPublished } from "@/lib/qualifications/catalog";
 import { KANTEISHI_QUESTIONS } from "./kanteishi";
 import { KAIKEISHI_QUESTIONS } from "./kaikeishi";
 import { EISEI1_QUESTIONS } from "./eisei1";
+import { BOILER2_QUESTIONS } from "./boiler2";
 import { EISEI2_QUESTIONS } from "./eisei2";
 import { SOUKAN_QUESTIONS } from "./soukan";
 import { HOIKUSHI_QUESTIONS } from "./hoikushi";
@@ -159,6 +160,7 @@ export const QUESTIONS_BY_EXAM: Partial<Record<ExamCode, Question[]>> = {
   ...(isExamPublished("tohan") ? { tohan: TOHAN_QUESTIONS } : {}),
   ...(isExamPublished("kanri") ? { kanri: KANRI_QUESTIONS } : {}),
   ...(isExamPublished("eisei1") ? { eisei1: EISEI1_QUESTIONS } : {}),
+  ...(isExamPublished("boiler2") ? { boiler2: BOILER2_QUESTIONS } : {}),
   ...(isExamPublished("eisei2") ? { eisei2: EISEI2_QUESTIONS } : {}),
   ...(isExamPublished("soukan") ? { soukan: SOUKAN_QUESTIONS } : {}),
   ...(isExamPublished("hoikushi") ? { hoikushi: HOIKUSHI_QUESTIONS } : {}),

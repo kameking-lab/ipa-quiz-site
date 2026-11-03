@@ -42,6 +42,15 @@ export interface QualificationCatalogEntry {
  */
 export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
   {
+    slug: "boiler2", examCode: "boiler2", shortName: "2級ボイラー技士", fullName: "二級ボイラー技士免許試験",
+    domain: "safety", administrator: "公益財団法人安全衛生技術試験協会",
+    officialQuestionsUrl: "https://www.exam.or.jp/lckohyo/", officialReuseTermsUrl: "https://www.exam.or.jp/lckohyo/",
+    status: "ready-to-ingest",
+    reuseSummary: "令和8年10月・4月掲載の各40問、計80問を原文テキスト・公式正答・独自解説付きでステージング保存。未公開。",
+    attributionTemplate: "出典：公益財団法人安全衛生技術試験協会 令和8年○月掲載 二級ボイラー技士免許試験。解説は独自作成。",
+    remainingWork: ["公開判断（転載条件を含む）", "公開前の内容最終確認"],
+  },
+  {
     slug: "kanteishi", examCode: "kanteishi", shortName: "不動産鑑定士", fullName: "不動産鑑定士試験（短答式）",
     domain: "real-estate", administrator: "国土交通省",
     officialQuestionsUrl: "https://www.mlit.go.jp/totikensangyo/kanteishi/content/002001126.pdf",
