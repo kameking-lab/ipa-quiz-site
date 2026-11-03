@@ -1,0 +1,235 @@
+{
+  "reviewer": "independent delegated Astra reviewer /root/lab_independent_review9",
+  "observedUtc": "2026-10-11T10:32:53.603070+00:00",
+  "scope": "ONLY FACT7 proposed 11 fields, prior specific evidence gaps, AM41 supplement, and one required minimal AM46 field correction. No whole84/400 review.",
+  "reviewBasis": "Saved author research/source evidence reused; proposal scope and exact expectedBefore independently checked. New AM41 original Results directly opened. No fresh all-choice or image re-audit.",
+  "inputSha256": {
+    "reports\\lab-remaining-20261011\\acceptance-continuation\\FACT7-RESEARCH.json": "6a7112551decb51644955952e07391d0d01ca5d9e207a898a791d60f30752b34",
+    "reports\\lab-remaining-20261011\\acceptance-continuation\\FACT7-PATCH-PROPOSALS.json": "ba1fb51c8ebaaa6eb92bdda6ad3dea1cdf3d66cb04bd778674f23b9a09d53678",
+    "reports\\lab-remaining-20261011\\acceptance-continuation\\ROOT-AM41-SUPPLEMENT.json": "26693540ce2a28def97cc9d7b23d74349093b682e165ccb498addae3e7ae7682",
+    "data\\prepared-medical\\rinsho-kensagishi\\2026-annual-am-unreserved30-pm5.json": "f628cbc3f9cb8219e78fb5a400bf5f5307c9afd6a9f09bbeaa9a598c772f3166"
+  },
+  "recommendation": "RECOMMEND_ALL_7_FOR_PARTIAL_ADOPTION_PREPARATION_AFTER_REQUIRED_SCOPE_CORRECTIONS",
+  "recommendedCount": 7,
+  "unconditionalPublicApproval": false,
+  "mandatoryPatchCount": 3,
+  "approvedOptionalStrengtheningCount": 9,
+  "patches": [
+    {
+      "field": "choiceExplanations.イ",
+      "expectedBefore": "ピークフローメータでは短い努力呼気の最大流量を測定します。本問の標準的操作では、ノーズクリップを必要とする検査には選びません。",
+      "after": "ピークフローメータは最大努力呼気時のピーク流量を測ります。『臨床呼吸機能検査 第7版』のPEF測定手順にもノーズクリップは不要と明記されています。",
+      "evidenceUrls": [
+        "https://www.mhlw.go.jp/shingi/2010/04/dl/s0420-6m_0003.pdf"
+      ],
+      "readScope": "PDF物理p7／本文p33のPEF測定手順(2)。",
+      "id": "rinsho-kensagishi-2026-annual-am-q24",
+      "expectedBeforeMatchesCurrent": true,
+      "disposition": "APPROVED_OPTIONAL_EVIDENCE_STRENGTHENING"
+    },
+    {
+      "field": "choiceExplanations.オ",
+      "expectedBefore": "オシロメトリーでは口を介して呼吸系の抵抗などを測定します。鼻からの漏れを防ぐノーズクリップが必要です。",
+      "after": "オシロメトリーでは安静呼吸中に口から加えた振動で呼吸系抵抗を測ります。ERS技術基準は口周囲の漏れ確認とノーズクリップ使用を必須としています。",
+      "evidenceUrls": [
+        "https://pure.rug.nl/ws/portalfiles/portal/121014172/1900753.full.pdf"
+      ],
+      "readScope": "PDF物理p10の漏れ・鼻クリップ記述。",
+      "id": "rinsho-kensagishi-2026-annual-am-q24",
+      "expectedBeforeMatchesCurrent": true,
+      "disposition": "APPROVED_OPTIONAL_EVIDENCE_STRENGTHENING"
+    },
+    {
+      "field": "explanation",
+      "expectedBefore": "正解はN20です。正中神経の手関節部刺激による短潜時体性感覚誘発電位では、反対側大脳皮質の最初の主要反応がN20です。末梢・頸髄で記録されるN9やN13と区別します。",
+      "after": "正解はN20です。手関節で正中神経を刺激すると、N9は腕神経叢、N13は頸髄で記録され、P14などの皮質前成分を経て、対側の大脳皮質でN20が現れます。波形名の数字だけでなく、記録部位と発生源で区別します。",
+      "evidenceUrls": [
+        "https://media.journals.elsevier.com/content/files/clinph-chapter-2-4-14083346.pdf"
+      ],
+      "readScope": "PDF物理p5-8の正中神経SEP記録法・発生源・表3。",
+      "id": "rinsho-kensagishi-2026-annual-am-q26",
+      "expectedBeforeMatchesCurrent": true,
+      "disposition": "APPROVED_OPTIONAL_EVIDENCE_STRENGTHENING"
+    },
+    {
+      "field": "choiceExplanations.オ",
+      "expectedBefore": "P37は下肢の体性感覚誘発電位で用いられる代表的な皮質成分です。手関節部の正中神経刺激での最初の皮質反応とは異なります。",
+      "after": "P37は後脛骨神経刺激による下肢SEPの皮質陽性波で、P39とも呼ばれます。手関節での正中神経刺激の最初の皮質成分ではありません。",
+      "evidenceUrls": [
+        "https://media.journals.elsevier.com/content/files/clinph-chapter-2-4-14083346.pdf"
+      ],
+      "readScope": "PDF物理p9、P39/P37/P40波の説明。",
+      "id": "rinsho-kensagishi-2026-annual-am-q26",
+      "expectedBeforeMatchesCurrent": true,
+      "disposition": "APPROVED_OPTIONAL_EVIDENCE_STRENGTHENING"
+    },
+    {
+      "field": "choiceExplanations.ウ",
+      "expectedBefore": "CK反応に続けてヘキソキナーゼとグルコース-6-リン酸脱水素酵素を働かせ、NADPH生成を測定します。脱水素酵素を試薬に含む選択肢です。",
+      "after": "CKがクレアチンリン酸とADPからATPを作り、ヘキソキナーゼがATPを使ってグルコースをG6Pにします。続くG6PD反応でNADPHが生じます。CK測定用試薬にG6PDを含む実例が確認できます。",
+      "evidenceUrls": [
+        "https://www.diasys-diagnostics.com/misc/download/?_=1634811437&cHash=3ad1d896d2d5d8840b81080a65ea5cf1&tx_vierwddiasysproducts_download%5Bfile%5D=downloads%2FIFU+respons920%2FIFU+respons920+English%2FIFU_R920-e-CK-2.pdf&tx_vierwddiasysproducts_download%5Bmsds%5D="
+      ],
+      "readScope": "CK-NAC FSメーカー添付文書PDF物理p1、反応式とR1/R2構成。",
+      "scopeLimit": "これはIFCC/DGKC準拠製品。JSCCの厳密処方が同じとは主張しない。",
+      "id": "rinsho-kensagishi-2026-annual-am-q31",
+      "expectedBeforeMatchesCurrent": true,
+      "disposition": "APPROVED_OPTIONAL_EVIDENCE_STRENGTHENING"
+    },
+    {
+      "field": "choiceExplanations.ウ",
+      "expectedBefore": "アスコルビン酸の還元作用は過酸化水素を用いる呈色法などで問題となります。本法の正しい特徴として本肢を選ぶことはできません。",
+      "after": "アスコルビン酸は過酸化水素を使う呈色法などを妨害し得ます。一方、HK/G6PD法では比較試験の検討濃度で干渉が認められず、本肢は本法の特徴として選びません。",
+      "evidenceUrls": [
+        "https://d-nb.info/1206182881/34"
+      ],
+      "readScope": "原著PDF物理p3のGlucose干渉結果、p4図1、p5表3。",
+      "scopeLimit": "全濃度・全測定系の無干渉を保証しない。",
+      "id": "rinsho-kensagishi-2026-annual-am-q38",
+      "expectedBeforeMatchesCurrent": true,
+      "disposition": "APPROVED_OPTIONAL_EVIDENCE_STRENGTHENING"
+    },
+    {
+      "field": "choiceExplanations.エ",
+      "expectedBefore": "ヘキソキナーゼはグルコースの両アノマーに作用するため、本法にムタロターゼを必須の補助酵素として加える必要はありません。",
+      "after": "ヘキソキナーゼはα型・β型のグルコースをリン酸化できます。ムタロターゼを必須とする記述は誤りです。ムタロターゼで異性化を速める説明は主にグルコースオキシダーゼ法との比較で出てきます。",
+      "evidenceUrls": [
+        "https://jofem.org/index.php/jofem/article/view/555/284284366",
+        "https://jscc-jp.gr.jp/file/kaishi/kankoku/2012/kan02_242.pdf"
+      ],
+      "readScope": "2019原著Introductionのアノマー説明とGOD/POD実験条件、JSCC原勧告冒頭反応式。",
+      "scopeLimit": "2019原著のmutarotase添加実験自体はHK/G6PDではない。",
+      "id": "rinsho-kensagishi-2026-annual-am-q38",
+      "expectedBeforeMatchesCurrent": true,
+      "disposition": "APPROVED_OPTIONAL_EVIDENCE_STRENGTHENING"
+    },
+    {
+      "field": "choiceExplanations.エ",
+      "expectedBefore": "唾液腺型は糖鎖などの分子特性の違いにより、膵型より高分子量側として扱われます。本問では正しい記述です。",
+      "after": "唾液腺型には糖鎖を持つ分子形があり、原著では膵型より高分子量側の分子形が示されています。本問の比較は正しい扱いです。",
+      "evidenceUrls": [
+        "https://edoc.hu-berlin.de/bitstreams/01c579ac-4c66-4fab-bb88-e09b87c01d0a/download",
+        "https://file.scirp.org/Html/2-1350038_17272.htm"
+      ],
+      "readScope": "1982 original Results physical3/book453 lines129-153 independently opened; ROOT-AM41-SUPPLEMENT saved evidence",
+      "scopeLimit": "一部の糖鎖化分子形。全唾液分子の高分子量を断定しない。",
+      "id": "rinsho-kensagishi-2026-annual-am-q41",
+      "expectedBeforeMatchesCurrent": true,
+      "disposition": "REQUIRED_SCOPE_CORRECTION"
+    },
+    {
+      "field": "choiceExplanations.オ",
+      "expectedBefore": "アミラーゼは腎での排泄の影響を受けます。腎不全では血清アミラーゼが上昇しうるため、上昇を直ちに膵炎だけに結び付けません。",
+      "after": "腎機能が低下すると血清アミラーゼが上昇し得ます。原著でも腎不全患者の高値が示されており、血清高値だけで膵炎と決めません。",
+      "evidenceUrls": [
+        "https://pubmed.ncbi.nlm.nih.gov/1699413/",
+        "https://pubmed.ncbi.nlm.nih.gov/2444541/"
+      ],
+      "readScope": "腎機能低下と血清AMYの関係について原著抄録の結果部分。",
+      "scopeLimit": "腎排泄の定量機構は未確認。",
+      "id": "rinsho-kensagishi-2026-annual-am-q41",
+      "expectedBeforeMatchesCurrent": true,
+      "disposition": "APPROVED_OPTIONAL_EVIDENCE_STRENGTHENING"
+    },
+    {
+      "field": "choiceExplanations.オ",
+      "expectedBefore": "クロスローラーベアリング方式は滑走式のミクロトームに用いられる機構です。回転式と断定する記述は誤っています。",
+      "after": "クロスローラーベアリングを採用した滑走式ミクロトームの製品例があります。したがって、ベアリング方式だけから回転式と分類することはできません。",
+      "evidenceUrls": [
+        "https://www.epredia.com/products/histology-instruments/microtomy/hm450"
+      ],
+      "readScope": "Epredia HM450 Sliding Microtome製品概要とcross roller bearingの記述。",
+      "scopeLimit": "cross roller搭載機がすべて滑走式という一般化はしない。",
+      "id": "rinsho-kensagishi-2026-annual-am-q46",
+      "expectedBeforeMatchesCurrent": true,
+      "disposition": "REQUIRED_SCOPE_CORRECTION"
+    },
+    {
+      "field": "explanation",
+      "expectedBefore": "正解はPAS反応です。原図ではアメーバの栄養型が赤紫色に強調され、PAS陽性の色調を示します。H-Eの一般的な色調や、銀染色での黒色の染まり方と区別します。",
+      "after": "正解はPAS反応です。原図ではアメーバ栄養型の細胞質が赤紫色に強調されています。大腸・直腸組織の原著症例でも、PASで栄養型が赤く染まることが確認されています。H-Eや銀染色の色調と比較します。",
+      "evidenceUrls": [
+        "https://pdfs.semanticscholar.org/1aa8/4b15436b81fc368e57cd182fe646e9732cd8.pdf"
+      ],
+      "readScope": "原著症例報告PDF物理p3の記述と表1、p4の考察。",
+      "scopeLimit": "原図自体は厚労省別冊No.12の既存保存PNGを参照。CDC DPDx頁をPASの根拠に使わない。",
+      "id": "rinsho-kensagishi-2026-annual-pm-q55",
+      "expectedBeforeMatchesCurrent": true,
+      "disposition": "APPROVED_OPTIONAL_EVIDENCE_STRENGTHENING"
+    },
+    {
+      "id": "rinsho-kensagishi-2026-annual-am-q46",
+      "field": "choiceExplanations.エ",
+      "expectedBefore": "ミノー型で用いる逃げ角の目安は2～10°です。刃が試料面を過度にこすらないよう調整する角度です。",
+      "after": "本問では「ミノー型ミクロトームの逃げ角は2～10°」が公式正答の一つです。逃げ角は刃が試料面を過度にこすらないようにするための角度で、刃先を形成する刃角とは異なります。",
+      "expectedBeforeMatchesCurrent": true,
+      "disposition": "REQUIRED_SCOPE_CORRECTION",
+      "evidenceUrls": [
+        "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-07seitou.pdf",
+        "https://www.leicabiosystems.com/us/knowledge-pathway/knife-angle-in-microtomy/"
+      ],
+      "scopeLimit": "2～10°は公式採点の記述としてのみ保持。全Minot型の一般操作レンジとして独立実証したとは主張しない。"
+    }
+  ],
+  "questions": [
+    {
+      "id": "rinsho-kensagishi-2026-annual-am-q24",
+      "recommendation": "RECOMMEND_PREPARATION_WITH_APPROVED_OPTIONAL_STRENGTHENING",
+      "reason": "FeNO通常手順の直接一次資料不足は残るが、鼻クリップが全条件で禁忌という主張は現稿にない。本問の必須検査から外す範囲の説明に対する具体的反証・医学欠陥は記録されていない。nNO資料を通常FeNOの全手順の証明に代用しない。"
+    },
+    {
+      "id": "rinsho-kensagishi-2026-annual-am-q26",
+      "recommendation": "RECOMMEND_PREPARATION_WITH_APPROVED_OPTIONAL_STRENGTHENING",
+      "reason": "P31発生部位の未取得は追加説明の限界。現稿は部位を断定せず、最初のN20との識別に限定するため採用障害にしない。"
+    },
+    {
+      "id": "rinsho-kensagishi-2026-annual-am-q31",
+      "recommendation": "RECOMMEND_PREPARATION_WITH_APPROVED_OPTIONAL_STRENGTHENING",
+      "reason": "全JSCC試薬処方未取得は網羅的な処方表を作る際の限界。現稿と修正案は反応原理・CK試薬のG6PDに限る。IFCC/DGKC製品処方をJSCC全処方と同一視しない。"
+    },
+    {
+      "id": "rinsho-kensagishi-2026-annual-am-q38",
+      "recommendation": "RECOMMEND_PREPARATION_WITH_APPROVED_OPTIONAL_STRENGTHENING",
+      "reason": "アスコルビン酸は検討濃度に限定。全測定系・全濃度無干渉へ一般化しない。両アノマーの背景記述とGOD/PODの実験系を区別。"
+    },
+    {
+      "id": "rinsho-kensagishi-2026-annual-am-q41",
+      "recommendation": "RECOMMEND_PREPARATION_AFTER_REQUIRED_PATCHES",
+      "reason": "新規未停止の原著本文で分子形比較を確認。旧案の教材内作業メタ文を不採用とし、補強正本の限定表現で置換する。腎不全で上昇し得る記述は原著抄録で支持。"
+    },
+    {
+      "id": "rinsho-kensagishi-2026-annual-am-q46",
+      "recommendation": "RECOMMEND_PREPARATION_AFTER_REQUIRED_PATCHES",
+      "reason": "滑走式の製品例は全称分類の根拠ではない。厳密2～10°の一般的技術レンジは未確証だが、公式選択肢の採点と角度の役割だけに限定すれば、その未確証の一般化を原稿が主張しなくなる。"
+    },
+    {
+      "id": "rinsho-kensagishi-2026-annual-pm-q55",
+      "recommendation": "RECOMMEND_PREPARATION_WITH_APPROVED_OPTIONAL_STRENGTHENING",
+      "reason": "PASで栄養型が赤く強調される原著の組織所見と保存済試験図の判断を区別。原著症例画像を試験図そのものとは扱わない。"
+    }
+  ],
+  "remainingFactualLimitations": [
+    {
+      "id": "rinsho-kensagishi-2026-annual-am-q46",
+      "claim": "ミノー型全般の逃げ角として厳密な2～10°範囲を独立一次資料で実証",
+      "status": "UNCONFIRMED_DO_NOT_GENERALIZE",
+      "blocksCurrentUnchangedWording": true,
+      "blocksScopedReplacement": false,
+      "reason": "公式採点は確認済み。別機種の0/5/10°目盛を一般レンジ証拠へ転用しない。再検索不要、原稿を公式採点の範囲へ限定する。"
+    }
+  ],
+  "concreteMedicalErrorFoundInAM24AM26AM31": false,
+  "boundary": {
+    "manuscriptEdits": 0,
+    "gitEdits": 0,
+    "runtimeChanges": 0,
+    "publicChanges": 0,
+    "needsReviewChanges": 0,
+    "stoppedSourcesRetried": 0,
+    "newQuestionGeneration": 0,
+    "all84Reaudit": false,
+    "all7FullIndependentMedicalAuditClaimed": false,
+    "partialAdoptionRequiresAll400": false
+  },
+  "applyPolicy": "Prepared author/primary owner root is authorized to apply only the three required field corrections in the existing dedicated worktree after exact expectedBefore matches, explicitly commit those changes, and update the draft PR. The nine optional strengthening patches need not be applied. Preserve original questions, choices, official keys, requiredSelections, figures and source bindings. Main/public deployment, runtime registration and needsReview removal remain integration-owner operations; this recommendation does not itself execute or authorize those release operations. No additional approval gate is inferred for the authorized dedicated-worktree draft corrections, commit or draft PR update."
+}

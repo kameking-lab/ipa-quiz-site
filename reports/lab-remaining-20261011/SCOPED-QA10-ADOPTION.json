@@ -1,0 +1,193 @@
+{
+  "observedUtc": "2026-10-11T07:56:28.557743+00:00",
+  "reviewOwnerThread": "01a12864-232c-7720-aa58-0909185760b1",
+  "reviewedOriginals": 10,
+  "reviewedChoiceReasons": 50,
+  "medicalAcceptance": "LIMITED_SCOPE_WITH_UNRESOLVED_EVIDENCE_GAPS",
+  "fullIndependentReleaseAcceptance": false,
+  "publicGo": 0,
+  "appliedPatches": [
+    {
+      "id": "rinsho-kensagishi-2025-annual-pm-q12",
+      "field": "explanation",
+      "operation": "APPEND_SENTENCE",
+      "sourceIds": [
+        "MHLW71PM12NOTICE",
+        "NHLBI_DIAGNOSIS"
+      ],
+      "beforeTextSha256": "1c3dde90b27035decee36a2a5aa20b9faefbced2cd7b5104569185c2d9229483",
+      "afterTextSha256": "239dd6505b8f2ec9e89abe3e2ae5c69c6ac9399c08c8d10745d62df8ea65469e",
+      "reason": "公式採点通知と医学的解釈を分け、過度な一般化を避ける。"
+    },
+    {
+      "id": "rinsho-kensagishi-2025-annual-pm-q19",
+      "field": "explanation",
+      "operation": "APPEND_SENTENCE",
+      "sourceIds": [
+        "MHLW71PM19NOTICE"
+      ],
+      "beforeTextSha256": "cee677645abeb5fffad9714c9721b451c32472e06da8fd613fff8ae9c88e5e30",
+      "afterTextSha256": "d99e76683f4d33a5da0c7758eed2eff0e8839a741ddcd6ddfb08a43abe91865b",
+      "reason": "採点通知にない発行者の意図を断定しない。"
+    },
+    {
+      "id": "rinsho-kensagishi-2025-annual-pm-q19",
+      "field": "choiceExplanations.エ",
+      "operation": "REPLACE_PHRASE",
+      "sourceIds": [
+        "MHLW71SUP",
+        "MHLW71PM19NOTICE"
+      ],
+      "beforeTextSha256": "36c6329d680bb595d38fe58534e0605237e25f628fe0c04174608a007574e6d8",
+      "afterTextSha256": "5032994a798d612e81100b8556f33902ac649869e2586ed87d47ae0e53a45ed8",
+      "reason": "残気量RVと残りのFVC割合が混同されない表現にする。"
+    },
+    {
+      "id": "rinsho-kensagishi-2025-annual-pm-q22",
+      "field": "choiceExplanations.イ",
+      "operation": "REPLACE_PHRASE",
+      "sourceIds": [
+        "EAN_PNS2021"
+      ],
+      "beforeTextSha256": "6b68e54cf37682b75b8a673e45d37c7854ee437c90ee4c93eabd6a7eac9f9931",
+      "afterTextSha256": "44ae044c0c72913a1bc438a5b6fd1a0d15546df1c4d9c053ca6eb25e7f577f16",
+      "reason": "単一正中神経の波形から分布が広範と確定しない。"
+    },
+    {
+      "id": "rinsho-kensagishi-2025-annual-pm-q22",
+      "field": "choiceExplanations.オ",
+      "operation": "APPEND_SENTENCE",
+      "sourceIds": [
+        "EAN_PNS2021"
+      ],
+      "beforeTextSha256": "f07d21b57a608c945601e6ecb1a8706a9bf49e9f87f1f14fe8fa51f39e260c2a",
+      "afterTextSha256": "74c2085c3e4d8b35b9d36ae837d6cf9b2c7b44fbbe62a4364d7f08c695c70c6b",
+      "reason": "試験の最適肢選択とCIDP確定診断を区別する。"
+    },
+    {
+      "id": "rinsho-kensagishi-2025-annual-pm-q84",
+      "field": "choiceExplanations.ウ",
+      "operation": "APPEND_SENTENCE",
+      "sourceIds": [
+        "NAKAJIMA1981"
+      ],
+      "beforeTextSha256": "dd3af5e35957d0ec29925e492727581c163f1d3babae8200b3e80061ea9826cb",
+      "afterTextSha256": "4fef4540334629d8428aa7e7d205ac04465c776553014689c3617d7c59244b6b",
+      "reason": "日本人一次集団の遺伝子頻度に基づく計算。未目視の表1の実測割合とは区別する。"
+    },
+    {
+      "id": "rinsho-kensagishi-2025-annual-pm-q84",
+      "field": "choiceExplanations.イ",
+      "operation": "APPEND_SENTENCE",
+      "sourceIds": [
+        "YEH2018"
+      ],
+      "beforeTextSha256": "8a266feafff968f05109ddbdff6ddbf5830e5df19a0d6fc57afdd1e6cb6afe16",
+      "afterTextSha256": "b623e6338481283797fd24b706df6a250289443c925545f414c811af3465fb7f",
+      "reason": "性差の新しい実測一次例を補強し、集団適用範囲を限定する。"
+    },
+    {
+      "id": "rinsho-kensagishi-2026-annual-am-q33",
+      "field": "choiceExplanations.ウ",
+      "operation": "APPEND_SENTENCE",
+      "sourceIds": [
+        "SOUTAR1975"
+      ],
+      "beforeTextSha256": "4be69b8bb1d3094f3f53686c6f42309e95fa8fff0f8288fcdc5ff25bc376eb6f",
+      "afterTextSha256": "5d998018bd02ac4cedfb05b7f496ea005fb8d216d5246a19894a4c919b7d39d0",
+      "reason": "公式3以外の独立した生化学的根拠を追加する。"
+    },
+    {
+      "id": "rinsho-kensagishi-2026-annual-am-q33",
+      "field": "choiceExplanations.オ",
+      "operation": "APPEND_SENTENCE",
+      "sourceIds": [
+        "CHEN_ALBERS1985"
+      ],
+      "beforeTextSha256": "6833797d84815dfcffb9ab8d5db01a47444f2d84bd129bdd20c2d3ef2ace7fc0",
+      "afterTextSha256": "621c5858a4db1bc90bb422e0aab0f4f5c4e711e65b2012e1c9a95e2c8bdb4d06",
+      "reason": "ApoE活性化を精製酵素だけの例外として過小化しない。"
+    }
+  ],
+  "originalStemsChoicesAnswersChanged": 0,
+  "excludedSources": [
+    {
+      "url": "https://pubmed.ncbi.nlm.nih.gov/28162150/",
+      "original": "AASM2017 diagnostic guideline",
+      "reason": "既停止AASM論文の同一内容を補助が別経路で閲覧していた。採用根拠から除外、追加取得停止。",
+      "retriesAfterDetection": 0
+    }
+  ],
+  "remainingHolds": [
+    {
+      "id": "rinsho-kensagishi-2025-annual-pm-q1",
+      "gaps": [
+        "尿円柱5種類全ての定義・化学組成を独立一次研究で確認した扱いにはしない。"
+      ]
+    },
+    {
+      "id": "rinsho-kensagishi-2025-annual-pm-q12",
+      "gaps": [
+        "成人AHIの閾値と症状等の診断条件について独立した未停止の一次基準を追加すること。"
+      ]
+    },
+    {
+      "id": "rinsho-kensagishi-2025-annual-pm-q17",
+      "gaps": [
+        "図示値を全患者の正常値範囲として一般化しない。"
+      ]
+    },
+    {
+      "id": "rinsho-kensagishi-2025-annual-pm-q18",
+      "gaps": [
+        "照合した医学定義の外部資料は署名付き臨床参考資料。原著又は学会一次基準を全肢再照合した扱いにはしない。"
+      ]
+    },
+    {
+      "id": "rinsho-kensagishi-2025-annual-pm-q19",
+      "gaps": [
+        "FEF25と日本のVdot25の定義を独立一次標準の条文で確認すること。",
+        "通知に記載のない設問不明確の具体的理由を発行者の説明として断定しない。"
+      ]
+    },
+    {
+      "id": "rinsho-kensagishi-2025-annual-pm-q22",
+      "gaps": [
+        "刺激距離・数値基準・他神経記録・臨床経過が図にないため、CIDP確定診断をこの記録だけで行わない。"
+      ]
+    },
+    {
+      "id": "rinsho-kensagishi-2025-annual-pm-q23",
+      "gaps": [
+        "三相波・棘徐波複合の形式定義は原著又は独立一次基準を全て追加照合した扱いにしない。",
+        "患者年齢・睡眠状態・発症経過がないため症候群の臨床診断はしない。"
+      ]
+    },
+    {
+      "id": "rinsho-kensagishi-2025-annual-pm-q80",
+      "gaps": [
+        "熱不安定性の新一次根拠はC1qに限定。C1r/C1s全てと他4肢との同条件加熱比較の直接根拠は未確認。",
+        "C3/C6/D因子の役割は今回独立一次根拠を全て再照合した扱いにはしない。"
+      ]
+    },
+    {
+      "id": "rinsho-kensagishi-2025-annual-pm-q84",
+      "gaps": [
+        "日本人原著の表1にある実測Di(a+)人数・割合の目視照合は未完。HW推計値と実測表を区別。",
+        "Xg新一次値は台湾人小標本。日本人の男女別頻度、歴史的欧州系66%/89%の引用元Mann1962本文は未確認。",
+        "weak D/partial Dは教育資料の典型分類。全亜型の一次文献照合まではしていない。"
+      ]
+    },
+    {
+      "id": "rinsho-kensagishi-2026-annual-am-q33",
+      "gaps": [
+        "発行者が公式正答1/3のみを採用しEを除外した具体的根拠又は公式補足通知は未確認。",
+        "原著の全速度論・統計及び生体内の寄与定量は未読。主因子と条件依存活性化を区別する説明案は統合主担当の医学的受入れ待ち。",
+        "ApoE受容体・レムナント取込みの背景に新規Gene348を使わない。既存文の独立根拠確認は追加できていない。"
+      ]
+    }
+  ],
+  "newManuscriptRegeneration": 0,
+  "helperQuestionFilesChanged": false,
+  "sourceReportSha256": "741dcb064c28e4a2db3d5a448b82f5e10ef09796f0f27ddadd56aa138a7de985"
+}

@@ -1,0 +1,36 @@
+{
+  "reviewer": "gpt-6-astra",
+  "reviewAgent": "/root/lab_independent_review9",
+  "scopeOriginals": 16,
+  "scopeChoiceReasons": 80,
+  "status": "ACCEPTED_AS_HELD_DRAFTS",
+  "needsReviewMustRemain": true,
+  "publicGo": 0,
+  "nineBeforeCorrectionSha256": "4954be4992f8cdcaddbef5a2bf2d53ee1f255d71f61a2ff6b5dfa086bb031366",
+  "reviewedFiles": [
+    {
+      "path": "data/prepared-medical/rinsho-kensagishi/2025-annual-am-unreserved9.json",
+      "sha256": "546950c63c23270a6f5f35b2f49647e4ddaf7adfcad4892713199fca49b73387"
+    },
+    {
+      "path": "data/prepared-medical/rinsho-kensagishi/2025-annual-am-unreserved7.json",
+      "sha256": "bd3093065825d6028d7a010e0ed4b659e3af3771fa4c2e7972b88f48ab72c9fb"
+    }
+  ],
+  "findings": [
+    {
+      "questionId": "rinsho-kensagishi-2025-annual-am-q35",
+      "choice": "エ",
+      "finding": "Explain renal hyperfiltration and creatinine production; do not assert mandatory increase.",
+      "resolution": "Applied and independently accepted on follow-up."
+    }
+  ],
+  "sevenFinalReport": "Original7/35choices/7figures visually reconciled; all figure hashes match; no mandatory corrections; q67 and q95 arithmetic, q85 ABO/Rh confirmed.",
+  "publicPromotionRemainsBlocked": [
+    "Runtime registration and figure serving promotion by integrator",
+    "Public release review of the final complete qualification corpus"
+  ],
+  "forbiddenScopeGenerated": 0,
+  "providerRetries": 0,
+  "externalSubmissionPerformedByReviewer": false
+}

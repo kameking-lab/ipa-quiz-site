@@ -1,0 +1,47 @@
+{
+  "observedUtc": "2026-10-11T10:31:18.637892+00:00",
+  "id": "rinsho-kensagishi-2026-annual-am-q41",
+  "scope": "ONLY_AM41_SALIVARY_PANCREATIC_MOLECULAR_MASS",
+  "sourceHead": "d6fcc3a5f36074ce0062dfc717bd2298231ea8f2",
+  "sources": [
+    {
+      "url": "https://edoc.hu-berlin.de/bitstreams/01c579ac-4c66-4fab-bb88-e09b87c01d0a/download",
+      "title": "Kamaryt, Zemek and Kuniak (1982) Determination of the Molecular Weight of alpha-Amylase as the Enzyme-Inhibitor Complex",
+      "sourceKind": "ORIGINAL_COMPARATIVE_RESEARCH",
+      "sha256": "a4f0623ab32839280b69724157756a369cc70e50977df6dac34115833615cc6c",
+      "privateSavedPath": "C:/wt/kakomon-lab-remaining-owner-20261011/data/raw_pdfs/lab-remaining-20261011/kamaryt-amylase1982.pdf",
+      "readScope": "Native PDF physical3/book453 Results and Fig4; physical4/book454 existing measurements discussion; localphysical3 visual inspected",
+      "verifiedClaims": [
+        "唾液由来アミラーゼには非糖鎖化・糖鎖化分子形があり、糖鎖化した一部は高分子量。",
+        "十二指腸液の膵由来と唾液由来を実測で比較し、膵には同程度の糖鎖化分子形を示さない。"
+      ],
+      "scopeLimits": [
+        "全唾液アミラーゼ分子が常に膵より高分子量とは一般化しない。",
+        "physical4の個別分子量数値はこの原著の新規測定結果ではなく、引用された先行測定値。新稿に数値を加えない。"
+      ]
+    },
+    {
+      "url": "https://file.scirp.org/Html/2-1350038_17272.htm",
+      "title": "Amano et al. (2012) Glycosylation and secretion of human alpha-amylases",
+      "sourceKind": "ORIGINAL_GLYCOSYLATION_RESEARCH",
+      "readScope": "WEB_FULL_TEXT_RESULTS3.1_AND_DISCUSSION",
+      "verifiedClaims": [
+        "唾液試料では非糖鎖化、1糖鎖、2糖鎖の分子形。膵試料では大半が非糖鎖化。"
+      ],
+      "scopeLimits": [
+        "実験の試料・細胞系を全人体分子に外挿しない。",
+        "分子形の差を示す。生体内で糖鎖化の違いが起こる全機序を確定したとは主張しない。"
+      ]
+    }
+  ],
+  "replacementToFACT7Proposal": {
+    "field": "choiceExplanations.エ",
+    "expectedBefore": "唾液腺型は糖鎖などの分子特性の違いにより、膵型より高分子量側として扱われます。本問では正しい記述です。",
+    "after": "唾液腺型には糖鎖を持つ分子形があり、原著では膵型より高分子量側の分子形が示されています。本問の比較は正しい扱いです。"
+  },
+  "manuscriptChanged": false,
+  "newOriginalGenerated": 0,
+  "stoppedSourcesRetried": 0,
+  "newAccessStops": [],
+  "AM46remaining": "独立一次資料によるミノー型の厳密2～10度レンジはこの有限追加検索で未確認。既読Leica別機種の範囲へ言い換えない。"
+}
