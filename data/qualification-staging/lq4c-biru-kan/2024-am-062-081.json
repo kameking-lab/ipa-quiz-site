@@ -1,0 +1,834 @@
+{
+  "status": "PARTIAL_CONTENT_ACCEPTED_NOT_REGISTERED",
+  "qualification": "biru-kan",
+  "year": 2024,
+  "subject": "am",
+  "expectedFullQualificationCount": 360,
+  "questions": [
+    {
+      "id": "biru-kan-2024-am-062",
+      "printedNumber": "62",
+      "questionNumber": 62,
+      "questionText": "個別方式の空気調和設備に関する次の記述のうち、最も不適当なものはどれか。",
+      "choices": {
+        "1": "水熱源ヒートポンプ方式のパッケージ型空調機には、冷房時の冷却水と暖房時の温水を別々の配管で供給する。",
+        "2": "パッケージ型空気調和機の圧縮機の駆動源としては、電動機の他、ガスエンジンもある。",
+        "3": "個別方式の代表的な空気調和機は、パッケージ型空気調和機である。",
+        "4": "ヒートポンプは、採熱源（ヒートソース）によって水熱源ヒートポンプと空気熱源ヒートポンプに分類される。",
+        "5": "ビル用マルチパッケージは、インバータにより圧縮機の容量制御を行う機種が主流である。"
+      },
+      "officialAnswer": 1,
+      "explanation": "正答は1です。水熱源ヒートポンプの水ループと、冷温水を別系統で供給する方式を区別します。",
+      "choiceExplanations": {
+        "1": "不適当です。水熱源ヒートポンプは共通の水ループを熱源・放熱先に用い、冷暖房のため別々の冷却水・温水配管を要する方式ではありません。",
+        "2": "適当です。電気駆動のほかGHPのガスエンジン駆動があります。",
+        "3": "適当です。パッケージ機は個別空調の代表的機器です。",
+        "4": "適当です。水や外気など、熱を得る・捨てる相手で分類します。",
+        "5": "適当です。負荷に合わせて圧縮機の回転数等を制御します。"
+      },
+      "hasRequiredFigure": false,
+      "sourceQuestionUrl": "https://www.jahmec.or.jp/kokka/shiken_pdf/2024/2024shiken_am.pdf",
+      "sourceQuestionPage": 22,
+      "sourceAnswerUrl": "https://www.jahmec.or.jp/kokka/shiken_pdf/2024/2024kizyun_seitou.pdf",
+      "sourceAnswerPage": 1,
+      "sourceQuestionSha256": "b788546847af935f8f068f0e0d2a5d5ea9ba302fa083a590ef4ffdd548a75aef",
+      "sourceAnswerSha256": "faebc327503541422b331d5e14ff47035cec23b6ef0fd1048f9d6cd8f3b9c54c",
+      "sourceAttribution": "出典：公益財団法人日本建築衛生管理教育センター 第54回（2024年）建築物環境衛生管理技術者試験 問題62。改行・空白・句読点及び単位表記を整理。組合せ表は列名付きテキストで表現。解説は独自作成。",
+      "explanationReferenceUrls": [],
+      "transcription": "Two saved OCR passes compared against rendered official page; line wraps, spacing and punctuation normalized; combination tables preserved as labeled text; no figures required",
+      "needsIndependentReview": false,
+      "publicGo": false,
+      "contentReview": {
+        "status": "PASS",
+        "model": "gpt-6-astra",
+        "report": "reports/lq4d-20261104/independent-review9.md",
+        "scope": "PARTIAL_BATCH_NOT_FULL_QUALIFICATION"
+      }
+    },
+    {
+      "id": "biru-kan-2024-am-063",
+      "printedNumber": "63",
+      "questionNumber": 63,
+      "questionText": "湿り空気線図上の状態変化に関する次の記述のうち、最も不適当なものはどれか。",
+      "choices": {
+        "1": "湿り空気を加熱すると、相対湿度は低下する。",
+        "2": "湿り空気を減湿すると、水蒸気分圧は低下する。",
+        "3": "湿り空気を冷却すると、比容積は小さくなる。",
+        "4": "湿り空気を加湿すると、露点温度は低下する。",
+        "5": "湿り空気を冷却すると、比エンタルピーは低下する。"
+      },
+      "officialAnswer": 4,
+      "explanation": "正答は4です。通常の一定圧力の状態変化を考えます。露点温度は水蒸気分圧に対応するため、加湿とともに高くなります。",
+      "choiceExplanations": {
+        "1": "適当です。水分を加えない加熱では飽和水蒸気圧が増し、相対湿度が下がります。",
+        "2": "適当です。水分量が減ると水蒸気分圧も下がります。",
+        "3": "適当です。一定圧力で温度が下がると乾き空気単位質量当たりの体積が小さくなります。",
+        "4": "不適当です。加湿で水蒸気分圧が増すと、露点温度は上昇します。",
+        "5": "適当です。通常の冷却過程では空気から熱を取り除くため比エンタルピーが減ります。"
+      },
+      "hasRequiredFigure": false,
+      "sourceQuestionUrl": "https://www.jahmec.or.jp/kokka/shiken_pdf/2024/2024shiken_am.pdf",
+      "sourceQuestionPage": 22,
+      "sourceAnswerUrl": "https://www.jahmec.or.jp/kokka/shiken_pdf/2024/2024kizyun_seitou.pdf",
+      "sourceAnswerPage": 1,
+      "sourceQuestionSha256": "b788546847af935f8f068f0e0d2a5d5ea9ba302fa083a590ef4ffdd548a75aef",
+      "sourceAnswerSha256": "faebc327503541422b331d5e14ff47035cec23b6ef0fd1048f9d6cd8f3b9c54c",
+      "sourceAttribution": "出典：公益財団法人日本建築衛生管理教育センター 第54回（2024年）建築物環境衛生管理技術者試験 問題63。改行・空白・句読点及び単位表記を整理。組合せ表は列名付きテキストで表現。解説は独自作成。",
+      "explanationReferenceUrls": [],
+      "transcription": "Two saved OCR passes compared against rendered official page; line wraps, spacing and punctuation normalized; combination tables preserved as labeled text; no figures required",
+      "needsIndependentReview": false,
+      "publicGo": false,
+      "contentReview": {
+        "status": "PASS",
+        "model": "gpt-6-astra",
+        "report": "reports/lq4d-20261104/independent-review9.md",
+        "scope": "PARTIAL_BATCH_NOT_FULL_QUALIFICATION"
+      }
+    },
+    {
+      "id": "biru-kan-2024-am-064",
+      "printedNumber": "64",
+      "questionNumber": 64,
+      "questionText": "地域冷暖房システムに関する次の記述のうち、最も不適当なものはどれか。",
+      "choices": {
+        "1": "個別熱源システムに比べて、大気汚染などの環境負荷が低減する。",
+        "2": "不特定多数の需要家に供給する熱源プラントは、規模の大小にかかわらず、熱供給事業法の適用を受ける。",
+        "3": "各建築物の煙突や冷却塔が不要となり、都市景観の向上に役立つ。",
+        "4": "熱源装置の大型化、集約化により効率的な運用が可能となる。",
+        "5": "個別の建築物の有効用途面積が拡大し収益性が増大する。"
+      },
+      "officialAnswer": 2,
+      "explanation": "正答は2です。地域冷暖房の一般的な利点と、法律が適用される事業の要件を区別します。",
+      "choiceExplanations": {
+        "1": "適当です。集約化や高効率運用、未利用熱の利用などによって環境負荷の低減を図れます。",
+        "2": "不適当です。熱供給事業法の対象には加熱能力21GJ/h以上等の規模要件があり、規模に無関係ではありません。",
+        "3": "適当です。需要側建物に個別の熱源を置かないことが景観の改善につながります。",
+        "4": "適当です。負荷の集約と大型設備の効率的な運転が可能です。",
+        "5": "適当です。個別建物の熱源機械室等を減らし、有効に使える面積を増やせます。"
+      },
+      "hasRequiredFigure": false,
+      "sourceQuestionUrl": "https://www.jahmec.or.jp/kokka/shiken_pdf/2024/2024shiken_am.pdf",
+      "sourceQuestionPage": 22,
+      "sourceAnswerUrl": "https://www.jahmec.or.jp/kokka/shiken_pdf/2024/2024kizyun_seitou.pdf",
+      "sourceAnswerPage": 1,
+      "sourceQuestionSha256": "b788546847af935f8f068f0e0d2a5d5ea9ba302fa083a590ef4ffdd548a75aef",
+      "sourceAnswerSha256": "faebc327503541422b331d5e14ff47035cec23b6ef0fd1048f9d6cd8f3b9c54c",
+      "sourceAttribution": "出典：公益財団法人日本建築衛生管理教育センター 第54回（2024年）建築物環境衛生管理技術者試験 問題64。改行・空白・句読点及び単位表記を整理。組合せ表は列名付きテキストで表現。解説は独自作成。",
+      "explanationReferenceUrls": [
+        "https://www.meti.go.jp/shingikai/enecho/denryoku_gas/denryoku_gas/pdf/033_03_01.pdf"
+      ],
+      "transcription": "Two saved OCR passes compared against rendered official page; line wraps, spacing and punctuation normalized; combination tables preserved as labeled text; no figures required",
+      "needsIndependentReview": false,
+      "publicGo": false,
+      "contentReview": {
+        "status": "PASS",
+        "model": "gpt-6-astra",
+        "report": "reports/lq4d-20261104/independent-review9.md",
+        "scope": "PARTIAL_BATCH_NOT_FULL_QUALIFICATION"
+      }
+    },
+    {
+      "id": "biru-kan-2024-am-065",
+      "printedNumber": "65",
+      "questionNumber": 65,
+      "questionText": "下の図は、蒸気熱源吸収冷凍機の冷凍サイクルを示したものである。図中のA、B、Cに対応する蒸気、冷水、冷却水の組合せとして、最も適当なものは次のうちどれか。\n組合せの順序：蒸気／冷水／冷却水。",
+      "choices": {
+        "1": "A／C／B",
+        "2": "B／A／C",
+        "3": "B／C／A",
+        "4": "C／A／B",
+        "5": "C／B／A"
+      },
+      "officialAnswer": 3,
+      "explanation": "正答は3です。熱を加える再生器、冷熱を取り出す蒸発器、放熱する吸収器・凝縮器の役割から配管を判定します。",
+      "choiceExplanations": {
+        "1": "不適当です。再生器を加熱する蒸気はBで、Aは吸収器・凝縮器を冷やす冷却水です。",
+        "2": "不適当です。蒸気Bは合いますが、冷水はC、冷却水はAです。",
+        "3": "正答です。再生器への熱入力Bが蒸気、蒸発器で冷却されるCが冷水、吸収器・凝縮器を冷やすAが冷却水です。",
+        "4": "不適当です。Cは蒸気ではなく冷水で、Aは冷却水です。",
+        "5": "不適当です。冷却水Aは合いますが、蒸気Bと冷水Cが逆です。"
+      },
+      "hasRequiredFigure": true,
+      "sourceQuestionUrl": "https://www.jahmec.or.jp/kokka/shiken_pdf/2024/2024shiken_am.pdf",
+      "sourceQuestionPage": 23,
+      "sourceAnswerUrl": "https://www.jahmec.or.jp/kokka/shiken_pdf/2024/2024kizyun_seitou.pdf",
+      "sourceAnswerPage": 1,
+      "sourceQuestionSha256": "b788546847af935f8f068f0e0d2a5d5ea9ba302fa083a590ef4ffdd548a75aef",
+      "sourceAnswerSha256": "faebc327503541422b331d5e14ff47035cec23b6ef0fd1048f9d6cd8f3b9c54c",
+      "sourceAttribution": "出典：公益財団法人日本建築衛生管理教育センター 第54回（2024年）建築物環境衛生管理技術者試験 問題65。改行・空白・句読点及び単位表記を整理。組合せ表は列名付きテキストで表現。解説は独自作成。",
+      "explanationReferenceUrls": [
+        "https://www.jsrae.or.jp/books/syohyou120210.pdf"
+      ],
+      "transcription": "Both saved OCR passes compared with official rendered PDF; required figure directly cropped from source PDF, not redrawn; labeled combination tables and formula retained",
+      "needsIndependentReview": false,
+      "publicGo": false,
+      "figures": [
+        {
+          "path": "data/qualification-staging/lq4c-biru-kan/assets/2024-am-065-figure.png",
+          "sha256": "f48ecb68ca189e464580fac00aab09e770b44eb3fd90cc1e54c3703659685863",
+          "alt": "公式原図。蒸気熱源吸収冷凍機の再生器・凝縮器・蒸発器・吸収器・熱交換器・ポンプと配管A・B・C。希溶液・濃溶液・冷媒の凡例を含む。",
+          "sourceQuestionPage": 23,
+          "sourceClipPdfPoints": [
+            202.3884033203125,
+            126.27899780273437,
+            410.7294067382812,
+            345.1625939941406
+          ],
+          "renderDpi": 300
+        }
+      ],
+      "contentReview": {
+        "status": "PASS",
+        "model": "gpt-6-astra",
+        "report": "reports/lq4d-20261104/independent-review9.md",
+        "scope": "PARTIAL_BATCH_NOT_FULL_QUALIFICATION"
+      }
+    },
+    {
+      "id": "biru-kan-2024-am-066",
+      "printedNumber": "66",
+      "questionNumber": 66,
+      "questionText": "冷凍機に関する次の記述のうち、最も不適当なものはどれか。",
+      "choices": {
+        "1": "二重効用吸収冷凍機は、蒸発プロセスを増やすことにより単効用型吸収冷凍機の成績係数を高めたものである。",
+        "2": "スクリュー圧縮機を用いた冷凍機は、スクロール圧縮機を用いたものより、冷凍容量が大きな範囲に使用される。",
+        "3": "遠心圧縮機は、容積式圧縮機と比較して、吸込み、圧縮できるガス量が大きくとれるという特徴がある。",
+        "4": "往復動圧縮機は、シリンダ内のピストンが往復運動することで、冷媒ガスを圧縮する。",
+        "5": "遠心圧縮機を用いた冷凍機は、羽根車の高速回転が可能であり、大容量になってもコンパクトにすることができる。"
+      },
+      "officialAnswer": 1,
+      "explanation": "正答は1です。二重効用で利用するのは再生器側の熱の再利用です。蒸発器の増設による説明とは異なります。",
+      "choiceExplanations": {
+        "1": "不適当です。二重効用は再生過程で熱を再利用して効率を高めるもので、蒸発器での冷却過程を単に増やすものではありません。",
+        "2": "適当です。一般にスクロールよりスクリューが大きい容量域を受け持ちます。",
+        "3": "適当です。遠心式は連続的に多量の冷媒ガスを扱う大容量用途に適します。",
+        "4": "適当です。ピストンによってシリンダ容積を変え、吸入・圧縮・吐出します。",
+        "5": "適当です。高速回転の羽根車で冷媒にエネルギーを与え、大容量でも比較的コンパクトです。"
+      },
+      "hasRequiredFigure": false,
+      "sourceQuestionUrl": "https://www.jahmec.or.jp/kokka/shiken_pdf/2024/2024shiken_am.pdf",
+      "sourceQuestionPage": 23,
+      "sourceAnswerUrl": "https://www.jahmec.or.jp/kokka/shiken_pdf/2024/2024kizyun_seitou.pdf",
+      "sourceAnswerPage": 1,
+      "sourceQuestionSha256": "b788546847af935f8f068f0e0d2a5d5ea9ba302fa083a590ef4ffdd548a75aef",
+      "sourceAnswerSha256": "faebc327503541422b331d5e14ff47035cec23b6ef0fd1048f9d6cd8f3b9c54c",
+      "sourceAttribution": "出典：公益財団法人日本建築衛生管理教育センター 第54回（2024年）建築物環境衛生管理技術者試験 問題66。改行・空白・句読点及び単位表記を整理。組合せ表は列名付きテキストで表現。解説は独自作成。",
+      "explanationReferenceUrls": [
+        "https://www.jsrae.or.jp/books/syohyou120210.pdf"
+      ],
+      "transcription": "Two saved OCR passes compared against rendered official page; line wraps, spacing and punctuation normalized; combination tables preserved as labeled text; no figures required",
+      "needsIndependentReview": false,
+      "publicGo": false,
+      "contentReview": {
+        "status": "PASS",
+        "model": "gpt-6-astra",
+        "report": "reports/lq4d-20261104/independent-review9.md",
+        "scope": "PARTIAL_BATCH_NOT_FULL_QUALIFICATION"
+      }
+    },
+    {
+      "id": "biru-kan-2024-am-067",
+      "printedNumber": "67",
+      "questionNumber": 67,
+      "questionText": "蒸気圧縮冷凍サイクルに関する次の記述のうち、最も不適当なものはどれか。",
+      "choices": {
+        "1": "圧縮機では、冷媒の比エンタルピーが上昇する。",
+        "2": "凝縮器では、周囲へ熱を放出し冷媒が液化する。",
+        "3": "蒸発器では、周囲から熱を奪い冷媒がガス化する。",
+        "4": "膨張弁では、冷媒はガス化し圧力が上昇する。",
+        "5": "冷凍サイクルでは、圧縮機、凝縮器、膨張弁、蒸発器の順に冷媒が循環する。"
+      },
+      "officialAnswer": 4,
+      "explanation": "正答は4です。膨張弁の役割は減圧です。理想化した絞り過程では比エンタルピーはほぼ一定です。",
+      "choiceExplanations": {
+        "1": "適当です。圧縮機の仕事が冷媒に加えられ、比エンタルピーが増えます。",
+        "2": "適当です。高圧冷媒が放熱し凝縮します。",
+        "3": "適当です。低圧冷媒が蒸発する際に冷却対象から熱を奪います。",
+        "4": "不適当です。膨張弁での絞り膨張では圧力が低下し、一部が気化して気液混合状態になります。",
+        "5": "適当です。高圧側で放熱、低圧側で吸熱する順序です。"
+      },
+      "hasRequiredFigure": false,
+      "sourceQuestionUrl": "https://www.jahmec.or.jp/kokka/shiken_pdf/2024/2024shiken_am.pdf",
+      "sourceQuestionPage": 24,
+      "sourceAnswerUrl": "https://www.jahmec.or.jp/kokka/shiken_pdf/2024/2024kizyun_seitou.pdf",
+      "sourceAnswerPage": 1,
+      "sourceQuestionSha256": "b788546847af935f8f068f0e0d2a5d5ea9ba302fa083a590ef4ffdd548a75aef",
+      "sourceAnswerSha256": "faebc327503541422b331d5e14ff47035cec23b6ef0fd1048f9d6cd8f3b9c54c",
+      "sourceAttribution": "出典：公益財団法人日本建築衛生管理教育センター 第54回（2024年）建築物環境衛生管理技術者試験 問題67。改行・空白・句読点及び単位表記を整理。組合せ表は列名付きテキストで表現。解説は独自作成。",
+      "explanationReferenceUrls": [],
+      "transcription": "Two saved OCR passes compared against rendered official page; line wraps, spacing and punctuation normalized; combination tables preserved as labeled text; no figures required",
+      "needsIndependentReview": false,
+      "publicGo": false,
+      "contentReview": {
+        "status": "PASS",
+        "model": "gpt-6-astra",
+        "report": "reports/lq4d-20261104/independent-review9.md",
+        "scope": "PARTIAL_BATCH_NOT_FULL_QUALIFICATION"
+      }
+    },
+    {
+      "id": "biru-kan-2024-am-068",
+      "printedNumber": "68",
+      "questionNumber": 68,
+      "questionText": "熱交換器に関する次の記述のうち、多管式熱交換器について述べているものはどれか。",
+      "choices": {
+        "1": "熱交換器の中では、設置面積や荷重が小さい。",
+        "2": "内部に封入された作動媒体が、蒸発と凝縮サイクルを形成して熱輸送する。",
+        "3": "構造的にU字管式・全固定式・遊動頭式に分類される。",
+        "4": "伝熱板の増減により伝熱面積の変更が可能である。",
+        "5": "一体成形された構造のブレージング型は、汚れやすい流体の使用には向かない。"
+      },
+      "officialAnswer": 3,
+      "explanation": "正答は3です。多数の管の内外で熱交換する多管式と、板を重ねるプレート式を区別します。",
+      "choiceExplanations": {
+        "1": "該当しません。一般にコンパクトなプレート式などの特徴です。",
+        "2": "該当しません。封入した媒体の相変化を使うヒートパイプの説明です。",
+        "3": "該当します。多管式では管束・管板等の構造によってこれらに分類します。",
+        "4": "該当しません。伝熱板を組み立てるプレート式の特徴です。",
+        "5": "該当しません。ろう付けしたプレート式の洗浄・分解に関わる特徴です。"
+      },
+      "hasRequiredFigure": false,
+      "sourceQuestionUrl": "https://www.jahmec.or.jp/kokka/shiken_pdf/2024/2024shiken_am.pdf",
+      "sourceQuestionPage": 24,
+      "sourceAnswerUrl": "https://www.jahmec.or.jp/kokka/shiken_pdf/2024/2024kizyun_seitou.pdf",
+      "sourceAnswerPage": 1,
+      "sourceQuestionSha256": "b788546847af935f8f068f0e0d2a5d5ea9ba302fa083a590ef4ffdd548a75aef",
+      "sourceAnswerSha256": "faebc327503541422b331d5e14ff47035cec23b6ef0fd1048f9d6cd8f3b9c54c",
+      "sourceAttribution": "出典：公益財団法人日本建築衛生管理教育センター 第54回（2024年）建築物環境衛生管理技術者試験 問題68。改行・空白・句読点及び単位表記を整理。組合せ表は列名付きテキストで表現。解説は独自作成。",
+      "explanationReferenceUrls": [],
+      "transcription": "Two saved OCR passes compared against rendered official page; line wraps, spacing and punctuation normalized; combination tables preserved as labeled text; no figures required",
+      "needsIndependentReview": false,
+      "publicGo": false,
+      "contentReview": {
+        "status": "PASS",
+        "model": "gpt-6-astra",
+        "report": "reports/lq4d-20261104/independent-review9.md",
+        "scope": "PARTIAL_BATCH_NOT_FULL_QUALIFICATION"
+      }
+    },
+    {
+      "id": "biru-kan-2024-am-069",
+      "printedNumber": "69",
+      "questionNumber": 69,
+      "questionText": "標準的なエアハンドリングユニットを構成する機器として、最も不適当なものは次のうちどれか。",
+      "choices": {
+        "1": "圧縮機",
+        "2": "熱交換器",
+        "3": "加湿器",
+        "4": "送風機",
+        "5": "エアフィルタ"
+      },
+      "officialAnswer": 1,
+      "explanation": "正答は1です。AHUは空気の温湿度調整・浄化・送風を行います。冷媒回路を内蔵するパッケージ機と区別します。",
+      "choiceExplanations": {
+        "1": "不適当です。標準的な冷温水式AHUに冷媒圧縮機は含めず、熱源側設備に置きます。",
+        "2": "適当です。冷温水等と空気の間で熱交換するコイルが含まれます。",
+        "3": "適当です。空気に水分を加える加湿装置を備えます。",
+        "4": "適当です。処理した空気を室へ送ります。",
+        "5": "適当です。空気中の粉じん等を捕集します。"
+      },
+      "hasRequiredFigure": false,
+      "sourceQuestionUrl": "https://www.jahmec.or.jp/kokka/shiken_pdf/2024/2024shiken_am.pdf",
+      "sourceQuestionPage": 24,
+      "sourceAnswerUrl": "https://www.jahmec.or.jp/kokka/shiken_pdf/2024/2024kizyun_seitou.pdf",
+      "sourceAnswerPage": 1,
+      "sourceQuestionSha256": "b788546847af935f8f068f0e0d2a5d5ea9ba302fa083a590ef4ffdd548a75aef",
+      "sourceAnswerSha256": "faebc327503541422b331d5e14ff47035cec23b6ef0fd1048f9d6cd8f3b9c54c",
+      "sourceAttribution": "出典：公益財団法人日本建築衛生管理教育センター 第54回（2024年）建築物環境衛生管理技術者試験 問題69。改行・空白・句読点及び単位表記を整理。組合せ表は列名付きテキストで表現。解説は独自作成。",
+      "explanationReferenceUrls": [],
+      "transcription": "Two saved OCR passes compared against rendered official page; line wraps, spacing and punctuation normalized; combination tables preserved as labeled text; no figures required",
+      "needsIndependentReview": false,
+      "publicGo": false,
+      "contentReview": {
+        "status": "PASS",
+        "model": "gpt-6-astra",
+        "report": "reports/lq4d-20261104/independent-review9.md",
+        "scope": "PARTIAL_BATCH_NOT_FULL_QUALIFICATION"
+      }
+    },
+    {
+      "id": "biru-kan-2024-am-070",
+      "printedNumber": "70",
+      "questionNumber": 70,
+      "questionText": "加湿装置の基本構造と加湿方式との組合せとして、最も不適当なものは次のうちどれか。",
+      "choices": {
+        "1": "滴下式―気化方式",
+        "2": "遠心式―気化方式",
+        "3": "超音波式―水噴霧方式",
+        "4": "電極式―蒸気方式",
+        "5": "パン型―蒸気方式"
+      },
+      "officialAnswer": 2,
+      "explanation": "正答は2です。水を蒸発させる気化、水滴を作る噴霧、加熱して蒸気を作る方式を区別します。",
+      "choiceExplanations": {
+        "1": "適当です。湿潤させた加湿材等から水を気化させます。",
+        "2": "不適当です。遠心力で水を細かい粒子にするため、水噴霧方式に分類します。",
+        "3": "適当です。超音波により水を微粒化して供給します。",
+        "4": "適当です。水の通電による発熱で蒸気を発生させます。",
+        "5": "適当です。パン内の水を加熱して蒸気を発生させる方式です。"
+      },
+      "hasRequiredFigure": false,
+      "sourceQuestionUrl": "https://www.jahmec.or.jp/kokka/shiken_pdf/2024/2024shiken_am.pdf",
+      "sourceQuestionPage": 24,
+      "sourceAnswerUrl": "https://www.jahmec.or.jp/kokka/shiken_pdf/2024/2024kizyun_seitou.pdf",
+      "sourceAnswerPage": 1,
+      "sourceQuestionSha256": "b788546847af935f8f068f0e0d2a5d5ea9ba302fa083a590ef4ffdd548a75aef",
+      "sourceAnswerSha256": "faebc327503541422b331d5e14ff47035cec23b6ef0fd1048f9d6cd8f3b9c54c",
+      "sourceAttribution": "出典：公益財団法人日本建築衛生管理教育センター 第54回（2024年）建築物環境衛生管理技術者試験 問題70。改行・空白・句読点及び単位表記を整理。組合せ表は列名付きテキストで表現。解説は独自作成。",
+      "explanationReferenceUrls": [],
+      "transcription": "Two saved OCR passes compared against rendered official page; line wraps, spacing and punctuation normalized; combination tables preserved as labeled text; no figures required",
+      "needsIndependentReview": false,
+      "publicGo": false,
+      "contentReview": {
+        "status": "PASS",
+        "model": "gpt-6-astra",
+        "report": "reports/lq4d-20261104/independent-review9.md",
+        "scope": "PARTIAL_BATCH_NOT_FULL_QUALIFICATION"
+      }
+    },
+    {
+      "id": "biru-kan-2024-am-071",
+      "printedNumber": "71",
+      "questionNumber": 71,
+      "questionText": "ダクトとその付属品に関する次の記述のうち、最も適当なものはどれか。",
+      "choices": {
+        "1": "長方形ダクト同士の接続には、差込み継手が一般に用いられる。",
+        "2": "厨房フードには、ステンレス鋼板が利用される。",
+        "3": "厨房排気ダクト用防火ダンパの温度ヒューズ溶解温度は、280℃である。",
+        "4": "丸ダクトは、スパイラルダクトに比べて、はぜにより高い強度が得られる。",
+        "5": "防火ダンパは、煙感知器と連動してダクトを閉鎖する。"
+      },
+      "officialAnswer": 2,
+      "explanation": "正答は2です。フードの材質、ダクト接合、熱と煙の検出の役割を区別します。",
+      "choiceExplanations": {
+        "1": "不適当です。長方形ダクトではフランジ接合等が一般的で、差込み継手は丸ダクトで用いられます。",
+        "2": "適当です。耐食性や清掃性等からステンレス鋼板が使われます。",
+        "3": "不適当です。厨房排気用では一般に120℃の温度ヒューズを用い、280℃という記述は適切ではありません。",
+        "4": "不適当です。らせん状のはぜで補強されるスパイラルダクトの方が一般に強度を得やすくなります。",
+        "5": "不適当です。温度上昇で閉鎖する防火ダンパと、煙感知器に連動する防煙ダンパを区別します。兼用機器もあります。"
+      },
+      "hasRequiredFigure": false,
+      "sourceQuestionUrl": "https://www.jahmec.or.jp/kokka/shiken_pdf/2024/2024shiken_am.pdf",
+      "sourceQuestionPage": 25,
+      "sourceAnswerUrl": "https://www.jahmec.or.jp/kokka/shiken_pdf/2024/2024kizyun_seitou.pdf",
+      "sourceAnswerPage": 1,
+      "sourceQuestionSha256": "b788546847af935f8f068f0e0d2a5d5ea9ba302fa083a590ef4ffdd548a75aef",
+      "sourceAnswerSha256": "faebc327503541422b331d5e14ff47035cec23b6ef0fd1048f9d6cd8f3b9c54c",
+      "sourceAttribution": "出典：公益財団法人日本建築衛生管理教育センター 第54回（2024年）建築物環境衛生管理技術者試験 問題71。改行・空白・句読点及び単位表記を整理。組合せ表は列名付きテキストで表現。解説は独自作成。",
+      "explanationReferenceUrls": [],
+      "transcription": "Two saved OCR passes compared against rendered official page; line wraps, spacing and punctuation normalized; combination tables preserved as labeled text; no figures required",
+      "needsIndependentReview": false,
+      "publicGo": false,
+      "contentReview": {
+        "status": "PASS",
+        "model": "gpt-6-astra",
+        "report": "reports/lq4d-20261104/independent-review9.md",
+        "scope": "PARTIAL_BATCH_NOT_FULL_QUALIFICATION"
+      }
+    },
+    {
+      "id": "biru-kan-2024-am-072",
+      "printedNumber": "72",
+      "questionNumber": 72,
+      "questionText": "空気調和設備に用いられる送風機の特性と送風系に関する次の文章の［ ］内に入る語句の組合せとして、最も適当なものはどれか。\n送風機の特性曲線は、グラフの横軸に［ア］をとり、縦軸に［イ］をとって示される。一方、送風系の［ウ］曲線は、同じグラフ上に、原点を通る二次曲線として示される。ここで、二つの曲線の交点は、運転点を示している。\n組合せの順序：ア／イ／ウ。",
+      "choices": {
+        "1": "圧力／風量／抵抗",
+        "2": "動力／圧力／性能",
+        "3": "動力／風量／圧力",
+        "4": "風量／動力／性能",
+        "5": "風量／圧力／抵抗"
+      },
+      "officialAnswer": 5,
+      "explanation": "正答は5です。一定の送風系では圧力損失がおおむね風量の二乗に比例するため、抵抗曲線は二次曲線となります。",
+      "choiceExplanations": {
+        "1": "不適当です。横軸と縦軸が逆です。",
+        "2": "不適当です。横軸は動力ではなく風量で、送風系側は抵抗曲線です。",
+        "3": "不適当です。横軸は風量、縦軸は圧力です。",
+        "4": "不適当です。横軸は合いますが、縦軸は圧力、ウは抵抗です。",
+        "5": "正答です。風量と圧力で送風機特性と系統抵抗を示し、その交点が実際の運転点です。"
+      },
+      "hasRequiredFigure": false,
+      "sourceQuestionUrl": "https://www.jahmec.or.jp/kokka/shiken_pdf/2024/2024shiken_am.pdf",
+      "sourceQuestionPage": 25,
+      "sourceAnswerUrl": "https://www.jahmec.or.jp/kokka/shiken_pdf/2024/2024kizyun_seitou.pdf",
+      "sourceAnswerPage": 1,
+      "sourceQuestionSha256": "b788546847af935f8f068f0e0d2a5d5ea9ba302fa083a590ef4ffdd548a75aef",
+      "sourceAnswerSha256": "faebc327503541422b331d5e14ff47035cec23b6ef0fd1048f9d6cd8f3b9c54c",
+      "sourceAttribution": "出典：公益財団法人日本建築衛生管理教育センター 第54回（2024年）建築物環境衛生管理技術者試験 問題72。改行・空白・句読点及び単位表記を整理。組合せ表は列名付きテキストで表現。解説は独自作成。",
+      "explanationReferenceUrls": [],
+      "transcription": "Two saved OCR passes compared against rendered official page; line wraps, spacing and punctuation normalized; combination tables preserved as labeled text; no figures required",
+      "needsIndependentReview": false,
+      "publicGo": false,
+      "contentReview": {
+        "status": "PASS",
+        "model": "gpt-6-astra",
+        "report": "reports/lq4d-20261104/independent-review9.md",
+        "scope": "PARTIAL_BATCH_NOT_FULL_QUALIFICATION"
+      }
+    },
+    {
+      "id": "biru-kan-2024-am-073",
+      "printedNumber": "73",
+      "questionNumber": 73,
+      "questionText": "空気浄化装置に関する次の記述のうち、最も不適当なものはどれか。",
+      "choices": {
+        "1": "空気浄化装置が除去対象とする空気中の汚染物質は、粉じんと有害ガスである。",
+        "2": "パネル型エアフィルタは、外気用又は高性能なフィルタに対するプレフィルタとして用いられる。",
+        "3": "電気集じん器は、高圧電界による荷電及び吸引・吸着によって粉じんを捕集・除去する。",
+        "4": "自動巻取り型エアフィルタのろ材には、合成繊維不織布などが使用されている。",
+        "5": "HEPAフィルタは、有害ガスを化学吸着で捕集するための専用のフィルタである。"
+      },
+      "officialAnswer": 5,
+      "explanation": "正答は5です。HEPAの粒子捕集と、活性炭等を用いるガス吸着を区別します。",
+      "choiceExplanations": {
+        "1": "適当です。粒子用とガス用など、対象に応じた装置を選びます。",
+        "2": "適当です。粗い粒子を前段で捕集し、後段の高性能フィルタを保護します。",
+        "3": "適当です。粉じんを帯電させ、電気力で集じん極等へ捕集します。",
+        "4": "適当です。ろ材を繰り出して更新する構造に適した材料が用いられます。",
+        "5": "不適当です。HEPAは高性能の粒子捕集用で、ガスの化学吸着を目的とするものではありません。"
+      },
+      "hasRequiredFigure": false,
+      "sourceQuestionUrl": "https://www.jahmec.or.jp/kokka/shiken_pdf/2024/2024shiken_am.pdf",
+      "sourceQuestionPage": 25,
+      "sourceAnswerUrl": "https://www.jahmec.or.jp/kokka/shiken_pdf/2024/2024kizyun_seitou.pdf",
+      "sourceAnswerPage": 1,
+      "sourceQuestionSha256": "b788546847af935f8f068f0e0d2a5d5ea9ba302fa083a590ef4ffdd548a75aef",
+      "sourceAnswerSha256": "faebc327503541422b331d5e14ff47035cec23b6ef0fd1048f9d6cd8f3b9c54c",
+      "sourceAttribution": "出典：公益財団法人日本建築衛生管理教育センター 第54回（2024年）建築物環境衛生管理技術者試験 問題73。改行・空白・句読点及び単位表記を整理。組合せ表は列名付きテキストで表現。解説は独自作成。",
+      "explanationReferenceUrls": [],
+      "transcription": "Two saved OCR passes compared against rendered official page; line wraps, spacing and punctuation normalized; combination tables preserved as labeled text; no figures required",
+      "needsIndependentReview": false,
+      "publicGo": false,
+      "contentReview": {
+        "status": "PASS",
+        "model": "gpt-6-astra",
+        "report": "reports/lq4d-20261104/independent-review9.md",
+        "scope": "PARTIAL_BATCH_NOT_FULL_QUALIFICATION"
+      }
+    },
+    {
+      "id": "biru-kan-2024-am-074",
+      "printedNumber": "74",
+      "questionNumber": 74,
+      "questionText": "空気調和設備のポンプに関する次の記述のうち、最も不適当なものはどれか。",
+      "choices": {
+        "1": "ダイヤフラムポンプは、薬液注入などに用いられることが多い。",
+        "2": "ターボ型ポンプは、連続的に送水でき脈動が少ないことが特徴である。",
+        "3": "渦巻きポンプは、油輸送などの粘度の高い液体の輸送用途に用いられることが多い。",
+        "4": "ポンプの急停止による水撃作用を防止するには、緩閉式逆止め弁を用いる方法がある。",
+        "5": "流体のある部分の圧力が低下し、局部的な蒸発により気泡が発生する現象をキャビテーションという。"
+      },
+      "officialAnswer": 3,
+      "explanation": "正答は3です。ターボ型と容積型で適する流量・圧力・粘度条件が異なります。",
+      "choiceExplanations": {
+        "1": "適当です。膜の変位で一定量を送り、薬液の定量注入等に使います。",
+        "2": "適当です。羽根車で連続的に流体にエネルギーを与えます。",
+        "3": "不適当です。渦巻きポンプは水等の低粘度液に適し、高粘度液には一般に歯車式などの容積式が適します。",
+        "4": "適当です。急激な流速変化を抑える弁等で水撃を低減できます。",
+        "5": "適当です。圧力が液体の蒸気圧以下になる部分で気泡が生じ、その崩壊が振動・損傷等の原因となります。"
+      },
+      "hasRequiredFigure": false,
+      "sourceQuestionUrl": "https://www.jahmec.or.jp/kokka/shiken_pdf/2024/2024shiken_am.pdf",
+      "sourceQuestionPage": 26,
+      "sourceAnswerUrl": "https://www.jahmec.or.jp/kokka/shiken_pdf/2024/2024kizyun_seitou.pdf",
+      "sourceAnswerPage": 1,
+      "sourceQuestionSha256": "b788546847af935f8f068f0e0d2a5d5ea9ba302fa083a590ef4ffdd548a75aef",
+      "sourceAnswerSha256": "faebc327503541422b331d5e14ff47035cec23b6ef0fd1048f9d6cd8f3b9c54c",
+      "sourceAttribution": "出典：公益財団法人日本建築衛生管理教育センター 第54回（2024年）建築物環境衛生管理技術者試験 問題74。改行・空白・句読点及び単位表記を整理。組合せ表は列名付きテキストで表現。解説は独自作成。",
+      "explanationReferenceUrls": [],
+      "transcription": "Two saved OCR passes compared against rendered official page; line wraps, spacing and punctuation normalized; combination tables preserved as labeled text; no figures required",
+      "needsIndependentReview": false,
+      "publicGo": false,
+      "contentReview": {
+        "status": "PASS",
+        "model": "gpt-6-astra",
+        "report": "reports/lq4d-20261104/independent-review9.md",
+        "scope": "PARTIAL_BATCH_NOT_FULL_QUALIFICATION"
+      }
+    },
+    {
+      "id": "biru-kan-2024-am-075",
+      "printedNumber": "75",
+      "questionNumber": 75,
+      "questionText": "空気調和設備の配管系における配管名称と使用区分との組合せとして、最も不適当なものは次のうちどれか。",
+      "choices": {
+        "1": "圧力配管用炭素鋼鋼管―高温水",
+        "2": "一般配管用ステンレス鋼鋼管―冷却水",
+        "3": "水道用硬質塩化ビニルライニング鋼管―冷却水",
+        "4": "配管用炭素鋼鋼管（白管）―冷温水",
+        "5": "耐熱性硬質ポリ塩化ビニル管―蒸気"
+      },
+      "officialAnswer": 5,
+      "explanation": "正答は5です。耐熱という名称だけで蒸気配管に使えると判断できません。流体温度と圧力、用途の仕様を照合します。",
+      "choiceExplanations": {
+        "1": "適当です。高温や圧力の条件に応じて選定する鋼管です。",
+        "2": "適当です。ステンレス鋼管は水系配管に使われます。",
+        "3": "適当です。内面を樹脂で被覆した管を水系に使用します。許容温度・圧力等の仕様内で使います。",
+        "4": "適当です。本問では冷温水系への白管の使用が適当な組合せとして扱われています。",
+        "5": "不適当です。耐熱性であっても蒸気配管用ではありません。樹脂管の耐熱温度・圧力の限界を超える使用はできません。"
+      },
+      "hasRequiredFigure": false,
+      "sourceQuestionUrl": "https://www.jahmec.or.jp/kokka/shiken_pdf/2024/2024shiken_am.pdf",
+      "sourceQuestionPage": 26,
+      "sourceAnswerUrl": "https://www.jahmec.or.jp/kokka/shiken_pdf/2024/2024kizyun_seitou.pdf",
+      "sourceAnswerPage": 1,
+      "sourceQuestionSha256": "b788546847af935f8f068f0e0d2a5d5ea9ba302fa083a590ef4ffdd548a75aef",
+      "sourceAnswerSha256": "faebc327503541422b331d5e14ff47035cec23b6ef0fd1048f9d6cd8f3b9c54c",
+      "sourceAttribution": "出典：公益財団法人日本建築衛生管理教育センター 第54回（2024年）建築物環境衛生管理技術者試験 問題75。改行・空白・句読点及び単位表記を整理。組合せ表は列名付きテキストで表現。解説は独自作成。",
+      "explanationReferenceUrls": [],
+      "transcription": "Two saved OCR passes compared against rendered official page; line wraps, spacing and punctuation normalized; combination tables preserved as labeled text; no figures required",
+      "needsIndependentReview": false,
+      "publicGo": false,
+      "contentReview": {
+        "status": "PASS",
+        "model": "gpt-6-astra",
+        "report": "reports/lq4d-20261104/independent-review9.md",
+        "scope": "PARTIAL_BATCH_NOT_FULL_QUALIFICATION"
+      }
+    },
+    {
+      "id": "biru-kan-2024-am-076",
+      "printedNumber": "76",
+      "questionNumber": 76,
+      "questionText": "換気設備に関する次の記述のうち、最も不適当なものはどれか。",
+      "choices": {
+        "1": "全熱交換器は、導入外気と排気の間で熱交換を行い、外気負荷軽減による省エネルギーを図る装置である。",
+        "2": "外気処理空調機は、居室に必要な導入外気に対する温湿度調整・空気浄化等の処理を専用に行う装置である。",
+        "3": "建築基準法施行令では、住宅等の居室のシックハウス対策として、機械換気設備を用いる場合の必要換気量は、換気回数で0.3回/h以上と規定されている。",
+        "4": "便所、浴室では、換気設備が単独で設置されることが多い。",
+        "5": "建築物衛生法における空気調和設備を設けている特定建築物の空気環境の管理基準では、一酸化炭素の含有率は、6ppm以下とされている。"
+      },
+      "officialAnswer": 3,
+      "explanation": "正答は3です。シックハウス対策の換気回数は居室の用途により異なります。",
+      "choiceExplanations": {
+        "1": "適当です。排気から顕熱と潜熱を回収することで外気処理の負荷を減らします。",
+        "2": "適当です。導入外気を専門に処理して室内系統へ供給します。",
+        "3": "不適当です。住宅等の居室では原則0.5回/h以上です。0.3回/hは住宅等以外の居室の原則値との取り違えです。",
+        "4": "適当です。臭気や水蒸気等を他室へ広げないよう排気を設けます。",
+        "5": "適当です。2022年4月以降の基準は6ppm以下です。"
+      },
+      "hasRequiredFigure": false,
+      "sourceQuestionUrl": "https://www.jahmec.or.jp/kokka/shiken_pdf/2024/2024shiken_am.pdf",
+      "sourceQuestionPage": 26,
+      "sourceAnswerUrl": "https://www.jahmec.or.jp/kokka/shiken_pdf/2024/2024kizyun_seitou.pdf",
+      "sourceAnswerPage": 1,
+      "sourceQuestionSha256": "b788546847af935f8f068f0e0d2a5d5ea9ba302fa083a590ef4ffdd548a75aef",
+      "sourceAnswerSha256": "faebc327503541422b331d5e14ff47035cec23b6ef0fd1048f9d6cd8f3b9c54c",
+      "sourceAttribution": "出典：公益財団法人日本建築衛生管理教育センター 第54回（2024年）建築物環境衛生管理技術者試験 問題76。改行・空白・句読点及び単位表記を整理。組合せ表は列名付きテキストで表現。解説は独自作成。",
+      "explanationReferenceUrls": [
+        "https://www.mlit.go.jp/jutakukentiku/build/jutakukentiku_house_fr_000108.html"
+      ],
+      "transcription": "Two saved OCR passes compared against rendered official page; line wraps, spacing and punctuation normalized; combination tables preserved as labeled text; no figures required",
+      "needsIndependentReview": false,
+      "publicGo": false,
+      "contentReview": {
+        "status": "PASS",
+        "model": "gpt-6-astra",
+        "report": "reports/lq4d-20261104/independent-review9.md",
+        "scope": "PARTIAL_BATCH_NOT_FULL_QUALIFICATION"
+      }
+    },
+    {
+      "id": "biru-kan-2024-am-077",
+      "printedNumber": "77",
+      "questionNumber": 77,
+      "questionText": "環境測定に関する次の記述のうち、最も不適当なものはどれか。",
+      "choices": {
+        "1": "サーミスタ温度計は、電気抵抗式温度計の一種である。",
+        "2": "相対湿度の測定には、毛髪などの伸縮を利用する方法がある。",
+        "3": "アスマン通風乾湿計は、周囲気流及び熱放射の影響を防ぐ構造となっている。",
+        "4": "ピトー管による風速測定では、ストークスの定理を用いる。",
+        "5": "換気量の測定には、トレーサガスの濃度減衰を利用する方法がある。"
+      },
+      "officialAnswer": 4,
+      "explanation": "正答は4です。ピトー管の動圧はρv²/2で、速度は圧力差の平方根に比例します。",
+      "choiceExplanations": {
+        "1": "適当です。温度により変化する半導体の電気抵抗を利用します。",
+        "2": "適当です。湿度による吸湿性材料の長さの変化を利用します。",
+        "3": "適当です。一定の通風と放射遮蔽により外的影響を抑えて測定します。",
+        "4": "不適当です。全圧と静圧の差からベルヌーイの定理を用いて速度を求めます。",
+        "5": "適当です。既知のガスの減衰を、十分な混合等の条件の下で換気回数・量に換算します。"
+      },
+      "hasRequiredFigure": false,
+      "sourceQuestionUrl": "https://www.jahmec.or.jp/kokka/shiken_pdf/2024/2024shiken_am.pdf",
+      "sourceQuestionPage": 26,
+      "sourceAnswerUrl": "https://www.jahmec.or.jp/kokka/shiken_pdf/2024/2024kizyun_seitou.pdf",
+      "sourceAnswerPage": 1,
+      "sourceQuestionSha256": "b788546847af935f8f068f0e0d2a5d5ea9ba302fa083a590ef4ffdd548a75aef",
+      "sourceAnswerSha256": "faebc327503541422b331d5e14ff47035cec23b6ef0fd1048f9d6cd8f3b9c54c",
+      "sourceAttribution": "出典：公益財団法人日本建築衛生管理教育センター 第54回（2024年）建築物環境衛生管理技術者試験 問題77。改行・空白・句読点及び単位表記を整理。組合せ表は列名付きテキストで表現。解説は独自作成。",
+      "explanationReferenceUrls": [],
+      "transcription": "Two saved OCR passes compared against rendered official page; line wraps, spacing and punctuation normalized; combination tables preserved as labeled text; no figures required",
+      "needsIndependentReview": false,
+      "publicGo": false,
+      "contentReview": {
+        "status": "PASS",
+        "model": "gpt-6-astra",
+        "report": "reports/lq4d-20261104/independent-review9.md",
+        "scope": "PARTIAL_BATCH_NOT_FULL_QUALIFICATION"
+      }
+    },
+    {
+      "id": "biru-kan-2024-am-078",
+      "printedNumber": "78",
+      "questionNumber": 78,
+      "questionText": "室内空気環境の測定に関する次の記述のうち、最も不適当なものはどれか。",
+      "choices": {
+        "1": "微生物の測定には、ATP（アデノシン三リン酸）法がある。",
+        "2": "ダニアレルゲンの測定には、酵素免疫測定法がある。",
+        "3": "オゾンの測定には、検知管法がある。",
+        "4": "ラドンガスの測定には、シンチレーションカウンタを用いる方法がある。",
+        "5": "アスベストの測定には、紫外線吸収スペクトル分析法がある。"
+      },
+      "officialAnswer": 5,
+      "explanation": "正答は5です。粒子・抗原・ガス・放射性物質ごとに測定原理が異なります。",
+      "choiceExplanations": {
+        "1": "適当です。ATP量を生物由来の汚染・清浄度等の指標として測定する方法があります。微生物種や生菌数をそのまま特定するものではありません。",
+        "2": "適当です。抗原抗体反応と酵素反応を用いてアレルゲン量を測定します。",
+        "3": "適当です。検知剤の変色等を用いて濃度を測定します。",
+        "4": "適当です。ラドン等からの放射線で生じる発光を測定する方法があります。",
+        "5": "不適当です。アスベストでは位相差顕微鏡や電子顕微鏡等を使う測定・同定が基本で、紫外線吸収スペクトルの組合せは適切ではありません。"
+      },
+      "hasRequiredFigure": false,
+      "sourceQuestionUrl": "https://www.jahmec.or.jp/kokka/shiken_pdf/2024/2024shiken_am.pdf",
+      "sourceQuestionPage": 27,
+      "sourceAnswerUrl": "https://www.jahmec.or.jp/kokka/shiken_pdf/2024/2024kizyun_seitou.pdf",
+      "sourceAnswerPage": 1,
+      "sourceQuestionSha256": "b788546847af935f8f068f0e0d2a5d5ea9ba302fa083a590ef4ffdd548a75aef",
+      "sourceAnswerSha256": "faebc327503541422b331d5e14ff47035cec23b6ef0fd1048f9d6cd8f3b9c54c",
+      "sourceAttribution": "出典：公益財団法人日本建築衛生管理教育センター 第54回（2024年）建築物環境衛生管理技術者試験 問題78。改行・空白・句読点及び単位表記を整理。組合せ表は列名付きテキストで表現。解説は独自作成。",
+      "explanationReferenceUrls": [],
+      "transcription": "Two saved OCR passes compared against rendered official page; line wraps, spacing and punctuation normalized; combination tables preserved as labeled text; no figures required",
+      "needsIndependentReview": false,
+      "publicGo": false,
+      "contentReview": {
+        "status": "PASS",
+        "model": "gpt-6-astra",
+        "report": "reports/lq4d-20261104/independent-review9.md",
+        "scope": "PARTIAL_BATCH_NOT_FULL_QUALIFICATION"
+      }
+    },
+    {
+      "id": "biru-kan-2024-am-079",
+      "printedNumber": "79",
+      "questionNumber": 79,
+      "questionText": "環境要素の測定に関する用語の組合せとして、最も不適当なものは次のうちどれか。",
+      "choices": {
+        "1": "酸素―ポーラログラフ方式",
+        "2": "窒素酸化物―溶液導電率法",
+        "3": "一酸化炭素―ガスクロマトグラフ法",
+        "4": "イオウ酸化物―紫外線蛍光法",
+        "5": "臭気―3点比較式臭袋法"
+      },
+      "officialAnswer": 2,
+      "explanation": "正答は2です。窒素酸化物の化学発光と、イオウ酸化物の紫外線蛍光・溶液導電率を区別します。",
+      "choiceExplanations": {
+        "1": "適当です。酸素の電極反応による電流を利用します。",
+        "2": "不適当です。窒素酸化物には化学発光法等を用います。溶液導電率法はイオウ酸化物等で用いられる方法です。",
+        "3": "適当です。ガス成分を分離して検出する分析法が使えます。",
+        "4": "適当です。SO₂を紫外線で励起して生じる蛍光を測定します。",
+        "5": "適当です。無臭の空気を入れた袋と臭気試料を比較して臭気を判定します。"
+      },
+      "hasRequiredFigure": false,
+      "sourceQuestionUrl": "https://www.jahmec.or.jp/kokka/shiken_pdf/2024/2024shiken_am.pdf",
+      "sourceQuestionPage": 27,
+      "sourceAnswerUrl": "https://www.jahmec.or.jp/kokka/shiken_pdf/2024/2024kizyun_seitou.pdf",
+      "sourceAnswerPage": 1,
+      "sourceQuestionSha256": "b788546847af935f8f068f0e0d2a5d5ea9ba302fa083a590ef4ffdd548a75aef",
+      "sourceAnswerSha256": "faebc327503541422b331d5e14ff47035cec23b6ef0fd1048f9d6cd8f3b9c54c",
+      "sourceAttribution": "出典：公益財団法人日本建築衛生管理教育センター 第54回（2024年）建築物環境衛生管理技術者試験 問題79。改行・空白・句読点及び単位表記を整理。組合せ表は列名付きテキストで表現。解説は独自作成。",
+      "explanationReferenceUrls": [],
+      "transcription": "Two saved OCR passes compared against rendered official page; line wraps, spacing and punctuation normalized; combination tables preserved as labeled text; no figures required",
+      "needsIndependentReview": false,
+      "publicGo": false,
+      "contentReview": {
+        "status": "PASS",
+        "model": "gpt-6-astra",
+        "report": "reports/lq4d-20261104/independent-review9.md",
+        "scope": "PARTIAL_BATCH_NOT_FULL_QUALIFICATION"
+      }
+    },
+    {
+      "id": "biru-kan-2024-am-080",
+      "printedNumber": "80",
+      "questionNumber": 80,
+      "questionText": "ホルムアルデヒド測定法に関する組合せとして、最も不適当なものは次のうちどれか。",
+      "choices": {
+        "1": "アクティブ法―DNPHカートリッジ捕集－HPLC法",
+        "2": "アクティブ法―検知管法",
+        "3": "アクティブ法―燃料電池法",
+        "4": "パッシブ法―DNPH含浸チューブ－HPLC法",
+        "5": "パッシブ法―定電位電解法"
+      },
+      "officialAnswer": 5,
+      "explanation": "正答は5です。ポンプ等で能動的に空気を取り込む方法と、自然拡散を利用する捕集を区別します。",
+      "choiceExplanations": {
+        "1": "適当です。ポンプで一定量の空気を捕集材へ通し、誘導体をHPLCで分析します。",
+        "2": "適当です。吸引した試料空気で検知管の反応を測ります。",
+        "3": "適当です。機器に試料空気を取り込み、電気化学反応で検出します。",
+        "4": "適当です。拡散により捕集材へ取り込み、誘導体を分析する方法です。",
+        "5": "不適当です。本問の定電位電解式の測定器は試料空気を吸引するアクティブ法に分類し、拡散捕集のパッシブ法ではありません。"
+      },
+      "hasRequiredFigure": false,
+      "sourceQuestionUrl": "https://www.jahmec.or.jp/kokka/shiken_pdf/2024/2024shiken_am.pdf",
+      "sourceQuestionPage": 27,
+      "sourceAnswerUrl": "https://www.jahmec.or.jp/kokka/shiken_pdf/2024/2024kizyun_seitou.pdf",
+      "sourceAnswerPage": 1,
+      "sourceQuestionSha256": "b788546847af935f8f068f0e0d2a5d5ea9ba302fa083a590ef4ffdd548a75aef",
+      "sourceAnswerSha256": "faebc327503541422b331d5e14ff47035cec23b6ef0fd1048f9d6cd8f3b9c54c",
+      "sourceAttribution": "出典：公益財団法人日本建築衛生管理教育センター 第54回（2024年）建築物環境衛生管理技術者試験 問題80。改行・空白・句読点及び単位表記を整理。組合せ表は列名付きテキストで表現。解説は独自作成。",
+      "explanationReferenceUrls": [
+        "https://www.mhlw.go.jp/content/11120000/001377581.pdf"
+      ],
+      "transcription": "Two saved OCR passes compared against rendered official page; line wraps, spacing and punctuation normalized; combination tables preserved as labeled text; no figures required",
+      "needsIndependentReview": false,
+      "publicGo": false,
+      "contentReview": {
+        "status": "PASS",
+        "model": "gpt-6-astra",
+        "report": "reports/lq4d-20261104/independent-review9.md",
+        "scope": "PARTIAL_BATCH_NOT_FULL_QUALIFICATION"
+      }
+    },
+    {
+      "id": "biru-kan-2024-am-081",
+      "printedNumber": "81",
+      "questionNumber": 81,
+      "questionText": "空気調和・換気設備に関する維持管理上の問題と考えられる原因との組合せとして、最も不適当なものは次のうちどれか。\n組合せの順序：維持管理上の問題／原因。",
+      "choices": {
+        "1": "全熱交換器からの外気量不足／熱交換エレメントの目詰まり",
+        "2": "冷却塔でのレジオネラ属菌増殖／冷却水の過剰な濃縮",
+        "3": "室内空気質の低下／ダクト内部の汚れ",
+        "4": "冬期暖房時の室内相対湿度の低下／取入外気量過少",
+        "5": "夏期冷房時の室内温度の上昇／ダンパ開度不足による送風量過少"
+      },
+      "officialAnswer": 4,
+      "explanation": "正答は4です。症状が生じる向きと原因の増減が一致するかを確認します。冬の外気導入増加は加湿負荷を増やします。",
+      "choiceExplanations": {
+        "1": "適当です。目詰まりで通風抵抗が増し、外気導入量が減ります。",
+        "2": "適当です。過度の濃縮や汚れ等は微生物の増殖・バイオフィルムの問題と関係するため、適切なブロー・清掃等が必要です。",
+        "3": "適当です。汚れが空気の汚染源となる場合があります。",
+        "4": "不適当です。冬期は乾燥した外気の取入れが多すぎること等が低湿度の原因です。外気量の過少をこの原因とするのは逆です。",
+        "5": "適当です。必要な冷風量が不足すると室内の冷却能力が不足します。"
+      },
+      "hasRequiredFigure": false,
+      "sourceQuestionUrl": "https://www.jahmec.or.jp/kokka/shiken_pdf/2024/2024shiken_am.pdf",
+      "sourceQuestionPage": 27,
+      "sourceAnswerUrl": "https://www.jahmec.or.jp/kokka/shiken_pdf/2024/2024kizyun_seitou.pdf",
+      "sourceAnswerPage": 1,
+      "sourceQuestionSha256": "b788546847af935f8f068f0e0d2a5d5ea9ba302fa083a590ef4ffdd548a75aef",
+      "sourceAnswerSha256": "faebc327503541422b331d5e14ff47035cec23b6ef0fd1048f9d6cd8f3b9c54c",
+      "sourceAttribution": "出典：公益財団法人日本建築衛生管理教育センター 第54回（2024年）建築物環境衛生管理技術者試験 問題81。改行・空白・句読点及び単位表記を整理。組合せ表は列名付きテキストで表現。解説は独自作成。",
+      "explanationReferenceUrls": [],
+      "transcription": "Two saved OCR passes compared against rendered official page; line wraps, spacing and punctuation normalized; combination tables preserved as labeled text; no figures required",
+      "needsIndependentReview": false,
+      "publicGo": false,
+      "contentReview": {
+        "status": "PASS",
+        "model": "gpt-6-astra",
+        "report": "reports/lq4d-20261104/independent-review9.md",
+        "scope": "PARTIAL_BATCH_NOT_FULL_QUALIFICATION"
+      }
+    }
+  ]
+}
