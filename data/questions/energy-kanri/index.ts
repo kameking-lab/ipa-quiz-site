@@ -1,8 +1,14 @@
 import type { Question } from "@/lib/questions/types";
-import common2025 from "./2025-common-q03.json";
-import common2026 from "./2026-common-q03.json";
-import heat2026 from "./2026-heat-q08.json";
-import electric2026 from "./2026-electric-q06.json";
+import q2025_common_q02 from "./2025-common-q02.json";
+import q2025_common_q03 from "./2025-common-q03.json";
+import q2025_electric_q06 from "./2025-electric-q06.json";
+import q2025_heat_q08 from "./2025-heat-q08.json";
+import q2025_heat_q09 from "./2025-heat-q09.json";
+import q2026_common_q02 from "./2026-common-q02.json";
+import q2026_common_q03 from "./2026-common-q03.json";
+import q2026_electric_q06 from "./2026-electric-q06.json";
+import q2026_heat_q08 from "./2026-heat-q08.json";
+import q2026_heat_q09 from "./2026-heat-q09.json";
 
 /** 公開前データ。資格コード・利用区分の本登録と全課目の完成までは演習レジストリへ接続しない。 */
 export type StagedEnergyKanriQuestion = Omit<Question, "exam" | "license"> & {
@@ -10,6 +16,6 @@ export type StagedEnergyKanriQuestion = Omit<Question, "exam" | "license"> & {
   license: "ECCJ-owner-approved";
 };
 
-/** 4原問・65解答単位。熱・電気共通課目は一度だけ保持する。 */
+/** 10原問・128公式解答欄・125演習設問。順序不問の3ペアは2肢選択に統合する。 */
 export const ENERGY_KANRI_STAGED_QUESTIONS: readonly StagedEnergyKanriQuestion[] =
-  [...common2026, ...heat2026, ...electric2026, ...common2025] as StagedEnergyKanriQuestion[];
+  [...q2025_common_q02, ...q2025_common_q03, ...q2025_electric_q06, ...q2025_heat_q08, ...q2025_heat_q09, ...q2026_common_q02, ...q2026_common_q03, ...q2026_electric_q06, ...q2026_heat_q08, ...q2026_heat_q09] as StagedEnergyKanriQuestion[];
