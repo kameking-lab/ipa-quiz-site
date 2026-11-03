@@ -1,3 +1,4 @@
+import { validateKhkKikai } from "./validate-khk-kikai";
 import { NativeBDataSchema, nativeBQuestionIssue } from "../lib/questions/native-b";
 /**
  * data/questions/ 配下の問題データを検証・品質スコア算出。
@@ -474,6 +475,7 @@ function reportFixes(questions: Question[]): void {
 // ─── Main ────────────────────────────────────────────────────────────────────
 
 const opts = parseCliOptions();
+validateKhkKikai(opts.exams);
 const questions = opts.exams.length > 0
   ? VALIDATION_QUESTIONS.filter((q) => opts.exams.includes(q.exam))
   : VALIDATION_QUESTIONS;
