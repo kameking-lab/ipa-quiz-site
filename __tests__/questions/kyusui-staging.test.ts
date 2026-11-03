@@ -33,7 +33,14 @@ describe("kyusui private staging, latest two officially published editions", () 
       expect(q.sourcePdfUrl).toContain(`file-r0${year - 2018}_gakka-0${q.qNumber <= 40 ? 1 : 2}.pdf`);
       expect(q.sourceAnswerUrl).toContain(`file-r0${year - 2018}_seitou-num.pdf`);
       expect(q.sourceAttribution).toContain(`問${q.qNumber}`);
-      expect(q.explanationCoverage).toBe("official-summary");
+      expect(q.explanationCoverage).toBe("all-choices");
+      expect(q.choiceExplanations).toHaveLength(q.choices.length);
+      for (const explanation of q.choiceExplanations) {
+        expect(explanation.trim().length).toBeGreaterThanOrEqual(20);
+        expect(explanation).not.toMatch(/^公式正答番号は[1-5]。法令・基準は/);
+      }
+      expect(q.explanationSourceUrls.length).toBeGreaterThan(0);
+      for (const url of q.explanationSourceUrls) expect(new URL(url).protocol).toBe("https:");
       if (q.scoring.kind === "single-choice") {
         for (let choice = 1; choice <= q.choices.length; choice++) {
           expect(scoreKyusuiStagedQuestion(q, choice)).toBe(choice === expectedAnswers[year][q.qNumber - 1]);
@@ -133,6 +140,25 @@ describe("kyusui private staging, latest two officially published editions", () 
     const worksheet = questions.find(q => q.year === 2026 && q.qNumber === 35)!;
     expect(worksheet.postOptionContent).toContain("【算出手順】");
     expect(worksheet.choices[3]).not.toContain("算出手順");
+  });
+
+  it("keeps ruby in originals without attaching a following choice's reading to the previous choice", () => {
+    for (const [year, number, index, ruby] of [[2026, 1, 2, "オー"], [2026, 49, 1, "ら せん"], [2025, 1, 1, "オー"]] as const) {
+      const q = questions.find(q => q.year === year && q.qNumber === number)!;
+      expect(q.originalText).toContain(ruby);
+      expect(q.choices[index]).not.toContain(ruby);
+    }
+    expect(questions.every(q => !/^問題\s*\d/.test(q.question))).toBe(true);
+  });
+
+  it("preserves all extracted body content across stems, alternatives and supporting material", () => {
+    const ruby = new Set(["おごせ", "オー", "でいねいち", "らせん", "あんきょ", "ごえん", "ぼうせいざい", "ろうえい"]);
+    const compact = (text: string) => text.replace(/\s+/g, "");
+    for (const q of questions.filter(q => q.choiceRepresentation === "text")) {
+      const original = q.originalText.split("\n").filter(line => !ruby.has(compact(line))).join("\n").trim()
+        .replace(/^問題\s*\d+\s*/, "").replace(/[⑴⑵⑶⑷⑸]/g, "");
+      expect(compact(q.question + q.choices.join("") + q.postOptionContent), q.id).toBe(compact(original));
+    }
   });
 
   it("replaces permission-pending with staging and stays outside all public question pools and navigation", () => {

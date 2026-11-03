@@ -9,11 +9,11 @@
     "session": "gakka1",
     "qNumber": 1,
     "category": "公衆衛生概論",
-    "question": "おごせ\n問題　1 平成8 年6 月、埼玉県越生町において、水道水が直接の感染経路となる集団感染が発生し、\n      約8,000 人が下痢等の症状を訴えた。この集団感染の原因であり、塩素消毒に極めて高い\n    抵抗性を持つ病原体として、次のうち、適当なものはどれか。",
+    "question": "平成8 年6 月、埼玉県越生町において、水道水が直接の感染経路となる集団感染が発生し、\n      約8,000 人が下痢等の症状を訴えた。この集団感染の原因であり、塩素消毒に極めて高い\n    抵抗性を持つ病原体として、次のうち、適当なものはどれか。",
     "choices": [
       "コレラ菌",
       "赤痢菌",
-      "クリプトスポリジウム\n\n\n\n                             オー",
+      "クリプトスポリジウム",
       "腸管出血性大腸菌O 157"
     ],
     "originalText": "おごせ\n問題　1 平成8 年6 月、埼玉県越生町において、水道水が直接の感染経路となる集団感染が発生し、\n      約8,000 人が下痢等の症状を訴えた。この集団感染の原因であり、塩素消毒に極めて高い\n    抵抗性を持つ病原体として、次のうち、適当なものはどれか。\n\n\n    ⑴ コレラ菌\n\n\n    ⑵ 赤痢菌\n\n\n    ⑶ クリプトスポリジウム\n\n\n\n                             オー\n    ⑷ 腸管出血性大腸菌O 157",
@@ -29,7 +29,17 @@
       "kind": "single-choice",
       "correctChoice": 3
     },
-    "explanationCoverage": "official-summary",
+    "explanationCoverage": "all-choices",
+    "choiceExplanations": [
+      "不適当。コレラ菌は細菌で、適切な塩素消毒が有効である。越生町の集団感染原因は塩素に強い原虫だった。",
+      "不適当。赤痢菌は塩素で不活化できる細菌であり、本事例の原因原虫ではない。",
+      "適当。クリプトスポリジウムは原虫で、感染性をもつオーシストは通常の水道の塩素消毒に強い抵抗性を示す。",
+      "不適当。O157は細菌で、通常の適切な塩素消毒が有効である。塩素に強い原虫とは区別する。"
+    ],
+    "explanationSourceUrls": [
+      "https://www.kyuukou.or.jp/shiken/file-r08/file-r08_gakka-01.pdf",
+      "https://www.kyuukou.or.jp/shiken/file-r08/file-r08_seitou-num.pdf"
+    ],
     "explanation": "公式正答番号は3。法令・基準は本試験の出題時点のものとして扱う。",
     "sourceAttribution": "出典：公益財団法人給水工事技術振興財団 令和8年度 給水装置工事主任技術者試験 学科試験1 問1（問題・正答）。原問題画像の切出しと本文抽出は過去問AIによる加工。",
     "lastUpdated": "2026-11-03"
@@ -64,7 +74,17 @@
       "kind": "single-choice",
       "correctChoice": 2
     },
-    "explanationCoverage": "official-summary",
+    "explanationCoverage": "all-choices",
+    "choiceExplanations": [
+      "不適当。分解作用は酸化だが、消毒力が強いイは次亜塩素酸で、低pHほどその割合が高い。",
+      "適当。有機物は酸化分解される。次亜塩素酸は次亜塩素酸イオンより消毒力が強く、pHが低いほど次亜塩素酸の割合が増える。",
+      "不適当。有機物の分解は還元でなく酸化であり、消毒力が強いイは次亜塩素酸である。",
+      "不適当。酸化を還元とし、次亜塩素酸の割合が増す条件を高pHとしている。正しくは酸化・低pHである。"
+    ],
+    "explanationSourceUrls": [
+      "https://www.kyuukou.or.jp/shiken/file-r08/file-r08_gakka-01.pdf",
+      "https://www.kyuukou.or.jp/shiken/file-r08/file-r08_seitou-num.pdf"
+    ],
     "explanation": "公式正答番号は2。法令・基準は本試験の出題時点のものとして扱う。",
     "sourceAttribution": "出典：公益財団法人給水工事技術振興財団 令和8年度 給水装置工事主任技術者試験 学科試験1 問2（問題・正答）。原問題画像の切出しと本文抽出は過去問AIによる加工。",
     "lastUpdated": "2026-11-03"
@@ -99,7 +119,17 @@
       "kind": "single-choice",
       "correctChoice": 1
     },
-    "explanationCoverage": "official-summary",
+    "explanationCoverage": "all-choices",
+    "choiceExplanations": [
+      "不適当。ジェオスミンと2-MIBによる代表的な障害はかび臭であり、着色とする点が誤り。",
+      "適当。金属成分は原水由来だけでなく、浄水処理薬品や配管材料からの溶出等でも混入し、着色等の障害を起こす。",
+      "適当。界面活性剤は水の表面張力を下げ、泡が発生・持続しやすくなるため、飲用上の不快感を生じる。",
+      "適当。塩化物イオンやナトリウムは塩味等に関係し、原水の性状や排水の影響を受けて混入する。"
+    ],
+    "explanationSourceUrls": [
+      "https://www.kyuukou.or.jp/shiken/file-r08/file-r08_gakka-01.pdf",
+      "https://www.kyuukou.or.jp/shiken/file-r08/file-r08_seitou-num.pdf"
+    ],
     "explanation": "公式正答番号は1。法令・基準は本試験の出題時点のものとして扱う。",
     "sourceAttribution": "出典：公益財団法人給水工事技術振興財団 令和8年度 給水装置工事主任技術者試験 学科試験1 問3（問題・正答）。原問題画像の切出しと本文抽出は過去問AIによる加工。",
     "lastUpdated": "2026-11-03"
@@ -134,7 +164,18 @@
       "kind": "single-choice",
       "correctChoice": 1
     },
-    "explanationCoverage": "official-summary",
+    "explanationCoverage": "all-choices",
+    "choiceExplanations": [
+      "適当。水道法第1条の用語は、布設及び管理、基盤の強化、低廉な水、公衆衛生の向上である。",
+      "不適当。イは施設でなく基盤、ウは安全でなく低廉、エは強化でなく向上である。",
+      "不適当。アは運転でなく管理、ウは安全でなく低廉、エは強化でなく向上である。",
+      "不適当。アは管理、イは基盤である。水道施設の運転だけでなく布設・管理と経営基盤を含む目的規定である。"
+    ],
+    "explanationSourceUrls": [
+      "https://www.kyuukou.or.jp/shiken/file-r08/file-r08_gakka-01.pdf",
+      "https://www.kyuukou.or.jp/shiken/file-r08/file-r08_seitou-num.pdf",
+      "https://laws.e-gov.go.jp/law/332AC0000000177"
+    ],
     "explanation": "公式正答番号は1。法令・基準は本試験の出題時点のものとして扱う。",
     "sourceAttribution": "出典：公益財団法人給水工事技術振興財団 令和8年度 給水装置工事主任技術者試験 学科試験1 問4（問題・正答）。原問題画像の切出しと本文抽出は過去問AIによる加工。",
     "lastUpdated": "2026-11-03"
@@ -169,7 +210,19 @@
       "kind": "single-choice",
       "correctChoice": 3
     },
-    "explanationCoverage": "official-summary",
+    "explanationCoverage": "all-choices",
+    "choiceExplanations": [
+      "適当。簡易専用水道の管理の検査は、毎年1回以上、登録検査機関等によって受ける必要がある。",
+      "適当。水槽の点検と汚染防止措置は、受水後の水質を保つための設置者の管理義務に含まれる。",
+      "不適当。異常時に検査するのは、水質基準のうち異常を認めた事項に関係する必要な項目であり、一律に全項目ではない。",
+      "適当。健康を害するおそれを知ったときは、直ちに給水停止と危険の周知を行い、利用者の摂取を防ぐ。"
+    ],
+    "explanationSourceUrls": [
+      "https://www.kyuukou.or.jp/shiken/file-r08/file-r08_gakka-01.pdf",
+      "https://www.kyuukou.or.jp/shiken/file-r08/file-r08_seitou-num.pdf",
+      "https://laws.e-gov.go.jp/law/332AC0000000177",
+      "https://laws.e-gov.go.jp/law/332M50000100045"
+    ],
     "explanation": "公式正答番号は3。法令・基準は本試験の出題時点のものとして扱う。",
     "sourceAttribution": "出典：公益財団法人給水工事技術振興財団 令和8年度 給水装置工事主任技術者試験 学科試験1 問5（問題・正答）。原問題画像の切出しと本文抽出は過去問AIによる加工。",
     "lastUpdated": "2026-11-03"
@@ -205,7 +258,19 @@
       "kind": "single-choice",
       "correctChoice": 1
     },
-    "explanationCoverage": "official-summary",
+    "explanationCoverage": "all-choices",
+    "choiceExplanations": [
+      "適当。検査計画は毎事業年度、色・濁り・消毒の残留効果は1日1回以上。通常の残留塩素下限は遊離0.1、結合0.4mg/Lである。",
+      "不適当。計画は3年ごとでなく毎事業年度であり、遊離・結合の塩素濃度も逆になっている。",
+      "不適当。毎事業年度の計画と1日1回以上の検査が必要であり、3年・週1回では足りない。",
+      "不適当。毎事業年度は正しいが、検査頻度は1日1回以上、濃度は遊離0.1・結合0.4mg/Lである。",
+      "不適当。遊離と結合の下限が逆である。遊離残留塩素の方が強い消毒作用をもち、通常下限は0.1mg/Lである。"
+    ],
+    "explanationSourceUrls": [
+      "https://www.kyuukou.or.jp/shiken/file-r08/file-r08_gakka-01.pdf",
+      "https://www.kyuukou.or.jp/shiken/file-r08/file-r08_seitou-num.pdf",
+      "https://laws.e-gov.go.jp/law/332M50000100045"
+    ],
     "explanation": "公式正答番号は1。法令・基準は本試験の出題時点のものとして扱う。",
     "sourceAttribution": "出典：公益財団法人給水工事技術振興財団 令和8年度 給水装置工事主任技術者試験 学科試験1 問6（問題・正答）。原問題画像の切出しと本文抽出は過去問AIによる加工。",
     "lastUpdated": "2026-11-03"
@@ -240,7 +305,18 @@
       "kind": "single-choice",
       "correctChoice": 2
     },
-    "explanationCoverage": "official-summary",
+    "explanationCoverage": "all-choices",
+    "choiceExplanations": [
+      "適当。水道法第13条の給水開始前の検査に係る記録には5年間の保存義務があり、後日の確認に備える。",
+      "不適当。法第18条の検査請求先は水道事業者である。指定給水装置工事事業者に法定の検査応答義務があるとする点が誤り。",
+      "適当。政令の要件に従った第三者委託が認められており、水道管理の技術業務は一定条件で外部に委託できる。",
+      "適当。料金や給水装置工事費用の負担等は供給規程に定め、需要者との供給条件を明確にする。"
+    ],
+    "explanationSourceUrls": [
+      "https://www.kyuukou.or.jp/shiken/file-r08/file-r08_gakka-01.pdf",
+      "https://www.kyuukou.or.jp/shiken/file-r08/file-r08_seitou-num.pdf",
+      "https://laws.e-gov.go.jp/law/332AC0000000177"
+    ],
     "explanation": "公式正答番号は2。法令・基準は本試験の出題時点のものとして扱う。",
     "sourceAttribution": "出典：公益財団法人給水工事技術振興財団 令和8年度 給水装置工事主任技術者試験 学科試験1 問7（問題・正答）。原問題画像の切出しと本文抽出は過去問AIによる加工。",
     "lastUpdated": "2026-11-03"
@@ -275,7 +351,18 @@
       "kind": "single-choice",
       "correctChoice": 1
     },
-    "explanationCoverage": "official-summary",
+    "explanationCoverage": "all-choices",
+    "choiceExplanations": [
+      "不適当。水道施設運営権の設定には、国土交通大臣の事前の許可が必要であり、届出だけでは足りない。",
+      "適当。この制度は地方公共団体の水道事業者が経営主体として残り、運営権を設定する場合のものである。",
+      "適当。地方公共団体が水道事業の認可を保持する仕組みであり、運営権者自身の水道事業経営認可は不要である。",
+      "適当。運営権者は施設運営等の技術業務の責任者として、水道施設運営等事業技術管理者を置く。"
+    ],
+    "explanationSourceUrls": [
+      "https://www.kyuukou.or.jp/shiken/file-r08/file-r08_gakka-01.pdf",
+      "https://www.kyuukou.or.jp/shiken/file-r08/file-r08_seitou-num.pdf",
+      "https://laws.e-gov.go.jp/law/332AC0000000177"
+    ],
     "explanation": "公式正答番号は1。法令・基準は本試験の出題時点のものとして扱う。",
     "sourceAttribution": "出典：公益財団法人給水工事技術振興財団 令和8年度 給水装置工事主任技術者試験 学科試験1 問8（問題・正答）。原問題画像の切出しと本文抽出は過去問AIによる加工。",
     "lastUpdated": "2026-11-03"
@@ -311,7 +398,19 @@
       "kind": "single-choice",
       "correctChoice": 5
     },
-    "explanationCoverage": "official-summary",
+    "explanationCoverage": "all-choices",
+    "choiceExplanations": [
+      "適当。施設台帳の作成・保管は水道技術管理者が従事し、他の従事職員を監督する技術業務に含まれる。",
+      "適当。供給水の水質検査は衛生上の中核業務であり、水道技術管理者の法定職務に含まれる。",
+      "適当。施設基準への適合検査は、水道施設の安全性を確保するための法定職務である。",
+      "適当。給水装置の構造・材質の基準適合検査も、法第19条に定める職務に含まれる。",
+      "不適当。水道事業者が自ら水道技術管理者となることは認められており、一律禁止ではない。"
+    ],
+    "explanationSourceUrls": [
+      "https://www.kyuukou.or.jp/shiken/file-r08/file-r08_gakka-01.pdf",
+      "https://www.kyuukou.or.jp/shiken/file-r08/file-r08_seitou-num.pdf",
+      "https://laws.e-gov.go.jp/law/332AC0000000177"
+    ],
     "explanation": "公式正答番号は5。法令・基準は本試験の出題時点のものとして扱う。",
     "sourceAttribution": "出典：公益財団法人給水工事技術振興財団 令和8年度 給水装置工事主任技術者試験 学科試験1 問9（問題・正答）。原問題画像の切出しと本文抽出は過去問AIによる加工。",
     "lastUpdated": "2026-11-03"
@@ -347,7 +446,19 @@
       "kind": "single-choice",
       "correctChoice": 4
     },
-    "explanationCoverage": "official-summary",
+    "explanationCoverage": "all-choices",
+    "choiceExplanations": [
+      "不適当。規定の工事範囲の終点は止水栓でなく水道メーターである。",
+      "不適当。異常を生じさせない対象は配水管等であり、適切な作業を行う技能を有する者の従事又は実地監督が求められる。",
+      "不適当。水道メーターまでの工事について、配水管等を損傷しない適切な作業を行う技能が必要である。",
+      "適当。配水管からメーターまでの工事には、配水管等に異常を生じさせず適切に作業できる技能者を従事させる等の措置が必要である。",
+      "不適当。終点は水道メーターで、従事者の要件は適切に作業できる技能である。主任技術者という資格名だけで置換できない。"
+    ],
+    "explanationSourceUrls": [
+      "https://www.kyuukou.or.jp/shiken/file-r08/file-r08_gakka-01.pdf",
+      "https://www.kyuukou.or.jp/shiken/file-r08/file-r08_seitou-num.pdf",
+      "https://laws.e-gov.go.jp/law/332M50000100045"
+    ],
     "explanation": "公式正答番号は4。法令・基準は本試験の出題時点のものとして扱う。",
     "sourceAttribution": "出典：公益財団法人給水工事技術振興財団 令和8年度 給水装置工事主任技術者試験 学科試験1 問10（問題・正答）。原問題画像の切出しと本文抽出は過去問AIによる加工。",
     "lastUpdated": "2026-11-03"
@@ -383,7 +494,18 @@
       "kind": "single-choice",
       "correctChoice": 1
     },
-    "explanationCoverage": "official-summary",
+    "explanationCoverage": "all-choices",
+    "choiceExplanations": [
+      "適当。正誤は正・正・正・誤。ア：伸縮可とう式継手は地盤変動を吸収する継手で、主にワンタッチで接合する。 イ：TS接合の硬化中に引張り・曲げを加えると接合不良になるため静置する。 ウ：二層管は管種により寸法・性状が異なるため、適合する金属継手を使う。 エ：架橋ポリエチレンは架橋構造により通常の熱可塑性管のような熱融着接合を行わず、機械式等の継手を用いる。",
+      "不適当。ウは「正」。二層管は管種により寸法・性状が異なるため、適合する金属継手を使う。",
+      "不適当。アは「正」。伸縮可とう式継手は地盤変動を吸収する継手で、主にワンタッチで接合する。 イは「正」。TS接合の硬化中に引張り・曲げを加えると接合不良になるため静置する。 エは「誤」。架橋ポリエチレンは架橋構造により通常の熱可塑性管のような熱融着接合を行わず、機械式等の継手を用いる。",
+      "不適当。アは「正」。伸縮可とう式継手は地盤変動を吸収する継手で、主にワンタッチで接合する。 ウは「正」。二層管は管種により寸法・性状が異なるため、適合する金属継手を使う。 エは「誤」。架橋ポリエチレンは架橋構造により通常の熱可塑性管のような熱融着接合を行わず、機械式等の継手を用いる。",
+      "不適当。イは「正」。TS接合の硬化中に引張り・曲げを加えると接合不良になるため静置する。 エは「誤」。架橋ポリエチレンは架橋構造により通常の熱可塑性管のような熱融着接合を行わず、機械式等の継手を用いる。"
+    ],
+    "explanationSourceUrls": [
+      "https://www.kyuukou.or.jp/shiken/file-r08/file-r08_gakka-01.pdf",
+      "https://www.kyuukou.or.jp/shiken/file-r08/file-r08_seitou-num.pdf"
+    ],
     "explanation": "公式正答番号は1。法令・基準は本試験の出題時点のものとして扱う。",
     "sourceAttribution": "出典：公益財団法人給水工事技術振興財団 令和8年度 給水装置工事主任技術者試験 学科試験1 問11（問題・正答）。原問題画像の切出しと本文抽出は過去問AIによる加工。",
     "lastUpdated": "2026-11-03"
@@ -419,7 +541,18 @@
       "kind": "single-choice",
       "correctChoice": 4
     },
-    "explanationCoverage": "official-summary",
+    "explanationCoverage": "all-choices",
+    "choiceExplanations": [
+      "適当。専用工具を管軸に直角に保ち油圧で継手を塑性変形させ、所定の水密性と抜出し抵抗を確保する。",
+      "適当。EF融着面の水分は融着不良を起こすため、十分に排水して乾燥状態で作業する。",
+      "適当。切断・ねじ加工した鋼管端面と埋設継手外面の防食が必要で、管端防食継手や外面被覆等を用いる。",
+      "不適当。ライニング鋼管に押切り式のパイプカッターを用いると内面ライニングを傷める。適切な切削式工具で直角に切断する。",
+      "適当。銅管の小口径直管部では管端を拡管する胴継ぎが可能で、25mm以下という適用範囲に留意する。"
+    ],
+    "explanationSourceUrls": [
+      "https://www.kyuukou.or.jp/shiken/file-r08/file-r08_gakka-01.pdf",
+      "https://www.kyuukou.or.jp/shiken/file-r08/file-r08_seitou-num.pdf"
+    ],
     "explanation": "公式正答番号は4。法令・基準は本試験の出題時点のものとして扱う。",
     "sourceAttribution": "出典：公益財団法人給水工事技術振興財団 令和8年度 給水装置工事主任技術者試験 学科試験1 問12（問題・正答）。原問題画像の切出しと本文抽出は過去問AIによる加工。",
     "lastUpdated": "2026-11-03"
@@ -455,7 +588,19 @@
       "kind": "single-choice",
       "correctChoice": 1
     },
-    "explanationCoverage": "official-summary",
+    "explanationCoverage": "all-choices",
+    "choiceExplanations": [
+      "適当。正誤は正・誤・正・誤。ア：他の取付口と30cm以上離すのは管の強度保持のためで、口径も使用量に適したものとする。 イ：異形管からの取出しは管の強度等に影響するため避け、直管部から分岐する。 ウ：不断水分岐後も切粉等の排出と残留塩素等の水質確認が必要である。 エ：先端角が逆で、モルタルライニング管は一般に118°、エポキシ樹脂粉体塗装管は90〜100°である。",
+      "不適当。アは「正」。他の取付口と30cm以上離すのは管の強度保持のためで、口径も使用量に適したものとする。 イは「誤」。異形管からの取出しは管の強度等に影響するため避け、直管部から分岐する。 ウは「正」。不断水分岐後も切粉等の排出と残留塩素等の水質確認が必要である。",
+      "不適当。イは「誤」。異形管からの取出しは管の強度等に影響するため避け、直管部から分岐する。 ウは「正」。不断水分岐後も切粉等の排出と残留塩素等の水質確認が必要である。",
+      "不適当。エは「誤」。先端角が逆で、モルタルライニング管は一般に118°、エポキシ樹脂粉体塗装管は90〜100°である。",
+      "不適当。アは「正」。他の取付口と30cm以上離すのは管の強度保持のためで、口径も使用量に適したものとする。 エは「誤」。先端角が逆で、モルタルライニング管は一般に118°、エポキシ樹脂粉体塗装管は90〜100°である。"
+    ],
+    "explanationSourceUrls": [
+      "https://www.kyuukou.or.jp/shiken/file-r08/file-r08_gakka-01.pdf",
+      "https://www.kyuukou.or.jp/shiken/file-r08/file-r08_seitou-num.pdf",
+      "https://www.city.sapporo.jp/suido/jigyosya/shitei/documents/5sekouhenn.pdf"
+    ],
     "explanation": "公式正答番号は1。法令・基準は本試験の出題時点のものとして扱う。",
     "sourceAttribution": "出典：公益財団法人給水工事技術振興財団 令和8年度 給水装置工事主任技術者試験 学科試験1 問13（問題・正答）。原問題画像の切出しと本文抽出は過去問AIによる加工。",
     "lastUpdated": "2026-11-03"
@@ -490,7 +635,17 @@
       "kind": "single-choice",
       "correctChoice": 4
     },
-    "explanationCoverage": "official-summary",
+    "explanationCoverage": "all-choices",
+    "choiceExplanations": [
+      "適当。ケースとカバーを偏りなく締めることで、片締めによる変形や漏水を防止する。",
+      "適当。爪と押輪はずれ・抜出しを防止する部材で、取付方向と均等な締付けが重要である。",
+      "適当。ポリエチレン管を過大な試験圧で傷めないよう0.75MPa以下とし、老朽管では管内圧に配慮する。",
+      "不適当。穿孔の送りは急がず、切削状態と送り量を確認して慎重に行う。素早い送りは管や穿孔部を傷める原因となる。"
+    ],
+    "explanationSourceUrls": [
+      "https://www.kyuukou.or.jp/shiken/file-r08/file-r08_gakka-01.pdf",
+      "https://www.kyuukou.or.jp/shiken/file-r08/file-r08_seitou-num.pdf"
+    ],
     "explanation": "公式正答番号は4。法令・基準は本試験の出題時点のものとして扱う。",
     "sourceAttribution": "出典：公益財団法人給水工事技術振興財団 令和8年度 給水装置工事主任技術者試験 学科試験1 問14（問題・正答）。原問題画像の切出しと本文抽出は過去問AIによる加工。",
     "lastUpdated": "2026-11-03"
@@ -526,7 +681,18 @@
       "kind": "single-choice",
       "correctChoice": 3
     },
-    "explanationCoverage": "official-summary",
+    "explanationCoverage": "all-choices",
+    "choiceExplanations": [
+      "不適当。ウは「正」。階ごとの止水栓により、その階の修理等を局所的な断水で行える。 エは「誤」。高水圧への対策は減圧弁等である。空気弁は管内の空気排出等を行う器具で、高水圧の抑制用ではない。",
+      "不適当。イは「正」。他の埋設物との30cm以上の離隔は、接触や修繕時の損傷を防ぐための原則である。 エは「誤」。高水圧への対策は減圧弁等である。空気弁は管内の空気排出等を行う器具で、高水圧の抑制用ではない。",
+      "適当。正誤は正・正・正・誤。ア：直線配管を基本とすると管路が明確になり、損失や漏水箇所の発見・修繕にも有利である。 イ：他の埋設物との30cm以上の離隔は、接触や修繕時の損傷を防ぐための原則である。 ウ：階ごとの止水栓により、その階の修理等を局所的な断水で行える。 エ：高水圧への対策は減圧弁等である。空気弁は管内の空気排出等を行う器具で、高水圧の抑制用ではない。",
+      "不適当。アは「正」。直線配管を基本とすると管路が明確になり、損失や漏水箇所の発見・修繕にも有利である。 エは「誤」。高水圧への対策は減圧弁等である。空気弁は管内の空気排出等を行う器具で、高水圧の抑制用ではない。",
+      "不適当。エは「誤」。高水圧への対策は減圧弁等である。空気弁は管内の空気排出等を行う器具で、高水圧の抑制用ではない。"
+    ],
+    "explanationSourceUrls": [
+      "https://www.kyuukou.or.jp/shiken/file-r08/file-r08_gakka-01.pdf",
+      "https://www.kyuukou.or.jp/shiken/file-r08/file-r08_seitou-num.pdf"
+    ],
     "explanation": "公式正答番号は3。法令・基準は本試験の出題時点のものとして扱う。",
     "sourceAttribution": "出典：公益財団法人給水工事技術振興財団 令和8年度 給水装置工事主任技術者試験 学科試験1 問15（問題・正答）。原問題画像の切出しと本文抽出は過去問AIによる加工。",
     "lastUpdated": "2026-11-03"
@@ -561,7 +727,17 @@
       "kind": "single-choice",
       "correctChoice": 2
     },
-    "explanationCoverage": "official-summary",
+    "explanationCoverage": "all-choices",
+    "choiceExplanations": [
+      "適当。メーター下流から末端までの需要者側給水装置は需要者が適切に維持管理する。",
+      "不適当。水質異常を認めたときは速やかに水道事業者へ連絡し連携して調査する。原因特定後まで報告を待つと対応が遅れる。",
+      "適当。分岐からメーターまでの管理方法は水道事業者の取扱いにも関係するため、主任技術者が必要な情報を需要者に伝える。",
+      "適当。需要者自身が異常に早く気付けるよう、漏水の確認方法や予防方法を案内することが維持管理に役立つ。"
+    ],
+    "explanationSourceUrls": [
+      "https://www.kyuukou.or.jp/shiken/file-r08/file-r08_gakka-01.pdf",
+      "https://www.kyuukou.or.jp/shiken/file-r08/file-r08_seitou-num.pdf"
+    ],
     "explanation": "公式正答番号は2。法令・基準は本試験の出題時点のものとして扱う。",
     "sourceAttribution": "出典：公益財団法人給水工事技術振興財団 令和8年度 給水装置工事主任技術者試験 学科試験1 問16（問題・正答）。原問題画像の切出しと本文抽出は過去問AIによる加工。",
     "lastUpdated": "2026-11-03"
@@ -597,7 +773,19 @@
       "kind": "single-choice",
       "correctChoice": 5
     },
-    "explanationCoverage": "official-summary",
+    "explanationCoverage": "all-choices",
+    "choiceExplanations": [
+      "不適当。アは「正」。埋設物の種別を識別できるよう、水道は青、工業用水は白など所定の識別色を用いる。 イは「正」。識別方法に追加仕様を設ける水道事業者があり、管頂への連続テープ等の仕様を確認する。 ウは「誤」。道路法令による管の明示は、道路に埋設する内径75mmを超える水管等が対象で、すべての口径に一律の義務があるわけではない。 エは「誤」。給水管の明示シートは、水道事業者の指示する仕様・位置に設置する。記述の「道路管理者の指示」を水道事業者の指示とする。",
+      "不適当。エは「誤」。給水管の明示シートは、水道事業者の指示する仕様・位置に設置する。記述の「道路管理者の指示」を水道事業者の指示とする。",
+      "不適当。イは「正」。識別方法に追加仕様を設ける水道事業者があり、管頂への連続テープ等の仕様を確認する。 ウは「誤」。道路法令による管の明示は、道路に埋設する内径75mmを超える水管等が対象で、すべての口径に一律の義務があるわけではない。",
+      "不適当。アは「正」。埋設物の種別を識別できるよう、水道は青、工業用水は白など所定の識別色を用いる。 エは「誤」。給水管の明示シートは、水道事業者の指示する仕様・位置に設置する。記述の「道路管理者の指示」を水道事業者の指示とする。",
+      "適当。正誤は正・正・誤・誤。ア：埋設物の種別を識別できるよう、水道は青、工業用水は白など所定の識別色を用いる。 イ：識別方法に追加仕様を設ける水道事業者があり、管頂への連続テープ等の仕様を確認する。 ウ：道路法令による管の明示は、道路に埋設する内径75mmを超える水管等が対象で、すべての口径に一律の義務があるわけではない。 エ：給水管の明示シートは、水道事業者の指示する仕様・位置に設置する。記述の「道路管理者の指示」を水道事業者の指示とする。"
+    ],
+    "explanationSourceUrls": [
+      "https://www.kyuukou.or.jp/shiken/file-r08/file-r08_gakka-01.pdf",
+      "https://www.kyuukou.or.jp/shiken/file-r08/file-r08_seitou-num.pdf",
+      "https://zenkanren.jp/wp-content/uploads/2023/08/20230809-2.pdf"
+    ],
     "explanation": "公式正答番号は5。法令・基準は本試験の出題時点のものとして扱う。",
     "sourceAttribution": "出典：公益財団法人給水工事技術振興財団 令和8年度 給水装置工事主任技術者試験 学科試験1 問17（問題・正答）。原問題画像の切出しと本文抽出は過去問AIによる加工。",
     "lastUpdated": "2026-11-03"
@@ -632,7 +820,17 @@
       "kind": "single-choice",
       "correctChoice": 4
     },
-    "explanationCoverage": "official-summary",
+    "explanationCoverage": "all-choices",
+    "choiceExplanations": [
+      "適当。逆流防止用具、吐水口空間、他系統との接続の有無を調べ、汚染水の流入を防ぐ。",
+      "適当。図書と現地の双方から、実際の施工が構造・材質の基準に適合することを確認する。",
+      "適当。残留塩素に加え臭気・味・色・濁りを確認し、主任技術者と水道事業者が結果を確認する。",
+      "不適当。通水は主たる用具だけで済ませず、各給水用具から放流してメーター経由と吐水・作動状態を確認する。"
+    ],
+    "explanationSourceUrls": [
+      "https://www.kyuukou.or.jp/shiken/file-r08/file-r08_gakka-01.pdf",
+      "https://www.kyuukou.or.jp/shiken/file-r08/file-r08_seitou-num.pdf"
+    ],
     "explanation": "公式正答番号は4。法令・基準は本試験の出題時点のものとして扱う。",
     "sourceAttribution": "出典：公益財団法人給水工事技術振興財団 令和8年度 給水装置工事主任技術者試験 学科試験1 問18（問題・正答）。原問題画像の切出しと本文抽出は過去問AIによる加工。",
     "lastUpdated": "2026-11-03"
@@ -668,7 +866,18 @@
       "kind": "single-choice",
       "correctChoice": 3
     },
-    "explanationCoverage": "official-summary",
+    "explanationCoverage": "all-choices",
+    "choiceExplanations": [
+      "不適当。必要なのは所定の直管部であり曲管部ではない。姿勢が自由なものは電磁式である。",
+      "不適当。原則として道路境界に近い位置とし、姿勢が自由な計量方式は電磁式である。",
+      "適当。境界に近い点検しやすい位置、器種に応じた直管部、電磁式の姿勢自由、取替断水を避けるバイパスという組合せになる。",
+      "不適当。設置位置は境界に近く、必要な管路は直管部で、取替断水対策にはメーターバイパスユニットを用いる。",
+      "不適当。複式メーターユニットとメーターバイパスユニットを混同している。取替中の通水経路確保には後者を用いる。"
+    ],
+    "explanationSourceUrls": [
+      "https://www.kyuukou.or.jp/shiken/file-r08/file-r08_gakka-01.pdf",
+      "https://www.kyuukou.or.jp/shiken/file-r08/file-r08_seitou-num.pdf"
+    ],
     "explanation": "公式正答番号は3。法令・基準は本試験の出題時点のものとして扱う。",
     "sourceAttribution": "出典：公益財団法人給水工事技術振興財団 令和8年度 給水装置工事主任技術者試験 学科試験1 問19（問題・正答）。原問題画像の切出しと本文抽出は過去問AIによる加工。",
     "lastUpdated": "2026-11-03"
@@ -704,7 +913,19 @@
       "kind": "single-choice",
       "correctChoice": 1
     },
-    "explanationCoverage": "official-summary",
+    "explanationCoverage": "all-choices",
+    "choiceExplanations": [
+      "適当。正誤は誤・正・誤・正。ア：散水栓は通常の使用で飲用に供する水に接触する用具ではなく、浸出基準の適用対象外である。 イ：冷水機は飲用水が接触するため、材料からの有害物質等の溶出を制限する浸出基準が適用される。 ウ：食器洗い機は通常飲用水を供給する用途ではないため、この浸出基準の適用対象外である。 エ：受水槽へ供給する飲用水が接触するボールタップには、浸出性能が必要である。",
+      "不適当。イは「正」。冷水機は飲用水が接触するため、材料からの有害物質等の溶出を制限する浸出基準が適用される。 ウは「誤」。食器洗い機は通常飲用水を供給する用途ではないため、この浸出基準の適用対象外である。 エは「正」。受水槽へ供給する飲用水が接触するボールタップには、浸出性能が必要である。",
+      "不適当。ウは「誤」。食器洗い機は通常飲用水を供給する用途ではないため、この浸出基準の適用対象外である。 エは「正」。受水槽へ供給する飲用水が接触するボールタップには、浸出性能が必要である。",
+      "不適当。アは「誤」。散水栓は通常の使用で飲用に供する水に接触する用具ではなく、浸出基準の適用対象外である。 ウは「誤」。食器洗い機は通常飲用水を供給する用途ではないため、この浸出基準の適用対象外である。 エは「正」。受水槽へ供給する飲用水が接触するボールタップには、浸出性能が必要である。",
+      "不適当。アは「誤」。散水栓は通常の使用で飲用に供する水に接触する用具ではなく、浸出基準の適用対象外である。"
+    ],
+    "explanationSourceUrls": [
+      "https://www.kyuukou.or.jp/shiken/file-r08/file-r08_gakka-01.pdf",
+      "https://www.kyuukou.or.jp/shiken/file-r08/file-r08_seitou-num.pdf",
+      "https://laws.e-gov.go.jp/law/409M50000100014"
+    ],
     "explanation": "公式正答番号は1。法令・基準は本試験の出題時点のものとして扱う。",
     "sourceAttribution": "出典：公益財団法人給水工事技術振興財団 令和8年度 給水装置工事主任技術者試験 学科試験1 問20（問題・正答）。原問題画像の切出しと本文抽出は過去問AIによる加工。",
     "lastUpdated": "2026-11-03"
@@ -740,7 +961,19 @@
       "kind": "single-choice",
       "correctChoice": 2
     },
-    "explanationCoverage": "official-summary",
+    "explanationCoverage": "all-choices",
+    "choiceExplanations": [
+      "不適当。ウは「誤」。規定の熱交換器の加熱用水路は、接合箇所の制限に加え、1.75MPaの静水圧を1分間加える性能が必要である。",
+      "適当。正誤は誤・誤・誤・誤。ア：規定の加圧装置は、固定の1.75MPaでなく、その装置の最大吐出圧力で1分間の試験を行う。 イ：最終止水機構の流出側にある大気圧式バキュームブレーカ等は、耐圧性能基準の対象外である。 ウ：規定の熱交換器の加熱用水路は、接合箇所の制限に加え、1.75MPaの静水圧を1分間加える性能が必要である。 エ：水圧でパッキンを圧縮する構造では低圧時の密着性も確認するため、20kPa・1分間の試験も必要である。",
+      "不適当。アは「誤」。規定の加圧装置は、固定の1.75MPaでなく、その装置の最大吐出圧力で1分間の試験を行う。 エは「誤」。水圧でパッキンを圧縮する構造では低圧時の密着性も確認するため、20kPa・1分間の試験も必要である。",
+      "不適当。エは「誤」。水圧でパッキンを圧縮する構造では低圧時の密着性も確認するため、20kPa・1分間の試験も必要である。",
+      "不適当。アは「誤」。規定の加圧装置は、固定の1.75MPaでなく、その装置の最大吐出圧力で1分間の試験を行う。 イは「誤」。最終止水機構の流出側にある大気圧式バキュームブレーカ等は、耐圧性能基準の対象外である。 エは「誤」。水圧でパッキンを圧縮する構造では低圧時の密着性も確認するため、20kPa・1分間の試験も必要である。"
+    ],
+    "explanationSourceUrls": [
+      "https://www.kyuukou.or.jp/shiken/file-r08/file-r08_gakka-01.pdf",
+      "https://www.kyuukou.or.jp/shiken/file-r08/file-r08_seitou-num.pdf",
+      "https://laws.e-gov.go.jp/law/409M50000100014"
+    ],
     "explanation": "公式正答番号は2。法令・基準は本試験の出題時点のものとして扱う。",
     "sourceAttribution": "出典：公益財団法人給水工事技術振興財団 令和8年度 給水装置工事主任技術者試験 学科試験1 問21（問題・正答）。原問題画像の切出しと本文抽出は過去問AIによる加工。",
     "lastUpdated": "2026-11-03"
@@ -775,7 +1008,17 @@
       "kind": "single-choice",
       "correctChoice": 3
     },
-    "explanationCoverage": "official-summary",
+    "explanationCoverage": "all-choices",
+    "choiceExplanations": [
+      "不適当。ウは「正」。接着接合は接着剤の硬化と強度発現を待ってから加圧し、接合面の抜け等を防ぐ。 エは「誤」。止水栓・分水栓の耐圧性能は弁の開状態における性能であり、閉状態での止水性能と区別する。",
+      "不適当。アは「正」。布設後の試験圧・時間を過大にすると管や器具を損傷するため、施工条件に適したものとする。 イは「誤」。記述のような加圧後の膨張による圧力低下に注意する代表はポリエチレン管で、波状ステンレス鋼管とする点が誤り。",
+      "適当。正誤は正・誤・正・誤。ア：布設後の試験圧・時間を過大にすると管や器具を損傷するため、施工条件に適したものとする。 イ：記述のような加圧後の膨張による圧力低下に注意する代表はポリエチレン管で、波状ステンレス鋼管とする点が誤り。 ウ：接着接合は接着剤の硬化と強度発現を待ってから加圧し、接合面の抜け等を防ぐ。 エ：止水栓・分水栓の耐圧性能は弁の開状態における性能であり、閉状態での止水性能と区別する。",
+      "不適当。アは「正」。布設後の試験圧・時間を過大にすると管や器具を損傷するため、施工条件に適したものとする。 イは「誤」。記述のような加圧後の膨張による圧力低下に注意する代表はポリエチレン管で、波状ステンレス鋼管とする点が誤り。 ウは「正」。接着接合は接着剤の硬化と強度発現を待ってから加圧し、接合面の抜け等を防ぐ。 エは「誤」。止水栓・分水栓の耐圧性能は弁の開状態における性能であり、閉状態での止水性能と区別する。"
+    ],
+    "explanationSourceUrls": [
+      "https://www.kyuukou.or.jp/shiken/file-r08/file-r08_gakka-01.pdf",
+      "https://www.kyuukou.or.jp/shiken/file-r08/file-r08_seitou-num.pdf"
+    ],
     "explanation": "公式正答番号は3。法令・基準は本試験の出題時点のものとして扱う。",
     "sourceAttribution": "出典：公益財団法人給水工事技術振興財団 令和8年度 給水装置工事主任技術者試験 学科試験1 問22（問題・正答）。原問題画像の切出しと本文抽出は過去問AIによる加工。",
     "lastUpdated": "2026-11-03"
@@ -811,7 +1054,19 @@
       "kind": "single-choice",
       "correctChoice": 5
     },
-    "explanationCoverage": "official-summary",
+    "explanationCoverage": "all-choices",
+    "choiceExplanations": [
+      "適当。流れの急停止による運動量変化が圧力波となって管路を伝わる現象が水撃作用である。",
+      "適当。過大な圧力変動は管や用具を破損させるため、水撃限界性能によりこれを抑制する。",
+      "適当。規定の試験条件で急閉止した際の上昇圧力を1.5MPa以下とする性能を確認する。",
+      "適当。短時間に閉止するレバー水栓・ボールタップ・電磁弁・元止め湯沸器等は水撃を生じるおそれがある。",
+      "不適当。水撃限界性能を満たす器具の使用だけでなく、用具近接部への水撃防止器設置等による対策も認められる。"
+    ],
+    "explanationSourceUrls": [
+      "https://www.kyuukou.or.jp/shiken/file-r08/file-r08_gakka-01.pdf",
+      "https://www.kyuukou.or.jp/shiken/file-r08/file-r08_seitou-num.pdf",
+      "https://laws.e-gov.go.jp/law/409M50000100014"
+    ],
     "explanation": "公式正答番号は5。法令・基準は本試験の出題時点のものとして扱う。",
     "sourceAttribution": "出典：公益財団法人給水工事技術振興財団 令和8年度 給水装置工事主任技術者試験 学科試験1 問23（問題・正答）。原問題画像の切出しと本文抽出は過去問AIによる加工。",
     "lastUpdated": "2026-11-03"
@@ -846,7 +1101,17 @@
       "kind": "single-choice",
       "correctChoice": 2
     },
-    "explanationCoverage": "official-summary",
+    "explanationCoverage": "all-choices",
+    "choiceExplanations": [
+      "適当。行き止まり部に排水機構を設け、停滞水を排出できるようにすれば残留塩素低下等の水質劣化を防ぎやすい。",
+      "不適当。有毒薬品等の汚染源から給水管を離すことが基本であり、汚染源を通したままさや管のみで済ませるのは不適切である。",
+      "適当。長期滞留水を適時排出・更新し、最初の滞留水は飲用に用いないことが衛生管理上必要である。",
+      "適当。有機溶剤等は樹脂管を透過して管内水を汚染するおそれがあり、農薬等に含まれる溶剤にも注意する。"
+    ],
+    "explanationSourceUrls": [
+      "https://www.kyuukou.or.jp/shiken/file-r08/file-r08_gakka-01.pdf",
+      "https://www.kyuukou.or.jp/shiken/file-r08/file-r08_seitou-num.pdf"
+    ],
     "explanation": "公式正答番号は2。法令・基準は本試験の出題時点のものとして扱う。",
     "sourceAttribution": "出典：公益財団法人給水工事技術振興財団 令和8年度 給水装置工事主任技術者試験 学科試験1 問24（問題・正答）。原問題画像の切出しと本文抽出は過去問AIによる加工。",
     "lastUpdated": "2026-11-03"
@@ -882,7 +1147,19 @@
       "kind": "single-choice",
       "correctChoice": 1
     },
-    "explanationCoverage": "official-summary",
+    "explanationCoverage": "all-choices",
+    "choiceExplanations": [
+      "適当。正誤は正・誤・誤・正。ア：受水槽以下の設備も給水装置と異なる系統であり、直結すると汚染水が配水管へ逆流する危険がある。 イ：仮設でも異系統との直接連結は禁止であり、逆止弁を付ければ許されるものではない。 ウ：異系統との直接連結は届出で許されるものではなく、クロスコネクションとして禁止される。 エ：十分な吐水口空間を確保した水槽への給水は水理的に切り離され、井戸水系統との直接連結にならない。",
+      "不適当。アは「正」。受水槽以下の設備も給水装置と異なる系統であり、直結すると汚染水が配水管へ逆流する危険がある。 イは「誤」。仮設でも異系統との直接連結は禁止であり、逆止弁を付ければ許されるものではない。 ウは「誤」。異系統との直接連結は届出で許されるものではなく、クロスコネクションとして禁止される。",
+      "不適当。アは「正」。受水槽以下の設備も給水装置と異なる系統であり、直結すると汚染水が配水管へ逆流する危険がある。 ウは「誤」。異系統との直接連結は届出で許されるものではなく、クロスコネクションとして禁止される。 エは「正」。十分な吐水口空間を確保した水槽への給水は水理的に切り離され、井戸水系統との直接連結にならない。",
+      "不適当。イは「誤」。仮設でも異系統との直接連結は禁止であり、逆止弁を付ければ許されるものではない。",
+      "不適当。エは「正」。十分な吐水口空間を確保した水槽への給水は水理的に切り離され、井戸水系統との直接連結にならない。"
+    ],
+    "explanationSourceUrls": [
+      "https://www.kyuukou.or.jp/shiken/file-r08/file-r08_gakka-01.pdf",
+      "https://www.kyuukou.or.jp/shiken/file-r08/file-r08_seitou-num.pdf",
+      "https://laws.e-gov.go.jp/law/409M50000100014"
+    ],
     "explanation": "公式正答番号は1。法令・基準は本試験の出題時点のものとして扱う。",
     "sourceAttribution": "出典：公益財団法人給水工事技術振興財団 令和8年度 給水装置工事主任技術者試験 学科試験1 問25（問題・正答）。原問題画像の切出しと本文抽出は過去問AIによる加工。",
     "lastUpdated": "2026-11-03"
@@ -917,7 +1194,17 @@
       "kind": "single-choice",
       "correctChoice": 4
     },
-    "explanationCoverage": "official-summary",
+    "explanationCoverage": "all-choices",
+    "choiceExplanations": [
+      "不適当。電食は電流の流出部で生じ、異種環境による腐食はマクロセル腐食、コンクリート接触系では土壌側が侵食される。",
+      "不適当。異種環境腐食はマクロセルであり、鉄とステンレスでは電位の低い鉄の側が侵食される。",
+      "不適当。電流の流出部で金属が溶出する。鉄とステンレスでは鉄、コンクリート／土壌系では土壌側が侵食される。",
+      "適当。流出部が陽極となり、異種環境ではマクロセルが形成される。異種金属接触では鉄、コンクリート／土壌系では土壌側が陽極となる。"
+    ],
+    "explanationSourceUrls": [
+      "https://www.kyuukou.or.jp/shiken/file-r08/file-r08_gakka-01.pdf",
+      "https://www.kyuukou.or.jp/shiken/file-r08/file-r08_seitou-num.pdf"
+    ],
     "explanation": "公式正答番号は4。法令・基準は本試験の出題時点のものとして扱う。",
     "sourceAttribution": "出典：公益財団法人給水工事技術振興財団 令和8年度 給水装置工事主任技術者試験 学科試験1 問26（問題・正答）。原問題画像の切出しと本文抽出は過去問AIによる加工。",
     "lastUpdated": "2026-11-03"
@@ -952,7 +1239,18 @@
       "kind": "single-choice",
       "correctChoice": 1
     },
-    "explanationCoverage": "official-summary",
+    "explanationCoverage": "all-choices",
+    "choiceExplanations": [
+      "適当。正誤は正・正・誤・誤。ア：逆止弁のシール面に異物が挟まると弁が密着できず、逆流を止められなくなる。 イ：吐水口空間が不足すると負圧時のサイホン作用で水槽内の水が引き込まれるおそれがある。 ウ：浴槽への給水では50mm以上の吐水口空間が必要で、30mmでは不足する。 エ：波立ちや薬品等の使用がある水槽では200mm以上の吐水口空間が必要で、150mmでは不足する。",
+      "不適当。アは「正」。逆止弁のシール面に異物が挟まると弁が密着できず、逆流を止められなくなる。 ウは「誤」。浴槽への給水では50mm以上の吐水口空間が必要で、30mmでは不足する。",
+      "不適当。イは「正」。吐水口空間が不足すると負圧時のサイホン作用で水槽内の水が引き込まれるおそれがある。 ウは「誤」。浴槽への給水では50mm以上の吐水口空間が必要で、30mmでは不足する。 エは「誤」。波立ちや薬品等の使用がある水槽では200mm以上の吐水口空間が必要で、150mmでは不足する。",
+      "不適当。アは「正」。逆止弁のシール面に異物が挟まると弁が密着できず、逆流を止められなくなる。 エは「誤」。波立ちや薬品等の使用がある水槽では200mm以上の吐水口空間が必要で、150mmでは不足する。"
+    ],
+    "explanationSourceUrls": [
+      "https://www.kyuukou.or.jp/shiken/file-r08/file-r08_gakka-01.pdf",
+      "https://www.kyuukou.or.jp/shiken/file-r08/file-r08_seitou-num.pdf",
+      "https://laws.e-gov.go.jp/law/409M50000100014"
+    ],
     "explanation": "公式正答番号は1。法令・基準は本試験の出題時点のものとして扱う。",
     "sourceAttribution": "出典：公益財団法人給水工事技術振興財団 令和8年度 給水装置工事主任技術者試験 学科試験1 問27（問題・正答）。原問題画像の切出しと本文抽出は過去問AIによる加工。",
     "lastUpdated": "2026-11-03"
@@ -987,7 +1285,18 @@
       "kind": "single-choice",
       "correctChoice": 4
     },
-    "explanationCoverage": "official-summary",
+    "explanationCoverage": "all-choices",
+    "choiceExplanations": [
+      "不適当。呼び径25mmの場合はA・Bとも50mm以上が必要で、20mmでは側壁や越流面との間隔が不足する。",
+      "不適当。呼び径と同じ25mmでは足りず、本図の25mm管ではA・Bとも50mm以上を確保する。",
+      "不適当。呼び径25mmは最小50mmの区分であり、40mmでは足りない。",
+      "適当。給水管呼び径25mmでは、図の吐水口空間Aと側壁との距離Bをそれぞれ50mm以上とする。"
+    ],
+    "explanationSourceUrls": [
+      "https://www.kyuukou.or.jp/shiken/file-r08/file-r08_gakka-01.pdf",
+      "https://www.kyuukou.or.jp/shiken/file-r08/file-r08_seitou-num.pdf",
+      "https://laws.e-gov.go.jp/law/409M50000100014"
+    ],
     "explanation": "公式正答番号は4。法令・基準は本試験の出題時点のものとして扱う。",
     "sourceAttribution": "出典：公益財団法人給水工事技術振興財団 令和8年度 給水装置工事主任技術者試験 学科試験1 問28（問題・正答）。原問題画像の切出しと本文抽出は過去問AIによる加工。",
     "lastUpdated": "2026-11-03"
@@ -1023,7 +1332,18 @@
       "kind": "single-choice",
       "correctChoice": 2
     },
-    "explanationCoverage": "official-summary",
+    "explanationCoverage": "all-choices",
+    "choiceExplanations": [
+      "不適当。アは「誤」。水抜き用給水用具は原則としてメーターの下流側に設置し、需要者側配管の水を抜く。 イは「正」。排水口を凍結深度より深くして、排水部自体が凍結しないようにする。 ウは「正」。浸透ます等で排水を容易にし、抜いた水が排水口付近に滞留しないようにする。 エは「誤」。鳥居やU字の配管には残水しやすいため、自然に排水できる勾配のある配管とする。",
+      "適当。正誤は誤・正・正・誤。ア：水抜き用給水用具は原則としてメーターの下流側に設置し、需要者側配管の水を抜く。 イ：排水口を凍結深度より深くして、排水部自体が凍結しないようにする。 ウ：浸透ます等で排水を容易にし、抜いた水が排水口付近に滞留しないようにする。 エ：鳥居やU字の配管には残水しやすいため、自然に排水できる勾配のある配管とする。",
+      "不適当。エは「誤」。鳥居やU字の配管には残水しやすいため、自然に排水できる勾配のある配管とする。",
+      "不適当。アは「誤」。水抜き用給水用具は原則としてメーターの下流側に設置し、需要者側配管の水を抜く。 イは「正」。排水口を凍結深度より深くして、排水部自体が凍結しないようにする。 ウは「正」。浸透ます等で排水を容易にし、抜いた水が排水口付近に滞留しないようにする。",
+      "不適当。アは「誤」。水抜き用給水用具は原則としてメーターの下流側に設置し、需要者側配管の水を抜く。 ウは「正」。浸透ます等で排水を容易にし、抜いた水が排水口付近に滞留しないようにする。"
+    ],
+    "explanationSourceUrls": [
+      "https://www.kyuukou.or.jp/shiken/file-r08/file-r08_gakka-01.pdf",
+      "https://www.kyuukou.or.jp/shiken/file-r08/file-r08_seitou-num.pdf"
+    ],
     "explanation": "公式正答番号は2。法令・基準は本試験の出題時点のものとして扱う。",
     "sourceAttribution": "出典：公益財団法人給水工事技術振興財団 令和8年度 給水装置工事主任技術者試験 学科試験1 問29（問題・正答）。原問題画像の切出しと本文抽出は過去問AIによる加工。",
     "lastUpdated": "2026-11-03"
@@ -1059,7 +1379,19 @@
       "kind": "single-choice",
       "correctChoice": 5
     },
-    "explanationCoverage": "official-summary",
+    "explanationCoverage": "all-choices",
+    "choiceExplanations": [
+      "適当。高さ・水量・用途・維持管理によって必要な圧力、貯留、安全性が異なるので、これらを総合して方式を選ぶ。",
+      "適当。配水管の圧力をそのまま利用する直圧式と、不足分を直結ポンプで補う増圧式に分かれる。",
+      "適当。受水槽を省くことにより水槽内の衛生管理の課題が減り、配水圧の利用や設置空間の節約も期待できる。",
+      "適当。建物の用途や階層により、直結系統と受水槽系統を分けて併用する方式である。",
+      "不適当。受水槽容量は計画1日使用水量等を基に定める。同時使用水量は主に直結系統等の口径決定に用いる。過大な受水流量が近隣圧力を下げる点自体は正しい。"
+    ],
+    "explanationSourceUrls": [
+      "https://www.kyuukou.or.jp/shiken/file-r08/file-r08_gakka-01.pdf",
+      "https://www.kyuukou.or.jp/shiken/file-r08/file-r08_seitou-num.pdf",
+      "https://www.mlit.go.jp/mizukokudo/watersupply/content/001856600.pdf"
+    ],
     "explanation": "公式正答番号は5。法令・基準は本試験の出題時点のものとして扱う。",
     "sourceAttribution": "出典：公益財団法人給水工事技術振興財団 令和8年度 給水装置工事主任技術者試験 学科試験1 問30（問題・正答）。原問題画像の切出しと本文抽出は過去問AIによる加工。",
     "lastUpdated": "2026-11-03"
@@ -1094,7 +1426,18 @@
       "kind": "single-choice",
       "correctChoice": 4
     },
-    "explanationCoverage": "official-summary",
+    "explanationCoverage": "all-choices",
+    "choiceExplanations": [
+      "適当。高低差が大きいと下階で過大水圧になるため、概ね10階程度ごとなど適切な圧力区分を設ける。",
+      "適当。有毒薬品等による汚染水が配水管に逆流しないよう、受水槽で配水管と水理的に切り離す。",
+      "適当。受水槽から使用量に応じてポンプを制御し、必要な圧力・流量を直接各所へ送る方式である。",
+      "不適当。配水圧が高い場合に問題となるのは流量の過大であり、過小ではない。許容流量超過はメーターを傷める。"
+    ],
+    "explanationSourceUrls": [
+      "https://www.kyuukou.or.jp/shiken/file-r08/file-r08_gakka-01.pdf",
+      "https://www.kyuukou.or.jp/shiken/file-r08/file-r08_seitou-num.pdf",
+      "https://www.mlit.go.jp/mizukokudo/watersupply/content/001856600.pdf"
+    ],
     "explanation": "公式正答番号は4。法令・基準は本試験の出題時点のものとして扱う。",
     "sourceAttribution": "出典：公益財団法人給水工事技術振興財団 令和8年度 給水装置工事主任技術者試験 学科試験1 問31（問題・正答）。原問題画像の切出しと本文抽出は過去問AIによる加工。",
     "lastUpdated": "2026-11-03"
@@ -1129,7 +1472,18 @@
       "kind": "single-choice",
       "correctChoice": 3
     },
-    "explanationCoverage": "official-summary",
+    "explanationCoverage": "all-choices",
+    "choiceExplanations": [
+      "適当。設計では主要な管摩擦・メーター・用具の損失を合計し、影響の小さい損失は必要に応じて省略できる。",
+      "適当。用具の局部損失を同じ口径の直管の長さに置き換え、管摩擦と合わせて計算するための指標である。",
+      "不適当。標準的な使い分けが逆で、50mm以下はウエストン公式、75mm以上はヘーゼン・ウィリアムス公式を用いる。",
+      "適当。用具固有の圧力損失は流量との関係図から求め、標準図にない製品は製造者資料等を用いる。"
+    ],
+    "explanationSourceUrls": [
+      "https://www.kyuukou.or.jp/shiken/file-r08/file-r08_gakka-01.pdf",
+      "https://www.kyuukou.or.jp/shiken/file-r08/file-r08_seitou-num.pdf",
+      "https://www.mlit.go.jp/mizukokudo/watersupply/content/001856600.pdf"
+    ],
     "explanation": "公式正答番号は3。法令・基準は本試験の出題時点のものとして扱う。",
     "sourceAttribution": "出典：公益財団法人給水工事技術振興財団 令和8年度 給水装置工事主任技術者試験 学科試験1 問32（問題・正答）。原問題画像の切出しと本文抽出は過去問AIによる加工。",
     "lastUpdated": "2026-11-03"
@@ -1166,7 +1520,18 @@
       "kind": "single-choice",
       "correctChoice": 5
     },
-    "explanationCoverage": "official-summary",
+    "explanationCoverage": "all-choices",
+    "choiceExplanations": [
+      "不適当。1事務所の負荷単位は10+5+2+3+4=24で、8事務所では192となる。192を洗浄弁の多い場合の曲線①に当てると約340L/minで、70では過小である。",
+      "不適当。24×8=192単位を曲線①で読み取る必要がある。140L/minは8事務所全体の計算結果に達していない。",
+      "不適当。負荷単位合計192を曲線①に当てる。洗浄タンクが多い場合の曲線②等と取り違えると小さくなるが、本問の洗浄弁では約340L/minである。",
+      "不適当。全体の192単位について指定の曲線①を読み取ると約340L/minとなり、280L/minでは少ない。",
+      "適当。1事務所24単位×8=192単位。大便器洗浄弁を使うため曲線①を選び、192単位に対応する流量は約340L/minである。"
+    ],
+    "explanationSourceUrls": [
+      "https://www.kyuukou.or.jp/shiken/file-r08/file-r08_gakka-01.pdf",
+      "https://www.kyuukou.or.jp/shiken/file-r08/file-r08_seitou-num.pdf"
+    ],
     "explanation": "公式正答番号は5。法令・基準は本試験の出題時点のものとして扱う。",
     "sourceAttribution": "出典：公益財団法人給水工事技術振興財団 令和8年度 給水装置工事主任技術者試験 学科試験1 問33（問題・正答）。原問題画像の切出しと本文抽出は過去問AIによる加工。",
     "lastUpdated": "2026-11-03"
@@ -1203,7 +1568,18 @@
       "kind": "single-choice",
       "correctChoice": 4
     },
-    "explanationCoverage": "official-summary",
+    "explanationCoverage": "all-choices",
+    "choiceExplanations": [
+      "不適当。余裕水頭は配水水頭30mから標高差3mと図から求める管・用具の損失約11mを引いた約16mであり、7mでは損失を過大に見込んでいる。",
+      "不適当。36L/minは0.6L/sに換算する。図2〜4で損失を求め、30mから標高差3mと損失を差し引くと約16mとなり、10mではない。",
+      "不適当。図の水平長さだけでなく立上りも管長に含める一方、標高差は圧力水頭から別に差し引く。正しく集計した余裕水頭は約16mである。",
+      "適当。流量0.6L/s、管長5+1+12+2=20mとして図2の摩擦損失、図3の分水栓・甲形止水栓・給水栓、図4のメーター損失を合算する。合計は約11mで、余裕は30−(1+2)−11≒16mとなる。",
+      "不適当。30−損失約11=19mとすると立上りの高低差3mを差し引き忘れる。B点の圧力として残るのは約16mである。"
+    ],
+    "explanationSourceUrls": [
+      "https://www.kyuukou.or.jp/shiken/file-r08/file-r08_gakka-01.pdf",
+      "https://www.kyuukou.or.jp/shiken/file-r08/file-r08_seitou-num.pdf"
+    ],
     "explanation": "公式正答番号は4。法令・基準は本試験の出題時点のものとして扱う。",
     "sourceAttribution": "出典：公益財団法人給水工事技術振興財団 令和8年度 給水装置工事主任技術者試験 学科試験1 問34（問題・正答）。原問題画像の切出しと本文抽出は過去問AIによる加工。",
     "lastUpdated": "2026-11-03"
@@ -1240,7 +1616,17 @@
       "kind": "single-choice",
       "correctChoice": 3
     },
-    "explanationCoverage": "official-summary",
+    "explanationCoverage": "all-choices",
+    "choiceExplanations": [
+      "不適当。表3から求める2階の所要水頭は5.8m、1階は4.3mであり、4.0・2.8ではない。圧力をPaからMPaへ換算する係数も10^-6である。",
+      "不適当。MPaへの換算係数10^-6は正しいが、2階5.8m・1階4.3mとなるため、分岐点Kでの水頭と全所要水頭10.7mが不適切である。",
+      "適当。各区間は動水勾配×延長/1000に高低差と用具損失を加える。表3で5.8m、表4・5の大きい方にJ〜Kを加えて4.3m。大きい5.8に2.4+1.5+1.8+0.8を加え12.3mとなる。12.3×1000×9.8×10^-6≒0.121MPaで0.2MPa未満である。",
+      "不適当。2階5.8mは正しいが、1階は7.0でなく4.3mである。全所要水頭は12.3mとなり、MPaへの換算係数は10^-3でなく10^-6である。"
+    ],
+    "explanationSourceUrls": [
+      "https://www.kyuukou.or.jp/shiken/file-r08/file-r08_gakka-01.pdf",
+      "https://www.kyuukou.or.jp/shiken/file-r08/file-r08_seitou-num.pdf"
+    ],
     "explanation": "公式正答番号は3。法令・基準は本試験の出題時点のものとして扱う。",
     "sourceAttribution": "出典：公益財団法人給水工事技術振興財団 令和8年度 給水装置工事主任技術者試験 学科試験1 問35（問題・正答）。原問題画像の切出しと本文抽出は過去問AIによる加工。",
     "lastUpdated": "2026-11-03"
@@ -1276,7 +1662,19 @@
       "kind": "single-choice",
       "correctChoice": 2
     },
-    "explanationCoverage": "official-summary",
+    "explanationCoverage": "all-choices",
+    "choiceExplanations": [
+      "不適当。ウは「正」。他者の給水装置から承諾を得て分岐した場合も、需要者ごとに独立した給水装置として扱う。",
+      "適当。正誤は誤・正・正・誤。ア：撤去も給水装置の変更に含まれる工事であり、給水装置工事の対象となる。 イ：給水装置工事は現場の配管作業だけでなく調査・計画・施工・検査の過程を含む。 ウ：他者の給水装置から承諾を得て分岐した場合も、需要者ごとに独立した給水装置として扱う。 エ：工場内で給水用具等の製品を組み立てる製造工程は給水装置工事に当たらない。",
+      "不適当。アは「誤」。撤去も給水装置の変更に含まれる工事であり、給水装置工事の対象となる。 ウは「正」。他者の給水装置から承諾を得て分岐した場合も、需要者ごとに独立した給水装置として扱う。 エは「誤」。工場内で給水用具等の製品を組み立てる製造工程は給水装置工事に当たらない。",
+      "不適当。イは「正」。給水装置工事は現場の配管作業だけでなく調査・計画・施工・検査の過程を含む。",
+      "不適当。アは「誤」。撤去も給水装置の変更に含まれる工事であり、給水装置工事の対象となる。 イは「正」。給水装置工事は現場の配管作業だけでなく調査・計画・施工・検査の過程を含む。 ウは「正」。他者の給水装置から承諾を得て分岐した場合も、需要者ごとに独立した給水装置として扱う。 エは「誤」。工場内で給水用具等の製品を組み立てる製造工程は給水装置工事に当たらない。"
+    ],
+    "explanationSourceUrls": [
+      "https://www.kyuukou.or.jp/shiken/file-r08/file-r08_gakka-01.pdf",
+      "https://www.kyuukou.or.jp/shiken/file-r08/file-r08_seitou-num.pdf",
+      "https://laws.e-gov.go.jp/law/332AC0000000177"
+    ],
     "explanation": "公式正答番号は2。法令・基準は本試験の出題時点のものとして扱う。",
     "sourceAttribution": "出典：公益財団法人給水工事技術振興財団 令和8年度 給水装置工事主任技術者試験 学科試験1 問36（問題・正答）。原問題画像の切出しと本文抽出は過去問AIによる加工。",
     "lastUpdated": "2026-11-03"
@@ -1312,7 +1710,19 @@
       "kind": "single-choice",
       "correctChoice": 3
     },
-    "explanationCoverage": "official-summary",
+    "explanationCoverage": "all-choices",
+    "choiceExplanations": [
+      "不適当。アは「正」。技術的問題の記録を蓄積すると、再発防止や以後の施工技術の改善に活用できる。 イは「誤」。施行規則で工事記録の保存期間は3年間であり、5年間ではない。 ウは「誤」。主任技術者の指導監督の下で他の従業員が記録を作成してもよく、主任技術者だけの専属作業ではない。 エは「正」。法定記録事項を満たせば様式や媒体は固定されず、電子記録等を活用できる。",
+      "不適当。アは「正」。技術的問題の記録を蓄積すると、再発防止や以後の施工技術の改善に活用できる。 イは「誤」。施行規則で工事記録の保存期間は3年間であり、5年間ではない。",
+      "適当。正誤は正・誤・誤・正。ア：技術的問題の記録を蓄積すると、再発防止や以後の施工技術の改善に活用できる。 イ：施行規則で工事記録の保存期間は3年間であり、5年間ではない。 ウ：主任技術者の指導監督の下で他の従業員が記録を作成してもよく、主任技術者だけの専属作業ではない。 エ：法定記録事項を満たせば様式や媒体は固定されず、電子記録等を活用できる。",
+      "不適当。ウは「誤」。主任技術者の指導監督の下で他の従業員が記録を作成してもよく、主任技術者だけの専属作業ではない。 エは「正」。法定記録事項を満たせば様式や媒体は固定されず、電子記録等を活用できる。",
+      "不適当。イは「誤」。施行規則で工事記録の保存期間は3年間であり、5年間ではない。 ウは「誤」。主任技術者の指導監督の下で他の従業員が記録を作成してもよく、主任技術者だけの専属作業ではない。 エは「正」。法定記録事項を満たせば様式や媒体は固定されず、電子記録等を活用できる。"
+    ],
+    "explanationSourceUrls": [
+      "https://www.kyuukou.or.jp/shiken/file-r08/file-r08_gakka-01.pdf",
+      "https://www.kyuukou.or.jp/shiken/file-r08/file-r08_seitou-num.pdf",
+      "https://laws.e-gov.go.jp/law/332M50000100045"
+    ],
     "explanation": "公式正答番号は3。法令・基準は本試験の出題時点のものとして扱う。",
     "sourceAttribution": "出典：公益財団法人給水工事技術振興財団 令和8年度 給水装置工事主任技術者試験 学科試験1 問37（問題・正答）。原問題画像の切出しと本文抽出は過去問AIによる加工。",
     "lastUpdated": "2026-11-03"
@@ -1347,7 +1757,19 @@
       "kind": "single-choice",
       "correctChoice": 2
     },
-    "explanationCoverage": "official-summary",
+    "explanationCoverage": "all-choices",
+    "choiceExplanations": [
+      "不適当。アは「正」。配水管の布設位置の確認は、分岐工事前に行う水道事業者との法定連絡調整事項である。 イは「誤」。工法・工期等の法定連絡調整は、配水管からメーターまでの工事について定められる。下流から給水栓までとする点が違う。 ウは「正」。軽微な変更を除く工事の完了連絡も、主任技術者が担う水道事業者との連絡調整である。 エは「正」。構造・材質の基準適合を確認することは主任技術者の法定職務である。",
+      "適当。正誤は正・誤・正・正。ア：配水管の布設位置の確認は、分岐工事前に行う水道事業者との法定連絡調整事項である。 イ：工法・工期等の法定連絡調整は、配水管からメーターまでの工事について定められる。下流から給水栓までとする点が違う。 ウ：軽微な変更を除く工事の完了連絡も、主任技術者が担う水道事業者との連絡調整である。 エ：構造・材質の基準適合を確認することは主任技術者の法定職務である。",
+      "不適当。アは「正」。配水管の布設位置の確認は、分岐工事前に行う水道事業者との法定連絡調整事項である。 イは「誤」。工法・工期等の法定連絡調整は、配水管からメーターまでの工事について定められる。下流から給水栓までとする点が違う。 エは「正」。構造・材質の基準適合を確認することは主任技術者の法定職務である。",
+      "不適当。ウは「正」。軽微な変更を除く工事の完了連絡も、主任技術者が担う水道事業者との連絡調整である。"
+    ],
+    "explanationSourceUrls": [
+      "https://www.kyuukou.or.jp/shiken/file-r08/file-r08_gakka-01.pdf",
+      "https://www.kyuukou.or.jp/shiken/file-r08/file-r08_seitou-num.pdf",
+      "https://laws.e-gov.go.jp/law/332AC0000000177",
+      "https://laws.e-gov.go.jp/law/332M50000100045"
+    ],
     "explanation": "公式正答番号は2。法令・基準は本試験の出題時点のものとして扱う。",
     "sourceAttribution": "出典：公益財団法人給水工事技術振興財団 令和8年度 給水装置工事主任技術者試験 学科試験1 問38（問題・正答）。原問題画像の切出しと本文抽出は過去問AIによる加工。",
     "lastUpdated": "2026-11-03"
@@ -1383,7 +1805,19 @@
       "kind": "single-choice",
       "correctChoice": 3
     },
-    "explanationCoverage": "official-summary",
+    "explanationCoverage": "all-choices",
+    "choiceExplanations": [
+      "不適当。イは「正」。配水管の接続・道路部工事では水道施設損傷や汚染が他の需要者にも及ぶため、主任技術者の施工指導が必要である。 エは「誤」。工程ごとの確認を適切に指導監督する責任はあるが、すべての確認作業を本人だけで行うことは要求されない。",
+      "不適当。アは「正」。事前調査と施工計画により条件を把握し、工程・品質・安全を管理する必要がある。 イは「正」。配水管の接続・道路部工事では水道施設損傷や汚染が他の需要者にも及ぶため、主任技術者の施工指導が必要である。 エは「誤」。工程ごとの確認を適切に指導監督する責任はあるが、すべての確認作業を本人だけで行うことは要求されない。",
+      "適当。正誤は正・正・正・誤。ア：事前調査と施工計画により条件を把握し、工程・品質・安全を管理する必要がある。 イ：配水管の接続・道路部工事では水道施設損傷や汚染が他の需要者にも及ぶため、主任技術者の施工指導が必要である。 ウ：単体の用具性能だけでなく、逆流・侵食・凍結等を防ぐ給水装置全体の施工基準を満たす必要がある。 エ：工程ごとの確認を適切に指導監督する責任はあるが、すべての確認作業を本人だけで行うことは要求されない。",
+      "不適当。アは「正」。事前調査と施工計画により条件を把握し、工程・品質・安全を管理する必要がある。 ウは「正」。単体の用具性能だけでなく、逆流・侵食・凍結等を防ぐ給水装置全体の施工基準を満たす必要がある。 エは「誤」。工程ごとの確認を適切に指導監督する責任はあるが、すべての確認作業を本人だけで行うことは要求されない。",
+      "不適当。ウは「正」。単体の用具性能だけでなく、逆流・侵食・凍結等を防ぐ給水装置全体の施工基準を満たす必要がある。"
+    ],
+    "explanationSourceUrls": [
+      "https://www.kyuukou.or.jp/shiken/file-r08/file-r08_gakka-01.pdf",
+      "https://www.kyuukou.or.jp/shiken/file-r08/file-r08_seitou-num.pdf",
+      "https://laws.e-gov.go.jp/law/409M50000100014"
+    ],
     "explanation": "公式正答番号は3。法令・基準は本試験の出題時点のものとして扱う。",
     "sourceAttribution": "出典：公益財団法人給水工事技術振興財団 令和8年度 給水装置工事主任技術者試験 学科試験1 問39（問題・正答）。原問題画像の切出しと本文抽出は過去問AIによる加工。",
     "lastUpdated": "2026-11-03"
@@ -1419,7 +1853,21 @@
       "kind": "single-choice",
       "correctChoice": 4
     },
-    "explanationCoverage": "official-summary",
+    "explanationCoverage": "all-choices",
+    "choiceExplanations": [
+      "不適当。性能基準は耐圧・浸出・水撃限界・逆流防止・負圧破壊・耐寒・耐久の7項目で、5項目ではない。",
+      "不適当。飲用の給水栓に必要な基本性能は耐圧性能・浸出性能・水撃限界性能であり、耐久性能とする点が違う。構造や設置条件によって追加の基準適用も確認する。",
+      "不適当。JIS適合だけですべての製品が自動的に性能基準適合になるわけではなく、当該規格と性能基準の対応を確認する必要がある。",
+      "適当。国土交通省や第三者認証機関が適合情報を提供し、主任技術者は製品の基準適合確認に利用できる。",
+      "不適当。性能基準に適合しない製品は、施主の承諾を得ても使用できない。適合品を選定する必要がある。"
+    ],
+    "explanationSourceUrls": [
+      "https://www.kyuukou.or.jp/shiken/file-r08/file-r08_gakka-01.pdf",
+      "https://www.kyuukou.or.jp/shiken/file-r08/file-r08_seitou-num.pdf",
+      "https://laws.e-gov.go.jp/law/409M50000100014",
+      "https://www.city.kagoshima.lg.jp/suido/soumu/kyuhaisui/gesuido/nyusatsu/jigyosha/documents/kyusuizenpen.pdf",
+      "https://www.mlit.go.jp/mizukokudo/watersupply/content/001856590.pdf"
+    ],
     "explanation": "公式正答番号は4。法令・基準は本試験の出題時点のものとして扱う。",
     "sourceAttribution": "出典：公益財団法人給水工事技術振興財団 令和8年度 給水装置工事主任技術者試験 学科試験1 問40（問題・正答）。原問題画像の切出しと本文抽出は過去問AIによる加工。",
     "lastUpdated": "2026-11-03"
@@ -1454,7 +1902,17 @@
       "kind": "single-choice",
       "correctChoice": 3
     },
-    "explanationCoverage": "official-summary",
+    "explanationCoverage": "all-choices",
+    "choiceExplanations": [
+      "不適当。SGP-VDは内外面に樹脂による防食を施した管であり、管全体に必ず追加被覆を要するとするのは過大である。接合部等の防食は別途適切に行う。",
+      "不適当。銅管は遊離炭酸の多い水では腐食しやすい。耐食性の一般的な利点から、あらゆる水質に適すると判断できない。",
+      "適当。硬質PVCは絶縁性が高く電食を受けにくく、樹脂管の中では比較的高い引張降伏強さをもつ。",
+      "不適当。異形管にもエポキシ樹脂粉体塗装等の内面防食があり、モルタルライニングだけではない。"
+    ],
+    "explanationSourceUrls": [
+      "https://www.kyuukou.or.jp/shiken/file-r08/file-r08_gakka-02.pdf",
+      "https://www.kyuukou.or.jp/shiken/file-r08/file-r08_seitou-num.pdf"
+    ],
     "explanation": "公式正答番号は3。法令・基準は本試験の出題時点のものとして扱う。",
     "sourceAttribution": "出典：公益財団法人給水工事技術振興財団 令和8年度 給水装置工事主任技術者試験 学科試験2 問41（問題・正答）。原問題画像の切出しと本文抽出は過去問AIによる加工。",
     "lastUpdated": "2026-11-03"
@@ -1489,7 +1947,17 @@
       "kind": "single-choice",
       "correctChoice": 2
     },
-    "explanationCoverage": "official-summary",
+    "explanationCoverage": "all-choices",
+    "choiceExplanations": [
+      "不適当。イは「誤」。ステンレス鋼管は通常の鋼管より耐食性に優れる。劣るとする点が逆である。 ウは「正」。PVC管は耐食性に優れるが紫外線劣化や温度変化による伸縮に注意して施工する。 エは「正」。架橋により耐熱性等を高めつつ柔軟性をもち、平滑な内面によりスケールや流体抵抗が少ない。",
+      "適当。正誤は正・誤・正・正。ア：球状黒鉛組織により普通鋳鉄より靭性・耐衝撃性が高く、50mm以上の給水管にも使われる。 イ：ステンレス鋼管は通常の鋼管より耐食性に優れる。劣るとする点が逆である。 ウ：PVC管は耐食性に優れるが紫外線劣化や温度変化による伸縮に注意して施工する。 エ：架橋により耐熱性等を高めつつ柔軟性をもち、平滑な内面によりスケールや流体抵抗が少ない。",
+      "不適当。アは「正」。球状黒鉛組織により普通鋳鉄より靭性・耐衝撃性が高く、50mm以上の給水管にも使われる。 ウは「正」。PVC管は耐食性に優れるが紫外線劣化や温度変化による伸縮に注意して施工する。",
+      "不適当。アは「正」。球状黒鉛組織により普通鋳鉄より靭性・耐衝撃性が高く、50mm以上の給水管にも使われる。 イは「誤」。ステンレス鋼管は通常の鋼管より耐食性に優れる。劣るとする点が逆である。 エは「正」。架橋により耐熱性等を高めつつ柔軟性をもち、平滑な内面によりスケールや流体抵抗が少ない。"
+    ],
+    "explanationSourceUrls": [
+      "https://www.kyuukou.or.jp/shiken/file-r08/file-r08_gakka-02.pdf",
+      "https://www.kyuukou.or.jp/shiken/file-r08/file-r08_seitou-num.pdf"
+    ],
     "explanation": "公式正答番号は2。法令・基準は本試験の出題時点のものとして扱う。",
     "sourceAttribution": "出典：公益財団法人給水工事技術振興財団 令和8年度 給水装置工事主任技術者試験 学科試験2 問42（問題・正答）。原問題画像の切出しと本文抽出は過去問AIによる加工。",
     "lastUpdated": "2026-11-03"
@@ -1524,7 +1992,20 @@
       "kind": "single-choice",
       "correctChoice": 1
     },
-    "explanationCoverage": "official-summary",
+    "explanationCoverage": "all-choices",
+    "choiceExplanations": [
+      "適当。正誤は正・誤・正・誤。ア：波状部を曲げて配管できるため、屈曲部で必要な継手を減らせる。 イ：厳しい地盤変動等がある埋設箇所では伸縮可とう式等を用いる。プレス式をこの用途の継手とするのは不適当である。 ウ：波状部の変形が地盤変位等を吸収し、器具や固定部・継手へ集中する負荷を小さくする。 エ：本問は、地中埋設配管では耐食性を考慮してB（SUS316）を選ぶ標準的な施工の区分と解釈する。八戸圏域水道企業団の規程第15条も地中等ではBを指定する。一方、協会の規格概要はAにも地中用途を認め、八戸の施工方法基準はAの埋設時に防食テープ等を求める。Aの使用を全面的に禁止する意味ではない。実施工では土壌・防食条件と水道事業者の指定を確認する。",
+      "不適当。アは「正」。波状部を曲げて配管できるため、屈曲部で必要な継手を減らせる。 イは「誤」。厳しい地盤変動等がある埋設箇所では伸縮可とう式等を用いる。プレス式をこの用途の継手とするのは不適当である。",
+      "不適当。イは「誤」。厳しい地盤変動等がある埋設箇所では伸縮可とう式等を用いる。プレス式をこの用途の継手とするのは不適当である。 ウは「正」。波状部の変形が地盤変位等を吸収し、器具や固定部・継手へ集中する負荷を小さくする。 エは「誤」。本問は、地中埋設配管では耐食性を考慮してB（SUS316）を選ぶ標準的な施工の区分と解釈する。八戸圏域水道企業団の規程第15条も地中等ではBを指定する。一方、協会の規格概要はAにも地中用途を認め、八戸の施工方法基準はAの埋設時に防食テープ等を求める。Aの使用を全面的に禁止する意味ではない。実施工では土壌・防食条件と水道事業者の指定を確認する。",
+      "不適当。アは「正」。波状部を曲げて配管できるため、屈曲部で必要な継手を減らせる。 エは「誤」。本問は、地中埋設配管では耐食性を考慮してB（SUS316）を選ぶ標準的な施工の区分と解釈する。八戸圏域水道企業団の規程第15条も地中等ではBを指定する。一方、協会の規格概要はAにも地中用途を認め、八戸の施工方法基準はAの埋設時に防食テープ等を求める。Aの使用を全面的に禁止する意味ではない。実施工では土壌・防食条件と水道事業者の指定を確認する。"
+    ],
+    "explanationSourceUrls": [
+      "https://www.kyuukou.or.jp/shiken/file-r08/file-r08_gakka-02.pdf",
+      "https://www.kyuukou.or.jp/shiken/file-r08/file-r08_seitou-num.pdf",
+      "https://www.jssa.gr.jp/greenpipe/specs/overview/水道用ｽﾃﾝﾚｽ鋼鋼管",
+      "https://www.water-supply.hachinohe.aomori.jp/about/annai/reikishuu/reiki_honbun/x909RG00000079.html",
+      "https://www.water-supply.hachinohe.aomori.jp/jigyousha/kyuusui/docs/r7_kyusosekohouhou-kijun.pdf"
+    ],
     "explanation": "公式正答番号は1。法令・基準は本試験の出題時点のものとして扱う。",
     "sourceAttribution": "出典：公益財団法人給水工事技術振興財団 令和8年度 給水装置工事主任技術者試験 学科試験2 問43（問題・正答）。原問題画像の切出しと本文抽出は過去問AIによる加工。",
     "lastUpdated": "2026-11-03"
@@ -1539,7 +2020,7 @@
     "session": "gakka2",
     "qNumber": 44,
     "category": "給水装置の概要",
-    "question": "ポリエチレン管に関する次の記述の     内に入る語句及び数値の組み合わせのうち、\n    適当なものはどれか。\n\n\n    ① 水道用ポリエチレン二層管の継手には、リング、パッキンが継手に一体に組付けられて\n     おり、管を挿入するだけの  ア  がある。\n\n\n    ② 水道配水用ポリエチレン管は、高密度ポリエチレン樹脂（PE100）を主材料とした口径\n      イ  mm 以上の管で、耐久性、耐食性、衛生性に優れる。\n\n\n    ③ 水道給水用ポリエチレン管は、管の柔軟性に加え、  ウ  により管と継手が一体化\n                                                            でい ねい ち\n     し、地震、地盤変動等に適応できる。また、災害現場や泥濘地においても施工可能なメカ\n     ニカル継手もあり、軽量で取扱いが容易である。\n\n\n    ④ 架橋ポリエチレン管は、その特性から、集合住宅や戸建住宅の屋内の給水・給湯配管に\n     おいて採用されているヘッダー工法や  エ  工法、さや管ヘッダー工法において使用\n     されている。\n\n\n          ア     イ    ウ     エ",
+    "question": "ポリエチレン管に関する次の記述の     内に入る語句及び数値の組み合わせのうち、\n    適当なものはどれか。\n\n\n    ① 水道用ポリエチレン二層管の継手には、リング、パッキンが継手に一体に組付けられて\n     おり、管を挿入するだけの  ア  がある。\n\n\n    ② 水道配水用ポリエチレン管は、高密度ポリエチレン樹脂（PE100）を主材料とした口径\n      イ  mm 以上の管で、耐久性、耐食性、衛生性に優れる。\n\n\n    ③ 水道給水用ポリエチレン管は、管の柔軟性に加え、  ウ  により管と継手が一体化\n     し、地震、地盤変動等に適応できる。また、災害現場や泥濘地においても施工可能なメカ\n     ニカル継手もあり、軽量で取扱いが容易である。\n\n\n    ④ 架橋ポリエチレン管は、その特性から、集合住宅や戸建住宅の屋内の給水・給湯配管に\n     おいて採用されているヘッダー工法や  エ  工法、さや管ヘッダー工法において使用\n     されている。\n\n\n          ア     イ    ウ     エ",
     "choices": [
       "ワンタッチ型     50   電気融着   先分岐",
       "コア一体型       75   熱融着    不断水",
@@ -1559,7 +2040,17 @@
       "kind": "single-choice",
       "correctChoice": 1
     },
-    "explanationCoverage": "official-summary",
+    "explanationCoverage": "all-choices",
+    "choiceExplanations": [
+      "適当。挿入だけで接合するのはワンタッチ型、PE100配水管は口径50mm以上、給水用PE管の一体化は電気融着で、架橋PE管は先分岐工法にも使う。",
+      "不適当。挿入接合の特徴はワンタッチ型、配水用は50mm以上、給水用の融着は電気融着であり、架橋PE管の屋内配管方式は先分岐等である。",
+      "不適当。ワンタッチ型・電気融着は正しいが、配水用は75でなく50mm以上。架橋PE管の屋内工法は不断水でなく先分岐等である。",
+      "不適当。50mm以上と先分岐は正しいが、挿入のみの継手はワンタッチ型で、給水用PE管の接合は電気融着である。"
+    ],
+    "explanationSourceUrls": [
+      "https://www.kyuukou.or.jp/shiken/file-r08/file-r08_gakka-02.pdf",
+      "https://www.kyuukou.or.jp/shiken/file-r08/file-r08_seitou-num.pdf"
+    ],
     "explanation": "公式正答番号は1。法令・基準は本試験の出題時点のものとして扱う。",
     "sourceAttribution": "出典：公益財団法人給水工事技術振興財団 令和8年度 給水装置工事主任技術者試験 学科試験2 問44（問題・正答）。原問題画像の切出しと本文抽出は過去問AIによる加工。",
     "lastUpdated": "2026-11-03"
@@ -1595,7 +2086,18 @@
       "kind": "single-choice",
       "correctChoice": 5
     },
-    "explanationCoverage": "official-summary",
+    "explanationCoverage": "all-choices",
+    "choiceExplanations": [
+      "不適当。ボール止水栓は45°でなく90°回転で開閉する。甲型止水栓と玉形弁はいずれも流路が曲がるため損失が大きい。",
+      "不適当。開閉角は90°、甲型の損失は大きく、大便器洗浄弁には25mm以上の配管が必要である。",
+      "不適当。ボール止水栓の90°と配管25mmは正しいが、甲型止水栓も玉形弁も損失水頭は大きい。",
+      "不適当。大便器洗浄弁は瞬時に多量の水を使うため25mm以上が必要で、玉形弁の損失も大きい。",
+      "適当。ボール弁は1/4回転の90°で開閉する。落としこまの甲型とS字流路の玉形弁は損失が大きく、洗浄弁配管は25mm以上とする。"
+    ],
+    "explanationSourceUrls": [
+      "https://www.kyuukou.or.jp/shiken/file-r08/file-r08_gakka-02.pdf",
+      "https://www.kyuukou.or.jp/shiken/file-r08/file-r08_seitou-num.pdf"
+    ],
     "explanation": "公式正答番号は5。法令・基準は本試験の出題時点のものとして扱う。",
     "sourceAttribution": "出典：公益財団法人給水工事技術振興財団 令和8年度 給水装置工事主任技術者試験 学科試験2 問45（問題・正答）。原問題画像の切出しと本文抽出は過去問AIによる加工。",
     "lastUpdated": "2026-11-03"
@@ -1630,7 +2132,17 @@
       "kind": "single-choice",
       "correctChoice": 3
     },
-    "explanationCoverage": "official-summary",
+    "explanationCoverage": "all-choices",
+    "choiceExplanations": [
+      "適当。自動販売機は電磁弁等で受水し、貯留した水を用途に応じて加熱・冷却等の加工機構へ送る。",
+      "適当。冷却した飲用水を押しボタン等の操作で吐出する構造であり、飲用水に接する器具として扱う。",
+      "不適当。封入空気の圧縮性等を使って圧力変動を吸収する器具であり、空気を自動排出して緩衝するものではない。",
+      "適当。通常の通水で貯水を更新し、非常時には天井型は重力、床下型は加圧で水を取り出す。"
+    ],
+    "explanationSourceUrls": [
+      "https://www.kyuukou.or.jp/shiken/file-r08/file-r08_gakka-02.pdf",
+      "https://www.kyuukou.or.jp/shiken/file-r08/file-r08_seitou-num.pdf"
+    ],
     "explanation": "公式正答番号は3。法令・基準は本試験の出題時点のものとして扱う。",
     "sourceAttribution": "出典：公益財団法人給水工事技術振興財団 令和8年度 給水装置工事主任技術者試験 学科試験2 問46（問題・正答）。原問題画像の切出しと本文抽出は過去問AIによる加工。",
     "lastUpdated": "2026-11-03"
@@ -1666,7 +2178,18 @@
       "kind": "single-choice",
       "correctChoice": 2
     },
-    "explanationCoverage": "official-summary",
+    "explanationCoverage": "all-choices",
+    "choiceExplanations": [
+      "不適当。個別に性能検査できる二つの独立逆止弁は二重式逆流防止器であり、ヒンジ回転するのはリフト式でなくスイング式である。",
+      "適当。独立逆止弁とテストコックは二重式、ヒンジ支点で開閉するのはスイング式、中間通気口は中間室大気開放型、水抜き時の空気導入は吸気弁である。",
+      "不適当。アは二重式逆流防止器、ウは中間室大気開放型である。減圧式は圧力差に応じた逃し弁を備える方式で、記述と異なる。",
+      "不適当。ヒンジで回転する逆止弁はスイング式で、ウは中間室大気開放型、水抜き時の空気導入は吸気弁である。",
+      "不適当。エは空気を導入して排水を助ける吸気弁である。空気弁の管内空気排出等の機能と区別する。"
+    ],
+    "explanationSourceUrls": [
+      "https://www.kyuukou.or.jp/shiken/file-r08/file-r08_gakka-02.pdf",
+      "https://www.kyuukou.or.jp/shiken/file-r08/file-r08_seitou-num.pdf"
+    ],
     "explanation": "公式正答番号は2。法令・基準は本試験の出題時点のものとして扱う。",
     "sourceAttribution": "出典：公益財団法人給水工事技術振興財団 令和8年度 給水装置工事主任技術者試験 学科試験2 問47（問題・正答）。原問題画像の切出しと本文抽出は過去問AIによる加工。",
     "lastUpdated": "2026-11-03"
@@ -1702,7 +2225,18 @@
       "kind": "single-choice",
       "correctChoice": 4
     },
-    "explanationCoverage": "official-summary",
+    "explanationCoverage": "all-choices",
+    "choiceExplanations": [
+      "適当。直結ポンプの起動・停止の影響が配水管や近隣に波及しないよう、圧力変動や脈動を抑える必要がある。",
+      "適当。逆流防止装置は通常吸込側に設け、確保できる吸込圧力等の条件に応じて吐出側への設置を検討する。",
+      "適当。複数ポンプの故障時切替えで給水を継続し、交互運転で運転時間や摩耗を均等化する。",
+      "不適当。圧力タンクは小流量時の給水圧力保持や起動回数の抑制等に用いる。停電時の継続給水用貯留設備ではない。",
+      "適当。異常な吸込圧低下時に停止することで配水管への悪影響を防ぎ、圧力回復後に自動復帰する。"
+    ],
+    "explanationSourceUrls": [
+      "https://www.kyuukou.or.jp/shiken/file-r08/file-r08_gakka-02.pdf",
+      "https://www.kyuukou.or.jp/shiken/file-r08/file-r08_seitou-num.pdf"
+    ],
     "explanation": "公式正答番号は4。法令・基準は本試験の出題時点のものとして扱う。",
     "sourceAttribution": "出典：公益財団法人給水工事技術振興財団 令和8年度 給水装置工事主任技術者試験 学科試験2 問48（問題・正答）。原問題画像の切出しと本文抽出は過去問AIによる加工。",
     "lastUpdated": "2026-11-03"
@@ -1720,7 +2254,7 @@
     "question": "水道メーターに関する次の記述のうち、不適当なものはどれか。",
     "choices": [
       "水道メーターは、許容流量範囲を超えて水を流すと、正しい計量ができなくなるおそれ\n     があるため、適正使用流量範囲、瞬時使用の許容流量等に十分留意して水道メーターの呼\n     び径を決定する必要がある。",
-      "水道メーターの指示部の形態は、計量値を数字（デジタル）で表示する直読式と計量値を\n     回転指針（アナログ）で目盛板に表示する円読式がある。\n\n\n\n                                                                                   ら せん",
+      "水道メーターの指示部の形態は、計量値を数字（デジタル）で表示する直読式と計量値を\n     回転指針（アナログ）で目盛板に表示する円読式がある。",
       "軸流羽根車式水道メーターは、管状の器内に設置された流れに垂直な軸をもつ螺旋状の\n     羽根車を回転させて、積算計量する構造である。",
       "電磁式水道メーターは、給水管と同じ呼び径の直管で機械的可動部がないため耐久性に\n     優れ、小流量から大流量まで広範囲な計測に適している。"
     ],
@@ -1737,7 +2271,17 @@
       "kind": "single-choice",
       "correctChoice": 3
     },
-    "explanationCoverage": "official-summary",
+    "explanationCoverage": "all-choices",
+    "choiceExplanations": [
+      "適当。メーターの許容範囲を超える流量は誤計量や劣化を招くため、実際の使用流量に応じて呼び径を選ぶ。",
+      "適当。積算値を数字で直接読む直読式と、指針の位置を目盛から読む円読式という分類である。",
+      "不適当。軸流羽根車式の羽根車軸は流れに平行である。流れに垂直な軸とする点が誤り。",
+      "適当。電磁式は可動部を使わず電磁誘導で流速を検出するため、摩耗しにくく広い流量範囲の測定に適する。"
+    ],
+    "explanationSourceUrls": [
+      "https://www.kyuukou.or.jp/shiken/file-r08/file-r08_gakka-02.pdf",
+      "https://www.kyuukou.or.jp/shiken/file-r08/file-r08_seitou-num.pdf"
+    ],
     "explanation": "公式正答番号は3。法令・基準は本試験の出題時点のものとして扱う。",
     "sourceAttribution": "出典：公益財団法人給水工事技術振興財団 令和8年度 給水装置工事主任技術者試験 学科試験2 問49（問題・正答）。原問題画像の切出しと本文抽出は過去問AIによる加工。",
     "lastUpdated": "2026-11-03"
@@ -1772,7 +2316,17 @@
       "kind": "single-choice",
       "correctChoice": 3
     },
-    "explanationCoverage": "official-summary",
+    "explanationCoverage": "all-choices",
+    "choiceExplanations": [
+      "不適当。一般的な給水栓の下流に取り付ける据置形は、容易に取り外せ、常時水圧もかからないため給水用具に当たらない。",
+      "不適当。給水栓の上流側から分岐して接続するものは常時水圧を受け、給水用具に該当する。",
+      "適当。アンダーシンク形を給水栓の上流側に設ける場合は、給水管と直接連結し常時水圧を受けるため給水用具に該当する。",
+      "不適当。給水栓一体型は浄水機構を内蔵した給水栓自体が給水用具であり、対象外ではない。"
+    ],
+    "explanationSourceUrls": [
+      "https://www.kyuukou.or.jp/shiken/file-r08/file-r08_gakka-02.pdf",
+      "https://www.kyuukou.or.jp/shiken/file-r08/file-r08_seitou-num.pdf"
+    ],
     "explanation": "公式正答番号は3。法令・基準は本試験の出題時点のものとして扱う。",
     "sourceAttribution": "出典：公益財団法人給水工事技術振興財団 令和8年度 給水装置工事主任技術者試験 学科試験2 問50（問題・正答）。原問題画像の切出しと本文抽出は過去問AIによる加工。",
     "lastUpdated": "2026-11-03"
@@ -1807,7 +2361,17 @@
       "kind": "single-choice",
       "correctChoice": 1
     },
-    "explanationCoverage": "official-summary",
+    "explanationCoverage": "all-choices",
+    "choiceExplanations": [
+      "不適当。レジスタ回路の目詰まりが原因なら回路の清掃・異物除去を行う。ダイヤフラムの交換では目詰まりは解消しない。",
+      "適当。開き過ぎで流量・流速が大きい場合は、開閉ねじを右に回して水勢を絞り、水撃を抑える。",
+      "適当。排水弁パッキンの摩耗でタンクから漏水すると水位が上がらないため、パッキン交換で水密性を回復する。",
+      "適当。弁座への異物かみ込みは閉止不良の原因であり、ピストンバルブを外し異物を除去する。"
+    ],
+    "explanationSourceUrls": [
+      "https://www.kyuukou.or.jp/shiken/file-r08/file-r08_gakka-02.pdf",
+      "https://www.kyuukou.or.jp/shiken/file-r08/file-r08_seitou-num.pdf"
+    ],
     "explanation": "公式正答番号は1。法令・基準は本試験の出題時点のものとして扱う。",
     "sourceAttribution": "出典：公益財団法人給水工事技術振興財団 令和8年度 給水装置工事主任技術者試験 学科試験2 問51（問題・正答）。原問題画像の切出しと本文抽出は過去問AIによる加工。",
     "lastUpdated": "2026-11-03"
@@ -1843,7 +2407,18 @@
       "kind": "single-choice",
       "correctChoice": 5
     },
-    "explanationCoverage": "official-summary",
+    "explanationCoverage": "all-choices",
+    "choiceExplanations": [
+      "不適当。エは「誤」。道路部の埋戻し材料については道路管理者の基準等に適合し、その承諾を得る。水道事業者だけの基準・承諾とする点が誤りである。",
+      "不適当。イは「正」。施工資料や写真を整理し、発注者や水道事業者が施工状況を確認できるようにする。",
+      "不適当。アは「正」。断水広報等を含めて決めた断水日を基準に、天候も考慮して工程を組む必要がある。 ウは「正」。時間制約のある施工は事前協議を行い、指定時間内に完了できる工程とする。 エは「誤」。道路部の埋戻し材料については道路管理者の基準等に適合し、その承諾を得る。水道事業者だけの基準・承諾とする点が誤りである。",
+      "不適当。アは「正」。断水広報等を含めて決めた断水日を基準に、天候も考慮して工程を組む必要がある。",
+      "適当。正誤は正・正・正・誤。ア：断水広報等を含めて決めた断水日を基準に、天候も考慮して工程を組む必要がある。 イ：施工資料や写真を整理し、発注者や水道事業者が施工状況を確認できるようにする。 ウ：時間制約のある施工は事前協議を行い、指定時間内に完了できる工程とする。 エ：道路部の埋戻し材料については道路管理者の基準等に適合し、その承諾を得る。水道事業者だけの基準・承諾とする点が誤りである。"
+    ],
+    "explanationSourceUrls": [
+      "https://www.kyuukou.or.jp/shiken/file-r08/file-r08_gakka-02.pdf",
+      "https://www.kyuukou.or.jp/shiken/file-r08/file-r08_seitou-num.pdf"
+    ],
     "explanation": "公式正答番号は5。法令・基準は本試験の出題時点のものとして扱う。",
     "sourceAttribution": "出典：公益財団法人給水工事技術振興財団 令和8年度 給水装置工事主任技術者試験 学科試験2 問52（問題・正答）。原問題画像の切出しと本文抽出は過去問AIによる加工。",
     "lastUpdated": "2026-11-03"
@@ -1879,7 +2454,18 @@
       "kind": "single-choice",
       "correctChoice": 4
     },
-    "explanationCoverage": "official-summary",
+    "explanationCoverage": "all-choices",
+    "choiceExplanations": [
+      "不適当。工程管理の要素は計画・実施・管理である。また工事は給水装置工事主任技術者の指導監督の下で行う。",
+      "不適当。手配する対象は技術者や技能者を含めた作業従事者全体であり、作業主任者だけではない。",
+      "不適当。アは検査でなく管理、イは作業主任者でなく作業従事者である。",
+      "適当。工程を計画して実施し、進度等を管理する。必要な作業従事者を準備し、主任技術者の指導監督で工事を進める。",
+      "不適当。管理・作業従事者・給水装置工事主任技術者が正しい。検査だけでは工程の調整を表せず、技能者と主任技術者の役割も異なる。"
+    ],
+    "explanationSourceUrls": [
+      "https://www.kyuukou.or.jp/shiken/file-r08/file-r08_gakka-02.pdf",
+      "https://www.kyuukou.or.jp/shiken/file-r08/file-r08_seitou-num.pdf"
+    ],
     "explanation": "公式正答番号は4。法令・基準は本試験の出題時点のものとして扱う。",
     "sourceAttribution": "出典：公益財団法人給水工事技術振興財団 令和8年度 給水装置工事主任技術者試験 学科試験2 問53（問題・正答）。原問題画像の切出しと本文抽出は過去問AIによる加工。",
     "lastUpdated": "2026-11-03"
@@ -1915,7 +2501,18 @@
       "kind": "single-choice",
       "correctChoice": 3
     },
-    "explanationCoverage": "official-summary",
+    "explanationCoverage": "all-choices",
+    "choiceExplanations": [
+      "適当。基準に適合し、品質を確認した材料を使うことが施工後の性能確保の前提である。",
+      "適当。所定トルクの不足は漏水や抜出し、過大な締付けは部材損傷の原因になるため、設定値を確認する。",
+      "不適当。穿孔ドリルは管の内面ライニング・塗装に適したものを選ぶ。外面防食塗装に合わせるという記述が誤り。",
+      "適当。穿孔後に残留塩素等の5項目を確認し、異系統の誤穿孔や水質異常を見落とさないようにする。",
+      "適当。耐圧試験により接合部等の漏水・異常を確認し、施工品質を確かめる。"
+    ],
+    "explanationSourceUrls": [
+      "https://www.kyuukou.or.jp/shiken/file-r08/file-r08_gakka-02.pdf",
+      "https://www.kyuukou.or.jp/shiken/file-r08/file-r08_seitou-num.pdf"
+    ],
     "explanation": "公式正答番号は3。法令・基準は本試験の出題時点のものとして扱う。",
     "sourceAttribution": "出典：公益財団法人給水工事技術振興財団 令和8年度 給水装置工事主任技術者試験 学科試験2 問54（問題・正答）。原問題画像の切出しと本文抽出は過去問AIによる加工。",
     "lastUpdated": "2026-11-03"
@@ -1951,7 +2548,18 @@
       "kind": "single-choice",
       "correctChoice": 1
     },
-    "explanationCoverage": "official-summary",
+    "explanationCoverage": "all-choices",
+    "choiceExplanations": [
+      "適当。正誤は誤・正・正・正。ア：近接埋設物の位置確認では、その埋設物の管理者に立会いを求める。道路管理者だけでは各施設の位置を確実に確認できない。 イ：現地状況と法令に応じた工法を選び、労働者と周辺公衆の双方の災害を防ぐ。 ウ：可燃性ガス管等の近くでは火気による着火・爆発を避けるため、火気を伴う器具を使用しない。 エ：道路管理者と警察署長の条件を守った保安施設等により、第三者の安全と通行を確保する。",
+      "不適当。アは「誤」。近接埋設物の位置確認では、その埋設物の管理者に立会いを求める。道路管理者だけでは各施設の位置を確実に確認できない。 イは「正」。現地状況と法令に応じた工法を選び、労働者と周辺公衆の双方の災害を防ぐ。",
+      "不適当。エは「正」。道路管理者と警察署長の条件を守った保安施設等により、第三者の安全と通行を確保する。",
+      "不適当。ウは「正」。可燃性ガス管等の近くでは火気による着火・爆発を避けるため、火気を伴う器具を使用しない。",
+      "不適当。アは「誤」。近接埋設物の位置確認では、その埋設物の管理者に立会いを求める。道路管理者だけでは各施設の位置を確実に確認できない。 エは「正」。道路管理者と警察署長の条件を守った保安施設等により、第三者の安全と通行を確保する。"
+    ],
+    "explanationSourceUrls": [
+      "https://www.kyuukou.or.jp/shiken/file-r08/file-r08_gakka-02.pdf",
+      "https://www.kyuukou.or.jp/shiken/file-r08/file-r08_seitou-num.pdf"
+    ],
     "explanation": "公式正答番号は1。法令・基準は本試験の出題時点のものとして扱う。",
     "sourceAttribution": "出典：公益財団法人給水工事技術振興財団 令和8年度 給水装置工事主任技術者試験 学科試験2 問55（問題・正答）。原問題画像の切出しと本文抽出は過去問AIによる加工。",
     "lastUpdated": "2026-11-03"
@@ -1987,7 +2595,18 @@
       "kind": "single-choice",
       "correctChoice": 4
     },
-    "explanationCoverage": "official-summary",
+    "explanationCoverage": "all-choices",
+    "choiceExplanations": [
+      "不適当。ウは「誤」。仮設電気工事は必要な資格を有する電気技術者等が行う。給水装置工事主任技術者の資格だけで電気工事はできない。",
+      "不適当。アは「誤」。柵・囲い・覆いは充電部への接触による感電防止措置である。漏電自体の防止措置とする点が違う。 エは「誤」。感電事故を防ぐためには漏電遮断器等を設ける。過電流等を保護する配線用遮断器とは役割が異なる。",
+      "不適当。アは「誤」。柵・囲い・覆いは充電部への接触による感電防止措置である。漏電自体の防止措置とする点が違う。 イは「正」。電気器材の絶縁不良や故障を放置しないよう、点検・補修で正常な状態を保つ。 ウは「誤」。仮設電気工事は必要な資格を有する電気技術者等が行う。給水装置工事主任技術者の資格だけで電気工事はできない。 エは「誤」。感電事故を防ぐためには漏電遮断器等を設ける。過電流等を保護する配線用遮断器とは役割が異なる。",
+      "適当。正誤は誤・正・誤・誤。ア：柵・囲い・覆いは充電部への接触による感電防止措置である。漏電自体の防止措置とする点が違う。 イ：電気器材の絶縁不良や故障を放置しないよう、点検・補修で正常な状態を保つ。 ウ：仮設電気工事は必要な資格を有する電気技術者等が行う。給水装置工事主任技術者の資格だけで電気工事はできない。 エ：感電事故を防ぐためには漏電遮断器等を設ける。過電流等を保護する配線用遮断器とは役割が異なる。",
+      "不適当。アは「誤」。柵・囲い・覆いは充電部への接触による感電防止措置である。漏電自体の防止措置とする点が違う。 イは「正」。電気器材の絶縁不良や故障を放置しないよう、点検・補修で正常な状態を保つ。 ウは「誤」。仮設電気工事は必要な資格を有する電気技術者等が行う。給水装置工事主任技術者の資格だけで電気工事はできない。"
+    ],
+    "explanationSourceUrls": [
+      "https://www.kyuukou.or.jp/shiken/file-r08/file-r08_gakka-02.pdf",
+      "https://www.kyuukou.or.jp/shiken/file-r08/file-r08_seitou-num.pdf"
+    ],
     "explanation": "公式正答番号は4。法令・基準は本試験の出題時点のものとして扱う。",
     "sourceAttribution": "出典：公益財団法人給水工事技術振興財団 令和8年度 給水装置工事主任技術者試験 学科試験2 問56（問題・正答）。原問題画像の切出しと本文抽出は過去問AIによる加工。",
     "lastUpdated": "2026-11-03"
@@ -2022,7 +2641,19 @@
       "kind": "single-choice",
       "correctChoice": 2
     },
-    "explanationCoverage": "official-summary",
+    "explanationCoverage": "all-choices",
+    "choiceExplanations": [
+      "不適当。イは「誤」。一定の要件を満たせば営業所技術者と現場主任技術者の兼務は認められ、一律禁止ではない。 ウは「誤」。資格要件として定める管工事の実務経験は、免状交付後1年以上であり、3年以上とする基準ではない。 エは「正」。出題時点の専任原則の基準は4,500万円、建築一式9,000万円以上であり、法定の特例要件を満たす場合を除いて現場ごとに専任とする。",
+      "適当。正誤は正・誤・誤・正。ア：一般建設業者も施工現場の技術管理をつかさどる主任技術者を置く必要がある。 イ：一定の要件を満たせば営業所技術者と現場主任技術者の兼務は認められ、一律禁止ではない。 ウ：資格要件として定める管工事の実務経験は、免状交付後1年以上であり、3年以上とする基準ではない。 エ：出題時点の専任原則の基準は4,500万円、建築一式9,000万円以上であり、法定の特例要件を満たす場合を除いて現場ごとに専任とする。",
+      "不適当。アは「正」。一般建設業者も施工現場の技術管理をつかさどる主任技術者を置く必要がある。 イは「誤」。一定の要件を満たせば営業所技術者と現場主任技術者の兼務は認められ、一律禁止ではない。 ウは「誤」。資格要件として定める管工事の実務経験は、免状交付後1年以上であり、3年以上とする基準ではない。 エは「正」。出題時点の専任原則の基準は4,500万円、建築一式9,000万円以上であり、法定の特例要件を満たす場合を除いて現場ごとに専任とする。",
+      "不適当。アは「正」。一般建設業者も施工現場の技術管理をつかさどる主任技術者を置く必要がある。 イは「誤」。一定の要件を満たせば営業所技術者と現場主任技術者の兼務は認められ、一律禁止ではない。 ウは「誤」。資格要件として定める管工事の実務経験は、免状交付後1年以上であり、3年以上とする基準ではない。"
+    ],
+    "explanationSourceUrls": [
+      "https://www.kyuukou.or.jp/shiken/file-r08/file-r08_gakka-02.pdf",
+      "https://www.kyuukou.or.jp/shiken/file-r08/file-r08_seitou-num.pdf",
+      "https://laws.e-gov.go.jp/law/324AC0000000100",
+      "https://www.mlit.go.jp/totikensangyo/const/1_6_bt_000157.html"
+    ],
     "explanation": "公式正答番号は2。法令・基準は本試験の出題時点のものとして扱う。",
     "sourceAttribution": "出典：公益財団法人給水工事技術振興財団 令和8年度 給水装置工事主任技術者試験 学科試験2 問57（問題・正答）。原問題画像の切出しと本文抽出は過去問AIによる加工。",
     "lastUpdated": "2026-11-03"
@@ -2037,7 +2668,7 @@
     "session": "gakka2",
     "qNumber": 58,
     "category": "給水装置施工管理法",
-    "question": "労働安全衛生法に関する次の記述の正誤の組み合わせのうち、適当なものはどれか。\n\n\n    ア 作業主任者の主な職務は、作業の方法等を決定し作業を直接指揮すること、使用する機\n     械器具や保護具等の点検と異常を認めた際の必要な措置を講じること、保護具等の使用状\n     況を監視することなどである。\n\n\n\n                                                                      あん きょ\n    イ ケーブル、ガス管その他地下に敷設される物を収容するための暗渠、マンホール又は\n     ピットの内部等において、第二種酸素欠乏危険作業を行う場合、酸素欠乏危険作業主任者\n     技能講習修了者を選任しなければならない。\n\n\n    ウ 車両系建設機械（整地、掘削等）の運転業務を行う際には、該当する車両系建設機械運転\n     技能講習を修了した者を作業主任者として配置しなければならない。\n\n\n    エ 作業主任者を選任したときは、その氏名及びその者に行わせる事項を作業場の見やすい\n     箇所に掲示する等により関係労働者に周知させなければならない。\n\n\n       ア   イ   ウ   エ",
+    "question": "労働安全衛生法に関する次の記述の正誤の組み合わせのうち、適当なものはどれか。\n\n\n    ア 作業主任者の主な職務は、作業の方法等を決定し作業を直接指揮すること、使用する機\n     械器具や保護具等の点検と異常を認めた際の必要な措置を講じること、保護具等の使用状\n     況を監視することなどである。\n\n\n\n    イ ケーブル、ガス管その他地下に敷設される物を収容するための暗渠、マンホール又は\n     ピットの内部等において、第二種酸素欠乏危険作業を行う場合、酸素欠乏危険作業主任者\n     技能講習修了者を選任しなければならない。\n\n\n    ウ 車両系建設機械（整地、掘削等）の運転業務を行う際には、該当する車両系建設機械運転\n     技能講習を修了した者を作業主任者として配置しなければならない。\n\n\n    エ 作業主任者を選任したときは、その氏名及びその者に行わせる事項を作業場の見やすい\n     箇所に掲示する等により関係労働者に周知させなければならない。\n\n\n       ア   イ   ウ   エ",
     "choices": [
       "正   正   誤   誤",
       "誤   正   正   誤",
@@ -2057,7 +2688,18 @@
       "kind": "single-choice",
       "correctChoice": 4
     },
-    "explanationCoverage": "official-summary",
+    "explanationCoverage": "all-choices",
+    "choiceExplanations": [
+      "不適当。イは「誤」。第二種酸素欠乏危険作業では、酸素欠乏・硫化水素危険作業主任者技能講習の修了が必要で、酸素欠乏だけの講習では足りない。 エは「正」。氏名・職務を周知することで、労働者が指揮系統と責任者を明確に把握できる。",
+      "不適当。アは「正」。作業主任者は作業方法と直接指揮、器具・保護具の点検、保護具使用の監視等を行う。 イは「誤」。第二種酸素欠乏危険作業では、酸素欠乏・硫化水素危険作業主任者技能講習の修了が必要で、酸素欠乏だけの講習では足りない。 ウは「誤」。車両系建設機械の運転には該当資格等が必要だが、運転技能講習修了者を作業主任者として置く制度ではない。 エは「正」。氏名・職務を周知することで、労働者が指揮系統と責任者を明確に把握できる。",
+      "不適当。アは「正」。作業主任者は作業方法と直接指揮、器具・保護具の点検、保護具使用の監視等を行う。 イは「誤」。第二種酸素欠乏危険作業では、酸素欠乏・硫化水素危険作業主任者技能講習の修了が必要で、酸素欠乏だけの講習では足りない。",
+      "適当。正誤は正・誤・誤・正。ア：作業主任者は作業方法と直接指揮、器具・保護具の点検、保護具使用の監視等を行う。 イ：第二種酸素欠乏危険作業では、酸素欠乏・硫化水素危険作業主任者技能講習の修了が必要で、酸素欠乏だけの講習では足りない。 ウ：車両系建設機械の運転には該当資格等が必要だが、運転技能講習修了者を作業主任者として置く制度ではない。 エ：氏名・職務を周知することで、労働者が指揮系統と責任者を明確に把握できる。"
+    ],
+    "explanationSourceUrls": [
+      "https://www.kyuukou.or.jp/shiken/file-r08/file-r08_gakka-02.pdf",
+      "https://www.kyuukou.or.jp/shiken/file-r08/file-r08_seitou-num.pdf",
+      "https://laws.e-gov.go.jp/law/347AC0000000057"
+    ],
     "explanation": "公式正答番号は4。法令・基準は本試験の出題時点のものとして扱う。",
     "sourceAttribution": "出典：公益財団法人給水工事技術振興財団 令和8年度 給水装置工事主任技術者試験 学科試験2 問58（問題・正答）。原問題画像の切出しと本文抽出は過去問AIによる加工。",
     "lastUpdated": "2026-11-03"
@@ -2092,7 +2734,18 @@
       "kind": "single-choice",
       "correctChoice": 4
     },
-    "explanationCoverage": "official-summary",
+    "explanationCoverage": "all-choices",
+    "choiceExplanations": [
+      "不適当。イは「誤」。原則として1車線なら3m以上、2車線なら5.5m以上を確保する。1車線の2.5mが不足している。 エは「正」。交通量の多い道路では必要に応じて夜間200m前方から見える注意灯を設け、夜間の視認性を確保する。",
+      "不適当。アは「誤」。段差がやむを得ず生じる場合のすりつけ勾配は5%以内であり、7%では急すぎる。 イは「誤」。原則として1車線なら3m以上、2車線なら5.5m以上を確保する。1車線の2.5mが不足している。 ウは「正」。工事予告標識等は工事箇所の前方50〜500mの視認しやすい位置に置き、事前に認識できるようにする。",
+      "不適当。アは「誤」。段差がやむを得ず生じる場合のすりつけ勾配は5%以内であり、7%では急すぎる。 エは「正」。交通量の多い道路では必要に応じて夜間200m前方から見える注意灯を設け、夜間の視認性を確保する。",
+      "適当。正誤は誤・誤・正・正。ア：段差がやむを得ず生じる場合のすりつけ勾配は5%以内であり、7%では急すぎる。 イ：原則として1車線なら3m以上、2車線なら5.5m以上を確保する。1車線の2.5mが不足している。 ウ：工事予告標識等は工事箇所の前方50〜500mの視認しやすい位置に置き、事前に認識できるようにする。 エ：交通量の多い道路では必要に応じて夜間200m前方から見える注意灯を設け、夜間の視認性を確保する。"
+    ],
+    "explanationSourceUrls": [
+      "https://www.kyuukou.or.jp/shiken/file-r08/file-r08_gakka-02.pdf",
+      "https://www.kyuukou.or.jp/shiken/file-r08/file-r08_seitou-num.pdf",
+      "https://www.mlit.go.jp/tec/content/001305480.pdf"
+    ],
     "explanation": "公式正答番号は4。法令・基準は本試験の出題時点のものとして扱う。",
     "sourceAttribution": "出典：公益財団法人給水工事技術振興財団 令和8年度 給水装置工事主任技術者試験 学科試験2 問59（問題・正答）。原問題画像の切出しと本文抽出は過去問AIによる加工。",
     "lastUpdated": "2026-11-03"
@@ -2127,7 +2780,18 @@
       "kind": "single-choice",
       "correctChoice": 2
     },
-    "explanationCoverage": "official-summary",
+    "explanationCoverage": "all-choices",
+    "choiceExplanations": [
+      "適当。軽微な工事だけを行う場合等を除き、一般・特定の区分と建設工事業種ごとの許可を受ける必要がある。",
+      "不適当。2以上の都道府県に営業所を設ける場合は国土交通大臣の許可を受ける。各都道府県知事の許可を重ねて受ける制度ではない。",
+      "適当。記載の金額未満等の軽微な建設工事のみを営む者は、建設業許可を要しない。金額の「未満」と建築一式の別基準に注意する。",
+      "適当。建設業許可の有効期間は5年間であり、継続して営むには期間ごとの更新が必要である。"
+    ],
+    "explanationSourceUrls": [
+      "https://www.kyuukou.or.jp/shiken/file-r08/file-r08_gakka-02.pdf",
+      "https://www.kyuukou.or.jp/shiken/file-r08/file-r08_seitou-num.pdf",
+      "https://laws.e-gov.go.jp/law/324AC0000000100"
+    ],
     "explanation": "公式正答番号は2。法令・基準は本試験の出題時点のものとして扱う。",
     "sourceAttribution": "出典：公益財団法人給水工事技術振興財団 令和8年度 給水装置工事主任技術者試験 学科試験2 問60（問題・正答）。原問題画像の切出しと本文抽出は過去問AIによる加工。",
     "lastUpdated": "2026-11-03"

@@ -38,7 +38,10 @@ export interface KyusuiStagedQuestion {
   sourcePdfUrl: string;
   sourceAnswerUrl: string;
   scoring: KyusuiScoring;
-  explanationCoverage: "official-summary";
+  explanationCoverage: "all-choices";
+  /** Same numeric order as choices; editorial rationale, separate from the official key. */
+  choiceExplanations: readonly string[];
+  explanationSourceUrls: readonly string[];
   explanation: string;
   sourceAttribution: string;
   lastUpdated: string;
@@ -55,7 +58,11 @@ function readSource(rows: unknown): readonly KyusuiStagedQuestion[] {
       !row.question || !row.originalText || !Array.isArray(row.choices) ||
       ![4, 5].includes(row.choices.length) || row.choices.some((text: unknown) => typeof text !== "string" || !text.trim()) ||
       !Array.isArray(row.sourceImages) || !row.sourceImages.length ||
-      row.textRepresentation !== "pdf-extraction-with-layout" || row.explanationCoverage !== "official-summary" ||
+      row.textRepresentation !== "pdf-extraction-with-layout" || row.explanationCoverage !== "all-choices" ||
+      !Array.isArray(row.choiceExplanations) || row.choiceExplanations.length !== row.choices.length ||
+      row.choiceExplanations.some((text: unknown) => typeof text !== "string" || text.trim().length < 20) ||
+      !Array.isArray(row.explanationSourceUrls) || !row.explanationSourceUrls.length ||
+      row.explanationSourceUrls.some((url: unknown) => typeof url !== "string" || !url.startsWith("https://")) ||
       !["text", "diagram-labels"].includes(row.choiceRepresentation) || typeof row.postOptionContent !== "string" ||
       !score || !["single-choice", "all-correct"].includes(score.kind) ||
       (score.kind === "single-choice" && (!Number.isInteger(score.correctChoice) || score.correctChoice < 1 || score.correctChoice > row.choices.length)) ||

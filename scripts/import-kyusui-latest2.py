@@ -25,6 +25,14 @@ CATEGORIES = [(3, '公衆衛生概論'), (9, '水道行政'), (19, '給水装置
               (40, '給水装置工事事務論'), (51, '給水装置の概要'), (60, '給水装置施工管理法')]
 MARKERS = '⑴⑵⑶⑷⑸'
 CHECKED = '2026-11-03'
+# Small-type readings above the following body line must not become part of
+# the preceding choice. Original extraction and PDF images retain every ruby.
+RUBY_LINES = {'おごせ', 'オー', 'でいねいち', 'らせん', 'あんきょ', 'ごえん', 'ぼうせいざい', 'ろうえい'}
+
+
+def body_text(text):
+    return '\n'.join(line for line in text.splitlines()
+                     if re.sub(r'\s+', '', line) not in RUBY_LINES).strip()
 
 
 def sha(data):
@@ -60,6 +68,8 @@ def main():
     assets = []
     editions = []
     for year, reiwa in ((2026, 8), (2025, 7)):
+        editorial = json.loads((DEST / 'explanations' / f'{year}.json').read_text())
+        assert set(editorial) == {str(n) for n in range(1, 61)}, 'Incomplete choice explanations'
         prefix = BASE + f'shiken/file-r0{reiwa}/file-r0{reiwa}_'
         answer_url = prefix + 'seitou-num.pdf'
         landing = current if year == 2026 else index
@@ -136,14 +146,15 @@ def main():
                     regions.append(asset['path'])
                     texts.append(extracted)
                 original_text = '\n\n'.join(texts)
-                markers = list(re.finditer('[' + MARKERS + ']', original_text))
+                display_text = body_text(original_text)
+                markers = list(re.finditer('[' + MARKERS + ']', display_text))
                 diagram_choices = (year, number) == (2025, 34)
                 if diagram_choices:
                     # These five alternatives are labels ON the hydraulic diagram.
                     choices = [f'図中の{marker}（原問題画像参照）' for marker in MARKERS]
                 else:
                     assert [m.group() for m in markers] in [list(MARKERS[:4]), list(MARKERS)], (year, number, original_text)
-                    choices = [original_text[m.end():(markers[i+1].start() if i+1 < len(markers) else len(original_text))].strip()
+                    choices = [display_text[m.end():(markers[i+1].start() if i+1 < len(markers) else len(display_text))].strip()
                                for i, m in enumerate(markers)]
                 assert all(choices)
                 post_option_content = ''
@@ -158,7 +169,10 @@ def main():
                     pieces = re.split(r'\s*【算出手順】', choices[-1], maxsplit=1)
                     assert len(pieces) == 2
                     choices[-1], post_option_content = pieces[0], '【算出手順】' + pieces[1]
-                stem = re.sub(r'^問題\s*\d+\s*', '', original_text if diagram_choices else original_text[:markers[0].start()]).strip()
+                stem = re.sub(r'^問題\s*\d+\s*', '', display_text if diagram_choices else display_text[:markers[0].start()]).strip()
+                notes = editorial[str(number)]
+                assert len(notes['choices']) == len(choices) and all(len(note.strip()) >= 20 for note in notes['choices'])
+                assert notes['sourceUrls'] and all(url.startswith('https://') for url in notes['sourceUrls'])
                 scoring = ({'kind': 'all-correct', 'correctChoice': None,
                             'notice': '正答肢なし。受験者全員を正解として扱う。',
                             'reason': '選択肢⑷の「埋設した年度」は「埋設した年」でなければ正答肢とならない。',
@@ -177,7 +191,9 @@ def main():
                              'textRepresentation': 'pdf-extraction-with-layout',
                              'sourceImages': regions, 'sourcePdfUrl': question_url,
                              'sourceAnswerUrl': answer_url, 'scoring': scoring,
-                             'explanationCoverage': 'official-summary',
+                             'explanationCoverage': 'all-choices',
+                             'choiceExplanations': notes['choices'],
+                             'explanationSourceUrls': notes['sourceUrls'],
                              'explanation': (scoring['notice'] + scoring['reason'] if scoring['kind'] == 'all-correct' else
                                              f'公式正答番号は{answers[number]}。法令・基準は本試験の出題時点のものとして扱う。'),
                              'sourceAttribution': f'出典：公益財団法人給水工事技術振興財団 令和{reiwa}年度 給水装置工事主任技術者試験 学科試験{part} 問{number}（問題・正答）。原問題画像の切出しと本文抽出は過去問AIによる加工。',
