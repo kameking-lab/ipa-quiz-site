@@ -6,6 +6,12 @@ import { PracticeSessionTabs } from "@/components/quiz/PracticeSessionTabs";
 afterEach(cleanup);
 
 describe("PracticeSessionTabs exact question context", () => {
+  it("labels the chizai practical paper in its own exam context", () => {
+    route.search = "exam=chizai2&mode=year&session=gakka";
+    render(<PracticeSessionTabs sessions={["gakka", "practical"]} selected="gakka" />);
+    expect(screen.getByRole("link", {name:"実技"})).toHaveAttribute("href", "/quiz?exam=chizai2&mode=year&session=practical");
+    expect(screen.queryByText("薬学実践問題")).toBeNull();
+  });
   it.each(["rigaku-ryohoshi", "sagyo-ryohoshi"])("changes %s AM to PM without carrying the AM question into the PM pool", (exam) => {
     const question = `${exam}-2025-annual-am-q10`;
     const returnTo = `/q/${exam}/2025-annual/am/q10`;

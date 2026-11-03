@@ -9,7 +9,7 @@ export function PracticeSessionTabs({ sessions, selected, exam }: { sessions: Se
   const pathname = usePathname();
   const search = useSearchParams();
   const queryExam = search.get("exam");
-  const contextualExam = exam ?? (queryExam === "kanteishi" || queryExam === "kaikeishi" ? queryExam : undefined);
+  const contextualExam = exam ?? (queryExam === "kanteishi" || queryExam === "kaikeishi" || queryExam === "chizai2" ? queryExam : undefined);
   if (sessions.length < 2) return null;
   return <nav aria-label="試験科目を選択" className="mx-auto flex w-full max-w-2xl flex-wrap gap-2 px-4 pt-3 sm:px-6">
     {sessions.map((session) => {

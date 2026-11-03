@@ -1,0 +1,76 @@
+{
+  "status": "PASS",
+  "testFiles": 11,
+  "tests": 1176,
+  "failed": 0,
+  "inputs": [
+    {
+      "name": "vitest-related.json",
+      "sha256": "9a050150426e7cc16ba386c90156f931d20013ab843ef404681c396d58028f10",
+      "initialSuccess": false
+    },
+    {
+      "name": "vitest-retry.json",
+      "sha256": "0e7054b7be8d59a027f81041b88f9ca03d90c396c1bfc9f3df0202d53f234472",
+      "initialSuccess": true
+    }
+  ],
+  "retryReason": "Two suites initially timed out importing unrelated rigaku-ryohoshi JSON; both passed on retry. An intervening JSON-report write failed with ENOSPC and is not counted as a pass.",
+  "files": [
+    {
+      "path": "__tests__/components/Chizai2.player.test.tsx",
+      "tests": 15,
+      "status": "passed"
+    },
+    {
+      "path": "__tests__/lib/accepted-answers.test.ts",
+      "tests": 1,
+      "status": "passed"
+    },
+    {
+      "path": "__tests__/lib/exam-config-integrity.test.ts",
+      "tests": 6,
+      "status": "passed"
+    },
+    {
+      "path": "__tests__/lib/exam-config-pdf-url.test.ts",
+      "tests": 16,
+      "status": "passed"
+    },
+    {
+      "path": "__tests__/lib/exam-config-prompts.test.ts",
+      "tests": 6,
+      "status": "passed"
+    },
+    {
+      "path": "__tests__/lib/numeric-answers.test.ts",
+      "tests": 31,
+      "status": "passed"
+    },
+    {
+      "path": "__tests__/lib/question-source-label.test.ts",
+      "tests": 18,
+      "status": "passed"
+    },
+    {
+      "path": "__tests__/questions/chizai2-two-rounds.test.ts",
+      "tests": 4,
+      "status": "passed"
+    },
+    {
+      "path": "__tests__/questions/qualification-expansion.test.ts",
+      "tests": 1066,
+      "status": "passed"
+    },
+    {
+      "path": "__tests__/seo/question-jsonld.test.ts",
+      "tests": 10,
+      "status": "passed"
+    },
+    {
+      "path": "__tests__/unit/exam-source-label.test.ts",
+      "tests": 3,
+      "status": "passed"
+    }
+  ]
+}

@@ -2,6 +2,7 @@ import type { ExamCode } from "./types";
 
 /** 指定資格では、公表済みの過去問だけを演習に使う。 */
 const OFFICIAL_PAST_ONLY_EXAMS = [
+  "chizai2",
   "kanteishi", "kaikeishi",
   "riku-tech1", "maritime4", "land-special1", "maritime3", "maritime2", "maritime1", "general3", "general2", "general1",
   "land-special2", "land-special3", "aviation-comm", "amateur1",
@@ -21,7 +22,7 @@ const originalIdAliases: Partial<Record<ExamCode, string>> = {
 };
 const originalIdPrefixes = OFFICIAL_PAST_ONLY_EXAMS.map(
   (exam) => `radio21-${originalIdAliases[exam] ?? exam}-`,
-).concat(["kanteishi-", "kaikeishi-", "riku-toku-kokunai-", "kai-toku2-", "kai-toku3-", "koku-toku-"]);
+).concat(["chizai2-", "kanteishi-", "kaikeishi-", "riku-toku-kokunai-", "kai-toku2-", "kai-toku3-", "koku-toku-"]);
 
 export function isOfficialPastOnlyExam(exam: unknown): boolean {
   return typeof exam === "string" && pastOnlyExams.has(exam);
