@@ -17,6 +17,7 @@ import { cachedImage } from "./images";
 import { NativePageQualificationActions } from "./QualificationActions";
 import { isQualificationUrl } from "../shared/qualification-schedules";
 import { openQualificationUrl } from "./qualification-platform";
+import { ManageSubscriptionButton } from "@/app/billing/ManageSubscriptionButton";
 const defaultMembership = new Membership();
 export const SITE_ORIGIN = "https://www.kakomon-ai.jp";
 const localUrl = "capacitor://localhost/index.html";
@@ -92,7 +93,7 @@ export function NativeTools({ membershipOnly = false, membership = defaultMember
     const original = window.fetch;
     window.fetch = async (input, init) => {
       const url = new URL(input instanceof Request ? input.url : String(input), location.href);
-      if (url.origin === SITE_ORIGIN && /^\/api\/billing\/(checkout|portal|mock)$/.test(url.pathname)) { setOpen(true); return Response.json({ error: "use_app_store" }, { status: 403 }); }
+      if (url.origin === SITE_ORIGIN && /^\/api\/billing\/(checkout|mock)$/.test(url.pathname)) { setOpen(true); return Response.json({ error: "use_app_store" }, { status: 403 }); }
       return original(input, init);
     };
     const click = (e: MouseEvent)=>{
@@ -120,6 +121,7 @@ export function NativeTools({ membershipOnly = false, membership = defaultMember
       {notice && <p role="status">{notice}</p>}
       {!access ? <button disabled={busy} onClick={()=>void run(async()=>{ await refresh(true); })}>会員状態を再確認</button> : <>
         <p>{access.entitled ? access.source === "web" ? "ウェブの有料会員です。追加購入は不要です。" : "App Storeの有料会員です。" : "無料会員"}</p>
+        {access.source === "web" && <div><p>既存のウェブ契約の管理・解約を開きます。</p><ManageSubscriptionButton label="ウェブ契約の管理・解約"/></div>}
         {!access.userId && <button onClick={()=>void run(()=>beginLogin(SITE_ORIGIN))}>ログイン</button>}
         {purchasePending&&<p role="status">購入内容をサーバーで確認中です。再購入せず「購入を復元」または会員状態の再確認をご利用ください。</p>}
         {offer && !access.entitled && <div className="space-y-3 rounded-xl border p-4"><h2>過去問AI 月額プラン</h2><p>{offer.product.priceString} / 1か月（税込・自動更新）</p><p>全資格の問題を無制限で演習、資格ごとの事前ダウンロード。購入確認時にApple IDへ請求されます。解約するまで自動更新され、更新前にApp Storeのサブスクリプション管理で解約できます。解約後も有効期間の末日までは利用できます。</p><button disabled={busy||purchasePending} onClick={()=>void run(async()=>{
