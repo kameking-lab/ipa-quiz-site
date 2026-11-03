@@ -116,10 +116,11 @@ interface OtherCardDef {
   code: ExamCode;
   name: string;
   sub: string;
-  domain: Exclude<HomeDomainId, "it">;
+  domain: HomeDomainId;
 }
 
 const OTHER_CARDS: readonly OtherCardDef[] = [
+  { code: "jken-katsuyo1", name: "J検 情報活用1級", sub: "令和8年度前期・令和7年度後期", domain: "it" },
   { code: "kanteishi", name: "不動産鑑定士", sub: "令和7・8年度 短答式160問・全肢解説", domain: "money" },
   { code: "kaikeishi", name: "公認会計士", sub: "令和8年試験 第I・II回 短答式186問・全肢解説", domain: "money" },
   { code: "maritime1", name: "第一級海上無線通信士", sub: "2026年3月・9月 日本語筆記4科目190問・全肢解説・原図209枚、B40問は各5枠", domain: "electrical" },
