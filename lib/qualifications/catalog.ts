@@ -42,6 +42,19 @@ export interface QualificationCatalogEntry {
  */
 export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
   {
+    slug: "energy-kanri",
+    shortName: "エネルギー管理士",
+    fullName: "エネルギー管理士（熱分野・電気分野）",
+    domain: "electrical",
+    administrator: "一般財団法人省エネルギーセンター",
+    officialQuestionsUrl: "https://www.eccj.or.jp/mgr1/test/answer.html",
+    officialReuseTermsUrl: "https://www.eccj.or.jp/mgr1/test_past/",
+    status: "ready-to-ingest",
+    reuseSummary: "オーナーの権利確認・収録決定に基づく未公開データ。第48回（2026年8月2日）・第47回（2025年8月3日）の問題・標準解答28PDFを取得済み。両回の共通課目問題3、第48回の熱課目Ⅲ問題8・電気課目Ⅱ問題6、計4原問65解答単位を部分収録。全62原問の完成ではありません。",
+    attributionTemplate: "出典：一般財団法人省エネルギーセンター 第○回エネルギー管理士試験 問題・標準解答。解説は過去問AIの独自作成。法令・判断基準は出題時点の内容。",
+    remainingWork: ["残る58原問777解答単位の本文・選択肢の原本照合、全肢解説と必要図の作成", "第48回電気課目Ⅲ問題8解答番号8の全員正解処理", "順序不問指定を含む採点形式の実装", "全課目完成後の資格コード・ルーティング本登録"],
+  },
+  {
     slug: "kanteishi", examCode: "kanteishi", shortName: "不動産鑑定士", fullName: "不動産鑑定士試験（短答式）",
     domain: "real-estate", administrator: "国土交通省",
     officialQuestionsUrl: "https://www.mlit.go.jp/totikensangyo/kanteishi/content/002001126.pdf",
