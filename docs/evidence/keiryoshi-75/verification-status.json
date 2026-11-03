@@ -1,0 +1,40 @@
+{
+  "taskStatus": "incomplete",
+  "ingested75Questions": 0,
+  "pnpm validate:questions": {
+    "exitCode": 0,
+    "questions": 26744,
+    "fail": 0,
+    "warn": 16955,
+    "log": "validate.log",
+    "scope": "Existing registered candidates; no 2024 keiryoshi questions have been added."
+  },
+  "NODE_OPTIONS=--max-old-space-size=8192 pnpm typecheck": {
+    "exitCode": 0,
+    "log": "typecheck.log"
+  },
+  "npx vitest run __tests__/keiryoshi-staging.test.ts __tests__/seo": {
+    "exitCode": 0,
+    "filesPassed": 111,
+    "testsPassed": 597,
+    "log": "vitest.log",
+    "scope": "Existing 第76回 staging and SEO tests; not a 第75回 content review."
+  },
+  "python3 scripts/verify-keiryoshi-source.py": {
+    "exitCode": 1,
+    "round76": "passed: 200原問、1000肢解説、300資格別ID、73画像",
+    "round75": "9原本ハッシュ・200正答一致。0科目/0原問で未完了を検出。",
+    "log": "source-verifier.log"
+  },
+  "git diff --check": {
+    "exitCode": 0
+  },
+  "publication": "staging remains unpublished",
+  "commit": false,
+  "push": false,
+  "build": false,
+  "pr": false,
+  "deploy": false,
+  "independentReviewRequested": false,
+  "round76UnchangedFiles": 92
+}

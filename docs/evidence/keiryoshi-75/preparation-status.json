@@ -1,0 +1,23 @@
+{
+  "round": 75,
+  "year": 2024,
+  "status": "incomplete",
+  "pdfHashesVerified": 9,
+  "answerCellsParsed": 200,
+  "questionPagesInventoried": 200,
+  "ingestedSourceQuestions": 0,
+  "pagesWithImageObjects": 37,
+  "pagesWithVectorPaths": 200,
+  "scope": "Source preparation only. Raw extracted text has missing/mis-mapped glyphs; not reviewed transcription.",
+  "pending": [
+    "200本文・1000選択肢の原本照合と全機械差分の審査",
+    "下線・太字範囲と添字・斜体の全数点検",
+    "図候補の図/文字輪郭/罫線の分類、切出し、画素包含検証",
+    "200全体解説・1000肢解説、計算再計算・回路等の追跡",
+    "2024 JSON登録・年度表示・400原問/600IDの回帰検証"
+  ],
+  "tools": {
+    "pymupdf": "2.1",
+    "pdftotext": "pdftotext version 24.02.0"
+  }
+}

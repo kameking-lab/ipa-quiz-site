@@ -141,3 +141,64 @@ PDF抽出では分数線・空欄線・表罫線も候補となり、数式の�
 初回データ取得時はCorepackのキャッシュ環境エラー等で検証を開始できなかったが、今回は既存環境で上記コマンドを実行できた。依存定義・設定・実装コードは変更していない。
 
 今回の変更は問題データ・証跡・このレポートのみ。画像ファイル、問題の正答、公開制御は変更していない。コミット・push・PR・デプロイは実施していない。未公開状態のテストはリポジトリ内の出題経路を対象とし、稼働サイトのデプロイ状態を確認したものではない。
+
+## 第75回追加作業（2026-11-03・未完了）
+
+**第75回の問題データ追加は未完了。直近2回分の収録完了とは扱わない。** 上記の第75回「原本取得不能」は前作業時点の記録であり、今回提供された `data/raw_pdfs/keiryoshi/r06-75/` の原本9本で解消した。現在の未収録理由は原本取得不能ではなく、転記・解説・画像・全数照合が未完了である。第76回の問題・画像・証跡・公開制御は変更していない。
+
+### 確認済みの原本・資格対応
+
+対象は第75回（令和6年12月実施、出題年2024）。[公式実施案内](https://www.meti.go.jp/information/license/data/c240621aj.html)の公式検索結果で2024-12-15実施を確認。[問題一覧](https://www.meti.go.jp/policy/economy/hyojun/techno_infra/23_kakomon.html)、入力 `LISTINGS.json`、[正答案内の資格・科目対応表](https://www.meti.go.jp/information/license/data/c241216aj.html)、正答PDFの8列見出しを照合した。法規・管理は3資格共通。
+
+| 資格 | 第75回対象科目と公式問数 | 第75回予定展開件数 | 第75回登録済 | 第76回登録済 | 公開問数 |
+| --- | --- | ---: | ---: | ---: | ---: |
+| 一般計量士 `keiryoshi` | 一基25・計質25・法規25・管理25 | 100 | 0 | 100 | 0 |
+| 環境計量士（濃度関係） `keiryoshi-nodo` | 環化25・環濃25・法規25・管理25 | 100 | 0 | 100 | 0 |
+| 環境計量士（騒音・振動関係） `keiryoshi-soon` | 環物25・環音25・法規25・管理25 | 100 | 0 | 100 | 0 |
+
+8問題PDFは各26ページ（表紙＋問ページ25）、正答PDFは問1～25の8列、計200正答セル。200原問から資格別300件に展開する予定で、法規・管理50原問は第76回と同様に共有する。現時点では `2024-*.json` とローダーへの登録を行っていない。`source-packs/keiryoshi-75.json` は `publicationStatus: staging`、`ingestionStatus: pending-transcription`、実登録0問を明記した準備台帳である。
+
+| 科目 | MANIFEST記載の公式URL |
+| --- | --- |
+| 環化25問 | [1_R06kanka.pdf](https://www.meti.go.jp/policy/economy/hyojun/techno_infra/1_R06kanka.pdf) |
+| 環物25問 | [2_R06kanbutsu.pdf](https://www.meti.go.jp/policy/economy/hyojun/techno_infra/2_R06kanbutsu.pdf) |
+| 環濃25問 | [3_R06kannou.pdf](https://www.meti.go.jp/policy/economy/hyojun/techno_infra/3_R06kannou.pdf) |
+| 環音25問 | [4_R06kanon.pdf](https://www.meti.go.jp/policy/economy/hyojun/techno_infra/4_R06kanon.pdf) |
+| 法規25問 | [5_R06houki.pdf](https://www.meti.go.jp/policy/economy/hyojun/techno_infra/5_R06houki.pdf) |
+| 管理25問 | [6_R06kanri.pdf](https://www.meti.go.jp/policy/economy/hyojun/techno_infra/6_R06kanri.pdf) |
+| 一基25問 | [7_R06ichiki.pdf](https://www.meti.go.jp/policy/economy/hyojun/techno_infra/7_R06ichiki.pdf) |
+| 計質25問 | [8_R06keishitsu.pdf](https://www.meti.go.jp/policy/economy/hyojun/techno_infra/8_R06keishitsu.pdf) |
+| 正答200件 | [75seikaibangou.pdf](https://www.meti.go.jp/policy/economy/hyojun/techno_infra/75seikaibangou.pdf) |
+
+9本のサイズとSHA256を入力MANIFESTと再照合し、`docs/evidence/keiryoshi-75/source-manifest.json` に保存。正答表200セルを `pdftotext -layout` から別台帳 `official-answers.json` へ抽出した。入力正答PDF内に全員正解等の特例の注記はなく、200セルは全て単一の1～5。
+
+[公式正答案内](https://www.meti.go.jp/information/license/data/c241216aj.html)、[公式結果案内](https://www.meti.go.jp/information/license/data/c250218aj.html)、[公式過去のお知らせ](https://www.meti.go.jp/information/license/c_main_backno.html)の検索結果と訂正・全員正解の公式検索で、第75回の訂正告知は見つからなかった。ただし正答・結果案内の直接openは403で、訂正が存在しないことまで確認済みとはしない。検索結果にある別URLの正答PDF `c241216aj.pdf` は今回バイト取得・ハッシュ検証していないため、入力MANIFESTの正答PDFに置き換えていない。確認範囲と制約は `official-research.json` に記録。
+
+### 全数点検の実施範囲と未達項目
+
+`docs/evidence/keiryoshi-75/prepare-source.py` はローカル原本のみを読み、全200問ページについて、pdftotextとPyMuPDFの未加工抽出テキスト、画像オブジェクトの位置・寸法、全ベクタパスの外接矩形、フォント名・ToUnicodeの有無を列挙した。結果は `source-inventory.json`・`font-audit.json`・`pdftotext-errors.json`。再現には `pdftotext`・`pdfinfo`・PyMuPDFが必要。今回の補助Pythonパッケージは `/tmp/keiryoshi-python` に導入し、リポジトリの依存定義は変更していない。
+
+画像オブジェクトのあるページは37/200、ベクタパスのあるページは200/200。後者には文字輪郭・背景・罫線・数式線等が含まれ、**図が必要な問題数や切出し完了数を意味しない**。まだ図候補の全件分類、切出し、ラベル・軸・単位・寸法線を含む画素包含検証、画像ハッシュ台帳を完成していない。
+
+pdftotextは複数PDFで `Missing language pack for 'Adobe-Japan1' mapping`、未定義のフォントタグ等を報告し、PyMuPDFでも複数の埋め込みフォントにToUnicodeがなく、日本語の字形番号が別のUnicode文字として抽出される。例えば一基問1の「実数」は未加工抽出で `ᐇᩘ` となる。PDFの描画では読めるため、原本の破損とは判定していない。第76回の同字形との照合を試したが、未確定文字と数式の読み順が残り、復元結果を確定転記として保存していない。
+
+したがって、本文200欄・全選択肢1,000欄の公式PDFとの全件照合、pdftotextとの全差分の審査、下線・太字等の範囲保持、添字・ギリシャ文字・符号の照合は**未完了**。斜体も未再現・未点検。全体解説200件・肢解説1,000件、独立再計算、図に沿った回路・配線・構造の説明も未作成である。法規等の解説には「令和6年12月（出題時点）の法令」と基準日2024-12-15を持たせる必要がある。既存の2025年の法令注記を流用しない。
+
+第75回内の品質を理由にした恒久除外は決定していない。全200原問が収録作業中で、登録0問。第74回は今回の対象外。オーナーの権利確認済み決定を適用し、転載条件を理由に止めていない。転載条件の文言は、既存報告の「加工した旨を出典とは別に記載する」を引き継いで記録した（今回、利用規約ページ全文を再取得したとは扱わない）。
+
+### 今回の検証
+
+`verify-keiryoshi-source.py` を回・年度・原本ディレクトリ・法令基準日で共通化し、第76回と第75回を順に検証するよう拡張。第76回固有の法規21＝2、環濃3＝全員正解の検査は維持。両回の収録完了後は全600候補IDの衝突も検査する。第75回が未収録の間は非ゼロ終了し、原本監査の成功を問題追加の成功として扱わない。
+
+指定チェックの実行結果は `docs/evidence/keiryoshi-75/verification-status.json` と各ログを参照。第75回は指定検証・全数点検の全PASSに未到達。既存のTypeScriptテストが合格しても、第75回の本文等の品質を検証済みとはしない。
+
+main操作・push・PR・デプロイ・`pnpm build`・独立レビュー依頼は行っていない。未完了のためコミットは作成していない。
+
+| 指定チェック | 今回の結果 |
+| --- | --- |
+| `pnpm validate:questions` | 終了0、26,744問、fail=0、warn=16,955。第75回は未登録のため対象に含まれない |
+| `NODE_OPTIONS=--max-old-space-size=8192 pnpm typecheck` | 終了0 |
+| `npx vitest run __tests__/keiryoshi-staging.test.ts __tests__/seo` | 終了0、111ファイル・597テスト合格。第76回の既存テストを含む |
+| `python3 scripts/verify-keiryoshi-source.py` | **終了1**。第76回200原問・1,000肢解説・300候補ID・73画像は成功。第75回は9原本ハッシュ・200正答が一致した後、0科目/0原問で未完了を検出 |
+| `git diff --check` | 終了0 |
+| 第76回ファイル保全 | 2025年8科目JSON・index・source-pack・既存テスト・第76回証跡の計92ファイルがHEADの内容と完全一致。`round76-integrity.json` にハッシュを保存 |

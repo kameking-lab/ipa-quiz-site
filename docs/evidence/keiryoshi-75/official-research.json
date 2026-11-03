@@ -1,0 +1,42 @@
+{
+  "checkedOn": "2026-11-03",
+  "method": "Official METI search results plus supplied local PDFs; direct page opens failed with HTTP 403.",
+  "examDate": {
+    "value": "2024-12-15",
+    "url": "https://www.meti.go.jp/information/license/data/c240621aj.html",
+    "status": "confirmed-in-official-search-result"
+  },
+  "subjectMapping": {
+    "url": "https://www.meti.go.jp/information/license/data/c241216aj.html",
+    "status": "confirmed-in-official-search-result",
+    "keiryoshi": ["一基", "計質", "法規", "管理"],
+    "keiryoshi-nodo": ["環化", "環濃", "法規", "管理"],
+    "keiryoshi-soon": ["環物", "環音", "法規", "管理"]
+  },
+  "corrections": {
+    "status": "no-correction-notice-found-in-searched-official-results; absence-not-proven",
+    "queries": [
+      "site.meti.go.jp 第75回 計量士 正解 訂正 令和6",
+      "site.meti.go.jp 第75回計量士国家試験 訂正 正答",
+      "site.meti.go.jp 第75回計量士国家試験 全員正解"
+    ],
+    "pages": [
+      "https://www.meti.go.jp/information/license/data/c241216aj.html",
+      "https://www.meti.go.jp/information/license/data/c250218aj.html",
+      "https://www.meti.go.jp/information/license/c_main_backno.html"
+    ],
+    "directOpenResults": [
+      {"url": "https://www.meti.go.jp/information/license/data/c241216aj.html", "httpStatus": 403},
+      {"url": "https://www.meti.go.jp/information/license/data/c250218aj.html", "httpStatus": 403}
+    ],
+    "localAnswerPdf": "75seikaibangou.pdf",
+    "localAnswerPdfSpecialCases": "No all-correct footnote or special-case marker in the supplied answer PDF. All 200 cells are single numbers 1–5.",
+    "alternateOfficialAnswerUrl": "https://www.meti.go.jp/information/license/data/pdf/c241216aj.pdf",
+    "alternateOfficialAnswerComparison": "Search result rows agree with supplied local answers, but the alternate PDF bytes were not acquired or hashed; not treated as an independently verified replacement."
+  },
+  "rights": {
+    "ownerDecision": "権利確認済み。転載条件の文言を中断理由にしない。",
+    "url": "https://www.meti.go.jp/main/rules.html",
+    "recordedCondition": "編集・加工した場合は出典に加えて編集・加工した旨を記載する（既存第76回報告から引継ぎ。今回ページ本文の再取得は行っていない）。"
+  }
+}
