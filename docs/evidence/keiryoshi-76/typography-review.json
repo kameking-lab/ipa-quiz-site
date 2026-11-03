@@ -1,0 +1,1428 @@
+{
+  "checkedAt": "2026-11-03",
+  "scope": "公式8科目200問の本文・全5肢を機械走査し、強調・添字等の候補を点検。既存解説は修正記号に関係する範囲を更新。",
+  "sourceScanSha256": "15133a1f25e97006ee342ae4f12d8d050788fb146487f4c7547b5d4a884c6111",
+  "correctedQuestions": [
+    "環物10",
+    "環物11",
+    "環物12",
+    "環化6",
+    "環濃6",
+    "環濃16",
+    "管理14",
+    "管理24",
+    "計質19"
+  ],
+  "actualUnderlinedTextQuestions": [
+    "環物12",
+    "環濃6",
+    "環濃16",
+    "環音15"
+  ],
+  "lineDisposition": "上記4問以外の細線候補は空欄線・表罫線・分数線・図内線。小描画候補は表等の交点・図の記号で、独立した傍点指定の欠落は確認されなかった。",
+  "boldDisposition": "太字/Gothic候補7問は図内ラベル・図内の数値または空欄の括弧。図は既存画像に保持。",
+  "representation": "Unicode上下付き文字と、Unicodeで表せない複数字添字の既存のアンダースコア記法を使用。QuestionBodyは太字を扱うが下線タグを扱わないため、環濃6・16は括弧表示、環物12は既存の太字で代替。",
+  "limitations": "Candidates include fraction bars, blank rules, table borders, diagram labels and PDF mapping errors. Embedded raster text is not OCRed; figures and ambiguous candidates require visual review. Normalized token presence alone does not validate typography or semantics.",
+  "questions": [
+    {
+      "subject": "法規",
+      "qNumber": 1,
+      "pdfPage": 2,
+      "result": "no-machine-candidate",
+      "note": "機械抽出で今回対象の候補なし。全本文・解説の意味的な正しさを自動保証するものではない。"
+    },
+    {
+      "subject": "法規",
+      "qNumber": 2,
+      "pdfPage": 3,
+      "result": "no-machine-candidate",
+      "note": "機械抽出で今回対象の候補なし。全本文・解説の意味的な正しさを自動保証するものではない。"
+    },
+    {
+      "subject": "法規",
+      "qNumber": 3,
+      "pdfPage": 4,
+      "result": "no-machine-candidate",
+      "note": "機械抽出で今回対象の候補なし。全本文・解説の意味的な正しさを自動保証するものではない。"
+    },
+    {
+      "subject": "法規",
+      "qNumber": 4,
+      "pdfPage": 5,
+      "result": "no-machine-candidate",
+      "note": "機械抽出で今回対象の候補なし。全本文・解説の意味的な正しさを自動保証するものではない。"
+    },
+    {
+      "subject": "法規",
+      "qNumber": 5,
+      "pdfPage": 6,
+      "result": "no-machine-candidate",
+      "note": "機械抽出で今回対象の候補なし。全本文・解説の意味的な正しさを自動保証するものではない。"
+    },
+    {
+      "subject": "法規",
+      "qNumber": 6,
+      "pdfPage": 7,
+      "result": "no-machine-candidate",
+      "note": "機械抽出で今回対象の候補なし。全本文・解説の意味的な正しさを自動保証するものではない。"
+    },
+    {
+      "subject": "法規",
+      "qNumber": 7,
+      "pdfPage": 8,
+      "result": "no-machine-candidate",
+      "note": "機械抽出で今回対象の候補なし。全本文・解説の意味的な正しさを自動保証するものではない。"
+    },
+    {
+      "subject": "法規",
+      "qNumber": 8,
+      "pdfPage": 9,
+      "result": "no-machine-candidate",
+      "note": "機械抽出で今回対象の候補なし。全本文・解説の意味的な正しさを自動保証するものではない。"
+    },
+    {
+      "subject": "法規",
+      "qNumber": 9,
+      "pdfPage": 10,
+      "result": "no-machine-candidate",
+      "note": "機械抽出で今回対象の候補なし。全本文・解説の意味的な正しさを自動保証するものではない。"
+    },
+    {
+      "subject": "法規",
+      "qNumber": 10,
+      "pdfPage": 11,
+      "result": "no-machine-candidate",
+      "note": "機械抽出で今回対象の候補なし。全本文・解説の意味的な正しさを自動保証するものではない。"
+    },
+    {
+      "subject": "法規",
+      "qNumber": 11,
+      "pdfPage": 12,
+      "result": "no-machine-candidate",
+      "note": "機械抽出で今回対象の候補なし。全本文・解説の意味的な正しさを自動保証するものではない。"
+    },
+    {
+      "subject": "法規",
+      "qNumber": 12,
+      "pdfPage": 13,
+      "result": "no-machine-candidate",
+      "note": "機械抽出で今回対象の候補なし。全本文・解説の意味的な正しさを自動保証するものではない。"
+    },
+    {
+      "subject": "法規",
+      "qNumber": 13,
+      "pdfPage": 14,
+      "result": "no-machine-candidate",
+      "note": "機械抽出で今回対象の候補なし。全本文・解説の意味的な正しさを自動保証するものではない。"
+    },
+    {
+      "subject": "法規",
+      "qNumber": 14,
+      "pdfPage": 15,
+      "result": "reviewed-candidates",
+      "note": "抽出候補は罫線・空欄線・分数線・図表ラベルまたはデータに保持された記号として確認。"
+    },
+    {
+      "subject": "法規",
+      "qNumber": 15,
+      "pdfPage": 16,
+      "result": "no-machine-candidate",
+      "note": "機械抽出で今回対象の候補なし。全本文・解説の意味的な正しさを自動保証するものではない。"
+    },
+    {
+      "subject": "法規",
+      "qNumber": 16,
+      "pdfPage": 17,
+      "result": "reviewed-candidates",
+      "note": "抽出候補は罫線・空欄線・分数線・図表ラベルまたはデータに保持された記号として確認。"
+    },
+    {
+      "subject": "法規",
+      "qNumber": 17,
+      "pdfPage": 18,
+      "result": "reviewed-candidates",
+      "note": "抽出候補は罫線・空欄線・分数線・図表ラベルまたはデータに保持された記号として確認。"
+    },
+    {
+      "subject": "法規",
+      "qNumber": 18,
+      "pdfPage": 19,
+      "result": "no-machine-candidate",
+      "note": "機械抽出で今回対象の候補なし。全本文・解説の意味的な正しさを自動保証するものではない。"
+    },
+    {
+      "subject": "法規",
+      "qNumber": 19,
+      "pdfPage": 20,
+      "result": "no-machine-candidate",
+      "note": "機械抽出で今回対象の候補なし。全本文・解説の意味的な正しさを自動保証するものではない。"
+    },
+    {
+      "subject": "法規",
+      "qNumber": 20,
+      "pdfPage": 21,
+      "result": "no-machine-candidate",
+      "note": "機械抽出で今回対象の候補なし。全本文・解説の意味的な正しさを自動保証するものではない。"
+    },
+    {
+      "subject": "法規",
+      "qNumber": 21,
+      "pdfPage": 22,
+      "result": "no-machine-candidate",
+      "note": "機械抽出で今回対象の候補なし。全本文・解説の意味的な正しさを自動保証するものではない。"
+    },
+    {
+      "subject": "法規",
+      "qNumber": 22,
+      "pdfPage": 23,
+      "result": "no-machine-candidate",
+      "note": "機械抽出で今回対象の候補なし。全本文・解説の意味的な正しさを自動保証するものではない。"
+    },
+    {
+      "subject": "法規",
+      "qNumber": 23,
+      "pdfPage": 24,
+      "result": "no-machine-candidate",
+      "note": "機械抽出で今回対象の候補なし。全本文・解説の意味的な正しさを自動保証するものではない。"
+    },
+    {
+      "subject": "法規",
+      "qNumber": 24,
+      "pdfPage": 25,
+      "result": "no-machine-candidate",
+      "note": "機械抽出で今回対象の候補なし。全本文・解説の意味的な正しさを自動保証するものではない。"
+    },
+    {
+      "subject": "法規",
+      "qNumber": 25,
+      "pdfPage": 26,
+      "result": "no-machine-candidate",
+      "note": "機械抽出で今回対象の候補なし。全本文・解説の意味的な正しさを自動保証するものではない。"
+    },
+    {
+      "subject": "一基",
+      "qNumber": 1,
+      "pdfPage": 2,
+      "result": "no-machine-candidate",
+      "note": "機械抽出で今回対象の候補なし。全本文・解説の意味的な正しさを自動保証するものではない。"
+    },
+    {
+      "subject": "一基",
+      "qNumber": 2,
+      "pdfPage": 3,
+      "result": "no-machine-candidate",
+      "note": "機械抽出で今回対象の候補なし。全本文・解説の意味的な正しさを自動保証するものではない。"
+    },
+    {
+      "subject": "一基",
+      "qNumber": 3,
+      "pdfPage": 4,
+      "result": "reviewed-candidates",
+      "note": "抽出候補は罫線・空欄線・分数線・図表ラベルまたはデータに保持された記号として確認。"
+    },
+    {
+      "subject": "一基",
+      "qNumber": 4,
+      "pdfPage": 5,
+      "result": "reviewed-candidates",
+      "note": "分数・100乗・logの添字10が近接する抽出候補。データの(5/14)¹⁰⁰、log₁₀を確認。"
+    },
+    {
+      "subject": "一基",
+      "qNumber": 5,
+      "pdfPage": 6,
+      "result": "reviewed-candidates",
+      "note": "抽出候補は罫線・空欄線・分数線・図表ラベルまたはデータに保持された記号として確認。"
+    },
+    {
+      "subject": "一基",
+      "qNumber": 6,
+      "pdfPage": 7,
+      "result": "reviewed-candidates",
+      "note": "抽出候補は罫線・空欄線・分数線・図表ラベルまたはデータに保持された記号として確認。"
+    },
+    {
+      "subject": "一基",
+      "qNumber": 7,
+      "pdfPage": 8,
+      "result": "reviewed-candidates",
+      "note": "抽出候補は罫線・空欄線・分数線・図表ラベルまたはデータに保持された記号として確認。"
+    },
+    {
+      "subject": "一基",
+      "qNumber": 8,
+      "pdfPage": 9,
+      "result": "reviewed-candidates",
+      "note": "抽出のa²はax²のxの文字重複による誤対応。PDF画像でax²を確認。"
+    },
+    {
+      "subject": "一基",
+      "qNumber": 9,
+      "pdfPage": 10,
+      "result": "reviewed-candidates",
+      "note": "抽出候補は罫線・空欄線・分数線・図表ラベルまたはデータに保持された記号として確認。"
+    },
+    {
+      "subject": "一基",
+      "qNumber": 10,
+      "pdfPage": 11,
+      "result": "no-machine-candidate",
+      "note": "機械抽出で今回対象の候補なし。全本文・解説の意味的な正しさを自動保証するものではない。"
+    },
+    {
+      "subject": "一基",
+      "qNumber": 11,
+      "pdfPage": 12,
+      "result": "reviewed-candidates",
+      "note": "抽出候補は罫線・空欄線・分数線・図表ラベルまたはデータに保持された記号として確認。"
+    },
+    {
+      "subject": "一基",
+      "qNumber": 12,
+      "pdfPage": 13,
+      "result": "reviewed-candidates",
+      "note": "抽出候補は罫線・空欄線・分数線・図表ラベルまたはデータに保持された記号として確認。"
+    },
+    {
+      "subject": "一基",
+      "qNumber": 13,
+      "pdfPage": 14,
+      "result": "reviewed-candidates",
+      "note": "抽出候補は罫線・空欄線・分数線・図表ラベルまたはデータに保持された記号として確認。"
+    },
+    {
+      "subject": "一基",
+      "qNumber": 14,
+      "pdfPage": 15,
+      "result": "no-machine-candidate",
+      "note": "機械抽出で今回対象の候補なし。全本文・解説の意味的な正しさを自動保証するものではない。"
+    },
+    {
+      "subject": "一基",
+      "qNumber": 15,
+      "pdfPage": 16,
+      "result": "reviewed-candidates",
+      "note": "抽出候補は罫線・空欄線・分数線・図表ラベルまたはデータに保持された記号として確認。"
+    },
+    {
+      "subject": "一基",
+      "qNumber": 16,
+      "pdfPage": 17,
+      "result": "reviewed-candidates",
+      "note": "抽出C₂はQ₂の文字マッピング誤り。PDF画像の全5式とQ₁・Q₂を照合。"
+    },
+    {
+      "subject": "一基",
+      "qNumber": 17,
+      "pdfPage": 18,
+      "result": "reviewed-candidates",
+      "note": "抽出候補は罫線・空欄線・分数線・図表ラベルまたはデータに保持された記号として確認。"
+    },
+    {
+      "subject": "一基",
+      "qNumber": 18,
+      "pdfPage": 19,
+      "result": "reviewed-candidates",
+      "note": "抽出候補は罫線・空欄線・分数線・図表ラベルまたはデータに保持された記号として確認。"
+    },
+    {
+      "subject": "一基",
+      "qNumber": 19,
+      "pdfPage": 20,
+      "result": "no-machine-candidate",
+      "note": "機械抽出で今回対象の候補なし。全本文・解説の意味的な正しさを自動保証するものではない。"
+    },
+    {
+      "subject": "一基",
+      "qNumber": 20,
+      "pdfPage": 21,
+      "result": "reviewed-candidates",
+      "note": "抽出候補は罫線・空欄線・分数線・図表ラベルまたはデータに保持された記号として確認。"
+    },
+    {
+      "subject": "一基",
+      "qNumber": 21,
+      "pdfPage": 22,
+      "result": "reviewed-candidates",
+      "note": "抽出候補は罫線・空欄線・分数線・図表ラベルまたはデータに保持された記号として確認。"
+    },
+    {
+      "subject": "一基",
+      "qNumber": 22,
+      "pdfPage": 23,
+      "result": "reviewed-candidates",
+      "note": "抽出M₀はMcT₀の文字の誤対応。PDF画像のT₀・T₁と全5式を照合。"
+    },
+    {
+      "subject": "一基",
+      "qNumber": 23,
+      "pdfPage": 24,
+      "result": "reviewed-candidates",
+      "note": "抽出候補は罫線・空欄線・分数線・図表ラベルまたはデータに保持された記号として確認。"
+    },
+    {
+      "subject": "一基",
+      "qNumber": 24,
+      "pdfPage": 25,
+      "result": "reviewed-candidates",
+      "note": "抽出候補は罫線・空欄線・分数線・図表ラベルまたはデータに保持された記号として確認。"
+    },
+    {
+      "subject": "一基",
+      "qNumber": 25,
+      "pdfPage": 26,
+      "result": "reviewed-candidates",
+      "note": "抽出候補は罫線・空欄線・分数線・図表ラベルまたはデータに保持された記号として確認。"
+    },
+    {
+      "subject": "環物",
+      "qNumber": 1,
+      "pdfPage": 2,
+      "result": "reviewed-candidates",
+      "note": "抽出候補は罫線・空欄線・分数線・図表ラベルまたはデータに保持された記号として確認。"
+    },
+    {
+      "subject": "環物",
+      "qNumber": 2,
+      "pdfPage": 3,
+      "result": "reviewed-candidates",
+      "note": "抽出候補は罫線・空欄線・分数線・図表ラベルまたはデータに保持された記号として確認。"
+    },
+    {
+      "subject": "環物",
+      "qNumber": 3,
+      "pdfPage": 4,
+      "result": "reviewed-candidates",
+      "note": "抽出候補は罫線・空欄線・分数線・図表ラベルまたはデータに保持された記号として確認。"
+    },
+    {
+      "subject": "環物",
+      "qNumber": 4,
+      "pdfPage": 5,
+      "result": "no-machine-candidate",
+      "note": "機械抽出で今回対象の候補なし。全本文・解説の意味的な正しさを自動保証するものではない。"
+    },
+    {
+      "subject": "環物",
+      "qNumber": 5,
+      "pdfPage": 6,
+      "result": "reviewed-candidates",
+      "note": "抽出候補は罫線・空欄線・分数線・図表ラベルまたはデータに保持された記号として確認。"
+    },
+    {
+      "subject": "環物",
+      "qNumber": 6,
+      "pdfPage": 7,
+      "result": "reviewed-candidates",
+      "note": "根号付近の文字の誤対応。平方根と(R＋r)²は保持。"
+    },
+    {
+      "subject": "環物",
+      "qNumber": 7,
+      "pdfPage": 8,
+      "result": "reviewed-candidates",
+      "note": "抽出候補は罫線・空欄線・分数線・図表ラベルまたはデータに保持された記号として確認。"
+    },
+    {
+      "subject": "環物",
+      "qNumber": 8,
+      "pdfPage": 9,
+      "result": "reviewed-candidates",
+      "note": "抽出候補は罫線・空欄線・分数線・図表ラベルまたはデータに保持された記号として確認。"
+    },
+    {
+      "subject": "環物",
+      "qNumber": 9,
+      "pdfPage": 10,
+      "result": "reviewed-candidates",
+      "note": "抽出候補は罫線・空欄線・分数線・図表ラベルまたはデータに保持された記号として確認。"
+    },
+    {
+      "subject": "環物",
+      "qNumber": 10,
+      "pdfPage": 11,
+      "result": "corrected",
+      "note": "初速度v0を公式のv₀に修正。解説のv₀とも整合。"
+    },
+    {
+      "subject": "環物",
+      "qNumber": 11,
+      "pdfPage": 12,
+      "result": "corrected",
+      "note": "振幅A0を公式PDF画像で確認してA₀に修正。図内のA₀は既存画像に保持。"
+    },
+    {
+      "subject": "環物",
+      "qNumber": 12,
+      "pdfPage": 13,
+      "result": "corrected",
+      "note": "下線「誤っている」を既存表示の太字に代替し、その旨を本文に付記。"
+    },
+    {
+      "subject": "環物",
+      "qNumber": 13,
+      "pdfPage": 14,
+      "result": "reviewed-candidates",
+      "note": "抽出候補は罫線・空欄線・分数線・図表ラベルまたはデータに保持された記号として確認。"
+    },
+    {
+      "subject": "環物",
+      "qNumber": 14,
+      "pdfPage": 15,
+      "result": "no-machine-candidate",
+      "note": "機械抽出で今回対象の候補なし。全本文・解説の意味的な正しさを自動保証するものではない。"
+    },
+    {
+      "subject": "環物",
+      "qNumber": 15,
+      "pdfPage": 16,
+      "result": "reviewed-candidates",
+      "note": "λの添字0が別文字に抽出される。PDF画像でλ₀と全5式を照合。"
+    },
+    {
+      "subject": "環物",
+      "qNumber": 16,
+      "pdfPage": 17,
+      "result": "reviewed-candidates",
+      "note": "抽出π²はπR²の誤対応。PDF画像でE₀、R²と全5式を照合。"
+    },
+    {
+      "subject": "環物",
+      "qNumber": 17,
+      "pdfPage": 18,
+      "result": "reviewed-candidates",
+      "note": "抽出R₀はRT₀の文字の誤対応。PDF画像でT₀と全5式を照合。"
+    },
+    {
+      "subject": "環物",
+      "qNumber": 18,
+      "pdfPage": 19,
+      "result": "reviewed-candidates",
+      "note": "抽出候補は罫線・空欄線・分数線・図表ラベルまたはデータに保持された記号として確認。"
+    },
+    {
+      "subject": "環物",
+      "qNumber": 19,
+      "pdfPage": 20,
+      "result": "no-machine-candidate",
+      "note": "機械抽出で今回対象の候補なし。全本文・解説の意味的な正しさを自動保証するものではない。"
+    },
+    {
+      "subject": "環物",
+      "qNumber": 20,
+      "pdfPage": 21,
+      "result": "reviewed-candidates",
+      "note": "抽出候補は罫線・空欄線・分数線・図表ラベルまたはデータに保持された記号として確認。"
+    },
+    {
+      "subject": "環物",
+      "qNumber": 21,
+      "pdfPage": 22,
+      "result": "reviewed-candidates",
+      "note": "抽出候補は罫線・空欄線・分数線・図表ラベルまたはデータに保持された記号として確認。"
+    },
+    {
+      "subject": "環物",
+      "qNumber": 22,
+      "pdfPage": 23,
+      "result": "reviewed-candidates",
+      "note": "抽出候補は罫線・空欄線・分数線・図表ラベルまたはデータに保持された記号として確認。"
+    },
+    {
+      "subject": "環物",
+      "qNumber": 23,
+      "pdfPage": 24,
+      "result": "reviewed-candidates",
+      "note": "抽出候補は罫線・空欄線・分数線・図表ラベルまたはデータに保持された記号として確認。"
+    },
+    {
+      "subject": "環物",
+      "qNumber": 24,
+      "pdfPage": 25,
+      "result": "reviewed-candidates",
+      "note": "Zmₙ等のmの欠落による誤対応。PDF画像でmₚ・mₙ・c²と全5式を照合。"
+    },
+    {
+      "subject": "環物",
+      "qNumber": 25,
+      "pdfPage": 26,
+      "result": "reviewed-candidates",
+      "note": "抽出候補は罫線・空欄線・分数線・図表ラベルまたはデータに保持された記号として確認。"
+    },
+    {
+      "subject": "環化",
+      "qNumber": 1,
+      "pdfPage": 2,
+      "result": "reviewed-candidates",
+      "note": "抽出候補は罫線・空欄線・分数線・図表ラベルまたはデータに保持された記号として確認。"
+    },
+    {
+      "subject": "環化",
+      "qNumber": 2,
+      "pdfPage": 3,
+      "result": "no-machine-candidate",
+      "note": "機械抽出で今回対象の候補なし。全本文・解説の意味的な正しさを自動保証するものではない。"
+    },
+    {
+      "subject": "環化",
+      "qNumber": 3,
+      "pdfPage": 4,
+      "result": "reviewed-candidates",
+      "note": "抽出候補は罫線・空欄線・分数線・図表ラベルまたはデータに保持された記号として確認。"
+    },
+    {
+      "subject": "環化",
+      "qNumber": 4,
+      "pdfPage": 5,
+      "result": "reviewed-candidates",
+      "note": "抽出候補は罫線・空欄線・分数線・図表ラベルまたはデータに保持された記号として確認。"
+    },
+    {
+      "subject": "環化",
+      "qNumber": 5,
+      "pdfPage": 6,
+      "result": "no-machine-candidate",
+      "note": "機械抽出で今回対象の候補なし。全本文・解説の意味的な正しさを自動保証するものではない。"
+    },
+    {
+      "subject": "環化",
+      "qNumber": 6,
+      "pdfPage": 7,
+      "result": "corrected",
+      "note": "質量数3の上付きとβの電荷を確認し、3H・3He・β－を³H・³He・β⁻に修正。"
+    },
+    {
+      "subject": "環化",
+      "qNumber": 7,
+      "pdfPage": 8,
+      "result": "reviewed-candidates",
+      "note": "mol L⁻¹の−1とCu²⁺の2+を一字ずつ誤対応した候補。式中の指数・電荷は保持。"
+    },
+    {
+      "subject": "環化",
+      "qNumber": 8,
+      "pdfPage": 9,
+      "result": "reviewed-candidates",
+      "note": "抽出候補は罫線・空欄線・分数線・図表ラベルまたはデータに保持された記号として確認。"
+    },
+    {
+      "subject": "環化",
+      "qNumber": 9,
+      "pdfPage": 10,
+      "result": "reviewed-candidates",
+      "note": "ΔH_latticeは複数字添字の既存アンダースコア表記。mol⁻¹、Ca²⁺等も保持。PDF画像で照合。"
+    },
+    {
+      "subject": "環化",
+      "qNumber": 10,
+      "pdfPage": 11,
+      "result": "no-machine-candidate",
+      "note": "機械抽出で今回対象の候補なし。全本文・解説の意味的な正しさを自動保証するものではない。"
+    },
+    {
+      "subject": "環化",
+      "qNumber": 11,
+      "pdfPage": 12,
+      "result": "reviewed-candidates",
+      "note": "抽出候補は罫線・空欄線・分数線・図表ラベルまたはデータに保持された記号として確認。"
+    },
+    {
+      "subject": "環化",
+      "qNumber": 12,
+      "pdfPage": 13,
+      "result": "no-machine-candidate",
+      "note": "機械抽出で今回対象の候補なし。全本文・解説の意味的な正しさを自動保証するものではない。"
+    },
+    {
+      "subject": "環化",
+      "qNumber": 13,
+      "pdfPage": 14,
+      "result": "no-machine-candidate",
+      "note": "機械抽出で今回対象の候補なし。全本文・解説の意味的な正しさを自動保証するものではない。"
+    },
+    {
+      "subject": "環化",
+      "qNumber": 14,
+      "pdfPage": 15,
+      "result": "no-machine-candidate",
+      "note": "機械抽出で今回対象の候補なし。全本文・解説の意味的な正しさを自動保証するものではない。"
+    },
+    {
+      "subject": "環化",
+      "qNumber": 15,
+      "pdfPage": 16,
+      "result": "reviewed-candidates",
+      "note": "mol⁻¹と10⁻²の指数の一部が基底に直接結び付いた抽出候補。指数は保持。"
+    },
+    {
+      "subject": "環化",
+      "qNumber": 16,
+      "pdfPage": 17,
+      "result": "reviewed-candidates",
+      "note": "抽出a²はan²のnの文字重複による誤対応。PDF画像のan²/V²と一致。"
+    },
+    {
+      "subject": "環化",
+      "qNumber": 17,
+      "pdfPage": 18,
+      "result": "reviewed-candidates",
+      "note": "log₁₀、10⁻¹⁴、mol L⁻¹の連続添字・指数の誤対応。表記は保持。"
+    },
+    {
+      "subject": "環化",
+      "qNumber": 18,
+      "pdfPage": 19,
+      "result": "reviewed-candidates",
+      "note": "抽出候補は罫線・空欄線・分数線・図表ラベルまたはデータに保持された記号として確認。"
+    },
+    {
+      "subject": "環化",
+      "qNumber": 19,
+      "pdfPage": 20,
+      "result": "reviewed-candidates",
+      "note": "抽出H₀はH₁₀の2文字添字。データのC₄H₁₀Oを確認。"
+    },
+    {
+      "subject": "環化",
+      "qNumber": 20,
+      "pdfPage": 21,
+      "result": "reviewed-candidates",
+      "note": "抽出候補は罫線・空欄線・分数線・図表ラベルまたはデータに保持された記号として確認。"
+    },
+    {
+      "subject": "環化",
+      "qNumber": 21,
+      "pdfPage": 22,
+      "result": "no-machine-candidate",
+      "note": "機械抽出で今回対象の候補なし。全本文・解説の意味的な正しさを自動保証するものではない。"
+    },
+    {
+      "subject": "環化",
+      "qNumber": 22,
+      "pdfPage": 23,
+      "result": "reviewed-candidates",
+      "note": "抽出n₂はnH₂OのHの文字マッピングによる誤対応。PDF画像の式を照合。"
+    },
+    {
+      "subject": "環化",
+      "qNumber": 23,
+      "pdfPage": 24,
+      "result": "no-machine-candidate",
+      "note": "機械抽出で今回対象の候補なし。全本文・解説の意味的な正しさを自動保証するものではない。"
+    },
+    {
+      "subject": "環化",
+      "qNumber": 24,
+      "pdfPage": 25,
+      "result": "no-machine-candidate",
+      "note": "機械抽出で今回対象の候補なし。全本文・解説の意味的な正しさを自動保証するものではない。"
+    },
+    {
+      "subject": "環化",
+      "qNumber": 25,
+      "pdfPage": 26,
+      "result": "no-machine-candidate",
+      "note": "機械抽出で今回対象の候補なし。全本文・解説の意味的な正しさを自動保証するものではない。"
+    },
+    {
+      "subject": "環濃",
+      "qNumber": 1,
+      "pdfPage": 2,
+      "result": "reviewed-candidates",
+      "note": "S²⁻の電荷の一部を直接対応した抽出候補。電荷の2と負符号を保持。"
+    },
+    {
+      "subject": "環濃",
+      "qNumber": 2,
+      "pdfPage": 3,
+      "result": "no-machine-candidate",
+      "note": "機械抽出で今回対象の候補なし。全本文・解説の意味的な正しさを自動保証するものではない。"
+    },
+    {
+      "subject": "環濃",
+      "qNumber": 3,
+      "pdfPage": 4,
+      "result": "no-machine-candidate",
+      "note": "機械抽出で今回対象の候補なし。全本文・解説の意味的な正しさを自動保証するものではない。"
+    },
+    {
+      "subject": "環濃",
+      "qNumber": 4,
+      "pdfPage": 5,
+      "result": "no-machine-candidate",
+      "note": "機械抽出で今回対象の候補なし。全本文・解説の意味的な正しさを自動保証するものではない。"
+    },
+    {
+      "subject": "環濃",
+      "qNumber": 5,
+      "pdfPage": 6,
+      "result": "no-machine-candidate",
+      "note": "機械抽出で今回対象の候補なし。全本文・解説の意味的な正しさを自動保証するものではない。"
+    },
+    {
+      "subject": "環濃",
+      "qNumber": 6,
+      "pdfPage": 7,
+      "result": "corrected",
+      "note": "下線の塩酸／加圧法又は減圧法／メタノールを【 】で明示。内部標準のd16もd₁₆に修正。"
+    },
+    {
+      "subject": "環濃",
+      "qNumber": 7,
+      "pdfPage": 8,
+      "result": "no-machine-candidate",
+      "note": "機械抽出で今回対象の候補なし。全本文・解説の意味的な正しさを自動保証するものではない。"
+    },
+    {
+      "subject": "環濃",
+      "qNumber": 8,
+      "pdfPage": 9,
+      "result": "reviewed-candidates",
+      "note": "抽出候補は罫線・空欄線・分数線・図表ラベルまたはデータに保持された記号として確認。"
+    },
+    {
+      "subject": "環濃",
+      "qNumber": 9,
+      "pdfPage": 10,
+      "result": "no-machine-candidate",
+      "note": "機械抽出で今回対象の候補なし。全本文・解説の意味的な正しさを自動保証するものではない。"
+    },
+    {
+      "subject": "環濃",
+      "qNumber": 10,
+      "pdfPage": 11,
+      "result": "no-machine-candidate",
+      "note": "機械抽出で今回対象の候補なし。全本文・解説の意味的な正しさを自動保証するものではない。"
+    },
+    {
+      "subject": "環濃",
+      "qNumber": 11,
+      "pdfPage": 12,
+      "result": "no-machine-candidate",
+      "note": "機械抽出で今回対象の候補なし。全本文・解説の意味的な正しさを自動保証するものではない。"
+    },
+    {
+      "subject": "環濃",
+      "qNumber": 12,
+      "pdfPage": 13,
+      "result": "reviewed-candidates",
+      "note": "10⁻²・10⁻³の指数の一部を直接対応した候補。負符号と指数を保持。"
+    },
+    {
+      "subject": "環濃",
+      "qNumber": 13,
+      "pdfPage": 14,
+      "result": "reviewed-candidates",
+      "note": "抽出候補は罫線・空欄線・分数線・図表ラベルまたはデータに保持された記号として確認。"
+    },
+    {
+      "subject": "環濃",
+      "qNumber": 14,
+      "pdfPage": 15,
+      "result": "no-machine-candidate",
+      "note": "機械抽出で今回対象の候補なし。全本文・解説の意味的な正しさを自動保証するものではない。"
+    },
+    {
+      "subject": "環濃",
+      "qNumber": 15,
+      "pdfPage": 16,
+      "result": "no-machine-candidate",
+      "note": "機械抽出で今回対象の候補なし。全本文・解説の意味的な正しさを自動保証するものではない。"
+    },
+    {
+      "subject": "環濃",
+      "qNumber": 16,
+      "pdfPage": 17,
+      "result": "corrected",
+      "note": "公式PDF17ページの下線3範囲（吸引採取／捕集バッグ／希釈）を【 】で明示し、加工注記を本文に付記。"
+    },
+    {
+      "subject": "環濃",
+      "qNumber": 17,
+      "pdfPage": 18,
+      "result": "reviewed-candidates",
+      "note": "抽出候補は罫線・空欄線・分数線・図表ラベルまたはデータに保持された記号として確認。"
+    },
+    {
+      "subject": "環濃",
+      "qNumber": 18,
+      "pdfPage": 19,
+      "result": "reviewed-candidates",
+      "note": "抽出候補は罫線・空欄線・分数線・図表ラベルまたはデータに保持された記号として確認。"
+    },
+    {
+      "subject": "環濃",
+      "qNumber": 19,
+      "pdfPage": 20,
+      "result": "reviewed-candidates",
+      "note": "抽出候補は罫線・空欄線・分数線・図表ラベルまたはデータに保持された記号として確認。"
+    },
+    {
+      "subject": "環濃",
+      "qNumber": 20,
+      "pdfPage": 21,
+      "result": "no-machine-candidate",
+      "note": "機械抽出で今回対象の候補なし。全本文・解説の意味的な正しさを自動保証するものではない。"
+    },
+    {
+      "subject": "環濃",
+      "qNumber": 21,
+      "pdfPage": 22,
+      "result": "reviewed-candidates",
+      "note": "抽出候補は罫線・空欄線・分数線・図表ラベルまたはデータに保持された記号として確認。"
+    },
+    {
+      "subject": "環濃",
+      "qNumber": 22,
+      "pdfPage": 23,
+      "result": "no-machine-candidate",
+      "note": "機械抽出で今回対象の候補なし。全本文・解説の意味的な正しさを自動保証するものではない。"
+    },
+    {
+      "subject": "環濃",
+      "qNumber": 23,
+      "pdfPage": 24,
+      "result": "no-machine-candidate",
+      "note": "機械抽出で今回対象の候補なし。全本文・解説の意味的な正しさを自動保証するものではない。"
+    },
+    {
+      "subject": "環濃",
+      "qNumber": 24,
+      "pdfPage": 25,
+      "result": "no-machine-candidate",
+      "note": "機械抽出で今回対象の候補なし。全本文・解説の意味的な正しさを自動保証するものではない。"
+    },
+    {
+      "subject": "環濃",
+      "qNumber": 25,
+      "pdfPage": 26,
+      "result": "no-machine-candidate",
+      "note": "機械抽出で今回対象の候補なし。全本文・解説の意味的な正しさを自動保証するものではない。"
+    },
+    {
+      "subject": "環音",
+      "qNumber": 1,
+      "pdfPage": 2,
+      "result": "no-machine-candidate",
+      "note": "機械抽出で今回対象の候補なし。全本文・解説の意味的な正しさを自動保証するものではない。"
+    },
+    {
+      "subject": "環音",
+      "qNumber": 2,
+      "pdfPage": 3,
+      "result": "reviewed-candidates",
+      "note": "抽出候補は罫線・空欄線・分数線・図表ラベルまたはデータに保持された記号として確認。"
+    },
+    {
+      "subject": "環音",
+      "qNumber": 3,
+      "pdfPage": 4,
+      "result": "no-machine-candidate",
+      "note": "機械抽出で今回対象の候補なし。全本文・解説の意味的な正しさを自動保証するものではない。"
+    },
+    {
+      "subject": "環音",
+      "qNumber": 4,
+      "pdfPage": 5,
+      "result": "no-machine-candidate",
+      "note": "機械抽出で今回対象の候補なし。全本文・解説の意味的な正しさを自動保証するものではない。"
+    },
+    {
+      "subject": "環音",
+      "qNumber": 5,
+      "pdfPage": 6,
+      "result": "no-machine-candidate",
+      "note": "機械抽出で今回対象の候補なし。全本文・解説の意味的な正しさを自動保証するものではない。"
+    },
+    {
+      "subject": "環音",
+      "qNumber": 6,
+      "pdfPage": 7,
+      "result": "no-machine-candidate",
+      "note": "機械抽出で今回対象の候補なし。全本文・解説の意味的な正しさを自動保証するものではない。"
+    },
+    {
+      "subject": "環音",
+      "qNumber": 7,
+      "pdfPage": 8,
+      "result": "reviewed-candidates",
+      "note": "抽出候補は罫線・空欄線・分数線・図表ラベルまたはデータに保持された記号として確認。"
+    },
+    {
+      "subject": "環音",
+      "qNumber": 8,
+      "pdfPage": 9,
+      "result": "reviewed-candidates",
+      "note": "抽出候補は罫線・空欄線・分数線・図表ラベルまたはデータに保持された記号として確認。"
+    },
+    {
+      "subject": "環音",
+      "qNumber": 9,
+      "pdfPage": 10,
+      "result": "reviewed-candidates",
+      "note": "K₂の2が別文字で抽出される。データにK₂を保持。"
+    },
+    {
+      "subject": "環音",
+      "qNumber": 10,
+      "pdfPage": 11,
+      "result": "reviewed-candidates",
+      "note": "抽出候補は罫線・空欄線・分数線・図表ラベルまたはデータに保持された記号として確認。"
+    },
+    {
+      "subject": "環音",
+      "qNumber": 11,
+      "pdfPage": 12,
+      "result": "no-machine-candidate",
+      "note": "機械抽出で今回対象の候補なし。全本文・解説の意味的な正しさを自動保証するものではない。"
+    },
+    {
+      "subject": "環音",
+      "qNumber": 12,
+      "pdfPage": 13,
+      "result": "no-machine-candidate",
+      "note": "機械抽出で今回対象の候補なし。全本文・解説の意味的な正しさを自動保証するものではない。"
+    },
+    {
+      "subject": "環音",
+      "qNumber": 13,
+      "pdfPage": 14,
+      "result": "reviewed-candidates",
+      "note": "Lの複数字添字の一部・文字マッピングによる候補。PDF画像の全5肢とL_pA,Fmax、L_AN,F,T、L_EA、L_Aeq,T、L_denを照合。"
+    },
+    {
+      "subject": "環音",
+      "qNumber": 14,
+      "pdfPage": 15,
+      "result": "reviewed-candidates",
+      "note": "Lの添字が別文字で抽出される。PDF画像とL_A5,F,Tを照合。"
+    },
+    {
+      "subject": "環音",
+      "qNumber": 15,
+      "pdfPage": 16,
+      "result": "reviewed-candidates",
+      "note": "下線5範囲は既存の太字と一致。L_A,Smax、L_Aeq、L_AEもPDF画像と照合。"
+    },
+    {
+      "subject": "環音",
+      "qNumber": 16,
+      "pdfPage": 17,
+      "result": "reviewed-candidates",
+      "note": "f₁、f₂や分数が別文字で抽出される。PDF画像で本文・全5肢の式を照合。"
+    },
+    {
+      "subject": "環音",
+      "qNumber": 17,
+      "pdfPage": 18,
+      "result": "reviewed-candidates",
+      "note": "抽出候補は罫線・空欄線・分数線・図表ラベルまたはデータに保持された記号として確認。"
+    },
+    {
+      "subject": "環音",
+      "qNumber": 18,
+      "pdfPage": 19,
+      "result": "no-machine-candidate",
+      "note": "機械抽出で今回対象の候補なし。全本文・解説の意味的な正しさを自動保証するものではない。"
+    },
+    {
+      "subject": "環音",
+      "qNumber": 19,
+      "pdfPage": 20,
+      "result": "reviewed-candidates",
+      "note": "抽出候補は罫線・空欄線・分数線・図表ラベルまたはデータに保持された記号として確認。"
+    },
+    {
+      "subject": "環音",
+      "qNumber": 20,
+      "pdfPage": 21,
+      "result": "no-machine-candidate",
+      "note": "機械抽出で今回対象の候補なし。全本文・解説の意味的な正しさを自動保証するものではない。"
+    },
+    {
+      "subject": "環音",
+      "qNumber": 21,
+      "pdfPage": 22,
+      "result": "reviewed-candidates",
+      "note": "抽出候補は罫線・空欄線・分数線・図表ラベルまたはデータに保持された記号として確認。"
+    },
+    {
+      "subject": "環音",
+      "qNumber": 22,
+      "pdfPage": 23,
+      "result": "no-machine-candidate",
+      "note": "機械抽出で今回対象の候補なし。全本文・解説の意味的な正しさを自動保証するものではない。"
+    },
+    {
+      "subject": "環音",
+      "qNumber": 23,
+      "pdfPage": 24,
+      "result": "reviewed-candidates",
+      "note": "抽出候補は罫線・空欄線・分数線・図表ラベルまたはデータに保持された記号として確認。"
+    },
+    {
+      "subject": "環音",
+      "qNumber": 24,
+      "pdfPage": 25,
+      "result": "no-machine-candidate",
+      "note": "機械抽出で今回対象の候補なし。全本文・解説の意味的な正しさを自動保証するものではない。"
+    },
+    {
+      "subject": "環音",
+      "qNumber": 25,
+      "pdfPage": 26,
+      "result": "reviewed-candidates",
+      "note": "抽出候補は罫線・空欄線・分数線・図表ラベルまたはデータに保持された記号として確認。"
+    },
+    {
+      "subject": "管理",
+      "qNumber": 1,
+      "pdfPage": 2,
+      "result": "no-machine-candidate",
+      "note": "機械抽出で今回対象の候補なし。全本文・解説の意味的な正しさを自動保証するものではない。"
+    },
+    {
+      "subject": "管理",
+      "qNumber": 2,
+      "pdfPage": 3,
+      "result": "no-machine-candidate",
+      "note": "機械抽出で今回対象の候補なし。全本文・解説の意味的な正しさを自動保証するものではない。"
+    },
+    {
+      "subject": "管理",
+      "qNumber": 3,
+      "pdfPage": 4,
+      "result": "no-machine-candidate",
+      "note": "機械抽出で今回対象の候補なし。全本文・解説の意味的な正しさを自動保証するものではない。"
+    },
+    {
+      "subject": "管理",
+      "qNumber": 4,
+      "pdfPage": 5,
+      "result": "no-machine-candidate",
+      "note": "機械抽出で今回対象の候補なし。全本文・解説の意味的な正しさを自動保証するものではない。"
+    },
+    {
+      "subject": "管理",
+      "qNumber": 5,
+      "pdfPage": 6,
+      "result": "no-machine-candidate",
+      "note": "機械抽出で今回対象の候補なし。全本文・解説の意味的な正しさを自動保証するものではない。"
+    },
+    {
+      "subject": "管理",
+      "qNumber": 6,
+      "pdfPage": 7,
+      "result": "reviewed-candidates",
+      "note": "抽出候補は罫線・空欄線・分数線・図表ラベルまたはデータに保持された記号として確認。"
+    },
+    {
+      "subject": "管理",
+      "qNumber": 7,
+      "pdfPage": 8,
+      "result": "reviewed-candidates",
+      "note": "積分の上下限・積分記号の文字マッピングによる候補。PDF画像の∞、−∞、xを既存の∫_{−∞}^{x}等と照合。"
+    },
+    {
+      "subject": "管理",
+      "qNumber": 8,
+      "pdfPage": 9,
+      "result": "no-machine-candidate",
+      "note": "機械抽出で今回対象の候補なし。全本文・解説の意味的な正しさを自動保証するものではない。"
+    },
+    {
+      "subject": "管理",
+      "qNumber": 9,
+      "pdfPage": 10,
+      "result": "no-machine-candidate",
+      "note": "機械抽出で今回対象の候補なし。全本文・解説の意味的な正しさを自動保証するものではない。"
+    },
+    {
+      "subject": "管理",
+      "qNumber": 10,
+      "pdfPage": 11,
+      "result": "reviewed-candidates",
+      "note": "S_A等は既存のアンダースコア表記で保持。PDF画像の表・全5式を照合。"
+    },
+    {
+      "subject": "管理",
+      "qNumber": 11,
+      "pdfPage": 12,
+      "result": "no-machine-candidate",
+      "note": "機械抽出で今回対象の候補なし。全本文・解説の意味的な正しさを自動保証するものではない。"
+    },
+    {
+      "subject": "管理",
+      "qNumber": 12,
+      "pdfPage": 13,
+      "result": "no-machine-candidate",
+      "note": "機械抽出で今回対象の候補なし。全本文・解説の意味的な正しさを自動保証するものではない。"
+    },
+    {
+      "subject": "管理",
+      "qNumber": 13,
+      "pdfPage": 14,
+      "result": "no-machine-candidate",
+      "note": "機械抽出で今回対象の候補なし。全本文・解説の意味的な正しさを自動保証するものではない。"
+    },
+    {
+      "subject": "管理",
+      "qNumber": 14,
+      "pdfPage": 15,
+      "result": "corrected",
+      "note": "y 0、x0、M1/M2/Mn、y 1/y 2/ynをPDF画像の添字に合わせy₀、x₀、M₁/M₂/Mₙ、y₁/y₂/yₙに修正。"
+    },
+    {
+      "subject": "管理",
+      "qNumber": 15,
+      "pdfPage": 16,
+      "result": "reviewed-candidates",
+      "note": "抽出候補は罫線・空欄線・分数線・図表ラベルまたはデータに保持された記号として確認。"
+    },
+    {
+      "subject": "管理",
+      "qNumber": 16,
+      "pdfPage": 17,
+      "result": "reviewed-candidates",
+      "note": "図内のB₁・E₃・F₃・H₁は画像に保持。L₁₈の8だけを基底に結び付けた候補。PDF画像と全5肢の添字を照合。"
+    },
+    {
+      "subject": "管理",
+      "qNumber": 17,
+      "pdfPage": 18,
+      "result": "no-machine-candidate",
+      "note": "機械抽出で今回対象の候補なし。全本文・解説の意味的な正しさを自動保証するものではない。"
+    },
+    {
+      "subject": "管理",
+      "qNumber": 18,
+      "pdfPage": 19,
+      "result": "reviewed-candidates",
+      "note": "2¹²の指数12の2だけを基底に結び付けた候補。12ビットの指数を保持。"
+    },
+    {
+      "subject": "管理",
+      "qNumber": 19,
+      "pdfPage": 20,
+      "result": "reviewed-candidates",
+      "note": "抽出候補は罫線・空欄線・分数線・図表ラベルまたはデータに保持された記号として確認。"
+    },
+    {
+      "subject": "管理",
+      "qNumber": 20,
+      "pdfPage": 21,
+      "result": "no-machine-candidate",
+      "note": "機械抽出で今回対象の候補なし。全本文・解説の意味的な正しさを自動保証するものではない。"
+    },
+    {
+      "subject": "管理",
+      "qNumber": 21,
+      "pdfPage": 22,
+      "result": "no-machine-candidate",
+      "note": "機械抽出で今回対象の候補なし。全本文・解説の意味的な正しさを自動保証するものではない。"
+    },
+    {
+      "subject": "管理",
+      "qNumber": 22,
+      "pdfPage": 23,
+      "result": "no-machine-candidate",
+      "note": "機械抽出で今回対象の候補なし。全本文・解説の意味的な正しさを自動保証するものではない。"
+    },
+    {
+      "subject": "管理",
+      "qNumber": 23,
+      "pdfPage": 24,
+      "result": "reviewed-candidates",
+      "note": "抽出候補は罫線・空欄線・分数線・図表ラベルまたはデータに保持された記号として確認。"
+    },
+    {
+      "subject": "管理",
+      "qNumber": 24,
+      "pdfPage": 25,
+      "result": "corrected",
+      "note": "C p、C pkの添字欠落を公式のCₚ、C_pkに修正。解説も統一。pkは既存の複数字添字のアンダースコア記法。"
+    },
+    {
+      "subject": "管理",
+      "qNumber": 25,
+      "pdfPage": 26,
+      "result": "no-machine-candidate",
+      "note": "機械抽出で今回対象の候補なし。全本文・解説の意味的な正しさを自動保証するものではない。"
+    },
+    {
+      "subject": "計質",
+      "qNumber": 1,
+      "pdfPage": 2,
+      "result": "no-machine-candidate",
+      "note": "機械抽出で今回対象の候補なし。全本文・解説の意味的な正しさを自動保証するものではない。"
+    },
+    {
+      "subject": "計質",
+      "qNumber": 2,
+      "pdfPage": 3,
+      "result": "no-machine-candidate",
+      "note": "機械抽出で今回対象の候補なし。全本文・解説の意味的な正しさを自動保証するものではない。"
+    },
+    {
+      "subject": "計質",
+      "qNumber": 3,
+      "pdfPage": 4,
+      "result": "no-machine-candidate",
+      "note": "機械抽出で今回対象の候補なし。全本文・解説の意味的な正しさを自動保証するものではない。"
+    },
+    {
+      "subject": "計質",
+      "qNumber": 4,
+      "pdfPage": 5,
+      "result": "no-machine-candidate",
+      "note": "機械抽出で今回対象の候補なし。全本文・解説の意味的な正しさを自動保証するものではない。"
+    },
+    {
+      "subject": "計質",
+      "qNumber": 5,
+      "pdfPage": 6,
+      "result": "reviewed-candidates",
+      "note": "抽出候補は罫線・空欄線・分数線・図表ラベルまたはデータに保持された記号として確認。"
+    },
+    {
+      "subject": "計質",
+      "qNumber": 6,
+      "pdfPage": 7,
+      "result": "reviewed-candidates",
+      "note": "s⁻¹、s⁻²、m⁻¹、s⁻³、kg⁻¹の指数の一部を直接結び付けた候補。負符号と指数を保持。"
+    },
+    {
+      "subject": "計質",
+      "qNumber": 7,
+      "pdfPage": 8,
+      "result": "reviewed-candidates",
+      "note": "抽出候補は罫線・空欄線・分数線・図表ラベルまたはデータに保持された記号として確認。"
+    },
+    {
+      "subject": "計質",
+      "qNumber": 8,
+      "pdfPage": 9,
+      "result": "no-machine-candidate",
+      "note": "機械抽出で今回対象の候補なし。全本文・解説の意味的な正しさを自動保証するものではない。"
+    },
+    {
+      "subject": "計質",
+      "qNumber": 9,
+      "pdfPage": 10,
+      "result": "no-machine-candidate",
+      "note": "機械抽出で今回対象の候補なし。全本文・解説の意味的な正しさを自動保証するものではない。"
+    },
+    {
+      "subject": "計質",
+      "qNumber": 10,
+      "pdfPage": 11,
+      "result": "no-machine-candidate",
+      "note": "機械抽出で今回対象の候補なし。全本文・解説の意味的な正しさを自動保証するものではない。"
+    },
+    {
+      "subject": "計質",
+      "qNumber": 11,
+      "pdfPage": 12,
+      "result": "no-machine-candidate",
+      "note": "機械抽出で今回対象の候補なし。全本文・解説の意味的な正しさを自動保証するものではない。"
+    },
+    {
+      "subject": "計質",
+      "qNumber": 12,
+      "pdfPage": 13,
+      "result": "no-machine-candidate",
+      "note": "機械抽出で今回対象の候補なし。全本文・解説の意味的な正しさを自動保証するものではない。"
+    },
+    {
+      "subject": "計質",
+      "qNumber": 13,
+      "pdfPage": 14,
+      "result": "no-machine-candidate",
+      "note": "機械抽出で今回対象の候補なし。全本文・解説の意味的な正しさを自動保証するものではない。"
+    },
+    {
+      "subject": "計質",
+      "qNumber": 14,
+      "pdfPage": 15,
+      "result": "no-machine-candidate",
+      "note": "機械抽出で今回対象の候補なし。全本文・解説の意味的な正しさを自動保証するものではない。"
+    },
+    {
+      "subject": "計質",
+      "qNumber": 15,
+      "pdfPage": 16,
+      "result": "no-machine-candidate",
+      "note": "機械抽出で今回対象の候補なし。全本文・解説の意味的な正しさを自動保証するものではない。"
+    },
+    {
+      "subject": "計質",
+      "qNumber": 16,
+      "pdfPage": 17,
+      "result": "reviewed-candidates",
+      "note": "抽出候補は罫線・空欄線・分数線・図表ラベルまたはデータに保持された記号として確認。"
+    },
+    {
+      "subject": "計質",
+      "qNumber": 17,
+      "pdfPage": 18,
+      "result": "reviewed-candidates",
+      "note": "抽出候補は罫線・空欄線・分数線・図表ラベルまたはデータに保持された記号として確認。"
+    },
+    {
+      "subject": "計質",
+      "qNumber": 18,
+      "pdfPage": 19,
+      "result": "reviewed-candidates",
+      "note": "抽出候補は罫線・空欄線・分数線・図表ラベルまたはデータに保持された記号として確認。"
+    },
+    {
+      "subject": "計質",
+      "qNumber": 19,
+      "pdfPage": 20,
+      "result": "corrected",
+      "note": "公式PDF20ページのM_r・ρ_rを本文・全5肢・解説（肢アの解説を含む）でMᵣ・ρᵣに復元。"
+    },
+    {
+      "subject": "計質",
+      "qNumber": 20,
+      "pdfPage": 21,
+      "result": "reviewed-candidates",
+      "note": "抽出候補は罫線・空欄線・分数線・図表ラベルまたはデータに保持された記号として確認。"
+    },
+    {
+      "subject": "計質",
+      "qNumber": 21,
+      "pdfPage": 22,
+      "result": "reviewed-candidates",
+      "note": "I_A1等の複数字添字、σ、根号が一部別文字・NULで抽出される。PDF画像の本文・全5式と照合。"
+    },
+    {
+      "subject": "計質",
+      "qNumber": 22,
+      "pdfPage": 23,
+      "result": "no-machine-candidate",
+      "note": "機械抽出で今回対象の候補なし。全本文・解説の意味的な正しさを自動保証するものではない。"
+    },
+    {
+      "subject": "計質",
+      "qNumber": 23,
+      "pdfPage": 24,
+      "result": "reviewed-candidates",
+      "note": "複数字添字の各文字と分数線・演算記号の誤対応候補。本文と全5肢にa₁～a₃・b₁～b₃等を保持。"
+    },
+    {
+      "subject": "計質",
+      "qNumber": 24,
+      "pdfPage": 25,
+      "result": "no-machine-candidate",
+      "note": "機械抽出で今回対象の候補なし。全本文・解説の意味的な正しさを自動保証するものではない。"
+    },
+    {
+      "subject": "計質",
+      "qNumber": 25,
+      "pdfPage": 26,
+      "result": "no-machine-candidate",
+      "note": "機械抽出で今回対象の候補なし。全本文・解説の意味的な正しさを自動保証するものではない。"
+    }
+  ]
+}

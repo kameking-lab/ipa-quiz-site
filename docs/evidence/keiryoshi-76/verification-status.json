@@ -1,11 +1,26 @@
 {
   "checkedAt": "2026-11-03",
   "sourceAudit": "passed",
-  "pnpmInstall": "blocked: Corepack mkdir /root/.cache/node/corepack/v1 ENOENT",
-  "validateQuestions": "blocked before startup: same Corepack error",
-  "typecheck": "blocked before startup: same Corepack error; NODE_OPTIONS=--max-old-space-size=8192",
-  "relatedTests": "blocked before startup: same Corepack error",
-  "gitAdd": "failed: .git/index.lock read-only file system",
+  "sourceAuditCommand": "python scripts/verify-keiryoshi-source.py",
+  "sourceAuditExitCode": 0,
+  "sourceAuditResult": "source-audit-result.json",
+  "pnpmInstall": "not run; existing dependencies used",
+  "validateQuestions": "passed: exit 0; 26744 questions; fail=0; warn=16956",
+  "typecheck": "passed: exit 0; NODE_OPTIONS=--max-old-space-size=8192 pnpm typecheck",
+  "relatedTests": "passed: exit 0; npx vitest run __tests__/keiryoshi-staging.test.ts __tests__/seo; 111 files, 597 tests",
+  "typecheckAttempts": "initial run exited 143; same command rerun and final run both exited 0",
+  "figure14CropPixelEquality": "passed: official page 15 MediaBox render 1462x2000, crop [248,550,1242,1000] equals current PNG",
+  "typographyAudit": {
+    "scope": "all 200 questions and 1000 choices",
+    "scan": "typography-scan.json",
+    "review": "typography-review.json",
+    "correctedQuestions": 9,
+    "unresolvedReviewedCandidates": 0,
+    "limits": "heuristic candidates plus review; no OCR of raster text; not a semantic guarantee of all explanations"
+  },
+  "gitDiffCheck": "passed",
+  "gitAdd": "not run: user requested no commit/push",
   "commitsCreated": 0,
-  "independentReview": "not invoked; assigned to supervisor"
+  "pushesPerformed": 0,
+  "independentReview": "round 2 findings supplied by user; corrected in this task; no new independent reviewer invoked"
 }
