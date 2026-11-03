@@ -29,13 +29,15 @@ describe("エネルギー管理士の未公開収録", () => {
     }
   });
 
-  it("収録済み10原問128公式解答欄を照合し、全肢解説・原問指示・図を保持する", () => {
-    expect(questions).toHaveLength(125);
-    expect(new Set(questions.map((q) => q.id)).size).toBe(125);
+  it("収録済み16原問208公式解答欄を照合し、全肢解説・原問指示・図を保持する", () => {
+    expect(questions).toHaveLength(204);
+    expect(new Set(questions.map((q) => q.id)).size).toBe(204);
     for (const q of questions) {
-      const packet = q.session === "kyotsu" ? 1 : q.category === "電気計測" ? 5 : 3;
+      const packet = Number(q.sourcePdfUrl!.match(/r0[78]_(\d)\.pdf/)![1]);
       const original = tables.find((t) => t.year === q.year && t.packet === packet)!
         .questions.find((p) => p.questionNumber === q.qNumber)!;
+      expect(q.originalContent?.body).toBe(q.question);
+      expect(q.originalContent?.choices).toEqual(q.choices);
       const labels = q.officialAnswerNumber!.split(",");
       const expected = labels.flatMap((label) => original.slots.find((slot) => slot.label === label)!.answerText.split("、"));
       expect(Array.isArray(q.answer) ? q.answer : [q.answer]).toEqual(expected);
@@ -61,8 +63,8 @@ describe("エネルギー管理士の未公開収録", () => {
 
   it("原問ごとの全解答欄を過不足なく保持し、順序不問ペアを重複なく採点する", () => {
     const manifest = [
-      [2025, 1, 2], [2025, 1, 3], [2025, 3, 8], [2025, 3, 9], [2025, 5, 6],
-      [2026, 1, 2], [2026, 1, 3], [2026, 3, 8], [2026, 3, 9], [2026, 5, 6],
+      [2025, 4, 11], [2025, 4, 14], [2025, 4, 17], [2025, 1, 2], [2025, 1, 3], [2025, 3, 8], [2025, 3, 9], [2025, 5, 6],
+      [2026, 4, 11], [2026, 4, 14], [2026, 4, 17], [2026, 1, 2], [2026, 1, 3], [2026, 3, 8], [2026, 3, 9], [2026, 5, 6],
     ];
     let slotCount = 0;
     for (const [year, packet, num] of manifest) {
@@ -74,9 +76,9 @@ describe("エネルギー管理士の未公開収録", () => {
       expect(new Set(labels).size).toBe(labels.length);
       slotCount += labels.length;
     }
-    expect(slotCount).toBe(128);
+    expect(slotCount).toBe(208);
     const pairs = questions.filter((q) => q.requiredSelections === 2);
-    expect(pairs).toHaveLength(3);
+    expect(pairs).toHaveLength(4);
     for (const q of pairs) {
       const answers = q.answer as ChoiceKey[];
       expect(isCompleteSelectionCorrect(answers, answers, 2)).toBe(true);
@@ -88,6 +90,24 @@ describe("エネルギー管理士の未公開収録", () => {
     const infrared = pairs.find((q) => q.year === 2026 && q.officialAnswerNumber === "7,8")!;
     expect(infrared.choiceFactTruth?.オ).toBe(true);
     expect(infrared.choiceExplanations?.オ).toContain("H₂Oにも赤外線吸収");
+  });
+
+  it("熱課目Ⅳの図と判断基準の出題時点を保持する", () => {
+    const thermocouples = questions.filter((q) => q.year === 2026 && q.category === "計測及び制御" && Number(q.officialAnswerNumber) <= 7);
+    expect(thermocouples).toHaveLength(7);
+    for (const q of thermocouples) {
+      expect(q.hasImage).toBe(true);
+      expect(q.imageAltTexts?.[0]).toContain("基準接点0℃");
+      if (Number(q.officialAnswerNumber) >= 5) {
+        expect(q.originalContent?.sharedPassages?.[1].text).toContain("Ⅰ～Ⅳ");
+      }
+    }
+    const standards = questions.filter((q) => q.year === 2026 && q.category === "工業炉・熱設備材料" && ["5", "6", "7", "8"].includes(q.officialAnswerNumber!));
+    expect(standards).toHaveLength(4);
+    for (const q of standards) {
+      expect(q.explanation).toContain("出題時点の法令・判断基準");
+      expect(q.questionNotice).toContain("出題時点");
+    }
   });
 
   it("公式の複数正答と全員正解を区別する", () => {
@@ -102,6 +122,6 @@ describe("エネルギー管理士の未公開収録", () => {
     const entry = QUALIFICATION_CATALOG.find((q) => q.slug === "energy-kanri")!;
     expect(entry.status).toBe("ready-to-ingest");
     expect(entry.examCode).toBeUndefined();
-    expect(entry.remainingWork.join(" ")).toContain("52原問714解答欄");
+    expect(entry.remainingWork.join(" ")).toContain("46原問634解答欄");
   });
 });
