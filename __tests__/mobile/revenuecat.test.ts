@@ -23,3 +23,20 @@ it("accepts only the configured App Store product in the matching environment",(
 it("does not revoke a paid period just because auto-renewal is canceled",()=>{
   expect(verifiedExpiration(snapshot({unsubscribe_detected_at:new Date(now-100).toISOString()}),config,now)).not.toBeNull();
 });
+it("honors only the verified grace period and stops at its end, refund or environment mismatch",()=>{
+  const grace=now+3600000;
+  const body=snapshot({expires_date:new Date(now-1000).toISOString(),grace_period_expires_date:new Date(grace).toISOString()});
+  body.subscriber.entitlements.kakomon_pro.expires_date=new Date(now-1000).toISOString();
+  expect(verifiedExpiration(body,config,now)).toBe(new Date(grace).toISOString());
+  expect(verifiedExpiration(body,config,grace)).toBeNull();
+  expect(verifiedExpiration({...body,subscriber:{...body.subscriber,subscriptions:{[config.productId]:{...body.subscriber.subscriptions[config.productId],refunded_at:new Date(now-1).toISOString()}}}},config,now)).toBeNull();
+  expect(verifiedExpiration(body,{...config,environment:"PRODUCTION"},now)).toBeNull();
+});
+it("does not turn a billing issue into an unlimited or malformed grace period",()=>{
+  const expired={expires_date:new Date(now-1000).toISOString(),billing_issues_detected_at:new Date(now-2000).toISOString()};
+  const body=snapshot(expired);body.subscriber.entitlements.kakomon_pro.expires_date=new Date(now-1000).toISOString();
+  expect(verifiedExpiration(body,config,now)).toBeNull();
+  const malformed=snapshot({...expired,grace_period_expires_date:"invalid"});
+  malformed.subscriber.entitlements.kakomon_pro.expires_date=new Date(now-1000).toISOString();
+  expect(verifiedExpiration(malformed,config,now)).toBeNull();
+});

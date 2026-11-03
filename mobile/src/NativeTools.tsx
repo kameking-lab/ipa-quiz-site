@@ -9,7 +9,7 @@ import { Preferences } from "@capacitor/preferences";
 import Link from "next/link";
 import type { MobileConfiguration, MobileEntitlement, CatalogEntry } from "../shared/contracts";
 import { downloads, type DownloadIndex } from "./downloads";
-import { Membership } from "./purchases";
+import { Membership, purchaseError } from "./purchases";
 import { beginLogin, observeLogin } from "./login";
 import { observeReminderTap, setReminder } from "./platform";
 import { persistStudy, restoreStudy } from "./portable-storage";
@@ -60,10 +60,9 @@ export function NativeTools({ membershipOnly = false }: { membershipOnly?: boole
     running.current=true;
     setBusy(true); setNotice("");
     try { await fn(); } catch(error) {
-      const code=error&&typeof error==="object"&&"code"in error?String(error.code):"";
-      const cancelled=code==="1" || !!(error&&typeof error==="object"&&"userCancelled"in error&&error.userCancelled);
-      if(cancelled&&user.current){await Preferences.remove({key:`kakomon:pending-purchase:${user.current}`});setPurchasePending(false);}
-      setNotice(cancelled?"購入をキャンセルしました。":code==="20"?"購入の承認待ちです。再購入せず、承認後に権利を再確認してください。":error instanceof Error ? error.message : "処理を完了できませんでした。");
+      const {cancelled,pending,rejected}=purchaseError(error);
+      if(rejected&&user.current){await Preferences.remove({key:`kakomon:pending-purchase:${user.current}`}).catch(()=>{});setPurchasePending(false);}
+      setNotice(cancelled?"購入をキャンセルしました。":pending?"購入の承認待ちです。再購入せず、承認後に権利を再確認してください。":error instanceof Error ? error.message : "処理を完了できませんでした。");
     }
     finally { running.current=false;setBusy(false); }
   }, []);
@@ -120,12 +119,13 @@ export function NativeTools({ membershipOnly = false }: { membershipOnly?: boole
         {offer && !access.entitled && <div className="space-y-3 rounded-xl border p-4"><h2>過去問AI 月額プラン</h2><p>{offer.product.priceString} / 1か月（税込・自動更新）</p><p>全資格の問題を無制限で演習、資格ごとの事前ダウンロード。購入確認時にApple IDへ請求されます。解約するまで自動更新され、更新前にApp Storeのサブスクリプション管理で解約できます。解約後も有効期間の末日までは利用できます。</p><button disabled={busy||purchasePending} onClick={()=>void run(async()=>{
           const r=await refresh(true);
           if(r.entitlement.entitled)throw new Error("すでに有料会員です。追加購入は不要です。");
-          await Preferences.set({key:`kakomon:pending-purchase:${r.entitlement.userId}`,value:"true"});setPurchasePending(true);
-          await membership.buy(r.configuration,r.entitlement,offer);const confirmed=await refresh(true);
+          await membership.buy(r.configuration,r.entitlement,offer,async()=>{
+            await Preferences.set({key:`kakomon:pending-purchase:${r.entitlement.userId}`,value:"true"});setPurchasePending(true);
+          });const confirmed=await refresh(true);
           setNotice(confirmed.entitlement.entitled?"購入を確認しました。有料会員の機能を利用できます。":"購入内容の確認待ちです。再購入せず、購入復元または会員状態の再確認をご利用ください。");
         })}>{offer.product.priceString} / 月で登録</button></div>}
         {!access.entitled && access.userId && !offer && <p>商品情報を取得できていません。設定と通信を確認してください。</p>}
-        <div className="flex gap-4"><button disabled={busy || !access.userId || !config?.sdkKey} onClick={()=>void run(async()=>{ const r=await refresh(true); await membership.restore(r.configuration,r.entitlement); await refresh(true); setNotice("購入を復元し、サーバーで権利を確認しました。"); })}>購入を復元</button>
+        <div className="flex gap-4"><button disabled={busy || !access.userId || !config?.sdkKey} onClick={()=>void run(async()=>{ const r=await refresh(true); await membership.restore(r.configuration,r.entitlement); const confirmed=await refresh(true); setNotice(confirmed.entitlement.entitled?"購入を復元し、サーバーで権利を確認しました。":"有効な購入をサーバーで確認できませんでした。購入に使用したApple IDとログイン中のアカウントをご確認ください。承認待ちの場合は、承認後に再確認してください。"); })}>購入を復元</button>
           <button onClick={()=>void Browser.open({ url:"https://apps.apple.com/account/subscriptions" })}>App Storeで管理・解約</button></div>
         <p><Link href="/terms">利用規約</Link> · <Link href="/privacy">プライバシーポリシー</Link> · <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/">Apple標準使用許諾契約</a></p>
         <h2 className="font-bold">資格ごとの事前ダウンロード（有料会員限定）</h2><p>画像は表示時に取得してキャッシュします。保存した問題は会員権利の有効期限内で利用できます。オフラインの権利確認は最大24時間です。</p>

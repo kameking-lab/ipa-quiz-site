@@ -14,15 +14,21 @@ export function validWebhookAuthorization(actual: string | null, expected: strin
     && timingSafeEqual(Buffer.from(actual), Buffer.from(expected));
 }
 const subscriberSchema = z.object({ subscriber: z.object({
-  entitlements: z.record(z.string(), z.object({ product_identifier: z.string(), expires_date: z.string().nullable(), purchase_date: z.string() })),
-  subscriptions: z.record(z.string(), z.object({ store: z.string(), is_sandbox: z.boolean(), expires_date: z.string().nullable(), refunded_at: z.string().nullable().optional() })),
+  entitlements: z.record(z.string(), z.object({ product_identifier: z.string(), expires_date: z.string().nullable(), purchase_date: z.string(), grace_period_expires_date:z.string().nullable().optional() })),
+  subscriptions: z.record(z.string(), z.object({ store: z.string(), is_sandbox: z.boolean(), expires_date: z.string().nullable(), refunded_at: z.string().nullable().optional(), grace_period_expires_date:z.string().nullable().optional() })),
 }) });
 export function verifiedExpiration(body: unknown, config: { entitlement: string; productId: string; environment: string }, now: number): string | null {
   const { subscriber } = subscriberSchema.parse(body);
   const e = subscriber.entitlements[config.entitlement], sub = subscriber.subscriptions[config.productId];
   if (!e || !sub || e.product_identifier !== config.productId || sub.store !== "app_store" || sub.refunded_at
     || sub.is_sandbox !== (config.environment === "SANDBOX") || !e.expires_date || !sub.expires_date) return null;
-  const end = Math.min(Date.parse(e.expires_date), Date.parse(sub.expires_date));
+  const regularEnd = Math.min(Date.parse(e.expires_date), Date.parse(sub.expires_date));
+  // Only RevenueCat's verified App Store grace extends access; a billing issue
+  // or cancellation alone never creates a new paid period.
+  const subscriptionGrace=sub.grace_period_expires_date?Date.parse(sub.grace_period_expires_date):0;
+  const entitlementGrace=e.grace_period_expires_date?Date.parse(e.grace_period_expires_date):subscriptionGrace;
+  const graceEnd=Math.min(subscriptionGrace,entitlementGrace);
+  const end=Math.max(regularEnd,Number.isFinite(graceEnd)?graceEnd:0);
   const purchased=Date.parse(e.purchase_date);
   if (!Number.isFinite(end) || end <= now || !Number.isFinite(purchased) || purchased > now) return null;
   return new Date(end).toISOString();
