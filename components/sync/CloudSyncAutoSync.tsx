@@ -6,6 +6,7 @@ import { Cloud, CloudUpload, CheckCircle2 } from "lucide-react";
 import { syncAll } from "@/lib/sync";
 import { LS_KEYS } from "@/lib/storage/keys";
 import { readOwnership, readSyncAccount } from "@/lib/sync/ownership";
+import {nativeClient} from "@/mobile/shared/contracts";
 
 type Phase = "idle" | "syncing" | "done";
 interface Toast { message: string; tone: "info" | "success" }
@@ -27,6 +28,7 @@ export function CloudSyncAutoSync() {
       let lease: string | undefined;
       try {
         const account = await readSyncAccount();
+        if(account&&nativeClient())await (await import("@/mobile/src/portable-storage")).restoreStudy(account.id);
         if (!account || cancelled || readOwnership(account.id) !== "matching") return;
         const suffix = encodeURIComponent(account.id);
         const successKey = LS_KEYS.syncSessionSuccessPrefix + suffix;

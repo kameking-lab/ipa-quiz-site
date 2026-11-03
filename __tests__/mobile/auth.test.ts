@@ -1,0 +1,33 @@
+import { beforeEach, expect, it, vi } from "vitest";
+import { createHash, randomBytes } from "node:crypto";
+import { decode } from "next-auth/jwt";
+const m=vi.hoisted(()=>({user:"u1" as string|null,rows:new Map<string,{userId:string;challenge:string;expiresAt:Date}>()}));
+vi.mock("@/lib/auth",()=>({auth:async()=>m.user?{user:{id:m.user}}:null}));
+vi.mock("@/lib/billing/runtime",()=>({billingFailure:(e:{status?:number;code?:string})=>Response.json({error:e.code??"unavailable"},{status:e.status??503})}));
+vi.mock("@/lib/db/prisma",()=>({prisma:{$executeRawUnsafe:async(sql:string,...values:unknown[])=>{
+  if(sql.startsWith("INSERT"))m.rows.set(values[0] as string,{userId:values[1] as string,challenge:values[2] as string,expiresAt:values[3] as Date});return 1;
+},$queryRawUnsafe:async(_sql:string,hash:string,challenge:string)=>{const row=m.rows.get(hash);if(!row||row.challenge!==challenge||row.expiresAt.getTime()<=Date.now())return [];m.rows.delete(hash);return [{userId:row.userId}];}}}));
+import { complete, exchange } from "@/mobile/server/auth";
+const hash=(s:string)=>createHash("sha256").update(s).digest("base64url");
+beforeEach(()=>{m.user="u1";m.rows.clear();vi.stubEnv("AUTH_SECRET","mock-auth-secret-for-unit-tests-only-32chars");});
+it("uses a one-use short-lived PKCE code without putting the session token into the app URL",async()=>{
+  const verifier=randomBytes(32).toString("base64url"),state=randomBytes(32).toString("base64url");
+  const address=`https://site.test/api/mobile/auth/complete?challenge=${hash(verifier)}&state=${state}`;
+  const page=await complete(new Request(address));expect(page.status).toBe(200);
+  const proof=/name="proof" value="([a-f0-9]+)"/.exec(await page.text())![1];
+  const consentCookie=page.headers.get("set-cookie")!.split(";")[0];
+  const result=await complete(new Request(address,{method:"POST",headers:{origin:"https://site.test",cookie:consentCookie},body:new URLSearchParams({proof}).toString()}));
+  const url=new URL(result.headers.get("location")!);expect(url.protocol).toBe("kakomonai:");expect(url.searchParams.get("state")).toBe(state);expect(url.searchParams.has("token")).toBe(false);
+  const code=url.searchParams.get("code")!;expect(m.rows.has(code)).toBe(false);expect(m.rows.has(hash(code))).toBe(true);
+  const wrong=await exchange(new Request("https://site.test/api/mobile/auth/exchange",{method:"POST",headers:{"X-Kakomon-Native":"ios"},body:JSON.stringify({code,verifier:randomBytes(32).toString("base64url")})}));expect(wrong.status).toBe(401);
+  const request=()=>new Request("https://site.test/api/mobile/auth/exchange",{method:"POST",headers:{"X-Kakomon-Native":"ios"},body:JSON.stringify({code,verifier})});
+  const response=await exchange(request());expect(response.status).toBe(200);expect((await response.json()).redirectTo).toBe("https://site.test/");
+  const cookie=response.headers.get("set-cookie")!;expect(cookie).toContain("HttpOnly");expect(cookie).toContain("Secure");expect(cookie).toContain("SameSite=Lax");
+  const jwt=cookie.split(";")[0].split("=")[1];expect(await decode({token:jwt,salt:"__Secure-authjs.session-token",secret:process.env.AUTH_SECRET!})).toMatchObject({id:"u1",sub:"u1"});
+  expect((await exchange(request())).status).toBe(401);
+});
+it("never issues a code to a signed-out user or accepts unbounded callback input",async()=>{
+  m.user=null;expect((await complete(new Request("https://site.test/api/mobile/auth/complete?challenge=x&state=y"))).headers.get("location")).toContain("/auth/signin?");expect(m.rows.size).toBe(0);
+  m.user="u1";expect((await complete(new Request("https://site.test/api/mobile/auth/complete?challenge=x&state=y"))).status).toBe(400);
+  expect((await exchange(new Request("https://site.test/api/mobile/auth/exchange",{method:"POST",headers:{"X-Kakomon-Native":"ios"},body:JSON.stringify({code:"x",verifier:"y"})}))).status).toBe(400);
+});

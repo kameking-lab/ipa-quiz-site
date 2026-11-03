@@ -1,4 +1,5 @@
 "use client";
+import { useNativeQuestionGrant, NativeAccessState } from "@/mobile/shared/NativeQuestionGate";
 import { questionSourceEdition, questionSourceExam } from "@/lib/questions/source-label";
 
 
@@ -60,6 +61,7 @@ export function StreamQuizPlayer({ questions, backHref = "/ipa" }: { questions: 
   }, [reviewing]);
 
   const question = questions[index];
+  const nativePermission = useNativeQuestionGrant(question?.id);
   React.useEffect(() => {
     if (question?.exam === "chosashi" && question.type === "descriptive") {
       descriptiveStartRef.current?.focus({ preventScroll: true });
@@ -181,6 +183,7 @@ export function StreamQuizPlayer({ questions, backHref = "/ipa" }: { questions: 
     return () => window.removeEventListener("keydown", onKey);
   }, [onSelect, goNext, revealed, showSummary, reviewing, question]);
 
+  if (!nativePermission.allowed) return <NativeAccessState permission={nativePermission}/>;
   if (!question) return null;
 
   if (showSummary && question.exam === "chosashi" && answers.length === 0) {

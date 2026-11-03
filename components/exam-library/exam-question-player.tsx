@@ -1,4 +1,5 @@
 "use client";
+import { useNativeQuestionGrant, NativeAccessState } from "@/mobile/shared/NativeQuestionGate";
 
 import {
   useCallback,
@@ -194,6 +195,7 @@ export function ExamQuestionPlayer({
 
   const currentId = roundIds[index];
   const current = currentId ? byId.get(currentId) : undefined;
+  const nativePermission = useNativeQuestionGrant(current?.id, examId);
   const currentAnswer = currentId ? answers[currentId] : undefined;
   const referenceOnly = Boolean(current && isExamReferenceOnly(current));
   const submitted = !referenceOnly && Boolean(currentAnswer?.submitted);
@@ -437,6 +439,7 @@ export function ExamQuestionPlayer({
     return () => window.removeEventListener("keydown", onKeyDown);
   }, [current, moveNext, selectChoice, submitAnswer, submitted, view]);
 
+  if (!nativePermission.allowed) return <NativeAccessState permission={nativePermission}/>;
   if (questions.length === 0) return null;
 
   const scoredAnswered = summary.correct + summary.incorrect;

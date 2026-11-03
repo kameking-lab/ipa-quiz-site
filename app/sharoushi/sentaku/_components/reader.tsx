@@ -1,10 +1,12 @@
+import {NativeQuestionGate} from "@/mobile/shared/NativeQuestionGate";
 import Link from "next/link";
-import { FIELD_LABELS, sentakuParagraphs, sentakuPath, type SentakuQuestion } from "@/lib/sharoushi/sentaku";
+import {FIELD_LABELS,sentakuParagraphs,sentakuPath} from "@/lib/sharoushi/sentaku-format";
+import type {SentakuQuestion} from "@/lib/sharoushi/sentaku";
 
 function WordBank({ words }: { words: { id:number; label:string; text:string }[] }) {
   return <ol className="grid min-w-0 gap-x-6 gap-y-3 sm:grid-cols-2">{words.map(word=><li key={word.id} className="flex min-w-0 gap-2 text-sm leading-7"><span className="shrink-0 font-semibold">{word.label}</span><span className="min-w-0 break-words [overflow-wrap:anywhere]">{word.text}</span></li>)}</ol>;
 }
-export function SentakuReader({ question:q }: { question:SentakuQuestion }) {
+function SentakuReaderBody({ question:q }: { question:SentakuQuestion }) {
  const paragraphs=sentakuParagraphs(q.rawSourceText).map(part=>part.replace("次の文中のの部分", "次の文中の空欄の部分"));
  return <main data-study-presence-exam="sharoushi" className="mx-auto w-full min-w-0 max-w-3xl break-words px-4 py-8 sm:py-12">
   <nav className="mb-5 flex flex-wrap gap-2 text-sm"><Link href="/sharoushi" className="underline">社労士</Link><span>/</span><Link href={sentakuPath(q.year)} className="underline">第{q.examRound}回 選択式</Link><span>/ 問{q.questionNumber}</span></nav>
@@ -25,3 +27,5 @@ export function SentakuReader({ question:q }: { question:SentakuQuestion }) {
   </section><nav className="mt-8"><Link className="inline-flex min-h-11 items-center text-primary underline" href={sentakuPath(q.year)}>年度の問題一覧へ</Link></nav>
  </main>;
 }
+
+export function SentakuReader(props:Parameters<typeof SentakuReaderBody>[0]) { return <NativeQuestionGate id={props.question.id}><SentakuReaderBody {...props}/></NativeQuestionGate>; }

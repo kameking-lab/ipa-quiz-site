@@ -1,4 +1,6 @@
 "use client";
+import {NativeQuestionGate} from "@/mobile/shared/NativeQuestionGate";
+
 
 import { useCallback, useEffect, useMemo, useState } from "react";
 import { Loader2, Save, Sparkles, AlertCircle } from "lucide-react";
@@ -43,7 +45,7 @@ interface Props {
   question: EssayQuestion;
 }
 
-export function EssayEditor({ question }: Props) {
+function EssayEditorBody({ question }: Props) {
   const [industry, setIndustry] = useState<Industry>("it");
   const [answers, setAnswers] = useState<{ ア: string; イ: string; ウ: string }>({
     ア: "",
@@ -353,3 +355,5 @@ function formatTime(iso: string): string {
     return "";
   }
 }
+
+export function EssayEditor(props:Parameters<typeof EssayEditorBody>[0]) { return <NativeQuestionGate id={props.question.id}><EssayEditorBody {...props}/></NativeQuestionGate>; }

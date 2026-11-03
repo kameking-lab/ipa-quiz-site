@@ -65,7 +65,7 @@ export type AnalyticsEvent =
       placement: "recommended_books_page" | "quiz_inline_hint";
     }
   // ----- CVR funnel -----
-  | { name: "signin_started"; provider: "google" | "github" | "email"; source?: string }
+  | { name: "signin_started"; provider: "google" | "github" | "apple" | "email"; source?: string }
   | { name: "signin_completed"; provider: string; firstTime?: boolean }
   | {
       name: "checkout_started";

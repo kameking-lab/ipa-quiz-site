@@ -1,4 +1,5 @@
 "use client";
+import { NativeQuestionGate } from "@/mobile/shared/NativeQuestionGate";
 
 import * as React from "react";
 import { isReferenceOnlyQuestionId } from "@/lib/questions/assessment";
@@ -80,7 +81,7 @@ export function QuizPlayer(props: Props) {
   if (isReferenceOnlyQuestionId(props.question?.id)) {
     return <p role="note">この問題は参照専用です。採点・学習記録・報酬の対象には含まれません。</p>;
   }
-  return <ScoredQuizPlayer {...props} />;
+  return <NativeQuestionGate id={props.question?.id}><ScoredQuizPlayer {...props} /></NativeQuestionGate>;
 }
 
 function ScoredQuizPlayer({
@@ -149,7 +150,7 @@ function ScoredQuizPlayer({
 
   React.useEffect(() => {
     if (!question || isReferenceOnlyQuestionId(question.id)) return;
-     
+
     setNativeBResult(undefined);
     setSelected(undefined);
     setPicked([]);

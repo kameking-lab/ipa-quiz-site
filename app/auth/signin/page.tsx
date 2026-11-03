@@ -1,3 +1,4 @@
+import {NativeSignInBoundary} from "@/mobile/src/NativeSignInBoundary";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { auth } from "@/lib/auth";
@@ -68,12 +69,14 @@ export default async function SignInPage({
 
   const errorMessage = sp.error ? friendlyAuthError(sp.error) : null;
   const forPurchase = callbackUrl === "/billing" || callbackUrl.startsWith("/billing?");
+  const nativeLogin=callbackUrl.startsWith("/api/mobile/auth/complete?");
 
   const providerIds = new Set(
     authConfig.providers.map((p) => (typeof p === "function" ? p().id : p.id)),
   );
 
   return (
+    <NativeSignInBoundary returnTo={callbackUrl}>
     <main className="relative flex flex-1 items-center justify-center px-4 py-10 sm:py-16">
       {/* Decorative background */}
       <div
@@ -121,9 +124,11 @@ export default async function SignInPage({
             <>
               <SignInButtons
                 callbackUrl={callbackUrl}
-                hasGoogle={providerIds.has("google")}
-                hasGitHub={providerIds.has("github")}
+                hasGoogle={providerIds.has("google") && (!nativeLogin || providerIds.has("apple"))}
+                hasGitHub={providerIds.has("github") && (!nativeLogin || providerIds.has("apple"))}
+                hasApple={providerIds.has("apple")}
               />
+              {nativeLogin&&!providerIds.has("apple")&&<p className="text-sm">アプリの外部ログインはAppleログインの設定後に利用できます。メールログインが表示されている場合はそちらをご利用ください。</p>}
 
               {providerIds.has("nodemailer") && (
                 <>
@@ -193,7 +198,7 @@ export default async function SignInPage({
           に同意したものとみなされます。
         </p>
       </div>
-    </main>
+    </main></NativeSignInBoundary>
   );
 }
 

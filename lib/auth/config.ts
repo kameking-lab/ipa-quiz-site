@@ -17,12 +17,17 @@ import type { NextAuthConfig } from "next-auth";
 import Google from "next-auth/providers/google";
 import GitHub from "next-auth/providers/github";
 import Nodemailer from "next-auth/providers/nodemailer";
+import Apple from "next-auth/providers/apple";
 
 function hasEnv(...keys: string[]) {
   return keys.every((k) => !!process.env[k]);
 }
 
 const providers: NextAuthConfig["providers"] = [];
+
+if (hasEnv("AUTH_APPLE_ID", "AUTH_APPLE_SECRET")) {
+  providers.push(Apple({ clientId: process.env.AUTH_APPLE_ID, clientSecret: process.env.AUTH_APPLE_SECRET }));
+}
 
 if (hasEnv("AUTH_GOOGLE_ID", "AUTH_GOOGLE_SECRET")) {
   providers.push(

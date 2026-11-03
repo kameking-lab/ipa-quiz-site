@@ -4,7 +4,9 @@ const config: CapacitorConfig = {
   appName: "過去問AI",
   webDir: "dist",
   ios: { contentInset: "never", preferredContentMode: "mobile" },
-  // Native HTTP is invoked explicitly, never used to navigate to a remote UI.
+  // Online screens reuse the exact web React/RSC implementation. Local assets
+  // provide independently executable, paid offline study (no iframe).
+  server: { allowNavigation: ["www.kakomon-ai.jp"], errorPath: "index.html" },
   plugins: { CapacitorHttp: { enabled: false } },
 };
 export default config;

@@ -1,4 +1,5 @@
 "use client";
+import { NativeQuestionGate } from "@/mobile/shared/NativeQuestionGate";
 
 import { QuestionBody } from "./QuestionBody";
 import { RikuTech2CylinderGuide } from "./RikuTech2CylinderGuide";
@@ -77,7 +78,7 @@ export function QuestionAnswerCard(props: Props) {
   if (isReferenceOnlyQuestionId(props.questionId) || isReferenceOnlyQuestionId(props.question?.id)) {
     return <p role="note">この問題は参照専用です。採点・学習記録・報酬の対象には含まれません。</p>;
   }
-  return <ScoredQuestionAnswerCard {...props} />;
+  return <NativeQuestionGate id={props.questionId}><ScoredQuestionAnswerCard {...props} /></NativeQuestionGate>;
 }
 
 function ScoredQuestionAnswerCard({

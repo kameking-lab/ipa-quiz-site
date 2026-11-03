@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { FileText, ArrowRight } from "lucide-react";
 
-import { ESSAY_EXAM_CODES } from "@/lib/essay/load";
+import { ESSAY_EXAM_CODES } from "@/lib/essay/exams";
 import type { ExamCode } from "@/lib/questions/types";
 import { examLabel } from "@/lib/utils";
 

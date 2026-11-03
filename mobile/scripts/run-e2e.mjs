@@ -1,0 +1,10 @@
+import {generateKeyPairSync} from "node:crypto";
+import {mkdir,writeFile} from "node:fs/promises";
+import {execFileSync} from "node:child_process";
+const keys=generateKeyPairSync("ec",{namedCurve:"prime256v1"});
+await mkdir(new URL("../.cache/",import.meta.url),{recursive:true});
+await writeFile(new URL("../.cache/e2e-key.json",import.meta.url),JSON.stringify({publicKey:keys.publicKey.export({type:"spki",format:"pem"}).toString(),privateKey:keys.privateKey.export({type:"pkcs8",format:"pem"}).toString()}));
+const run=args=>execFileSync(process.execPath,args,{cwd:new URL("../",import.meta.url),stdio:"inherit",env:{...process.env,NODE_ENV:"test"}});
+run(["node_modules/tsx/dist/cli.mjs","--tsconfig","tsconfig.scripts.json","scripts/generate-e2e-fixture.ts"]);
+run(["node_modules/vite/bin/vite.js","build","--mode","e2e"]);
+run(["node_modules/@playwright/test/cli.js","test"]);

@@ -8,6 +8,9 @@ import { BillingError, jstDay } from "@/lib/billing/domain";
 import { monthlyConfig, monthlySelected } from "@/lib/billing/subscription/config";
 import { cookieHeader, guestClaim, guestCookie, guestGrant, guestRealm, readGuestCookie, resetAt } from "@/lib/billing/guest-practice";
 import type { PracticeAccess } from "@/lib/billing/practice-contract";
+import { revenueCatAccess } from "@/mobile/server/revenuecat";
+import { loadExamPaper } from "@/lib/exam-library-papers";
+import { createHash } from "node:crypto";
 import { feedbackStore, unlockIdentity, readFeedbackBrowser, feedbackBrowserHeader } from "@/lib/feedback/unlock-runtime";
 export const runtime = "nodejs";
 export async function POST(request: Request) {
@@ -15,17 +18,23 @@ export async function POST(request: Request) {
   let access: PracticeAccess = { kind: "unavailable", remaining: null, freeDaily: 10, resetAt: resetAt(now), retryAfter: null };
   try {
     const { id, shuffle } = z.object({ id: z.string().min(1).max(160), shuffle: z.boolean().default(false) }).strict().parse(await request.json());
-    const question = await findQuestionById(id);
+    const paper = request.headers.get("X-Kakomon-Paper");
+    const libraryQuestion = paper ? loadExamPaper(paper)?.find(q=>q.id === id) : undefined;
+    const ordinaryQuestion = paper ? undefined : await findQuestionById(id);
+    const material = !paper && !ordinaryQuestion ? (await import("@/mobile/shared/material-source")).findMaterial(id) : undefined;
+    const question = libraryQuestion ?? ordinaryQuestion ?? material;
     if (!question) throw new BillingError("not_found", 404);
-    if (!isPracticeReadyQuestion(question)) throw new BillingError("content_under_review", 409);
+    if (!libraryQuestion && !material && !isPracticeReadyQuestion(question as import("@/lib/questions/types").Question)) throw new BillingError("content_under_review", 409);
     const monthly = monthlySelected();
     const config = monthly ? monthlyConfig() : billingConfig();
-    const enabled = monthly ? monthlyConfig().enabled : gateReady(billingConfig());
+    const native = request.headers.get("X-Kakomon-Native") === "ios";
+    const enabled = native || (monthly ? monthlyConfig().enabled : gateReady(billingConfig()));
+    if (native && config.freeDaily !== 10) throw new BillingError("mobile_quota_configuration", 503);
     access.freeDaily = config.freeDaily;
     if (!enabled) access.kind = "free";
     else {
       sameOrigin(request);
-      if (id === BILLING_SAMPLE_ID) access.kind = "sample";
+      if (!native && id === BILLING_SAMPLE_ID) access.kind = "sample";
       else {
         const userId = await optionalBillingIdentity();
         let bonusClaimAvailable = true;
@@ -39,6 +48,8 @@ export async function POST(request: Request) {
         if (userId && service && (await service.status(userId)).entitled) {
           const grant = await service.grant(userId, question.id, [], false, jstDay(new Date(now)));
           access = { ...access, ...grant };
+        } else if (userId && await revenueCatAccess(userId)) {
+          access = { ...access, kind: "pass", remaining: null };
         } else {
           const realm = guestRealm(config.mode, config.sourceInstance);
           let guest: string | null = null;
@@ -86,7 +97,8 @@ export async function POST(request: Request) {
         }
       }
     }
-    const response = json({ question: shuffle ? shuffleChoices(question) : question, access });
+    const cached = native && !libraryQuestion && !material && request.headers.get("X-Kakomon-Question-Hash") === createHash("sha256").update(JSON.stringify(question)).digest("hex");
+    const response = json({ question: cached ? {id:question.id} : libraryQuestion ?? material ?? (shuffle ? shuffleChoices(question as import("@/lib/questions/types").Question) : question), access,...(cached?{cached:true}:{}) });
     if (process.env.FEEDBACK_UNLOCK_ENABLED === "true") {
       try {
         const browser = readFeedbackBrowser(request);

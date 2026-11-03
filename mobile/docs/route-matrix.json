@@ -1,0 +1,752 @@
+[
+  {
+    "web": "/about",
+    "source": "app/about/page.tsx",
+    "app": "同一Next.jsページ・Reactコンポーネント・APIをオンラインで共通実行",
+    "status": "実装・オンライン共通利用"
+  },
+  {
+    "web": "/account/dashboard",
+    "source": "app/account/dashboard/page.tsx",
+    "app": "同一Next.jsページ・Reactコンポーネント・APIをオンラインで共通実行",
+    "status": "実装・オンライン共通利用"
+  },
+  {
+    "web": "/account/essay-history",
+    "source": "app/account/essay-history/page.tsx",
+    "app": "同一Next.jsページ・Reactコンポーネント・APIをオンラインで共通実行",
+    "status": "実装・オンライン共通利用"
+  },
+  {
+    "web": "/account",
+    "source": "app/account/page.tsx",
+    "app": "同一Next.jsページ・Reactコンポーネント・APIをオンラインで共通実行",
+    "status": "実装・オンライン共通利用"
+  },
+  {
+    "web": "/account/study-plan",
+    "source": "app/account/study-plan/page.tsx",
+    "app": "同一Next.jsページ・Reactコンポーネント・APIをオンラインで共通実行",
+    "status": "実装・オンライン共通利用"
+  },
+  {
+    "web": "/admin/api-usage",
+    "source": "app/admin/api-usage/page.tsx",
+    "app": "同一Next.jsページ・Reactコンポーネント・APIをオンラインで共通実行",
+    "status": "管理者用（同一権限を維持）"
+  },
+  {
+    "web": "/admin/competitors",
+    "source": "app/admin/competitors/page.tsx",
+    "app": "同一Next.jsページ・Reactコンポーネント・APIをオンラインで共通実行",
+    "status": "管理者用（同一権限を維持）"
+  },
+  {
+    "web": "/admin/deployment-status",
+    "source": "app/admin/deployment-status/page.tsx",
+    "app": "同一Next.jsページ・Reactコンポーネント・APIをオンラインで共通実行",
+    "status": "管理者用（同一権限を維持）"
+  },
+  {
+    "web": "/admin/errors",
+    "source": "app/admin/errors/page.tsx",
+    "app": "同一Next.jsページ・Reactコンポーネント・APIをオンラインで共通実行",
+    "status": "管理者用（同一権限を維持）"
+  },
+  {
+    "web": "/admin/exam-usage",
+    "source": "app/admin/exam-usage/page.tsx",
+    "app": "同一Next.jsページ・Reactコンポーネント・APIをオンラインで共通実行",
+    "status": "管理者用（同一権限を維持）"
+  },
+  {
+    "web": "/admin/feedback",
+    "source": "app/admin/feedback/page.tsx",
+    "app": "同一Next.jsページ・Reactコンポーネント・APIをオンラインで共通実行",
+    "status": "管理者用（同一権限を維持）"
+  },
+  {
+    "web": "/admin/funnel",
+    "source": "app/admin/funnel/page.tsx",
+    "app": "同一Next.jsページ・Reactコンポーネント・APIをオンラインで共通実行",
+    "status": "管理者用（同一権限を維持）"
+  },
+  {
+    "web": "/admin/launch-monitoring",
+    "source": "app/admin/launch-monitoring/page.tsx",
+    "app": "同一Next.jsページ・Reactコンポーネント・APIをオンラインで共通実行",
+    "status": "管理者用（同一権限を維持）"
+  },
+  {
+    "web": "/admin/metrics",
+    "source": "app/admin/metrics/page.tsx",
+    "app": "同一Next.jsページ・Reactコンポーネント・APIをオンラインで共通実行",
+    "status": "管理者用（同一権限を維持）"
+  },
+  {
+    "web": "/admin/moderation",
+    "source": "app/admin/moderation/page.tsx",
+    "app": "同一Next.jsページ・Reactコンポーネント・APIをオンラインで共通実行",
+    "status": "管理者用（同一権限を維持）"
+  },
+  {
+    "web": "/admin",
+    "source": "app/admin/page.tsx",
+    "app": "同一Next.jsページ・Reactコンポーネント・APIをオンラインで共通実行",
+    "status": "管理者用（同一権限を維持）"
+  },
+  {
+    "web": "/admin/retention",
+    "source": "app/admin/retention/page.tsx",
+    "app": "同一Next.jsページ・Reactコンポーネント・APIをオンラインで共通実行",
+    "status": "管理者用（同一権限を維持）"
+  },
+  {
+    "web": "/admin/stats",
+    "source": "app/admin/stats/page.tsx",
+    "app": "同一Next.jsページ・Reactコンポーネント・APIをオンラインで共通実行",
+    "status": "管理者用（同一権限を維持）"
+  },
+  {
+    "web": "/api-docs",
+    "source": "app/api-docs/page.tsx",
+    "app": "同一Next.jsページ・Reactコンポーネント・APIをオンラインで共通実行",
+    "status": "実装・オンライン共通利用"
+  },
+  {
+    "web": "/auth/signin",
+    "source": "app/auth/signin/page.tsx",
+    "app": "同一Next.jsページ・Reactコンポーネント・APIをオンラインで共通実行",
+    "status": "実装・オンライン共通利用"
+  },
+  {
+    "web": "/auth/signout",
+    "source": "app/auth/signout/page.tsx",
+    "app": "同一Next.jsページ・Reactコンポーネント・APIをオンラインで共通実行",
+    "status": "実装・オンライン共通利用"
+  },
+  {
+    "web": "/auth/verify-request",
+    "source": "app/auth/verify-request/page.tsx",
+    "app": "同一Next.jsページ・Reactコンポーネント・APIをオンラインで共通実行",
+    "status": "実装・オンライン共通利用"
+  },
+  {
+    "web": "/billing/cancel",
+    "source": "app/billing/cancel/page.tsx",
+    "app": "同一Next.jsページ・Reactコンポーネント・APIをオンラインで共通実行",
+    "status": "実装・オンライン共通利用"
+  },
+  {
+    "web": "/billing/mock",
+    "source": "app/billing/mock/page.tsx",
+    "app": "同一Next.jsページ・Reactコンポーネント・APIをオンラインで共通実行",
+    "status": "実装・オンライン共通利用"
+  },
+  {
+    "web": "/billing",
+    "source": "app/billing/page.tsx",
+    "app": "同一Next.jsページ・Reactコンポーネント・APIをオンラインで共通実行",
+    "status": "実装・オンライン共通利用"
+  },
+  {
+    "web": "/billing/success",
+    "source": "app/billing/success/page.tsx",
+    "app": "同一Next.jsページ・Reactコンポーネント・APIをオンラインで共通実行",
+    "status": "実装・オンライン共通利用"
+  },
+  {
+    "web": "/billing/terms",
+    "source": "app/billing/terms/page.tsx",
+    "app": "同一Next.jsページ・Reactコンポーネント・APIをオンラインで共通実行",
+    "status": "実装・オンライン共通利用"
+  },
+  {
+    "web": "/blog",
+    "source": "app/blog/page.tsx",
+    "app": "同一Next.jsページ・Reactコンポーネント・APIをオンラインで共通実行",
+    "status": "実装・オンライン共通利用"
+  },
+  {
+    "web": "/blog/[slug]",
+    "source": "app/blog/[slug]/page.tsx",
+    "app": "同一Next.jsページ・Reactコンポーネント・APIをオンラインで共通実行",
+    "status": "実装・オンライン共通利用"
+  },
+  {
+    "web": "/bookmarks",
+    "source": "app/bookmarks/page.tsx",
+    "app": "同一Next.jsページ・Reactコンポーネント・APIをオンラインで共通実行",
+    "status": "実装・オンライン共通利用"
+  },
+  {
+    "web": "/challenge",
+    "source": "app/challenge/page.tsx",
+    "app": "同一Next.jsページ・Reactコンポーネント・APIをオンラインで共通実行",
+    "status": "実装・オンライン共通利用"
+  },
+  {
+    "web": "/chat/share",
+    "source": "app/chat/share/page.tsx",
+    "app": "同一Next.jsページ・Reactコンポーネント・APIをオンラインで共通実行",
+    "status": "実装・オンライン共通利用"
+  },
+  {
+    "web": "/chusho-secondary",
+    "source": "app/chusho-secondary/page.tsx",
+    "app": "同一Next.jsページ・Reactコンポーネント・APIをオンラインで共通実行",
+    "status": "実装・オンライン共通利用"
+  },
+  {
+    "web": "/chusho-secondary/[year]/[case]",
+    "source": "app/chusho-secondary/[year]/[case]/page.tsx",
+    "app": "同一Next.jsページ・Reactコンポーネント・APIをオンラインで共通実行",
+    "status": "実装・オンライン共通利用"
+  },
+  {
+    "web": "/chusho-secondary/[year]/[case]/[question]",
+    "source": "app/chusho-secondary/[year]/[case]/[question]/page.tsx",
+    "app": "同一Next.jsページ・Reactコンポーネント・APIをオンラインで共通実行",
+    "status": "実装・オンライン共通利用"
+  },
+  {
+    "web": "/community-guidelines",
+    "source": "app/community-guidelines/page.tsx",
+    "app": "同一Next.jsページ・Reactコンポーネント・APIをオンラインで共通実行",
+    "status": "実装・オンライン共通利用"
+  },
+  {
+    "web": "/contact",
+    "source": "app/contact/page.tsx",
+    "app": "同一Next.jsページ・Reactコンポーネント・APIをオンラインで共通実行",
+    "status": "実装・オンライン共通利用"
+  },
+  {
+    "web": "/demo/afternoon",
+    "source": "app/demo/afternoon/page.tsx",
+    "app": "同一Next.jsページ・Reactコンポーネント・APIをオンラインで共通実行",
+    "status": "実装・オンライン共通利用"
+  },
+  {
+    "web": "/demo/essay-grading",
+    "source": "app/demo/essay-grading/page.tsx",
+    "app": "同一Next.jsページ・Reactコンポーネント・APIをオンラインで共通実行",
+    "status": "実装・オンライン共通利用"
+  },
+  {
+    "web": "/denken1",
+    "source": "app/denken1/page.tsx",
+    "app": "同一Next.jsページ・Reactコンポーネント・APIをオンラインで共通実行",
+    "status": "実装・オンライン共通利用"
+  },
+  {
+    "web": "/denken1/[edition]/[subject]",
+    "source": "app/denken1/[edition]/[subject]/page.tsx",
+    "app": "同一Next.jsページ・Reactコンポーネント・APIをオンラインで共通実行",
+    "status": "実装・オンライン共通利用"
+  },
+  {
+    "web": "/denken1/[edition]/[subject]/[number]",
+    "source": "app/denken1/[edition]/[subject]/[number]/page.tsx",
+    "app": "同一Next.jsページ・Reactコンポーネント・APIをオンラインで共通実行",
+    "status": "実装・オンライン共通利用"
+  },
+  {
+    "web": "/denken2",
+    "source": "app/denken2/page.tsx",
+    "app": "同一Next.jsページ・Reactコンポーネント・APIをオンラインで共通実行",
+    "status": "実装・オンライン共通利用"
+  },
+  {
+    "web": "/denken2/secondary",
+    "source": "app/denken2/secondary/page.tsx",
+    "app": "同一Next.jsページ・Reactコンポーネント・APIをオンラインで共通実行",
+    "status": "実装・オンライン共通利用"
+  },
+  {
+    "web": "/denken2/secondary/[year]/[subject]/[number]",
+    "source": "app/denken2/secondary/[year]/[subject]/[number]/page.tsx",
+    "app": "同一Next.jsページ・Reactコンポーネント・APIをオンラインで共通実行",
+    "status": "実装・オンライン共通利用"
+  },
+  {
+    "web": "/denken2/[edition]/[subject]",
+    "source": "app/denken2/[edition]/[subject]/page.tsx",
+    "app": "同一Next.jsページ・Reactコンポーネント・APIをオンラインで共通実行",
+    "status": "実装・オンライン共通利用"
+  },
+  {
+    "web": "/denken2/[edition]/[subject]/[number]",
+    "source": "app/denken2/[edition]/[subject]/[number]/page.tsx",
+    "app": "同一Next.jsページ・Reactコンポーネント・APIをオンラインで共通実行",
+    "status": "実装・オンライン共通利用"
+  },
+  {
+    "web": "/denken3",
+    "source": "app/denken3/page.tsx",
+    "app": "同一Next.jsページ・Reactコンポーネント・APIをオンラインで共通実行",
+    "status": "実装・オンライン共通利用"
+  },
+  {
+    "web": "/denken3/[edition]/[subject]",
+    "source": "app/denken3/[edition]/[subject]/page.tsx",
+    "app": "同一Next.jsページ・Reactコンポーネント・APIをオンラインで共通実行",
+    "status": "実装・オンライン共通利用"
+  },
+  {
+    "web": "/denken3/[edition]/[subject]/[number]",
+    "source": "app/denken3/[edition]/[subject]/[number]/page.tsx",
+    "app": "同一Next.jsページ・Reactコンポーネント・APIをオンラインで共通実行",
+    "status": "実装・オンライン共通利用"
+  },
+  {
+    "web": "/denko2/skill",
+    "source": "app/denko2/skill/page.tsx",
+    "app": "同一Next.jsページ・Reactコンポーネント・APIをオンラインで共通実行",
+    "status": "実装・オンライン共通利用"
+  },
+  {
+    "web": "/denko2/skill/[id]",
+    "source": "app/denko2/skill/[id]/page.tsx",
+    "app": "同一Next.jsページ・Reactコンポーネント・APIをオンラインで共通実行",
+    "status": "実装・オンライン共通利用"
+  },
+  {
+    "web": "/e-learning/exams",
+    "source": "app/e-learning/exams/page.tsx",
+    "app": "同一Next.jsページ・Reactコンポーネント・APIをオンラインで共通実行",
+    "status": "実装・オンライン共通利用"
+  },
+  {
+    "web": "/e-learning/exams/qualifications/[slug]",
+    "source": "app/e-learning/exams/qualifications/[slug]/page.tsx",
+    "app": "同一Next.jsページ・Reactコンポーネント・APIをオンラインで共通実行",
+    "status": "実装・オンライン共通利用"
+  },
+  {
+    "web": "/e-learning/exams/[id]",
+    "source": "app/e-learning/exams/[id]/page.tsx",
+    "app": "同一Next.jsページ・Reactコンポーネント・APIをオンラインで共通実行",
+    "status": "実装・オンライン共通利用"
+  },
+  {
+    "web": "/e-learning/progress",
+    "source": "app/e-learning/progress/page.tsx",
+    "app": "同一Next.jsページ・Reactコンポーネント・APIをオンラインで共通実行",
+    "status": "実装・オンライン共通利用"
+  },
+  {
+    "web": "/e-learning/search",
+    "source": "app/e-learning/search/page.tsx",
+    "app": "同一Next.jsページ・Reactコンポーネント・APIをオンラインで共通実行",
+    "status": "実装・オンライン共通利用"
+  },
+  {
+    "web": "/essay",
+    "source": "app/essay/page.tsx",
+    "app": "同一Next.jsページ・Reactコンポーネント・APIをオンラインで共通実行",
+    "status": "実装・オンライン共通利用"
+  },
+  {
+    "web": "/essay/[exam]/[questionId]",
+    "source": "app/essay/[exam]/[questionId]/page.tsx",
+    "app": "同一Next.jsページ・Reactコンポーネント・APIをオンラインで共通実行",
+    "status": "実装・オンライン共通利用"
+  },
+  {
+    "web": "/essays",
+    "source": "app/essays/page.tsx",
+    "app": "同一Next.jsページ・Reactコンポーネント・APIをオンラインで共通実行",
+    "status": "実装・オンライン共通利用"
+  },
+  {
+    "web": "/essays/[exam]",
+    "source": "app/essays/[exam]/page.tsx",
+    "app": "同一Next.jsページ・Reactコンポーネント・APIをオンラインで共通実行",
+    "status": "実装・オンライン共通利用"
+  },
+  {
+    "web": "/essays/[exam]/[yearSeason]/[section]/[qnum]",
+    "source": "app/essays/[exam]/[yearSeason]/[section]/[qnum]/page.tsx",
+    "app": "同一Next.jsページ・Reactコンポーネント・APIをオンラインで共通実行",
+    "status": "実装・オンライン共通利用"
+  },
+  {
+    "web": "/faq",
+    "source": "app/faq/page.tsx",
+    "app": "同一Next.jsページ・Reactコンポーネント・APIをオンラインで共通実行",
+    "status": "実装・オンライン共通利用"
+  },
+  {
+    "web": "/features",
+    "source": "app/features/page.tsx",
+    "app": "同一Next.jsページ・Reactコンポーネント・APIをオンラインで共通実行",
+    "status": "実装・オンライン共通利用"
+  },
+  {
+    "web": "/features/[slug]",
+    "source": "app/features/[slug]/page.tsx",
+    "app": "同一Next.jsページ・Reactコンポーネント・APIをオンラインで共通実行",
+    "status": "実装・オンライン共通利用"
+  },
+  {
+    "web": "/fp1/applied",
+    "source": "app/fp1/applied/page.tsx",
+    "app": "同一Next.jsページ・Reactコンポーネント・APIをオンラインで共通実行",
+    "status": "実装・オンライン共通利用"
+  },
+  {
+    "web": "/fp1/applied/[edition]",
+    "source": "app/fp1/applied/[edition]/page.tsx",
+    "app": "同一Next.jsページ・Reactコンポーネント・APIをオンラインで共通実行",
+    "status": "実装・オンライン共通利用"
+  },
+  {
+    "web": "/fp1/applied/[edition]/[number]",
+    "source": "app/fp1/applied/[edition]/[number]/page.tsx",
+    "app": "同一Next.jsページ・Reactコンポーネント・APIをオンラインで共通実行",
+    "status": "実装・オンライン共通利用"
+  },
+  {
+    "web": "/fp2/practical",
+    "source": "app/fp2/practical/page.tsx",
+    "app": "同一Next.jsページ・Reactコンポーネント・APIをオンラインで共通実行",
+    "status": "実装・オンライン共通利用"
+  },
+  {
+    "web": "/fp2/practical/[edition]",
+    "source": "app/fp2/practical/[edition]/page.tsx",
+    "app": "同一Next.jsページ・Reactコンポーネント・APIをオンラインで共通実行",
+    "status": "実装・オンライン共通利用"
+  },
+  {
+    "web": "/fp2/practical/[edition]/[number]",
+    "source": "app/fp2/practical/[edition]/[number]/page.tsx",
+    "app": "同一Next.jsページ・Reactコンポーネント・APIをオンラインで共通実行",
+    "status": "実装・オンライン共通利用"
+  },
+  {
+    "web": "/fp3/practical",
+    "source": "app/fp3/practical/page.tsx",
+    "app": "同一Next.jsページ・Reactコンポーネント・APIをオンラインで共通実行",
+    "status": "実装・オンライン共通利用"
+  },
+  {
+    "web": "/fp3/practical/[edition]",
+    "source": "app/fp3/practical/[edition]/page.tsx",
+    "app": "同一Next.jsページ・Reactコンポーネント・APIをオンラインで共通実行",
+    "status": "実装・オンライン共通利用"
+  },
+  {
+    "web": "/fp3/practical/[edition]/[number]",
+    "source": "app/fp3/practical/[edition]/[number]/page.tsx",
+    "app": "同一Next.jsページ・Reactコンポーネント・APIをオンラインで共通実行",
+    "status": "実装・オンライン共通利用"
+  },
+  {
+    "web": "/glossary",
+    "source": "app/glossary/page.tsx",
+    "app": "同一Next.jsページ・Reactコンポーネント・APIをオンラインで共通実行",
+    "status": "実装・オンライン共通利用"
+  },
+  {
+    "web": "/ipa",
+    "source": "app/ipa/page.tsx",
+    "app": "同一Next.jsページ・Reactコンポーネント・APIをオンラインで共通実行",
+    "status": "実装・オンライン共通利用"
+  },
+  {
+    "web": "/keywords",
+    "source": "app/keywords/page.tsx",
+    "app": "同一Next.jsページ・Reactコンポーネント・APIをオンラインで共通実行",
+    "status": "実装・オンライン共通利用"
+  },
+  {
+    "web": "/keywords/[keyword]",
+    "source": "app/keywords/[keyword]/page.tsx",
+    "app": "同一Next.jsページ・Reactコンポーネント・APIをオンラインで共通実行",
+    "status": "実装・オンライン共通利用"
+  },
+  {
+    "web": "/license",
+    "source": "app/license/page.tsx",
+    "app": "同一Next.jsページ・Reactコンポーネント・APIをオンラインで共通実行",
+    "status": "実装・オンライン共通利用"
+  },
+  {
+    "web": "/mock-exam",
+    "source": "app/mock-exam/page.tsx",
+    "app": "同一Next.jsページ・Reactコンポーネント・APIをオンラインで共通実行",
+    "status": "実装・オンライン共通利用"
+  },
+  {
+    "web": "/modes/topic",
+    "source": "app/modes/topic/page.tsx",
+    "app": "同一Next.jsページ・Reactコンポーネント・APIをオンラインで共通実行",
+    "status": "実装・オンライン共通利用"
+  },
+  {
+    "web": "/modes/year",
+    "source": "app/modes/year/page.tsx",
+    "app": "同一Next.jsページ・Reactコンポーネント・APIをオンラインで共通実行",
+    "status": "実装・オンライン共通利用"
+  },
+  {
+    "web": "/offline",
+    "source": "app/offline/page.tsx",
+    "app": "同一Next.jsページ・Reactコンポーネント・APIをオンラインで共通実行",
+    "status": "実装・オンライン共通利用"
+  },
+  {
+    "web": "/og/streak/[days]",
+    "source": "app/og/streak/[days]/page.tsx",
+    "app": "同一Next.jsページ・Reactコンポーネント・APIをオンラインで共通実行",
+    "status": "実装・オンライン共通利用"
+  },
+  {
+    "web": "/operator",
+    "source": "app/operator/page.tsx",
+    "app": "同一Next.jsページ・Reactコンポーネント・APIをオンラインで共通実行",
+    "status": "実装・オンライン共通利用"
+  },
+  {
+    "web": "/",
+    "source": "app/page.tsx",
+    "app": "同一Next.jsページ・Reactコンポーネント・APIをオンラインで共通実行",
+    "status": "実装・オンライン共通利用"
+  },
+  {
+    "web": "/privacy",
+    "source": "app/privacy/page.tsx",
+    "app": "同一Next.jsページ・Reactコンポーネント・APIをオンラインで共通実行",
+    "status": "実装・オンライン共通利用"
+  },
+  {
+    "web": "/q/[exam]/[yearSeason]/[section]/[qnum]",
+    "source": "app/q/[exam]/[yearSeason]/[section]/[qnum]/page.tsx",
+    "app": "同一Next.jsページ・Reactコンポーネント・APIをオンラインで共通実行",
+    "status": "実装・オンライン共通利用"
+  },
+  {
+    "web": "/qualifications",
+    "source": "app/qualifications/page.tsx",
+    "app": "同一Next.jsページ・Reactコンポーネント・APIをオンラインで共通実行",
+    "status": "実装・オンライン共通利用"
+  },
+  {
+    "web": "/quiz",
+    "source": "app/quiz/page.tsx",
+    "app": "同一Next.jsページ・Reactコンポーネント・APIをオンラインで共通実行",
+    "status": "実装・オンライン共通利用"
+  },
+  {
+    "web": "/quiz/review",
+    "source": "app/quiz/review/page.tsx",
+    "app": "同一Next.jsページ・Reactコンポーネント・APIをオンラインで共通実行",
+    "status": "実装・オンライン共通利用"
+  },
+  {
+    "web": "/quiz/stream",
+    "source": "app/quiz/stream/page.tsx",
+    "app": "同一Next.jsページ・Reactコンポーネント・APIをオンラインで共通実行",
+    "status": "実装・オンライン共通利用"
+  },
+  {
+    "web": "/ranking",
+    "source": "app/ranking/page.tsx",
+    "app": "同一Next.jsページ・Reactコンポーネント・APIをオンラインで共通実行",
+    "status": "実装・オンライン共通利用"
+  },
+  {
+    "web": "/recommended-books",
+    "source": "app/recommended-books/page.tsx",
+    "app": "同一Next.jsページ・Reactコンポーネント・APIをオンラインで共通実行",
+    "status": "実装・オンライン共通利用"
+  },
+  {
+    "web": "/recommended-books/[exam]",
+    "source": "app/recommended-books/[exam]/page.tsx",
+    "app": "同一Next.jsページ・Reactコンポーネント・APIをオンラインで共通実行",
+    "status": "実装・オンライン共通利用"
+  },
+  {
+    "web": "/referral",
+    "source": "app/referral/page.tsx",
+    "app": "同一Next.jsページ・Reactコンポーネント・APIをオンラインで共通実行",
+    "status": "実装・オンライン共通利用"
+  },
+  {
+    "web": "/review",
+    "source": "app/review/page.tsx",
+    "app": "同一Next.jsページ・Reactコンポーネント・APIをオンラインで共通実行",
+    "status": "実装・オンライン共通利用"
+  },
+  {
+    "web": "/search",
+    "source": "app/search/page.tsx",
+    "app": "同一Next.jsページ・Reactコンポーネント・APIをオンラインで共通実行",
+    "status": "実装・オンライン共通利用"
+  },
+  {
+    "web": "/settings/api-keys",
+    "source": "app/settings/api-keys/page.tsx",
+    "app": "同一Next.jsページ・Reactコンポーネント・APIをオンラインで共通実行",
+    "status": "実装・オンライン共通利用"
+  },
+  {
+    "web": "/settings",
+    "source": "app/settings/page.tsx",
+    "app": "同一Next.jsページ・Reactコンポーネント・APIをオンラインで共通実行",
+    "status": "実装・オンライン共通利用"
+  },
+  {
+    "web": "/sharoushi/sentaku",
+    "source": "app/sharoushi/sentaku/page.tsx",
+    "app": "同一Next.jsページ・Reactコンポーネント・APIをオンラインで共通実行",
+    "status": "実装・オンライン共通利用"
+  },
+  {
+    "web": "/sharoushi/sentaku/[edition]",
+    "source": "app/sharoushi/sentaku/[edition]/page.tsx",
+    "app": "同一Next.jsページ・Reactコンポーネント・APIをオンラインで共通実行",
+    "status": "実装・オンライン共通利用"
+  },
+  {
+    "web": "/sharoushi/sentaku/[edition]/[number]",
+    "source": "app/sharoushi/sentaku/[edition]/[number]/page.tsx",
+    "app": "同一Next.jsページ・Reactコンポーネント・APIをオンラインで共通実行",
+    "status": "実装・オンライン共通利用"
+  },
+  {
+    "web": "/sitemap",
+    "source": "app/sitemap/page.tsx",
+    "app": "同一Next.jsページ・Reactコンポーネント・APIをオンラインで共通実行",
+    "status": "実装・オンライン共通利用"
+  },
+  {
+    "web": "/st/past-papers/notes",
+    "source": "app/st/past-papers/notes/page.tsx",
+    "app": "同一Next.jsページ・Reactコンポーネント・APIをオンラインで共通実行",
+    "status": "実装・オンライン共通利用"
+  },
+  {
+    "web": "/st/past-papers/notes/[id]",
+    "source": "app/st/past-papers/notes/[id]/page.tsx",
+    "app": "同一Next.jsページ・Reactコンポーネント・APIをオンラインで共通実行",
+    "status": "実装・オンライン共通利用"
+  },
+  {
+    "web": "/stats",
+    "source": "app/stats/page.tsx",
+    "app": "同一Next.jsページ・Reactコンポーネント・APIをオンラインで共通実行",
+    "status": "実装・オンライン共通利用"
+  },
+  {
+    "web": "/student",
+    "source": "app/student/page.tsx",
+    "app": "同一Next.jsページ・Reactコンポーネント・APIをオンラインで共通実行",
+    "status": "実装・オンライン共通利用"
+  },
+  {
+    "web": "/study-plan",
+    "source": "app/study-plan/page.tsx",
+    "app": "同一Next.jsページ・Reactコンポーネント・APIをオンラインで共通実行",
+    "status": "実装・オンライン共通利用"
+  },
+  {
+    "web": "/study-plan/result/[id]",
+    "source": "app/study-plan/result/[id]/page.tsx",
+    "app": "同一Next.jsページ・Reactコンポーネント・APIをオンラインで共通実行",
+    "status": "実装・オンライン共通利用"
+  },
+  {
+    "web": "/success-stories",
+    "source": "app/success-stories/page.tsx",
+    "app": "同一Next.jsページ・Reactコンポーネント・APIをオンラインで共通実行",
+    "status": "実装・オンライン共通利用"
+  },
+  {
+    "web": "/success-stories/[exam]",
+    "source": "app/success-stories/[exam]/page.tsx",
+    "app": "同一Next.jsページ・Reactコンポーネント・APIをオンラインで共通実行",
+    "status": "実装・オンライン共通利用"
+  },
+  {
+    "web": "/success-stories/[exam]/[slug]",
+    "source": "app/success-stories/[exam]/[slug]/page.tsx",
+    "app": "同一Next.jsページ・Reactコンポーネント・APIをオンラインで共通実行",
+    "status": "実装・オンライン共通利用"
+  },
+  {
+    "web": "/terms",
+    "source": "app/terms/page.tsx",
+    "app": "同一Next.jsページ・Reactコンポーネント・APIをオンラインで共通実行",
+    "status": "実装・オンライン共通利用"
+  },
+  {
+    "web": "/topics",
+    "source": "app/topics/page.tsx",
+    "app": "同一Next.jsページ・Reactコンポーネント・APIをオンラインで共通実行",
+    "status": "実装・オンライン共通利用"
+  },
+  {
+    "web": "/topics/[slug]",
+    "source": "app/topics/[slug]/page.tsx",
+    "app": "同一Next.jsページ・Reactコンポーネント・APIをオンラインで共通実行",
+    "status": "実装・オンライン共通利用"
+  },
+  {
+    "web": "/transparency",
+    "source": "app/transparency/page.tsx",
+    "app": "同一Next.jsページ・Reactコンポーネント・APIをオンラインで共通実行",
+    "status": "実装・オンライン共通利用"
+  },
+  {
+    "web": "/updates",
+    "source": "app/updates/page.tsx",
+    "app": "同一Next.jsページ・Reactコンポーネント・APIをオンラインで共通実行",
+    "status": "実装・オンライン共通利用"
+  },
+  {
+    "web": "/why-kakomon-ai",
+    "source": "app/why-kakomon-ai/page.tsx",
+    "app": "同一Next.jsページ・Reactコンポーネント・APIをオンラインで共通実行",
+    "status": "実装・オンライン共通利用"
+  },
+  {
+    "web": "/[exam]/afternoon",
+    "source": "app/[exam]/afternoon/page.tsx",
+    "app": "同一Next.jsページ・Reactコンポーネント・APIをオンラインで共通実行",
+    "status": "実装・オンライン共通利用"
+  },
+  {
+    "web": "/[exam]/afternoon/[year]/[season]",
+    "source": "app/[exam]/afternoon/[year]/[season]/page.tsx",
+    "app": "同一Next.jsページ・Reactコンポーネント・APIをオンラインで共通実行",
+    "status": "実装・オンライン共通利用"
+  },
+  {
+    "web": "/[exam]/essay",
+    "source": "app/[exam]/essay/page.tsx",
+    "app": "同一Next.jsページ・Reactコンポーネント・APIをオンラインで共通実行",
+    "status": "実装・オンライン共通利用"
+  },
+  {
+    "web": "/[exam]",
+    "source": "app/[exam]/page.tsx",
+    "app": "同一Next.jsページ・Reactコンポーネント・APIをオンラインで共通実行",
+    "status": "実装・オンライン共通利用"
+  },
+  {
+    "web": "/[exam]/topic/[topicSlug]",
+    "source": "app/[exam]/topic/[topicSlug]/page.tsx",
+    "app": "同一Next.jsページ・Reactコンポーネント・APIをオンラインで共通実行",
+    "status": "実装・オンライン共通利用"
+  },
+  {
+    "web": "/[exam]/[yearSeason]",
+    "source": "app/[exam]/[yearSeason]/page.tsx",
+    "app": "同一Next.jsページ・Reactコンポーネント・APIをオンラインで共通実行",
+    "status": "実装・オンライン共通利用"
+  }
+]

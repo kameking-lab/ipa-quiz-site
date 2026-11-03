@@ -1,25 +1,9 @@
 import { Capacitor, CapacitorHttp } from "@capacitor/core";
-import { Filesystem, Directory, Encoding } from "@capacitor/filesystem";
-import { Preferences } from "@capacitor/preferences";
 import { Network } from "@capacitor/network";
 import { Browser } from "@capacitor/browser";
 import { LocalNotifications } from "@capacitor/local-notifications";
-import type { SnapshotStorage } from "./state";
 
 export const API_ORIGIN = "https://www.kakomon-ai.jp";
-const POINTER = "jp.kakomon-ai.snapshot.v1";
-export const nativeStorage: SnapshotStorage = {
-  async read(slot) {
-    const result = await Filesystem.readFile({ directory: Directory.Data, path: `snapshot-${slot}.json`, encoding: Encoding.UTF8 });
-    if (typeof result.data !== "string") throw new Error("Unexpected storage data");
-    return result.data;
-  },
-  async write(slot, data) {
-    await Filesystem.writeFile({ directory: Directory.Data, path: `snapshot-${slot}.json`, data, encoding: Encoding.UTF8 });
-  },
-  async pointer() { return (await Preferences.get({ key: POINTER })).value; },
-  async commit(slot) { await Preferences.set({ key: POINTER, value: String(slot) }); },
-};
 
 export interface ApiResponse { status: number; data: unknown }
 export type Transport = (path: string, body?: unknown) => Promise<ApiResponse>;

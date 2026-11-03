@@ -30,8 +30,6 @@ const EXAM_CARDS: ExamCardDef[] = [
   { id: "pm", abbr: "PM", name: "プロジェクト", sub: "マネージャ", tier: "advanced" },
   { id: "sm", abbr: "SM", name: "ITサービス", sub: "マネージャ", tier: "advanced" },
   { id: "au", abbr: "AU", name: "システム監査", sub: "技術者", tier: "advanced" },
-  { id: "fp3", abbr: "FP3", name: "FP技能検定", sub: "3級", tier: "beginner" },
-  { id: "denken3", abbr: "電験3", name: "第三種電気", sub: "主任技術者", tier: "advanced" },
 ];
 
 const TIER_LABEL: Record<DifficultyTier, { label: string; className: string }> = {

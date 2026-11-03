@@ -1,9 +1,15 @@
 "use client";
 import { useEffect } from "react";
+import { nativeClient } from "@/mobile/shared/contracts";
 
 export function ServiceWorkerRegistration() {
   useEffect(() => {
     if (!("serviceWorker" in navigator)) return;
+    if (nativeClient()) {
+      // Native offline access is exclusively governed by the signed paid lease.
+      void navigator.serviceWorker.getRegistrations().then(rs=>Promise.all(rs.map(r=>r.unregister())));
+      return;
+    }
 
     let cancelled = false;
 

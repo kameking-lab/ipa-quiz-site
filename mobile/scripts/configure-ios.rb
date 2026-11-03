@@ -11,12 +11,17 @@ target.build_configurations.each do |configuration|
   configuration.build_settings['CURRENT_PROJECT_VERSION'] = build_number
   configuration.build_settings['TARGETED_DEVICE_FAMILY'] = '1'
   configuration.build_settings['IPHONEOS_DEPLOYMENT_TARGET'] = '15.0'
+  configuration.build_settings['SWIFT_VERSION'] = '5.0'
 end
 group = project.main_group.find_subpath('App', false)
 raise 'App group missing' unless group
 reference = group.files.find { |file| file.path == 'PrivacyInfo.xcprivacy' } || group.new_file('PrivacyInfo.xcprivacy')
 target.resources_build_phase.add_file_reference(reference, true)
 project.root_object.attributes['LastUpgradeCheck'] = '2600'
+project.root_object.attributes['TargetAttributes'] ||= {}
+project.root_object.attributes['TargetAttributes'][target.uuid] ||= {}
+project.root_object.attributes['TargetAttributes'][target.uuid]['SystemCapabilities'] ||= {}
+project.root_object.attributes['TargetAttributes'][target.uuid]['SystemCapabilities']['com.apple.InAppPurchase'] = { 'enabled' => 1 }
 project.save
 plist_path = 'ios/App/App/Info.plist'
 plist = Xcodeproj::Plist.read_from_path(plist_path)
@@ -24,4 +29,5 @@ plist['CFBundleDevelopmentRegion'] = 'ja'
 plist['CFBundleLocalizations'] = ['ja']
 plist['CFBundleDisplayName'] = '過去問AI'
 plist['ITSAppUsesNonExemptEncryption'] = false
+plist['CFBundleURLTypes'] = [{ 'CFBundleURLName' => 'jp.kakomon-ai.app.auth', 'CFBundleURLSchemes' => ['kakomonai'] }]
 Xcodeproj::Plist.write_to_path(plist, plist_path)

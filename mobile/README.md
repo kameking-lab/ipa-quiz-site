@@ -1,77 +1,82 @@
-# 過去問AI iOS v1
+# 過去問AI iOS — IOS1B
 
-所有者決定（2026-11-03）に基づく、Capacitor 8 の同梱アプリ。Bundle ID は仮の `jp.kakomon-ai.app`。ログイン・IAP・広告SDK・分析SDKは導入しない。既存サイト全体のリモート表示は行わない。
+2026-11-03の所有者の最終指示に対応した初版。旧36問アプリを廃止し、App Storeの月額課金も初版に実装した。公開・審査・実機ビルドの完了報告ではない。
 
-## ローカル確認（Windows可）
+## 同じソースを利用する構成
+
+起動はCapacitorの同梱画面。オンラインでは同じWebView内で `https://www.kakomon-ai.jp` の既存Next.jsページ・React・APIを実行する。iframeは使わず、`server.url` も設定しない。許可するリモート遷移先はこのホストだけ。通信失敗時は同梱画面へ戻る。
+
+全125ページの棚卸しは `docs/route-matrix.json`、問題数・容量は `docs/content-size.json`。`npm run catalog` はウェブの公開ローダーと品質判定から全目次を生成する。非公開・照合保留の扱いもウェブと同じ。本文はオンライン取得と有料会員の任意保存で提供する。Viteの `no-question-bundles` 検査で本文ソースの混入を拒否する（公式PDFの出典URL一覧は許可）。
+
+同梱画面も通常の `QuizPlayer`、`ExamQuestionPlayer`、FP実技・応用編、電験原問・二次記述、社労士選択式、中小企業診断士二次、論述エディターを直接importする。表示部分はウェブのページから共通Reactビューへ移動し、本文・HTML・採点ロジックをコピーして二重管理しない。
+
+オンラインの全モード、模試、検索、ブックマーク、履歴・統計、学習計画、ランキング・報酬、AI、記述・論述採点、意見送信、アカウント・同期、情報ページは同じウェブの経路で利用する。AI・クラウド同期・サーバー採点には通信が必要。
+
+## 無料枠・会員権利
+
+- 無料は全資格・全問題から1日10問。最初の10問はログイン不要。
+- 既存 `POST /api/billing/question` のRedis署名Cookie、アカウントへの引継ぎ、JST 0時更新、意見で追加10問のDB判定を共有する。数え方はその日に開始した異なる問題ID。再取得・複数空欄で重複消費しない。
+- 通常演習、問題ページ、模試、ストリーム、チャレンジ、別形式のアプリ用UIは共通のサーバー開始判定を通す。ローカルのpremiumフラグやSDKの自己申告では解除しない。
+- 有効なウェブ会員権利を最優先し、次にサーバーがRevenueCatから確認した `kakomon_pro` を採用する。有料は全資格を回数無制限。既存AIの不正利用防止・費用上限は保持する。
+
+## App Store / RevenueCat
+
+公式 `@revenuecat/purchases-capacitor` を使用する。商品は1か月の自動更新サブスク1種。商品ID・Offering・公開SDKキーは設定値。価格表示はStoreKitの商品情報を使い、ウェブの共通オファー（月額980円・税込）と一致するJPYの商品を購入できる。
+
+購入直前にも会員状態と価格を再確認する。ウェブ有料会員には追加購入を出さない。承認待ち・確認待ちは再購入を止め、購入復元と権利再確認に誘導する。復元、App Store管理・解約、利用規約、プライバシー、Apple標準EULAを表示する。アプリ内の `/billing/*` はStoreKit用画面に置き換え、ウェブ決済を実行しない。IAP有効会員はウェブの追加購入APIでも拒否する。
+
+App User IDは認証済み会員IDからHMACで生成する。Webhookは認証ヘッダーとアプリID・環境を検証し、DB行ロック取得後にRevenueCatの最新状態を取得する。重複・逆順通知から古い権利を復活させない。移管元・先、返金、失効も再確認する。Webhook本文・SDKのCustomerInfo自体を有料権利の根拠にはしない。
+
+`config/server.env.example` は空値の設定一覧。実値は今回使用していない。主な設定は以下。
+
+| 設定 | 用途 |
+|---|---|
+| `MOBILE_IAP_ENABLED` | RevenueCat連携の有効化 |
+| `MOBILE_RC_IOS_PUBLIC_KEY` | iOS用公開SDKキー |
+| `MOBILE_RC_PRODUCT_ID` / `MOBILE_RC_OFFERING_ID` | 月額商品とOffering |
+| `MOBILE_RC_ENTITLEMENT` | `kakomon_pro` |
+| `MOBILE_RC_APP_ID` | Webhookのアプリ識別子 |
+| `MOBILE_RC_SECRET_KEY` | サーバーでの購読確認専用 |
+| `MOBILE_RC_WEBHOOK_AUTHORIZATION` | Webhook認証ヘッダー全体 |
+| `MOBILE_RC_IDENTITY_SECRET` | 32文字以上のID生成用秘密値 |
+| `MOBILE_LEASE_PRIVATE_KEY` / `MOBILE_LEASE_PUBLIC_KEY` | P-256 ECDSA鍵（PEM） |
+| `config/public.json` の `leasePublicKey` | 配布アプリに固定する同じ公開鍵 |
+| `AUTH_APPLE_ID` / `AUTH_APPLE_SECRET` | Sign in with Appleのサーバー設定 |
+
+秘密鍵・秘密APIキーはクライアントへ出さない。公開鍵は初期状態では空。未設定の購入・保存を成功したようには見せない。既存ウェブの会員DB・無料枠用KV・Auth設定も共用する。
+
+`migrations/20261103_mobile_revenuecat.sql` は会員とRevenueCatの対応表、およびPKCEコード用テーブル。**本番DBへの適用は所有者承認待ちで、今回は適用していない。**
+
+## ログイン・同期
+
+Appleログインを追加した。Apple未設定のアプリ用ログイン経路には他の外部プロバイダーを表示しない。認証はシステムブラウザで行い、PKCE・state・利用者の確認画面・60秒の一度だけ使えるコードでアプリへ戻す。コードとverifierはPOSTで交換し、セッショントークンはHttpOnly Cookieにする。戻りURLにはセッショントークンを含めない。`kakomonai://auth` をiOS生成スクリプトに登録する。意見送信の下書きなどの復帰先も保持する。
+
+ウェブと同梱画面の学習記録は、会員の所有者を確認したPreferencesスナップショットで受け渡す。Cookieや課金フラグは復元対象外。既存の履歴・ブックマーク・タグ・計画同期APIを共用し、別アカウントへの自動取り込みをしない。
+
+## 有料限定ダウンロードとネイティブ機能
+
+全目次・オンライン問題は全員が利用可能。無料の保存ボタンは有料特典の案内だけ。サーバーも無料・未ログイン・署名なしの保存を403にする。資格単位で関連形式をまとめて保存し、APIは10件ずつ返す。全件数・ID重複・SHA-256を確認してから参照先を切り替え、中止・破損・版変更・ディスク不足では既存データを保持する。オンラインでも現行本文のハッシュと開始権利が一致すると保存済み本文を使って転送を省く。
+
+利用には固定公開鍵で検証できる署名付き権利が必要。期限は有料期間末と発行後24時間の早い方。ログアウト、アカウント変更、オンラインでの失効確認で保存済みデータを無効にする。契約満了は署名期限で止める。完全圏外で生じた取消・返金は即時検知できないため、停止には署名済み許可の残存期間（最大24時間）がある。端末時計の巻戻しも検出する。
+
+画像は必要な問題の表示時に取得し、100MB上限でキャッシュ。未保存の図表はオンライン確認を案内する。毎日のローカル通知、通知からの復習、OSの共有シートも実装する。通知許可は設定時だけ要求する。
+
+## ローカル検証と配布前の確認
 
 ```powershell
+# リポジトリのルート
+npx --yes pnpm@10.33.0 install --frozen-lockfile --ignore-scripts
+npx --no-install prisma generate
 cd mobile
 npm ci
 npm run typecheck
 npm test
-npm run build
-npx playwright install chromium
 npm run test:e2e
+npm run build
 ```
 
-`build` は独立したアプリ用の静的アセット生成だけを行う。Next.js/Vercelビルド・デプロイは行わない。`npm run dev` はブラウザプレビュー用。プレビューの通知は使えず、別originの本番APIにはCORSが必要となるため、E2EではAPIをモックする。
+`build` はアプリ用Vite静的アセットの生成だけで、Next.js/Vercelビルドではない。`test:e2e` は毎回モック用鍵を生成する。鍵・本文フィクスチャは `.cache/` だけに置く。通常の配布用ビルドにはテスト用ハーネスと鍵を入れない。テスト後は通常の `build` を実行する。
 
-## 実装した体験
+`codemagic.yaml` は共通依存を導入してからmacOSでunsigned archiveを作る設定。今回、Codemagic実行・署名・アップロード・トリガー設定はしていない。WindowsではiOS生成・Xcodeビルドは未実施。App Store商品登録、RevenueCat・Apple設定、実機での購入／復元／Cookie復帰／通知、App Privacy、アーカイブの実容量と審査は公開前の確認事項。
 
-- 資格選択→四択→同一画面の解答・固定解説。ITパスポート20問、基本情報科目A16問を同梱。初回から外部接続なしで使用可能。
-- 誤答・自信のない正解を復習。自信を持って正解すると復習対象から外れる。日次／累計記録、回答済み画面と再開位置を端末保存。履歴は最大50,000件で、超過時は保存を拒否し既存履歴を保持する。
-- 問題パックの手動差分更新。版・スキーマ・資格・問題ID重複・SHA-256を検証し、保存成功後に切替。失敗時は旧パックで演習を続ける。
-- 日時指定のローカル通知を1件、毎日繰り返す。許可は利用者が設定した時だけ要求。拒否でも演習可能。通知タップで復習タブを開く。現地時刻で動作する。
-- AI送信への明示同意後、オンライン時のみ既存 `POST /api/copilot` を利用。初回10回/日、JST 0時リセットを共有定数から参照。サーバーのIP制限・費用ガードを維持。ログイン不要。課金／フィードバック特典への誘導は入れない。
-
-## 分離とデータ契約
-
-アプリコード・データ・テスト・iOS生成素材はすべて `mobile/`。ルート側の追加は専用API入口 `app/api/mobile/packs/route.ts` と `codemagic.yaml`。`tsconfig.json` では `mobile` を既存サイトの包括チェックから除外し、アプリは専用tsconfigで検査する。APIからimportされる共有モジュールは既存サイトの型チェックでも検査される。既存画面・AIルート・認証・無料枠・料金・DBには変更しない。
-
-`src/domain.ts` はデータだけのスキーマ、差分検証、復習判定。`src/state.ts` はRepository。ネイティブの `Directory.Data` に2つのJSONスナップショットを持ち、`Preferences` の小さなポインタで確定する。書込・ポインタ確定が成功するまでメモリ上の状態を変更せず、更新を直列化する。保存破損時は前の有効スナップショットから復旧して通知し、両方が壊れている場合は上書きしない。アプリ削除時にはOSにより端末データが消える。端末バックアップからの復元はOSの設定に従う。クラウド同期はない。
-
-### 問題パックAPI
-
-`GET https://www.kakomon-ai.jp/api/mobile/packs?pack=ip&since=1`
-
-- `204`: 最新、本文なし。
-- `200`: `schema`, `packId`, `fromVersion`, `toVersion`, `updatedAt`, `attribution`, `rightsUrl`, `upserts`, `deletedIds`, `sha256`。
-- `400`: 不正なパラメーター。`409`: 未対応版。`503`: パック利用不可。
-- `sha256` は `PackSchema.parse()` 後のパックJSON全体をハッシュ化。問題はIDの英語locale順。TLS・固定ホストで配信し、ハッシュは整合性検査として扱う。実行コードは配信しない。
-- v1公開時の現行パックはv1なので通常は204。差分追加・編集・撤回の200経路はv2フィクスチャでテスト済み。
-- 更新時は `server/packs.ts` のrelease履歴へ検証済み新版を追記し、過去版を保持する。同じ版のファイルは変更しない。互換性を失う機能はアプリ更新にする。
-- このAPIはソース追加のみ。デプロイしていないため、本番で利用可能とはしていない。
-
-### AI通信
-
-`src/platform.ts` の固定ホストのネイティブ `CapacitorHttp` を使い、WebViewのCORS/Cookie共有に依存しない。ブラウザのfetch/XHRの全面パッチは無効。既存のplain-textストリームはネイティブHTTPで全体受信して表示する。接続15秒／読込45秒。HTTP 200内のタイムアウト・エラー表記も保持する。
-
-ローカル枠は送信前に永続化し、同時送信でも11回目を止める。到達前の通信失敗も試行として数える。自動再試行しない。実際の上限はサーバー判定が優先され、同じIPのWeb利用により10回より前に制限されることがある。`429`のフィードバック／購入案内はアプリに表示しない。問題・選択肢・正解・選択結果・入力した質問をAPIへ送り、学習履歴全体や会員識別子を送らない。AI会話は端末に永続化しない。
-
-## 問題・権利とプライバシー
-
-既存の公開TSデータから画像・図表依存・要確認問題を除き、最小パックにする。抽出スクリプトは `scripts/generate-packs.ts`。既存の誤った出典URLをアプリパックに限って公式PDF URLへ置き換え、公式正答PDFも追加した。
-
-`src/packs/inventory.json` に問題ID・元ファイル・版・件数・パックhashを、`content-review.json` に2026-11-03の原典照合方法・PDF hash・公式正答を保持。IPはスキャンPDFを目視、FEは全採用問題／選択肢を正規化テキストで比較し、双方の採用36問は公式正答表と一致。固定解説は過去問AIの学習用解説と表示する。配布前には所有者による編集・権利の最終確認を行う。
-
-アプリ内から既存のプライバシーポリシー／問い合わせへ到達可能。AIの送信先プロバイダー、保持条件と本番設定の整合、App Privacy申告は提出前に確定する。端末のみの履歴とAI送信内容を区別する。`ios-assets/PrivacyInfo.xcprivacy` はPreferences用UserDefaults `CA92.1` とFilesystem用FileTimestamp `C617.1` を申告する。これは本番サーバー側の収集・保持に関するApp Privacy申告の代替ではない。
-
-## Codemagic（macOSのみ）
-
-ルートの `codemagic.yaml` は、手動選択用の `ios1-unsigned` ワークフロー。Node 22、Xcode 26.0、CocoaPodsを利用する。`npm ci`→型チェック／テスト／静的アセット生成→`npm run ios:prepare`→署名なしarchive。自動トリガー、署名情報、ASC連携、アップロード、publishingは設定していない。
-
-`ios:prepare` はmacOS以外で書込前に停止する。macOS上で公式テンプレートからCocoaPodsプロジェクト生成・同期し、Bundle ID、iPhoneのみ、iOS 15以上、v1.0.0、ビルド番号、日本語表示、Privacy ManifestのResources登録、独自アイコンを設定する。`ios/` は生成物で、テンプレートと固定lockfileから再生成する。初回のクラウドビルドは未実行であり、archive成功は未確認。
-
-生成物の `.xcarchive` は未署名で、現状のままTestFlight／App Storeへ配布できない。署名・登録・提出はこのタスクの対象外。
-
-公式参考：[Capacitor iOS](https://capacitorjs.com/docs/ios)、[HTTP](https://capacitorjs.com/docs/apis/http)、[通知](https://capacitorjs.com/docs/apis/local-notifications)、[PreferencesのPrivacy Manifest](https://capacitorjs.com/docs/apis/preferences)、[FilesystemのPrivacy Manifest](https://capacitorjs.com/docs/apis/filesystem)、[Codemagic Capacitor](https://docs.codemagic.io/yaml-quick-start/building-an-ionic-app/)。
-
-## v1.1以降の差込口
-
-`src/services.ts` の `EntitlementProvider` はv1では `free/v1-free`。RevenueCat＋IAP導入時にこの境界をサーバー検証付き実装へ置換する。端末のpremiumフラグを認可の根拠にしない。購入／復元、失効、匿名購入と会員の対応、Web既存権利の照合は次版で追加。ログインが必要になった場合のAppleログインもその時に設計する。v1には購入UIや秘密キーを同梱しない。
-
-WidgetKitは設計のみ。将来の `jp.kakomon-ai.app.widget` 拡張と `group.jp.kakomon-ai.app` のApp Groupを予定し、`schema`, `updatedAt`, `todayAnswered`, `reviewDue`, `lastExam` の小さな集計だけを共有する。SwiftのWidgetKitがsnapshotを読み、未更新時は最終更新時刻を表示し、タップで復習を開く。問題本文・AI入力・会員情報は共有しない。App Group登録・entitlements・拡張ターゲットの作成は未実施。
-
-## 後続の実機確認
-
-クラウドmacOSでの初回archive、機内モード初回起動／強制終了後復元、容量不足時の保存、ネイティブHTTPでの既存AI応答／タイムアウト／429、通知の許可・拒否・変更・停止・タップ・集中モード・時差変更、VoiceOverと大きな文字表示をiPhoneで確認する。ブラウザE2EはこれらのOS動作を保証しない。4.2向けの説明は、初回圏外でも演習・解説・端末復習が完結し、通知から復習へ戻れる点を実際の画面で示す。審査通過は未検証。
+公式資料: [RevenueCat Capacitor SDK](https://www.revenuecat.com/docs/getting-started/installation/capacitor)、[Webhook](https://www.revenuecat.com/docs/integrations/webhooks)、[Apple審査](https://developer.apple.com/app-store/review/guidelines/)、[Appleの容量上限](https://developer.apple.com/help/app-store-connect/reference/app-uploads/maximum-build-file-sizes/)。

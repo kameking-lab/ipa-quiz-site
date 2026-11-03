@@ -7,6 +7,7 @@ import "./globals.css";
 import { ThemeProvider, THEME_BOOTSTRAP_SCRIPT } from "@/components/theme-provider";
 import { ThemeToggle } from "@/components/ThemeToggle";
 import { SiteHeader } from "@/components/SiteHeader";
+import { NativeAppHost } from "@/components/NativeAppHost";
 import { ServiceWorkerRegistration } from "@/components/ServiceWorkerRegistration";
 import { MobileInstallProvider } from "@/components/pwa/MobileInstallProvider";
 import { DeferredLayoutWidgets } from "@/components/DeferredLayoutWidgets";
@@ -152,6 +153,7 @@ export default function RootLayout({
           <div className="flex min-h-[100dvh] flex-col overflow-x-clip">
             <EmergencyBanner />
             <div className="print:hidden">
+              <NativeAppHost />
               <SiteHeader />
             </div>
             <div

@@ -10,11 +10,13 @@
     "dev": "vite --host 127.0.0.1",
     "typecheck": "tsc --noEmit",
     "test": "vitest run",
-    "test:e2e": "playwright test",
-    "build": "npm run typecheck && vite build",
+    "test:e2e": "node scripts/run-e2e.mjs",
+    "catalog": "tsx --tsconfig tsconfig.scripts.json scripts/generate-catalog.ts",
+    "build": "npm run catalog && npm run typecheck && vite build",
     "ios:prepare": "node scripts/prepare-ios.mjs"
   },
   "dependencies": {
+    "@capacitor/app": "8.1.2",
     "@capacitor/browser": "8.0.1",
     "@capacitor/core": "8.6.0",
     "@capacitor/filesystem": "8.1.5",
@@ -22,6 +24,8 @@
     "@capacitor/local-notifications": "8.3.1",
     "@capacitor/network": "8.0.1",
     "@capacitor/preferences": "8.0.1",
+    "@capacitor/share": "8.0.3",
+    "@revenuecat/purchases-capacitor": "14.0.0",
     "react": "19.2.6",
     "react-dom": "19.2.6",
     "zod": "4.6.7"
@@ -29,6 +33,7 @@
   "devDependencies": {
     "@capacitor/cli": "8.6.0",
     "@playwright/test": "1.60.0",
+    "@tailwindcss/vite": "4.3.4",
     "@types/node": "^24.0.0",
     "@types/react": "^19.0.0",
     "@types/react-dom": "^19.0.0",
