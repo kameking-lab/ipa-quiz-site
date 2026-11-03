@@ -1,3 +1,4 @@
+import { BOILER_SPECIAL_QUESTIONS } from "./boiler-special";
 import { BOILER1_QUESTIONS } from "./boiler1";
 import type { ExamCode, Question } from "@/lib/questions/types";
 import { isPracticeReadyQuestion } from "@/lib/questions/filter";
@@ -160,6 +161,7 @@ export const QUESTIONS_BY_EXAM: Partial<Record<ExamCode, Question[]>> = {
   ...(isExamPublished("tohan") ? { tohan: TOHAN_QUESTIONS } : {}),
   ...(isExamPublished("kanri") ? { kanri: KANRI_QUESTIONS } : {}),
   ...(isExamPublished("boiler1") ? { "boiler1": BOILER1_QUESTIONS } : {}),
+  ...(isExamPublished("boiler-special") ? { "boiler-special": BOILER_SPECIAL_QUESTIONS } : {}),
   ...(isExamPublished("eisei1") ? { eisei1: EISEI1_QUESTIONS } : {}),
   ...(isExamPublished("eisei2") ? { eisei2: EISEI2_QUESTIONS } : {}),
   ...(isExamPublished("soukan") ? { soukan: SOUKAN_QUESTIONS } : {}),

@@ -41,6 +41,12 @@ export interface QualificationCatalogEntry {
  * 「公式に問題と正答がある」だけでは live にせず、転載条件まで確認する。
  */
 export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
+  { slug: "boiler-special", examCode: "boiler-special", shortName: "特級ボイラー技士", fullName: "特級ボイラー技士免許試験", domain: "safety",
+    administrator: "公益財団法人安全衛生技術試験協会", officialQuestionsUrl: "https://www.exam.or.jp/lckohyo/",
+    officialReuseTermsUrl: "https://www.exam.or.jp/lckohyo/", status: "ready-to-ingest",
+    reuseSummary: "公式一覧で確認した直近2回の公表原問を保存。未公開ステージング。法令は出題時点。",
+    attributionTemplate: "出典：公益財団法人安全衛生技術試験協会。解説は過去問AIの独自作成。",
+    remainingWork: ["公開判断とステージングの最終レビュー"] },
   { slug: "boiler1", examCode: "boiler1", shortName: "一級ボイラー技士", fullName: "一級ボイラー技士免許試験", domain: "safety",
     administrator: "公益財団法人安全衛生技術試験協会", officialQuestionsUrl: "https://www.exam.or.jp/lckohyo/",
     officialReuseTermsUrl: "https://www.exam.or.jp/lckohyo/", status: "ready-to-ingest",

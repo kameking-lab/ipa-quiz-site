@@ -661,6 +661,9 @@ export const EXAM_CONFIGS: Record<ExamCode, ExamConfig> = {
   "boiler1": { code: "boiler1", nameFull: "一級ボイラー技士免許試験", urlSlug: "boiler1", level: "advanced",
     sessions: [{ session: "gakka", urlSlug: "gakka", expectedQuestions: 40, label: "公表試験問題", categories: ["構造", "取扱い", "燃料及び燃焼", "関係法令"] }],
     seasons: ["spring", "autumn"], yearRange: { start: 2026, end: 2026 } },
+  "boiler-special": { code: "boiler-special", nameFull: "特級ボイラー技士免許試験", urlSlug: "boiler-special", level: "advanced",
+    sessions: [{ session: "gakka", urlSlug: "gakka", expectedQuestions: 24, label: "公表試験問題", categories: ["構造", "取扱い", "燃料及び燃焼", "関係法令"] }],
+    seasons: ["spring"], yearRange: { start: 2025, end: 2026 } },
   eisei1: {
     code: "eisei1",
     nameFull: "第一種衛生管理者免許試験",
