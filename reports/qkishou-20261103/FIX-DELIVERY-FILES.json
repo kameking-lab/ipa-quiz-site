@@ -1,0 +1,898 @@
+{
+  "schema": "qkishouf-git-blob-delivery/v1",
+  "branch": "qual/qkishou-20261103",
+  "parentCommit": "6369991e3a6038f6da5c788174351fa0749a4390",
+  "hashRepresentation": "Exact staged Git blob bytes. Manifest and its SHA file excluded to avoid self-reference.",
+  "files": [
+    {
+      "path": "__tests__/kisho-study.test.tsx",
+      "bytes": 4810,
+      "sha256": "1b6472b011b11179b2776e36d6ae59e7dfb0e41aa1b89c454efe5856bedff2c1"
+    },
+    {
+      "path": "app/kisho/page.tsx",
+      "bytes": 1960,
+      "sha256": "c8c693191c3010b73b4b123a3358cb3f0b927ed9dcca1ac5fb9db398fd360070"
+    },
+    {
+      "path": "app/kisho/study/[id]/page.tsx",
+      "bytes": 689,
+      "sha256": "9673a2217999bb2ffbf323745b809159a4153c3bd258bb586603929ac1ae6814"
+    },
+    {
+      "path": "app/qualifications/page.tsx",
+      "bytes": 7129,
+      "sha256": "5aa92c03eab89688fc29203ca37ea652883288245f6de547f9c02a8542e9d831"
+    },
+    {
+      "path": "components/kisho/KishoReader.tsx",
+      "bytes": 13101,
+      "sha256": "9965469bac73c9f2af7ea9de5df6d69adeb6bfd4a33335a0206daebddea9f3d1"
+    },
+    {
+      "path": "components/kisho/KishoStudyReader.tsx",
+      "bytes": 430,
+      "sha256": "e5b54ea25872ec2e7b03c23e4b3a80c6142f8f61e58e7832fa5e5dacb8a52779"
+    },
+    {
+      "path": "data/questions/index.ts",
+      "bytes": 11497,
+      "sha256": "bc1fd83477a8a11353046c9c5b87c4df1da1b29f7f69fbd4e815d60728d973ad"
+    },
+    {
+      "path": "data/questions/kisho/index.ts",
+      "bytes": 2738,
+      "sha256": "1ff93577e72a4c2eaf933da02d5a8f6df21ce693f6032a7f76a727591a42fcfc"
+    },
+    {
+      "path": "data/questions/kisho/public-assets.json",
+      "bytes": 47589,
+      "sha256": "79f1e4eda7b6a835afd6e738702456351cc3ceb03cee65567536d1b63696e67e"
+    },
+    {
+      "path": "data/questions/kisho/study-data.json",
+      "bytes": 860222,
+      "sha256": "6f7c83b3d01fef4f05b85adcdaa44f1dbbab7cbe5ad567f22c2fd26754b42fae"
+    },
+    {
+      "path": "lib/exam-config.ts",
+      "bytes": 61556,
+      "sha256": "0c0b848258db8782f0b5b70ae6a716a0ec8818e6e49f03e5fa523aa59e782307"
+    },
+    {
+      "path": "lib/home/home-directory.ts",
+      "bytes": 20716,
+      "sha256": "0df5d1879fef8b6811a7bb8b2cc9ef4316f83e6a93f419192490c67dfbb4152b"
+    },
+    {
+      "path": "lib/kisho-source-urls.ts",
+      "bytes": 196,
+      "sha256": "205b52ee6a2e7e651a61d4d9b76dfab22fc901cffea834e1950155730baf6fd5"
+    },
+    {
+      "path": "lib/kisho-study-drafts.ts",
+      "bytes": 1878,
+      "sha256": "463defc74d2ff34fc0bd3ca8871ba2798d20f35a9ac82759f646664c817acec2"
+    },
+    {
+      "path": "lib/kisho-study.ts",
+      "bytes": 618,
+      "sha256": "1a82e4043478bb2a49826bce7c108d3fc97d3ad0325b5b530b51008b6a7edd2a"
+    },
+    {
+      "path": "lib/qualifications/catalog.ts",
+      "bytes": 74606,
+      "sha256": "934f71c5add7af746c3f7b948d35fc8c52cf303a89abe82569e70bb56d013dea"
+    },
+    {
+      "path": "lib/questions/display.ts",
+      "bytes": 4795,
+      "sha256": "c4007ee074c88f4552ca9212b4c67b6435937c661fd502f2e5765def01e8423a"
+    },
+    {
+      "path": "lib/questions/filter.ts",
+      "bytes": 5423,
+      "sha256": "e8224d18a0d30c547a215be76425a7c915c088e8b93d19511967afc93984190d"
+    },
+    {
+      "path": "lib/questions/get-questions.ts",
+      "bytes": 11592,
+      "sha256": "00a1363ff6211c4ca23b39dd2aac8507082d294c33e74ad998d74a6a0bf31c10"
+    },
+    {
+      "path": "lib/questions/practice-session.ts",
+      "bytes": 5613,
+      "sha256": "b4f602de9f9f7bbfebc072bb54ddf1a1175e76b4297ff73b2fcf3b5756446092"
+    },
+    {
+      "path": "lib/questions/source-label.ts",
+      "bytes": 4115,
+      "sha256": "e73398d817ff223926c81e4ebafeb2ec351f0119b92ad2d988c4c20855b3970c"
+    },
+    {
+      "path": "lib/questions/types.ts",
+      "bytes": 10857,
+      "sha256": "b6ae1782bf36fd417a5fb463618f0a5ed77086442e02f7053a3258327eeaaffc"
+    },
+    {
+      "path": "lib/seo/exam-meta.ts",
+      "bytes": 55701,
+      "sha256": "526a169e79bdd3127ab56d4fdc35109c25e838c30ed25bb3005e62002e37eb0d"
+    },
+    {
+      "path": "lib/utils.ts",
+      "bytes": 5690,
+      "sha256": "1ac3ce84ff1f1e98a5419441bc0cacc73f372acabc98ac0c650aed9ad773f43a"
+    },
+    {
+      "path": "public/images/kisho/r65/answer-diagram/kisho-65-pm1-q05/pm1-q05-isobars.png",
+      "bytes": 114440,
+      "sha256": "4ea46f52af750a7c381277a266461a4e706dc24170d6c4e40f2aa21d93b9991e"
+    },
+    {
+      "path": "public/images/kisho/r65/answer-diagram/kisho-65-pm2-q02/pm2-q02-fronts.png",
+      "bytes": 42372,
+      "sha256": "be3cfafcd18272f7b64668e3436a3e2fd059cc5121a21b0e8d00e614534f787c"
+    },
+    {
+      "path": "public/images/kisho/r65/answer-diagram/kisho-65-pm2-q03/pm2-q03-frontal-surface.png",
+      "bytes": 77553,
+      "sha256": "5f78feafc2caf2658e0659b0e9aac5e44dfddddf830aadea899114d34e8c702b"
+    },
+    {
+      "path": "public/images/kisho/r65/answer-diagram/kisho-65-pm2-q03/pm2-q03-isobar-shear.png",
+      "bytes": 92508,
+      "sha256": "0df9074b0d368a31999fa45119955ffdba5612b9056b549d77ea1f34794449c1"
+    },
+    {
+      "path": "public/images/kisho/r65/answer/cwfe_65_a(gakka jitsugi_kaitourei)/p001.png",
+      "bytes": 114616,
+      "sha256": "33b8d07e54866b11bff9998749c0ec351075cbebc4955b26e38c48b4cdeef039"
+    },
+    {
+      "path": "public/images/kisho/r65/answer/cwfe_65_a(gakka jitsugi_kaitourei)/p002.png",
+      "bytes": 197258,
+      "sha256": "4435f1365957dd3fa394acf9a54b071d3e4f4b478e2d6abddeab4bb7e072088b"
+    },
+    {
+      "path": "public/images/kisho/r65/answer/cwfe_65_a(gakka jitsugi_kaitourei)/p003.png",
+      "bytes": 175812,
+      "sha256": "f5af2a638ce11a86d6fc9f4ab2e57ea4f170a9ff4536534b9b44929fcf063ec0"
+    },
+    {
+      "path": "public/images/kisho/r65/answer/cwfe_65_a(gakka jitsugi_kaitourei)/p004.png",
+      "bytes": 233469,
+      "sha256": "be6d63d6cbee75891727bb5363f49ab21c7f1197de6534a989b1fedff74c4209"
+    },
+    {
+      "path": "public/images/kisho/r65/answer/cwfe_65_a(gakka jitsugi_kaitourei)/p005.png",
+      "bytes": 163129,
+      "sha256": "94831864bc9bc5435c557eaec46ec8c21f4bddc3ddc57f6f0f15146e686bb30e"
+    },
+    {
+      "path": "public/images/kisho/r65/answer/cwfe_65_a(gakka jitsugi_kaitourei)/p006.png",
+      "bytes": 179798,
+      "sha256": "606f16a4b99e3fd3407f41544ca6cc264e93b717d9e39f859c0fe4b9e9940340"
+    },
+    {
+      "path": "public/images/kisho/r65/answer/cwfe_65_a(gakka jitsugi_kaitourei)/p007.png",
+      "bytes": 249537,
+      "sha256": "f3cff2bd7b446d800d6e9914f5edb917a16bd444bd70ae961644d4a6bc49dd75"
+    },
+    {
+      "path": "public/images/kisho/r65/answer/cwfe_65_a(gakka jitsugi_kaitourei)/p008.png",
+      "bytes": 198853,
+      "sha256": "87905a50d175f2cf6a88a07b1aa453cc32ebcfb5a7d14da8f270707b6ae4dbdc"
+    },
+    {
+      "path": "public/images/kisho/r65/answer/cwfe_65_a(gakka jitsugi_kaitourei)/p009.png",
+      "bytes": 286328,
+      "sha256": "8d25755313261e421888b91c08fa2dd89bd9e7c870bcbbad85686ec596b229c4"
+    },
+    {
+      "path": "public/images/kisho/r65/figure-page/jitsugi1(mondai)/p003.png",
+      "bytes": 375627,
+      "sha256": "dd93b30ed6efddeac0eb5a5ff6e9672e3ae836161731a8637fe382fe832935a6"
+    },
+    {
+      "path": "public/images/kisho/r65/figure-page/jitsugi1(mondai)/p004.png",
+      "bytes": 429196,
+      "sha256": "4343f3f40a340b8571cb18572cbc6b2d99299fe38693447265e006db13c17e67"
+    },
+    {
+      "path": "public/images/kisho/r65/figure-page/jitsugi1(mondai)/p005.png",
+      "bytes": 375770,
+      "sha256": "b4670d523612445dceeb37c1ab9bfa447574b6846407596d2f121dba1cfbe172"
+    },
+    {
+      "path": "public/images/kisho/r65/figure-page/jitsugi1(mondai)/p006.png",
+      "bytes": 412185,
+      "sha256": "db7bd5dd2f298c05388d32a5d54efe5ffb85abf8a3ded9f159655bb4fcb45760"
+    },
+    {
+      "path": "public/images/kisho/r65/figure-page/jitsugi1(mondai)/p007.png",
+      "bytes": 1041268,
+      "sha256": "476a1ca156a98efbfbd3dac58e22e357fff67aa3a02ec09d7a348f9237b7df13"
+    },
+    {
+      "path": "public/images/kisho/r65/figure-page/jitsugi1(mondai)/p008.png",
+      "bytes": 612904,
+      "sha256": "2767c37e92d986d915f17576ac933be30372178a260120a11ade9c355065192c"
+    },
+    {
+      "path": "public/images/kisho/r65/figure-page/jitsugi1(mondai)/p009.png",
+      "bytes": 832071,
+      "sha256": "aaefb0de131397966a1b604d5c2b43ada31554422f4176c4035ad7ef51bd94a2"
+    },
+    {
+      "path": "public/images/kisho/r65/figure-page/jitsugi1(mondai)/p010.png",
+      "bytes": 463326,
+      "sha256": "ec5b94aaa47c59446b401eab6ba5b5f610429206cda22a4bd77828423455ef23"
+    },
+    {
+      "path": "public/images/kisho/r65/figure-page/jitsugi1(mondai)/p011.png",
+      "bytes": 588248,
+      "sha256": "8690fc8778ad8da1e31bb4373cb2cb14658e417fcc082025d06211e44b370ea1"
+    },
+    {
+      "path": "public/images/kisho/r65/figure-page/jitsugi1(mondai)/p012.png",
+      "bytes": 546268,
+      "sha256": "4ebe06cb591e1fe421ff818b2ea7ded950134e069526291fb22f26fecd9922a9"
+    },
+    {
+      "path": "public/images/kisho/r65/figure-page/jitsugi1(mondai)/p013.png",
+      "bytes": 619429,
+      "sha256": "ac3b93541d711bff3686860f1227d1be2d5fd6858160249e4265859f44cd8cd7"
+    },
+    {
+      "path": "public/images/kisho/r65/figure-page/jitsugi1(mondai)/p014.png",
+      "bytes": 650590,
+      "sha256": "af21a91738b5d2d97fb8649cfa40e39a1c2242b2a855a8495aaecdc4a5e43c5c"
+    },
+    {
+      "path": "public/images/kisho/r65/figure-page/jitsugi1(mondai)/p015.png",
+      "bytes": 241607,
+      "sha256": "2cebdb8de6079addabcd0414aa9997a96b234b59fe5975f164c15f9aa1a1d5ca"
+    },
+    {
+      "path": "public/images/kisho/r65/figure-page/jitsugi2(mondai)/p003.png",
+      "bytes": 374148,
+      "sha256": "7fdf78de0b1ae6217b11f596da20454ce211a5120002882083381bcb333b53a7"
+    },
+    {
+      "path": "public/images/kisho/r65/figure-page/jitsugi2(mondai)/p004.png",
+      "bytes": 319768,
+      "sha256": "a7f8969d911fd3be252e517a0c4c0bb20801ed7bc2fca7651d53c000f2ceb81b"
+    },
+    {
+      "path": "public/images/kisho/r65/figure-page/jitsugi2(mondai)/p005.png",
+      "bytes": 343449,
+      "sha256": "d8e9d3c9847ca8037d93c2f1570dcb67d67ec1cff227abfd4980ba5a3bc9289e"
+    },
+    {
+      "path": "public/images/kisho/r65/figure-page/jitsugi2(mondai)/p006.png",
+      "bytes": 296200,
+      "sha256": "1cba46414f1532b41e9fb454557c251cac3ea880bcee7cbe7e757b759047c52a"
+    },
+    {
+      "path": "public/images/kisho/r65/figure-page/jitsugi2(mondai)/p007.png",
+      "bytes": 636387,
+      "sha256": "23045dbf1c230c12c1d169a8a08a6613444b6469fbc6c4a05fa9871bd16314f8"
+    },
+    {
+      "path": "public/images/kisho/r65/figure-page/jitsugi2(mondai)/p008.png",
+      "bytes": 1145645,
+      "sha256": "c359aeab9a175d0961c9447317fe694230f9042e17caf83f2ebbe7503663ced8"
+    },
+    {
+      "path": "public/images/kisho/r65/figure-page/jitsugi2(mondai)/p009.png",
+      "bytes": 601513,
+      "sha256": "c09dd076e07ed0c3689a5bfb6662e78e16f5c2025eb0ef5ea96f519019601956"
+    },
+    {
+      "path": "public/images/kisho/r65/figure-page/jitsugi2(mondai)/p010.png",
+      "bytes": 635916,
+      "sha256": "1d9d3dbe4054295597593c2bdad22bfc9eeaf6328e25915ff90f20c2f05cc8a1"
+    },
+    {
+      "path": "public/images/kisho/r65/figure-page/jitsugi2(mondai)/p011.png",
+      "bytes": 683101,
+      "sha256": "b2411eaaedab2b7c528365ed937d33dd93ef45df8cea75683facce0e3f9ac99e"
+    },
+    {
+      "path": "public/images/kisho/r65/figure-page/jitsugi2(mondai)/p012.png",
+      "bytes": 414508,
+      "sha256": "a3899416e91663097a664b06227e4ab489f62fb797c9c2b7235fa64324382781"
+    },
+    {
+      "path": "public/images/kisho/r65/figure-page/jitsugi2(mondai)/p013.png",
+      "bytes": 575629,
+      "sha256": "27a883e931d4ee18c05c9940e77ff57dcb838ed02c0a345bb7a43dc0eacd3a34"
+    },
+    {
+      "path": "public/images/kisho/r65/figure-page/jitsugi2(mondai)/p014.png",
+      "bytes": 152715,
+      "sha256": "bd1d74f9be107f0ef7546a5dbb1d436ac342f17b9565fb20be091db6d5ccd406"
+    },
+    {
+      "path": "public/images/kisho/r65/figure-page/jitsugi2(mondai)/p015.png",
+      "bytes": 360272,
+      "sha256": "543e58bdc471327dcd5ca37325f550a16bb55bcbd93045b1098998fdecc9a1aa"
+    },
+    {
+      "path": "public/images/kisho/r65/figure-page/jitsugi2(mondai)/p016.png",
+      "bytes": 677935,
+      "sha256": "27d601b9bcae2e3b4094a3568ecdfd1487a6e4ab99faca0710a94e9714944310"
+    },
+    {
+      "path": "public/images/kisho/r65/question/gakka(ippan_mondai)/p002.png",
+      "bytes": 187840,
+      "sha256": "0924075783691ec670ab7b9ac80bd8ec46b80a1bc46db2e378092c318f643434"
+    },
+    {
+      "path": "public/images/kisho/r65/question/gakka(ippan_mondai)/p003.png",
+      "bytes": 174433,
+      "sha256": "d50a854e996d9e7921f91162ae1b69c3d8feba2981bc05b809aa2574814eb991"
+    },
+    {
+      "path": "public/images/kisho/r65/question/gakka(ippan_mondai)/p004.png",
+      "bytes": 253196,
+      "sha256": "57dcc872948f84fb08e8068a2d5d51a1741d337611d59089d1342f4490db4f94"
+    },
+    {
+      "path": "public/images/kisho/r65/question/gakka(ippan_mondai)/p005.png",
+      "bytes": 157152,
+      "sha256": "b70c4b6c29b7e7ba17b0cc996dd650c39f25c094eae8393923cadc11074e1e6f"
+    },
+    {
+      "path": "public/images/kisho/r65/question/gakka(ippan_mondai)/p006.png",
+      "bytes": 279780,
+      "sha256": "3364d4f71c563275c52cf22ef78e77c72b118b736404c929db2d8d65b1e514e6"
+    },
+    {
+      "path": "public/images/kisho/r65/question/gakka(ippan_mondai)/p007.png",
+      "bytes": 190980,
+      "sha256": "89b9fe634f76c17835ef11f8775c6652fce422eedcb6d8a6baa4163a032e6f2d"
+    },
+    {
+      "path": "public/images/kisho/r65/question/gakka(ippan_mondai)/p008.png",
+      "bytes": 196898,
+      "sha256": "def8238457fb3ee5192b62644cc12b98012e22b8c606799cecbaeee89d6fc7cc"
+    },
+    {
+      "path": "public/images/kisho/r65/question/gakka(ippan_mondai)/p009.png",
+      "bytes": 234017,
+      "sha256": "adb9b501ca1a2eaa2bdc4e292cb93595f658858aa1eb34d2aa42415b772c10cf"
+    },
+    {
+      "path": "public/images/kisho/r65/question/gakka(ippan_mondai)/p010.png",
+      "bytes": 259249,
+      "sha256": "618b030edd71e12c792f424b3ac7497ef6d9b3bc273066006bb53134b8590c87"
+    },
+    {
+      "path": "public/images/kisho/r65/question/gakka(senmon_mondai)/p002.png",
+      "bytes": 238774,
+      "sha256": "44b45ba84ecd81c5a4ef39025f370a41a86e2a05d01a63939e5ff9576f3b66ec"
+    },
+    {
+      "path": "public/images/kisho/r65/question/gakka(senmon_mondai)/p003.png",
+      "bytes": 523525,
+      "sha256": "6dbcad9d481f4a4eadb12f921f6d3530291a1d4d71fb16a397528b19ae551974"
+    },
+    {
+      "path": "public/images/kisho/r65/question/gakka(senmon_mondai)/p004.png",
+      "bytes": 166752,
+      "sha256": "2950525ccc59e423491370f7a8f8107f3fa13472140f193d06300ac0d1e54c52"
+    },
+    {
+      "path": "public/images/kisho/r65/question/gakka(senmon_mondai)/p005.png",
+      "bytes": 291480,
+      "sha256": "15463028a8bb754c4bad8c8f577453a10bbab444e9a7c7d74b650ebe5ba3d1ff"
+    },
+    {
+      "path": "public/images/kisho/r65/question/gakka(senmon_mondai)/p006.png",
+      "bytes": 170852,
+      "sha256": "de9992ca8b9061e00fecc69c58c23dcbff272c14cd1d3ffa3625686f853ab829"
+    },
+    {
+      "path": "public/images/kisho/r65/question/gakka(senmon_mondai)/p007.png",
+      "bytes": 811275,
+      "sha256": "c4eecfd5ae0286ec9225a6f754ae56b56b59625f35727c0740b25f9eb0043ddd"
+    },
+    {
+      "path": "public/images/kisho/r65/question/gakka(senmon_mondai)/p008.png",
+      "bytes": 499772,
+      "sha256": "9a9622507fbc12a39add38ca92c0cafeaebb2dae4658ecd850b650cc2983c975"
+    },
+    {
+      "path": "public/images/kisho/r65/question/gakka(senmon_mondai)/p009.png",
+      "bytes": 251980,
+      "sha256": "3b28a88947fa0967f1ae5957ec2e3b05e1ce946129c335003b84773459e8a634"
+    },
+    {
+      "path": "public/images/kisho/r65/question/gakka(senmon_mondai)/p010.png",
+      "bytes": 142653,
+      "sha256": "c436c564d13a4ce0a0872fd6ee6732d3d80c5720bd349867edd457f65737e930"
+    },
+    {
+      "path": "public/images/kisho/r65/question/gakka(senmon_mondai)/p011.png",
+      "bytes": 263173,
+      "sha256": "5aca2003d4c865e5ebfe2bbf7db54e746c6b13c293a3e46f4ed323f1569a9af8"
+    },
+    {
+      "path": "public/images/kisho/r65/question/gakka(senmon_mondai)/p012.png",
+      "bytes": 828730,
+      "sha256": "9492ae5342d22093085279621129c147d914017b42e809a9115cd0086f60b27a"
+    },
+    {
+      "path": "public/images/kisho/r65/question/jitsugi1(mondai)/p003.png",
+      "bytes": 375627,
+      "sha256": "dd93b30ed6efddeac0eb5a5ff6e9672e3ae836161731a8637fe382fe832935a6"
+    },
+    {
+      "path": "public/images/kisho/r65/question/jitsugi1(mondai)/p004.png",
+      "bytes": 429196,
+      "sha256": "4343f3f40a340b8571cb18572cbc6b2d99299fe38693447265e006db13c17e67"
+    },
+    {
+      "path": "public/images/kisho/r65/question/jitsugi1(mondai)/p005.png",
+      "bytes": 375770,
+      "sha256": "b4670d523612445dceeb37c1ab9bfa447574b6846407596d2f121dba1cfbe172"
+    },
+    {
+      "path": "public/images/kisho/r65/question/jitsugi1(mondai)/p006.png",
+      "bytes": 412185,
+      "sha256": "db7bd5dd2f298c05388d32a5d54efe5ffb85abf8a3ded9f159655bb4fcb45760"
+    },
+    {
+      "path": "public/images/kisho/r65/question/jitsugi2(mondai)/p003.png",
+      "bytes": 374148,
+      "sha256": "7fdf78de0b1ae6217b11f596da20454ce211a5120002882083381bcb333b53a7"
+    },
+    {
+      "path": "public/images/kisho/r65/question/jitsugi2(mondai)/p004.png",
+      "bytes": 319768,
+      "sha256": "a7f8969d911fd3be252e517a0c4c0bb20801ed7bc2fca7651d53c000f2ceb81b"
+    },
+    {
+      "path": "public/images/kisho/r65/question/jitsugi2(mondai)/p005.png",
+      "bytes": 343449,
+      "sha256": "d8e9d3c9847ca8037d93c2f1570dcb67d67ec1cff227abfd4980ba5a3bc9289e"
+    },
+    {
+      "path": "public/images/kisho/r65/question/jitsugi2(mondai)/p006.png",
+      "bytes": 296200,
+      "sha256": "1cba46414f1532b41e9fb454557c251cac3ea880bcee7cbe7e757b759047c52a"
+    },
+    {
+      "path": "public/images/kisho/r66/answer-diagram/kisho-66-pm1-q01/answer-pm1-q1-fronts.png",
+      "bytes": 105624,
+      "sha256": "bab7619d29c4f56f9da65c93a9c15459515d991f17b260949cfd7e7fd610ec62"
+    },
+    {
+      "path": "public/images/kisho/r66/answer-diagram/kisho-66-pm1-q04/answer-pm1-q4-isotherm-shear.png",
+      "bytes": 62942,
+      "sha256": "0b07bb00b21cf2ddf90f2b21bdc2f51cd43ff999da48e51bd0624d82884f3464"
+    },
+    {
+      "path": "public/images/kisho/r66/answer-diagram/kisho-66-pm2-q02/answer-pm2-q2-fronts.png",
+      "bytes": 47253,
+      "sha256": "a1dc3326522144252d51566a3e87402feb370a60c3cbd9328b0120feff4a5163"
+    },
+    {
+      "path": "public/images/kisho/r66/answer-diagram/kisho-66-pm2-q02/answer-pm2-q2-trough.png",
+      "bytes": 84956,
+      "sha256": "03aaca0cb88a80bb91fb590fb80f35f21a1edf8f64587d44cbd5fb095af7b926"
+    },
+    {
+      "path": "public/images/kisho/r66/answer-diagram/kisho-66-pm2-q03/answer-pm2-q3-isotherm.png",
+      "bytes": 46318,
+      "sha256": "0566f3c874b39f491978f6cae689d40b8a3735d0835c2d021c13e55d8207e66e"
+    },
+    {
+      "path": "public/images/kisho/r66/answer/cwfe_66_a(gakkajitsugi_kaitourei)/p001.png",
+      "bytes": 114611,
+      "sha256": "d5dec41f9f883056f101e6239438ead975cdf9377305da720fa6742c5737400c"
+    },
+    {
+      "path": "public/images/kisho/r66/answer/cwfe_66_a(gakkajitsugi_kaitourei)/p002.png",
+      "bytes": 263438,
+      "sha256": "c63ca13b3155f1459d40239c3938f4047d27d234b3176fd490c159ed7c1762a3"
+    },
+    {
+      "path": "public/images/kisho/r66/answer/cwfe_66_a(gakkajitsugi_kaitourei)/p003.png",
+      "bytes": 186782,
+      "sha256": "204442e6bacdc488e2323cc0a7979e68ca6e332c58960d4e2027a7198ce5c5f5"
+    },
+    {
+      "path": "public/images/kisho/r66/answer/cwfe_66_a(gakkajitsugi_kaitourei)/p004.png",
+      "bytes": 215795,
+      "sha256": "d62663d365d580a8ed2ef7243d7e2949dc30bfbf7b710de60649371170a3c465"
+    },
+    {
+      "path": "public/images/kisho/r66/answer/cwfe_66_a(gakkajitsugi_kaitourei)/p005.png",
+      "bytes": 139268,
+      "sha256": "8353565cb7f4a363c544e10abf257957a84ca96be24cf26a1118fd52d73a09a3"
+    },
+    {
+      "path": "public/images/kisho/r66/answer/cwfe_66_a(gakkajitsugi_kaitourei)/p006.png",
+      "bytes": 216175,
+      "sha256": "b8e2b91477c1172f6f10ec0beb26e94ccd872a97dec3952f969cb8693bba33eb"
+    },
+    {
+      "path": "public/images/kisho/r66/answer/cwfe_66_a(gakkajitsugi_kaitourei)/p007.png",
+      "bytes": 288257,
+      "sha256": "67c9cc39662f83af982a9c2afd6116c34a8fde35f48a5ff85b0489dc49733340"
+    },
+    {
+      "path": "public/images/kisho/r66/answer/cwfe_66_a(gakkajitsugi_kaitourei)/p008.png",
+      "bytes": 242334,
+      "sha256": "ca49f1805969a619a33a7bfeb61904f3016a25652e78276117bf59faa0b274da"
+    },
+    {
+      "path": "public/images/kisho/r66/answer/cwfe_66_a(gakkajitsugi_kaitourei)/p009.png",
+      "bytes": 224455,
+      "sha256": "fd114e7fc4fe8d386459f9bc6c843234bc34d29e9270153784c8f2f84e5d4a34"
+    },
+    {
+      "path": "public/images/kisho/r66/figure-page/jitsugi1(mondai)/p007.png",
+      "bytes": 1055662,
+      "sha256": "b98e4befac1cf89a1d84100689ab052e03a68740f57869df2db9a1403b4dc8a2"
+    },
+    {
+      "path": "public/images/kisho/r66/figure-page/jitsugi1(mondai)/p008.png",
+      "bytes": 760190,
+      "sha256": "4f008af6857c1400f4d2737db0a6106b0d0fab65bef5fc7859a293c2d2560343"
+    },
+    {
+      "path": "public/images/kisho/r66/figure-page/jitsugi1(mondai)/p009.png",
+      "bytes": 444429,
+      "sha256": "fc7b3db025744481183b6e14402379f58dd918b07fb1a803bfb8ef0da9f615ee"
+    },
+    {
+      "path": "public/images/kisho/r66/figure-page/jitsugi1(mondai)/p010.png",
+      "bytes": 707261,
+      "sha256": "6babeff324be71fe84256ba7946767a49fffb1ac6e367cdf43b31098d74a456d"
+    },
+    {
+      "path": "public/images/kisho/r66/figure-page/jitsugi1(mondai)/p011.png",
+      "bytes": 735126,
+      "sha256": "190f8a985b9a76526181b4006a6bb1d5b5a70301f53b93ab06625b58f6c6a9ae"
+    },
+    {
+      "path": "public/images/kisho/r66/figure-page/jitsugi1(mondai)/p012.png",
+      "bytes": 738573,
+      "sha256": "28e189a7fc663355dd9dbd8f8a7a96d6a1bd34c61a7c905d3bd2644ffc7adac6"
+    },
+    {
+      "path": "public/images/kisho/r66/figure-page/jitsugi1(mondai)/p013.png",
+      "bytes": 553888,
+      "sha256": "5c722a0db048c377782bc12c2d0c03e3a1c0ecde433399d88abffcfb4b5cf0d0"
+    },
+    {
+      "path": "public/images/kisho/r66/figure-page/jitsugi1(mondai)/p014.png",
+      "bytes": 450043,
+      "sha256": "dccce7c0868f94df92f67daea0b06533cacedde0893b9dc4a212d2c82bc9924c"
+    },
+    {
+      "path": "public/images/kisho/r66/figure-page/jitsugi1(mondai)/p015.png",
+      "bytes": 169930,
+      "sha256": "3a80b4d89e7aa7bf94d021ecb486fbc0c8a91d15447056a557a5eea72e0c153c"
+    },
+    {
+      "path": "public/images/kisho/r66/figure-page/jitsugi2(mondai)/p007.png",
+      "bytes": 594762,
+      "sha256": "3eb9b3aeb6004a5b485ef598a6b4c8ee98ae963808e074736b8f8aeb575d9513"
+    },
+    {
+      "path": "public/images/kisho/r66/figure-page/jitsugi2(mondai)/p008.png",
+      "bytes": 1345759,
+      "sha256": "98071bd2cbf26d2b5a125a2982044a5a1e72862951aa53637d1443fb18606aab"
+    },
+    {
+      "path": "public/images/kisho/r66/figure-page/jitsugi2(mondai)/p009.png",
+      "bytes": 379196,
+      "sha256": "6ad8b9e816539c33855b647d259639ad18b58adb226d1b445d9bd84e3dd0a469"
+    },
+    {
+      "path": "public/images/kisho/r66/figure-page/jitsugi2(mondai)/p010.png",
+      "bytes": 497757,
+      "sha256": "4c864e3b32d24af80e2f98625249d7b5a8e4e2dc7134c6d95f566f34f94a629f"
+    },
+    {
+      "path": "public/images/kisho/r66/figure-page/jitsugi2(mondai)/p011.png",
+      "bytes": 935227,
+      "sha256": "efa44d88e0d083429fd5d068eb873218904e606ab3dff85e80e1b67f0a8c2562"
+    },
+    {
+      "path": "public/images/kisho/r66/figure-page/jitsugi2(mondai)/p012.png",
+      "bytes": 658172,
+      "sha256": "8405291271573e3284e8356701ebf2195f821578b745bcf23ce40fde9735541d"
+    },
+    {
+      "path": "public/images/kisho/r66/figure-page/jitsugi2(mondai)/p013.png",
+      "bytes": 665645,
+      "sha256": "74ad5fbab48edaddca996ed71d09d8fe695ace936ca6073f54aa1062e7f30308"
+    },
+    {
+      "path": "public/images/kisho/r66/figure-page/jitsugi2(mondai)/p014.png",
+      "bytes": 771444,
+      "sha256": "1ada524c7b361227b4a3ed4945db8c95be581cf5d272b17b4cfe02f70bebae8d"
+    },
+    {
+      "path": "public/images/kisho/r66/figure-page/jitsugi2(mondai)/p015.png",
+      "bytes": 969679,
+      "sha256": "e85f10c7c4772f053fd05ee0fa737c60854e56f637f18965ff371a285b316757"
+    },
+    {
+      "path": "public/images/kisho/r66/figure-page/jitsugi2(mondai)/p016.png",
+      "bytes": 450252,
+      "sha256": "40bf28a281bf7b24ea723709c55aa36cc28f88097c0a71deca6bbdb844e0dcd5"
+    },
+    {
+      "path": "public/images/kisho/r66/question/gakka(ippan_mondai)/p002.png",
+      "bytes": 207365,
+      "sha256": "17ed2d9a35b1be3d4c749d4ab4e8debe89c249f0367f2dc8675f0160d73ce75c"
+    },
+    {
+      "path": "public/images/kisho/r66/question/gakka(ippan_mondai)/p003.png",
+      "bytes": 294001,
+      "sha256": "c78cd01524bd1d5812bc0b273b1449b3bcfddf6948b402482ca8866b956de4dd"
+    },
+    {
+      "path": "public/images/kisho/r66/question/gakka(ippan_mondai)/p004.png",
+      "bytes": 235419,
+      "sha256": "725e34c311ab60adea9eb9d1d9627e36baa2669465cfeef33092eb483f63276c"
+    },
+    {
+      "path": "public/images/kisho/r66/question/gakka(ippan_mondai)/p005.png",
+      "bytes": 254395,
+      "sha256": "1edb8f0aa211774b94dcf17f3c2d9af0a595c698c2b1721036507d0b3eb3d0c6"
+    },
+    {
+      "path": "public/images/kisho/r66/question/gakka(ippan_mondai)/p006.png",
+      "bytes": 205753,
+      "sha256": "bf8873860d02b1d76cd64a9cb6e7f0405451676f5672152b9ddd1ba30bb24dcd"
+    },
+    {
+      "path": "public/images/kisho/r66/question/gakka(ippan_mondai)/p007.png",
+      "bytes": 245693,
+      "sha256": "9b72897bf5eb9f41a4c3e19e0385613f188f4698c89666ef31284dfe7c085a38"
+    },
+    {
+      "path": "public/images/kisho/r66/question/gakka(ippan_mondai)/p008.png",
+      "bytes": 242681,
+      "sha256": "c7419d59da31ad3228b8465765a3bf2015e7b4c8d7c0e6f7b651963cbf3b20e4"
+    },
+    {
+      "path": "public/images/kisho/r66/question/gakka(ippan_mondai)/p009.png",
+      "bytes": 275037,
+      "sha256": "18fcb01490f35c4daa848409a07c4d80087323b439172554a9b092c4596ce48c"
+    },
+    {
+      "path": "public/images/kisho/r66/question/gakka(ippan_mondai)/p010.png",
+      "bytes": 251017,
+      "sha256": "65d8ab44c73e7cd1215acf98c0aa7736f06a885bc915305f13ab2e90e0de6fea"
+    },
+    {
+      "path": "public/images/kisho/r66/question/gakka(senmon_mondai)/p002.png",
+      "bytes": 251495,
+      "sha256": "9944834f0fa709349d9932c3a7b49267c15c3a3ab2f8a1ed0fab2ca758459b0b"
+    },
+    {
+      "path": "public/images/kisho/r66/question/gakka(senmon_mondai)/p003.png",
+      "bytes": 223790,
+      "sha256": "f1edce7b6c324a528159cc706e9214c2c8cfa8023308cc178a719ba132ed64b6"
+    },
+    {
+      "path": "public/images/kisho/r66/question/gakka(senmon_mondai)/p004.png",
+      "bytes": 253365,
+      "sha256": "feba6ceb5e2dad15e49c9fedc37873f6381055e43660cb9fda41489a9ad39871"
+    },
+    {
+      "path": "public/images/kisho/r66/question/gakka(senmon_mondai)/p005.png",
+      "bytes": 735861,
+      "sha256": "cac0a5130a83797e0d83ff48c3ff01e6978e094160aec6f852bb7b4eaa22f276"
+    },
+    {
+      "path": "public/images/kisho/r66/question/gakka(senmon_mondai)/p006.png",
+      "bytes": 593205,
+      "sha256": "f0a6eb7071a94f31123b20ba732a67ccfc716f0d63b991f44d3b105d584096b6"
+    },
+    {
+      "path": "public/images/kisho/r66/question/gakka(senmon_mondai)/p007.png",
+      "bytes": 258206,
+      "sha256": "1711fe04652cdf1d5d4cc0df3e0d234fd319500ad532b857fb488d61a4afdb23"
+    },
+    {
+      "path": "public/images/kisho/r66/question/gakka(senmon_mondai)/p008.png",
+      "bytes": 189291,
+      "sha256": "9c528ef4e69f7fc40570fbb2a344c04d2f8efcd4ac30c0ba917ae7abb7b39fee"
+    },
+    {
+      "path": "public/images/kisho/r66/question/gakka(senmon_mondai)/p009.png",
+      "bytes": 162844,
+      "sha256": "3729ef5b2bbb8dee79889b296ce14b0c4d8e0ce8859ed61a2d74caa07e933faa"
+    },
+    {
+      "path": "public/images/kisho/r66/question/gakka(senmon_mondai)/p010.png",
+      "bytes": 280627,
+      "sha256": "de1fb8964a281f66f642e79d12231d789ea6f6827d82232b97d50285de9e250a"
+    },
+    {
+      "path": "public/images/kisho/r66/question/gakka(senmon_mondai)/p011.png",
+      "bytes": 737460,
+      "sha256": "211399b72ac163442e954b0f67fbfd228c0942cee4fb471bd22df44cdbfab3f9"
+    },
+    {
+      "path": "public/images/kisho/r66/question/jitsugi1(mondai)/p002.png",
+      "bytes": 266535,
+      "sha256": "bd92c70c01be3bf00706c893a6a4eaf1f7d93bb042649a2ba5fd2beba3b3f9ef"
+    },
+    {
+      "path": "public/images/kisho/r66/question/jitsugi1(mondai)/p003.png",
+      "bytes": 373066,
+      "sha256": "c84b8aeaa12f0a4d808afd191141f9b993097dd16dfe5530262f685d2ff78f5c"
+    },
+    {
+      "path": "public/images/kisho/r66/question/jitsugi1(mondai)/p004.png",
+      "bytes": 389080,
+      "sha256": "2d36d1004f41c43140334e18191587caa1b506fbf329819a8a3c1fc5f2ad9a49"
+    },
+    {
+      "path": "public/images/kisho/r66/question/jitsugi1(mondai)/p005.png",
+      "bytes": 373828,
+      "sha256": "230f7fff0a2e6e99c33055e72314887cce9c98fe49b6e27159e04b974bdd0efc"
+    },
+    {
+      "path": "public/images/kisho/r66/question/jitsugi1(mondai)/p006.png",
+      "bytes": 362656,
+      "sha256": "2d014628aff364bbabc3c1c4dfc29e79193b93f34323ac5fcd016dc8b3935257"
+    },
+    {
+      "path": "public/images/kisho/r66/question/jitsugi2(mondai)/p002.png",
+      "bytes": 266987,
+      "sha256": "7736982c3cd1f1fbd5ba3f4a7d48db6f7039f11ec60466f840fcd15481925a9f"
+    },
+    {
+      "path": "public/images/kisho/r66/question/jitsugi2(mondai)/p003.png",
+      "bytes": 410108,
+      "sha256": "ec8013614c4da8c8c159bb378f969bdc6831a41d617a0e2bc6ffdd153d6d9e4e"
+    },
+    {
+      "path": "public/images/kisho/r66/question/jitsugi2(mondai)/p004.png",
+      "bytes": 392221,
+      "sha256": "f9c9adc21c131064f1c14bad2cca6e95867c6950fcf6b3a4b38bad7a3a20a7e7"
+    },
+    {
+      "path": "public/images/kisho/r66/question/jitsugi2(mondai)/p005.png",
+      "bytes": 369295,
+      "sha256": "5fd00a54b42f0f7ceabe1ceb89ec376f533ef15ee31cd745adc44a836f9211a7"
+    },
+    {
+      "path": "public/images/kisho/r66/question/jitsugi2(mondai)/p006.png",
+      "bytes": 477205,
+      "sha256": "68adfc43258f78199cafeb2c2b76abf47c816fe149505f299ccab5fb00b0898b"
+    },
+    {
+      "path": "reports/qkishou-20261103/ACCEPTANCE.json",
+      "bytes": 4528,
+      "sha256": "94898ad61c658b4ab8eb4715787198140b8a6c1f94117abd0f848bb25aeec97e"
+    },
+    {
+      "path": "reports/qkishou-20261103/FIX-CHECK-EXITS.json",
+      "bytes": 152,
+      "sha256": "649683c9244e955ad8326666f277b2953abc0ceed6e212b7c8e1b3a14ff88eb8"
+    },
+    {
+      "path": "reports/qkishou-20261103/FIX-EDITION-ACCEPTANCE.json",
+      "bytes": 76406,
+      "sha256": "0ea6caae281be9817f39c80cb767ce88c468982445fe1ac3e7bfb105d0b31d16"
+    },
+    {
+      "path": "reports/qkishou-20261103/FIX-ENVIRONMENT.json",
+      "bytes": 2021,
+      "sha256": "04ea66919c33bbda8a4358cb7e0f5e73cef2309830b0560f6a48c93a2094d265"
+    },
+    {
+      "path": "reports/qkishou-20261103/FIX-UI-ACCEPTANCE.json",
+      "bytes": 1519,
+      "sha256": "a5bab2001d4b5b18f4124848dbb6bbf258595ad53ba7ed3d108860bdb3e3a40c"
+    },
+    {
+      "path": "reports/qkishou-20261103/README.md",
+      "bytes": 4872,
+      "sha256": "2be7eecaf5f6544f52f96bfd6d2172c2859298b620338f56e9f02891d22411b2"
+    },
+    {
+      "path": "reports/qkishou-20261103/fix-browser-lint.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "reports/qkishou-20261103/fix-browser-production.log",
+      "bytes": 307,
+      "sha256": "7be9025e1ee80864d09cc68ec228894b9b2d261892420ba0e8273609f5cb9763"
+    },
+    {
+      "path": "reports/qkishou-20261103/fix-build-verified-exit.json",
+      "bytes": 59,
+      "sha256": "d19ae58e1a64b31f5f538cfd8d13b606e5b8de807378deae310785e0ef4b4580"
+    },
+    {
+      "path": "reports/qkishou-20261103/fix-build-verified.log",
+      "bytes": 12361,
+      "sha256": "d78088165b089e0f24456ee49d1963a3831b3e88a2b9c48a79bfaf307576860f"
+    },
+    {
+      "path": "reports/qkishou-20261103/fix-install-force.log",
+      "bytes": 480,
+      "sha256": "5c1c838a54a507b1cf1819e694b6b0563e0f6d7c142139549c9240ba107197a9"
+    },
+    {
+      "path": "reports/qkishou-20261103/fix-lint-verified.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "reports/qkishou-20261103/fix-prisma.log",
+      "bytes": 284,
+      "sha256": "12d4c755b4387d0f0fefd4909181b808c08943d40d56b0beb976be218a8143a5"
+    },
+    {
+      "path": "reports/qkishou-20261103/fix-tests-verified.log",
+      "bytes": 2420,
+      "sha256": "7420ca4f03882f0aa5927309fb348e3d57c22324de287db3b403e5172f553709"
+    },
+    {
+      "path": "reports/qkishou-20261103/fix-typecheck-verified.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "reports/qkishou-20261103/fix-ui/academic.png",
+      "bytes": 616244,
+      "sha256": "3deaca6d27aa2a4c3e2fc0e32307d2cf80734a98e83d82eb0bcfc5ced2dda4f1"
+    },
+    {
+      "path": "reports/qkishou-20261103/fix-ui/directory.png",
+      "bytes": 196578,
+      "sha256": "b7c17458838a569b133efb174245e53e7e51a42cfdcacd9dc9246d704c265a22"
+    },
+    {
+      "path": "reports/qkishou-20261103/fix-ui/mobile.png",
+      "bytes": 439767,
+      "sha256": "28e94b00883e7df45adf248dadd091eeb2eab5207a3df1812c91ed1849d8edc5"
+    },
+    {
+      "path": "reports/qkishou-20261103/fix-ui/practical-diagram.png",
+      "bytes": 646213,
+      "sha256": "fb8da66319182271ef518b1a513a3ae66bfb1356a60ba42fa4fc03b855d9d21a"
+    },
+    {
+      "path": "reports/qkishou-20261103/fix-ui/practical-field.png",
+      "bytes": 10944,
+      "sha256": "ef51ff0575e451b83c8cbae3cfaca72d981b4853d1c27e5f8028569cda2b6469"
+    },
+    {
+      "path": "scripts/compare-kisho-edition.py",
+      "bytes": 3076,
+      "sha256": "3bfacad5668c3fb26ee7e6b42d2c94fb511916322c613b4c4c184d0ba566aec8"
+    },
+    {
+      "path": "scripts/prepare-kisho-current.py",
+      "bytes": 2929,
+      "sha256": "00d61fa44c563e69056d35440fb9c4708d6e4d59b291af65e10048c790b05db1"
+    },
+    {
+      "path": "scripts/prepare-kisho-study.ts",
+      "bytes": 2029,
+      "sha256": "6a8603b4fdaecb8f339db5fbec8c04f9eba99a851c622223d1fe116af8d1e4e5"
+    },
+    {
+      "path": "scripts/verify-kisho-ui.mjs",
+      "bytes": 5312,
+      "sha256": "cfcba0f8aa7c213ed716cd4babd6c68442d9b94ec84752e7a1b36986abbc30ce"
+    }
+  ]
+}

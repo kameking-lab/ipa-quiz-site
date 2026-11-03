@@ -5,6 +5,7 @@ export const PRACTICE_SESSIONS: readonly Session[] = ["gyosei", "kanri", "kansa"
 
 /** Specialist practice starts with the specialist paper; common AM I is explicit. */
 export function defaultPracticeSession(exam: ExamCode, year?: number): Session {
+  if (exam === "kisho") return "ippan";
   if (exam === "kanteishi") return "gyosei";
   if (exam === "kaikeishi") return "kigyo";
   if (SPECIALIST_EXAMS.includes(exam)) return "am2";
@@ -30,6 +31,8 @@ export function parsePracticeSession(value?: string): Session | undefined {
 }
 
 export function practiceSessionLabel(session: Session, exam?: ExamCode): string {
+  if (exam === "kisho" && session === "ippan") return "学科一般";
+  if (exam === "kisho" && session === "senmon") return "学科専門";
   if (exam === "kanteishi" && session === "riron") return "鑑定評価理論";
   if (exam === "kaikeishi" && session === "kigyo") return "企業法";
   if (exam === "kaikeishi" && session === "zaimu") return "財務会計論";

@@ -163,6 +163,7 @@ export function examTopDescription(exam: ExamCode, questionCount: number): strin
 }
 
 const EXAM_FULL_NAMES: Record<ExamCode, string> = {
+  kisho: "気象予報士試験",
   kanteishi: "不動産鑑定士試験（短答式）",
   kaikeishi: "公認会計士試験（短答式）",
   "riku-tech2": "第二級陸上無線技術士試験",
@@ -258,6 +259,7 @@ const EXAM_META_DESC_DIVERSE: Record<
   ExamCode,
   (c: string, y: number, k: number) => string
 > = {
+  kisho: (c) => `気象予報士 第65・66回の学科${c}問・全肢解説と、実技18問・237回答欄を学習できます。実技は公式解答例・作図との手動照合です。`,
   kanteishi: (c) => `不動産鑑定士の短答式過去問${c}問を無料・回数制限なしで演習。令和7・8年度の原文・公式正答・全肢解説・原表と原文用語の注記を確認できます。`,
   kaikeishi: (c) => `公認会計士の短答式過去問${c}問を無料・回数制限なしで演習。令和8年試験第I回・第II回の原文・公式正答・全肢解説・共通設例・図表を確認できます。`,
   "riku-toku-kokunai": (c) => `国内電信級陸上特殊無線技士の2026年2月・6月筆記法規から${c}問を収録。公式問題・正答と独自解説で無料演習できます。当時の法令に基づき、現在のCBT例題や独自問題は含みません。`,

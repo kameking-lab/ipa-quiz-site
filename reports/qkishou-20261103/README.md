@@ -1,3 +1,20 @@
+# QKISHOUF レビュー修正・ローカル検証完了（2026-11-03）
+
+現行版の差分裁定、通常学科60問、実技18問・237欄、公開画像130件の接続を完了。
+型・lint・118テスト・標準Turbopack buildが終了コード0。生成結果のローカル配信で導線と保存読戻しを検収した。本番反映は行っていない。
+
+- `FIX-EDITION-ACCEPTANCE.json`：全39本文頁／60学科原問の版差裁定と全78問の納品値ハッシュ。
+- `FIX-UI-ACCEPTANCE.json`、`fix-ui/`：資格一覧→通常学科、実技・作図・保存読戻し、モバイルの画面検収。
+- `FIX-ENVIRONMENT.json`、`FIX-CHECK-EXITS.json`：専用worktree内の依存、版、入力ハッシュ、再実行手順、検査終了コード。
+- `fix-build-verified-exit.json`：最終Next.js buildの終了コード0。
+- `FIX-DELIVERY-FILES.json`：今回のGit index/blobに固定した納品manifest（manifest自体とSHAファイルを除く）。
+
+`FILES.json`、`QUESTION-RECEIPTS.json`、`reused/`と旧`DELIVERY-FILES.json`は前回コミットの履歴。145固定成果物は変更せず維持し、新たな公開用projectionを分離した。学科の既受入300肢・実技の同版受入を再利用し、新規全肢再査読や本番公開と読み替えない。
+
+以下は修正前の作業履歴で、現在の残件・検証結果には上記と`ACCEPTANCE.json`を適用する。
+
+---
+
 # qkishou 受入票（2026-11-03）
 
 対象は第65回（2026-01-25）40原問、第66回（2026-08-23）38原問。
