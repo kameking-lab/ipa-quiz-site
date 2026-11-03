@@ -68,7 +68,7 @@ export async function POST(req: Request) {
   }
 
   const correctAnswer = q.answer;
-  const correct = isCompleteSelectionCorrect(correctAnswer, (Array.isArray(parsed.answer) ? parsed.answer : [parsed.answer]).map(key => key.trim()), requiredSelectionCount(q));
+  const correct = isCompleteSelectionCorrect(correctAnswer, (Array.isArray(parsed.answer) ? parsed.answer : [parsed.answer]).map(key => key.trim()), requiredSelectionCount(q), q.acceptedAnswerCombinations);
 
   return NextResponse.json(
     {

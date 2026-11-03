@@ -20,6 +20,7 @@ import { FP3_QUESTIONS } from "./fp3";
 import { DENKO2_QUESTIONS } from "./denko2";
 import { DENKO1_QUESTIONS } from "./denko1";
 import { CIVIL2_QUESTIONS } from "./civil2";
+import { KANKOJI1_QUESTIONS } from "./kankoji1";
 import { KANKOJI2_QUESTIONS } from "./kankoji2";
 import { ZOEN2_QUESTIONS } from "./zoen2";
 import { ZOEN1_QUESTIONS } from "./zoen1";
@@ -147,6 +148,7 @@ export const QUESTIONS_BY_EXAM: Partial<Record<ExamCode, Question[]>> = {
   ...(isExamPublished("denko2") ? { denko2: DENKO2_QUESTIONS } : {}),
   ...(isExamPublished("denko1") ? { denko1: DENKO1_QUESTIONS } : {}),
   ...(isExamPublished("civil2") ? { civil2: CIVIL2_QUESTIONS } : {}),
+  ...(isExamPublished("kankoji1") ? { kankoji1: KANKOJI1_QUESTIONS } : {}),
   ...(isExamPublished("kankoji2") ? { kankoji2: KANKOJI2_QUESTIONS } : {}),
   ...(isExamPublished("zoen2") ? { zoen2: ZOEN2_QUESTIONS } : {}),
   ...(isExamPublished("zoen1") ? { zoen1: ZOEN1_QUESTIONS } : {}),

@@ -260,10 +260,11 @@ function ScoredQuizPlayer({
     (key: ChoiceKey) => {
       if (!question || isReferenceOnlyQuestionId(question.id) || revealed || question.type === "ordering") return;
       const required = requiredSelectionCount(question);
+      if (question.acceptedAnswerCombinations && !picked.includes(key) && picked.length >= required) return;
       if (required > 1) {
         const next = picked.includes(key) ? picked.filter((k) => k !== key) : [...picked, key];
         setPicked(next);
-        if (next.length === required) commitAnswer(formatSelection(next), isCompleteSelectionCorrect(question.answer, next, required), { kind: "multiple-choice", selected: [...next] });
+        if (!question.acceptedAnswerCombinations && next.length === required) commitAnswer(formatSelection(next), isCompleteSelectionCorrect(question.answer, next, required, question.acceptedAnswerCombinations), { kind: "multiple-choice", selected: [...next] });
         return;
       }
       setSelected(key);
@@ -446,7 +447,7 @@ function ScoredQuizPlayer({
   const requiredSelections = requiredSelectionCount(question);
   const multiSelect = !ordering && requiredSelections > 1;
   const isCorrect = native ? nativeBResult?.isCorrect === true : ordering ? isOrderingAnswerCorrect(question, orderedSelected ?? []) : numeric ? isNumericAnswerCorrect(question, numericSelected ?? "") : multiSelect
-    ? isCompleteSelectionCorrect(question.answer, picked, requiredSelections)
+    ? isCompleteSelectionCorrect(question.answer, picked, requiredSelections, question.acceptedAnswerCombinations)
     : isAcceptedAnswer(question.answer, selected);
   const selectionLabel = native ? nativeBResult?.slotResults.map((slot) => `${slot.label}: ${slot.selectedCandidateId ?? "未回答"}`).join(" / ") : ordering ? (orderedSelected ? formatOrderingAnswer(question.exam, orderedSelected) : undefined) : numeric ? numericSelected : multiSelect ? (picked.length > 0 ? formatSelection(picked) : undefined) : selected;
 
@@ -520,9 +521,14 @@ function ScoredQuizPlayer({
               progress={{ current: index, total }}
             />
 
+            {question.acceptedAnswerCombinations && !revealed && (
+              <button type="button" disabled={picked.length < 1 || picked.length > requiredSelections}
+                onClick={() => commitAnswer(formatSelection(picked), isCompleteSelectionCorrect(question.answer, picked, requiredSelections, question.acceptedAnswerCombinations), { kind: "multiple-choice", selected: [...picked] })}
+                className="rounded-lg bg-blue-600 px-4 py-2 text-white disabled:opacity-40">回答を確定</button>
+            )}
             {multiSelect && !revealed && (
               <p className="rounded-xl border border-amber-300/60 bg-amber-50 px-3 py-2 text-sm font-semibold text-amber-900 dark:border-amber-700/50 dark:bg-amber-950/40 dark:text-amber-100" data-testid="multi-select-hint">
-                {selectionInstruction(question.answer, requiredSelections)}（選択中 {picked.length}/{requiredSelections}）
+                {question.acceptedAnswerCombinations ? "公式訂正により1〜2肢を選び、回答を確定してください" : selectionInstruction(question.answer, requiredSelections)}（選択中 {picked.length}/{requiredSelections}）
               </p>
             )}
             {native ? (

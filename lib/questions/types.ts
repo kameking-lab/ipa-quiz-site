@@ -22,6 +22,7 @@ export type ExamCode =
   | "denko1"
   | "takken"
   | "civil2"
+  | "kankoji1"
   | "kankoji2"
   | "zoen2"
   | "zoen1"
@@ -83,7 +84,7 @@ export type ExamCode =
   | "gas-hei";
 
 /** IPA の情報処理技術者試験区分。外部資格を扱う設定から分離する。 */
-export type IpaExamCode = Exclude<ExamCode, "fp1" | "fp2" | "fp3" | "denken3" | "denken2" | "denken1" | "denko2" | "denko1" | "takken" | "civil2" | "civil1" | "kankoji2" | "zoen2" | "zoen1" | "tsushin2" | "tsushin1" | "kaigo" | "shakai" | "seishin" | "tohan" | "kanri" | "eisei1" | "eisei2" | "soukan" | "hoikushi" | "mankan" | "kashikin" | "sharoushi" | "kangoshi" | "yakuzaishi" | "ahaki-anma" | "ahaki-hari-kyu" | "hokenshi" | "josanshi" | "rigaku-ryohoshi" | "sagyo-ryohoshi" | "shino-kunrenshi" | "rinsho-kensagishi" | "shinryo-hoshasengishi" | "rinsho-kogishi" | "riyoshi" | "chusho-kigyo-shindanshi" | "chosashi" | "shika-ishi" | "judo-seifukushi" | "riku-toku-kokunai" | "kai-toku2" | "kai-toku3" | "koku-toku" | "land-special1" | "riku-tech1" | "maritime4" | "aviation-comm" | "amateur1" | "maritime-special1" | "riku-tech2" | "amateur2" | "maritime-radar" | "maritime3" | "maritime2" | "maritime1" | "general3" | "general2" | "general1" | "land-special2" | "land-special3" | "kanteishi" | "kaikeishi" | "gas-kou" | "gas-otsu" | "gas-hei">;
+export type IpaExamCode = Exclude<ExamCode, "fp1" | "fp2" | "fp3" | "denken3" | "denken2" | "denken1" | "denko2" | "denko1" | "takken" | "civil2" | "civil1" | "kankoji1" | "kankoji2" | "zoen2" | "zoen1" | "tsushin2" | "tsushin1" | "kaigo" | "shakai" | "seishin" | "tohan" | "kanri" | "eisei1" | "eisei2" | "soukan" | "hoikushi" | "mankan" | "kashikin" | "sharoushi" | "kangoshi" | "yakuzaishi" | "ahaki-anma" | "ahaki-hari-kyu" | "hokenshi" | "josanshi" | "rigaku-ryohoshi" | "sagyo-ryohoshi" | "shino-kunrenshi" | "rinsho-kensagishi" | "shinryo-hoshasengishi" | "rinsho-kogishi" | "riyoshi" | "chusho-kigyo-shindanshi" | "chosashi" | "shika-ishi" | "judo-seifukushi" | "riku-toku-kokunai" | "kai-toku2" | "kai-toku3" | "koku-toku" | "land-special1" | "riku-tech1" | "maritime4" | "aviation-comm" | "amateur1" | "maritime-special1" | "riku-tech2" | "amateur2" | "maritime-radar" | "maritime3" | "maritime2" | "maritime1" | "general3" | "general2" | "general1" | "land-special2" | "land-special3" | "kanteishi" | "kaikeishi" | "gas-kou" | "gas-otsu" | "gas-hei">;
 
 export type Session =
   | "am"
@@ -223,6 +224,8 @@ export interface Question {
    * 省略時は1で、answer の配列は個別に正解と認められた肢の一覧として扱う。
    */
   requiredSelections?: number;
+  /** 訂正等で認められる選択集合。指定時はこのいずれかと完全一致で採点する。 */
+  acceptedAnswerCombinations?: ChoiceKey[][];
   explanation: string;
   /** 正解・不正解を各選択肢ごとに説明する。公開パイロットでは必須。 */
   choiceExplanations?: Partial<Record<ChoiceKey, string>>;

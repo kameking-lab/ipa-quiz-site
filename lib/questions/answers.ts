@@ -23,7 +23,8 @@ export function requiredSelectionCount(question: Pick<Question, "requiredSelecti
 }
 
 /** 許容された正答肢から指定数を選ぶ。指定数の省略時は従来の全肢一致を保つ。 */
-export function isCompleteSelectionCorrect(answer: Question["answer"], selected: readonly string[], requiredSelections?: number): boolean {
+export function isCompleteSelectionCorrect(answer: Question["answer"], selected: readonly string[], requiredSelections?: number, acceptedCombinations?: readonly (readonly string[])[]): boolean {
+  if (acceptedCombinations) return new Set(selected).size === selected.length && acceptedCombinations.some(set => set.length > 0 && new Set(set).size === set.length && set.length === selected.length && set.every(key => selected.includes(key)));
   const keys: readonly string[] = Array.isArray(answer) ? answer : [answer];
   const count = requiredSelections ?? keys.length;
   return Number.isInteger(count) && count > 0 && count <= keys.length &&

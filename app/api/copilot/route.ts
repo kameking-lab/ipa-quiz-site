@@ -81,7 +81,7 @@ async function handlePost(req: Request, track: (context: AiUsageContext) => void
     : undefined;
   const isCorrect = selectedChoice === undefined
     ? undefined
-    : isCompleteSelectionCorrect(question.answer, selectedKeys, requiredSelectionCount(question));
+    : isCompleteSelectionCorrect(question.answer, selectedKeys, requiredSelectionCount(question), question.acceptedAnswerCombinations);
 
   // Reject explicit creation requests before normal-use admission or provider work.
   if (requestsNewQuestion(payload.messages, payload.quickAction)) {

@@ -393,6 +393,16 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     remainingWork: ["他年度・後期の追加", "工事仕様書の改定に伴う解説更新"],
   },
   {
+    slug: "sekou-1kankoji", examCode: "kankoji1",
+    shortName: "1級管工事施工管理", fullName: "1級管工事施工管理技術検定（第一次検定）",
+    domain: "construction", administrator: "一般財団法人全国建設研修センター",
+    officialQuestionsUrl: "https://www.jctc.jp/mondai/", officialReuseTermsUrl: "https://www.jctc.jp/mondai/",
+    status: "ready-to-ingest",
+    reuseSummary: "オーナー権利確認済み。令和8年度の全73問（A44・B29）、訂正後公式正答、必要図、全肢解説を未公開で収録。令和7年度は公式掲載終了・旧URL404のため除外。",
+    attributionTemplate: "出典：一般財団法人全国建設研修センター 令和8年度1級管工事施工管理技術検定 第一次検定 問題A／B。解説は過去問AI作成。",
+    remainingWork: ["監督役による独立レビューと公開判断"],
+  },
+  {
     slug: "sekou-kankoji2",
     examCode: "kankoji2",
     shortName: "2級管工事施工管理",

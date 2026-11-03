@@ -32,8 +32,8 @@ export function validateLocalPetLearningSubmission(input: unknown, context: PetL
       case "multiple-choice": {
         if (q.type !== answer.kind) return null;
         const required = requiredSelectionCount(q), keys = getChoiceKeys(q.choices);
-        if (answer.selected.length !== required || new Set(answer.selected).size !== required || !answer.selected.every(key => keys.some(choice => choice === key))) return null;
-        correct = required > 1 ? isCompleteSelectionCorrect(q.answer, answer.selected, required) : isAcceptedAnswer(q.answer, answer.selected[0]);
+        if ((q.acceptedAnswerCombinations ? !q.acceptedAnswerCombinations.some(set => set.length === answer.selected.length) : answer.selected.length !== required) || new Set(answer.selected).size !== answer.selected.length || !answer.selected.every(key => keys.some(choice => choice === key))) return null;
+        correct = required > 1 ? isCompleteSelectionCorrect(q.answer, answer.selected, required, q.acceptedAnswerCombinations) : isAcceptedAnswer(q.answer, answer.selected[0]);
         break;
       }
       case "numeric":
