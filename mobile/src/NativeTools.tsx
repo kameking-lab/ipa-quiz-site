@@ -14,10 +14,10 @@ import { beginLogin, observeLogin } from "./login";
 import { observeReminderTap, setReminder } from "./platform";
 import { persistStudy, restoreStudy } from "./portable-storage";
 import { cachedImage } from "./images";
-const membership = new Membership();
+const defaultMembership = new Membership();
 export const SITE_ORIGIN = "https://www.kakomon-ai.jp";
 const localUrl = "capacitor://localhost/index.html";
-export function NativeTools({ membershipOnly = false }: { membershipOnly?: boolean }) {
+export function NativeTools({ membershipOnly = false, membership = defaultMembership }: { membershipOnly?: boolean; membership?:Membership }) {
   const [open, setOpen] = useState(membershipOnly), [access, setAccess] = useState<MobileEntitlement | null>(null);
   const [config, setConfig] = useState<MobileConfiguration | null>(null), [offer, setOffer] = useState<PurchasesPackage | null>(null);
   const [catalog, setCatalog] = useState<CatalogEntry[]>([]), [saved, setSaved] = useState<DownloadIndex>({});
@@ -54,7 +54,7 @@ export function NativeTools({ membershipOnly = false }: { membershipOnly?: boole
     });
     refreshing.current=task.catch(()=>{});
     return task;
-  }, []);
+  }, [membership]);
   const run = useCallback(async (fn: ()=>Promise<void>)=>{
     if(running.current)return;
     running.current=true;
@@ -104,7 +104,7 @@ export function NativeTools({ membershipOnly = false }: { membershipOnly?: boole
     if (!r.entitlement.entitled && r.entitlement.userId && r.configuration.sdkKey) setOffer(await membership.offer(r.configuration, r.entitlement));
     const response = await fetch("/api/mobile/catalog", { cache:"no-store" });
     if (response.ok) setCatalog((await response.json() as { exams: CatalogEntry[] }).exams);
-  }); },[open,inSite,refresh,run]);
+  }); },[open,inSite,refresh,run,membership]);
   if (!inSite) return null;
   return <aside aria-label="iPhoneの学習機能" className="border-b bg-card p-3 pt-[max(12px,env(safe-area-inset-top))]">
     {!membershipOnly && <div className="flex flex-wrap gap-3"><button onClick={()=>setOpen(!open)}>iPhone設定・会員・保存</button><button onClick={()=>void run(async()=>{await persistStudy(user.current);location.assign(localUrl);})}>端末内で学習</button><button onClick={()=>void run(async()=>{ await Share.share({ title:"過去問AI", url:location.href }); })}>共有</button></div>}

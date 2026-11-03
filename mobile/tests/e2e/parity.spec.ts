@@ -5,16 +5,16 @@ import {fileURLToPath} from "node:url";
 import {createHash,sign} from "node:crypto";
 import type {Question} from "../../../lib/questions/types";
 import type {Material} from "../../shared/material-types";
-import type {CatalogEntry,MobileEntitlement} from "../../shared/contracts";
+import type {CatalogEntry,MobileEntitlement,MobileConfiguration} from "../../shared/contracts";
 const ORIGIN="https://www.kakomon-ai.jp";
 const qs=JSON.parse(readFileSync(new URL("../../.cache/e2e-questions.json",import.meta.url),"utf8")) as Question[];
 const entry:CatalogEntry={code:"ip",name:"ITパスポート",count:qs.length,years:[],sessions:[],categories:[],bytes:Buffer.byteLength(JSON.stringify(qs)),revision:createHash("sha256").update(JSON.stringify(qs)).digest("hex")};
-async function routeLocal(context:BrowserContext,access?:MobileEntitlement){
+async function routeLocal(context:BrowserContext,access?:MobileEntitlement,configuration:Partial<MobileConfiguration>={}){
   const requests:string[]=[];
   await context.route("**/*",async route=>{
     const url=new URL(route.request().url());requests.push(url.href);
     if(url.origin!==ORIGIN&&url.hostname!=="127.0.0.1"){await route.abort();return;}
-    if(url.pathname==="/api/mobile/entitlement") {await route.fulfill({json:{entitlement:access??{userId:null,appUserId:null,entitled:false,source:"free",expiresAt:null,checkedAt:new Date().toISOString(),lease:null},configuration:{sdkKey:"",productId:"",offeringId:"",entitlement:"kakomon_pro",expectedPriceYen:980,leasePublicKey:""}}});return;}
+    if(url.pathname==="/api/mobile/entitlement") {await route.fulfill({json:{entitlement:access??{userId:null,appUserId:null,entitled:false,source:"free",expiresAt:null,checkedAt:new Date().toISOString(),lease:null},configuration:{sdkKey:"",productId:"",offeringId:"",entitlement:"kakomon_pro",expectedPriceYen:980,leasePublicKey:"",...configuration}}});return;}
     if(url.pathname==="/api/mobile/catalog"){await route.fulfill({json:{exams:[entry]}});return;}
     if(url.pathname.startsWith("/api/")){await route.fulfill({status:503,json:{error:"mock_offline"}});return;}
     const path=fileURLToPath(new URL(`../../dist${url.pathname==="/"?"/index.html":url.pathname}`,import.meta.url));
@@ -64,4 +64,36 @@ test("existing web subscribers see no second purchase, with restore and App Stor
   const access:MobileEntitlement={userId:"web-user",appUserId:"mock-rc",entitled:true,source:"web",expiresAt:new Date(Date.now()+3600000).toISOString(),checkedAt:new Date().toISOString(),lease:null};
   await routeLocal(context,access);await page.goto(ORIGIN+"/tests/e2e/harness.html");await page.waitForFunction(()=>!!window.mobileTest);await page.evaluate(()=>window.mobileTest.showMembership());
   await expect(page.getByText("ウェブの有料会員です。追加購入は不要です。",{exact:true})).toBeVisible();await expect(page.getByRole("button",{name:/月で登録/})).toHaveCount(0);await expect(page.getByRole("button",{name:"購入を復元"})).toBeVisible();await expect(page.getByRole("button",{name:"App Storeで管理・解約"})).toBeVisible();
+});
+async function openMockStore(page:Page,context:BrowserContext,scenario:Parameters<Window["mobileTest"]["mockStore"]>[0]) {
+  const access:MobileEntitlement={userId:"mock-store-user",appUserId:"mock-rc",entitled:false,source:"free",expiresAt:null,checkedAt:new Date().toISOString(),lease:null};
+  await routeLocal(context,access,{sdkKey:"mock-sdk-key",productId:"mock.monthly",offeringId:"main"});
+  await page.goto(ORIGIN+"/tests/e2e/harness.html");await page.waitForFunction(()=>!!window.mobileTest);
+  await page.evaluate(scenario=>{window.mobileTest.mockStore(scenario);window.mobileTest.showMembership();},scenario);
+  await expect(page.getByRole("button",{name:"¥980 / 月で登録",exact:true})).toBeEnabled();
+}
+test("a changed store price does not start a purchase or leave the membership locked as pending",async({page,context})=>{
+  await openMockStore(page,context,"changed-price");await page.getByRole("button",{name:"¥980 / 月で登録",exact:true}).click();
+  await expect(page.getByRole("status")).toContainText("月額商品の設定・価格");
+  await expect(page.getByRole("button",{name:"¥980 / 月で登録",exact:true})).toBeEnabled();
+  expect((await page.evaluate(()=>window.mobileTest.storeCalls())).purchases).toBe(0);
+  await expect(page.getByText("購入内容をサーバーで確認中です。",{exact:false})).toHaveCount(0);
+});
+test("cancelled purchases allow retry while pending approval survives a reload and prevents another purchase",async({page,context})=>{
+  await openMockStore(page,context,"cancelled");const buy=page.getByRole("button",{name:"¥980 / 月で登録",exact:true});
+  await buy.click();await expect(page.getByRole("status")).toHaveText("購入をキャンセルしました。");await expect(buy).toBeEnabled();
+  await page.evaluate(()=>window.mobileTest.mockStore("pending"));await buy.click();
+  await expect(page.getByRole("status").first()).toContainText("購入の承認待ち");await expect(buy).toBeDisabled();
+  expect((await page.evaluate(()=>window.mobileTest.storeCalls())).purchases).toBe(2);
+  await page.reload();await page.waitForFunction(()=>!!window.mobileTest);
+  await page.evaluate(()=>{window.mobileTest.mockStore("pending");window.mobileTest.showMembership();});
+  await expect(page.getByRole("button",{name:"¥980 / 月で登録",exact:true})).toBeDisabled();
+  await expect(page.getByText("購入内容をサーバーで確認中です。",{exact:false})).toBeVisible();
+  expect((await page.evaluate(()=>window.mobileTest.storeCalls())).purchases).toBe(0);
+});
+test("restore with no verified entitlement explains the missing purchase instead of reporting success",async({page,context})=>{
+  await openMockStore(page,context,"no-restorable-purchase");await page.getByRole("button",{name:"購入を復元",exact:true}).click();
+  await expect(page.getByRole("status")).toContainText("有効な購入をサーバーで確認できませんでした");
+  await expect(page.getByText("無料会員",{exact:true})).toBeVisible();
+  expect((await page.evaluate(()=>window.mobileTest.storeCalls())).restores).toBe(1);
 });
