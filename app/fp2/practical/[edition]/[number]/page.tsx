@@ -11,6 +11,7 @@ export function generateStaticParams() {
 }
 
 export async function generateMetadata({ params }: { params: Promise<{ edition: string; number: string }> }): Promise<Metadata> {
+  if (strictContentGateEnabled()) return { title: "問題・教材の演習", description: "ログインしてウェブ・アプリ共通の無料1日10問、または有料会員の演習を利用できます。", robots: { index: false, follow: true } };
   const { edition, number } = await params;
   const data = getPracticalEdition(edition);
   const q = data?.questions.find((item) => item.number === Number(number));
