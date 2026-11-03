@@ -512,9 +512,9 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     administrator: "一般財団法人建設業振興基金",
     officialQuestionsUrl: "https://www.fcip-shiken.jp/about/",
     officialReuseTermsUrl: "https://www.fcip-shiken.jp/about/",
-    status: "permission-required",
-    reuseSummary: "令和8年度前期・令和7年度後期の公式問題・正答肢の公開を確認。公式サイトに転載禁止の明記があるため、問題本文・選択肢・図版は収録しない。監査記録：reports/cloud-sekou-2kenchiku-latest2.md。",
-    remainingWork: ["試験実施機関からWeb問題集への転載許諾を取得", "許諾後に公式原文・全問の正答・全肢解説・必要図を照合し、公開前ステージングで検収"],
+    status: "ready-to-ingest",
+    reuseSummary: "オーナー権利確認済み（2026-11-04決定）。前回の権利理由による100問の除外を撤回。公式一覧で令和8年度前期・令和7年度後期の問題・正答肢を再確認。PDFの通常取得がHTTP 403となり、本文・図版の収録と全問検収は未完了。監査記録：reports/cloud-sekou-2kenchiku-latest2.md。",
+    remainingWork: ["公式PDFの問題本文・選択肢・必要図を取得して未公開ステージングへ収録（各50問・計100問）", "全問の公式正答・全肢解説・出典URL・出題時点法令を照合", "指定の独立レビューを完了し、公開前ステージングで検収"],
   },
   {
     slug: "sekou-kenchiku1",

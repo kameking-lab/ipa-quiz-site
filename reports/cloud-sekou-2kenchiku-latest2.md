@@ -1,64 +1,88 @@
 # 2級建築施工管理技術検定（第一次検定）直近2回の監査
 
-確認日：2026-11-03（UTC）
+確認日：2026-11-03（UTC）。依頼に記載されたオーナー決定日：2026-11-04。
 
-## 結果
+## 今回の結果：権利理由の除外を撤回、収録は未完了
 
-**転載禁止の明記により収録対象から除外。追加0問・公開0問・除外100問。**
+オーナーの権利確認済み決定に従い、前回コミット `81f12b99` の「転載禁止を理由に100問を除外する」判断を撤回した。権利未確認・転載条件・過去の取得STOP記録を停止理由にはしない。
 
-依頼の「公式サイト・PDFに転載や複製の禁止が明記されている資格は、問題本文を収録せず理由を報告」に従った。全問非公開による除外ではない。公式には対象2回の問題と正答肢が公開されている。
+既存の資格台帳 `lib/qualifications/catalog.ts` の `sekou-kenchiku2` を土台に、`permission-required` から `ready-to-ingest` へ変更し、権利取得の残作業を削除した。この状態は収録着手可能という意味であり、公開準備完了・問題本文追加完了を意味しない。公開状態は `live` ではなく、`examCode` も未登録。
 
-資格台帳に `sekou-kenchiku2` を既存の1級建築と同じ `permission-required` として記録した。問題データや図版は保存せず、演習用の `examCode` は登録しない。これは許諾待ちの未公開メタデータであり、問題のステージング完了・公開準備完了を意味しない。
+**今回の追加0問、公開0問、権利理由の除外0問、収録未完了100問。依頼全体は未完了。** 問題本文・全肢解説・図版はまだ追加できていない。環境制限の迂回は行わず、下記の実行結果を記録する。
 
 ## 対象回と公式根拠
 
-回の選定根拠は、一般財団法人建設業振興基金の[過去の受検状況・検定問題・合格基準](https://www.fcip-shiken.jp/about/)にある「検定問題・正答肢」の建築施工管理技術検定「2級」「第一次検定」欄。前期は令和8年度、後期は令和7年度がリンクされていることを確認した。年度や回をファイル名から推測していない。
+一般財団法人建設業振興基金の[過去の受検状況・検定問題・合格基準](https://www.fcip-shiken.jp/about/)を今回も閲覧し、「検定問題・正答肢」→建築施工管理技術検定→2級→第一次検定の前期・後期リンクを確認した。前期は令和8年度、後期は令和7年度であり、年度・回を推測していない。
 
-| 対象回 | 実施日（公式PDF表紙） | 公式問題・正答肢PDF | 出題数 | 追加数 | 除外数 |
+| 対象回 | 実施日（PDF表紙） | 公式問題・正答肢PDF | 出題数 | 追加数 | 収録未完了数 |
 | --- | --- | --- | ---: | ---: | ---: |
 | 令和8年度前期 第一次検定 | 2026-06-14 | [令和8年度前期](https://www.fcip-shiken.jp/pdf/r08_2kgz_mondai.pdf) | 50 | 0 | 50 |
 | 令和7年度後期 第一次検定 | 2025-11-09 | [令和7年度後期](https://www.fcip-shiken.jp/pdf/r07_2kg_mondai.pdf) | 50 | 0 | 50 |
 | 合計 | | | 100 | 0 | 100 |
 
-両回の表紙にNo.1～50の構成が示されている。出題50問と受検者が解答する40問を区別した。No.38～42は五肢択一、その他は四肢択一。正答肢は各PDFの末尾に付属する（令和7年度後期の表記は「正答肢（案）」）。転載条件の段階で除外したため、全100問の原文・正答・解説の収録照合を実施済みとはしない。
+両回とも50問出題、40問解答。No.38～42は五肢択一、それ以外は四肢択一。正答肢は問題PDFの末尾に付属する。令和7年度後期の表記は「正答肢（案）」。前回確認の表紙・末尾の記録を引き継ぎ、今回も公式一覧のリンク先が両PDFであることを閲覧ツールで確認した。ただし全100問の本文・全選択肢・正答・図版の再照合は未実施。
 
-## 除外理由
+公式一覧フッターの「本サイトに掲載されている記事・写真・図表などの転載を禁じます。」という文言は記録に残す。オーナー決定に基づき、今回の収録除外・権利確認の再要求の根拠にはしない。
 
-[公式の公開一覧ページ](https://www.fcip-shiken.jp/about/)のフッターに、次の明示がある。
+## 実行できなかった操作と取得できなかったPDF
 
-> 本サイトに掲載されている記事・写真・図表などの転載を禁じます。
+### 公式PDFの通常取得
 
-[公式トップページ](https://www.fcip-shiken.jp/)にも同じ表示がある。PDFの閲覧提供をWeb問題集への転載許諾として扱わず、依頼の除外条件を適用した。PDF自体に同じ禁止文があると主張するものではない。
+次の2件を `curl -fsSL` で通常取得したが、いずれも `curl: (22) The requested URL returned error: 403`。ローカルPDFは作成されず、`pdftotext -layout` による抽出も実行できなかった。
 
-問題本文・選択肢・正答表・原図のリポジトリへの転載は行っていない。類題・生成問題への置き換えも行っていない。全選択肢解説、`hasImage` 付き図版、各問の出典URL、出題時点法令の注記は、収録対象が0問のため作成していない。将来の許諾取得後には全項目の検収が必要で、今回の除外監査を公開可の根拠にできない。
+- `https://www.fcip-shiken.jp/pdf/r08_2kgz_mondai.pdf`
+- `https://www.fcip-shiken.jp/pdf/r07_2kg_mondai.pdf`
 
-## 着手前の重複確認
+閲覧ツールでは両PDFの抽出テキストを開けた（前期26ページ、後期25ページ）。そのため「公式に問題や正答が非公開」「PDFの閲覧が一切不可能」とは判定していない。一方、このセッションでは図版を取得して目視照合できず、全100問の完全な収録・検収に必要な原資料をローカルに確保できていない。本文の一部が読めることを全問検収済みの根拠にはしない。ログイン・CAPTCHA・ボット拒否やサンドボックス制限を回避する取得は行っていない。403の発生原因は断定しない。
 
-- 作業ブランチ：`claude/blissful-rubin-pks6ce`。開始時の作業ツリーに変更なし。
-- ローカルの `data/questions`・`lib/qualifications/catalog.ts`・`data/exam-library` と `data/qualification-staging` を検索し、この資格・対象回の既存成果なし。
-- `git fetch origin '+refs/heads/claude/*:refs/remotes/origin/claude/*' '+refs/heads/qual/*:refs/remotes/origin/qual/*' '+refs/heads/codex/*:refs/remotes/origin/codex/*' --prune` を実行。
-- originの359ブランチ（`claude/*` 96、`codex/*` 263、`qual/*` 0）について、同じ4箇所のツリー名とテキスト内容を検査。異なるテキストblob 3,867個を照合し、読み取り失敗0、対象資格・対象回の一致0。
-- 検索語：`2級建築`、`２級建築`、`2 級 建築施工`、`sekou-kenchiku2`、`kenchiku2`、`2kenchiku`、対象PDFの `r08_2kgz`・`r07_2kg` 等。ファイル名の `kenchiku`・`建築` も検査した。
-- 別資格の一級建築士・建築設備士のファイル名が一致したが、建築施工管理技術検定とは異なるため重複対象外。既存の1級建築施工管理は `permission-required` のメタデータのみで、本資格の成果ではない。
+### Gitの読み取り専用制限
 
-## 既存の追加方式と今回の適用
+着手時の作業ブランチは `claude/blissful-rubin-pks6ce`、作業ツリーは変更なし。指定どおり以下を試したが失敗した。
 
-- 類似の `data/questions/civil2/index.ts` は年度別JSONを `Question` へ変換し、問題URL・正答URL・全肢解説・画像有無を保持している。
-- `data/questions/index.ts` は `isExamPublished()` によって公開データを登録する。判定元は `lib/qualifications/catalog.ts` の `status: "live"`。
-- `app/qualifications/page.tsx` の公開一覧も `live` のみを表示する。
-- 演習ルーティングは `app/[exam]/page.tsx` 等と試験定義に依存する。本資格の試験コード・ルート・問題を登録せず、公開入口を追加しない。
-- `data/exam-library/official-catalog.json` は別の公表試験カタログとして取り込まれるため、ここにも回・問題を追加しない。
-- 既存の `sekou-kenchiku1` と同様、許諾待ち資格は `examCode` を持たない台帳メタデータだけで管理する。今回もこの方式を適用した。
+```text
+git fetch origin '+refs/heads/claude/*:refs/remotes/origin/claude/*' '+refs/heads/qual/*:refs/remotes/origin/qual/*' '+refs/heads/codex/*:refs/remotes/origin/codex/*' --prune
+error: cannot open '.git/FETCH_HEAD': Read-only file system
+```
 
-## 検証・独立レビュー
+環境設定で `.git` は読み取り専用。fetch・コミットに必要なGitメタデータを書けないため、権限変更・別Gitディレクトリへの移設などの迂回を行わない。今回の変更は作業ツリーに残し、コミット・pushは未実施。pushはもともと監督側の担当。
 
-- `pnpm install`：成功（pnpm 10.33.0、Prisma Client生成成功）。
-- `pnpm validate:questions`：成功。26,444問、fail=0、warn=16,808。警告は既存データに関するもので、今回の問題追加は0問。
-- `pnpm typecheck`：成功。既定のNodeヒープ上限で初回はメモリ不足（exit 134）。`NODE_OPTIONS=--max-old-space-size=8192 pnpm typecheck` で再実行し、exit 0。
-- 関連テスト：`pnpm exec vitest run __tests__/questions/qualification-expansion.test.ts __tests__/questions/live-qualification-coverage.test.ts __tests__/seo/qualification-coverage-copy.test.tsx __tests__/exam-library-coverage.test.ts`：4ファイル・1,083テスト成功。初回の `pnpm test -- ...` は意図した絞り込みが効かず全体を開始したため中断し、上記コマンドで対象を明示して実行した。
-- 公開防止の実データ確認：台帳内の同slugは1件、`permission-required`、`examCode` なし、`live` 一覧に含まれないことを確認（成功）。`git diff --check` も成功。
-- 指定の独立レビュー：`codex exec -m gpt-6-astra -c model_reasoning_effort=medium --sandbox read-only` で別Codexを起動。初回結果は **PASS**（実質的な不具合の指摘0）。除外条件、既存方式との一貫性、非公開、追加・除外数、重複監査記録を確認したとの回答。初回時点で未確定だった型チェックと関連テストの結果を本レポートに反映した。
-- 2回目のレビュー：実装は **PASS**。レポートの「コミットもスーパーバイザに委任する」への変更提案があったが、元依頼が委任したのはpushのみのため、この提案は採用しない。下記に主担当とレビュアーの役割を明記した。また型チェックの終了コード・ヒープ設定をログだけでは確認できないとの指摘に対応し、Pythonの `subprocess.run` で再実行した。結果JSONは `{"command":["pnpm","typecheck"],"NODE_OPTIONS":"--max-old-space-size=8192","exitCode":0}`。このJSONと対応ログを最終レビュアーへ提供する。
-- 最終再レビュー：同じ指定コマンドで新規の別Codexを起動し、上記の明確化と検証証跡を確認。結果は **最終PASS**。「重大な問題・修正必須の指摘はありません」「前回指摘の解消を確認しました」と回答した。公式一覧の転載禁止・対象回、非公開、型チェックの設定とexit 0、問題検証・関連テスト・重複監査の数値、コミットとpushの役割分担の整合を確認済みとの回答。未解消の指摘0。
+### 指定の独立レビュー
 
-`pnpm build`・デプロイ・Vercel・PR作成・mainへのpushは実施しない。元依頼の「資格ごとにコミット」と「pushは現在のclaude/ブランチのみ(スーパーバイザが行う)」に従い、主担当が資格単位のコミットを現在のclaudeブランチに作成し、pushはスーパーバイザに委ねる。独立レビュアーは読み取り専用で、コミット・pushを実行しない。
+指定モデル・推論強度・サンドボックスで、読み取りのみのレビューを起動した。
+
+```text
+codex exec -m gpt-6-astra -c model_reasoning_effort=medium -s workspace-write --skip-git-repo-check -C /home/user/ipa-quiz-site -o /tmp/kenchiku2/review-preflight.md <レビュー依頼>
+Error: failed to initialize in-process app-server client: Read-only file system (os error 30)
+```
+
+初期化で停止し、レビューは実行されていない。独立レビューPASS・再レビューPASSとは扱わない。別の権限設定やサンドボックス外での再起動による迂回はしていない。前回コミットのレビューPASSは当時の除外監査の結果であり、今回の100問収録の合格判定として流用しない。
+
+## 重複確認と既存方式
+
+- ローカルの `data/questions`、`lib/qualifications/catalog.ts`、`data/exam-library`、`data/qualification-staging` を確認した。本資格の一致は前回作成した資格台帳だけであり、今回はその台帳を更新している。ユーザーが前回成果への継続を明示しているため、既存台帳を重複新規作成の理由で停止しない。
+- 前回監査ではoriginの359ブランチ・異なるテキストblob 3,867個を調べ、対象資格・回の一致0、読み取り失敗0と記録されていた。これは前回の記録であり、今回の最新リモート全件確認済みとは扱わない。
+- 今回は読み取り専用の `git ls-remote --heads origin 'claude/*' 'qual/*' 'codex/*'` に成功。372ブランチを確認し、ローカルにある360ブランチはすべて同じコミットだった。残る12ブランチはfetchの制限により内容未確認。比較証跡は `/tmp/kenchiku2/remote-comparison.json`。最新リモート全体の重複監査は未完了。
+- 類似資格の `data/questions/civil2/index.ts` は年度別JSONを問題型へ変換し、問題・正答URLと全肢解説・図版を保持する。将来の収録ではこの方式を基本に、No.38～42の五肢択一にも対応する必要がある。
+- `data/questions/index.ts` の公開登録と資格一覧は台帳の `live` 判定を使用する。今回は問題・試験コード・ルート・公表試験カタログへの追加がないため、演習入口は未作成。既存の `data/qualification-staging` も確認したが、未取得の本文を空データとして登録していない。
+
+## 検証
+
+以下は今回の実行結果。問題追加0問のため、今回依頼された100問を検証できたことは意味しない。
+
+- `pnpm install`：未完了。`ERR_PNPM_EROFS`（読み取り専用）のパッケージ取得エラーが繰り返されたため中断、exit 130。ストアの移設などによる迂回は行っていない。
+- 既存の依存関係で `pnpm validate:questions`：exit 0。26,444問、ok=26,444、fail=0、warn=16,808。警告は既存問題に関するもの。
+- 既存の依存関係で `NODE_OPTIONS=--max-old-space-size=8192 pnpm typecheck`：exit 0。
+- 既存の依存関係で `pnpm exec vitest run __tests__/questions/qualification-expansion.test.ts __tests__/questions/live-qualification-coverage.test.ts __tests__/seo/qualification-coverage-copy.test.tsx __tests__/exam-library-coverage.test.ts`：exit 0、4ファイル・1,083テスト成功。
+- 台帳の実データ確認：対象slugは1件、`ready-to-ingest`、`examCode` 未登録、許諾取得の残作業なし（exit 0）。
+- `git diff --check`：成功。
+
+ログは `/tmp/kenchiku2/install.log`、`validate.log`、`typecheck.log`、`tests.log`、`staging-check.log`、`review-preflight.log`。新規インストール成功後の検証と指定の独立レビューは、環境制限が解消された際に改めて必要。
+
+## 再開時の残作業
+
+1. 通常の方法で取得できる両公式PDFと図版、および指定サンドボックスで独立レビューを起動できる環境を確保する。Gitの制限が解消された環境で残るリモートブランチの重複確認を完了する。
+2. 対象回を増やさず、100問の原文・選択肢・公式正答・全肢解説・必要図・出典URLを未公開ステージングに収録する。法令問題は出題時点の法令であることを明示する。
+3. 全問照合・件数照合・関連検証を完了し、指定の独立レビューと指摘修正・再レビューを行う。公開準備が整っても依頼どおり未公開を維持する。
+4. 本レポートを実績で更新し、現在のclaudeブランチへ資格単位でコミットする。pushは監督側が行う。
+
+`pnpm build`・デプロイ・Vercel・PR作成・pushは実行しない。
