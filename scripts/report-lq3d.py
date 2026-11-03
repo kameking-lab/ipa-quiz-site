@@ -37,7 +37,8 @@ def logtext(path):
     return data.decode('utf-16') if data.startswith((b'\xff\xfe',b'\xfe\xff')) else data.decode('utf-8-sig')
 for name in ('validate-questions','typecheck','tests'):
     data=logtext(REPORT/f'local/{name}-accepted.log')
-    (REPORT/f'{name}-final.txt').write_text(data,encoding='utf-8',newline='\n')
+    clean='\n'.join(line.rstrip() for line in data.splitlines()).rstrip()+'\n'
+    (REPORT/f'{name}-final.txt').write_text(clean,encoding='utf-8',newline='\n')
 tests=logtext(REPORT/'local/tests-accepted.log')
 now=datetime.datetime.now(datetime.timezone(datetime.timedelta(hours=9))).isoformat(timespec='seconds')
 commits=subprocess.check_output(['git','log','--format=%h %s','d9334a18a..HEAD'],cwd=ROOT).decode('utf-8').strip()
