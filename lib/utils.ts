@@ -84,6 +84,7 @@ export const EXAM_LABELS: Record<string, string> = {
   "judo-seifukushi": "柔道整復師",
   "gas-kou": "ガス主任技術者 甲種",
   "gas-otsu": "ガス主任技術者 乙種",
+  "khk-hanbai2": "高圧ガス販売主任者 第二種販売",
   "khk-hanbai": "高圧ガス販売主任者 第一種販売",
   "gas-hei": "ガス主任技術者 丙種",
   "rinsho-kensagishi": "臨床検査技師",
