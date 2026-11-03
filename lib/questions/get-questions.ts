@@ -4,6 +4,18 @@ import { isExamPublished } from "@/lib/qualifications/catalog";
 // Bundler-friendly lazy loaders — each exam chunk is only loaded on demand.
 // To add a new exam: (1) create data/questions/{exam}/index.ts, (2) uncomment the loader.
 const EXAM_LOADERS: Partial<Record<ExamCode, () => Promise<Question[]>>> = {
+  "jidosha-1-small-written": async () => isExamPublished("jidosha-1-small-written") ? (await import("@/data/questions/automotive")).getAutomotiveQuestions("jidosha-1-small-written") : [],
+  "jidosha-2-gasoline": async () => isExamPublished("jidosha-2-gasoline") ? (await import("@/data/questions/automotive")).getAutomotiveQuestions("jidosha-2-gasoline") : [],
+  "jidosha-2-diesel": async () => isExamPublished("jidosha-2-diesel") ? (await import("@/data/questions/automotive")).getAutomotiveQuestions("jidosha-2-diesel") : [],
+  "jidosha-2-chassis": async () => isExamPublished("jidosha-2-chassis") ? (await import("@/data/questions/automotive")).getAutomotiveQuestions("jidosha-2-chassis") : [],
+  "jidosha-2-motorcycle": async () => isExamPublished("jidosha-2-motorcycle") ? (await import("@/data/questions/automotive")).getAutomotiveQuestions("jidosha-2-motorcycle") : [],
+  "jidosha-3-chassis": async () => isExamPublished("jidosha-3-chassis") ? (await import("@/data/questions/automotive")).getAutomotiveQuestions("jidosha-3-chassis") : [],
+  "jidosha-3-gasoline": async () => isExamPublished("jidosha-3-gasoline") ? (await import("@/data/questions/automotive")).getAutomotiveQuestions("jidosha-3-gasoline") : [],
+  "jidosha-3-diesel": async () => isExamPublished("jidosha-3-diesel") ? (await import("@/data/questions/automotive")).getAutomotiveQuestions("jidosha-3-diesel") : [],
+  "jidosha-3-motorcycle": async () => isExamPublished("jidosha-3-motorcycle") ? (await import("@/data/questions/automotive")).getAutomotiveQuestions("jidosha-3-motorcycle") : [],
+  "jidosha-body": async () => isExamPublished("jidosha-body") ? (await import("@/data/questions/automotive")).getAutomotiveQuestions("jidosha-body") : [],
+  "jidosha-electrical": async () => isExamPublished("jidosha-electrical") ? (await import("@/data/questions/automotive")).getAutomotiveQuestions("jidosha-electrical") : [],
+
   kanteishi: async () => isExamPublished("kanteishi") ? (await import("@/data/questions/kanteishi")).KANTEISHI_QUESTIONS : [],
   kaikeishi: async () => isExamPublished("kaikeishi") ? (await import("@/data/questions/kaikeishi")).KAIKEISHI_QUESTIONS : [],
   "riku-tech2": async () => isExamPublished("riku-tech2") ? (await import("@/data/questions/riku-tech2")).RIKU_TECH2_QUESTIONS : [],

@@ -1,0 +1,2454 @@
+{
+  "schemaVersion": 1,
+  "reviewKind": "independent-author-external-technical-content-review",
+  "reviewer": "Codex; no Claude used",
+  "createdAtUtc": "2026-10-23T08:09:22.985Z",
+  "batch": "2026-first-body-q01-q20",
+  "fixedRepository": "kameking-lab/ipa-quiz-site",
+  "fixedPr": 731,
+  "fixedCommit": "6f4253b9381e3030863e38dfe75b5ca4068ba526",
+  "scope": {
+    "uniqueQuestions": 20,
+    "choiceReasonsReviewed": 80,
+    "uniqueQuestionsAccepted": 6,
+    "acceptedQuestionChoiceReasons": 24,
+    "heldQuestions": 14,
+    "acceptedRepairFields": 3,
+    "heldRepairProposalFields": 0
+  },
+  "acceptanceRule": "All four existing reasons inspected for technical meaning and application conditions; originals, key, required figures and technical evidence/explicit derivation must correspond. Mechanical checks alone do not confer acceptance.",
+  "rightsHold": false,
+  "publication": false,
+  "upstreamWorkingTreeModified": false,
+  "rows": [
+    {
+      "id": "jidosha-2026-first-body-q01",
+      "manuscriptSha256": "70b9d6701c5bc325c30d99b25bc5357a517f62e2a45680daf0315abba11b3d1d",
+      "hashContract": "SHA256(UTF8(JSON.stringify(parsed question object))); original property order retained",
+      "fixedCommit": "6f4253b9381e3030863e38dfe75b5ca4068ba526",
+      "fixedBlobSha": "320fa720a1c2326e48c910b4eeaff32c92c7137d",
+      "fixedCommitTargetIdentical": true,
+      "officialOriginal": {
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_bo.pdf",
+        "sha256": "8e824d5f4c06d0db087383868ffd2996e331e28246d42ca4dcb02bf576f91f24",
+        "localFile": "sources/20261004_bo.pdf",
+        "localSha256": "8e824d5f4c06d0db087383868ffd2996e331e28246d42ca4dcb02bf576f91f24",
+        "physicalPages": [
+          2
+        ],
+        "locator": "No.1",
+        "visuallyReviewed": true
+      },
+      "officialKey": {
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_kai.pdf",
+        "sha256": "7f3a3405cd428510d0d585ceb96425c0b3ec9fd30c80696607fa5c595f20f23d",
+        "physicalPage": 1,
+        "subject": "body",
+        "qNumber": 1,
+        "answer": "ウ",
+        "number": "3",
+        "storedTableMatches": true,
+        "transcriptionReview": "Existing independent 610-answer review reused; no new full-table transcription counted."
+      },
+      "figureReceipts": [],
+      "evidence": [
+        "official-original:p2:No1",
+        "official-key",
+        "https://www.hakko.com/japan/products/hakko_hexsol.html:FS-511/521/311 composition",
+        "https://www.aluminum.or.jp/wp-content/themes/dp-colors/img/AboutAluminum.pdf:アルミニウムの特徴",
+        "derivation:鋼種と非鉄合金の主成分定義"
+      ],
+      "technicalEvidence": [
+        {
+          "kind": "official-original",
+          "locator": "p2:No1"
+        },
+        {
+          "kind": "official-key",
+          "locator": "existing independently checked answer table"
+        },
+        {
+          "kind": "direct-primary-url",
+          "url": "https://www.hakko.com/japan/products/hakko_hexsol.html",
+          "locator": "FS-511/521/311 composition"
+        },
+        {
+          "kind": "direct-primary-url",
+          "url": "https://www.aluminum.or.jp/wp-content/themes/dp-colors/img/AboutAluminum.pdf",
+          "locator": "アルミニウムの特徴"
+        },
+        {
+          "kind": "explicit-derivation",
+          "locator": "鋼種と非鉄合金の主成分定義"
+        }
+      ],
+      "conditions": null,
+      "allChoiceReasons": [
+        {
+          "label": "ア",
+          "statement": "(1)合金鋼は、鉄を主成分とする。",
+          "reason": "正しい。合金鋼は鉄に他の合金元素を加えた鋼。",
+          "reasonSha256": "683a134f377cb1104a4ede4546ec33bdb128d7617c47c4a721454d8be18e7efd",
+          "independentStatementVerdict": "true",
+          "technicalAssessment": "合金鋼は鉄基の鋼種。",
+          "evidence": [
+            "official-original:p2:No1",
+            "official-key",
+            "https://www.hakko.com/japan/products/hakko_hexsol.html:FS-511/521/311 composition",
+            "https://www.aluminum.or.jp/wp-content/themes/dp-colors/img/AboutAluminum.pdf:アルミニウムの特徴",
+            "derivation:鋼種と非鉄合金の主成分定義"
+          ],
+          "reasonDisposition": "accepted"
+        },
+        {
+          "label": "イ",
+          "statement": "(2)ジュラルミンは、アルミニウムを主成分とする。",
+          "reason": "正しい。ジュラルミンはアルミニウムを主成分とする合金。",
+          "reasonSha256": "bf257b16f1bc87708742a378481a11b2eb9d6c936af0d8ee4f5a5c6c220e0330",
+          "independentStatementVerdict": "true",
+          "technicalAssessment": "ジュラルミンはアルミニウム合金。",
+          "evidence": [
+            "official-original:p2:No1",
+            "official-key",
+            "https://www.hakko.com/japan/products/hakko_hexsol.html:FS-511/521/311 composition",
+            "https://www.aluminum.or.jp/wp-content/themes/dp-colors/img/AboutAluminum.pdf:アルミニウムの特徴",
+            "derivation:鋼種と非鉄合金の主成分定義"
+          ],
+          "reasonDisposition": "accepted"
+        },
+        {
+          "label": "ウ",
+          "statement": "(3)ハンダは、亜鉛を主成分とする。",
+          "reason": "不適切。ハンダの主成分はすずであり、亜鉛ではない。",
+          "reasonSha256": "01e45478b52e93ec540f6125f35e0916070794706e011eabd687a3222ffe6f61",
+          "independentStatementVerdict": "false",
+          "technicalAssessment": "市販の鉛入り・鉛フリーはんだの組成は錫主体で、亜鉛主体ではない。",
+          "evidence": [
+            "official-original:p2:No1",
+            "official-key",
+            "https://www.hakko.com/japan/products/hakko_hexsol.html:FS-511/521/311 composition",
+            "https://www.aluminum.or.jp/wp-content/themes/dp-colors/img/AboutAluminum.pdf:アルミニウムの特徴",
+            "derivation:鋼種と非鉄合金の主成分定義"
+          ],
+          "reasonDisposition": "accepted"
+        },
+        {
+          "label": "エ",
+          "statement": "(4)炭素鋼は、鉄を主成分とする。",
+          "reason": "正しい。炭素鋼は鉄を主成分とし炭素を含む。",
+          "reasonSha256": "eb0336210ee29063f78078e04973cefd8cd16bb1ce7555be6c351de9d287c854",
+          "independentStatementVerdict": "true",
+          "technicalAssessment": "炭素鋼は鉄基で炭素を含む。",
+          "evidence": [
+            "official-original:p2:No1",
+            "official-key",
+            "https://www.hakko.com/japan/products/hakko_hexsol.html:FS-511/521/311 composition",
+            "https://www.aluminum.or.jp/wp-content/themes/dp-colors/img/AboutAluminum.pdf:アルミニウムの特徴",
+            "derivation:鋼種と非鉄合金の主成分定義"
+          ],
+          "reasonDisposition": "accepted"
+        }
+      ],
+      "status": "ACCEPT",
+      "holds": [],
+      "repairs": [],
+      "candidateManuscriptSha256": "70b9d6701c5bc325c30d99b25bc5357a517f62e2a45680daf0315abba11b3d1d",
+      "protectedFieldsUnchanged": true
+    },
+    {
+      "id": "jidosha-2026-first-body-q02",
+      "manuscriptSha256": "d66fc43b486a129404997afd989f6d576527a637795168770ebd3f10663ed4e2",
+      "hashContract": "SHA256(UTF8(JSON.stringify(parsed question object))); original property order retained",
+      "fixedCommit": "6f4253b9381e3030863e38dfe75b5ca4068ba526",
+      "fixedBlobSha": "320fa720a1c2326e48c910b4eeaff32c92c7137d",
+      "fixedCommitTargetIdentical": true,
+      "officialOriginal": {
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_bo.pdf",
+        "sha256": "8e824d5f4c06d0db087383868ffd2996e331e28246d42ca4dcb02bf576f91f24",
+        "localFile": "sources/20261004_bo.pdf",
+        "localSha256": "8e824d5f4c06d0db087383868ffd2996e331e28246d42ca4dcb02bf576f91f24",
+        "physicalPages": [
+          2
+        ],
+        "locator": "No.2",
+        "visuallyReviewed": true
+      },
+      "officialKey": {
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_kai.pdf",
+        "sha256": "7f3a3405cd428510d0d585ceb96425c0b3ec9fd30c80696607fa5c595f20f23d",
+        "physicalPage": 1,
+        "subject": "body",
+        "qNumber": 2,
+        "answer": "エ",
+        "number": "4",
+        "storedTableMatches": true,
+        "transcriptionReview": "Existing independent 610-answer review reused; no new full-table transcription counted."
+      },
+      "figureReceipts": [],
+      "evidence": [
+        "official-original:p2:No2",
+        "official-key",
+        "https://solutions.covestro.com/-/media/covestro/solution-center/brands/downloads/imported/1557222937.pdf:polycarbonate solvent stress cracking"
+      ],
+      "technicalEvidence": [
+        {
+          "kind": "official-original",
+          "locator": "p2:No2"
+        },
+        {
+          "kind": "official-key",
+          "locator": "existing independently checked answer table"
+        },
+        {
+          "kind": "direct-primary-url",
+          "url": "https://solutions.covestro.com/-/media/covestro/solution-center/brands/downloads/imported/1557222937.pdf",
+          "locator": "polycarbonate solvent stress cracking"
+        }
+      ],
+      "conditions": null,
+      "allChoiceReasons": [
+        {
+          "label": "ア",
+          "statement": "(1)ポリプロピレン、ポリウレタン、ポリブチレンテレフタレート",
+          "reason": "誤り。ポリウレタンは溶剤による膨潤・劣化に注意を要する。",
+          "reasonSha256": "2592cb809457a2a9a93b51c0b5d9f9b91247599f9c05a352d3aebff9649d9e5a",
+          "independentStatementVerdict": "false",
+          "technicalAssessment": "ポリウレタンを含み、一般的な耐溶剤性の断定はできない。",
+          "evidence": [
+            "official-original:p2:No2",
+            "official-key",
+            "https://solutions.covestro.com/-/media/covestro/solution-center/brands/downloads/imported/1557222937.pdf:polycarbonate solvent stress cracking"
+          ],
+          "reasonDisposition": "reviewed-question-held"
+        },
+        {
+          "label": "イ",
+          "statement": "(2)ポリカーボネート、ポリアミド（ナイロン）、ポリエチレン",
+          "reason": "誤り。ポリカーボネートは有機溶剤による応力割れなどを生じ得る。",
+          "reasonSha256": "1534cf1916c4274d7254c0b7259dbe46bb096f9a6745e207fd601dfaedc4608e",
+          "independentStatementVerdict": "false",
+          "technicalAssessment": "ポリカーボネートは溶剤で応力割れの条件がある。",
+          "evidence": [
+            "official-original:p2:No2",
+            "official-key",
+            "https://solutions.covestro.com/-/media/covestro/solution-center/brands/downloads/imported/1557222937.pdf:polycarbonate solvent stress cracking"
+          ],
+          "reasonDisposition": "reviewed-question-held"
+        },
+        {
+          "label": "ウ",
+          "statement": "(3)ポリウレタン、ポリエチレン、ポリブチレンテレフタレート",
+          "reason": "誤り。ポリウレタンを含むため、三者ともほとんどの溶剤に耐性がある組み合わせではない。",
+          "reasonSha256": "2ade0cf315f36814bca993b6a11559fa267c33ac319b78f2ebb12ac6b701450f",
+          "independentStatementVerdict": "false",
+          "technicalAssessment": "ポリウレタンを含むため候補外。",
+          "evidence": [
+            "official-original:p2:No2",
+            "official-key",
+            "https://solutions.covestro.com/-/media/covestro/solution-center/brands/downloads/imported/1557222937.pdf:polycarbonate solvent stress cracking"
+          ],
+          "reasonDisposition": "reviewed-question-held"
+        },
+        {
+          "label": "エ",
+          "statement": "(4)ポリエチレン、ポリプロピレン、ポリブチレンテレフタレート",
+          "reason": "正しい。ポリエチレン、ポリプロピレン、ポリブチレンテレフタレートの組み合わせ。",
+          "reasonSha256": "fe98f39138b1a657892a50d6e475a358167871c6467bdde8babe160d541c59b3",
+          "independentStatementVerdict": "true",
+          "technicalAssessment": "PE、PP、PBTの組合せが公式キー。溶剤種・温度・時間の適用範囲は要確認。",
+          "evidence": [
+            "official-original:p2:No2",
+            "official-key",
+            "https://solutions.covestro.com/-/media/covestro/solution-center/brands/downloads/imported/1557222937.pdf:polycarbonate solvent stress cracking"
+          ],
+          "reasonDisposition": "reviewed-question-held"
+        }
+      ],
+      "status": "HOLD",
+      "holds": [
+        "PE/PP/PBTの「ほとんどの溶剤」への耐性とPUとの比較を同じ曝露条件で示す樹脂メーカーの一次耐薬品表が未確保。"
+      ],
+      "repairs": [],
+      "candidateManuscriptSha256": "d66fc43b486a129404997afd989f6d576527a637795168770ebd3f10663ed4e2",
+      "protectedFieldsUnchanged": true
+    },
+    {
+      "id": "jidosha-2026-first-body-q03",
+      "manuscriptSha256": "fe6538f8fe2f4d91c598f483edcee58cf9e61f4383641ad0fc4e4f82f88b1350",
+      "hashContract": "SHA256(UTF8(JSON.stringify(parsed question object))); original property order retained",
+      "fixedCommit": "6f4253b9381e3030863e38dfe75b5ca4068ba526",
+      "fixedBlobSha": "320fa720a1c2326e48c910b4eeaff32c92c7137d",
+      "fixedCommitTargetIdentical": true,
+      "officialOriginal": {
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_bo.pdf",
+        "sha256": "8e824d5f4c06d0db087383868ffd2996e331e28246d42ca4dcb02bf576f91f24",
+        "localFile": "sources/20261004_bo.pdf",
+        "localSha256": "8e824d5f4c06d0db087383868ffd2996e331e28246d42ca4dcb02bf576f91f24",
+        "physicalPages": [
+          2
+        ],
+        "locator": "No.3",
+        "visuallyReviewed": true
+      },
+      "officialKey": {
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_kai.pdf",
+        "sha256": "7f3a3405cd428510d0d585ceb96425c0b3ec9fd30c80696607fa5c595f20f23d",
+        "physicalPage": 1,
+        "subject": "body",
+        "qNumber": 3,
+        "answer": "ウ",
+        "number": "3",
+        "storedTableMatches": true,
+        "transcriptionReview": "Existing independent 610-answer review reused; no new full-table transcription counted."
+      },
+      "figureReceipts": [],
+      "evidence": [
+        "official-original:p2:No3",
+        "official-key",
+        "https://www.aluminum.or.jp/wp-content/themes/dp-colors/img/AboutAluminum.pdf:アルミニウムの特徴"
+      ],
+      "technicalEvidence": [
+        {
+          "kind": "official-original",
+          "locator": "p2:No3"
+        },
+        {
+          "kind": "official-key",
+          "locator": "existing independently checked answer table"
+        },
+        {
+          "kind": "direct-primary-url",
+          "url": "https://www.aluminum.or.jp/wp-content/themes/dp-colors/img/AboutAluminum.pdf",
+          "locator": "アルミニウムの特徴"
+        }
+      ],
+      "conditions": null,
+      "allChoiceReasons": [
+        {
+          "label": "ア",
+          "statement": "(1)1つ",
+          "reason": "誤り。（イ）（ロ）（ニ）の3文が正しいため、1つではない。",
+          "reasonSha256": "993f983c54605e00f6c0e7904a6b3dadb27e4cf07ad93cd144ff19ecef7decdd",
+          "independentStatementVerdict": "false",
+          "technicalAssessment": "（イ）（ロ）に加え（ニ）を正とする前提なら1つではない。",
+          "evidence": [
+            "official-original:p2:No3",
+            "official-key",
+            "https://www.aluminum.or.jp/wp-content/themes/dp-colors/img/AboutAluminum.pdf:アルミニウムの特徴"
+          ],
+          "reasonDisposition": "reviewed-question-held"
+        },
+        {
+          "label": "イ",
+          "statement": "(2)2つ",
+          "reason": "誤り。（イ）（ロ）に加えて（ニ）も正しいため、2つではない。",
+          "reasonSha256": "f3b91672c4f7c587373125b86ceed24ad52150337b650d2db336bda4763966c4",
+          "independentStatementVerdict": "false",
+          "technicalAssessment": "（ニ）を含め3つとする公式判定に合わない。",
+          "evidence": [
+            "official-original:p2:No3",
+            "official-key",
+            "https://www.aluminum.or.jp/wp-content/themes/dp-colors/img/AboutAluminum.pdf:アルミニウムの特徴"
+          ],
+          "reasonDisposition": "reviewed-question-held"
+        },
+        {
+          "label": "ウ",
+          "statement": "(3)3つ",
+          "reason": "正しい。（イ）（ロ）（ニ）が正しく、（ハ）だけが誤り。",
+          "reasonSha256": "54481c9e1568c5b1cecbbf3188dccf2d4e025dd7aead9cde5fd1d875e24cd810",
+          "independentStatementVerdict": "true",
+          "technicalAssessment": "（ハ）を偽、他3文を真とする公式判定。",
+          "evidence": [
+            "official-original:p2:No3",
+            "official-key",
+            "https://www.aluminum.or.jp/wp-content/themes/dp-colors/img/AboutAluminum.pdf:アルミニウムの特徴"
+          ],
+          "reasonDisposition": "reviewed-question-held"
+        },
+        {
+          "label": "エ",
+          "statement": "(4)4つ",
+          "reason": "誤り。（ハ）は酸・アルカリによる浸食を受けるため、4つすべては正しくない。",
+          "reasonSha256": "39fce9dd1ad39fb1db280d7be29a17a2772d46bf7f586b7a5b6d5d01c87a52f5",
+          "independentStatementVerdict": "false",
+          "technicalAssessment": "酸・アルカリに侵されにくいという（ハ）は誤り。",
+          "evidence": [
+            "official-original:p2:No3",
+            "official-key",
+            "https://www.aluminum.or.jp/wp-content/themes/dp-colors/img/AboutAluminum.pdf:アルミニウムの特徴"
+          ],
+          "reasonDisposition": "reviewed-question-held"
+        }
+      ],
+      "status": "HOLD",
+      "holds": [
+        "（ニ）「一般に伸びが小さくヘミング加工性に劣る」を鋼板との比較条件・材質状態まで示す一次資料が未確保。"
+      ],
+      "repairs": [],
+      "candidateManuscriptSha256": "fe6538f8fe2f4d91c598f483edcee58cf9e61f4383641ad0fc4e4f82f88b1350",
+      "protectedFieldsUnchanged": true
+    },
+    {
+      "id": "jidosha-2026-first-body-q04",
+      "manuscriptSha256": "1e8f7002d4222e0154cc198b0dbd72edb87512026a4f1581c7b15d955b3d0712",
+      "hashContract": "SHA256(UTF8(JSON.stringify(parsed question object))); original property order retained",
+      "fixedCommit": "6f4253b9381e3030863e38dfe75b5ca4068ba526",
+      "fixedBlobSha": "320fa720a1c2326e48c910b4eeaff32c92c7137d",
+      "fixedCommitTargetIdentical": true,
+      "officialOriginal": {
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_bo.pdf",
+        "sha256": "8e824d5f4c06d0db087383868ffd2996e331e28246d42ca4dcb02bf576f91f24",
+        "localFile": "sources/20261004_bo.pdf",
+        "localSha256": "8e824d5f4c06d0db087383868ffd2996e331e28246d42ca4dcb02bf576f91f24",
+        "physicalPages": [
+          2
+        ],
+        "locator": "No.4",
+        "visuallyReviewed": true
+      },
+      "officialKey": {
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_kai.pdf",
+        "sha256": "7f3a3405cd428510d0d585ceb96425c0b3ec9fd30c80696607fa5c595f20f23d",
+        "physicalPage": 1,
+        "subject": "body",
+        "qNumber": 4,
+        "answer": "エ",
+        "number": "4",
+        "storedTableMatches": true,
+        "transcriptionReview": "Existing independent 610-answer review reused; no new full-table transcription counted."
+      },
+      "figureReceipts": [],
+      "evidence": [
+        "official-original:p2:No4",
+        "official-key",
+        "https://steeluniversity.org/courses/man0109-heat-treatment/:quenching, tempering, nitriding"
+      ],
+      "technicalEvidence": [
+        {
+          "kind": "official-original",
+          "locator": "p2:No4"
+        },
+        {
+          "kind": "official-key",
+          "locator": "existing independently checked answer table"
+        },
+        {
+          "kind": "direct-primary-url",
+          "url": "https://steeluniversity.org/courses/man0109-heat-treatment/",
+          "locator": "quenching, tempering, nitriding"
+        }
+      ],
+      "conditions": null,
+      "allChoiceReasons": [
+        {
+          "label": "ア",
+          "statement": "(1)表面硬化処理は、鋼の粘り強さを保持したまま、その表面層だけを硬化させる操作である。",
+          "reason": "正しい。表面層を硬化させ、芯部の粘り強さを保つ。",
+          "reasonSha256": "bf1b6fd97d03939e4f5fe5a22fb608d0b6b7da148d1a2dd6cef0d1d161faddf9",
+          "independentStatementVerdict": "true",
+          "technicalAssessment": "表面だけを硬化し芯部の靭性を残す。",
+          "evidence": [
+            "official-original:p2:No4",
+            "official-key",
+            "https://steeluniversity.org/courses/man0109-heat-treatment/:quenching, tempering, nitriding"
+          ],
+          "reasonDisposition": "accepted"
+        },
+        {
+          "label": "イ",
+          "statement": "(2)焼き戻しは、焼き入れによるもろさを緩和し、粘り強さを増すために、ある温度まで加熱したあと、徐々に冷却する操作である。",
+          "reason": "正しい。焼き戻しは焼き入れ後のもろさを和らげる。",
+          "reasonSha256": "a388f2602469fdef61475bc5cfb67c7d3100ebd90c7671c92ef111d27281baec",
+          "independentStatementVerdict": "true",
+          "technicalAssessment": "焼入れ後の焼戻しは脆さを緩める。",
+          "evidence": [
+            "official-original:p2:No4",
+            "official-key",
+            "https://steeluniversity.org/courses/man0109-heat-treatment/:quenching, tempering, nitriding"
+          ],
+          "reasonDisposition": "accepted"
+        },
+        {
+          "label": "ウ",
+          "statement": "(3)窒化は、鋼の表面層に窒素を染み込ませ硬化させる操作である。",
+          "reason": "正しい。窒化は表面に窒素を浸透させ硬化する。",
+          "reasonSha256": "47dbda5954a15578c0b70eba69c95ff8fcbb786501c11c4c537add598c16e353",
+          "independentStatementVerdict": "true",
+          "technicalAssessment": "窒化は窒素を表層へ導入する。",
+          "evidence": [
+            "official-original:p2:No4",
+            "official-key",
+            "https://steeluniversity.org/courses/man0109-heat-treatment/:quenching, tempering, nitriding"
+          ],
+          "reasonDisposition": "accepted"
+        },
+        {
+          "label": "エ",
+          "statement": "(4)焼き入れは、鋼の硬さと強さを増すために、ある温度まで加熱したあと、水や油などで徐々に冷却する操作である。",
+          "reason": "不適切。焼き入れ時の冷却は急冷であり、徐冷ではない。",
+          "reasonSha256": "43db785ab2fe169fd6536c40ec10ce42e3522e0167d9aa2fc4dcfbffe2bca937",
+          "independentStatementVerdict": "false",
+          "technicalAssessment": "水・油での焼入れは急冷で、徐冷は誤り。",
+          "evidence": [
+            "official-original:p2:No4",
+            "official-key",
+            "https://steeluniversity.org/courses/man0109-heat-treatment/:quenching, tempering, nitriding"
+          ],
+          "reasonDisposition": "accepted"
+        }
+      ],
+      "status": "ACCEPT",
+      "holds": [],
+      "repairs": [],
+      "candidateManuscriptSha256": "1e8f7002d4222e0154cc198b0dbd72edb87512026a4f1581c7b15d955b3d0712",
+      "protectedFieldsUnchanged": true
+    },
+    {
+      "id": "jidosha-2026-first-body-q05",
+      "manuscriptSha256": "4e132e5879302d49a474a42dadd9b1d817653c076f6e4c15bed459cba4c75a00",
+      "hashContract": "SHA256(UTF8(JSON.stringify(parsed question object))); original property order retained",
+      "fixedCommit": "6f4253b9381e3030863e38dfe75b5ca4068ba526",
+      "fixedBlobSha": "320fa720a1c2326e48c910b4eeaff32c92c7137d",
+      "fixedCommitTargetIdentical": true,
+      "officialOriginal": {
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_bo.pdf",
+        "sha256": "8e824d5f4c06d0db087383868ffd2996e331e28246d42ca4dcb02bf576f91f24",
+        "localFile": "sources/20261004_bo.pdf",
+        "localSha256": "8e824d5f4c06d0db087383868ffd2996e331e28246d42ca4dcb02bf576f91f24",
+        "physicalPages": [
+          2
+        ],
+        "locator": "No.5",
+        "visuallyReviewed": true
+      },
+      "officialKey": {
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_kai.pdf",
+        "sha256": "7f3a3405cd428510d0d585ceb96425c0b3ec9fd30c80696607fa5c595f20f23d",
+        "physicalPage": 1,
+        "subject": "body",
+        "qNumber": 5,
+        "answer": "エ",
+        "number": "4",
+        "storedTableMatches": true,
+        "transcriptionReview": "Existing independent 610-answer review reused; no new full-table transcription counted."
+      },
+      "figureReceipts": [],
+      "evidence": [
+        "official-original:p2:No5",
+        "official-key",
+        "derivation:各加工の形状定義から選択肢を排除"
+      ],
+      "technicalEvidence": [
+        {
+          "kind": "official-original",
+          "locator": "p2:No5"
+        },
+        {
+          "kind": "official-key",
+          "locator": "existing independently checked answer table"
+        },
+        {
+          "kind": "explicit-derivation",
+          "locator": "各加工の形状定義から選択肢を排除"
+        }
+      ],
+      "conditions": null,
+      "allChoiceReasons": [
+        {
+          "label": "ア",
+          "statement": "(1)（イ）バーリング・（ロ）クラウン",
+          "reason": "誤り。バーリングは穴の縁を立ち上げる加工で、（イ）のビーディングとは違う。",
+          "reasonSha256": "6e22e3f3a361c6566bc1d530848c5cd84ad45df943b5d9924dd2877358fd2460",
+          "independentStatementVerdict": "false",
+          "technicalAssessment": "バーリングは穴縁を立ち上げる加工でビードと異なる。",
+          "evidence": [
+            "official-original:p2:No5",
+            "official-key",
+            "derivation:各加工の形状定義から選択肢を排除"
+          ],
+          "reasonDisposition": "reviewed-question-held"
+        },
+        {
+          "label": "イ",
+          "statement": "(2)（イ）ヘミング・（ロ）バーリング",
+          "reason": "誤り。ヘミングは板端を折り返す加工で、（イ）には当たらない。",
+          "reasonSha256": "6bb2df2632fc4e00643651af5460e1f6d0f1336ee53aa7711a2519a06f7eba7e",
+          "independentStatementVerdict": "false",
+          "technicalAssessment": "ヘミングは縁の折返しでビードと異なる。",
+          "evidence": [
+            "official-original:p2:No5",
+            "official-key",
+            "derivation:各加工の形状定義から選択肢を排除"
+          ],
+          "reasonDisposition": "reviewed-question-held"
+        },
+        {
+          "label": "ウ",
+          "statement": "(3)（イ）ビーディング・（ロ）クラウン",
+          "reason": "誤り。（イ）のビーディングは合うが、（ロ）はクラウンでなくフランジング。",
+          "reasonSha256": "ac135191bca11d642016e37361423e4329ee593d38cce64bc2be75c950fceeb4",
+          "independentStatementVerdict": "false",
+          "technicalAssessment": "前半のビーディングは合うが、クラウンは直角折曲げではない。",
+          "evidence": [
+            "official-original:p2:No5",
+            "official-key",
+            "derivation:各加工の形状定義から選択肢を排除"
+          ],
+          "reasonDisposition": "reviewed-question-held"
+        },
+        {
+          "label": "エ",
+          "statement": "(4)（イ）ビーディング・（ロ）フランジング",
+          "reason": "正しい。（イ）ビーディング、（ロ）フランジング。",
+          "reasonSha256": "99087d0d69f73ff98c24cbaf9a933d6eb54b0e4e65b5d35330b7dfa7f5b84787",
+          "independentStatementVerdict": "true",
+          "technicalAssessment": "ビーディングとフランジングの組合せが原紙とキーに合う。",
+          "evidence": [
+            "official-original:p2:No5",
+            "official-key",
+            "derivation:各加工の形状定義から選択肢を排除"
+          ],
+          "reasonDisposition": "reviewed-question-held"
+        }
+      ],
+      "status": "HOLD",
+      "holds": [
+        "ビーディング・バーリング・クラウン・フランジングを同一用語体系で図示するプレスメーカー一次資料が未確保。"
+      ],
+      "repairs": [],
+      "candidateManuscriptSha256": "4e132e5879302d49a474a42dadd9b1d817653c076f6e4c15bed459cba4c75a00",
+      "protectedFieldsUnchanged": true
+    },
+    {
+      "id": "jidosha-2026-first-body-q06",
+      "manuscriptSha256": "16f0c4759a98d9dc28a1dc822f01f1e94b3a9196dd65391c700b2d48599c56fe",
+      "hashContract": "SHA256(UTF8(JSON.stringify(parsed question object))); original property order retained",
+      "fixedCommit": "6f4253b9381e3030863e38dfe75b5ca4068ba526",
+      "fixedBlobSha": "320fa720a1c2326e48c910b4eeaff32c92c7137d",
+      "fixedCommitTargetIdentical": true,
+      "officialOriginal": {
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_bo.pdf",
+        "sha256": "8e824d5f4c06d0db087383868ffd2996e331e28246d42ca4dcb02bf576f91f24",
+        "localFile": "sources/20261004_bo.pdf",
+        "localSha256": "8e824d5f4c06d0db087383868ffd2996e331e28246d42ca4dcb02bf576f91f24",
+        "physicalPages": [
+          3
+        ],
+        "locator": "No.6",
+        "visuallyReviewed": true
+      },
+      "officialKey": {
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_kai.pdf",
+        "sha256": "7f3a3405cd428510d0d585ceb96425c0b3ec9fd30c80696607fa5c595f20f23d",
+        "physicalPage": 1,
+        "subject": "body",
+        "qNumber": 6,
+        "answer": "エ",
+        "number": "4",
+        "storedTableMatches": true,
+        "transcriptionReview": "Existing independent 610-answer review reused; no new full-table transcription counted."
+      },
+      "figureReceipts": [],
+      "evidence": [
+        "official-original:p3:No6",
+        "official-key",
+        "derivation:強さ・硬さ・塑性・脆性は異なる機械特性"
+      ],
+      "technicalEvidence": [
+        {
+          "kind": "official-original",
+          "locator": "p3:No6"
+        },
+        {
+          "kind": "official-key",
+          "locator": "existing independently checked answer table"
+        },
+        {
+          "kind": "explicit-derivation",
+          "locator": "強さ・硬さ・塑性・脆性は異なる機械特性"
+        }
+      ],
+      "conditions": null,
+      "allChoiceReasons": [
+        {
+          "label": "ア",
+          "statement": "(1) 材料が荷重を受けて材料内部に生じる抵抗力を内力という。",
+          "reason": "適切。外力に釣り合う内部の抵抗が内力である。",
+          "reasonSha256": "6d524fb4ccac8d751f206e94ce3ee44ce165811f04195af615008b8ec1e333e3",
+          "independentStatementVerdict": "true",
+          "technicalAssessment": "荷重に対する材料内部の抵抗が内力。",
+          "evidence": [
+            "official-original:p3:No6",
+            "official-key",
+            "derivation:強さ・硬さ・塑性・脆性は異なる機械特性"
+          ],
+          "reasonDisposition": "reviewed-question-held"
+        },
+        {
+          "label": "イ",
+          "statement": "(2) 引っ張り強さが大きく粘り強さも大きい性質を靭性という。",
+          "reason": "適切。強さと粘りを兼ね備える性質が靭性である。",
+          "reasonSha256": "a7ded0ddfd60d61b735fcc8d5256a8ba7cfaa001577a2b9c84991176b0ea9a91",
+          "independentStatementVerdict": "true",
+          "technicalAssessment": "靭性は強さと粘りを伴う性質。",
+          "evidence": [
+            "official-original:p3:No6",
+            "official-key",
+            "derivation:強さ・硬さ・塑性・脆性は異なる機械特性"
+          ],
+          "reasonDisposition": "reviewed-question-held"
+        },
+        {
+          "label": "ウ",
+          "statement": "(3) 鉄鋼材料では、一般に硬さと引っ張り強さが大体比例する。",
+          "reason": "適切。一般的な鋼材では硬さと引張強さに相関がある。",
+          "reasonSha256": "3006f736ec0239698b59b8b4ed6380ef7f977c2933fa04ab3abc49a9cfe68f62",
+          "independentStatementVerdict": "true",
+          "technicalAssessment": "同系鋼材の硬さと引張強さには概ね相関。",
+          "evidence": [
+            "official-original:p3:No6",
+            "official-key",
+            "derivation:強さ・硬さ・塑性・脆性は異なる機械特性"
+          ],
+          "reasonDisposition": "reviewed-question-held"
+        },
+        {
+          "label": "エ",
+          "statement": "(4) 材料の塑性又は脆性の度合は、硬さによって比較する。",
+          "reason": "不適切。塑性・脆性は伸び、絞り、衝撃値等も含めて評価する。",
+          "reasonSha256": "ed122301bb81ec3ad92b514db3d3e2d067fc2bb3d9011a864f2e814b69e4747a",
+          "independentStatementVerdict": "false",
+          "technicalAssessment": "塑性・脆性を硬さだけで比較するのは不適切。",
+          "evidence": [
+            "official-original:p3:No6",
+            "official-key",
+            "derivation:強さ・硬さ・塑性・脆性は異なる機械特性"
+          ],
+          "reasonDisposition": "reviewed-question-held"
+        }
+      ],
+      "status": "HOLD",
+      "holds": [
+        "「塑性又は脆性の度合」を何の測定量で比較するかと、一般鋼材の硬さ対引張強さの適用範囲を一次材料試験資料で確認できていない。"
+      ],
+      "repairs": [],
+      "candidateManuscriptSha256": "16f0c4759a98d9dc28a1dc822f01f1e94b3a9196dd65391c700b2d48599c56fe",
+      "protectedFieldsUnchanged": true
+    },
+    {
+      "id": "jidosha-2026-first-body-q07",
+      "manuscriptSha256": "efece227a9272210603f295b52b2317c9efc5a78b02ee84802493414ca2a1e6f",
+      "hashContract": "SHA256(UTF8(JSON.stringify(parsed question object))); original property order retained",
+      "fixedCommit": "6f4253b9381e3030863e38dfe75b5ca4068ba526",
+      "fixedBlobSha": "320fa720a1c2326e48c910b4eeaff32c92c7137d",
+      "fixedCommitTargetIdentical": true,
+      "officialOriginal": {
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_bo.pdf",
+        "sha256": "8e824d5f4c06d0db087383868ffd2996e331e28246d42ca4dcb02bf576f91f24",
+        "localFile": "sources/20261004_bo.pdf",
+        "localSha256": "8e824d5f4c06d0db087383868ffd2996e331e28246d42ca4dcb02bf576f91f24",
+        "physicalPages": [
+          3
+        ],
+        "locator": "No.7",
+        "visuallyReviewed": true
+      },
+      "officialKey": {
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_kai.pdf",
+        "sha256": "7f3a3405cd428510d0d585ceb96425c0b3ec9fd30c80696607fa5c595f20f23d",
+        "physicalPage": 1,
+        "subject": "body",
+        "qNumber": 7,
+        "answer": "ウ",
+        "number": "3",
+        "storedTableMatches": true,
+        "transcriptionReview": "Existing independent 610-answer review reused; no new full-table transcription counted."
+      },
+      "figureReceipts": [],
+      "evidence": [
+        "official-original:p3:No7",
+        "official-key",
+        "https://techinfo.honda.com/rjanisis/pubs/web/ABRN-14-7E.PDF:welding and sectioning 1500 MPa",
+        "https://techinfo.honda.com/rjanisis/pubs/web/ABRN-14-2E.PDF:1500 MPa repair and MAG limitations"
+      ],
+      "technicalEvidence": [
+        {
+          "kind": "official-original",
+          "locator": "p3:No7"
+        },
+        {
+          "kind": "official-key",
+          "locator": "existing independently checked answer table"
+        },
+        {
+          "kind": "direct-primary-url",
+          "url": "https://techinfo.honda.com/rjanisis/pubs/web/ABRN-14-7E.PDF",
+          "locator": "welding and sectioning 1500 MPa"
+        },
+        {
+          "kind": "direct-primary-url",
+          "url": "https://techinfo.honda.com/rjanisis/pubs/web/ABRN-14-2E.PDF",
+          "locator": "1500 MPa repair and MAG limitations"
+        }
+      ],
+      "conditions": null,
+      "allChoiceReasons": [
+        {
+          "label": "ア",
+          "statement": "(1) 1つ",
+          "reason": "不適切。正しい記述は（ロ）（ハ）（ニ）の3つある。",
+          "reasonSha256": "380f5969b27a13a28bcad0dc59c4ec96dd93bd308480e76d6b52d6a690b30dba",
+          "independentStatementVerdict": "false",
+          "technicalAssessment": "（イ）が熱感受性にもかかわらず加熱・半裁の影響なしとするのは誤り。",
+          "evidence": [
+            "official-original:p3:No7",
+            "official-key",
+            "https://techinfo.honda.com/rjanisis/pubs/web/ABRN-14-7E.PDF:welding and sectioning 1500 MPa",
+            "https://techinfo.honda.com/rjanisis/pubs/web/ABRN-14-2E.PDF:1500 MPa repair and MAG limitations"
+          ],
+          "reasonDisposition": "accepted"
+        },
+        {
+          "label": "イ",
+          "statement": "(2) 2つ",
+          "reason": "不適切。スポット溶接条件とメーカー指定修理の両方を含め3つ正しい。",
+          "reasonSha256": "ddfbd605d8493e15e4d3decb1c62f9759706db9946025665b70c3887b4201e8f",
+          "independentStatementVerdict": "false",
+          "technicalAssessment": "（ロ）（ハ）（ニ）の3文を正とするなら1つではない。",
+          "evidence": [
+            "official-original:p3:No7",
+            "official-key",
+            "https://techinfo.honda.com/rjanisis/pubs/web/ABRN-14-7E.PDF:welding and sectioning 1500 MPa",
+            "https://techinfo.honda.com/rjanisis/pubs/web/ABRN-14-2E.PDF:1500 MPa repair and MAG limitations"
+          ],
+          "reasonDisposition": "accepted"
+        },
+        {
+          "label": "ウ",
+          "statement": "(3) 3つ",
+          "reason": "適切。熱影響を抑えたスポット溶接、適正条件、修理書指定が必要。",
+          "reasonSha256": "455299765ef09872d86fc2a9ae40d653a2c5302eb6987a55fe199d0e6131c8a2",
+          "independentStatementVerdict": "true",
+          "technicalAssessment": "メーカーの指定条件に従うスポット溶接と補修範囲の3文が正。",
+          "evidence": [
+            "official-original:p3:No7",
+            "official-key",
+            "https://techinfo.honda.com/rjanisis/pubs/web/ABRN-14-7E.PDF:welding and sectioning 1500 MPa",
+            "https://techinfo.honda.com/rjanisis/pubs/web/ABRN-14-2E.PDF:1500 MPa repair and MAG limitations"
+          ],
+          "reasonDisposition": "accepted"
+        },
+        {
+          "label": "エ",
+          "statement": "(4) 4つ",
+          "reason": "不適切。（イ）は熱感受性の高さと結論が矛盾する。",
+          "reasonSha256": "6270494ac962e8f1e88ee55a00d875880d33837051e6d197879038591ef48ebe",
+          "independentStatementVerdict": "false",
+          "technicalAssessment": "（イ）が誤りなので4つではない。",
+          "evidence": [
+            "official-original:p3:No7",
+            "official-key",
+            "https://techinfo.honda.com/rjanisis/pubs/web/ABRN-14-7E.PDF:welding and sectioning 1500 MPa",
+            "https://techinfo.honda.com/rjanisis/pubs/web/ABRN-14-2E.PDF:1500 MPa repair and MAG limitations"
+          ],
+          "reasonDisposition": "accepted"
+        }
+      ],
+      "status": "ACCEPT",
+      "holds": [],
+      "repairs": [],
+      "candidateManuscriptSha256": "efece227a9272210603f295b52b2317c9efc5a78b02ee84802493414ca2a1e6f",
+      "protectedFieldsUnchanged": true
+    },
+    {
+      "id": "jidosha-2026-first-body-q08",
+      "manuscriptSha256": "a900c0ef2e2c450df9781dbcd4455c31500838e017240db7592441d752e4c302",
+      "hashContract": "SHA256(UTF8(JSON.stringify(parsed question object))); original property order retained",
+      "fixedCommit": "6f4253b9381e3030863e38dfe75b5ca4068ba526",
+      "fixedBlobSha": "320fa720a1c2326e48c910b4eeaff32c92c7137d",
+      "fixedCommitTargetIdentical": true,
+      "officialOriginal": {
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_bo.pdf",
+        "sha256": "8e824d5f4c06d0db087383868ffd2996e331e28246d42ca4dcb02bf576f91f24",
+        "localFile": "sources/20261004_bo.pdf",
+        "localSha256": "8e824d5f4c06d0db087383868ffd2996e331e28246d42ca4dcb02bf576f91f24",
+        "physicalPages": [
+          3
+        ],
+        "locator": "No.8",
+        "visuallyReviewed": true
+      },
+      "officialKey": {
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_kai.pdf",
+        "sha256": "7f3a3405cd428510d0d585ceb96425c0b3ec9fd30c80696607fa5c595f20f23d",
+        "physicalPage": 1,
+        "subject": "body",
+        "qNumber": 8,
+        "answer": "イ",
+        "number": "2",
+        "storedTableMatches": true,
+        "transcriptionReview": "Existing independent 610-answer review reused; no new full-table transcription counted."
+      },
+      "figureReceipts": [],
+      "evidence": [
+        "official-original:p3:No8",
+        "official-key",
+        "official-key"
+      ],
+      "technicalEvidence": [
+        {
+          "kind": "official-original",
+          "locator": "p3:No8"
+        },
+        {
+          "kind": "official-key",
+          "locator": "existing independently checked answer table"
+        },
+        {
+          "kind": "official-key",
+          "locator": "existing independently checked answer table"
+        }
+      ],
+      "conditions": null,
+      "allChoiceReasons": [
+        {
+          "label": "ア",
+          "statement": "(1) 1つ",
+          "reason": "不適切。適切な記述は2つある。",
+          "reasonSha256": "2a2ff82438d099950d7fbbcbeb776d51c235b6cfe690a716836db0650c75f5ae",
+          "independentStatementVerdict": "false",
+          "technicalAssessment": "二重ダッシュとリブ補強の型式対応が異なる。",
+          "evidence": [
+            "official-original:p3:No8",
+            "official-key",
+            "official-key"
+          ],
+          "reasonDisposition": "reviewed-question-held"
+        },
+        {
+          "label": "イ",
+          "statement": "(2) 2つ",
+          "reason": "適切。（ロ）と（ニ）が各形式に対応する。",
+          "reasonSha256": "146516f4bbfb8e4afb10a1730766c72484f00a79167c4620f5bc2a69fe2afc69",
+          "independentStatementVerdict": "true",
+          "technicalAssessment": "クロスメンバ付きのFR採用という型式対応。",
+          "evidence": [
+            "official-original:p3:No8",
+            "official-key",
+            "official-key"
+          ],
+          "reasonDisposition": "reviewed-question-held"
+        },
+        {
+          "label": "ウ",
+          "statement": "(3) 3つ",
+          "reason": "不適切。（イ）と（ハ）を含めることはできない。",
+          "reasonSha256": "25ce5bc7b7c9ee8fc1ada0a1888dc2f47853b6814d3ba56e66cb5fb3ad81f9d8",
+          "independentStatementVerdict": "false",
+          "technicalAssessment": "一枚型をカウルトップ一体と定義しない。",
+          "evidence": [
+            "official-original:p3:No8",
+            "official-key",
+            "official-key"
+          ],
+          "reasonDisposition": "reviewed-question-held"
+        },
+        {
+          "label": "エ",
+          "statement": "(4) 4つ",
+          "reason": "不適切。四記述すべてが正しいわけではない。",
+          "reasonSha256": "1382b8662ce85ed072738c7c2544ef90e243a76f2cff873df643ea58a6d6e0c8",
+          "independentStatementVerdict": "false",
+          "technicalAssessment": "分割型ではトーボード別体。",
+          "evidence": [
+            "official-original:p3:No8",
+            "official-key",
+            "official-key"
+          ],
+          "reasonDisposition": "reviewed-question-held"
+        }
+      ],
+      "status": "HOLD",
+      "holds": [
+        "4種のダッシュパネルの構造定義とFR採用を示す自動車メーカー・整備団体の一次図解が未確保。"
+      ],
+      "repairs": [],
+      "candidateManuscriptSha256": "a900c0ef2e2c450df9781dbcd4455c31500838e017240db7592441d752e4c302",
+      "protectedFieldsUnchanged": true
+    },
+    {
+      "id": "jidosha-2026-first-body-q09",
+      "manuscriptSha256": "a6b1ae7f0d00fe225050fb1f759b50194c5cf77ae51c2d1fe28eb8ddcad6ec1b",
+      "hashContract": "SHA256(UTF8(JSON.stringify(parsed question object))); original property order retained",
+      "fixedCommit": "6f4253b9381e3030863e38dfe75b5ca4068ba526",
+      "fixedBlobSha": "320fa720a1c2326e48c910b4eeaff32c92c7137d",
+      "fixedCommitTargetIdentical": true,
+      "officialOriginal": {
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_bo.pdf",
+        "sha256": "8e824d5f4c06d0db087383868ffd2996e331e28246d42ca4dcb02bf576f91f24",
+        "localFile": "sources/20261004_bo.pdf",
+        "localSha256": "8e824d5f4c06d0db087383868ffd2996e331e28246d42ca4dcb02bf576f91f24",
+        "physicalPages": [
+          3
+        ],
+        "locator": "No.9",
+        "visuallyReviewed": true
+      },
+      "officialKey": {
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_kai.pdf",
+        "sha256": "7f3a3405cd428510d0d585ceb96425c0b3ec9fd30c80696607fa5c595f20f23d",
+        "physicalPage": 1,
+        "subject": "body",
+        "qNumber": 9,
+        "answer": "ア",
+        "number": "1",
+        "storedTableMatches": true,
+        "transcriptionReview": "Existing independent 610-answer review reused; no new full-table transcription counted."
+      },
+      "figureReceipts": [],
+      "evidence": [
+        "official-original:p3:No9",
+        "official-key",
+        "official-key"
+      ],
+      "technicalEvidence": [
+        {
+          "kind": "official-original",
+          "locator": "p3:No9"
+        },
+        {
+          "kind": "official-key",
+          "locator": "existing independently checked answer table"
+        },
+        {
+          "kind": "official-key",
+          "locator": "existing independently checked answer table"
+        }
+      ],
+      "conditions": null,
+      "allChoiceReasons": [
+        {
+          "label": "ア",
+          "statement": "(1) FF方式のリヤ・ボデーには駆動系がなく、燃料タンクがリヤ・シート下部に装着されるなどの関係から、リヤ・サイド・メンバの位置はFR車より高い位置にある。",
+          "reason": "不適切。FFの駆動系配置とリヤサイドメンバ高さを誤って結び付けている。",
+          "reasonSha256": "b2d240cf984300bbc5e1c1a307c9042bdcaf4b08a65731ed1b9b19f72808bc0d",
+          "independentStatementVerdict": "false",
+          "technicalAssessment": "FFでリヤメンバがFRより高いとする比較は原紙キーと逆。",
+          "evidence": [
+            "official-original:p3:No9",
+            "official-key",
+            "official-key"
+          ],
+          "reasonDisposition": "reviewed-question-held"
+        },
+        {
+          "label": "イ",
+          "statement": "(2) スリー・ボックス・ボデーには、パーセル・シェルフ・サイド・パネル（両サイド）とアッパ・バック・パネルを通して、左右が連結されるような構造のものが主流となっている。",
+          "reason": "適切。パーセルシェルフ周りの部材が左右を連結し剛性を作る。",
+          "reasonSha256": "4fc595aa2136cc823ff4963d9d6522d2d7a5188866906aed24d542651d92f95e",
+          "independentStatementVerdict": "true",
+          "technicalAssessment": "3ボックスのパーセル周りの左右連結。",
+          "evidence": [
+            "official-original:p3:No9",
+            "official-key",
+            "official-key"
+          ],
+          "reasonDisposition": "reviewed-question-held"
+        },
+        {
+          "label": "ウ",
+          "statement": "(3) フロント・ピラーやセンタ・ピラーは、フロントやサイドからの衝突時にキャビンの変形が最小限となるように、断面を大きくとるなどして剛性を高めている。",
+          "reason": "適切。ピラー断面を確保し客室変形を抑える。",
+          "reasonSha256": "0db08a3a43642dac07e4d7e4ecd013527b35bf068d8cd16b72c08618be4f05fb",
+          "independentStatementVerdict": "true",
+          "technicalAssessment": "ピラー断面による客室剛性。",
+          "evidence": [
+            "official-original:p3:No9",
+            "official-key",
+            "official-key"
+          ],
+          "reasonDisposition": "reviewed-question-held"
+        },
+        {
+          "label": "エ",
+          "statement": "(4) サイド・ボデーの下部は、走行中に生じるボデーの上下方向の曲げやねじり荷重に抵抗するとともに、メーン・フロア下部に受けた負荷をボデー上部に分散させている。",
+          "reason": "適切。サイド下部は曲げ・ねじりに抵抗し負荷を分散する。",
+          "reasonSha256": "3f8c14420a44dd4222bdfd8ceace08094a7a91cc1cf3b03a965898ef64c8312b",
+          "independentStatementVerdict": "true",
+          "technicalAssessment": "サイド下部から上部への荷重分散。",
+          "evidence": [
+            "official-original:p3:No9",
+            "official-key",
+            "official-key"
+          ],
+          "reasonDisposition": "reviewed-question-held"
+        }
+      ],
+      "status": "HOLD",
+      "holds": [
+        "FF/FRのリヤサイドメンバ高さの構造比較とパーセルシェルフ連結方式を直接示す一次車体図が未確保。"
+      ],
+      "repairs": [],
+      "candidateManuscriptSha256": "a6b1ae7f0d00fe225050fb1f759b50194c5cf77ae51c2d1fe28eb8ddcad6ec1b",
+      "protectedFieldsUnchanged": true
+    },
+    {
+      "id": "jidosha-2026-first-body-q10",
+      "manuscriptSha256": "8a772e9f3f46e49c480ed2d2929474b87cc1bbe6807cea5789055bca76a8f17c",
+      "hashContract": "SHA256(UTF8(JSON.stringify(parsed question object))); original property order retained",
+      "fixedCommit": "6f4253b9381e3030863e38dfe75b5ca4068ba526",
+      "fixedBlobSha": "320fa720a1c2326e48c910b4eeaff32c92c7137d",
+      "fixedCommitTargetIdentical": true,
+      "officialOriginal": {
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_bo.pdf",
+        "sha256": "8e824d5f4c06d0db087383868ffd2996e331e28246d42ca4dcb02bf576f91f24",
+        "localFile": "sources/20261004_bo.pdf",
+        "localSha256": "8e824d5f4c06d0db087383868ffd2996e331e28246d42ca4dcb02bf576f91f24",
+        "physicalPages": [
+          4
+        ],
+        "locator": "No.10",
+        "visuallyReviewed": true
+      },
+      "officialKey": {
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_kai.pdf",
+        "sha256": "7f3a3405cd428510d0d585ceb96425c0b3ec9fd30c80696607fa5c595f20f23d",
+        "physicalPage": 1,
+        "subject": "body",
+        "qNumber": 10,
+        "answer": "ア",
+        "number": "1",
+        "storedTableMatches": true,
+        "transcriptionReview": "Existing independent 610-answer review reused; no new full-table transcription counted."
+      },
+      "figureReceipts": [],
+      "evidence": [
+        "official-original:p4:No10",
+        "official-key",
+        "official-key"
+      ],
+      "technicalEvidence": [
+        {
+          "kind": "official-original",
+          "locator": "p4:No10"
+        },
+        {
+          "kind": "official-key",
+          "locator": "existing independently checked answer table"
+        },
+        {
+          "kind": "official-key",
+          "locator": "existing independently checked answer table"
+        }
+      ],
+      "conditions": null,
+      "allChoiceReasons": [
+        {
+          "label": "ア",
+          "statement": "(1) フード本体は、薄鋼板をプレス成形したアウタ・パネルと、車体の骨格となるインナ・パネルとを、全周にわたって接着剤や充てん剤を塗布し、ビーディング加工して剛性を確保している。",
+          "reason": "不適切。フード内板の役割と全周接着の説明が誤っている。",
+          "reasonSha256": "e98d19cc16441fb509b74c15851cf96bfe897780a10eb0e7ba32ab2c4d382647",
+          "independentStatementVerdict": "false",
+          "technicalAssessment": "フードのインナパネルを車体骨格とし全周接着・ビード接合とする部分が誤り。",
+          "evidence": [
+            "official-original:p4:No10",
+            "official-key",
+            "official-key"
+          ],
+          "reasonDisposition": "reviewed-question-held"
+        },
+        {
+          "label": "イ",
+          "statement": "(2) ドアは、アウタ・パネルとインナ・パネルをヘミング加工、周囲をウェザ・ストリップで巻いて水の浸入を防止し、密閉性を高めている。",
+          "reason": "適切。ドアのヘミング接合とシール材は水侵入を抑える。",
+          "reasonSha256": "5458cd3dd088a09ad0805aedc1099a94626dce44ed45e294751e90f2d16ffc3a",
+          "independentStatementVerdict": "true",
+          "technicalAssessment": "ドアのヘミング接合とウェザストリップの位置・防水機能は車種構造で要確認。",
+          "evidence": [
+            "official-original:p4:No10",
+            "official-key",
+            "official-key"
+          ],
+          "reasonDisposition": "reviewed-question-held"
+        },
+        {
+          "label": "ウ",
+          "statement": "(3) フロント・フェンダは、装飾と補強の意味から、フランジング、ビーディング、クラウンなどのプレス加工が施されている。",
+          "reason": "適切。フロントフェンダには形状・剛性を整えるプレス加工を施す。",
+          "reasonSha256": "bede335a11deb0fce8f9bc4ecd1e247944def91fd78f90444f2ad751f1472ab7",
+          "independentStatementVerdict": "true",
+          "technicalAssessment": "フェンダのプレス形状の説明。",
+          "evidence": [
+            "official-original:p4:No10",
+            "official-key",
+            "official-key"
+          ],
+          "reasonDisposition": "reviewed-question-held"
+        },
+        {
+          "label": "エ",
+          "statement": "(4) ヘッドランプの素材は、白熱電球からハロゲン・ランプ、HIDランプ、LEDランプなど光源の種類が豊富になり、サイズは小型化している。",
+          "reason": "適切。光源の変遷でヘッドランプの小型化が進む。",
+          "reasonSha256": "325cc6b8b075c76db8d5ed86e187141f3ac80cb41c3570695ef55fad465c08b6",
+          "independentStatementVerdict": "true",
+          "technicalAssessment": "光源の変遷と小型化の傾向。",
+          "evidence": [
+            "official-original:p4:No10",
+            "official-key",
+            "official-key"
+          ],
+          "reasonDisposition": "reviewed-question-held"
+        }
+      ],
+      "status": "HOLD",
+      "holds": [
+        "フード全周接合とドアの「周囲をウェザストリップで巻く」記述を、実際の構造図と照らした条件付き一次確認が未完。"
+      ],
+      "repairs": [],
+      "candidateManuscriptSha256": "8a772e9f3f46e49c480ed2d2929474b87cc1bbe6807cea5789055bca76a8f17c",
+      "protectedFieldsUnchanged": true
+    },
+    {
+      "id": "jidosha-2026-first-body-q11",
+      "manuscriptSha256": "14bfe76554a2a812fade355d5fb0e9ec6a7303ae510be41b73a105ee6d1ec854",
+      "hashContract": "SHA256(UTF8(JSON.stringify(parsed question object))); original property order retained",
+      "fixedCommit": "6f4253b9381e3030863e38dfe75b5ca4068ba526",
+      "fixedBlobSha": "320fa720a1c2326e48c910b4eeaff32c92c7137d",
+      "fixedCommitTargetIdentical": true,
+      "officialOriginal": {
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_bo.pdf",
+        "sha256": "8e824d5f4c06d0db087383868ffd2996e331e28246d42ca4dcb02bf576f91f24",
+        "localFile": "sources/20261004_bo.pdf",
+        "localSha256": "8e824d5f4c06d0db087383868ffd2996e331e28246d42ca4dcb02bf576f91f24",
+        "physicalPages": [
+          4
+        ],
+        "locator": "No.11",
+        "visuallyReviewed": true
+      },
+      "officialKey": {
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_kai.pdf",
+        "sha256": "7f3a3405cd428510d0d585ceb96425c0b3ec9fd30c80696607fa5c595f20f23d",
+        "physicalPage": 1,
+        "subject": "body",
+        "qNumber": 11,
+        "answer": "ア",
+        "number": "1",
+        "storedTableMatches": true,
+        "transcriptionReview": "Existing independent 610-answer review reused; no new full-table transcription counted."
+      },
+      "figureReceipts": [
+        {
+          "bookId": "jaspa-2026-first-body",
+          "physicalPage": 4,
+          "pdfSha256": "8e824d5f4c06d0db087383868ffd2996e331e28246d42ca4dcb02bf576f91f24",
+          "officialUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_bo.pdf#page=4",
+          "originalQuestionIds": [
+            "jidosha-2026-first-body-q11"
+          ],
+          "relativePath": "figures/jaspa-2026-first-body-p04.webp",
+          "width": 1490,
+          "height": 2106,
+          "sha256": "5717f1f02b79bdfdfe243e14725084ad435b4f5e268d1b670f38c8317d335f1c",
+          "bytes": 209094,
+          "processing": "Original PDF physical page rendered to PNG, then converted to WebP; no retouch or generated content.",
+          "actualSha256": "5717f1f02b79bdfdfe243e14725084ad435b4f5e268d1b670f38c8317d335f1c",
+          "visuallyReviewed": true
+        }
+      ],
+      "evidence": [
+        "official-original:p4:No11",
+        "official-key",
+        "derivation:原紙p4図の荷台中心は後軸の600mm前。前軸支点配分=25000*600/5000=3000N; 21000+1100+3000=25100N"
+      ],
+      "technicalEvidence": [
+        {
+          "kind": "official-original",
+          "locator": "p4:No11"
+        },
+        {
+          "kind": "official-key",
+          "locator": "existing independently checked answer table"
+        },
+        {
+          "kind": "explicit-derivation",
+          "locator": "原紙p4図の荷台中心は後軸の600mm前。前軸支点配分=25000*600/5000=3000N; 21000+1100+3000=25100N"
+        }
+      ],
+      "conditions": null,
+      "allChoiceReasons": [
+        {
+          "label": "ア",
+          "statement": "(1) 25,100N",
+          "reason": "適切。空車前軸荷重、乗員荷重、積荷の前軸配分を加えた値。",
+          "reasonSha256": "009282f8a75de03f4ce2b21a8f2511991eab21977800983ed48b2d03ff010264",
+          "independentStatementVerdict": "true",
+          "technicalAssessment": "21,000+2×550+25,000×600/5,000=25,100N。",
+          "evidence": [
+            "official-original:p4:No11",
+            "official-key",
+            "derivation:原紙p4図の荷台中心は後軸の600mm前。前軸支点配分=25000*600/5000=3000N; 21000+1100+3000=25100N"
+          ],
+          "reasonDisposition": "accepted"
+        },
+        {
+          "label": "イ",
+          "statement": "(2) 24,600N",
+          "reason": "不適切。乗員または積荷配分を過少に計算している。",
+          "reasonSha256": "0bd03d7c5700c5000ca60da38bd2785c8f74d38cd4e1d09087122fa17712932e",
+          "independentStatementVerdict": "false",
+          "technicalAssessment": "24,600Nは必要な総増分4,100Nより500N不足。",
+          "evidence": [
+            "official-original:p4:No11",
+            "official-key",
+            "derivation:原紙p4図の荷台中心は後軸の600mm前。前軸支点配分=25000*600/5000=3000N; 21000+1100+3000=25100N"
+          ],
+          "reasonDisposition": "accepted"
+        },
+        {
+          "label": "ウ",
+          "statement": "(3) 24,000N",
+          "reason": "不適切。25,000Nの積荷全量を前軸に載せるのではなく、てこの比で3,000Nを配分する。",
+          "reasonSha256": "5fd857929712fae697c08800406cf5f13110aa09c9768188579e89157d77bd8c",
+          "independentStatementVerdict": "false",
+          "technicalAssessment": "24,000Nは乗員1,100Nを落とした値で、積荷3,000Nは既に含む。",
+          "evidence": [
+            "official-original:p4:No11",
+            "official-key",
+            "derivation:原紙p4図の荷台中心は後軸の600mm前。前軸支点配分=25000*600/5000=3000N; 21000+1100+3000=25100N"
+          ],
+          "reasonDisposition": "accepted"
+        },
+        {
+          "label": "エ",
+          "statement": "(4) 22,100N",
+          "reason": "不適切。乗員1,100Nだけを足し、積荷の前軸分3,000Nを欠いている。",
+          "reasonSha256": "dc068171e6a91167147672c0d08402309b07ffb4c5ceb4cb57bf7add89bac6de",
+          "independentStatementVerdict": "false",
+          "technicalAssessment": "22,100Nは乗員のみの加算で積荷3,000Nを欠く。",
+          "evidence": [
+            "official-original:p4:No11",
+            "official-key",
+            "derivation:原紙p4図の荷台中心は後軸の600mm前。前軸支点配分=25000*600/5000=3000N; 21000+1100+3000=25100N"
+          ],
+          "reasonDisposition": "accepted"
+        }
+      ],
+      "status": "ACCEPT_WITH_REPAIR",
+      "holds": [],
+      "repairs": [
+        {
+          "field": "choiceExplanations.ウ",
+          "before": "不適切。25,000Nの積荷全量を前軸に載せるのではなく、てこの比で3,000Nを配分する。",
+          "after": "不適切。24,000Nは空車前軸荷重21,000Nに積荷の前軸配分3,000Nだけを加えた値で、乗員2人分1,100Nを加えていない。",
+          "why": "24,000Nを「積荷全量を前軸に載せた」計算とする既存理由は数値と矛盾する。"
+        }
+      ],
+      "candidateManuscriptSha256": "4e31ad3ae423b1826d72bb6078e127516111c7fdc1b4816ab030bb9c0515beda",
+      "protectedFieldsUnchanged": true
+    },
+    {
+      "id": "jidosha-2026-first-body-q12",
+      "manuscriptSha256": "889f9e42673967780b57131168f791641beb649bc4ce83c6b480ac3a30527ce4",
+      "hashContract": "SHA256(UTF8(JSON.stringify(parsed question object))); original property order retained",
+      "fixedCommit": "6f4253b9381e3030863e38dfe75b5ca4068ba526",
+      "fixedBlobSha": "320fa720a1c2326e48c910b4eeaff32c92c7137d",
+      "fixedCommitTargetIdentical": true,
+      "officialOriginal": {
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_bo.pdf",
+        "sha256": "8e824d5f4c06d0db087383868ffd2996e331e28246d42ca4dcb02bf576f91f24",
+        "localFile": "sources/20261004_bo.pdf",
+        "localSha256": "8e824d5f4c06d0db087383868ffd2996e331e28246d42ca4dcb02bf576f91f24",
+        "physicalPages": [
+          4
+        ],
+        "locator": "No.12",
+        "visuallyReviewed": true
+      },
+      "officialKey": {
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_kai.pdf",
+        "sha256": "7f3a3405cd428510d0d585ceb96425c0b3ec9fd30c80696607fa5c595f20f23d",
+        "physicalPage": 1,
+        "subject": "body",
+        "qNumber": 12,
+        "answer": "イ",
+        "number": "2",
+        "storedTableMatches": true,
+        "transcriptionReview": "Existing independent 610-answer review reused; no new full-table transcription counted."
+      },
+      "figureReceipts": [],
+      "evidence": [
+        "official-original:p4:No12",
+        "official-key",
+        "official-key"
+      ],
+      "technicalEvidence": [
+        {
+          "kind": "official-original",
+          "locator": "p4:No12"
+        },
+        {
+          "kind": "official-key",
+          "locator": "existing independently checked answer table"
+        },
+        {
+          "kind": "official-key",
+          "locator": "existing independently checked answer table"
+        }
+      ],
+      "conditions": null,
+      "allChoiceReasons": [
+        {
+          "label": "ア",
+          "statement": "(1) 車体質量が軽く、剛性が高い。",
+          "reason": "適切。独立フレームが不要で軽く、高い全体剛性を得やすい。",
+          "reasonSha256": "7cd2c70488de44cc2e485ecc600ac987741258b781ead2446366c380a7921164",
+          "independentStatementVerdict": "true",
+          "technicalAssessment": "フレーム不要で質量・構造剛性を得る。",
+          "evidence": [
+            "official-original:p4:No12",
+            "official-key",
+            "official-key"
+          ],
+          "reasonDisposition": "reviewed-question-held"
+        },
+        {
+          "label": "イ",
+          "statement": "(2) 騒音、振動などの影響を受けにくい。",
+          "reason": "不適切。モノコックは音・振動の伝達を受けやすい。",
+          "reasonSha256": "cf86aff4d00d7fc41104c6859fbcd20c3350cb5ddd7e760b39376997e704edc2",
+          "independentStatementVerdict": "false",
+          "technicalAssessment": "NVH伝達を受けにくいとは言えない。",
+          "evidence": [
+            "official-original:p4:No12",
+            "official-key",
+            "official-key"
+          ],
+          "reasonDisposition": "reviewed-question-held"
+        },
+        {
+          "label": "ウ",
+          "statement": "(3) 車高を低くし、車体重心を下げることができる。",
+          "reason": "適切。床面と重心を低く設計しやすい。",
+          "reasonSha256": "276be00caca976755e15f54f5323b7060d834ea8b806f89abb159507f9449a4e",
+          "independentStatementVerdict": "true",
+          "technicalAssessment": "床位置を低くできる。",
+          "evidence": [
+            "official-original:p4:No12",
+            "official-key",
+            "official-key"
+          ],
+          "reasonDisposition": "reviewed-question-held"
+        },
+        {
+          "label": "エ",
+          "statement": "(4) 一体構造のため、高速衝突の際には損傷が複雑になる傾向がある。",
+          "reason": "適切。衝撃が一体構造に広く伝わり損傷が複雑化する。",
+          "reasonSha256": "5ee20826b5792144cd5d3ca77ea86b944460e09e4c28eee39d425f9f4f12302f",
+          "independentStatementVerdict": "true",
+          "technicalAssessment": "一体構造は損傷が広く及び得る。",
+          "evidence": [
+            "official-original:p4:No12",
+            "official-key",
+            "official-key"
+          ],
+          "reasonDisposition": "reviewed-question-held"
+        }
+      ],
+      "status": "HOLD",
+      "holds": [
+        "モノコックとフレーム付きでの騒音・振動伝達の比較条件を直接示す車体メーカー一次資料が未確保。"
+      ],
+      "repairs": [],
+      "candidateManuscriptSha256": "889f9e42673967780b57131168f791641beb649bc4ce83c6b480ac3a30527ce4",
+      "protectedFieldsUnchanged": true
+    },
+    {
+      "id": "jidosha-2026-first-body-q13",
+      "manuscriptSha256": "3b5a8eec12021ae4ec516a6701d1728d98efda599da17a28f9e8f6351ad56332",
+      "hashContract": "SHA256(UTF8(JSON.stringify(parsed question object))); original property order retained",
+      "fixedCommit": "6f4253b9381e3030863e38dfe75b5ca4068ba526",
+      "fixedBlobSha": "320fa720a1c2326e48c910b4eeaff32c92c7137d",
+      "fixedCommitTargetIdentical": true,
+      "officialOriginal": {
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_bo.pdf",
+        "sha256": "8e824d5f4c06d0db087383868ffd2996e331e28246d42ca4dcb02bf576f91f24",
+        "localFile": "sources/20261004_bo.pdf",
+        "localSha256": "8e824d5f4c06d0db087383868ffd2996e331e28246d42ca4dcb02bf576f91f24",
+        "physicalPages": [
+          5
+        ],
+        "locator": "No.13",
+        "visuallyReviewed": true
+      },
+      "officialKey": {
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_kai.pdf",
+        "sha256": "7f3a3405cd428510d0d585ceb96425c0b3ec9fd30c80696607fa5c595f20f23d",
+        "physicalPage": 1,
+        "subject": "body",
+        "qNumber": 13,
+        "answer": "ア",
+        "number": "1",
+        "storedTableMatches": true,
+        "transcriptionReview": "Existing independent 610-answer review reused; no new full-table transcription counted."
+      },
+      "figureReceipts": [
+        {
+          "bookId": "jaspa-2026-first-body",
+          "physicalPage": 5,
+          "pdfSha256": "8e824d5f4c06d0db087383868ffd2996e331e28246d42ca4dcb02bf576f91f24",
+          "officialUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_bo.pdf#page=5",
+          "originalQuestionIds": [
+            "jidosha-2026-first-body-q13"
+          ],
+          "relativePath": "figures/jaspa-2026-first-body-p05.webp",
+          "width": 1490,
+          "height": 2106,
+          "sha256": "93ffcc235bbc8d0ff11aef9f6a29510544ae34d2622a468387c22373d7aa919f",
+          "bytes": 206162,
+          "processing": "Original PDF physical page rendered to PNG, then converted to WebP; no retouch or generated content.",
+          "actualSha256": "93ffcc235bbc8d0ff11aef9f6a29510544ae34d2622a468387c22373d7aa919f",
+          "visuallyReviewed": true
+        }
+      ],
+      "evidence": [
+        "official-original:p5:No13",
+        "official-key",
+        "https://www.nipponsteel.com/product/catalog_download/__icsFiles/afieldfile/2025/09/11/U003en.pdf:cold rolling and annealing",
+        "https://www.nipponsteel.com/en/tech/report/nsc/pdf/n8802.pdf:strength–elongation relation",
+        "derivation:原紙p5曲線イ上昇大、ロ上昇小、ハ下降"
+      ],
+      "technicalEvidence": [
+        {
+          "kind": "official-original",
+          "locator": "p5:No13"
+        },
+        {
+          "kind": "official-key",
+          "locator": "existing independently checked answer table"
+        },
+        {
+          "kind": "direct-primary-url",
+          "url": "https://www.nipponsteel.com/product/catalog_download/__icsFiles/afieldfile/2025/09/11/U003en.pdf",
+          "locator": "cold rolling and annealing"
+        },
+        {
+          "kind": "direct-primary-url",
+          "url": "https://www.nipponsteel.com/en/tech/report/nsc/pdf/n8802.pdf",
+          "locator": "strength–elongation relation"
+        },
+        {
+          "kind": "explicit-derivation",
+          "locator": "原紙p5曲線イ上昇大、ロ上昇小、ハ下降"
+        }
+      ],
+      "conditions": null,
+      "allChoiceReasons": [
+        {
+          "label": "ア",
+          "statement": "(1) （イ）硬さ／（ロ）引っ張り強さ／（ハ）伸び",
+          "reason": "適切。上昇する二曲線が硬さと引張強さ、下降する曲線が伸び。",
+          "reasonSha256": "8eedf045cb79c4a10aa153ce153fd926a9b403a3da638505eb284d03aaa52f9a",
+          "independentStatementVerdict": "true",
+          "technicalAssessment": "原紙p5図でイ・ロが上昇、ハが下降。加工硬化の硬さ・引張強さ増と伸び低下に一致。",
+          "evidence": [
+            "official-original:p5:No13",
+            "official-key",
+            "https://www.nipponsteel.com/product/catalog_download/__icsFiles/afieldfile/2025/09/11/U003en.pdf:cold rolling and annealing",
+            "https://www.nipponsteel.com/en/tech/report/nsc/pdf/n8802.pdf:strength–elongation relation",
+            "derivation:原紙p5曲線イ上昇大、ロ上昇小、ハ下降"
+          ],
+          "reasonDisposition": "accepted"
+        },
+        {
+          "label": "イ",
+          "statement": "(2) （イ）引っ張り強さ／（ロ）伸び／（ハ）強さ",
+          "reason": "不適切。伸びは加工度増加で上昇しない。",
+          "reasonSha256": "cdbf8105164b7fd3276405e5f2e8b9840b0c06745e37c99a0441da932c4db2bb",
+          "independentStatementVerdict": "false",
+          "technicalAssessment": "ロを伸びの上昇曲線に置くので誤り。",
+          "evidence": [
+            "official-original:p5:No13",
+            "official-key",
+            "https://www.nipponsteel.com/product/catalog_download/__icsFiles/afieldfile/2025/09/11/U003en.pdf:cold rolling and annealing",
+            "https://www.nipponsteel.com/en/tech/report/nsc/pdf/n8802.pdf:strength–elongation relation",
+            "derivation:原紙p5曲線イ上昇大、ロ上昇小、ハ下降"
+          ],
+          "reasonDisposition": "accepted"
+        },
+        {
+          "label": "ウ",
+          "statement": "(3) （イ）ねじり強さ／（ロ）伸び／（ハ）引っ張り強さ",
+          "reason": "不適切。伸びと引張強さの増減が逆。",
+          "reasonSha256": "83d79db76bd853ea9e91161a9604a6e65e9f6f0803d6f974bca01f8261dd8147",
+          "independentStatementVerdict": "false",
+          "technicalAssessment": "ロを伸び、ハを引張強さとし増減が逆。",
+          "evidence": [
+            "official-original:p5:No13",
+            "official-key",
+            "https://www.nipponsteel.com/product/catalog_download/__icsFiles/afieldfile/2025/09/11/U003en.pdf:cold rolling and annealing",
+            "https://www.nipponsteel.com/en/tech/report/nsc/pdf/n8802.pdf:strength–elongation relation",
+            "derivation:原紙p5曲線イ上昇大、ロ上昇小、ハ下降"
+          ],
+          "reasonDisposition": "accepted"
+        },
+        {
+          "label": "エ",
+          "statement": "(4) （イ）伸び／（ロ）硬さ／（ハ）ねじり強さ",
+          "reason": "不適切。伸びは（イ）の上昇曲線ではない。",
+          "reasonSha256": "d5f640a7ec6101f53266e06e440cf86282c184184c82a5b0face595debb1f673",
+          "independentStatementVerdict": "false",
+          "technicalAssessment": "イを伸びとし増減が逆。",
+          "evidence": [
+            "official-original:p5:No13",
+            "official-key",
+            "https://www.nipponsteel.com/product/catalog_download/__icsFiles/afieldfile/2025/09/11/U003en.pdf:cold rolling and annealing",
+            "https://www.nipponsteel.com/en/tech/report/nsc/pdf/n8802.pdf:strength–elongation relation",
+            "derivation:原紙p5曲線イ上昇大、ロ上昇小、ハ下降"
+          ],
+          "reasonDisposition": "accepted"
+        }
+      ],
+      "status": "ACCEPT",
+      "holds": [],
+      "repairs": [],
+      "candidateManuscriptSha256": "3b5a8eec12021ae4ec516a6701d1728d98efda599da17a28f9e8f6351ad56332",
+      "protectedFieldsUnchanged": true
+    },
+    {
+      "id": "jidosha-2026-first-body-q14",
+      "manuscriptSha256": "53875a6501e4ccb986135e190d72e83efb763b2b2cf323b8efb2d6febccf4a76",
+      "hashContract": "SHA256(UTF8(JSON.stringify(parsed question object))); original property order retained",
+      "fixedCommit": "6f4253b9381e3030863e38dfe75b5ca4068ba526",
+      "fixedBlobSha": "320fa720a1c2326e48c910b4eeaff32c92c7137d",
+      "fixedCommitTargetIdentical": true,
+      "officialOriginal": {
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_bo.pdf",
+        "sha256": "8e824d5f4c06d0db087383868ffd2996e331e28246d42ca4dcb02bf576f91f24",
+        "localFile": "sources/20261004_bo.pdf",
+        "localSha256": "8e824d5f4c06d0db087383868ffd2996e331e28246d42ca4dcb02bf576f91f24",
+        "physicalPages": [
+          5
+        ],
+        "locator": "No.14",
+        "visuallyReviewed": true
+      },
+      "officialKey": {
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_kai.pdf",
+        "sha256": "7f3a3405cd428510d0d585ceb96425c0b3ec9fd30c80696607fa5c595f20f23d",
+        "physicalPage": 1,
+        "subject": "body",
+        "qNumber": 14,
+        "answer": "ア",
+        "number": "1",
+        "storedTableMatches": true,
+        "transcriptionReview": "Existing independent 610-answer review reused; no new full-table transcription counted."
+      },
+      "figureReceipts": [],
+      "evidence": [
+        "official-original:p5:No14",
+        "official-key",
+        "official-key"
+      ],
+      "technicalEvidence": [
+        {
+          "kind": "official-original",
+          "locator": "p5:No14"
+        },
+        {
+          "kind": "official-key",
+          "locator": "existing independently checked answer table"
+        },
+        {
+          "kind": "official-key",
+          "locator": "existing independently checked answer table"
+        }
+      ],
+      "conditions": null,
+      "allChoiceReasons": [
+        {
+          "label": "ア",
+          "statement": "(1) フロア・パンには、剛性向上のため、多数のビーディングを施すことで防振、防音効果が期待でき、剛性が高くなる分、相当量の制振材（アスファルト・シート）が削減できる。",
+          "reason": "不適切。ビードを増やせば制振材を相当量削れるという単純な関係ではない。",
+          "reasonSha256": "26c9fea32b3b7d6daacf5fa878fb393c5872fef0712d9e0d89c4780c0ad14d50",
+          "independentStatementVerdict": "false",
+          "technicalAssessment": "ビードの剛性向上だけで制振材を相当量削減とは言えない。",
+          "evidence": [
+            "official-original:p5:No14",
+            "official-key",
+            "official-key"
+          ],
+          "reasonDisposition": "reviewed-question-held"
+        },
+        {
+          "label": "イ",
+          "statement": "(2) フロント・サイド・メンバ及びリヤ・サイド・メンバに種々の負荷が伝播されることから、曲げやねじりに対して十分耐え得る構造でなくてはならない。",
+          "reason": "適切。床は前後メンバからの曲げ・ねじり荷重を負担する。",
+          "reasonSha256": "5872c57821cd3dcd9c9ab618af8073f08569584e38b78a8648a10a0b238cce55",
+          "independentStatementVerdict": "true",
+          "technicalAssessment": "フロアへの曲げ・ねじり荷重。",
+          "evidence": [
+            "official-original:p5:No14",
+            "official-key",
+            "official-key"
+          ],
+          "reasonDisposition": "reviewed-question-held"
+        },
+        {
+          "label": "ウ",
+          "statement": "(3) 「ビード・レス」フロアとは、制振材の質量低減による車両軽量化をバランスよく解決するように考えられたものである。",
+          "reason": "適切。ビードレス構造は制振材量と重量を考慮した設計。",
+          "reasonSha256": "93599ffa9a069f5f524c811fe1faa62cbe3579dc2f83d1ffa2095cb6ec4127ce",
+          "independentStatementVerdict": "true",
+          "technicalAssessment": "ビードレスと制振材質量の設計関係。",
+          "evidence": [
+            "official-original:p5:No14",
+            "official-key",
+            "official-key"
+          ],
+          "reasonDisposition": "reviewed-question-held"
+        },
+        {
+          "label": "エ",
+          "statement": "(4) フロント・サイド・メンバ及びリヤ・サイド・メンバに伝播される種々の負荷が、サイド・ボデーに効率よく分散できるものでなくてはならない。",
+          "reason": "適切。荷重をサイドボデーへ分散する構造が必要。",
+          "reasonSha256": "38fa620b204857efcf2f56ccfc58c4a9ad193723676f5dac6d8dc0fde8980ed2",
+          "independentStatementVerdict": "true",
+          "technicalAssessment": "サイドボデーへの荷重分散。",
+          "evidence": [
+            "official-original:p5:No14",
+            "official-key",
+            "official-key"
+          ],
+          "reasonDisposition": "reviewed-question-held"
+        }
+      ],
+      "status": "HOLD",
+      "holds": [
+        "ビードレス床と制振材削減の定量・構造的関係を示すOEM一次設計資料が未確保。"
+      ],
+      "repairs": [],
+      "candidateManuscriptSha256": "53875a6501e4ccb986135e190d72e83efb763b2b2cf323b8efb2d6febccf4a76",
+      "protectedFieldsUnchanged": true
+    },
+    {
+      "id": "jidosha-2026-first-body-q15",
+      "manuscriptSha256": "58f3cbf3e8c75126d49a51fbbdb38ccb324c13d6e0f1a516b4bdbf4bb1f5787c",
+      "hashContract": "SHA256(UTF8(JSON.stringify(parsed question object))); original property order retained",
+      "fixedCommit": "6f4253b9381e3030863e38dfe75b5ca4068ba526",
+      "fixedBlobSha": "320fa720a1c2326e48c910b4eeaff32c92c7137d",
+      "fixedCommitTargetIdentical": true,
+      "officialOriginal": {
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_bo.pdf",
+        "sha256": "8e824d5f4c06d0db087383868ffd2996e331e28246d42ca4dcb02bf576f91f24",
+        "localFile": "sources/20261004_bo.pdf",
+        "localSha256": "8e824d5f4c06d0db087383868ffd2996e331e28246d42ca4dcb02bf576f91f24",
+        "physicalPages": [
+          5
+        ],
+        "locator": "No.15",
+        "visuallyReviewed": true
+      },
+      "officialKey": {
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_kai.pdf",
+        "sha256": "7f3a3405cd428510d0d585ceb96425c0b3ec9fd30c80696607fa5c595f20f23d",
+        "physicalPage": 1,
+        "subject": "body",
+        "qNumber": 15,
+        "answer": "イ",
+        "number": "2",
+        "storedTableMatches": true,
+        "transcriptionReview": "Existing independent 610-answer review reused; no new full-table transcription counted."
+      },
+      "figureReceipts": [],
+      "evidence": [
+        "official-original:p5:No15",
+        "official-key",
+        "official-key"
+      ],
+      "technicalEvidence": [
+        {
+          "kind": "official-original",
+          "locator": "p5:No15"
+        },
+        {
+          "kind": "official-key",
+          "locator": "existing independently checked answer table"
+        },
+        {
+          "kind": "official-key",
+          "locator": "existing independently checked answer table"
+        }
+      ],
+      "conditions": null,
+      "allChoiceReasons": [
+        {
+          "label": "ア",
+          "statement": "(1) ティルト・キャブのキャブを傾けるための補助装置には、コイル・スプリングやトーション・スプリングが採用されている。",
+          "reason": "適切。傾動を補助するばねを用いる。",
+          "reasonSha256": "71fa62f8080529ae38e351cf0977ddab571d3549e44529fb72c2d134130756f4",
+          "independentStatementVerdict": "true",
+          "technicalAssessment": "ティルト補助にばねを用いる。",
+          "evidence": [
+            "official-original:p5:No15",
+            "official-key",
+            "official-key"
+          ],
+          "reasonDisposition": "reviewed-question-held"
+        },
+        {
+          "label": "イ",
+          "statement": "(2) ティルト・キャブのアンダ・ボデーの強度・剛性は、主としてシャシ・フレームによって確保されている。",
+          "reason": "不適切。キャブのアンダボデーの強度をシャシフレームが主として確保するわけではない。",
+          "reasonSha256": "81f03e68b6937489cf9f334910cd99c8de6475c44780795e63d15cdeb0b91277",
+          "independentStatementVerdict": "false",
+          "technicalAssessment": "キャブ床強度をフレーム主体で確保とは言えない。",
+          "evidence": [
+            "official-original:p5:No15",
+            "official-key",
+            "official-key"
+          ],
+          "reasonDisposition": "reviewed-question-held"
+        },
+        {
+          "label": "ウ",
+          "statement": "(3) ティルト・キャブのキャブ・フック機構には、走行中にフックが外れないように、セーフティ・ロックが設けられている。",
+          "reason": "適切。走行中の誤解放を防ぐ安全ロックがある。",
+          "reasonSha256": "85ee46b3df22debfdf51919cfdfb3231f23b62621384e1780713c32ceaef61a6",
+          "independentStatementVerdict": "true",
+          "technicalAssessment": "フックの安全ロック。",
+          "evidence": [
+            "official-original:p5:No15",
+            "official-key",
+            "official-key"
+          ],
+          "reasonDisposition": "reviewed-question-held"
+        },
+        {
+          "label": "エ",
+          "statement": "(4) フル・フローティング式キャブ・サスペンションは、キャブとシャシ・フレームの間にスプリングを設けて、浮動状態にしたものである。",
+          "reason": "適切。キャブをばねで支持し振動を緩和する方式。",
+          "reasonSha256": "3376cb5cfc34ca4af82ff5ab66889e4b6b40c83ffd2461dc4ca17d59e252fc09",
+          "independentStatementVerdict": "true",
+          "technicalAssessment": "ばね支持のフローティングキャブ。",
+          "evidence": [
+            "official-original:p5:No15",
+            "official-key",
+            "official-key"
+          ],
+          "reasonDisposition": "reviewed-question-held"
+        }
+      ],
+      "status": "HOLD",
+      "holds": [
+        "ティルトキャブ床構造・コイル/トーション採用・安全フック・フローティング支持の一式を直接示すOEM資料が未確保。"
+      ],
+      "repairs": [],
+      "candidateManuscriptSha256": "58f3cbf3e8c75126d49a51fbbdb38ccb324c13d6e0f1a516b4bdbf4bb1f5787c",
+      "protectedFieldsUnchanged": true
+    },
+    {
+      "id": "jidosha-2026-first-body-q16",
+      "manuscriptSha256": "dc93626d5e635b72f04d2ec916a60c1b7f5cfbdbaf652ab1e2335edf120128f4",
+      "hashContract": "SHA256(UTF8(JSON.stringify(parsed question object))); original property order retained",
+      "fixedCommit": "6f4253b9381e3030863e38dfe75b5ca4068ba526",
+      "fixedBlobSha": "320fa720a1c2326e48c910b4eeaff32c92c7137d",
+      "fixedCommitTargetIdentical": true,
+      "officialOriginal": {
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_bo.pdf",
+        "sha256": "8e824d5f4c06d0db087383868ffd2996e331e28246d42ca4dcb02bf576f91f24",
+        "localFile": "sources/20261004_bo.pdf",
+        "localSha256": "8e824d5f4c06d0db087383868ffd2996e331e28246d42ca4dcb02bf576f91f24",
+        "physicalPages": [
+          6
+        ],
+        "locator": "No.16",
+        "visuallyReviewed": true
+      },
+      "officialKey": {
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_kai.pdf",
+        "sha256": "7f3a3405cd428510d0d585ceb96425c0b3ec9fd30c80696607fa5c595f20f23d",
+        "physicalPage": 1,
+        "subject": "body",
+        "qNumber": 16,
+        "answer": "ア",
+        "number": "1",
+        "storedTableMatches": true,
+        "transcriptionReview": "Existing independent 610-answer review reused; no new full-table transcription counted."
+      },
+      "figureReceipts": [],
+      "evidence": [
+        "official-original:p6:No16",
+        "official-key",
+        "official-key"
+      ],
+      "technicalEvidence": [
+        {
+          "kind": "official-original",
+          "locator": "p6:No16"
+        },
+        {
+          "kind": "official-key",
+          "locator": "existing independently checked answer table"
+        },
+        {
+          "kind": "official-key",
+          "locator": "existing independently checked answer table"
+        }
+      ],
+      "conditions": null,
+      "allChoiceReasons": [
+        {
+          "label": "ア",
+          "statement": "(1) （イ）正／（ロ）正／（ハ）正",
+          "reason": "適切。三記述ともハンマリング作業の要点に合う。",
+          "reasonSha256": "543fd9e1903bf784362479b1c5169229b9586f8e7fed4794d7b5b8dec53257c3",
+          "independentStatementVerdict": "true",
+          "technicalAssessment": "三文とも正しいとする公式組合せ。",
+          "evidence": [
+            "official-original:p6:No16",
+            "official-key",
+            "official-key"
+          ],
+          "reasonDisposition": "reviewed-question-held"
+        },
+        {
+          "label": "イ",
+          "statement": "(2) （イ）誤／（ロ）正／（ハ）正",
+          "reason": "不適切。（イ）の仕上げ作業はオン・ドリーである。",
+          "reasonSha256": "44bf1fe4a555b420920d10aac2fc009146b22c00b52dd99b3926ba4c80c50fcb",
+          "independentStatementVerdict": "false",
+          "technicalAssessment": "（イ）を誤とするが、仕上げのオン・ドリーを一次作業手順で要確認。",
+          "evidence": [
+            "official-original:p6:No16",
+            "official-key",
+            "official-key"
+          ],
+          "reasonDisposition": "reviewed-question-held"
+        },
+        {
+          "label": "ウ",
+          "statement": "(3) （イ）正／（ロ）誤／（ハ）正",
+          "reason": "不適切。（ロ）のハンマとドリーの位置判断は必要。",
+          "reasonSha256": "e93fa584057415c4b7c85be8fc4e4a5b6e0d59da7ac877893d1adc41b6f2180a",
+          "independentStatementVerdict": "false",
+          "technicalAssessment": "（ロ）の視触覚による瞬時の判断を要確認。",
+          "evidence": [
+            "official-original:p6:No16",
+            "official-key",
+            "official-key"
+          ],
+          "reasonDisposition": "reviewed-question-held"
+        },
+        {
+          "label": "エ",
+          "statement": "(4) （イ）正／（ロ）正／（ハ）誤",
+          "reason": "不適切。（ハ）の小指側を主に使う保持方法も適切。",
+          "reasonSha256": "b2f86338f625d4762dc17a0246fdc5ef044e6147bf66b9de6599fe4270da2d08",
+          "independentStatementVerdict": "false",
+          "technicalAssessment": "（ハ）の小指中心の握り方を要確認。",
+          "evidence": [
+            "official-original:p6:No16",
+            "official-key",
+            "official-key"
+          ],
+          "reasonDisposition": "reviewed-question-held"
+        }
+      ],
+      "status": "HOLD",
+      "holds": [
+        "オン・ドリーの仕上げ用途、オフ・ドリーの位置判断、指定された指の握り方を直接示す一次教育資料が未確保。"
+      ],
+      "repairs": [],
+      "candidateManuscriptSha256": "dc93626d5e635b72f04d2ec916a60c1b7f5cfbdbaf652ab1e2335edf120128f4",
+      "protectedFieldsUnchanged": true
+    },
+    {
+      "id": "jidosha-2026-first-body-q17",
+      "manuscriptSha256": "48fa67f52e2449b139ff3b445e5f88fb029d757cb65767afa1b800642e174f3a",
+      "hashContract": "SHA256(UTF8(JSON.stringify(parsed question object))); original property order retained",
+      "fixedCommit": "6f4253b9381e3030863e38dfe75b5ca4068ba526",
+      "fixedBlobSha": "320fa720a1c2326e48c910b4eeaff32c92c7137d",
+      "fixedCommitTargetIdentical": true,
+      "officialOriginal": {
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_bo.pdf",
+        "sha256": "8e824d5f4c06d0db087383868ffd2996e331e28246d42ca4dcb02bf576f91f24",
+        "localFile": "sources/20261004_bo.pdf",
+        "localSha256": "8e824d5f4c06d0db087383868ffd2996e331e28246d42ca4dcb02bf576f91f24",
+        "physicalPages": [
+          6
+        ],
+        "locator": "No.17",
+        "visuallyReviewed": true
+      },
+      "officialKey": {
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_kai.pdf",
+        "sha256": "7f3a3405cd428510d0d585ceb96425c0b3ec9fd30c80696607fa5c595f20f23d",
+        "physicalPage": 1,
+        "subject": "body",
+        "qNumber": 17,
+        "answer": "ウ",
+        "number": "3",
+        "storedTableMatches": true,
+        "transcriptionReview": "Existing independent 610-answer review reused; no new full-table transcription counted."
+      },
+      "figureReceipts": [],
+      "evidence": [
+        "official-original:p6:No17",
+        "official-key",
+        "official-key"
+      ],
+      "technicalEvidence": [
+        {
+          "kind": "official-original",
+          "locator": "p6:No17"
+        },
+        {
+          "kind": "official-key",
+          "locator": "existing independently checked answer table"
+        },
+        {
+          "kind": "official-key",
+          "locator": "existing independently checked answer table"
+        }
+      ],
+      "conditions": null,
+      "allChoiceReasons": [
+        {
+          "label": "ア",
+          "statement": "(1) 1つ",
+          "reason": "不適切。適切な記述は3つある。",
+          "reasonSha256": "0676a684223aae1ba18765935dd4e603e8889826da79b9a8e964bd853775eea8",
+          "independentStatementVerdict": "false",
+          "technicalAssessment": "（イ）（ロ）（ニ）の3つを正とするなら1つではない。",
+          "evidence": [
+            "official-original:p6:No17",
+            "official-key",
+            "official-key"
+          ],
+          "reasonDisposition": "reviewed-question-held"
+        },
+        {
+          "label": "イ",
+          "statement": "(2) 2つ",
+          "reason": "不適切。（イ）（ロ）（ニ）の3つを数える。",
+          "reasonSha256": "0d50fae2ba89ef4b9a56d71fa356fc3412746f081717a2bddde39e32b88495e3",
+          "independentStatementVerdict": "false",
+          "technicalAssessment": "3つであって2つではない。",
+          "evidence": [
+            "official-original:p6:No17",
+            "official-key",
+            "official-key"
+          ],
+          "reasonDisposition": "reviewed-question-held"
+        },
+        {
+          "label": "ウ",
+          "statement": "(3) 3つ",
+          "reason": "適切。（ハ）だけが誤り。",
+          "reasonSha256": "6b6e2510a3a4fb1c7d642c14baa680812a908360f58f60e7e834f3cf9f2f75e9",
+          "independentStatementVerdict": "true",
+          "technicalAssessment": "薄い高張力外板を一律に不向きとする（ハ）が誤り。",
+          "evidence": [
+            "official-original:p6:No17",
+            "official-key",
+            "official-key"
+          ],
+          "reasonDisposition": "reviewed-question-held"
+        },
+        {
+          "label": "エ",
+          "statement": "(4) 4つ",
+          "reason": "不適切。薄い外板に不向きとする（ハ）は誤り。",
+          "reasonSha256": "0cf1f9bfdd8b2564d9fbbde871a79a34b089f2342f8dcad40be1bd5ef3ce0093",
+          "independentStatementVerdict": "false",
+          "technicalAssessment": "（ハ）が誤りなので4つではない。",
+          "evidence": [
+            "official-original:p6:No17",
+            "official-key",
+            "official-key"
+          ],
+          "reasonDisposition": "reviewed-question-held"
+        }
+      ],
+      "status": "HOLD",
+      "holds": [
+        "高張力薄板への揉み出し板金の適用可否を塗膜・板厚・損傷条件別に示すOEM又は工具メーカー一次資料が未確保。"
+      ],
+      "repairs": [],
+      "candidateManuscriptSha256": "48fa67f52e2449b139ff3b445e5f88fb029d757cb65767afa1b800642e174f3a",
+      "protectedFieldsUnchanged": true
+    },
+    {
+      "id": "jidosha-2026-first-body-q18",
+      "manuscriptSha256": "fb0f2eb10eda36e0a7202c3b456f34d99100d838d3a400342dbe4f18d24ec3dc",
+      "hashContract": "SHA256(UTF8(JSON.stringify(parsed question object))); original property order retained",
+      "fixedCommit": "6f4253b9381e3030863e38dfe75b5ca4068ba526",
+      "fixedBlobSha": "320fa720a1c2326e48c910b4eeaff32c92c7137d",
+      "fixedCommitTargetIdentical": true,
+      "officialOriginal": {
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_bo.pdf",
+        "sha256": "8e824d5f4c06d0db087383868ffd2996e331e28246d42ca4dcb02bf576f91f24",
+        "localFile": "sources/20261004_bo.pdf",
+        "localSha256": "8e824d5f4c06d0db087383868ffd2996e331e28246d42ca4dcb02bf576f91f24",
+        "physicalPages": [
+          6
+        ],
+        "locator": "No.18",
+        "visuallyReviewed": true
+      },
+      "officialKey": {
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_kai.pdf",
+        "sha256": "7f3a3405cd428510d0d585ceb96425c0b3ec9fd30c80696607fa5c595f20f23d",
+        "physicalPage": 1,
+        "subject": "body",
+        "qNumber": 18,
+        "answer": "イ",
+        "number": "2",
+        "storedTableMatches": true,
+        "transcriptionReview": "Existing independent 610-answer review reused; no new full-table transcription counted."
+      },
+      "figureReceipts": [],
+      "evidence": [
+        "official-original:p6:No18",
+        "official-key",
+        "https://www.3m.com/3M/en_US/collision-repair-us/resources/collision-articles/full-story/?storyid=2fc00ae9-7a50-475e-8d67-e92e4c6b239c:cavity wax and seam sealants",
+        "https://www.3m.com/3M/en_US/collision-repair-us/applications/seam-sealers-and-coatings/:spot welding through uncured sealer; product and OEM conditions"
+      ],
+      "technicalEvidence": [
+        {
+          "kind": "official-original",
+          "locator": "p6:No18"
+        },
+        {
+          "kind": "official-key",
+          "locator": "existing independently checked answer table"
+        },
+        {
+          "kind": "direct-primary-url",
+          "url": "https://www.3m.com/3M/en_US/collision-repair-us/resources/collision-articles/full-story/?storyid=2fc00ae9-7a50-475e-8d67-e92e4c6b239c",
+          "locator": "cavity wax and seam sealants"
+        },
+        {
+          "kind": "direct-primary-url",
+          "url": "https://www.3m.com/3M/en_US/collision-repair-us/applications/seam-sealers-and-coatings/",
+          "locator": "spot welding through uncured sealer; product and OEM conditions"
+        }
+      ],
+      "conditions": null,
+      "allChoiceReasons": [
+        {
+          "label": "ア",
+          "statement": "(1) 浸透しやすく乾かないのが特長の車体防錆剤は、内部防錆剤とも呼ぶ。",
+          "reason": "適切。内部防錆剤は浸透・残留して閉断面を保護する。",
+          "reasonSha256": "30527417caf292a647867b45ebe201029671b797da8169ff71f2bd7e7b084d8d",
+          "independentStatementVerdict": "true",
+          "technicalAssessment": "内部防錆剤は浸透し未乾燥状態で閉断面保護。",
+          "evidence": [
+            "official-original:p6:No18",
+            "official-key",
+            "https://www.3m.com/3M/en_US/collision-repair-us/resources/collision-articles/full-story/?storyid=2fc00ae9-7a50-475e-8d67-e92e4c6b239c:cavity wax and seam sealants",
+            "https://www.3m.com/3M/en_US/collision-repair-us/applications/seam-sealers-and-coatings/:spot welding through uncured sealer; product and OEM conditions"
+          ],
+          "reasonDisposition": "accepted"
+        },
+        {
+          "label": "イ",
+          "statement": "(2) 各接合部品の継ぎ合わせ部の周囲は防水や防湿のため、すき間がないようにスプレ式防食剤（車体防食剤）を塗布する。",
+          "reason": "不適切。継ぎ目を密閉するのは適切なシーリング材である。",
+          "reasonSha256": "905f89a2b953412f369cd080d07ca133acc6081ca64b19a19923c90a32406df7",
+          "independentStatementVerdict": "false",
+          "technicalAssessment": "継ぎ目の水封はシーラで、スプレ防食剤の目的と異なる。",
+          "evidence": [
+            "official-original:p6:No18",
+            "official-key",
+            "https://www.3m.com/3M/en_US/collision-repair-us/resources/collision-articles/full-story/?storyid=2fc00ae9-7a50-475e-8d67-e92e4c6b239c:cavity wax and seam sealants",
+            "https://www.3m.com/3M/en_US/collision-repair-us/applications/seam-sealers-and-coatings/:spot welding through uncured sealer; product and OEM conditions"
+          ],
+          "reasonDisposition": "accepted"
+        },
+        {
+          "label": "ウ",
+          "statement": "(3) 溶接組み付けをする新部品の取り替え作業の場合、その接合部は塗膜や汚れを完全に除去し、平滑仕上げを行った後に必ずスポット・シーラを塗布してから溶接する。",
+          "reason": "適切。接合部の前処理とスポットシーラ塗布で腐食を防ぐ。",
+          "reasonSha256": "1b8d11eacb854dd34fdd0aab35cdbf5bdeb28850a0e2d9100010fac983f1f9e3",
+          "independentStatementVerdict": "true",
+          "technicalAssessment": "溶接前スポットシーラは対応品と指定手順で用いる。無条件の全車種適用と読まない。",
+          "evidence": [
+            "official-original:p6:No18",
+            "official-key",
+            "https://www.3m.com/3M/en_US/collision-repair-us/resources/collision-articles/full-story/?storyid=2fc00ae9-7a50-475e-8d67-e92e4c6b239c:cavity wax and seam sealants",
+            "https://www.3m.com/3M/en_US/collision-repair-us/applications/seam-sealers-and-coatings/:spot welding through uncured sealer; product and OEM conditions"
+          ],
+          "reasonDisposition": "accepted"
+        },
+        {
+          "label": "エ",
+          "statement": "(4) 発泡充てん剤は、すき間を無くすことにより、水分の浸入を防いで錆を防ぐだけではなく、しゃ音対策や強度を維持する役目も果たしている。",
+          "reason": "適切。発泡材は水侵入や騒音の抑制にも使う。",
+          "reasonSha256": "8385247b85e3906494926b271f22a0e26bd96051d4b1b24c0541b49231bd015d",
+          "independentStatementVerdict": "true",
+          "technicalAssessment": "発泡充填材は水分侵入・騒音を抑える。強度寄与は指定位置/製品依存。",
+          "evidence": [
+            "official-original:p6:No18",
+            "official-key",
+            "https://www.3m.com/3M/en_US/collision-repair-us/resources/collision-articles/full-story/?storyid=2fc00ae9-7a50-475e-8d67-e92e4c6b239c:cavity wax and seam sealants",
+            "https://www.3m.com/3M/en_US/collision-repair-us/applications/seam-sealers-and-coatings/:spot welding through uncured sealer; product and OEM conditions"
+          ],
+          "reasonDisposition": "accepted"
+        }
+      ],
+      "status": "ACCEPT_WITH_REPAIR",
+      "holds": [],
+      "repairs": [
+        {
+          "field": "choiceExplanations.ウ",
+          "before": "適切。接合部の前処理とスポットシーラ塗布で腐食を防ぐ。",
+          "after": "適切。溶接する接合面を指定手順で下処理し、スポット溶接に対応するシーラを使用して腐食を防ぐ。実際の材料・塗布箇所は車種修理書と製品手順に従う。",
+          "why": "「必ず」を無条件の全車種・全製品に一般化しない適用条件を補う。"
+        },
+        {
+          "field": "choiceExplanations.エ",
+          "before": "適切。発泡材は水侵入や騒音の抑制にも使う。",
+          "after": "適切。指定位置の発泡充てん材は水分侵入の抑制、遮音に用いられ、指定された構造では強度維持にも寄与する。",
+          "why": "発泡材の強度寄与をすべての製品・位置に一般化しない。"
+        }
+      ],
+      "candidateManuscriptSha256": "0179ae0a204d35fdc26cda800145553992f2bee919304f1a307fb8a16d856201",
+      "protectedFieldsUnchanged": true
+    },
+    {
+      "id": "jidosha-2026-first-body-q19",
+      "manuscriptSha256": "f00911fbb8bf087a3443a4330ca31991702489593caa3f4b6ec6660cc56e59e9",
+      "hashContract": "SHA256(UTF8(JSON.stringify(parsed question object))); original property order retained",
+      "fixedCommit": "6f4253b9381e3030863e38dfe75b5ca4068ba526",
+      "fixedBlobSha": "320fa720a1c2326e48c910b4eeaff32c92c7137d",
+      "fixedCommitTargetIdentical": true,
+      "officialOriginal": {
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_bo.pdf",
+        "sha256": "8e824d5f4c06d0db087383868ffd2996e331e28246d42ca4dcb02bf576f91f24",
+        "localFile": "sources/20261004_bo.pdf",
+        "localSha256": "8e824d5f4c06d0db087383868ffd2996e331e28246d42ca4dcb02bf576f91f24",
+        "physicalPages": [
+          7
+        ],
+        "locator": "No.19",
+        "visuallyReviewed": true
+      },
+      "officialKey": {
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_kai.pdf",
+        "sha256": "7f3a3405cd428510d0d585ceb96425c0b3ec9fd30c80696607fa5c595f20f23d",
+        "physicalPage": 1,
+        "subject": "body",
+        "qNumber": 19,
+        "answer": "エ",
+        "number": "4",
+        "storedTableMatches": true,
+        "transcriptionReview": "Existing independent 610-answer review reused; no new full-table transcription counted."
+      },
+      "figureReceipts": [],
+      "evidence": [
+        "official-original:p7:No19",
+        "official-key",
+        "official-key"
+      ],
+      "technicalEvidence": [
+        {
+          "kind": "official-original",
+          "locator": "p7:No19"
+        },
+        {
+          "kind": "official-key",
+          "locator": "existing independently checked answer table"
+        },
+        {
+          "kind": "official-key",
+          "locator": "existing independently checked answer table"
+        }
+      ],
+      "conditions": null,
+      "allChoiceReasons": [
+        {
+          "label": "ア",
+          "statement": "(1) 加熱と冷却の原理を応用して絞る方法では、電気絞りが一般的である。",
+          "reason": "適切。電気絞りは局所加熱・冷却を利用する。",
+          "reasonSha256": "38fcccc9d6ae604a4ebd87162b4f20b426d2f5a01d4dd039aeb36dda1fb4866e",
+          "independentStatementVerdict": "true",
+          "technicalAssessment": "電気絞りは局所の加熱・冷却を用いる。",
+          "evidence": [
+            "official-original:p7:No19",
+            "official-key",
+            "official-key"
+          ],
+          "reasonDisposition": "reviewed-question-held"
+        },
+        {
+          "label": "イ",
+          "statement": "(2) 電気絞りを行う場合、鋼板を電気で瞬間的に加熱して膨張させ、次にエア・ダスタ・ガンで急冷して収縮させる。",
+          "reason": "適切。瞬間加熱と冷却で伸びた板を収縮させる。",
+          "reasonSha256": "3f38bf0bfb7605dbbdbaf7d0c59904cf2e92d7df8059dbb8c5551ab24b1d969e",
+          "independentStatementVerdict": "true",
+          "technicalAssessment": "加熱膨張後の冷却収縮。",
+          "evidence": [
+            "official-original:p7:No19",
+            "official-key",
+            "official-key"
+          ],
+          "reasonDisposition": "reviewed-question-held"
+        },
+        {
+          "label": "ウ",
+          "statement": "(3) 加熱に時間がかかると広い範囲に熱が伝わり、全体が膨張するため、加熱時はできるだけ狭い範囲を高温にする。",
+          "reason": "適切。熱影響を広げないため短時間・狭い範囲で加熱する。",
+          "reasonSha256": "1c8443a82faa9a4155a3da0ae690992bf5aa966fb2a01952c2d6be2f215ac1c5",
+          "independentStatementVerdict": "true",
+          "technicalAssessment": "広域加熱を避ける。",
+          "evidence": [
+            "official-original:p7:No19",
+            "official-key",
+            "official-key"
+          ],
+          "reasonDisposition": "reviewed-question-held"
+        },
+        {
+          "label": "エ",
+          "statement": "(4) 灸すえにより絞りを行う場合の加熱温度は、900～950℃程度がよいとされている。",
+          "reason": "不適切。900～950℃は高すぎ、材質変化を招く。",
+          "reasonSha256": "f274e954b7438c9d65cf60256861dfc4a1c5d86f6f0978dd76287d78f8b46514",
+          "independentStatementVerdict": "false",
+          "technicalAssessment": "900〜950℃を適温とするのは誤り。",
+          "evidence": [
+            "official-original:p7:No19",
+            "official-key",
+            "official-key"
+          ],
+          "reasonDisposition": "reviewed-question-held"
+        }
+      ],
+      "status": "HOLD",
+      "holds": [
+        "灸すえの具体的な適温と電気絞りの冷却方法を示す板金機器メーカーの一次作業手順が未確保。"
+      ],
+      "repairs": [],
+      "candidateManuscriptSha256": "f00911fbb8bf087a3443a4330ca31991702489593caa3f4b6ec6660cc56e59e9",
+      "protectedFieldsUnchanged": true
+    },
+    {
+      "id": "jidosha-2026-first-body-q20",
+      "manuscriptSha256": "5607151d4beda307f0d6bd0ce0fcb2720332ea5901445617b00372cdab084f19",
+      "hashContract": "SHA256(UTF8(JSON.stringify(parsed question object))); original property order retained",
+      "fixedCommit": "6f4253b9381e3030863e38dfe75b5ca4068ba526",
+      "fixedBlobSha": "320fa720a1c2326e48c910b4eeaff32c92c7137d",
+      "fixedCommitTargetIdentical": true,
+      "officialOriginal": {
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_bo.pdf",
+        "sha256": "8e824d5f4c06d0db087383868ffd2996e331e28246d42ca4dcb02bf576f91f24",
+        "localFile": "sources/20261004_bo.pdf",
+        "localSha256": "8e824d5f4c06d0db087383868ffd2996e331e28246d42ca4dcb02bf576f91f24",
+        "physicalPages": [
+          7
+        ],
+        "locator": "No.20",
+        "visuallyReviewed": true
+      },
+      "officialKey": {
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_kai.pdf",
+        "sha256": "7f3a3405cd428510d0d585ceb96425c0b3ec9fd30c80696607fa5c595f20f23d",
+        "physicalPage": 1,
+        "subject": "body",
+        "qNumber": 20,
+        "answer": "ウ",
+        "number": "3",
+        "storedTableMatches": true,
+        "transcriptionReview": "Existing independent 610-answer review reused; no new full-table transcription counted."
+      },
+      "figureReceipts": [],
+      "evidence": [
+        "official-original:p7:No20",
+        "official-key",
+        "official-key"
+      ],
+      "technicalEvidence": [
+        {
+          "kind": "official-original",
+          "locator": "p7:No20"
+        },
+        {
+          "kind": "official-key",
+          "locator": "existing independently checked answer table"
+        },
+        {
+          "kind": "official-key",
+          "locator": "existing independently checked answer table"
+        }
+      ],
+      "conditions": null,
+      "allChoiceReasons": [
+        {
+          "label": "ア",
+          "statement": "(1) （イ）花火状き裂／（ロ）ウェブ・セクション／（ハ）フランジ",
+          "reason": "不適切。き裂形状・発生部位の双方が異なる。",
+          "reasonSha256": "479b61acc7f2160e374c93ceb2f622565e00ab053ab02167ba0060ba94e9e589",
+          "independentStatementVerdict": "false",
+          "technicalAssessment": "花火状・ウェブ起点は違う。",
+          "evidence": [
+            "official-original:p7:No20",
+            "official-key",
+            "official-key"
+          ],
+          "reasonDisposition": "reviewed-question-held"
+        },
+        {
+          "label": "イ",
+          "statement": "(2) （イ）花火状き裂／（ロ）フランジ／（ハ）ウェブ・セクション",
+          "reason": "不適切。進展経路は合うが花火状き裂ではない。",
+          "reasonSha256": "6a082685d5b3c083ab3ae7e5da22494cf2c4211700c5807fc7b8702574f69221",
+          "independentStatementVerdict": "false",
+          "technicalAssessment": "進展経路は一致するが花火状ではない。",
+          "evidence": [
+            "official-original:p7:No20",
+            "official-key",
+            "official-key"
+          ],
+          "reasonDisposition": "reviewed-question-held"
+        },
+        {
+          "label": "ウ",
+          "statement": "(3) （イ）直線き裂／（ロ）フランジ／（ハ）ウェブ・セクション",
+          "reason": "適切。直線き裂、フランジ、ウェブ・セクションの順。",
+          "reasonSha256": "631316d7268d0387db8b4dddc06b5f7c74c5b9119115131223ba0463506c8b38",
+          "independentStatementVerdict": "true",
+          "technicalAssessment": "直線き裂はフランジ端起点でウェブへ進むとする公式定義。",
+          "evidence": [
+            "official-original:p7:No20",
+            "official-key",
+            "official-key"
+          ],
+          "reasonDisposition": "reviewed-question-held"
+        },
+        {
+          "label": "エ",
+          "statement": "(4) （イ）直線き裂／（ロ）ウェブ・セクション／（ハ）フランジ",
+          "reason": "不適切。フランジとウェブの発生・到達位置が逆。",
+          "reasonSha256": "1974c8a330464c7592267f61b3710de47cab58169ead313e6a7b1aad0d16095e",
+          "independentStatementVerdict": "false",
+          "technicalAssessment": "ウェブ起点・フランジ到達の逆経路。",
+          "evidence": [
+            "official-original:p7:No20",
+            "official-key",
+            "official-key"
+          ],
+          "reasonDisposition": "reviewed-question-held"
+        }
+      ],
+      "status": "HOLD",
+      "holds": [
+        "「直線き裂」と「花火状き裂」のフランジ起点・ウェブ進展を図で定義するトラックメーカー一次補修書が未確保。"
+      ],
+      "repairs": [],
+      "candidateManuscriptSha256": "5607151d4beda307f0d6bd0ce0fcb2720332ea5901445617b00372cdab084f19",
+      "protectedFieldsUnchanged": true
+    }
+  ]
+}

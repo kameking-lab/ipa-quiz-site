@@ -6,6 +6,18 @@ export function cn(...inputs: ClassValue[]) {
 }
 
 export const EXAM_LABELS: Record<string, string> = {
+  "jidosha-1-small-written": "一級小型自動車整備士（筆記）",
+  "jidosha-2-gasoline": "二級ガソリン自動車整備士",
+  "jidosha-2-diesel": "二級ジーゼル自動車整備士",
+  "jidosha-2-chassis": "二級自動車シャシ整備士",
+  "jidosha-2-motorcycle": "二級二輪自動車整備士",
+  "jidosha-3-chassis": "三級自動車シャシ整備士",
+  "jidosha-3-gasoline": "三級自動車ガソリン・エンジン整備士",
+  "jidosha-3-diesel": "三級自動車ジーゼル・エンジン整備士",
+  "jidosha-3-motorcycle": "三級二輪自動車整備士",
+  "jidosha-body": "自動車車体整備士",
+  "jidosha-electrical": "自動車電気装置整備士",
+
   kanteishi: "不動産鑑定士",
   kaikeishi: "公認会計士",
   "riku-tech2": "第二級陸上無線技術士",

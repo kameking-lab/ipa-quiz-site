@@ -1,3 +1,4 @@
+import { getAutomotiveQuestions } from "./automotive";
 import type { ExamCode, Question } from "@/lib/questions/types";
 import { isPracticeReadyQuestion } from "@/lib/questions/filter";
 import { CHOSASHI_QUESTIONS } from "./chosashi";
@@ -97,6 +98,18 @@ import { LAND_SPECIAL2_QUESTIONS } from "./land-special2";
 import { LAND_SPECIAL3_QUESTIONS } from "./land-special3";
 
 export const QUESTIONS_BY_EXAM: Partial<Record<ExamCode, Question[]>> = {
+  ...(isExamPublished("jidosha-1-small-written") ? { "jidosha-1-small-written": getAutomotiveQuestions("jidosha-1-small-written") } : {}),
+  ...(isExamPublished("jidosha-2-gasoline") ? { "jidosha-2-gasoline": getAutomotiveQuestions("jidosha-2-gasoline") } : {}),
+  ...(isExamPublished("jidosha-2-diesel") ? { "jidosha-2-diesel": getAutomotiveQuestions("jidosha-2-diesel") } : {}),
+  ...(isExamPublished("jidosha-2-chassis") ? { "jidosha-2-chassis": getAutomotiveQuestions("jidosha-2-chassis") } : {}),
+  ...(isExamPublished("jidosha-2-motorcycle") ? { "jidosha-2-motorcycle": getAutomotiveQuestions("jidosha-2-motorcycle") } : {}),
+  ...(isExamPublished("jidosha-3-chassis") ? { "jidosha-3-chassis": getAutomotiveQuestions("jidosha-3-chassis") } : {}),
+  ...(isExamPublished("jidosha-3-gasoline") ? { "jidosha-3-gasoline": getAutomotiveQuestions("jidosha-3-gasoline") } : {}),
+  ...(isExamPublished("jidosha-3-diesel") ? { "jidosha-3-diesel": getAutomotiveQuestions("jidosha-3-diesel") } : {}),
+  ...(isExamPublished("jidosha-3-motorcycle") ? { "jidosha-3-motorcycle": getAutomotiveQuestions("jidosha-3-motorcycle") } : {}),
+  ...(isExamPublished("jidosha-body") ? { "jidosha-body": getAutomotiveQuestions("jidosha-body") } : {}),
+  ...(isExamPublished("jidosha-electrical") ? { "jidosha-electrical": getAutomotiveQuestions("jidosha-electrical") } : {}),
+
   ...(isExamPublished("kanteishi") ? { kanteishi: KANTEISHI_QUESTIONS.filter(isPracticeReadyQuestion) } : {}),
   ...(isExamPublished("kaikeishi") ? { kaikeishi: KAIKEISHI_QUESTIONS.filter(isPracticeReadyQuestion) } : {}),
   ...(isExamPublished("riku-tech2") ? { "riku-tech2": RIKU_TECH2_QUESTIONS.filter(isPracticeReadyQuestion) } : {}),

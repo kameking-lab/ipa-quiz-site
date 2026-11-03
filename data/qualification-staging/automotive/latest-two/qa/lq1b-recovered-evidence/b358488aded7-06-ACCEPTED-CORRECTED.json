@@ -1,0 +1,500 @@
+{
+  "schemaVersion": 1,
+  "state": "INDEPENDENTLY_ACCEPTED_CORRECTED_EXACT_OTHER_AUTHOR_DELTAS",
+  "reviewScope": [
+    "jidosha-2025-second-1-small-written-q09",
+    "jidosha-2025-second-1-small-written-q15",
+    "jidosha-2025-second-1-small-written-q16",
+    "jidosha-2025-second-1-small-written-q18"
+  ],
+  "newlyAcceptedCorrectedCount": 3,
+  "questionIds": [
+    "jidosha-2025-second-1-small-written-q15",
+    "jidosha-2025-second-1-small-written-q16",
+    "jidosha-2025-second-1-small-written-q18"
+  ],
+  "writtenOriginals": [
+    {
+      "answer": "イ",
+      "category": "一級小型自動車（筆記）",
+      "choiceExplanations": {
+        "ア": "駆動時のV3が0Vというだけでアース線断線を同列に挙げるのは不適切。アース線断線なら戻り側電位が上がり得る。",
+        "イ": "適切。駆動停止時に負荷側の導通経路が切れると、診断用5VがECU出力端子に現れてV3は約5Vとなる。V1は電源端子と出力端子との差なので約12−5＝7Vとなり、正常時の約12Vを示さない。駆動信号線・コイル・駆動アース線の断線が候補であり、ECUへの12V電源が失われたという意味ではない。",
+        "ウ": "コイルや接続部の接触抵抗が大きいと電流不足で動作しないので除外できない。",
+        "エ": "V4が0Vより高い場合はアース系統の断線や抵抗増大も原因になり得る。"
+      },
+      "choices": {
+        "ア": "(1) 駆動条件時、V3が0Vの場合は、駆動信号線の短絡（地絡）、ソレノイド・バルブの短絡（地絡）、駆動アース線の断線、エンジンECUの不良が考えられる。",
+        "イ": "(2) IG・ONの駆動停止条件時、V1に12Vが発生せず、V3に作動診断信号電圧（5V安定化電源電圧）が発生する場合は、駆動信号線の断線、ソレノイド・バルブの断線、駆動アース線の断線が考えられる。",
+        "ウ": "(3) 駆動条件時、V2に12Vが発生するにも関わらずソレノイド・バルブが作動しない場合は、ソレノイド・バルブの断線、駆動アース線の断線が考えられるが、ソレノイド・バルブの接触抵抗などの増大は考えられない。",
+        "エ": "(4) 駆動条件時、V4が0Vよりも高い場合は、ソレノイド・バルブの断線が考えられるが、ソレノイド・バルブのアース系統の異常（断線、接触抵抗などの増大）は考えられない。"
+      },
+      "difficulty": 4,
+      "examDate": "2026-03-22",
+      "explanation": "公式正答は(2)。図のV1は12V電源端子と駆動出力端子との電位差、V3は駆動出力端子の対地電圧である。駆動停止時は、正常ならコイルと駆動アース線を通して出力端子がほぼ0Vとなり、V1は約12Vになる。駆動信号線・コイル・駆動アース線のいずれかが断線するとこの経路が切れ、診断用の5V電源によりV3が約5Vへ上がるため、V1は約7Vとなって12Vを示さない。",
+      "explanationCoverage": "full",
+      "fiscalYear": 2025,
+      "hasImage": true,
+      "id": "jidosha-2025-second-1-small-written-q15",
+      "isCalculation": false,
+      "lastUpdated": "2026-10-11",
+      "needsReview": false,
+      "officialAnswerNumber": "2",
+      "officialQuestionStatus": "normal",
+      "officialReferenceUrls": [],
+      "permissionVerified": false,
+      "publicGo": 0,
+      "qNumber": 15,
+      "qualification": "jidousha-seibishi-gakka",
+      "question": "パージ・コントロール・ソレノイド・バルブなどに用いられている図1の駆動信号電圧特性をもつ図2のプランジャ式ソレノイド・バルブ回路に関する記述として、適切なものは次のうちどれか。",
+      "reviewNotes": [],
+      "season": "second",
+      "session": "gakka",
+      "sourceAnswerUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_kai.pdf",
+      "sourceAttribution": "出典：日本自動車整備振興会連合会 令和7年度第2回自動車整備技能登録試験 一級小型自動車（筆記） No.15",
+      "sourceFigureAssets": [
+        {
+          "physicalPage": 11,
+          "relativePath": "figures/jaspa-2025-second-1-small-written-p11.webp"
+        }
+      ],
+      "sourceFigureRequired": true,
+      "sourcePageReferences": [
+        {
+          "pdfSha256": "9f617d58b464c075aafc9bc042b60ac5b41798654846757490f1a7c7d2102b30",
+          "physicalPage": 11,
+          "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_1k_0.pdf#page=11"
+        }
+      ],
+      "sourcePages": [
+        11
+      ],
+      "sourcePdfUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_1k_0.pdf",
+      "subject": "1-small-written",
+      "term": "second",
+      "topicTags": [
+        "ソレノイドバルブ",
+        "故障診断"
+      ],
+      "type": "multiple-choice",
+      "year": 2025
+    },
+    {
+      "answer": "ア",
+      "category": "一級小型自動車（筆記）",
+      "choiceExplanations": {
+        "ア": "50から100km/hへの2倍速では遠心力は2倍ではなく2²＝4倍。",
+        "イ": "縦方向のばね定数は空気圧の影響が大きく乗り心地に、前後方向は駆動系振動に関わる。",
+        "ウ": "溝内空気のエア・ポンピングとトレッド剛性の変動がパターン・ノイズの要因になる。",
+        "エ": "TFVは周方向の力の変動、RFVは半径方向の力の変動を指す。"
+      },
+      "choices": {
+        "ア": "(1) 回転体に荷重のアンバランスがあると、回転速度の自乗に比例した遠心力が発生し振動強制力となり、タイヤにアンバランスがある車両の車速が50km/hから100km/hになった場合、2倍の遠心力（振動強制力）が発生しシェイクやフラッタの振動源となる。",
+        "イ": "(2) タイヤのばね定数は縦ばね定数と前後ばね定数に分けられ、縦ばね定数は乗り心地に影響し、タイヤの構造、形状などの要因によるが、特に、大きな要因は空気圧である。また、前後ばね定数は駆動系の前後方向の振動に影響する。",
+        "ウ": "(3) パターン・ノイズは、タイヤが回転する際にトレッド・パターンの溝の部分が繰り返し変形し、溝の中の空気の流れに起因するエア・ポンピング音とトレッド剛性の変化が接地面内で振動強制力となることで発生する。",
+        "エ": "(4) フォース・バリエーションは剛性の均一性のことで、三つのフォース・バリエーションがあり、そのうちのTFV（トラクティブ・フォース・バリエーション）とは、タイヤの周方向（回転方向）の力の変動の大きさをいう。"
+      },
+      "difficulty": 3,
+      "examDate": "2026-03-22",
+      "explanation": "公式正答は(1)。遠心力は回転速度の二乗に比例するため、車速が2倍なら振動強制力は4倍である。",
+      "explanationCoverage": "full",
+      "fiscalYear": 2025,
+      "hasImage": false,
+      "id": "jidosha-2025-second-1-small-written-q16",
+      "isCalculation": true,
+      "lastUpdated": "2026-10-11",
+      "needsReview": false,
+      "officialAnswerNumber": "1",
+      "officialQuestionStatus": "normal",
+      "officialReferenceUrls": [],
+      "permissionVerified": false,
+      "publicGo": 0,
+      "qNumber": 16,
+      "qualification": "jidousha-seibishi-gakka",
+      "question": "タイヤに関する記述として、不適切なものは次のうちどれか。",
+      "reviewNotes": [],
+      "season": "second",
+      "session": "gakka",
+      "sourceAnswerUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_kai.pdf",
+      "sourceAttribution": "出典：日本自動車整備振興会連合会 令和7年度第2回自動車整備技能登録試験 一級小型自動車（筆記） No.16",
+      "sourceFigureAssets": [],
+      "sourceFigureRequired": false,
+      "sourcePageReferences": [
+        {
+          "pdfSha256": "9f617d58b464c075aafc9bc042b60ac5b41798654846757490f1a7c7d2102b30",
+          "physicalPage": 12,
+          "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_1k_0.pdf#page=12"
+        }
+      ],
+      "sourcePages": [
+        12
+      ],
+      "sourcePdfUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_1k_0.pdf",
+      "subject": "1-small-written",
+      "term": "second",
+      "topicTags": [
+        "タイヤ",
+        "振動騒音"
+      ],
+      "type": "multiple-choice",
+      "year": 2025
+    },
+    {
+      "answer": "ア",
+      "category": "一級小型自動車（筆記）",
+      "choiceExplanations": {
+        "ア": "√(1.25/1.25)=1なので元の周波数と同じ。",
+        "イ": "ばね定数だけ1.25倍なら周波数は√1.25倍。質量も同倍率なので1.25倍にはならない。",
+        "ウ": "0.8は質量倍率1.25の逆数であり、固有振動数の倍率そのものではない。仮に質量だけが1.25倍なら周波数は√(1/1.25)≒0.894倍だが、本問ではばね定数も1.25倍なので、周波数比は√(1.25/1.25)＝1となる。",
+        "エ": "両方の変更後もk/m比は一定で、半分にはならない。"
+      },
+      "choices": {
+        "ア": "(1) 固有振動数は、変化しない。",
+        "イ": "(2) 固有振動数は、変更前の固有振動数の1.25倍になる。",
+        "ウ": "(3) 固有振動数は、変更前の固有振動数の0.8倍になる。",
+        "エ": "(4) 固有振動数は、変更前の固有振動数の0.5倍になる。"
+      },
+      "difficulty": 3,
+      "examDate": "2026-03-22",
+      "explanation": "公式正答は(1)。固有振動数は√(ばね定数／質量)に比例する。ばね定数と質量がともに1.25倍となり、比が変わらない。",
+      "explanationCoverage": "full",
+      "fiscalYear": 2025,
+      "hasImage": true,
+      "id": "jidosha-2025-second-1-small-written-q18",
+      "isCalculation": true,
+      "lastUpdated": "2026-10-11",
+      "needsReview": false,
+      "officialAnswerNumber": "1",
+      "officialQuestionStatus": "normal",
+      "officialReferenceUrls": [],
+      "permissionVerified": false,
+      "publicGo": 0,
+      "qNumber": 18,
+      "qualification": "jidousha-seibishi-gakka",
+      "question": "図に示す「重りとばね」に対して、下記に示す二つの変更を行った場合の上下方向の固有振動数の変化に関する記述として、適切なものは次のうちどれか。変更内容：1.重りを質量が5/4倍のものと交換した。2.ばねを、ばね定数が1.25倍のものと交換した。",
+      "reviewNotes": [],
+      "season": "second",
+      "session": "gakka",
+      "sourceAnswerUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_kai.pdf",
+      "sourceAttribution": "出典：日本自動車整備振興会連合会 令和7年度第2回自動車整備技能登録試験 一級小型自動車（筆記） No.18",
+      "sourceFigureAssets": [
+        {
+          "physicalPage": 13,
+          "relativePath": "figures/jaspa-2025-second-1-small-written-p13.webp"
+        }
+      ],
+      "sourceFigureRequired": true,
+      "sourcePageReferences": [
+        {
+          "pdfSha256": "9f617d58b464c075aafc9bc042b60ac5b41798654846757490f1a7c7d2102b30",
+          "physicalPage": 13,
+          "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_1k_0.pdf#page=13"
+        }
+      ],
+      "sourcePages": [
+        13
+      ],
+      "sourcePdfUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_1k_0.pdf",
+      "subject": "1-small-written",
+      "term": "second",
+      "topicTags": [
+        "固有振動数",
+        "ばね質量系"
+      ],
+      "type": "multiple-choice",
+      "year": 2025
+    }
+  ],
+  "candidateBindings": [
+    {
+      "id": "jidosha-2025-second-1-small-written-q15",
+      "state": "ACCEPTED_CORRECTED_EXACT_PROPOSAL",
+      "decision": "The official high-side driver diagram decisively supports the corrected V1 endpoints and the off-state open-load diagnosis.",
+      "changedTextCheck": "V1 is between the 12 V supply and output node; V3 is output-to-body. With drive off, an intact coil/earth path holds the output near zero, so V1 is approximately 12 V. An open drive wire, coil or earth removes that path, and the drawn 5 V diagnostic source and resistor pull the output to approximately 5 V; V1 becomes approximately 12 - 5 = 7 V. This is not loss of ECU supply.",
+      "necessaryContextCheck": "Both Q15 figures and the four fault descriptions were checked for coherence with the modified main/option-2 reasons. Other reasons and official answer 2 remain unchanged.",
+      "calculation": {
+        "supplyV": 12,
+        "openLoadDiagnosticNodeV": 5,
+        "differentialV1": 7
+      },
+      "originalCandidateSha256": "9ef161a816ccd312108de38ea3c1370bc293792ca84538c086afc4970a0eff5b",
+      "originalCandidateHashConvention": "SHA256 UTF-8 json.dumps(ensure_ascii=False, sort_keys=True, separators=(comma,colon)) plus one trailing LF.",
+      "originalReleasePacket": {
+        "path": "C:\\Users\\kanet\\Documents\\Codex\\2026-10-23\\task-5\\output\\automotive-forward-20261023\\release-1small25a\\PACKET.json",
+        "sha256": "acd3d68eeda0c4099fb62e96554c88e2f3b5b9445fe8dfc8f51ff1410067f321"
+      },
+      "proposedDeltaFile": {
+        "path": "C:\\Users\\kanet\\Documents\\Codex\\2026-10-23\\task-98\\output\\release-1small25a-independent-review\\PROPOSED-CORRECTION-DELTA.json",
+        "sha256": "5f29ed2efab4b8551b8b16b6ac7c0f86179999b56797ca6b2fe359a0c8b7721f"
+      },
+      "proposedCandidateFile": {
+        "path": "C:\\Users\\kanet\\Documents\\Codex\\2026-10-23\\task-98\\output\\release-1small25a-independent-review\\proposed-candidates\\jidosha-2025-second-1-small-written-q15.json",
+        "sha256": "c6e3bd9ac59d01d037019dc56549fd910e7260e368bf3b08b25dfc11ad062ddd",
+        "bytes": 4051
+      },
+      "sourceBindings": {
+        "originalQuestion": {
+          "id": "jidosha-2025-second-1-small-written-q15",
+          "questionNumber": 15,
+          "examDate": "2026-03-22",
+          "subject": "1-small-written",
+          "sourcePath": "C:\\Users\\kanet\\Documents\\Codex\\2026-10-23\\task-5\\output\\automotive-forward-20261023\\release-1small25a\\sources\\jaspa-2025-second-1-small-written.pdf",
+          "sha256": "9f617d58b464c075aafc9bc042b60ac5b41798654846757490f1a7c7d2102b30",
+          "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_1k_0.pdf",
+          "physicalPages": [
+            11
+          ]
+        },
+        "officialKey": {
+          "path": "C:\\Users\\kanet\\Documents\\Codex\\2026-10-23\\task-5\\output\\automotive-forward-20261023\\release-1small25a\\sources\\jaspa-2025-second-answers.pdf",
+          "sha256": "2f73820401362ca24f052d8339bf20e4865dab2f2afe74b7c7b546b7b90d6701",
+          "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_kai.pdf",
+          "physicalPage": 1,
+          "column": "12 (1小)",
+          "row": 15,
+          "answerNumber": "2",
+          "answerLabel": "イ"
+        },
+        "sourcePageImageEvidence": [
+          {
+            "path": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\codex-takeover-20261011\\automotive-latest-two\\ocr\\jaspa-2025-second-1-small-written\\page-11.png",
+            "sha256": "4525e5e5554ac6c6f152375f5f3170f6b5866da40e4a4cd70049f969b54c93c2",
+            "bytes": 297606,
+            "physicalPage": 11,
+            "sourcePdfSha256": "9f617d58b464c075aafc9bc042b60ac5b41798654846757490f1a7c7d2102b30",
+            "use": "Existing original page image visually compared; no new render or OCR."
+          }
+        ],
+        "requiredFigureBindings": [
+          {
+            "bookId": "jaspa-2025-second-1-small-written",
+            "physicalPage": 11,
+            "pdfSha256": "9f617d58b464c075aafc9bc042b60ac5b41798654846757490f1a7c7d2102b30",
+            "officialUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_1k_0.pdf#page=11",
+            "originalQuestionIds": [
+              "jidosha-2025-second-1-small-written-q15"
+            ],
+            "relativePath": "figures/jaspa-2025-second-1-small-written-p11.webp",
+            "width": 1490,
+            "height": 2106,
+            "sha256": "4c7cefa61fc69a9b4b9faaba670ee13ed15957d01cefa8718a8c8ac23df86b16",
+            "bytes": 170318,
+            "processing": "Original PDF physical page rendered to PNG, then converted to WebP; no retouch or generated content.",
+            "localPath": "C:\\Users\\kanet\\Documents\\Codex\\2026-10-23\\task-5\\output\\automotive-forward-20261023\\release-1small25a\\figures\\jaspa-2025-second-1-small-written-p11.webp"
+          }
+        ],
+        "figureRequired": true
+      },
+      "independentlyReadOfficialAnswerNumber": "2",
+      "actualDiff": [
+        {
+          "op": "replace",
+          "path": "/explanation",
+          "before": "公式正答は(2)。駆動停止時のV1電源欠如とV3の5V診断電圧から、ソレノイド・バルブ側の導通経路が切れている可能性を切り分けられる。",
+          "value": "公式正答は(2)。図のV1は12V電源端子と駆動出力端子との電位差、V3は駆動出力端子の対地電圧である。駆動停止時は、正常ならコイルと駆動アース線を通して出力端子がほぼ0Vとなり、V1は約12Vになる。駆動信号線・コイル・駆動アース線のいずれかが断線するとこの経路が切れ、診断用の5V電源によりV3が約5Vへ上がるため、V1は約7Vとなって12Vを示さない。"
+        },
+        {
+          "op": "replace",
+          "path": "/choiceExplanations/イ",
+          "before": "V3の診断電圧が残っているのにV1側12Vがないため、駆動線・コイル・アース線の断線が候補となる。",
+          "value": "適切。駆動停止時に負荷側の導通経路が切れると、診断用5VがECU出力端子に現れてV3は約5Vとなる。V1は電源端子と出力端子との差なので約12−5＝7Vとなり、正常時の約12Vを示さない。駆動信号線・コイル・駆動アース線の断線が候補であり、ECUへの12V電源が失われたという意味ではない。"
+        }
+      ],
+      "unlistedFieldsObjectIdenticalToOriginal": true,
+      "unlistedStringValuesByteIdenticalInUtf8": true,
+      "newSubstantiveEditsByDeltaReviewer": 0,
+      "authorSourcesModified": false,
+      "finalCandidateFile": {
+        "path": "C:\\Users\\kanet\\Documents\\Codex\\2026-10-23\\task-99\\output\\release-1small25a-delta-check-20261023\\accepted-corrected\\jidosha-2025-second-1-small-written-q15.json",
+        "sha256": "c6e3bd9ac59d01d037019dc56549fd910e7260e368bf3b08b25dfc11ad062ddd",
+        "bytes": 4051,
+        "byteIdenticalToOtherReviewerExactProposal": true
+      }
+    },
+    {
+      "id": "jidosha-2025-second-1-small-written-q16",
+      "state": "ACCEPTED_CORRECTED_EXACT_PROPOSAL",
+      "decision": "Original page 12 explicitly prints 三つ; the one-word delta restores the source option without adding a second incorrect answer.",
+      "changedTextCheck": "Only choices.エ changes 二つ to 三つ. TFV circumferential-force wording and all other text remain identical.",
+      "necessaryContextCheck": "The prompt asks for the inappropriate statement. Option 1 retains its intentional twofold-force error; doubling speed gives fourfold imbalance force, consistent with official answer 1.",
+      "calculation": {
+        "speedRatio": 2.0,
+        "forceRatio": 4.0
+      },
+      "originalCandidateSha256": "db4c4a1ba10b986cbd61382035eeb039ad99ecdfb51a01a1e049eb87d41d1691",
+      "originalCandidateHashConvention": "SHA256 UTF-8 json.dumps(ensure_ascii=False, sort_keys=True, separators=(comma,colon)) plus one trailing LF.",
+      "originalReleasePacket": {
+        "path": "C:\\Users\\kanet\\Documents\\Codex\\2026-10-23\\task-5\\output\\automotive-forward-20261023\\release-1small25a\\PACKET.json",
+        "sha256": "acd3d68eeda0c4099fb62e96554c88e2f3b5b9445fe8dfc8f51ff1410067f321"
+      },
+      "proposedDeltaFile": {
+        "path": "C:\\Users\\kanet\\Documents\\Codex\\2026-10-23\\task-98\\output\\release-1small25a-independent-review\\PROPOSED-CORRECTION-DELTA.json",
+        "sha256": "5f29ed2efab4b8551b8b16b6ac7c0f86179999b56797ca6b2fe359a0c8b7721f"
+      },
+      "proposedCandidateFile": {
+        "path": "C:\\Users\\kanet\\Documents\\Codex\\2026-10-23\\task-98\\output\\release-1small25a-independent-review\\proposed-candidates\\jidosha-2025-second-1-small-written-q16.json",
+        "sha256": "c16921ee61203a6cb08b3556f46f4076e990618e13c2a412a1ecb39fe8247f37",
+        "bytes": 3332
+      },
+      "sourceBindings": {
+        "originalQuestion": {
+          "id": "jidosha-2025-second-1-small-written-q16",
+          "questionNumber": 16,
+          "examDate": "2026-03-22",
+          "subject": "1-small-written",
+          "sourcePath": "C:\\Users\\kanet\\Documents\\Codex\\2026-10-23\\task-5\\output\\automotive-forward-20261023\\release-1small25a\\sources\\jaspa-2025-second-1-small-written.pdf",
+          "sha256": "9f617d58b464c075aafc9bc042b60ac5b41798654846757490f1a7c7d2102b30",
+          "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_1k_0.pdf",
+          "physicalPages": [
+            12
+          ]
+        },
+        "officialKey": {
+          "path": "C:\\Users\\kanet\\Documents\\Codex\\2026-10-23\\task-5\\output\\automotive-forward-20261023\\release-1small25a\\sources\\jaspa-2025-second-answers.pdf",
+          "sha256": "2f73820401362ca24f052d8339bf20e4865dab2f2afe74b7c7b546b7b90d6701",
+          "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_kai.pdf",
+          "physicalPage": 1,
+          "column": "12 (1小)",
+          "row": 16,
+          "answerNumber": "1",
+          "answerLabel": "ア"
+        },
+        "sourcePageImageEvidence": [
+          {
+            "path": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\codex-takeover-20261011\\automotive-latest-two\\ocr\\jaspa-2025-second-1-small-written\\page-12.png",
+            "sha256": "538919675e9296a0a0b263033c46eac8cdc697f69e2e0d572588008edc212fe4",
+            "bytes": 375563,
+            "physicalPage": 12,
+            "sourcePdfSha256": "9f617d58b464c075aafc9bc042b60ac5b41798654846757490f1a7c7d2102b30",
+            "use": "Existing original page image visually compared; no new render or OCR."
+          }
+        ],
+        "requiredFigureBindings": [],
+        "figureRequired": false
+      },
+      "independentlyReadOfficialAnswerNumber": "1",
+      "actualDiff": [
+        {
+          "op": "replace",
+          "path": "/choices/エ",
+          "before": "(4) フォース・バリエーションは剛性の均一性のことで、二つのフォース・バリエーションがあり、そのうちのTFV（トラクティブ・フォース・バリエーション）とは、タイヤの周方向（回転方向）の力の変動の大きさをいう。",
+          "value": "(4) フォース・バリエーションは剛性の均一性のことで、三つのフォース・バリエーションがあり、そのうちのTFV（トラクティブ・フォース・バリエーション）とは、タイヤの周方向（回転方向）の力の変動の大きさをいう。"
+        }
+      ],
+      "unlistedFieldsObjectIdenticalToOriginal": true,
+      "unlistedStringValuesByteIdenticalInUtf8": true,
+      "newSubstantiveEditsByDeltaReviewer": 0,
+      "authorSourcesModified": false,
+      "finalCandidateFile": {
+        "path": "C:\\Users\\kanet\\Documents\\Codex\\2026-10-23\\task-99\\output\\release-1small25a-delta-check-20261023\\accepted-corrected\\jidosha-2025-second-1-small-written-q16.json",
+        "sha256": "c16921ee61203a6cb08b3556f46f4076e990618e13c2a412a1ecb39fe8247f37",
+        "bytes": 3332,
+        "byteIdenticalToOtherReviewerExactProposal": true
+      }
+    },
+    {
+      "id": "jidosha-2025-second-1-small-written-q18",
+      "state": "ACCEPTED_CORRECTED_EXACT_PROPOSAL",
+      "decision": "The changed option-3 reasoning correctly distinguishes the inverse mass multiplier from the square root governing frequency.",
+      "changedTextCheck": "The source figure/table gives mass 5/4 and spring rate 1.25. For f proportional to sqrt(k/m), both changes give sqrt(1.25/1.25) = 1. A mass-only increase would give sqrt(1/1.25) = 0.894427..., not 0.8; the exact proposed explanation states this accurately.",
+      "necessaryContextCheck": "Only Q18 figure, the two parameter changes, ratios in the options, and main/option-3 reasons were checked. Q19 sharing the page was not reviewed.",
+      "calculation": {
+        "massMultiplier": 1.25,
+        "springMultiplier": 1.25,
+        "massOnlyFrequencyRatio": 0.8944271909999159,
+        "actualFrequencyRatio": 1.0
+      },
+      "originalCandidateSha256": "11f979772be1cbf792fce9f99cfda3140e4833e5629e98ca6f254a5f81f42eca",
+      "originalCandidateHashConvention": "SHA256 UTF-8 json.dumps(ensure_ascii=False, sort_keys=True, separators=(comma,colon)) plus one trailing LF.",
+      "originalReleasePacket": {
+        "path": "C:\\Users\\kanet\\Documents\\Codex\\2026-10-23\\task-5\\output\\automotive-forward-20261023\\release-1small25a\\PACKET.json",
+        "sha256": "acd3d68eeda0c4099fb62e96554c88e2f3b5b9445fe8dfc8f51ff1410067f321"
+      },
+      "proposedDeltaFile": {
+        "path": "C:\\Users\\kanet\\Documents\\Codex\\2026-10-23\\task-98\\output\\release-1small25a-independent-review\\PROPOSED-CORRECTION-DELTA.json",
+        "sha256": "5f29ed2efab4b8551b8b16b6ac7c0f86179999b56797ca6b2fe359a0c8b7721f"
+      },
+      "proposedCandidateFile": {
+        "path": "C:\\Users\\kanet\\Documents\\Codex\\2026-10-23\\task-98\\output\\release-1small25a-independent-review\\proposed-candidates\\jidosha-2025-second-1-small-written-q18.json",
+        "sha256": "6008486e4237d1072b05115a61a4142ebf48d0ad3756952aa926899a50fa6502",
+        "bytes": 2824
+      },
+      "sourceBindings": {
+        "originalQuestion": {
+          "id": "jidosha-2025-second-1-small-written-q18",
+          "questionNumber": 18,
+          "examDate": "2026-03-22",
+          "subject": "1-small-written",
+          "sourcePath": "C:\\Users\\kanet\\Documents\\Codex\\2026-10-23\\task-5\\output\\automotive-forward-20261023\\release-1small25a\\sources\\jaspa-2025-second-1-small-written.pdf",
+          "sha256": "9f617d58b464c075aafc9bc042b60ac5b41798654846757490f1a7c7d2102b30",
+          "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_1k_0.pdf",
+          "physicalPages": [
+            13
+          ]
+        },
+        "officialKey": {
+          "path": "C:\\Users\\kanet\\Documents\\Codex\\2026-10-23\\task-5\\output\\automotive-forward-20261023\\release-1small25a\\sources\\jaspa-2025-second-answers.pdf",
+          "sha256": "2f73820401362ca24f052d8339bf20e4865dab2f2afe74b7c7b546b7b90d6701",
+          "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_kai.pdf",
+          "physicalPage": 1,
+          "column": "12 (1小)",
+          "row": 18,
+          "answerNumber": "1",
+          "answerLabel": "ア"
+        },
+        "sourcePageImageEvidence": [
+          {
+            "path": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\codex-takeover-20261011\\automotive-latest-two\\ocr\\jaspa-2025-second-1-small-written\\page-13.png",
+            "sha256": "30b5540ef0bb92b5052633e4dc3aa16fb0df400286dbbc78e1cd5c35073c7db3",
+            "bytes": 278286,
+            "physicalPage": 13,
+            "sourcePdfSha256": "9f617d58b464c075aafc9bc042b60ac5b41798654846757490f1a7c7d2102b30",
+            "use": "Existing original page image visually compared; no new render or OCR."
+          }
+        ],
+        "requiredFigureBindings": [
+          {
+            "bookId": "jaspa-2025-second-1-small-written",
+            "physicalPage": 13,
+            "pdfSha256": "9f617d58b464c075aafc9bc042b60ac5b41798654846757490f1a7c7d2102b30",
+            "officialUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_1k_0.pdf#page=13",
+            "originalQuestionIds": [
+              "jidosha-2025-second-1-small-written-q18",
+              "jidosha-2025-second-1-small-written-q19"
+            ],
+            "relativePath": "figures/jaspa-2025-second-1-small-written-p13.webp",
+            "width": 1490,
+            "height": 2106,
+            "sha256": "ebbe2b48e0caf7cc80c4c3562c534e5b523381cd69531c3dd9f704293bad905e",
+            "bytes": 157218,
+            "processing": "Original PDF physical page rendered to PNG, then converted to WebP; no retouch or generated content.",
+            "localPath": "C:\\Users\\kanet\\Documents\\Codex\\2026-10-23\\task-5\\output\\automotive-forward-20261023\\release-1small25a\\figures\\jaspa-2025-second-1-small-written-p13.webp"
+          }
+        ],
+        "figureRequired": true
+      },
+      "independentlyReadOfficialAnswerNumber": "1",
+      "actualDiff": [
+        {
+          "op": "replace",
+          "path": "/choiceExplanations/ウ",
+          "before": "質量だけが増えたと扱う誤り。ばね定数も増えるため0.8倍にはならない。",
+          "value": "0.8は質量倍率1.25の逆数であり、固有振動数の倍率そのものではない。仮に質量だけが1.25倍なら周波数は√(1/1.25)≒0.894倍だが、本問ではばね定数も1.25倍なので、周波数比は√(1.25/1.25)＝1となる。"
+        }
+      ],
+      "unlistedFieldsObjectIdenticalToOriginal": true,
+      "unlistedStringValuesByteIdenticalInUtf8": true,
+      "newSubstantiveEditsByDeltaReviewer": 0,
+      "authorSourcesModified": false,
+      "finalCandidateFile": {
+        "path": "C:\\Users\\kanet\\Documents\\Codex\\2026-10-23\\task-99\\output\\release-1small25a-delta-check-20261023\\accepted-corrected\\jidosha-2025-second-1-small-written-q18.json",
+        "sha256": "6008486e4237d1072b05115a61a4142ebf48d0ad3756952aa926899a50fa6502",
+        "bytes": 2824,
+        "byteIdenticalToOtherReviewerExactProposal": true
+      }
+    }
+  ],
+  "unchangedPreviouslyAcceptedOriginalsRecounted": 0,
+  "repositoryIdGrowth": 0,
+  "publicationCount": 0
+}

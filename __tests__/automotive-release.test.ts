@@ -1,0 +1,69 @@
+// @vitest-environment node
+import { createHash } from "node:crypto";
+import fs from "node:fs";
+import path from "node:path";
+import { describe, expect, it } from "vitest";
+import { AUTOMOTIVE_QUESTIONS, getAutomotiveQuestions } from "@/data/questions/automotive";
+import metadata from "@/data/questions/automotive/qualifications.json";
+import reviewed from "@/data/questions/automotive/reviewed.json";
+import recovery from "@/data/qualification-staging/automotive/latest-two/qa/lq1b-recovery-ledger.json";
+import official from "@/data/qualification-staging/automotive/latest-two/official-answers.json";
+import { QUESTIONS_BY_EXAM } from "@/data/questions";
+import { getQuestionsForExam } from "@/lib/questions/get-questions";
+import { isPracticeReadyQuestion } from "@/lib/questions/filter";
+import { isExamPublished } from "@/lib/qualifications/catalog";
+import { ALL_EXAM_CODES, EXAM_CONFIGS } from "@/lib/exam-config";
+import type { AutomotiveExamCode } from "@/lib/questions/types";
+
+describe("recovered automotive release", () => {
+  it("connects all 11 separate qualifications through eager and lazy registries", async () => {
+    expect(metadata).toHaveLength(11);
+    for (const row of metadata) {
+      const exam = row.exam as AutomotiveExamCode;
+      const questions = getAutomotiveQuestions(exam);
+      expect(isExamPublished(exam), exam).toBe(true);
+      expect(EXAM_CONFIGS[exam].sessions[0].expectedQuestions).toBe(row.questionsPerPaper);
+      expect(ALL_EXAM_CODES as string[]).not.toContain(exam);
+      expect(questions, exam).toHaveLength(row.reviewed);
+      expect(QUESTIONS_BY_EXAM[exam], exam).toEqual(questions);
+      expect(await getQuestionsForExam(exam), exam).toEqual(questions);
+      expect(questions.every(isPracticeReadyQuestion), exam).toBe(true);
+    }
+  });
+
+  it("preserves accepted candidate bytes with matching receipt hashes and excludes unresolved originals", () => {
+    expect(AUTOMOTIVE_QUESTIONS).toHaveLength(385);
+    expect(new Set(AUTOMOTIVE_QUESTIONS.map((q) => q.id)).size).toBe(385);
+    expect(recovery.notYetReleasedIds).toHaveLength(225);
+    const ids = new Set(AUTOMOTIVE_QUESTIONS.map((q) => q.id));
+    for (const id of recovery.notYetReleasedIds) expect(ids.has(id), id).toBe(false);
+    for (const q of reviewed) {
+      const row = recovery.rows.find((r) => r.id === q.id)!;
+      expect(createHash("sha256").update(JSON.stringify(q)).digest("hex"), q.id).toBe(row.candidateSha256);
+      expect(createHash("sha256").update(fs.readFileSync(path.join(process.cwd(), row.evidencePath))).digest("hex"), q.id).toBe(row.evidenceSha256);
+      if ("supportingEvidence" in row) {
+        for (const evidence of row.supportingEvidence ?? []) {
+          expect(createHash("sha256").update(fs.readFileSync(path.join(process.cwd(), evidence.path))).digest("hex"), q.id).toBe(evidence.sha256);
+        }
+      }
+    }
+  });
+
+  it("matches each official answer and retains all four explanations and required image bytes", () => {
+    const tables = official.tables as Record<string, Record<string, { answers: Array<{ qNumber: number; answer: string | string[] }> }>>;
+    for (const q of reviewed) {
+      const table = tables[`jaspa-${q.fiscalYear}-${q.term}`][q.subject];
+      expect(table.answers.find((r) => r.qNumber === q.qNumber)?.answer, q.id).toEqual(q.answer);
+      const released = AUTOMOTIVE_QUESTIONS.find((r) => r.id === q.id)!;
+      expect(released.question, q.id).toBe(q.question);
+      expect(released.choices, q.id).toEqual(q.choices);
+      expect(released.choiceExplanations, q.id).toEqual(q.choiceExplanations);
+      for (const key of ["ア", "イ", "ウ", "エ"] as const) expect(q.choiceExplanations[key].trim().length, q.id).toBeGreaterThan(0);
+      if (q.sourceFigureRequired) expect(released.imageUrls?.length, q.id).toBeGreaterThan(0);
+      for (const url of released.imageUrls ?? []) {
+        const bytes = fs.readFileSync(path.join(process.cwd(), "public", url));
+        expect(createHash("sha256").update(bytes).digest("hex") + ".webp", q.id).toBe(path.basename(url));
+      }
+    }
+  });
+});

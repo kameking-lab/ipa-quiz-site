@@ -1,0 +1,2515 @@
+{
+  "schemaVersion": 1,
+  "status": "LOCAL_AUXILIARY_REVIEW_COMPLETED_WITH_5_LEGAL_HOLDS",
+  "qualificationId": "jidousha-seibishi-gakka",
+  "sittingId": "jaspa-2025-second",
+  "subject": "2-chassis",
+  "examDate": "2026-03-22",
+  "reviewedOriginals": 30,
+  "locallyConfirmedOriginals": 25,
+  "heldOriginals": 5,
+  "choiceReasonsReviewed": 120,
+  "generalExplanationsReviewed": 30,
+  "candidateSha256": "1b4c470f9ea43976a74238a101ee16e263f18fe0938d036e2932bc1a794e413a",
+  "candidate": {
+    "path": "C:\\Users\\kanet\\Documents\\Codex\\2026-10-20\\task-6\\batches\\automotive-20261020\\booklet01\\revision01\\CANDIDATE.json",
+    "sha256": "1b4c470f9ea43976a74238a101ee16e263f18fe0938d036e2932bc1a794e413a"
+  },
+  "sourceManifest": {
+    "path": "C:\\Users\\kanet\\Documents\\Codex\\2026-10-20\\task-6\\batches\\automotive-20261020\\booklet01\\SOURCE-MANIFEST.json",
+    "sha256": "e56c50ff3817d676747cd41af9e0c25da2a2daf34f705cae9b10c9185016f317"
+  },
+  "gate": {
+    "path": "C:\\Users\\kanet\\Documents\\Codex\\2026-10-20\\task-6\\workers\\automotive-acceptance-gate-20261020\\LOCAL-GATE.json",
+    "sha256": "e58a06cc932dc2083a118e976e8b9f1b47aa581c305a2694665926dc824853ae"
+  },
+  "sourceHead": "6f4253b9381e3030863e38dfe75b5ca4068ba526",
+  "restorationDate": "2026-10-15",
+  "rows": [
+    {
+      "id": "jidosha-2025-second-2-chassis-q01",
+      "status": "PASS",
+      "sourceQuestionPages": [
+        2
+      ],
+      "officialAnswerNumber": "2",
+      "officialAnswerLabel": "イ",
+      "officialAnswerSource": {
+        "physicalPage": 1,
+        "column": "23（2シ）",
+        "pdfSha256": "2f73820401362ca24f052d8339bf20e4865dab2f2afe74b7c7b546b7b90d6701"
+      },
+      "checks": {
+        "question": "PASS_SEMANTIC_PAPER_MATCH",
+        "choices": "PASS_ALL_FOUR_ORDER_AND_CONTENT",
+        "officialKey": "PASS_DIRECT_OFFICIAL_COLUMN_23",
+        "generalExplanation": "PASS_LOCAL_CONSISTENCY",
+        "choiceExplanations": "PASS_ALL_FOUR_LOCAL_CONTENT",
+        "figures": "PASS_NOT_REQUIRED_INFORMATION_PRESENT_IN_TEXT"
+      },
+      "issues": [],
+      "reviewNote": "容量不足の滑り/摩耗と余裕係数、圧着・摩擦・半径を区別。",
+      "transcriptionNotes": [],
+      "choiceReasonsReviewed": 4,
+      "choiceChecks": [
+        {
+          "choice": "ア",
+          "sha256Utf8": "66c7cadf83a86f06b7094f55653afce28dcd44a48d34b1e9a1473d5b59abf774",
+          "read": true,
+          "status": "PASS_LOCAL_CONSISTENCY"
+        },
+        {
+          "choice": "イ",
+          "sha256Utf8": "5d6991e956b5acefea0e5322e865850d0516a42cd620ac87d51bd9278510a5ca",
+          "read": true,
+          "status": "PASS_LOCAL_CONSISTENCY"
+        },
+        {
+          "choice": "ウ",
+          "sha256Utf8": "743d2b6d52dc2ba3d952500a45578001eaff86267b39ecab9602a9b3c8e7c50d",
+          "read": true,
+          "status": "PASS_LOCAL_CONSISTENCY"
+        },
+        {
+          "choice": "エ",
+          "sha256Utf8": "e8f2696af5bbf02e74cbbd9649c4205251926041a884ad0b91a86221f153de5a",
+          "read": true,
+          "status": "PASS_LOCAL_CONSISTENCY"
+        }
+      ],
+      "sourcePageEvidence": [
+        {
+          "path": "C:\\Users\\kanet\\Documents\\Codex\\2026-10-20\\task-6\\workers\\automotive-2025second-2chassis-independent\\pages\\question-02.png",
+          "sha256": "7bb3c989516d176056ffe7b7f41c7a7a2092c6bdbc3645a7306040f97cc44063",
+          "role": "question",
+          "physicalPage": 2,
+          "sourcePdf": {
+            "path": "C:\\Users\\kanet\\Documents\\Codex\\2026-10-20\\task-6\\batches\\automotive-20261020\\booklet01\\source\\jaspa-2025-second-2-chassis.pdf",
+            "sha256": "7d55f9d14241dd9a59211905dc7c060e5d63215f8165e9f7c9fc4ed274ead27f"
+          },
+          "width": 1192,
+          "height": 1685,
+          "visuallyInspected": true
+        }
+      ],
+      "figures": [],
+      "candidateRecordCanonicalSha256": "e9521b5516399eb8ef56085e08472b1e38c3ba8244a0a8e738816c21a7327aea"
+    },
+    {
+      "id": "jidosha-2025-second-2-chassis-q02",
+      "status": "PASS",
+      "sourceQuestionPages": [
+        2
+      ],
+      "officialAnswerNumber": "1",
+      "officialAnswerLabel": "ア",
+      "officialAnswerSource": {
+        "physicalPage": 1,
+        "column": "23（2シ）",
+        "pdfSha256": "2f73820401362ca24f052d8339bf20e4865dab2f2afe74b7c7b546b7b90d6701"
+      },
+      "checks": {
+        "question": "PASS_SEMANTIC_PAPER_MATCH",
+        "choices": "PASS_ALL_FOUR_ORDER_AND_CONTENT",
+        "officialKey": "PASS_DIRECT_OFFICIAL_COLUMN_23",
+        "generalExplanation": "PASS_LOCAL_CONSISTENCY",
+        "choiceExplanations": "PASS_ALL_FOUR_LOCAL_CONTENT",
+        "figures": "PASS_NOT_REQUIRED_INFORMATION_PRESENT_IN_TEXT"
+      },
+      "issues": [],
+      "reviewNote": "本設問の4段ATで入力回転・油温/油圧・セレクト位置を区別。全ATのソレノイド制御への一般化はしない。",
+      "transcriptionNotes": [],
+      "choiceReasonsReviewed": 4,
+      "choiceChecks": [
+        {
+          "choice": "ア",
+          "sha256Utf8": "ca641bcf379f62ff6370df291011fc759ede6ae2bc4ca41b7d826929ea92ccef",
+          "read": true,
+          "status": "PASS_LOCAL_CONSISTENCY"
+        },
+        {
+          "choice": "イ",
+          "sha256Utf8": "04966aa9757cd6f2a54f9127ec32a552058d17c97d708526fcbcda8ba2c089fa",
+          "read": true,
+          "status": "PASS_LOCAL_CONSISTENCY"
+        },
+        {
+          "choice": "ウ",
+          "sha256Utf8": "f438a585a1db2a6176e360f205868b3593b496e5e843da7bd5f45204f179157b",
+          "read": true,
+          "status": "PASS_LOCAL_CONSISTENCY"
+        },
+        {
+          "choice": "エ",
+          "sha256Utf8": "04d796c9f562e64bb79f0706831e38540e32f60effb1a5356f1764afd1de373f",
+          "read": true,
+          "status": "PASS_LOCAL_CONSISTENCY"
+        }
+      ],
+      "sourcePageEvidence": [
+        {
+          "path": "C:\\Users\\kanet\\Documents\\Codex\\2026-10-20\\task-6\\workers\\automotive-2025second-2chassis-independent\\pages\\question-02.png",
+          "sha256": "7bb3c989516d176056ffe7b7f41c7a7a2092c6bdbc3645a7306040f97cc44063",
+          "role": "question",
+          "physicalPage": 2,
+          "sourcePdf": {
+            "path": "C:\\Users\\kanet\\Documents\\Codex\\2026-10-20\\task-6\\batches\\automotive-20261020\\booklet01\\source\\jaspa-2025-second-2-chassis.pdf",
+            "sha256": "7d55f9d14241dd9a59211905dc7c060e5d63215f8165e9f7c9fc4ed274ead27f"
+          },
+          "width": 1192,
+          "height": 1685,
+          "visuallyInspected": true
+        }
+      ],
+      "figures": [],
+      "candidateRecordCanonicalSha256": "253f01bac9c747dfa3f0e575fd5e10779e6fca2ac82fc5a0f3c5b2a2b2249bc7"
+    },
+    {
+      "id": "jidosha-2025-second-2-chassis-q03",
+      "status": "PASS",
+      "sourceQuestionPages": [
+        2
+      ],
+      "officialAnswerNumber": "4",
+      "officialAnswerLabel": "エ",
+      "officialAnswerSource": {
+        "physicalPage": 1,
+        "column": "23（2シ）",
+        "pdfSha256": "2f73820401362ca24f052d8339bf20e4865dab2f2afe74b7c7b546b7b90d6701"
+      },
+      "checks": {
+        "question": "PASS_SEMANTIC_PAPER_MATCH",
+        "choices": "PASS_ALL_FOUR_ORDER_AND_CONTENT",
+        "officialKey": "PASS_DIRECT_OFFICIAL_COLUMN_23",
+        "generalExplanation": "PASS_LOCAL_CONSISTENCY",
+        "choiceExplanations": "PASS_ALL_FOUR_LOCAL_CONTENT",
+        "figures": "PASS_NOT_REQUIRED_INFORMATION_PRESENT_IN_TEXT"
+      },
+      "issues": [],
+      "reviewNote": "局部剛性差/応力集中、左右補強、リーマボルトのがた抑制を照合。施工手順の包括的承認ではない。",
+      "transcriptionNotes": [],
+      "choiceReasonsReviewed": 4,
+      "choiceChecks": [
+        {
+          "choice": "ア",
+          "sha256Utf8": "1a21d8b67afc6f5bbfad34eecf40bd1971414c76e9eebafa31f533f5051ffbc7",
+          "read": true,
+          "status": "PASS_LOCAL_CONSISTENCY"
+        },
+        {
+          "choice": "イ",
+          "sha256Utf8": "69cbd12d877990896c0daae507bb36fe288a6bce3fa3340814a8b27877f93983",
+          "read": true,
+          "status": "PASS_LOCAL_CONSISTENCY"
+        },
+        {
+          "choice": "ウ",
+          "sha256Utf8": "93503b22730d9cbc0ac6e09d8a72bda0930edcb15d2f33bbcb982065120c2e99",
+          "read": true,
+          "status": "PASS_LOCAL_CONSISTENCY"
+        },
+        {
+          "choice": "エ",
+          "sha256Utf8": "38a2fa13552b91b014eb649d2f5892872b897c8121d04973ec71c3d70406f29e",
+          "read": true,
+          "status": "PASS_LOCAL_CONSISTENCY"
+        }
+      ],
+      "sourcePageEvidence": [
+        {
+          "path": "C:\\Users\\kanet\\Documents\\Codex\\2026-10-20\\task-6\\workers\\automotive-2025second-2chassis-independent\\pages\\question-02.png",
+          "sha256": "7bb3c989516d176056ffe7b7f41c7a7a2092c6bdbc3645a7306040f97cc44063",
+          "role": "question",
+          "physicalPage": 2,
+          "sourcePdf": {
+            "path": "C:\\Users\\kanet\\Documents\\Codex\\2026-10-20\\task-6\\batches\\automotive-20261020\\booklet01\\source\\jaspa-2025-second-2-chassis.pdf",
+            "sha256": "7d55f9d14241dd9a59211905dc7c060e5d63215f8165e9f7c9fc4ed274ead27f"
+          },
+          "width": 1192,
+          "height": 1685,
+          "visuallyInspected": true
+        }
+      ],
+      "figures": [],
+      "candidateRecordCanonicalSha256": "d814571393016a59a39d9d7a839065bfc2a121b38f93fd920d7474068a226e36"
+    },
+    {
+      "id": "jidosha-2025-second-2-chassis-q04",
+      "status": "PASS",
+      "sourceQuestionPages": [
+        2
+      ],
+      "officialAnswerNumber": "4",
+      "officialAnswerLabel": "エ",
+      "officialAnswerSource": {
+        "physicalPage": 1,
+        "column": "23（2シ）",
+        "pdfSha256": "2f73820401362ca24f052d8339bf20e4865dab2f2afe74b7c7b546b7b90d6701"
+      },
+      "checks": {
+        "question": "PASS_SEMANTIC_PAPER_MATCH",
+        "choices": "PASS_ALL_FOUR_ORDER_AND_CONTENT",
+        "officialKey": "PASS_DIRECT_OFFICIAL_COLUMN_23",
+        "generalExplanation": "PASS_LOCAL_CONSISTENCY",
+        "choiceExplanations": "PASS_ALL_FOUR_LOCAL_CONTENT",
+        "figures": "PASS_ORIGINAL_AND_WEBP_VISUAL"
+      },
+      "issues": [],
+      "reviewNote": "図の72/36/18歯とリング固定から3450×36/(72+36)=1150回転。",
+      "transcriptionNotes": [
+        "原紙の図/表の数値を問題欄末尾に文字転記。逐語本文ではないが情報/数値は一致。"
+      ],
+      "choiceReasonsReviewed": 4,
+      "choiceChecks": [
+        {
+          "choice": "ア",
+          "sha256Utf8": "44ebd577ecebc04020c936fe755f92de22cd5e042ea1b40d4cacfab5c4602e89",
+          "read": true,
+          "status": "PASS_LOCAL_CONSISTENCY"
+        },
+        {
+          "choice": "イ",
+          "sha256Utf8": "35e73c6a1f305e323c0e247a8a4116ed752cfd02becb1d55615db319ccf94668",
+          "read": true,
+          "status": "PASS_LOCAL_CONSISTENCY"
+        },
+        {
+          "choice": "ウ",
+          "sha256Utf8": "ed4e1caaf176f6571d7b4a6dbfe7217c56d022ad3f107359c34f1507d4357d1c",
+          "read": true,
+          "status": "PASS_LOCAL_CONSISTENCY"
+        },
+        {
+          "choice": "エ",
+          "sha256Utf8": "438ef604897a2878d90a64dee8663d5995dc1f097342f57eb18dd948f334cbbf",
+          "read": true,
+          "status": "PASS_LOCAL_CONSISTENCY"
+        }
+      ],
+      "sourcePageEvidence": [
+        {
+          "path": "C:\\Users\\kanet\\Documents\\Codex\\2026-10-20\\task-6\\workers\\automotive-2025second-2chassis-independent\\pages\\question-02.png",
+          "sha256": "7bb3c989516d176056ffe7b7f41c7a7a2092c6bdbc3645a7306040f97cc44063",
+          "role": "question",
+          "physicalPage": 2,
+          "sourcePdf": {
+            "path": "C:\\Users\\kanet\\Documents\\Codex\\2026-10-20\\task-6\\batches\\automotive-20261020\\booklet01\\source\\jaspa-2025-second-2-chassis.pdf",
+            "sha256": "7d55f9d14241dd9a59211905dc7c060e5d63215f8165e9f7c9fc4ed274ead27f"
+          },
+          "width": 1192,
+          "height": 1685,
+          "visuallyInspected": true
+        }
+      ],
+      "figures": [
+        {
+          "path": "C:\\Users\\kanet\\Documents\\Codex\\2026-10-20\\task-6\\batches\\automotive-20261020\\booklet01\\source\\figures\\jaspa-2025-second-2-chassis-p02.webp",
+          "sha256": "5950bf57723902669e637403b51033e500cffa8d2e61f705a5a5ef1c26aa39e1",
+          "physicalPage": 2,
+          "questionIds": [
+            "jidosha-2025-second-2-chassis-q04"
+          ],
+          "sourcePdfSha256": "7d55f9d14241dd9a59211905dc7c060e5d63215f8165e9f7c9fc4ed274ead27f",
+          "width": 1490,
+          "height": 2106,
+          "visualComparisonWithOriginalPdf": "PASS",
+          "note": "Full-page WebP visibly retains labels, numbers, axes and complete required figure/table. No lossy WebP/PNG byte identity is claimed."
+        }
+      ],
+      "candidateRecordCanonicalSha256": "928a8163c03ea9735e498a470cf4b562e8373ac9f7b70045e4b4ccdf6e2e0b12"
+    },
+    {
+      "id": "jidosha-2025-second-2-chassis-q05",
+      "status": "PASS",
+      "sourceQuestionPages": [
+        3
+      ],
+      "officialAnswerNumber": "2",
+      "officialAnswerLabel": "イ",
+      "officialAnswerSource": {
+        "physicalPage": 1,
+        "column": "23（2シ）",
+        "pdfSha256": "2f73820401362ca24f052d8339bf20e4865dab2f2afe74b7c7b546b7b90d6701"
+      },
+      "checks": {
+        "question": "PASS_SEMANTIC_PAPER_MATCH",
+        "choices": "PASS_ALL_FOUR_ORDER_AND_CONTENT",
+        "officialKey": "PASS_DIRECT_OFFICIAL_COLUMN_23",
+        "generalExplanation": "PASS_LOCAL_CONSISTENCY",
+        "choiceExplanations": "PASS_ALL_FOUR_LOCAL_CONTENT",
+        "figures": "PASS_NOT_REQUIRED_INFORMATION_PRESENT_IN_TEXT"
+      },
+      "issues": [],
+      "reviewNote": "Low時プライマリ半径、可動シーブ、リング構成、プライマリ/セカンダリ機能を照合。",
+      "transcriptionNotes": [],
+      "choiceReasonsReviewed": 4,
+      "choiceChecks": [
+        {
+          "choice": "ア",
+          "sha256Utf8": "866403d9dd135cf26289cae56b251d2d3ae4a44c227f34ab0a47f916469477a1",
+          "read": true,
+          "status": "PASS_LOCAL_CONSISTENCY"
+        },
+        {
+          "choice": "イ",
+          "sha256Utf8": "a91538872b46ab19a8950a2e2eddd80cab125006f0e8776ad153cd0332a55974",
+          "read": true,
+          "status": "PASS_LOCAL_CONSISTENCY"
+        },
+        {
+          "choice": "ウ",
+          "sha256Utf8": "66eae5facb6a97cfd523b9647c4882c9978c27652c170584a98cf431aeb9093b",
+          "read": true,
+          "status": "PASS_LOCAL_CONSISTENCY"
+        },
+        {
+          "choice": "エ",
+          "sha256Utf8": "d5d2f0330add8608ad86453e5d22e2f80070b2094018b8ee9b0f3df7ef21b608",
+          "read": true,
+          "status": "PASS_LOCAL_CONSISTENCY"
+        }
+      ],
+      "sourcePageEvidence": [
+        {
+          "path": "C:\\Users\\kanet\\Documents\\Codex\\2026-10-20\\task-6\\workers\\automotive-2025second-2chassis-independent\\pages\\question-03.png",
+          "sha256": "4992e2bac4e7336fce8f1d440c31e4c359273a7cd8418c2f353db59ea10a612e",
+          "role": "question",
+          "physicalPage": 3,
+          "sourcePdf": {
+            "path": "C:\\Users\\kanet\\Documents\\Codex\\2026-10-20\\task-6\\batches\\automotive-20261020\\booklet01\\source\\jaspa-2025-second-2-chassis.pdf",
+            "sha256": "7d55f9d14241dd9a59211905dc7c060e5d63215f8165e9f7c9fc4ed274ead27f"
+          },
+          "width": 1192,
+          "height": 1685,
+          "visuallyInspected": true
+        }
+      ],
+      "figures": [],
+      "candidateRecordCanonicalSha256": "bdd96d1d91e718b38b2d4b83d35c0a5966d5ffa0e1254740628db909b7509d75"
+    },
+    {
+      "id": "jidosha-2025-second-2-chassis-q06",
+      "status": "PASS",
+      "sourceQuestionPages": [
+        3
+      ],
+      "officialAnswerNumber": "3",
+      "officialAnswerLabel": "ウ",
+      "officialAnswerSource": {
+        "physicalPage": 1,
+        "column": "23（2シ）",
+        "pdfSha256": "2f73820401362ca24f052d8339bf20e4865dab2f2afe74b7c7b546b7b90d6701"
+      },
+      "checks": {
+        "question": "PASS_SEMANTIC_PAPER_MATCH",
+        "choices": "PASS_ALL_FOUR_ORDER_AND_CONTENT",
+        "officialKey": "PASS_DIRECT_OFFICIAL_COLUMN_23",
+        "generalExplanation": "PASS_LOCAL_CONSISTENCY",
+        "choiceExplanations": "PASS_ALL_FOUR_LOCAL_CONTENT",
+        "figures": "PASS_NOT_REQUIRED_INFORMATION_PRESENT_IN_TEXT"
+      },
+      "issues": [],
+      "reviewNote": "ロール剛性を大きくするばね定数/取付間隔と、上下固有振動を区別。",
+      "transcriptionNotes": [],
+      "choiceReasonsReviewed": 4,
+      "choiceChecks": [
+        {
+          "choice": "ア",
+          "sha256Utf8": "0cbeab81708b0b0802c3b05adc0241b0f9f2f5f38b58d45f34acb1cbb7063fb2",
+          "read": true,
+          "status": "PASS_LOCAL_CONSISTENCY"
+        },
+        {
+          "choice": "イ",
+          "sha256Utf8": "1364cb0f80513aa41d715de88989587ef99bcaccfa84f536244b8e781bcd2f4d",
+          "read": true,
+          "status": "PASS_LOCAL_CONSISTENCY"
+        },
+        {
+          "choice": "ウ",
+          "sha256Utf8": "452c16d5a664a369b71419c88d8d5b7de8536a827f14e603a2a2d15c39cb4c00",
+          "read": true,
+          "status": "PASS_LOCAL_CONSISTENCY"
+        },
+        {
+          "choice": "エ",
+          "sha256Utf8": "a0f8f7ac3621c5472e1424eb5a468ad78c94da0a819fbf63ec1c75857356b937",
+          "read": true,
+          "status": "PASS_LOCAL_CONSISTENCY"
+        }
+      ],
+      "sourcePageEvidence": [
+        {
+          "path": "C:\\Users\\kanet\\Documents\\Codex\\2026-10-20\\task-6\\workers\\automotive-2025second-2chassis-independent\\pages\\question-03.png",
+          "sha256": "4992e2bac4e7336fce8f1d440c31e4c359273a7cd8418c2f353db59ea10a612e",
+          "role": "question",
+          "physicalPage": 3,
+          "sourcePdf": {
+            "path": "C:\\Users\\kanet\\Documents\\Codex\\2026-10-20\\task-6\\batches\\automotive-20261020\\booklet01\\source\\jaspa-2025-second-2-chassis.pdf",
+            "sha256": "7d55f9d14241dd9a59211905dc7c060e5d63215f8165e9f7c9fc4ed274ead27f"
+          },
+          "width": 1192,
+          "height": 1685,
+          "visuallyInspected": true
+        }
+      ],
+      "figures": [],
+      "candidateRecordCanonicalSha256": "cf5c630921e21b0a03457adabcd6d7d938774b283919b14a014bc6b0b9daa27b"
+    },
+    {
+      "id": "jidosha-2025-second-2-chassis-q07",
+      "status": "PASS",
+      "sourceQuestionPages": [
+        3
+      ],
+      "officialAnswerNumber": "2",
+      "officialAnswerLabel": "イ",
+      "officialAnswerSource": {
+        "physicalPage": 1,
+        "column": "23（2シ）",
+        "pdfSha256": "2f73820401362ca24f052d8339bf20e4865dab2f2afe74b7c7b546b7b90d6701"
+      },
+      "checks": {
+        "question": "PASS_SEMANTIC_PAPER_MATCH",
+        "choices": "PASS_ALL_FOUR_ORDER_AND_CONTENT",
+        "officialKey": "PASS_DIRECT_OFFICIAL_COLUMN_23",
+        "generalExplanation": "PASS_LOCAL_CONSISTENCY",
+        "choiceExplanations": "PASS_ALL_FOUR_LOCAL_CONTENT",
+        "figures": "PASS_NOT_REQUIRED_INFORMATION_PRESENT_IN_TEXT"
+      },
+      "issues": [],
+      "reviewNote": "コンバータ域とカップリング域、ストール速度比0、クラッチポイントを区別。",
+      "transcriptionNotes": [],
+      "choiceReasonsReviewed": 4,
+      "choiceChecks": [
+        {
+          "choice": "ア",
+          "sha256Utf8": "49a3866e2339a753b2bb4afc548666d9c67c61511ee99578153155aeea499d2a",
+          "read": true,
+          "status": "PASS_LOCAL_CONSISTENCY"
+        },
+        {
+          "choice": "イ",
+          "sha256Utf8": "76d5195f31b951602ac436a3c56b9ff7713d57000e6d3b3d789be6f16ef735c8",
+          "read": true,
+          "status": "PASS_LOCAL_CONSISTENCY"
+        },
+        {
+          "choice": "ウ",
+          "sha256Utf8": "2f623d02dc085909b50ff50f82d7eb1fb04b130fd284cb2b7dc50dae41469b72",
+          "read": true,
+          "status": "PASS_LOCAL_CONSISTENCY"
+        },
+        {
+          "choice": "エ",
+          "sha256Utf8": "75dd09bb5193d950296ab5f436cd567d37a6af31efcd41e85b0433253a3b7a3c",
+          "read": true,
+          "status": "PASS_LOCAL_CONSISTENCY"
+        }
+      ],
+      "sourcePageEvidence": [
+        {
+          "path": "C:\\Users\\kanet\\Documents\\Codex\\2026-10-20\\task-6\\workers\\automotive-2025second-2chassis-independent\\pages\\question-03.png",
+          "sha256": "4992e2bac4e7336fce8f1d440c31e4c359273a7cd8418c2f353db59ea10a612e",
+          "role": "question",
+          "physicalPage": 3,
+          "sourcePdf": {
+            "path": "C:\\Users\\kanet\\Documents\\Codex\\2026-10-20\\task-6\\batches\\automotive-20261020\\booklet01\\source\\jaspa-2025-second-2-chassis.pdf",
+            "sha256": "7d55f9d14241dd9a59211905dc7c060e5d63215f8165e9f7c9fc4ed274ead27f"
+          },
+          "width": 1192,
+          "height": 1685,
+          "visuallyInspected": true
+        }
+      ],
+      "figures": [],
+      "candidateRecordCanonicalSha256": "faf4be7f756a9148b9137522b641d481ea9ab21cc4369b23d7ec34b618d17767"
+    },
+    {
+      "id": "jidosha-2025-second-2-chassis-q08",
+      "status": "PASS",
+      "sourceQuestionPages": [
+        3
+      ],
+      "officialAnswerNumber": "1",
+      "officialAnswerLabel": "ア",
+      "officialAnswerSource": {
+        "physicalPage": 1,
+        "column": "23（2シ）",
+        "pdfSha256": "2f73820401362ca24f052d8339bf20e4865dab2f2afe74b7c7b546b7b90d6701"
+      },
+      "checks": {
+        "question": "PASS_SEMANTIC_PAPER_MATCH",
+        "choices": "PASS_ALL_FOUR_ORDER_AND_CONTENT",
+        "officialKey": "PASS_DIRECT_OFFICIAL_COLUMN_23",
+        "generalExplanation": "PASS_LOCAL_CONSISTENCY",
+        "choiceExplanations": "PASS_ALL_FOUR_LOCAL_CONTENT",
+        "figures": "PASS_NOT_REQUIRED_INFORMATION_PRESENT_IN_TEXT"
+      },
+      "issues": [],
+      "reviewNote": "偏平率/横剛性、ラグ/リブ、スキール、空気圧縮排出音を区別。",
+      "transcriptionNotes": [],
+      "choiceReasonsReviewed": 4,
+      "choiceChecks": [
+        {
+          "choice": "ア",
+          "sha256Utf8": "30fddff9136099571801b8559f1a3e113a226d068985325130ab041e7ebf0d71",
+          "read": true,
+          "status": "PASS_LOCAL_CONSISTENCY"
+        },
+        {
+          "choice": "イ",
+          "sha256Utf8": "0656742225f4d2b4edd0396f3fc2db72d258aca5989524c581e37e39fa4c93a5",
+          "read": true,
+          "status": "PASS_LOCAL_CONSISTENCY"
+        },
+        {
+          "choice": "ウ",
+          "sha256Utf8": "c83d54f9339dabb69ac4d8350d4c09eb0f7e61e518728188bef3484363346051",
+          "read": true,
+          "status": "PASS_LOCAL_CONSISTENCY"
+        },
+        {
+          "choice": "エ",
+          "sha256Utf8": "3d87a5608b0a1848cc610d46baf5d225940121f872ea081a27d3fec0bc1e190a",
+          "read": true,
+          "status": "PASS_LOCAL_CONSISTENCY"
+        }
+      ],
+      "sourcePageEvidence": [
+        {
+          "path": "C:\\Users\\kanet\\Documents\\Codex\\2026-10-20\\task-6\\workers\\automotive-2025second-2chassis-independent\\pages\\question-03.png",
+          "sha256": "4992e2bac4e7336fce8f1d440c31e4c359273a7cd8418c2f353db59ea10a612e",
+          "role": "question",
+          "physicalPage": 3,
+          "sourcePdf": {
+            "path": "C:\\Users\\kanet\\Documents\\Codex\\2026-10-20\\task-6\\batches\\automotive-20261020\\booklet01\\source\\jaspa-2025-second-2-chassis.pdf",
+            "sha256": "7d55f9d14241dd9a59211905dc7c060e5d63215f8165e9f7c9fc4ed274ead27f"
+          },
+          "width": 1192,
+          "height": 1685,
+          "visuallyInspected": true
+        }
+      ],
+      "figures": [],
+      "candidateRecordCanonicalSha256": "5042d4e34d2deb9005ed3c1e13b1138303f416aeecee6152cea6df57a58c248d"
+    },
+    {
+      "id": "jidosha-2025-second-2-chassis-q09",
+      "status": "PASS",
+      "sourceQuestionPages": [
+        4
+      ],
+      "officialAnswerNumber": "3",
+      "officialAnswerLabel": "ウ",
+      "officialAnswerSource": {
+        "physicalPage": 1,
+        "column": "23（2シ）",
+        "pdfSha256": "2f73820401362ca24f052d8339bf20e4865dab2f2afe74b7c7b546b7b90d6701"
+      },
+      "checks": {
+        "question": "PASS_SEMANTIC_PAPER_MATCH",
+        "choices": "PASS_ALL_FOUR_ORDER_AND_CONTENT",
+        "officialKey": "PASS_DIRECT_OFFICIAL_COLUMN_23",
+        "generalExplanation": "PASS_LOCAL_CONSISTENCY",
+        "choiceExplanations": "PASS_ALL_FOUR_LOCAL_CONTENT",
+        "figures": "PASS_NOT_REQUIRED_INFORMATION_PRESENT_IN_TEXT"
+      },
+      "issues": [],
+      "reviewNote": "粘性せん断、高回転→低回転側、シリコン油、速度差なしを照合。",
+      "transcriptionNotes": [],
+      "choiceReasonsReviewed": 4,
+      "choiceChecks": [
+        {
+          "choice": "ア",
+          "sha256Utf8": "33d00b19bedbd928c5022c94285f6b027d409a357b4c8a467474c2e1325eb0d4",
+          "read": true,
+          "status": "PASS_LOCAL_CONSISTENCY"
+        },
+        {
+          "choice": "イ",
+          "sha256Utf8": "0365de5cfc4f4be1f3384dea8b7333999a5dd9d4c33d4e6f6e4d0313deae8b38",
+          "read": true,
+          "status": "PASS_LOCAL_CONSISTENCY"
+        },
+        {
+          "choice": "ウ",
+          "sha256Utf8": "9cc0d68ab53113493164a3ac8ff73410a018c7045ea405553f553149773e8b73",
+          "read": true,
+          "status": "PASS_LOCAL_CONSISTENCY"
+        },
+        {
+          "choice": "エ",
+          "sha256Utf8": "a4d6692b08adad4169f2832aacda26591015621510f090f365e053a15a839cc6",
+          "read": true,
+          "status": "PASS_LOCAL_CONSISTENCY"
+        }
+      ],
+      "sourcePageEvidence": [
+        {
+          "path": "C:\\Users\\kanet\\Documents\\Codex\\2026-10-20\\task-6\\workers\\automotive-2025second-2chassis-independent\\pages\\question-04.png",
+          "sha256": "072bf43158cb55b122e06d00f87af4c5fdcd70d028809ca36e02b71c971dc0de",
+          "role": "question",
+          "physicalPage": 4,
+          "sourcePdf": {
+            "path": "C:\\Users\\kanet\\Documents\\Codex\\2026-10-20\\task-6\\batches\\automotive-20261020\\booklet01\\source\\jaspa-2025-second-2-chassis.pdf",
+            "sha256": "7d55f9d14241dd9a59211905dc7c060e5d63215f8165e9f7c9fc4ed274ead27f"
+          },
+          "width": 1192,
+          "height": 1685,
+          "visuallyInspected": true
+        }
+      ],
+      "figures": [],
+      "candidateRecordCanonicalSha256": "efa8f7188468db2e0d497e5aab6c025fa7dededcb147771a2332db9102068c92"
+    },
+    {
+      "id": "jidosha-2025-second-2-chassis-q10",
+      "status": "PASS",
+      "sourceQuestionPages": [
+        4
+      ],
+      "officialAnswerNumber": "3",
+      "officialAnswerLabel": "ウ",
+      "officialAnswerSource": {
+        "physicalPage": 1,
+        "column": "23（2シ）",
+        "pdfSha256": "2f73820401362ca24f052d8339bf20e4865dab2f2afe74b7c7b546b7b90d6701"
+      },
+      "checks": {
+        "question": "PASS_SEMANTIC_PAPER_MATCH",
+        "choices": "PASS_ALL_FOUR_ORDER_AND_CONTENT",
+        "officialKey": "PASS_DIRECT_OFFICIAL_COLUMN_23",
+        "generalExplanation": "PASS_LOCAL_CONSISTENCY",
+        "choiceExplanations": "PASS_ALL_FOUR_LOCAL_CONTENT",
+        "figures": "PASS_ORIGINAL_AND_WEBP_VISUAL"
+      },
+      "issues": [],
+      "reviewNote": "REV01イの説明はBの低勾配直線→折れ点後高勾配の原図形状に一致。一般/ウは正答Cの再述に近く、独立した機構の説明がないという品質限界は保持。",
+      "transcriptionNotes": [
+        "ばね特性図→ばね特性線図という編集語差は問意不変。一般/ウは公式キーCの再述に近く、機構に基づく詳しい学習説明はない。"
+      ],
+      "choiceReasonsReviewed": 4,
+      "choiceChecks": [
+        {
+          "choice": "ア",
+          "sha256Utf8": "8ed5a325910cd6bf7db86712e37c72d2b16b32ce9a85b51207888c54121134fd",
+          "read": true,
+          "status": "PASS_LOCAL_CONSISTENCY"
+        },
+        {
+          "choice": "イ",
+          "sha256Utf8": "3c3a7175d771e5c69b786ce1976033619b78a3732784c342f747fdcf9aa385d0",
+          "read": true,
+          "status": "PASS_LOCAL_CONSISTENCY"
+        },
+        {
+          "choice": "ウ",
+          "sha256Utf8": "1629348e8b4f1730993b605f840a99b3cf5fdde0d5a3ed9381364fe8821dd601",
+          "read": true,
+          "status": "PASS_LOCAL_CONSISTENCY"
+        },
+        {
+          "choice": "エ",
+          "sha256Utf8": "b4f1c07745a0ca327c8189527102c8ea3afc18f8d6e933777181c87a16f619df",
+          "read": true,
+          "status": "PASS_LOCAL_CONSISTENCY"
+        }
+      ],
+      "sourcePageEvidence": [
+        {
+          "path": "C:\\Users\\kanet\\Documents\\Codex\\2026-10-20\\task-6\\workers\\automotive-2025second-2chassis-independent\\pages\\question-04.png",
+          "sha256": "072bf43158cb55b122e06d00f87af4c5fdcd70d028809ca36e02b71c971dc0de",
+          "role": "question",
+          "physicalPage": 4,
+          "sourcePdf": {
+            "path": "C:\\Users\\kanet\\Documents\\Codex\\2026-10-20\\task-6\\batches\\automotive-20261020\\booklet01\\source\\jaspa-2025-second-2-chassis.pdf",
+            "sha256": "7d55f9d14241dd9a59211905dc7c060e5d63215f8165e9f7c9fc4ed274ead27f"
+          },
+          "width": 1192,
+          "height": 1685,
+          "visuallyInspected": true
+        }
+      ],
+      "figures": [
+        {
+          "path": "C:\\Users\\kanet\\Documents\\Codex\\2026-10-20\\task-6\\batches\\automotive-20261020\\booklet01\\source\\figures\\jaspa-2025-second-2-chassis-p04.webp",
+          "sha256": "8840091e6778dd605ca70913922674a1df712e11c08a6cdb35b5aaa1c7831a74",
+          "physicalPage": 4,
+          "questionIds": [
+            "jidosha-2025-second-2-chassis-q10"
+          ],
+          "sourcePdfSha256": "7d55f9d14241dd9a59211905dc7c060e5d63215f8165e9f7c9fc4ed274ead27f",
+          "width": 1490,
+          "height": 2106,
+          "visualComparisonWithOriginalPdf": "PASS",
+          "note": "Full-page WebP visibly retains labels, numbers, axes and complete required figure/table. No lossy WebP/PNG byte identity is claimed."
+        }
+      ],
+      "candidateRecordCanonicalSha256": "3f56b10141d155673c3f659fdbda5ba08bb9d80a849163983600ee8a97212eb0",
+      "resolvedPriorIssues": [
+        {
+          "code": "FIGURE_REASON_MISMATCH",
+          "field": "choiceExplanations.イ",
+          "current": "Bは低たわみ側で急に荷重が立ち上がってから緩む曲線で、該当しない。",
+          "observation": "Bの矢印は原点から低い一定勾配で伸び、中間の折れ点から高い一定勾配に変わる折線を指す。初期急増後に緩む曲線をBとした理由は原図と不一致。",
+          "sourcePhysicalPage": 4,
+          "detailImage": {
+            "path": "C:\\Users\\kanet\\Documents\\Codex\\2026-10-20\\task-6\\workers\\automotive-2025second-2chassis-independent\\pages\\q10-graph-detail.png",
+            "sha256": "3f80eafde580cde3a31a15630d4e3c6ce2e35d09a5823f461d800ca8046561cd"
+          },
+          "minimumNeeded": "Bの矢印/折線へ対応した理由差分の作者提示と独立再確認。未根拠のばね機構を補作しない。",
+          "officialKeyDisputed": false
+        }
+      ]
+    },
+    {
+      "id": "jidosha-2025-second-2-chassis-q11",
+      "status": "PASS",
+      "sourceQuestionPages": [
+        4
+      ],
+      "officialAnswerNumber": "2",
+      "officialAnswerLabel": "イ",
+      "officialAnswerSource": {
+        "physicalPage": 1,
+        "column": "23（2シ）",
+        "pdfSha256": "2f73820401362ca24f052d8339bf20e4865dab2f2afe74b7c7b546b7b90d6701"
+      },
+      "checks": {
+        "question": "PASS_SEMANTIC_PAPER_MATCH",
+        "choices": "PASS_ALL_FOUR_ORDER_AND_CONTENT",
+        "officialKey": "PASS_DIRECT_OFFICIAL_COLUMN_23",
+        "generalExplanation": "PASS_LOCAL_CONSISTENCY",
+        "choiceExplanations": "PASS_ALL_FOUR_LOCAL_CONTENT",
+        "figures": "PASS_NOT_REQUIRED_INFORMATION_PRESENT_IN_TEXT"
+      },
+      "issues": [],
+      "reviewNote": "オイル流動音、ダンパ打音、スプリング共振/接触を区別。",
+      "transcriptionNotes": [],
+      "choiceReasonsReviewed": 4,
+      "choiceChecks": [
+        {
+          "choice": "ア",
+          "sha256Utf8": "fd0b5b9f1445b9cada66fd705169ea63d5be481eb8d632908706dc6c584bd5ac",
+          "read": true,
+          "status": "PASS_LOCAL_CONSISTENCY"
+        },
+        {
+          "choice": "イ",
+          "sha256Utf8": "b6db41304e29d931aa615ff8dd80adc9772fdef107056f91b81bb7b1f4f8a1ed",
+          "read": true,
+          "status": "PASS_LOCAL_CONSISTENCY"
+        },
+        {
+          "choice": "ウ",
+          "sha256Utf8": "05973e89c0590d8d06f7e7e80aaed7d327e19b046373410ba0be6dd0372464f9",
+          "read": true,
+          "status": "PASS_LOCAL_CONSISTENCY"
+        },
+        {
+          "choice": "エ",
+          "sha256Utf8": "e528fa2580cc8e683c347070181dfd4def516f4c60786c5f9bcc8b201216ab10",
+          "read": true,
+          "status": "PASS_LOCAL_CONSISTENCY"
+        }
+      ],
+      "sourcePageEvidence": [
+        {
+          "path": "C:\\Users\\kanet\\Documents\\Codex\\2026-10-20\\task-6\\workers\\automotive-2025second-2chassis-independent\\pages\\question-04.png",
+          "sha256": "072bf43158cb55b122e06d00f87af4c5fdcd70d028809ca36e02b71c971dc0de",
+          "role": "question",
+          "physicalPage": 4,
+          "sourcePdf": {
+            "path": "C:\\Users\\kanet\\Documents\\Codex\\2026-10-20\\task-6\\batches\\automotive-20261020\\booklet01\\source\\jaspa-2025-second-2-chassis.pdf",
+            "sha256": "7d55f9d14241dd9a59211905dc7c060e5d63215f8165e9f7c9fc4ed274ead27f"
+          },
+          "width": 1192,
+          "height": 1685,
+          "visuallyInspected": true
+        }
+      ],
+      "figures": [],
+      "candidateRecordCanonicalSha256": "d22bac7e74013df4cf4c3c7a73d675d1a45919252b90e2834f18408d6161484a"
+    },
+    {
+      "id": "jidosha-2025-second-2-chassis-q12",
+      "status": "PASS",
+      "sourceQuestionPages": [
+        4
+      ],
+      "officialAnswerNumber": "3",
+      "officialAnswerLabel": "ウ",
+      "officialAnswerSource": {
+        "physicalPage": 1,
+        "column": "23（2シ）",
+        "pdfSha256": "2f73820401362ca24f052d8339bf20e4865dab2f2afe74b7c7b546b7b90d6701"
+      },
+      "checks": {
+        "question": "PASS_SEMANTIC_PAPER_MATCH",
+        "choices": "PASS_ALL_FOUR_ORDER_AND_CONTENT",
+        "officialKey": "PASS_DIRECT_OFFICIAL_COLUMN_23",
+        "generalExplanation": "PASS_LOCAL_CONSISTENCY",
+        "choiceExplanations": "PASS_ALL_FOUR_LOCAL_CONTENT",
+        "figures": "PASS_NOT_REQUIRED_INFORMATION_PRESENT_IN_TEXT"
+      },
+      "issues": [],
+      "reviewNote": "本設問の空気式倍力装置に限定してリレー/油圧ピストン/復帰ばねを区別。一般は公式キーの再述に近く追加機構を立証していない。",
+      "transcriptionNotes": [],
+      "choiceReasonsReviewed": 4,
+      "choiceChecks": [
+        {
+          "choice": "ア",
+          "sha256Utf8": "521892e4444402493a9166a3046b891e1443193bc94f644c5c8d85da857318cc",
+          "read": true,
+          "status": "PASS_LOCAL_CONSISTENCY"
+        },
+        {
+          "choice": "イ",
+          "sha256Utf8": "70ee664adfa2a87969f9493905ffadacadf650e37bb7e745929691d0fd8491b5",
+          "read": true,
+          "status": "PASS_LOCAL_CONSISTENCY"
+        },
+        {
+          "choice": "ウ",
+          "sha256Utf8": "5b30f03ce7ba902163208cbd535f5c487e6d77474d551f561fda74b67a2003b5",
+          "read": true,
+          "status": "PASS_LOCAL_CONSISTENCY"
+        },
+        {
+          "choice": "エ",
+          "sha256Utf8": "3b033a373c9a0054e0da9c90c2bbd4efffc01370ef700fb6a922172c4fb12f12",
+          "read": true,
+          "status": "PASS_LOCAL_CONSISTENCY"
+        }
+      ],
+      "sourcePageEvidence": [
+        {
+          "path": "C:\\Users\\kanet\\Documents\\Codex\\2026-10-20\\task-6\\workers\\automotive-2025second-2chassis-independent\\pages\\question-04.png",
+          "sha256": "072bf43158cb55b122e06d00f87af4c5fdcd70d028809ca36e02b71c971dc0de",
+          "role": "question",
+          "physicalPage": 4,
+          "sourcePdf": {
+            "path": "C:\\Users\\kanet\\Documents\\Codex\\2026-10-20\\task-6\\batches\\automotive-20261020\\booklet01\\source\\jaspa-2025-second-2-chassis.pdf",
+            "sha256": "7d55f9d14241dd9a59211905dc7c060e5d63215f8165e9f7c9fc4ed274ead27f"
+          },
+          "width": 1192,
+          "height": 1685,
+          "visuallyInspected": true
+        }
+      ],
+      "figures": [],
+      "candidateRecordCanonicalSha256": "6af704271b02b7d277b483561bb4a416c6f0b758c2619f8b49471d054867041c"
+    },
+    {
+      "id": "jidosha-2025-second-2-chassis-q13",
+      "status": "PASS",
+      "sourceQuestionPages": [
+        5
+      ],
+      "officialAnswerNumber": "1",
+      "officialAnswerLabel": "ア",
+      "officialAnswerSource": {
+        "physicalPage": 1,
+        "column": "23（2シ）",
+        "pdfSha256": "2f73820401362ca24f052d8339bf20e4865dab2f2afe74b7c7b546b7b90d6701"
+      },
+      "checks": {
+        "question": "PASS_SEMANTIC_PAPER_MATCH",
+        "choices": "PASS_ALL_FOUR_ORDER_AND_CONTENT",
+        "officialKey": "PASS_DIRECT_OFFICIAL_COLUMN_23",
+        "generalExplanation": "PASS_LOCAL_CONSISTENCY",
+        "choiceExplanations": "PASS_ALL_FOUR_LOCAL_CONTENT",
+        "figures": "PASS_NOT_REQUIRED_INFORMATION_PRESENT_IN_TEXT"
+      },
+      "issues": [],
+      "reviewNote": "温度補償と検出コイル、スリーブ、ピニオン補助、摩擦補償を照合。",
+      "transcriptionNotes": [],
+      "choiceReasonsReviewed": 4,
+      "choiceChecks": [
+        {
+          "choice": "ア",
+          "sha256Utf8": "722edb21023a5d601e21320643d26cd42dfcb19287482a588f7ff6e57e687e85",
+          "read": true,
+          "status": "PASS_LOCAL_CONSISTENCY"
+        },
+        {
+          "choice": "イ",
+          "sha256Utf8": "6957615d0615eada6e9dccbc7bdc4fd74e68501534604e7daa7a665835c1e960",
+          "read": true,
+          "status": "PASS_LOCAL_CONSISTENCY"
+        },
+        {
+          "choice": "ウ",
+          "sha256Utf8": "a220cb85c489d295751ee40f9ddc6a4101beec29578921adbf7b2b0a253eef38",
+          "read": true,
+          "status": "PASS_LOCAL_CONSISTENCY"
+        },
+        {
+          "choice": "エ",
+          "sha256Utf8": "272f5d3b4d463d6caf377d3d97f00ca73419fea11d2cd52534d1035d967bda8a",
+          "read": true,
+          "status": "PASS_LOCAL_CONSISTENCY"
+        }
+      ],
+      "sourcePageEvidence": [
+        {
+          "path": "C:\\Users\\kanet\\Documents\\Codex\\2026-10-20\\task-6\\workers\\automotive-2025second-2chassis-independent\\pages\\question-05.png",
+          "sha256": "d0565d505f6902e75ae5d8756577e4de3a01da09171cdff1fbeb6015356bcd36",
+          "role": "question",
+          "physicalPage": 5,
+          "sourcePdf": {
+            "path": "C:\\Users\\kanet\\Documents\\Codex\\2026-10-20\\task-6\\batches\\automotive-20261020\\booklet01\\source\\jaspa-2025-second-2-chassis.pdf",
+            "sha256": "7d55f9d14241dd9a59211905dc7c060e5d63215f8165e9f7c9fc4ed274ead27f"
+          },
+          "width": 1192,
+          "height": 1685,
+          "visuallyInspected": true
+        }
+      ],
+      "figures": [],
+      "candidateRecordCanonicalSha256": "53edad1f754bc93e1c932c5390f7194251028eac8578e845eb9aef6f74dc1539"
+    },
+    {
+      "id": "jidosha-2025-second-2-chassis-q14",
+      "status": "PASS",
+      "sourceQuestionPages": [
+        5
+      ],
+      "officialAnswerNumber": "2",
+      "officialAnswerLabel": "イ",
+      "officialAnswerSource": {
+        "physicalPage": 1,
+        "column": "23（2シ）",
+        "pdfSha256": "2f73820401362ca24f052d8339bf20e4865dab2f2afe74b7c7b546b7b90d6701"
+      },
+      "checks": {
+        "question": "PASS_SEMANTIC_PAPER_MATCH",
+        "choices": "PASS_ALL_FOUR_ORDER_AND_CONTENT",
+        "officialKey": "PASS_DIRECT_OFFICIAL_COLUMN_23",
+        "generalExplanation": "PASS_LOCAL_CONSISTENCY",
+        "choiceExplanations": "PASS_ALL_FOUR_LOCAL_CONTENT",
+        "figures": "PASS_NOT_REQUIRED_INFORMATION_PRESENT_IN_TEXT"
+      },
+      "issues": [],
+      "reviewNote": "3列4行表を保持。前輪の横滑り増加と同操舵角での半径増加を照合。",
+      "transcriptionNotes": [
+        "組合せ表を各肢文字列へ展開。列・行・選択順保持。"
+      ],
+      "choiceReasonsReviewed": 4,
+      "choiceChecks": [
+        {
+          "choice": "ア",
+          "sha256Utf8": "132a2b25fff4b084856a085cfdbc96732fd1bafb240256c93be1a657749075cd",
+          "read": true,
+          "status": "PASS_LOCAL_CONSISTENCY"
+        },
+        {
+          "choice": "イ",
+          "sha256Utf8": "9085dd11bacd6cc4383fe883523c1461edd24ac369d373ce22f33f3fd1ffdcfb",
+          "read": true,
+          "status": "PASS_LOCAL_CONSISTENCY"
+        },
+        {
+          "choice": "ウ",
+          "sha256Utf8": "1b6936e3158461c377e539e09f54d8340d76a3c4309ab27bc6815e691f8d49a0",
+          "read": true,
+          "status": "PASS_LOCAL_CONSISTENCY"
+        },
+        {
+          "choice": "エ",
+          "sha256Utf8": "b94f5c61bf613a33e7a39a3e892a9202a507207a26ba2e4d8324b8c01d793ea1",
+          "read": true,
+          "status": "PASS_LOCAL_CONSISTENCY"
+        }
+      ],
+      "sourcePageEvidence": [
+        {
+          "path": "C:\\Users\\kanet\\Documents\\Codex\\2026-10-20\\task-6\\workers\\automotive-2025second-2chassis-independent\\pages\\question-05.png",
+          "sha256": "d0565d505f6902e75ae5d8756577e4de3a01da09171cdff1fbeb6015356bcd36",
+          "role": "question",
+          "physicalPage": 5,
+          "sourcePdf": {
+            "path": "C:\\Users\\kanet\\Documents\\Codex\\2026-10-20\\task-6\\batches\\automotive-20261020\\booklet01\\source\\jaspa-2025-second-2-chassis.pdf",
+            "sha256": "7d55f9d14241dd9a59211905dc7c060e5d63215f8165e9f7c9fc4ed274ead27f"
+          },
+          "width": 1192,
+          "height": 1685,
+          "visuallyInspected": true
+        }
+      ],
+      "figures": [],
+      "candidateRecordCanonicalSha256": "d75df42e76833eaa2901baac95f7a05f5383fce755882e8ec94682aa8c5165eb"
+    },
+    {
+      "id": "jidosha-2025-second-2-chassis-q15",
+      "status": "PASS",
+      "sourceQuestionPages": [
+        5
+      ],
+      "officialAnswerNumber": "4",
+      "officialAnswerLabel": "エ",
+      "officialAnswerSource": {
+        "physicalPage": 1,
+        "column": "23（2シ）",
+        "pdfSha256": "2f73820401362ca24f052d8339bf20e4865dab2f2afe74b7c7b546b7b90d6701"
+      },
+      "checks": {
+        "question": "PASS_SEMANTIC_PAPER_MATCH",
+        "choices": "PASS_ALL_FOUR_ORDER_AND_CONTENT",
+        "officialKey": "PASS_DIRECT_OFFICIAL_COLUMN_23",
+        "generalExplanation": "PASS_LOCAL_CONSISTENCY",
+        "choiceExplanations": "PASS_ALL_FOUR_LOCAL_CONTENT",
+        "figures": "PASS_NOT_REQUIRED_INFORMATION_PRESENT_IN_TEXT"
+      },
+      "issues": [],
+      "reviewNote": "液圧ユニットとエンジン出力制御を区別。約20%は本設問の一般特性。",
+      "transcriptionNotes": [],
+      "choiceReasonsReviewed": 4,
+      "choiceChecks": [
+        {
+          "choice": "ア",
+          "sha256Utf8": "07dbfed5a7d7e1bc17a8e9cf92bf79816e9b0d9851594d221386cedcbd2fc265",
+          "read": true,
+          "status": "PASS_LOCAL_CONSISTENCY"
+        },
+        {
+          "choice": "イ",
+          "sha256Utf8": "4dad66b741122540694eb2e5b06efa6d9ded6436a3de1e086fdecc91926609a7",
+          "read": true,
+          "status": "PASS_LOCAL_CONSISTENCY"
+        },
+        {
+          "choice": "ウ",
+          "sha256Utf8": "5732091aad4437c6468f3f5474d1d1ffeab62d6d5c349292e215af5451d0e95e",
+          "read": true,
+          "status": "PASS_LOCAL_CONSISTENCY"
+        },
+        {
+          "choice": "エ",
+          "sha256Utf8": "14f54cea37d7adba3e63cbff5e6cf7025b0e7f5f73a4a2308f0633a02acbab7b",
+          "read": true,
+          "status": "PASS_LOCAL_CONSISTENCY"
+        }
+      ],
+      "sourcePageEvidence": [
+        {
+          "path": "C:\\Users\\kanet\\Documents\\Codex\\2026-10-20\\task-6\\workers\\automotive-2025second-2chassis-independent\\pages\\question-05.png",
+          "sha256": "d0565d505f6902e75ae5d8756577e4de3a01da09171cdff1fbeb6015356bcd36",
+          "role": "question",
+          "physicalPage": 5,
+          "sourcePdf": {
+            "path": "C:\\Users\\kanet\\Documents\\Codex\\2026-10-20\\task-6\\batches\\automotive-20261020\\booklet01\\source\\jaspa-2025-second-2-chassis.pdf",
+            "sha256": "7d55f9d14241dd9a59211905dc7c060e5d63215f8165e9f7c9fc4ed274ead27f"
+          },
+          "width": 1192,
+          "height": 1685,
+          "visuallyInspected": true
+        }
+      ],
+      "figures": [],
+      "candidateRecordCanonicalSha256": "1bf34d587e83f9a8a6db693da37a61ebca13898a701c1f56b756dc6da31a3f17"
+    },
+    {
+      "id": "jidosha-2025-second-2-chassis-q16",
+      "status": "PASS",
+      "sourceQuestionPages": [
+        5
+      ],
+      "officialAnswerNumber": "1",
+      "officialAnswerLabel": "ア",
+      "officialAnswerSource": {
+        "physicalPage": 1,
+        "column": "23（2シ）",
+        "pdfSha256": "2f73820401362ca24f052d8339bf20e4865dab2f2afe74b7c7b546b7b90d6701"
+      },
+      "checks": {
+        "question": "PASS_SEMANTIC_PAPER_MATCH",
+        "choices": "PASS_ALL_FOUR_ORDER_AND_CONTENT",
+        "officialKey": "PASS_DIRECT_OFFICIAL_COLUMN_23",
+        "generalExplanation": "PASS_LOCAL_CONSISTENCY",
+        "choiceExplanations": "PASS_ALL_FOUR_LOCAL_CONTENT",
+        "figures": "PASS_NOT_REQUIRED_INFORMATION_PRESENT_IN_TEXT"
+      },
+      "issues": [],
+      "reviewNote": "摩擦熱、液沸騰のベーパロック、摩擦材過熱のフェードを区別。",
+      "transcriptionNotes": [],
+      "choiceReasonsReviewed": 4,
+      "choiceChecks": [
+        {
+          "choice": "ア",
+          "sha256Utf8": "15f24bac06385e121efaa3e8fc36ccbb113ab978f9accdde09fdae83e3975178",
+          "read": true,
+          "status": "PASS_LOCAL_CONSISTENCY"
+        },
+        {
+          "choice": "イ",
+          "sha256Utf8": "4a3861f9aedd074517d8695852024dddfcba9e873a9b661c5f8160dff9732a38",
+          "read": true,
+          "status": "PASS_LOCAL_CONSISTENCY"
+        },
+        {
+          "choice": "ウ",
+          "sha256Utf8": "d0854cc9d1e0bb17b889f99cd6f91aec959eac6ff3077bb3b28961f0c9ea3736",
+          "read": true,
+          "status": "PASS_LOCAL_CONSISTENCY"
+        },
+        {
+          "choice": "エ",
+          "sha256Utf8": "bcb2f669bc1f76a473ead088aea0a7624ded80392d1dcb887ea42fc015ecf12d",
+          "read": true,
+          "status": "PASS_LOCAL_CONSISTENCY"
+        }
+      ],
+      "sourcePageEvidence": [
+        {
+          "path": "C:\\Users\\kanet\\Documents\\Codex\\2026-10-20\\task-6\\workers\\automotive-2025second-2chassis-independent\\pages\\question-05.png",
+          "sha256": "d0565d505f6902e75ae5d8756577e4de3a01da09171cdff1fbeb6015356bcd36",
+          "role": "question",
+          "physicalPage": 5,
+          "sourcePdf": {
+            "path": "C:\\Users\\kanet\\Documents\\Codex\\2026-10-20\\task-6\\batches\\automotive-20261020\\booklet01\\source\\jaspa-2025-second-2-chassis.pdf",
+            "sha256": "7d55f9d14241dd9a59211905dc7c060e5d63215f8165e9f7c9fc4ed274ead27f"
+          },
+          "width": 1192,
+          "height": 1685,
+          "visuallyInspected": true
+        }
+      ],
+      "figures": [],
+      "candidateRecordCanonicalSha256": "bf70ca74dd088cdfec5b5775ba122d3ba49ed17916a6a2d97901b3355f3d4388"
+    },
+    {
+      "id": "jidosha-2025-second-2-chassis-q17",
+      "status": "PASS",
+      "sourceQuestionPages": [
+        6
+      ],
+      "officialAnswerNumber": "4",
+      "officialAnswerLabel": "エ",
+      "officialAnswerSource": {
+        "physicalPage": 1,
+        "column": "23（2シ）",
+        "pdfSha256": "2f73820401362ca24f052d8339bf20e4865dab2f2afe74b7c7b546b7b90d6701"
+      },
+      "checks": {
+        "question": "PASS_SEMANTIC_PAPER_MATCH",
+        "choices": "PASS_ALL_FOUR_ORDER_AND_CONTENT",
+        "officialKey": "PASS_DIRECT_OFFICIAL_COLUMN_23",
+        "generalExplanation": "PASS_LOCAL_CONSISTENCY",
+        "choiceExplanations": "PASS_ALL_FOUR_LOCAL_CONTENT",
+        "figures": "PASS_NOT_REQUIRED_INFORMATION_PRESENT_IN_TEXT"
+      },
+      "issues": [],
+      "reviewNote": "流量制御と負荷圧を区別。操舵抵抗増で必要圧は増加。",
+      "transcriptionNotes": [],
+      "choiceReasonsReviewed": 4,
+      "choiceChecks": [
+        {
+          "choice": "ア",
+          "sha256Utf8": "681fbc799eceb57ad62f60a886b438c574ec06498df9f05d660eb079b5958d5c",
+          "read": true,
+          "status": "PASS_LOCAL_CONSISTENCY"
+        },
+        {
+          "choice": "イ",
+          "sha256Utf8": "ed48bb08ca168c000c32f69c91a9d038688829e04d0cc0b8ec014747ba24a448",
+          "read": true,
+          "status": "PASS_LOCAL_CONSISTENCY"
+        },
+        {
+          "choice": "ウ",
+          "sha256Utf8": "7f5edfef0b6ae18d404ecbf5c57579680d293fc786440140a9dcb6953b6dcd57",
+          "read": true,
+          "status": "PASS_LOCAL_CONSISTENCY"
+        },
+        {
+          "choice": "エ",
+          "sha256Utf8": "cab2356856493755ebb1ec3e366671d967eb93fd7715f4fe6ce0c90278d04f34",
+          "read": true,
+          "status": "PASS_LOCAL_CONSISTENCY"
+        }
+      ],
+      "sourcePageEvidence": [
+        {
+          "path": "C:\\Users\\kanet\\Documents\\Codex\\2026-10-20\\task-6\\workers\\automotive-2025second-2chassis-independent\\pages\\question-06.png",
+          "sha256": "290c8b5a5c5bd4497f1c05257998b6b6bc89f7afe754bc5f9faec07016142143",
+          "role": "question",
+          "physicalPage": 6,
+          "sourcePdf": {
+            "path": "C:\\Users\\kanet\\Documents\\Codex\\2026-10-20\\task-6\\batches\\automotive-20261020\\booklet01\\source\\jaspa-2025-second-2-chassis.pdf",
+            "sha256": "7d55f9d14241dd9a59211905dc7c060e5d63215f8165e9f7c9fc4ed274ead27f"
+          },
+          "width": 1192,
+          "height": 1685,
+          "visuallyInspected": true
+        }
+      ],
+      "figures": [],
+      "candidateRecordCanonicalSha256": "501c7e7c5059f0dc80493051b4d70170f131d9cd9aa8d28814e1e630d798c525"
+    },
+    {
+      "id": "jidosha-2025-second-2-chassis-q18",
+      "status": "PASS",
+      "sourceQuestionPages": [
+        6
+      ],
+      "officialAnswerNumber": "1",
+      "officialAnswerLabel": "ア",
+      "officialAnswerSource": {
+        "physicalPage": 1,
+        "column": "23（2シ）",
+        "pdfSha256": "2f73820401362ca24f052d8339bf20e4865dab2f2afe74b7c7b546b7b90d6701"
+      },
+      "checks": {
+        "question": "PASS_SEMANTIC_PAPER_MATCH",
+        "choices": "PASS_ALL_FOUR_ORDER_AND_CONTENT",
+        "officialKey": "PASS_DIRECT_OFFICIAL_COLUMN_23",
+        "generalExplanation": "PASS_LOCAL_CONSISTENCY",
+        "choiceExplanations": "PASS_ALL_FOUR_LOCAL_CONTENT",
+        "figures": "PASS_NOT_REQUIRED_INFORMATION_PRESENT_IN_TEXT"
+      },
+      "issues": [],
+      "reviewNote": "コンデンサ/レシーバ/膨張弁/エバポレータの各機能を照合。",
+      "transcriptionNotes": [],
+      "choiceReasonsReviewed": 4,
+      "choiceChecks": [
+        {
+          "choice": "ア",
+          "sha256Utf8": "413864fcfe2ab1a3de5515a3833cb8e79879e2d9085bd871cd770e7f16ff6cdf",
+          "read": true,
+          "status": "PASS_LOCAL_CONSISTENCY"
+        },
+        {
+          "choice": "イ",
+          "sha256Utf8": "38eba6cf295e8fe5a2259b2b81d23e3d81596ab39210b0728f30e93afd11aacf",
+          "read": true,
+          "status": "PASS_LOCAL_CONSISTENCY"
+        },
+        {
+          "choice": "ウ",
+          "sha256Utf8": "df36352360519bace80d8bef3ab5089ba71b6f1f6639e422ff1439492ef21d1c",
+          "read": true,
+          "status": "PASS_LOCAL_CONSISTENCY"
+        },
+        {
+          "choice": "エ",
+          "sha256Utf8": "45a8ac83293816e91578a439ee6dc5cb12961a8b51522f65deba5b837661edc4",
+          "read": true,
+          "status": "PASS_LOCAL_CONSISTENCY"
+        }
+      ],
+      "sourcePageEvidence": [
+        {
+          "path": "C:\\Users\\kanet\\Documents\\Codex\\2026-10-20\\task-6\\workers\\automotive-2025second-2chassis-independent\\pages\\question-06.png",
+          "sha256": "290c8b5a5c5bd4497f1c05257998b6b6bc89f7afe754bc5f9faec07016142143",
+          "role": "question",
+          "physicalPage": 6,
+          "sourcePdf": {
+            "path": "C:\\Users\\kanet\\Documents\\Codex\\2026-10-20\\task-6\\batches\\automotive-20261020\\booklet01\\source\\jaspa-2025-second-2-chassis.pdf",
+            "sha256": "7d55f9d14241dd9a59211905dc7c060e5d63215f8165e9f7c9fc4ed274ead27f"
+          },
+          "width": 1192,
+          "height": 1685,
+          "visuallyInspected": true
+        }
+      ],
+      "figures": [],
+      "candidateRecordCanonicalSha256": "4922e0c7089654b76305d557d7fd0c74cc26dcfc9d854e7c299996a6c023432c"
+    },
+    {
+      "id": "jidosha-2025-second-2-chassis-q19",
+      "status": "PASS",
+      "sourceQuestionPages": [
+        6
+      ],
+      "officialAnswerNumber": "4",
+      "officialAnswerLabel": "エ",
+      "officialAnswerSource": {
+        "physicalPage": 1,
+        "column": "23（2シ）",
+        "pdfSha256": "2f73820401362ca24f052d8339bf20e4865dab2f2afe74b7c7b546b7b90d6701"
+      },
+      "checks": {
+        "question": "PASS_SEMANTIC_PAPER_MATCH",
+        "choices": "PASS_ALL_FOUR_ORDER_AND_CONTENT",
+        "officialKey": "PASS_DIRECT_OFFICIAL_COLUMN_23",
+        "generalExplanation": "PASS_LOCAL_CONSISTENCY",
+        "choiceExplanations": "PASS_ALL_FOUR_LOCAL_CONTENT",
+        "figures": "PASS_NOT_REQUIRED_INFORMATION_PRESENT_IN_TEXT"
+      },
+      "issues": [],
+      "reviewNote": "2列4行表を保持。横滑り量を踏板移動量で検出。",
+      "transcriptionNotes": [
+        "組合せ表を各肢文字列へ展開。列・行・選択順保持。"
+      ],
+      "choiceReasonsReviewed": 4,
+      "choiceChecks": [
+        {
+          "choice": "ア",
+          "sha256Utf8": "7797c9fd1893324e1f527ead053f16e3ec9c5f84ac63171b9a0c926d17dd089c",
+          "read": true,
+          "status": "PASS_LOCAL_CONSISTENCY"
+        },
+        {
+          "choice": "イ",
+          "sha256Utf8": "ef187e0992601ddd7a0e23d8070af8d5f36e8fd6c4a3f4adb4683d9a2de1c382",
+          "read": true,
+          "status": "PASS_LOCAL_CONSISTENCY"
+        },
+        {
+          "choice": "ウ",
+          "sha256Utf8": "f75a4f0cf737a9259dbd3c2ca36f4835404c650f87e75c1a4c74c5d89cbc35b8",
+          "read": true,
+          "status": "PASS_LOCAL_CONSISTENCY"
+        },
+        {
+          "choice": "エ",
+          "sha256Utf8": "a9c999aa6b583fcf0058f2d459fa2f6e849f877bc129a0b628699c09e96c8d03",
+          "read": true,
+          "status": "PASS_LOCAL_CONSISTENCY"
+        }
+      ],
+      "sourcePageEvidence": [
+        {
+          "path": "C:\\Users\\kanet\\Documents\\Codex\\2026-10-20\\task-6\\workers\\automotive-2025second-2chassis-independent\\pages\\question-06.png",
+          "sha256": "290c8b5a5c5bd4497f1c05257998b6b6bc89f7afe754bc5f9faec07016142143",
+          "role": "question",
+          "physicalPage": 6,
+          "sourcePdf": {
+            "path": "C:\\Users\\kanet\\Documents\\Codex\\2026-10-20\\task-6\\batches\\automotive-20261020\\booklet01\\source\\jaspa-2025-second-2-chassis.pdf",
+            "sha256": "7d55f9d14241dd9a59211905dc7c060e5d63215f8165e9f7c9fc4ed274ead27f"
+          },
+          "width": 1192,
+          "height": 1685,
+          "visuallyInspected": true
+        }
+      ],
+      "figures": [],
+      "candidateRecordCanonicalSha256": "34680784fc4cacbc8153d5ac4df6f0d4e9461d1cff837ca47fa82a5dbe223d67"
+    },
+    {
+      "id": "jidosha-2025-second-2-chassis-q20",
+      "status": "PASS",
+      "sourceQuestionPages": [
+        6
+      ],
+      "officialAnswerNumber": "1",
+      "officialAnswerLabel": "ア",
+      "officialAnswerSource": {
+        "physicalPage": 1,
+        "column": "23（2シ）",
+        "pdfSha256": "2f73820401362ca24f052d8339bf20e4865dab2f2afe74b7c7b546b7b90d6701"
+      },
+      "checks": {
+        "question": "PASS_SEMANTIC_PAPER_MATCH",
+        "choices": "PASS_ALL_FOUR_ORDER_AND_CONTENT",
+        "officialKey": "PASS_DIRECT_OFFICIAL_COLUMN_23",
+        "generalExplanation": "PASS_LOCAL_CONSISTENCY",
+        "choiceExplanations": "PASS_ALL_FOUR_LOCAL_CONTENT",
+        "figures": "PASS_NOT_REQUIRED_INFORMATION_PRESENT_IN_TEXT"
+      },
+      "issues": [],
+      "reviewNote": "ジャイロ角速度、マップマッチング、自立航法を区別。GPSの原紙簡略記述を保持し、3衛星が常に独立3次元測位に十分という追加主張はしていない。",
+      "transcriptionNotes": [],
+      "choiceReasonsReviewed": 4,
+      "choiceChecks": [
+        {
+          "choice": "ア",
+          "sha256Utf8": "2eaf56ba98b8eaca8aac361ea304eb6cef9e9d41551c4587afc25173e0412a8a",
+          "read": true,
+          "status": "PASS_LOCAL_CONSISTENCY"
+        },
+        {
+          "choice": "イ",
+          "sha256Utf8": "b6d00afc53a58bc6cec3abc1771c76aac024a9e95703f843da63e9f1a716fe7c",
+          "read": true,
+          "status": "PASS_LOCAL_CONSISTENCY"
+        },
+        {
+          "choice": "ウ",
+          "sha256Utf8": "cf61ce1d20376e444dc1596b16457aa533af21cd4b7877f84adb69effb66713c",
+          "read": true,
+          "status": "PASS_LOCAL_CONSISTENCY"
+        },
+        {
+          "choice": "エ",
+          "sha256Utf8": "d7531036dbf49033f1e7914309bf1a502ea007449aa5eabaac05e3969f3682f2",
+          "read": true,
+          "status": "PASS_LOCAL_CONSISTENCY"
+        }
+      ],
+      "sourcePageEvidence": [
+        {
+          "path": "C:\\Users\\kanet\\Documents\\Codex\\2026-10-20\\task-6\\workers\\automotive-2025second-2chassis-independent\\pages\\question-06.png",
+          "sha256": "290c8b5a5c5bd4497f1c05257998b6b6bc89f7afe754bc5f9faec07016142143",
+          "role": "question",
+          "physicalPage": 6,
+          "sourcePdf": {
+            "path": "C:\\Users\\kanet\\Documents\\Codex\\2026-10-20\\task-6\\batches\\automotive-20261020\\booklet01\\source\\jaspa-2025-second-2-chassis.pdf",
+            "sha256": "7d55f9d14241dd9a59211905dc7c060e5d63215f8165e9f7c9fc4ed274ead27f"
+          },
+          "width": 1192,
+          "height": 1685,
+          "visuallyInspected": true
+        }
+      ],
+      "figures": [],
+      "candidateRecordCanonicalSha256": "92a4b01e3c662d3fad02c4955270941a078da26b1014214a7f4127f2799322fc"
+    },
+    {
+      "id": "jidosha-2025-second-2-chassis-q21",
+      "status": "PASS",
+      "sourceQuestionPages": [
+        7
+      ],
+      "officialAnswerNumber": "3",
+      "officialAnswerLabel": "ウ",
+      "officialAnswerSource": {
+        "physicalPage": 1,
+        "column": "23（2シ）",
+        "pdfSha256": "2f73820401362ca24f052d8339bf20e4865dab2f2afe74b7c7b546b7b90d6701"
+      },
+      "checks": {
+        "question": "PASS_SEMANTIC_PAPER_MATCH",
+        "choices": "PASS_ALL_FOUR_ORDER_AND_CONTENT",
+        "officialKey": "PASS_DIRECT_OFFICIAL_COLUMN_23",
+        "generalExplanation": "PASS_LOCAL_CONSISTENCY",
+        "choiceExplanations": "PASS_ALL_FOUR_LOCAL_CONTENT",
+        "figures": "PASS_NOT_REQUIRED_INFORMATION_PRESENT_IN_TEXT"
+      },
+      "issues": [],
+      "reviewNote": "表の比1.5/4.2/半径30cmが本文に完全転記。160×1.5×4.2/0.30=3360N。",
+      "transcriptionNotes": [
+        "原紙の図/表の数値を問題欄末尾に文字転記。逐語本文ではないが情報/数値は一致。"
+      ],
+      "choiceReasonsReviewed": 4,
+      "choiceChecks": [
+        {
+          "choice": "ア",
+          "sha256Utf8": "4366b6aff2e2e25d690f7b1392bdd3dfacab934f24d70534599ab7793299cdd0",
+          "read": true,
+          "status": "PASS_LOCAL_CONSISTENCY"
+        },
+        {
+          "choice": "イ",
+          "sha256Utf8": "6e764bf325756b1724ea8c96014a7d1e90cecee61261068735a52403c89d8b75",
+          "read": true,
+          "status": "PASS_LOCAL_CONSISTENCY"
+        },
+        {
+          "choice": "ウ",
+          "sha256Utf8": "b377108f99bff28da24024729f0dc5bc1916f2f277a3238592ee689e2daee95a",
+          "read": true,
+          "status": "PASS_LOCAL_CONSISTENCY"
+        },
+        {
+          "choice": "エ",
+          "sha256Utf8": "27d1333e20ed75caa124d72a600f2453a26699325cc3d1bc432eb9a6b3ac8359",
+          "read": true,
+          "status": "PASS_LOCAL_CONSISTENCY"
+        }
+      ],
+      "sourcePageEvidence": [
+        {
+          "path": "C:\\Users\\kanet\\Documents\\Codex\\2026-10-20\\task-6\\workers\\automotive-2025second-2chassis-independent\\pages\\question-07.png",
+          "sha256": "99a4ec33f31efb4f5e859541f998c0a3f0d97debec2796412397ec1c1488cde7",
+          "role": "question",
+          "physicalPage": 7,
+          "sourcePdf": {
+            "path": "C:\\Users\\kanet\\Documents\\Codex\\2026-10-20\\task-6\\batches\\automotive-20261020\\booklet01\\source\\jaspa-2025-second-2-chassis.pdf",
+            "sha256": "7d55f9d14241dd9a59211905dc7c060e5d63215f8165e9f7c9fc4ed274ead27f"
+          },
+          "width": 1192,
+          "height": 1685,
+          "visuallyInspected": true
+        }
+      ],
+      "figures": [],
+      "candidateRecordCanonicalSha256": "b2859fc89a2f9fbfb8572b2a9bbb75762652638ff6ceebbe139b13d7a7b03954"
+    },
+    {
+      "id": "jidosha-2025-second-2-chassis-q22",
+      "status": "PASS",
+      "sourceQuestionPages": [
+        7
+      ],
+      "officialAnswerNumber": "3",
+      "officialAnswerLabel": "ウ",
+      "officialAnswerSource": {
+        "physicalPage": 1,
+        "column": "23（2シ）",
+        "pdfSha256": "2f73820401362ca24f052d8339bf20e4865dab2f2afe74b7c7b546b7b90d6701"
+      },
+      "checks": {
+        "question": "PASS_SEMANTIC_PAPER_MATCH",
+        "choices": "PASS_ALL_FOUR_ORDER_AND_CONTENT",
+        "officialKey": "PASS_DIRECT_OFFICIAL_COLUMN_23",
+        "generalExplanation": "PASS_LOCAL_CONSISTENCY",
+        "choiceExplanations": "PASS_ALL_FOUR_LOCAL_CONTENT",
+        "figures": "PASS_NOT_REQUIRED_INFORMATION_PRESENT_IN_TEXT"
+      },
+      "issues": [],
+      "reviewNote": "本設問の通常抵抗モデルで速度2倍→抵抗4倍。力と必要動力の三乗依存を区別。",
+      "transcriptionNotes": [],
+      "choiceReasonsReviewed": 4,
+      "choiceChecks": [
+        {
+          "choice": "ア",
+          "sha256Utf8": "7b717302b70334b3ee13da7276aba6eb3714f70c91a829e3f5f518c4def64d9d",
+          "read": true,
+          "status": "PASS_LOCAL_CONSISTENCY"
+        },
+        {
+          "choice": "イ",
+          "sha256Utf8": "98680e15297ff94f1b5a396056ab77bb2a4ba53c156beadf1a0149fb01d461ba",
+          "read": true,
+          "status": "PASS_LOCAL_CONSISTENCY"
+        },
+        {
+          "choice": "ウ",
+          "sha256Utf8": "5624165bd61d362d42a3d9d414fa7823568df5e90909fc94f35aa5535ac9cf12",
+          "read": true,
+          "status": "PASS_LOCAL_CONSISTENCY"
+        },
+        {
+          "choice": "エ",
+          "sha256Utf8": "096e087fbcd07ecf0afa53a8c0eea679e6b6e9fc903f892d9e9f20fdb1f360b7",
+          "read": true,
+          "status": "PASS_LOCAL_CONSISTENCY"
+        }
+      ],
+      "sourcePageEvidence": [
+        {
+          "path": "C:\\Users\\kanet\\Documents\\Codex\\2026-10-20\\task-6\\workers\\automotive-2025second-2chassis-independent\\pages\\question-07.png",
+          "sha256": "99a4ec33f31efb4f5e859541f998c0a3f0d97debec2796412397ec1c1488cde7",
+          "role": "question",
+          "physicalPage": 7,
+          "sourcePdf": {
+            "path": "C:\\Users\\kanet\\Documents\\Codex\\2026-10-20\\task-6\\batches\\automotive-20261020\\booklet01\\source\\jaspa-2025-second-2-chassis.pdf",
+            "sha256": "7d55f9d14241dd9a59211905dc7c060e5d63215f8165e9f7c9fc4ed274ead27f"
+          },
+          "width": 1192,
+          "height": 1685,
+          "visuallyInspected": true
+        }
+      ],
+      "figures": [],
+      "candidateRecordCanonicalSha256": "f44bf8172e2935195b70d1a02833a2ade3a4890caf0e0d76cbe23dc343d5877d"
+    },
+    {
+      "id": "jidosha-2025-second-2-chassis-q23",
+      "status": "PASS",
+      "sourceQuestionPages": [
+        7
+      ],
+      "officialAnswerNumber": "4",
+      "officialAnswerLabel": "エ",
+      "officialAnswerSource": {
+        "physicalPage": 1,
+        "column": "23（2シ）",
+        "pdfSha256": "2f73820401362ca24f052d8339bf20e4865dab2f2afe74b7c7b546b7b90d6701"
+      },
+      "checks": {
+        "question": "PASS_SEMANTIC_PAPER_MATCH",
+        "choices": "PASS_ALL_FOUR_ORDER_AND_CONTENT",
+        "officialKey": "PASS_DIRECT_OFFICIAL_COLUMN_23",
+        "generalExplanation": "PASS_LOCAL_CONSISTENCY",
+        "choiceExplanations": "PASS_ALL_FOUR_LOCAL_CONTENT",
+        "figures": "PASS_NOT_REQUIRED_INFORMATION_PRESENT_IN_TEXT"
+      },
+      "issues": [],
+      "reviewNote": "M10外径10mm/ピッチ1.25、溝付きナットと割りピン、ころ種類、つば付き平軸受の荷重を照合。",
+      "transcriptionNotes": [],
+      "choiceReasonsReviewed": 4,
+      "choiceChecks": [
+        {
+          "choice": "ア",
+          "sha256Utf8": "7f848b86761b95446f22a7b6d6ea680f115a97619e4e6d45030c5bf99f29a0f1",
+          "read": true,
+          "status": "PASS_LOCAL_CONSISTENCY"
+        },
+        {
+          "choice": "イ",
+          "sha256Utf8": "4c9d5ce0f69cd92c9f2d2c790d3e6f7ee7458ef49ee3af07cb8bef9f8cd3a9cd",
+          "read": true,
+          "status": "PASS_LOCAL_CONSISTENCY"
+        },
+        {
+          "choice": "ウ",
+          "sha256Utf8": "22282f395c28dd83958162e47fa52c38426254e7d5b3fffc9406995579b5b96b",
+          "read": true,
+          "status": "PASS_LOCAL_CONSISTENCY"
+        },
+        {
+          "choice": "エ",
+          "sha256Utf8": "b4689e4c9cb14c3ecf75bd6abd3adcd723c630c658bf2f49d6fd83e0b87c1ee1",
+          "read": true,
+          "status": "PASS_LOCAL_CONSISTENCY"
+        }
+      ],
+      "sourcePageEvidence": [
+        {
+          "path": "C:\\Users\\kanet\\Documents\\Codex\\2026-10-20\\task-6\\workers\\automotive-2025second-2chassis-independent\\pages\\question-07.png",
+          "sha256": "99a4ec33f31efb4f5e859541f998c0a3f0d97debec2796412397ec1c1488cde7",
+          "role": "question",
+          "physicalPage": 7,
+          "sourcePdf": {
+            "path": "C:\\Users\\kanet\\Documents\\Codex\\2026-10-20\\task-6\\batches\\automotive-20261020\\booklet01\\source\\jaspa-2025-second-2-chassis.pdf",
+            "sha256": "7d55f9d14241dd9a59211905dc7c060e5d63215f8165e9f7c9fc4ed274ead27f"
+          },
+          "width": 1192,
+          "height": 1685,
+          "visuallyInspected": true
+        }
+      ],
+      "figures": [],
+      "candidateRecordCanonicalSha256": "84fd1a113111c43a7a95f1aaa8ad542105fde23c217aba50ec157159c8542dac"
+    },
+    {
+      "id": "jidosha-2025-second-2-chassis-q24",
+      "status": "PASS",
+      "sourceQuestionPages": [
+        7
+      ],
+      "officialAnswerNumber": "3",
+      "officialAnswerLabel": "ウ",
+      "officialAnswerSource": {
+        "physicalPage": 1,
+        "column": "23（2シ）",
+        "pdfSha256": "2f73820401362ca24f052d8339bf20e4865dab2f2afe74b7c7b546b7b90d6701"
+      },
+      "checks": {
+        "question": "PASS_SEMANTIC_PAPER_MATCH",
+        "choices": "PASS_ALL_FOUR_ORDER_AND_CONTENT",
+        "officialKey": "PASS_DIRECT_OFFICIAL_COLUMN_23",
+        "generalExplanation": "PASS_LOCAL_CONSISTENCY",
+        "choiceExplanations": "PASS_ALL_FOUR_LOCAL_CONTENT",
+        "figures": "PASS_ORIGINAL_AND_WEBP_VISUAL"
+      },
+      "issues": [],
+      "reviewNote": "原図重心は後軸650mm前。18000+3×550+40000×650/5000=24850N。空車後軸14000は既定前軸荷重に足さない。",
+      "transcriptionNotes": [
+        "原紙の図/表の数値を問題欄末尾に文字転記。逐語本文ではないが情報/数値は一致。"
+      ],
+      "choiceReasonsReviewed": 4,
+      "choiceChecks": [
+        {
+          "choice": "ア",
+          "sha256Utf8": "d0c8c1730c208bcb844f547b655f749fdfab26ed600810b829c86cc0b95a22ee",
+          "read": true,
+          "status": "PASS_LOCAL_CONSISTENCY"
+        },
+        {
+          "choice": "イ",
+          "sha256Utf8": "1d9304884dab0ad738a957e104913b47718511d47fc0a6f8acee883fb410c33a",
+          "read": true,
+          "status": "PASS_LOCAL_CONSISTENCY"
+        },
+        {
+          "choice": "ウ",
+          "sha256Utf8": "a1ac21e66ccaa07e808d9b2214d39be6fc1b9807d46e1b969548b29f8d8ec7a7",
+          "read": true,
+          "status": "PASS_LOCAL_CONSISTENCY"
+        },
+        {
+          "choice": "エ",
+          "sha256Utf8": "310603a7f3524dcf9ac95b61985adea9167e0faae0e54bfe3ef2b5bbbc2b7c2f",
+          "read": true,
+          "status": "PASS_LOCAL_CONSISTENCY"
+        }
+      ],
+      "sourcePageEvidence": [
+        {
+          "path": "C:\\Users\\kanet\\Documents\\Codex\\2026-10-20\\task-6\\workers\\automotive-2025second-2chassis-independent\\pages\\question-07.png",
+          "sha256": "99a4ec33f31efb4f5e859541f998c0a3f0d97debec2796412397ec1c1488cde7",
+          "role": "question",
+          "physicalPage": 7,
+          "sourcePdf": {
+            "path": "C:\\Users\\kanet\\Documents\\Codex\\2026-10-20\\task-6\\batches\\automotive-20261020\\booklet01\\source\\jaspa-2025-second-2-chassis.pdf",
+            "sha256": "7d55f9d14241dd9a59211905dc7c060e5d63215f8165e9f7c9fc4ed274ead27f"
+          },
+          "width": 1192,
+          "height": 1685,
+          "visuallyInspected": true
+        }
+      ],
+      "figures": [
+        {
+          "path": "C:\\Users\\kanet\\Documents\\Codex\\2026-10-20\\task-6\\batches\\automotive-20261020\\booklet01\\source\\figures\\jaspa-2025-second-2-chassis-p07.webp",
+          "sha256": "ee550999a928450e397d8306a9ee7c3c67be29bd3c231bc7ecbec7d345f2546b",
+          "physicalPage": 7,
+          "questionIds": [
+            "jidosha-2025-second-2-chassis-q24"
+          ],
+          "sourcePdfSha256": "7d55f9d14241dd9a59211905dc7c060e5d63215f8165e9f7c9fc4ed274ead27f",
+          "width": 1490,
+          "height": 2106,
+          "visualComparisonWithOriginalPdf": "PASS",
+          "note": "Full-page WebP visibly retains labels, numbers, axes and complete required figure/table. No lossy WebP/PNG byte identity is claimed."
+        }
+      ],
+      "candidateRecordCanonicalSha256": "ce2a880c430cb5a6b469035bee4eaf2466c29e97d9b1b816fd5a02284492153e"
+    },
+    {
+      "id": "jidosha-2025-second-2-chassis-q25",
+      "status": "PASS",
+      "sourceQuestionPages": [
+        7
+      ],
+      "officialAnswerNumber": "4",
+      "officialAnswerLabel": "エ",
+      "officialAnswerSource": {
+        "physicalPage": 1,
+        "column": "23（2シ）",
+        "pdfSha256": "2f73820401362ca24f052d8339bf20e4865dab2f2afe74b7c7b546b7b90d6701"
+      },
+      "checks": {
+        "question": "PASS_SEMANTIC_PAPER_MATCH",
+        "choices": "PASS_ALL_FOUR_ORDER_AND_CONTENT",
+        "officialKey": "PASS_DIRECT_OFFICIAL_COLUMN_23",
+        "generalExplanation": "PASS_LOCAL_CONSISTENCY",
+        "choiceExplanations": "PASS_ALL_FOUR_LOCAL_CONTENT",
+        "figures": "PASS_NOT_REQUIRED_INFORMATION_PRESENT_IN_TEXT"
+      },
+      "issues": [],
+      "reviewNote": "FRM、硬化性/可塑性樹脂、一般的材料差を区別。",
+      "transcriptionNotes": [],
+      "choiceReasonsReviewed": 4,
+      "choiceChecks": [
+        {
+          "choice": "ア",
+          "sha256Utf8": "2b89e9d2cb259fec96edaf72f3a12b9f0c21201ddc29b90f7af4060ebec067b3",
+          "read": true,
+          "status": "PASS_LOCAL_CONSISTENCY"
+        },
+        {
+          "choice": "イ",
+          "sha256Utf8": "3b45fd851acb13d7107da4fef3899f09a790a556a78822f197fcfcf622cf8c3f",
+          "read": true,
+          "status": "PASS_LOCAL_CONSISTENCY"
+        },
+        {
+          "choice": "ウ",
+          "sha256Utf8": "bb04d81b31346712433014687382be93091037bcdb0708ee34eda8d9b53c6955",
+          "read": true,
+          "status": "PASS_LOCAL_CONSISTENCY"
+        },
+        {
+          "choice": "エ",
+          "sha256Utf8": "1ae79a49dd358749e8f20dabbfc87491f3fbf24ffdb5ff4fe719faf1923cd671",
+          "read": true,
+          "status": "PASS_LOCAL_CONSISTENCY"
+        }
+      ],
+      "sourcePageEvidence": [
+        {
+          "path": "C:\\Users\\kanet\\Documents\\Codex\\2026-10-20\\task-6\\workers\\automotive-2025second-2chassis-independent\\pages\\question-07.png",
+          "sha256": "99a4ec33f31efb4f5e859541f998c0a3f0d97debec2796412397ec1c1488cde7",
+          "role": "question",
+          "physicalPage": 7,
+          "sourcePdf": {
+            "path": "C:\\Users\\kanet\\Documents\\Codex\\2026-10-20\\task-6\\batches\\automotive-20261020\\booklet01\\source\\jaspa-2025-second-2-chassis.pdf",
+            "sha256": "7d55f9d14241dd9a59211905dc7c060e5d63215f8165e9f7c9fc4ed274ead27f"
+          },
+          "width": 1192,
+          "height": 1685,
+          "visuallyInspected": true
+        }
+      ],
+      "figures": [],
+      "candidateRecordCanonicalSha256": "a7adf40b4da448422afd6c58dbfe2696dcca9e001205d679c943232abd6434a4"
+    },
+    {
+      "id": "jidosha-2025-second-2-chassis-q26",
+      "status": "HOLD",
+      "sourceQuestionPages": [
+        8
+      ],
+      "officialAnswerNumber": "1",
+      "officialAnswerLabel": "ア",
+      "officialAnswerSource": {
+        "physicalPage": 1,
+        "column": "23（2シ）",
+        "pdfSha256": "2f73820401362ca24f052d8339bf20e4865dab2f2afe74b7c7b546b7b90d6701"
+      },
+      "checks": {
+        "question": "PASS_SEMANTIC_PAPER_MATCH",
+        "choices": "PASS_ALL_FOUR_ORDER_AND_CONTENT",
+        "officialKey": "PASS_DIRECT_OFFICIAL_COLUMN_23",
+        "generalExplanation": "HOLD_LEGAL_PRIMARY_SCOPE",
+        "choiceExplanations": "HOLD_LEGAL_PRIMARY_SCOPE",
+        "figures": "PASS_NOT_REQUIRED_INFORMATION_PRESENT_IN_TEXT"
+      },
+      "issues": [
+        {
+          "code": "APPLICABLE_LEGAL_TEXT_NOT_IN_INPUT",
+          "fields": [
+            "explanation",
+            "choiceExplanations.ア",
+            "choiceExplanations.イ",
+            "choiceExplanations.ウ",
+            "choiceExplanations.エ"
+          ],
+          "observation": "自動車点検基準別表第5の適用版・点検周期列本文が未提供。",
+          "minimumNeeded": "2026-03-22の適用版・条文/別表と各肢の直接対応を示す既存一次本文。今回の原紙/キーを版別条文確認の代替にしない。新規取得なし。",
+          "officialKeyDisputed": false
+        }
+      ],
+      "reviewNote": "自動車点検基準別表第5の適用版・点検周期列本文が未提供。",
+      "transcriptionNotes": [],
+      "choiceReasonsReviewed": 4,
+      "choiceChecks": [
+        {
+          "choice": "ア",
+          "sha256Utf8": "f87839a8ca95bd3b3cdd63e490ac8ce794a429cc04f03abbeb7f9288fb9163b3",
+          "read": true,
+          "status": "HOLD"
+        },
+        {
+          "choice": "イ",
+          "sha256Utf8": "5ea0a6039df2602ad046878cc6cf8f617521bdcf77fad844d821b5b977be11ab",
+          "read": true,
+          "status": "HOLD"
+        },
+        {
+          "choice": "ウ",
+          "sha256Utf8": "cb006f20b51730f10d88014cc1482f549e1237aa00005ed3c364a53593b9d60a",
+          "read": true,
+          "status": "HOLD"
+        },
+        {
+          "choice": "エ",
+          "sha256Utf8": "3c576fc64ab3f48b14c9647328578f7d296de32d571c01e0b6d060f3dc0ce44c",
+          "read": true,
+          "status": "HOLD"
+        }
+      ],
+      "sourcePageEvidence": [
+        {
+          "path": "C:\\Users\\kanet\\Documents\\Codex\\2026-10-20\\task-6\\workers\\automotive-2025second-2chassis-independent\\pages\\question-08.png",
+          "sha256": "e655d13ff67d32d500c355a83886fcf805be7763cd1107edf1d6563cf88c92b6",
+          "role": "question",
+          "physicalPage": 8,
+          "sourcePdf": {
+            "path": "C:\\Users\\kanet\\Documents\\Codex\\2026-10-20\\task-6\\batches\\automotive-20261020\\booklet01\\source\\jaspa-2025-second-2-chassis.pdf",
+            "sha256": "7d55f9d14241dd9a59211905dc7c060e5d63215f8165e9f7c9fc4ed274ead27f"
+          },
+          "width": 1192,
+          "height": 1685,
+          "visuallyInspected": true
+        }
+      ],
+      "figures": [],
+      "candidateRecordCanonicalSha256": "6c652a2d8c6ad7182b5919b7c55dea1921181a14ae69b94dc71e9d7c4b6db550"
+    },
+    {
+      "id": "jidosha-2025-second-2-chassis-q27",
+      "status": "HOLD",
+      "sourceQuestionPages": [
+        8
+      ],
+      "officialAnswerNumber": "2",
+      "officialAnswerLabel": "イ",
+      "officialAnswerSource": {
+        "physicalPage": 1,
+        "column": "23（2シ）",
+        "pdfSha256": "2f73820401362ca24f052d8339bf20e4865dab2f2afe74b7c7b546b7b90d6701"
+      },
+      "checks": {
+        "question": "PASS_SEMANTIC_PAPER_MATCH",
+        "choices": "PASS_ALL_FOUR_ORDER_AND_CONTENT",
+        "officialKey": "PASS_DIRECT_OFFICIAL_COLUMN_23",
+        "generalExplanation": "HOLD_LEGAL_PRIMARY_SCOPE",
+        "choiceExplanations": "HOLD_LEGAL_PRIMARY_SCOPE",
+        "figures": "PASS_NOT_REQUIRED_INFORMATION_PRESENT_IN_TEXT"
+      },
+      "issues": [
+        {
+          "code": "APPLICABLE_LEGAL_TEXT_NOT_IN_INPUT",
+          "fields": [
+            "explanation",
+            "choiceExplanations.ア",
+            "choiceExplanations.イ",
+            "choiceExplanations.ウ",
+            "choiceExplanations.エ"
+          ],
+          "observation": "後退灯の保安基準/細目告示の適用版本文が未提供。30m否定の条文対応は未照合。",
+          "minimumNeeded": "2026-03-22の適用版・条文/別表と各肢の直接対応を示す既存一次本文。今回の原紙/キーを版別条文確認の代替にしない。新規取得なし。",
+          "officialKeyDisputed": false
+        }
+      ],
+      "reviewNote": "後退灯の保安基準/細目告示の適用版本文が未提供。30m否定の条文対応は未照合。",
+      "transcriptionNotes": [],
+      "choiceReasonsReviewed": 4,
+      "choiceChecks": [
+        {
+          "choice": "ア",
+          "sha256Utf8": "7fbd5ad4a6b642fff76ed2ec7f06cc596a4e82089ce0b399360d6ed32e98cd92",
+          "read": true,
+          "status": "HOLD"
+        },
+        {
+          "choice": "イ",
+          "sha256Utf8": "acc86549f535b99d4c3f66b2778debf2612cb5190298455296c1aec792455d6e",
+          "read": true,
+          "status": "HOLD"
+        },
+        {
+          "choice": "ウ",
+          "sha256Utf8": "33ff9a0daca89713924389c3cceeb64a4da80bd8e1aa3ed59fe61dbe13b67054",
+          "read": true,
+          "status": "HOLD"
+        },
+        {
+          "choice": "エ",
+          "sha256Utf8": "3ee77e5a6cb524f5cdf4ee7569a8274f102621996291a231d24de18952e76054",
+          "read": true,
+          "status": "HOLD"
+        }
+      ],
+      "sourcePageEvidence": [
+        {
+          "path": "C:\\Users\\kanet\\Documents\\Codex\\2026-10-20\\task-6\\workers\\automotive-2025second-2chassis-independent\\pages\\question-08.png",
+          "sha256": "e655d13ff67d32d500c355a83886fcf805be7763cd1107edf1d6563cf88c92b6",
+          "role": "question",
+          "physicalPage": 8,
+          "sourcePdf": {
+            "path": "C:\\Users\\kanet\\Documents\\Codex\\2026-10-20\\task-6\\batches\\automotive-20261020\\booklet01\\source\\jaspa-2025-second-2-chassis.pdf",
+            "sha256": "7d55f9d14241dd9a59211905dc7c060e5d63215f8165e9f7c9fc4ed274ead27f"
+          },
+          "width": 1192,
+          "height": 1685,
+          "visuallyInspected": true
+        }
+      ],
+      "figures": [],
+      "candidateRecordCanonicalSha256": "3f2a2af4df70a047b207010a8ff5db435e408d55b45f95d65b9a7980f18ba3b7"
+    },
+    {
+      "id": "jidosha-2025-second-2-chassis-q28",
+      "status": "HOLD",
+      "sourceQuestionPages": [
+        8
+      ],
+      "officialAnswerNumber": "2",
+      "officialAnswerLabel": "イ",
+      "officialAnswerSource": {
+        "physicalPage": 1,
+        "column": "23（2シ）",
+        "pdfSha256": "2f73820401362ca24f052d8339bf20e4865dab2f2afe74b7c7b546b7b90d6701"
+      },
+      "checks": {
+        "question": "PASS_SEMANTIC_PAPER_MATCH",
+        "choices": "PASS_ALL_FOUR_ORDER_AND_CONTENT",
+        "officialKey": "PASS_DIRECT_OFFICIAL_COLUMN_23",
+        "generalExplanation": "HOLD_LEGAL_PRIMARY_SCOPE",
+        "choiceExplanations": "HOLD_LEGAL_PRIMARY_SCOPE",
+        "figures": "PASS_NOT_REQUIRED_INFORMATION_PRESENT_IN_TEXT"
+      },
+      "issues": [
+        {
+          "code": "APPLICABLE_LEGAL_TEXT_NOT_IN_INPUT",
+          "fields": [
+            "explanation",
+            "choiceExplanations.ア",
+            "choiceExplanations.イ",
+            "choiceExplanations.ウ",
+            "choiceExplanations.エ"
+          ],
+          "observation": "四輪小型の寸法表の適用版本文が未提供。",
+          "minimumNeeded": "2026-03-22の適用版・条文/別表と各肢の直接対応を示す既存一次本文。今回の原紙/キーを版別条文確認の代替にしない。新規取得なし。",
+          "officialKeyDisputed": false
+        }
+      ],
+      "reviewNote": "四輪小型の寸法表の適用版本文が未提供。",
+      "transcriptionNotes": [
+        "組合せ表を各肢文字列へ展開。列・行・選択順保持。"
+      ],
+      "choiceReasonsReviewed": 4,
+      "choiceChecks": [
+        {
+          "choice": "ア",
+          "sha256Utf8": "90f471e1cea994b877f7fce16ef39e458555bb224ac8f807a234ca8e87395074",
+          "read": true,
+          "status": "HOLD"
+        },
+        {
+          "choice": "イ",
+          "sha256Utf8": "4f452b2cf7d683dce14d91beeead83a69c4f67f8337ed53ebb627e723dc28385",
+          "read": true,
+          "status": "HOLD"
+        },
+        {
+          "choice": "ウ",
+          "sha256Utf8": "faba764a275f388eb37357058713f0366c50415c3989eb70412144f926943734",
+          "read": true,
+          "status": "HOLD"
+        },
+        {
+          "choice": "エ",
+          "sha256Utf8": "4ee2cd602361294cd5df28372b9782663fa5cd7d36d08fb713e9589ce31532df",
+          "read": true,
+          "status": "HOLD"
+        }
+      ],
+      "sourcePageEvidence": [
+        {
+          "path": "C:\\Users\\kanet\\Documents\\Codex\\2026-10-20\\task-6\\workers\\automotive-2025second-2chassis-independent\\pages\\question-08.png",
+          "sha256": "e655d13ff67d32d500c355a83886fcf805be7763cd1107edf1d6563cf88c92b6",
+          "role": "question",
+          "physicalPage": 8,
+          "sourcePdf": {
+            "path": "C:\\Users\\kanet\\Documents\\Codex\\2026-10-20\\task-6\\batches\\automotive-20261020\\booklet01\\source\\jaspa-2025-second-2-chassis.pdf",
+            "sha256": "7d55f9d14241dd9a59211905dc7c060e5d63215f8165e9f7c9fc4ed274ead27f"
+          },
+          "width": 1192,
+          "height": 1685,
+          "visuallyInspected": true
+        }
+      ],
+      "figures": [],
+      "candidateRecordCanonicalSha256": "5f2f9cd792183ae0a43ef013045414ef49c4ce3171e0df1e9fe538153d296774"
+    },
+    {
+      "id": "jidosha-2025-second-2-chassis-q29",
+      "status": "HOLD",
+      "sourceQuestionPages": [
+        8
+      ],
+      "officialAnswerNumber": "3",
+      "officialAnswerLabel": "ウ",
+      "officialAnswerSource": {
+        "physicalPage": 1,
+        "column": "23（2シ）",
+        "pdfSha256": "2f73820401362ca24f052d8339bf20e4865dab2f2afe74b7c7b546b7b90d6701"
+      },
+      "checks": {
+        "question": "PASS_SEMANTIC_PAPER_MATCH",
+        "choices": "PASS_ALL_FOUR_ORDER_AND_CONTENT",
+        "officialKey": "PASS_DIRECT_OFFICIAL_COLUMN_23",
+        "generalExplanation": "HOLD_LEGAL_PRIMARY_SCOPE",
+        "choiceExplanations": "HOLD_LEGAL_PRIMARY_SCOPE",
+        "figures": "PASS_NOT_REQUIRED_INFORMATION_PRESENT_IN_TEXT"
+      },
+      "issues": [
+        {
+          "code": "APPLICABLE_LEGAL_TEXT_NOT_IN_INPUT",
+          "fields": [
+            "explanation",
+            "choiceExplanations.ア",
+            "choiceExplanations.イ",
+            "choiceExplanations.ウ",
+            "choiceExplanations.エ"
+          ],
+          "observation": "100km/h・総重量1.2倍超・積車重心増の原問条件を全て保持。35度例外の適用条文本文が未提供。",
+          "minimumNeeded": "2026-03-22の適用版・条文/別表と各肢の直接対応を示す既存一次本文。今回の原紙/キーを版別条文確認の代替にしない。新規取得なし。",
+          "officialKeyDisputed": false
+        }
+      ],
+      "reviewNote": "100km/h・総重量1.2倍超・積車重心増の原問条件を全て保持。35度例外の適用条文本文が未提供。",
+      "transcriptionNotes": [],
+      "choiceReasonsReviewed": 4,
+      "choiceChecks": [
+        {
+          "choice": "ア",
+          "sha256Utf8": "26011dc11d4e56ae966e95675ba2ac9a30e055661663a9c99bf2a41b3aff57a9",
+          "read": true,
+          "status": "HOLD"
+        },
+        {
+          "choice": "イ",
+          "sha256Utf8": "80405e5a8318b2ca83481c79db004ac83ec37a1d59a1fddc5794746713449602",
+          "read": true,
+          "status": "HOLD"
+        },
+        {
+          "choice": "ウ",
+          "sha256Utf8": "d0a5beaba8aec393c784f540873312c45adb08ef4c8f601cd1d831be9514fdad",
+          "read": true,
+          "status": "HOLD"
+        },
+        {
+          "choice": "エ",
+          "sha256Utf8": "f6ccd10d8093093b0b279e779aa66997ee70358e46575e0b3d7bc4b8b51ff37c",
+          "read": true,
+          "status": "HOLD"
+        }
+      ],
+      "sourcePageEvidence": [
+        {
+          "path": "C:\\Users\\kanet\\Documents\\Codex\\2026-10-20\\task-6\\workers\\automotive-2025second-2chassis-independent\\pages\\question-08.png",
+          "sha256": "e655d13ff67d32d500c355a83886fcf805be7763cd1107edf1d6563cf88c92b6",
+          "role": "question",
+          "physicalPage": 8,
+          "sourcePdf": {
+            "path": "C:\\Users\\kanet\\Documents\\Codex\\2026-10-20\\task-6\\batches\\automotive-20261020\\booklet01\\source\\jaspa-2025-second-2-chassis.pdf",
+            "sha256": "7d55f9d14241dd9a59211905dc7c060e5d63215f8165e9f7c9fc4ed274ead27f"
+          },
+          "width": 1192,
+          "height": 1685,
+          "visuallyInspected": true
+        }
+      ],
+      "figures": [],
+      "candidateRecordCanonicalSha256": "e61abcc0c2ad15294be9d6616cd7353c87ef268a42f9ab230d2b005b594e9979"
+    },
+    {
+      "id": "jidosha-2025-second-2-chassis-q30",
+      "status": "HOLD",
+      "sourceQuestionPages": [
+        8
+      ],
+      "officialAnswerNumber": "3",
+      "officialAnswerLabel": "ウ",
+      "officialAnswerSource": {
+        "physicalPage": 1,
+        "column": "23（2シ）",
+        "pdfSha256": "2f73820401362ca24f052d8339bf20e4865dab2f2afe74b7c7b546b7b90d6701"
+      },
+      "checks": {
+        "question": "PASS_SEMANTIC_PAPER_MATCH",
+        "choices": "PASS_ALL_FOUR_ORDER_AND_CONTENT",
+        "officialKey": "PASS_DIRECT_OFFICIAL_COLUMN_23",
+        "generalExplanation": "HOLD_LEGAL_PRIMARY_SCOPE",
+        "choiceExplanations": "HOLD_LEGAL_PRIMARY_SCOPE",
+        "figures": "PASS_NOT_REQUIRED_INFORMATION_PRESENT_IN_TEXT"
+      },
+      "issues": [
+        {
+          "code": "APPLICABLE_LEGAL_TEXT_NOT_IN_INPUT",
+          "fields": [
+            "explanation",
+            "choiceExplanations.ア",
+            "choiceExplanations.イ",
+            "choiceExplanations.ウ",
+            "choiceExplanations.エ"
+          ],
+          "observation": "道路運送車両法の試験日時点の種別列挙条文本文が未提供。",
+          "minimumNeeded": "2026-03-22の適用版・条文/別表と各肢の直接対応を示す既存一次本文。今回の原紙/キーを版別条文確認の代替にしない。新規取得なし。",
+          "officialKeyDisputed": false
+        }
+      ],
+      "reviewNote": "道路運送車両法の試験日時点の種別列挙条文本文が未提供。",
+      "transcriptionNotes": [],
+      "choiceReasonsReviewed": 4,
+      "choiceChecks": [
+        {
+          "choice": "ア",
+          "sha256Utf8": "ad1e96f3dbf3f59dfaa72e84502171aa2fdcdfe6584e8a642358c78dcf440f4a",
+          "read": true,
+          "status": "HOLD"
+        },
+        {
+          "choice": "イ",
+          "sha256Utf8": "9f360e6a91f7a15e3236f2659947b4990949a2a6e0bc0931c716df211318def6",
+          "read": true,
+          "status": "HOLD"
+        },
+        {
+          "choice": "ウ",
+          "sha256Utf8": "57610a3b0f268a563524cea79adf09b5d605d801f829f97bac590cf7df40fc54",
+          "read": true,
+          "status": "HOLD"
+        },
+        {
+          "choice": "エ",
+          "sha256Utf8": "86903c8f39dc9d49a1152ebe745b4edbecf1d71adf932ae6acb043a3e99c137d",
+          "read": true,
+          "status": "HOLD"
+        }
+      ],
+      "sourcePageEvidence": [
+        {
+          "path": "C:\\Users\\kanet\\Documents\\Codex\\2026-10-20\\task-6\\workers\\automotive-2025second-2chassis-independent\\pages\\question-08.png",
+          "sha256": "e655d13ff67d32d500c355a83886fcf805be7763cd1107edf1d6563cf88c92b6",
+          "role": "question",
+          "physicalPage": 8,
+          "sourcePdf": {
+            "path": "C:\\Users\\kanet\\Documents\\Codex\\2026-10-20\\task-6\\batches\\automotive-20261020\\booklet01\\source\\jaspa-2025-second-2-chassis.pdf",
+            "sha256": "7d55f9d14241dd9a59211905dc7c060e5d63215f8165e9f7c9fc4ed274ead27f"
+          },
+          "width": 1192,
+          "height": 1685,
+          "visuallyInspected": true
+        }
+      ],
+      "figures": [],
+      "candidateRecordCanonicalSha256": "0afc6e960deb9ae5cdc29439277de88933ca00f4e00851b88e6fca6e05b8bb37"
+    }
+  ],
+  "pageEvidence": [
+    {
+      "path": "C:\\Users\\kanet\\Documents\\Codex\\2026-10-20\\task-6\\workers\\automotive-2025second-2chassis-independent\\pages\\question-01.png",
+      "sha256": "0fdc079344f907e8807dd78a2368b4d41857242cda2b25a1aa4004078fc6d7cc",
+      "role": "question",
+      "physicalPage": 1,
+      "sourcePdf": {
+        "path": "C:\\Users\\kanet\\Documents\\Codex\\2026-10-20\\task-6\\batches\\automotive-20261020\\booklet01\\source\\jaspa-2025-second-2-chassis.pdf",
+        "sha256": "7d55f9d14241dd9a59211905dc7c060e5d63215f8165e9f7c9fc4ed274ead27f"
+      },
+      "width": 1192,
+      "height": 1685,
+      "visuallyInspected": true
+    },
+    {
+      "path": "C:\\Users\\kanet\\Documents\\Codex\\2026-10-20\\task-6\\workers\\automotive-2025second-2chassis-independent\\pages\\question-02.png",
+      "sha256": "7bb3c989516d176056ffe7b7f41c7a7a2092c6bdbc3645a7306040f97cc44063",
+      "role": "question",
+      "physicalPage": 2,
+      "sourcePdf": {
+        "path": "C:\\Users\\kanet\\Documents\\Codex\\2026-10-20\\task-6\\batches\\automotive-20261020\\booklet01\\source\\jaspa-2025-second-2-chassis.pdf",
+        "sha256": "7d55f9d14241dd9a59211905dc7c060e5d63215f8165e9f7c9fc4ed274ead27f"
+      },
+      "width": 1192,
+      "height": 1685,
+      "visuallyInspected": true
+    },
+    {
+      "path": "C:\\Users\\kanet\\Documents\\Codex\\2026-10-20\\task-6\\workers\\automotive-2025second-2chassis-independent\\pages\\question-03.png",
+      "sha256": "4992e2bac4e7336fce8f1d440c31e4c359273a7cd8418c2f353db59ea10a612e",
+      "role": "question",
+      "physicalPage": 3,
+      "sourcePdf": {
+        "path": "C:\\Users\\kanet\\Documents\\Codex\\2026-10-20\\task-6\\batches\\automotive-20261020\\booklet01\\source\\jaspa-2025-second-2-chassis.pdf",
+        "sha256": "7d55f9d14241dd9a59211905dc7c060e5d63215f8165e9f7c9fc4ed274ead27f"
+      },
+      "width": 1192,
+      "height": 1685,
+      "visuallyInspected": true
+    },
+    {
+      "path": "C:\\Users\\kanet\\Documents\\Codex\\2026-10-20\\task-6\\workers\\automotive-2025second-2chassis-independent\\pages\\question-04.png",
+      "sha256": "072bf43158cb55b122e06d00f87af4c5fdcd70d028809ca36e02b71c971dc0de",
+      "role": "question",
+      "physicalPage": 4,
+      "sourcePdf": {
+        "path": "C:\\Users\\kanet\\Documents\\Codex\\2026-10-20\\task-6\\batches\\automotive-20261020\\booklet01\\source\\jaspa-2025-second-2-chassis.pdf",
+        "sha256": "7d55f9d14241dd9a59211905dc7c060e5d63215f8165e9f7c9fc4ed274ead27f"
+      },
+      "width": 1192,
+      "height": 1685,
+      "visuallyInspected": true
+    },
+    {
+      "path": "C:\\Users\\kanet\\Documents\\Codex\\2026-10-20\\task-6\\workers\\automotive-2025second-2chassis-independent\\pages\\question-05.png",
+      "sha256": "d0565d505f6902e75ae5d8756577e4de3a01da09171cdff1fbeb6015356bcd36",
+      "role": "question",
+      "physicalPage": 5,
+      "sourcePdf": {
+        "path": "C:\\Users\\kanet\\Documents\\Codex\\2026-10-20\\task-6\\batches\\automotive-20261020\\booklet01\\source\\jaspa-2025-second-2-chassis.pdf",
+        "sha256": "7d55f9d14241dd9a59211905dc7c060e5d63215f8165e9f7c9fc4ed274ead27f"
+      },
+      "width": 1192,
+      "height": 1685,
+      "visuallyInspected": true
+    },
+    {
+      "path": "C:\\Users\\kanet\\Documents\\Codex\\2026-10-20\\task-6\\workers\\automotive-2025second-2chassis-independent\\pages\\question-06.png",
+      "sha256": "290c8b5a5c5bd4497f1c05257998b6b6bc89f7afe754bc5f9faec07016142143",
+      "role": "question",
+      "physicalPage": 6,
+      "sourcePdf": {
+        "path": "C:\\Users\\kanet\\Documents\\Codex\\2026-10-20\\task-6\\batches\\automotive-20261020\\booklet01\\source\\jaspa-2025-second-2-chassis.pdf",
+        "sha256": "7d55f9d14241dd9a59211905dc7c060e5d63215f8165e9f7c9fc4ed274ead27f"
+      },
+      "width": 1192,
+      "height": 1685,
+      "visuallyInspected": true
+    },
+    {
+      "path": "C:\\Users\\kanet\\Documents\\Codex\\2026-10-20\\task-6\\workers\\automotive-2025second-2chassis-independent\\pages\\question-07.png",
+      "sha256": "99a4ec33f31efb4f5e859541f998c0a3f0d97debec2796412397ec1c1488cde7",
+      "role": "question",
+      "physicalPage": 7,
+      "sourcePdf": {
+        "path": "C:\\Users\\kanet\\Documents\\Codex\\2026-10-20\\task-6\\batches\\automotive-20261020\\booklet01\\source\\jaspa-2025-second-2-chassis.pdf",
+        "sha256": "7d55f9d14241dd9a59211905dc7c060e5d63215f8165e9f7c9fc4ed274ead27f"
+      },
+      "width": 1192,
+      "height": 1685,
+      "visuallyInspected": true
+    },
+    {
+      "path": "C:\\Users\\kanet\\Documents\\Codex\\2026-10-20\\task-6\\workers\\automotive-2025second-2chassis-independent\\pages\\question-08.png",
+      "sha256": "e655d13ff67d32d500c355a83886fcf805be7763cd1107edf1d6563cf88c92b6",
+      "role": "question",
+      "physicalPage": 8,
+      "sourcePdf": {
+        "path": "C:\\Users\\kanet\\Documents\\Codex\\2026-10-20\\task-6\\batches\\automotive-20261020\\booklet01\\source\\jaspa-2025-second-2-chassis.pdf",
+        "sha256": "7d55f9d14241dd9a59211905dc7c060e5d63215f8165e9f7c9fc4ed274ead27f"
+      },
+      "width": 1192,
+      "height": 1685,
+      "visuallyInspected": true
+    },
+    {
+      "path": "C:\\Users\\kanet\\Documents\\Codex\\2026-10-20\\task-6\\workers\\automotive-2025second-2chassis-independent\\pages\\answer-01.png",
+      "sha256": "fd9181c2c0c0037216f4e862f68fac5af9fd78f0f97e6e340427af321f15de1e",
+      "role": "answer",
+      "physicalPage": 1,
+      "sourcePdf": {
+        "path": "C:\\Users\\kanet\\Documents\\Codex\\2026-10-20\\task-6\\batches\\automotive-20261020\\booklet01\\source\\jaspa-2025-second-answers.pdf",
+        "sha256": "2f73820401362ca24f052d8339bf20e4865dab2f2afe74b7c7b546b7b90d6701"
+      },
+      "width": 1191,
+      "height": 1684,
+      "visuallyInspected": true
+    },
+    {
+      "path": "C:\\Users\\kanet\\Documents\\Codex\\2026-10-20\\task-6\\workers\\automotive-2025second-2chassis-independent\\pages\\answer-02.png",
+      "sha256": "37f8898e9f9b9f3decf12316a1d6511f6d229c3975668e494687c653593af1e9",
+      "role": "answer",
+      "physicalPage": 2,
+      "sourcePdf": {
+        "path": "C:\\Users\\kanet\\Documents\\Codex\\2026-10-20\\task-6\\batches\\automotive-20261020\\booklet01\\source\\jaspa-2025-second-answers.pdf",
+        "sha256": "2f73820401362ca24f052d8339bf20e4865dab2f2afe74b7c7b546b7b90d6701"
+      },
+      "width": 1191,
+      "height": 1684,
+      "visuallyInspected": true
+    }
+  ],
+  "figureEvidence": [
+    {
+      "path": "C:\\Users\\kanet\\Documents\\Codex\\2026-10-20\\task-6\\batches\\automotive-20261020\\booklet01\\source\\figures\\jaspa-2025-second-2-chassis-p02.webp",
+      "sha256": "5950bf57723902669e637403b51033e500cffa8d2e61f705a5a5ef1c26aa39e1",
+      "physicalPage": 2,
+      "questionIds": [
+        "jidosha-2025-second-2-chassis-q04"
+      ],
+      "sourcePdfSha256": "7d55f9d14241dd9a59211905dc7c060e5d63215f8165e9f7c9fc4ed274ead27f",
+      "width": 1490,
+      "height": 2106,
+      "visualComparisonWithOriginalPdf": "PASS",
+      "note": "Full-page WebP visibly retains labels, numbers, axes and complete required figure/table. No lossy WebP/PNG byte identity is claimed."
+    },
+    {
+      "path": "C:\\Users\\kanet\\Documents\\Codex\\2026-10-20\\task-6\\batches\\automotive-20261020\\booklet01\\source\\figures\\jaspa-2025-second-2-chassis-p04.webp",
+      "sha256": "8840091e6778dd605ca70913922674a1df712e11c08a6cdb35b5aaa1c7831a74",
+      "physicalPage": 4,
+      "questionIds": [
+        "jidosha-2025-second-2-chassis-q10"
+      ],
+      "sourcePdfSha256": "7d55f9d14241dd9a59211905dc7c060e5d63215f8165e9f7c9fc4ed274ead27f",
+      "width": 1490,
+      "height": 2106,
+      "visualComparisonWithOriginalPdf": "PASS",
+      "note": "Full-page WebP visibly retains labels, numbers, axes and complete required figure/table. No lossy WebP/PNG byte identity is claimed."
+    },
+    {
+      "path": "C:\\Users\\kanet\\Documents\\Codex\\2026-10-20\\task-6\\batches\\automotive-20261020\\booklet01\\source\\figures\\jaspa-2025-second-2-chassis-p07.webp",
+      "sha256": "ee550999a928450e397d8306a9ee7c3c67be29bd3c231bc7ecbec7d345f2546b",
+      "physicalPage": 7,
+      "questionIds": [
+        "jidosha-2025-second-2-chassis-q24"
+      ],
+      "sourcePdfSha256": "7d55f9d14241dd9a59211905dc7c060e5d63215f8165e9f7c9fc4ed274ead27f",
+      "width": 1490,
+      "height": 2106,
+      "visualComparisonWithOriginalPdf": "PASS",
+      "note": "Full-page WebP visibly retains labels, numbers, axes and complete required figure/table. No lossy WebP/PNG byte identity is claimed."
+    }
+  ],
+  "visualScope": {
+    "originalPdfPages": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
+    "questionPages": [
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
+    "answerPdfPagesViewed": [
+      1,
+      2
+    ],
+    "answerColumnUsed": "physical page 1, subject 23 (2シ), No.1–30 only",
+    "webpOriginalComparisonPages": [
+      2,
+      4,
+      7
+    ],
+    "q10ArrowDetailRead": true
+  },
+  "sourceLimits": [
+    "原紙/公式答案は問題・正答の一次資料。独自説明や理由が公式解説であるとは主張しない。",
+    "非法令PASSは本設問範囲の補助的論理・原図照合であり、実車整備指導や別車種/機構への包括承認ではない。",
+    "法令5問のキーを否定せず、適用版条文本文の照合不足をHOLDとした。全別reportsに本文が不存在とは主張しない。"
+  ],
+  "bookkeeping": {
+    "thisScopeOnly": 30,
+    "newLocalHolds": 5,
+    "preexistingTechnicalHoldIdsNotTouched": true,
+    "old606PartitionNotReclassified": true,
+    "formalAcceptance": false,
+    "formalAcceptedIncrement": 0,
+    "permissionVerified": false,
+    "rightsHold": true,
+    "publicGo": 0
+  },
+  "unexecuted": {
+    "UI": 0,
+    "browser": 0,
+    "Next": 0,
+    "localStorage": 0,
+    "production": 0,
+    "databaseConnections": 0,
+    "externalRetrievals": 0,
+    "externalModelReviews": 0,
+    "sourceCandidateWrites": 0,
+    "sharedIntegrationWrites": 0,
+    "builds": 0,
+    "pushes": 0,
+    "CI": 0,
+    "deployments": 0
+  },
+  "formalAcceptance": false,
+  "publicGo": 0,
+  "UI": 0,
+  "revision": {
+    "number": 1,
+    "baseReview": {
+      "path": "C:\\Users\\kanet\\Documents\\Codex\\2026-10-20\\task-6\\workers\\automotive-2025second-2chassis-independent\\RESULT.json",
+      "sha256": "92331c924265c3908c8ef1c2be3575e9d9924c11eae6064d00e1eff5bcb23379"
+    },
+    "baseCandidate": {
+      "path": "C:\\Users\\kanet\\Documents\\Codex\\2026-10-20\\task-6\\batches\\automotive-20261020\\booklet01\\CANDIDATE.json",
+      "sha256": "fd27a9f3095e51fadae0d0bd4e53102c3b11b2b167164088e2cb53c720fde39c"
+    },
+    "authorDelta": {
+      "path": "C:\\Users\\kanet\\Documents\\Codex\\2026-10-20\\task-6\\batches\\automotive-20261020\\booklet01\\revision01\\DELTA.json",
+      "sha256": "82aaa42a1f1a07e77ee33eba54f5020829db9b908c5d095bfc002a509c975350"
+    },
+    "actualLeafDiffs": [
+      {
+        "path": "/writtenOriginals/9/choiceExplanations/イ",
+        "before": "Bは低たわみ側で急に荷重が立ち上がってから緩む曲線で、該当しない。",
+        "after": "Bは、たわみが増す途中で、荷重の増加割合が小さい直線から大きい直線へ折れ曲がる特性を示しており、ダイヤフラム型エア・スプリングを示すCとは異なる。"
+      }
+    ],
+    "inheritedOriginalReviews": 29,
+    "changedReasonCellsReReviewed": 1,
+    "other119ChoiceReasonsUnchanged": true,
+    "all30QuestionsChoicesKeysGeneralExplanationsAndFiguresUnchanged": true,
+    "resolution": "Bの引出矢印・折れ線を原PDF p4及び既存WebPの視認と再対応。低勾配から高勾配への折れ線という修正文は一致。正答Cは公式キー3の対応のままで、機構の新規補作なし。",
+    "legalHoldsUnchanged": [
+      "jidosha-2025-second-2-chassis-q26",
+      "jidosha-2025-second-2-chassis-q27",
+      "jidosha-2025-second-2-chassis-q28",
+      "jidosha-2025-second-2-chassis-q29",
+      "jidosha-2025-second-2-chassis-q30"
+    ]
+  }
+}

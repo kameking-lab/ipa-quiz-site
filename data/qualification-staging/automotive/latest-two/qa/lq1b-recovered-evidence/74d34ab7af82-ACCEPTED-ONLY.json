@@ -1,0 +1,926 @@
+[
+  {
+    "id": "jidosha-2026-first-2-gasoline-q01",
+    "qNumber": 1,
+    "question": "ピストン・リングに関する記述として、不適切なものは次のうちどれか。",
+    "choices": {
+      "ア": "(1) ピストン・リングには、耐摩耗性、強じん性、耐熱性及びオイル保持性などが要求されるため、一般にコンプレッション・リングの材料は特殊鋳鉄又は炭素鋼で、オイル・リングは炭素鋼で作られている。",
+      "イ": "(2) フラッタ現象が起きると、ピストン・リングの機能が損なわれ、ガス漏れによるエンジン出力の低下、オイル消費量の増大、リング溝やリング上下の異常摩耗などが促進される。",
+      "ウ": "(3) バレル・フェース型のピストン・リングは、吸入行程では、シリンダ壁面と線接触し、また、燃焼（膨張）行程では、高い面圧でシリンダ壁面に密着しており、一般にセカンド・リングに用いられている。",
+      "エ": "(4) スカッフ現象は、オイルの不良や過度の荷重が加わったとき、あるいはオーバヒートした場合などに起こりやすい。"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": "3",
+    "explanation": "不適切なのは(3)。バレル・フェース型は円弧状の摺動面を持ち、一般にトップ・リングに用いられる。設問の「セカンド・リング」が誤り。",
+    "choiceExplanations": {
+      "ア": "適切。リングに求められる性質と、コンプレッション・リング及びオイル・リングの代表的材料を述べている。",
+      "イ": "適切。フラッタはリングの上下振動で密封や油かきの機能を損ない、ガス漏れ・油消費・摩耗につながる。",
+      "ウ": "不適切。バレル・フェース型は一般にトップ・リングに用いられる。セカンド・リングに用いるという箇所が違う。",
+      "エ": "適切。潤滑不良、過荷重、過熱は油膜を破り、摺動面のスカッフを招きやすい。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePages": [
+      2
+    ],
+    "sourceFigureRequired": false,
+    "topicTags": [
+      "ピストン・リング",
+      "リングの形状",
+      "エンジン"
+    ],
+    "difficulty": 2,
+    "isCalculation": false,
+    "needsReview": false,
+    "reviewNotes": [],
+    "officialReferenceUrls": [],
+    "qualification": "jidousha-seibishi-gakka",
+    "session": "gakka",
+    "type": "multiple-choice",
+    "year": 2026,
+    "fiscalYear": 2026,
+    "season": "first",
+    "term": "first",
+    "subject": "2-gasoline",
+    "category": "二級ガソリン自動車",
+    "examDate": "2026-10-04",
+    "sourcePdfUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_2g.pdf",
+    "sourceAnswerUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_kai.pdf",
+    "sourceAttribution": "出典：日本自動車整備振興会連合会 令和8年度第1回自動車整備技能登録試験 二級ガソリン自動車 No.1",
+    "officialQuestionStatus": "normal",
+    "lastUpdated": "2026-10-11",
+    "permissionVerified": false,
+    "publicGo": 0,
+    "sourcePageReferences": [
+      {
+        "physicalPage": 2,
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_2g.pdf#page=2",
+        "pdfSha256": "d4928e4405dd5933fc42eb31200b5ad6480cb2057474e04ee342b405b8ab9c33"
+      }
+    ],
+    "sourceFigureAssets": []
+  },
+  {
+    "id": "jidosha-2026-first-2-gasoline-q03",
+    "qNumber": 3,
+    "question": "エンジンの性能に関する記述として、適切なものは次のうちどれか。",
+    "choices": {
+      "ア": "(1) 熱損失は、冷却水の温度、潤滑油の粘度のほかにエンジン回転速度の影響が大きい。",
+      "イ": "(2) ポンプ損失（ポンピング・ロス）は、燃焼室壁を通して冷却水へ失われる冷却損失、排気ガスにもち去られる排気損失、ふく射熱として周囲に放散されるふく射損失からなっている。",
+      "ウ": "(3) 体積効率と充填効率は、平地や高山など気圧の低い場所でも差はほとんどない。",
+      "エ": "(4) 機械損失は、ピストン、ピストン・リング、各ベアリングなどの摩擦損失とウォータ・ポンプ、オイル・ポンプ、オルタネータなど補機駆動の損失からなっている。"
+    },
+    "answer": "エ",
+    "officialAnswerNumber": "4",
+    "explanation": "機械損失はエンジン内部の摩擦と補機を回すための仕事で構成される。ポンピング・ロスや熱損失との区別が要点。",
+    "choiceExplanations": {
+      "ア": "不適切。冷却水温度などによる熱の逃げを扱う説明に、潤滑油の粘度や回転速度の影響を混在させている。これらは主に摩擦など機械損失に影響する。",
+      "イ": "不適切。列挙された冷却・排気・ふく射は熱損失。ポンピング・ロスは吸排気の際の圧力差に抗して行う仕事の損失。",
+      "ウ": "不適切。体積効率と充填効率は基準とする空気密度が異なるため、気圧低下時には差が生じる。",
+      "エ": "適切。摺動部の摩擦損失と、各種ポンプ・オルタネータなどを駆動する損失は機械損失に含まれる。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePages": [
+      2
+    ],
+    "sourceFigureRequired": false,
+    "topicTags": [
+      "エンジン性能",
+      "損失",
+      "機械効率"
+    ],
+    "difficulty": 2,
+    "isCalculation": false,
+    "needsReview": false,
+    "reviewNotes": [],
+    "officialReferenceUrls": [],
+    "qualification": "jidousha-seibishi-gakka",
+    "session": "gakka",
+    "type": "multiple-choice",
+    "year": 2026,
+    "fiscalYear": 2026,
+    "season": "first",
+    "term": "first",
+    "subject": "2-gasoline",
+    "category": "二級ガソリン自動車",
+    "examDate": "2026-10-04",
+    "sourcePdfUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_2g.pdf",
+    "sourceAnswerUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_kai.pdf",
+    "sourceAttribution": "出典：日本自動車整備振興会連合会 令和8年度第1回自動車整備技能登録試験 二級ガソリン自動車 No.3",
+    "officialQuestionStatus": "normal",
+    "lastUpdated": "2026-10-11",
+    "permissionVerified": false,
+    "publicGo": 0,
+    "sourcePageReferences": [
+      {
+        "physicalPage": 2,
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_2g.pdf#page=2",
+        "pdfSha256": "d4928e4405dd5933fc42eb31200b5ad6480cb2057474e04ee342b405b8ab9c33"
+      }
+    ],
+    "sourceFigureAssets": []
+  },
+  {
+    "id": "jidosha-2026-first-2-gasoline-q06",
+    "qNumber": 6,
+    "question": "コンロッド・ベアリングに要求される性質に関する記述として、不適切なものは次のうちどれか。",
+    "choices": {
+      "ア": "(1) 耐疲労性とは、ベアリングに繰り返し荷重が加えられても、その機械的性質が変化しにくい性質をいう。",
+      "イ": "(2) 耐食性とは、酸などにより腐食されにくい性質をいう。",
+      "ウ": "(3) 埋没性のよいベアリングは、クランク・ピンに傷を付けやすい。",
+      "エ": "(4) 非焼き付き性とは、ベアリングとクランク・ピンとに金属接触が起きた場合に、ベアリングが焼き付きにくい性質をいう。"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": "3",
+    "explanation": "埋没性は異物を軸受面に取り込んで相手軸を守る性質。高いほどクランク・ピンへの傷を抑えやすいので、(3)が不適切。",
+    "choiceExplanations": {
+      "ア": "適切。繰り返し荷重に対する疲労損傷の起こりにくさを指す。",
+      "イ": "適切。酸などに対する腐食の起こりにくさが耐食性。",
+      "ウ": "不適切。埋没性がよいと硬い異物をベアリング側に取り込み、クランク・ピンへの傷を減らす。",
+      "エ": "適切。金属接触時にも焼き付きにくい性質が非焼き付き性。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePages": [
+      3
+    ],
+    "sourceFigureRequired": false,
+    "topicTags": [
+      "コンロッド・ベアリング",
+      "軸受特性"
+    ],
+    "difficulty": 2,
+    "isCalculation": false,
+    "needsReview": false,
+    "reviewNotes": [],
+    "officialReferenceUrls": [],
+    "qualification": "jidousha-seibishi-gakka",
+    "session": "gakka",
+    "type": "multiple-choice",
+    "year": 2026,
+    "fiscalYear": 2026,
+    "season": "first",
+    "term": "first",
+    "subject": "2-gasoline",
+    "category": "二級ガソリン自動車",
+    "examDate": "2026-10-04",
+    "sourcePdfUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_2g.pdf",
+    "sourceAnswerUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_kai.pdf",
+    "sourceAttribution": "出典：日本自動車整備振興会連合会 令和8年度第1回自動車整備技能登録試験 二級ガソリン自動車 No.6",
+    "officialQuestionStatus": "normal",
+    "lastUpdated": "2026-10-11",
+    "permissionVerified": false,
+    "publicGo": 0,
+    "sourcePageReferences": [
+      {
+        "physicalPage": 3,
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_2g.pdf#page=3",
+        "pdfSha256": "d4928e4405dd5933fc42eb31200b5ad6480cb2057474e04ee342b405b8ab9c33"
+      }
+    ],
+    "sourceFigureAssets": []
+  },
+  {
+    "id": "jidosha-2026-first-2-gasoline-q08",
+    "qNumber": 8,
+    "question": "図に示すオルタネータ回路において、発電時（調整電圧以下のとき）の作動に関する次の文章の（イ）から（ハ）に当てはまるものとして、下の組み合わせのうち、適切なものはどれか。エンジンが始動され、オルタネータの回転が上昇すると、IC内の制御回路によりP端子の電圧を検出し、Tr₁は間欠的なON・OFF動作から連続（イ）動作となり、十分な励磁電流が（ロ）に流れ、発電電圧が急速に上昇する。また、P端子電圧の上昇により、ICはTr₂を（ハ）してチャージ・ランプを消灯させ、B端子電圧がバッテリ電圧を超えると、バッテリに充電電流が流れる。",
+    "choices": {
+      "ア": "(1) イ：ON、ロ：ステータ・コイル、ハ：ON",
+      "イ": "(2) イ：ON、ロ：ロータ・コイル、ハ：OFF",
+      "ウ": "(3) イ：OFF、ロ：ステータ・コイル、ハ：OFF",
+      "エ": "(4) イ：OFF、ロ：ロータ・コイル、ハ：OFF"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": "2",
+    "explanation": "発電開始時はTr₁を連続ONにしてロータ・コイルへ励磁電流を流す。P端子の電圧が上がるとTr₂をOFFにし、チャージ・ランプを消す。",
+    "choiceExplanations": {
+      "ア": "不適切。励磁電流が流れるのはロータ・コイルで、消灯時のTr₂はOFF。",
+      "イ": "適切。Tr₁がONとなりロータを励磁し、Tr₂がOFFとなってランプが消える。",
+      "ウ": "不適切。発電電圧を上げるにはTr₁をONにしてロータ・コイルに励磁電流を流す。",
+      "エ": "不適切。ロータ・コイルとTr₂の状態は合うが、励磁時のTr₁はON。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePages": [
+      4
+    ],
+    "sourceFigureRequired": true,
+    "topicTags": [
+      "オルタネータ",
+      "ICレギュレータ",
+      "励磁"
+    ],
+    "difficulty": 3,
+    "isCalculation": false,
+    "needsReview": false,
+    "reviewNotes": [],
+    "officialReferenceUrls": [],
+    "qualification": "jidousha-seibishi-gakka",
+    "session": "gakka",
+    "type": "multiple-choice",
+    "year": 2026,
+    "fiscalYear": 2026,
+    "season": "first",
+    "term": "first",
+    "subject": "2-gasoline",
+    "category": "二級ガソリン自動車",
+    "examDate": "2026-10-04",
+    "sourcePdfUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_2g.pdf",
+    "sourceAnswerUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_kai.pdf",
+    "sourceAttribution": "出典：日本自動車整備振興会連合会 令和8年度第1回自動車整備技能登録試験 二級ガソリン自動車 No.8",
+    "officialQuestionStatus": "normal",
+    "lastUpdated": "2026-10-11",
+    "permissionVerified": false,
+    "publicGo": 0,
+    "sourcePageReferences": [
+      {
+        "physicalPage": 4,
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_2g.pdf#page=4",
+        "pdfSha256": "d4928e4405dd5933fc42eb31200b5ad6480cb2057474e04ee342b405b8ab9c33"
+      }
+    ],
+    "sourceFigureAssets": [
+      {
+        "physicalPage": 4,
+        "relativePath": "figures/jaspa-2026-first-2-gasoline-p04.webp"
+      }
+    ]
+  },
+  {
+    "id": "jidosha-2026-first-2-gasoline-q10",
+    "qNumber": 10,
+    "question": "自動車の排気ガスに関する記述として、不適切なものは次のうちどれか。",
+    "choices": {
+      "ア": "(1) NOxの発生は、理論空燃比付近で最大となり、それより空燃比が小さい（濃い）場合や大きい（薄い）場合は急激に低下する。",
+      "イ": "(2) 空気の供給不足などにより燃料が不完全燃焼したときのCOは、「2C＋O₂＝2CO」のように発生する。",
+      "ウ": "(3) クエンチング・ゾーン（消炎層）にある燃え残りの混合気は、排気行程中にピストンにより押し出されて未燃焼ガスとして排出される。",
+      "エ": "(4) CO₂濃度は、理論空燃比付近で最小となり、それより空燃比が大きい（薄い）領域では増加する。"
+    },
+    "answer": "エ",
+    "officialAnswerNumber": "4",
+    "explanation": "CO₂濃度は理論空燃比付近で高く、薄い混合気では空気による希釈などで低下する。(4)は最大・最小の関係が逆。",
+    "choiceExplanations": {
+      "ア": "適切。NOxは高温燃焼で増え、理論空燃比付近で多くなる。濃すぎても薄すぎても燃焼温度が下がる。",
+      "イ": "適切。酸素が不足すると炭素はCO₂まで酸化されず、COを生じる。",
+      "ウ": "適切。壁面近くの消炎層には燃え残りがあり、排気で未燃焼成分として出る。",
+      "エ": "不適切。CO₂は理論空燃比付近で最大となり、さらに薄い領域では濃度が下がる。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePages": [
+      5
+    ],
+    "sourceFigureRequired": false,
+    "topicTags": [
+      "排気ガス",
+      "空燃比",
+      "CO₂"
+    ],
+    "difficulty": 2,
+    "isCalculation": false,
+    "needsReview": false,
+    "reviewNotes": [],
+    "officialReferenceUrls": [],
+    "qualification": "jidousha-seibishi-gakka",
+    "session": "gakka",
+    "type": "multiple-choice",
+    "year": 2026,
+    "fiscalYear": 2026,
+    "season": "first",
+    "term": "first",
+    "subject": "2-gasoline",
+    "category": "二級ガソリン自動車",
+    "examDate": "2026-10-04",
+    "sourcePdfUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_2g.pdf",
+    "sourceAnswerUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_kai.pdf",
+    "sourceAttribution": "出典：日本自動車整備振興会連合会 令和8年度第1回自動車整備技能登録試験 二級ガソリン自動車 No.10",
+    "officialQuestionStatus": "normal",
+    "lastUpdated": "2026-10-11",
+    "permissionVerified": false,
+    "publicGo": 0,
+    "sourcePageReferences": [
+      {
+        "physicalPage": 5,
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_2g.pdf#page=5",
+        "pdfSha256": "d4928e4405dd5933fc42eb31200b5ad6480cb2057474e04ee342b405b8ab9c33"
+      }
+    ],
+    "sourceFigureAssets": []
+  },
+  {
+    "id": "jidosha-2026-first-2-gasoline-q12",
+    "qNumber": 12,
+    "question": "点火制御装置に関する記述として、適切なものは次のうちどれか。",
+    "choices": {
+      "ア": "(1) ノック補正は、ノック・センサがノッキングを検出すると進角させ、ノッキングがなくなると遅角させる。",
+      "イ": "(2) 通電時間制御は、エンジン回転速度が高くなるに連れて、トランジスタがONする時期（一次電流が流れ始めるとき）を早めている。",
+      "ウ": "(3) エンジン始動後のアイドリング時の基本進角は、インテーク・マニホールド圧力信号又は吸入空気量信号により、あらかじめ設定された点火時期に制御されている。",
+      "エ": "(4) アイドル安定化補正は、アイドル回転速度が低くなると点火時期を遅角し、高い場合は進角してアイドル回転速度の安定化を図っている。"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": "2",
+    "explanation": "高回転では1回転に要する時間が短くなるため、一次電流を流し始める時期を早めてコイルの通電時間を確保する。",
+    "choiceExplanations": {
+      "ア": "不適切。ノック検出時は遅角してノッキングを抑え、収まれば進角方向へ戻す。",
+      "イ": "適切。高回転時ほど通電開始を早め、点火コイルの一次電流を十分に立ち上げる。",
+      "ウ": "不適切。始動後のアイドリング時の基本進角を吸入圧力や吸入空気量だけで決める説明は合わない。回転速度等に応じた基本点火時期とアイドル補正を用いる。",
+      "エ": "不適切。アイドル回転が低いときは進角してトルクを増し、高いときは遅角する。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePages": [
+      6
+    ],
+    "sourceFigureRequired": false,
+    "topicTags": [
+      "点火制御",
+      "通電時間",
+      "ノック補正"
+    ],
+    "difficulty": 2,
+    "isCalculation": false,
+    "needsReview": false,
+    "reviewNotes": [],
+    "officialReferenceUrls": [],
+    "qualification": "jidousha-seibishi-gakka",
+    "session": "gakka",
+    "type": "multiple-choice",
+    "year": 2026,
+    "fiscalYear": 2026,
+    "season": "first",
+    "term": "first",
+    "subject": "2-gasoline",
+    "category": "二級ガソリン自動車",
+    "examDate": "2026-10-04",
+    "sourcePdfUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_2g.pdf",
+    "sourceAnswerUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_kai.pdf",
+    "sourceAttribution": "出典：日本自動車整備振興会連合会 令和8年度第1回自動車整備技能登録試験 二級ガソリン自動車 No.12",
+    "officialQuestionStatus": "normal",
+    "lastUpdated": "2026-10-11",
+    "permissionVerified": false,
+    "publicGo": 0,
+    "sourcePageReferences": [
+      {
+        "physicalPage": 6,
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_2g.pdf#page=6",
+        "pdfSha256": "d4928e4405dd5933fc42eb31200b5ad6480cb2057474e04ee342b405b8ab9c33"
+      }
+    ],
+    "sourceFigureAssets": []
+  },
+  {
+    "id": "jidosha-2026-first-2-gasoline-q15",
+    "qNumber": 15,
+    "question": "電子制御式燃料噴射装置に関する記述として、適切なものは次のうちどれか。",
+    "choices": {
+      "ア": "(1) Dジェトロニック方式の基本噴射時間は、エア・フロー・メータで検出した吸入空気量と、クランク角センサにより検出したエンジン回転速度に基づいて算出される。",
+      "イ": "(2) 高抵抗型インジェクタは、抵抗の大きい導線をソレノイド・コイルに使用し、電流を大きくして発熱を防止している。",
+      "ウ": "(3) インジェクタの噴射信号がONになり、電流が流れ始めてインジェクタが完全に駆動されるまでの燃料が噴射されていない時間を無効噴射時間（無効駆動時間）という。",
+      "エ": "(4) 始動時噴射時間は、エンジンの吸入空気温度によって決定する始動時基本噴射時間と、吸気温度補正及び電圧補正によって決定される。"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": "3",
+    "explanation": "通電指令から実際の噴射までの応答遅れが無効噴射時間。",
+    "choiceExplanations": {
+      "ア": "誤り。Dジェトロニックは吸気管圧力を主負荷情報とする。空気流量計はL方式。",
+      "イ": "誤り。高抵抗なら同電圧で電流は小さくなる。",
+      "ウ": "正しい。通電後も弁が開くまで燃料の出ない時間がある。",
+      "エ": "誤り。始動時基本噴射時間は冷却水温度などに応じて決める。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePages": [
+      7
+    ],
+    "sourceFigureRequired": false,
+    "topicTags": [
+      "燃料噴射",
+      "インジェクタ"
+    ],
+    "difficulty": 2,
+    "isCalculation": false,
+    "needsReview": false,
+    "reviewNotes": [],
+    "officialReferenceUrls": [],
+    "qualification": "jidousha-seibishi-gakka",
+    "session": "gakka",
+    "type": "multiple-choice",
+    "year": 2026,
+    "fiscalYear": 2026,
+    "season": "first",
+    "term": "first",
+    "subject": "2-gasoline",
+    "category": "二級ガソリン自動車",
+    "examDate": "2026-10-04",
+    "sourcePdfUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_2g.pdf",
+    "sourceAnswerUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_kai.pdf",
+    "sourceAttribution": "出典：日本自動車整備振興会連合会 令和8年度第1回自動車整備技能登録試験 二級ガソリン自動車 No.15",
+    "officialQuestionStatus": "normal",
+    "lastUpdated": "2026-10-11",
+    "permissionVerified": false,
+    "publicGo": 0,
+    "sourcePageReferences": [
+      {
+        "physicalPage": 7,
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_2g.pdf#page=7",
+        "pdfSha256": "d4928e4405dd5933fc42eb31200b5ad6480cb2057474e04ee342b405b8ab9c33"
+      }
+    ],
+    "sourceFigureAssets": []
+  },
+  {
+    "id": "jidosha-2026-first-2-gasoline-q18",
+    "qNumber": 18,
+    "question": "図に示すタイヤの局部摩耗の主な原因として、不適切なものは次のうちどれか。",
+    "choices": {
+      "ア": "(1) ブレーキ・ドラムの偏心",
+      "イ": "(2) ホイール・ベアリングのがた",
+      "ウ": "(3) ホイール・バランスの不良",
+      "エ": "(4) マイナス・キャンバの過大"
+    },
+    "answer": "エ",
+    "officialAnswerNumber": "4",
+    "explanation": "図はタイヤの一部分に生じた局部摩耗。過大なマイナス・キャンバなら内側ショルダが周方向に偏摩耗するため、図の原因としては合わない。",
+    "choiceExplanations": {
+      "ア": "適切。ドラム偏心で制動力が周期的に変わると局部摩耗を招く。",
+      "イ": "適切。ベアリングのがたでタイヤの接地が不安定になり局部摩耗を招く。",
+      "ウ": "適切。アンバランスによる振動は局部摩耗の原因となる。",
+      "エ": "不適切。マイナス・キャンバ過大は内側の連続的な偏摩耗を生む。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePages": [
+      8
+    ],
+    "sourceFigureRequired": true,
+    "topicTags": [
+      "タイヤ",
+      "局部摩耗"
+    ],
+    "difficulty": 2,
+    "isCalculation": false,
+    "needsReview": false,
+    "reviewNotes": [],
+    "officialReferenceUrls": [],
+    "qualification": "jidousha-seibishi-gakka",
+    "session": "gakka",
+    "type": "multiple-choice",
+    "year": 2026,
+    "fiscalYear": 2026,
+    "season": "first",
+    "term": "first",
+    "subject": "2-gasoline",
+    "category": "二級ガソリン自動車",
+    "examDate": "2026-10-04",
+    "sourcePdfUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_2g.pdf",
+    "sourceAnswerUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_kai.pdf",
+    "sourceAttribution": "出典：日本自動車整備振興会連合会 令和8年度第1回自動車整備技能登録試験 二級ガソリン自動車 No.18",
+    "officialQuestionStatus": "normal",
+    "lastUpdated": "2026-10-11",
+    "permissionVerified": false,
+    "publicGo": 0,
+    "sourcePageReferences": [
+      {
+        "physicalPage": 8,
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_2g.pdf#page=8",
+        "pdfSha256": "d4928e4405dd5933fc42eb31200b5ad6480cb2057474e04ee342b405b8ab9c33"
+      }
+    ],
+    "sourceFigureAssets": [
+      {
+        "physicalPage": 8,
+        "relativePath": "figures/jaspa-2026-first-2-gasoline-p08.webp"
+      }
+    ]
+  },
+  {
+    "id": "jidosha-2026-first-2-gasoline-q20",
+    "qNumber": 20,
+    "question": "差動制限型ディファレンシャルに関する記述として、適切なものは次のうちどれか。",
+    "choices": {
+      "ア": "(1) 回転速度差感応式で左右輪の回転速度に差が生じると、低回転側から高回転側にビスカス・トルクが伝えられる。",
+      "イ": "(2) ヘリカル・ギヤを用いたトルク感応式では、ピニオンの歯先とディファレンシャル・ケース内周面との摩擦により差動制限力が発生する。",
+      "ウ": "(3) 回転速度差感応式に用いられているビスカス・カップリングは、インナ・プレートとアウタ・プレートの回転速度差が小さいほど大きなビスカス・トルクが発生する。",
+      "エ": "(4) トルク感応式のディファレンシャル・ケース内には、高粘度のシリコン・オイルが充填されている。"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": "2",
+    "explanation": "ヘリカル・ギヤ式はギヤに生じるスラストや歯先とケースの摩擦を使って差動を制限する。",
+    "choiceExplanations": {
+      "ア": "不適切。ビスカス・トルクは回転の速い側から遅い側へ伝わる。",
+      "イ": "適切。ヘリカル・ギヤの歯先とケース内周面の摩擦が制限力を生む。",
+      "ウ": "不適切。速度差が大きいほどビスカス・トルクが大きくなる。",
+      "エ": "不適切。高粘度シリコン・オイルを用いるのは回転速度差感応式のビスカス・カップリング。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePages": [
+      8
+    ],
+    "sourceFigureRequired": false,
+    "topicTags": [
+      "ディファレンシャル",
+      "LSD"
+    ],
+    "difficulty": 3,
+    "isCalculation": false,
+    "needsReview": false,
+    "reviewNotes": [],
+    "officialReferenceUrls": [],
+    "qualification": "jidousha-seibishi-gakka",
+    "session": "gakka",
+    "type": "multiple-choice",
+    "year": 2026,
+    "fiscalYear": 2026,
+    "season": "first",
+    "term": "first",
+    "subject": "2-gasoline",
+    "category": "二級ガソリン自動車",
+    "examDate": "2026-10-04",
+    "sourcePdfUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_2g.pdf",
+    "sourceAnswerUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_kai.pdf",
+    "sourceAttribution": "出典：日本自動車整備振興会連合会 令和8年度第1回自動車整備技能登録試験 二級ガソリン自動車 No.20",
+    "officialQuestionStatus": "normal",
+    "lastUpdated": "2026-10-11",
+    "permissionVerified": false,
+    "publicGo": 0,
+    "sourcePageReferences": [
+      {
+        "physicalPage": 8,
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_2g.pdf#page=8",
+        "pdfSha256": "d4928e4405dd5933fc42eb31200b5ad6480cb2057474e04ee342b405b8ab9c33"
+      }
+    ],
+    "sourceFigureAssets": []
+  },
+  {
+    "id": "jidosha-2026-first-2-gasoline-q22",
+    "qNumber": 22,
+    "question": "ホイール及びタイヤに関する記述として、不適切なものは次のうちどれか。",
+    "choices": {
+      "ア": "(1) タイヤの転がり抵抗のうちタイヤの変形による抵抗は、路面の状況、速度及びタイヤの種類、構造、エア圧などの影響を受ける。",
+      "イ": "(2) アルミニウム合金製ホイールの3ピース構造は、絞り又はプレス加工したインナ・リムとアウタ・リムに、鋳造又は鍛造されたディスクをボルト・ナットで締め付け、更に溶接したものである。",
+      "ウ": "(3) タイヤの走行音のうちスキール音は、タイヤのトレッド部が路面に対してスリップして局部的に振動を起こすことによって発生する。",
+      "エ": "(4) ダイナミック・アンバランスとは、タイヤ（ホイール付き）の一部が他の部分より重い場合、ゆっくり回転させると重い部分が下になって止まることをいう。"
+    },
+    "answer": "エ",
+    "officialAnswerNumber": "4",
+    "explanation": "重い箇所が下で止まるのは静的なアンバランス。ダイナミック・アンバランスは回転時の左右方向の振れに関わる。",
+    "choiceExplanations": {
+      "ア": "適切。変形による抵抗は空気圧や速度、構造などに左右される。",
+      "イ": "適切。3ピースホイールの部材と結合方法を述べている。",
+      "ウ": "適切。トレッドの局所的な滑りと振動がスキール音を生む。",
+      "エ": "不適切。重い箇所が下で静止するのはスタティック・アンバランス。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePages": [
+      9
+    ],
+    "sourceFigureRequired": false,
+    "topicTags": [
+      "ホイール",
+      "タイヤ",
+      "アンバランス"
+    ],
+    "difficulty": 2,
+    "isCalculation": false,
+    "needsReview": false,
+    "reviewNotes": [],
+    "officialReferenceUrls": [],
+    "qualification": "jidousha-seibishi-gakka",
+    "session": "gakka",
+    "type": "multiple-choice",
+    "year": 2026,
+    "fiscalYear": 2026,
+    "season": "first",
+    "term": "first",
+    "subject": "2-gasoline",
+    "category": "二級ガソリン自動車",
+    "examDate": "2026-10-04",
+    "sourcePdfUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_2g.pdf",
+    "sourceAnswerUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_kai.pdf",
+    "sourceAttribution": "出典：日本自動車整備振興会連合会 令和8年度第1回自動車整備技能登録試験 二級ガソリン自動車 No.22",
+    "officialQuestionStatus": "normal",
+    "lastUpdated": "2026-10-11",
+    "permissionVerified": false,
+    "publicGo": 0,
+    "sourcePageReferences": [
+      {
+        "physicalPage": 9,
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_2g.pdf#page=9",
+        "pdfSha256": "d4928e4405dd5933fc42eb31200b5ad6480cb2057474e04ee342b405b8ab9c33"
+      }
+    ],
+    "sourceFigureAssets": []
+  },
+  {
+    "id": "jidosha-2026-first-2-gasoline-q24",
+    "qNumber": 24,
+    "question": "ABSに関する記述として、適切なものは次のうちどれか。",
+    "choices": {
+      "ア": "(1) エンジン始動後の発進時にゆっくりと加速した場合などに、静かな場所では、エンジン・ルームからABSのポンプ・モータの作動音が聞こえる場合があるが、これはABSのイニシャル・チェックの音である。",
+      "イ": "(2) ハイドロリック・ユニット部は、ECUからの駆動信号により各ブレーキの液圧の制御とエンジンの出力制御を行っている。",
+      "ウ": "(3) ECUは、各車輪速センサ、スイッチなどからの信号により、路面の状況などに応じて、マスタ・シリンダに作動信号を出力する。",
+      "エ": "(4) ピックアップ・コイル式車輪速センサのコイルの電圧の周波数は、ロータの回転速度に反比例する。"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": "1",
+    "explanation": "ABSは発進後に自己点検を行う。静かな場所ではポンプ・モータの作動音が聞こえる場合がある。",
+    "choiceExplanations": {
+      "ア": "適切。発進時のイニシャル・チェックに伴う音である。",
+      "イ": "不適切。ハイドロリック・ユニットはブレーキ液圧を制御し、エンジン出力制御は行わない。",
+      "ウ": "不適切。ECUが制御信号を送る先は液圧ユニットのバルブやポンプであり、マスタ・シリンダではない。",
+      "エ": "不適切。信号周波数はロータ回転速度に比例して高くなる。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePages": [
+      9
+    ],
+    "sourceFigureRequired": false,
+    "topicTags": [
+      "ABS",
+      "自己診断",
+      "車輪速センサ"
+    ],
+    "difficulty": 2,
+    "isCalculation": false,
+    "needsReview": false,
+    "reviewNotes": [],
+    "officialReferenceUrls": [],
+    "qualification": "jidousha-seibishi-gakka",
+    "session": "gakka",
+    "type": "multiple-choice",
+    "year": 2026,
+    "fiscalYear": 2026,
+    "season": "first",
+    "term": "first",
+    "subject": "2-gasoline",
+    "category": "二級ガソリン自動車",
+    "examDate": "2026-10-04",
+    "sourcePdfUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_2g.pdf",
+    "sourceAnswerUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_kai.pdf",
+    "sourceAttribution": "出典：日本自動車整備振興会連合会 令和8年度第1回自動車整備技能登録試験 二級ガソリン自動車 No.24",
+    "officialQuestionStatus": "normal",
+    "lastUpdated": "2026-10-11",
+    "permissionVerified": false,
+    "publicGo": 0,
+    "sourcePageReferences": [
+      {
+        "physicalPage": 9,
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_2g.pdf#page=9",
+        "pdfSha256": "d4928e4405dd5933fc42eb31200b5ad6480cb2057474e04ee342b405b8ab9c33"
+      }
+    ],
+    "sourceFigureAssets": []
+  },
+  {
+    "id": "jidosha-2026-first-2-gasoline-q27",
+    "qNumber": 27,
+    "question": "フレーム及びボデーに関する記述として、適切なものは次のうちどれか。",
+    "choices": {
+      "ア": "(1) フレームの修正の過程において、電気溶接を行う場合、フレームの板厚、溶接電流の大小に関係なく、溶接棒はできるだけ太いものを選ぶ。",
+      "イ": "(2) ボデーの安全構造は、衝突時のエネルギを効率よく吸収し、このエネルギで客室を最大限に変形させることにより、衝突エネルギを軽減している。",
+      "ウ": "(3) トラックのフレームは、トラックの全長にわたって貫通した左右2本のサイド・メンバが配列されている。",
+      "エ": "(4) モノコック・ボデーは、サスペンションなどからの振動や騒音が伝わりにくいので、防音や防振に優れている。"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": "3",
+    "explanation": "トラックのフレームは長手方向に左右2本のサイド・メンバを通し、クロス・メンバで結ぶ構造。",
+    "choiceExplanations": {
+      "ア": "不適切。溶接棒は板厚や電流に合わせて選定する。",
+      "イ": "不適切。衝撃吸収部を変形させ、客室の変形は抑える。",
+      "ウ": "適切。左右のサイド・メンバが全長方向に通る。",
+      "エ": "不適切。モノコックは振動・騒音が伝わりやすい面もあり、防振防音に無条件で優れるとはいえない。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePages": [
+      10
+    ],
+    "sourceFigureRequired": false,
+    "topicTags": [
+      "フレーム",
+      "ボデー",
+      "衝突安全"
+    ],
+    "difficulty": 2,
+    "isCalculation": false,
+    "needsReview": false,
+    "reviewNotes": [],
+    "officialReferenceUrls": [],
+    "qualification": "jidousha-seibishi-gakka",
+    "session": "gakka",
+    "type": "multiple-choice",
+    "year": 2026,
+    "fiscalYear": 2026,
+    "season": "first",
+    "term": "first",
+    "subject": "2-gasoline",
+    "category": "二級ガソリン自動車",
+    "examDate": "2026-10-04",
+    "sourcePdfUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_2g.pdf",
+    "sourceAnswerUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_kai.pdf",
+    "sourceAttribution": "出典：日本自動車整備振興会連合会 令和8年度第1回自動車整備技能登録試験 二級ガソリン自動車 No.27",
+    "officialQuestionStatus": "normal",
+    "lastUpdated": "2026-10-11",
+    "permissionVerified": false,
+    "publicGo": 0,
+    "sourcePageReferences": [
+      {
+        "physicalPage": 10,
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_2g.pdf#page=10",
+        "pdfSha256": "d4928e4405dd5933fc42eb31200b5ad6480cb2057474e04ee342b405b8ab9c33"
+      }
+    ],
+    "sourceFigureAssets": []
+  },
+  {
+    "id": "jidosha-2026-first-2-gasoline-q33",
+    "qNumber": 33,
+    "question": "次の諸元を有するトラックの最大積載時の前軸荷重について、適切なものは次のうちどれか。ただし、乗員1人当たりの荷重は550Nで、その荷重は前車軸の中心に作用し、また、積載物の荷重は荷台に等分布にかかるものとする。ホイールベース5,000mm、空車時前軸荷重34,500N、空車時後軸荷重25,000N、最大積載荷重40,000N、乗車定員3人、荷台内側長さ6,400mm、リヤ・オーバハング（荷台内側まで）1,500mm。",
+    "choices": {
+      "ア": "(1) 38,170N",
+      "イ": "(2) 41,650N",
+      "ウ": "(3) 45,480N",
+      "エ": "(4) 49,750N"
+    },
+    "answer": "エ",
+    "officialAnswerNumber": "4",
+    "explanation": "荷台の荷重中心は後軸から前方1,700mm。積載物の前軸分担は40,000×1,700÷5,000＝13,600N。乗員分1,650Nを加え、34,500＋13,600＋1,650＝49,750N。",
+    "choiceExplanations": {
+      "ア": "不適切。積載物の作用点と前後軸への荷重配分が合わない。",
+      "イ": "不適切。荷台の後端オーバハングを含めた重心位置でモーメントを取る必要がある。",
+      "ウ": "不適切。乗員分を前軸へ加えた後の合計値と一致しない。",
+      "エ": "適切。前軸分担13,600N、乗員1,650N、空車前軸34,500Nの合計。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePages": [
+      12
+    ],
+    "sourceFigureRequired": true,
+    "topicTags": [
+      "軸荷重",
+      "モーメント",
+      "計算"
+    ],
+    "difficulty": 3,
+    "isCalculation": true,
+    "needsReview": false,
+    "reviewNotes": [],
+    "officialReferenceUrls": [],
+    "qualification": "jidousha-seibishi-gakka",
+    "session": "gakka",
+    "type": "multiple-choice",
+    "year": 2026,
+    "fiscalYear": 2026,
+    "season": "first",
+    "term": "first",
+    "subject": "2-gasoline",
+    "category": "二級ガソリン自動車",
+    "examDate": "2026-10-04",
+    "sourcePdfUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_2g.pdf",
+    "sourceAnswerUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_kai.pdf",
+    "sourceAttribution": "出典：日本自動車整備振興会連合会 令和8年度第1回自動車整備技能登録試験 二級ガソリン自動車 No.33",
+    "officialQuestionStatus": "normal",
+    "lastUpdated": "2026-10-11",
+    "permissionVerified": false,
+    "publicGo": 0,
+    "sourcePageReferences": [
+      {
+        "physicalPage": 12,
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_2g.pdf#page=12",
+        "pdfSha256": "d4928e4405dd5933fc42eb31200b5ad6480cb2057474e04ee342b405b8ab9c33"
+      }
+    ],
+    "sourceFigureAssets": [
+      {
+        "physicalPage": 12,
+        "relativePath": "figures/jaspa-2026-first-2-gasoline-p12.webp"
+      }
+    ]
+  },
+  {
+    "id": "jidosha-2026-first-2-gasoline-q36",
+    "qNumber": 36,
+    "question": "「自動車点検基準」の別表第2（自家用乗用自動車等の日常点検基準）に規定されている点検内容として、適切なものは次のうちどれか。",
+    "choices": {
+      "ア": "(1) 冷却装置のファン・ベルトの緩み及び損傷がないこと。",
+      "イ": "(2) バッテリのターミナル部の接続状態が不良でないこと。",
+      "ウ": "(3) ショック・アブソーバの油漏れ及び損傷がないこと。",
+      "エ": "(4) ブレーキ・ペダルの踏みしろが適当で、ブレーキのききが十分であること。"
+    },
+    "answer": "エ",
+    "officialAnswerNumber": "4",
+    "explanation": "日常点検にはブレーキ・ペダルの踏みしろとブレーキの効きの確認が含まれる。",
+    "choiceExplanations": {
+      "ア": "不適切。ファン・ベルトの緩み・損傷は日常点検別表第2の該当項目ではない。",
+      "イ": "不適切。ターミナル接続状態は同表の日常点検項目ではない。",
+      "ウ": "不適切。ショック・アブソーバの油漏れ・損傷は同表の日常点検項目ではない。",
+      "エ": "適切。ブレーキ・ペダルの踏みしろと効きを点検する。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePages": [
+      13
+    ],
+    "sourceFigureRequired": false,
+    "topicTags": [
+      "日常点検",
+      "ブレーキ"
+    ],
+    "difficulty": 2,
+    "isCalculation": false,
+    "needsReview": false,
+    "reviewNotes": [],
+    "officialReferenceUrls": [],
+    "qualification": "jidousha-seibishi-gakka",
+    "session": "gakka",
+    "type": "multiple-choice",
+    "year": 2026,
+    "fiscalYear": 2026,
+    "season": "first",
+    "term": "first",
+    "subject": "2-gasoline",
+    "category": "二級ガソリン自動車",
+    "examDate": "2026-10-04",
+    "sourcePdfUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_2g.pdf",
+    "sourceAnswerUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_kai.pdf",
+    "sourceAttribution": "出典：日本自動車整備振興会連合会 令和8年度第1回自動車整備技能登録試験 二級ガソリン自動車 No.36",
+    "officialQuestionStatus": "normal",
+    "lastUpdated": "2026-10-11",
+    "permissionVerified": false,
+    "publicGo": 0,
+    "sourcePageReferences": [
+      {
+        "physicalPage": 13,
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_2g.pdf#page=13",
+        "pdfSha256": "d4928e4405dd5933fc42eb31200b5ad6480cb2057474e04ee342b405b8ab9c33"
+      }
+    ],
+    "sourceFigureAssets": []
+  },
+  {
+    "id": "jidosha-2026-first-2-gasoline-q38",
+    "qNumber": 38,
+    "question": "「道路運送車両の保安基準」及び「道路運送車両の保安基準の細目を定める告示」に照らし、四輪の小型自動車の前部霧灯に関する基準の記述として、不適切なものは次のうちどれか。",
+    "choices": {
+      "ア": "(1) 灯光の色は、白色又は淡黄色であり、その全てが同一であること。",
+      "イ": "(2) 同時に3個以上点灯しないように取り付けられていること。",
+      "ウ": "(3) 点灯操作状態を運転者席の運転者に表示する装置を備えること。",
+      "エ": "(4) 照明部の最外縁は、自動車の最外側から600mm以内となるように取り付けられていること。"
+    },
+    "answer": "エ",
+    "officialAnswerNumber": "4",
+    "explanation": "前部霧灯の外側への取り付け位置は、最外側から400mm以内が基準。600mmは広すぎる。",
+    "choiceExplanations": {
+      "ア": "適切。灯色は白色又は淡黄色で統一する。",
+      "イ": "適切。同時点灯は2個まで。",
+      "ウ": "適切。運転者に点灯状態を示す装置を備える。",
+      "エ": "不適切。外側から600mmではなく400mm以内とする。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePages": [
+      14
+    ],
+    "sourceFigureRequired": false,
+    "topicTags": [
+      "保安基準",
+      "前部霧灯"
+    ],
+    "difficulty": 2,
+    "isCalculation": false,
+    "needsReview": false,
+    "reviewNotes": [],
+    "officialReferenceUrls": [],
+    "qualification": "jidousha-seibishi-gakka",
+    "session": "gakka",
+    "type": "multiple-choice",
+    "year": 2026,
+    "fiscalYear": 2026,
+    "season": "first",
+    "term": "first",
+    "subject": "2-gasoline",
+    "category": "二級ガソリン自動車",
+    "examDate": "2026-10-04",
+    "sourcePdfUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_2g.pdf",
+    "sourceAnswerUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_kai.pdf",
+    "sourceAttribution": "出典：日本自動車整備振興会連合会 令和8年度第1回自動車整備技能登録試験 二級ガソリン自動車 No.38",
+    "officialQuestionStatus": "normal",
+    "lastUpdated": "2026-10-11",
+    "permissionVerified": false,
+    "publicGo": 0,
+    "sourcePageReferences": [
+      {
+        "physicalPage": 14,
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_2g.pdf#page=14",
+        "pdfSha256": "d4928e4405dd5933fc42eb31200b5ad6480cb2057474e04ee342b405b8ab9c33"
+      }
+    ],
+    "sourceFigureAssets": []
+  }
+]

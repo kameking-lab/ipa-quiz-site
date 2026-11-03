@@ -1,0 +1,1900 @@
+{
+  "schemaVersion": 1,
+  "createdAtUtc": "2026-10-23T12:12:57.393188+00:00",
+  "state": "INDEPENDENT_ACCEPTED_UNCHANGED",
+  "reviewer": "gpt-6.1-sol Standard / task-96",
+  "scope": {
+    "cohort": "release-2motorcycle20",
+    "releasePath": "C:\\Users\\kanet\\Documents\\Codex\\2026-10-23\\task-5\\output\\automotive-forward-20261023\\OWNERSHIP-RELEASE.json",
+    "releaseSha256": "ced46a8a6ad30deb320d8fc643b5c4533b0102bdf50ab99126106f8400f8fe66",
+    "inputPacketPath": "C:\\Users\\kanet\\Documents\\Codex\\2026-10-23\\task-5\\output\\automotive-forward-20261023\\release-2motorcycle20\\PACKET.json",
+    "inputPacketSha256": "608e013efaa1012f20efc62e9a03c954df3403224064774a554da5a24a098271",
+    "scopeAndDurableReleaseVerifiedBeforeWrite": true,
+    "retainedOtherCohortExcludedOverlapCount": 0,
+    "ownerAuthorization": "Fourth-team lead transfer acknowledgement supplied in delegation; immutable release state intentionally preserved."
+  },
+  "questionIds": [
+    "jidosha-2026-first-2-motorcycle-q01",
+    "jidosha-2026-first-2-motorcycle-q02",
+    "jidosha-2026-first-2-motorcycle-q03",
+    "jidosha-2026-first-2-motorcycle-q04",
+    "jidosha-2026-first-2-motorcycle-q05",
+    "jidosha-2026-first-2-motorcycle-q06",
+    "jidosha-2026-first-2-motorcycle-q07",
+    "jidosha-2026-first-2-motorcycle-q08",
+    "jidosha-2026-first-2-motorcycle-q09",
+    "jidosha-2026-first-2-motorcycle-q10",
+    "jidosha-2026-first-2-motorcycle-q11",
+    "jidosha-2026-first-2-motorcycle-q13",
+    "jidosha-2026-first-2-motorcycle-q14",
+    "jidosha-2026-first-2-motorcycle-q15",
+    "jidosha-2026-first-2-motorcycle-q16",
+    "jidosha-2026-first-2-motorcycle-q17",
+    "jidosha-2026-first-2-motorcycle-q18",
+    "jidosha-2026-first-2-motorcycle-q19",
+    "jidosha-2026-first-2-motorcycle-q20"
+  ],
+  "count": 19,
+  "candidateHashSerialization": "UTF-8 json.dumps(full question record, ensure_ascii=False, sort_keys=True, separators=(comma,colon)); no BOM/newline",
+  "writtenOriginals": [
+    {
+      "id": "jidosha-2026-first-2-motorcycle-q01",
+      "qNumber": 1,
+      "question": "クランクシャフトに関する記述として、 不適切なものは次のうちどれか。",
+      "choices": {
+        "ア": "クランクシャフトに働く力として、往復運動部分の慣性力及び回転運動部分の遠心力などがある。",
+        "イ": "クランクシャフトは、大きな荷重を受けながら高速で回転するため、一般に材料には、アルミニウム合金が用いられる。",
+        "ウ": "一体式クランクシャフトでは、クランク・ジャーナル及びクランク・ピンは耐摩耗性を向上させるため、一般に熱処理（窒化処理）によって表面硬化後にラッピング処理（研磨）が施されている。",
+        "エ": "クランク・ピン及びクランク・ジャーナルの端部は、力の集中を避けるために丸みを付けている。"
+      },
+      "answer": "イ",
+      "officialAnswerNumber": "2",
+      "explanation": "不適切。大荷重・高速回転に耐えるため、一般に鋼材や鍛鋼を用い、アルミニウム合金を一般材料とはしない。",
+      "choiceExplanations": {
+        "ア": "往復慣性力と回転遠心力がクランクシャフトに作用する。",
+        "イ": "不適切。大荷重・高速回転に耐えるため、一般に鋼材や鍛鋼を用い、アルミニウム合金を一般材料とはしない。",
+        "ウ": "一体式のジャーナル・ピン表面に窒化やラッピングを施し耐摩耗性を高める。",
+        "エ": "端部を丸めることで応力集中を抑える。"
+      },
+      "explanationCoverage": "full",
+      "hasImage": false,
+      "sourcePages": [
+        2
+      ],
+      "sourceFigureRequired": false,
+      "topicTags": [
+        "クランクシャフト"
+      ],
+      "difficulty": 2,
+      "isCalculation": false,
+      "needsReview": false,
+      "reviewNotes": [],
+      "officialReferenceUrls": [],
+      "qualification": "jidousha-seibishi-gakka",
+      "session": "gakka",
+      "type": "multiple-choice",
+      "year": 2026,
+      "fiscalYear": 2026,
+      "season": "first",
+      "term": "first",
+      "subject": "2-motorcycle",
+      "category": "二級２輪自動車",
+      "examDate": "2026-10-04",
+      "sourcePdfUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_2n.pdf",
+      "sourceAnswerUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_kai.pdf",
+      "sourceAttribution": "出典：日本自動車整備振興会連合会 令和8年度第1回自動車整備技能登録試験 二級２輪自動車 No.1",
+      "officialQuestionStatus": "normal",
+      "lastUpdated": "2026-10-11",
+      "permissionVerified": false,
+      "publicGo": 0,
+      "sourcePageReferences": [
+        {
+          "physicalPage": 2,
+          "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_2n.pdf#page=2",
+          "pdfSha256": "b529ce8b8bbd6e4682272bef69ffae8c2ee7c73c1d086b22ccf402b3b5819c9d"
+        }
+      ],
+      "sourceFigureAssets": []
+    },
+    {
+      "id": "jidosha-2026-first-2-motorcycle-q02",
+      "qNumber": 2,
+      "question": "ガソリン ・ エンジンの性能に関する記述として、 不適切なものは次のうちどれか。",
+      "choices": {
+        "ア": "平均有効圧力は、1サイクルの仕事を行程容積で除したもので、排気量や作動方式の異なるエンジンの性能を比較する場合などに用いられる。",
+        "イ": "体積効率と充填効率は、平地ではほとんど同じであるが、高山など気圧の低い場所では差が生じる。",
+        "ウ": "平均有効圧力には、理論平均有効圧力、図示平均有効圧力及び正味平均有効圧力の三つがある。",
+        "エ": "図示熱効率とは、理論サイクルにおいて仕事に変えることのできる熱量と、供給する熱量との割合をいう。"
+      },
+      "answer": "エ",
+      "officialAnswerNumber": "4",
+      "explanation": "不適切。理論サイクルの仕事に変換可能な熱の割合は理論熱効率であり、図示熱効率は図示仕事と供給熱量の比である。",
+      "choiceExplanations": {
+        "ア": "平均有効圧力は仕事を行程容積で割り、排気量の異なるエンジンの比較にも使う。",
+        "イ": "体積効率と充填効率は気圧の低い場所で差が生じる。",
+        "ウ": "理論・図示・正味の各平均有効圧力を区別する。",
+        "エ": "不適切。理論サイクルの仕事に変換可能な熱の割合は理論熱効率であり、図示熱効率は図示仕事と供給熱量の比である。"
+      },
+      "explanationCoverage": "full",
+      "hasImage": false,
+      "sourcePages": [
+        2
+      ],
+      "sourceFigureRequired": false,
+      "topicTags": [
+        "ガソリン ・ エンジンの性能"
+      ],
+      "difficulty": 2,
+      "isCalculation": false,
+      "needsReview": false,
+      "reviewNotes": [],
+      "officialReferenceUrls": [],
+      "qualification": "jidousha-seibishi-gakka",
+      "session": "gakka",
+      "type": "multiple-choice",
+      "year": 2026,
+      "fiscalYear": 2026,
+      "season": "first",
+      "term": "first",
+      "subject": "2-motorcycle",
+      "category": "二級２輪自動車",
+      "examDate": "2026-10-04",
+      "sourcePdfUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_2n.pdf",
+      "sourceAnswerUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_kai.pdf",
+      "sourceAttribution": "出典：日本自動車整備振興会連合会 令和8年度第1回自動車整備技能登録試験 二級２輪自動車 No.2",
+      "officialQuestionStatus": "normal",
+      "lastUpdated": "2026-10-11",
+      "permissionVerified": false,
+      "publicGo": 0,
+      "sourcePageReferences": [
+        {
+          "physicalPage": 2,
+          "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_2n.pdf#page=2",
+          "pdfSha256": "b529ce8b8bbd6e4682272bef69ffae8c2ee7c73c1d086b22ccf402b3b5819c9d"
+        }
+      ],
+      "sourceFigureAssets": []
+    },
+    {
+      "id": "jidosha-2026-first-2-motorcycle-q03",
+      "qNumber": 3,
+      "question": "ピストン ・ リングに関する記述として、 不適切なものは次のうちどれか。",
+      "choices": {
+        "ア": "スカッフ現象とは、カーボンやスラッジ（燃焼生成物）が固まってリングが動かなくなることをいう。",
+        "イ": "フラッタ現象は、ピストン・リングの拡張力が小さいほど、ピストン・リング幅が厚いほど、また、ピストン速度が速いほど起こりやすい。",
+        "ウ": "テーパ・フェース型は、しゅう動面がテーパ状になっており、シリンダ壁面と線接触するため、なじみやすく気密性が優れている。",
+        "エ": "硬質クロムめっきを施したピストン・リングは、耐摩耗性及び熱伝導性に優れている。"
+      },
+      "answer": "ア",
+      "officialAnswerNumber": "1",
+      "explanation": "不適切。カーボン等でリングが固着するのはスティッキングであり、スカッフィングは油膜切れなどによる摩擦面の損傷である。",
+      "choiceExplanations": {
+        "ア": "不適切。カーボン等でリングが固着するのはスティッキングであり、スカッフィングは油膜切れなどによる摩擦面の損傷である。",
+        "イ": "リングの拡張力や幅、ピストン速度がフラッタ発生に関わる。",
+        "ウ": "テーパ・フェース型はしゅう動面がテーパ状で、線接触からなじむ。",
+        "エ": "硬質クロムめっきは耐摩耗性に優れる。"
+      },
+      "explanationCoverage": "full",
+      "hasImage": false,
+      "sourcePages": [
+        2
+      ],
+      "sourceFigureRequired": false,
+      "topicTags": [
+        "ピストン ・ リング"
+      ],
+      "difficulty": 2,
+      "isCalculation": false,
+      "needsReview": false,
+      "reviewNotes": [],
+      "officialReferenceUrls": [],
+      "qualification": "jidousha-seibishi-gakka",
+      "session": "gakka",
+      "type": "multiple-choice",
+      "year": 2026,
+      "fiscalYear": 2026,
+      "season": "first",
+      "term": "first",
+      "subject": "2-motorcycle",
+      "category": "二級２輪自動車",
+      "examDate": "2026-10-04",
+      "sourcePdfUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_2n.pdf",
+      "sourceAnswerUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_kai.pdf",
+      "sourceAttribution": "出典：日本自動車整備振興会連合会 令和8年度第1回自動車整備技能登録試験 二級２輪自動車 No.3",
+      "officialQuestionStatus": "normal",
+      "lastUpdated": "2026-10-11",
+      "permissionVerified": false,
+      "publicGo": 0,
+      "sourcePageReferences": [
+        {
+          "physicalPage": 2,
+          "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_2n.pdf#page=2",
+          "pdfSha256": "b529ce8b8bbd6e4682272bef69ffae8c2ee7c73c1d086b22ccf402b3b5819c9d"
+        }
+      ],
+      "sourceFigureAssets": []
+    },
+    {
+      "id": "jidosha-2026-first-2-motorcycle-q04",
+      "qNumber": 4,
+      "question": "エンジンの諸損失のうち、ポンプ損失に関する記述として、適切なものは次のうちどれか。",
+      "choices": {
+        "ア": "摩擦損失と補機駆動の損失からなっており、冷却水の温度、潤滑油の粘度のほかに回転速度の影響が大きい。",
+        "イ": "冷却損失、排気損失、ふく射損失からなっている損失をいう。",
+        "ウ": "燃焼ガスの排出及び混合気を吸入するための動力損失をいう。",
+        "エ": "燃焼ガスの熱量が冷却水や冷却空気などによって失われる損失をいう。"
+      },
+      "answer": "ウ",
+      "officialAnswerNumber": "3",
+      "explanation": "正答。吸排気のためにピストンが必要とする動力がポンプ損失である。",
+      "choiceExplanations": {
+        "ア": "摩擦・補機駆動の損失の説明であり、ポンプ損失ではない。",
+        "イ": "冷却・排気・ふく射による熱損失であり、ポンプ損失ではない。",
+        "ウ": "正答。吸排気のためにピストンが必要とする動力がポンプ損失である。",
+        "エ": "冷却系に移る熱量は冷却損失である。"
+      },
+      "explanationCoverage": "full",
+      "hasImage": false,
+      "sourcePages": [
+        2
+      ],
+      "sourceFigureRequired": false,
+      "topicTags": [
+        "エンジンの諸損失のうち、ポンプ損失"
+      ],
+      "difficulty": 2,
+      "isCalculation": false,
+      "needsReview": false,
+      "reviewNotes": [],
+      "officialReferenceUrls": [],
+      "qualification": "jidousha-seibishi-gakka",
+      "session": "gakka",
+      "type": "multiple-choice",
+      "year": 2026,
+      "fiscalYear": 2026,
+      "season": "first",
+      "term": "first",
+      "subject": "2-motorcycle",
+      "category": "二級２輪自動車",
+      "examDate": "2026-10-04",
+      "sourcePdfUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_2n.pdf",
+      "sourceAnswerUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_kai.pdf",
+      "sourceAttribution": "出典：日本自動車整備振興会連合会 令和8年度第1回自動車整備技能登録試験 二級２輪自動車 No.4",
+      "officialQuestionStatus": "normal",
+      "lastUpdated": "2026-10-11",
+      "permissionVerified": false,
+      "publicGo": 0,
+      "sourcePageReferences": [
+        {
+          "physicalPage": 2,
+          "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_2n.pdf#page=2",
+          "pdfSha256": "b529ce8b8bbd6e4682272bef69ffae8c2ee7c73c1d086b22ccf402b3b5819c9d"
+        }
+      ],
+      "sourceFigureAssets": []
+    },
+    {
+      "id": "jidosha-2026-first-2-motorcycle-q05",
+      "qNumber": 5,
+      "question": "ガソリン ・ エンジンの排気ガスに関する記述として、 適切なものは次のうちどれか。",
+      "choices": {
+        "ア": "CO、HCは、理論空燃比より濃いめの混合気を安定して燃やすことで低減する。",
+        "イ": "混合気が燃焼すると、大部分はCO、HC、NOxになる。",
+        "ウ": "HCは、燃料が未燃焼状態で排出される成分で、発生傾向はCOと同じく、空燃比が大きく（薄く）なればなるほど減少するのが特徴である。",
+        "エ": "NOx低減のための対応の一つとして、エンジンの電子制御化を図り、エンジン回転速度及びインテーク・マニホールド負圧に的確に対応する空燃比制御及び点火時期制御を行い最高燃焼ガス温度を下げる。"
+      },
+      "answer": "エ",
+      "officialAnswerNumber": "4",
+      "explanation": "正答。空燃比・点火時期の制御で最高燃焼温度を下げ、NOxを抑える。",
+      "choiceExplanations": {
+        "ア": "濃い混合気を安定燃焼させるだけでCO・HCが低減するわけではない。",
+        "イ": "燃焼時の排出成分の大部分がCO・HC・NOxであるとはいえない。",
+        "ウ": "極端に薄い混合気では失火でHCが増えるため、薄くなるほど一様に減少しない。",
+        "エ": "正答。空燃比・点火時期の制御で最高燃焼温度を下げ、NOxを抑える。"
+      },
+      "explanationCoverage": "full",
+      "hasImage": false,
+      "sourcePages": [
+        3
+      ],
+      "sourceFigureRequired": false,
+      "topicTags": [
+        "ガソリン ・ エンジンの排気ガス"
+      ],
+      "difficulty": 2,
+      "isCalculation": false,
+      "needsReview": false,
+      "reviewNotes": [],
+      "officialReferenceUrls": [],
+      "qualification": "jidousha-seibishi-gakka",
+      "session": "gakka",
+      "type": "multiple-choice",
+      "year": 2026,
+      "fiscalYear": 2026,
+      "season": "first",
+      "term": "first",
+      "subject": "2-motorcycle",
+      "category": "二級２輪自動車",
+      "examDate": "2026-10-04",
+      "sourcePdfUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_2n.pdf",
+      "sourceAnswerUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_kai.pdf",
+      "sourceAttribution": "出典：日本自動車整備振興会連合会 令和8年度第1回自動車整備技能登録試験 二級２輪自動車 No.5",
+      "officialQuestionStatus": "normal",
+      "lastUpdated": "2026-10-11",
+      "permissionVerified": false,
+      "publicGo": 0,
+      "sourcePageReferences": [
+        {
+          "physicalPage": 3,
+          "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_2n.pdf#page=3",
+          "pdfSha256": "b529ce8b8bbd6e4682272bef69ffae8c2ee7c73c1d086b22ccf402b3b5819c9d"
+        }
+      ],
+      "sourceFigureAssets": []
+    },
+    {
+      "id": "jidosha-2026-first-2-motorcycle-q06",
+      "qNumber": 6,
+      "question": "水冷式冷却装置に関する記述として、適切なものは次のうちどれか。",
+      "choices": {
+        "ア": "サーモスタットは、水路の切り替えや、冷却水の流量を制御することなく、エンジン内部の冷却水の温度を調整する。",
+        "イ": "エンジンに適温とされる冷却水の温度は、一般に約120℃とされている。",
+        "ウ": "電動ファン用のサーモスイッチは、一般に冷却水温が低いときはスイッチ内の接点が開き、水温が上がると、ワックス又はバイメタルが熱を受けて接点が閉じるようになっている。",
+        "エ": "エンジンがオーバヒートする原因として、サーモスタットの不良は考えられない。"
+      },
+      "answer": "ウ",
+      "officialAnswerNumber": "3",
+      "explanation": "正答。水温が上がるとサーモスイッチの接点が閉じ、電動ファンを動作させる。",
+      "choiceExplanations": {
+        "ア": "サーモスタットは水路を切り替えて冷却水の流量・温度を調整する。",
+        "イ": "一般的な適正冷却水温を約120℃とするのは高すぎる。",
+        "ウ": "正答。水温が上がるとサーモスイッチの接点が閉じ、電動ファンを動作させる。",
+        "エ": "サーモスタットの固着などはオーバヒートの原因になる。"
+      },
+      "explanationCoverage": "full",
+      "hasImage": false,
+      "sourcePages": [
+        3
+      ],
+      "sourceFigureRequired": false,
+      "topicTags": [
+        "水冷式冷却装置"
+      ],
+      "difficulty": 2,
+      "isCalculation": false,
+      "needsReview": false,
+      "reviewNotes": [],
+      "officialReferenceUrls": [],
+      "qualification": "jidousha-seibishi-gakka",
+      "session": "gakka",
+      "type": "multiple-choice",
+      "year": 2026,
+      "fiscalYear": 2026,
+      "season": "first",
+      "term": "first",
+      "subject": "2-motorcycle",
+      "category": "二級２輪自動車",
+      "examDate": "2026-10-04",
+      "sourcePdfUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_2n.pdf",
+      "sourceAnswerUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_kai.pdf",
+      "sourceAttribution": "出典：日本自動車整備振興会連合会 令和8年度第1回自動車整備技能登録試験 二級２輪自動車 No.6",
+      "officialQuestionStatus": "normal",
+      "lastUpdated": "2026-10-11",
+      "permissionVerified": false,
+      "publicGo": 0,
+      "sourcePageReferences": [
+        {
+          "physicalPage": 3,
+          "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_2n.pdf#page=3",
+          "pdfSha256": "b529ce8b8bbd6e4682272bef69ffae8c2ee7c73c1d086b22ccf402b3b5819c9d"
+        }
+      ],
+      "sourceFigureAssets": []
+    },
+    {
+      "id": "jidosha-2026-first-2-motorcycle-q07",
+      "qNumber": 7,
+      "question": "エンジンの振動に関する記述として、不適切なものは次のうちどれか。",
+      "choices": {
+        "ア": "クランクシャフトのバランス・ウェイトをピストンの慣性力の50％にすると、クランク角が0°と180°のときの上下方向のアンバランスは、ピストンの慣性力と同じ値になる。",
+        "イ": "ピストンやコンロッドが往復するときに発生する往復運動部分の慣性力は、エンジンの振動源になる。",
+        "ウ": "バランサ・シャフトは、クランクシャフトと並列に配置され、クランクシャフトからの動力をギヤ又はチェーンを介して駆動している。",
+        "エ": "クランクシャフトのバランス・ウェイトをピストンの慣性力の50％にすると、クランク角が90°と270°のときの水平方向のアンバランスは、バランス・ウェイトの慣性力と同じ値になる。"
+      },
+      "answer": "ア",
+      "officialAnswerNumber": "1",
+      "explanation": "不適切。50％のバランス・ウェイトなら上下方向に残る不釣合いはピストン慣性力の全量と同じにはならない。",
+      "choiceExplanations": {
+        "ア": "不適切。50％のバランス・ウェイトなら上下方向に残る不釣合いはピストン慣性力の全量と同じにはならない。",
+        "イ": "往復運動部の慣性力はエンジン振動の原因になる。",
+        "ウ": "バランサ・シャフトはクランクシャフトからギヤやチェーンで駆動する。",
+        "エ": "90°・270°ではバランス・ウェイトによる横方向の慣性力が残る。"
+      },
+      "explanationCoverage": "full",
+      "hasImage": false,
+      "sourcePages": [
+        3
+      ],
+      "sourceFigureRequired": false,
+      "topicTags": [
+        "エンジンの振動"
+      ],
+      "difficulty": 2,
+      "isCalculation": false,
+      "needsReview": false,
+      "reviewNotes": [],
+      "officialReferenceUrls": [],
+      "qualification": "jidousha-seibishi-gakka",
+      "session": "gakka",
+      "type": "multiple-choice",
+      "year": 2026,
+      "fiscalYear": 2026,
+      "season": "first",
+      "term": "first",
+      "subject": "2-motorcycle",
+      "category": "二級２輪自動車",
+      "examDate": "2026-10-04",
+      "sourcePdfUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_2n.pdf",
+      "sourceAnswerUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_kai.pdf",
+      "sourceAttribution": "出典：日本自動車整備振興会連合会 令和8年度第1回自動車整備技能登録試験 二級２輪自動車 No.7",
+      "officialQuestionStatus": "normal",
+      "lastUpdated": "2026-10-11",
+      "permissionVerified": false,
+      "publicGo": 0,
+      "sourcePageReferences": [
+        {
+          "physicalPage": 3,
+          "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_2n.pdf#page=3",
+          "pdfSha256": "b529ce8b8bbd6e4682272bef69ffae8c2ee7c73c1d086b22ccf402b3b5819c9d"
+        }
+      ],
+      "sourceFigureAssets": []
+    },
+    {
+      "id": "jidosha-2026-first-2-motorcycle-q08",
+      "qNumber": 8,
+      "question": "鉛バッテリの放電特性について、次の文章の（イ）から（ハ）に当てはまるものとして、下の組み合わせのうち、適切なものはどれか。バッテリの放電終止電圧は、二輪自動車では（イ）時間率放電で表され、1セル当たり（ロ）Vであり、放電電流が大きくなるほど放電終止電圧は（ハ）定められている。",
+      "choices": {
+        "ア": "（イ）5／（ロ）1.65／（ハ）高く",
+        "イ": "（イ）10／（ロ）1.65／（ハ）高く",
+        "ウ": "（イ）5／（ロ）1.75／（ハ）低く",
+        "エ": "（イ）10／（ロ）1.75／（ハ）低く"
+      },
+      "answer": "エ",
+      "officialAnswerNumber": "4",
+      "explanation": "正答。二輪は10時間率、1セル1.75 Vで、放電電流が大きいほど終止電圧を低く定める。",
+      "choiceExplanations": {
+        "ア": "二輪の10時間率と1.75 Vの組合せに合わず、放電電流が大きい場合の値の方向も逆である。",
+        "イ": "10時間率は合うが1セル1.65 Vと「高く」が異なる。",
+        "ウ": "1.75 Vと「低く」は合うが、二輪の時間率は5ではなく10である。",
+        "エ": "正答。二輪は10時間率、1セル1.75 Vで、放電電流が大きいほど終止電圧を低く定める。"
+      },
+      "explanationCoverage": "full",
+      "hasImage": false,
+      "sourcePages": [
+        4
+      ],
+      "sourceFigureRequired": false,
+      "topicTags": [
+        "鉛バッテリの放電特性について、次の文章の（イ）から（ハ）"
+      ],
+      "difficulty": 2,
+      "isCalculation": false,
+      "needsReview": false,
+      "reviewNotes": [],
+      "officialReferenceUrls": [],
+      "qualification": "jidousha-seibishi-gakka",
+      "session": "gakka",
+      "type": "multiple-choice",
+      "year": 2026,
+      "fiscalYear": 2026,
+      "season": "first",
+      "term": "first",
+      "subject": "2-motorcycle",
+      "category": "二級２輪自動車",
+      "examDate": "2026-10-04",
+      "sourcePdfUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_2n.pdf",
+      "sourceAnswerUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_kai.pdf",
+      "sourceAttribution": "出典：日本自動車整備振興会連合会 令和8年度第1回自動車整備技能登録試験 二級２輪自動車 No.8",
+      "officialQuestionStatus": "normal",
+      "lastUpdated": "2026-10-11",
+      "permissionVerified": false,
+      "publicGo": 0,
+      "sourcePageReferences": [
+        {
+          "physicalPage": 4,
+          "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_2n.pdf#page=4",
+          "pdfSha256": "b529ce8b8bbd6e4682272bef69ffae8c2ee7c73c1d086b22ccf402b3b5819c9d"
+        }
+      ],
+      "sourceFigureAssets": []
+    },
+    {
+      "id": "jidosha-2026-first-2-motorcycle-q09",
+      "qNumber": 9,
+      "question": "点火順序が1－3－4－2の4サイクル直列4シリンダ・エンジンにおいて、第3シリンダが燃焼行程の下死点にあり、この位置からクランクシャフトを回転方向に540°回転させたとき、バルブがオーバラップの上死点の状態にあるシリンダとして、適切なものは次のうちどれか。",
+      "choices": {
+        "ア": "第1シリンダ",
+        "イ": "第2シリンダ",
+        "ウ": "第3シリンダ",
+        "エ": "第4シリンダ"
+      },
+      "answer": "イ",
+      "officialAnswerNumber": "2",
+      "explanation": "公式正答は(2)。第3シリンダの燃焼上死点を0°に置くと、出発点は180°、540°回転後は720°。点火は第3が0°、第4が180°、第2が360°、第1が540°であるため、第2は点火から360°後の排気上死点となり、バルブがオーバラップする。",
+      "choiceExplanations": {
+        "ア": "不適切。第3シリンダの燃焼上死点を0°とすると、出発点は180°、到達点は180°＋540°＝720°。第1シリンダの燃焼上死点は540°なので、到達時には燃焼行程の下死点である。",
+        "イ": "適切。点火順序を第3から追うと3→4→2→1で各180°。到達点720°で第2シリンダは燃焼上死点360°から360°進んだ位置、すなわち排気上死点・バルブのオーバラップとなる。",
+        "ウ": "不適切。第3シリンダは出発時の燃焼下死点から540°進み、次の圧縮上死点・点火位置へ戻る。オーバラップ上死点ではない。",
+        "エ": "不適切。第4シリンダの燃焼上死点は180°であり、到達時はそこから540°進んだ吸入行程の下死点となる。"
+      },
+      "explanationCoverage": "full",
+      "hasImage": false,
+      "sourcePages": [
+        4
+      ],
+      "sourceFigureRequired": false,
+      "topicTags": [
+        "点火順序が1－3－4－2の4サイクル直列4シリンダ・エン"
+      ],
+      "difficulty": 2,
+      "isCalculation": false,
+      "needsReview": false,
+      "reviewNotes": [],
+      "officialReferenceUrls": [],
+      "qualification": "jidousha-seibishi-gakka",
+      "session": "gakka",
+      "type": "multiple-choice",
+      "year": 2026,
+      "fiscalYear": 2026,
+      "season": "first",
+      "term": "first",
+      "subject": "2-motorcycle",
+      "category": "二級２輪自動車",
+      "examDate": "2026-10-04",
+      "sourcePdfUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_2n.pdf",
+      "sourceAnswerUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_kai.pdf",
+      "sourceAttribution": "出典：日本自動車整備振興会連合会 令和8年度第1回自動車整備技能登録試験 二級２輪自動車 No.9",
+      "officialQuestionStatus": "normal",
+      "lastUpdated": "2026-10-11",
+      "permissionVerified": false,
+      "publicGo": 0,
+      "sourcePageReferences": [
+        {
+          "physicalPage": 4,
+          "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_2n.pdf#page=4",
+          "pdfSha256": "b529ce8b8bbd6e4682272bef69ffae8c2ee7c73c1d086b22ccf402b3b5819c9d"
+        }
+      ],
+      "sourceFigureAssets": []
+    },
+    {
+      "id": "jidosha-2026-first-2-motorcycle-q10",
+      "qNumber": 10,
+      "question": "電子制御装置のアイドル回転速度制御に関する記述として、 不適切なものは次のうちどれか。",
+      "choices": {
+        "ア": "エンジン暖機時には、水温の上昇に応じてISCV（アイドル・スピード・コントロール・バルブ）内の通路を通る吸入空気量を徐々に多くすることで、安定したエンジン回転速度を維持する。",
+        "イ": "コントロール・ユニットは、アイドリング時にエンジン暖機完了と判断した場合はステップ・モータを駆動させ、エンジン暖機時よりも更にISCVのバルブを閉じ側に移動させる。",
+        "ウ": "コントロール・ユニットは、イグニション・スイッチをONにしたとき、ISCVのバルブを全開になるまでステップ・モータを駆動させ、バルブの基準位置を決める。",
+        "エ": "エンジン始動時には、水温センサの信号をもとに、必要な吸入空気量を確保できる開度までISCVのバルブを基準位置から移動させる。"
+      },
+      "answer": "ア",
+      "officialAnswerNumber": "1",
+      "explanation": "不適切。暖機が進むと必要なアイドル用空気量は減り、ISCVの通路を通る空気を徐々に減らす。",
+      "choiceExplanations": {
+        "ア": "不適切。暖機が進むと必要なアイドル用空気量は減り、ISCVの通路を通る空気を徐々に減らす。",
+        "イ": "暖機完了時は暖機中よりISCVを閉じる側に移す。",
+        "ウ": "イグニッションON時に基準位置を決める制御の説明である。",
+        "エ": "始動時は水温に応じて必要な開度を与える。"
+      },
+      "explanationCoverage": "full",
+      "hasImage": false,
+      "sourcePages": [
+        4
+      ],
+      "sourceFigureRequired": false,
+      "topicTags": [
+        "電子制御装置のアイドル回転速度制御"
+      ],
+      "difficulty": 2,
+      "isCalculation": false,
+      "needsReview": false,
+      "reviewNotes": [],
+      "officialReferenceUrls": [],
+      "qualification": "jidousha-seibishi-gakka",
+      "session": "gakka",
+      "type": "multiple-choice",
+      "year": 2026,
+      "fiscalYear": 2026,
+      "season": "first",
+      "term": "first",
+      "subject": "2-motorcycle",
+      "category": "二級２輪自動車",
+      "examDate": "2026-10-04",
+      "sourcePdfUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_2n.pdf",
+      "sourceAnswerUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_kai.pdf",
+      "sourceAttribution": "出典：日本自動車整備振興会連合会 令和8年度第1回自動車整備技能登録試験 二級２輪自動車 No.10",
+      "officialQuestionStatus": "normal",
+      "lastUpdated": "2026-10-11",
+      "permissionVerified": false,
+      "publicGo": 0,
+      "sourcePageReferences": [
+        {
+          "physicalPage": 4,
+          "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_2n.pdf#page=4",
+          "pdfSha256": "b529ce8b8bbd6e4682272bef69ffae8c2ee7c73c1d086b22ccf402b3b5819c9d"
+        }
+      ],
+      "sourceFigureAssets": []
+    },
+    {
+      "id": "jidosha-2026-first-2-motorcycle-q11",
+      "qNumber": 11,
+      "question": "電子制御装置の燃料噴射制御に関する記述として、 不適切なものは次のうちどれか。",
+      "choices": {
+        "ア": "高負荷時は、スロットル開度とエンジン回転速度に応じた基本噴射量に、各センサからの信号による補正を加えて、運転状態に応じた最適な噴射量をコントロール・ユニットが決定している。",
+        "イ": "噴射タイミングは、カム角センサとクランク角センサの信号で決定するが、コントロール・ユニットはカム角センサの信号により気筒の判別を行っている。",
+        "ウ": "インジェクタは、コントロール・ユニットからの噴射信号に基づいて燃料噴射を行うが、燃料の噴射量増減は、インジェクタ内のニードル・バルブの開弁時間を変化させて行われる。",
+        "エ": "コントロール・ユニットは、プレッシャ・レギュレータからの信号を用いて、インテーク・マニホールド内の圧力に応じた燃料噴射量の補正を行っている。"
+      },
+      "answer": "エ",
+      "officialAnswerNumber": "4",
+      "explanation": "不適切。プレッシャ・レギュレータは燃料圧力を調整する部品であり、マニホールド圧力に応じた補正信号をECUに送るセンサではない。",
+      "choiceExplanations": {
+        "ア": "負荷・回転数・センサ補正で噴射量を決定する。",
+        "イ": "カム角信号は気筒判別に用いられる。",
+        "ウ": "インジェクタの開弁時間が噴射量を決める。",
+        "エ": "不適切。プレッシャ・レギュレータは燃料圧力を調整する部品であり、マニホールド圧力に応じた補正信号をECUに送るセンサではない。"
+      },
+      "explanationCoverage": "full",
+      "hasImage": false,
+      "sourcePages": [
+        5
+      ],
+      "sourceFigureRequired": false,
+      "topicTags": [
+        "電子制御装置の燃料噴射制御"
+      ],
+      "difficulty": 2,
+      "isCalculation": false,
+      "needsReview": false,
+      "reviewNotes": [],
+      "officialReferenceUrls": [],
+      "qualification": "jidousha-seibishi-gakka",
+      "session": "gakka",
+      "type": "multiple-choice",
+      "year": 2026,
+      "fiscalYear": 2026,
+      "season": "first",
+      "term": "first",
+      "subject": "2-motorcycle",
+      "category": "二級２輪自動車",
+      "examDate": "2026-10-04",
+      "sourcePdfUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_2n.pdf",
+      "sourceAnswerUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_kai.pdf",
+      "sourceAttribution": "出典：日本自動車整備振興会連合会 令和8年度第1回自動車整備技能登録試験 二級２輪自動車 No.11",
+      "officialQuestionStatus": "normal",
+      "lastUpdated": "2026-10-11",
+      "permissionVerified": false,
+      "publicGo": 0,
+      "sourcePageReferences": [
+        {
+          "physicalPage": 5,
+          "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_2n.pdf#page=5",
+          "pdfSha256": "b529ce8b8bbd6e4682272bef69ffae8c2ee7c73c1d086b22ccf402b3b5819c9d"
+        }
+      ],
+      "sourceFigureAssets": []
+    },
+    {
+      "id": "jidosha-2026-first-2-motorcycle-q13",
+      "qNumber": 13,
+      "question": "図に示すオルタネータの出力制御に用いられるIC式ボルテージ・レギュレータの作動に関する記述として、不適切なものは次のうちどれか。",
+      "choices": {
+        "ア": "エンジンが停止状態でイグニション・スイッチをONにすると、Tr₂がONするので、ロータ・コイルに電流が流れロータが磁化される。",
+        "イ": "エンジンが回転するとロータの回転とともにステータ・コイルに電圧が発生し、B端子電圧が規定値に達するとツェナ・ダイオード（ZD）に加わる電圧がツェナ電圧以上となり、Tr₁はOFF状態となる。",
+        "ウ": "エンジンが停止状態でイグニション・スイッチをONにすると、ツェナ・ダイオード（ZD）に加わる電圧はツェナ電圧に達していないので、Tr₁はOFFの状態になっている。",
+        "エ": "エンジンが回転しているときに、ツェナ・ダイオード（ZD）に加わる電圧が規定値以下になると、ツェナ・ダイオード（ZD）を流れる電流が断たれるので、Tr₁がOFFになり、Tr₂がONすることでロータ・コイルに電流が流れ始め、B端子電圧は上昇する。"
+      },
+      "answer": "イ",
+      "officialAnswerNumber": "2",
+      "explanation": "不適切なのは(2)。原図でZDが導通するとTr₁はONとなり、Tr₂はOFFになる。ロータ電流を減らして過大な発電電圧を抑える負帰還であり、Tr₁がOFFになるという説明は逆である。",
+      "choiceExplanations": {
+        "ア": "適切。停止時はZDが導通せずTr₁はOFF。R₁からTr₂へベース電流が流れ、Tr₂がONとなってロータ・コイルを励磁する。",
+        "イ": "不適切。ZDが導通するとTr₁にベース電流が流れてONとなる。Tr₁がTr₂のベース電位を下げてTr₂をOFFにし、ロータ電流を遮断する。原問のTr₁がOFFという部分が逆である。",
+        "ウ": "適切。停止時にはZDの降伏電圧に達していないため、Tr₁へベース電流が流れずOFFとなる。",
+        "エ": "適切。電圧が下がってZDが非導通になるとTr₁がOFF、Tr₂がONへ戻り、ロータ電流によって発電電圧を回復させる。"
+      },
+      "explanationCoverage": "full",
+      "hasImage": true,
+      "sourcePages": [
+        6
+      ],
+      "sourceFigureRequired": true,
+      "topicTags": [
+        "図に示すオルタネ ー タの出力制御に用いられる IC 式"
+      ],
+      "difficulty": 2,
+      "isCalculation": false,
+      "needsReview": false,
+      "reviewNotes": [],
+      "officialReferenceUrls": [],
+      "qualification": "jidousha-seibishi-gakka",
+      "session": "gakka",
+      "type": "multiple-choice",
+      "year": 2026,
+      "fiscalYear": 2026,
+      "season": "first",
+      "term": "first",
+      "subject": "2-motorcycle",
+      "category": "二級２輪自動車",
+      "examDate": "2026-10-04",
+      "sourcePdfUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_2n.pdf",
+      "sourceAnswerUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_kai.pdf",
+      "sourceAttribution": "出典：日本自動車整備振興会連合会 令和8年度第1回自動車整備技能登録試験 二級２輪自動車 No.13",
+      "officialQuestionStatus": "normal",
+      "lastUpdated": "2026-10-11",
+      "permissionVerified": false,
+      "publicGo": 0,
+      "sourcePageReferences": [
+        {
+          "physicalPage": 6,
+          "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_2n.pdf#page=6",
+          "pdfSha256": "b529ce8b8bbd6e4682272bef69ffae8c2ee7c73c1d086b22ccf402b3b5819c9d"
+        }
+      ],
+      "sourceFigureAssets": [
+        {
+          "physicalPage": 6,
+          "relativePath": "figures/jaspa-2026-first-2-motorcycle-p06.webp"
+        }
+      ]
+    },
+    {
+      "id": "jidosha-2026-first-2-motorcycle-q14",
+      "qNumber": 14,
+      "question": "スパ ー ク ・ プラグに関する記述として、 不適切なものは次のうちどれか。",
+      "choices": {
+        "ア": "低熱価型プラグは、高熱価型プラグに比べて碍子脚部が短く、火炎にさらされる表面積及びガス・ポケットの容積が小さい。",
+        "イ": "熱を放熱する度合の大きいプラグを高熱価型プラグと呼んでいる。",
+        "ウ": "スパーク・プラグのギャップが狭いと、電極の消炎作用のため火炎核が成長しにくくなり、着火ミスが発生しやすくなる。",
+        "エ": "自己清浄温度とは、碍子の表面に付着したカーボンが焼き切れる現象を起こし始めるときの温度をいい、その温度は約450℃である。"
+      },
+      "answer": "ア",
+      "officialAnswerNumber": "1",
+      "explanation": "不適切。低熱価型は放熱しにくい側で、碍子脚部は長く、表面積・ガス・ポケットも大きい。",
+      "choiceExplanations": {
+        "ア": "不適切。低熱価型は放熱しにくい側で、碍子脚部は長く、表面積・ガス・ポケットも大きい。",
+        "イ": "高熱価型は放熱しやすいプラグをいう。",
+        "ウ": "ギャップが狭すぎると火炎核の成長が妨げられ、着火ミスを招く。",
+        "エ": "自己清浄温度付近で碍子のカーボンが焼け切れる。"
+      },
+      "explanationCoverage": "full",
+      "hasImage": false,
+      "sourcePages": [
+        6
+      ],
+      "sourceFigureRequired": false,
+      "topicTags": [
+        "スパ ー ク ・ プラグ"
+      ],
+      "difficulty": 2,
+      "isCalculation": false,
+      "needsReview": false,
+      "reviewNotes": [],
+      "officialReferenceUrls": [],
+      "qualification": "jidousha-seibishi-gakka",
+      "session": "gakka",
+      "type": "multiple-choice",
+      "year": 2026,
+      "fiscalYear": 2026,
+      "season": "first",
+      "term": "first",
+      "subject": "2-motorcycle",
+      "category": "二級２輪自動車",
+      "examDate": "2026-10-04",
+      "sourcePdfUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_2n.pdf",
+      "sourceAnswerUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_kai.pdf",
+      "sourceAttribution": "出典：日本自動車整備振興会連合会 令和8年度第1回自動車整備技能登録試験 二級２輪自動車 No.14",
+      "officialQuestionStatus": "normal",
+      "lastUpdated": "2026-10-11",
+      "permissionVerified": false,
+      "publicGo": 0,
+      "sourcePageReferences": [
+        {
+          "physicalPage": 6,
+          "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_2n.pdf#page=6",
+          "pdfSha256": "b529ce8b8bbd6e4682272bef69ffae8c2ee7c73c1d086b22ccf402b3b5819c9d"
+        }
+      ],
+      "sourceFigureAssets": []
+    },
+    {
+      "id": "jidosha-2026-first-2-motorcycle-q15",
+      "qNumber": 15,
+      "question": "エンジン・オイルの消費量が多い場合の推定原因として、不適切なものは次のうちどれか。",
+      "choices": {
+        "ア": "ピストン・リングの摩耗",
+        "イ": "バルブ・ステム・オイル・シールの不良",
+        "ウ": "バルブ・ガイドの摩耗",
+        "エ": "バルブとバルブ・シートとの密着不良"
+      },
+      "answer": "エ",
+      "officialAnswerNumber": "4",
+      "explanation": "不適切。バルブとシートの密着不良は圧縮漏れ・燃焼不良の原因で、オイル消費増大の直接原因ではない。",
+      "choiceExplanations": {
+        "ア": "リング摩耗は燃焼室へのオイル上がりを招く。",
+        "イ": "ステム・シール不良はオイル下がりの原因になる。",
+        "ウ": "ガイド摩耗もステム周りからのオイル侵入を招く。",
+        "エ": "不適切。バルブとシートの密着不良は圧縮漏れ・燃焼不良の原因で、オイル消費増大の直接原因ではない。"
+      },
+      "explanationCoverage": "full",
+      "hasImage": false,
+      "sourcePages": [
+        7
+      ],
+      "sourceFigureRequired": false,
+      "topicTags": [
+        "エンジン・オイルの消費量が多い場合の推定原因として、不適"
+      ],
+      "difficulty": 2,
+      "isCalculation": false,
+      "needsReview": false,
+      "reviewNotes": [],
+      "officialReferenceUrls": [],
+      "qualification": "jidousha-seibishi-gakka",
+      "session": "gakka",
+      "type": "multiple-choice",
+      "year": 2026,
+      "fiscalYear": 2026,
+      "season": "first",
+      "term": "first",
+      "subject": "2-motorcycle",
+      "category": "二級２輪自動車",
+      "examDate": "2026-10-04",
+      "sourcePdfUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_2n.pdf",
+      "sourceAnswerUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_kai.pdf",
+      "sourceAttribution": "出典：日本自動車整備振興会連合会 令和8年度第1回自動車整備技能登録試験 二級２輪自動車 No.15",
+      "officialQuestionStatus": "normal",
+      "lastUpdated": "2026-10-11",
+      "permissionVerified": false,
+      "publicGo": 0,
+      "sourcePageReferences": [
+        {
+          "physicalPage": 7,
+          "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_2n.pdf#page=7",
+          "pdfSha256": "b529ce8b8bbd6e4682272bef69ffae8c2ee7c73c1d086b22ccf402b3b5819c9d"
+        }
+      ],
+      "sourceFigureAssets": []
+    },
+    {
+      "id": "jidosha-2026-first-2-motorcycle-q16",
+      "qNumber": 16,
+      "question": "乾式シュ ー 式自動遠心クラッチに関する記述として、 不適切なものは次のうちどれか。",
+      "choices": {
+        "ア": "クラッチ・シューに接着されているライニングの摩擦係数は、一般に0.3～0.4程度である。",
+        "イ": "発生熱量に対して、吸収及び発散能力が十分で、温度が過度に上昇しないことが要求される性能の一つである。",
+        "ウ": "クラッチ・イン回転速度とは、エンジン回転速度を徐々に上げたとき、ライニングがクラッチ・ハウジングに接触して、トルクを伝え始めるときのエンジン回転速度をいう。",
+        "エ": "入力側から出力側に伝えられるトルクの容量は、エンジン回転速度に関係なく常に一定である。"
+      },
+      "answer": "エ",
+      "officialAnswerNumber": "4",
+      "explanation": "不適切。遠心クラッチの伝達可能トルクは回転速度で変わり、常に一定ではない。",
+      "choiceExplanations": {
+        "ア": "摩擦係数0.3～0.4程度がライニングの性質として示される。",
+        "イ": "十分な吸収・放熱能力は過熱防止に必要である。",
+        "ウ": "クラッチ・イン回転速度はライニングが接触してトルクを伝え始める回転数である。",
+        "エ": "不適切。遠心クラッチの伝達可能トルクは回転速度で変わり、常に一定ではない。"
+      },
+      "explanationCoverage": "full",
+      "hasImage": false,
+      "sourcePages": [
+        7
+      ],
+      "sourceFigureRequired": false,
+      "topicTags": [
+        "乾式シュ ー 式自動遠心クラッチ"
+      ],
+      "difficulty": 2,
+      "isCalculation": false,
+      "needsReview": false,
+      "reviewNotes": [],
+      "officialReferenceUrls": [],
+      "qualification": "jidousha-seibishi-gakka",
+      "session": "gakka",
+      "type": "multiple-choice",
+      "year": 2026,
+      "fiscalYear": 2026,
+      "season": "first",
+      "term": "first",
+      "subject": "2-motorcycle",
+      "category": "二級２輪自動車",
+      "examDate": "2026-10-04",
+      "sourcePdfUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_2n.pdf",
+      "sourceAnswerUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_kai.pdf",
+      "sourceAttribution": "出典：日本自動車整備振興会連合会 令和8年度第1回自動車整備技能登録試験 二級２輪自動車 No.16",
+      "officialQuestionStatus": "normal",
+      "lastUpdated": "2026-10-11",
+      "permissionVerified": false,
+      "publicGo": 0,
+      "sourcePageReferences": [
+        {
+          "physicalPage": 7,
+          "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_2n.pdf#page=7",
+          "pdfSha256": "b529ce8b8bbd6e4682272bef69ffae8c2ee7c73c1d086b22ccf402b3b5819c9d"
+        }
+      ],
+      "sourceFigureAssets": []
+    },
+    {
+      "id": "jidosha-2026-first-2-motorcycle-q17",
+      "qNumber": 17,
+      "question": "ベルト式自動無段変速機に関する記述として、 適切なものは次のうちどれか。",
+      "choices": {
+        "ア": "ドライブ・プーリのムーバブル・ドライブ・フェースは、エンジン回転速度が上昇すると、フィクスト・ドライブ・フェース側とは逆の方向へ移動する。",
+        "イ": "キック・ダウン時、ドリブン・プーリのムーバブル・ドリブン・フェースは、トルク・カムの働きでフィクスト・ドリブン・フェース側に押し出され、ドリブン・プーリ側のVベルトの回転半径が大きくなる。",
+        "ウ": "ドリブン・プーリは、ムーバブル・ドリブン・フェース、フィクスト・ドリブン・フェース及びウェイト・ローラなどから構成されている。",
+        "エ": "エンジンの回転速度が高いときに比べ、低いときはドライブ・プーリ側のVベルトの回転半径は大きくなる。"
+      },
+      "answer": "イ",
+      "officialAnswerNumber": "2",
+      "explanation": "正答。キックダウン時、ドリブン側の可動フェースが移動し、Vベルトの有効半径が大きくなる。",
+      "choiceExplanations": {
+        "ア": "不適切。回転速度が上がるとウェイト・ローラの遠心力で可動側フェースが固定側へ近づき、溝幅が狭まってドライブ側の有効半径が大きくなる。",
+        "イ": "適切。キック・ダウンではドリブン側の可動フェースが固定側へ近づき、Vベルトの回転半径が大きくなって減速比が増す。",
+        "ウ": "不適切。ウェイト・ローラはドライブ・プーリ側で遠心力を利用する部品。ドリブン側のトルク・カムやスプリングと役割を区別する。",
+        "エ": "不適切。低速時にはドライブ側の溝幅が広く、Vベルトの回転半径は小さい。高速側の状態と逆である。"
+      },
+      "explanationCoverage": "full",
+      "hasImage": false,
+      "sourcePages": [
+        7
+      ],
+      "sourceFigureRequired": false,
+      "topicTags": [
+        "ベルト式自動無段変速機"
+      ],
+      "difficulty": 2,
+      "isCalculation": false,
+      "needsReview": false,
+      "reviewNotes": [],
+      "officialReferenceUrls": [],
+      "qualification": "jidousha-seibishi-gakka",
+      "session": "gakka",
+      "type": "multiple-choice",
+      "year": 2026,
+      "fiscalYear": 2026,
+      "season": "first",
+      "term": "first",
+      "subject": "2-motorcycle",
+      "category": "二級２輪自動車",
+      "examDate": "2026-10-04",
+      "sourcePdfUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_2n.pdf",
+      "sourceAnswerUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_kai.pdf",
+      "sourceAttribution": "出典：日本自動車整備振興会連合会 令和8年度第1回自動車整備技能登録試験 二級２輪自動車 No.17",
+      "officialQuestionStatus": "normal",
+      "lastUpdated": "2026-10-11",
+      "permissionVerified": false,
+      "publicGo": 0,
+      "sourcePageReferences": [
+        {
+          "physicalPage": 7,
+          "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_2n.pdf#page=7",
+          "pdfSha256": "b529ce8b8bbd6e4682272bef69ffae8c2ee7c73c1d086b22ccf402b3b5819c9d"
+        }
+      ],
+      "sourceFigureAssets": []
+    },
+    {
+      "id": "jidosha-2026-first-2-motorcycle-q18",
+      "qNumber": 18,
+      "question": "サスペンションに関する記述として、 適切なものは次のうちどれか。",
+      "choices": {
+        "ア": "単動型のショック・アブソーバの減衰力は、伸び側及び圧縮側の両方で発生する。",
+        "イ": "エア・スプリング、金属スプリング、合成スプリングの3種類のスプリングのうち、ストロークに対するスプリングの反力は、エア・スプリングが最も大きい。",
+        "ウ": "ガス封入式ショック・アブソーバは、空気室に圧縮窒素ガスを封入してオイルに圧力を掛ける方式のもので、激しいしゅう動によりオイル中に空気の泡を作ることなく、安定して減衰力が得られる。",
+        "エ": "フロント・フォークのばね特性には、ストローク量が大きくなるに連れて、ばね定数が小さくなる特性が要求される。"
+      },
+      "answer": "ウ",
+      "officialAnswerNumber": "3",
+      "explanation": "正答。封入ガスでオイル中の気泡発生を抑え、減衰力を安定させる。",
+      "choiceExplanations": {
+        "ア": "単動型は伸び側又は圧縮側の一方で主に減衰力を生むため「両方」は誤り。",
+        "イ": "エア・スプリングが金属スプリングより常に反力最大とはいえない。",
+        "ウ": "正答。封入ガスでオイル中の気泡発生を抑え、減衰力を安定させる。",
+        "エ": "フロント・フォークはストローク量の増大に応じてばね定数が大きくなる特性が求められる。"
+      },
+      "explanationCoverage": "full",
+      "hasImage": false,
+      "sourcePages": [
+        7
+      ],
+      "sourceFigureRequired": false,
+      "topicTags": [
+        "サスペンション"
+      ],
+      "difficulty": 2,
+      "isCalculation": false,
+      "needsReview": false,
+      "reviewNotes": [],
+      "officialReferenceUrls": [],
+      "qualification": "jidousha-seibishi-gakka",
+      "session": "gakka",
+      "type": "multiple-choice",
+      "year": 2026,
+      "fiscalYear": 2026,
+      "season": "first",
+      "term": "first",
+      "subject": "2-motorcycle",
+      "category": "二級２輪自動車",
+      "examDate": "2026-10-04",
+      "sourcePdfUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_2n.pdf",
+      "sourceAnswerUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_kai.pdf",
+      "sourceAttribution": "出典：日本自動車整備振興会連合会 令和8年度第1回自動車整備技能登録試験 二級２輪自動車 No.18",
+      "officialQuestionStatus": "normal",
+      "lastUpdated": "2026-10-11",
+      "permissionVerified": false,
+      "publicGo": 0,
+      "sourcePageReferences": [
+        {
+          "physicalPage": 7,
+          "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_2n.pdf#page=7",
+          "pdfSha256": "b529ce8b8bbd6e4682272bef69ffae8c2ee7c73c1d086b22ccf402b3b5819c9d"
+        }
+      ],
+      "sourceFigureAssets": []
+    },
+    {
+      "id": "jidosha-2026-first-2-motorcycle-q19",
+      "qNumber": 19,
+      "question": "車体振動のウォブリングに関する記述として、適切なものは次のうちどれか。",
+      "choices": {
+        "ア": "フロント回りから出る細かな振動で、低・中速を惰性で走ったり、手放し走行すると顕著に現れる現象である。",
+        "イ": "路面から受ける強い衝撃により、ステアリングが強く振れることをいう。",
+        "ウ": "一般に高速走行の緩やかなコーナで発生し、リヤ回りのローリングとヨーイングの合成振動である。",
+        "エ": "高速走行時に起こる車両の振れで、よろよろしながら、あるいはぐらぐらしながら走行することで、それに伴ってステアリングも振れる現象である。"
+      },
+      "answer": "エ",
+      "officialAnswerNumber": "4",
+      "explanation": "正答。高速で車体とステアリングがゆらゆら大きく振れるのがウォブリングである。",
+      "choiceExplanations": {
+        "ア": "低・中速の手放し走行で前輪が細かく振れるのはシミーの説明である。",
+        "イ": "路面衝撃によるステアリングの強い振れはキックバック側の現象である。",
+        "ウ": "緩やかなコーナーでの後部ロールとヨーの合成振動は別の振動である。",
+        "エ": "正答。高速で車体とステアリングがゆらゆら大きく振れるのがウォブリングである。"
+      },
+      "explanationCoverage": "full",
+      "hasImage": false,
+      "sourcePages": [
+        8
+      ],
+      "sourceFigureRequired": false,
+      "topicTags": [
+        "車体振動のウオプリング"
+      ],
+      "difficulty": 2,
+      "isCalculation": false,
+      "needsReview": false,
+      "reviewNotes": [],
+      "officialReferenceUrls": [],
+      "qualification": "jidousha-seibishi-gakka",
+      "session": "gakka",
+      "type": "multiple-choice",
+      "year": 2026,
+      "fiscalYear": 2026,
+      "season": "first",
+      "term": "first",
+      "subject": "2-motorcycle",
+      "category": "二級２輪自動車",
+      "examDate": "2026-10-04",
+      "sourcePdfUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_2n.pdf",
+      "sourceAnswerUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_kai.pdf",
+      "sourceAttribution": "出典：日本自動車整備振興会連合会 令和8年度第1回自動車整備技能登録試験 二級２輪自動車 No.19",
+      "officialQuestionStatus": "normal",
+      "lastUpdated": "2026-10-11",
+      "permissionVerified": false,
+      "publicGo": 0,
+      "sourcePageReferences": [
+        {
+          "physicalPage": 8,
+          "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_2n.pdf#page=8",
+          "pdfSha256": "b529ce8b8bbd6e4682272bef69ffae8c2ee7c73c1d086b22ccf402b3b5819c9d"
+        }
+      ],
+      "sourceFigureAssets": []
+    },
+    {
+      "id": "jidosha-2026-first-2-motorcycle-q20",
+      "qNumber": 20,
+      "question": "湿式多板式クラッチに滑りがあるときの推定原因として、不適切なものは次のうちどれか。",
+      "choices": {
+        "ア": "クラッチ・レバーの遊びがない",
+        "イ": "クラッチ・ドライブ・プレートの焼損",
+        "ウ": "クラッチ・シューの破損",
+        "エ": "プッシュ・ロッド・クリアランスの過小"
+      },
+      "answer": "ウ",
+      "officialAnswerNumber": "3",
+      "explanation": "不適切。湿式多板式クラッチの滑り原因としてクラッチ・シューの破損を挙げるのは方式が異なる。",
+      "choiceExplanations": {
+        "ア": "遊びがないとクラッチが完全に圧着せず滑る。",
+        "イ": "ドライブ・プレートの焼損は摩擦伝達を損ない滑りを生じる。",
+        "ウ": "不適切。湿式多板式クラッチの滑り原因としてクラッチ・シューの破損を挙げるのは方式が異なる。",
+        "エ": "プッシュ・ロッドのクリアランス不足はクラッチの完全接続を妨げる。"
+      },
+      "explanationCoverage": "full",
+      "hasImage": false,
+      "sourcePages": [
+        8
+      ],
+      "sourceFigureRequired": false,
+      "topicTags": [
+        "湿式多板式クラッチに滑りがあるときの推定原因として、不適"
+      ],
+      "difficulty": 2,
+      "isCalculation": false,
+      "needsReview": false,
+      "reviewNotes": [],
+      "officialReferenceUrls": [],
+      "qualification": "jidousha-seibishi-gakka",
+      "session": "gakka",
+      "type": "multiple-choice",
+      "year": 2026,
+      "fiscalYear": 2026,
+      "season": "first",
+      "term": "first",
+      "subject": "2-motorcycle",
+      "category": "二級２輪自動車",
+      "examDate": "2026-10-04",
+      "sourcePdfUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_2n.pdf",
+      "sourceAnswerUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_kai.pdf",
+      "sourceAttribution": "出典：日本自動車整備振興会連合会 令和8年度第1回自動車整備技能登録試験 二級２輪自動車 No.20",
+      "officialQuestionStatus": "normal",
+      "lastUpdated": "2026-10-11",
+      "permissionVerified": false,
+      "publicGo": 0,
+      "sourcePageReferences": [
+        {
+          "physicalPage": 8,
+          "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_2n.pdf#page=8",
+          "pdfSha256": "b529ce8b8bbd6e4682272bef69ffae8c2ee7c73c1d086b22ccf402b3b5819c9d"
+        }
+      ],
+      "sourceFigureAssets": []
+    }
+  ],
+  "candidateBindings": [
+    {
+      "id": "jidosha-2026-first-2-motorcycle-q01",
+      "qNumber": 1,
+      "candidateCanonicalSha256": "305be171604e7a5d808e6b497cd98e1ff7411b472f8febbe30c6db0a5973776a",
+      "originalKey": "jidousha-seibishi-gakka:2026:first:2-motorcycle:1",
+      "officialAnswerNumber": "2",
+      "answer": "イ",
+      "officialKeyDirectPdfColumnCheck": "2",
+      "questionPdfUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_2n.pdf",
+      "questionPdfSha256": "b529ce8b8bbd6e4682272bef69ffae8c2ee7c73c1d086b22ccf402b3b5819c9d",
+      "answerPdfUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_kai.pdf",
+      "answerPdfSha256": "7f3a3405cd428510d0d585ceb96425c0b3ec9fd30c80696607fa5c595f20f23d",
+      "answerPdfPhysicalPage": 1,
+      "answerPdfColumn": "24 (2に)",
+      "sourcePages": [
+        2
+      ],
+      "sourceTextBinding": {
+        "id": "jidosha-2026-first-2-motorcycle-q01",
+        "textSha256": "11ce9e0a5298c510826c18af25b43b9205ad43e237bada45a5ff5945c643ca99",
+        "sourcePdfSha256": "b529ce8b8bbd6e4682272bef69ffae8c2ee7c73c1d086b22ccf402b3b5819c9d",
+        "physicalPages": [
+          2
+        ],
+        "savedPageImageSha256": [
+          {
+            "page": 2,
+            "sha256": "6bfdc775d77108d03f52ee103644b8a31b982b47a01ef06f0ec39b74c0bdce16"
+          }
+        ]
+      },
+      "sourceTextBindingFileSha256": "42cf780d2b0b87f04680aac5a11cd84e64d662b202f8c24bdbcb1c56c447cdb4",
+      "figureRequired": false,
+      "figureBindings": []
+    },
+    {
+      "id": "jidosha-2026-first-2-motorcycle-q02",
+      "qNumber": 2,
+      "candidateCanonicalSha256": "9e4ff8300ba29df24e430bca3bdd8bff1dde7a66a70e35c57e0a5bd3de89dfae",
+      "originalKey": "jidousha-seibishi-gakka:2026:first:2-motorcycle:2",
+      "officialAnswerNumber": "4",
+      "answer": "エ",
+      "officialKeyDirectPdfColumnCheck": "4",
+      "questionPdfUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_2n.pdf",
+      "questionPdfSha256": "b529ce8b8bbd6e4682272bef69ffae8c2ee7c73c1d086b22ccf402b3b5819c9d",
+      "answerPdfUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_kai.pdf",
+      "answerPdfSha256": "7f3a3405cd428510d0d585ceb96425c0b3ec9fd30c80696607fa5c595f20f23d",
+      "answerPdfPhysicalPage": 1,
+      "answerPdfColumn": "24 (2に)",
+      "sourcePages": [
+        2
+      ],
+      "sourceTextBinding": {
+        "id": "jidosha-2026-first-2-motorcycle-q02",
+        "textSha256": "c22892214b45ad5b54afcec2b44b82f290b5fc4040b71303ce25ff324fbf63a0",
+        "sourcePdfSha256": "b529ce8b8bbd6e4682272bef69ffae8c2ee7c73c1d086b22ccf402b3b5819c9d",
+        "physicalPages": [
+          2
+        ],
+        "savedPageImageSha256": [
+          {
+            "page": 2,
+            "sha256": "6bfdc775d77108d03f52ee103644b8a31b982b47a01ef06f0ec39b74c0bdce16"
+          }
+        ]
+      },
+      "sourceTextBindingFileSha256": "42cf780d2b0b87f04680aac5a11cd84e64d662b202f8c24bdbcb1c56c447cdb4",
+      "figureRequired": false,
+      "figureBindings": []
+    },
+    {
+      "id": "jidosha-2026-first-2-motorcycle-q03",
+      "qNumber": 3,
+      "candidateCanonicalSha256": "a6c14a80155a2698a58108f4de3e923bf8e236c3ad5ee0aa57d6fae23894abd9",
+      "originalKey": "jidousha-seibishi-gakka:2026:first:2-motorcycle:3",
+      "officialAnswerNumber": "1",
+      "answer": "ア",
+      "officialKeyDirectPdfColumnCheck": "1",
+      "questionPdfUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_2n.pdf",
+      "questionPdfSha256": "b529ce8b8bbd6e4682272bef69ffae8c2ee7c73c1d086b22ccf402b3b5819c9d",
+      "answerPdfUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_kai.pdf",
+      "answerPdfSha256": "7f3a3405cd428510d0d585ceb96425c0b3ec9fd30c80696607fa5c595f20f23d",
+      "answerPdfPhysicalPage": 1,
+      "answerPdfColumn": "24 (2に)",
+      "sourcePages": [
+        2
+      ],
+      "sourceTextBinding": {
+        "id": "jidosha-2026-first-2-motorcycle-q03",
+        "textSha256": "dc730eb53098dae4a453aa52ef387614f646fb87577c60f29ff40719c48f1f56",
+        "sourcePdfSha256": "b529ce8b8bbd6e4682272bef69ffae8c2ee7c73c1d086b22ccf402b3b5819c9d",
+        "physicalPages": [
+          2
+        ],
+        "savedPageImageSha256": [
+          {
+            "page": 2,
+            "sha256": "6bfdc775d77108d03f52ee103644b8a31b982b47a01ef06f0ec39b74c0bdce16"
+          }
+        ]
+      },
+      "sourceTextBindingFileSha256": "42cf780d2b0b87f04680aac5a11cd84e64d662b202f8c24bdbcb1c56c447cdb4",
+      "figureRequired": false,
+      "figureBindings": []
+    },
+    {
+      "id": "jidosha-2026-first-2-motorcycle-q04",
+      "qNumber": 4,
+      "candidateCanonicalSha256": "09ebeebe24f9d34ffb82fb4f97520b3f049c31ddf4aeebda9368e9f9b536b9f0",
+      "originalKey": "jidousha-seibishi-gakka:2026:first:2-motorcycle:4",
+      "officialAnswerNumber": "3",
+      "answer": "ウ",
+      "officialKeyDirectPdfColumnCheck": "3",
+      "questionPdfUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_2n.pdf",
+      "questionPdfSha256": "b529ce8b8bbd6e4682272bef69ffae8c2ee7c73c1d086b22ccf402b3b5819c9d",
+      "answerPdfUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_kai.pdf",
+      "answerPdfSha256": "7f3a3405cd428510d0d585ceb96425c0b3ec9fd30c80696607fa5c595f20f23d",
+      "answerPdfPhysicalPage": 1,
+      "answerPdfColumn": "24 (2に)",
+      "sourcePages": [
+        2
+      ],
+      "sourceTextBinding": {
+        "id": "jidosha-2026-first-2-motorcycle-q04",
+        "textSha256": "88be860174079f8762467d5b11a53ba4dfcf9a71d003c3b2d2651bbd8800f012",
+        "sourcePdfSha256": "b529ce8b8bbd6e4682272bef69ffae8c2ee7c73c1d086b22ccf402b3b5819c9d",
+        "physicalPages": [
+          2
+        ],
+        "savedPageImageSha256": [
+          {
+            "page": 2,
+            "sha256": "6bfdc775d77108d03f52ee103644b8a31b982b47a01ef06f0ec39b74c0bdce16"
+          }
+        ]
+      },
+      "sourceTextBindingFileSha256": "42cf780d2b0b87f04680aac5a11cd84e64d662b202f8c24bdbcb1c56c447cdb4",
+      "figureRequired": false,
+      "figureBindings": []
+    },
+    {
+      "id": "jidosha-2026-first-2-motorcycle-q05",
+      "qNumber": 5,
+      "candidateCanonicalSha256": "ea4c6123325652546775c6b0fb6a95fd9fa600cc94d04f7f6eea3f19676ed089",
+      "originalKey": "jidousha-seibishi-gakka:2026:first:2-motorcycle:5",
+      "officialAnswerNumber": "4",
+      "answer": "エ",
+      "officialKeyDirectPdfColumnCheck": "4",
+      "questionPdfUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_2n.pdf",
+      "questionPdfSha256": "b529ce8b8bbd6e4682272bef69ffae8c2ee7c73c1d086b22ccf402b3b5819c9d",
+      "answerPdfUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_kai.pdf",
+      "answerPdfSha256": "7f3a3405cd428510d0d585ceb96425c0b3ec9fd30c80696607fa5c595f20f23d",
+      "answerPdfPhysicalPage": 1,
+      "answerPdfColumn": "24 (2に)",
+      "sourcePages": [
+        3
+      ],
+      "sourceTextBinding": {
+        "id": "jidosha-2026-first-2-motorcycle-q05",
+        "textSha256": "d4dced8f0d346c020b0b1596858061d9a457558aa4af317eea3f0a9399c788c7",
+        "sourcePdfSha256": "b529ce8b8bbd6e4682272bef69ffae8c2ee7c73c1d086b22ccf402b3b5819c9d",
+        "physicalPages": [
+          3
+        ],
+        "savedPageImageSha256": [
+          {
+            "page": 3,
+            "sha256": "89f5648939db3d94ae76d994a6b95a69681b0657384b8a362d36e2464e0f42eb"
+          }
+        ]
+      },
+      "sourceTextBindingFileSha256": "42cf780d2b0b87f04680aac5a11cd84e64d662b202f8c24bdbcb1c56c447cdb4",
+      "figureRequired": false,
+      "figureBindings": []
+    },
+    {
+      "id": "jidosha-2026-first-2-motorcycle-q06",
+      "qNumber": 6,
+      "candidateCanonicalSha256": "06ff728db2f99df9d709f4bcf8e795a3a383aece1d2022cda6e05a3393b40e9c",
+      "originalKey": "jidousha-seibishi-gakka:2026:first:2-motorcycle:6",
+      "officialAnswerNumber": "3",
+      "answer": "ウ",
+      "officialKeyDirectPdfColumnCheck": "3",
+      "questionPdfUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_2n.pdf",
+      "questionPdfSha256": "b529ce8b8bbd6e4682272bef69ffae8c2ee7c73c1d086b22ccf402b3b5819c9d",
+      "answerPdfUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_kai.pdf",
+      "answerPdfSha256": "7f3a3405cd428510d0d585ceb96425c0b3ec9fd30c80696607fa5c595f20f23d",
+      "answerPdfPhysicalPage": 1,
+      "answerPdfColumn": "24 (2に)",
+      "sourcePages": [
+        3
+      ],
+      "sourceTextBinding": {
+        "id": "jidosha-2026-first-2-motorcycle-q06",
+        "textSha256": "9f5e0e43c6549e280cede3b73d189714052419ba04a1037566633578d0196300",
+        "sourcePdfSha256": "b529ce8b8bbd6e4682272bef69ffae8c2ee7c73c1d086b22ccf402b3b5819c9d",
+        "physicalPages": [
+          3
+        ],
+        "savedPageImageSha256": [
+          {
+            "page": 3,
+            "sha256": "89f5648939db3d94ae76d994a6b95a69681b0657384b8a362d36e2464e0f42eb"
+          }
+        ]
+      },
+      "sourceTextBindingFileSha256": "42cf780d2b0b87f04680aac5a11cd84e64d662b202f8c24bdbcb1c56c447cdb4",
+      "figureRequired": false,
+      "figureBindings": []
+    },
+    {
+      "id": "jidosha-2026-first-2-motorcycle-q07",
+      "qNumber": 7,
+      "candidateCanonicalSha256": "28bb8f74030d04f17b9543378b2b83b5a922b5da10b10d18be4553fa19a2a7b1",
+      "originalKey": "jidousha-seibishi-gakka:2026:first:2-motorcycle:7",
+      "officialAnswerNumber": "1",
+      "answer": "ア",
+      "officialKeyDirectPdfColumnCheck": "1",
+      "questionPdfUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_2n.pdf",
+      "questionPdfSha256": "b529ce8b8bbd6e4682272bef69ffae8c2ee7c73c1d086b22ccf402b3b5819c9d",
+      "answerPdfUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_kai.pdf",
+      "answerPdfSha256": "7f3a3405cd428510d0d585ceb96425c0b3ec9fd30c80696607fa5c595f20f23d",
+      "answerPdfPhysicalPage": 1,
+      "answerPdfColumn": "24 (2に)",
+      "sourcePages": [
+        3
+      ],
+      "sourceTextBinding": {
+        "id": "jidosha-2026-first-2-motorcycle-q07",
+        "textSha256": "45bbdb1f23e834eb148b793e80838df28bc5bfa93dcb45c41d9729f56a303dd6",
+        "sourcePdfSha256": "b529ce8b8bbd6e4682272bef69ffae8c2ee7c73c1d086b22ccf402b3b5819c9d",
+        "physicalPages": [
+          3
+        ],
+        "savedPageImageSha256": [
+          {
+            "page": 3,
+            "sha256": "89f5648939db3d94ae76d994a6b95a69681b0657384b8a362d36e2464e0f42eb"
+          }
+        ]
+      },
+      "sourceTextBindingFileSha256": "42cf780d2b0b87f04680aac5a11cd84e64d662b202f8c24bdbcb1c56c447cdb4",
+      "figureRequired": false,
+      "figureBindings": []
+    },
+    {
+      "id": "jidosha-2026-first-2-motorcycle-q08",
+      "qNumber": 8,
+      "candidateCanonicalSha256": "5d1ac32aa7afb778e9fd4f399a775c606a0076eeeec149262e4dc20a8ee3b60f",
+      "originalKey": "jidousha-seibishi-gakka:2026:first:2-motorcycle:8",
+      "officialAnswerNumber": "4",
+      "answer": "エ",
+      "officialKeyDirectPdfColumnCheck": "4",
+      "questionPdfUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_2n.pdf",
+      "questionPdfSha256": "b529ce8b8bbd6e4682272bef69ffae8c2ee7c73c1d086b22ccf402b3b5819c9d",
+      "answerPdfUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_kai.pdf",
+      "answerPdfSha256": "7f3a3405cd428510d0d585ceb96425c0b3ec9fd30c80696607fa5c595f20f23d",
+      "answerPdfPhysicalPage": 1,
+      "answerPdfColumn": "24 (2に)",
+      "sourcePages": [
+        4
+      ],
+      "sourceTextBinding": {
+        "id": "jidosha-2026-first-2-motorcycle-q08",
+        "textSha256": "9b595c90473cd55040ee7fe32c41c81615ee172fb602e0dd853bf56d1a52ee4a",
+        "sourcePdfSha256": "b529ce8b8bbd6e4682272bef69ffae8c2ee7c73c1d086b22ccf402b3b5819c9d",
+        "physicalPages": [
+          4
+        ],
+        "savedPageImageSha256": [
+          {
+            "page": 4,
+            "sha256": "96ac34b969d99a3c7d36abe3455dd6e16c8e24ad3209b6022612844bb76200c7"
+          }
+        ]
+      },
+      "sourceTextBindingFileSha256": "42cf780d2b0b87f04680aac5a11cd84e64d662b202f8c24bdbcb1c56c447cdb4",
+      "figureRequired": false,
+      "figureBindings": []
+    },
+    {
+      "id": "jidosha-2026-first-2-motorcycle-q09",
+      "qNumber": 9,
+      "candidateCanonicalSha256": "cd1f072515cd16b9348e4d8dbff07a5d7f8e73d0aa75aaaca45405138f39af82",
+      "originalKey": "jidousha-seibishi-gakka:2026:first:2-motorcycle:9",
+      "officialAnswerNumber": "2",
+      "answer": "イ",
+      "officialKeyDirectPdfColumnCheck": "2",
+      "questionPdfUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_2n.pdf",
+      "questionPdfSha256": "b529ce8b8bbd6e4682272bef69ffae8c2ee7c73c1d086b22ccf402b3b5819c9d",
+      "answerPdfUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_kai.pdf",
+      "answerPdfSha256": "7f3a3405cd428510d0d585ceb96425c0b3ec9fd30c80696607fa5c595f20f23d",
+      "answerPdfPhysicalPage": 1,
+      "answerPdfColumn": "24 (2に)",
+      "sourcePages": [
+        4
+      ],
+      "sourceTextBinding": {
+        "id": "jidosha-2026-first-2-motorcycle-q09",
+        "textSha256": "a1e7e7497bdedbe7fc75c9701aa5ddd21b3bebeedfe16dd411f7139471086041",
+        "sourcePdfSha256": "b529ce8b8bbd6e4682272bef69ffae8c2ee7c73c1d086b22ccf402b3b5819c9d",
+        "physicalPages": [
+          4
+        ],
+        "savedPageImageSha256": [
+          {
+            "page": 4,
+            "sha256": "96ac34b969d99a3c7d36abe3455dd6e16c8e24ad3209b6022612844bb76200c7"
+          }
+        ]
+      },
+      "sourceTextBindingFileSha256": "42cf780d2b0b87f04680aac5a11cd84e64d662b202f8c24bdbcb1c56c447cdb4",
+      "figureRequired": false,
+      "figureBindings": []
+    },
+    {
+      "id": "jidosha-2026-first-2-motorcycle-q10",
+      "qNumber": 10,
+      "candidateCanonicalSha256": "2f6fd045e6c0e2a958e98222ddedc145cbd5f873157bb4e3c519477aa18f6e8f",
+      "originalKey": "jidousha-seibishi-gakka:2026:first:2-motorcycle:10",
+      "officialAnswerNumber": "1",
+      "answer": "ア",
+      "officialKeyDirectPdfColumnCheck": "1",
+      "questionPdfUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_2n.pdf",
+      "questionPdfSha256": "b529ce8b8bbd6e4682272bef69ffae8c2ee7c73c1d086b22ccf402b3b5819c9d",
+      "answerPdfUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_kai.pdf",
+      "answerPdfSha256": "7f3a3405cd428510d0d585ceb96425c0b3ec9fd30c80696607fa5c595f20f23d",
+      "answerPdfPhysicalPage": 1,
+      "answerPdfColumn": "24 (2に)",
+      "sourcePages": [
+        4
+      ],
+      "sourceTextBinding": {
+        "id": "jidosha-2026-first-2-motorcycle-q10",
+        "textSha256": "f41b2b19773294430fbe666ff46b86d2fdc26f93f7352e8e78e10a398c94f31a",
+        "sourcePdfSha256": "b529ce8b8bbd6e4682272bef69ffae8c2ee7c73c1d086b22ccf402b3b5819c9d",
+        "physicalPages": [
+          4
+        ],
+        "savedPageImageSha256": [
+          {
+            "page": 4,
+            "sha256": "96ac34b969d99a3c7d36abe3455dd6e16c8e24ad3209b6022612844bb76200c7"
+          }
+        ]
+      },
+      "sourceTextBindingFileSha256": "42cf780d2b0b87f04680aac5a11cd84e64d662b202f8c24bdbcb1c56c447cdb4",
+      "figureRequired": false,
+      "figureBindings": []
+    },
+    {
+      "id": "jidosha-2026-first-2-motorcycle-q11",
+      "qNumber": 11,
+      "candidateCanonicalSha256": "47bead84516e1bf7df94bab11bae2ad819ead192afe40eeb71d427c300469773",
+      "originalKey": "jidousha-seibishi-gakka:2026:first:2-motorcycle:11",
+      "officialAnswerNumber": "4",
+      "answer": "エ",
+      "officialKeyDirectPdfColumnCheck": "4",
+      "questionPdfUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_2n.pdf",
+      "questionPdfSha256": "b529ce8b8bbd6e4682272bef69ffae8c2ee7c73c1d086b22ccf402b3b5819c9d",
+      "answerPdfUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_kai.pdf",
+      "answerPdfSha256": "7f3a3405cd428510d0d585ceb96425c0b3ec9fd30c80696607fa5c595f20f23d",
+      "answerPdfPhysicalPage": 1,
+      "answerPdfColumn": "24 (2に)",
+      "sourcePages": [
+        5
+      ],
+      "sourceTextBinding": {
+        "id": "jidosha-2026-first-2-motorcycle-q11",
+        "textSha256": "535fe354535e9aae7cb6ef47dc761ad9694516cd336eb1d5c649739ca2c67589",
+        "sourcePdfSha256": "b529ce8b8bbd6e4682272bef69ffae8c2ee7c73c1d086b22ccf402b3b5819c9d",
+        "physicalPages": [
+          5
+        ],
+        "savedPageImageSha256": [
+          {
+            "page": 5,
+            "sha256": "29cc48c230b456176c66fc5777580e29d31f1ce747301965ec64cca6c569b492"
+          }
+        ]
+      },
+      "sourceTextBindingFileSha256": "42cf780d2b0b87f04680aac5a11cd84e64d662b202f8c24bdbcb1c56c447cdb4",
+      "figureRequired": false,
+      "figureBindings": []
+    },
+    {
+      "id": "jidosha-2026-first-2-motorcycle-q13",
+      "qNumber": 13,
+      "candidateCanonicalSha256": "111b859095969c20e5706ead68c8cd5a376b5ae9145e88c151db48c5628a317c",
+      "originalKey": "jidousha-seibishi-gakka:2026:first:2-motorcycle:13",
+      "officialAnswerNumber": "2",
+      "answer": "イ",
+      "officialKeyDirectPdfColumnCheck": "2",
+      "questionPdfUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_2n.pdf",
+      "questionPdfSha256": "b529ce8b8bbd6e4682272bef69ffae8c2ee7c73c1d086b22ccf402b3b5819c9d",
+      "answerPdfUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_kai.pdf",
+      "answerPdfSha256": "7f3a3405cd428510d0d585ceb96425c0b3ec9fd30c80696607fa5c595f20f23d",
+      "answerPdfPhysicalPage": 1,
+      "answerPdfColumn": "24 (2に)",
+      "sourcePages": [
+        6
+      ],
+      "sourceTextBinding": {
+        "id": "jidosha-2026-first-2-motorcycle-q13",
+        "textSha256": "8145a401b1bbbdb576cddce04782adac6cab4db6b96a3369c74f98377f08b218",
+        "sourcePdfSha256": "b529ce8b8bbd6e4682272bef69ffae8c2ee7c73c1d086b22ccf402b3b5819c9d",
+        "physicalPages": [
+          6
+        ],
+        "savedPageImageSha256": [
+          {
+            "page": 6,
+            "sha256": "846870e03b033e03243e801ea3e83feb0749bd62b33fcac69bca885dc8376469"
+          }
+        ]
+      },
+      "sourceTextBindingFileSha256": "42cf780d2b0b87f04680aac5a11cd84e64d662b202f8c24bdbcb1c56c447cdb4",
+      "figureRequired": true,
+      "figureBindings": [
+        {
+          "bookId": "jaspa-2026-first-2-motorcycle",
+          "physicalPage": 6,
+          "pdfSha256": "b529ce8b8bbd6e4682272bef69ffae8c2ee7c73c1d086b22ccf402b3b5819c9d",
+          "officialUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_2n.pdf#page=6",
+          "originalQuestionIds": [
+            "jidosha-2026-first-2-motorcycle-q13"
+          ],
+          "relativePath": "figures/jaspa-2026-first-2-motorcycle-p06.webp",
+          "width": 1490,
+          "height": 2106,
+          "sha256": "19a513634f07bfefc7225ea11022acea149cb9bfdb246ce9a47224eb0be4a362",
+          "bytes": 207950,
+          "processing": "Original PDF physical page rendered to PNG, then converted to WebP; no retouch or generated content.",
+          "localPath": "C:\\Users\\kanet\\Documents\\Codex\\2026-10-23\\task-96\\output\\release-2motorcycle20-independent\\evidence\\jaspa-2026-first-2-motorcycle-p06.webp",
+          "releaseLocalPath": "C:\\Users\\kanet\\Documents\\Codex\\2026-10-23\\task-5\\output\\automotive-forward-20261023\\release-2motorcycle20\\figures\\jaspa-2026-first-2-motorcycle-p06.webp"
+        }
+      ]
+    },
+    {
+      "id": "jidosha-2026-first-2-motorcycle-q14",
+      "qNumber": 14,
+      "candidateCanonicalSha256": "73f4a372227c3dba10038db0e175f23d3fbed44ff6695acf21ac4432e46b1084",
+      "originalKey": "jidousha-seibishi-gakka:2026:first:2-motorcycle:14",
+      "officialAnswerNumber": "1",
+      "answer": "ア",
+      "officialKeyDirectPdfColumnCheck": "1",
+      "questionPdfUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_2n.pdf",
+      "questionPdfSha256": "b529ce8b8bbd6e4682272bef69ffae8c2ee7c73c1d086b22ccf402b3b5819c9d",
+      "answerPdfUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_kai.pdf",
+      "answerPdfSha256": "7f3a3405cd428510d0d585ceb96425c0b3ec9fd30c80696607fa5c595f20f23d",
+      "answerPdfPhysicalPage": 1,
+      "answerPdfColumn": "24 (2に)",
+      "sourcePages": [
+        6
+      ],
+      "sourceTextBinding": {
+        "id": "jidosha-2026-first-2-motorcycle-q14",
+        "textSha256": "d40b05eb2139c26152a4dcf1ec54b219e420c25c34e3651d3db90d88da9511ef",
+        "sourcePdfSha256": "b529ce8b8bbd6e4682272bef69ffae8c2ee7c73c1d086b22ccf402b3b5819c9d",
+        "physicalPages": [
+          6
+        ],
+        "savedPageImageSha256": [
+          {
+            "page": 6,
+            "sha256": "846870e03b033e03243e801ea3e83feb0749bd62b33fcac69bca885dc8376469"
+          }
+        ]
+      },
+      "sourceTextBindingFileSha256": "42cf780d2b0b87f04680aac5a11cd84e64d662b202f8c24bdbcb1c56c447cdb4",
+      "figureRequired": false,
+      "figureBindings": []
+    },
+    {
+      "id": "jidosha-2026-first-2-motorcycle-q15",
+      "qNumber": 15,
+      "candidateCanonicalSha256": "46318185768e6e65c7befd48f361f71fe330f4038a58396eb79dfcb48dcd33ea",
+      "originalKey": "jidousha-seibishi-gakka:2026:first:2-motorcycle:15",
+      "officialAnswerNumber": "4",
+      "answer": "エ",
+      "officialKeyDirectPdfColumnCheck": "4",
+      "questionPdfUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_2n.pdf",
+      "questionPdfSha256": "b529ce8b8bbd6e4682272bef69ffae8c2ee7c73c1d086b22ccf402b3b5819c9d",
+      "answerPdfUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_kai.pdf",
+      "answerPdfSha256": "7f3a3405cd428510d0d585ceb96425c0b3ec9fd30c80696607fa5c595f20f23d",
+      "answerPdfPhysicalPage": 1,
+      "answerPdfColumn": "24 (2に)",
+      "sourcePages": [
+        7
+      ],
+      "sourceTextBinding": {
+        "id": "jidosha-2026-first-2-motorcycle-q15",
+        "textSha256": "34c3c8bc42fb1f3008ce0f2ff8b1793f23e471f1d7cbbc07aa53672ab397ccf4",
+        "sourcePdfSha256": "b529ce8b8bbd6e4682272bef69ffae8c2ee7c73c1d086b22ccf402b3b5819c9d",
+        "physicalPages": [
+          7
+        ],
+        "savedPageImageSha256": [
+          {
+            "page": 7,
+            "sha256": "af5013ddc460a9ca54d3c82d30e2c19aa1eac5fd9399f9dc3406ecc07b4c61c4"
+          }
+        ]
+      },
+      "sourceTextBindingFileSha256": "42cf780d2b0b87f04680aac5a11cd84e64d662b202f8c24bdbcb1c56c447cdb4",
+      "figureRequired": false,
+      "figureBindings": []
+    },
+    {
+      "id": "jidosha-2026-first-2-motorcycle-q16",
+      "qNumber": 16,
+      "candidateCanonicalSha256": "45877569602d6e61c1757931a9bdf15eff827d4f18c12e25759a4adcf4871a7b",
+      "originalKey": "jidousha-seibishi-gakka:2026:first:2-motorcycle:16",
+      "officialAnswerNumber": "4",
+      "answer": "エ",
+      "officialKeyDirectPdfColumnCheck": "4",
+      "questionPdfUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_2n.pdf",
+      "questionPdfSha256": "b529ce8b8bbd6e4682272bef69ffae8c2ee7c73c1d086b22ccf402b3b5819c9d",
+      "answerPdfUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_kai.pdf",
+      "answerPdfSha256": "7f3a3405cd428510d0d585ceb96425c0b3ec9fd30c80696607fa5c595f20f23d",
+      "answerPdfPhysicalPage": 1,
+      "answerPdfColumn": "24 (2に)",
+      "sourcePages": [
+        7
+      ],
+      "sourceTextBinding": {
+        "id": "jidosha-2026-first-2-motorcycle-q16",
+        "textSha256": "a4073f7fc329850f671d923550e6209b7c953875d74af0d8247aead2478384b7",
+        "sourcePdfSha256": "b529ce8b8bbd6e4682272bef69ffae8c2ee7c73c1d086b22ccf402b3b5819c9d",
+        "physicalPages": [
+          7
+        ],
+        "savedPageImageSha256": [
+          {
+            "page": 7,
+            "sha256": "af5013ddc460a9ca54d3c82d30e2c19aa1eac5fd9399f9dc3406ecc07b4c61c4"
+          }
+        ]
+      },
+      "sourceTextBindingFileSha256": "42cf780d2b0b87f04680aac5a11cd84e64d662b202f8c24bdbcb1c56c447cdb4",
+      "figureRequired": false,
+      "figureBindings": []
+    },
+    {
+      "id": "jidosha-2026-first-2-motorcycle-q17",
+      "qNumber": 17,
+      "candidateCanonicalSha256": "537301455e220b125eeee3395bbff860aa4a44599f4bb020351574ab8fc82c04",
+      "originalKey": "jidousha-seibishi-gakka:2026:first:2-motorcycle:17",
+      "officialAnswerNumber": "2",
+      "answer": "イ",
+      "officialKeyDirectPdfColumnCheck": "2",
+      "questionPdfUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_2n.pdf",
+      "questionPdfSha256": "b529ce8b8bbd6e4682272bef69ffae8c2ee7c73c1d086b22ccf402b3b5819c9d",
+      "answerPdfUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_kai.pdf",
+      "answerPdfSha256": "7f3a3405cd428510d0d585ceb96425c0b3ec9fd30c80696607fa5c595f20f23d",
+      "answerPdfPhysicalPage": 1,
+      "answerPdfColumn": "24 (2に)",
+      "sourcePages": [
+        7
+      ],
+      "sourceTextBinding": {
+        "id": "jidosha-2026-first-2-motorcycle-q17",
+        "textSha256": "6bf93d7668f45ed6c7d31f8b39c41d9041550c44760aafdce86ddfd2b02f6239",
+        "sourcePdfSha256": "b529ce8b8bbd6e4682272bef69ffae8c2ee7c73c1d086b22ccf402b3b5819c9d",
+        "physicalPages": [
+          7
+        ],
+        "savedPageImageSha256": [
+          {
+            "page": 7,
+            "sha256": "af5013ddc460a9ca54d3c82d30e2c19aa1eac5fd9399f9dc3406ecc07b4c61c4"
+          }
+        ]
+      },
+      "sourceTextBindingFileSha256": "42cf780d2b0b87f04680aac5a11cd84e64d662b202f8c24bdbcb1c56c447cdb4",
+      "figureRequired": false,
+      "figureBindings": []
+    },
+    {
+      "id": "jidosha-2026-first-2-motorcycle-q18",
+      "qNumber": 18,
+      "candidateCanonicalSha256": "11e4d0c9cc5ef0399d6cdd904420eefc935741d44a9262b602cef4770bc578b0",
+      "originalKey": "jidousha-seibishi-gakka:2026:first:2-motorcycle:18",
+      "officialAnswerNumber": "3",
+      "answer": "ウ",
+      "officialKeyDirectPdfColumnCheck": "3",
+      "questionPdfUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_2n.pdf",
+      "questionPdfSha256": "b529ce8b8bbd6e4682272bef69ffae8c2ee7c73c1d086b22ccf402b3b5819c9d",
+      "answerPdfUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_kai.pdf",
+      "answerPdfSha256": "7f3a3405cd428510d0d585ceb96425c0b3ec9fd30c80696607fa5c595f20f23d",
+      "answerPdfPhysicalPage": 1,
+      "answerPdfColumn": "24 (2に)",
+      "sourcePages": [
+        7
+      ],
+      "sourceTextBinding": {
+        "id": "jidosha-2026-first-2-motorcycle-q18",
+        "textSha256": "99f4ddde75096f25e1af9fde83935025581a9db4e8f0aa98a4fe510961e698de",
+        "sourcePdfSha256": "b529ce8b8bbd6e4682272bef69ffae8c2ee7c73c1d086b22ccf402b3b5819c9d",
+        "physicalPages": [
+          7
+        ],
+        "savedPageImageSha256": [
+          {
+            "page": 7,
+            "sha256": "af5013ddc460a9ca54d3c82d30e2c19aa1eac5fd9399f9dc3406ecc07b4c61c4"
+          }
+        ]
+      },
+      "sourceTextBindingFileSha256": "42cf780d2b0b87f04680aac5a11cd84e64d662b202f8c24bdbcb1c56c447cdb4",
+      "figureRequired": false,
+      "figureBindings": []
+    },
+    {
+      "id": "jidosha-2026-first-2-motorcycle-q19",
+      "qNumber": 19,
+      "candidateCanonicalSha256": "6d15551d0503e0baf53599d4ad425ca51380a9cf12cf1ebdfe9480688f03d42d",
+      "originalKey": "jidousha-seibishi-gakka:2026:first:2-motorcycle:19",
+      "officialAnswerNumber": "4",
+      "answer": "エ",
+      "officialKeyDirectPdfColumnCheck": "4",
+      "questionPdfUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_2n.pdf",
+      "questionPdfSha256": "b529ce8b8bbd6e4682272bef69ffae8c2ee7c73c1d086b22ccf402b3b5819c9d",
+      "answerPdfUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_kai.pdf",
+      "answerPdfSha256": "7f3a3405cd428510d0d585ceb96425c0b3ec9fd30c80696607fa5c595f20f23d",
+      "answerPdfPhysicalPage": 1,
+      "answerPdfColumn": "24 (2に)",
+      "sourcePages": [
+        8
+      ],
+      "sourceTextBinding": {
+        "id": "jidosha-2026-first-2-motorcycle-q19",
+        "textSha256": "d906b5137f46746060cbb9b400027f3a9832d72015dda454c7ffda807b963f0b",
+        "sourcePdfSha256": "b529ce8b8bbd6e4682272bef69ffae8c2ee7c73c1d086b22ccf402b3b5819c9d",
+        "physicalPages": [
+          8
+        ],
+        "savedPageImageSha256": [
+          {
+            "page": 8,
+            "sha256": "cd86b7452b78af311d90856ca516e2232a29ad96cf6bdb033ed1467bcf47ed7f"
+          }
+        ]
+      },
+      "sourceTextBindingFileSha256": "42cf780d2b0b87f04680aac5a11cd84e64d662b202f8c24bdbcb1c56c447cdb4",
+      "figureRequired": false,
+      "figureBindings": []
+    },
+    {
+      "id": "jidosha-2026-first-2-motorcycle-q20",
+      "qNumber": 20,
+      "candidateCanonicalSha256": "e49ae7d66e86966b7cfd3ff1deab83a79881d19d9da621738550913d3a36cfcd",
+      "originalKey": "jidousha-seibishi-gakka:2026:first:2-motorcycle:20",
+      "officialAnswerNumber": "3",
+      "answer": "ウ",
+      "officialKeyDirectPdfColumnCheck": "3",
+      "questionPdfUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_2n.pdf",
+      "questionPdfSha256": "b529ce8b8bbd6e4682272bef69ffae8c2ee7c73c1d086b22ccf402b3b5819c9d",
+      "answerPdfUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_kai.pdf",
+      "answerPdfSha256": "7f3a3405cd428510d0d585ceb96425c0b3ec9fd30c80696607fa5c595f20f23d",
+      "answerPdfPhysicalPage": 1,
+      "answerPdfColumn": "24 (2に)",
+      "sourcePages": [
+        8
+      ],
+      "sourceTextBinding": {
+        "id": "jidosha-2026-first-2-motorcycle-q20",
+        "textSha256": "4abea2ab7a96a84232c6735b3d2c0e924a036e6937f7d878c7a0aa68656a0c0b",
+        "sourcePdfSha256": "b529ce8b8bbd6e4682272bef69ffae8c2ee7c73c1d086b22ccf402b3b5819c9d",
+        "physicalPages": [
+          8
+        ],
+        "savedPageImageSha256": [
+          {
+            "page": 8,
+            "sha256": "cd86b7452b78af311d90856ca516e2232a29ad96cf6bdb033ed1467bcf47ed7f"
+          }
+        ]
+      },
+      "sourceTextBindingFileSha256": "42cf780d2b0b87f04680aac5a11cd84e64d662b202f8c24bdbcb1c56c447cdb4",
+      "figureRequired": false,
+      "figureBindings": []
+    }
+  ],
+  "sources": [
+    {
+      "name": "jaspa-2026-first-2-motorcycle",
+      "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_2n.pdf",
+      "state": "downloaded-public-source",
+      "httpStatus": 200,
+      "sha256": "b529ce8b8bbd6e4682272bef69ffae8c2ee7c73c1d086b22ccf402b3b5819c9d",
+      "pageCount": 16,
+      "retrievedAtUtc": "2026-10-11T00:46:32.666479+00:00",
+      "localPath": "C:\\Users\\kanet\\Documents\\Codex\\2026-10-23\\task-96\\output\\release-2motorcycle20-independent\\evidence\\jaspa-2026-first-2-motorcycle.pdf",
+      "releaseLocalPath": "C:\\Users\\kanet\\Documents\\Codex\\2026-10-23\\task-5\\output\\automotive-forward-20261023\\release-2motorcycle20\\sources\\jaspa-2026-first-2-motorcycle.pdf"
+    },
+    {
+      "name": "jaspa-2026-first-answers",
+      "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_kai.pdf",
+      "state": "downloaded-public-source",
+      "httpStatus": 200,
+      "sha256": "7f3a3405cd428510d0d585ceb96425c0b3ec9fd30c80696607fa5c595f20f23d",
+      "pageCount": 1,
+      "retrievedAtUtc": "2026-10-11T00:46:32.558725+00:00",
+      "localPath": "C:\\Users\\kanet\\Documents\\Codex\\2026-10-23\\task-96\\output\\release-2motorcycle20-independent\\evidence\\jaspa-2026-first-answers.pdf",
+      "releaseLocalPath": "C:\\Users\\kanet\\Documents\\Codex\\2026-10-23\\task-5\\output\\automotive-forward-20261023\\release-2motorcycle20\\sources\\jaspa-2026-first-answers.pdf"
+    },
+    {
+      "bookId": "jaspa-2026-first-2-motorcycle",
+      "physicalPage": 6,
+      "pdfSha256": "b529ce8b8bbd6e4682272bef69ffae8c2ee7c73c1d086b22ccf402b3b5819c9d",
+      "officialUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_2n.pdf#page=6",
+      "originalQuestionIds": [
+        "jidosha-2026-first-2-motorcycle-q13"
+      ],
+      "relativePath": "figures/jaspa-2026-first-2-motorcycle-p06.webp",
+      "width": 1490,
+      "height": 2106,
+      "sha256": "19a513634f07bfefc7225ea11022acea149cb9bfdb246ce9a47224eb0be4a362",
+      "bytes": 207950,
+      "processing": "Original PDF physical page rendered to PNG, then converted to WebP; no retouch or generated content.",
+      "localPath": "C:\\Users\\kanet\\Documents\\Codex\\2026-10-23\\task-96\\output\\release-2motorcycle20-independent\\evidence\\jaspa-2026-first-2-motorcycle-p06.webp",
+      "releaseLocalPath": "C:\\Users\\kanet\\Documents\\Codex\\2026-10-23\\task-5\\output\\automotive-forward-20261023\\release-2motorcycle20\\figures\\jaspa-2026-first-2-motorcycle-p06.webp"
+    }
+  ],
+  "independence": "Inherited candidates were not authored or repaired by this reviewer; author flags and historical self-PASS were not used as acceptance.",
+  "acceptanceScope": "One substantive independent content review; exact existing source-text verification reused after all 20 text hashes and source PDF hashes matched. Q13 actual circuit image inspected. All 20 keys separately matched the saved official PDF column.",
+  "repositoryIdGrowth": 0,
+  "publicationIncrement": 0,
+  "publicGo": 0,
+  "permissionVerified": false,
+  "sourceFilesChanged": false
+}
