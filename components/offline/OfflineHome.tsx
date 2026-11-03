@@ -21,7 +21,7 @@ function toLink(q: Question): OfflineQuestionLink {
   return {
     id: q.id,
     href: questionPagePath(q),
-    label: `${questionSourceExam(q)} ${questionSourceEdition(q)} 問${q.qNumber}`,
+    label: `${questionSourceExam(q)} ${questionSourceEdition(q)} ${q.officialQuestionLabel ?? `問${q.qNumber}`}`,
   };
 }
 

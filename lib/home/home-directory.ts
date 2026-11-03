@@ -283,7 +283,7 @@ export function getHomeDirectory(): HomeDirectoryDomain[] {
         allHref: "/ipa",
         allLabel: "IPAの試験をすべて見る",
       },
-      IPA_FEATURED.map(ipaItem),
+      [...IPA_FEATURED.map(ipaItem), ...byDomain("it")],
       IPA_ADVANCED.map(ipaItem),
     ),
     domain(

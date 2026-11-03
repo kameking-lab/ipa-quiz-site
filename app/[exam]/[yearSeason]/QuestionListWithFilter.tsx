@@ -11,6 +11,7 @@ import { cn } from "@/lib/utils";
 export interface QuestionListItem {
   id: string;
   qNumber: number;
+  officialQuestionLabel?: string;
   category: string;
   isCalculation: boolean;
   isPlaceholder: boolean;
@@ -158,7 +159,7 @@ export function QuestionListWithFilter({ groups, exam, showSectionNavigation = f
                   <li key={q.id}>
                     <a
                       href={q.href}
-                      aria-label={`問${q.qNumber}を解く`}
+                      aria-label={`${q.officialQuestionLabel ?? `問${q.qNumber}`}を解く`}
                       className={cn(
                         "group flex items-start gap-3 rounded-2xl border p-4 transition-all hover:-translate-y-0.5 hover:shadow-md",
                         status
@@ -178,7 +179,7 @@ export function QuestionListWithFilter({ groups, exam, showSectionNavigation = f
                             : "bg-primary-soft text-primary-soft-foreground",
                         )}
                       >
-                        問{q.qNumber}
+                        {q.officialQuestionLabel ?? `問${q.qNumber}`}
                       </span>
                       <span className="flex-1 space-y-1.5 min-w-0">
                         <span className="flex flex-wrap items-center gap-1.5 text-xs">
@@ -216,7 +217,7 @@ export function QuestionListWithFilter({ groups, exam, showSectionNavigation = f
                     </a>
                     {q.explanationHref && (
                       <div className="flex flex-wrap gap-3 px-4 pb-2 pt-1 text-xs">
-                        <a href={q.explanationHref} className="inline-flex min-h-11 items-center font-medium text-primary underline underline-offset-4">問{q.qNumber}の解説を見る</a>
+                        <a href={q.explanationHref} className="inline-flex min-h-11 items-center font-medium text-primary underline underline-offset-4">{q.officialQuestionLabel ?? `問${q.qNumber}`}の解説を見る</a>
                       </div>
                     )}
                   </li>

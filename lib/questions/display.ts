@@ -7,7 +7,8 @@ const DENKEN_CHOICE_KEYS: readonly ChoiceKey[] = ["ア", "イ", "ウ", "エ", "�
 const IROHA_CHOICE_KEYS: readonly ChoiceKey[] = ["ア", "イ", "ウ", "エ", "オ", "カ", "キ", "ク", "ケ", "コ", "サ", "シ", "ス", "セ", "ソ"];
 const IROHA_LABELS = ["イ", "ロ", "ハ", "ニ", "ホ", "ヘ", "ト", "チ", "リ", "ヌ", "ル", "ヲ", "ワ", "カ", "ヨ"] as const;
 
-export function questionNumberLabel(q: Pick<Question, "qNumber" | "part" | "nativeB">): string {
+export function questionNumberLabel(q: Pick<Question, "qNumber" | "part" | "nativeB" | "officialQuestionLabel">): string {
+  if (q.officialQuestionLabel) return q.officialQuestionLabel;
   if (q.nativeB?.officialLabel) return q.nativeB.officialLabel;
   return `${q.qNumber}${q.part ? `(${q.part})` : ""}`;
 }

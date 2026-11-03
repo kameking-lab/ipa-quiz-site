@@ -60,6 +60,8 @@ interface SearchHit {
   season: Season;
   session: Session;
   qNumber: number;
+  officialQuestionLabel?: string;
+  sourceEdition?: string;
   part?: QuestionPart;
   category: string;
   topicTags: string[];
@@ -1051,7 +1053,7 @@ function ResultItem({ hit, tokens }: { hit: SearchHit; tokens: string[] }) {
               {examLabel(hit.exam)}
             </Badge>
             <span className="text-[11px] font-medium text-muted-foreground">
-              {formatYearSeason(hit.year, hit.season)} 問{hit.qNumber}
+              {hit.sourceEdition ?? formatYearSeason(hit.year, hit.season)} {hit.officialQuestionLabel ?? `問${hit.qNumber}`}
             </span>
             <span className="text-[10px] text-muted-foreground">★{hit.difficulty}</span>
           </div>

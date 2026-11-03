@@ -199,6 +199,8 @@ export interface Question {
   examDate?: string;
   subject?: string;
   officialAnswerNumber?: string;
+  /** 原冊子の大問・解答欄番号。内部の一意な番号とは分けて表示する。 */
+  officialQuestionLabel?: string;
   type: QuestionType;
   /** 数値記入。answer は単位を除いた正規化済み非負数文字列。 */
   nativeB?: NativeBData;

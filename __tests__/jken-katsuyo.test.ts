@@ -15,6 +15,12 @@ import secondManifest from "@/data/exam-library/source-packs/jken-katsuyo/grade2
 import { JKEN_KATSUYO3_QUESTIONS } from "@/data/questions/jken-katsuyo3";
 import thirdManifest from "@/data/exam-library/source-packs/jken-katsuyo/grade3/manifest.json";
 
+import { questionNumberLabel } from "@/lib/questions/display";
+
+import { buildQuestionJsonLd } from "@/lib/seo/question-jsonld";
+
+import { questionSourceEdition } from "@/lib/questions/source-label";
+
 const pools: { questions: Question[]; manifest: typeof firstManifest }[] = [
   { questions: JKEN_KATSUYO1_QUESTIONS, manifest: firstManifest },
   { questions: JKEN_KATSUYO2_QUESTIONS, manifest: secondManifest },
@@ -32,10 +38,12 @@ describe("J検 official past questions in unpublished staging", () => {
           const q = qs.find(q => q.qNumber === row.problem * 100 + row.slot)!;
           expect(q.answer).toEqual(row.answer);
           expect(q.question).toContain(`問題${row.problem}`);
+          expect(questionNumberLabel(q)).toBe(`問題${row.problem}(${row.slot})`);
           expect(q.question.length).toBeGreaterThan(100);
           expect(q.choices).toBeDefined();
           expect(Object.keys(q.choiceExplanations!)).toEqual(Object.keys(q.choices!));
           expect(Object.values(q.choiceExplanations!).every(v => v!.length > 12)).toBe(true);
+          expect(questionSourceEdition(q)).toContain(sitting.date === "260621" ? "令和8年度前期" : "令和7年度後期");
           expect(q.sourceAnswerUrl).toContain(`${sitting.date}_kaitojk`);
           expect(q.sourcePdfUrl).toContain(`${sitting.date}_mondaijk`);
           expect(isPracticeReadyQuestion(q)).toBe(true);
@@ -43,6 +51,11 @@ describe("J検 official past questions in unpublished staging", () => {
           for (const url of q.imageUrls ?? []) expect(existsSync(`${process.cwd()}/public${url}`)).toBe(true);
         }
       }
+    });
+    it(`${code}: attributes source authorship to SGEC`, () => {
+      const ld = buildQuestionJsonLd({ question: questions[0]!, pageUrlAbs: "https://example.com/source", title: "J検" });
+      expect(ld["@graph"][0]).toMatchObject({ creator: { name: "一般財団法人職業教育・キャリア教育財団" } });
+      expect(ld["@graph"][0]).not.toHaveProperty("license");
     });
     it(`${code}: blocks public routes, registries and IPA tools`, async () => {
       expect(isExamPublished(code)).toBe(false);

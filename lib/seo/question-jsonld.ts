@@ -118,7 +118,9 @@ export function buildQuestionJsonLd({
 
   // The administering body authored the question; this site authored the
   // learning explanation. Keep the author inline so the node is self-contained.
-  const questionAuthor = q.exam === "kanteishi"
+  const questionAuthor = q.license === "SGEC-owner-authorized"
+    ? { "@type": "Organization", name: "一般財団法人職業教育・キャリア教育財団", url: "https://www.jken.sgec.or.jp/" }
+    : q.exam === "kanteishi"
     ? { "@type": "GovernmentOrganization", name: q.sourcePresentation?.originalAuthor ?? "国土交通省", url: "https://www.mlit.go.jp/" }
     : q.exam === "kaikeishi"
     ? { "@type": "GovernmentOrganization", name: q.sourcePresentation?.originalAuthor ?? "公認会計士・監査審査会", url: "https://www.fsa.go.jp/cpaaob/" }
@@ -229,7 +231,9 @@ export function buildQuestionJsonLd({
           name: "情報処理推進機構 (IPA)",
           url: "https://www.ipa.go.jp/",
         };
-  const licenseUrl = (q.exam === "kanteishi" || q.exam === "kaikeishi")
+  const licenseUrl = q.license === "SGEC-owner-authorized"
+    ? undefined
+    : (q.exam === "kanteishi" || q.exam === "kaikeishi")
     ? q.sourcePresentation?.licenseUrl
     : (q.license === "NICHIMU-educational-reuse" || q.license === "NICHIMU-past-question-study-use")
     ? "https://www.nichimu.or.jp/kshiken/siken/index.html"

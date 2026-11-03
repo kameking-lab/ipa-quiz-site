@@ -1,5 +1,7 @@
 import "server-only";
 
+import { questionSourceEdition } from "@/lib/questions/source-label";
+
 import type {
   ExamCode,
   Question,
@@ -39,6 +41,8 @@ export interface SearchHit {
   season: Season;
   session: Session;
   qNumber: number;
+  officialQuestionLabel?: string;
+  sourceEdition?: string;
   part?: QuestionPart;
   category: string;
   topicTags: string[];
@@ -194,6 +198,7 @@ export async function searchQuestions(query: SearchQuery): Promise<SearchRespons
     season: q.season,
     session: q.session,
     qNumber: q.qNumber,
+    ...(q.officialQuestionLabel ? { officialQuestionLabel: q.officialQuestionLabel, sourceEdition: questionSourceEdition(q) } : {}),
     ...(q.part ? { part: q.part } : {}),
     category: q.category,
     topicTags: q.topicTags,
