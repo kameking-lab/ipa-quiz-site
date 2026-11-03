@@ -1,0 +1,5 @@
+LQ4G 独立再レビュー。指定モデルgpt-6-astra、read-only。編集・コミット・ネットワーク禁止、秘密値を表示しない。権利はオーナー確認済み。
+reports/lq4e-20261104/independent-review19.md のFAIL票と reviewed-manuscripts/review19-2025-basis-group*.json を読み、data/qualification-staging/lq4e-engineer-first/2025-basis-group2.json、2025-basis-group3.json、2025-basis-group5.json の現在稿18問・全90肢理由・図4点を再判定してください。既存受入済み稿と2024年度は変更・再受入しません。
+修正：2-6のZ*を原典のZ⁺へ、3-3の等間隔を等間隔（幅h）へ、3-5本文電流列挙から余分なiを削除、3-6のひもを張り／その速度vへ、5-3①の大幅な効率改善へ、5-5設問文を科学史・技術史で著名な人物や出来事へ復元。図3-3～6は図題と必要図形を残し周辺本文・切れた選択肢を除くよう座標調整、SHA反映済み。現在図をview_imageで開き、図題・端子・電流・寸法等が切れていないことを確認。
+原典はC:/Users/kanet/AppData/Local/Temp/codex-work/lq4b-sources/gijutsushi1-kikai-2025-basis.pdf と同年answer.pdf、原典PNG/OCRはocr-pass2内。現在稿と公式原典を照合し本文・全選択肢・数式・図表・公式正答・全90肢理由・出典ページ/SHAに必須問題がないか独立に確認。前回計算結果のみを盲信しない。5-2の原文2019年6月は原典どおり、実際5月の注記と公式③の方針についての判定を区別して保持。node scripts/validate-lq4e-staging.mjs --sources も実行可。
+日本語で先頭PASSまたはFAIL、必須修正と任意改善を区別。PASS時は対象3ファイルの現在稿SHA256を全て明記し、18問・90肢・図4点の内容受入という範囲を明示。公開・統合完了とは主張しない。レビュー票はCLIの-oで保存されるため自分で書き込まない。
