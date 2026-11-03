@@ -5,6 +5,7 @@ import { describe, expect, it } from "vitest";
 import drafts from "@/data/questions/khk-kagaku/staging-drafts.json";
 import keys from "@/data/questions/khk-kagaku/official-answer-keys.json";
 import manifest from "@/data/exam-library/source-packs/khk-kagaku/manifest.json";
+import review from "@/data/questions/khk-kagaku/review-progress.json";
 import { QUALIFICATION_CATALOG } from "@/lib/qualifications/catalog";
 import { QUESTIONS_BY_EXAM } from "@/data/questions";
 
@@ -36,9 +37,10 @@ describe("KHK chemistry source staging", () => {
           expect(q.rawExtractedText.length).toBeGreaterThan(30);
           expect(q.sourcePdfUrl).toBe(paper.sourcePdfUrl);
           expect(q.sourceAnswerUrl).toMatch(/^https:\/\/www\.khk\.or\.jp\//);
-          expect(q.transcriptionVerified).toBe(false);
+          const reviewed = review.reviewedPapers.some((record) => record.year === year && record.code === paper.code && record.questions.some((item) => item.number === q.number));
+          expect(q.transcriptionVerified).toBe(reviewed);
           expect(q.explanationWritten).toBe(false);
-          expect(q.figuresVerified).toBe(false);
+          expect(q.figuresVerified).toBe(reviewed);
         }
         if (paper.code.endsWith("X")) {
           expect(paper.lawReferenceDate).toBe(`${year}-04-01`);
@@ -48,6 +50,46 @@ describe("KHK chemistry source staging", () => {
         }
       }
     }
+  });
+
+  it("retains reviewed content digests, shared-table crops, and the exact unfinished counts", () => {
+    const questions = drafts.papers.flatMap<(typeof drafts.papers)[number]["questions"][number]>((paper) => paper.questions);
+    expect(questions.filter((q) => q.transcriptionVerified)).toHaveLength(review.counts.transcriptionVerified);
+    expect(questions.filter((q) => !q.transcriptionVerified)).toHaveLength(review.counts.unreviewed);
+    expect(questions.filter((q) => q.explanationWritten)).toHaveLength(0);
+    expect(review.counts.originalQuestions).toBe(422);
+    expect(review.counts.descriptiveAnswersVerified).toBe(0);
+    for (const record of review.reviewedPapers) {
+      const paper = drafts.papers.find((p) => p.year === record.year && p.code === record.code)!;
+      expect(paper.sourceSha256).toBe(record.sourceSha256);
+      expect(record.questions).toHaveLength(paper.expectedQuestions);
+      for (const item of record.questions) {
+        const q = paper.questions.find((question) => question.number === item.number)!;
+        const fields = q as unknown as Record<string, unknown>;
+        const content = review.contentDigestFields.map((field) => fields[field]);
+        expect(createHash("sha256").update(JSON.stringify(content)).digest("hex")).toBe(item.contentSha256);
+        expect(fields.lawInstructionsDraft).toContain(`令和${paper.year - 2018}年4月1日`);
+        expect(fields.hasImage).toBe(q.number >= 8);
+        const assets = fields.imageAssets as string[];
+        expect(assets).toHaveLength(q.number >= 8 ? 1 : 0);
+        if (q.number >= 8) {
+          expect(fields.sharedPassagePdfPages).toEqual([q.number <= 12 ? 4 : 6]);
+          expect(assets.every((file) => review.assets.some((asset) => asset.file === file))).toBe(true);
+        }
+      }
+    }
+    for (const asset of review.assets) {
+      const png = readFileSync(resolve(root, asset.file));
+      expect(png.subarray(0, 8).toString("hex")).toBe("89504e470d0a1a0a");
+      expect(createHash("sha256").update(png).digest("hex")).toBe(asset.sha256);
+      expect(manifest.sources.some((s) => s.url === asset.sourcePdfUrl && s.sha256 === asset.sourceSha256)).toBe(true);
+    }
+    expect(questions.flatMap((q) => "choicesDraft" in q ? q.choicesDraft : []).some((choice) => /R[67]-[A-D][XYZ]/.test(choice))).toBe(false);
+    const byQualification = drafts.papers.reduce<Record<string, number>>((counts, paper) => {
+      counts[paper.qualification] = (counts[paper.qualification] ?? 0) + paper.questions.length;
+      return counts;
+    }, {});
+    expect(byQualification).toEqual({ "甲種化学": 82, "乙種化学": 100, "丙種化学（液石）": 120, "丙種化学（特別）": 120 });
   });
 
   it("matches all 410 answer numbers to the stored transcription of each official answer PDF", () => {
