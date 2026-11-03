@@ -68,13 +68,20 @@ describe("KHK chemistry source staging", () => {
         const fields = q as unknown as Record<string, unknown>;
         const content = review.contentDigestFields.map((field) => fields[field]);
         expect(createHash("sha256").update(JSON.stringify(content)).digest("hex")).toBe(item.contentSha256);
-        expect(fields.lawInstructionsDraft).toContain(`令和${paper.year - 2018}年4月1日`);
-        expect(fields.hasImage).toBe(q.number >= 8);
+        if (paper.code.endsWith("X")) {
+          expect(fields.lawInstructionsDraft).toContain(`令和${paper.year - 2018}年4月1日`);
+        }
+        const hasSharedTable = paper.code === "AX" && q.number >= 8;
+        const hasDescriptiveFigure = paper.code === "AZ" && (
+          (paper.year === 2024 && [2, 3, 4].includes(q.number)) ||
+          (paper.year === 2025 && q.number === 4)
+        );
+        expect(fields.hasImage).toBe(hasSharedTable || hasDescriptiveFigure);
         const assets = fields.imageAssets as string[];
-        expect(assets).toHaveLength(q.number >= 8 ? 1 : 0);
-        if (q.number >= 8) {
+        expect(assets).toHaveLength(hasSharedTable || hasDescriptiveFigure ? 1 : 0);
+        expect(assets.every((file) => review.assets.some((asset) => asset.file === file))).toBe(true);
+        if (hasSharedTable) {
           expect(fields.sharedPassagePdfPages).toEqual([q.number <= 12 ? 4 : 6]);
-          expect(assets.every((file) => review.assets.some((asset) => asset.file === file))).toBe(true);
         }
       }
     }
@@ -90,6 +97,31 @@ describe("KHK chemistry source staging", () => {
       return counts;
     }, {});
     expect(byQualification).toEqual({ "甲種化学": 82, "乙種化学": 100, "丙種化学（液石）": 120, "丙種化学（特別）": 120 });
+  });
+
+  it("preserves descriptive subquestions, essential figures and exponents without creating choices", () => {
+    for (const paper of drafts.papers.filter((p) => p.code === "AZ")) {
+      const subquestionCounts = paper.year === 2024 ? [2, 2, 4, 0, 3, 2] : [2, 2, 4, 0, 4, 2];
+      for (const q of paper.questions) {
+        const fields = q as unknown as Record<string, unknown>;
+        expect(fields.answerKind).toBe("descriptive");
+        expect(fields.choicesDraft).toBeUndefined();
+        expect(fields.officialAnswerNumber).toBeUndefined();
+        const text = fields.questionDraft as string;
+        expect(text.match(/^\([1-4]\)/gm)?.length ?? 0).toBe(subquestionCounts[q.number - 1]);
+        expect(text).not.toMatch(/R[67]-AZ|常用対数表/);
+        expect(fields.sharedPassagesDraft).toContain("特に記述のない場合、圧力は絶対圧力を示す。");
+      }
+    }
+    const r6 = drafts.papers.find((p) => p.code === "AZ" && p.year === 2024)!;
+    expect((r6.questions[0] as { questionDraft: string }).questionDraft).toContain("3.00×10⁻² kg");
+    expect((r6.questions[0] as { questionDraft: string }).questionDraft).toContain("1.00×10⁻² m³");
+    expect(r6.questions[5].pdfPages).toEqual([7]);
+    const r7 = drafts.papers.find((p) => p.code === "AZ" && p.year === 2025)!;
+    expect((r7.questions[4] as { questionDraft: string }).questionDraft).toContain("4.19×10³ kJ/kg");
+    const r6ay = drafts.papers.find((p) => p.code === "AY" && p.year === 2024)!;
+    expect((r6ay.questions[6] as { questionDraft: string }).questionDraft).toContain("ū＝2gΔh");
+    expect(r6ay.questions[14].pdfPages).toEqual([6]);
   });
 
   it("matches all 410 answer numbers to the stored transcription of each official answer PDF", () => {
