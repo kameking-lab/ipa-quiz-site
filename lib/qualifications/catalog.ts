@@ -961,6 +961,18 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     reuseSummary: "第48回（令和8年度）・第47回（令和7年度）が監査対象。公式に無断複製・転写の禁止が明記されているため、問題本文は収録しない。",
     remainingWork: ["Web問題集への転載許諾取得までは本文を収録しない", "許諾取得後に原文・公式正答・独自解説と必要図を照合"],
   },
+  {
+    slug: "koatsu-gas",
+    shortName: "高圧ガス製造保安責任者",
+    fullName: "高圧ガス製造保安責任者試験",
+    domain: "safety",
+    administrator: "高圧ガス保安協会",
+    officialQuestionsUrl: "https://shiken.khk.or.jp/shiken.html",
+    officialReuseTermsUrl: "https://www.khk.or.jp/condition.html",
+    status: "permission-required",
+    reuseSummary: "令和7年度・令和6年度の国家試験が監査対象。公式サイトが無許諾の転載・複製を禁止しているため、全区分の問題本文を収録しない。",
+    remainingWork: ["Web問題集への転載許諾取得までは本文を収録しない", "許諾取得後に対象2回の全科目の公式問題・正答の入手と原本照合"],
+  },
 ] as const;
 
 export function getQualificationByExamCode(exam: ExamCode): QualificationCatalogEntry | undefined {
