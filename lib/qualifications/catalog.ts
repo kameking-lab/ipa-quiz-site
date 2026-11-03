@@ -577,9 +577,10 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     administrator: "一般社団法人賃貸不動産経営管理士協議会",
     officialQuestionsUrl: "https://www.chintaikanrishi.jp/exam/past",
     officialReuseTermsUrl: "https://www.chintaikanrishi.jp/exam/past",
-    status: "permission-required",
-    reuseSummary: "令和7年度（第13回）・令和6年度（第12回）の問題・正答は公式公開済み。Webサイト・アプリ等への試験問題の使用には著作物使用許諾申請書の提出が必要と明記されているため、許諾取得を確認できるまで問題本文は収録しない。",
-    remainingWork: ["著作物使用許諾申請の手続きとWeb問題集への利用許諾を確認・取得", "許諾後に対象回の原文・公式正答・全選択肢解説・必要図版を照合"],
+    status: "ready-to-ingest",
+    reuseSummary: "2026-11-04 01:30のオーナー決定により権利確認済み。令和7年度（第13回）・令和6年度（第12回）各50問を未公開ステージングに収録。公式の使用許諾申請に関する文言は監査報告に記録し、旧許諾保留は解除済み。",
+    attributionTemplate: "出典：一般社団法人賃貸不動産経営管理士協議会 令和○年度（第○回）賃貸不動産経営管理士試験 問○。改行・空白を整形。解説は独自作成。",
+    remainingWork: ["ステージングの内容独立レビューを確定", "公開を行う別タスクで全解答正解問題への採点対応・公開導線・年度法令表示を接続"],
   },
   {
     slug: "kanri",
