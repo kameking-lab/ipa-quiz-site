@@ -1,0 +1,3090 @@
+[
+  {
+    "id": "pe-first-aerospace-2024-q01",
+    "number": 1,
+    "text": "航空機の機体構造設計の発展に関する次の記述のうち,最も不適切なものはどれか。",
+    "images": [
+      "/exam-library/pe-first-aerospace-2024/page-01.png"
+    ],
+    "sourcePages": [
+      1
+    ],
+    "sourceQuestionNumber": 1,
+    "correctChoice": 4,
+    "choiceCount": 5,
+    "answerAuthority": "official",
+    "originalPdf": "https://www.engineer.or.jp/c_topics/010/attached/attach_10606_5.pdf",
+    "answerPdf": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_5.pdf#page=5",
+    "explanation": "不適切なのは④。き裂を想定して進展と残留強度を評価し検査・修理で安全を保つのは損傷許容設計。安全寿命設計は定めた寿命までに交換する考えである。",
+    "presentation": {
+      "sourceHash": "a30500f1cf333b1bfe6146d85e22ddd7c9fcf29612ea0a10f605a2545779f047",
+      "prompt": "航空機の機体構造設計の発展に関する次の記述のうち,最も不適切なものはどれか。",
+      "choices": [
+        {
+          "number": 1,
+          "text": "ライト兄弟の機体の場合,実用操舵式飛行の実演,馬力要求事項,安定性,及び操縦性が最優先の考慮事項であり,強度への配慮は2次的なものであった。"
+        },
+        {
+          "number": 2,
+          "text": "1930年代に金属製航空機の民間運航が発展した。設計及び解析では,静的極限強度が強調されたが,エンジン以外については,機体の疲労はほとんど考慮されなかった。"
+        },
+        {
+          "number": 3,
+          "text": "1940年代以降,機体の安全性における疲労の可能性に関する認識が高まり,静的極限設計のみでは不充分であったので疲労設計も行った。"
+        },
+        {
+          "number": 4,
+          "text": "1950年代半ば以降,疲労に基づく安全性のみでは不充分であることが認識され,安全寿命設計によりクラックが壊滅状態になる前に疲労損傷を発見し修理することが必要となっている。"
+        },
+        {
+          "number": 5,
+          "text": "現在の機体設計時の考慮事項は,主に静的極限(及び降伏)強度,機体の疲労寿命,損傷構造の静的残留強度,損傷構造の疲労寿命であり,設計技術者の主目標は,最大限可能な安全余裕を達成し,機体構造の「妥当な」寿命を達成することである。"
+        }
+      ],
+      "figures": []
+    },
+    "choiceExplanation": {
+      "sourceHash": "a30500f1cf333b1bfe6146d85e22ddd7c9fcf29612ea0a10f605a2545779f047",
+      "correctChoice": 4,
+      "summary": "不適切なのは④。き裂を想定して進展と残留強度を評価し検査・修理で安全を保つのは損傷許容設計。安全寿命設計は定めた寿命までに交換する考えである。",
+      "choices": [
+        {
+          "number": 1,
+          "verdict": "incorrect",
+          "reason": "初期の飛行実現では動力、安定性、操縦性の確立が主要課題であったという発展史の説明である。"
+        },
+        {
+          "number": 2,
+          "verdict": "incorrect",
+          "reason": "金属機の実用化初期は静強度中心で、現在ほど機体の疲労設計が重視されていなかった。"
+        },
+        {
+          "number": 3,
+          "verdict": "incorrect",
+          "reason": "静強度だけでは繰返し荷重の損傷を防げないため、疲労設計を加える発展は適切である。"
+        },
+        {
+          "number": 4,
+          "verdict": "correct",
+          "reason": "き裂を見つけ修理しつつ破局を防ぐ考えを安全寿命設計とした点が誤り。損傷許容設計と区別する。"
+        },
+        {
+          "number": 5,
+          "verdict": "incorrect",
+          "reason": "静強度、疲労寿命、損傷後の残留強度と進展寿命を併せて評価する設計の考慮事項は適切。"
+        }
+      ],
+      "sources": [
+        {
+          "title": "日本技術士会 公式問題",
+          "url": "https://www.engineer.or.jp/c_topics/010/attached/attach_10606_5.pdf#page=1"
+        },
+        {
+          "title": "日本技術士会 公式正答",
+          "url": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_5.pdf#page=5"
+        }
+      ]
+    }
+  },
+  {
+    "id": "pe-first-aerospace-2024-q02",
+    "number": 2,
+    "text": "航空機の機体に作用する荷重を見積もる際のV−n線図に関連する次の記述のうち,最も不適切なものはどれか。",
+    "images": [
+      "/exam-library/pe-first-aerospace-2024/page-01.png"
+    ],
+    "sourcePages": [
+      1
+    ],
+    "sourceQuestionNumber": 2,
+    "correctChoice": 3,
+    "choiceCount": 5,
+    "answerAuthority": "official",
+    "originalPdf": "https://www.engineer.or.jp/c_topics/010/attached/attach_10606_5.pdf",
+    "answerPdf": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_5.pdf#page=5",
+    "explanation": "不適切なのは③。等価対気速度は動圧を海面標準密度で等しくする速度VE=VT√(ρ/ρ0)。質量流量ρVを等しくする換算ではない。",
+    "presentation": {
+      "sourceHash": "2a63ccc86275b50812428ff6998a7688420316ca483e848a5cf6d4656deca94b",
+      "prompt": "航空機の機体に作用する荷重を見積もる際のV−n線図に関連する次の記述のうち,最も不適切なものはどれか。",
+      "choices": [
+        {
+          "number": 1,
+          "text": "航空機に働く荷重は,運動荷重,突風荷重,地上荷重,その他(操縦による荷重,胴体の与圧に伴う荷重,空力弾性関連など)のように分類される。"
+        },
+        {
+          "number": 2,
+          "text": "荷重倍数は,航空機に生じる機軸に垂直な方向に働く空気力を機体重量で除したものである。"
+        },
+        {
+          "number": 3,
+          "text": "対気速度として等価対気速度を用いる。等価対気速度は,ある高度での空気密度,海面上標準大気の密度,及び真の対気速度から,質量流量換算により算出する。"
+        },
+        {
+          "number": 4,
+          "text": "運動包囲線図は,横軸に速度を,縦軸に運動荷重倍数をとり,各種飛行状態を限界として,機体に加わることが許される荷重倍数の範囲を示した図である。"
+        },
+        {
+          "number": 5,
+          "text": "突風荷重は,飛行中に働く垂直突風を想定しており,突風荷重倍数を定義し,突風荷重を受けたときの機体に加わることが許される荷重範囲を示したものが突風包囲線図である。"
+        }
+      ],
+      "figures": []
+    },
+    "choiceExplanation": {
+      "sourceHash": "2a63ccc86275b50812428ff6998a7688420316ca483e848a5cf6d4656deca94b",
+      "correctChoice": 3,
+      "summary": "不適切なのは③。等価対気速度は動圧を海面標準密度で等しくする速度VE=VT√(ρ/ρ0)。質量流量ρVを等しくする換算ではない。",
+      "choices": [
+        {
+          "number": 1,
+          "verdict": "incorrect",
+          "reason": "飛行運動、突風、地上、与圧等の荷重を分類して見積もるという説明は適切。"
+        },
+        {
+          "number": 2,
+          "verdict": "incorrect",
+          "reason": "機軸に垂直な空気力を重量で無次元化した荷重倍数の定義を述べている。"
+        },
+        {
+          "number": 3,
+          "verdict": "correct",
+          "reason": "等価対気速度は動圧の等価性による換算であり、質量流量の等価性によるものではない。"
+        },
+        {
+          "number": 4,
+          "verdict": "incorrect",
+          "reason": "速度と運動荷重倍数を軸にして許容範囲を囲うV−n線図の説明は適切である。"
+        },
+        {
+          "number": 5,
+          "verdict": "incorrect",
+          "reason": "突風による付加揚力を荷重倍数として表し、許容荷重範囲を示す突風包囲線図の説明は適切。"
+        }
+      ],
+      "sources": [
+        {
+          "title": "日本技術士会 公式問題",
+          "url": "https://www.engineer.or.jp/c_topics/010/attached/attach_10606_5.pdf#page=1"
+        },
+        {
+          "title": "日本技術士会 公式正答",
+          "url": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_5.pdf#page=5"
+        }
+      ]
+    }
+  },
+  {
+    "id": "pe-first-aerospace-2024-q03",
+    "number": 3,
+    "text": "両端が閉じられた円筒型の圧力容器の円筒部の応力について、薄肉円筒と仮定して計算した場合に、（ア）軸方向の応力、及び（イ）円周方向の応力の組合せとして、最も適切なものはどれか。ただし、内圧をp、円筒半径をr、板厚をtとする。",
+    "images": [
+      "/exam-library/pe-first-aerospace-2024/page-02.png"
+    ],
+    "sourcePages": [
+      2
+    ],
+    "sourceQuestionNumber": 3,
+    "correctChoice": 5,
+    "choiceCount": 5,
+    "answerAuthority": "official",
+    "originalPdf": "https://www.engineer.or.jp/c_topics/010/attached/attach_10606_5.pdf",
+    "answerPdf": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_5.pdf#page=5",
+    "explanation": "閉端薄肉円筒の軸応力は端面力pπr^2を断面積2πrtで割ってpr/(2t)。周方向は直径面の釣合いからpr/t。したがって⑤。",
+    "presentation": {
+      "sourceHash": "5dbe9df260eed8469384806b764b58adc5f177da95f1327481ec05f05c66af12",
+      "prompt": "両端が閉じられた円筒型の圧力容器の円筒部の応力について、薄肉円筒と仮定して計算した場合に、（ア）軸方向の応力、及び（イ）円周方向の応力の組合せとして、最も適切なものはどれか。ただし、内圧をp、円筒半径をr、板厚をtとする。",
+      "choices": [
+        {
+          "number": 1,
+          "text": "ア=pr/(2t)、イ=pr/(2t)"
+        },
+        {
+          "number": 2,
+          "text": "ア=pr/t、イ=pr/(2t)"
+        },
+        {
+          "number": 3,
+          "text": "ア=pr/(4t)、イ=pr/(2t)"
+        },
+        {
+          "number": 4,
+          "text": "ア=pr/t、イ=pr/t"
+        },
+        {
+          "number": 5,
+          "text": "ア=pr/(2t)、イ=pr/t"
+        }
+      ],
+      "figures": []
+    },
+    "choiceExplanation": {
+      "sourceHash": "5dbe9df260eed8469384806b764b58adc5f177da95f1327481ec05f05c66af12",
+      "correctChoice": 5,
+      "summary": "閉端薄肉円筒の軸応力は端面力pπr^2を断面積2πrtで割ってpr/(2t)。周方向は直径面の釣合いからpr/t。したがって⑤。",
+      "choices": [
+        {
+          "number": 1,
+          "verdict": "incorrect",
+          "reason": "軸方向pr/(2t)は合うが、周方向応力も同じではなく、その2倍のpr/tとなる。"
+        },
+        {
+          "number": 2,
+          "verdict": "incorrect",
+          "reason": "軸方向pr/tに対し周方向pr/(2t)としており、大小関係が逆になっている。"
+        },
+        {
+          "number": 3,
+          "verdict": "incorrect",
+          "reason": "軸方向pr/(4t)、周方向pr/(2t)は、それぞれ正しい膜応力の半分である。"
+        },
+        {
+          "number": 4,
+          "verdict": "incorrect",
+          "reason": "両方pr/tではない。閉端の軸方向応力は周方向の半分pr/(2t)である。"
+        },
+        {
+          "number": 5,
+          "verdict": "correct",
+          "reason": "軸方向pr/(2t)、円周方向pr/tが閉じた薄肉円筒の圧力による膜応力に一致する。"
+        }
+      ],
+      "sources": [
+        {
+          "title": "日本技術士会 公式問題",
+          "url": "https://www.engineer.or.jp/c_topics/010/attached/attach_10606_5.pdf#page=2"
+        },
+        {
+          "title": "日本技術士会 公式正答",
+          "url": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_5.pdf#page=5"
+        }
+      ]
+    }
+  },
+  {
+    "id": "pe-first-aerospace-2024-q04",
+    "number": 4,
+    "text": "2次元翼空力設計に関する次の記述のうち,最も不適切なものはどれか。",
+    "images": [
+      "/exam-library/pe-first-aerospace-2024/page-03.png"
+    ],
+    "sourcePages": [
+      3
+    ],
+    "sourceQuestionNumber": 4,
+    "correctChoice": 5,
+    "choiceCount": 5,
+    "answerAuthority": "official",
+    "originalPdf": "https://www.engineer.or.jp/c_topics/010/attached/attach_10606_5.pdf",
+    "answerPdf": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_5.pdf#page=5",
+    "explanation": "不適切なのは⑤。臨界Mach数は翼面上で初めて局所音速に達するときの一様流Mach数。抵抗が急増するのは抵抗発散Mach数で、一般に臨界Mach数より高い。",
+    "presentation": {
+      "sourceHash": "3c429a10f9ec9f45fc895a9eb416ff28eeb9556a09a295431b69ef399ad18053",
+      "prompt": "2次元翼空力設計に関する次の記述のうち,最も不適切なものはどれか。",
+      "choices": [
+        {
+          "number": 1,
+          "text": "航空機に使用される代表的な翼型としてNACA翼型がある。この翼型は翼の特性を表すいくつかの数値の組合せで定義され,その定義の違いによって,異なるシリーズに分類されている。"
+        },
+        {
+          "number": 2,
+          "text": "2次元翼型の揚力傾斜は,厚みの無い薄翼の仮定では2π[rad]である。実際の流れには粘性が存在するため,翼型の揚力傾斜は粘性を無視した理想流体の場合よりも低下する。"
+        },
+        {
+          "number": 3,
+          "text": "翼型の失速は流れ場のふるまいの違いにより,後縁失速,前縁失速,薄翼失速の3種類の失速形態に分類される。前縁失速と薄翼失速を生じる原因として,翼型上に生じる層流剥離泡の存在が挙げられる。"
+        },
+        {
+          "number": 4,
+          "text": "翼型の空力特性の重要な項目に最大揚力係数があるが,粘性を無視した理想流体の下での翼理論では迎角の増大に比例して揚力は単純に増大し続けるだけであるため,最大揚力係数を把握するためには,粘性流の下での翼型を考える必要がある。"
+        },
+        {
+          "number": 5,
+          "text": "マッハ数が1に近づくと一様流速度はマッハ1未満であるにもかかわらず,翼面上で局所的に流れが音速に達してしまい,翼面上に衝撃波が発生することになり,その影響で翼型に働く抵抗は増大する。この抵抗が急増するときのマッハ数を臨界マッハ数と呼ぶ。"
+        }
+      ],
+      "figures": []
+    },
+    "choiceExplanation": {
+      "sourceHash": "3c429a10f9ec9f45fc895a9eb416ff28eeb9556a09a295431b69ef399ad18053",
+      "correctChoice": 5,
+      "summary": "不適切なのは⑤。臨界Mach数は翼面上で初めて局所音速に達するときの一様流Mach数。抵抗が急増するのは抵抗発散Mach数で、一般に臨界Mach数より高い。",
+      "choices": [
+        {
+          "number": 1,
+          "verdict": "incorrect",
+          "reason": "NACA翼型は最大反りや厚さ等の数値的な定義により系列化されており、説明は適切。"
+        },
+        {
+          "number": 2,
+          "verdict": "incorrect",
+          "reason": "薄翼理論の揚力傾斜は2π/radであり、粘性は一般にその傾斜を低下させる。原文は「2π [rad]」だが、傾斜の単位としてはrad^−1であることに注意。"
+        },
+        {
+          "number": 3,
+          "verdict": "incorrect",
+          "reason": "前縁や薄翼の失速では層流剥離泡の形成・崩壊が重要な役割を持つので適切。"
+        },
+        {
+          "number": 4,
+          "verdict": "incorrect",
+          "reason": "非粘性の線形理論は剥離による失速を表せないため、最大揚力には粘性の考慮が必要。"
+        },
+        {
+          "number": 5,
+          "verdict": "correct",
+          "reason": "局所音速の初出現を定義する臨界Mach数と、抵抗急増を定義する抵抗発散Mach数を混同している。"
+        }
+      ],
+      "sources": [
+        {
+          "title": "日本技術士会 公式問題",
+          "url": "https://www.engineer.or.jp/c_topics/010/attached/attach_10606_5.pdf#page=3"
+        },
+        {
+          "title": "日本技術士会 公式正答",
+          "url": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_5.pdf#page=5"
+        }
+      ]
+    }
+  },
+  {
+    "id": "pe-first-aerospace-2024-q05",
+    "number": 5,
+    "text": "飛行機の飛行性に関する次の記述のうち,最も不適切なものはどれか。",
+    "images": [
+      "/exam-library/pe-first-aerospace-2024/page-04.png"
+    ],
+    "sourcePages": [
+      4
+    ],
+    "sourceQuestionNumber": 5,
+    "correctChoice": 2,
+    "choiceCount": 5,
+    "answerAuthority": "official",
+    "originalPdf": "https://www.engineer.or.jp/c_topics/010/attached/attach_10606_5.pdf",
+    "answerPdf": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_5.pdf#page=5",
+    "explanation": "不適切なのは②。ラダーロックは大横すべり時に方向舵の操舵力が失われる不都合な現象で、望ましい特性ではない。操舵力による適切な手応えが必要。",
+    "presentation": {
+      "sourceHash": "a930030067ac4c31f15a29ec59ed252a4ca002096a6989d00aa2412f4e283b3c",
+      "prompt": "飛行機の飛行性に関する次の記述のうち,最も不適切なものはどれか。",
+      "choices": [
+        {
+          "number": 1,
+          "text": "上反角効果は,主翼の上反角,後退角,翼端形状,胴体への取付上下位置(翼胴干渉)、垂直尾翼が主な寄与因子である。上反角効果は安定である必要があるが,過大であると横の突風を受けたときにロールを生じやすいなどの問題を生ずる。"
+        },
+        {
+          "number": 2,
+          "text": "横すべり角に対して横方向操縦装置の操作量,操舵力は原則的に線形であることが推奨されている。大きな横すべり角における方向の操舵に対しては操舵力の軽減が容認され,ペダル操舵力がゼロになること(ラダーロック現象)が望ましい。"
+        },
+        {
+          "number": 3,
+          "text": "バックサイド領域では「操縦桿を引いて機首上げ操作を行うと速度の減少とともに高度も減少する」という通常の応答と逆の結果となり,進入経路の保持を難しくさせる。"
+        },
+        {
+          "number": 4,
+          "text": "CAP(Control Anticipation Parameter)はパイロットが経路角制御を行う場合,「初期のピッチ角加速度応答を予測して操縦している」という仮定から考えられたパラメータである。"
+        },
+        {
+          "number": 5,
+          "text": "PIO(Pilot—InducedOscillation)は,パイロットが飛行機を操縦しようとする努力の結果パイロットの意図に反して発生する持続振動,すなわちパイロットを飛行機のシステムの中に取り込んだ閉ループシステムでの自励振動現象である。"
+        }
+      ],
+      "figures": []
+    },
+    "choiceExplanation": {
+      "sourceHash": "a930030067ac4c31f15a29ec59ed252a4ca002096a6989d00aa2412f4e283b3c",
+      "correctChoice": 2,
+      "summary": "不適切なのは②。ラダーロックは大横すべり時に方向舵の操舵力が失われる不都合な現象で、望ましい特性ではない。操舵力による適切な手応えが必要。",
+      "choices": [
+        {
+          "number": 1,
+          "verdict": "incorrect",
+          "reason": "上反角効果には翼配置等が寄与し、強すぎると横突風に対するロール応答が大きくなる。"
+        },
+        {
+          "number": 2,
+          "verdict": "correct",
+          "reason": "ペダル操舵力がゼロになるラダーロックを望ましいとする結論が誤りである。"
+        },
+        {
+          "number": 3,
+          "verdict": "incorrect",
+          "reason": "バックサイドでは減速に伴って必要推力が増し、機首上げだけでは高度保持を難しくする。"
+        },
+        {
+          "number": 4,
+          "verdict": "incorrect",
+          "reason": "初期ピッチ角加速度と経路角応答との関係で操縦性を捉えるCAPの説明は適切。"
+        },
+        {
+          "number": 5,
+          "verdict": "incorrect",
+          "reason": "パイロットを含む閉ループの相互作用によって、意図しない持続振動が生じるPIOの説明である。"
+        }
+      ],
+      "sources": [
+        {
+          "title": "日本技術士会 公式問題",
+          "url": "https://www.engineer.or.jp/c_topics/010/attached/attach_10606_5.pdf#page=4"
+        },
+        {
+          "title": "日本技術士会 公式正答",
+          "url": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_5.pdf#page=5"
+        }
+      ]
+    }
+  },
+  {
+    "id": "pe-first-aerospace-2024-q06",
+    "number": 6,
+    "text": "航空機の機体重量に関する次の記述のうち,最も不適切なものはどれか。",
+    "images": [
+      "/exam-library/pe-first-aerospace-2024/page-05.png"
+    ],
+    "sourcePages": [
+      5
+    ],
+    "sourceQuestionNumber": 6,
+    "correctChoice": 4,
+    "choiceCount": 5,
+    "answerAuthority": "official",
+    "originalPdf": "https://www.engineer.or.jp/c_topics/010/attached/attach_10606_5.pdf",
+    "answerPdf": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_5.pdf#page=5",
+    "explanation": "不適切なのは④。翼内燃料の重量は飛行中の揚力による翼根曲げを緩和する。翼内燃料がないと、この緩和が減って翼根曲げが厳しくなる。",
+    "presentation": {
+      "sourceHash": "ddb430832e37daa484430842257ab2f44ed8b36760d34670553dffc271ca72e7",
+      "prompt": "航空機の機体重量に関する次の記述のうち,最も不適切なものはどれか。",
+      "choices": [
+        {
+          "number": 1,
+          "text": "最大離陸重量とは,これ以上の重量で離陸してはいけないという,強度上の要求から定められた値である。"
+        },
+        {
+          "number": 2,
+          "text": "最大着陸重量とは,これ以上の重量で着陸してはいけないという,強度上の要求から定められた値である。"
+        },
+        {
+          "number": 3,
+          "text": "空虚重量は,機体そのものの重量とエンジン・各種機器の重量の和で表される。"
+        },
+        {
+          "number": 4,
+          "text": "最大零燃料重量は主翼に燃料を積んでいない状態での重量である。主翼内に燃料がない状態では,飛行中の主翼の曲げモーメントが最小となる。"
+        },
+        {
+          "number": 5,
+          "text": "運用空虚重量は,空虚重量,機構上使用できない燃料とオイルの重量,乗務員の重量並びに運航に必要な各種運用アイテムの重量の和である。"
+        }
+      ],
+      "figures": []
+    },
+    "choiceExplanation": {
+      "sourceHash": "ddb430832e37daa484430842257ab2f44ed8b36760d34670553dffc271ca72e7",
+      "correctChoice": 4,
+      "summary": "不適切なのは④。翼内燃料の重量は飛行中の揚力による翼根曲げを緩和する。翼内燃料がないと、この緩和が減って翼根曲げが厳しくなる。",
+      "choices": [
+        {
+          "number": 1,
+          "verdict": "incorrect",
+          "reason": "最大離陸重量には強度上の制限があり、それを超える離陸を認めない重量の定義に合う。"
+        },
+        {
+          "number": 2,
+          "verdict": "incorrect",
+          "reason": "着陸時の構造・脚などの荷重制限から最大着陸重量が定められるという説明は適切。"
+        },
+        {
+          "number": 3,
+          "verdict": "incorrect",
+          "reason": "機体、動力装置、装備などからなる空虚重量の基本的な構成を述べている。"
+        },
+        {
+          "number": 4,
+          "verdict": "correct",
+          "reason": "翼内燃料がない状態で主翼曲げが最小になるとはいえず、燃料重量による曲げ緩和が失われる。"
+        },
+        {
+          "number": 5,
+          "verdict": "incorrect",
+          "reason": "運用に必要な乗務員や使用不能燃料などを空虚重量に加える運用空虚重量の説明は適切。"
+        }
+      ],
+      "sources": [
+        {
+          "title": "日本技術士会 公式問題",
+          "url": "https://www.engineer.or.jp/c_topics/010/attached/attach_10606_5.pdf#page=5"
+        },
+        {
+          "title": "日本技術士会 公式正答",
+          "url": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_5.pdf#page=5"
+        }
+      ]
+    }
+  },
+  {
+    "id": "pe-first-aerospace-2024-q07",
+    "number": 7,
+    "text": "後退角のない翼と比較した,後退翼の特性に関する次の記述のうち,最も不適切なものはどれか。",
+    "images": [
+      "/exam-library/pe-first-aerospace-2024/page-05.png"
+    ],
+    "sourcePages": [
+      5
+    ],
+    "sourceQuestionNumber": 7,
+    "correctChoice": 4,
+    "choiceCount": 5,
+    "answerAuthority": "official",
+    "originalPdf": "https://www.engineer.or.jp/c_topics/010/attached/attach_10606_5.pdf",
+    "answerPdf": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_5.pdf#page=5",
+    "explanation": "不適切なのは④。後退翼は横すべりで左右翼の有効迎角・後退角に差ができ、通常は上反角効果が強くなる。軽減するという方向が逆。",
+    "presentation": {
+      "sourceHash": "2b4847b7d7f487fcbc3647df2831aa1d723d26890d3addda5165236d227ed501",
+      "prompt": "後退角のない翼と比較した,後退翼の特性に関する次の記述のうち,最も不適切なものはどれか。",
+      "choices": [
+        {
+          "number": 1,
+          "text": "揚力曲線の傾斜が緩やかになる。"
+        },
+        {
+          "number": 2,
+          "text": "臨界マッハ数を増加することができる。"
+        },
+        {
+          "number": 3,
+          "text": "翼根部の曲げモーメントが増大する。"
+        },
+        {
+          "number": 4,
+          "text": "上反角効果が軽減する。"
+        },
+        {
+          "number": 5,
+          "text": "翼端失速を起こしやすくなる。"
+        }
+      ],
+      "figures": []
+    },
+    "choiceExplanation": {
+      "sourceHash": "2b4847b7d7f487fcbc3647df2831aa1d723d26890d3addda5165236d227ed501",
+      "correctChoice": 4,
+      "summary": "不適切なのは④。後退翼は横すべりで左右翼の有効迎角・後退角に差ができ、通常は上反角効果が強くなる。軽減するという方向が逆。",
+      "choices": [
+        {
+          "number": 1,
+          "verdict": "incorrect",
+          "reason": "後退により翼前縁に垂直な流速成分が減り、揚力曲線の傾斜が緩やかになる。"
+        },
+        {
+          "number": 2,
+          "verdict": "incorrect",
+          "reason": "前縁に垂直なMach数を抑えるため、後退角は臨界Mach数を高める手段となる。"
+        },
+        {
+          "number": 3,
+          "verdict": "incorrect",
+          "reason": "後退翼では荷重分布や構造の影響により翼根曲げが増大する傾向があり、記述は適切。"
+        },
+        {
+          "number": 4,
+          "verdict": "correct",
+          "reason": "後退角は上反角効果を生む側に働き、一般に軽減するという説明は逆である。"
+        },
+        {
+          "number": 5,
+          "verdict": "incorrect",
+          "reason": "翼端側への境界層流れなどにより翼端失速を起こしやすいのは後退翼の特徴である。"
+        }
+      ],
+      "sources": [
+        {
+          "title": "日本技術士会 公式問題",
+          "url": "https://www.engineer.or.jp/c_topics/010/attached/attach_10606_5.pdf#page=5"
+        },
+        {
+          "title": "日本技術士会 公式正答",
+          "url": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_5.pdf#page=5"
+        }
+      ]
+    }
+  },
+  {
+    "id": "pe-first-aerospace-2024-q08",
+    "number": 8,
+    "text": "2024年度 航空・宇宙部門 専門科目 Ⅲ－8。下の公式原問画像の当該番号に解答してください。同じページにある別の設問は対象外です。",
+    "images": [
+      "/exam-library/pe-first-aerospace-2024/page-06.png"
+    ],
+    "sourcePages": [
+      6
+    ],
+    "sourceQuestionNumber": 8,
+    "correctChoice": 3,
+    "choiceCount": 5,
+    "answerAuthority": "official",
+    "originalPdf": "https://www.engineer.or.jp/c_topics/010/attached/attach_10606_5.pdf",
+    "answerPdf": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_5.pdf#page=5",
+    "explanation": "与圧には大量の空気の連続供給が必要。圧縮機の抽気条件はエンジン回転速度等で変わり、滑油や燃料漏れが汚染源となるので③。",
+    "presentation": {
+      "sourceHash": "bc85743e2576454ac74699f7c20c70392fcc24eb210935aa54bd96dd60c12292",
+      "prompt": "2024年度 航空・宇宙部門 専門科目 Ⅲ－8。下の公式原問画像の当該番号に解答してください。同じページにある別の設問は対象外です。",
+      "choices": [
+        {
+          "number": 1,
+          "text": "①"
+        },
+        {
+          "number": 2,
+          "text": "②"
+        },
+        {
+          "number": 3,
+          "text": "③"
+        },
+        {
+          "number": 4,
+          "text": "④"
+        },
+        {
+          "number": 5,
+          "text": "⑤"
+        }
+      ],
+      "figures": [
+        {
+          "src": "/exam-library/pe-first-aerospace-2024/page-06.png",
+          "width": 1073,
+          "height": 1517,
+          "alt": "2024年度 航空・宇宙部門 専門科目 Ⅲ－8の公式原問（PDF 6ページ）。当該番号の問題文・全選択肢・図表を確認してください。"
+        }
+      ]
+    },
+    "choiceExplanation": {
+      "sourceHash": "bc85743e2576454ac74699f7c20c70392fcc24eb210935aa54bd96dd60c12292",
+      "correctChoice": 3,
+      "summary": "与圧には大量の空気の連続供給が必要。圧縮機の抽気条件はエンジン回転速度等で変わり、滑油や燃料漏れが汚染源となるので③。",
+      "choices": [
+        {
+          "number": 1,
+          "verdict": "incorrect",
+          "reason": "連続供給と滑油は合うが、抽気圧力・温度を変える運転条件の空欄は排ガス成分ではない。"
+        },
+        {
+          "number": 2,
+          "verdict": "incorrect",
+          "reason": "連続供給は合うが、抽気の運転条件は回転速度、漏れによる汚染源は滑油である。"
+        },
+        {
+          "number": 3,
+          "verdict": "correct",
+          "reason": "連続して・エンジン回転速度・滑油の組合せが、空気供給条件と汚染源に対応する。"
+        },
+        {
+          "number": 4,
+          "verdict": "incorrect",
+          "reason": "客室への空気は間欠でなく連続供給が必要で、漏れによる汚染源も水ではなく滑油。"
+        },
+        {
+          "number": 5,
+          "verdict": "incorrect",
+          "reason": "空気供給を間欠的とする点と、抽気条件を排ガス成分とする点が不適切である。"
+        }
+      ],
+      "sources": [
+        {
+          "title": "日本技術士会 公式問題",
+          "url": "https://www.engineer.or.jp/c_topics/010/attached/attach_10606_5.pdf#page=6"
+        },
+        {
+          "title": "日本技術士会 公式正答",
+          "url": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_5.pdf#page=5"
+        }
+      ]
+    }
+  },
+  {
+    "id": "pe-first-aerospace-2024-q09",
+    "number": 9,
+    "text": "旅客機に搭載される燃料供給系統(燃料タンク並びに供給系)に関する次の記述のうち,最も不適切なものはどれか。",
+    "images": [
+      "/exam-library/pe-first-aerospace-2024/page-07.png"
+    ],
+    "sourcePages": [
+      7
+    ],
+    "sourceQuestionNumber": 9,
+    "correctChoice": 3,
+    "choiceCount": 5,
+    "answerAuthority": "official",
+    "originalPdf": "https://www.engineer.or.jp/c_topics/010/attached/attach_10606_5.pdf",
+    "answerPdf": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_5.pdf#page=5",
+    "explanation": "不適切なのは③。給排油作業で安全上特に警戒するのは燃料のあふれと引火であり、水のあふれだけを安全確保上の主要対象とした点が違う。",
+    "presentation": {
+      "sourceHash": "a33d61b6d0c538da199f4a7a42634fcd5cfe528495ac9ea2db96ca45dbe41843",
+      "prompt": "旅客機に搭載される燃料供給系統(燃料タンク並びに供給系)に関する次の記述のうち,最も不適切なものはどれか。",
+      "choices": [
+        {
+          "number": 1,
+          "text": "燃料タンクは機軸に対し左右対称に配置されており,タンクはいくつかに分割されていることが多い。多発機の場合,それぞれのエンジンに対応した燃料タンクが配備されており,さらに多量の燃料を搭載するためのタンクがある。"
+        },
+        {
+          "number": 2,
+          "text": "航空機の構造は,燃料重量による飛行荷重,地上荷重及び着陸荷重に耐える十分な強度が必要であり,燃料タンクは,燃料重量の減少が航空機の釣合いに問題を生じないように装着しなければならない。"
+        },
+        {
+          "number": 3,
+          "text": "燃料系統に関する整備のうち,頻度の高い作業は燃料補給と水抜きである。整備作業に先立っての燃料の排出も大きな作業となる。特に,これらの作業に当たってはとりわけ安全確保の観点で水のあふれに対する十分な処置が必要であり,また作業者も十分な訓練を受けた人によって行われなければならない。"
+        },
+        {
+          "number": 4,
+          "text": "緊急時機体重量を減らすため,搭載している燃料を投棄することを燃料放出という。"
+        },
+        {
+          "number": 5,
+          "text": "主翼をインテグラルのタンクにしている航空機では,翼と胴体の交差する部分を含めて主翼の大部分がタンクになっている。これらのタンクは一般に,構造上,胴体部分の容積が大きく,翼端にいくに従って小さくなる。"
+        }
+      ],
+      "figures": []
+    },
+    "choiceExplanation": {
+      "sourceHash": "a33d61b6d0c538da199f4a7a42634fcd5cfe528495ac9ea2db96ca45dbe41843",
+      "correctChoice": 3,
+      "summary": "不適切なのは③。給排油作業で安全上特に警戒するのは燃料のあふれと引火であり、水のあふれだけを安全確保上の主要対象とした点が違う。",
+      "choices": [
+        {
+          "number": 1,
+          "verdict": "incorrect",
+          "reason": "タンクを左右対称に分割し、多発機の各エンジンへ燃料を供給する構成は適切。"
+        },
+        {
+          "number": 2,
+          "verdict": "incorrect",
+          "reason": "燃料荷重への強度と、燃料消費による重心・釣合いの変化への配慮は必要である。"
+        },
+        {
+          "number": 3,
+          "verdict": "correct",
+          "reason": "水抜きは必要な作業だが、給排油時のあふれに関する主要な危険は燃料流出による火災である。"
+        },
+        {
+          "number": 4,
+          "verdict": "incorrect",
+          "reason": "緊急時の重量減少のために燃料を機外へ放出する機能の説明は適切である。"
+        },
+        {
+          "number": 5,
+          "verdict": "incorrect",
+          "reason": "構造を利用するインテグラルタンクは翼根側で容積が大きく、翼端に向かって小さくなる。"
+        }
+      ],
+      "sources": [
+        {
+          "title": "日本技術士会 公式問題",
+          "url": "https://www.engineer.or.jp/c_topics/010/attached/attach_10606_5.pdf#page=7"
+        },
+        {
+          "title": "日本技術士会 公式正答",
+          "url": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_5.pdf#page=5"
+        }
+      ]
+    }
+  },
+  {
+    "id": "pe-first-aerospace-2024-q10",
+    "number": 10,
+    "text": "近年,地球環境の保全が重要性を増しており,航空用エンジンも単にSFC(燃料消費率)や比推力,推力重量比などの性能だけでなく環境適合性も重要な性能指標となっている。環境性能のうち,地球温暖化を防止するためのCO2低減特性に関する以下の記述のうち,最も不適切なものはどれか。",
+    "images": [
+      "/exam-library/pe-first-aerospace-2024/page-08.png"
+    ],
+    "sourcePages": [
+      8
+    ],
+    "sourceQuestionNumber": 10,
+    "correctChoice": 4,
+    "choiceCount": 5,
+    "answerAuthority": "official",
+    "originalPdf": "https://www.engineer.or.jp/c_topics/010/attached/attach_10606_5.pdf",
+    "answerPdf": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_5.pdf#page=5",
+    "explanation": "不適切なのは④。高温化を可能にする冷却技術は必要だが、圧縮機から冷却空気を抽出すること自体にはサイクル性能上の損失が伴う。抽気自体が性能を向上するという説明が違う。",
+    "presentation": {
+      "sourceHash": "a0dcad734ba800ce1265fa9dbf679724db37ca73ba6229f9247528be3bcdc3f5",
+      "prompt": "近年,地球環境の保全が重要性を増しており,航空用エンジンも単にSFC(燃料消費率)や比推力,推力重量比などの性能だけでなく環境適合性も重要な性能指標となっている。環境性能のうち,地球温暖化を防止するためのCO2低減特性に関する以下の記述のうち,最も不適切なものはどれか。",
+      "choices": [
+        {
+          "number": 1,
+          "text": "持続可能な航空燃料(SAF)の利用は,航空機運航上CO2低減の効果として認められる。"
+        },
+        {
+          "number": 2,
+          "text": "エンジン性能の観点での低CO2特性は,エンジンの高効率化にほかならないが,CO2総排出量の低減には,巡航時のSFCの改善が有効である。"
+        },
+        {
+          "number": 3,
+          "text": "CO2総排出量の低減には,エンジン性能改善のみでなく,エンジンの単位推力当たりの重量を軽減させ,飛行機の総重量を軽くすることによるトータル燃料消費量を減らすことが重要である。"
+        },
+        {
+          "number": 4,
+          "text": "燃焼器出口温度を増大させることが熱効率向上に直接寄与するが,この燃焼器出口温度向上に寄与するのがタービン冷却効率の改善である。タービン冷却には圧縮機から抽気した空気が使われているが,この冷却空気の抽気もエンジン性能向上に寄与している。"
+        },
+        {
+          "number": 5,
+          "text": "エンジンの単位推力当たりの重量軽減のために,圧縮機,タービンなどのエンジン要素の効率を上昇させるとともに,エンジン要素の高負荷化によって段数を軽減する軽量化も重要課題である。"
+        }
+      ],
+      "figures": []
+    },
+    "choiceExplanation": {
+      "sourceHash": "a0dcad734ba800ce1265fa9dbf679724db37ca73ba6229f9247528be3bcdc3f5",
+      "correctChoice": 4,
+      "summary": "不適切なのは④。高温化を可能にする冷却技術は必要だが、圧縮機から冷却空気を抽出すること自体にはサイクル性能上の損失が伴う。抽気自体が性能を向上するという説明が違う。",
+      "choices": [
+        {
+          "number": 1,
+          "verdict": "incorrect",
+          "reason": "SAFは製造から利用までのライフサイクルでCO2低減が評価される。排気口のCO2がゼロになる意味ではない。"
+        },
+        {
+          "number": 2,
+          "verdict": "incorrect",
+          "reason": "巡航時の燃料消費率の改善は消費燃料量を減らし、燃料由来CO2排出の低減に寄与する。"
+        },
+        {
+          "number": 3,
+          "verdict": "incorrect",
+          "reason": "動力装置の軽量化によって機体全体の必要燃料を減らす効果も重要である。"
+        },
+        {
+          "number": 4,
+          "verdict": "correct",
+          "reason": "冷却による許容温度上昇の利点と、冷却抽気そのもののサイクル損失を取り違えている。"
+        },
+        {
+          "number": 5,
+          "verdict": "incorrect",
+          "reason": "要素効率向上や高負荷化による段数削減は、軽量化と推力重量比改善のための開発課題である。"
+        }
+      ],
+      "sources": [
+        {
+          "title": "日本技術士会 公式問題",
+          "url": "https://www.engineer.or.jp/c_topics/010/attached/attach_10606_5.pdf#page=8"
+        },
+        {
+          "title": "日本技術士会 公式正答",
+          "url": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_5.pdf#page=5"
+        }
+      ]
+    }
+  },
+  {
+    "id": "pe-first-aerospace-2024-q11",
+    "number": 11,
+    "text": "航空機用ジェットエンジンは,航空機の飛行状態により,静止状態から高速飛行状態、地上から高空状態,寒冷時から高温時まで,様々な状態での作動が要求される。エンジンの作動状態の影響として,以下の記述のうち,最も不適切なものはどれか。",
+    "images": [
+      "/exam-library/pe-first-aerospace-2024/page-08.png"
+    ],
+    "sourcePages": [
+      8
+    ],
+    "sourceQuestionNumber": 11,
+    "correctChoice": 5,
+    "choiceCount": 5,
+    "answerAuthority": "official",
+    "originalPdf": "https://www.engineer.or.jp/c_topics/010/attached/attach_10606_5.pdf",
+    "answerPdf": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_5.pdf#page=5",
+    "explanation": "不適切なのは⑤。高空では温度低下の利点より圧力低下による空気流量減少が支配的となり推力が低下する。低温化が主因で推力が低下するとする説明が逆。",
+    "presentation": {
+      "sourceHash": "ec063d6552250cbc4c0a174284a1bd06c278d42c65540de47a37e3bda8b0c415",
+      "prompt": "航空機用ジェットエンジンは,航空機の飛行状態により,静止状態から高速飛行状態、地上から高空状態,寒冷時から高温時まで,様々な状態での作動が要求される。エンジンの作動状態の影響として,以下の記述のうち,最も不適切なものはどれか。",
+      "choices": [
+        {
+          "number": 1,
+          "text": "大気温度の上昇は大気密度の減少とともに,機械回転数の制限のために生じる修正回転数の減少をもたらし,推力を低下させる。"
+        },
+        {
+          "number": 2,
+          "text": "大気圧力の増加は修正空気流量一定の条件下では,実流量の増加をもたらし,推力を増加させる。"
+        },
+        {
+          "number": 3,
+          "text": "機速が増加すると,相対的排気速度が減少することで,一時推力低下が起きるが,さらに機速が増加すると入口ラム圧が増加する影響で密度が増え,推力が増加する。"
+        },
+        {
+          "number": 4,
+          "text": "飛行中の高高度では,レイノルズ数が下がることにより,圧縮機や低圧タービンの特性が変化する。"
+        },
+        {
+          "number": 5,
+          "text": "高高度の飛行は大気圧力と大気温度の低下をもたらす。両者は空気流量に対し相反する関係にあるが,大気温度の低下がより強く影響し,推力低下をきたす。"
+        }
+      ],
+      "figures": []
+    },
+    "choiceExplanation": {
+      "sourceHash": "ec063d6552250cbc4c0a174284a1bd06c278d42c65540de47a37e3bda8b0c415",
+      "correctChoice": 5,
+      "summary": "不適切なのは⑤。高空では温度低下の利点より圧力低下による空気流量減少が支配的となり推力が低下する。低温化が主因で推力が低下するとする説明が逆。",
+      "choices": [
+        {
+          "number": 1,
+          "verdict": "incorrect",
+          "reason": "高温では密度と修正回転数が下がり、取り込める空気と推力が減るという傾向は適切。"
+        },
+        {
+          "number": 2,
+          "verdict": "incorrect",
+          "reason": "修正流量一定で大気圧が上がると実空気流量が増し、推力が増える方向となる。"
+        },
+        {
+          "number": 3,
+          "verdict": "incorrect",
+          "reason": "機速による正味速度差の低下と、高速時のラム圧上昇の競合を述べている。"
+        },
+        {
+          "number": 4,
+          "verdict": "incorrect",
+          "reason": "高空での低Reynolds数は境界層や剥離を変え、圧縮機・タービン特性に影響する。"
+        },
+        {
+          "number": 5,
+          "verdict": "correct",
+          "reason": "低温化は一般に密度増加側に作用する。高空での推力低下には圧力低下による流量減少が強く効く。"
+        }
+      ],
+      "sources": [
+        {
+          "title": "日本技術士会 公式問題",
+          "url": "https://www.engineer.or.jp/c_topics/010/attached/attach_10606_5.pdf#page=8"
+        },
+        {
+          "title": "日本技術士会 公式正答",
+          "url": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_5.pdf#page=5"
+        }
+      ]
+    }
+  },
+  {
+    "id": "pe-first-aerospace-2024-q12",
+    "number": 12,
+    "text": "ジェットエンジンの排出物に関する次の記述のうち,最も不適切なものはどれか。",
+    "images": [
+      "/exam-library/pe-first-aerospace-2024/page-09.png"
+    ],
+    "sourcePages": [
+      9
+    ],
+    "sourceQuestionNumber": 12,
+    "correctChoice": 1,
+    "choiceCount": 5,
+    "answerAuthority": "official",
+    "originalPdf": "https://www.engineer.or.jp/c_topics/010/attached/attach_10606_5.pdf",
+    "answerPdf": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_5.pdf#page=5",
+    "explanation": "不適切なのは①。サーマルNOxは高温で生成が促進されるので、低減には局所的な高温領域や高温滞留時間を抑える。燃焼温度を上げるという向きが逆。",
+    "presentation": {
+      "sourceHash": "1e904dca66260ea3c697ea119275abdca58ecc89ab22ddb365a419892a932305",
+      "prompt": "ジェットエンジンの排出物に関する次の記述のうち,最も不適切なものはどれか。",
+      "choices": [
+        {
+          "number": 1,
+          "text": "窒素酸化物(NOx)の低減には燃焼領域の温度を上げる必要がある。"
+        },
+        {
+          "number": 2,
+          "text": "窒素酸化物は酸性雨の原因となる。燃焼の過程で,空気中の窒素の酸化により生成されるサーマルNOxと,燃料中の窒素から生じるフューエルNOxがある。"
+        },
+        {
+          "number": 3,
+          "text": "二酸化炭素は地球温暖化の一因となっている。二酸化炭素は炭化水素燃料の完全燃焼生成物であり,燃焼室の設計により直接減らすことはできない。"
+        },
+        {
+          "number": 4,
+          "text": "硫黄酸化物は酸性雨の原因であるが,この成分が排気ガス中に占める割合は極めて少ない。"
+        },
+        {
+          "number": 5,
+          "text": "高バイパス比エンジンでは,一酸化炭素,炭化水素などの未燃焼成分の排出は著しく改善され,排気中のすすによるスモークも見えない程度にまで抑制されている。"
+        }
+      ],
+      "figures": []
+    },
+    "choiceExplanation": {
+      "sourceHash": "1e904dca66260ea3c697ea119275abdca58ecc89ab22ddb365a419892a932305",
+      "correctChoice": 1,
+      "summary": "不適切なのは①。サーマルNOxは高温で生成が促進されるので、低減には局所的な高温領域や高温滞留時間を抑える。燃焼温度を上げるという向きが逆。",
+      "choices": [
+        {
+          "number": 1,
+          "verdict": "correct",
+          "reason": "高温は窒素酸化物の生成を促すので、NOx低減のため燃焼領域の温度を上げるという説明は逆。"
+        },
+        {
+          "number": 2,
+          "verdict": "incorrect",
+          "reason": "大気窒素からのサーマルNOxと燃料窒素からのフューエルNOxという分類は適切。"
+        },
+        {
+          "number": 3,
+          "verdict": "incorrect",
+          "reason": "炭素を含む燃料を完全燃焼させればCO2が生じ、燃焼室形状だけで炭素収支を変えることはできない。"
+        },
+        {
+          "number": 4,
+          "verdict": "incorrect",
+          "reason": "硫黄酸化物が酸性雨に寄与し、航空燃料由来の排気中では少量成分であるとの説明は適切。"
+        },
+        {
+          "number": 5,
+          "verdict": "incorrect",
+          "reason": "燃焼技術の改善でCO・未燃炭化水素や可視の煙が減ったという開発の傾向を述べている。"
+        }
+      ],
+      "sources": [
+        {
+          "title": "日本技術士会 公式問題",
+          "url": "https://www.engineer.or.jp/c_topics/010/attached/attach_10606_5.pdf#page=9"
+        },
+        {
+          "title": "日本技術士会 公式正答",
+          "url": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_5.pdf#page=5"
+        }
+      ]
+    }
+  },
+  {
+    "id": "pe-first-aerospace-2024-q13",
+    "number": 13,
+    "text": "ジェットエンジンの開発動向に関する次の記述のうち,最も不適切なものはどれか。",
+    "images": [
+      "/exam-library/pe-first-aerospace-2024/page-09.png"
+    ],
+    "sourcePages": [
+      9
+    ],
+    "sourceQuestionNumber": 13,
+    "correctChoice": 5,
+    "choiceCount": 5,
+    "answerAuthority": "official",
+    "originalPdf": "https://www.engineer.or.jp/c_topics/010/attached/attach_10606_5.pdf",
+    "answerPdf": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_5.pdf#page=5",
+    "explanation": "不適切なのは⑤。高バイパス比化は大量の空気を比較的低い速度差で加速し、推進効率を上げ、噴流騒音を減らす。噴出速度が増大するという説明は逆。",
+    "presentation": {
+      "sourceHash": "b05b48c692999832651b5c902b425550f53b5a3b72a2d76e58f6e47b26b2d414",
+      "prompt": "ジェットエンジンの開発動向に関する次の記述のうち,最も不適切なものはどれか。",
+      "choices": [
+        {
+          "number": 1,
+          "text": "各構成要素の効率向上により,燃料消費率が低下している。"
+        },
+        {
+          "number": 2,
+          "text": "複合材の使用により,エンジンが軽量化し,推力重量比が上昇している。"
+        },
+        {
+          "number": 3,
+          "text": "エンジン圧力比の向上により,全体熱効率が向上している。"
+        },
+        {
+          "number": 4,
+          "text": "耐熱合金及び空冷技術の進歩により,タービン入口温度が上昇している。"
+        },
+        {
+          "number": 5,
+          "text": "バイパス比の増大により,排気ガスの噴出速度が増大し,騒音が低減している。"
+        }
+      ],
+      "figures": []
+    },
+    "choiceExplanation": {
+      "sourceHash": "b05b48c692999832651b5c902b425550f53b5a3b72a2d76e58f6e47b26b2d414",
+      "correctChoice": 5,
+      "summary": "不適切なのは⑤。高バイパス比化は大量の空気を比較的低い速度差で加速し、推進効率を上げ、噴流騒音を減らす。噴出速度が増大するという説明は逆。",
+      "choices": [
+        {
+          "number": 1,
+          "verdict": "incorrect",
+          "reason": "圧縮機やタービン等の要素効率の向上は、同じ推力に対する燃料消費率を下げる。"
+        },
+        {
+          "number": 2,
+          "verdict": "incorrect",
+          "reason": "複合材による軽量化は推力重量比を上げるので、開発傾向として適切。"
+        },
+        {
+          "number": 3,
+          "verdict": "incorrect",
+          "reason": "圧力比の向上が熱効率改善に寄与してきたという説明は適切である。"
+        },
+        {
+          "number": 4,
+          "verdict": "incorrect",
+          "reason": "耐熱材料と冷却技術の進歩はタービン入口温度の高温化を可能にしている。"
+        },
+        {
+          "number": 5,
+          "verdict": "correct",
+          "reason": "高バイパス比化による騒音低減は噴流速度の低下と関係し、噴出速度増大によるものではない。"
+        }
+      ],
+      "sources": [
+        {
+          "title": "日本技術士会 公式問題",
+          "url": "https://www.engineer.or.jp/c_topics/010/attached/attach_10606_5.pdf#page=9"
+        },
+        {
+          "title": "日本技術士会 公式正答",
+          "url": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_5.pdf#page=5"
+        }
+      ]
+    }
+  },
+  {
+    "id": "pe-first-aerospace-2024-q14",
+    "number": 14,
+    "text": "燃焼に関する次の記述のうち,最も不適切なものはどれか。",
+    "images": [
+      "/exam-library/pe-first-aerospace-2024/page-09.png"
+    ],
+    "sourcePages": [
+      9
+    ],
+    "sourceQuestionNumber": 14,
+    "correctChoice": 1,
+    "choiceCount": 5,
+    "answerAuthority": "official",
+    "originalPdf": "https://www.engineer.or.jp/c_topics/010/attached/attach_10606_5.pdf",
+    "answerPdf": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_5.pdf#page=5",
+    "explanation": "不適切なのは①。乱流では熱・活性種の輸送や火炎面積が増大し、一般に乱流燃焼速度は層流燃焼速度より大きい。小さいという結論が逆。",
+    "presentation": {
+      "sourceHash": "03d453d8ec35a4012e5d4143d04477d1446ed1da65a81f1d68b6edccb81d458a",
+      "prompt": "燃焼に関する次の記述のうち,最も不適切なものはどれか。",
+      "choices": [
+        {
+          "number": 1,
+          "text": "乱流火炎では熱や活性種の輸送が分子過程に加えて渦などによって行われるために輸送過程が著しく促進される。このため、一般的に乱流燃焼速度は層流燃焼速度に比べて小さい。"
+        },
+        {
+          "number": 2,
+          "text": "気相の燃料と酸化剤がはじめから混合している燃焼を予混合燃焼,燃焼時に燃料と酸化剤が拡散,混合して混合気を形成して燃焼する形態を拡散燃焼と呼ぶ。"
+        },
+        {
+          "number": 3,
+          "text": "混合気が可燃性であるためには,混合気の燃料と酸化剤の混合比,圧力,温度などがある範囲内にある必要があり,その範囲の限界を燃焼限界と呼ぶ。"
+        },
+        {
+          "number": 4,
+          "text": "固体壁の影響で火炎からの熱損失や活性種の流出により燃焼が停止することを消炎と呼び,火炎が影響を受ける限界の距離を消炎距離と呼ぶ。"
+        },
+        {
+          "number": 5,
+          "text": "火炎伝ばの形態には爆轟波と燃焼波がある。爆轟波は衝撃波と化学反応が組み合わさったもので,伝ば速度は音速を超える。燃焼波は高温の既燃ガスからの伝熱や活性種の拡散によって未燃ガスが反応を開始することによって火炎面が伝ばする現象である。"
+        }
+      ],
+      "figures": []
+    },
+    "choiceExplanation": {
+      "sourceHash": "03d453d8ec35a4012e5d4143d04477d1446ed1da65a81f1d68b6edccb81d458a",
+      "correctChoice": 1,
+      "summary": "不適切なのは①。乱流では熱・活性種の輸送や火炎面積が増大し、一般に乱流燃焼速度は層流燃焼速度より大きい。小さいという結論が逆。",
+      "choices": [
+        {
+          "number": 1,
+          "verdict": "correct",
+          "reason": "輸送促進から導く燃焼速度の大小関係が逆で、一般に乱流燃焼速度が大きくなる。"
+        },
+        {
+          "number": 2,
+          "verdict": "incorrect",
+          "reason": "燃焼前に燃料と酸化剤を混ぜる予混合燃焼と、燃焼時に混合する拡散燃焼の定義は適切。"
+        },
+        {
+          "number": 3,
+          "verdict": "incorrect",
+          "reason": "混合比、圧力、温度等の可燃範囲とその限界である燃焼限界の説明は適切。"
+        },
+        {
+          "number": 4,
+          "verdict": "incorrect",
+          "reason": "壁面への熱損失や活性種の失活で火炎が消えることと消炎距離の説明は適切。"
+        },
+        {
+          "number": 5,
+          "verdict": "incorrect",
+          "reason": "爆轟の衝撃波と反応の結合、燃焼波の熱・物質輸送による伝播という対比は適切。"
+        }
+      ],
+      "sources": [
+        {
+          "title": "日本技術士会 公式問題",
+          "url": "https://www.engineer.or.jp/c_topics/010/attached/attach_10606_5.pdf#page=9"
+        },
+        {
+          "title": "日本技術士会 公式正答",
+          "url": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_5.pdf#page=5"
+        }
+      ]
+    }
+  },
+  {
+    "id": "pe-first-aerospace-2024-q15",
+    "number": 15,
+    "text": "スペースデブリに関する次の記述のうち,最も不適切なものはどれか。",
+    "images": [
+      "/exam-library/pe-first-aerospace-2024/page-10.png"
+    ],
+    "sourcePages": [
+      10
+    ],
+    "sourceQuestionNumber": 15,
+    "correctChoice": 5,
+    "choiceCount": 5,
+    "answerAuthority": "official",
+    "originalPdf": "https://www.engineer.or.jp/c_topics/010/attached/attach_10606_5.pdf",
+    "answerPdf": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_5.pdf#page=5",
+    "explanation": "不適切なのは⑤。破砕防止、運用後の軌道離脱、衝突回避、除去技術開発などのデブリ低減活動は行われている。活動がないという断定が誤り。",
+    "presentation": {
+      "sourceHash": "dfcc93ef91f4cffc7378cc6ab1e22e3edbb739dbbb054477eb49a3fe459f6f6d",
+      "prompt": "スペースデブリに関する次の記述のうち,最も不適切なものはどれか。",
+      "choices": [
+        {
+          "number": 1,
+          "text": "スペースデブリとは,地球周回軌道上,あるいは大気圏に再突入してくる無用となったロケット、人工衛星のような人工物体をさし,その中にはそれらから分離した付属品,あるいは経年劣化や破砕などにより出された破片も含む。"
+        },
+        {
+          "number": 2,
+          "text": "地球低軌道ではスペースデブリの軌道速度は7〜8 km/sで,衛星と90度近い交角で衝突することが多いため平均衝突速度は10 km/s程度に達する。"
+        },
+        {
+          "number": 3,
+          "text": "国際宇宙ステーションでの防御設計としては,1 cm径以下のスペースデブリに対しては宇宙機外壁を2重構造とする対策等多くの対策が施されている。また,10cm以上のスペースデブリに対しては衝突回避のため軌道変更で対応している。"
+        },
+        {
+          "number": 4,
+          "text": "地球低軌道のスペースデブリはレーダーで,静止軌道のスペースデブリは光学系で観測し、カタログ化している。観測できる限界は概ね地球低軌道で10cm径以上,静止軌道付近で1m径以上である。"
+        },
+        {
+          "number": 5,
+          "text": "スペースデブリを増やさないためには宇宙機の打ち上げ回数を減らさねばならず社会的要請に照らし不可能であること,スペースデブリは高速で運動し捕獲する手段がないことから,スペースデブリを低減する活動は行われていない。"
+        }
+      ],
+      "figures": []
+    },
+    "choiceExplanation": {
+      "sourceHash": "dfcc93ef91f4cffc7378cc6ab1e22e3edbb739dbbb054477eb49a3fe459f6f6d",
+      "correctChoice": 5,
+      "summary": "不適切なのは⑤。破砕防止、運用後の軌道離脱、衝突回避、除去技術開発などのデブリ低減活動は行われている。活動がないという断定が誤り。",
+      "choices": [
+        {
+          "number": 1,
+          "verdict": "incorrect",
+          "reason": "運用を終えた人工物やその破片を含むスペースデブリの説明は適切。"
+        },
+        {
+          "number": 2,
+          "verdict": "incorrect",
+          "reason": "低軌道の軌道速度7〜8 km/sと、交差軌道での相対速度約10 km/sという規模は妥当。"
+        },
+        {
+          "number": 3,
+          "verdict": "incorrect",
+          "reason": "微小片には防護壁、大きく追跡できる物体には衝突回避という対策の説明は適切。"
+        },
+        {
+          "number": 4,
+          "verdict": "incorrect",
+          "reason": "低軌道でレーダ、静止軌道で光学観測を主に使う従来の監視方式と概略限界を述べている。"
+        },
+        {
+          "number": 5,
+          "verdict": "correct",
+          "reason": "デブリ低減の国際的活動や除去技術の開発は存在するので、何も行われていないとする点が誤り。"
+        }
+      ],
+      "sources": [
+        {
+          "title": "日本技術士会 公式問題",
+          "url": "https://www.engineer.or.jp/c_topics/010/attached/attach_10606_5.pdf#page=10"
+        },
+        {
+          "title": "日本技術士会 公式正答",
+          "url": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_5.pdf#page=5"
+        }
+      ]
+    }
+  },
+  {
+    "id": "pe-first-aerospace-2024-q16",
+    "number": 16,
+    "text": "宇宙放射線に関連する次の記述のうち,最も不適切なものはどれか。",
+    "images": [
+      "/exam-library/pe-first-aerospace-2024/page-10.png"
+    ],
+    "sourcePages": [
+      10
+    ],
+    "sourceQuestionNumber": 16,
+    "correctChoice": 4,
+    "choiceCount": 5,
+    "answerAuthority": "official",
+    "originalPdf": "https://www.engineer.or.jp/c_topics/010/attached/attach_10606_5.pdf",
+    "answerPdf": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_5.pdf#page=5",
+    "explanation": "不適切なのは④。起源による主要な宇宙放射線の分類には銀河宇宙線、太陽粒子線、地磁気に捕捉された粒子線がある。銀河宇宙線を落として二次宇宙線へ置換している。",
+    "presentation": {
+      "sourceHash": "4af3bd4b210642082690a155c929c410cf4d390fe8ce61bafd71fb27a809de23",
+      "prompt": "宇宙放射線に関連する次の記述のうち,最も不適切なものはどれか。",
+      "choices": [
+        {
+          "number": 1,
+          "text": "放射線の特徴は物質に当たったときに物質内の電子を遊離すること,すなわちイオン化することである。"
+        },
+        {
+          "number": 2,
+          "text": "純粋な物質でさえも,放射線に曝されると様々な未知の分子種を含む新しい物質に変化する。生物の体は多成分で不均質な物質であるため,生物への放射線影響の解明は極めて難しい課題である。"
+        },
+        {
+          "number": 3,
+          "text": "LET(Linear Energy Transfer)とは,「荷電粒子が物質の中で,単位の長さを進むごとに物質に局所的に付与するエネルギー」として定義される。"
+        },
+        {
+          "number": 4,
+          "text": "宇宙放射線はその起源と地球との位置関係によって,太陽粒子線,捕捉粒子線,及び二次宇宙線の3種類に大別される。"
+        },
+        {
+          "number": 5,
+          "text": "南大西洋磁気異常帯(SAA; South Atlantic Anomaly)とは,放射線帯が南大西洋の上空に垂れ下がった領域をいい,スペースシャトル飛行での被曝線量の多くは,SAA下端を通過する際のものである。"
+        }
+      ],
+      "figures": []
+    },
+    "choiceExplanation": {
+      "sourceHash": "4af3bd4b210642082690a155c929c410cf4d390fe8ce61bafd71fb27a809de23",
+      "correctChoice": 4,
+      "summary": "不適切なのは④。起源による主要な宇宙放射線の分類には銀河宇宙線、太陽粒子線、地磁気に捕捉された粒子線がある。銀河宇宙線を落として二次宇宙線へ置換している。",
+      "choices": [
+        {
+          "number": 1,
+          "verdict": "incorrect",
+          "reason": "物質を電離させる作用は電離放射線の基本的性質であり、本問の宇宙放射線の文脈に合う。"
+        },
+        {
+          "number": 2,
+          "verdict": "incorrect",
+          "reason": "放射線による化学反応や生体の複雑さのため、影響の解明が難しいという説明は適切。"
+        },
+        {
+          "number": 3,
+          "verdict": "incorrect",
+          "reason": "LETは荷電粒子の単位飛程当たりの局所的なエネルギー付与を表す量である。"
+        },
+        {
+          "number": 4,
+          "verdict": "correct",
+          "reason": "主要な起源として銀河宇宙線を含める必要があり、太陽・捕捉・二次の三分類とする点が不適切。"
+        },
+        {
+          "number": 5,
+          "verdict": "incorrect",
+          "reason": "SAAでは放射線帯の下端が低高度へ近づき、低軌道の宇宙機でも放射線被曝が増す。"
+        }
+      ],
+      "sources": [
+        {
+          "title": "日本技術士会 公式問題",
+          "url": "https://www.engineer.or.jp/c_topics/010/attached/attach_10606_5.pdf#page=10"
+        },
+        {
+          "title": "日本技術士会 公式正答",
+          "url": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_5.pdf#page=5"
+        }
+      ]
+    }
+  },
+  {
+    "id": "pe-first-aerospace-2024-q17",
+    "number": 17,
+    "text": "宇宙環境が「人工衛星などの宇宙機」へ与える影響と対策について,次の記述のうち,最も不適切なものはどれか。",
+    "images": [
+      "/exam-library/pe-first-aerospace-2024/page-11.png"
+    ],
+    "sourcePages": [
+      11
+    ],
+    "sourceQuestionNumber": 17,
+    "correctChoice": 1,
+    "choiceCount": 5,
+    "answerAuthority": "official",
+    "originalPdf": "https://www.engineer.or.jp/c_topics/010/attached/attach_10606_5.pdf",
+    "answerPdf": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_5.pdf#page=5",
+    "explanation": "公式正答は①。宇宙機は内部発熱をラジエータ等で外へ放射する必要があり、外部と完全断熱することはできない。⑤の用語にも注意し、結晶欠陥を生む変位損傷と電離によるトータルドーズ効果は厳密には区別する。",
+    "presentation": {
+      "sourceHash": "a55772b94c5db6cd25433c53e06553e38905a209c5b95b312a05b291330d7af2",
+      "prompt": "宇宙環境が「人工衛星などの宇宙機」へ与える影響と対策について,次の記述のうち,最も不適切なものはどれか。",
+      "choices": [
+        {
+          "number": 1,
+          "text": "中低高度地球周回宇宙機は「太陽照射」,「地球アルベド」,「地球自らの赤外放射」による熱負荷と,2.7Kの「ヒートシンク」である宇宙空間に曝されるため,宇宙機の外周は全て断熱材で覆い,外部とは完全に断熱する。"
+        },
+        {
+          "number": 2,
+          "text": "国際宇宙ステーションが飛行している高度400km程度の軌道大気組成は,化学反応性の強い原子状酸素が支配的である。防御策として,「βクロス」で宇宙機を覆っている。"
+        },
+        {
+          "number": 3,
+          "text": "宇宙機搭載電子機器・部品表面からの「アウトガス」が,高電圧の端子付近に残留することにより,「コロナ放電」を誘発し,機器の不具合をもたらすことがある。防止策として打上げ前及び打上げ後の一定期間において「ベーキング」を行う。"
+        },
+        {
+          "number": 4,
+          "text": "無重力状態では,電子機器などの容器内に浮遊物があったりすると,ショートを起こしたり可動を妨げることがある。対策として機器内部を「ポッティング」や「コーティング」する。"
+        },
+        {
+          "number": 5,
+          "text": "太陽電池パネルが宇宙放射線により結晶構造に欠陥(変位損傷)を生じる「トータルドーズ効果」は,出力電力の低下をもたらす。対策としては,太陽電池セル表面に「カバーガラス」を貼り付ける。"
+        }
+      ],
+      "figures": []
+    },
+    "choiceExplanation": {
+      "sourceHash": "a55772b94c5db6cd25433c53e06553e38905a209c5b95b312a05b291330d7af2",
+      "correctChoice": 1,
+      "summary": "公式正答は①。宇宙機は内部発熱をラジエータ等で外へ放射する必要があり、外部と完全断熱することはできない。⑤の用語にも注意し、結晶欠陥を生む変位損傷と電離によるトータルドーズ効果は厳密には区別する。",
+      "choices": [
+        {
+          "number": 1,
+          "verdict": "correct",
+          "reason": "外部熱流入を断熱材で抑えるだけでは内部発熱を排出できず、ラジエータなどの放熱経路が必要。"
+        },
+        {
+          "number": 2,
+          "verdict": "incorrect",
+          "reason": "低軌道の原子状酸素による表面侵食は、βクロス等の耐環境材料で抑制する対策がある。"
+        },
+        {
+          "number": 3,
+          "verdict": "incorrect",
+          "reason": "アウトガスによる放電・汚染を抑えるため、加熱脱ガスであるベーキングを行う説明は適切。"
+        },
+        {
+          "number": 4,
+          "verdict": "incorrect",
+          "reason": "無重力で浮遊する粒子の短絡や機構干渉を防ぐために、ポッティングやコーティングが用いられる。"
+        },
+        {
+          "number": 5,
+          "verdict": "incorrect",
+          "reason": "太陽電池の放射線劣化とカバーガラス対策は実在する。ただし原文の用語は粗く、変位損傷DDと電離のTIDは区別する。公式採点は①。"
+        }
+      ],
+      "sources": [
+        {
+          "title": "日本技術士会 公式問題",
+          "url": "https://www.engineer.or.jp/c_topics/010/attached/attach_10606_5.pdf#page=11"
+        },
+        {
+          "title": "日本技術士会 公式正答",
+          "url": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_5.pdf#page=5"
+        },
+        {
+          "title": "JAXA 宇宙転用可能部品の宇宙適用ハンドブック 4.4.6 TID及びDD",
+          "url": "https://sma.jaxa.jp/TechDoc/Docs/JAXA-JERG-0-052B.pdf"
+        }
+      ]
+    }
+  },
+  {
+    "id": "pe-first-aerospace-2024-q18",
+    "number": 18,
+    "text": "科学観測用大気球に関する次の記述のうち,最も不適切なものはどれか。",
+    "images": [
+      "/exam-library/pe-first-aerospace-2024/page-11.png"
+    ],
+    "sourcePages": [
+      11
+    ],
+    "sourceQuestionNumber": 18,
+    "correctChoice": 5,
+    "choiceCount": 5,
+    "answerAuthority": "official",
+    "originalPdf": "https://www.engineer.or.jp/c_topics/010/attached/attach_10606_5.pdf",
+    "answerPdf": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_5.pdf#page=5",
+    "explanation": "不適切なのは⑤。日本のブーメラン気球では成層圏の風が適した春〜初夏や晩夏〜秋の時期を利用する。1〜2月を選ぶという記述が違う。",
+    "presentation": {
+      "sourceHash": "a756db15262a1e7117dec2e70d5169626ccbd43eafbbbf89d25c450475e6f8b7",
+      "prompt": "科学観測用大気球に関する次の記述のうち,最も不適切なものはどれか。",
+      "choices": [
+        {
+          "number": 1,
+          "text": "低コストで高々度における長時間観測を行うことができ,装置の形状自由度が高く,しかも観測器をパラシュートにより地上に回収して再使用できるため,多くの国で科学観測に活用されている。"
+        },
+        {
+          "number": 2,
+          "text": "高度30km以上になると大気による吸収や散乱の影響が地上よりもはるかに小さくなるので天文学の分野,宇宙線などの粒子線の分野などの宇宙観測を行うことができる。"
+        },
+        {
+          "number": 3,
+          "text": "比較的容易に数十kgから数tのペイロードを高度20~30km程度に上昇させることができるため,超音速流域から亜音速流域の飛翔データの取得や飛行実証に有効である。"
+        },
+        {
+          "number": 4,
+          "text": "飛翔時間は通常10時間程度であるが,上層風が非常に弱い時期をとらえた方式により100時間近い飛翔をさせた記録もある。"
+        },
+        {
+          "number": 5,
+          "text": "飛翔範囲は上層風の風向・風速に依存するので,風の条件が飛翔目的に合致する時期を選んで飛翔させる。日本の場合,気球が上昇する際は偏西風に流されて太平洋沖に進み、成層圏まで高度が上がると偏東風に乗ってゆっくり戻ってくる,1~2月が選ばれている。"
+        }
+      ],
+      "figures": []
+    },
+    "choiceExplanation": {
+      "sourceHash": "a756db15262a1e7117dec2e70d5169626ccbd43eafbbbf89d25c450475e6f8b7",
+      "correctChoice": 5,
+      "summary": "不適切なのは⑤。日本のブーメラン気球では成層圏の風が適した春〜初夏や晩夏〜秋の時期を利用する。1〜2月を選ぶという記述が違う。",
+      "choices": [
+        {
+          "number": 1,
+          "verdict": "incorrect",
+          "reason": "高高度で長時間観測し、観測装置を回収・再利用できる大気球の利点を述べている。"
+        },
+        {
+          "number": 2,
+          "verdict": "incorrect",
+          "reason": "高高度では大気による吸収・散乱が小さく、天文学や宇宙線の観測に有利となる。"
+        },
+        {
+          "number": 3,
+          "verdict": "incorrect",
+          "reason": "大きなペイロードを高高度へ運び、落下等によって飛行実験を行う用途の説明は適切。"
+        },
+        {
+          "number": 4,
+          "verdict": "incorrect",
+          "reason": "通常の短時間飛翔に加え、風の条件を利用して長時間飛翔させる実績がある。"
+        },
+        {
+          "number": 5,
+          "verdict": "correct",
+          "reason": "偏西風と成層圏の偏東風を使うブーメラン方式に適するのは1〜2月ではなく、春や夏〜秋の適期である。"
+        }
+      ],
+      "sources": [
+        {
+          "title": "日本技術士会 公式問題",
+          "url": "https://www.engineer.or.jp/c_topics/010/attached/attach_10606_5.pdf#page=11"
+        },
+        {
+          "title": "日本技術士会 公式正答",
+          "url": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_5.pdf#page=5"
+        }
+      ]
+    }
+  },
+  {
+    "id": "pe-first-aerospace-2024-q19",
+    "number": 19,
+    "text": "宇宙天気に関する次の記述のうち,最も不適切なものはどれか。",
+    "images": [
+      "/exam-library/pe-first-aerospace-2024/page-12.png"
+    ],
+    "sourcePages": [
+      12
+    ],
+    "sourceQuestionNumber": 19,
+    "correctChoice": 3,
+    "choiceCount": 5,
+    "answerAuthority": "official",
+    "originalPdf": "https://www.engineer.or.jp/c_topics/010/attached/attach_10606_5.pdf",
+    "answerPdf": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_5.pdf#page=5",
+    "explanation": "不適切なのは③。フレアのX線・紫外線で電離層D領域の電離が増え短波が吸収されるのはデリンジャー現象。シングルイベントは粒子1個の入射による機器の誤動作等を指す。",
+    "presentation": {
+      "sourceHash": "b4dccd87fa162f174788ee390f141bdf2bb0e21f78496a423717e4878d5dc05c",
+      "prompt": "宇宙天気に関する次の記述のうち,最も不適切なものはどれか。",
+      "choices": [
+        {
+          "number": 1,
+          "text": "宇宙環境の擾乱で発生する被害は,遠い領域から順に①人工衛星への障害,②通信システム・ナビゲーションシステムへの障害,③有人宇宙活動・宇宙飛行士への障害,④地上インフラへの障害,に大別できる。"
+        },
+        {
+          "number": 2,
+          "text": "太陽フレアとは,太陽大気中で起こる爆発的増光現象のことで,可視光に限らず電波からガンマ線に至るまであらゆる波長領域で電磁波の強度が突発的に増加する。"
+        },
+        {
+          "number": 3,
+          "text": "太陽フレアの発生により放射される強いx線と紫外線が,昼間においてD層と呼ばれる電離層を作り,このために短波通信ができなくなることがある。この現象をシングルイベント現象と呼ぶ。"
+        },
+        {
+          "number": 4,
+          "text": "太陽フレアにともなって高温の大気であるコロナが噴出するコロナ質量放出(CME;CoronalMassEjection)が地球に磁気嵐を起こす。"
+        },
+        {
+          "number": 5,
+          "text": "磁気嵐とは,中・低緯度で数時間~数日にわたって,地球磁場の水平成分が大きく減少する現象で,オーロラや電波障害を発生させることがある。"
+        }
+      ],
+      "figures": []
+    },
+    "choiceExplanation": {
+      "sourceHash": "b4dccd87fa162f174788ee390f141bdf2bb0e21f78496a423717e4878d5dc05c",
+      "correctChoice": 3,
+      "summary": "不適切なのは③。フレアのX線・紫外線で電離層D領域の電離が増え短波が吸収されるのはデリンジャー現象。シングルイベントは粒子1個の入射による機器の誤動作等を指す。",
+      "choices": [
+        {
+          "number": 1,
+          "verdict": "incorrect",
+          "reason": "宇宙環境の擾乱は衛星、通信・測位、有人活動、地上インフラ等へ影響する。"
+        },
+        {
+          "number": 2,
+          "verdict": "incorrect",
+          "reason": "太陽フレアは広い電磁波の波長域で放射が急増する太陽大気の現象である。"
+        },
+        {
+          "number": 3,
+          "verdict": "correct",
+          "reason": "短波通信障害の名称はデリンジャー現象であり、半導体などのシングルイベント現象とは異なる。"
+        },
+        {
+          "number": 4,
+          "verdict": "incorrect",
+          "reason": "CMEに伴う太陽風の擾乱が地球磁気圏へ作用して磁気嵐を起こすという説明は適切。"
+        },
+        {
+          "number": 5,
+          "verdict": "incorrect",
+          "reason": "磁気嵐で地磁気の水平成分が低下し、オーロラや通信障害を伴い得るという説明は適切。"
+        }
+      ],
+      "sources": [
+        {
+          "title": "日本技術士会 公式問題",
+          "url": "https://www.engineer.or.jp/c_topics/010/attached/attach_10606_5.pdf#page=12"
+        },
+        {
+          "title": "日本技術士会 公式正答",
+          "url": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_5.pdf#page=5"
+        }
+      ]
+    }
+  },
+  {
+    "id": "pe-first-aerospace-2024-q20",
+    "number": 20,
+    "text": "惑星スイングバイに関する次の記述のうち,最も不適切なものはどれか。",
+    "images": [
+      "/exam-library/pe-first-aerospace-2024/page-12.png"
+    ],
+    "sourcePages": [
+      12
+    ],
+    "sourceQuestionNumber": 20,
+    "correctChoice": 1,
+    "choiceCount": 5,
+    "answerAuthority": "official",
+    "originalPdf": "https://www.engineer.or.jp/c_topics/010/attached/attach_10606_5.pdf",
+    "answerPdf": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_5.pdf#page=5",
+    "explanation": "不適切なのは①。惑星に対して非束縛のフライバイ軌道は双曲線。遠方での相対速さは前後で等しく、方向が変わり、太陽系での速さ・エネルギーが変化する。",
+    "presentation": {
+      "sourceHash": "837532f69a9d1490c860f5eaa16b271213b6368b484c82d61b1f9f8021407489",
+      "prompt": "惑星スイングバイに関する次の記述のうち,最も不適切なものはどれか。",
+      "choices": [
+        {
+          "number": 1,
+          "text": "惑星スイングバイを行う探査機の軌道は,惑星から見ると放物線を描き,接近時と離脱時はその惑星に対する相対速度の大きさは等しいが,相対速度の方向は曲げられる。"
+        },
+        {
+          "number": 2,
+          "text": "惑星スイングバイの前後では,太陽を中心とする探査機の運動が持つエネルギーと角運動量が変わる。"
+        },
+        {
+          "number": 3,
+          "text": "惑星表面の最接近点近くで重力の力だけではなく搭載エンジンによる加減速も行い,さらに軌道修正能力を高める方法を,パワード惑星スイングバイと呼ぶ。"
+        },
+        {
+          "number": 4,
+          "text": "惑星に大気が存在する場合に,その大気の表面のぎりぎりを通過させることにより,燃料を使用せずに減速効果を高める方法を,大気制動スイングバイと呼ぶ。"
+        },
+        {
+          "number": 5,
+          "text": "惑星スイングバイにより発生する制約には,本来その惑星に向かう必要がないにも関わらずそのための探査機の設計条件を整える必要があること,直接目標地点に向かわず寄り道をするために飛行時間が長くかかってしまうこと,飛行計画全体が惑星の公転運動に制約されることがある。"
+        }
+      ],
+      "figures": []
+    },
+    "choiceExplanation": {
+      "sourceHash": "837532f69a9d1490c860f5eaa16b271213b6368b484c82d61b1f9f8021407489",
+      "correctChoice": 1,
+      "summary": "不適切なのは①。惑星に対して非束縛のフライバイ軌道は双曲線。遠方での相対速さは前後で等しく、方向が変わり、太陽系での速さ・エネルギーが変化する。",
+      "choices": [
+        {
+          "number": 1,
+          "verdict": "correct",
+          "reason": "惑星中心系でのフライバイ軌道は放物線でなく双曲線である。遠方の速度の大きさが等しい点は合う。"
+        },
+        {
+          "number": 2,
+          "verdict": "incorrect",
+          "reason": "惑星が公転しているため、太陽中心系で見た探査機のエネルギーと角運動量を変えられる。"
+        },
+        {
+          "number": 3,
+          "verdict": "incorrect",
+          "reason": "最近点付近で推進機の加減速も組み合わせるパワードスイングバイの説明は適切。"
+        },
+        {
+          "number": 4,
+          "verdict": "incorrect",
+          "reason": "大気を利用した制動によって燃料消費を抑える方式の説明であり、本問では適切。"
+        },
+        {
+          "number": 5,
+          "verdict": "incorrect",
+          "reason": "経由惑星への接近条件、飛行時間、惑星配置による日程制約が生じるという説明は適切。"
+        }
+      ],
+      "sources": [
+        {
+          "title": "日本技術士会 公式問題",
+          "url": "https://www.engineer.or.jp/c_topics/010/attached/attach_10606_5.pdf#page=12"
+        },
+        {
+          "title": "日本技術士会 公式正答",
+          "url": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_5.pdf#page=5"
+        }
+      ]
+    }
+  },
+  {
+    "id": "pe-first-aerospace-2024-q21",
+    "number": 21,
+    "text": "2024年度 航空・宇宙部門 専門科目 Ⅲ－21。下の公式原問画像の当該番号に解答してください。同じページにある別の設問は対象外です。",
+    "images": [
+      "/exam-library/pe-first-aerospace-2024/page-13.png"
+    ],
+    "sourcePages": [
+      13
+    ],
+    "sourceQuestionNumber": 21,
+    "correctChoice": 5,
+    "choiceCount": 5,
+    "answerAuthority": "official",
+    "originalPdf": "https://www.engineer.or.jp/c_topics/010/attached/attach_10606_5.pdf",
+    "answerPdf": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_5.pdf#page=5",
+    "explanation": "情報源符号化→通信路符号化→変調→衛星伝送→復調→通信路復号→情報源復号の順。上下回線には雑音・干渉が加わる。⑤。",
+    "presentation": {
+      "sourceHash": "1cb6fafaccefdd79a77f3d4c6c242c4778a68c9b945c91b0c91cf92794ede177",
+      "prompt": "2024年度 航空・宇宙部門 専門科目 Ⅲ－21。下の公式原問画像の当該番号に解答してください。同じページにある別の設問は対象外です。",
+      "choices": [
+        {
+          "number": 1,
+          "text": "①"
+        },
+        {
+          "number": 2,
+          "text": "②"
+        },
+        {
+          "number": 3,
+          "text": "③"
+        },
+        {
+          "number": 4,
+          "text": "④"
+        },
+        {
+          "number": 5,
+          "text": "⑤"
+        }
+      ],
+      "figures": [
+        {
+          "src": "/exam-library/pe-first-aerospace-2024/page-13.png",
+          "width": 1073,
+          "height": 1517,
+          "alt": "2024年度 航空・宇宙部門 専門科目 Ⅲ－21の公式原問（PDF 13ページ）。当該番号の問題文・全選択肢・図表を確認してください。"
+        }
+      ]
+    },
+    "choiceExplanation": {
+      "sourceHash": "1cb6fafaccefdd79a77f3d4c6c242c4778a68c9b945c91b0c91cf92794ede177",
+      "correctChoice": 5,
+      "summary": "情報源符号化→通信路符号化→変調→衛星伝送→復調→通信路復号→情報源復号の順。上下回線には雑音・干渉が加わる。⑤。",
+      "choices": [
+        {
+          "number": 1,
+          "verdict": "incorrect",
+          "reason": "情報源と通信路の符号化の位置に変調・復調を入れ、送受信処理の順序が合わない。"
+        },
+        {
+          "number": 2,
+          "verdict": "incorrect",
+          "reason": "情報源・通信路は合うが、CとDは雑音ではなく変調と復調、Eは雑音・干渉である。"
+        },
+        {
+          "number": 3,
+          "verdict": "incorrect",
+          "reason": "AやBは符号化の分類であり、雑音・情報の組合せではディジタル伝送の順序にならない。"
+        },
+        {
+          "number": 4,
+          "verdict": "incorrect",
+          "reason": "符号化を行うAとBに変調・雑音を入れており、復調の位置も違う。"
+        },
+        {
+          "number": 5,
+          "verdict": "correct",
+          "reason": "A=情報源、B=通信路、C=変調、D=復調、E=雑音・干渉がブロックの役割に対応する。"
+        }
+      ],
+      "sources": [
+        {
+          "title": "日本技術士会 公式問題",
+          "url": "https://www.engineer.or.jp/c_topics/010/attached/attach_10606_5.pdf#page=13"
+        },
+        {
+          "title": "日本技術士会 公式正答",
+          "url": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_5.pdf#page=5"
+        }
+      ]
+    }
+  },
+  {
+    "id": "pe-first-aerospace-2024-q22",
+    "number": 22,
+    "text": "地上から打ち上げるロケットの速度損失に関する次の記述のうち,最も不適切なものはどれか。",
+    "images": [
+      "/exam-library/pe-first-aerospace-2024/page-13.png"
+    ],
+    "sourcePages": [
+      13
+    ],
+    "sourceQuestionNumber": 22,
+    "correctChoice": 5,
+    "choiceCount": 5,
+    "answerAuthority": "official",
+    "originalPdf": "https://www.engineer.or.jp/c_topics/010/attached/attach_10606_5.pdf",
+    "answerPdf": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_5.pdf#page=5",
+    "explanation": "不適切なのは⑤。重力・空気抵抗・背圧・操舵などによる速度損失は地上打上げで無視できず、最終速度の約2%だけとする値は小さすぎる。",
+    "presentation": {
+      "sourceHash": "0b430552a97dfa84f04f22b90f08b4e1aab12592ea978c347932aae0743c2795",
+      "prompt": "地上から打ち上げるロケットの速度損失に関する次の記述のうち,最も不適切なものはどれか。",
+      "choices": [
+        {
+          "number": 1,
+          "text": "ロケットが重力加速度で地心に引かれていることによる損失がある。"
+        },
+        {
+          "number": 2,
+          "text": "ロケットの機体が空気抵抗を受けることによる損失がある。"
+        },
+        {
+          "number": 3,
+          "text": "ロケットエンジンの噴射ガスが噴出する環境が真空でないことによる損失がある。"
+        },
+        {
+          "number": 4,
+          "text": "ロケットの進行方向と速度方向が一致していないことによる損失がある。"
+        },
+        {
+          "number": 5,
+          "text": "速度損失の合計は,ロケットの最終速度の約2%をしめる。"
+        }
+      ],
+      "figures": []
+    },
+    "choiceExplanation": {
+      "sourceHash": "0b430552a97dfa84f04f22b90f08b4e1aab12592ea978c347932aae0743c2795",
+      "correctChoice": 5,
+      "summary": "不適切なのは⑤。重力・空気抵抗・背圧・操舵などによる速度損失は地上打上げで無視できず、最終速度の約2%だけとする値は小さすぎる。",
+      "choices": [
+        {
+          "number": 1,
+          "verdict": "incorrect",
+          "reason": "推力の一部を重力に抗して使うため、理想速度増分から重力損失が差し引かれる。"
+        },
+        {
+          "number": 2,
+          "verdict": "incorrect",
+          "reason": "大気中では空力抵抗が加速を妨げ、抵抗による速度損失が生じる。"
+        },
+        {
+          "number": 3,
+          "verdict": "incorrect",
+          "reason": "外部圧力はノズル圧力推力を減らし、真空での推力より低下させる。"
+        },
+        {
+          "number": 4,
+          "verdict": "incorrect",
+          "reason": "推力方向と速度方向がずれると、速度方向への推力成分が減って操舵損失が生じる。"
+        },
+        {
+          "number": 5,
+          "verdict": "correct",
+          "reason": "地上打上げの重力損失等は一般にkm/s規模にもなり、合計を約2%とするのは過小。"
+        }
+      ],
+      "sources": [
+        {
+          "title": "日本技術士会 公式問題",
+          "url": "https://www.engineer.or.jp/c_topics/010/attached/attach_10606_5.pdf#page=13"
+        },
+        {
+          "title": "日本技術士会 公式正答",
+          "url": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_5.pdf#page=5"
+        }
+      ]
+    }
+  },
+  {
+    "id": "pe-first-aerospace-2024-q23",
+    "number": 23,
+    "text": "高度500 kmの円軌道で地球を周回する宇宙機の軌道速度は、高度5000 kmの円軌道の軌道速度のおよそ何倍となるかについて、次のうち最も近い値はどれか。ただし、地球を半径6400 kmの真球と仮定する。",
+    "images": [
+      "/exam-library/pe-first-aerospace-2024/page-13.png"
+    ],
+    "sourcePages": [
+      13
+    ],
+    "sourceQuestionNumber": 23,
+    "correctChoice": 1,
+    "choiceCount": 5,
+    "answerAuthority": "official",
+    "originalPdf": "https://www.engineer.or.jp/c_topics/010/attached/attach_10606_5.pdf",
+    "answerPdf": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_5.pdf#page=5",
+    "explanation": "円軌道の速さは√(μ/r)。高度500 kmと5000 kmの比は√((6400+5000)/(6400+500))=√(11400/6900)≒1.285。①。",
+    "presentation": {
+      "sourceHash": "993dc3b2f54430a4a7d22fb7962a8a217ab16121c06fe4702baff933000f4637",
+      "prompt": "高度500 kmの円軌道で地球を周回する宇宙機の軌道速度は、高度5000 kmの円軌道の軌道速度のおよそ何倍となるかについて、次のうち最も近い値はどれか。ただし、地球を半径6400 kmの真球と仮定する。",
+      "choices": [
+        {
+          "number": 1,
+          "text": "約1.3倍"
+        },
+        {
+          "number": 2,
+          "text": "約0.8倍"
+        },
+        {
+          "number": 3,
+          "text": "約2.7倍"
+        },
+        {
+          "number": 4,
+          "text": "約3.2倍"
+        },
+        {
+          "number": 5,
+          "text": "約1.7倍"
+        }
+      ],
+      "figures": []
+    },
+    "choiceExplanation": {
+      "sourceHash": "993dc3b2f54430a4a7d22fb7962a8a217ab16121c06fe4702baff933000f4637",
+      "correctChoice": 1,
+      "summary": "円軌道の速さは√(μ/r)。高度500 kmと5000 kmの比は√((6400+5000)/(6400+500))=√(11400/6900)≒1.285。①。",
+      "choices": [
+        {
+          "number": 1,
+          "verdict": "correct",
+          "reason": "地球中心からの半径比の逆平方根を用いると約1.3倍となる。"
+        },
+        {
+          "number": 2,
+          "verdict": "incorrect",
+          "reason": "0.8倍は大小を逆にした値。低い円軌道の方が速い。"
+        },
+        {
+          "number": 3,
+          "verdict": "incorrect",
+          "reason": "高度だけの比を使ってはいけない。地球半径6400 kmを加えて半径を求める。"
+        },
+        {
+          "number": 4,
+          "verdict": "incorrect",
+          "reason": "3.2倍は中心からの半径による円軌道速度式と合わず、速さ比を過大に見積もる。"
+        },
+        {
+          "number": 5,
+          "verdict": "incorrect",
+          "reason": "1.7倍ではない。半径比11400/6900の平方根は約1.285である。"
+        }
+      ],
+      "sources": [
+        {
+          "title": "日本技術士会 公式問題",
+          "url": "https://www.engineer.or.jp/c_topics/010/attached/attach_10606_5.pdf#page=13"
+        },
+        {
+          "title": "日本技術士会 公式正答",
+          "url": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_5.pdf#page=5"
+        }
+      ]
+    }
+  },
+  {
+    "id": "pe-first-aerospace-2024-q24",
+    "number": 24,
+    "text": "ロケットエンジンのノズル形状を選定するに当たって考慮すべき点に関する次の記述のうち,最も不適切なものはどれか。",
+    "images": [
+      "/exam-library/pe-first-aerospace-2024/page-14.png"
+    ],
+    "sourcePages": [
+      14
+    ],
+    "sourceQuestionNumber": 24,
+    "correctChoice": 1,
+    "choiceCount": 5,
+    "answerAuthority": "official",
+    "originalPdf": "https://www.engineer.or.jp/c_topics/010/attached/attach_10606_5.pdf",
+    "answerPdf": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_5.pdf#page=5",
+    "explanation": "不適切なのは①。ノズルを短くすれば壁面接触面積・摩擦損失は一般に減る。一方、拡がり角を大きくすると半径方向速度による発散損失などが増える。",
+    "presentation": {
+      "sourceHash": "1e5aca9fc1a164703b68bcb9f3507e8deef8fcde45bfe92f310f461a34171fef",
+      "prompt": "ロケットエンジンのノズル形状を選定するに当たって考慮すべき点に関する次の記述のうち,最も不適切なものはどれか。",
+      "choices": [
+        {
+          "number": 1,
+          "text": "ノズルの拡がり角が大きく全長が短いほど,壁面による摩擦損失が大きくなる。"
+        },
+        {
+          "number": 2,
+          "text": "ノズルの長さの増加に伴ってノズル構造部材の重量が増加するとともに,それを装着するためのロケット本体の構造も重くなる。"
+        },
+        {
+          "number": 3,
+          "text": "ノズル出口外径が大きくなると,構造部材の重量が増大するとともに,大気中でのロケット飛行時の抵抗が増加する。"
+        },
+        {
+          "number": 4,
+          "text": "拡がり角を大きくするとノズルの長さは短くなるが,ある程度以上に大きくなると,超過膨脹の場合にガス流のはく離を起こしやすくなる。"
+        },
+        {
+          "number": 5,
+          "text": "ノズル出口で半径方向のガス速度成分が大きいと,推力として作用する有効な運動エネルギーが減少する。"
+        }
+      ],
+      "figures": []
+    },
+    "choiceExplanation": {
+      "sourceHash": "1e5aca9fc1a164703b68bcb9f3507e8deef8fcde45bfe92f310f461a34171fef",
+      "correctChoice": 1,
+      "summary": "不適切なのは①。ノズルを短くすれば壁面接触面積・摩擦損失は一般に減る。一方、拡がり角を大きくすると半径方向速度による発散損失などが増える。",
+      "choices": [
+        {
+          "number": 1,
+          "verdict": "correct",
+          "reason": "拡がり角が大きく短いノズルほど壁面摩擦損失が大きいという説明は、長さと摩擦の傾向が逆。"
+        },
+        {
+          "number": 2,
+          "verdict": "incorrect",
+          "reason": "長いノズルは本体だけでなく取付け構造の重量も増やすので、設計上の考慮事項に合う。"
+        },
+        {
+          "number": 3,
+          "verdict": "incorrect",
+          "reason": "大きな出口径は重量と、大気中での機体抵抗に影響するので考慮が必要である。"
+        },
+        {
+          "number": 4,
+          "verdict": "incorrect",
+          "reason": "過大な拡がり角や過膨張では壁面近くの流れが剥離しやすくなるので適切。"
+        },
+        {
+          "number": 5,
+          "verdict": "incorrect",
+          "reason": "軸から外れる半径方向速度は軸推力に寄与せず、発散損失になるという説明は適切。"
+        }
+      ],
+      "sources": [
+        {
+          "title": "日本技術士会 公式問題",
+          "url": "https://www.engineer.or.jp/c_topics/010/attached/attach_10606_5.pdf#page=14"
+        },
+        {
+          "title": "日本技術士会 公式正答",
+          "url": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_5.pdf#page=5"
+        }
+      ]
+    }
+  },
+  {
+    "id": "pe-first-aerospace-2024-q25",
+    "number": 25,
+    "text": "ロケットに搭載する液体推進薬に関する次の記述のうち、最も不適切なものはどれか。",
+    "images": [
+      "/exam-library/pe-first-aerospace-2024/page-14.png"
+    ],
+    "sourcePages": [
+      14
+    ],
+    "sourceQuestionNumber": 25,
+    "correctChoice": 2,
+    "choiceCount": 5,
+    "answerAuthority": "official",
+    "originalPdf": "https://www.engineer.or.jp/c_topics/010/attached/attach_10606_5.pdf",
+    "answerPdf": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_5.pdf#page=5",
+    "explanation": "不適切なのは②。冷却用の推進薬は大きい比熱・良い熱伝達と適切な沸騰特性が望ましく、比熱・熱伝導率が小さく低沸点ならよいという一般化は逆。",
+    "presentation": {
+      "sourceHash": "1f5ef44735400b6667df49d00dba28755325dbece3013b1fabdf4dcea17e95e0",
+      "prompt": "ロケットに搭載する液体推進薬に関する次の記述のうち、最も不適切なものはどれか。",
+      "choices": [
+        {
+          "number": 1,
+          "text": "推進薬の使用に当たって考慮しなければならない性質は,温度変化や衝撃による爆発の危険性,構造材料に対する腐食性,生物に対する毒性などがある。"
+        },
+        {
+          "number": 2,
+          "text": "推力室の冷却に液体推進薬を用いる場合には,その比熱及び熱伝導率が小さく沸点が低いことが望ましい。"
+        },
+        {
+          "number": 3,
+          "text": "液体推進薬の供給にターボポンプ等を用いる場合にはその蒸気圧が低く粘性が小さいことが望ましい。"
+        },
+        {
+          "number": 4,
+          "text": "一液推進薬は,通常の大気状態では安定で,触媒あるいは加熱,加圧などによって反応して高温ガスを発生する単一物質又は混合物の液体である。"
+        },
+        {
+          "number": 5,
+          "text": "極低温で液体状態を保っている推進薬の貯蔵には,タンクの断熱に注意し蒸発損失を少なくすること,また蒸発したガスに対してリリーフ機能を設けることが必要になる。"
+        }
+      ],
+      "figures": []
+    },
+    "choiceExplanation": {
+      "sourceHash": "1f5ef44735400b6667df49d00dba28755325dbece3013b1fabdf4dcea17e95e0",
+      "correctChoice": 2,
+      "summary": "不適切なのは②。冷却用の推進薬は大きい比熱・良い熱伝達と適切な沸騰特性が望ましく、比熱・熱伝導率が小さく低沸点ならよいという一般化は逆。",
+      "choices": [
+        {
+          "number": 1,
+          "verdict": "incorrect",
+          "reason": "爆発性、腐食性、毒性は推進薬の取扱いと材料適合性に関わる重要な選定条件。"
+        },
+        {
+          "number": 2,
+          "verdict": "correct",
+          "reason": "冷却性能のため小さい比熱・熱伝導率を望ましいとする点が不適切。大きな熱吸収能力が必要。"
+        },
+        {
+          "number": 3,
+          "verdict": "incorrect",
+          "reason": "低い蒸気圧はキャビテーションを抑え、低粘性は配管・ポンプの流動損失を抑える。"
+        },
+        {
+          "number": 4,
+          "verdict": "incorrect",
+          "reason": "一液推進薬は一種類の液体供給系で触媒分解等により高温ガスを得るものをいう。"
+        },
+        {
+          "number": 5,
+          "verdict": "incorrect",
+          "reason": "極低温推進薬には断熱による蒸発損失の抑制と、蒸発ガスの過圧を防ぐ逃し機能が必要。"
+        }
+      ],
+      "sources": [
+        {
+          "title": "日本技術士会 公式問題",
+          "url": "https://www.engineer.or.jp/c_topics/010/attached/attach_10606_5.pdf#page=14"
+        },
+        {
+          "title": "日本技術士会 公式正答",
+          "url": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_5.pdf#page=5"
+        }
+      ]
+    }
+  },
+  {
+    "id": "pe-first-aerospace-2024-q26",
+    "number": 26,
+    "text": "人工衛星の姿勢制御に関する次の記述のうち,最も不適切なものはどれか。",
+    "images": [
+      "/exam-library/pe-first-aerospace-2024/page-15.png"
+    ],
+    "sourcePages": [
+      15
+    ],
+    "sourceQuestionNumber": 26,
+    "correctChoice": 4,
+    "choiceCount": 5,
+    "answerAuthority": "official",
+    "originalPdf": "https://www.engineer.or.jp/c_topics/010/attached/attach_10606_5.pdf",
+    "answerPdf": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_5.pdf#page=5",
+    "explanation": "不適切なのは④。バイアス角運動量とジャイロ剛性を利用する記述はモーメンタムホイール。リアクションホイールは主に回転数変化による角運動量交換で制御する。",
+    "presentation": {
+      "sourceHash": "f617ce190d2f6994b0411aeb264838c690e06bbcf0eb4064f46d42d3154f7bfb",
+      "prompt": "人工衛星の姿勢制御に関する次の記述のうち,最も不適切なものはどれか。",
+      "choices": [
+        {
+          "number": 1,
+          "text": "一般にモーメンタムホイールは,蓄積できる角運動量,慣性モーメント,重量がリアクションホイールよりも大きくなる。"
+        },
+        {
+          "number": 2,
+          "text": "磁気トルカは人工衛星内部の磁気コイルに電流を流し,発生する磁気モーメントと,地球磁場との干渉で制御力を発生するものであり,連続的に出力を得られる点で優れているが,地球磁場と平行な方向のトルクを発生できない。"
+        },
+        {
+          "number": 3,
+          "text": "スピン姿勢安定は,衛星全体又は衛星の一部を回転させることによって,衛星に固定されたスピン軸の方向を慣性空間に対して一定に保持しようとする姿勢安定方式である。"
+        },
+        {
+          "number": 4,
+          "text": "リアクションホイールは,角運動量の交換とジャイロ剛性による姿勢の安定化の2つの機能を持たせたホイールであり、角速度が一定のバイアス値をもって回転し,バイアス値の付近で加減速する。"
+        },
+        {
+          "number": 5,
+          "text": "重力傾度安定化とは,衛星の質量中心と重力中心が不一致となって生じるトルクを利用して,衛星の一軸を地球中心方向に指向させる姿勢制御方法である。"
+        }
+      ],
+      "figures": []
+    },
+    "choiceExplanation": {
+      "sourceHash": "f617ce190d2f6994b0411aeb264838c690e06bbcf0eb4064f46d42d3154f7bfb",
+      "correctChoice": 4,
+      "summary": "不適切なのは④。バイアス角運動量とジャイロ剛性を利用する記述はモーメンタムホイール。リアクションホイールは主に回転数変化による角運動量交換で制御する。",
+      "choices": [
+        {
+          "number": 1,
+          "verdict": "incorrect",
+          "reason": "モーメンタムホイールは所要バイアス角運動量を蓄えるため、大きい慣性や重量となりやすい。"
+        },
+        {
+          "number": 2,
+          "verdict": "incorrect",
+          "reason": "磁気トルクはm×Bなので磁場に平行なトルクを発生できないという制約は適切。"
+        },
+        {
+          "number": 3,
+          "verdict": "incorrect",
+          "reason": "スピンによる角運動量・ジャイロ剛性で軸方向を保つ姿勢安定方式の説明である。"
+        },
+        {
+          "number": 4,
+          "verdict": "correct",
+          "reason": "一定バイアス回転の近くで加減速しジャイロ剛性も利用するものはモーメンタムホイールである。"
+        },
+        {
+          "number": 5,
+          "verdict": "incorrect",
+          "reason": "地球重力の勾配と衛星の慣性分布によるトルクを用いる重力傾度安定の説明である。"
+        }
+      ],
+      "sources": [
+        {
+          "title": "日本技術士会 公式問題",
+          "url": "https://www.engineer.or.jp/c_topics/010/attached/attach_10606_5.pdf#page=15"
+        },
+        {
+          "title": "日本技術士会 公式正答",
+          "url": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_5.pdf#page=5"
+        }
+      ]
+    }
+  },
+  {
+    "id": "pe-first-aerospace-2024-q27",
+    "number": 27,
+    "text": "宇宙空間から地球の大気圏内に帰還する宇宙機で用いられるアブレーター(アブレーション冷却に使用される素材)に関する次の記述のうち,最も不適切なものはどれか。",
+    "images": [
+      "/exam-library/pe-first-aerospace-2024/page-15.png"
+    ],
+    "sourcePages": [
+      15
+    ],
+    "sourceQuestionNumber": 27,
+    "correctChoice": 2,
+    "choiceCount": 5,
+    "answerAuthority": "official",
+    "originalPdf": "https://www.engineer.or.jp/c_topics/010/attached/attach_10606_5.pdf",
+    "answerPdf": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_5.pdf#page=5",
+    "explanation": "不適切なのは②。使い捨ての突入機ではアブレーション冷却は実績があり、軽量・信頼性・コストの面で有利な方式である。他の使い捨て方式より一律に割高とする説明が不適切。",
+    "presentation": {
+      "sourceHash": "8de43e564aaf3394ad23435fd75435d7ce55c9a4208f1bff1b9d2631f192593e",
+      "prompt": "宇宙空間から地球の大気圏内に帰還する宇宙機で用いられるアブレーター(アブレーション冷却に使用される素材)に関する次の記述のうち,最も不適切なものはどれか。",
+      "choices": [
+        {
+          "number": 1,
+          "text": "木星など太陽から遠く離れた惑星大気に突入する惑星探査機にも利用される。"
+        },
+        {
+          "number": 2,
+          "text": "他の再使用を必要としない空力加熱防御方法と比較すると,コストは割高となる。"
+        },
+        {
+          "number": 3,
+          "text": "再使用を必要としない大気圏突入宇宙飛行体において,実績,信頼性,耐熱性,軽量性の点で優れた空力加熱防御方法である。"
+        },
+        {
+          "number": 4,
+          "text": "熱伝導性が悪いので,機体内部の温度上昇を小さくすることができる。"
+        },
+        {
+          "number": 5,
+          "text": "炭素繊維などを混ぜた樹脂であり,その気化によって空力加熱から機体を防御する。"
+        }
+      ],
+      "figures": []
+    },
+    "choiceExplanation": {
+      "sourceHash": "8de43e564aaf3394ad23435fd75435d7ce55c9a4208f1bff1b9d2631f192593e",
+      "correctChoice": 2,
+      "summary": "不適切なのは②。使い捨ての突入機ではアブレーション冷却は実績があり、軽量・信頼性・コストの面で有利な方式である。他の使い捨て方式より一律に割高とする説明が不適切。",
+      "choices": [
+        {
+          "number": 1,
+          "verdict": "incorrect",
+          "reason": "惑星大気へ突入する探査機にも、厳しい空力加熱への防御としてアブレータを使う。"
+        },
+        {
+          "number": 2,
+          "verdict": "correct",
+          "reason": "再使用不要の突入機での経済性を含む利点を否定し、一律に割高とする点が不適切。"
+        },
+        {
+          "number": 3,
+          "verdict": "incorrect",
+          "reason": "実績、耐熱性、信頼性、軽量性に優れ、再使用しない突入機へ広く用いられる。"
+        },
+        {
+          "number": 4,
+          "verdict": "incorrect",
+          "reason": "低熱伝導性で内部への熱侵入を抑え、表面の熱分解等と併せて機体を守る。"
+        },
+        {
+          "number": 5,
+          "verdict": "incorrect",
+          "reason": "樹脂の熱分解やガス放出、表面の消耗を伴って熱を処理するアブレーションの原理を述べる。"
+        }
+      ],
+      "sources": [
+        {
+          "title": "日本技術士会 公式問題",
+          "url": "https://www.engineer.or.jp/c_topics/010/attached/attach_10606_5.pdf#page=15"
+        },
+        {
+          "title": "日本技術士会 公式正答",
+          "url": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_5.pdf#page=5"
+        }
+      ]
+    }
+  },
+  {
+    "id": "pe-first-aerospace-2024-q28",
+    "number": 28,
+    "text": "液体ロケットエンジンサイクルの1つである2段燃焼サイクルの記述のうち,最も不適切なものはどれか。",
+    "images": [
+      "/exam-library/pe-first-aerospace-2024/page-15.png"
+    ],
+    "sourcePages": [
+      15
+    ],
+    "sourceQuestionNumber": 28,
+    "correctChoice": 5,
+    "choiceCount": 5,
+    "answerAuthority": "official",
+    "originalPdf": "https://www.engineer.or.jp/c_topics/010/attached/attach_10606_5.pdf",
+    "answerPdf": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_5.pdf#page=5",
+    "explanation": "不適切なのは⑤。予燃焼器では燃料過濃又は酸素過濃のガスを作りタービンを駆動し、その未完結の反応を主燃焼室で完了させる。完全燃焼ガスではない。",
+    "presentation": {
+      "sourceHash": "690902b85ba9c0a5c6141974593d7c0ee7ee119db8209760414a1a3749c7d2f0",
+      "prompt": "液体ロケットエンジンサイクルの1つである2段燃焼サイクルの記述のうち,最も不適切なものはどれか。",
+      "choices": [
+        {
+          "number": 1,
+          "text": "アメリカのスペースシャトルメインエンジン(SSME)や日本のLE−7エンジンに採用された。"
+        },
+        {
+          "number": 2,
+          "text": "閉サイクルである。"
+        },
+        {
+          "number": 3,
+          "text": "主燃焼器のほかにプリバーナ(予燃焼器)を有する。"
+        },
+        {
+          "number": 4,
+          "text": "大推力を得ることができるのでロケット1段用の大型エンジンに適している。"
+        },
+        {
+          "number": 5,
+          "text": "ターボポンプを駆動した完全燃焼ガスは主燃焼室に導入される。"
+        }
+      ],
+      "figures": []
+    },
+    "choiceExplanation": {
+      "sourceHash": "690902b85ba9c0a5c6141974593d7c0ee7ee119db8209760414a1a3749c7d2f0",
+      "correctChoice": 5,
+      "summary": "不適切なのは⑤。予燃焼器では燃料過濃又は酸素過濃のガスを作りタービンを駆動し、その未完結の反応を主燃焼室で完了させる。完全燃焼ガスではない。",
+      "choices": [
+        {
+          "number": 1,
+          "verdict": "incorrect",
+          "reason": "SSMEとLE−7は二段燃焼サイクルを採用した代表的エンジンである。"
+        },
+        {
+          "number": 2,
+          "verdict": "incorrect",
+          "reason": "タービン駆動ガスを主燃焼室で利用するため、機外に捨てない閉サイクルである。"
+        },
+        {
+          "number": 3,
+          "verdict": "incorrect",
+          "reason": "タービンを駆動するガスを作るために、主燃焼室とは別に予燃焼器を持つ。"
+        },
+        {
+          "number": 4,
+          "verdict": "incorrect",
+          "reason": "高い燃焼圧力と高性能を得られ、大型の第1段エンジンへ適するという説明は適切。"
+        },
+        {
+          "number": 5,
+          "verdict": "correct",
+          "reason": "タービンを駆動するのは通常過濃の予燃焼ガス。主燃焼室へ入る前に完全燃焼しているとはいわない。"
+        }
+      ],
+      "sources": [
+        {
+          "title": "日本技術士会 公式問題",
+          "url": "https://www.engineer.or.jp/c_topics/010/attached/attach_10606_5.pdf#page=15"
+        },
+        {
+          "title": "日本技術士会 公式正答",
+          "url": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_5.pdf#page=5"
+        }
+      ]
+    }
+  },
+  {
+    "id": "pe-first-aerospace-2024-q29",
+    "number": 29,
+    "text": "オートパイロットの機能に関する次の記述のうち,最も不適切なものはどれか。",
+    "images": [
+      "/exam-library/pe-first-aerospace-2024/page-16.png"
+    ],
+    "sourcePages": [
+      16
+    ],
+    "sourceQuestionNumber": 29,
+    "correctChoice": 4,
+    "choiceCount": 5,
+    "answerAuthority": "official",
+    "originalPdf": "https://www.engineer.or.jp/c_topics/010/attached/attach_10606_5.pdf",
+    "answerPdf": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_5.pdf#page=5",
+    "explanation": "不適切なのは④。ダッチロールは横・方向の連成振動で、抑制に用いるのはヨーダンパ。ピッチダンパは縦の振動を抑える。",
+    "presentation": {
+      "sourceHash": "8fa8960ae32346f5c044abdfcbe02f12d1773321aa59ce5c65d0eb5010058171",
+      "prompt": "オートパイロットの機能に関する次の記述のうち,最も不適切なものはどれか。",
+      "choices": [
+        {
+          "number": 1,
+          "text": "上昇又は旋回などをコントロールする操縦機能には,一定の高度上昇/下降率,機首方位,速度などを維持する機能を含む。"
+        },
+        {
+          "number": 2,
+          "text": "オートパイロットの基本原理は,サーボ・システムである。"
+        },
+        {
+          "number": 3,
+          "text": "航法装置からの位置情報を受けて,自動的に航空機を操縦し,目的地まで飛行させる誘導機能を持つ。"
+        },
+        {
+          "number": 4,
+          "text": "機体の姿勢を安定化させる機能としてダッチロールの補正をするピッチ・ダンパを持つ。"
+        },
+        {
+          "number": 5,
+          "text": "機体の姿勢を安定化させる機能として,高速飛行時に機首下げ傾向を自動的に補正するマック・トリムを持つ。"
+        }
+      ],
+      "figures": []
+    },
+    "choiceExplanation": {
+      "sourceHash": "8fa8960ae32346f5c044abdfcbe02f12d1773321aa59ce5c65d0eb5010058171",
+      "correctChoice": 4,
+      "summary": "不適切なのは④。ダッチロールは横・方向の連成振動で、抑制に用いるのはヨーダンパ。ピッチダンパは縦の振動を抑える。",
+      "choices": [
+        {
+          "number": 1,
+          "verdict": "incorrect",
+          "reason": "上昇降下率や方位、速度を自動で保持する機能はオートパイロットの操縦機能である。"
+        },
+        {
+          "number": 2,
+          "verdict": "incorrect",
+          "reason": "目標と検出状態の差を打ち消すサーボ系が基本原理という説明は適切。"
+        },
+        {
+          "number": 3,
+          "verdict": "incorrect",
+          "reason": "航法装置の情報と連携して所定の経路へ誘導する機能の説明は適切。"
+        },
+        {
+          "number": 4,
+          "verdict": "correct",
+          "reason": "ダッチロールの減衰に働くのはヨーダンパであり、ピッチダンパと取り違えている。"
+        },
+        {
+          "number": 5,
+          "verdict": "incorrect",
+          "reason": "高速時の機首下げ傾向に対し自動補償するマッハトリムは姿勢安定化の機能に合う。"
+        }
+      ],
+      "sources": [
+        {
+          "title": "日本技術士会 公式問題",
+          "url": "https://www.engineer.or.jp/c_topics/010/attached/attach_10606_5.pdf#page=16"
+        },
+        {
+          "title": "日本技術士会 公式正答",
+          "url": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_5.pdf#page=5"
+        }
+      ]
+    }
+  },
+  {
+    "id": "pe-first-aerospace-2024-q30",
+    "number": 30,
+    "text": "2024年度 航空・宇宙部門 専門科目 Ⅲ－30。下の公式原問画像の当該番号に解答してください。同じページにある別の設問は対象外です。",
+    "images": [
+      "/exam-library/pe-first-aerospace-2024/page-16.png"
+    ],
+    "sourcePages": [
+      16
+    ],
+    "sourceQuestionNumber": 30,
+    "correctChoice": 5,
+    "choiceCount": 5,
+    "answerAuthority": "official",
+    "originalPdf": "https://www.engineer.or.jp/c_topics/010/attached/attach_10606_5.pdf",
+    "answerPdf": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_5.pdf#page=5",
+    "explanation": "GPWSにはグライドスロープ信号とフラップ位置等が入力され、地形への過度の接近時にはTerrainの警報を発する。Sink Rateは過大な降下率。⑤。",
+    "presentation": {
+      "sourceHash": "1589082e2e465df7e616ae25b1f8836fc3f28b901cf8f1ac0d7747959d35cf38",
+      "prompt": "2024年度 航空・宇宙部門 専門科目 Ⅲ－30。下の公式原問画像の当該番号に解答してください。同じページにある別の設問は対象外です。",
+      "choices": [
+        {
+          "number": 1,
+          "text": "①"
+        },
+        {
+          "number": 2,
+          "text": "②"
+        },
+        {
+          "number": 3,
+          "text": "③"
+        },
+        {
+          "number": 4,
+          "text": "④"
+        },
+        {
+          "number": 5,
+          "text": "⑤"
+        }
+      ],
+      "figures": [
+        {
+          "src": "/exam-library/pe-first-aerospace-2024/page-16.png",
+          "width": 1073,
+          "height": 1517,
+          "alt": "2024年度 航空・宇宙部門 専門科目 Ⅲ－30の公式原問（PDF 16ページ）。当該番号の問題文・全選択肢・図表を確認してください。"
+        }
+      ]
+    },
+    "choiceExplanation": {
+      "sourceHash": "1589082e2e465df7e616ae25b1f8836fc3f28b901cf8f1ac0d7747959d35cf38",
+      "correctChoice": 5,
+      "summary": "GPWSにはグライドスロープ信号とフラップ位置等が入力され、地形への過度の接近時にはTerrainの警報を発する。Sink Rateは過大な降下率。⑤。",
+      "choices": [
+        {
+          "number": 1,
+          "verdict": "incorrect",
+          "reason": "ローカライザでなくグライドスロープ、スロットルでなくフラップ位置が空欄に対応する。"
+        },
+        {
+          "number": 2,
+          "verdict": "incorrect",
+          "reason": "aのローカライザとcのSink Rateが異なり、地形への接近の警報音ではない。"
+        },
+        {
+          "number": 3,
+          "verdict": "incorrect",
+          "reason": "グライドスロープとフラップは合うが、Sink Rateは過大降下率で、地形接近の警報と異なる。"
+        },
+        {
+          "number": 4,
+          "verdict": "incorrect",
+          "reason": "位置スイッチの対象はフラップで、警報は地形への接近に対するTerrainである。"
+        },
+        {
+          "number": 5,
+          "verdict": "correct",
+          "reason": "グライドスロープ・フラップ・Terrainの組合せが、入力と警報モードに一致する。"
+        }
+      ],
+      "sources": [
+        {
+          "title": "日本技術士会 公式問題",
+          "url": "https://www.engineer.or.jp/c_topics/010/attached/attach_10606_5.pdf#page=16"
+        },
+        {
+          "title": "日本技術士会 公式正答",
+          "url": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_5.pdf#page=5"
+        }
+      ]
+    }
+  },
+  {
+    "id": "pe-first-aerospace-2024-q31",
+    "number": 31,
+    "text": "SSR(Secondary Surveillance Radar;二次監視レーダ)に関する次の記述のうち,最も不適切なものはどれか。",
+    "images": [
+      "/exam-library/pe-first-aerospace-2024/page-17.png"
+    ],
+    "sourcePages": [
+      17
+    ],
+    "sourceQuestionNumber": 31,
+    "correctChoice": 2,
+    "choiceCount": 5,
+    "answerAuthority": "official",
+    "originalPdf": "https://www.engineer.or.jp/c_topics/010/attached/attach_10606_5.pdf",
+    "answerPdf": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_5.pdf#page=5",
+    "explanation": "不適切なのは②。Mode S応答のデータは1ビット1 μs、1 Mbit/sのパルス位置変調。4 Mbit/sは応答のビットレートではない。",
+    "presentation": {
+      "sourceHash": "c320ec356bc47949ec87c5ef846ad3bf257a6bbd5759afedfd1e224b853941b9",
+      "prompt": "SSR(Secondary Surveillance Radar;二次監視レーダ)に関する次の記述のうち,最も不適切なものはどれか。",
+      "choices": [
+        {
+          "number": 1,
+          "text": "地上からの質問電波の周波数は,1,030MHzである。"
+        },
+        {
+          "number": 2,
+          "text": "モードS応答信号は,4Mbit/sのパルス位置変調信号を送信する。"
+        },
+        {
+          "number": 3,
+          "text": "モードSは,24ビット航空機アドレスを使用して個別質問ができる。"
+        },
+        {
+          "number": 4,
+          "text": "モードCは自動気圧高度伝送用に使われ,航空機の気圧高度計の情報を100ft間隔でデジタル化する。"
+        },
+        {
+          "number": 5,
+          "text": "モードAは管制識別用に使われ,モードAの応答信号は4,096コードの使用が可能である。"
+        }
+      ],
+      "figures": []
+    },
+    "choiceExplanation": {
+      "sourceHash": "c320ec356bc47949ec87c5ef846ad3bf257a6bbd5759afedfd1e224b853941b9",
+      "correctChoice": 2,
+      "summary": "不適切なのは②。Mode S応答のデータは1ビット1 μs、1 Mbit/sのパルス位置変調。4 Mbit/sは応答のビットレートではない。",
+      "choices": [
+        {
+          "number": 1,
+          "verdict": "incorrect",
+          "reason": "SSRは地上から1030 MHzで質問し、機上から1090 MHzで応答する。"
+        },
+        {
+          "number": 2,
+          "verdict": "correct",
+          "reason": "応答の情報レートは1 Mbit/sであり、4 Mbit/sのパルス位置変調とする値が誤り。"
+        },
+        {
+          "number": 3,
+          "verdict": "incorrect",
+          "reason": "Mode Sでは24ビットの航空機アドレスを使用して選択的な個別質問ができる。"
+        },
+        {
+          "number": 4,
+          "verdict": "incorrect",
+          "reason": "Mode Cの気圧高度報告は100 ft刻みで符号化するという説明は適切。"
+        },
+        {
+          "number": 5,
+          "verdict": "incorrect",
+          "reason": "Mode A識別コードは8進4桁、8^4=4096通りという説明に合う。"
+        }
+      ],
+      "sources": [
+        {
+          "title": "日本技術士会 公式問題",
+          "url": "https://www.engineer.or.jp/c_topics/010/attached/attach_10606_5.pdf#page=17"
+        },
+        {
+          "title": "日本技術士会 公式正答",
+          "url": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_5.pdf#page=5"
+        },
+        {
+          "title": "国立極地研究所 atc2met SSR Mode-Sの信号形式",
+          "url": "https://atc2met.nipr.ac.jp/data/about/index.html"
+        }
+      ]
+    }
+  },
+  {
+    "id": "pe-first-aerospace-2024-q32",
+    "number": 32,
+    "text": "衛星航法システムに関する次の記述のうち,最も不適切なものはどれか。",
+    "images": [
+      "/exam-library/pe-first-aerospace-2024/page-17.png"
+    ],
+    "sourcePages": [
+      17
+    ],
+    "sourceQuestionNumber": 32,
+    "correctChoice": 2,
+    "choiceCount": 5,
+    "answerAuthority": "official",
+    "originalPdf": "https://www.engineer.or.jp/c_topics/010/attached/attach_10606_5.pdf",
+    "answerPdf": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_5.pdf#page=5",
+    "explanation": "不適切なのは②。従来のSBASは静止衛星等から広域補強情報を放送する。低軌道衛星からとする説明が本問の方式に合わない。",
+    "presentation": {
+      "sourceHash": "9c40ab9d64ad86ff751d5646f23363eb376118936ce9ac5ffcfbf04a7a90a497",
+      "prompt": "衛星航法システムに関する次の記述のうち,最も不適切なものはどれか。",
+      "choices": [
+        {
+          "number": 1,
+          "text": "GPS（Global Positioning System）やGLONASS（GLObal NAvigation Satellite System）の測位精度は、航空路を航行するには十分であるが、衛星に不具合があった場合にただちにそれを検出し、ユーザに伝送することまでは保証されていない。"
+        },
+        {
+          "number": 2,
+          "text": "SBAS(Satellite-Based Augmentation System)は,低軌道衛星から補強情報を放送し大陸規模の広い範囲をカバーする。SBAS信号はGPSとほぼ同一の信号形式であることから,受信機側はソフトウェアの改修のみで対応できる。"
+        },
+        {
+          "number": 3,
+          "text": "GBAS(Ground-Based Augmentation System)は,VHF帯域の信号を用いて,空港周辺の範囲を補強対象とし,精密進入を可能とする。"
+        },
+        {
+          "number": 4,
+          "text": "冗長な衛星を利用して測定された距離の一貫性を検査するRAIM(Receiver Autonomous Integrity Monitoring)は,ABAS(Aircraft-Based Augmentation System)の一形態である。"
+        },
+        {
+          "number": 5,
+          "text": "ICAO(International Civil Aviation Organization)の定義するGNSS(Global Navigation Satellite System)の基本的な構成としてはコアシステムを利用し,補強システムを併用する。"
+        }
+      ],
+      "figures": []
+    },
+    "choiceExplanation": {
+      "sourceHash": "9c40ab9d64ad86ff751d5646f23363eb376118936ce9ac5ffcfbf04a7a90a497",
+      "correctChoice": 2,
+      "summary": "不適切なのは②。従来のSBASは静止衛星等から広域補強情報を放送する。低軌道衛星からとする説明が本問の方式に合わない。",
+      "choices": [
+        {
+          "number": 1,
+          "verdict": "incorrect",
+          "reason": "GNSSの単独測位精度と、航空用で必要な故障検出・通報の完全性保証を区別した説明は適切。"
+        },
+        {
+          "number": 2,
+          "verdict": "correct",
+          "reason": "本問が扱うSBASの広域補強信号は静止衛星等から放送し、低軌道衛星とする部分が誤り。"
+        },
+        {
+          "number": 3,
+          "verdict": "incorrect",
+          "reason": "GBASは地上設備からVHFデータ放送で空港近傍の補強情報を提供する。"
+        },
+        {
+          "number": 4,
+          "verdict": "incorrect",
+          "reason": "RAIMは機上で冗長測距の整合性を検査し、ABASの一種として完全性監視を行う。"
+        },
+        {
+          "number": 5,
+          "verdict": "incorrect",
+          "reason": "航空用GNSSはコアの衛星測位系と、その完全性等を補う補強系を併せて構成する。"
+        }
+      ],
+      "sources": [
+        {
+          "title": "日本技術士会 公式問題",
+          "url": "https://www.engineer.or.jp/c_topics/010/attached/attach_10606_5.pdf#page=17"
+        },
+        {
+          "title": "日本技術士会 公式正答",
+          "url": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_5.pdf#page=5"
+        }
+      ]
+    }
+  },
+  {
+    "id": "pe-first-aerospace-2024-q33",
+    "number": 33,
+    "text": "DME(DistanceMeasuringEquipment;距離測定装置)に関する次の記述のうち,最も不適切なものはどれか。",
+    "images": [
+      "/exam-library/pe-first-aerospace-2024/page-18.png"
+    ],
+    "sourcePages": [
+      18
+    ],
+    "sourceQuestionNumber": 33,
+    "correctChoice": 1,
+    "choiceCount": 5,
+    "answerAuthority": "official",
+    "originalPdf": "https://www.engineer.or.jp/c_topics/010/attached/attach_10606_5.pdf",
+    "answerPdf": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_5.pdf#page=5",
+    "explanation": "不適切なのは①。DMEは機上のインタロゲータが質問し、地上のトランスポンダが応答する。装置の役割が逆である。",
+    "presentation": {
+      "sourceHash": "b4691f7b87354a053bab20c19a25b2b83a9290ce35b3758b08003b3027caade0",
+      "prompt": "DME(DistanceMeasuringEquipment;距離測定装置)に関する次の記述のうち,最も不適切なものはどれか。",
+      "choices": [
+        {
+          "number": 1,
+          "text": "航空機が搭載しているDMEトランスポンダと地上装置のDMEインタロゲータの組合せで作動する二次レーダである。"
+        },
+        {
+          "number": 2,
+          "text": "DMEの動作原理はTACAN(TACticalAirNavigation)の距離測定部と同一方式であり両立性がある。"
+        },
+        {
+          "number": 3,
+          "text": "パルス信号が航空機とDME地上局との間を往復する時間をはかって,航空機とDME地上局の斜め距離を測定する。"
+        },
+        {
+          "number": 4,
+          "text": "DMEの有効距離は,電波の見通し距離内の200~300海里程度である。"
+        },
+        {
+          "number": 5,
+          "text": "1,000 MHz帯の電波を使用する。"
+        }
+      ],
+      "figures": []
+    },
+    "choiceExplanation": {
+      "sourceHash": "b4691f7b87354a053bab20c19a25b2b83a9290ce35b3758b08003b3027caade0",
+      "correctChoice": 1,
+      "summary": "不適切なのは①。DMEは機上のインタロゲータが質問し、地上のトランスポンダが応答する。装置の役割が逆である。",
+      "choices": [
+        {
+          "number": 1,
+          "verdict": "correct",
+          "reason": "機上が質問器、地上が応答器であり、本肢は両者を逆にしている。"
+        },
+        {
+          "number": 2,
+          "verdict": "incorrect",
+          "reason": "DMEの測距方式はTACANの距離測定機能と共通で、相互運用性がある。"
+        },
+        {
+          "number": 3,
+          "verdict": "incorrect",
+          "reason": "地上応答器の規定遅延を差し引いた往復時間から、地上局までの斜距離を測る。"
+        },
+        {
+          "number": 4,
+          "verdict": "incorrect",
+          "reason": "見通し伝播の範囲が有効距離を制約し、記載の200〜300海里程度という規模は適切。"
+        },
+        {
+          "number": 5,
+          "verdict": "incorrect",
+          "reason": "DMEは約1 GHzのL帯の電波を使用するという説明に合う。"
+        }
+      ],
+      "sources": [
+        {
+          "title": "日本技術士会 公式問題",
+          "url": "https://www.engineer.or.jp/c_topics/010/attached/attach_10606_5.pdf#page=18"
+        },
+        {
+          "title": "日本技術士会 公式正答",
+          "url": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_5.pdf#page=5"
+        }
+      ]
+    }
+  },
+  {
+    "id": "pe-first-aerospace-2024-q34",
+    "number": 34,
+    "text": "2024年度 航空・宇宙部門 専門科目 Ⅲ－34。下の公式原問画像の当該番号に解答してください。同じページにある別の設問は対象外です。",
+    "images": [
+      "/exam-library/pe-first-aerospace-2024/page-18.png"
+    ],
+    "sourcePages": [
+      18
+    ],
+    "sourceQuestionNumber": 34,
+    "correctChoice": 4,
+    "choiceCount": 5,
+    "answerAuthority": "official",
+    "originalPdf": "https://www.engineer.or.jp/c_topics/010/attached/attach_10606_5.pdf",
+    "answerPdf": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_5.pdf#page=5",
+    "explanation": "Mode S応答等を3か所以上で受け、到達時刻差を距離差へ変換する。水平面・高度既知の測位では距離差一定の双曲線の交点を求めるので④。高度も未知の三次元測位では通常4局以上が必要。",
+    "presentation": {
+      "sourceHash": "bfd534d844455e0c2f728be634c603dcf636fed7bc7c75a53b6c1ba8bfc5fe67",
+      "prompt": "2024年度 航空・宇宙部門 専門科目 Ⅲ－34。下の公式原問画像の当該番号に解答してください。同じページにある別の設問は対象外です。",
+      "choices": [
+        {
+          "number": 1,
+          "text": "①"
+        },
+        {
+          "number": 2,
+          "text": "②"
+        },
+        {
+          "number": 3,
+          "text": "③"
+        },
+        {
+          "number": 4,
+          "text": "④"
+        },
+        {
+          "number": 5,
+          "text": "⑤"
+        }
+      ],
+      "figures": [
+        {
+          "src": "/exam-library/pe-first-aerospace-2024/page-18.png",
+          "width": 1073,
+          "height": 1517,
+          "alt": "2024年度 航空・宇宙部門 専門科目 Ⅲ－34の公式原問（PDF 18ページ）。当該番号の問題文・全選択肢・図表を確認してください。"
+        }
+      ]
+    },
+    "choiceExplanation": {
+      "sourceHash": "bfd534d844455e0c2f728be634c603dcf636fed7bc7c75a53b6c1ba8bfc5fe67",
+      "correctChoice": 4,
+      "summary": "Mode S応答等を3か所以上で受け、到達時刻差を距離差へ変換する。水平面・高度既知の測位では距離差一定の双曲線の交点を求めるので④。高度も未知の三次元測位では通常4局以上が必要。",
+      "choices": [
+        {
+          "number": 1,
+          "verdict": "incorrect",
+          "reason": "航空機から受けるのはMode S応答で、距離差一定の軌跡は楕円でなく双曲線。"
+        },
+        {
+          "number": 2,
+          "verdict": "incorrect",
+          "reason": "双曲線と3か所は合うが、受信する信号を地上からのMode S質問としている。"
+        },
+        {
+          "number": 3,
+          "verdict": "incorrect",
+          "reason": "4局以上は三次元で必要になる一般条件。本問の平面上の双曲線の交点を求める最小構成は3局。"
+        },
+        {
+          "number": 4,
+          "verdict": "correct",
+          "reason": "Mode S応答・3か所以上・双曲線が、本問の時刻差による平面測位の説明に一致する。"
+        },
+        {
+          "number": 5,
+          "verdict": "incorrect",
+          "reason": "Mode S応答は合うが、到達時間差で定まるのは距離の差なので楕円でなく双曲線。"
+        }
+      ],
+      "sources": [
+        {
+          "title": "日本技術士会 公式問題",
+          "url": "https://www.engineer.or.jp/c_topics/010/attached/attach_10606_5.pdf#page=18"
+        },
+        {
+          "title": "日本技術士会 公式正答",
+          "url": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_5.pdf#page=5"
+        }
+      ]
+    }
+  },
+  {
+    "id": "pe-first-aerospace-2024-q35",
+    "number": 35,
+    "text": "2024年度 航空・宇宙部門 専門科目 Ⅲ－35。下の公式原問画像の当該番号に解答してください。同じページにある別の設問は対象外です。",
+    "images": [
+      "/exam-library/pe-first-aerospace-2024/page-19.png"
+    ],
+    "sourcePages": [
+      19
+    ],
+    "sourceQuestionNumber": 35,
+    "correctChoice": 3,
+    "choiceCount": 5,
+    "answerAuthority": "official",
+    "originalPdf": "https://www.engineer.or.jp/c_topics/010/attached/attach_10606_5.pdf",
+    "answerPdf": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_5.pdf#page=5",
+    "explanation": "受信周波数を一定の中間周波数へ変換して増幅・選択する。局部発振器は受信周波数から中間周波数だけ離れた信号を混合器へ供給するので③。",
+    "presentation": {
+      "sourceHash": "061ae25abf7b14b4ef0f35b95ec36d3dd610abcf44442ec0b6d4a9ac8cd19c24",
+      "prompt": "2024年度 航空・宇宙部門 専門科目 Ⅲ－35。下の公式原問画像の当該番号に解答してください。同じページにある別の設問は対象外です。",
+      "choices": [
+        {
+          "number": 1,
+          "text": "①"
+        },
+        {
+          "number": 2,
+          "text": "②"
+        },
+        {
+          "number": 3,
+          "text": "③"
+        },
+        {
+          "number": 4,
+          "text": "④"
+        },
+        {
+          "number": 5,
+          "text": "⑤"
+        }
+      ],
+      "figures": [
+        {
+          "src": "/exam-library/pe-first-aerospace-2024/page-19.png",
+          "width": 1073,
+          "height": 1517,
+          "alt": "2024年度 航空・宇宙部門 専門科目 Ⅲ－35の公式原問（PDF 19ページ）。当該番号の問題文・全選択肢・図表を確認してください。"
+        }
+      ]
+    },
+    "choiceExplanation": {
+      "sourceHash": "061ae25abf7b14b4ef0f35b95ec36d3dd610abcf44442ec0b6d4a9ac8cd19c24",
+      "correctChoice": 3,
+      "summary": "受信周波数を一定の中間周波数へ変換して増幅・選択する。局部発振器は受信周波数から中間周波数だけ離れた信号を混合器へ供給するので③。",
+      "choices": [
+        {
+          "number": 1,
+          "verdict": "incorrect",
+          "reason": "変換先は局部発振周波数ではなく中間周波数で、局部発振器の信号は別に発生させる。"
+        },
+        {
+          "number": 2,
+          "verdict": "incorrect",
+          "reason": "局部発振周波数への変換や影像周波数の利用は、所定の中間周波数を得る動作説明に合わない。"
+        },
+        {
+          "number": 3,
+          "verdict": "correct",
+          "reason": "中間周波数・選択度・局部発振の順が、周波数変換と局発の役割に対応する。"
+        },
+        {
+          "number": 4,
+          "verdict": "incorrect",
+          "reason": "周波数変換の狙いは一定の中間周波数での増幅と選択であり、局発信号を影像周波数とは呼ばない。"
+        },
+        {
+          "number": 5,
+          "verdict": "incorrect",
+          "reason": "受信信号を変換する先は影像周波数ではなく、中間周波数である。"
+        }
+      ],
+      "sources": [
+        {
+          "title": "日本技術士会 公式問題",
+          "url": "https://www.engineer.or.jp/c_topics/010/attached/attach_10606_5.pdf#page=19"
+        },
+        {
+          "title": "日本技術士会 公式正答",
+          "url": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_5.pdf#page=5"
+        }
+      ]
+    }
+  }
+]

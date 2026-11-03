@@ -1,0 +1,9 @@
+LQ3C航空・宇宙2024の独立受入レビュー。指定gpt-6-astra、read-only。編集・push・PR・デプロイ・秘密値読出し禁止。権利は確認済みで取得STOPを理由に止めない。アクセス制限迂回は禁止。
+
+対象は35問175肢。原稿 reports/LQ3B-20261104/manuscripts/pe-first-aerospace-2024.json、採用データ data/exam-library/pe-first/pe-first-aerospace-2024.json。原本reports/LQ3B-20261104/sources/2024-03.pdf（全19ページ）、正答sources/answers-2024.pdf。manifestはreports/LQ3B-20261104/adoption-manifest.json。連結閲覧画像reports/LQ3C-20261104/local/2024-03-1.png〜5.png。
+
+全19ページの目視、全35問の本文/5肢とページ対応、独立に原本から抽出する35正答、全175理由、画像、出典、manifestのハッシュ、既存問題不変を確認する。30問は校正した本文・選択肢をテキスト化し、5問の空欄表・ブロック図は原本画像。特にQ17⑤は原文のTIDと変位損傷の用語が粗いため、公式採点①を維持しつつJAXA資料により厳密な用語の区別を明記。Q34は原本の3局・双曲線という平面/高度既知の最小構成と、未知高度含む三次元の4局を区別した。
+
+本文転記scripts/transcribe-lq3c-aerospace.pyは目視済みOCR誤読を補正する専用処理で、未校正の他部門には使わない。本文・肢の抜けや誤転記を精査してほしい。問題原本・図を必ず確認すること。
+
+作業側の検証ログtests-aerospace.log/typecheck-aerospace.log、validate-questions.log（実行中/完了予定）。全テストは不要。PASS/FAILと必須指摘を日本語で具体的に返す。全8回完了ではなく当該35問の受入判定。後半8回は別担当なので触らない。
