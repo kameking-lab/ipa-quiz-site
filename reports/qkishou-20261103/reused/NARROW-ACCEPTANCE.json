@@ -1,0 +1,143 @@
+{
+  "schema": "qual73-narrow-six-field-acceptance/v1",
+  "atUtc": "2026-11-01T08:14:29.273013+00:00",
+  "decision": "PASS_SIX_CHANGED_FIELDS_AT_390_CSS_PX",
+  "adoptedApplication": {
+    "path": "C:\\Users\\kanet\\Documents\\Codex\\2026-10-30\\task-2\\resume-20261030\\original-goals-20261101\\qual73-narrow-integration\\APPLICATION.json",
+    "bytes": 990,
+    "sha256": "c42e01cec5bf6ebd5959b458705d0a9e002198aa7d81a9e61bd9792f6a2275f7"
+  },
+  "adoptedQaPageSha256": "09e9624f54b2d492b5fee0286415eba9a227b1a5e94b2923001efdc15f086623",
+  "acceptedBindingSourceSha256": "d9fc1a0d244f396c4f0cd218f1dafae10b0dc2e033e80b93f3af4340050f53c0",
+  "priorDesktopAcceptance": {
+    "path": "C:\\Users\\kanet\\Documents\\Codex\\2026-10-31\\qual73-weather-private-finish\\outputs\\visual-six-fields-20261101\\RECEIPT.json",
+    "bytes": 11657,
+    "sha256": "d0f7947c34279adf1667fee9b71e73955e7672d414ff2a31ecdcdeb4e30a69d6"
+  },
+  "session": {
+    "browser": "Chrome3",
+    "tab": "1935945612",
+    "viewportOverride": [
+      390,
+      844
+    ],
+    "measuredInnerWidth": 390,
+    "measuredQaMainWidth": 374.6666870117187,
+    "diagramRegionWidth": 268,
+    "viewportResetSucceeded": true,
+    "ownTabClosedSucceeded": true,
+    "otherOwnerTabsOperated": 0
+  },
+  "cases": [
+    {
+      "questionId": "kisho-66-pm1-q01",
+      "field": "(2).前線図",
+      "url": "http://127.0.0.1:3146/dev/qualification-qa?bank=kisho&id=kisho-66-pm1-q01",
+      "assetId": "r66/answer-diagram/kisho-66-pm1-q01/answer-pm1-q1-fronts.png",
+      "nativeDimensions": [
+        392,
+        332
+      ],
+      "regionClientWidth": 268,
+      "diagramWidth": 392,
+      "observedFinalScrollLeft": 124,
+      "result": "PASS_RIGHT_EDGE_REACHABLE_BY_REGION_SCROLL",
+      "evidence": "Each exact field expanded in live AX; exact diagram filename/caption observed. Normal screenshot used to inspect reachability; right-end offset read from rendered DOM after supported scroll. No source-image/content re-review."
+    },
+    {
+      "questionId": "kisho-66-pm1-q04",
+      "field": "(2).−2℃等温線",
+      "url": "http://127.0.0.1:3146/dev/qualification-qa?bank=kisho&id=kisho-66-pm1-q04",
+      "assetId": "r66/answer-diagram/kisho-66-pm1-q04/answer-pm1-q4-isotherm-shear.png",
+      "nativeDimensions": [
+        387,
+        364
+      ],
+      "regionClientWidth": 268,
+      "diagramWidth": 387,
+      "observedFinalScrollLeft": 119.33333587646484,
+      "result": "PASS_RIGHT_EDGE_REACHABLE_BY_REGION_SCROLL",
+      "evidence": "Each exact field expanded in live AX; exact diagram filename/caption observed. Normal screenshot used to inspect reachability; right-end offset read from rendered DOM after supported scroll. No source-image/content re-review."
+    },
+    {
+      "questionId": "kisho-66-pm1-q04",
+      "field": "(3).シアーライン",
+      "url": "http://127.0.0.1:3146/dev/qualification-qa?bank=kisho&id=kisho-66-pm1-q04",
+      "assetId": "r66/answer-diagram/kisho-66-pm1-q04/answer-pm1-q4-isotherm-shear.png",
+      "nativeDimensions": [
+        387,
+        364
+      ],
+      "regionClientWidth": 268,
+      "diagramWidth": 387,
+      "observedFinalScrollLeft": 119.33333587646484,
+      "result": "PASS_RIGHT_EDGE_REACHABLE_BY_REGION_SCROLL",
+      "evidence": "Each exact field expanded in live AX; exact diagram filename/caption observed. Normal screenshot used to inspect reachability; right-end offset read from rendered DOM after supported scroll. No source-image/content re-review."
+    },
+    {
+      "questionId": "kisho-66-pm2-q02",
+      "field": "(1)①.トラフA位置",
+      "url": "http://127.0.0.1:3146/dev/qualification-qa?bank=kisho&id=kisho-66-pm2-q02",
+      "assetId": "r66/answer-diagram/kisho-66-pm2-q02/answer-pm2-q2-trough.png",
+      "nativeDimensions": [
+        365,
+        186
+      ],
+      "regionClientWidth": 268,
+      "diagramWidth": 365,
+      "observedFinalScrollLeft": 97.33333587646484,
+      "result": "PASS_RIGHT_EDGE_REACHABLE_BY_REGION_SCROLL",
+      "evidence": "Each exact field expanded in live AX; exact diagram filename/caption observed. Normal screenshot used to inspect reachability; right-end offset read from rendered DOM after supported scroll. No source-image/content re-review."
+    },
+    {
+      "questionId": "kisho-66-pm2-q02",
+      "field": "(4)②.地上前線",
+      "url": "http://127.0.0.1:3146/dev/qualification-qa?bank=kisho&id=kisho-66-pm2-q02",
+      "assetId": "r66/answer-diagram/kisho-66-pm2-q02/answer-pm2-q2-fronts.png",
+      "nativeDimensions": [
+        256,
+        172
+      ],
+      "regionClientWidth": 268,
+      "diagramWidth": 256,
+      "observedFinalScrollLeft": 0,
+      "result": "PASS_FULL_IMAGE_FITS_REGION",
+      "evidence": "Each exact field expanded in live AX; exact diagram filename/caption observed. Normal screenshot used to inspect reachability; right-end offset read from rendered DOM after supported scroll. No source-image/content re-review."
+    },
+    {
+      "questionId": "kisho-66-pm2-q03",
+      "field": "(2).21℃等温線",
+      "url": "http://127.0.0.1:3146/dev/qualification-qa?bank=kisho&id=kisho-66-pm2-q03",
+      "assetId": "r66/answer-diagram/kisho-66-pm2-q03/answer-pm2-q3-isotherm.png",
+      "nativeDimensions": [
+        257,
+        231
+      ],
+      "regionClientWidth": 268,
+      "diagramWidth": 257,
+      "observedFinalScrollLeft": 0,
+      "result": "PASS_FULL_IMAGE_FITS_REGION",
+      "evidence": "Each exact field expanded in live AX; exact diagram filename/caption observed. Normal screenshot used to inspect reachability; right-end offset read from rendered DOM after supported scroll. No source-image/content re-review."
+    }
+  ],
+  "observationDetails": [
+    "Former896px QA main now constrained to available width.",
+    "Four wider slots expose actual region scroll and right-edge offsets; two smaller diagrams fit without horizontal scroll.",
+    "First scroll on some offscreen regions brought them into view without horizontal movement; inspected screenshot/state, then scrolled the visible diagram region. No permission rejection or UNKNOWN operation.",
+    "Collapsed sibling images can retain DOM geometry; each result assigned by expanded-field AX and the relevant image/scroll offset, not by count of all DOM images."
+  ],
+  "repairNeeded": false,
+  "durableScreenshots": false,
+  "screenshotLocation": "Visible tool outputs in this chat; no persistent image artifact claimed",
+  "notClaimed": [
+    "Real handset/touch/device-specific acceptance",
+    "All viewport sizes",
+    "Production build or release acceptance",
+    "New78-original/content/decode/storage/type QA"
+  ],
+  "sharedEdits": 0,
+  "newServer": 0,
+  "buildDeploy": 0,
+  "pendingOperations": 0,
+  "A5CountedAsQualificationWork": false
+}

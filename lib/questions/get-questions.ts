@@ -6,6 +6,7 @@ import { isExamPublished } from "@/lib/qualifications/catalog";
 const EXAM_LOADERS: Partial<Record<ExamCode, () => Promise<Question[]>>> = {
   "kenchiku-setsubishi": async () => isExamPublished("kenchiku-setsubishi") ? (await import("@/data/questions/kenchiku-setsubishi")).KENCHIKU_SETSUBISHI_STUDY_QUESTIONS : [],
   chizai2: async () => isExamPublished("chizai2") ? (await import("@/data/questions/chizai2")).CHIZAI2_QUESTIONS : [],
+  kisho: async () => isExamPublished("kisho") ? (await import("@/data/questions/kisho")).KISHO_QUESTIONS : [],
   kanteishi: async () => isExamPublished("kanteishi") ? (await import("@/data/questions/kanteishi")).KANTEISHI_QUESTIONS : [],
   kaikeishi: async () => isExamPublished("kaikeishi") ? (await import("@/data/questions/kaikeishi")).KAIKEISHI_QUESTIONS : [],
   "riku-tech2": async () => isExamPublished("riku-tech2") ? (await import("@/data/questions/riku-tech2")).RIKU_TECH2_QUESTIONS : [],

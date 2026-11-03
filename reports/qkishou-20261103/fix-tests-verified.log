@@ -1,0 +1,28 @@
+
+ RUN  v3.2.4 C:/Users/kanet/20260522/ipa-qkishou-20261103
+
+ ✓ __tests__/exam-library-coverage.test.ts (4 tests) 16ms
+ ✓ __tests__/questions/kisho-two-rounds.test.ts (4 tests) 225ms
+ ✓ __tests__/kisho-private-reader.test.tsx (7 tests) 501ms
+   ✓ private Kisho reader > navigates all 78 items, grades academic answers, and saves practical drafts  446ms
+ ✓ __tests__/questions/get-questions.test.ts (91 tests) 14900ms
+   ✓ getQuestionsForExam > ap は非空で、全問が exam=ap である  2339ms
+   ✓ getQuestionsForExam > 全登録区分でロードされた問題は exam フィールドがキーと一致する (ip)  321ms
+   ✓ getQuestionsForExam > 全登録区分でロードされた問題は exam フィールドがキーと一致する (fe)  391ms
+   ✓ getQuestionsForExam > 全登録区分でロードされた問題は exam フィールドがキーと一致する (sc)  1185ms
+   ✓ getQuestionsForExam > 全登録区分でロードされた問題は exam フィールドがキーと一致する (nw)  474ms
+   ✓ getQuestionsForExam > 全登録区分でロードされた問題は exam フィールドがキーと一致する (db)  414ms
+   ✓ getQuestionsForExam > 全登録区分でロードされた問題は exam フィールドがキーと一致する (st)  688ms
+   ✓ getQuestionsForExam > 全登録区分でロードされた問題は exam フィールドがキーと一致する (sa)  485ms
+   ✓ getQuestionsForExam > 全登録区分でロードされた問題は exam フィールドがキーと一致する (pm)  476ms
+   ✓ getQuestionsForExam > 全登録区分でロードされた問題は exam フィールドがキーと一致する (es)  434ms
+   ✓ getQuestionsForExam > 全登録区分でロードされた問題は exam フィールドがキーと一致する (sm)  602ms
+   ✓ getQuestionsForExam > 全登録区分でロードされた問題は exam フィールドがキーと一致する (au)  658ms
+   ✓ getQuestionsForExam > 全登録区分でロードされた問題は exam フィールドがキーと一致する (chusho-kigyo-shindanshi)  595ms
+ ✓ __tests__/lib/questions-load.test.ts (7 tests) 29ms
+ ✓ __tests__/kisho-study.test.tsx (5 tests) 638ms
+
+ Test Files  6 passed (6)
+      Tests  118 passed (118)
+   Start at  17:36:15
+   Duration  20.36s (transform 13.84s, setup 1.35s, collect 36.72s, tests 16.31s, environment 12.66s, prepare 3.17s)

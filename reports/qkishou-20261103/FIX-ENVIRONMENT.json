@@ -1,0 +1,41 @@
+{
+  "node": "v24.13.1",
+  "pnpm": "10.33.0",
+  "dependencyInstall": "Own worktree regular node_modules directory; no external worktree junction. corepack pnpm install --frozen-lockfile --ignore-scripts; retry and --force restored missing installed files. No package, lockfile or settings edits.",
+  "lockedInputs": {
+    "package.json": "f6704caebdf42cd992be2efb8a049369cbc10e1cce3d216f52bb35078b4b9056",
+    "pnpm-lock.yaml": "456c76de0140f54c4f8b11ccb89b9949f3b130eaa88c0bbd20176185663e48ae",
+    "pnpm-workspace.yaml": "ac526582eac771a66a6c06573ebf512712ef252e7bbd169aabb5f8b7cbe9bcc9"
+  },
+  "packages": {
+    "next": "16.4.3",
+    "typescript": "5.9.3",
+    "vitest": "3.2.4",
+    "tsx": "4.22.0",
+    "eslint": "9.39.4",
+    "zod": "4.4.3",
+    "@prisma/client": "6.19.3"
+  },
+  "python": "3.12.10",
+  "pdfToolVersions": {
+    "PyMuPDF": "1.28.0",
+    "OpenCV": "5.0.0",
+    "NumPy": "2.5.1",
+    "Pillow": "12.2.0"
+  },
+  "commands": [
+    "corepack pnpm install --force --frozen-lockfile --ignore-scripts",
+    "corepack pnpm exec prisma generate",
+    "python scripts/prepare-kisho-current.py --download",
+    "python scripts/compare-kisho-edition.py",
+    "corepack pnpm exec tsx scripts/prepare-kisho-study.ts",
+    "python scripts/verify-kisho-acceptance.py",
+    "corepack pnpm exec tsx scripts/validate-kisho.ts",
+    "corepack pnpm exec tsc --noEmit",
+    "corepack pnpm exec eslint <changed TypeScript/TSX/JS paths>",
+    "corepack pnpm exec vitest run __tests__/kisho-study.test.tsx __tests__/kisho-private-reader.test.tsx __tests__/questions/kisho-two-rounds.test.ts __tests__/questions/get-questions.test.ts __tests__/lib/questions-load.test.ts __tests__/exam-library-coverage.test.ts",
+    "corepack pnpm exec next build",
+    "node scripts/verify-kisho-ui.mjs http://127.0.0.1:48366"
+  ],
+  "logNormalization": "New fix logs decoded to UTF-8, terminal trailing whitespace/extra EOF blank lines removed; original byte logs retained in temporary diagnostics. Process exit receipts remain unchanged."
+}
