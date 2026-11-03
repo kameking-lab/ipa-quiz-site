@@ -4,7 +4,9 @@ export function mobileConfig(env: NodeJS.ProcessEnv = process.env) {
   const production = env.NODE_ENV === "production";
   return {
     enabled: env.MOBILE_IAP_ENABLED === "true",
-    environment: production && env.VERCEL_ENV !== "preview" ? "PRODUCTION" : "SANDBOX",
+    // App Review and TestFlight use Apple Sandbox against the production API.
+    // Only an authenticated RevenueCat response may select the store environment.
+    environment: production && env.VERCEL_ENV !== "preview" ? "APP_STORE" : "SANDBOX",
     entitlement: env.MOBILE_RC_ENTITLEMENT ?? "kakomon_pro",
     productId: env.MOBILE_RC_PRODUCT_ID ?? "",
     appId: env.MOBILE_RC_APP_ID ?? "",

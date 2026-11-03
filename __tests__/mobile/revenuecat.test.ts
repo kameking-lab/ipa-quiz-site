@@ -40,3 +40,11 @@ it("does not turn a billing issue into an unlimited or malformed grace period",(
   malformed.subscriber.entitlements.kakomon_pro.expires_date=new Date(now-1000).toISOString();
   expect(verifiedExpiration(malformed,config,now)).toBeNull();
 });
+
+it("accepts Apple verified Sandbox on the production app API, never arbitrary stores, and expires review rights",()=>{
+  const production={...config,environment:"APP_STORE"};
+  expect(verifiedExpiration(snapshot(),production,now)).not.toBeNull();
+  expect(verifiedExpiration(snapshot({is_sandbox:false}),production,now)).not.toBeNull();
+  expect(verifiedExpiration(snapshot({store:"test_store"}),production,now)).toBeNull();
+  expect(verifiedExpiration(snapshot(),production,now+86400000)).toBeNull();
+});

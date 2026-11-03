@@ -21,7 +21,7 @@ export function verifiedExpiration(body: unknown, config: { entitlement: string;
   const { subscriber } = subscriberSchema.parse(body);
   const e = subscriber.entitlements[config.entitlement], sub = subscriber.subscriptions[config.productId];
   if (!e || !sub || e.product_identifier !== config.productId || sub.store !== "app_store" || sub.refunded_at
-    || sub.is_sandbox !== (config.environment === "SANDBOX") || !e.expires_date || !sub.expires_date) return null;
+    || config.environment !== "APP_STORE" && sub.is_sandbox !== (config.environment === "SANDBOX") || !e.expires_date || !sub.expires_date) return null;
   const regularEnd = Math.min(Date.parse(e.expires_date), Date.parse(sub.expires_date));
   // Only RevenueCat's verified App Store grace extends access; a billing issue
   // or cancellation alone never creates a new paid period.

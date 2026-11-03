@@ -1,4 +1,5 @@
 "use client";
+import { requestAiConsent } from "@/lib/ai/consent";
 
 import { useEffect, useMemo, useRef, useState } from "react";
 import { AiAccessNotice, useAiAccessNotice } from "@/components/ai/AiAccessNotice";
@@ -33,6 +34,7 @@ export function ExamLibraryCopilot({ examId, questionId, selectedChoice }: {
   async function ask() {
     const question = draft.trim();
     if (!question || busy) return;
+    if (!requestAiConsent()) return;
     const history = [...messages, { role: "user" as const, content: question }].slice(-12);
     setMessages([...history, { role: "assistant", content: "" }]);
     setDraft("");

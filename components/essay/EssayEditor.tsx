@@ -1,5 +1,6 @@
 "use client";
 import {NativeQuestionGate} from "@/mobile/shared/NativeQuestionGate";
+import { requestAiConsent } from "@/lib/ai/consent";
 
 
 import { useCallback, useEffect, useMemo, useState } from "react";
@@ -99,6 +100,7 @@ function EssayEditorBody({ question }: Props) {
 
   const handleSubmit = useCallback(async () => {
     if (!canSubmit) return;
+    if (!requestAiConsent()) return;
     if (!isPremium && remaining <= 0) {
       setError(
         "今月の AI 添削上限（月3回）に達しました。翌月に利用枠が更新されます。",

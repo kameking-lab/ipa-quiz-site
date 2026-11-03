@@ -1,5 +1,7 @@
 "use client";
 
+import { requestAiConsent } from "@/lib/ai/consent";
+
 import * as React from "react";
 import dynamic from "next/dynamic";
 import {
@@ -373,6 +375,7 @@ export function CopilotPanel({
       }
       const trimmed = text.trim();
       if (!trimmed && !quickAction) return;
+      if (!requestAiConsent()) return;
 
       setErrorState(null);
       setRestriction(null);
