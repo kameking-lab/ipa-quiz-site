@@ -416,5 +416,396 @@
       "url": "https://laws.e-gov.go.jp/api/2/law_data/417AC0000000087_20220901_501AC0000000071?law_full_text_format=xml",
       "sha256": "1411a3accad75a90ef0a87bac2aa269eff12f03ff65c55ec791cf74c20428736"
     }
-  ]
+  ],
+  "holdReleaseReview": {
+    "checkedOn": "2026-11-03",
+    "baseline": {
+      "fullQuestions": 129,
+      "heldQuestions": 10,
+      "heldStatements": 17,
+      "independentReview": "3回目PASS済み（ユーザー申告）。今回の解除分の独立レビューを新規取得したという意味ではない。"
+    },
+    "result": {
+      "releasedQuestions": 5,
+      "releasedStatements": 7,
+      "fullQuestions": 134,
+      "heldQuestions": 5,
+      "heldStatements": 10
+    },
+    "verificationNote": "解除はネットワークで取得した一次資料本文に限定。条文等を具体的記述に当てはめた判断はpinpointに明記。旧裁判所URLはメンテナンス画面となったが、移行後assets/hanreiのPDFを取得。政府ホットラインPDFはWebツールが404とした後、Python urllibによる同一URLのGETでHTTP200・PDF本文を取得。保存済み公式正答との整合は反映・全体監査で検査する。",
+    "documents": [
+      {
+        "id": "civil-2025",
+        "kind": "law",
+        "url": "https://laws.e-gov.go.jp/api/2/law_data/129AC0000000089_20240524_506AC0000000033?law_full_text_format=xml",
+        "checkedOn": "2026-11-03",
+        "revisionId": "129AC0000000089_20240524_506AC0000000033",
+        "sha256": "23b2f4277c318aaa50adab52b8e9a82a5b3a3a78a33010ad29ea3f0b1421d291",
+        "hashFormat": "decoded XML UTF-8",
+        "verifiedArticles": [
+          "494条2項"
+        ]
+      },
+      {
+        "id": "civil-2026",
+        "kind": "law",
+        "url": "https://laws.e-gov.go.jp/api/2/law_data/129AC0000000089_20260401_506AC0000000033?law_full_text_format=xml",
+        "checkedOn": "2026-11-03",
+        "revisionId": "129AC0000000089_20260401_506AC0000000033",
+        "sha256": "37c2c25605d0753d7b5f21abb1fdcad89a55806c6a3c56029ce17bde96df7be7",
+        "hashFormat": "decoded XML UTF-8",
+        "verifiedArticles": [
+          "328条",
+          "341条",
+          "369条2項"
+        ]
+      },
+      {
+        "id": "company-2026",
+        "kind": "law",
+        "url": "https://laws.e-gov.go.jp/api/2/law_data/417AC0000000086_20251001_505AC0000000053?law_full_text_format=xml",
+        "checkedOn": "2026-11-03",
+        "revisionId": "417AC0000000086_20251001_505AC0000000053",
+        "sha256": "b89262fd3c0ac1e3a5f170ccb0d9fa585501825c6b1447f4d8376d59bd9e15f1",
+        "hashFormat": "decoded XML UTF-8",
+        "verifiedArticles": [
+          "478条2項",
+          "598条",
+          "637条",
+          "928条3項",
+          "937条"
+        ]
+      },
+      {
+        "id": "commercial-reg-2026",
+        "kind": "law",
+        "url": "https://laws.e-gov.go.jp/api/2/law_data/338AC0000000125_20230614_505AC0000000053?law_full_text_format=xml",
+        "checkedOn": "2026-11-03",
+        "revisionId": "338AC0000000125_20230614_505AC0000000053",
+        "sha256": "cacd7c6e661f7153499c4f945eda95c279ce68d47630e7a1d004f82326639cb2",
+        "hashFormat": "decoded XML UTF-8",
+        "verifiedArticles": [
+          "51条",
+          "54条4項",
+          "73条3項",
+          "134条"
+        ]
+      },
+      {
+        "id": "commercial-rules-2026",
+        "kind": "law",
+        "url": "https://laws.e-gov.go.jp/api/2/law_data/339M50000010023_20260310_508M60000010006?law_full_text_format=xml",
+        "checkedOn": "2026-11-03",
+        "revisionId": "339M50000010023_20260310_508M60000010006",
+        "sha256": "e819c57e689259cad79b9f47e3a3bcbe9d751118051c2106a23d9ddac58b8248",
+        "hashFormat": "decoded XML UTF-8",
+        "verifiedArticles": [
+          "68条2項",
+          "100条"
+        ]
+      },
+      {
+        "id": "registration-2026",
+        "kind": "law",
+        "url": "https://laws.e-gov.go.jp/api/2/law_data/416AC0000000123_20260401_506AC0000000030?law_full_text_format=xml",
+        "checkedOn": "2026-11-03",
+        "revisionId": "416AC0000000123_20260401_506AC0000000030",
+        "sha256": "2d4271c971cc16fb36f383862e4d4d06e13dc0abb0317261bacb165b560f239a",
+        "hashFormat": "decoded XML UTF-8",
+        "verifiedArticles": [
+          "2条12号・13号",
+          "60条",
+          "66条"
+        ]
+      },
+      {
+        "id": "registration-rules-2026",
+        "kind": "law",
+        "url": "https://laws.e-gov.go.jp/api/2/law_data/417M60000010018_20260401_508M60000010021?law_full_text_format=xml",
+        "checkedOn": "2026-11-03",
+        "revisionId": "417M60000010018_20260401_508M60000010021",
+        "sha256": "0b79492ffb87817fb57e3230d54dfc6f72464b055897249516133b93e0108a3d",
+        "hashFormat": "decoded XML UTF-8",
+        "verifiedArticles": [
+          "35条9号"
+        ]
+      },
+      {
+        "id": "judgment-s52-4-15",
+        "kind": "official-pdf",
+        "title": "最高裁第二小法廷昭和52年4月15日判決・昭和51年（オ）第1174号",
+        "url": "https://www.courts.go.jp/assets/hanrei/hanrei-pdf-56324.pdf",
+        "checkedOn": "2026-11-03",
+        "sha256": "ecc27cc083995f7acaf5454a38dc7c937d2bdcc86e9da585d0175a8686252707",
+        "hashFormat": "PDF bytes"
+      },
+      {
+        "id": "judgment-s55-1-11",
+        "kind": "official-pdf",
+        "title": "最高裁第三小法廷昭和55年1月11日判決・昭和53年（オ）第1199号",
+        "url": "https://www.courts.go.jp/assets/hanrei/hanrei-pdf-53317.pdf",
+        "checkedOn": "2026-11-03",
+        "sha256": "ea80a93a1c9f97e54e638af1bae9a1cd9524621763c22482293295801ded85fb",
+        "hashFormat": "PDF bytes"
+      },
+      {
+        "id": "judgment-h26-4-24",
+        "kind": "official-pdf",
+        "title": "最高裁第一小法廷平成26年4月24日判決・平成25年（受）第419号（平成26年5月9日付公式通知添付）",
+        "url": "https://www.courts.go.jp/vc-files/courts/tsuutatsu/minji04/13hasansaikenhyounituiteteikisaretasikkoubunfuyonouttaenituite.pdf",
+        "checkedOn": "2026-11-03",
+        "sha256": "374e24d486b935deaf627ce05b022245f8d5d6449066383045c5578c410646c5",
+        "hashFormat": "PDF bytes"
+      },
+      {
+        "id": "moj-hotline-response",
+        "kind": "official-pdf",
+        "title": "規制改革・行政改革ホットライン検討要請項目の現状と対応策・番号53・法務省回答（2023年10月18日）",
+        "url": "https://www.gyoukaku.go.jp/hotline/img/2-k-5_kaitou_kisei_20241024_R5.pdf",
+        "checkedOn": "2026-11-03",
+        "sha256": "7dd121b67baf2f3b324fa911c7c68a97d4fdb40ddb6015a0e211df9265c62690",
+        "hashFormat": "PDF bytes"
+      }
+    ],
+    "statementReviews": [
+      {
+        "questionId": "shihoshoshi-2025-pm-q2",
+        "statement": "イ",
+        "status": "released",
+        "reason": "誤り。書証の成立の真正は証拠の信用性に関わる補助事実であり、その自白は裁判所の事実認定を拘束しない。最高裁昭和52年4月15日判決（昭和51年（オ）第1174号）の多数意見による。本記述の裁判所に対する拘束力と、当事者による自白の撤回の制限とは区別する必要がある。",
+        "references": [
+          {
+            "documentId": "judgment-s52-4-15",
+            "pinpoint": "判決本文1頁・多数意見（吉田豊裁判官の意見と区別）"
+          }
+        ]
+      },
+      {
+        "questionId": "shihoshoshi-2025-pm-q9",
+        "statement": "ア",
+        "status": "released",
+        "reason": "誤り。最高裁昭和55年1月11日判決（昭和53年（オ）第1199号）によれば、確定日付のある譲渡通知が同時に到達したときは各譲受人が全額を請求でき、債務者は一方に弁済して債務を消滅させることができる。この法理を民法494条2項の債権者不確知の要件に当てはめると、同時到達によって優劣がないというだけでは、不確知を原因とする供託はできない。",
+        "references": [
+          {
+            "documentId": "judgment-s55-1-11",
+            "pinpoint": "判決本文2頁・理由二"
+          },
+          {
+            "documentId": "civil-2025",
+            "pinpoint": "494条2項。供託不可は判決の弁済法理と条文の要件を本記述に適用した判断であり、判決が直接供託の可否を判断したとするものではない"
+          }
+        ]
+      },
+      {
+        "questionId": "shihoshoshi-2025-pm-q9",
+        "statement": "ウ",
+        "status": "held",
+        "reason": "保留。2026年11月3日再確認。民法494条2項の無過失要件は取得したが、賃貸人死亡時に戸籍調査を要しないとする具体的な供託先例の原文は確認できなかった。法務省供託Q&Aの本文取得も403であり、一般的な相続人不明の説明から戸籍調査不要の結論を推測しない。",
+        "references": [
+          {
+            "documentId": "civil-2025",
+            "pinpoint": "494条2項のみ。戸籍調査の先例未確認"
+          }
+        ]
+      },
+      {
+        "questionId": "shihoshoshi-2025-pm-q14",
+        "statement": "ア",
+        "status": "held",
+        "reason": "保留。2026年11月3日再確認。代表者の追加による一部移転の登記原因を「委任の変更」とする取扱いについて、法務省の通達・先例本文を確認できなかった。代表者の交代・減員に関する資料から追加の場合を推測せず、登記原因と登記形式の原典確認を要する。",
+        "references": []
+      },
+      {
+        "questionId": "shihoshoshi-2025-pm-q14",
+        "statement": "ウ",
+        "status": "held",
+        "reason": "保留。2026年11月3日再確認。社団財産について誤ってされた相続登記の抹消を経ず、相続人から新代表者へ直接移転できるかを定める登記先例本文を確認できなかった。総有財産の帰属という一般論だけでは直接移転の可否を判断しない。",
+        "references": []
+      },
+      {
+        "questionId": "shihoshoshi-2025-pm-q20",
+        "statement": "ア",
+        "status": "held",
+        "reason": "保留。2026年11月3日再確認。不動産登記法66条は取得したが、本記述の抵当権は共有持分だけでなく土地全体に設定されている。この抵当権者が不分割特約の登記につき利害関係を有する第三者となるかを具体的に示す一次資料は未確認であり、承諾不要・付記可否を断定しない。",
+        "references": [
+          {
+            "documentId": "registration-2026",
+            "pinpoint": "66条のみ。2025年の具体的取扱い未確認"
+          }
+        ]
+      },
+      {
+        "questionId": "shihoshoshi-2025-pm-q20",
+        "statement": "ウ",
+        "status": "held",
+        "reason": "保留。2026年11月3日再確認。負担付き死因贈与による所有権移転の登記原因表示を具体的に定める先例本文は未確認。配偶者居住権の死因贈与に関する公式資料は本記述と登記対象が異なるため代用しない。負担の履行時期の一般論だけで登記原因表示を決めない。",
+        "references": []
+      },
+      {
+        "questionId": "shihoshoshi-2025-pm-q32",
+        "statement": "イ",
+        "status": "held",
+        "reason": "保留。2026年11月3日再確認。商業登記法54条4項の退任証明書面の規定は取得したが、互選による代表取締役のみの辞任で定款を要する取扱いの原典は未確認。法務局の辞任・後任就任を併せた申請例は本文取得403であり、後任の選定に必要な定款と辞任だけの添付要件を同一視しない。",
+        "references": [
+          {
+            "documentId": "commercial-reg-2026",
+            "pinpoint": "54条4項のみ。辞任単独の具体的取扱い未確認"
+          }
+        ]
+      },
+      {
+        "questionId": "shihoshoshi-2025-pm-q32",
+        "statement": "オ",
+        "status": "held",
+        "reason": "保留。2026年11月3日再確認。商業登記法54条4項は取得したが、定款で直接指定された代表取締役の辞任に定款添付を要求しない取扱いの原典は未確認。互選による選定との相違を、同条の退任証明の一般規定のみから推測しない。",
+        "references": [
+          {
+            "documentId": "commercial-reg-2026",
+            "pinpoint": "54条4項のみ。辞任単独の具体的取扱い未確認"
+          }
+        ]
+      },
+      {
+        "questionId": "shihoshoshi-2026-pm-q7",
+        "statement": "ウ",
+        "status": "released",
+        "reason": "誤り。最高裁平成26年4月24日判決（平成25年（受）第419号）は、非免責債権に該当することを理由とする破産債権者表についての執行文付与の訴えを認めない。民事執行法33条1項の訴えは条件の成就や当事者以外の者に対する執行等を審理するもので、非免責債権該当性を審理する手続ではない。なお、記載内容等から非免責債権と認められる場合には、書記官による同法26条の執行文付与は可能である。",
+        "references": [
+          {
+            "documentId": "judgment-h26-4-24",
+            "pinpoint": "PDF3〜4頁・添付判決理由4（判決本文1〜2頁）"
+          }
+        ]
+      },
+      {
+        "questionId": "shihoshoshi-2026-pm-q21",
+        "statement": "エ",
+        "status": "released",
+        "reason": "誤り。民法328条の不動産売買の先取特権には、同法341条により性質に反しない限り抵当権の規定が準用される。同法369条2項は地上権を抵当権の目的とすることを認めているため、この準用により、地上権の売買代金債権を担保する先取特権についても保存の登記を申請できる。",
+        "references": [
+          {
+            "documentId": "civil-2026",
+            "pinpoint": "328条・341条・369条2項の準用関係。本記述の登記可否はこの条文関係に基づく判断であり、個別登記先例の確認を称するものではない"
+          }
+        ]
+      },
+      {
+        "questionId": "shihoshoshi-2026-pm-q23",
+        "statement": "イ",
+        "status": "released",
+        "reason": "誤り。債務者の追加では根抵当権者が登記権利者、設定者が登記義務者となる。これに対し、銀行取引から手形貸付取引への変更は担保する債権の範囲が明らかに縮減するため、設定者が登記権利者、根抵当権者が登記義務者となる。不動産登記法2条12号・13号及び60条の申請人の立場が逆になるので、同時の変更契約であっても一の申請情報にまとめることはできない。",
+        "references": [
+          {
+            "documentId": "moj-hotline-response",
+            "pinpoint": "PDF10頁・番号53・所管省庁の「制度の現状」欄及び「該当法令等」欄（昭和46年10月4日民事甲3230号通達）。提案者の主張欄と区別"
+          },
+          {
+            "documentId": "registration-2026",
+            "pinpoint": "2条12号・13号、60条"
+          },
+          {
+            "documentId": "registration-rules-2026",
+            "pinpoint": "35条9号。一括申請不可は法務省の示す申請人の立場及び共同申請の条文を本記述に適用した判断。通達全体を取得したとはしていない"
+          }
+        ]
+      },
+      {
+        "questionId": "shihoshoshi-2026-pm-q30",
+        "statement": "ア",
+        "status": "held",
+        "reason": "保留。2026年11月3日再確認。商業登記法51条・134条及び商業登記規則100条は取得したが、管轄外本店移転の無効による抹消で新旧登記所のどちらを経由するかを定める通達本文は未確認。通常の本店移転申請の経由規定を当然に当てはめて解除しない。",
+        "references": [
+          {
+            "documentId": "commercial-reg-2026",
+            "pinpoint": "51条・134条"
+          },
+          {
+            "documentId": "commercial-rules-2026",
+            "pinpoint": "100条"
+          }
+        ]
+      },
+      {
+        "questionId": "shihoshoshi-2026-pm-q30",
+        "statement": "ウ",
+        "status": "held",
+        "reason": "保留。2026年11月3日再確認。会社法937条1項1号ト（2）の決議取消しによる嘱託及び商業登記規則100条の抹消・回復の規定は取得した。管轄外移転後の決議取消しにおける新旧登記所の経由方向を具体的に定める一次資料は未確認であり、本店所在地への嘱託という一般規定だけで方向を断定しない。",
+        "references": [
+          {
+            "documentId": "company-2026",
+            "pinpoint": "937条1項1号ト（2）"
+          },
+          {
+            "documentId": "commercial-rules-2026",
+            "pinpoint": "100条"
+          }
+        ]
+      },
+      {
+        "questionId": "shihoshoshi-2026-pm-q30",
+        "statement": "エ",
+        "status": "held",
+        "reason": "保留。2026年11月3日再確認。会社法598条の職務執行者と637条の総社員の同意は取得したが、法人社員の定款変更同意を誰が表示し、どの書面を添付するかという具体的な登記取扱いの原典は未確認。職務執行者の業務執行権限から法人社員の同意権限を推測しない。",
+        "references": [
+          {
+            "documentId": "company-2026",
+            "pinpoint": "598条・637条"
+          }
+        ]
+      },
+      {
+        "questionId": "shihoshoshi-2026-pm-q34",
+        "statement": "ウ",
+        "status": "released",
+        "reason": "誤り。取締役解任の請求を認容する判決の確定による解任の登記は、会社法937条1項1号ヌにより嘱託される。一方、商業登記規則68条2項は、その解任の登記をしたときに職務執行停止・職務代行者に関する登記に抹消記号を記録するものとしている。後者は登記官による処理であり、別途その抹消の登記が嘱託されるものではない。",
+        "references": [
+          {
+            "documentId": "company-2026",
+            "pinpoint": "937条1項1号ヌ"
+          },
+          {
+            "documentId": "commercial-rules-2026",
+            "pinpoint": "68条2項"
+          }
+        ]
+      },
+      {
+        "questionId": "shihoshoshi-2026-pm-q34",
+        "statement": "エ",
+        "status": "released",
+        "reason": "誤り。残余財産の処理のため裁判所が会社法478条2項により選任する通常の清算人の登記は、同法937条の嘱託事項に含まれない。同法928条3項及び商業登記法73条3項に基づき、選任された清算人が選任等を証する書面を添えて申請する。一時清算人の職務を行うべき者の選任など、会社法937条に列挙された嘱託とは異なる。",
+        "references": [
+          {
+            "documentId": "company-2026",
+            "pinpoint": "478条2項・928条3項・937条1項2号ロ（通常の清算人選任との区別）"
+          },
+          {
+            "documentId": "commercial-reg-2026",
+            "pinpoint": "73条3項。閉鎖登記記録の是正方法を本解説で断定するものではない"
+          }
+        ]
+      }
+    ],
+    "unsuccessfulChecks": [
+      {
+        "url": "https://www.moj.go.jp/MINJI/minji06_00055.html",
+        "result": "本文取得403。検索スニペットを戸籍調査不要の根拠に使わない。"
+      },
+      {
+        "url": "https://houmukyoku.moj.go.jp/homu/page8_000001_00022.html",
+        "result": "本文取得403。後任就任を伴う申請例を辞任のみの要件確認と扱わない。"
+      },
+      {
+        "queries": [
+          "site.moj.go.jp 委任の変更 代表者",
+          "site.moj.go.jp 死因贈与 負担 登記 原因",
+          "site.moj.go.jp 不分割 抵当権",
+          "site.moj.go.jp 2722 本店",
+          "site.moj.go.jp 875号 移転",
+          "site.moj.go.jp 職務執行者 定款の変更"
+        ],
+        "result": "設問の具体的取扱いを確認できる通達・先例本文なし。国会図書館の通達書誌は本文確認として扱わない。"
+      }
+    ]
+  }
 }

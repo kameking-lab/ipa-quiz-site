@@ -60,8 +60,16 @@ def reference_laws(q):
 
 
 def render(questions_by_year=None):
-    sources = json.loads((EDITORIAL / "legal-sources.json").read_text())["sources"]
+    legal_sources = json.loads((EDITORIAL / "legal-sources.json").read_text())
+    sources = legal_sources["sources"]
     urls = {(s["law"], s["assessmentDate"]): s["url"] for s in sources}
+    review = legal_sources.get("holdReleaseReview", {})
+    documents = {d["id"]: d for d in review.get("documents", [])}
+    statement_urls = {}
+    for item in review.get("statementReviews", []):
+        if item["status"] == "released":
+            statement_urls.setdefault(item["questionId"], []).extend(
+                documents[ref["documentId"]]["url"] for ref in item["references"])
     outputs = {}
     holds = {}
     for year in (2025, 2026):
@@ -105,7 +113,9 @@ def render(questions_by_year=None):
                         assert len(combination) == 2 and all(k in KEYS for k in combination), q["id"]
                         q["choiceExplanations"][key] = "\n".join(details[KEYS.index(k)] for k in combination)
                 q["lastUpdated"] = "2026-11-03"
-                q["officialReferenceUrls"] = [urls[(law, f"{year}-04-01")] for law in reference_laws(q)]
+                q["officialReferenceUrls"] = list(dict.fromkeys(
+                    [urls[(law, f"{year}-04-01")] for law in reference_laws(q)]
+                    + statement_urls.get(q["id"], [])))
                 if unresolved:
                     q["needsReview"] = True
                     q.pop("explanationCoverage", None)

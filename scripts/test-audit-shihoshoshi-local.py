@@ -47,8 +47,9 @@ class ExactSourceAudit(unittest.TestCase):
         q["explanationCoverage"] = "full"
         result = audit.audit(records, self.excluded)
         self.assertFalse(result["localChecksPassed"])
-        self.assertEqual(result["needsReview"], 9)
-        self.assertEqual(result["fullExplanations"], 130)
+        pending = sum(bool(q.get("needsReview")) for q in self.questions)
+        self.assertEqual(result["needsReview"], pending - 1)
+        self.assertEqual(result["fullExplanations"], len(self.questions) - pending + 1)
         self.assertIn("holds.json: needsReview IDs/count differ", result["errors"])
         self.assertIn("holds.json: full count differs", result["errors"])
         self.assertIn(f'{q["id"]}: renderer output differs', result["errors"])

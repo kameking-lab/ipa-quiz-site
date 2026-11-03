@@ -2,6 +2,7 @@ import { describe, expect, it } from "vitest";
 import { SHIHOSHOSHI_QUESTIONS } from "@/data/questions/shihoshoshi";
 import excluded from "@/data/questions/shihoshoshi/excluded.json";
 import holds from "@/data/questions/shihoshoshi/editorial/holds.json";
+import legalSources from "@/data/questions/shihoshoshi/editorial/legal-sources.json";
 import { ALL_QUIZ_EXAM_CODES, ALL_EXAM_CODES, EXAM_CONFIGS } from "@/lib/exam-config";
 import { QUESTIONS_BY_EXAM } from "@/data/questions";
 import { getQuestionsForExam } from "@/lib/questions/get-questions";
@@ -68,10 +69,10 @@ describe("司法書士公式2回分の未公開登録", () => {
 
   it("distinguishes formal explanation coverage from explicitly unresolved statements", () => {
     const pending = holds as Record<string, Record<string, string>>;
-    expect(Object.keys(pending)).toHaveLength(10);
-    expect(Object.values(pending).flatMap(Object.keys)).toHaveLength(17);
-    expect(SHIHOSHOSHI_QUESTIONS.filter(q => q.explanationCoverage === "full")).toHaveLength(129);
-    expect(SHIHOSHOSHI_QUESTIONS.filter(q => q.needsReview)).toHaveLength(10);
+    expect(Object.keys(pending)).toHaveLength(5);
+    expect(Object.values(pending).flatMap(Object.keys)).toHaveLength(10);
+    expect(SHIHOSHOSHI_QUESTIONS.filter(q => q.explanationCoverage === "full")).toHaveLength(134);
+    expect(SHIHOSHOSHI_QUESTIONS.filter(q => q.needsReview)).toHaveLength(5);
     for (const q of SHIHOSHOSHI_QUESTIONS) {
       const unresolved = pending[q.id];
       expect(q.explanationCoverage, q.id).toBe(unresolved ? undefined : "full");
@@ -98,5 +99,34 @@ describe("司法書士公式2回分の未公開登録", () => {
     const boundary = SHIHOSHOSHI_QUESTIONS.find(q => q.id === "shihoshoshi-2026-am-q9")!;
     expect(boundary.explanation).toContain("民法224条ただし書");
     expect(boundary.explanation).toContain("測量費");
+  });
+
+  it("records evidence for each released statement and keeps partially resolved questions held", () => {
+    const review = legalSources.holdReleaseReview;
+    expect(review.statementReviews).toHaveLength(17);
+    expect(new Set(review.statementReviews.map(r => `${r.questionId}:${r.statement}`)).size).toBe(17);
+    expect(review.statementReviews.filter(r => r.status === "released")).toHaveLength(7);
+    const pending = holds as Record<string, Record<string, string>>;
+    for (const item of review.statementReviews) {
+      const q = SHIHOSHOSHI_QUESTIONS.find(q => q.id === item.questionId)!;
+      expect(q.explanation, q.id).toContain(`記述${item.statement}：${item.reason}`);
+      if (item.status === "held") {
+        expect(pending[item.questionId]?.[item.statement]).toBe(item.reason);
+      } else {
+        expect(pending[item.questionId]?.[item.statement]).toBeUndefined();
+        expect(item.references.length).toBeGreaterThan(0);
+        for (const ref of item.references) {
+          const doc = review.documents.find(d => d.id === ref.documentId)!;
+          expect(doc.sha256).toMatch(/^[a-f0-9]{64}$/);
+          expect(doc.checkedOn).toBe(review.checkedOn);
+          expect(q.officialReferenceUrls).toContain(doc.url);
+        }
+      }
+    }
+    const partial = SHIHOSHOSHI_QUESTIONS.find(q => q.id === "shihoshoshi-2025-pm-q9")!;
+    expect(partial.needsReview).toBe(true);
+    expect(partial.explanationCoverage).toBeUndefined();
+    expect(pending[partial.id]).not.toHaveProperty("ア");
+    expect(pending[partial.id]).toHaveProperty("ウ");
   });
 });
