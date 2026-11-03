@@ -26,7 +26,7 @@ export const NativeBDataSchema = z.object({
   }
   // Existing binary statement reasons cover both truth values. Shared word banks
   // can use common definitions plus selected-slot reasons, without a new matrix.
-  if (data.mode === "shared-bank") for (const candidate of data.candidates) {
+  if (data.mode === "shared-bank" || data.mode === "cloze") for (const candidate of data.candidates) {
     if (!candidate.explanation && !data.slots.every((slot) => slot.candidateExplanations?.[candidate.id])) issue(`Missing candidate reason: ${candidate.id}`);
   }
   if (data.bankImageAltTexts && data.bankImageAltTexts.length !== data.bankImageUrls?.length) issue("Bank image alt count mismatch");

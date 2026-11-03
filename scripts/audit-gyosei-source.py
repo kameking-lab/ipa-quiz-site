@@ -27,7 +27,8 @@ def clean(text):
 
 
 def norm(text):
-    return re.sub(r'\s', '', text).removesuffix('()')
+    # The four underlined statements in 2025 q15 are rendered as bold text.
+    return re.sub(r'\s', '', text.replace('**', '').replace('∼', '〜')).removesuffix('()')
 
 
 def split_questions(text):
@@ -48,6 +49,10 @@ with tempfile.TemporaryDirectory(prefix='gyosei-audit-') as directory:
         first = split_questions('\n'.join(pages))
         second_text = subprocess.run(['pdftotext', '-layout', str(pdf), '-'], check=True, capture_output=True).stdout.decode()
         second = split_questions('\n'.join(second_text.split('\f')[1:]))
+        if year == 2024:
+            # CID 7722 is absent from some Poppler CMap versions. The printed
+            # glyph in physical page 35 was visually verified as 遡.
+            second[41] = re.sub(r'(16\s+)及的', r'\1遡及的', second[41])
         data_text = (ROOT / f'data/questions/gyosei/{year}.ts').read_text()
         questions = json.loads(data_text.split(' = ', 1)[1].rstrip().removesuffix(';'))
         response = requests.get(f'https://gyosei-shiken.or.jp/doc/exam/r{r}ans.html', timeout=60)
@@ -69,6 +74,8 @@ with tempfile.TemporaryDirectory(prefix='gyosei-audit-') as directory:
         assert [q['qNumber'] for q in questions] == list(range(2, 58))
         for q in questions:
             n = q['qNumber']
+            evidence = next(e for e in EVIDENCE['questions'] if e['id'] == q['id'])
+            assert hashlib.sha256(first[n].encode()).hexdigest() == evidence['sourceTextSha256'], (year,n,'source hash')
             assert norm(first[n]) == norm(second[n]), (year, n, 'independent extraction mismatch')
             if q['type'] == 'multiple-choice':
                 parts = re.split(r'(?m)^([1-5])\s+', first[n])
@@ -81,6 +88,9 @@ with tempfile.TemporaryDirectory(prefix='gyosei-audit-') as directory:
                 expected = answers[n]
                 expected = expected if expected == '全員正解' else str(int(expected))
                 assert q['officialAnswerNumber'] == expected, (year,n,'official answer')
+                keys = list('アイウエオ')
+                assert q['answer'] == (keys if expected == '全員正解' else keys[int(expected)-1]), (year,n,'internal answer')
+                assert set(q['choiceExplanations']) == set(keys), (year,n,'choice explanation coverage')
             elif q['type'] == 'native-b':
                 start = first[n].rfind('\n1 ')
                 assert norm(q['question']) == norm(first[n][:start]), (year,n,'cloze stem')
@@ -97,6 +107,7 @@ with tempfile.TemporaryDirectory(prefix='gyosei-audit-') as directory:
                 parts = re.split(r'(?<!\d)([1-9]|1[0-9]|20)\s+', bank)
                 assert [int(parts[i]) for i in range(1, len(parts), 2)] == list(range(1, 21))
                 assert [norm(c['label']) for c in q['nativeB']['candidates']] == [norm(parts[i]) for i in range(2, len(parts), 2)], (year,n,'word bank')
+                assert all(c.get('explanation', '').strip() for c in q['nativeB']['candidates']), (year,n,'candidate explanations')
             else:
                 assert norm(q['question']) == norm(first[n]), (year,n,'descriptive stem')
                 for example in q['modelAnswer'].split('\n\n'):

@@ -11,6 +11,7 @@ import { gradeNativeB, NativeBDataSchema } from "@/lib/questions/native-b";
 import { choiceDisplayLabel } from "@/lib/questions/display";
 import { NativeBAnswerInput, NativeBFeedback } from "@/components/quiz/NativeBAnswer";
 import { DescriptiveAnswerCard } from "@/components/quiz/DescriptiveAnswerCard";
+import { QuestionCard } from "@/components/quiz/QuestionCard";
 
 const keys = ["ア", "イ", "ウ", "エ", "オ"];
 describe("行政書士 令和7・6年度の公式公開分", () => {
@@ -34,6 +35,9 @@ describe("行政書士 令和7・6年度の公式公開分", () => {
       expect(q.explanation.length).toBeGreaterThan(25);
       if (q.type === "multiple-choice") {
         expect(Object.keys(q.choices!)).toEqual(keys);
+        expect(Object.keys(q.choiceExplanations!)).toEqual(keys);
+        expect(Object.values(q.choiceExplanations!).every(reason => reason.length > 20)).toBe(true);
+        expect(q.explanationCoverage).toBe("full");
         if (q.officialAnswerNumber !== "全員正解") expect(q.answer).toBe(keys[Number(expected.officialAnswer)-1]);
       }
       if (q.type === "descriptive") {
@@ -48,6 +52,8 @@ describe("行政書士 令和7・6年度の公式公開分", () => {
       const bank = q.nativeB!;
       expect(NativeBDataSchema.safeParse(bank).success).toBe(true);
       expect(bank.candidates.map(c => Number(c.id))).toEqual(Array.from({length:20},(_,i)=>i+1));
+      expect(bank.candidates.every(c => c.explanation && c.explanation.length > 15)).toBe(true);
+      expect(NativeBDataSchema.safeParse({...bank,candidates:bank.candidates.map(c=>({...c,explanation:undefined}))}).success).toBe(false);
       expect(bank.slots.map(s => Number(s.answer))).toEqual(answers[`${q.year}-${q.qNumber}`]);
       const selected = Object.fromEntries(bank.slots.map(s => [s.label,s.answer]));
       expect(gradeNativeB(bank,selected)).toMatchObject({isCorrect:true,correctSlots:4,totalSlots:4});
@@ -71,16 +77,23 @@ describe("行政書士 令和7・6年度の公式公開分", () => {
     expect(q.requiredSelections).toBeUndefined();
     expect(choiceDisplayLabel("gyosei","オ")).toBe("5");
   });
-  it("keeps candidates out of both public registries and routing", async () => {
+  it("publishes reviewed questions through both registries and routing", async () => {
     expect(EXAM_CONFIGS.gyosei.yearRange).toEqual({start:2024,end:2025});
-    expect(isExamPublished("gyosei")).toBe(false);
+    expect(isExamPublished("gyosei")).toBe(true);
     expect(QUALIFICATION_CATALOG.filter(q => q.shortName === "行政書士")).toHaveLength(1);
-    expect(getAvailableExams()).not.toContain("gyosei");
-    expect(ALL_QUIZ_EXAM_CODES).not.toContain("gyosei");
+    expect(getAvailableExams()).toContain("gyosei");
+    expect(ALL_QUIZ_EXAM_CODES).toContain("gyosei");
+    // ALL_EXAM_CODES is the legacy IPA-only list; external exams use ALL_QUIZ_EXAM_CODES.
     expect(ALL_EXAM_CODES).not.toContain("gyosei");
-    expect(ALL_QUESTIONS.some(q=>q.exam === "gyosei")).toBe(false);
-    expect(await getQuestionsForExam("gyosei")).toEqual([]);
-    expect(GYOSEI_QUESTIONS.every(q=>q.needsReview)).toBe(true);
+    expect(ALL_QUESTIONS.filter(q=>q.exam === "gyosei")).toHaveLength(112);
+    expect(await getQuestionsForExam("gyosei")).toHaveLength(112);
+    expect(GYOSEI_QUESTIONS.every(q=>!q.needsReview && q.license === "GYOSEI-owner-cleared")).toBe(true);
+  });
+  it("preserves the four underlined statements as visible bold text", () => {
+    const q = GYOSEI_QUESTIONS.find(q=>q.year===2025 && q.qNumber===15)!;
+    const { container } = render(<QuestionCard question={q} />);
+    expect(container.querySelectorAll("strong")).toHaveLength(4);
+    expect(container.querySelectorAll("strong")[3].textContent).toContain("棄却されたとみなされる");
   });
   it("labels official descriptive examples accurately and links their official source", () => {
     const q = GYOSEI_QUESTIONS.find(q=>q.year===2024 && q.qNumber===45)!;

@@ -1,4 +1,3 @@
-import { isExamPublished } from "../lib/qualifications/catalog";
 import { GYOSEI_QUESTIONS } from "../data/questions/gyosei";
 import { NativeBDataSchema, nativeBQuestionIssue } from "../lib/questions/native-b";
 /**
@@ -120,7 +119,7 @@ const QuestionSchema = z.object({
   sourceAttribution: z.string().min(1).optional(),
   lawReferenceDate: z.string().regex(/^\d{4}-\d{2}-\d{2}$/).optional(),
   officialReferenceUrls: z.array(z.string().url()).optional(),
-  license: z.enum(["GYOSEI-permission-pending","IPA-public", "JAFP-reuse-with-attribution", "KINZAI-reuse-with-attribution", "ECEE-educational-reuse", "RETIO-reuse", "JCTC-authorized-reuse", "SSSC-reuse", "KANSAI-UNION-reuse", "KANRIKYO-educational-reuse", "EXAM-OR-JP-attributed", "IPEJ-attributed", "HOYOKYO-attributed", "MANKAN-attributed", "JFSA-attributed", "SHAROSI-attributed", "MHLW-attributed", "AHK-attributed", "JAAME-attributed", "RBC-attributed", "JF-CMCA-attributed", "JCTC-attributed", "MOJ-attributed", "ZAIJUSEI-attributed", "NICHIMU-educational-reuse", "NICHIMU-past-question-study-use", "MLIT-PDL-1.0", "CPAAOB-PDL-1.0", "JIA-attributed"]),
+  license: z.enum(["GYOSEI-owner-cleared","IPA-public", "JAFP-reuse-with-attribution", "KINZAI-reuse-with-attribution", "ECEE-educational-reuse", "RETIO-reuse", "JCTC-authorized-reuse", "SSSC-reuse", "KANSAI-UNION-reuse", "KANRIKYO-educational-reuse", "EXAM-OR-JP-attributed", "IPEJ-attributed", "HOYOKYO-attributed", "MANKAN-attributed", "JFSA-attributed", "SHAROSI-attributed", "MHLW-attributed", "AHK-attributed", "JAAME-attributed", "RBC-attributed", "JF-CMCA-attributed", "JCTC-attributed", "MOJ-attributed", "ZAIJUSEI-attributed", "NICHIMU-educational-reuse", "NICHIMU-past-question-study-use", "MLIT-PDL-1.0", "CPAAOB-PDL-1.0", "JIA-attributed"]),
   isCalculation: z.boolean().optional(),
 });
 
@@ -329,7 +328,7 @@ function validate(questions: Question[]): ValidationResult {
       }
 
       if (q.license !== "IPA-public") {
-        const officialSummary = q.explanationCoverage === "official-summary" && (q.exam === "denken3" || (q.exam === "gyosei" && q.needsReview === true && !isExamPublished(q.exam)));
+        const officialSummary = q.explanationCoverage === "official-summary" && q.exam === "denken3";
         if ((!q.choiceExplanations && !officialSummary) || !q.sourceAnswerUrl || !q.sourceAttribution) {
           fail++;
           byExam[examKey].fail++;

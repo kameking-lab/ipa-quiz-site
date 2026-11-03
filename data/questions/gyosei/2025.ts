@@ -16,13 +16,13 @@ export const GYOSEI_2025_QUESTIONS: Question[] = [
     "difficulty": 3,
     "question": "裁判員制度に関する次の記述のうち、裁判員法＊の規定に照らし、誤っているも\nのはどれか。\n\n\n\n（注） ＊ 裁判員の参加する刑事裁判に関する法律",
     "answer": "エ",
-    "explanation": "正解は4。有罪判断などには、裁判官と裁判員の双方の意見を含む過半数が必要です。裁判員だけの過半数で決まるという記述は誤りです。",
+    "explanation": "正解は4。誤り。裁判員だけで決めるのではなく、原則として裁判官・裁判員双方の意見を含む合議体の過半数を必要とする。",
     "hasImage": false,
     "sourcePdfUrl": "https://gyosei-shiken.or.jp/pdf/r7_mondai.pdf",
     "sourceAnswerUrl": "https://gyosei-shiken.or.jp/doc/exam/r7ans.html",
-    "sourceAttribution": "出典：一般財団法人行政書士試験研究センター 令和7年度行政書士試験 問題2・公式正解。改行・ページ番号・語群配置をWeb表示用に整理。解説は過去問AI独自作成。転載許諾未取得・未公開。",
-    "license": "GYOSEI-permission-pending",
-    "needsReview": true,
+    "sourceAttribution": "出典：一般財団法人行政書士試験研究センター 令和7年度行政書士試験 問題2・公式正解。改行・ページ番号・語群配置をWeb表示用に整理。解説は過去問AI独自作成。権利確認済み（オーナー確認）。",
+    "license": "GYOSEI-owner-cleared",
+    "needsReview": false,
     "lastUpdated": "2026-11-03",
     "lawReferenceDate": "2025-04-01",
     "questionNotice": "法令に関する説明と正答は出題時点の法令に基づきます。現行法への置換はしていません。",
@@ -34,7 +34,14 @@ export const GYOSEI_2025_QUESTIONS: Question[] = [
       "オ": "裁判員が、その関与する判断のための評議の秘密を漏らしたときは、当該裁判員\nは、刑罰を科される。"
     },
     "officialAnswerNumber": "4",
-    "explanationCoverage": "official-summary"
+    "choiceExplanations": {
+      "ア": "正しい。衆議院議員の選挙権を有する者から、くじ等の無作為な方法で裁判員が選任される。",
+      "イ": "正しい。欠格等の法定事由があれば、検察官・被告人・弁護人は解任を請求できる。",
+      "ウ": "正しい。裁判員は地方裁判所の一定の重大な刑事事件に参加する。",
+      "エ": "誤り。裁判員だけで決めるのではなく、原則として裁判官・裁判員双方の意見を含む合議体の過半数を必要とする。",
+      "オ": "正しい。評議の秘密の漏示には裁判員法の罰則があり、守秘義務は任務終了後も続く。"
+    },
+    "explanationCoverage": "full"
   },
   {
     "id": "gyosei-2025-annual-gakka-q3",
@@ -51,13 +58,13 @@ export const GYOSEI_2025_QUESTIONS: Question[] = [
     "difficulty": 3,
     "question": "法の下の平等に関する次の記述のうち、最高裁判所の判例に照らし、妥当なもの\nはどれか。",
     "answer": "エ",
-    "explanation": "正解は4。婚外子の相続分差別を違憲とした判例は、本人が選べない出生上の事情による不利益と、個人の尊重を重視しています。",
+    "explanation": "正解は4。妥当。婚外子相続分差別の違憲決定は、子が選べない出生事情による不利益と個人尊重の考え方の変化を重視した。",
     "hasImage": false,
     "sourcePdfUrl": "https://gyosei-shiken.or.jp/pdf/r7_mondai.pdf",
     "sourceAnswerUrl": "https://gyosei-shiken.or.jp/doc/exam/r7ans.html",
-    "sourceAttribution": "出典：一般財団法人行政書士試験研究センター 令和7年度行政書士試験 問題3・公式正解。改行・ページ番号・語群配置をWeb表示用に整理。解説は過去問AI独自作成。転載許諾未取得・未公開。",
-    "license": "GYOSEI-permission-pending",
-    "needsReview": true,
+    "sourceAttribution": "出典：一般財団法人行政書士試験研究センター 令和7年度行政書士試験 問題3・公式正解。改行・ページ番号・語群配置をWeb表示用に整理。解説は過去問AI独自作成。権利確認済み（オーナー確認）。",
+    "license": "GYOSEI-owner-cleared",
+    "needsReview": false,
     "lastUpdated": "2026-11-03",
     "lawReferenceDate": "2025-04-01",
     "questionNotice": "法令に関する説明と正答は出題時点の法令に基づきます。現行法への置換はしていません。",
@@ -69,7 +76,14 @@ export const GYOSEI_2025_QUESTIONS: Question[] = [
       "オ": "憲法25条の定める生存権は個人の尊厳と密接に関係する権利であり、これに関\n係する法的取り扱いの区別の合憲性については、立法者がその裁量を踰越していな\nいか厳格かつ慎重に審査されなければならない。"
     },
     "officialAnswerNumber": "4",
-    "explanationCoverage": "official-summary"
+    "choiceExplanations": {
+      "ア": "妥当でない。尊属殺重罰規定の判例は、社会的身分の差別として厳格基準を採るのでなく、刑罰加重の程度の合理性を問題とした。",
+      "イ": "妥当でない。租税立法の広い裁量は専門技術的・政策的判断の必要性によるのであり、14条の列挙事由でないことを根拠としたものではない。",
+      "ウ": "妥当でない。判例は再婚禁止期間の目的との合理的関連性等を検討しており、性別の区別すべてに一律の厳格基準を採用したわけではない。",
+      "エ": "妥当。婚外子相続分差別の違憲決定は、子が選べない出生事情による不利益と個人尊重の考え方の変化を重視した。",
+      "オ": "妥当でない。生存権に関する制度設計には広い立法裁量を認め、明らかに合理性を欠く等の場合に違憲とするのが判例である。"
+    },
+    "explanationCoverage": "full"
   },
   {
     "id": "gyosei-2025-annual-gakka-q4",
@@ -86,13 +100,13 @@ export const GYOSEI_2025_QUESTIONS: Question[] = [
     "difficulty": 3,
     "question": "取材・報道の自由に関する次の記述のうち、最高裁判所の判例に照らし、妥当で\nないものはどれか。",
     "answer": "オ",
-    "explanation": "正解は5。取材源の秘密は、民事訴訟における証言拒絶が認められる職業の秘密に当たり得ます。常に開示すべきものとはされていません。",
+    "explanation": "正解は5。妥当でない。取材源は民訴法上の職業の秘密に当たりうる。証言拒絶を認めるかは保護の必要性等を比較して判断する。",
     "hasImage": false,
     "sourcePdfUrl": "https://gyosei-shiken.or.jp/pdf/r7_mondai.pdf",
     "sourceAnswerUrl": "https://gyosei-shiken.or.jp/doc/exam/r7ans.html",
-    "sourceAttribution": "出典：一般財団法人行政書士試験研究センター 令和7年度行政書士試験 問題4・公式正解。改行・ページ番号・語群配置をWeb表示用に整理。解説は過去問AI独自作成。転載許諾未取得・未公開。",
-    "license": "GYOSEI-permission-pending",
-    "needsReview": true,
+    "sourceAttribution": "出典：一般財団法人行政書士試験研究センター 令和7年度行政書士試験 問題4・公式正解。改行・ページ番号・語群配置をWeb表示用に整理。解説は過去問AI独自作成。権利確認済み（オーナー確認）。",
+    "license": "GYOSEI-owner-cleared",
+    "needsReview": false,
     "lastUpdated": "2026-11-03",
     "lawReferenceDate": "2025-04-01",
     "questionNotice": "法令に関する説明と正答は出題時点の法令に基づきます。現行法への置換はしていません。",
@@ -104,7 +118,14 @@ export const GYOSEI_2025_QUESTIONS: Question[] = [
       "オ": "報道関係者の取材源は、それがみだりに開示されると将来の自由で円滑な取材活\n動に一定の支障は生じうるが、公正な裁判の実現のためには取材源を明らかにする\n必要があり、民事訴訟法上の証言拒絶が認められうる職業の秘密には該当しない。"
     },
     "officialAnswerNumber": "5",
-    "explanationCoverage": "official-summary"
+    "choiceExplanations": {
+      "ア": "妥当。博多駅テレビフィルム提出命令事件は、公正な裁判の実現と取材の自由を比較衡量する。",
+      "イ": "妥当。外務省秘密漏洩事件は、刑罰法令に触れなくても人格の尊厳を著しく蹂躙する等の取材を正当な範囲外とした。",
+      "ウ": "妥当。判例は反論権を当然には認めず、報道の萎縮による表現の自由への影響も考慮する。",
+      "エ": "妥当。レペタ事件判決は、当時の司法記者クラブ記者へのメモ許可を報道の公共性等に照らして合理的とした。",
+      "オ": "妥当でない。取材源は民訴法上の職業の秘密に当たりうる。証言拒絶を認めるかは保護の必要性等を比較して判断する。"
+    },
+    "explanationCoverage": "full"
   },
   {
     "id": "gyosei-2025-annual-gakka-q5",
@@ -121,13 +142,13 @@ export const GYOSEI_2025_QUESTIONS: Question[] = [
     "difficulty": 3,
     "question": "国会の召集に関する次の文章の空欄 ア 〜 エ に当てはまる語句の組合せとし\nて、妥当なものはどれか。\n憲法は、国会について ア 制を採用し、内閣がその召集を実質的に決定する権限\nを有するものとした上で、52条、53条及び54条1項において、常会、 イ 会及び\nウ 会の召集時期等について規定している。そのうち憲法53条は、前段において、\n内閣は、 イ 会召集決定をすることができると規定し、後段において、いずれかの\n議院の総議員の4分の1以上による イ 会召集要求があれば、内閣は、 イ 会召集\n決定をしなければならない旨を規定している。これは、国会と内閣との間における権\n限の分配という観点から、内閣が イ 会召集決定をすることとしつつ、これがされ\nない場合においても、国会の ア を開始して国会による国政の根幹に関わる広範な\n権能の行使を可能とするため、各議院を組織する一定数以上の議員に対して イ 会\n召集要求をする権限を付与するとともに、この イ 会召集要求がされた場合には、\n内閣が イ 会召集決定をする義務を負うこととしたものと解されるのであって、\n個々の国会議員の イ 会召集要求に係る エ を保障したものとは解されない。\n（最三小判令和5年9月12日民集77巻6号1515頁）\nア イ ウ エ",
     "answer": "オ",
-    "explanation": "正解は5。国会は会期制を採り、臨時会・特別会を区別します。判例は、憲法53条後段が個々の議員の権利又は利益を保障するとはしていません。",
+    "explanation": "正解は5。正解。会期・臨時・特別・権利又は利益となる。判例は53条後段を権限配分の規定とし、個々の議員の権利利益保障を否定する。",
     "hasImage": false,
     "sourcePdfUrl": "https://gyosei-shiken.or.jp/pdf/r7_mondai.pdf",
     "sourceAnswerUrl": "https://gyosei-shiken.or.jp/doc/exam/r7ans.html",
-    "sourceAttribution": "出典：一般財団法人行政書士試験研究センター 令和7年度行政書士試験 問題5・公式正解。改行・ページ番号・語群配置をWeb表示用に整理。解説は過去問AI独自作成。転載許諾未取得・未公開。",
-    "license": "GYOSEI-permission-pending",
-    "needsReview": true,
+    "sourceAttribution": "出典：一般財団法人行政書士試験研究センター 令和7年度行政書士試験 問題5・公式正解。改行・ページ番号・語群配置をWeb表示用に整理。解説は過去問AI独自作成。権利確認済み（オーナー確認）。",
+    "license": "GYOSEI-owner-cleared",
+    "needsReview": false,
     "lastUpdated": "2026-11-03",
     "lawReferenceDate": "2025-04-01",
     "questionNotice": "法令に関する説明と正答は出題時点の法令に基づきます。現行法への置換はしていません。",
@@ -139,7 +160,14 @@ export const GYOSEI_2025_QUESTIONS: Question[] = [
       "オ": "会期 臨時 特別 権利又は利益"
     },
     "officialAnswerNumber": "5",
-    "explanationCoverage": "official-summary"
+    "choiceExplanations": {
+      "ア": "不正解。アは会期でよいが、イ・ウは臨時・特別の順であり、エも個々の議員の権利又は利益が入る。",
+      "イ": "不正解。イ・ウは臨時・特別でよいが、アは立法期ではなく会期、エは権利又は利益である。",
+      "ウ": "不正解。会期と権利又は利益は適切だが、臨時会と特別会を逆にしている。",
+      "エ": "不正解。国会は会期制であり、53条は臨時会、54条1項は特別会に関する規定である。",
+      "オ": "正解。会期・臨時・特別・権利又は利益となる。判例は53条後段を権限配分の規定とし、個々の議員の権利利益保障を否定する。"
+    },
+    "explanationCoverage": "full"
   },
   {
     "id": "gyosei-2025-annual-gakka-q6",
@@ -156,13 +184,13 @@ export const GYOSEI_2025_QUESTIONS: Question[] = [
     "difficulty": 3,
     "question": "内閣総理大臣に関する次の記述のうち、妥当なものはどれか。",
     "answer": "オ",
-    "explanation": "正解は5。憲法74条は、法律・政令への主任国務大臣の署名と内閣総理大臣の連署を要求しています。",
+    "explanation": "正解は5。妥当。憲法74条により法律・政令には主任国務大臣の署名と首相の連署が必要である。",
     "hasImage": false,
     "sourcePdfUrl": "https://gyosei-shiken.or.jp/pdf/r7_mondai.pdf",
     "sourceAnswerUrl": "https://gyosei-shiken.or.jp/doc/exam/r7ans.html",
-    "sourceAttribution": "出典：一般財団法人行政書士試験研究センター 令和7年度行政書士試験 問題6・公式正解。改行・ページ番号・語群配置をWeb表示用に整理。解説は過去問AI独自作成。転載許諾未取得・未公開。",
-    "license": "GYOSEI-permission-pending",
-    "needsReview": true,
+    "sourceAttribution": "出典：一般財団法人行政書士試験研究センター 令和7年度行政書士試験 問題6・公式正解。改行・ページ番号・語群配置をWeb表示用に整理。解説は過去問AI独自作成。権利確認済み（オーナー確認）。",
+    "license": "GYOSEI-owner-cleared",
+    "needsReview": false,
     "lastUpdated": "2026-11-03",
     "lawReferenceDate": "2025-04-01",
     "questionNotice": "法令に関する説明と正答は出題時点の法令に基づきます。現行法への置換はしていません。",
@@ -174,7 +202,14 @@ export const GYOSEI_2025_QUESTIONS: Question[] = [
       "オ": "法律及び政令には、すべて主任の国務大臣が署名し、内閣総理大臣が連署するこ\nとを必要とする。"
     },
     "officialAnswerNumber": "5",
-    "explanationCoverage": "official-summary"
+    "choiceExplanations": {
+      "ア": "妥当でない。帝国憲法には内閣総理大臣を内閣の首長とする明文規定はなかった。",
+      "イ": "妥当でない。指名対象は国会議員であり、参議院議員も含む。衆議院議員に限らない。",
+      "ウ": "妥当でない。臨時代理は首相の職務を行い、衆議院解散の助言と承認等が一律に除外されるわけではない。",
+      "エ": "妥当でない。憲法75条は首相の同意のない訴追を制限する。不逮捕特権や会期前逮捕者の釈放要求の制度と混同している。",
+      "オ": "妥当。憲法74条により法律・政令には主任国務大臣の署名と首相の連署が必要である。"
+    },
+    "explanationCoverage": "full"
   },
   {
     "id": "gyosei-2025-annual-gakka-q7",
@@ -191,13 +226,13 @@ export const GYOSEI_2025_QUESTIONS: Question[] = [
     "difficulty": 3,
     "question": "法令の形式に関する次の記述のうち、妥当なものはどれか。",
     "answer": "エ",
-    "explanation": "正解は4。最高裁判所には規則制定権があり、下級裁判所に関する規則制定権の委任も認められています。",
+    "explanation": "正解は4。妥当。憲法77条は最高裁の規則制定権と、下級裁判所への規則制定権の委任を認める。",
     "hasImage": false,
     "sourcePdfUrl": "https://gyosei-shiken.or.jp/pdf/r7_mondai.pdf",
     "sourceAnswerUrl": "https://gyosei-shiken.or.jp/doc/exam/r7ans.html",
-    "sourceAttribution": "出典：一般財団法人行政書士試験研究センター 令和7年度行政書士試験 問題7・公式正解。改行・ページ番号・語群配置をWeb表示用に整理。解説は過去問AI独自作成。転載許諾未取得・未公開。",
-    "license": "GYOSEI-permission-pending",
-    "needsReview": true,
+    "sourceAttribution": "出典：一般財団法人行政書士試験研究センター 令和7年度行政書士試験 問題7・公式正解。改行・ページ番号・語群配置をWeb表示用に整理。解説は過去問AI独自作成。権利確認済み（オーナー確認）。",
+    "license": "GYOSEI-owner-cleared",
+    "needsReview": false,
     "lastUpdated": "2026-11-03",
     "lawReferenceDate": "2025-04-01",
     "questionNotice": "法令に関する説明と正答は出題時点の法令に基づきます。現行法への置換はしていません。",
@@ -209,7 +244,14 @@ export const GYOSEI_2025_QUESTIONS: Question[] = [
       "オ": "会計検査院は、憲法上独立性が保障された機関であることから内部組織に関する\n自律権が認められており、その組織・権限は専ら会計検査院自身が定める規則に\nよって規定される。"
     },
     "officialAnswerNumber": "4",
-    "explanationCoverage": "official-summary"
+    "choiceExplanations": {
+      "ア": "妥当でない。皇室典範は国会が制定する法律であり、皇室会議の規則ではない。",
+      "イ": "妥当でない。定足数や秘密会の要件等の重要事項は憲法56条・57条等にも規定される。",
+      "ウ": "妥当でない。省令にも法律の委任に基づき罰則を設けることができる。",
+      "エ": "妥当。憲法77条は最高裁の規則制定権と、下級裁判所への規則制定権の委任を認める。",
+      "オ": "妥当でない。憲法90条は会計検査院の組織・権限を法律で定めるとしている。"
+    },
+    "explanationCoverage": "full"
   },
   {
     "id": "gyosei-2025-annual-gakka-q8",
@@ -226,13 +268,13 @@ export const GYOSEI_2025_QUESTIONS: Question[] = [
     "difficulty": 3,
     "question": "行政行為（処分）に関する次の記述のうち、最高裁判所の判例に照らし、妥当な\nものはどれか。",
     "answer": "イ",
-    "explanation": "正解は2。明白性は処分の外形から客観的に誤認が一見分かるかどうかによります。後の詳細な調査で判明したこととは区別します。",
+    "explanation": "正解は2。妥当。瑕疵の明白性は処分の外形上、客観的に誤認が一見して分かるかで判断する。",
     "hasImage": false,
     "sourcePdfUrl": "https://gyosei-shiken.or.jp/pdf/r7_mondai.pdf",
     "sourceAnswerUrl": "https://gyosei-shiken.or.jp/doc/exam/r7ans.html",
-    "sourceAttribution": "出典：一般財団法人行政書士試験研究センター 令和7年度行政書士試験 問題8・公式正解。改行・ページ番号・語群配置をWeb表示用に整理。解説は過去問AI独自作成。転載許諾未取得・未公開。",
-    "license": "GYOSEI-permission-pending",
-    "needsReview": true,
+    "sourceAttribution": "出典：一般財団法人行政書士試験研究センター 令和7年度行政書士試験 問題8・公式正解。改行・ページ番号・語群配置をWeb表示用に整理。解説は過去問AI独自作成。権利確認済み（オーナー確認）。",
+    "license": "GYOSEI-owner-cleared",
+    "needsReview": false,
     "lastUpdated": "2026-11-03",
     "lawReferenceDate": "2025-04-01",
     "questionNotice": "法令に関する説明と正答は出題時点の法令に基づきます。現行法への置換はしていません。",
@@ -244,7 +286,14 @@ export const GYOSEI_2025_QUESTIONS: Question[] = [
       "オ": "処分の成立時点において瑕疵があった場合、事後の事情の変化により当該瑕疵が\n解消するに至ったとしても、その瑕疵は治癒されることはなく、当該処分はそれを\n理由として取り消されるか、または当然に無効であるとされる。"
     },
     "officialAnswerNumber": "2",
-    "explanationCoverage": "official-summary"
+    "choiceExplanations": {
+      "ア": "妥当でない。授益的処分の撤回は、利益保護等の制約を受けるが常に明文の根拠を要するわけではない。",
+      "イ": "妥当。瑕疵の明白性は処分の外形上、客観的に誤認が一見して分かるかで判断する。",
+      "ウ": "妥当でない。争訟裁断的な処分には不可変更力が認められ、処分庁が自由に取り消せない。",
+      "エ": "妥当でない。職権取消しは違法だけでなく不当を理由とする場合もある。",
+      "オ": "妥当でない。瑕疵の治癒が例外的に認められる場合があり、事後の是正が一切考慮されないわけではない。"
+    },
+    "explanationCoverage": "full"
   },
   {
     "id": "gyosei-2025-annual-gakka-q9",
@@ -261,13 +310,13 @@ export const GYOSEI_2025_QUESTIONS: Question[] = [
     "difficulty": 3,
     "question": "行政罰に関する次のア〜エの記述のうち、最高裁判所の判例に照らし、妥当なも\nのの組合せはどれか。\nア 財団法人の理事の就任に関する登記が法定期間内に行われなかったことに対して\n科される過料は、非訟事件手続法に基づく手続によって科されるが、中立性のある\n裁判所によって、当事者の陳述の機会を設けた上で科されるものであり、かつ即時\n抗告も可能であることから、憲法上の適正手続の要請に反しているとはいえない。\nイ カルテル行為を行ったことによって独占禁止法＊違反被告事件において罰金刑が\n確定している者に対し、さらに独占禁止法の規定に基づき課徴金の納付を命ずるこ\nとは、課徴金を課せられるべき違反者の行為を犯罪とし、それに対する刑罰とし\nて、これを課する趣旨でないことは明らかであるから、二重処罰の禁止には違反し\nない。\nウ 所得税の確定申告において虚偽記載を行い所得税を脱税したことにより、懲役刑\nと罰金刑を併科された者に対して、さらに重加算税を科すことは、重加算税が申告\n納税を怠った者に対し、その行為の反社会性ないし反道徳性に着目し、これに対す\nる制裁として科せられるものでもあるから、二重処罰の禁止に抵触する。\nエ 刑事裁判において正当な理由がなく証言を拒んだ場合に、刑事訴訟法に基づき裁\n判官により秩序罰として科される過料と、同法に基づき通常の刑事手続により科さ\nれる罰金は、法廷秩序の維持という点で目的が共通しているから、両者を併科する\nことは許されない。\n\n\n\n（注） ＊ 私的独占の禁止及び公正取引の確保に関する法律",
     "answer": "ア",
-    "explanation": "正解は1。公式正解はア・イです。行政上の秩序罰と刑事罰は性質が異なり、手続や併科の可否もその性質に応じて検討します。",
+    "explanation": "正解は1。正解。ア・イはいずれも妥当。秩序罰の過料は行政上の義務違反に対する制裁で刑罰ではなく、刑事罰との併科も当然には二重処罰に当たらない。",
     "hasImage": false,
     "sourcePdfUrl": "https://gyosei-shiken.or.jp/pdf/r7_mondai.pdf",
     "sourceAnswerUrl": "https://gyosei-shiken.or.jp/doc/exam/r7ans.html",
-    "sourceAttribution": "出典：一般財団法人行政書士試験研究センター 令和7年度行政書士試験 問題9・公式正解。改行・ページ番号・語群配置をWeb表示用に整理。解説は過去問AI独自作成。転載許諾未取得・未公開。",
-    "license": "GYOSEI-permission-pending",
-    "needsReview": true,
+    "sourceAttribution": "出典：一般財団法人行政書士試験研究センター 令和7年度行政書士試験 問題9・公式正解。改行・ページ番号・語群配置をWeb表示用に整理。解説は過去問AI独自作成。権利確認済み（オーナー確認）。",
+    "license": "GYOSEI-owner-cleared",
+    "needsReview": false,
     "lastUpdated": "2026-11-03",
     "lawReferenceDate": "2025-04-01",
     "questionNotice": "法令に関する説明と正答は出題時点の法令に基づきます。現行法への置換はしていません。",
@@ -279,7 +328,14 @@ export const GYOSEI_2025_QUESTIONS: Question[] = [
       "オ": "ウ・エ"
     },
     "officialAnswerNumber": "1",
-    "explanationCoverage": "official-summary"
+    "choiceExplanations": {
+      "ア": "正解。ア・イはいずれも妥当。秩序罰の過料は行政上の義務違反に対する制裁で刑罰ではなく、刑事罰との併科も当然には二重処罰に当たらない。",
+      "イ": "不正解。アの非訟手続による過料の適正手続は妥当だが、ウは重加算税と刑罰の併科を二重処罰とする点で誤る。重加算税は刑罰ではない。",
+      "ウ": "不正解。イの課徴金と罰金の併科は妥当だが、ウも重加算税と刑罰の併科は二重処罰に反しないため誤る。",
+      "エ": "不正解。イは妥当だが、エは刑罰と行政上の制裁を区別せず当然に併科を禁止する点で誤る。",
+      "オ": "不正解。ウの重加算税と刑罰、エの証言拒否に対する過料と罰金はそれぞれ併科でき、一律禁止とする両記述は誤る。"
+    },
+    "explanationCoverage": "full"
   },
   {
     "id": "gyosei-2025-annual-gakka-q10",
@@ -296,13 +352,13 @@ export const GYOSEI_2025_QUESTIONS: Question[] = [
     "difficulty": 3,
     "question": "行政行為の附款に関する次の記述のうち、妥当なものはどれか。",
     "answer": "ア",
-    "explanation": "正解は1。裁量処分には、明文の根拠がなくても裁量の範囲内で附款を付けられる場合があります。処分の目的との関連や比例原則による限界があります。",
+    "explanation": "正解は1。妥当。裁量処分の附款は目的との関連性等の限界内で、明文の根拠なしにも付すことができる。",
     "hasImage": false,
     "sourcePdfUrl": "https://gyosei-shiken.or.jp/pdf/r7_mondai.pdf",
     "sourceAnswerUrl": "https://gyosei-shiken.or.jp/doc/exam/r7ans.html",
-    "sourceAttribution": "出典：一般財団法人行政書士試験研究センター 令和7年度行政書士試験 問題10・公式正解。改行・ページ番号・語群配置をWeb表示用に整理。解説は過去問AI独自作成。転載許諾未取得・未公開。",
-    "license": "GYOSEI-permission-pending",
-    "needsReview": true,
+    "sourceAttribution": "出典：一般財団法人行政書士試験研究センター 令和7年度行政書士試験 問題10・公式正解。改行・ページ番号・語群配置をWeb表示用に整理。解説は過去問AI独自作成。権利確認済み（オーナー確認）。",
+    "license": "GYOSEI-owner-cleared",
+    "needsReview": false,
     "lastUpdated": "2026-11-03",
     "lawReferenceDate": "2025-04-01",
     "questionNotice": "法令に関する説明と正答は出題時点の法令に基づきます。現行法への置換はしていません。",
@@ -314,7 +370,14 @@ export const GYOSEI_2025_QUESTIONS: Question[] = [
       "オ": "行政行為の附款において、行政庁が負担として課すことができるのは作為義務に\n限られ、不作為義務を課すことはできない。"
     },
     "officialAnswerNumber": "1",
-    "explanationCoverage": "official-summary"
+    "choiceExplanations": {
+      "ア": "妥当。裁量処分の附款は目的との関連性等の限界内で、明文の根拠なしにも付すことができる。",
+      "イ": "妥当でない。撤回権の留保がなくても、利益保護等を考慮した上で撤回できる場合がある。",
+      "ウ": "妥当でない。負担の不履行は許可を当然遡及的に無効にするものではなく、撤回等の問題となる。",
+      "エ": "妥当でない。到来が確実な日付による開始・終了は条件ではなく期限である。",
+      "オ": "妥当でない。負担には作為義務だけでなく不作為義務を課すこともできる。"
+    },
+    "explanationCoverage": "full"
   },
   {
     "id": "gyosei-2025-annual-gakka-q11",
@@ -331,13 +394,13 @@ export const GYOSEI_2025_QUESTIONS: Question[] = [
     "difficulty": 3,
     "question": "行政手続法が定める弁明の機会の付与に関する次の記述のうち、妥当なものはど\nれか。",
     "answer": "ア",
-    "explanation": "正解は1。弁明の機会の付与を受けた者は代理人を選任できます。聴聞と弁明の手続上の違いと、代理の可否を混同しないようにします。",
+    "explanation": "正解は1。妥当。行政手続法31条が聴聞の代理人規定を準用し、弁明でも代理人を選任できる。",
     "hasImage": false,
     "sourcePdfUrl": "https://gyosei-shiken.or.jp/pdf/r7_mondai.pdf",
     "sourceAnswerUrl": "https://gyosei-shiken.or.jp/doc/exam/r7ans.html",
-    "sourceAttribution": "出典：一般財団法人行政書士試験研究センター 令和7年度行政書士試験 問題11・公式正解。改行・ページ番号・語群配置をWeb表示用に整理。解説は過去問AI独自作成。転載許諾未取得・未公開。",
-    "license": "GYOSEI-permission-pending",
-    "needsReview": true,
+    "sourceAttribution": "出典：一般財団法人行政書士試験研究センター 令和7年度行政書士試験 問題11・公式正解。改行・ページ番号・語群配置をWeb表示用に整理。解説は過去問AI独自作成。権利確認済み（オーナー確認）。",
+    "license": "GYOSEI-owner-cleared",
+    "needsReview": false,
     "lastUpdated": "2026-11-03",
     "lawReferenceDate": "2025-04-01",
     "questionNotice": "法令に関する説明と正答は出題時点の法令に基づきます。現行法への置換はしていません。",
@@ -349,7 +412,14 @@ export const GYOSEI_2025_QUESTIONS: Question[] = [
       "オ": "行政庁は、弁明を記載した書面（弁明書）が提出された後に新たな事情が生じた\nときは、弁明書を提出した者に対しその再提出を求めなければならない。"
     },
     "officialAnswerNumber": "1",
-    "explanationCoverage": "official-summary"
+    "choiceExplanations": {
+      "ア": "妥当。行政手続法31条が聴聞の代理人規定を準用し、弁明でも代理人を選任できる。",
+      "イ": "妥当でない。聴聞の文書閲覧権の規定は弁明には準用されない。",
+      "ウ": "妥当でない。弁明書について利害関係人に聴聞調書等と同様の閲覧権を認める規定はない。",
+      "エ": "妥当でない。聴聞の調書・報告書の作成規定は弁明には準用されない。",
+      "オ": "妥当でない。新事情が生じた場合の弁明書再提出を一律に義務付ける規定はない。"
+    },
+    "explanationCoverage": "full"
   },
   {
     "id": "gyosei-2025-annual-gakka-q12",
@@ -366,13 +436,13 @@ export const GYOSEI_2025_QUESTIONS: Question[] = [
     "difficulty": 3,
     "question": "個人情報保護法＊によれば、個人情報保護委員会は、個人情報取扱事業者が同法\nの定める一定の規定に違反した場合において個人の権利利益を保護するため必要が\nあると認めるときは、当該事業者に対し、必要な措置をとるべき旨を勧告すること\nができ（同法148条1項）、そして、当該事業者が正当な理由がなくてその勧告に\n係る措置をとらなかった場合において個人の重大な権利利益の侵害が切迫している\nと認めるときは、当該事業者等に対し、その勧告に係る措置をとるべきことを命ず\nること（以下「命令」という。）ができる（同条2項）。\n上記の勧告と命令に関する次のア〜エの記述のうち、行政手続法の定めに照ら\nし、妥当なものの組合せはどれか。なお、上記勧告は処分（同法2条2号）ではな\nく行政指導であり（同条6号）、命令は処分であることを前提にする。\nア 勧告は、命令を行う前に執られる弁明の機会の付与のための通知に該当する。\nイ 勧告に携わる者は、その相手方に対し、勧告の趣旨及び内容並びに責任者を明確\nに示さなければならない。\nウ 勧告を受けた者は、これに続く命令が個人情報保護法に規定する要件に適合しな\nいと思料する場合、個人情報保護委員会に対し、行政手続法の定めに従って、当該\n命令をしないよう求めることができる。\nエ 個人情報保護委員会は、命令をする場合、その名宛人に対し、原則として、同時\nにその理由を示さなければならない。\n\n\n\n（注） ＊ 個人情報の保護に関する法律",
     "answer": "エ",
-    "explanation": "正解は4。公式正解はイ・エです。個人情報保護委員会の勧告・命令について、命令に進むための法定要件と緊急の場合の例外を区別します。",
+    "explanation": "正解は4。正解。イは行政指導の明確化、エは不利益処分の理由提示に対応する。勧告と命令では行政手続法上の性質が異なる。",
     "hasImage": false,
     "sourcePdfUrl": "https://gyosei-shiken.or.jp/pdf/r7_mondai.pdf",
     "sourceAnswerUrl": "https://gyosei-shiken.or.jp/doc/exam/r7ans.html",
-    "sourceAttribution": "出典：一般財団法人行政書士試験研究センター 令和7年度行政書士試験 問題12・公式正解。改行・ページ番号・語群配置をWeb表示用に整理。解説は過去問AI独自作成。転載許諾未取得・未公開。",
-    "license": "GYOSEI-permission-pending",
-    "needsReview": true,
+    "sourceAttribution": "出典：一般財団法人行政書士試験研究センター 令和7年度行政書士試験 問題12・公式正解。改行・ページ番号・語群配置をWeb表示用に整理。解説は過去問AI独自作成。権利確認済み（オーナー確認）。",
+    "license": "GYOSEI-owner-cleared",
+    "needsReview": false,
     "lastUpdated": "2026-11-03",
     "lawReferenceDate": "2025-04-01",
     "questionNotice": "法令に関する説明と正答は出題時点の法令に基づきます。現行法への置換はしていません。",
@@ -384,7 +454,14 @@ export const GYOSEI_2025_QUESTIONS: Question[] = [
       "オ": "ウ・エ"
     },
     "officialAnswerNumber": "4",
-    "explanationCoverage": "official-summary"
+    "choiceExplanations": {
+      "ア": "不正解。アの勧告は行政指導であり弁明通知ではなく、ウの将来の命令をしないよう求める制度も行政手続法にはない。",
+      "イ": "不正解。エの命令時の理由提示は妥当だが、アの勧告を弁明通知とする記述は誤る。",
+      "ウ": "不正解。イの趣旨・内容・責任者の明示は妥当だが、ウは行政指導の中止等の求めと将来の処分の差止めを混同している。",
+      "エ": "正解。イは行政指導の明確化、エは不利益処分の理由提示に対応する。勧告と命令では行政手続法上の性質が異なる。",
+      "オ": "不正解。エは妥当だが、ウのように行政手続法に基づき命令をしないよう求めることはできない。"
+    },
+    "explanationCoverage": "full"
   },
   {
     "id": "gyosei-2025-annual-gakka-q13",
@@ -401,13 +478,13 @@ export const GYOSEI_2025_QUESTIONS: Question[] = [
     "difficulty": 3,
     "question": "行政手続法が定める申請に対する処分に関する次の記述のうち、妥当なものはど\nれか。",
     "answer": "イ",
-    "explanation": "正解は2。申請者の求めに応じて審査の進行状況・処分時期の見通しを示すことが努力義務となっています。",
+    "explanation": "正解は2。妥当。申請者の求めに応じ、審査の進行状況と処分時期の見通しを示す努力義務がある。",
     "hasImage": false,
     "sourcePdfUrl": "https://gyosei-shiken.or.jp/pdf/r7_mondai.pdf",
     "sourceAnswerUrl": "https://gyosei-shiken.or.jp/doc/exam/r7ans.html",
-    "sourceAttribution": "出典：一般財団法人行政書士試験研究センター 令和7年度行政書士試験 問題13・公式正解。改行・ページ番号・語群配置をWeb表示用に整理。解説は過去問AI独自作成。転載許諾未取得・未公開。",
-    "license": "GYOSEI-permission-pending",
-    "needsReview": true,
+    "sourceAttribution": "出典：一般財団法人行政書士試験研究センター 令和7年度行政書士試験 問題13・公式正解。改行・ページ番号・語群配置をWeb表示用に整理。解説は過去問AI独自作成。権利確認済み（オーナー確認）。",
+    "license": "GYOSEI-owner-cleared",
+    "needsReview": false,
     "lastUpdated": "2026-11-03",
     "lawReferenceDate": "2025-04-01",
     "questionNotice": "法令に関する説明と正答は出題時点の法令に基づきます。現行法への置換はしていません。",
@@ -419,7 +496,14 @@ export const GYOSEI_2025_QUESTIONS: Question[] = [
       "オ": "行政庁は、申請がその形式上の要件に適合しない場合には、速やかに、当該申請\n者に対し相当の期間を定めてその補正を求めなければならず、補正を求めることな\nく許認可等を拒否してはならない。"
     },
     "officialAnswerNumber": "2",
-    "explanationCoverage": "official-summary"
+    "choiceExplanations": {
+      "ア": "妥当でない。拒否処分の理由は原則同時に示す義務があり、申請者の求めがある場合だけではない。",
+      "イ": "妥当。申請者の求めに応じ、審査の進行状況と処分時期の見通しを示す努力義務がある。",
+      "ウ": "妥当でない。申請に対して定めるのは審査基準であり、不利益処分の処分基準と混同している。",
+      "エ": "妥当でない。申請拒否は行政手続法の不利益処分から除外され、聴聞・弁明を原則として要しない。",
+      "オ": "妥当でない。形式不備の申請には補正を求めるか、許認可等を拒否することができる。"
+    },
+    "explanationCoverage": "full"
   },
   {
     "id": "gyosei-2025-annual-gakka-q14",
@@ -436,13 +520,13 @@ export const GYOSEI_2025_QUESTIONS: Question[] = [
     "difficulty": 3,
     "question": "行政不服審査法の規定に関する次の記述のうち、妥当なものはどれか。",
     "answer": "ア",
-    "explanation": "正解は1。法人格のない社団・財団でも、代表者または管理人の定めがあればその名で審査請求できます。",
+    "explanation": "正解は1。妥当。代表者又は管理人が定まる法人でない社団・財団は、その名で審査請求できる。",
     "hasImage": false,
     "sourcePdfUrl": "https://gyosei-shiken.or.jp/pdf/r7_mondai.pdf",
     "sourceAnswerUrl": "https://gyosei-shiken.or.jp/doc/exam/r7ans.html",
-    "sourceAttribution": "出典：一般財団法人行政書士試験研究センター 令和7年度行政書士試験 問題14・公式正解。改行・ページ番号・語群配置をWeb表示用に整理。解説は過去問AI独自作成。転載許諾未取得・未公開。",
-    "license": "GYOSEI-permission-pending",
-    "needsReview": true,
+    "sourceAttribution": "出典：一般財団法人行政書士試験研究センター 令和7年度行政書士試験 問題14・公式正解。改行・ページ番号・語群配置をWeb表示用に整理。解説は過去問AI独自作成。権利確認済み（オーナー確認）。",
+    "license": "GYOSEI-owner-cleared",
+    "needsReview": false,
     "lastUpdated": "2026-11-03",
     "lawReferenceDate": "2025-04-01",
     "questionNotice": "法令に関する説明と正答は出題時点の法令に基づきます。現行法への置換はしていません。",
@@ -454,7 +538,14 @@ export const GYOSEI_2025_QUESTIONS: Question[] = [
       "オ": "処分の申請に対する不作為について審査請求をすることができる者は、申請者に\n限られることはなく、当該処分がなされることにつき法律上の利益を有する者も含\nまれる。"
     },
     "officialAnswerNumber": "1",
-    "explanationCoverage": "official-summary"
+    "choiceExplanations": {
+      "ア": "妥当。代表者又は管理人が定まる法人でない社団・財団は、その名で審査請求できる。",
+      "イ": "妥当でない。審査請求の取下げは特別の委任が必要で、代理人が当然にできる行為には含まれない。",
+      "ウ": "妥当でない。審理員となるべき者の名簿は作成する努力義務で、作成したときは公にする。",
+      "エ": "妥当でない。複数人による共同審査請求が認められている。",
+      "オ": "妥当でない。不作為についての審査請求は、法令に基づく申請をした者が行う。"
+    },
+    "explanationCoverage": "full"
   },
   {
     "id": "gyosei-2025-annual-gakka-q15",
@@ -469,18 +560,18 @@ export const GYOSEI_2025_QUESTIONS: Question[] = [
       "行政法"
     ],
     "difficulty": 3,
-    "question": "審査請求と再調査の請求との関係に関する次の会話の下線部ア〜エのうち、妥当\nなものの組合せはどれか。\n学生Ａ： 今日は行政不服審査法の定める審査請求と再調査の請求との関係について\n学んでいこう。\n学生Ｂ： 再調査の請求は、処分庁自身がその処分の適否を再度見直すための仕組み\nだね。\n学生Ａ： まず、行政処分について、ア処分庁以外の行政庁に対して審査請求をする\nことができる場合には、処分庁に対して再調査の請求を当然にすることがで\nきる。\n学生Ｂ： なるほど、実際には、租税や年金分野において多く提起されているようだ\nね。\n学生Ａ： そして、イ再調査の請求は任意的なものであるので、再調査の請求ができ\nる場合でも、直ちに審査請求を提起することもできる。\n学生Ｂ： じゃあ、再調査の請求と審査請求の両方を同時に提起できるのかな？\n学生Ａ： ちょっと待って…。どうやら、ウ再調査の請求をすると、原則として、そ\nの決定を経た後でなければ審査請求はできないことになっている。\n学生Ｂ： それでは、再調査の請求をしても、決定が出るのが遅れた場合にはどうな\nるのだろう？\n学生Ａ： その場合でも、決定を経ることなく、審査請求をすることができる。エこ\nのような場合、行政不服審査法では、再調査の請求が棄却されたとみなされ\nることになっている。\n学生Ｂ： なかなか複雑な仕組みだね。正しく覚えておこう。",
+    "question": "審査請求と再調査の請求との関係に関する次の会話の下線部ア〜エのうち、妥当\nなものの組合せはどれか。\n学生Ａ： 今日は行政不服審査法の定める審査請求と再調査の請求との関係について\n学んでいこう。\n学生Ｂ： 再調査の請求は、処分庁自身がその処分の適否を再度見直すための仕組み\nだね。\n学生Ａ： まず、行政処分について、ア**処分庁以外の行政庁に対して審査請求をすることができる場合には、処分庁に対して再調査の請求を当然にすることができる。**\n学生Ｂ： なるほど、実際には、租税や年金分野において多く提起されているようだ\nね。\n学生Ａ： そして、イ**再調査の請求は任意的なものであるので、再調査の請求ができる場合でも、直ちに審査請求を提起することもできる。**\n学生Ｂ： じゃあ、再調査の請求と審査請求の両方を同時に提起できるのかな？\n学生Ａ： ちょっと待って…。どうやら、ウ**再調査の請求をすると、原則として、その決定を経た後でなければ審査請求はできないことになっている。**\n学生Ｂ： それでは、再調査の請求をしても、決定が出るのが遅れた場合にはどうな\nるのだろう？\n学生Ａ： その場合でも、決定を経ることなく、審査請求をすることができる。エ**このような場合、行政不服審査法では、再調査の請求が棄却されたとみなされることになっている。**\n学生Ｂ： なかなか複雑な仕組みだね。正しく覚えておこう。",
     "answer": "ウ",
-    "explanation": "正解は3。公式正解はイ・ウです。再調査の請求を経た審査請求には期間や裁決との関係に特則があり、通常の審査請求と分けて確認します。",
+    "explanation": "正解は3。正解。イは再調査の任意性、ウは再調査を選んだ場合の原則的な決定前置を述べる。",
     "hasImage": false,
     "sourcePdfUrl": "https://gyosei-shiken.or.jp/pdf/r7_mondai.pdf",
     "sourceAnswerUrl": "https://gyosei-shiken.or.jp/doc/exam/r7ans.html",
-    "sourceAttribution": "出典：一般財団法人行政書士試験研究センター 令和7年度行政書士試験 問題15・公式正解。改行・ページ番号・語群配置をWeb表示用に整理。解説は過去問AI独自作成。転載許諾未取得・未公開。",
-    "license": "GYOSEI-permission-pending",
-    "needsReview": true,
+    "sourceAttribution": "出典：一般財団法人行政書士試験研究センター 令和7年度行政書士試験 問題15・公式正解。改行・ページ番号・語群配置をWeb表示用に整理。解説は過去問AI独自作成。権利確認済み（オーナー確認）。",
+    "license": "GYOSEI-owner-cleared",
+    "needsReview": false,
     "lastUpdated": "2026-11-03",
     "lawReferenceDate": "2025-04-01",
-    "questionNotice": "法令に関する説明と正答は出題時点の法令に基づきます。現行法への置換はしていません。",
+    "questionNotice": "法令に関する説明と正答は出題時点の法令に基づきます。現行法への置換はしていません。 公式PDFの下線部ア〜エは太字で表示しています。",
     "choices": {
       "ア": "ア・イ",
       "イ": "ア・ウ",
@@ -489,7 +580,14 @@ export const GYOSEI_2025_QUESTIONS: Question[] = [
       "オ": "ウ・エ"
     },
     "officialAnswerNumber": "3",
-    "explanationCoverage": "official-summary"
+    "choiceExplanations": {
+      "ア": "不正解。アは再調査には法律の定めが必要な点で誤り、イは再調査を経ず直ちに審査請求できる点で妥当。",
+      "イ": "不正解。ウは原則として再調査の決定を待つ点で妥当だが、アは法律の個別の根拠を要する点を誤る。",
+      "ウ": "正解。イは再調査の任意性、ウは再調査を選んだ場合の原則的な決定前置を述べる。",
+      "エ": "不正解。イは妥当だが、エと異なり決定遅延を理由に再調査の請求が棄却されたとみなす規定はない。",
+      "オ": "不正解。ウは妥当だが、エは誤る。3か月の決定遅延等の場合は、棄却とみなすのではなく決定前の審査請求が可能になる。"
+    },
+    "explanationCoverage": "full"
   },
   {
     "id": "gyosei-2025-annual-gakka-q16",
@@ -506,13 +604,13 @@ export const GYOSEI_2025_QUESTIONS: Question[] = [
     "difficulty": 3,
     "question": "行政不服審査法が定める教示に関する次の記述のうち、妥当なものはどれか。",
     "answer": "オ",
-    "explanation": "正解は5。教示がなかった場合には処分庁への審査請求書の提出が認められ、管轄行政庁への送付後も当初の提出時に請求したものとして保護されます。",
+    "explanation": "正解は5。妥当。教示欠如の場合は処分庁への提出ができ、送付後も当初の提出時に請求したものとして扱われる。",
     "hasImage": false,
     "sourcePdfUrl": "https://gyosei-shiken.or.jp/pdf/r7_mondai.pdf",
     "sourceAnswerUrl": "https://gyosei-shiken.or.jp/doc/exam/r7ans.html",
-    "sourceAttribution": "出典：一般財団法人行政書士試験研究センター 令和7年度行政書士試験 問題16・公式正解。改行・ページ番号・語群配置をWeb表示用に整理。解説は過去問AI独自作成。転載許諾未取得・未公開。",
-    "license": "GYOSEI-permission-pending",
-    "needsReview": true,
+    "sourceAttribution": "出典：一般財団法人行政書士試験研究センター 令和7年度行政書士試験 問題16・公式正解。改行・ページ番号・語群配置をWeb表示用に整理。解説は過去問AI独自作成。権利確認済み（オーナー確認）。",
+    "license": "GYOSEI-owner-cleared",
+    "needsReview": false,
     "lastUpdated": "2026-11-03",
     "lawReferenceDate": "2025-04-01",
     "questionNotice": "法令に関する説明と正答は出題時点の法令に基づきます。現行法への置換はしていません。",
@@ -524,7 +622,14 @@ export const GYOSEI_2025_QUESTIONS: Question[] = [
       "オ": "処分庁が不服申立てをすべき行政庁につき教示を怠った場合、当該処分に不服が\nある者は、処分庁に審査請求書を提出することができ、処分庁以外の行政庁に審査\n請求ができる処分であるときは、処分庁は、審査請求書を当該行政庁に送付しなけ\nればならず、送付された場合、初めから当該行政庁に審査請求がされたものとみな\nされる。"
     },
     "officialAnswerNumber": "5",
-    "explanationCoverage": "official-summary"
+    "choiceExplanations": {
+      "ア": "妥当でない。利害関係人から求められた場合にも、行政庁は不服申立ての可否等を教示しなければならない。",
+      "イ": "妥当でない。書面による処分についての相手方への教示は原則書面で行う。",
+      "ウ": "妥当でない。書面による教示の求めに対しては書面で教示する必要がある。",
+      "エ": "妥当でない。誤教示先の行政庁は原則として審査請求書を正しい行政庁へ送付し、請求人にも通知する。",
+      "オ": "妥当。教示欠如の場合は処分庁への提出ができ、送付後も当初の提出時に請求したものとして扱われる。"
+    },
+    "explanationCoverage": "full"
   },
   {
     "id": "gyosei-2025-annual-gakka-q17",
@@ -541,13 +646,13 @@ export const GYOSEI_2025_QUESTIONS: Question[] = [
     "difficulty": 3,
     "question": "抗告訴訟の対象に関する次の記述のうち、最高裁判所の判例に照らし、妥当なも\nのはどれか。",
     "answer": "ア",
-    "explanation": "正解は1。輸入禁制品に当たる旨の通知は、適法な輸入の道を閉ざす法的効果を有するため、単なる情報提供を超えて処分性が認められます。",
+    "explanation": "正解は1。妥当。輸入禁制品該当通知は適法に輸入する道を閉ざす法的効果があり、処分性が認められる。",
     "hasImage": false,
     "sourcePdfUrl": "https://gyosei-shiken.or.jp/pdf/r7_mondai.pdf",
     "sourceAnswerUrl": "https://gyosei-shiken.or.jp/doc/exam/r7ans.html",
-    "sourceAttribution": "出典：一般財団法人行政書士試験研究センター 令和7年度行政書士試験 問題17・公式正解。改行・ページ番号・語群配置をWeb表示用に整理。解説は過去問AI独自作成。転載許諾未取得・未公開。",
-    "license": "GYOSEI-permission-pending",
-    "needsReview": true,
+    "sourceAttribution": "出典：一般財団法人行政書士試験研究センター 令和7年度行政書士試験 問題17・公式正解。改行・ページ番号・語群配置をWeb表示用に整理。解説は過去問AI独自作成。権利確認済み（オーナー確認）。",
+    "license": "GYOSEI-owner-cleared",
+    "needsReview": false,
     "lastUpdated": "2026-11-03",
     "lawReferenceDate": "2025-04-01",
     "questionNotice": "法令に関する説明と正答は出題時点の法令に基づきます。現行法への置換はしていません。",
@@ -559,7 +664,14 @@ export const GYOSEI_2025_QUESTIONS: Question[] = [
       "オ": "都市計画法に基づく都市計画決定としてなされる工業地域指定は、これによって\n当該地域内において、建築物の建築を制限する法的効果が土地所有者等に対して生\nじることとなるため、具体的な権利侵害を伴うものであるから、行政処分に当た\nる。"
     },
     "officialAnswerNumber": "1",
-    "explanationCoverage": "official-summary"
+    "choiceExplanations": {
+      "ア": "妥当。輸入禁制品該当通知は適法に輸入する道を閉ざす法的効果があり、処分性が認められる。",
+      "イ": "妥当でない。反則金納付の通告は法的な納付義務を生じさせず、抗告訴訟の対象となる処分ではない。",
+      "ウ": "妥当でない。一般的な水道料金改定条例の制定は一般抽象的な規範の制定であり、処分性は認められない。",
+      "エ": "妥当でない。還付通知の拒否は登記を受けた者の手続上の地位に影響するため処分性が認められる。",
+      "オ": "妥当でない。用途地域としての工業地域指定は一般的抽象的な規制で、抗告訴訟の処分とはされない。"
+    },
+    "explanationCoverage": "full"
   },
   {
     "id": "gyosei-2025-annual-gakka-q18",
@@ -576,13 +688,13 @@ export const GYOSEI_2025_QUESTIONS: Question[] = [
     "difficulty": 3,
     "question": "処分取消訴訟の出訴期間について定めた下記の規定に関する次の記述のうち、法\n令および最高裁判所の判例に照らし、妥当なものはどれか。\n行政事件訴訟法（行訴法）14条1項「取消訴訟は、処分…があったことを知った\n日から6箇月を経過したときは、提起することができない。ただし、正当な理由があ\nるときは、この限りでない。」\nなお、本問では「処分…があったことを知った日」を「基準日」という。",
     "answer": "オ",
-    "explanation": "正解は5。告示により多数の関係者へ画一的に告知する処分では、判例上、告示の日を出訴期間の基準日とする扱いがあります。",
+    "explanation": "正解は5。妥当。告示で多数の関係者に画一的に告知する都市計画事業認可では、告示日を基準とする。",
     "hasImage": false,
     "sourcePdfUrl": "https://gyosei-shiken.or.jp/pdf/r7_mondai.pdf",
     "sourceAnswerUrl": "https://gyosei-shiken.or.jp/doc/exam/r7ans.html",
-    "sourceAttribution": "出典：一般財団法人行政書士試験研究センター 令和7年度行政書士試験 問題18・公式正解。改行・ページ番号・語群配置をWeb表示用に整理。解説は過去問AI独自作成。転載許諾未取得・未公開。",
-    "license": "GYOSEI-permission-pending",
-    "needsReview": true,
+    "sourceAttribution": "出典：一般財団法人行政書士試験研究センター 令和7年度行政書士試験 問題18・公式正解。改行・ページ番号・語群配置をWeb表示用に整理。解説は過去問AI独自作成。権利確認済み（オーナー確認）。",
+    "license": "GYOSEI-owner-cleared",
+    "needsReview": false,
     "lastUpdated": "2026-11-03",
     "lawReferenceDate": "2025-04-01",
     "questionNotice": "法令に関する説明と正答は出題時点の法令に基づきます。現行法への置換はしていません。",
@@ -594,7 +706,14 @@ export const GYOSEI_2025_QUESTIONS: Question[] = [
       "オ": "都市計画法における都市計画事業の認可のように、処分が個別の通知ではなく\n告示をもって多数の関係権利者等に画一的に告知される場合には、当該告示が\nあった日が基準日とされる。"
     },
     "officialAnswerNumber": "5",
-    "explanationCoverage": "official-summary"
+    "choiceExplanations": {
+      "ア": "妥当でない。処分の日から1年という客観的期間にも正当な理由の例外がある。",
+      "イ": "妥当でない。基準は処分の存在を知った日であり、開示文書の内容の詳細を認識した日ではない。",
+      "ウ": "妥当でない。無効等確認訴訟に14条の出訴期間は準用されず、形式的当事者訴訟にもこのような一般的準用はない。",
+      "エ": "妥当でない。適法な審査請求をした者には原則として裁決を知った日等からの期間を適用する。",
+      "オ": "妥当。告示で多数の関係者に画一的に告知する都市計画事業認可では、告示日を基準とする。"
+    },
+    "explanationCoverage": "full"
   },
   {
     "id": "gyosei-2025-annual-gakka-q19",
@@ -611,13 +730,13 @@ export const GYOSEI_2025_QUESTIONS: Question[] = [
     "difficulty": 3,
     "question": "処分差止めの訴えに関する次のア〜オの記述のうち、法令および最高裁判所の判\n例に照らし、妥当なものの組合せはどれか。\nア 処分差止めの訴えは、一定の処分がされることにより生ずる償うことのできない\n損害を避けるため緊急の必要があるときに限り提起することができる。\nイ 処分差止めの訴えは、対象となる処分がされることにより生ずるおそれのある損\n害が、処分がされた後に取消訴訟等を提起して執行停止の決定を受けることなどに\nより容易に救済を受けることができないときに提起することができるとするのが判\n例である。\nウ 処分差止めの訴えは、義務付けの訴えと同様、申請に対する処分を対象にする場\n合とそれ以外の処分を対象にする場合に区分され、訴訟要件と本案勝訴要件につ\nき、それぞれ別個の定めが置かれている。\nエ 取消しの訴えについては、処分又は裁決を取り消す判決は、第三者に対しても効\n力を有する旨の規定が置かれているが、この規定は、処分差止めの訴えには準用さ\nれていない。\nオ 仮の差止めは、処分差止めの訴えを提起する前においても申し立てることができ\nるが、本案について理由がないとみえるときは、仮の差止めの決定をすることがで\nきない。",
     "answer": "ウ",
-    "explanation": "正解は3。公式正解はイ・エです。差止訴訟では処分前の救済の必要性として重大な損害の要件を検討し、他の手段による救済可能性も確認します。",
+    "explanation": "正解は3。正解。イは事後救済が容易でない損害のおそれ、エは取消判決の第三者効が差止めに準用されないことを述べる。",
     "hasImage": false,
     "sourcePdfUrl": "https://gyosei-shiken.or.jp/pdf/r7_mondai.pdf",
     "sourceAnswerUrl": "https://gyosei-shiken.or.jp/doc/exam/r7ans.html",
-    "sourceAttribution": "出典：一般財団法人行政書士試験研究センター 令和7年度行政書士試験 問題19・公式正解。改行・ページ番号・語群配置をWeb表示用に整理。解説は過去問AI独自作成。転載許諾未取得・未公開。",
-    "license": "GYOSEI-permission-pending",
-    "needsReview": true,
+    "sourceAttribution": "出典：一般財団法人行政書士試験研究センター 令和7年度行政書士試験 問題19・公式正解。改行・ページ番号・語群配置をWeb表示用に整理。解説は過去問AI独自作成。権利確認済み（オーナー確認）。",
+    "license": "GYOSEI-owner-cleared",
+    "needsReview": false,
     "lastUpdated": "2026-11-03",
     "lawReferenceDate": "2025-04-01",
     "questionNotice": "法令に関する説明と正答は出題時点の法令に基づきます。現行法への置換はしていません。",
@@ -629,7 +748,14 @@ export const GYOSEI_2025_QUESTIONS: Question[] = [
       "オ": "ウ・オ"
     },
     "officialAnswerNumber": "3",
-    "explanationCoverage": "official-summary"
+    "choiceExplanations": {
+      "ア": "不正解。イは妥当だが、アの償うことのできない損害と緊急性は仮の差止めの要件であり、本案と異なる。",
+      "イ": "不正解。アは仮の差止めとの混同、オは本案提起前でも仮の差止めを申し立てられる点で誤る。",
+      "ウ": "正解。イは事後救済が容易でない損害のおそれ、エは取消判決の第三者効が差止めに準用されないことを述べる。",
+      "エ": "不正解。エは妥当だが、ウは差止めを申請型・非申請型に区分する規定がない点で誤る。",
+      "オ": "不正解。ウは差止めの類型、オは仮の差止めに本案提起が必要な点を誤る。"
+    },
+    "explanationCoverage": "full"
   },
   {
     "id": "gyosei-2025-annual-gakka-q20",
@@ -646,13 +772,13 @@ export const GYOSEI_2025_QUESTIONS: Question[] = [
     "difficulty": 3,
     "question": "国家賠償法1条に関する次のア〜エの記述のうち、最高裁判所の判例に照らし、\n妥当なものの組合せはどれか。\nア 国家賠償法1条は「公権力の行使」によって生じた損害に適用されるが、ここに\nいう「公権力の行使」は、行政事件訴訟法において抗告訴訟の対象を表す「公権力\nの行使」と同じ意味であるから、国会議員が行う立法行為は、この概念には含まれ\nないとするのが判例である。\nイ 国家賠償法1条は「公権力の行使」によって生じた損害に適用されるが、行政指\n導や情報提供などの非権力的行政作用も、ここにいう「公権力の行使」に含まれう\nるとするのが判例である。\nウ 国家賠償法1条による賠償責任を認めるには、加害公務員が「職務を行うについ\nて」他人に損害を与えていることが必要であり、公務員が職務執行の意思をもたず\nに私的な目的のためになした違法行為については、その外形のいかんにかかわら\nず、行政主体の賠償責任は成立しないとするのが判例である。\nエ 国家賠償法1条による賠償責任を認めるには、加害公務員が職務上尽くすべき注\n意義務に違反していることが必要であるが、公務員が法律解釈を誤って違法行為を\n行ったとしても、それにつき異なる見解が対立し、そのいずれについても相当の根\n拠が認められる場合には、行政主体の賠償責任は成立しないとするのが判例であ\nる。",
     "answer": "エ",
-    "explanation": "正解は4。公式正解はイ・エです。国家賠償法1条の違法性は、職務上の法的義務違反の有無によって判断します。処分取消しの違法性と常に一致するわけではありません。",
+    "explanation": "正解は4。正解。イは非権力的作用も国賠法1条の対象になりうる点、エは相当の根拠がある法解釈の対立下での過失の判断を述べる。",
     "hasImage": false,
     "sourcePdfUrl": "https://gyosei-shiken.or.jp/pdf/r7_mondai.pdf",
     "sourceAnswerUrl": "https://gyosei-shiken.or.jp/doc/exam/r7ans.html",
-    "sourceAttribution": "出典：一般財団法人行政書士試験研究センター 令和7年度行政書士試験 問題20・公式正解。改行・ページ番号・語群配置をWeb表示用に整理。解説は過去問AI独自作成。転載許諾未取得・未公開。",
-    "license": "GYOSEI-permission-pending",
-    "needsReview": true,
+    "sourceAttribution": "出典：一般財団法人行政書士試験研究センター 令和7年度行政書士試験 問題20・公式正解。改行・ページ番号・語群配置をWeb表示用に整理。解説は過去問AI独自作成。権利確認済み（オーナー確認）。",
+    "license": "GYOSEI-owner-cleared",
+    "needsReview": false,
     "lastUpdated": "2026-11-03",
     "lawReferenceDate": "2025-04-01",
     "questionNotice": "法令に関する説明と正答は出題時点の法令に基づきます。現行法への置換はしていません。",
@@ -664,7 +790,14 @@ export const GYOSEI_2025_QUESTIONS: Question[] = [
       "オ": "ウ・エ"
     },
     "officialAnswerNumber": "4",
-    "explanationCoverage": "official-summary"
+    "choiceExplanations": {
+      "ア": "不正解。イは妥当だが、アは立法行為も含まれうる国賠法の広い公権力の行使を、処分性と同一視して誤る。",
+      "イ": "不正解。アは立法行為の除外、ウは職務執行の外形を無視して私的目的を一律に除外する点で誤る。",
+      "ウ": "不正解。エは相当の根拠のある法解釈をした場合の過失を否定する趣旨で妥当だが、アは誤る。",
+      "エ": "正解。イは非権力的作用も国賠法1条の対象になりうる点、エは相当の根拠がある法解釈の対立下での過失の判断を述べる。",
+      "オ": "不正解。エは妥当だが、ウは私的目的でも客観的な職務執行の外形があれば職務行為性が認められる点を誤る。"
+    },
+    "explanationCoverage": "full"
   },
   {
     "id": "gyosei-2025-annual-gakka-q21",
@@ -681,13 +814,13 @@ export const GYOSEI_2025_QUESTIONS: Question[] = [
     "difficulty": 3,
     "question": "国家賠償法に関する次の記述のうち、最高裁判所の判例に照らし、妥当なものは\nどれか。\n\n\n\n（注） ＊ 失火ノ責任ニ関スル法律",
     "answer": "エ",
-    "explanation": "正解は4。営造物の設置管理者と費用負担者が異なる場合は双方が賠償責任を負い得ます。実質的な共同事業者に当たる費用負担者を含むとした判例があります。",
+    "explanation": "正解は4。妥当。費用負担者には法律上の義務者だけでなく、同等に近い費用を負担して実質的に共同事業を行う者も含まれうる。",
     "hasImage": false,
     "sourcePdfUrl": "https://gyosei-shiken.or.jp/pdf/r7_mondai.pdf",
     "sourceAnswerUrl": "https://gyosei-shiken.or.jp/doc/exam/r7ans.html",
-    "sourceAttribution": "出典：一般財団法人行政書士試験研究センター 令和7年度行政書士試験 問題21・公式正解。改行・ページ番号・語群配置をWeb表示用に整理。解説は過去問AI独自作成。転載許諾未取得・未公開。",
-    "license": "GYOSEI-permission-pending",
-    "needsReview": true,
+    "sourceAttribution": "出典：一般財団法人行政書士試験研究センター 令和7年度行政書士試験 問題21・公式正解。改行・ページ番号・語群配置をWeb表示用に整理。解説は過去問AI独自作成。権利確認済み（オーナー確認）。",
+    "license": "GYOSEI-owner-cleared",
+    "needsReview": false,
     "lastUpdated": "2026-11-03",
     "lawReferenceDate": "2025-04-01",
     "questionNotice": "法令に関する説明と正答は出題時点の法令に基づきます。現行法への置換はしていません。",
@@ -699,7 +832,14 @@ export const GYOSEI_2025_QUESTIONS: Question[] = [
       "オ": "国又は公共団体の公務員による一連の職務上の行為の過程において他人（被害\n者）に被害を生ぜしめた事案においては、それらの一連の行為を組成する各行為の\nいずれもが国又は同一の公共団体の公務員の職務上の行為にあたる場合であったと\nしても、国家賠償法1条1項に基づく損害賠償責任が成立するためには、被害者に\nおいて、当該事案における加害行為とそれを行った者を特定しなければならない。"
     },
     "officialAnswerNumber": "4",
-    "explanationCoverage": "official-summary"
+    "choiceExplanations": {
+      "ア": "妥当でない。消火活動の不十分さから残り火が再燃した事案にも失火責任法を適用し、重過失の有無を検討する。",
+      "イ": "妥当でない。共同故意の加害公務員らの求償債務は分割債務ではなく連帯債務である。",
+      "ウ": "妥当でない。市町村も責任を負い、給与を負担する都道府県も国賠法3条に基づいて責任を負う。",
+      "エ": "妥当。費用負担者には法律上の義務者だけでなく、同等に近い費用を負担して実質的に共同事業を行う者も含まれうる。",
+      "オ": "妥当でない。一連の行為のいずれかに違法・過失があり同一公共団体の職務行為である等の要件下では、個々の加害者の特定を必ずしも要しない。"
+    },
+    "explanationCoverage": "full"
   },
   {
     "id": "gyosei-2025-annual-gakka-q22",
@@ -716,13 +856,13 @@ export const GYOSEI_2025_QUESTIONS: Question[] = [
     "difficulty": 3,
     "question": "条例の適法性に関する次の記述のうち、最高裁判所の判例に照らし、妥当でない\nものはどれか。",
     "answer": "オ",
-    "explanation": "正解は5。条例と法律が同じ行為を対象としていても、目的・内容・効果を比較して矛盾抵触がなければ併存できます。交通規制が重なるだけで違憲とはなりません。",
+    "explanation": "正解は5。妥当でない。同じ行為を対象にしても、法律と条例の目的・内容・効果を比較して矛盾抵触がなければ条例は適法である。",
     "hasImage": false,
     "sourcePdfUrl": "https://gyosei-shiken.or.jp/pdf/r7_mondai.pdf",
     "sourceAnswerUrl": "https://gyosei-shiken.or.jp/doc/exam/r7ans.html",
-    "sourceAttribution": "出典：一般財団法人行政書士試験研究センター 令和7年度行政書士試験 問題22・公式正解。改行・ページ番号・語群配置をWeb表示用に整理。解説は過去問AI独自作成。転載許諾未取得・未公開。",
-    "license": "GYOSEI-permission-pending",
-    "needsReview": true,
+    "sourceAttribution": "出典：一般財団法人行政書士試験研究センター 令和7年度行政書士試験 問題22・公式正解。改行・ページ番号・語群配置をWeb表示用に整理。解説は過去問AI独自作成。権利確認済み（オーナー確認）。",
+    "license": "GYOSEI-owner-cleared",
+    "needsReview": false,
     "lastUpdated": "2026-11-03",
     "lawReferenceDate": "2025-04-01",
     "questionNotice": "法令に関する説明と正答は出題時点の法令に基づきます。現行法への置換はしていません。",
@@ -734,7 +874,14 @@ export const GYOSEI_2025_QUESTIONS: Question[] = [
       "オ": "集団行進および集団示威行為における交通秩序の維持を目的とする条例は、道路\n交通法と同一の行為を処罰することになるため、憲法31条に違反する。"
     },
     "officialAnswerNumber": "5",
-    "explanationCoverage": "official-summary"
+    "choiceExplanations": {
+      "ア": "妥当。ため池の堤とうを破損等させる行為は財産権の保障の範囲外であり、条例による禁止・処罰が認められる。",
+      "イ": "妥当。地方自治法による相当に具体的で限定された授権に基づく条例罰則は、憲法31条に反しない。",
+      "ウ": "妥当。判例は規制対象を本来的暴走族等の集団に限定して解釈し、憲法21条・31条違反を否定した。",
+      "エ": "妥当。条例が一定の基準を定めて料率の決定・公示を市長に委任することは、憲法84条の趣旨に反しない。",
+      "オ": "妥当でない。同じ行為を対象にしても、法律と条例の目的・内容・効果を比較して矛盾抵触がなければ条例は適法である。"
+    },
+    "explanationCoverage": "full"
   },
   {
     "id": "gyosei-2025-annual-gakka-q23",
@@ -751,13 +898,13 @@ export const GYOSEI_2025_QUESTIONS: Question[] = [
     "difficulty": 3,
     "question": "都道府県における知事と議会の関係に関する次の記述のうち、法令に照らし、妥\n当なものはどれか。",
     "answer": "イ",
-    "explanation": "正解は2。知事は議決に異議があれば、違法性の有無に限らず一般的再議に付すことができます。違法な議決等に対する特別な再議とは区別します。",
+    "explanation": "正解は2。妥当。長の一般的再議権は政策上の異議にも行使でき、法令違反がある場合に限られない。",
     "hasImage": false,
     "sourcePdfUrl": "https://gyosei-shiken.or.jp/pdf/r7_mondai.pdf",
     "sourceAnswerUrl": "https://gyosei-shiken.or.jp/doc/exam/r7ans.html",
-    "sourceAttribution": "出典：一般財団法人行政書士試験研究センター 令和7年度行政書士試験 問題23・公式正解。改行・ページ番号・語群配置をWeb表示用に整理。解説は過去問AI独自作成。転載許諾未取得・未公開。",
-    "license": "GYOSEI-permission-pending",
-    "needsReview": true,
+    "sourceAttribution": "出典：一般財団法人行政書士試験研究センター 令和7年度行政書士試験 問題23・公式正解。改行・ページ番号・語群配置をWeb表示用に整理。解説は過去問AI独自作成。権利確認済み（オーナー確認）。",
+    "license": "GYOSEI-owner-cleared",
+    "needsReview": false,
     "lastUpdated": "2026-11-03",
     "lawReferenceDate": "2025-04-01",
     "questionNotice": "法令に関する説明と正答は出題時点の法令に基づきます。現行法への置換はしていません。",
@@ -769,7 +916,14 @@ export const GYOSEI_2025_QUESTIONS: Question[] = [
       "オ": "議会により不信任が議決された場合には、知事は議会を解散することができる\nが、解散後初めて議会が招集された時に自動的に失職する。"
     },
     "officialAnswerNumber": "2",
-    "explanationCoverage": "official-summary"
+    "choiceExplanations": {
+      "ア": "妥当でない。議会は軽易な事項等を議決で指定し、長の専決処分に委ねられる。",
+      "イ": "妥当。長の一般的再議権は政策上の異議にも行使でき、法令違反がある場合に限られない。",
+      "ウ": "妥当でない。都道府県知事のこの審査申立ての相手は総務大臣であり、内閣総理大臣ではない。",
+      "エ": "妥当でない。専決処分が議会に承認されなくてもその効力が当然に失われるわけではない。",
+      "オ": "妥当でない。解散後の議会で再び不信任が議決される等の要件により失職し、初招集だけで自動失職はしない。"
+    },
+    "explanationCoverage": "full"
   },
   {
     "id": "gyosei-2025-annual-gakka-q24",
@@ -786,13 +940,13 @@ export const GYOSEI_2025_QUESTIONS: Question[] = [
     "difficulty": 3,
     "question": "普通地方公共団体に対する国又は都道府県の関与に関する次のア〜エの記述のう\nち、妥当なものの組合せはどれか。\nア 各大臣は、その担任する事務に関し、都道府県の自治事務の処理が法令の規定に\n違反していると認めるときは、当該都道府県に対し、是正の要求をすることができ\nる。\nイ 各大臣は、その担任する事務に関し、市町村の自治事務の処理が法令の規定に違\n反していると認めるときに、都道府県知事に対し、当該事務の処理について違反の\n是正のために必要な措置を講ずべきことを当該市町村に求めるよう指示をすること\nはできず、これを当該市町村に対し直接に指示することができる。\nウ 都道府県知事は、市町村長の担任する自治事務の処理が法令の規定に違反してい\nると認めるときは、各大臣の指示によることなく、当該市町村に対し、是正の要求\nをすることができる。\nエ 各大臣は、その所管する法律又はこれに基づく政令に係る都道府県の法定受託事\n務の処理が法令の規定に違反していると認めるときは、当該都道府県に対し、是正\nの指示をすることができる。",
     "answer": "イ",
-    "explanation": "正解は2。公式正解はア・エです。国等の関与は法定主義に従い、自治事務と法定受託事務で関与の種類や条件が異なります。",
+    "explanation": "正解は2。正解。アは自治事務への是正要求、エは法定受託事務への是正指示であり、関与の種類を正しく区別する。",
     "hasImage": false,
     "sourcePdfUrl": "https://gyosei-shiken.or.jp/pdf/r7_mondai.pdf",
     "sourceAnswerUrl": "https://gyosei-shiken.or.jp/doc/exam/r7ans.html",
-    "sourceAttribution": "出典：一般財団法人行政書士試験研究センター 令和7年度行政書士試験 問題24・公式正解。改行・ページ番号・語群配置をWeb表示用に整理。解説は過去問AI独自作成。転載許諾未取得・未公開。",
-    "license": "GYOSEI-permission-pending",
-    "needsReview": true,
+    "sourceAttribution": "出典：一般財団法人行政書士試験研究センター 令和7年度行政書士試験 問題24・公式正解。改行・ページ番号・語群配置をWeb表示用に整理。解説は過去問AI独自作成。権利確認済み（オーナー確認）。",
+    "license": "GYOSEI-owner-cleared",
+    "needsReview": false,
     "lastUpdated": "2026-11-03",
     "lawReferenceDate": "2025-04-01",
     "questionNotice": "法令に関する説明と正答は出題時点の法令に基づきます。現行法への置換はしていません。",
@@ -804,7 +958,14 @@ export const GYOSEI_2025_QUESTIONS: Question[] = [
       "オ": "ウ・エ"
     },
     "officialAnswerNumber": "2",
-    "explanationCoverage": "official-summary"
+    "choiceExplanations": {
+      "ア": "不正解。アの自治事務への是正要求は妥当だが、イは大臣が知事に市町村への是正要求を指示できる仕組みを否定している。",
+      "イ": "正解。アは自治事務への是正要求、エは法定受託事務への是正指示であり、関与の種類を正しく区別する。",
+      "ウ": "不正解。イは大臣から知事への指示を否定して誤る。ウも一般原則では大臣の指示を要する。ただし事務処理特例条例による移譲事務には252条の17の4の例外がある。",
+      "エ": "不正解。エは妥当だが、イは自治事務に対する大臣の直接の是正指示を一般的に認める点で誤る。",
+      "オ": "不正解。エは妥当だが、ウは一般原則で必要な大臣の指示を不要として誤る。事務処理特例条例による移譲事務には知事独自の是正要求の例外がある。"
+    },
+    "explanationCoverage": "full"
   },
   {
     "id": "gyosei-2025-annual-gakka-q25",
@@ -821,13 +982,13 @@ export const GYOSEI_2025_QUESTIONS: Question[] = [
     "difficulty": 3,
     "question": "建築に関わる紛争に関する次の記述のうち、最高裁判所の判例に照らし、妥当な\nものはどれか。",
     "answer": "ウ",
-    "explanation": "正解は3。建築確認は着工前の計画適合性を判断する処分です。工事完了後には、その取消しによって回復すべき法律上の利益が失われるとされます。",
+    "explanation": "正解は3。妥当。工事完了後は建築確認の取消しで回復する利益がなくなるとするのが判例である。",
     "hasImage": false,
     "sourcePdfUrl": "https://gyosei-shiken.or.jp/pdf/r7_mondai.pdf",
     "sourceAnswerUrl": "https://gyosei-shiken.or.jp/doc/exam/r7ans.html",
-    "sourceAttribution": "出典：一般財団法人行政書士試験研究センター 令和7年度行政書士試験 問題25・公式正解。改行・ページ番号・語群配置をWeb表示用に整理。解説は過去問AI独自作成。転載許諾未取得・未公開。",
-    "license": "GYOSEI-permission-pending",
-    "needsReview": true,
+    "sourceAttribution": "出典：一般財団法人行政書士試験研究センター 令和7年度行政書士試験 問題25・公式正解。改行・ページ番号・語群配置をWeb表示用に整理。解説は過去問AI独自作成。権利確認済み（オーナー確認）。",
+    "license": "GYOSEI-owner-cleared",
+    "needsReview": false,
     "lastUpdated": "2026-11-03",
     "lawReferenceDate": "2025-04-01",
     "questionNotice": "法令に関する説明と正答は出題時点の法令に基づきます。現行法への置換はしていません。",
@@ -839,7 +1000,14 @@ export const GYOSEI_2025_QUESTIONS: Question[] = [
       "オ": "一級建築士により構造計算書に偽装が行われていた建築物の計画について、これ\nを看過した建築主事による建築確認が国家賠償法の適用上違法となる余地はなく、\n当該建築確認の申請者である建築主による国家賠償請求は認められない。"
     },
     "officialAnswerNumber": "3",
-    "explanationCoverage": "official-summary"
+    "choiceExplanations": {
+      "ア": "妥当でない。安全認定と建築確認の関係では違法性の承継が認められ、審査対象は無効となる瑕疵だけに限られない。",
+      "イ": "妥当でない。任意同意がなくても不交付が社会通念上正当と認められる特段の事情等があれば、留保が適法とされる場合がある。",
+      "ウ": "妥当。工事完了後は建築確認の取消しで回復する利益がなくなるとするのが判例である。",
+      "エ": "妥当でない。行訴法21条の国等への損害賠償請求への訴え変更では、建築主事を置く自治体を被告とすることが問題となる。",
+      "オ": "妥当でない。建築主への職務上の注意義務違反があれば、建築確認が国賠法上違法となる余地がある。"
+    },
+    "explanationCoverage": "full"
   },
   {
     "id": "gyosei-2025-annual-gakka-q26",
@@ -856,13 +1024,13 @@ export const GYOSEI_2025_QUESTIONS: Question[] = [
     "difficulty": 3,
     "question": "行政機関情報公開法＊（以下「法」という。）に関する次の記述のうち、妥当な\nものはどれか。\n\n\n\n（注） ＊ 行政機関の保有する情報の公開に関する法律",
     "answer": "エ",
-    "explanation": "正解は4。個人識別情報型の不開示規定は、本人が秘密を望むかどうかだけで決まりません。氏名等により特定個人を識別できるかを基準とし、法定の例外を検討します。",
+    "explanation": "正解は4。妥当。個人識別情報型の不開示規定であり、秘密にしたいという主観だけを基準とする制度ではない。法定の例外は別途検討する。",
     "hasImage": false,
     "sourcePdfUrl": "https://gyosei-shiken.or.jp/pdf/r7_mondai.pdf",
     "sourceAnswerUrl": "https://gyosei-shiken.or.jp/doc/exam/r7ans.html",
-    "sourceAttribution": "出典：一般財団法人行政書士試験研究センター 令和7年度行政書士試験 問題26・公式正解。改行・ページ番号・語群配置をWeb表示用に整理。解説は過去問AI独自作成。転載許諾未取得・未公開。",
-    "license": "GYOSEI-permission-pending",
-    "needsReview": true,
+    "sourceAttribution": "出典：一般財団法人行政書士試験研究センター 令和7年度行政書士試験 問題26・公式正解。改行・ページ番号・語群配置をWeb表示用に整理。解説は過去問AI独自作成。権利確認済み（オーナー確認）。",
+    "license": "GYOSEI-owner-cleared",
+    "needsReview": false,
     "lastUpdated": "2026-11-03",
     "lawReferenceDate": "2025-04-01",
     "questionNotice": "法令に関する説明と正答は出題時点の法令に基づきます。現行法への置換はしていません。",
@@ -874,7 +1042,14 @@ export const GYOSEI_2025_QUESTIONS: Question[] = [
       "オ": "行政機関の長は、開示請求に係る行政文書の一部に不開示情報が記録されている\n場合において、不開示情報が記録されている部分を容易に区分して除くことができ\nるときは、法の定める場合を除き、開示請求者の求めに応じ、当該部分を除いた情\n報の概要を記載した新たな別の文書を作成し、これを交付しなければならない。"
     },
     "officialAnswerNumber": "4",
-    "explanationCoverage": "official-summary"
+    "choiceExplanations": {
+      "ア": "妥当でない。情報公開請求は既存の行政文書の開示を求める制度であり、新たな匿名加工文書の作成請求ではない。",
+      "イ": "妥当でない。組織的共用の文書なら決裁・縦覧を経ていなくても行政文書になりうる。",
+      "ウ": "妥当でない。法は何人にも開示請求権を認め、外国在住の外国人も請求できる。",
+      "エ": "妥当。個人識別情報型の不開示規定であり、秘密にしたいという主観だけを基準とする制度ではない。法定の例外は別途検討する。",
+      "オ": "妥当でない。部分開示は不開示部分を除く既存文書の開示であり、情報の概要をまとめた新文書の作成義務ではない。"
+    },
+    "explanationCoverage": "full"
   },
   {
     "id": "gyosei-2025-annual-gakka-q27",
@@ -891,13 +1066,13 @@ export const GYOSEI_2025_QUESTIONS: Question[] = [
     "difficulty": 3,
     "question": "行為能力に関する次の記述のうち、民法の規定に照らし、誤っているものはどれ\nか。",
     "answer": "ウ",
-    "explanation": "正解は3。被保佐人の遺産分割にも保佐人の同意が必要です。相続の承認・放棄だけが同意の対象となるわけではありません。",
+    "explanation": "正解は3。誤り。被保佐人の遺産分割も民法13条1項の同意を要する行為である。",
     "hasImage": false,
     "sourcePdfUrl": "https://gyosei-shiken.or.jp/pdf/r7_mondai.pdf",
     "sourceAnswerUrl": "https://gyosei-shiken.or.jp/doc/exam/r7ans.html",
-    "sourceAttribution": "出典：一般財団法人行政書士試験研究センター 令和7年度行政書士試験 問題27・公式正解。改行・ページ番号・語群配置をWeb表示用に整理。解説は過去問AI独自作成。転載許諾未取得・未公開。",
-    "license": "GYOSEI-permission-pending",
-    "needsReview": true,
+    "sourceAttribution": "出典：一般財団法人行政書士試験研究センター 令和7年度行政書士試験 問題27・公式正解。改行・ページ番号・語群配置をWeb表示用に整理。解説は過去問AI独自作成。権利確認済み（オーナー確認）。",
+    "license": "GYOSEI-owner-cleared",
+    "needsReview": false,
     "lastUpdated": "2026-11-03",
     "lawReferenceDate": "2025-04-01",
     "officialReferenceUrls": [
@@ -912,7 +1087,14 @@ export const GYOSEI_2025_QUESTIONS: Question[] = [
       "オ": "制限行為能力者の相手方が、制限行為能力者が行為能力者とならない間に、その\n法定代理人、保佐人又は補助人に対し、その権限内の行為について、1箇月以上の\n期間を定めて、その期間内にその取り消すことができる行為を追認するかどうかを\n確答すべき旨の催告をした場合、これらの者がその期間内に確答を発しないとき\nは、その行為を追認したものとみなす。"
     },
     "officialAnswerNumber": "3",
-    "explanationCoverage": "official-summary"
+    "choiceExplanations": {
+      "ア": "正しい。利益を害するおそれがないのに補助人が同意しない場合、家庭裁判所は同意に代わる許可を与えられる。",
+      "イ": "正しい。後見開始時に保佐・補助の審判がある場合は、それらを取り消す必要がある。",
+      "ウ": "誤り。被保佐人の遺産分割も民法13条1項の同意を要する行為である。",
+      "エ": "正しい。行為能力者と信じさせるために詐術を用いた者は、制限行為能力による取消しを主張できない。",
+      "オ": "正しい。権限を有する法定代理人等に対する1か月以上の確答催告に応答しない場合は、原則として追認とみなされる。"
+    },
+    "explanationCoverage": "full"
   },
   {
     "id": "gyosei-2025-annual-gakka-q28",
@@ -929,13 +1111,13 @@ export const GYOSEI_2025_QUESTIONS: Question[] = [
     "difficulty": 3,
     "question": "代理人の行う代理行為に関する次のア〜オの記述のうち、民法の規定および判例\nに照らし、妥当なものの組合せはどれか。\nア 任意後見契約に基づく任意代理人は、任意後見契約で定められた被後見人の財産\nに関する代理行為を行うのに対し、家庭裁判所の審判により選任された法定代理人\nである後見人は、家庭裁判所の審判において定められた被後見人の特定の財産行為\nについてのみ代理行為を行う。\nイ 法定代理人は、任意代理人と異なり、いつでも復代理人を選任することができる\nが、やむを得ない事由があるときは、本人に対してその選任及び監督についての責\n任のみを負う。\nウ 法定代理人も任意代理人も、本人が死亡した場合には当然に代理権を失うが、任\n意代理については、本人と任意代理人との間に本人が死亡した後も代理権が存続す\nる旨の合意がある場合には、本人が死亡した後も代理権が存続する。\nエ 代理人であった者がその代理権が消滅した後に、その代理権の範囲内において代\n理行為を行った場合、その者が当該代理人が任意代理人であったか法定代理人で\nあったかを問わず、本人は、代理権の消滅について善意・無過失の第三者に対し\nて、その責任を負う。\nオ 代理人が制限行為能力者であったとしても、当該代理人の代理行為を制限行為能\n力を理由として取り消すことはできず、これは当該代理人が他の制限行為能力者の\n法定代理人である場合でも同様である。",
     "answer": "ウ",
-    "explanation": "正解は3。公式正解はイ・ウです。代理人自身の能力制限と、意思表示の瑕疵を誰について判断するかは、代理の規定に従って区別します。",
+    "explanation": "正解は3。正解。イは法定代理人の復代理人選任と責任軽減、ウは本人死亡後の任意代理権の存続合意を認める判例に対応する。",
     "hasImage": false,
     "sourcePdfUrl": "https://gyosei-shiken.or.jp/pdf/r7_mondai.pdf",
     "sourceAnswerUrl": "https://gyosei-shiken.or.jp/doc/exam/r7ans.html",
-    "sourceAttribution": "出典：一般財団法人行政書士試験研究センター 令和7年度行政書士試験 問題28・公式正解。改行・ページ番号・語群配置をWeb表示用に整理。解説は過去問AI独自作成。転載許諾未取得・未公開。",
-    "license": "GYOSEI-permission-pending",
-    "needsReview": true,
+    "sourceAttribution": "出典：一般財団法人行政書士試験研究センター 令和7年度行政書士試験 問題28・公式正解。改行・ページ番号・語群配置をWeb表示用に整理。解説は過去問AI独自作成。権利確認済み（オーナー確認）。",
+    "license": "GYOSEI-owner-cleared",
+    "needsReview": false,
     "lastUpdated": "2026-11-03",
     "lawReferenceDate": "2025-04-01",
     "officialReferenceUrls": [
@@ -950,7 +1132,14 @@ export const GYOSEI_2025_QUESTIONS: Question[] = [
       "オ": "ウ・エ"
     },
     "officialAnswerNumber": "3",
-    "explanationCoverage": "official-summary"
+    "choiceExplanations": {
+      "ア": "不正解。アは成年後見人の包括的な財産管理・代理権を特定行為に限る点、エは消滅後の表見代理を法定代理にも一般化する点で誤る。",
+      "イ": "不正解。アは成年後見人の権限、オは他の制限行為能力者の法定代理人の場合の民法102条ただし書の例外を誤る。",
+      "ウ": "正解。イは法定代理人の復代理人選任と責任軽減、ウは本人死亡後の任意代理権の存続合意を認める判例に対応する。",
+      "エ": "不正解。イは妥当だが、オは他の制限行為能力者の法定代理人としてした行為についての取消しの例外を無視している。",
+      "オ": "不正解。ウは妥当だが、エの代理権消滅後の表見代理は法定代理に当然には適用されない。"
+    },
+    "explanationCoverage": "full"
   },
   {
     "id": "gyosei-2025-annual-gakka-q29",
@@ -967,13 +1156,13 @@ export const GYOSEI_2025_QUESTIONS: Question[] = [
     "difficulty": 3,
     "question": "即時取得に関する次のア〜オの記述のうち、民法の規定および判例に照らし、妥\n当なものの組合せはどれか。\nア Ａは、相続により、被相続人Ｂが現に占有していた動産甲を、それが設置された\n不動産と共に承継したが、甲はＣの所有物であった。この場合、甲がＢの所有物で\nないことにつきＡが善意・無過失であれば、Ａは甲を即時取得する。\nイ Ａは、売買により動産乙を、現にそれを占有する未成年者Ｂから購入して現実の\n引渡しを受けたが、その後、Ｂの法定代理人Ｃが、ＡＢ間の売買契約を未成年を理\n由に取り消した。この場合、Ｂが未成年者であったことにつきＡが善意・無過失で\nあれば、Ａは乙を即時取得する。\nウ Ａは、売買により動産丙を、現にそれを占有するＢから購入して現実の引渡しを\n受けた。丙が自動車である場合、丙が登録済みであるか否かにかかわらず、Ａは丙\nを即時取得しない。\nエ Ａは、売買により動産丁を、それを占有代理人Ｃによって占有するＢから購入\nし、ＢはＣに今後Ａのために占有するように指示してＡがそれを承諾した。丁はＡ\nからＢに寄託されているものであった場合、承諾時において丁がＢの所有物でない\nことにつきＡが善意・無過失であれば、後にその事実を知るに至ったとしても、Ａ\nは丁を即時取得する。\nオ Ａは、売買により動産戊を、現にそれを占有するＢから購入したが、その際、Ａ\nがＢの元に戊を引取りにいくこととし、それまでの間、ＢがＡのために占有するこ\nとが合意された。戊はＢが他から賃借したものであった場合、ＡがＢから戊の現実\nの引渡しを受ける時点において、戊がＢの所有物でないことにつきＡが善意・無過\n失であれば、Ａは戊を即時取得する。",
     "answer": "オ",
-    "explanation": "正解は5。公式正解はエ・オです。即時取得では取引行為と占有取得が必要で、引渡しの態様によって即時取得を認めるかが異なります。",
+    "explanation": "正解は5。正解。エは指図による占有移転での承諾時、オは占有改定後の現実の引渡し時に善意無過失であることを問題とする。",
     "hasImage": false,
     "sourcePdfUrl": "https://gyosei-shiken.or.jp/pdf/r7_mondai.pdf",
     "sourceAnswerUrl": "https://gyosei-shiken.or.jp/doc/exam/r7ans.html",
-    "sourceAttribution": "出典：一般財団法人行政書士試験研究センター 令和7年度行政書士試験 問題29・公式正解。改行・ページ番号・語群配置をWeb表示用に整理。解説は過去問AI独自作成。転載許諾未取得・未公開。",
-    "license": "GYOSEI-permission-pending",
-    "needsReview": true,
+    "sourceAttribution": "出典：一般財団法人行政書士試験研究センター 令和7年度行政書士試験 問題29・公式正解。改行・ページ番号・語群配置をWeb表示用に整理。解説は過去問AI独自作成。権利確認済み（オーナー確認）。",
+    "license": "GYOSEI-owner-cleared",
+    "needsReview": false,
     "lastUpdated": "2026-11-03",
     "lawReferenceDate": "2025-04-01",
     "officialReferenceUrls": [
@@ -988,7 +1177,14 @@ export const GYOSEI_2025_QUESTIONS: Question[] = [
       "オ": "エ・オ"
     },
     "officialAnswerNumber": "5",
-    "explanationCoverage": "official-summary"
+    "choiceExplanations": {
+      "ア": "不正解。アの相続は取引行為ではなく即時取得の対象外。ウも未登録自動車まで一律に除外する点で誤る。",
+      "イ": "不正解。オは現実の引渡し時に善意無過失なら妥当だが、アの相続では即時取得は成立しない。",
+      "ウ": "不正解。イは制限行為能力による契約の取消しを即時取得で補えない点、ウは未登録車まで除外する点で誤る。",
+      "エ": "不正解。エの指図による占有移転の判断は妥当だが、イの未成年による取消しの問題は即時取得で解決できない。",
+      "オ": "正解。エは指図による占有移転での承諾時、オは占有改定後の現実の引渡し時に善意無過失であることを問題とする。"
+    },
+    "explanationCoverage": "full"
   },
   {
     "id": "gyosei-2025-annual-gakka-q30",
@@ -1005,13 +1201,13 @@ export const GYOSEI_2025_QUESTIONS: Question[] = [
     "difficulty": 3,
     "question": "Ａは、Ｂとの間でＡ所有の建設機械甲（以下「甲」という。）をＢに売却する旨\nの本件売買契約を締結し、甲をＢに引き渡したが、弁済期が徒過したにもかかわら\nずＢから代金の支払を受けていない。この場合に関する次の記述のうち、民法の規\n定および判例に照らし、妥当なものはどれか。",
     "answer": "オ",
-    "explanation": "正解は5。占有改定だけでは即時取得は成立しません。売主の留保所有権について、占有改定で譲渡担保を受けた第三者は即時取得を主張できません。",
+    "explanation": "正解は5。妥当。所有権留保があればAに所有権が残り、Gの占有改定だけでは即時取得できないためAに対抗できない。",
     "hasImage": false,
     "sourcePdfUrl": "https://gyosei-shiken.or.jp/pdf/r7_mondai.pdf",
     "sourceAnswerUrl": "https://gyosei-shiken.or.jp/doc/exam/r7ans.html",
-    "sourceAttribution": "出典：一般財団法人行政書士試験研究センター 令和7年度行政書士試験 問題30・公式正解。改行・ページ番号・語群配置をWeb表示用に整理。解説は過去問AI独自作成。転載許諾未取得・未公開。",
-    "license": "GYOSEI-permission-pending",
-    "needsReview": true,
+    "sourceAttribution": "出典：一般財団法人行政書士試験研究センター 令和7年度行政書士試験 問題30・公式正解。改行・ページ番号・語群配置をWeb表示用に整理。解説は過去問AI独自作成。権利確認済み（オーナー確認）。",
+    "license": "GYOSEI-owner-cleared",
+    "needsReview": false,
     "lastUpdated": "2026-11-03",
     "lawReferenceDate": "2025-04-01",
     "officialReferenceUrls": [
@@ -1026,7 +1222,14 @@ export const GYOSEI_2025_QUESTIONS: Question[] = [
       "オ": "本件売買契約において所有権留保特約が設けられていた場合、ＢがＧのために甲\nを譲渡担保に供して占有改定の方法により引き渡したとしても、Ａは、Ｂに対して\n留保所有権に基づいて甲の引渡しを求めることができ、Ｇはこれに対して異議を述\nべることはできない。"
     },
     "officialAnswerNumber": "5",
-    "explanationCoverage": "official-summary"
+    "choiceExplanations": {
+      "ア": "妥当でない。解除によるAへの所有権復帰と解除後の第三者Cの取得は対抗関係に立ち、民法178条の引渡しで優劣を決する。Cは既に引渡しを受けているため、AはCに返還を請求できない。",
+      "イ": "妥当でない。動産保存の先取特権は動産売買の先取特権に優先するため、修理報酬のDにAが当然優先するわけではない。",
+      "ウ": "妥当でない。動産質権は民法334条により第一順位の先取特権者と同じ権利をもち、売買先取特権のAに優先する。",
+      "エ": "妥当でない。譲渡担保への占有改定も民法333条の第三取得者への引渡しとなり、Aは動産売買先取特権を行使できない。",
+      "オ": "妥当。所有権留保があればAに所有権が残り、Gの占有改定だけでは即時取得できないためAに対抗できない。"
+    },
+    "explanationCoverage": "full"
   },
   {
     "id": "gyosei-2025-annual-gakka-q31",
@@ -1043,13 +1246,13 @@ export const GYOSEI_2025_QUESTIONS: Question[] = [
     "difficulty": 3,
     "question": "Ａを売主、Ｚを買主とする売買契約に基づいて発生したＡのＺに対する売買代金\n債権（以下「本件債権」という。）を、ＡがＢに譲渡し、その旨の債権譲渡通知\n（以下「本件債権譲渡通知」という。）が内容証明郵便によって行われ、Ｚに到達\nした。この場合に関する次の記述のうち、民法の規定および判例に照らし、妥当で\nないものはどれか。",
     "answer": "イ",
-    "explanation": "正解は2。確定日付ある通知が同時に到達した譲受人は、各自債権全額の履行を請求できます。債務者は同順位の他の譲受人の存在だけでは弁済を拒めません。",
+    "explanation": "正解は2。妥当でない。同時到達の各譲受人は全額の履行を請求でき、Zは他の同順位者の存在だけでは拒めない。",
     "hasImage": false,
     "sourcePdfUrl": "https://gyosei-shiken.or.jp/pdf/r7_mondai.pdf",
     "sourceAnswerUrl": "https://gyosei-shiken.or.jp/doc/exam/r7ans.html",
-    "sourceAttribution": "出典：一般財団法人行政書士試験研究センター 令和7年度行政書士試験 問題31・公式正解。改行・ページ番号・語群配置をWeb表示用に整理。解説は過去問AI独自作成。転載許諾未取得・未公開。",
-    "license": "GYOSEI-permission-pending",
-    "needsReview": true,
+    "sourceAttribution": "出典：一般財団法人行政書士試験研究センター 令和7年度行政書士試験 問題31・公式正解。改行・ページ番号・語群配置をWeb表示用に整理。解説は過去問AI独自作成。権利確認済み（オーナー確認）。",
+    "license": "GYOSEI-owner-cleared",
+    "needsReview": false,
     "lastUpdated": "2026-11-03",
     "lawReferenceDate": "2025-04-01",
     "officialReferenceUrls": [
@@ -1064,7 +1267,14 @@ export const GYOSEI_2025_QUESTIONS: Question[] = [
       "オ": "本件債権譲渡通知がＺに到達した後になって、ＡＺ間の売買契約の履行としてＡ\nから引き渡された目的物の品質が契約に適合しておらず、ＺのＡに対する損害賠償\n請求権が発生したため、Ｚは、Ａに対して本件債権と当該損害賠償請求権を相殺す\nる旨の意思表示を行った。Ｚは、この相殺による本件債権の消滅をＢに対して主張\nすることができる。"
     },
     "officialAnswerNumber": "2",
-    "explanationCoverage": "official-summary"
+    "choiceExplanations": {
+      "ア": "妥当。通知前の譲渡人への弁済は、民法468条により譲受人にも対抗できる。",
+      "イ": "妥当でない。同時到達の各譲受人は全額の履行を請求でき、Zは他の同順位者の存在だけでは拒めない。",
+      "ウ": "妥当。同順位譲受人が複数いる供託金は単独で全額の還付を請求できず、債権額に応じた扱いとなる。",
+      "エ": "妥当。通知前に取得した反対債権による相殺は譲受人に対抗できる。",
+      "オ": "妥当。譲渡された代金債権と同じ契約から生じた反対債権による相殺は、通知後発生でも譲受人に対抗できる。"
+    },
+    "explanationCoverage": "full"
   },
   {
     "id": "gyosei-2025-annual-gakka-q32",
@@ -1081,13 +1291,13 @@ export const GYOSEI_2025_QUESTIONS: Question[] = [
     "difficulty": 3,
     "question": "ＡとＢが、Ｃから連帯して400万円を借りている場合（ＡとＢの負担部分は200\n万円ずつ）に関する次の記述のうち、民法の規定および判例に照らし、妥当なもの\nはどれか。",
     "answer": "イ",
-    "explanation": "正解は2。事前通知なく弁済した連帯債務者への求償に対し、他の債務者は債権者に対抗できた相殺事由を自己の負担部分について主張できます。",
+    "explanation": "正解は2。妥当。事前通知を怠ったAの求償に対し、Bは自己の負担部分について債権者への相殺事由を対抗できる。",
     "hasImage": false,
     "sourcePdfUrl": "https://gyosei-shiken.or.jp/pdf/r7_mondai.pdf",
     "sourceAnswerUrl": "https://gyosei-shiken.or.jp/doc/exam/r7ans.html",
-    "sourceAttribution": "出典：一般財団法人行政書士試験研究センター 令和7年度行政書士試験 問題32・公式正解。改行・ページ番号・語群配置をWeb表示用に整理。解説は過去問AI独自作成。転載許諾未取得・未公開。",
-    "license": "GYOSEI-permission-pending",
-    "needsReview": true,
+    "sourceAttribution": "出典：一般財団法人行政書士試験研究センター 令和7年度行政書士試験 問題32・公式正解。改行・ページ番号・語群配置をWeb表示用に整理。解説は過去問AI独自作成。権利確認済み（オーナー確認）。",
+    "license": "GYOSEI-owner-cleared",
+    "needsReview": false,
     "lastUpdated": "2026-11-03",
     "lawReferenceDate": "2025-04-01",
     "officialReferenceUrls": [
@@ -1102,7 +1312,14 @@ export const GYOSEI_2025_QUESTIONS: Question[] = [
       "オ": "ＡのためにＣの貸金債権の消滅時効が完成した場合において、ＢがＣに400万円\nを弁済したときは、Ｂは、Ａに求償権を行使することができない。"
     },
     "officialAnswerNumber": "2",
-    "explanationCoverage": "official-summary"
+    "choiceExplanations": {
+      "ア": "妥当でない。先に弁済したBが通知を怠っても、後のA自身が事前通知を怠った場合まで当然に自己の弁済を有効とは扱えない。",
+      "イ": "妥当。事前通知を怠ったAの求償に対し、Bは自己の負担部分について債権者への相殺事由を対抗できる。",
+      "ウ": "妥当でない。Aが相殺を援用して債務全額を消滅させれば、その全額についてBも免責される。",
+      "エ": "妥当でない。現行民法で免除は相対的効力であり、BのCに対する債務は当然には減少しない。",
+      "オ": "妥当でない。Aの時効完成も相対的効力であり、Bは共同免責を得た弁済についてAの負担部分を求償できる。"
+    },
+    "explanationCoverage": "full"
   },
   {
     "id": "gyosei-2025-annual-gakka-q33",
@@ -1119,13 +1336,13 @@ export const GYOSEI_2025_QUESTIONS: Question[] = [
     "difficulty": 3,
     "question": "消費貸借契約に関する次のア〜オの記述のうち、民法の規定および判例に照ら\nし、妥当なものの組合せはどれか。\nア 消費貸借契約は書面によっても行うことができるが、書面でする消費貸借契約の\n貸主は、借主が消費貸借契約の目的物を受け取るまでの間は当該消費貸借契約を解\n除することができ、解除によって損害を受けた借主は、貸主に対してその損害の賠\n償を請求することができる。\nイ 金銭消費貸借契約の借主が、利息の支払を含む貸金返還債務を新しい消費貸借契\n約の目的とすることを貸主と合意したときは、これにより新たな消費貸借契約が成\n立するが、旧契約に付された利息の約定が利息制限法の上限利率を超過する場合に\nは、その限りで当該新たな消費貸借契約は無効となる。\nウ 消費貸借契約は原則として利息の発生を伴い、無利息とするためには特約が必要\nである。\nエ 消費貸借契約において、契約内容に適合しない物が借主に引き渡された場合、当\n該消費貸借契約が利息付きであるか無利息であるかにかかわらず、借主はその物の\n価額を返還することができる。\nオ 消費貸借契約において返還時期の定めがない場合、当該消費貸借契約が利息付き\nであるか無利息であるかにかかわらず、貸主は借主に対していつでもその貸借物の\n返還を求めることができ、借主は返還請求があった時から直ちに履行遅滞の責任を\n負う。",
     "answer": "ウ",
-    "explanation": "正解は3。公式正解はイ・エです。消費貸借では通常の要物契約と書面による諾成的な契約を区別し、利息や返還時期の規定を適用します。",
+    "explanation": "正解は3。正解。イは上限超過利息を準消費貸借に組み入れても無効部分は有効化しない点、エは不適合物の価額返還について妥当。",
     "hasImage": false,
     "sourcePdfUrl": "https://gyosei-shiken.or.jp/pdf/r7_mondai.pdf",
     "sourceAnswerUrl": "https://gyosei-shiken.or.jp/doc/exam/r7ans.html",
-    "sourceAttribution": "出典：一般財団法人行政書士試験研究センター 令和7年度行政書士試験 問題33・公式正解。改行・ページ番号・語群配置をWeb表示用に整理。解説は過去問AI独自作成。転載許諾未取得・未公開。",
-    "license": "GYOSEI-permission-pending",
-    "needsReview": true,
+    "sourceAttribution": "出典：一般財団法人行政書士試験研究センター 令和7年度行政書士試験 問題33・公式正解。改行・ページ番号・語群配置をWeb表示用に整理。解説は過去問AI独自作成。権利確認済み（オーナー確認）。",
+    "license": "GYOSEI-owner-cleared",
+    "needsReview": false,
     "lastUpdated": "2026-11-03",
     "lawReferenceDate": "2025-04-01",
     "officialReferenceUrls": [
@@ -1140,7 +1357,14 @@ export const GYOSEI_2025_QUESTIONS: Question[] = [
       "オ": "ウ・オ"
     },
     "officialAnswerNumber": "3",
-    "explanationCoverage": "official-summary"
+    "choiceExplanations": {
+      "ア": "不正解。アの受領前解除権は貸主ではなく借主にあり、ウも民法上は利息の特約を要する点で誤る。",
+      "イ": "不正解。エは不適合物の価額返還を認めて妥当だが、アの書面消費貸借の解除権者は借主である。",
+      "ウ": "正解。イは上限超過利息を準消費貸借に組み入れても無効部分は有効化しない点、エは不適合物の価額返還について妥当。",
+      "エ": "不正解。イは妥当だが、オと異なり返還時期未定の場合は相当の期間を定めて返還を催告する必要がある。",
+      "オ": "不正解。ウは利息を原則とする点、オは相当期間を与えず直ちに遅滞とする点で誤る。"
+    },
+    "explanationCoverage": "full"
   },
   {
     "id": "gyosei-2025-annual-gakka-q34",
@@ -1157,13 +1381,13 @@ export const GYOSEI_2025_QUESTIONS: Question[] = [
     "difficulty": 3,
     "question": "不当利得に関する次の記述のうち、民法の規定および判例に照らし、妥当なもの\nはどれか。",
     "answer": "エ",
-    "explanation": "正解は4。既登記建物は、引渡しだけでなく移転登記まで行わなければ不法原因給付の給付が完了しません。設問では登記未了のため返還を求められます。",
+    "explanation": "正解は4。妥当。既登記建物は移転登記まで行わなければ給付が完了せず、引渡しだけの段階では所有者は返還を求められる。",
     "hasImage": false,
     "sourcePdfUrl": "https://gyosei-shiken.or.jp/pdf/r7_mondai.pdf",
     "sourceAnswerUrl": "https://gyosei-shiken.or.jp/doc/exam/r7ans.html",
-    "sourceAttribution": "出典：一般財団法人行政書士試験研究センター 令和7年度行政書士試験 問題34・公式正解。改行・ページ番号・語群配置をWeb表示用に整理。解説は過去問AI独自作成。転載許諾未取得・未公開。",
-    "license": "GYOSEI-permission-pending",
-    "needsReview": true,
+    "sourceAttribution": "出典：一般財団法人行政書士試験研究センター 令和7年度行政書士試験 問題34・公式正解。改行・ページ番号・語群配置をWeb表示用に整理。解説は過去問AI独自作成。権利確認済み（オーナー確認）。",
+    "license": "GYOSEI-owner-cleared",
+    "needsReview": false,
     "lastUpdated": "2026-11-03",
     "lawReferenceDate": "2025-04-01",
     "officialReferenceUrls": [
@@ -1178,7 +1402,14 @@ export const GYOSEI_2025_QUESTIONS: Question[] = [
       "オ": "Ａを貸主、Ｂを借主とする金銭消費貸借契約において、ＡがＢに対して有する貸\n金債権につき、ＢがＣから騙取した金銭をもって弁済を行った場合、Ｃは、弁済と\nして受領した金銭が騙取金である旨をＡが知っていたか否かを問わず、Ａに対して\nその返還を求めることができる。"
     },
     "officialAnswerNumber": "4",
-    "explanationCoverage": "official-summary"
+    "choiceExplanations": {
+      "ア": "妥当でない。善意の占有者は民法189条により使用利益を取得でき、所有者への返還までの使用利益を当然に支払う義務はない。",
+      "イ": "妥当でない。売買解除に伴う原状回復では、買主は目的物を所有者に返還した場合も売主に使用利益を返還すべきとされる。",
+      "ウ": "妥当でない。違法賭博の賭金は不法原因給付に当たり、無効というだけでは返還請求できない。",
+      "エ": "妥当。既登記建物は移転登記まで行わなければ給付が完了せず、引渡しだけの段階では所有者は返還を求められる。",
+      "オ": "妥当でない。騙取金による弁済を受けた債権者への不当利得請求では悪意又は重大な過失等が問題となり、認識に関係なく返還となるわけではない。"
+    },
+    "explanationCoverage": "full"
   },
   {
     "id": "gyosei-2025-annual-gakka-q35",
@@ -1195,13 +1426,13 @@ export const GYOSEI_2025_QUESTIONS: Question[] = [
     "difficulty": 3,
     "question": "認知に関する次の記述のうち、民法の規定に照らし、誤っているものはどれか。",
     "answer": "ウ",
-    "explanation": "正解は3。認知の効力は原則として出生時に遡ります。認知の時からのみ効力が生じるという記述は誤りです。",
+    "explanation": "正解は3。誤り。認知は出生時に遡って効力を生じる。ただし第三者が既に取得した権利を害せない。",
     "hasImage": false,
     "sourcePdfUrl": "https://gyosei-shiken.or.jp/pdf/r7_mondai.pdf",
     "sourceAnswerUrl": "https://gyosei-shiken.or.jp/doc/exam/r7ans.html",
-    "sourceAttribution": "出典：一般財団法人行政書士試験研究センター 令和7年度行政書士試験 問題35・公式正解。改行・ページ番号・語群配置をWeb表示用に整理。解説は過去問AI独自作成。転載許諾未取得・未公開。",
-    "license": "GYOSEI-permission-pending",
-    "needsReview": true,
+    "sourceAttribution": "出典：一般財団法人行政書士試験研究センター 令和7年度行政書士試験 問題35・公式正解。改行・ページ番号・語群配置をWeb表示用に整理。解説は過去問AI独自作成。権利確認済み（オーナー確認）。",
+    "license": "GYOSEI-owner-cleared",
+    "needsReview": false,
     "lastUpdated": "2026-11-03",
     "lawReferenceDate": "2025-04-01",
     "officialReferenceUrls": [
@@ -1216,7 +1447,14 @@ export const GYOSEI_2025_QUESTIONS: Question[] = [
       "オ": "子、その直系卑属又はこれらの者の法定代理人は、認知の訴えを提起することが\nできるが、父又は母の死亡の日から3年を経過したときは、その訴えを提起するこ\nとはできない。"
     },
     "officialAnswerNumber": "3",
-    "explanationCoverage": "official-summary"
+    "choiceExplanations": {
+      "ア": "正しい。成年の子の認知にはその子の承諾が必要である。",
+      "イ": "正しい。父が胎児を認知する場合は母の承諾を要する。",
+      "ウ": "誤り。認知は出生時に遡って効力を生じる。ただし第三者が既に取得した権利を害せない。",
+      "エ": "正しい。認知者は自らした認知を自由に撤回することはできない。事実に反する認知の無効を争う制度とは区別する。",
+      "オ": "正しい。子等は認知の訴えを提起できるが、父母の死亡から3年の出訴期間が定められている。"
+    },
+    "explanationCoverage": "full"
   },
   {
     "id": "gyosei-2025-annual-gakka-q36",
@@ -1233,13 +1471,13 @@ export const GYOSEI_2025_QUESTIONS: Question[] = [
     "difficulty": 3,
     "question": "交互計算に関する次の記述のうち、商法の規定に照らし、誤っているものはどれ\nか。なお、当事者に別段の意思表示がないものとする。",
     "answer": "ア",
-    "explanation": "正解は1。交互計算は商人間だけでなく商人と商人でない者との平常取引にも認められます。",
+    "explanation": "正解は1。誤り。交互計算は商人間だけでなく、商人と商人でない者との間の平常取引でも約束できる。",
     "hasImage": false,
     "sourcePdfUrl": "https://gyosei-shiken.or.jp/pdf/r7_mondai.pdf",
     "sourceAnswerUrl": "https://gyosei-shiken.or.jp/doc/exam/r7ans.html",
-    "sourceAttribution": "出典：一般財団法人行政書士試験研究センター 令和7年度行政書士試験 問題36・公式正解。改行・ページ番号・語群配置をWeb表示用に整理。解説は過去問AI独自作成。転載許諾未取得・未公開。",
-    "license": "GYOSEI-permission-pending",
-    "needsReview": true,
+    "sourceAttribution": "出典：一般財団法人行政書士試験研究センター 令和7年度行政書士試験 問題36・公式正解。改行・ページ番号・語群配置をWeb表示用に整理。解説は過去問AI独自作成。権利確認済み（オーナー確認）。",
+    "license": "GYOSEI-owner-cleared",
+    "needsReview": false,
     "lastUpdated": "2026-11-03",
     "lawReferenceDate": "2025-04-01",
     "questionNotice": "法令に関する説明と正答は出題時点の法令に基づきます。現行法への置換はしていません。",
@@ -1251,7 +1489,14 @@ export const GYOSEI_2025_QUESTIONS: Question[] = [
       "オ": "交互計算の各当事者は、いつでも交互計算の解除をすることができる。"
     },
     "officialAnswerNumber": "1",
-    "explanationCoverage": "official-summary"
+    "choiceExplanations": {
+      "ア": "誤り。交互計算は商人間だけでなく、商人と商人でない者との間の平常取引でも約束できる。",
+      "イ": "正しい。相殺期間を定めない場合の法定期間は6か月である。",
+      "ウ": "正しい。承認した計算書の各項目は原則争えないが、錯誤・脱漏は例外となる。",
+      "エ": "正しい。計算閉鎖後の残額については閉鎖日以後の法定利息を請求できる。",
+      "オ": "正しい。各当事者はいつでも解除でき、解除時には直ちに計算を閉鎖して残額の支払を請求できる。"
+    },
+    "explanationCoverage": "full"
   },
   {
     "id": "gyosei-2025-annual-gakka-q37",
@@ -1268,13 +1513,13 @@ export const GYOSEI_2025_QUESTIONS: Question[] = [
     "difficulty": 3,
     "question": "発起人に関する次の記述のうち、会社法の規定に照らし、正しいものはどれか。",
     "answer": "オ",
-    "explanation": "正解は5。募集設立では払込期日または期間末日のうち最も遅い日以後、発起人が遅滞なく創立総会を招集します。",
+    "explanation": "正解は5。正しい。募集設立では最終払込期日等以後、発起人は遅滞なく創立総会を招集する義務を負う。",
     "hasImage": false,
     "sourcePdfUrl": "https://gyosei-shiken.or.jp/pdf/r7_mondai.pdf",
     "sourceAnswerUrl": "https://gyosei-shiken.or.jp/doc/exam/r7ans.html",
-    "sourceAttribution": "出典：一般財団法人行政書士試験研究センター 令和7年度行政書士試験 問題37・公式正解。改行・ページ番号・語群配置をWeb表示用に整理。解説は過去問AI独自作成。転載許諾未取得・未公開。",
-    "license": "GYOSEI-permission-pending",
-    "needsReview": true,
+    "sourceAttribution": "出典：一般財団法人行政書士試験研究センター 令和7年度行政書士試験 問題37・公式正解。改行・ページ番号・語群配置をWeb表示用に整理。解説は過去問AI独自作成。権利確認済み（オーナー確認）。",
+    "license": "GYOSEI-owner-cleared",
+    "needsReview": false,
     "lastUpdated": "2026-11-03",
     "lawReferenceDate": "2025-04-01",
     "questionNotice": "法令に関する説明と正答は出題時点の法令に基づきます。現行法への置換はしていません。",
@@ -1286,7 +1531,14 @@ export const GYOSEI_2025_QUESTIONS: Question[] = [
       "オ": "設立時発行株式を引き受ける者の募集をする場合には、発起人は、設立時募集株\n式と引換えにする金銭の払込みの期日または期間の末日のうち最も遅い日以後、遅\n滞なく、創立総会を招集しなければならない。"
     },
     "officialAnswerNumber": "5",
-    "explanationCoverage": "official-summary"
+    "choiceExplanations": {
+      "ア": "正しくない。発起人は定款に署名等をした者で、実質的な協力だけでは設立事務の権限をもつ発起人にはならない。",
+      "イ": "正しくない。発起人の出資不履行には原則として期日を定めた催告等の手続が必要で、当初期日徒過だけで失権しない。",
+      "ウ": "正しくない。設立時募集株式の引受人は金銭の払込みを行い、記述の現物出資をする制度ではない。",
+      "エ": "正しくない。発起人の報酬等の特別利益は変態設立事項であり、定款への記載・記録を要する。",
+      "オ": "正しい。募集設立では最終払込期日等以後、発起人は遅滞なく創立総会を招集する義務を負う。"
+    },
+    "explanationCoverage": "full"
   },
   {
     "id": "gyosei-2025-annual-gakka-q38",
@@ -1303,13 +1555,13 @@ export const GYOSEI_2025_QUESTIONS: Question[] = [
     "difficulty": 3,
     "question": "取締役会に関する次の記述のうち、会社法の規定に照らし、誤っているものはど\nれか。",
     "answer": "オ",
-    "explanation": "正解は5。議事録に異議をとどめない取締役は、決議に賛成したものと推定されます。反証を許さない『みなす』とは異なります。",
+    "explanation": "正解は5。誤り。議事録に異議を留めない決議参加取締役は賛成したものと推定される。反証を許さない「みなす」ではない。",
     "hasImage": false,
     "sourcePdfUrl": "https://gyosei-shiken.or.jp/pdf/r7_mondai.pdf",
     "sourceAnswerUrl": "https://gyosei-shiken.or.jp/doc/exam/r7ans.html",
-    "sourceAttribution": "出典：一般財団法人行政書士試験研究センター 令和7年度行政書士試験 問題38・公式正解。改行・ページ番号・語群配置をWeb表示用に整理。解説は過去問AI独自作成。転載許諾未取得・未公開。",
-    "license": "GYOSEI-permission-pending",
-    "needsReview": true,
+    "sourceAttribution": "出典：一般財団法人行政書士試験研究センター 令和7年度行政書士試験 問題38・公式正解。改行・ページ番号・語群配置をWeb表示用に整理。解説は過去問AI独自作成。権利確認済み（オーナー確認）。",
+    "license": "GYOSEI-owner-cleared",
+    "needsReview": false,
     "lastUpdated": "2026-11-03",
     "lawReferenceDate": "2025-04-01",
     "questionNotice": "法令に関する説明と正答は出題時点の法令に基づきます。現行法への置換はしていません。",
@@ -1321,7 +1573,14 @@ export const GYOSEI_2025_QUESTIONS: Question[] = [
       "オ": "取締役会の決議に参加した取締役が、当該取締役会の議事録に異議をとどめない\nで署名または記名押印した場合には、当該決議に賛成したものとみなされる。"
     },
     "officialAnswerNumber": "5",
-    "explanationCoverage": "official-summary"
+    "choiceExplanations": {
+      "ア": "正しい。募集社債の重要事項は取締役会の専決事項で、個々の取締役に委任できない。",
+      "イ": "正しい。競業取引をした取締役は、取引後遅滞なく重要な事実を取締役会に報告する必要がある。",
+      "ウ": "正しい。取締役会を招集する取締役は定款又は取締役会で指定できる。",
+      "エ": "正しい。特別利害関係取締役は当該決議の議決に参加できない。",
+      "オ": "誤り。議事録に異議を留めない決議参加取締役は賛成したものと推定される。反証を許さない「みなす」ではない。"
+    },
+    "explanationCoverage": "full"
   },
   {
     "id": "gyosei-2025-annual-gakka-q39",
@@ -1338,13 +1597,13 @@ export const GYOSEI_2025_QUESTIONS: Question[] = [
     "difficulty": 3,
     "question": "監査役および監査役会に関する次の記述のうち、会社法の規定に照らし、誤って\nいるものはどれか。",
     "answer": "エ",
-    "explanation": "正解は4。常勤監査役は監査役会が監査役の中から選定します。株主総会が選任するのは監査役としての地位です。",
+    "explanation": "正解は4。誤り。常勤監査役は株主総会ではなく監査役会が監査役の中から選定する。",
     "hasImage": false,
     "sourcePdfUrl": "https://gyosei-shiken.or.jp/pdf/r7_mondai.pdf",
     "sourceAnswerUrl": "https://gyosei-shiken.or.jp/doc/exam/r7ans.html",
-    "sourceAttribution": "出典：一般財団法人行政書士試験研究センター 令和7年度行政書士試験 問題39・公式正解。改行・ページ番号・語群配置をWeb表示用に整理。解説は過去問AI独自作成。転載許諾未取得・未公開。",
-    "license": "GYOSEI-permission-pending",
-    "needsReview": true,
+    "sourceAttribution": "出典：一般財団法人行政書士試験研究センター 令和7年度行政書士試験 問題39・公式正解。改行・ページ番号・語群配置をWeb表示用に整理。解説は過去問AI独自作成。権利確認済み（オーナー確認）。",
+    "license": "GYOSEI-owner-cleared",
+    "needsReview": false,
     "lastUpdated": "2026-11-03",
     "lawReferenceDate": "2025-04-01",
     "questionNotice": "法令に関する説明と正答は出題時点の法令に基づきます。現行法への置換はしていません。",
@@ -1356,7 +1615,14 @@ export const GYOSEI_2025_QUESTIONS: Question[] = [
       "オ": "取締役、会計参与、監査役または会計監査人が監査役の全員に対して監査役会に\n報告すべき事項を通知したときは、当該事項を監査役会へ報告することを要しな\nい。"
     },
     "officialAnswerNumber": "4",
-    "explanationCoverage": "official-summary"
+    "choiceExplanations": {
+      "ア": "正しい。会計監査人設置会社は両委員会型の例外を除き監査役を置かなければならない。",
+      "イ": "正しい。監査役は原則取締役会に出席し必要な意見を述べる義務があり、特別取締役の会議には別の規律がある。",
+      "ウ": "正しい。非公開で監査役会・会計監査人を置かない会社は、定款で監査範囲を会計に限定できる。",
+      "エ": "誤り。常勤監査役は株主総会ではなく監査役会が監査役の中から選定する。",
+      "オ": "正しい。列挙された役員等が全監査役に必要事項を通知した場合は、監査役会への報告を省略できる。"
+    },
+    "explanationCoverage": "full"
   },
   {
     "id": "gyosei-2025-annual-gakka-q40",
@@ -1373,13 +1639,13 @@ export const GYOSEI_2025_QUESTIONS: Question[] = [
     "difficulty": 3,
     "question": "株券に関する次のア〜オの記述のうち、会社法の規定に照らし、正しいものの組\n合せはどれか。\nア 株券発行会社における株式の譲渡は、当該株式を取得した者の氏名または名称お\nよび住所を株主名簿に記載し、または記録しなければ、当該株券発行会社その他の\n第三者にも対抗することができない。\nイ 株券発行会社が自己株式の処分により行う株式の譲渡は、当該株式に係る株券を\n交付しなくても、その効力を生ずる。\nウ 株券発行会社の株券には、譲渡による当該株券に係る株式の取得について当該株\n券発行会社の承認を要することを定款で定めたときは、その旨を記載しなければな\nらない。\nエ 株券発行会社の株主は、当該株券発行会社に対し、株券の所持を希望しない旨を\n申し出ることができ、当該株券は、当該株主が当該株券発行会社に提出したとき\nに、無効となる。\nオ 株券発行会社の株式に係る株券を喪失した者は、非訟事件手続法の公示催告にお\nける除権決定により、当該株券を無効とすることができる。",
     "answer": "ウ",
-    "explanation": "正解は3。公式正解はイ・ウです。株券発行会社での株券の交付と、株主名簿の記載による対抗要件を区別して判断します。",
+    "explanation": "正解は3。正解。イの自己株式処分は株券交付を効力要件とする規定の例外で、ウの譲渡制限は株券の法定記載事項である。",
     "hasImage": false,
     "sourcePdfUrl": "https://gyosei-shiken.or.jp/pdf/r7_mondai.pdf",
     "sourceAnswerUrl": "https://gyosei-shiken.or.jp/doc/exam/r7ans.html",
-    "sourceAttribution": "出典：一般財団法人行政書士試験研究センター 令和7年度行政書士試験 問題40・公式正解。改行・ページ番号・語群配置をWeb表示用に整理。解説は過去問AI独自作成。転載許諾未取得・未公開。",
-    "license": "GYOSEI-permission-pending",
-    "needsReview": true,
+    "sourceAttribution": "出典：一般財団法人行政書士試験研究センター 令和7年度行政書士試験 問題40・公式正解。改行・ページ番号・語群配置をWeb表示用に整理。解説は過去問AI独自作成。権利確認済み（オーナー確認）。",
+    "license": "GYOSEI-owner-cleared",
+    "needsReview": false,
     "lastUpdated": "2026-11-03",
     "lawReferenceDate": "2025-04-01",
     "questionNotice": "法令に関する説明と正答は出題時点の法令に基づきます。現行法への置換はしていません。",
@@ -1391,7 +1657,14 @@ export const GYOSEI_2025_QUESTIONS: Question[] = [
       "オ": "エ・オ"
     },
     "officialAnswerNumber": "3",
-    "explanationCoverage": "official-summary"
+    "choiceExplanations": {
+      "ア": "不正解。イは正しいが、アは株券発行会社で名簿記載を第三者への対抗要件ともする点を誤る。",
+      "イ": "不正解。アは第三者への対抗要件、オは株券喪失時に除権決定を用いるとする点で誤る。",
+      "ウ": "正解。イの自己株式処分は株券交付を効力要件とする規定の例外で、ウの譲渡制限は株券の法定記載事項である。",
+      "エ": "不正解。ウは正しいが、エと異なり株券不所持の株主名簿への記載・記録の時に株券は無効となる。",
+      "オ": "不正解。エは株券無効の時期を誤り、オは株券喪失登録制度と公示催告の除権決定を取り違えている。"
+    },
+    "explanationCoverage": "full"
   },
   {
     "id": "gyosei-2025-annual-gakka-q41",
@@ -1412,9 +1685,9 @@ export const GYOSEI_2025_QUESTIONS: Question[] = [
     "hasImage": false,
     "sourcePdfUrl": "https://gyosei-shiken.or.jp/pdf/r7_mondai.pdf",
     "sourceAnswerUrl": "https://gyosei-shiken.or.jp/doc/exam/r7ans.html",
-    "sourceAttribution": "出典：一般財団法人行政書士試験研究センター 令和7年度行政書士試験 問題41・公式正解。改行・ページ番号・語群配置をWeb表示用に整理。解説は過去問AI独自作成。転載許諾未取得・未公開。",
-    "license": "GYOSEI-permission-pending",
-    "needsReview": true,
+    "sourceAttribution": "出典：一般財団法人行政書士試験研究センター 令和7年度行政書士試験 問題41・公式正解。改行・ページ番号・語群配置をWeb表示用に整理。解説は過去問AI独自作成。権利確認済み（オーナー確認）。",
+    "license": "GYOSEI-owner-cleared",
+    "needsReview": false,
     "lastUpdated": "2026-11-03",
     "lawReferenceDate": "2025-04-01",
     "questionNotice": "法令に関する説明と正答は出題時点の法令に基づきます。現行法への置換はしていません。",
@@ -1423,83 +1696,103 @@ export const GYOSEI_2025_QUESTIONS: Question[] = [
       "candidates": [
         {
           "id": "1",
-          "label": "利益"
+          "label": "利益",
+          "explanation": "得られる利益一般で、定型的な表現である人格的生存とは異なる。"
         },
         {
           "id": "2",
-          "label": "人権の不可侵"
+          "label": "人権の不可侵",
+          "explanation": "人権を侵してはならない原則で、引用文の13条の表現とは異なる。"
         },
         {
           "id": "3",
-          "label": "平等"
+          "label": "平等",
+          "explanation": "等しい取扱いの要請で、引用箇所の個人の尊厳とは異なる。"
         },
         {
           "id": "4",
-          "label": "提案理由"
+          "label": "提案理由",
+          "explanation": "法案提出時の説明であり、規定が達成しようとする目的そのものではない。"
         },
         {
           "id": "5",
-          "label": "生存"
+          "label": "生存",
+          "explanation": "人格的に生きることを示す。アに入る。"
         },
         {
           "id": "6",
-          "label": "自由の制約"
+          "label": "自由の制約",
+          "explanation": "自由が制限されること一般で、不妊手術の身体への直接作用という特定が足りない。"
         },
         {
           "id": "7",
-          "label": "国民の権利"
+          "label": "国民の権利",
+          "explanation": "国民の権利一般で、引用箇所の個人の尊厳とは異なる。"
         },
         {
           "id": "8",
-          "label": "生命への危害"
+          "label": "生命への危害",
+          "explanation": "生命への危険という限定では、生殖能力を奪う身体への作用を適切に表せない。"
         },
         {
           "id": "9",
-          "label": "正当化根拠"
+          "label": "正当化根拠",
+          "explanation": "制約を正当とする理由で、問題の規定が追求した目的とは異なる。"
         },
         {
           "id": "10",
-          "label": "身体への侵襲"
+          "label": "身体への侵襲",
+          "explanation": "身体に直接加えられる手術等の作用。イに入る。"
         },
         {
           "id": "11",
-          "label": "必要性及び合理性"
+          "label": "必要性及び合理性",
+          "explanation": "制約の手段を評価する観点で、ここでは立法目的自体が正当でない。"
         },
         {
           "id": "12",
-          "label": "人格の自律"
+          "label": "人格の自律",
+          "explanation": "人格に基づき自ら決定することだが、判文の定型は人格的生存である。"
         },
         {
           "id": "13",
-          "label": "立法目的"
+          "label": "立法目的",
+          "explanation": "規定が実現しようとする目標。エに入り、その正当性自体が否定される。"
         },
         {
           "id": "14",
-          "label": "自由"
+          "label": "自由",
+          "explanation": "自律的に行動できること一般で、個人の尊厳という引用表現に合わない。"
         },
         {
           "id": "15",
-          "label": "精神的苦痛"
+          "label": "精神的苦痛",
+          "explanation": "心の痛みで、不妊手術の身体への作用とは異なる。"
         },
         {
           "id": "16",
-          "label": "公共の福祉"
+          "label": "公共の福祉",
+          "explanation": "権利相互の調整等に関わる原理で、13条の個人の尊厳と人格尊重という箇所には合わない。"
         },
         {
           "id": "17",
-          "label": "立法目的達成手段"
+          "label": "立法目的達成手段",
+          "explanation": "目的を実現する方法。本問で正当性が否定されるのは手段以前の目的。"
         },
         {
           "id": "18",
-          "label": "人格の否定"
+          "label": "人格の否定",
+          "explanation": "人格を否定する評価で、引用箇所の尊重される基礎原理とは逆。"
         },
         {
           "id": "19",
-          "label": "個人の尊厳"
+          "label": "個人の尊厳",
+          "explanation": "個人がかけがえのない存在として尊重される原理。ウに入る。"
         },
         {
           "id": "20",
-          "label": "選択"
+          "label": "選択",
+          "explanation": "複数の可能性から決めることで、人格的生存という定型の語ではない。"
         }
       ],
       "slots": [
@@ -1551,9 +1844,9 @@ export const GYOSEI_2025_QUESTIONS: Question[] = [
     "hasImage": false,
     "sourcePdfUrl": "https://gyosei-shiken.or.jp/pdf/r7_mondai.pdf",
     "sourceAnswerUrl": "https://gyosei-shiken.or.jp/doc/exam/r7ans.html",
-    "sourceAttribution": "出典：一般財団法人行政書士試験研究センター 令和7年度行政書士試験 問題42・公式正解。改行・ページ番号・語群配置をWeb表示用に整理。解説は過去問AI独自作成。転載許諾未取得・未公開。",
-    "license": "GYOSEI-permission-pending",
-    "needsReview": true,
+    "sourceAttribution": "出典：一般財団法人行政書士試験研究センター 令和7年度行政書士試験 問題42・公式正解。改行・ページ番号・語群配置をWeb表示用に整理。解説は過去問AI独自作成。権利確認済み（オーナー確認）。",
+    "license": "GYOSEI-owner-cleared",
+    "needsReview": false,
     "lastUpdated": "2026-11-03",
     "lawReferenceDate": "2025-04-01",
     "questionNotice": "法令に関する説明と正答は出題時点の法令に基づきます。現行法への置換はしていません。",
@@ -1562,83 +1855,103 @@ export const GYOSEI_2025_QUESTIONS: Question[] = [
       "candidates": [
         {
           "id": "1",
-          "label": "立法事実"
+          "label": "立法事実",
+          "explanation": "法律の必要性を支える社会的事実で、規制される対象そのものではない。"
         },
         {
           "id": "2",
-          "label": "効力"
+          "label": "効力",
+          "explanation": "法の拘束力で、文言とともに対比する規制対象とは異なる。"
         },
         {
           "id": "3",
-          "label": "対象事項"
+          "label": "対象事項",
+          "explanation": "何を規律するかという事項。アに入る。"
         },
         {
           "id": "4",
-          "label": "歴史的背景"
+          "label": "歴史的背景",
+          "explanation": "成立当時の状況だが、判文は趣旨・目的・内容・効果を比較する。"
         },
         {
           "id": "5",
-          "label": "整合性"
+          "label": "整合性",
+          "explanation": "互いに整合する関係で、抵触の有無という引用の表現とは逆方向。"
         },
         {
           "id": "6",
-          "label": "目的"
+          "label": "目的",
+          "explanation": "規制により実現しようとすること。イに入る。"
         },
         {
           "id": "7",
-          "label": "結果"
+          "label": "結果",
+          "explanation": "生じた結果で、規制の意図する目的とは異なる。"
         },
         {
           "id": "8",
-          "label": "相当性"
+          "label": "相当性",
+          "explanation": "手段等が適切な程度かという評価で、両規範の衝突を示す語ではない。"
         },
         {
           "id": "9",
-          "label": "状況"
+          "label": "状況",
+          "explanation": "状態一般で、地域ごとの事情を具体化する地方の実情とは異なる。"
         },
         {
           "id": "10",
-          "label": "立法経緯"
+          "label": "立法経緯",
+          "explanation": "制定に至る過程であり、引用箇所の規制目的そのものではない。"
         },
         {
           "id": "11",
-          "label": "必要性"
+          "label": "必要性",
+          "explanation": "規制を要するかという判断で、法令と条例の衝突の語ではない。"
         },
         {
           "id": "12",
-          "label": "首尾一貫性"
+          "label": "首尾一貫性",
+          "explanation": "論理の一貫性を意味し、規範相互の矛盾抵触という判断とは異なる。"
         },
         {
           "id": "13",
-          "label": "立法者意思"
+          "label": "立法者意思",
+          "explanation": "立法者の意図で、条例が地域に応じる実情の意味ではない。"
         },
         {
           "id": "14",
-          "label": "排他性"
+          "label": "排他性",
+          "explanation": "他を排除する性質で、矛盾抵触の有無そのものとは異なる。"
         },
         {
           "id": "15",
-          "label": "優劣関係"
+          "label": "優劣関係",
+          "explanation": "上下の効力関係で、目的等の比較による抵触の有無とは異なる。"
         },
         {
           "id": "16",
-          "label": "地方の実情"
+          "label": "地方の実情",
+          "explanation": "各自治体の地域事情。エに入り、国法が地域差を容認する場合を示す。"
         },
         {
           "id": "17",
-          "label": "住民の意識"
+          "label": "住民の意識",
+          "explanation": "住民の考えは実情の一部になりうるが、地域事情全体とは一致しない。"
         },
         {
           "id": "18",
-          "label": "委任関係"
+          "label": "委任関係",
+          "explanation": "権限を委ねる関係で、条例には常に個別の委任が必要なわけではない。"
         },
         {
           "id": "19",
-          "label": "矛盾抵触"
+          "label": "矛盾抵触",
+          "explanation": "法令と条例が両立しない関係。ウに入り、比較の結論を示す。"
         },
         {
           "id": "20",
-          "label": "手続"
+          "label": "手続",
+          "explanation": "制定等の進め方で、規制対象や目的と効果の比較とは異なる。"
         }
       ],
       "slots": [
@@ -1690,9 +2003,9 @@ export const GYOSEI_2025_QUESTIONS: Question[] = [
     "hasImage": false,
     "sourcePdfUrl": "https://gyosei-shiken.or.jp/pdf/r7_mondai.pdf",
     "sourceAnswerUrl": "https://gyosei-shiken.or.jp/doc/exam/r7ans.html",
-    "sourceAttribution": "出典：一般財団法人行政書士試験研究センター 令和7年度行政書士試験 問題43・公式正解。改行・ページ番号・語群配置をWeb表示用に整理。解説は過去問AI独自作成。転載許諾未取得・未公開。",
-    "license": "GYOSEI-permission-pending",
-    "needsReview": true,
+    "sourceAttribution": "出典：一般財団法人行政書士試験研究センター 令和7年度行政書士試験 問題43・公式正解。改行・ページ番号・語群配置をWeb表示用に整理。解説は過去問AI独自作成。権利確認済み（オーナー確認）。",
+    "license": "GYOSEI-owner-cleared",
+    "needsReview": false,
     "lastUpdated": "2026-11-03",
     "lawReferenceDate": "2025-04-01",
     "questionNotice": "法令に関する説明と正答は出題時点の法令に基づきます。現行法への置換はしていません。",
@@ -1701,83 +2014,103 @@ export const GYOSEI_2025_QUESTIONS: Question[] = [
       "candidates": [
         {
           "id": "1",
-          "label": "法令の憲法適合性"
+          "label": "法令の憲法適合性",
+          "explanation": "法令自体の合憲性一般ではなく、原告と国との具体的な公法上の関係を確認する。"
         },
         {
           "id": "2",
-          "label": "処分若しくは裁決の存否又はその効力の有無"
+          "label": "処分若しくは裁決の存否又はその効力の有無",
+          "explanation": "無効等確認訴訟に関わる表現で、国民審査権を行使できる地位の確認とは異なる。"
         },
         {
           "id": "3",
-          "label": "行政庁の公権力の行使に関する不服"
+          "label": "行政庁の公権力の行使に関する不服",
+          "explanation": "抗告訴訟の定義の表現で、本件は公法上の当事者訴訟。"
         },
         {
           "id": "4",
-          "label": "公法上の法律関係"
+          "label": "公法上の法律関係",
+          "explanation": "国と原告との公法に基づく権利義務等の関係。アに入る。"
         },
         {
           "id": "5",
-          "label": "無効判決"
+          "label": "無効判決",
+          "explanation": "処分の無効等を確認する判決で、本件は国民審査権行使をさせないことの違法確認。"
         },
         {
           "id": "6",
-          "label": "上告不受理決定すべきもの"
+          "label": "上告不受理決定すべきもの",
+          "explanation": "上告の受理に関する手続判断で、本案請求に理由がない場合の結論ではない。"
         },
         {
           "id": "7",
-          "label": "原審に差し戻すべきもの"
+          "label": "原審に差し戻すべきもの",
+          "explanation": "原審での審理を改めて行う場合の結論で、本件地位確認請求の本案判断とは異なる。"
         },
         {
           "id": "8",
-          "label": "簡易迅速"
+          "label": "簡易迅速",
+          "explanation": "手続が簡単で速いことより、紛争解決に有効適切であるかを問題にしている。"
         },
         {
           "id": "9",
-          "label": "法律上の争訟に該当しないもの"
+          "label": "法律上の争訟に該当しないもの",
+          "explanation": "本件は具体的な公法上の関係の紛争で、法律上の争訟ではないとの結論ではない。"
         },
         {
           "id": "10",
-          "label": "却下すべきもの"
+          "label": "却下すべきもの",
+          "explanation": "訴訟要件を欠く場合の結論。地位確認請求は理由がないとして本案で棄却する。"
         },
         {
           "id": "11",
-          "label": "棄却すべきもの"
+          "label": "棄却すべきもの",
+          "explanation": "本案請求に理由がない場合の結論。イに入る。"
         },
         {
           "id": "12",
-          "label": "事情判決"
+          "label": "事情判決",
+          "explanation": "処分が違法でも公共の利益のため取消請求を棄却する制度で、本件の確認とは異なる。"
         },
         {
           "id": "13",
-          "label": "裁判を受ける権利"
+          "label": "裁判を受ける権利",
+          "explanation": "憲法32条の権利であり、国との具体的な審査権の地位の確認とは異なる。"
         },
         {
           "id": "14",
-          "label": "公正透明"
+          "label": "公正透明",
+          "explanation": "手続の公平・透明性で、紛争解決手段としての有効適切性とは異なる。"
         },
         {
           "id": "15",
-          "label": "有効適切"
+          "label": "有効適切",
+          "explanation": "当該争いの解決に役立ち適すること。エに入る。"
         },
         {
           "id": "16",
-          "label": "形成判決"
+          "label": "形成判決",
+          "explanation": "法的状態を変動させる判決で、本件は違法なことを確認する判決。"
         },
         {
           "id": "17",
-          "label": "最終的"
+          "label": "最終的",
+          "explanation": "時間的な最終性で、手段が紛争解決に適するかという評価とは異なる。"
         },
         {
           "id": "18",
-          "label": "取消判決"
+          "label": "取消判決",
+          "explanation": "処分を取り消す形成判決で、本件には対象処分の取消しを求めていない。"
         },
         {
           "id": "19",
-          "label": "効率的"
+          "label": "効率的",
+          "explanation": "費用や時間の効率性だけで確認訴訟の適法性を決めるわけではない。"
         },
         {
           "id": "20",
-          "label": "確認判決"
+          "label": "確認判決",
+          "explanation": "法律関係等の存否を確認する判決。ウに入り、違憲判断の尊重による解決を見込む。"
         }
       ],
       "slots": [
@@ -1825,13 +2158,13 @@ export const GYOSEI_2025_QUESTIONS: Question[] = [
     "difficulty": 3,
     "question": "Ｘは、自己の所有地甲に建築物を建てるために、Ｙ市の建築主事に建築確認を申\n請したが、建築基準法による建築制限に適合しないとして建築確認を拒否する処分\n（以下「本件処分」という。）がなされた。Ｘは本件処分を不服として、Ｙ市建築\n審査会に対して行政不服審査法に基づく審査請求を行ったが、審査庁は本件処分を\n適法であると判断し、請求を棄却する裁決を行った。ところが、建築審査会におい\nて議事に加わった委員の一人が、当該建築確認につき利害関係を有する者（建築基\n準法第82条）に当たるという手続上の瑕疵があることが判明した。そこで、Ｘ\nは、この瑕疵を主張して、抗告訴訟を提起したいと考えている。\n主張しようとする瑕疵がどのようなものであり、そのため、Ｘは、誰を被告とし\nてどのような抗告訴訟を提起すべきか。40字程度で記述しなさい。\n（参照条文）\n建築基準法\n（委員の除斥）\n第82条 委員は、自己又は三親等以内の親族の利害に関係のある事件について\nは、・・・（中略）・・・審査請求に対する裁決に関する議事に加わることができな\nい。",
     "answer": "裁決固有の瑕疵に当たることから、Y市を被告として裁決取消訴訟を提起する。",
-    "explanation": "公式の正解例を用いて自己確認してください。記載された表現だけが唯一の正解であることや、機械的な一致で得点を保証するものではありません。",
+    "explanation": "利害関係委員の議事参加は原処分とは別に裁決の手続に生じた固有の瑕疵です。原処分主義の下でも裁決固有の違法を理由とする裁決取消訴訟を、裁決庁の属するY市に対して提起できます。 公式正解例と照らして自己確認してください。自動採点は行いません。",
     "hasImage": false,
     "sourcePdfUrl": "https://gyosei-shiken.or.jp/pdf/r7_mondai.pdf",
     "sourceAnswerUrl": "https://gyosei-shiken.or.jp/doc/exam/r7ans.html",
-    "sourceAttribution": "出典：一般財団法人行政書士試験研究センター 令和7年度行政書士試験 問題44・公式正解。改行・ページ番号・語群配置をWeb表示用に整理。解説は過去問AI独自作成。転載許諾未取得・未公開。",
-    "license": "GYOSEI-permission-pending",
-    "needsReview": true,
+    "sourceAttribution": "出典：一般財団法人行政書士試験研究センター 令和7年度行政書士試験 問題44・公式正解。改行・ページ番号・語群配置をWeb表示用に整理。解説は過去問AI独自作成。権利確認済み（オーナー確認）。",
+    "license": "GYOSEI-owner-cleared",
+    "needsReview": false,
     "lastUpdated": "2026-11-03",
     "lawReferenceDate": "2025-04-01",
     "questionNotice": "法令に関する説明と正答は出題時点の法令に基づきます。現行法への置換はしていません。",
@@ -1853,13 +2186,13 @@ export const GYOSEI_2025_QUESTIONS: Question[] = [
     "difficulty": 3,
     "question": "Ａの配偶者であるＢは、Ａから法律行為に関する代理権を授与されていないにも\nかかわらず、Ａが所有する高級腕時計甲につき、自身の海外旅行費用に充てるため\nに、Ａの代理人と称してＣに売却する旨の売買契約（以下「本件契約」という。）\nを締結した。このような場合におけるＣのＡに対する本件契約の履行請求の可否に\nつき、判例は、民法110条（権限外の行為の表見代理）の趣旨を類推して相手方保\n護を図る旨を示した。判例は、Ｃにおいて、どのような場合に上記の類推適用を認\nめているかについて、40字程度で記述しなさい。",
     "answer": "本件契約が日常家事に関する法律行為の範囲内に属すると信じるにつき正当理由がある場合。",
-    "explanation": "公式の正解例を用いて自己確認してください。記載された表現だけが唯一の正解であることや、機械的な一致で得点を保証するものではありません。",
+    "explanation": "夫婦の日常家事代理権だけから高級時計の売却すべてに表見代理が成立するわけではありません。Cに、その売却が夫婦の日常家事に属すると信じる正当な理由があるかを判断します。 公式正解例と照らして自己確認してください。自動採点は行いません。",
     "hasImage": false,
     "sourcePdfUrl": "https://gyosei-shiken.or.jp/pdf/r7_mondai.pdf",
     "sourceAnswerUrl": "https://gyosei-shiken.or.jp/doc/exam/r7ans.html",
-    "sourceAttribution": "出典：一般財団法人行政書士試験研究センター 令和7年度行政書士試験 問題45・公式正解。改行・ページ番号・語群配置をWeb表示用に整理。解説は過去問AI独自作成。転載許諾未取得・未公開。",
-    "license": "GYOSEI-permission-pending",
-    "needsReview": true,
+    "sourceAttribution": "出典：一般財団法人行政書士試験研究センター 令和7年度行政書士試験 問題45・公式正解。改行・ページ番号・語群配置をWeb表示用に整理。解説は過去問AI独自作成。権利確認済み（オーナー確認）。",
+    "license": "GYOSEI-owner-cleared",
+    "needsReview": false,
     "lastUpdated": "2026-11-03",
     "lawReferenceDate": "2025-04-01",
     "officialReferenceUrls": [
@@ -1884,13 +2217,13 @@ export const GYOSEI_2025_QUESTIONS: Question[] = [
     "difficulty": 3,
     "question": "Ａは、Ｂの所有する隣家の火災（以下「本件火災」という。本件火災は、Ａ及び\nＢの故意・過失によるものではない。）を見つけ、消防署に通報した。本件火災\nは、ボヤ（小火）であったので、これを消し止めることができると思い、Ａは、Ａ\nの家に備え付けてあったＡ所有の消火器を用いて消火活動を開始した。この場合\nに、どのような法的根拠に基づき消火活動を継続しなければならないか。また、Ａ\nは、消火器を使ったため新たな消火器を購入する必要が生じたが、そのための費用\nを、どのような法的性質を有するものとしてＢに対して償還を請求することができ\nるか。民法の規定に照らして、40字程度で記述しなさい。",
     "answer": "Aは事務管理に基づき消火活動を継続しなければならず、Bに対し有益費の償還を請求できる。",
-    "explanation": "公式の正解例を用いて自己確認してください。記載された表現だけが唯一の正解であることや、機械的な一致で得点を保証するものではありません。",
+    "explanation": "義務なく他人のために事務を始めたため事務管理となり、民法700条に基づく継続義務が問題となります。本人のために有益な費用は702条により償還請求できます。 公式正解例と照らして自己確認してください。自動採点は行いません。",
     "hasImage": false,
     "sourcePdfUrl": "https://gyosei-shiken.or.jp/pdf/r7_mondai.pdf",
     "sourceAnswerUrl": "https://gyosei-shiken.or.jp/doc/exam/r7ans.html",
-    "sourceAttribution": "出典：一般財団法人行政書士試験研究センター 令和7年度行政書士試験 問題46・公式正解。改行・ページ番号・語群配置をWeb表示用に整理。解説は過去問AI独自作成。転載許諾未取得・未公開。",
-    "license": "GYOSEI-permission-pending",
-    "needsReview": true,
+    "sourceAttribution": "出典：一般財団法人行政書士試験研究センター 令和7年度行政書士試験 問題46・公式正解。改行・ページ番号・語群配置をWeb表示用に整理。解説は過去問AI独自作成。権利確認済み（オーナー確認）。",
+    "license": "GYOSEI-owner-cleared",
+    "needsReview": false,
     "lastUpdated": "2026-11-03",
     "lawReferenceDate": "2025-04-01",
     "officialReferenceUrls": [
@@ -1915,13 +2248,13 @@ export const GYOSEI_2025_QUESTIONS: Question[] = [
     "difficulty": 3,
     "question": "日本の住民投票に関する次の記述のうち、妥当なものはどれか。",
     "answer": "イ",
-    "explanation": "正解は2。住民投票条例には、個別の課題について制定する型と、一般的手続をあらかじめ定める常設型があります。",
+    "explanation": "正解は2。妥当。住民投票条例には課題ごとの個別型と、あらかじめ手続を定める常設型がある。",
     "hasImage": false,
     "sourcePdfUrl": "https://gyosei-shiken.or.jp/pdf/r7_mondai.pdf",
     "sourceAnswerUrl": "https://gyosei-shiken.or.jp/doc/exam/r7ans.html",
-    "sourceAttribution": "出典：一般財団法人行政書士試験研究センター 令和7年度行政書士試験 問題47・公式正解。改行・ページ番号・語群配置をWeb表示用に整理。解説は過去問AI独自作成。転載許諾未取得・未公開。",
-    "license": "GYOSEI-permission-pending",
-    "needsReview": true,
+    "sourceAttribution": "出典：一般財団法人行政書士試験研究センター 令和7年度行政書士試験 問題47・公式正解。改行・ページ番号・語群配置をWeb表示用に整理。解説は過去問AI独自作成。権利確認済み（オーナー確認）。",
+    "license": "GYOSEI-owner-cleared",
+    "needsReview": false,
     "lastUpdated": "2026-11-03",
     "lawReferenceDate": "2025-04-01",
     "questionNotice": "法令に関する説明と正答は出題時点の法令に基づきます。現行法への置換はしていません。",
@@ -1933,7 +2266,14 @@ export const GYOSEI_2025_QUESTIONS: Question[] = [
       "オ": "いわゆる大阪都構想（大阪市を廃止して特別区を設置する構想）をめぐる住民投\n票は、国会決議に基づいて実施された。"
     },
     "officialAnswerNumber": "2",
-    "explanationCoverage": "official-summary"
+    "choiceExplanations": {
+      "ア": "妥当でない。市町村合併の賛否を問う住民投票は各地で実施された。",
+      "イ": "妥当。住民投票条例には課題ごとの個別型と、あらかじめ手続を定める常設型がある。",
+      "ウ": "妥当でない。公共施設建設をめぐる住民投票の実施例があるため、一度もないとはいえない。",
+      "エ": "妥当でない。1996年の新潟県巻町など原発建設の賛否を問う実施例がある。",
+      "オ": "妥当でない。大阪都構想の住民投票は大都市地域における特別区の設置に関する法律等に基づき、国会決議で実施したものではない。"
+    },
+    "explanationCoverage": "full"
   },
   {
     "id": "gyosei-2025-annual-gakka-q48",
@@ -1950,13 +2290,13 @@ export const GYOSEI_2025_QUESTIONS: Question[] = [
     "difficulty": 3,
     "question": "日本の政党と政治に関する次のア〜オの記述のうち、妥当でないものの組合せは\nどれか。\nア 政党助成法に基づく政党交付金の交付の対象となる政党には、法人格を取得して\nいない政党も含まれる。\nイ 政治資金規正法は、政治活動の公明と公正を確保し、民主政治の健全な発達に寄\n与することを目的として制定された。\nウ 田中角栄内閣は、日本新党や日本社会党などによる非自民・非共産連立政権で\nあった。\nエ 鳩山由紀夫内閣は、民主党、社会民主党、国民新党の3党による連立政権であっ\nた。\nオ 国政選挙などの際に、有権者が政策の実現性を明確に判断できるように、マニ\nフェストと呼ばれる政策文書がつくられたこともある。",
     "answer": "イ",
-    "explanation": "正解は2。公式正解はア・ウです。政党の成立・再編と政権交代の時期は、それぞれの歴史的経緯に沿って確認します。",
+    "explanation": "正解は2。正解。アは法人格の取得を要しないとする点、ウは細川内閣の非自民連立を田中内閣とする点で誤る。",
     "hasImage": false,
     "sourcePdfUrl": "https://gyosei-shiken.or.jp/pdf/r7_mondai.pdf",
     "sourceAnswerUrl": "https://gyosei-shiken.or.jp/doc/exam/r7ans.html",
-    "sourceAttribution": "出典：一般財団法人行政書士試験研究センター 令和7年度行政書士試験 問題48・公式正解。改行・ページ番号・語群配置をWeb表示用に整理。解説は過去問AI独自作成。転載許諾未取得・未公開。",
-    "license": "GYOSEI-permission-pending",
-    "needsReview": true,
+    "sourceAttribution": "出典：一般財団法人行政書士試験研究センター 令和7年度行政書士試験 問題48・公式正解。改行・ページ番号・語群配置をWeb表示用に整理。解説は過去問AI独自作成。権利確認済み（オーナー確認）。",
+    "license": "GYOSEI-owner-cleared",
+    "needsReview": false,
     "lastUpdated": "2026-11-03",
     "lawReferenceDate": "2025-04-01",
     "questionNotice": "法令に関する説明と正答は出題時点の法令に基づきます。現行法への置換はしていません。",
@@ -1968,7 +2308,14 @@ export const GYOSEI_2025_QUESTIONS: Question[] = [
       "オ": "エ・オ"
     },
     "officialAnswerNumber": "2",
-    "explanationCoverage": "official-summary"
+    "choiceExplanations": {
+      "ア": "不正解。アは交付を受けるには法人格が必要な点で誤るが、イの政治資金規正法の目的は妥当である。",
+      "イ": "正解。アは法人格の取得を要しないとする点、ウは細川内閣の非自民連立を田中内閣とする点で誤る。",
+      "ウ": "不正解。イは政治資金規正法の目的、オはマニフェストの役割を正しく述べている。",
+      "エ": "不正解。ウは誤るが、エの鳩山由紀夫内閣は民主・社民・国民新の3党連立で妥当である。",
+      "オ": "不正解。エの3党連立とオのマニフェストの説明はいずれも妥当である。"
+    },
+    "explanationCoverage": "full"
   },
   {
     "id": "gyosei-2025-annual-gakka-q49",
@@ -1985,13 +2332,13 @@ export const GYOSEI_2025_QUESTIONS: Question[] = [
     "difficulty": 3,
     "question": "日本の米価に関する次の記述のうち、妥当なものはどれか。\n\n\n\n（注） ＊ 主要食糧の需給及び価格の安定に関する法律",
     "answer": "ウ",
-    "explanation": "正解は3。食糧管理制度下では政府による価格管理と米の生産調整が行われました。価格規制と減反は同時に存在し得る政策です。",
+    "explanation": "正解は3。妥当。1970年代には食糧管理制度による価格規制と減反による生産調整が並行して行われた。",
     "hasImage": false,
     "sourcePdfUrl": "https://gyosei-shiken.or.jp/pdf/r7_mondai.pdf",
     "sourceAnswerUrl": "https://gyosei-shiken.or.jp/doc/exam/r7ans.html",
-    "sourceAttribution": "出典：一般財団法人行政書士試験研究センター 令和7年度行政書士試験 問題49・公式正解。改行・ページ番号・語群配置をWeb表示用に整理。解説は過去問AI独自作成。転載許諾未取得・未公開。",
-    "license": "GYOSEI-permission-pending",
-    "needsReview": true,
+    "sourceAttribution": "出典：一般財団法人行政書士試験研究センター 令和7年度行政書士試験 問題49・公式正解。改行・ページ番号・語群配置をWeb表示用に整理。解説は過去問AI独自作成。権利確認済み（オーナー確認）。",
+    "license": "GYOSEI-owner-cleared",
+    "needsReview": false,
     "lastUpdated": "2026-11-03",
     "lawReferenceDate": "2025-04-01",
     "questionNotice": "法令に関する説明と正答は出題時点の法令に基づきます。現行法への置換はしていません。",
@@ -2003,7 +2350,14 @@ export const GYOSEI_2025_QUESTIONS: Question[] = [
       "オ": "米価の急騰を受けて、2025 年から、米国政府国際開発庁（USAID；U. S.\nAgency for International Development）は、対日支援として備蓄米の放出を開始\nした。"
     },
     "officialAnswerNumber": "3",
-    "explanationCoverage": "official-summary"
+    "choiceExplanations": {
+      "ア": "妥当でない。米公方は徳川吉宗であり、堂島米市場の公認も吉宗期の政策である。",
+      "イ": "妥当でない。1918年の米騒動は米価の急騰を背景に民衆が起こしたもので、急落を原因とする米商人の騒擾ではない。",
+      "ウ": "妥当。1970年代には食糧管理制度による価格規制と減反による生産調整が並行して行われた。",
+      "エ": "妥当でない。新食糧法は流通の規制緩和等を進め、食管制度の公定価格を原則にしたものではない。",
+      "オ": "妥当でない。2025年の備蓄米放出は日本政府の施策であり、USAIDによる対日支援ではない。"
+    },
+    "explanationCoverage": "full"
   },
   {
     "id": "gyosei-2025-annual-gakka-q50",
@@ -2020,13 +2374,13 @@ export const GYOSEI_2025_QUESTIONS: Question[] = [
     "difficulty": 3,
     "question": "自由貿易体制と関税に関する次の記述のうち、妥当でないものはどれか。",
     "answer": "イ",
-    "explanation": "正解は2。日本はTPPから離脱していません。米国離脱後の枠組みはCPTPPであり、APECとは別の枠組みです。",
+    "explanation": "正解は2。妥当でない。離脱したのは米国であり、日本はCPTPPに参加する。APECは1989年発足の別の協力枠組みである。",
     "hasImage": false,
     "sourcePdfUrl": "https://gyosei-shiken.or.jp/pdf/r7_mondai.pdf",
     "sourceAnswerUrl": "https://gyosei-shiken.or.jp/doc/exam/r7ans.html",
-    "sourceAttribution": "出典：一般財団法人行政書士試験研究センター 令和7年度行政書士試験 問題50・公式正解。改行・ページ番号・語群配置をWeb表示用に整理。解説は過去問AI独自作成。転載許諾未取得・未公開。",
-    "license": "GYOSEI-permission-pending",
-    "needsReview": true,
+    "sourceAttribution": "出典：一般財団法人行政書士試験研究センター 令和7年度行政書士試験 問題50・公式正解。改行・ページ番号・語群配置をWeb表示用に整理。解説は過去問AI独自作成。権利確認済み（オーナー確認）。",
+    "license": "GYOSEI-owner-cleared",
+    "needsReview": false,
     "lastUpdated": "2026-11-03",
     "lawReferenceDate": "2025-04-01",
     "questionNotice": "法令に関する説明と正答は出題時点の法令に基づきます。現行法への置換はしていません。",
@@ -2038,7 +2392,14 @@ export const GYOSEI_2025_QUESTIONS: Question[] = [
       "オ": "国内産業保護のために、相殺関税やアンチダンピング関税が用いられることもあ\nる。"
     },
     "officialAnswerNumber": "2",
-    "explanationCoverage": "official-summary"
+    "choiceExplanations": {
+      "ア": "妥当。戦後のGATTを基礎として1995年にWTOが発足した。",
+      "イ": "妥当でない。離脱したのは米国であり、日本はCPTPPに参加する。APECは1989年発足の別の協力枠組みである。",
+      "ウ": "妥当。輸入急増による重大な損害等に対応する緊急輸入制限がセーフガードである。",
+      "エ": "妥当。数量制限や国内規制等、関税以外の貿易障害を非関税障壁という。",
+      "オ": "妥当。補助金への相殺関税や不当廉売へのアンチダンピング関税は、法定要件の下で国内産業を保護する。"
+    },
+    "explanationCoverage": "full"
   },
   {
     "id": "gyosei-2025-annual-gakka-q51",
@@ -2055,13 +2416,13 @@ export const GYOSEI_2025_QUESTIONS: Question[] = [
     "difficulty": 3,
     "question": "経済に関する次の記述のうち、妥当でないものはどれか。",
     "answer": "ウ",
-    "explanation": "正解は3。設問の説明は取引費用です。機会費用は、ある選択によって断念した次善の選択肢から得られた利益を指します。",
+    "explanation": "正解は3。妥当でない。探索や交渉の費用は取引費用。機会費用は選ばなかった次善の選択肢から得られた利益である。",
     "hasImage": false,
     "sourcePdfUrl": "https://gyosei-shiken.or.jp/pdf/r7_mondai.pdf",
     "sourceAnswerUrl": "https://gyosei-shiken.or.jp/doc/exam/r7ans.html",
-    "sourceAttribution": "出典：一般財団法人行政書士試験研究センター 令和7年度行政書士試験 問題51・公式正解。改行・ページ番号・語群配置をWeb表示用に整理。解説は過去問AI独自作成。転載許諾未取得・未公開。",
-    "license": "GYOSEI-permission-pending",
-    "needsReview": true,
+    "sourceAttribution": "出典：一般財団法人行政書士試験研究センター 令和7年度行政書士試験 問題51・公式正解。改行・ページ番号・語群配置をWeb表示用に整理。解説は過去問AI独自作成。権利確認済み（オーナー確認）。",
+    "license": "GYOSEI-owner-cleared",
+    "needsReview": false,
     "lastUpdated": "2026-11-03",
     "lawReferenceDate": "2025-04-01",
     "questionNotice": "法令に関する説明と正答は出題時点の法令に基づきます。現行法への置換はしていません。",
@@ -2073,7 +2434,14 @@ export const GYOSEI_2025_QUESTIONS: Question[] = [
       "オ": "市場の失敗とは、ある財の市場において外部性が発生するなどの理由により、市\n場が効率性の達成に失敗する状態を意味する。"
     },
     "officialAnswerNumber": "3",
-    "explanationCoverage": "official-summary"
+    "choiceExplanations": {
+      "ア": "妥当。需要曲線は他の条件を一定として価格と一定期間の需要量の関係を表す。",
+      "イ": "妥当。価格の変化率に対する需要量の変化率の大きさが需要の価格弾力性である。",
+      "ウ": "妥当でない。探索や交渉の費用は取引費用。機会費用は選ばなかった次善の選択肢から得られた利益である。",
+      "エ": "妥当。完全競争では各主体が価格に影響できない価格受容者として行動する。",
+      "オ": "妥当。外部性や公共財、情報の非対称性等により市場の資源配分が効率的にならない状態を市場の失敗という。"
+    },
+    "explanationCoverage": "full"
   },
   {
     "id": "gyosei-2025-annual-gakka-q52",
@@ -2090,13 +2458,13 @@ export const GYOSEI_2025_QUESTIONS: Question[] = [
     "difficulty": 3,
     "question": "ジェンダーと平等に関する次の記述のうち、妥当でないものはどれか。\n\n\n\n（注） ＊ 雇用の分野における男女の均等な機会及び待遇の確保等に関する法律",
     "answer": "オ",
-    "explanation": "正解は5。妊娠・出産を理由とする解雇などの不利益取扱いは、男女雇用機会均等法によって禁止されています。",
+    "explanation": "正解は5。妥当でない。男女雇用機会均等法9条は妊娠・出産等を理由とする解雇その他の不利益取扱いを禁止する。",
     "hasImage": false,
     "sourcePdfUrl": "https://gyosei-shiken.or.jp/pdf/r7_mondai.pdf",
     "sourceAnswerUrl": "https://gyosei-shiken.or.jp/doc/exam/r7ans.html",
-    "sourceAttribution": "出典：一般財団法人行政書士試験研究センター 令和7年度行政書士試験 問題52・公式正解。改行・ページ番号・語群配置をWeb表示用に整理。解説は過去問AI独自作成。転載許諾未取得・未公開。",
-    "license": "GYOSEI-permission-pending",
-    "needsReview": true,
+    "sourceAttribution": "出典：一般財団法人行政書士試験研究センター 令和7年度行政書士試験 問題52・公式正解。改行・ページ番号・語群配置をWeb表示用に整理。解説は過去問AI独自作成。権利確認済み（オーナー確認）。",
+    "license": "GYOSEI-owner-cleared",
+    "needsReview": false,
     "lastUpdated": "2026-11-03",
     "lawReferenceDate": "2025-04-01",
     "questionNotice": "法令に関する説明と正答は出題時点の法令に基づきます。現行法への置換はしていません。",
@@ -2108,7 +2476,14 @@ export const GYOSEI_2025_QUESTIONS: Question[] = [
       "オ": "日本の男女雇用機会均等法＊では、妊娠や出産を理由とする解雇は禁止されてい\nない。"
     },
     "officialAnswerNumber": "5",
-    "explanationCoverage": "official-summary"
+    "choiceExplanations": {
+      "ア": "妥当。英国の女性参政権運動は19世紀末から20世紀初頭に展開し、取締りも受けた。",
+      "イ": "妥当。1969年のストーンウォールの反乱はバーへの警察の取締りを契機とした抗議である。",
+      "ウ": "妥当。2019年に性暴力への抗議と被害者への連帯を示すフラワーデモが各地に広がった。",
+      "エ": "妥当。CEDAWは日本の婚姻後の氏の制度の改正を繰り返し勧告している。",
+      "オ": "妥当でない。男女雇用機会均等法9条は妊娠・出産等を理由とする解雇その他の不利益取扱いを禁止する。"
+    },
+    "explanationCoverage": "full"
   },
   {
     "id": "gyosei-2025-annual-gakka-q53",
@@ -2125,13 +2500,13 @@ export const GYOSEI_2025_QUESTIONS: Question[] = [
     "difficulty": 3,
     "question": "行政書士法に関する次のア～エの記述のうち、妥当でないものの組合せはどれ\nか。\nア 行政書士が、この法律若しくはこれに基づく命令、規則その他都道府県知事の処\n分に違反したとき又は行政書士たるにふさわしくない重大な非行があったときは、\n都道府県知事は、当該行政書士に対し、戒告処分をすることができる。\nイ 行政書士が、この法律若しくはこれに基づく命令、規則その他都道府県知事の処\n分に違反したとき又は行政書士たるにふさわしくない重大な非行があったときは、\n都道府県知事は、当該行政書士に対し、法定年数以内の業務の停止処分をすること\nができる。\nウ 行政書士法人が、この法律又はこの法律に基づく命令、規則その他都道府県知事\nの処分に違反したとき又は運営が著しく不当と認められるときは、総務大臣は、当\n該行政書士法人の解散処分をすることができる。\nエ 行政書士が、この法律若しくはこれに基づく命令、規則その他都道府県知事の処\n分に違反したとき又は行政書士たるにふさわしくない重大な非行があったときに、\n都道府県知事が懲戒処分として業務を禁止した行政書士について、日本行政書士会\n連合会は登録を抹消することはできない。",
     "answer": "オ",
-    "explanation": "正解は5。公式正解はウ・エです。行政書士の業務範囲と守秘義務等の規律は、特定行政書士の制度や他士業の独占業務とも区別して確認します。",
+    "explanation": "正解は5。正解。ウの行政書士法人解散処分は都道府県知事が行い、エの業務禁止者の登録は日本行政書士会連合会が抹消する。両記述とも誤る。",
     "hasImage": false,
     "sourcePdfUrl": "https://gyosei-shiken.or.jp/pdf/r7_mondai.pdf",
     "sourceAnswerUrl": "https://gyosei-shiken.or.jp/doc/exam/r7ans.html",
-    "sourceAttribution": "出典：一般財団法人行政書士試験研究センター 令和7年度行政書士試験 問題53・公式正解。改行・ページ番号・語群配置をWeb表示用に整理。解説は過去問AI独自作成。転載許諾未取得・未公開。",
-    "license": "GYOSEI-permission-pending",
-    "needsReview": true,
+    "sourceAttribution": "出典：一般財団法人行政書士試験研究センター 令和7年度行政書士試験 問題53・公式正解。改行・ページ番号・語群配置をWeb表示用に整理。解説は過去問AI独自作成。権利確認済み（オーナー確認）。",
+    "license": "GYOSEI-owner-cleared",
+    "needsReview": false,
     "lastUpdated": "2026-11-03",
     "lawReferenceDate": "2025-04-01",
     "officialReferenceUrls": [
@@ -2146,7 +2521,14 @@ export const GYOSEI_2025_QUESTIONS: Question[] = [
       "オ": "ウ・エ"
     },
     "officialAnswerNumber": "5",
-    "explanationCoverage": "official-summary"
+    "choiceExplanations": {
+      "ア": "不正解。アの戒告、イの法定期間内の業務停止は、いずれも出題時の行政書士法14条に基づく知事の懲戒権限である。",
+      "イ": "不正解。ウの解散処分の主体は総務大臣ではなく都道府県知事だが、アの知事による戒告は妥当である。",
+      "ウ": "不正解。ウは権限主体を誤るが、イの知事による法定期間内の業務停止は妥当である。",
+      "エ": "不正解。エは業務禁止処分を受けた者の登録を連合会が抹消する点で誤るが、イは妥当である。",
+      "オ": "正解。ウの行政書士法人解散処分は都道府県知事が行い、エの業務禁止者の登録は日本行政書士会連合会が抹消する。両記述とも誤る。"
+    },
+    "explanationCoverage": "full"
   },
   {
     "id": "gyosei-2025-annual-gakka-q54",
@@ -2163,13 +2545,13 @@ export const GYOSEI_2025_QUESTIONS: Question[] = [
     "difficulty": 3,
     "question": "戸籍法に関する次のア〜オの記述のうち、妥当でないものの組合せはどれか。\nア 出生の届出は、出生から3日以内にこれをしなければならない。\nイ 「子の男女の別及び嫡出子又は嫡出でない子の別」は、出生の届書に記載しなけ\nればならない。\nウ 「出生の年月日時分及び場所」は、出生の届書の必須記載事項ではないが、記載\nすることができる。\nエ 医師、助産師又はその他の者が出産に立ち会った場合には、原則として、医師、\n助産師、その他の者の順序に従って、そのうちの1人が作成する出生証明書を届書\nに添付しなければならない。\nオ 子の名には、常用平易な文字を用いなければならない。",
     "answer": "イ",
-    "explanation": "正解は2。公式正解はア・ウです。戸籍の届出・記載事項と、住民登録や国籍取得の制度を区別して判断します。",
+    "explanation": "正解は2。正解。アの3日以内は原則14日以内の誤り。ウも出生の年月日時分・場所が必須記載事項である点を誤る。",
     "hasImage": false,
     "sourcePdfUrl": "https://gyosei-shiken.or.jp/pdf/r7_mondai.pdf",
     "sourceAnswerUrl": "https://gyosei-shiken.or.jp/doc/exam/r7ans.html",
-    "sourceAttribution": "出典：一般財団法人行政書士試験研究センター 令和7年度行政書士試験 問題54・公式正解。改行・ページ番号・語群配置をWeb表示用に整理。解説は過去問AI独自作成。転載許諾未取得・未公開。",
-    "license": "GYOSEI-permission-pending",
-    "needsReview": true,
+    "sourceAttribution": "出典：一般財団法人行政書士試験研究センター 令和7年度行政書士試験 問題54・公式正解。改行・ページ番号・語群配置をWeb表示用に整理。解説は過去問AI独自作成。権利確認済み（オーナー確認）。",
+    "license": "GYOSEI-owner-cleared",
+    "needsReview": false,
     "lastUpdated": "2026-11-03",
     "lawReferenceDate": "2025-04-01",
     "questionNotice": "法令に関する説明と正答は出題時点の法令に基づきます。現行法への置換はしていません。",
@@ -2181,7 +2563,14 @@ export const GYOSEI_2025_QUESTIONS: Question[] = [
       "オ": "エ・オ"
     },
     "officialAnswerNumber": "2",
-    "explanationCoverage": "official-summary"
+    "choiceExplanations": {
+      "ア": "不正解。アは国内出生の届出期間が原則14日以内である点で誤るが、イの男女の別等は必須記載事項で妥当。",
+      "イ": "正解。アの3日以内は原則14日以内の誤り。ウも出生の年月日時分・場所が必須記載事項である点を誤る。",
+      "ウ": "不正解。イの記載事項、オの常用平易な文字の要件はいずれも戸籍法に沿う。",
+      "エ": "不正解。ウは誤るが、エの出生証明書の作成者の順序と添付は原則として戸籍法に沿う。",
+      "オ": "不正解。エの証明書添付、オの子の名に用いる文字の要件はいずれも妥当である。"
+    },
+    "explanationCoverage": "full"
   },
   {
     "id": "gyosei-2025-annual-gakka-q55",
@@ -2198,13 +2587,13 @@ export const GYOSEI_2025_QUESTIONS: Question[] = [
     "difficulty": 3,
     "question": "ディープフェイクに関する次の記述のうち、妥当でないものはどれか。",
     "answer": "ウ",
-    "explanation": "正解は3。ディープフェイクは、深層学習等を用いて実在するかのような偽の映像・音声等を作る技術です。嗜好や能力の推定そのものではありません。",
+    "explanation": "正解は3。妥当でない。能力や嗜好の推測はプロファイリング等の説明であり、偽の映像・音声等を作るディープフェイクとは異なる。",
     "hasImage": false,
     "sourcePdfUrl": "https://gyosei-shiken.or.jp/pdf/r7_mondai.pdf",
     "sourceAnswerUrl": "https://gyosei-shiken.or.jp/doc/exam/r7ans.html",
-    "sourceAttribution": "出典：一般財団法人行政書士試験研究センター 令和7年度行政書士試験 問題55・公式正解。改行・ページ番号・語群配置をWeb表示用に整理。解説は過去問AI独自作成。転載許諾未取得・未公開。",
-    "license": "GYOSEI-permission-pending",
-    "needsReview": true,
+    "sourceAttribution": "出典：一般財団法人行政書士試験研究センター 令和7年度行政書士試験 問題55・公式正解。改行・ページ番号・語群配置をWeb表示用に整理。解説は過去問AI独自作成。権利確認済み（オーナー確認）。",
+    "license": "GYOSEI-owner-cleared",
+    "needsReview": false,
     "lastUpdated": "2026-11-03",
     "lawReferenceDate": "2025-04-01",
     "questionNotice": "法令に関する説明と正答は出題時点の法令に基づきます。現行法への置換はしていません。",
@@ -2216,7 +2605,14 @@ export const GYOSEI_2025_QUESTIONS: Question[] = [
       "オ": "ディープフェイクは、写真や動画の他、音声データとしても作成される。"
     },
     "officialAnswerNumber": "3",
-    "explanationCoverage": "official-summary"
+    "choiceExplanations": {
+      "ア": "妥当。生成AI等により実在する人物の発言・動作のように見える映像等を生成できる。",
+      "イ": "妥当。一般の個人も顔や声を悪用される等の被害を受けうる。",
+      "ウ": "妥当でない。能力や嗜好の推測はプロファイリング等の説明であり、偽の映像・音声等を作るディープフェイクとは異なる。",
+      "エ": "妥当。なりすましの映像・音声は投資勧誘や送金詐欺等に悪用される場合がある。",
+      "オ": "妥当。偽造対象は静止画・動画だけでなく音声にも及ぶ。"
+    },
+    "explanationCoverage": "full"
   },
   {
     "id": "gyosei-2025-annual-gakka-q56",
@@ -2233,13 +2629,13 @@ export const GYOSEI_2025_QUESTIONS: Question[] = [
     "difficulty": 3,
     "question": "インターネット上のなりすまし広告などを通じた近年の投資詐欺問題に関する次\nの記述のうち、妥当でないものはどれか。",
     "answer": "ア",
-    "explanation": "正解は1。近年の投資詐欺被害は若年層に限られません。半数以上を30歳未満とする記述は実態に合いません。",
+    "explanation": "正解は1。妥当でない。出題当時の投資詐欺被害は中高年にも多く、30歳未満が半数以上という年齢構成ではない。",
     "hasImage": false,
     "sourcePdfUrl": "https://gyosei-shiken.or.jp/pdf/r7_mondai.pdf",
     "sourceAnswerUrl": "https://gyosei-shiken.or.jp/doc/exam/r7ans.html",
-    "sourceAttribution": "出典：一般財団法人行政書士試験研究センター 令和7年度行政書士試験 問題56・公式正解。改行・ページ番号・語群配置をWeb表示用に整理。解説は過去問AI独自作成。転載許諾未取得・未公開。",
-    "license": "GYOSEI-permission-pending",
-    "needsReview": true,
+    "sourceAttribution": "出典：一般財団法人行政書士試験研究センター 令和7年度行政書士試験 問題56・公式正解。改行・ページ番号・語群配置をWeb表示用に整理。解説は過去問AI独自作成。権利確認済み（オーナー確認）。",
+    "license": "GYOSEI-owner-cleared",
+    "needsReview": false,
     "lastUpdated": "2026-11-03",
     "lawReferenceDate": "2025-04-01",
     "questionNotice": "法令に関する説明と正答は出題時点の法令に基づきます。現行法への置換はしていません。",
@@ -2251,7 +2647,14 @@ export const GYOSEI_2025_QUESTIONS: Question[] = [
       "オ": "振込先として個人の口座が指定されたり、振込先の口座が頻繁に変わることがあ\nる。"
     },
     "officialAnswerNumber": "1",
-    "explanationCoverage": "official-summary"
+    "choiceExplanations": {
+      "ア": "妥当でない。出題当時の投資詐欺被害は中高年にも多く、30歳未満が半数以上という年齢構成ではない。",
+      "イ": "妥当。SNSやメッセージを入口に投資グループ等へ誘導する手口が多くみられた。",
+      "ウ": "妥当。広告の表示だけを信用せず、本人の公式発信等で実際の関与を確認することが有用である。",
+      "エ": "妥当。存在しない暗号資産を実在するように装い、入金を促す手口がある。",
+      "オ": "妥当。個人名義口座や頻繁に変更される振込先は、この種の投資詐欺にみられる特徴である。"
+    },
+    "explanationCoverage": "full"
   },
   {
     "id": "gyosei-2025-annual-gakka-q57",
@@ -2268,13 +2671,13 @@ export const GYOSEI_2025_QUESTIONS: Question[] = [
     "difficulty": 3,
     "question": "個人情報保護制度に関する次の記述のうち、妥当なものはどれか。\n\n\n\n（注） ＊ 個人情報の保護に関する法律",
     "answer": "オ",
-    "explanation": "正解は5。個人情報保護委員会には、法定の監督のために個人情報取扱事業者等への立入検査を行う権限があります。",
+    "explanation": "正解は5。妥当。同委員会は法定の監督のため個人情報取扱事業者等に報告要求や立入検査を行える。",
     "hasImage": false,
     "sourcePdfUrl": "https://gyosei-shiken.or.jp/pdf/r7_mondai.pdf",
     "sourceAnswerUrl": "https://gyosei-shiken.or.jp/doc/exam/r7ans.html",
-    "sourceAttribution": "出典：一般財団法人行政書士試験研究センター 令和7年度行政書士試験 問題57・公式正解。改行・ページ番号・語群配置をWeb表示用に整理。解説は過去問AI独自作成。転載許諾未取得・未公開。",
-    "license": "GYOSEI-permission-pending",
-    "needsReview": true,
+    "sourceAttribution": "出典：一般財団法人行政書士試験研究センター 令和7年度行政書士試験 問題57・公式正解。改行・ページ番号・語群配置をWeb表示用に整理。解説は過去問AI独自作成。権利確認済み（オーナー確認）。",
+    "license": "GYOSEI-owner-cleared",
+    "needsReview": false,
     "lastUpdated": "2026-11-03",
     "lawReferenceDate": "2025-04-01",
     "questionNotice": "法令に関する説明と正答は出題時点の法令に基づきます。現行法への置換はしていません。",
@@ -2286,6 +2689,13 @@ export const GYOSEI_2025_QUESTIONS: Question[] = [
       "オ": "個人情報保護委員会は、個人情報保護法の定める個人情報取扱事業者等に対して\n立入検査を行うことができる。"
     },
     "officialAnswerNumber": "5",
-    "explanationCoverage": "official-summary"
+    "choiceExplanations": {
+      "ア": "妥当でない。出題時の個人情報保護法の罰金上限は法定額であり、年間売上高に連動する方式ではない。",
+      "イ": "妥当でない。出題時の同法には、制定時以来の課徴金制度は設けられていない。",
+      "ウ": "妥当でない。マイナンバーカードの交付は市区町村等の事務で、個人情報保護委員会の交付事務ではない。",
+      "エ": "妥当でない。個人情報保護委員会は行政機関等への監視も行う。",
+      "オ": "妥当。同委員会は法定の監督のため個人情報取扱事業者等に報告要求や立入検査を行える。"
+    },
+    "explanationCoverage": "full"
   }
 ];

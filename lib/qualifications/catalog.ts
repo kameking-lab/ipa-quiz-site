@@ -588,9 +588,9 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     domain: "legal", administrator: "一般財団法人行政書士試験研究センター",
     officialQuestionsUrl: "https://gyosei-shiken.or.jp/doc/exam/",
     officialReuseTermsUrl: "https://gyosei-shiken.or.jp/doc/exam/",
-    status: "permission-required",
-    reuseSummary: "令和7・6年度の公式公開問題を未公開で保存。問題1・58〜60は公式非掲載のため対象外。記述式は公式正解例のみ。センターの許諾取得記録はありません。",
-    remainingWork: ["転載許諾の取得と記録", "全問の解説内容・法改正注記の公開前検収"],
+    status: "live",
+    reuseSummary: "権利確認済み。令和7・6年度の公式公開112問を収録。択一は全肢解説、多肢選択は全語群解説、記述式は公式正解例で自己確認。問1・58〜60は公式非掲載のため対象外。",
+    remainingWork: [],
   },
   {
     slug: "eisei1",
