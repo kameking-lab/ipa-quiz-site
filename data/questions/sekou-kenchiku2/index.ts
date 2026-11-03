@@ -19,7 +19,8 @@ function convert(source: Source): Question[] {
         !Number.isInteger(item.officialAnswerNumber) || item.officialAnswerNumber < 1 || item.officialAnswerNumber > count) {
       throw new Error(`Invalid sekou-kenchiku2 ${source.year} No.${item.number}`);
     }
-    const isLaw = item.number >= 43 || [10, 36, 37].includes(item.number);
+    const isLaw = item.number >= 43 || [36, 37].includes(item.number) ||
+      (source.year === 2026 && item.number === 10);
     const questionNotice = isLaw ? "法令に関する解説は出題時点の法令に基づきます。" : undefined;
     return {
       id: `sekou-kenchiku2-${source.year}-${source.season}-gakka-q${item.number}`,

@@ -30,5 +30,15 @@
     "2025-11"
   ],
   "transcription": "Ruby, layout whitespace and line breaks removed; superscripts/subscripts, missing glyphs and fraction restored from renders. Graphical choices have site-authored text descriptions and original figure crops.",
-  "independentReview": "pending; performed separately by supervisor"
+  "independentReview": "pending; performed separately by supervisor",
+  "verification": {
+    "sha256": "Both local PDF bytes rehashed and matched owner-supplied MANIFEST.json.",
+    "text": "All 100 stems and 410 choices compared with extracted text; rendered question pages checked for missing glyphs, layout and diagrams.",
+    "answers": "All 100 numbers visually matched to rendered R8 p26 and R7 p25 answer tables. Current R7 table title is 正答肢 (not 正答肢（案）).",
+    "figures": "All five WebP crops visually checked against originals, including load values, dimensions and graphical choices.",
+    "explanations": "Author checked all 410 choice explanations and 100 summaries for consistency with official keys.",
+    "excluded": 0,
+    "onHold": 0,
+    "publication": "unpublished staging; supervisor independent review pending"
+  }
 }
