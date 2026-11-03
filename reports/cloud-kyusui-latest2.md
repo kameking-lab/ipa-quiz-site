@@ -1,91 +1,80 @@
-# 給水装置工事主任技術者：直近2回の収録可否監査
+# 給水装置工事主任技術者：直近2回・全120問のステージング収録
 
-確認日：2026-11-03（UTC）／実施団体：公益財団法人給水工事技術振興財団。
+確認日：2026-11-03（UTC）。実施団体：公益財団法人給水工事技術振興財団。
 
-## 結論・追加問数・除外
+## 結果と方針変更
 
-**転載禁止の明記があるため、ユーザー指定の除外条件を適用し、問題本文を収録しない。**
-資格台帳 `lib/qualifications/catalog.ts` に `slug: "kyusui"`、`status: "permission-required"` として記録した。これは許諾待ちの未公開記録であり、問題データを備えた公開前ステージングの完成を意味しない。
+令和8年度（2026年度）・令和7年度（2025年度）の全120原問を、問題本文・全選択肢・公式最終正答・原問題画像とともに未公開で追加した。回の除外・問題の省略は0。類題や生成問題による置換はない。
 
-| 資格 | 対象回 | 公式原問題数 | 追加問数 | 除外数 | 除外理由 |
-| --- | --- | ---: | ---: | ---: | --- |
-| 給水装置工事主任技術者 | 令和8年度（2026年度） | 60 | 0 | 60 | サイトポリシーの無断転載禁止 |
-| 同上 | 令和7年度（2025年度） | 60 | 0 | 60 | 同上 |
-| 合計（1資格） | 直近2回 | 120 | **0** | **120** | 全問を収録対象から除外 |
+| 対象回 | 試験日 | 学科試験1 | 学科試験2 | 収録数 | 省略数 |
+| --- | --- | ---: | ---: | ---: | ---: |
+| 令和8年度 | 2026-10-25 | 問1〜40：40問 | 問41〜60：20問 | 60 | 0 |
+| 令和7年度 | 2025-10-26 | 問1〜40：40問 | 問41〜60：20問 | 60 | 0 |
+| 合計 | | 80 | 40 | **120** | **0** |
 
-問題文・選択肢・正答データ・解説・図版・PDFの複製はリポジトリに追加していない。類題・生成問題による代用も行っていない。対象資格はこの1資格のみで、次の資格は指定されていない。
+当ブランチの前回コミット `f5e3fcf9` による「問題未収録・許諾待ち・120問除外」の状態を、今回のオーナー決定（権利確認済み）に基づき置き換えた。既存登録の継続作業であり、重複登録として除外していない。資格台帳の同じ `slug: "kyusui"` を `permission-required` から `staging` に更新し、問題未収録や許諾待ちを現状として示す記載を削除した。この報告は前回の監査報告を更新したものである。
 
-## 転載条件の根拠
+## 公式サイトでの対象回確認
 
-- [財団サイトポリシー](https://www.kyuukou.or.jp/sitepolicy.html) の「著作権について」に「当サイトに掲載の記述・写真の無断転載を禁じます。」と明記されている。
-- [過去5年間の試験問題](https://www.kyuukou.or.jp/shiken/jyuken-kakomon.html) と [令和8年度試験案内](https://www.kyuukou.or.jp/shiken/shiken-annai.html) は、このサイトポリシーにリンクしている。
-- 本作業で転載許諾は取得していない。ユーザーの「公式サイト・PDFに転載や複製の禁止が明記されている資格は、問題本文を収録せず理由を報告」に従って除外した。法令上の例外や引用の可否を推定して収録を進めていない。
-
-## 直近2回の確定根拠
-
-[指定の過去問一覧](https://www.kyuukou.or.jp/shiken/jyuken-kakomon.html) の表は令和3～7年度を掲載している。一方、そのページの「令和8年度」「試験問題・正答番号一覧」リンク先である [試験案内](https://www.kyuukou.or.jp/shiken/shiken-annai.html) に、令和8年度の学科試験1・2と正答番号一覧の実リンクがある。
-そのため、表だけから令和7・6年度と推測せず、**令和8年度と令和7年度**を選定した。令和8年度の試験日は2026-10-25、正答公表日は2026-10-30で、確認日以前に問題・正答とも公開されている。令和7年度の試験日は問題PDF表紙の2025-10-26で確認した。
+[指定の過去問一覧](https://www.kyuukou.or.jp/shiken/jyuken-kakomon.html) の表は令和3〜7年度を掲載している。同ページには令和8年度の「試験問題・正答番号一覧」へのリンクもあり、リンク先の [当年度試験案内](https://www.kyuukou.or.jp/shiken/shiken-annai.html) で令和8年度の学科試験1・2と正答番号一覧が実際に公開されていることを確認した。令和8年度の正答公表日は2026-10-30で、確認日以前である。したがって対象は令和8年度・令和7年度であり、過去問表だけから令和7年度・令和6年度と推測していない。
 
 | 対象回 | 学科試験1 | 学科試験2 | 正答 |
 | --- | --- | --- | --- |
-| 令和8年度 | [公式問題PDF（問1～40）](https://www.kyuukou.or.jp/shiken/file-r08/file-r08_gakka-01.pdf) | [公式問題PDF（問41～60）](https://www.kyuukou.or.jp/shiken/file-r08/file-r08_gakka-02.pdf) | [公式正答PDF](https://www.kyuukou.or.jp/shiken/file-r08/file-r08_seitou-num.pdf) |
-| 令和7年度 | [公式問題PDF（問1～40）](https://www.kyuukou.or.jp/shiken/file-r07/file-r07_gakka-01.pdf) | [公式問題PDF（問41～60）](https://www.kyuukou.or.jp/shiken/file-r07/file-r07_gakka-02.pdf) | [公式正答PDF・訂正（2ページ）](https://www.kyuukou.or.jp/shiken/file-r07/file-r07_seitou-num.pdf) |
+| 令和8年度 | [問1〜40](https://www.kyuukou.or.jp/shiken/file-r08/file-r08_gakka-01.pdf) | [問41〜60](https://www.kyuukou.or.jp/shiken/file-r08/file-r08_gakka-02.pdf) | [正答番号一覧](https://www.kyuukou.or.jp/shiken/file-r08/file-r08_seitou-num.pdf) |
+| 令和7年度 | [問1〜40](https://www.kyuukou.or.jp/shiken/file-r07/file-r07_gakka-01.pdf) | [問41〜60](https://www.kyuukou.or.jp/shiken/file-r07/file-r07_gakka-02.pdf) | [正答番号一覧・問18訂正](https://www.kyuukou.or.jp/shiken/file-r07/file-r07_seitou-num.pdf) |
 
-両年度とも、公式PDFの問題本体の連番を抽出し、学科試験1は1～40の40問、学科試験2は41～60の20問と照合した。令和7年度の冒頭注意事項にある解答例は実問題数に含めていない。全問の問題番号と正答一覧の範囲は1～60である。
+両回とも全問・正答が公式に公開済みのため、回のスキップはない。表紙の解答例・注意事項は実問題数に含めていない。
 
-令和7年度問18は公式正答PDFの2ページ目で**正答肢なし・受験者全員正解**とされている。通常の正答番号を推測して与えてはいけない。全60原問という数にはこの問18も含む。将来許諾を取得して取り込む際も、この最終訂正を必ず反映する。
+## 令和7年度問18の公式訂正
 
-## 取得資料の識別情報
+正答PDFの2ページ目で「正答肢なし・受験者全員正解」とされている。肢4の「埋設した年度」ではなく「埋設した年」であるべきことが訂正理由である。原文を修正して通常問題に変えることや、肢4を正答として補完することはしていない。
 
-以下は確認日に公式URLから取得したファイルのSHA-256。PDF本体と抽出本文は作業用の一時領域だけで確認し、リポジトリには含めない。
+原問・5肢・画像を120問の中に保持し、`scoring.kind: "all-correct"`、`correctChoice: null` として公式の扱いと訂正ページを明記した。ステージング用の採点関数は、無回答を含め全員正解とする。通常の単一正答は119問、公式全員正解は1問で、保留・除外・未収録ではない。
+
+## データと公開範囲
+
+- 台帳：`lib/qualifications/catalog.ts`。新設の公開状態 `staging` と `stagingDataPath` で未公開の実データに結び付けた。
+- データ入口：`data/qualification-staging/kyusui/index.ts`。型付きの `KYUSUI_STAGED_QUESTIONS` と公式扱いを反映する `scoreKyusuiStagedQuestion` を提供する。
+- 年度別データ：同ディレクトリの `2026-annual.json`・`2025-annual.json`、各60問。原問番号、年度、試験日、学科区分、8科目、抽出本文、全肢、公式問題・正答URL、出典表記を保持する。
+- 原問題画像：同ディレクトリの `assets/`、126枚。問題本文・図・表・空欄枠・数式・選択肢をPDFから144 dpiで切り出し、掲載範囲と出典ページ、SHA-256を記録した。問題画像と公式PDFが原文の正本となる。
+- 原資料：同ディレクトリの `sources/` に公式問題4 PDF、正答2 PDF、確認した公式ページ3 HTMLを保存。`source-manifest.json` に全資料・画像のURL、ハッシュ、切出し座標、取得確認日と権利方針を記録した。
+- 再生成：`scripts/import-kyusui-latest2.py`。Python 3・PyMuPDF（今回2.1）で実行する。ネットワークから取得するか、`--source-dir` で保存資料を指定できる。公開用ディレクトリには出力しない。
+
+複数ページの計算問題は、令和7年度問33（3ページ）、令和8年度問33（2ページ）・問34（2ページ）・問35（3ページ）を欠かさず保持した。令和7年度問34は図中の5つの番号を選ぶ形式なので、図中番号に対応する肢として記録した。令和8年度問34の後続グラフ、問35の算出手順・計算欄は `postOptionContent` と画像に保持し、最終選択肢の本文と区別した。科目名は各PDFの見出しから取得した（学科2は問41〜51が概要、問52〜60が施工管理法）。
+
+抽出テキストはPDFの配置を保った検索・編集確認用であり、ルビや表、数式の読み順が通常の文章と異なる場合があるため、原問題画像と原PDFを併せて保持する。`explanationCoverage` は全問 `official-summary` とし、公式正答と出題時点の扱いを示す要約を保存した。全肢の独自解説を作成済みとは扱わない。
+
+未公開の指定に従い、`examCode`・公開用問題レジストリ・動的ローダー・公式PDFライブラリ・公開ルート・公開画像パスへの登録は行っていない。トップページと資格一覧は従来どおり `status === "live"` のみを表示する。ステージング資料はすべて `public/` の外にあり、通常の出題プールにも入らない。
+
+## 転載禁止文言の記録
+
+[サイトポリシー](https://www.kyuukou.or.jp/sitepolicy.html) には「当サイトに掲載の記述・写真の無断転載を禁じます。」との記載がある。この文言とURL・ページの保存資料・ハッシュを記録した。今回のオーナーによる権利確認済みの決定に従い、この文言を収録停止や許諾待ちの理由として扱っていない。
+
+## 取得資料のSHA-256
+
+保存先はいずれも `data/qualification-staging/kyusui/sources/`。公式PDF6点のハッシュは前回確認時の値とも一致した。
 
 | 資料 | SHA-256 |
 | --- | --- |
 | jyuken-kakomon.html | `3b1919ae0013fe08bf09d894366a506da5002ba2169685b4b3f6fc00c8c75242` |
 | shiken-annai.html | `29c355d7ee847ce069a4f1a253fd7c463462fc960692f488fcc4edf212ab8f9a` |
 | sitepolicy.html | `c89aecdb9f83d89a13c05c300d4e367a7b4c9539e3482c2401de2ceb4d7079c8` |
-| 令和8年度 file-r08_gakka-01.pdf | `1694eeadcdc008ec997f026d5b611e8af1d68dbd96dbfbb76eb00f73d39f1421` |
-| 令和8年度 file-r08_gakka-02.pdf | `7a36fcca01456e2378a451e6273515d314cc0183cc44bd66e628d39727ae4ac5` |
-| 令和8年度 file-r08_seitou-num.pdf | `f5a0a5fe3d522278ceba843e35146fd1384525fa9bb871b072d91c6c915cac62` |
-| 令和7年度 file-r07_gakka-01.pdf | `a288de23dff69389e9bec0a7645e4eafb30d3d6d92c72f359cfc71e3ed9b4371` |
-| 令和7年度 file-r07_gakka-02.pdf | `6c776068efe70d9e5fa9497901d9fd6cb62468b5ab95489d01cca770a9560a01` |
-| 令和7年度 file-r07_seitou-num.pdf | `d6d5403eb23e2d803327dd9b9c8f70f7d5c9702ebd7812c85d5ee46279b5b8fb` |
+| file-r08_seitou-num.pdf | `f5a0a5fe3d522278ceba843e35146fd1384525fa9bb871b072d91c6c915cac62` |
+| file-r08_gakka-01.pdf | `1694eeadcdc008ec997f026d5b611e8af1d68dbd96dbfbb76eb00f73d39f1421` |
+| file-r08_gakka-02.pdf | `7a36fcca01456e2378a451e6273515d314cc0183cc44bd66e628d39727ae4ac5` |
+| file-r07_seitou-num.pdf | `d6d5403eb23e2d803327dd9b9c8f70f7d5c9702ebd7812c85d5ee46279b5b8fb` |
+| file-r07_gakka-01.pdf | `a288de23dff69389e9bec0a7645e4eafb30d3d6d92c72f359cfc71e3ed9b4371` |
+| file-r07_gakka-02.pdf | `6c776068efe70d9e5fa9497901d9fd6cb62468b5ab95489d01cca770a9560a01` |
 
-## 作業前の重複確認
+## 検証
 
-作業開始時のHEAD：`00e49b94060cc2671e9d098df91d653a4ed3ffe2`。作業前の `git status --short` は空であった。台帳・問題データの変更前に以下を実施した。
-
-1. ローカルの `data/questions`、`lib/qualifications/catalog.ts`、`data/exam-library` を資格名・`kyusui`・`kyuusui`・`kyuukou` で検索し、同資格・同回の成果がないことを確認した。
-2. `git ls-remote --heads origin 'refs/heads/claude/*' 'refs/heads/qual/*' 'refs/heads/codex/*'` でブランチを列挙し、明示的なrefspecで取得した。取得後の対象は claude/* **96本**、qual/* **0本**、codex/* **263本**、計**359本**。
-3. 全359ブランチ先端に対し、上記3箇所の内容を `git grep -l -i -E '給水装置工事主任技術者|kyusui|kyuusui|kyuukou'` で照合した。同資格の問題・台帳登録・公式PDF登録はなく、資格名を示すブランチ名もなかった。
-4. 一致したのは `data/questions/mankan/2025-annual.json` と `data/questions/zoen2/2025-late.json`・`2026-early.json` にある自治体等の給水関連参考URLだけであり、同資格の既存成果ではない。ローカルも同じ3ファイルだけが一致した。
-
-取得した対象ブランチの `refname:short + objectname` 一覧（Gitの列挙順、末尾改行あり）のSHA-256：`917f3b831fe14c99befa46f2a2a74c2ca68afc50a316e61c8b7867e9b4c5758f`。
-
-## 既存方式と今回の扱い
-
-- 類似の管工事資格は `data/questions/kankoji2/index.ts` と年度別JSONで、原問番号・公式正答・本文・全肢解説・問題/正答URL・必要図を保持する。`data/questions/index.ts`、`lib/questions/get-questions.ts` 等で登録・ロードする方式を確認した。
-- 資格の公開可否の正本は `lib/qualifications/catalog.ts`。既存の `sekou-kenchiku1`・`sekou-denki1` と同様、今回も許諾待ち記録には `examCode` を付けず `permission-required` を使う。
-- `app/qualifications/page.tsx` と `lib/home/home-directory.ts` は公開資格を `status === "live"` で絞る。今回の記録は公開資格一覧に載らない。
-- `data/exam-library/official-catalog.json` は `lib/exam-library-catalog.ts` で公開用に読み込まれる別経路。除外した資格の試験回を追加しない。
-- 今回は問題本文を収録しないため、問題型・ローダー・公開ルート・資格カード・画像資産を追加しない。未公開記録だけを台帳に残す。
-
-## 品質確認の範囲
-
-収録問数0のため、収録した全問の正答照合、全選択肢の独自解説、法令基準時点の注記、必要図・`hasImage`、各問への出典URLの設定は対象なし。これらの品質確認を実施済みとは主張しない。今回行ったのは公式の回・問題番号範囲・正答公開・転載条件・既存成果の有無の監査である。
-
-許諾後に再開する場合は、改めてその時点の直近2回を確定し、全問の原文・公式最終正答・全肢解説・法令の出題時点・必要図・総数を確認してステージングで仕上げ、独立レビューを受ける必要がある。
-
-## 検証・独立レビュー
-
-- `pnpm install`：成功（pnpm 10.33.0、Prisma Client生成を含む）。
-- `pnpm validate:questions`：成功。26,444問、`ok=26444 fail=0 warn=16808`。警告は既存データに対するもので、今回の問題追加は0問。
-- `pnpm test __tests__/lib/home-directory.test.ts __tests__/questions/live-qualification-coverage.test.ts __tests__/exam-library-model.test.ts`：3ファイル、29テストすべて成功。公開資格の絞り込みと既存カタログの整合を確認。
-- `pnpm typecheck`：通常設定ではNodeの `JavaScript heap out of memory` により終了コード134。`NODE_OPTIONS=--max-old-space-size=8192 pnpm typecheck` でヒープ上限を8 GiBに指定して再実行し、終了コード0で成功した。
+- 再生成：`PYTHONPATH=/tmp/kyusui-python python scripts/import-kyusui-latest2.py --source-dir /tmp/kyusui-latest2` 成功。120原問、126画像、9原資料、省略0。
+- 新規の `__tests__/questions/kyusui-staging.test.ts` は、全問番号・公式正答全件・原資料と画像のハッシュ・出典・継続ページ・問18の全員正解・計算欄の分離・未公開状態を検証する。正答は別途読み取った期待値と、別のPDFエンジンPopplerの抽出結果の双方で照合する。
+- Poppler `pdftotext -cropbox -bbox-layout` による独立した本文座標確認で、試験本文の5,054語について保存画像の範囲外にある語は0。見出し・フッターを除き、ルビ・図中テキストも確認範囲に含む。図形自体の意味の自動検証ではない。図中番号問題と継続グラフも画像を目視確認した。Popplerを使う2件の監査テストは `poppler-utils` 未導入環境では明示的にスキップする。今回の環境では両方を実行して成功した。
+- `pnpm test __tests__/questions/kyusui-staging.test.ts __tests__/lib/home-directory.test.ts __tests__/questions/live-qualification-coverage.test.ts __tests__/exam-library-model.test.ts`：4ファイル・37テストすべて成功（スキップ0）。
+- `pnpm validate:questions`：成功。既存の公開プール26,444問、`ok=26444 fail=0 warn=16808`。ステージングの120問はこの公開プール検証に含まれず、上記の専用テストで検証した。既存警告の増加はない。
+- `NODE_OPTIONS=--max-old-space-size=8192 pnpm typecheck`：成功。
+- `pnpm exec eslint data/qualification-staging/kyusui/index.ts __tests__/questions/kyusui-staging.test.ts lib/qualifications/catalog.ts`：成功。
 - `git diff --check`：成功。
-- 指定の `codex exec -m gpt-6-astra -c model_reasoning_effort=medium` を独立セッションで実行（`-s read-only --ephemeral` を追加）。初回は接続の再試行後に正常にレビューを完了した。
-- 初回レビュー：FAIL。対象回・禁止条件・問題数・問18の訂正・既存方式・359ブランチの調査は妥当と確認されたが、報告の検証結果とレビュー結果の追記、および未追跡の報告をコミット対象にすることが必要と指摘された。レビュー時の型検査ログは途中経過であり、合格証跡とは扱わず、上記のヒープ上限変更後の成功を確認した。
-- 修正対応：本節に実行コマンド・確定した検証結果・初回レビュー結果を記載し、報告と台帳をステージした。これらを含めて同じモデル・推論設定の別セッションで再レビューした。
-- 再レビュー：**PASS**。公式サイトへの独立アクセス、対象2回・各60問・資料ハッシュ・転載禁止・令和7年度問18の訂正・許諾待ちの登録方式・問題本文と公開導線の追加なし・359ブランチの調査・install/validate/29テスト/8 GiB指定の型検査結果を確認し、初回指摘の修正を承認した。
-- 独立レビュー最終出力のSHA-256：初回 `9d34ab2d9abacde2969b7b6bdfdf2bb3bb5a6f20eac8db892da1251004536c1e`、再レビュー `59df31d81622186803daa5f0d65e069d71d92ce1e39888d1bf00b14fa5147700`。
-- `pnpm build` とデプロイは実行していない。
+
+ビルド・デプロイ・公開操作は行っていない。

@@ -15,6 +15,7 @@ export type QualificationDomain =
 
 export type PublicationStatus =
   | "live"
+  | "staging"
   | "notification-required"
   | "ready-to-ingest"
   | "permission-required"
@@ -30,6 +31,8 @@ export interface QualificationCatalogEntry {
   officialQuestionsUrl: string;
   officialReuseTermsUrl: string;
   status: PublicationStatus;
+  /** 未公開の収録データ。公開レジストリからは読み込まない。 */
+  stagingDataPath?: string;
   reuseSummary: string;
   attributionTemplate?: string;
   /** 公開前に完了させる作業。空配列は公開可能を意味しない。 */
@@ -512,9 +515,11 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     administrator: "公益財団法人給水工事技術振興財団",
     officialQuestionsUrl: "https://www.kyuukou.or.jp/shiken/jyuken-kakomon.html",
     officialReuseTermsUrl: "https://www.kyuukou.or.jp/sitepolicy.html",
-    status: "permission-required",
-    reuseSummary: "令和8年度・令和7年度の公式問題・正答は公開されているが、サイトポリシーに記述・写真の無断転載禁止が明記されているため、問題本文は未収録。確認根拠は reports/cloud-kyusui-latest2.md。",
-    remainingWork: ["転載許諾を取得できない限り問題本文を収録しない", "許諾取得後に対象回・全問の正答・全肢解説・必要図を再確認（令和7年度問18は公式に全員正解）"],
+    status: "staging",
+    stagingDataPath: "data/qualification-staging/kyusui/index.ts",
+    reuseSummary: "オーナーの権利確認済み指示に基づき、令和8年度・令和7年度各60問、計120原問を未公開で収録。原問題画像・抽出本文・選択肢・公式正答を保持し、令和7年度問18の正答肢なし・全員正解の訂正を反映。サイトポリシーの無断転載禁止の記載と方針変更の根拠は reports/cloud-kyusui-latest2.md に記録。",
+    attributionTemplate: "出典：公益財団法人給水工事技術振興財団 ○年度 給水装置工事主任技術者試験 学科試験○ 問○（問題・正答）。原問題画像の切出しと本文抽出は過去問AIによる加工。",
+    remainingWork: ["公開指示があるまでステージングを維持", "公開時に全肢の独自解説と表示用テキストの整形を追加（現段階は公式正答要約・原問題画像を正本として保持）"],
   },
   {
     slug: "sekou-kenchiku1",
