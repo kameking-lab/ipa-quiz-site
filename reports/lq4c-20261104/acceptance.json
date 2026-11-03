@@ -1,0 +1,51 @@
+{
+  "status": "PARTIAL_CONTENT_ACCEPTED_NOT_REGISTERED",
+  "modelCommand": "C:/Users/kanet/AppData/Roaming/npm/codex.cmd exec -m gpt-6-astra",
+  "baselineAccepted": 2,
+  "totalExpected": 520,
+  "batches": [
+    {
+      "path": "data/qualification-staging/lq4c-biru-kan/2025-am-partial.json",
+      "originals": 10,
+      "questionIds": [
+        "biru-kan-2025-am-001",
+        "biru-kan-2025-am-002",
+        "biru-kan-2025-am-003",
+        "biru-kan-2025-am-004",
+        "biru-kan-2025-am-005",
+        "biru-kan-2025-am-006",
+        "biru-kan-2025-am-007",
+        "biru-kan-2025-am-008",
+        "biru-kan-2025-am-009",
+        "biru-kan-2025-am-010"
+      ],
+      "status": "PASS",
+      "model": "gpt-6-astra",
+      "report": "reports/lq4c-20261104/independent-review4.md",
+      "reportSha256": "52f659b45e2f8cfffc361e9aeb2465ccd7a43a885441951f5481be87acaf0e84",
+      "reviewedFileSha256": "c2a827c0d4e81dff6923742a2279d8780ffd469e65b32a872a45e0b0f2460f41",
+      "semanticSha256": "d3b4b7269d5d555ca50bdd13a610008616a15b2564fc2165987d5ba19b815479",
+      "sha256": "6ffa05a27eb547a424238e20d88551aee92ab7ef2eb0b96190cbf313d3422bf8"
+    },
+    {
+      "path": "data/qualification-staging/lq4c-engineer-first/2024-aptitude-partial.json",
+      "originals": 5,
+      "questionIds": [
+        "gijutsushi1-kikai-2024-aptitude-II-01",
+        "gijutsushi1-kikai-2024-aptitude-II-04",
+        "gijutsushi1-kikai-2024-aptitude-II-06",
+        "gijutsushi1-kikai-2024-aptitude-II-11",
+        "gijutsushi1-kikai-2024-aptitude-II-15"
+      ],
+      "status": "PASS",
+      "model": "gpt-6-astra",
+      "report": "reports/lq4c-20261104/independent-review3.md",
+      "reportSha256": "7e8769935e006a14b9a87221c11f979bc75939bf62c8dc9015ec8a8cea1d37b6",
+      "reviewedFileSha256": "4221753f551887e8b4eca3b524108cdff74722a1025cd48a4c823885fb67cb2a",
+      "semanticSha256": "493057d2610ba3db3bdcd6301a357e2d5a84fc79924ca0f81800bc6c19fd7440",
+      "sha256": "6fc82dda69dcf8860a89ae243badcd2a8c03be9f4d6462ab97a8dbaa331aa72d"
+    }
+  ],
+  "accepted": 17,
+  "remaining": 503
+}
