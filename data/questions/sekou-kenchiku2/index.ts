@@ -12,7 +12,7 @@ type Source = {
     imageUrl?: string; figureDescription?: string;
   }[];
 };
-function convert(source: Source): Question[] {
+function convert(source: Source, lawReferenceDate: string): Question[] {
   return source.questions.map((item) => {
     const count = item.number >= 38 && item.number <= 42 ? 5 : 4;
     if (item.choices.length !== count || item.choiceExplanations.length !== count ||
@@ -33,7 +33,7 @@ function convert(source: Source): Question[] {
       explanation: item.explanation + (questionNotice ? `\n${questionNotice}` : ""),
       choiceExplanations: Object.fromEntries(item.choiceExplanations.map((text, i) => [keys[i], text])),
       explanationCoverage: "full", questionNotice,
-      lawReferenceDate: isLaw ? source.examDate : undefined,
+      lawReferenceDate: isLaw ? lawReferenceDate : undefined,
       hasImage: Boolean(item.imageUrl), imageUrls: item.imageUrl ? [item.imageUrl] : undefined,
       imageAltTexts: item.figureDescription ? [item.figureDescription] : undefined,
       sourcePdfUrl: source.questionUrl, sourceAnswerUrl: source.questionUrl,
@@ -44,8 +44,9 @@ function convert(source: Source): Question[] {
   });
 }
 /** Staged originals: public registries and loaders must apply the catalog publication gate. */
-export const SEKOU_KENCHIKU2_2026_QUESTIONS = convert(early as Source);
-export const SEKOU_KENCHIKU2_2025_QUESTIONS = convert(late as Source);
+// Official examination guides, PDF p5: r08_2KGz_tebiki.pdf / r07_2K_1jik_tebiki.pdf.
+export const SEKOU_KENCHIKU2_2026_QUESTIONS = convert(early as Source, "2026-01-01");
+export const SEKOU_KENCHIKU2_2025_QUESTIONS = convert(late as Source, "2025-01-01");
 export const SEKOU_KENCHIKU2_QUESTIONS: Question[] = [
   ...SEKOU_KENCHIKU2_2026_QUESTIONS, ...SEKOU_KENCHIKU2_2025_QUESTIONS,
 ];

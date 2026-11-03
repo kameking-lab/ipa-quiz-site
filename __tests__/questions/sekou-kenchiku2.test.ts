@@ -41,10 +41,13 @@ describe("2級建築施工管理第一次検定 official latest two sittings", (
     expect(q.sourcePdfUrl).toBe(`https://www.fcip-shiken.jp/pdf/${q.year === 2026 ? "r08_2kgz_mondai.pdf" : "r07_2kg_mondai.pdf"}`);
     expect(q.sourceAnswerUrl).toBe(q.sourcePdfUrl);
     expect(q.sourceAttribution).toContain(`No.${q.qNumber}`);
-    if (q.qNumber >= 43 || [36,37].includes(q.qNumber)) {
+    if (q.qNumber >= 43 || [36,37].includes(q.qNumber) || (q.year === 2026 && q.qNumber === 10)) {
       expect(q.questionNotice).toContain("出題時点");
       expect(q.explanation).toContain("出題時点");
-      expect(q.lawReferenceDate).toBe(q.examDate);
+      expect(q.lawReferenceDate).toBe(q.year === 2026 ? "2026-01-01" : "2025-01-01");
+      expect(q.lawReferenceDate).not.toBe(q.examDate);
+    } else {
+      expect(q.lawReferenceDate).toBeUndefined();
     }
   });
 
