@@ -163,6 +163,7 @@ export function examTopDescription(exam: ExamCode, questionCount: number): strin
 }
 
 const EXAM_FULL_NAMES: Record<ExamCode, string> = {
+  "cargo-winch": "揚貨装置運転士免許試験",
   "mobile-crane": "移動式クレーン運転士免許試験",
   "crane-derrick": "クレーン・デリック運転士（限定なし）免許試験",
   kanteishi: "不動産鑑定士試験（短答式）",
@@ -261,6 +262,7 @@ const EXAM_META_DESC_DIVERSE: Record<
   (c: string, y: number, k: number) => string
 > = {
   "crane-derrick": (c) => `クレーン・デリック運転士（限定なし）の公表問題${c}問。法令は出題時点。`,
+  "cargo-winch": (c) => `揚貨装置運転士の公表問題${c}問。法令は出題時点。`,
   "mobile-crane": (c) => `移動式クレーン運転士の公表問題${c}問。法令は出題時点。`,
   kanteishi: (c) => `不動産鑑定士の短答式過去問${c}問を無料・回数制限なしで演習。令和7・8年度の原文・公式正答・全肢解説・原表と原文用語の注記を確認できます。`,
   kaikeishi: (c) => `公認会計士の短答式過去問${c}問を無料・回数制限なしで演習。令和8年試験第I回・第II回の原文・公式正答・全肢解説・共通設例・図表を確認できます。`,

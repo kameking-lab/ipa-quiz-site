@@ -41,6 +41,12 @@ export interface QualificationCatalogEntry {
  * 「公式に問題と正答がある」だけでは live にせず、転載条件まで確認する。
  */
 export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
+  { slug: "cargo-winch", examCode: "cargo-winch", shortName: "揚貨装置運転士", fullName: "揚貨装置運転士免許試験",
+    domain: "safety", administrator: "公益財団法人安全衛生技術試験協会",
+    officialQuestionsUrl: "https://www.exam.or.jp/lckohyo/", officialReuseTermsUrl: "https://www.exam.or.jp/lckohyo/",
+    status: "ready-to-ingest", reuseSummary: "未公開ステージング。2026年10月・4月公表の各40問を収録。法令は出題時点。",
+    attributionTemplate: "出典：公益財団法人安全衛生技術試験協会 揚貨装置運転士免許試験。解説は過去問AI独自作成。",
+    remainingWork: ["公開前レビューと公開判断"] },
   { slug: "mobile-crane", examCode: "mobile-crane", shortName: "移動式クレーン運転士", fullName: "移動式クレーン運転士免許試験",
     domain: "safety", administrator: "公益財団法人安全衛生技術試験協会",
     officialQuestionsUrl: "https://www.exam.or.jp/lckohyo/", officialReuseTermsUrl: "https://www.exam.or.jp/lckohyo/",

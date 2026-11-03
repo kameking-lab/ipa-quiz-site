@@ -67,6 +67,7 @@ export const EXAM_LABELS: Record<string, string> = {
   kanri: "管理業務主任者",
   "crane-derrick": "クレーン・デリック運転士（限定なし）",
   "mobile-crane": "移動式クレーン運転士",
+  "cargo-winch": "揚貨装置運転士",
   eisei1: "第一種衛生管理者",
   eisei2: "第二種衛生管理者",
   soukan: "技術士 総合技術監理部門",

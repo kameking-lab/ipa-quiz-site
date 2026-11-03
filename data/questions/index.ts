@@ -50,6 +50,7 @@ import { KANTEISHI_QUESTIONS } from "./kanteishi";
 import { KAIKEISHI_QUESTIONS } from "./kaikeishi";
 import { CRANE_DERRICK_QUESTIONS } from "./crane-derrick";
 import { MOBILE_CRANE_QUESTIONS } from "./mobile-crane";
+import { CARGO_WINCH_QUESTIONS } from "./cargo-winch";
 import { EISEI1_QUESTIONS } from "./eisei1";
 import { EISEI2_QUESTIONS } from "./eisei2";
 import { SOUKAN_QUESTIONS } from "./soukan";
@@ -162,6 +163,7 @@ export const QUESTIONS_BY_EXAM: Partial<Record<ExamCode, Question[]>> = {
   ...(isExamPublished("kanri") ? { kanri: KANRI_QUESTIONS } : {}),
   ...(isExamPublished("crane-derrick") ? { "crane-derrick": CRANE_DERRICK_QUESTIONS } : {}),
   ...(isExamPublished("mobile-crane") ? { "mobile-crane": MOBILE_CRANE_QUESTIONS } : {}),
+  ...(isExamPublished("cargo-winch") ? { "cargo-winch": CARGO_WINCH_QUESTIONS } : {}),
   ...(isExamPublished("eisei1") ? { eisei1: EISEI1_QUESTIONS } : {}),
   ...(isExamPublished("eisei2") ? { eisei2: EISEI2_QUESTIONS } : {}),
   ...(isExamPublished("soukan") ? { soukan: SOUKAN_QUESTIONS } : {}),
