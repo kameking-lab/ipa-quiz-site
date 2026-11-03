@@ -57,6 +57,11 @@ describe("J検情報システム latest two official papers in staging", () => {
     }
   });
 
+  it("preserves the original relation primary-key underline in accessible text", () => {
+    const q = JKEN_SYSTEM_QUESTIONS.find(q => q.id === "jken-system-260913-js03-q4-6")!;
+    expect(q.question).toContain("正規化前の受注表の主キーは受注番号（原図では実線の下線）");
+  });
+
   it("hides all staging questions from public registries, lazy loaders and exam lists", async () => {
     expect(isExamPublished("jken-system")).toBe(false);
     expect(QUALIFICATION_CATALOG.find(q => q.slug === "jken-system")?.status).toBe("ready-to-ingest");
