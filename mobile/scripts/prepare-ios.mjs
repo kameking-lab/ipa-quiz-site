@@ -1,7 +1,6 @@
-import { access, copyFile, mkdir } from "node:fs/promises";
+import { access, copyFile, cp } from "node:fs/promises";
 import { execFileSync } from "node:child_process";
 import { fileURLToPath } from "node:url";
-import sharp from "sharp";
 
 // Generation, sync, CocoaPods and Xcode are macOS-only. No signing or upload.
 if (process.platform !== "darwin") {
@@ -15,8 +14,6 @@ catch { run("npx", ["--no-install", "cap", "add", "ios", "--packagemanager", "Co
 run("npx", ["--no-install", "cap", "sync", "ios"]);
 await copyFile(new URL("../ios-assets/PrivacyInfo.xcprivacy", import.meta.url), new URL("../ios/App/App/PrivacyInfo.xcprivacy", import.meta.url));
 await copyFile(new URL("../ios-assets/QualificationBridgeViewController.swift", import.meta.url), new URL("../ios/App/App/QualificationBridgeViewController.swift", import.meta.url));
-const iconDir = new URL("../ios/App/App/Assets.xcassets/AppIcon.appiconset/", import.meta.url);
-await mkdir(iconDir, { recursive: true });
-await sharp(fileURLToPath(new URL("../ios-assets/icon.svg", import.meta.url)))
-  .png().toFile(fileURLToPath(new URL("AppIcon-512@2x.png", iconDir)));
+await cp(new URL("../ios-assets/AppIcon.appiconset/", import.meta.url),
+  new URL("../ios/App/App/Assets.xcassets/AppIcon.appiconset/", import.meta.url), { recursive: true, force: true });
 run("ruby", ["scripts/configure-ios.rb"]);
