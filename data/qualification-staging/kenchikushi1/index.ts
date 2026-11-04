@@ -2,6 +2,9 @@ import { KENCHIKUSHI1_2026_KEIKAKU } from "./2026-keikaku";
 import { KENCHIKUSHI1_2025_KEIKAKU } from "./2025-keikaku";
 import { KENCHIKUSHI1_2026_KANKYO_SETSUBI } from "./2026-kankyo-setsubi";
 import { KENCHIKUSHI1_2026_HOUKI } from "./2026-houki";
+import { KENCHIKUSHI1_2026_KOZO } from "./2026-kozo";
+import { KENCHIKUSHI1_2026_SEKOU } from "./2026-sekou";
+import { KENCHIKUSHI1_2025_KANKYO_SETSUBI } from "./2025-kankyo-setsubi";
 
 /** 検証専用。公開レジストリからは参照しない。 */
 export const KENCHIKUSHI1_CANDIDATES = [
@@ -9,4 +12,7 @@ export const KENCHIKUSHI1_CANDIDATES = [
   ...KENCHIKUSHI1_2025_KEIKAKU,
   ...KENCHIKUSHI1_2026_KANKYO_SETSUBI,
   ...KENCHIKUSHI1_2026_HOUKI,
+  ...KENCHIKUSHI1_2026_KOZO,
+  ...KENCHIKUSHI1_2026_SEKOU,
+  ...KENCHIKUSHI1_2025_KANKYO_SETSUBI,
 ];
