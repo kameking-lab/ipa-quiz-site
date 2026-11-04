@@ -108,6 +108,15 @@ function am2(categories: string[]): SessionConfig {
 // ------- Exam configs -------
 
 export const EXAM_CONFIGS: Record<ExamCode, ExamConfig> = {
+  "sekou-1kenchiku": {
+    code: "sekou-1kenchiku", nameFull: "1級建築施工管理技術検定（第一次検定）", urlSlug: "sekou-1kenchiku", level: "advanced",
+    sessions: [
+      { session: "am", urlSlug: "am", expectedQuestions: 44, label: "第一次検定 午前の部", categories: ["建築学", "共通", "建築施工", "施工管理法"] },
+      { session: "pm", urlSlug: "pm", expectedQuestions: 28, label: "第一次検定 午後の部", categories: ["施工管理法", "法規"] },
+    ],
+    seasons: ["july"], yearRange: { start: 2025, end: 2026 },
+  },
+
   "khk-kagaku": {
     code: "khk-kagaku", nameFull: "高圧ガス製造保安責任者（化学）", urlSlug: "khk-kagaku", level: "advanced",
     sessions: [
