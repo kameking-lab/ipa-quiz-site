@@ -8,7 +8,7 @@ import WebKit
 public class TrackingTransparencyPlugin: CAPPlugin, CAPBridgedPlugin {
     public let identifier = "TrackingTransparencyPlugin"
     public let jsName = "TrackingTransparency"
-    public let pluginMethods = [
+    public let pluginMethods: [CAPPluginMethod] = [
         CAPPluginMethod(name: "prepare", returnType: CAPPluginReturnPromise),
         CAPPluginMethod(name: "status", returnType: CAPPluginReturnPromise),
         CAPPluginMethod(name: "requestPermission", returnType: CAPPluginReturnPromise),

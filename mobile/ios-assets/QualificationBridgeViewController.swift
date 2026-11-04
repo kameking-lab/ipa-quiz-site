@@ -17,7 +17,7 @@ class QualificationBridgeViewController: CAPBridgeViewController {
 public class QualificationBridgePlugin: CAPPlugin, CAPBridgedPlugin, EKEventEditViewDelegate {
     public let identifier = "QualificationBridgePlugin"
     public let jsName = "QualificationBridge"
-    public let pluginMethods = [
+    public let pluginMethods: [CAPPluginMethod] = [
         CAPPluginMethod(name: "openUniversalLink", returnType: CAPPluginReturnPromise),
         CAPPluginMethod(name: "presentCalendar", returnType: CAPPluginReturnPromise)
     ]

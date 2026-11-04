@@ -52,6 +52,22 @@ const rejects = (cwd, message, ...args) => {
   assert.match(result.stderr, message);
 };
 
+test("generated native sources match the checked plugin contracts and are compiled by App", () => {
+  const sources = ["QualificationBridgeViewController.swift", "TrackingTransparencyPlugin.swift"];
+  for (const source of sources) {
+    assert.equal(readFileSync(join(mobile, "ios/App/App", source), "utf8"),
+      readFileSync(join(mobile, "ios-assets", source), "utf8"), `${source}: rerun ios:prepare`);
+  }
+  const compiled = JSON.parse(ruby(mobile, `
+    project = Xcodeproj::Project.open('ios/App/App.xcodeproj')
+    target = project.targets.find { |t| t.name == 'App' }
+    puts JSON.generate(target.source_build_phase.files_references.map(&:path))
+  `));
+  for (const source of sources) assert.equal(compiled.filter(path => path === source).length, 1, source);
+  const storyboard = readFileSync(join(mobile, "ios/App/App/Base.lproj/Main.storyboard"), "utf8");
+  assert.match(storyboard, /customClass="QualificationBridgeViewController" customModule="App"/);
+});
+
 test("Ads pod configuration preserves Capacitor hooks and is idempotent", () => {
   const original = "def capacitor_pods\n  pod 'Capacitor'\nend\ntarget 'App' do\n  capacitor_pods\n  # Add your Pods here\nend\npost_install do |installer|\n  assertDeploymentTarget(installer)\nend\n";
   const configured = configureAdsPods(original);
