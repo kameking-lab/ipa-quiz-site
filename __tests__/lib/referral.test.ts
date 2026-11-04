@@ -1,6 +1,5 @@
 import { beforeEach, afterEach, describe, expect, it, vi } from "vitest";
 import { currentReferral, markReferralVisit, referralProps, isTsuginoReferral } from "@/lib/analytics/referral";
-import { LS_KEYS } from "@/lib/storage/keys";
 import type { PostHog } from "posthog-js";
 
 beforeEach(() => {
@@ -63,5 +62,22 @@ describe("referral attribution", () => {
     expect(capture.mock.calls.filter(call => call[0] === "referral_landed")).toHaveLength(1);
     expect(capture.mock.calls.at(-1)?.[1]).toMatchObject({ utm_source: "tsugino_shikaku", test_mode: true });
     ph.setPostHogClient(null); reload.setPostHogClient(null);
+  });
+
+  it("does not persist sent markers before SDK initialization, allowing a reload to recover landing and milestones", async () => {
+    vi.resetModules(); vi.stubEnv("NEXT_PUBLIC_POSTHOG_KEY", "test-only");
+    const beforeReload = await import("@/lib/posthog");
+    beforeReload.posthogCapture("quiz_started");
+    beforeReload.posthogCapture("practice_free_limit_reached", { reset_at: "day1" });
+    beforeReload.posthogCapture("checkout_completed", { test_mode: true });
+    vi.resetModules();
+    const afterReload = await import("@/lib/posthog");
+    const capture = vi.fn();
+    afterReload.setPostHogClient({ capture } as unknown as PostHog);
+    afterReload.posthogCapture("page_view");
+    afterReload.posthogCapture("practice_free_limit_reached", { reset_at: "day1" });
+    afterReload.posthogCapture("checkout_completed", { test_mode: true });
+    expect(capture.mock.calls.map(call => call[0])).toEqual(["referral_landed", "page_view", "practice_free_limit_reached", "checkout_completed"]);
+    afterReload.setPostHogClient(null);
   });
 });

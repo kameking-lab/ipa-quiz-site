@@ -22,8 +22,7 @@ export function TsuginoWelcome({ href, qualification }: { href: string | null; q
     setVisible(true);
   }, [href]);
 
-  function dismiss() {
-    setVisible(false);
+  function rememberDismissal() {
     try { localStorage.setItem(LS_KEYS.referralWelcomeDismissed, "1"); } catch { /* optional */ }
   }
 
@@ -35,9 +34,9 @@ export function TsuginoWelcome({ href, qualification }: { href: string | null; q
     <div className="flex flex-wrap items-center gap-3">
       <Button asChild><Link href={href} prefetch={false} onClick={() => {
         posthogCapture("referral_practice_clicked", { qualification });
-        dismiss();
+        rememberDismissal();
       }}>1問目から無料で解く</Link></Button>
-      <button type="button" onClick={dismiss} className="min-h-11 px-3 text-sm underline underline-offset-4">案内を閉じる</button>
+      <button type="button" onClick={() => { rememberDismissal(); setVisible(false); }} className="min-h-11 px-3 text-sm underline underline-offset-4">案内を閉じる</button>
     </div>
   </aside>;
 }

@@ -218,7 +218,7 @@ export function QuizClient({
       if (currentId && Array.isArray(saved) && saved.length > 0 && saved.length <= sessionLimit &&
           saved.every((id) => typeof id === "string" && available.has(id)) && new Set(saved).size === saved.length && saved.includes(currentId) &&
           // Annual pools always follow the latest complete source order, including new additions.
-          (mode !== "year" || (saved.length === ids.length && ids.every((id) => saved.includes(id))))) {
+          (mode !== "year" || (saved.length === ids.length && ids.every((id, position) => saved[position] === id)))) {
         ids = saved as string[];
       } else if (currentId && poolIds.includes(currentId) && !ids.includes(currentId)) {
         ids = [currentId, ...ids].slice(0, sessionLimit);

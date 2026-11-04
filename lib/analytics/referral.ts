@@ -64,8 +64,12 @@ export function markReferralVisit(): void {
 export function referralProps(): Record<string, string | boolean | null> {
   const referral = currentReferral();
   if (!referral) return {};
-  const { captured_at: _capturedAt, ...props } = referral;
-  return props;
+  return {
+    utm_source: referral.utm_source, utm_medium: referral.utm_medium,
+    utm_campaign: referral.utm_campaign, utm_content: referral.utm_content, utm_term: referral.utm_term,
+    referral_id: referral.referral_id, landing_path: referral.landing_path,
+    landing_scope: referral.landing_scope, first_visit: referral.first_visit,
+  };
 }
 
 export function isTsuginoReferral(referral: Referral | null): boolean {
@@ -74,13 +78,22 @@ export function isTsuginoReferral(referral: Referral | null): boolean {
 
 /** One funnel milestone per campaign (and per quota reset for free limits).
  * A bounded tab record also prevents remount/reload duplicates. */
-export function claimReferralStage(referral: Referral, stage: string): boolean {
+function referralStages(): string[] {
   try {
-    const key = `${referral.referral_id}:${stage}`;
     const raw: unknown = JSON.parse(sessionStorage.getItem(LS_KEYS.referralStages) ?? "[]");
-    const stages = Array.isArray(raw) ? raw.filter((value): value is string => typeof value === "string").slice(-99) : [];
-    if (stages.includes(key)) return false;
-    sessionStorage.setItem(LS_KEYS.referralStages, JSON.stringify([...stages, key]));
+    return Array.isArray(raw) ? raw.filter((value): value is string => typeof value === "string").slice(-99) : [];
+  } catch { return []; }
+}
+
+export function hasReferralStage(referralId: string, stage: string): boolean {
+  return referralStages().includes(`${referralId}:${stage}`);
+}
+
+/** Mark only AFTER the SDK accepts the event, never while it is queued. */
+export function markReferralStage(referralId: string, stage: string): void {
+  try {
+    const key = `${referralId}:${stage}`;
+    const stages = referralStages();
+    if (!stages.includes(key)) sessionStorage.setItem(LS_KEYS.referralStages, JSON.stringify([...stages, key]));
   } catch { /* In-memory deduplication is still available to the caller. */ }
-  return true;
 }

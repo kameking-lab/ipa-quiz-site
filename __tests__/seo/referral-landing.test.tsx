@@ -5,8 +5,21 @@ import Hub from "@/app/e-learning/exams/qualifications/[slug]/page";
 import { filterReferralPapers, referralRedirectHref } from "@/lib/analytics/referral-query";
 import { EXAM_CATALOG } from "@/lib/exam-library-catalog";
 import { examPath } from "@/lib/exam-library-model";
+import { NextRequest } from "next/server";
+import { middleware } from "@/middleware";
 
 describe("referral landing scope", () => {
+  it("preserves campaign and exact scope in the middleware that runs before the page", () => {
+    const url = new URL("https://www.kakomon-ai.jp/e-learning/exams");
+    url.search = new URLSearchParams({ group: "emkohyo", subject: "労働衛生一般", year: "2025", utm_source: "tsugino_shikaku", utm_content: "measurement.hero" }).toString();
+    const response = middleware(new NextRequest(url));
+    expect(response.status).toBe(308);
+    const target = new URL(response.headers.get("location")!);
+    expect(target.pathname).toBe("/e-learning/exams/qualifications/sagyo-kankyo-sokuteishi");
+    expect(target.searchParams.get("utm_content")).toBe("measurement.hero");
+    expect(target.searchParams.get("subject")).toBe("労働衛生一般");
+    expect(target.searchParams.get("year")).toBe("2025");
+  });
   it("preserves UTM content, subject and year through a real legacy-to-hub redirect", async () => {
     const params = { group: "emkohyo", subject: "労働衛生一般", year: "2025", utm_source: "tsugino_shikaku", utm_content: "measurement.hero", callbackUrl: "private" };
     let destination = "";

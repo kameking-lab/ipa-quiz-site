@@ -186,7 +186,7 @@ describe("safety qualification legacy redirects", () => {
     );
     expect(res.status).toBe(308);
     expect(res.headers.get("location")).toBe(
-      "https://www.kakomon-ai.jp/e-learning/exams/qualifications/dai-1-shu-eisei-kanrisha",
+      "https://www.kakomon-ai.jp/e-learning/exams/qualifications/dai-1-shu-eisei-kanrisha?subject=%E7%AC%AC%E4%B8%80%E7%A8%AE%E8%A1%9B%E7%94%9F%E7%AE%A1%E7%90%86%E8%80%85",
     );
   });
 
