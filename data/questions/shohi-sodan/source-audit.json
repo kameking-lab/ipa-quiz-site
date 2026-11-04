@@ -1,0 +1,45 @@
+{
+  "checkedAt": "2026-11-04",
+  "publication": "unpublished staging",
+  "authorization": "Owner decision 2026-11-04 01:30 JST; rights confirmed by owner",
+  "files": [
+    {
+      "name": "shohi-2025",
+      "url": "https://www.kokusen.go.jp/shikaku/pdf/25shiken_mondai.pdf",
+      "sha256": "72de0a05a76d053920d568d660d1cfeef0c6ab90383ef139714c63812e5545f0",
+      "pages": 34
+    },
+    {
+      "name": "shohi-2024",
+      "url": "https://www.kokusen.go.jp/shikaku/pdf/24shiken_mondai.pdf",
+      "sha256": "c56bb8a72c92001bb7bf9558f5f1d2f1b9205423fe66ce2cc9f0d37e091251d7",
+      "pages": 33
+    }
+  ],
+  "transcription": "Original PDF source text; layout whitespace removed; underlines reconstructed as Markdown strong from PDF line rectangles. For 2024 only, missing ASCII ToUnicode maps restored locally as CID+29. Original downloaded PDF bytes remain unmodified and their SHA-256 is recorded.",
+  "independentReview": "PASS: codex.cmd exec -m gpt-6-astra -s read-only; five review rounds, required findings resolved. See reports/lq9-independent-review-5.md and reports/lq9-verification.md for scope.",
+  "questions": 320,
+  "choiceExplanations": 770,
+  "rounds": [
+    2025,
+    2024
+  ],
+  "readyQuestions": 320,
+  "heldQuestions": 0,
+  "verification": {
+    "officialAnswers": "All 320 official keys compared with original PDF tables",
+    "text": "All 320 stems and options compared with source extraction after declared whitespace/ruby normalization; zero mismatches",
+    "publication": "No public question registry, lazy loader, IPA-only list or static public image asset",
+    "lawReferenceDate": "May 1 of each examination year"
+  },
+  "mediationLawCheck": {
+    "question": "2024-15-1",
+    "resolution": "No discrepancy: amended Civil Conciliation Act Art.4-2(1) requires written petition. Former oral-petition rule is obsolete. Official answer イ retained.",
+    "officialReferenceUrls": [
+      "https://laws.e-gov.go.jp/api/1/lawdata/326AC1000000222",
+      "https://www.courts.go.jp/assets/20260521minjityouteikisoku.pdf"
+    ]
+  },
+  "latestScope": "Official past-question index lists 2025 and 2024 as the newest public complete question/answer papers as checked 2026-11-04. 2026 is not listed there.",
+  "reviewedContentCommit": "dd5b01dc1"
+}
