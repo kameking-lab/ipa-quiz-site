@@ -3,6 +3,14 @@ import type { Question } from "./types";
 /** Entry formats use whole strings; never parse or round a user's partial value. */
 export function normalizeNumericAnswer(input: string, specification?: Question["numericAnswer"]): string | undefined {
   let digits = input.trim().replace(/[０-９]/g, (digit) => String.fromCharCode(digit.charCodeAt(0) - 0xfee0));
+  if (specification?.format === "scientific") {
+    if (specification.precision !== 2) return undefined;
+    digits = digits.replace(/．/g, ".");
+    // The printed a.bc × 10^d entry has a nonzero leading digit and one exponent digit.
+    const match = digits.match(/^([1-9])(?:\.([0-9]{1,2}))?(?:×10\^|[eE])([0-9])$/);
+    if (!match) return undefined;
+    return `${match[1]}.${(match[2] ?? "").padEnd(2, "0")}×10^${match[3]}`;
+  }
   if (specification?.format === "decimal") {
     if (![1, 2].includes(specification.precision)) return undefined;
     digits = digits.replace(/．/g, ".");
@@ -20,7 +28,7 @@ export function normalizeNumericAnswer(input: string, specification?: Question["
 export function numericQuestionIssue(question: Question): string | undefined {
   if (question.type !== "numeric") return undefined;
   const specification = question.numericAnswer;
-  if (!specification || !["integer", "decimal"].includes(specification.format) || typeof specification.unit !== "string" || !specification.unit.trim()) {
+  if (!specification || !["integer", "decimal", "scientific"].includes(specification.format) || typeof specification.unit !== "string" || !specification.unit.trim()) {
     return "numeric requires a supported format and a nonempty unit or quantity label";
   }
   if (specification.fixedSign !== undefined && specification.fixedSign !== "negative") {
@@ -29,6 +37,7 @@ export function numericQuestionIssue(question: Question): string | undefined {
   if (specification.format === "decimal" && ![1, 2].includes(specification.precision)) {
     return "decimal numeric requires precision 1 or 2";
   }
+  if (specification.format === "scientific" && specification.precision !== 2) return "scientific numeric requires precision 2";
   if (typeof question.answer !== "string" || normalizeNumericAnswer(question.answer, specification) !== question.answer) {
     return "numeric answer must be a canonical nonnegative string in the specified format";
   }
