@@ -9,6 +9,7 @@ import { EXAM_CONFIGS } from "@/lib/exam-config";
 import { isSelfReviewedDescriptiveQuestion } from "@/lib/questions/descriptive";
 import { isPracticeReadyQuestion, shuffleChoices } from "@/lib/questions/filter";
 import { isAcceptedAnswer, isCompleteSelectionCorrect } from "@/lib/questions/answers";
+import { questionSourceEdition } from "@/lib/questions/source-label";
 import { questionPagePath, findQuestionByRoute } from "@/lib/seo/question-url";
 import { buildQuestionJsonLd } from "@/lib/seo/question-jsonld";
 import { GET as nextGET } from "@/app/api/questions/next/route";

@@ -8,7 +8,8 @@ import { notFound } from "next/navigation";
 import { ChevronRight, Tags } from "lucide-react";
 
 import type { ExamCode } from "@/lib/questions/types";
-import { examLabel, formatYearSeason } from "@/lib/utils";
+import { examLabel } from "@/lib/utils";
+import { questionSourceEdition } from "@/lib/questions/source-label";
 import { SITE_BASE_URL, SITE_NAME } from "@/lib/seo/config";
 import {
   getAvailableExams,
@@ -205,7 +206,7 @@ export default async function ExamTopicPage({
                   <span className="flex-1 space-y-1.5 min-w-0">
                     <span className="flex flex-wrap items-center gap-1.5 text-xs">
                       <Badge variant="outline">
-                        {formatYearSeason(q.year, q.season)}
+                        {questionSourceEdition(q)}
                       </Badge>
                       {q.isCalculation && <Badge variant="warn">計算</Badge>}
                       {isPlaceholder && <Badge variant="warn">解説準備中</Badge>}
