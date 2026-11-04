@@ -63,6 +63,11 @@ const longCacheImmutable = {
 const nextConfig: NextConfig = {
   webpack(config, { webpack }) {
     if (process.env.MOBILE_IAP_ENABLED === "true") {
+      config.resolve.alias["@/lib/kisho-study$"] = resolve(process.cwd(), "mobile/shared/gated-kisho-study.ts");
+      config.plugins.push(new webpack.NormalModuleReplacementPlugin(
+        /(?:^|[\\/])kisho-study(?:\.ts)?$/,
+        resolve(process.cwd(), "mobile/shared/gated-kisho-study.ts"),
+      ));
       config.resolve.alias["@/lib/exam-library/reference-aware-grading-index$"] = resolve(process.cwd(), "mobile/shared/granted-paper-grading.ts");
       config.resolve.alias["@/lib/exam-library/survey-assistant-grading-index$"] = resolve(process.cwd(), "mobile/shared/granted-paper-grading.ts");
       // Next's TS-path resolver can resolve the import before the exact alias.
@@ -76,6 +81,8 @@ const nextConfig: NextConfig = {
   },
   turbopack: {
     resolveAlias: process.env.MOBILE_IAP_ENABLED === "true" ? {
+      "@/lib/kisho-study": "./mobile/shared/gated-kisho-study.ts",
+      "./kisho-study": "./mobile/shared/gated-kisho-study.ts",
       "@/lib/exam-library/survey-assistant-grading-index": "./mobile/shared/granted-paper-grading.ts",
       "@/lib/exam-library/reference-aware-grading-index": "./mobile/shared/granted-paper-grading.ts",
     } : {},

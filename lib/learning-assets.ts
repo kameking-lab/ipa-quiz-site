@@ -16,6 +16,8 @@ export function learningAssetUrls(value: unknown): string[] {
   const referencePdfs = JSON.stringify(value).includes('"originalReferenceRequired":true');
   const visit = (v: unknown) => {
     if (typeof v === "string") {
+      // Inline image bytes travel with the content JSON and need no HTTP cache.
+      if (v.startsWith("data:image/")) return;
       const candidates = [v, ...Array.from(v.matchAll(/(?:https?:\/\/[^\s"'<>()[\]]+|\/[\w./%-]+)\.(?:png|jpe?g|webp|gif|svg)(?:\?[^\s"'<>()[\]]*)?/gi), m=>m[0])];
       for (const raw of candidates) {
         let u: URL; try { u = new URL(raw, ORIGIN); } catch { continue; }
@@ -28,7 +30,9 @@ export function learningAssetUrls(value: unknown): string[] {
     else if (v && typeof v === "object") {
       const q = v as {id?: unknown; learningAssets?: LearningAssets};
       if (typeof q.id === "string" && !q.learningAssets) visit(answerFigures[q.id] ?? []);
-      Object.values(v).forEach(visit);
+      // Reference links are citations, not image renderer inputs. A citation
+      // may point to an external JPG without granting permission to cache it.
+      for (const [key, item] of Object.entries(v)) if (key !== "officialReferenceUrls") visit(item);
     }
   };
   visit(value);

@@ -21,7 +21,12 @@ it("covers image references independently read from every paper renderer input a
 it("covers each non-paper renderer's own image and required-PDF input fields",async()=>{
   const assertCovered=(data:unknown,refs:(string|null|undefined)[])=>{
     const inventory=learningAssetUrls(data);
-    for(const ref of refs.filter((r):r is string=>!!r))expect(inventory,ref).toContain(new URL(ref,"https://www.kakomon-ai.jp").href);
+    for(const ref of refs.filter((r):r is string=>!!r)) {
+      // Inline figures are already bytes in the downloaded renderer input.
+      // They require no network fetch or separate offline cache entry.
+      if(ref.startsWith("data:image/")) { expect(JSON.stringify(data)).toContain(ref); continue; }
+      expect(inventory,ref).toContain(new URL(ref,"https://www.kakomon-ai.jp").href);
+    }
   };
   for(const code of getRegisteredExamCodes()) {
     const rows=(await getQuestionsForExam(code)).filter(isPracticeReadyQuestion);
