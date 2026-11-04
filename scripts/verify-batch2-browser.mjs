@@ -13,7 +13,6 @@ const out = path.resolve('reports/int5-20261104/browser');
 fs.mkdirSync(out, { recursive: true });
 const read = file => JSON.parse(fs.readFileSync(file, 'utf8'));
 const audit = read('reports/int5-20261104/count-audit.json');
-const projection = code => read(`data/questions/batch1/${code}.json`);
 const detail = q => `/q/${q.exam}/${q.year}-${q.season}/${q.session}/q${q.qNumber}`;
 const samples = audit.samples.flatMap(sample => [390, 1280].map(width => ({ ...sample, width })));
 for (const sample of samples) {

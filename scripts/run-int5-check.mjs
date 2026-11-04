@@ -11,7 +11,7 @@ const logfile = resolve(out, `${label}.log`);
 const log = createWriteStream(logfile);
 const env = { ...process.env, CI: 'true', NEXT_TELEMETRY_DISABLED: '1' };
 for (const key of Object.keys(env)) {
-  if (/(?:SECRET|TOKEN|API_KEY|DATABASE_URL|DIRECT_URL|AUTH_URL|^PG|^STRIPE_|^MOBILE_|^FEEDBACK_UNLOCK_|^SMTP_|^RESEND_|^SENTRY_|^UPSTASH_|^KV_)/.test(key)) delete env[key];
+  if (/(?:SECRET|TOKEN|API_KEY|DATABASE_URL|DIRECT_URL|AUTH_URL|^PG|^STRIPE_|^MOBILE_|^FEEDBACK_UNLOCK_|^SMTP_|^RESEND_|^SENTRY_|^UPSTASH_|^KV_|^SLACK_|^DISCORD_|^EMAIL_|^NEXT_PUBLIC_|^E2E_BASE_URL$|^PLAYWRIGHT_BASE_URL$)/.test(key)) delete env[key];
 }
 const command = process.execPath;
 const commandArgs = tool === 'pnpm'
