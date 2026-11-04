@@ -22,7 +22,7 @@ ANSWER_URL = "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/09/20260907t_se
 
 def dump(path, value):
     path.parent.mkdir(parents=True, exist_ok=True)
-    path.write_text(json.dumps(value, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    path.write_text(json.dumps(value, ensure_ascii=False, indent=2) + "\n", encoding="utf-8", newline="\n")
 
 
 def compact(text):

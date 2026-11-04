@@ -89,6 +89,17 @@ describe("CQ7 土地区画整理士・未公開の部分収録", () => {
     expect(question(39).choiceExplanations.ア).toContain("棄却");
   });
 
+  it("points to the independently verified 50ha and public-facility provisions", () => {
+    expect(question(1).explanationReferences).toContainEqual({
+      url: "https://laws.e-gov.go.jp/law/344CO0000000158",
+      locator: "第10条第1号（大規模な土地区画整理事業）",
+    });
+    expect(question(12).explanationReferences).toContainEqual({
+      url: "https://laws.e-gov.go.jp/law/330CO0000000047",
+      locator: "第67条（公共施設）",
+    });
+  });
+
   it("excludes the corpus from public question pools, exam codes, routes, and home navigation", () => {
     const entry = QUALIFICATION_CATALOG.find(q => q.slug === "kukaku-seiri")!;
     expect(entry.status).toBe("terms-review-required");

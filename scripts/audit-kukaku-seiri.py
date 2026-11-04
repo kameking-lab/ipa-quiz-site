@@ -89,6 +89,6 @@ receipt = {
     'officialAnswerAudits': answer_audits, 'errors': errors,
 }
 receipt_path.parent.mkdir(parents=True, exist_ok=True)
-receipt_path.write_text(json.dumps(receipt, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
+receipt_path.write_text(json.dumps(receipt, ensure_ascii=False, indent=2) + '\n', encoding='utf-8', newline='\n')
 print(json.dumps({'status': receipt['status'], 'matchedQuestions': len(checked_text), 'coveredSourceCharacters': checked_chars, 'errors': errors}, ensure_ascii=False))
 sys.exit(bool(errors))
