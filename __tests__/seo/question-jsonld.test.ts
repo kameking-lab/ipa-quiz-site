@@ -202,6 +202,7 @@ describe("sessionLabel", () => {
     const SESSION_PRESENCE: Record<Session, true> = {
       "jken-basic": true, "jken-programming": true, "jken-design": true,
       gyosei: true, kanri: true, kansa: true,
+      hoan: true, gyosei: true, kanri: true, kansa: true,
       am: true,
       am1: true,
       am2: true,

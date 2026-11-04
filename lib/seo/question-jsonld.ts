@@ -1,3 +1,4 @@
+import { isSelfReviewedDescriptiveQuestion } from "@/lib/questions/descriptive";
 import { questionPagePath } from "@/lib/seo/question-url";
 import { recordedContentDate } from "@/lib/questions/last-updated";
 import { formatNativeBAnswer } from "@/lib/questions/native-b";
@@ -24,8 +25,10 @@ function toJstDateTimeISO(iso: string): string {
 export function sessionLabel(session: string, exam?: ExamCode): string {
   const parsed = parsePracticeSession(session);
   if (parsed && (exam === "kisho" || exam === "kenchiku-setsubishi" || exam === "chizai2" || exam === "kanteishi" || exam === "kaikeishi")) return practiceSessionLabel(parsed, exam);
+  if (parsed && (exam === "kanteishi" || exam === "kaikeishi" || exam?.startsWith("khk-reito-"))) return practiceSessionLabel(parsed, exam);
   if (parsed && ["gyosei", "kanri", "kansa", "rousai", "koyou", "kenpo", "kounen", "kokunen", "ippan", "sentaku", "required", "theory", "practical", "kiso", "kogaku-a", "kogaku-b", "hoki", "tiri"].includes(parsed)) return practiceSessionLabel(parsed);
   const map: Record<string, string> = {
+    hoan: "保安管理技術",
     am: "午前",
     am1: "午前I",
     am2: "午前II",
@@ -131,6 +134,8 @@ export function buildQuestionJsonLd({
     ? { "@type": "GovernmentOrganization", name: q.sourcePresentation?.originalAuthor ?? "国土交通省", url: "https://www.mlit.go.jp/" }
     : q.exam === "kaikeishi"
     ? { "@type": "GovernmentOrganization", name: q.sourcePresentation?.originalAuthor ?? "公認会計士・監査審査会", url: "https://www.fsa.go.jp/cpaaob/" }
+    : q.license === "KHK-owner-decision"
+    ? { "@type": "Organization", name: "高圧ガス保安協会", url: "https://www.khk.or.jp/" }
     : (q.license === "NICHIMU-educational-reuse" || q.license === "NICHIMU-past-question-study-use")
     ? { "@type": "Organization", name: "公益財団法人日本無線協会", url: "https://www.nichimu.or.jp/" }
     : q.exam === "chosashi"
@@ -251,6 +256,8 @@ export function buildQuestionJsonLd({
     ? undefined
     : (q.exam === "kanteishi" || q.exam === "kaikeishi")
     ? q.sourcePresentation?.licenseUrl
+    : q.license === "KHK-owner-decision"
+    ? undefined
     : (q.license === "NICHIMU-educational-reuse" || q.license === "NICHIMU-past-question-study-use")
     ? "https://www.nichimu.or.jp/kshiken/siken/index.html"
     : q.exam === "rigaku-ryohoshi" || q.exam === "rinsho-kensagishi"
@@ -298,7 +305,7 @@ export function buildQuestionJsonLd({
     author: questionAuthor,
     upvoteCount: 0,
     url: pageUrlAbs,
-    ...(q.exam === "chosashi" && q.type === "descriptive" ? { suggestedAnswer: { ...acceptedAnswers[0], text: q.modelAnswer ?? String(q.answer) } } : { acceptedAnswer }),
+    ...(isSelfReviewedDescriptiveQuestion(q) ? { suggestedAnswer: { ...acceptedAnswers[0], text: q.modelAnswer ?? String(q.answer) } } : { acceptedAnswer }),
   };
 
   const learningResource = {

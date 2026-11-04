@@ -1,4 +1,5 @@
 "use client";
+import { isSelfReviewedDescriptiveQuestion } from "@/lib/questions/descriptive";
 import { questionSourceEdition, questionSourceExam } from "@/lib/questions/source-label";
 
 
@@ -61,10 +62,10 @@ export function StreamQuizPlayer({ questions, backHref = "/ipa" }: { questions: 
 
   const question = questions[index];
   React.useEffect(() => {
-    if (question?.exam === "chosashi" && question.type === "descriptive") {
+    if (isSelfReviewedDescriptiveQuestion(question)) {
       descriptiveStartRef.current?.focus({ preventScroll: true });
       descriptiveStartRef.current?.scrollIntoView?.({ block: "start", behavior: "instant" });
-    } else if (questions[index - 1]?.exam === "chosashi" && questions[index - 1]?.type === "descriptive") {
+    } else if (isSelfReviewedDescriptiveQuestion(questions[index - 1])) {
       window.scrollTo?.({ top: 0, behavior: "instant" });
     }
   }, [index, question, questions]);
@@ -159,7 +160,7 @@ export function StreamQuizPlayer({ questions, backHref = "/ipa" }: { questions: 
 
   React.useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
-      if (!question || showSummary || reviewing || (question.exam === "chosashi" && question.type === "descriptive")) return;
+      if (!question || showSummary || reviewing || (isSelfReviewedDescriptiveQuestion(question))) return;
       if (e.target instanceof HTMLElement) {
         const tag = e.target.tagName;
         if (tag === "INPUT" || tag === "TEXTAREA" || tag === "SELECT") return;
@@ -183,7 +184,7 @@ export function StreamQuizPlayer({ questions, backHref = "/ipa" }: { questions: 
 
   if (!question) return null;
 
-  if (showSummary && question.exam === "chosashi" && answers.length === 0) {
+  if (showSummary && isSelfReviewedDescriptiveQuestion(question) && answers.length === 0) {
     return (
       <main className="mx-auto max-w-3xl space-y-5 px-4 py-6">
         <h1 className="text-xl font-semibold">記述の確認を終えました</h1>
@@ -213,7 +214,7 @@ export function StreamQuizPlayer({ questions, backHref = "/ipa" }: { questions: 
     );
   }
 
-  if (question.exam === "chosashi" && question.type === "descriptive") {
+  if (isSelfReviewedDescriptiveQuestion(question)) {
     return (
       <main className="mx-auto max-w-3xl space-y-5 px-4 py-6">
         <Link href={backHref} className="inline-block min-h-11 py-3 underline">戻る</Link>

@@ -2,6 +2,7 @@ import { questionSourceEdition, questionSourceExam } from "@/lib/questions/sourc
 import type { Question } from "@/lib/questions/types";
 import { sessionLabel } from "@/lib/seo/question-jsonld";
 import { questionNumberLabel } from "@/lib/questions/display";
+import { isSelfReviewedDescriptiveQuestion } from "@/lib/questions/descriptive";
 
 const DESCRIPTION_MAX = 158;
 
@@ -50,7 +51,9 @@ export function questionSnippet(q: Question): string {
   const ys = questionSourceEdition(q);
   const ss = sessionLabel(q.session, q.exam);
   const prefix = `【${examStr} ${ys} ${ss} 問${questionNumberLabel(q)}・${q.category}】`;
-  const cta = q.explanationCoverage === "official-summary" ? "公式正答と一般解説を確認し、無料で演習できます。" : CTA;
+  const cta = q.exam === "khk-reito-1" && isSelfReviewedDescriptiveQuestion(q)
+    ? "公式解答例と独自解説で、記述・作図を自己確認できます。"
+    : q.explanationCoverage === "official-summary" ? "公式正答と一般解説を確認し、無料で演習できます。" : CTA;
   const budget = DESCRIPTION_MAX - prefix.length - cta.length - 1;
   const qPreview = truncate(q.question.replace(/\s+/g, " "), Math.max(20, budget));
   return truncate(`${prefix}${qPreview} ${cta}`, DESCRIPTION_MAX);
