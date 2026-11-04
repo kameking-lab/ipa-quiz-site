@@ -58,7 +58,7 @@ describe("KHK chemistry source staging", () => {
     const questions = drafts.papers.flatMap<(typeof drafts.papers)[number]["questions"][number]>((paper) => paper.questions);
     expect(questions.filter((q) => q.transcriptionVerified)).toHaveLength(review.counts.transcriptionVerified);
     expect(questions.filter((q) => !q.transcriptionVerified)).toHaveLength(review.counts.unreviewed);
-    expect(questions.filter((q) => q.explanationWritten)).toHaveLength(60);
+    expect(questions.filter((q) => q.explanationWritten)).toHaveLength(99);
     expect(review.counts.originalQuestions).toBe(422);
     expect(review.counts.descriptiveAnswersVerified).toBe(12);
     for (const record of review.reviewedPapers) {
@@ -181,17 +181,19 @@ describe("KHK chemistry source staging", () => {
     expect(paper.questions[5].pdfPages).toEqual([7]);
   });
 
-  it("retains sixty Otsu safety/science explanations and all 300 choice explanations with their official keys", () => {
-    expect(review.explanationReviews).toHaveLength(60);
-    expect(review.counts.explanationWritten).toBe(60);
-    expect(review.counts.explanationPending).toBe(362);
+  it("retains 99 independent explanations and all 495 choice explanations with their official keys", () => {
+    expect(review.explanationReviews).toHaveLength(99);
+    expect(review.counts.explanationWritten).toBe(99);
+    expect(review.counts.explanationPending).toBe(323);
     const expected = {
       "2024-BY": [3, 4, 3, 4, 5, 4, 5, 2, 4, 2, 3, 5, 2, 3, 4],
       "2025-BY": [2, 2, 3, 1, 5, 4, 3, 1, 5, 4, 1, 4, 3, 5, 4],
       "2024-BZ": [5, 2, 2, 3, 1, 5, 3, 3, 2, 2, 5, 3, 4, 5, 2],
       "2025-BZ": [5, 3, 2, 2, 2, 5, 5, 3, 1, 4, 4, 4, 2, 1, 3],
+      "2024-CZ": [5, 3, 4, 1, 5, 1, 2, 5, 5, 5, 4, 2, 2, 3, 1, 3, 2, 4, 1, 5],
+      "2025-CZ": [2, 3, 4, 5, 3, 1, 2, 3, 2, 2, 3, 1, 1, 4, 3, 5, 4, 1, 4, 5],
     };
-    expect(review.explanationReviews.every((record) => ["BY", "BZ"].includes(record.code))).toBe(true);
+    expect(review.explanationReviews.every((record) => ["BY", "BZ", "CZ"].includes(record.code))).toBe(true);
     for (const record of review.explanationReviews) {
       const q = drafts.papers.find((p) => p.year === record.year && p.code === record.code)!.questions[record.number - 1] as unknown as Record<string, unknown>;
       expect(q.officialAnswerNumber).toBe(expected[`${record.year}-${record.code}` as keyof typeof expected][record.number - 1]);
@@ -208,6 +210,22 @@ describe("KHK chemistry source staging", () => {
     expect(22e6 * 2e-3 / (30 * 8.31 * (173 + 273.15))).toBeCloseTo(0.396, 3);
     expect(2.5 / 0.21).toBeCloseTo(11.9, 1);
     expect(2.1 * 2045 / 3891).toBeCloseTo(1.10, 2);
+  });
+
+  it("checks LPG calculations in absolute units and keeps unresolved material claims pending", () => {
+    expect((4 / 44 + 8 / 58) * 22.4).toBeCloseTo(5.126, 2);
+    expect(303.15 * (1.73 + 0.1013) / (1.80 + 0.1013) - 273.15).toBeCloseTo(18.84, 2);
+    expect((0.58 + 0.1013 - 0.21) / (0.83 - 0.21) * 100).toBeCloseTo(76.02, 2);
+    expect(28 / ((22 / 44 + 6 / 58) * 22.4)).toBeCloseTo(2.071, 2);
+    expect(45 - 601300 * 0.118 * 0.044 / (8.314 * 290.15)).toBeCloseTo(43.706, 2);
+    expect(50 * 0.7 * 44 / (0.7 * 44 + 0.3 * 58)).toBeCloseTo(31.95, 2);
+    expect((1.07 - 0.35 - 0.1013) / (1.07 - 0.28) * 100).toBeCloseTo(78.32, 2);
+    const paper = drafts.papers.find((p) => p.year === 2024 && p.code === "CZ")!;
+    expect(paper.questions[18].questionDraft).toMatch(/^次のイ、ロ、ハ、ニの記述のうち、金属材料について正しいものはどれか。\n\n/);
+    const pending = paper.questions[19] as unknown as Record<string, unknown>;
+    expect(pending.explanationWritten).toBe(false);
+    expect(pending.officialAnswerNumber).toBe(5);
+    expect((pending.explanationReviewNotes as string[]).join()).toContain("一次資料で追加確認");
   });
 
   it("distinguishes the original kinetic wording from the thermodynamic equilibrium explanation", () => {
