@@ -2,6 +2,17 @@ import { expect, test } from "@playwright/test";
 
 test.use({ viewport: { width: 390, height: 844 }, isMobile: true, hasTouch: true });
 
+test("mobile: hash-selected dashboard tabs scroll horizontally without moving the page", async ({ page }) => {
+  await page.goto("/account/dashboard#weakness");
+  await expect(page.getByRole("tab", { name: "弱点", exact: true })).toHaveAttribute("aria-selected", "true");
+  await page.evaluate(() => window.scrollTo(0, 700));
+  const before = await page.evaluate(() => window.scrollY);
+  expect(before).toBeGreaterThan(0);
+  await page.evaluate(() => { window.location.hash = "mock-scores"; });
+  await expect(page.getByRole("tab", { name: "模試記録", exact: true })).toHaveAttribute("aria-selected", "true");
+  await expect.poll(() => page.evaluate(() => window.scrollY)).toBe(before);
+});
+
 test("mobile: answer → explanation → related → review → next survives reload", async ({ page }, testInfo) => {
   await page.goto("/quiz?mode=year&exam=ip&year=2009&season=autumn&session=am&question=ip-2009a-am-q1");
   await page.getByRole("radio").first().click();

@@ -45,8 +45,15 @@ export function DashboardTabs({ categoryById }: Props) {
   const tabListHost = React.useRef<HTMLDivElement>(null);
 
   React.useEffect(() => {
-    tabListHost.current?.querySelector<HTMLElement>('[role="tab"][aria-selected="true"]')
-      ?.scrollIntoView({ block: "nearest", inline: "nearest", behavior: "instant" });
+    const list = tabListHost.current?.querySelector<HTMLElement>('[role="tablist"]');
+    const active = list?.querySelector<HTMLElement>('[role="tab"][aria-selected="true"]');
+    if (!list || !active) return;
+    const bounds = list.getBoundingClientRect();
+    const tabBounds = active.getBoundingClientRect();
+    const left = tabBounds.left - bounds.left - 4;
+    const right = tabBounds.right - bounds.right + 4;
+    if (left < 0) list.scrollLeft += left;
+    else if (right > 0) list.scrollLeft += right;
   }, [tab]);
 
   React.useEffect(() => {
