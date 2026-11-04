@@ -32,7 +32,6 @@ import { ExplanationCard } from "./ExplanationCard";
 import { CopilotInline } from "@/components/copilot/CopilotPanel";
 import { createHistoryStore } from "@/lib/storage/history";
 import { writeLastQuestion } from "@/lib/storage/last-question";
-import { QuestionCommentBox } from "./QuestionCommentBox";
 
 import { recordReview } from "@/lib/learning/spaced-repetition";
 import { LS_KEYS } from "@/lib/storage/keys";
@@ -46,7 +45,6 @@ import { recordStudyOnDate } from "@/lib/motivation/heatmap";
 import { posthogCapture } from "@/lib/posthog";
 import { readSettings } from "@/lib/storage/settings";
 import { evaluateAchievementsAfterAnswer } from "@/lib/gamification/achievements";
-import { AchievementToast } from "@/components/motivation/AchievementToast";
 import { tsuginoLearningUrl, tsuginoScheduleUrl } from "@/lib/tsugino-qualification";
 import { onBrowserIdle } from "@/lib/performance/browser-idle";
 
@@ -54,6 +52,8 @@ import { onBrowserIdle } from "@/lib/performance/browser-idle";
 // Static answer/explanation UI and the AI copilot keep their existing path.
 const FireworksBurst = dynamic(() => import("@/components/motivation/FireworksBurst").then(module => module.FireworksBurst), { ssr: false });
 const ComboCounter = dynamic(() => import("@/components/motivation/ComboCounter").then(module => module.ComboCounter), { ssr: false });
+const QuestionCommentBox = dynamic(() => import("./QuestionCommentBox").then(module => module.QuestionCommentBox), { ssr: false });
+const AchievementToast = dynamic(() => import("@/components/motivation/AchievementToast").then(module => module.AchievementToast), { ssr: false });
 
 export function quizModeLabel(mode: string): string {
   const labels: Record<string, string> = { random: "ランダム", year: "年度別", topic: "分野別", review: "復習", starred: "あとで復習", mock: "模試", sequential: "順番に解く", unanswered: "未回答" };

@@ -76,7 +76,10 @@ test("year list starts the chosen question without revealing its answer", async 
   await expect(page.getByRole("radio").first()).toBeVisible({ timeout: 30_000 });
   expect(new URL(page.url()).pathname).toBe("/quiz");
   expect(new URL(page.url()).searchParams.get("question")).toBe("ip-2011a-am-q2");
-  await expect(page.locator('[aria-label="解答結果"]')).toHaveCount(0);
+  const preparedResult = page.locator('[aria-label="解答結果"]');
+  await expect(preparedResult).toBeHidden();
+  await expect(preparedResult).toHaveAttribute("aria-hidden", "true");
+  await expect(preparedResult).toHaveAttribute("inert", "");
   await expect(page.getByRole("heading", { name: "各選択肢の解説", exact: true })).toHaveCount(0);
 });
 
