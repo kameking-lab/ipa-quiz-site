@@ -14,7 +14,7 @@ export type QuestionType = "multiple-choice" | "ordering" | "numeric" | "descrip
  * 内部の選択肢キー。IPA等は先頭4〜5個だけを使う。電験二種一次試験は公式の
  * 解答群(イ)〜(ヨ)の15肢を、順番どおり ア〜ソ に割り当てて保持する。
  */
-export type ChoiceKey = "?" |  "ア" | "イ" | "ウ" | "エ" | "オ" | "カ" | "キ" | "ク" | "ケ" | "コ" | "サ" | "シ" | "ス" | "セ" | "ソ";
+export type ChoiceKey = "ア" | "イ" | "ウ" | "エ" | "オ" | "カ" | "キ" | "ク" | "ケ" | "コ" | "サ" | "シ" | "ス" | "セ" | "ソ" | "タ";
 
 /** 枝問(a)/(b)、または電験二種の空欄番号(1)〜(5)。 */
 export type QuestionPart = "a" | "b" | "1" | "2" | "3" | "4" | "5";
@@ -45,6 +45,8 @@ processedParts: string[];
 }
 
 export interface Question {
+answerImageUrls?: string[];
+answerImageAltTexts?: string[];
 id: string;
 exam: ExamCode;
 session: Session;

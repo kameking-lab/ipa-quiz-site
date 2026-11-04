@@ -1,3 +1,4 @@
+import { ALL_QUIZ_EXAM_CODES } from "@/lib/exam-config";
 import { describe, expect, it } from "vitest";
 import { existsSync } from "node:fs";
 import path from "node:path";
@@ -24,7 +25,7 @@ describe("three qualification native338 integration", () => {
   it("registers the same338 records through eager, lazy and practice routes", async () => {
     expect(combined).toHaveLength(338);
     expect(new Set(combined.map(q => q.id)).size).toBe(338);
-    expect(getRegisteredExamCodes()).toHaveLength(84);
+    expect(new Set(getRegisteredExamCodes())).toEqual(new Set(ALL_QUIZ_EXAM_CODES));
     for (const [exam, questions] of Object.entries(pools)) {
       const code = exam as keyof typeof pools;
       expect(getRegisteredExamCodes()).toContain(code);

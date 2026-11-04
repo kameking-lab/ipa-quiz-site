@@ -42,14 +42,14 @@ describe("マンション維持修繕技術者の直近2回", () => {
     expect(q24.choices?.エ).toContain("数値が大きいほど遮音性が低い");
     expect(q24.choices?.ウ).not.toContain("T - 1");
   });
-  it("未公開の一覧・直接取得・静的ルート用一覧を遮断する", async () => {
-    expect(isExamPublished("iji-shuzen")).toBe(false);
-    expect(QUESTIONS_BY_EXAM["iji-shuzen"]).toBeUndefined();
-    expect(ALL_QUESTIONS.some(q => q.exam === "iji-shuzen")).toBe(false);
-    expect(ALL_QUIZ_EXAM_CODES).not.toContain("iji-shuzen");
+  it("batch1公開後: 未公開の一覧・直接取得・静的ルート用一覧を遮断する", async () => {
+    expect(isExamPublished("iji-shuzen")).toBe(true);
+    expect(QUESTIONS_BY_EXAM["iji-shuzen"]).toBeDefined();
+    expect(ALL_QUESTIONS.some(q => q.exam === "iji-shuzen")).toBe(true);
+    expect(ALL_QUIZ_EXAM_CODES).toContain("iji-shuzen");
     expect(ALL_EXAM_CODES).not.toContain("iji-shuzen");
-    expect(getAvailableExams()).not.toContain("iji-shuzen");
-    expect(getRegisteredExamCodes()).not.toContain("iji-shuzen");
-    expect(await getQuestionsForExam("iji-shuzen")).toEqual([]);
+    expect(getAvailableExams()).toContain("iji-shuzen");
+    expect(getRegisteredExamCodes()).toContain("iji-shuzen");
+    expect((await getQuestionsForExam("iji-shuzen")).length).toBeGreaterThan(0);
   });
 });

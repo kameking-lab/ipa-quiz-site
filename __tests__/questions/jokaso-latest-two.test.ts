@@ -35,12 +35,12 @@ describe("浄化槽管理士の直近2回ステージング", () => {
       }
     }
   });
-  it("公開経路に出さず、IPA区分にも混入させない", async () => {
-    expect(isExamPublished("jokaso")).toBe(false);
-    expect(QUESTIONS_BY_EXAM.jokaso).toBeUndefined();
-    expect(ALL_QUIZ_EXAM_CODES).not.toContain("jokaso");
+  it("batch1公開後: 公開経路に出さず、IPA区分にも混入させない", async () => {
+    expect(isExamPublished("jokaso")).toBe(true);
+    expect(QUESTIONS_BY_EXAM.jokaso).toBeDefined();
+    expect(ALL_QUIZ_EXAM_CODES).toContain("jokaso");
     expect(ALL_EXAM_CODES).not.toContain("jokaso");
-    expect(await getQuestionsForExam("jokaso")).toEqual([]);
+    expect((await getQuestionsForExam("jokaso")).length).toBeGreaterThan(0);
   });
   it("図示選択肢にも文字を持ち、数式と文章中の選択箇所を保持する", () => {
     const find = (year: number, n: number) => JOKASO_CANDIDATES.find((q) => q.year === year && q.qNumber === n)!;

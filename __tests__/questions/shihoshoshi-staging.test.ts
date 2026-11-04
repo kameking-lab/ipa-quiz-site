@@ -11,12 +11,12 @@ import { choiceDisplayLabel } from "@/lib/questions/display";
 import { readFileSync } from "node:fs";
 
 describe("司法書士公式2回分の未公開登録", () => {
-  it("keeps synchronous, lazy and public exam registries closed", async () => {
-    expect(getQualificationByExamCode("shihoshoshi")?.status).toBe("ready-to-ingest");
-    expect(isExamPublished("shihoshoshi")).toBe(false);
-    expect(QUESTIONS_BY_EXAM.shihoshoshi).toBeUndefined();
-    expect(await getQuestionsForExam("shihoshoshi")).toEqual([]);
-    expect(ALL_QUIZ_EXAM_CODES).not.toContain("shihoshoshi");
+  it("batch1公開後: keeps synchronous, lazy and public exam registries closed", async () => {
+    expect(getQualificationByExamCode("shihoshoshi")?.status).toBe("live");
+    expect(isExamPublished("shihoshoshi")).toBe(true);
+    expect(QUESTIONS_BY_EXAM.shihoshoshi).toBeDefined();
+    expect((await getQuestionsForExam("shihoshoshi")).length).toBeGreaterThan(0);
+    expect(ALL_QUIZ_EXAM_CODES).toContain("shihoshoshi");
     expect(ALL_EXAM_CODES).not.toContain("shihoshoshi");
     expect(EXAM_CONFIGS.shihoshoshi.sessions.map(s => s.expectedQuestions)).toEqual([35, 35]);
   });

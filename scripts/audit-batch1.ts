@@ -1,4 +1,4 @@
-import { writeFileSync } from "node:fs";
+import { readdirSync, unlinkSync, writeFileSync } from "node:fs";
 import { ALL_QUESTIONS, QUESTIONS_BY_EXAM } from "@/data/questions";
 import { BATCH1_QUESTIONS } from "@/data/questions/batch1";
 import { getQuestionsForExam } from "@/lib/questions/get-questions";
@@ -9,12 +9,14 @@ import { questionPagePath } from "@/lib/seo/question-url";
 import { QUALIFICATION_CATALOG } from "@/lib/qualifications/catalog";
 import { PE_FIRST_CATALOG } from "@/lib/exam-library/pe-first-catalog";
 import { loadPeFirstPaper } from "@/lib/exam-library/pe-first";
-import type { ExamCode } from "@/lib/questions/types";
 import { nativeBQuestionIssue } from "@/lib/questions/native-b";
 import { numericQuestionIssue } from "@/lib/questions/numeric";
 import { hasUnrenderableContent } from "@/lib/questions/content-quality";
 
 export async function auditBatch1() {
+  for (const name of readdirSync("reports/int1b-20261104")) {
+    if (/^rejected-[a-z0-9-]+\.json$/.test(name)) unlinkSync(`reports/int1b-20261104/${name}`);
+  }
   const published = QUALIFICATION_CATALOG.filter(entry => entry.status === "live" && entry.examCode);
   const directory = getHomeDirectory().flatMap(domain => [...domain.featured, ...domain.compact]);
   const indexable = new Set(getIndexableQuestions().map(q => q.id));
@@ -40,7 +42,7 @@ export async function auditBatch1() {
       directory: directory.some(item => item.href === `/${code}`), periodCounts,
       firstUrl: paths[0], summary: entry.reuseSummary });
     const rejected = lazy.filter(q => !isPracticeReadyQuestion(q));
-    if (rejected.length) writeFileSync(`reports/int1b-20261104/rejected-${code}.json`, JSON.stringify(rejected.map(q => ({ id: q.id, native: nativeBQuestionIssue(q), numeric: numericQuestionIssue(q), unrenderable: hasUnrenderableContent(q), needsReview: q.needsReview, question: q.question })), null, 2));
+    if (rejected.length) writeFileSync(`reports/int1b-20261104/rejected-${code}.json`, JSON.stringify(rejected.map(q => ({ id: q.id, native: nativeBQuestionIssue(q), numeric: numericQuestionIssue(q), unrenderable: hasUnrenderableContent(q), needsReview: q.needsReview })), null, 2));
   }
   for (const [code, source] of Object.entries(BATCH1_QUESTIONS)) {
     if (rows.find(row => row.code === code)?.practiceCount !== source!.length) failures.push(`${code}: projected manuscript count differs from practice`);

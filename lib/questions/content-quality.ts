@@ -10,7 +10,8 @@ export function hasUnrenderableContent(q: Question): boolean {
   // as text. Partial choice figures are sufficient in that case.
   const stemNeedsFigure = /次の図|以下の図|下の図|図のように|図に示す|図中の/.test(q.question);
   if (!stemNeedsFigure && Object.values(q.choiceImageUrls ?? {}).some(Boolean)) return false;
-  const hasTable = /^\s*\|?\s*:?-{2,}:?\s*\|/m.test(q.question);
+  const visibleText = [q.question, ...(q.originalContent?.sharedPassages ?? []).map(passage => passage.text)].join("\n");
+  const hasTable = /^\s*\|?\s*:?-{2,}:?\s*\|/m.test(visibleText);
   if (hasTable) return false;
   // 電験三種の2024年度上期法規問8は、公式表の行・数値・単位を
   // 「【表】」以下に全文文字起こししている。画像フラグだけで除外しない。

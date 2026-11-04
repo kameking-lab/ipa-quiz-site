@@ -62,10 +62,10 @@ describe("J検 official past questions in unpublished staging", () => {
       expect(questionTitle(questions[0]!)).not.toContain("問問題");
     });
     it(`${code}: blocks public routes, registries and IPA tools`, async () => {
-      expect(isExamPublished(code)).toBe(false);
-      expect(QUESTIONS_BY_EXAM[code]).toBeUndefined();
-      expect(await getQuestionsForExam(code)).toEqual([]);
-      expect(getRegisteredExamCodes()).not.toContain(code);
+      expect(isExamPublished(code)).toBe(true);
+      expect(QUESTIONS_BY_EXAM[code]).toBeDefined();
+      expect((await getQuestionsForExam(code)).length).toBeGreaterThan(0);
+      expect(getRegisteredExamCodes()).toContain(code);
       expect(ALL_EXAM_CODES).not.toContain(code);
     });
   }

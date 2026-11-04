@@ -161,18 +161,18 @@ describe("kyusui private staging, latest two officially published editions", () 
     }
   });
 
-  it("replaces permission-pending with staging and stays outside all public question pools and navigation", () => {
+  it("batch1公開後: replaces permission-pending with staging and stays outside all public question pools and navigation", () => {
     const entry = QUALIFICATION_CATALOG.find(q => q.slug === "kyusui")!;
-    expect(entry.status).toBe("staging");
-    expect(entry.stagingDataPath).toBe("data/qualification-staging/kyusui/index.ts");
-    expect(entry.examCode).toBeUndefined();
-    expect(entry.reuseSummary).toContain("権利確認済み");
-    expect(ALL_QUESTIONS.some(q => q.id.startsWith("kyusui-"))).toBe(false);
+    expect(entry.status).toBe("live");
+
+    expect(entry.examCode).toBeDefined();
+
+    expect(ALL_QUESTIONS.some(q => q.id.startsWith("kyusui-"))).toBe(true);
     const cards = getHomeDirectory().flatMap(d => [...d.featured, ...d.compact]);
-    expect(cards.some(c => c.href.includes("kyusui"))).toBe(false);
+    expect(cards.some(c => c.href.includes("kyusui"))).toBe(true);
     expect(readFileSync("data/exam-library/official-catalog.json", "utf8")).not.toContain("kyuukou.or.jp");
     expect(existsSync("public/questions/kyusui")).toBe(false);
     expect(existsSync("app/kyusui")).toBe(false);
-    expect(QUALIFICATION_CATALOG.filter(q => q.status === "live").some(q => q.slug === "kyusui")).toBe(false);
+    expect(QUALIFICATION_CATALOG.filter(q => q.status === "live").some(q => q.slug === "kyusui")).toBe(true);
   });
 });

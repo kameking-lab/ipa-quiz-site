@@ -36,6 +36,11 @@ export function parsePracticeSession(value?: string): Session | undefined {
 }
 
 export function practiceSessionLabel(session: Session, exam?: ExamCode): string {
+  if (exam?.startsWith("khk-reito-")) {
+    const labels: Partial<Record<Session, string>> = { houki: "法令", hoan: "保安管理技術", kogaku: "学識" };
+    if (labels[session]) return labels[session]!;
+  }
+  if (exam && ["khk-reito-1", "khk-reito-2", "khk-reito-3", "shuwa"].includes(exam)) return EXAM_CONFIGS[exam].sessions.find(item => item.session === session)?.label ?? session;
   if (exam && ["gijutsushi1-kikai", "khk-kikai-kou", "khk-kikai-otsu"].includes(exam)) return EXAM_CONFIGS[exam].sessions.find(item => item.session === session)?.label ?? session;
   if (exam === "kenchiku-setsubishi") {
     if (session === "am1") return "建築一般知識";
@@ -48,7 +53,7 @@ export function practiceSessionLabel(session: Session, exam?: ExamCode): string 
   if (exam === "kanteishi" && session === "riron") return "鑑定評価理論";
   if (exam === "kaikeishi" && session === "kigyo") return "企業法";
   if (exam === "kaikeishi" && session === "zaimu") return "財務会計論";
-  return ({gakushiki: "??", gyosei: "行政法規",
+  return ({gakushiki: "学識", gyosei: "行政法規",
 kanri: "管理会計論",
 kansa: "監査論",
 am: "午前",

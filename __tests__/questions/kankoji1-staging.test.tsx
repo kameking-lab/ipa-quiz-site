@@ -22,13 +22,13 @@ const getB = (n: number) => KANKOJI1_QUESTIONS.find(q => q.session === "mondai-b
 beforeEach(() => { cleanup(); window.localStorage.clear(); createHistoryStore().reset(); });
 
 describe("1級管工事 令和8年度・未公開", () => {
-  it("資格台帳・同期/非同期公開プールのすべてで未公開を守る", async () => {
-    expect(QUALIFICATION_CATALOG.find(q => q.slug === "sekou-1kankoji")?.status).toBe("ready-to-ingest");
-    expect(isExamPublished("kankoji1")).toBe(false);
-    expect(getRegisteredExamCodes()).not.toContain("kankoji1");
-    expect(QUESTIONS_BY_EXAM.kankoji1).toBeUndefined();
-    expect(ALL_QUESTIONS.some(q => q.exam === "kankoji1")).toBe(false);
-    expect(await getQuestionsForExam("kankoji1")).toEqual([]);
+  it("batch1公開後: 資格台帳・同期/非同期公開プールのすべてで未公開を守る", async () => {
+    expect(QUALIFICATION_CATALOG.find(q => q.slug === "sekou-1kankoji")?.status).toBe("live");
+    expect(isExamPublished("kankoji1")).toBe(true);
+    expect(getRegisteredExamCodes()).toContain("kankoji1");
+    expect(QUESTIONS_BY_EXAM.kankoji1).toBeDefined();
+    expect(ALL_QUESTIONS.some(q => q.exam === "kankoji1")).toBe(true);
+    expect((await getQuestionsForExam("kankoji1")).length).toBeGreaterThan(0);
     expect(EXAM_CONFIGS.kankoji1.sessions.map(s => s.expectedQuestions)).toEqual([44, 29]);
   });
   it("A44問・B29問、全73問を欠落重複なく収録し公式正答全件と照合する", () => {

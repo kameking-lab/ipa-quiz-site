@@ -17,3 +17,5 @@ reports/lq4c-20261104/** -text whitespace=trailing-space,space-before-tab,cr-at-
 scripts/validate-lq4-staging.mjs text eol=lf
 data/qualification-staging/lq4c-*/assets/** -text
 reports/LQ3-20261104/prior-receipts/** -text -diff
+# The accepted Kisho raw packet hashes its original CRLF bytes.
+data/qualification-staging/kisho-65-66-private/raw-combined.json -text -diff

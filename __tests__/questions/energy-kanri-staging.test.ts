@@ -428,11 +428,11 @@ describe("エネルギー管理士の未公開収録", () => {
     expect(ratio.choiceExplanations?.エ).toContain("0/0");
   });
 
-  it("収録済み資格の未公開登録を維持する", () => {
+  it("batch1公開後: 収録済み資格の未公開登録を維持する", () => {
     const entry = QUALIFICATION_CATALOG.find((q) => q.slug === "energy-kanri")!;
-    expect(entry.status).toBe("ready-to-ingest");
-    expect(entry.examCode).toBeUndefined();
-    expect(entry.remainingWork.join(" ")).toContain("未公開登録を維持");
+    expect(entry.status).toBe("live");
+    expect(entry.examCode).toBeDefined();
+
     expect(entry.remainingWork.join(" ")).not.toContain("未収録");
   });
 });

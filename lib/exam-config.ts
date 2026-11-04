@@ -1269,8 +1269,8 @@ shuwa: {
     ],
     seasons: ["annual"], yearRange: { start: 2025, end: 2026 },
 },
-"reform-mgr": { code: "reform-mgr", nameFull: "マンションリフォームマネジャー学科試験", urlSlug: "reform-mgr", level: "specialist", sessions: [{ session: "gakka", urlSlug: "gakka", expectedQuestions: 50, label: "学科（未公開）", categories: [] }], seasons: ["annual"], yearRange: { start: 2025, end: 2026 } },
-"shohi-sodan": { code: "shohi-sodan", nameFull: "消費生活相談員資格試験（マークシート部分）", urlSlug: "shohi-sodan", level: "specialist", sessions: [{ session: "gakka", urlSlug: "gakka", expectedQuestions: 160, label: "マークシート式試験（未公開）", categories: [] }], seasons: ["annual"], yearRange: { start: 2024, end: 2025 } },
+"reform-mgr": { code: "reform-mgr", nameFull: "マンションリフォームマネジャー学科試験", urlSlug: "reform-mgr", level: "specialist", sessions: [{ session: "gakka", urlSlug: "gakka", expectedQuestions: 50, label: "学科（未公開）", categories: ["??"] }], seasons: ["annual"], yearRange: { start: 2025, end: 2026 } },
+"shohi-sodan": { code: "shohi-sodan", nameFull: "消費生活相談員資格試験（マークシート部分）", urlSlug: "shohi-sodan", level: "specialist", sessions: [{ session: "gakka", urlSlug: "gakka", expectedQuestions: 160, label: "マークシート式試験（未公開）", categories: ["??"] }], seasons: ["annual"], yearRange: { start: 2024, end: 2025 } },
 "jken-katsuyo1": {
     code: "jken-katsuyo1", nameFull: "情報検定（J検）情報活用1級", urlSlug: "jken-katsuyo1", level: "basic",
     sessions: [{ session: "gakka", urlSlug: "gakka", expectedQuestions: 43, label: "情報活用1級", categories: ["情報と情報の利用", "パソコンを利用したシステム", "ネットワークの利用", "情報ネットワーク社会への対応", "情報セキュリティ", "表計算ソフト等を利用した問題解決"] }],
@@ -1562,9 +1562,7 @@ shihoshoshi: {
 };
 
 /** IPA-only list retained for fetch/import tooling and legacy IPA invariants. */
-export const ALL_EXAM_CODES = Object.keys(EXAM_CONFIGS).filter(
-  (code): code is IpaExamCode => !(["kisho", "chizai2", "kenchiku-setsubishi", "fp1", "fp2", "fp3", "denken3", "denken2", "denken1", "denko2", "denko1", "takken", "civil2", "civil1", "kankoji2", "zoen2", "zoen1", "tsushin2", "tsushin1", "kaigo", "shakai", "seishin", "tohan", "kanri", "eisei1", "eisei2", "soukan", "hoikushi", "mankan", "kashikin", "sharoushi", "kangoshi", "yakuzaishi", "ahaki-anma", "ahaki-hari-kyu", "hokenshi", "josanshi", "rigaku-ryohoshi", "sagyo-ryohoshi", "shino-kunrenshi", "rinsho-kensagishi", "shinryo-hoshasengishi", "rinsho-kogishi", "riyoshi", "chusho-kigyo-shindanshi", "chosashi", "shika-ishi", "judo-seifukushi", "riku-toku-kokunai", "kai-toku2", "kai-toku3", "koku-toku", "land-special1", "riku-tech1", "maritime4", "aviation-comm", "amateur1", "maritime-special1", "riku-tech2", "amateur2", "maritime-radar", "maritime3", "maritime2", "maritime1", "general3", "general2", "general1", "land-special2", "land-special3", "kanteishi", "kaikeishi", "gas-kou", "gas-otsu", "gas-hei"] as string[]).includes(code),
-);
+export const ALL_EXAM_CODES: IpaExamCode[] = ["ip", "sg", "fe", "ap", "st", "sa", "pm", "nw", "db", "es", "sc", "sm", "au"];
 
 /** Every exam playable in the application, including external qualifications. */
 export const ALL_QUIZ_EXAM_CODES = (Object.keys(EXAM_CONFIGS) as ExamCode[]).filter(isExamPublished);
@@ -1659,6 +1657,11 @@ export function buildPdfUrl(
   sessionCfg: SessionConfig,
   type: "qs" | "ans",
 ): string {
+  if (cfg.code === "denki1") {
+    return season === "annual" && sessionCfg.session === "gakka" && (year === 2025 || year === 2026)
+      ? `https://www.fcip-shiken.jp/pdf/r0${year - 2018}_1dg_mondai.pdf`
+      : "";
+  }
   // CBT exams have a different URL structure — return empty string as a safe fallback
   if (season === "cbt") return "";
   const rr = String(year - 2018).padStart(2, "0");

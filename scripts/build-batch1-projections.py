@@ -50,6 +50,7 @@ for year in [2024, 2025]:
             excluded.append(dict(id=q['id'], exam='chintai', reason='公式全員正解。通常の正誤採点から除外', source=q))
             continue
         n = base(q, 'chintai', year)
+        n['officialQuestionLabel'] = str(q['qNumber'])
         n.update(question=q['question'], choices=choice_map(q['choices'].values()),
                  answer=KEYS[q['officialAnswerNumber']-1],
                  officialAnswerNumber=q['officialAnswerNumber'], explanation=q['explanation'],
@@ -66,6 +67,7 @@ for year in [2025, 2026]:
             excluded.append(dict(id=q['id'], exam='kyusui', reason='公式全員正解。通常の正誤採点から除外', source=q))
             continue
         n = base(q, 'kyusui', year)
+        n['officialQuestionLabel'] = str(q['qNumber'])
         n.update(question=q['question'] + ('\n'+q['postOptionContent'] if q['postOptionContent'] else ''),
                  choices=choice_map(q['choices']), answer=KEYS[q['scoring']['correctChoice']-1],
                  officialAnswerNumber=q['scoring']['correctChoice'], explanation=q['explanation'],
@@ -93,6 +95,7 @@ for directory, exam in [('lq4c-biru-kan', 'biru-kan'), ('lq4b-engineer-first', '
                 continue
             session = 'gakka' if exam == 'biru-kan' else ('kiso' if 'basis' in q['id'] else 'ippan' if 'aptitude' in q['id'] else 'kikai')
             n = base(q, exam, packet['year'], session)
+            n['officialQuestionLabel'] = q['printedNumber']
             figures = q.get('figures', [])
             n.update(question=q['questionText'], choices=choice_map(q['choices'].values()),
                      answer=KEYS[q['officialAnswer']-1], officialAnswerNumber=q['officialAnswer'],
@@ -120,6 +123,7 @@ for q in hoshasen:
             excluded.append(dict(id=q['id']+'-'+blank['id'], exam=exam, reason='公式全員正解欄。通常採点対象外', source=blank))
             continue
         n = base(q, exam, q['year'])
+        n['officialQuestionLabel'] = str(q['number']) + '（' + q['subject'] + (f'・解答欄{blank["id"]}' if blank else '') + '）'
         if blank:
             n['id'] += '-slot-' + blank['id']
             options = next(g['choices'] for g in q['answerGroups'] if g['id'] == blank['groupId'])
@@ -147,7 +151,9 @@ for exam in ['khk-kikai-kou', 'khk-kikai-otsu']:
     for q in read(f'data/qualification-staging/khk-kikai/{exam}/questions.json'):
         n = dict(q)
         n.update(needsReview=False, publicAllowed=True, license='KHK-owner-decision')
+        n['officialQuestionLabel'] = str(q['qNumber'])
         n['imageUrls'] = [asset('data/qualification-staging/khk-kikai/'+p if p.startswith('figures/') else p) for p in q.get('imageUrls', [])]
+        n['answerImageUrls'] = [asset('data/qualification-staging/khk-kikai/'+p if p.startswith('figures/') else p) for p in q.get('answerImageUrls', [])]
         if n.get('type') == 'descriptive':
             n['answer'] = n.get('modelAnswer', n['explanation'])
         questions[exam].append(n)
@@ -158,6 +164,7 @@ for f in sorted((ROOT / 'data/questions/energy-kanri').glob('20*.json')):
     for q in packet:
         n = dict(q)
         n.update(needsReview=False, license='ECCJ-owner-approved')
+        n['officialQuestionLabel'] = f'{q["qNumber"]}（解答番号{q["officialAnswerNumber"]}）'
         if shared_images:
             n.update(hasImage=True, imageUrls=shared_images,
                      imageAltTexts=[f'{q["sourceAttribution"]} 共通原図' for url in shared_images])

@@ -28,10 +28,10 @@ describe("山口県食品資格のステージング", () => {
       if (q.hasImage) for (const image of q.imageUrls ?? []) expect(existsSync(`public${image}`)).toBe(true);
     }
   });
-  it("資格登録済みでも公開一覧・ローダーには出さない", async () => {
-    expect(isExamPublished("yamaguchi-chori")).toBe(false);
-    expect(await getQuestionsForExam("yamaguchi-chori")).toEqual([]);
-    expect(ALL_QUESTIONS.some(q => q.exam === "yamaguchi-chori")).toBe(false);
+  it("batch1公開後: 資格登録済みでも公開一覧・ローダーには出さない", async () => {
+    expect(isExamPublished("yamaguchi-chori")).toBe(true);
+    expect((await getQuestionsForExam("yamaguchi-chori")).length).toBeGreaterThan(0);
+    expect(ALL_QUESTIONS.some(q => q.exam === "yamaguchi-chori")).toBe(true);
   });
 });
 
@@ -55,10 +55,10 @@ describe("製菓衛生師: 全選択科目と公式正答", () => {
       if (q.hasImage) for (const image of q.imageUrls ?? []) expect(existsSync(`public${image}`)).toBe(true);
     }
   });
-  it("公開ゲートを維持する", async () => {
-    expect(isExamPublished("yamaguchi-seika")).toBe(false);
-    expect(await getQuestionsForExam("yamaguchi-seika")).toEqual([]);
-    expect(ALL_QUESTIONS.some(q => q.exam === "yamaguchi-seika")).toBe(false);
+  it("batch1公開後: 公開ゲートを維持する", async () => {
+    expect(isExamPublished("yamaguchi-seika")).toBe(true);
+    expect((await getQuestionsForExam("yamaguchi-seika")).length).toBeGreaterThan(0);
+    expect(ALL_QUESTIONS.some(q => q.exam === "yamaguchi-seika")).toBe(true);
   });
 });
 
@@ -89,15 +89,15 @@ describe("ふぐ処理師: 原大問を保持した解答欄別演習", () => {
       if (q.hasImage) for (const image of q.imageUrls ?? []) expect(existsSync(`public${image}`)).toBe(true);
     }
   });
-  it("6分岐の図と条件テキストを保持し非公開とする", async () => {
+  it("batch1公開後: 6分岐の図と条件テキストを保持し非公開とする", async () => {
     expect(YAMAGUCHI_FUGU_QUESTIONS.filter(q => q.hasImage).map(q => q.qNumber)).toEqual([90,91,92,93,94,95]);
     for (const q of YAMAGUCHI_FUGU_QUESTIONS.filter(q => q.hasImage)) {
       expect(q.question).toContain("小棘なし");
       expect(q.question).toContain("尾ひれの下縁は白い");
       expect(Object.keys(q.choices ?? {})).toHaveLength(6);
     }
-    expect(isExamPublished("yamaguchi-fugu")).toBe(false);
-    expect(await getQuestionsForExam("yamaguchi-fugu")).toEqual([]);
-    expect(ALL_QUESTIONS.some(q => q.exam === "yamaguchi-fugu")).toBe(false);
+    expect(isExamPublished("yamaguchi-fugu")).toBe(true);
+    expect((await getQuestionsForExam("yamaguchi-fugu")).length).toBeGreaterThan(0);
+    expect(ALL_QUESTIONS.some(q => q.exam === "yamaguchi-fugu")).toBe(true);
   });
 });

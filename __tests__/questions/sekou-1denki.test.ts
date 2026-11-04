@@ -46,15 +46,15 @@ describe("1級電気工事施工管理 第一次 未公開ステージング", (
     }
   });
 
-  it("excludes the new exam from every public registry and lazy loader", async () => {
-    expect(getQualificationByExamCode("denki1")?.status).toBe("ready-to-ingest");
-    expect(isExamPublished("denki1")).toBe(false);
-    expect(QUESTIONS_BY_EXAM.denki1).toBeUndefined();
-    expect(ALL_QUESTIONS.some(q => q.exam === "denki1")).toBe(false);
-    expect(ALL_QUIZ_EXAM_CODES).not.toContain("denki1");
+  it("batch1公開後: excludes the new exam from every public registry and lazy loader", async () => {
+    expect(getQualificationByExamCode("denki1")?.status).toBe("live");
+    expect(isExamPublished("denki1")).toBe(true);
+    expect(QUESTIONS_BY_EXAM.denki1).toBeDefined();
+    expect(ALL_QUESTIONS.some(q => q.exam === "denki1")).toBe(true);
+    expect(ALL_QUIZ_EXAM_CODES).toContain("denki1");
     expect(ALL_EXAM_CODES).not.toContain("denki1");
-    expect(getRegisteredExamCodes()).not.toContain("denki1");
-    expect(await getQuestionsForExam("denki1")).toEqual([]);
+    expect(getRegisteredExamCodes()).toContain("denki1");
+    expect((await getQuestionsForExam("denki1")).length).toBeGreaterThan(0);
   });
 
   it("retains cropped figures, accessible descriptions and source-page attribution", () => {

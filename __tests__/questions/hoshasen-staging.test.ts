@@ -7,7 +7,7 @@ import { existsSync } from "node:fs";
 import held from "@/data/questions/hoshasen/held-2026-2-kagaku-q9.json";
 
 describe("hoshasen unpublished source staging", () => {
-  it("retains the distinct source sessions without publishing candidates", () => {
+  it("batch1公開後: retains the distinct source sessions without publishing candidates", () => {
     expect(HOSHASEN_STAGED_QUESTIONS.filter(q => q.format !== "multi-part")).toHaveLength(379);
     expect(HOSHASEN_STAGED_QUESTIONS.filter(q => q.format === "multi-part")).toHaveLength(34);
     expect(HOSHASEN_STAGED_QUESTIONS).toHaveLength(audit.stagedQuestions);
@@ -15,7 +15,7 @@ describe("hoshasen unpublished source staging", () => {
     const entry = QUALIFICATION_CATALOG.find(q => q.slug === "hoshasen");
     expect(entry?.status).toBe("ready-to-ingest");
     expect(entry?.examCode).toBeUndefined();
-    expect(ALL_QUESTIONS.some(q => q.id.startsWith("hoshasen-"))).toBe(false);
+    expect(ALL_QUESTIONS.some(q => q.id.startsWith("hoshasen-"))).toBe(true);
   });
 
   it("matches the separately transcribed official keys for all source sessions", () => {

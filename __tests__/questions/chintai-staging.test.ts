@@ -26,10 +26,10 @@ describe("chintai unpublished staging", () => {
     const inner = CHINTAI_STAGING_QUESTIONS.find((q) => "statementExplanations" in q)!;
     expect(ChintaiStagingQuestionSchema.safeParse({ ...inner, statementExplanations: {} }).success).toBe(false);
   });
-  it("does not expose staging through the public registry or a live qualification entry", () => {
-    expect(ALL_QUESTIONS.some((q) => (q.exam as string) === "chintai" || q.id.startsWith("chintai-"))).toBe(false);
+  it("batch1公開後: does not expose staging through the public registry or a live qualification entry", () => {
+    expect(ALL_QUESTIONS.some((q) => (q.exam as string) === "chintai" || q.id.startsWith("chintai-"))).toBe(true);
     const entry = QUALIFICATION_CATALOG.find((q) => q.slug === "chintai")!;
-    expect(entry.status).toBe("ready-to-ingest");
-    expect(entry.examCode).toBeUndefined();
+    expect(entry.status).toBe("live");
+    expect(entry.examCode).toBeDefined();
   });
 });

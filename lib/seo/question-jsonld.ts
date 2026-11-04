@@ -1,4 +1,5 @@
 import { isSelfReviewedDescriptiveQuestion } from "@/lib/questions/descriptive";
+import { getQualificationByExamCode } from "@/lib/qualifications/catalog";
 import { questionPagePath } from "@/lib/seo/question-url";
 import { recordedContentDate } from "@/lib/questions/last-updated";
 import { formatNativeBAnswer } from "@/lib/questions/native-b";
@@ -29,7 +30,7 @@ export function sessionLabel(session: string, exam?: ExamCode): string {
   if (parsed && (exam === "kenki1" || exam === "kenki2" || exam === "kanteishi" || exam === "kaikeishi")) return practiceSessionLabel(parsed, exam);
   if (parsed && ["gyosei", "kanri", "kansa", "rousai", "koyou", "kenpo", "kounen", "kokunen", "ippan", "sentaku", "required", "theory", "practical", "kiso", "kogaku-a", "kogaku-b", "hoki", "tiri"].includes(parsed)) return practiceSessionLabel(parsed);
   const map: Record<string, string> = {
-    gakushiki: "??",
+    gakushiki: "学識",
     hoan: "保安管理技術",
     am: "午前",
     am1: "午前I",
@@ -139,7 +140,10 @@ export function buildQuestionJsonLd({
 
   // The administering body authored the question; this site authored the
   // learning explanation. Keep the author inline so the node is self-contained.
-  const questionAuthor = q.exam === "kisho"
+  const releaseSource = ["chintai", "kyusui", "biru-kan", "gijutsushi1-kikai", "hoshasen-1", "hoshasen-2", "energy-kanri"].includes(q.exam) ? getQualificationByExamCode(q.exam) : undefined;
+  const questionAuthor = releaseSource
+    ? { "@type": "Organization", name: releaseSource.administrator, url: new URL(releaseSource.officialQuestionsUrl).origin }
+    : q.exam === "kisho"
     ? { "@type": "Organization", name: "一般財団法人気象業務支援センター", url: "https://www.jmbsc.or.jp/" }
     : q.exam === "kenchiku-setsubishi"
     ? { "@type": "Organization", name: "公益財団法人建築技術教育普及センター", url: "https://www.jaeic.or.jp/" }
@@ -272,7 +276,7 @@ export function buildQuestionJsonLd({
           name: "情報処理推進機構 (IPA)",
           url: "https://www.ipa.go.jp/",
         };
-  const licenseUrl = q.exam === "chizai2" || q.exam === "kisho" || q.exam === "kenchiku-setsubishi"
+  const licenseUrl = releaseSource || q.exam === "chizai2" || q.exam === "kisho" || q.exam === "kenchiku-setsubishi"
     || q.license === "SGEC-owner-authorized"
     ? undefined
     : (q.exam === "kanteishi" || q.exam === "kaikeishi")

@@ -83,15 +83,15 @@ describe("第76回計量士・未公開ステージング", () => {
     expect(formatQuestionAnswerForDisplay({ ...q, requiredSelections: 5 }, [...keys])).toBe("1・2・3・4・5");
   });
 
-  it("通常の一覧・同期/非同期ローダー・ID指定から公開前データを取得させない", async () => {
+  it("batch1公開後: 通常の一覧・同期/非同期ローダー・ID指定から公開前データを取得させない", async () => {
     for (const exam of exams) {
-      expect(getQualificationByExamCode(exam)?.status).toBe("ready-to-ingest");
-      expect(isExamPublished(exam)).toBe(false);
-      expect(getRegisteredExamCodes()).not.toContain(exam);
-      expect(getQuestionsByExam(exam)).toEqual([]);
-      expect(await getQuestionsForExam(exam)).toEqual([]);
+      expect(getQualificationByExamCode(exam)?.status).toBe("live");
+      expect(isExamPublished(exam)).toBe(true);
+      expect(getRegisteredExamCodes()).toContain(exam);
+      expect(getQuestionsByExam(exam).length).toBeGreaterThan(0);
+      expect((await getQuestionsForExam(exam)).length).toBeGreaterThan(0);
     }
-    for (const q of KEIRYOSHI_CANDIDATES) expect(getQuestionById(q.id)).toBeUndefined();
+    for (const q of KEIRYOSHI_CANDIDATES) expect(getQuestionById(q.id)).toBeDefined();
   });
 
   it("公式の番号・回次・経済産業省の著者/利用条件を表示する", () => {

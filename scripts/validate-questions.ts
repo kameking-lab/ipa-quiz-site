@@ -103,6 +103,7 @@ const QuestionSchema = z.object({
       ス: z.string().optional(),
       セ: z.string().optional(),
       ソ: z.string().optional(),
+      タ: z.string().optional(),
     })
     .refine((choices) => Object.values(choices).filter(Boolean).length >= 2, "選択肢は2個以上必要です")
     .optional(),

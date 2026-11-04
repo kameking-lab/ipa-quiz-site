@@ -46,11 +46,11 @@ describe("手話通訳士の公開前ステージング", () => {
       "shuwa-2025-annual-mondai-d-20",
     ]);
   });
-  it("同期・非同期の演習一覧とIPA用の取込一覧へ漏らさない", async () => {
-    expect(isExamPublished("shuwa")).toBe(false);
-    expect(QUESTIONS_BY_EXAM.shuwa).toBeUndefined();
-    expect(await getQuestionsForExam("shuwa")).toEqual([]);
-    expect(ALL_QUIZ_EXAM_CODES).not.toContain("shuwa");
+  it("batch1公開後: 同期・非同期の演習一覧とIPA用の取込一覧へ漏らさない", async () => {
+    expect(isExamPublished("shuwa")).toBe(true);
+    expect(QUESTIONS_BY_EXAM.shuwa).toBeDefined();
+    expect((await getQuestionsForExam("shuwa")).length).toBeGreaterThan(0);
+    expect(ALL_QUIZ_EXAM_CODES).toContain("shuwa");
     expect(ALL_EXAM_CODES).not.toContain("shuwa");
   });
   it("公式2回分の全160正答を4科目の原問番号で保持する", () => {

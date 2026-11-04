@@ -75,14 +75,14 @@ describe("2級建築施工管理第一次検定 official latest two sittings", (
     expect(shuffled.choiceExplanations![shuffled.answer as keyof typeof shuffled.choiceExplanations]).toBe(q.choiceExplanations!.オ);
   });
 
-  it("keeps both public registries, lazy loading and qualification listings closed before release", async () => {
-    expect(getQualificationByExamCode("sekou-kenchiku2")?.status).toBe("ready-to-ingest");
-    expect(isExamPublished("sekou-kenchiku2")).toBe(false);
-    expect(QUESTIONS_BY_EXAM["sekou-kenchiku2"]).toBeUndefined();
-    expect(ALL_QUESTIONS.some(q => q.exam === "sekou-kenchiku2")).toBe(false);
-    expect(await getQuestionsForExam("sekou-kenchiku2")).toEqual([]);
-    expect(getRegisteredExamCodes()).not.toContain("sekou-kenchiku2");
-    expect(ALL_QUIZ_EXAM_CODES).not.toContain("sekou-kenchiku2");
+  it("batch1公開後: keeps both public registries, lazy loading and qualification listings closed before release", async () => {
+    expect(getQualificationByExamCode("sekou-kenchiku2")?.status).toBe("live");
+    expect(isExamPublished("sekou-kenchiku2")).toBe(true);
+    expect(QUESTIONS_BY_EXAM["sekou-kenchiku2"]).toBeDefined();
+    expect(ALL_QUESTIONS.some(q => q.exam === "sekou-kenchiku2")).toBe(true);
+    expect((await getQuestionsForExam("sekou-kenchiku2")).length).toBeGreaterThan(0);
+    expect(getRegisteredExamCodes()).toContain("sekou-kenchiku2");
+    expect(ALL_QUIZ_EXAM_CODES).toContain("sekou-kenchiku2");
     expect(ALL_EXAM_CODES).not.toContain("sekou-kenchiku2");
   });
 });

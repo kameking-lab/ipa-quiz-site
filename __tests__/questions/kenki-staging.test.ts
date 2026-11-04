@@ -39,10 +39,10 @@ describe("kenki1 official two-year staging", () => {
     expect(q52.choices?.イ).toContain("8時間");
     expect(KENKI1_QUESTIONS.find(q => q.year === 2025 && q.qNumber === 34)?.choices?.ア).toBe("8日");
   });
-  it("keeps both synchronous and lazy public loaders closed", async () => {
-    expect(isExamPublished("kenki1")).toBe(false);
-    expect(QUESTIONS_BY_EXAM.kenki1).toBeUndefined();
-    expect(await getQuestionsForExam("kenki1")).toEqual([]);
+  it("batch1公開後: keeps both synchronous and lazy public loaders closed", async () => {
+    expect(isExamPublished("kenki1")).toBe(true);
+    expect(QUESTIONS_BY_EXAM.kenki1).toBeDefined();
+    expect((await getQuestionsForExam("kenki1")).length).toBeGreaterThan(0);
   });
 });
 
@@ -95,10 +95,10 @@ describe("kenki2 complete common and six species papers", () => {
     expect(find(2026, "kenki-type5", 14).choices?.ア).toContain("2/3〜3/4");
     expect(find(2025, "kyotsu", 31).choices?.イ).toContain("ドラグ・ショベル（バックホウ）");
   });
-  it("keeps publication closed while preparing valid sessions and source attribution", async () => {
-    expect(isExamPublished("kenki2")).toBe(false);
-    expect(QUESTIONS_BY_EXAM.kenki2).toBeUndefined();
-    expect(await getQuestionsForExam("kenki2")).toEqual([]);
+  it("batch1公開後: keeps publication closed while preparing valid sessions and source attribution", async () => {
+    expect(isExamPublished("kenki2")).toBe(true);
+    expect(QUESTIONS_BY_EXAM.kenki2).toBeDefined();
+    expect((await getQuestionsForExam("kenki2")).length).toBeGreaterThan(0);
     expect(ALL_EXAM_CODES).not.toContain("kenki1");
     expect(ALL_EXAM_CODES).not.toContain("kenki2");
     expect(defaultPracticeSession("kenki1")).toBe("gakka");

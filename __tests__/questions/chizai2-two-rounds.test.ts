@@ -71,7 +71,7 @@ describe("知財2級 第53・54回の固定原問採用", () => {
     const binary = questions.filter(q => Object.keys(q.choices ?? {}).length === 2);
     expect(binary).toHaveLength(12);
     for (const q of binary) {
-      expect(q.choices?.[q.answer as "ア" | "イ"]?.replace("○", "〇")).toBe(q.officialAnswerNumber?.replace("○", "〇"));
+      expect(q.choices?.[q.answer as "ア" | "イ"]?.replace("○", "〇")).toBe(String(q.officialAnswerNumber).replace("○", "〇"));
     }
     expect(Math.max(...questions.map(q => Object.keys(q.choices ?? {}).length))).toBe(9);
     expect(questions.filter(q => q.type === "numeric").map(q => q.answer).sort()).toEqual(["202612", "208000"]);

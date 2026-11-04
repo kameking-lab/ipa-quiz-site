@@ -4,10 +4,10 @@ import official from "@/data/qualification-staging/energy-kanri/official-answers
 import { QUESTIONS_BY_EXAM } from "@/data/questions";
 
 describe("エネルギー管理士の全件未公開登録と公式採点", () => {
-  it("全62原問842公式欄を重複なく登録し、各欄の公式配点を保持する", () => {
+  it("batch1公開後: 全62原問842公式欄を重複なく登録し、各欄の公式配点を保持する", () => {
     expect(registration.publicAllowed).toBe(false);
     expect(registration.status).toBe("ready-to-ingest");
-    expect(Object.keys(QUESTIONS_BY_EXAM)).not.toContain(registration.slug);
+    expect(Object.keys(QUESTIONS_BY_EXAM)).toContain(registration.slug);
     expect(registration.records).toHaveLength(838);
     expect(new Set(registration.records.map((r) => r.question.id)).size).toBe(838);
     const expected = official.flatMap((table) => table.questions.flatMap((q) => q.slots.map((slot) =>

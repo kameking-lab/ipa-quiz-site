@@ -142,7 +142,7 @@ kankoji1: async () => isExamPublished("kankoji1") ? (await import("@/data/questi
 kenki2: async () => isExamPublished("kenki2") ? (await import("@/data/questions/kenki2")).KENKI2_QUESTIONS : [],
 kenki1: async () => isExamPublished("kenki1") ? (await import("@/data/questions/kenki1")).KENKI1_QUESTIONS : [],
 gyosei: async () => isExamPublished("gyosei") ? (await import("@/data/questions/gyosei")).GYOSEI_QUESTIONS : [],
-shihoshoshi: async () => isExamPublished("shihoshoshi") ? (await import("@/data/questions/shihoshoshi")).SHIHOSHOSHI_QUESTIONS : []
+shihoshoshi: async () => isExamPublished("shihoshoshi") ? (await import("@/data/questions/shihoshoshi")).SHIHOSHOSHI_BATCH1_QUESTIONS : []
 };
 
 /** Load questions for one exam (lazy — only loads the requested exam's chunk). */
@@ -151,12 +151,18 @@ export async function getQuestionsForExam(exam: ExamCode): Promise<Question[]> {
   return loader ? loader() : [];
 }
 
-/** Load questions for all registered exams (for cross-exam random / topic modes). */
+let allQuestionsPromise: Promise<Question[]> | undefined;
+
+/** The release catalog is static for this process. Reuse the loaded corpus across requests. */
 export async function getAllQuestionsLazy(): Promise<Question[]> {
-  const chunks = await Promise.all(
+  allQuestionsPromise ??= Promise.all(
     (Object.values(EXAM_LOADERS) as Array<() => Promise<Question[]>>).map((load) => load()),
-  );
-  return chunks.flat();
+  ).then(chunks => chunks.flat()).catch(error => {
+    allQuestionsPromise = undefined;
+    throw error;
+  });
+  // Callers may sort their pool; the cached list must retain its source order.
+  return [...await allQuestionsPromise];
 }
 
 /** Exam codes that have data registered (may differ from ExamCode union). */

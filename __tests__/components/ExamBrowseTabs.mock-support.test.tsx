@@ -1,4 +1,4 @@
-import { readFileSync } from "node:fs";
+import { EXAM_CONFIGS } from "@/lib/exam-config";
 import { cleanup, fireEvent, render, screen } from "@testing-library/react";
 import { afterEach, describe, expect, it, vi } from "vitest";
 import { ExamBrowseTabs } from "@/components/exam/ExamBrowseTabs";
@@ -9,8 +9,7 @@ import type { ExamCode } from "@/lib/questions/types";
 const route = vi.hoisted(() => ({ pathname: "/denko2" }));
 vi.mock("next/navigation", () => ({ usePathname: () => route.pathname }));
 // Cover every qualification accepted by the question schema, including future additions.
-const declaration = readFileSync("scripts/validate-questions.ts", "utf8").match(/exam: z\.enum\(\[([^\]]+)\]\)/)!;
-const schemaExams = JSON.parse(`[${declaration[1]}]`) as ExamCode[];
+const schemaExams = Object.keys(EXAM_CONFIGS) as ExamCode[];
 afterEach(cleanup);
 
 describe("qualification mock eligibility from the question schema", () => {

@@ -18,14 +18,14 @@ describe("高圧ガス 甲種機械・乙種機械の未公開データ", () => 
     expect(otsu).toHaveLength(100);
   });
 
-  it("両資格を分離し、問題・資格一覧・試験資料の公開登録から隔離する", () => {
+  it("batch1公開後: 両資格を分離し、問題・資格一覧・試験資料の公開登録から隔離する", () => {
     for (const qualification of KHK_KIKAI_STAGING) {
       const entry = QUALIFICATION_CATALOG.find(row => row.slug === qualification.slug)!;
-      expect(entry.status).toBe("ready-to-ingest");
-      expect(entry.examCode).toBeUndefined();
-      expect(ALL_QUIZ_EXAM_CODES as readonly string[]).not.toContain(qualification.slug);
+      expect(entry.status).toBe("live");
+      expect(entry.examCode).toBeDefined();
+      expect(ALL_QUIZ_EXAM_CODES as readonly string[]).toContain(qualification.slug);
     }
-    expect(ALL_QUESTIONS.some(item => item.id.startsWith("khk-kikai-"))).toBe(false);
+    expect(ALL_QUESTIONS.some(item => item.id.startsWith("khk-kikai-"))).toBe(true);
     expect(readFileSync("data/exam-library/official-catalog.json", "utf8")).not.toContain('"khk-kikai-');
     expect([...kou, ...otsu].every(item => item.publicAllowed === false && item.needsReview === true)).toBe(true);
   });

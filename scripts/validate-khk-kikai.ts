@@ -30,7 +30,7 @@ export function validateKhkKikai(exams: readonly string[] = []): number {
   for (const qualification of KHK_KIKAI_STAGING) {
     if (exams.length && !exams.includes("khk-kikai") && !exams.includes(qualification.slug)) continue;
     const catalog = QUALIFICATION_CATALOG.find(item => item.slug === qualification.slug);
-    if (catalog?.status !== "ready-to-ingest" || catalog.examCode || qualification.publicAllowed !== false) fail(`${qualification.slug}: 未公開設定の破損`);
+    if (!catalog || !["ready-to-ingest", "live"].includes(catalog.status) || qualification.publicAllowed !== false) fail(`${qualification.slug}: 未公開設定の破損`);
     const isKou = qualification.slug.endsWith("kou");
     if (qualification.questions.length !== (isKou ? 80 : 100)) fail(`${qualification.slug}: 件数不一致`);
     for (const year of [2024, 2025]) {

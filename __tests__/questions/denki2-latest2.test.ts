@@ -80,12 +80,12 @@ describe("sekou-2denki latest two official papers, staged", () => {
     expect(key ? blank.choices?.[key as keyof NonNullable<typeof blank.choices>] : undefined).toBe("50 kW");
   });
 
-  it("registers the owner-approved qualification while keeping every public registry gated", async () => {
-    expect(getQualificationByExamCode("denki2")).toMatchObject({slug: "sekou-2denki", status: "ready-to-ingest"});
-    expect(isExamPublished("denki2")).toBe(false);
-    expect(QUESTIONS_BY_EXAM.denki2).toBeUndefined();
-    expect(await getQuestionsForExam("denki2")).toEqual([]);
-    expect(ALL_QUIZ_EXAM_CODES).not.toContain("denki2");
+  it("batch1公開後: registers the owner-approved qualification while keeping every public registry gated", async () => {
+    expect(getQualificationByExamCode("denki2")).toMatchObject({slug: "sekou-2denki", status: "live"});
+    expect(isExamPublished("denki2")).toBe(true);
+    expect(QUESTIONS_BY_EXAM.denki2).toBeDefined();
+    expect((await getQuestionsForExam("denki2")).length).toBeGreaterThan(0);
+    expect(ALL_QUIZ_EXAM_CODES).toContain("denki2");
     expect(ALL_EXAM_CODES).not.toContain("denki2");
     expect(EXAM_CONFIGS.denki2.sessions[0].expectedQuestions).toBe(62);
   });

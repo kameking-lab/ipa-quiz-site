@@ -46,16 +46,16 @@ describe("LQ9 private qualification staging", () => {
       for (const q of source.questions) expect(q.officialAnswerNumber).toBe(table[String(q.number)]);
     }
   });
-  it("keeps all public registries, lazy loaders and IPA import tools free of staging qualifications", async () => {
+  it("batch1公開後: keeps all public registries, lazy loaders and IPA import tools free of staging qualifications", async () => {
     for (const slug of ["shohi-sodan", "reform-mgr"] as const) {
-      expect(getQualificationByExamCode(slug)?.status).toBe("ready-to-ingest");
-      expect(isExamPublished(slug)).toBe(false);
+      expect(getQualificationByExamCode(slug)?.status).toBe("live");
+      expect(isExamPublished(slug)).toBe(true);
       expect(ALL_EXAM_CODES as string[]).not.toContain(slug);
-      expect(ALL_QUIZ_EXAM_CODES).not.toContain(slug);
-      expect(QUESTIONS_BY_EXAM[slug]).toBeUndefined();
-      expect(ALL_QUESTIONS.some(q => q.exam === slug)).toBe(false);
-      expect(getRegisteredExamCodes()).not.toContain(slug);
-      expect(await getQuestionsForExam(slug)).toEqual([]);
+      expect(ALL_QUIZ_EXAM_CODES).toContain(slug);
+      expect(QUESTIONS_BY_EXAM[slug]).toBeDefined();
+      expect(ALL_QUESTIONS.some(q => q.exam === slug)).toBe(true);
+      expect(getRegisteredExamCodes()).toContain(slug);
+      expect((await getQuestionsForExam(slug)).length).toBeGreaterThan(0);
     }
   });
   it("provides a sourced explanation for every option and preserves legal reference dates", () => {

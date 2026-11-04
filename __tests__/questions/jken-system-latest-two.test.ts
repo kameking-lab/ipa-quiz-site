@@ -63,14 +63,14 @@ describe("J検情報システム latest two official papers in staging", () => {
   });
 
   it("hides all staging questions from public registries, lazy loaders and exam lists", async () => {
-    expect(isExamPublished("jken-system")).toBe(false);
-    expect(QUALIFICATION_CATALOG.find(q => q.slug === "jken-system")?.status).toBe("ready-to-ingest");
-    expect(QUESTIONS_BY_EXAM["jken-system"]).toBeUndefined();
-    expect(ALL_QUESTIONS.some(q => q.exam === "jken-system")).toBe(false);
-    expect(await getQuestionsForExam("jken-system")).toEqual([]);
-    expect(getQuestionsByExamStrict("jken-system")).toEqual([]);
-    expect(ALL_QUIZ_EXAM_CODES).not.toContain("jken-system");
-    expect(getAvailableExams()).not.toContain("jken-system");
+    expect(isExamPublished("jken-system")).toBe(true);
+    expect(QUALIFICATION_CATALOG.find(q => q.slug === "jken-system")?.status).toBe("live");
+    expect(QUESTIONS_BY_EXAM["jken-system"]).toHaveLength(227);
+    expect(ALL_QUESTIONS.some(q => q.exam === "jken-system")).toBe(true);
+    expect(await getQuestionsForExam("jken-system")).toHaveLength(227);
+    expect(getQuestionsByExamStrict("jken-system")).toHaveLength(227);
+    expect(ALL_QUIZ_EXAM_CODES).toContain("jken-system");
+    expect(getAvailableExams()).toContain("jken-system");
     expect(ALL_EXAM_CODES).not.toContain("jken-system");
   });
 

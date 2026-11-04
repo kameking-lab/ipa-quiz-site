@@ -117,7 +117,7 @@ import { getKeiryoshiCandidates } from "./keiryoshi";
 import { KENKI2_QUESTIONS } from "./kenki2";
 import { KENKI1_QUESTIONS } from "./kenki1";
 import { GYOSEI_QUESTIONS } from "./gyosei";
-import { SHIHOSHOSHI_QUESTIONS } from "./shihoshoshi";
+import { SHIHOSHOSHI_BATCH1_QUESTIONS } from "./shihoshoshi";
 
 export const QUESTIONS_BY_EXAM: Partial<Record<ExamCode, Question[]>> = {
   "reform-mgr": REFORM_MGR_QUESTIONS,
@@ -260,7 +260,7 @@ biyoshi: BIYOSHI_QUESTIONS,
 ...(isExamPublished("kenki2") ? { kenki2: KENKI2_QUESTIONS } : {}),
 ...(isExamPublished("kenki1") ? { kenki1: KENKI1_QUESTIONS } : {}),
 ...(isExamPublished("gyosei") ? { gyosei: GYOSEI_QUESTIONS } : {}),
-...(isExamPublished("shihoshoshi") ? { shihoshoshi: SHIHOSHOSHI_QUESTIONS } : {})
+...(isExamPublished("shihoshoshi") ? { shihoshoshi: SHIHOSHOSHI_BATCH1_QUESTIONS } : {})
 };
 
 export const ALL_QUESTIONS: Question[] = (

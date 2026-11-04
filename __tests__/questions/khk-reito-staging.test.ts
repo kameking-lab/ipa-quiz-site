@@ -129,7 +129,7 @@ for (const rank of [1, 2, 3]) {
       }
     });
 
-    it("keeps routes, public registries and lazy loading closed", async () => {
+    it("batch1公開後: keeps routes, public registries and lazy loading closed", async () => {
       const manifest = JSON.parse(readFileSync(join(process.cwd(), "data/qualification-staging/khk-reito/manifest.json"), "utf8"));
       const sourcePack = JSON.parse(readFileSync(join(process.cwd(), `data/exam-library/source-packs/${code}.json`), "utf8"));
       expect(manifest.publicAllowed).toBe(false);
@@ -138,12 +138,12 @@ for (const rank of [1, 2, 3]) {
       expect(practiceSessionLabel("houki", code)).toBe("法令");
       expect(practiceSessionLabel("hoan", code)).toBe("保安管理技術");
       expect(practiceSessionLabel("kogaku", code)).toBe("学識");
-      expect(isExamPublished(code)).toBe(false);
+      expect(isExamPublished(code)).toBe(true);
       expect(ALL_EXAM_CODES).not.toContain(code);
-      expect(ALL_QUIZ_EXAM_CODES).not.toContain(code);
-      expect(getRegisteredExamCodes()).not.toContain(code);
-      expect(QUESTIONS_BY_EXAM[code]).toBeUndefined();
-      expect(await getQuestionsForExam(code)).toEqual([]);
+      expect(ALL_QUIZ_EXAM_CODES).toContain(code);
+      expect(getRegisteredExamCodes()).toContain(code);
+      expect(QUESTIONS_BY_EXAM[code]).toBeDefined();
+      expect((await getQuestionsForExam(code)).length).toBeGreaterThan(0);
       const resource = JSON.stringify(buildQuestionJsonLd({
         question: questions[0], pageUrlAbs: `https://example.test/q/${code}`,
         title: "出典確認", lastUpdatedISO: "2026-11-03T00:00:00+09:00",

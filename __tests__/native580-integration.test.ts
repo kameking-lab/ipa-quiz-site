@@ -1,3 +1,4 @@
+import { ALL_QUIZ_EXAM_CODES } from "@/lib/exam-config";
 import { integrationOracle, runtimeFingerprint } from './fixtures/native-integration-oracle';
 import { describe,it,expect } from 'vitest';
 import { existsSync } from 'node:fs';
@@ -28,7 +29,7 @@ const holds=new Set(['radio21-amateur1-2026-05-kogaku-q19','radio21-riku-tech2-2
 const all=[...avi,...am,...sea,...riku,...am2,...radar];
 const cases=[{exam:'riku-tech2',qs:riku,stored:190,ready:189,periodCounts:[94,95],sessions:['houki','kiso','kogaku-a','kogaku-b']},{exam:'amateur2',qs:am2,stored:110,ready:109,periodCounts:[54,55],sessions:['houki','kogaku']},{exam:'maritime-radar',qs:radar,stored:48,ready:48,periodCounts:[24,24],sessions:['houki','kogaku']}] as const;
 describe('581-ready combined candidate integration',()=>{
- it('retains584 originals/581 ready, three exact HOLDs and1000 raw versus993 ready grading cells',()=>{expect(all).toHaveLength(584);expect(new Set(all.map(q=>q.id)).size).toBe(584);const ready=all.filter(isPracticeReadyQuestion);expect(ready).toHaveLength(581);expect(new Set(all.filter(q=>!isPracticeReadyQuestion(q)).map(q=>q.id))).toEqual(holds);expect(getRegisteredExamCodes()).toHaveLength(84);expect(all.reduce((n,q)=>n+(q.nativeB?.slots.length??1),0)).toBe(1000);expect(ready.reduce((n,q)=>n+(q.nativeB?.slots.length??1),0)).toBe(993);});
+ it('retains584 originals/581 ready, three exact HOLDs and1000 raw versus993 ready grading cells',()=>{expect(all).toHaveLength(584);expect(new Set(all.map(q=>q.id)).size).toBe(584);const ready=all.filter(isPracticeReadyQuestion);expect(ready).toHaveLength(581);expect(new Set(all.filter(q=>!isPracticeReadyQuestion(q)).map(q=>q.id))).toEqual(holds);expect(new Set(getRegisteredExamCodes())).toEqual(new Set(ALL_QUIZ_EXAM_CODES));expect(all.reduce((n,q)=>n+(q.nativeB?.slots.length??1),0)).toBe(1000);expect(ready.reduce((n,q)=>n+(q.nativeB?.slots.length??1),0)).toBe(993);});
  for(const {exam,qs,stored,ready,periodCounts} of cases){
   it(`${exam}: preserves exact normalized final data and every source asset`,async()=>{
    expect(runtimeFingerprint(qs)).toBe(integrationOracle.producers[exam].normalizedRuntimeSha256);expect(qs).toHaveLength(stored);expect(await getQuestionsForExam(exam)).toEqual(qs);expect(QUESTIONS_BY_EXAM[exam]).toEqual(qs.filter(isPracticeReadyQuestion));expect(ALL_EXAM_CODES).not.toContain(exam);expect(qs.every(q=>q.exam===exam&&q.year===2026)).toBe(true);
