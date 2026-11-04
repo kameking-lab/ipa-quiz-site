@@ -32,7 +32,7 @@ export function NumericAnswerInput({ unit, specification, disabled, onAnswer }: 
         <input
           id={id}
           type="text"
-          inputMode={specification?.format === "decimal" ? "decimal" : "numeric"}
+          inputMode={specification?.format === "scientific" ? "text" : specification?.format === "decimal" ? "decimal" : "numeric"}
           autoComplete="off"
           value={value}
           disabled={disabled}
@@ -53,8 +53,8 @@ export function NumericAnswerInput({ unit, specification, disabled, onAnswer }: 
         <span aria-hidden="true" className="text-sm text-muted-foreground">{unit}</span>
         <Button type="submit" variant="primary" disabled={disabled || value.trim() === ""}>採点する</Button>
       </div>
-      <p id={`${id}-help`} className="mt-2 text-xs text-muted-foreground">{specification?.fixedSign === "negative" && "原問の負号は表示済みです。負号を除いた数値部分を入力してください。"}{specification?.format === "decimal" ? "単位を除いた小数第1位までの数値を入力してください。" : "単位を除いた整数を入力してください。"}</p>
-      {invalid && <p id={`${id}-error`} role="alert" className="mt-2 text-sm text-red-700 dark:text-red-300">{specification?.format === "decimal" ? "小数第1位までの数値を入力してください。" : "数字だけで整数を入力してください。"}</p>}
+      <p id={`${id}-help`} className="mt-2 text-xs text-muted-foreground">{specification?.fixedSign === "negative" && "原問の負号は表示済みです。負号を除いた数値部分を入力してください。"}{specification?.format === "scientific" ? "a.bc×10^d の形式で、仮数と指数を入力してください（例：1.23e3）。仮数は1以上10未満の小数第2位まで、指数は0～9です。" : specification?.format === "decimal" ? `単位を除いた小数第${specification.precision}位までの数値を入力してください。` : "単位を除いた整数を入力してください。"}</p>
+      {invalid && <p id={`${id}-error`} role="alert" className="mt-2 text-sm text-red-700 dark:text-red-300">{specification?.format === "scientific" ? "仮数（1以上10未満、小数第2位まで）と指数（0～9）を、1.23e3 のように入力してください。" : specification?.format === "decimal" ? `小数第${specification.precision}位までの数値を入力してください。` : "数字だけで整数を入力してください。"}</p>}
     </form>
   );
 }

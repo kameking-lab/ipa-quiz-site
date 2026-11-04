@@ -76,8 +76,9 @@ const QuestionSchema = z.object({
   type: z.enum(["multiple-choice", "ordering", "numeric", "descriptive", "essay", "native-b"]),
   nativeB: NativeBDataSchema.optional(),
   numericAnswer: z.discriminatedUnion("format", [
+    z.object({ format: z.literal("scientific"), precision: z.literal(2), unit: z.string().trim().min(1), fixedSign: z.literal("negative").optional() }),
     z.object({ format: z.literal("integer"), unit: z.string().trim().min(1), fixedSign: z.literal("negative").optional() }),
-    z.object({ format: z.literal("decimal"), precision: z.literal(1), unit: z.string().trim().min(1), fixedSign: z.literal("negative").optional() }),
+    z.object({ format: z.literal("decimal"), precision: z.union([z.literal(1), z.literal(2)]), unit: z.string().trim().min(1), fixedSign: z.literal("negative").optional() }),
   ]).optional(),
   category: z.string().min(1),
   topicTags: z.array(z.string()),
