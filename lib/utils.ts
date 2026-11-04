@@ -33,6 +33,7 @@ export const EXAM_LABELS: Record<string, string> = {
 
   kenki2: "2級建設機械施工管理（第一次）",
   kenki1: "1級建設機械施工管理（第一次）",
+  gyosei: "行政書士",
   kanteishi: "不動産鑑定士",
   kaikeishi: "公認会計士",
   "riku-tech2": "第二級陸上無線技術士",

@@ -66,6 +66,10 @@ export function StreamQuizPlayer({ questions, backHref = "/ipa" }: { questions: 
       descriptiveStartRef.current?.focus({ preventScroll: true });
       descriptiveStartRef.current?.scrollIntoView?.({ block: "start", behavior: "instant" });
     } else if (isSelfReviewedDescriptiveQuestion(questions[index - 1])) {
+    if ((["chosashi", "gyosei"].includes(question?.exam)) && question.type === "descriptive") {
+      descriptiveStartRef.current?.focus({ preventScroll: true });
+      descriptiveStartRef.current?.scrollIntoView?.({ block: "start", behavior: "instant" });
+    } else if ((["chosashi", "gyosei"].includes(questions[index - 1]?.exam)) && questions[index - 1]?.type === "descriptive") {
       window.scrollTo?.({ top: 0, behavior: "instant" });
     }
   }, [index, question, questions]);
@@ -161,6 +165,7 @@ export function StreamQuizPlayer({ questions, backHref = "/ipa" }: { questions: 
   React.useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
       if (!question || showSummary || reviewing || (isSelfReviewedDescriptiveQuestion(question))) return;
+      if (!question || showSummary || reviewing || ((["chosashi", "gyosei"].includes(question.exam)) && question.type === "descriptive")) return;
       if (e.target instanceof HTMLElement) {
         const tag = e.target.tagName;
         if (tag === "INPUT" || tag === "TEXTAREA" || tag === "SELECT") return;
@@ -185,6 +190,7 @@ export function StreamQuizPlayer({ questions, backHref = "/ipa" }: { questions: 
   if (!question) return null;
 
   if (showSummary && isSelfReviewedDescriptiveQuestion(question) && answers.length === 0) {
+  if (showSummary && (["chosashi", "gyosei"].includes(question.exam)) && answers.length === 0) {
     return (
       <main className="mx-auto max-w-3xl space-y-5 px-4 py-6">
         <h1 className="text-xl font-semibold">記述の確認を終えました</h1>
@@ -215,6 +221,7 @@ export function StreamQuizPlayer({ questions, backHref = "/ipa" }: { questions: 
   }
 
   if (isSelfReviewedDescriptiveQuestion(question)) {
+  if ((["chosashi", "gyosei"].includes(question.exam)) && question.type === "descriptive") {
     return (
       <main className="mx-auto max-w-3xl space-y-5 px-4 py-6">
         <Link href={backHref} className="inline-block min-h-11 py-3 underline">戻る</Link>

@@ -22,12 +22,13 @@ export function DescriptiveAnswerCard({
   nextLabel = "次の問題へ",
 }: Props) {
   const khk = question.exam === "khk-reito-1";
+  const official = question.exam === "gyosei";
   const modelAnswer = (question.modelAnswer ?? String(question.answer)).replace(
     /^公式問題に基づく独自解答例（法務省の公式解答ではありません）\s*/,
     "",
   );
   return (
-    <section aria-label="記述の独自解答例" className="space-y-4 rounded-2xl border border-border bg-card p-5">
+    <section aria-label={official ? "記述式の公式正解例" : "記述の独自解答例"} className="space-y-4 rounded-2xl border border-border bg-card p-5">
       <p className="text-sm font-semibold">
         {khk ? "公式解答例と照合した独自解説" : "公式問題に基づく独自解答例（法務省の公式解答ではありません）"}
       </p>
@@ -35,10 +36,14 @@ export function DescriptiveAnswerCard({
         {khk
           ? "記述・作図は答案用紙に解き、公式解答例と独自解説の計算過程・用語・図と照らして確認してください。"
           : "記述・作図は答案用紙に解き、解答例の計算過程・申請内容・図面と照らして確認してください。"}
+        {official ? "行政書士試験研究センターの公式正解例" : "公式問題に基づく独自解答例（法務省の公式解答ではありません）"}
+      </p>
+      <p className="text-sm text-muted-foreground">
+        {official ? "答案を公式正解例と照らして自己確認してください。" : "記述・作図は答案用紙に解き、解答例の計算過程・申請内容・図面と照らして確認してください。"}
         この画面では記述答案の自動採点を行いません。
       </p>
       <details open={defaultOpen} onToggle={(event) => onReveal?.(event.currentTarget.open)}>
-        <summary className="min-h-11 cursor-pointer py-3 font-semibold">独自解答例と作図例を確認する</summary>
+        <summary className="min-h-11 cursor-pointer py-3 font-semibold">{official ? "公式正解例を確認する" : "独自解答例と作図例を確認する"}</summary>
         <Markdown>{modelAnswer}</Markdown>
         {question.scoringCriteria && (
           <div className="mt-5 border-t border-border pt-4">
@@ -56,6 +61,9 @@ export function DescriptiveAnswerCard({
             高圧ガス保安協会の公式解答例PDF
           </a>
         )}
+          {official ? "センターの公式問題PDF" : "法務省の公式問題PDF"}
+        </a>
+        {official && question.sourceAnswerUrl && <a href={question.sourceAnswerUrl} target="_blank" rel="noopener noreferrer" className="min-h-11 py-3 underline">公式正解例の出典</a>}
         {(question.officialReferenceUrls ?? []).map((url) => (
           <a key={url} href={url} target="_blank" rel="noopener noreferrer" className="min-h-11 py-3 underline">
             {questionReferenceLabel(question, url)}
