@@ -4,6 +4,7 @@ import { officialScoringIssue } from "@/lib/questions/official-scoring";
 import { validateBenrishiStaging } from "./lib/validate-benrishi-staging";
 import { PRACTICE_SESSIONS } from "@/lib/questions/practice-session";
 import { EXAM_CONFIGS } from "@/lib/exam-config";
+import { validateDokugekiChiba } from "./validate-dokugeki-chiba";
 import { NativeBDataSchema, nativeBQuestionIssue } from "../lib/questions/native-b";
 /**
  * data/questions/ 配下の問題データを検証・品質スコア算出。
@@ -504,6 +505,13 @@ if (opts.staging !== undefined) {
   for (const error of result.errors) console.error(`[FAIL] ${error}`);
   console.log(`Validated ${result.count} private sokuryoshi originals. fail=${result.errors.length}`);
   process.exit(result.errors.length ? 1 : 0);
+}
+// Private staging has its own schema and must not be registered as a live exam
+// just to participate in validation. Avoid a misleading zero-question success.
+if (opts.exams.includes("dokugeki-chiba")) {
+  validateDokugekiChiba();
+  if (opts.exams.length === 1) process.exit(0);
+  opts.exams = opts.exams.filter(exam => exam !== "dokugeki-chiba");
 }
 const questions = opts.exams.length > 0
   ? VALIDATION_QUESTIONS.filter((q) => opts.exams.includes(q.exam))

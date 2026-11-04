@@ -1,0 +1,47 @@
+{
+  "checkedAt": "2026-11-04",
+  "result": "PASS",
+  "answerExtractor": "pdfplumber (independent of PyMuPDF ingester)",
+  "editions": [
+    {
+      "year": 2025,
+      "track": "ippan",
+      "answerKey": "51142313534434535235434432314142352514352145351342315245412324153345124215315432",
+      "matchedColumns": 80
+    },
+    {
+      "year": 2025,
+      "track": "nougyou",
+      "answerKey": "51142313534434535235434432314142352514354513435121532412533442552143455413421415",
+      "matchedColumns": 80
+    },
+    {
+      "year": 2025,
+      "track": "tokutei",
+      "answerKey": "51142313534434535235434432314142352514351354221541432524315141524215314532453211",
+      "matchedColumns": 80
+    },
+    {
+      "year": 2026,
+      "track": "ippan",
+      "answerKey": "33222442345511453444224531255312141232445231425413342151524323145514353142251432",
+      "matchedColumns": 80
+    },
+    {
+      "year": 2026,
+      "track": "nougyou",
+      "answerKey": "33222442345511453444224531255312141232442143541351241423541243254132521253543312",
+      "matchedColumns": 80
+    },
+    {
+      "year": 2026,
+      "track": "tokutei",
+      "answerKey": "33222442345511453444224531255312141232444321513455124352143415431432534125215432",
+      "matchedColumns": 80
+    }
+  ],
+  "matchedAnswerColumns": 480,
+  "pixelIdenticalProblemPages": 228,
+  "imageCheck": "Every source problem page, full page at scale 1.8; exact RGB equality after lossless WebP decoding",
+  "pdfsCommitted": false
+}

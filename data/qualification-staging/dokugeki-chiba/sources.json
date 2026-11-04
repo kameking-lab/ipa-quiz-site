@@ -1,0 +1,2016 @@
+{
+  "qualification": "毒物劇物取扱者試験（千葉県）",
+  "slug": "dokugeki-chiba",
+  "checkedAt": "2026-11-04",
+  "publicAllowed": false,
+  "publicationStatus": "staging",
+  "selectionEvidence": {
+    "report": "COV1 B 2",
+    "latestPublishedEditions": [
+      2026,
+      2025
+    ],
+    "officialPages": [
+      "https://www.pref.chiba.lg.jp/yakumu/dokugeki/r8shikenzissikekka.html",
+      "https://www.pref.chiba.lg.jp/yakumu/dokugeki/r7shikenzissikekka.html"
+    ]
+  },
+  "rights": {
+    "status": "permission-required",
+    "termsUrl": "https://www.pref.chiba.lg.jp/homepage/about-site/link.html",
+    "decision": "一般の転載許諾は確認できていない。未公開で保存し、公開前に個別の転載可否を確認する。"
+  },
+  "rendering": {
+    "library": "PyMuPDF",
+    "scale": 1.8,
+    "format": "lossless-webp",
+    "note": "原問題の全ページを画像で保持。ルビ、表、数式と化学式の上下位置は画像が正本。テキストは印刷本文の転記（ルビ除外、改行を保持）。"
+  },
+  "editions": [
+    {
+      "year": 2025,
+      "track": "ippan",
+      "originalCount": 80,
+      "storedCount": 80
+    },
+    {
+      "year": 2025,
+      "track": "nougyou",
+      "originalCount": 80,
+      "storedCount": 80
+    },
+    {
+      "year": 2025,
+      "track": "tokutei",
+      "originalCount": 80,
+      "storedCount": 80
+    },
+    {
+      "year": 2026,
+      "track": "ippan",
+      "originalCount": 80,
+      "storedCount": 80
+    },
+    {
+      "year": 2026,
+      "track": "nougyou",
+      "originalCount": 80,
+      "storedCount": 80
+    },
+    {
+      "year": 2026,
+      "track": "tokutei",
+      "originalCount": 80,
+      "storedCount": 80
+    }
+  ],
+  "downloadedSources": [
+    {
+      "year": 2025,
+      "file": "r7mondai-ippan.pdf",
+      "sha256": "2d7d0a93d57f826f012a635e078c0e04a4e72b315a74acccf14af8839b62c6e9",
+      "url": "https://www.pref.chiba.lg.jp/yakumu/dokugeki/documents/r7mondai-ippan.pdf",
+      "kind": "mondai",
+      "status": 200,
+      "bytes": 972756,
+      "track": "ippan"
+    },
+    {
+      "year": 2025,
+      "file": "r7kaitou-ippan.pdf",
+      "sha256": "b3e1248a9f747f69a6b1ad6a8e4a71e6328b8c25f1f2ac6bf645d0a7b6d49641",
+      "url": "https://www.pref.chiba.lg.jp/yakumu/dokugeki/documents/r7kaitou-ippan.pdf",
+      "kind": "kaitou",
+      "status": 200,
+      "bytes": 35407,
+      "track": "ippan"
+    },
+    {
+      "year": 2025,
+      "file": "r7mondai-nougyou.pdf",
+      "sha256": "72a6907fd391d673ff1346acaf9f8ee4339de97b34c9c5c4c25fe18528f6d241",
+      "url": "https://www.pref.chiba.lg.jp/yakumu/dokugeki/documents/r7mondai-nougyou.pdf",
+      "kind": "mondai",
+      "status": 200,
+      "bytes": 1128448,
+      "track": "nougyou"
+    },
+    {
+      "year": 2025,
+      "file": "r7kaitou-nougyou.pdf",
+      "sha256": "80c9ada4db3465cbd3a4652ac714b0e6cade0cb8531ee7e8585f143985fe6bd8",
+      "url": "https://www.pref.chiba.lg.jp/yakumu/dokugeki/documents/r7kaitou-nougyou.pdf",
+      "kind": "kaitou",
+      "status": 200,
+      "bytes": 35947,
+      "track": "nougyou"
+    },
+    {
+      "year": 2025,
+      "file": "r7mondai-tokutei.pdf",
+      "sha256": "d7c4eb98087a96cd98d30af6013a9e408581618a8b0208afc6e5a5d19ad5dff0",
+      "url": "https://www.pref.chiba.lg.jp/yakumu/dokugeki/documents/r7mondai-tokutei.pdf",
+      "kind": "mondai",
+      "status": 200,
+      "bytes": 1323211,
+      "track": "tokutei"
+    },
+    {
+      "year": 2025,
+      "file": "r7kaitou-tokutei.pdf",
+      "sha256": "f0b1e7b5f0b63cb6030d5d7017584b9ca97bef21d21f47f64ece0cb61735c16b",
+      "url": "https://www.pref.chiba.lg.jp/yakumu/dokugeki/documents/r7kaitou-tokutei.pdf",
+      "kind": "kaitou",
+      "status": 200,
+      "bytes": 35654,
+      "track": "tokutei"
+    },
+    {
+      "year": 2026,
+      "file": "r8mondai1-ippan.pdf",
+      "sha256": "5a0e852f0a52b51b3d4055dcb7e88f1c0edb43fc87beb91e38b6ece7e5dfa3e3",
+      "url": "https://www.pref.chiba.lg.jp/yakumu/dokugeki/documents/r8mondai1-ippan.pdf",
+      "kind": "mondai",
+      "status": 200,
+      "bytes": 513396,
+      "track": "ippan"
+    },
+    {
+      "year": 2026,
+      "file": "r8kaitou1-ippan.pdf",
+      "sha256": "05d23c97a3fd01b857036588f60e84569828eb4fca17a35ffe6297ded1275510",
+      "url": "https://www.pref.chiba.lg.jp/yakumu/dokugeki/documents/r8kaitou1-ippan.pdf",
+      "kind": "kaitou",
+      "status": 200,
+      "bytes": 17427,
+      "track": "ippan"
+    },
+    {
+      "year": 2026,
+      "file": "r8mondai2-nougyou.pdf",
+      "sha256": "efbf6e6a2ecee0cf9cdeef2fabb632d866e83234669d47c1be2c0bc462cbd321",
+      "url": "https://www.pref.chiba.lg.jp/yakumu/dokugeki/documents/r8mondai2-nougyou.pdf",
+      "kind": "mondai",
+      "status": 200,
+      "bytes": 546280,
+      "track": "nougyou"
+    },
+    {
+      "year": 2026,
+      "file": "r8kaitou2-nougyou.pdf",
+      "sha256": "40b98b2ea6f4b7817d3be20085a6dff2966f33775653b44d9983176d34d6781b",
+      "url": "https://www.pref.chiba.lg.jp/yakumu/dokugeki/documents/r8kaitou2-nougyou.pdf",
+      "kind": "kaitou",
+      "status": 200,
+      "bytes": 17700,
+      "track": "nougyou"
+    },
+    {
+      "year": 2026,
+      "file": "r8mondai3-tokutei.pdf",
+      "sha256": "b59c06ad6e9c98f73661731e9860308ac80b17386f4dc26f759bcdd0dc478b72",
+      "url": "https://www.pref.chiba.lg.jp/yakumu/dokugeki/documents/r8mondai3-tokutei.pdf",
+      "kind": "mondai",
+      "status": 200,
+      "bytes": 558862,
+      "track": "tokutei"
+    },
+    {
+      "year": 2026,
+      "file": "r8kaitou3-tokutei.pdf",
+      "sha256": "f8cd2bc5afbdcc2f7909a91efacb2caa8ac1006afd8ef4fed7c2a57422184fd5",
+      "url": "https://www.pref.chiba.lg.jp/yakumu/dokugeki/documents/r8kaitou3-tokutei.pdf",
+      "kind": "kaitou",
+      "status": 200,
+      "bytes": 17484,
+      "track": "tokutei"
+    }
+  ],
+  "unavailablePdfUrls": [],
+  "assets": [
+    {
+      "path": "data/qualification-staging/dokugeki-chiba/assets/2025-ippan-p03.webp",
+      "pdfUrl": "https://www.pref.chiba.lg.jp/yakumu/dokugeki/documents/r7mondai-ippan.pdf",
+      "pdfPage": 3,
+      "sha256": "48bc68074b7e064fb9aa3bea02864be00cb685dae160c2d18471f09d27ebfe19",
+      "width": 1072,
+      "height": 1516
+    },
+    {
+      "path": "data/qualification-staging/dokugeki-chiba/assets/2025-ippan-p04.webp",
+      "pdfUrl": "https://www.pref.chiba.lg.jp/yakumu/dokugeki/documents/r7mondai-ippan.pdf",
+      "pdfPage": 4,
+      "sha256": "be4f0c66334f29016fe6b9c00e6290382f848af87b88ffe8fd5c925d663e8c1c",
+      "width": 1072,
+      "height": 1516
+    },
+    {
+      "path": "data/qualification-staging/dokugeki-chiba/assets/2025-ippan-p05.webp",
+      "pdfUrl": "https://www.pref.chiba.lg.jp/yakumu/dokugeki/documents/r7mondai-ippan.pdf",
+      "pdfPage": 5,
+      "sha256": "c8a458063d303061852f49dd1db07591595e863aae302659a0061f4a43a30e83",
+      "width": 1072,
+      "height": 1516
+    },
+    {
+      "path": "data/qualification-staging/dokugeki-chiba/assets/2025-ippan-p06.webp",
+      "pdfUrl": "https://www.pref.chiba.lg.jp/yakumu/dokugeki/documents/r7mondai-ippan.pdf",
+      "pdfPage": 6,
+      "sha256": "69b820a766da119bddb79bc64bb36fcda42fc5c9de73d65cb3b5813f0324a51b",
+      "width": 1072,
+      "height": 1516
+    },
+    {
+      "path": "data/qualification-staging/dokugeki-chiba/assets/2025-ippan-p07.webp",
+      "pdfUrl": "https://www.pref.chiba.lg.jp/yakumu/dokugeki/documents/r7mondai-ippan.pdf",
+      "pdfPage": 7,
+      "sha256": "64e4a5445686360970f20a506bc50ee7b1637716d6c13e0245e270ad82b73326",
+      "width": 1072,
+      "height": 1516
+    },
+    {
+      "path": "data/qualification-staging/dokugeki-chiba/assets/2025-ippan-p08.webp",
+      "pdfUrl": "https://www.pref.chiba.lg.jp/yakumu/dokugeki/documents/r7mondai-ippan.pdf",
+      "pdfPage": 8,
+      "sha256": "4e4fc1503db1f6de9e13c508f019bec4ec502d71a61356d62e8a62c0ca4f94e9",
+      "width": 1072,
+      "height": 1516
+    },
+    {
+      "path": "data/qualification-staging/dokugeki-chiba/assets/2025-ippan-p09.webp",
+      "pdfUrl": "https://www.pref.chiba.lg.jp/yakumu/dokugeki/documents/r7mondai-ippan.pdf",
+      "pdfPage": 9,
+      "sha256": "6541272582bcf8ad1b61658708eedef295614da812865c1c7550bb94b3a93522",
+      "width": 1072,
+      "height": 1516
+    },
+    {
+      "path": "data/qualification-staging/dokugeki-chiba/assets/2025-ippan-p10.webp",
+      "pdfUrl": "https://www.pref.chiba.lg.jp/yakumu/dokugeki/documents/r7mondai-ippan.pdf",
+      "pdfPage": 10,
+      "sha256": "93b37776b544d4c0db8f9741473511278b641d2960410c2d04957d3f044adf07",
+      "width": 1072,
+      "height": 1516
+    },
+    {
+      "path": "data/qualification-staging/dokugeki-chiba/assets/2025-ippan-p11.webp",
+      "pdfUrl": "https://www.pref.chiba.lg.jp/yakumu/dokugeki/documents/r7mondai-ippan.pdf",
+      "pdfPage": 11,
+      "sha256": "862f177d7cb9f1211978dce3589027a8886a1484c4965f1324cbce944da14bb4",
+      "width": 1072,
+      "height": 1516
+    },
+    {
+      "path": "data/qualification-staging/dokugeki-chiba/assets/2025-ippan-p12.webp",
+      "pdfUrl": "https://www.pref.chiba.lg.jp/yakumu/dokugeki/documents/r7mondai-ippan.pdf",
+      "pdfPage": 12,
+      "sha256": "4be95da685b22225a1b8da01a9deffc659746ba7721584b98cde8c68a784817f",
+      "width": 1072,
+      "height": 1516
+    },
+    {
+      "path": "data/qualification-staging/dokugeki-chiba/assets/2025-ippan-p13.webp",
+      "pdfUrl": "https://www.pref.chiba.lg.jp/yakumu/dokugeki/documents/r7mondai-ippan.pdf",
+      "pdfPage": 13,
+      "sha256": "9f9dc87e32f26ddc61df528014444e0cb73421cef988a8574e90f205b1c1f0cd",
+      "width": 1072,
+      "height": 1516
+    },
+    {
+      "path": "data/qualification-staging/dokugeki-chiba/assets/2025-ippan-p14.webp",
+      "pdfUrl": "https://www.pref.chiba.lg.jp/yakumu/dokugeki/documents/r7mondai-ippan.pdf",
+      "pdfPage": 14,
+      "sha256": "08227eeeb25adc31be34944b9267c361d232b5cbc834fe5fcdd1323e5ae8c868",
+      "width": 1072,
+      "height": 1516
+    },
+    {
+      "path": "data/qualification-staging/dokugeki-chiba/assets/2025-ippan-p15.webp",
+      "pdfUrl": "https://www.pref.chiba.lg.jp/yakumu/dokugeki/documents/r7mondai-ippan.pdf",
+      "pdfPage": 15,
+      "sha256": "c3ec3c91b952c3ed7a0ed07b010765c4687eacff33bc62ca61c995969f68ff81",
+      "width": 1072,
+      "height": 1516
+    },
+    {
+      "path": "data/qualification-staging/dokugeki-chiba/assets/2025-ippan-p16.webp",
+      "pdfUrl": "https://www.pref.chiba.lg.jp/yakumu/dokugeki/documents/r7mondai-ippan.pdf",
+      "pdfPage": 16,
+      "sha256": "9818c1dd58f8126860429028500331dbeb0eeb273d9dfbcf887fef08ece29b89",
+      "width": 1072,
+      "height": 1516
+    },
+    {
+      "path": "data/qualification-staging/dokugeki-chiba/assets/2025-ippan-p17.webp",
+      "pdfUrl": "https://www.pref.chiba.lg.jp/yakumu/dokugeki/documents/r7mondai-ippan.pdf",
+      "pdfPage": 17,
+      "sha256": "55db95a24b600d340be0fcd2e22ad9240436fdbbad4bfdbc52e45d676daa8fff",
+      "width": 1072,
+      "height": 1516
+    },
+    {
+      "path": "data/qualification-staging/dokugeki-chiba/assets/2025-ippan-p18.webp",
+      "pdfUrl": "https://www.pref.chiba.lg.jp/yakumu/dokugeki/documents/r7mondai-ippan.pdf",
+      "pdfPage": 18,
+      "sha256": "ced5855c28dccc74b0866b6457b1950c12b349dacbbe9cfd307635b32bd4fbca",
+      "width": 1072,
+      "height": 1516
+    },
+    {
+      "path": "data/qualification-staging/dokugeki-chiba/assets/2025-ippan-p19.webp",
+      "pdfUrl": "https://www.pref.chiba.lg.jp/yakumu/dokugeki/documents/r7mondai-ippan.pdf",
+      "pdfPage": 19,
+      "sha256": "177a966e2c2b9409cc8cd9cd489355f5f8cb6d788980b6e2b0da4203057f972e",
+      "width": 1072,
+      "height": 1516
+    },
+    {
+      "path": "data/qualification-staging/dokugeki-chiba/assets/2025-ippan-p20.webp",
+      "pdfUrl": "https://www.pref.chiba.lg.jp/yakumu/dokugeki/documents/r7mondai-ippan.pdf",
+      "pdfPage": 20,
+      "sha256": "f85b08faf378c3c49f744f067c3260df07d1ef2a5e7211914df1548cb04b26d4",
+      "width": 1072,
+      "height": 1516
+    },
+    {
+      "path": "data/qualification-staging/dokugeki-chiba/assets/2025-ippan-p21.webp",
+      "pdfUrl": "https://www.pref.chiba.lg.jp/yakumu/dokugeki/documents/r7mondai-ippan.pdf",
+      "pdfPage": 21,
+      "sha256": "12a9fac99c5a165e5bb3374308a42ed3a62ecc7f7dd7998d8c7570503d55fe2f",
+      "width": 1072,
+      "height": 1516
+    },
+    {
+      "path": "data/qualification-staging/dokugeki-chiba/assets/2025-ippan-p22.webp",
+      "pdfUrl": "https://www.pref.chiba.lg.jp/yakumu/dokugeki/documents/r7mondai-ippan.pdf",
+      "pdfPage": 22,
+      "sha256": "7619b2902a29363cbcf7a9f6450236a0da8b66935f7fe1f41fe2bc432512242b",
+      "width": 1072,
+      "height": 1516
+    },
+    {
+      "path": "data/qualification-staging/dokugeki-chiba/assets/2025-ippan-p23.webp",
+      "pdfUrl": "https://www.pref.chiba.lg.jp/yakumu/dokugeki/documents/r7mondai-ippan.pdf",
+      "pdfPage": 23,
+      "sha256": "a6f07c577c38f9910ddf5d29a7c5853c56d4b34ddfc6f72eb68a5509d58f096e",
+      "width": 1072,
+      "height": 1516
+    },
+    {
+      "path": "data/qualification-staging/dokugeki-chiba/assets/2025-ippan-p24.webp",
+      "pdfUrl": "https://www.pref.chiba.lg.jp/yakumu/dokugeki/documents/r7mondai-ippan.pdf",
+      "pdfPage": 24,
+      "sha256": "e0ed54b19b2c9cd71c2ccddd713be7a488caac3ed9e62f8dade9f0a85c3af565",
+      "width": 1072,
+      "height": 1516
+    },
+    {
+      "path": "data/qualification-staging/dokugeki-chiba/assets/2025-ippan-p25.webp",
+      "pdfUrl": "https://www.pref.chiba.lg.jp/yakumu/dokugeki/documents/r7mondai-ippan.pdf",
+      "pdfPage": 25,
+      "sha256": "0defe12e8fb2d09caa74988d94de733666d9a5cdfec0feffea84a64052e048c3",
+      "width": 1072,
+      "height": 1516
+    },
+    {
+      "path": "data/qualification-staging/dokugeki-chiba/assets/2025-ippan-p26.webp",
+      "pdfUrl": "https://www.pref.chiba.lg.jp/yakumu/dokugeki/documents/r7mondai-ippan.pdf",
+      "pdfPage": 26,
+      "sha256": "d63241bd0e669a3ba4fd6754dd7f084b5c23c2d71a6cc2703508c39f13e28ad7",
+      "width": 1072,
+      "height": 1516
+    },
+    {
+      "path": "data/qualification-staging/dokugeki-chiba/assets/2025-ippan-p27.webp",
+      "pdfUrl": "https://www.pref.chiba.lg.jp/yakumu/dokugeki/documents/r7mondai-ippan.pdf",
+      "pdfPage": 27,
+      "sha256": "6c1c74e056f2406170eacc92240b86943cde9f3d49d8e0c447ae86aea3f752a8",
+      "width": 1072,
+      "height": 1516
+    },
+    {
+      "path": "data/qualification-staging/dokugeki-chiba/assets/2025-ippan-p28.webp",
+      "pdfUrl": "https://www.pref.chiba.lg.jp/yakumu/dokugeki/documents/r7mondai-ippan.pdf",
+      "pdfPage": 28,
+      "sha256": "379e911926e0de43eabdc0a865d58a25408b86a3fe85c45072c3e63d6c79acaa",
+      "width": 1072,
+      "height": 1516
+    },
+    {
+      "path": "data/qualification-staging/dokugeki-chiba/assets/2025-ippan-p29.webp",
+      "pdfUrl": "https://www.pref.chiba.lg.jp/yakumu/dokugeki/documents/r7mondai-ippan.pdf",
+      "pdfPage": 29,
+      "sha256": "67c6d0a89d6d4f0aac79cc6b6f3c1b38462a2430c2b6e06f2877f615d54517c5",
+      "width": 1072,
+      "height": 1516
+    },
+    {
+      "path": "data/qualification-staging/dokugeki-chiba/assets/2025-ippan-p30.webp",
+      "pdfUrl": "https://www.pref.chiba.lg.jp/yakumu/dokugeki/documents/r7mondai-ippan.pdf",
+      "pdfPage": 30,
+      "sha256": "acbaa2158853cef6935fbfe46f8a9542e2f81adf63faaea3ca3410b7914bb538",
+      "width": 1072,
+      "height": 1516
+    },
+    {
+      "path": "data/qualification-staging/dokugeki-chiba/assets/2025-ippan-p31.webp",
+      "pdfUrl": "https://www.pref.chiba.lg.jp/yakumu/dokugeki/documents/r7mondai-ippan.pdf",
+      "pdfPage": 31,
+      "sha256": "2b8e89924618e0757f95baf3743829c59b14f9d7f12a32c7b7da001e330bab9b",
+      "width": 1072,
+      "height": 1516
+    },
+    {
+      "path": "data/qualification-staging/dokugeki-chiba/assets/2025-ippan-p32.webp",
+      "pdfUrl": "https://www.pref.chiba.lg.jp/yakumu/dokugeki/documents/r7mondai-ippan.pdf",
+      "pdfPage": 32,
+      "sha256": "5b040f58526992370a8929b318337566ca4132fb8cb14f3709d8de0e701d9739",
+      "width": 1072,
+      "height": 1516
+    },
+    {
+      "path": "data/qualification-staging/dokugeki-chiba/assets/2025-ippan-p33.webp",
+      "pdfUrl": "https://www.pref.chiba.lg.jp/yakumu/dokugeki/documents/r7mondai-ippan.pdf",
+      "pdfPage": 33,
+      "sha256": "6e52a337c2f92bf9a4212f74684aeffd9b88cd0b16888357430c59174cfdc718",
+      "width": 1072,
+      "height": 1516
+    },
+    {
+      "path": "data/qualification-staging/dokugeki-chiba/assets/2025-ippan-p34.webp",
+      "pdfUrl": "https://www.pref.chiba.lg.jp/yakumu/dokugeki/documents/r7mondai-ippan.pdf",
+      "pdfPage": 34,
+      "sha256": "430a9c63ec8829b1a634846876779790fbdb491cb169debf0925ef5fcef01ac4",
+      "width": 1072,
+      "height": 1516
+    },
+    {
+      "path": "data/qualification-staging/dokugeki-chiba/assets/2025-ippan-p35.webp",
+      "pdfUrl": "https://www.pref.chiba.lg.jp/yakumu/dokugeki/documents/r7mondai-ippan.pdf",
+      "pdfPage": 35,
+      "sha256": "17ee006c220e194cf28e19a58b08ba7aab08e38ac25838e05bd05ae2c87a2fba",
+      "width": 1072,
+      "height": 1516
+    },
+    {
+      "path": "data/qualification-staging/dokugeki-chiba/assets/2025-ippan-p36.webp",
+      "pdfUrl": "https://www.pref.chiba.lg.jp/yakumu/dokugeki/documents/r7mondai-ippan.pdf",
+      "pdfPage": 36,
+      "sha256": "d708b0354f5d48ba8f491f3c2efe4820940b21c5cc4cc84c262330f98164c81d",
+      "width": 1072,
+      "height": 1516
+    },
+    {
+      "path": "data/qualification-staging/dokugeki-chiba/assets/2025-ippan-p37.webp",
+      "pdfUrl": "https://www.pref.chiba.lg.jp/yakumu/dokugeki/documents/r7mondai-ippan.pdf",
+      "pdfPage": 37,
+      "sha256": "8bf7ab3e06b1aba59c8608d7997cc2289d277ef913fafe77c8a5e311bf3262b9",
+      "width": 1072,
+      "height": 1516
+    },
+    {
+      "path": "data/qualification-staging/dokugeki-chiba/assets/2025-ippan-p38.webp",
+      "pdfUrl": "https://www.pref.chiba.lg.jp/yakumu/dokugeki/documents/r7mondai-ippan.pdf",
+      "pdfPage": 38,
+      "sha256": "078de4465c2091ecf2c3c954c70c0c3062a81d2267dd8c19591f4c2739a58faf",
+      "width": 1072,
+      "height": 1516
+    },
+    {
+      "path": "data/qualification-staging/dokugeki-chiba/assets/2025-nougyou-p03.webp",
+      "pdfUrl": "https://www.pref.chiba.lg.jp/yakumu/dokugeki/documents/r7mondai-nougyou.pdf",
+      "pdfPage": 3,
+      "sha256": "48bc68074b7e064fb9aa3bea02864be00cb685dae160c2d18471f09d27ebfe19",
+      "width": 1072,
+      "height": 1516
+    },
+    {
+      "path": "data/qualification-staging/dokugeki-chiba/assets/2025-nougyou-p04.webp",
+      "pdfUrl": "https://www.pref.chiba.lg.jp/yakumu/dokugeki/documents/r7mondai-nougyou.pdf",
+      "pdfPage": 4,
+      "sha256": "be4f0c66334f29016fe6b9c00e6290382f848af87b88ffe8fd5c925d663e8c1c",
+      "width": 1072,
+      "height": 1516
+    },
+    {
+      "path": "data/qualification-staging/dokugeki-chiba/assets/2025-nougyou-p05.webp",
+      "pdfUrl": "https://www.pref.chiba.lg.jp/yakumu/dokugeki/documents/r7mondai-nougyou.pdf",
+      "pdfPage": 5,
+      "sha256": "c8a458063d303061852f49dd1db07591595e863aae302659a0061f4a43a30e83",
+      "width": 1072,
+      "height": 1516
+    },
+    {
+      "path": "data/qualification-staging/dokugeki-chiba/assets/2025-nougyou-p06.webp",
+      "pdfUrl": "https://www.pref.chiba.lg.jp/yakumu/dokugeki/documents/r7mondai-nougyou.pdf",
+      "pdfPage": 6,
+      "sha256": "69b820a766da119bddb79bc64bb36fcda42fc5c9de73d65cb3b5813f0324a51b",
+      "width": 1072,
+      "height": 1516
+    },
+    {
+      "path": "data/qualification-staging/dokugeki-chiba/assets/2025-nougyou-p07.webp",
+      "pdfUrl": "https://www.pref.chiba.lg.jp/yakumu/dokugeki/documents/r7mondai-nougyou.pdf",
+      "pdfPage": 7,
+      "sha256": "64e4a5445686360970f20a506bc50ee7b1637716d6c13e0245e270ad82b73326",
+      "width": 1072,
+      "height": 1516
+    },
+    {
+      "path": "data/qualification-staging/dokugeki-chiba/assets/2025-nougyou-p08.webp",
+      "pdfUrl": "https://www.pref.chiba.lg.jp/yakumu/dokugeki/documents/r7mondai-nougyou.pdf",
+      "pdfPage": 8,
+      "sha256": "4e4fc1503db1f6de9e13c508f019bec4ec502d71a61356d62e8a62c0ca4f94e9",
+      "width": 1072,
+      "height": 1516
+    },
+    {
+      "path": "data/qualification-staging/dokugeki-chiba/assets/2025-nougyou-p09.webp",
+      "pdfUrl": "https://www.pref.chiba.lg.jp/yakumu/dokugeki/documents/r7mondai-nougyou.pdf",
+      "pdfPage": 9,
+      "sha256": "6541272582bcf8ad1b61658708eedef295614da812865c1c7550bb94b3a93522",
+      "width": 1072,
+      "height": 1516
+    },
+    {
+      "path": "data/qualification-staging/dokugeki-chiba/assets/2025-nougyou-p10.webp",
+      "pdfUrl": "https://www.pref.chiba.lg.jp/yakumu/dokugeki/documents/r7mondai-nougyou.pdf",
+      "pdfPage": 10,
+      "sha256": "93b37776b544d4c0db8f9741473511278b641d2960410c2d04957d3f044adf07",
+      "width": 1072,
+      "height": 1516
+    },
+    {
+      "path": "data/qualification-staging/dokugeki-chiba/assets/2025-nougyou-p11.webp",
+      "pdfUrl": "https://www.pref.chiba.lg.jp/yakumu/dokugeki/documents/r7mondai-nougyou.pdf",
+      "pdfPage": 11,
+      "sha256": "862f177d7cb9f1211978dce3589027a8886a1484c4965f1324cbce944da14bb4",
+      "width": 1072,
+      "height": 1516
+    },
+    {
+      "path": "data/qualification-staging/dokugeki-chiba/assets/2025-nougyou-p12.webp",
+      "pdfUrl": "https://www.pref.chiba.lg.jp/yakumu/dokugeki/documents/r7mondai-nougyou.pdf",
+      "pdfPage": 12,
+      "sha256": "4be95da685b22225a1b8da01a9deffc659746ba7721584b98cde8c68a784817f",
+      "width": 1072,
+      "height": 1516
+    },
+    {
+      "path": "data/qualification-staging/dokugeki-chiba/assets/2025-nougyou-p13.webp",
+      "pdfUrl": "https://www.pref.chiba.lg.jp/yakumu/dokugeki/documents/r7mondai-nougyou.pdf",
+      "pdfPage": 13,
+      "sha256": "9f9dc87e32f26ddc61df528014444e0cb73421cef988a8574e90f205b1c1f0cd",
+      "width": 1072,
+      "height": 1516
+    },
+    {
+      "path": "data/qualification-staging/dokugeki-chiba/assets/2025-nougyou-p14.webp",
+      "pdfUrl": "https://www.pref.chiba.lg.jp/yakumu/dokugeki/documents/r7mondai-nougyou.pdf",
+      "pdfPage": 14,
+      "sha256": "08227eeeb25adc31be34944b9267c361d232b5cbc834fe5fcdd1323e5ae8c868",
+      "width": 1072,
+      "height": 1516
+    },
+    {
+      "path": "data/qualification-staging/dokugeki-chiba/assets/2025-nougyou-p15.webp",
+      "pdfUrl": "https://www.pref.chiba.lg.jp/yakumu/dokugeki/documents/r7mondai-nougyou.pdf",
+      "pdfPage": 15,
+      "sha256": "c3ec3c91b952c3ed7a0ed07b010765c4687eacff33bc62ca61c995969f68ff81",
+      "width": 1072,
+      "height": 1516
+    },
+    {
+      "path": "data/qualification-staging/dokugeki-chiba/assets/2025-nougyou-p16.webp",
+      "pdfUrl": "https://www.pref.chiba.lg.jp/yakumu/dokugeki/documents/r7mondai-nougyou.pdf",
+      "pdfPage": 16,
+      "sha256": "9818c1dd58f8126860429028500331dbeb0eeb273d9dfbcf887fef08ece29b89",
+      "width": 1072,
+      "height": 1516
+    },
+    {
+      "path": "data/qualification-staging/dokugeki-chiba/assets/2025-nougyou-p17.webp",
+      "pdfUrl": "https://www.pref.chiba.lg.jp/yakumu/dokugeki/documents/r7mondai-nougyou.pdf",
+      "pdfPage": 17,
+      "sha256": "55db95a24b600d340be0fcd2e22ad9240436fdbbad4bfdbc52e45d676daa8fff",
+      "width": 1072,
+      "height": 1516
+    },
+    {
+      "path": "data/qualification-staging/dokugeki-chiba/assets/2025-nougyou-p18.webp",
+      "pdfUrl": "https://www.pref.chiba.lg.jp/yakumu/dokugeki/documents/r7mondai-nougyou.pdf",
+      "pdfPage": 18,
+      "sha256": "ced5855c28dccc74b0866b6457b1950c12b349dacbbe9cfd307635b32bd4fbca",
+      "width": 1072,
+      "height": 1516
+    },
+    {
+      "path": "data/qualification-staging/dokugeki-chiba/assets/2025-nougyou-p19.webp",
+      "pdfUrl": "https://www.pref.chiba.lg.jp/yakumu/dokugeki/documents/r7mondai-nougyou.pdf",
+      "pdfPage": 19,
+      "sha256": "177a966e2c2b9409cc8cd9cd489355f5f8cb6d788980b6e2b0da4203057f972e",
+      "width": 1072,
+      "height": 1516
+    },
+    {
+      "path": "data/qualification-staging/dokugeki-chiba/assets/2025-nougyou-p20.webp",
+      "pdfUrl": "https://www.pref.chiba.lg.jp/yakumu/dokugeki/documents/r7mondai-nougyou.pdf",
+      "pdfPage": 20,
+      "sha256": "f85b08faf378c3c49f744f067c3260df07d1ef2a5e7211914df1548cb04b26d4",
+      "width": 1072,
+      "height": 1516
+    },
+    {
+      "path": "data/qualification-staging/dokugeki-chiba/assets/2025-nougyou-p21.webp",
+      "pdfUrl": "https://www.pref.chiba.lg.jp/yakumu/dokugeki/documents/r7mondai-nougyou.pdf",
+      "pdfPage": 21,
+      "sha256": "12a9fac99c5a165e5bb3374308a42ed3a62ecc7f7dd7998d8c7570503d55fe2f",
+      "width": 1072,
+      "height": 1516
+    },
+    {
+      "path": "data/qualification-staging/dokugeki-chiba/assets/2025-nougyou-p22.webp",
+      "pdfUrl": "https://www.pref.chiba.lg.jp/yakumu/dokugeki/documents/r7mondai-nougyou.pdf",
+      "pdfPage": 22,
+      "sha256": "7619b2902a29363cbcf7a9f6450236a0da8b66935f7fe1f41fe2bc432512242b",
+      "width": 1072,
+      "height": 1516
+    },
+    {
+      "path": "data/qualification-staging/dokugeki-chiba/assets/2025-nougyou-p23.webp",
+      "pdfUrl": "https://www.pref.chiba.lg.jp/yakumu/dokugeki/documents/r7mondai-nougyou.pdf",
+      "pdfPage": 23,
+      "sha256": "a6f07c577c38f9910ddf5d29a7c5853c56d4b34ddfc6f72eb68a5509d58f096e",
+      "width": 1072,
+      "height": 1516
+    },
+    {
+      "path": "data/qualification-staging/dokugeki-chiba/assets/2025-nougyou-p24.webp",
+      "pdfUrl": "https://www.pref.chiba.lg.jp/yakumu/dokugeki/documents/r7mondai-nougyou.pdf",
+      "pdfPage": 24,
+      "sha256": "e0ed54b19b2c9cd71c2ccddd713be7a488caac3ed9e62f8dade9f0a85c3af565",
+      "width": 1072,
+      "height": 1516
+    },
+    {
+      "path": "data/qualification-staging/dokugeki-chiba/assets/2025-nougyou-p25.webp",
+      "pdfUrl": "https://www.pref.chiba.lg.jp/yakumu/dokugeki/documents/r7mondai-nougyou.pdf",
+      "pdfPage": 25,
+      "sha256": "0defe12e8fb2d09caa74988d94de733666d9a5cdfec0feffea84a64052e048c3",
+      "width": 1072,
+      "height": 1516
+    },
+    {
+      "path": "data/qualification-staging/dokugeki-chiba/assets/2025-nougyou-p26.webp",
+      "pdfUrl": "https://www.pref.chiba.lg.jp/yakumu/dokugeki/documents/r7mondai-nougyou.pdf",
+      "pdfPage": 26,
+      "sha256": "d63241bd0e669a3ba4fd6754dd7f084b5c23c2d71a6cc2703508c39f13e28ad7",
+      "width": 1072,
+      "height": 1516
+    },
+    {
+      "path": "data/qualification-staging/dokugeki-chiba/assets/2025-nougyou-p27.webp",
+      "pdfUrl": "https://www.pref.chiba.lg.jp/yakumu/dokugeki/documents/r7mondai-nougyou.pdf",
+      "pdfPage": 27,
+      "sha256": "6c1c74e056f2406170eacc92240b86943cde9f3d49d8e0c447ae86aea3f752a8",
+      "width": 1072,
+      "height": 1516
+    },
+    {
+      "path": "data/qualification-staging/dokugeki-chiba/assets/2025-nougyou-p28.webp",
+      "pdfUrl": "https://www.pref.chiba.lg.jp/yakumu/dokugeki/documents/r7mondai-nougyou.pdf",
+      "pdfPage": 28,
+      "sha256": "379e911926e0de43eabdc0a865d58a25408b86a3fe85c45072c3e63d6c79acaa",
+      "width": 1072,
+      "height": 1516
+    },
+    {
+      "path": "data/qualification-staging/dokugeki-chiba/assets/2025-nougyou-p29.webp",
+      "pdfUrl": "https://www.pref.chiba.lg.jp/yakumu/dokugeki/documents/r7mondai-nougyou.pdf",
+      "pdfPage": 29,
+      "sha256": "67c6d0a89d6d4f0aac79cc6b6f3c1b38462a2430c2b6e06f2877f615d54517c5",
+      "width": 1072,
+      "height": 1516
+    },
+    {
+      "path": "data/qualification-staging/dokugeki-chiba/assets/2025-nougyou-p30.webp",
+      "pdfUrl": "https://www.pref.chiba.lg.jp/yakumu/dokugeki/documents/r7mondai-nougyou.pdf",
+      "pdfPage": 30,
+      "sha256": "acbaa2158853cef6935fbfe46f8a9542e2f81adf63faaea3ca3410b7914bb538",
+      "width": 1072,
+      "height": 1516
+    },
+    {
+      "path": "data/qualification-staging/dokugeki-chiba/assets/2025-nougyou-p31.webp",
+      "pdfUrl": "https://www.pref.chiba.lg.jp/yakumu/dokugeki/documents/r7mondai-nougyou.pdf",
+      "pdfPage": 31,
+      "sha256": "e8e645d8bc7eda210eb9ecfaec56ccc7dd74af93f04cb92223549d5fcdfd31d0",
+      "width": 1072,
+      "height": 1516
+    },
+    {
+      "path": "data/qualification-staging/dokugeki-chiba/assets/2025-nougyou-p32.webp",
+      "pdfUrl": "https://www.pref.chiba.lg.jp/yakumu/dokugeki/documents/r7mondai-nougyou.pdf",
+      "pdfPage": 32,
+      "sha256": "4d2a3fbb66c9dee5bb6a11151cec887579b04e5c67bc55f36aec1313d5c2800e",
+      "width": 1072,
+      "height": 1516
+    },
+    {
+      "path": "data/qualification-staging/dokugeki-chiba/assets/2025-nougyou-p33.webp",
+      "pdfUrl": "https://www.pref.chiba.lg.jp/yakumu/dokugeki/documents/r7mondai-nougyou.pdf",
+      "pdfPage": 33,
+      "sha256": "ed983e618ae47d9cc2c61ac1dd5f593dddb6d52241ed79770d22d185500baee9",
+      "width": 1072,
+      "height": 1516
+    },
+    {
+      "path": "data/qualification-staging/dokugeki-chiba/assets/2025-nougyou-p34.webp",
+      "pdfUrl": "https://www.pref.chiba.lg.jp/yakumu/dokugeki/documents/r7mondai-nougyou.pdf",
+      "pdfPage": 34,
+      "sha256": "8230aa74fa8baa57b6ada70fca6d816ffa88a391a074002d502c53453f2dfc81",
+      "width": 1072,
+      "height": 1516
+    },
+    {
+      "path": "data/qualification-staging/dokugeki-chiba/assets/2025-nougyou-p35.webp",
+      "pdfUrl": "https://www.pref.chiba.lg.jp/yakumu/dokugeki/documents/r7mondai-nougyou.pdf",
+      "pdfPage": 35,
+      "sha256": "1c58cb2872a81c1d0240beb90f12776de94d232d32f3ecadd7e64046e2c81250",
+      "width": 1072,
+      "height": 1516
+    },
+    {
+      "path": "data/qualification-staging/dokugeki-chiba/assets/2025-nougyou-p36.webp",
+      "pdfUrl": "https://www.pref.chiba.lg.jp/yakumu/dokugeki/documents/r7mondai-nougyou.pdf",
+      "pdfPage": 36,
+      "sha256": "dca0b7b5c0a6ac0c19af56444211e1dfe6d071c039e6995f227c5c13742351d7",
+      "width": 1072,
+      "height": 1516
+    },
+    {
+      "path": "data/qualification-staging/dokugeki-chiba/assets/2025-nougyou-p37.webp",
+      "pdfUrl": "https://www.pref.chiba.lg.jp/yakumu/dokugeki/documents/r7mondai-nougyou.pdf",
+      "pdfPage": 37,
+      "sha256": "9d48297b1f61f2e5b1b3684f7e8609ceb95b39cec0b79c5d00f9f982e27bd1b9",
+      "width": 1072,
+      "height": 1516
+    },
+    {
+      "path": "data/qualification-staging/dokugeki-chiba/assets/2025-nougyou-p38.webp",
+      "pdfUrl": "https://www.pref.chiba.lg.jp/yakumu/dokugeki/documents/r7mondai-nougyou.pdf",
+      "pdfPage": 38,
+      "sha256": "acbcd2bb5baec6f01fe382a5d33519db03fdf4f5c5ceaaddd8a60c622996965a",
+      "width": 1072,
+      "height": 1516
+    },
+    {
+      "path": "data/qualification-staging/dokugeki-chiba/assets/2025-nougyou-p39.webp",
+      "pdfUrl": "https://www.pref.chiba.lg.jp/yakumu/dokugeki/documents/r7mondai-nougyou.pdf",
+      "pdfPage": 39,
+      "sha256": "690540d2527d42f26605666242a5ed76e6da8ca42dba35634a1c5e43482fbb85",
+      "width": 1072,
+      "height": 1516
+    },
+    {
+      "path": "data/qualification-staging/dokugeki-chiba/assets/2025-nougyou-p40.webp",
+      "pdfUrl": "https://www.pref.chiba.lg.jp/yakumu/dokugeki/documents/r7mondai-nougyou.pdf",
+      "pdfPage": 40,
+      "sha256": "aa914fb5c8baa382be375b89728ad40bd368e7a050a973be47f6c8c1bfecc28b",
+      "width": 1072,
+      "height": 1516
+    },
+    {
+      "path": "data/qualification-staging/dokugeki-chiba/assets/2025-nougyou-p41.webp",
+      "pdfUrl": "https://www.pref.chiba.lg.jp/yakumu/dokugeki/documents/r7mondai-nougyou.pdf",
+      "pdfPage": 41,
+      "sha256": "a081ecbca7f5e0360e1206818e81e5798ac7a3448a902d969e3446579bd76c7a",
+      "width": 1072,
+      "height": 1516
+    },
+    {
+      "path": "data/qualification-staging/dokugeki-chiba/assets/2025-nougyou-p42.webp",
+      "pdfUrl": "https://www.pref.chiba.lg.jp/yakumu/dokugeki/documents/r7mondai-nougyou.pdf",
+      "pdfPage": 42,
+      "sha256": "4d3d6543f49a6507cb951330ac61a5f617439b4c026c7b76f675004fc459af29",
+      "width": 1072,
+      "height": 1516
+    },
+    {
+      "path": "data/qualification-staging/dokugeki-chiba/assets/2025-nougyou-p43.webp",
+      "pdfUrl": "https://www.pref.chiba.lg.jp/yakumu/dokugeki/documents/r7mondai-nougyou.pdf",
+      "pdfPage": 43,
+      "sha256": "18f92ec8f9c16e83f5b1c07d5f2a2836cac9f81e464f7143c00d06d70b292e3d",
+      "width": 1072,
+      "height": 1516
+    },
+    {
+      "path": "data/qualification-staging/dokugeki-chiba/assets/2025-tokutei-p03.webp",
+      "pdfUrl": "https://www.pref.chiba.lg.jp/yakumu/dokugeki/documents/r7mondai-tokutei.pdf",
+      "pdfPage": 3,
+      "sha256": "48bc68074b7e064fb9aa3bea02864be00cb685dae160c2d18471f09d27ebfe19",
+      "width": 1072,
+      "height": 1516
+    },
+    {
+      "path": "data/qualification-staging/dokugeki-chiba/assets/2025-tokutei-p04.webp",
+      "pdfUrl": "https://www.pref.chiba.lg.jp/yakumu/dokugeki/documents/r7mondai-tokutei.pdf",
+      "pdfPage": 4,
+      "sha256": "be4f0c66334f29016fe6b9c00e6290382f848af87b88ffe8fd5c925d663e8c1c",
+      "width": 1072,
+      "height": 1516
+    },
+    {
+      "path": "data/qualification-staging/dokugeki-chiba/assets/2025-tokutei-p05.webp",
+      "pdfUrl": "https://www.pref.chiba.lg.jp/yakumu/dokugeki/documents/r7mondai-tokutei.pdf",
+      "pdfPage": 5,
+      "sha256": "c8a458063d303061852f49dd1db07591595e863aae302659a0061f4a43a30e83",
+      "width": 1072,
+      "height": 1516
+    },
+    {
+      "path": "data/qualification-staging/dokugeki-chiba/assets/2025-tokutei-p06.webp",
+      "pdfUrl": "https://www.pref.chiba.lg.jp/yakumu/dokugeki/documents/r7mondai-tokutei.pdf",
+      "pdfPage": 6,
+      "sha256": "69b820a766da119bddb79bc64bb36fcda42fc5c9de73d65cb3b5813f0324a51b",
+      "width": 1072,
+      "height": 1516
+    },
+    {
+      "path": "data/qualification-staging/dokugeki-chiba/assets/2025-tokutei-p07.webp",
+      "pdfUrl": "https://www.pref.chiba.lg.jp/yakumu/dokugeki/documents/r7mondai-tokutei.pdf",
+      "pdfPage": 7,
+      "sha256": "64e4a5445686360970f20a506bc50ee7b1637716d6c13e0245e270ad82b73326",
+      "width": 1072,
+      "height": 1516
+    },
+    {
+      "path": "data/qualification-staging/dokugeki-chiba/assets/2025-tokutei-p08.webp",
+      "pdfUrl": "https://www.pref.chiba.lg.jp/yakumu/dokugeki/documents/r7mondai-tokutei.pdf",
+      "pdfPage": 8,
+      "sha256": "4e4fc1503db1f6de9e13c508f019bec4ec502d71a61356d62e8a62c0ca4f94e9",
+      "width": 1072,
+      "height": 1516
+    },
+    {
+      "path": "data/qualification-staging/dokugeki-chiba/assets/2025-tokutei-p09.webp",
+      "pdfUrl": "https://www.pref.chiba.lg.jp/yakumu/dokugeki/documents/r7mondai-tokutei.pdf",
+      "pdfPage": 9,
+      "sha256": "6541272582bcf8ad1b61658708eedef295614da812865c1c7550bb94b3a93522",
+      "width": 1072,
+      "height": 1516
+    },
+    {
+      "path": "data/qualification-staging/dokugeki-chiba/assets/2025-tokutei-p10.webp",
+      "pdfUrl": "https://www.pref.chiba.lg.jp/yakumu/dokugeki/documents/r7mondai-tokutei.pdf",
+      "pdfPage": 10,
+      "sha256": "93b37776b544d4c0db8f9741473511278b641d2960410c2d04957d3f044adf07",
+      "width": 1072,
+      "height": 1516
+    },
+    {
+      "path": "data/qualification-staging/dokugeki-chiba/assets/2025-tokutei-p11.webp",
+      "pdfUrl": "https://www.pref.chiba.lg.jp/yakumu/dokugeki/documents/r7mondai-tokutei.pdf",
+      "pdfPage": 11,
+      "sha256": "862f177d7cb9f1211978dce3589027a8886a1484c4965f1324cbce944da14bb4",
+      "width": 1072,
+      "height": 1516
+    },
+    {
+      "path": "data/qualification-staging/dokugeki-chiba/assets/2025-tokutei-p12.webp",
+      "pdfUrl": "https://www.pref.chiba.lg.jp/yakumu/dokugeki/documents/r7mondai-tokutei.pdf",
+      "pdfPage": 12,
+      "sha256": "4be95da685b22225a1b8da01a9deffc659746ba7721584b98cde8c68a784817f",
+      "width": 1072,
+      "height": 1516
+    },
+    {
+      "path": "data/qualification-staging/dokugeki-chiba/assets/2025-tokutei-p13.webp",
+      "pdfUrl": "https://www.pref.chiba.lg.jp/yakumu/dokugeki/documents/r7mondai-tokutei.pdf",
+      "pdfPage": 13,
+      "sha256": "9f9dc87e32f26ddc61df528014444e0cb73421cef988a8574e90f205b1c1f0cd",
+      "width": 1072,
+      "height": 1516
+    },
+    {
+      "path": "data/qualification-staging/dokugeki-chiba/assets/2025-tokutei-p14.webp",
+      "pdfUrl": "https://www.pref.chiba.lg.jp/yakumu/dokugeki/documents/r7mondai-tokutei.pdf",
+      "pdfPage": 14,
+      "sha256": "08227eeeb25adc31be34944b9267c361d232b5cbc834fe5fcdd1323e5ae8c868",
+      "width": 1072,
+      "height": 1516
+    },
+    {
+      "path": "data/qualification-staging/dokugeki-chiba/assets/2025-tokutei-p15.webp",
+      "pdfUrl": "https://www.pref.chiba.lg.jp/yakumu/dokugeki/documents/r7mondai-tokutei.pdf",
+      "pdfPage": 15,
+      "sha256": "c3ec3c91b952c3ed7a0ed07b010765c4687eacff33bc62ca61c995969f68ff81",
+      "width": 1072,
+      "height": 1516
+    },
+    {
+      "path": "data/qualification-staging/dokugeki-chiba/assets/2025-tokutei-p16.webp",
+      "pdfUrl": "https://www.pref.chiba.lg.jp/yakumu/dokugeki/documents/r7mondai-tokutei.pdf",
+      "pdfPage": 16,
+      "sha256": "9818c1dd58f8126860429028500331dbeb0eeb273d9dfbcf887fef08ece29b89",
+      "width": 1072,
+      "height": 1516
+    },
+    {
+      "path": "data/qualification-staging/dokugeki-chiba/assets/2025-tokutei-p17.webp",
+      "pdfUrl": "https://www.pref.chiba.lg.jp/yakumu/dokugeki/documents/r7mondai-tokutei.pdf",
+      "pdfPage": 17,
+      "sha256": "55db95a24b600d340be0fcd2e22ad9240436fdbbad4bfdbc52e45d676daa8fff",
+      "width": 1072,
+      "height": 1516
+    },
+    {
+      "path": "data/qualification-staging/dokugeki-chiba/assets/2025-tokutei-p18.webp",
+      "pdfUrl": "https://www.pref.chiba.lg.jp/yakumu/dokugeki/documents/r7mondai-tokutei.pdf",
+      "pdfPage": 18,
+      "sha256": "ced5855c28dccc74b0866b6457b1950c12b349dacbbe9cfd307635b32bd4fbca",
+      "width": 1072,
+      "height": 1516
+    },
+    {
+      "path": "data/qualification-staging/dokugeki-chiba/assets/2025-tokutei-p19.webp",
+      "pdfUrl": "https://www.pref.chiba.lg.jp/yakumu/dokugeki/documents/r7mondai-tokutei.pdf",
+      "pdfPage": 19,
+      "sha256": "177a966e2c2b9409cc8cd9cd489355f5f8cb6d788980b6e2b0da4203057f972e",
+      "width": 1072,
+      "height": 1516
+    },
+    {
+      "path": "data/qualification-staging/dokugeki-chiba/assets/2025-tokutei-p20.webp",
+      "pdfUrl": "https://www.pref.chiba.lg.jp/yakumu/dokugeki/documents/r7mondai-tokutei.pdf",
+      "pdfPage": 20,
+      "sha256": "f85b08faf378c3c49f744f067c3260df07d1ef2a5e7211914df1548cb04b26d4",
+      "width": 1072,
+      "height": 1516
+    },
+    {
+      "path": "data/qualification-staging/dokugeki-chiba/assets/2025-tokutei-p21.webp",
+      "pdfUrl": "https://www.pref.chiba.lg.jp/yakumu/dokugeki/documents/r7mondai-tokutei.pdf",
+      "pdfPage": 21,
+      "sha256": "12a9fac99c5a165e5bb3374308a42ed3a62ecc7f7dd7998d8c7570503d55fe2f",
+      "width": 1072,
+      "height": 1516
+    },
+    {
+      "path": "data/qualification-staging/dokugeki-chiba/assets/2025-tokutei-p22.webp",
+      "pdfUrl": "https://www.pref.chiba.lg.jp/yakumu/dokugeki/documents/r7mondai-tokutei.pdf",
+      "pdfPage": 22,
+      "sha256": "7619b2902a29363cbcf7a9f6450236a0da8b66935f7fe1f41fe2bc432512242b",
+      "width": 1072,
+      "height": 1516
+    },
+    {
+      "path": "data/qualification-staging/dokugeki-chiba/assets/2025-tokutei-p23.webp",
+      "pdfUrl": "https://www.pref.chiba.lg.jp/yakumu/dokugeki/documents/r7mondai-tokutei.pdf",
+      "pdfPage": 23,
+      "sha256": "a6f07c577c38f9910ddf5d29a7c5853c56d4b34ddfc6f72eb68a5509d58f096e",
+      "width": 1072,
+      "height": 1516
+    },
+    {
+      "path": "data/qualification-staging/dokugeki-chiba/assets/2025-tokutei-p24.webp",
+      "pdfUrl": "https://www.pref.chiba.lg.jp/yakumu/dokugeki/documents/r7mondai-tokutei.pdf",
+      "pdfPage": 24,
+      "sha256": "e0ed54b19b2c9cd71c2ccddd713be7a488caac3ed9e62f8dade9f0a85c3af565",
+      "width": 1072,
+      "height": 1516
+    },
+    {
+      "path": "data/qualification-staging/dokugeki-chiba/assets/2025-tokutei-p25.webp",
+      "pdfUrl": "https://www.pref.chiba.lg.jp/yakumu/dokugeki/documents/r7mondai-tokutei.pdf",
+      "pdfPage": 25,
+      "sha256": "0defe12e8fb2d09caa74988d94de733666d9a5cdfec0feffea84a64052e048c3",
+      "width": 1072,
+      "height": 1516
+    },
+    {
+      "path": "data/qualification-staging/dokugeki-chiba/assets/2025-tokutei-p26.webp",
+      "pdfUrl": "https://www.pref.chiba.lg.jp/yakumu/dokugeki/documents/r7mondai-tokutei.pdf",
+      "pdfPage": 26,
+      "sha256": "d63241bd0e669a3ba4fd6754dd7f084b5c23c2d71a6cc2703508c39f13e28ad7",
+      "width": 1072,
+      "height": 1516
+    },
+    {
+      "path": "data/qualification-staging/dokugeki-chiba/assets/2025-tokutei-p27.webp",
+      "pdfUrl": "https://www.pref.chiba.lg.jp/yakumu/dokugeki/documents/r7mondai-tokutei.pdf",
+      "pdfPage": 27,
+      "sha256": "6c1c74e056f2406170eacc92240b86943cde9f3d49d8e0c447ae86aea3f752a8",
+      "width": 1072,
+      "height": 1516
+    },
+    {
+      "path": "data/qualification-staging/dokugeki-chiba/assets/2025-tokutei-p28.webp",
+      "pdfUrl": "https://www.pref.chiba.lg.jp/yakumu/dokugeki/documents/r7mondai-tokutei.pdf",
+      "pdfPage": 28,
+      "sha256": "379e911926e0de43eabdc0a865d58a25408b86a3fe85c45072c3e63d6c79acaa",
+      "width": 1072,
+      "height": 1516
+    },
+    {
+      "path": "data/qualification-staging/dokugeki-chiba/assets/2025-tokutei-p29.webp",
+      "pdfUrl": "https://www.pref.chiba.lg.jp/yakumu/dokugeki/documents/r7mondai-tokutei.pdf",
+      "pdfPage": 29,
+      "sha256": "67c6d0a89d6d4f0aac79cc6b6f3c1b38462a2430c2b6e06f2877f615d54517c5",
+      "width": 1072,
+      "height": 1516
+    },
+    {
+      "path": "data/qualification-staging/dokugeki-chiba/assets/2025-tokutei-p30.webp",
+      "pdfUrl": "https://www.pref.chiba.lg.jp/yakumu/dokugeki/documents/r7mondai-tokutei.pdf",
+      "pdfPage": 30,
+      "sha256": "acbaa2158853cef6935fbfe46f8a9542e2f81adf63faaea3ca3410b7914bb538",
+      "width": 1072,
+      "height": 1516
+    },
+    {
+      "path": "data/qualification-staging/dokugeki-chiba/assets/2025-tokutei-p31.webp",
+      "pdfUrl": "https://www.pref.chiba.lg.jp/yakumu/dokugeki/documents/r7mondai-tokutei.pdf",
+      "pdfPage": 31,
+      "sha256": "7be50fe343264a136d1ab903aec85c5a28f5dc2ed869d2b36ab83d4d86fb2898",
+      "width": 1072,
+      "height": 1516
+    },
+    {
+      "path": "data/qualification-staging/dokugeki-chiba/assets/2025-tokutei-p32.webp",
+      "pdfUrl": "https://www.pref.chiba.lg.jp/yakumu/dokugeki/documents/r7mondai-tokutei.pdf",
+      "pdfPage": 32,
+      "sha256": "ba5a158e7367883c2e1206d1c8517776f9277bcbf36323c5f48df24a7d0ad9d7",
+      "width": 1072,
+      "height": 1516
+    },
+    {
+      "path": "data/qualification-staging/dokugeki-chiba/assets/2025-tokutei-p33.webp",
+      "pdfUrl": "https://www.pref.chiba.lg.jp/yakumu/dokugeki/documents/r7mondai-tokutei.pdf",
+      "pdfPage": 33,
+      "sha256": "400715c49889cb7070d67ee1189f82caf68b1f6d852a9de9cabfa11210ced011",
+      "width": 1072,
+      "height": 1516
+    },
+    {
+      "path": "data/qualification-staging/dokugeki-chiba/assets/2025-tokutei-p34.webp",
+      "pdfUrl": "https://www.pref.chiba.lg.jp/yakumu/dokugeki/documents/r7mondai-tokutei.pdf",
+      "pdfPage": 34,
+      "sha256": "79dda879ff56eb6d575a4df23da71f8b9041e02a0e65e1f72f8e55b0531e8a10",
+      "width": 1072,
+      "height": 1516
+    },
+    {
+      "path": "data/qualification-staging/dokugeki-chiba/assets/2025-tokutei-p35.webp",
+      "pdfUrl": "https://www.pref.chiba.lg.jp/yakumu/dokugeki/documents/r7mondai-tokutei.pdf",
+      "pdfPage": 35,
+      "sha256": "f3ec31f2eef9183529867d53ee46ac8460f32ec6dbb862f9f1410179a8044eaa",
+      "width": 1072,
+      "height": 1516
+    },
+    {
+      "path": "data/qualification-staging/dokugeki-chiba/assets/2025-tokutei-p36.webp",
+      "pdfUrl": "https://www.pref.chiba.lg.jp/yakumu/dokugeki/documents/r7mondai-tokutei.pdf",
+      "pdfPage": 36,
+      "sha256": "85f771ca91d56e848b25ee7cc92fb34bae89fd1a0a0a6e141d9a126a0458b947",
+      "width": 1072,
+      "height": 1516
+    },
+    {
+      "path": "data/qualification-staging/dokugeki-chiba/assets/2025-tokutei-p37.webp",
+      "pdfUrl": "https://www.pref.chiba.lg.jp/yakumu/dokugeki/documents/r7mondai-tokutei.pdf",
+      "pdfPage": 37,
+      "sha256": "197ffafc16c2e57878a5ad64fc8216d596e1986609a75e1acd13b7d2c9553a42",
+      "width": 1072,
+      "height": 1516
+    },
+    {
+      "path": "data/qualification-staging/dokugeki-chiba/assets/2025-tokutei-p38.webp",
+      "pdfUrl": "https://www.pref.chiba.lg.jp/yakumu/dokugeki/documents/r7mondai-tokutei.pdf",
+      "pdfPage": 38,
+      "sha256": "215941d1e3073f6a97e6b0746f674a356910cf24ac249602d33397e7a627866a",
+      "width": 1072,
+      "height": 1516
+    },
+    {
+      "path": "data/qualification-staging/dokugeki-chiba/assets/2025-tokutei-p39.webp",
+      "pdfUrl": "https://www.pref.chiba.lg.jp/yakumu/dokugeki/documents/r7mondai-tokutei.pdf",
+      "pdfPage": 39,
+      "sha256": "0aef5d2ecdb37f7e7216a4b7f2df94ec076423135e513f211a6f83a6a99d5113",
+      "width": 1072,
+      "height": 1516
+    },
+    {
+      "path": "data/qualification-staging/dokugeki-chiba/assets/2025-tokutei-p40.webp",
+      "pdfUrl": "https://www.pref.chiba.lg.jp/yakumu/dokugeki/documents/r7mondai-tokutei.pdf",
+      "pdfPage": 40,
+      "sha256": "32ac7ee88f351258cf4988ced814dd6adbca41efeb63b6fd5b31beb2a769ba9c",
+      "width": 1072,
+      "height": 1516
+    },
+    {
+      "path": "data/qualification-staging/dokugeki-chiba/assets/2026-ippan-p03.webp",
+      "pdfUrl": "https://www.pref.chiba.lg.jp/yakumu/dokugeki/documents/r8mondai1-ippan.pdf",
+      "pdfPage": 3,
+      "sha256": "55c30e5a92d538dc0ca19b6db4738016099e0a4e2641585452c13c1519a26df9",
+      "width": 1072,
+      "height": 1516
+    },
+    {
+      "path": "data/qualification-staging/dokugeki-chiba/assets/2026-ippan-p04.webp",
+      "pdfUrl": "https://www.pref.chiba.lg.jp/yakumu/dokugeki/documents/r8mondai1-ippan.pdf",
+      "pdfPage": 4,
+      "sha256": "1aeaa9c11e43627917c0bf1109d285b7fd64d33f6f2c147e2e1e62d345e1942f",
+      "width": 1072,
+      "height": 1516
+    },
+    {
+      "path": "data/qualification-staging/dokugeki-chiba/assets/2026-ippan-p05.webp",
+      "pdfUrl": "https://www.pref.chiba.lg.jp/yakumu/dokugeki/documents/r8mondai1-ippan.pdf",
+      "pdfPage": 5,
+      "sha256": "6a11110c42a5ebd88c490087b754973a3313d30b2079d77aa2373cba77aa64ed",
+      "width": 1072,
+      "height": 1516
+    },
+    {
+      "path": "data/qualification-staging/dokugeki-chiba/assets/2026-ippan-p06.webp",
+      "pdfUrl": "https://www.pref.chiba.lg.jp/yakumu/dokugeki/documents/r8mondai1-ippan.pdf",
+      "pdfPage": 6,
+      "sha256": "f80414ec4966eac6e2ba6698588b4fce6d49fdf66c402df5906905a91586ac6a",
+      "width": 1072,
+      "height": 1516
+    },
+    {
+      "path": "data/qualification-staging/dokugeki-chiba/assets/2026-ippan-p07.webp",
+      "pdfUrl": "https://www.pref.chiba.lg.jp/yakumu/dokugeki/documents/r8mondai1-ippan.pdf",
+      "pdfPage": 7,
+      "sha256": "9445f89df2dfbd2c07f12ee88863338c3db4dcc4911b31dd57e520ebb416ce8e",
+      "width": 1072,
+      "height": 1516
+    },
+    {
+      "path": "data/qualification-staging/dokugeki-chiba/assets/2026-ippan-p08.webp",
+      "pdfUrl": "https://www.pref.chiba.lg.jp/yakumu/dokugeki/documents/r8mondai1-ippan.pdf",
+      "pdfPage": 8,
+      "sha256": "856018c728e4249681e66ef2f38c995dc9dc0a35e5e8d6193c15a691860f5d9b",
+      "width": 1072,
+      "height": 1516
+    },
+    {
+      "path": "data/qualification-staging/dokugeki-chiba/assets/2026-ippan-p09.webp",
+      "pdfUrl": "https://www.pref.chiba.lg.jp/yakumu/dokugeki/documents/r8mondai1-ippan.pdf",
+      "pdfPage": 9,
+      "sha256": "564e33f0b223a01286466ee69f36c8b2712414f5b632576d7c311e7aee2cba7f",
+      "width": 1072,
+      "height": 1516
+    },
+    {
+      "path": "data/qualification-staging/dokugeki-chiba/assets/2026-ippan-p10.webp",
+      "pdfUrl": "https://www.pref.chiba.lg.jp/yakumu/dokugeki/documents/r8mondai1-ippan.pdf",
+      "pdfPage": 10,
+      "sha256": "2a46628d28bd7499d4d1da62779ccd17ba8d6c4268a9a2ec2fcba632e58d08b3",
+      "width": 1072,
+      "height": 1516
+    },
+    {
+      "path": "data/qualification-staging/dokugeki-chiba/assets/2026-ippan-p11.webp",
+      "pdfUrl": "https://www.pref.chiba.lg.jp/yakumu/dokugeki/documents/r8mondai1-ippan.pdf",
+      "pdfPage": 11,
+      "sha256": "52eeb03f3fed3467cc18d6de9800c9f0ac1aa58b332f7b8290b1c232054d213d",
+      "width": 1072,
+      "height": 1516
+    },
+    {
+      "path": "data/qualification-staging/dokugeki-chiba/assets/2026-ippan-p12.webp",
+      "pdfUrl": "https://www.pref.chiba.lg.jp/yakumu/dokugeki/documents/r8mondai1-ippan.pdf",
+      "pdfPage": 12,
+      "sha256": "196f3124aed9bf103a13d620c1c0c22d4ffd20a2b848627240036a210cce1abc",
+      "width": 1072,
+      "height": 1516
+    },
+    {
+      "path": "data/qualification-staging/dokugeki-chiba/assets/2026-ippan-p13.webp",
+      "pdfUrl": "https://www.pref.chiba.lg.jp/yakumu/dokugeki/documents/r8mondai1-ippan.pdf",
+      "pdfPage": 13,
+      "sha256": "60eb886b3b01971a655712761dacc24d5b89a5eb779daee00bcbbc1d0c10b49c",
+      "width": 1072,
+      "height": 1516
+    },
+    {
+      "path": "data/qualification-staging/dokugeki-chiba/assets/2026-ippan-p14.webp",
+      "pdfUrl": "https://www.pref.chiba.lg.jp/yakumu/dokugeki/documents/r8mondai1-ippan.pdf",
+      "pdfPage": 14,
+      "sha256": "b93e9983ec6fd5f2c10275e252ae9476c75a3b22927db68ff6beb5b99a172999",
+      "width": 1072,
+      "height": 1516
+    },
+    {
+      "path": "data/qualification-staging/dokugeki-chiba/assets/2026-ippan-p15.webp",
+      "pdfUrl": "https://www.pref.chiba.lg.jp/yakumu/dokugeki/documents/r8mondai1-ippan.pdf",
+      "pdfPage": 15,
+      "sha256": "71a64bc73b585e6533f7715588388c0cb0d07da8f0c4ed764ab0e8cf2f002c32",
+      "width": 1072,
+      "height": 1516
+    },
+    {
+      "path": "data/qualification-staging/dokugeki-chiba/assets/2026-ippan-p16.webp",
+      "pdfUrl": "https://www.pref.chiba.lg.jp/yakumu/dokugeki/documents/r8mondai1-ippan.pdf",
+      "pdfPage": 16,
+      "sha256": "0166af5003d00fb812ac9f2ea5e619a3282f9e94f81c167c63d31aefdbd3e23b",
+      "width": 1072,
+      "height": 1516
+    },
+    {
+      "path": "data/qualification-staging/dokugeki-chiba/assets/2026-ippan-p17.webp",
+      "pdfUrl": "https://www.pref.chiba.lg.jp/yakumu/dokugeki/documents/r8mondai1-ippan.pdf",
+      "pdfPage": 17,
+      "sha256": "c6c21a67fdcadbecb58c3b2c2cf1828c0e1451bd614df695fce6425a6352d43f",
+      "width": 1072,
+      "height": 1516
+    },
+    {
+      "path": "data/qualification-staging/dokugeki-chiba/assets/2026-ippan-p18.webp",
+      "pdfUrl": "https://www.pref.chiba.lg.jp/yakumu/dokugeki/documents/r8mondai1-ippan.pdf",
+      "pdfPage": 18,
+      "sha256": "b50d5dde6fe4e6fd373bfdc9198863378823e6a6edcc274db1f542ee7f5a35fe",
+      "width": 1072,
+      "height": 1516
+    },
+    {
+      "path": "data/qualification-staging/dokugeki-chiba/assets/2026-ippan-p19.webp",
+      "pdfUrl": "https://www.pref.chiba.lg.jp/yakumu/dokugeki/documents/r8mondai1-ippan.pdf",
+      "pdfPage": 19,
+      "sha256": "d8d73814d4058d303ba34026334619a860c29cf6cdfe1df50b737448e111a009",
+      "width": 1072,
+      "height": 1516
+    },
+    {
+      "path": "data/qualification-staging/dokugeki-chiba/assets/2026-ippan-p20.webp",
+      "pdfUrl": "https://www.pref.chiba.lg.jp/yakumu/dokugeki/documents/r8mondai1-ippan.pdf",
+      "pdfPage": 20,
+      "sha256": "3cf9a36c4dbcd351bb732957d9d1ce167bd928673421103b968a8e21e276f2c5",
+      "width": 1072,
+      "height": 1516
+    },
+    {
+      "path": "data/qualification-staging/dokugeki-chiba/assets/2026-ippan-p21.webp",
+      "pdfUrl": "https://www.pref.chiba.lg.jp/yakumu/dokugeki/documents/r8mondai1-ippan.pdf",
+      "pdfPage": 21,
+      "sha256": "4b433ab6a50788eb7c0b745cd28d902b21f6acf72fef222cea72f3c64ca5483b",
+      "width": 1072,
+      "height": 1516
+    },
+    {
+      "path": "data/qualification-staging/dokugeki-chiba/assets/2026-ippan-p22.webp",
+      "pdfUrl": "https://www.pref.chiba.lg.jp/yakumu/dokugeki/documents/r8mondai1-ippan.pdf",
+      "pdfPage": 22,
+      "sha256": "1edd2372c76cf323c79f98a4a9c0544ec64666d5f41fa602672a40988d22595e",
+      "width": 1072,
+      "height": 1516
+    },
+    {
+      "path": "data/qualification-staging/dokugeki-chiba/assets/2026-ippan-p23.webp",
+      "pdfUrl": "https://www.pref.chiba.lg.jp/yakumu/dokugeki/documents/r8mondai1-ippan.pdf",
+      "pdfPage": 23,
+      "sha256": "ba8c3338a26e0e403ea0672ca34242fea72cc63134906995bdc0a3b65974cbe4",
+      "width": 1072,
+      "height": 1516
+    },
+    {
+      "path": "data/qualification-staging/dokugeki-chiba/assets/2026-ippan-p24.webp",
+      "pdfUrl": "https://www.pref.chiba.lg.jp/yakumu/dokugeki/documents/r8mondai1-ippan.pdf",
+      "pdfPage": 24,
+      "sha256": "229f43b336b20b24caebdb271e6f3baf77ea0e9fe361376fe7734d313a3b34cc",
+      "width": 1072,
+      "height": 1516
+    },
+    {
+      "path": "data/qualification-staging/dokugeki-chiba/assets/2026-ippan-p25.webp",
+      "pdfUrl": "https://www.pref.chiba.lg.jp/yakumu/dokugeki/documents/r8mondai1-ippan.pdf",
+      "pdfPage": 25,
+      "sha256": "0ba105193d270de9e3bb77b15516be2f4779f3c5aa6b8b4c443855d7d0e3b3c4",
+      "width": 1072,
+      "height": 1516
+    },
+    {
+      "path": "data/qualification-staging/dokugeki-chiba/assets/2026-ippan-p26.webp",
+      "pdfUrl": "https://www.pref.chiba.lg.jp/yakumu/dokugeki/documents/r8mondai1-ippan.pdf",
+      "pdfPage": 26,
+      "sha256": "9b1642cb4358d0314e7ae2ef06b1aa9172cc2086204a1078e8222998033ae838",
+      "width": 1072,
+      "height": 1516
+    },
+    {
+      "path": "data/qualification-staging/dokugeki-chiba/assets/2026-ippan-p27.webp",
+      "pdfUrl": "https://www.pref.chiba.lg.jp/yakumu/dokugeki/documents/r8mondai1-ippan.pdf",
+      "pdfPage": 27,
+      "sha256": "998d0359853fc9afcb5c65e87700a50597b7bb90506fa7253747673d5fecae37",
+      "width": 1072,
+      "height": 1516
+    },
+    {
+      "path": "data/qualification-staging/dokugeki-chiba/assets/2026-ippan-p28.webp",
+      "pdfUrl": "https://www.pref.chiba.lg.jp/yakumu/dokugeki/documents/r8mondai1-ippan.pdf",
+      "pdfPage": 28,
+      "sha256": "3233b1e4c397d4f71b6e9da711889cdef3a7adf2cf34ee0bab28c8af8c07c9b2",
+      "width": 1072,
+      "height": 1516
+    },
+    {
+      "path": "data/qualification-staging/dokugeki-chiba/assets/2026-ippan-p29.webp",
+      "pdfUrl": "https://www.pref.chiba.lg.jp/yakumu/dokugeki/documents/r8mondai1-ippan.pdf",
+      "pdfPage": 29,
+      "sha256": "8d68ddea9502bbd28165a26bee325770ec74583290cfda10192aac237d6a39a3",
+      "width": 1072,
+      "height": 1516
+    },
+    {
+      "path": "data/qualification-staging/dokugeki-chiba/assets/2026-ippan-p30.webp",
+      "pdfUrl": "https://www.pref.chiba.lg.jp/yakumu/dokugeki/documents/r8mondai1-ippan.pdf",
+      "pdfPage": 30,
+      "sha256": "15ac2a3e68fdf3d2a1cc2bf4850ca572d13d4b3e6b8e2fac86d3b479f08d0e03",
+      "width": 1072,
+      "height": 1516
+    },
+    {
+      "path": "data/qualification-staging/dokugeki-chiba/assets/2026-ippan-p31.webp",
+      "pdfUrl": "https://www.pref.chiba.lg.jp/yakumu/dokugeki/documents/r8mondai1-ippan.pdf",
+      "pdfPage": 31,
+      "sha256": "7b77b957767d44167e5a516204e19c16c4fe094e3c57361c66f629a71c1a9f1c",
+      "width": 1072,
+      "height": 1516
+    },
+    {
+      "path": "data/qualification-staging/dokugeki-chiba/assets/2026-ippan-p32.webp",
+      "pdfUrl": "https://www.pref.chiba.lg.jp/yakumu/dokugeki/documents/r8mondai1-ippan.pdf",
+      "pdfPage": 32,
+      "sha256": "4c14fd51a6abbd2676116dfb7bc87ba208f0c70b2fc43cce1b1f6152812efbf6",
+      "width": 1072,
+      "height": 1516
+    },
+    {
+      "path": "data/qualification-staging/dokugeki-chiba/assets/2026-ippan-p33.webp",
+      "pdfUrl": "https://www.pref.chiba.lg.jp/yakumu/dokugeki/documents/r8mondai1-ippan.pdf",
+      "pdfPage": 33,
+      "sha256": "567f7212eeaa0ca915b2d12867f646a74cbe05c1e9804145fec38b19a8fb9299",
+      "width": 1072,
+      "height": 1516
+    },
+    {
+      "path": "data/qualification-staging/dokugeki-chiba/assets/2026-ippan-p34.webp",
+      "pdfUrl": "https://www.pref.chiba.lg.jp/yakumu/dokugeki/documents/r8mondai1-ippan.pdf",
+      "pdfPage": 34,
+      "sha256": "5c6d344f42e7ad4876a1be10259104533dd27c6a74491a4f3d8ab4c4742eb919",
+      "width": 1072,
+      "height": 1516
+    },
+    {
+      "path": "data/qualification-staging/dokugeki-chiba/assets/2026-ippan-p35.webp",
+      "pdfUrl": "https://www.pref.chiba.lg.jp/yakumu/dokugeki/documents/r8mondai1-ippan.pdf",
+      "pdfPage": 35,
+      "sha256": "6bc426b470a78eaa2dd1f5618274eb3d54ca23dfd07495f3f74e04de20f3f1cd",
+      "width": 1072,
+      "height": 1516
+    },
+    {
+      "path": "data/qualification-staging/dokugeki-chiba/assets/2026-ippan-p36.webp",
+      "pdfUrl": "https://www.pref.chiba.lg.jp/yakumu/dokugeki/documents/r8mondai1-ippan.pdf",
+      "pdfPage": 36,
+      "sha256": "113f76ebaf24da66d0ecac77d647a2958e348aee079499711c6cc10d830a0f0f",
+      "width": 1072,
+      "height": 1516
+    },
+    {
+      "path": "data/qualification-staging/dokugeki-chiba/assets/2026-ippan-p37.webp",
+      "pdfUrl": "https://www.pref.chiba.lg.jp/yakumu/dokugeki/documents/r8mondai1-ippan.pdf",
+      "pdfPage": 37,
+      "sha256": "a5a9e6c4b48493a43229cfc1013b1249addef5bb18c442f4c7cdd6dee573016c",
+      "width": 1072,
+      "height": 1516
+    },
+    {
+      "path": "data/qualification-staging/dokugeki-chiba/assets/2026-ippan-p38.webp",
+      "pdfUrl": "https://www.pref.chiba.lg.jp/yakumu/dokugeki/documents/r8mondai1-ippan.pdf",
+      "pdfPage": 38,
+      "sha256": "bfab99c507646ec9a3ff8609388f207645ad406eb06facaa459187f03a1a31d3",
+      "width": 1072,
+      "height": 1516
+    },
+    {
+      "path": "data/qualification-staging/dokugeki-chiba/assets/2026-nougyou-p03.webp",
+      "pdfUrl": "https://www.pref.chiba.lg.jp/yakumu/dokugeki/documents/r8mondai2-nougyou.pdf",
+      "pdfPage": 3,
+      "sha256": "55c30e5a92d538dc0ca19b6db4738016099e0a4e2641585452c13c1519a26df9",
+      "width": 1072,
+      "height": 1516
+    },
+    {
+      "path": "data/qualification-staging/dokugeki-chiba/assets/2026-nougyou-p04.webp",
+      "pdfUrl": "https://www.pref.chiba.lg.jp/yakumu/dokugeki/documents/r8mondai2-nougyou.pdf",
+      "pdfPage": 4,
+      "sha256": "1aeaa9c11e43627917c0bf1109d285b7fd64d33f6f2c147e2e1e62d345e1942f",
+      "width": 1072,
+      "height": 1516
+    },
+    {
+      "path": "data/qualification-staging/dokugeki-chiba/assets/2026-nougyou-p05.webp",
+      "pdfUrl": "https://www.pref.chiba.lg.jp/yakumu/dokugeki/documents/r8mondai2-nougyou.pdf",
+      "pdfPage": 5,
+      "sha256": "6a11110c42a5ebd88c490087b754973a3313d30b2079d77aa2373cba77aa64ed",
+      "width": 1072,
+      "height": 1516
+    },
+    {
+      "path": "data/qualification-staging/dokugeki-chiba/assets/2026-nougyou-p06.webp",
+      "pdfUrl": "https://www.pref.chiba.lg.jp/yakumu/dokugeki/documents/r8mondai2-nougyou.pdf",
+      "pdfPage": 6,
+      "sha256": "f80414ec4966eac6e2ba6698588b4fce6d49fdf66c402df5906905a91586ac6a",
+      "width": 1072,
+      "height": 1516
+    },
+    {
+      "path": "data/qualification-staging/dokugeki-chiba/assets/2026-nougyou-p07.webp",
+      "pdfUrl": "https://www.pref.chiba.lg.jp/yakumu/dokugeki/documents/r8mondai2-nougyou.pdf",
+      "pdfPage": 7,
+      "sha256": "9445f89df2dfbd2c07f12ee88863338c3db4dcc4911b31dd57e520ebb416ce8e",
+      "width": 1072,
+      "height": 1516
+    },
+    {
+      "path": "data/qualification-staging/dokugeki-chiba/assets/2026-nougyou-p08.webp",
+      "pdfUrl": "https://www.pref.chiba.lg.jp/yakumu/dokugeki/documents/r8mondai2-nougyou.pdf",
+      "pdfPage": 8,
+      "sha256": "856018c728e4249681e66ef2f38c995dc9dc0a35e5e8d6193c15a691860f5d9b",
+      "width": 1072,
+      "height": 1516
+    },
+    {
+      "path": "data/qualification-staging/dokugeki-chiba/assets/2026-nougyou-p09.webp",
+      "pdfUrl": "https://www.pref.chiba.lg.jp/yakumu/dokugeki/documents/r8mondai2-nougyou.pdf",
+      "pdfPage": 9,
+      "sha256": "564e33f0b223a01286466ee69f36c8b2712414f5b632576d7c311e7aee2cba7f",
+      "width": 1072,
+      "height": 1516
+    },
+    {
+      "path": "data/qualification-staging/dokugeki-chiba/assets/2026-nougyou-p10.webp",
+      "pdfUrl": "https://www.pref.chiba.lg.jp/yakumu/dokugeki/documents/r8mondai2-nougyou.pdf",
+      "pdfPage": 10,
+      "sha256": "2a46628d28bd7499d4d1da62779ccd17ba8d6c4268a9a2ec2fcba632e58d08b3",
+      "width": 1072,
+      "height": 1516
+    },
+    {
+      "path": "data/qualification-staging/dokugeki-chiba/assets/2026-nougyou-p11.webp",
+      "pdfUrl": "https://www.pref.chiba.lg.jp/yakumu/dokugeki/documents/r8mondai2-nougyou.pdf",
+      "pdfPage": 11,
+      "sha256": "52eeb03f3fed3467cc18d6de9800c9f0ac1aa58b332f7b8290b1c232054d213d",
+      "width": 1072,
+      "height": 1516
+    },
+    {
+      "path": "data/qualification-staging/dokugeki-chiba/assets/2026-nougyou-p12.webp",
+      "pdfUrl": "https://www.pref.chiba.lg.jp/yakumu/dokugeki/documents/r8mondai2-nougyou.pdf",
+      "pdfPage": 12,
+      "sha256": "196f3124aed9bf103a13d620c1c0c22d4ffd20a2b848627240036a210cce1abc",
+      "width": 1072,
+      "height": 1516
+    },
+    {
+      "path": "data/qualification-staging/dokugeki-chiba/assets/2026-nougyou-p13.webp",
+      "pdfUrl": "https://www.pref.chiba.lg.jp/yakumu/dokugeki/documents/r8mondai2-nougyou.pdf",
+      "pdfPage": 13,
+      "sha256": "60eb886b3b01971a655712761dacc24d5b89a5eb779daee00bcbbc1d0c10b49c",
+      "width": 1072,
+      "height": 1516
+    },
+    {
+      "path": "data/qualification-staging/dokugeki-chiba/assets/2026-nougyou-p14.webp",
+      "pdfUrl": "https://www.pref.chiba.lg.jp/yakumu/dokugeki/documents/r8mondai2-nougyou.pdf",
+      "pdfPage": 14,
+      "sha256": "b93e9983ec6fd5f2c10275e252ae9476c75a3b22927db68ff6beb5b99a172999",
+      "width": 1072,
+      "height": 1516
+    },
+    {
+      "path": "data/qualification-staging/dokugeki-chiba/assets/2026-nougyou-p15.webp",
+      "pdfUrl": "https://www.pref.chiba.lg.jp/yakumu/dokugeki/documents/r8mondai2-nougyou.pdf",
+      "pdfPage": 15,
+      "sha256": "71a64bc73b585e6533f7715588388c0cb0d07da8f0c4ed764ab0e8cf2f002c32",
+      "width": 1072,
+      "height": 1516
+    },
+    {
+      "path": "data/qualification-staging/dokugeki-chiba/assets/2026-nougyou-p16.webp",
+      "pdfUrl": "https://www.pref.chiba.lg.jp/yakumu/dokugeki/documents/r8mondai2-nougyou.pdf",
+      "pdfPage": 16,
+      "sha256": "0166af5003d00fb812ac9f2ea5e619a3282f9e94f81c167c63d31aefdbd3e23b",
+      "width": 1072,
+      "height": 1516
+    },
+    {
+      "path": "data/qualification-staging/dokugeki-chiba/assets/2026-nougyou-p17.webp",
+      "pdfUrl": "https://www.pref.chiba.lg.jp/yakumu/dokugeki/documents/r8mondai2-nougyou.pdf",
+      "pdfPage": 17,
+      "sha256": "c6c21a67fdcadbecb58c3b2c2cf1828c0e1451bd614df695fce6425a6352d43f",
+      "width": 1072,
+      "height": 1516
+    },
+    {
+      "path": "data/qualification-staging/dokugeki-chiba/assets/2026-nougyou-p18.webp",
+      "pdfUrl": "https://www.pref.chiba.lg.jp/yakumu/dokugeki/documents/r8mondai2-nougyou.pdf",
+      "pdfPage": 18,
+      "sha256": "b50d5dde6fe4e6fd373bfdc9198863378823e6a6edcc274db1f542ee7f5a35fe",
+      "width": 1072,
+      "height": 1516
+    },
+    {
+      "path": "data/qualification-staging/dokugeki-chiba/assets/2026-nougyou-p19.webp",
+      "pdfUrl": "https://www.pref.chiba.lg.jp/yakumu/dokugeki/documents/r8mondai2-nougyou.pdf",
+      "pdfPage": 19,
+      "sha256": "d8d73814d4058d303ba34026334619a860c29cf6cdfe1df50b737448e111a009",
+      "width": 1072,
+      "height": 1516
+    },
+    {
+      "path": "data/qualification-staging/dokugeki-chiba/assets/2026-nougyou-p20.webp",
+      "pdfUrl": "https://www.pref.chiba.lg.jp/yakumu/dokugeki/documents/r8mondai2-nougyou.pdf",
+      "pdfPage": 20,
+      "sha256": "3cf9a36c4dbcd351bb732957d9d1ce167bd928673421103b968a8e21e276f2c5",
+      "width": 1072,
+      "height": 1516
+    },
+    {
+      "path": "data/qualification-staging/dokugeki-chiba/assets/2026-nougyou-p21.webp",
+      "pdfUrl": "https://www.pref.chiba.lg.jp/yakumu/dokugeki/documents/r8mondai2-nougyou.pdf",
+      "pdfPage": 21,
+      "sha256": "4b433ab6a50788eb7c0b745cd28d902b21f6acf72fef222cea72f3c64ca5483b",
+      "width": 1072,
+      "height": 1516
+    },
+    {
+      "path": "data/qualification-staging/dokugeki-chiba/assets/2026-nougyou-p22.webp",
+      "pdfUrl": "https://www.pref.chiba.lg.jp/yakumu/dokugeki/documents/r8mondai2-nougyou.pdf",
+      "pdfPage": 22,
+      "sha256": "1edd2372c76cf323c79f98a4a9c0544ec64666d5f41fa602672a40988d22595e",
+      "width": 1072,
+      "height": 1516
+    },
+    {
+      "path": "data/qualification-staging/dokugeki-chiba/assets/2026-nougyou-p23.webp",
+      "pdfUrl": "https://www.pref.chiba.lg.jp/yakumu/dokugeki/documents/r8mondai2-nougyou.pdf",
+      "pdfPage": 23,
+      "sha256": "ba8c3338a26e0e403ea0672ca34242fea72cc63134906995bdc0a3b65974cbe4",
+      "width": 1072,
+      "height": 1516
+    },
+    {
+      "path": "data/qualification-staging/dokugeki-chiba/assets/2026-nougyou-p24.webp",
+      "pdfUrl": "https://www.pref.chiba.lg.jp/yakumu/dokugeki/documents/r8mondai2-nougyou.pdf",
+      "pdfPage": 24,
+      "sha256": "229f43b336b20b24caebdb271e6f3baf77ea0e9fe361376fe7734d313a3b34cc",
+      "width": 1072,
+      "height": 1516
+    },
+    {
+      "path": "data/qualification-staging/dokugeki-chiba/assets/2026-nougyou-p25.webp",
+      "pdfUrl": "https://www.pref.chiba.lg.jp/yakumu/dokugeki/documents/r8mondai2-nougyou.pdf",
+      "pdfPage": 25,
+      "sha256": "0ba105193d270de9e3bb77b15516be2f4779f3c5aa6b8b4c443855d7d0e3b3c4",
+      "width": 1072,
+      "height": 1516
+    },
+    {
+      "path": "data/qualification-staging/dokugeki-chiba/assets/2026-nougyou-p26.webp",
+      "pdfUrl": "https://www.pref.chiba.lg.jp/yakumu/dokugeki/documents/r8mondai2-nougyou.pdf",
+      "pdfPage": 26,
+      "sha256": "9b1642cb4358d0314e7ae2ef06b1aa9172cc2086204a1078e8222998033ae838",
+      "width": 1072,
+      "height": 1516
+    },
+    {
+      "path": "data/qualification-staging/dokugeki-chiba/assets/2026-nougyou-p27.webp",
+      "pdfUrl": "https://www.pref.chiba.lg.jp/yakumu/dokugeki/documents/r8mondai2-nougyou.pdf",
+      "pdfPage": 27,
+      "sha256": "998d0359853fc9afcb5c65e87700a50597b7bb90506fa7253747673d5fecae37",
+      "width": 1072,
+      "height": 1516
+    },
+    {
+      "path": "data/qualification-staging/dokugeki-chiba/assets/2026-nougyou-p28.webp",
+      "pdfUrl": "https://www.pref.chiba.lg.jp/yakumu/dokugeki/documents/r8mondai2-nougyou.pdf",
+      "pdfPage": 28,
+      "sha256": "3233b1e4c397d4f71b6e9da711889cdef3a7adf2cf34ee0bab28c8af8c07c9b2",
+      "width": 1072,
+      "height": 1516
+    },
+    {
+      "path": "data/qualification-staging/dokugeki-chiba/assets/2026-nougyou-p29.webp",
+      "pdfUrl": "https://www.pref.chiba.lg.jp/yakumu/dokugeki/documents/r8mondai2-nougyou.pdf",
+      "pdfPage": 29,
+      "sha256": "8d68ddea9502bbd28165a26bee325770ec74583290cfda10192aac237d6a39a3",
+      "width": 1072,
+      "height": 1516
+    },
+    {
+      "path": "data/qualification-staging/dokugeki-chiba/assets/2026-nougyou-p30.webp",
+      "pdfUrl": "https://www.pref.chiba.lg.jp/yakumu/dokugeki/documents/r8mondai2-nougyou.pdf",
+      "pdfPage": 30,
+      "sha256": "908dad541dccc4b57c96f30f25c58366df42697a311c666e169168365ecf8791",
+      "width": 1072,
+      "height": 1516
+    },
+    {
+      "path": "data/qualification-staging/dokugeki-chiba/assets/2026-nougyou-p31.webp",
+      "pdfUrl": "https://www.pref.chiba.lg.jp/yakumu/dokugeki/documents/r8mondai2-nougyou.pdf",
+      "pdfPage": 31,
+      "sha256": "028dd5b556634c3a2486650a0242f6b092022550b19f2030cae604b3240e916a",
+      "width": 1072,
+      "height": 1516
+    },
+    {
+      "path": "data/qualification-staging/dokugeki-chiba/assets/2026-nougyou-p32.webp",
+      "pdfUrl": "https://www.pref.chiba.lg.jp/yakumu/dokugeki/documents/r8mondai2-nougyou.pdf",
+      "pdfPage": 32,
+      "sha256": "f328885ba64222fe8305a4ac5580bd1401a275e73455da0efcb0a7295996c352",
+      "width": 1072,
+      "height": 1516
+    },
+    {
+      "path": "data/qualification-staging/dokugeki-chiba/assets/2026-nougyou-p33.webp",
+      "pdfUrl": "https://www.pref.chiba.lg.jp/yakumu/dokugeki/documents/r8mondai2-nougyou.pdf",
+      "pdfPage": 33,
+      "sha256": "bf752e71e77033b2b71ec5cdbeaa54369fe43fb90ac30bd5958de2c5d15f9616",
+      "width": 1072,
+      "height": 1516
+    },
+    {
+      "path": "data/qualification-staging/dokugeki-chiba/assets/2026-nougyou-p34.webp",
+      "pdfUrl": "https://www.pref.chiba.lg.jp/yakumu/dokugeki/documents/r8mondai2-nougyou.pdf",
+      "pdfPage": 34,
+      "sha256": "edd72cf333079027e92b503eb17e8aecb694247e4e06899ddb507cc1069a6cc3",
+      "width": 1072,
+      "height": 1516
+    },
+    {
+      "path": "data/qualification-staging/dokugeki-chiba/assets/2026-nougyou-p35.webp",
+      "pdfUrl": "https://www.pref.chiba.lg.jp/yakumu/dokugeki/documents/r8mondai2-nougyou.pdf",
+      "pdfPage": 35,
+      "sha256": "480b1bd30ac412e5cb42a609f5e5703bb1458f489908ee9e654ac08c884ad1bf",
+      "width": 1072,
+      "height": 1516
+    },
+    {
+      "path": "data/qualification-staging/dokugeki-chiba/assets/2026-nougyou-p36.webp",
+      "pdfUrl": "https://www.pref.chiba.lg.jp/yakumu/dokugeki/documents/r8mondai2-nougyou.pdf",
+      "pdfPage": 36,
+      "sha256": "a1d79e2ce5570fee1127baae5ceddb99f76d71b9b161ea8127db4c681d111067",
+      "width": 1072,
+      "height": 1516
+    },
+    {
+      "path": "data/qualification-staging/dokugeki-chiba/assets/2026-nougyou-p37.webp",
+      "pdfUrl": "https://www.pref.chiba.lg.jp/yakumu/dokugeki/documents/r8mondai2-nougyou.pdf",
+      "pdfPage": 37,
+      "sha256": "948c0b59e27c9895a7389216cd44199467d33fc9c617850c566dfaf367366a40",
+      "width": 1072,
+      "height": 1516
+    },
+    {
+      "path": "data/qualification-staging/dokugeki-chiba/assets/2026-nougyou-p38.webp",
+      "pdfUrl": "https://www.pref.chiba.lg.jp/yakumu/dokugeki/documents/r8mondai2-nougyou.pdf",
+      "pdfPage": 38,
+      "sha256": "33c76c3f1eb1b1ce2372b4f7a68a7d0824e02a342bb7ed8b4a5971fb5bbbf7ee",
+      "width": 1072,
+      "height": 1516
+    },
+    {
+      "path": "data/qualification-staging/dokugeki-chiba/assets/2026-nougyou-p39.webp",
+      "pdfUrl": "https://www.pref.chiba.lg.jp/yakumu/dokugeki/documents/r8mondai2-nougyou.pdf",
+      "pdfPage": 39,
+      "sha256": "f25cea573610ac2799b3dcf16522b952254a7c462c7d7b5bfd851b0b4b47ce3d",
+      "width": 1072,
+      "height": 1516
+    },
+    {
+      "path": "data/qualification-staging/dokugeki-chiba/assets/2026-nougyou-p40.webp",
+      "pdfUrl": "https://www.pref.chiba.lg.jp/yakumu/dokugeki/documents/r8mondai2-nougyou.pdf",
+      "pdfPage": 40,
+      "sha256": "192c6274ef15aefda42826e72219ae547a8e42f19ef70f15d934ed8c6d536bd5",
+      "width": 1072,
+      "height": 1516
+    },
+    {
+      "path": "data/qualification-staging/dokugeki-chiba/assets/2026-nougyou-p41.webp",
+      "pdfUrl": "https://www.pref.chiba.lg.jp/yakumu/dokugeki/documents/r8mondai2-nougyou.pdf",
+      "pdfPage": 41,
+      "sha256": "8535a09d5e760632c8602b9f63556fa3e833a4f6581ade03278303becd1e3e44",
+      "width": 1072,
+      "height": 1516
+    },
+    {
+      "path": "data/qualification-staging/dokugeki-chiba/assets/2026-nougyou-p42.webp",
+      "pdfUrl": "https://www.pref.chiba.lg.jp/yakumu/dokugeki/documents/r8mondai2-nougyou.pdf",
+      "pdfPage": 42,
+      "sha256": "803503fb45082bc82a746258eaf103b13ee559cc145eb3dcc8e66d77eff421ce",
+      "width": 1072,
+      "height": 1516
+    },
+    {
+      "path": "data/qualification-staging/dokugeki-chiba/assets/2026-tokutei-p03.webp",
+      "pdfUrl": "https://www.pref.chiba.lg.jp/yakumu/dokugeki/documents/r8mondai3-tokutei.pdf",
+      "pdfPage": 3,
+      "sha256": "55c30e5a92d538dc0ca19b6db4738016099e0a4e2641585452c13c1519a26df9",
+      "width": 1072,
+      "height": 1516
+    },
+    {
+      "path": "data/qualification-staging/dokugeki-chiba/assets/2026-tokutei-p04.webp",
+      "pdfUrl": "https://www.pref.chiba.lg.jp/yakumu/dokugeki/documents/r8mondai3-tokutei.pdf",
+      "pdfPage": 4,
+      "sha256": "1aeaa9c11e43627917c0bf1109d285b7fd64d33f6f2c147e2e1e62d345e1942f",
+      "width": 1072,
+      "height": 1516
+    },
+    {
+      "path": "data/qualification-staging/dokugeki-chiba/assets/2026-tokutei-p05.webp",
+      "pdfUrl": "https://www.pref.chiba.lg.jp/yakumu/dokugeki/documents/r8mondai3-tokutei.pdf",
+      "pdfPage": 5,
+      "sha256": "6a11110c42a5ebd88c490087b754973a3313d30b2079d77aa2373cba77aa64ed",
+      "width": 1072,
+      "height": 1516
+    },
+    {
+      "path": "data/qualification-staging/dokugeki-chiba/assets/2026-tokutei-p06.webp",
+      "pdfUrl": "https://www.pref.chiba.lg.jp/yakumu/dokugeki/documents/r8mondai3-tokutei.pdf",
+      "pdfPage": 6,
+      "sha256": "f80414ec4966eac6e2ba6698588b4fce6d49fdf66c402df5906905a91586ac6a",
+      "width": 1072,
+      "height": 1516
+    },
+    {
+      "path": "data/qualification-staging/dokugeki-chiba/assets/2026-tokutei-p07.webp",
+      "pdfUrl": "https://www.pref.chiba.lg.jp/yakumu/dokugeki/documents/r8mondai3-tokutei.pdf",
+      "pdfPage": 7,
+      "sha256": "9445f89df2dfbd2c07f12ee88863338c3db4dcc4911b31dd57e520ebb416ce8e",
+      "width": 1072,
+      "height": 1516
+    },
+    {
+      "path": "data/qualification-staging/dokugeki-chiba/assets/2026-tokutei-p08.webp",
+      "pdfUrl": "https://www.pref.chiba.lg.jp/yakumu/dokugeki/documents/r8mondai3-tokutei.pdf",
+      "pdfPage": 8,
+      "sha256": "856018c728e4249681e66ef2f38c995dc9dc0a35e5e8d6193c15a691860f5d9b",
+      "width": 1072,
+      "height": 1516
+    },
+    {
+      "path": "data/qualification-staging/dokugeki-chiba/assets/2026-tokutei-p09.webp",
+      "pdfUrl": "https://www.pref.chiba.lg.jp/yakumu/dokugeki/documents/r8mondai3-tokutei.pdf",
+      "pdfPage": 9,
+      "sha256": "564e33f0b223a01286466ee69f36c8b2712414f5b632576d7c311e7aee2cba7f",
+      "width": 1072,
+      "height": 1516
+    },
+    {
+      "path": "data/qualification-staging/dokugeki-chiba/assets/2026-tokutei-p10.webp",
+      "pdfUrl": "https://www.pref.chiba.lg.jp/yakumu/dokugeki/documents/r8mondai3-tokutei.pdf",
+      "pdfPage": 10,
+      "sha256": "2a46628d28bd7499d4d1da62779ccd17ba8d6c4268a9a2ec2fcba632e58d08b3",
+      "width": 1072,
+      "height": 1516
+    },
+    {
+      "path": "data/qualification-staging/dokugeki-chiba/assets/2026-tokutei-p11.webp",
+      "pdfUrl": "https://www.pref.chiba.lg.jp/yakumu/dokugeki/documents/r8mondai3-tokutei.pdf",
+      "pdfPage": 11,
+      "sha256": "52eeb03f3fed3467cc18d6de9800c9f0ac1aa58b332f7b8290b1c232054d213d",
+      "width": 1072,
+      "height": 1516
+    },
+    {
+      "path": "data/qualification-staging/dokugeki-chiba/assets/2026-tokutei-p12.webp",
+      "pdfUrl": "https://www.pref.chiba.lg.jp/yakumu/dokugeki/documents/r8mondai3-tokutei.pdf",
+      "pdfPage": 12,
+      "sha256": "196f3124aed9bf103a13d620c1c0c22d4ffd20a2b848627240036a210cce1abc",
+      "width": 1072,
+      "height": 1516
+    },
+    {
+      "path": "data/qualification-staging/dokugeki-chiba/assets/2026-tokutei-p13.webp",
+      "pdfUrl": "https://www.pref.chiba.lg.jp/yakumu/dokugeki/documents/r8mondai3-tokutei.pdf",
+      "pdfPage": 13,
+      "sha256": "60eb886b3b01971a655712761dacc24d5b89a5eb779daee00bcbbc1d0c10b49c",
+      "width": 1072,
+      "height": 1516
+    },
+    {
+      "path": "data/qualification-staging/dokugeki-chiba/assets/2026-tokutei-p14.webp",
+      "pdfUrl": "https://www.pref.chiba.lg.jp/yakumu/dokugeki/documents/r8mondai3-tokutei.pdf",
+      "pdfPage": 14,
+      "sha256": "b93e9983ec6fd5f2c10275e252ae9476c75a3b22927db68ff6beb5b99a172999",
+      "width": 1072,
+      "height": 1516
+    },
+    {
+      "path": "data/qualification-staging/dokugeki-chiba/assets/2026-tokutei-p15.webp",
+      "pdfUrl": "https://www.pref.chiba.lg.jp/yakumu/dokugeki/documents/r8mondai3-tokutei.pdf",
+      "pdfPage": 15,
+      "sha256": "71a64bc73b585e6533f7715588388c0cb0d07da8f0c4ed764ab0e8cf2f002c32",
+      "width": 1072,
+      "height": 1516
+    },
+    {
+      "path": "data/qualification-staging/dokugeki-chiba/assets/2026-tokutei-p16.webp",
+      "pdfUrl": "https://www.pref.chiba.lg.jp/yakumu/dokugeki/documents/r8mondai3-tokutei.pdf",
+      "pdfPage": 16,
+      "sha256": "0166af5003d00fb812ac9f2ea5e619a3282f9e94f81c167c63d31aefdbd3e23b",
+      "width": 1072,
+      "height": 1516
+    },
+    {
+      "path": "data/qualification-staging/dokugeki-chiba/assets/2026-tokutei-p17.webp",
+      "pdfUrl": "https://www.pref.chiba.lg.jp/yakumu/dokugeki/documents/r8mondai3-tokutei.pdf",
+      "pdfPage": 17,
+      "sha256": "c6c21a67fdcadbecb58c3b2c2cf1828c0e1451bd614df695fce6425a6352d43f",
+      "width": 1072,
+      "height": 1516
+    },
+    {
+      "path": "data/qualification-staging/dokugeki-chiba/assets/2026-tokutei-p18.webp",
+      "pdfUrl": "https://www.pref.chiba.lg.jp/yakumu/dokugeki/documents/r8mondai3-tokutei.pdf",
+      "pdfPage": 18,
+      "sha256": "b50d5dde6fe4e6fd373bfdc9198863378823e6a6edcc274db1f542ee7f5a35fe",
+      "width": 1072,
+      "height": 1516
+    },
+    {
+      "path": "data/qualification-staging/dokugeki-chiba/assets/2026-tokutei-p19.webp",
+      "pdfUrl": "https://www.pref.chiba.lg.jp/yakumu/dokugeki/documents/r8mondai3-tokutei.pdf",
+      "pdfPage": 19,
+      "sha256": "d8d73814d4058d303ba34026334619a860c29cf6cdfe1df50b737448e111a009",
+      "width": 1072,
+      "height": 1516
+    },
+    {
+      "path": "data/qualification-staging/dokugeki-chiba/assets/2026-tokutei-p20.webp",
+      "pdfUrl": "https://www.pref.chiba.lg.jp/yakumu/dokugeki/documents/r8mondai3-tokutei.pdf",
+      "pdfPage": 20,
+      "sha256": "3cf9a36c4dbcd351bb732957d9d1ce167bd928673421103b968a8e21e276f2c5",
+      "width": 1072,
+      "height": 1516
+    },
+    {
+      "path": "data/qualification-staging/dokugeki-chiba/assets/2026-tokutei-p21.webp",
+      "pdfUrl": "https://www.pref.chiba.lg.jp/yakumu/dokugeki/documents/r8mondai3-tokutei.pdf",
+      "pdfPage": 21,
+      "sha256": "4b433ab6a50788eb7c0b745cd28d902b21f6acf72fef222cea72f3c64ca5483b",
+      "width": 1072,
+      "height": 1516
+    },
+    {
+      "path": "data/qualification-staging/dokugeki-chiba/assets/2026-tokutei-p22.webp",
+      "pdfUrl": "https://www.pref.chiba.lg.jp/yakumu/dokugeki/documents/r8mondai3-tokutei.pdf",
+      "pdfPage": 22,
+      "sha256": "1edd2372c76cf323c79f98a4a9c0544ec64666d5f41fa602672a40988d22595e",
+      "width": 1072,
+      "height": 1516
+    },
+    {
+      "path": "data/qualification-staging/dokugeki-chiba/assets/2026-tokutei-p23.webp",
+      "pdfUrl": "https://www.pref.chiba.lg.jp/yakumu/dokugeki/documents/r8mondai3-tokutei.pdf",
+      "pdfPage": 23,
+      "sha256": "ba8c3338a26e0e403ea0672ca34242fea72cc63134906995bdc0a3b65974cbe4",
+      "width": 1072,
+      "height": 1516
+    },
+    {
+      "path": "data/qualification-staging/dokugeki-chiba/assets/2026-tokutei-p24.webp",
+      "pdfUrl": "https://www.pref.chiba.lg.jp/yakumu/dokugeki/documents/r8mondai3-tokutei.pdf",
+      "pdfPage": 24,
+      "sha256": "229f43b336b20b24caebdb271e6f3baf77ea0e9fe361376fe7734d313a3b34cc",
+      "width": 1072,
+      "height": 1516
+    },
+    {
+      "path": "data/qualification-staging/dokugeki-chiba/assets/2026-tokutei-p25.webp",
+      "pdfUrl": "https://www.pref.chiba.lg.jp/yakumu/dokugeki/documents/r8mondai3-tokutei.pdf",
+      "pdfPage": 25,
+      "sha256": "0ba105193d270de9e3bb77b15516be2f4779f3c5aa6b8b4c443855d7d0e3b3c4",
+      "width": 1072,
+      "height": 1516
+    },
+    {
+      "path": "data/qualification-staging/dokugeki-chiba/assets/2026-tokutei-p26.webp",
+      "pdfUrl": "https://www.pref.chiba.lg.jp/yakumu/dokugeki/documents/r8mondai3-tokutei.pdf",
+      "pdfPage": 26,
+      "sha256": "9b1642cb4358d0314e7ae2ef06b1aa9172cc2086204a1078e8222998033ae838",
+      "width": 1072,
+      "height": 1516
+    },
+    {
+      "path": "data/qualification-staging/dokugeki-chiba/assets/2026-tokutei-p27.webp",
+      "pdfUrl": "https://www.pref.chiba.lg.jp/yakumu/dokugeki/documents/r8mondai3-tokutei.pdf",
+      "pdfPage": 27,
+      "sha256": "998d0359853fc9afcb5c65e87700a50597b7bb90506fa7253747673d5fecae37",
+      "width": 1072,
+      "height": 1516
+    },
+    {
+      "path": "data/qualification-staging/dokugeki-chiba/assets/2026-tokutei-p28.webp",
+      "pdfUrl": "https://www.pref.chiba.lg.jp/yakumu/dokugeki/documents/r8mondai3-tokutei.pdf",
+      "pdfPage": 28,
+      "sha256": "3233b1e4c397d4f71b6e9da711889cdef3a7adf2cf34ee0bab28c8af8c07c9b2",
+      "width": 1072,
+      "height": 1516
+    },
+    {
+      "path": "data/qualification-staging/dokugeki-chiba/assets/2026-tokutei-p29.webp",
+      "pdfUrl": "https://www.pref.chiba.lg.jp/yakumu/dokugeki/documents/r8mondai3-tokutei.pdf",
+      "pdfPage": 29,
+      "sha256": "8d68ddea9502bbd28165a26bee325770ec74583290cfda10192aac237d6a39a3",
+      "width": 1072,
+      "height": 1516
+    },
+    {
+      "path": "data/qualification-staging/dokugeki-chiba/assets/2026-tokutei-p30.webp",
+      "pdfUrl": "https://www.pref.chiba.lg.jp/yakumu/dokugeki/documents/r8mondai3-tokutei.pdf",
+      "pdfPage": 30,
+      "sha256": "e829a2a4d2dc8bbe4c4ce336e8188c9820267dd06295f78bdfd8d7b778b7830f",
+      "width": 1072,
+      "height": 1516
+    },
+    {
+      "path": "data/qualification-staging/dokugeki-chiba/assets/2026-tokutei-p31.webp",
+      "pdfUrl": "https://www.pref.chiba.lg.jp/yakumu/dokugeki/documents/r8mondai3-tokutei.pdf",
+      "pdfPage": 31,
+      "sha256": "68dba755c6a34143283d3e637a496da76741ba531c7880a52714c9b040ae6850",
+      "width": 1072,
+      "height": 1516
+    },
+    {
+      "path": "data/qualification-staging/dokugeki-chiba/assets/2026-tokutei-p32.webp",
+      "pdfUrl": "https://www.pref.chiba.lg.jp/yakumu/dokugeki/documents/r8mondai3-tokutei.pdf",
+      "pdfPage": 32,
+      "sha256": "5fbdd4dd5e18ac39cce417c69d744c51bec720ac97bb7734b94f13af64b95019",
+      "width": 1072,
+      "height": 1516
+    },
+    {
+      "path": "data/qualification-staging/dokugeki-chiba/assets/2026-tokutei-p33.webp",
+      "pdfUrl": "https://www.pref.chiba.lg.jp/yakumu/dokugeki/documents/r8mondai3-tokutei.pdf",
+      "pdfPage": 33,
+      "sha256": "d8dd03eb049af366c040f0605c5d6691468c1a804c371e6556d391987cee06cb",
+      "width": 1072,
+      "height": 1516
+    },
+    {
+      "path": "data/qualification-staging/dokugeki-chiba/assets/2026-tokutei-p34.webp",
+      "pdfUrl": "https://www.pref.chiba.lg.jp/yakumu/dokugeki/documents/r8mondai3-tokutei.pdf",
+      "pdfPage": 34,
+      "sha256": "fe60df97d250facafe4d8ad797c799e91dea7a70c94c4c30a67e0ba86565d152",
+      "width": 1072,
+      "height": 1516
+    },
+    {
+      "path": "data/qualification-staging/dokugeki-chiba/assets/2026-tokutei-p35.webp",
+      "pdfUrl": "https://www.pref.chiba.lg.jp/yakumu/dokugeki/documents/r8mondai3-tokutei.pdf",
+      "pdfPage": 35,
+      "sha256": "1f75b8696c8e6cb5297ecf11e23063adde568ab877908c52d646b3bf547eb855",
+      "width": 1072,
+      "height": 1516
+    },
+    {
+      "path": "data/qualification-staging/dokugeki-chiba/assets/2026-tokutei-p36.webp",
+      "pdfUrl": "https://www.pref.chiba.lg.jp/yakumu/dokugeki/documents/r8mondai3-tokutei.pdf",
+      "pdfPage": 36,
+      "sha256": "606f278a700e78e5b2c1df2a526d8da64ddbf2c957906e43a48221f142b9f6e9",
+      "width": 1072,
+      "height": 1516
+    },
+    {
+      "path": "data/qualification-staging/dokugeki-chiba/assets/2026-tokutei-p37.webp",
+      "pdfUrl": "https://www.pref.chiba.lg.jp/yakumu/dokugeki/documents/r8mondai3-tokutei.pdf",
+      "pdfPage": 37,
+      "sha256": "37c62133dca569ed1284d3ad3178d1ba17b78eb033309249728a5ff5b1f86f5b",
+      "width": 1072,
+      "height": 1516
+    },
+    {
+      "path": "data/qualification-staging/dokugeki-chiba/assets/2026-tokutei-p38.webp",
+      "pdfUrl": "https://www.pref.chiba.lg.jp/yakumu/dokugeki/documents/r8mondai3-tokutei.pdf",
+      "pdfPage": 38,
+      "sha256": "8e586711b1d328daf3a95e0d3b874c90f34882c04dfbf1e5ef8c723a8e63e54a",
+      "width": 1072,
+      "height": 1516
+    },
+    {
+      "path": "data/qualification-staging/dokugeki-chiba/assets/2026-tokutei-p39.webp",
+      "pdfUrl": "https://www.pref.chiba.lg.jp/yakumu/dokugeki/documents/r8mondai3-tokutei.pdf",
+      "pdfPage": 39,
+      "sha256": "86a9f84b5bf7873252a1f32c3065764cdb24916d88319f83b46b892e90a69ba6",
+      "width": 1072,
+      "height": 1516
+    }
+  ]
+}
