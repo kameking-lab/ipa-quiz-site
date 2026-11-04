@@ -25,6 +25,7 @@ import { FP1_QUESTIONS } from "./fp1";
 import { FP3_QUESTIONS } from "./fp3";
 import { DENKO2_QUESTIONS } from "./denko2";
 import { DENKO1_QUESTIONS } from "./denko1";
+import { SEKOU_KENCHIKU2_QUESTIONS } from "./sekou-kenchiku2";
 import { CIVIL2_QUESTIONS } from "./civil2";
 import { DENKI1_QUESTIONS } from "./denki1";
 import { KANKOJI2_QUESTIONS } from "./kankoji2";
@@ -154,6 +155,7 @@ export const QUESTIONS_BY_EXAM: Partial<Record<ExamCode, Question[]>> = {
   ...(isExamPublished("khk-reito-3") ? { "khk-reito-3": KHK_REITO_3_QUESTIONS.filter(isPracticeReadyQuestion) } : {}),
   ...(isExamPublished("khk-reito-2") ? { "khk-reito-2": KHK_REITO_2_QUESTIONS.filter(isPracticeReadyQuestion) } : {}),
   ...(isExamPublished("khk-reito-1") ? { "khk-reito-1": KHK_REITO_1_QUESTIONS.filter(isPracticeReadyQuestion) } : {}),
+  ...(isExamPublished("sekou-kenchiku2") ? { "sekou-kenchiku2": SEKOU_KENCHIKU2_QUESTIONS } : {}),
   ...(isExamPublished("kanteishi") ? { kanteishi: KANTEISHI_QUESTIONS.filter(isPracticeReadyQuestion) } : {}),
   ...(isExamPublished("kaikeishi") ? { kaikeishi: KAIKEISHI_QUESTIONS.filter(isPracticeReadyQuestion) } : {}),
   ...(isExamPublished("riku-tech2") ? { "riku-tech2": RIKU_TECH2_QUESTIONS.filter(isPracticeReadyQuestion) } : {}),

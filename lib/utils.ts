@@ -77,6 +77,7 @@ export const EXAM_LABELS: Record<string, string> = {
   denko2: "第二種電気工事士",
   denko1: "第一種電気工事士",
   takken: "宅地建物取引士",
+  "sekou-kenchiku2": "2級建築施工管理（第一次検定）",
   civil2: "2級土木施工管理技士",
   denki1: "1級電気工事施工管理（第一次検定）",
   kankoji2: "2級管工事施工管理技士",
