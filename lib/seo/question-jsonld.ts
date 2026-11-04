@@ -30,6 +30,21 @@ export function sessionLabel(session: string, exam?: ExamCode): string {
   if (parsed && (exam === "kenki1" || exam === "kenki2" || exam === "kanteishi" || exam === "kaikeishi")) return practiceSessionLabel(parsed, exam);
   if (parsed && ["gyosei", "kanri", "kansa", "rousai", "koyou", "kenpo", "kounen", "kokunen", "ippan", "sentaku", "required", "theory", "practical", "kiso", "kogaku-a", "kogaku-b", "hoki", "tiri"].includes(parsed)) return practiceSessionLabel(parsed);
   const map: Record<string, string> = {
+    "patent": "???????",
+    "design": "??",
+    "trademark": "??",
+    "treaty": "??",
+    "copyright": "????????????",
+    "dokugeki-ippan": "??",
+    "dokugeki-nougyou": "?????",
+    "dokugeki-tokutei": "????",
+    "gakka-I": "??I????",
+    "gakka-II": "??II????",
+    "gakka-III": "??III????",
+    "gakka-IV": "??IV????",
+    "yakkan": "?????",
+    "jitsumu": "??????",
+
     keikaku: "計画", "kankyo-setsubi": "環境・設備", kozo: "構造", sekou: "施工",
     gakushiki: "学識",
     hoan: "保安管理技術",

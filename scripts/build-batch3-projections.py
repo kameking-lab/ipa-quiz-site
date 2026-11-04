@@ -95,9 +95,9 @@ def project(code, q, year):
         'sourcePdfUrl': q.get('sourcePdfUrl', q.get('sourcePdfUrls', [''])[0]),
         'sourceAnswerUrl': q.get('sourceAnswerUrl'), 'sourceAttribution': q.get('sourceAttribution', q.get('attribution')),
         'license': 'INT7-owner-decision', 'publicAllowed': True, 'needsReview': False,
-        'lastUpdated': q.get('lastUpdated', '2026-11-05'), 'hasImage': bool(images),
+        'lastUpdated': q.get('lastUpdated', '2026-11-05'), 'hasImage': bool(images or q.get('choiceImageUrls')),
     }
-    for field in ['fiscalYear', 'examDate', 'officialAnswerNumber', 'officialQuestionLabel', 'requiredSelections', 'lawReferenceDate', 'originalContent', 'questionNotice', 'sourceRubies', 'choiceFactTruth', 'acceptedAnswerCombinations', 'modelAnswer', 'scoringCriteria', 'explanationSections', 'officialReferenceUrls']:
+    for field in ['fiscalYear', 'examDate', 'officialAnswerNumber', 'officialQuestionLabel', 'requiredSelections', 'lawReferenceDate', 'originalContent', 'questionNotice', 'sourceRubies', 'choiceFactTruth', 'acceptedAnswerCombinations', 'modelAnswer', 'scoringCriteria', 'explanationSections', 'officialReferenceUrls', 'isCalculation', 'sourcePresentation', 'sourceExamYear', 'sourceExamSession', 'publicationVersion']:
         if q.get(field) is not None:
             result[field] = q[field]
     if choices:
@@ -120,6 +120,10 @@ def project(code, q, year):
         result['explanation'] = result['modelAnswer']
         result['answer'] = result['modelAnswer']
         result['scoringCriteria'] = '公式解答例と独自解説を用いて自己確認します。記述・作図は自動採点しません。必須No.1と選択No.2〜5から2題が実際の解答対象です。'
+    references = list(q.get('officialReferenceUrls', [])) + list(q.get('explanationSourceUrls', []))
+    references += [r['url'] for r in q.get('explanationReferences', []) if isinstance(r, dict) and r.get('url')]
+    if references:
+        result['officialReferenceUrls'] = list(dict.fromkeys(references))
     if q.get('sourceIssue'):
         result['questionNotice'] = q['sourceIssue'] + ' ???????????????????????????????'
     assert result['question'] and result['explanation'], (code, q['id'])
