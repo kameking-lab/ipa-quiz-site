@@ -8,7 +8,6 @@ import { JsonLd } from "@/components/seo/JsonLd";
 import { ViewTracker } from "@/components/analytics/ViewTracker";
 import { BlogScrollTracker } from "@/components/blog/BlogScrollTracker";
 import { getExamQuestionCount } from "@/lib/constants/exam-question-counts";
-import { TOTAL_QUESTIONS_PUBLISHED } from "@/lib/constants/question-counts";
 import {
   getAllBlogSlugs,
   getBlogPostBySlug,
@@ -306,18 +305,19 @@ export default async function BlogArticlePage({ params }: PageProps) {
             {examLabel(post.exam)} の過去問で実戦演習する
           </h2>
           <p className="mb-3 leading-relaxed">
-            記事の内容を実戦で確認しましょう。AI コパイロット付きで分からない点はその場で解決できます。
+            記事の内容を問題と解説で確認しましょう。AI機能の利用枠と提供状態は
+            <Link href="/billing" className="underline">料金・利用条件</Link>と各機能画面で確認できます。
           </p>
           <div className="flex flex-wrap items-center gap-2">
             <Link
               href={`/quiz?mode=random&exam=${post.exam}`}
-              aria-label={`この試験を演習する（${examLabel(post.exam)}・${getExamQuestionCount(post.exam)}問・無料）`}
+              aria-label={`この試験を演習する（${examLabel(post.exam)}・${getExamQuestionCount(post.exam)}問）`}
               className="inline-flex min-h-[48px] items-center gap-1.5 rounded-full bg-sky-600 px-5 py-2 text-sm font-semibold text-white shadow-sm transition hover:bg-sky-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-500 focus-visible:ring-offset-2 focus-visible:ring-offset-background"
             >
               この試験を演習する（{getExamQuestionCount(post.exam).toLocaleString("ja-JP")}問）→
             </Link>
             <span className="inline-flex items-center gap-1 rounded-full bg-emerald-100 px-2.5 py-1 text-[11px] font-medium text-emerald-800 dark:bg-emerald-950/50 dark:text-emerald-300">
-              <span aria-hidden="true">✓</span>無料・登録不要
+              <span aria-hidden="true">✓</span>問題・解説の閲覧は無料
             </span>
             <Link
               href={`/${post.exam}`}
@@ -339,18 +339,19 @@ export default async function BlogArticlePage({ params }: PageProps) {
             過去問AI で各試験区分の対策を始める
           </h2>
           <p className="mb-3 leading-relaxed">
-            13 区分・{TOTAL_QUESTIONS_PUBLISHED.toLocaleString("ja-JP")} 問を AI コパイロット付きで学習できます。受験予定の試験区分から始めましょう。
+            公開済みの問題と解説を資格別に確認し、演習できます。AI機能の利用枠と提供状態は
+            <Link href="/billing" className="underline">料金・利用条件</Link>と各機能画面で確認してください。
           </p>
           <div className="flex flex-wrap items-center gap-2">
             <Link
               href="/"
-              aria-label="過去問演習を始める（13区分・無料登録不要）"
+              aria-label="過去問演習を始める（資格別の問題と解説）"
               className="inline-flex min-h-[48px] items-center gap-1.5 rounded-full bg-sky-600 px-5 py-2 text-sm font-semibold text-white shadow-sm transition hover:bg-sky-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-500 focus-visible:ring-offset-2 focus-visible:ring-offset-background"
             >
               過去問演習を始める →
             </Link>
             <span className="inline-flex items-center gap-1 rounded-full bg-emerald-100 px-2.5 py-1 text-[11px] font-medium text-emerald-800 dark:bg-emerald-950/50 dark:text-emerald-300">
-              <span aria-hidden="true">✓</span>無料・登録不要
+              <span aria-hidden="true">✓</span>問題・解説の閲覧は無料
             </span>
             <Link
               href="/blog"

@@ -25,6 +25,13 @@ describe("ブログ記事 → 演習 CTA — 両分岐が実在ルートを指�
     expect(source).toContain("の過去問で実戦演習する");
   });
 
+  it("問題閲覧とAIの利用条件を区別し、全資格の件数をIPA13区分の件数として広告しない", () => {
+    expect(source).not.toContain("13 区分・");
+    expect(source).not.toContain("TOTAL_QUESTIONS_PUBLISHED");
+    expect(source.match(/href="\/billing"/g)).toHaveLength(2);
+    expect(source).toContain("問題・解説の閲覧は無料");
+  });
+
   it("試験タグの無い記事は汎用の演習入口（ホーム /）へ誘導する", () => {
     expect(source).toContain("過去問演習を始める");
     // hub-branch button links to home, not a guessed exam route.
