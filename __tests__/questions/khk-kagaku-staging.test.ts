@@ -7,6 +7,7 @@ import keys from "@/data/questions/khk-kagaku/official-answer-keys.json";
 import manifest from "@/data/exam-library/source-packs/khk-kagaku/manifest.json";
 import review from "@/data/questions/khk-kagaku/review-progress.json";
 import descriptiveAnswers from "@/data/questions/khk-kagaku/official-descriptive-answer-review.json";
+import lawSources from "@/data/questions/khk-kagaku/law-explanation-sources.json";
 import { QUALIFICATION_CATALOG } from "@/lib/qualifications/catalog";
 import { QUESTIONS_BY_EXAM } from "@/data/questions";
 
@@ -58,7 +59,7 @@ describe("KHK chemistry source staging", () => {
     const questions = drafts.papers.flatMap<(typeof drafts.papers)[number]["questions"][number]>((paper) => paper.questions);
     expect(questions.filter((q) => q.transcriptionVerified)).toHaveLength(review.counts.transcriptionVerified);
     expect(questions.filter((q) => !q.transcriptionVerified)).toHaveLength(review.counts.unreviewed);
-    expect(questions.filter((q) => q.explanationWritten)).toHaveLength(129);
+    expect(questions.filter((q) => q.explanationWritten)).toHaveLength(209);
     expect(review.counts.originalQuestions).toBe(422);
     expect(review.counts.descriptiveAnswersVerified).toBe(12);
     for (const record of review.reviewedPapers) {
@@ -181,11 +182,15 @@ describe("KHK chemistry source staging", () => {
     expect(paper.questions[5].pdfPages).toEqual([7]);
   });
 
-  it("retains 129 independent explanations and all 645 choice explanations with their official keys", () => {
-    expect(review.explanationReviews).toHaveLength(129);
-    expect(review.counts.explanationWritten).toBe(129);
-    expect(review.counts.explanationPending).toBe(293);
+  it("retains 209 independent explanations and all 1045 choice explanations with their official keys", () => {
+    expect(review.explanationReviews).toHaveLength(209);
+    expect(review.counts.explanationWritten).toBe(209);
+    expect(review.counts.explanationPending).toBe(213);
     const expected = {
+      "2024-AX": [2, 4, 4, 1, 1, 2, 2, 5, 1, 5, 5, 1, 3, 4, 2, 5, 2, 1, 2, 1],
+      "2025-AX": [3, 1, 1, 4, 3, 2, 5, 5, 3, 4, 3, 4, 2, 5, 2, 2, 1, 3, 4, 1],
+      "2024-BX": [2, 4, 4, 1, 1, 2, 2, 5, 1, 5, 5, 1, 2, 5, 1, 2, 1, 4, 2, 4],
+      "2025-BX": [3, 1, 1, 4, 3, 2, 5, 5, 3, 4, 3, 5, 5, 2, 3, 1, 2, 1, 4, 1],
       "2024-AY": [1, 3, 2, 5, 2, 3, 1, 2, 3, 1, 1, 4, 1, 2, 3],
       "2025-AY": [5, 4, 1, 3, 4, 2, 1, 3, 1, 2, 5, 4, 5, 3, 2],
       "2024-BY": [3, 4, 3, 4, 5, 4, 5, 2, 4, 2, 3, 5, 2, 3, 4],
@@ -195,7 +200,7 @@ describe("KHK chemistry source staging", () => {
       "2024-CZ": [5, 3, 4, 1, 5, 1, 2, 5, 5, 5, 4, 2, 2, 3, 1, 3, 2, 4, 1, 5],
       "2025-CZ": [2, 3, 4, 5, 3, 1, 2, 3, 2, 2, 3, 1, 1, 4, 3, 5, 4, 1, 4, 5],
     };
-    expect(review.explanationReviews.every((record) => ["AY", "BY", "BZ", "CZ"].includes(record.code))).toBe(true);
+    expect(review.explanationReviews.every((record) => ["AX", "AY", "BX", "BY", "BZ", "CZ"].includes(record.code))).toBe(true);
     for (const record of review.explanationReviews) {
       const q = drafts.papers.find((p) => p.year === record.year && p.code === record.code)!.questions[record.number - 1] as unknown as Record<string, unknown>;
       expect(q.officialAnswerNumber).toBe(expected[`${record.year}-${record.code}` as keyof typeof expected][record.number - 1]);
@@ -212,6 +217,51 @@ describe("KHK chemistry source staging", () => {
     expect(22e6 * 2e-3 / (30 * 8.31 * (173 + 273.15))).toBeCloseTo(0.396, 3);
     expect(2.5 / 0.21).toBeCloseTo(11.9, 1);
     expect(2.1 * 2045 / 3891).toBeCloseTo(1.10, 2);
+  });
+
+  it("binds every AX/BX legal rationale to its dated legislation and distinguishes critical limits", () => {
+    expect(lawSources.publicAllowed).toBe(false);
+    expect(lawSources.sources).toHaveLength(12);
+    expect(new Set(lawSources.sources.map((source) => `${source.lawReferenceDate}-${source.lawId}`)).size).toBe(12);
+    for (const source of lawSources.sources) {
+      expect(source.lawRevisionId).toMatch(new RegExp(`^${source.lawId}_\\d{8}_`));
+      const effectiveDate = source.lawRevisionId.split("_")[1];
+      expect(effectiveDate <= source.lawReferenceDate.replaceAll("-", "")).toBe(true);
+      expect(source.url).toBe(`https://laws.e-gov.go.jp/law/${source.lawRevisionId}`);
+      expect(source.responseSha256).toMatch(/^[a-f0-9]{64}$/);
+    }
+    for (const p of drafts.papers.filter((paper) => ["AX", "BX"].includes(paper.code))) {
+      for (const question of p.questions) {
+        const q = question as unknown as Record<string, unknown>;
+        const explanation = q.explanationDraft as string;
+        expect(explanation).toContain(`法令基準日：${p.lawReferenceDate}`);
+        expect(explanation).toMatch(/イ：(?:正しい|誤り)。/);
+        expect(explanation).toMatch(/ロ：(?:正しい|誤り)。/);
+        expect(explanation).toMatch(/ハ：(?:正しい|誤り)。/);
+        const included = (q.choicesDraft as string[])[(q.officialAnswerNumber as number) - 1].split("、");
+        for (const label of ["イ", "ロ", "ハ"]) {
+          expect(explanation).toContain(`${label}：${included.includes(label) ? "正しい" : "誤り"}。`);
+        }
+        expect((q.explanationSourceUrls as string[]).every((url) =>
+          lawSources.sources.some((source) => source.lawReferenceDate === p.lawReferenceDate && source.url === url),
+        )).toBe(true);
+      }
+    }
+    const get = (year: number, code: string, number: number) =>
+      drafts.papers.find((p) => p.year === year && p.code === code)!.questions[number - 1] as unknown as Record<string, unknown>;
+    expect(get(2024, "AX", 6).explanationDraft).toContain("前月の末日");
+    expect(get(2025, "AX", 1).explanationDraft).toContain("15度");
+    for (const code of ["AX", "BX"]) {
+      const q = get(2025, code, 2);
+      expect(q.explanationDraft).toContain("法第3条第2項");
+      for (const choice of ["3", "4", "5"]) {
+        expect((q.choiceExplanationsDraft as Record<string, string>)[choice]).toContain("容器自体について一部の規定");
+      }
+    }
+    expect(get(2024, "AX", 19).explanationDraft).toContain("許容圧力");
+    expect(get(2025, "AX", 13).explanationDraft).toContain("耐震設計構造物");
+    expect(get(2025, "BX", 16).explanationDraft).toContain("1.5倍");
+    expect(get(2024, "BX", 12).explanationDraft).toContain("届出は要求されていない");
   });
 
   it("checks LPG calculations in absolute units and keeps unresolved material claims pending", () => {
