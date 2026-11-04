@@ -256,7 +256,7 @@ export function QuizClient({
       exam={exam}
       completionLabel={completionLabel}
       completionShareHref={completionShareHref}
-      quiet={billingGateEnabled}
+      quiet={billingGateEnabled || nativeClient()}
       onNext={handleNext}
       />
     </div>
