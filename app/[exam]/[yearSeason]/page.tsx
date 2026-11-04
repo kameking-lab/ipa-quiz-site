@@ -157,6 +157,7 @@ export default async function ExamYearSeasonPage({
       items: items.map((q) => ({
         id: q.id,
         qNumber: q.qNumber,
+        officialQuestionLabel: q.officialQuestionLabel,
         category: q.category,
         isCalculation: !!q.isCalculation,
         isPlaceholder: isPlaceholderExplanation(q),

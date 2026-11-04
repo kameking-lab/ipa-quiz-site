@@ -1,3 +1,4 @@
+import { questionNumberLabel } from "@/lib/questions/display";
 import { practiceSessionLabel } from "@/lib/questions/practice-session";
 import type { Metadata } from "next";
 import Link from "next/link";
@@ -192,7 +193,7 @@ export default async function ExamTopicPage({
                   className="group flex items-start gap-3 rounded-2xl border border-border bg-card p-4 transition-all hover:-translate-y-0.5 hover:border-primary/40 hover:shadow-md"
                 >
                   <span className="flex h-8 shrink-0 items-center justify-center rounded-lg bg-primary-soft px-2.5 text-xs font-bold text-primary-soft-foreground">
-                    {q.qNumber}
+                    {questionNumberLabel(q)}
                   </span>
                   <span className="flex-1 space-y-1.5 min-w-0">
                     <span className="flex flex-wrap items-center gap-1.5 text-xs">

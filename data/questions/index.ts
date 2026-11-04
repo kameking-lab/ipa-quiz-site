@@ -131,6 +131,16 @@ export const QUESTIONS_BY_EXAM: Partial<Record<ExamCode, Question[]>> = {
 
   ...(isExamPublished("jokaso") ? { jokaso: JOKASO_CANDIDATES.filter(isPracticeReadyQuestion) } : {}),
   ...(isExamPublished("shuwa") ? { shuwa: SHUWA_QUESTIONS.filter(isPracticeReadyQuestion) } : {}),
+import { JKEN_KATSUYO1_QUESTIONS } from "./jken-katsuyo1";
+
+import { JKEN_KATSUYO2_QUESTIONS } from "./jken-katsuyo2";
+
+import { JKEN_KATSUYO3_QUESTIONS } from "./jken-katsuyo3";
+
+export const QUESTIONS_BY_EXAM: Partial<Record<ExamCode, Question[]>> = {
+  ...(isExamPublished("jken-katsuyo3") ? { "jken-katsuyo3": JKEN_KATSUYO3_QUESTIONS } : {}),
+  ...(isExamPublished("jken-katsuyo2") ? { "jken-katsuyo2": JKEN_KATSUYO2_QUESTIONS } : {}),
+  ...(isExamPublished("jken-katsuyo1") ? { "jken-katsuyo1": JKEN_KATSUYO1_QUESTIONS } : {}),
   ...(isExamPublished("kanteishi") ? { kanteishi: KANTEISHI_QUESTIONS.filter(isPracticeReadyQuestion) } : {}),
   ...(isExamPublished("kaikeishi") ? { kaikeishi: KAIKEISHI_QUESTIONS.filter(isPracticeReadyQuestion) } : {}),
   ...(isExamPublished("riku-tech2") ? { "riku-tech2": RIKU_TECH2_QUESTIONS.filter(isPracticeReadyQuestion) } : {}),

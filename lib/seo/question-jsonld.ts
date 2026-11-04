@@ -124,6 +124,8 @@ export function buildQuestionJsonLd({
     ? { "@type": "Organization", name: "公益財団法人建築技術教育普及センター", url: "https://www.jaeic.or.jp/" }
     : q.exam === "chizai2"
     ? { "@type": "Organization", name: "知的財産教育協会", url: "https://www.kentei-info-ip-edu.org/" }
+  const questionAuthor = q.license === "SGEC-owner-authorized"
+    ? { "@type": "Organization", name: "一般財団法人職業教育・キャリア教育財団", url: "https://www.jken.sgec.or.jp/" }
     : q.exam === "kanteishi"
     ? { "@type": "GovernmentOrganization", name: q.sourcePresentation?.originalAuthor ?? "国土交通省", url: "https://www.mlit.go.jp/" }
     : q.exam === "kaikeishi"
@@ -238,6 +240,7 @@ export function buildQuestionJsonLd({
           url: "https://www.ipa.go.jp/",
         };
   const licenseUrl = q.exam === "chizai2" || q.exam === "kisho" || q.exam === "kenchiku-setsubishi"
+  const licenseUrl = q.license === "SGEC-owner-authorized"
     ? undefined
     : (q.exam === "kanteishi" || q.exam === "kaikeishi")
     ? q.sourcePresentation?.licenseUrl
