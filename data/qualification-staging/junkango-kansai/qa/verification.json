@@ -1,0 +1,31 @@
+{
+  "task": "CQ6",
+  "checkedAt": "2026-11-04",
+  "baseCommit": "bb912dfd0494f7095ec5387f9f2e53f46381cd1f",
+  "reviewedImplementationCommit": "2cdd8471339508f16d48ca216cba84696a2b676e",
+  "publicAllowed": false,
+  "checks": [
+    { "command": "pnpm exec tsx scripts/validate-junkango-kansai.ts", "exitCode": 0, "questions": 300, "choiceExplanations": 1200, "sourceRegionImages": 300 },
+    { "command": "pnpm validate:questions", "exitCode": 0, "scope": "既存公開側。未接続原稿は専用検証を使用", "questions": 34383, "failures": 0, "warnings": 20263 },
+    { "command": "pnpm typecheck", "exitCode": 0 },
+    { "command": "pnpm exec vitest run __tests__/questions/junkango-kansai-staging.test.ts __tests__/questions/qualification-expansion.test.ts", "exitCode": 0, "files": 2, "passed": 1079, "failed": 0 },
+    { "command": "pnpm exec eslint data/qualification-staging/junkango-kansai/index.ts scripts/validate-junkango-kansai.ts __tests__/questions/junkango-kansai-staging.test.ts", "exitCode": 0 },
+    { "command": "python scripts/junkango-kansai/audit_source.py --source-dir <temporary PDFs>", "exitCode": 0, "engine": "pdfplumber 0.11.10", "questions": 300, "orderedCharacters": 25349, "officialAnswerCells": 300, "receipt": "source-audit.json" },
+    { "check": "Separate-directory extraction/enrichment and byte comparison", "files": 307, "mismatches": 0 },
+    { "command": "git diff --check origin/main HEAD", "exitCode": 0 }
+  ],
+  "independentReview": {
+    "executable": "C:/Users/kanet/AppData/Roaming/npm/codex.cmd",
+    "command": "exec -m gpt-6-astra -s read-only -C C:/Users/kanet/20260522/wt-junkango-kansai --output-last-message <review-result> -",
+    "model": "gpt-6-astra",
+    "sandbox": "read-only",
+    "separateProcesses": 2,
+    "runs": [
+      { "exitCode": 0, "verdict": "FAIL", "reviewedCommit": "f8198afe1ceef4b5d7e6151e18a1ba2527fadf12", "blockers": 1, "result": "astra-review-1.json" },
+      { "exitCode": 0, "verdict": "PASS", "reviewedCommit": "2cdd8471339508f16d48ca216cba84696a2b676e", "blockers": 0, "result": "astra-review-2.json" }
+    ],
+    "note": "初回は全300問・1200肢通読等。再レビューの実施範囲と環境上の制約は結果全文に記録。専門家の公開承認とは区別。"
+  },
+  "temporaryPdfs": "レビュー完了後に削除。再検査時はsource-receipts.jsonの公式URLから通常GETで再取得する。",
+  "remainingPublicationWork": "専門家による公開前確認。公開コード登録・公開判断は本タスクの対象外。"
+}

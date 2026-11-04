@@ -18,5 +18,11 @@
   "lawReferenceDate": null,
   "normalization": ["改行・空白を整形", "検索用テキストのルビを除き原本領域画像に保持", "添字・上付き数字を本文に保持"],
   "rights": { "publicAllowed": false, "note": "本タスクは未公開原稿の追加。公開許諾・公開判断を自動的に完了したものとして扱わない。" },
-  "review": { "independent": "pending", "specialistPublicationReview": "pending" }
+  "review": {
+    "independent": "PASS",
+    "reviewedImplementationCommit": "2cdd8471339508f16d48ca216cba84696a2b676e",
+    "resultFile": "qa/astra-review-2.json",
+    "initialResultFile": "qa/astra-review-1.json",
+    "specialistPublicationReview": "pending"
+  }
 }

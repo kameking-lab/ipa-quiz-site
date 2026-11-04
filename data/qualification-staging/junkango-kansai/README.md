@@ -17,3 +17,5 @@ slug: `junkango-kansai`。COV1 B・候補4を根拠に、令和7年度（2026年
 `python scripts/junkango-kansai/audit_source.py --source-dir <一時PDFディレクトリ>`は独立のpdfplumber抽出で300問の文字の個数と空白を除いた文字順（ルビを除き意味のある小字を含む）、正答表300セルを検査する。計25,349文字と全正答セルが一致した。画像内の線画やルビの見た目はテキスト比較では検査できないため、原本画像の照合を併用する。
 
 検証：`pnpm exec tsx scripts/validate-junkango-kansai.ts`、`pnpm exec vitest run __tests__/questions/junkango-kansai-staging.test.ts`、`pnpm validate:questions`、`pnpm typecheck`。全体検証は公開側の既存データ、専用検証はこの未公開300問を対象とする。
+
+独立レビューは指定の`codex.cmd exec -m gpt-6-astra -s read-only`を別プロセスで2回実行した。初回は問88（2025年）の急性・遅発性悪心の区分に1件の指摘でFAILとなり、訂正・根拠資料・回帰テストを追加した再レビューはPASS。結果全文は`qa/astra-review-1.json`と`qa/astra-review-2.json`、実行条件と検証結果は`qa/verification.json`。PASSは未公開原稿としての受入れを意味し、専門家の公開前承認や権利許諾を代替しない。
