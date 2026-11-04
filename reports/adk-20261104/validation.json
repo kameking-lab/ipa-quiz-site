@@ -1,0 +1,98 @@
+﻿{
+    "verifiedAt":  "2026-11-04T16:13:35.1975208+09:00",
+    "base":  "cc892a8f4",
+    "implementation":  "81c6e924d",
+    "checks":  [
+                   {
+                       "command":  "corepack pnpm typecheck",
+                       "exitCode":  0,
+                       "log":  "typecheck.log"
+                   },
+                   {
+                       "command":  "corepack pnpm lint",
+                       "exitCode":  0,
+                       "errors":  0,
+                       "warnings":  8,
+                       "log":  "lint.log"
+                   },
+                   {
+                       "command":  "corepack pnpm test --maxWorkers=2",
+                       "exitCode":  0,
+                       "filesPassed":  722,
+                       "testsPassed":  7592,
+                       "testsSkipped":  2,
+                       "testsFailed":  0,
+                       "log":  "test.log"
+                   },
+                   {
+                       "command":  "corepack pnpm build",
+                       "exitCode":  0,
+                       "staticPages":  17700,
+                       "log":  "build.log"
+                   },
+                   {
+                       "command":  "Playwright adk-readiness + adsense-learning-quality selected flows, E2E_BASE_URL=http://127.0.0.1:3147, workers=2",
+                       "exitCode":  0,
+                       "passed":  9,
+                       "log":  "browser.log"
+                   }
+               ],
+    "forbiddenPathDiff":  [
+
+                          ],
+    "reactReview":  "Server components preserved; no new hook/client bundle/external calls; existing Link reused",
+    "evidence":  [
+                     {
+                         "name":  "adk-report.md",
+                         "sha256":  "15b3efc95fb6217949a2274c814928a91b4b7fdda4f4f56d06537a63db9c8524"
+                     },
+                     {
+                         "name":  "baseline.md",
+                         "sha256":  "5bfa46effee63e351b109590940e4a15a59bef7df0cab88bbd548023605a18d9"
+                     },
+                     {
+                         "name":  "browser-initial.log",
+                         "sha256":  "ce1f0252ed0e30bee88a3884ac8df7716422619cc97d6d9ad01bd0e6fa9b3132"
+                     },
+                     {
+                         "name":  "browser.log",
+                         "sha256":  "db274826e08ef73d8a53265ca1cd5321d6c01b0a00d5976d2c5a82a555c26e7d"
+                     },
+                     {
+                         "name":  "build.log",
+                         "sha256":  "65f5ab47f35fc436677b81eb2dd67c8b8cadfd336d2d9f1bf23c5a1c14e4303e"
+                     },
+                     {
+                         "name":  "corpus.json",
+                         "sha256":  "bcde16175c9349525076b26d876b4cba6aadfb915689b600d20ddc247968922c"
+                     },
+                     {
+                         "name":  "independent-review1.log",
+                         "sha256":  "b91656b873bb1f5a9b73894e0c23dd04aa0634f8b90575e59b573cfdff3f561c"
+                     },
+                     {
+                         "name":  "independent-review1.md",
+                         "sha256":  "f88e8cc72977bee10ae089eb4ec1104efa16e6f2fa1be3d909a8750a5b7b22bf"
+                     },
+                     {
+                         "name":  "lint.log",
+                         "sha256":  "a0b6068cf456b55e40b7e7e34d40fdfa55daa9abe80ca096998e0b9d222d59e3"
+                     },
+                     {
+                         "name":  "production-http.json",
+                         "sha256":  "000657e2072e987d1c2b23c6c6862fb57825da4e4f7e358039466a5426d60dda"
+                     },
+                     {
+                         "name":  "review-prompt.txt",
+                         "sha256":  "fa150b1b574676d515ed371d2355c015a5ae937956a607e366cc9e14acfd1ab5"
+                     },
+                     {
+                         "name":  "test.log",
+                         "sha256":  "7d2a99c43e822b4e13e38de658537edf95131c3e4a2412371365e10d0df7abdb"
+                     },
+                     {
+                         "name":  "typecheck.log",
+                         "sha256":  "2bfbc22d681abcf0444377d9294302085d3f30053a8c0072cf3c75a629f71b6a"
+                     }
+                 ]
+}

@@ -12,7 +12,7 @@ test("singleton category stays readable without JavaScript and points to an expl
   await expect(question).toBeVisible();
   await question.click();
   await expect(page.locator('meta[name="robots"]')).toHaveAttribute("content", "index, follow");
-  await expect(page.locator('#explanation details')).toHaveAttribute("open", "");
+  await expect(page.locator('#explanation > details')).toHaveAttribute("open", "");
   expect((await page.locator('#explanation').innerText()).length).toBeGreaterThan(30);
   expect(await page.getByRole("dialog").count()).toBe(0);
   const sitemap = await request.get("/sitemap/exams.xml");
@@ -50,7 +50,7 @@ test("fresh visitors can read the problem, reasoning and privacy contact without
   const page = await context.newPage();
   expect((await page.goto("/q/fe/2025-cbt/kamoku-b/q1"))?.status()).toBe(200);
   await expect(page.locator("main h1")).toBeVisible();
-  await expect(page.locator('#explanation details')).toHaveAttribute("open", "");
+  await expect(page.locator('#explanation > details')).toHaveAttribute("open", "");
   await expect(page.getByRole("dialog")).toHaveCount(0);
   await page.locator('#explanation').scrollIntoViewIfNeeded();
   await page.screenshot({ path: testInfo.outputPath("visible-explanation-mobile.png") });

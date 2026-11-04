@@ -11,6 +11,15 @@ import urllib.request
 from urllib.parse import urljoin, urlparse
 
 
+class Redirects(urllib.request.HTTPRedirectHandler):
+    def __init__(self):
+        self.chain = []
+
+    def redirect_request(self, req, fp, code, msg, headers, newurl):
+        self.chain.append({'url': req.full_url, 'status': code, 'location': newurl})
+        return super().redirect_request(req, fp, code, msg, headers, newurl)
+
+
 class Page(HTMLParser):
     def __init__(self):
         super().__init__()
@@ -50,8 +59,10 @@ class Page(HTMLParser):
 def fetch(url, ua='ADK-read-only-audit/1.0'):
     try:
         req = urllib.request.Request(url, headers={'User-Agent': ua})
+        redirects = Redirects()
+        opener = urllib.request.build_opener(redirects)
         try:
-            response = urllib.request.urlopen(req, timeout=45)
+            response = opener.open(req, timeout=45)
         except urllib.error.HTTPError as error:
             response = error
         body = response.read()
@@ -60,6 +71,7 @@ def fetch(url, ua='ADK-read-only-audit/1.0'):
         page.feed(html)
         main = ' '.join(' '.join(page.main).split())
         return {'url': url, 'final_url': response.url, 'status': response.status,
+                'redirects': redirects.chain,
                 'x_robots_tag': response.headers.get('X-Robots-Tag'),
                 'content_type': response.headers.get('Content-Type'),
                 'sha256': hashlib.sha256(body).hexdigest(), 'bytes': len(body),
@@ -90,8 +102,10 @@ def main():
         other = [link for link in links if '/q/' not in link and not '/quiz' in link and '?' not in link][:150]
         rows.extend(pool.map(fetch, [link for link in sample + other if link not in checked]))
     bots = [fetch(args.base + path, agent) for agent in ['Googlebot', 'Mediapartners-Google'] for path in ['/', '/robots.txt', '/q/fe/2025-cbt/kamoku-b/q1']]
+    host_checks = [fetch(url) for url in ['http://kakomon-ai.jp/', 'https://kakomon-ai.jp/', 'http://www.kakomon-ai.jp/', 'https://kakomon-ai.jp/ads.txt']]
     data = {'timestamp_utc': datetime.datetime.now(datetime.timezone.utc).isoformat(), 'base': args.base,
-            'scope': 'bounded HTTP sample, no JS/real Google IP/account access; main_chars is not a quality verdict', 'pages': rows, 'bot_user_agent_checks': bots}
+            'scope': 'bounded HTTP sample, no JS/real Google IP/account access; /sources, /exams and /adk-missing-page-20261104 are invented route probes, not extracted links; main_chars is not a quality verdict',
+            'pages': rows, 'bot_user_agent_checks': bots, 'host_checks': host_checks}
     Path(args.out).parent.mkdir(parents=True, exist_ok=True)
     Path(args.out).write_text(json.dumps(data, ensure_ascii=False, indent=2), encoding='utf-8')
     print(json.dumps({'pages': len(rows), 'statuses': {str(s): sum(r.get('status') == s for r in rows) for s in {r.get('status') for r in rows}}, 'errors': [r for r in rows if r.get('error')], 'output': args.out}, ensure_ascii=False))
