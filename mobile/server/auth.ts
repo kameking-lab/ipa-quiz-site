@@ -50,10 +50,12 @@ export async function exchange(request: Request) {
     if (!rows[0]) throw new BillingError("auth_code_expired", 401);
     const user=await prisma.user.findUnique({where:{id:rows[0].userId},select:{id:true,name:true,email:true,image:true,plan:true}});
     if(!user)throw new BillingError("auth_account_unavailable",401);
-    const reviewClaims = reviewSessionClaims(user.id);
     const boundVersion = rows[0].challenge?.split(".")[1];
+    // Observe disable/expiry before returning on a configuration mismatch, so
+    // even a PKCE-only request permanently retires the original review version.
+    if (!await reviewSessionValid({ id: user.id, reviewVersion: boundVersion })) throw new BillingError("auth_account_unavailable",401);
+    const reviewClaims = await reviewSessionClaims(user.id);
     if ((boundVersion || reviewClaims.reviewVersion) && boundVersion !== reviewClaims.reviewVersion) throw new BillingError("auth_account_unavailable",401);
-    if (!reviewSessionValid({ id: user.id, ...reviewClaims })) throw new BillingError("auth_account_unavailable",401);
     const secret = process.env.AUTH_SECRET;
     if (!secret) throw new BillingError("auth_unavailable", 503);
     const secure = url.protocol === "https:", cookie = `${secure ? "__Secure-" : ""}authjs.session-token`;

@@ -15,7 +15,7 @@ export function AppReviewSignInForm({ callbackUrl }: { callbackUrl: string }) {
     const destination = safeAuthCallback(callbackUrl);
     setPending(true); setError("");
     try {
-      const result = await signIn("app-review", { email: values.get("email"), code: values.get("code"), redirect: false, redirectTo: destination });
+      const result = await signIn("app-review", { code: values.get("code"), redirect: false, redirectTo: destination });
       form.reset();
       if (!result || result.error) setError("認証できませんでした。入力内容を確認し、時間をおいてお試しください。");
       else window.location.assign(destination);
@@ -25,8 +25,6 @@ export function AppReviewSignInForm({ callbackUrl }: { callbackUrl: string }) {
   return <details className="mt-5 border-t border-border pt-4">
     <summary>App Review 審査用ログイン</summary>
     <form onSubmit={submit} className="mt-3 flex flex-col gap-3">
-      <label htmlFor="review-email">審査用メールアドレス</label>
-      <input id="review-email" name="email" type="email" autoComplete="username" required maxLength={254} disabled={pending} className="rounded border p-2" />
       <label htmlFor="review-code">審査用コード</label>
       <input id="review-code" name="code" type="password" autoComplete="current-password" required minLength={43} maxLength={128} disabled={pending} className="rounded border p-2" />
       <Button type="submit" disabled={pending}>{pending ? "確認中…" : "審査用アカウントでログイン"}</Button>

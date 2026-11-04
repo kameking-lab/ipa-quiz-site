@@ -117,7 +117,7 @@ export default async function SignInPage({
                 hasGitHub={providerIds.has("github") && (!nativeLogin || providerIds.has("apple"))}
                 hasApple={providerIds.has("apple")}
               />
-              {nativeLogin&&!providerIds.has("apple")&&<p className="text-sm">アプリの外部ログインはAppleログインの設定後に利用できます。メールログインが表示されている場合はそちらをご利用ください。</p>}
+              {nativeLogin&&!providerIds.has("apple")&&<p className="text-sm">アプリの通常ログインはAppleログインの設定後に利用できます。審査担当者は下の審査用ログインをご利用ください。</p>}
 
               {providerIds.has("nodemailer") && (
                 <>
