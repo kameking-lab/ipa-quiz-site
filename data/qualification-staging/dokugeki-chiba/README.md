@@ -31,3 +31,27 @@ python scripts/ingest-dokugeki-chiba.py --source-dir <temporary-directory>
 
 問題PDFと正答PDFは別々に解析し、各区分1〜80の連続性と公式正答を照合する。
 再生成後は編集済み解説を適用し、検証と原問題画像の確認を行う。
+
+```powershell
+python scripts/dokugeki-chiba-editorial.py
+pnpm validate:questions --exam=dokugeki-chiba
+pnpm exec vitest run __tests__/questions/dokugeki-chiba-staging.test.ts
+pnpm typecheck
+python scripts/audit-dokugeki-chiba.py --source-dir <temporary-directory> --output reports/cq3-dokugeki-chiba/source-audit.json
+```
+
+## 採点と解説
+
+`index.ts` は未公開専用の厳密なスキーマと単一選択採点を提供する。
+1〜5以外、非整数、未回答は不正解。空欄問題も公式の解答欄番号ごとに1肢を選ぶ。
+`official-answers.json` と、別ライブラリpdfplumberで照合したテストの固定正答列を使って全480欄を確認する。
+共通40問は同年度の3区分で原文が一致するが、それぞれの公式問題・正答URLを保持する。
+全2,400肢の解説は独自作成。組合せ問題は個々の記述の正誤と各肢の誤った列を説明する。
+廃棄・事故時処理・治療の記述は、出題当時の問題・基準及び公式の選択肢対応の解説である。
+
+原文の疑義は公式採点と分ける。2025年度（40）は「化学変化」とする原文を保持し、昇華が物理変化であると解説する。
+2026年度（23）は「硫酸の官能基」という原文を保持し、公式正答4（スルホ基）とスルホン酸との区別を注記する。
+各3区分の計6欄は `needsReview=true` のまま残し、公開前の確認事項とする。
+
+`reports/cq3-dokugeki-chiba/source-audit.json` は全正答の別抽出と全228ページのRGBピクセル完全一致の検証記録。
+図表・化学式・ルビを含め、問題ページの一部を切り落とさず画像で保持する。
