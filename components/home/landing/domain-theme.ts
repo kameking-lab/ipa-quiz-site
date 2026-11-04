@@ -1,4 +1,4 @@
-import { Building2, HandHeart, HardHat, Landmark, Monitor, Zap, type LucideIcon } from "lucide-react";
+import { Building2, CarFront, HandHeart, HardHat, Landmark, Monitor, Zap, type LucideIcon } from "lucide-react";
 import type { HomeDomainId } from "@/lib/home/home-directory";
 
 export interface DomainTheme {
@@ -19,6 +19,15 @@ export interface DomainTheme {
 
 // Tailwind は文字列リテラルしか拾わないため、分野ごとのクラスをここに固定で持つ。
 export const DOMAIN_THEME: Record<HomeDomainId, DomainTheme> = {
+  automotive: {
+    icon: CarFront,
+    tile: "bg-slate-600 text-white dark:bg-slate-500",
+    accent: "text-slate-800 dark:text-slate-300",
+    card: "border-slate-200 hover:border-slate-400 dark:border-slate-900 dark:hover:border-slate-600",
+    abbr: "bg-slate-100 text-slate-800 dark:bg-slate-900/60 dark:text-slate-200",
+    chip: "border-slate-200 bg-slate-50/70 hover:border-slate-400 dark:border-slate-900 dark:bg-slate-950/30 dark:hover:border-slate-600",
+    heroChip: "border-slate-200 bg-white/80 hover:border-slate-500 dark:border-slate-800 dark:bg-slate-950/40",
+  },
   it: {
     icon: Monitor,
     tile: "bg-sky-600 text-white dark:bg-sky-500",

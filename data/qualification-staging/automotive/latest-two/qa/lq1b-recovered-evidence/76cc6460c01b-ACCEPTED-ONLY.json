@@ -1,0 +1,1412 @@
+{
+  "schemaVersion": 1,
+  "scope": "jidosha-2026-first-2-diesel-q01..q40",
+  "writtenOriginals": [
+    {
+      "id": "jidosha-2026-first-2-diesel-q03",
+      "qNumber": 3,
+      "question": "ジーゼル・ノックに関する次の文章の（イ）と（ロ）に当てはまるものとして、下の組み合わせのうち、適切なものはどれか。ジーゼル・ノックは、着火遅れ期間中の燃料噴射量が規定より（イ）なった場合や、セタン価の（ロ）軽油を使用した場合に発生しやすい。",
+      "choices": {
+        "ア": "(1) （イ）多く／（ロ）低い",
+        "イ": "(2) （イ）多く／（ロ）高い",
+        "ウ": "(3) （イ）少なく／（ロ）低い",
+        "エ": "(4) （イ）少なく／（ロ）高い"
+      },
+      "answer": "ア",
+      "officialAnswerNumber": "1",
+      "explanation": "着火遅れ中に噴射・蓄積する燃料が多く、かつセタン価が低いと着火遅れが長くなり、一斉燃焼による急激な圧力上昇でノックしやすい。",
+      "choiceExplanations": {
+        "ア": "適切。噴射量が多くセタン価が低い組み合わせは急激な予混合燃焼を招く。",
+        "イ": "誤り。セタン価が高ければ着火性が上がり着火遅れは短い。",
+        "ウ": "誤り。着火遅れ中の燃料噴射量が少なければ一斉燃焼量も減る。",
+        "エ": "誤り。少量噴射と高セタン価はいずれもノック抑制側に働く。"
+      },
+      "explanationCoverage": "full",
+      "hasImage": false,
+      "sourcePages": [
+        2
+      ],
+      "sourceFigureRequired": false,
+      "topicTags": [
+        "ディーゼルノック"
+      ],
+      "difficulty": 2,
+      "isCalculation": false,
+      "needsReview": false,
+      "reviewNotes": [],
+      "officialReferenceUrls": [],
+      "qualification": "jidousha-seibishi-gakka",
+      "session": "gakka",
+      "type": "multiple-choice",
+      "year": 2026,
+      "fiscalYear": 2026,
+      "season": "first",
+      "term": "first",
+      "subject": "2-diesel",
+      "category": "二級ジーゼル自動車",
+      "examDate": "2026-10-04",
+      "sourcePdfUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_2d.pdf",
+      "sourceAnswerUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_kai.pdf",
+      "sourceAttribution": "出典：日本自動車整備振興会連合会 令和8年度第1回自動車整備技能登録試験 二級ジーゼル自動車 No.3",
+      "officialQuestionStatus": "normal",
+      "lastUpdated": "2026-10-11",
+      "permissionVerified": false,
+      "publicGo": 0,
+      "sourcePageReferences": [
+        {
+          "physicalPage": 2,
+          "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_2d.pdf#page=2",
+          "pdfSha256": "0fd6a40925b281f48735a3d40c89c3631514ab20b44644e6ea642cf0aed5c8bd"
+        }
+      ],
+      "sourceFigureAssets": []
+    },
+    {
+      "id": "jidosha-2026-first-2-diesel-q05",
+      "qNumber": 5,
+      "question": "着火順序1－5－3－6－2－4の4サイクル直列6シリンダ・エンジンに関する次の文章の（イ）と（ロ）に当てはまるものとして、下の組み合わせのうち、適切なものはどれか。第2シリンダが圧縮行程の上死点にあり、この位置からクランクシャフトを回転方向に420°回転させたとき、吸入行程の下死点にあるのは（イ）である。その状態から第5シリンダのバルブをオーバーラップの上死点状態にするためには、クランクシャフトを回転方向に（ロ）回転させる必要がある。",
+      "choices": {
+        "ア": "(1) 第2シリンダ／300°",
+        "イ": "(2) 第2シリンダ／420°",
+        "ウ": "(3) 第6シリンダ／300°",
+        "エ": "(4) 第6シリンダ／420°"
+      },
+      "answer": "ウ",
+      "officialAnswerNumber": "3",
+      "explanation": "6気筒4サイクルの着火間隔は120°。第2気筒の圧縮上死点を基準に各気筒の行程を720°周期で追うと、420°後の吸入下死点は第6気筒、第5気筒のオーバーラップ上死点までは300°。",
+      "choiceExplanations": {
+        "ア": "誤り。第2気筒は420°後に吸入下死点ではない。",
+        "イ": "誤り。第2気筒の行程判定に加えて、残り回転角も300°となる。",
+        "ウ": "適切。着火順序の120°間隔と720°周期から第6気筒、300°と求める。",
+        "エ": "誤り。第6気筒は合うが、第5気筒のオーバーラップまで420°ではなく300°。"
+      },
+      "explanationCoverage": "full",
+      "hasImage": false,
+      "sourcePages": [
+        3
+      ],
+      "sourceFigureRequired": false,
+      "topicTags": [
+        "着火順序・行程"
+      ],
+      "difficulty": 3,
+      "isCalculation": true,
+      "needsReview": false,
+      "reviewNotes": [],
+      "officialReferenceUrls": [],
+      "qualification": "jidousha-seibishi-gakka",
+      "session": "gakka",
+      "type": "multiple-choice",
+      "year": 2026,
+      "fiscalYear": 2026,
+      "season": "first",
+      "term": "first",
+      "subject": "2-diesel",
+      "category": "二級ジーゼル自動車",
+      "examDate": "2026-10-04",
+      "sourcePdfUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_2d.pdf",
+      "sourceAnswerUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_kai.pdf",
+      "sourceAttribution": "出典：日本自動車整備振興会連合会 令和8年度第1回自動車整備技能登録試験 二級ジーゼル自動車 No.5",
+      "officialQuestionStatus": "normal",
+      "lastUpdated": "2026-10-11",
+      "permissionVerified": false,
+      "publicGo": 0,
+      "sourcePageReferences": [
+        {
+          "physicalPage": 3,
+          "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_2d.pdf#page=3",
+          "pdfSha256": "0fd6a40925b281f48735a3d40c89c3631514ab20b44644e6ea642cf0aed5c8bd"
+        }
+      ],
+      "sourceFigureAssets": []
+    },
+    {
+      "id": "jidosha-2026-first-2-diesel-q06",
+      "qNumber": 6,
+      "question": "エンジンのバルブ開閉機構に用いられているバルブ・スプリングに関する次の文章の（イ）と（ロ）に当てはまるものとして、下の組み合わせのうち、適切なものはどれか。バルブ・スプリングのうち、複式のスプリングは、ばね定数が（イ）内側（インナ）と外側（アウタ）の二つのスプリングを用いて、内側と外側のスプリングの巻き方向は（ロ）なっているのが一般的である。",
+      "choices": {
+        "ア": "(1) （イ）同じ／（ロ）逆に",
+        "イ": "(2) （イ）異なる／（ロ）逆に",
+        "ウ": "(3) （イ）同じ／（ロ）同じに",
+        "エ": "(4) （イ）異なる／（ロ）同じに"
+      },
+      "answer": "イ",
+      "officialAnswerNumber": "2",
+      "explanation": "複式スプリングは共振を避けるため内外のばね定数を異ならせ、互いに干渉した際の絡み付きを防ぐため巻き方向を逆にする。",
+      "choiceExplanations": {
+        "ア": "誤り。巻き方向は逆でよいが、ばね定数は異ならせる。",
+        "イ": "適切。内外でばね定数を変え、巻き方向を逆にする。",
+        "ウ": "誤り。ばね定数も巻き方向も一般的な複式の設定と異なる。",
+        "エ": "誤り。ばね定数は異なるが、巻き方向は逆にする。"
+      },
+      "explanationCoverage": "full",
+      "hasImage": false,
+      "sourcePages": [
+        3
+      ],
+      "sourceFigureRequired": false,
+      "topicTags": [
+        "バルブ・スプリング"
+      ],
+      "difficulty": 2,
+      "isCalculation": false,
+      "needsReview": false,
+      "reviewNotes": [],
+      "officialReferenceUrls": [],
+      "qualification": "jidousha-seibishi-gakka",
+      "session": "gakka",
+      "type": "multiple-choice",
+      "year": 2026,
+      "fiscalYear": 2026,
+      "season": "first",
+      "term": "first",
+      "subject": "2-diesel",
+      "category": "二級ジーゼル自動車",
+      "examDate": "2026-10-04",
+      "sourcePdfUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_2d.pdf",
+      "sourceAnswerUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_kai.pdf",
+      "sourceAttribution": "出典：日本自動車整備振興会連合会 令和8年度第1回自動車整備技能登録試験 二級ジーゼル自動車 No.6",
+      "officialQuestionStatus": "normal",
+      "lastUpdated": "2026-10-11",
+      "permissionVerified": false,
+      "publicGo": 0,
+      "sourcePageReferences": [
+        {
+          "physicalPage": 3,
+          "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_2d.pdf#page=3",
+          "pdfSha256": "0fd6a40925b281f48735a3d40c89c3631514ab20b44644e6ea642cf0aed5c8bd"
+        }
+      ],
+      "sourceFigureAssets": []
+    },
+    {
+      "id": "jidosha-2026-first-2-diesel-q07",
+      "qNumber": 7,
+      "question": "図に示すファン・モータの回路に接続されている電圧計A、Bに関する記述として、不適切なものは次のうちどれか。ただし、図の回路は停止時のファン・モータを示し、配線の抵抗はないものとする。",
+      "choices": {
+        "ア": "(1) ファン・モータの停止時、電圧計Aは0Vを表示する。",
+        "イ": "(2) 低速回転時、電圧計Aは12Vを表示する。",
+        "ウ": "(3) 高速回転時、電圧計Aは12Vを表示する。",
+        "エ": "(4) 高速回転時、電圧計Bは0Vを表示する。"
+      },
+      "answer": "イ",
+      "officialAnswerNumber": "2",
+      "explanation": "低速回転時はモータとレジスタが直列で12Vを分圧する。モータ両端Aは12V未満。高速時はレジスタがバイパスされる。",
+      "choiceExplanations": {
+        "ア": "適切。リレー開放の停止時にはモータの両端に電位差がない。",
+        "イ": "不適切。低速時の電源12Vはモータとレジスタで分担するため、Aは12V未満。",
+        "ウ": "適切。高速時はレジスタを通らずモータに12Vが掛かる。",
+        "エ": "適切。高速時にレジスタをバイパスするため、その両端Bは0V。"
+      },
+      "explanationCoverage": "full",
+      "hasImage": true,
+      "sourcePages": [
+        4
+      ],
+      "sourceFigureRequired": true,
+      "topicTags": [
+        "ファン・モータ回路"
+      ],
+      "difficulty": 2,
+      "isCalculation": false,
+      "needsReview": false,
+      "reviewNotes": [],
+      "officialReferenceUrls": [],
+      "qualification": "jidousha-seibishi-gakka",
+      "session": "gakka",
+      "type": "multiple-choice",
+      "year": 2026,
+      "fiscalYear": 2026,
+      "season": "first",
+      "term": "first",
+      "subject": "2-diesel",
+      "category": "二級ジーゼル自動車",
+      "examDate": "2026-10-04",
+      "sourcePdfUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_2d.pdf",
+      "sourceAnswerUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_kai.pdf",
+      "sourceAttribution": "出典：日本自動車整備振興会連合会 令和8年度第1回自動車整備技能登録試験 二級ジーゼル自動車 No.7",
+      "officialQuestionStatus": "normal",
+      "lastUpdated": "2026-10-11",
+      "permissionVerified": false,
+      "publicGo": 0,
+      "sourcePageReferences": [
+        {
+          "physicalPage": 4,
+          "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_2d.pdf#page=4",
+          "pdfSha256": "0fd6a40925b281f48735a3d40c89c3631514ab20b44644e6ea642cf0aed5c8bd"
+        }
+      ],
+      "sourceFigureAssets": [
+        {
+          "physicalPage": 4,
+          "relativePath": "figures/jaspa-2026-first-2-diesel-p04.webp"
+        }
+      ]
+    },
+    {
+      "id": "jidosha-2026-first-2-diesel-q09",
+      "qNumber": 9,
+      "question": "コモンレール式高圧燃料噴射装置のセンサに関する記述として、不適切なものはどれか。",
+      "choices": {
+        "ア": "(1) 水温センサは、サーミスタが受ける温度が高くなるほど、抵抗値は低くなる特性を備えている。",
+        "イ": "(2) ピックアップ・コイル式の回転センサは、マグネット（永久磁石）、コイル、コア（鉄心）から構成されている。",
+        "ウ": "(3) 熱線式エア・フロー・メータは、発熱抵抗体と温度補償抵抗体との温度差を常に一定に保つよう、発熱抵抗体への電流を制御している。",
+        "エ": "(4) ブースト圧センサは、大気圧に保たれたセンサ・ユニット内に、四つの可変抵抗によるブリッジ回路を形成したシリコン・チップが取り付けられている。"
+      },
+      "answer": "エ",
+      "officialAnswerNumber": "4",
+      "explanation": "ブースト圧センサの基準室は真空側であり大気圧に保たれるわけではない。シリコン・チップのひずみによる抵抗変化をブリッジ回路で検出する。",
+      "choiceExplanations": {
+        "ア": "適切。水温用NTCサーミスタは温度上昇で抵抗が下がる。",
+        "イ": "適切。磁束変化をマグネット、鉄心、コイルで起電力に変える。",
+        "ウ": "適切。発熱体と吸気温度の差を一定に維持する電流から流量を求める。",
+        "エ": "不適切。圧力差を得る基準側は真空に保持する構造で、大気圧とする点が違う。"
+      },
+      "explanationCoverage": "full",
+      "hasImage": false,
+      "sourcePages": [
+        5
+      ],
+      "sourceFigureRequired": false,
+      "topicTags": [
+        "燃料噴射センサ"
+      ],
+      "difficulty": 2,
+      "isCalculation": false,
+      "needsReview": false,
+      "reviewNotes": [],
+      "officialReferenceUrls": [],
+      "qualification": "jidousha-seibishi-gakka",
+      "session": "gakka",
+      "type": "multiple-choice",
+      "year": 2026,
+      "fiscalYear": 2026,
+      "season": "first",
+      "term": "first",
+      "subject": "2-diesel",
+      "category": "二級ジーゼル自動車",
+      "examDate": "2026-10-04",
+      "sourcePdfUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_2d.pdf",
+      "sourceAnswerUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_kai.pdf",
+      "sourceAttribution": "出典：日本自動車整備振興会連合会 令和8年度第1回自動車整備技能登録試験 二級ジーゼル自動車 No.9",
+      "officialQuestionStatus": "normal",
+      "lastUpdated": "2026-10-11",
+      "permissionVerified": false,
+      "publicGo": 0,
+      "sourcePageReferences": [
+        {
+          "physicalPage": 5,
+          "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_2d.pdf#page=5",
+          "pdfSha256": "0fd6a40925b281f48735a3d40c89c3631514ab20b44644e6ea642cf0aed5c8bd"
+        }
+      ],
+      "sourceFigureAssets": []
+    },
+    {
+      "id": "jidosha-2026-first-2-diesel-q10",
+      "qNumber": 10,
+      "question": "図に示すコモンレール式高圧燃料噴射装置のソレノイド式インジェクタに関する記述として、適切なものは次のうちどれか。",
+      "choices": {
+        "ア": "(1) ソレノイド・コイルへの通電を止めると、コモンレールからの高圧燃料が一気にノズル室に流入してノズル・ニードルを押し上げ、燃料を噴射する。",
+        "イ": "(2) コモンレールからの高圧燃料が同圧力の状態で制御室及びノズル室に流入すると、ノズル・ニードルを押し上げ燃料を噴射する。",
+        "ウ": "(3) オリフィスが開くと、制御室の燃料は次第に流出して圧力が下がり、ノズル・ニードル下面の圧力との差でニードルが上昇し燃料を噴射する。",
+        "エ": "(4) ソレノイド・コイルへ通電が開始されると、電磁力によりノズル・ニードルが直接引き上げられて燃料の噴射が終了する。"
+      },
+      "answer": "ウ",
+      "officialAnswerNumber": "3",
+      "explanation": "通電によって制御弁が開き、制御室の燃料がオリフィスから流出。制御室圧が低下するとノズル室の燃料圧がニードルを押し上げて噴射する。",
+      "choiceExplanations": {
+        "ア": "誤り。通電停止で制御弁が閉じ、制御室圧が回復して噴射は止まる。",
+        "イ": "誤り。同圧ではコマンド・ピストンに働く閉弁側の力によりニードルは開かない。",
+        "ウ": "適切。制御室とノズル室の圧力差でニードルを上昇させる。",
+        "エ": "誤り。ソレノイドは制御弁を動かすのであり、ニードルを直接引き上げない。"
+      },
+      "explanationCoverage": "full",
+      "hasImage": true,
+      "sourcePages": [
+        5
+      ],
+      "sourceFigureRequired": true,
+      "topicTags": [
+        "ソレノイド式インジェクタ"
+      ],
+      "difficulty": 2,
+      "isCalculation": false,
+      "needsReview": false,
+      "reviewNotes": [],
+      "officialReferenceUrls": [],
+      "qualification": "jidousha-seibishi-gakka",
+      "session": "gakka",
+      "type": "multiple-choice",
+      "year": 2026,
+      "fiscalYear": 2026,
+      "season": "first",
+      "term": "first",
+      "subject": "2-diesel",
+      "category": "二級ジーゼル自動車",
+      "examDate": "2026-10-04",
+      "sourcePdfUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_2d.pdf",
+      "sourceAnswerUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_kai.pdf",
+      "sourceAttribution": "出典：日本自動車整備振興会連合会 令和8年度第1回自動車整備技能登録試験 二級ジーゼル自動車 No.10",
+      "officialQuestionStatus": "normal",
+      "lastUpdated": "2026-10-11",
+      "permissionVerified": false,
+      "publicGo": 0,
+      "sourcePageReferences": [
+        {
+          "physicalPage": 5,
+          "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_2d.pdf#page=5",
+          "pdfSha256": "0fd6a40925b281f48735a3d40c89c3631514ab20b44644e6ea642cf0aed5c8bd"
+        }
+      ],
+      "sourceFigureAssets": [
+        {
+          "physicalPage": 5,
+          "relativePath": "figures/jaspa-2026-first-2-diesel-p05.webp"
+        }
+      ]
+    },
+    {
+      "id": "jidosha-2026-first-2-diesel-q11",
+      "qNumber": 11,
+      "question": "図に示すコモンレール式高圧燃料噴射装置における分割噴射について、ECUが行う噴射率制御（分割噴射制御）に関する記述として、適切なものは次のうちどれか。",
+      "choices": {
+        "ア": "(1) A噴射はプレ噴射であり、メーン噴射に対して大きく進角した時期に噴射することで、噴射した燃料と空気をあらかじめ混合された状態にできる。",
+        "イ": "(2) B噴射はポスト噴射であり、メーン噴射に先立ち噴射することで、メーン噴射の着火遅れの短縮ができる。",
+        "ウ": "(3) C噴射はアフタ噴射であり、メーン噴射後の近接した時期に噴射することで、拡散燃焼の活発化、触媒の活性化や排気ガス後処理装置の作動補助ができる。",
+        "エ": "(4) D噴射はパイロット噴射であり、メーン噴射に対して大きく遅角した時期に噴射することで、触媒の活性化や排気ガス後処理装置の作動補助ができる。"
+      },
+      "answer": "ウ",
+      "officialAnswerNumber": "3",
+      "explanation": "図のAはメーン噴射から大きく進角したパイロット噴射、Bは直前のプレ噴射、Cは直後のアフタ噴射、Dは大きく遅角したポスト噴射。Cは拡散燃焼や排気後処理を補助する。",
+      "choiceExplanations": {
+        "ア": "誤り。大きく進角したAはパイロット噴射であり、プレ噴射とする名称が違う。",
+        "イ": "誤り。メーン直前のBはプレ噴射であり、ポスト噴射はメーン後に行う。",
+        "ウ": "適切。Cは直後のアフタ噴射で拡散燃焼を補助する。",
+        "エ": "誤り。大きく遅角したDはポスト噴射で、パイロットはメーン前。"
+      },
+      "explanationCoverage": "full",
+      "hasImage": true,
+      "sourcePages": [
+        6
+      ],
+      "sourceFigureRequired": true,
+      "topicTags": [
+        "分割噴射"
+      ],
+      "difficulty": 2,
+      "isCalculation": false,
+      "needsReview": false,
+      "reviewNotes": [],
+      "officialReferenceUrls": [
+        "https://www.jsae.or.jp/autotech/category10/10-8/"
+      ],
+      "qualification": "jidousha-seibishi-gakka",
+      "session": "gakka",
+      "type": "multiple-choice",
+      "year": 2026,
+      "fiscalYear": 2026,
+      "season": "first",
+      "term": "first",
+      "subject": "2-diesel",
+      "category": "二級ジーゼル自動車",
+      "examDate": "2026-10-04",
+      "sourcePdfUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_2d.pdf",
+      "sourceAnswerUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_kai.pdf",
+      "sourceAttribution": "出典：日本自動車整備振興会連合会 令和8年度第1回自動車整備技能登録試験 二級ジーゼル自動車 No.11",
+      "officialQuestionStatus": "normal",
+      "lastUpdated": "2026-10-11",
+      "permissionVerified": false,
+      "publicGo": 0,
+      "sourcePageReferences": [
+        {
+          "physicalPage": 6,
+          "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_2d.pdf#page=6",
+          "pdfSha256": "0fd6a40925b281f48735a3d40c89c3631514ab20b44644e6ea642cf0aed5c8bd"
+        }
+      ],
+      "sourceFigureAssets": [
+        {
+          "physicalPage": 6,
+          "relativePath": "figures/jaspa-2026-first-2-diesel-p06.webp"
+        }
+      ]
+    },
+    {
+      "id": "jidosha-2026-first-2-diesel-q13",
+      "qNumber": 13,
+      "question": "図に示すスタータのマグネット・スイッチ回路における、プランジャの吸引及び吸引保持の点検に関する次の文章の（イ）から（ハ）に当てはまる組み合わせのうち、適切なものはどれか。プランジャの吸引及び吸引保持の点検では、バッテリのマイナス端子はスタータ・ハウジングと（イ）に接続し、バッテリのプラス端子を（ロ）に接続したときにスタータのピニオンが飛び出し、この状態で（ハ）の配線を離してもピニオンが飛び出した状態を保持することを確認する。",
+      "choices": {
+        "ア": "(1) （イ）C端子／（ロ）M端子／（ハ）M端子",
+        "イ": "(2) （イ）M端子／（ロ）C端子／（ハ）C端子",
+        "ウ": "(3) （イ）C端子／（ロ）M端子／（ハ）C端子",
+        "エ": "(4) （イ）M端子／（ロ）C端子／（ハ）M端子"
+      },
+      "answer": "エ",
+      "officialAnswerNumber": "4",
+      "explanation": "マイナスをハウジングとM端子、プラスをC端子に接続して吸引・保持両コイルを働かせる。次にM端子の配線を外して吸引コイルを無効にし、保持コイルだけでプランジャが保持されることを確認する。",
+      "choiceExplanations": {
+        "ア": "誤り。マイナス側はM端子、プラス側はC端子にする。",
+        "イ": "誤り。初期接続は合うが、保持確認で外すのはC端子ではなくM端子。",
+        "ウ": "誤り。CとMの極性が逆で、保持確認もCを外す設定は違う。",
+        "エ": "適切。M端子をマイナス、C端子をプラスにし、Mを外して保持を確認する。"
+      },
+      "explanationCoverage": "full",
+      "hasImage": true,
+      "sourcePages": [
+        7
+      ],
+      "sourceFigureRequired": true,
+      "topicTags": [
+        "スタータ点検"
+      ],
+      "difficulty": 2,
+      "isCalculation": false,
+      "needsReview": false,
+      "reviewNotes": [],
+      "officialReferenceUrls": [],
+      "qualification": "jidousha-seibishi-gakka",
+      "session": "gakka",
+      "type": "multiple-choice",
+      "year": 2026,
+      "fiscalYear": 2026,
+      "season": "first",
+      "term": "first",
+      "subject": "2-diesel",
+      "category": "二級ジーゼル自動車",
+      "examDate": "2026-10-04",
+      "sourcePdfUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_2d.pdf",
+      "sourceAnswerUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_kai.pdf",
+      "sourceAttribution": "出典：日本自動車整備振興会連合会 令和8年度第1回自動車整備技能登録試験 二級ジーゼル自動車 No.13",
+      "officialQuestionStatus": "normal",
+      "lastUpdated": "2026-10-11",
+      "permissionVerified": false,
+      "publicGo": 0,
+      "sourcePageReferences": [
+        {
+          "physicalPage": 7,
+          "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_2d.pdf#page=7",
+          "pdfSha256": "0fd6a40925b281f48735a3d40c89c3631514ab20b44644e6ea642cf0aed5c8bd"
+        }
+      ],
+      "sourceFigureAssets": [
+        {
+          "physicalPage": 7,
+          "relativePath": "figures/jaspa-2026-first-2-diesel-p07.webp"
+        }
+      ]
+    },
+    {
+      "id": "jidosha-2026-first-2-diesel-q16",
+      "qNumber": 16,
+      "question": "前進4段のロックアップ機構付き電子制御式ATに用いられる部品に関する記述として、適切なものは次のうちどれか。",
+      "choices": {
+        "ア": "(1) ロックアップ・ピストンは、スプラインによってトルク・コンバータ内のステータのハブにかん合している。",
+        "イ": "(2) ロックアップ・ピストンには、エンジンからのトルク変動を吸収、緩和するダンパ・スプリングが組み込まれている。",
+        "ウ": "(3) タービン・センサはAT本体に取り付けられ、アウトプット・シャフトの回転速度を検出し、その信号をECUに入力している。",
+        "エ": "(4) 車速センサはAT本体に取り付けられ、インプット・シャフトの回転速度を検出し、その信号をECUに入力している。"
+      },
+      "answer": "イ",
+      "officialAnswerNumber": "2",
+      "explanation": "ロックアップ時はトルク・コンバータを機械的に結合するため、ロックアップ・ピストンのダンパ・スプリングでエンジンのトルク変動を吸収する。",
+      "choiceExplanations": {
+        "ア": "誤り。ピストンはタービン側と結合する構造で、固定ステータのハブにはかん合しない。",
+        "イ": "適切。ダンパ・スプリングが直結時のトルク変動を緩和する。",
+        "ウ": "誤り。タービン・センサは入力側のタービン回転速度を検出する。",
+        "エ": "誤り。車速センサは出力側の回転速度を検出する。"
+      },
+      "explanationCoverage": "full",
+      "hasImage": false,
+      "sourcePages": [
+        8
+      ],
+      "sourceFigureRequired": false,
+      "topicTags": [
+        "ATロックアップ"
+      ],
+      "difficulty": 2,
+      "isCalculation": false,
+      "needsReview": false,
+      "reviewNotes": [],
+      "officialReferenceUrls": [],
+      "qualification": "jidousha-seibishi-gakka",
+      "session": "gakka",
+      "type": "multiple-choice",
+      "year": 2026,
+      "fiscalYear": 2026,
+      "season": "first",
+      "term": "first",
+      "subject": "2-diesel",
+      "category": "二級ジーゼル自動車",
+      "examDate": "2026-10-04",
+      "sourcePdfUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_2d.pdf",
+      "sourceAnswerUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_kai.pdf",
+      "sourceAttribution": "出典：日本自動車整備振興会連合会 令和8年度第1回自動車整備技能登録試験 二級ジーゼル自動車 No.16",
+      "officialQuestionStatus": "normal",
+      "lastUpdated": "2026-10-11",
+      "permissionVerified": false,
+      "publicGo": 0,
+      "sourcePageReferences": [
+        {
+          "physicalPage": 8,
+          "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_2d.pdf#page=8",
+          "pdfSha256": "0fd6a40925b281f48735a3d40c89c3631514ab20b44644e6ea642cf0aed5c8bd"
+        }
+      ],
+      "sourceFigureAssets": []
+    },
+    {
+      "id": "jidosha-2026-first-2-diesel-q17",
+      "qNumber": 17,
+      "question": "図に示すAT車のDレンジにおける自動変速線図に関する記述として、適切なものは次のうちどれか。",
+      "choices": {
+        "ア": "(1) 第1速状態で走行中、スロットル・バルブを全開で加速走行したとき、第2速にアップ・シフトする車速は約42km/hである。",
+        "イ": "(2) 第2速状態で走行中、スロットル・バルブを全閉にして減速したとき、第1速にダウン・シフトする車速は約13km/hである。",
+        "ウ": "(3) 第3速状態で走行中、スロットル・バルブ開度4/8を保ちながら加速走行したとき、第4速にアップ・シフトする車速は約70km/hである。",
+        "エ": "(4) 第4速の80km/hで走行中、スロットル・バルブ開度2/8の状態から、スロットル・バルブ開度7/8に踏み込んだとき、第2速にダウン・シフトする。"
+      },
+      "answer": "イ",
+      "officialAnswerNumber": "2",
+      "explanation": "変速線図の破線の2→1ダウン・シフト線をスロットル全閉の高さで読むと約13km/hとなる。",
+      "choiceExplanations": {
+        "ア": "誤り。全開での1→2アップ・シフト線は約50km/hで、42km/hではない。",
+        "イ": "適切。全閉で2→1の破線は約13km/hを示す。",
+        "ウ": "誤り。開度4/8の3→4アップ・シフト線は約100km/hで、70km/hではない。",
+        "エ": "誤り。80km/hで7/8へ踏み込んでも図の2速ダウン・シフト領域ではなく3速側。"
+      },
+      "explanationCoverage": "full",
+      "hasImage": true,
+      "sourcePages": [
+        8
+      ],
+      "sourceFigureRequired": true,
+      "topicTags": [
+        "AT変速線図"
+      ],
+      "difficulty": 2,
+      "isCalculation": false,
+      "needsReview": false,
+      "reviewNotes": [],
+      "officialReferenceUrls": [],
+      "qualification": "jidousha-seibishi-gakka",
+      "session": "gakka",
+      "type": "multiple-choice",
+      "year": 2026,
+      "fiscalYear": 2026,
+      "season": "first",
+      "term": "first",
+      "subject": "2-diesel",
+      "category": "二級ジーゼル自動車",
+      "examDate": "2026-10-04",
+      "sourcePdfUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_2d.pdf",
+      "sourceAnswerUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_kai.pdf",
+      "sourceAttribution": "出典：日本自動車整備振興会連合会 令和8年度第1回自動車整備技能登録試験 二級ジーゼル自動車 No.17",
+      "officialQuestionStatus": "normal",
+      "lastUpdated": "2026-10-11",
+      "permissionVerified": false,
+      "publicGo": 0,
+      "sourcePageReferences": [
+        {
+          "physicalPage": 8,
+          "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_2d.pdf#page=8",
+          "pdfSha256": "0fd6a40925b281f48735a3d40c89c3631514ab20b44644e6ea642cf0aed5c8bd"
+        }
+      ],
+      "sourceFigureAssets": [
+        {
+          "physicalPage": 8,
+          "relativePath": "figures/jaspa-2026-first-2-diesel-p08.webp"
+        }
+      ]
+    },
+    {
+      "id": "jidosha-2026-first-2-diesel-q18",
+      "qNumber": 18,
+      "question": "油圧式パワー・ステアリングのベーン型定容量型オイル・ポンプに関する記述として、不適切なものはどれか。",
+      "choices": {
+        "ア": "(1) ベーン型オイル・ポンプは、吐出圧力により軸受に掛かる荷重が平均化されるので、平衡型オイル・ポンプとも呼ばれている。",
+        "イ": "(2) 規定値以上の送油量及び送油圧力にならないように、フロー・コントロール・バルブ及びプレッシャ・リリーフ・バルブを備えている。",
+        "ウ": "(3) オイル・ポンプの吐出量が規定値以上になると、オイル・ポンプからのフルードはすべてパワー・シリンダへ送られリザーブ・タンクへの油路は遮断される。",
+        "エ": "(4) ステアリング・ホイール（ハンドル）の操舵抵抗が大きくなるとオイル・ポンプの吐出圧力（負荷）も増大するが、無制限に上昇しないように、プレッシャ・リリーフ・バルブが油圧の制御を行っている。"
+      },
+      "answer": "ウ",
+      "officialAnswerNumber": "3",
+      "explanation": "定容量ポンプの吐出量が規定値を超えると、フロー・コントロール・バルブが余剰フルードをバイパスさせる。すべてシリンダへ送るわけではない。",
+      "choiceExplanations": {
+        "ア": "適切。ベーンの配置で径方向荷重を均衡させる。",
+        "イ": "適切。流量はフロー・コントロール、圧力はリリーフで制限する。",
+        "ウ": "不適切。過剰流量はバイパスして戻し、シリンダへ送る流量を一定に保つ。",
+        "エ": "適切。過大圧力でリリーフ・バルブが開く。"
+      },
+      "explanationCoverage": "full",
+      "hasImage": false,
+      "sourcePages": [
+        9
+      ],
+      "sourceFigureRequired": false,
+      "topicTags": [
+        "油圧パワーステアリング"
+      ],
+      "difficulty": 2,
+      "isCalculation": false,
+      "needsReview": false,
+      "reviewNotes": [],
+      "officialReferenceUrls": [],
+      "qualification": "jidousha-seibishi-gakka",
+      "session": "gakka",
+      "type": "multiple-choice",
+      "year": 2026,
+      "fiscalYear": 2026,
+      "season": "first",
+      "term": "first",
+      "subject": "2-diesel",
+      "category": "二級ジーゼル自動車",
+      "examDate": "2026-10-04",
+      "sourcePdfUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_2d.pdf",
+      "sourceAnswerUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_kai.pdf",
+      "sourceAttribution": "出典：日本自動車整備振興会連合会 令和8年度第1回自動車整備技能登録試験 二級ジーゼル自動車 No.18",
+      "officialQuestionStatus": "normal",
+      "lastUpdated": "2026-10-11",
+      "permissionVerified": false,
+      "publicGo": 0,
+      "sourcePageReferences": [
+        {
+          "physicalPage": 9,
+          "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_2d.pdf#page=9",
+          "pdfSha256": "0fd6a40925b281f48735a3d40c89c3631514ab20b44644e6ea642cf0aed5c8bd"
+        }
+      ],
+      "sourceFigureAssets": []
+    },
+    {
+      "id": "jidosha-2026-first-2-diesel-q21",
+      "qNumber": 21,
+      "question": "タイヤに関する次の文章の（イ）と（ロ）に当てはまるものとして、下の組み合わせのうち、適切なものはどれか。タイヤのエア圧が（イ）ほど、タイヤの変形が（ロ）ので、転がり抵抗係数は小さくなる。",
+      "choices": {
+        "ア": "(1) 高い／小さい",
+        "イ": "(2) 高い／大きい",
+        "ウ": "(3) 低い／小さい",
+        "エ": "(4) 低い／大きい"
+      },
+      "answer": "ア",
+      "officialAnswerNumber": "1",
+      "explanation": "空気圧が高いほどタイヤのたわみは小さくなり、変形に伴うエネルギー損失が減って転がり抵抗係数は小さくなる。",
+      "choiceExplanations": {
+        "ア": "適切。高圧なら変形は小さい。",
+        "イ": "誤り。高圧時の変形は大きくならない。",
+        "ウ": "誤り。低圧では変形が大きくなる。",
+        "エ": "誤り。低圧・大変形では転がり抵抗は増す。"
+      },
+      "explanationCoverage": "full",
+      "hasImage": false,
+      "sourcePages": [
+        10
+      ],
+      "sourceFigureRequired": false,
+      "topicTags": [
+        "タイヤ転がり抵抗"
+      ],
+      "difficulty": 2,
+      "isCalculation": false,
+      "needsReview": false,
+      "reviewNotes": [],
+      "officialReferenceUrls": [],
+      "qualification": "jidousha-seibishi-gakka",
+      "session": "gakka",
+      "type": "multiple-choice",
+      "year": 2026,
+      "fiscalYear": 2026,
+      "season": "first",
+      "term": "first",
+      "subject": "2-diesel",
+      "category": "二級ジーゼル自動車",
+      "examDate": "2026-10-04",
+      "sourcePdfUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_2d.pdf",
+      "sourceAnswerUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_kai.pdf",
+      "sourceAttribution": "出典：日本自動車整備振興会連合会 令和8年度第1回自動車整備技能登録試験 二級ジーゼル自動車 No.21",
+      "officialQuestionStatus": "normal",
+      "lastUpdated": "2026-10-11",
+      "permissionVerified": false,
+      "publicGo": 0,
+      "sourcePageReferences": [
+        {
+          "physicalPage": 10,
+          "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_2d.pdf#page=10",
+          "pdfSha256": "0fd6a40925b281f48735a3d40c89c3631514ab20b44644e6ea642cf0aed5c8bd"
+        }
+      ],
+      "sourceFigureAssets": []
+    },
+    {
+      "id": "jidosha-2026-first-2-diesel-q22",
+      "qNumber": 22,
+      "question": "図に示すホイール・アライメントに関する文章の（　）に当てはまるものとして、適切なものはどれか。図中のAは、（　）と呼ばれ、車軸の取り付け位置が進行方向に対して、前後方向にずれる角度のことで、4輪ホイール・アライメント・テスタなどで測定する。",
+      "choices": {
+        "ア": "(1) スラスト角",
+        "イ": "(2) セット・バック角",
+        "ウ": "(3) キング・ピン傾角",
+        "エ": "(4) キャスタ・トレール"
+      },
+      "answer": "イ",
+      "officialAnswerNumber": "2",
+      "explanation": "左右車輪の前後位置のずれを車軸の傾きとして表した角度はセット・バック角。スラスト角は車体中心線と推進方向のずれで別。",
+      "choiceExplanations": {
+        "ア": "誤り。スラスト角は車両中心線とスラスト・ラインのなす角。",
+        "イ": "適切。Aは左右車輪の前後位置ずれを示すセット・バック角。",
+        "ウ": "誤り。キング・ピン傾角は前面視で操舵軸と鉛直線のなす角。",
+        "エ": "誤り。キャスタ・トレールは側面視で操舵軸と接地点の距離。"
+      },
+      "explanationCoverage": "full",
+      "hasImage": true,
+      "sourcePages": [
+        10
+      ],
+      "sourceFigureRequired": true,
+      "topicTags": [
+        "ホイール・アライメント"
+      ],
+      "difficulty": 2,
+      "isCalculation": false,
+      "needsReview": false,
+      "reviewNotes": [],
+      "officialReferenceUrls": [],
+      "qualification": "jidousha-seibishi-gakka",
+      "session": "gakka",
+      "type": "multiple-choice",
+      "year": 2026,
+      "fiscalYear": 2026,
+      "season": "first",
+      "term": "first",
+      "subject": "2-diesel",
+      "category": "二級ジーゼル自動車",
+      "examDate": "2026-10-04",
+      "sourcePdfUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_2d.pdf",
+      "sourceAnswerUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_kai.pdf",
+      "sourceAttribution": "出典：日本自動車整備振興会連合会 令和8年度第1回自動車整備技能登録試験 二級ジーゼル自動車 No.22",
+      "officialQuestionStatus": "normal",
+      "lastUpdated": "2026-10-11",
+      "permissionVerified": false,
+      "publicGo": 0,
+      "sourcePageReferences": [
+        {
+          "physicalPage": 10,
+          "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_2d.pdf#page=10",
+          "pdfSha256": "0fd6a40925b281f48735a3d40c89c3631514ab20b44644e6ea642cf0aed5c8bd"
+        }
+      ],
+      "sourceFigureAssets": [
+        {
+          "physicalPage": 10,
+          "relativePath": "figures/jaspa-2026-first-2-diesel-p10.webp"
+        }
+      ]
+    },
+    {
+      "id": "jidosha-2026-first-2-diesel-q25",
+      "qNumber": 25,
+      "question": "図に示すフル・エア式ブレーキのリレー・バルブに関する記述として、不適切なものは次のうちどれか。",
+      "choices": {
+        "ア": "(1) リレー・バルブは、ブレーキ・ペダルの踏み込み量に応じてエア・タンクのエアをブレーキ系統に供給する。",
+        "イ": "(2) インレット・バルブがピストンにより押し下げられ、ボデーのバルブ・シートとインレット・バルブに隙間ができると、エア・タンクからのエア圧がブレーキ・チャンバへ供給される。",
+        "ウ": "(3) ブレーキ・ペダルを踏み込むとブレーキ・バルブからのエア圧（指示圧）が流入し、ピストンが下方に移動して、インレット・バルブに着座し、排気通路を閉じる。",
+        "エ": "(4) ブレーキ・ペダルを離すとブレーキ・バルブからのエア圧（指示圧）がなくなり、ピストン下端部がインレット・バルブから離れ、エア・タンク内のエアを中央の排気通路から大気に排出する。"
+      },
+      "answer": "エ",
+      "officialAnswerNumber": "4",
+      "explanation": "ペダルを戻して排出するのはブレーキ・チャンバ内のエアである。エア・タンクの貯蔵エアを中央排気通路から捨てるわけではない。",
+      "choiceExplanations": {
+        "ア": "適切。指示圧に応じてタンクからチャンバへ給気する。",
+        "イ": "適切。インレット開弁でタンクとチャンバを連通する。",
+        "ウ": "適切。指示圧でピストンが下がり排気側を閉じる。",
+        "エ": "不適切。排気するのはチャンバ内の使用後の圧縮エアで、タンク内のエアではない。"
+      },
+      "explanationCoverage": "full",
+      "hasImage": true,
+      "sourcePages": [
+        11
+      ],
+      "sourceFigureRequired": true,
+      "topicTags": [
+        "エアブレーキ・リレー弁"
+      ],
+      "difficulty": 2,
+      "isCalculation": false,
+      "needsReview": false,
+      "reviewNotes": [],
+      "officialReferenceUrls": [],
+      "qualification": "jidousha-seibishi-gakka",
+      "session": "gakka",
+      "type": "multiple-choice",
+      "year": 2026,
+      "fiscalYear": 2026,
+      "season": "first",
+      "term": "first",
+      "subject": "2-diesel",
+      "category": "二級ジーゼル自動車",
+      "examDate": "2026-10-04",
+      "sourcePdfUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_2d.pdf",
+      "sourceAnswerUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_kai.pdf",
+      "sourceAttribution": "出典：日本自動車整備振興会連合会 令和8年度第1回自動車整備技能登録試験 二級ジーゼル自動車 No.25",
+      "officialQuestionStatus": "normal",
+      "lastUpdated": "2026-10-11",
+      "permissionVerified": false,
+      "publicGo": 0,
+      "sourcePageReferences": [
+        {
+          "physicalPage": 11,
+          "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_2d.pdf#page=11",
+          "pdfSha256": "0fd6a40925b281f48735a3d40c89c3631514ab20b44644e6ea642cf0aed5c8bd"
+        }
+      ],
+      "sourceFigureAssets": [
+        {
+          "physicalPage": 11,
+          "relativePath": "figures/jaspa-2026-first-2-diesel-p11.webp"
+        }
+      ]
+    },
+    {
+      "id": "jidosha-2026-first-2-diesel-q26",
+      "qNumber": 26,
+      "question": "安全装置に関する記述として、不適切なものはどれか。",
+      "choices": {
+        "ア": "(1) SRSエアバッグ関係のワイヤ・ハーネスは、他のワイヤ・ハーネスと区別するためにコネクタも含め色が黄色である。",
+        "イ": "(2) SRSエアバッグのECUは、衝突時の衝撃を検出する「Gセンサ」及び「判断／セーフィング・センサ」を内蔵している。",
+        "ウ": "(3) SRSエアバッグのインフレータは、電気点火装置（スクイブ）、着火剤、ガス発生剤、フィルタなどを金属の容器に収納している。",
+        "エ": "(4) フォース・リミッタ（ロード・リミッタ）機能は、前面衝突時にシート・ベルトのたるみを瞬時に取り、前席の乗員をシート・バックに固定してシート・ベルトの効果を一層高めるものである。"
+      },
+      "answer": "エ",
+      "officialAnswerNumber": "4",
+      "explanation": "ベルトのたるみを瞬時に巻き取るのはプリテンショナ。フォース・リミッタは拘束荷重が大きくなるとベルトを一定量繰り出して胸部への負担を抑える。",
+      "choiceExplanations": {
+        "ア": "適切。SRS用配線は黄色で識別する。",
+        "イ": "適切。ECU内の衝突・安全確認センサで作動を判断する。",
+        "ウ": "適切。インフレータに点火・ガス生成・ろ過部品を収める。",
+        "エ": "不適切。記載されたたるみ取りはプリテンショナの機能。ロード・リミッタは過大な拘束荷重を制限する。"
+      },
+      "explanationCoverage": "full",
+      "hasImage": false,
+      "sourcePages": [
+        12
+      ],
+      "sourceFigureRequired": false,
+      "topicTags": [
+        "SRS・シートベルト"
+      ],
+      "difficulty": 2,
+      "isCalculation": false,
+      "needsReview": false,
+      "reviewNotes": [],
+      "officialReferenceUrls": [],
+      "qualification": "jidousha-seibishi-gakka",
+      "session": "gakka",
+      "type": "multiple-choice",
+      "year": 2026,
+      "fiscalYear": 2026,
+      "season": "first",
+      "term": "first",
+      "subject": "2-diesel",
+      "category": "二級ジーゼル自動車",
+      "examDate": "2026-10-04",
+      "sourcePdfUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_2d.pdf",
+      "sourceAnswerUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_kai.pdf",
+      "sourceAttribution": "出典：日本自動車整備振興会連合会 令和8年度第1回自動車整備技能登録試験 二級ジーゼル自動車 No.26",
+      "officialQuestionStatus": "normal",
+      "lastUpdated": "2026-10-11",
+      "permissionVerified": false,
+      "publicGo": 0,
+      "sourcePageReferences": [
+        {
+          "physicalPage": 12,
+          "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_2d.pdf#page=12",
+          "pdfSha256": "0fd6a40925b281f48735a3d40c89c3631514ab20b44644e6ea642cf0aed5c8bd"
+        }
+      ],
+      "sourceFigureAssets": []
+    },
+    {
+      "id": "jidosha-2026-first-2-diesel-q28",
+      "qNumber": 28,
+      "question": "ツイスト・ペア線を用いたCAN通信に関する記述として、不適切なものはどれか。",
+      "choices": {
+        "ア": "(1) 受信側ECUは、受信したCAN-HとCAN-Lの電位差から情報を読み取るようになっており、CAN-H、CAN-Lの電圧値がともに2.5Vの状態をレセシブという。",
+        "イ": "(2) ネットワーク・ゲートウェイ機能は、異なるバス・ライン間のデータを中継しており、CAN通信全体で制御信号や情報を共有することができる。",
+        "ウ": "(3) バス・オフ状態とは、ECUが自らの通信に関わるエラーを検知し、リカバリしてもエラーが解消しない場合に通信を停止する状態のことをいう。",
+        "エ": "(4) 各ECUが同時にデータ・フレームの送信を始めた場合は、複数のデータ・フレームが衝突することから、コントロール・フィールドにより大容量データのものを優先する。"
+      },
+      "answer": "エ",
+      "officialAnswerNumber": "4",
+      "explanation": "CANの同時送信は調停フィールドの識別子で優先順位を決める。コントロール・フィールドのデータ容量で決めるのではない。",
+      "choiceExplanations": {
+        "ア": "適切。差動電圧0V相当がレセシブ状態。",
+        "イ": "適切。ゲートウェイがバス間の通信を仲介する。",
+        "ウ": "適切。重大・継続的な通信エラーでバス・オフとなる。",
+        "エ": "不適切。仲裁は識別子を含むアービトレーション・フィールドで行い、容量の大小では決めない。"
+      },
+      "explanationCoverage": "full",
+      "hasImage": false,
+      "sourcePages": [
+        13
+      ],
+      "sourceFigureRequired": false,
+      "topicTags": [
+        "CAN通信"
+      ],
+      "difficulty": 2,
+      "isCalculation": false,
+      "needsReview": false,
+      "reviewNotes": [],
+      "officialReferenceUrls": [],
+      "qualification": "jidousha-seibishi-gakka",
+      "session": "gakka",
+      "type": "multiple-choice",
+      "year": 2026,
+      "fiscalYear": 2026,
+      "season": "first",
+      "term": "first",
+      "subject": "2-diesel",
+      "category": "二級ジーゼル自動車",
+      "examDate": "2026-10-04",
+      "sourcePdfUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_2d.pdf",
+      "sourceAnswerUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_kai.pdf",
+      "sourceAttribution": "出典：日本自動車整備振興会連合会 令和8年度第1回自動車整備技能登録試験 二級ジーゼル自動車 No.28",
+      "officialQuestionStatus": "normal",
+      "lastUpdated": "2026-10-11",
+      "permissionVerified": false,
+      "publicGo": 0,
+      "sourcePageReferences": [
+        {
+          "physicalPage": 13,
+          "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_2d.pdf#page=13",
+          "pdfSha256": "0fd6a40925b281f48735a3d40c89c3631514ab20b44644e6ea642cf0aed5c8bd"
+        }
+      ],
+      "sourceFigureAssets": []
+    },
+    {
+      "id": "jidosha-2026-first-2-diesel-q29",
+      "qNumber": 29,
+      "question": "鉛バッテリに関する記述として、不適切なものはどれか。",
+      "choices": {
+        "ア": "(1) バッテリの容量は、放電電流が大きいほど小さくなる。",
+        "イ": "(2) 電解液温度が50℃未満においては、電解液温度が高くなると、容量は減少する。",
+        "ウ": "(3) 電解液の比重は、電解液温度が高いと電解液容積が増加するため小さく（低く）なる。",
+        "エ": "(4) 電解液の比重を測定することによって、放電量を知ることができる。"
+      },
+      "answer": "イ",
+      "officialAnswerNumber": "2",
+      "explanation": "50℃未満の通常範囲では電解液温度の上昇により化学反応が進みやすく、取り出せる容量は増加する。",
+      "choiceExplanations": {
+        "ア": "適切。大電流放電では有効容量が低下する。",
+        "イ": "不適切。温度上昇で容量は増加する方向で、減少しない。",
+        "ウ": "適切。高温で液が膨張すると測定比重は低下する。",
+        "エ": "適切。比重と充電状態の関係から放電量を推定できる。"
+      },
+      "explanationCoverage": "full",
+      "hasImage": false,
+      "sourcePages": [
+        13
+      ],
+      "sourceFigureRequired": false,
+      "topicTags": [
+        "鉛バッテリ"
+      ],
+      "difficulty": 2,
+      "isCalculation": false,
+      "needsReview": false,
+      "reviewNotes": [],
+      "officialReferenceUrls": [],
+      "qualification": "jidousha-seibishi-gakka",
+      "session": "gakka",
+      "type": "multiple-choice",
+      "year": 2026,
+      "fiscalYear": 2026,
+      "season": "first",
+      "term": "first",
+      "subject": "2-diesel",
+      "category": "二級ジーゼル自動車",
+      "examDate": "2026-10-04",
+      "sourcePdfUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_2d.pdf",
+      "sourceAnswerUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_kai.pdf",
+      "sourceAttribution": "出典：日本自動車整備振興会連合会 令和8年度第1回自動車整備技能登録試験 二級ジーゼル自動車 No.29",
+      "officialQuestionStatus": "normal",
+      "lastUpdated": "2026-10-11",
+      "permissionVerified": false,
+      "publicGo": 0,
+      "sourcePageReferences": [
+        {
+          "physicalPage": 13,
+          "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_2d.pdf#page=13",
+          "pdfSha256": "0fd6a40925b281f48735a3d40c89c3631514ab20b44644e6ea642cf0aed5c8bd"
+        }
+      ],
+      "sourceFigureAssets": []
+    },
+    {
+      "id": "jidosha-2026-first-2-diesel-q30",
+      "qNumber": 30,
+      "question": "図に示すセンサ回路におけるワイヤ・ハーネスの故障診断結果に関する文章の（　）に当てはまるものとして、適切なものはどれか。各測定箇所の測定値が下表の通りであった場合の診断結果としては、（　）が考えられる。なお、ECUのコネクタとセンサのコネクタは外しているものとする。測定値：R1＝0Ω、R2＝∞Ω、R3＝∞Ω、R4＝0Ω、R5＝∞Ω。",
+      "choices": {
+        "ア": "(1) 各ワイヤ・ハーネスに不具合がないこと",
+        "イ": "(2) ワイヤ・ハーネス1とボデー・アース間の短絡",
+        "ウ": "(3) ワイヤ・ハーネス2とボデー・アース間の短絡",
+        "エ": "(4) ワイヤ・ハーネス1とワイヤ・ハーネス2間の短絡"
+      },
+      "answer": "ア",
+      "officialAnswerNumber": "1",
+      "explanation": "R1・R4の各線両端は0Ωで導通あり。R2・R5の各線とボデー間、R3の線間はいずれも∞Ωで短絡なし。したがって配線は正常。",
+      "choiceExplanations": {
+        "ア": "適切。両線の導通があり、対地・線間短絡がない。",
+        "イ": "誤り。ハーネス1の対地R2は∞Ωで短絡を示さない。",
+        "ウ": "誤り。ハーネス2の対地R5は∞Ωで短絡を示さない。",
+        "エ": "誤り。線間R3は∞Ωで短絡を示さない。"
+      },
+      "explanationCoverage": "full",
+      "hasImage": true,
+      "sourcePages": [
+        13
+      ],
+      "sourceFigureRequired": true,
+      "topicTags": [
+        "ワイヤハーネス故障診断"
+      ],
+      "difficulty": 2,
+      "isCalculation": false,
+      "needsReview": false,
+      "reviewNotes": [],
+      "officialReferenceUrls": [],
+      "qualification": "jidousha-seibishi-gakka",
+      "session": "gakka",
+      "type": "multiple-choice",
+      "year": 2026,
+      "fiscalYear": 2026,
+      "season": "first",
+      "term": "first",
+      "subject": "2-diesel",
+      "category": "二級ジーゼル自動車",
+      "examDate": "2026-10-04",
+      "sourcePdfUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_2d.pdf",
+      "sourceAnswerUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_kai.pdf",
+      "sourceAttribution": "出典：日本自動車整備振興会連合会 令和8年度第1回自動車整備技能登録試験 二級ジーゼル自動車 No.30",
+      "officialQuestionStatus": "normal",
+      "lastUpdated": "2026-10-11",
+      "permissionVerified": false,
+      "publicGo": 0,
+      "sourcePageReferences": [
+        {
+          "physicalPage": 13,
+          "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_2d.pdf#page=13",
+          "pdfSha256": "0fd6a40925b281f48735a3d40c89c3631514ab20b44644e6ea642cf0aed5c8bd"
+        }
+      ],
+      "sourceFigureAssets": [
+        {
+          "physicalPage": 13,
+          "relativePath": "figures/jaspa-2026-first-2-diesel-p13.webp"
+        }
+      ]
+    },
+    {
+      "id": "jidosha-2026-first-2-diesel-q31",
+      "qNumber": 31,
+      "question": "図に示す電気回路において、スイッチの接点が閉じたときに電圧計Vが15Vを示す場合、スイッチの接点の接触抵抗値として、適切なものは次のうちどれか。ただし、バッテリ、配線等の抵抗はないものとし、電圧計Vの内部抵抗は無限大とする。",
+      "choices": {
+        "ア": "(1) 2.4Ω",
+        "イ": "(2) 3.0Ω",
+        "ウ": "(3) 3.2Ω",
+        "エ": "(4) 8.0Ω"
+      },
+      "answer": "エ",
+      "officialAnswerNumber": "4",
+      "explanation": "負荷は上枝12Ω、下枝8Ωの並列で合成抵抗4.8Ω。スイッチで15V降下するので負荷電圧は24−15=9V、電流は9÷4.8=1.875A。接触抵抗は15÷1.875=8Ω。",
+      "choiceExplanations": {
+        "ア": "誤り。並列の合成抵抗4.8Ωと電圧降下15Vから算出すると2.4Ωにはならない。",
+        "イ": "誤り。負荷電流1.875Aなので接触抵抗は3.0Ωではない。",
+        "ウ": "誤り。15Vを1.875Aで割る必要があり、3.2Ωではない。",
+        "エ": "適切。接触抵抗は8.0Ω。"
+      },
+      "explanationCoverage": "full",
+      "hasImage": true,
+      "sourcePages": [
+        14
+      ],
+      "sourceFigureRequired": true,
+      "topicTags": [
+        "電気回路・接触抵抗"
+      ],
+      "difficulty": 3,
+      "isCalculation": true,
+      "needsReview": false,
+      "reviewNotes": [],
+      "officialReferenceUrls": [],
+      "qualification": "jidousha-seibishi-gakka",
+      "session": "gakka",
+      "type": "multiple-choice",
+      "year": 2026,
+      "fiscalYear": 2026,
+      "season": "first",
+      "term": "first",
+      "subject": "2-diesel",
+      "category": "二級ジーゼル自動車",
+      "examDate": "2026-10-04",
+      "sourcePdfUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_2d.pdf",
+      "sourceAnswerUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_kai.pdf",
+      "sourceAttribution": "出典：日本自動車整備振興会連合会 令和8年度第1回自動車整備技能登録試験 二級ジーゼル自動車 No.31",
+      "officialQuestionStatus": "normal",
+      "lastUpdated": "2026-10-11",
+      "permissionVerified": false,
+      "publicGo": 0,
+      "sourcePageReferences": [
+        {
+          "physicalPage": 14,
+          "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_2d.pdf#page=14",
+          "pdfSha256": "0fd6a40925b281f48735a3d40c89c3631514ab20b44644e6ea642cf0aed5c8bd"
+        }
+      ],
+      "sourceFigureAssets": [
+        {
+          "physicalPage": 14,
+          "relativePath": "figures/jaspa-2026-first-2-diesel-p14.webp"
+        }
+      ]
+    },
+    {
+      "id": "jidosha-2026-first-2-diesel-q32",
+      "qNumber": 32,
+      "question": "非鉄金属に関する記述として、不適切なものはどれか。",
+      "choices": {
+        "ア": "(1) 鉛は、空気中で容易に腐食されず、塩酸や硫酸に溶解されない。",
+        "イ": "(2) 青銅は、銅に錫を加えた合金で、耐摩耗性に優れている。",
+        "ウ": "(3) アルミニウムは、鉄に比べて熱の伝導率が約3倍高い。",
+        "エ": "(4) 銅は、銀より電気や熱の伝導がよい。"
+      },
+      "answer": "エ",
+      "officialAnswerNumber": "4",
+      "explanation": "銀は金属中でも電気・熱の伝導率が非常に高く、銅の伝導率は銀より低い。",
+      "choiceExplanations": {
+        "ア": "適切。鉛は表面に保護層を作り、塩酸・硫酸に対して比較的耐食性がある。",
+        "イ": "適切。青銅は銅・錫合金で耐摩耗性がある。",
+        "ウ": "適切。アルミニウムの熱伝導率は鉄より高い。",
+        "エ": "不適切。電気・熱の伝導率は銀の方が銅より高い。"
+      },
+      "explanationCoverage": "full",
+      "hasImage": false,
+      "sourcePages": [
+        14
+      ],
+      "sourceFigureRequired": false,
+      "topicTags": [
+        "非鉄金属"
+      ],
+      "difficulty": 2,
+      "isCalculation": false,
+      "needsReview": false,
+      "reviewNotes": [],
+      "officialReferenceUrls": [],
+      "qualification": "jidousha-seibishi-gakka",
+      "session": "gakka",
+      "type": "multiple-choice",
+      "year": 2026,
+      "fiscalYear": 2026,
+      "season": "first",
+      "term": "first",
+      "subject": "2-diesel",
+      "category": "二級ジーゼル自動車",
+      "examDate": "2026-10-04",
+      "sourcePdfUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_2d.pdf",
+      "sourceAnswerUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_kai.pdf",
+      "sourceAttribution": "出典：日本自動車整備振興会連合会 令和8年度第1回自動車整備技能登録試験 二級ジーゼル自動車 No.32",
+      "officialQuestionStatus": "normal",
+      "lastUpdated": "2026-10-11",
+      "permissionVerified": false,
+      "publicGo": 0,
+      "sourcePageReferences": [
+        {
+          "physicalPage": 14,
+          "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_2d.pdf#page=14",
+          "pdfSha256": "0fd6a40925b281f48735a3d40c89c3631514ab20b44644e6ea642cf0aed5c8bd"
+        }
+      ],
+      "sourceFigureAssets": []
+    },
+    {
+      "id": "jidosha-2026-first-2-diesel-q33",
+      "qNumber": 33,
+      "question": "自動車が27km/hの一定速度で走行しているときの駆動力が1,800Nだった。このときの出力として、適切なものは次のうちどれか。",
+      "choices": {
+        "ア": "(1) 0.66kW",
+        "イ": "(2) 8.75kW",
+        "ウ": "(3) 13.5kW",
+        "エ": "(4) 66.6kW"
+      },
+      "answer": "ウ",
+      "officialAnswerNumber": "3",
+      "explanation": "27km/hは7.5m/s。仕事率は力×速度=1,800N×7.5m/s=13,500W=13.5kW。",
+      "choiceExplanations": {
+        "ア": "誤り。27km/hをm/sへ換算し1,800Nを掛けると0.66kWにはならない。",
+        "イ": "誤り。速度は7.5m/sなので8.75kWではない。",
+        "ウ": "適切。1,800×7.5=13,500W。",
+        "エ": "誤り。計算結果は66.6kWではなく13.5kW。"
+      },
+      "explanationCoverage": "full",
+      "hasImage": false,
+      "sourcePages": [
+        14
+      ],
+      "sourceFigureRequired": false,
+      "topicTags": [
+        "駆動力・出力"
+      ],
+      "difficulty": 3,
+      "isCalculation": true,
+      "needsReview": false,
+      "reviewNotes": [],
+      "officialReferenceUrls": [],
+      "qualification": "jidousha-seibishi-gakka",
+      "session": "gakka",
+      "type": "multiple-choice",
+      "year": 2026,
+      "fiscalYear": 2026,
+      "season": "first",
+      "term": "first",
+      "subject": "2-diesel",
+      "category": "二級ジーゼル自動車",
+      "examDate": "2026-10-04",
+      "sourcePdfUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_2d.pdf",
+      "sourceAnswerUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_kai.pdf",
+      "sourceAttribution": "出典：日本自動車整備振興会連合会 令和8年度第1回自動車整備技能登録試験 二級ジーゼル自動車 No.33",
+      "officialQuestionStatus": "normal",
+      "lastUpdated": "2026-10-11",
+      "permissionVerified": false,
+      "publicGo": 0,
+      "sourcePageReferences": [
+        {
+          "physicalPage": 14,
+          "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_2d.pdf#page=14",
+          "pdfSha256": "0fd6a40925b281f48735a3d40c89c3631514ab20b44644e6ea642cf0aed5c8bd"
+        }
+      ],
+      "sourceFigureAssets": []
+    },
+    {
+      "id": "jidosha-2026-first-2-diesel-q34",
+      "qNumber": 34,
+      "question": "軽油（燃料）に関する記述として、適切なものはどれか。",
+      "choices": {
+        "ア": "(1) 冬季寒冷地用の軽油は、一般に使用されている軽油に比べて流動点が低い。",
+        "イ": "(2) 軽油は、燃料装置の潤滑や排気ガス後処理装置の浄化効率を高めるため、硫黄分を多くする必要がある。",
+        "ウ": "(3) セタン価が低い（小さい）ほど、低温での始動性が良い。",
+        "エ": "(4) セタン価が高い（大きい）ほど、揮発性が高い。"
+      },
+      "answer": "ア",
+      "officialAnswerNumber": "1",
+      "explanation": "寒冷地用軽油は低温で流動しやすいよう流動点を低くしている。硫黄分は後処理に悪影響があり、セタン価は着火性の指標。",
+      "choiceExplanations": {
+        "ア": "適切。低温でも流れるよう流動点を低く設定する。",
+        "イ": "誤り。硫黄分は触媒・排ガス後処理に悪影響があるため低硫黄化する。",
+        "ウ": "誤り。低セタン価は着火遅れを長くし、低温始動性に不利。",
+        "エ": "誤り。セタン価は自己着火性を示し、揮発性の高さを直接示さない。"
+      },
+      "explanationCoverage": "full",
+      "hasImage": false,
+      "sourcePages": [
+        14
+      ],
+      "sourceFigureRequired": false,
+      "topicTags": [
+        "軽油・セタン価"
+      ],
+      "difficulty": 2,
+      "isCalculation": false,
+      "needsReview": false,
+      "reviewNotes": [],
+      "officialReferenceUrls": [],
+      "qualification": "jidousha-seibishi-gakka",
+      "session": "gakka",
+      "type": "multiple-choice",
+      "year": 2026,
+      "fiscalYear": 2026,
+      "season": "first",
+      "term": "first",
+      "subject": "2-diesel",
+      "category": "二級ジーゼル自動車",
+      "examDate": "2026-10-04",
+      "sourcePdfUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_2d.pdf",
+      "sourceAnswerUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_kai.pdf",
+      "sourceAttribution": "出典：日本自動車整備振興会連合会 令和8年度第1回自動車整備技能登録試験 二級ジーゼル自動車 No.34",
+      "officialQuestionStatus": "normal",
+      "lastUpdated": "2026-10-11",
+      "permissionVerified": false,
+      "publicGo": 0,
+      "sourcePageReferences": [
+        {
+          "physicalPage": 14,
+          "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_2d.pdf#page=14",
+          "pdfSha256": "0fd6a40925b281f48735a3d40c89c3631514ab20b44644e6ea642cf0aed5c8bd"
+        }
+      ],
+      "sourceFigureAssets": []
+    },
+    {
+      "id": "jidosha-2026-first-2-diesel-q35",
+      "qNumber": 35,
+      "question": "測定機器及び工具に関する記述として、不適切なものはどれか。",
+      "choices": {
+        "ア": "(1) バキューム・ゲージは、インテーク・マニホールド圧力などの負圧の測定に用いる。",
+        "イ": "(2) 台付スコヤは、長片に薄い鋼板を用い、短片に厚い鋼製の台を用いている。",
+        "ウ": "(3) ジーゼル・エンジン用のコンプレッション・ゲージは、一般に0～2.5MPaの測定範囲のものが用いられる。",
+        "エ": "(4) 黒煙測定器（スモーク・メータ）は、ろ紙を用いて黒煙を採取し、汚染度（%）を測定する。"
+      },
+      "answer": "ウ",
+      "officialAnswerNumber": "3",
+      "explanation": "ディーゼル・エンジンの圧縮圧力はガソリン・エンジンより高い。測定範囲0～2.5MPaでは不足し、より高圧まで測れるゲージを使う。",
+      "choiceExplanations": {
+        "ア": "適切。バキューム・ゲージは負圧測定器。",
+        "イ": "適切。厚い台と薄い長片で直角を測る。",
+        "ウ": "不適切。ディーゼル用は高圧対応のゲージが必要で、0～2.5MPaは一般的な範囲として低すぎる。",
+        "エ": "適切。ろ紙式スモーク・メータは黒煙の汚染度を測る。"
+      },
+      "explanationCoverage": "full",
+      "hasImage": false,
+      "sourcePages": [
+        15
+      ],
+      "sourceFigureRequired": false,
+      "topicTags": [
+        "測定機器"
+      ],
+      "difficulty": 2,
+      "isCalculation": false,
+      "needsReview": false,
+      "reviewNotes": [],
+      "officialReferenceUrls": [],
+      "qualification": "jidousha-seibishi-gakka",
+      "session": "gakka",
+      "type": "multiple-choice",
+      "year": 2026,
+      "fiscalYear": 2026,
+      "season": "first",
+      "term": "first",
+      "subject": "2-diesel",
+      "category": "二級ジーゼル自動車",
+      "examDate": "2026-10-04",
+      "sourcePdfUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_2d.pdf",
+      "sourceAnswerUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_kai.pdf",
+      "sourceAttribution": "出典：日本自動車整備振興会連合会 令和8年度第1回自動車整備技能登録試験 二級ジーゼル自動車 No.35",
+      "officialQuestionStatus": "normal",
+      "lastUpdated": "2026-10-11",
+      "permissionVerified": false,
+      "publicGo": 0,
+      "sourcePageReferences": [
+        {
+          "physicalPage": 15,
+          "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_2d.pdf#page=15",
+          "pdfSha256": "0fd6a40925b281f48735a3d40c89c3631514ab20b44644e6ea642cf0aed5c8bd"
+        }
+      ],
+      "sourceFigureAssets": []
+    }
+  ],
+  "contentAcceptedUnique": 23,
+  "contentAcceptedChoiceReasons": 92
+}

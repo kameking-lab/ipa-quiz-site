@@ -31,6 +31,9 @@ export function questionSourceEdition(q: Pick<Question, "year" | "season" | "sou
   if (q.exam === "chizai2" && q.year === 2026) {
     if (q.season === "spring") return "第53回（2026年3月8日実施）";
     if (q.season === "july") return "第54回（2026年7月12日実施）";
+  if (q.exam?.startsWith("jidosha-")) {
+    if (q.year === 2026 && q.season === "first") return "令和8年度第1回（2026年10月4日実施）";
+    if (q.year === 2025 && q.season === "second") return "令和7年度第2回（2026年3月22日実施）";
   }
   if (q.exam === "kisho" && q.year === 2026) return q.season === "second" ? "第65回（2026年1月25日）" : "第66回（2026年8月23日）";
   if (q.exam === "riku-tech1" && q.season === "july") return `${q.year}年7月試験`;

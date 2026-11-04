@@ -1,0 +1,35 @@
+{
+  "model": "gpt-6-astra",
+  "scope": "Revision-6 re-review of only jidosha-2025-second-1-small-written-q37 against current qa/lq1c-candidates.json and qa/lq1c-revision6-delta.json. Rechecked changed choice explanation and consistency with all previously reviewed fields. qa paths are relative to data/qualification-staging/automotive/latest-two/.",
+  "limitations": [
+    "Current compact insertion-order UTF-8 candidate SHA-256 matches the requested hash and revision6 delta. Replacing only choiceExplanations.\u30a4 with its revision4 value reproduces the previously reviewed SHA-256, confirming all remaining candidate fields are unchanged.",
+    "The 2020 supporting question page was visually rechecked this turn. Target question p26, target official key column 12 Q37=3 and supporting 2020 key column 12 Q17=4 retain the visual checks performed in revision4. All four explanations were reread for consistency.",
+    "PASS is limited to the stated examination context, not universal manufacturer fail-safe behavior. Revision4 limitation concerning independently uninspected historical TOSSNET keys remains. No candidate/product edits, agents, commits, secrets or access bypass."
+  ],
+  "rows": [
+    {
+      "id": "jidosha-2025-second-1-small-written-q37",
+      "candidateSha256": "074f118467af7f7189f080506813432a8ea1bb77b0504b38051ed21fd817a086",
+      "verdict": "PASS",
+      "sourcePagesChecked": [
+        26
+      ],
+      "answerChecked": true,
+      "allFourExplanationsChecked": true,
+      "findings": [
+        {
+          "field": "choiceExplanations.\u30a4",
+          "issue": "The sole remaining revision4 failure is resolved. The numerical fallback example now explicitly requires abnormalities of BOTH A and B while driving: D and 2 fixed in third gear, range 1 fixed in second gear. This matches primary 2020 Q17(4). It expressly states that this example alone does not establish B-only fallback gears and does not universally deny secondary shock. No repair required.",
+          "replacement": null,
+          "source": "qa/lq1c-supporting-sources/lq1c-20200322-1k-p12.png Q17(4), visually rechecked; qa/lq1c-supporting-sources/lq1c-20200322-key-p01.png column 12 Q17=4, checked in revision4; qa/lq1c-review-revision4.json remaining failure and targeted repair"
+        },
+        {
+          "field": "question, answer, explanation, all four choiceExplanations",
+          "issue": "The changed explanation remains consistent with the original B-only option and official answer (3), label \u30a6. The unchanged explanations distinguish lockup control, throttle-load substitution and pressure/shift control, and the hot-side oil-temperature-short signal without asserting universally maximum pressure or absence of secondary shock. All previously checked fields are cryptographically unchanged. No remaining failure found.",
+          "replacement": null,
+          "source": "tmp/lq1b-sources/jaspa-2025-second-1-small-written-p26.png Q37; tmp/lq1b-sources/jaspa-2025-second-answers-p1.png column 12 Q37=3; qa/lq1c-review-revision4.json; qa/lq1c-revision4-delta.json; qa/lq1c-revision6-delta.json"
+        }
+      ]
+    }
+  ]
+}

@@ -11,7 +11,8 @@ export type QualificationDomain =
   | "safety"
   | "accounting"
   | "welfare"
-  | "personal-services";
+  | "personal-services"
+  | "automotive";
 
 export type PublicationStatus =
   | "live"
@@ -65,6 +66,94 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     status: "live",
     reuseSummary: "第53回（2026年3月8日）・第54回（2026年7月12日）の学科・実技各40問、計160原問を収録。選択式158問の全651肢解説、数値記入2問と料金表を保持しています。法令は各試験回の基準日時点です。解説は独自作成です。",
     attributionTemplate: "出典：知的財産教育協会 第○回 知的財産管理技能検定2級 学科・実技 問○（問題・正答）。解説は過去問AI独自作成。",
+    remainingWork: [],
+  },
+  {
+    slug: "jidosha-1-small-written", examCode: "jidosha-1-small-written", shortName: "一級小型自動車整備士（筆記）", fullName: "一級小型自動車整備士（筆記）", domain: "automotive",
+    administrator: "一般社団法人日本自動車整備振興会連合会",
+    officialQuestionsUrl: "https://www.jaspa.or.jp/mechanic/past/", officialReuseTermsUrl: "", status: "live",
+    reuseSummary: "令和8年度第1回・令和7年度第2回の開催科目から、保存50原問中50問を部分収録。公式問題・正答と全選択肢の解説、必要な原図を確認できます。科目ごとの直近2回を揃えたものではありません。法令は各試験日時点です。解説は独自作成です。",
+    attributionTemplate: "出典：日本自動車整備振興会連合会 自動車整備技能登録試験（問題・正答）。解説は過去問AI独自作成。",
+    remainingWork: [],
+  },
+  {
+    slug: "jidosha-2-gasoline", examCode: "jidosha-2-gasoline", shortName: "二級ガソリン自動車整備士", fullName: "二級ガソリン自動車整備士", domain: "automotive",
+    administrator: "一般社団法人日本自動車整備振興会連合会",
+    officialQuestionsUrl: "https://www.jaspa.or.jp/mechanic/past/", officialReuseTermsUrl: "", status: "live",
+    reuseSummary: "令和8年度第1回・令和7年度第2回の開催科目から、保存80原問中79問を部分収録。公式問題・正答と全選択肢の解説、必要な原図を確認できます。科目ごとの直近2回を揃えたものではありません。法令は各試験日時点です。解説は独自作成です。",
+    attributionTemplate: "出典：日本自動車整備振興会連合会 自動車整備技能登録試験（問題・正答）。解説は過去問AI独自作成。",
+    remainingWork: ["公式全員正解1原問は通常採点対象外"],
+  },
+  {
+    slug: "jidosha-2-diesel", examCode: "jidosha-2-diesel", shortName: "二級ジーゼル自動車整備士", fullName: "二級ジーゼル自動車整備士", domain: "automotive",
+    administrator: "一般社団法人日本自動車整備振興会連合会",
+    officialQuestionsUrl: "https://www.jaspa.or.jp/mechanic/past/", officialReuseTermsUrl: "", status: "live",
+    reuseSummary: "令和8年度第1回・令和7年度第2回の開催科目から、保存80原問中80問を部分収録。公式問題・正答と全選択肢の解説、必要な原図を確認できます。科目ごとの直近2回を揃えたものではありません。法令は各試験日時点です。解説は独自作成です。",
+    attributionTemplate: "出典：日本自動車整備振興会連合会 自動車整備技能登録試験（問題・正答）。解説は過去問AI独自作成。",
+    remainingWork: [],
+  },
+  {
+    slug: "jidosha-2-chassis", examCode: "jidosha-2-chassis", shortName: "二級自動車シャシ整備士", fullName: "二級自動車シャシ整備士", domain: "automotive",
+    administrator: "一般社団法人日本自動車整備振興会連合会",
+    officialQuestionsUrl: "https://www.jaspa.or.jp/mechanic/past/", officialReuseTermsUrl: "", status: "live",
+    reuseSummary: "令和8年度第1回・令和7年度第2回の開催科目から、保存30原問中30問を部分収録。公式問題・正答と全選択肢の解説、必要な原図を確認できます。科目ごとの直近2回を揃えたものではありません。法令は各試験日時点です。解説は独自作成です。",
+    attributionTemplate: "出典：日本自動車整備振興会連合会 自動車整備技能登録試験（問題・正答）。解説は過去問AI独自作成。",
+    remainingWork: [],
+  },
+  {
+    slug: "jidosha-2-motorcycle", examCode: "jidosha-2-motorcycle", shortName: "二級二輪自動車整備士", fullName: "二級二輪自動車整備士", domain: "automotive",
+    administrator: "一般社団法人日本自動車整備振興会連合会",
+    officialQuestionsUrl: "https://www.jaspa.or.jp/mechanic/past/", officialReuseTermsUrl: "", status: "live",
+    reuseSummary: "令和8年度第1回・令和7年度第2回の開催科目から、保存40原問中40問を部分収録。公式問題・正答と全選択肢の解説、必要な原図を確認できます。科目ごとの直近2回を揃えたものではありません。法令は各試験日時点です。解説は独自作成です。",
+    attributionTemplate: "出典：日本自動車整備振興会連合会 自動車整備技能登録試験（問題・正答）。解説は過去問AI独自作成。",
+    remainingWork: [],
+  },
+  {
+    slug: "jidosha-3-chassis", examCode: "jidosha-3-chassis", shortName: "三級自動車シャシ整備士", fullName: "三級自動車シャシ整備士", domain: "automotive",
+    administrator: "一般社団法人日本自動車整備振興会連合会",
+    officialQuestionsUrl: "https://www.jaspa.or.jp/mechanic/past/", officialReuseTermsUrl: "", status: "live",
+    reuseSummary: "令和8年度第1回・令和7年度第2回の開催科目から、保存60原問中60問を部分収録。公式問題・正答と全選択肢の解説、必要な原図を確認できます。科目ごとの直近2回を揃えたものではありません。法令は各試験日時点です。解説は独自作成です。",
+    attributionTemplate: "出典：日本自動車整備振興会連合会 自動車整備技能登録試験（問題・正答）。解説は過去問AI独自作成。",
+    remainingWork: [],
+  },
+  {
+    slug: "jidosha-3-gasoline", examCode: "jidosha-3-gasoline", shortName: "三級自動車ガソリン・エンジン整備士", fullName: "三級自動車ガソリン・エンジン整備士", domain: "automotive",
+    administrator: "一般社団法人日本自動車整備振興会連合会",
+    officialQuestionsUrl: "https://www.jaspa.or.jp/mechanic/past/", officialReuseTermsUrl: "", status: "live",
+    reuseSummary: "令和8年度第1回・令和7年度第2回の開催科目から、保存60原問中60問を部分収録。公式問題・正答と全選択肢の解説、必要な原図を確認できます。科目ごとの直近2回を揃えたものではありません。法令は各試験日時点です。解説は独自作成です。",
+    attributionTemplate: "出典：日本自動車整備振興会連合会 自動車整備技能登録試験（問題・正答）。解説は過去問AI独自作成。",
+    remainingWork: [],
+  },
+  {
+    slug: "jidosha-3-diesel", examCode: "jidosha-3-diesel", shortName: "三級自動車ジーゼル・エンジン整備士", fullName: "三級自動車ジーゼル・エンジン整備士", domain: "automotive",
+    administrator: "一般社団法人日本自動車整備振興会連合会",
+    officialQuestionsUrl: "https://www.jaspa.or.jp/mechanic/past/", officialReuseTermsUrl: "", status: "live",
+    reuseSummary: "令和8年度第1回・令和7年度第2回の開催科目から、保存60原問中60問を部分収録。公式問題・正答と全選択肢の解説、必要な原図を確認できます。科目ごとの直近2回を揃えたものではありません。法令は各試験日時点です。解説は独自作成です。",
+    attributionTemplate: "出典：日本自動車整備振興会連合会 自動車整備技能登録試験（問題・正答）。解説は過去問AI独自作成。",
+    remainingWork: [],
+  },
+  {
+    slug: "jidosha-3-motorcycle", examCode: "jidosha-3-motorcycle", shortName: "三級二輪自動車整備士", fullName: "三級二輪自動車整備士", domain: "automotive",
+    administrator: "一般社団法人日本自動車整備振興会連合会",
+    officialQuestionsUrl: "https://www.jaspa.or.jp/mechanic/past/", officialReuseTermsUrl: "", status: "live",
+    reuseSummary: "令和8年度第1回・令和7年度第2回の開催科目から、保存30原問中30問を部分収録。公式問題・正答と全選択肢の解説、必要な原図を確認できます。科目ごとの直近2回を揃えたものではありません。法令は各試験日時点です。解説は独自作成です。",
+    attributionTemplate: "出典：日本自動車整備振興会連合会 自動車整備技能登録試験（問題・正答）。解説は過去問AI独自作成。",
+    remainingWork: [],
+  },
+  {
+    slug: "jidosha-body", examCode: "jidosha-body", shortName: "自動車車体整備士", fullName: "自動車車体整備士", domain: "automotive",
+    administrator: "一般社団法人日本自動車整備振興会連合会",
+    officialQuestionsUrl: "https://www.jaspa.or.jp/mechanic/past/", officialReuseTermsUrl: "", status: "live",
+    reuseSummary: "令和8年度第1回・令和7年度第2回の開催科目から、保存80原問中79問を部分収録。公式問題・正答と全選択肢の解説、必要な原図を確認できます。科目ごとの直近2回を揃えたものではありません。法令は各試験日時点です。解説は独自作成です。",
+    attributionTemplate: "出典：日本自動車整備振興会連合会 自動車整備技能登録試験（問題・正答）。解説は過去問AI独自作成。",
+    remainingWork: ["未収録1原問の内容照合"],
+  },
+  {
+    slug: "jidosha-electrical", examCode: "jidosha-electrical", shortName: "自動車電気装置整備士", fullName: "自動車電気装置整備士", domain: "automotive",
+    administrator: "一般社団法人日本自動車整備振興会連合会",
+    officialQuestionsUrl: "https://www.jaspa.or.jp/mechanic/past/", officialReuseTermsUrl: "", status: "live",
+    reuseSummary: "令和8年度第1回・令和7年度第2回の開催科目から、保存40原問中40問を部分収録。公式問題・正答と全選択肢の解説、必要な原図を確認できます。科目ごとの直近2回を揃えたものではありません。法令は各試験日時点です。解説は独自作成です。",
+    attributionTemplate: "出典：日本自動車整備振興会連合会 自動車整備技能登録試験（問題・正答）。解説は過去問AI独自作成。",
     remainingWork: [],
   },
   {

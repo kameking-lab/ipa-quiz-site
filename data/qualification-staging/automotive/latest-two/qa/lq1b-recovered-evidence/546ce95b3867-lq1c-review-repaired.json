@@ -1,0 +1,97 @@
+{
+  "model": "gpt-6-astra",
+  "scope": "Independent review of all 24 IDs in lq1c-repaired-ids.json against immutable lq1c-candidates.json, prior findings, source page images, official answer images and primary technical evidence. Verdicts apply to packet as supplied, not proposed replacements.",
+  "limitations": [],
+  "rows": [
+    {
+      "id": "jidosha-2026-first-3-gasoline-q04",
+      "candidateSha256": "c29e458e844c647f4a57671bd42ac1729b0ace028be7bf6f5ec20ed433be98bc",
+      "verdict": "PASS",
+      "sourcePagesChecked": [
+        2
+      ],
+      "answerChecked": true,
+      "allFourExplanationsChecked": true,
+      "findings": [
+        {
+          "field": "validation",
+          "issue": "??????????????????????????3?????????",
+          "replacement": null,
+          "source": "tmp/lq1b-sources/jaspa-2026-first-3-gasoline-p02.png; https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_kai.pdf"
+        }
+      ]
+    },
+    {
+      "id": "jidosha-2025-second-3-chassis-q07",
+      "candidateSha256": "408ad97025744824edc8755cba91c9d17a7fb2e7cfd47a3527f0b5b8269cc259",
+      "verdict": "PASS",
+      "sourcePagesChecked": [
+        3
+      ],
+      "answerChecked": true,
+      "allFourExplanationsChecked": true,
+      "findings": [
+        {
+          "field": "validation",
+          "issue": "??????????????????????????????????????????????",
+          "replacement": null,
+          "source": "tmp/lq1b-sources/jaspa-2025-second-3-chassis-p03.png; https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_kai.pdf"
+        }
+      ]
+    },
+    {
+      "id": "jidosha-2025-second-electrical-q01",
+      "candidateSha256": "0ecb2fa894e3552dce6fd2596e8eeb50d3e38b7dbb7cd70a8808d167710152be",
+      "verdict": "PASS",
+      "sourcePagesChecked": [
+        2
+      ],
+      "answerChecked": true,
+      "allFourExplanationsChecked": true,
+      "findings": [
+        {
+          "field": "validation",
+          "issue": "??2???????????????????????????????????????????????",
+          "replacement": null,
+          "source": "tmp/lq1b-sources/jaspa-2025-second-electrical-p02.png; https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_kai.pdf; https://toshiba.semicon-storage.com/jp/semiconductor/knowledge/e-learning/basics-of-schottky-barrier-diodes/chap1/chap1-2.html"
+        }
+      ]
+    },
+    {
+      "id": "jidosha-2025-second-3-motorcycle-q04",
+      "candidateSha256": "b048b933e62bce9ac3a890eee863da4abf4ecf075219f7bb8ceb679f9f8dea51",
+      "verdict": "PASS",
+      "sourcePagesChecked": [
+        2
+      ],
+      "answerChecked": true,
+      "allFourExplanationsChecked": true,
+      "findings": [
+        {
+          "field": "validation",
+          "issue": "????????????????????????????????????????????",
+          "replacement": null,
+          "source": "tmp/lq1b-sources/jaspa-2025-second-3-motorcycle-p02.png; https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_kai.pdf; https://www.idemitsu.com/jp/apollolink/carlife/mainte/e-oil/index.html"
+        }
+      ]
+    },
+    {
+      "id": "jidosha-2025-second-2-gasoline-q13",
+      "candidateSha256": "826b20228be88d3e3bb2aff722f9f62de78bf18ac75c1cb30eaf28dcb5af2347",
+      "verdict": "REFERENCE",
+      "sourcePagesChecked": [
+        5
+      ],
+      "answerChecked": true,
+      "allFourExplanationsChecked": true,
+      "findings": [
+        {
+          "field": "validation",
+          "issue": "????p1?????????????2?3.14?1200?10/60=1256 W=1.256 kW???4?0.746/1.265/2.456/4.726???????????PASS????REFERENCE?",
+          "replacement": null,
+          "source": "tmp/lq1b-sources/jaspa-2025-second-2-gasoline-p05.png; https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_kai.pdf"
+        }
+      ]
+    }
+  ]
+}

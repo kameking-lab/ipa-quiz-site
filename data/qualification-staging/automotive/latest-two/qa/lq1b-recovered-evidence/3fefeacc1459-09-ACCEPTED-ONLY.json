@@ -1,0 +1,651 @@
+{
+  "schemaVersion": 1,
+  "frozenAtUtc": "2026-10-23T12:58:21.812531+00:00",
+  "reviewer": "gpt-6.1-sol Standard / task-96",
+  "role": "DISTINCT_INDEPENDENT_REVIEWER; did not author these three candidates",
+  "scopeIds": [
+    "jidosha-2025-second-1-small-written-q41",
+    "jidosha-2025-second-1-small-written-q47",
+    "jidosha-2025-second-1-small-written-q49"
+  ],
+  "acceptedIds": [
+    "jidosha-2025-second-1-small-written-q41",
+    "jidosha-2025-second-1-small-written-q47",
+    "jidosha-2025-second-1-small-written-q49"
+  ],
+  "acceptedCount": 3,
+  "remainingHoldIds": [],
+  "remainingHoldCount": 0,
+  "state": "INDEPENDENT_ACCEPTED_EXACT_CORRECTED_VERSIONS",
+  "writtenOriginals": [
+    {
+      "id": "jidosha-2025-second-1-small-written-q41",
+      "qNumber": 41,
+      "question": "自動車リサイクル法に関する記述として、不適切なものは次のうちどれか。",
+      "choices": {
+        "ア": "(1) コンクリート・ミキサ車に架装されているコンクリート・ミキサその他のタンク型の積載装置及び保冷貨物自動車に架装されている冷蔵用装置その他のバン型の積載装置は、いずれも自動車リサイクル法の対象ではない。",
+        "イ": "(2) 被けん引車（トレーラ）、大型特殊自動車、小型特殊自動車、二輪自動車（側車付のものを含む。）及び原動機付自転車は、いずれも自動車リサイクル法の対象ではない。",
+        "ウ": "(3) ナンバ・プレートの付いていない小型四輪自動車の構内車は、自動車リサイクル法の対象であるので、この自動車の使用者は引取業者に使用済自動車を引き渡さなければならない。",
+        "エ": "(4) 自動車輸入業者は、自らが輸入した自動車が使用済みとなった場合、その自動車から発生するシュレッダ・ダスト、エアバッグ類、フロン類を引き取り、リサイクルなどを行う。"
+      },
+      "answer": "ウ",
+      "officialAnswerNumber": "3",
+      "explanation": "不適切なのは（3）。自動車リサイクル法第8条が使用済自動車を引取業者へ引き渡す義務を課している相手は「自動車の所有者」であり、本肢の「使用者」ではない。ナンバ・プレートがないことや未登録であることだけを理由に、一律に同法の対象外とする説明はしない。",
+      "choiceExplanations": {
+        "ア": "指定された架装物は車体本体とは別扱いで、法の対象から除かれる。",
+        "イ": "トレーラ、特殊自動車、二輪車及び原付は対象外とされる。",
+        "ウ": "法第8条の引渡義務の主体は「自動車の所有者」である。「使用者」を義務者とする点が不適切。ナンバ・プレートの有無のみから、対象外という別の理由を付け加えない。",
+        "エ": "製造・輸入業者は使用済車由来のシュレッダ・ダスト、エアバッグ類、フロン類の引取り・再資源化等を担う。"
+      },
+      "explanationCoverage": "full",
+      "hasImage": false,
+      "sourcePages": [
+        29
+      ],
+      "sourceFigureRequired": false,
+      "topicTags": [
+        "法令・安全・環境"
+      ],
+      "difficulty": 3,
+      "isCalculation": false,
+      "needsReview": false,
+      "reviewNotes": [],
+      "officialReferenceUrls": [
+        "https://laws.e-gov.go.jp/api/2/law_data/414AC0000000087_20250601_504AC0000000068",
+        "https://laws.e-gov.go.jp/api/2/law_data/414CO0000000389_20250601_507CO0000000193",
+        "https://laws.e-gov.go.jp/api/2/law_data/326AC0000000185_20250601_504AC0000000068"
+      ],
+      "qualification": "jidousha-seibishi-gakka",
+      "session": "gakka",
+      "type": "multiple-choice",
+      "year": 2025,
+      "fiscalYear": 2025,
+      "season": "second",
+      "term": "second",
+      "subject": "1-small-written",
+      "category": "一級小型自動車（筆記）",
+      "examDate": "2026-03-22",
+      "sourcePdfUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_1k_0.pdf",
+      "sourceAnswerUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_kai.pdf",
+      "sourceAttribution": "出典：日本自動車整備振興会連合会 令和7年度第2回自動車整備技能登録試験 一級小型自動車（筆記） No.41",
+      "officialQuestionStatus": "normal",
+      "lastUpdated": "2026-10-11",
+      "permissionVerified": false,
+      "publicGo": 0,
+      "sourcePageReferences": [
+        {
+          "physicalPage": 29,
+          "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_1k_0.pdf#page=29",
+          "pdfSha256": "9f617d58b464c075aafc9bc042b60ac5b41798654846757490f1a7c7d2102b30"
+        }
+      ],
+      "sourceFigureAssets": []
+    },
+    {
+      "id": "jidosha-2025-second-1-small-written-q47",
+      "qNumber": 47,
+      "question": "「道路運送車両法」に照らし、「自動車特定整備事業」に関する記述として、不適切なものは次のうちどれか。",
+      "choices": {
+        "ア": "(1) 小型自動車特定整備事業とは、小型自動車及び検査対象軽自動車を対象とする自動車特定整備事業である。",
+        "イ": "(2) 普通自動車特定整備事業とは、普通自動車及び四輪の小型自動車を対象とする自動車特定整備事業である。",
+        "ウ": "(3) 自動車特定整備事業を経営しようとする者は、自動車特定整備事業の種類及び特定整備を行う事業場ごとに、地方運輸局長の認証を受けなければならない。",
+        "エ": "(4) 軽自動車特定整備事業とは、検査対象軽自動車を対象とする自動車特定整備事業である。"
+      },
+      "answer": "イ",
+      "officialAnswerNumber": "2",
+      "explanation": "不適切なのは（2）。2026年3月22日に適用される道路運送車両法第77条第1号では、普通自動車特定整備事業の対象を「普通自動車、四輪の小型自動車及び大型特殊自動車」と定めている。本肢は大型特殊自動車を欠いている。四輪の小型自動車を含めたことが誤りなのではない。",
+      "choiceExplanations": {
+        "ア": "小型自動車と検査対象軽自動車を対象とする区分である。",
+        "イ": "法第77条第1号の対象は普通自動車・四輪の小型自動車・大型特殊自動車の3区分。本肢は大型特殊自動車を挙げていないため不適切。",
+        "ウ": "事業の種類と事業場ごとに地方運輸局長の認証が必要。",
+        "エ": "検査対象軽自動車を対象とする区分である。"
+      },
+      "explanationCoverage": "full",
+      "hasImage": false,
+      "sourcePages": [
+        31
+      ],
+      "sourceFigureRequired": false,
+      "topicTags": [
+        "法令"
+      ],
+      "difficulty": 3,
+      "isCalculation": false,
+      "needsReview": false,
+      "reviewNotes": [],
+      "officialReferenceUrls": [
+        "https://laws.e-gov.go.jp/api/2/law_data/326AC0000000185_20250601_504AC0000000068"
+      ],
+      "qualification": "jidousha-seibishi-gakka",
+      "session": "gakka",
+      "type": "multiple-choice",
+      "year": 2025,
+      "fiscalYear": 2025,
+      "season": "second",
+      "term": "second",
+      "subject": "1-small-written",
+      "category": "一級小型自動車（筆記）",
+      "examDate": "2026-03-22",
+      "sourcePdfUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_1k_0.pdf",
+      "sourceAnswerUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_kai.pdf",
+      "sourceAttribution": "出典：日本自動車整備振興会連合会 令和7年度第2回自動車整備技能登録試験 一級小型自動車（筆記） No.47",
+      "officialQuestionStatus": "normal",
+      "lastUpdated": "2026-10-11",
+      "permissionVerified": false,
+      "publicGo": 0,
+      "sourcePageReferences": [
+        {
+          "physicalPage": 31,
+          "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_1k_0.pdf#page=31",
+          "pdfSha256": "9f617d58b464c075aafc9bc042b60ac5b41798654846757490f1a7c7d2102b30"
+        }
+      ],
+      "sourceFigureAssets": []
+    },
+    {
+      "id": "jidosha-2025-second-1-small-written-q49",
+      "qNumber": 49,
+      "question": "「道路運送車両法」及び「自動車点検基準」に照らし、別表第5（自家用貨物自動車等の定期点検基準）に基づき「点検時期が6月ごと」のものとして、適切なものは次のうちどれか。",
+      "choices": {
+        "ア": "(1) かじ取り装置のハンドルの操作具合",
+        "イ": "(2) 制動装置のリザーバ・タンクの液量",
+        "ウ": "(3) シャシ各部の給油脂状態",
+        "エ": "(4) 原動機の燃料装置の燃料漏れ"
+      },
+      "answer": "ウ",
+      "officialAnswerNumber": "3",
+      "explanation": "別表第5でシャシ各部の給油脂状態は6月ごとの点検項目。（3）が適切。",
+      "choiceExplanations": {
+        "ア": "別表第5の「かじ取り装置―ハンドル―操作具合」は「12月ごと」の欄に記載されている。6月ごとの欄にはないため、本問の答えではない。",
+        "イ": "別表第5の「制動装置―リザーバ・タンク―液量」は「12月ごと」の欄に記載されている。日常点検にも関係することだけでは、本問の定期点検時期の説明にならない。",
+        "ウ": "シャシ各部の給油脂状態が6月ごとの項目。",
+        "エ": "別表第5の「原動機―燃料装置―燃料漏れ」は「12月ごと」の欄に記載されている。6月ごとの項目ではない。"
+      },
+      "explanationCoverage": "full",
+      "hasImage": false,
+      "sourcePages": [
+        31
+      ],
+      "sourceFigureRequired": false,
+      "topicTags": [
+        "法令"
+      ],
+      "difficulty": 3,
+      "isCalculation": false,
+      "needsReview": false,
+      "reviewNotes": [],
+      "officialReferenceUrls": [
+        "https://laws.e-gov.go.jp/api/2/law_data/326M50000800070_20231221_505M60000800086"
+      ],
+      "qualification": "jidousha-seibishi-gakka",
+      "session": "gakka",
+      "type": "multiple-choice",
+      "year": 2025,
+      "fiscalYear": 2025,
+      "season": "second",
+      "term": "second",
+      "subject": "1-small-written",
+      "category": "一級小型自動車（筆記）",
+      "examDate": "2026-03-22",
+      "sourcePdfUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_1k_0.pdf",
+      "sourceAnswerUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_kai.pdf",
+      "sourceAttribution": "出典：日本自動車整備振興会連合会 令和7年度第2回自動車整備技能登録試験 一級小型自動車（筆記） No.49",
+      "officialQuestionStatus": "normal",
+      "lastUpdated": "2026-10-11",
+      "permissionVerified": false,
+      "publicGo": 0,
+      "sourcePageReferences": [
+        {
+          "physicalPage": 31,
+          "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_1k_0.pdf#page=31",
+          "pdfSha256": "9f617d58b464c075aafc9bc042b60ac5b41798654846757490f1a7c7d2102b30"
+        }
+      ],
+      "sourceFigureAssets": []
+    }
+  ],
+  "candidateBindings": [
+    {
+      "id": "jidosha-2025-second-1-small-written-q41",
+      "candidatePath": "C:\\Users\\kanet\\Documents\\Codex\\2026-10-23\\task-96\\output\\small-q41-q47-q49-independent\\accepted-candidates\\jidosha-2025-second-1-small-written-q41.json",
+      "candidateFileSha256": "9ba09f632e157507894a072f9b61985c5af4f7b2e4fc0a864ba84badb762532d",
+      "candidateCanonicalSha256": "44a173ee7b0351ea8653269174138c7fd6c506b1493cf32278b7d3099568f1ac",
+      "sourceCandidatePath": "C:\\Users\\kanet\\Documents\\Codex\\2026-10-23\\task-99\\output\\small-last8-authorship-20261023\\candidates\\jidosha-2025-second-1-small-written-q41.json",
+      "baseContainerPath": "C:\\Users\\kanet\\Documents\\Codex\\2026-10-23\\task-5\\output\\automotive-forward-20261023\\release-1small25b\\PACKET.json",
+      "baseContainerSha256": "27d5543bf4c2fcf602e516369ad05dc63dc8a9cb0ac7010e564bd7a3f66e02b2",
+      "baseCandidateCanonicalSha256": "e5f15580de2e06f64fa29aeb3248a02f130974b74ff78c4daf0d9ed31c62bf43",
+      "authorPacketSha256": "26842250561add49e7035badaecac5e0ae3d02e56b4aff47350f4c593285af91",
+      "actualReviewedDiff": [
+        {
+          "path": "/explanation",
+          "before": "正答は（3）。構内車のように道路運送車両法上の自動車として登録・使用されない小型四輪車を、ナンバ・プレートがないだけで一律にリサイクル法対象とするのは誤り。",
+          "value": "不適切なのは（3）。自動車リサイクル法第8条が使用済自動車を引取業者へ引き渡す義務を課している相手は「自動車の所有者」であり、本肢の「使用者」ではない。ナンバ・プレートがないことや未登録であることだけを理由に、一律に同法の対象外とする説明はしない。"
+        },
+        {
+          "path": "/choiceExplanations/ウ",
+          "before": "設問の構内車は対象車とみなせず、引取業者への引渡し義務をこの根拠で断定できない。",
+          "value": "法第8条の引渡義務の主体は「自動車の所有者」である。「使用者」を義務者とする点が不適切。ナンバ・プレートの有無のみから、対象外という別の理由を付け加えない。"
+        },
+        {
+          "path": "/officialReferenceUrls",
+          "before": [],
+          "value": [
+            "https://laws.e-gov.go.jp/api/2/law_data/414AC0000000087_20250601_504AC0000000068",
+            "https://laws.e-gov.go.jp/api/2/law_data/414CO0000000389_20250601_507CO0000000193",
+            "https://laws.e-gov.go.jp/api/2/law_data/326AC0000000185_20250601_504AC0000000068"
+          ]
+        }
+      ],
+      "originalQuestionKeyFigureBinding": {
+        "id": "jidosha-2025-second-1-small-written-q41",
+        "candidateCanonicalSha256": "e5f15580de2e06f64fa29aeb3248a02f130974b74ff78c4daf0d9ed31c62bf43",
+        "immutableReleasePacketSha256": "27d5543bf4c2fcf602e516369ad05dc63dc8a9cb0ac7010e564bd7a3f66e02b2",
+        "sourceDatasetSha256": "2dd5ab45ef5d82ac8e4ff60e86920701d4584106e90ba86dee0e6a9e3611064f",
+        "originalSource": {
+          "path": "evidence/sources/jaspa-2025-second-1-small-written.pdf",
+          "sha256": "9f617d58b464c075aafc9bc042b60ac5b41798654846757490f1a7c7d2102b30",
+          "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_1k_0.pdf",
+          "physicalPages": [
+            29
+          ]
+        },
+        "officialKey": {
+          "path": "evidence/sources/jaspa-2025-second-answers.pdf",
+          "sha256": "2f73820401362ca24f052d8339bf20e4865dab2f2afe74b7c7b546b7b90d6701",
+          "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_kai.pdf",
+          "physicalPage": 1,
+          "column": "12 (1小)",
+          "qNumber": 41,
+          "independentlyReadAnswerNumber": "3",
+          "candidateAnswerNumber": "3",
+          "answerLetter": "ウ"
+        },
+        "originalPageImages": [
+          {
+            "path": "evidence/original-pages/page-29.png",
+            "sha256": "f3c50f2f73defc1edc8e79f3c97317dde565036b4a9fdfc2314d0f6ccdaab05e",
+            "reusedFrom": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\codex-takeover-20261011\\automotive-latest-two\\ocr\\jaspa-2025-second-1-small-written\\page-29.png"
+          }
+        ],
+        "requiredFigures": [],
+        "sourceFigureRequired": false,
+        "state": "HOLD",
+        "reason": "Original and key 3 match. The explanation expands the answer into a registration/usage-based legal-scope rule without frozen exam-date recycling-law definitions or enforcement-order evidence.",
+        "minimumMissingEvidence": "Recycling Act plus relevant enforcement-order vehicle/equipment exclusions and user/importer provisions effective on 2026-03-22; do not infer legal scope from a missing number plate alone.",
+        "accessState": "NOT_DENIED; evidence insufficient within frozen batch; no new acquisition attempted."
+      },
+      "officialKeyDirectCheck": {
+        "page": 1,
+        "column": "12 (1小)",
+        "qNumber": 41,
+        "answerNumber": "3",
+        "labelBbox": [
+          50.400001525878906,
+          607.2020263671875,
+          88.68168640136719,
+          616.08203125
+        ],
+        "answerBbox": [
+          102.13999938964844,
+          606.0496826171875,
+          107.5999984741211,
+          616.9697265625
+        ]
+      },
+      "independentJudgment": {
+        "decision": "INDEPENDENT_ACCEPT_EXACT_AUTHORED_VERSION",
+        "reason": "The replacement now identifies the statutory owner as the Article8 duty holder, rather than inferring a registration/yard-use vehicle exclusion. That directly resolves the incorrect user-duty wording in option3. The saved exam-date Act/order definitions also support the necessary unaffected equipment, excluded-vehicle, importer and material-stream context.",
+        "changedClaimVerified": "Article8 imposes handover to an authorized collector on the vehicle owner. The option uses 使用者, so the candidate correctly identifies the duty-holder error. It does not claim all yard-only or unregistered cars are excluded.",
+        "necessaryContextChecks": [
+          "Road Vehicle Act Article2(2)/(3) distinguishes automobiles from mopeds; Recycling Act Article2(1) excludes trailers, two-wheel automobiles and large/small special vehicles.",
+          "Recycling Act Article2(2) and Enforcement Order Article2 identify the removable van/refrigeration and mixer/tank equipment involved in option1.",
+          "Recycling Act Article2(4)/(15)/(16), Article21 and Articles25/26 plus Order Article3 support the importer, shredder-residue, airbag and fluorocarbon duties; 再資源化等 includes destruction of fluorocarbons."
+        ],
+        "decisiveSourceLocators": [
+          "recyclingAct Article8",
+          "recyclingAct Article2",
+          "recyclingOrder Articles1-3",
+          "roadVehicleAct Article2",
+          "recyclingAct Articles21,25,26"
+        ]
+      }
+    },
+    {
+      "id": "jidosha-2025-second-1-small-written-q47",
+      "candidatePath": "C:\\Users\\kanet\\Documents\\Codex\\2026-10-23\\task-96\\output\\small-q41-q47-q49-independent\\accepted-candidates\\jidosha-2025-second-1-small-written-q47.json",
+      "candidateFileSha256": "2212fd5d057b57816d1c4eba7f82a6c952346331ea05b64fd89ed09cd83234ca",
+      "candidateCanonicalSha256": "a5160b25f50eb6443459fe01ab03d2f262d1548efd6e3fec81b808ffc98a59d0",
+      "sourceCandidatePath": "C:\\Users\\kanet\\Documents\\Codex\\2026-10-23\\task-99\\output\\small-last8-authorship-20261023\\candidates\\jidosha-2025-second-1-small-written-q47.json",
+      "baseContainerPath": "C:\\Users\\kanet\\Documents\\Codex\\2026-10-23\\task-5\\output\\automotive-forward-20261023\\release-1small25b\\PACKET.json",
+      "baseContainerSha256": "27d5543bf4c2fcf602e516369ad05dc63dc8a9cb0ac7010e564bd7a3f66e02b2",
+      "baseCandidateCanonicalSha256": "bb19ba7e832fbe64f471f9e6fe0f777f8a3655acd4e64deaf95c1fdad85dc7c7",
+      "authorPacketSha256": "26842250561add49e7035badaecac5e0ae3d02e56b4aff47350f4c593285af91",
+      "actualReviewedDiff": [
+        {
+          "path": "/explanation",
+          "before": "普通自動車特定整備事業の対象は普通自動車であり、四輪の小型自動車を含める（2）が不適切。",
+          "value": "不適切なのは（2）。2026年3月22日に適用される道路運送車両法第77条第1号では、普通自動車特定整備事業の対象を「普通自動車、四輪の小型自動車及び大型特殊自動車」と定めている。本肢は大型特殊自動車を欠いている。四輪の小型自動車を含めたことが誤りなのではない。"
+        },
+        {
+          "path": "/choiceExplanations/イ",
+          "before": "四輪の小型自動車は普通自動車特定整備事業の対象としては列挙されない。",
+          "value": "法第77条第1号の対象は普通自動車・四輪の小型自動車・大型特殊自動車の3区分。本肢は大型特殊自動車を挙げていないため不適切。"
+        },
+        {
+          "path": "/officialReferenceUrls",
+          "before": [],
+          "value": [
+            "https://laws.e-gov.go.jp/api/2/law_data/326AC0000000185_20250601_504AC0000000068"
+          ]
+        }
+      ],
+      "originalQuestionKeyFigureBinding": {
+        "id": "jidosha-2025-second-1-small-written-q47",
+        "candidateCanonicalSha256": "bb19ba7e832fbe64f471f9e6fe0f777f8a3655acd4e64deaf95c1fdad85dc7c7",
+        "immutableReleasePacketSha256": "27d5543bf4c2fcf602e516369ad05dc63dc8a9cb0ac7010e564bd7a3f66e02b2",
+        "sourceDatasetSha256": "2dd5ab45ef5d82ac8e4ff60e86920701d4584106e90ba86dee0e6a9e3611064f",
+        "originalSource": {
+          "path": "evidence/sources/jaspa-2025-second-1-small-written.pdf",
+          "sha256": "9f617d58b464c075aafc9bc042b60ac5b41798654846757490f1a7c7d2102b30",
+          "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_1k_0.pdf",
+          "physicalPages": [
+            31
+          ]
+        },
+        "officialKey": {
+          "path": "evidence/sources/jaspa-2025-second-answers.pdf",
+          "sha256": "2f73820401362ca24f052d8339bf20e4865dab2f2afe74b7c7b546b7b90d6701",
+          "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_kai.pdf",
+          "physicalPage": 1,
+          "column": "12 (1小)",
+          "qNumber": 47,
+          "independentlyReadAnswerNumber": "2",
+          "candidateAnswerNumber": "2",
+          "answerLetter": "イ"
+        },
+        "originalPageImages": [
+          {
+            "path": "evidence/original-pages/page-31.png",
+            "sha256": "98c514edb2c7fd50eca0d08ea869e100f4b719c90ebc64308df2dda2ef1cb6a6",
+            "reusedFrom": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\codex-takeover-20261011\\automotive-latest-two\\ocr\\jaspa-2025-second-1-small-written\\page-31.png"
+          }
+        ],
+        "requiredFigures": [],
+        "sourceFigureRequired": false,
+        "state": "HOLD",
+        "reason": "Key 2 and original match. A cached oral-exam Act revision is effective 2026-04-01, later than this 2026-03-22 written exam, so it is not reused as an exact-version legal source.",
+        "minimumMissingEvidence": "Road Transport Vehicle Act Articles 77 and 78 effective 2026-03-22; the saved 2026-04-01 oral-exam revision is not an exact-version substitute.",
+        "accessState": "NOT_DENIED; evidence insufficient within frozen batch; no new acquisition attempted."
+      },
+      "officialKeyDirectCheck": {
+        "page": 1,
+        "column": "12 (1小)",
+        "qNumber": 47,
+        "answerNumber": "2",
+        "labelBbox": [
+          50.400001525878906,
+          687.8720703125,
+          88.68168640136719,
+          696.7520751953125
+        ],
+        "answerBbox": [
+          102.13999938964844,
+          686.7196655273438,
+          107.5999984741211,
+          697.6397094726562
+        ]
+      },
+      "independentJudgment": {
+        "decision": "INDEPENDENT_ACCEPT_EXACT_AUTHORED_VERSION",
+        "reason": "Article77(1) expressly lists ordinary automobiles, four-wheel small automobiles and large special automobiles. The original option omits the last class. The candidate corrects the prior false claim that four-wheel small vehicles were excluded and uses the revision actually in force on2026-03-22.",
+        "changedClaimVerified": "大型特殊自動車 is the omitted class; 四輪の小型自動車 is included.",
+        "necessaryContextChecks": [
+          "Article77(2)/(3) supports the unchanged small/light business definitions.",
+          "Article78(1) supports certification per business type and establishment.",
+          "The 2026-04-01 revision is after the exam and was not substituted."
+        ],
+        "decisiveSourceLocators": [
+          "roadVehicleAct Article77(1)-(3)",
+          "roadVehicleAct Article78(1)"
+        ]
+      }
+    },
+    {
+      "id": "jidosha-2025-second-1-small-written-q49",
+      "candidatePath": "C:\\Users\\kanet\\Documents\\Codex\\2026-10-23\\task-96\\output\\small-q41-q47-q49-independent\\accepted-candidates\\jidosha-2025-second-1-small-written-q49.json",
+      "candidateFileSha256": "832f564e7ba8b077f1b91a95158750f2a52f53ef8b4979f11f6c1dafb762ad3e",
+      "candidateCanonicalSha256": "39128677149fd247dae18343d7bfb7c8468c73e5c784aab75af7d6a625bc7e79",
+      "sourceCandidatePath": "C:\\Users\\kanet\\Documents\\Codex\\2026-10-23\\task-99\\output\\small-last8-authorship-20261023\\candidates\\jidosha-2025-second-1-small-written-q49.json",
+      "baseContainerPath": "C:\\Users\\kanet\\Documents\\Codex\\2026-10-23\\task-5\\output\\automotive-forward-20261023\\release-1small25b\\PACKET.json",
+      "baseContainerSha256": "27d5543bf4c2fcf602e516369ad05dc63dc8a9cb0ac7010e564bd7a3f66e02b2",
+      "baseCandidateCanonicalSha256": "7b14389cd8167c3ffd4bb06a25395c350e8d9ae1243bdde7177de79d31088dcd",
+      "authorPacketSha256": "26842250561add49e7035badaecac5e0ae3d02e56b4aff47350f4c593285af91",
+      "actualReviewedDiff": [
+        {
+          "path": "/choiceExplanations/ア",
+          "before": "ハンドルの操作具合は別の点検時期に設定される。",
+          "value": "別表第5の「かじ取り装置―ハンドル―操作具合」は「12月ごと」の欄に記載されている。6月ごとの欄にはないため、本問の答えではない。"
+        },
+        {
+          "path": "/choiceExplanations/イ",
+          "before": "制動液リザーバの液量は日常点検に属する。",
+          "value": "別表第5の「制動装置―リザーバ・タンク―液量」は「12月ごと」の欄に記載されている。日常点検にも関係することだけでは、本問の定期点検時期の説明にならない。"
+        },
+        {
+          "path": "/choiceExplanations/エ",
+          "before": "燃料装置の燃料漏れは別の点検時期に設定される。",
+          "value": "別表第5の「原動機―燃料装置―燃料漏れ」は「12月ごと」の欄に記載されている。6月ごとの項目ではない。"
+        },
+        {
+          "path": "/officialReferenceUrls",
+          "before": [],
+          "value": [
+            "https://laws.e-gov.go.jp/api/2/law_data/326M50000800070_20231221_505M60000800086"
+          ]
+        }
+      ],
+      "originalQuestionKeyFigureBinding": {
+        "id": "jidosha-2025-second-1-small-written-q49",
+        "candidateCanonicalSha256": "7b14389cd8167c3ffd4bb06a25395c350e8d9ae1243bdde7177de79d31088dcd",
+        "immutableReleasePacketSha256": "27d5543bf4c2fcf602e516369ad05dc63dc8a9cb0ac7010e564bd7a3f66e02b2",
+        "sourceDatasetSha256": "2dd5ab45ef5d82ac8e4ff60e86920701d4584106e90ba86dee0e6a9e3611064f",
+        "originalSource": {
+          "path": "evidence/sources/jaspa-2025-second-1-small-written.pdf",
+          "sha256": "9f617d58b464c075aafc9bc042b60ac5b41798654846757490f1a7c7d2102b30",
+          "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_1k_0.pdf",
+          "physicalPages": [
+            31
+          ]
+        },
+        "officialKey": {
+          "path": "evidence/sources/jaspa-2025-second-answers.pdf",
+          "sha256": "2f73820401362ca24f052d8339bf20e4865dab2f2afe74b7c7b546b7b90d6701",
+          "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_kai.pdf",
+          "physicalPage": 1,
+          "column": "12 (1小)",
+          "qNumber": 49,
+          "independentlyReadAnswerNumber": "3",
+          "candidateAnswerNumber": "3",
+          "answerLetter": "ウ"
+        },
+        "originalPageImages": [
+          {
+            "path": "evidence/original-pages/page-31.png",
+            "sha256": "98c514edb2c7fd50eca0d08ea869e100f4b719c90ebc64308df2dda2ef1cb6a6",
+            "reusedFrom": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\codex-takeover-20261011\\automotive-latest-two\\ocr\\jaspa-2025-second-1-small-written\\page-31.png"
+          }
+        ],
+        "requiredFigures": [],
+        "sourceFigureRequired": false,
+        "state": "HOLD",
+        "reason": "Key 3 and original match. The distractor explanations do not state the actual inspection periods, and the reservoir explanation does not establish why the periodic schedule excludes six months.",
+        "minimumMissingEvidence": "Exam-date Inspection Standards schedule 5 rows and actual intervals for steering operation, reservoir liquid, chassis greasing, and fuel leakage; explain each distractor specifically.",
+        "accessState": "NOT_DENIED; evidence insufficient within frozen batch; no new acquisition attempted."
+      },
+      "officialKeyDirectCheck": {
+        "page": 1,
+        "column": "12 (1小)",
+        "qNumber": 49,
+        "answerNumber": "3",
+        "labelBbox": [
+          50.400001525878906,
+          714.7520751953125,
+          88.68168640136719,
+          723.632080078125
+        ],
+        "answerBbox": [
+          102.13999938964844,
+          713.5996704101562,
+          107.5999984741211,
+          724.5197143554688
+        ]
+      },
+      "independentJudgment": {
+        "decision": "INDEPENDENT_ACCEPT_EXACT_AUTHORED_VERSION",
+        "reason": "The actual Schedule5 table header and rows, with merged cells respected, place steering operation, reservoir liquid quantity and fuel leakage in the twelve-month column; chassis lubrication is in the six-month column. The replacement supplies the actual periods and removes the misleading daily-only explanation.",
+        "changedClaimVerified": "Options1/2/4 are twelve-month rows; option3 is the six-month row. Twelve-month checks add their entries to the six-month checks.",
+        "necessaryContextChecks": [
+          "Inspection Standards Article2(3) assigns the non-motorcycle Article48(1)(2) class to Schedule5.",
+          "The question explicitly designates Schedule5; no motorcycle or private-passenger-car table is substituted.",
+          "The table includes six-month checks in a twelve-month inspection; the candidate describes the category of each row, not an instruction to omit six-month checks."
+        ],
+        "decisiveSourceLocators": [
+          "inspectionSchedule5 Article2",
+          "Schedule5 raw TableRow0/1,2,11,32,43"
+        ]
+      }
+    }
+  ],
+  "legalEvidence": [
+    {
+      "path": "C:\\Users\\kanet\\Documents\\Codex\\2026-10-23\\task-99\\output\\small-last8-authorship-20261023\\evidence\\road-vehicle-act-20250601.body",
+      "sha256": "1c1722bc4fbbe039707f27195987f42999a9265b870623006baf62afc150c74b",
+      "url": "https://laws.e-gov.go.jp/api/2/law_data/326AC0000000185_20250601_504AC0000000068",
+      "kind": "Exact saved HTTP JSON response body bytes; not a PDF hash"
+    },
+    {
+      "path": "C:\\Users\\kanet\\Documents\\Codex\\2026-10-23\\task-99\\output\\small-last8-authorship-20261023\\evidence\\recycling-act-20250601.body",
+      "sha256": "f3499af67d2aab03529819cb481b1dbcf8c77cdc6adee95269a1c9dca65791c7",
+      "url": "https://laws.e-gov.go.jp/api/2/law_data/414AC0000000087_20250601_504AC0000000068",
+      "kind": "Exact saved HTTP JSON response body bytes; not a PDF hash"
+    },
+    {
+      "path": "C:\\Users\\kanet\\Documents\\Codex\\2026-10-23\\task-99\\output\\small-last8-authorship-20261023\\evidence\\recycling-order-20250601.body",
+      "sha256": "815cf3638e18d28783605b2aad3c388bd6bce12e6fb67f83de52b85b4e227bfd",
+      "url": "https://laws.e-gov.go.jp/api/2/law_data/414CO0000000389_20250601_507CO0000000193",
+      "kind": "Exact saved HTTP JSON response body bytes; not a PDF hash"
+    },
+    {
+      "path": "C:\\Users\\kanet\\Documents\\Codex\\2026-10-23\\task-99\\output\\small-last8-authorship-20261023\\evidence\\inspection-20231221.body",
+      "sha256": "cab543d28eea58d3a8e6b2882ac2558fdf23bae53a6a4cf3ae704b849068f401",
+      "url": "https://laws.e-gov.go.jp/api/2/law_data/326M50000800070_20231221_505M60000800086",
+      "kind": "Exact saved HTTP JSON response body bytes; not a PDF hash"
+    },
+    {
+      "path": "C:\\Users\\kanet\\Documents\\Codex\\2026-10-23\\task-99\\output\\small-last8-authorship-20261023\\evidence\\inspection-revisions.body",
+      "sha256": "3c1aaf4b8a715bcfad2d1e094364f0b57381bdf9704994d8ad384e05a939549a",
+      "kind": "Exact saved official version-index bytes"
+    },
+    {
+      "path": "C:\\Users\\kanet\\Documents\\Codex\\2026-10-23\\task-99\\output\\small-last8-authorship-20261023\\evidence\\recycling-act-revisions.body",
+      "sha256": "3745056ebb657e7aeeda16b71f407b1e6a4b121ef7585cdf5cadd1fae3aebadb",
+      "kind": "Exact saved official version-index bytes"
+    },
+    {
+      "path": "C:\\Users\\kanet\\Documents\\Codex\\2026-10-23\\task-99\\output\\small-last8-authorship-20261023\\evidence\\recycling-order-revisions.body",
+      "sha256": "1f85880486b5bb7df663056c5a235b77e64f469f3c130d7a4ad3380ff6d8b85b",
+      "kind": "Exact saved official version-index bytes"
+    },
+    {
+      "path": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\codex-takeover-20261011\\automotive-latest-two\\qa\\road-vehicle-law-revisions.json",
+      "sha256": "296d769597b5e0697473ef7bfd3beec21e31beaca8cbcb9c8daa74b5642c05a7",
+      "kind": "Exact saved official version-index bytes"
+    }
+  ],
+  "examDateVersionChecks": [
+    {
+      "issueFamily": "inspection",
+      "examDate": "2026-03-22",
+      "independentlySelectedRevisionId": "326M50000800070_20231221_505M60000800086",
+      "effectiveDate": "2023-12-21",
+      "revisionIndexPath": "C:\\Users\\kanet\\Documents\\Codex\\2026-10-23\\task-99\\output\\small-last8-authorship-20261023\\evidence\\inspection-revisions.body",
+      "revisionIndexSha256": "3c1aaf4b8a715bcfad2d1e094364f0b57381bdf9704994d8ad384e05a939549a",
+      "laterRevisionsNotApplied": []
+    },
+    {
+      "issueFamily": "recycling-act",
+      "examDate": "2026-03-22",
+      "independentlySelectedRevisionId": "414AC0000000087_20250601_504AC0000000068",
+      "effectiveDate": "2025-06-01",
+      "revisionIndexPath": "C:\\Users\\kanet\\Documents\\Codex\\2026-10-23\\task-99\\output\\small-last8-authorship-20261023\\evidence\\recycling-act-revisions.body",
+      "revisionIndexSha256": "3745056ebb657e7aeeda16b71f407b1e6a4b121ef7585cdf5cadd1fae3aebadb",
+      "laterRevisionsNotApplied": [
+        "414AC0000000087_20281218_508AC0000000043",
+        "414AC0000000087_20260619_508AC0000000043"
+      ]
+    },
+    {
+      "issueFamily": "recycling-order",
+      "examDate": "2026-03-22",
+      "independentlySelectedRevisionId": "414CO0000000389_20250601_507CO0000000193",
+      "effectiveDate": "2025-06-01",
+      "revisionIndexPath": "C:\\Users\\kanet\\Documents\\Codex\\2026-10-23\\task-99\\output\\small-last8-authorship-20261023\\evidence\\recycling-order-revisions.body",
+      "revisionIndexSha256": "1f85880486b5bb7df663056c5a235b77e64f469f3c130d7a4ad3380ff6d8b85b",
+      "laterRevisionsNotApplied": [
+        "414CO0000000389_20260701_508CO0000000205"
+      ]
+    },
+    {
+      "issueFamily": "road-vehicle-act",
+      "examDate": "2026-03-22",
+      "independentlySelectedRevisionId": "326AC0000000185_20250601_504AC0000000068",
+      "effectiveDate": "2025-06-01",
+      "revisionIndexPath": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\codex-takeover-20261011\\automotive-latest-two\\qa\\road-vehicle-law-revisions.json",
+      "revisionIndexSha256": "296d769597b5e0697473ef7bfd3beec21e31beaca8cbcb9c8daa74b5642c05a7",
+      "laterRevisionsNotApplied": [
+        "326AC0000000185_20260401_508AC0000000002"
+      ]
+    }
+  ],
+  "officialQuestionSource": {
+    "name": "jaspa-2025-second-1-small-written",
+    "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_1k_0.pdf",
+    "state": "downloaded-public-source",
+    "httpStatus": 200,
+    "sha256": "9f617d58b464c075aafc9bc042b60ac5b41798654846757490f1a7c7d2102b30",
+    "pageCount": 32,
+    "retrievedAtUtc": "2026-10-11T00:46:33.922740+00:00",
+    "localPath": "C:\\Users\\kanet\\Documents\\Codex\\2026-10-23\\task-5\\output\\automotive-forward-20261023\\release-1small25b\\sources\\jaspa-2025-second-1-small-written.pdf"
+  },
+  "officialKeySource": {
+    "name": "jaspa-2025-second-answers",
+    "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_kai.pdf",
+    "state": "downloaded-public-source",
+    "httpStatus": 200,
+    "sha256": "2f73820401362ca24f052d8339bf20e4865dab2f2afe74b7c7b546b7b90d6701",
+    "pageCount": 2,
+    "retrievedAtUtc": "2026-10-11T00:46:33.617560+00:00",
+    "localPath": "C:\\Users\\kanet\\Documents\\Codex\\2026-10-23\\task-5\\output\\automotive-forward-20261023\\release-1small25b\\sources\\jaspa-2025-second-answers.pdf"
+  },
+  "actualOriginalPagesViewed": [
+    {
+      "path": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\codex-takeover-20261011\\automotive-latest-two\\ocr\\jaspa-2025-second-1-small-written\\page-29.png",
+      "physicalPage": 29,
+      "sha256": "f3c50f2f73defc1edc8e79f3c97317dde565036b4a9fdfc2314d0f6ccdaab05e",
+      "reviewScope": "Only Q41 on page29 and Q47/Q49 on page31; other questions not reviewed."
+    },
+    {
+      "path": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\codex-takeover-20261011\\automotive-latest-two\\ocr\\jaspa-2025-second-1-small-written\\page-31.png",
+      "physicalPage": 31,
+      "sha256": "98c514edb2c7fd50eca0d08ea869e100f4b719c90ebc64308df2dda2ef1cb6a6",
+      "reviewScope": "Only Q41 on page29 and Q47/Q49 on page31; other questions not reviewed."
+    }
+  ],
+  "priorAcceptedVersionsReviewedOrRecounted": 0,
+  "candidateEditsByReviewer": 0,
+  "newSourceAcquisitions": 0,
+  "repositoryIdGrowth": 0,
+  "publicationIncrement": 0,
+  "publicGo": 0,
+  "permissionVerified": false
+}

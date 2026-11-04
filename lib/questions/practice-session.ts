@@ -8,6 +8,7 @@ export function defaultPracticeSession(exam: ExamCode, year?: number): Session {
   if (exam === "kenchiku-setsubishi") return "am1";
   if (exam === "chizai2") return "gakka";
   if (exam === "kisho") return "ippan";
+  if (exam.startsWith("jidosha-")) return "gakka";
   if (exam === "kanteishi") return "gyosei";
   if (exam === "kaikeishi") return "kigyo";
   if (SPECIALIST_EXAMS.includes(exam)) return "am2";

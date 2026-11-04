@@ -1,0 +1,3442 @@
+{
+  "schemaVersion": 1,
+  "reviewKind": "independent-author-external-technical-content-review",
+  "reviewer": "Codex; no Claude used",
+  "createdAtUtc": "2026-10-23T07:53:39.197Z",
+  "batch": "2025-second-3-diesel",
+  "fixedRepository": "kameking-lab/ipa-quiz-site",
+  "fixedPr": 731,
+  "fixedCommit": "6f4253b9381e3030863e38dfe75b5ca4068ba526",
+  "scope": {
+    "uniqueQuestions": 30,
+    "choiceReasonsReviewed": 120,
+    "uniqueQuestionsAccepted": 17,
+    "acceptedQuestionChoiceReasons": 68,
+    "heldQuestions": 13,
+    "acceptedRepairFields": 2,
+    "heldRepairProposalFields": 0
+  },
+  "acceptanceRule": "All four existing reasons inspected for technical meaning and application conditions; originals, key, required figures and technical evidence/explicit derivation must correspond. Mechanical checks alone do not confer acceptance.",
+  "rightsHold": false,
+  "publication": false,
+  "upstreamWorkingTreeModified": false,
+  "rows": [
+    {
+      "id": "jidosha-2025-second-3-diesel-q01",
+      "manuscriptSha256": "456efa120e514007a8b3915133f64d6c4418987ff47bd6af5987768ee68b0afe",
+      "hashContract": "SHA256(UTF8(JSON.stringify(parsed question object))); original property order retained",
+      "fixedCommit": "6f4253b9381e3030863e38dfe75b5ca4068ba526",
+      "fixedBlobSha": "320fa720a1c2326e48c910b4eeaff32c92c7137d",
+      "fixedCommitTargetIdentical": true,
+      "officialOriginal": {
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_3d.pdf",
+        "sha256": "d8aa5a5f348ac2e09e8b1c41948dac27d04c0718bece57931e44495464d9264a",
+        "localFile": "sources/20260322_3d.pdf",
+        "localSha256": "d8aa5a5f348ac2e09e8b1c41948dac27d04c0718bece57931e44495464d9264a",
+        "physicalPages": [
+          2
+        ],
+        "locator": "No.1",
+        "visuallyReviewed": true
+      },
+      "officialKey": {
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_kai.pdf",
+        "sha256": "2f73820401362ca24f052d8339bf20e4865dab2f2afe74b7c7b546b7b90d6701",
+        "physicalPage": 1,
+        "subject": "3-diesel",
+        "qNumber": 1,
+        "answer": "ア",
+        "number": "1",
+        "storedTableMatches": true,
+        "transcriptionReview": "Existing independent 610-answer review reused; no new full-table transcription counted."
+      },
+      "figureReceipts": [],
+      "evidence": [
+        "official-original:p2:No1",
+        "official-key"
+      ],
+      "technicalEvidence": [
+        {
+          "kind": "official-original",
+          "locator": "p2:No1"
+        },
+        {
+          "kind": "official-key",
+          "locator": "existing independently checked answer table"
+        }
+      ],
+      "conditions": null,
+      "allChoiceReasons": [
+        {
+          "label": "ア",
+          "statement": "(1) ディーゼル・エンジンの熱効率は、約20％～25％である。",
+          "reason": "高圧縮比による高い熱効率と合わず、約20～25％は低すぎる。",
+          "reasonSha256": "3b7a93a59a5b370ab284799e41bdc77e73f282be2ed7a1d2d5f00159dcd6f196",
+          "independentStatementVerdict": "false",
+          "technicalAssessment": "20-25% cannot be rejected as a universal diesel thermal-efficiency figure without specifying brake or indicated efficiency and operating point.",
+          "evidence": [
+            "official-original:p2:No1",
+            "official-key"
+          ],
+          "reasonDisposition": "reviewed-question-held"
+        },
+        {
+          "label": "イ",
+          "statement": "(2) ガソリン・エンジンと比較して、圧縮比は大きい（高い）。",
+          "reason": "自己着火に必要な高温を得るため圧縮比が高い。",
+          "reasonSha256": "5170aeaf8936fbb0985c300d295f2ac63538b7c01de76e72290e0e1b0a808fc8",
+          "independentStatementVerdict": "true",
+          "technicalAssessment": "Compression ignition normally uses a higher compression ratio than spark ignition to raise the charge temperature.",
+          "evidence": [
+            "official-original:p2:No1",
+            "official-key"
+          ],
+          "reasonDisposition": "reviewed-question-held"
+        },
+        {
+          "label": "ウ",
+          "statement": "(3) 1kgの軽油を完全燃焼させるのに必要な空気の質量は、理論上約15kgである。",
+          "reason": "軽油1kgの理論空気量はおよそ15kg。",
+          "reasonSha256": "729841ffc5a96dbf6183c6574c2c4fc31c177852f9290a5c4bd06a1ba583f294",
+          "independentStatementVerdict": "unresolved",
+          "technicalAssessment": "About 15 kg/kg is plausible for a representative diesel hydrocarbon, but the precise elemental composition and air basis are unspecified.",
+          "evidence": [
+            "official-original:p2:No1",
+            "official-key"
+          ],
+          "reasonDisposition": "reviewed-question-held"
+        },
+        {
+          "label": "エ",
+          "statement": "(4) エンジン自体の吸気の吸い込み状況の良否を比較する尺度として、体積効率がある。",
+          "reason": "体積効率は吸気充填の良否を示す。",
+          "reasonSha256": "82359031ac80fb5ba47c309eb3293664e2aa722b91ce764615b26a655b9f1928",
+          "independentStatementVerdict": "true",
+          "technicalAssessment": "Volumetric efficiency compares actual charge filling with a reference displaced volume.",
+          "evidence": [
+            "official-original:p2:No1",
+            "official-key"
+          ],
+          "reasonDisposition": "reviewed-question-held"
+        }
+      ],
+      "status": "HOLD",
+      "holds": [
+        "The manuscript declares 20-25% too low for diesel in general; obtain a primary source specifying efficiency definition, engine class and operating condition. The 15 kg stoichiometric approximation also needs a declared fuel/air basis."
+      ],
+      "repairs": [],
+      "candidateManuscriptSha256": "456efa120e514007a8b3915133f64d6c4418987ff47bd6af5987768ee68b0afe",
+      "protectedFieldsUnchanged": true
+    },
+    {
+      "id": "jidosha-2025-second-3-diesel-q02",
+      "manuscriptSha256": "599e884dc8d3a4b6c8af5ed3b5d365fa38ae3bb273e0c8c567af5c76b8c60811",
+      "hashContract": "SHA256(UTF8(JSON.stringify(parsed question object))); original property order retained",
+      "fixedCommit": "6f4253b9381e3030863e38dfe75b5ca4068ba526",
+      "fixedBlobSha": "320fa720a1c2326e48c910b4eeaff32c92c7137d",
+      "fixedCommitTargetIdentical": true,
+      "officialOriginal": {
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_3d.pdf",
+        "sha256": "d8aa5a5f348ac2e09e8b1c41948dac27d04c0718bece57931e44495464d9264a",
+        "localFile": "sources/20260322_3d.pdf",
+        "localSha256": "d8aa5a5f348ac2e09e8b1c41948dac27d04c0718bece57931e44495464d9264a",
+        "physicalPages": [
+          2
+        ],
+        "locator": "No.2",
+        "visuallyReviewed": true
+      },
+      "officialKey": {
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_kai.pdf",
+        "sha256": "2f73820401362ca24f052d8339bf20e4865dab2f2afe74b7c7b546b7b90d6701",
+        "physicalPage": 1,
+        "subject": "3-diesel",
+        "qNumber": 2,
+        "answer": "ウ",
+        "number": "3",
+        "storedTableMatches": true,
+        "transcriptionReview": "Existing independent 610-answer review reused; no new full-table transcription counted."
+      },
+      "figureReceipts": [],
+      "evidence": [
+        "official-original:p2:No2",
+        "derivation:720-degree four-stroke cycle; 1-3-4-2 events spaced by 180 crank degrees"
+      ],
+      "technicalEvidence": [
+        {
+          "kind": "official-original",
+          "locator": "p2:No2"
+        },
+        {
+          "kind": "explicit-derivation",
+          "locator": "720-degree four-stroke cycle; 1-3-4-2 events spaced by 180 crank degrees"
+        }
+      ],
+      "conditions": null,
+      "allChoiceReasons": [
+        {
+          "label": "ア",
+          "statement": "(1) 第1シリンダ",
+          "reason": "第1シリンダは圧縮上死点。",
+          "reasonSha256": "a94f2d8adfaec014c4b42aad43a5cf21ee4fd0575cdc0d504d26ad4b64a55441",
+          "independentStatementVerdict": "false",
+          "technicalAssessment": "After 360 crank degrees cylinder 1 is at compression TDC, not intake BDC.",
+          "evidence": [
+            "official-original:p2:No2",
+            "derivation:720-degree four-stroke cycle; 1-3-4-2 events spaced by 180 crank degrees"
+          ],
+          "reasonDisposition": "accepted"
+        },
+        {
+          "label": "イ",
+          "statement": "(2) 第2シリンダ",
+          "reason": "第2シリンダは膨張下死点。",
+          "reasonSha256": "91dd0ae029acbe600504014b9bf70b922cfaa2c46be5ff171720a88d81b84b68",
+          "independentStatementVerdict": "false",
+          "technicalAssessment": "Cylinder 2 is at expansion BDC after its intervening firing event.",
+          "evidence": [
+            "official-original:p2:No2",
+            "derivation:720-degree four-stroke cycle; 1-3-4-2 events spaced by 180 crank degrees"
+          ],
+          "reasonDisposition": "accepted"
+        },
+        {
+          "label": "ウ",
+          "statement": "(3) 第3シリンダ",
+          "reason": "第3シリンダが吸入下死点。",
+          "reasonSha256": "d51cc81db5214c21c49edc52bdbab77156f5716f3b30f70fadc1d6567bcb0dfd",
+          "independentStatementVerdict": "true",
+          "technicalAssessment": "Cylinder 3 is at intake BDC after 360 degrees from cylinder 4 firing TDC.",
+          "evidence": [
+            "official-original:p2:No2",
+            "derivation:720-degree four-stroke cycle; 1-3-4-2 events spaced by 180 crank degrees"
+          ],
+          "reasonDisposition": "accepted"
+        },
+        {
+          "label": "エ",
+          "statement": "(4) 第4シリンダ",
+          "reason": "第4シリンダは排気上死点。",
+          "reasonSha256": "4cfd07a90739bf8a8393d9938976862141c9578d86b7cb9951e2fb7e6be78003",
+          "independentStatementVerdict": "false",
+          "technicalAssessment": "Cylinder 4 reaches exhaust TDC, not intake BDC.",
+          "evidence": [
+            "official-original:p2:No2",
+            "derivation:720-degree four-stroke cycle; 1-3-4-2 events spaced by 180 crank degrees"
+          ],
+          "reasonDisposition": "accepted"
+        }
+      ],
+      "status": "ACCEPT",
+      "holds": [],
+      "repairs": [],
+      "candidateManuscriptSha256": "599e884dc8d3a4b6c8af5ed3b5d365fa38ae3bb273e0c8c567af5c76b8c60811",
+      "protectedFieldsUnchanged": true
+    },
+    {
+      "id": "jidosha-2025-second-3-diesel-q03",
+      "manuscriptSha256": "8db8b0988551b98f16596ead8e9b9338aa54c7a9bc5d5b2230a909eaec4eb2a6",
+      "hashContract": "SHA256(UTF8(JSON.stringify(parsed question object))); original property order retained",
+      "fixedCommit": "6f4253b9381e3030863e38dfe75b5ca4068ba526",
+      "fixedBlobSha": "320fa720a1c2326e48c910b4eeaff32c92c7137d",
+      "fixedCommitTargetIdentical": true,
+      "officialOriginal": {
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_3d.pdf",
+        "sha256": "d8aa5a5f348ac2e09e8b1c41948dac27d04c0718bece57931e44495464d9264a",
+        "localFile": "sources/20260322_3d.pdf",
+        "localSha256": "d8aa5a5f348ac2e09e8b1c41948dac27d04c0718bece57931e44495464d9264a",
+        "physicalPages": [
+          2
+        ],
+        "locator": "No.3",
+        "visuallyReviewed": true
+      },
+      "officialKey": {
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_kai.pdf",
+        "sha256": "2f73820401362ca24f052d8339bf20e4865dab2f2afe74b7c7b546b7b90d6701",
+        "physicalPage": 1,
+        "subject": "3-diesel",
+        "qNumber": 3,
+        "answer": "イ",
+        "number": "2",
+        "storedTableMatches": true,
+        "transcriptionReview": "Existing independent 610-answer review reused; no new full-table transcription counted."
+      },
+      "figureReceipts": [],
+      "evidence": [
+        "official-original:p2:No3",
+        "official-key"
+      ],
+      "technicalEvidence": [
+        {
+          "kind": "official-original",
+          "locator": "p2:No3"
+        },
+        {
+          "kind": "official-key",
+          "locator": "existing independently checked answer table"
+        }
+      ],
+      "conditions": null,
+      "allChoiceReasons": [
+        {
+          "label": "ア",
+          "statement": "(1) 燃料の噴射時期が早過ぎるとき。",
+          "reason": "噴射時期が早すぎると着火遅れ中の燃料が増え、ノックの要因となる。",
+          "reasonSha256": "5b687616fe480def81385c614d6ea7ffe2033c1bf3b66e1d784a29cbe54abbfb",
+          "independentStatementVerdict": "true",
+          "technicalAssessment": "Overadvanced injection may enlarge the premixed charge before ignition and cause an abrupt pressure rise.",
+          "evidence": [
+            "official-original:p2:No3",
+            "official-key"
+          ],
+          "reasonDisposition": "reviewed-question-held"
+        },
+        {
+          "label": "イ",
+          "statement": "(2) エンジンの圧縮圧力が高いとき。",
+          "reason": "高い圧縮圧力は着火を促進し、着火遅れを短くする。",
+          "reasonSha256": "5455561402059fbec6ab236dd810b7eb83ffa42a1add611d328f213e21c2ae15",
+          "independentStatementVerdict": "false",
+          "technicalAssessment": "Higher compression pressure generally raises charge temperature and shortens ignition delay; it is not the described knock cause.",
+          "evidence": [
+            "official-original:p2:No3",
+            "official-key"
+          ],
+          "reasonDisposition": "reviewed-question-held"
+        },
+        {
+          "label": "ウ",
+          "statement": "(3) 燃料が噴射されてから着火するまでに噴射された燃料の気化が悪いとき。",
+          "reason": "気化不良は着火遅れを長くし、ノックの要因となる。",
+          "reasonSha256": "0f9522534535c6b6cca58722921dcc158bab82344828b2bd7b473acafcc5b8c6",
+          "independentStatementVerdict": "true",
+          "technicalAssessment": "Poor vaporization can lengthen ignition delay and increase premixed fuel.",
+          "evidence": [
+            "official-original:p2:No3",
+            "official-key"
+          ],
+          "reasonDisposition": "reviewed-question-held"
+        },
+        {
+          "label": "エ",
+          "statement": "(4) 噴射始めにできた可燃混合気が、燃焼時において急激に燃焼し、異常に圧力が上昇したとき。",
+          "reason": "予混合燃料の急激な燃焼と圧力上昇がノックの本態。",
+          "reasonSha256": "1dbbf50587fc04799138aa8d278e6d6482b67511a22bdf9ffc0e1e64e2c2517b",
+          "independentStatementVerdict": "true",
+          "technicalAssessment": "Abrupt combustion of the accumulated premixed fuel and pressure rise describes diesel knock.",
+          "evidence": [
+            "official-original:p2:No3",
+            "official-key"
+          ],
+          "reasonDisposition": "reviewed-question-held"
+        }
+      ],
+      "status": "HOLD",
+      "holds": [
+        "A manufacturer combustion-characteristic source is still needed to establish the advance, compression and vaporization effects over the intended operating range."
+      ],
+      "repairs": [],
+      "candidateManuscriptSha256": "8db8b0988551b98f16596ead8e9b9338aa54c7a9bc5d5b2230a909eaec4eb2a6",
+      "protectedFieldsUnchanged": true
+    },
+    {
+      "id": "jidosha-2025-second-3-diesel-q04",
+      "manuscriptSha256": "28a5d7663610eb380e497a76f93898a36aae259ad5e1efaae43d62fc962a2a41",
+      "hashContract": "SHA256(UTF8(JSON.stringify(parsed question object))); original property order retained",
+      "fixedCommit": "6f4253b9381e3030863e38dfe75b5ca4068ba526",
+      "fixedBlobSha": "320fa720a1c2326e48c910b4eeaff32c92c7137d",
+      "fixedCommitTargetIdentical": true,
+      "officialOriginal": {
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_3d.pdf",
+        "sha256": "d8aa5a5f348ac2e09e8b1c41948dac27d04c0718bece57931e44495464d9264a",
+        "localFile": "sources/20260322_3d.pdf",
+        "localSha256": "d8aa5a5f348ac2e09e8b1c41948dac27d04c0718bece57931e44495464d9264a",
+        "physicalPages": [
+          2
+        ],
+        "locator": "No.4",
+        "visuallyReviewed": true
+      },
+      "officialKey": {
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_kai.pdf",
+        "sha256": "2f73820401362ca24f052d8339bf20e4865dab2f2afe74b7c7b546b7b90d6701",
+        "physicalPage": 1,
+        "subject": "3-diesel",
+        "qNumber": 4,
+        "answer": "ア",
+        "number": "1",
+        "storedTableMatches": true,
+        "transcriptionReview": "Existing independent 610-answer review reused; no new full-table transcription counted."
+      },
+      "figureReceipts": [],
+      "evidence": [
+        "official-original:p2:No4",
+        "https://www.mlit.go.jp/common/001121845.pdf#page=2:SCR-DPF-PM-and-NOx"
+      ],
+      "technicalEvidence": [
+        {
+          "kind": "official-original",
+          "locator": "p2:No4"
+        },
+        {
+          "kind": "direct-primary-url",
+          "url": "https://www.mlit.go.jp/common/001121845.pdf#page=2",
+          "locator": "SCR-DPF-PM-and-NOx"
+        }
+      ],
+      "conditions": null,
+      "allChoiceReasons": [
+        {
+          "label": "ア",
+          "statement": "(1) PM（粒子状物質）は、黒煙を主成分とする混合物である。",
+          "reason": "適切。PMはすすなどの黒煙成分を主体とする。",
+          "reasonSha256": "659ea235c1d6b1f64f8314d8b604f1ff78e7ce8457b85d66beadf547a586595e",
+          "independentStatementVerdict": "unresolved",
+          "technicalAssessment": "Soot and soluble organic fraction are PM constituents; the asserted universal majority of black smoke needs a composition basis.",
+          "evidence": [
+            "official-original:p2:No4",
+            "https://www.mlit.go.jp/common/001121845.pdf#page=2:SCR-DPF-PM-and-NOx"
+          ],
+          "reasonDisposition": "reviewed-question-held"
+        },
+        {
+          "label": "イ",
+          "statement": "(2) DPF（ディーゼル微粒子除去装置）は、NOx（窒素酸化物）を減少させる。",
+          "reason": "不適切。DPFの主な除去対象はPM。",
+          "reasonSha256": "91e44fb22db2c3b96f0700ef78515897f63aa1d03d4ed7ee080b5baccad6d291",
+          "independentStatementVerdict": "false",
+          "technicalAssessment": "A DPF traps PM rather than primarily reducing NOx.",
+          "evidence": [
+            "official-original:p2:No4",
+            "https://www.mlit.go.jp/common/001121845.pdf#page=2:SCR-DPF-PM-and-NOx"
+          ],
+          "reasonDisposition": "reviewed-question-held"
+        },
+        {
+          "label": "ウ",
+          "statement": "(3) ブローバイ・ガスに含まれる主な有害物質は、CO（一酸化炭素）である。",
+          "reason": "不適切。ブローバイ・ガスには未燃炭化水素などが含まれる。",
+          "reasonSha256": "d6f35596d38c43b4bf43cb90720133baab18ceb60ff1f6ceb71821202558aae6",
+          "independentStatementVerdict": "false",
+          "technicalAssessment": "Blow-by contains combustion gases and unburned hydrocarbons; the claim that CO is its main harmful component is unsupported here.",
+          "evidence": [
+            "official-original:p2:No4",
+            "https://www.mlit.go.jp/common/001121845.pdf#page=2:SCR-DPF-PM-and-NOx"
+          ],
+          "reasonDisposition": "reviewed-question-held"
+        },
+        {
+          "label": "エ",
+          "statement": "(4) 尿素SCRシステム（排気ガス後処理装置）は、PMを減少させる。",
+          "reason": "不適切。尿素SCRの主な低減対象はNOx。",
+          "reasonSha256": "1d26e7fa99ef6b03e6dc6aa815ac205d12171ce27ad23d1ff04d1610d933305a",
+          "independentStatementVerdict": "false",
+          "technicalAssessment": "Urea SCR reduces NOx rather than primarily removing PM.",
+          "evidence": [
+            "official-original:p2:No4",
+            "https://www.mlit.go.jp/common/001121845.pdf#page=2:SCR-DPF-PM-and-NOx"
+          ],
+          "reasonDisposition": "reviewed-question-held"
+        }
+      ],
+      "status": "HOLD",
+      "holds": [
+        "Find a primary PM constituent classification and blow-by constituent comparison supporting the word main under the exam scope."
+      ],
+      "repairs": [],
+      "candidateManuscriptSha256": "28a5d7663610eb380e497a76f93898a36aae259ad5e1efaae43d62fc962a2a41",
+      "protectedFieldsUnchanged": true
+    },
+    {
+      "id": "jidosha-2025-second-3-diesel-q05",
+      "manuscriptSha256": "03336ffd271348b39a95b6b95e81ad896df075fd8a9cc611b030c454e2f39b33",
+      "hashContract": "SHA256(UTF8(JSON.stringify(parsed question object))); original property order retained",
+      "fixedCommit": "6f4253b9381e3030863e38dfe75b5ca4068ba526",
+      "fixedBlobSha": "320fa720a1c2326e48c910b4eeaff32c92c7137d",
+      "fixedCommitTargetIdentical": true,
+      "officialOriginal": {
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_3d.pdf",
+        "sha256": "d8aa5a5f348ac2e09e8b1c41948dac27d04c0718bece57931e44495464d9264a",
+        "localFile": "sources/20260322_3d.pdf",
+        "localSha256": "d8aa5a5f348ac2e09e8b1c41948dac27d04c0718bece57931e44495464d9264a",
+        "physicalPages": [
+          2
+        ],
+        "locator": "No.5",
+        "visuallyReviewed": true
+      },
+      "officialKey": {
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_kai.pdf",
+        "sha256": "2f73820401362ca24f052d8339bf20e4865dab2f2afe74b7c7b546b7b90d6701",
+        "physicalPage": 1,
+        "subject": "3-diesel",
+        "qNumber": 5,
+        "answer": "イ",
+        "number": "2",
+        "storedTableMatches": true,
+        "transcriptionReview": "Existing independent 610-answer review reused; no new full-table transcription counted."
+      },
+      "figureReceipts": [
+        {
+          "bookId": "jaspa-2025-second-3-diesel",
+          "physicalPage": 2,
+          "pdfSha256": "d8aa5a5f348ac2e09e8b1c41948dac27d04c0718bece57931e44495464d9264a",
+          "officialUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_3d.pdf#page=2",
+          "originalQuestionIds": [
+            "jidosha-2025-second-3-diesel-q05"
+          ],
+          "relativePath": "figures/jaspa-2025-second-3-diesel-p02.webp",
+          "width": 1490,
+          "height": 2106,
+          "sha256": "c2754cccdd3ab19168cc74888ca835f2cd519eeaa4bac2614ef8793e8e0ac1f6",
+          "bytes": 230516,
+          "processing": "Original PDF physical page rendered to PNG, then converted to WebP; no retouch or generated content.",
+          "actualSha256": "c2754cccdd3ab19168cc74888ca835f2cd519eeaa4bac2614ef8793e8e0ac1f6",
+          "visuallyReviewed": true
+        }
+      ],
+      "evidence": [
+        "official-original:p2:No5:four original cross-sections; shape comparison"
+      ],
+      "technicalEvidence": [
+        {
+          "kind": "official-original",
+          "locator": "p2:No5:four original cross-sections; shape comparison"
+        }
+      ],
+      "conditions": null,
+      "allChoiceReasons": [
+        {
+          "label": "ア",
+          "statement": "(1) 図(1)の燃焼室形状",
+          "reason": "図(1)は浅い凹部の形状で、トロイダル形ではない。",
+          "reasonSha256": "60078ae84fff9ce24608aed5253f416c374fa803f060932998fab9adc27f4c9c",
+          "independentStatementVerdict": "false",
+          "technicalAssessment": "Figure 1 is a shallow recess without the deep toroidal bowl.",
+          "evidence": [
+            "official-original:p2:No5:four original cross-sections; shape comparison"
+          ],
+          "reasonDisposition": "accepted"
+        },
+        {
+          "label": "イ",
+          "statement": "(2) 図(2)の燃焼室形状",
+          "reason": "図(2)が深皿形（トロイダル形）。",
+          "reasonSha256": "6c1070ecc375fcfa1dfb7bc7bae415dc5ce81e0e420922111a7676409b2d7a97",
+          "independentStatementVerdict": "true",
+          "technicalAssessment": "Figure 2 is a deep bowl with a central raised region, matching the requested toroidal shape.",
+          "evidence": [
+            "official-original:p2:No5:four original cross-sections; shape comparison"
+          ],
+          "reasonDisposition": "accepted"
+        },
+        {
+          "label": "ウ",
+          "statement": "(3) 図(3)の燃焼室形状",
+          "reason": "図(3)は中央が狭まる別形状。",
+          "reasonSha256": "74759d31459fefb9a3a2dc149dbece4692d7e358ea926ccabe9a2dba07fd535d",
+          "independentStatementVerdict": "false",
+          "technicalAssessment": "Figure 3 has a distinct enclosed/necked recess, not the depicted toroidal bowl.",
+          "evidence": [
+            "official-original:p2:No5:four original cross-sections; shape comparison"
+          ],
+          "reasonDisposition": "accepted"
+        },
+        {
+          "label": "エ",
+          "statement": "(4) 図(4)の燃焼室形状",
+          "reason": "図(4)は半球状の凹部で、トロイダル形ではない。",
+          "reasonSha256": "d0a362300eb37b62dd945b15214de5e093b64799fc1e31a9acc3765a3598f210",
+          "independentStatementVerdict": "false",
+          "technicalAssessment": "Figure 4 is a rounded hemispherical depression without the central rise.",
+          "evidence": [
+            "official-original:p2:No5:four original cross-sections; shape comparison"
+          ],
+          "reasonDisposition": "accepted"
+        }
+      ],
+      "status": "ACCEPT",
+      "holds": [],
+      "repairs": [],
+      "candidateManuscriptSha256": "03336ffd271348b39a95b6b95e81ad896df075fd8a9cc611b030c454e2f39b33",
+      "protectedFieldsUnchanged": true
+    },
+    {
+      "id": "jidosha-2025-second-3-diesel-q06",
+      "manuscriptSha256": "28e7d70eeddc72345b34c496070d972135188ce61aadf7cd23214e0dcee99e70",
+      "hashContract": "SHA256(UTF8(JSON.stringify(parsed question object))); original property order retained",
+      "fixedCommit": "6f4253b9381e3030863e38dfe75b5ca4068ba526",
+      "fixedBlobSha": "320fa720a1c2326e48c910b4eeaff32c92c7137d",
+      "fixedCommitTargetIdentical": true,
+      "officialOriginal": {
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_3d.pdf",
+        "sha256": "d8aa5a5f348ac2e09e8b1c41948dac27d04c0718bece57931e44495464d9264a",
+        "localFile": "sources/20260322_3d.pdf",
+        "localSha256": "d8aa5a5f348ac2e09e8b1c41948dac27d04c0718bece57931e44495464d9264a",
+        "physicalPages": [
+          3
+        ],
+        "locator": "No.6",
+        "visuallyReviewed": true
+      },
+      "officialKey": {
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_kai.pdf",
+        "sha256": "2f73820401362ca24f052d8339bf20e4865dab2f2afe74b7c7b546b7b90d6701",
+        "physicalPage": 1,
+        "subject": "3-diesel",
+        "qNumber": 6,
+        "answer": "ア",
+        "number": "1",
+        "storedTableMatches": true,
+        "transcriptionReview": "Existing independent 610-answer review reused; no new full-table transcription counted."
+      },
+      "figureReceipts": [
+        {
+          "bookId": "jaspa-2025-second-3-diesel",
+          "physicalPage": 3,
+          "pdfSha256": "d8aa5a5f348ac2e09e8b1c41948dac27d04c0718bece57931e44495464d9264a",
+          "officialUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_3d.pdf#page=3",
+          "originalQuestionIds": [
+            "jidosha-2025-second-3-diesel-q06"
+          ],
+          "relativePath": "figures/jaspa-2025-second-3-diesel-p03.webp",
+          "width": 1490,
+          "height": 2106,
+          "sha256": "05065365786a09cf2a89c3e8b81d8fb79c238899bcd1f1976d28396434673f0f",
+          "bytes": 179130,
+          "processing": "Original PDF physical page rendered to PNG, then converted to WebP; no retouch or generated content.",
+          "actualSha256": "05065365786a09cf2a89c3e8b81d8fb79c238899bcd1f1976d28396434673f0f",
+          "visuallyReviewed": true
+        }
+      ],
+      "evidence": [
+        "official-original:p3:No6:exploded rod diagram",
+        "https://www.mahle-aftermarket.com/media/local-media-north-america/pdfs-%26-thumbnails/catalogs-and-literature/engine-bearings/ceb-2-1114-engine-bearing-failures-brochure.pdf:aluminum-alloy-bearing-linings",
+        "https://www.mahle-aftermarket.com/na/en/performance/engine-bearings/:tri-metal-engine-bearings"
+      ],
+      "technicalEvidence": [
+        {
+          "kind": "official-original",
+          "locator": "p3:No6:exploded rod diagram"
+        },
+        {
+          "kind": "direct-primary-url",
+          "url": "https://www.mahle-aftermarket.com/media/local-media-north-america/pdfs-%26-thumbnails/catalogs-and-literature/engine-bearings/ceb-2-1114-engine-bearing-failures-brochure.pdf",
+          "locator": "aluminum-alloy-bearing-linings"
+        },
+        {
+          "kind": "direct-primary-url",
+          "url": "https://www.mahle-aftermarket.com/na/en/performance/engine-bearings/",
+          "locator": "tri-metal-engine-bearings"
+        }
+      ],
+      "conditions": null,
+      "allChoiceReasons": [
+        {
+          "label": "ア",
+          "statement": "(1) A",
+          "reason": "Aは大端部のベアリングで、対象の軸受材料が用いられる。",
+          "reasonSha256": "047b655a3fb91c51dbed98684fc0e47c3e9f8dc46f9139133f437a32e3d37bde",
+          "independentStatementVerdict": "true",
+          "technicalAssessment": "A labels the split-shell big-end rod bearing; engine bearings use aluminum alloy and tri-metal constructions.",
+          "evidence": [
+            "official-original:p3:No6:exploded rod diagram",
+            "https://www.mahle-aftermarket.com/media/local-media-north-america/pdfs-%26-thumbnails/catalogs-and-literature/engine-bearings/ceb-2-1114-engine-bearing-failures-brochure.pdf:aluminum-alloy-bearing-linings",
+            "https://www.mahle-aftermarket.com/na/en/performance/engine-bearings/:tri-metal-engine-bearings"
+          ],
+          "reasonDisposition": "accepted"
+        },
+        {
+          "label": "イ",
+          "statement": "(2) B",
+          "reason": "Bは小端部のブシュ。問われた大端部ベアリングではない。",
+          "reasonSha256": "7fa9cc42803f948e170301e6dcf5fa526e6bcf1c8f755d2be3fdfad4cf80a03c",
+          "independentStatementVerdict": "false",
+          "technicalAssessment": "B labels the small-end bush and is not the big-end split-shell bearing indicated by the material clue.",
+          "evidence": [
+            "official-original:p3:No6:exploded rod diagram",
+            "https://www.mahle-aftermarket.com/media/local-media-north-america/pdfs-%26-thumbnails/catalogs-and-literature/engine-bearings/ceb-2-1114-engine-bearing-failures-brochure.pdf:aluminum-alloy-bearing-linings",
+            "https://www.mahle-aftermarket.com/na/en/performance/engine-bearings/:tri-metal-engine-bearings"
+          ],
+          "reasonDisposition": "accepted"
+        },
+        {
+          "label": "ウ",
+          "statement": "(3) C",
+          "reason": "Cはコンロッド・キャップである。",
+          "reasonSha256": "84b1e5e445cf893b1c461d965b48c3863d90fff9db6080ca81c25c380fdca36e",
+          "independentStatementVerdict": "false",
+          "technicalAssessment": "C labels the connecting rod cap, a load-carrying housing rather than the bearing shell.",
+          "evidence": [
+            "official-original:p3:No6:exploded rod diagram",
+            "https://www.mahle-aftermarket.com/media/local-media-north-america/pdfs-%26-thumbnails/catalogs-and-literature/engine-bearings/ceb-2-1114-engine-bearing-failures-brochure.pdf:aluminum-alloy-bearing-linings",
+            "https://www.mahle-aftermarket.com/na/en/performance/engine-bearings/:tri-metal-engine-bearings"
+          ],
+          "reasonDisposition": "accepted"
+        },
+        {
+          "label": "エ",
+          "statement": "(4) D",
+          "reason": "Dはコンロッド本体である。",
+          "reasonSha256": "ccfb81a3919f1d63b2b3d6407bad1a4fbc32a013e7b57f1f18647f48ccac9bfd",
+          "independentStatementVerdict": "false",
+          "technicalAssessment": "D labels the connecting rod body rather than a replaceable bearing shell.",
+          "evidence": [
+            "official-original:p3:No6:exploded rod diagram",
+            "https://www.mahle-aftermarket.com/media/local-media-north-america/pdfs-%26-thumbnails/catalogs-and-literature/engine-bearings/ceb-2-1114-engine-bearing-failures-brochure.pdf:aluminum-alloy-bearing-linings",
+            "https://www.mahle-aftermarket.com/na/en/performance/engine-bearings/:tri-metal-engine-bearings"
+          ],
+          "reasonDisposition": "accepted"
+        }
+      ],
+      "status": "ACCEPT",
+      "holds": [],
+      "repairs": [],
+      "candidateManuscriptSha256": "28e7d70eeddc72345b34c496070d972135188ce61aadf7cd23214e0dcee99e70",
+      "protectedFieldsUnchanged": true
+    },
+    {
+      "id": "jidosha-2025-second-3-diesel-q07",
+      "manuscriptSha256": "1a9d753e9ca2b0d3b89bb41cef8a4eb6d4bb0539290d0d81f168676fd6d93191",
+      "hashContract": "SHA256(UTF8(JSON.stringify(parsed question object))); original property order retained",
+      "fixedCommit": "6f4253b9381e3030863e38dfe75b5ca4068ba526",
+      "fixedBlobSha": "320fa720a1c2326e48c910b4eeaff32c92c7137d",
+      "fixedCommitTargetIdentical": true,
+      "officialOriginal": {
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_3d.pdf",
+        "sha256": "d8aa5a5f348ac2e09e8b1c41948dac27d04c0718bece57931e44495464d9264a",
+        "localFile": "sources/20260322_3d.pdf",
+        "localSha256": "d8aa5a5f348ac2e09e8b1c41948dac27d04c0718bece57931e44495464d9264a",
+        "physicalPages": [
+          3
+        ],
+        "locator": "No.7",
+        "visuallyReviewed": true
+      },
+      "officialKey": {
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_kai.pdf",
+        "sha256": "2f73820401362ca24f052d8339bf20e4865dab2f2afe74b7c7b546b7b90d6701",
+        "physicalPage": 1,
+        "subject": "3-diesel",
+        "qNumber": 7,
+        "answer": "イ",
+        "number": "2",
+        "storedTableMatches": true,
+        "transcriptionReview": "Existing independent 610-answer review reused; no new full-table transcription counted."
+      },
+      "figureReceipts": [],
+      "evidence": [
+        "official-original:p3:No7",
+        "https://www.ms-motorservice.com/MediaAssets/oil-consumption-and-oil-loss_51747.pdf#page=8:valve-guide-and-stem-seal-oil-entry",
+        "https://www.ms-motorservice.com/MediaAssets/piston-rings-for-combustion-engines_53094.pdf#page=7:oil-return-bores"
+      ],
+      "technicalEvidence": [
+        {
+          "kind": "official-original",
+          "locator": "p3:No7"
+        },
+        {
+          "kind": "direct-primary-url",
+          "url": "https://www.ms-motorservice.com/MediaAssets/oil-consumption-and-oil-loss_51747.pdf#page=8",
+          "locator": "valve-guide-and-stem-seal-oil-entry"
+        },
+        {
+          "kind": "direct-primary-url",
+          "url": "https://www.ms-motorservice.com/MediaAssets/piston-rings-for-combustion-engines_53094.pdf#page=7",
+          "locator": "oil-return-bores"
+        }
+      ],
+      "conditions": null,
+      "allChoiceReasons": [
+        {
+          "label": "ア",
+          "statement": "(1) シリンダの摩耗",
+          "reason": "シリンダ摩耗は主にオイル上がりにつながる。",
+          "reasonSha256": "3e7dfaae907b1291fddb5aa6054f4efa9d6f9fadf4a4696e5140190ac9b354d6",
+          "independentStatementVerdict": "false",
+          "technicalAssessment": "Cylinder wear favors oil traveling upward past the piston and ring pack.",
+          "evidence": [
+            "official-original:p3:No7",
+            "https://www.ms-motorservice.com/MediaAssets/oil-consumption-and-oil-loss_51747.pdf#page=8:valve-guide-and-stem-seal-oil-entry",
+            "https://www.ms-motorservice.com/MediaAssets/piston-rings-for-combustion-engines_53094.pdf#page=7:oil-return-bores"
+          ],
+          "reasonDisposition": "accepted"
+        },
+        {
+          "label": "イ",
+          "statement": "(2) バルブ機構のオイル・シールのシール不良",
+          "reason": "バルブ・ステムのシール不良がオイル下がりを起こす。",
+          "reasonSha256": "d447c7e4133ad9341d24eab9852da0181e9aa34f43b33b5faab1786d777b8cf4",
+          "independentStatementVerdict": "true",
+          "technicalAssessment": "A leaking valve-stem seal lets oil descend along the valve stem into the combustion chamber.",
+          "evidence": [
+            "official-original:p3:No7",
+            "https://www.ms-motorservice.com/MediaAssets/oil-consumption-and-oil-loss_51747.pdf#page=8:valve-guide-and-stem-seal-oil-entry",
+            "https://www.ms-motorservice.com/MediaAssets/piston-rings-for-combustion-engines_53094.pdf#page=7:oil-return-bores"
+          ],
+          "reasonDisposition": "accepted"
+        },
+        {
+          "label": "ウ",
+          "statement": "(3) ピストン・リングとリング溝との隙間の過大",
+          "reason": "リング溝の隙間過大は主にオイル上がりにつながる。",
+          "reasonSha256": "cb68adb1a535237770b96425f50f86689881668feb719eab19fd1d9c9cf68f60",
+          "independentStatementVerdict": "false",
+          "technicalAssessment": "Oversized piston ring groove clearance favors oil travel upward from the crankcase.",
+          "evidence": [
+            "official-original:p3:No7",
+            "https://www.ms-motorservice.com/MediaAssets/oil-consumption-and-oil-loss_51747.pdf#page=8:valve-guide-and-stem-seal-oil-entry",
+            "https://www.ms-motorservice.com/MediaAssets/piston-rings-for-combustion-engines_53094.pdf#page=7:oil-return-bores"
+          ],
+          "reasonDisposition": "accepted"
+        },
+        {
+          "label": "エ",
+          "statement": "(4) ピストンのオイル・リング溝に設けた、オイル戻し口の詰まり",
+          "reason": "オイル戻し口の詰まりは主にオイル上がりにつながる。",
+          "reasonSha256": "1d6dc2441bb7557b60ec4dbadcbe5e773061adb50ed6e9b9907894dca373c7bf",
+          "independentStatementVerdict": "false",
+          "technicalAssessment": "Blocked oil-return holes in the piston oil-ring groove impair oil drainage and favor oil travel upward.",
+          "evidence": [
+            "official-original:p3:No7",
+            "https://www.ms-motorservice.com/MediaAssets/oil-consumption-and-oil-loss_51747.pdf#page=8:valve-guide-and-stem-seal-oil-entry",
+            "https://www.ms-motorservice.com/MediaAssets/piston-rings-for-combustion-engines_53094.pdf#page=7:oil-return-bores"
+          ],
+          "reasonDisposition": "accepted"
+        }
+      ],
+      "status": "ACCEPT",
+      "holds": [],
+      "repairs": [],
+      "candidateManuscriptSha256": "1a9d753e9ca2b0d3b89bb41cef8a4eb6d4bb0539290d0d81f168676fd6d93191",
+      "protectedFieldsUnchanged": true
+    },
+    {
+      "id": "jidosha-2025-second-3-diesel-q08",
+      "manuscriptSha256": "702cd0202fba2eae0704fb36f25e892952efd26edef481f2db25915c25f4af20",
+      "hashContract": "SHA256(UTF8(JSON.stringify(parsed question object))); original property order retained",
+      "fixedCommit": "6f4253b9381e3030863e38dfe75b5ca4068ba526",
+      "fixedBlobSha": "320fa720a1c2326e48c910b4eeaff32c92c7137d",
+      "fixedCommitTargetIdentical": true,
+      "officialOriginal": {
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_3d.pdf",
+        "sha256": "d8aa5a5f348ac2e09e8b1c41948dac27d04c0718bece57931e44495464d9264a",
+        "localFile": "sources/20260322_3d.pdf",
+        "localSha256": "d8aa5a5f348ac2e09e8b1c41948dac27d04c0718bece57931e44495464d9264a",
+        "physicalPages": [
+          3
+        ],
+        "locator": "No.8",
+        "visuallyReviewed": true
+      },
+      "officialKey": {
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_kai.pdf",
+        "sha256": "2f73820401362ca24f052d8339bf20e4865dab2f2afe74b7c7b546b7b90d6701",
+        "physicalPage": 1,
+        "subject": "3-diesel",
+        "qNumber": 8,
+        "answer": "ウ",
+        "number": "3",
+        "storedTableMatches": true,
+        "transcriptionReview": "Existing independent 610-answer review reused; no new full-table transcription counted."
+      },
+      "figureReceipts": [],
+      "evidence": [
+        "official-original:p3:No8",
+        "official-key"
+      ],
+      "technicalEvidence": [
+        {
+          "kind": "official-original",
+          "locator": "p3:No8"
+        },
+        {
+          "kind": "official-key",
+          "locator": "existing independently checked answer table"
+        }
+      ],
+      "conditions": null,
+      "allChoiceReasons": [
+        {
+          "label": "ア",
+          "statement": "(1) 湿式ライナの外周面下部には、冷却水漏れ防止用のリング状のゴム・パッキンが取り付けられている。",
+          "reason": "湿式ライナ下部のシールが冷却水漏れを防ぐ。",
+          "reasonSha256": "3314c9f01d008d8d4ffb3f9946acfd15cf6948690913e111ef0f4b2f353bc188",
+          "independentStatementVerdict": "true",
+          "technicalAssessment": "A wet liner lower external seal is used to prevent coolant leakage in a sealed wet-liner construction.",
+          "evidence": [
+            "official-original:p3:No8",
+            "official-key"
+          ],
+          "reasonDisposition": "reviewed-question-held"
+        },
+        {
+          "label": "イ",
+          "statement": "(2) 乾式ライナは、特殊鋳鉄製の薄い円筒状のもので、シリンダに圧入または挿入されている。",
+          "reason": "乾式ライナは薄い鋳鉄製円筒をブロックに組み込む。",
+          "reasonSha256": "f95c4115d676033519a0918a1a5c2d44e2bc3bf0e0580880c98bd878d6c18dfd",
+          "independentStatementVerdict": "true",
+          "technicalAssessment": "Dry liners can be thin cast-iron cylinders fitted into block bores.",
+          "evidence": [
+            "official-original:p3:No8",
+            "official-key"
+          ],
+          "reasonDisposition": "reviewed-question-held"
+        },
+        {
+          "label": "ウ",
+          "statement": "(3) 一般にシリンダ・ライナ上面は、シリンダ・ブロック上面と同じ高さに組み付ける。",
+          "reason": "上面は規定の突出量で組み付け、同じ高さとは限らない。",
+          "reasonSha256": "b0fc8d468e7dd31022042cb9972c8b4ed2e9ce9c04a2a1acfebb1965b1de70c5",
+          "independentStatementVerdict": "false",
+          "technicalAssessment": "Wet liner top projection may be specified above the deck; flushness is not a general universal assembly instruction.",
+          "evidence": [
+            "official-original:p3:No8",
+            "official-key"
+          ],
+          "reasonDisposition": "reviewed-question-held"
+        },
+        {
+          "label": "エ",
+          "statement": "(4) シリンダ・ブロックには、一般に特殊鋳鉄が用いられる。",
+          "reason": "ブロックには鋳鉄が一般的に用いられる。",
+          "reasonSha256": "99e4a982fd2dc60706f4787ff2c43abefb7e4638e9ee90c1f332887de50cec4a",
+          "independentStatementVerdict": "true",
+          "technicalAssessment": "Cast iron is a common traditional cylinder-block material, although aluminum blocks also exist.",
+          "evidence": [
+            "official-original:p3:No8",
+            "official-key"
+          ],
+          "reasonDisposition": "reviewed-question-held"
+        }
+      ],
+      "status": "HOLD",
+      "holds": [
+        "Need a primary wet/dry liner installation chart that establishes the intended liner protrusion and material/application qualifiers."
+      ],
+      "repairs": [],
+      "candidateManuscriptSha256": "702cd0202fba2eae0704fb36f25e892952efd26edef481f2db25915c25f4af20",
+      "protectedFieldsUnchanged": true
+    },
+    {
+      "id": "jidosha-2025-second-3-diesel-q09",
+      "manuscriptSha256": "7813fda646110c0eae2f2d18fc56fe60527a27206b1b7a01a28a21e02c4619d5",
+      "hashContract": "SHA256(UTF8(JSON.stringify(parsed question object))); original property order retained",
+      "fixedCommit": "6f4253b9381e3030863e38dfe75b5ca4068ba526",
+      "fixedBlobSha": "320fa720a1c2326e48c910b4eeaff32c92c7137d",
+      "fixedCommitTargetIdentical": true,
+      "officialOriginal": {
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_3d.pdf",
+        "sha256": "d8aa5a5f348ac2e09e8b1c41948dac27d04c0718bece57931e44495464d9264a",
+        "localFile": "sources/20260322_3d.pdf",
+        "localSha256": "d8aa5a5f348ac2e09e8b1c41948dac27d04c0718bece57931e44495464d9264a",
+        "physicalPages": [
+          3
+        ],
+        "locator": "No.9",
+        "visuallyReviewed": true
+      },
+      "officialKey": {
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_kai.pdf",
+        "sha256": "2f73820401362ca24f052d8339bf20e4865dab2f2afe74b7c7b546b7b90d6701",
+        "physicalPage": 1,
+        "subject": "3-diesel",
+        "qNumber": 9,
+        "answer": "ア",
+        "number": "1",
+        "storedTableMatches": true,
+        "transcriptionReview": "Existing independent 610-answer review reused; no new full-table transcription counted."
+      },
+      "figureReceipts": [],
+      "evidence": [
+        "official-original:p3:No9",
+        "official-key"
+      ],
+      "technicalEvidence": [
+        {
+          "kind": "official-original",
+          "locator": "p3:No9"
+        },
+        {
+          "kind": "official-key",
+          "locator": "existing independently checked answer table"
+        }
+      ],
+      "conditions": null,
+      "allChoiceReasons": [
+        {
+          "label": "ア",
+          "statement": "(1) エア・クリーナは、エンジンの吸入空気騒音を低減する役目もしている。",
+          "reason": "吸気騒音の低減作用がある。",
+          "reasonSha256": "9e768e550a3e1c42c6bc35f6dd90ad690aab16ee1f7f59ca6a9ab46046828f1f",
+          "independentStatementVerdict": "true",
+          "technicalAssessment": "An intake air cleaner can attenuate intake noise in addition to filtering air.",
+          "evidence": [
+            "official-original:p3:No9",
+            "official-key"
+          ],
+          "reasonDisposition": "reviewed-question-held"
+        },
+        {
+          "label": "イ",
+          "statement": "(2) ビスカス式エレメントは、定期的に圧縮空気を吹き付けて清掃を行う必要がある。",
+          "reason": "ビスカス式は圧縮空気による清掃を行わず交換する。",
+          "reasonSha256": "1323c379fcedb239ee61e2f9f41da30cdb548b3115f8d833de99ee3534af2dcc",
+          "independentStatementVerdict": "false",
+          "technicalAssessment": "A viscous element is generally replaced rather than cleaned by routine compressed-air blowing.",
+          "evidence": [
+            "official-original:p3:No9",
+            "official-key"
+          ],
+          "reasonDisposition": "reviewed-question-held"
+        },
+        {
+          "label": "ウ",
+          "statement": "(3) エア・クリーナのエレメントが目詰まりを起こすと、ブローバイ・ガス発生の原因となる。",
+          "reason": "目詰まりは吸気抵抗を増やすが、ブローバイ・ガスの直接原因ではない。",
+          "reasonSha256": "9b4bb60c4bcb9528f4780690134836a0e4c325a65e9f3f49df1a9caf0569dfb0",
+          "independentStatementVerdict": "false",
+          "technicalAssessment": "A plugged element raises intake restriction but is not itself a direct source of combustion-gas blow-by past rings.",
+          "evidence": [
+            "official-original:p3:No9",
+            "official-key"
+          ],
+          "reasonDisposition": "reviewed-question-held"
+        },
+        {
+          "label": "エ",
+          "statement": "(4) ダスト・アンローダ・バルブは、排気ガスの圧力を利用して自動的にごみや水を排出する装置である。",
+          "reason": "ダスト・アンローダは吸気系のごみ・水を排出し、排気圧で動くものではない。",
+          "reasonSha256": "cd3cea16d644b3c55a33dbf23906bbf7cd7d7f8990b318e90c05c42a3f6cad7e",
+          "independentStatementVerdict": "false",
+          "technicalAssessment": "A dust unloader empties intake-system debris; the exhaust-pressure mechanism asserted here is wrong.",
+          "evidence": [
+            "official-original:p3:No9",
+            "official-key"
+          ],
+          "reasonDisposition": "reviewed-question-held"
+        }
+      ],
+      "status": "HOLD",
+      "holds": [
+        "Need the air-cleaner or element manufacturer operation/service document for intake-noise, viscous-element cleaning and dust-unloader actuation."
+      ],
+      "repairs": [],
+      "candidateManuscriptSha256": "7813fda646110c0eae2f2d18fc56fe60527a27206b1b7a01a28a21e02c4619d5",
+      "protectedFieldsUnchanged": true
+    },
+    {
+      "id": "jidosha-2025-second-3-diesel-q10",
+      "manuscriptSha256": "b3536f68d633ad4215a07eb80b374b662e6656f45b05136fd41ff888653fc976",
+      "hashContract": "SHA256(UTF8(JSON.stringify(parsed question object))); original property order retained",
+      "fixedCommit": "6f4253b9381e3030863e38dfe75b5ca4068ba526",
+      "fixedBlobSha": "320fa720a1c2326e48c910b4eeaff32c92c7137d",
+      "fixedCommitTargetIdentical": true,
+      "officialOriginal": {
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_3d.pdf",
+        "sha256": "d8aa5a5f348ac2e09e8b1c41948dac27d04c0718bece57931e44495464d9264a",
+        "localFile": "sources/20260322_3d.pdf",
+        "localSha256": "d8aa5a5f348ac2e09e8b1c41948dac27d04c0718bece57931e44495464d9264a",
+        "physicalPages": [
+          4
+        ],
+        "locator": "No.10",
+        "visuallyReviewed": true
+      },
+      "officialKey": {
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_kai.pdf",
+        "sha256": "2f73820401362ca24f052d8339bf20e4865dab2f2afe74b7c7b546b7b90d6701",
+        "physicalPage": 1,
+        "subject": "3-diesel",
+        "qNumber": 10,
+        "answer": "エ",
+        "number": "4",
+        "storedTableMatches": true,
+        "transcriptionReview": "Existing independent 610-answer review reused; no new full-table transcription counted."
+      },
+      "figureReceipts": [],
+      "evidence": [
+        "official-original:p4:No10",
+        "https://www.us.mahle.com/media/usa/motorsports/mms-ring-instructions-7-8-20.pdf#page=2:two-piece-oil-ring-180-degrees",
+        "https://www.ms-motorservice.com/MediaAssets/piston-rings-for-combustion-engines_53094.pdf#page=25:ring-pliers-mounting-and-dismantling",
+        "https://www.ms-motorservice.com/MediaAssets/piston-rings-for-combustion-engines_53094.pdf#page=26:TOP-mark-and-expander-placement",
+        "https://www.ms-motorservice.com/MediaAssets/piston-rings-for-combustion-engines_53094.pdf#page=27:piston-installation-direction"
+      ],
+      "technicalEvidence": [
+        {
+          "kind": "official-original",
+          "locator": "p4:No10"
+        },
+        {
+          "kind": "direct-primary-url",
+          "url": "https://www.us.mahle.com/media/usa/motorsports/mms-ring-instructions-7-8-20.pdf#page=2",
+          "locator": "two-piece-oil-ring-180-degrees"
+        },
+        {
+          "kind": "direct-primary-url",
+          "url": "https://www.ms-motorservice.com/MediaAssets/piston-rings-for-combustion-engines_53094.pdf#page=25",
+          "locator": "ring-pliers-mounting-and-dismantling"
+        },
+        {
+          "kind": "direct-primary-url",
+          "url": "https://www.ms-motorservice.com/MediaAssets/piston-rings-for-combustion-engines_53094.pdf#page=26",
+          "locator": "TOP-mark-and-expander-placement"
+        },
+        {
+          "kind": "direct-primary-url",
+          "url": "https://www.ms-motorservice.com/MediaAssets/piston-rings-for-combustion-engines_53094.pdf#page=27",
+          "locator": "piston-installation-direction"
+        }
+      ],
+      "conditions": null,
+      "allChoiceReasons": [
+        {
+          "label": "ア",
+          "statement": "(1) 組み合わせ型オイル・リングは、コイル・エキスパンダの継ぎ目とリングの合い口とは、180°ずらして組み付ける。",
+          "reason": "継ぎ目と合い口を180°ずらす。",
+          "reasonSha256": "b52bdcf8df201de3340678704e1678e30c3c3ed5af015631301b89beff793d7e",
+          "independentStatementVerdict": "true",
+          "technicalAssessment": "For a two-piece oil ring the coil-expander joint and ring gap are assembled opposite, 180 degrees apart.",
+          "evidence": [
+            "official-original:p4:No10",
+            "https://www.us.mahle.com/media/usa/motorsports/mms-ring-instructions-7-8-20.pdf#page=2:two-piece-oil-ring-180-degrees",
+            "https://www.ms-motorservice.com/MediaAssets/piston-rings-for-combustion-engines_53094.pdf#page=25:ring-pliers-mounting-and-dismantling",
+            "https://www.ms-motorservice.com/MediaAssets/piston-rings-for-combustion-engines_53094.pdf#page=26:TOP-mark-and-expander-placement",
+            "https://www.ms-motorservice.com/MediaAssets/piston-rings-for-combustion-engines_53094.pdf#page=27:piston-installation-direction"
+          ],
+          "reasonDisposition": "accepted"
+        },
+        {
+          "label": "イ",
+          "statement": "(2) ピストン・リングを組み付けるときには、リングの組み付け位置、上下の向きなどを誤らないようにする。",
+          "reason": "リングの位置と上下方向を確認する。",
+          "reasonSha256": "5f2d578b5b862c3942b25ce9d2547120a35dc73ce146b3e8570f98eed9fb2230",
+          "independentStatementVerdict": "true",
+          "technicalAssessment": "Ring groove, order and TOP orientation must be respected for sealing and oil control.",
+          "evidence": [
+            "official-original:p4:No10",
+            "https://www.us.mahle.com/media/usa/motorsports/mms-ring-instructions-7-8-20.pdf#page=2:two-piece-oil-ring-180-degrees",
+            "https://www.ms-motorservice.com/MediaAssets/piston-rings-for-combustion-engines_53094.pdf#page=25:ring-pliers-mounting-and-dismantling",
+            "https://www.ms-motorservice.com/MediaAssets/piston-rings-for-combustion-engines_53094.pdf#page=26:TOP-mark-and-expander-placement",
+            "https://www.ms-motorservice.com/MediaAssets/piston-rings-for-combustion-engines_53094.pdf#page=27:piston-installation-direction"
+          ],
+          "reasonDisposition": "accepted"
+        },
+        {
+          "label": "ウ",
+          "statement": "(3) ピストンとコンロッドを組み付けるときには、それぞれの前後方向の向きを誤らないようにする。",
+          "reason": "ピストンとコンロッドの前後を合わせる。",
+          "reasonSha256": "5d5f023b2d63096447ec3e9f07aa0fda2f9e3988b8ff2dee6ab693f5d7f82c16",
+          "independentStatementVerdict": "true",
+          "technicalAssessment": "Piston and rod front/back installation markings must be maintained for their specified engine orientation.",
+          "evidence": [
+            "official-original:p4:No10",
+            "https://www.us.mahle.com/media/usa/motorsports/mms-ring-instructions-7-8-20.pdf#page=2:two-piece-oil-ring-180-degrees",
+            "https://www.ms-motorservice.com/MediaAssets/piston-rings-for-combustion-engines_53094.pdf#page=25:ring-pliers-mounting-and-dismantling",
+            "https://www.ms-motorservice.com/MediaAssets/piston-rings-for-combustion-engines_53094.pdf#page=26:TOP-mark-and-expander-placement",
+            "https://www.ms-motorservice.com/MediaAssets/piston-rings-for-combustion-engines_53094.pdf#page=27:piston-installation-direction"
+          ],
+          "reasonDisposition": "accepted"
+        },
+        {
+          "label": "エ",
+          "statement": "(4) ピストン・リングを取り外すときは、ピストン・リング・コンプレッサを用いる。",
+          "reason": "取り外しにはリング・エキスパンダを用いる。",
+          "reasonSha256": "3d61a24e393630101b325651b33a6e10dc3bbf661b5ac122b6fdbbca32139c65",
+          "independentStatementVerdict": "false",
+          "technicalAssessment": "Ring pliers/expander remove a ring; a ring compressor compresses rings while inserting the piston into the bore.",
+          "evidence": [
+            "official-original:p4:No10",
+            "https://www.us.mahle.com/media/usa/motorsports/mms-ring-instructions-7-8-20.pdf#page=2:two-piece-oil-ring-180-degrees",
+            "https://www.ms-motorservice.com/MediaAssets/piston-rings-for-combustion-engines_53094.pdf#page=25:ring-pliers-mounting-and-dismantling",
+            "https://www.ms-motorservice.com/MediaAssets/piston-rings-for-combustion-engines_53094.pdf#page=26:TOP-mark-and-expander-placement",
+            "https://www.ms-motorservice.com/MediaAssets/piston-rings-for-combustion-engines_53094.pdf#page=27:piston-installation-direction"
+          ],
+          "reasonDisposition": "accepted"
+        }
+      ],
+      "status": "ACCEPT",
+      "holds": [],
+      "repairs": [],
+      "candidateManuscriptSha256": "b3536f68d633ad4215a07eb80b374b662e6656f45b05136fd41ff888653fc976",
+      "protectedFieldsUnchanged": true
+    },
+    {
+      "id": "jidosha-2025-second-3-diesel-q11",
+      "manuscriptSha256": "183ba41ed6387c7a9822028b37c6ef7ad7e8abe1f235e37526148a3e2c6218db",
+      "hashContract": "SHA256(UTF8(JSON.stringify(parsed question object))); original property order retained",
+      "fixedCommit": "6f4253b9381e3030863e38dfe75b5ca4068ba526",
+      "fixedBlobSha": "320fa720a1c2326e48c910b4eeaff32c92c7137d",
+      "fixedCommitTargetIdentical": true,
+      "officialOriginal": {
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_3d.pdf",
+        "sha256": "d8aa5a5f348ac2e09e8b1c41948dac27d04c0718bece57931e44495464d9264a",
+        "localFile": "sources/20260322_3d.pdf",
+        "localSha256": "d8aa5a5f348ac2e09e8b1c41948dac27d04c0718bece57931e44495464d9264a",
+        "physicalPages": [
+          4
+        ],
+        "locator": "No.11",
+        "visuallyReviewed": true
+      },
+      "officialKey": {
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_kai.pdf",
+        "sha256": "2f73820401362ca24f052d8339bf20e4865dab2f2afe74b7c7b546b7b90d6701",
+        "physicalPage": 1,
+        "subject": "3-diesel",
+        "qNumber": 11,
+        "answer": "ア",
+        "number": "1",
+        "storedTableMatches": true,
+        "transcriptionReview": "Existing independent 610-answer review reused; no new full-table transcription counted."
+      },
+      "figureReceipts": [
+        {
+          "bookId": "jaspa-2025-second-3-diesel",
+          "physicalPage": 4,
+          "pdfSha256": "d8aa5a5f348ac2e09e8b1c41948dac27d04c0718bece57931e44495464d9264a",
+          "officialUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_3d.pdf#page=4",
+          "originalQuestionIds": [
+            "jidosha-2025-second-3-diesel-q11",
+            "jidosha-2025-second-3-diesel-q12"
+          ],
+          "relativePath": "figures/jaspa-2025-second-3-diesel-p04.webp",
+          "width": 1490,
+          "height": 2106,
+          "sha256": "0ec82a94ebe4602d26363181f2572305b6a3a7008028dec55fb71af40fcb2bc5",
+          "bytes": 171052,
+          "processing": "Original PDF physical page rendered to PNG, then converted to WebP; no retouch or generated content.",
+          "actualSha256": "0ec82a94ebe4602d26363181f2572305b6a3a7008028dec55fb71af40fcb2bc5",
+          "visuallyReviewed": true
+        }
+      ],
+      "evidence": [
+        "official-original:p4:No11:exploded gear pump; relief valve and strainer locations",
+        "official-key"
+      ],
+      "technicalEvidence": [
+        {
+          "kind": "official-original",
+          "locator": "p4:No11:exploded gear pump; relief valve and strainer locations"
+        },
+        {
+          "kind": "official-key",
+          "locator": "existing independently checked answer table"
+        }
+      ],
+      "conditions": null,
+      "allChoiceReasons": [
+        {
+          "label": "ア",
+          "statement": "(1) リリーフ・バルブは、オイル・ストレーナが詰まると作動する。",
+          "reason": "リリーフ・バルブは過大な油圧を逃がす。",
+          "reasonSha256": "f48bfc1c34a883408d1b3d0d81c946f7fd44249a978c2e3596134a4831bb517e",
+          "independentStatementVerdict": "false",
+          "technicalAssessment": "The relief valve responds to pressure above its setting; a clogged inlet strainer reduces supply rather than commanding relief operation.",
+          "evidence": [
+            "official-original:p4:No11:exploded gear pump; relief valve and strainer locations",
+            "official-key"
+          ],
+          "reasonDisposition": "reviewed-question-held"
+        },
+        {
+          "label": "イ",
+          "statement": "(2) ギヤの歯先とポンプ・ボデーとの隙間の点検には、シックネス・ゲージを用いる。",
+          "reason": "歯先とボデーの隙間測定にはシックネス・ゲージを使う。",
+          "reasonSha256": "c209fa1247299ad4a194cad06aa8cfe108d22903ea5c4116c9922196e6f154db",
+          "independentStatementVerdict": "true",
+          "technicalAssessment": "Tooth-tip to housing radial clearance can be checked with a thickness gauge.",
+          "evidence": [
+            "official-original:p4:No11:exploded gear pump; relief valve and strainer locations",
+            "official-key"
+          ],
+          "reasonDisposition": "reviewed-question-held"
+        },
+        {
+          "label": "ウ",
+          "statement": "(3) ドライブ・ギヤとドリブン・ギヤの回転により、ギヤの吸入口に発生する負圧によってオイルを吸入する。",
+          "reason": "ギヤ回転による吸入口の負圧でオイルを吸い込む。",
+          "reasonSha256": "bba04103f6c381f1eae3c7a937b1b5b975ce9f80b0ee2edc9094d3a07bb2da88",
+          "independentStatementVerdict": "true",
+          "technicalAssessment": "Meshing gear rotation expands the inlet volume and draws oil into the pump.",
+          "evidence": [
+            "official-original:p4:No11:exploded gear pump; relief valve and strainer locations",
+            "official-key"
+          ],
+          "reasonDisposition": "reviewed-question-held"
+        },
+        {
+          "label": "エ",
+          "statement": "(4) ドライブ・ギヤ及びドリブン・ギヤの側面とポンプ・カバーとの隙間が大きくなると、ポンプの性能が著しく低下する。",
+          "reason": "側面隙間の拡大は内部漏れを増やし吐出性能を下げる。",
+          "reasonSha256": "1569da230c1cddbdbc92c88bf2424a403a2e4a2bbb215d8e716747f2e58a9fcf",
+          "independentStatementVerdict": "true",
+          "technicalAssessment": "Increased side clearance permits internal leakage and decreases delivery performance.",
+          "evidence": [
+            "official-original:p4:No11:exploded gear pump; relief valve and strainer locations",
+            "official-key"
+          ],
+          "reasonDisposition": "reviewed-question-held"
+        }
+      ],
+      "status": "HOLD",
+      "holds": [
+        "Need a pump manufacturer measuring procedure for tooth-tip/body and gear-cover side clearances; figure alone does not establish the measurement tool."
+      ],
+      "repairs": [],
+      "candidateManuscriptSha256": "183ba41ed6387c7a9822028b37c6ef7ad7e8abe1f235e37526148a3e2c6218db",
+      "protectedFieldsUnchanged": true
+    },
+    {
+      "id": "jidosha-2025-second-3-diesel-q12",
+      "manuscriptSha256": "6d08bf9ccca5f0d49a85a014288233c40686f07c0cb7af3bf73f2fd190f1dd8f",
+      "hashContract": "SHA256(UTF8(JSON.stringify(parsed question object))); original property order retained",
+      "fixedCommit": "6f4253b9381e3030863e38dfe75b5ca4068ba526",
+      "fixedBlobSha": "320fa720a1c2326e48c910b4eeaff32c92c7137d",
+      "fixedCommitTargetIdentical": true,
+      "officialOriginal": {
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_3d.pdf",
+        "sha256": "d8aa5a5f348ac2e09e8b1c41948dac27d04c0718bece57931e44495464d9264a",
+        "localFile": "sources/20260322_3d.pdf",
+        "localSha256": "d8aa5a5f348ac2e09e8b1c41948dac27d04c0718bece57931e44495464d9264a",
+        "physicalPages": [
+          4
+        ],
+        "locator": "No.12",
+        "visuallyReviewed": true
+      },
+      "officialKey": {
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_kai.pdf",
+        "sha256": "2f73820401362ca24f052d8339bf20e4865dab2f2afe74b7c7b546b7b90d6701",
+        "physicalPage": 1,
+        "subject": "3-diesel",
+        "qNumber": 12,
+        "answer": "ウ",
+        "number": "3",
+        "storedTableMatches": true,
+        "transcriptionReview": "Existing independent 610-answer review reused; no new full-table transcription counted."
+      },
+      "figureReceipts": [
+        {
+          "bookId": "jaspa-2025-second-3-diesel",
+          "physicalPage": 4,
+          "pdfSha256": "d8aa5a5f348ac2e09e8b1c41948dac27d04c0718bece57931e44495464d9264a",
+          "officialUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_3d.pdf#page=4",
+          "originalQuestionIds": [
+            "jidosha-2025-second-3-diesel-q11",
+            "jidosha-2025-second-3-diesel-q12"
+          ],
+          "relativePath": "figures/jaspa-2025-second-3-diesel-p04.webp",
+          "width": 1490,
+          "height": 2106,
+          "sha256": "0ec82a94ebe4602d26363181f2572305b6a3a7008028dec55fb71af40fcb2bc5",
+          "bytes": 171052,
+          "processing": "Original PDF physical page rendered to PNG, then converted to WebP; no retouch or generated content.",
+          "actualSha256": "0ec82a94ebe4602d26363181f2572305b6a3a7008028dec55fb71af40fcb2bc5",
+          "visuallyReviewed": true
+        }
+      ],
+      "evidence": [
+        "official-original:p4:No12:original cutaway and A-D leader lines",
+        "derivation:cooling-contraction creates underpressure and draws coolant from reserve tank"
+      ],
+      "technicalEvidence": [
+        {
+          "kind": "official-original",
+          "locator": "p4:No12:original cutaway and A-D leader lines"
+        },
+        {
+          "kind": "explicit-derivation",
+          "locator": "cooling-contraction creates underpressure and draws coolant from reserve tank"
+        }
+      ],
+      "conditions": null,
+      "allChoiceReasons": [
+        {
+          "label": "ア",
+          "statement": "(1) A",
+          "reason": "Aはキャップ上部で、バキューム・バルブではない。",
+          "reasonSha256": "4c5a8407b305def7945626bbd727d018a3d87a9fcc37395689318c0d46ea0988",
+          "independentStatementVerdict": "false",
+          "technicalAssessment": "A points to the top shell, not the lower central vacuum valve.",
+          "evidence": [
+            "official-original:p4:No12:original cutaway and A-D leader lines",
+            "derivation:cooling-contraction creates underpressure and draws coolant from reserve tank"
+          ],
+          "reasonDisposition": "accepted"
+        },
+        {
+          "label": "イ",
+          "statement": "(2) B",
+          "reason": "Bはプレッシャ・バルブ側である。",
+          "reasonSha256": "833a3c2d17c28203038e212e4222a82a21120a39d0e50e992a75eab40ac6dbaf",
+          "independentStatementVerdict": "false",
+          "technicalAssessment": "B points to the main pressure-valve region.",
+          "evidence": [
+            "official-original:p4:No12:original cutaway and A-D leader lines",
+            "derivation:cooling-contraction creates underpressure and draws coolant from reserve tank"
+          ],
+          "reasonDisposition": "accepted"
+        },
+        {
+          "label": "ウ",
+          "statement": "(3) C",
+          "reason": "Cが負圧時に開くバキューム・バルブ。",
+          "reasonSha256": "7995da8d481a7010ddcc7929518cf04a1b5d1b6d736f5145eeda25525da942fa",
+          "independentStatementVerdict": "true",
+          "technicalAssessment": "C points to the small bottom vacuum valve opening to return coolant as the system cools.",
+          "evidence": [
+            "official-original:p4:No12:original cutaway and A-D leader lines",
+            "derivation:cooling-contraction creates underpressure and draws coolant from reserve tank"
+          ],
+          "reasonDisposition": "accepted"
+        },
+        {
+          "label": "エ",
+          "statement": "(4) D",
+          "reason": "Dはスプリング側で、バキューム・バルブではない。",
+          "reasonSha256": "f29052300dc97ba35419c2d8a83cbacbe6abcfacff91cc54ef426cebdc94aa39",
+          "independentStatementVerdict": "false",
+          "technicalAssessment": "D points to the spring region rather than the vacuum valve.",
+          "evidence": [
+            "official-original:p4:No12:original cutaway and A-D leader lines",
+            "derivation:cooling-contraction creates underpressure and draws coolant from reserve tank"
+          ],
+          "reasonDisposition": "accepted"
+        }
+      ],
+      "status": "ACCEPT",
+      "holds": [],
+      "repairs": [],
+      "candidateManuscriptSha256": "6d08bf9ccca5f0d49a85a014288233c40686f07c0cb7af3bf73f2fd190f1dd8f",
+      "protectedFieldsUnchanged": true
+    },
+    {
+      "id": "jidosha-2025-second-3-diesel-q13",
+      "manuscriptSha256": "71a62f97ceecbc59c78c8b9d6b095c7910c318ec3975e9da8fcce6c91d476639",
+      "hashContract": "SHA256(UTF8(JSON.stringify(parsed question object))); original property order retained",
+      "fixedCommit": "6f4253b9381e3030863e38dfe75b5ca4068ba526",
+      "fixedBlobSha": "320fa720a1c2326e48c910b4eeaff32c92c7137d",
+      "fixedCommitTargetIdentical": true,
+      "officialOriginal": {
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_3d.pdf",
+        "sha256": "d8aa5a5f348ac2e09e8b1c41948dac27d04c0718bece57931e44495464d9264a",
+        "localFile": "sources/20260322_3d.pdf",
+        "localSha256": "d8aa5a5f348ac2e09e8b1c41948dac27d04c0718bece57931e44495464d9264a",
+        "physicalPages": [
+          5
+        ],
+        "locator": "No.13",
+        "visuallyReviewed": true
+      },
+      "officialKey": {
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_kai.pdf",
+        "sha256": "2f73820401362ca24f052d8339bf20e4865dab2f2afe74b7c7b546b7b90d6701",
+        "physicalPage": 1,
+        "subject": "3-diesel",
+        "qNumber": 13,
+        "answer": "ア",
+        "number": "1",
+        "storedTableMatches": true,
+        "transcriptionReview": "Existing independent 610-answer review reused; no new full-table transcription counted."
+      },
+      "figureReceipts": [],
+      "evidence": [
+        "official-original:p5:No13",
+        "official-key"
+      ],
+      "technicalEvidence": [
+        {
+          "kind": "official-original",
+          "locator": "p5:No13"
+        },
+        {
+          "kind": "official-key",
+          "locator": "existing independently checked answer table"
+        }
+      ],
+      "conditions": null,
+      "allChoiceReasons": [
+        {
+          "label": "ア",
+          "statement": "(1) （イ）クランクシャフト／（ロ）4回",
+          "reason": "クランクシャフト2回転、プランジャ4往復で正しい。",
+          "reasonSha256": "bcdb8198dedea7ba6d5b42e0b45bf04ee8fe8e86036cfef7f0939635acde4c64",
+          "independentStatementVerdict": "true",
+          "technicalAssessment": "In a four-stroke engine two crank revolutions correspond to one pump-drive revolution; a four-cylinder distributor pump must inject four times per cycle.",
+          "evidence": [
+            "official-original:p5:No13",
+            "official-key"
+          ],
+          "reasonDisposition": "reviewed-question-held"
+        },
+        {
+          "label": "イ",
+          "statement": "(2) （イ）クランクシャフト／（ロ）8回",
+          "reason": "駆動軸1回転で8回ではなく4回往復する。",
+          "reasonSha256": "7463d5b95b9906942c2bbca7d0ad07e8b1db87e6a6bcf7e9ebc6715d557e9594",
+          "independentStatementVerdict": "false",
+          "technicalAssessment": "Eight plunger strokes would not match one injection per cylinder for four cylinders.",
+          "evidence": [
+            "official-original:p5:No13",
+            "official-key"
+          ],
+          "reasonDisposition": "reviewed-question-held"
+        },
+        {
+          "label": "ウ",
+          "statement": "(3) （イ）カムシャフト／（ロ）4回",
+          "reason": "基準はカムシャフト2回転ではなくクランクシャフト2回転。",
+          "reasonSha256": "8aa5353ec585ad281cabff9868f75338be912518499c5e51896bd497f38d0b21",
+          "independentStatementVerdict": "false",
+          "technicalAssessment": "Two camshaft revolutions correspond to four crank revolutions and so do not fit the statement.",
+          "evidence": [
+            "official-original:p5:No13",
+            "official-key"
+          ],
+          "reasonDisposition": "reviewed-question-held"
+        },
+        {
+          "label": "エ",
+          "statement": "(4) （イ）カムシャフト／（ロ）8回",
+          "reason": "基準軸と往復回数の両方が誤り。",
+          "reasonSha256": "b5ce343676acfe103abef9fd1c569655edd054c4a46dd9a3c0b53698ab2f3c66",
+          "independentStatementVerdict": "false",
+          "technicalAssessment": "The camshaft/two revolutions and eight-stroke pairing fails both required counts.",
+          "evidence": [
+            "official-original:p5:No13",
+            "official-key"
+          ],
+          "reasonDisposition": "reviewed-question-held"
+        }
+      ],
+      "status": "HOLD",
+      "holds": [
+        "Need the manufacturer distributor-pump cam-plate/lobe arrangement confirming one plunger reciprocation per cylinder per drive-shaft revolution."
+      ],
+      "repairs": [],
+      "candidateManuscriptSha256": "71a62f97ceecbc59c78c8b9d6b095c7910c318ec3975e9da8fcce6c91d476639",
+      "protectedFieldsUnchanged": true
+    },
+    {
+      "id": "jidosha-2025-second-3-diesel-q14",
+      "manuscriptSha256": "5a7480f736cfc281c5e7e4df7ada2c8398dea2f77cb7fe9e84947fe2b5e9ea08",
+      "hashContract": "SHA256(UTF8(JSON.stringify(parsed question object))); original property order retained",
+      "fixedCommit": "6f4253b9381e3030863e38dfe75b5ca4068ba526",
+      "fixedBlobSha": "320fa720a1c2326e48c910b4eeaff32c92c7137d",
+      "fixedCommitTargetIdentical": true,
+      "officialOriginal": {
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_3d.pdf",
+        "sha256": "d8aa5a5f348ac2e09e8b1c41948dac27d04c0718bece57931e44495464d9264a",
+        "localFile": "sources/20260322_3d.pdf",
+        "localSha256": "d8aa5a5f348ac2e09e8b1c41948dac27d04c0718bece57931e44495464d9264a",
+        "physicalPages": [
+          5
+        ],
+        "locator": "No.14",
+        "visuallyReviewed": true
+      },
+      "officialKey": {
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_kai.pdf",
+        "sha256": "2f73820401362ca24f052d8339bf20e4865dab2f2afe74b7c7b546b7b90d6701",
+        "physicalPage": 1,
+        "subject": "3-diesel",
+        "qNumber": 14,
+        "answer": "イ",
+        "number": "2",
+        "storedTableMatches": true,
+        "transcriptionReview": "Existing independent 610-answer review reused; no new full-table transcription counted."
+      },
+      "figureReceipts": [
+        {
+          "bookId": "jaspa-2025-second-3-diesel",
+          "physicalPage": 5,
+          "pdfSha256": "d8aa5a5f348ac2e09e8b1c41948dac27d04c0718bece57931e44495464d9264a",
+          "officialUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_3d.pdf#page=5",
+          "originalQuestionIds": [
+            "jidosha-2025-second-3-diesel-q14"
+          ],
+          "relativePath": "figures/jaspa-2025-second-3-diesel-p05.webp",
+          "width": 1490,
+          "height": 2106,
+          "sha256": "e9fee4cee35f6b01c55a68f38d0716b95a26b88cc7d21135804622bb8e0368b5",
+          "bytes": 225842,
+          "processing": "Original PDF physical page rendered to PNG, then converted to WebP; no retouch or generated content.",
+          "actualSha256": "e9fee4cee35f6b01c55a68f38d0716b95a26b88cc7d21135804622bb8e0368b5",
+          "visuallyReviewed": true
+        }
+      ],
+      "evidence": [
+        "official-original:p5:No14:valve cutaway and dimension a",
+        "official-key"
+      ],
+      "technicalEvidence": [
+        {
+          "kind": "official-original",
+          "locator": "p5:No14:valve cutaway and dimension a"
+        },
+        {
+          "kind": "official-key",
+          "locator": "existing independently checked answer table"
+        }
+      ],
+      "conditions": null,
+      "allChoiceReasons": [
+        {
+          "label": "ア",
+          "statement": "(1) シート部は、燃料の吸い戻しを行う働きをする。",
+          "reason": "吸い戻しはシート部ではなくピストン部による。",
+          "reasonSha256": "1d2c63530931f50cfb94537fd07e7ada88bda8c8638a6e8c95d5f4d00cc6eab3",
+          "independentStatementVerdict": "false",
+          "technicalAssessment": "The seat seals against reverse fuel flow; the piston section makes the delivery-line retraction volume.",
+          "evidence": [
+            "official-original:p5:No14:valve cutaway and dimension a",
+            "official-key"
+          ],
+          "reasonDisposition": "reviewed-question-held"
+        },
+        {
+          "label": "イ",
+          "statement": "(2) 図のaをピストン部による吸い戻しストロークと呼ぶ。",
+          "reason": "aはピストン部による吸い戻しストローク。",
+          "reasonSha256": "e219c48b8f078d92e4c9e4af9d55d85263571edf83489e27f32fcf7220cfcb3d",
+          "independentStatementVerdict": "true",
+          "technicalAssessment": "In the original valve cutaway a marks piston travel that produces the suck-back stroke.",
+          "evidence": [
+            "official-original:p5:No14:valve cutaway and dimension a",
+            "official-key"
+          ],
+          "reasonDisposition": "reviewed-question-held"
+        },
+        {
+          "label": "ウ",
+          "statement": "(3) デリバリ・バルブは、プランジャで加圧された燃料の圧力が17MPa～23MPa程度に達すると開く。",
+          "reason": "17～23MPaはここでいうデリバリ・バルブの開弁圧ではない。",
+          "reasonSha256": "fa4a847ebfdd00f3e8e5ca851e2b9b1ef83ed2ce4dc2d45a4791a4996de61332",
+          "independentStatementVerdict": "false",
+          "technicalAssessment": "A 17-23 MPa figure is not established here as this delivery valve opening pressure; it may be an injector nozzle setting.",
+          "evidence": [
+            "official-original:p5:No14:valve cutaway and dimension a",
+            "official-key"
+          ],
+          "reasonDisposition": "reviewed-question-held"
+        },
+        {
+          "label": "エ",
+          "statement": "(4) デリバリ・バルブは、デリバリ・バルブ・スプリングのばね力により開く。",
+          "reason": "開弁は燃料圧による。ばね力は閉弁方向に働く。",
+          "reasonSha256": "54ec7deec20c8cb801fd4788e135a42e6e65eb58971f831b26797d526b01fc5d",
+          "independentStatementVerdict": "false",
+          "technicalAssessment": "Spring force closes the delivery valve; pressurized fuel opens it.",
+          "evidence": [
+            "official-original:p5:No14:valve cutaway and dimension a",
+            "official-key"
+          ],
+          "reasonDisposition": "reviewed-question-held"
+        }
+      ],
+      "status": "HOLD",
+      "holds": [
+        "Need a primary inline injection-pump delivery-valve/nozzle specification distinguishing the 17-23 MPa value and the named suck-back stroke."
+      ],
+      "repairs": [],
+      "candidateManuscriptSha256": "5a7480f736cfc281c5e7e4df7ada2c8398dea2f77cb7fe9e84947fe2b5e9ea08",
+      "protectedFieldsUnchanged": true
+    },
+    {
+      "id": "jidosha-2025-second-3-diesel-q15",
+      "manuscriptSha256": "0f5206a06fa7ab7a9d0e9a709751aff6bcc09a1eefc53710a53bfc4d40bd011a",
+      "hashContract": "SHA256(UTF8(JSON.stringify(parsed question object))); original property order retained",
+      "fixedCommit": "6f4253b9381e3030863e38dfe75b5ca4068ba526",
+      "fixedBlobSha": "320fa720a1c2326e48c910b4eeaff32c92c7137d",
+      "fixedCommitTargetIdentical": true,
+      "officialOriginal": {
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_3d.pdf",
+        "sha256": "d8aa5a5f348ac2e09e8b1c41948dac27d04c0718bece57931e44495464d9264a",
+        "localFile": "sources/20260322_3d.pdf",
+        "localSha256": "d8aa5a5f348ac2e09e8b1c41948dac27d04c0718bece57931e44495464d9264a",
+        "physicalPages": [
+          5
+        ],
+        "locator": "No.15",
+        "visuallyReviewed": true
+      },
+      "officialKey": {
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_kai.pdf",
+        "sha256": "2f73820401362ca24f052d8339bf20e4865dab2f2afe74b7c7b546b7b90d6701",
+        "physicalPage": 1,
+        "subject": "3-diesel",
+        "qNumber": 15,
+        "answer": "ウ",
+        "number": "3",
+        "storedTableMatches": true,
+        "transcriptionReview": "Existing independent 610-answer review reused; no new full-table transcription counted."
+      },
+      "figureReceipts": [],
+      "evidence": [
+        "official-original:p5:No15",
+        "https://www.bosch-mobility.com/en/solutions/fuel-supply/high-pressure-rail-for-common-rail-systems/:operation-rail-storage-distribution-pulse-volume-sensor-limiter"
+      ],
+      "technicalEvidence": [
+        {
+          "kind": "official-original",
+          "locator": "p5:No15"
+        },
+        {
+          "kind": "direct-primary-url",
+          "url": "https://www.bosch-mobility.com/en/solutions/fuel-supply/high-pressure-rail-for-common-rail-systems/",
+          "locator": "operation-rail-storage-distribution-pulse-volume-sensor-limiter"
+        }
+      ],
+      "conditions": null,
+      "allChoiceReasons": [
+        {
+          "label": "ア",
+          "statement": "(1) サプライ・ポンプにより生成された高圧燃料を蓄えている。",
+          "reason": "コモンレールはサプライ・ポンプからの高圧燃料を蓄える。",
+          "reasonSha256": "3c4b2d30b009127b61bc77f18cd78632b012b73718e30596aa994cccbcd0f5ed",
+          "independentStatementVerdict": "true",
+          "technicalAssessment": "The rail stores pump-compressed high-pressure fuel.",
+          "evidence": [
+            "official-original:p5:No15",
+            "https://www.bosch-mobility.com/en/solutions/fuel-supply/high-pressure-rail-for-common-rail-systems/:operation-rail-storage-distribution-pulse-volume-sensor-limiter"
+          ],
+          "reasonDisposition": "accepted"
+        },
+        {
+          "label": "イ",
+          "statement": "(2) 高圧燃料を蓄えるとともに、各インジェクタに分配する役目をしている。",
+          "reason": "蓄圧した燃料をインジェクタへ分配する。",
+          "reasonSha256": "2aae9da0602afc4ae40ce35222a5ad63c8896326790e8814f0a7a527f160dd99",
+          "independentStatementVerdict": "true",
+          "technicalAssessment": "The rail distributes the stored fuel to the individual injectors.",
+          "evidence": [
+            "official-original:p5:No15",
+            "https://www.bosch-mobility.com/en/solutions/fuel-supply/high-pressure-rail-for-common-rail-systems/:operation-rail-storage-distribution-pulse-volume-sensor-limiter"
+          ],
+          "reasonDisposition": "accepted"
+        },
+        {
+          "label": "ウ",
+          "statement": "(3) コモンレール内の圧力脈動を低減するために、プレッシャ・リミッタが用いられている。",
+          "reason": "プレッシャ・リミッタは異常高圧に対する保護用。",
+          "reasonSha256": "e4614cf1f300cc8a242512ac5464e05175e8f5658f55c16c556eee2f333c8baa",
+          "independentStatementVerdict": "false",
+          "technicalAssessment": "The rail fuel volume damps injection pulses; the pressure limiter is the overpressure component, not the pulse damping mechanism.",
+          "evidence": [
+            "official-original:p5:No15",
+            "https://www.bosch-mobility.com/en/solutions/fuel-supply/high-pressure-rail-for-common-rail-systems/:operation-rail-storage-distribution-pulse-volume-sensor-limiter"
+          ],
+          "reasonDisposition": "accepted"
+        },
+        {
+          "label": "エ",
+          "statement": "(4) ECU（エレクトロニック・コントロール・ユニット）による圧力フィードバック制御には、コモンレールに設置された圧力センサが用いられている。",
+          "reason": "レール圧力センサの信号をECUの制御に使う。",
+          "reasonSha256": "2761ea65622339dd33c0eee3526d96ca099dc417f4a960d6d64c647402c5fd8e",
+          "independentStatementVerdict": "true",
+          "technicalAssessment": "A rail pressure sensor supplies actual pressure for closed-loop control.",
+          "evidence": [
+            "official-original:p5:No15",
+            "https://www.bosch-mobility.com/en/solutions/fuel-supply/high-pressure-rail-for-common-rail-systems/:operation-rail-storage-distribution-pulse-volume-sensor-limiter"
+          ],
+          "reasonDisposition": "accepted"
+        }
+      ],
+      "status": "ACCEPT",
+      "holds": [],
+      "repairs": [],
+      "candidateManuscriptSha256": "0f5206a06fa7ab7a9d0e9a709751aff6bcc09a1eefc53710a53bfc4d40bd011a",
+      "protectedFieldsUnchanged": true
+    },
+    {
+      "id": "jidosha-2025-second-3-diesel-q16",
+      "manuscriptSha256": "51fa205d9daba40ade7da7bbe67af8b962057ac9eb54ec4ee35a9087c7984b6a",
+      "hashContract": "SHA256(UTF8(JSON.stringify(parsed question object))); original property order retained",
+      "fixedCommit": "6f4253b9381e3030863e38dfe75b5ca4068ba526",
+      "fixedBlobSha": "320fa720a1c2326e48c910b4eeaff32c92c7137d",
+      "fixedCommitTargetIdentical": true,
+      "officialOriginal": {
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_3d.pdf",
+        "sha256": "d8aa5a5f348ac2e09e8b1c41948dac27d04c0718bece57931e44495464d9264a",
+        "localFile": "sources/20260322_3d.pdf",
+        "localSha256": "d8aa5a5f348ac2e09e8b1c41948dac27d04c0718bece57931e44495464d9264a",
+        "physicalPages": [
+          5
+        ],
+        "locator": "No.16",
+        "visuallyReviewed": true
+      },
+      "officialKey": {
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_kai.pdf",
+        "sha256": "2f73820401362ca24f052d8339bf20e4865dab2f2afe74b7c7b546b7b90d6701",
+        "physicalPage": 1,
+        "subject": "3-diesel",
+        "qNumber": 16,
+        "answer": "イ",
+        "number": "2",
+        "storedTableMatches": true,
+        "transcriptionReview": "Existing independent 610-answer review reused; no new full-table transcription counted."
+      },
+      "figureReceipts": [],
+      "evidence": [
+        "official-original:p5:No16",
+        "https://products.bandogrp.com/product/ribace2_industrial_vribbedbelt/:features-lines-57-63"
+      ],
+      "technicalEvidence": [
+        {
+          "kind": "official-original",
+          "locator": "p5:No16"
+        },
+        {
+          "kind": "direct-primary-url",
+          "url": "https://products.bandogrp.com/product/ribace2_industrial_vribbedbelt/",
+          "locator": "features-lines-57-63"
+        }
+      ],
+      "conditions": null,
+      "allChoiceReasons": [
+        {
+          "label": "ア",
+          "statement": "(1) 張力低下が少ない。",
+          "reason": "Vリブド・ベルトは張力低下が比較的少ない。",
+          "reasonSha256": "fa8050098a6519d6afba029c6519544cfa0d459a4fcab06decba1236860a25ba",
+          "independentStatementVerdict": "true",
+          "technicalAssessment": "V-ribbed designs show less pulley-groove sink and hence less tension loss than a traditional V belt.",
+          "evidence": [
+            "official-original:p5:No16",
+            "https://products.bandogrp.com/product/ribace2_industrial_vribbedbelt/:features-lines-57-63"
+          ],
+          "reasonDisposition": "reviewed-question-held"
+        },
+        {
+          "label": "イ",
+          "statement": "(2) 耐屈曲性に優れているが、耐疲労性は劣る。",
+          "reason": "耐疲労性も優れ、劣るという説明は誤り。",
+          "reasonSha256": "54ce8d813181b23cd463b3e1f958b9956fa56ba754d03b1d20d5d446d667d3ea",
+          "independentStatementVerdict": "false",
+          "technicalAssessment": "The assertion that fatigue resistance is worse conflicts with the intended thin flexible belt, but a direct comparative fatigue test is absent.",
+          "evidence": [
+            "official-original:p5:No16",
+            "https://products.bandogrp.com/product/ribace2_industrial_vribbedbelt/:features-lines-57-63"
+          ],
+          "reasonDisposition": "reviewed-question-held"
+        },
+        {
+          "label": "ウ",
+          "statement": "(3) 伝達効率が高い。",
+          "reason": "複数リブで接触し、伝達効率が高い。",
+          "reasonSha256": "9ae4bc04b45900fd32fadc4f3a9bb5de9bd90485bedb7c5dbc8f77c4cc9e5701",
+          "independentStatementVerdict": "true",
+          "technicalAssessment": "A thinner cross-section reduces bending losses and improves transmission efficiency.",
+          "evidence": [
+            "official-original:p5:No16",
+            "https://products.bandogrp.com/product/ribace2_industrial_vribbedbelt/:features-lines-57-63"
+          ],
+          "reasonDisposition": "reviewed-question-held"
+        },
+        {
+          "label": "エ",
+          "statement": "(4) ベルト断面が薄い。",
+          "reason": "薄い断面により小径プーリにも対応する。",
+          "reasonSha256": "a9dc49d10c29669437d9e7319306be19fe2ef168f1f82110e246f766bf5b8aca",
+          "independentStatementVerdict": "true",
+          "technicalAssessment": "The V-ribbed belt is thinner than a conventional V belt.",
+          "evidence": [
+            "official-original:p5:No16",
+            "https://products.bandogrp.com/product/ribace2_industrial_vribbedbelt/:features-lines-57-63"
+          ],
+          "reasonDisposition": "reviewed-question-held"
+        }
+      ],
+      "status": "HOLD",
+      "holds": [
+        "Manufacturer primary comparison confirms A/C/D but does not directly support superior fatigue resistance for B."
+      ],
+      "repairs": [],
+      "candidateManuscriptSha256": "51fa205d9daba40ade7da7bbe67af8b962057ac9eb54ec4ee35a9087c7984b6a",
+      "protectedFieldsUnchanged": true
+    },
+    {
+      "id": "jidosha-2025-second-3-diesel-q17",
+      "manuscriptSha256": "ed7a429f250fa39bd424c89684d519b0b7ddc2098263f4bc1312ac017237a467",
+      "hashContract": "SHA256(UTF8(JSON.stringify(parsed question object))); original property order retained",
+      "fixedCommit": "6f4253b9381e3030863e38dfe75b5ca4068ba526",
+      "fixedBlobSha": "320fa720a1c2326e48c910b4eeaff32c92c7137d",
+      "fixedCommitTargetIdentical": true,
+      "officialOriginal": {
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_3d.pdf",
+        "sha256": "d8aa5a5f348ac2e09e8b1c41948dac27d04c0718bece57931e44495464d9264a",
+        "localFile": "sources/20260322_3d.pdf",
+        "localSha256": "d8aa5a5f348ac2e09e8b1c41948dac27d04c0718bece57931e44495464d9264a",
+        "physicalPages": [
+          6
+        ],
+        "locator": "No.17",
+        "visuallyReviewed": true
+      },
+      "officialKey": {
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_kai.pdf",
+        "sha256": "2f73820401362ca24f052d8339bf20e4865dab2f2afe74b7c7b546b7b90d6701",
+        "physicalPage": 1,
+        "subject": "3-diesel",
+        "qNumber": 17,
+        "answer": "エ",
+        "number": "4",
+        "storedTableMatches": true,
+        "transcriptionReview": "Existing independent 610-answer review reused; no new full-table transcription counted."
+      },
+      "figureReceipts": [],
+      "evidence": [
+        "official-original:p6:No17",
+        "GSYuasa-EC:page4:1.280-at-20C"
+      ],
+      "technicalEvidence": [
+        {
+          "kind": "official-original",
+          "locator": "p6:No17"
+        },
+        {
+          "kind": "primary-source-catalog",
+          "id": "GSYuasa-EC",
+          "url": "https://gyb.gs-yuasa.com/assets/data/manual_ec.pdf",
+          "localFile": "sources/GS-Yuasa-manual-ec.pdf",
+          "sha256": "9d59cef690f100724d80cdc0244ac26db2f1dc7c7e531773ff2497d6a45c4e4d",
+          "locator": "page4:1.280-at-20C"
+        }
+      ],
+      "conditions": null,
+      "allChoiceReasons": [
+        {
+          "label": "ア",
+          "statement": "(1) 自己放電の程度は、電解液の比重及び温度が高いほど多くなる。",
+          "reason": "高比重・高温ほど自己放電が増える。",
+          "reasonSha256": "8f823a8d4d37e73ce4cecb92a75ebb9b208244274e03694a845653513939c62c",
+          "independentStatementVerdict": "true",
+          "technicalAssessment": "Self-discharge rises with temperature and electrolyte specific gravity in the intended flooded lead-acid context.",
+          "evidence": [
+            "official-original:p6:No17",
+            "GSYuasa-EC:page4:1.280-at-20C"
+          ],
+          "reasonDisposition": "reviewed-question-held"
+        },
+        {
+          "label": "イ",
+          "statement": "(2) 電解液は、硫酸と水を混合した希硫酸である。",
+          "reason": "鉛バッテリの電解液は希硫酸。",
+          "reasonSha256": "5773b712d9c4b17eed2e97c89071d72fc3342ae439f44875677888778828ed6e",
+          "independentStatementVerdict": "true",
+          "technicalAssessment": "Flooded lead-acid electrolyte is sulfuric acid diluted in water.",
+          "evidence": [
+            "official-original:p6:No17",
+            "GSYuasa-EC:page4:1.280-at-20C"
+          ],
+          "reasonDisposition": "reviewed-question-held"
+        },
+        {
+          "label": "ウ",
+          "statement": "(3) 電解液の不足は、極板のサルフェーションやセパレータの劣化の原因となる。",
+          "reason": "液不足は極板露出などによる劣化を招く。",
+          "reasonSha256": "1822461ff96bfb8f0b11daa4a36756ee3a39caba2a3094b10cbabe782cb1a2f8",
+          "independentStatementVerdict": "true",
+          "technicalAssessment": "Electrolyte loss can expose plates and accelerate sulfation and separator deterioration.",
+          "evidence": [
+            "official-original:p6:No17",
+            "GSYuasa-EC:page4:1.280-at-20C"
+          ],
+          "reasonDisposition": "reviewed-question-held"
+        },
+        {
+          "label": "エ",
+          "statement": "(4) 完全充電状態のときの電解液の比重は、液温20℃に換算して1.220である。",
+          "reason": "完全充電の比重は約1.280で、1.220ではない。",
+          "reasonSha256": "26886088b99b25a724ee569ca8245532c0e418c5b45d9ab8355e04d655156eb7",
+          "independentStatementVerdict": "false",
+          "technicalAssessment": "For the cited starting battery, full-charge electrolyte specific gravity is about 1.280 at 20 C, not 1.220.",
+          "evidence": [
+            "official-original:p6:No17",
+            "GSYuasa-EC:page4:1.280-at-20C"
+          ],
+          "reasonDisposition": "reviewed-question-held"
+        }
+      ],
+      "status": "HOLD",
+      "holds": [
+        "Need a primary lead-acid service reference for the joint claim high gravity/temperature increases self-discharge and for electrolyte-shortage effects on separators."
+      ],
+      "repairs": [],
+      "candidateManuscriptSha256": "ed7a429f250fa39bd424c89684d519b0b7ddc2098263f4bc1312ac017237a467",
+      "protectedFieldsUnchanged": true
+    },
+    {
+      "id": "jidosha-2025-second-3-diesel-q18",
+      "manuscriptSha256": "e8077ffce7fa3317cfbdd1ae7a77bbac44ecb011446ffeb2f96d1c1c1fd5f2ac",
+      "hashContract": "SHA256(UTF8(JSON.stringify(parsed question object))); original property order retained",
+      "fixedCommit": "6f4253b9381e3030863e38dfe75b5ca4068ba526",
+      "fixedBlobSha": "320fa720a1c2326e48c910b4eeaff32c92c7137d",
+      "fixedCommitTargetIdentical": true,
+      "officialOriginal": {
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_3d.pdf",
+        "sha256": "d8aa5a5f348ac2e09e8b1c41948dac27d04c0718bece57931e44495464d9264a",
+        "localFile": "sources/20260322_3d.pdf",
+        "localSha256": "d8aa5a5f348ac2e09e8b1c41948dac27d04c0718bece57931e44495464d9264a",
+        "physicalPages": [
+          6
+        ],
+        "locator": "No.18",
+        "visuallyReviewed": true
+      },
+      "officialKey": {
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_kai.pdf",
+        "sha256": "2f73820401362ca24f052d8339bf20e4865dab2f2afe74b7c7b546b7b90d6701",
+        "physicalPage": 1,
+        "subject": "3-diesel",
+        "qNumber": 18,
+        "answer": "ウ",
+        "number": "3",
+        "storedTableMatches": true,
+        "transcriptionReview": "Existing independent 610-answer review reused; no new full-table transcription counted."
+      },
+      "figureReceipts": [],
+      "evidence": [
+        "official-original:p6:No18",
+        "https://assets.denso-am.eu/production/attachments/Starter-Alternator-Manual-English.pdf#page=50:rotor-core-coil-shaft-and-regulator-location"
+      ],
+      "technicalEvidence": [
+        {
+          "kind": "official-original",
+          "locator": "p6:No18"
+        },
+        {
+          "kind": "direct-primary-url",
+          "url": "https://assets.denso-am.eu/production/attachments/Starter-Alternator-Manual-English.pdf#page=50",
+          "locator": "rotor-core-coil-shaft-and-regulator-location"
+        }
+      ],
+      "conditions": null,
+      "allChoiceReasons": [
+        {
+          "label": "ア",
+          "statement": "(1) ロータには、IC式ボルテージ・レギュレータが内蔵されている。",
+          "reason": "ICレギュレータはロータ内蔵部品ではない。",
+          "reasonSha256": "60fd26067a3594ea5bef19aa82de9cc47880fbfd680a4fa3b301af189c57d82a",
+          "independentStatementVerdict": "false",
+          "technicalAssessment": "The IC regulator is mounted in the alternator end-frame area, not inside the rotor.",
+          "evidence": [
+            "official-original:p6:No18",
+            "https://assets.denso-am.eu/production/attachments/Starter-Alternator-Manual-English.pdf#page=50:rotor-core-coil-shaft-and-regulator-location"
+          ],
+          "reasonDisposition": "accepted"
+        },
+        {
+          "label": "イ",
+          "statement": "(2) ロータ・コアに電流を流すことによって、ロータ・コイルが磁化される。",
+          "reason": "電流を流すのはロータ・コイルで、コアは磁化される側。",
+          "reasonSha256": "bf153c06110e48ee5847fa725e31885b9419d6176b168d1e72c17ce7f5fd9089",
+          "independentStatementVerdict": "false",
+          "technicalAssessment": "Current is carried by the rotor field coil; the pole core is magnetized by that coil, reversing the statement.",
+          "evidence": [
+            "official-original:p6:No18",
+            "https://assets.denso-am.eu/production/attachments/Starter-Alternator-Manual-English.pdf#page=50:rotor-core-coil-shaft-and-regulator-location"
+          ],
+          "reasonDisposition": "accepted"
+        },
+        {
+          "label": "ウ",
+          "statement": "(3) ロータ・コアは、回転するシャフトと一体となって組み付けられている。",
+          "reason": "ロータ・コアはシャフトと一体に組み付けられる。",
+          "reasonSha256": "aeee85d832975fd2eefc1be3f4d99371b2b8a9e4000795da1f3893d1111cf7d5",
+          "independentStatementVerdict": "true",
+          "technicalAssessment": "The claw pole core is assembled to rotate together with the rotor shaft.",
+          "evidence": [
+            "official-original:p6:No18",
+            "https://assets.denso-am.eu/production/attachments/Starter-Alternator-Manual-English.pdf#page=50:rotor-core-coil-shaft-and-regulator-location"
+          ],
+          "reasonDisposition": "accepted"
+        },
+        {
+          "label": "エ",
+          "statement": "(4) ロータ・コアとロータ・コイルの間には、僅かな隙間が設けられている。",
+          "reason": "コアとコイルを離す隙間を設ける説明は誤り。",
+          "reasonSha256": "207d36a74feddb3b7b0018f98f570ed24d3e7db375ff56f92c56ba91a4aa9336",
+          "independentStatementVerdict": "false",
+          "technicalAssessment": "The core encloses the field coil and is not separated from it by the stated functional air gap.",
+          "evidence": [
+            "official-original:p6:No18",
+            "https://assets.denso-am.eu/production/attachments/Starter-Alternator-Manual-English.pdf#page=50:rotor-core-coil-shaft-and-regulator-location"
+          ],
+          "reasonDisposition": "accepted"
+        }
+      ],
+      "status": "ACCEPT",
+      "holds": [],
+      "repairs": [],
+      "candidateManuscriptSha256": "e8077ffce7fa3317cfbdd1ae7a77bbac44ecb011446ffeb2f96d1c1c1fd5f2ac",
+      "protectedFieldsUnchanged": true
+    },
+    {
+      "id": "jidosha-2025-second-3-diesel-q19",
+      "manuscriptSha256": "5fece0cb1da74241157a2da3e51212a7d80c3e54d7c6d59e155a8f41c3369c32",
+      "hashContract": "SHA256(UTF8(JSON.stringify(parsed question object))); original property order retained",
+      "fixedCommit": "6f4253b9381e3030863e38dfe75b5ca4068ba526",
+      "fixedBlobSha": "320fa720a1c2326e48c910b4eeaff32c92c7137d",
+      "fixedCommitTargetIdentical": true,
+      "officialOriginal": {
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_3d.pdf",
+        "sha256": "d8aa5a5f348ac2e09e8b1c41948dac27d04c0718bece57931e44495464d9264a",
+        "localFile": "sources/20260322_3d.pdf",
+        "localSha256": "d8aa5a5f348ac2e09e8b1c41948dac27d04c0718bece57931e44495464d9264a",
+        "physicalPages": [
+          6
+        ],
+        "locator": "No.19",
+        "visuallyReviewed": true
+      },
+      "officialKey": {
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_kai.pdf",
+        "sha256": "2f73820401362ca24f052d8339bf20e4865dab2f2afe74b7c7b546b7b90d6701",
+        "physicalPage": 1,
+        "subject": "3-diesel",
+        "qNumber": 19,
+        "answer": "ア",
+        "number": "1",
+        "storedTableMatches": true,
+        "transcriptionReview": "Existing independent 610-answer review reused; no new full-table transcription counted."
+      },
+      "figureReceipts": [],
+      "evidence": [
+        "official-original:p6:No19",
+        "https://assets.denso-am.eu/production/attachments/Starter-Alternator-Manual-English.pdf#page=11:direct-pinion-shift-parts",
+        "https://assets.denso-am.eu/production/attachments/Starter-Alternator-Manual-English.pdf#page=15:reduction-clutch-gear"
+      ],
+      "technicalEvidence": [
+        {
+          "kind": "official-original",
+          "locator": "p6:No19"
+        },
+        {
+          "kind": "direct-primary-url",
+          "url": "https://assets.denso-am.eu/production/attachments/Starter-Alternator-Manual-English.pdf#page=11",
+          "locator": "direct-pinion-shift-parts"
+        },
+        {
+          "kind": "direct-primary-url",
+          "url": "https://assets.denso-am.eu/production/attachments/Starter-Alternator-Manual-English.pdf#page=15",
+          "locator": "reduction-clutch-gear"
+        }
+      ],
+      "conditions": null,
+      "allChoiceReasons": [
+        {
+          "label": "ア",
+          "statement": "(1) クラッチ・ギヤ",
+          "reason": "クラッチ・ギヤは直結式の構成部品ではない。",
+          "reasonSha256": "2dc2111a965a11c40fe8e7783c36d32d30758956637ad4f6426cd53feefa9f2c",
+          "independentStatementVerdict": "false",
+          "technicalAssessment": "A clutch gear belongs to a reduction-drive starter design rather than the direct-drive pinion-shift parts list.",
+          "evidence": [
+            "official-original:p6:No19",
+            "https://assets.denso-am.eu/production/attachments/Starter-Alternator-Manual-English.pdf#page=11:direct-pinion-shift-parts",
+            "https://assets.denso-am.eu/production/attachments/Starter-Alternator-Manual-English.pdf#page=15:reduction-clutch-gear"
+          ],
+          "reasonDisposition": "accepted"
+        },
+        {
+          "label": "イ",
+          "statement": "(2) シフト・レバー",
+          "reason": "シフト・レバーはピニオンの移動に用いる。",
+          "reasonSha256": "dac12b39da401d99abfc162df85ee2bb45e5f20817c4f8f554a8437c2be44d7c",
+          "independentStatementVerdict": "true",
+          "technicalAssessment": "The direct-drive pinion-shift design uses a drive/shift lever.",
+          "evidence": [
+            "official-original:p6:No19",
+            "https://assets.denso-am.eu/production/attachments/Starter-Alternator-Manual-English.pdf#page=11:direct-pinion-shift-parts",
+            "https://assets.denso-am.eu/production/attachments/Starter-Alternator-Manual-English.pdf#page=15:reduction-clutch-gear"
+          ],
+          "reasonDisposition": "accepted"
+        },
+        {
+          "label": "ウ",
+          "statement": "(3) マグネット・スイッチ",
+          "reason": "マグネット・スイッチは通電・押し出しに用いる。",
+          "reasonSha256": "b925f6669a0b092b3fb16b164ff67433647a0351bc154e94cc01ba36eecdca62",
+          "independentStatementVerdict": "true",
+          "technicalAssessment": "The magnetic switch actuates the direct-drive pinion mechanism and powers the motor.",
+          "evidence": [
+            "official-original:p6:No19",
+            "https://assets.denso-am.eu/production/attachments/Starter-Alternator-Manual-English.pdf#page=11:direct-pinion-shift-parts",
+            "https://assets.denso-am.eu/production/attachments/Starter-Alternator-Manual-English.pdf#page=15:reduction-clutch-gear"
+          ],
+          "reasonDisposition": "accepted"
+        },
+        {
+          "label": "エ",
+          "statement": "(4) オーバランニング・クラッチ",
+          "reason": "オーバランニング・クラッチは逆駆動を防ぐ。",
+          "reasonSha256": "b6573af8459e144f3bfb20aa4d96e32139af5252296d5d5bc1649f016682cc7a",
+          "independentStatementVerdict": "true",
+          "technicalAssessment": "An overrunning clutch prevents engine overrun from back-driving the starter.",
+          "evidence": [
+            "official-original:p6:No19",
+            "https://assets.denso-am.eu/production/attachments/Starter-Alternator-Manual-English.pdf#page=11:direct-pinion-shift-parts",
+            "https://assets.denso-am.eu/production/attachments/Starter-Alternator-Manual-English.pdf#page=15:reduction-clutch-gear"
+          ],
+          "reasonDisposition": "accepted"
+        }
+      ],
+      "status": "ACCEPT",
+      "holds": [],
+      "repairs": [],
+      "candidateManuscriptSha256": "5fece0cb1da74241157a2da3e51212a7d80c3e54d7c6d59e155a8f41c3369c32",
+      "protectedFieldsUnchanged": true
+    },
+    {
+      "id": "jidosha-2025-second-3-diesel-q20",
+      "manuscriptSha256": "4fa04c6f2a91e13d248aaf3a9133e88ed246de2cf985b6ba5594a18d5f3ea920",
+      "hashContract": "SHA256(UTF8(JSON.stringify(parsed question object))); original property order retained",
+      "fixedCommit": "6f4253b9381e3030863e38dfe75b5ca4068ba526",
+      "fixedBlobSha": "320fa720a1c2326e48c910b4eeaff32c92c7137d",
+      "fixedCommitTargetIdentical": true,
+      "officialOriginal": {
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_3d.pdf",
+        "sha256": "d8aa5a5f348ac2e09e8b1c41948dac27d04c0718bece57931e44495464d9264a",
+        "localFile": "sources/20260322_3d.pdf",
+        "localSha256": "d8aa5a5f348ac2e09e8b1c41948dac27d04c0718bece57931e44495464d9264a",
+        "physicalPages": [
+          6
+        ],
+        "locator": "No.20",
+        "visuallyReviewed": true
+      },
+      "officialKey": {
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_kai.pdf",
+        "sha256": "2f73820401362ca24f052d8339bf20e4865dab2f2afe74b7c7b546b7b90d6701",
+        "physicalPage": 1,
+        "subject": "3-diesel",
+        "qNumber": 20,
+        "answer": "イ",
+        "number": "2",
+        "storedTableMatches": true,
+        "transcriptionReview": "Existing independent 610-answer review reused; no new full-table transcription counted."
+      },
+      "figureReceipts": [],
+      "evidence": [
+        "official-original:p6:No20",
+        "official-key"
+      ],
+      "technicalEvidence": [
+        {
+          "kind": "official-original",
+          "locator": "p6:No20"
+        },
+        {
+          "kind": "official-key",
+          "locator": "existing independently checked answer table"
+        }
+      ],
+      "conditions": null,
+      "allChoiceReasons": [
+        {
+          "label": "ア",
+          "statement": "(1) インテーク・エア・ヒータ式予熱装置は、吸入空気を暖めて始動を容易にするものである。",
+          "reason": "吸気を加熱して低温始動を助ける。",
+          "reasonSha256": "10ba1b561f1c7b108bd8e2456166353ce9b1094350ba343826ad15584d220606",
+          "independentStatementVerdict": "true",
+          "technicalAssessment": "An intake heater warms incoming air for cold starting.",
+          "evidence": [
+            "official-original:p6:No20",
+            "official-key"
+          ],
+          "reasonDisposition": "reviewed-question-held"
+        },
+        {
+          "label": "イ",
+          "statement": "(2) 電熱式インテーク・エア・ヒータでは、吸入空気の温度に応じて、予熱時間を制御している。",
+          "reason": "予熱時間を単純に吸入空気温度で制御するという説明が誤り。",
+          "reasonSha256": "789cc6143832fb8834b051f2866af67686c01db85bd3dceb5e016b81f8043a80",
+          "independentStatementVerdict": "false",
+          "technicalAssessment": "The asserted intake-air-temperature-only time control is not established for the intended electric heater; coolant/engine state may govern.",
+          "evidence": [
+            "official-original:p6:No20",
+            "official-key"
+          ],
+          "reasonDisposition": "reviewed-question-held"
+        },
+        {
+          "label": "ウ",
+          "statement": "(3) グロー・プラグは、燃焼室に向かってシリンダ・ヘッドに取り付けられており、寒冷時の始動を容易にしている。",
+          "reason": "グロー・プラグは燃焼室付近を加熱する。",
+          "reasonSha256": "875d555447ba75f33b40db5d0cc3a3fded85bd7be26b60eb77983c1c8e669c45",
+          "independentStatementVerdict": "true",
+          "technicalAssessment": "A glow plug heats the chamber vicinity to help cold starting.",
+          "evidence": [
+            "official-original:p6:No20",
+            "official-key"
+          ],
+          "reasonDisposition": "reviewed-question-held"
+        },
+        {
+          "label": "エ",
+          "statement": "(4) グロー・プラグの点検において、抵抗を測定したときに抵抗値が無限大であれば断線しているので、グロー・プラグの交換が必要である。",
+          "reason": "抵抗無限大は断線を示し交換対象となる。",
+          "reasonSha256": "e802b1548811ee7b9a989d99906f7beb1e1d9fadf38ead7183080d78e797d1d8",
+          "independentStatementVerdict": "true",
+          "technicalAssessment": "An infinite resistance across an isolated glow plug indicates an open circuit, within meter-resolution assumptions.",
+          "evidence": [
+            "official-original:p6:No20",
+            "official-key"
+          ],
+          "reasonDisposition": "reviewed-question-held"
+        }
+      ],
+      "status": "HOLD",
+      "holds": [
+        "Need a heater manufacturer control diagram distinguishing intake-air versus coolant temperature input, plus the specific glow-plug mounting/control context."
+      ],
+      "repairs": [],
+      "candidateManuscriptSha256": "4fa04c6f2a91e13d248aaf3a9133e88ed246de2cf985b6ba5594a18d5f3ea920",
+      "protectedFieldsUnchanged": true
+    },
+    {
+      "id": "jidosha-2025-second-3-diesel-q21",
+      "manuscriptSha256": "ac25b2d062060cfc78206bf7e49a9fd8f061f42931e64daa369a049379bac933",
+      "hashContract": "SHA256(UTF8(JSON.stringify(parsed question object))); original property order retained",
+      "fixedCommit": "6f4253b9381e3030863e38dfe75b5ca4068ba526",
+      "fixedBlobSha": "320fa720a1c2326e48c910b4eeaff32c92c7137d",
+      "fixedCommitTargetIdentical": true,
+      "officialOriginal": {
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_3d.pdf",
+        "sha256": "d8aa5a5f348ac2e09e8b1c41948dac27d04c0718bece57931e44495464d9264a",
+        "localFile": "sources/20260322_3d.pdf",
+        "localSha256": "d8aa5a5f348ac2e09e8b1c41948dac27d04c0718bece57931e44495464d9264a",
+        "physicalPages": [
+          6
+        ],
+        "locator": "No.21",
+        "visuallyReviewed": true
+      },
+      "officialKey": {
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_kai.pdf",
+        "sha256": "2f73820401362ca24f052d8339bf20e4865dab2f2afe74b7c7b546b7b90d6701",
+        "physicalPage": 1,
+        "subject": "3-diesel",
+        "qNumber": 21,
+        "answer": "ウ",
+        "number": "3",
+        "storedTableMatches": true,
+        "transcriptionReview": "Existing independent 610-answer review reused; no new full-table transcription counted."
+      },
+      "figureReceipts": [
+        {
+          "bookId": "jaspa-2025-second-3-diesel",
+          "physicalPage": 6,
+          "pdfSha256": "d8aa5a5f348ac2e09e8b1c41948dac27d04c0718bece57931e44495464d9264a",
+          "officialUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_3d.pdf#page=6",
+          "originalQuestionIds": [
+            "jidosha-2025-second-3-diesel-q21"
+          ],
+          "relativePath": "figures/jaspa-2025-second-3-diesel-p06.webp",
+          "width": 1490,
+          "height": 2106,
+          "sha256": "696b9acfdd7247df9a25b991315ec7c439a7c3bb6fea22a96a2b980d17306a6a",
+          "bytes": 200948,
+          "processing": "Original PDF physical page rendered to PNG, then converted to WebP; no retouch or generated content.",
+          "actualSha256": "696b9acfdd7247df9a25b991315ec7c439a7c3bb6fea22a96a2b980d17306a6a",
+          "visuallyReviewed": true
+        }
+      ],
+      "evidence": [
+        "official-original:p6:No21:original figures 12768cm3 ratio18.5 six cylinders",
+        "derivation:compression ratio=(swept+clearance)/clearance"
+      ],
+      "technicalEvidence": [
+        {
+          "kind": "official-original",
+          "locator": "p6:No21:original figures 12768cm3 ratio18.5 six cylinders"
+        },
+        {
+          "kind": "explicit-derivation",
+          "locator": "compression ratio=(swept+clearance)/clearance"
+        }
+      ],
+      "conditions": null,
+      "allChoiceReasons": [
+        {
+          "label": "ア",
+          "statement": "(1) 40.0cm³",
+          "reason": "40.0cm³を代入すると圧縮比は54.2。",
+          "reasonSha256": "e8641127c30a08827ea6e13b197e8f094e45b30842132b596b55a3c3ba76d3ba",
+          "independentStatementVerdict": "false",
+          "technicalAssessment": "With 40 cm3 clearance volume, ratio=(2128+40)/40=54.2, not 18.5.",
+          "evidence": [
+            "official-original:p6:No21:original figures 12768cm3 ratio18.5 six cylinders",
+            "derivation:compression ratio=(swept+clearance)/clearance"
+          ],
+          "reasonDisposition": "accepted"
+        },
+        {
+          "label": "イ",
+          "statement": "(2) 115.0cm³",
+          "reason": "115.0cm³なら圧縮比は約19.5。",
+          "reasonSha256": "e1fbcc6c4f912f8a57791e24e925687c8ff8ca5a3232f4fe99a915bc4722af09",
+          "independentStatementVerdict": "false",
+          "technicalAssessment": "With 115 cm3, ratio=(2128+115)/115=19.50, not 18.5.",
+          "evidence": [
+            "official-original:p6:No21:original figures 12768cm3 ratio18.5 six cylinders",
+            "derivation:compression ratio=(swept+clearance)/clearance"
+          ],
+          "reasonDisposition": "accepted"
+        },
+        {
+          "label": "ウ",
+          "statement": "(3) 121.6cm³",
+          "reason": "121.6cm³が2,128÷17.5の結果。",
+          "reasonSha256": "6b9c206cb31af64397a54602e9e912fcafa2daa2c41ebc2d23420c9e64745e7e",
+          "independentStatementVerdict": "true",
+          "technicalAssessment": "Per-cylinder swept volume is 12768/6=2128 cm3; clearance volume=2128/(18.5-1)=121.6 cm3.",
+          "evidence": [
+            "official-original:p6:No21:original figures 12768cm3 ratio18.5 six cylinders",
+            "derivation:compression ratio=(swept+clearance)/clearance"
+          ],
+          "reasonDisposition": "accepted"
+        },
+        {
+          "label": "エ",
+          "statement": "(4) 182.4cm³",
+          "reason": "182.4cm³なら圧縮比は約12.7。",
+          "reasonSha256": "5629731d947950b3790669fb2029aa2ef8c85e2921488291197f47a60b70709d",
+          "independentStatementVerdict": "false",
+          "technicalAssessment": "With 182.4 cm3, ratio=(2128+182.4)/182.4=12.67, not 18.5.",
+          "evidence": [
+            "official-original:p6:No21:original figures 12768cm3 ratio18.5 six cylinders",
+            "derivation:compression ratio=(swept+clearance)/clearance"
+          ],
+          "reasonDisposition": "accepted"
+        }
+      ],
+      "status": "ACCEPT",
+      "holds": [],
+      "repairs": [],
+      "candidateManuscriptSha256": "ac25b2d062060cfc78206bf7e49a9fd8f061f42931e64daa369a049379bac933",
+      "protectedFieldsUnchanged": true
+    },
+    {
+      "id": "jidosha-2025-second-3-diesel-q22",
+      "manuscriptSha256": "9e5f183de1d48064441ec97ad2b36073e629cb34dc9272c4b9f4b0caa3fc5012",
+      "hashContract": "SHA256(UTF8(JSON.stringify(parsed question object))); original property order retained",
+      "fixedCommit": "6f4253b9381e3030863e38dfe75b5ca4068ba526",
+      "fixedBlobSha": "320fa720a1c2326e48c910b4eeaff32c92c7137d",
+      "fixedCommitTargetIdentical": true,
+      "officialOriginal": {
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_3d.pdf",
+        "sha256": "d8aa5a5f348ac2e09e8b1c41948dac27d04c0718bece57931e44495464d9264a",
+        "localFile": "sources/20260322_3d.pdf",
+        "localSha256": "d8aa5a5f348ac2e09e8b1c41948dac27d04c0718bece57931e44495464d9264a",
+        "physicalPages": [
+          7
+        ],
+        "locator": "No.22",
+        "visuallyReviewed": true
+      },
+      "officialKey": {
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_kai.pdf",
+        "sha256": "2f73820401362ca24f052d8339bf20e4865dab2f2afe74b7c7b546b7b90d6701",
+        "physicalPage": 1,
+        "subject": "3-diesel",
+        "qNumber": 22,
+        "answer": "イ",
+        "number": "2",
+        "storedTableMatches": true,
+        "transcriptionReview": "Existing independent 610-answer review reused; no new full-table transcription counted."
+      },
+      "figureReceipts": [],
+      "evidence": [
+        "official-original:p7:No22",
+        "https://www.bipm.org/documents/20126/41483022/SI-Brochure-9-EN.pdf:SI-derived-units-F-ohm-V-and-base-A"
+      ],
+      "technicalEvidence": [
+        {
+          "kind": "official-original",
+          "locator": "p7:No22"
+        },
+        {
+          "kind": "direct-primary-url",
+          "url": "https://www.bipm.org/documents/20126/41483022/SI-Brochure-9-EN.pdf",
+          "locator": "SI-derived-units-F-ohm-V-and-base-A"
+        }
+      ],
+      "conditions": null,
+      "allChoiceReasons": [
+        {
+          "label": "ア",
+          "statement": "(1) Ω（オーム）",
+          "reason": "Ωは電気抵抗の単位。",
+          "reasonSha256": "259961d8cbaec47e4c91c812f7fb909b609db0d3f2479feee932e89bad73629c",
+          "independentStatementVerdict": "false",
+          "technicalAssessment": "Ohm denotes electric resistance.",
+          "evidence": [
+            "official-original:p7:No22",
+            "https://www.bipm.org/documents/20126/41483022/SI-Brochure-9-EN.pdf:SI-derived-units-F-ohm-V-and-base-A"
+          ],
+          "reasonDisposition": "accepted"
+        },
+        {
+          "label": "イ",
+          "statement": "(2) F（ファラド）",
+          "reason": "Fが静電容量の単位。",
+          "reasonSha256": "925df8d2edcf00be48398e406479d3205cf09a129f8067af7c8a39ed3434a0aa",
+          "independentStatementVerdict": "true",
+          "technicalAssessment": "Farad denotes capacitance.",
+          "evidence": [
+            "official-original:p7:No22",
+            "https://www.bipm.org/documents/20126/41483022/SI-Brochure-9-EN.pdf:SI-derived-units-F-ohm-V-and-base-A"
+          ],
+          "reasonDisposition": "accepted"
+        },
+        {
+          "label": "ウ",
+          "statement": "(3) A（アンペア）",
+          "reason": "A（アンペア）は電流の単位で、コンデンサの静電容量はFで表す。",
+          "reasonSha256": "1ee20f8e2b89909092bef97df67e553871713febd0c24bf4162181f8a2db62ec",
+          "independentStatementVerdict": "false",
+          "technicalAssessment": "Ampere denotes electric current.",
+          "evidence": [
+            "official-original:p7:No22",
+            "https://www.bipm.org/documents/20126/41483022/SI-Brochure-9-EN.pdf:SI-derived-units-F-ohm-V-and-base-A"
+          ],
+          "reasonDisposition": "accepted"
+        },
+        {
+          "label": "エ",
+          "statement": "(4) V（ボルト）",
+          "reason": "V（ボルト）は電圧の単位で、コンデンサの静電容量はFで表す。",
+          "reasonSha256": "ccb50c4cdbc25397fb8cc04a83cbd062302bf13aee3cc5f7e7da2cff27cc25df",
+          "independentStatementVerdict": "false",
+          "technicalAssessment": "Volt denotes electric potential difference.",
+          "evidence": [
+            "official-original:p7:No22",
+            "https://www.bipm.org/documents/20126/41483022/SI-Brochure-9-EN.pdf:SI-derived-units-F-ohm-V-and-base-A"
+          ],
+          "reasonDisposition": "accepted"
+        }
+      ],
+      "status": "ACCEPT",
+      "holds": [],
+      "repairs": [],
+      "candidateManuscriptSha256": "9e5f183de1d48064441ec97ad2b36073e629cb34dc9272c4b9f4b0caa3fc5012",
+      "protectedFieldsUnchanged": true
+    },
+    {
+      "id": "jidosha-2025-second-3-diesel-q23",
+      "manuscriptSha256": "98275383ce5712030871c0e7c96cf28b61e745a04a511367df27f23d7e4161ca",
+      "hashContract": "SHA256(UTF8(JSON.stringify(parsed question object))); original property order retained",
+      "fixedCommit": "6f4253b9381e3030863e38dfe75b5ca4068ba526",
+      "fixedBlobSha": "320fa720a1c2326e48c910b4eeaff32c92c7137d",
+      "fixedCommitTargetIdentical": true,
+      "officialOriginal": {
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_3d.pdf",
+        "sha256": "d8aa5a5f348ac2e09e8b1c41948dac27d04c0718bece57931e44495464d9264a",
+        "localFile": "sources/20260322_3d.pdf",
+        "localSha256": "d8aa5a5f348ac2e09e8b1c41948dac27d04c0718bece57931e44495464d9264a",
+        "physicalPages": [
+          7
+        ],
+        "locator": "No.23",
+        "visuallyReviewed": true
+      },
+      "officialKey": {
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_kai.pdf",
+        "sha256": "2f73820401362ca24f052d8339bf20e4865dab2f2afe74b7c7b546b7b90d6701",
+        "physicalPage": 1,
+        "subject": "3-diesel",
+        "qNumber": 23,
+        "answer": "エ",
+        "number": "4",
+        "storedTableMatches": true,
+        "transcriptionReview": "Existing independent 610-answer review reused; no new full-table transcription counted."
+      },
+      "figureReceipts": [
+        {
+          "bookId": "jaspa-2025-second-3-diesel",
+          "physicalPage": 7,
+          "pdfSha256": "d8aa5a5f348ac2e09e8b1c41948dac27d04c0718bece57931e44495464d9264a",
+          "officialUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_3d.pdf#page=7",
+          "originalQuestionIds": [
+            "jidosha-2025-second-3-diesel-q23"
+          ],
+          "relativePath": "figures/jaspa-2025-second-3-diesel-p07.webp",
+          "width": 1490,
+          "height": 2106,
+          "sha256": "9caf636d66e583c94de40c3c8e1e0ed66d8af1135427e0b3caf545af34271c5b",
+          "bytes": 184316,
+          "processing": "Original PDF physical page rendered to PNG, then converted to WebP; no retouch or generated content.",
+          "actualSha256": "9caf636d66e583c94de40c3c8e1e0ed66d8af1135427e0b3caf545af34271c5b",
+          "visuallyReviewed": true
+        }
+      ],
+      "evidence": [
+        "official-original:p7:No23:24V; 2ohm,10ohm,2ohm,2ohm parallel diagram",
+        "derivation:Ohm law and parallel current sum"
+      ],
+      "technicalEvidence": [
+        {
+          "kind": "official-original",
+          "locator": "p7:No23:24V; 2ohm,10ohm,2ohm,2ohm parallel diagram"
+        },
+        {
+          "kind": "explicit-derivation",
+          "locator": "Ohm law and parallel current sum"
+        }
+      ],
+      "conditions": null,
+      "allChoiceReasons": [
+        {
+          "label": "ア",
+          "statement": "(1) 1.5A",
+          "reason": "1.5Aは10Ω枝だけの電流2.4Aよりも小さく、総電流ではない。",
+          "reasonSha256": "0bd1e7c3307c20db7c48a2d886ccfcda16afe354755eff9d823e0bc4d2f93f95",
+          "independentStatementVerdict": "false",
+          "technicalAssessment": "1.5 A is even below the 2.4 A current in the 10-ohm branch alone.",
+          "evidence": [
+            "official-original:p7:No23:24V; 2ohm,10ohm,2ohm,2ohm parallel diagram",
+            "derivation:Ohm law and parallel current sum"
+          ],
+          "reasonDisposition": "accepted"
+        },
+        {
+          "label": "イ",
+          "statement": "(2) 6.0A",
+          "reason": "6.0Aは2Ω枝1本の12Aよりも小さい。",
+          "reasonSha256": "27b35a07cf807a4ae6e33ddcffb5b27edd75befc582424a7acccbe81518ee080",
+          "independentStatementVerdict": "false",
+          "technicalAssessment": "6.0 A is below the 12 A flowing through each 2-ohm branch.",
+          "evidence": [
+            "official-original:p7:No23:24V; 2ohm,10ohm,2ohm,2ohm parallel diagram",
+            "derivation:Ohm law and parallel current sum"
+          ],
+          "reasonDisposition": "accepted"
+        },
+        {
+          "label": "ウ",
+          "statement": "(3) 12.5A",
+          "reason": "12.5Aは12Aの2Ω枝が3本あることを反映していない。",
+          "reasonSha256": "e82fe5919b55cb63f8c35db69f07e98bc560566980890b2c2c5115d759ec7e1d",
+          "independentStatementVerdict": "false",
+          "technicalAssessment": "12.5 A omits the other parallel branches.",
+          "evidence": [
+            "official-original:p7:No23:24V; 2ohm,10ohm,2ohm,2ohm parallel diagram",
+            "derivation:Ohm law and parallel current sum"
+          ],
+          "reasonDisposition": "accepted"
+        },
+        {
+          "label": "エ",
+          "statement": "(4) 38.4A",
+          "reason": "38.4Aが12＋2.4＋12＋12。",
+          "reasonSha256": "190cb8022dfa46eeb1e3f82f20e15a7d4dcb8deefd37cd7361bd5aa5563ec2dd",
+          "independentStatementVerdict": "true",
+          "technicalAssessment": "Four parallel branches at 24 V draw 12+2.4+12+12=38.4 A.",
+          "evidence": [
+            "official-original:p7:No23:24V; 2ohm,10ohm,2ohm,2ohm parallel diagram",
+            "derivation:Ohm law and parallel current sum"
+          ],
+          "reasonDisposition": "accepted"
+        }
+      ],
+      "status": "ACCEPT",
+      "holds": [],
+      "repairs": [],
+      "candidateManuscriptSha256": "98275383ce5712030871c0e7c96cf28b61e745a04a511367df27f23d7e4161ca",
+      "protectedFieldsUnchanged": true
+    },
+    {
+      "id": "jidosha-2025-second-3-diesel-q24",
+      "manuscriptSha256": "47b078a50fec39396afccde4a013c1f89337b3d4bd8db3096fdaaad52d4d43e4",
+      "hashContract": "SHA256(UTF8(JSON.stringify(parsed question object))); original property order retained",
+      "fixedCommit": "6f4253b9381e3030863e38dfe75b5ca4068ba526",
+      "fixedBlobSha": "320fa720a1c2326e48c910b4eeaff32c92c7137d",
+      "fixedCommitTargetIdentical": true,
+      "officialOriginal": {
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_3d.pdf",
+        "sha256": "d8aa5a5f348ac2e09e8b1c41948dac27d04c0718bece57931e44495464d9264a",
+        "localFile": "sources/20260322_3d.pdf",
+        "localSha256": "d8aa5a5f348ac2e09e8b1c41948dac27d04c0718bece57931e44495464d9264a",
+        "physicalPages": [
+          7
+        ],
+        "locator": "No.24",
+        "visuallyReviewed": true
+      },
+      "officialKey": {
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_kai.pdf",
+        "sha256": "2f73820401362ca24f052d8339bf20e4865dab2f2afe74b7c7b546b7b90d6701",
+        "physicalPage": 1,
+        "subject": "3-diesel",
+        "qNumber": 24,
+        "answer": "イ",
+        "number": "2",
+        "storedTableMatches": true,
+        "transcriptionReview": "Existing independent 610-answer review reused; no new full-table transcription counted."
+      },
+      "figureReceipts": [],
+      "evidence": [
+        "official-original:p7:No24",
+        "https://jp.misumi-ec.com/tech-info/categories/technical_data/td01/a0064.html:metric-fine-thread-table-M16x1.5-internal-root-D16"
+      ],
+      "technicalEvidence": [
+        {
+          "kind": "official-original",
+          "locator": "p7:No24"
+        },
+        {
+          "kind": "direct-primary-url",
+          "url": "https://jp.misumi-ec.com/tech-info/categories/technical_data/td01/a0064.html",
+          "locator": "metric-fine-thread-table-M16x1.5-internal-root-D16"
+        }
+      ],
+      "conditions": null,
+      "allChoiceReasons": [
+        {
+          "label": "ア",
+          "statement": "(1) ねじ山の高さは1.5mmである。",
+          "reason": "1.5mmはねじ山の高さではなくピッチ。",
+          "reasonSha256": "7dea191eef0c02012464a06e4fce4072139559e489e84a5a2f8a20088dc7862c",
+          "independentStatementVerdict": "false",
+          "technicalAssessment": "1.5 mm is the pitch, not the thread height.",
+          "evidence": [
+            "official-original:p7:No24",
+            "https://jp.misumi-ec.com/tech-info/categories/technical_data/td01/a0064.html:metric-fine-thread-table-M16x1.5-internal-root-D16"
+          ],
+          "reasonDisposition": "accepted"
+        },
+        {
+          "label": "イ",
+          "statement": "(2) めねじの谷の径は16mmである。",
+          "reason": "めねじの谷径が呼び径16mmに対応する。",
+          "reasonSha256": "ee6b4dbcf47f901e97ff21abc5439dcb0d5e78c0d53cc06a0b285a116bf5c3c9",
+          "independentStatementVerdict": "true",
+          "technicalAssessment": "A metric M16x1.5 internal thread has basic major/root diameter 16 mm and pitch 1.5 mm.",
+          "evidence": [
+            "official-original:p7:No24",
+            "https://jp.misumi-ec.com/tech-info/categories/technical_data/td01/a0064.html:metric-fine-thread-table-M16x1.5-internal-root-D16"
+          ],
+          "reasonDisposition": "accepted"
+        },
+        {
+          "label": "ウ",
+          "statement": "(3) スパナは口径16mmのものを使用する。",
+          "reason": "スパナ口径はナット二面幅で決まり16mmではない。",
+          "reasonSha256": "fe4e08d3ec3ba9f6f88538503195b35c4e603a2706a363ecd92dcc78ab45ecc2",
+          "independentStatementVerdict": "false",
+          "technicalAssessment": "Wrench jaw size is set by across-flats hexagon dimension, not by 16 mm thread diameter.",
+          "evidence": [
+            "official-original:p7:No24",
+            "https://jp.misumi-ec.com/tech-info/categories/technical_data/td01/a0064.html:metric-fine-thread-table-M16x1.5-internal-root-D16"
+          ],
+          "reasonDisposition": "accepted"
+        },
+        {
+          "label": "エ",
+          "statement": "(4) 標準締め付けトルクは1.5N・mである。",
+          "reason": "1.5は締付けトルクではなくピッチ。",
+          "reasonSha256": "b6c579f747a93be9b4e24d270b2c10c5b07e21167076b2625c00e2adb55c1b93",
+          "independentStatementVerdict": "false",
+          "technicalAssessment": "The 1.5 value denotes pitch; torque depends on joint materials and clamping conditions.",
+          "evidence": [
+            "official-original:p7:No24",
+            "https://jp.misumi-ec.com/tech-info/categories/technical_data/td01/a0064.html:metric-fine-thread-table-M16x1.5-internal-root-D16"
+          ],
+          "reasonDisposition": "accepted"
+        }
+      ],
+      "status": "ACCEPT",
+      "holds": [],
+      "repairs": [],
+      "candidateManuscriptSha256": "47b078a50fec39396afccde4a013c1f89337b3d4bd8db3096fdaaad52d4d43e4",
+      "protectedFieldsUnchanged": true
+    },
+    {
+      "id": "jidosha-2025-second-3-diesel-q25",
+      "manuscriptSha256": "bfcc2cae21bc46c76e53a0ee4d7da444d83659e3a997d9477bd680c4e4e4280b",
+      "hashContract": "SHA256(UTF8(JSON.stringify(parsed question object))); original property order retained",
+      "fixedCommit": "6f4253b9381e3030863e38dfe75b5ca4068ba526",
+      "fixedBlobSha": "320fa720a1c2326e48c910b4eeaff32c92c7137d",
+      "fixedCommitTargetIdentical": true,
+      "officialOriginal": {
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_3d.pdf",
+        "sha256": "d8aa5a5f348ac2e09e8b1c41948dac27d04c0718bece57931e44495464d9264a",
+        "localFile": "sources/20260322_3d.pdf",
+        "localSha256": "d8aa5a5f348ac2e09e8b1c41948dac27d04c0718bece57931e44495464d9264a",
+        "physicalPages": [
+          7
+        ],
+        "locator": "No.25",
+        "visuallyReviewed": true
+      },
+      "officialKey": {
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_kai.pdf",
+        "sha256": "2f73820401362ca24f052d8339bf20e4865dab2f2afe74b7c7b546b7b90d6701",
+        "physicalPage": 1,
+        "subject": "3-diesel",
+        "qNumber": 25,
+        "answer": "イ",
+        "number": "2",
+        "storedTableMatches": true,
+        "transcriptionReview": "Existing independent 610-answer review reused; no new full-table transcription counted."
+      },
+      "figureReceipts": [],
+      "evidence": [
+        "official-original:p7:No25",
+        "official-key"
+      ],
+      "technicalEvidence": [
+        {
+          "kind": "official-original",
+          "locator": "p7:No25"
+        },
+        {
+          "kind": "official-key",
+          "locator": "existing independently checked answer table"
+        }
+      ],
+      "conditions": null,
+      "allChoiceReasons": [
+        {
+          "label": "ア",
+          "statement": "(1) エンジンは、冷機時の状態で行う。",
+          "reason": "圧縮圧力は通常、暖機後に測定する。",
+          "reasonSha256": "dc0e209aeb7d66ba97c06cfe72814652d15ecc508534b9f53aaf0067e9548de1",
+          "independentStatementVerdict": "false",
+          "technicalAssessment": "A cold engine can produce non-comparable compression results against a warm test specification.",
+          "evidence": [
+            "official-original:p7:No25",
+            "official-key"
+          ],
+          "reasonDisposition": "reviewed-question-held"
+        },
+        {
+          "label": "イ",
+          "statement": "(2) バッテリは、完全充電されたものを使用し、必ず全シリンダの測定を行う。",
+          "reason": "完全充電バッテリで全気筒を測定する。",
+          "reasonSha256": "64731a26e375e8c9da232f3582df6b47fe32872f6c8acca8a7fa092561a65190",
+          "independentStatementVerdict": "true",
+          "technicalAssessment": "A fully charged battery and measurements of every cylinder maintain comparable cranking conditions.",
+          "evidence": [
+            "official-original:p7:No25",
+            "official-key"
+          ],
+          "reasonDisposition": "reviewed-question-held"
+        },
+        {
+          "label": "ウ",
+          "statement": "(3) 測定は、1シリンダ当たり2回～3回行い、圧縮圧力の最大値を基準とする。",
+          "reason": "規定回数や最大値だけを基準とする説明は誤り。",
+          "reasonSha256": "eac04d2fc584b29389a3f45eaaab08cc35477686fb27fc4885abd4081b35b879",
+          "independentStatementVerdict": "false",
+          "technicalAssessment": "The stated 2-3 repeated measurements using only their maximum is not established as a general method.",
+          "evidence": [
+            "official-original:p7:No25",
+            "official-key"
+          ],
+          "reasonDisposition": "reviewed-question-held"
+        },
+        {
+          "label": "エ",
+          "statement": "(4) エア・クリーナを取り外し、点検するシリンダのみノズル・ホルダまたはグロー・プラグの取り外しを行う。",
+          "reason": "測定対象だけを外すのでなく、全気筒のノズル等を外して条件をそろえる。",
+          "reasonSha256": "662becab72837258b91f3e208b55d8cf98c777ee56bf9c22a5dcdf132b5c6531",
+          "independentStatementVerdict": "false",
+          "technicalAssessment": "Leaving other injectors/glow plugs fitted changes cranking load and comparability, but engine-specific procedures vary.",
+          "evidence": [
+            "official-original:p7:No25",
+            "official-key"
+          ],
+          "reasonDisposition": "reviewed-question-held"
+        }
+      ],
+      "status": "HOLD",
+      "holds": [
+        "Need a diesel engine manufacturer compression-test procedure for operating temperature, all-cylinder component removal, repetition and comparison criterion."
+      ],
+      "repairs": [],
+      "candidateManuscriptSha256": "bfcc2cae21bc46c76e53a0ee4d7da444d83659e3a997d9477bd680c4e4e4280b",
+      "protectedFieldsUnchanged": true
+    },
+    {
+      "id": "jidosha-2025-second-3-diesel-q26",
+      "manuscriptSha256": "af377593255b672186d421ffc05e1a23858e00ab051db88f028c1b377e5903e4",
+      "hashContract": "SHA256(UTF8(JSON.stringify(parsed question object))); original property order retained",
+      "fixedCommit": "6f4253b9381e3030863e38dfe75b5ca4068ba526",
+      "fixedBlobSha": "320fa720a1c2326e48c910b4eeaff32c92c7137d",
+      "fixedCommitTargetIdentical": true,
+      "officialOriginal": {
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_3d.pdf",
+        "sha256": "d8aa5a5f348ac2e09e8b1c41948dac27d04c0718bece57931e44495464d9264a",
+        "localFile": "sources/20260322_3d.pdf",
+        "localSha256": "d8aa5a5f348ac2e09e8b1c41948dac27d04c0718bece57931e44495464d9264a",
+        "physicalPages": [
+          7
+        ],
+        "locator": "No.26",
+        "visuallyReviewed": true
+      },
+      "officialKey": {
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_kai.pdf",
+        "sha256": "2f73820401362ca24f052d8339bf20e4865dab2f2afe74b7c7b546b7b90d6701",
+        "physicalPage": 1,
+        "subject": "3-diesel",
+        "qNumber": 26,
+        "answer": "ウ",
+        "number": "3",
+        "storedTableMatches": true,
+        "transcriptionReview": "Existing independent 610-answer review reused; no new full-table transcription counted."
+      },
+      "figureReceipts": [],
+      "evidence": [
+        "official-original:p7:No26",
+        "https://www.eneos.co.jp/business/sds/gasoline/pdf/02001_r.pdf#page=7:diesel-autoignition-about-240C",
+        "https://www.eneos.co.jp/binran/part02/chapter01/section05.html:diesel-grades-cetane-pour-point"
+      ],
+      "technicalEvidence": [
+        {
+          "kind": "official-original",
+          "locator": "p7:No26"
+        },
+        {
+          "kind": "direct-primary-url",
+          "url": "https://www.eneos.co.jp/business/sds/gasoline/pdf/02001_r.pdf#page=7",
+          "locator": "diesel-autoignition-about-240C"
+        },
+        {
+          "kind": "direct-primary-url",
+          "url": "https://www.eneos.co.jp/binran/part02/chapter01/section05.html",
+          "locator": "diesel-grades-cetane-pour-point"
+        }
+      ],
+      "conditions": null,
+      "allChoiceReasons": [
+        {
+          "label": "ア",
+          "statement": "(1) 一般に軽油は、着火点が250℃～350℃で、やや黄色味を帯びている。",
+          "reason": "軽油の着火点と外観についての説明。",
+          "reasonSha256": "9215329650a46a5ce92511cd9212b80db7aecb7b9c8e683a5a4ce3bb425527d2",
+          "independentStatementVerdict": "unresolved",
+          "technicalAssessment": "A diesel SDS on hand gives autoignition around 240 C, which conflicts with the manuscript treating 250-350 C as universal; color is product-dependent.",
+          "evidence": [
+            "official-original:p7:No26",
+            "https://www.eneos.co.jp/business/sds/gasoline/pdf/02001_r.pdf#page=7:diesel-autoignition-about-240C",
+            "https://www.eneos.co.jp/binran/part02/chapter01/section05.html:diesel-grades-cetane-pour-point"
+          ],
+          "reasonDisposition": "reviewed-question-held"
+        },
+        {
+          "label": "イ",
+          "statement": "(2) 寒冷地では、一般に流動点の低い3号又は特3号が用いられている。",
+          "reason": "低温で流れる3号・特3号を寒冷地で用いる。",
+          "reasonSha256": "30cfe1badd6289d9cbd2ce29e38d2ab86f4f2c5e97eec448139f191dfbf33ab6",
+          "independentStatementVerdict": "true",
+          "technicalAssessment": "Grades 3 and special 3 have low pour points for cold regions.",
+          "evidence": [
+            "official-original:p7:No26",
+            "https://www.eneos.co.jp/business/sds/gasoline/pdf/02001_r.pdf#page=7:diesel-autoignition-about-240C",
+            "https://www.eneos.co.jp/binran/part02/chapter01/section05.html:diesel-grades-cetane-pour-point"
+          ],
+          "reasonDisposition": "reviewed-question-held"
+        },
+        {
+          "label": "ウ",
+          "statement": "(3) 軽油は、揮発性に優れ、引火点が低く、オクタン価が高いことが要求される。",
+          "reason": "軽油に要求されるのは高いセタン価などで、高オクタン価ではない。",
+          "reasonSha256": "d82f4f64bb0a2bd28c51c28dd16c745e96baa1764c37b972e02b90a0e36648c3",
+          "independentStatementVerdict": "false",
+          "technicalAssessment": "Cetane rating expresses diesel ignition quality; high octane is not its requirement.",
+          "evidence": [
+            "official-original:p7:No26",
+            "https://www.eneos.co.jp/business/sds/gasoline/pdf/02001_r.pdf#page=7:diesel-autoignition-about-240C",
+            "https://www.eneos.co.jp/binran/part02/chapter01/section05.html:diesel-grades-cetane-pour-point"
+          ],
+          "reasonDisposition": "reviewed-question-held"
+        },
+        {
+          "label": "エ",
+          "statement": "(4) 流動点とは、軽油を静止させ冷却したときに流動し得る最低の温度のことである。",
+          "reason": "流動点は冷却時に流動できる最低温度。",
+          "reasonSha256": "5699a46e55d6e3c34801d788281cb2b5be572ef5cca9bc28c8d8cd877448c1e3",
+          "independentStatementVerdict": "true",
+          "technicalAssessment": "Pour point is the lowest temperature at which the cooled fuel still flows under the specified test.",
+          "evidence": [
+            "official-original:p7:No26",
+            "https://www.eneos.co.jp/business/sds/gasoline/pdf/02001_r.pdf#page=7:diesel-autoignition-about-240C",
+            "https://www.eneos.co.jp/binran/part02/chapter01/section05.html:diesel-grades-cetane-pour-point"
+          ],
+          "reasonDisposition": "reviewed-question-held"
+        }
+      ],
+      "status": "HOLD",
+      "holds": [
+        "Resolve the official 250-350 C general autoignition statement against ENEOS SDS around 240 C by composition/test method; preserve official text and key meanwhile."
+      ],
+      "repairs": [],
+      "candidateManuscriptSha256": "af377593255b672186d421ffc05e1a23858e00ab051db88f028c1b377e5903e4",
+      "protectedFieldsUnchanged": true
+    },
+    {
+      "id": "jidosha-2025-second-3-diesel-q27",
+      "manuscriptSha256": "2175df178236478a8cf79cf498639aa0c27b11ca91f2e5cd184c499909d30fa7",
+      "hashContract": "SHA256(UTF8(JSON.stringify(parsed question object))); original property order retained",
+      "fixedCommit": "6f4253b9381e3030863e38dfe75b5ca4068ba526",
+      "fixedBlobSha": "320fa720a1c2326e48c910b4eeaff32c92c7137d",
+      "fixedCommitTargetIdentical": true,
+      "officialOriginal": {
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_3d.pdf",
+        "sha256": "d8aa5a5f348ac2e09e8b1c41948dac27d04c0718bece57931e44495464d9264a",
+        "localFile": "sources/20260322_3d.pdf",
+        "localSha256": "d8aa5a5f348ac2e09e8b1c41948dac27d04c0718bece57931e44495464d9264a",
+        "physicalPages": [
+          8
+        ],
+        "locator": "No.27",
+        "visuallyReviewed": true
+      },
+      "officialKey": {
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_kai.pdf",
+        "sha256": "2f73820401362ca24f052d8339bf20e4865dab2f2afe74b7c7b546b7b90d6701",
+        "physicalPage": 1,
+        "subject": "3-diesel",
+        "qNumber": 27,
+        "answer": "ウ",
+        "number": "3",
+        "storedTableMatches": true,
+        "transcriptionReview": "Existing independent 610-answer review reused; no new full-table transcription counted."
+      },
+      "figureReceipts": [],
+      "evidence": [
+        "official-original:p8:No27",
+        "https://www.mlit.go.jp/common/000131418.pdf:opacity-and-light-absorption-coefficient",
+        "https://www.mitutoyo.co.jp/about-metrology/knowledge/micrometers/:outside-micrometer",
+        "https://www.mitutoyo.co.jp/products/measuring-tools/inside-measurements/:bore-gauges"
+      ],
+      "technicalEvidence": [
+        {
+          "kind": "official-original",
+          "locator": "p8:No27"
+        },
+        {
+          "kind": "direct-primary-url",
+          "url": "https://www.mlit.go.jp/common/000131418.pdf",
+          "locator": "opacity-and-light-absorption-coefficient"
+        },
+        {
+          "kind": "direct-primary-url",
+          "url": "https://www.mitutoyo.co.jp/about-metrology/knowledge/micrometers/",
+          "locator": "outside-micrometer"
+        },
+        {
+          "kind": "direct-primary-url",
+          "url": "https://www.mitutoyo.co.jp/products/measuring-tools/inside-measurements/",
+          "locator": "bore-gauges"
+        }
+      ],
+      "conditions": null,
+      "allChoiceReasons": [
+        {
+          "label": "ア",
+          "statement": "(1) コンプレッション・ゲージは、エンジンの圧縮圧力の測定に用いられる。",
+          "reason": "コンプレッション・ゲージは圧縮圧力を測る。",
+          "reasonSha256": "148d5b47b1f60d53cf6221cd595c65774540febb7ffce40e0ecbe59346782fb6",
+          "independentStatementVerdict": "true",
+          "technicalAssessment": "A compression gauge measures in-cylinder compression pressure.",
+          "evidence": [
+            "official-original:p8:No27",
+            "https://www.mlit.go.jp/common/000131418.pdf:opacity-and-light-absorption-coefficient",
+            "https://www.mitutoyo.co.jp/about-metrology/knowledge/micrometers/:outside-micrometer",
+            "https://www.mitutoyo.co.jp/products/measuring-tools/inside-measurements/:bore-gauges"
+          ],
+          "reasonDisposition": "accepted"
+        },
+        {
+          "label": "イ",
+          "statement": "(2) マイクロメータは、ピストンの外径などの測定に用いられる。",
+          "reason": "マイクロメータは外径測定に使う。",
+          "reasonSha256": "405364877ce024ec0247a71e7f34f7ebde1397c4185c285df3b4a5ece4790045",
+          "independentStatementVerdict": "true",
+          "technicalAssessment": "An outside micrometer measures piston outer diameter.",
+          "evidence": [
+            "official-original:p8:No27",
+            "https://www.mlit.go.jp/common/000131418.pdf:opacity-and-light-absorption-coefficient",
+            "https://www.mitutoyo.co.jp/about-metrology/knowledge/micrometers/:outside-micrometer",
+            "https://www.mitutoyo.co.jp/products/measuring-tools/inside-measurements/:bore-gauges"
+          ],
+          "reasonDisposition": "accepted"
+        },
+        {
+          "label": "ウ",
+          "statement": "(3) オパシ・メータは、排気ガス中の一酸化炭素及び炭化水素の濃度測定に用いられる。",
+          "reason": "オパシ・メータは黒煙濃度の測定に使う。",
+          "reasonSha256": "27d8063ea610c7a89103faf03a30c5237b277e081e4f3e27679ea44ed7668d90",
+          "independentStatementVerdict": "false",
+          "technicalAssessment": "An opacimeter measures exhaust light absorption coefficient from PM/opacity, not CO or HC gas concentrations.",
+          "evidence": [
+            "official-original:p8:No27",
+            "https://www.mlit.go.jp/common/000131418.pdf:opacity-and-light-absorption-coefficient",
+            "https://www.mitutoyo.co.jp/about-metrology/knowledge/micrometers/:outside-micrometer",
+            "https://www.mitutoyo.co.jp/products/measuring-tools/inside-measurements/:bore-gauges"
+          ],
+          "reasonDisposition": "accepted"
+        },
+        {
+          "label": "エ",
+          "statement": "(4) シリンダ・ゲージは、シリンダの内径などの測定に用いられる。",
+          "reason": "シリンダ・ゲージは内径測定に使う。",
+          "reasonSha256": "7f3b751e0107b21540272b8bd762c4e1e51cddc15652e1540fa6362c684fcb4b",
+          "independentStatementVerdict": "true",
+          "technicalAssessment": "A cylinder/bore gauge measures inside diameter.",
+          "evidence": [
+            "official-original:p8:No27",
+            "https://www.mlit.go.jp/common/000131418.pdf:opacity-and-light-absorption-coefficient",
+            "https://www.mitutoyo.co.jp/about-metrology/knowledge/micrometers/:outside-micrometer",
+            "https://www.mitutoyo.co.jp/products/measuring-tools/inside-measurements/:bore-gauges"
+          ],
+          "reasonDisposition": "accepted"
+        }
+      ],
+      "status": "ACCEPT_WITH_REPAIR",
+      "holds": [],
+      "repairs": [
+        {
+          "field": "choiceExplanations.ウ",
+          "before": "オパシ・メータは黒煙濃度の測定に使う。",
+          "after": "オパシ・メータは排出ガスの光吸収係数を測る。COやHCのガス濃度を測る機器ではない。",
+          "why": "The unqualified black-smoke shorthand omits the measured optical quantity and the distinction from gaseous CO/HC."
+        },
+        {
+          "field": "explanation",
+          "before": "不適切なのは(3)。オパシ・メータはディーゼル排気の光吸収係数など黒煙濃度の測定に用いる。CO・HC濃度測定器とは異なる。",
+          "after": "不適切なのは(3)。オパシ・メータは排出ガスの光透過率から、PMによる汚染度を光吸収係数として測定する。CO・HCの濃度測定器とは異なる。",
+          "why": "Specify the measured quantity without equating it exclusively to soot."
+        }
+      ],
+      "candidateManuscriptSha256": "bc2d4259f9b4dc00d6d8a982bbdfafa5449aecae3f2bb95acd636a9ede3f3df4",
+      "protectedFieldsUnchanged": true
+    },
+    {
+      "id": "jidosha-2025-second-3-diesel-q28",
+      "manuscriptSha256": "023e97181a2176ff2100e0087746773923b242a612cda50b7d2771005ce970fc",
+      "hashContract": "SHA256(UTF8(JSON.stringify(parsed question object))); original property order retained",
+      "fixedCommit": "6f4253b9381e3030863e38dfe75b5ca4068ba526",
+      "fixedBlobSha": "320fa720a1c2326e48c910b4eeaff32c92c7137d",
+      "fixedCommitTargetIdentical": true,
+      "officialOriginal": {
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_3d.pdf",
+        "sha256": "d8aa5a5f348ac2e09e8b1c41948dac27d04c0718bece57931e44495464d9264a",
+        "localFile": "sources/20260322_3d.pdf",
+        "localSha256": "d8aa5a5f348ac2e09e8b1c41948dac27d04c0718bece57931e44495464d9264a",
+        "physicalPages": [
+          8
+        ],
+        "locator": "No.28",
+        "visuallyReviewed": true
+      },
+      "officialKey": {
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_kai.pdf",
+        "sha256": "2f73820401362ca24f052d8339bf20e4865dab2f2afe74b7c7b546b7b90d6701",
+        "physicalPage": 1,
+        "subject": "3-diesel",
+        "qNumber": 28,
+        "answer": "ア",
+        "number": "1",
+        "storedTableMatches": true,
+        "transcriptionReview": "Existing independent 610-answer review reused; no new full-table transcription counted."
+      },
+      "figureReceipts": [],
+      "evidence": [
+        "official-original:p8:No28",
+        "https://laws.e-gov.go.jp/api/1/lawdata/326M50000800067:Article2-height-3.8m"
+      ],
+      "technicalEvidence": [
+        {
+          "kind": "official-original",
+          "locator": "p8:No28"
+        },
+        {
+          "kind": "direct-primary-url",
+          "url": "https://laws.e-gov.go.jp/api/1/lawdata/326M50000800067",
+          "locator": "Article2-height-3.8m"
+        }
+      ],
+      "conditions": null,
+      "allChoiceReasons": [
+        {
+          "label": "ア",
+          "statement": "(1) 3.8mを超えてはならない。",
+          "reason": "3.8mが原則の上限。",
+          "reasonSha256": "87f31d71a08ccab4884079fa6f88855c375ccca02a2e84fcc2812fd83cfe792d",
+          "independentStatementVerdict": "true",
+          "technicalAssessment": "The general height limit in the cited Vehicle Safety Standards article 2 is 3.8 m.",
+          "evidence": [
+            "official-original:p8:No28",
+            "https://laws.e-gov.go.jp/api/1/lawdata/326M50000800067:Article2-height-3.8m"
+          ],
+          "reasonDisposition": "accepted"
+        },
+        {
+          "label": "イ",
+          "statement": "(2) 4.5mを超えてはならない。",
+          "reason": "4.5mは基準より高い。",
+          "reasonSha256": "683c517bfd4c9cc8ef03bc5bdbc156bf245b495b08f434f932b3b0c624271a53",
+          "independentStatementVerdict": "false",
+          "technicalAssessment": "4.5 m exceeds the general 3.8 m upper limit.",
+          "evidence": [
+            "official-original:p8:No28",
+            "https://laws.e-gov.go.jp/api/1/lawdata/326M50000800067:Article2-height-3.8m"
+          ],
+          "reasonDisposition": "accepted"
+        },
+        {
+          "label": "ウ",
+          "statement": "(3) 4.8mを超えてはならない。",
+          "reason": "4.8mは基準より高い。",
+          "reasonSha256": "eeacf57207894c0e83acae6bffae08d5dfda17b037f4bccd3a807f5b5cd98068",
+          "independentStatementVerdict": "false",
+          "technicalAssessment": "4.8 m exceeds the general 3.8 m upper limit.",
+          "evidence": [
+            "official-original:p8:No28",
+            "https://laws.e-gov.go.jp/api/1/lawdata/326M50000800067:Article2-height-3.8m"
+          ],
+          "reasonDisposition": "accepted"
+        },
+        {
+          "label": "エ",
+          "statement": "(4) 5.6mを超えてはならない。",
+          "reason": "5.6mは基準より高い。",
+          "reasonSha256": "3b94f96866281d92adb0e2f23b0910850fa655f26a176d9e1d5062686fd3a272",
+          "independentStatementVerdict": "false",
+          "technicalAssessment": "5.6 m exceeds the general 3.8 m upper limit.",
+          "evidence": [
+            "official-original:p8:No28",
+            "https://laws.e-gov.go.jp/api/1/lawdata/326M50000800067:Article2-height-3.8m"
+          ],
+          "reasonDisposition": "accepted"
+        }
+      ],
+      "status": "ACCEPT",
+      "holds": [],
+      "repairs": [],
+      "candidateManuscriptSha256": "023e97181a2176ff2100e0087746773923b242a612cda50b7d2771005ce970fc",
+      "protectedFieldsUnchanged": true
+    },
+    {
+      "id": "jidosha-2025-second-3-diesel-q29",
+      "manuscriptSha256": "18f74b5b4c14169d6fe96da1fcca031d4fb233d42775899d8227a948c1b8a48a",
+      "hashContract": "SHA256(UTF8(JSON.stringify(parsed question object))); original property order retained",
+      "fixedCommit": "6f4253b9381e3030863e38dfe75b5ca4068ba526",
+      "fixedBlobSha": "320fa720a1c2326e48c910b4eeaff32c92c7137d",
+      "fixedCommitTargetIdentical": true,
+      "officialOriginal": {
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_3d.pdf",
+        "sha256": "d8aa5a5f348ac2e09e8b1c41948dac27d04c0718bece57931e44495464d9264a",
+        "localFile": "sources/20260322_3d.pdf",
+        "localSha256": "d8aa5a5f348ac2e09e8b1c41948dac27d04c0718bece57931e44495464d9264a",
+        "physicalPages": [
+          8
+        ],
+        "locator": "No.29",
+        "visuallyReviewed": true
+      },
+      "officialKey": {
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_kai.pdf",
+        "sha256": "2f73820401362ca24f052d8339bf20e4865dab2f2afe74b7c7b546b7b90d6701",
+        "physicalPage": 1,
+        "subject": "3-diesel",
+        "qNumber": 29,
+        "answer": "ア",
+        "number": "1",
+        "storedTableMatches": true,
+        "transcriptionReview": "Existing independent 610-answer review reused; no new full-table transcription counted."
+      },
+      "figureReceipts": [],
+      "evidence": [
+        "official-original:p8:No29",
+        "https://www.mlit.go.jp/jidosha/content/S136.pdf#page=1:article136-paragraph1-item1"
+      ],
+      "technicalEvidence": [
+        {
+          "kind": "official-original",
+          "locator": "p8:No29"
+        },
+        {
+          "kind": "direct-primary-url",
+          "url": "https://www.mlit.go.jp/jidosha/content/S136.pdf#page=1",
+          "locator": "article136-paragraph1-item1"
+        }
+      ],
+      "conditions": null,
+      "allChoiceReasons": [
+        {
+          "label": "ア",
+          "statement": "(1) 昼間にその後方100m",
+          "reason": "昼間にその後方100mが規定値。",
+          "reasonSha256": "a6824268fc9d69498c4a4f6b651c50a727344a29330a18eddc90da247a5d7428",
+          "independentStatementVerdict": "true",
+          "technicalAssessment": "Article 136 specifies that a reverse lamp is visible from 100 m behind by day.",
+          "evidence": [
+            "official-original:p8:No29",
+            "https://www.mlit.go.jp/jidosha/content/S136.pdf#page=1:article136-paragraph1-item1"
+          ],
+          "reasonDisposition": "accepted"
+        },
+        {
+          "label": "イ",
+          "statement": "(2) 昼間にその後方150m",
+          "reason": "昼間150mはこの設問の規定値ではない。",
+          "reasonSha256": "3e475d4f9c24a59cfd294b301c4f113bb41ba06ad2224c6d5d8d797b2fe62a92",
+          "independentStatementVerdict": "false",
+          "technicalAssessment": "150 m by day is not the prescribed number in the cited clause.",
+          "evidence": [
+            "official-original:p8:No29",
+            "https://www.mlit.go.jp/jidosha/content/S136.pdf#page=1:article136-paragraph1-item1"
+          ],
+          "reasonDisposition": "accepted"
+        },
+        {
+          "label": "ウ",
+          "statement": "(3) 夜間にその後方100m",
+          "reason": "夜間100mではなく昼間100m。",
+          "reasonSha256": "4adbbb4225e6616b3e771ebd8ef3a95bc9edb68f1b8a414abd28a97b4d7f777d",
+          "independentStatementVerdict": "false",
+          "technicalAssessment": "The clause specifies daytime, not nighttime, visibility at 100 m.",
+          "evidence": [
+            "official-original:p8:No29",
+            "https://www.mlit.go.jp/jidosha/content/S136.pdf#page=1:article136-paragraph1-item1"
+          ],
+          "reasonDisposition": "accepted"
+        },
+        {
+          "label": "エ",
+          "statement": "(4) 夜間にその後方150m",
+          "reason": "夜間150mではなく昼間100m。",
+          "reasonSha256": "37990dffb0f5604051c55ef57a831d9ed29bee15c3d107a31145e3b8f2228db7",
+          "independentStatementVerdict": "false",
+          "technicalAssessment": "Neither nighttime nor 150 m matches the cited clause.",
+          "evidence": [
+            "official-original:p8:No29",
+            "https://www.mlit.go.jp/jidosha/content/S136.pdf#page=1:article136-paragraph1-item1"
+          ],
+          "reasonDisposition": "accepted"
+        }
+      ],
+      "status": "ACCEPT",
+      "holds": [],
+      "repairs": [],
+      "candidateManuscriptSha256": "18f74b5b4c14169d6fe96da1fcca031d4fb233d42775899d8227a948c1b8a48a",
+      "protectedFieldsUnchanged": true
+    },
+    {
+      "id": "jidosha-2025-second-3-diesel-q30",
+      "manuscriptSha256": "e053b75410e8b9482e64b3d8fc9cfcda1c0b6f67d75f59326c0e489e74e8b7c7",
+      "hashContract": "SHA256(UTF8(JSON.stringify(parsed question object))); original property order retained",
+      "fixedCommit": "6f4253b9381e3030863e38dfe75b5ca4068ba526",
+      "fixedBlobSha": "320fa720a1c2326e48c910b4eeaff32c92c7137d",
+      "fixedCommitTargetIdentical": true,
+      "officialOriginal": {
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_3d.pdf",
+        "sha256": "d8aa5a5f348ac2e09e8b1c41948dac27d04c0718bece57931e44495464d9264a",
+        "localFile": "sources/20260322_3d.pdf",
+        "localSha256": "d8aa5a5f348ac2e09e8b1c41948dac27d04c0718bece57931e44495464d9264a",
+        "physicalPages": [
+          8
+        ],
+        "locator": "No.30",
+        "visuallyReviewed": true
+      },
+      "officialKey": {
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_kai.pdf",
+        "sha256": "2f73820401362ca24f052d8339bf20e4865dab2f2afe74b7c7b546b7b90d6701",
+        "physicalPage": 1,
+        "subject": "3-diesel",
+        "qNumber": 30,
+        "answer": "エ",
+        "number": "4",
+        "storedTableMatches": true,
+        "transcriptionReview": "Existing independent 610-answer review reused; no new full-table transcription counted."
+      },
+      "figureReceipts": [],
+      "evidence": [
+        "official-original:p8:No30",
+        "https://www.mlit.go.jp/jidosha/content/S096.pdf#page=1:article96-paragraph1-item3-ro"
+      ],
+      "technicalEvidence": [
+        {
+          "kind": "official-original",
+          "locator": "p8:No30"
+        },
+        {
+          "kind": "direct-primary-url",
+          "url": "https://www.mlit.go.jp/jidosha/content/S096.pdf#page=1",
+          "locator": "article96-paragraph1-item3-ro"
+        }
+      ],
+      "conditions": null,
+      "allChoiceReasons": [
+        {
+          "label": "ア",
+          "statement": "(1) 50mm",
+          "reason": "50mmでは規定距離に足りない。",
+          "reasonSha256": "24e24fc6d08451e754eb56bb855c95844a811dd312c20956f6d4a29b29c76957",
+          "independentStatementVerdict": "false",
+          "technicalAssessment": "50 mm is less than the prescribed 200 mm separation.",
+          "evidence": [
+            "official-original:p8:No30",
+            "https://www.mlit.go.jp/jidosha/content/S096.pdf#page=1:article96-paragraph1-item3-ro"
+          ],
+          "reasonDisposition": "accepted"
+        },
+        {
+          "label": "イ",
+          "statement": "(2) 100mm",
+          "reason": "100mmでは規定距離に足りない。",
+          "reasonSha256": "b74b2d97cdbd6cd2502d2680e32353a0f1c9eb4d156f89e95ac7284d406f6fda",
+          "independentStatementVerdict": "false",
+          "technicalAssessment": "100 mm is less than the prescribed 200 mm separation.",
+          "evidence": [
+            "official-original:p8:No30",
+            "https://www.mlit.go.jp/jidosha/content/S096.pdf#page=1:article96-paragraph1-item3-ro"
+          ],
+          "reasonDisposition": "accepted"
+        },
+        {
+          "label": "ウ",
+          "statement": "(3) 150mm",
+          "reason": "150mmでは規定距離に足りない。",
+          "reasonSha256": "1afb46493268bbad42a00a89a149c03b39e7bc1b237719dde7e80f0e12ea4332",
+          "independentStatementVerdict": "false",
+          "technicalAssessment": "150 mm is less than the prescribed 200 mm separation.",
+          "evidence": [
+            "official-original:p8:No30",
+            "https://www.mlit.go.jp/jidosha/content/S096.pdf#page=1:article96-paragraph1-item3-ro"
+          ],
+          "reasonDisposition": "accepted"
+        },
+        {
+          "label": "エ",
+          "statement": "(4) 200mm",
+          "reason": "200mm以上が規定距離。",
+          "reasonSha256": "c96b03085ff0b66e90d403975dda30b838ac8f24102bef1fec147d8097493b26",
+          "independentStatementVerdict": "true",
+          "technicalAssessment": "Article 96(1)(3)(b) requires at least 200 mm from exposed electric terminals and switches.",
+          "evidence": [
+            "official-original:p8:No30",
+            "https://www.mlit.go.jp/jidosha/content/S096.pdf#page=1:article96-paragraph1-item3-ro"
+          ],
+          "reasonDisposition": "accepted"
+        }
+      ],
+      "status": "ACCEPT",
+      "holds": [],
+      "repairs": [],
+      "candidateManuscriptSha256": "e053b75410e8b9482e64b3d8fc9cfcda1c0b6f67d75f59326c0e489e74e8b7c7",
+      "protectedFieldsUnchanged": true
+    }
+  ]
+}

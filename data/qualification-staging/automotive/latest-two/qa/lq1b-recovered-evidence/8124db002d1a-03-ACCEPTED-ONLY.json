@@ -1,0 +1,1929 @@
+{
+  "schemaVersion": 1,
+  "cohort": "release-1small25a",
+  "reviewedAtUtc": "2026-10-23T12:15:45.672752+00:00",
+  "reviewer": "task-98, independent from inherited manuscript author; gpt-6.1-sol Standard as dispatched",
+  "decisionScope": "One independent content pass over 25 originals. These exact 16 unchanged versions passed source identity, key, actual required figures, main explanation and all four option reasons.",
+  "sourcePacketPath": "C:\\Users\\kanet\\Documents\\Codex\\2026-10-23\\task-5\\output\\automotive-forward-20261023\\release-1small25a\\PACKET.json",
+  "sourcePacketSha256": "acd3d68eeda0c4099fb62e96554c88e2f3b5b9445fe8dfc8f51ff1410067f321",
+  "sourceOwnershipReleaseSha256": "ced46a8a6ad30deb320d8fc643b5c4533b0102bdf50ab99126106f8400f8fe66",
+  "canonicalCandidateHashFormat": "SHA256 of UTF-8 JSON with sorted keys, ensure_ascii=false, separators=(comma,colon), followed by exactly one LF. Each candidateFile stores those exact bytes; JSON object is unchanged from release.",
+  "acceptedCount": 16,
+  "questionIds": [
+    "jidosha-2025-second-1-small-written-q01",
+    "jidosha-2025-second-1-small-written-q02",
+    "jidosha-2025-second-1-small-written-q03",
+    "jidosha-2025-second-1-small-written-q04",
+    "jidosha-2025-second-1-small-written-q05",
+    "jidosha-2025-second-1-small-written-q06",
+    "jidosha-2025-second-1-small-written-q07",
+    "jidosha-2025-second-1-small-written-q08",
+    "jidosha-2025-second-1-small-written-q10",
+    "jidosha-2025-second-1-small-written-q12",
+    "jidosha-2025-second-1-small-written-q13",
+    "jidosha-2025-second-1-small-written-q20",
+    "jidosha-2025-second-1-small-written-q21",
+    "jidosha-2025-second-1-small-written-q23",
+    "jidosha-2025-second-1-small-written-q24",
+    "jidosha-2025-second-1-small-written-q25"
+  ],
+  "rows": [
+    {
+      "id": "jidosha-2025-second-1-small-written-q01",
+      "candidateFile": {
+        "path": "C:\\Users\\kanet\\Documents\\Codex\\2026-10-23\\task-98\\output\\release-1small25a-independent-review\\accepted-candidates\\jidosha-2025-second-1-small-written-q01.json",
+        "sha256": "2e0988446dc099ca672b643e381fc46df8eeea0288fc5247e7dcbb1e0148a3b7",
+        "bytes": 2970
+      },
+      "sourceBindings": {
+        "originalQuestion": {
+          "id": "jidosha-2025-second-1-small-written-q01",
+          "questionNumber": 1,
+          "examDate": "2026-03-22",
+          "subject": "1-small-written",
+          "sourcePath": "C:\\Users\\kanet\\Documents\\Codex\\2026-10-23\\task-5\\output\\automotive-forward-20261023\\release-1small25a\\sources\\jaspa-2025-second-1-small-written.pdf",
+          "sha256": "9f617d58b464c075aafc9bc042b60ac5b41798654846757490f1a7c7d2102b30",
+          "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_1k_0.pdf",
+          "physicalPages": [
+            2
+          ]
+        },
+        "officialKey": {
+          "path": "C:\\Users\\kanet\\Documents\\Codex\\2026-10-23\\task-5\\output\\automotive-forward-20261023\\release-1small25a\\sources\\jaspa-2025-second-answers.pdf",
+          "sha256": "2f73820401362ca24f052d8339bf20e4865dab2f2afe74b7c7b546b7b90d6701",
+          "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_kai.pdf",
+          "physicalPage": 1,
+          "column": "12 (1小)",
+          "row": 1,
+          "answerNumber": "2",
+          "answerLabel": "イ"
+        },
+        "sourcePageImageEvidence": [
+          {
+            "path": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\codex-takeover-20261011\\automotive-latest-two\\ocr\\jaspa-2025-second-1-small-written\\page-02.png",
+            "sha256": "dbb3a6318e48fedf84e401bfb1b6c8880d1f0cb35e8db2a0647571b77ed9a40c",
+            "bytes": 311486,
+            "physicalPage": 2,
+            "sourcePdfSha256": "9f617d58b464c075aafc9bc042b60ac5b41798654846757490f1a7c7d2102b30",
+            "use": "Existing original page image visually compared; no new render or OCR."
+          }
+        ],
+        "requiredFigureBindings": [
+          {
+            "bookId": "jaspa-2025-second-1-small-written",
+            "physicalPage": 2,
+            "pdfSha256": "9f617d58b464c075aafc9bc042b60ac5b41798654846757490f1a7c7d2102b30",
+            "officialUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_1k_0.pdf#page=2",
+            "originalQuestionIds": [
+              "jidosha-2025-second-1-small-written-q01"
+            ],
+            "relativePath": "figures/jaspa-2025-second-1-small-written-p02.webp",
+            "width": 1490,
+            "height": 2106,
+            "sha256": "3f939b70a936fc9608f0228b5e719ee7d47b8f77f5af1fd20f8ab67862f355e4",
+            "bytes": 203942,
+            "processing": "Original PDF physical page rendered to PNG, then converted to WebP; no retouch or generated content.",
+            "localPath": "C:\\Users\\kanet\\Documents\\Codex\\2026-10-23\\task-5\\output\\automotive-forward-20261023\\release-1small25a\\figures\\jaspa-2025-second-1-small-written-p02.webp"
+          }
+        ],
+        "figureRequired": true
+      },
+      "candidate": {
+        "id": "jidosha-2025-second-1-small-written-q01",
+        "qNumber": 1,
+        "question": "図の①から⑥は、コモン・レール式ジーゼル・エンジンにおける、「温間時、通常回転速度時（加速「増量」と減速「減量」補正）モード」時のデータを外部診断器のデータ・モニタ機能を用いて表示したものである。図の⑦から⑩のデータのうち、この運転制御モードに該当しないものの組み合わせは、(1)から(4)のうちどれか。",
+        "choices": {
+          "ア": "(1) 「⑦燃料圧力信号」、「⑧燃料噴射量信号」",
+          "イ": "(2) 「⑧燃料噴射量信号」、「⑨燃料噴射時期信号」",
+          "ウ": "(3) 「⑧燃料噴射量信号」、「⑩ポンプ電流目標値信号」",
+          "エ": "(4) 「⑨燃料噴射時期信号」、「⑩ポンプ電流目標値信号」"
+        },
+        "answer": "イ",
+        "officialAnswerNumber": "2",
+        "explanation": "公式正答は(2)。アクセル開度と回転数が変化するのに対し、⑧の燃料噴射量と⑨の噴射時期の表示がその変化に対応しておらず、加速増量・減速減量補正のデータとして不整合である。",
+        "choiceExplanations": {
+          "ア": "⑦は加速時に上がり減速時に下がるため、異常な組合せにはならない。⑧は減速でもほぼ一定で不整合。",
+          "イ": "⑧は加速・減速に対応せず、⑨も噴射時期がほぼ一定で不整合。二つとも該当しない。",
+          "ウ": "⑧は不整合だが、⑩の目標電流は加速・減速に合わせて変化している。",
+          "エ": "⑨は不整合だが、⑩は負荷変化に対応している。"
+        },
+        "explanationCoverage": "full",
+        "hasImage": true,
+        "sourcePages": [
+          2
+        ],
+        "sourceFigureRequired": true,
+        "topicTags": [
+          "コモンレール",
+          "データモニタ"
+        ],
+        "difficulty": 4,
+        "isCalculation": false,
+        "needsReview": false,
+        "reviewNotes": [],
+        "officialReferenceUrls": [],
+        "qualification": "jidousha-seibishi-gakka",
+        "session": "gakka",
+        "type": "multiple-choice",
+        "year": 2025,
+        "fiscalYear": 2025,
+        "season": "second",
+        "term": "second",
+        "subject": "1-small-written",
+        "category": "一級小型自動車（筆記）",
+        "examDate": "2026-03-22",
+        "sourcePdfUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_1k_0.pdf",
+        "sourceAnswerUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_kai.pdf",
+        "sourceAttribution": "出典：日本自動車整備振興会連合会 令和7年度第2回自動車整備技能登録試験 一級小型自動車（筆記） No.1",
+        "officialQuestionStatus": "normal",
+        "lastUpdated": "2026-10-11",
+        "permissionVerified": false,
+        "publicGo": 0,
+        "sourcePageReferences": [
+          {
+            "physicalPage": 2,
+            "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_1k_0.pdf#page=2",
+            "pdfSha256": "9f617d58b464c075aafc9bc042b60ac5b41798654846757490f1a7c7d2102b30"
+          }
+        ],
+        "sourceFigureAssets": [
+          {
+            "physicalPage": 2,
+            "relativePath": "figures/jaspa-2025-second-1-small-written-p02.webp"
+          }
+        ]
+      }
+    },
+    {
+      "id": "jidosha-2025-second-1-small-written-q02",
+      "candidateFile": {
+        "path": "C:\\Users\\kanet\\Documents\\Codex\\2026-10-23\\task-98\\output\\release-1small25a-independent-review\\accepted-candidates\\jidosha-2025-second-1-small-written-q02.json",
+        "sha256": "49c20082aec25d92aa9c0ceec009e431afda15d536d21fccf6faabcc996e6f84",
+        "bytes": 3623
+      },
+      "sourceBindings": {
+        "originalQuestion": {
+          "id": "jidosha-2025-second-1-small-written-q02",
+          "questionNumber": 2,
+          "examDate": "2026-03-22",
+          "subject": "1-small-written",
+          "sourcePath": "C:\\Users\\kanet\\Documents\\Codex\\2026-10-23\\task-5\\output\\automotive-forward-20261023\\release-1small25a\\sources\\jaspa-2025-second-1-small-written.pdf",
+          "sha256": "9f617d58b464c075aafc9bc042b60ac5b41798654846757490f1a7c7d2102b30",
+          "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_1k_0.pdf",
+          "physicalPages": [
+            3
+          ]
+        },
+        "officialKey": {
+          "path": "C:\\Users\\kanet\\Documents\\Codex\\2026-10-23\\task-5\\output\\automotive-forward-20261023\\release-1small25a\\sources\\jaspa-2025-second-answers.pdf",
+          "sha256": "2f73820401362ca24f052d8339bf20e4865dab2f2afe74b7c7b546b7b90d6701",
+          "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_kai.pdf",
+          "physicalPage": 1,
+          "column": "12 (1小)",
+          "row": 2,
+          "answerNumber": "4",
+          "answerLabel": "エ"
+        },
+        "sourcePageImageEvidence": [
+          {
+            "path": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\codex-takeover-20261011\\automotive-latest-two\\ocr\\jaspa-2025-second-1-small-written\\page-03.png",
+            "sha256": "39b97d8d16c7ccbac7b0867ec8d3161afec1c5a2dd2bad9d624aaa63762b3060",
+            "bytes": 423376,
+            "physicalPage": 3,
+            "sourcePdfSha256": "9f617d58b464c075aafc9bc042b60ac5b41798654846757490f1a7c7d2102b30",
+            "use": "Existing original page image visually compared; no new render or OCR."
+          }
+        ],
+        "requiredFigureBindings": [],
+        "figureRequired": false
+      },
+      "candidate": {
+        "id": "jidosha-2025-second-1-small-written-q02",
+        "qNumber": 2,
+        "question": "センサに関する記述として、不適切なものは次のうちどれか。",
+        "choices": {
+          "ア": "(1) 熱線式エア・フロー・メータに用いられる発熱抵抗体において、吸入空気量が多いほど、発熱抵抗体の放熱が多く、抵抗が小さいために回路（発熱抵抗体）の電流は多くなり、この電流の変化を電圧の変化に置き換えて吸入空気量信号としている。",
+          "イ": "(2) ジルコニア素子を用いたO2センサは、円筒状のジルコニア素子の内外面に白金をコーティングしてあり、内側は大気と、外側は排気ガスと接触できるようになっている。ジルコニア素子は、活性化領域（例：360℃）を超えたとき、大気側と排気ガス側の酸素濃度差により、起電力を発生させる性質がある。",
+          "ウ": "(3) ノック・センサ内の振動板上には圧電素子が組み付けられており、この圧電素子には電極が設けられ、一方の電極は出力ターミナルに、他方の電極はノック・センサ・ボデーに接続されている。",
+          "エ": "(4) 絶対圧検出型のバキューム・センサ（圧力センサ）は、基準室に大気圧を用いており、インテーク・マニホールド内に発生した圧力をシリコン・チップ（ピエゾ抵抗効果素子）に作用させ、シリコン・チップの電気抵抗の変化を電圧の変化に置き換えてセンサ信号電圧としている。"
+        },
+        "answer": "エ",
+        "officialAnswerNumber": "4",
+        "explanation": "公式正答は(4)。絶対圧検出型の基準室は真空であり、大気圧を基準とするのはゲージ圧検出型である。",
+        "choiceExplanations": {
+          "ア": "流量が増えると熱線からの放熱が増え、温度維持のための電流変化を吸入空気量の信号に変換する説明である。",
+          "イ": "ジルコニアの内外面に接する大気と排気の酸素濃度差が、活性温度以上で起電力を生じる。",
+          "ウ": "圧電素子は振動板の変形を電圧として取り出し、出力端子とボデー側の電極を用いる。",
+          "エ": "基準室を大気圧とする部分が誤り。絶対圧センサは真空を基準とし、大気圧基準ならゲージ圧を測る。"
+        },
+        "explanationCoverage": "full",
+        "hasImage": false,
+        "sourcePages": [
+          3
+        ],
+        "sourceFigureRequired": false,
+        "topicTags": [
+          "エンジン制御",
+          "センサ"
+        ],
+        "difficulty": 3,
+        "isCalculation": false,
+        "needsReview": false,
+        "reviewNotes": [],
+        "officialReferenceUrls": [],
+        "qualification": "jidousha-seibishi-gakka",
+        "session": "gakka",
+        "type": "multiple-choice",
+        "year": 2025,
+        "fiscalYear": 2025,
+        "season": "second",
+        "term": "second",
+        "subject": "1-small-written",
+        "category": "一級小型自動車（筆記）",
+        "examDate": "2026-03-22",
+        "sourcePdfUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_1k_0.pdf",
+        "sourceAnswerUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_kai.pdf",
+        "sourceAttribution": "出典：日本自動車整備振興会連合会 令和7年度第2回自動車整備技能登録試験 一級小型自動車（筆記） No.2",
+        "officialQuestionStatus": "normal",
+        "lastUpdated": "2026-10-11",
+        "permissionVerified": false,
+        "publicGo": 0,
+        "sourcePageReferences": [
+          {
+            "physicalPage": 3,
+            "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_1k_0.pdf#page=3",
+            "pdfSha256": "9f617d58b464c075aafc9bc042b60ac5b41798654846757490f1a7c7d2102b30"
+          }
+        ],
+        "sourceFigureAssets": []
+      }
+    },
+    {
+      "id": "jidosha-2025-second-1-small-written-q03",
+      "candidateFile": {
+        "path": "C:\\Users\\kanet\\Documents\\Codex\\2026-10-23\\task-98\\output\\release-1small25a-independent-review\\accepted-candidates\\jidosha-2025-second-1-small-written-q03.json",
+        "sha256": "952514303c1075ac4d7d04c12c941c28c0e06c8331541f3a7691b814480832e0",
+        "bytes": 3474
+      },
+      "sourceBindings": {
+        "originalQuestion": {
+          "id": "jidosha-2025-second-1-small-written-q03",
+          "questionNumber": 3,
+          "examDate": "2026-03-22",
+          "subject": "1-small-written",
+          "sourcePath": "C:\\Users\\kanet\\Documents\\Codex\\2026-10-23\\task-5\\output\\automotive-forward-20261023\\release-1small25a\\sources\\jaspa-2025-second-1-small-written.pdf",
+          "sha256": "9f617d58b464c075aafc9bc042b60ac5b41798654846757490f1a7c7d2102b30",
+          "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_1k_0.pdf",
+          "physicalPages": [
+            3
+          ]
+        },
+        "officialKey": {
+          "path": "C:\\Users\\kanet\\Documents\\Codex\\2026-10-23\\task-5\\output\\automotive-forward-20261023\\release-1small25a\\sources\\jaspa-2025-second-answers.pdf",
+          "sha256": "2f73820401362ca24f052d8339bf20e4865dab2f2afe74b7c7b546b7b90d6701",
+          "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_kai.pdf",
+          "physicalPage": 1,
+          "column": "12 (1小)",
+          "row": 3,
+          "answerNumber": "3",
+          "answerLabel": "ウ"
+        },
+        "sourcePageImageEvidence": [
+          {
+            "path": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\codex-takeover-20261011\\automotive-latest-two\\ocr\\jaspa-2025-second-1-small-written\\page-03.png",
+            "sha256": "39b97d8d16c7ccbac7b0867ec8d3161afec1c5a2dd2bad9d624aaa63762b3060",
+            "bytes": 423376,
+            "physicalPage": 3,
+            "sourcePdfSha256": "9f617d58b464c075aafc9bc042b60ac5b41798654846757490f1a7c7d2102b30",
+            "use": "Existing original page image visually compared; no new render or OCR."
+          }
+        ],
+        "requiredFigureBindings": [],
+        "figureRequired": false
+      },
+      "candidate": {
+        "id": "jidosha-2025-second-1-small-written-q03",
+        "qNumber": 3,
+        "question": "デジタル式サーキット・テスタに関する記述として、不適切なものは次のうちどれか。",
+        "choices": {
+          "ア": "(1) 電源電圧が5Vで、抵抗値2MΩの抵抗2個を直列に接続した回路において、片方の抵抗の両端に内部抵抗11MΩのテスタ（電圧計）を接続したとき、計算で求められるテスタの表示値は、約2.2916Vになる。",
+          "イ": "(2) テスタの直流電圧表示値が4.0000Vのとき、直流電圧計の性能表に確度が5Vレンジで「0.025＋5」と記載されていた場合の実際の電圧値は、3.9985V～4.0015Vの範囲になる。",
+          "ウ": "(3) NMRRとは、アースを基準とした別の電圧（ノイズなど）が測定電圧に印加された場合に、測定値に与える影響度を表しており、CMRRとは、測定電圧に別の電圧（ノイズなど）が重畳（直流に交流が乗る）している場合に、測定値に与える影響度を表している。",
+          "エ": "(4) クレスト・ファクタとは、デジタル・テスタがもっている交流波形に対する測定能力を表すもので、交流測定時、交流波形の波高の最大値（P）と実効値（RMS）との比（最大値／実効値）を係数で示しており、三角波の場合は「√3≒1.732」である。"
+        },
+        "answer": "ウ",
+        "officialAnswerNumber": "3",
+        "explanation": "公式正答は(3)。NMRRは差動入力に重畳したノーマルモード雑音、CMRRは両入力に共通に加わる対地雑音の除去能力であり、説明が逆である。",
+        "choiceExplanations": {
+          "ア": "テスタを並列にした合成抵抗は2×11/(2＋11)MΩ。分圧は5×(22/13)/(2＋22/13)≒2.2916Vとなる。",
+          "イ": "表示値に対して確度の百分率成分と最下位桁数分を加減した範囲を示している。",
+          "ウ": "NMRRとCMRRの対象が入れ替わっている。共通モードは両測定端子に共通する対地電圧、ノーマルモードは端子間の測定電圧に重なる雑音である。",
+          "エ": "クレスト・ファクタは波高値／実効値。三角波の実効値は波高値／√3なので係数は√3。"
+        },
+        "explanationCoverage": "full",
+        "hasImage": false,
+        "sourcePages": [
+          3
+        ],
+        "sourceFigureRequired": false,
+        "topicTags": [
+          "測定器",
+          "電気回路"
+        ],
+        "difficulty": 4,
+        "isCalculation": true,
+        "needsReview": false,
+        "reviewNotes": [],
+        "officialReferenceUrls": [],
+        "qualification": "jidousha-seibishi-gakka",
+        "session": "gakka",
+        "type": "multiple-choice",
+        "year": 2025,
+        "fiscalYear": 2025,
+        "season": "second",
+        "term": "second",
+        "subject": "1-small-written",
+        "category": "一級小型自動車（筆記）",
+        "examDate": "2026-03-22",
+        "sourcePdfUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_1k_0.pdf",
+        "sourceAnswerUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_kai.pdf",
+        "sourceAttribution": "出典：日本自動車整備振興会連合会 令和7年度第2回自動車整備技能登録試験 一級小型自動車（筆記） No.3",
+        "officialQuestionStatus": "normal",
+        "lastUpdated": "2026-10-11",
+        "permissionVerified": false,
+        "publicGo": 0,
+        "sourcePageReferences": [
+          {
+            "physicalPage": 3,
+            "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_1k_0.pdf#page=3",
+            "pdfSha256": "9f617d58b464c075aafc9bc042b60ac5b41798654846757490f1a7c7d2102b30"
+          }
+        ],
+        "sourceFigureAssets": []
+      }
+    },
+    {
+      "id": "jidosha-2025-second-1-small-written-q04",
+      "candidateFile": {
+        "path": "C:\\Users\\kanet\\Documents\\Codex\\2026-10-23\\task-98\\output\\release-1small25a-independent-review\\accepted-candidates\\jidosha-2025-second-1-small-written-q04.json",
+        "sha256": "ad19beb5d7fb6225c7eb610f452f3a8e90054c552fb5643c300fd27da9594d22",
+        "bytes": 3795
+      },
+      "sourceBindings": {
+        "originalQuestion": {
+          "id": "jidosha-2025-second-1-small-written-q04",
+          "questionNumber": 4,
+          "examDate": "2026-03-22",
+          "subject": "1-small-written",
+          "sourcePath": "C:\\Users\\kanet\\Documents\\Codex\\2026-10-23\\task-5\\output\\automotive-forward-20261023\\release-1small25a\\sources\\jaspa-2025-second-1-small-written.pdf",
+          "sha256": "9f617d58b464c075aafc9bc042b60ac5b41798654846757490f1a7c7d2102b30",
+          "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_1k_0.pdf",
+          "physicalPages": [
+            4
+          ]
+        },
+        "officialKey": {
+          "path": "C:\\Users\\kanet\\Documents\\Codex\\2026-10-23\\task-5\\output\\automotive-forward-20261023\\release-1small25a\\sources\\jaspa-2025-second-answers.pdf",
+          "sha256": "2f73820401362ca24f052d8339bf20e4865dab2f2afe74b7c7b546b7b90d6701",
+          "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_kai.pdf",
+          "physicalPage": 1,
+          "column": "12 (1小)",
+          "row": 4,
+          "answerNumber": "4",
+          "answerLabel": "エ"
+        },
+        "sourcePageImageEvidence": [
+          {
+            "path": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\codex-takeover-20261011\\automotive-latest-two\\ocr\\jaspa-2025-second-1-small-written\\page-04.png",
+            "sha256": "eba95ea0a66bc48b30e0ee23e4f26d2b34ac6d8fe68e705c265abcd8fb1a31ed",
+            "bytes": 435707,
+            "physicalPage": 4,
+            "sourcePdfSha256": "9f617d58b464c075aafc9bc042b60ac5b41798654846757490f1a7c7d2102b30",
+            "use": "Existing original page image visually compared; no new render or OCR."
+          }
+        ],
+        "requiredFigureBindings": [
+          {
+            "bookId": "jaspa-2025-second-1-small-written",
+            "physicalPage": 4,
+            "pdfSha256": "9f617d58b464c075aafc9bc042b60ac5b41798654846757490f1a7c7d2102b30",
+            "officialUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_1k_0.pdf#page=4",
+            "originalQuestionIds": [
+              "jidosha-2025-second-1-small-written-q04",
+              "jidosha-2025-second-1-small-written-q05"
+            ],
+            "relativePath": "figures/jaspa-2025-second-1-small-written-p04.webp",
+            "width": 1490,
+            "height": 2106,
+            "sha256": "7baeb991c5a1b64e29a089a39f0d160117b60e204fc7b5f3b2a27f3c6c0fa814",
+            "bytes": 273496,
+            "processing": "Original PDF physical page rendered to PNG, then converted to WebP; no retouch or generated content.",
+            "localPath": "C:\\Users\\kanet\\Documents\\Codex\\2026-10-23\\task-5\\output\\automotive-forward-20261023\\release-1small25a\\figures\\jaspa-2025-second-1-small-written-p04.webp"
+          }
+        ],
+        "figureRequired": true
+      },
+      "candidate": {
+        "id": "jidosha-2025-second-1-small-written-q04",
+        "qNumber": 4,
+        "question": "クランク角センサなどに用いられている図1の信号電圧特性をもつ図2の光学素子式センサ回路に関する記述として、不適切なものは次のうちどれか。",
+        "choices": {
+          "ア": "(1) ロータを回転させたとき、V1とV2に規定の信号電圧が発生し、かつ、等しければ、信号線と信号アース線は正常だと考えられる。V1とV2の電圧値が異なる場合、信号線の断線、信号アース線の断線が考えられるが、電源線の断線は考えられない。",
+          "イ": "(2) ロータを回転させたとき、V3とV4に規定の信号電圧が発生し、かつ、等しければ、信号線は正常だと考えられる。V3とV4の電圧値が異なる場合、信号線の断線が考えられるが、信号線と信号アース線との線間短絡は考えられない。",
+          "ウ": "(3) ロータを回転させたとき、V5とV6の電圧値が異なる場合、信号アース線の断線、信号アース線の抵抗の増大が考えられるが、V6からエンジンECU内の入力回路までの断線は考えられない。",
+          "エ": "(4) ロータを回転させたとき、V1に規定の信号電圧が発生しない場合、光学素子式センサの異常、電源線の断線、電源線の短絡（地絡）、信号線の短絡（地絡）、エンジンECU本体の異常が考えられるが、信号アース線の断線は考えられない。"
+        },
+        "answer": "エ",
+        "officialAnswerNumber": "4",
+        "explanation": "公式正答は(4)。センサ・アンプの出力は信号アース線を基準にするため、信号アース線が断線してもV1の規定波形が失われ得る。",
+        "choiceExplanations": {
+          "ア": "V1とECU側V2を比較すれば信号線やアース線の断線を切り分けられ、電源断線なら両方の出力そのものが失われる。",
+          "イ": "V3とV4の比較は信号線区間の電位差を見る。信号線の接地側短絡は両測定点を同じ電位へ引くため、差が生じる原因にはならない。",
+          "ウ": "V5とV6の差は両端間のアース線の異常を示す。ECU入力回路への別経路の断線だけではこの差を生じない。",
+          "エ": "信号アース線の断線も光学式センサ出力の基準電位を失わせ、V1に規定の波形が出ない原因になり得る。除外した部分が誤り。"
+        },
+        "explanationCoverage": "full",
+        "hasImage": true,
+        "sourcePages": [
+          4
+        ],
+        "sourceFigureRequired": true,
+        "topicTags": [
+          "電子制御",
+          "光学式センサ",
+          "故障診断"
+        ],
+        "difficulty": 4,
+        "isCalculation": false,
+        "needsReview": false,
+        "reviewNotes": [],
+        "officialReferenceUrls": [],
+        "qualification": "jidousha-seibishi-gakka",
+        "session": "gakka",
+        "type": "multiple-choice",
+        "year": 2025,
+        "fiscalYear": 2025,
+        "season": "second",
+        "term": "second",
+        "subject": "1-small-written",
+        "category": "一級小型自動車（筆記）",
+        "examDate": "2026-03-22",
+        "sourcePdfUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_1k_0.pdf",
+        "sourceAnswerUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_kai.pdf",
+        "sourceAttribution": "出典：日本自動車整備振興会連合会 令和7年度第2回自動車整備技能登録試験 一級小型自動車（筆記） No.4",
+        "officialQuestionStatus": "normal",
+        "lastUpdated": "2026-10-11",
+        "permissionVerified": false,
+        "publicGo": 0,
+        "sourcePageReferences": [
+          {
+            "physicalPage": 4,
+            "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_1k_0.pdf#page=4",
+            "pdfSha256": "9f617d58b464c075aafc9bc042b60ac5b41798654846757490f1a7c7d2102b30"
+          }
+        ],
+        "sourceFigureAssets": [
+          {
+            "physicalPage": 4,
+            "relativePath": "figures/jaspa-2025-second-1-small-written-p04.webp"
+          }
+        ]
+      }
+    },
+    {
+      "id": "jidosha-2025-second-1-small-written-q05",
+      "candidateFile": {
+        "path": "C:\\Users\\kanet\\Documents\\Codex\\2026-10-23\\task-98\\output\\release-1small25a-independent-review\\accepted-candidates\\jidosha-2025-second-1-small-written-q05.json",
+        "sha256": "e8d7ac0dc6dccb846f3675bdb83d17187852b5c85ae612a2e030084b85249527",
+        "bytes": 2393
+      },
+      "sourceBindings": {
+        "originalQuestion": {
+          "id": "jidosha-2025-second-1-small-written-q05",
+          "questionNumber": 5,
+          "examDate": "2026-03-22",
+          "subject": "1-small-written",
+          "sourcePath": "C:\\Users\\kanet\\Documents\\Codex\\2026-10-23\\task-5\\output\\automotive-forward-20261023\\release-1small25a\\sources\\jaspa-2025-second-1-small-written.pdf",
+          "sha256": "9f617d58b464c075aafc9bc042b60ac5b41798654846757490f1a7c7d2102b30",
+          "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_1k_0.pdf",
+          "physicalPages": [
+            4
+          ]
+        },
+        "officialKey": {
+          "path": "C:\\Users\\kanet\\Documents\\Codex\\2026-10-23\\task-5\\output\\automotive-forward-20261023\\release-1small25a\\sources\\jaspa-2025-second-answers.pdf",
+          "sha256": "2f73820401362ca24f052d8339bf20e4865dab2f2afe74b7c7b546b7b90d6701",
+          "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_kai.pdf",
+          "physicalPage": 1,
+          "column": "12 (1小)",
+          "row": 5,
+          "answerNumber": "4",
+          "answerLabel": "エ"
+        },
+        "sourcePageImageEvidence": [
+          {
+            "path": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\codex-takeover-20261011\\automotive-latest-two\\ocr\\jaspa-2025-second-1-small-written\\page-04.png",
+            "sha256": "eba95ea0a66bc48b30e0ee23e4f26d2b34ac6d8fe68e705c265abcd8fb1a31ed",
+            "bytes": 435707,
+            "physicalPage": 4,
+            "sourcePdfSha256": "9f617d58b464c075aafc9bc042b60ac5b41798654846757490f1a7c7d2102b30",
+            "use": "Existing original page image visually compared; no new render or OCR."
+          }
+        ],
+        "requiredFigureBindings": [
+          {
+            "bookId": "jaspa-2025-second-1-small-written",
+            "physicalPage": 4,
+            "pdfSha256": "9f617d58b464c075aafc9bc042b60ac5b41798654846757490f1a7c7d2102b30",
+            "officialUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_1k_0.pdf#page=4",
+            "originalQuestionIds": [
+              "jidosha-2025-second-1-small-written-q04",
+              "jidosha-2025-second-1-small-written-q05"
+            ],
+            "relativePath": "figures/jaspa-2025-second-1-small-written-p04.webp",
+            "width": 1490,
+            "height": 2106,
+            "sha256": "7baeb991c5a1b64e29a089a39f0d160117b60e204fc7b5f3b2a27f3c6c0fa814",
+            "bytes": 273496,
+            "processing": "Original PDF physical page rendered to PNG, then converted to WebP; no retouch or generated content.",
+            "localPath": "C:\\Users\\kanet\\Documents\\Codex\\2026-10-23\\task-5\\output\\automotive-forward-20261023\\release-1small25a\\figures\\jaspa-2025-second-1-small-written-p04.webp"
+          }
+        ],
+        "figureRequired": true
+      },
+      "candidate": {
+        "id": "jidosha-2025-second-1-small-written-q05",
+        "qNumber": 5,
+        "question": "図に示すオシロスコープに表示された信号波形のaとbの組み合わせとして、適切なものは次のうちどれか。ただし、オシロスコープの設定はV/DIVが1V、TIME/DIVが1ms、プローブは×10とする。",
+        "choices": {
+          "ア": "(1) a：約7V、b：約25ms",
+          "イ": "(2) a：約7V、b：約2.5ms",
+          "ウ": "(3) a：約70V、b：約25ms",
+          "エ": "(4) a：約70V、b：約2.5ms"
+        },
+        "answer": "エ",
+        "officialAnswerNumber": "4",
+        "explanation": "公式正答は(4)。aは縦約7目盛×1V/DIV×プローブ倍率10で約70V。bは横約2.5目盛×1ms/DIVで約2.5ms。",
+        "choiceExplanations": {
+          "ア": "bは横2.5目盛なので25msではない。aもプローブ倍率10を考慮して70V。",
+          "イ": "bの2.5msは合うが、aの7Vはプローブ倍率10を掛け忘れている。",
+          "ウ": "aの70Vは合うが、bの25msは時間軸を10倍している。",
+          "エ": "縦方向のプローブ倍率と横方向の時間目盛をそれぞれ適用した値で、両方正しい。"
+        },
+        "explanationCoverage": "full",
+        "hasImage": true,
+        "sourcePages": [
+          4
+        ],
+        "sourceFigureRequired": true,
+        "topicTags": [
+          "オシロスコープ",
+          "波形読取"
+        ],
+        "difficulty": 3,
+        "isCalculation": false,
+        "needsReview": false,
+        "reviewNotes": [],
+        "officialReferenceUrls": [],
+        "qualification": "jidousha-seibishi-gakka",
+        "session": "gakka",
+        "type": "multiple-choice",
+        "year": 2025,
+        "fiscalYear": 2025,
+        "season": "second",
+        "term": "second",
+        "subject": "1-small-written",
+        "category": "一級小型自動車（筆記）",
+        "examDate": "2026-03-22",
+        "sourcePdfUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_1k_0.pdf",
+        "sourceAnswerUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_kai.pdf",
+        "sourceAttribution": "出典：日本自動車整備振興会連合会 令和7年度第2回自動車整備技能登録試験 一級小型自動車（筆記） No.5",
+        "officialQuestionStatus": "normal",
+        "lastUpdated": "2026-10-11",
+        "permissionVerified": false,
+        "publicGo": 0,
+        "sourcePageReferences": [
+          {
+            "physicalPage": 4,
+            "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_1k_0.pdf#page=4",
+            "pdfSha256": "9f617d58b464c075aafc9bc042b60ac5b41798654846757490f1a7c7d2102b30"
+          }
+        ],
+        "sourceFigureAssets": [
+          {
+            "physicalPage": 4,
+            "relativePath": "figures/jaspa-2025-second-1-small-written-p04.webp"
+          }
+        ]
+      }
+    },
+    {
+      "id": "jidosha-2025-second-1-small-written-q06",
+      "candidateFile": {
+        "path": "C:\\Users\\kanet\\Documents\\Codex\\2026-10-23\\task-98\\output\\release-1small25a-independent-review\\accepted-candidates\\jidosha-2025-second-1-small-written-q06.json",
+        "sha256": "1ba1e6d0740f447768d757bae215f19509f992986de82ba3dfa5fc21acaefaaa",
+        "bytes": 3370
+      },
+      "sourceBindings": {
+        "originalQuestion": {
+          "id": "jidosha-2025-second-1-small-written-q06",
+          "questionNumber": 6,
+          "examDate": "2026-03-22",
+          "subject": "1-small-written",
+          "sourcePath": "C:\\Users\\kanet\\Documents\\Codex\\2026-10-23\\task-5\\output\\automotive-forward-20261023\\release-1small25a\\sources\\jaspa-2025-second-1-small-written.pdf",
+          "sha256": "9f617d58b464c075aafc9bc042b60ac5b41798654846757490f1a7c7d2102b30",
+          "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_1k_0.pdf",
+          "physicalPages": [
+            5
+          ]
+        },
+        "officialKey": {
+          "path": "C:\\Users\\kanet\\Documents\\Codex\\2026-10-23\\task-5\\output\\automotive-forward-20261023\\release-1small25a\\sources\\jaspa-2025-second-answers.pdf",
+          "sha256": "2f73820401362ca24f052d8339bf20e4865dab2f2afe74b7c7b546b7b90d6701",
+          "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_kai.pdf",
+          "physicalPage": 1,
+          "column": "12 (1小)",
+          "row": 6,
+          "answerNumber": "1",
+          "answerLabel": "ア"
+        },
+        "sourcePageImageEvidence": [
+          {
+            "path": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\codex-takeover-20261011\\automotive-latest-two\\ocr\\jaspa-2025-second-1-small-written\\page-05.png",
+            "sha256": "09a2e41bc6c461dd24399c8ff0fd2582864a9b4137bce8a5322c4288e579e078",
+            "bytes": 328029,
+            "physicalPage": 5,
+            "sourcePdfSha256": "9f617d58b464c075aafc9bc042b60ac5b41798654846757490f1a7c7d2102b30",
+            "use": "Existing original page image visually compared; no new render or OCR."
+          }
+        ],
+        "requiredFigureBindings": [
+          {
+            "bookId": "jaspa-2025-second-1-small-written",
+            "physicalPage": 5,
+            "pdfSha256": "9f617d58b464c075aafc9bc042b60ac5b41798654846757490f1a7c7d2102b30",
+            "officialUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_1k_0.pdf#page=5",
+            "originalQuestionIds": [
+              "jidosha-2025-second-1-small-written-q06"
+            ],
+            "relativePath": "figures/jaspa-2025-second-1-small-written-p05.webp",
+            "width": 1490,
+            "height": 2106,
+            "sha256": "f2ea6c338fc082a79cff9116676a3881f5f010074f5c649d89ce526bfacfcab0",
+            "bytes": 193436,
+            "processing": "Original PDF physical page rendered to PNG, then converted to WebP; no retouch or generated content.",
+            "localPath": "C:\\Users\\kanet\\Documents\\Codex\\2026-10-23\\task-5\\output\\automotive-forward-20261023\\release-1small25a\\figures\\jaspa-2025-second-1-small-written-p05.webp"
+          }
+        ],
+        "figureRequired": true
+      },
+      "candidate": {
+        "id": "jidosha-2025-second-1-small-written-q06",
+        "qNumber": 6,
+        "question": "電子制御式スロットル装置などに用いられている図1の駆動電圧波形を示す図2のリニアDCブラシレス・モータ（三相交流の小規模のアクチュエータ）の駆動回路に関する記述として、不適切なものは次のうちどれか。",
+        "choices": {
+          "ア": "(1) リニアDCブラシレス・モータの駆動速度は、ホール素子などのF/Bセンサを用いて、ECUがU相、V相、W相の各相の電流を検出して算定する。",
+          "イ": "(2) リニアDCブラシレス・モータのCW駆動時は、U相→V相、V相→W相、W相→U相の周期で電流が流れ、CCW駆動時はU相→W相、W相→V相、V相→U相の周期に電流が流れる。",
+          "ウ": "(3) アクチュエータのモータがロックしているときは、シャント抵抗による診断回路により、マイコンは、閾値をアップ・エッジする診断信号電圧を検出して異常検知を行う。",
+          "エ": "(4) ECUは、駆動回路内のインバータで直流を三相交流に変換している。また、マイコンの信号電圧に基づき、駆動回路でブラシレス・モータの回転方向と駆動力を制御している。"
+        },
+        "answer": "ア",
+        "officialAnswerNumber": "1",
+        "explanation": "公式正答は(1)。ホール素子などのF/Bセンサはロータの位置・回転を検出するもので、各相電流を直接検出して速度を算定するとの記述が誤り。",
+        "choiceExplanations": {
+          "ア": "F/Bセンサが検出するのは磁極位置や回転のフィードバックである。相電流の検出はシャント抵抗など別の回路で行う。",
+          "イ": "相の励磁順を逆転すると回転方向が逆になる。",
+          "ウ": "ロック時の過電流はシャント抵抗の電圧として監視され、閾値を超えると異常とする。",
+          "エ": "インバータで直流から三相交流の駆動波形を作り、方向と駆動力を制御する。"
+        },
+        "explanationCoverage": "full",
+        "hasImage": true,
+        "sourcePages": [
+          5
+        ],
+        "sourceFigureRequired": true,
+        "topicTags": [
+          "ブラシレスモータ",
+          "電子制御"
+        ],
+        "difficulty": 4,
+        "isCalculation": false,
+        "needsReview": false,
+        "reviewNotes": [],
+        "officialReferenceUrls": [],
+        "qualification": "jidousha-seibishi-gakka",
+        "session": "gakka",
+        "type": "multiple-choice",
+        "year": 2025,
+        "fiscalYear": 2025,
+        "season": "second",
+        "term": "second",
+        "subject": "1-small-written",
+        "category": "一級小型自動車（筆記）",
+        "examDate": "2026-03-22",
+        "sourcePdfUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_1k_0.pdf",
+        "sourceAnswerUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_kai.pdf",
+        "sourceAttribution": "出典：日本自動車整備振興会連合会 令和7年度第2回自動車整備技能登録試験 一級小型自動車（筆記） No.6",
+        "officialQuestionStatus": "normal",
+        "lastUpdated": "2026-10-11",
+        "permissionVerified": false,
+        "publicGo": 0,
+        "sourcePageReferences": [
+          {
+            "physicalPage": 5,
+            "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_1k_0.pdf#page=5",
+            "pdfSha256": "9f617d58b464c075aafc9bc042b60ac5b41798654846757490f1a7c7d2102b30"
+          }
+        ],
+        "sourceFigureAssets": [
+          {
+            "physicalPage": 5,
+            "relativePath": "figures/jaspa-2025-second-1-small-written-p05.webp"
+          }
+        ]
+      }
+    },
+    {
+      "id": "jidosha-2025-second-1-small-written-q07",
+      "candidateFile": {
+        "path": "C:\\Users\\kanet\\Documents\\Codex\\2026-10-23\\task-98\\output\\release-1small25a-independent-review\\accepted-candidates\\jidosha-2025-second-1-small-written-q07.json",
+        "sha256": "7329b68fa75842821715667563b128fa4ea7b0a5cffcf34a7629c013cb9c0b20",
+        "bytes": 3042
+      },
+      "sourceBindings": {
+        "originalQuestion": {
+          "id": "jidosha-2025-second-1-small-written-q07",
+          "questionNumber": 7,
+          "examDate": "2026-03-22",
+          "subject": "1-small-written",
+          "sourcePath": "C:\\Users\\kanet\\Documents\\Codex\\2026-10-23\\task-5\\output\\automotive-forward-20261023\\release-1small25a\\sources\\jaspa-2025-second-1-small-written.pdf",
+          "sha256": "9f617d58b464c075aafc9bc042b60ac5b41798654846757490f1a7c7d2102b30",
+          "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_1k_0.pdf",
+          "physicalPages": [
+            6
+          ]
+        },
+        "officialKey": {
+          "path": "C:\\Users\\kanet\\Documents\\Codex\\2026-10-23\\task-5\\output\\automotive-forward-20261023\\release-1small25a\\sources\\jaspa-2025-second-answers.pdf",
+          "sha256": "2f73820401362ca24f052d8339bf20e4865dab2f2afe74b7c7b546b7b90d6701",
+          "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_kai.pdf",
+          "physicalPage": 1,
+          "column": "12 (1小)",
+          "row": 7,
+          "answerNumber": "1",
+          "answerLabel": "ア"
+        },
+        "sourcePageImageEvidence": [
+          {
+            "path": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\codex-takeover-20261011\\automotive-latest-two\\ocr\\jaspa-2025-second-1-small-written\\page-06.png",
+            "sha256": "1dff767254bc239315397d01784138d56f70cdcd0c22cb0b00ac54d33be6faf1",
+            "bytes": 500543,
+            "physicalPage": 6,
+            "sourcePdfSha256": "9f617d58b464c075aafc9bc042b60ac5b41798654846757490f1a7c7d2102b30",
+            "use": "Existing original page image visually compared; no new render or OCR."
+          }
+        ],
+        "requiredFigureBindings": [
+          {
+            "bookId": "jaspa-2025-second-1-small-written",
+            "physicalPage": 6,
+            "pdfSha256": "9f617d58b464c075aafc9bc042b60ac5b41798654846757490f1a7c7d2102b30",
+            "officialUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_1k_0.pdf#page=6",
+            "originalQuestionIds": [
+              "jidosha-2025-second-1-small-written-q07"
+            ],
+            "relativePath": "figures/jaspa-2025-second-1-small-written-p06.webp",
+            "width": 1490,
+            "height": 2106,
+            "sha256": "c6cc8bcc3fcff69376f6f355a679a7fb14f1de7e9f182aa3c5aed12cb583bfb3",
+            "bytes": 251196,
+            "processing": "Original PDF physical page rendered to PNG, then converted to WebP; no retouch or generated content.",
+            "localPath": "C:\\Users\\kanet\\Documents\\Codex\\2026-10-23\\task-5\\output\\automotive-forward-20261023\\release-1small25a\\figures\\jaspa-2025-second-1-small-written-p06.webp"
+          }
+        ],
+        "figureRequired": true
+      },
+      "candidate": {
+        "id": "jidosha-2025-second-1-small-written-q07",
+        "qNumber": 7,
+        "question": "図に示す圧力検知式の論理信号センサを用いた装置の回路において、マイコンの異常検知範囲を示したものとして、適切なものは(1)から(4)のうちどれか。ただし、この論理信号センサの状態を別のセンサで監視・認識する機能はもたないものとする。",
+        "choices": {
+          "ア": "(1) IGスイッチON時・作動中とも0～5Vの全範囲が異常検知不可能範囲",
+          "イ": "(2) IGスイッチON時・作動中とも、下限値未満と上限値超が異常検知可能範囲で、その間が異常検知不可能範囲",
+          "ウ": "(3) IGスイッチON時は閾値以上が異常検知不可能範囲で、作動中は閾値以上が異常検知可能範囲",
+          "エ": "(4) IGスイッチON時・作動中とも、下限値未満が異常検知可能範囲で、その上の電圧域が異常検知不可能範囲"
+        },
+        "answer": "ア",
+        "officialAnswerNumber": "1",
+        "explanation": "公式正答は(1)。論理信号はON/OFFの2値で、別センサによる状態照合がなければ、故障による固定信号と正常なON/OFFを区別できない。",
+        "choiceExplanations": {
+          "ア": "0V側・5V側を含む信号範囲内は正常の論理値と故障による固定値を識別できない。",
+          "イ": "上下の電圧だけを異常とするアナログセンサのような判定は、この設問の独立した論理信号では成立しない。",
+          "ウ": "作動段階だけで高電位を異常と確定できる外部の状態情報がない。",
+          "エ": "低電位を異常と断定できる別の監視情報がなく、下限側のみ検知可能とするのは誤り。"
+        },
+        "explanationCoverage": "full",
+        "hasImage": true,
+        "sourcePages": [
+          6
+        ],
+        "sourceFigureRequired": true,
+        "topicTags": [
+          "論理信号センサ",
+          "故障検知"
+        ],
+        "difficulty": 4,
+        "isCalculation": false,
+        "needsReview": false,
+        "reviewNotes": [],
+        "officialReferenceUrls": [],
+        "qualification": "jidousha-seibishi-gakka",
+        "session": "gakka",
+        "type": "multiple-choice",
+        "year": 2025,
+        "fiscalYear": 2025,
+        "season": "second",
+        "term": "second",
+        "subject": "1-small-written",
+        "category": "一級小型自動車（筆記）",
+        "examDate": "2026-03-22",
+        "sourcePdfUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_1k_0.pdf",
+        "sourceAnswerUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_kai.pdf",
+        "sourceAttribution": "出典：日本自動車整備振興会連合会 令和7年度第2回自動車整備技能登録試験 一級小型自動車（筆記） No.7",
+        "officialQuestionStatus": "normal",
+        "lastUpdated": "2026-10-11",
+        "permissionVerified": false,
+        "publicGo": 0,
+        "sourcePageReferences": [
+          {
+            "physicalPage": 6,
+            "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_1k_0.pdf#page=6",
+            "pdfSha256": "9f617d58b464c075aafc9bc042b60ac5b41798654846757490f1a7c7d2102b30"
+          }
+        ],
+        "sourceFigureAssets": [
+          {
+            "physicalPage": 6,
+            "relativePath": "figures/jaspa-2025-second-1-small-written-p06.webp"
+          }
+        ]
+      }
+    },
+    {
+      "id": "jidosha-2025-second-1-small-written-q08",
+      "candidateFile": {
+        "path": "C:\\Users\\kanet\\Documents\\Codex\\2026-10-23\\task-98\\output\\release-1small25a-independent-review\\accepted-candidates\\jidosha-2025-second-1-small-written-q08.json",
+        "sha256": "d2473f39172fa496b2a0b79313a5d4d8ec2aae72d59ba121abd36caaed6de6cb",
+        "bytes": 3361
+      },
+      "sourceBindings": {
+        "originalQuestion": {
+          "id": "jidosha-2025-second-1-small-written-q08",
+          "questionNumber": 8,
+          "examDate": "2026-03-22",
+          "subject": "1-small-written",
+          "sourcePath": "C:\\Users\\kanet\\Documents\\Codex\\2026-10-23\\task-5\\output\\automotive-forward-20261023\\release-1small25a\\sources\\jaspa-2025-second-1-small-written.pdf",
+          "sha256": "9f617d58b464c075aafc9bc042b60ac5b41798654846757490f1a7c7d2102b30",
+          "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_1k_0.pdf",
+          "physicalPages": [
+            7
+          ]
+        },
+        "officialKey": {
+          "path": "C:\\Users\\kanet\\Documents\\Codex\\2026-10-23\\task-5\\output\\automotive-forward-20261023\\release-1small25a\\sources\\jaspa-2025-second-answers.pdf",
+          "sha256": "2f73820401362ca24f052d8339bf20e4865dab2f2afe74b7c7b546b7b90d6701",
+          "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_kai.pdf",
+          "physicalPage": 1,
+          "column": "12 (1小)",
+          "row": 8,
+          "answerNumber": "2",
+          "answerLabel": "イ"
+        },
+        "sourcePageImageEvidence": [
+          {
+            "path": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\codex-takeover-20261011\\automotive-latest-two\\ocr\\jaspa-2025-second-1-small-written\\page-07.png",
+            "sha256": "6d646b342e3fb19123fd4b9b3992af9bf5a61293efcdf14ed83b93fce9802b43",
+            "bytes": 499360,
+            "physicalPage": 7,
+            "sourcePdfSha256": "9f617d58b464c075aafc9bc042b60ac5b41798654846757490f1a7c7d2102b30",
+            "use": "Existing original page image visually compared; no new render or OCR."
+          }
+        ],
+        "requiredFigureBindings": [
+          {
+            "bookId": "jaspa-2025-second-1-small-written",
+            "physicalPage": 7,
+            "pdfSha256": "9f617d58b464c075aafc9bc042b60ac5b41798654846757490f1a7c7d2102b30",
+            "officialUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_1k_0.pdf#page=7",
+            "originalQuestionIds": [
+              "jidosha-2025-second-1-small-written-q08"
+            ],
+            "relativePath": "figures/jaspa-2025-second-1-small-written-p07.webp",
+            "width": 1490,
+            "height": 2106,
+            "sha256": "26b1ccae7d1f085e54783a8f07162aceac7c1770c6ba5f0831ce0c0913dec07c",
+            "bytes": 283370,
+            "processing": "Original PDF physical page rendered to PNG, then converted to WebP; no retouch or generated content.",
+            "localPath": "C:\\Users\\kanet\\Documents\\Codex\\2026-10-23\\task-5\\output\\automotive-forward-20261023\\release-1small25a\\figures\\jaspa-2025-second-1-small-written-p07.webp"
+          }
+        ],
+        "figureRequired": true
+      },
+      "candidate": {
+        "id": "jidosha-2025-second-1-small-written-q08",
+        "qNumber": 8,
+        "question": "図に示すパラレル・シリーズ・ハイブリッド車に用いられるモータ（ACサーボ・モータ）に関する記述として、不適切なものは次のうちどれか。",
+        "choices": {
+          "ア": "(1) ロータに発生するトルクは、電流の大きさにほぼ比例し、ロータの回転速度は、交流電流の周波数で制御する。",
+          "イ": "(2) 図のようなロータの位置のとき、U相ポール先端をN極、V相ポール先端をS極、W相のポール先端をN極にすると、ロータには右回転方向のトルクが発生する。",
+          "ウ": "(3) ステータ・コイルに、図のように三相に交流電流を流すと、モータ内に回転磁界が発生し、この回転磁界をロータの回転位置、速度に合わせて制御することにより、ロータに配置された永久磁石が回転磁界の作用を受け、トルクが発生する。",
+          "エ": "(4) モータは、減速機を介して前輪（駆動輪）に直結されているため、常に前輪と比例して回転しており、低速時にはクリープ現象を発生させる。また、減速及び制動時には発電機として働くことで、エネルギを回収している。"
+        },
+        "answer": "イ",
+        "officialAnswerNumber": "2",
+        "explanation": "公式正答は(2)。図の永久磁石配置と指定したU・V・W各ポールの極性から生じる吸引・反発力は、記述の右回転方向とは一致しない。",
+        "choiceExplanations": {
+          "ア": "電流の大きさがトルクに、交流の周波数が同期速度に関係する。",
+          "イ": "図の極配置で力の方向を追うと右回転方向のトルクにはならない。極性とロータ磁極の位置関係が誤り。",
+          "ウ": "三相電流による回転磁界とロータ磁極の相互作用がトルクを生む。",
+          "エ": "駆動輪と機械的に連結され、制動時には回生発電する構成を説明している。"
+        },
+        "explanationCoverage": "full",
+        "hasImage": true,
+        "sourcePages": [
+          7
+        ],
+        "sourceFigureRequired": true,
+        "topicTags": [
+          "ハイブリッド車",
+          "ACサーボモータ"
+        ],
+        "difficulty": 4,
+        "isCalculation": false,
+        "needsReview": false,
+        "reviewNotes": [],
+        "officialReferenceUrls": [],
+        "qualification": "jidousha-seibishi-gakka",
+        "session": "gakka",
+        "type": "multiple-choice",
+        "year": 2025,
+        "fiscalYear": 2025,
+        "season": "second",
+        "term": "second",
+        "subject": "1-small-written",
+        "category": "一級小型自動車（筆記）",
+        "examDate": "2026-03-22",
+        "sourcePdfUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_1k_0.pdf",
+        "sourceAnswerUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_kai.pdf",
+        "sourceAttribution": "出典：日本自動車整備振興会連合会 令和7年度第2回自動車整備技能登録試験 一級小型自動車（筆記） No.8",
+        "officialQuestionStatus": "normal",
+        "lastUpdated": "2026-10-11",
+        "permissionVerified": false,
+        "publicGo": 0,
+        "sourcePageReferences": [
+          {
+            "physicalPage": 7,
+            "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_1k_0.pdf#page=7",
+            "pdfSha256": "9f617d58b464c075aafc9bc042b60ac5b41798654846757490f1a7c7d2102b30"
+          }
+        ],
+        "sourceFigureAssets": [
+          {
+            "physicalPage": 7,
+            "relativePath": "figures/jaspa-2025-second-1-small-written-p07.webp"
+          }
+        ]
+      }
+    },
+    {
+      "id": "jidosha-2025-second-1-small-written-q10",
+      "candidateFile": {
+        "path": "C:\\Users\\kanet\\Documents\\Codex\\2026-10-23\\task-98\\output\\release-1small25a-independent-review\\accepted-candidates\\jidosha-2025-second-1-small-written-q10.json",
+        "sha256": "91320244ed3f347b6854f091061a486cdba45a2c5d8b4b2ebcd690fceafab54a",
+        "bytes": 3607
+      },
+      "sourceBindings": {
+        "originalQuestion": {
+          "id": "jidosha-2025-second-1-small-written-q10",
+          "questionNumber": 10,
+          "examDate": "2026-03-22",
+          "subject": "1-small-written",
+          "sourcePath": "C:\\Users\\kanet\\Documents\\Codex\\2026-10-23\\task-5\\output\\automotive-forward-20261023\\release-1small25a\\sources\\jaspa-2025-second-1-small-written.pdf",
+          "sha256": "9f617d58b464c075aafc9bc042b60ac5b41798654846757490f1a7c7d2102b30",
+          "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_1k_0.pdf",
+          "physicalPages": [
+            8
+          ]
+        },
+        "officialKey": {
+          "path": "C:\\Users\\kanet\\Documents\\Codex\\2026-10-23\\task-5\\output\\automotive-forward-20261023\\release-1small25a\\sources\\jaspa-2025-second-answers.pdf",
+          "sha256": "2f73820401362ca24f052d8339bf20e4865dab2f2afe74b7c7b546b7b90d6701",
+          "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_kai.pdf",
+          "physicalPage": 1,
+          "column": "12 (1小)",
+          "row": 10,
+          "answerNumber": "3",
+          "answerLabel": "ウ"
+        },
+        "sourcePageImageEvidence": [
+          {
+            "path": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\codex-takeover-20261011\\automotive-latest-two\\ocr\\jaspa-2025-second-1-small-written\\page-08.png",
+            "sha256": "cac5c145a233ef6d5d18f8c478ab9f6af656bd81ade97346101092429b935f79",
+            "bytes": 226304,
+            "physicalPage": 8,
+            "sourcePdfSha256": "9f617d58b464c075aafc9bc042b60ac5b41798654846757490f1a7c7d2102b30",
+            "use": "Existing original page image visually compared; no new render or OCR."
+          }
+        ],
+        "requiredFigureBindings": [
+          {
+            "bookId": "jaspa-2025-second-1-small-written",
+            "physicalPage": 8,
+            "pdfSha256": "9f617d58b464c075aafc9bc042b60ac5b41798654846757490f1a7c7d2102b30",
+            "officialUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_1k_0.pdf#page=8",
+            "originalQuestionIds": [
+              "jidosha-2025-second-1-small-written-q10"
+            ],
+            "relativePath": "figures/jaspa-2025-second-1-small-written-p08.webp",
+            "width": 1490,
+            "height": 2106,
+            "sha256": "471936fddea862db6efdaf0ece09e68474ffce8254b4865cbdd8f2dee9d5a881",
+            "bytes": 128074,
+            "processing": "Original PDF physical page rendered to PNG, then converted to WebP; no retouch or generated content.",
+            "localPath": "C:\\Users\\kanet\\Documents\\Codex\\2026-10-23\\task-5\\output\\automotive-forward-20261023\\release-1small25a\\figures\\jaspa-2025-second-1-small-written-p08.webp"
+          }
+        ],
+        "figureRequired": true
+      },
+      "candidate": {
+        "id": "jidosha-2025-second-1-small-written-q10",
+        "qNumber": 10,
+        "question": "図1に示す温度抵抗特性をもつ図2の油温センサの回路の点検に関する記述として、不適切なものは次のうちどれか。ただし、配線の抵抗はないものとする。",
+        "choices": {
+          "ア": "(1) 油温が80℃で、コネクタAの③～④端子間に0.5kΩの接触抵抗が発生している場合、V3は約0.48Vになる。",
+          "イ": "(2) 油温が80℃で、コネクタBの⑦～⑧端子間に1.2kΩの接触抵抗が発生している場合、V2は約1.66Vになる。",
+          "ウ": "(3) 油温が20℃で、コネクタAの①～②端子間に5kΩの接触抵抗が発生している場合、V3は約2.27Vになる。",
+          "エ": "(4) 油温が20℃で、コネクタBの⑤～⑥端子間に1.5kΩの接触抵抗が発生している場合、V1は約1.31Vになる。"
+        },
+        "answer": "ウ",
+        "officialAnswerNumber": "3",
+        "explanation": "公式正答は(3)。20℃でセンサ抵抗は2.5kΩ。信号線に5kΩの接触抵抗が入ると、ECU側は約2.27Vだが、接触抵抗よりセンサ側で測るV3は約0.76Vになる。測定点の取り違えが誤り。",
+        "choiceExplanations": {
+          "ア": "適切。ECU側の等価電源は2.5V・内部抵抗0.75kΩ。80℃ではセンサ0.3kΩとアース側接触抵抗0.5kΩが直列で、V3=2.5×0.3/(0.75＋0.3＋0.5)=0.483871V、約0.48V。",
+          "イ": "適切。センサ0.3kΩとアース側接触抵抗1.2kΩを合わせた1.5kΩにかかるV2=2.5×1.5/(0.75＋1.5)=1.666667V、約1.66Vに対応する。",
+          "ウ": "不適切。20℃のセンサ2.5kΩと信号線接触抵抗5kΩに対し、V3=2.5×2.5/(0.75＋5＋2.5)=0.757576V、約0.76V。2.272727VはECU側信号点の電圧であり、接触抵抗よりセンサ側のV3ではない。",
+          "エ": "公式上は適切。信号線接触抵抗1.5kΩが入るとV1=2.5×2.5/(0.75＋1.5＋2.5)=1.315789V、約1.3Vになる。原問の「約1.31V」はこの電圧に対応する。ただし計算の厳密値を小数第2位へ四捨五入すれば1.32Vであり、途中の2.105263Vを2.10Vへ先に丸めて1.31Vと一致させることはしない。"
+        },
+        "explanationCoverage": "full",
+        "hasImage": true,
+        "sourcePages": [
+          8
+        ],
+        "sourceFigureRequired": true,
+        "topicTags": [
+          "サーミスタ",
+          "電圧分割",
+          "故障診断"
+        ],
+        "difficulty": 5,
+        "isCalculation": true,
+        "needsReview": false,
+        "reviewNotes": [
+          "局所独立査読で全測定点と等価電源を再計算。肢(4)の原問概数と通常の四捨五入との差を明記。"
+        ],
+        "officialReferenceUrls": [],
+        "qualification": "jidousha-seibishi-gakka",
+        "session": "gakka",
+        "type": "multiple-choice",
+        "year": 2025,
+        "fiscalYear": 2025,
+        "season": "second",
+        "term": "second",
+        "subject": "1-small-written",
+        "category": "一級小型自動車（筆記）",
+        "examDate": "2026-03-22",
+        "sourcePdfUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_1k_0.pdf",
+        "sourceAnswerUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_kai.pdf",
+        "sourceAttribution": "出典：日本自動車整備振興会連合会 令和7年度第2回自動車整備技能登録試験 一級小型自動車（筆記） No.10",
+        "officialQuestionStatus": "normal",
+        "lastUpdated": "2026-10-11",
+        "permissionVerified": false,
+        "publicGo": 0,
+        "sourcePageReferences": [
+          {
+            "physicalPage": 8,
+            "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_1k_0.pdf#page=8",
+            "pdfSha256": "9f617d58b464c075aafc9bc042b60ac5b41798654846757490f1a7c7d2102b30"
+          }
+        ],
+        "sourceFigureAssets": [
+          {
+            "physicalPage": 8,
+            "relativePath": "figures/jaspa-2025-second-1-small-written-p08.webp"
+          }
+        ]
+      }
+    },
+    {
+      "id": "jidosha-2025-second-1-small-written-q12",
+      "candidateFile": {
+        "path": "C:\\Users\\kanet\\Documents\\Codex\\2026-10-23\\task-98\\output\\release-1small25a-independent-review\\accepted-candidates\\jidosha-2025-second-1-small-written-q12.json",
+        "sha256": "91348f635f69f09618cd9ec6b24617e43e5578b1dd42ca4a97d6ba11ab369994",
+        "bytes": 3073
+      },
+      "sourceBindings": {
+        "originalQuestion": {
+          "id": "jidosha-2025-second-1-small-written-q12",
+          "questionNumber": 12,
+          "examDate": "2026-03-22",
+          "subject": "1-small-written",
+          "sourcePath": "C:\\Users\\kanet\\Documents\\Codex\\2026-10-23\\task-5\\output\\automotive-forward-20261023\\release-1small25a\\sources\\jaspa-2025-second-1-small-written.pdf",
+          "sha256": "9f617d58b464c075aafc9bc042b60ac5b41798654846757490f1a7c7d2102b30",
+          "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_1k_0.pdf",
+          "physicalPages": [
+            9
+          ]
+        },
+        "officialKey": {
+          "path": "C:\\Users\\kanet\\Documents\\Codex\\2026-10-23\\task-5\\output\\automotive-forward-20261023\\release-1small25a\\sources\\jaspa-2025-second-answers.pdf",
+          "sha256": "2f73820401362ca24f052d8339bf20e4865dab2f2afe74b7c7b546b7b90d6701",
+          "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_kai.pdf",
+          "physicalPage": 1,
+          "column": "12 (1小)",
+          "row": 12,
+          "answerNumber": "1",
+          "answerLabel": "ア"
+        },
+        "sourcePageImageEvidence": [
+          {
+            "path": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\codex-takeover-20261011\\automotive-latest-two\\ocr\\jaspa-2025-second-1-small-written\\page-09.png",
+            "sha256": "09fb4a009dcaef09a208b67821fe93debee16efce743820fe986f230d8c3ee1a",
+            "bytes": 347328,
+            "physicalPage": 9,
+            "sourcePdfSha256": "9f617d58b464c075aafc9bc042b60ac5b41798654846757490f1a7c7d2102b30",
+            "use": "Existing original page image visually compared; no new render or OCR."
+          }
+        ],
+        "requiredFigureBindings": [],
+        "figureRequired": false
+      },
+      "candidate": {
+        "id": "jidosha-2025-second-1-small-written-q12",
+        "qNumber": 12,
+        "question": "コモン・レール式高圧燃料噴射システムに関する次の文章の（イ）から（ニ）に当てはまるものとして、下の組み合わせのうち、適切なものはどれか。インナ・カムの内側に二つのプランジャ・システムが直列に配置されたサプライ・ポンプにおいて、一方のプランジャが吸入開始状態では、インナ・カム内径の（イ）部分に位置しており、このプランジャ側のサクション・コントロール・バルブはエンジンECUからのON信号により（ロ）、インナ・カムが回転していくとプランジャは（ハ）側へ押し（ニ）られ、ポンプ室に燃料が吸入される。",
+        "choices": {
+          "ア": "(1) （イ）最小、（ロ）開き、（ハ）外、（ニ）広げ",
+          "イ": "(2) （イ）最小、（ロ）開き、（ハ）内、（ニ）縮め",
+          "ウ": "(3) （イ）最大、（ロ）閉じ、（ハ）外、（ニ）広げ",
+          "エ": "(4) （イ）最大、（ロ）閉じ、（ハ）内、（ニ）縮め"
+        },
+        "answer": "ア",
+        "officialAnswerNumber": "1",
+        "explanation": "公式正答は(1)。吸入開始時はインナ・カム内径が最小の位置にあり、SCVが開き、プランジャが外側へ移ってポンプ室が広がり、燃料を吸い込む。",
+        "choiceExplanations": {
+          "ア": "カム最小径から外側へ動いて容積が増えるため、SCVを開いて吸入する。",
+          "イ": "内側へ移動して室が縮むなら燃料を吸入できない。",
+          "ウ": "SCVが閉じていては吸入経路が閉ざされる。カム最大径を吸入開始点とする点も違う。",
+          "エ": "プランジャ内側移動で室が縮むのは圧送側であり、SCV閉も吸入に反する。"
+        },
+        "explanationCoverage": "full",
+        "hasImage": false,
+        "sourcePages": [
+          9
+        ],
+        "sourceFigureRequired": false,
+        "topicTags": [
+          "コモンレール",
+          "サプライポンプ"
+        ],
+        "difficulty": 4,
+        "isCalculation": false,
+        "needsReview": false,
+        "reviewNotes": [],
+        "officialReferenceUrls": [],
+        "qualification": "jidousha-seibishi-gakka",
+        "session": "gakka",
+        "type": "multiple-choice",
+        "year": 2025,
+        "fiscalYear": 2025,
+        "season": "second",
+        "term": "second",
+        "subject": "1-small-written",
+        "category": "一級小型自動車（筆記）",
+        "examDate": "2026-03-22",
+        "sourcePdfUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_1k_0.pdf",
+        "sourceAnswerUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_kai.pdf",
+        "sourceAttribution": "出典：日本自動車整備振興会連合会 令和7年度第2回自動車整備技能登録試験 一級小型自動車（筆記） No.12",
+        "officialQuestionStatus": "normal",
+        "lastUpdated": "2026-10-11",
+        "permissionVerified": false,
+        "publicGo": 0,
+        "sourcePageReferences": [
+          {
+            "physicalPage": 9,
+            "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_1k_0.pdf#page=9",
+            "pdfSha256": "9f617d58b464c075aafc9bc042b60ac5b41798654846757490f1a7c7d2102b30"
+          }
+        ],
+        "sourceFigureAssets": []
+      }
+    },
+    {
+      "id": "jidosha-2025-second-1-small-written-q13",
+      "candidateFile": {
+        "path": "C:\\Users\\kanet\\Documents\\Codex\\2026-10-23\\task-98\\output\\release-1small25a-independent-review\\accepted-candidates\\jidosha-2025-second-1-small-written-q13.json",
+        "sha256": "6a465ef396e37c78f72115898581284df610557902f4ee021a49059d175b95a4",
+        "bytes": 3430
+      },
+      "sourceBindings": {
+        "originalQuestion": {
+          "id": "jidosha-2025-second-1-small-written-q13",
+          "questionNumber": 13,
+          "examDate": "2026-03-22",
+          "subject": "1-small-written",
+          "sourcePath": "C:\\Users\\kanet\\Documents\\Codex\\2026-10-23\\task-5\\output\\automotive-forward-20261023\\release-1small25a\\sources\\jaspa-2025-second-1-small-written.pdf",
+          "sha256": "9f617d58b464c075aafc9bc042b60ac5b41798654846757490f1a7c7d2102b30",
+          "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_1k_0.pdf",
+          "physicalPages": [
+            10
+          ]
+        },
+        "officialKey": {
+          "path": "C:\\Users\\kanet\\Documents\\Codex\\2026-10-23\\task-5\\output\\automotive-forward-20261023\\release-1small25a\\sources\\jaspa-2025-second-answers.pdf",
+          "sha256": "2f73820401362ca24f052d8339bf20e4865dab2f2afe74b7c7b546b7b90d6701",
+          "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_kai.pdf",
+          "physicalPage": 1,
+          "column": "12 (1小)",
+          "row": 13,
+          "answerNumber": "3",
+          "answerLabel": "ウ"
+        },
+        "sourcePageImageEvidence": [
+          {
+            "path": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\codex-takeover-20261011\\automotive-latest-two\\ocr\\jaspa-2025-second-1-small-written\\page-10.png",
+            "sha256": "30a6fc9fdb46b06039c208983a87595f610503b71d2961109bebf06ab37c2c64",
+            "bytes": 347506,
+            "physicalPage": 10,
+            "sourcePdfSha256": "9f617d58b464c075aafc9bc042b60ac5b41798654846757490f1a7c7d2102b30",
+            "use": "Existing original page image visually compared; no new render or OCR."
+          }
+        ],
+        "requiredFigureBindings": [],
+        "figureRequired": false
+      },
+      "candidate": {
+        "id": "jidosha-2025-second-1-small-written-q13",
+        "qNumber": 13,
+        "question": "電子制御式スロットル装置を用いた筒内噴射式ガソリン・エンジンに関する記述として、適切なものは次のうちどれか。",
+        "choices": {
+          "ア": "(1) インジェクタには、高電圧大電流に対応した低抵抗コイルが内蔵されているため、作動確認などでバッテリ電圧を直接コイルに印加する場合は、数秒以内（2～3秒程度）で点検を行う必要がある。",
+          "イ": "(2) アクセル及びスロットルの各センサ信号が二重系になっているため、エンジンECUとスロットルECUがアクセル系統もしくはスロットル系統の異常を検出したときでも、すべての故障状況で通常と同じ走行が可能である。",
+          "ウ": "(3) 低速トルク向上制御において、吸入行程の噴射は、自己着火しない程度のリーンな混合となるようにし、圧縮行程中の噴射は、自己着火（ノッキング）が発生する前に火炎伝播により燃焼するようにしているため、耐ノッキング性と低速トルクが向上する。",
+          "エ": "(4) リーンNOx触媒のうちトラップ型のものは、リーン（希薄）燃焼時には、NOx吸蔵物質にNOxを蓄えておき、理論空燃比運転時に一時的に空燃比を薄くすることでNOxを還元している。"
+        },
+        "answer": "ウ",
+        "officialAnswerNumber": "3",
+        "explanation": "公式正答は(3)。吸入・圧縮行程の噴射と火炎伝播を使い、ノッキングを抑えつつ低速トルクを高める。",
+        "choiceExplanations": {
+          "ア": "低抵抗コイルへバッテリ電圧を直接印加すると大電流で損傷するため、数秒以内でも直接印加は避ける。",
+          "イ": "二重系は故障時の退避制御に役立つが、すべての故障で通常どおり走れるわけではない。",
+          "ウ": "吸入行程のリーン化と圧縮行程の噴射による燃焼制御で、耐ノック性とトルクを両立する。",
+          "エ": "NOx吸蔵触媒の再生では空燃比を一時的に濃くして還元する。薄くするとの記述が逆。"
+        },
+        "explanationCoverage": "full",
+        "hasImage": false,
+        "sourcePages": [
+          10
+        ],
+        "sourceFigureRequired": false,
+        "topicTags": [
+          "筒内噴射",
+          "低速トルク"
+        ],
+        "difficulty": 4,
+        "isCalculation": false,
+        "needsReview": false,
+        "reviewNotes": [],
+        "officialReferenceUrls": [],
+        "qualification": "jidousha-seibishi-gakka",
+        "session": "gakka",
+        "type": "multiple-choice",
+        "year": 2025,
+        "fiscalYear": 2025,
+        "season": "second",
+        "term": "second",
+        "subject": "1-small-written",
+        "category": "一級小型自動車（筆記）",
+        "examDate": "2026-03-22",
+        "sourcePdfUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_1k_0.pdf",
+        "sourceAnswerUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_kai.pdf",
+        "sourceAttribution": "出典：日本自動車整備振興会連合会 令和7年度第2回自動車整備技能登録試験 一級小型自動車（筆記） No.13",
+        "officialQuestionStatus": "normal",
+        "lastUpdated": "2026-10-11",
+        "permissionVerified": false,
+        "publicGo": 0,
+        "sourcePageReferences": [
+          {
+            "physicalPage": 10,
+            "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_1k_0.pdf#page=10",
+            "pdfSha256": "9f617d58b464c075aafc9bc042b60ac5b41798654846757490f1a7c7d2102b30"
+          }
+        ],
+        "sourceFigureAssets": []
+      }
+    },
+    {
+      "id": "jidosha-2025-second-1-small-written-q20",
+      "candidateFile": {
+        "path": "C:\\Users\\kanet\\Documents\\Codex\\2026-10-23\\task-98\\output\\release-1small25a-independent-review\\accepted-candidates\\jidosha-2025-second-1-small-written-q20.json",
+        "sha256": "a04056c956583e76b634c52f93a60a818c1df531fa476da9569d98e6205f8f1b",
+        "bytes": 3592
+      },
+      "sourceBindings": {
+        "originalQuestion": {
+          "id": "jidosha-2025-second-1-small-written-q20",
+          "questionNumber": 20,
+          "examDate": "2026-03-22",
+          "subject": "1-small-written",
+          "sourcePath": "C:\\Users\\kanet\\Documents\\Codex\\2026-10-23\\task-5\\output\\automotive-forward-20261023\\release-1small25a\\sources\\jaspa-2025-second-1-small-written.pdf",
+          "sha256": "9f617d58b464c075aafc9bc042b60ac5b41798654846757490f1a7c7d2102b30",
+          "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_1k_0.pdf",
+          "physicalPages": [
+            14
+          ]
+        },
+        "officialKey": {
+          "path": "C:\\Users\\kanet\\Documents\\Codex\\2026-10-23\\task-5\\output\\automotive-forward-20261023\\release-1small25a\\sources\\jaspa-2025-second-answers.pdf",
+          "sha256": "2f73820401362ca24f052d8339bf20e4865dab2f2afe74b7c7b546b7b90d6701",
+          "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_kai.pdf",
+          "physicalPage": 1,
+          "column": "12 (1小)",
+          "row": 20,
+          "answerNumber": "1",
+          "answerLabel": "ア"
+        },
+        "sourcePageImageEvidence": [
+          {
+            "path": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\codex-takeover-20261011\\automotive-latest-two\\ocr\\jaspa-2025-second-1-small-written\\page-14.png",
+            "sha256": "200bdc7ceb89c9d9ceae3372157c19ddf9849d7d2da38e1ad98215efdbb168a3",
+            "bytes": 441887,
+            "physicalPage": 14,
+            "sourcePdfSha256": "9f617d58b464c075aafc9bc042b60ac5b41798654846757490f1a7c7d2102b30",
+            "use": "Existing original page image visually compared; no new render or OCR."
+          }
+        ],
+        "requiredFigureBindings": [],
+        "figureRequired": false
+      },
+      "candidate": {
+        "id": "jidosha-2025-second-1-small-written-q20",
+        "qNumber": 20,
+        "question": "オート・エアコンに関する記述として、適切なものは次のうちどれか。",
+        "choices": {
+          "ア": "(1) 運転モードにはAUTOスイッチで行うオート運転と、各マニュアル・モード・スイッチを選択して行うマニュアル運転があり、エア・ミックス・モータの駆動は、マニュアル運転時においても内気センサで検知した室温と設定温度との差によって自動で行われる。",
+          "イ": "(2) ホト・ダイオードを用いた日射センサの回路構成で、プルアップ抵抗（R）（信号線より上流に設定）が設定されている場合、センサ信号電圧値は、光量が小さいときには小さく、光量が大きくなるに従い大きくなる特性になる。",
+          "ウ": "(3) スリップ・リング・リダクション式モード・アクチュエータとステッピング・モータ式モード・アクチュエータの共通点として、オート・エアコンECUとアクチュエータ間には各モード・ポジションの信号線に加え、F/Bセンサ用の信号線を設けて異常検知を容易にしている。",
+          "エ": "(4) ファン型の内気（車室内）温度センサは、空調エア・ダクトのエア流速で絞り弁の先端部分に負圧を発生させ、車室内のエアを検知用空気流入口から吸い込み、温度センサに反応させて車室内温度の計測を行っている。"
+        },
+        "answer": "ア",
+        "officialAnswerNumber": "1",
+        "explanation": "公式正答は(1)。吹出口などを手動選択しても、温度制御のエア・ミックスは室温と設定温度の差に応じて自動駆動する。",
+        "choiceExplanations": {
+          "ア": "マニュアル・モード中も温度設定に応じたエア・ミックス制御を行う。",
+          "イ": "プルアップ回路のホト・ダイオードは受光量増加で電流が増え、信号点の電圧は下がる。記述の増減が逆。",
+          "ウ": "ステッピング・モータ式は駆動ステップで位置を管理でき、両方式に同じF/Bセンサ線が必ず付くわけではない。",
+          "エ": "ファン型はファンで室内空気を引き込む。ダクト流の負圧を使うのはアスピレータ型の説明。"
+        },
+        "explanationCoverage": "full",
+        "hasImage": false,
+        "sourcePages": [
+          14
+        ],
+        "sourceFigureRequired": false,
+        "topicTags": [
+          "オートエアコン",
+          "温度制御"
+        ],
+        "difficulty": 3,
+        "isCalculation": false,
+        "needsReview": false,
+        "reviewNotes": [],
+        "officialReferenceUrls": [],
+        "qualification": "jidousha-seibishi-gakka",
+        "session": "gakka",
+        "type": "multiple-choice",
+        "year": 2025,
+        "fiscalYear": 2025,
+        "season": "second",
+        "term": "second",
+        "subject": "1-small-written",
+        "category": "一級小型自動車（筆記）",
+        "examDate": "2026-03-22",
+        "sourcePdfUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_1k_0.pdf",
+        "sourceAnswerUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_kai.pdf",
+        "sourceAttribution": "出典：日本自動車整備振興会連合会 令和7年度第2回自動車整備技能登録試験 一級小型自動車（筆記） No.20",
+        "officialQuestionStatus": "normal",
+        "lastUpdated": "2026-10-11",
+        "permissionVerified": false,
+        "publicGo": 0,
+        "sourcePageReferences": [
+          {
+            "physicalPage": 14,
+            "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_1k_0.pdf#page=14",
+            "pdfSha256": "9f617d58b464c075aafc9bc042b60ac5b41798654846757490f1a7c7d2102b30"
+          }
+        ],
+        "sourceFigureAssets": []
+      }
+    },
+    {
+      "id": "jidosha-2025-second-1-small-written-q21",
+      "candidateFile": {
+        "path": "C:\\Users\\kanet\\Documents\\Codex\\2026-10-23\\task-98\\output\\release-1small25a-independent-review\\accepted-candidates\\jidosha-2025-second-1-small-written-q21.json",
+        "sha256": "d8f0700bc821dad04aa2065fbc8a65635854d21b091c9713870cf6cc466d81c9",
+        "bytes": 3652
+      },
+      "sourceBindings": {
+        "originalQuestion": {
+          "id": "jidosha-2025-second-1-small-written-q21",
+          "questionNumber": 21,
+          "examDate": "2026-03-22",
+          "subject": "1-small-written",
+          "sourcePath": "C:\\Users\\kanet\\Documents\\Codex\\2026-10-23\\task-5\\output\\automotive-forward-20261023\\release-1small25a\\sources\\jaspa-2025-second-1-small-written.pdf",
+          "sha256": "9f617d58b464c075aafc9bc042b60ac5b41798654846757490f1a7c7d2102b30",
+          "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_1k_0.pdf",
+          "physicalPages": [
+            14
+          ]
+        },
+        "officialKey": {
+          "path": "C:\\Users\\kanet\\Documents\\Codex\\2026-10-23\\task-5\\output\\automotive-forward-20261023\\release-1small25a\\sources\\jaspa-2025-second-answers.pdf",
+          "sha256": "2f73820401362ca24f052d8339bf20e4865dab2f2afe74b7c7b546b7b90d6701",
+          "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_kai.pdf",
+          "physicalPage": 1,
+          "column": "12 (1小)",
+          "row": 21,
+          "answerNumber": "2",
+          "answerLabel": "イ"
+        },
+        "sourcePageImageEvidence": [
+          {
+            "path": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\codex-takeover-20261011\\automotive-latest-two\\ocr\\jaspa-2025-second-1-small-written\\page-14.png",
+            "sha256": "200bdc7ceb89c9d9ceae3372157c19ddf9849d7d2da38e1ad98215efdbb168a3",
+            "bytes": 441887,
+            "physicalPage": 14,
+            "sourcePdfSha256": "9f617d58b464c075aafc9bc042b60ac5b41798654846757490f1a7c7d2102b30",
+            "use": "Existing original page image visually compared; no new render or OCR."
+          }
+        ],
+        "requiredFigureBindings": [],
+        "figureRequired": false
+      },
+      "candidate": {
+        "id": "jidosha-2025-second-1-small-written-q21",
+        "qNumber": 21,
+        "question": "前進4段のロックアップ機構付き電子制御式ATに用いられるセンサ及びセンサ信号の異常検知に関する記述として、不適切なものは次のうちどれか。",
+        "choices": {
+          "ア": "(1) ポテンショ・メータ式スロットル・ポジション・センサの内部に取り付けられているスロットル・バルブ・スイッチには、アイドル接点とフル接点の二つの接点があり、その接点からの信号電圧は、スロットル・ポジション・センサに異常が発生したときに使用される。",
+          "イ": "(2) リニア信号センサに分類される機械式油圧センサは、5V安定化電源を利用して、オイル・ポンプの吐出圧、ライン・プレッシャ、パイロット・プレッシャなどの圧力変化に応じたセンサ信号電圧を出力している。",
+          "ウ": "(3) ハードウェアによる異常検知では、センサ回路（電源から入力回路に入るまで）の回路構成の仕組みとプログラムのマップ・データを活用して、センサの規定値から外れた信号電圧が入力回路に入力したとき、又は信号電圧なしの場合に異常検知が行われるが、主な検知対象は、センサ信号線の断線及び短絡である。",
+          "エ": "(4) ソフトウェアによる異常検知では、ハードウェアでは検知できないものが対象となり、信号電圧が正常値の範囲であっても、信号電圧の変化値が車両の運転上あり得ないもの、又は他のセンサ信号との類推比較で車両の運転上あり得ないものを検知対象としている。"
+        },
+        "answer": "イ",
+        "officialAnswerNumber": "2",
+        "explanation": "公式正答は(2)。機械式油圧センサを5Vのリニア信号電圧出力型とする記述が不適切である。",
+        "choiceExplanations": {
+          "ア": "アイドル接点とフル接点の信号はポテンショメータ異常時の代替情報として使える。",
+          "イ": "機械式油圧検出機構と電子式の5V給電・連続電圧出力センサを混同している。",
+          "ウ": "回路の電圧異常や信号欠落から断線・短絡を検知する。",
+          "エ": "範囲内電圧でも変化速度や他センサとの整合性により不合理な信号を検知できる。"
+        },
+        "explanationCoverage": "full",
+        "hasImage": false,
+        "sourcePages": [
+          14
+        ],
+        "sourceFigureRequired": false,
+        "topicTags": [
+          "電子制御AT",
+          "センサ診断"
+        ],
+        "difficulty": 4,
+        "isCalculation": false,
+        "needsReview": false,
+        "reviewNotes": [],
+        "officialReferenceUrls": [],
+        "qualification": "jidousha-seibishi-gakka",
+        "session": "gakka",
+        "type": "multiple-choice",
+        "year": 2025,
+        "fiscalYear": 2025,
+        "season": "second",
+        "term": "second",
+        "subject": "1-small-written",
+        "category": "一級小型自動車（筆記）",
+        "examDate": "2026-03-22",
+        "sourcePdfUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_1k_0.pdf",
+        "sourceAnswerUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_kai.pdf",
+        "sourceAttribution": "出典：日本自動車整備振興会連合会 令和7年度第2回自動車整備技能登録試験 一級小型自動車（筆記） No.21",
+        "officialQuestionStatus": "normal",
+        "lastUpdated": "2026-10-11",
+        "permissionVerified": false,
+        "publicGo": 0,
+        "sourcePageReferences": [
+          {
+            "physicalPage": 14,
+            "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_1k_0.pdf#page=14",
+            "pdfSha256": "9f617d58b464c075aafc9bc042b60ac5b41798654846757490f1a7c7d2102b30"
+          }
+        ],
+        "sourceFigureAssets": []
+      }
+    },
+    {
+      "id": "jidosha-2025-second-1-small-written-q23",
+      "candidateFile": {
+        "path": "C:\\Users\\kanet\\Documents\\Codex\\2026-10-23\\task-98\\output\\release-1small25a-independent-review\\accepted-candidates\\jidosha-2025-second-1-small-written-q23.json",
+        "sha256": "797430a9b1aca84704d1af2c4f4c3d656c3e744af7d7d998a76c71d3ebe9e6cc",
+        "bytes": 2778
+      },
+      "sourceBindings": {
+        "originalQuestion": {
+          "id": "jidosha-2025-second-1-small-written-q23",
+          "questionNumber": 23,
+          "examDate": "2026-03-22",
+          "subject": "1-small-written",
+          "sourcePath": "C:\\Users\\kanet\\Documents\\Codex\\2026-10-23\\task-5\\output\\automotive-forward-20261023\\release-1small25a\\sources\\jaspa-2025-second-1-small-written.pdf",
+          "sha256": "9f617d58b464c075aafc9bc042b60ac5b41798654846757490f1a7c7d2102b30",
+          "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_1k_0.pdf",
+          "physicalPages": [
+            15
+          ]
+        },
+        "officialKey": {
+          "path": "C:\\Users\\kanet\\Documents\\Codex\\2026-10-23\\task-5\\output\\automotive-forward-20261023\\release-1small25a\\sources\\jaspa-2025-second-answers.pdf",
+          "sha256": "2f73820401362ca24f052d8339bf20e4865dab2f2afe74b7c7b546b7b90d6701",
+          "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_kai.pdf",
+          "physicalPage": 1,
+          "column": "12 (1小)",
+          "row": 23,
+          "answerNumber": "1",
+          "answerLabel": "ア"
+        },
+        "sourcePageImageEvidence": [
+          {
+            "path": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\codex-takeover-20261011\\automotive-latest-two\\ocr\\jaspa-2025-second-1-small-written\\page-15.png",
+            "sha256": "f2da82f803babdaa0ac6beef469085bf8cce58f4903463931b3b325a3fa78942",
+            "bytes": 359845,
+            "physicalPage": 15,
+            "sourcePdfSha256": "9f617d58b464c075aafc9bc042b60ac5b41798654846757490f1a7c7d2102b30",
+            "use": "Existing original page image visually compared; no new render or OCR."
+          }
+        ],
+        "requiredFigureBindings": [
+          {
+            "bookId": "jaspa-2025-second-1-small-written",
+            "physicalPage": 15,
+            "pdfSha256": "9f617d58b464c075aafc9bc042b60ac5b41798654846757490f1a7c7d2102b30",
+            "officialUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_1k_0.pdf#page=15",
+            "originalQuestionIds": [
+              "jidosha-2025-second-1-small-written-q23"
+            ],
+            "relativePath": "figures/jaspa-2025-second-1-small-written-p15.webp",
+            "width": 1490,
+            "height": 2106,
+            "sha256": "40c1e5c9a587e35ab1f4d4ac73dd92b80482a912580ede6c32ac2accc6857053",
+            "bytes": 198494,
+            "processing": "Original PDF physical page rendered to PNG, then converted to WebP; no retouch or generated content.",
+            "localPath": "C:\\Users\\kanet\\Documents\\Codex\\2026-10-23\\task-5\\output\\automotive-forward-20261023\\release-1small25a\\figures\\jaspa-2025-second-1-small-written-p15.webp"
+          }
+        ],
+        "figureRequired": true
+      },
+      "candidate": {
+        "id": "jidosha-2025-second-1-small-written-q23",
+        "qNumber": 23,
+        "question": "FF式の車両に採用されているVSCS（ビークル・スタビリティ・コントロール・システム）について、右旋回時におけるオーバステアの抑制作動を説明した図として、適切なものは次のうちどれか。",
+        "choices": {
+          "ア": "(1) 図(1)：旋回外側の前輪を制動し、車体に図示のオーバステア抑制モーメントを与える。",
+          "イ": "(2) 図(2)：旋回外側の前輪を制動し、図(1)と逆向きのモーメントを与える。",
+          "ウ": "(3) 図(3)：複数輪に制動力を与え、図(2)と同じ向きのモーメントを与える。",
+          "エ": "(4) 図(4)：複数輪に制動力を与え、図(1)と同じ向きのモーメントを与える。"
+        },
+        "answer": "ア",
+        "officialAnswerNumber": "1",
+        "explanation": "公式正答は(1)。右旋回のオーバステアでは過大な右回頭を抑える左向きのヨーモーメントが必要で、旋回外側の前輪に制動力を与える図が該当する。",
+        "choiceExplanations": {
+          "ア": "外側前輪を制動して過大な右回頭に逆らうモーメントを作る。",
+          "イ": "制動輪は同様でも矢印のモーメントが過大回頭を助長する向き。",
+          "ウ": "制動力を複数輪へ与え、矢印の向きも抑制と逆。",
+          "エ": "抑制向きの矢印でも複数輪の制動表現が図(1)の作動と異なる。"
+        },
+        "explanationCoverage": "full",
+        "hasImage": true,
+        "sourcePages": [
+          15
+        ],
+        "sourceFigureRequired": true,
+        "topicTags": [
+          "車両安定制御",
+          "オーバステア"
+        ],
+        "difficulty": 4,
+        "isCalculation": false,
+        "needsReview": false,
+        "reviewNotes": [],
+        "officialReferenceUrls": [],
+        "qualification": "jidousha-seibishi-gakka",
+        "session": "gakka",
+        "type": "multiple-choice",
+        "year": 2025,
+        "fiscalYear": 2025,
+        "season": "second",
+        "term": "second",
+        "subject": "1-small-written",
+        "category": "一級小型自動車（筆記）",
+        "examDate": "2026-03-22",
+        "sourcePdfUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_1k_0.pdf",
+        "sourceAnswerUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_kai.pdf",
+        "sourceAttribution": "出典：日本自動車整備振興会連合会 令和7年度第2回自動車整備技能登録試験 一級小型自動車（筆記） No.23",
+        "officialQuestionStatus": "normal",
+        "lastUpdated": "2026-10-11",
+        "permissionVerified": false,
+        "publicGo": 0,
+        "sourcePageReferences": [
+          {
+            "physicalPage": 15,
+            "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_1k_0.pdf#page=15",
+            "pdfSha256": "9f617d58b464c075aafc9bc042b60ac5b41798654846757490f1a7c7d2102b30"
+          }
+        ],
+        "sourceFigureAssets": [
+          {
+            "physicalPage": 15,
+            "relativePath": "figures/jaspa-2025-second-1-small-written-p15.webp"
+          }
+        ]
+      }
+    },
+    {
+      "id": "jidosha-2025-second-1-small-written-q24",
+      "candidateFile": {
+        "path": "C:\\Users\\kanet\\Documents\\Codex\\2026-10-23\\task-98\\output\\release-1small25a-independent-review\\accepted-candidates\\jidosha-2025-second-1-small-written-q24.json",
+        "sha256": "b283bf1c0e301aaa372a31365a52f305251143d06a9a60c2d61c15319148debd",
+        "bytes": 3734
+      },
+      "sourceBindings": {
+        "originalQuestion": {
+          "id": "jidosha-2025-second-1-small-written-q24",
+          "questionNumber": 24,
+          "examDate": "2026-03-22",
+          "subject": "1-small-written",
+          "sourcePath": "C:\\Users\\kanet\\Documents\\Codex\\2026-10-23\\task-5\\output\\automotive-forward-20261023\\release-1small25a\\sources\\jaspa-2025-second-1-small-written.pdf",
+          "sha256": "9f617d58b464c075aafc9bc042b60ac5b41798654846757490f1a7c7d2102b30",
+          "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_1k_0.pdf",
+          "physicalPages": [
+            16
+          ]
+        },
+        "officialKey": {
+          "path": "C:\\Users\\kanet\\Documents\\Codex\\2026-10-23\\task-5\\output\\automotive-forward-20261023\\release-1small25a\\sources\\jaspa-2025-second-answers.pdf",
+          "sha256": "2f73820401362ca24f052d8339bf20e4865dab2f2afe74b7c7b546b7b90d6701",
+          "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_kai.pdf",
+          "physicalPage": 1,
+          "column": "12 (1小)",
+          "row": 24,
+          "answerNumber": "3",
+          "answerLabel": "ウ"
+        },
+        "sourcePageImageEvidence": [
+          {
+            "path": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\codex-takeover-20261011\\automotive-latest-two\\ocr\\jaspa-2025-second-1-small-written\\page-16.png",
+            "sha256": "8883bb551cf231b65b6b3fef306431a49ceeeeb5edcea71f6faa4579342fab55",
+            "bytes": 449917,
+            "physicalPage": 16,
+            "sourcePdfSha256": "9f617d58b464c075aafc9bc042b60ac5b41798654846757490f1a7c7d2102b30",
+            "use": "Existing original page image visually compared; no new render or OCR."
+          }
+        ],
+        "requiredFigureBindings": [
+          {
+            "bookId": "jaspa-2025-second-1-small-written",
+            "physicalPage": 16,
+            "pdfSha256": "9f617d58b464c075aafc9bc042b60ac5b41798654846757490f1a7c7d2102b30",
+            "officialUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_1k_0.pdf#page=16",
+            "originalQuestionIds": [
+              "jidosha-2025-second-1-small-written-q24"
+            ],
+            "relativePath": "figures/jaspa-2025-second-1-small-written-p16.webp",
+            "width": 1490,
+            "height": 2106,
+            "sha256": "8b989f7a57961c183a421e0d8ba7d6f8ff5e04303fd3a0535149b7f787968fdb",
+            "bytes": 268450,
+            "processing": "Original PDF physical page rendered to PNG, then converted to WebP; no retouch or generated content.",
+            "localPath": "C:\\Users\\kanet\\Documents\\Codex\\2026-10-23\\task-5\\output\\automotive-forward-20261023\\release-1small25a\\figures\\jaspa-2025-second-1-small-written-p16.webp"
+          }
+        ],
+        "figureRequired": true
+      },
+      "candidate": {
+        "id": "jidosha-2025-second-1-small-written-q24",
+        "qNumber": 24,
+        "question": "EPSのトルク・センサに、図1に示す信号電圧特性をもつ差動同軸トランスを用いた図2の差動トランス式トルク・センサ回路の点検に関する記述として、不適切なものは次のうちどれか。",
+        "choices": {
+          "ア": "(1) ステアリング・ホイールをCCW方向一杯に転舵してロックさせたときに、V3の信号電圧波形が図3のコイルbと同じ信号電圧波形の場合、コイルb側駆動線の断線は考えられないが、V4の信号電圧波形が図3のコイルbと異なる場合は信号線の断線が考えられる。",
+          "イ": "(2) ステアリング・ホイールが直進・中立（反力なし）のときに、V3とV4ともに図4のコイルbの信号電圧波形と同じ信号電圧波形が発生しない場合、EPS・ECU本体の異常、信号線の短絡（地絡）が考えられる。",
+          "ウ": "(3) ステアリング・ホイールをCCW方向一杯に転舵してロックさせたときに、V4の信号電圧波形が図3のコイルbと異なる場合、コイルa側駆動線の断線は考えられないが、コイルb側駆動線の断線は考えられる。",
+          "エ": "(4) ステアリング・ホイールが直進・中立（反力なし）のときに、V1とV2の信号電圧波形が異なる場合、コイルa側駆動線の異常（断線又は抵抗の増大）、信号線の異常（断線又は抵抗の増大）が考えられる。"
+        },
+        "answer": "ウ",
+        "officialAnswerNumber": "3",
+        "explanation": "公式正答は(3)。V4でコイルbの波形が異なっても、その原因をコイルb側駆動線の断線だけに結び付け、コイルa側を除外することはできない。二つのコイルの差動出力と測定位置を考慮する。",
+        "choiceExplanations": {
+          "ア": "センサ側V3で規定波形があればその側の駆動は働いており、ECU側V4との差は間の信号線を疑う。",
+          "イ": "センサ側・ECU側とも規定波形を失う場合、出力回路や信号短絡などが候補になる。",
+          "ウ": "差動トランスの出力は両コイルの励磁状態に依存する。V4の不一致のみではコイルa側異常を除外できない。",
+          "エ": "センサ側V1とECU側V2で波形が異なれば、励磁線や出力信号線の異常を切り分ける。"
+        },
+        "explanationCoverage": "full",
+        "hasImage": true,
+        "sourcePages": [
+          16
+        ],
+        "sourceFigureRequired": true,
+        "topicTags": [
+          "EPS",
+          "トルクセンサ",
+          "故障診断"
+        ],
+        "difficulty": 5,
+        "isCalculation": false,
+        "needsReview": false,
+        "reviewNotes": [],
+        "officialReferenceUrls": [],
+        "qualification": "jidousha-seibishi-gakka",
+        "session": "gakka",
+        "type": "multiple-choice",
+        "year": 2025,
+        "fiscalYear": 2025,
+        "season": "second",
+        "term": "second",
+        "subject": "1-small-written",
+        "category": "一級小型自動車（筆記）",
+        "examDate": "2026-03-22",
+        "sourcePdfUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_1k_0.pdf",
+        "sourceAnswerUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_kai.pdf",
+        "sourceAttribution": "出典：日本自動車整備振興会連合会 令和7年度第2回自動車整備技能登録試験 一級小型自動車（筆記） No.24",
+        "officialQuestionStatus": "normal",
+        "lastUpdated": "2026-10-11",
+        "permissionVerified": false,
+        "publicGo": 0,
+        "sourcePageReferences": [
+          {
+            "physicalPage": 16,
+            "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_1k_0.pdf#page=16",
+            "pdfSha256": "9f617d58b464c075aafc9bc042b60ac5b41798654846757490f1a7c7d2102b30"
+          }
+        ],
+        "sourceFigureAssets": [
+          {
+            "physicalPage": 16,
+            "relativePath": "figures/jaspa-2025-second-1-small-written-p16.webp"
+          }
+        ]
+      }
+    },
+    {
+      "id": "jidosha-2025-second-1-small-written-q25",
+      "candidateFile": {
+        "path": "C:\\Users\\kanet\\Documents\\Codex\\2026-10-23\\task-98\\output\\release-1small25a-independent-review\\accepted-candidates\\jidosha-2025-second-1-small-written-q25.json",
+        "sha256": "11a55b9a0ad69129449a563731802f9639b4aa46c9b7004645e953933e54f91d",
+        "bytes": 3854
+      },
+      "sourceBindings": {
+        "originalQuestion": {
+          "id": "jidosha-2025-second-1-small-written-q25",
+          "questionNumber": 25,
+          "examDate": "2026-03-22",
+          "subject": "1-small-written",
+          "sourcePath": "C:\\Users\\kanet\\Documents\\Codex\\2026-10-23\\task-5\\output\\automotive-forward-20261023\\release-1small25a\\sources\\jaspa-2025-second-1-small-written.pdf",
+          "sha256": "9f617d58b464c075aafc9bc042b60ac5b41798654846757490f1a7c7d2102b30",
+          "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_1k_0.pdf",
+          "physicalPages": [
+            17
+          ]
+        },
+        "officialKey": {
+          "path": "C:\\Users\\kanet\\Documents\\Codex\\2026-10-23\\task-5\\output\\automotive-forward-20261023\\release-1small25a\\sources\\jaspa-2025-second-answers.pdf",
+          "sha256": "2f73820401362ca24f052d8339bf20e4865dab2f2afe74b7c7b546b7b90d6701",
+          "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_kai.pdf",
+          "physicalPage": 1,
+          "column": "12 (1小)",
+          "row": 25,
+          "answerNumber": "4",
+          "answerLabel": "エ"
+        },
+        "sourcePageImageEvidence": [
+          {
+            "path": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\codex-takeover-20261011\\automotive-latest-two\\ocr\\jaspa-2025-second-1-small-written\\page-17.png",
+            "sha256": "60f3f027e1ebf478b449b18e524cc328e1cc5194aa3d46e65210573ad51230db",
+            "bytes": 327302,
+            "physicalPage": 17,
+            "sourcePdfSha256": "9f617d58b464c075aafc9bc042b60ac5b41798654846757490f1a7c7d2102b30",
+            "use": "Existing original page image visually compared; no new render or OCR."
+          }
+        ],
+        "requiredFigureBindings": [
+          {
+            "bookId": "jaspa-2025-second-1-small-written",
+            "physicalPage": 17,
+            "pdfSha256": "9f617d58b464c075aafc9bc042b60ac5b41798654846757490f1a7c7d2102b30",
+            "officialUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_1k_0.pdf#page=17",
+            "originalQuestionIds": [
+              "jidosha-2025-second-1-small-written-q25"
+            ],
+            "relativePath": "figures/jaspa-2025-second-1-small-written-p17.webp",
+            "width": 1490,
+            "height": 2106,
+            "sha256": "5a5227644410a2334d80c87f8211887acbb94fa175bc4dcd1b2929404ca674c3",
+            "bytes": 194034,
+            "processing": "Original PDF physical page rendered to PNG, then converted to WebP; no retouch or generated content.",
+            "localPath": "C:\\Users\\kanet\\Documents\\Codex\\2026-10-23\\task-5\\output\\automotive-forward-20261023\\release-1small25a\\figures\\jaspa-2025-second-1-small-written-p17.webp"
+          }
+        ],
+        "figureRequired": true
+      },
+      "candidate": {
+        "id": "jidosha-2025-second-1-small-written-q25",
+        "qNumber": 25,
+        "question": "図に示すオート・エアコンに用いられるリサーキュレーション・アクチュエータ（ロータ・リダクション式）の回路点検に関する記述として、不適切なものは次のうちどれか。なお、図は、アクチュエータのスリットがFRESHモードの駆動停止位置にあるときを示している。",
+        "choices": {
+          "ア": "(1) スリットがRECモードの駆動停止位置にあるときに、V1には12Vの電圧が発生し、FRESHモードに切り替えたとき、V1が12Vのまま電圧が変化しない場合は、オート・エアコンECU本体の異常が考えられるが、FRESH駆動信号線の断線は考えられない。",
+          "イ": "(2) スリットがFRESHモードの駆動停止位置にあるときに、V1とV2の両方に12Vの電圧が発生する場合、アクチュエータの異常が考えられ、V3とV4の両方に電圧が発生しない場合も、アクチュエータの異常が考えられる。",
+          "ウ": "(3) スリットがFRESHモードの駆動停止位置にあるときに、V4に12Vの電圧が発生し、V3には電圧が発生しない場合、REC駆動信号線の断線が考えられるが、オート・エアコンECU本体、アクチュエータの異常は考えられない。",
+          "エ": "(4) スリットがRECモードの駆動停止位置にあるときに、V3とV4の両方に12Vの電圧が発生する場合、アクチュエータの異常が考えられ、V1とV2の両方に電圧が発生しない場合は、FRESH駆動信号線の短絡（地絡）が考えられるが、オート・エアコンECU本体の異常は考えられない。"
+        },
+        "answer": "エ",
+        "officialAnswerNumber": "4",
+        "explanation": "公式正答は(4)。V1とV2の両方が0Vとなるとき、FRESH信号線の地絡のほかECUの駆動回路異常もあり得る。ECU異常を除外する部分が誤り。",
+        "choiceExplanations": {
+          "ア": "ECU側V1が12VのままならECU側の切替駆動を疑い、信号線の断線なら測定点間に差が出る。",
+          "イ": "同じ信号線の両端が等しいのに期待電位と違えば、アクチュエータ内部接点の異常が候補になる。",
+          "ウ": "REC線のECU側とアクチュエータ側で電位差があれば、間の線の断線を疑う。",
+          "エ": "FRESH線の両端が0Vなら地絡だけでなく、ECUが信号を正しく出していない可能性もある。"
+        },
+        "explanationCoverage": "full",
+        "hasImage": true,
+        "sourcePages": [
+          17
+        ],
+        "sourceFigureRequired": true,
+        "topicTags": [
+          "オートエアコン",
+          "アクチュエータ",
+          "故障診断"
+        ],
+        "difficulty": 5,
+        "isCalculation": false,
+        "needsReview": false,
+        "reviewNotes": [],
+        "officialReferenceUrls": [],
+        "qualification": "jidousha-seibishi-gakka",
+        "session": "gakka",
+        "type": "multiple-choice",
+        "year": 2025,
+        "fiscalYear": 2025,
+        "season": "second",
+        "term": "second",
+        "subject": "1-small-written",
+        "category": "一級小型自動車（筆記）",
+        "examDate": "2026-03-22",
+        "sourcePdfUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_1k_0.pdf",
+        "sourceAnswerUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_kai.pdf",
+        "sourceAttribution": "出典：日本自動車整備振興会連合会 令和7年度第2回自動車整備技能登録試験 一級小型自動車（筆記） No.25",
+        "officialQuestionStatus": "normal",
+        "lastUpdated": "2026-10-11",
+        "permissionVerified": false,
+        "publicGo": 0,
+        "sourcePageReferences": [
+          {
+            "physicalPage": 17,
+            "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_1k_0.pdf#page=17",
+            "pdfSha256": "9f617d58b464c075aafc9bc042b60ac5b41798654846757490f1a7c7d2102b30"
+          }
+        ],
+        "sourceFigureAssets": [
+          {
+            "physicalPage": 17,
+            "relativePath": "figures/jaspa-2025-second-1-small-written-p17.webp"
+          }
+        ]
+      }
+    }
+  ],
+  "publicGo": 0,
+  "permissionVerified": false,
+  "publicationAuthorizedByThisReview": false,
+  "repositoryIdGrowth": 0,
+  "productionRegistryGrowth": 0
+}

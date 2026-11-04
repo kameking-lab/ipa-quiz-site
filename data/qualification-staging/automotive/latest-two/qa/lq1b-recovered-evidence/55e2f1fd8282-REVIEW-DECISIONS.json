@@ -1,0 +1,801 @@
+{
+  "schemaVersion": 1,
+  "packet": "B",
+  "inputPacketPath": "C:\\Users\\kanet\\Documents\\Codex\\2026-10-23\\task-4\\automotive-20261023-fast-ab-packets\\PACKET-B.json",
+  "inputPacketSha256": "f08b978183509d507a4865aad4f8db38cb02f688ef8c99f764c80e09a7a47dac",
+  "questionCount": 15,
+  "passCount": 12,
+  "holdCount": 3,
+  "passChoiceReasonsAccepted": 48,
+  "holdChoiceReasonsProvisional": 12,
+  "questions": [
+    {
+      "id": "jidosha-2026-first-2-gasoline-q04",
+      "qNumber": 4,
+      "status": "PASS",
+      "officialAnswerNumber": "2",
+      "answer": "イ",
+      "questionText": "直巻式スタータの出力特性に関する次の文章の（イ）から（ハ）に当てはまるものとして、下の組み合わせのうち、適切なものはどれか。スタータにより、エンジンが回り始めて回転抵抗が減少すると、スタータの駆動トルクの方が（イ）ので回転速度は上昇するが、逆向きの誘導起電力が（ロ）ので、アーマチュアに流れる電流が（ハ）し、エンジンは一定の回転速度で駆動される。",
+      "choicesAndReasons": [
+        {
+          "label": "ア",
+          "questionChoice": "(1) イ：大きい、ロ：減る、ハ：増加",
+          "packetReason": "不適切。駆動トルクが大きい点は合うが、速度上昇時の逆起電力は減らずに増え、電流は減少する。",
+          "reviewedReason": "不適切。駆動トルクが大きい点は合うが、速度上昇時の逆起電力は減らずに増え、電流は減少する。",
+          "provisionalReasonOnHold": null,
+          "reasonStatus": "accepted"
+        },
+        {
+          "label": "イ",
+          "questionChoice": "(2) イ：大きい、ロ：増える、ハ：減少",
+          "packetReason": "適切。駆動トルクが大きく加速し、逆起電力増加で電流が減少する。",
+          "reviewedReason": "適切。駆動トルクが大きく加速し、逆起電力増加で電流が減少する。",
+          "provisionalReasonOnHold": null,
+          "reasonStatus": "accepted"
+        },
+        {
+          "label": "ウ",
+          "questionChoice": "(3) イ：小さい、ロ：増える、ハ：増加",
+          "packetReason": "不適切。加速開始時は駆動トルクが回転抵抗より大きい。逆起電力の増加で電流も減少する。",
+          "reviewedReason": "不適切。加速開始時は駆動トルクが回転抵抗より大きい。逆起電力の増加で電流も減少する。",
+          "provisionalReasonOnHold": null,
+          "reasonStatus": "accepted"
+        },
+        {
+          "label": "エ",
+          "questionChoice": "(4) イ：小さい、ロ：減る、ハ：減少",
+          "packetReason": "不適切。駆動トルクの大小と逆起電力の変化が逆。速度上昇で逆起電力は増える。",
+          "reviewedReason": "不適切。駆動トルクの大小と逆起電力の変化が逆。速度上昇で逆起電力は増える。",
+          "provisionalReasonOnHold": null,
+          "reasonStatus": "accepted"
+        }
+      ],
+      "technicalReview": "原紙p3の三欄・選択肢を画像照合。直巻直流機では速度上昇で逆起電力が増し、I=(V-E)/R が減る。",
+      "holdReason": null,
+      "sourcePages": [
+        3
+      ],
+      "figureSha256": [
+        "d30b4cede31594d4e67018962b3a787b89085e0acf003c359458e06271e45599"
+      ],
+      "originalQuestionPdfSha256": "d4928e4405dd5933fc42eb31200b5ad6480cb2057474e04ee342b405b8ab9c33",
+      "sameEditionKeyPdfSha256": "7f3a3405cd428510d0d585ceb96425c0b3ec9fd30c80696607fa5c595f20f23d",
+      "independentCalculation": null,
+      "directTechnicalReferenceUrl": []
+    },
+    {
+      "id": "jidosha-2026-first-2-gasoline-q05",
+      "qNumber": 5,
+      "status": "PASS",
+      "officialAnswerNumber": "1",
+      "answer": "ア",
+      "questionText": "電子制御式スロットル装置に関する記述として、適切なものは次のうちどれか。",
+      "choicesAndReasons": [
+        {
+          "label": "ア",
+          "questionChoice": "(1) トラクション・コントロール制御は、ブレーキECUなどからの信号によりスロットル・バルブを開閉し、エンジン出力を制御して走行安定性を確保している。",
+          "packetReason": "適切。ブレーキECU等との連携でスロットルを制御し、駆動力を下げて走行安定性を確保する。",
+          "reviewedReason": "適切。ブレーキECU等との連携でスロットルを制御し、駆動力を下げて走行安定性を確保する。",
+          "provisionalReasonOnHold": null,
+          "reasonStatus": "accepted"
+        },
+        {
+          "label": "イ",
+          "questionChoice": "(2) スロットル・ポジション・センサは、スロットル・バルブ・シャフトの同軸上に取り付けられ、アクセル・ペダルの踏み込み角度を検出している。",
+          "packetReason": "不適切。スロットル・ポジション・センサが検出するのはスロットル・バルブの開度。ペダル角度はアクセル・ペダル・ポジション・センサで検出する。",
+          "reviewedReason": "不適切。スロットル・ポジション・センサが検出するのはスロットル・バルブの開度。ペダル角度はアクセル・ペダル・ポジション・センサで検出する。",
+          "provisionalReasonOnHold": null,
+          "reasonStatus": "accepted"
+        },
+        {
+          "label": "ウ",
+          "questionChoice": "(3) アイドル回転速度制御は、一般にISCV（アイドル・スピード・コントロール・バルブ）で行っている。",
+          "packetReason": "不適切。電子制御式スロットルではバルブ開度そのものでアイドル回転速度を調整でき、別体のISCVを一般に用いる説明は合わない。",
+          "reviewedReason": "不適切。電子制御式スロットルではバルブ開度そのものでアイドル回転速度を調整でき、別体のISCVを一般に用いる説明は合わない。",
+          "provisionalReasonOnHold": null,
+          "reasonStatus": "accepted"
+        },
+        {
+          "label": "エ",
+          "questionChoice": "(4) スロットル・バルブの開度制御が通常モードのときは、スロットル・バルブ開度とアクセル・ペダルの踏み込み角度は比例する。",
+          "packetReason": "不適切。電子制御で要求トルクや運転状態に合わせて開度を設定するため、ペダル踏み込み角と単純比例しない。",
+          "reviewedReason": "不適切。電子制御で要求トルクや運転状態に合わせて開度を設定するため、ペダル踏み込み角と単純比例しない。",
+          "provisionalReasonOnHold": null,
+          "reasonStatus": "accepted"
+        }
+      ],
+      "technicalReview": "原紙p3の文言を画像照合。スロットル軸角とペダル角の検出対象、電子スロットルのトルク制御を区別。",
+      "holdReason": null,
+      "sourcePages": [
+        3
+      ],
+      "figureSha256": [],
+      "originalQuestionPdfSha256": "d4928e4405dd5933fc42eb31200b5ad6480cb2057474e04ee342b405b8ab9c33",
+      "sameEditionKeyPdfSha256": "7f3a3405cd428510d0d585ceb96425c0b3ec9fd30c80696607fa5c595f20f23d",
+      "independentCalculation": null,
+      "directTechnicalReferenceUrl": []
+    },
+    {
+      "id": "jidosha-2026-first-2-gasoline-q07",
+      "qNumber": 7,
+      "status": "PASS",
+      "officialAnswerNumber": "3",
+      "answer": "ウ",
+      "questionText": "吸排気装置における過給機に関する記述として、適切なものは次のうちどれか。",
+      "choicesAndReasons": [
+        {
+          "label": "ア",
+          "questionChoice": "(1) 一般に、ターボ・チャージャに用いられているフル・フローティング・ベアリングの周速は、シャフトの周速と同じである。",
+          "packetReason": "不適切。フル・フローティング・ベアリングはシャフトと一緒に同じ周速で回るものではなく、内外に油膜を形成する。",
+          "reviewedReason": "不適切。フル・フローティング・ベアリングはシャフトと一緒に同じ周速で回るものではなく、内外に油膜を形成する。",
+          "provisionalReasonOnHold": null,
+          "reasonStatus": "accepted"
+        },
+        {
+          "label": "イ",
+          "questionChoice": "(2) 2葉ルーツ式のスーパー・チャージャでは、ロータ1回転につき2回の吸入・吐出が行われる。",
+          "packetReason": "不適切。二葉ルーツ式は一対のロータが1回転する間に4回吐出する。大晃機械工業の二葉ブロワの動作説明も1回転当たり4回とし、2回という記述と異なる。",
+          "reviewedReason": "不適切。二葉ルーツ式は一対のロータが1回転する間に4回吐出する。大晃機械工業の二葉ブロワの動作説明も1回転当たり4回とし、2回という記述と異なる。",
+          "provisionalReasonOnHold": null,
+          "reasonStatus": "accepted"
+        },
+        {
+          "label": "ウ",
+          "questionChoice": "(3) ターボ・チャージャは、小型軽量で取り付け位置の自由度は高いが、排気エネルギの小さい低速回転域からの立ち上がりに遅れが生じ易い。",
+          "packetReason": "適切。排気エネルギが小さい低速域では、タービンの立ち上がりに遅れが生じやすい。",
+          "reviewedReason": "適切。排気エネルギが小さい低速域では、タービンの立ち上がりに遅れが生じやすい。",
+          "provisionalReasonOnHold": null,
+          "reasonStatus": "accepted"
+        },
+        {
+          "label": "エ",
+          "questionChoice": "(4) 2葉ルーツ式のスーパー・チャージャには、過給圧が高くなって規定値以上になると、過給圧の一部を排気側へ逃がし、過給圧を規定値に制御するエア・バイパス・バルブが設けられている。",
+          "packetReason": "不適切。エア・バイパス・バルブは吸気側へ空気を戻す。過給圧を排気側へ逃がすという説明が違う。",
+          "reviewedReason": "不適切。エア・バイパス・バルブは吸気側へ空気を戻す。過給圧を排気側へ逃がすという説明が違う。",
+          "provisionalReasonOnHold": null,
+          "reasonStatus": "accepted"
+        }
+      ],
+      "technicalReview": "二葉ルーツは1回転4吐出と既存のメーカー直接資料で確認。ターボの排気駆動・吸気バイパスの機構を照合。",
+      "holdReason": null,
+      "sourcePages": [
+        4
+      ],
+      "figureSha256": [],
+      "originalQuestionPdfSha256": "d4928e4405dd5933fc42eb31200b5ad6480cb2057474e04ee342b405b8ab9c33",
+      "sameEditionKeyPdfSha256": "7f3a3405cd428510d0d585ceb96425c0b3ec9fd30c80696607fa5c595f20f23d",
+      "independentCalculation": null,
+      "directTechnicalReferenceUrl": [
+        "https://www.taiko-kk.com/jp/product/roots_blower/"
+      ]
+    },
+    {
+      "id": "jidosha-2026-first-2-gasoline-q09",
+      "qNumber": 9,
+      "status": "PASS",
+      "officialAnswerNumber": "1",
+      "answer": "ア",
+      "questionText": "点火順序が1―5―3―6―2―4の4サイクル直列6シリンダ・エンジンに関する次の文章の（イ）と（ロ）に当てはまるものとして、下の組み合わせのうち、適切なものはどれか。第3シリンダが圧縮上死点にあり、この位置からクランクシャフトを回転方向に回転させ、第5シリンダのバルブをオーバラップの上死点状態にするために必要な回転角度は（イ）である。その状態から更にクランクシャフトを回転方向に240°回転させたとき、圧縮上死点にあるのは（ロ）である。",
+      "choicesAndReasons": [
+        {
+          "label": "ア",
+          "questionChoice": "(1) イ：240°、ロ：第1シリンダ",
+          "packetReason": "適切。第5のオーバラップは240°後、そこから240°後は第1の圧縮上死点。",
+          "reviewedReason": "適切。第5のオーバラップは240°後、そこから240°後は第1の圧縮上死点。",
+          "provisionalReasonOnHold": null,
+          "reasonStatus": "accepted"
+        },
+        {
+          "label": "イ",
+          "questionChoice": "(2) イ：360°、ロ：第3シリンダ",
+          "packetReason": "不適切。第5のオーバラップまで360°ではなく240°。第3も480°後の圧縮上死点ではない。",
+          "reviewedReason": "不適切。第5のオーバラップまで360°ではなく240°。第3も480°後の圧縮上死点ではない。",
+          "provisionalReasonOnHold": null,
+          "reasonStatus": "accepted"
+        },
+        {
+          "label": "ウ",
+          "questionChoice": "(3) イ：240°、ロ：第5シリンダ",
+          "packetReason": "不適切。240°は合うが、追加の240°後に圧縮上死点となるのは第1。",
+          "reviewedReason": "不適切。240°は合うが、追加の240°後に圧縮上死点となるのは第1。",
+          "provisionalReasonOnHold": null,
+          "reasonStatus": "accepted"
+        },
+        {
+          "label": "エ",
+          "questionChoice": "(4) イ：360°、ロ：第6シリンダ",
+          "packetReason": "不適切。最初の角度は240°で、追加後の圧縮上死点は第1。",
+          "reviewedReason": "不適切。最初の角度は240°で、追加後の圧縮上死点は第1。",
+          "provisionalReasonOnHold": null,
+          "reasonStatus": "accepted"
+        }
+      ],
+      "technicalReview": "原紙p5の組み合わせを画像照合。4サイクル6気筒の圧縮上死点間隔120°から独立検算。",
+      "holdReason": null,
+      "sourcePages": [
+        5
+      ],
+      "figureSha256": [
+        "736e2b4fc26149878a2e552bc9812553541f3362aeae2c56bdaf042b188600eb"
+      ],
+      "originalQuestionPdfSha256": "d4928e4405dd5933fc42eb31200b5ad6480cb2057474e04ee342b405b8ab9c33",
+      "sameEditionKeyPdfSha256": "7f3a3405cd428510d0d585ceb96425c0b3ec9fd30c80696607fa5c595f20f23d",
+      "independentCalculation": "720°/6=120°。第3圧縮を0°とすると第5圧縮600°、同気筒オーバラップ240°。そこから240°で480°、第1圧縮。",
+      "directTechnicalReferenceUrl": []
+    },
+    {
+      "id": "jidosha-2026-first-2-gasoline-q11",
+      "qNumber": 11,
+      "status": "PASS",
+      "officialAnswerNumber": "3",
+      "answer": "ウ",
+      "questionText": "バッテリに関する記述として、不適切なものは次のうちどれか。",
+      "choicesAndReasons": [
+        {
+          "label": "ア",
+          "questionChoice": "(1) 低アンチモン・バッテリは低コストが利点であるが、メンテナンス・フリー（MF）特性はハイブリッド・バッテリに比べて悪い。",
+          "packetReason": "適切。低アンチモン型はコスト面に利点があるが、補水を減らすMF性能はハイブリッド型より劣る。",
+          "reviewedReason": "適切。低アンチモン型はコスト面に利点があるが、補水を減らすMF性能はハイブリッド型より劣る。",
+          "provisionalReasonOnHold": null,
+          "reasonStatus": "accepted"
+        },
+        {
+          "label": "イ",
+          "questionChoice": "(2) カルシウム・バッテリは、MF特性を向上させるために電極（正極・負極）にカルシウム（Ca）鉛合金を使用している。",
+          "packetReason": "適切。正負極にカルシウム鉛合金を使い、自己放電や水の消耗を抑える。",
+          "reviewedReason": "適切。正負極にカルシウム鉛合金を使い、自己放電や水の消耗を抑える。",
+          "provisionalReasonOnHold": null,
+          "reasonStatus": "accepted"
+        },
+        {
+          "label": "ウ",
+          "questionChoice": "(3) ハイブリッド・バッテリは、正極にカルシウム鉛合金、負極にアンチモン（Sb）鉛合金を使用している。",
+          "packetReason": "不適切。ハイブリッド型は正極側が低アンチモン、負極側がカルシウム。記述の組み合わせは逆。",
+          "reviewedReason": "不適切。ハイブリッド型は正極側が低アンチモン、負極側がカルシウム。記述の組み合わせは逆。",
+          "provisionalReasonOnHold": null,
+          "reasonStatus": "accepted"
+        },
+        {
+          "label": "エ",
+          "questionChoice": "(4) 制御弁式バッテリは、電解液の蒸発がないことから補水できない構造となっておりメンテナンスは不要である。",
+          "packetReason": "適切。制御弁式は密閉構造とガス再結合を利用し、通常の補水を要しない。",
+          "reviewedReason": "適切（試験上の通常運用）。制御弁式はガス再結合などで水の損失を抑え、補水を前提としない。過充電時まで水分損失が絶対にゼロという意味ではない。",
+          "provisionalReasonOnHold": null,
+          "reasonStatus": "accepted"
+        }
+      ],
+      "technicalReview": "原紙p5の四肢を画像照合。ハイブリッド型の正極低アンチモン・負極Caを確認。制御弁式の補水不要は通常運用に限定して理由を明確化。",
+      "holdReason": null,
+      "sourcePages": [
+        5
+      ],
+      "figureSha256": [],
+      "originalQuestionPdfSha256": "d4928e4405dd5933fc42eb31200b5ad6480cb2057474e04ee342b405b8ab9c33",
+      "sameEditionKeyPdfSha256": "7f3a3405cd428510d0d585ceb96425c0b3ec9fd30c80696607fa5c595f20f23d",
+      "independentCalculation": null,
+      "directTechnicalReferenceUrl": []
+    },
+    {
+      "id": "jidosha-2026-first-2-gasoline-q14",
+      "qNumber": 14,
+      "status": "PASS",
+      "officialAnswerNumber": "1",
+      "answer": "ア",
+      "questionText": "スパーク・プラグに関する記述として、不適切なものは次のうちどれか。",
+      "choicesAndReasons": [
+        {
+          "label": "ア",
+          "questionChoice": "(1) 混合気の空燃比が大き過ぎる場合は、着火ミスは発生しないが、逆に小さ過ぎる場合は、燃焼が円滑に行われないため、着火ミスが発生する。",
+          "packetReason": "不適切。極端に薄い混合気でも燃焼が不安定になり、着火ミスが発生する。",
+          "reviewedReason": "不適切。極端に薄い混合気でも燃焼が不安定になり、着火ミスが発生する。",
+          "provisionalReasonOnHold": null,
+          "reasonStatus": "accepted"
+        },
+        {
+          "label": "イ",
+          "questionChoice": "(2) 高熱価型プラグは、低熱価型プラグと比較して、火炎にさらされる部分の表面積及びガス・ポケットの容積が小さい。",
+          "packetReason": "適切。高熱価型は受熱面積とガス・ポケットが小さく、熱を逃がしやすい。",
+          "reviewedReason": "適切。高熱価型は受熱面積とガス・ポケットが小さく、熱を逃がしやすい。",
+          "provisionalReasonOnHold": null,
+          "reasonStatus": "accepted"
+        },
+        {
+          "label": "ウ",
+          "questionChoice": "(3) スパーク・プラグの中心電極を細くすると、飛火性が向上するとともに着火性も向上する。",
+          "packetReason": "適切。細い中心電極は電界を集中させ、放電と火炎核の成長を助ける。",
+          "reviewedReason": "適切。細い中心電極は電界を集中させ、放電と火炎核の成長を助ける。",
+          "provisionalReasonOnHold": null,
+          "reasonStatus": "accepted"
+        },
+        {
+          "label": "エ",
+          "questionChoice": "(4) 着火ミスは、電極の消炎作用が強過ぎるとき、又は吸入混合気の流速が高過ぎる（速過ぎる）場合に起きやすい。",
+          "packetReason": "適切。電極が火炎核の熱を奪い過ぎたり、流速が速過ぎたりすると失火しやすい。",
+          "reviewedReason": "適切。電極が火炎核の熱を奪い過ぎたり、流速が速過ぎたりすると失火しやすい。",
+          "provisionalReasonOnHold": null,
+          "reasonStatus": "accepted"
+        }
+      ],
+      "technicalReview": "薄すぎる混合気の失火、プラグの熱価・細径電極・消炎作用を機構から照合。",
+      "holdReason": null,
+      "sourcePages": [
+        6
+      ],
+      "figureSha256": [],
+      "originalQuestionPdfSha256": "d4928e4405dd5933fc42eb31200b5ad6480cb2057474e04ee342b405b8ab9c33",
+      "sameEditionKeyPdfSha256": "7f3a3405cd428510d0d585ceb96425c0b3ec9fd30c80696607fa5c595f20f23d",
+      "independentCalculation": null,
+      "directTechnicalReferenceUrl": []
+    },
+    {
+      "id": "jidosha-2026-first-2-gasoline-q16",
+      "qNumber": 16,
+      "status": "PASS",
+      "officialAnswerNumber": "4",
+      "answer": "エ",
+      "questionText": "ホイール・アライメントに関する記述として、不適切なものは次のうちどれか。",
+      "choicesAndReasons": [
+        {
+          "label": "ア",
+          "questionChoice": "(1) キャスタがある場合は、車両の荷重によって車体をもとの水平状態（ホイールを直進状態）に戻そうとする復元力が生まれ直進性が保たれる。",
+          "packetReason": "正しい。キャスタは操舵輪の復元作用を生む。",
+          "reviewedReason": "正しい。キャスタは操舵輪の復元作用を生む。",
+          "provisionalReasonOnHold": null,
+          "reasonStatus": "accepted"
+        },
+        {
+          "label": "イ",
+          "questionChoice": "(2) 旋回時に車体が傾斜した場合のキャンバ変化は、車軸懸架式ではほとんど変化しないが、独立懸架式では大きく変化する。",
+          "packetReason": "正しい。車軸懸架式と独立懸架式では車体傾斜時のキャンバ変化が異なる。",
+          "reviewedReason": "正しい。車軸懸架式と独立懸架式では車体傾斜時のキャンバ変化が異なる。",
+          "provisionalReasonOnHold": null,
+          "reasonStatus": "accepted"
+        },
+        {
+          "label": "ウ",
+          "questionChoice": "(3) フロント・ホイールを横方向から見て、キング・ピンの頂部が、進行方向（前進）に対して後方に傾斜しているものをプラス・キャスタという。",
+          "packetReason": "正しい。頂部が後方へ傾くのはプラス・キャスタ。",
+          "reviewedReason": "正しい。頂部が後方へ傾くのはプラス・キャスタ。",
+          "provisionalReasonOnHold": null,
+          "reasonStatus": "accepted"
+        },
+        {
+          "label": "エ",
+          "questionChoice": "(4) 車両を前方から見ると、一般にキング・ピンは内側に傾けて取り付けられており、その中心線と鉛直線のなす角度をセット・バック角という。",
+          "packetReason": "誤り。その角度はキング・ピン傾角である。",
+          "reviewedReason": "誤り。その角度はキング・ピン傾角である。",
+          "provisionalReasonOnHold": null,
+          "reasonStatus": "accepted"
+        }
+      ],
+      "technicalReview": "キャスタの復元作用、懸架方式によるキャンバ変化、キングピン傾角とセットバックの定義を照合。",
+      "holdReason": null,
+      "sourcePages": [
+        7
+      ],
+      "figureSha256": [],
+      "originalQuestionPdfSha256": "d4928e4405dd5933fc42eb31200b5ad6480cb2057474e04ee342b405b8ab9c33",
+      "sameEditionKeyPdfSha256": "7f3a3405cd428510d0d585ceb96425c0b3ec9fd30c80696607fa5c595f20f23d",
+      "independentCalculation": null,
+      "directTechnicalReferenceUrl": []
+    },
+    {
+      "id": "jidosha-2026-first-2-gasoline-q19",
+      "qNumber": 19,
+      "status": "PASS",
+      "officialAnswerNumber": "3",
+      "answer": "ウ",
+      "questionText": "サスペンションのスプリングに関する記述として、適切なものは次のうちどれか。",
+      "choicesAndReasons": [
+        {
+          "label": "ア",
+          "questionChoice": "(1) エア・スプリングのばね定数は、荷重が大きくなるとレベリング・バルブの作用により小さくなる。",
+          "packetReason": "不適切。レベリング・バルブは車高を保つため空気量を調整する。荷重増でばね定数が小さくなる説明は逆。",
+          "reviewedReason": "不適切。レベリング・バルブは車高を保つため空気量を調整する。荷重増でばね定数が小さくなる説明は逆。",
+          "provisionalReasonOnHold": null,
+          "reasonStatus": "accepted"
+        },
+        {
+          "label": "イ",
+          "questionChoice": "(2) ばね定数が大きいスプリングは、小さいスプリングに比べてばねは柔らかい。",
+          "packetReason": "不適切。ばね定数が大きいほど硬い。",
+          "reviewedReason": "不適切。ばね定数が大きいほど硬い。",
+          "provisionalReasonOnHold": null,
+          "reasonStatus": "accepted"
+        },
+        {
+          "label": "ウ",
+          "questionChoice": "(3) 金属ばねを用いたボデーの上下方向の固有振動数は、荷重が軽いときは大きく、荷重が重くなると小さくなる。",
+          "packetReason": "適切。質量が増えると固有振動数は小さくなる。",
+          "reviewedReason": "適切。質量が増えると固有振動数は小さくなる。",
+          "provisionalReasonOnHold": null,
+          "reasonStatus": "accepted"
+        },
+        {
+          "label": "エ",
+          "questionChoice": "(4) エア・スプリングは、金属スプリングと比較して、荷重の変化に対してばね定数が自動的に変化するので、固有振動数は比例して大きくなる。",
+          "packetReason": "不適切。エア・スプリングは荷重に応じばね定数を変えて固有振動数をほぼ一定にできる。比例して増えるわけではない。",
+          "reviewedReason": "不適切。エア・スプリングは荷重に応じばね定数を変えて固有振動数をほぼ一定にできる。比例して増えるわけではない。",
+          "provisionalReasonOnHold": null,
+          "reasonStatus": "accepted"
+        }
+      ],
+      "technicalReview": "金属ばねの固有振動数 f=(1/2π)√(k/m) と、エアばねの車高調整・ばね定数を照合。",
+      "holdReason": null,
+      "sourcePages": [
+        8
+      ],
+      "figureSha256": [],
+      "originalQuestionPdfSha256": "d4928e4405dd5933fc42eb31200b5ad6480cb2057474e04ee342b405b8ab9c33",
+      "sameEditionKeyPdfSha256": "7f3a3405cd428510d0d585ceb96425c0b3ec9fd30c80696607fa5c595f20f23d",
+      "independentCalculation": null,
+      "directTechnicalReferenceUrl": []
+    },
+    {
+      "id": "jidosha-2026-first-2-gasoline-q21",
+      "qNumber": 21,
+      "status": "HOLD",
+      "officialAnswerNumber": "3",
+      "answer": "ウ",
+      "questionText": "ブレーキに関する記述として、不適切なものは次のうちどれか。",
+      "choicesAndReasons": [
+        {
+          "label": "ア",
+          "questionChoice": "(1) ブレーキは、自動車の運動エネルギを熱エネルギに変えて制動する装置である。",
+          "packetReason": "適切。摩擦ブレーキは運動エネルギを熱に変える。",
+          "reviewedReason": null,
+          "provisionalReasonOnHold": "適切。摩擦ブレーキは運動エネルギを熱に変える。",
+          "reasonStatus": "unverified_due_to_question_hold"
+        },
+        {
+          "label": "イ",
+          "questionChoice": "(2) 停止距離とは、運転者がアクセル・ペダルから足を離したときから車両が停止するまでに車両が進んだ距離をいい、空走距離と制動距離を合わせたものをいう。",
+          "packetReason": "適切。停止距離は空走距離と制動距離の和。",
+          "reviewedReason": null,
+          "provisionalReasonOnHold": "適切。停止距離は空走距離と制動距離の和。",
+          "reasonStatus": "unverified_due_to_question_hold"
+        },
+        {
+          "label": "ウ",
+          "questionChoice": "(3) ブレーキ液の沸点は、ブレーキ液に含まれる水分の量に大きく左右され、水分が多いほど上昇する。",
+          "packetReason": "不適切。水分が増えるほどブレーキ液の沸点は低下する。",
+          "reviewedReason": null,
+          "provisionalReasonOnHold": "不適切。水分が増えるほどブレーキ液の沸点は低下する。",
+          "reasonStatus": "unverified_due_to_question_hold"
+        },
+        {
+          "label": "エ",
+          "questionChoice": "(4) フェードとは、降坂時の連続的制動などの際に、ブレーキ・ライニングが過熱して、材質が一時的に変化し、摩擦係数が下がり、ブレーキの効きが悪くなる現象をいう。",
+          "packetReason": "適切。ライニングの過熱で摩擦係数が下がる現象がフェード。",
+          "reviewedReason": null,
+          "provisionalReasonOnHold": "適切。ライニングの過熱で摩擦係数が下がる現象がフェード。",
+          "reasonStatus": "unverified_due_to_question_hold"
+        }
+      ],
+      "technicalReview": "原紙・正答表は確認。選択肢イの停止距離の起点を独立に裏づける直接資料が不足。",
+      "holdReason": "選択肢イは停止距離の起点を『アクセル・ペダルから足を離したとき』とする。空走距離＋制動距離という理由だけでは、この起点を裏づけられない。原紙と正答表以外の直接資料がなく、四肢を確定できない。",
+      "sourcePages": [
+        8
+      ],
+      "figureSha256": [],
+      "originalQuestionPdfSha256": "d4928e4405dd5933fc42eb31200b5ad6480cb2057474e04ee342b405b8ab9c33",
+      "sameEditionKeyPdfSha256": "7f3a3405cd428510d0d585ceb96425c0b3ec9fd30c80696607fa5c595f20f23d",
+      "independentCalculation": null,
+      "directTechnicalReferenceUrl": []
+    },
+    {
+      "id": "jidosha-2026-first-2-gasoline-q23",
+      "qNumber": 23,
+      "status": "PASS",
+      "officialAnswerNumber": "3",
+      "answer": "ウ",
+      "questionText": "前進4段のロックアップ機構付き電子制御式ATのトルク・コンバータに関する記述として、不適切なものは次のうちどれか。",
+      "choicesAndReasons": [
+        {
+          "label": "ア",
+          "questionChoice": "(1) カップリング・レンジでは、トルクの増大作用は行われない。",
+          "packetReason": "適切。カップリング・レンジではステータによるトルク増大がなくなる。",
+          "reviewedReason": "適切。カップリング・レンジではステータによるトルク増大がなくなる。",
+          "provisionalReasonOnHold": null,
+          "reasonStatus": "accepted"
+        },
+        {
+          "label": "イ",
+          "questionChoice": "(2) トルク比は、タービン・ランナが停止（速度比ゼロ）しているときが最大である。",
+          "packetReason": "適切。タービン停止時は速度比ゼロでトルク比が最大。",
+          "reviewedReason": "適切。タービン停止時は速度比ゼロでトルク比が最大。",
+          "provisionalReasonOnHold": null,
+          "reasonStatus": "accepted"
+        },
+        {
+          "label": "ウ",
+          "questionChoice": "(3) コンバータ・レンジでは、速度比に比例して伝達効率が上昇する。",
+          "packetReason": "不適切。効率は速度比に単純比例しない。",
+          "reviewedReason": "不適切。伝達効率は速度比×トルク比で、コンバータ・レンジではトルク比も速度比とともに変わるため、速度比への単純比例にはならない。",
+          "provisionalReasonOnHold": null,
+          "reasonStatus": "accepted"
+        },
+        {
+          "label": "エ",
+          "questionChoice": "(4) クラッチ・ポイントの速度比は、一般に0.8～0.9程度である。",
+          "packetReason": "適切。クラッチ・ポイントは一般に速度比0.8～0.9程度。",
+          "reviewedReason": "適切。クラッチ・ポイントは一般に速度比0.8～0.9程度。",
+          "provisionalReasonOnHold": null,
+          "reasonStatus": "accepted"
+        }
+      ],
+      "technicalReview": "トルクコンバータの効率は速度比×トルク比であり、トルク比が変化するため単純比例しないことを照合。",
+      "holdReason": null,
+      "sourcePages": [
+        9
+      ],
+      "figureSha256": [],
+      "originalQuestionPdfSha256": "d4928e4405dd5933fc42eb31200b5ad6480cb2057474e04ee342b405b8ab9c33",
+      "sameEditionKeyPdfSha256": "7f3a3405cd428510d0d585ceb96425c0b3ec9fd30c80696607fa5c595f20f23d",
+      "independentCalculation": null,
+      "directTechnicalReferenceUrl": []
+    },
+    {
+      "id": "jidosha-2026-first-2-gasoline-q26",
+      "qNumber": 26,
+      "status": "PASS",
+      "officialAnswerNumber": "1",
+      "answer": "ア",
+      "questionText": "ツイスト・ペア線を用いたCAN通信に関する記述として、適切なものは次のうちどれか。",
+      "choicesAndReasons": [
+        {
+          "label": "ア",
+          "questionChoice": "(1) CANは、一つのECUが複数のデータ・フレームを送信したり、バス・ライン上のデータを必要とする複数のECUが同時にデータ・フレームを受信することができる。",
+          "packetReason": "適切。共通バスへの送信と複数ノードの同時受信が可能。",
+          "reviewedReason": "適切。共通バスへの送信と複数ノードの同時受信が可能。",
+          "provisionalReasonOnHold": null,
+          "reasonStatus": "accepted"
+        },
+        {
+          "label": "イ",
+          "questionChoice": "(2) CAN-H、CAN-Lともに2.5Vの状態をドミナントという。",
+          "packetReason": "不適切。両線約2.5Vはリセッシブ状態。ドミナントでは差動電圧が生じる。",
+          "reviewedReason": "不適切。両線約2.5Vはリセッシブ状態。ドミナントでは差動電圧が生じる。",
+          "provisionalReasonOnHold": null,
+          "reasonStatus": "accepted"
+        },
+        {
+          "label": "ウ",
+          "questionChoice": "(3) 一端の終端抵抗が断線していても通信は継続され、耐ノイズ性にも影響はないが、ダイアグノーシス・コードが出力されることがある。",
+          "packetReason": "不適切。終端抵抗の断線は反射や耐ノイズ性に影響する。",
+          "reviewedReason": "不適切。終端抵抗の断線は反射や耐ノイズ性に影響する。",
+          "provisionalReasonOnHold": null,
+          "reasonStatus": "accepted"
+        },
+        {
+          "label": "エ",
+          "questionChoice": "(4) バス・オフ状態とは、エラーを検知し、リカバリ後にエラーが解消し、通信を再開した状態をいう。",
+          "packetReason": "不適切。バス・オフはエラーが規定量を超えて通信から離脱した状態。",
+          "reviewedReason": "不適切。バス・オフはエラーが規定量を超えて通信から離脱した状態。",
+          "provisionalReasonOnHold": null,
+          "reasonStatus": "accepted"
+        }
+      ],
+      "technicalReview": "CAN差動信号のリセッシブ/ドミナント、終端、バスオフ、複数ECU受信を照合。",
+      "holdReason": null,
+      "sourcePages": [
+        10
+      ],
+      "figureSha256": [],
+      "originalQuestionPdfSha256": "d4928e4405dd5933fc42eb31200b5ad6480cb2057474e04ee342b405b8ab9c33",
+      "sameEditionKeyPdfSha256": "7f3a3405cd428510d0d585ceb96425c0b3ec9fd30c80696607fa5c595f20f23d",
+      "independentCalculation": null,
+      "directTechnicalReferenceUrl": []
+    },
+    {
+      "id": "jidosha-2026-first-2-gasoline-q28",
+      "qNumber": 28,
+      "status": "PASS",
+      "officialAnswerNumber": "1",
+      "answer": "ア",
+      "questionText": "CVT（スチール・ベルトを用いたベルト式無段変速機）に関する記述として、不適切なものは次のうちどれか。",
+      "choicesAndReasons": [
+        {
+          "label": "ア",
+          "questionChoice": "(1) スチール・ベルトは、エレメントの伸張作用（エレメントの引っ張り）によって動力が伝達される。",
+          "packetReason": "不適切。エレメントの圧縮・押し出し作用で伝達する。",
+          "reviewedReason": "不適切。エレメントの圧縮・押し出し作用で伝達する。",
+          "provisionalReasonOnHold": null,
+          "reasonStatus": "accepted"
+        },
+        {
+          "label": "イ",
+          "questionChoice": "(2) CVTは、プラネタリ・ギヤ・ユニット式ATより更にごみを嫌うので、点検時等にごみがユニット内に入り込まないように十分注意する必要がある。",
+          "packetReason": "適切。ベルトとプーリは異物に敏感で、点検時のごみ混入防止が重要。",
+          "reviewedReason": "適切。ベルトとプーリは異物に敏感で、点検時のごみ混入防止が重要。",
+          "provisionalReasonOnHold": null,
+          "reasonStatus": "accepted"
+        },
+        {
+          "label": "ウ",
+          "questionChoice": "(3) 可動シーブは、油圧によりボール・スプラインの軸上をしゅう動し、プーリの溝幅を任意に可変できる仕組みになっている。",
+          "packetReason": "適切。油圧で可動シーブを動かし溝幅を変える。",
+          "reviewedReason": "適切。油圧で可動シーブを動かし溝幅を変える。",
+          "provisionalReasonOnHold": null,
+          "reasonStatus": "accepted"
+        },
+        {
+          "label": "エ",
+          "questionChoice": "(4) プライマリ・プーリに掛かる作動油圧が高いときは、プライマリ・プーリの溝幅が狭くなるため、プライマリ・プーリに掛かるスチール・ベルトの接触半径は大きくなる。",
+          "packetReason": "適切。プライマリ側の溝を狭めるとベルトの接触半径が大きくなる。",
+          "reviewedReason": "適切。プライマリ側の溝を狭めるとベルトの接触半径が大きくなる。",
+          "provisionalReasonOnHold": null,
+          "reasonStatus": "accepted"
+        }
+      ],
+      "technicalReview": "スチールベルトのエレメントは圧縮伝力。油圧による可動シーブ・接触半径変化を照合。",
+      "holdReason": null,
+      "sourcePages": [
+        11
+      ],
+      "figureSha256": [],
+      "originalQuestionPdfSha256": "d4928e4405dd5933fc42eb31200b5ad6480cb2057474e04ee342b405b8ab9c33",
+      "sameEditionKeyPdfSha256": "7f3a3405cd428510d0d585ceb96425c0b3ec9fd30c80696607fa5c595f20f23d",
+      "independentCalculation": null,
+      "directTechnicalReferenceUrl": []
+    },
+    {
+      "id": "jidosha-2026-first-2-gasoline-q35",
+      "qNumber": 35,
+      "status": "PASS",
+      "officialAnswerNumber": "3",
+      "answer": "ウ",
+      "questionText": "図に示す電気回路において、電流計Aが示す電流値として、適切なものは次のうちどれか。ただし、バッテリ、配線等の抵抗はないものとする。",
+      "choicesAndReasons": [
+        {
+          "label": "ア",
+          "questionChoice": "(1) 5A",
+          "packetReason": "不適切。抵抗を直列に足す計算ではない。",
+          "reviewedReason": "不適切。4本の抵抗は直列ではなく並列で、各枝の電流は12A、3A、12A、3A。合計は5Aではなく30A。",
+          "provisionalReasonOnHold": null,
+          "reasonStatus": "accepted"
+        },
+        {
+          "label": "イ",
+          "questionChoice": "(2) 16A",
+          "packetReason": "不適切。4枝すべての電流を加えると30A。",
+          "reviewedReason": "不適切。4枝すべての電流を加えると30A。",
+          "provisionalReasonOnHold": null,
+          "reasonStatus": "accepted"
+        },
+        {
+          "label": "ウ",
+          "questionChoice": "(3) 30A",
+          "packetReason": "適切。各枝12A、3A、12A、3Aの合計。",
+          "reviewedReason": "適切。各枝12A、3A、12A、3Aの合計。",
+          "provisionalReasonOnHold": null,
+          "reasonStatus": "accepted"
+        },
+        {
+          "label": "エ",
+          "questionChoice": "(4) 55A",
+          "packetReason": "不適切。並列合成電流の計算値と合わない。",
+          "reviewedReason": "不適切。並列合成電流の計算値と合わない。",
+          "provisionalReasonOnHold": null,
+          "reasonStatus": "accepted"
+        }
+      ],
+      "technicalReview": "原紙p13の図を画像照合。12V並列の1Ω,4Ω,1Ω,4Ωを分数演算で独立検算。",
+      "holdReason": null,
+      "sourcePages": [
+        13
+      ],
+      "figureSha256": [
+        "1565f9aef5c7c5d1c50cc912a1619e4068b291bc00d738762172fa937e89a6ad"
+      ],
+      "originalQuestionPdfSha256": "d4928e4405dd5933fc42eb31200b5ad6480cb2057474e04ee342b405b8ab9c33",
+      "sameEditionKeyPdfSha256": "7f3a3405cd428510d0d585ceb96425c0b3ec9fd30c80696607fa5c595f20f23d",
+      "independentCalculation": "各枝12/1=12A、12/4=3A、12/1=12A、12/4=3A。合計30A、合成抵抗0.4Ω。",
+      "directTechnicalReferenceUrl": []
+    },
+    {
+      "id": "jidosha-2026-first-2-gasoline-q37",
+      "qNumber": 37,
+      "status": "HOLD",
+      "officialAnswerNumber": "2",
+      "answer": "イ",
+      "questionText": "「道路運送車両の保安基準」及び「道路運送車両の保安基準の細目を定める告示」に照らし、後退灯の基準に関する記述として、不適切なものは次のうちどれか。",
+      "choicesAndReasons": [
+        {
+          "label": "ア",
+          "questionChoice": "(1) 照射光線は、他の交通を妨げないものであること。",
+          "packetReason": "適切。他の交通を妨げる光線は認められない。",
+          "reviewedReason": null,
+          "provisionalReasonOnHold": "適切。他の交通を妨げる光線は認められない。",
+          "reasonStatus": "unverified_due_to_question_hold"
+        },
+        {
+          "label": "イ",
+          "questionChoice": "(2) 昼間にその後方30mの距離から点灯を確認できるものであること。",
+          "packetReason": "不適切。距離は30mではなく100m。",
+          "reviewedReason": null,
+          "provisionalReasonOnHold": "不適切。距離は30mではなく100m。",
+          "reasonStatus": "unverified_due_to_question_hold"
+        },
+        {
+          "label": "ウ",
+          "questionChoice": "(3) 灯光の色は、白色であること。",
+          "packetReason": "適切。後退灯の灯光は白色。",
+          "reviewedReason": null,
+          "provisionalReasonOnHold": "適切。後退灯の灯光は白色。",
+          "reasonStatus": "unverified_due_to_question_hold"
+        },
+        {
+          "label": "エ",
+          "questionChoice": "(4) 灯器が損傷し又はレンズ面が著しく汚損しているものでないこと。",
+          "packetReason": "適切。損傷や著しい汚損のない灯器が必要。",
+          "reviewedReason": null,
+          "provisionalReasonOnHold": "適切。損傷や著しい汚損のない灯器が必要。",
+          "reasonStatus": "unverified_due_to_question_hold"
+        }
+      ],
+      "technicalReview": "原紙p13・同版正答表は確認。法令各要件の直接資料が不足。",
+      "holdReason": "後退灯の視認距離、色、照射光線、灯器状態の各要件について、対象時点の保安基準・細目告示の直接条文がpacketにない。正答表の2から100m等を逆算して確定しない。",
+      "sourcePages": [
+        13
+      ],
+      "figureSha256": [],
+      "originalQuestionPdfSha256": "d4928e4405dd5933fc42eb31200b5ad6480cb2057474e04ee342b405b8ab9c33",
+      "sameEditionKeyPdfSha256": "7f3a3405cd428510d0d585ceb96425c0b3ec9fd30c80696607fa5c595f20f23d",
+      "independentCalculation": null,
+      "directTechnicalReferenceUrl": []
+    },
+    {
+      "id": "jidosha-2026-first-2-gasoline-q39",
+      "qNumber": 39,
+      "status": "HOLD",
+      "officialAnswerNumber": "1",
+      "answer": "ア",
+      "questionText": "「道路運送車両法」及び「道路運送車両法施行規則」に照らし、四輪の小型自動車の特定整備に該当するものは次のうちどれか。",
+      "choicesAndReasons": [
+        {
+          "label": "ア",
+          "questionChoice": "(1) 原動機を取り外して行う自動車の整備又は改造",
+          "packetReason": "適切。原動機の取り外しを伴う整備・改造は特定整備に該当する。",
+          "reviewedReason": null,
+          "provisionalReasonOnHold": "適切。原動機の取り外しを伴う整備・改造は特定整備に該当する。",
+          "reasonStatus": "unverified_due_to_question_hold"
+        },
+        {
+          "label": "イ",
+          "questionChoice": "(2) かじ取り装置のハンドルを取り外して行う自動車の整備又は改造",
+          "packetReason": "不適切。ハンドルの取り外しそのものは該当項目ではない。",
+          "reviewedReason": null,
+          "provisionalReasonOnHold": "不適切。ハンドルの取り外しそのものは該当項目ではない。",
+          "reasonStatus": "unverified_due_to_question_hold"
+        },
+        {
+          "label": "ウ",
+          "questionChoice": "(3) 燃料装置の燃料タンクを取り外して行う自動車の整備又は改造",
+          "packetReason": "不適切。燃料タンクの取り外しそのものは該当項目ではない。",
+          "reviewedReason": null,
+          "provisionalReasonOnHold": "不適切。燃料タンクの取り外しそのものは該当項目ではない。",
+          "reasonStatus": "unverified_due_to_question_hold"
+        },
+        {
+          "label": "エ",
+          "questionChoice": "(4) 緩衝装置のトーションバー・スプリングを取り外して行う自動車の整備又は改造",
+          "packetReason": "不適切。トーションバー・スプリングの取り外しそのものは該当項目ではない。",
+          "reviewedReason": null,
+          "provisionalReasonOnHold": "不適切。トーションバー・スプリングの取り外しそのものは該当項目ではない。",
+          "reasonStatus": "unverified_due_to_question_hold"
+        }
+      ],
+      "technicalReview": "原紙p14・同版正答表は確認。施行規則の対象列挙の直接資料が不足。",
+      "holdReason": "四輪小型自動車の特定整備範囲について、対象時点の道路運送車両法施行規則の直接条文・別表がpacketにない。各取り外し作業の該非を正答表から逆算して確定しない。",
+      "sourcePages": [
+        14
+      ],
+      "figureSha256": [],
+      "originalQuestionPdfSha256": "d4928e4405dd5933fc42eb31200b5ad6480cb2057474e04ee342b405b8ab9c33",
+      "sameEditionKeyPdfSha256": "7f3a3405cd428510d0d585ceb96425c0b3ec9fd30c80696607fa5c595f20f23d",
+      "independentCalculation": null,
+      "directTechnicalReferenceUrl": []
+    }
+  ]
+}

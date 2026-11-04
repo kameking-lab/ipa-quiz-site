@@ -1,0 +1,161 @@
+{
+  "task": "LQ1D independent body Q37 investigation, continuation 2",
+  "id": "jidosha-2026-first-body-q37",
+  "startedAtUtc": "2026-11-03T18:11:38Z",
+  "researchEndedAtUtc": "2026-11-03T18:17:10Z",
+  "previousInvestigation": "data/qualification-staging/automotive/latest-two/qa/lq1d-investigation.json",
+  "candidateSha256FromPreviousInvestigation": "465322fa0a2adf38a38647dcebdd95d6269ed2dde33ef0035b64bf40d6a5d99f",
+  "status": "POSITIVE_MANUFACTURER_PROCESS_TABLE_FOUND_EXACT_EXAM_CORRECTIONS_UNRESOLVED",
+  "acceptancePerformed": false,
+  "closureSupported": false,
+  "finding": "A manufacturer-hosted positive process table explicitly distinguishes bankin putty sanding and polipate sanding. Both stages specify orbital sanding for rough sanding, followed by a file for leveling; a later surface-finishing stage specifies double-action sanding. This is stronger positive evidence than repeated rejected exam groups, but it does not enumerate the complete machinery groups in the applicable Shatai Seibi textbook or identify the exact changes required in Q37 options 3 and 4. Neither explanation gap is closed.",
+  "exactExamCorrections": {
+    "option3": {
+      "use": "polipate sanding",
+      "originalMachines": ["straight sander", "orbital sander", "double-action sander"],
+      "correctCompleteGroup": null,
+      "specificDeletionAdditionOrReplacement": null,
+      "reason": "Positive orbital use is established, but the evidence does not identify which listed machine or category/stage assignment makes the exam option wrong. Omission from a product-specific process is not proof of an erroneous or impossible use."
+    },
+    "option4": {
+      "use": "bankin putty sanding",
+      "originalMachines": ["rotary sander", "disc sander", "double-action sander"],
+      "correctCompleteGroup": null,
+      "specificDeletionAdditionOrReplacement": null,
+      "reason": "Positive orbital use is established and a generic putty diagram groups straight, orbital and double-action sanders. The generic diagram does not name bankin putty, so transferring that complete group into this exam option would remain an inference."
+    }
+  },
+  "primarySources": [
+    {
+      "id": "kansai-current",
+      "url": "https://asset.kansai.co.jp/uploads/products/automotive/self_repair/137.pdf",
+      "authorPublisher": "Kansai Paint",
+      "sourceType": "Manufacturer original standard-process table, hosted by manufacturer",
+      "title": "Retan PG80 specification, catalog No. 137",
+      "edition": "Back cover identifies February 2025, printing 43",
+      "pages": 12,
+      "sha256": "7cebe75b1492a87ef6d31d334fa31a13a51dab6eaef00cd52bdddbf4b6dc85a9",
+      "location": "Physical PDF page 10, printed page 9, upper table: standard surface-preparation process example, rows 4, 8 and 9",
+      "inspection": "Normal public HTTP retrieval; page rendered under tmp and visually inspected. Most table text is not available in the web text extraction, so findings were read from the rendered page.",
+      "positiveStatements": [
+        "Row 4, bankin putty sanding: rough sanding with orbital sander P80-P120; leveling with file P120.",
+        "Row 8, polipate sanding: rough sanding with orbital sander P120-P180; leveling with file P180.",
+        "Row 9, surface finishing after the polipate stage: edge/leveling work with file P180; putty-surface finishing with double-action sander P240."
+      ],
+      "scopeLimit": "This is a specified product/process example, not an exhaustive machinery classification or an official worked answer to Q37. A file is separately named; it must not be silently reclassified as a straight powered sander. The later finishing row is not a complete polipate machinery group.",
+      "supportsExactExamCorrection": false
+    },
+    {
+      "id": "kansai-older",
+      "url": "https://www.kazusa-t.co.jp/relays/download/50/128/80/18/?file=/files/libs/18//201506241742264245.pdf",
+      "authorPublisher": "Kansai Paint; public copy hosted by Kazusa Toryo",
+      "sourceType": "Manufacturer-authored original catalog table hosted by supplier",
+      "title": "Retan PG80 III specification",
+      "pages": 7,
+      "sha256": "fc45d0e3a167c83a8c88d73fbfce73cee220841cff7df937f642354f49058ac6",
+      "location": "Physical PDF page 6, printed spread 9-10; left table rows 4, 8 and 11",
+      "inspection": "Normal public HTTP retrieval; spread rendered under tmp and visually inspected.",
+      "finding": "The older catalog also positively specifies orbital sanding for bankin putty at P80-P120 and polipate at P120-P180, with file leveling. After an additional fine-putty application/drying stage, row 11 specifies double-action sanding P240 for putty-surface finishing.",
+      "scopeLimit": "Historical process corroboration, not proof of the exam's complete groups. Publication date was not independently established; the URL date is not treated as a publication date.",
+      "supportsExactExamCorrection": false
+    },
+    {
+      "id": "saitama-u73",
+      "url": "https://www.saitama-seiki.co.jp/wp-content/uploads/2019/01/U-73catalog.pdf",
+      "authorPublisher": "Saitama Seiki",
+      "sourceType": "Manufacturer original educational workflow diagram",
+      "pages": 2,
+      "sha256": "858b725ab571761e7f6e8b8328b9039025124ab19f4af02e3e4cd9f6db1ed304",
+      "location": "Physical PDF page 2, usage example, first two boxes",
+      "inspection": "Normal public HTTP retrieval; page rendered under tmp and visually inspected.",
+      "finding": "After putty application and drying, the diagram explicitly lists double-action, orbital and straight sanders, followed by an open-ended 'etc.', for sanding before guide-coat application and U-73 leveling.",
+      "scopeLimit": "The material is labeled only putty. Neither bankin putty nor polipate is separately identified. This establishes a positive generic group but cannot be relabeled as the complete bankin or polipate exam group.",
+      "supportsExactExamCorrection": false
+    },
+    {
+      "id": "sanei-selection",
+      "url": "https://sanei-air.jp/SHOP/141006/141008/t02/list2.html",
+      "authorPublisher": "Sanei Air",
+      "sourceType": "Supplier's own educational selection tables",
+      "location": "Section on selection by use and abrasive grit, web lines 124-155",
+      "inspection": "Public HTML page opened and tables read.",
+      "finding": "The coarse-grit table positively assigns double-action sanding with 10 mm orbit and orbital sanding with 5 mm orbit to putty/coarse work. The shaping-finish table lists double-action with 7 mm orbit and orbital with 5 mm orbit.",
+      "scopeLimit": "Does not distinguish bankin putty from polipate or supply the complete exam groups. Accepted as original educational statements, not rejected merely because the author sells tools.",
+      "supportsExactExamCorrection": false
+    },
+    {
+      "id": "tact-2025-locator",
+      "url": "https://www.tact.ac.jp/cms/wp-content/themes/tsukuba_theme/common/pdf/2025/body_syllabus03_02.pdf",
+      "authorPublisher": "Tsukuba automotive college",
+      "sourceType": "Original vocational syllabus",
+      "pages": 46,
+      "sha256": "583c2c509f2e9e3a71d0de59a0e81f780ff407b9b1f45a9734f674cfe6cf2d56",
+      "location": "Physical PDF page 12, lessons 63-64",
+      "inspection": "Public PDF retrieved and text extracted; web indexed table also checked.",
+      "finding": "The 2025 syllabus independently continues the page locator from the previously investigated 2024 syllabus: putty sanding on textbook page 295; sanding papers and equipment, including combinations of sanding work and equipment, on page 296.",
+      "scopeLimit": "Locator only. The actual textbook table and applicable edition remain unverified.",
+      "supportsExactExamCorrection": false
+    },
+    {
+      "id": "proto-shitaji",
+      "url": "https://bsrweb.jp/assets_e/pdf/top/shitajikenma_tachiyomi.pdf",
+      "authorPublisher": "Proto-Rios; original worked example featuring 3M Japan",
+      "sourceType": "Publisher sample of original Japanese sanding education",
+      "pages": 10,
+      "sha256": "2a1da31ece22e5d5263aab5c0a207255c4a3b4ede07a559b687cd5c45df8a04c",
+      "location": "Physical PDF page 4, printed page 27",
+      "inspection": "Normal public HTTP retrieval; page rendered under tmp and visually inspected.",
+      "finding": "The illustrated process applies intermediate putty and, after drying and guide coating, sands it with an orbital sander and P120 paper.",
+      "scopeLimit": "Intermediate putty is explicitly named. It must not be silently substituted for either target putty category. The sample does not provide the required complete groups.",
+      "supportsExactExamCorrection": false
+    }
+  ],
+  "publisherSampleAudit": {
+    "method": "Normal direct public GETs of edition-specific sample URLs; PDFs parsed in memory. Unicode-escaped search terms were used to avoid shell encoding loss. No sander or polipate occurrence was found in the extracted text of these additional Kouron samples. This is a text-search limitation, not a claim to have visually inspected every sample page.",
+    "samples": [
+      {"url": "https://www.kouronpub-onlineshop.com/html/template/default/assets/pdf/ss-2018.pdf", "httpStatus": 404},
+      {"url": "https://www.kouronpub-onlineshop.com/html/template/default/assets/pdf/ss-2019.pdf", "pages": 23, "sha256": "9a6502e89261663b1a8465e6afb50b702f4eb7b683265b51d8a184bbfc4a5d38"},
+      {"url": "https://www.kouronpub-onlineshop.com/html/template/default/assets/pdf/ss-2020.pdf", "pages": 22, "sha256": "64d15d8a58694522e137828fc7832012fa5f6a6e26759a4bee9bde2c039a5dd5"},
+      {"url": "https://www.kouronpub-onlineshop.com/html/template/default/assets/pdf/ss-2021.pdf", "pages": 21, "sha256": "f98ad88327a1dbc7dcdffde8e0206173cc366b756cf06f197f83124a1a2917b2"},
+      {"url": "https://www.kouronpub-onlineshop.com/html/template/default/assets/pdf/ss-2022.pdf", "pages": 21, "sha256": "69f7c703590c823306bf93ef77b4719f944ba7e4ece73e478295388a9eef1e52"},
+      {"url": "https://www.kouronpub-onlineshop.com/html/template/default/assets/pdf/ss-2026.pdf", "pages": 22, "sha256": "ca79253a65030a8d4faee2f3959a64c7ca2ee8983d56bcf64cbafacfb3b86763", "note": "Sanding-related word appears only in pigment discussion on physical pages 19-20; no required machinery table obtained."},
+      {"url": "https://bsrweb.jp/assets_e/pdf/rt_update/the_tosou_tachiyomi.pdf", "pages": 8, "sha256": "7fedcab989363d33ea8ae86d158ebf8831609c2a32ea3890a7201963ab09efd6", "note": "Public sample linked from publisher product page. Extracted sanding discussion concerns old-coating removal, not the required putty machinery groups."}
+    ]
+  },
+  "comparatorSearchAudit": {
+    "finding": "Additional official historical search results did not yield a positively correct complete filler machinery group. The recurring rejected groups were not used as closure evidence.",
+    "additionalRepeatedGroupSources": [
+      "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/20160320_20160828/20160320_bo.pdf",
+      "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2017/20171001_bo.pdf",
+      "https://www.tossnet.or.jp/Portals/0/images/pdf/normal/20190325-302_43.pdf",
+      "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2023/20231002_bo.pdf"
+    ],
+    "unclosedPositiveLead": {
+      "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/20100321/100321_bo.pdf",
+      "location": "Printed page 7, Q19 option 3",
+      "finding": "Search result contains an orbital-sanding statement for dried bankin putty followed by hand finishing. It is within a choose-the-inappropriate-statement question. Its answer key was not independently paired in this continuation, and it would establish only an individual use, not the complete machinery group. Not used to close Q37."
+    }
+  },
+  "localOriginalInspection": {
+    "question": "tmp/lq1b-sources/jaspa-2026-first-body-p12.png",
+    "inspection": "Visually checked Q37 and the option 3/4 labels and machinery lists against the saved investigation.",
+    "answerFile": "tmp/lq1b-sources/jaspa-2026-first-answers.pdf",
+    "answerLimitation": "The existing official answer file is an answer-number table, not a worked correction of options 3 and 4. It supplies no replacement groups."
+  },
+  "unsupportedClaimsNotMade": [
+    "That straight, orbital, double-action, rotary or disc sanders are universally incapable of either putty operation.",
+    "That a machine omitted from a manufacturer's particular workflow is forbidden or technically unusable.",
+    "That a generic putty group, intermediate-putty example or later surface-finishing step is the applicable textbook's complete bankin/polipate group.",
+    "That repeated incorrect options identify the specific corrective edits."
+  ],
+  "remainingEvidenceNeeded": "Applicable Shatai Seibi printed page 296 with edition identified and the complete positive combinations table visible, or an authoritative worked answer explicitly correcting Q37 options 3 and 4. The two adjacent equipment/putty sections may be needed to interpret the table's category boundaries.",
+  "constraints": {
+    "scope": "Body Q37 only; no bearing investigation performed.",
+    "access": "Public normal access only; no authentication, paywall, CAPTCHA or other access bypass.",
+    "writes": "Only this JSON deliverable and permitted temporary rendered page images under tmp. No product or candidate edits.",
+    "prohibitedActionsPerformed": false,
+    "agentsSpawned": false,
+    "commitPushPrDeploy": false,
+    "encoding": "ASCII JSON with actual line breaks and final newline"
+  }
+}
