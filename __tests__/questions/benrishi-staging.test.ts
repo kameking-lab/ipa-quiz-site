@@ -61,6 +61,23 @@ describe("弁理士短答式・直近2回の未公開収録", () => {
     expect(q.statementExplanations[1].explanation).toContain("含まれない");
   });
 
+  it("独立レビュー指摘の個数だけ一致する誤判定と条番号誤引用を固定する", () => {
+    const split = questions.find(q => q.id === "benrishi-2025-patent-09")!;
+    expect(split.correctChoice).toBe(2);
+    expect(split.statementExplanations.filter(s => !s.correct).map(s => s.label)).toEqual(["イ","ニ"]);
+    expect(split.statementExplanations[0].explanation).toContain("Ｂの出願日は遡及しない");
+    expect(split.statementExplanations[1].explanation).toContain("期間を例外とする");
+    const damages = questions.find(q => q.id === "benrishi-2026-patent-07")!;
+    expect(damages.statementExplanations[3].explanation).toContain("105条の2の12");
+    const renewal = questions.find(q => q.id === "benrishi-2026-trademark-07")!;
+    expect(renewal.choiceExplanations[1].explanation).toContain("直ちに消滅せず");
+    const opposition = questions.find(q => q.id === "benrishi-2026-trademark-09")!;
+    expect(opposition.choiceExplanations[4].explanation).toContain("通知義務は異議手続には定められていない");
+    const name = questions.find(q => q.id === "benrishi-2025-trademark-05")!;
+    expect(name.choiceExplanations[0].explanation).toContain("略称自体にも必要");
+    expect(name.choiceExplanations[3].explanation).toContain("商標法38条の2");
+  });
+
   it("原表・語群20語・番号付き空欄と番号なし空欄を省略しない", () => {
     const q = paper2025.questions[18];
     expect(q.sourcePages).toEqual([23,24]);
