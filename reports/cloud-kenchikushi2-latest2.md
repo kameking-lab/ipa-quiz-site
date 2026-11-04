@@ -1,5 +1,7 @@
 # 二級建築士・木造建築士（学科）直近2回の監査
 
+> 2026-11-04 LK5追記: 以下は前回の履歴。06:10のオーナー決定で両資格の収録対象外・`permission-required` 指定は解除し、台帳を `ready-to-ingest` に変更した。本文は引き続き未収録。現在の到達点・制約・再開位置は `reports/lk5-kenchikushi2-20261104.md` と `data/qualification-staging/kenchikushi2/README.md` を参照する。
+
 確認日: 2026-11-03。対象回は公式の「学科の試験」一覧の先頭2年から選定。
 
 ## 既存方式と今回の扱い
