@@ -67,6 +67,9 @@ describe("弁理士短答式・直近2回の未公開収録", () => {
     expect(split.statementExplanations.filter(s => !s.correct).map(s => s.label)).toEqual(["イ","ニ"]);
     expect(split.statementExplanations[0].explanation).toContain("Ｂの出願日は遡及しない");
     expect(split.statementExplanations[1].explanation).toContain("期間を例外とする");
+    const suspension = questions.find(q => q.id === "benrishi-2026-patent-03")!;
+    expect(suspension.statementExplanations[4].correct).toBe(true);
+    expect(suspension.statementExplanations[4].explanation).toContain("民訴法131条1項");
     const damages = questions.find(q => q.id === "benrishi-2026-patent-07")!;
     expect(damages.statementExplanations[3].explanation).toContain("105条の2の12");
     const renewal = questions.find(q => q.id === "benrishi-2026-trademark-07")!;
