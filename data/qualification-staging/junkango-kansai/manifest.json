@@ -1,0 +1,22 @@
+{
+  "task": "CQ6",
+  "slug": "junkango-kansai",
+  "name": "准看護師試験（関西広域連合）",
+  "basis": "COV1 B・候補4",
+  "publicationStatus": "staging",
+  "publicAllowed": false,
+  "administrator": "関西広域連合",
+  "rounds": [
+    { "year": 2026, "fiscalYear": 2025, "examDate": "2026-02-01", "questions": 150, "file": "2026-annual.json" },
+    { "year": 2025, "fiscalYear": 2024, "examDate": "2025-02-02", "questions": 150, "file": "2025-annual.json" }
+  ],
+  "totalQuestions": 300,
+  "totalChoices": 1200,
+  "sourceRegionImages": 300,
+  "missingPdfUrls": [],
+  "pdfPublicationDate": null,
+  "lawReferenceDate": null,
+  "normalization": ["改行・空白を整形", "検索用テキストのルビを除き原本領域画像に保持", "添字・上付き数字を本文に保持"],
+  "rights": { "publicAllowed": false, "note": "本タスクは未公開原稿の追加。公開許諾・公開判断を自動的に完了したものとして扱わない。" },
+  "review": { "independent": "pending", "specialistPublicationReview": "pending" }
+}
