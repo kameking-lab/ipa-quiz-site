@@ -53,7 +53,7 @@ App User IDは認証済み会員IDからHMACで生成する。Webhookは認証�
 
 秘密鍵・秘密APIキーはクライアントへ出さない。公開鍵は初期状態では空。未設定の購入・保存を成功したようには見せない。既存ウェブの会員DB・無料枠用KV・Auth設定も共用する。
 
-`migrations/20261103_mobile_revenuecat.sql` は会員とRevenueCatの対応表、およびPKCEコード用テーブル。**本番DBへの適用は所有者承認待ちで、今回は適用していない。**
+DB用SQLの3本は `../prisma/migrations/20261104*` に移管した。会員とRevenueCatの対応表、PKCEコード、削除後の課金保持用テーブルと追加列を含む。2026-11-04 14:30 JSTにオーナー承認済み。本番適用は未実施。[対応表](./migrations/README.md) と [適用・確認手順](../docs/mobile-db-migrations.md) を参照。
 
 ## ログイン・同期
 
