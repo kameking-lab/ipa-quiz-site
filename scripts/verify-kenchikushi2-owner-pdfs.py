@@ -18,7 +18,7 @@ STAGING = ROOT / "data/qualification-staging/kenchikushi2"
 
 
 def normalize(text):
-    text = unicodedata.normalize("NFKC", text)
+    text = unicodedata.normalize("NFKC", text).replace("~", "～").replace("〜", "～")
     return re.sub(r"\s|[\x00-\x1f]", "", text)
 
 
@@ -397,6 +397,31 @@ def source_questions_m2026_iv(path):
     return questions
 
 
+def source_questions_m2025_i(path):
+    terms={2:['昼光率','透湿','立体角投射率','作用温度','VOC'],19:['排水通気設備','換気設備','ガス設備','冷暖房設備','電気設備']};questions={}
+    with pdfplumber.open(path) as pdf:
+        for pn in range(2,10):
+            page=pdf.pages[pn-1]
+            def retain(o):
+                if o.get('object_type')!='char':return True
+                if o['size']<=5.5 or o['top']>=790:return False
+                return not(pn==6 and o['x0']<465 and o['x1']>70 and o['top']<560 and o['bottom']>95)
+            parts=re.split(r"〔No\.\s*(\d+)〕",unicodedata.normalize('NFKC',page.filter(retain).extract_text(use_text_flow=True)))
+            for i in range(1,len(parts),2):
+                n=int(parts[i]);f=re.split(r"(?m)^\s*([1-5])\s*\.\s*",parts[i+1]);choices={int(f[j]):f[j+1] for j in range(1,len(f),2)}
+                if n in terms:
+                    for j,term in enumerate(terms[n],1):choices[j]=normalize(choices[j]).replace(term,term+' ― ',1)
+                if n==15:
+                    region=page.filter(lambda o:o.get('object_type')!='char' or o['size']>5.5).crop((99,95,230,560));table=region.extract_tables()[0];assert len(table)==6,table
+                    choices={j:row[0] for j,row in enumerate(table[1:],1)}
+                if n==6:choices[5]=normalize(choices[5]).replace('と、21になる','と、1/2になる')
+                if n==22:choices[4]=normalize(choices[4]).replace('勾配を、501と','勾配を、1/50と')
+                assert sorted(choices)==[1,2,3,4,5],(n,choices)
+                questions[n]=(pn,f[0],choices)
+    assert sorted(questions)==list(range(1,26))
+    return questions
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("owner_directory", type=Path)
@@ -418,7 +443,7 @@ def main():
                         assert row == round_["officialAnswers"][subject], (file.name, subject)
                         counts["officialAnswers"] += len(row)
             counts["ownerPdfs"] += 1
-    for year, subject, extract, source in [(2026,"I",source_questions,"R8_2k_1_2.pdf"),(2026,"II",source_questions_ii,"R8_2k_1_2.pdf"),(2026,"III",source_questions_iii,"R8_2k_3_4.pdf"),(2026,"IV",source_questions_iv,"R8_2k_3_4.pdf"),(2025,"I",source_questions_2025_i,"2k-2025-1st-gakka1_2.pdf"),(2025,"II",source_questions_2025_ii,"2k-2025-1st-gakka1_2.pdf"),(2025,"III",source_questions_2025_iii,"2k-2025-1st-gakka3_4.pdf"),(2025,"IV",source_questions_2025_iv,"2k-2025-1st-gakka3_4.pdf"),(2026,"mokuzo-I",source_questions_m2026_i,"R8_mk_1_2.pdf"),(2026,"mokuzo-II",source_questions_m2026_ii,"R8_mk_1_2.pdf"),(2026,"mokuzo-III",source_questions_m2026_iii,"R8_mk_3_4.pdf"),(2026,"mokuzo-IV",source_questions_m2026_iv,"R8_mk_3_4.pdf")]:
+    for year, subject, extract, source in [(2026,"I",source_questions,"R8_2k_1_2.pdf"),(2026,"II",source_questions_ii,"R8_2k_1_2.pdf"),(2026,"III",source_questions_iii,"R8_2k_3_4.pdf"),(2026,"IV",source_questions_iv,"R8_2k_3_4.pdf"),(2025,"I",source_questions_2025_i,"2k-2025-1st-gakka1_2.pdf"),(2025,"II",source_questions_2025_ii,"2k-2025-1st-gakka1_2.pdf"),(2025,"III",source_questions_2025_iii,"2k-2025-1st-gakka3_4.pdf"),(2025,"IV",source_questions_2025_iv,"2k-2025-1st-gakka3_4.pdf"),(2026,"mokuzo-I",source_questions_m2026_i,"R8_mk_1_2.pdf"),(2026,"mokuzo-II",source_questions_m2026_ii,"R8_mk_1_2.pdf"),(2026,"mokuzo-III",source_questions_m2026_iii,"R8_mk_3_4.pdf"),(2026,"mokuzo-IV",source_questions_m2026_iv,"R8_mk_3_4.pdf"),(2025,"mokuzo-I",source_questions_m2025_i,"mk-2025-1st-gakka1_2.pdf")]:
         originals = extract(args.owner_directory / source)
         filename = f"mokuzo-{year}-{subject[7:]}.ts" if subject.startswith("mokuzo-") else f"{year}-{subject}.ts"
         data = (STAGING / filename).read_text(encoding="utf-8")
