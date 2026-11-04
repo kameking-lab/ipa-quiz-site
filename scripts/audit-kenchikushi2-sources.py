@@ -39,6 +39,8 @@ def acquire(url):
 
 def main():
     CACHE.mkdir(parents=True, exist_ok=True)
+    # Refresh source metadata without resetting separately ingested owner-provided records.
+    previous = json.loads(DEST.read_text(encoding="utf-8")) if DEST.exists() else {}
     rounds = []
     for slug, code in [("kenchikushi2", "2k"), ("mokuzo-kenchikushi", "mk")]:
         for year in [2026, 2025]:
@@ -76,9 +78,10 @@ def main():
                                "scope": "令和4年法律第69号、令和6年政令第172号・国土交通省令第68号に基づく規定",
                                "sourcePage": 1
                            }] if year == 2025 else [])})
-    manifest = {"checkedOn": date.today().isoformat(), "publicAllowed": False,
+    manifest = {**previous, "checkedOn": date.today().isoformat(), "publicAllowed": False,
                 "ownerDecisionAt": "2026-11-04T06:10:00+09:00",
-                "ingestionState": "source-metadata-only", "ingestedQuestionCount": 0,
+                "ingestionState": previous.get("ingestionState", "source-metadata-only"),
+                "ingestedQuestionCount": previous.get("ingestedQuestionCount", 0),
                 "rounds": rounds}
     DEST.parent.mkdir(parents=True, exist_ok=True)
     DEST.write_bytes((json.dumps(manifest, ensure_ascii=False, indent=2) + "\n").encode("utf-8"))

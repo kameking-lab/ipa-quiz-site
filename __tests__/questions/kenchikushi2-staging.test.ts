@@ -1,5 +1,7 @@
 import { describe, expect, it } from "vitest";
-import { KENCHIKUSHI2_SOURCE_MANIFEST as manifest } from "@/data/qualification-staging/kenchikushi2";
+import { KENCHIKUSHI2_SOURCE_MANIFEST as manifest, KENCHIKUSHI2_STAGED_QUESTIONS as staged } from "@/data/qualification-staging/kenchikushi2";
+import { readFileSync } from "node:fs";
+import { resolve } from "node:path";
 import { QUALIFICATION_CATALOG } from "@/lib/qualifications/catalog";
 import { ALL_QUESTIONS } from "@/data/questions";
 import { getHomeDirectory } from "@/lib/home/home-directory";
@@ -25,7 +27,7 @@ const officialRows = {
   ],
 } as const;
 
-describe("LK5 source-only staging", () => {
+describe("LK5C unpublished staging", () => {
   it("pins all 400 answers to the official tables across four distinct rounds", () => {
     expect(manifest.rounds.map(r => `${r.qualificationSlug}-${r.year}`).sort()).toEqual(Object.keys(officialRows).sort());
     for (const round of manifest.rounds) {
@@ -49,10 +51,12 @@ describe("LK5 source-only staging", () => {
     }
   });
 
-  it("keeps both qualifications unpublished and records zero ingested questions", () => {
+  it("keeps both qualifications unpublished while recording the actual ingestion progress", () => {
     expect(manifest.publicAllowed).toBe(false);
-    expect(manifest.ingestionState).toBe("source-metadata-only");
-    expect(manifest.ingestedQuestionCount).toBe(0);
+    expect(manifest.ingestionState).toBe("in-progress");
+    expect(manifest.ingestedQuestionCount).toBe(staged.length);
+    expect(manifest.batches.reduce((sum, batch) => sum + batch.questionCount, 0)).toBe(staged.length);
+    expect(manifest.nextResume).toEqual({ qualificationSlug: "kenchikushi2", year: 2026, subject: "II", qNumber: 1 });
     const home = getHomeDirectory().flatMap(d => [...d.featured, ...d.compact]);
     for (const slug of ["kenchikushi2", "mokuzo-kenchikushi"]) {
       const entry = QUALIFICATION_CATALOG.find(q => q.slug === slug);
@@ -60,6 +64,79 @@ describe("LK5 source-only staging", () => {
       expect(entry?.examCode).toBeUndefined();
       expect(home.some(q => q.href === `/${slug}`)).toBe(false);
       expect(ALL_QUESTIONS.some(q => String(q.exam) === slug)).toBe(false);
+    }
+  });
+
+  it("contains exactly the first complete subject, with 125 explanations and pinned official answers", () => {
+    const keys = ["ア", "イ", "ウ", "エ", "オ"] as const;
+    expect(staged).toHaveLength(25);
+    expect(new Set(staged.map(q => q.id)).size).toBe(25);
+    expect(staged.map(q => q.qNumber)).toEqual(Array.from({ length: 25 }, (_, i) => i + 1));
+    expect(staged.map(q => q.officialAnswerNumber).join("")).toBe(officialRows["kenchikushi2-2026"][0]);
+    for (const q of staged) {
+      expect(q.id).toBe(`kenchikushi2-2026-annual-I-q${q.qNumber}`);
+      expect(q.exam).toBe("kenchikushi2");
+      expect(q.session).toBe("gakka-I");
+      expect(q.year).toBe(2026);
+      expect(q.season).toBe("annual");
+      expect(q.subject).toBe("学科Ⅰ（建築計画）");
+      expect(q.question.length).toBeGreaterThan(20);
+      expect(Object.keys(q.choices ?? {})).toEqual(keys);
+      expect(Object.keys(q.choiceExplanations ?? {})).toEqual(keys);
+      for (const key of keys) {
+        expect(q.choices?.[key]?.trim().length).toBeGreaterThan(0);
+        expect(q.choiceExplanations?.[key]?.trim().length).toBeGreaterThan(20);
+      }
+      expect(q.answer).toBe(keys[Number(q.officialAnswerNumber) - 1]);
+      expect(q.explanation.length).toBeGreaterThan(40);
+      expect(q.explanationCoverage).toBe("full");
+      expect(q.sourcePdfUrl).toBe(manifest.rounds[0].questionDocuments[0].url);
+      expect(q.sourceAnswerUrl).toBe(manifest.rounds[0].answerDocument.url);
+      expect(q.sourceAttribution).toContain("建築技術教育普及センター");
+      expect(q.lawReferenceDate).toBe("2026-01-01");
+      expect(q.sourcePage).toBeGreaterThanOrEqual(2);
+      expect(q.sourcePage).toBeLessThanOrEqual(10);
+      expect(q.publicAllowed).toBe(false);
+      expect(q.needsReview).toBe(true);
+    }
+  });
+
+  it("retains the source table, fraction, ruby readings, and deliberately incorrect propositions", () => {
+    const q6 = staged[5];
+    expect(staged.filter(q => q.hasImage).map(q => q.qNumber)).toEqual([6]);
+    expect(q6.originalContent?.tables?.[0].rows).toEqual([
+      ["記号", "部位", "面積", "熱貫流率"],
+      ["イ", "屋根（天井）", "16 m²", "0.2 W／（m²・K）"],
+      ["ロ", "外壁（窓を除く）", "22 m²", "0.3 W／（m²・K）"],
+      ["ハ", "窓", "18 m²", "2.0 W／（m²・K）"],
+      ["ニ", "床", "16 m²", "0.2 W／（m²・K）"],
+    ]);
+    expect(q6.imageUrls).toHaveLength(1);
+    expect(q6.imageAltTexts).toHaveLength(1);
+    for (const file of q6.imageUrls ?? []) {
+      expect(file.startsWith("data/qualification-staging/kenchikushi2/assets/")).toBe(true);
+      const bytes = readFileSync(resolve(file));
+      expect(bytes.subarray(0, 8).toString("hex")).toBe("89504e470d0a1a0a");
+      expect(bytes.readUInt32BE(16)).toBeGreaterThan(600);
+      expect(bytes.readUInt32BE(20)).toBeGreaterThan(200);
+    }
+    expect(staged[14].choices?.ウ).toContain("本勾配を1/8とし");
+    expect(staged[0].sourceRubies).toContainEqual({ base: "繫虹梁", reading: "つなぎこうりょう" });
+    expect(staged[4].sourceRubies).toContainEqual({ base: "稠", reading: "ちゅう" });
+    expect(staged[16].choices?.エ).toContain("25 cm");
+    expect(staged[21].choices?.ウ).toContain("20 ℃上昇");
+    expect(staged[23].choices?.ウ).toContain("再充塡ができる");
+  });
+
+  it("records the supplied files separately from the agent's earlier download cache", () => {
+    expect(manifest.ownerProvidedSource.documents).toHaveLength(12);
+    expect(manifest.ownerProvidedSource.readme).toContain("owner-provided/kenchikushi2/README.md");
+    const docs = manifest.rounds.flatMap(r => [...r.questionDocuments, r.answerDocument]);
+    expect(manifest.ownerProvidedSource.documents.map(d => d.sourceUrl).sort()).toEqual(docs.map(d => d.url).sort());
+    for (const file of manifest.ownerProvidedSource.documents) {
+      const original = docs.find(d => d.url === file.sourceUrl);
+      expect(file.sha256).toBe(original?.sha256);
+      expect(file.pages).toBe(original?.pages);
     }
   });
 });
