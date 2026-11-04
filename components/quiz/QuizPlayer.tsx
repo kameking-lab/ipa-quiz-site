@@ -153,7 +153,7 @@ function ScoredQuizPlayer({
 
   React.useEffect(() => {
     if (!question || isReferenceOnlyQuestionId(question.id)) return;
-     
+
     setNativeBResult(undefined);
     setSelected(undefined);
     setPicked([]);
@@ -655,7 +655,7 @@ function ScoredQuizPlayer({
               requestAnimationFrame(() => { relatedRef.current?.focus({ preventScroll: true }); relatedRef.current?.scrollIntoView({ block: "center", behavior: "instant" }); });
             }}><BookOpen className="h-4 w-4" aria-hidden="true" />関連問題</Button>
             <Button variant="outline" className="min-h-12 px-2 text-xs sm:text-sm" aria-pressed={starred} onClick={toggleStar}><Star className="h-4 w-4" aria-hidden="true" fill={starred ? "currentColor" : "none"} />{starred ? "復習登録済み" : "復習に登録"}</Button>
-            <Button className="min-h-12 px-2 text-xs sm:text-sm" onClick={goNext}>{index + 1 >= total ? "結果を見る" : "次の1問"}<ArrowRight className="h-4 w-4" aria-hidden="true" /></Button>
+            <Button className="min-h-12 px-2 text-xs sm:text-sm" onClick={goNext}>{index + 1 >= total ? "学習結果へ" : "次の1問"}<ArrowRight className="h-4 w-4" aria-hidden="true" /></Button>
           </div>
           <p role="status" className="mx-auto mt-1 max-w-2xl text-center text-xs text-muted-foreground">{starred ? "復習に登録しました。「あとで復習」から解き直せます。" : "解説を読んだら、関連問題か次の1問へ。"}</p>
         </nav>

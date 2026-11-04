@@ -173,7 +173,7 @@ export function QuizClient({
 
   // Derive session pool once on mount (needs localStorage for history modes).
   React.useEffect(() => {
-     
+
     const url = new URL(window.location.href);
     const signature = JSON.stringify([mode, wrongOnly, poolIds, initialQuestionId, mockResultId]);
     if (initializedPool.current === signature) return;
@@ -201,11 +201,14 @@ export function QuizClient({
     const sessionLimit = mode === "year" ? poolIds.length : MAX_POOL;
     try {
       const saved: unknown = JSON.parse(window.sessionStorage.getItem(sessionKey) ?? "null");
+      const relatedOrder = window.sessionStorage.getItem(`${sessionKey}:related-order`);
       const available = new Set(poolIds);
       if (currentId && Array.isArray(saved) && saved.length > 0 && saved.length <= sessionLimit &&
           saved.every((id) => typeof id === "string" && available.has(id)) && new Set(saved).size === saved.length && saved.includes(currentId) &&
-          // Annual pools always follow the latest complete source order, including new additions.
-          (mode !== "year" || (saved.length === ids.length && ids.every((id) => saved.includes(id))))) {
+          // Ordinary annual sessions retain source order. An explicit related
+          // selection may reorder the same complete set, and is marked separately.
+          (mode !== "year" || (saved.length === ids.length && ids.every((id) => saved.includes(id)) &&
+            (saved.every((id, i) => id === ids[i]) || relatedOrder === JSON.stringify(saved))))) {
         ids = saved as string[];
       } else if (currentId && poolIds.includes(currentId) && !ids.includes(currentId)) {
         ids = [currentId, ...ids].slice(0, sessionLimit);
@@ -295,8 +298,14 @@ export function QuizClient({
     if (navigating.current || !sessionIds || !current || related?.id !== current.id ||
         !related.questions.some((item) => item.id === question.id)) return;
     navigating.current = true;
-    setSessionIds([...sessionIds.slice(0, index + 1), question.id,
-      ...sessionIds.slice(index + 1).filter((id) => id !== question.id)]);
+    const nextIds = [...sessionIds.slice(0, index + 1), question.id,
+      ...sessionIds.slice(index + 1).filter((id) => id !== question.id)];
+    try {
+      const url = new URL(window.location.href);
+      url.searchParams.delete("question");
+      window.sessionStorage.setItem(`ipa-quiz:active-pool:v1:${url.pathname}${url.search}:related-order`, JSON.stringify(nextIds));
+    } catch { /* Continue in place when session storage is unavailable. */ }
+    setSessionIds(nextIds);
     setCurrent(!billingGateEnabled || mode === "review" ? cache.current.get(question.id) ?? null : null);
     setAccess(null);
     setLoadError(false);

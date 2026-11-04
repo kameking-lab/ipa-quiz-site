@@ -25,6 +25,8 @@ export const LS_KEYS = {
   // Retired coupon key retained for existing saved data and backup compatibility.
   premiumCoupon: "ipa-quiz:premium-coupon:v1",
   spacedRepetition: "ipa-quiz:srs:v1",
+  studyPlans: "ipa-quiz:study-plans:v1",
+  studyPlanProgress: "ipa-quiz:study-plan-progress:v1",
   examDate: "ipa-quiz:exam-date:v1",
   mockScores: "ipa-quiz:mock-scores:v1",
   rankingNickname: "ipa-quiz:ranking-nickname:v1",

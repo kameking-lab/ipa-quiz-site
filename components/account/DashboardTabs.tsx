@@ -9,9 +9,11 @@ import { DashboardWeakness } from "./tabs/DashboardWeakness";
 import { DashboardBadges } from "./tabs/DashboardBadges";
 
 import { MockScoreHistory } from "./tabs/MockScoreHistory";
+import { DashboardStudyPlan } from "./tabs/DashboardStudyPlan";
 
 const TABS = [
   { value: "overview", label: "概要" },
+  { value: "study-plan", label: "今日の計画" },
   { value: "mock-scores", label: "模試記録" },
   { value: "progress", label: "進捗" },
   { value: "weakness", label: "弱点" },
@@ -68,7 +70,7 @@ export function DashboardTabs({ categoryById }: Props) {
           学習ダッシュボード
         </h1>
         <p className="mt-1 text-xs text-zinc-500 dark:text-zinc-400">
-          学習データを 5 つの観点で一望できます。
+          今日の計画・模試記録・進捗・弱点をまとめて確認できます。
         </p>
       </header>
 
@@ -91,6 +93,9 @@ export function DashboardTabs({ categoryById }: Props) {
         </TabsContent>
         <TabsContent value="mock-scores">
           <MockScoreHistory />
+        </TabsContent>
+        <TabsContent value="study-plan">
+          <DashboardStudyPlan />
         </TabsContent>
         <TabsContent value="progress">
           <DashboardProgress />

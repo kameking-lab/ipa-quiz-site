@@ -1,5 +1,6 @@
 import { ALL_QUIZ_EXAM_CODES } from "@/lib/exam-config";
 import batch1RuntimePins from "./fixtures/batch1-runtime-pins.json";
+import kgrowRuntimePins from "./fixtures/kgrow1-runtime-pins.json";
 import { integrationOracle, runtimeFingerprint, normalizedTextSha256, repositoryTextSha256, sourceFilesUnder } from './fixtures/native-integration-oracle';
 import { describe,expect,it } from 'vitest';
 import { existsSync, readFileSync } from 'node:fs';
@@ -71,9 +72,10 @@ describe('aviation communication68 local registration candidate',()=>{
   const player=readFileSync(path.join(process.cwd(),'components/quiz/QuizPlayer.tsx'),'utf8');
   // Reviewed 2026-11-01 urgent release recipe: inline AI, original-answer rewards,
   // next-question focus/loading and explicit retirement of generated questions.
-  // PRK removes only the optional note CTA; rewards, answers and source pins remain.
+  // KGROW1 extends only learning continuity UI. The prior PRK pin stays intact;
+  // rewards, answers and every original-data/core pin below remain exact.
   // The historical pre-reward oracle remains unchanged as provenance.
-  expect(normalizedTextSha256(player)).toBe(batch1RuntimePins['components/quiz/QuizPlayer.tsx']);
+  expect(normalizedTextSha256(player)).toBe(kgrowRuntimePins['components/quiz/QuizPlayer.tsx']);
   expect(player).not.toContain('ExamNoteGuide');
   expect(player).not.toContain('GenerateSimilar');
   expect(player).not.toContain('/api/generate-question');

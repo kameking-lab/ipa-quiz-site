@@ -86,6 +86,9 @@ export function DashboardOverview() {
 
   return (
     <div className="space-y-6">
+      <Link href="/account/dashboard#study-plan" className="flex min-h-12 items-center justify-between rounded-xl border border-border bg-card px-4 font-semibold">
+        今日の学習計画を進める <ArrowRight className="h-4 w-4" aria-hidden="true" />
+      </Link>
       <div className="flex justify-end">
         <Link
           href="/quiz/stream"
