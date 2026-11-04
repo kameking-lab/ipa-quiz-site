@@ -67,7 +67,7 @@ it.each([true, false])("grades stream numeric answers and records the actual res
     answer: "12.3", numericAnswer: { format: "decimal", precision: 1, unit: "kW" } };
   render(<StreamQuizPlayer questions={[numeric]} />);
   fireEvent.change(screen.getByRole("textbox"), { target: { value: correct ? "12.3" : "0.1" } });
-  fireEvent.click(screen.getByRole("button", { name: "採点する", exact: true }));
+  fireEvent.click(screen.getByRole("button", { name: "採点する" }));
   expect(screen.getByText("正解: 12.3 kW")).toBeInTheDocument();
   expect(createHistoryStore().getAllEntries()).toMatchObject([{ id: numeric.id, selected: correct ? "12.3" : "0.1", correct }]);
   expect(screen.getByRole("button", { name: "次の問題へ" })).toBeInTheDocument();
