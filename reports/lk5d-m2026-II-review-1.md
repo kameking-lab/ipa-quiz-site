@@ -2,16 +2,16 @@
 
 確定した修正事項は3件です。
 
-1. **問16・選択肢イの解説が計算と不一致**  
-   [mokuzo-2026-II.ts:772](C:/Users/kanet/20260522/wt-kenchikushi2/data/qualification-staging/kenchikushi2/mokuzo-2026-II.ts:772)  
+1. **問16・選択肢イの解説が計算と不一致**
+   [mokuzo-2026-II.ts:772](C:/Users/kanet/20260522/wt-kenchikushi2/data/qualification-staging/kenchikushi2/mokuzo-2026-II.ts:772)
    「171.0 m²は角地加算を考慮しない値」は誤り。角地加算なしなら `12×9×0.6＋12×10×0.8＝160.8 m²` です。この説明を訂正してください。正答183.6 m²は正しいです。
 
-2. **問18・代替テキストの敷地寸法が誤り**  
-   [mokuzo-2026-II.ts:937](C:/Users/kanet/20260522/wt-kenchikushi2/data/qualification-staging/kenchikushi2/mokuzo-2026-II.ts:937)  
+2. **問18・代替テキストの敷地寸法が誤り**
+   [mokuzo-2026-II.ts:937](C:/Users/kanet/20260522/wt-kenchikushi2/data/qualification-staging/kenchikushi2/mokuzo-2026-II.ts:937)
    「南北11 m」は原図の `2＋2＋1＋6＋1＝12 m` に訂正が必要です。原図PNGと正答8.90 mには問題ありません。
 
-3. **全25問の印刷ページ科目名が誤り**  
-   [mokuzo-2026-II.ts:47](C:/Users/kanet/20260522/wt-kenchikushi2/data/qualification-staging/kenchikushi2/mokuzo-2026-II.ts:47)  
+3. **全25問の印刷ページ科目名が誤り**
+   [mokuzo-2026-II.ts:47](C:/Users/kanet/20260522/wt-kenchikushi2/data/qualification-staging/kenchikushi2/mokuzo-2026-II.ts:47)
    `sourcePrintedPage` が全件「計画」。原本どおり「法規 9」～「法規 22」に修正してください。現行テストの科目別チェックは木造Ⅱを対象としておらず、検出できていません。
 
 問23は正答判定に問題ありませんが、[1162行](C:/Users/kanet/20260522/wt-kenchikushi2/data/qualification-staging/kenchikushi2/mokuzo-2026-II.ts:1162)・1167行の提出時期は具体化を推奨します。建築主事等への提出期限は、法第11条第7項の**確認審査期間の末日の3日前まで**です。「確認済証交付前」だけでは期限を学べません。[国交省資料](https://www.mlit.go.jp/common/001758876.pdf)

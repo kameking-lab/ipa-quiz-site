@@ -7,7 +7,7 @@
 - コミット版verifierをメモリ上で再実行してPASS。source reportと一致。既存ログは29テスト成功、typecheck診断なし、validate `fail=0`。
 - manifest／index／tests／READMEは200/400問、次回「木造2026Ⅰ問1」で整合。全200問の `needsReview=true`・`publicAllowed=false` を確認。
 
-原本：問題PDF14～23頁、正答PDF1頁。  
+原本：問題PDF14～23頁、正答PDF1頁。
 :codex-file-citation{path="C:/Users/kanet/Documents/Codex/2026-11-02/task-2/owner-provided/kenchikushi2/2k-2025-1st-gakka3_4.pdf" purpose="source"}
 :codex-file-citation{path="C:/Users/kanet/Documents/Codex/2026-11-02/task-2/owner-provided/kenchikushi2/2k-2025-1st-gokakukijun.pdf" purpose="source"}
 

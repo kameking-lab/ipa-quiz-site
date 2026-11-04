@@ -1,6 +1,6 @@
 **FAIL — `a0424368b` の科目IIIに、解説の事実誤認が1件あります。**
 
-- **問16・オの解説と総合解説**（[2026-III.ts:846](C:/Users/kanet/20260522/wt-kenchikushi2/data/qualification-staging/kenchikushi2/2026-III.ts:846)、同852行）  
+- **問16・オの解説と総合解説**（[2026-III.ts:846](C:/Users/kanet/20260522/wt-kenchikushi2/data/qualification-staging/kenchikushi2/2026-III.ts:846)、同852行）
   「通常梁1/250以下・片持ち梁1/200以下」「選択肢は数値を入れ替えている」は誤りです。正しくは**通常梁1/300以下・片持ち梁1/250以下**。原選択肢の片持ち梁の値は正しく、通常梁の値が誤っています。公式正答「5」は維持し、両解説を修正する必要があります。根拠：[日本建築学会・規準本文10章「たわみ」](https://aij-static-bucket.s3-ap-northeast-1.amazonaws.com/da1/shiyoukijyun/pdf/J7004246_01.pdf)。
 
 その他の確認結果：

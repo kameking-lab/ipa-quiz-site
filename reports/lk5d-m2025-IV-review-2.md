@@ -7,10 +7,10 @@
 - 全400問で `needsReview=true`／`publicAllowed=false`。進捗400/400、`transcribed-human-review-pending`、再開位置 `human-source-and-explanation-review`／二級2026Ⅰ問1が一致。公開への接続は見つかりませんでした。
 - source verifier再実行：**PASS、400本文／2,000選択肢／400公式正答**。既存ログは29テスト成功、typecheck診断なし、validate `fail=0`（警告16,808件）。テスト自体は再実行していません。
 
-照合原本：問題PDF pp.14–24  
+照合原本：問題PDF pp.14–24
 :codex-file-citation{path="C:/Users/kanet/Documents/Codex/2026-11-02/task-2/owner-provided/kenchikushi2/mk-2025-1st-gakka3_4.pdf" purpose="source"}
 
-公式正答：  
+公式正答：
 :codex-file-citation{path="C:/Users/kanet/Documents/Codex/2026-11-02/task-2/owner-provided/kenchikushi2/mk-2025-1st-gokakukijun.pdf" purpose="source"}
 
 書込み・Git操作・設定変更・秘密情報参照・本番操作・レポート作成は行っていません。全400問の人手確認待ちは維持してください。
