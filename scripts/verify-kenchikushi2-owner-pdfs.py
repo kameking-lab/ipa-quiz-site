@@ -225,6 +225,44 @@ def source_questions_2025_ii(path):
     return questions
 
 
+def source_questions_2025_iii(path):
+    figures={2:(225,137,543,405),3:(283,99,550,242),4:(70,120,440,550),5:(220,95,550,278),12:(142,98,430,317)}
+    questions={}
+    with pdfplumber.open(path) as pdf:
+        for pn in range(2,14):
+            page=pdf.pages[pn-1];rects=[figures[pn]] if pn in figures else []
+            if pn==3:rects.append((70,378,548,527))
+            def retain(o):
+                if o.get("object_type")!="char":return True
+                if o["size"]<=5.5 or o["top"]>=790:return False
+                return not any(o["x0"]<r[2] and o["x1"]>r[0] and o["top"]<r[3] and o["bottom"]>r[1] for r in rects)
+            parts=re.split(r"〔No\.\s*(\d+)〕",unicodedata.normalize("NFKC",page.filter(retain).extract_text(use_text_flow=True)))
+            for i in range(1,len(parts),2):
+                n=int(parts[i]);fields=re.split(r"(?m)^\s*([1-5])\s*\.\s*",parts[i+1]);choices={int(fields[j]):fields[j+1] for j in range(1,len(fields),2)}
+                if n==1:
+                    for k in choices:choices[k]=re.sub(r"10\s*4\s*mm\s*4","10⁴mm⁴",choices[k])
+                if n in [3,4]:
+                    tables=[x for x in page.extract_tables() if len(x)==6 and len(x[0])==2];assert len(tables)==1,tables
+                    choices={}
+                    for j,row in enumerate(tables[0][1:],1):
+                        if n==3:choices[j]="M_Bの大きさ："+row[0]+"、Q_ABの大きさ："+row[1]
+                        else:choices[j]="曲げモーメント図："+row[0]+"、せん断力の最大値："+re.sub(r"P\s*2","P/2",row[1])
+                if n==5:
+                    for k in choices:choices[k]=re.sub(r"3\s*kN","√3kN",choices[k])
+                if n==10:
+                    for k,term in enumerate(['雨押え','折置組','鼻母屋','木割り','側桁'],1):choices[k]=normalize(choices[k]).replace(term,term+' ― ',1)
+                if n==16:choices[5]=normalize(choices[5]).replace("スパンの3001","スパンの1/300")
+                if n==17:
+                    choices[4]=normalize(choices[4]).replace('の倍である。','の1/√3倍である。');choices[5]=normalize(choices[5]).removesuffix("13")
+                if n==19:choices[3]=re.sub(r"200\s*1","1/200",choices[3]);choices[3]=re.sub(r"100\s*1","1/100",choices[3])
+                if n==21:
+                    choices[1]=re.sub(r"10\s*1","1/10",choices[1]);choices[2]=re.sub(r"3\s*2","2/3",choices[2])
+                assert sorted(choices)==[1,2,3,4,5],(n,choices)
+                questions[n]=(pn,fields[0],choices)
+    assert sorted(questions)==list(range(1,26))
+    return questions
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("owner_directory", type=Path)
@@ -246,7 +284,7 @@ def main():
                         assert row == round_["officialAnswers"][subject], (file.name, subject)
                         counts["officialAnswers"] += len(row)
             counts["ownerPdfs"] += 1
-    for year, subject, extract, source in [(2026,"I",source_questions,"R8_2k_1_2.pdf"),(2026,"II",source_questions_ii,"R8_2k_1_2.pdf"),(2026,"III",source_questions_iii,"R8_2k_3_4.pdf"),(2026,"IV",source_questions_iv,"R8_2k_3_4.pdf"),(2025,"I",source_questions_2025_i,"2k-2025-1st-gakka1_2.pdf"),(2025,"II",source_questions_2025_ii,"2k-2025-1st-gakka1_2.pdf")]:
+    for year, subject, extract, source in [(2026,"I",source_questions,"R8_2k_1_2.pdf"),(2026,"II",source_questions_ii,"R8_2k_1_2.pdf"),(2026,"III",source_questions_iii,"R8_2k_3_4.pdf"),(2026,"IV",source_questions_iv,"R8_2k_3_4.pdf"),(2025,"I",source_questions_2025_i,"2k-2025-1st-gakka1_2.pdf"),(2025,"II",source_questions_2025_ii,"2k-2025-1st-gakka1_2.pdf"),(2025,"III",source_questions_2025_iii,"2k-2025-1st-gakka3_4.pdf")]:
         originals = extract(args.owner_directory / source)
         data = (STAGING / f"{year}-{subject}.ts").read_text(encoding="utf-8")
         staged = json.loads(data.split("= ", 1)[1].rsplit(";", 1)[0])
