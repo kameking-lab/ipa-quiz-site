@@ -113,6 +113,19 @@ describe("dojo-osen latest two complete official editions, private staging", () 
     expect(notification.officialAnswerNumber).toBe(4);
     expect(notification.choiceExplanations[3]).toContain("通知先は土地所有者等ではなく調査実施者");
     expect(notification.choiceExplanations[3]).not.toContain("条件付きの説明が不適当");
+    const gasDepth = rows.find(q => q.id === "dojo-osen-2024-am-q32")!;
+    expect(gasDepth.choiceExplanations[2]).toContain("舗装表面を基準");
+    const gasPoints = rows.find(q => q.id === "dojo-osen-2025-am-q19")!;
+    expect(gasPoints.choiceExplanations[3]).toContain("周囲8区画");
+    expect(gasPoints.explanation).not.toMatch(/30m以内|30m範囲/);
+    const combinedPoints = rows.find(q => q.id === "dojo-osen-2024-am-q12")!;
+    expect(combinedPoints.choiceExplanations[2]).toContain("7地点");
+    expect(combinedPoints.choiceExplanations[2]).toContain("3地点");
+    const fillDepth = rows.find(q => q.id === "dojo-osen-2024-am-q21")!;
+    expect(fillDepth.choiceExplanations[2]).toContain("深さ1mの採取が欠ける");
+    const overlappingGas = rows.find(q => q.id === "dojo-osen-2024-am-q16")!;
+    expect(overlappingGas.choiceExplanations[1]).toContain("実測地点Bの区画は実測結果を優先");
+    expect(overlappingGas.explanation).not.toContain("距離");
   });
 
   it("excludes the entire corpus and assets from public registries and navigation", () => {
