@@ -20,6 +20,10 @@ export const EXAM_LABELS: Record<string, string> = {
   "jidosha-3-motorcycle": "三級二輪自動車整備士",
   "jidosha-body": "自動車車体整備士",
   "jidosha-electrical": "自動車電気装置整備士",
+  "biyoshi": "美容師",
+  "kikenbutsu-otsu1": "危険物取扱者 乙種第1類",
+  "kikenbutsu-otsu2": "危険物取扱者 乙種第2類",
+  "kikenbutsu-otsu6": "危険物取扱者 乙種第6類",
 
   kanteishi: "不動産鑑定士",
   kaikeishi: "公認会計士",

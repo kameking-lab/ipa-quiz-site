@@ -18,6 +18,10 @@ const EXAM_LOADERS: Partial<Record<ExamCode, () => Promise<Question[]>>> = {
   "jidosha-3-motorcycle": async () => isExamPublished("jidosha-3-motorcycle") ? (await import("@/data/questions/automotive")).getAutomotiveQuestions("jidosha-3-motorcycle") : [],
   "jidosha-body": async () => isExamPublished("jidosha-body") ? (await import("@/data/questions/automotive")).getAutomotiveQuestions("jidosha-body") : [],
   "jidosha-electrical": async () => isExamPublished("jidosha-electrical") ? (await import("@/data/questions/automotive")).getAutomotiveQuestions("jidosha-electrical") : [],
+  biyoshi: async () => (await import("@/data/questions/biyoshi")).BIYOSHI_QUESTIONS,
+  "kikenbutsu-otsu1": async () => (await import("@/data/questions/kikenbutsu-otsu1")).QUESTIONS,
+  "kikenbutsu-otsu2": async () => (await import("@/data/questions/kikenbutsu-otsu2")).QUESTIONS,
+  "kikenbutsu-otsu6": async () => (await import("@/data/questions/kikenbutsu-otsu6")).QUESTIONS,
 
   kanteishi: async () => isExamPublished("kanteishi") ? (await import("@/data/questions/kanteishi")).KANTEISHI_QUESTIONS : [],
   kaikeishi: async () => isExamPublished("kaikeishi") ? (await import("@/data/questions/kaikeishi")).KAIKEISHI_QUESTIONS : [],

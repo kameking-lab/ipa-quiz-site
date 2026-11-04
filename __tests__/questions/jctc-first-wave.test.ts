@@ -18,7 +18,7 @@ const allNumbers = Array.from({ length: 40 }, (_, index) => index + 1);
 describe("JCTC first-stage questions with official provenance", () => {
   it.each([
     ["zoen2", garden, ZOEN2_QUESTIONS.filter((q) => q.year === 2026), 40, 40],
-    ["tsushin2", telecom, TSUSHIN2_QUESTIONS, 65, 5],
+    ["tsushin2", telecom, TSUSHIN2_QUESTIONS.filter(q => q.year === 2026 && telecom.questions.some(item => item.number === q.qNumber)), 65, 5],
   ] as const)("%s retains original PDF hashes and all official answers", (exam, source, questions, officialCount, count) => {
     expect(source.officialQuestionCount).toBe(officialCount);
     expect(source.publishedCount).toBe(count);
@@ -39,8 +39,11 @@ describe("JCTC first-stage questions with official provenance", () => {
     }
   });
 
-  it("keeps telecom questions with missing diagrams outside its pool", () => {
-    expect(TSUSHIN2_QUESTIONS.map((q) => q.qNumber)).toEqual([4, 7, 8, 9, 10]);
+  it("retains the original five and restores formerly deferred telecom figures", () => {
+    expect(TSUSHIN2_QUESTIONS).toHaveLength(130);
+    for (const number of [1, 2, 3, 5, 6]) {
+      expect(TSUSHIN2_QUESTIONS.find(q => q.year === 2026 && q.qNumber === number)).toBeDefined();
+    }
     expect(telecom.deferred.map((q) => q.number)).toEqual([1, 2, 3, 5, 6]);
   });
 

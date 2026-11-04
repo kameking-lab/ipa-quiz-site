@@ -100,6 +100,11 @@ import { MARITIME3_QUESTIONS } from "./maritime3";
 import { LAND_SPECIAL2_QUESTIONS } from "./land-special2";
 import { LAND_SPECIAL3_QUESTIONS } from "./land-special3";
 
+import { BIYOSHI_QUESTIONS } from "./biyoshi";
+import { QUESTIONS as OT1_QUESTIONS } from "./kikenbutsu-otsu1";
+import { QUESTIONS as OT2_QUESTIONS } from "./kikenbutsu-otsu2";
+import { QUESTIONS as OT6_QUESTIONS } from "./kikenbutsu-otsu6";
+
 export const QUESTIONS_BY_EXAM: Partial<Record<ExamCode, Question[]>> = {
   ...(isExamPublished("kenchiku-setsubishi") ? { "kenchiku-setsubishi": KENCHIKU_SETSUBISHI_STUDY_QUESTIONS.filter(isPracticeReadyQuestion) } : {}),
   ...(isExamPublished("chizai2") ? { chizai2: CHIZAI2_QUESTIONS.filter(isPracticeReadyQuestion) } : {}),
@@ -115,6 +120,10 @@ export const QUESTIONS_BY_EXAM: Partial<Record<ExamCode, Question[]>> = {
   ...(isExamPublished("jidosha-3-motorcycle") ? { "jidosha-3-motorcycle": getAutomotiveQuestions("jidosha-3-motorcycle") } : {}),
   ...(isExamPublished("jidosha-body") ? { "jidosha-body": getAutomotiveQuestions("jidosha-body") } : {}),
   ...(isExamPublished("jidosha-electrical") ? { "jidosha-electrical": getAutomotiveQuestions("jidosha-electrical") } : {}),
+  biyoshi: BIYOSHI_QUESTIONS,
+  "kikenbutsu-otsu1": OT1_QUESTIONS,
+  "kikenbutsu-otsu2": OT2_QUESTIONS,
+  "kikenbutsu-otsu6": OT6_QUESTIONS,
 
   ...(isExamPublished("kanteishi") ? { kanteishi: KANTEISHI_QUESTIONS.filter(isPracticeReadyQuestion) } : {}),
   ...(isExamPublished("kaikeishi") ? { kaikeishi: KAIKEISHI_QUESTIONS.filter(isPracticeReadyQuestion) } : {}),

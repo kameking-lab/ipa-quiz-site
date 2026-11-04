@@ -1,0 +1,745 @@
+{
+  "scope": "qual-new:20",
+  "createdAtJST": "2026-11-01T19:14:33.344804+09:00",
+  "kind": "source-bound-official-past-question-candidate",
+  "sourcePdfSHA256": "d015ddf87c66aa877bc6aeb0c424d73ecded09fd907205d733faa4150f6cbd8d",
+  "annotationsSHA256": "878e6bacf77df6e9f4fbe14be687e83d3ec4d20aa7fb4f7d88e570b5fcba35f0",
+  "questionCount": 10,
+  "questions": [
+    {
+      "id": "otsu1-published-202606-q26",
+      "qualificationId": "qual-new:20",
+      "exam": "kikenbutsu-otsu1",
+      "year": null,
+      "session": null,
+      "season": "published",
+      "publicationVersion": "2026-06",
+      "section": "第1類・危険物の性質並びにその火災予防及び消火の方法",
+      "qNumber": 26,
+      "type": "multiple-choice",
+      "question": "原問画像の問26を参照してください。問題文と全選択肢は画像内の原文です。",
+      "questionNotice": "令和7年度以前の実出題からの公式公表抜粋。個別の実施年・回は公表されていません。",
+      "originalRepresentation": "unmodified-full-page-image",
+      "hasImage": true,
+      "imageUrls": [
+        "images/official-page-14.png"
+      ],
+      "imageAltTexts": [
+        "公式公表版・乙種第1類 問26の問題文と選択肢。PDF 14頁。"
+      ],
+      "choices": {
+        "ア": "1",
+        "イ": "2",
+        "ウ": "3",
+        "エ": "4",
+        "オ": "5"
+      },
+      "choicePresentation": "数字は原問画像内の同番号の肢に対応する回答ボタン。本文の転記ではない。",
+      "answer": "エ",
+      "officialAnswerNumber": "4",
+      "officialAnswerImage": "images/official-page-44.png",
+      "choiceFactTruth": {
+        "ア": false,
+        "イ": false,
+        "ウ": false,
+        "エ": true,
+        "オ": false
+      },
+      "explanation": "全称表現と類別を確認する。正答肢以外は一部にもっともらしい説明があっても全体として誤り。",
+      "choiceExplanations": {
+        "ア": "第2類には有機物の固形アルコールもあり、列挙した性質をすべての物質に当てはめられない。\n正しい考え方：第2類の共通する区分は可燃性固体であり、比重や溶解性は物質別に確認する。",
+        "イ": "第3類には禁水性物質も含まれ、金属ナトリウムなど酸素を含まないものもある。\n正しい考え方：第3類は自然発火性物質及び禁水性物質で、二つの性質を全品目が必ず併せ持つとは限らない。",
+        "ウ": "エタノールのように酸素を含む第4類があるため、炭化水素だけには限定できない。\n正しい考え方：第4類の共通性は引火性液体であり、構成元素が二種類だけという条件ではない。",
+        "エ": "第5類は可燃性の固体又は液体で、自己反応性物質として区分される。公式正答は4である。\n正しい考え方：第5類の引火・燃焼の危険と、加熱等による自己分解の危険を併せて捉える。",
+        "オ": "第6類は酸化性液体なので、状態の説明が一致しない。\n正しい考え方：酸化性固体は第1類、酸化性液体は第6類である。"
+      },
+      "choiceErrorLocations": {
+        "ア": "第2類全体を無機物・比重・難溶性で一括する箇所",
+        "イ": "第3類の全物質に自然発火性と酸素含有を要求する箇所",
+        "ウ": "第4類の元素組成を炭素と水素だけに限定する箇所",
+        "エ": null,
+        "オ": "第6類を固体とする箇所"
+      },
+      "explanationCoverage": "full",
+      "annotationRef": {
+        "file": "../official-annotations-10.json",
+        "sha256": "878e6bacf77df6e9f4fbe14be687e83d3ec4d20aa7fb4f7d88e570b5fcba35f0",
+        "id": "otsu1-published-202606-q26"
+      },
+      "sourcePdfUrl": "https://www.shoubo-shiken.or.jp/content/kikenbutsu_otsu.pdf#page=14",
+      "sourceAnswerUrl": "https://www.shoubo-shiken.or.jp/content/kikenbutsu_otsu.pdf#page=44",
+      "sourceAttribution": "出典：一般財団法人消防試験研究センター。原問画像は公式公表問題を改変せず表示。解説は独自作成。",
+      "figureRequired": false,
+      "questionPolarity": "selectCorrect"
+    },
+    {
+      "id": "otsu1-published-202606-q27",
+      "qualificationId": "qual-new:20",
+      "exam": "kikenbutsu-otsu1",
+      "year": null,
+      "session": null,
+      "season": "published",
+      "publicationVersion": "2026-06",
+      "section": "第1類・危険物の性質並びにその火災予防及び消火の方法",
+      "qNumber": 27,
+      "type": "multiple-choice",
+      "question": "原問画像の問27を参照してください。問題文と全選択肢は画像内の原文です。",
+      "questionNotice": "令和7年度以前の実出題からの公式公表抜粋。個別の実施年・回は公表されていません。",
+      "originalRepresentation": "unmodified-full-page-image",
+      "hasImage": true,
+      "imageUrls": [
+        "images/official-page-15.png"
+      ],
+      "imageAltTexts": [
+        "公式公表版・乙種第1類 問27の問題文と選択肢。PDF 15頁。"
+      ],
+      "choices": {
+        "ア": "1",
+        "イ": "2",
+        "ウ": "3",
+        "エ": "4",
+        "オ": "5"
+      },
+      "choicePresentation": "数字は原問画像内の同番号の肢に対応する回答ボタン。本文の転記ではない。",
+      "answer": "ウ",
+      "officialAnswerNumber": "3",
+      "officialAnswerImage": "images/official-page-44.png",
+      "choiceFactTruth": {
+        "ア": true,
+        "イ": true,
+        "ウ": false,
+        "エ": true,
+        "オ": true
+      },
+      "explanation": "誤っている注意を選ぶ問題。保管場所の換気と容器の密栓を混同しない。",
+      "choiceExplanations": {
+        "ア": "加熱・衝撃・摩擦を避けるのは、分解や激しい反応のきっかけを減らすためで、適切な注意である。\n正しい考え方：これらの刺激を避けることは正しいので、誤った注意を選ぶ本問の答えにはしない。",
+        "イ": "容器破損や漏出は、周囲の可燃物・異物との接触を招く。\n正しい考え方：容器の状態と漏出の有無を点検する。",
+        "ウ": "吸湿や異物混入を招くため、共通の保管方法として不適切。換気のよい保管場所と、容器に穴を開ける行為は別である。\n正しい考え方：適合する容器を使用し密栓する。空間の換気を理由に容器へ独自の穴を設けない。",
+        "エ": "有機物や酸との接触を避けるのは、発火・爆発や分解を防ぐための適切な注意である。\n正しい考え方：混触危険のある物質を分離する。",
+        "オ": "熱源・火気から距離を取れば、加熱による分解等のきっかけを減らせる。\n正しい考え方：火気や熱源の影響を受けない条件を保つ。"
+      },
+      "choiceErrorLocations": {
+        "ア": null,
+        "イ": null,
+        "ウ": "容器を開放的にし、通気用の穴を設ける箇所",
+        "エ": null,
+        "オ": null
+      },
+      "explanationCoverage": "full",
+      "annotationRef": {
+        "file": "../official-annotations-10.json",
+        "sha256": "878e6bacf77df6e9f4fbe14be687e83d3ec4d20aa7fb4f7d88e570b5fcba35f0",
+        "id": "otsu1-published-202606-q27"
+      },
+      "sourcePdfUrl": "https://www.shoubo-shiken.or.jp/content/kikenbutsu_otsu.pdf#page=15",
+      "sourceAnswerUrl": "https://www.shoubo-shiken.or.jp/content/kikenbutsu_otsu.pdf#page=44",
+      "sourceAttribution": "出典：一般財団法人消防試験研究センター。原問画像は公式公表問題を改変せず表示。解説は独自作成。",
+      "figureRequired": false,
+      "questionPolarity": "selectIncorrect"
+    },
+    {
+      "id": "otsu1-published-202606-q28",
+      "qualificationId": "qual-new:20",
+      "exam": "kikenbutsu-otsu1",
+      "year": null,
+      "session": null,
+      "season": "published",
+      "publicationVersion": "2026-06",
+      "section": "第1類・危険物の性質並びにその火災予防及び消火の方法",
+      "qNumber": 28,
+      "type": "multiple-choice",
+      "question": "原問画像の問28を参照してください。問題文と全選択肢は画像内の原文です。",
+      "questionNotice": "令和7年度以前の実出題からの公式公表抜粋。個別の実施年・回は公表されていません。",
+      "originalRepresentation": "unmodified-full-page-image",
+      "hasImage": true,
+      "imageUrls": [
+        "images/official-page-15.png"
+      ],
+      "imageAltTexts": [
+        "公式公表版・乙種第1類 問28の問題文と選択肢。PDF 15頁。"
+      ],
+      "choices": {
+        "ア": "1",
+        "イ": "2",
+        "ウ": "3",
+        "エ": "4",
+        "オ": "5"
+      },
+      "choicePresentation": "数字は原問画像内の同番号の肢に対応する回答ボタン。本文の転記ではない。",
+      "answer": "ア",
+      "officialAnswerNumber": "1",
+      "officialAnswerImage": "images/official-page-44.png",
+      "choiceFactTruth": {
+        "ア": true,
+        "イ": false,
+        "ウ": false,
+        "エ": false,
+        "オ": false
+      },
+      "explanation": "火災の対象に第1類が含まれるとき、消火剤の一般論だけで決めない。",
+      "choiceExplanations": {
+        "ア": "一般的な第1類と木材・紙の火災では水による冷却が有効だが、水と反応するアルカリ金属の過酸化物等は除外する。\n正しい考え方：一般則と注水不適の例外を同時に確認する。",
+        "イ": "本問で押さえるべき例外の物質群が違う。これらを一律に除外する説明は適切でない。\n正しい考え方：水反応性のあるアルカリ金属の過酸化物等を例外として区別する。",
+        "ウ": "水分を含む泡を、水反応性物質を除かず適用する考え方が不適切。\n正しい考え方：水系消火剤では、水に反応する物質を見落とさない。",
+        "エ": "酸化性物質は燃焼を助けるため、空気中の酸素を遮断する窒息効果だけには頼れない。\n正しい考え方：本問では注水可能な物質の冷却と、水反応性の例外の区別が要点となる。",
+        "オ": "酸化性固体と可燃物の混在火災に対する一般的な最適手段とはならない。酸化剤が関与する火災では、単に空気を遮断する考え方より冷却による分解・燃焼の抑制が重要となる。\n正しい考え方：一般的には適合する水系冷却を考え、禁水性の例外を別扱いにする。"
+      },
+      "choiceErrorLocations": {
+        "ア": null,
+        "イ": "注水対象から塩素酸塩・過塩素酸塩を外す箇所",
+        "ウ": "過マンガン酸塩だけを除外して泡を一般化する箇所",
+        "エ": "二酸化炭素による方法を最も有効とする箇所",
+        "オ": "ハロゲン化物による方法を最も有効とする箇所"
+      },
+      "explanationCoverage": "full",
+      "annotationRef": {
+        "file": "../official-annotations-10.json",
+        "sha256": "878e6bacf77df6e9f4fbe14be687e83d3ec4d20aa7fb4f7d88e570b5fcba35f0",
+        "id": "otsu1-published-202606-q28"
+      },
+      "sourcePdfUrl": "https://www.shoubo-shiken.or.jp/content/kikenbutsu_otsu.pdf#page=15",
+      "sourceAnswerUrl": "https://www.shoubo-shiken.or.jp/content/kikenbutsu_otsu.pdf#page=44",
+      "sourceAttribution": "出典：一般財団法人消防試験研究センター。原問画像は公式公表問題を改変せず表示。解説は独自作成。",
+      "figureRequired": false,
+      "questionPolarity": "selectCorrect"
+    },
+    {
+      "id": "otsu1-published-202606-q29",
+      "qualificationId": "qual-new:20",
+      "exam": "kikenbutsu-otsu1",
+      "year": null,
+      "session": null,
+      "season": "published",
+      "publicationVersion": "2026-06",
+      "section": "第1類・危険物の性質並びにその火災予防及び消火の方法",
+      "qNumber": 29,
+      "type": "multiple-choice",
+      "question": "原問画像の問29を参照してください。問題文と全選択肢は画像内の原文です。",
+      "questionNotice": "令和7年度以前の実出題からの公式公表抜粋。個別の実施年・回は公表されていません。",
+      "originalRepresentation": "unmodified-full-page-image",
+      "hasImage": true,
+      "imageUrls": [
+        "images/official-page-16.png"
+      ],
+      "imageAltTexts": [
+        "公式公表版・乙種第1類 問29の問題文と選択肢。PDF 16頁。"
+      ],
+      "choices": {
+        "ア": "1",
+        "イ": "2",
+        "ウ": "3",
+        "エ": "4",
+        "オ": "5"
+      },
+      "choicePresentation": "数字は原問画像内の同番号の肢に対応する回答ボタン。本文の転記ではない。",
+      "answer": "イ",
+      "officialAnswerNumber": "2",
+      "officialAnswerImage": "images/official-page-44.png",
+      "choiceFactTruth": {
+        "ア": true,
+        "イ": false,
+        "ウ": true,
+        "エ": true,
+        "オ": true
+      },
+      "explanation": "酸の添加を安定化とする取り違えを見抜く。",
+      "choiceExplanations": {
+        "ア": "金属粉末との混触は激しい反応を招き得るため、混入・接触を避けるのは適切。\n正しい考え方：酸化剤と反応する物質を混ぜない。",
+        "イ": "酸との接触は分解を促し、有害で爆発性の二酸化塩素を発生させ得る。\n正しい考え方：酸は安定剤と考えず、混触を防止する。",
+        "ウ": "有機物との接触は火災・爆発につながるおそれがある。\n正しい考え方：有機物で汚染された器具などからの混入も防ぐ。",
+        "エ": "光や熱の影響を抑える保管は、分解等を避けるため適切。\n正しい考え方：直射日光や高温を避けて保管する。",
+        "オ": "取扱い時に有害ガスが発生する可能性を考え、換気に配慮するのは適切。\n正しい考え方：空間の換気と、混触を起こさない管理を併せて行う。"
+      },
+      "choiceErrorLocations": {
+        "ア": null,
+        "イ": "酸を加えて安定化しようとする箇所",
+        "ウ": null,
+        "エ": null,
+        "オ": null
+      },
+      "explanationCoverage": "full",
+      "annotationRef": {
+        "file": "../official-annotations-10.json",
+        "sha256": "878e6bacf77df6e9f4fbe14be687e83d3ec4d20aa7fb4f7d88e570b5fcba35f0",
+        "id": "otsu1-published-202606-q29"
+      },
+      "sourcePdfUrl": "https://www.shoubo-shiken.or.jp/content/kikenbutsu_otsu.pdf#page=16",
+      "sourceAnswerUrl": "https://www.shoubo-shiken.or.jp/content/kikenbutsu_otsu.pdf#page=44",
+      "sourceAttribution": "出典：一般財団法人消防試験研究センター。原問画像は公式公表問題を改変せず表示。解説は独自作成。",
+      "figureRequired": false,
+      "questionPolarity": "selectIncorrect"
+    },
+    {
+      "id": "otsu1-published-202606-q30",
+      "qualificationId": "qual-new:20",
+      "exam": "kikenbutsu-otsu1",
+      "year": null,
+      "session": null,
+      "season": "published",
+      "publicationVersion": "2026-06",
+      "section": "第1類・危険物の性質並びにその火災予防及び消火の方法",
+      "qNumber": 30,
+      "type": "multiple-choice",
+      "question": "原問画像の問30を参照してください。問題文と全選択肢は画像内の原文です。",
+      "questionNotice": "令和7年度以前の実出題からの公式公表抜粋。個別の実施年・回は公表されていません。",
+      "originalRepresentation": "unmodified-full-page-image",
+      "hasImage": true,
+      "imageUrls": [
+        "images/official-page-16.png"
+      ],
+      "imageAltTexts": [
+        "公式公表版・乙種第1類 問30の問題文と選択肢。PDF 16頁。"
+      ],
+      "choices": {
+        "ア": "1",
+        "イ": "2",
+        "ウ": "3",
+        "エ": "4",
+        "オ": "5"
+      },
+      "choicePresentation": "数字は原問画像内の同番号の肢に対応する回答ボタン。本文の転記ではない。",
+      "answer": "ア",
+      "officialAnswerNumber": "1",
+      "officialAnswerImage": "images/official-page-44.png",
+      "choiceFactTruth": {
+        "ア": true,
+        "イ": false,
+        "ウ": false,
+        "エ": false,
+        "オ": false
+      },
+      "explanation": "霧状でも棒状でも水である点を確認する。",
+      "choiceExplanations": {
+        "ア": "乾燥砂は、水反応性のある過酸化ナトリウムに水を接触させず覆う方法であり、本問の公式正答。\n正しい考え方：乾いていることが条件で、湿った砂とは区別する。",
+        "イ": "泡の水分が過酸化ナトリウムと反応するため不適切。\n正しい考え方：水系消火剤を適用せず、水反応性に合った方法を選ぶ。",
+        "ウ": "酸化性物質による燃焼促進があるため、一般の可燃物に対する窒息消火の考え方をそのまま当てはめられない。本問の公式正答も二酸化炭素ではなく乾燥砂である。\n正しい考え方：本問の選択肢では乾燥砂を選び、酸素供給を伴う酸化剤の火災を一般の空気依存の燃焼と同一視しない。",
+        "エ": "霧状にしても水との接触で反応する性質は消えない。\n正しい考え方：容器を外側から冷却する記述と、内容物への直接注水を区別する。",
+        "オ": "水と激しく反応して発熱し、火災を悪化させる危険がある。\n正しい考え方：対象物への直接注水を避ける。"
+      },
+      "choiceErrorLocations": {
+        "ア": null,
+        "イ": "水分を含む泡を使う箇所",
+        "ウ": "二酸化炭素を使用する箇所",
+        "エ": "水を霧にして対象へ直接かける箇所",
+        "オ": "棒状の水を直接かける箇所"
+      },
+      "explanationCoverage": "full",
+      "annotationRef": {
+        "file": "../official-annotations-10.json",
+        "sha256": "878e6bacf77df6e9f4fbe14be687e83d3ec4d20aa7fb4f7d88e570b5fcba35f0",
+        "id": "otsu1-published-202606-q30"
+      },
+      "sourcePdfUrl": "https://www.shoubo-shiken.or.jp/content/kikenbutsu_otsu.pdf#page=16",
+      "sourceAnswerUrl": "https://www.shoubo-shiken.or.jp/content/kikenbutsu_otsu.pdf#page=44",
+      "sourceAttribution": "出典：一般財団法人消防試験研究センター。原問画像は公式公表問題を改変せず表示。解説は独自作成。",
+      "figureRequired": false,
+      "questionPolarity": "selectCorrect"
+    },
+    {
+      "id": "otsu1-published-202606-q31",
+      "qualificationId": "qual-new:20",
+      "exam": "kikenbutsu-otsu1",
+      "year": null,
+      "session": null,
+      "season": "published",
+      "publicationVersion": "2026-06",
+      "section": "第1類・危険物の性質並びにその火災予防及び消火の方法",
+      "qNumber": 31,
+      "type": "multiple-choice",
+      "question": "原問画像の問31を参照してください。問題文と全選択肢は画像内の原文です。",
+      "questionNotice": "令和7年度以前の実出題からの公式公表抜粋。個別の実施年・回は公表されていません。",
+      "originalRepresentation": "unmodified-full-page-image",
+      "hasImage": true,
+      "imageUrls": [
+        "images/official-page-17.png"
+      ],
+      "imageAltTexts": [
+        "公式公表版・乙種第1類 問31の問題文と選択肢。PDF 17頁。"
+      ],
+      "choices": {
+        "ア": "1",
+        "イ": "2",
+        "ウ": "3",
+        "エ": "4",
+        "オ": "5"
+      },
+      "choicePresentation": "数字は原問画像内の同番号の肢に対応する回答ボタン。本文の転記ではない。",
+      "answer": "ア",
+      "officialAnswerNumber": "1",
+      "officialAnswerImage": "images/official-page-44.png",
+      "choiceFactTruth": {
+        "ア": false,
+        "イ": true,
+        "ウ": true,
+        "エ": true,
+        "オ": true
+      },
+      "explanation": "物質自身の燃焼と助燃性を分ける。",
+      "choiceExplanations": {
+        "ア": "第1類は酸化性固体であり、一般に自身が燃料として燃える性質と、周囲の可燃物を燃えやすくする性質を混同している。\n正しい考え方：自身は不燃性でも、酸化作用によって他の物質の燃焼を助け得る。",
+        "イ": "常温で固体である点は第1類の状態の説明に合う。\n正しい考え方：第6類の酸化性液体と区別する。",
+        "ウ": "第1類の酸化性固体はその組成中に酸素を含む。\n正しい考え方：酸素を含むだけでどんな物質も第1類になるわけではなく、区分の性状と併せて考える。",
+        "エ": "加熱や機械的刺激などで分解し、酸素を放出することがある。\n正しい考え方：分解を起こす条件を避ける。",
+        "オ": "有機物との混合では酸化剤と燃料が接近し、爆発的反応につながることがある。\n正しい考え方：混触を防ぎ、不燃性という説明だけで安全と判断しない。"
+      },
+      "choiceErrorLocations": {
+        "ア": "第1類自身を可燃性とする箇所",
+        "イ": null,
+        "ウ": null,
+        "エ": null,
+        "オ": null
+      },
+      "explanationCoverage": "full",
+      "annotationRef": {
+        "file": "../official-annotations-10.json",
+        "sha256": "878e6bacf77df6e9f4fbe14be687e83d3ec4d20aa7fb4f7d88e570b5fcba35f0",
+        "id": "otsu1-published-202606-q31"
+      },
+      "sourcePdfUrl": "https://www.shoubo-shiken.or.jp/content/kikenbutsu_otsu.pdf#page=17",
+      "sourceAnswerUrl": "https://www.shoubo-shiken.or.jp/content/kikenbutsu_otsu.pdf#page=44",
+      "sourceAttribution": "出典：一般財団法人消防試験研究センター。原問画像は公式公表問題を改変せず表示。解説は独自作成。",
+      "figureRequired": false,
+      "questionPolarity": "selectIncorrect"
+    },
+    {
+      "id": "otsu1-published-202606-q32",
+      "qualificationId": "qual-new:20",
+      "exam": "kikenbutsu-otsu1",
+      "year": null,
+      "session": null,
+      "season": "published",
+      "publicationVersion": "2026-06",
+      "section": "第1類・危険物の性質並びにその火災予防及び消火の方法",
+      "qNumber": 32,
+      "type": "multiple-choice",
+      "question": "原問画像の問32を参照してください。問題文と全選択肢は画像内の原文です。",
+      "questionNotice": "令和7年度以前の実出題からの公式公表抜粋。個別の実施年・回は公表されていません。",
+      "originalRepresentation": "unmodified-full-page-image",
+      "hasImage": true,
+      "imageUrls": [
+        "images/official-page-17.png"
+      ],
+      "imageAltTexts": [
+        "公式公表版・乙種第1類 問32の問題文と選択肢。PDF 17頁。"
+      ],
+      "choices": {
+        "ア": "1",
+        "イ": "2",
+        "ウ": "3",
+        "エ": "4",
+        "オ": "5"
+      },
+      "choicePresentation": "数字は原問画像内の同番号の肢に対応する回答ボタン。本文の転記ではない。",
+      "answer": "オ",
+      "officialAnswerNumber": "5",
+      "officialAnswerImage": "images/official-page-44.png",
+      "choiceFactTruth": {
+        "ア": true,
+        "イ": true,
+        "ウ": true,
+        "エ": true,
+        "オ": false
+      },
+      "explanation": "酸化剤に可燃物を加えることは安定化ではない。",
+      "choiceExplanations": {
+        "ア": "塩素酸カリウムの無色結晶という外観の説明は適切。\n正しい考え方：外観の色と酸化性の有無を結び付けない。",
+        "イ": "熱水に比べ冷水には溶けにくいという比較は適切。\n正しい考え方：水溶性を有無だけでなく温度条件とともに読む。",
+        "ウ": "公表問題の約400℃という加熱分解の目安は正しい肢として扱われている。\n正しい考え方：この数値を安全に加熱できる温度の上限とは解釈しない。",
+        "エ": "濃硫酸との接触は危険な反応を招くおそれがある。\n正しい考え方：強酸との混触を避ける。",
+        "オ": "硫黄のような可燃性・還元性物質との混合は、酸化剤との反応を激しくする危険を増す。\n正しい考え方：少量を加えることを安全化と考えず、硫黄等との接触を避ける。"
+      },
+      "choiceErrorLocations": {
+        "ア": null,
+        "イ": null,
+        "ウ": null,
+        "エ": null,
+        "オ": "硫黄の添加で爆発しにくくなるとする箇所"
+      },
+      "explanationCoverage": "full",
+      "annotationRef": {
+        "file": "../official-annotations-10.json",
+        "sha256": "878e6bacf77df6e9f4fbe14be687e83d3ec4d20aa7fb4f7d88e570b5fcba35f0",
+        "id": "otsu1-published-202606-q32"
+      },
+      "sourcePdfUrl": "https://www.shoubo-shiken.or.jp/content/kikenbutsu_otsu.pdf#page=17",
+      "sourceAnswerUrl": "https://www.shoubo-shiken.or.jp/content/kikenbutsu_otsu.pdf#page=44",
+      "sourceAttribution": "出典：一般財団法人消防試験研究センター。原問画像は公式公表問題を改変せず表示。解説は独自作成。",
+      "figureRequired": false,
+      "questionPolarity": "selectIncorrect"
+    },
+    {
+      "id": "otsu1-published-202606-q33",
+      "qualificationId": "qual-new:20",
+      "exam": "kikenbutsu-otsu1",
+      "year": null,
+      "session": null,
+      "season": "published",
+      "publicationVersion": "2026-06",
+      "section": "第1類・危険物の性質並びにその火災予防及び消火の方法",
+      "qNumber": 33,
+      "type": "multiple-choice",
+      "question": "原問画像の問33を参照してください。問題文と全選択肢は画像内の原文です。",
+      "questionNotice": "令和7年度以前の実出題からの公式公表抜粋。個別の実施年・回は公表されていません。",
+      "originalRepresentation": "unmodified-full-page-image",
+      "hasImage": true,
+      "imageUrls": [
+        "images/official-page-18.png"
+      ],
+      "imageAltTexts": [
+        "公式公表版・乙種第1類 問33の問題文と選択肢。PDF 18頁。"
+      ],
+      "choices": {
+        "ア": "1",
+        "イ": "2",
+        "ウ": "3",
+        "エ": "4",
+        "オ": "5"
+      },
+      "choicePresentation": "数字は原問画像内の同番号の肢に対応する回答ボタン。本文の転記ではない。",
+      "answer": "イ",
+      "officialAnswerNumber": "2",
+      "officialAnswerImage": "images/official-page-44.png",
+      "choiceFactTruth": {
+        "ア": true,
+        "イ": false,
+        "ウ": true,
+        "エ": true,
+        "オ": true
+      },
+      "explanation": "物質名から臭いを推測せず、通常時と分解時を分けて考える。",
+      "choiceExplanations": {
+        "ア": "通常の硝酸アンモニウムの結晶の外観として適切。\n正しい考え方：物質名と外観を対応させる。",
+        "イ": "硝酸アンモニウムは通常無臭として扱う。アンモニウムという名称からアンモニアの臭いを当てはめてはいけない。\n正しい考え方：通常時の臭いと加熱分解時のガスを分ける。",
+        "ウ": "硝酸アンモニウムは水に溶けやすい。\n正しい考え方：固体であることと水に溶けにくいことを結び付けない。",
+        "エ": "加熱分解により窒素酸化物等の有害な生成物を生じるおそれがある。\n正しい考え方：通常無臭でも加熱時のガスが無害とは限らない。",
+        "オ": "潮解性をもつため、湿気を取り込む性質に注意する。\n正しい考え方：保管時の湿度と容器管理を確認する。"
+      },
+      "choiceErrorLocations": {
+        "ア": null,
+        "イ": "通常の結晶に刺激臭があるとする箇所",
+        "ウ": null,
+        "エ": null,
+        "オ": null
+      },
+      "explanationCoverage": "full",
+      "annotationRef": {
+        "file": "../official-annotations-10.json",
+        "sha256": "878e6bacf77df6e9f4fbe14be687e83d3ec4d20aa7fb4f7d88e570b5fcba35f0",
+        "id": "otsu1-published-202606-q33"
+      },
+      "sourcePdfUrl": "https://www.shoubo-shiken.or.jp/content/kikenbutsu_otsu.pdf#page=18",
+      "sourceAnswerUrl": "https://www.shoubo-shiken.or.jp/content/kikenbutsu_otsu.pdf#page=44",
+      "sourceAttribution": "出典：一般財団法人消防試験研究センター。原問画像は公式公表問題を改変せず表示。解説は独自作成。",
+      "figureRequired": false,
+      "questionPolarity": "selectIncorrect"
+    },
+    {
+      "id": "otsu1-published-202606-q34",
+      "qualificationId": "qual-new:20",
+      "exam": "kikenbutsu-otsu1",
+      "year": null,
+      "session": null,
+      "season": "published",
+      "publicationVersion": "2026-06",
+      "section": "第1類・危険物の性質並びにその火災予防及び消火の方法",
+      "qNumber": 34,
+      "type": "multiple-choice",
+      "question": "原問画像の問34を参照してください。問題文と全選択肢は画像内の原文です。",
+      "questionNotice": "令和7年度以前の実出題からの公式公表抜粋。個別の実施年・回は公表されていません。",
+      "originalRepresentation": "unmodified-full-page-image",
+      "hasImage": true,
+      "imageUrls": [
+        "images/official-page-18.png"
+      ],
+      "imageAltTexts": [
+        "公式公表版・乙種第1類 問34の問題文と選択肢。PDF 18頁。"
+      ],
+      "choices": {
+        "ア": "1",
+        "イ": "2",
+        "ウ": "3",
+        "エ": "4",
+        "オ": "5"
+      },
+      "choicePresentation": "数字は原問画像内の同番号の肢に対応する回答ボタン。本文の転記ではない。",
+      "answer": "イ",
+      "officialAnswerNumber": "2",
+      "officialAnswerImage": "images/official-page-44.png",
+      "choiceFactTruth": {
+        "ア": false,
+        "イ": true,
+        "ウ": false,
+        "エ": false,
+        "オ": false
+      },
+      "explanation": "Bだけが誤り。無機過酸化物は分解で酸素を放出し得るが、Bはこれを水素と取り違え、物質自身が燃えるとしている。自身は不燃性でも他の物質の燃焼を助け得る。A・C・Dを全て含む肢2が公式正答。",
+      "choiceExplanations": {
+        "ア": "Bは加熱で水素を生じて自身が燃焼するという説明が誤り。正しいC・Dも欠けている。\n正しい考え方：正しい記述はA・C・Dである。",
+        "イ": "Aは過酸化結合と不安定性、Cは自身の不燃性と有機物への酸化作用、Dはアルカリ金属の過酸化物の水反応性を述べ、いずれも適切。\n正しい考え方：A・C・Dの3項目がそろった組合せを選ぶ。",
+        "ウ": "AとDは適切だが、Cも適切なので全部を挙げた組合せにならない。\n正しい考え方：正しい記述を漏れなく含める必要がある。",
+        "エ": "Bの加熱分解生成物と自身の燃焼の説明が不適切。A・Dも正しい。\n正しい考え方：Bを除いてA・C・Dをそろえる。",
+        "オ": "C・Dは適切だがBは不適切であり、正しいAが入っていない。\n正しい考え方：BをAへ置き換えた組合せを選ぶ。"
+      },
+      "choiceErrorLocations": {
+        "ア": "組合せ中のBと、C・Dの欠落",
+        "イ": null,
+        "ウ": "正しいCを含まない組合せ",
+        "エ": "誤ったBを含み、A・Dが欠ける組合せ",
+        "オ": "誤ったBを含み、Aが欠ける組合せ"
+      },
+      "explanationCoverage": "full",
+      "annotationRef": {
+        "file": "../official-annotations-10.json",
+        "sha256": "878e6bacf77df6e9f4fbe14be687e83d3ec4d20aa7fb4f7d88e570b5fcba35f0",
+        "id": "otsu1-published-202606-q34"
+      },
+      "sourcePdfUrl": "https://www.shoubo-shiken.or.jp/content/kikenbutsu_otsu.pdf#page=18",
+      "sourceAnswerUrl": "https://www.shoubo-shiken.or.jp/content/kikenbutsu_otsu.pdf#page=44",
+      "sourceAttribution": "出典：一般財団法人消防試験研究センター。原問画像は公式公表問題を改変せず表示。解説は独自作成。",
+      "figureRequired": false,
+      "questionPolarity": "selectCorrectCombination"
+    },
+    {
+      "id": "otsu1-published-202606-q35",
+      "qualificationId": "qual-new:20",
+      "exam": "kikenbutsu-otsu1",
+      "year": null,
+      "session": null,
+      "season": "published",
+      "publicationVersion": "2026-06",
+      "section": "第1類・危険物の性質並びにその火災予防及び消火の方法",
+      "qNumber": 35,
+      "type": "multiple-choice",
+      "question": "原問画像の問35を参照してください。問題文と全選択肢は画像内の原文です。",
+      "questionNotice": "令和7年度以前の実出題からの公式公表抜粋。個別の実施年・回は公表されていません。",
+      "originalRepresentation": "unmodified-full-page-image",
+      "hasImage": true,
+      "imageUrls": [
+        "images/official-page-19.png"
+      ],
+      "imageAltTexts": [
+        "公式公表版・乙種第1類 問35の問題文と選択肢。PDF 19頁。"
+      ],
+      "choices": {
+        "ア": "1",
+        "イ": "2",
+        "ウ": "3",
+        "エ": "4",
+        "オ": "5"
+      },
+      "choicePresentation": "数字は原問画像内の同番号の肢に対応する回答ボタン。本文の転記ではない。",
+      "answer": "エ",
+      "officialAnswerNumber": "4",
+      "officialAnswerImage": "images/official-page-44.png",
+      "choiceFactTruth": {
+        "ア": true,
+        "イ": true,
+        "ウ": true,
+        "エ": false,
+        "オ": true
+      },
+      "explanation": "ガスの種類の取り違えが誤りの中心である。",
+      "choiceExplanations": {
+        "ア": "亜塩素酸ナトリウムは水に溶けやすい。\n正しい考え方：水への溶解性と、酸や有機物との反応性は別々に確認する。",
+        "イ": "油・ゴム・布等は有機物として混触危険の対象となる。\n正しい考え方：汚れた道具や付着物からの混入も防ぐ。",
+        "ウ": "加熱・衝撃・摩擦などによる激しい分解に注意する。\n正しい考え方：刺激を避ける取扱いが必要である。",
+        "エ": "酸との接触で問題となるのは、有毒で爆発性の二酸化塩素の発生である。\n正しい考え方：亜塩素酸塩を金属ナトリウムと混同せず、酸を避ける理由を生成ガスまで結び付ける。",
+        "オ": "結晶・薄片状の外観と吸湿性の説明は、本問で正しい肢として扱われる。\n正しい考え方：外観に加えて湿気の管理にも注意する。"
+      },
+      "choiceErrorLocations": {
+        "ア": null,
+        "イ": null,
+        "ウ": null,
+        "エ": "酸と混ぜた際の発生ガスを水素とする箇所",
+        "オ": null
+      },
+      "explanationCoverage": "full",
+      "annotationRef": {
+        "file": "../official-annotations-10.json",
+        "sha256": "878e6bacf77df6e9f4fbe14be687e83d3ec4d20aa7fb4f7d88e570b5fcba35f0",
+        "id": "otsu1-published-202606-q35"
+      },
+      "sourcePdfUrl": "https://www.shoubo-shiken.or.jp/content/kikenbutsu_otsu.pdf#page=19",
+      "sourceAnswerUrl": "https://www.shoubo-shiken.or.jp/content/kikenbutsu_otsu.pdf#page=44",
+      "sourceAttribution": "出典：一般財団法人消防試験研究センター。原問画像は公式公表問題を改変せず表示。解説は独自作成。",
+      "figureRequired": false,
+      "questionPolarity": "selectIncorrect"
+    }
+  ],
+  "assets": [
+    {
+      "pdfPage": 14,
+      "path": "images/official-page-14.png",
+      "sha256": "01cdef807b9a775dbbdbc535a6210655ea122cf8d7c5c261ac9f1f1f1b2f227c",
+      "width": 1191,
+      "height": 1684,
+      "render": "whole page, 144 dpi, no crop or retouch",
+      "role": "official-question-page"
+    },
+    {
+      "pdfPage": 15,
+      "path": "images/official-page-15.png",
+      "sha256": "631f9882b5968ae81f9c387d4a980417c90b301e2052178799a6949db61d32a1",
+      "width": 1191,
+      "height": 1684,
+      "render": "whole page, 144 dpi, no crop or retouch",
+      "role": "official-question-page"
+    },
+    {
+      "pdfPage": 16,
+      "path": "images/official-page-16.png",
+      "sha256": "82d3aa8fadf7d18ca1c8f7ed468213d09c01139ed5d74c13f70a141c2ba006c3",
+      "width": 1191,
+      "height": 1684,
+      "render": "whole page, 144 dpi, no crop or retouch",
+      "role": "official-question-page"
+    },
+    {
+      "pdfPage": 17,
+      "path": "images/official-page-17.png",
+      "sha256": "ed4c6d46a011203843dce07cf0be4f99ccc559260e180e6f9b7f9d949d54b590",
+      "width": 1191,
+      "height": 1684,
+      "render": "whole page, 144 dpi, no crop or retouch",
+      "role": "official-question-page"
+    },
+    {
+      "pdfPage": 18,
+      "path": "images/official-page-18.png",
+      "sha256": "ae887e26e7f429b8b694c2fb36361a055e340baaf951f266fd1adde33704a5ae",
+      "width": 1191,
+      "height": 1684,
+      "render": "whole page, 144 dpi, no crop or retouch",
+      "role": "official-question-page"
+    },
+    {
+      "pdfPage": 19,
+      "path": "images/official-page-19.png",
+      "sha256": "4e359e1fd857ed0e271640cf7e0b7d7222e8a0388359739d60a38ae2734dcd15",
+      "width": 1191,
+      "height": 1684,
+      "render": "whole page, 144 dpi, no crop or retouch",
+      "role": "official-question-page"
+    },
+    {
+      "pdfPage": 44,
+      "path": "images/official-page-44.png",
+      "sha256": "2242107928a2e4b90bf41601341785dcc319b2064862115ff735a40f49b9552f",
+      "width": 1191,
+      "height": 1684,
+      "render": "whole page, 144 dpi, no crop or retouch",
+      "role": "official-answer-key"
+    }
+  ],
+  "strictQuestionTypeCompatible": false,
+  "typeDifferences": [
+    "ExamCodeにkikenbutsu-otsu1未登録",
+    "Sessionは実施回不明のnullを保持。架空の既存区分へ割り当てない",
+    "year:numberへ合わせるための年度捏造をしない。year=null、publicationVersion=2026-06を分離",
+    "固定license列挙に消防試験研究センターの識別子なし。別団体の値を流用しない"
+  ],
+  "mainIntegration": "共有型・登録・表示接続の変更はmainのみ。私有データと画像の結合は本packetで完了。",
+  "permissionEvidence": "本人09:38の許可取得済みとの指示を継承。新しい権利確認待ちを設けない。",
+  "noInventedQuestions": true
+}

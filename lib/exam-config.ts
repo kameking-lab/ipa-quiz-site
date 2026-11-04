@@ -116,6 +116,7 @@ export const EXAM_CONFIGS: Record<ExamCode, ExamConfig> = {
       { session: "pm", urlSlug: "pm", expectedQuestions: 60, label: "建築設備", categories: ["建築設備"] },
     ],
     seasons: ["annual"], yearRange: { start: 2025, end: 2026 },
+  },
   "jidosha-1-small-written": {
     code: "jidosha-1-small-written", nameFull: "一級小型自動車整備士（筆記）", urlSlug: "jidosha-1-small-written", level: "specialist",
     sessions: [{ session: "gakka", urlSlug: "gakka", expectedQuestions: 50, label: "学科", categories: ["一級小型自動車（筆記）"] }],
@@ -128,6 +129,7 @@ export const EXAM_CONFIGS: Record<ExamCode, ExamConfig> = {
       { session: "practical", urlSlug: "practical", expectedQuestions: 40, label: "実技", categories: ["知的財産管理技能検定2級"] },
     ],
     seasons: ["spring", "july"], yearRange: { start: 2026, end: 2026 },
+  },
   "jidosha-2-gasoline": {
     code: "jidosha-2-gasoline", nameFull: "二級ガソリン自動車整備士", urlSlug: "jidosha-2-gasoline", level: "specialist",
     sessions: [{ session: "gakka", urlSlug: "gakka", expectedQuestions: 40, label: "学科", categories: ["二級ガソリン自動車"] }],
@@ -182,6 +184,10 @@ export const EXAM_CONFIGS: Record<ExamCode, ExamConfig> = {
     sessions: [{ session: "gakka", urlSlug: "gakka", expectedQuestions: 40, label: "学科", categories: ["自動車電気装置"] }],
     seasons: ["first", "second"], yearRange: { start: 2025, end: 2026 },
   },
+  "biyoshi": { code: "biyoshi", nameFull: "美容師", urlSlug: "biyoshi", level: "basic", sessions: [{ session: "gakka", urlSlug: "gakka", expectedQuestions: 55, label: "筆記", categories: ["美容師筆記"] }], seasons: ["first", "second"], yearRange: { start: 2026, end: 2026 } },
+  "kikenbutsu-otsu1": { code: "kikenbutsu-otsu1", nameFull: "危険物取扱者 乙種第1類", urlSlug: "kikenbutsu-otsu1", level: "basic", sessions: [{ session: "gakka", urlSlug: "gakka", expectedQuestions: 10, label: "筆記", categories: ["危険物の性質・火災予防・消火"] }], seasons: ["published"], yearRange: { start: 2026, end: 2026 } },
+  "kikenbutsu-otsu2": { code: "kikenbutsu-otsu2", nameFull: "危険物取扱者 乙種第2類", urlSlug: "kikenbutsu-otsu2", level: "basic", sessions: [{ session: "gakka", urlSlug: "gakka", expectedQuestions: 10, label: "筆記", categories: ["危険物の性質並びにその火災予防及び消火の方法"] }], seasons: ["published"], yearRange: { start: 2026, end: 2026 } },
+  "kikenbutsu-otsu6": { code: "kikenbutsu-otsu6", nameFull: "危険物取扱者 乙種第6類", urlSlug: "kikenbutsu-otsu6", level: "basic", sessions: [{ session: "gakka", urlSlug: "gakka", expectedQuestions: 10, label: "筆記", categories: ["危険物の性質・火災予防・消火"] }], seasons: ["published"], yearRange: { start: 2026, end: 2026 } },
 
   kanteishi: {
     code: "kanteishi", nameFull: "不動産鑑定士試験（短答式）", urlSlug: "kanteishi", level: "specialist",
@@ -1229,7 +1235,7 @@ export const EXAM_CONFIGS: Record<ExamCode, ExamConfig> = {
 
 /** IPA-only list retained for fetch/import tooling and legacy IPA invariants. */
 export const ALL_EXAM_CODES = Object.keys(EXAM_CONFIGS).filter(
-  (code): code is IpaExamCode => !(["kisho", "chizai2", "kenchiku-setsubishi", "fp1", "fp2", "fp3", "denken3", "denken2", "denken1", "denko2", "denko1", "takken", "civil2", "civil1", "kankoji2", "zoen2", "zoen1", "tsushin2", "tsushin1", "kaigo", "shakai", "seishin", "tohan", "kanri", "eisei1", "eisei2", "soukan", "hoikushi", "mankan", "kashikin", "sharoushi", "kangoshi", "yakuzaishi", "ahaki-anma", "ahaki-hari-kyu", "hokenshi", "josanshi", "rigaku-ryohoshi", "sagyo-ryohoshi", "shino-kunrenshi", "rinsho-kensagishi", "shinryo-hoshasengishi", "rinsho-kogishi", "riyoshi", "chusho-kigyo-shindanshi", "chosashi", "shika-ishi", "judo-seifukushi", "riku-toku-kokunai", "kai-toku2", "kai-toku3", "koku-toku", "land-special1", "riku-tech1", "maritime4", "aviation-comm", "amateur1", "maritime-special1", "riku-tech2", "amateur2", "maritime-radar", "maritime3", "maritime2", "maritime1", "general3", "general2", "general1", "land-special2", "land-special3", "kanteishi", "kaikeishi", "gas-kou", "gas-otsu", "gas-hei", "jidosha-1-small-written", "jidosha-2-gasoline", "jidosha-2-diesel", "jidosha-2-chassis", "jidosha-2-motorcycle", "jidosha-3-chassis", "jidosha-3-gasoline", "jidosha-3-diesel", "jidosha-3-motorcycle", "jidosha-body", "jidosha-electrical"]).includes(code),
+  (code): code is IpaExamCode => !(["kisho", "chizai2", "kenchiku-setsubishi", "fp1", "fp2", "fp3", "denken3", "denken2", "denken1", "denko2", "denko1", "takken", "civil2", "civil1", "kankoji2", "zoen2", "zoen1", "tsushin2", "tsushin1", "kaigo", "shakai", "seishin", "tohan", "kanri", "eisei1", "eisei2", "soukan", "hoikushi", "mankan", "kashikin", "sharoushi", "kangoshi", "yakuzaishi", "ahaki-anma", "ahaki-hari-kyu", "hokenshi", "josanshi", "rigaku-ryohoshi", "sagyo-ryohoshi", "shino-kunrenshi", "rinsho-kensagishi", "shinryo-hoshasengishi", "rinsho-kogishi", "riyoshi", "chusho-kigyo-shindanshi", "chosashi", "shika-ishi", "judo-seifukushi", "riku-toku-kokunai", "kai-toku2", "kai-toku3", "koku-toku", "land-special1", "riku-tech1", "maritime4", "aviation-comm", "amateur1", "maritime-special1", "riku-tech2", "amateur2", "maritime-radar", "maritime3", "maritime2", "maritime1", "general3", "general2", "general1", "land-special2", "land-special3", "kanteishi", "kaikeishi", "gas-kou", "gas-otsu", "gas-hei", "jidosha-1-small-written", "jidosha-2-gasoline", "jidosha-2-diesel", "jidosha-2-chassis", "jidosha-2-motorcycle", "jidosha-3-chassis", "jidosha-3-gasoline", "jidosha-3-diesel", "jidosha-3-motorcycle", "jidosha-body", "jidosha-electrical", "biyoshi", "kikenbutsu-otsu1", "kikenbutsu-otsu2", "kikenbutsu-otsu6"]).includes(code),
 );
 
 /** Every exam playable in the application, including external qualifications. */

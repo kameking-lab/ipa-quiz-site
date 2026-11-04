@@ -86,7 +86,11 @@ export type ExamCode =
   | "kaikeishi"
   | "gas-kou"
   | "gas-otsu"
-  | "gas-hei";
+  | "gas-hei"
+  | "biyoshi"
+  | "kikenbutsu-otsu1"
+  | "kikenbutsu-otsu2"
+  | "kikenbutsu-otsu6";
 
 /** IPA の情報処理技術者試験区分。外部資格を扱う設定から分離する。 */
 export type IpaExamCode = "ip" | "sg" | "fe" | "ap" | "st" | "sa" | "pm" | "nw" | "db" | "es" | "sc" | "sm" | "au";
@@ -191,7 +195,11 @@ export interface Question {
   id: string;
   exam: ExamCode;
   session: Session;
+  /** For published excerpts this is the publication year, not the exam year. */
   year: number;
+  sourceExamYear?: number | null;
+  sourceExamSession?: string | null;
+  publicationVersion?: string;
   season: Season;
   qNumber: number;
   /** 枝問または空欄番号。問番号と併せて一意のURL・復帰位置を構成する。 */
@@ -249,7 +257,7 @@ export interface Question {
   sourceAttribution?: string;
   /** 問題・正答以外の公式根拠（法令・制度概要等）。 */
   officialReferenceUrls?: string[];
-  license: "JMBSC-permission-required" | "JAEIC-permission-required" | "IP-EDU-authorized-reuse" | "MLIT-PDL-1.0" | "CPAAOB-PDL-1.0" | "IPA-public" | "JAFP-reuse-with-attribution" | "KINZAI-reuse-with-attribution" | "ECEE-educational-reuse" | "RETIO-reuse" | "JCTC-authorized-reuse" | "SSSC-reuse" | "KANSAI-UNION-reuse" | "KANRIKYO-educational-reuse" | "EXAM-OR-JP-attributed" | "IPEJ-attributed" | "HOYOKYO-attributed" | "MANKAN-attributed" | "JFSA-attributed" | "SHAROSI-attributed" | "MHLW-attributed" | "AHK-attributed" | "JAAME-attributed" | "RBC-attributed" | "JF-CMCA-attributed" | "JCTC-attributed" | "MOJ-attributed" | "ZAIJUSEI-attributed" | "NICHIMU-educational-reuse" | "NICHIMU-past-question-study-use" | "JIA-attributed" | "JASPA-owner-authorized";
+  license: "JMBSC-permission-required" | "JAEIC-permission-required" | "IP-EDU-authorized-reuse" | "MLIT-PDL-1.0" | "CPAAOB-PDL-1.0" | "IPA-public" | "JAFP-reuse-with-attribution" | "KINZAI-reuse-with-attribution" | "ECEE-educational-reuse" | "RETIO-reuse" | "JCTC-authorized-reuse" | "SSSC-reuse" | "KANSAI-UNION-reuse" | "KANRIKYO-educational-reuse" | "EXAM-OR-JP-attributed" | "IPEJ-attributed" | "HOYOKYO-attributed" | "MANKAN-attributed" | "JFSA-attributed" | "SHAROSI-attributed" | "MHLW-attributed" | "AHK-attributed" | "JAAME-attributed" | "RBC-attributed" | "JF-CMCA-attributed" | "JCTC-attributed" | "MOJ-attributed" | "ZAIJUSEI-attributed" | "NICHIMU-educational-reuse" | "NICHIMU-past-question-study-use" | "JIA-attributed" | "JASPA-owner-authorized" | "SHOUBO-owner-authorized";
   isCalculation?: boolean;
   /** 解説品質が低い・要確認の問題。出題プールから除外される。 */
   needsReview?: boolean;

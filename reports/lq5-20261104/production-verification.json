@@ -1,0 +1,44 @@
+{
+  "codeCommit": "486b47c630c0a6394833d4bc538febbabd117fe5",
+  "applicationCommit": "3a8ad07da",
+  "build": {
+    "command": "node scripts/lq5-dev.mjs build",
+    "compiled": true,
+    "typecheck": true,
+    "staticPagesCompleted": 12688,
+    "staticPagesExpected": 12688,
+    "logSha256": "ca8a2d8e375ebd283d81e4f555af833c7ac46c5bd31dd6e21c7437ec281f7c71",
+    "powerShellWrapperExitCode": 1,
+    "nativeExitCode": null,
+    "exitCaveat": "PowerShell NativeCommandError was emitted for Next deprecation warnings. Native exit code was not separately retained. Do not describe this as an independently recorded native exit=0. Complete route output and production startup/runtime acceptance are retained.",
+    "buildId": "HeWVw8yaj4tK1j5CXxe0m"
+  },
+  "productionStart": {
+    "command": "node scripts/lq5-dev.mjs start",
+    "origin": "http://127.0.0.1:3275",
+    "ready": true,
+    "environment": "explicit OS environment allowlist; no credential/environment files"
+  },
+  "lq5Browser": {
+    "exitCode": 0,
+    "status": "PASS",
+    "representativeFlows": 8,
+    "beautyHolds404": 4,
+    "searchQualifications": 5,
+    "errors": 0,
+    "serviceWorkers": "blocked; online flow only"
+  },
+  "telecomBrowser": {
+    "exitCode": 0,
+    "status": "PASS",
+    "sittingFlows": 2,
+    "decodedFigures": 16,
+    "reference": {
+      "status": 200,
+      "choices": 4,
+      "gradingControls": 0,
+      "history": null,
+      "ordinaryApiStatus": 409
+    }
+  }
+}

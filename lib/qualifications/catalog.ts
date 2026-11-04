@@ -156,6 +156,61 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     attributionTemplate: "出典：日本自動車整備振興会連合会 自動車整備技能登録試験（問題・正答）。解説は過去問AI独自作成。",
     remainingWork: [],
   },
+{
+  "slug": "biyoshi",
+  "examCode": "biyoshi",
+  "shortName": "美容師",
+  "fullName": "美容師",
+  "domain": "personal-services",
+  "administrator": "公益財団法人理容師美容師試験研修センター",
+  "officialQuestionsUrl": "https://www.rbc.or.jp/exam/past_question/",
+  "officialReuseTermsUrl": "https://www.rbc.or.jp/exam/past_question/",
+  "status": "live",
+  "reuseSummary": "第53・54回の筆記各55問から確認済み各53問（計106問）を収録。4問は図・根拠・解除拒否の既存保留を維持。実技・2暦年全体の完成を意味しません。",
+  "remainingWork": [
+    "第53回問6・48、第54回問50・55の既存保留を維持"
+  ]
+},
+{
+  "slug": "kikenbutsu-otsu1",
+  "examCode": "kikenbutsu-otsu1",
+  "shortName": "危険物取扱者 乙種第1類",
+  "fullName": "危険物取扱者 乙種第1類",
+  "domain": "safety",
+  "administrator": "一般財団法人消防試験研究センター",
+  "officialQuestionsUrl": "https://www.shoubo-shiken.or.jp/kikenbutsu/exercise.html",
+  "officialReuseTermsUrl": "https://www.shoubo-shiken.or.jp/kikenbutsu/exercise.html",
+  "status": "live",
+  "reuseSummary": "2026年6月公表版の実出題抜粋・問26〜35の10問と全50肢解説。令和7年度以前の出題で、個別年度・回は非公表。特定回全35問や最新2回の収録ではありません。",
+  "remainingWork": []
+},
+{
+  "slug": "kikenbutsu-otsu2",
+  "examCode": "kikenbutsu-otsu2",
+  "shortName": "危険物取扱者 乙種第2類",
+  "fullName": "危険物取扱者 乙種第2類",
+  "domain": "safety",
+  "administrator": "一般財団法人消防試験研究センター",
+  "officialQuestionsUrl": "https://www.shoubo-shiken.or.jp/kikenbutsu/exercise.html",
+  "officialReuseTermsUrl": "https://www.shoubo-shiken.or.jp/kikenbutsu/exercise.html",
+  "status": "live",
+  "reuseSummary": "2026年6月公表版の実出題抜粋・問26〜35の10問と全50肢解説。令和7年度以前の出題で、個別年度・回は非公表。特定回全35問や最新2回の収録ではありません。",
+  "remainingWork": []
+},
+{
+  "slug": "kikenbutsu-otsu6",
+  "examCode": "kikenbutsu-otsu6",
+  "shortName": "危険物取扱者 乙種第6類",
+  "fullName": "危険物取扱者 乙種第6類",
+  "domain": "safety",
+  "administrator": "一般財団法人消防試験研究センター",
+  "officialQuestionsUrl": "https://www.shoubo-shiken.or.jp/kikenbutsu/exercise.html",
+  "officialReuseTermsUrl": "https://www.shoubo-shiken.or.jp/kikenbutsu/exercise.html",
+  "status": "live",
+  "reuseSummary": "2026年6月公表版の実出題抜粋・問26〜35の10問と全50肢解説。令和7年度以前の出題で、個別年度・回は非公表。特定回全35問や最新2回の収録ではありません。",
+  "remainingWork": []
+},
+
   {
     slug: "kanteishi", examCode: "kanteishi", shortName: "不動産鑑定士", fullName: "不動産鑑定士試験（短答式）",
     domain: "real-estate", administrator: "国土交通省",
@@ -559,9 +614,9 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     officialQuestionsUrl: "https://www.jctc.jp/mondai/",
     officialReuseTermsUrl: "https://www.jctc.jp/mondai/",
     status: "live",
-    reuseSummary: "令和8年度前期の第一次検定から、公式問題・正答と照合した設問を段階的に収録。",
-    attributionTemplate: "出典：全国建設研修センター 令和8年度2級電気通信工事施工管理技術検定 第一次検定（前期）",
-    remainingWork: ["同年度の図表を使う問題の確認・追加", "他年度の追加"],
+    reuseSummary: "令和7年度後期・令和8年度前期の第一次検定を各65問収録。通常採点129問と公式解答参照1問。",
+    attributionTemplate: "出典：全国建設研修センター 令和7年度後期・令和8年度前期 2級電気通信工事施工管理技術検定 第一次検定",
+    remainingWork: ["第二次検定は未収録"],
   },
   {
     slug: "sekou-tsushin1",

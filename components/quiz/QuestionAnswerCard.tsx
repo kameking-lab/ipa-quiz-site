@@ -75,7 +75,13 @@ interface Props {
  */
 export function QuestionAnswerCard(props: Props) {
   if (isReferenceOnlyQuestionId(props.questionId) || isReferenceOnlyQuestionId(props.question?.id)) {
-    return <p role="note">この問題は参照専用です。採点・学習記録・報酬の対象には含まれません。</p>;
+    return <section aria-label="参照専用の選択肢">
+      <p role="note">この問題は参照専用です。採点・学習記録・報酬の対象には含まれません。</p>
+      <dl className="mt-3 space-y-3">{Object.entries(props.choices ?? props.question?.choices ?? {}).map(([key, text]) => (
+        <div key={key} className="rounded-lg border border-border p-3"><dt className="font-semibold">{choiceDisplayLabel(props.exam, key as ChoiceKey)}</dt><dd><QuestionBody text={text} /></dd></div>
+      ))}</dl>
+      <p className="mt-3 font-semibold">公式正答（参照）: {props.question?.officialAnswerNumber ?? formatAcceptedAnswers(props.answerKey)}</p>
+    </section>;
   }
   return <ScoredQuestionAnswerCard {...props} />;
 }

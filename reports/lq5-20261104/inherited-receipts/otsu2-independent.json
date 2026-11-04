@@ -1,0 +1,117 @@
+{
+  "scope": "qual-new:21",
+  "reviewer": "/root/otsu2_acceptance",
+  "independentFromAuthor": true,
+  "reviewedAt": "2026-11-01T19:03:38.335528+09:00",
+  "verdict": "PASS_PRIVATE_ORIGINAL_BINDING",
+  "inputHashes": {
+    "ORIGINALS.json": "ece3091113f426a38935c3f7ea5581cf13c901b827f250118354957db2a4822a",
+    "questions.json": "881e2b86350f62f070544220a21bf83b953bb33bbc452ef4e2febdbc77dda65a",
+    "FIELD-GUARD.json": "8264301bb45cc3c4ceaefffa6fd147482ab8a52e51cb1784033fc2c03963687d",
+    "SOURCE-PIN.json": "cebd2cc55db472134254f31360eaf51feb3a64e0ce56bddc46d5a1517afd5325",
+    "SCHEMA-ADAPTER-BOUNDARY.json": "d2369e87c43f4a5835b620bdb943e7546bb54f4798a615dc975b4f8c7fea5829",
+    "q30-original-table.png": "46e01cec18344f191186dc237b6b4bf5196bc4d59d394c783392e19f09d08ef2",
+    "kikenbutsu_otsu.pdf": "d015ddf87c66aa877bc6aeb0c424d73ecded09fd907205d733faa4150f6cbd8d"
+  },
+  "acceptedScope": "固定公式PDF乙種第2類Q26〜35の原問10本文・50選択肢・番号・正答・Q30判定表注記・Q35 A〜Eの転記と、既受入解説への私有結合。",
+  "visualReview": {
+    "pages": [
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      45
+    ],
+    "result": "全10本文・50肢、Q30のA〜Dと20判定セル・5行番号・4列見出し・注記、Q35 A〜Eと5組合せを目視照合。語句・否定形・順序・正答の相違なし。Q30供給画像の表・注記は判読可能。",
+    "normalizationAccepted": "SOURCE-PINに明記された組版改行・字間、数字/A〜Eの全半角、温度記号℃。Unicodeバイト同一の主張はしない。"
+  },
+  "checks": [
+    {
+      "questionNumber": 26,
+      "originalBinding": "PASS",
+      "choices": 5,
+      "explanationStringsUnchanged": true,
+      "officialAnswerNumber": "5"
+    },
+    {
+      "questionNumber": 27,
+      "originalBinding": "PASS",
+      "choices": 5,
+      "explanationStringsUnchanged": true,
+      "officialAnswerNumber": "2"
+    },
+    {
+      "questionNumber": 28,
+      "originalBinding": "PASS",
+      "choices": 5,
+      "explanationStringsUnchanged": true,
+      "officialAnswerNumber": "5"
+    },
+    {
+      "questionNumber": 29,
+      "originalBinding": "PASS",
+      "choices": 5,
+      "explanationStringsUnchanged": true,
+      "officialAnswerNumber": "2"
+    },
+    {
+      "questionNumber": 30,
+      "originalBinding": "PASS",
+      "choices": 5,
+      "explanationStringsUnchanged": true,
+      "officialAnswerNumber": "4"
+    },
+    {
+      "questionNumber": 31,
+      "originalBinding": "PASS",
+      "choices": 5,
+      "explanationStringsUnchanged": true,
+      "officialAnswerNumber": "2"
+    },
+    {
+      "questionNumber": 32,
+      "originalBinding": "PASS",
+      "choices": 5,
+      "explanationStringsUnchanged": true,
+      "officialAnswerNumber": "2"
+    },
+    {
+      "questionNumber": 33,
+      "originalBinding": "PASS",
+      "choices": 5,
+      "explanationStringsUnchanged": true,
+      "officialAnswerNumber": "2"
+    },
+    {
+      "questionNumber": 34,
+      "originalBinding": "PASS",
+      "choices": 5,
+      "explanationStringsUnchanged": true,
+      "officialAnswerNumber": "1"
+    },
+    {
+      "questionNumber": 35,
+      "originalBinding": "PASS",
+      "choices": 5,
+      "explanationStringsUnchanged": true,
+      "officialAnswerNumber": "3"
+    }
+  ],
+  "explanationAcceptance": {
+    "sourceSha256": "68c71a92bc50877d8222656fae14ab45fbd72f250e880cb44a20f2ddea0708cf",
+    "summaryStrings": 10,
+    "optionReasonStrings": 50,
+    "exactEquality": true,
+    "contentRereviewed": false,
+    "priorReview": "outputs/official-explanations/INDEPENDENT-REVIEW.json"
+  },
+  "findings": [],
+  "limits": [
+    "共有Question型への適合を受入済みとしない。SCHEMA-ADAPTER-BOUNDARYのexam/year/session/license非互換とmain所有を維持。",
+    "実画面での表示・採点・保存・共有適用・公開は対象外。",
+    "旧独自問題候補は採用対象外。",
+    "全資格の全原問・共通科目の完了を意味しない。"
+  ]
+}
