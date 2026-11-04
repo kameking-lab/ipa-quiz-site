@@ -5,6 +5,9 @@ test.use({ viewport: { width: 390, height: 844 }, isMobile: true, hasTouch: true
 test("mobile: hash-selected dashboard tabs scroll horizontally without moving the page", async ({ page }) => {
   await page.goto("/account/dashboard#weakness");
   await expect(page.getByRole("tab", { name: "弱点", exact: true })).toHaveAttribute("aria-selected", "true");
+  // Panel heights differ. Isolate the tab-strip effect from the browser's
+  // native scroll anchoring; scrollIntoView would still fail this assertion.
+  await page.addStyleTag({ content: "html { overflow-anchor: none; }" });
   await page.evaluate(() => window.scrollTo(0, 700));
   const before = await page.evaluate(() => window.scrollY);
   expect(before).toBeGreaterThan(0);
