@@ -1,0 +1,86 @@
+require_relative "../scripts/asc_config"
+asc_root = File.expand_path("..", __dir__)
+
+default_platform(:ios)
+
+platform :ios do
+  desc "Upload Japanese metadata/screenshots to an explicitly selected existing build"
+  lane :asc_metadata do
+    require "spaceship"
+    require "json"
+    require "fileutils"
+    config = AscConfig.read(ENV)
+    sh("python3", File.join(asc_root, "scripts/asc_validate.py"), "--screenshots")
+    # Consume Codemagic's integration directly. No key file, Apple ID or password.
+    Spaceship::ConnectAPI.token = Spaceship::ConnectAPI::Token.create(
+      key_id: ENV.fetch("APP_STORE_CONNECT_KEY_IDENTIFIER"),
+      issuer_id: ENV.fetch("APP_STORE_CONNECT_ISSUER_ID"),
+      key: ENV.fetch("APP_STORE_CONNECT_PRIVATE_KEY"), duration: 1200
+    )
+    app = Spaceship::ConnectAPI::App.find("jp.kakomon-ai.app")
+    UI.user_error!("ASC app identity mismatch") unless app && app.id == "6830358918"
+    builds = Spaceship::ConnectAPI::Build.all(
+      app_id: app.id, version: config[:version], build_number: config[:build],
+      platform: "IOS", processing_states: "VALID"
+    ).reject(&:expired)
+    UI.user_error!("Exactly one processed, unexpired matching build is required") unless builds.length == 1
+    # Only edit this version. Never fall back to the latest build or a live version.
+    versions = app.get_app_store_versions(filter: { platform: "IOS", versionString: config[:version] })
+    version = versions.find { |v| v.version_string == config[:version] }
+    if version
+      allowed = %w[PREPARE_FOR_SUBMISSION DEVELOPER_REJECTED REJECTED METADATA_REJECTED]
+      UI.user_error!("Version is not editable; no automatic cancellation") unless allowed.include?(version.app_version_state || version.app_store_state)
+    else
+      UI.user_error!("Another editable version exists") if app.get_edit_app_store_version(platform: "IOS")
+      version = Spaceship::ConnectAPI.post_app_store_version(app_id: app.id, attributes: {
+        platform: "IOS", versionString: config[:version], releaseType: "MANUAL"
+      }).first
+    end
+    editable = app.get_edit_app_store_version(platform: "IOS")
+    UI.user_error!("deliver would target another version") unless editable && editable.id == version.id
+    version.select_build(build_id: builds.first.id)
+    # Stage only approved fields. Review notes/contact/code remain absent unless ready.
+    metadata = File.join(asc_root, "fastlane/metadata")
+    options = {
+      app_identifier: "jp.kakomon-ai.app", app_version: config[:version],
+      build_number: config[:build], metadata_path: metadata,
+      screenshots_path: File.join(asc_root, "fastlane/screenshots"),
+      skip_binary_upload: true, skip_app_version_update: true,
+      skip_metadata: false, skip_screenshots: false, overwrite_screenshots: true,
+      submit_for_review: config[:submit], automatic_release: false,
+      force: true, reject_if_possible: false,
+      precheck_include_in_app_purchases: false
+    }
+    options[:copyright] = ENV["ASC_COPYRIGHT"] if config[:copyright]
+    if config[:review_ready]
+      options[:app_review_information] = config[:review].merge(
+        demo_user: "App Review", notes: File.read(File.join(asc_root, "asc/review-notes.ja.txt"), encoding: "UTF-8")
+      )
+    end
+    # fastlane masks app_review_information.demo_password in its summary.
+    deliver(**options)
+    # deliver can return normally when precheck blocks submission. Record observed
+    # state, never turn a requested flag into a successful-submission claim.
+    submitted = false
+    observed_state = nil
+    if config[:submit]
+      submitted_states = %w[WAITING_FOR_REVIEW IN_REVIEW ACCEPTED PENDING_DEVELOPER_RELEASE PENDING_APPLE_RELEASE PROCESSING_FOR_DISTRIBUTION READY_FOR_DISTRIBUTION]
+      12.times do |attempt|
+        current = app.get_app_store_versions(filter: { platform: "IOS", versionString: config[:version] }).find { |v| v.id == version.id }
+        observed_state = current && (current.app_version_state || current.app_store_state)
+        submitted = submitted_states.include?(observed_state)
+        break if submitted
+        sleep(5) unless attempt == 11
+      end
+      UI.user_error!("Review was requested but ASC did not confirm submission (state: #{observed_state})") unless submitted
+    end
+    FileUtils.mkdir_p(File.join(asc_root, "build/asc"))
+    File.write(File.join(asc_root, "build/asc/result.json"), JSON.pretty_generate({
+      app_id: app.id, version: config[:version], build: config[:build],
+      metadata_uploaded: true, screenshots_uploaded: true,
+      review_information_uploaded: config[:review_ready], submitted_for_review: submitted,
+      observed_review_state: observed_state,
+      release: "manual", follow_up: "asc-api-followup.md"
+    }))
+  end
+end

@@ -100,3 +100,75 @@ workflows:
         # Upload only. No TestFlight beta distribution; the owner tests on device after release.
         submit_to_testflight: false
         submit_to_app_store: false
+
+  # Intentionally no `triggering`: Codemagic UI/API manual start only.
+  # This workflow does not build/upload an IPA or run on a normal push.
+  kakomon-asc-metadata:
+    name: Kakomon AI - App Store listing and screenshots (manual)
+    instance_type: mac_mini_m2
+    max_build_duration: 90
+    integrations:
+      app_store_connect: App Store Key
+    environment:
+      groups:
+        - kakomon_ios
+      vars:
+        ASC_APP_VERSION: "1.0.0"
+        ASC_BUILD_NUMBER: ""
+        SUBMIT_FOR_REVIEW: "false"
+        ASC_REVIEW_INFO_READY: "false"
+        ASC_PREREQUISITES_CONFIRMED: "false"
+      node: "22"
+      ruby: "3.4.7"
+      xcode: latest
+      cocoapods: default
+    scripts:
+      - name: Validate request and emit API follow-up report
+        script: |
+          set -euo pipefail
+          cd "$CM_BUILD_DIR/mobile"
+          mkdir -p build/asc
+          cp asc/api-followup.md build/asc/asc-api-followup.md
+          python3 scripts/asc_validate.py
+          ruby -r ./scripts/asc_config -e 'AscConfig.read(ENV); puts "ASC request validation PASS"'
+          # Secrets originate only from the existing Codemagic integration.
+          : "${APP_STORE_CONNECT_KEY_IDENTIFIER:?ASC integration key ID missing}"
+          : "${APP_STORE_CONNECT_ISSUER_ID:?ASC integration issuer missing}"
+          : "${APP_STORE_CONNECT_PRIVATE_KEY:?ASC integration key missing}"
+          : "${ASC_SCREENSHOT_REVIEW_CODE:?Set secret active IOS3 review code}"
+      - name: Install shared web and isolated app dependencies
+        script: |
+          set -euo pipefail
+          cd "$CM_BUILD_DIR"
+          npx --yes pnpm@10.33.0 install --frozen-lockfile --ignore-scripts
+          npx --no-install prisma generate
+          cd "$CM_BUILD_DIR/mobile"
+          npm ci
+          bundle config set --local path vendor/bundle
+          bundle config set --local frozen true
+          bundle install
+      - name: Prepare actual native app and capture two five-screen sets
+        script: |
+          set -euo pipefail
+          cd "$CM_BUILD_DIR/mobile"
+          if [[ -z "${MOBILE_RC_IOS_PUBLIC_KEY:-}" || "$MOBILE_RC_IOS_PUBLIC_KEY" != appl_* ]]; then
+            echo "Set the existing RevenueCat public iOS SDK key in kakomon_ios." >&2
+            exit 1
+          fi
+          # Simulator only. The ASC build is already uploaded by the other workflow.
+          npm run build
+          BUILD_NUMBER="$ASC_BUILD_NUMBER" bundle exec npm run ios:prepare
+          bash scripts/asc_capture.sh
+      - name: Upload listing and screenshots; optionally submit for review
+        script: |
+          set -euo pipefail
+          cd "$CM_BUILD_DIR/mobile"
+          # No publishing block: only the guarded fastlane lane can submit.
+          FASTLANE_SKIP_UPDATE_CHECK=1 FASTLANE_HIDE_CHANGELOG=1 \
+            bundle exec fastlane ios asc_metadata
+    artifacts:
+      - mobile/fastlane/screenshots/ja/*.jpg
+      - mobile/fastlane/screenshots/manifest.json
+      - mobile/build/asc/*.md
+      - mobile/build/asc/result.json
+      - mobile/build/asc/simulator-build.log
