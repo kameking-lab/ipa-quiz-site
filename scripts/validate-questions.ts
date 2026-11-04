@@ -1,6 +1,7 @@
 import { SEKOU_1KENCHIKU_QUESTIONS } from "@/data/questions/sekou-1kenchiku";
 import { KENCHIKUSHI1_CANDIDATES } from "../data/qualification-staging/kenchikushi1";
 import { officialScoringIssue } from "@/lib/questions/official-scoring";
+import { validateBenrishiStaging } from "./lib/validate-benrishi-staging";
 import { PRACTICE_SESSIONS } from "@/lib/questions/practice-session";
 import { EXAM_CONFIGS } from "@/lib/exam-config";
 import { NativeBDataSchema, nativeBQuestionIssue } from "../lib/questions/native-b";
@@ -485,6 +486,10 @@ function reportFixes(questions: Question[]): void {
 // ─── Main ────────────────────────────────────────────────────────────────────
 
 const opts = parseCliOptions();
+if (!opts.exams.length || opts.exams.includes("benrishi")) {
+  console.log(`[private-staging] benrishi: validated ${validateBenrishiStaging()} unpublished questions (publicAllowed=false)`);
+}
+
 const questions = opts.exams.length > 0
   ? VALIDATION_QUESTIONS.filter((q) => opts.exams.includes(q.exam))
   : VALIDATION_QUESTIONS;

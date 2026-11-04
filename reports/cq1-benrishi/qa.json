@@ -1,0 +1,120 @@
+{
+  "baseCommit": "bb912dfd0494f7095ec5387f9f2e53f46381cd1f",
+  "implementationCommit": "efb78e7b08694151b6e41ee7c73b42327d96bcba",
+  "questions": 120,
+  "choices": 600,
+  "statementRationales": 250,
+  "publicAllowed": false,
+  "publicExamCodeRegistered": false,
+  "sourceAssets": 130,
+  "checks": {
+    "validateQuestions": {
+      "exitCode": 0,
+      "runtimeQuestions": 34383,
+      "fail": 0,
+      "existingWarnings": 20263,
+      "privateQuestions": 120,
+      "latestLog": "validate-all-r6.log"
+    },
+    "typecheck": {
+      "exitCode": 0,
+      "latestLog": "typecheck-r6.log"
+    },
+    "relatedTests": {
+      "exitCode": 0,
+      "files": 4,
+      "tests": 33,
+      "latestLog": "tests-r6.log"
+    },
+    "independentPypdfText": {
+      "questions": 119,
+      "mismatches": 0
+    },
+    "visualTableAudit": {
+      "question": "benrishi-2025-patent-19",
+      "pdfPages": [
+        23,
+        24
+      ]
+    },
+    "logsSha256": {
+      "validate-all-r6.log": "9eb15708daf57f39ee63e05956fd26f28c279bfe5447ac3fa10e114229b88f38",
+      "tests-r6.log": "e024e459c54dc471a79a0c5425bffb6f5df296c2947f1029ac6765eb3728c044",
+      "typecheck-r6.log": "97c3a623843873e56c0dd71cd931f723bf1380b5f8a57d205fdfdb7113f3db92"
+    },
+    "diffCheck": {
+      "workingTree": 0,
+      "baseToFinal": 0
+    }
+  },
+  "contentSha256": {
+    "data/qualification-staging/benrishi/2025.json": "5e92d1d3a9cf959239f310bc6ec9d58f073425b7a5f0af9314901e471c5422d9",
+    "data/qualification-staging/benrishi/2026.json": "4bac2f6a2973f0083965e0f7a4637511d5308f5a149d53d6d6e7cd4087395fe0",
+    "scripts/ingest-benrishi.py": "271f939d2f83ff013b4ea9d8d7d53709e70185fc2f11937849963436659e5fa0",
+    "scripts/lib/validate-benrishi-staging.ts": "6a97ca8d7c384699db964c2e5f60bbc9b2882d94805016c5304310b5ee949eb7",
+    "__tests__/questions/benrishi-staging.test.ts": "fd04109c904e64985c502e3815e63822b1e8815fec2a2a50a4c5656192eb0d0f"
+  },
+  "qualificationSlug": "benrishi",
+  "branch": "qual/benrishi-20261104",
+  "checkedOn": "2026-11-04",
+  "independentReview": {
+    "command": "C:/Users/kanet/AppData/Roaming/npm/codex.cmd exec -m gpt-6-astra -s read-only",
+    "separateProcess": true,
+    "rounds": [
+      {
+        "round": 1,
+        "verdict": "FAIL",
+        "resultFile": "review-r1.md"
+      },
+      {
+        "round": 2,
+        "verdict": "FAIL",
+        "resultFile": "review-r2.md"
+      },
+      {
+        "round": 3,
+        "verdict": "FAIL",
+        "resultFile": "review-r3.md"
+      },
+      {
+        "round": 4,
+        "verdict": "FAIL",
+        "resultFile": "review-r4.md"
+      },
+      {
+        "round": 5,
+        "verdict": "FAIL",
+        "resultFile": "review-r5.md"
+      },
+      {
+        "round": 6,
+        "verdict": "PASS",
+        "resultFile": "review-r6.md",
+        "targetCommit": "efb78e7b08694151b6e41ee7c73b42327d96bcba"
+      }
+    ],
+    "latestRound": 6,
+    "latestVerdict": "PASS",
+    "resultSha256": "fda5918d20ea3c1ac10c7ce14ab937adc39aab96768132569d5221817274f37a",
+    "promptSha256": "2437d5197d2a6d2cb921a880815b6d5c9a3b6a194afd460cdbbc8ec539ad3414",
+    "logSha256": "205771ed12f0cba96dbfcb47deb37feb625e208aaeb7561f5f1dc1436a416e86"
+  },
+  "unavailableQuestionOrAnswerPdfUrls": [],
+  "publicationHoldReasons": [
+    "terms-body-not-retrieved",
+    "2025-official-law-reference-date-unconfirmed",
+    "human-expert-review-pending"
+  ],
+  "postReviewChanges": "Evidence/reporting only; historical Markdown trailing whitespace removed; corpus and implementation unchanged.",
+  "pdfCleanup": {
+    "files": [
+      "2025-question.pdf",
+      "2025-answer.pdf",
+      "2026-question.pdf",
+      "2026-answer.pdf",
+      "exam-guide.pdf"
+    ],
+    "status": "deleted-after-review",
+    "directory": "C:/Users/kanet/AppData/Local/Temp/codex-work/cq1-benrishi"
+  }
+}
