@@ -44,11 +44,11 @@
     "evidence":  [
                      {
                          "name":  "adk-report.md",
-                         "sha256":  "15b3efc95fb6217949a2274c814928a91b4b7fdda4f4f56d06537a63db9c8524"
+                         "sha256":  "e8b1962dc8ce1d9cc638c76e555b5d20e548e50de3ca8cb27c432c3a95af5da6"
                      },
                      {
                          "name":  "baseline.md",
-                         "sha256":  "5bfa46effee63e351b109590940e4a15a59bef7df0cab88bbd548023605a18d9"
+                         "sha256":  "1ad7e53c700f1857158c43ff5b504048c961135ff5901ed40e0a9e614a6f950e"
                      },
                      {
                          "name":  "browser-initial.log",
@@ -67,6 +67,14 @@
                          "sha256":  "bcde16175c9349525076b26d876b4cba6aadfb915689b600d20ddc247968922c"
                      },
                      {
+                         "name":  "independent-review-final.log",
+                         "sha256":  "c464083c7829d40b6651154c69294d7223856c581fb0f313bed9aba11b0c0bb8"
+                     },
+                     {
+                         "name":  "independent-review-final.md",
+                         "sha256":  "8cff6e76c432967a5ce1ef8262a9113ed9a6884d7fe508212545ab289db296e7"
+                     },
+                     {
                          "name":  "independent-review1.log",
                          "sha256":  "b91656b873bb1f5a9b73894e0c23dd04aa0634f8b90575e59b573cfdff3f561c"
                      },
@@ -83,6 +91,10 @@
                          "sha256":  "000657e2072e987d1c2b23c6c6862fb57825da4e4f7e358039466a5426d60dda"
                      },
                      {
+                         "name":  "review-prompt-final.txt",
+                         "sha256":  "254c86cdecc96ae37693323b10ae153c99a790782c093e6bc939e26133216357"
+                     },
+                     {
                          "name":  "review-prompt.txt",
                          "sha256":  "fa150b1b574676d515ed371d2355c015a5ae937956a607e366cc9e14acfd1ab5"
                      },
@@ -93,6 +105,25 @@
                      {
                          "name":  "typecheck.log",
                          "sha256":  "2bfbc22d681abcf0444377d9294302085d3f30053a8c0072cf3c75a629f71b6a"
+                     },
+                     {
+                         "name":  "browser/visible-explanation-mobile.png",
+                         "sha256":  "d516ef37cc212d5b96fc65d644a6ce2497ede764c556217c428b92009edcc69d"
+                     },
+                     {
+                         "name":  "browser/worked-guide-mobile.png",
+                         "sha256":  "a72f9bff7c55235b08e5bc6b9fd6398440e837f16efe96a52adae05e175c905a"
+                     },
+                     {
+                         "name":  "browser/worked-guide-viewport.png",
+                         "sha256":  "6d758540a038cda48745a66fd321a912bbfe6153177c344bf632e3b4c602eb84"
                      }
-                 ]
+                 ],
+    "independentReview":  {
+                              "command":  "C:/Users/kanet/AppData/Roaming/npm/codex.cmd exec -m gpt-6-astra -s read-only",
+                              "target":  "cc892a8f4..c9b4700e9",
+                              "exitCode":  0,
+                              "result":  "PASS",
+                              "receipt":  "independent-review-final.md"
+                          }
 }

@@ -1,6 +1,6 @@
 # ADK 調査基点
 
-作業ブランチ `release/batch1-20261105`、INT1B 完了コミット `cc892a8f4` の上で開始。公開・AI 呼び出しの変更は禁止。取得日時は各 JSON に記録。
+作業ブランチ `release/batch1-20261105`、INT1B 完了コミット `cc892a8f4` の上で開始。公開・AI 呼び出しの変更は禁止。本番の取得日時は `production-http.json` に記録。
 
 ## 一次資料
 
