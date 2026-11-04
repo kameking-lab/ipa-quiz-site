@@ -292,7 +292,7 @@ function ScoredQuizPlayer({
 
   React.useEffect(() => {
     const handler = (e: KeyboardEvent) => {
-      if (!question || isReferenceOnlyQuestionId(question.id) || (question.exam === "chosashi" && question.type === "descriptive")) return;
+      if (!question || isReferenceOnlyQuestionId(question.id) || ((question.exam === "chosashi" || question.exam === "khk-kagaku") && question.type === "descriptive")) return;
       if (e.isComposing || e.keyCode === 229) return;
       if (e.target instanceof HTMLElement) {
         if (e.target.isContentEditable || e.target.closest('[contenteditable]:not([contenteditable="false"]), [role="textbox"], [role="combobox"]')) return;
@@ -374,7 +374,7 @@ function ScoredQuizPlayer({
     );
   }
 
-  if (completed && question?.exam === "chosashi" && question.type === "descriptive" && stats.answered === 0) {
+  if (completed && (question?.exam === "chosashi" || question?.exam === "khk-kagaku") && question.type === "descriptive" && stats.answered === 0) {
     return (
       <main className="mx-auto max-w-3xl space-y-5 px-4 py-6">
         <h1 className="text-xl font-semibold">記述の確認を終えました</h1>
@@ -395,7 +395,7 @@ function ScoredQuizPlayer({
         shareHref={completionShareHref}
         scheduleUrl={tsuginoScheduleUrl(question?.exam)}
         learningUrl={tsuginoLearningUrl(question?.exam)}
-        onReviewLast={question && !(question.exam === "chosashi" && question.type === "descriptive") && revealed ? () => {
+        onReviewLast={question && !((question.exam === "chosashi" || question.exam === "khk-kagaku") && question.type === "descriptive") && revealed ? () => {
           setCompleted(false);
           setCopilotQuery("open");
             setCopilotRequest((value) => ({ questionId: question!.id, sequence: (value?.sequence ?? 0) + 1 }));
@@ -419,7 +419,7 @@ function ScoredQuizPlayer({
     );
   }
 
-  if (question.type === "descriptive" && question.exam === "chosashi") {
+  if (question.type === "descriptive" && (question.exam === "chosashi" || question.exam === "khk-kagaku")) {
     return (
       <main className="mx-auto max-w-3xl space-y-5 px-4 py-6">
         <Button variant="outline" onClick={() => router.push(backHref)}>{backLabel}</Button>

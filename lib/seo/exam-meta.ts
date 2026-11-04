@@ -242,6 +242,7 @@ const EXAM_FULL_NAMES: Record<ExamCode, string> = {
   "shino-kunrenshi": "視能訓練士国家試験",
   "rinsho-kogishi": "臨床工学技士国家試験",
   "judo-seifukushi": "柔道整復師国家試験",
+  "khk-kagaku": "高圧ガス製造保安責任者試験（化学）",
   "gas-kou": "ガス主任技術者試験（甲種）",
   "gas-otsu": "ガス主任技術者試験（乙種）",
   "gas-hei": "ガス主任技術者試験（丙種）",
@@ -258,6 +259,7 @@ const EXAM_META_DESC_DIVERSE: Record<
   ExamCode,
   (c: string, y: number, k: number) => string
 > = {
+  "khk-kagaku": (c) => `高圧ガス製造保安責任者（化学）の2024・2025年度から${c}原問。法令・保安管理技術・学識の公式問題と独自解説。`,
   kanteishi: (c) => `不動産鑑定士の短答式過去問${c}問を無料・回数制限なしで演習。令和7・8年度の原文・公式正答・全肢解説・原表と原文用語の注記を確認できます。`,
   kaikeishi: (c) => `公認会計士の短答式過去問${c}問を無料・回数制限なしで演習。令和8年試験第I回・第II回の原文・公式正答・全肢解説・共通設例・図表を確認できます。`,
   "riku-toku-kokunai": (c) => `国内電信級陸上特殊無線技士の2026年2月・6月筆記法規から${c}問を収録。公式問題・正答と独自解説で無料演習できます。当時の法令に基づき、現在のCBT例題や独自問題は含みません。`,

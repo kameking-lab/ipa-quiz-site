@@ -1,4 +1,5 @@
 import type { ExamCode } from "@/lib/questions/types";
+import khkPublication from "@/data/qualification-staging/khk-kagaku/manifest.json";
 
 export type QualificationDomain =
   | "information-technology"
@@ -43,6 +44,7 @@ export interface QualificationCatalogEntry {
 export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
   {
     slug: "khk-kagaku",
+    examCode: "khk-kagaku",
     shortName: "高圧ガス製造保安責任者（化学）",
     fullName: "高圧ガス製造保安責任者 甲種化学・乙種化学・丙種化学（液石）・丙種化学（特別）",
     domain: "safety",
@@ -50,9 +52,9 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     officialQuestionsUrl: "https://shiken.khk.or.jp/shiken.html",
     officialReuseTermsUrl: "https://www.khk.or.jp/condition.html",
     status: "ready-to-ingest",
-    reuseSummary: "オーナー決定2026-11-04 06:10に基づき収録対象。令和7・6年度の公式28PDF・全422原問・択一410正答番号を未公開資料として保存。全原問の本文・必要図表と記述12問の公式解答例を照合。原問図表33画像、付録常用対数表の全900セル・3頁画像、公式解答例13頁画像を保持。289問・全1445肢の独自解説を作成。残133問の独自解説と演習登録は未完了。未公開を維持。",
+    reuseSummary: "オーナー決定2026-11-04 06:10に基づき収録対象。2024・2025年度422原問（択一410・記述12）と公式正答・原図33画像・付録3画像・解答例13画像を照合。全2050肢の独自解説と記述12問の独自解答・自己採点基準を作成し、科目別に演習登録済み。R6液石学識問20は公式採点と材料特性の技術的留保を分けて注記。publicAllowed=falseで未公開。",
     attributionTemplate: "出典：高圧ガス保安協会 高圧ガス製造保安責任者試験 ○年度 ○種化学 ○科目 問○（問題・正答）。解説は過去問AIが独自作成。",
-    remainingWork: ["残133問の独自解説（丙種液石保安40問、丙種特別保安40問・学識40問、2024液石学識問20、甲種記述学識12問。択一121問・全605肢）", "原問図表33画像・常用対数表3頁・公式解答例13頁画像の配信パス設定", "公式解答例の照合メモから演習用記述解答への変換・独自解説・採点実装", "演習用データ・登録・ルーティング・examCodeの実装と非公開確認"],
+    remainingWork: ["未公開を維持。公開は本タスクの対象外", "R6液石学識問20の材料特性に関する原文・公式採点・技術的留保の注記を公開前に再確認"],
   },
   {
     slug: "kanteishi", examCode: "kanteishi", shortName: "不動産鑑定士", fullName: "不動産鑑定士試験（短答式）",
@@ -970,5 +972,6 @@ export function getQualificationByExamCode(exam: ExamCode): QualificationCatalog
 
 /** Public routes and question registries must call this gate before exposing external data. */
 export function isExamPublished(exam: ExamCode): boolean {
+  if (exam === "khk-kagaku" && !khkPublication.publicAllowed) return false;
   return getQualificationByExamCode(exam)?.status === "live" || !getQualificationByExamCode(exam);
 }

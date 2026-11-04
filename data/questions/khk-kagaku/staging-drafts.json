@@ -1,7 +1,7 @@
 {
   "slug": "khk-kagaku",
-  "status": "source-draft-only",
-  "notice": "原本422問照合済み、独自解説409問、残13問。publicAllowed=falseを保持。",
+  "status": "registered-unpublished",
+  "notice": "全422原問の解説・演習登録済み。択一410問・全2050肢、記述12問の独自解答・自己採点、全49画像の配信パスを実装。未公開を維持。R6CZ問20は公式採点と技術的留保を併記。",
   "papers": [
     {
       "year": 2024,
@@ -1473,9 +1473,9 @@
             2
           ],
           "rawExtractedText": "気体A と気体B の混合気体について以下の問に答えよ。ただし、気体はすべて理想気体とす\n  る。                                                               (15点)\n\n\n  ⑴　温度273 K、圧力101 kPa のときこの混合気体の密度ρ が1.20 kg/m3 であった。\n  　　モル質量M［kg/mol］はおよそいくらか。\n\n\n  ⑵　この混合気体3.00 × 10-2 kg を容積1.00 × 10-2 m3 の容器に温度300 K で充塡した。この\n   容器内の気体A の分圧が150 kPa であるとき、気体B のモル分率xB はおよそいくらか。\n\n\n\n\n\n                                             1                                                R6-AZ",
-          "reviewStatus": "transcription-verified-descriptive-answer-and-explanation-pending",
+          "reviewStatus": "transcription-verified-explanation-written",
           "transcriptionVerified": true,
-          "explanationWritten": false,
+          "explanationWritten": true,
           "figuresVerified": true,
           "sourceAnswerUrl": "https://www.khk.or.jp/Portals/0/khk/exam/2024/R6fy_01.pdf",
           "answerKind": "descriptive",
@@ -1490,7 +1490,32 @@
           "imageAssets": [],
           "hasImage": false,
           "officialAnswerExampleVerified": true,
-          "officialAnswerExampleReviewId": "2024-AZ-1"
+          "officialAnswerExampleReviewId": "2024-AZ-1",
+          "modelAnswerDraft": "(1) M＝ρRT/p＝1.20×8.31×273/(101×10³)＝0.02695… kg/mol≒0.0270 kg/mol。\n\n(2) 全物質量n＝0.0300/0.0270＝1.11 mol。全圧p＝nRT/V＝277 kPa。Bの分圧p_B＝277−150＝127 kPa。x_B＝p_B/p＝0.458。",
+          "explanationDraft": "pV＝nRTとm＝nMを連立するとρ＝pM/(RT)。モル質量を得た後、同じ質量を新しい温度・容積へ入れたときの全圧を求める。理想混合気体では分圧比＝モル分率である。kPaをPaへ直してRのSI単位とそろえる。",
+          "selfAssessmentDraft": [
+            {
+              "label": "観点1",
+              "criterion": "密度と状態方程式からモル質量0.0270 kg/molを、単位をそろえて算出する。",
+              "points": 6
+            },
+            {
+              "label": "観点2",
+              "criterion": "全圧約277 kPaとBの分圧約127 kPaを示す。",
+              "points": 5
+            },
+            {
+              "label": "観点3",
+              "criterion": "分圧/全圧からモル分率0.458を無次元で求める。",
+              "points": 4
+            }
+          ],
+          "scoringCriteriaDraft": "演習用の独自自己採点基準（公式の小問別配点・合否判定ではない）。各観点を満たせば表示点を加算。途中式・単位・指定の有効数字を確認し、同値の式や妥当な丸め差を認める。\n\n- 密度と状態方程式からモル質量0.0270 kg/molを、単位をそろえて算出する。（6点）\n- 全圧約277 kPaとBの分圧約127 kPaを示す。（5点）\n- 分圧/全圧からモル分率0.458を無次元で求める。（4点）",
+          "explanationSourceUrls": [
+            "https://www.khk.or.jp/Portals/0/khk/exam/2024/R6ACAZ-W.pdf",
+            "https://www.khk.or.jp/Portals/0/khk/exam/2024/R6fy_01.pdf"
+          ],
+          "explanationAttribution": "公式解答例の照合記録とは別に作成した独自解答・解説・自己採点基準。"
         },
         {
           "number": 2,
@@ -1499,9 +1524,9 @@
             3
           ],
           "rawExtractedText": "図は逆カルノーサイクルのT-S（温度-エントロピー）線図である。サイクルでは温度T1 の\n  低熱源で熱量Q1 を受け取り、温度T2 の高熱源に熱量Q2 を放出する。以下の問に答えよ。\n　　　ただし、温度は熱力学温度である。                                      (15点)\n\n\n\n\n\n  ⑴　1 →2 、2 →3 、3 →4 、4 →1 の各過程を説明せよ。\n\n\n  ⑵　W は温度T1 の熱量Q1 を受け取り、温度T2 にくみ上げ熱量Q2 として放出するのに必要な\n   仕事で、W ＝Q2 －Q1 である。W は図中でどのように表されるかを説明せよ。\n\n\n\n\n\nR6-AZ                                        2",
-          "reviewStatus": "transcription-verified-descriptive-answer-and-explanation-pending",
+          "reviewStatus": "transcription-verified-explanation-written",
           "transcriptionVerified": true,
-          "explanationWritten": false,
+          "explanationWritten": true,
           "figuresVerified": true,
           "sourceAnswerUrl": "https://www.khk.or.jp/Portals/0/khk/exam/2024/R6fy_01.pdf",
           "answerKind": "descriptive",
@@ -1519,7 +1544,32 @@
           ],
           "hasImage": true,
           "officialAnswerExampleVerified": true,
-          "officialAnswerExampleReviewId": "2024-AZ-2"
+          "officialAnswerExampleReviewId": "2024-AZ-2",
+          "modelAnswerDraft": "(1) 1→2：温度T₁で熱Q₁を吸収する等温膨張。2→3：エントロピー一定でT₂へ上がる可逆断熱圧縮。3→4：T₂で熱Q₂を放出する等温圧縮。4→1：エントロピー一定でT₁へ戻る可逆断熱膨張。\n\n(2) 可逆過程ではδQ＝T dSなので、Q₁は下辺の温度T₁の下の面積、Q₂は上辺の温度T₂の下の面積。差W＝Q₂−Q₁は1-2-3-4で囲む長方形の面積、すなわち(T₂−T₁)(S₂−S₁)である。",
+          "explanationDraft": "T-S図の水平線では温度一定、垂直線ではエントロピー一定。逆サイクルは外から仕事を受けて低温側の熱を高温側へ運ぶ。二つの等温過程の熱の差を面積で説明すれば、仕事の符号と図形の対応が明瞭になる。",
+          "selfAssessmentDraft": [
+            {
+              "label": "観点1",
+              "criterion": "四つの過程を等温膨張・断熱圧縮・等温圧縮・断熱膨張の順で説明する。",
+              "points": 8
+            },
+            {
+              "label": "観点2",
+              "criterion": "可逆過程の熱がT-S図の∫T dSの面積であることを示す。",
+              "points": 4
+            },
+            {
+              "label": "観点3",
+              "criterion": "必要仕事がサイクル内の面積Q₂−Q₁であると説明する。",
+              "points": 3
+            }
+          ],
+          "scoringCriteriaDraft": "演習用の独自自己採点基準（公式の小問別配点・合否判定ではない）。各観点を満たせば表示点を加算。途中式・単位・指定の有効数字を確認し、同値の式や妥当な丸め差を認める。\n\n- 四つの過程を等温膨張・断熱圧縮・等温圧縮・断熱膨張の順で説明する。（8点）\n- 可逆過程の熱がT-S図の∫T dSの面積であることを示す。（4点）\n- 必要仕事がサイクル内の面積Q₂−Q₁であると説明する。（3点）",
+          "explanationSourceUrls": [
+            "https://www.khk.or.jp/Portals/0/khk/exam/2024/R6ACAZ-W.pdf",
+            "https://www.khk.or.jp/Portals/0/khk/exam/2024/R6fy_01.pdf"
+          ],
+          "explanationAttribution": "公式解答例の照合記録とは別に作成した独自解答・解説・自己採点基準。"
         },
         {
           "number": 3,
@@ -1528,9 +1578,9 @@
             4
           ],
           "rawExtractedText": "化学反応においては、反応のギブズエネルギー変化ΔGr、反応のエンタルピー変化ΔHr、およ\n  び反応のエントロピー変化ΔSr の間には、以下の関係式が成り立つ。\n　　　　ΔGr ＝ΔHr －TΔSr\n　　　ただし、T は反応温度である。\n　　　また、反応の平衡定数K と反応のギブズエネルギー変化ΔGr の間には次の関係式が成り立つ。\n　　　　ΔGr ＝－RTlnK\n   ただし、R は気体定数である。また、lnK ＝2.30 log10 K の関係がある。\n\n\n　　　これらの関係式を参考にして、次のメタノール合成反応に関する以下の問に答えよ。\n　　　　CO（g）＋2H2（g）　⇆　CH3OH（g）\n　　　ただし、この反応は平衡反応で、CO（g）、H2（g）、CH3OH（g）の298 K での標準生成エンタル\n   ピーΔHf° と標準生成ギブズエネルギーΔGf° は以下の表に示す値とする。\n\n\n                            CO（g）     H2（g）   CH3OH（g）\n                ΔHf°［kJ/mol］     －110.5         0        －200.7\n                ΔGf°［kJ/mol］     －137.2         0        －162.0\n\n                                                                      (15点)\n\n\n  ⑴　メタノール合成反応の標準状態（298 K、101 kPa）での反応のエンタルピー変化ΔHr°、反\n   応のギブズエネルギー変化ΔGr° および反応のエントロピー変化ΔSr° をそれぞれ必要な単位を\n   つけて求めよ。\n\n\n  ⑵　この状態での平衡定数K の値を求めよ。ここでK は、活量で定義される反応の平衡定数\n   で、無次元である。\n\n\n  ⑶　平衡定数K の値が1 となる温度はおよそいくらかを求めよ。ただし、ΔHr とΔSr はこの温\n   度範囲で温度によらず一定としてよい。\n\n\n  ⑷　この反応でメタノールの収率を上げるためには、化学平衡の観点から温度と圧力についてそ\n   れぞれどのような状態で反応を行うのがよいかを説明せよ。\n\n\n\n\n\n                                             3                                                R6-AZ",
-          "reviewStatus": "transcription-verified-descriptive-answer-and-explanation-pending",
+          "reviewStatus": "transcription-verified-explanation-written",
           "transcriptionVerified": true,
-          "explanationWritten": false,
+          "explanationWritten": true,
           "figuresVerified": true,
           "sourceAnswerUrl": "https://www.khk.or.jp/Portals/0/khk/exam/2024/R6fy_01.pdf",
           "answerKind": "descriptive",
@@ -1547,7 +1597,37 @@
           ],
           "hasImage": true,
           "officialAnswerExampleVerified": true,
-          "officialAnswerExampleReviewId": "2024-AZ-3"
+          "officialAnswerExampleReviewId": "2024-AZ-3",
+          "modelAnswerDraft": "(1) ΔH_r°＝−200.7−(−110.5)＝−90.2 kJ/mol。ΔG_r°＝−162.0−(−137.2)＝−24.8 kJ/mol。ΔS_r°＝(ΔH_r°−ΔG_r°)/298＝−0.219 kJ/(mol·K)＝−219 J/(mol·K)。\n\n(2) ln K＝24800/(8.31×298)≒10.0。log₁₀K≒10.0/2.30≒4.35、K≒2.24×10⁴（無次元）。\n\n(3) K＝1ならΔG＝0なのでT＝ΔH/ΔS≒(−90200)/(−219)＝412 K。\n\n(4) 発熱反応なので低温、気体の総物質量が3 molから1 molに減る反応なので高圧が、平衡上のメタノール収率向上に有利。",
+          "explanationDraft": "反応量は生成物の生成値の和から反応物の和を引く。Kを求めるときはRとエネルギーの単位をJにそろえる。低温で平衡が有利でも反応速度は別の制約となるため、設問の「化学平衡の観点」を守って説明する。",
+          "selfAssessmentDraft": [
+            {
+              "label": "観点1",
+              "criterion": "ΔH・ΔG・ΔSの符号、数値、単位を正しく求める。",
+              "points": 5
+            },
+            {
+              "label": "観点2",
+              "criterion": "ΔG＝−RT ln KからKを約2.2×10⁴、無次元として求める。丸め差を許容する。",
+              "points": 4
+            },
+            {
+              "label": "観点3",
+              "criterion": "K＝1とΔG＝0を結び付け、約412 Kを求める。",
+              "points": 3
+            },
+            {
+              "label": "観点4",
+              "criterion": "低温・高圧の両方を反応熱と気体物質量の変化で説明する。",
+              "points": 3
+            }
+          ],
+          "scoringCriteriaDraft": "演習用の独自自己採点基準（公式の小問別配点・合否判定ではない）。各観点を満たせば表示点を加算。途中式・単位・指定の有効数字を確認し、同値の式や妥当な丸め差を認める。\n\n- ΔH・ΔG・ΔSの符号、数値、単位を正しく求める。（5点）\n- ΔG＝−RT ln KからKを約2.2×10⁴、無次元として求める。丸め差を許容する。（4点）\n- K＝1とΔG＝0を結び付け、約412 Kを求める。（3点）\n- 低温・高圧の両方を反応熱と気体物質量の変化で説明する。（3点）",
+          "explanationSourceUrls": [
+            "https://www.khk.or.jp/Portals/0/khk/exam/2024/R6ACAZ-W.pdf",
+            "https://www.khk.or.jp/Portals/0/khk/exam/2024/R6fy_01.pdf"
+          ],
+          "explanationAttribution": "公式解答例の照合記録とは別に作成した独自解答・解説・自己採点基準。"
         },
         {
           "number": 4,
@@ -1556,9 +1636,9 @@
             5
           ],
           "rawExtractedText": "次に示す2 種の物質について、その性質、用途、工業的製造法における原料および製造プロセ\n  ス（化学反応とその触媒、プロセスの特徴など）について記せ。                  (20点)\n\n\n    物　質       アセトアルデヒド        亜酸化窒素（一酸化二窒素）\n\n\n\n\n\n    性　質\n\n\n\n\n\n    用　途\n\n\n\n\n\n   工業的製造法\n  における\n  原料および\n   製造プロセス\n\n\n\n\n\nR6-AZ                                        4",
-          "reviewStatus": "transcription-verified-descriptive-answer-and-explanation-pending",
+          "reviewStatus": "transcription-verified-explanation-written",
           "transcriptionVerified": true,
-          "explanationWritten": false,
+          "explanationWritten": true,
           "figuresVerified": true,
           "sourceAnswerUrl": "https://www.khk.or.jp/Portals/0/khk/exam/2024/R6fy_01.pdf",
           "answerKind": "descriptive",
@@ -1575,7 +1655,47 @@
           ],
           "hasImage": true,
           "officialAnswerExampleVerified": true,
-          "officialAnswerExampleReviewId": "2024-AZ-4"
+          "officialAnswerExampleReviewId": "2024-AZ-4",
+          "modelAnswerDraft": "アセトアルデヒド：無色で刺激臭を持つ揮発性・可燃性の液体。沸点約20.3 ℃、引火点約−38 ℃、発火温度約155 ℃、爆発範囲約4.0〜60 vol%。酢酸エチル等の有機合成原料に用いる。工業的にはエチレンを水・酸素で酸化するワッカー・ヘキスト法が代表的で、PdCl₂/CuCl₂触媒を循環再生する。反応はC₂H₄＋PdCl₂＋H₂O→CH₃CHO＋Pd＋2HCl、Pd＋2CuCl₂→PdCl₂＋2CuCl、2CuCl＋2HCl＋(1/2)O₂→2CuCl₂＋H₂O。総括反応はC₂H₄＋(1/2)O₂→CH₃CHO。\n\n亜酸化窒素N₂O：無色のガスで支燃性を持ち、標準生成エンタルピーが正（約82.1 kJ/mol）なので分解爆発の危険がある。麻酔、エアバッグ等に用いる。硝酸アンモニウムを約260 ℃で分解するNH₄NO₃→N₂O＋2H₂Oの方法、又はMn₂O₃/Bi₂O₃触媒等でアンモニアを約300〜350 ℃で酸化する2NH₃＋2O₂→N₂O＋3H₂Oの方法がある。",
+          "explanationDraft": "二物質について性質・用途・製法の6枠を埋める。アセトアルデヒドではPdをCu塩で再酸化し、Cu塩を酸素で再生する触媒循環まで示す。N₂Oでは「自ら燃料として燃える可燃性」と「他の物を燃やす支燃性」、さらに酸素を要しない分解危険を区別する。",
+          "selfAssessmentDraft": [
+            {
+              "label": "観点1",
+              "criterion": "アセトアルデヒドの揮発性・可燃性と代表的物性を説明する。",
+              "points": 4
+            },
+            {
+              "label": "観点2",
+              "criterion": "アセトアルデヒドの有機合成原料としての用途を挙げる。",
+              "points": 2
+            },
+            {
+              "label": "観点3",
+              "criterion": "エチレン酸化とPdCl₂/CuCl₂の再生・総括反応を説明する。",
+              "points": 4
+            },
+            {
+              "label": "観点4",
+              "criterion": "N₂Oの支燃性と正の生成エンタルピーに由来する分解危険を説明する。",
+              "points": 4
+            },
+            {
+              "label": "観点5",
+              "criterion": "N₂Oの用途を挙げる。",
+              "points": 2
+            },
+            {
+              "label": "観点6",
+              "criterion": "N₂Oの二つの製法について原料・反応式・条件又は触媒を記す。",
+              "points": 4
+            }
+          ],
+          "scoringCriteriaDraft": "演習用の独自自己採点基準（公式の小問別配点・合否判定ではない）。各観点を満たせば表示点を加算。途中式・単位・指定の有効数字を確認し、同値の式や妥当な丸め差を認める。\n\n- アセトアルデヒドの揮発性・可燃性と代表的物性を説明する。（4点）\n- アセトアルデヒドの有機合成原料としての用途を挙げる。（2点）\n- エチレン酸化とPdCl₂/CuCl₂の再生・総括反応を説明する。（4点）\n- N₂Oの支燃性と正の生成エンタルピーに由来する分解危険を説明する。（4点）\n- N₂Oの用途を挙げる。（2点）\n- N₂Oの二つの製法について原料・反応式・条件又は触媒を記す。（4点）",
+          "explanationSourceUrls": [
+            "https://www.khk.or.jp/Portals/0/khk/exam/2024/R6ACAZ-W.pdf",
+            "https://www.khk.or.jp/Portals/0/khk/exam/2024/R6fy_01.pdf"
+          ],
+          "explanationAttribution": "公式解答例の照合記録とは別に作成した独自解答・解説・自己採点基準。"
         },
         {
           "number": 5,
@@ -1584,9 +1704,9 @@
             6
           ],
           "rawExtractedText": "温度25 ℃における空気中の爆発下限界L25［vol％］と燃焼熱Qc［kJ/mol］の積は、飽和炭\n  化水素ではほぼ一定で\n\n\n          L25Qc ＝K                      ①\n\n\n  と表されることが知られている。これをバージェス- ホイーラー（Burgess-Wheeler）の法則と\n  いう。以下の問に答えよ。                                               (15点)\n\n\n  ⑴　プロパンの燃焼熱を求めよ。ただし、プロパン、CO2 およびH2O(g) の標準生成エンタル\n    ピーは、それぞれ－104.7 kJ/mol、－393.5 kJ/mol および－241.8 kJ/mol とする。\n\n\n  ⑵　エタンの燃焼熱は1428 kJ/mol で、25 ℃、空気中における爆発下限界は3.0 vol％である。\n   式 ①を用いて25 ℃、空気中でのプロパンの爆発下限界を有効数字2 桁で計算せよ。\n\n\n  ⑶　標準大気圧のエタン50 vol％、プロパン50 vol％からなる混合気体を調製した。25 ℃、空\n   気中でのこの混合気体の爆発下限界を有効数字2 桁で計算せよ。\n\n\n\n\n\n                                             5                                                R6-AZ",
-          "reviewStatus": "transcription-verified-descriptive-answer-and-explanation-pending",
+          "reviewStatus": "transcription-verified-explanation-written",
           "transcriptionVerified": true,
-          "explanationWritten": false,
+          "explanationWritten": true,
           "figuresVerified": true,
           "sourceAnswerUrl": "https://www.khk.or.jp/Portals/0/khk/exam/2024/R6fy_01.pdf",
           "answerKind": "descriptive",
@@ -1601,7 +1721,32 @@
           "imageAssets": [],
           "hasImage": false,
           "officialAnswerExampleVerified": true,
-          "officialAnswerExampleReviewId": "2024-AZ-5"
+          "officialAnswerExampleReviewId": "2024-AZ-5",
+          "modelAnswerDraft": "(1) C₃H₈＋5O₂→3CO₂＋4H₂O(g)。ΔH＝3(−393.5)＋4(−241.8)−(−104.7)＝−2043 kJ/mol。燃焼熱の大きさQ_cは2043 kJ/mol。\n\n(2) L_P＝L_E Q_E/Q_P＝3.0×1428/2043＝2.0969… vol%≒2.1 vol%。\n\n(3) ルシャトリエの式1/L_mix＝0.50/3.0＋0.50/2.1よりL_mix＝2.47… vol%≒2.5 vol%。(2)の未丸め値を使っても有効数字2桁では2.5 vol%。",
+          "explanationDraft": "燃焼反応エンタルピーは負だが燃焼熱としての発熱量は正の大きさで示す。バージェス・ホイーラーの積一定で単一ガスの下限界を推算し、混合ガスには体積分率で重み付けした逆数和を使う。燃料の50%と空気中の爆発下限界を混同しない。",
+          "selfAssessmentDraft": [
+            {
+              "label": "観点1",
+              "criterion": "原子数を合わせ、水蒸気の生成値を用いて燃焼熱2043 kJ/molを求める。",
+              "points": 5
+            },
+            {
+              "label": "観点2",
+              "criterion": "積一定の関係からプロパン下限界2.1 vol%を有効数字2桁で求める。",
+              "points": 5
+            },
+            {
+              "label": "観点3",
+              "criterion": "混合則を明示し、混合気の下限界2.5 vol%を求める。",
+              "points": 5
+            }
+          ],
+          "scoringCriteriaDraft": "演習用の独自自己採点基準（公式の小問別配点・合否判定ではない）。各観点を満たせば表示点を加算。途中式・単位・指定の有効数字を確認し、同値の式や妥当な丸め差を認める。\n\n- 原子数を合わせ、水蒸気の生成値を用いて燃焼熱2043 kJ/molを求める。（5点）\n- 積一定の関係からプロパン下限界2.1 vol%を有効数字2桁で求める。（5点）\n- 混合則を明示し、混合気の下限界2.5 vol%を求める。（5点）",
+          "explanationSourceUrls": [
+            "https://www.khk.or.jp/Portals/0/khk/exam/2024/R6ACAZ-W.pdf",
+            "https://www.khk.or.jp/Portals/0/khk/exam/2024/R6fy_01.pdf"
+          ],
+          "explanationAttribution": "公式解答例の照合記録とは別に作成した独自解答・解説・自己採点基準。"
         },
         {
           "number": 6,
@@ -1610,9 +1755,9 @@
             7
           ],
           "rawExtractedText": "次の問に答えよ。                                                    (20点)\n\n\n   ⑴　爆ごう（detonation）と爆燃（deflagration）の違いについて説明せよ。\n\n\n  ⑵　総発熱量（高位発熱量）と真発熱量（低位発熱量）の違いについて説明せよ。\n\n\n\n\n\nR6-AZ                                        6\n               常用対数表の使い方\n\n 1 ．logb x ＝c において、b を底数、x を真数、c を対数という。\n 2 ．次頁の常用対数表の縦は真数の小数第1 位までの数値を、横は真数の小数第2 位の数値を表し、\n 表中の数値は常用対数（10 を底とする対数で、log x と表す。）の小数を表す。\n\n  （例）真数x が5.02 の場合、log x ＝log 5.02 ＝0.701 であることを表している。\n  　　　（下表の網掛け部分を参照）\n  　　　常用対数表（表中の数値は小数を表す）\n\n             x の小数第1 位\n               →　x の小数第2 位の数値     までの数値　↓\n                              0        1        2        3        4        5\n                 1.0          000      004      009      013      017      021\n\n\n                 2.5          398      400      401      403      405      407\n                 2.6          415      417      418      420      422      423\n\n\n                 4.9          690      691      692      693      694      695\n                 5.0          699      700      701      702      702      703\n\n\n                 9.9          996      996      997      997      997      998\n\n\n対数と指数の関係\n   1 ．logb x ＝c は、bc ＝x を意味する。\n  2 ．対数表を使ってx を求める計算は、次の例のとおりである。\n 　　（例）5.020.602 ＝x を求める場合、\n 　　　　　log x ＝0.602 log 5.02 ＝0.602 × 0.701 ＝0.422\n 　　　　　対数表より0.422 ＝log 2.64 であるから、x ＝2.64 となる。\n 　　　　　（上表の網掛け部分を参照）\n\n対数に関する公式\n   1 ．自然対数（e ＝2.718 ……を底とする対数で、ln x と表す。）と常用対数の関係は、\n 　　ln x ＝2.30 log x、log x ＝0.434 ln x とする。\n   2 ．log xy ＝log x ＋log y\n   3 ．log(x/y) ＝log x －log y\n   4 ．log xn ＝n log x\n\n（公式の使用例）\n  1 ．真数x ＝500 の場合\n  　　log 500 ＝log(5 × 102) ＝log 5 ＋log 102 ＝log 5 ＋2 log 10 ＝0.699 ＋2 × 1 ＝2.699\n  2 ．真数x ＝0.05 の場合\n  　　log 0.05 ＝log(5 × 10-2) ＝log 5 ＋log 10-2 ＝log 5 －2 log 10 ＝0.699 －2 × 1 ＝－1.301\n                                             7                                                R6-AZ\n                 常用対数表　⑴\n（表中の数値は小数を表す）                                                      1.00 ～5.49\n             0       1       2       3       4       5       6       7       8       9\n   1.0     000     004     009     013     017     021     025     029     033     037\n   1.1     041     045     049     053     057     061     064     068     072     076\n   1.2     079     083     086     090     093     097     100     104     107     111\n   1.3     114     117     121     124     127     130     134     137     140     143\n   1.4     146     149     152     155     158     161     164     167     170     173\n   1.5     176     179     182     185     188     190     193     196     199     201\n   1.6     204     207     210     212     215     217     220     223     225     228\n   1.7     230     233     236     238     241     243     246     248     250     253\n   1.8     255     258     260     262     265     267     270     272     274     276\n   1.9     279     281     283     286     288     290     292     294     297     299\n   2.0     301     303     305     307     310     312     314     316     318     320\n   2.1     322     324     326     328     330     332     334     336     338     340\n   2.2     342     344     346     348     350     352     354     356     358     360\n   2.3     362     364     365     367     369     371     373     375     377     378\n   2.4     380     382     384     386     387     389     391     393     394     396\n   2.5     398     400     401     403     405     407     408     410     412     413\n   2.6     415     417     418     420     422     423     425     427     428     430\n   2.7     431     433     435     436     438     439     441     442     444     446\n   2.8     447     449     450     452     453     455     456     458     459     461\n   2.9     462     464     465     467     468     470     471     473     474     476\n   3.0     477     479     480     481     483     484     486     487     489     490\n   3.1     491     493     494     496     497     498     500     501     502     504\n   3.2     505     507     508     509     511     512     513     515     516     517\n   3.3     519     520     521     522     524     525     526     528     529     530\n   3.4     531     533     534     535     537     538     539     540     542     543\n   3.5     544     545     547     548     549     550     551     553     554     555\n   3.6     556     558     559     560     561     562     563     565     566     567\n   3.7     568     569     571     572     573     574     575     576     577     579\n   3.8     580     581     582     583     584     585     587     588     589     590\n   3.9     591     592     593     594     595     597     598     599     600     601\n   4.0     602     603     604     605     606     607     609     610     611     612\n   4.1     613     614     615     616     617     618     619     620     621     622\n   4.2     623     624     625     626     627     628     629     630     631     632\n   4.3     633     634     635     636     637     638     639     640     641     642\n   4.4     643     644     645     646     647     648     649     650     651     652\n   4.5     653     654     655     656     657     658     659     660     661     662\n   4.6     663     664     665     666     667     667     668     669     670     671\n   4.7     672     673     674     675     676     677     678     679     679     680\n   4.8     681     682     683     684     685     686     687     688     688     689\n   4.9     690     691     692     693     694     695     695     696     697     698\n   5.0     699     700     701     702     702     703     704     705     706     707\n   5.1     708     708     709     710     711     712     713     713     714     715\n   5.2     716     717     718     719     719     720     721     722     723     723\n   5.3     724     725     726     727     728     728     729     730     731     732\n   5.4     732     733     734     735     736     736     737     738     739     740\n\n\n R6-AZ                                        8\n                 常用対数表　⑵\n（表中の数値は小数を表す）                                                      5.50 ～9.99\n             0       1       2       3       4       5       6       7       8       9\n   5.5     740     741     742     743     744     744     745     746     747     747\n   5.6     748     749     750     751     751     752     753     754     754     755\n   5.7     756     757     757     758     759     760     760     761     762     763\n   5.8     763     764     765     766     766     767     768     769     769     770\n   5.9     771     772     772     773     774     775     775     776     777     777\n   6.0     778     779     780     780     781     782     782     783     784     785\n   6.1     785     786     787     787     788     789     790     790     791     792\n   6.2     792     793     794     794     795     796     797     797     798     799\n   6.3     799     800     801     801     802     803     803     804     805     806\n   6.4     806     807     808     808     809     810     810     811     812     812\n   6.5     813     814     814     815     816     816     817     818     818     819\n   6.6     820     820     821     822     822     823     823     824     825     825\n   6.7     826     827     827     828     829     829     830     831     831     832\n   6.8     833     833     834     834     835     836     836     837     838     838\n   6.9     839     839     840     841     841     842     843     843     844     844\n   7.0     845     846     846     847     848     848     849     849     850     851\n   7.1     851     852     852     853     854     854     855     856     856     857\n   7.2     857     858     859     859     860     860     861     862     862     863\n   7.3     863     864     865     865     866     866     867     867     868     869\n   7.4     869     870     870     871     872     872     873     873     874     874\n   7.5     875     876     876     877     877     878     879     879     880     880\n   7.6     881     881     882     883     883     884     884     885     885     886\n   7.7     886     887     888     888     889     889     890     890     891     892\n   7.8     892     893     893     894     894     895     895     896     897     897\n   7.9     898     898     899     899     900     900     901     901     902     903\n   8.0     903     904     904     905     905     906     906     907     907     908\n   8.1     908     909     910     910     911     911     912     912     913     913\n   8.2     914     914     915     915     916     916     917     918     918     919\n   8.3     919     920     920     921     921     922     922     923     923     924\n   8.4     924     925     925     926     926     927     927     928     928     929\n   8.5     929     930     930     931     931     932     932     933     933     934\n   8.6     934     935     936     936     937     937     938     938     939     939\n   8.7     940     940     941     941     942     942     943     943     943     944\n   8.8     944     945     945     946     946     947     947     948     948     949\n   8.9     949     950     950     951     951     952     952     953     953     954\n   9.0     954     955     955     956     956     957     957     958     958     959\n   9.1     959     960     960     960     961     961     962     962     963     963\n   9.2     964     964     965     965     966     966     967     967     968     968\n   9.3     968     969     969     970     970     971     971     972     972     973\n   9.4     973     974     974     975     975     975     976     976     977     977\n   9.5     978     978     979     979     980     980     980     981     981     982\n   9.6     982     983     983     984     984     985     985     985     986     986\n   9.7     987     987     988     988     989     989     989     990     990     991\n   9.8     991     992     992     993     993     993     994     994     995     995\n   9.9     996     996     997     997     997     998     998     999     999    1.000\n\n\n                                             9                                                R6-AZ\nA\nA",
-          "reviewStatus": "transcription-verified-descriptive-answer-and-explanation-pending",
+          "reviewStatus": "transcription-verified-explanation-written",
           "transcriptionVerified": true,
-          "explanationWritten": false,
+          "explanationWritten": true,
           "figuresVerified": true,
           "sourceAnswerUrl": "https://www.khk.or.jp/Portals/0/khk/exam/2024/R6fy_01.pdf",
           "answerKind": "descriptive",
@@ -1627,7 +1772,27 @@
           "imageAssets": [],
           "hasImage": false,
           "officialAnswerExampleVerified": true,
-          "officialAnswerExampleReviewId": "2024-AZ-6"
+          "officialAnswerExampleReviewId": "2024-AZ-6",
+          "modelAnswerDraft": "(1) 爆ごうでは未燃混合気に対して火炎が超音速で伝わり、先行する衝撃波による圧縮・加熱と反応が結び付く。爆燃では火炎は未燃混合気に対して亜音速で伝わり、熱伝導や物質拡散等で未燃側が加熱され燃焼が進む。\n\n(2) 高位発熱量（総発熱量）は燃焼生成水を液体に凝縮して得られる潜熱を含む。低位発熱量（真発熱量）は生成水を蒸気として扱い、その凝縮潜熱を含まない。したがって同じ燃料では高位発熱量が低位発熱量より大きい。",
+          "explanationDraft": "爆燃・爆ごうの速度は静止した観測者ではなく未燃気体に対する火炎速度で比べる。発熱量の違いは燃料の種類の違いではなく、生成物の水の最終状態の取り方で生じる。",
+          "selfAssessmentDraft": [
+            {
+              "label": "観点1",
+              "criterion": "爆ごうの超音速・衝撃波と、爆燃の亜音速・伝熱拡散の違いを記す。",
+              "points": 10
+            },
+            {
+              "label": "観点2",
+              "criterion": "生成水の液体/蒸気、凝縮熱の有無、高位＞低位を説明する。",
+              "points": 10
+            }
+          ],
+          "scoringCriteriaDraft": "演習用の独自自己採点基準（公式の小問別配点・合否判定ではない）。各観点を満たせば表示点を加算。途中式・単位・指定の有効数字を確認し、同値の式や妥当な丸め差を認める。\n\n- 爆ごうの超音速・衝撃波と、爆燃の亜音速・伝熱拡散の違いを記す。（10点）\n- 生成水の液体/蒸気、凝縮熱の有無、高位＞低位を説明する。（10点）",
+          "explanationSourceUrls": [
+            "https://www.khk.or.jp/Portals/0/khk/exam/2024/R6ACAZ-W.pdf",
+            "https://www.khk.or.jp/Portals/0/khk/exam/2024/R6fy_01.pdf"
+          ],
+          "explanationAttribution": "公式解答例の照合記録とは別に作成した独自解答・解説・自己採点基準。"
         }
       ],
       "supplementalMaterial": {
@@ -7690,9 +7855,9 @@
             8
           ],
           "rawExtractedText": "次のイ、ロ、ハ、ニの記述のうち、非金属材料について正しいものはどれか。\n\n\n  イ．エチレンプロピレンゴム（EPDM）は、耐候性、耐LP ガス性に優れているのでゴムホース\n   の内層面に用いられる。\n  ロ．フッ素ゴム（FR）は、耐LP ガス性、耐寒性、耐薬品性に優れている。一部の圧力調整器\n   に使用されている。\n  ハ．四フッ化エチレン樹脂（PTFE）は、耐薬品性、耐低温性に優れ、自己潤滑性であるためバ\n   ルブのパッキン材として使用されている。\n  ニ．ポリビニルアルコール樹脂（PVA）は、引張、圧縮に強く、耐衝撃性、耐摩擦性に優れて\n   いる。バルブのシートパッキンに用いられている。\n\n\n  ⑴　イ、ロ　　⑵　イ、ハ　　⑶　ロ、ニ　　⑷　イ、ハ、ニ　　⑸　ロ、ハ、ニ\n\n\n\n\n\nR6-CZ                                         7",
-          "reviewStatus": "transcription-verified-explanation-pending",
+          "reviewStatus": "transcription-verified-explanation-written",
           "transcriptionVerified": true,
-          "explanationWritten": false,
+          "explanationWritten": true,
           "figuresVerified": true,
           "sourceAnswerUrl": "https://www.khk.or.jp/Portals/0/khk/exam/2024/R6fy_kaitou.pdf",
           "officialAnswerNumber": 5,
@@ -7709,8 +7874,31 @@
           "imageAssets": [],
           "sharedPassagePdfPages": [],
           "explanationReviewNotes": [
-            "公式正答5（ロ・ハ・ニ）は保持。ロのフッ素ゴムの耐寒性は一般的FKMの弱点との整合を、ニのPVAの耐衝撃・摩擦・弁座用途は一次資料で追加確認する。公式原文を別材料名や耐熱性に置換しない。解説完成として計上しない。"
-          ]
+            "一次資料を追加確認し、公式採点と技術的留保を明記した全肢解説を作成。原文の材料名・性質、公式正答5は保持。PVAの弁シート用途は確認済みと主張しない。公開前にこの注記の扱いを再確認する。"
+          ],
+          "statementExplanationsDraft": {
+            "イ": "公式判定は誤り。EPDMは耐候性には優れるが、石油系炭化水素に対する耐性は一般に低く、耐LPガス性に優れる内層材とする説明は不適切。接ガス部の適合性と外層の耐候性を区別する。",
+            "ロ": "公式は正しい扱い。ただし原文の「耐寒性」は一般的なフッ素ゴム全体へ無条件に当てはめられない。メーカー一次資料では耐熱・耐油・耐薬品性が特長で、低温性と耐油性はトレードオフ、低温用には耐寒グレード等を選ぶとされる。「耐熱性」へ原文を書き換えず、公式判定と実材料のグレード依存性を区別する。",
+            "ハ": "正しい。PTFEは耐薬品性・低温特性に優れ、摩擦が小さいためパッキンや弁座等に利用される。使用圧力やクリープ等も考慮して選定する。",
+            "ニ": "公式は正しい扱い。ただしメーカー一次資料で確認したPVAは水溶性樹脂で、フィルム・接着剤・繊維等が代表用途。設問の耐衝撃・耐摩擦性と弁シート用途の一般化は、この資料では裏付けられない。PVAをPOMやポリアミドなど別材料名へ推測置換せず、原文と公式採点を保持する。"
+          },
+          "explanationDraft": "イ：公式判定は誤り。EPDMは耐候性には優れるが、石油系炭化水素に対する耐性は一般に低く、耐LPガス性に優れる内層材とする説明は不適切。接ガス部の適合性と外層の耐候性を区別する。\nロ：公式は正しい扱い。ただし原文の「耐寒性」は一般的なフッ素ゴム全体へ無条件に当てはめられない。メーカー一次資料では耐熱・耐油・耐薬品性が特長で、低温性と耐油性はトレードオフ、低温用には耐寒グレード等を選ぶとされる。「耐熱性」へ原文を書き換えず、公式判定と実材料のグレード依存性を区別する。\nハ：正しい。PTFEは耐薬品性・低温特性に優れ、摩擦が小さいためパッキンや弁座等に利用される。使用圧力やクリープ等も考慮して選定する。\nニ：公式は正しい扱い。ただしメーカー一次資料で確認したPVAは水溶性樹脂で、フィルム・接着剤・繊維等が代表用途。設問の耐衝撃・耐摩擦性と弁シート用途の一般化は、この資料では裏付けられない。PVAをPOMやポリアミドなど別材料名へ推測置換せず、原文と公式採点を保持する。\n\n公式正答は選択肢5（ロ、ハ、ニ）。",
+          "choiceExplanationsDraft": {
+            "1": "誤り。正しい組合せはロ、ハ、ニ。イ：公式判定は誤り。EPDMは耐候性には優れるが、石油系炭化水素に対する耐性は一般に低く、耐LPガス性に優れる内層材とする説明は不適切。接ガス部の適合性と外層の耐候性を区別する。 ロ：公式は正しい扱い。ただし原文の「耐寒性」は一般的なフッ素ゴム全体へ無条件に当てはめられない。メーカー一次資料では耐熱・耐油・耐薬品性が特長で、低温性と耐油性はトレードオフ、低温用には耐寒グレード等を選ぶとされる。「耐熱性」へ原文を書き換えず、公式判定と実材料のグレード依存性を区別する。",
+            "2": "誤り。正しい組合せはロ、ハ、ニ。イ：公式判定は誤り。EPDMは耐候性には優れるが、石油系炭化水素に対する耐性は一般に低く、耐LPガス性に優れる内層材とする説明は不適切。接ガス部の適合性と外層の耐候性を区別する。 ハ：正しい。PTFEは耐薬品性・低温特性に優れ、摩擦が小さいためパッキンや弁座等に利用される。使用圧力やクリープ等も考慮して選定する。",
+            "3": "誤り。正しい組合せはロ、ハ、ニ。ロ：公式は正しい扱い。ただし原文の「耐寒性」は一般的なフッ素ゴム全体へ無条件に当てはめられない。メーカー一次資料では耐熱・耐油・耐薬品性が特長で、低温性と耐油性はトレードオフ、低温用には耐寒グレード等を選ぶとされる。「耐熱性」へ原文を書き換えず、公式判定と実材料のグレード依存性を区別する。 ニ：公式は正しい扱い。ただしメーカー一次資料で確認したPVAは水溶性樹脂で、フィルム・接着剤・繊維等が代表用途。設問の耐衝撃・耐摩擦性と弁シート用途の一般化は、この資料では裏付けられない。PVAをPOMやポリアミドなど別材料名へ推測置換せず、原文と公式採点を保持する。",
+            "4": "誤り。正しい組合せはロ、ハ、ニ。イ：公式判定は誤り。EPDMは耐候性には優れるが、石油系炭化水素に対する耐性は一般に低く、耐LPガス性に優れる内層材とする説明は不適切。接ガス部の適合性と外層の耐候性を区別する。 ハ：正しい。PTFEは耐薬品性・低温特性に優れ、摩擦が小さいためパッキンや弁座等に利用される。使用圧力やクリープ等も考慮して選定する。 ニ：公式は正しい扱い。ただしメーカー一次資料で確認したPVAは水溶性樹脂で、フィルム・接着剤・繊維等が代表用途。設問の耐衝撃・耐摩擦性と弁シート用途の一般化は、この資料では裏付けられない。PVAをPOMやポリアミドなど別材料名へ推測置換せず、原文と公式採点を保持する。",
+            "5": "正しい組合せ。ロ：公式は正しい扱い。ただし原文の「耐寒性」は一般的なフッ素ゴム全体へ無条件に当てはめられない。メーカー一次資料では耐熱・耐油・耐薬品性が特長で、低温性と耐油性はトレードオフ、低温用には耐寒グレード等を選ぶとされる。「耐熱性」へ原文を書き換えず、公式判定と実材料のグレード依存性を区別する。 ハ：正しい。PTFEは耐薬品性・低温特性に優れ、摩擦が小さいためパッキンや弁座等に利用される。使用圧力やクリープ等も考慮して選定する。 ニ：公式は正しい扱い。ただしメーカー一次資料で確認したPVAは水溶性樹脂で、フィルム・接着剤・繊維等が代表用途。設問の耐衝撃・耐摩擦性と弁シート用途の一般化は、この資料では裏付けられない。PVAをPOMやポリアミドなど別材料名へ推測置換せず、原文と公式採点を保持する。"
+          },
+          "explanationSourceUrls": [
+            "https://www.khk.or.jp/Portals/0/khk/exam/2024/R6ACCZ-W.pdf",
+            "https://www.khk.or.jp/Portals/0/khk/exam/2024/R6fy_kaitou.pdf",
+            "https://www.daikinchemicals.com/jp/solutions/products/dai-el-fluoroelastomers/",
+            "https://www.daikinchemicals.com/jp/solutions/products/dai-el-fluoroelastomers/low-temperature.html",
+            "https://poval-film.kuraray.com/en/about/"
+          ],
+          "explanationAttribution": "独自作成。公式原文・公式正答・原図を保持し、各記述の技術的理由、誤記述の訂正又は計算過程から全選択肢を説明。",
+          "questionNoticeDraft": "公式正答5（ロ・ハ・ニ）で採点します。原文のフッ素ゴムの耐寒性とPVAの用途には、一般的材料特性との整合上の注意があります。解説で公式判定と技術的留保を分けて説明します。原文を別の語へ訂正していません。"
         }
       ]
     },
@@ -11878,9 +12066,9 @@
             3
           ],
           "rawExtractedText": "理想気体が、内容積一定の密閉容器に、温度T１ [Ｋ]、圧力p１ [MPａ]で充塡されている。容器内\n  の温度は一定のまま、容器内の気体を1.28 ｋｇ取り出すと容器内の圧力は最初の圧力p１ の1/3 とな\n\n  った。以下の問に答えよ。\n\n                                        〔 15 点 〕\n\n\n    (1) 最初に容器内に充塡されていた気体の物質量が 60 ｍｏｌ のとき、この気体の分子量を求めよ。\n\n\n    (2) 容器内の気体を1.28 ｋｇ 取り出した後、この容器内の圧力が、最初の圧力p１ の1/2 になるま\n   で加熱した。最初の温度 T１ が300 Ｋ のとき、加熱後T２ の温度を求めよ。\n\n\n\n\n\nR7-AZ                                  - 1 -",
-          "reviewStatus": "transcription-verified-descriptive-answer-and-explanation-pending",
+          "reviewStatus": "transcription-verified-explanation-written",
           "transcriptionVerified": true,
-          "explanationWritten": false,
+          "explanationWritten": true,
           "figuresVerified": true,
           "sourceAnswerUrl": "https://www.khk.or.jp/Portals/0/khk/exam/2025/1219/R7fy_kaitourei_1.pdf",
           "answerKind": "descriptive",
@@ -11895,7 +12083,27 @@
           "imageAssets": [],
           "hasImage": false,
           "officialAnswerExampleVerified": true,
-          "officialAnswerExampleReviewId": "2025-AZ-1"
+          "officialAnswerExampleReviewId": "2025-AZ-1",
+          "modelAnswerDraft": "(1) 定温・定容ではp∝n。取り出した後の物質量は60/3＝20 mol、取り出した量は40 molなので、モル質量は1280/40＝32 g/mol。分子量は32（無次元）。\n\n(2) 取り出し後の一定物質量についてp/T＝一定。T₂＝300×(p₁/2)/(p₁/3)＝450 K。",
+          "explanationDraft": "取り出した質量を初めの60 mol全部で割らず、圧力比から求めた取り出し分40 molで割る。次の加熱段階では残存物質量は変わらず、圧力比は1/2÷1/3である。",
+          "selfAssessmentDraft": [
+            {
+              "label": "観点1",
+              "criterion": "残存20 mol、取出し40 molを求め、分子量32とモル質量32 g/molを区別する。",
+              "points": 8
+            },
+            {
+              "label": "観点2",
+              "criterion": "残存気体のp/T一定から450 Kを求める。",
+              "points": 7
+            }
+          ],
+          "scoringCriteriaDraft": "演習用の独自自己採点基準（公式の小問別配点・合否判定ではない）。各観点を満たせば表示点を加算。途中式・単位・指定の有効数字を確認し、同値の式や妥当な丸め差を認める。\n\n- 残存20 mol、取出し40 molを求め、分子量32とモル質量32 g/molを区別する。（8点）\n- 残存気体のp/T一定から450 Kを求める。（7点）",
+          "explanationSourceUrls": [
+            "https://www.khk.or.jp/Portals/0/khk/exam/2025/1110/R7ACAZ-W.pdf",
+            "https://www.khk.or.jp/Portals/0/khk/exam/2025/1219/R7fy_kaitourei_1.pdf"
+          ],
+          "explanationAttribution": "公式解答例の照合記録とは別に作成した独自解答・解説・自己採点基準。"
         },
         {
           "number": 2,
@@ -11904,9 +12112,9 @@
             4
           ],
           "rawExtractedText": "ベンゼンとトルエン2 成分系の気液平衡について、以下の問に答えよ。\n   ただし、ベンゼンとトルエンの混合系がある温度T において気液平衡状態にあるとき、次のラウ\n\n  ールの法則が成り立つものとする。\n            pi ＝ p yi ＝ xi pi*\n    ここでpi はi 成分の気相中の蒸気分圧、p は全圧、yi はi 成分の気相モル分率、xi はi 成分の液相\n   モル分率、pi*は純物質i の温度T における飽和蒸気圧である。\n\n   また、ベンゼンとトルエンの101.3 ｋＰａにおける沸点は、それぞれ80.1 ℃と110.6 ℃とする。\n\n                                       〔 15 点 〕\n\n\n    (1)  全圧101.3 ｋＰａ一定で、ベンゼンとトルエンの混合液を沸騰するまで加熱した。さらに全圧一\n\n    定のまま加熱し続けた。このとき、発生する蒸気の組成および後に残る混合液の組成は時間とと\n\n   もにどのように変化するか。また、混合液の沸点はどのように変化するか説明せよ。\n\n\n    (2) ベンゼンとトルエンの混合系が90 ℃、全圧101.3 ｋＰａで気液平衡状態にあるとき、液相中およ\n\n    び気相中のベンゼンのモル分率はそれぞれいくらか。ただし、ベンゼンとトルエンの90 ℃にお\n\n    ける飽和蒸気圧は、それぞれ137.3 ｋＰａ、53.32 ｋＰａとする。\n\n\n\n\n\n                                      - 2 -                                             R7-AZ",
-          "reviewStatus": "transcription-verified-descriptive-answer-and-explanation-pending",
+          "reviewStatus": "transcription-verified-explanation-written",
           "transcriptionVerified": true,
-          "explanationWritten": false,
+          "explanationWritten": true,
           "figuresVerified": true,
           "sourceAnswerUrl": "https://www.khk.or.jp/Portals/0/khk/exam/2025/1219/R7fy_kaitourei_1.pdf",
           "answerKind": "descriptive",
@@ -11921,7 +12129,32 @@
           "imageAssets": [],
           "hasImage": false,
           "officialAnswerExampleVerified": true,
-          "officialAnswerExampleReviewId": "2025-AZ-2"
+          "officialAnswerExampleReviewId": "2025-AZ-2",
+          "modelAnswerDraft": "(1) より揮発しやすい低沸点のベンゼンが相対的に多く蒸発するため、残液中のベンゼン割合は時間とともに減り、トルエン割合が増す。発生蒸気もその時点の液よりベンゼンに富むが、時間の経過ではベンゼン割合が低下する。低沸点成分が減るので混合液の沸点は次第に上がる。\n\n(2) xを液相のベンゼン分率とすると101.3＝137.3x＋53.32(1−x)。x＝(101.3−53.32)/(137.3−53.32)＝0.571。y＝137.3x/101.3＝0.774。",
+          "explanationDraft": "「その時点の気液間の濃縮」と「蒸留が進んだときの時間変化」を区別する。全圧を各成分のラウール分圧の和で表す一次式で液相組成を求め、その分圧を全圧で割って気相組成へ変換する。",
+          "selfAssessmentDraft": [
+            {
+              "label": "観点1",
+              "criterion": "蒸気・残液とも時間とともにベンゼン減少、沸点上昇を説明する。",
+              "points": 7
+            },
+            {
+              "label": "観点2",
+              "criterion": "分圧和の式から液相ベンゼン分率0.571を求める。",
+              "points": 4
+            },
+            {
+              "label": "観点3",
+              "criterion": "y＝xp*/pから気相ベンゼン分率0.774を求める。",
+              "points": 4
+            }
+          ],
+          "scoringCriteriaDraft": "演習用の独自自己採点基準（公式の小問別配点・合否判定ではない）。各観点を満たせば表示点を加算。途中式・単位・指定の有効数字を確認し、同値の式や妥当な丸め差を認める。\n\n- 蒸気・残液とも時間とともにベンゼン減少、沸点上昇を説明する。（7点）\n- 分圧和の式から液相ベンゼン分率0.571を求める。（4点）\n- y＝xp*/pから気相ベンゼン分率0.774を求める。（4点）",
+          "explanationSourceUrls": [
+            "https://www.khk.or.jp/Portals/0/khk/exam/2025/1110/R7ACAZ-W.pdf",
+            "https://www.khk.or.jp/Portals/0/khk/exam/2025/1219/R7fy_kaitourei_1.pdf"
+          ],
+          "explanationAttribution": "公式解答例の照合記録とは別に作成した独自解答・解説・自己採点基準。"
         },
         {
           "number": 3,
@@ -11930,9 +12163,9 @@
             5
           ],
           "rawExtractedText": "次の反応について、以下の問に答えよ。\n\n                       k\n       Ａ ＋ Ｂ ――→ P\n\n   ただし、この反応は、ＡおよびＢの濃度についてそれぞれ1 次で、反応次数が2 次の不可逆反応\n  である。また、k は反応速度定数である。\n\n                                        〔 15 点 〕\n\n\n\n    (1) Ａ、Ｂの濃度をそれぞれ[Ａ]、[Ｂ]として、Ａの消費速度 －d[A]/dt、すなわち反応速度を、[Ａ]、\n    [Ｂ]および反応速度定数k を用いて表せ。\n\n\n    (2) ＡとＢの初期濃度[Ａ]0、[Ｂ]0 が等しいとき、常に[Ａ] ＝ [Ｂ]となることより、(1)で求めた反\n    応速度式を[Ａ]の関数として表せ。また、この反応速度式を積分して、[Ａ]と時間t との関係を\n\n   表せ。\n\n\n    (3) ＡとＢの初期濃度[Ａ]0、[Ｂ]0 が[Ａ]0≠[Ｂ]0 のとき、生成物Ｐの濃度を x として、(1)で求めた\n     反応速度式を、[Ａ]0、[Ｂ]0、 x を用いて表せ。ただし、生成物Ｐの初期濃度は、 x ＝ 0 とする。\n\n\n    (4) (3)で得られた反応速度式を積分して、濃度比[Ａ]/[Ｂ]と時間t との関係を表せ。\n\n\n\n\n\nR7-AZ                                  - 3 -",
-          "reviewStatus": "transcription-verified-descriptive-answer-and-explanation-pending",
+          "reviewStatus": "transcription-verified-explanation-written",
           "transcriptionVerified": true,
-          "explanationWritten": false,
+          "explanationWritten": true,
           "figuresVerified": true,
           "sourceAnswerUrl": "https://www.khk.or.jp/Portals/0/khk/exam/2025/1219/R7fy_kaitourei_1.pdf",
           "answerKind": "descriptive",
@@ -11947,7 +12180,37 @@
           "imageAssets": [],
           "hasImage": false,
           "officialAnswerExampleVerified": true,
-          "officialAnswerExampleReviewId": "2025-AZ-3"
+          "officialAnswerExampleReviewId": "2025-AZ-3",
+          "modelAnswerDraft": "(1) −d[A]/dt＝k[A][B]。\n\n(2) 初濃度a＝[A]₀＝[B]₀なら常に[A]＝[B]なので−d[A]/dt＝k[A]²。分離積分して1/[A]−1/a＝kt、又は[A]＝a/(1＋akt)。\n\n(3) a＝[A]₀、b＝[B]₀とすると[A]＝a−x、[B]＝b−x。dx/dt＝k(a−x)(b−x)。\n\n(4) a≠bでは1/((a−x)(b−x))＝(1/(b−a)){1/(a−x)−1/(b−x)}。x＝0から積分するとln{b(a−x)/(a(b−x))}＝(a−b)kt。したがって[A]/[B]＝(a/b)exp{(a−b)kt}。",
+          "explanationDraft": "1:1反応なので両反応物の消費量は同じxで表せる。初濃度が等しい場合だけ[A]＝[B]であり、不等初濃度では部分分数積分を使う。t＝0を代入して比がa/bへ戻ること、微分して元の速度式に戻ることが符号の確認になる。",
+          "selfAssessmentDraft": [
+            {
+              "label": "観点1",
+              "criterion": "二次速度式k[A][B]を記す。",
+              "points": 3
+            },
+            {
+              "label": "観点2",
+              "criterion": "等初濃度の場合の速度式と積分式を示す。",
+              "points": 4
+            },
+            {
+              "label": "観点3",
+              "criterion": "xを用いたk(a−x)(b−x)を導く。",
+              "points": 3
+            },
+            {
+              "label": "観点4",
+              "criterion": "不等初濃度の積分と濃度比の式を、初期条件・符号を含めて示す。",
+              "points": 5
+            }
+          ],
+          "scoringCriteriaDraft": "演習用の独自自己採点基準（公式の小問別配点・合否判定ではない）。各観点を満たせば表示点を加算。途中式・単位・指定の有効数字を確認し、同値の式や妥当な丸め差を認める。\n\n- 二次速度式k[A][B]を記す。（3点）\n- 等初濃度の場合の速度式と積分式を示す。（4点）\n- xを用いたk(a−x)(b−x)を導く。（3点）\n- 不等初濃度の積分と濃度比の式を、初期条件・符号を含めて示す。（5点）",
+          "explanationSourceUrls": [
+            "https://www.khk.or.jp/Portals/0/khk/exam/2025/1110/R7ACAZ-W.pdf",
+            "https://www.khk.or.jp/Portals/0/khk/exam/2025/1219/R7fy_kaitourei_1.pdf"
+          ],
+          "explanationAttribution": "公式解答例の照合記録とは別に作成した独自解答・解説・自己採点基準。"
         },
         {
           "number": 4,
@@ -11956,9 +12219,9 @@
             6
           ],
           "rawExtractedText": "次に示す2 種の物質について、その性質、用途、工業的製造法における原料および製造プロセス\n\n  （化学反応とその触媒、プロセスの特徴など）を解答欄に簡潔に記せ。\n\n                                        〔 20 点 〕\n\n\n\n   物 質        酸化エチレン              フッ素\n\n\n\n\n\n   性 質\n\n\n\n\n\n   用 途\n\n\n\n\n\n 工業的製造法\n\n  における\n\n  原料および\n\n 製造プロセス\n\n\n\n\n\n                                      - 4 -                                             R7-AZ",
-          "reviewStatus": "transcription-verified-descriptive-answer-and-explanation-pending",
+          "reviewStatus": "transcription-verified-explanation-written",
           "transcriptionVerified": true,
-          "explanationWritten": false,
+          "explanationWritten": true,
           "figuresVerified": true,
           "sourceAnswerUrl": "https://www.khk.or.jp/Portals/0/khk/exam/2025/1219/R7fy_kaitourei_1.pdf",
           "answerKind": "descriptive",
@@ -11975,7 +12238,47 @@
           ],
           "hasImage": true,
           "officialAnswerExampleVerified": true,
-          "officialAnswerExampleReviewId": "2025-AZ-4"
+          "officialAnswerExampleReviewId": "2025-AZ-4",
+          "modelAnswerDraft": "酸化エチレン：無色、沸点約10 ℃の可燃性ガスで、爆発範囲約3〜100 vol%、分解爆発性・毒性・発がん性を持つ。エチレングリコールや界面活性剤等の原料、滅菌用途に用いる。工業的には銀をアルミナ等に担持した触媒でエチレンを酸素により直接酸化し、代表的に200〜300 ℃、1〜3 MPa程度で製造する。C₂H₄＋(1/2)O₂→C₂H₄O。副反応の完全酸化を抑え選択性を確保する。\n\nフッ素：淡黄色で、強い酸化性・毒性・腐食性を持ち、多くの物質と激しく反応する。水素とは冷暗所でも爆発的に反応し得る。六フッ化ウラン、フッ素化合物等の原料に用いる。原料鉱物には蛍石CaF₂や氷晶石Na₃AlF₆があり、得られた無水HFとKFの融解混合物を電解する。総括的には2HF→H₂＋F₂で、陽極側にF₂、陰極側にH₂が生じるため混合を防ぐ。",
+          "explanationDraft": "酸化エチレンは銀触媒で選択酸化する方法、フッ素は化学的酸化でなく無水系の電解で製造する方法を押さえる。両者の危険性は異なり、酸化エチレンの可燃・分解危険とフッ素の強い酸化性を混同しない。",
+          "selfAssessmentDraft": [
+            {
+              "label": "観点1",
+              "criterion": "酸化エチレンの低沸点、可燃・分解爆発危険、毒性を記す。",
+              "points": 4
+            },
+            {
+              "label": "観点2",
+              "criterion": "原料・滅菌等の用途を挙げる。",
+              "points": 2
+            },
+            {
+              "label": "観点3",
+              "criterion": "エチレンと酸素、銀触媒、反応式と代表条件を記す。",
+              "points": 4
+            },
+            {
+              "label": "観点4",
+              "criterion": "フッ素の色・強い酸化性・毒性と反応危険を記す。",
+              "points": 4
+            },
+            {
+              "label": "観点5",
+              "criterion": "UF₆等の製造用途を挙げる。",
+              "points": 2
+            },
+            {
+              "label": "観点6",
+              "criterion": "鉱物原料、無水HF/KF融解塩電解、陽極F₂・陰極H₂を記す。",
+              "points": 4
+            }
+          ],
+          "scoringCriteriaDraft": "演習用の独自自己採点基準（公式の小問別配点・合否判定ではない）。各観点を満たせば表示点を加算。途中式・単位・指定の有効数字を確認し、同値の式や妥当な丸め差を認める。\n\n- 酸化エチレンの低沸点、可燃・分解爆発危険、毒性を記す。（4点）\n- 原料・滅菌等の用途を挙げる。（2点）\n- エチレンと酸素、銀触媒、反応式と代表条件を記す。（4点）\n- フッ素の色・強い酸化性・毒性と反応危険を記す。（4点）\n- UF₆等の製造用途を挙げる。（2点）\n- 鉱物原料、無水HF/KF融解塩電解、陽極F₂・陰極H₂を記す。（4点）",
+          "explanationSourceUrls": [
+            "https://www.khk.or.jp/Portals/0/khk/exam/2025/1110/R7ACAZ-W.pdf",
+            "https://www.khk.or.jp/Portals/0/khk/exam/2025/1219/R7fy_kaitourei_1.pdf"
+          ],
+          "explanationAttribution": "公式解答例の照合記録とは別に作成した独自解答・解説・自己採点基準。"
         },
         {
           "number": 5,
@@ -11984,9 +12287,9 @@
             7
           ],
           "rawExtractedText": "アセチレンの反応のうち、分解爆発反応Ａと完全燃焼反応Ｂについて、以下の問に答えよ。\n\n                                        〔 15 点 〕\n\n\n    (1) 反応Ａと反応Ｂの反応式をそれぞれ書け。\n\n\n    (2)  25 ℃における反応Ａのエンタルピー変化が－227 ｋＪ/ｍｏｌであったとき、アセチレンの燃焼熱\n\n    （真発熱量）を求めよ。ただし、二酸化炭素と水（g）の標準生成エンタルピー（ΔＨf°）は、それぞれ\n\n      －394 ｋＪ/ｍｏｌ、－242 ｋＪ/ｍｏｌとする。\n\n\n    (3)  200 ｋｇのアセチレンが反応Ａおよび反応Ｂで爆発したときのＴＮＴ換算量をそれぞれ求めよ。た\n\n    だし、ＴＮＴの爆発熱は4.19×10３ ｋＪ/ｋｇとする。\n\n\n    (4) アセチレンの容器には多孔質物が詰められており、それにアセトンなどを浸み込ませたうえ\n\n   でアセチレンを溶解充塡する方法がとられている。その科学技術的根拠を説明せよ。\n\n\n\n\n\nR7-AZ                                  - 5 -",
-          "reviewStatus": "transcription-verified-descriptive-answer-and-explanation-pending",
+          "reviewStatus": "transcription-verified-explanation-written",
           "transcriptionVerified": true,
-          "explanationWritten": false,
+          "explanationWritten": true,
           "figuresVerified": true,
           "sourceAnswerUrl": "https://www.khk.or.jp/Portals/0/khk/exam/2025/1219/R7fy_kaitourei_1.pdf",
           "answerKind": "descriptive",
@@ -12001,7 +12304,37 @@
           "imageAssets": [],
           "hasImage": false,
           "officialAnswerExampleVerified": true,
-          "officialAnswerExampleReviewId": "2025-AZ-5"
+          "officialAnswerExampleReviewId": "2025-AZ-5",
+          "modelAnswerDraft": "(1) A：C₂H₂→2C＋H₂。B：C₂H₂＋(5/2)O₂→2CO₂＋H₂O(g)。\n\n(2) 単体の標準生成エンタルピーは0なのでΔH_f°(C₂H₂)＝＋227 kJ/mol。BのΔH＝2(−394)−242−227＝−1257 kJ/mol。真発熱量は1257 kJ/mol。\n\n(3) モル質量26 g/molよりn＝200×10³/26＝7692 mol。TNT換算量A＝7692×227/(4.19×10³)＝417 kg。B＝7692×1257/(4.19×10³)＝2308 kg。\n\n(4) アセチレンは単体へ分解するだけで熱を放出するので、高圧の遊離ガスとしての充塡は危険。アセトン等に溶解させ、多孔質物の微細な空間へ分散させて、火炎の伝ぱを抑え消炎しやすくする。",
+          "explanationDraft": "分解熱から生成エンタルピーの符号を決める。燃焼熱ではH₂O(g)を用いて真発熱量を求める。TNT換算は発熱エネルギーを等価にする計算で、200 kgをモル数へ換算する。溶解・多孔質物は危険を管理する方法であり、分解可能性そのものをなくすものではない。",
+          "selfAssessmentDraft": [
+            {
+              "label": "観点1",
+              "criterion": "分解反応と水蒸気を生成する完全燃焼反応を正しく記す。",
+              "points": 3
+            },
+            {
+              "label": "観点2",
+              "criterion": "生成エンタルピー＋227と燃焼熱1257 kJ/molを求める。",
+              "points": 4
+            },
+            {
+              "label": "観点3",
+              "criterion": "エネルギー換算からA約417 kg・B約2308 kgを求める。",
+              "points": 4
+            },
+            {
+              "label": "観点4",
+              "criterion": "正の生成エンタルピー、溶解充塡、多孔質物の消炎作用を説明する。",
+              "points": 4
+            }
+          ],
+          "scoringCriteriaDraft": "演習用の独自自己採点基準（公式の小問別配点・合否判定ではない）。各観点を満たせば表示点を加算。途中式・単位・指定の有効数字を確認し、同値の式や妥当な丸め差を認める。\n\n- 分解反応と水蒸気を生成する完全燃焼反応を正しく記す。（3点）\n- 生成エンタルピー＋227と燃焼熱1257 kJ/molを求める。（4点）\n- エネルギー換算からA約417 kg・B約2308 kgを求める。（4点）\n- 正の生成エンタルピー、溶解充塡、多孔質物の消炎作用を説明する。（4点）",
+          "explanationSourceUrls": [
+            "https://www.khk.or.jp/Portals/0/khk/exam/2025/1110/R7ACAZ-W.pdf",
+            "https://www.khk.or.jp/Portals/0/khk/exam/2025/1219/R7fy_kaitourei_1.pdf"
+          ],
+          "explanationAttribution": "公式解答例の照合記録とは別に作成した独自解答・解説・自己採点基準。"
         },
         {
           "number": 6,
@@ -12010,9 +12343,9 @@
             8
           ],
           "rawExtractedText": "次の問に答えよ。\n\n                                         〔 20 点 〕\n\n\n    (1) 空気中での水素の燃焼を例にとり、連鎖反応について説明せよ。\n\n\n    (2) 引火性液体の引火点の物理化学的な意味を、その液体の蒸気の「爆発限界」と「蒸気圧」の観\n\n    点から説明せよ。\n\n\n\n\n\n                                      - 6 -                                             R7-AZ",
-          "reviewStatus": "transcription-verified-descriptive-answer-and-explanation-pending",
+          "reviewStatus": "transcription-verified-explanation-written",
           "transcriptionVerified": true,
-          "explanationWritten": false,
+          "explanationWritten": true,
           "figuresVerified": true,
           "sourceAnswerUrl": "https://www.khk.or.jp/Portals/0/khk/exam/2025/1219/R7fy_kaitourei_1.pdf",
           "answerKind": "descriptive",
@@ -12027,7 +12360,27 @@
           "imageAssets": [],
           "hasImage": false,
           "officialAnswerExampleVerified": true,
-          "officialAnswerExampleReviewId": "2025-AZ-6"
+          "officialAnswerExampleReviewId": "2025-AZ-6",
+          "modelAnswerDraft": "(1) 燃焼は一度に一つの総括反応が進むのではなく、H、O、OH等の活性種を介した素反応の連鎖として進む。例としてOH＋H₂→H₂O＋Hが連鎖を成長させ、H＋O₂→OH＋O、O＋H₂→OH＋Hでは活性種が増え分岐する。第三体Mを伴うH＋O₂＋M→HO₂＋M等は、当該条件で活性なHを除いて連鎖を抑える経路となる。成長・分岐と停止の競争が反応の進み方を決める。\n\n(2) 液体表面の平衡蒸気の体積濃度は、理想近似では100p_sat(T)/p_atm vol%で表せる。温度上昇により飽和蒸気圧が上がり、この濃度が爆発下限界Lへ達すると外部の着火源で引火し得る。したがって密閉式試験の引火点は、概ねp_sat(T_flash)/p_atm＝L/100となる最低温度に対応する。自然発火の温度とは違う。",
+          "explanationDraft": "連鎖反応では活性種が次の反応で再生される点が要点である。HO₂が関与する反応は温度・圧力等で役割が変わり得るので、一つの素反応をあらゆる条件で完全な終結と断定しない。引火点は蒸気圧と爆発下限界を結び付けて説明し、外部着火源の存在を明確にする。",
+          "selfAssessmentDraft": [
+            {
+              "label": "観点1",
+              "criterion": "H・O・OHを介する素反応、連鎖成長・分岐・抑制を具体式で説明する。",
+              "points": 10
+            },
+            {
+              "label": "観点2",
+              "criterion": "蒸気圧/大気圧から平衡濃度を示し、爆発下限界へ達する温度と外部着火を結び付ける。",
+              "points": 10
+            }
+          ],
+          "scoringCriteriaDraft": "演習用の独自自己採点基準（公式の小問別配点・合否判定ではない）。各観点を満たせば表示点を加算。途中式・単位・指定の有効数字を確認し、同値の式や妥当な丸め差を認める。\n\n- H・O・OHを介する素反応、連鎖成長・分岐・抑制を具体式で説明する。（10点）\n- 蒸気圧/大気圧から平衡濃度を示し、爆発下限界へ達する温度と外部着火を結び付ける。（10点）",
+          "explanationSourceUrls": [
+            "https://www.khk.or.jp/Portals/0/khk/exam/2025/1110/R7ACAZ-W.pdf",
+            "https://www.khk.or.jp/Portals/0/khk/exam/2025/1219/R7fy_kaitourei_1.pdf"
+          ],
+          "explanationAttribution": "公式解答例の照合記録とは別に作成した独自解答・解説・自己採点基準。"
         }
       ]
     },

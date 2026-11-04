@@ -59,7 +59,7 @@ describe("KHK chemistry source staging", () => {
     const questions = drafts.papers.flatMap<(typeof drafts.papers)[number]["questions"][number]>((paper) => paper.questions);
     expect(questions.filter((q) => q.transcriptionVerified)).toHaveLength(review.counts.transcriptionVerified);
     expect(questions.filter((q) => !q.transcriptionVerified)).toHaveLength(review.counts.unreviewed);
-    expect(questions.filter((q) => q.explanationWritten)).toHaveLength(409);
+    expect(questions.filter((q) => q.explanationWritten)).toHaveLength(422);
     expect(review.counts.originalQuestions).toBe(422);
     expect(review.counts.descriptiveAnswersVerified).toBe(12);
     for (const record of review.reviewedPapers) {
@@ -146,7 +146,7 @@ describe("KHK chemistry source staging", () => {
       expect(q.sourceAnswerUrl).toBe(entry.sourceAnswerUrl);
       expect(q.officialAnswerExampleVerified).toBe(true);
       expect(q.officialAnswerExampleReviewId).toBe(`${entry.year}-AZ-${entry.number}`);
-      expect(q.explanationWritten).toBe(false);
+      expect(q.explanationWritten).toBe(true);
       expect(entry.imageAssets).toHaveLength(entry.answerPdfPages.length);
       expect(entry.reviewNotes.length).toBeGreaterThan(0);
       expect(entry.officialAnswerExampleVerified).toBe(true);
@@ -182,10 +182,10 @@ describe("KHK chemistry source staging", () => {
     expect(paper.questions[5].pdfPages).toEqual([7]);
   });
 
-  it("retains 409 independent explanations and all 2045 choice explanations with their official keys", () => {
-    expect(review.explanationReviews).toHaveLength(409);
-    expect(review.counts.explanationWritten).toBe(409);
-    expect(review.counts.explanationPending).toBe(13);
+  it("retains 422 independent explanations and all 2050 choice explanations with their official keys", () => {
+    expect(review.explanationReviews).toHaveLength(422);
+    expect(review.counts.explanationWritten).toBe(422);
+    expect(review.counts.explanationPending).toBe(0);
     const expected = {
       "2024-AX": [2, 4, 4, 1, 1, 2, 2, 5, 1, 5, 5, 1, 3, 4, 2, 5, 2, 1, 2, 1],
       "2025-AX": [3, 1, 1, 4, 3, 2, 5, 5, 3, 4, 3, 4, 2, 5, 2, 2, 1, 3, 4, 1],
@@ -210,9 +210,16 @@ describe("KHK chemistry source staging", () => {
       "2024-CZ": [5, 3, 4, 1, 5, 1, 2, 5, 5, 5, 4, 2, 2, 3, 1, 3, 2, 4, 1, 5],
       "2025-CZ": [2, 3, 4, 5, 3, 1, 2, 3, 2, 2, 3, 1, 1, 4, 3, 5, 4, 1, 4, 5],
     };
-    expect(review.explanationReviews.every((record) => ["AX", "AY", "BX", "BY", "BZ", "CX", "CY", "CZ", "DX", "DY", "DZ"].includes(record.code))).toBe(true);
+    expect(review.explanationReviews.every((record) => ["AX", "AY", "AZ", "BX", "BY", "BZ", "CX", "CY", "CZ", "DX", "DY", "DZ"].includes(record.code))).toBe(true);
     for (const record of review.explanationReviews) {
       const q = drafts.papers.find((p) => p.year === record.year && p.code === record.code)!.questions[record.number - 1] as unknown as Record<string, unknown>;
+      if (record.code === "AZ") {
+        expect(String(q.modelAnswerDraft).length).toBeGreaterThan(80);
+        expect(String(q.scoringCriteriaDraft)).toContain("独自");
+        const fields = review.descriptiveExplanationDigestFields.map((field) => q[field]);
+        expect(createHash("sha256").update(JSON.stringify(fields)).digest("hex")).toBe(record.contentSha256);
+        continue;
+      }
       expect(q.officialAnswerNumber).toBe(expected[`${record.year}-${record.code}` as keyof typeof expected][record.number - 1]);
       const choices = q.choiceExplanationsDraft as Record<string, string>;
       expect(Object.keys(choices)).toEqual(["1", "2", "3", "4", "5"]);
@@ -293,9 +300,10 @@ describe("KHK chemistry source staging", () => {
     const paper = drafts.papers.find((p) => p.year === 2024 && p.code === "CZ")!;
     expect(paper.questions[18].questionDraft).toMatch(/^次のイ、ロ、ハ、ニの記述のうち、金属材料について正しいものはどれか。\n\n/);
     const pending = paper.questions[19] as unknown as Record<string, unknown>;
-    expect(pending.explanationWritten).toBe(false);
+    expect(pending.explanationWritten).toBe(true);
     expect(pending.officialAnswerNumber).toBe(5);
-    expect((pending.explanationReviewNotes as string[]).join()).toContain("一次資料で追加確認");
+    expect((pending.explanationReviewNotes as string[]).join()).toContain("一次資料を追加確認");
+    expect(pending.explanationDraft).toContain("裏付けられない");
   });
 
   it("distinguishes the original kinetic wording from the thermodynamic equilibrium explanation", () => {
@@ -378,11 +386,11 @@ describe("KHK chemistry source staging", () => {
   });
 
   it("keeps unfinished source drafts out of published qualifications and practice questions", () => {
-    expect(drafts.status).toBe("source-draft-only");
+    expect(drafts.status).toBe("registered-unpublished");
     expect(drafts.publicAllowed).toBe(false);
     const entry = QUALIFICATION_CATALOG.find((q) => q.slug === "khk-kagaku");
     expect(entry?.status).toBe("ready-to-ingest");
-    expect(entry?.examCode).toBeUndefined();
+    expect(entry?.examCode).toBe("khk-kagaku");
     expect(entry?.remainingWork.length).toBeGreaterThan(0);
     expect(Object.values(QUESTIONS_BY_EXAM).flat().some((q) => q.id.startsWith("khk-kagaku-"))).toBe(false);
   });
