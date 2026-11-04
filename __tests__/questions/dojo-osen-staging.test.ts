@@ -109,6 +109,10 @@ describe("dojo-osen latest two complete official editions, private staging", () 
     for (const count of ["12区画", "10区画", "33区画", "21区画"]) expect(q28.explanation).toContain(count);
     const record = rows.find(q => q.id === "dojo-osen-2024-pm-q33")!;
     expect(record.choiceExplanations[1]).toContain("5年間保存するのは土地の所有者等");
+    const notification = rows.find(q => q.id === "dojo-osen-2025-am-q8")!;
+    expect(notification.officialAnswerNumber).toBe(4);
+    expect(notification.choiceExplanations[3]).toContain("通知先は土地所有者等ではなく調査実施者");
+    expect(notification.choiceExplanations[3]).not.toContain("条件付きの説明が不適当");
   });
 
   it("excludes the entire corpus and assets from public registries and navigation", () => {
