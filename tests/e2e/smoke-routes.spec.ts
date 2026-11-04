@@ -8,7 +8,7 @@ import { test, expect } from "@playwright/test";
 const GONE_410_ROUTES = ["/pricing", "/commerce"] as const;
 const INTENTIONAL_404_ROUTES = ["/tokutei", "/checkout"] as const;
 
-// 必須 200 ルート（15）：トップ・ナビゲーション系の基本ページ
+// 必須 200 ルート（14）：トップ・ナビゲーション系の基本ページ
 const REQUIRED_200_ROUTES = [
   "/",
   "/about",
@@ -38,9 +38,9 @@ const EXAM_ROUTES = EXAM_CODES.map((c) => `/${c}`);
 
 // （意図的 404 ルートは上で定義済み）
 
-test.describe("smoke: 45 routes", () => {
+test.describe("smoke: 44 routes", () => {
   test(`必須 200 ルートが ${REQUIRED_200_ROUTES.length} 件すべて 200`, async ({ request }) => {
-    expect(REQUIRED_200_ROUTES.length).toBe(15);
+    expect(REQUIRED_200_ROUTES.length).toBe(14);
     for (const path of REQUIRED_200_ROUTES) {
       const res = await request.get(path);
       expect(res.status(), `${path} が 200 を返さない`).toBe(200);
@@ -76,13 +76,13 @@ test.describe("smoke: 45 routes", () => {
     }
   });
 
-  test("ルート総数 = 45（必須200×15 + 試験区分13 + 書籍13 + 410Gone×2 + 意図的404×2）", () => {
+  test("ルート総数 = 44（必須200×14 + 試験区分13 + 書籍13 + 410Gone×2 + 意図的404×2）", () => {
     const total =
       REQUIRED_200_ROUTES.length +
       EXAM_ROUTES.length +
       BOOK_ROUTES.length +
       GONE_410_ROUTES.length +
       INTENTIONAL_404_ROUTES.length;
-    expect(total).toBe(45);
+    expect(total).toBe(44);
   });
 });
