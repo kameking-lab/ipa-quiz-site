@@ -57,7 +57,7 @@ def main():
               "matchedAnswerColumns": slot_count, "pixelIdenticalProblemPages": page_count,
               "imageCheck": "Every source problem page, full page at scale 1.8; exact RGB equality after lossless WebP decoding", "pdfsCommitted": False}
     options.output.parent.mkdir(parents=True, exist_ok=True)
-    options.output.write_text(json.dumps(output, ensure_ascii=False, indent=2)+"\n", encoding="utf-8")
+    options.output.write_text(json.dumps(output, ensure_ascii=False, indent=2)+"\n", encoding="utf-8", newline="\n")
     print(f"PASS: {slot_count} answer columns, {page_count} pixel-identical full source pages")
 
 

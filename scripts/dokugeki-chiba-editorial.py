@@ -608,7 +608,7 @@ def apply():
             q["needsReview"] = (q["year"], q["qNumber"]) in [(2026,23), (2025,40)]
             if q["needsReview"]:
                 q["sourceIssue"] = "原文の化学用語に疑義。原文と公式正答はそのまま保存し、科学上の区別を解説に明記。公開前に要確認。"
-        path.write_text(json.dumps(rows, ensure_ascii=False, indent=2)+"\n", encoding="utf-8")
+        path.write_text(json.dumps(rows, ensure_ascii=False, indent=2)+"\n", encoding="utf-8", newline="\n")
 
 
 if __name__ == "__main__":
