@@ -34,7 +34,7 @@ describe("一級建築士（学科）の公開前登録", () => {
     expect(manifest.ownerDecision.decidedAt).toBe("2026-11-04T06:10:00+09:00");
     expect(manifest.ownerDecision.rightsHolderPermissionObtained).toBe(false);
     expect(manifest.rounds.map(r => [r.year, r.expectedQuestions, r.transcribedQuestions])).toEqual([
-      [2026, 125, 20], [2025, 125, 0],
+      [2026, 125, 20], [2025, 125, 20],
     ]);
     expect(manifest.sources).toHaveLength(8);
     for (const source of manifest.sources) {
@@ -45,14 +45,16 @@ describe("一級建築士（学科）の公開前登録", () => {
   });
 
   it("validates real staged originals and all four original explanations against the final official answers", () => {
-    expect(KENCHIKUSHI1_CANDIDATES).toHaveLength(20);
-    expect(new Set(KENCHIKUSHI1_CANDIDATES.map(q => q.id)).size).toBe(20);
+    expect(KENCHIKUSHI1_CANDIDATES).toHaveLength(40);
+    expect(new Set(KENCHIKUSHI1_CANDIDATES.map(q => q.id)).size).toBe(40);
     expect(KENCHIKUSHI1_CANDIDATES.map(q => q.officialAnswerNumber)).toEqual(
-      [4,4,2,4,1,1,2,2,2,1,1,3,2,2,3,1,4,3,3,4].map(String),
+      [4,4,2,4,1,1,2,2,2,1,1,3,2,2,3,1,4,3,3,4,
+       4,2,1,3,4,2,2,3,1,2,3,4,4,1,4,4,2,2,1,3].map(String),
     );
     for (const round of manifest.rounds) {
       const candidates = KENCHIKUSHI1_CANDIDATES.filter(q => q.year === round.year);
       expect(candidates).toHaveLength(round.transcribedQuestions);
+      expect(candidates.map(q => q.qNumber)).toEqual(Array.from({ length: 20 }, (_, i) => i + 1));
     }
     for (const q of KENCHIKUSHI1_CANDIDATES) {
       const round = manifest.rounds.find(r => r.year === q.year)!;
@@ -81,6 +83,9 @@ describe("一級建築士（学科）の公開前登録", () => {
     expect(filterQuestions(KENCHIKUSHI1_CANDIDATES, { mode: "year", exam: "kenchikushi1" })).toEqual([]);
     const candidate = KENCHIKUSHI1_CANDIDATES[0];
     expect(isPracticeReadyQuestion({ ...candidate, needsReview: false, publicAllowed: true })).toBe(true);
+    const area = KENCHIKUSHI1_CANDIDATES.find(q => q.year === 2025 && q.qNumber === 12)!;
+    expect(area.choices?.ア).toContain("25 m²");
+    expect(area.questionNotice).toContain("2025-04-01");
   });
 
   it("retains the original table and diagram outside the public directory", () => {
