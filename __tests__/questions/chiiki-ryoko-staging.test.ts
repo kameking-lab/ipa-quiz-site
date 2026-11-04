@@ -50,6 +50,16 @@ describe("chiiki-ryoko two private official sittings", () => {
     expect(jr.sourcePageImages).toContain("assets/2025-questions-p26.png");
   });
 
+  it("keeps the following JR heading out of the hotel's final choice", () => {
+    for (const year of [2025, 2026]) {
+      const hotel = CHIIKI_RYOKO_STAGING.find(q => q.year === year && q.session === "jitsumu" && q.qNumber === 5)!;
+      expect(hotel.choices.エ).not.toContain("旅客鉄道会社");
+      expect(hotel.sourcePages).toEqual([22]);
+      const jr = CHIIKI_RYOKO_STAGING.find(q => q.year === year && q.session === "jitsumu" && q.qNumber === 6)!;
+      expect(jr.sharedContext).toContain("旅客鉄道会社");
+    }
+  });
+
   it.each(["answer", "publication", "context", "explanation", "image", "duplicate"])("rejects %s corruption", kind => {
     const rows = structuredClone(CHIIKI_RYOKO_STAGING);
     if (kind === "answer") rows[0].answer = ["ア"];

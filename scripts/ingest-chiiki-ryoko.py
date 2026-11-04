@@ -24,7 +24,7 @@ def sha(data):
 
 def dump(path, value):
     path.parent.mkdir(parents=True, exist_ok=True)
-    path.write_text(json.dumps(value, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
+    path.write_text(json.dumps(value, ensure_ascii=False, indent=2) + '\n', encoding='utf-8', newline='\n')
 
 def clean(text):
     text = re.sub(r'^\s*-\s*\d+\s*-\s*$', '', text, flags=re.M)
@@ -101,6 +101,9 @@ def extract(year, doc, answers):
                 contexts.setdefault(n, [(jr, jr1)])
         assert starts == sorted(starts)
         ends = starts[1:] + [len(s)]
+        if sec == 2:
+            # The JR section heading is shared context for JR, never hotel choice エ.
+            ends[4] = jr
         if sec == 2 and year == 2025:
             # The shared stem of JR 4(3) belongs to both subquestions, not to 4(2)'s エ.
             ends[6] = jr3
@@ -151,7 +154,7 @@ def main():
             assert data.startswith(b'%PDF-')
             doc = fitz.open(stream=data, filetype='pdf')
             docs.append(doc)
-            sources.append({'year':year,'kind':kind,'url':f'https://www.mlit.go.jp/kankocho/content/{ident}.pdf','sha256':sha(data),'bytes':len(data),'pages':len(doc),'retrievedAt':'2026-11-04','httpStatus':200,'method':'GET'})
+            sources.append({'year':year,'kind':kind,'url':f'https://www.mlit.go.jp/kankocho/content/{ident}.pdf','sha256':sha(data),'bytes':len(data),'pages':len(doc),'publishedAt':None,'publicationDateNote':'PDFごとの公開年月日は公式一覧に明記なし。確認日と区別する。','retrievedAt':'2026-11-04','httpStatus':200,'method':'GET'})
             for p in range(len(doc)):
                 if kind == 'questions' and p < 2:
                     continue
@@ -183,7 +186,7 @@ def main():
                 for field, value in a.items():
                     assert b[field] == value, (a['id'], field)
         audits += [{'id':q['id'],'sourceTextSha256':q['sourceTextSha256'],'sourcePages':q['sourcePages'],'answer':q['answer']} for q in rows]
-    manifest = {'slug':'chiiki-ryoko','publicationStatus':'staging','publicAllowed':False,'officialIndexUrl':INDEX,'termsUrl':'https://www.mlit.go.jp/kankocho/site-policy.html','checkedAt':'2026-11-04','candidateBasis':'COV1 B #8','expectedQuestions':118,'sourceFiles':sources,'assets':assets,'rounds':[{'year':2025,'examDate':'2025-09-28','lawReferenceDate':'2025-06-01','counts':[25,24,10]},{'year':2026,'examDate':'2026-09-27','lawReferenceDate':'2026-06-01','counts':[25,24,10]}]}
+    manifest = {'slug':'chiiki-ryoko','publicationStatus':'staging','publicAllowed':False,'officialIndexUrl':INDEX,'officialIndexUpdatedAt':'2026-10-02','termsUrl':'https://www.mlit.go.jp/kankocho/site-policy.html','checkedAt':'2026-11-04','candidateBasis':'COV1 B #8','expectedQuestions':118,'sourceFiles':sources,'assets':assets,'rounds':[{'year':2025,'examDate':'2025-09-28','lawReferenceDate':'2025-06-01','counts':[25,24,10]},{'year':2026,'examDate':'2026-09-27','lawReferenceDate':'2026-06-01','counts':[25,24,10]}]}
     for name,value in [('manifest.json',manifest),('official-answers.json',keys),('source-audit.json',{'extractor':f'PyMuPDF {fitz.VersionBind}','questions':audits,'sourceVerified':118,'choicesVerified':472,'answersVerified':118})]:
         if args.write:
             dump(DEST/name,value)
