@@ -1,0 +1,23 @@
+{
+  "sourceHead": "122a252a0b4ca0f0dfbd6e1d499d49bcbaa2fc64",
+  "startedAt": "2026-11-04T19:20:01.296670+00:00",
+  "endedAt": "2026-11-04T19:20:15.009173+00:00",
+  "command": [
+    "corepack.cmd",
+    "pnpm",
+    "exec",
+    "playwright",
+    "test",
+    "tests/e2e/batch3-release.spec.ts",
+    "--grep",
+    "surveyor afternoon",
+    "--repeat-each=5",
+    "--workers=1",
+    "--retries=0"
+  ],
+  "exitCode": 0,
+  "seconds": 13.71,
+  "log": "reports/int7-20261105/candidate-surveyor-repeat.log",
+  "sha256": "1771ee7dbf09c1cc70e92bc79f6b73ee8f4545e26fe50ff362e9523d151d4821",
+  "environment": "allowlisted OS variables only; CI=1, telemetry disabled, NODE_OPTIONS=4096; no service credentials or env files"
+}

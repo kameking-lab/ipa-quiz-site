@@ -1,0 +1,16 @@
+{
+  "sourceHead": "122a252a0b4ca0f0dfbd6e1d499d49bcbaa2fc64",
+  "startedAt": "2026-11-04T19:21:13.522842+00:00",
+  "endedAt": "2026-11-04T19:21:14.592058+00:00",
+  "command": [
+    "corepack.cmd",
+    "pnpm",
+    "e2e"
+  ],
+  "exitCode": 1,
+  "seconds": 1.07,
+  "log": "reports/int7-20261105/e2e-port-busy.log",
+  "sha256": "9a76c125474457a24492e6913241d8616bb8353f6e54704db80cac5d0bbc3acc",
+  "environment": "allowlisted OS variables only; CI=1, telemetry disabled, NODE_OPTIONS=4096; no service credentials or env files",
+  "supersededReason": "Port 3000 occupied by a separate wt-perf-k Playwright run; no test cases ran and no foreign process was stopped."
+}

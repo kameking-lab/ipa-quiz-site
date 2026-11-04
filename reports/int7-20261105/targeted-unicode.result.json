@@ -1,0 +1,22 @@
+{
+  "sourceHead": "cff99c61bae24a5377f474974ba951402ca6cbbd",
+  "startedAt": "2026-11-04T18:10:47.440534+00:00",
+  "endedAt": "2026-11-04T18:12:03.752909+00:00",
+  "command": [
+    "corepack.cmd",
+    "pnpm",
+    "exec",
+    "vitest",
+    "run",
+    "__tests__/batch3-release.test.ts",
+    "__tests__/batch3-related-gate.test.ts",
+    "__tests__/mobile/catalog-parity.test.ts",
+    "--maxWorkers=1",
+    "--reporter=verbose"
+  ],
+  "exitCode": 0,
+  "seconds": 76.31,
+  "log": "reports/int7-20261105/targeted-unicode.log",
+  "sha256": "ee1b514830325fe65907fecf6a4eeb763498f2ea87ed1d1887b1d5c8dc6465ec",
+  "environment": "allowlisted OS variables only; CI=1, telemetry disabled, NODE_OPTIONS=4096; no service credentials or env files"
+}

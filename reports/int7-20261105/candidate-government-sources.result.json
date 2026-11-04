@@ -1,0 +1,15 @@
+{
+  "sourceHead": "1ca14f4ce39be16b8b00660800bd05a225ff0ee2",
+  "startedAt": "2026-11-04T19:14:43.782547+00:00",
+  "endedAt": "2026-11-04T19:14:43.887787+00:00",
+  "command": [
+    "node",
+    "scripts/validate-government-source-links.mjs",
+    "--skip-live"
+  ],
+  "exitCode": 0,
+  "seconds": 0.11,
+  "log": "reports/int7-20261105/candidate-government-sources.log",
+  "sha256": "f0de96d9787a2e9875f4f5a8b5f5935de8c738b3505b5524e91843cf560700eb",
+  "environment": "allowlisted OS variables only; CI=1, telemetry disabled, NODE_OPTIONS=4096; no service credentials or env files"
+}

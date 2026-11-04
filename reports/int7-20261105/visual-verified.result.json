@@ -1,0 +1,14 @@
+{
+  "sourceHead": "eb7bf840eb4f4e8efa1a40298df1716fb0a30cc3",
+  "startedAt": "2026-11-04T18:27:14.058534+00:00",
+  "endedAt": "2026-11-04T18:28:04.417793+00:00",
+  "command": [
+    "node",
+    "scripts/verify-batch3-browser.mjs"
+  ],
+  "exitCode": 0,
+  "seconds": 50.36,
+  "log": "reports/int7-20261105/visual-verified.log",
+  "sha256": "278137157f2cb97c5cff0659200f94c3796a65146e74fa796d231aba508f1c1f",
+  "environment": "allowlisted OS variables only; CI=1, telemetry disabled, NODE_OPTIONS=4096; no service credentials or env files"
+}

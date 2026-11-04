@@ -1,0 +1,360 @@
+{
+  "sourceHead": "1ca14f4ce39be16b8b00660800bd05a225ff0ee2",
+  "status": "local integration verified; Preview real AI delegated to Claude; no publication",
+  "checks": {
+    "build": {
+      "sourceHead": "1ca14f4ce39be16b8b00660800bd05a225ff0ee2",
+      "startedAt": "2026-11-04T18:36:21.550914+00:00",
+      "endedAt": "2026-11-04T18:52:40.340992+00:00",
+      "command": [
+        "corepack.cmd",
+        "pnpm",
+        "build"
+      ],
+      "exitCode": 0,
+      "seconds": 978.79,
+      "log": "reports/int7-20261105/candidate-build.log",
+      "sha256": "74bffde3aec1f41765f399278bb3bbc55bb415739bdda747ffb683caaa7cf2b6",
+      "environment": "allowlisted OS variables only; CI=1, telemetry disabled, NODE_OPTIONS=4096; no service credentials or env files"
+    },
+    "test": {
+      "sourceHead": "1ca14f4ce39be16b8b00660800bd05a225ff0ee2",
+      "startedAt": "2026-11-04T18:53:16.169453+00:00",
+      "endedAt": "2026-11-04T19:12:02.989661+00:00",
+      "command": [
+        "corepack.cmd",
+        "pnpm",
+        "test",
+        "--maxWorkers=2",
+        "--reporter=default",
+        "--reporter=json",
+        "--outputFile=reports/int7-20261105/candidate-test.json"
+      ],
+      "exitCode": 0,
+      "seconds": 1126.82,
+      "log": "reports/int7-20261105/candidate-test.log",
+      "sha256": "c4e309c9499791f68afbd4bb94a36f3660f363af1aae54e2aaabb2e64f33c3d6",
+      "environment": "allowlisted OS variables only; CI=1, telemetry disabled, NODE_OPTIONS=4096; no service credentials or env files"
+    },
+    "typecheck": {
+      "sourceHead": "1ca14f4ce39be16b8b00660800bd05a225ff0ee2",
+      "startedAt": "2026-11-04T19:12:03.231379+00:00",
+      "endedAt": "2026-11-04T19:13:17.197695+00:00",
+      "command": [
+        "corepack.cmd",
+        "pnpm",
+        "typecheck"
+      ],
+      "exitCode": 0,
+      "seconds": 73.97,
+      "log": "reports/int7-20261105/candidate-typecheck.log",
+      "sha256": "3e208f766fb4f0d94cee68a7457aab027beba3639af241b9d217a8c0b156ea02",
+      "environment": "allowlisted OS variables only; CI=1, telemetry disabled, NODE_OPTIONS=4096; no service credentials or env files"
+    },
+    "lint": {
+      "sourceHead": "1ca14f4ce39be16b8b00660800bd05a225ff0ee2",
+      "startedAt": "2026-11-04T19:13:17.404231+00:00",
+      "endedAt": "2026-11-04T19:14:21.743137+00:00",
+      "command": [
+        "corepack.cmd",
+        "pnpm",
+        "lint"
+      ],
+      "exitCode": 0,
+      "seconds": 64.34,
+      "log": "reports/int7-20261105/candidate-lint.log",
+      "sha256": "e37dbddf5aef4392fe86810c001ea90edf1b23ae823dd0bef4cb25e2ef57a201",
+      "environment": "allowlisted OS variables only; CI=1, telemetry disabled, NODE_OPTIONS=4096; no service credentials or env files"
+    },
+    "validate": {
+      "sourceHead": "1ca14f4ce39be16b8b00660800bd05a225ff0ee2",
+      "startedAt": "2026-11-04T19:14:21.933203+00:00",
+      "endedAt": "2026-11-04T19:14:34.758573+00:00",
+      "command": [
+        "corepack.cmd",
+        "pnpm",
+        "validate:questions"
+      ],
+      "exitCode": 0,
+      "seconds": 12.83,
+      "log": "reports/int7-20261105/candidate-validate.log",
+      "sha256": "74ff80ec36cb0d4b4231e12906b0a783735c43df1d458cbbe31eb8350fa11bf7",
+      "environment": "allowlisted OS variables only; CI=1, telemetry disabled, NODE_OPTIONS=4096; no service credentials or env files"
+    },
+    "e2e": {
+      "sourceHead": "122a252a0b4ca0f0dfbd6e1d499d49bcbaa2fc64",
+      "startedAt": "2026-11-04T19:25:12.855494+00:00",
+      "endedAt": "2026-11-04T19:28:03.309210+00:00",
+      "command": [
+        "corepack.cmd",
+        "pnpm",
+        "e2e"
+      ],
+      "exitCode": 0,
+      "seconds": 170.45,
+      "log": "reports/int7-20261105/candidate-e2e.log",
+      "sha256": "6e46027f13143e10c25255c592c3ce2223a5d33582b86413cdd852efede58451",
+      "environment": "allowlisted OS variables only; CI=1, telemetry disabled, NODE_OPTIONS=4096; no service credentials or env files"
+    },
+    "visual": {
+      "sourceHead": "122a252a0b4ca0f0dfbd6e1d499d49bcbaa2fc64",
+      "startedAt": "2026-11-04T19:22:18.475983+00:00",
+      "endedAt": "2026-11-04T19:22:54.680125+00:00",
+      "command": [
+        "node",
+        "scripts/verify-batch3-browser.mjs"
+      ],
+      "exitCode": 0,
+      "seconds": 36.2,
+      "log": "reports/int7-20261105/candidate-visual.log",
+      "sha256": "42763814188881ac5ad061acde29256ccd8b00c10db65293ecd9b616bfb1b73f",
+      "environment": "allowlisted OS variables only; CI=1, telemetry disabled, NODE_OPTIONS=4096; no service credentials or env files"
+    },
+    "funnel": {
+      "sourceHead": "122a252a0b4ca0f0dfbd6e1d499d49bcbaa2fc64",
+      "startedAt": "2026-11-04T19:23:37.452197+00:00",
+      "endedAt": "2026-11-04T19:24:48.740741+00:00",
+      "command": [
+        "python",
+        "scripts/verify-batch3-funnel.py"
+      ],
+      "exitCode": 0,
+      "seconds": 71.29,
+      "log": "reports/int7-20261105/candidate-funnel.log",
+      "sha256": "5a2990c5fca3caa4384adcbcec80722232c652fee79a9054e5b9726b482ca96a",
+      "environment": "allowlisted OS variables only; CI=1, telemetry disabled, NODE_OPTIONS=4096; no service credentials or env files"
+    },
+    "runtime-audit": {
+      "sourceHead": "1ca14f4ce39be16b8b00660800bd05a225ff0ee2",
+      "startedAt": "2026-11-04T19:14:34.915832+00:00",
+      "endedAt": "2026-11-04T19:14:40.450658+00:00",
+      "command": [
+        "corepack.cmd",
+        "pnpm",
+        "exec",
+        "tsx",
+        "scripts/audit-batch3-runtime.ts"
+      ],
+      "exitCode": 0,
+      "seconds": 5.53,
+      "log": "reports/int7-20261105/candidate-runtime-audit.log",
+      "sha256": "4adaacdc44331f3b7a7869965597b12af775414ec01747789a00daca472c7a27",
+      "environment": "allowlisted OS variables only; CI=1, telemetry disabled, NODE_OPTIONS=4096; no service credentials or env files"
+    },
+    "source-audit": {
+      "sourceHead": "1ca14f4ce39be16b8b00660800bd05a225ff0ee2",
+      "startedAt": "2026-11-04T18:36:42.186511+00:00",
+      "endedAt": "2026-11-04T18:36:46.441528+00:00",
+      "command": [
+        "python",
+        "scripts/audit-batch3-sources.py"
+      ],
+      "exitCode": 0,
+      "seconds": 4.26,
+      "log": "reports/int7-20261105/candidate-source-audit.log",
+      "sha256": "f00383599e459e66234f098709bbb3636a795bb760ebf3ba2697eb4c72b513bc",
+      "environment": "allowlisted OS variables only; CI=1, telemetry disabled, NODE_OPTIONS=4096; no service credentials or env files"
+    },
+    "projection-audit": {
+      "sourceHead": "1ca14f4ce39be16b8b00660800bd05a225ff0ee2",
+      "startedAt": "2026-11-04T18:36:47.167967+00:00",
+      "endedAt": "2026-11-04T18:36:56.479640+00:00",
+      "command": [
+        "python",
+        "scripts/audit-batch3-projections.py"
+      ],
+      "exitCode": 0,
+      "seconds": 9.31,
+      "log": "reports/int7-20261105/candidate-projection-audit.log",
+      "sha256": "d84c6dd71b58b6bac2e51b57f57917e707712e7fffbb8c7763b279ec5e152c09",
+      "environment": "allowlisted OS variables only; CI=1, telemetry disabled, NODE_OPTIONS=4096; no service credentials or env files"
+    },
+    "workflow": {
+      "sourceHead": "1ca14f4ce39be16b8b00660800bd05a225ff0ee2",
+      "startedAt": "2026-11-04T18:41:39.425044+00:00",
+      "endedAt": "2026-11-04T18:41:41.946919+00:00",
+      "command": [
+        "node",
+        "--test",
+        ".github/scripts/e2e-workflow.test.mjs"
+      ],
+      "exitCode": 0,
+      "seconds": 2.52,
+      "log": "reports/int7-20261105/candidate-workflow.log",
+      "sha256": "605c9104f947f73ecf7dbcc29d99f7301d713b28262a0432eaa1fca73a64ea06",
+      "environment": "allowlisted OS variables only; CI=1, telemetry disabled, NODE_OPTIONS=4096; no service credentials or env files"
+    },
+    "migrate-gate": {
+      "sourceHead": "1ca14f4ce39be16b8b00660800bd05a225ff0ee2",
+      "startedAt": "2026-11-04T18:41:39.421176+00:00",
+      "endedAt": "2026-11-04T18:41:39.544776+00:00",
+      "command": [
+        "node",
+        "--test",
+        "scripts/vercel-migrate.test.mjs"
+      ],
+      "exitCode": 0,
+      "seconds": 0.12,
+      "log": "reports/int7-20261105/candidate-migrate-gate.log",
+      "sha256": "9593359d6c49a35eda9be7be7db47e3cb29a03f5bdb0f05cf1f3ac99c83a2ee2",
+      "environment": "allowlisted OS variables only; CI=1, telemetry disabled, NODE_OPTIONS=4096; no service credentials or env files"
+    },
+    "safety-sources": {
+      "sourceHead": "1ca14f4ce39be16b8b00660800bd05a225ff0ee2",
+      "startedAt": "2026-11-04T19:14:40.582802+00:00",
+      "endedAt": "2026-11-04T19:14:43.629863+00:00",
+      "command": [
+        "node",
+        "scripts/validate-safety-exams.mjs",
+        "--require-consultant-five-years",
+        "--require-explanations"
+      ],
+      "exitCode": 0,
+      "seconds": 3.05,
+      "log": "reports/int7-20261105/candidate-safety-sources.log",
+      "sha256": "a9ddf45008bfd29698ec04ab769fd3dec1a1c80631fd818de712181ec2d4264a",
+      "environment": "allowlisted OS variables only; CI=1, telemetry disabled, NODE_OPTIONS=4096; no service credentials or env files"
+    },
+    "government-sources": {
+      "sourceHead": "1ca14f4ce39be16b8b00660800bd05a225ff0ee2",
+      "startedAt": "2026-11-04T19:14:43.782547+00:00",
+      "endedAt": "2026-11-04T19:14:43.887787+00:00",
+      "command": [
+        "node",
+        "scripts/validate-government-source-links.mjs",
+        "--skip-live"
+      ],
+      "exitCode": 0,
+      "seconds": 0.11,
+      "log": "reports/int7-20261105/candidate-government-sources.log",
+      "sha256": "f0de96d9787a2e9875f4f5a8b5f5935de8c738b3505b5524e91843cf560700eb",
+      "environment": "allowlisted OS variables only; CI=1, telemetry disabled, NODE_OPTIONS=4096; no service credentials or env files"
+    },
+    "qa-typecheck": {
+      "sourceHead": "122a252a0b4ca0f0dfbd6e1d499d49bcbaa2fc64",
+      "startedAt": "2026-11-04T19:20:50.343922+00:00",
+      "endedAt": "2026-11-04T19:21:05.539303+00:00",
+      "command": [
+        "corepack.cmd",
+        "pnpm",
+        "typecheck"
+      ],
+      "exitCode": 0,
+      "seconds": 15.2,
+      "log": "reports/int7-20261105/candidate-qa-typecheck.log",
+      "sha256": "3e208f766fb4f0d94cee68a7457aab027beba3639af241b9d217a8c0b156ea02",
+      "environment": "allowlisted OS variables only; CI=1, telemetry disabled, NODE_OPTIONS=4096; no service credentials or env files"
+    },
+    "qa-lint": {
+      "sourceHead": "122a252a0b4ca0f0dfbd6e1d499d49bcbaa2fc64",
+      "startedAt": "2026-11-04T19:21:05.658794+00:00",
+      "endedAt": "2026-11-04T19:21:13.392277+00:00",
+      "command": [
+        "corepack.cmd",
+        "pnpm",
+        "exec",
+        "eslint",
+        "tests/e2e/batch3-release.spec.ts"
+      ],
+      "exitCode": 0,
+      "seconds": 7.73,
+      "log": "reports/int7-20261105/candidate-qa-lint.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "environment": "allowlisted OS variables only; CI=1, telemetry disabled, NODE_OPTIONS=4096; no service credentials or env files"
+    },
+    "surveyor-repeat": {
+      "sourceHead": "122a252a0b4ca0f0dfbd6e1d499d49bcbaa2fc64",
+      "startedAt": "2026-11-04T19:20:01.296670+00:00",
+      "endedAt": "2026-11-04T19:20:15.009173+00:00",
+      "command": [
+        "corepack.cmd",
+        "pnpm",
+        "exec",
+        "playwright",
+        "test",
+        "tests/e2e/batch3-release.spec.ts",
+        "--grep",
+        "surveyor afternoon",
+        "--repeat-each=5",
+        "--workers=1",
+        "--retries=0"
+      ],
+      "exitCode": 0,
+      "seconds": 13.71,
+      "log": "reports/int7-20261105/candidate-surveyor-repeat.log",
+      "sha256": "1771ee7dbf09c1cc70e92bc79f6b73ee8f4545e26fe50ff362e9523d151d4821",
+      "environment": "allowlisted OS variables only; CI=1, telemetry disabled, NODE_OPTIONS=4096; no service credentials or env files"
+    }
+  },
+  "unit": {
+    "success": true,
+    "numTotalTests": 7884,
+    "numPassedTests": 7874,
+    "numFailedTests": 0,
+    "numPendingTests": 10,
+    "numTotalTestSuites": 1901,
+    "numPassedTestSuites": 1901,
+    "numFailedTestSuites": 0
+  },
+  "e2e": {
+    "passed": 371,
+    "skipped": 12,
+    "flaky": 1,
+    "failed": 0,
+    "total": 384
+  },
+  "funnel": {
+    "passed": 7,
+    "retries": 0,
+    "realServices": false
+  },
+  "visual": {
+    "screenshots": 26,
+    "width": 390,
+    "height": 844,
+    "pageErrors": 0,
+    "horizontalOverflow": false
+  },
+  "landings": {
+    "links": 104,
+    "passed": 104,
+    "gsc": 10,
+    "gscPassed": 10,
+    "fixtureRevision": "ca99d7f72698cbd0b1e0aced3db767852fb6713f"
+  },
+  "screenSha256": {
+    "reports/int7-20261105/screenshots/benrishi-hub.png": "58d765ef3da9bfbf3cd342032a0934a02c53e505d577e0c96e6c9e723d5d2bab",
+    "reports/int7-20261105/screenshots/benrishi-question.png": "377a3f88e7257c9bdf6e5dd93da1337e247794aed241a45299b8a43e43672ee7",
+    "reports/int7-20261105/screenshots/chiiki-ryoko-hub.png": "5f198f58aebc52a7d7849aa2cf906fd66ca432a02f7ba69b9cfc42979757f8e3",
+    "reports/int7-20261105/screenshots/chiiki-ryoko-question.png": "f7c8baabac8a78728d91f06aed50e2465c329e38dba24dce9e1be865266d1b40",
+    "reports/int7-20261105/screenshots/contact-mobile.png": "033e7df1dc5b6a1859e68bf841d12c8480f59259175fd154ddef1042ec66ca6d",
+    "reports/int7-20261105/screenshots/contact-tsugino-selection.png": "02458d8062790af4b9188aed48141fe69bcbcff7b0053c76469bb38185622b96",
+    "reports/int7-20261105/screenshots/contact-tsugino.png": "4b8d4d40dee5626d87295c8c7ecb683d84f262415b3185aa313d874f87b22f34",
+    "reports/int7-20261105/screenshots/dojo-osen-hub.png": "00e5ad79db97ef11e45293ca0a49c5f422371abb243840c2c97ddd02e5c50c54",
+    "reports/int7-20261105/screenshots/dojo-osen-question.png": "03a2efbc3b2ba2e9c7ad8cf9b4ff77b2cdc164edec38f7a32aca8ca0f700ec3c",
+    "reports/int7-20261105/screenshots/dokugeki-chiba-hub.png": "94ffc4b2eadc3f123d8d4e06f1eef8365dce881c8451d9ac94ab2c33323d6cbb",
+    "reports/int7-20261105/screenshots/dokugeki-chiba-question.png": "f30be9461ddc820c077f3bc6d165a1fd56fe91c336a11ce5391c46dde2412744",
+    "reports/int7-20261105/screenshots/gsc-blog.png": "478805a63abd8000062569d965cbf066d57690c4fdfd2fdad3a462d5f016960c",
+    "reports/int7-20261105/screenshots/gsc-sc.png": "1066b2a61d28489d13c2971a439ca068fcc1fe2d4c264e5640b7acd380c4c2e7",
+    "reports/int7-20261105/screenshots/jokaso-setsubishi-hub.png": "836b03e348e3e323dd04378046b2a61a817ca889e7fa9105858b98f0e834cc3f",
+    "reports/int7-20261105/screenshots/jokaso-setsubishi-question.png": "dc5297f15f323107acf814600ceb5970c096cbcbe171876909ad6b7ae1094bc3",
+    "reports/int7-20261105/screenshots/junkango-kansai-hub.png": "5f89c91d1f82b81a1572bffefaa60a3bde2a14062764cfc2ca69af5e11262c97",
+    "reports/int7-20261105/screenshots/junkango-kansai-question.png": "076dfd6e5c8969ff5e476509423b07bf3ee5a66a0ca836a4663aebba07d4994a",
+    "reports/int7-20261105/screenshots/kenchikushi2-hub.png": "082874fd83ead70389e00a9cfea7dfe835fafce6e48b935374fd1ad12a1c29c8",
+    "reports/int7-20261105/screenshots/kenchikushi2-question.png": "46044ef2138800bd4549a22220b3414043969bea756f8aa071c9cf3416b255e1",
+    "reports/int7-20261105/screenshots/kukaku-seiri-hub.png": "998c513ddcda0ef0c949aa31a2227ec4a411a486b38b2f6b4e1bd475e09cb4d1",
+    "reports/int7-20261105/screenshots/kukaku-seiri-question.png": "ca55423d9165943258ee67663ddec77fc28f8617c17b11ed65efbaa7680a011f",
+    "reports/int7-20261105/screenshots/mokuzo-kenchikushi-hub.png": "d85d7f5bd31d3c7b9b5b90edb56c7b35d61dcdd8ccfb6338914f8ab161927c8f",
+    "reports/int7-20261105/screenshots/mokuzo-kenchikushi-question.png": "0b90428e276de6f348e2b7256606fd123dc5281bc5242b9254bfd9876e9b2636",
+    "reports/int7-20261105/screenshots/nurse-alternate-answer.png": "eb8d907501597239fccfb0d19f259945fe5f5119046aa4b1377e9578667ef652",
+    "reports/int7-20261105/screenshots/sokuryoshi-hub.png": "d352151fa96bfdea9faa62a8f9524744d7736f300789d07d393f3c9ac0ac245e",
+    "reports/int7-20261105/screenshots/sokuryoshi-question.png": "2ff1aa8ecc8924578d0ddbb26eaffa5f941de3956df2c65b024d29f29faa39f2",
+    "reports/int7-20261105/screenshots/surveyor-afternoon-manual.png": "3572f4df8a9f36050df414919565d93e0c2de11f4da9cda317c0ebef9c3c9858",
+    "reports/int7-20261105/screenshots/home-regression/direct-1280.png": "c3d48594f6afaedbc02b43eaba9599544d78678055c7da691c250a44cb70bf32",
+    "reports/int7-20261105/screenshots/home-regression/direct-390.png": "89a1f3d60354bcf44def98cd979994f9d00317683ee261499c73171b98d1311c",
+    "reports/int7-20261105/screenshots/home-regression/quiz-ai-400x606.png": "a1a09ce806ffdc52cc2241343224ac0f830b74a362e36cbc8fe49a8c61262562",
+    "reports/int7-20261105/screenshots/home-regression/quiz-result-400x606.png": "7b711398562f19598bb8d5b058ffdd66107b1c68d290d34ca91f9bb20294a7ad",
+    "reports/int7-20261105/screenshots/home-regression/returning-390.png": "ed26b2ffcc047868712fc24b38f1608339e73392c248ecf3d2711ecbebf19ea0"
+  },
+  "supersededRuns": "All runs other than candidate-* are intermediate. Initial failures were corrected. test-release/test-verified/test-ready and build-ready were explicitly terminated as superseded or to reduce memory use; none are counted as PASS."
+}

@@ -1,0 +1,13 @@
+
+> ipa-quiz-site@1.0.0 typecheck C:\Users\kanet\20260522\wt-batch3
+> tsc --noEmit
+
+__tests__/auth/dependency-regression.test.ts(2,37): error TS2307: Cannot find module '@auth/core' or its corresponding type declarations.
+__tests__/auth/dependency-regression.test.ts(3,30): error TS2307: Cannot find module '@auth/core/adapters' or its corresponding type declarations.
+__tests__/denken1-native-originals.test.tsx(5,19): error TS2307: Cannot find module 'sharp' or its corresponding type declarations.
+__tests__/denken2-native-originals.test.tsx(5,19): error TS2307: Cannot find module 'sharp' or its corresponding type declarations.
+__tests__/denken2-secondary-originals.test.tsx(5,19): error TS2307: Cannot find module 'sharp' or its corresponding type declarations.
+__tests__/denken3-native-originals.test.tsx(5,19): error TS2307: Cannot find module 'sharp' or its corresponding type declarations.
+__tests__/lib/google-account-linking.test.ts(2,39): error TS2307: Cannot find module '../../node_modules/@auth/core/lib/actions/callback/handle-login.js' or its corresponding type declarations.
+components/blog/BlogMarkdown.tsx(6,43): error TS2307: Cannot find module 'hast' or its corresponding type declarations.
+ ELIFECYCLE  Command failed with exit code 2.

@@ -1,0 +1,18 @@
+{
+  "sourceHead": "afe77c0b9d91409eacc6224766de5c1ccfcb1a63",
+  "startedAt": "2026-11-04T18:35:32.326352+00:00",
+  "endedAt": "2026-11-04T18:36:09.614730+00:00",
+  "command": [
+    "corepack.cmd",
+    "pnpm",
+    "test",
+    "__tests__/batch3-release.test.ts",
+    "__tests__/mobile-content-catalog.test.ts",
+    "--maxWorkers=1"
+  ],
+  "exitCode": 0,
+  "seconds": 37.29,
+  "log": "reports/int7-20261105/targeted-coherent.log",
+  "sha256": "0e5f7b45f2921274e62d21b215472c7398469e291fed1ed09516e57ee0f44219",
+  "environment": "allowlisted OS variables only; CI=1, telemetry disabled, NODE_OPTIONS=4096; no service credentials or env files"
+}

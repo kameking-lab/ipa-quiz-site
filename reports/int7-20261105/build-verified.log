@@ -1,0 +1,370 @@
+
+> ipa-quiz-site@1.0.0 build C:\Users\kanet\20260522\wt-batch3
+> node scripts/vercel-migrate.mjs && next build
+
+[vercel-migrate] Skipped: not a hosted Vercel production build.
+▲ Next.js 16.4.5 (Turbopack)
+✓ Running next.config.ts took 86ms
+- Experiments (use with caution):
+  · cpus: 4
+  · optimizePackageImports
+
+⚠ The "middleware" file convention is deprecated. Please use "proxy" instead.
+
+  To migrate automatically, run:
+  npx @next/codemod@canary middleware-to-proxy .
+
+  Learn more: https://nextjs.org/docs/messages/middleware-to-proxy
+  Creating an optimized production build ...
+✓ Compiled successfully in 16.5s
+  Running TypeScript ...
+  Finished TypeScript in 27.9s ...
+  Collecting page data using 4 workers ...
+⚠ The Edge Runtime is deprecated. You can use the "nodejs" runtime instead. Learn more: https://nextjs.org/docs/messages/edge-runtime-deprecated
+⚠ Using edge runtime on a page currently disables static generation for that page
+  Generating static pages using 4 workers (0/19591) ...
+  Generating static pages using 4 workers (4457/19591) 
+  Generating static pages using 4 workers (4897/19591) 
+  Generating static pages using 4 workers (9795/19591) 
+  Generating static pages using 4 workers (13362/19591) 
+  Generating static pages using 4 workers (14693/19591) 
+The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+  Generating static pages using 4 workers (17612/19591) 
+  Generating static pages using 4 workers (19366/19591) 
+✓ Generating static pages using 4 workers (19591/19591) in 5.4min
+  Finalizing page optimization ...
+
+Route (app)                                        Revalidate  Expire
+┌ ○ /
+├ ○ /_not-found
+├   /[exam]
+│ ├ ● /benrishi
+│ ├ ● /sokuryoshi
+│ ├ ● /dokugeki-chiba
+│ └ ● [+145 more paths]
+├   /[exam]/[yearSeason]
+│ ├ ● /benrishi/2026-annual
+│ ├ ● /benrishi/2025-annual
+│ ├ ● /sokuryoshi/2026-annual
+│ └ ● [+522 more paths]
+├   /[exam]/afternoon
+│ ├ ● /ap/afternoon
+│ ├ ● /st/afternoon
+│ ├ ● /fe/afternoon
+│ └ ● [+8 more paths]
+├ ● /[exam]/afternoon/[year]/[season]
+├   /[exam]/essay
+│ ├ ● /gas-kou/essay
+│ ├ ● /gas-otsu/essay
+│ └ ● /gas-hei/essay
+├   /[exam]/topic/[topicSlug]
+│ ├ ● /benrishi/topic/特許・実用新案
+│ ├ ● /benrishi/topic/意匠
+│ ├ ● /benrishi/topic/商標
+│ └ ● [+1552 more paths]
+├ ○ /about
+├ ƒ /account
+├ ○ /account/dashboard
+├ ○ /account/delete
+├ ○ /account/essay-history
+├ ○ /account/study-plan
+├ ○ /admin
+├ ƒ /admin/api-usage
+├ ƒ /admin/deployment-status
+├ ○ /admin/errors                                         30s      1y
+├ ƒ /admin/exam-usage
+├ ƒ /admin/feedback
+├ ƒ /admin/funnel
+├ ƒ /admin/launch-monitoring
+├ ƒ /admin/metrics
+├ ƒ /admin/retention
+├ ƒ /admin/stats
+├ ○ /api-docs
+├ ƒ /api/account/bookmark-sync
+├ ƒ /api/account/custom-tag-sync
+├ ƒ /api/account/delete
+├ ƒ /api/account/history-export
+├ ƒ /api/account/history-sync
+├ ƒ /api/account/study-plan-sync
+├ ƒ /api/admin/api-usage
+├ ƒ /api/admin/deployment-status
+├ ƒ /api/admin/funnel
+├ ƒ /api/admin/launch-monitoring
+├ ƒ /api/admin/metrics
+├ ƒ /api/auth/[...nextauth]
+├ ƒ /api/billing/checkout
+├ ƒ /api/billing/mock
+├ ƒ /api/billing/portal
+├ ƒ /api/billing/question
+├ ƒ /api/billing/status
+├ ƒ /api/billing/webhook
+├ ƒ /api/contact
+├ ƒ /api/copilot
+├ ƒ /api/copilot/exam-library
+├ ƒ /api/cron/health-check
+├ ƒ /api/email
+├ ƒ /api/email-list
+├ ƒ /api/essay-grade
+├ ƒ /api/feedback-unlock
+├ ƒ /api/feedback-unlock/claim
+├ ƒ /api/health
+├ ƒ /api/health/ready
+├ ƒ /api/home/resume
+├ ƒ /api/indexnow
+├ ƒ /api/integrations/note/feedback
+├ ƒ /api/mobile/auth/complete
+├ ƒ /api/mobile/auth/exchange
+├ ƒ /api/mobile/catalog
+├ ƒ /api/mobile/download
+├ ƒ /api/mobile/entitlement
+├ ƒ /api/mobile/packs
+├ ƒ /api/mobile/paper-results
+├ ƒ /api/mobile/revenuecat
+├ ƒ /api/mock-exam/[exam]
+├ ƒ /api/og
+├ ƒ /api/og/result
+├ ƒ /api/qualification-assets/khk-kagaku/[file]
+├ ƒ /api/questions/meta
+├ ƒ /api/questions/next
+├ ƒ /api/questions/related
+├ ƒ /api/review/due
+├ ƒ /api/scoring
+├ ƒ /api/search/questions
+├ ○ /api/stats/answer-count                                5m      1y
+├ ○ /api/stats/content-count                               1h      1y
+├ ƒ /api/stats/gsc
+├ ƒ /api/stats/posthog
+├ ƒ /api/stats/study-presence
+├ ƒ /api/v1/exams
+├ ƒ /api/v1/grade
+├ ƒ /api/v1/openapi
+├ ƒ /api/v1/questions
+├ ○ /apple-icon.png
+├ ƒ /auth/signin
+├ ƒ /auth/signout
+├ ○ /auth/verify-request
+├ ○ /billing
+├ ƒ /billing/cancel
+├ ○ /billing/mock
+├ ƒ /billing/success
+├ ○ /billing/terms
+├ ○ /blog
+├   /blog/[slug]
+│ ├ ● /blog/ip-goukaku-benkyouhou
+│ ├ ● /blog/sg-goukaku-benkyouhou
+│ ├ ● /blog/fe-goukaku-benkyouhou
+│ └ ● [+176 more paths]
+├ ○ /bookmarks
+├ ƒ /challenge
+├ ○ /chat/share
+├ ○ /chusho-secondary
+├   /chusho-secondary/[year]/[case]
+│ ├ ● /chusho-secondary/2025/case1
+│ ├ ● /chusho-secondary/2025/case2
+│ ├ ● /chusho-secondary/2025/case3
+│ └ ● [+5 more paths]
+├   /chusho-secondary/[year]/[case]/[question]
+│ ├ ● /chusho-secondary/2025/case1/q1
+│ ├ ● /chusho-secondary/2025/case1/q2
+│ ├ ● /chusho-secondary/2025/case1/q3
+│ └ ● [+30 more paths]
+├ ○ /community-guidelines
+├ ƒ /contact
+├ ○ /demo/afternoon
+├ ○ /demo/essay-grading
+├ ○ /denken1
+├   /denken1/[edition]/[subject]
+│ ├ ● /denken1/2025-primary/power
+│ ├ ● /denken1/2025-primary/machine
+│ ├ ● /denken1/2026-primary/machine
+│ └ ● [+3 more paths]
+├   /denken1/[edition]/[subject]/[number]
+│ ├ ● /denken1/2025-primary/power/q1
+│ ├ ● /denken1/2025-primary/power/q2
+│ ├ ● /denken1/2025-primary/power/q3
+│ └ ● [+33 more paths]
+├ ○ /denken2
+├   /denken2/[edition]/[subject]
+│ ├ ● /denken2/2026-primary/theory
+│ ├ ● /denken2/2026-primary/machine
+│ ├ ● /denken2/2025-primary/theory
+│ └ ● [+3 more paths]
+├   /denken2/[edition]/[subject]/[number]
+│ ├ ● /denken2/2026-primary/theory/q1
+│ ├ ● /denken2/2026-primary/theory/q2
+│ ├ ● /denken2/2026-primary/theory/q3
+│ └ ● [+40 more paths]
+├ ○ /denken2/secondary
+├   /denken2/secondary/[year]/[subject]/[number]
+│ ├ ● /denken2/secondary/2025/power-management/q1
+│ ├ ● /denken2/secondary/2025/power-management/q2
+│ ├ ● /denken2/secondary/2025/power-management/q3
+│ └ ● [+17 more paths]
+├ ƒ /denken3
+├   /denken3/[edition]/[subject]
+│ ├ ● /denken3/2026-upper/theory
+│ ├ ● /denken3/2026-upper/power
+│ ├ ● /denken3/2026-upper/law
+│ └ ● [+5 more paths]
+├   /denken3/[edition]/[subject]/[number]
+│ ├ ● /denken3/2026-upper/theory/q1
+│ ├ ● /denken3/2026-upper/theory/q2
+│ ├ ● /denken3/2026-upper/theory/q3
+│ └ ● [+118 more paths]
+├ ○ /denko2/skill
+├   /denko2/skill/[id]
+│ ├ ● /denko2/skill/denko2-2024-07-20-skill-01
+│ ├ ● /denko2/skill/denko2-2024-07-20-skill-02
+│ ├ ● /denko2/skill/denko2-2024-07-20-skill-03
+│ └ ● [+101 more paths]
+├ ƒ /e-learning/exams
+├ ƒ /e-learning/exams/[id]
+├ ƒ /e-learning/exams/qualifications/[slug]
+├ ○ /e-learning/progress
+├ ƒ /e-learning/search
+├ ○ /essay
+├   /essay/[exam]/[questionId]
+│ ├ ● /essay/st/st-2024a-pm2-q1
+│ ├ ● /essay/st/st-2024a-pm2-q2
+│ ├ ● /essay/st/st-2023a-pm2-q1
+│ └ ● [+9 more paths]
+├ ○ /essays
+├   /essays/[exam]
+│ └ ● /essays/sc
+├   /essays/[exam]/[yearSeason]/[section]/[qnum]
+│ ├ ● /essays/sc/2025-spring/pm2/q1
+│ ├ ● /essays/sc/2024-spring/pm2/q1
+│ └ ● /essays/sc/2023-spring/pm2/q1
+├ ○ /faq
+├ ○ /features
+├   /features/[slug]
+│ ├ ● /features/ai-explanation
+│ ├ ● /features/industry-essays
+│ ├ ● /features/essay-grading
+│ └ ● [+3 more paths]
+├ ○ /feed.xml
+├ ○ /fp1/applied
+├   /fp1/applied/[edition]
+│ ├ ● /fp1/applied/202605
+│ └ ● /fp1/applied/202609
+├   /fp1/applied/[edition]/[number]
+│ ├ ● /fp1/applied/202605/51
+│ ├ ● /fp1/applied/202605/52
+│ ├ ● /fp1/applied/202605/53
+│ └ ● [+27 more paths]
+├ ○ /fp2/practical
+├   /fp2/practical/[edition]
+│ ├ ● /fp2/practical/202405
+│ ├ ● /fp2/practical/202409
+│ ├ ● /fp2/practical/202501
+│ └ ● [+2 more paths]
+├   /fp2/practical/[edition]/[number]
+│ ├ ● /fp2/practical/202405/1
+│ ├ ● /fp2/practical/202405/2
+│ ├ ● /fp2/practical/202405/3
+│ └ ● [+197 more paths]
+├ ○ /fp3/practical
+├   /fp3/practical/[edition]
+│ ├ ● /fp3/practical/202605
+│ ├ ● /fp3/practical/202505
+│ └ ● /fp3/practical/202405
+├   /fp3/practical/[edition]/[number]
+│ ├ ● /fp3/practical/202605/1
+│ ├ ● /fp3/practical/202605/2
+│ ├ ● /fp3/practical/202605/3
+│ └ ● [+57 more paths]
+├ ○ /glossary
+├ ○ /icon.png
+├ ○ /indexnow-key.txt
+├ ○ /ipa
+├ ○ /keywords
+├   /keywords/[keyword]
+│ ├ ● /keywords/ap-chokuzen-1week
+│ ├ ● /keywords/ip-1month-study-plan
+│ ├ ● /keywords/sc-incident-response
+│ └ ● [+16 more paths]
+├ ○ /kisho
+├   /kisho/study/[id]
+│ ├ ● /kisho/study/kisho-65-ippan-q01
+│ ├ ● /kisho/study/kisho-65-ippan-q02
+│ ├ ● /kisho/study/kisho-65-ippan-q03
+│ └ ● [+75 more paths]
+├ ○ /license
+├ ƒ /mock-exam
+├ ƒ /modes/topic
+├ ƒ /modes/year
+├ ○ /offline
+├ ƒ /og/streak/[days]
+├ ƒ /og/streak/[days]/opengraph-image
+├ ○ /opengraph-image
+├ ○ /operator
+├ ○ /privacy
+├   /q/[exam]/[yearSeason]/[section]/[qnum]
+│ ├ ● /q/benrishi/2026-annual/patent/q1                    1d      1y
+│ ├ ● /q/benrishi/2026-annual/patent/q2                    1d      1y
+│ ├ ● /q/benrishi/2026-annual/patent/q3                    1d      1y
+│ └ ● [+9300 more paths]
+├ ○ /qualifications
+├ ƒ /quiz
+├ ƒ /quiz/review
+├ ƒ /quiz/stream
+├ ○ /recommended-books
+├   /recommended-books/[exam]
+│ ├ ● /recommended-books/ip
+│ ├ ● /recommended-books/sg
+│ ├ ● /recommended-books/fe
+│ └ ● [+10 more paths]
+├ ƒ /review
+├ ○ /robots.txt
+├ ƒ /search
+├ ○ /settings
+├ ○ /settings/api-keys
+├ ○ /sharoushi/sentaku
+├   /sharoushi/sentaku/[edition]
+│ ├ ● /sharoushi/sentaku/2026
+│ └ ● /sharoushi/sentaku/2025
+├   /sharoushi/sentaku/[edition]/[number]
+│ ├ ● /sharoushi/sentaku/2025/1
+│ ├ ● /sharoushi/sentaku/2025/2
+│ ├ ● /sharoushi/sentaku/2025/3
+│ └ ● [+13 more paths]
+├ ○ /sitemap
+├ ○ /sitemap.xml
+├ ○ /sitemap/blog.xml
+├ ○ /sitemap/books.xml
+├ ○ /sitemap/exams.xml
+├ ○ /sitemap/fp-practical.xml
+├ ○ /sitemap/main.xml
+├   /sitemap/questions/[id]
+│ ├ ● /sitemap/questions/0.xml
+│ ├ ● /sitemap/questions/1.xml
+│ ├ ● /sitemap/questions/2.xml
+│ └ ● /sitemap/questions/3.xml
+├ ○ /sitemap/topics.xml
+├ ○ /st/past-papers/notes
+├   /st/past-papers/notes/[id]
+│ └ ● /st/past-papers/notes/st-2009a-am2-q23
+├ ○ /stats                                                30m      1y
+├ ○ /study-plan
+├ ƒ /study-plan/result/[id]
+├ ○ /terms
+├ ○ /topics
+├   /topics/[slug]
+│ ├ ● /topics/午後
+│ ├ ● /topics/コンピュータシステム
+│ ├ ● /topics/午前
+│ └ ● [+6738 more paths]
+├ ○ /transparency                                          5m      1y
+├ ○ /updates
+└ ○ /why-kakomon-ai
+
+
+ƒ Proxy (Middleware)
+
+○  (Static)   prerendered as static content
+●  (SSG)      prerendered as static HTML (uses generateStaticParams)
+ƒ  (Dynamic)  server-rendered on demand
+

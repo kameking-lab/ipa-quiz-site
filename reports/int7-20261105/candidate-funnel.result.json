@@ -1,0 +1,14 @@
+{
+  "sourceHead": "122a252a0b4ca0f0dfbd6e1d499d49bcbaa2fc64",
+  "startedAt": "2026-11-04T19:23:37.452197+00:00",
+  "endedAt": "2026-11-04T19:24:48.740741+00:00",
+  "command": [
+    "python",
+    "scripts/verify-batch3-funnel.py"
+  ],
+  "exitCode": 0,
+  "seconds": 71.29,
+  "log": "reports/int7-20261105/candidate-funnel.log",
+  "sha256": "5a2990c5fca3caa4384adcbcec80722232c652fee79a9054e5b9726b482ca96a",
+  "environment": "allowlisted OS variables only; CI=1, telemetry disabled, NODE_OPTIONS=4096; no service credentials or env files"
+}

@@ -1,0 +1,14 @@
+{
+  "sourceHead": "1ca14f4ce39be16b8b00660800bd05a225ff0ee2",
+  "startedAt": "2026-11-04T18:36:42.186511+00:00",
+  "endedAt": "2026-11-04T18:36:46.441528+00:00",
+  "command": [
+    "python",
+    "scripts/audit-batch3-sources.py"
+  ],
+  "exitCode": 0,
+  "seconds": 4.26,
+  "log": "reports/int7-20261105/candidate-source-audit.log",
+  "sha256": "f00383599e459e66234f098709bbb3636a795bb760ebf3ba2697eb4c72b513bc",
+  "environment": "allowlisted OS variables only; CI=1, telemetry disabled, NODE_OPTIONS=4096; no service credentials or env files"
+}

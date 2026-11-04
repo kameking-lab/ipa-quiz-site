@@ -1,0 +1,17 @@
+{
+  "sourceHead": "1ca14f4ce39be16b8b00660800bd05a225ff0ee2",
+  "startedAt": "2026-11-04T19:14:34.915832+00:00",
+  "endedAt": "2026-11-04T19:14:40.450658+00:00",
+  "command": [
+    "corepack.cmd",
+    "pnpm",
+    "exec",
+    "tsx",
+    "scripts/audit-batch3-runtime.ts"
+  ],
+  "exitCode": 0,
+  "seconds": 5.53,
+  "log": "reports/int7-20261105/candidate-runtime-audit.log",
+  "sha256": "4adaacdc44331f3b7a7869965597b12af775414ec01747789a00daca472c7a27",
+  "environment": "allowlisted OS variables only; CI=1, telemetry disabled, NODE_OPTIONS=4096; no service credentials or env files"
+}
