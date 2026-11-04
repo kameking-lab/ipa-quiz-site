@@ -48,5 +48,5 @@ for path in sorted(root.glob("R?AC??-W.pdf")):
     expected = 5 if "GZ" in path.name else (20 if "X" in path.name else (10 if "H" in path.name else 15))
     assert [q["qNumber"] for q in questions] == list(range(1, expected + 1)), (path.name, len(questions))
     papers[path.stem] = questions
-(root / "parsed.json").write_text(json.dumps(papers, ensure_ascii=False, indent=2) + "\n")
+(root / "parsed.json").write_text(json.dumps(papers, ensure_ascii=False, indent=2) + "\n", encoding="utf-8", newline="\n")
 print({name: len(rows) for name, rows in papers.items()})

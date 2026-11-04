@@ -130,6 +130,10 @@ for (const rank of [1, 2, 3]) {
     });
 
     it("keeps routes, public registries and lazy loading closed", async () => {
+      const manifest = JSON.parse(readFileSync(join(process.cwd(), "data/qualification-staging/khk-reito/manifest.json"), "utf8"));
+      const sourcePack = JSON.parse(readFileSync(join(process.cwd(), `data/exam-library/source-packs/${code}.json`), "utf8"));
+      expect(manifest.publicAllowed).toBe(false);
+      expect(sourcePack.publicAllowed).toBe(false);
       expect(defaultPracticeSession(code)).toBe("houki");
       expect(practiceSessionLabel("houki", code)).toBe("法令");
       expect(practiceSessionLabel("hoan", code)).toBe("保安管理技術");

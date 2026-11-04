@@ -15,9 +15,9 @@ letter = "GHI"[rank - 1]
 code = f"khk-reito-{rank}"
 name = ["第一種", "第二種", "第三種"][rank - 1] + "冷凍機械"
 stage = Path("data/qualification-staging/khk-reito")
-parsed = json.loads((root / "parsed.json").read_text())
-notes = json.loads((stage / (["first", "second", "third"][rank - 1] + "-notes.json")).read_text())
-models = json.loads((stage / "descriptive-review.json").read_text())
+parsed = json.loads((root / "parsed.json").read_text(encoding="utf-8"))
+notes = json.loads((stage / (["first", "second", "third"][rank - 1] + "-notes.json")).read_text(encoding="utf-8"))
+models = json.loads((stage / "descriptive-review.json").read_text(encoding="utf-8"))
 glyphs = {7713: "摺", 20273: "隙", 7966: "汲", 9477: "A", 9479: "C", 9480: "D", 9487: "K", 9488: "L", 9491: "O", 9492: "P", 9498: "V", 9509: "a", 9516: "h", 9524: "p", 9525: "q", 9526: "r", 9528: "t", 9530: "v"}
 
 
@@ -38,7 +38,7 @@ def url(filename, year):
 
 
 def answer_rows(year):
-    text = (root / f"R{year - 2018}fy_kaitou.txt").read_text()
+    text = (root / f"R{year - 2018}fy_kaitou.txt").read_text(encoding="utf-8")
     if year == 2025:
         rows = re.findall(rf"^{letter}([XYZ]) .+?((?:[1-5] )+[1-5])(?: ＊.*)?$", text, re.M)
         return {kind: [int(n) for n in nums.split()] for kind, nums in rows}
@@ -146,6 +146,6 @@ if rank == 1:
                             subject="学識", questionCount=5, status="downloaded-official-pdf"))
 out = Path("data/questions") / code
 out.mkdir(exist_ok=True)
-(out / "latest-two.json").write_text(json.dumps(records, ensure_ascii=False, indent=2) + "\n")
-(stage / f"{code}-sources.json").write_text(json.dumps(sources, ensure_ascii=False, indent=2) + "\n")
+(out / "latest-two.json").write_text(json.dumps(records, ensure_ascii=False, indent=2) + "\n", encoding="utf-8", newline="\n")
+(stage / f"{code}-sources.json").write_text(json.dumps(sources, ensure_ascii=False, indent=2) + "\n", encoding="utf-8", newline="\n")
 print(code, len(records), "original questions")
