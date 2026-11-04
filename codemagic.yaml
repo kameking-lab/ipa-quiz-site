@@ -62,7 +62,9 @@ workflows:
             exit 1
           fi
           echo "BUILD_NUMBER=$((10#$LATEST_BUILD_NUMBER + 1))" >> "$CM_ENV"
-      - name: Generate native project, plugins, privacy manifest and icon
+      # Optional MOBILE_ADS_* settings in kakomon_ios are consumed by ios:prepare.
+      # Missing values produce a functioning app with ads disabled.
+      - name: Generate native project, Ads SDK, privacy manifest and icon
         script: |
           set -euo pipefail
           cd "$CM_BUILD_DIR/mobile"

@@ -2,11 +2,18 @@ import { fireEvent, render, waitFor } from "@testing-library/react";
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 
 import { ContentEndAd } from "@/components/ads/ContentEndAd";
+const store = vi.hoisted(() => ({ state: { available: false, ready: false, client: "ca-pub-1234567890123456", slot: "1234567890" } }));
+vi.mock("@/lib/ads/native-consent", () => ({
+  getNativeAdsState: () => store.state,
+  getNativeAdsServerState: () => store.state,
+  subscribeNativeAds: () => () => {},
+  startNativeAds: () => Promise.resolve(),
+}));
 vi.mock("@/mobile/shared/contracts", () => ({ nativeClient: () => Boolean((window as unknown as { nativeTest?: boolean }).nativeTest) }));
 
 vi.mock("next/script", () => ({
-  default: ({ onReady }: { onReady?: () => void }) => (
-    <button data-testid="load-ad-script" onClick={onReady}>load</button>
+  default: ({ onReady, onError }: { onReady?: () => void; onError?: () => void }) => (
+    <><button data-testid="load-ad-script" onClick={onReady}>load</button><button data-testid="error-ad-script" onClick={onError}>fail</button></>
   ),
 }));
 
@@ -14,6 +21,7 @@ describe("ContentEndAd", () => {
   let resizeCallback: ResizeObserverCallback;
 
   beforeEach(() => {
+    store.state = { ...store.state, available: false, ready: false };
     window.adsbygoogle = [];
     vi.stubGlobal("ResizeObserver", class {
       constructor(callback: ResizeObserverCallback) {
@@ -48,6 +56,23 @@ describe("ContentEndAd", () => {
     expect(container.querySelector("ins")).toBeNull();
     expect(queryByTestId("load-ad-script")).toBeNull();
     expect(window.adsbygoogle).toHaveLength(0);
+  });
+
+  it("uses build-provided ad IDs only after native consent and registration are ready", () => {
+    (window as unknown as { nativeTest?: boolean }).nativeTest = true;
+    store.state = { ...store.state, available: true, ready: true };
+    const { container, getByTestId } = render(<ContentEndAd />);
+    expect(container.querySelector("ins")).toHaveAttribute("data-ad-client", "ca-pub-1234567890123456");
+    expect(container.querySelector("ins")).toHaveAttribute("data-ad-slot", "1234567890");
+    fireEvent.click(getByTestId("load-ad-script"));
+    expect(window.adsbygoogle).toHaveLength(1);
+  });
+
+  it("hides a failed ad script without affecting surrounding learning content", () => {
+    const { container, getByTestId, getByText } = render(<><p>学習コンテンツ</p><ContentEndAd /></>);
+    fireEvent.click(getByTestId("error-ad-script"));
+    expect(container.querySelector("aside")).toHaveClass("hidden");
+    expect(getByText("学習コンテンツ")).toBeVisible();
   });
 
   it("requests the configured content-end unit once after the lazy script is ready", () => {

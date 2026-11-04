@@ -12,9 +12,9 @@ const cspDirectives = [
   // challenges.cloudflare.com: Cloudflare Turnstile (contact-form spam protection)
   // AdSense bootstrap + SODAR traffic-quality runtime. Keep these host-specific;
   // do not relax the whole directive to https:.
-  `script-src 'self' 'unsafe-inline'${isDev ? " 'unsafe-eval'" : ""} https://vercel.live https://cdn.jsdelivr.net https://us-assets.i.posthog.com https://va.vercel-scripts.com https://vitals.vercel-insights.com https://challenges.cloudflare.com https://pagead2.googlesyndication.com https://ep2.adtrafficquality.google`,
+  `script-src 'self' 'unsafe-inline'${isDev ? " 'unsafe-eval'" : ""} https://vercel.live https://cdn.jsdelivr.net https://us-assets.i.posthog.com https://va.vercel-scripts.com https://vitals.vercel-insights.com https://challenges.cloudflare.com https://pagead2.googlesyndication.com https://ep2.adtrafficquality.google https://fundingchoicesmessages.google.com https://www.gstatic.com`,
   "style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net",
-  "img-src 'self' data: blob: https://*.ipa.go.jp https://pagead2.googlesyndication.com https://googleads.g.doubleclick.net https://ep1.adtrafficquality.google https://ep2.adtrafficquality.google",
+  "img-src 'self' data: blob: https://*.ipa.go.jp https://pagead2.googlesyndication.com https://googleads.g.doubleclick.net https://ep1.adtrafficquality.google https://ep2.adtrafficquality.google https://fundingchoicesmessages.google.com https://www.gstatic.com",
   "font-src 'self' https://cdn.jsdelivr.net",
   // worker-src: service worker at /sw.js (PWA)
   "worker-src 'self'",
@@ -23,8 +23,8 @@ const cspDirectives = [
   // object-src: block plugins/Flash XSS vectors entirely
   "object-src 'none'",
   // connect-src: Gemini API + Vercel Live + PostHog + Sentry + Vercel Analytics + Speed Insights + AdSense
-  "connect-src 'self' https://generativelanguage.googleapis.com https://vercel.live wss://ws-us3.pusher.com wss://ws-eu.pusher.com https://us.i.posthog.com https://us-assets.i.posthog.com https://o4511300167860224.ingest.us.sentry.io https://va.vercel-scripts.com https://vitals.vercel-insights.com https://pagead2.googlesyndication.com https://googleads.g.doubleclick.net https://ep1.adtrafficquality.google https://ep2.adtrafficquality.google",
-  "frame-src https://vercel.live https://challenges.cloudflare.com https://googleads.g.doubleclick.net https://ep2.adtrafficquality.google https://www.google.com",
+  "connect-src 'self' https://generativelanguage.googleapis.com https://vercel.live wss://ws-us3.pusher.com wss://ws-eu.pusher.com https://us.i.posthog.com https://us-assets.i.posthog.com https://o4511300167860224.ingest.us.sentry.io https://va.vercel-scripts.com https://vitals.vercel-insights.com https://pagead2.googlesyndication.com https://googleads.g.doubleclick.net https://ep1.adtrafficquality.google https://ep2.adtrafficquality.google https://fundingchoicesmessages.google.com",
+  "frame-src https://vercel.live https://challenges.cloudflare.com https://googleads.g.doubleclick.net https://ep2.adtrafficquality.google https://www.google.com https://fundingchoicesmessages.google.com",
   "frame-ancestors 'none'",
   "base-uri 'self'",
   "form-action 'self'",

@@ -1,8 +1,9 @@
 "use client";
 
 import Script from "next/script";
-import { useCallback, useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState, useSyncExternalStore } from "react";
 import { nativeClient } from "@/mobile/shared/contracts";
+import { getNativeAdsServerState, getNativeAdsState, startNativeAds, subscribeNativeAds } from "@/lib/ads/native-consent";
 
 const ADSENSE_CLIENT = "ca-pub-8751260838396451";
 const CONTENT_END_SLOT = "3773902048";
@@ -14,14 +15,16 @@ declare global {
 }
 
 export function ContentEndAd() {
-  // Render nothing on SSR and before environment detection. In particular,
-  // never mount next/script in the Capacitor WKWebView (even with ATT granted).
+  // Render nothing before environment detection. The native store is enabled
+  // only after configuration, ATT, web CMP and actual WKWebView registration.
   const [browser, setBrowser] = useState(false);
-  useEffect(() => { setBrowser(!nativeClient()); }, []);
-  return browser ? <BrowserContentEndAd /> : null;
+  const native = useSyncExternalStore(subscribeNativeAds, getNativeAdsState, getNativeAdsServerState);
+  useEffect(() => { setBrowser(!nativeClient()); void startNativeAds(); }, []);
+  if (browser) return <BrowserContentEndAd client={ADSENSE_CLIENT} slot={CONTENT_END_SLOT} />;
+  return native.ready ? <BrowserContentEndAd client={native.client} slot={native.slot} /> : null;
 }
 
-function BrowserContentEndAd() {
+function BrowserContentEndAd({ client, slot }: { client: string; slot: string }) {
   const adRef = useRef<HTMLModElement>(null);
   const requestedRef = useRef(false);
   const scriptReadyRef = useRef(false);
@@ -73,17 +76,18 @@ function BrowserContentEndAd() {
       <ins
         ref={adRef}
         className="adsbygoogle block w-full"
-        data-ad-client={ADSENSE_CLIENT}
-        data-ad-slot={CONTENT_END_SLOT}
+        data-ad-client={client}
+        data-ad-slot={slot}
         data-ad-format="auto"
         data-full-width-responsive="true"
       />
       <Script
         id="adsense-content-end"
-        src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${ADSENSE_CLIENT}`}
+        src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${client}`}
         strategy="lazyOnload"
         crossOrigin="anonymous"
         onReady={handleScriptReady}
+        onError={() => setStatus("unfilled")}
       />
     </aside>
   );

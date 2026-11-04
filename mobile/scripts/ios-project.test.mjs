@@ -8,14 +8,16 @@ import { tmpdir } from "node:os";
 import { basename, dirname, join, resolve } from "node:path";
 import { test } from "node:test";
 import { fileURLToPath } from "node:url";
+import { configureAdsPods } from "./configure-ads-pods.mjs";
 
 const mobile = fileURLToPath(new URL("../", import.meta.url));
 const require = createRequire(import.meta.url);
 const { checkAppId } = require("../node_modules/@capacitor/cli/dist/common.js");
 const { loadConfig } = require("../node_modules/@capacitor/cli/dist/config.js");
-const run = (cwd, script, ...args) => spawnSync("ruby", [join(mobile, "scripts", script), ...args], {
-  cwd, encoding: "utf8", env: { ...process.env, BUILD_NUMBER: "37" },
+const runWithEnvironment = (cwd, script, environment, ...args) => spawnSync("ruby", [join(mobile, "scripts", script), ...args], {
+  cwd, encoding: "utf8", env: { ...process.env, BUILD_NUMBER: "37", MOBILE_ADS_ENABLED: "", MOBILE_ADS_WEB_CONSENT_READY: "", MOBILE_ADSENSE_CLIENT: "", MOBILE_ADSENSE_SLOT: "", MOBILE_ADS_CMP_SCRIPT_URL: "", MOBILE_GAD_APPLICATION_ID: "", ...environment },
 });
+const run = (cwd, script, ...args) => runWithEnvironment(cwd, script, {}, ...args);
 const success = (result) => assert.equal(result.status, 0, `${result.error ?? ""}\n${result.stdout}\n${result.stderr}`);
 const ruby = (cwd, code) => {
   const result = spawnSync("ruby", ["-rxcodeproj", "-rjson", "-e", code], { cwd, encoding: "utf8" });
@@ -31,6 +33,7 @@ const fixture = (t) => {
   const native = join(cwd, "ios/App/App");
   mkdirSync(join(native, "Base.lproj"), { recursive: true });
   cpSync(join(mobile, "ios/App/App.xcodeproj"), join(cwd, "ios/App/App.xcodeproj"), { recursive: true });
+  cpSync(join(mobile, "ios/App/Podfile"), join(cwd, "ios/App/Podfile"));
   for (const file of ["Info.plist", "capacitor.config.json", "Base.lproj/Main.storyboard"]) {
     cpSync(join(mobile, "ios/App/App", file), join(native, file));
   }
@@ -48,6 +51,49 @@ const rejects = (cwd, message, ...args) => {
   assert.notEqual(result.status, 0);
   assert.match(result.stderr, message);
 };
+
+test("Ads pod configuration preserves Capacitor hooks and is idempotent", () => {
+  const original = "def capacitor_pods\n  pod 'Capacitor'\nend\ntarget 'App' do\n  capacitor_pods\n  # Add your Pods here\nend\npost_install do |installer|\n  assertDeploymentTarget(installer)\nend\n";
+  const configured = configureAdsPods(original);
+  assert.equal(configureAdsPods(configured), configured);
+  assert.match(configured, /pod 'Google-Mobile-Ads-SDK', '13.11.0'/);
+  assert.match(configured, /assertDeploymentTarget\(installer\)/);
+  assert.match(configured, /IPHONEOS_DEPLOYMENT_TARGET/);
+});
+
+test("native pre-consent rules block ad traffic while keeping learning and CMP reachable", () => {
+  const source = readFileSync(join(mobile, "ios-assets/TrackingTransparencyPlugin.swift"), "utf8");
+  const encoded = source.match(/let rules = #"(.*)"#/)[1];
+  const rules = JSON.parse(encoded);
+  const blocked = url => rules.some(rule => rule.action.type === "block" && new RegExp(rule.trigger["url-filter"]).test(url));
+  for (const host of ["pagead2.googlesyndication.com", "tpc.googlesyndication.com", "googleads.g.doubleclick.net", "www.googleadservices.com", "www.googletagservices.com", "ep1.adtrafficquality.google", "ep2.adtrafficquality.google"]) {
+    assert.equal(blocked(`https://${host}/ads`), true, host);
+  }
+  for (const url of ["https://www.kakomon-ai.jp/quiz", "https://fundingchoicesmessages.google.com/i/pub-1234567890123456?ers=1", "https://www.gstatic.com/image.png", "https://googlesyndication.com.evil.invalid/ads"]) {
+    assert.equal(blocked(url), false, url);
+  }
+});
+
+test("optional ads configuration enables only complete publisher settings and clears stale values", t => {
+  const cwd = fixture(t);
+  const read = () => JSON.parse(ruby(cwd, "puts JSON.generate(Xcodeproj::Plist.read_from_path('ios/App/App/Info.plist'))"));
+  assert.equal(read().KakomonAdsEnabled, false);
+  assert.equal(read().GADApplicationIdentifier, undefined);
+  const settings = { MOBILE_ADS_ENABLED: "true", MOBILE_ADS_WEB_CONSENT_READY: "true", MOBILE_ADSENSE_CLIENT: "ca-pub-1234567890123456", MOBILE_ADSENSE_SLOT: "1234567890", MOBILE_ADS_CMP_SCRIPT_URL: "https://fundingchoicesmessages.google.com/i/pub-1234567890123456?ers=1" };
+  success(runWithEnvironment(cwd, "configure-ios.rb", settings));
+  success(run(cwd, "verify-ios.rb"));
+  assert.equal(read().KakomonAdsEnabled, true);
+  assert.equal(read().GADIntegrationManager, "webview");
+  for (const key of Object.keys(settings)) {
+    success(runWithEnvironment(cwd, "configure-ios.rb", { ...settings, [key]: "" }));
+    assert.equal(read().KakomonAdsEnabled, false, key);
+  }
+  success(runWithEnvironment(cwd, "configure-ios.rb", { ...settings, MOBILE_GAD_APPLICATION_ID: "ca-app-pub-1234567890123456~1234567890" }));
+  assert.equal(read().GADApplicationIdentifier, "ca-app-pub-1234567890123456~1234567890");
+  success(run(cwd, "configure-ios.rb"));
+  assert.equal(read().GADApplicationIdentifier, undefined);
+  assert.equal(read().KakomonAdsenseClient, "");
+});
 
 test("the pinned CLI accepts the generation ID and rejects the registered Apple ID", async () => {
   const config = await loadConfig();

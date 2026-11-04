@@ -1,6 +1,10 @@
 # IOS2 審査提出前の変更（2026-11-04）
 
-## 広告とATTの現状
+## 広告とATT（ADS1で更新）
+
+2026-11-04 14:30のオーナー承認後、ADS1でSDK・WebView登録・ATT・Web CMPゲートを実装した。現行仕様と必須環境変数は [ADS1広告運用](./ads1-advertising.md)、申告は [プライバシー回答案](./ios2-app-privacy.md) を使用する。以下はIOS2時点の履歴で、現行仕様を表さない。
+
+### IOS2時点の判断（履歴）
 
 オーナー方針は広告あり・Tracking Yes。現行のWKWebViewへAdSenseタグだけを表示する構成はGoogleの技術要件を満たさないため、今回のビルドは**広告停止・追跡停止**とする。広告SDKの新規導入は承認待ちで、導入・外部設定・デプロイはしていない。
 
@@ -24,7 +28,7 @@ PrivacyInfo.xcprivacyは実際の今回構成に合わせTracking false・広告
 
 ## 実環境で残る確認
 
-WindowsではSwift/Xcodeコンパイル・署名IPA・実機ATT・広告遮断のネットワーク検証はできない。macOSの `npm run ios:prepare`→Archiveでプラグイン登録・plist・manifest同梱を確認し、初回/許可/拒否/制限/設定変更後の状態を検証する。現行ゲートでは広告もATT要求も出ない。希望するTracking Yesの構成は未完成で、そのまま広告あり申告で提出しない。
+WindowsではSwift/Xcodeコンパイル・署名IPA・実機ATT・広告遮断のネットワーク検証はできない。macOSの `npm run ios:prepare`→Archiveでプラグイン登録・plist・manifest同梱を確認し、初回/許可/拒否/制限/設定変更後の状態を検証する。ADS1で広告有効版のゲートを実装した。広告有効版は実機同意・通信とTracking Yesの回答を照合し、未設定の広告無効版とは出荷設定を区別する。
 
 既存IOS1の本番MobileAuthCodeテーブル（authenticatedAt含む）・RevenueCat対応表が未承認/未適用なら、アプリへの復帰・購入確認は引き続き不可。IOS2のスキーマ変更はないが、既存移行の承認/適用済み確認は別に必要。新規外部サービス契約、DB適用、ASC編集、push/PR/デプロイは今回の作業対象外。
 

@@ -2,7 +2,7 @@
 
 CM3のBundle ID・ネイティブ生成・署名検証手順は [docs/cm3-build.md](./docs/cm3-build.md) を参照。
 
-審査前IOS2の広告/ATT方針と審査用コード認証は [docs/ios2-release.md](./docs/ios2-release.md) を参照。現行WKWebViewのAdSenseは停止しており、広告SDK導入承認と実機検証が残る。
+広告はADS1の承認に基づき、Google Mobile Ads SDK / WebView APIとATT・Web CMPの同意ゲートを導入した。必須環境変数なしでは広告無効のまま動作する。設定・実機確認は [docs/ads1-advertising.md](./docs/ads1-advertising.md)、審査ログインは [docs/ios3-release.md](./docs/ios3-release.md) を参照。
 
 IOS1Dの変更と公開前に必要な実環境確認は [docs/ios1d-release.md](./docs/ios1d-release.md) を参照。
 

@@ -8,6 +8,7 @@ import { ThemeProvider, THEME_BOOTSTRAP_SCRIPT } from "@/components/theme-provid
 import { ThemeToggle } from "@/components/ThemeToggle";
 import { SiteHeader } from "@/components/SiteHeader";
 import { NativeAppHost } from "@/components/NativeAppHost";
+import { NativeAdPrivacy } from "@/components/ads/NativeAdPrivacy";
 import { ServiceWorkerRegistration } from "@/components/ServiceWorkerRegistration";
 import { MobileInstallProvider } from "@/components/pwa/MobileInstallProvider";
 import { DeferredLayoutWidgets } from "@/components/DeferredLayoutWidgets";
@@ -268,6 +269,7 @@ export default function RootLayout({
                     <ul className="space-y-0">
                       <li><Link href="/terms" className="block py-2.5 hover:text-foreground">利用規約</Link></li>
                       <li><Link href="/privacy" className="block py-2.5 hover:text-foreground">プライバシーポリシー</Link></li>
+                      <li><NativeAdPrivacy /></li>
                       <li><Link href="/license" className="block py-2.5 hover:text-foreground">コンテンツ方針</Link></li>
                       <li><Link href="/operator" className="block py-2.5 hover:text-foreground">運営者情報・特商法</Link></li>
                       <li><Link href="/about#attribution" className="block py-2.5 hover:text-foreground">公式問題の著作権・出典</Link></li>
