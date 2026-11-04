@@ -5,6 +5,7 @@ there are no retries, alternate hosts, credentials, or access-control workaround
 """
 import hashlib
 import json
+from datetime import date
 from pathlib import Path
 import re
 import unicodedata
@@ -75,12 +76,12 @@ def main():
                                "scope": "令和4年法律第69号、令和6年政令第172号・国土交通省令第68号に基づく規定",
                                "sourcePage": 1
                            }] if year == 2025 else [])})
-    manifest = {"checkedOn": "2026-11-04", "publicAllowed": False,
+    manifest = {"checkedOn": date.today().isoformat(), "publicAllowed": False,
                 "ownerDecisionAt": "2026-11-04T06:10:00+09:00",
                 "ingestionState": "source-metadata-only", "ingestedQuestionCount": 0,
                 "rounds": rounds}
     DEST.parent.mkdir(parents=True, exist_ok=True)
-    DEST.write_text(json.dumps(manifest, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    DEST.write_bytes((json.dumps(manifest, ensure_ascii=False, indent=2) + "\n").encode("utf-8"))
     for item in rounds:
         print(item["qualificationSlug"], item["year"],
               [doc["status"] for doc in item["questionDocuments"]],
