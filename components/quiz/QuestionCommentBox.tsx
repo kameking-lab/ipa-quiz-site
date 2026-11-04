@@ -1,9 +1,12 @@
 "use client";
 
 import * as React from "react";
+import Link from "next/link";
 import { MessageSquare, Send } from "lucide-react";
 import { LS_KEYS } from "@/lib/storage/keys";
 import { cn } from "@/lib/utils";
+import { submitSupport } from "@/lib/feedback/submit";
+import { readLocalFeedback } from "@/lib/feedback/local-data";
 
 export interface QuestionComment {
   id: string;
@@ -12,6 +15,7 @@ export interface QuestionComment {
   createdAt: number;
   /** 'pending' until light client moderation passes, 'visible' for the author's own list */
   status: "pending" | "visible" | "rejected";
+  receiptId?: string;
 }
 
 const MAX_LEN = 800;
@@ -19,8 +23,10 @@ const MAX_LEN = 800;
 function readAll(): QuestionComment[] {
   if (typeof window === "undefined") return [];
   try {
-    const raw = window.localStorage.getItem(LS_KEYS.questionFeedback);
-    return raw ? (JSON.parse(raw) as QuestionComment[]) : [];
+    const legacy = readLocalFeedback(LS_KEYS.questionFeedback);
+    const current = readLocalFeedback(LS_KEYS.questionComments);
+    const items: unknown[] = [...(Array.isArray(current) ? current : []), ...(Array.isArray(legacy) ? legacy : [])];
+    return items.filter((item): item is QuestionComment => !!item && typeof item === "object" && "id" in item && typeof item.id === "string" && "questionId" in item && typeof item.questionId === "string" && "body" in item && typeof item.body === "string").filter((item, index, all) => all.findIndex(other => other.id === item.id) === index);
   } catch {
     return [];
   }
@@ -29,7 +35,7 @@ function readAll(): QuestionComment[] {
 function writeAll(list: QuestionComment[]): void {
   if (typeof window === "undefined") return;
   try {
-    window.localStorage.setItem(LS_KEYS.questionFeedback, JSON.stringify(list.slice(0, 1000)));
+    window.localStorage.setItem(LS_KEYS.questionComments, JSON.stringify(list.slice(0, 1000)));
   } catch {
     // ignore
   }
@@ -46,10 +52,14 @@ function looksLikePersonalInfo(text: string): boolean {
 }
 
 export function QuestionCommentBox({ questionId }: { questionId: string }) {
+  return <QuestionCommentForm key={questionId} questionId={questionId} />;
+}
+function QuestionCommentForm({ questionId }: { questionId: string }) {
   const [comments, setComments] = React.useState<QuestionComment[]>([]);
   const [input, setInput] = React.useState("");
   const [error, setError] = React.useState<string | null>(null);
   const [sending, setSending] = React.useState(false);
+  const [receiptId, setReceiptId] = React.useState("");
   const inputRef = React.useRef<HTMLTextAreaElement>(null);
 
   React.useEffect(() => {
@@ -59,6 +69,7 @@ export function QuestionCommentBox({ questionId }: { questionId: string }) {
 
   const submit = async () => {
     setError(null);
+    setReceiptId("");
     const body = input.trim();
     if (!body) return;
     if (body.length > MAX_LEN) {
@@ -79,36 +90,33 @@ export function QuestionCommentBox({ questionId }: { questionId: string }) {
       createdAt: Date.now(),
       status: "visible",
     };
-    const all = readAll();
-    all.unshift(entry);
-    writeAll(all);
-    setComments(all.filter((c) => c.questionId === questionId));
-    setInput("");
     try {
-      await fetch("/api/contact", {
-        method: "POST",
-        headers: { "content-type": "application/json" },
-        body: JSON.stringify({
+      const receipt = await submitSupport({
           kind: "question-comment",
           questionId,
           comment: body,
-        }),
       });
-    } catch {
-      // best-effort
+      const all = [{ ...entry, receiptId: receipt }, ...readAll()];
+      writeAll(all);
+      setComments(all.filter((c) => c.questionId === questionId));
+      setInput("");
+      setReceiptId(receipt);
+    } catch (cause) {
+      setError(cause instanceof Error ? cause.message : "送信できませんでした。再送信してください。");
+    } finally {
+      setSending(false);
     }
-    setSending(false);
   };
 
   return (
     <section className="mt-6 rounded-2xl border border-zinc-200 bg-white p-4 dark:border-zinc-800 dark:bg-zinc-950">
       <h3 className="mb-2 flex items-center gap-2 text-sm font-semibold text-zinc-800 dark:text-zinc-100">
         <MessageSquare className="h-4 w-4 text-sky-600 dark:text-sky-400" />
-        補足解説・別解の共有
+        運営へ補足解説・別解を送る
       </h3>
       <p className="mb-3 text-[11px] text-zinc-500 dark:text-zinc-400">
-        補足解説や別解の共有用です。解説の誤りは各問題の解説ページにある「誤りを報告」ボタンからお知らせください。
-        教育貢献プロジェクトとして全件目を通します。個人情報は投稿しないでください。
+        運営への連絡用です。他の利用者には公開されません。送信できた内容の控えをこの端末に保存します。
+        解説の誤りは「誤りを報告」から、返信が必要な場合はお問い合わせをご利用ください。個人情報は入力しないでください。
       </p>
 
       <label htmlFor={`qcomment-${questionId}`} className="sr-only">
@@ -118,6 +126,7 @@ export function QuestionCommentBox({ questionId }: { questionId: string }) {
         id={`qcomment-${questionId}`}
         ref={inputRef}
         value={input}
+        disabled={sending}
         onChange={(e) => setInput(e.target.value.slice(0, MAX_LEN))}
         rows={3}
         maxLength={MAX_LEN}
@@ -137,15 +146,17 @@ export function QuestionCommentBox({ questionId }: { questionId: string }) {
         <button
           onClick={submit}
           disabled={sending || !input.trim()}
-          className="flex items-center gap-1 rounded-full bg-sky-600 px-3 py-1.5 text-xs font-semibold text-white shadow-sm transition hover:bg-sky-700 disabled:opacity-50"
+          className="flex min-h-11 items-center gap-1 rounded-full bg-sky-600 px-3 py-1.5 text-xs font-semibold text-white shadow-sm transition hover:bg-sky-700 disabled:opacity-50"
         >
           <Send className="h-3 w-3" />
-          {sending ? "送信中..." : "投稿する"}
+          {sending ? "送信中..." : "運営へ送信する"}
         </button>
       </div>
+      {receiptId && <p role="status" className="mt-3 break-all text-xs">運営の受付先に送信しました。受付番号: {receiptId}</p>}
+      <Link href="/contact" className="inline-flex min-h-11 items-center text-xs underline">返信が必要なお問い合わせ</Link>
 
       {comments.length > 0 && (
-        <ul className="mt-4 space-y-2 border-t border-zinc-100 pt-3 text-sm dark:border-zinc-800">
+        <ul aria-label="この端末に保存した控え・以前のメモ" className="mt-4 space-y-2 border-t border-zinc-100 pt-3 text-sm dark:border-zinc-800">
           {comments.slice(0, 5).map((c) => (
             <li
               key={c.id}
@@ -154,6 +165,7 @@ export function QuestionCommentBox({ questionId }: { questionId: string }) {
               <p className="whitespace-pre-wrap text-xs leading-relaxed">{c.body}</p>
               <p className="mt-1 text-[10px] text-zinc-400 dark:text-zinc-500">
                 {new Date(c.createdAt).toLocaleString()}
+                {c.receiptId ? `・受付番号: ${c.receiptId}` : "・以前の端末内メモ（送信確認なし）"}
               </p>
             </li>
           ))}

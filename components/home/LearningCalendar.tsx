@@ -128,6 +128,7 @@ export function LearningCalendar() {
         </div>
         <Link
           href="/account/dashboard"
+          prefetch={false}
           className="inline-flex min-h-[40px] shrink-0 items-center gap-0.5 rounded-md px-2 py-1 text-[11px] font-medium text-sky-700 hover:bg-sky-50 dark:text-sky-300 dark:hover:bg-sky-950/40"
         >
           詳細
@@ -209,7 +210,7 @@ export function LearningCalendar() {
                   </div>
                   <p className="text-xs text-zinc-600 dark:text-zinc-400">
                     {selected.label}は{selected.count}問解きました。間違えた問題は
-                    <Link href="/account/dashboard" className="text-sky-600 underline underline-offset-2 dark:text-sky-400">
+                    <Link href="/account/dashboard" prefetch={false} className="text-sky-600 underline underline-offset-2 dark:text-sky-400">
                       ダッシュボード
                     </Link>
                     から復習できます。

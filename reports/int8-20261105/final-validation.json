@@ -1,0 +1,626 @@
+{
+  "timestamp": "2026-11-04T23:44:14.712Z",
+  "buildId": "rLYtLffAkkksdVeHFcCJ4",
+  "localBuildCount": 1,
+  "applicationSourceHash": "50003d093dcaadda95f8ed4bddc43d2649cc3c060499267c1a7f4574911bee7d",
+  "checks": [
+    {
+      "label": "typecheck-final",
+      "args": [
+        "typecheck"
+      ],
+      "started": "2026-11-04T23:35:33.222Z",
+      "finished": "2026-11-04T23:37:00.580Z",
+      "elapsedMs": 87358,
+      "code": 0,
+      "signal": null,
+      "baseHead": "f95bd49d0a9affc4ad34795b94dc9d3f20ecf9eb",
+      "sourceHash": "50003d093dcaadda95f8ed4bddc43d2649cc3c060499267c1a7f4574911bee7d",
+      "environment": "OS allowlist only; no env files or service credentials",
+      "logSha256": "3e208f766fb4f0d94cee68a7457aab027beba3639af241b9d217a8c0b156ea02",
+      "buildId": "rLYtLffAkkksdVeHFcCJ4"
+    },
+    {
+      "label": "lint-final",
+      "args": [
+        "lint"
+      ],
+      "started": "2026-11-04T23:07:50.069Z",
+      "finished": "2026-11-04T23:08:42.851Z",
+      "elapsedMs": 52782,
+      "code": 0,
+      "signal": null,
+      "baseHead": "f95bd49d0a9affc4ad34795b94dc9d3f20ecf9eb",
+      "sourceHash": "50003d093dcaadda95f8ed4bddc43d2649cc3c060499267c1a7f4574911bee7d",
+      "environment": "OS allowlist only; no env files or service credentials",
+      "logSha256": "e37dbddf5aef4392fe86810c001ea90edf1b23ae823dd0bef4cb25e2ef57a201",
+      "buildId": null
+    },
+    {
+      "label": "test-final",
+      "args": [
+        "test",
+        "--maxWorkers=4",
+        "--reporter=default",
+        "--reporter=json",
+        "--outputFile=reports/int8-20261105/test-final.json"
+      ],
+      "started": "2026-11-04T23:33:54.874Z",
+      "finished": "2026-11-04T23:40:39.958Z",
+      "elapsedMs": 405084,
+      "code": 0,
+      "signal": null,
+      "baseHead": "f95bd49d0a9affc4ad34795b94dc9d3f20ecf9eb",
+      "sourceHash": "50003d093dcaadda95f8ed4bddc43d2649cc3c060499267c1a7f4574911bee7d",
+      "environment": "OS allowlist only; no env files or service credentials",
+      "logSha256": "5b41252c2488365d2dba7b624fadf7e08f0e7031b380240ff853858f7982927d",
+      "buildId": "rLYtLffAkkksdVeHFcCJ4"
+    },
+    {
+      "label": "validate",
+      "args": [
+        "validate:questions"
+      ],
+      "started": "2026-11-04T23:01:29.893Z",
+      "finished": "2026-11-04T23:01:36.961Z",
+      "elapsedMs": 7068,
+      "code": 0,
+      "signal": null,
+      "baseHead": "f95bd49d0a9affc4ad34795b94dc9d3f20ecf9eb",
+      "sourceHash": "bed99334c4cf55b4a32a0b2d9bf46d16e375edf05eb4b7d63525f2499812aa61",
+      "environment": "OS allowlist only; no env files or service credentials",
+      "logSha256": "74ff80ec36cb0d4b4231e12906b0a783735c43df1d458cbbe31eb8350fa11bf7",
+      "buildId": null
+    },
+    {
+      "label": "build",
+      "args": [
+        "build"
+      ],
+      "started": "2026-11-04T23:08:41.956Z",
+      "finished": "2026-11-04T23:19:10.425Z",
+      "elapsedMs": 628469,
+      "code": 0,
+      "signal": null,
+      "baseHead": "f95bd49d0a9affc4ad34795b94dc9d3f20ecf9eb",
+      "sourceHash": "50003d093dcaadda95f8ed4bddc43d2649cc3c060499267c1a7f4574911bee7d",
+      "environment": "OS allowlist only; no env files or service credentials",
+      "logSha256": "5eeb90cddf20a8e0f30f9e84d46d5b5d67084c1519b6db220d92ad176728c432",
+      "buildId": "rLYtLffAkkksdVeHFcCJ4"
+    },
+    {
+      "label": "e2e-final",
+      "args": [
+        "e2e"
+      ],
+      "started": "2026-11-04T23:24:03.210Z",
+      "finished": "2026-11-04T23:28:05.260Z",
+      "elapsedMs": 242050,
+      "code": 0,
+      "signal": null,
+      "baseHead": "f95bd49d0a9affc4ad34795b94dc9d3f20ecf9eb",
+      "sourceHash": "50003d093dcaadda95f8ed4bddc43d2649cc3c060499267c1a7f4574911bee7d",
+      "environment": "OS allowlist only; no env files or service credentials",
+      "logSha256": "252c820fe1185afc14886ac3ba63ffe3bef449b753044140fa252486bda693b5",
+      "buildId": "rLYtLffAkkksdVeHFcCJ4"
+    },
+    {
+      "label": "gates",
+      "args": [
+        "exec",
+        "node",
+        "--test",
+        "scripts/vercel-migrate.test.mjs",
+        ".github/scripts/e2e-workflow.test.mjs"
+      ],
+      "started": "2026-11-04T23:01:29.881Z",
+      "finished": "2026-11-04T23:01:31.700Z",
+      "elapsedMs": 1819,
+      "code": 0,
+      "signal": null,
+      "baseHead": "f95bd49d0a9affc4ad34795b94dc9d3f20ecf9eb",
+      "sourceHash": "bed99334c4cf55b4a32a0b2d9bf46d16e375edf05eb4b7d63525f2499812aa61",
+      "environment": "OS allowlist only; no env files or service credentials",
+      "logSha256": "0117c04de3c167d4f7d2e6352c479c591b04915d79ef2847cbc2af4dc18794a9",
+      "buildId": null
+    },
+    {
+      "label": "safety",
+      "args": [
+        "exec",
+        "node",
+        "scripts/validate-safety-exams.mjs",
+        "--require-consultant-five-years",
+        "--require-explanations"
+      ],
+      "started": "2026-11-04T23:03:01.335Z",
+      "finished": "2026-11-04T23:03:03.972Z",
+      "elapsedMs": 2637,
+      "code": 0,
+      "signal": null,
+      "baseHead": "f95bd49d0a9affc4ad34795b94dc9d3f20ecf9eb",
+      "sourceHash": "bed99334c4cf55b4a32a0b2d9bf46d16e375edf05eb4b7d63525f2499812aa61",
+      "environment": "OS allowlist only; no env files or service credentials",
+      "logSha256": "a9ddf45008bfd29698ec04ab769fd3dec1a1c80631fd818de712181ec2d4264a",
+      "buildId": null
+    },
+    {
+      "label": "government",
+      "args": [
+        "exec",
+        "node",
+        "scripts/validate-government-source-links.mjs",
+        "--skip-live"
+      ],
+      "started": "2026-11-04T23:03:01.357Z",
+      "finished": "2026-11-04T23:03:01.715Z",
+      "elapsedMs": 358,
+      "code": 0,
+      "signal": null,
+      "baseHead": "f95bd49d0a9affc4ad34795b94dc9d3f20ecf9eb",
+      "sourceHash": "bed99334c4cf55b4a32a0b2d9bf46d16e375edf05eb4b7d63525f2499812aa61",
+      "environment": "OS allowlist only; no env files or service credentials",
+      "logSha256": "f0de96d9787a2e9875f4f5a8b5f5935de8c738b3505b5524e91843cf560700eb",
+      "buildId": null
+    },
+    {
+      "label": "integration-audit",
+      "args": [
+        "exec",
+        "node",
+        "reports/int8-20261105/audit.mjs"
+      ],
+      "started": "2026-11-04T23:04:01.854Z",
+      "finished": "2026-11-04T23:04:02.252Z",
+      "elapsedMs": 398,
+      "code": 0,
+      "signal": null,
+      "baseHead": "f95bd49d0a9affc4ad34795b94dc9d3f20ecf9eb",
+      "sourceHash": "bed99334c4cf55b4a32a0b2d9bf46d16e375edf05eb4b7d63525f2499812aa61",
+      "environment": "OS allowlist only; no env files or service credentials",
+      "logSha256": "45a1ab8ff0327cb1030380f303900bd9eba25523005448b2997bb37aa51a8557",
+      "buildId": null
+    },
+    {
+      "label": "visual",
+      "args": [
+        "exec",
+        "node",
+        "reports/int8-20261105/visual.mjs"
+      ],
+      "started": "2026-11-04T23:20:05.665Z",
+      "finished": "2026-11-04T23:20:21.144Z",
+      "elapsedMs": 15479,
+      "code": 0,
+      "signal": null,
+      "baseHead": "f95bd49d0a9affc4ad34795b94dc9d3f20ecf9eb",
+      "sourceHash": "50003d093dcaadda95f8ed4bddc43d2649cc3c060499267c1a7f4574911bee7d",
+      "environment": "OS allowlist only; no env files or service credentials",
+      "logSha256": "9553667b821392e756c7715cdd71309cccc3d10a833f7c334b1f6a94eb64f198",
+      "buildId": "rLYtLffAkkksdVeHFcCJ4"
+    },
+    {
+      "label": "qa-lint",
+      "args": [
+        "exec",
+        "eslint",
+        "tests/e2e/contact-site.spec.ts",
+        "__tests__/billing/QuizClient.quiet.test.tsx",
+        "__tests__/streak/practice-quiet.test.tsx",
+        "reports/int8-20261105/audit.mjs",
+        "reports/int8-20261105/check.mjs",
+        "reports/int8-20261105/visual.mjs",
+        "reports/int8-20261105/finalize-evidence.mjs"
+      ],
+      "started": "2026-11-04T23:35:33.221Z",
+      "finished": "2026-11-04T23:35:44.522Z",
+      "elapsedMs": 11301,
+      "code": 0,
+      "signal": null,
+      "baseHead": "f95bd49d0a9affc4ad34795b94dc9d3f20ecf9eb",
+      "sourceHash": "50003d093dcaadda95f8ed4bddc43d2649cc3c060499267c1a7f4574911bee7d",
+      "environment": "OS allowlist only; no env files or service credentials",
+      "logSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "buildId": "rLYtLffAkkksdVeHFcCJ4"
+    }
+  ],
+  "unit": {
+    "total": 7927,
+    "passed": 7917,
+    "pending": 10,
+    "failed": 0,
+    "skipped": [
+      {
+        "file": "__tests__\\billing\\feedback-postgres.test.ts",
+        "title": "feedback wallet on disposable PostgreSQL migrates, enforces concurrent submissions and prevents cookie/day/network reacquisition",
+        "status": "skipped"
+      },
+      {
+        "file": "__tests__\\billing\\feedback-postgres.test.ts",
+        "title": "feedback wallet on disposable PostgreSQL grants only ten of eleven simultaneous questions, with idempotent reopen across days",
+        "status": "skipped"
+      },
+      {
+        "file": "__tests__\\billing\\feedback-postgres.test.ts",
+        "title": "feedback wallet on disposable PostgreSQL allows only one account to claim a legacy anonymous wallet and blocks logout reuse",
+        "status": "skipped"
+      },
+      {
+        "file": "__tests__\\billing\\feedback-postgres.test.ts",
+        "title": "feedback wallet on disposable PostgreSQL does not stack an account wallet with simultaneous claims from two anonymous browsers",
+        "status": "skipped"
+      },
+      {
+        "file": "__tests__\\billing\\feedback-postgres.test.ts",
+        "title": "feedback wallet on disposable PostgreSQL rolls back both account binding and inserted grant on a mid-transaction failure",
+        "status": "skipped"
+      },
+      {
+        "file": "__tests__\\billing\\feedback-postgres.test.ts",
+        "title": "feedback wallet on disposable PostgreSQL keeps the same balance across auth key/session/realm changes and enforces user uniqueness in SQL",
+        "status": "skipped"
+      },
+      {
+        "file": "__tests__\\billing\\feedback-postgres.test.ts",
+        "title": "feedback wallet on disposable PostgreSQL fails closed for old keyed receipts, then preserves their spent balance after backfill and rotation",
+        "status": "skipped"
+      },
+      {
+        "file": "__tests__\\billing\\feedback-postgres.test.ts",
+        "title": "feedback wallet on disposable PostgreSQL rolls back backfill if old keys or realms already issued duplicate account receipts",
+        "status": "skipped"
+      },
+      {
+        "file": "__tests__\\questions\\kyusui-staging.test.ts",
+        "title": "kyusui private staging, latest two officially published editions matches independent Poppler extraction of the saved official answer PDFs",
+        "status": "skipped"
+      },
+      {
+        "file": "__tests__\\questions\\kyusui-staging.test.ts",
+        "title": "kyusui private staging, latest two officially published editions covers every body word in all four papers using independent Poppler coordinates",
+        "status": "skipped"
+      }
+    ]
+  },
+  "e2e": {
+    "passed": 419,
+    "skipped": 12,
+    "flaky": 2,
+    "failed": 0
+  },
+  "screenshots": [
+    {
+      "name": "sc-390",
+      "url": "http://127.0.0.1:3188/sc",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "overflow": false,
+      "errors": [],
+      "ai": [],
+      "sha256": "b791ff0465e0c4bcc3a42e8f272811c769773b24fe4e7da57449d7f88782ebea"
+    },
+    {
+      "name": "sc-320",
+      "url": "http://127.0.0.1:3188/sc",
+      "viewport": {
+        "width": 320,
+        "height": 844
+      },
+      "overflow": false,
+      "errors": [],
+      "ai": [],
+      "sha256": "7ecb42312b372006e29661d890382a285eab02d8e5ad88be19d3d701525733dc"
+    },
+    {
+      "name": "sc-topics-390",
+      "url": "http://127.0.0.1:3188/sc",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "overflow": false,
+      "errors": [],
+      "ai": [],
+      "sha256": "6685c95680df5586390f726e7f1a58e69e559ef66dd1fef64b18556438ff41ad"
+    },
+    {
+      "name": "sc-afternoon-390",
+      "url": "http://127.0.0.1:3188/sc",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "overflow": false,
+      "errors": [],
+      "ai": [],
+      "sha256": "cd0c901a5c420d94d334f6ca84d91722eb136860ca2ab042a74126160e8274a1"
+    },
+    {
+      "name": "nw-390",
+      "url": "http://127.0.0.1:3188/nw",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "overflow": false,
+      "errors": [],
+      "ai": [],
+      "sha256": "880b0b1bd1b5d78e6549b9aba05c7b87fd1d10589f200d959790ea3c9b2ab430"
+    },
+    {
+      "name": "nw-320",
+      "url": "http://127.0.0.1:3188/nw",
+      "viewport": {
+        "width": 320,
+        "height": 844
+      },
+      "overflow": false,
+      "errors": [],
+      "ai": [],
+      "sha256": "858179017a6e5ae995a472f5e51e8bab6c87de8c81a1d1c1ba253888b6051d45"
+    },
+    {
+      "name": "nw-topics-390",
+      "url": "http://127.0.0.1:3188/nw",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "overflow": false,
+      "errors": [],
+      "ai": [],
+      "sha256": "9776ecb5a42d243686ef473ea9e57978981e6e85c15add6cfcec6e3638b8dd78"
+    },
+    {
+      "name": "nw-afternoon-390",
+      "url": "http://127.0.0.1:3188/nw",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "overflow": false,
+      "errors": [],
+      "ai": [],
+      "sha256": "4911f24facd8a5a4c8e4994863cb46805a3fbdce8f4225d71e76f1fb3352cc5e"
+    },
+    {
+      "name": "st-390",
+      "url": "http://127.0.0.1:3188/st",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "overflow": false,
+      "errors": [],
+      "ai": [],
+      "sha256": "de8c4ee0d90ba83390fc25a88f7a1062a984b935d3e72a7cbe2f6ae4147ce38f"
+    },
+    {
+      "name": "st-320",
+      "url": "http://127.0.0.1:3188/st",
+      "viewport": {
+        "width": 320,
+        "height": 844
+      },
+      "overflow": false,
+      "errors": [],
+      "ai": [],
+      "sha256": "65acffb8fc7b95f72654d06c8897cc47bdf5e6aaa1e35433b7fb93074c1c8d5e"
+    },
+    {
+      "name": "st-topics-390",
+      "url": "http://127.0.0.1:3188/st",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "overflow": false,
+      "errors": [],
+      "ai": [],
+      "sha256": "341e16b5dd303ebdfa187b8e4c8c53af89b505bd49e4c1c479ea8b8a5b3a2526"
+    },
+    {
+      "name": "st-afternoon-390",
+      "url": "http://127.0.0.1:3188/st",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "overflow": false,
+      "errors": [],
+      "ai": [],
+      "sha256": "81f9aa4142f87fc29c54fbc0da3bc91bc77049ebeb167bae71ea6cc8e8b01ac3"
+    },
+    {
+      "name": "sa-390",
+      "url": "http://127.0.0.1:3188/sa",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "overflow": false,
+      "errors": [],
+      "ai": [],
+      "sha256": "a75e7f9ba18ab23a5c9644244bf7bf6bf04933497aaa8e1ebd775d55bee9131a"
+    },
+    {
+      "name": "sa-320",
+      "url": "http://127.0.0.1:3188/sa",
+      "viewport": {
+        "width": 320,
+        "height": 844
+      },
+      "overflow": false,
+      "errors": [],
+      "ai": [],
+      "sha256": "8a6d8bff7a85a1d8609ff9d49342ff797f82cab0dc1e0e79433e2ac955ea0d26"
+    },
+    {
+      "name": "sa-topics-390",
+      "url": "http://127.0.0.1:3188/sa",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "overflow": false,
+      "errors": [],
+      "ai": [],
+      "sha256": "1de347297a63ea1817c7e34ff1301a368c36f98fd02fc25ba06e7cf7f030a030"
+    },
+    {
+      "name": "sa-afternoon-390",
+      "url": "http://127.0.0.1:3188/sa",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "overflow": false,
+      "errors": [],
+      "ai": [],
+      "sha256": "f891389d9b4b34dd43f14f468ad78e177a2cd8102df96ecf6f730c3a5ef3876d"
+    },
+    {
+      "name": "ap-390",
+      "url": "http://127.0.0.1:3188/ap",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "overflow": false,
+      "errors": [],
+      "ai": [],
+      "sha256": "6e5150988c26769f00a771f2a63695270d1994d753050d1795463db48a5acad5"
+    },
+    {
+      "name": "ap-320",
+      "url": "http://127.0.0.1:3188/ap",
+      "viewport": {
+        "width": 320,
+        "height": 844
+      },
+      "overflow": false,
+      "errors": [],
+      "ai": [],
+      "sha256": "62bf02d3715e2a6ce52f419fac7181f6d2b4c7c638d6bf0bed549e9b1d3b420d"
+    },
+    {
+      "name": "ap-topics-390",
+      "url": "http://127.0.0.1:3188/ap",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "overflow": false,
+      "errors": [],
+      "ai": [],
+      "sha256": "ee475bb808beacdc9a706e5385910b9cb11bdb69f1f7a5224acd1725de38bc55"
+    },
+    {
+      "name": "ap-afternoon-390",
+      "url": "http://127.0.0.1:3188/ap",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "overflow": false,
+      "errors": [],
+      "ai": [],
+      "sha256": "1b58ff6ccd169fa46d561b1a9d8a35edce9272bf1f91df43128f7262a9c3727b"
+    },
+    {
+      "name": "blog-practice-before-390",
+      "url": "http://127.0.0.1:3188/blog/it-shikaku-rirekisho-kakikata",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "overflow": false,
+      "errors": [],
+      "ai": [],
+      "sha256": "1a9dc3625b60d79947ce1ddd96c8b3684070f65109820bd1796dedb03039f576"
+    },
+    {
+      "name": "blog-practice-answer-390",
+      "url": "http://127.0.0.1:3188/blog/it-shikaku-rirekisho-kakikata",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "overflow": false,
+      "errors": [],
+      "ai": [],
+      "sha256": "c91f72ce1f99d1c04767481cd2230998a4b283e6981703deb42b35cdfd26984f"
+    },
+    {
+      "name": "blog-continue-quiz-390",
+      "url": "http://127.0.0.1:3188/quiz?mode=topic&exam=ip&session=am&category=%E3%82%BB%E3%82%AD%E3%83%A5%E3%83%AA%E3%83%86%E3%82%A3&question=ip-2009a-am-q20",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "overflow": false,
+      "errors": [],
+      "ai": [],
+      "sha256": "cefa83a9cdb1b0424d6ecf15c1eacc689fac6c4d821515c84cb05781a6fd7ce8"
+    },
+    {
+      "name": "quiz-answer-390",
+      "url": "http://127.0.0.1:3188/quiz?mode=topic&exam=ip&session=am&category=%E3%82%BB%E3%82%AD%E3%83%A5%E3%83%AA%E3%83%86%E3%82%A3&question=ip-2009a-am-q20",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "overflow": false,
+      "errors": [],
+      "ai": [],
+      "sha256": "4476700717f4973e22bb33e20076a5a05c34b2a73a1915dee83753ce49b995bd"
+    },
+    {
+      "name": "benrishi-390",
+      "url": "http://127.0.0.1:3188/benrishi",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "overflow": false,
+      "errors": [],
+      "ai": [],
+      "sha256": "58d765ef3da9bfbf3cd342032a0934a02c53e505d577e0c96e6c9e723d5d2bab"
+    },
+    {
+      "name": "sokuryoshi-390",
+      "url": "http://127.0.0.1:3188/sokuryoshi",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "overflow": false,
+      "errors": [],
+      "ai": [],
+      "sha256": "d352151fa96bfdea9faa62a8f9524744d7736f300789d07d393f3c9ac0ac245e"
+    },
+    {
+      "name": "contact-390",
+      "url": "http://127.0.0.1:3188/contact?site=tsugino",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "overflow": false,
+      "errors": [],
+      "ai": [],
+      "sha256": "4b8d4d40dee5626d87295c8c7ecb683d84f262415b3185aa313d874f87b22f34"
+    }
+  ],
+  "applicationChangedAfterBuild": false,
+  "changedAfterFreeze": [
+    "__tests__/billing/QuizClient.quiet.test.tsx",
+    "__tests__/streak/practice-quiet.test.tsx",
+    "tests/e2e/contact-site.spec.ts"
+  ],
+  "productionDatabaseAccessed": false,
+  "realAiCalled": false,
+  "realSupportSent": false
+}

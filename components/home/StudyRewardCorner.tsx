@@ -3,6 +3,7 @@
 import { useEffect, useId, useRef, useState, useSyncExternalStore } from "react";
 import { LS_KEYS } from "@/lib/storage/keys";
 import { getStudyReward, subscribeStudyReward, type StudyReward } from "@/lib/study-reward";
+import { StudyReturnLink } from "./StudyReturnLink";
 
 const captions = {
   swim: "ぷかぷか、海のひと休み。",
@@ -13,7 +14,7 @@ const captions = {
 };
 
 /** Pure UI entry point for the lightweight local preview. No learning writes. */
-export function RewardCorner({ reward, showIdle = false, playbackToken = 0 }: { reward: StudyReward | null; showIdle?: boolean; playbackToken?: number }) {
+export function RewardCorner({ reward, showIdle = false, playbackToken = 0, showReturn = false }: { reward: StudyReward | null; showIdle?: boolean; playbackToken?: number; showReturn?: boolean }) {
   const [closed, setClosed] = useState(false);
   const [paused, setPaused] = useState(false);
   const [running, setRunning] = useState(false);
@@ -75,6 +76,7 @@ export function RewardCorner({ reward, showIdle = false, playbackToken = 0 }: { 
       </div>
       <div className="reward-copy"><p className="reward-label">{reward?.label ?? "あなたのペースで"}</p><p className="reward-message">{reward ? "1問、回答しました。" : "1問解いたら、小さなごほうび。"}</p><p className="reward-caption">{reward ? captions[theme] : "ここでチワワが待っています。"}</p><div className="reward-actions">{reward && <button type="button" disabled={reduced} onClick={() => { if (moving) { setPaused(true); setRunning(false); } else { setPaused(false); setRunning(true); } }}>{moving ? "動きを止める" : "動きを見る"}</button>}<span>{reduced ? "静止画で表示中" : "無音・6秒でひと休み"}</span></div></div>
     </div>
+    {showReturn && <StudyReturnLink />}
   </section>;
 }
 
@@ -89,5 +91,5 @@ export function StudyRewardCorner({ scope, questionId, showIdle = false, answere
     if (fresh && (!scope || fresh.scope === scope) && (!questionId || fresh.questionId === questionId)) setPlaybackToken(token => token + 1);
   }), [scope, questionId]);
   const reward = answered && latest && (!scope || latest.scope === scope) && (!questionId || latest.questionId === questionId) ? latest : null;
-  return <RewardCorner reward={reward} showIdle={showIdle} playbackToken={playbackToken} />;
+  return <RewardCorner reward={reward} showIdle={showIdle} playbackToken={playbackToken} showReturn={!scope} />;
 }

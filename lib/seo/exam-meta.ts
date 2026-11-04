@@ -4,6 +4,7 @@ import type { ExamCode, Question } from "@/lib/questions/types";
 import { isPracticeReadyQuestion } from "@/lib/questions/filter";
 import { questionSourceEdition } from "@/lib/questions/source-label";
 import { examLabel } from "@/lib/utils";
+import { examEntryDescription, isExamEntryCode } from "@/lib/seo/exam-entry";
 export const EXAM_DESCRIPTIONS: Partial<Record<ExamCode, string>> = {
   "benrishi": "2025・2026年の公式問題・正答・独自解説と原本図表を収録。",
   "sokuryoshi": "2025・2026年の公式問題・正答・独自解説と原本図表を収録。午前56問・午後10大問。午後は必須1題と選択4題から2題。記述・作図は公式解答例で自己確認し、自動採点しません。",
@@ -224,9 +225,11 @@ export function groupByCategory(questions: Question[]): {
         .sort((a, b) => b.count - a.count);
 }
 export function examTopTitle(exam: ExamCode): string {
+    if (isExamEntryCode(exam)) return `${examLabel(exam)} 過去問・午前解説と午後対策`;
     return `${examLabel(exam)} 過去問一覧・AI解説`;
 }
 export function examTopDescription(exam: ExamCode, questionCount: number): string {
+    if (isExamEntryCode(exam)) return examEntryDescription(exam, examFullName(exam), questionCount);
     if (exam === "shika-ishi" || exam === "rinsho-kensagishi" || exam === "shinryo-hoshasengishi")
         return examMetaDescription(exam, questionCount);
     const base = EXAM_DESCRIPTIONS[exam] ?? "";
@@ -552,6 +555,7 @@ function publishedYearRange(exam: ExamCode): string {
     return first === last ? `${first}年度` : `${first}〜${last}年度`;
 }
 export function examMetaDescription(exam: ExamCode, questionCount: number, mode?: "year" | "topic"): string {
+    if (!mode && isExamEntryCode(exam)) return examEntryDescription(exam, examFullName(exam), questionCount);
     const name = EXAM_FULL_NAMES[exam];
     const questions = getQuestionsByExamStrict(exam);
     const yearCount = groupByYearSeason(questions).length;

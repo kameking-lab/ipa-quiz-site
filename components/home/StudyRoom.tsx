@@ -6,6 +6,7 @@ import { presenceExamName } from "@/lib/study-presence";
 import type { MeasuredPresence } from "@/lib/study-presence-contract";
 import { measuredRoom, roomStage } from "@/lib/home/study-room";
 import { StudyRewardCorner } from "./StudyRewardCorner";
+import { StudyReturnLink } from "./StudyReturnLink";
 import styles from "./StudyRoomSeats.module.css";
 
 interface Suggestion { name: string; href: string }
@@ -102,6 +103,7 @@ export function StudyRoom({ snapshot, suggestions }: {
 
       </div>
       <aside className="study-room-sidebar">
+        <StudyReturnLink />
         <p className="study-room-disclosure">学習者数は1時間ごとに取得します。リアルタイム表示ではありません。席と人数は前回取得時点の集計です。</p>
         {snapshot && <div className="study-room-summary">
           <p className="study-kicker">前回取得時点の直近5分の学習状況</p>

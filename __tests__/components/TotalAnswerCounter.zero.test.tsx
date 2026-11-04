@@ -44,7 +44,7 @@ describe("public qualification guidance preserved beside the independent answer 
  });
  it("keeps the directory link available without suggestions",()=>{
   render(<TotalAnswerCounter/>);
-  for(const detail of [null,measured(),{mode:"promotion",snapshot:null}]){emit(detail);expect(screen.getByRole("link")).toHaveAttribute("href",detail?.mode==="measured"?"#home-directory-title":"#choose-qualification");}
+  for(const detail of [null,measured(),{mode:"promotion",snapshot:null}]){emit(detail);expect(screen.getByRole("link",{name:detail?.mode==="measured"?"資格から問題を探す":"ほかの資格を探す"})).toHaveAttribute("href",detail?.mode==="measured"?"#home-directory-title":"#choose-qualification");}
  });
  it("represents 25 historical learners in one expanded room with 12 illustrations and an exact remainder",()=>{
   render(<TotalAnswerCounter suggestions={suggestions}/>);

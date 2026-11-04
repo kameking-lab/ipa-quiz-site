@@ -49,19 +49,20 @@ describe("QuizClient with the real player and local learning stores", () => {
 
     for (let i = 0; i < 5; i += 1) {
       await waitFor(() => {
-        expect(screen.getByRole("complementary", { name: "ログインなしの無料演習枠" })).toHaveTextContent(`今日あと${9 - i}問`);
         expect(screen.getAllByRole("radio")[0]).not.toBeDisabled();
       });
       expect(screen.queryByText("1問、回答しました。")).toBeNull();
       expect(screen.queryByRole("link", { name: /ログイン/ })).toBeNull();
       expect(screen.queryByTestId("achievement-toast")).toBeNull();
       expect(screen.queryByRole("dialog")).toBeNull();
+      expect(screen.queryByRole("complementary", { name: "ログインなしの無料演習枠" })).toBeNull();
       const choice = screen.getAllByRole("radio")[0];
       fireEvent.click(choice); fireEvent.click(choice);
       expect(screen.getByRole("region", { name: /^(正解|不正解)の解説$/ })).toBeInTheDocument();
+      expect(screen.queryByTestId("achievement-toast")).toBeNull();
       expect(createHistoryStore().getAllEntries()).toHaveLength(i + 1);
       expect(getStudyReward()?.questionId).toBe(fe[i].id);
-      // The cumulative count would reset here if the banner re-mounted Player.
+      // The cumulative count must survive every question transition.
       expect(screen.getByLabelText(new RegExp(`回答済み ${i + 1}（`))).toBeInTheDocument();
       if (i < 4) fireEvent.click(screen.getByRole("button", { name: "次の問題へ" }));
     }
@@ -70,7 +71,6 @@ describe("QuizClient with the real player and local learning stores", () => {
     render(<QuizClient billingGateEnabled poolIds={fp.map(q => q.id)} mode="year" exam="fp3" backHref="/fp3" />);
     for (let i = 0; i < 5; i += 1) {
       await waitFor(() => {
-        expect(screen.getByRole("complementary", { name: "ログインなしの無料演習枠" })).toHaveTextContent(`今日あと${4 - i}問`);
         expect(screen.getAllByRole("radio")[0]).not.toBeDisabled();
       });
       expect(screen.queryByText("1問、回答しました。")).toBeNull();
@@ -79,6 +79,7 @@ describe("QuizClient with the real player and local learning stores", () => {
       expect(screen.queryByRole("dialog")).toBeNull();
       fireEvent.click(screen.getAllByRole("radio")[0]);
       expect(screen.getByRole("region", { name: /^(正解|不正解)の解説$/ })).toBeInTheDocument();
+      expect(screen.queryByTestId("achievement-toast")).toBeNull();
       expect(createHistoryStore().getAllEntries()).toHaveLength(i + 6);
       if (i < 4) fireEvent.click(screen.getByRole("button", { name: "次の問題へ" }));
     }
@@ -89,7 +90,7 @@ describe("QuizClient with the real player and local learning stores", () => {
     expect(limit).toHaveTextContent("本日の無料連続演習枠（10問）を使い切りました");
     expect(limit).toHaveTextContent("10/31 0:00（日本時間）");
     expect(screen.getByRole("link", { name: "保存済みの履歴を無料で復習する" })).toHaveAttribute("href", "/review");
-    const billing = new URL(screen.getByRole("link", { name: "有料にして続きを解く" }).getAttribute("href")!, window.location.origin);
+    const billing = new URL(screen.getByRole("link", { name: "月額プランの料金・条件を見る" }).getAttribute("href")!, window.location.origin);
     expect(billing.pathname).toBe("/billing");
     const resume = billing.searchParams.get("returnTo");
     expect(resume).toBe(`/quiz?mode=year&exam=fp3&question=${fp[5].id}`);
@@ -109,7 +110,7 @@ describe("QuizClient with the real player and local learning stores", () => {
     expect(limits).toHaveLength(1);
     expect(limits[0][1]).toMatchObject({ utm_source: "tsugino_shikaku", utm_content: "fe.hero", reason: "last_free_question", free_daily: 10 });
     expect(capture.mock.calls.some(call => call[0] === "quiz_started" && call[1].utm_content === "fe.hero")).toBe(true);
-    const upgrade = screen.getByRole("link", { name: "有料にして続きを解く" });
+    const upgrade = screen.getByRole("link", { name: "月額プランの料金・条件を見る" });
     upgrade.addEventListener("click", event => event.preventDefault());
     fireEvent.click(upgrade);
     expect(capture.mock.calls.some(call => call[0] === "practice_upgrade_clicked" && call[1].utm_content === "fe.hero")).toBe(true);

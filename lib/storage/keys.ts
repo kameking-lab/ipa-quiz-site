@@ -22,6 +22,8 @@ export const LS_KEYS = {
   feedbackUnlockPendingClaim: "ipa-quiz:feedback-unlock-pending-claim:v1",
   feedbackGateShown: "ipa-quiz:feedback-gate-shown:v1",
   questionFeedback: "ipa-quiz:question-feedback:v1",
+  questionComments: "ipa-quiz:question-comments:v1",
+  questionRatings: "ipa-quiz:question-ratings:v1",
   publicFeedback: "ipa-quiz:public-feedback:v1",
   chatSessions: "ipa-quiz:chat-sessions:v1",
   motivation: "ipa-quiz:motivation:v1",

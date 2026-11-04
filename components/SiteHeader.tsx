@@ -222,6 +222,7 @@ function SiteHeaderContent({ search }: { search: Pick<URLSearchParams, "get"> | 
             </Link>
             <Link
               href="/account/dashboard"
+              prefetch={false}
               className={cn(
                 "rounded-md px-3 py-1.5 text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background",
                 isAccountActive
@@ -342,6 +343,7 @@ function SiteHeaderContent({ search }: { search: Pick<URLSearchParams, "get"> | 
                 <SheetClose asChild>
                   <Link
                     href="/account/dashboard"
+                    prefetch={false}
                     className="flex min-h-[44px] items-center gap-3 rounded-lg px-3 py-2.5 text-sm font-medium text-foreground transition-colors hover:bg-muted"
                   >
                     <LineChart

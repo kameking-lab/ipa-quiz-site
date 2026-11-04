@@ -8,10 +8,10 @@ import { QuizClient } from "@/app/quiz/QuizClient";
 import { FE_QUESTIONS_2009_AUTUMN_AM } from "@/data/questions/fe/by-year/2009-autumn-am";
 beforeEach(() => { localStorage.clear(); sessionStorage.clear(); observed.player.mockClear(); observed.native = false; });
 afterEach(() => { cleanup(); vi.unstubAllGlobals(); });
-it.each([[false, false], [true, false], [false, true], [true, true]])("keeps quiet presentation scoped to gated or native practice: gate=%s native=%s", async (enabled, native) => {
+it.each([[false, false], [true, false], [false, true], [true, true]])("keeps practice uninterrupted across public, gated and native entry: gate=%s native=%s", async (enabled, native) => {
   observed.native = native;
   const question = FE_QUESTIONS_2009_AUTUMN_AM[0];
   vi.stubGlobal("fetch", vi.fn(async () => Response.json(enabled || native ? { question, access: { kind: "guest", remaining: 9, freeDaily: 10, resetAt: "2026-11-05T15:00:00Z", retryAfter: null } } : question)));
   render(<QuizClient billingGateEnabled={enabled} poolIds={[question.id]} mode="year" exam="fe" backHref="/fe" />);
-  await waitFor(() => expect(observed.player).toHaveBeenLastCalledWith(expect.objectContaining({ quiet: enabled || native })));
+  await waitFor(() => expect(observed.player).toHaveBeenLastCalledWith(expect.objectContaining({ quiet: true })));
 });

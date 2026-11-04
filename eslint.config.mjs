@@ -36,6 +36,10 @@ const eslintConfig = defineConfig([
     ".next/**",
     "out/**",
     "build/**",
+    // Local performance tools, traces and preserved production build artifacts.
+    ".cache/**",
+    "test-results/**",
+    "playwright-report/**",
     // Local PDF/OCR outputs and one-off audit bundles are not application code.
     "tmp/**",
     // Historical generated audit evidence is retained byte-for-byte.

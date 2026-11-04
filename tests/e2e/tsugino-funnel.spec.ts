@@ -88,7 +88,7 @@ for (const width of [390, 1440]) {
     await start.click();
     await page.waitForURL(/\/quiz\?/);
     for (let index = 0; index < 10; index++) {
-      await expect(page.getByRole("complementary", { name: "ログインなしの無料演習枠" })).toContainText(`今日あと${9 - index}問`, { timeout: 30_000 });
+      await expect(page.getByRole("complementary", { name: "ログインなしの無料演習枠" })).toHaveCount(0);
       await expect(page.getByRole("radio").first()).toBeEnabled();
       await page.getByRole("radio").first().click();
       await expect(page.getByRole("region", { name: /^(正解|不正解)の解説$/ })).toBeVisible();
@@ -98,7 +98,7 @@ for (const width of [390, 1440]) {
     await expect(page.getByRole("radiogroup")).toHaveCount(0);
     expect(new URL(page.url()).searchParams.get("year")).toBe("2024");
     await page.screenshot({ path: screenshotPath(`native-limit-${width}.png`) });
-    await page.getByRole("link", { name: "有料にして続きを解く" }).click();
+    await page.getByRole("link", { name: "月額プランの料金・条件を見る" }).click();
     await expect(page).toHaveURL(/\/billing/);
     await expect.poll(() => events.filter(event => event.event === "practice_upgrade_clicked").length).toBe(1);
     for (const name of ["referral_landed", "quiz_started", "practice_free_limit_reached", "practice_upgrade_clicked"]) {

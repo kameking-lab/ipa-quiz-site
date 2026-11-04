@@ -1,0 +1,27 @@
+{
+  "label": "targeted",
+  "args": [
+    "exec",
+    "vitest",
+    "run",
+    "__tests__/aviation68-integration.test.ts",
+    "__tests__/billing/QuizClient.player.test.tsx",
+    "__tests__/components/ContentEndAd.test.tsx",
+    "__tests__/seo/exam-hub-essay-flagship-cta.test.ts",
+    "__tests__/seo/exam-entry.test.tsx",
+    "__tests__/api/contact-slack-after.test.ts",
+    "__tests__/api/contact-delivery.test.ts",
+    "__tests__/components/StreakTracker.test.tsx",
+    "--maxWorkers=2"
+  ],
+  "started": "2026-11-04T22:59:25.351Z",
+  "finished": "2026-11-04T23:00:05.946Z",
+  "elapsedMs": 40595,
+  "code": 1,
+  "signal": null,
+  "baseHead": "f95bd49d0a9affc4ad34795b94dc9d3f20ecf9eb",
+  "sourceHash": "bd509de57e6cb79c43e19dbdcc861d98594024a4ad26ee6fe4802426991585e0",
+  "environment": "OS allowlist only; no env files or service credentials",
+  "logSha256": "227f5be397648ace4e7846633b7a02280668bda439e90055549b882f40ffb201",
+  "buildId": null
+}

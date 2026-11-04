@@ -5,11 +5,33 @@ import { QuizPlayer } from "@/components/quiz/QuizPlayer";
 import { IP_QUESTIONS } from "@/data/questions/ip";
 import { questionPagePath } from "@/lib/seo/question-url";
 import { createHistoryStore } from "@/lib/storage/history";
+import { getBookmark, toggleBookmark, updateBookmarkTags } from "@/lib/storage/bookmarks";
 import type { Question } from "@/lib/questions/types";
 const base = IP_QUESTIONS.find((q) => q.id === "ip-2009a-am-q1")!;
 beforeEach(() => { localStorage.clear(); });
 afterEach(cleanup);
 describe("answer to the same public explanation and feedback page", () => {
+  it("resets a prepared explanation's bookmark and tag editor when moving to a cached next question", () => {
+    const first = { ...base, id: "ip-perf-a" };
+    const second = { ...base, id: "ip-perf-b", qNumber: 2 };
+    toggleBookmark(second);
+    updateBookmarkTags(second.id, ["Bのタグ"]);
+    const { rerender } = render(<QuizPlayer question={first} index={0} total={2} mode="year" onNext={() => {}} />);
+    fireEvent.keyDown(window, { key: "1" });
+    fireEvent.click(screen.getByRole("button", { name: "ブックマークに追加" }));
+    const input = screen.getByRole("textbox", { name: "タグを入力" });
+    fireEvent.change(input, { target: { value: "Aのタグ" } });
+    fireEvent.keyDown(input, { key: "Enter" });
+    expect(getBookmark(first.id)?.tags).toEqual(["Aのタグ"]);
+    rerender(<QuizPlayer question={second} index={1} total={2} mode="year" onNext={() => {}} />);
+    fireEvent.keyDown(window, { key: "1" });
+    expect(screen.getByRole("button", { name: "ブックマークから外す" })).toHaveAttribute("aria-pressed", "true");
+    expect(screen.queryByRole("textbox", { name: "タグを入力" })).not.toBeInTheDocument();
+    expect(screen.queryByText("Aのタグ")).not.toBeInTheDocument();
+    expect(getBookmark(second.id)?.tags).toEqual(["Bのタグ"]);
+    expect(getBookmark(first.id)?.tags).toEqual(["Aのタグ"]);
+  });
+
   it.each([
     { ...base, id: "ip-2024c-am-q1", exam: "ip", year: 2024, season: "cbt", qNumber: 1 },
     { ...base, id: "denken2-test", exam: "denken2", session: "riron", year: 2026, season: "annual", qNumber: 3, part: "2" },

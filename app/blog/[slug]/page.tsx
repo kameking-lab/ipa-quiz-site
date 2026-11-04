@@ -4,6 +4,10 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 
 import { BlogMarkdown } from "@/components/blog/BlogMarkdown";
+import { BlogPractice } from "@/components/blog/BlogPractice";
+import { Markdown } from "@/components/ui/markdown";
+import { getBlogPractice } from "@/lib/blog/practice";
+import { strictContentGateEnabled } from "@/lib/billing/content-policy";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { ViewTracker } from "@/components/analytics/ViewTracker";
 import { BlogScrollTracker } from "@/components/blog/BlogScrollTracker";
@@ -100,6 +104,7 @@ export default async function BlogArticlePage({ params }: PageProps) {
 
   const url = `${SITE_BASE_URL}/blog/${slug}`;
   const related = getRelatedPosts(slug, 4);
+  const practice = getBlogPractice(slug);
   const relatedQuestions = getRelatedQuestionsForPost(post.exam, post.tags, 3);
   const articleOgParams = new URLSearchParams({
     type: "blog",
@@ -281,6 +286,7 @@ export default async function BlogArticlePage({ params }: PageProps) {
         <h1 className="text-2xl font-bold tracking-tight text-zinc-900 dark:text-zinc-50 sm:text-3xl">
           {post.title}
         </h1>
+        {practice && <nav aria-label="記事と演習" className="mt-3 flex flex-wrap gap-x-4 text-sm"><a href="#article-practice" className="inline-flex min-h-11 items-center rounded-xl bg-primary px-4 font-semibold text-primary-foreground">まず1問解く</a><a href="#article-body" className="inline-flex min-h-11 items-center underline">本文から読む</a></nav>}
         <p className="mt-3 text-sm leading-relaxed text-zinc-600 dark:text-zinc-400">
           {post.description}
         </p>
@@ -292,10 +298,17 @@ export default async function BlogArticlePage({ params }: PageProps) {
         )}
         {post.editorialKind === "study-guide" && <p className="mt-3 text-xs text-zinc-600 dark:text-zinc-400">編集上の学習ガイドです。受験者の実測調査・出題頻度ランキングではありません。</p>}
         {post.sourceUrls && <ul className="mt-3 space-y-1 text-xs">{post.sourceUrls.map((url, i) => <li key={url}><a href={url} className="underline" target="_blank" rel="noopener noreferrer">参照資料 {i + 1}（IPA）</a></li>)}</ul>}
-
       </header>
 
-      <article>
+      {practice && (strictContentGateEnabled() ? (
+        <section id="article-practice" aria-label="記事から1問チャレンジ" className="mb-8 scroll-mt-24 rounded-2xl border border-border p-5">
+          <h2 className="text-lg font-bold">記事から1問チャレンジ</h2>
+          <p className="mt-2 text-sm text-muted-foreground">ウェブ・アプリ共通の演習枠を確認してから、問題と解説を表示します。</p>
+          <Link href={`${practice.continueHref}&question=${encodeURIComponent(practice.question.id)}`} className="mt-3 inline-flex min-h-12 items-center rounded-xl bg-primary px-4 font-semibold text-primary-foreground">利用枠を確認して1問解く</Link>
+        </section>
+      ) : <BlogPractice key={practice.question.id} {...practice} slug={slug} explanation={<Markdown>{practice.question.explanation}</Markdown>} />)}
+
+      <article id="article-body" className="scroll-mt-24">
         <BlogMarkdown>{post.body}</BlogMarkdown>
       </article>
 

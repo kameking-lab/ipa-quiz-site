@@ -3,7 +3,7 @@ import { expect, test } from "@playwright/test";
 test("次の資格を初期選択し、任意項目を空のまま既存APIへ送信できる", async ({ page }) => {
   // Browser runs may target configured deployments. Never forward a synthetic
   // support request; isolated API tests cover validation and Slack delivery.
-  await page.route("**/api/contact", route => route.fulfill({ json: { ok: true } }));
+  await page.route("**/api/contact", route => route.fulfill({ json: { ok: true, delivery: "delivered", receiptId: "KG-contact-site-e2e" } }));
   await page.goto("/contact?site=tsugino");
   await expect(page.getByRole("radio", { name: "次の資格について" })).toBeChecked();
   await expect(page.locator("main")).toContainText("同じ kameking-lab");
@@ -12,6 +12,7 @@ test("次の資格を初期選択し、任意項目を空のまま既存APIへ�
   await page.getByRole("button", { name: "送信する", exact: true }).click();
   expect((await posted).postDataJSON()).toMatchObject({ kind: "contact", category: "tsugino", name: "", email: "" });
   await expect(page.getByRole("status").filter({ hasText: "お問い合わせを受け付けました" })).toBeVisible();
+  await expect(page.getByRole("status").filter({ hasText: "KG-contact-site-e2e" })).toBeVisible();
 });
 
 for (const query of ["", "?site=unknown", "?site=tsugino&site=unknown"]) {

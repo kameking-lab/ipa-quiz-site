@@ -8,27 +8,6 @@ import { jstDateString } from "./core";
 import { MilestoneToast } from "./MilestoneToast";
 import type { StreakMilestone } from "./core";
 
-const PROBE_KEY = "ipa-quiz:streak:probe:v1";
-
-function readProbe(): { date: string; entryCount: number } | null {
-  if (typeof window === "undefined") return null;
-  try {
-    const raw = window.localStorage.getItem(PROBE_KEY);
-    if (!raw) return null;
-    return JSON.parse(raw) as { date: string; entryCount: number };
-  } catch {
-    return null;
-  }
-}
-
-function writeProbe(probe: { date: string; entryCount: number }): void {
-  try {
-    window.localStorage.setItem(PROBE_KEY, JSON.stringify(probe));
-  } catch {
-    // ignore
-  }
-}
-
 export function StreakTracker() {
   const pathname = usePathname();
   const [toast, setToast] = React.useState<StreakMilestone | null>(null);
@@ -36,22 +15,12 @@ export function StreakTracker() {
   React.useEffect(() => {
     const poll = () => {
       const history = createHistoryStore();
-      const total = history.getStats().total;
       const today = jstDateString();
-      const probe = readProbe();
-
-      const answeredSinceLastCheck =
-        !probe || probe.date !== today
-          ? total > 0
-          : total > probe.entryCount;
-
-      if (!answeredSinceLastCheck) {
-        writeProbe({ date: today, entryCount: total });
-        return;
-      }
+      // Opening a page with yesterday's history is not today's study. Looking
+      // at actual answer dates also works after the 2000-entry history cap.
+      if (!history.getAllEntries().some(entry => Number.isFinite(new Date(entry.at).getTime()) && jstDateString(new Date(entry.at)) === today)) return;
 
       const { reachedMilestone } = recordStudyToday();
-      writeProbe({ date: today, entryCount: total });
       if (reachedMilestone) setToast(reachedMilestone);
     };
 
@@ -65,6 +34,6 @@ export function StreakTracker() {
     };
   }, []);
 
-  // Keep streak recording active without interrupting practice.
-  return toast && pathname !== "/quiz" && !pathname?.startsWith("/q/") ? <MilestoneToast milestone={toast} onClose={() => setToast(null)} /> : null;
+  // Keep streak recording active without interrupting practice or the blog trial.
+  return toast && !pathname?.startsWith("/quiz") && !pathname?.startsWith("/q/") && !pathname?.startsWith("/blog/") ? <MilestoneToast milestone={toast} onClose={() => setToast(null)} /> : null;
 }
