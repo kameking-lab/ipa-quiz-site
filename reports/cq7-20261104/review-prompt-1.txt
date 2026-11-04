@@ -1,0 +1,23 @@
+CQ7 土地区画整理士（slug kukaku-seiri）の独立レビューを日本語で行ってください。モデルは gpt-6-astra、read-only の別プロセスです。編集・コミット・push・PR・デプロイ・main操作は禁止です。外部への連絡も行わないでください。
+
+対象worktree: C:/Users/kanet/20260522/wt-kukaku-seiri
+基点: bb912dfd0494f7095ec5387f9f2e53f46381cd1f (fetchしたorigin/main)。この基点からHEADまでのCQ7差分をレビューしてください。
+ユーザー要件: 公式の直近2回の問題・正答を通常GETで取得し、原文・全肢独自解説・図表を保持。取得不能PDFはURLを報告。既存方式に沿った未公開 publicAllowed=false。検証及び独立レビュー。push等は禁止。
+
+事実: 2026年度は40原問を取得。2025年度は正答表のみ取得、問題の取得候補URLは404で、現行公式一覧にも問題リンクがありません。公式発表は問題を2025年9月7日から1年間公表と明記。2025問題を推測・非公式転載で補わず、twoRoundComplete=false、40/80の部分収録として記録しています。この未完了点と、取得できたデータの実装品質を区別し、完了状況も明記してください。
+
+主な対象:
+- data/qualification-staging/kukaku-seiri/ 全ファイル
+- scripts/ingest-kukaku-seiri.py、scripts/audit-kukaku-seiri.py、scripts/validate-kukaku-seiri.ts
+- scripts/validate-questions.ts の接続
+- lib/qualifications/catalog.ts の追加
+- __tests__/questions/kukaku-seiri-staging.test.ts
+- reports/cq7-20261104/ の検証記録
+
+原本は一時ディレクトリ C:/Users/kanet/AppData/Local/Temp/codex-work/cq7 に存在します。20260907t_mondaia.pdf、20260907t_seitou.pdf、20250908t_seitou.pdf、datasheets20251212.pdf。ここにある公式法令XML、運用指針PDF、kaigisiryou5.pdf、reference-audit-map.json等も参照できます。通常GETの記録はsource-manifest.jsonとreference-sources.jsonにあります。必要なら通常GETのみで確認してください。ログイン・CAPTCHA・ボット制限を迂回しないこと。
+
+問題本文・4肢・正答は全40問を原本と照合し、全160肢の独自解説の誤りや正答との矛盾を確認してください。組合せの記述（イ）（ロ）と画面内部の選択肢ア〜エの混同、問24の分数、法令手続の意見/同意、基準日の推定、参照条項の誤り、抜けた図表、公開レジストリへの流出を重点確認してください。独立原文監査はPyMuPDFと別のpdfplumber/pdfminerで39問の文字列及び全11,316文字の画像被覆、両年40件の公式正答を照合済みで、問24は原画像の分数を確認しています。
+
+テストは必要に応じて実行できますがread-only制約を守ってください。単なるテスト成功を解説内容の正しさの証明にしないこと。疑問点や取得不能を隠さず判定してください。
+
+最終出力は先頭に PASS または FAIL。次にタスク完了状況 COMPLETE / PARTIAL を別記してください。FAILの場合は修正すべき具体箇所・根拠・影響を優先度順で列挙。PASSの場合も実際の検査範囲と残る2025年度本文40問・転載条件・人手最終確認等の制限を明示してください。問題・正答・解説・図表・公開隔離・検証接続をそれぞれどう確認したかを簡潔に残してください。

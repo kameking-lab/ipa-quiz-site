@@ -1,0 +1,167 @@
+{
+  "task": "CQ7",
+  "slug": "kukaku-seiri",
+  "publicAllowed": false,
+  "publicationStatus": "staging-partial",
+  "candidateBasis": {
+    "report": "C:/Users/kanet/Documents/Codex/2026-11-02/task-2/cov1-report.md",
+    "section": "B / 12 土地区画整理士",
+    "sha256": "141793e07ad174e395d9b3532f3919eec0117337dfce35fc0285d394ca062265"
+  },
+  "administrator": "一般財団法人全国建設研修センター",
+  "administratorSourceUrl": "https://www.jctc.jp/exam/shikenkikan/",
+  "requestedAdministratorLabel": "全国土地区画整理技術者協会",
+  "administratorNote": "指定検定機関は公式制度案内で確認。依頼中の団体名を試験実施機関として登録しない。",
+  "latestExamRounds": [
+    {
+      "year": 2026,
+      "examDate": "2026-09-06",
+      "expectedQuestions": 40,
+      "ingestedQuestions": 40,
+      "status": "original-and-answer-acquired"
+    },
+    {
+      "year": 2025,
+      "examDate": "2025-09-07",
+      "expectedQuestions": 40,
+      "ingestedQuestions": 0,
+      "status": "answer-only-question-unavailable",
+      "questionUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2025/09/20250908t_mondaia.pdf",
+      "questionUrlEvidence": "2026年の公式現行ファイル命名規則から組み立てた取得候補。現存リンクとして確認したURLではない。通常GETは404。"
+    }
+  ],
+  "twoRoundComplete": false,
+  "expectedQuestionCount": 80,
+  "ingestedQuestionCount": 40,
+  "acquisitionPolicy": "通常HTTPS GETのみ。ログイン・CAPTCHA・ボット拒否の迂回、非公式ミラー・検索キャッシュによる原文補完は行わない。",
+  "requests": [
+    {
+      "url": "https://www.jctc.jp/mondai/",
+      "status": 200,
+      "bytes": 47877,
+      "contentType": "text/html; charset=UTF-8",
+      "sha256": "8c5b21eb7189af0ed49a2d7af078127e335bff3553cca2f9c9fe61e71a966efc",
+      "fetchedAt": "2026-11-04T22:53:57.7515252+09:00"
+    },
+    {
+      "url": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/09/20260907t_mondaia.pdf",
+      "status": 200,
+      "bytes": 777059,
+      "contentType": "application/pdf",
+      "sha256": "1380783fe68dd3e33f0f5b7b377b8ac7d28f02dc4164016d6372da0403382820",
+      "fetchedAt": "2026-11-04T22:54:03.0208057+09:00",
+      "pages": 18
+    },
+    {
+      "url": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/09/20260907t_seitou.pdf",
+      "status": 200,
+      "bytes": 43361,
+      "contentType": "application/pdf",
+      "sha256": "2a397b4f4372b97f1178ef9f677770b8c993f366d66356ad359515e4d47a2ecf",
+      "fetchedAt": "2026-11-04T22:54:05.3414000+09:00",
+      "pages": 1
+    },
+    {
+      "url": "https://www.jctc.jp/wjctcp/wp-content/uploads/2025/09/20250908t_mondaia.pdf",
+      "status": 404,
+      "error": "リモート サーバーがエラーを返しました: (404) 見つかりません",
+      "fetchedAt": "2026-11-04T22:54:05.5083669+09:00"
+    },
+    {
+      "url": "https://www.jctc.jp/wjctcp/wp-content/uploads/2025/09/20250908t_seitou.pdf",
+      "status": 200,
+      "bytes": 189448,
+      "contentType": "application/pdf",
+      "sha256": "0a69852b0c370b0d58485ce508b51acaab69084fa84e5677434161c55d683014",
+      "fetchedAt": "2026-11-04T22:54:09.3873708+09:00",
+      "pages": 2
+    }
+  ],
+  "referenceRequests": [
+    {
+      "url": "https://www.jctc.jp/kentei/info/datasheets20251212.pdf",
+      "file": "datasheets20251212.pdf",
+      "status": 200,
+      "sha256": "62b453910a6d3c6472d3414a6b89f0ccebbfd5aeb9d7a07655538d359f3e22ee",
+      "fetchedAt": "2026-11-04T22:57:05.8101315+09:00",
+      "pages": 4
+    },
+    {
+      "url": "https://www.jctc.jp/exam/shikenkikan/",
+      "file": "shikenkikan.html",
+      "status": 200,
+      "sha256": "0d18728c6bf8478f741690dd344d9d36ca0d5226a747a511a343bb43b7af556c",
+      "fetchedAt": "2026-11-04T22:57:06.4594061+09:00"
+    },
+    {
+      "url": "https://www.jctc.jp/exam/tochikukaku/",
+      "file": "tochikukaku.html",
+      "status": 200,
+      "sha256": "2c952d5fae749b6a060130b5e756b5272c12f3454a48520aa55116d72cbad224",
+      "fetchedAt": "2026-11-04T22:57:06.9856637+09:00"
+    },
+    {
+      "url": "https://laws.e-gov.go.jp/api/1/lawdata/329AC0000000119",
+      "file": "329AC0000000119.xml",
+      "status": 200,
+      "sha256": "04b318a8ee51563cdba814a7533f7dc832604378f5ddd42390adf8c57db5a44d",
+      "fetchedAt": "2026-11-04T22:57:08.8387672+09:00"
+    },
+    {
+      "url": "https://laws.e-gov.go.jp/api/1/lawdata/343AC0000000100",
+      "file": "343AC0000000100.xml",
+      "status": 200,
+      "sha256": "37535d95562a7dbe7effb89f2c0b2ac93714906f8facf165367cb2d1e336c73e",
+      "fetchedAt": "2026-11-04T22:57:11.0154918+09:00"
+    },
+    {
+      "url": "https://laws.e-gov.go.jp/api/1/lawdata/326AC0000000139",
+      "status": 404,
+      "error": "リモート サーバーがエラーを返しました: (404) 見つかりません"
+    },
+    {
+      "url": "https://laws.e-gov.go.jp/api/1/lawdata/337AC0000000139",
+      "file": "337AC0000000139.xml",
+      "status": 200,
+      "sha256": "415e03928a17da370d50470b399fa02100c35d241442708928e27a267e5dcd83",
+      "fetchedAt": "2026-11-04T22:57:12.5219442+09:00"
+    },
+    {
+      "url": "https://www.jctc.jp/kentei/themes/tebiki_1t01_08.pdf",
+      "file": "tebiki_1t01_08.pdf",
+      "status": 200,
+      "sha256": "a4ad4cb81abbc1b99cc872120a9584d75af3d642589bfafaf4e768a702c23146",
+      "fetchedAt": "2026-11-04T22:57:43.8869037+09:00",
+      "pages": 15
+    },
+    {
+      "url": "https://www.mlit.go.jp/toshi/city/sigaiti/content/001740690.pdf",
+      "file": "001740690.pdf",
+      "status": 200,
+      "sha256": "d3aedbf531e48447ed68e06198e3b324d09639de3318f1e3ae895f54c635cd77",
+      "fetchedAt": "2026-11-04T22:57:44.7666941+09:00",
+      "pages": 153
+    },
+    {
+      "url": "https://laws.e-gov.go.jp/api/1/lawdata/426AC0000000068",
+      "file": "426AC0000000068.xml",
+      "status": 200,
+      "sha256": "088aca0a14e71574fd168921718d72a6a7123e4dc150e89a0c1388fec00669b3",
+      "fetchedAt": "2026-11-04T22:57:46.1832595+09:00"
+    }
+  ],
+  "publicationWindow": {
+    "sourceUrl": "https://www.jctc.jp/kentei/info/datasheets20251212.pdf",
+    "pdfPage": 4,
+    "description": "2025年度問題・正答は令和7年9月7日より1年間公表すると公式発表。現在の一覧は2026年度のみ。2025年度問題本文は取得できず、2024年度で代用しない。"
+  },
+  "reuse": {
+    "status": "not-confirmed",
+    "publicAllowed": false,
+    "sourceUrl": "https://www.jctc.jp/mondai/",
+    "note": "公開閲覧と転載許諾を同一視しない。公式ページの著作権表記を確認、再利用を許可する条件は今回確認できず。公開判断は未実施。"
+  },
+  "lawReferenceDate": null,
+  "lawReferenceDateStatus": "公式問題及び2026年度受検の手引で一律の法令基準日を確認できず。出題時点として記録。",
+  "pdfRetention": "PDF原本は一時領域でのみ使用。SHA256、ページ数、取得日時、原問ごとのPNG領域と出典を保存し、レビュー後に一時PDFを削除する。"
+}
