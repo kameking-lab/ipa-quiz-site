@@ -41,6 +41,7 @@ import { z } from "zod";
 import { RIYOSHI_CANDIDATES } from "@/data/questions/riyoshi";
 import { validateSokuryoshiStaging } from "./qualification-ingestion/validate-sokuryoshi";
 import { validateJokasoSetsubishiStaging } from "./lib/jokaso-setsubishi-staging";
+import { validateChiikiRyoko } from "./validate-chiiki-ryoko";
 
 // Publication-gated pilots still require the same schema and source validation
 // before their release gate can be lifted.
@@ -517,6 +518,7 @@ if (opts.exams.includes("dokugeki-chiba")) {
 if (opts.exams.length === 0 || opts.exams.includes("jokaso-setsubishi")) {
   console.log(`[staging] jokaso-setsubishi: ${validateJokasoSetsubishiStaging()} questions; publicAllowed=false`);
 }
+validateChiikiRyoko(opts.exams);
 const questions = opts.exams.length > 0
   ? VALIDATION_QUESTIONS.filter((q) => opts.exams.includes(q.exam))
   : VALIDATION_QUESTIONS;
