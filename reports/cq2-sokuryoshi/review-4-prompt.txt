@@ -1,0 +1,29 @@
+CQ2の独立再レビュー4をread-onlyで実施してください。編集・commit・push・PR・deploy・main操作は禁止。
+対象: C:/Users/kanet/20260522/wt-sokuryoshi
+base: bb912dfd0494f7095ec5387f9f2e53f46381cd1f
+
+要件・画像正本方式は reports/cq2-sokuryoshi/review-1-prompt.txt をUTF-8で読んでください。
+前回の指摘と修正を次のファイルで確認してください。
+- review-1-result.md / review-1-fixes.md
+- review-2-result.md / review-2-fixes.md
+- review-3-result.md / review-3-fixes.md
+いずれも reports/cq2-sokuryoshi/ 内。
+
+レビュー3はレビュー2の3件の修正を確認した上で新規5件によりFAILでした。その5件も修正しました。
+1. 2026午前No.28の全肢を原文と準則663/668条に整合。両岸、水準基標、定期縦断・平地、航空レーザ測深による横断図の説明。
+2. 2025午後No.5 C-2の拡幅は中心線から左右各12mと修正。
+3. 2026午後No.1 Aの5空欄を語群番号と条文の意味・選択理由で個別説明。
+4. 2025午後No.1 Aの11空欄を語群番号と条文の意味・選択理由で個別説明。
+5. 2026午後No.1 B-3(1)は情報流出の原因となる具体的行為の説明へ修正。
+修正原稿は2026-am-notes.json、pm-notes.json、生成JSONは2025.json/2026.json。
+
+全66原問・午前280肢・午後104説明節・画像186ページ・publicAllowed=false。
+official-descriptive-sections.jsonと全小問ラベルの完全一致は生成時と検証時に確認。
+原本PDF・公式準則standards.pdf/txt・補助OCRの場所:
+C:/Users/kanet/AppData/Local/Temp/codex-work/cq2-sokuryoshi
+通常実行の最新ログ: reports/cq2-sokuryoshi/{validate-questions,typecheck,related-tests}.log。
+
+過去の指摘を直しただけで自動的にPASSにはせず、未指摘の内容誤り・解説不足も原本に照合してください。
+画像正本そのものと人手の公開前確認ガードneedsReview=trueを理由にFAILとするのではなく、今回の非公開収録の内容・対応・検証を評価してください。
+read-onlyでspawn EPERMが出た場合は制約を迂回せず分離して報告してください。
+最後にPASS又はFAILを明記。FAILなら具体的ファイル・設問・根拠・修正案を示してください。

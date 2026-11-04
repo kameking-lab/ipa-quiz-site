@@ -1,0 +1,39 @@
+{
+  "task": "CQ2",
+  "slug": "sokuryoshi",
+  "completedAt": "2026-11-04",
+  "publicationStatus": "staged",
+  "publicAllowed": false,
+  "reviewedImplementationCommit": "86874a7db1f4de0fb4b1887e8b713b1df44c9b4e",
+  "independentReview": {
+    "verdict": "PASS",
+    "model": "gpt-6-astra",
+    "sandbox": "read-only",
+    "report": "review-8-result.md",
+    "turnCompleted": true,
+    "outerPowerShellExitCode": 1,
+    "outerPowerShellNote": "stderr Reading additional input from stdin was wrapped as NativeCommandError; JSONL turn.completed and final PASS report are present"
+  },
+  "verification": {
+    "privateOriginals": 66,
+    "choiceExplanations": 280,
+    "descriptiveExplanationSections": 104,
+    "originalPages": 186,
+    "relatedTestFiles": 4,
+    "relatedTestsPassed": 1079,
+    "typecheck": "PASS",
+    "validateQuestions": "PASS",
+    "originalPdfAndImageComparison": "PASS"
+  },
+  "evidenceSha256": {
+    "review-8-result.md": "868aa2de9d8a1a9ba5e969fd8b32510bc09356b6b1b0a9919182c780b1b3ad03",
+    "validate-questions.log": "d52ffc74100228b90d27ea203c24a8a062c85efb8c5c098abf5af80ffd199569",
+    "typecheck.log": "a0ef808778c998fb6b003f35408be03b522b359b6dc32048dd71c4931726bba2",
+    "related-tests.log": "6fd27bbe8d79e2ccc7ceafdfb7fbe31d0acc0be7129cf91474a3907cf8449dfa",
+    "source-pixel-verification.json": "3b74cb64f26be92ae6767eb862d2cec14837f756804227a411f32ea1560e46ba",
+    "cleanup.json": "6192bae3a162c7896a579b7125f7a0bdd49894a52bddf864766b693bcf9de6eb"
+  },
+  "temporaryPdfsDeleted": 14,
+  "temporaryPdfsRemaining": 0,
+  "remoteWrites": false
+}
