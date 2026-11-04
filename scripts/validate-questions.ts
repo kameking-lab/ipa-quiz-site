@@ -33,6 +33,7 @@ import type { Question } from "@/lib/questions/types";
 import { detectAnswerDispute } from "@/lib/questions/explanation-consistency";
 import { z } from "zod";
 import { RIYOSHI_CANDIDATES } from "@/data/questions/riyoshi";
+import { validateSokuryoshiStaging } from "./qualification-ingestion/validate-sokuryoshi";
 
 // Publication-gated pilots still require the same schema and source validation
 // before their release gate can be lifted.
@@ -45,6 +46,7 @@ const VALIDATION_QUESTIONS = [
 // ─── CLI ─────────────────────────────────────────────────────────────────────
 
 interface CliOptions {
+  staging?: string;
   exams: string[];
   report: boolean;
   fix: boolean;
@@ -55,14 +57,16 @@ function parseCliOptions(): CliOptions {
   let exams: string[] = [];
   let report = false;
   let fix = false;
+  let staging: string | undefined;
   for (const arg of argv) {
     if (arg === "--report") report = true;
     else if (arg === "--fix") fix = true;
+    else if (arg.startsWith("--staging=")) staging = arg.slice(10);
     else if (arg.startsWith("--exam=")) {
       exams = arg.slice(7).split(",").map((s) => s.trim());
     }
   }
-  return { exams, report, fix };
+  return { exams, report, fix, staging };
 }
 
 // ─── Schema ───────────────────────────────────────────────────────────────────
@@ -478,6 +482,16 @@ function reportFixes(questions: Question[]): void {
 // ─── Main ────────────────────────────────────────────────────────────────────
 
 const opts = parseCliOptions();
+if (opts.staging !== undefined) {
+  if (opts.staging !== "sokuryoshi" || opts.exams.length || opts.fix || opts.report) {
+    console.error("Use --staging=sokuryoshi alone for private qualification validation.");
+    process.exit(1);
+  }
+  const result = validateSokuryoshiStaging();
+  for (const error of result.errors) console.error(`[FAIL] ${error}`);
+  console.log(`Validated ${result.count} private sokuryoshi originals. fail=${result.errors.length}`);
+  process.exit(result.errors.length ? 1 : 0);
+}
 const questions = opts.exams.length > 0
   ? VALIDATION_QUESTIONS.filter((q) => opts.exams.includes(q.exam))
   : VALIDATION_QUESTIONS;
