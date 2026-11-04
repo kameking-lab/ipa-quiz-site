@@ -1,7 +1,7 @@
 {
   "slug": "khk-kagaku",
   "status": "source-draft-only",
-  "notice": "未公開の資料下書き。甲種82問・乙種100問・丙種液石120問・丙種特別120問、計422原問の本文・全選択肢・全小問・数式・必要図表を原本表示と照合済み。記述式12問の公式解答例も照合済み（原文PDF・全頁画像と独自照合メモを保持）。独自解説は乙種学識10問・全50肢を作成済み、残412問。演習登録は未完了。R6甲種学識付録の常用対数表は900セル照合・全3頁画像化済み。公開・出題不可。",
+  "notice": "未公開の資料下書き。甲種82問・乙種100問・丙種液石120問・丙種特別120問、計422原問の本文・全選択肢・全小問・数式・必要図表を原本表示と照合済み。記述式12問の公式解答例も照合済み（原文PDF・全頁画像と独自照合メモを保持）。独自解説は乙種学識30問・全150肢を作成済み、残392問。演習登録は未完了。R6甲種学識付録の常用対数表は900セル照合・全3頁画像化済み。公開・出題不可。",
   "papers": [
     {
       "year": 2024,
@@ -3732,9 +3732,9 @@
             2
           ],
           "rawExtractedText": "次のイ、ロ、ハ、ニのうち、SI 単位について正しいものはどれか。\n\n\n  イ．1 J ＝1 kg･m3･s－2\n  ロ．1 N ＝1 kg･m－2･s－2\n  ハ．1 Pa ＝1 kg･m－1･s－2\n  ニ．1 W ＝1 kg･m2･s－3\n\n\n  ⑴　イ、ロ　　⑵　イ、ハ　　⑶　イ、ニ　　⑷　ロ、ニ　　⑸　ハ、ニ",
-          "reviewStatus": "transcription-verified-explanation-pending",
+          "reviewStatus": "transcription-verified-explanation-written",
           "transcriptionVerified": true,
-          "explanationWritten": false,
+          "explanationWritten": true,
           "figuresVerified": true,
           "sourceAnswerUrl": "https://www.khk.or.jp/Portals/0/khk/exam/2024/R6fy_kaitou.pdf",
           "officialAnswerNumber": 5,
@@ -3751,7 +3751,19 @@
           ],
           "hasImage": false,
           "imageAssets": [],
-          "sharedPassagePdfPages": []
+          "sharedPassagePdfPages": [],
+          "explanationDraft": "力F＝ma、仕事E＝Fℓ、圧力p＝F/A、仕事率P＝E/tの順に基本単位へ分解する。\n\nイ：誤り。仕事は力×距離なのでJ＝N･m＝kg･m²･s⁻²であり、mの指数は3ではなく2。\nロ：誤り。F＝maよりN＝kg･m･s⁻²であり、mの指数は−2ではなく1。\nハ：正しい。圧力は力/面積なのでPa＝N/m²＝kg･m⁻¹･s⁻²となる。\nニ：正しい。仕事率はエネルギー/時間なのでW＝J/s＝kg･m²･s⁻³となる。\n\n公式正答は選択肢5（ハ、ニ）。",
+          "choiceExplanationsDraft": {
+            "1": "公式正答の組合せ（ハ、ニ）と異なる。イ：誤り。仕事は力×距離なのでJ＝N･m＝kg･m²･s⁻²であり、mの指数は3ではなく2。 ロ：誤り。F＝maよりN＝kg･m･s⁻²であり、mの指数は−2ではなく1。",
+            "2": "公式正答の組合せ（ハ、ニ）と異なる。イ：誤り。仕事は力×距離なのでJ＝N･m＝kg･m²･s⁻²であり、mの指数は3ではなく2。 ハ：正しい。圧力は力/面積なのでPa＝N/m²＝kg･m⁻¹･s⁻²となる。",
+            "3": "公式正答の組合せ（ハ、ニ）と異なる。イ：誤り。仕事は力×距離なのでJ＝N･m＝kg･m²･s⁻²であり、mの指数は3ではなく2。 ニ：正しい。仕事率はエネルギー/時間なのでW＝J/s＝kg･m²･s⁻³となる。",
+            "4": "公式正答の組合せ（ハ、ニ）と異なる。ロ：誤り。F＝maよりN＝kg･m･s⁻²であり、mの指数は−2ではなく1。 ニ：正しい。仕事率はエネルギー/時間なのでW＝J/s＝kg･m²･s⁻³となる。",
+            "5": "公式正答の組合せ。ハ：正しい。圧力は力/面積なのでPa＝N/m²＝kg･m⁻¹･s⁻²となる。 ニ：正しい。仕事率はエネルギー/時間なのでW＝J/s＝kg･m²･s⁻³となる。"
+          },
+          "explanationSourceUrls": [
+            "https://www.bipm.org/documents/20126/41483022/SI-Brochure-9-EN.pdf"
+          ],
+          "explanationAttribution": "独自作成。照合済み公式問題・公式正答を保持し、基本式・物性・現象の相違から各肢の理由を記述。原文に不備がある場合は注記し補作しない。"
         },
         {
           "number": 2,
@@ -3834,9 +3846,9 @@
             2
           ],
           "rawExtractedText": "次のイ、ロ、ハ、ニの記述のうち、正しいものはどれか。\n\n\n  イ．ラウールの法則によれば、混合溶液中のある成分の蒸気圧は、同じ温度でのその成分の純物\n   質の飽和蒸気圧と液相中のモル分率の積に等しい。\n  ロ．へンリーの法則によれば、一定温度で一定量の液体に溶ける気体の質量はその分圧によらず\n   一定である。\n  ハ．圧力を高くすると、純物質の融点あるいは凝固点は物質の種類に関係なく高くなる。\n  ニ．温度一定で圧縮による液体の体積減少は気体に比べてはるかに小さいが、固体よりは大きく\n   なる。\n\n\n  ⑴　イ、ロ　　⑵　イ、ハ　　⑶　イ、ニ　　⑷　ロ、ニ　　⑸　ハ、ニ\n\n                                             1                                                   R6-BZ",
-          "reviewStatus": "transcription-verified-explanation-pending",
+          "reviewStatus": "transcription-verified-explanation-written",
           "transcriptionVerified": true,
-          "explanationWritten": false,
+          "explanationWritten": true,
           "figuresVerified": true,
           "sourceAnswerUrl": "https://www.khk.or.jp/Portals/0/khk/exam/2024/R6fy_kaitou.pdf",
           "officialAnswerNumber": 3,
@@ -3853,7 +3865,20 @@
           ],
           "hasImage": false,
           "imageAssets": [],
-          "sharedPassagePdfPages": []
+          "sharedPassagePdfPages": [],
+          "explanationDraft": "気液平衡の二つの法則と、相変化・圧縮率を分けて判定する。ラウールの法則を非理想溶液まで無条件に拡張しない。\n\nイ：正しい。理想溶液に対するラウールの法則はp_i＝x_i p_i*。純成分の飽和蒸気圧に液相モル分率を掛ける。\nロ：誤り。ヘンリーの法則が成り立つ希薄溶液では、一定温度の溶解量は気体の分圧に比例し、分圧によらず一定ではない。\nハ：誤り。融点の圧力依存性は融解に伴う体積変化による。氷のように融解で体積が減る物質では加圧すると融点が下がる。\nニ：正しい。一般的な圧縮されやすさは気体＞液体＞固体であり、液体の体積減少は気体より小さく、固体より大きい。\n\n公式正答は選択肢3（イ、ニ）。",
+          "choiceExplanationsDraft": {
+            "1": "公式正答の組合せ（イ、ニ）と異なる。イ：正しい。理想溶液に対するラウールの法則はp_i＝x_i p_i*。純成分の飽和蒸気圧に液相モル分率を掛ける。 ロ：誤り。ヘンリーの法則が成り立つ希薄溶液では、一定温度の溶解量は気体の分圧に比例し、分圧によらず一定ではない。",
+            "2": "公式正答の組合せ（イ、ニ）と異なる。イ：正しい。理想溶液に対するラウールの法則はp_i＝x_i p_i*。純成分の飽和蒸気圧に液相モル分率を掛ける。 ハ：誤り。融点の圧力依存性は融解に伴う体積変化による。氷のように融解で体積が減る物質では加圧すると融点が下がる。",
+            "3": "公式正答の組合せ。イ：正しい。理想溶液に対するラウールの法則はp_i＝x_i p_i*。純成分の飽和蒸気圧に液相モル分率を掛ける。 ニ：正しい。一般的な圧縮されやすさは気体＞液体＞固体であり、液体の体積減少は気体より小さく、固体より大きい。",
+            "4": "公式正答の組合せ（イ、ニ）と異なる。ロ：誤り。ヘンリーの法則が成り立つ希薄溶液では、一定温度の溶解量は気体の分圧に比例し、分圧によらず一定ではない。 ニ：正しい。一般的な圧縮されやすさは気体＞液体＞固体であり、液体の体積減少は気体より小さく、固体より大きい。",
+            "5": "公式正答の組合せ（イ、ニ）と異なる。ハ：誤り。融点の圧力依存性は融解に伴う体積変化による。氷のように融解で体積が減る物質では加圧すると融点が下がる。 ニ：正しい。一般的な圧縮されやすさは気体＞液体＞固体であり、液体の体積減少は気体より小さく、固体より大きい。"
+          },
+          "explanationSourceUrls": [
+            "https://www.cec-ugc.nic.in/webpath/curriculum/Module/APPIC/Paper05/2/downloads/script.pdf",
+            "https://iupac.org/wp-content/uploads/2021/02/PAC-REC-2020-0302.R2_PR20210127.pdf"
+          ],
+          "explanationAttribution": "独自作成。照合済み公式問題・公式正答を保持し、基本式・物性・現象の相違から各肢の理由を記述。原文に不備がある場合は注記し補作しない。"
         },
         {
           "number": 5,
@@ -3862,9 +3887,9 @@
             3
           ],
           "rawExtractedText": "次のイ、ロ、ハ、ニの記述のうち、反応速度について正しいものはどれか。\n\n\n  イ．反応物A とB が反応してC が生成するとき、反応速度は反応物濃度のべき関数として表さ\n   れ、反応物A の濃度にα 次、反応物B の濃度にβ 次であるとき、この反応の次数は（α ＋β）\n   次となる。\n  ロ．通常、活性化エネルギーは正であり、速度定数k は反応温度の上昇とともに大きくなる。\n  ハ．触媒は反応速度、反応の選択性、反応平衡に影響する。\n  ニ．同一の反応であれば、用いる触媒や反応条件により変わらない。\n\n\n  ⑴　イ、ロ　　⑵　イ、ハ　　⑶　ロ、ハ　　⑷　ロ、ニ　　⑸　ハ、ニ",
-          "reviewStatus": "transcription-verified-explanation-pending",
+          "reviewStatus": "transcription-verified-explanation-written",
           "transcriptionVerified": true,
-          "explanationWritten": false,
+          "explanationWritten": true,
           "figuresVerified": true,
           "sourceAnswerUrl": "https://www.khk.or.jp/Portals/0/khk/exam/2024/R6fy_kaitou.pdf",
           "officialAnswerNumber": 1,
@@ -3881,7 +3906,20 @@
           ],
           "hasImage": false,
           "imageAssets": [],
-          "sharedPassagePdfPages": []
+          "sharedPassagePdfPages": [],
+          "explanationDraft": "反応次数・温度依存性・触媒の役割を区別する。ニは原文自体の記述不足を明記し、公式正答1（イ、ロ）を保持する。\n\nイ：正しい。速度式v＝k[A]^α[B]^βの全反応次数は各成分の次数の和α＋βである。\nロ：正しい。アレニウス式k＝A exp(−E_a/RT)でE_aが正なら、温度Tを上げるとkが大きくなる。\nハ：誤り。触媒は反応経路を変えて速度や選択性に影響するが、同じ温度での熱力学的な平衡定数・平衡組成は変えない。\nニ：誤りとして扱うのが公式正答である。原文は「何が変わらないか」の主語を欠くため、文を補って転記しない。反応速度・見かけの反応次数は触媒や条件によって変わり得るので、一律に不変とはいえない。\n\n公式正答は選択肢1（イ、ロ）。",
+          "choiceExplanationsDraft": {
+            "1": "公式正答の組合せ。イ：正しい。速度式v＝k[A]^α[B]^βの全反応次数は各成分の次数の和α＋βである。 ロ：正しい。アレニウス式k＝A exp(−E_a/RT)でE_aが正なら、温度Tを上げるとkが大きくなる。",
+            "2": "公式正答の組合せ（イ、ロ）と異なる。イ：正しい。速度式v＝k[A]^α[B]^βの全反応次数は各成分の次数の和α＋βである。 ハ：誤り。触媒は反応経路を変えて速度や選択性に影響するが、同じ温度での熱力学的な平衡定数・平衡組成は変えない。",
+            "3": "公式正答の組合せ（イ、ロ）と異なる。ロ：正しい。アレニウス式k＝A exp(−E_a/RT)でE_aが正なら、温度Tを上げるとkが大きくなる。 ハ：誤り。触媒は反応経路を変えて速度や選択性に影響するが、同じ温度での熱力学的な平衡定数・平衡組成は変えない。",
+            "4": "公式正答の組合せ（イ、ロ）と異なる。ロ：正しい。アレニウス式k＝A exp(−E_a/RT)でE_aが正なら、温度Tを上げるとkが大きくなる。 ニ：誤りとして扱うのが公式正答である。原文は「何が変わらないか」の主語を欠くため、文を補って転記しない。反応速度・見かけの反応次数は触媒や条件によって変わり得るので、一律に不変とはいえない。",
+            "5": "公式正答の組合せ（イ、ロ）と異なる。ハ：誤り。触媒は反応経路を変えて速度や選択性に影響するが、同じ温度での熱力学的な平衡定数・平衡組成は変えない。 ニ：誤りとして扱うのが公式正答である。原文は「何が変わらないか」の主語を欠くため、文を補って転記しない。反応速度・見かけの反応次数は触媒や条件によって変わり得るので、一律に不変とはいえない。"
+          },
+          "explanationSourceUrls": [
+            "https://goldbook.iupac.org/terms/view/O04322",
+            "https://goldbook.iupac.org/terms/view/C01023"
+          ],
+          "explanationAttribution": "独自作成。照合済み公式問題・公式正答を保持し、基本式・物性・現象の相違から各肢の理由を記述。原文に不備がある場合は注記し補作しない。"
         },
         {
           "number": 6,
@@ -3929,9 +3967,9 @@
             3
           ],
           "rawExtractedText": "次のイ、ロ、ハ、ニの記述のうち、化学平衡について正しいものはどれか。\n\n\n  イ．化学平衡にある系は平衡を決める因子の1 つが変動すると変化を受けるが、その変化は変動\n   した因子の効果を和らげる方向である。\n  ロ．逆反応の反応速度がほぼゼロである場合は、化学平衡を考えることはできない。\n  ハ．反応によらず、温度と圧力が同じであれば、濃度平衡定数Kc と圧平衡定数Kp は同じ値に\n   なる。\n  ニ．平衡定数が極端に大きいときは正反応の速度が逆反応の速度に比べて著しく大きく、逆反応\n   が無視でき、実際には不可逆反応といえる状況になる。\n\n\n  ⑴　イ、ロ　　⑵　イ、ハ　　⑶　イ、ニ　　⑷　ロ、ニ　　⑸　ハ、ニ\n\n\n\nR6-BZ                                         2",
-          "reviewStatus": "transcription-verified-explanation-pending",
+          "reviewStatus": "transcription-verified-explanation-written",
           "transcriptionVerified": true,
-          "explanationWritten": false,
+          "explanationWritten": true,
           "figuresVerified": true,
           "sourceAnswerUrl": "https://www.khk.or.jp/Portals/0/khk/exam/2024/R6fy_kaitou.pdf",
           "officialAnswerNumber": 3,
@@ -3948,7 +3986,19 @@
           ],
           "hasImage": false,
           "imageAssets": [],
-          "sharedPassagePdfPages": []
+          "sharedPassagePdfPages": [],
+          "explanationDraft": "公式正答3（イ、ニ）はそのまま保持する。平衡定数は平衡組成を表す量であり、反応速度の大小そのものではない。原文ニの速度についての記述にはこの留保が必要である。\n\nイ：正しい。ルシャトリエの原理では、平衡に加えた温度・圧力・組成等の変化を緩和する方向へ組成が変化する。\nロ：公式正答では選ばない。「逆反応速度がほぼゼロ」という絶対的な大小だけでは平衡を否定できず、正逆両速度が等しいことが平衡の条件である。\nハ：誤り。理想気体の濃度・分圧表示ではK_p＝K_c(RT)^Δνとなり、気体の反応前後の係数差Δνが関係する。常に同値ではない。\nニ：公式正答では選ぶ。Kが非常に大きい場合、平衡組成は生成物側に大きく偏り、実用上は反応物がほぼ消費される反応として扱える。ただし「正反応速度が逆反応速度より著しく大きい」を平衡時の説明に用いてはいけない。平衡時には両速度は等しい。\n\n公式正答は選択肢3（イ、ニ）。",
+          "choiceExplanationsDraft": {
+            "1": "公式正答の組合せ（イ、ニ）と異なる。イ：正しい。ルシャトリエの原理では、平衡に加えた温度・圧力・組成等の変化を緩和する方向へ組成が変化する。 ロ：公式正答では選ばない。「逆反応速度がほぼゼロ」という絶対的な大小だけでは平衡を否定できず、正逆両速度が等しいことが平衡の条件である。",
+            "2": "公式正答の組合せ（イ、ニ）と異なる。イ：正しい。ルシャトリエの原理では、平衡に加えた温度・圧力・組成等の変化を緩和する方向へ組成が変化する。 ハ：誤り。理想気体の濃度・分圧表示ではK_p＝K_c(RT)^Δνとなり、気体の反応前後の係数差Δνが関係する。常に同値ではない。",
+            "3": "公式正答の組合せ。イ：正しい。ルシャトリエの原理では、平衡に加えた温度・圧力・組成等の変化を緩和する方向へ組成が変化する。 ニ：公式正答では選ぶ。Kが非常に大きい場合、平衡組成は生成物側に大きく偏り、実用上は反応物がほぼ消費される反応として扱える。ただし「正反応速度が逆反応速度より著しく大きい」を平衡時の説明に用いてはいけない。平衡時には両速度は等しい。",
+            "4": "公式正答の組合せ（イ、ニ）と異なる。ロ：公式正答では選ばない。「逆反応速度がほぼゼロ」という絶対的な大小だけでは平衡を否定できず、正逆両速度が等しいことが平衡の条件である。 ニ：公式正答では選ぶ。Kが非常に大きい場合、平衡組成は生成物側に大きく偏り、実用上は反応物がほぼ消費される反応として扱える。ただし「正反応速度が逆反応速度より著しく大きい」を平衡時の説明に用いてはいけない。平衡時には両速度は等しい。",
+            "5": "公式正答の組合せ（イ、ニ）と異なる。ハ：誤り。理想気体の濃度・分圧表示ではK_p＝K_c(RT)^Δνとなり、気体の反応前後の係数差Δνが関係する。常に同値ではない。 ニ：公式正答では選ぶ。Kが非常に大きい場合、平衡組成は生成物側に大きく偏り、実用上は反応物がほぼ消費される反応として扱える。ただし「正反応速度が逆反応速度より著しく大きい」を平衡時の説明に用いてはいけない。平衡時には両速度は等しい。"
+          },
+          "explanationSourceUrls": [
+            "https://goldbook.iupac.org/terms/view/C01023"
+          ],
+          "explanationAttribution": "独自作成。照合済み公式問題・公式正答を保持し、基本式・物性・現象の相違から各肢の理由を記述。原文に不備がある場合は注記し補作しない。"
         },
         {
           "number": 8,
@@ -4031,9 +4081,9 @@
             4
           ],
           "rawExtractedText": "次のガスのうち、支燃性ガスはどれか。\n\n\n   イ．Cl2\n  ロ．CO\n   ハ．O2\n   ニ．COCl2\n\n\n  ⑴　イ、ロ　　⑵　イ、ハ　　⑶　ロ、ハ　　⑷　ロ、ニ　　⑸　ハ、ニ",
-          "reviewStatus": "transcription-verified-explanation-pending",
+          "reviewStatus": "transcription-verified-explanation-written",
           "transcriptionVerified": true,
-          "explanationWritten": false,
+          "explanationWritten": true,
           "figuresVerified": true,
           "sourceAnswerUrl": "https://www.khk.or.jp/Portals/0/khk/exam/2024/R6fy_kaitou.pdf",
           "officialAnswerNumber": 2,
@@ -4050,7 +4100,17 @@
           ],
           "hasImage": false,
           "imageAssets": [],
-          "sharedPassagePdfPages": []
+          "sharedPassagePdfPages": [],
+          "explanationDraft": "燃料側の可燃性と、燃焼を支える側の支燃性を区別すると、塩素と酸素の組合せになる。\n\nイ：該当する。塩素は水素等との反応で相手の燃焼を支える支燃性ガスである。支燃性を酸素を含む物質だけの性質と考えない。\nロ：該当しない。一酸化炭素は酸素と反応してCO₂になる可燃性ガスであり、この設問の支燃性ガスではない。\nハ：該当する。酸素は他物質の燃焼を支える代表的な支燃性ガスであり、それ自体を燃料とは区別する。\nニ：該当しない。ホスゲンCOCl₂はこの設問の支燃性ガスに当たらない。毒性の有無と支燃性の有無は別の分類である。\n\n公式正答は選択肢2（イ、ハ）。",
+          "choiceExplanationsDraft": {
+            "1": "公式正答の組合せ（イ、ハ）と異なる。イ：該当する。塩素は水素等との反応で相手の燃焼を支える支燃性ガスである。支燃性を酸素を含む物質だけの性質と考えない。 ロ：該当しない。一酸化炭素は酸素と反応してCO₂になる可燃性ガスであり、この設問の支燃性ガスではない。",
+            "2": "公式正答の組合せ。イ：該当する。塩素は水素等との反応で相手の燃焼を支える支燃性ガスである。支燃性を酸素を含む物質だけの性質と考えない。 ハ：該当する。酸素は他物質の燃焼を支える代表的な支燃性ガスであり、それ自体を燃料とは区別する。",
+            "3": "公式正答の組合せ（イ、ハ）と異なる。ロ：該当しない。一酸化炭素は酸素と反応してCO₂になる可燃性ガスであり、この設問の支燃性ガスではない。 ハ：該当する。酸素は他物質の燃焼を支える代表的な支燃性ガスであり、それ自体を燃料とは区別する。",
+            "4": "公式正答の組合せ（イ、ハ）と異なる。ロ：該当しない。一酸化炭素は酸素と反応してCO₂になる可燃性ガスであり、この設問の支燃性ガスではない。 ニ：該当しない。ホスゲンCOCl₂はこの設問の支燃性ガスに当たらない。毒性の有無と支燃性の有無は別の分類である。",
+            "5": "公式正答の組合せ（イ、ハ）と異なる。ハ：該当する。酸素は他物質の燃焼を支える代表的な支燃性ガスであり、それ自体を燃料とは区別する。 ニ：該当しない。ホスゲンCOCl₂はこの設問の支燃性ガスに当たらない。毒性の有無と支燃性の有無は別の分類である。"
+          },
+          "explanationSourceUrls": [],
+          "explanationAttribution": "独自作成。照合済み公式問題・公式正答を保持し、基本式・物性・現象の相違から各肢の理由を記述。原文に不備がある場合は注記し補作しない。"
         },
         {
           "number": 11,
@@ -4059,9 +4119,9 @@
             4
           ],
           "rawExtractedText": "次のガスのうち、大気圧、空気中での発火温度が低いものから順に並べたものはどれか。\n\n\n  イ．エタン\n  ロ．プロパン\n  ハ．ブタン\n\n\n  ⑴　イ＜ロ＜ハ　　⑵　イ＜ハ＜ロ　　⑶　ロ＜イ＜ハ　　⑷　ロ＜ハ＜イ　　⑸　ハ＜ロ＜イ\n\n\n\n\n\n                                             3                                                   R6-BZ",
-          "reviewStatus": "transcription-verified-explanation-pending",
+          "reviewStatus": "transcription-verified-explanation-written",
           "transcriptionVerified": true,
-          "explanationWritten": false,
+          "explanationWritten": true,
           "figuresVerified": true,
           "sourceAnswerUrl": "https://www.khk.or.jp/Portals/0/khk/exam/2024/R6fy_kaitou.pdf",
           "officialAnswerNumber": 5,
@@ -4078,7 +4138,19 @@
           ],
           "hasImage": false,
           "imageAssets": [],
-          "sharedPassagePdfPages": []
+          "sharedPassagePdfPages": [],
+          "explanationDraft": "常圧空気中の代表的な発火温度は、n-ブタン約405 ℃、プロパン約450〜466 ℃、エタン約515 ℃。したがって低い順はハ＜ロ＜イである。測定法によって数値は変わるため、ここでは設問の比較順序を押さえる。公式正答は選択肢5。",
+          "choiceExplanationsDraft": {
+            "1": "誤り。エタンを最も低くしているが、比較する3種ではエタンの発火温度が最も高い。正しくはブタン＜プロパン＜エタン。",
+            "2": "誤り。エタンを最も低く、プロパンを最も高くしている。最も低いのはブタン、最も高いのはエタンである。",
+            "3": "誤り。プロパン＜エタンの関係は合うが、ブタンを最後に置いている。ブタンはこの3種では最も発火温度が低い。",
+            "4": "誤り。ブタン＜エタンの関係は合うが、プロパンをブタンより低くしている。ブタン＜プロパンの順になる。",
+            "5": "正しい。ハ（ブタン）＜ロ（プロパン）＜イ（エタン）。代表値約405＜450〜466＜515 ℃の順序に一致する。"
+          },
+          "explanationSourceUrls": [
+            "https://stacks.cdc.gov/view/cdc/235822/cdc_235822_DS1.pdf"
+          ],
+          "explanationAttribution": "独自作成。照合済み公式問題・公式正答を保持し、基本式・物性・現象の相違から各肢の理由を記述。原文に不備がある場合は注記し補作しない。"
         },
         {
           "number": 12,
@@ -4087,9 +4159,9 @@
             5
           ],
           "rawExtractedText": "次の爆発のうち、ブレビー（BLEVE）と呼ばれる現象が見られるのはどれか。\n\n  イ．蒸気雲爆発\n  ロ．粉じん爆発\n  ハ．蒸気爆発\n  ニ．混合ガス爆発\n  ホ．液滴噴霧爆発\n\n  ⑴　イ　　⑵　ロ　　⑶　ハ　　⑷　ニ　　⑸　ホ",
-          "reviewStatus": "transcription-verified-explanation-pending",
+          "reviewStatus": "transcription-verified-explanation-written",
           "transcriptionVerified": true,
-          "explanationWritten": false,
+          "explanationWritten": true,
           "figuresVerified": true,
           "sourceAnswerUrl": "https://www.khk.or.jp/Portals/0/khk/exam/2024/R6fy_kaitou.pdf",
           "officialAnswerNumber": 3,
@@ -4106,7 +4178,19 @@
           ],
           "hasImage": false,
           "imageAssets": [],
-          "sharedPassagePdfPages": []
+          "sharedPassagePdfPages": [],
+          "explanationDraft": "BLEVEはBoiling Liquid Expanding Vapor Explosionの略。加圧液体を保持する容器が破損して急減圧すると、液体が急激に沸騰・気化して膨張する物理的な蒸気爆発である。燃焼や酸素の存在は発生の必須条件ではない。公式正答は選択肢3。",
+          "choiceExplanationsDraft": {
+            "1": "誤り。蒸気雲爆発は、漏れた可燃性蒸気が空気と混じってできた雲の燃焼による爆発。液体の急減圧・沸騰膨張であるBLEVEとは機構が異なる。",
+            "2": "誤り。粉じん爆発は、空気中に分散した可燃性粉体の燃焼が伝ぱする現象。加圧液体の急激な気化を主因としない。",
+            "3": "正しい。蒸気爆発のうち、加圧液体の保持容器が破損して急減圧し、液体が急激に気化・膨張する現象がBLEVEである。",
+            "4": "誤り。混合ガス爆発は可燃性ガスと支燃性ガス等の反応による爆発であり、液体の物理的な沸騰膨張を表すBLEVEとは区別する。",
+            "5": "誤り。液滴噴霧爆発は霧状に分散した可燃性液滴の燃焼による爆発。容器破損時の過熱液体の急激な気化を定義するものではない。"
+          },
+          "explanationSourceUrls": [
+            "https://www2.nra.go.jp/data/000360920.pdf"
+          ],
+          "explanationAttribution": "独自作成。照合済み公式問題・公式正答を保持し、基本式・物性・現象の相違から各肢の理由を記述。原文に不備がある場合は注記し補作しない。"
         },
         {
           "number": 13,
@@ -4115,9 +4199,9 @@
             5
           ],
           "rawExtractedText": "常温、大気圧、空気中にある次の可燃性ガスを、二酸化炭素で希釈した場合、限界酸素濃度が\n  高い順に並べたものはどれか。\n\n   イ．H2\n   ロ．CH4\n   ハ．C2H4\n\n  ⑴　イ＞ロ＞ハ　　⑵　イ＞ハ＞ロ　　⑶　ロ＞イ＞ハ　　⑷　ロ＞ハ＞イ　　⑸　ハ＞ロ＞イ",
-          "reviewStatus": "transcription-verified-explanation-pending",
+          "reviewStatus": "transcription-verified-explanation-written",
           "transcriptionVerified": true,
-          "explanationWritten": false,
+          "explanationWritten": true,
           "figuresVerified": true,
           "sourceAnswerUrl": "https://www.khk.or.jp/Portals/0/khk/exam/2024/R6fy_kaitou.pdf",
           "officialAnswerNumber": 4,
@@ -4134,7 +4218,19 @@
           ],
           "hasImage": false,
           "imageAssets": [],
-          "sharedPassagePdfPages": []
+          "sharedPassagePdfPages": [],
+          "explanationDraft": "限界酸素濃度は、その値未満なら燃料濃度を変えても火炎が伝ぱできない酸素濃度の境界である。この設問の常温・大気圧・CO₂希釈ではCH₄＞C₂H₄＞H₂、すなわちロ＞ハ＞イとなる。空気中の爆発下限界や窒素希釈時の値と混同しない。公式正答は選択肢4。",
+          "choiceExplanationsDraft": {
+            "1": "誤り。H₂を最も高くしているが、指定条件ではH₂が3種中で最も低い。CH₄＞C₂H₄＞H₂となる。",
+            "2": "誤り。H₂を最高、CH₄を最低としており、両端が逆。指定条件で最も高いのはCH₄、最も低いのはH₂。",
+            "3": "誤り。CH₄が最も高い点は合うが、H₂とC₂H₄の順序が逆。C₂H₄の限界酸素濃度がH₂より高い。",
+            "4": "正しい。ロ（CH₄）＞ハ（C₂H₄）＞イ（H₂）が、常温・大気圧でCO₂希釈したときの高い順である。",
+            "5": "誤り。H₂が最も低い点は合うが、C₂H₄とCH₄の順が逆。CH₄＞C₂H₄＞H₂にする。"
+          },
+          "explanationSourceUrls": [
+            "https://stacks.cdc.gov/view/cdc/235822/cdc_235822_DS1.pdf"
+          ],
+          "explanationAttribution": "独自作成。照合済み公式問題・公式正答を保持し、基本式・物性・現象の相違から各肢の理由を記述。原文に不備がある場合は注記し補作しない。"
         },
         {
           "number": 14,
@@ -4143,9 +4239,9 @@
             5
           ],
           "rawExtractedText": "次のイ、ロ、ハ、ニの記述のうち、プロピレンについて正しいものはどれか。\n\n  イ．エチレンと同様に淡黄色のガスである。\n   ロ．沸点は－103.7 ℃、臨界温度は9.5 ℃である。\n  ハ．ヒドロホルミル化することで1-ブタノールを製造できる。\n  ニ．水和することにより2-プロパノール（イソプロピルアルコール）が得られる。\n\n  ⑴　イ、ロ　　⑵　イ、ニ　　⑶　ロ、ハ　　⑷　ロ、ニ　　⑸　ハ、ニ",
-          "reviewStatus": "transcription-verified-explanation-pending",
+          "reviewStatus": "transcription-verified-explanation-written",
           "transcriptionVerified": true,
-          "explanationWritten": false,
+          "explanationWritten": true,
           "figuresVerified": true,
           "sourceAnswerUrl": "https://www.khk.or.jp/Portals/0/khk/exam/2024/R6fy_kaitou.pdf",
           "officialAnswerNumber": 5,
@@ -4162,7 +4258,20 @@
           ],
           "hasImage": false,
           "imageAssets": [],
-          "sharedPassagePdfPages": []
+          "sharedPassagePdfPages": [],
+          "explanationDraft": "物性値はエチレンと混同しない。合成経路はプロピレン→ブチルアルデヒド→1-ブタノールと、プロピレン→2-プロパノールを分けて覚える。\n\nイ：誤り。プロピレンもエチレンも純粋な気体は無色であり、淡黄色ではない。\nロ：誤り。−103.7 ℃・9.5 ℃はエチレンの沸点・臨界温度に対応する値。プロピレンの通常沸点は約−48 ℃であり、取り違えている。\nハ：正しい。ヒドロホルミル化で炭素数を一つ増やしたブチルアルデヒドを得て、さらに水素化すれば1-ブタノールを製造できる。ヒドロホルミル化だけの直接生成物はアルデヒドである。\nニ：正しい。プロピレンの水和では二重結合に水が付加し、2-プロパノール（イソプロピルアルコール）が得られる。\n\n公式正答は選択肢5（ハ、ニ）。",
+          "choiceExplanationsDraft": {
+            "1": "公式正答の組合せ（ハ、ニ）と異なる。イ：誤り。プロピレンもエチレンも純粋な気体は無色であり、淡黄色ではない。 ロ：誤り。−103.7 ℃・9.5 ℃はエチレンの沸点・臨界温度に対応する値。プロピレンの通常沸点は約−48 ℃であり、取り違えている。",
+            "2": "公式正答の組合せ（ハ、ニ）と異なる。イ：誤り。プロピレンもエチレンも純粋な気体は無色であり、淡黄色ではない。 ニ：正しい。プロピレンの水和では二重結合に水が付加し、2-プロパノール（イソプロピルアルコール）が得られる。",
+            "3": "公式正答の組合せ（ハ、ニ）と異なる。ロ：誤り。−103.7 ℃・9.5 ℃はエチレンの沸点・臨界温度に対応する値。プロピレンの通常沸点は約−48 ℃であり、取り違えている。 ハ：正しい。ヒドロホルミル化で炭素数を一つ増やしたブチルアルデヒドを得て、さらに水素化すれば1-ブタノールを製造できる。ヒドロホルミル化だけの直接生成物はアルデヒドである。",
+            "4": "公式正答の組合せ（ハ、ニ）と異なる。ロ：誤り。−103.7 ℃・9.5 ℃はエチレンの沸点・臨界温度に対応する値。プロピレンの通常沸点は約−48 ℃であり、取り違えている。 ニ：正しい。プロピレンの水和では二重結合に水が付加し、2-プロパノール（イソプロピルアルコール）が得られる。",
+            "5": "公式正答の組合せ。ハ：正しい。ヒドロホルミル化で炭素数を一つ増やしたブチルアルデヒドを得て、さらに水素化すれば1-ブタノールを製造できる。ヒドロホルミル化だけの直接生成物はアルデヒドである。 ニ：正しい。プロピレンの水和では二重結合に水が付加し、2-プロパノール（イソプロピルアルコール）が得られる。"
+          },
+          "explanationSourceUrls": [
+            "https://www.canada.ca/en/environment-climate-change/services/evaluating-existing-substances/screening-assessment-3.html",
+            "https://webbook.nist.gov/cgi/cbook.cgi?ID=C115071&Type=TBOIL"
+          ],
+          "explanationAttribution": "独自作成。照合済み公式問題・公式正答を保持し、基本式・物性・現象の相違から各肢の理由を記述。原文に不備がある場合は注記し補作しない。"
         },
         {
           "number": 15,
@@ -4171,9 +4280,9 @@
             5
           ],
           "rawExtractedText": "次のイ、ロ、ハ、ニの記述のうち、シアン化水素について正しいものはどれか。\n\n  イ．蒸気は毒性が高く、特有のアーモンドのような臭いをもっている。\n  ロ．水にわずかに溶け、水溶液は塩基性を示す。\n  ハ．通常はソハイオ法によるアクリロニトリルを製造する際の副生物から回収して得られる。\n  ニ．主な用途として、窒素肥料の製造原料に使われる。\n\n  ⑴　イ、ロ　　⑵　イ、ハ　　⑶　ロ、ハ　　⑷　ロ、ニ　　⑸　ハ、ニ\n\nR6-BZ                                         4\nB\nB",
-          "reviewStatus": "transcription-verified-explanation-pending",
+          "reviewStatus": "transcription-verified-explanation-written",
           "transcriptionVerified": true,
-          "explanationWritten": false,
+          "explanationWritten": true,
           "figuresVerified": true,
           "sourceAnswerUrl": "https://www.khk.or.jp/Portals/0/khk/exam/2024/R6fy_kaitou.pdf",
           "officialAnswerNumber": 2,
@@ -4190,7 +4299,19 @@
           ],
           "hasImage": false,
           "imageAssets": [],
-          "sharedPassagePdfPages": []
+          "sharedPassagePdfPages": [],
+          "explanationDraft": "HCNの毒性・水への溶解性・弱酸性と、アクリロニトリル製造での副生を押さえる。\n\nイ：正しい。シアン化水素は強い毒性を持ち、苦いアーモンドに似た臭いが記載される。ただし臭いを感じる能力には個人差があり、臭いの有無は安全判定にならない。\nロ：誤り。シアン化水素は水によく溶け、水溶液は弱酸性を示す。「わずかに溶ける」「塩基性」の双方が不適切。\nハ：正しい。プロピレンのアンモ酸化によるアクリロニトリル製造（ソハイオ法）ではHCNが副生し、回収される。これ以外の直接合成法もある。\nニ：誤り。HCNはアジポニトリル等の有機合成原料やシアン化物の製造原料となる。窒素肥料の主要原料であるアンモニアとの取り違えである。\n\n公式正答は選択肢2（イ、ハ）。",
+          "choiceExplanationsDraft": {
+            "1": "公式正答の組合せ（イ、ハ）と異なる。イ：正しい。シアン化水素は強い毒性を持ち、苦いアーモンドに似た臭いが記載される。ただし臭いを感じる能力には個人差があり、臭いの有無は安全判定にならない。 ロ：誤り。シアン化水素は水によく溶け、水溶液は弱酸性を示す。「わずかに溶ける」「塩基性」の双方が不適切。",
+            "2": "公式正答の組合せ。イ：正しい。シアン化水素は強い毒性を持ち、苦いアーモンドに似た臭いが記載される。ただし臭いを感じる能力には個人差があり、臭いの有無は安全判定にならない。 ハ：正しい。プロピレンのアンモ酸化によるアクリロニトリル製造（ソハイオ法）ではHCNが副生し、回収される。これ以外の直接合成法もある。",
+            "3": "公式正答の組合せ（イ、ハ）と異なる。ロ：誤り。シアン化水素は水によく溶け、水溶液は弱酸性を示す。「わずかに溶ける」「塩基性」の双方が不適切。 ハ：正しい。プロピレンのアンモ酸化によるアクリロニトリル製造（ソハイオ法）ではHCNが副生し、回収される。これ以外の直接合成法もある。",
+            "4": "公式正答の組合せ（イ、ハ）と異なる。ロ：誤り。シアン化水素は水によく溶け、水溶液は弱酸性を示す。「わずかに溶ける」「塩基性」の双方が不適切。 ニ：誤り。HCNはアジポニトリル等の有機合成原料やシアン化物の製造原料となる。窒素肥料の主要原料であるアンモニアとの取り違えである。",
+            "5": "公式正答の組合せ（イ、ハ）と異なる。ハ：正しい。プロピレンのアンモ酸化によるアクリロニトリル製造（ソハイオ法）ではHCNが副生し、回収される。これ以外の直接合成法もある。 ニ：誤り。HCNはアジポニトリル等の有機合成原料やシアン化物の製造原料となる。窒素肥料の主要原料であるアンモニアとの取り違えである。"
+          },
+          "explanationSourceUrls": [
+            "https://www.atsdr.cdc.gov/toxprofiles/tp8.pdf"
+          ],
+          "explanationAttribution": "独自作成。照合済み公式問題・公式正答を保持し、基本式・物性・現象の相違から各肢の理由を記述。原文に不備がある場合は注記し補作しない。"
         }
       ]
     },
@@ -9853,9 +9974,9 @@
             3
           ],
           "rawExtractedText": "次のイ、ロ、ハ、ニのうち、正しいものはどれか。\n\n\n  イ．1 Ｎ ＝ 1 ｋｇ・ｍ－２・ｓ\n\n  ロ．1 Ｐａ ＝ 1 ｋｇ・ｍ－２・ｓ－１\n\n  ハ．1 Ｊ ＝ 1 ｋｇ・ｍ２・ｓ－２\n\n  ニ．1 Ｗ ＝ 1 ｋｇ・ｍ２・ｓ－３\n\n\n    (1) イ、ロ    (2) イ、ハ    (3) ロ、ハ    (4) ロ、ニ    (5) ハ、ニ",
-          "reviewStatus": "transcription-verified-explanation-pending",
+          "reviewStatus": "transcription-verified-explanation-written",
           "transcriptionVerified": true,
-          "explanationWritten": false,
+          "explanationWritten": true,
           "figuresVerified": true,
           "sourceAnswerUrl": "https://www.khk.or.jp/Portals/0/khk/exam/2025/1110/R7fy_kaitou.pdf",
           "officialAnswerNumber": 5,
@@ -9873,7 +9994,19 @@
           ],
           "hasImage": false,
           "imageAssets": [],
-          "sharedPassagePdfPages": []
+          "sharedPassagePdfPages": [],
+          "explanationDraft": "基本関係F＝ma、p＝F/A、E＝Fℓ、P＝E/tで組立単位の指数を確かめる。\n\nイ：誤り。F＝maから1 N＝1 kg･m･s⁻²である。提示式は長さと時間の指数が一致しない。\nロ：誤り。p＝F/Aから1 Pa＝1 kg･m⁻¹･s⁻²である。提示式のm⁻²･s⁻¹は圧力の次元ではない。\nハ：正しい。1 J＝1 N･m＝1 kg･m²･s⁻²であり、仕事・エネルギーの単位となる。\nニ：正しい。1 W＝1 J/s＝1 kg･m²･s⁻³であり、単位時間当たりのエネルギーを表す。\n\n公式正答は選択肢5（ハ、ニ）。",
+          "choiceExplanationsDraft": {
+            "1": "公式正答の組合せ（ハ、ニ）と異なる。イ：誤り。F＝maから1 N＝1 kg･m･s⁻²である。提示式は長さと時間の指数が一致しない。 ロ：誤り。p＝F/Aから1 Pa＝1 kg･m⁻¹･s⁻²である。提示式のm⁻²･s⁻¹は圧力の次元ではない。",
+            "2": "公式正答の組合せ（ハ、ニ）と異なる。イ：誤り。F＝maから1 N＝1 kg･m･s⁻²である。提示式は長さと時間の指数が一致しない。 ハ：正しい。1 J＝1 N･m＝1 kg･m²･s⁻²であり、仕事・エネルギーの単位となる。",
+            "3": "公式正答の組合せ（ハ、ニ）と異なる。ロ：誤り。p＝F/Aから1 Pa＝1 kg･m⁻¹･s⁻²である。提示式のm⁻²･s⁻¹は圧力の次元ではない。 ハ：正しい。1 J＝1 N･m＝1 kg･m²･s⁻²であり、仕事・エネルギーの単位となる。",
+            "4": "公式正答の組合せ（ハ、ニ）と異なる。ロ：誤り。p＝F/Aから1 Pa＝1 kg･m⁻¹･s⁻²である。提示式のm⁻²･s⁻¹は圧力の次元ではない。 ニ：正しい。1 W＝1 J/s＝1 kg･m²･s⁻³であり、単位時間当たりのエネルギーを表す。",
+            "5": "公式正答の組合せ。ハ：正しい。1 J＝1 N･m＝1 kg･m²･s⁻²であり、仕事・エネルギーの単位となる。 ニ：正しい。1 W＝1 J/s＝1 kg･m²･s⁻³であり、単位時間当たりのエネルギーを表す。"
+          },
+          "explanationSourceUrls": [
+            "https://www.bipm.org/documents/20126/41483022/SI-Brochure-9-EN.pdf"
+          ],
+          "explanationAttribution": "独自作成。照合済み公式問題・公式正答を保持し、基本式・物性・現象の相違から各肢の理由を記述。原文に不備がある場合は注記し補作しない。"
         },
         {
           "number": 2,
@@ -9958,9 +10091,9 @@
             3
           ],
           "rawExtractedText": "次のイ、ロ、ハ、ニの記述のうち、正しいものはどれか。\n\n\n  イ．外部との間に熱の出入りがない場合の状態変化を断熱変化という。\n\n  ロ．理想気体を加熱したときの定容変化では、気体に加えられた熱は外部にした仕事に使われる。\n\n  ハ．エントロピーは、状態量ではない。\n\n  ニ．多くの実在気体は、常温でジュール - トムソン膨張（等エンタルピー膨張）すると温度が低下\n\n   する。\n\n\n    (1) イ、ロ    (2) イ、ニ    (3) ロ、ハ    (4) ロ、ニ    (5) ハ、ニ",
-          "reviewStatus": "transcription-verified-explanation-pending",
+          "reviewStatus": "transcription-verified-explanation-written",
           "transcriptionVerified": true,
-          "explanationWritten": false,
+          "explanationWritten": true,
           "figuresVerified": true,
           "sourceAnswerUrl": "https://www.khk.or.jp/Portals/0/khk/exam/2025/1110/R7fy_kaitou.pdf",
           "officialAnswerNumber": 2,
@@ -9978,7 +10111,17 @@
           ],
           "hasImage": false,
           "imageAssets": [],
-          "sharedPassagePdfPages": []
+          "sharedPassagePdfPages": [],
+          "explanationDraft": "断熱Q＝0と定容dV＝0は異なる条件。絞り膨張ではエンタルピーが一定であり、温度変化の符号は気体と温度に依存する。\n\nイ：正しい。断熱変化は外界との熱の授受がない変化であり、Q＝0である。仕事の授受までゼロとは限らない。\nロ：誤り。定容では体積変化がないため境界仕事∫p dV＝0。加えた熱は、他の仕事がない理想気体では内部エネルギーの増加に使われる。\nハ：誤り。エントロピーは状態量であり、始状態と終状態で変化量が決まる。熱や仕事のような経路量とは異なる。\nニ：正しい。多くの実在気体は常温の絞り膨張でジュール・トムソン係数が正となり、圧力低下とともに温度が下がる。水素やヘリウム等の例外まで「全て」としない。\n\n公式正答は選択肢2（イ、ニ）。",
+          "choiceExplanationsDraft": {
+            "1": "公式正答の組合せ（イ、ニ）と異なる。イ：正しい。断熱変化は外界との熱の授受がない変化であり、Q＝0である。仕事の授受までゼロとは限らない。 ロ：誤り。定容では体積変化がないため境界仕事∫p dV＝0。加えた熱は、他の仕事がない理想気体では内部エネルギーの増加に使われる。",
+            "2": "公式正答の組合せ。イ：正しい。断熱変化は外界との熱の授受がない変化であり、Q＝0である。仕事の授受までゼロとは限らない。 ニ：正しい。多くの実在気体は常温の絞り膨張でジュール・トムソン係数が正となり、圧力低下とともに温度が下がる。水素やヘリウム等の例外まで「全て」としない。",
+            "3": "公式正答の組合せ（イ、ニ）と異なる。ロ：誤り。定容では体積変化がないため境界仕事∫p dV＝0。加えた熱は、他の仕事がない理想気体では内部エネルギーの増加に使われる。 ハ：誤り。エントロピーは状態量であり、始状態と終状態で変化量が決まる。熱や仕事のような経路量とは異なる。",
+            "4": "公式正答の組合せ（イ、ニ）と異なる。ロ：誤り。定容では体積変化がないため境界仕事∫p dV＝0。加えた熱は、他の仕事がない理想気体では内部エネルギーの増加に使われる。 ニ：正しい。多くの実在気体は常温の絞り膨張でジュール・トムソン係数が正となり、圧力低下とともに温度が下がる。水素やヘリウム等の例外まで「全て」としない。",
+            "5": "公式正答の組合せ（イ、ニ）と異なる。ハ：誤り。エントロピーは状態量であり、始状態と終状態で変化量が決まる。熱や仕事のような経路量とは異なる。 ニ：正しい。多くの実在気体は常温の絞り膨張でジュール・トムソン係数が正となり、圧力低下とともに温度が下がる。水素やヘリウム等の例外まで「全て」としない。"
+          },
+          "explanationSourceUrls": [],
+          "explanationAttribution": "独自作成。照合済み公式問題・公式正答を保持し、基本式・物性・現象の相違から各肢の理由を記述。原文に不備がある場合は注記し補作しない。"
         },
         {
           "number": 5,
@@ -9987,9 +10130,9 @@
             3
           ],
           "rawExtractedText": "次のイ、ロ、ハ、ニの反応速度についての記述のうち、正しいものはどれか。\n\n\n  イ．活性化エネルギーは、通常は正の値である。\n  ロ．アレニウスの式は、反応速度定数k の濃度依存性を表す。\n\n  ハ．正反応の反応速度は、通常は生成物の濃度と反応物の濃度の積に比例する。\n\n  ニ．反応次数が1、2、3 である反応を、それぞれ1 次反応、2 次反応、3 次反応と呼ぶ。\n\n\n    (1) イ、ロ    (2) イ、ニ    (3) ロ、ハ    (4) ロ、ニ    (5) ハ、ニ\n\n\n\n                                      - 1 -                                             R7-BZ",
-          "reviewStatus": "transcription-verified-explanation-pending",
+          "reviewStatus": "transcription-verified-explanation-written",
           "transcriptionVerified": true,
-          "explanationWritten": false,
+          "explanationWritten": true,
           "figuresVerified": true,
           "sourceAnswerUrl": "https://www.khk.or.jp/Portals/0/khk/exam/2025/1110/R7fy_kaitou.pdf",
           "officialAnswerNumber": 2,
@@ -10007,7 +10150,19 @@
           ],
           "hasImage": false,
           "imageAssets": [],
-          "sharedPassagePdfPages": []
+          "sharedPassagePdfPages": [],
+          "explanationDraft": "反応速度式の濃度指数と、速度定数の温度依存性を分ける。総反応式の係数から反応次数を無条件に決めない。\n\nイ：正しい。通常の反応では活性化エネルギーは正であり、温度を上げると速度定数が増加する。\nロ：誤り。アレニウス式k＝A exp(−E_a/RT)は速度定数の温度依存性を表し、濃度依存性を直接表す式ではない。\nハ：誤り。正反応の速度式は通常、反応物濃度のべきの積で表す。生成物濃度と反応物濃度の単純な積と一律には定まらない。\nニ：正しい。反応次数が1、2、3の反応を、それぞれ一次、二次、三次反応と呼ぶ。反応次数は速度式の濃度指数で判定する。\n\n公式正答は選択肢2（イ、ニ）。",
+          "choiceExplanationsDraft": {
+            "1": "公式正答の組合せ（イ、ニ）と異なる。イ：正しい。通常の反応では活性化エネルギーは正であり、温度を上げると速度定数が増加する。 ロ：誤り。アレニウス式k＝A exp(−E_a/RT)は速度定数の温度依存性を表し、濃度依存性を直接表す式ではない。",
+            "2": "公式正答の組合せ。イ：正しい。通常の反応では活性化エネルギーは正であり、温度を上げると速度定数が増加する。 ニ：正しい。反応次数が1、2、3の反応を、それぞれ一次、二次、三次反応と呼ぶ。反応次数は速度式の濃度指数で判定する。",
+            "3": "公式正答の組合せ（イ、ニ）と異なる。ロ：誤り。アレニウス式k＝A exp(−E_a/RT)は速度定数の温度依存性を表し、濃度依存性を直接表す式ではない。 ハ：誤り。正反応の速度式は通常、反応物濃度のべきの積で表す。生成物濃度と反応物濃度の単純な積と一律には定まらない。",
+            "4": "公式正答の組合せ（イ、ニ）と異なる。ロ：誤り。アレニウス式k＝A exp(−E_a/RT)は速度定数の温度依存性を表し、濃度依存性を直接表す式ではない。 ニ：正しい。反応次数が1、2、3の反応を、それぞれ一次、二次、三次反応と呼ぶ。反応次数は速度式の濃度指数で判定する。",
+            "5": "公式正答の組合せ（イ、ニ）と異なる。ハ：誤り。正反応の速度式は通常、反応物濃度のべきの積で表す。生成物濃度と反応物濃度の単純な積と一律には定まらない。 ニ：正しい。反応次数が1、2、3の反応を、それぞれ一次、二次、三次反応と呼ぶ。反応次数は速度式の濃度指数で判定する。"
+          },
+          "explanationSourceUrls": [
+            "https://goldbook.iupac.org/terms/view/O04322"
+          ],
+          "explanationAttribution": "独自作成。照合済み公式問題・公式正答を保持し、基本式・物性・現象の相違から各肢の理由を記述。原文に不備がある場合は注記し補作しない。"
         },
         {
           "number": 6,
@@ -10056,9 +10211,9 @@
             4
           ],
           "rawExtractedText": "次のイ、ロ、ハ、ニの記述のうち、化学平衡について正しいものはどれか。\n\n\n  イ．可逆反応では、正反応が進んで生成物量が増加するにつれて逆反応の速度が遅くなり、つい\n\n   には逆反応の速度がゼロになった状態が化学平衡である。\n  ロ．濃度平衡定数Kc と圧平衡定数Kp は常に同じ値である。\n\n  ハ．吸熱反応において、定圧下で反応温度を上げると、反応の平衡は生成系側に移動する。\n\n  ニ．定温下で圧力を高くすると、反応の平衡は体積が減少する方向に移動する。\n\n\n    (1) イ、ロ    (2) イ、ニ    (3) ロ、ハ    (4) ロ、ニ    (5) ハ、ニ",
-          "reviewStatus": "transcription-verified-explanation-pending",
+          "reviewStatus": "transcription-verified-explanation-written",
           "transcriptionVerified": true,
-          "explanationWritten": false,
+          "explanationWritten": true,
           "figuresVerified": true,
           "sourceAnswerUrl": "https://www.khk.or.jp/Portals/0/khk/exam/2025/1110/R7fy_kaitou.pdf",
           "officialAnswerNumber": 5,
@@ -10076,7 +10231,19 @@
           ],
           "hasImage": false,
           "imageAssets": [],
-          "sharedPassagePdfPages": []
+          "sharedPassagePdfPages": [],
+          "explanationDraft": "平衡は動的な状態である。温度変化は反応熱の向き、圧力変化は気体の係数和の差で判定する。\n\nイ：誤り。平衡では正反応と逆反応が同じ速さで進む。逆反応の速度がゼロとなって止まる状態ではない。\nロ：誤り。理想気体の表示ではK_p＝K_c(RT)^Δνであり、気体の係数差Δνが関係するため、常に同じとはいえない。\nハ：正しい。吸熱方向は熱を取り込む方向なので、定圧で昇温すると熱を消費する生成物側へ平衡が移る。\nニ：正しい。一定温度で圧縮すると、気相反応の平衡は気体の物質量・体積が減る側に移る。気体の係数和が両辺で等しい場合は、この圧縮による移動はない。\n\n公式正答は選択肢5（ハ、ニ）。",
+          "choiceExplanationsDraft": {
+            "1": "公式正答の組合せ（ハ、ニ）と異なる。イ：誤り。平衡では正反応と逆反応が同じ速さで進む。逆反応の速度がゼロとなって止まる状態ではない。 ロ：誤り。理想気体の表示ではK_p＝K_c(RT)^Δνであり、気体の係数差Δνが関係するため、常に同じとはいえない。",
+            "2": "公式正答の組合せ（ハ、ニ）と異なる。イ：誤り。平衡では正反応と逆反応が同じ速さで進む。逆反応の速度がゼロとなって止まる状態ではない。 ニ：正しい。一定温度で圧縮すると、気相反応の平衡は気体の物質量・体積が減る側に移る。気体の係数和が両辺で等しい場合は、この圧縮による移動はない。",
+            "3": "公式正答の組合せ（ハ、ニ）と異なる。ロ：誤り。理想気体の表示ではK_p＝K_c(RT)^Δνであり、気体の係数差Δνが関係するため、常に同じとはいえない。 ハ：正しい。吸熱方向は熱を取り込む方向なので、定圧で昇温すると熱を消費する生成物側へ平衡が移る。",
+            "4": "公式正答の組合せ（ハ、ニ）と異なる。ロ：誤り。理想気体の表示ではK_p＝K_c(RT)^Δνであり、気体の係数差Δνが関係するため、常に同じとはいえない。 ニ：正しい。一定温度で圧縮すると、気相反応の平衡は気体の物質量・体積が減る側に移る。気体の係数和が両辺で等しい場合は、この圧縮による移動はない。",
+            "5": "公式正答の組合せ。ハ：正しい。吸熱方向は熱を取り込む方向なので、定圧で昇温すると熱を消費する生成物側へ平衡が移る。 ニ：正しい。一定温度で圧縮すると、気相反応の平衡は気体の物質量・体積が減る側に移る。気体の係数和が両辺で等しい場合は、この圧縮による移動はない。"
+          },
+          "explanationSourceUrls": [
+            "https://goldbook.iupac.org/terms/view/C01023"
+          ],
+          "explanationAttribution": "独自作成。照合済み公式問題・公式正答を保持し、基本式・物性・現象の相違から各肢の理由を記述。原文に不備がある場合は注記し補作しない。"
         },
         {
           "number": 8,
@@ -10123,9 +10290,9 @@
             4
           ],
           "rawExtractedText": "次のガスと空気の常温、大気圧における混合気体について、消炎距離の最小値が小さいものから\n\n  大きいものへ順に並べたものはどれか。\n\n\n  イ． 水素   ロ．酸化エチレン   ハ．メタン\n\n\n    (1) イ＜ロ＜ハ    (2) イ＜ハ＜ロ    (3) ロ＜ハ＜イ    (4) ハ＜イ＜ロ  (5) ハ＜ロ＜イ\n\n\n\n\n\n   R7-BZ                               - 2 -",
-          "reviewStatus": "transcription-verified-explanation-pending",
+          "reviewStatus": "transcription-verified-explanation-written",
           "transcriptionVerified": true,
-          "explanationWritten": false,
+          "explanationWritten": true,
           "figuresVerified": true,
           "sourceAnswerUrl": "https://www.khk.or.jp/Portals/0/khk/exam/2025/1110/R7fy_kaitou.pdf",
           "officialAnswerNumber": 1,
@@ -10143,7 +10310,19 @@
           ],
           "hasImage": false,
           "imageAssets": [],
-          "sharedPassagePdfPages": []
+          "sharedPassagePdfPages": [],
+          "explanationDraft": "消炎距離は、壁面等への熱損失によって火炎が伝ぱできなくなる限界の隙間寸法。指定された常温・大気圧の空気との混合気では、最小値の小さい順は水素＜酸化エチレン＜メタン（イ＜ロ＜ハ）である。最大燃焼速度や爆発下限界の大小をそのまま並べる問題ではない。公式正答は選択肢1。",
+          "choiceExplanationsDraft": {
+            "1": "正しい。イ（水素）＜ロ（酸化エチレン）＜ハ（メタン）が指定条件における最小消炎距離の順である。水素火炎は特に狭い隙間でも伝ぱしやすい。",
+            "2": "誤り。水素を最小とする点は合うが、メタンと酸化エチレンが逆。酸化エチレンの最小消炎距離はメタンより小さい。",
+            "3": "誤り。水素を最大としている。水素はこの3種の中で最小消炎距離が最も小さく、並べる先頭となる。",
+            "4": "誤り。メタンを最小に置いている。メタンはこの比較では最大であり、水素、酸化エチレン、メタンの順に大きくなる。",
+            "5": "誤り。メタンを最小、水素を最大としており、正しいイ＜ロ＜ハの順と逆になっている。"
+          },
+          "explanationSourceUrls": [
+            "https://www.kantei.go.jp/jp/topics/2012/pdf/jikocho/honbun.pdf"
+          ],
+          "explanationAttribution": "独自作成。照合済み公式問題・公式正答を保持し、基本式・物性・現象の相違から各肢の理由を記述。原文に不備がある場合は注記し補作しない。"
         },
         {
           "number": 10,
@@ -10152,9 +10331,9 @@
             5
           ],
           "rawExtractedText": "次のイ、ロ、ハ、ニの記述のうち、爆発限界および爆発範囲について正しいものはどれか。\n\n\n  イ．窒素の添加による希釈効果によって、爆発上限界は大きくなる。\n\n  ロ．可燃性ガスの爆発限界に対する二酸化炭素の希釈効果は、窒素よりも大きい。\n\n  ハ．一般に可燃性ガスと空気との混合ガスの爆発範囲は、温度が上昇すると広くなる。\n\n  ニ．爆ごう範囲は、爆発範囲よりも広い。\n\n\n    (1) イ、ロ    (2) イ、ハ    (3) イ、ニ    (4) ロ、ハ    (5) ロ、ニ",
-          "reviewStatus": "transcription-verified-explanation-pending",
+          "reviewStatus": "transcription-verified-explanation-written",
           "transcriptionVerified": true,
-          "explanationWritten": false,
+          "explanationWritten": true,
           "figuresVerified": true,
           "sourceAnswerUrl": "https://www.khk.or.jp/Portals/0/khk/exam/2025/1110/R7fy_kaitou.pdf",
           "officialAnswerNumber": 4,
@@ -10172,7 +10351,19 @@
           ],
           "hasImage": false,
           "imageAssets": [],
-          "sharedPassagePdfPages": []
+          "sharedPassagePdfPages": [],
+          "explanationDraft": "希釈は爆発範囲を狭め、昇温は一般に広げる。爆燃を含む爆発範囲と、爆ごうだけが成立する範囲も区別する。\n\nイ：誤り。窒素を加えて希釈すると火炎伝ぱが抑えられ、通常は上限界が下がって爆発範囲が狭くなる。上限界が大きくなる方向ではない。\nロ：正しい。一般にCO₂は窒素より大きな希釈・不活性化効果を持つ。同じガスでも希釈剤を区別して爆発限界を扱う必要がある。\nハ：正しい。温度が上がると混合気が燃焼を維持しやすくなり、一般に下限界は低下、上限界は上昇して爆発範囲が広がる。\nニ：誤り。爆ごうが成立する濃度範囲は、通常、燃焼伝ぱが可能な爆発範囲の内側にあり、爆発範囲より広くはない。\n\n公式正答は選択肢4（ロ、ハ）。",
+          "choiceExplanationsDraft": {
+            "1": "公式正答の組合せ（ロ、ハ）と異なる。イ：誤り。窒素を加えて希釈すると火炎伝ぱが抑えられ、通常は上限界が下がって爆発範囲が狭くなる。上限界が大きくなる方向ではない。 ロ：正しい。一般にCO₂は窒素より大きな希釈・不活性化効果を持つ。同じガスでも希釈剤を区別して爆発限界を扱う必要がある。",
+            "2": "公式正答の組合せ（ロ、ハ）と異なる。イ：誤り。窒素を加えて希釈すると火炎伝ぱが抑えられ、通常は上限界が下がって爆発範囲が狭くなる。上限界が大きくなる方向ではない。 ハ：正しい。温度が上がると混合気が燃焼を維持しやすくなり、一般に下限界は低下、上限界は上昇して爆発範囲が広がる。",
+            "3": "公式正答の組合せ（ロ、ハ）と異なる。イ：誤り。窒素を加えて希釈すると火炎伝ぱが抑えられ、通常は上限界が下がって爆発範囲が狭くなる。上限界が大きくなる方向ではない。 ニ：誤り。爆ごうが成立する濃度範囲は、通常、燃焼伝ぱが可能な爆発範囲の内側にあり、爆発範囲より広くはない。",
+            "4": "公式正答の組合せ。ロ：正しい。一般にCO₂は窒素より大きな希釈・不活性化効果を持つ。同じガスでも希釈剤を区別して爆発限界を扱う必要がある。 ハ：正しい。温度が上がると混合気が燃焼を維持しやすくなり、一般に下限界は低下、上限界は上昇して爆発範囲が広がる。",
+            "5": "公式正答の組合せ（ロ、ハ）と異なる。ロ：正しい。一般にCO₂は窒素より大きな希釈・不活性化効果を持つ。同じガスでも希釈剤を区別して爆発限界を扱う必要がある。 ニ：誤り。爆ごうが成立する濃度範囲は、通常、燃焼伝ぱが可能な爆発範囲の内側にあり、爆発範囲より広くはない。"
+          },
+          "explanationSourceUrls": [
+            "https://stacks.cdc.gov/view/cdc/235822/cdc_235822_DS1.pdf"
+          ],
+          "explanationAttribution": "独自作成。照合済み公式問題・公式正答を保持し、基本式・物性・現象の相違から各肢の理由を記述。原文に不備がある場合は注記し補作しない。"
         },
         {
           "number": 11,
@@ -10181,9 +10372,9 @@
             5
           ],
           "rawExtractedText": "次のイ、ロ、ハ、ニのうち、すべてが分解爆発性を有するガスであるものはどれか。\n\n\n  イ．アセチレン、水素、メタン\n\n  ロ．アンモニア、亜酸化窒素、一酸化炭素\n\n  ハ．塩素、水素、プロパン\n\n  ニ．亜酸化窒素、アセチレン、モノゲルマン\n\n\n    (1) イ    (2) ロ    (3) ハ    (4) ニ    (5) ロ、ニ",
-          "reviewStatus": "transcription-verified-explanation-pending",
+          "reviewStatus": "transcription-verified-explanation-written",
           "transcriptionVerified": true,
-          "explanationWritten": false,
+          "explanationWritten": true,
           "figuresVerified": true,
           "sourceAnswerUrl": "https://www.khk.or.jp/Portals/0/khk/exam/2025/1110/R7fy_kaitou.pdf",
           "officialAnswerNumber": 4,
@@ -10201,7 +10392,19 @@
           ],
           "hasImage": false,
           "imageAssets": [],
-          "sharedPassagePdfPages": []
+          "sharedPassagePdfPages": [],
+          "explanationDraft": "分解爆発は、外部から酸素等を供給しなくても物質自身の分解反応で起きる爆発。亜酸化窒素、アセチレン、モノゲルマンを含むニが該当する。可燃性や支燃性と分解爆発性は別の分類である。公式正答は選択肢4。",
+          "choiceExplanationsDraft": {
+            "1": "誤り。イのアセチレンは分解爆発性を持つが、水素・メタンまで全てが分解爆発性ガスではない。「すべて」の条件を満たさない。",
+            "2": "誤り。ロの亜酸化窒素は分解爆発性を持つが、アンモニアと一酸化炭素を含む全体を分解爆発性ガスの組合せとはできない。",
+            "3": "誤り。ハの塩素・水素・プロパンは、互いの反応や空気との燃焼による危険と、単独の分解爆発性を混同している。",
+            "4": "正しい。ニの亜酸化窒素N₂O、アセチレンC₂H₂、モノゲルマンGeH₄はいずれも分解爆発性を有する。",
+            "5": "誤り。ニは該当するが、ロはアンモニア・一酸化炭素を含むため「全てが分解爆発性」の条件を満たさない。ニだけを選ぶ。"
+          },
+          "explanationSourceUrls": [
+            "https://www.khk.or.jp/Portals/0/khk/hpg/hpg_div/2021/Public%20Comment20220113/3Draft3%20KHKS%201801-3.pdf"
+          ],
+          "explanationAttribution": "独自作成。照合済み公式問題・公式正答を保持し、基本式・物性・現象の相違から各肢の理由を記述。原文に不備がある場合は注記し補作しない。"
         },
         {
           "number": 12,
@@ -10210,9 +10413,9 @@
             5
           ],
           "rawExtractedText": "次のイ、ロ、ハ、ニの記述のうち、爆燃・爆ごうについて正しいものはどれか。\n\n\n  イ．爆燃における火炎の伝ぱ速度は、音速より速い。\n\n  ロ．爆風の影響を調べるのに利用されるのが、相似則に基づいたホプキンソンの平方根法則であ\n\n   る。\n\n  ハ．爆風は、爆燃や爆ごうで周囲に広がる圧力波である。\n\n  ニ．爆心から離れたある地点で観測された衝撃波を伴う強い爆発による爆風圧は、最大圧力に達し\n\n   たあと、一旦、負圧になるまで低下し大気圧に戻る。\n\n\n    (1) イ、ロ    (2) イ、ニ    (3) ロ、ハ    (4) ハ、ニ    (5) イ、ハ、ニ\n\n\n\n\n\n                                      - 3 -                                             R7-BZ",
-          "reviewStatus": "transcription-verified-explanation-pending",
+          "reviewStatus": "transcription-verified-explanation-written",
           "transcriptionVerified": true,
-          "explanationWritten": false,
+          "explanationWritten": true,
           "figuresVerified": true,
           "sourceAnswerUrl": "https://www.khk.or.jp/Portals/0/khk/exam/2025/1110/R7fy_kaitou.pdf",
           "officialAnswerNumber": 4,
@@ -10230,7 +10433,19 @@
           ],
           "hasImage": false,
           "imageAssets": [],
-          "sharedPassagePdfPages": []
+          "sharedPassagePdfPages": [],
+          "explanationDraft": "音速との大小、距離の相似則、圧力時間履歴という三つの観点を分ける。\n\nイ：誤り。爆燃の火炎伝ぱは未燃混合気に対する音速未満。衝撃波を伴って音速を超える爆ごうと区別する。\nロ：誤り。ホプキンソンの相似則は平方根ではなく立方根則。換算距離は距離Rを爆薬量Wの立方根で割ったR/W^(1/3)で表す。\nハ：正しい。爆燃・爆ごうによる急激な圧力上昇により、周囲へ圧力波として広がるのが爆風である。\nニ：正しい。強い爆風の代表的な圧力履歴では急上昇後に正圧が減衰し、負圧相を経て大気圧へ戻る。負圧とは大気圧より低いという意味である。\n\n公式正答は選択肢4（ハ、ニ）。",
+          "choiceExplanationsDraft": {
+            "1": "公式正答の組合せ（ハ、ニ）と異なる。イ：誤り。爆燃の火炎伝ぱは未燃混合気に対する音速未満。衝撃波を伴って音速を超える爆ごうと区別する。 ロ：誤り。ホプキンソンの相似則は平方根ではなく立方根則。換算距離は距離Rを爆薬量Wの立方根で割ったR/W^(1/3)で表す。",
+            "2": "公式正答の組合せ（ハ、ニ）と異なる。イ：誤り。爆燃の火炎伝ぱは未燃混合気に対する音速未満。衝撃波を伴って音速を超える爆ごうと区別する。 ニ：正しい。強い爆風の代表的な圧力履歴では急上昇後に正圧が減衰し、負圧相を経て大気圧へ戻る。負圧とは大気圧より低いという意味である。",
+            "3": "公式正答の組合せ（ハ、ニ）と異なる。ロ：誤り。ホプキンソンの相似則は平方根ではなく立方根則。換算距離は距離Rを爆薬量Wの立方根で割ったR/W^(1/3)で表す。 ハ：正しい。爆燃・爆ごうによる急激な圧力上昇により、周囲へ圧力波として広がるのが爆風である。",
+            "4": "公式正答の組合せ。ハ：正しい。爆燃・爆ごうによる急激な圧力上昇により、周囲へ圧力波として広がるのが爆風である。 ニ：正しい。強い爆風の代表的な圧力履歴では急上昇後に正圧が減衰し、負圧相を経て大気圧へ戻る。負圧とは大気圧より低いという意味である。",
+            "5": "公式正答の組合せ（ハ、ニ）と異なる。イ：誤り。爆燃の火炎伝ぱは未燃混合気に対する音速未満。衝撃波を伴って音速を超える爆ごうと区別する。 ハ：正しい。爆燃・爆ごうによる急激な圧力上昇により、周囲へ圧力波として広がるのが爆風である。 ニ：正しい。強い爆風の代表的な圧力履歴では急上昇後に正圧が減衰し、負圧相を経て大気圧へ戻る。負圧とは大気圧より低いという意味である。"
+          },
+          "explanationSourceUrls": [
+            "https://stacks.cdc.gov/view/cdc/235822/cdc_235822_DS1.pdf"
+          ],
+          "explanationAttribution": "独自作成。照合済み公式問題・公式正答を保持し、基本式・物性・現象の相違から各肢の理由を記述。原文に不備がある場合は注記し補作しない。"
         },
         {
           "number": 13,
@@ -10279,9 +10494,9 @@
             6
           ],
           "rawExtractedText": "次のイ、ロ、ハ、ニの記述のうち、酸素について正しいものはどれか。\n\n\n  イ．液化酸素は淡青色を呈する。\n\n  ロ．赤熱したアルミニウム、鉄を気体の酸素中に入れると激しく燃焼する。\n\n  ハ．気体の酸素は常磁性を示すが、液体の酸素は常磁性を示さない。\n\n  ニ．気体の酸素は、還元性が強く、高温において金属の塩化物を還元し金属を遊離させる。\n\n\n    (1) イ、ロ    (2) イ、ハ    (3) ハ、ニ    (4) イ、ロ、ニ    (5) ロ、ハ、ニ",
-          "reviewStatus": "transcription-verified-explanation-pending",
+          "reviewStatus": "transcription-verified-explanation-written",
           "transcriptionVerified": true,
-          "explanationWritten": false,
+          "explanationWritten": true,
           "figuresVerified": true,
           "sourceAnswerUrl": "https://www.khk.or.jp/Portals/0/khk/exam/2025/1110/R7fy_kaitou.pdf",
           "officialAnswerNumber": 1,
@@ -10299,7 +10514,17 @@
           ],
           "hasImage": false,
           "imageAssets": [],
-          "sharedPassagePdfPages": []
+          "sharedPassagePdfPages": [],
+          "explanationDraft": "酸素の色、支燃性、常磁性、酸化性をそれぞれ判定する。液化しても酸素分子の不対電子に由来する常磁性はなくならない。\n\nイ：正しい。液体酸素は淡青色である。無色の気体酸素と液体での色を区別する。\nロ：正しい。赤熱したアルミニウムや鉄は酸素中で強く酸化され、激しく燃焼する。酸素自身は燃料ではなく支燃性ガスである。\nハ：誤り。酸素分子は不対電子を持ち、気体だけでなく液体酸素も常磁性を示す。\nニ：誤り。酸素は強い酸化性を示す。金属塩化物を還元して金属を得るという説明は、還元性ガスの性質との混同である。\n\n公式正答は選択肢1（イ、ロ）。",
+          "choiceExplanationsDraft": {
+            "1": "公式正答の組合せ。イ：正しい。液体酸素は淡青色である。無色の気体酸素と液体での色を区別する。 ロ：正しい。赤熱したアルミニウムや鉄は酸素中で強く酸化され、激しく燃焼する。酸素自身は燃料ではなく支燃性ガスである。",
+            "2": "公式正答の組合せ（イ、ロ）と異なる。イ：正しい。液体酸素は淡青色である。無色の気体酸素と液体での色を区別する。 ハ：誤り。酸素分子は不対電子を持ち、気体だけでなく液体酸素も常磁性を示す。",
+            "3": "公式正答の組合せ（イ、ロ）と異なる。ハ：誤り。酸素分子は不対電子を持ち、気体だけでなく液体酸素も常磁性を示す。 ニ：誤り。酸素は強い酸化性を示す。金属塩化物を還元して金属を得るという説明は、還元性ガスの性質との混同である。",
+            "4": "公式正答の組合せ（イ、ロ）と異なる。イ：正しい。液体酸素は淡青色である。無色の気体酸素と液体での色を区別する。 ロ：正しい。赤熱したアルミニウムや鉄は酸素中で強く酸化され、激しく燃焼する。酸素自身は燃料ではなく支燃性ガスである。 ニ：誤り。酸素は強い酸化性を示す。金属塩化物を還元して金属を得るという説明は、還元性ガスの性質との混同である。",
+            "5": "公式正答の組合せ（イ、ロ）と異なる。ロ：正しい。赤熱したアルミニウムや鉄は酸素中で強く酸化され、激しく燃焼する。酸素自身は燃料ではなく支燃性ガスである。 ハ：誤り。酸素分子は不対電子を持ち、気体だけでなく液体酸素も常磁性を示す。 ニ：誤り。酸素は強い酸化性を示す。金属塩化物を還元して金属を得るという説明は、還元性ガスの性質との混同である。"
+          },
+          "explanationSourceUrls": [],
+          "explanationAttribution": "独自作成。照合済み公式問題・公式正答を保持し、基本式・物性・現象の相違から各肢の理由を記述。原文に不備がある場合は注記し補作しない。"
         },
         {
           "number": 15,
@@ -10308,9 +10533,9 @@
             6
           ],
           "rawExtractedText": "次のイ、ロ、ハ、ニの記述のうち、シラン(モノシラン)について正しいものはどれか。\n\n\n  イ．水素と硫黄の化合物である。\n\n  ロ．自然発火性を有しており、常温でも空気と接触すると発火する性質がある。\n\n  ハ．常温で、塩素および臭素と爆発的に反応する。\n\n  ニ．常温で、純水と爆発的に反応し水素を発生する。\n\n\n    (1) イ、ロ    (2) イ、ハ    (3) ロ、ハ    (4) ロ、ニ    (5) ハ、ニ\n\n\n\n\n\n   R7-BZ                               - 4 -\n\nR7-BZ                               - 2 -",
-          "reviewStatus": "transcription-verified-explanation-pending",
+          "reviewStatus": "transcription-verified-explanation-written",
           "transcriptionVerified": true,
-          "explanationWritten": false,
+          "explanationWritten": true,
           "figuresVerified": true,
           "sourceAnswerUrl": "https://www.khk.or.jp/Portals/0/khk/exam/2025/1110/R7fy_kaitou.pdf",
           "officialAnswerNumber": 3,
@@ -10328,7 +10553,20 @@
           ],
           "hasImage": false,
           "imageAssets": [],
-          "sharedPassagePdfPages": []
+          "sharedPassagePdfPages": [],
+          "explanationDraft": "SiH₄の組成、空気・ハロゲンへの高い反応性、純水との反応を区別する。\n\nイ：誤り。モノシランはケイ素と水素の化合物SiH₄であり、硫黄を含まない。硫黄の元素記号Sとケイ素のSiを区別する。\nロ：正しい。モノシランは自然発火性を持ち、常温でも空気との接触で発火する危険がある。実際の発火挙動は濃度等にも依存する。\nハ：正しい。モノシランは反応性が高く、塩素・臭素等のハロゲンと激しく反応し、爆発的な反応になり得る。\nニ：誤り。純水と常温で必ず爆発的に反応するという性質ではない。アルカリ性等の条件で加水分解・水素発生が促進されることと混同しない。\n\n公式正答は選択肢3（ロ、ハ）。",
+          "choiceExplanationsDraft": {
+            "1": "公式正答の組合せ（ロ、ハ）と異なる。イ：誤り。モノシランはケイ素と水素の化合物SiH₄であり、硫黄を含まない。硫黄の元素記号Sとケイ素のSiを区別する。 ロ：正しい。モノシランは自然発火性を持ち、常温でも空気との接触で発火する危険がある。実際の発火挙動は濃度等にも依存する。",
+            "2": "公式正答の組合せ（ロ、ハ）と異なる。イ：誤り。モノシランはケイ素と水素の化合物SiH₄であり、硫黄を含まない。硫黄の元素記号Sとケイ素のSiを区別する。 ハ：正しい。モノシランは反応性が高く、塩素・臭素等のハロゲンと激しく反応し、爆発的な反応になり得る。",
+            "3": "公式正答の組合せ。ロ：正しい。モノシランは自然発火性を持ち、常温でも空気との接触で発火する危険がある。実際の発火挙動は濃度等にも依存する。 ハ：正しい。モノシランは反応性が高く、塩素・臭素等のハロゲンと激しく反応し、爆発的な反応になり得る。",
+            "4": "公式正答の組合せ（ロ、ハ）と異なる。ロ：正しい。モノシランは自然発火性を持ち、常温でも空気との接触で発火する危険がある。実際の発火挙動は濃度等にも依存する。 ニ：誤り。純水と常温で必ず爆発的に反応するという性質ではない。アルカリ性等の条件で加水分解・水素発生が促進されることと混同しない。",
+            "5": "公式正答の組合せ（ロ、ハ）と異なる。ハ：正しい。モノシランは反応性が高く、塩素・臭素等のハロゲンと激しく反応し、爆発的な反応になり得る。 ニ：誤り。純水と常温で必ず爆発的に反応するという性質ではない。アルカリ性等の条件で加水分解・水素発生が促進されることと混同しない。"
+          },
+          "explanationSourceUrls": [
+            "https://www.epa.gov/sites/default/files/2014-09/documents/silane_interim_nov_2007.v1.pdf",
+            "https://www.inchem.org/documents/icsc/icsc/eics0564.htm"
+          ],
+          "explanationAttribution": "独自作成。照合済み公式問題・公式正答を保持し、基本式・物性・現象の相違から各肢の理由を記述。原文に不備がある場合は注記し補作しない。"
         }
       ]
     },
