@@ -15,6 +15,7 @@ describe("エネルギー管理士の未公開収録", () => {
     expect(sources.downloadedSources).toHaveLength(28);
     expect(new Set(sources.downloadedSources.map((s) => s.url)).size).toBe(28);
     expect(sources.unavailablePdfUrls).toEqual([]);
+    expect(sources.publicAllowed).toBe(false);
     expect(tables.flatMap((t) => t.questions)).toHaveLength(62);
     expect(tables.flatMap((t) => t.questions.flatMap((q) => q.slots))).toHaveLength(842);
     for (const source of sources.downloadedSources) {
@@ -31,9 +32,9 @@ describe("エネルギー管理士の未公開収録", () => {
     }
   });
 
-  it("収録済み57原問778公式解答欄を照合し、全肢解説・原問指示・図を保持する", () => {
-    expect(questions).toHaveLength(774);
-    expect(new Set(questions.map((q) => q.id)).size).toBe(774);
+  it("収録済み59原問806公式解答欄を照合し、全肢解説・原問指示・図を保持する", () => {
+    expect(questions).toHaveLength(802);
+    expect(new Set(questions.map((q) => q.id)).size).toBe(802);
     for (const q of questions) {
       const packet = Number(q.sourcePdfUrl!.match(/r0[78]_(\d)\.pdf/)![1]);
       const original = tables.find((t) => t.year === q.year && t.packet === packet)!
@@ -74,6 +75,8 @@ describe("エネルギー管理士の未公開収録", () => {
 
   it("原問ごとの全解答欄を過不足なく保持し、順序不問ペアを重複なく採点する", () => {
     const manifest = [
+      [2026, 5, 5],
+      [2025, 5, 5],
       [2026, 5, 4],
       [2025, 2, 4], [2025, 2, 5], [2026, 2, 4], [2025, 7, 11],
       [2025, 2, 6], [2025, 2, 7], [2026, 2, 5], [2026, 2, 6], [2026, 2, 7],
@@ -97,7 +100,7 @@ describe("エネルギー管理士の未公開収録", () => {
       expect(new Set(labels).size).toBe(labels.length);
       slotCount += labels.length;
     }
-    expect(slotCount).toBe(778);
+    expect(slotCount).toBe(806);
     const pairs = questions.filter((q) => q.requiredSelections === 2);
     expect(pairs).toHaveLength(4);
     for (const q of pairs) {
@@ -372,10 +375,22 @@ describe("エネルギー管理士の未公開収録", () => {
     expect(regeneration.originalContent!.sharedPassages!.map((p) => p.text).join(" ")).toContain("30g×10⁻⁴");
   });
 
+  it("制御系の極零相殺・外乱応答と倒立振子の図を区別する", () => {
+    const record = (year: number, slot: string) => questions.find((q) => q.year === year && q.qNumber === 5 && q.sourcePdfUrl?.includes("_5.pdf#") && q.officialAnswerNumber === slot)!;
+    expect(record(2025, "4").answer).toBe("イ");
+    expect(record(2025, "5").explanation).toContain("(s−3)(s＋2)²");
+    expect(record(2025, "6").explanation).toContain("e³ᵗ");
+    for (const slot of ["4", "5", "6"]) expect(record(2025, slot).hasImage).toBe(true);
+    expect(record(2026, "2").choices?.エ).toBe("1/(Js²−mgl)");
+    expect(record(2026, "5").imageUrls).toHaveLength(3);
+    expect(record(2026, "11").answer).toBe("イ");
+    expect(record(2026, "11").explanation).toContain("254−256＝−2");
+  });
+
   it("未完成資格を公開せず、残る原問を明記する", () => {
     const entry = QUALIFICATION_CATALOG.find((q) => q.slug === "energy-kanri")!;
     expect(entry.status).toBe("ready-to-ingest");
     expect(entry.examCode).toBeUndefined();
-    expect(entry.remainingWork.join(" ")).toContain("5原問64解答欄");
+    expect(entry.remainingWork.join(" ")).toContain("3原問36解答欄");
   });
 });
