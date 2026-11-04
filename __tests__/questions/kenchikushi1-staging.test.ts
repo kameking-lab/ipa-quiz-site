@@ -37,7 +37,7 @@ describe("一級建築士（学科）の公開前登録", () => {
     expect(manifest.ownerDecision.decidedAt).toBe("2026-11-04T06:10:00+09:00");
     expect(manifest.ownerDecision.rightsHolderPermissionObtained).toBe(false);
     expect(manifest.rounds.map(r => [r.year, r.expectedQuestions, r.transcribedQuestions])).toEqual([
-      [2026, 125, 125], [2025, 125, 40],
+      [2026, 125, 125], [2025, 125, 125],
     ]);
     expect(manifest.sources).toHaveLength(8);
     for (const source of manifest.sources) {
@@ -48,8 +48,8 @@ describe("一級建築士（学科）の公開前登録", () => {
   });
 
   it("validates real staged originals and all four original explanations against the final official answers", () => {
-    expect(KENCHIKUSHI1_CANDIDATES).toHaveLength(165);
-    expect(new Set(KENCHIKUSHI1_CANDIDATES.map(q => q.id)).size).toBe(165);
+    expect(KENCHIKUSHI1_CANDIDATES).toHaveLength(250);
+    expect(new Set(KENCHIKUSHI1_CANDIDATES.map(q => q.id)).size).toBe(250);
     expect(KENCHIKUSHI1_CANDIDATES.map(q => q.officialAnswerNumber)).toEqual(
       [4,4,2,4,1,1,2,2,2,1,1,3,2,2,3,1,4,3,3,4,
        4,2,1,3,4,2,2,3,1,2,3,4,4,1,4,4,2,2,1,3,
@@ -57,14 +57,17 @@ describe("一級建築士（学科）の公開前登録", () => {
        2,3,2,4,4,1,3,2,1,2,2,2,4,3,2,3,3,1,3,1,4,1,3,2,4,3,4,4,null,4,
        2,3,3,1,1,2,2,4,4,3,2,4,1,3,3,2,4,2,1,3,3,1,4,1,4,2,4,3,4,3,
        3,2,2,4,3,1,1,1,3,2,2,4,1,3,1,3,4,1,4,4,4,1,3,2,2,
-       1,2,2,4,4,4,1,1,4,2,3,3,3,2,3,2,1,4,3,4].map(a => a === null ? null : String(a)),
+       1,2,2,4,4,4,1,1,4,2,3,3,3,2,3,2,1,4,3,4,
+       3,2,3,4,3,1,3,4,2,1,1,4,2,3,2,4,3,2,4,3,2,3,2,4,1,1,3,4,4,1,
+       1,2,2,3,4,2,1,4,3,4,4,1,1,3,2,1,3,4,2,3,2,2,1,4,3,4,3,1,3,3,
+       2,1,3,4,2,4,1,1,3,2,2,4,4,2,3,3,4,2,4,1,1,1,3,3,1].map(a => a === null ? null : String(a)),
     );
     for (const round of manifest.rounds) {
       const candidates = KENCHIKUSHI1_CANDIDATES.filter(q => q.year === round.year);
       expect(candidates).toHaveLength(round.transcribedQuestions);
       for (const subject of round.subjects) {
         const paper = candidates.filter(q => q.session === subject.session);
-        const count = subject.session === "keikaku" || subject.session === "kankyo-setsubi" ? 20 : round.year === 2026 ? (subject.session === "sekou" ? 25 : 30) : 0;
+        const count = subject.session === "keikaku" || subject.session === "kankyo-setsubi" ? 20 : (subject.session === "sekou" ? 25 : 30);
         expect(paper.map(q => q.qNumber)).toEqual(Array.from({ length: count }, (_, i) => i + 1));
         if ("transcribedQuestions" in subject) expect(paper).toHaveLength(subject.transcribedQuestions!);
       }
@@ -127,6 +130,9 @@ describe("一級建築士（学科）の公開前登録", () => {
       [2026, "kozo", 1], [2026, "kozo", 2], [2026, "kozo", 3], [2026, "kozo", 4],
       [2026, "kozo", 5], [2026, "kozo", 6], [2026, "kozo", 10], [2026, "kozo", 11],
       [2026, "sekou", 24], [2025, "kankyo-setsubi", 6], [2025, "kankyo-setsubi", 9], [2025, "kankyo-setsubi", 11],
+      [2025, "houki", 5], [2025, "houki", 16], [2025, "houki", 17],
+      [2025, "kozo", 1], [2025, "kozo", 2], [2025, "kozo", 3], [2025, "kozo", 4], [2025, "kozo", 5], [2025, "kozo", 6],
+      [2025, "sekou", 10], [2025, "sekou", 11], [2025, "sekou", 24],
     ]);
     for (const q of illustrated) {
       if (q.session === "keikaku") expect(q.originalContent?.tables?.[0].rows).toHaveLength(5);
@@ -164,7 +170,7 @@ describe("一級建築士（学科）の公開前登録", () => {
   });
 
   it("retains law fractions, units, original table cells and booklet assumptions", () => {
-    const law = KENCHIKUSHI1_CANDIDATES.filter(q => q.session === "houki");
+    const law = KENCHIKUSHI1_CANDIDATES.filter(q => q.year === 2026 && q.session === "houki");
     expect(law).toHaveLength(30);
     expect(law[1].choices?.ア).toContain("1/100");
     expect(law[1].choices?.ウ).toContain("1/8");
@@ -184,7 +190,7 @@ describe("一級建築士（学科）の公開前登録", () => {
   });
 
   it("retains engineering symbols, radical formulas, tables and original diagram choices", () => {
-    const kozo = KENCHIKUSHI1_CANDIDATES.filter(q => q.session === "kozo");
+    const kozo = KENCHIKUSHI1_CANDIDATES.filter(q => q.year === 2026 && q.session === "kozo");
     expect(kozo).toHaveLength(30);
     expect(kozo[0].question).toContain("bh³/12、πh⁴/64");
     expect(kozo[1].choices?.ウ).toBe("PL³/(4EI)");
@@ -198,10 +204,45 @@ describe("一級建築士（学科）の公開前登録", () => {
     expect(env[5].choices?.エ).toContain("√3J_N/2");
     expect(env[8].originalContent?.tables?.[0].rows[3]).toEqual(["Ｃ", "100", "0.40"]);
     expect(env[9].choices?.エ).toContain("1/√2倍");
-    const sekou = KENCHIKUSHI1_CANDIDATES.filter(q => q.session === "sekou");
+    const sekou = KENCHIKUSHI1_CANDIDATES.filter(q => q.year === 2026 && q.session === "sekou");
     expect(sekou).toHaveLength(25);
     expect(sekou[21].choices?.エ).toContain("比（h/d）が1.50");
     expect(sekou[22].choices?.ウ).toContain("20 kg／m²");
+    expect(sekou[23].originalContent?.tables?.[0].rows).toHaveLength(5);
+  });
+
+  it("retains the 2025 original formulas, corrected overlays and complete original tables", () => {
+    const law = KENCHIKUSHI1_CANDIDATES.filter(q => q.year === 2025 && q.session === "houki");
+    const kozo = KENCHIKUSHI1_CANDIDATES.filter(q => q.year === 2025 && q.session === "kozo");
+    const sekou = KENCHIKUSHI1_CANDIDATES.filter(q => q.year === 2025 && q.session === "sekou");
+    expect(law).toHaveLength(30);
+    expect(kozo).toHaveLength(30);
+    expect(sekou).toHaveLength(25);
+    expect(law[1].choices?.ウ).toContain("1/8");
+    expect(law[4].originalContent?.tables?.[0].rows[3]).toEqual(["300 m²", "21 cm", "23 cm"]);
+    expect(law[7].choices?.ア).not.toContain("既存され");
+    expect(law[11].choices?.イ).toContain("1,920 N／m²");
+    expect(law[18].choices?.エ).toContain("土地で借地権");
+    expect(law[26].choices?.イ).toContain("W／（m²・度）");
+    for (const q of law) {
+      expect(q.questionNotice).toContain("2025-04-01");
+      expect(q.questionNotice).toContain("区画避難安全検証法");
+    }
+    expect(kozo[0].choices).toEqual({ ア: "D/12", イ: "D²/(12B)", ウ: "D/6", エ: "D²/(6B)" });
+    expect(kozo[1].choices).toEqual({ ア: "1：1", イ: "1：2", ウ: "1：3", エ: "1：4" });
+    expect(kozo[1].originalContent?.tables?.[0].rows).toHaveLength(5);
+    expect(kozo[4].choices?.エ).toBe("N_D＝＋√2P");
+    expect(kozo[5].choices?.イ).toBe("P_A＝P_C＜P_B");
+    expect(kozo[13].choices?.イ).not.toContain("柱部材の");
+    expect(kozo[24].choices?.ウ?.match(/D_s/g)).toHaveLength(2);
+    expect(kozo[28].choices?.イ).toContain("325 N／mm²");
+    expect(sekou[0].choices?.ア).toContain("30 m／s");
+    expect(sekou[1].choices?.ア).toContain("1,000 m³");
+    expect(sekou[8].choices?.イ).toContain("3/4");
+    expect(sekou[9].choices?.イ).toContain("E＋F＋G＋H"); // official wrong formula remains wrong
+    expect(sekou[9].originalContent?.tables?.[0].rows[2]).toEqual(["A", "B", "C", "D", "E", "F", "G", "H"]);
+    expect(sekou[10].originalContent?.tables?.[0].rows[2]).toEqual(["普通コンクリート", "45", "4.5", "55.0", "3.0"]);
+    expect(sekou[16].choices?.ウ).toContain("２m²／人");
     expect(sekou[23].originalContent?.tables?.[0].rows).toHaveLength(5);
   });
 
