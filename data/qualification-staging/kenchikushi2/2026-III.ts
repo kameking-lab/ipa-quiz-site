@@ -843,13 +843,13 @@ export const KENCHIKUSHI2_2026_III: readonly StagedKenchikushiQuestion[] = [
     },
     "answer": "オ",
     "officialAnswerNumber": "5",
-    "explanation": "公式正答は5。長期荷重による梁のたわみの一般的な目安は、通常の梁でスパンの1/250以下、片持ち梁で1/200以下。選択肢5では両者の数値が逆になっている。",
+    "explanation": "公式正答は5。長期荷重による梁のたわみの一般的な目安は、通常の梁でスパンの1/300以下、片持ち梁で1/250以下。選択肢5の通常梁の1/200が誤りで、片持ち梁の1/250は正しい。",
     "choiceExplanations": {
       "ア": "適当。細長比が大きい圧縮材は座屈しやすくなり、許容圧縮応力度は小さくなる。材料の引張強度だけで圧縮耐力を判断しない。",
       "イ": "適当。クレーン走行桁等で1万回を超える繰返し応力を受ける場合は、応力範囲や繰返し回数に応じた疲労の検討を行う。",
       "ウ": "適当。露出柱脚のアンカーボルトに引張力とせん断力が同時に作用する場合は、両者の組合せによる耐力を検討する必要がある。",
       "エ": "適当。側柱・隅柱の埋込み柱脚で基礎梁のない側の縁端距離が小さいと、周囲のコンクリートが押し抜かれるパンチングシヤー破壊が生じやすい。",
-      "オ": "不適当。通常の梁はスパンの1/250以下、片持ち梁は1/200以下を一般的な限度とする。選択肢は通常梁と片持ち梁の数値を入れ替えている。"
+      "オ": "不適当。通常の梁はスパンの1/300以下、片持ち梁は1/250以下を一般的な限度とする。選択肢の通常梁の1/200が誤りであり、片持ち梁の1/250は正しい。"
     },
     "explanationCoverage": "full",
     "hasImage": false,
@@ -862,7 +862,10 @@ export const KENCHIKUSHI2_2026_III: readonly StagedKenchikushiQuestion[] = [
     "sourceAnswerUrl": "https://www.jaeic.or.jp/.assets/R08_2k_gokakukizyun.pdf",
     "sourceAttribution": "出典：公益財団法人建築技術教育普及センター 令和8年二級建築士試験 学科Ⅲ（建築構造）",
     "sourcePage": 9,
-    "sourcePrintedPage": "構造 8"
+    "sourcePrintedPage": "構造 8",
+    "officialReferenceUrls": [
+      "https://aij-static-bucket.s3-ap-northeast-1.amazonaws.com/da1/shiyoukijyun/pdf/J7004246_01.pdf"
+    ]
   },
   {
     "id": "kenchikushi2-2026-annual-III-q17",
