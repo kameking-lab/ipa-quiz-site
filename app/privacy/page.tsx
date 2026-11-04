@@ -97,7 +97,7 @@ export default function PrivacyPage() {
           <h1 className="text-balance text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
             プライバシーポリシー
           </h1>
-          <p className="mt-3 text-xs text-muted-foreground">最終更新: 2026年10月29日</p>
+          <p className="mt-3 text-xs text-muted-foreground">最終更新: 2026年11月4日</p>
           <p className="mt-4 max-w-2xl text-pretty text-sm leading-relaxed text-muted-foreground sm:text-base">
             過去問AI（以下「本サービス」）は、ユーザーのプライバシーを尊重し、
             個人情報の適切な取り扱いに努めます。
@@ -281,6 +281,10 @@ export default function PrivacyPage() {
           >
             <p>
               プライバシーに関するご質問・ご要望は、{" "}
+              <Link href="/contact" className="font-medium text-primary underline-offset-4 hover:underline">
+                お問い合わせフォーム
+              </Link>
+              {" "}からご連絡ください。GitHub アカウントをお持ちの場合は、{" "}
               <a
                 href="https://github.com/kameking-lab/ipa-quiz-site/issues"
                 target="_blank"
@@ -290,7 +294,7 @@ export default function PrivacyPage() {
                 GitHub Issues
                 <ExternalLink className="h-3 w-3" />
               </a>
-              {" "}からご連絡ください。
+              {" "}も利用できます。公開の投稿には個人情報を記載しないでください。
             </p>
           </Section>
 

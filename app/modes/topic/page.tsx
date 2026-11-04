@@ -33,6 +33,7 @@ export async function generateMetadata({
     title,
     description,
     alternates: { canonical },
+    robots: { index: false, follow: true },
   };
 }
 

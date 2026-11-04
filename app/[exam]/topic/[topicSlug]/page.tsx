@@ -14,6 +14,7 @@ import {
   groupByCategory,
 } from "@/lib/seo/exam-meta";
 import { questionPagePath } from "@/lib/seo/question-url";
+import { isIndexableCategoryCollection } from "@/lib/seo/collection-policy";
 import { isPlaceholderExplanation } from "@/lib/questions/filter";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { Badge } from "@/components/ui/badge";
@@ -47,6 +48,8 @@ export async function generateMetadata({
     return { title: "分野が見つかりません", robots: { index: false } };
   }
   const category = decodeURIComponent(topicSlug);
+  const questionCount = getQuestionsByExamStrict(exam as ExamCode)
+    .filter((q) => q.category === category).length;
   const title = `${examLabel(exam as ExamCode)} ${category} 過去問・解説`;
   const description = `${examLabel(exam as ExamCode)}試験の「${category}」分野の過去問をまとめて確認できます。AI解説付きで理解を深められます。`;
   const ogImageUrl = `${SITE_BASE_URL}/api/og?${new URLSearchParams({
@@ -58,6 +61,7 @@ export async function generateMetadata({
     title,
     description,
     alternates: { canonical: `/${exam}/topic/${encodeURIComponent(category)}` },
+    robots: { index: isIndexableCategoryCollection(questionCount), follow: true },
     openGraph: {
       title,
       description,

@@ -15,17 +15,14 @@ export async function generateMetadata({
 }: {
   searchParams: Promise<Record<string, string | string[] | undefined>>;
 }): Promise<Metadata> {
-  const params = await searchParams;
-  const hasSearchState = Object.values(params).some((value) =>
-    Array.isArray(value) ? value.some(Boolean) : Boolean(value),
-  );
+  await searchParams;
   return {
     title: "問題検索",
     description: SEARCH_DESCRIPTION,
     alternates: { canonical: "/search" },
-    robots: hasSearchState
-      ? { index: false, follow: true }
-      : { index: true, follow: true },
+    // The empty form and its result variants are navigation tools. Explained
+    // questions and curated collections are the search landing pages.
+    robots: { index: false, follow: true },
   };
 }
 
