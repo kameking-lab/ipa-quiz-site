@@ -1,0 +1,72 @@
+{
+  "scope": "qual-new:18",
+  "title": "技術士第一次・原子力・放射線",
+  "ownerThread": "01a1965a-5755-70c0-b0da-6b159e23e703",
+  "recipientMain": "01a18919-2bca-71a1-aee9-c0486fa7203b",
+  "finalizedAt": "2026-11-01T19:03:45.795957+09:00",
+  "status": "PRIVATE_CONTENT_ACCEPTED_MAIN_IMPORT_PENDING_PUBLICATION_HELD",
+  "privateContentComplete": true,
+  "sharedAdoption": false,
+  "publicationOnlyRemaining": false,
+  "counts": {
+    "actualPastExamQuestions": 35,
+    "officialAnswers": 35,
+    "choiceReasons": 175,
+    "originalQuestionImages": 37,
+    "essentialFigureQuestions": 4,
+    "independentNumericalChecks": 13,
+    "creativeQuestionsAdopted": 0
+  },
+  "source": "令和7年度技術士第一次試験 専門科目20 原子力・放射線 Ⅲ－1～Ⅲ－35。35問中25問選択の試験だが教材は全35問。",
+  "questionIntegrity": "公式原問PDFの無変更画像。設問・全選択肢・数式・図を原典と一致させ、年度や番号を創作しない。",
+  "authored": "解説と全選択肢理由のみ。N10 C035の誤り位置と正しい考え方を含む。",
+  "questionSha256": "be3078093edd6f0c291615147623ee8c132ca59f1aff3b8ba529cc50a81f7b94",
+  "independentAcceptanceSha256": "25223f67a8022ddf03564d1433e99e367c6ac1badc20ba1b1e3a917964d1fd86",
+  "changesFromReview": [
+    "Q15肢1の電子数を明確化",
+    "Q34肢1の誤り位置を全4欄へ訂正",
+    "Q16原問画像の冒頭欠けを復元"
+  ],
+  "preservedCaveats": [
+    "Q13は公式正答C/B/D/Fを維持し、実用微分と理想微分の前提差を説明",
+    "Q16阻止能比1:8は主要依存性の近似",
+    "政策問題は原問指定のWEO2024、第7次計画等の時点で採点",
+    "固定入力との限定重複照合であり現在runtimeの同一性証明ではない",
+    "原問画像方式。全文テキストのアクセシブルな逐語転記は含まない"
+  ],
+  "quarantined": "work/original-question-excluded/paraphrased-candidate-preserved.json は原問採用対象外。共有通知・採用0。配布zipに含めない。",
+  "remaining": [
+    {
+      "owner": "main",
+      "operation": "main-import-contract.jsonに従い許可範囲で取込・必要単体受入",
+      "condition": "この私有教材は受入済み。共有形式への写像と採用はmainだけが実行。画像の順序・原問同一性・全肢理由を保持。"
+    },
+    {
+      "owner": "既存の公開権限管理",
+      "operation": "公開",
+      "condition": "本依頼では実行しない。私有教材完成と公開を分離。"
+    }
+  ],
+  "notExecuted": [
+    "共有repo編集",
+    "build",
+    "preview",
+    "deploy",
+    "merge",
+    "publicpush",
+    "本番・DB操作",
+    "課金API",
+    "外部Max/Opus送信",
+    "新キー・権限設定変更"
+  ],
+  "files": {
+    "content": "questions.json",
+    "target": "target-manifest.json",
+    "originalProvenance": "original-question-provenance.json",
+    "images": "figure-and-original-image-manifest.json",
+    "acceptance": "independent-acceptance.json",
+    "structure": "structural-checks.json",
+    "calculations": "calculation-checks.json",
+    "integration": "main-import-contract.json"
+  }
+}

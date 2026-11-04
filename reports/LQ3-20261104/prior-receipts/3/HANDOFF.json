@@ -1,0 +1,305 @@
+{
+  "scope": "qual-new:3 技術士第一次・電気電子",
+  "site": "過去問AI",
+  "at": "2026-11-01T19:07:48.486047+09:00",
+  "status": "PRIVATE_CONTENT_ACCEPTED_READY_FOR_MAIN_ADOPTION",
+  "target": "令和7年度専門科目04電気電子部門Ⅲ1〜35",
+  "originals": 35,
+  "choiceReasons": 175,
+  "originalQuestionImages": 35,
+  "diagramBearingQuestions": 17,
+  "inventedQuestions": 0,
+  "privateContentComplete": true,
+  "independentAcceptanceComplete": true,
+  "candidatePin": {
+    "path": "C:\\Users\\kanet\\Documents\\Codex\\2026-11-01\\qual-new3-electronics-private-20261101\\outputs\\candidate\\questions.json",
+    "sha256": "cd472bdab353ed94b4e9e3c31cd4e362506c7ba99921cdd488c273602c48f466",
+    "bytes": 113311
+  },
+  "reviewReceipts": [
+    {
+      "path": "C:\\Users\\kanet\\Documents\\Codex\\2026-11-01\\qual-new3-electronics-private-20261101\\outputs\\review-01-18-delta.json",
+      "sha256": "9069c5257cee25a001525cefb3b2af57e92811b98c0427a2250b111de807265a",
+      "bytes": 11464
+    },
+    {
+      "path": "C:\\Users\\kanet\\Documents\\Codex\\2026-11-01\\qual-new3-electronics-private-20261101\\outputs\\review-19-35.json",
+      "sha256": "cc0aa7acacb7a484e506d3169bf1295f4b1eed31086ef558f53f547eb34f3564",
+      "bytes": 28087
+    }
+  ],
+  "structuralReceipt": {
+    "path": "C:\\Users\\kanet\\Documents\\Codex\\2026-11-01\\qual-new3-electronics-private-20261101\\outputs\\STRUCTURAL-VALIDATION.json",
+    "sha256": "789486ac662c3e9498d5d4fccc2d1d6645f352d5f78cc68a9361f5b35d30021c",
+    "bytes": 668
+  },
+  "adoptionMap": {
+    "path": "C:\\Users\\kanet\\Documents\\Codex\\2026-11-01\\qual-new3-electronics-private-20261101\\outputs\\ADOPTION-MAP.json",
+    "sha256": "75f97672153723d2045e47d01d3bc9fa24324898a54f2b551d4b619b8d1742fa",
+    "bytes": 3237
+  },
+  "sharedApplied": false,
+  "sharedIntegrator": "01a18919-2bca-71a1-aee9-c0486fa7203b",
+  "publicGo": false,
+  "remaining": "mainによる共有採用と、採用差分に必要な読込・画像・採点・表示接続の受入。公開操作は別枠で禁止を保持。",
+  "notRemaining": "年度指定の追加質問、原問不足の補填、175肢の未作成、必要図欠落、内容独立受入の未完はいずれも解消。",
+  "deliveryMeaning": "この私有packetを主担当が読める状態に固定。共有採用や送信先の受領確認を実施済みとはしない。",
+  "supersedes": "history/HANDOFF-initial-input-wait.json と旧入力待ち判断",
+  "files": [
+    {
+      "relativePath": "candidate/assets/q01-original.png",
+      "sha256": "4a9c275b6b915041751fd4194cf2ffdc2a67a37a27a07db976066e0c90ffa0f5",
+      "bytes": 63994
+    },
+    {
+      "relativePath": "candidate/assets/q02-original.png",
+      "sha256": "237ea8e1c77cf5bc3f7482111b59cdd5a5ef7790c34687031c660342994153b6",
+      "bytes": 83378
+    },
+    {
+      "relativePath": "candidate/assets/q03-original.png",
+      "sha256": "e9e5dd48f02a0cd51be61136428e9efd3399f6e82898be86583c754b04ee46b6",
+      "bytes": 69241
+    },
+    {
+      "relativePath": "candidate/assets/q04-original.png",
+      "sha256": "76a390be31bd1029f1466f012219ce0e645855ae401d1d839340f0a607abfd90",
+      "bytes": 145319
+    },
+    {
+      "relativePath": "candidate/assets/q05-original.png",
+      "sha256": "d17e7412679ca7b884f74ea10f5e66c0d794b7648438cc24aa5a9ee4e8570ae0",
+      "bytes": 59649
+    },
+    {
+      "relativePath": "candidate/assets/q06-original.png",
+      "sha256": "37eaf3761b517974435ebf511d2366c35b075ae95d4d0ebfd83a457467d0fd25",
+      "bytes": 108883
+    },
+    {
+      "relativePath": "candidate/assets/q07-original.png",
+      "sha256": "5acfe9de727a1f94fa8a15f5f9f6cb5982fb81e9b82893e682cdb41c121ad22b",
+      "bytes": 145845
+    },
+    {
+      "relativePath": "candidate/assets/q08-original.png",
+      "sha256": "7c25d82368090b06a7181d8fa7860eec49aeccfaf1f7c7c255904e1f9ef5789e",
+      "bytes": 130232
+    },
+    {
+      "relativePath": "candidate/assets/q09-original.png",
+      "sha256": "d49e532750284e7e2a52bbe9e9b2db0cf2bf779f9b6fdbdd06214df43dafd66b",
+      "bytes": 168905
+    },
+    {
+      "relativePath": "candidate/assets/q10-original.png",
+      "sha256": "77c74f18436cc38f73b7fb6d24d8a0a0921be30a0c2ec3145477f1421ff899bb",
+      "bytes": 96463
+    },
+    {
+      "relativePath": "candidate/assets/q11-original.png",
+      "sha256": "7380ec7b0fd02fc320112d69332df8efba3bd051c2525ed745caffb495343d1b",
+      "bytes": 91595
+    },
+    {
+      "relativePath": "candidate/assets/q12-original.png",
+      "sha256": "6ff4abc7a5b171e81cfcbe7eebed18bbae953f2a89c8230cfb1f9adae2df9cd9",
+      "bytes": 113887
+    },
+    {
+      "relativePath": "candidate/assets/q13-original.png",
+      "sha256": "671702da97b6d7cef8107269260a5d16ea3142007084e918b8e4231b5125590b",
+      "bytes": 118530
+    },
+    {
+      "relativePath": "candidate/assets/q14-original.png",
+      "sha256": "effcb5d1c896c7c9741528e43d1c7801a3535bdbf9263b48f2ee0a2d196bb1ed",
+      "bytes": 125862
+    },
+    {
+      "relativePath": "candidate/assets/q15-original.png",
+      "sha256": "1eafd2c49ed9e4ff31dcf4afc78b755fed89aa318046b3c2ea85e9ee4e7b4477",
+      "bytes": 71239
+    },
+    {
+      "relativePath": "candidate/assets/q16-original.png",
+      "sha256": "0ddf8c08809a121d2e1e9e1fd27567e46bbc1e18aa9a61b907fb9335a2f00bb5",
+      "bytes": 41080
+    },
+    {
+      "relativePath": "candidate/assets/q17-original.png",
+      "sha256": "3c81405f39e241190a7a64d248eee8238545e4c23e81be4fc75b9bfd5e45f049",
+      "bytes": 118718
+    },
+    {
+      "relativePath": "candidate/assets/q18-original.png",
+      "sha256": "e3ce0bc122be93e30eaa100a9d40def79cf089b8d925c7092d9816937a71bbf4",
+      "bytes": 102961
+    },
+    {
+      "relativePath": "candidate/assets/q19-original.png",
+      "sha256": "b8df129090f7d767b8def07b831fe86408339df4dc6c6c103caef3b87f663a04",
+      "bytes": 49917
+    },
+    {
+      "relativePath": "candidate/assets/q20-original.png",
+      "sha256": "a097b022be10965d997819b07c11c449c25bfac2a30b4ba8e3448cb240a09ad1",
+      "bytes": 138606
+    },
+    {
+      "relativePath": "candidate/assets/q21-original.png",
+      "sha256": "9b95589ad2513cb1c13db73c42f119d0c19af75432403ecb5e07f13b9e14b409",
+      "bytes": 57161
+    },
+    {
+      "relativePath": "candidate/assets/q22-original.png",
+      "sha256": "a46ef3a6b39d41db009772a3f7b108fc44e0383cf950b711a909908187313992",
+      "bytes": 74522
+    },
+    {
+      "relativePath": "candidate/assets/q23-original.png",
+      "sha256": "290d104d26c3ce3bfcba3cb68e412d979f4fde5d4240185586f928362e69397c",
+      "bytes": 95110
+    },
+    {
+      "relativePath": "candidate/assets/q24-original.png",
+      "sha256": "e27a0e22779aff8950a6f6e373f3686f92b94d9e742f2af789e66301a5670057",
+      "bytes": 110169
+    },
+    {
+      "relativePath": "candidate/assets/q25-original.png",
+      "sha256": "0e642813609afdba4272a01e3f95ebabad7b603ad5ef98148aafc27c729f3a69",
+      "bytes": 31143
+    },
+    {
+      "relativePath": "candidate/assets/q26-original.png",
+      "sha256": "78de4ba1b9577a2b75bb9b91ac1e7cfb0fae81e0659348509b35bfcc8d600184",
+      "bytes": 105165
+    },
+    {
+      "relativePath": "candidate/assets/q27-original.png",
+      "sha256": "f83b92a6880b14736024569065c529c952cf40ecd6adf9444ccc8c784b4bf496",
+      "bytes": 123932
+    },
+    {
+      "relativePath": "candidate/assets/q28-original.png",
+      "sha256": "a9b24c1583ef5168c3035e8b2450b97b4480e0a2e2031e0f55eb9b0ff4e06682",
+      "bytes": 104863
+    },
+    {
+      "relativePath": "candidate/assets/q29-original.png",
+      "sha256": "3157f8bd47bf01973615204285fe8b0a4c46842c584b8bfb875e35b92845cdaf",
+      "bytes": 114292
+    },
+    {
+      "relativePath": "candidate/assets/q30-original.png",
+      "sha256": "d6c98f74d88f3fc5b2beeeca8e8580ed0784465a469758ac0969223684af1d78",
+      "bytes": 110571
+    },
+    {
+      "relativePath": "candidate/assets/q31-original.png",
+      "sha256": "820a19f16d9c9e9860fc16b0bdb6fabfe1dae0c4b88e215ceae3f0610868d971",
+      "bytes": 125212
+    },
+    {
+      "relativePath": "candidate/assets/q32-original.png",
+      "sha256": "7ef10e6a8e61718e3ed49e4419aa517d7ead5a00b6ffee581f59bc400142c178",
+      "bytes": 119602
+    },
+    {
+      "relativePath": "candidate/assets/q33-original.png",
+      "sha256": "8b4e08219ff78ac08656e464153d8a3f6e1edd57e13736f1bf24f39c4c8882b1",
+      "bytes": 156388
+    },
+    {
+      "relativePath": "candidate/assets/q34-original.png",
+      "sha256": "fecc610cec12769e0c457f5b766a84047f476f8e0d0d69ab3ceabb0e95634d02",
+      "bytes": 134528
+    },
+    {
+      "relativePath": "candidate/assets/q35-original.png",
+      "sha256": "a32e7ec8a75acb63e46cedae4c1494675f03fa85305373ae351652db5f0e1b37",
+      "bytes": 87264
+    },
+    {
+      "relativePath": "candidate/AUTHORING-RECEIPT.json",
+      "sha256": "feddb42c4a873012b2f818a991b345b2a8c05dd9da8b6e62f121e6134a9be55f",
+      "bytes": 313
+    },
+    {
+      "relativePath": "candidate/FINAL-CONTENT-RECEIPT.json",
+      "sha256": "632222d7ed0ece23b4fe1620a4f8008dc75b8b60552a519a8b8a2845dfdaf892",
+      "bytes": 589
+    },
+    {
+      "relativePath": "candidate/questions.json",
+      "sha256": "cd472bdab353ed94b4e9e3c31cd4e362506c7ba99921cdd488c273602c48f466",
+      "bytes": 113311
+    },
+    {
+      "relativePath": "sources/2025-electrical.pdf",
+      "sha256": "3d9d4c3faa7fd1bf29ebba1ce98974628554f83d29c8b3ca32e6e75535d06d9c",
+      "bytes": 663305
+    },
+    {
+      "relativePath": "sources/2025-keys.pdf",
+      "sha256": "6d4f5427838059ab50f0e7785f3f9cb2718fafaf96a8b74afcb332d969d7e311",
+      "bytes": 261323
+    },
+    {
+      "relativePath": "TARGET-MANIFEST.json",
+      "sha256": "3cbfe5372db5f5ed0b7635f7fee2732c9b9724467e494dfcdfc50430439b7ff2",
+      "bytes": 2727
+    },
+    {
+      "relativePath": "DUPLICATE-CHECK.json",
+      "sha256": "11c7560961068de12cce783026e1e9eaac1ac604adbee4775b66db83d89802ba",
+      "bytes": 3068
+    },
+    {
+      "relativePath": "ORIGINAL-PROVENANCE.json",
+      "sha256": "e6112042d6f1cec6e0f7f7754a35b0fc769b84551fa928cd10b60203e4eaaef3",
+      "bytes": 16404
+    },
+    {
+      "relativePath": "STRUCTURAL-VALIDATION.json",
+      "sha256": "789486ac662c3e9498d5d4fccc2d1d6645f352d5f78cc68a9361f5b35d30021c",
+      "bytes": 668
+    },
+    {
+      "relativePath": "ADOPTION-MAP.json",
+      "sha256": "75f97672153723d2045e47d01d3bc9fa24324898a54f2b551d4b619b8d1742fa",
+      "bytes": 3237
+    },
+    {
+      "relativePath": "PROCESS-RECEIPT.json",
+      "sha256": "b38af3498d79b9b42da8600e36e4f0cc3e153e2e8fc8f71a7997e8f5b961fb45",
+      "bytes": 2365
+    },
+    {
+      "relativePath": "review-01-18.json",
+      "sha256": "d2abb6bc92f533a3c6db528583dc867c69cf6b6bd7c36ff8317e3a275804895a",
+      "bytes": 13080
+    },
+    {
+      "relativePath": "review-01-18-preparation.json",
+      "sha256": "5f697e8933d3b8d4a867c0a7621b0a16fa657afaac415addbba37fa452c51c2d",
+      "bytes": 6598
+    },
+    {
+      "relativePath": "review-01-18-delta.json",
+      "sha256": "9069c5257cee25a001525cefb3b2af57e92811b98c0427a2250b111de807265a",
+      "bytes": 11464
+    },
+    {
+      "relativePath": "review-19-35.json",
+      "sha256": "cc0aa7acacb7a484e506d3169bf1295f4b1eed31086ef558f53f547eb34f3564",
+      "bytes": 28087
+    },
+    {
+      "relativePath": "READ-ME.txt",
+      "sha256": "5bf7f15005227d77d95278cca93bcf66e3d1493d25b4fca05a4586f007e04729",
+      "bytes": 1505
+    }
+  ]
+}

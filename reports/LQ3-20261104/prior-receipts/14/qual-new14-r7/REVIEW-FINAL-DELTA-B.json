@@ -1,0 +1,83 @@
+{
+  "schemaVersion": 1,
+  "reviewer": "/root/review_19_26",
+  "status": "PASS_SCOPED_FINAL_DELTA_STATIC",
+  "scope": "Q21本文訂正、Q23②訂正、Q25条件付き説明と参考限定、Q25/Q26原図資産・JSON参照",
+  "checks": [
+    {
+      "questionNumber": 21,
+      "status": "PASS",
+      "finding": "questionとoriginalContent.bodyの双方で『仕組みに該当し』となり、原本にない『の改善』が除かれた。原本p.10の確認済み文字列と一致。"
+    },
+    {
+      "questionNumber": 23,
+      "status": "PASS",
+      "finding": "choices.イとoriginalContent.choices.イの双方で『運用も同時並行して実施すること。』となり、原本p.11と一致。"
+    },
+    {
+      "questionNumber": 25,
+      "status": "PASS_REFERENCE_ONLY_WITH_EXPLICIT_LIMIT",
+      "finding": "未完の『審査する』と、継承線から必然導出されないことを誤答理由とする記述が削除された。相互親子による循環の位置、非循環前提での訂正、UML版への依存を説明。needsReview=true、通常採点対象外とするquestionNotice、公式③を保持し公式採点除外とは異なる旨を確認。",
+      "limitation": "②をすべてのUML版で誤りと確定した受入ではない。参考限定の内容として受入。通常採点プールからの実際の除外はmain統合時の利用側で維持する必要がある。"
+    },
+    {
+      "questionNumber": 25,
+      "status": "PASS_SOURCE_IMAGE_STATIC",
+      "finding": "assets/q25.pngを原本p.13と視覚照合。クラス3種、白三角、共有集約白ひし形、親/子、1と0..*、全5オブジェクト図、各番号、リンクを保持。文字・線・ラベルの欠落は見つからない。",
+      "jsonBinding": {
+        "hasImage": true,
+        "imageUrl": "/images/questions/gijutsushi1-information/2025/q25.png",
+        "packetAsset": "assets/q25.png",
+        "imageAltTextPresent": true,
+        "choiceLabels": "ア〜オが①〜⑤に順序対応"
+      }
+    },
+    {
+      "questionNumber": 26,
+      "status": "PASS_SOURCE_IMAGE_STATIC",
+      "finding": "assets/q26.pngを原本p.14と視覚照合。全5グラフ、①〜⑤、Cost/CPI/SPIの縦軸、DATE横軸と矢印、1.0線、AC/PV/EV/BAC/EACのラベル、曲線の形と実線/破線、7略語の凡例を保持。欠落は見つからない。",
+      "jsonBinding": {
+        "hasImage": true,
+        "imageUrl": "/images/questions/gijutsushi1-information/2025/q26.png",
+        "packetAsset": "assets/q26.png",
+        "imageAltTextPresent": true,
+        "choiceLabels": "ア〜オが①〜⑤に順序対応"
+      }
+    }
+  ],
+  "assetHashManifestAgreement": true,
+  "requiredIntegrationMapping": "mainはpacketのassets/q25.pngとq26.pngをJSONのimageUrlsに対応する配信先へ設置する。現時点の受入は私有packet内の内容と参照であり、既存共有runtimeに画像が配信されているとの主張ではない。",
+  "mandatoryCorrections": [],
+  "notVerified": [
+    "ブラウザ上の実表示",
+    "画面幅ごとの拡大・縮小・視認性",
+    "実採点・履歴保存",
+    "通常プール除外の実動作",
+    "共有適用・配信URLのHTTP取得"
+  ],
+  "previousSameVersionContentReaudited": false,
+  "contentEditedByReviewer": false,
+  "inputPins": [
+    {
+      "path": "C:\\Users\\kanet\\Documents\\Codex\\2026-11-01\\qual-new14-private-20261101\\outputs\\qual-new14-r7\\QUESTIONS-35.json",
+      "sha256": "1952c0d7a45d6db52f16cd055d438ab3d49b7da6ff543492036a09bcbee137d0"
+    },
+    {
+      "path": "C:\\Users\\kanet\\Documents\\Codex\\2026-11-01\\qual-new14-private-20261101\\outputs\\qual-new14-r7\\assets\\q25.png",
+      "sha256": "35edd45e28b4bef1f474ae894aaaf1a653911b283aa3af6b21df74d0de0ce8fb"
+    },
+    {
+      "path": "C:\\Users\\kanet\\Documents\\Codex\\2026-11-01\\qual-new14-private-20261101\\outputs\\qual-new14-r7\\assets\\q26.png",
+      "sha256": "cc7ef4ebc4b9807a8b1469d4027ca5c43a026560f7792509ce56d7f2b4d9e7f5"
+    },
+    {
+      "path": "C:\\Users\\kanet\\Documents\\Codex\\2026-11-01\\qual-new14-private-20261101\\outputs\\qual-new14-r7\\ASSET-MANIFEST.json",
+      "sha256": "45cf9372ce63ac2e53b954416c7eafc3d88ea2976b1a6957a22b56d93c2a6025"
+    },
+    {
+      "path": "C:\\Users\\kanet\\Documents\\Codex\\2026-11-01\\qual-new14-private-20261101\\work\\sources\\r7-information.pdf",
+      "sha256": "57f2154974ae426542b09a0a96c6f8e3b90a43096c9eced4a6a43fea6ea1339b"
+    }
+  ],
+  "reviewedAtJst": "2026-11-01T19:07:47.9012106+09:00"
+}

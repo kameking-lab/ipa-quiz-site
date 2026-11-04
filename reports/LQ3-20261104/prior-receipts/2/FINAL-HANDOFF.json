@@ -1,0 +1,46 @@
+{
+  "id": "qual-new:2",
+  "title": "技術士第一次・航空・宇宙",
+  "sealedAtJst": "2026-11-01T19:00:06.219300+09:00",
+  "status": "PRIVATE_CONTENT_COMPLETE_INDEPENDENTLY_ACCEPTED_MAIN_ADOPTION_CANDIDATE",
+  "supersedes": "旧outputs/HANDOFF.jsonの年度指定待ちは選定権限訂正で解除。旧票は履歴として保存。",
+  "target": "令和7年度 専門科目 Ⅲ-1～Ⅲ-35",
+  "counts": {
+    "realPastExamQuestions": 35,
+    "choiceReasons": 175,
+    "officialPageImages": 17,
+    "technicalFigureQuestionIds": [
+      17,
+      29,
+      32
+    ],
+    "independentlyAcceptedQuestions": 35,
+    "inventedQuestions": 0,
+    "sharedAdopted": 0
+  },
+  "questionHash": "c7d7a7c1d63f187db407c2bf1fd2855ea9384b96ff170f6f6809c49ba70fb14d",
+  "independentReview": "packet/INDEPENDENT-REVIEW.json",
+  "independentReviewSha256": "72b1d64ea90e3d67d8ca625f2218f5382a7eee1b9358d11ab04ca77c73517b37",
+  "packet": "qual-new2-aerospace-r7-private-packet.zip",
+  "packetSha256": "f61be7439e0efce764ce3b3095523ace8abac8a4f81d4f85c368094e11db49b1",
+  "packetBytes": 4304929,
+  "files": 30,
+  "reader": "packet/READER.html",
+  "readerStatus": "私有確認補助。JS構文検査済み、ブラウザ動作未受入。",
+  "remainingPrivateContentOperations": [],
+  "remainingIntegrationOperations": [
+    {
+      "owner": "main 01a18919-2bca-71a1-aee9-c0486fa7203b",
+      "operation": "無改変原紙ページ画像を表示する教材表現を共有サイトへ組み込む際の対応付けと必要動作受入",
+      "conditions": "原問番号指定・5選択肢番号・全肢理由を保つ。画像非対応のテキスト専用経路へ直接投入しない。共有変更はmainのみ。"
+    }
+  ],
+  "limitations": [
+    "原文の機械可読全文OCRは未提供。全設問・選択肢・図は公式原紙画像に保持。",
+    "同じページの別問題も見えるため解答対象番号を明示。",
+    "保存素材時点の限定重複照合。実runtime全同一の主張なし。",
+    "共有採用・本番・公開・build・deploy・外部送信0。"
+  ],
+  "quarantined": "packet-historyに旧候補JSONと欠落crop35を保全しzipから除外。独自問題ではないが原問採用対象外。",
+  "publication": "今回禁止・権利調査は本人担当として維持。私有完成と公開待ちを区別。"
+}

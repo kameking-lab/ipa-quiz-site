@@ -1,0 +1,851 @@
+{
+  "reviewer": "/root/forest_content_review",
+  "createdAtUtc": "2026-11-01T18:41:49.899819+00:00",
+  "verdict": "PASS",
+  "scope": "私有packet結合受入のみ。既受入解説の内容再QA、共有UI、build、preview、公開検証ではない。",
+  "method": "原紙を既に視認した頁対応表を独立に定義。受入原稿との文字列完全一致、公式正答PDF15頁から独立抽出した70正答との照合、逆問の2属性、37頁の元PNGバイト同一性とPDF同倍率再レンダー画素一致を独立スクリプトで検査。",
+  "inputs": [
+    {
+      "path": "outputs\\packet\\data\\forest-2024.json",
+      "sha256": "b4e92480a4d2ca87e845dfc18b98357118f192f37f43ce253096068ff15dfafe"
+    },
+    {
+      "path": "work\\reasons2024.json",
+      "sha256": "1ad316d92739d75aef377f3889546fcc4751001d6313a1a375ff34df3d07c0c1"
+    },
+    {
+      "path": "work\\reasons2024b.json",
+      "sha256": "6aa6b3979e45696a4780abe1eda10ab8f74477270b179aa66dbc0da1fdfab583"
+    },
+    {
+      "path": "work\\reasons2024c.json",
+      "sha256": "a87768c7458b7706f1482687e3197f807708dd76882a0925264c2533e824270e"
+    },
+    {
+      "path": "work\\reasons2024d.json",
+      "sha256": "8d514ea84c1f77c98d72028651948910b2c41ff20a02436867c4284cafd2331b"
+    },
+    {
+      "path": "outputs\\packet\\sources\\forest-2024.pdf",
+      "sha256": "32adab698122f7113424f8b5ca566dad5d6cd654444132df0ca264f7598d54fe"
+    },
+    {
+      "path": "outputs\\packet\\sources\\answers-2024.pdf",
+      "sha256": "256a6293b49f67f9849172e8cce6ad0219d8573a1b9ed34b322dea1b9dc91b14"
+    },
+    {
+      "path": "outputs\\packet\\data\\forest-2025.json",
+      "sha256": "63164f1e877d40ece10ecd77f34e5e933eb4a908b2721bd2e4a63085f29c4ab6"
+    },
+    {
+      "path": "work\\reasons2025.json",
+      "sha256": "46a507599db0a63cffecc37804b1e59c33e003c3a63ab3432b83e9f31401c0fa"
+    },
+    {
+      "path": "work\\reasons2025b.json",
+      "sha256": "99317d7079042ecdb799f739e594f65e9e5b0795c6f27849bd2efacbc92c11bc"
+    },
+    {
+      "path": "work\\reasons2025c.json",
+      "sha256": "1a37a26caecc7ba11c91797951464d570b90c85411241ef2a704376bde0d5946"
+    },
+    {
+      "path": "work\\reasons2025d.json",
+      "sha256": "a7c93a13fe488130937e841dcfe5537db477a64d95a5ab645ed2e7daacf772ed"
+    },
+    {
+      "path": "outputs\\packet\\sources\\forest-2025.pdf",
+      "sha256": "3b77674df67e810de07956268fc4013391a3a67950cc6a9f717d5e813f382448"
+    },
+    {
+      "path": "outputs\\packet\\sources\\answers-2025.pdf",
+      "sha256": "6d4f5427838059ab50f0e7785f3f9cb2718fafaf96a8b74afcb332d969d7e311"
+    }
+  ],
+  "results": [
+    {
+      "year": 2024,
+      "questionMappings": [
+        {
+          "question": 1,
+          "sourceQuestionNumber": "Ⅲ-1",
+          "page": 1,
+          "officialAnswer": 4
+        },
+        {
+          "question": 2,
+          "sourceQuestionNumber": "Ⅲ-2",
+          "page": 2,
+          "officialAnswer": 5
+        },
+        {
+          "question": 3,
+          "sourceQuestionNumber": "Ⅲ-3",
+          "page": 2,
+          "officialAnswer": 4
+        },
+        {
+          "question": 4,
+          "sourceQuestionNumber": "Ⅲ-4",
+          "page": 3,
+          "officialAnswer": 3
+        },
+        {
+          "question": 5,
+          "sourceQuestionNumber": "Ⅲ-5",
+          "page": 3,
+          "officialAnswer": 2
+        },
+        {
+          "question": 6,
+          "sourceQuestionNumber": "Ⅲ-6",
+          "page": 4,
+          "officialAnswer": 1
+        },
+        {
+          "question": 7,
+          "sourceQuestionNumber": "Ⅲ-7",
+          "page": 4,
+          "officialAnswer": 2
+        },
+        {
+          "question": 8,
+          "sourceQuestionNumber": "Ⅲ-8",
+          "page": 5,
+          "officialAnswer": 5
+        },
+        {
+          "question": 9,
+          "sourceQuestionNumber": "Ⅲ-9",
+          "page": 5,
+          "officialAnswer": 4
+        },
+        {
+          "question": 10,
+          "sourceQuestionNumber": "Ⅲ-10",
+          "page": 6,
+          "officialAnswer": 5
+        },
+        {
+          "question": 11,
+          "sourceQuestionNumber": "Ⅲ-11",
+          "page": 7,
+          "officialAnswer": 4
+        },
+        {
+          "question": 12,
+          "sourceQuestionNumber": "Ⅲ-12",
+          "page": 7,
+          "officialAnswer": 2
+        },
+        {
+          "question": 13,
+          "sourceQuestionNumber": "Ⅲ-13",
+          "page": 8,
+          "officialAnswer": 3
+        },
+        {
+          "question": 14,
+          "sourceQuestionNumber": "Ⅲ-14",
+          "page": 9,
+          "officialAnswer": 1
+        },
+        {
+          "question": 15,
+          "sourceQuestionNumber": "Ⅲ-15",
+          "page": 9,
+          "officialAnswer": 2
+        },
+        {
+          "question": 16,
+          "sourceQuestionNumber": "Ⅲ-16",
+          "page": 10,
+          "officialAnswer": 5
+        },
+        {
+          "question": 17,
+          "sourceQuestionNumber": "Ⅲ-17",
+          "page": 10,
+          "officialAnswer": 4
+        },
+        {
+          "question": 18,
+          "sourceQuestionNumber": "Ⅲ-18",
+          "page": 11,
+          "officialAnswer": 3
+        },
+        {
+          "question": 19,
+          "sourceQuestionNumber": "Ⅲ-19",
+          "page": 11,
+          "officialAnswer": 5
+        },
+        {
+          "question": 20,
+          "sourceQuestionNumber": "Ⅲ-20",
+          "page": 12,
+          "officialAnswer": 1
+        },
+        {
+          "question": 21,
+          "sourceQuestionNumber": "Ⅲ-21",
+          "page": 12,
+          "officialAnswer": 1
+        },
+        {
+          "question": 22,
+          "sourceQuestionNumber": "Ⅲ-22",
+          "page": 13,
+          "officialAnswer": 2
+        },
+        {
+          "question": 23,
+          "sourceQuestionNumber": "Ⅲ-23",
+          "page": 13,
+          "officialAnswer": 4
+        },
+        {
+          "question": 24,
+          "sourceQuestionNumber": "Ⅲ-24",
+          "page": 14,
+          "officialAnswer": 3
+        },
+        {
+          "question": 25,
+          "sourceQuestionNumber": "Ⅲ-25",
+          "page": 14,
+          "officialAnswer": 1
+        },
+        {
+          "question": 26,
+          "sourceQuestionNumber": "Ⅲ-26",
+          "page": 15,
+          "officialAnswer": 2
+        },
+        {
+          "question": 27,
+          "sourceQuestionNumber": "Ⅲ-27",
+          "page": 15,
+          "officialAnswer": 4
+        },
+        {
+          "question": 28,
+          "sourceQuestionNumber": "Ⅲ-28",
+          "page": 16,
+          "officialAnswer": 1
+        },
+        {
+          "question": 29,
+          "sourceQuestionNumber": "Ⅲ-29",
+          "page": 16,
+          "officialAnswer": 4
+        },
+        {
+          "question": 30,
+          "sourceQuestionNumber": "Ⅲ-30",
+          "page": 17,
+          "officialAnswer": 4
+        },
+        {
+          "question": 31,
+          "sourceQuestionNumber": "Ⅲ-31",
+          "page": 17,
+          "officialAnswer": 2
+        },
+        {
+          "question": 32,
+          "sourceQuestionNumber": "Ⅲ-32",
+          "page": 18,
+          "officialAnswer": 4
+        },
+        {
+          "question": 33,
+          "sourceQuestionNumber": "Ⅲ-33",
+          "page": 18,
+          "officialAnswer": 2
+        },
+        {
+          "question": 34,
+          "sourceQuestionNumber": "Ⅲ-34",
+          "page": 19,
+          "officialAnswer": 4
+        },
+        {
+          "question": 35,
+          "sourceQuestionNumber": "Ⅲ-35",
+          "page": 19,
+          "officialAnswer": 1
+        }
+      ],
+      "images": [
+        {
+          "page": 1,
+          "sha256": "6e75585473b01143a8bf121041cb2fa9f41190cf948be475fb0fd4e38e661cc5",
+          "size": [
+            1311,
+            1854
+          ],
+          "pdfPixelsIdentical": true
+        },
+        {
+          "page": 2,
+          "sha256": "42e8f92d51cf88bea5813b2e37d3a8693d60a7a5bf0e2ff3d70b58633ccfae7a",
+          "size": [
+            1311,
+            1854
+          ],
+          "pdfPixelsIdentical": true
+        },
+        {
+          "page": 3,
+          "sha256": "0734e6a3b17d9941c116eb598da3ecc457e08cc4b4ac648a5b8e03a34dd2d50e",
+          "size": [
+            1311,
+            1854
+          ],
+          "pdfPixelsIdentical": true
+        },
+        {
+          "page": 4,
+          "sha256": "5c63c832343af74c4300f0a20b280dbf7725111ed5cbaa10dcf5e6257ff6b55a",
+          "size": [
+            1311,
+            1854
+          ],
+          "pdfPixelsIdentical": true
+        },
+        {
+          "page": 5,
+          "sha256": "a69349bb89c8e98676dc1c510067f0e22131bb52d0eab551e0f9a4c3e47c4274",
+          "size": [
+            1311,
+            1854
+          ],
+          "pdfPixelsIdentical": true
+        },
+        {
+          "page": 6,
+          "sha256": "98527a94b2d3daab92bbbdcfa7789939bcb1f6a3a862ed3fe53a048ea41146e5",
+          "size": [
+            1311,
+            1854
+          ],
+          "pdfPixelsIdentical": true
+        },
+        {
+          "page": 7,
+          "sha256": "abb210a5849b07dc5f89a47895478b03b152f13dfe3461048f0e65a5525076a4",
+          "size": [
+            1311,
+            1854
+          ],
+          "pdfPixelsIdentical": true
+        },
+        {
+          "page": 8,
+          "sha256": "912fe2e48b33b5633ac28cfcfab76d91f8b625e8480852e4345376a22de38398",
+          "size": [
+            1311,
+            1854
+          ],
+          "pdfPixelsIdentical": true
+        },
+        {
+          "page": 9,
+          "sha256": "47ee45f0c05726f3cd0119471a9778ba21a146bfa6bdcb968b38e90ccb9e75a3",
+          "size": [
+            1311,
+            1854
+          ],
+          "pdfPixelsIdentical": true
+        },
+        {
+          "page": 10,
+          "sha256": "66a18bf72a5d909e952465f3997f381e4bc7973c0ce1d1f0ed550c6ab31ce48e",
+          "size": [
+            1311,
+            1854
+          ],
+          "pdfPixelsIdentical": true
+        },
+        {
+          "page": 11,
+          "sha256": "8317d13191c04c4a04fc9d545e84ad426ebb99a896b8191803eb1431876aa90b",
+          "size": [
+            1311,
+            1854
+          ],
+          "pdfPixelsIdentical": true
+        },
+        {
+          "page": 12,
+          "sha256": "1f6e317972c335ff06a88676d22e8363e0f28f95796077ec8f806b9ab4f329fb",
+          "size": [
+            1311,
+            1854
+          ],
+          "pdfPixelsIdentical": true
+        },
+        {
+          "page": 13,
+          "sha256": "2569a0ef5f6f019318cff67cbd2594b68ef46a62bab650b93567a1a34e0cd04d",
+          "size": [
+            1311,
+            1854
+          ],
+          "pdfPixelsIdentical": true
+        },
+        {
+          "page": 14,
+          "sha256": "2efede67465e76a2e05151de7c27aeb6774061895484932e3e149386bacf2597",
+          "size": [
+            1311,
+            1854
+          ],
+          "pdfPixelsIdentical": true
+        },
+        {
+          "page": 15,
+          "sha256": "090ba6f9ce53132e8f01803cbc4d45b86a367f5a2035746bb23c1bb4fd9cdb6e",
+          "size": [
+            1311,
+            1854
+          ],
+          "pdfPixelsIdentical": true
+        },
+        {
+          "page": 16,
+          "sha256": "a68105ecfe9d0e8816a415037fb98334d056ccf3d0d51e3562028641109d83f5",
+          "size": [
+            1311,
+            1854
+          ],
+          "pdfPixelsIdentical": true
+        },
+        {
+          "page": 17,
+          "sha256": "da829854fc3be92304a4ea9a2015fbd6b103a5ff6c1adef5cdcb5f13833d9189",
+          "size": [
+            1311,
+            1854
+          ],
+          "pdfPixelsIdentical": true
+        },
+        {
+          "page": 18,
+          "sha256": "35abf1e2272a7fcf343194bb655a44dd5d07410c64f022e757dee5f2444eea8c",
+          "size": [
+            1311,
+            1854
+          ],
+          "pdfPixelsIdentical": true
+        },
+        {
+          "page": 19,
+          "sha256": "1d98c0b34322eb351dadf178f36efd0505a37d606aba84b9a60461b0a3a44038",
+          "size": [
+            1311,
+            1854
+          ],
+          "pdfPixelsIdentical": true
+        }
+      ],
+      "choiceReasonsCompared": 175,
+      "officialAnswersCompared": 35
+    },
+    {
+      "year": 2025,
+      "questionMappings": [
+        {
+          "question": 1,
+          "sourceQuestionNumber": "Ⅲ-1",
+          "page": 1,
+          "officialAnswer": 4
+        },
+        {
+          "question": 2,
+          "sourceQuestionNumber": "Ⅲ-2",
+          "page": 2,
+          "officialAnswer": 1
+        },
+        {
+          "question": 3,
+          "sourceQuestionNumber": "Ⅲ-3",
+          "page": 2,
+          "officialAnswer": 5
+        },
+        {
+          "question": 4,
+          "sourceQuestionNumber": "Ⅲ-4",
+          "page": 3,
+          "officialAnswer": 2
+        },
+        {
+          "question": 5,
+          "sourceQuestionNumber": "Ⅲ-5",
+          "page": 3,
+          "officialAnswer": 4
+        },
+        {
+          "question": 6,
+          "sourceQuestionNumber": "Ⅲ-6",
+          "page": 4,
+          "officialAnswer": 3
+        },
+        {
+          "question": 7,
+          "sourceQuestionNumber": "Ⅲ-7",
+          "page": 4,
+          "officialAnswer": 2
+        },
+        {
+          "question": 8,
+          "sourceQuestionNumber": "Ⅲ-8",
+          "page": 5,
+          "officialAnswer": 2
+        },
+        {
+          "question": 9,
+          "sourceQuestionNumber": "Ⅲ-9",
+          "page": 5,
+          "officialAnswer": 5
+        },
+        {
+          "question": 10,
+          "sourceQuestionNumber": "Ⅲ-10",
+          "page": 6,
+          "officialAnswer": 4
+        },
+        {
+          "question": 11,
+          "sourceQuestionNumber": "Ⅲ-11",
+          "page": 6,
+          "officialAnswer": 3
+        },
+        {
+          "question": 12,
+          "sourceQuestionNumber": "Ⅲ-12",
+          "page": 7,
+          "officialAnswer": 5
+        },
+        {
+          "question": 13,
+          "sourceQuestionNumber": "Ⅲ-13",
+          "page": 7,
+          "officialAnswer": 4
+        },
+        {
+          "question": 14,
+          "sourceQuestionNumber": "Ⅲ-14",
+          "page": 8,
+          "officialAnswer": 3
+        },
+        {
+          "question": 15,
+          "sourceQuestionNumber": "Ⅲ-15",
+          "page": 8,
+          "officialAnswer": 1
+        },
+        {
+          "question": 16,
+          "sourceQuestionNumber": "Ⅲ-16",
+          "page": 9,
+          "officialAnswer": 4
+        },
+        {
+          "question": 17,
+          "sourceQuestionNumber": "Ⅲ-17",
+          "page": 9,
+          "officialAnswer": 4
+        },
+        {
+          "question": 18,
+          "sourceQuestionNumber": "Ⅲ-18",
+          "page": 10,
+          "officialAnswer": 3
+        },
+        {
+          "question": 19,
+          "sourceQuestionNumber": "Ⅲ-19",
+          "page": 10,
+          "officialAnswer": 3
+        },
+        {
+          "question": 20,
+          "sourceQuestionNumber": "Ⅲ-20",
+          "page": 11,
+          "officialAnswer": 5
+        },
+        {
+          "question": 21,
+          "sourceQuestionNumber": "Ⅲ-21",
+          "page": 11,
+          "officialAnswer": 2
+        },
+        {
+          "question": 22,
+          "sourceQuestionNumber": "Ⅲ-22",
+          "page": 12,
+          "officialAnswer": 3
+        },
+        {
+          "question": 23,
+          "sourceQuestionNumber": "Ⅲ-23",
+          "page": 12,
+          "officialAnswer": 2
+        },
+        {
+          "question": 24,
+          "sourceQuestionNumber": "Ⅲ-24",
+          "page": 13,
+          "officialAnswer": 4
+        },
+        {
+          "question": 25,
+          "sourceQuestionNumber": "Ⅲ-25",
+          "page": 13,
+          "officialAnswer": 1
+        },
+        {
+          "question": 26,
+          "sourceQuestionNumber": "Ⅲ-26",
+          "page": 14,
+          "officialAnswer": 2
+        },
+        {
+          "question": 27,
+          "sourceQuestionNumber": "Ⅲ-27",
+          "page": 14,
+          "officialAnswer": 2
+        },
+        {
+          "question": 28,
+          "sourceQuestionNumber": "Ⅲ-28",
+          "page": 15,
+          "officialAnswer": 5
+        },
+        {
+          "question": 29,
+          "sourceQuestionNumber": "Ⅲ-29",
+          "page": 15,
+          "officialAnswer": 2
+        },
+        {
+          "question": 30,
+          "sourceQuestionNumber": "Ⅲ-30",
+          "page": 16,
+          "officialAnswer": 2
+        },
+        {
+          "question": 31,
+          "sourceQuestionNumber": "Ⅲ-31",
+          "page": 16,
+          "officialAnswer": 5
+        },
+        {
+          "question": 32,
+          "sourceQuestionNumber": "Ⅲ-32",
+          "page": 17,
+          "officialAnswer": 2
+        },
+        {
+          "question": 33,
+          "sourceQuestionNumber": "Ⅲ-33",
+          "page": 17,
+          "officialAnswer": 5
+        },
+        {
+          "question": 34,
+          "sourceQuestionNumber": "Ⅲ-34",
+          "page": 18,
+          "officialAnswer": 3
+        },
+        {
+          "question": 35,
+          "sourceQuestionNumber": "Ⅲ-35",
+          "page": 18,
+          "officialAnswer": 3
+        }
+      ],
+      "images": [
+        {
+          "page": 1,
+          "sha256": "9785f91fb9dfcbc2dd93210be534787641dba5230e2df8da021d7f1b4144eaaa",
+          "size": [
+            1311,
+            1854
+          ],
+          "pdfPixelsIdentical": true
+        },
+        {
+          "page": 2,
+          "sha256": "7f8f6ba2b01935b7f82554e9a13fc39b1d034e0cdd670ecdcd78a2647bddec2a",
+          "size": [
+            1311,
+            1854
+          ],
+          "pdfPixelsIdentical": true
+        },
+        {
+          "page": 3,
+          "sha256": "fc51a81808d3b66e2ad663075ab3da78145fa69d7aec63cebd3d0d76a5061dd8",
+          "size": [
+            1311,
+            1854
+          ],
+          "pdfPixelsIdentical": true
+        },
+        {
+          "page": 4,
+          "sha256": "2910c7cd064e273eef49ca79585ca8618961c821f7b3b02b14c7d8db3a322e62",
+          "size": [
+            1311,
+            1854
+          ],
+          "pdfPixelsIdentical": true
+        },
+        {
+          "page": 5,
+          "sha256": "092a021bdce574ea9023f7ce2cfc4487baa653f701a6f42facfa0136c0f844e5",
+          "size": [
+            1311,
+            1854
+          ],
+          "pdfPixelsIdentical": true
+        },
+        {
+          "page": 6,
+          "sha256": "790813515fdbbf89ef3913fa024869b7ef3a795170900fd470377e833c66bdfe",
+          "size": [
+            1311,
+            1854
+          ],
+          "pdfPixelsIdentical": true
+        },
+        {
+          "page": 7,
+          "sha256": "0af83accffda6f6d532f10bc0d67c02fe3d91db9e24267fd0a37405cdbbe5541",
+          "size": [
+            1311,
+            1854
+          ],
+          "pdfPixelsIdentical": true
+        },
+        {
+          "page": 8,
+          "sha256": "65211db326484a13aa386f54813fad59282f691679492197434c411d9061897c",
+          "size": [
+            1311,
+            1854
+          ],
+          "pdfPixelsIdentical": true
+        },
+        {
+          "page": 9,
+          "sha256": "02545be3d594728fab0d34a071fcf1f7edd308269a0f0e48eb0032da24885bb6",
+          "size": [
+            1311,
+            1854
+          ],
+          "pdfPixelsIdentical": true
+        },
+        {
+          "page": 10,
+          "sha256": "89caf5f32ff529d2179f9a869c2b24440f8c9e744b3c7b1b1a7480b91d7696be",
+          "size": [
+            1311,
+            1854
+          ],
+          "pdfPixelsIdentical": true
+        },
+        {
+          "page": 11,
+          "sha256": "fadcda3d35753814884d4d46e24b7de16b1f384b790bb1d1558b995b3baae2bb",
+          "size": [
+            1311,
+            1854
+          ],
+          "pdfPixelsIdentical": true
+        },
+        {
+          "page": 12,
+          "sha256": "82160f37232dbd5af29e6474115e033e5d53311a8298a2f0d1b3db82616ce832",
+          "size": [
+            1311,
+            1854
+          ],
+          "pdfPixelsIdentical": true
+        },
+        {
+          "page": 13,
+          "sha256": "652c5d2d00d8b837f8ac8eb54d10eb0ce8d2aa335ecc4af77ce4eee833883822",
+          "size": [
+            1311,
+            1854
+          ],
+          "pdfPixelsIdentical": true
+        },
+        {
+          "page": 14,
+          "sha256": "962f96769a3a384127c88bf67695153749ed874319404ed444bb09db568053df",
+          "size": [
+            1311,
+            1854
+          ],
+          "pdfPixelsIdentical": true
+        },
+        {
+          "page": 15,
+          "sha256": "f91d267a16fd09662746bb506be84f6483fbb32d4987d290ec5cf11988e480ae",
+          "size": [
+            1311,
+            1854
+          ],
+          "pdfPixelsIdentical": true
+        },
+        {
+          "page": 16,
+          "sha256": "34227708d3e8dc215ef26823646c7ef5030c5cad5fe3a51dbad697ef50caeb7b",
+          "size": [
+            1311,
+            1854
+          ],
+          "pdfPixelsIdentical": true
+        },
+        {
+          "page": 17,
+          "sha256": "5ff3f0fc127a8f819b8741c28112cfd34a23810779a50af6a1174f1151a46061",
+          "size": [
+            1311,
+            1854
+          ],
+          "pdfPixelsIdentical": true
+        },
+        {
+          "page": 18,
+          "sha256": "455e00dd19de445947c1d6c5df436b4cbcc5523710ece79da3b0aeace22af802",
+          "size": [
+            1311,
+            1854
+          ],
+          "pdfPixelsIdentical": true
+        }
+      ],
+      "choiceReasonsCompared": 175,
+      "officialAnswersCompared": 35
+    }
+  ],
+  "counts": {
+    "questions": 70,
+    "choiceReasons": 350,
+    "originalPages": 37,
+    "uniqueQuestionIds": 70
+  },
+  "findings": [],
+  "limitations": [
+    "原紙は全ページ画像で、問題文の文字起こしの受入ではない。",
+    "画像内の数式・記号は全ページ画素一致により保持。代替問題・類題を追加していない。",
+    "statementValidityは本試験の正答選択上の適否。R6Q35⑤の条件補足は受入済みの解説文をそのまま保持。",
+    "INTEGRATION.jsonの非drop-in・現行group非対応の制約を維持。共有システムの変換後/UI結合は別途必要。"
+  ]
+}

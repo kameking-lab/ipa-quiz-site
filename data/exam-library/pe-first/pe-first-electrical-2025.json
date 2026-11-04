@@ -1,0 +1,3292 @@
+[
+  {
+    "id": "gijutsushi1-electrical-2025-senmon-q01",
+    "number": 1,
+    "text": "2025年度 電気電子部門 専門科目 Ⅲ－1。下の公式原問画像の当該番号に解答してください。同じページにある別の設問は対象外です。",
+    "images": [
+      "/exam-library/pe-first-electrical-2025/4a9c275b6b915041751f.png"
+    ],
+    "sourcePages": [
+      1
+    ],
+    "sourceQuestionNumber": 1,
+    "correctChoice": 3,
+    "choiceCount": 5,
+    "answerAuthority": "official",
+    "originalPdf": "https://www.engineer.or.jp/c_topics/011/attached/attach_11457_6.pdf",
+    "answerPdf": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_4.pdf#page=6",
+    "explanation": "定常電流に対するアンペールの法則は∮H·dl=ΣIである。閉曲線が張る面を貫く電流を向き付きで足し合わせる。閉曲線との関係は鎖交、積分する場は磁界、演算は線積分である。",
+    "presentation": {
+      "sourceHash": "7e7f1ee63a8007ae9e52deb9e471300dc03d1c1de54208c23d19ca8e107ef01b",
+      "prompt": "2025年度 電気電子部門 専門科目 Ⅲ－1。下の公式原問画像の当該番号に解答してください。同じページにある別の設問は対象外です。",
+      "choices": [
+        {
+          "number": 1,
+          "text": "①"
+        },
+        {
+          "number": 2,
+          "text": "②"
+        },
+        {
+          "number": 3,
+          "text": "③"
+        },
+        {
+          "number": 4,
+          "text": "④"
+        },
+        {
+          "number": 5,
+          "text": "⑤"
+        }
+      ],
+      "figures": [
+        {
+          "src": "/exam-library/pe-first-electrical-2025/4a9c275b6b915041751f.png",
+          "alt": "2025年度 電気電子部門 Ⅲ－1の公式原問。問題文・全選択肢・図表を確認してください。",
+          "width": 951,
+          "height": 526
+        }
+      ]
+    },
+    "choiceExplanation": {
+      "sourceHash": "7e7f1ee63a8007ae9e52deb9e471300dc03d1c1de54208c23d19ca8e107ef01b",
+      "correctChoice": 3,
+      "summary": "定常電流に対するアンペールの法則は∮H·dl=ΣIである。閉曲線が張る面を貫く電流を向き付きで足し合わせる。閉曲線との関係は鎖交、積分する場は磁界、演算は線積分である。",
+      "choices": [
+        {
+          "number": 1,
+          "verdict": "incorrect",
+          "reason": "直交は鎖交を表さず、微分も周回線積分と異なる。磁界を経路に沿って積分する。"
+        },
+        {
+          "number": 2,
+          "verdict": "incorrect",
+          "reason": "電界ではなく磁界Hの周回線積分である。また電流の閉曲線との関係は鎖交。"
+        },
+        {
+          "number": 3,
+          "verdict": "correct",
+          "reason": "鎖交する電流の代数的総和と磁界Hの周回線積分が対応し、全欄が一致する。"
+        },
+        {
+          "number": 4,
+          "verdict": "incorrect",
+          "reason": "差・電界・微分が不適切。電流は向き付きの総和で、磁界を線積分する。"
+        },
+        {
+          "number": 5,
+          "verdict": "incorrect",
+          "reason": "磁界と鎖交はよいが、差ではなく代数的総和、微分ではなく線積分である。"
+        }
+      ],
+      "sources": [
+        {
+          "title": "日本技術士会 公式問題",
+          "url": "https://www.engineer.or.jp/c_topics/011/attached/attach_11457_6.pdf"
+        },
+        {
+          "title": "日本技術士会 公式正答",
+          "url": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_4.pdf#page=6"
+        }
+      ]
+    }
+  },
+  {
+    "id": "gijutsushi1-electrical-2025-senmon-q02",
+    "number": 2,
+    "text": "2025年度 電気電子部門 専門科目 Ⅲ－2。下の公式原問画像の当該番号に解答してください。同じページにある別の設問は対象外です。",
+    "images": [
+      "/exam-library/pe-first-electrical-2025/237ea8e1c77cf5bc3f74.png"
+    ],
+    "sourcePages": [
+      2
+    ],
+    "sourceQuestionNumber": 2,
+    "correctChoice": 5,
+    "choiceCount": 5,
+    "answerAuthority": "official",
+    "originalPdf": "https://www.engineer.or.jp/c_topics/011/attached/attach_11457_6.pdf",
+    "answerPdf": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_4.pdf#page=6",
+    "explanation": "球対称性よりガウス面でEは一定。r<aでは包む電荷が0なのでE=0。r>aでは4πr²E=Q/ε₀からE=Q/(4πε₀r²)。電荷が体積全体に分布する球と区別する。",
+    "presentation": {
+      "sourceHash": "7e5d33375c8278fb32046c402221c36dbd7b31790a173a61ff47db90ae6b1223",
+      "prompt": "2025年度 電気電子部門 専門科目 Ⅲ－2。下の公式原問画像の当該番号に解答してください。同じページにある別の設問は対象外です。",
+      "choices": [
+        {
+          "number": 1,
+          "text": "①"
+        },
+        {
+          "number": 2,
+          "text": "②"
+        },
+        {
+          "number": 3,
+          "text": "③"
+        },
+        {
+          "number": 4,
+          "text": "④"
+        },
+        {
+          "number": 5,
+          "text": "⑤"
+        }
+      ],
+      "figures": [
+        {
+          "src": "/exam-library/pe-first-electrical-2025/237ea8e1c77cf5bc3f74.png",
+          "alt": "2025年度 電気電子部門 Ⅲ－2の公式原問。問題文・全選択肢・図表を確認してください。",
+          "width": 951,
+          "height": 788
+        }
+      ]
+    },
+    "choiceExplanation": {
+      "sourceHash": "7e5d33375c8278fb32046c402221c36dbd7b31790a173a61ff47db90ae6b1223",
+      "correctChoice": 5,
+      "summary": "球対称性よりガウス面でEは一定。r<aでは包む電荷が0なのでE=0。r>aでは4πr²E=Q/ε₀からE=Q/(4πε₀r²)。電荷が体積全体に分布する球と区別する。",
+      "choices": [
+        {
+          "number": 1,
+          "verdict": "incorrect",
+          "reason": "内外とも対数式は球対称電界に合わない。内部は0、外部は距離の逆二乗。"
+        },
+        {
+          "number": 2,
+          "verdict": "incorrect",
+          "reason": "内部0は正しいが外部のlog rが誤り。外部はkQ/r²。"
+        },
+        {
+          "number": 3,
+          "verdict": "incorrect",
+          "reason": "内部のr比例は一様体積帯電球の式。球面だけの帯電では内部0であり、外部も0にはならない。"
+        },
+        {
+          "number": 4,
+          "verdict": "incorrect",
+          "reason": "外部は正しいが内部のkQr/a³は体積帯電の式。球面帯電の内部は0。"
+        },
+        {
+          "number": 5,
+          "verdict": "correct",
+          "reason": "ガウスの法則で内部電荷0、外部電荷Qを用いた結果と一致する。"
+        }
+      ],
+      "sources": [
+        {
+          "title": "日本技術士会 公式問題",
+          "url": "https://www.engineer.or.jp/c_topics/011/attached/attach_11457_6.pdf"
+        },
+        {
+          "title": "日本技術士会 公式正答",
+          "url": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_4.pdf#page=6"
+        }
+      ]
+    }
+  },
+  {
+    "id": "gijutsushi1-electrical-2025-senmon-q03",
+    "number": 3,
+    "text": "2025年度 電気電子部門 専門科目 Ⅲ－3。下の公式原問画像の当該番号に解答してください。同じページにある別の設問は対象外です。",
+    "images": [
+      "/exam-library/pe-first-electrical-2025/e9e5dd48f02a0cd51be6.png"
+    ],
+    "sourcePages": [
+      2
+    ],
+    "sourceQuestionNumber": 3,
+    "correctChoice": 1,
+    "choiceCount": 5,
+    "answerAuthority": "official",
+    "originalPdf": "https://www.engineer.or.jp/c_topics/011/attached/attach_11457_6.pdf",
+    "answerPdf": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_4.pdf#page=6",
+    "explanation": "Bで左右の力をつり合わせるにはqC=qA。AB=d、AC=2dなので、Aでは近いBからの力と遠いCからの力を逆向きにし、qB=−qC/4とする。これでCでも平衡する。",
+    "presentation": {
+      "sourceHash": "d8fe60f671bdf6a8e65af43196fab6c3c332a4ade687c4a664d1fc292a255b1c",
+      "prompt": "2025年度 電気電子部門 専門科目 Ⅲ－3。下の公式原問画像の当該番号に解答してください。同じページにある別の設問は対象外です。",
+      "choices": [
+        {
+          "number": 1,
+          "text": "①"
+        },
+        {
+          "number": 2,
+          "text": "②"
+        },
+        {
+          "number": 3,
+          "text": "③"
+        },
+        {
+          "number": 4,
+          "text": "④"
+        },
+        {
+          "number": 5,
+          "text": "⑤"
+        }
+      ],
+      "figures": [
+        {
+          "src": "/exam-library/pe-first-electrical-2025/e9e5dd48f02a0cd51be6.png",
+          "alt": "2025年度 電気電子部門 Ⅲ－3の公式原問。問題文・全選択肢・図表を確認してください。",
+          "width": 951,
+          "height": 582
+        }
+      ]
+    },
+    "choiceExplanation": {
+      "sourceHash": "d8fe60f671bdf6a8e65af43196fab6c3c332a4ade687c4a664d1fc292a255b1c",
+      "correctChoice": 1,
+      "summary": "Bで左右の力をつり合わせるにはqC=qA。AB=d、AC=2dなので、Aでは近いBからの力と遠いCからの力を逆向きにし、qB=−qC/4とする。これでCでも平衡する。",
+      "choices": [
+        {
+          "number": 1,
+          "verdict": "correct",
+          "reason": "等しい外側電荷と、その逆符号で1/4の中央電荷により全3点の力が相殺する。"
+        },
+        {
+          "number": 2,
+          "verdict": "incorrect",
+          "reason": "Bの平衡は満たすが中央の電荷が強すぎる。Aでは距離2倍のCの力は1/4なので、−qA/4が必要。"
+        },
+        {
+          "number": 3,
+          "verdict": "incorrect",
+          "reason": "全て同符号でAに働く二つの力が同方向。qCもqAと異なりBも平衡しない。"
+        },
+        {
+          "number": 4,
+          "verdict": "incorrect",
+          "reason": "qC≠qAでBが平衡しない。外側同値、中央−1/4が必要。"
+        },
+        {
+          "number": 5,
+          "verdict": "incorrect",
+          "reason": "Bは平衡するが中央の大きさが必要値の8倍。A・Cの近距離力を相殺できない。"
+        }
+      ],
+      "sources": [
+        {
+          "title": "日本技術士会 公式問題",
+          "url": "https://www.engineer.or.jp/c_topics/011/attached/attach_11457_6.pdf"
+        },
+        {
+          "title": "日本技術士会 公式正答",
+          "url": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_4.pdf#page=6"
+        }
+      ]
+    }
+  },
+  {
+    "id": "gijutsushi1-electrical-2025-senmon-q04",
+    "number": 4,
+    "text": "2025年度 電気電子部門 専門科目 Ⅲ－4。下の公式原問画像の当該番号に解答してください。同じページにある別の設問は対象外です。",
+    "images": [
+      "/exam-library/pe-first-electrical-2025/76a390be31bd1029f146.png"
+    ],
+    "sourcePages": [
+      3
+    ],
+    "sourceQuestionNumber": 4,
+    "correctChoice": 1,
+    "choiceCount": 5,
+    "answerAuthority": "official",
+    "originalPdf": "https://www.engineer.or.jp/c_topics/011/attached/attach_11457_6.pdf",
+    "answerPdf": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_4.pdf#page=6",
+    "explanation": "θ=0ではEy=(A2/A1)Exとなり直線で、傾き角はtan⁻¹(A2/A1)。位相差が0でもπでもなく振幅が異なると軌跡は楕円。x dy/dt−y dx/dt=−A1A2ω sinθ>0であり、設問の+z方向を向く視点では右回りとなる。",
+    "presentation": {
+      "sourceHash": "0ab0ddbf8188f6471408bde42819e0f6e118b788065024405f9f17ff55838619",
+      "prompt": "2025年度 電気電子部門 専門科目 Ⅲ－4。下の公式原問画像の当該番号に解答してください。同じページにある別の設問は対象外です。",
+      "choices": [
+        {
+          "number": 1,
+          "text": "①"
+        },
+        {
+          "number": 2,
+          "text": "②"
+        },
+        {
+          "number": 3,
+          "text": "③"
+        },
+        {
+          "number": 4,
+          "text": "④"
+        },
+        {
+          "number": 5,
+          "text": "⑤"
+        }
+      ],
+      "figures": [
+        {
+          "src": "/exam-library/pe-first-electrical-2025/76a390be31bd1029f146.png",
+          "alt": "2025年度 電気電子部門 Ⅲ－4の公式原問。問題文・全選択肢・図表を確認してください。",
+          "width": 951,
+          "height": 1019
+        }
+      ]
+    },
+    "choiceExplanation": {
+      "sourceHash": "0ab0ddbf8188f6471408bde42819e0f6e118b788065024405f9f17ff55838619",
+      "correctChoice": 1,
+      "summary": "θ=0ではEy=(A2/A1)Exとなり直線で、傾き角はtan⁻¹(A2/A1)。位相差が0でもπでもなく振幅が異なると軌跡は楕円。x dy/dt−y dx/dt=−A1A2ω sinθ>0であり、設問の+z方向を向く視点では右回りとなる。",
+      "choices": [
+        {
+          "number": 1,
+          "verdict": "correct",
+          "reason": "直線・傾きの比・視点を指定した右回り・不等振幅の楕円が全て一致。"
+        },
+        {
+          "number": 2,
+          "verdict": "incorrect",
+          "reason": "傾きの比が逆で、指定視点での回転も逆。Ey/Ex=A2/A1を用いる。"
+        },
+        {
+          "number": 3,
+          "verdict": "incorrect",
+          "reason": "θ=0では位相が同じなので円ではなく直線になる。"
+        },
+        {
+          "number": 4,
+          "verdict": "incorrect",
+          "reason": "θ=0での軌跡を円とした点と、不等振幅での偏波を円偏波とした点が誤り。θ=0では直線、−π<θ<0では楕円となる。右回りという欄自体は正しい。"
+        },
+        {
+          "number": 5,
+          "verdict": "incorrect",
+          "reason": "最初の2欄は正しいが回転が逆。A1≠A2なので円偏波にもならない。"
+        }
+      ],
+      "sources": [
+        {
+          "title": "日本技術士会 公式問題",
+          "url": "https://www.engineer.or.jp/c_topics/011/attached/attach_11457_6.pdf"
+        },
+        {
+          "title": "日本技術士会 公式正答",
+          "url": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_4.pdf#page=6"
+        }
+      ]
+    }
+  },
+  {
+    "id": "gijutsushi1-electrical-2025-senmon-q05",
+    "number": 5,
+    "text": "2025年度 電気電子部門 専門科目 Ⅲ－5。下の公式原問画像の当該番号に解答してください。同じページにある別の設問は対象外です。",
+    "images": [
+      "/exam-library/pe-first-electrical-2025/d17e7412679ca7b884f7.png"
+    ],
+    "sourcePages": [
+      4
+    ],
+    "sourceQuestionNumber": 5,
+    "correctChoice": 2,
+    "choiceCount": 5,
+    "answerAuthority": "official",
+    "originalPdf": "https://www.engineer.or.jp/c_topics/011/attached/attach_11457_6.pdf",
+    "answerPdf": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_4.pdf#page=6",
+    "explanation": "V0=3(R0+20)=R0+80より2R0=20、R0=10Ω、V0=90V。二つの負荷条件を同時に満たす必要がある。",
+    "presentation": {
+      "sourceHash": "e5826b04e1178009d7bbf7b8d62e6db57bd809a44946a0d84007b812b659b087",
+      "prompt": "2025年度 電気電子部門 専門科目 Ⅲ－5。下の公式原問画像の当該番号に解答してください。同じページにある別の設問は対象外です。",
+      "choices": [
+        {
+          "number": 1,
+          "text": "①"
+        },
+        {
+          "number": 2,
+          "text": "②"
+        },
+        {
+          "number": 3,
+          "text": "③"
+        },
+        {
+          "number": 4,
+          "text": "④"
+        },
+        {
+          "number": 5,
+          "text": "⑤"
+        }
+      ],
+      "figures": [
+        {
+          "src": "/exam-library/pe-first-electrical-2025/d17e7412679ca7b884f7.png",
+          "alt": "2025年度 電気電子部門 Ⅲ－5の公式原問。問題文・全選択肢・図表を確認してください。",
+          "width": 951,
+          "height": 419
+        }
+      ]
+    },
+    "choiceExplanation": {
+      "sourceHash": "e5826b04e1178009d7bbf7b8d62e6db57bd809a44946a0d84007b812b659b087",
+      "correctChoice": 2,
+      "summary": "V0=3(R0+20)=R0+80より2R0=20、R0=10Ω、V0=90V。二つの負荷条件を同時に満たす必要がある。",
+      "choices": [
+        {
+          "number": 1,
+          "verdict": "incorrect",
+          "reason": "20Ω負荷で80/30=2.67Aとなり3Aを満たさない。V0は90V。"
+        },
+        {
+          "number": 2,
+          "verdict": "correct",
+          "reason": "90/(10+20)=3A、90/(10+80)=1Aで両条件を満たす。"
+        },
+        {
+          "number": 3,
+          "verdict": "incorrect",
+          "reason": "20Ω負荷で100/30=3.33A。内部抵抗が正しくても起電力100Vは大きすぎる。"
+        },
+        {
+          "number": 4,
+          "verdict": "incorrect",
+          "reason": "20Ω負荷で90/40=2.25A。内部抵抗は連立式から10Ω。"
+        },
+        {
+          "number": 5,
+          "verdict": "incorrect",
+          "reason": "80Ω負荷では1Aだが20Ω負荷で2.5Aとなる。一条件だけで選ばない。"
+        }
+      ],
+      "sources": [
+        {
+          "title": "日本技術士会 公式問題",
+          "url": "https://www.engineer.or.jp/c_topics/011/attached/attach_11457_6.pdf"
+        },
+        {
+          "title": "日本技術士会 公式正答",
+          "url": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_4.pdf#page=6"
+        }
+      ]
+    }
+  },
+  {
+    "id": "gijutsushi1-electrical-2025-senmon-q06",
+    "number": 6,
+    "text": "2025年度 電気電子部門 専門科目 Ⅲ－6。下の公式原問画像の当該番号に解答してください。同じページにある別の設問は対象外です。",
+    "images": [
+      "/exam-library/pe-first-electrical-2025/37eaf3761b517974435e.png"
+    ],
+    "sourcePages": [
+      4
+    ],
+    "sourceQuestionNumber": 6,
+    "correctChoice": 2,
+    "choiceCount": 5,
+    "answerAuthority": "official",
+    "originalPdf": "https://www.engineer.or.jp/c_topics/011/attached/attach_11457_6.pdf",
+    "answerPdf": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_4.pdf#page=6",
+    "explanation": "開放端子電圧をVとすると(V−E)/R+GV−I=0。したがってEt=(E+RI)/(1+RG)。独立電圧源を短絡、独立電流源を開放するとRと1/Gの並列となりRt=R/(1+RG)。",
+    "presentation": {
+      "sourceHash": "22fcf9d23279228e30d400ffadab062d83c5c405b68c0e5ad2f3bfba51c80ea2",
+      "prompt": "2025年度 電気電子部門 専門科目 Ⅲ－6。下の公式原問画像の当該番号に解答してください。同じページにある別の設問は対象外です。",
+      "choices": [
+        {
+          "number": 1,
+          "text": "①"
+        },
+        {
+          "number": 2,
+          "text": "②"
+        },
+        {
+          "number": 3,
+          "text": "③"
+        },
+        {
+          "number": 4,
+          "text": "④"
+        },
+        {
+          "number": 5,
+          "text": "⑤"
+        }
+      ],
+      "figures": [
+        {
+          "src": "/exam-library/pe-first-electrical-2025/37eaf3761b517974435e.png",
+          "alt": "2025年度 電気電子部門 Ⅲ－6の公式原問。問題文・全選択肢・図表を確認してください。",
+          "width": 951,
+          "height": 995
+        }
+      ]
+    },
+    "choiceExplanation": {
+      "sourceHash": "22fcf9d23279228e30d400ffadab062d83c5c405b68c0e5ad2f3bfba51c80ea2",
+      "correctChoice": 2,
+      "summary": "開放端子電圧をVとすると(V−E)/R+GV−I=0。したがってEt=(E+RI)/(1+RG)。独立電圧源を短絡、独立電流源を開放するとRと1/Gの並列となりRt=R/(1+RG)。",
+      "choices": [
+        {
+          "number": 1,
+          "verdict": "incorrect",
+          "reason": "Etの因子もRtも誤り。RtはR+1/GではなくRと1/Gの並列値。"
+        },
+        {
+          "number": 2,
+          "verdict": "correct",
+          "reason": "節点方程式によるEtと電源零化後の並列抵抗が一致する。"
+        },
+        {
+          "number": 3,
+          "verdict": "incorrect",
+          "reason": "Rtは正しいがEtのE項がRGEになっている。Eの寄与はE/(1+RG)。"
+        },
+        {
+          "number": 4,
+          "verdict": "incorrect",
+          "reason": "EtのE項に加えRtも誤り。直列和でなく並列合成を用いる。"
+        },
+        {
+          "number": 5,
+          "verdict": "incorrect",
+          "reason": "EtとRtに抵抗・コンダクタンスの混同がある。G/(1+RG)の次元はSであり抵抗ではない。"
+        }
+      ],
+      "sources": [
+        {
+          "title": "日本技術士会 公式問題",
+          "url": "https://www.engineer.or.jp/c_topics/011/attached/attach_11457_6.pdf"
+        },
+        {
+          "title": "日本技術士会 公式正答",
+          "url": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_4.pdf#page=6"
+        }
+      ]
+    }
+  },
+  {
+    "id": "gijutsushi1-electrical-2025-senmon-q07",
+    "number": 7,
+    "text": "2025年度 電気電子部門 専門科目 Ⅲ－7。下の公式原問画像の当該番号に解答してください。同じページにある別の設問は対象外です。",
+    "images": [
+      "/exam-library/pe-first-electrical-2025/5acfe9de727a1f94fa8a.png"
+    ],
+    "sourcePages": [
+      5
+    ],
+    "sourceQuestionNumber": 7,
+    "correctChoice": 2,
+    "choiceCount": 5,
+    "answerAuthority": "official",
+    "originalPdf": "https://www.engineer.or.jp/c_topics/011/attached/attach_11457_6.pdf",
+    "answerPdf": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_4.pdf#page=6",
+    "explanation": "無限回路は一段除いても同じ形なので残りもRin。横Rと、縦2R・残りRinの並列を直列合成する。Rin=R+2RRin/(2R+Rin)を整理すると(Rin−2R)(Rin+R)=0。正の抵抗なのでRin=2R。",
+    "presentation": {
+      "sourceHash": "7036e154acff56cc56487567c3730e6655a79e3416e29b53fe95768fc26df5d3",
+      "prompt": "2025年度 電気電子部門 専門科目 Ⅲ－7。下の公式原問画像の当該番号に解答してください。同じページにある別の設問は対象外です。",
+      "choices": [
+        {
+          "number": 1,
+          "text": "①"
+        },
+        {
+          "number": 2,
+          "text": "②"
+        },
+        {
+          "number": 3,
+          "text": "③"
+        },
+        {
+          "number": 4,
+          "text": "④"
+        },
+        {
+          "number": 5,
+          "text": "⑤"
+        }
+      ],
+      "figures": [
+        {
+          "src": "/exam-library/pe-first-electrical-2025/5acfe9de727a1f94fa8a.png",
+          "alt": "2025年度 電気電子部門 Ⅲ－7の公式原問。問題文・全選択肢・図表を確認してください。",
+          "width": 951,
+          "height": 1432
+        }
+      ]
+    },
+    "choiceExplanation": {
+      "sourceHash": "7036e154acff56cc56487567c3730e6655a79e3416e29b53fe95768fc26df5d3",
+      "correctChoice": 2,
+      "summary": "無限回路は一段除いても同じ形なので残りもRin。横Rと、縦2R・残りRinの並列を直列合成する。Rin=R+2RRin/(2R+Rin)を整理すると(Rin−2R)(Rin+R)=0。正の抵抗なのでRin=2R。",
+      "choices": [
+        {
+          "number": 1,
+          "verdict": "incorrect",
+          "reason": "並列側をRとしている箇所が誤り。縦抵抗は2R。"
+        },
+        {
+          "number": 2,
+          "verdict": "correct",
+          "reason": "自己相似性、2Rとの並列式、正根2Rがすべて正しい。"
+        },
+        {
+          "number": 3,
+          "verdict": "incorrect",
+          "reason": "一段除いても1.5倍にはならず、同じRinである。"
+        },
+        {
+          "number": 4,
+          "verdict": "incorrect",
+          "reason": "残りは2RinではなくRinで、並列抵抗・結論も誤り。"
+        },
+        {
+          "number": 5,
+          "verdict": "incorrect",
+          "reason": "並列式だけは正しいが自己相似性と正根が違う。残りRin、解2R。"
+        }
+      ],
+      "sources": [
+        {
+          "title": "日本技術士会 公式問題",
+          "url": "https://www.engineer.or.jp/c_topics/011/attached/attach_11457_6.pdf"
+        },
+        {
+          "title": "日本技術士会 公式正答",
+          "url": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_4.pdf#page=6"
+        }
+      ]
+    }
+  },
+  {
+    "id": "gijutsushi1-electrical-2025-senmon-q08",
+    "number": 8,
+    "text": "2025年度 電気電子部門 専門科目 Ⅲ－8。下の公式原問画像の当該番号に解答してください。同じページにある別の設問は対象外です。",
+    "images": [
+      "/exam-library/pe-first-electrical-2025/7c25d82368090b06a718.png"
+    ],
+    "sourcePages": [
+      6
+    ],
+    "sourceQuestionNumber": 8,
+    "correctChoice": 3,
+    "choiceCount": 5,
+    "answerAuthority": "official",
+    "originalPdf": "https://www.engineer.or.jp/c_topics/011/attached/attach_11457_6.pdf",
+    "answerPdf": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_4.pdf#page=6",
+    "explanation": "i=(E/R)(1−e^(−Rt/L))、VR=E(1−e^(−Rt/L))、VL=Ee^(−Rt/L)。コイル電流は不連続に増えず、投入直後はi=0で全電圧Eがコイルにかかる。VLはEから0へ減少する。",
+    "presentation": {
+      "sourceHash": "db6641cfa9c70699228b7994c1acda8511236bc8aa0c682775087eef47b2a193",
+      "prompt": "2025年度 電気電子部門 専門科目 Ⅲ－8。下の公式原問画像の当該番号に解答してください。同じページにある別の設問は対象外です。",
+      "choices": [
+        {
+          "number": 1,
+          "text": "①"
+        },
+        {
+          "number": 2,
+          "text": "②"
+        },
+        {
+          "number": 3,
+          "text": "③"
+        },
+        {
+          "number": 4,
+          "text": "④"
+        },
+        {
+          "number": 5,
+          "text": "⑤"
+        }
+      ],
+      "figures": [
+        {
+          "src": "/exam-library/pe-first-electrical-2025/7c25d82368090b06a718.png",
+          "alt": "2025年度 電気電子部門 Ⅲ－8の公式原問。問題文・全選択肢・図表を確認してください。",
+          "width": 951,
+          "height": 813
+        }
+      ]
+    },
+    "choiceExplanation": {
+      "sourceHash": "db6641cfa9c70699228b7994c1acda8511236bc8aa0c682775087eef47b2a193",
+      "correctChoice": 3,
+      "summary": "i=(E/R)(1−e^(−Rt/L))、VR=E(1−e^(−Rt/L))、VL=Ee^(−Rt/L)。コイル電流は不連続に増えず、投入直後はi=0で全電圧Eがコイルにかかる。VLはEから0へ減少する。",
+      "choices": [
+        {
+          "number": 1,
+          "verdict": "incorrect",
+          "reason": "適切。定常状態ではコイル電圧0でVR=E。"
+        },
+        {
+          "number": 2,
+          "verdict": "incorrect",
+          "reason": "適切。時定数τ=L/Rであり、LとRへの依存は記述どおり。"
+        },
+        {
+          "number": 3,
+          "verdict": "correct",
+          "reason": "不適切。VL(0+)=Eで、その後減少して0になる。初期値と増減が逆。"
+        },
+        {
+          "number": 4,
+          "verdict": "incorrect",
+          "reason": "適切。十分時間が経つとi=E/RとなりLは過渡の速さだけに影響する。"
+        },
+        {
+          "number": 5,
+          "verdict": "incorrect",
+          "reason": "適切。di/dt=(E/L)e^(−Rt/L)は正で減衰するため、増加は次第に緩やかになる。"
+        }
+      ],
+      "sources": [
+        {
+          "title": "日本技術士会 公式問題",
+          "url": "https://www.engineer.or.jp/c_topics/011/attached/attach_11457_6.pdf"
+        },
+        {
+          "title": "日本技術士会 公式正答",
+          "url": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_4.pdf#page=6"
+        }
+      ]
+    }
+  },
+  {
+    "id": "gijutsushi1-electrical-2025-senmon-q09",
+    "number": 9,
+    "text": "2025年度 電気電子部門 専門科目 Ⅲ－9。下の公式原問画像の当該番号に解答してください。同じページにある別の設問は対象外です。",
+    "images": [
+      "/exam-library/pe-first-electrical-2025/d49e532750284e7e2a52.png"
+    ],
+    "sourcePages": [
+      7
+    ],
+    "sourceQuestionNumber": 9,
+    "correctChoice": 5,
+    "choiceCount": 5,
+    "answerAuthority": "official",
+    "originalPdf": "https://www.engineer.or.jp/c_topics/011/attached/attach_11457_6.pdf",
+    "answerPdf": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_4.pdf#page=6",
+    "explanation": "r=R₁+R₂とおく。初期電荷CEを含むためコンデンサ項はI(s)/(sC)−E/s。rI+I/(sC)−E/s=0を解き、I=(E/r)/(s+1/(Cr))。逆変換はi=(E/r)e^(−t/(Cr))。初期値E/r、時定数Cr、最終値0を検算する。",
+    "presentation": {
+      "sourceHash": "6d7e7b52aed1f6b51086b5a3b239c7b15245d066b79d443c50456679114d5f4a",
+      "prompt": "2025年度 電気電子部門 専門科目 Ⅲ－9。下の公式原問画像の当該番号に解答してください。同じページにある別の設問は対象外です。",
+      "choices": [
+        {
+          "number": 1,
+          "text": "①"
+        },
+        {
+          "number": 2,
+          "text": "②"
+        },
+        {
+          "number": 3,
+          "text": "③"
+        },
+        {
+          "number": 4,
+          "text": "④"
+        },
+        {
+          "number": 5,
+          "text": "⑤"
+        }
+      ],
+      "figures": [
+        {
+          "src": "/exam-library/pe-first-electrical-2025/d49e532750284e7e2a52.png",
+          "alt": "2025年度 電気電子部門 Ⅲ－9の公式原問。問題文・全選択肢・図表を確認してください。",
+          "width": 951,
+          "height": 1369
+        }
+      ]
+    },
+    "choiceExplanation": {
+      "sourceHash": "6d7e7b52aed1f6b51086b5a3b239c7b15245d066b79d443c50456679114d5f4a",
+      "correctChoice": 5,
+      "summary": "r=R₁+R₂とおく。初期電荷CEを含むためコンデンサ項はI(s)/(sC)−E/s。rI+I/(sC)−E/s=0を解き、I=(E/r)/(s+1/(Cr))。逆変換はi=(E/r)e^(−t/(Cr))。初期値E/r、時定数Cr、最終値0を検算する。",
+      "choices": [
+        {
+          "number": 1,
+          "verdict": "incorrect",
+          "reason": "初期電荷の項−E/sを欠く。さらにI(s)欄がインピーダンスであり電流ではない。"
+        },
+        {
+          "number": 2,
+          "verdict": "incorrect",
+          "reason": "初期電荷の符号を逆にしたため電流が負になる。図の放電方向では初期電流は正のE/r。"
+        },
+        {
+          "number": 3,
+          "verdict": "incorrect",
+          "reason": "積分項をs/Cとしており逆。正しくは1/(sC)で、振幅にもEが必要。"
+        },
+        {
+          "number": 4,
+          "verdict": "incorrect",
+          "reason": "コンデンサ項のsと1/sを混同し初期条件も逆。極は−1/(Cr)でなければならない。"
+        },
+        {
+          "number": 5,
+          "verdict": "correct",
+          "reason": "初期電荷の符号、極、振幅が全て正しく、初期値と時定数も一致する。"
+        }
+      ],
+      "sources": [
+        {
+          "title": "日本技術士会 公式問題",
+          "url": "https://www.engineer.or.jp/c_topics/011/attached/attach_11457_6.pdf"
+        },
+        {
+          "title": "日本技術士会 公式正答",
+          "url": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_4.pdf#page=6"
+        }
+      ]
+    }
+  },
+  {
+    "id": "gijutsushi1-electrical-2025-senmon-q10",
+    "number": 10,
+    "text": "2025年度 電気電子部門 専門科目 Ⅲ－10。下の公式原問画像の当該番号に解答してください。同じページにある別の設問は対象外です。",
+    "images": [
+      "/exam-library/pe-first-electrical-2025/77c74f18436cc38f73b7.png"
+    ],
+    "sourcePages": [
+      8
+    ],
+    "sourceQuestionNumber": 10,
+    "correctChoice": 2,
+    "choiceCount": 5,
+    "answerAuthority": "official",
+    "originalPdf": "https://www.engineer.or.jp/c_topics/011/attached/attach_11457_6.pdf",
+    "answerPdf": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_4.pdf#page=6",
+    "explanation": "I=V/√[R²+(ωL−1/(ωC))²]。ω=1/√(LC)でリアクタンスが相殺し、分母が最小のRとなるため電流は最大V/R。Rが正であるから無限大にはならない。",
+    "presentation": {
+      "sourceHash": "e201db9f8065a083a0ba08a0fb8da90811c3445104ce3d02be3837b1b673e4f1",
+      "prompt": "2025年度 電気電子部門 専門科目 Ⅲ－10。下の公式原問画像の当該番号に解答してください。同じページにある別の設問は対象外です。",
+      "choices": [
+        {
+          "number": 1,
+          "text": "①"
+        },
+        {
+          "number": 2,
+          "text": "②"
+        },
+        {
+          "number": 3,
+          "text": "③"
+        },
+        {
+          "number": 4,
+          "text": "④"
+        },
+        {
+          "number": 5,
+          "text": "⑤"
+        }
+      ],
+      "figures": [
+        {
+          "src": "/exam-library/pe-first-electrical-2025/77c74f18436cc38f73b7.png",
+          "alt": "2025年度 電気電子部門 Ⅲ－10の公式原問。問題文・全選択肢・図表を確認してください。",
+          "width": 951,
+          "height": 763
+        }
+      ]
+    },
+    "choiceExplanation": {
+      "sourceHash": "e201db9f8065a083a0ba08a0fb8da90811c3445104ce3d02be3837b1b673e4f1",
+      "correctChoice": 2,
+      "summary": "I=V/√[R²+(ωL−1/(ωC))²]。ω=1/√(LC)でリアクタンスが相殺し、分母が最小のRとなるため電流は最大V/R。Rが正であるから無限大にはならない。",
+      "choices": [
+        {
+          "number": 1,
+          "verdict": "incorrect",
+          "reason": "極大になる点はよいがRが残るので∞にはならない。最大V/R。"
+        },
+        {
+          "number": 2,
+          "verdict": "correct",
+          "reason": "直列共振時のインピーダンス最小Rから極大値V/Rとなる。"
+        },
+        {
+          "number": 3,
+          "verdict": "incorrect",
+          "reason": "共振時の電流は極小0ではなく極大V/R。"
+        },
+        {
+          "number": 4,
+          "verdict": "incorrect",
+          "reason": "値V/Rは合うが、極小ではなく極大。"
+        },
+        {
+          "number": 5,
+          "verdict": "incorrect",
+          "reason": "式は一般周波数の電流であり、共振の極値は極大V/R。"
+        }
+      ],
+      "sources": [
+        {
+          "title": "日本技術士会 公式問題",
+          "url": "https://www.engineer.or.jp/c_topics/011/attached/attach_11457_6.pdf"
+        },
+        {
+          "title": "日本技術士会 公式正答",
+          "url": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_4.pdf#page=6"
+        }
+      ]
+    }
+  },
+  {
+    "id": "gijutsushi1-electrical-2025-senmon-q11",
+    "number": 11,
+    "text": "2025年度 電気電子部門 専門科目 Ⅲ－11。下の公式原問画像の当該番号に解答してください。同じページにある別の設問は対象外です。",
+    "images": [
+      "/exam-library/pe-first-electrical-2025/7380ec7b0fd02fc32011.png"
+    ],
+    "sourcePages": [
+      8
+    ],
+    "sourceQuestionNumber": 11,
+    "correctChoice": 3,
+    "choiceCount": 5,
+    "answerAuthority": "official",
+    "originalPdf": "https://www.engineer.or.jp/c_topics/011/attached/attach_11457_6.pdf",
+    "answerPdf": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_4.pdf#page=6",
+    "explanation": "小損失近似でC=1/[(2πf)²L]。535kHzでは約295pF、1605kHzでは約32.8pF。周波数が3倍なので容量は1/9になる。Lは300×10⁻⁶H、fはHzに換算する。",
+    "presentation": {
+      "sourceHash": "13318705506c62520d674bd9efd564a48fe3c8e5fc3fe7d70f11757a5935f503",
+      "prompt": "2025年度 電気電子部門 専門科目 Ⅲ－11。下の公式原問画像の当該番号に解答してください。同じページにある別の設問は対象外です。",
+      "choices": [
+        {
+          "number": 1,
+          "text": "①"
+        },
+        {
+          "number": 2,
+          "text": "②"
+        },
+        {
+          "number": 3,
+          "text": "③"
+        },
+        {
+          "number": 4,
+          "text": "④"
+        },
+        {
+          "number": 5,
+          "text": "⑤"
+        }
+      ],
+      "figures": [
+        {
+          "src": "/exam-library/pe-first-electrical-2025/7380ec7b0fd02fc32011.png",
+          "alt": "2025年度 電気電子部門 Ⅲ－11の公式原問。問題文・全選択肢・図表を確認してください。",
+          "width": 951,
+          "height": 645
+        }
+      ]
+    },
+    "choiceExplanation": {
+      "sourceHash": "13318705506c62520d674bd9efd564a48fe3c8e5fc3fe7d70f11757a5935f503",
+      "correctChoice": 3,
+      "summary": "小損失近似でC=1/[(2πf)²L]。535kHzでは約295pF、1605kHzでは約32.8pF。周波数が3倍なので容量は1/9になる。Lは300×10⁻⁶H、fはHzに換算する。",
+      "choices": [
+        {
+          "number": 1,
+          "verdict": "incorrect",
+          "reason": "容量の比は合うが単位の指数が1000倍大きい。295pFは295×10⁻¹²F。"
+        },
+        {
+          "number": 2,
+          "verdict": "incorrect",
+          "reason": "535kHzの必要容量295pFに対して1850pFで大きすぎる。2πを含めて計算する。"
+        },
+        {
+          "number": 3,
+          "verdict": "correct",
+          "reason": "両端周波数での計算値と一致し、容量比も9対1。"
+        },
+        {
+          "number": 4,
+          "verdict": "incorrect",
+          "reason": "正しい容量を両方2倍にしている。共振式から295pF、32.8pF。"
+        },
+        {
+          "number": 5,
+          "verdict": "incorrect",
+          "reason": "正しい値の約π倍で、角周波数2πfの二乗の扱いが合わない。"
+        }
+      ],
+      "sources": [
+        {
+          "title": "日本技術士会 公式問題",
+          "url": "https://www.engineer.or.jp/c_topics/011/attached/attach_11457_6.pdf"
+        },
+        {
+          "title": "日本技術士会 公式正答",
+          "url": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_4.pdf#page=6"
+        }
+      ]
+    }
+  },
+  {
+    "id": "gijutsushi1-electrical-2025-senmon-q12",
+    "number": 12,
+    "text": "2025年度 電気電子部門 専門科目 Ⅲ－12。下の公式原問画像の当該番号に解答してください。同じページにある別の設問は対象外です。",
+    "images": [
+      "/exam-library/pe-first-electrical-2025/6ff4abc7a5b171e81cfc.png"
+    ],
+    "sourcePages": [
+      9
+    ],
+    "sourceQuestionNumber": 12,
+    "correctChoice": 4,
+    "choiceCount": 5,
+    "answerAuthority": "official",
+    "originalPdf": "https://www.engineer.or.jp/c_topics/011/attached/attach_11457_6.pdf",
+    "answerPdf": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_4.pdf#page=6",
+    "explanation": "I=(Vs e^(jδ)−Vr)/(jX)。受電端複素電力Sr=Vr I*を展開すると、Pr=VsVr sinδ/X、Qr=(VsVr cosδ−Vr²)/X。受電端の値なので二乗項はVr²であり、電流の共役を忘れない。",
+    "presentation": {
+      "sourceHash": "b7e9ed51ea42d7bc34aa97f552e66b2cdbad988b74ab3871842fce39e5b1113b",
+      "prompt": "2025年度 電気電子部門 専門科目 Ⅲ－12。下の公式原問画像の当該番号に解答してください。同じページにある別の設問は対象外です。",
+      "choices": [
+        {
+          "number": 1,
+          "text": "①"
+        },
+        {
+          "number": 2,
+          "text": "②"
+        },
+        {
+          "number": 3,
+          "text": "③"
+        },
+        {
+          "number": 4,
+          "text": "④"
+        },
+        {
+          "number": 5,
+          "text": "⑤"
+        }
+      ],
+      "figures": [
+        {
+          "src": "/exam-library/pe-first-electrical-2025/6ff4abc7a5b171e81cfc.png",
+          "alt": "2025年度 電気電子部門 Ⅲ－12の公式原問。問題文・全選択肢・図表を確認してください。",
+          "width": 951,
+          "height": 657
+        }
+      ]
+    },
+    "choiceExplanation": {
+      "sourceHash": "b7e9ed51ea42d7bc34aa97f552e66b2cdbad988b74ab3871842fce39e5b1113b",
+      "correctChoice": 4,
+      "summary": "I=(Vs e^(jδ)−Vr)/(jX)。受電端複素電力Sr=Vr I*を展開すると、Pr=VsVr sinδ/X、Qr=(VsVr cosδ−Vr²)/X。受電端の値なので二乗項はVr²であり、電流の共役を忘れない。",
+      "choices": [
+        {
+          "number": 1,
+          "verdict": "incorrect",
+          "reason": "有効電力にcosを用いている点が誤り。無効電力もsinではなくcos、二乗項はVr²。"
+        },
+        {
+          "number": 2,
+          "verdict": "incorrect",
+          "reason": "有効のcosと無効のsinが誤り。無効電力の符号も受電方向の定義と逆。"
+        },
+        {
+          "number": 3,
+          "verdict": "incorrect",
+          "reason": "有効の三角関数と無効の二乗項が違う。受電端ではVr²を用いる。"
+        },
+        {
+          "number": 4,
+          "verdict": "correct",
+          "reason": "Vr I*を展開した実部・虚部と一致する。"
+        },
+        {
+          "number": 5,
+          "verdict": "incorrect",
+          "reason": "Prは正しいがQrの符号が逆。受電方向では(VsVr cosδ−Vr²)/X。"
+        }
+      ],
+      "sources": [
+        {
+          "title": "日本技術士会 公式問題",
+          "url": "https://www.engineer.or.jp/c_topics/011/attached/attach_11457_6.pdf"
+        },
+        {
+          "title": "日本技術士会 公式正答",
+          "url": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_4.pdf#page=6"
+        }
+      ]
+    }
+  },
+  {
+    "id": "gijutsushi1-electrical-2025-senmon-q13",
+    "number": 13,
+    "text": "2025年度 電気電子部門 専門科目 Ⅲ－13。下の公式原問画像の当該番号に解答してください。同じページにある別の設問は対象外です。",
+    "images": [
+      "/exam-library/pe-first-electrical-2025/671702da97b6d7cef810.png"
+    ],
+    "sourcePages": [
+      9
+    ],
+    "sourceQuestionNumber": 13,
+    "correctChoice": 5,
+    "choiceCount": 5,
+    "answerAuthority": "official",
+    "originalPdf": "https://www.engineer.or.jp/c_topics/011/attached/attach_11457_6.pdf",
+    "answerPdf": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_4.pdf#page=6",
+    "explanation": "軽負荷線路の静電容量が供給する進み無効電力は電圧上昇を招く。コンデンサを追加するとこの作用を強める。抑制には分路リアクトルなどで進み無効電力を吸収する。",
+    "presentation": {
+      "sourceHash": "9c356991570f6de61d3cb6fb1d4bfd972ad1c720e3c7c87e54647a141370b6ea",
+      "prompt": "2025年度 電気電子部門 専門科目 Ⅲ－13。下の公式原問画像の当該番号に解答してください。同じページにある別の設問は対象外です。",
+      "choices": [
+        {
+          "number": 1,
+          "text": "①"
+        },
+        {
+          "number": 2,
+          "text": "②"
+        },
+        {
+          "number": 3,
+          "text": "③"
+        },
+        {
+          "number": 4,
+          "text": "④"
+        },
+        {
+          "number": 5,
+          "text": "⑤"
+        }
+      ],
+      "figures": [
+        {
+          "src": "/exam-library/pe-first-electrical-2025/671702da97b6d7cef810.png",
+          "alt": "2025年度 電気電子部門 Ⅲ－13の公式原問。問題文・全選択肢・図表を確認してください。",
+          "width": 951,
+          "height": 420
+        }
+      ]
+    },
+    "choiceExplanation": {
+      "sourceHash": "9c356991570f6de61d3cb6fb1d4bfd972ad1c720e3c7c87e54647a141370b6ea",
+      "correctChoice": 5,
+      "summary": "軽負荷線路の静電容量が供給する進み無効電力は電圧上昇を招く。コンデンサを追加するとこの作用を強める。抑制には分路リアクトルなどで進み無効電力を吸収する。",
+      "choices": [
+        {
+          "number": 1,
+          "verdict": "incorrect",
+          "reason": "適切。線路の分布静電容量と充電電流によるフェランチ現象の説明。"
+        },
+        {
+          "number": 2,
+          "verdict": "incorrect",
+          "reason": "適切。ケーブルは静電容量が大きく、長距離になると充電電流の影響が増す。"
+        },
+        {
+          "number": 3,
+          "verdict": "incorrect",
+          "reason": "適切。進み電流の増磁作用が発電機電圧を押し上げる自己励磁の説明。"
+        },
+        {
+          "number": 4,
+          "verdict": "incorrect",
+          "reason": "適切。同じ線路充電容量に対し小容量発電機では進み負荷の相対的影響が大きい。"
+        },
+        {
+          "number": 5,
+          "verdict": "correct",
+          "reason": "不適切。追加コンデンサは進み無効電力を増やす。分路リアクトル等による吸収が対策となる。"
+        }
+      ],
+      "sources": [
+        {
+          "title": "日本技術士会 公式問題",
+          "url": "https://www.engineer.or.jp/c_topics/011/attached/attach_11457_6.pdf"
+        },
+        {
+          "title": "日本技術士会 公式正答",
+          "url": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_4.pdf#page=6"
+        }
+      ]
+    }
+  },
+  {
+    "id": "gijutsushi1-electrical-2025-senmon-q14",
+    "number": 14,
+    "text": "2025年度 電気電子部門 専門科目 Ⅲ－14。下の公式原問画像の当該番号に解答してください。同じページにある別の設問は対象外です。",
+    "images": [
+      "/exam-library/pe-first-electrical-2025/effcb5d1c896c7c97415.png"
+    ],
+    "sourcePages": [
+      10
+    ],
+    "sourceQuestionNumber": 14,
+    "correctChoice": 5,
+    "choiceCount": 5,
+    "answerAuthority": "official",
+    "originalPdf": "https://www.engineer.or.jp/c_topics/011/attached/attach_11457_6.pdf",
+    "answerPdf": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_4.pdf#page=6",
+    "explanation": "V1、V2は同相で磁束より90°進み、右向きのdとcに対応する。n1>n2なので小さいcがV2。誘導性負荷のI2はV2より遅れ、下向き斜めのe、fのうち、I2>I1となる長いf。V2とI2の間がh。",
+    "presentation": {
+      "sourceHash": "d29f6776b6bed830ac4bb4255d1d98e6c0eaf26e3cd1f79a37f074ed167ccbc3",
+      "prompt": "2025年度 電気電子部門 専門科目 Ⅲ－14。下の公式原問画像の当該番号に解答してください。同じページにある別の設問は対象外です。",
+      "choices": [
+        {
+          "number": 1,
+          "text": "①"
+        },
+        {
+          "number": 2,
+          "text": "②"
+        },
+        {
+          "number": 3,
+          "text": "③"
+        },
+        {
+          "number": 4,
+          "text": "④"
+        },
+        {
+          "number": 5,
+          "text": "⑤"
+        }
+      ],
+      "figures": [
+        {
+          "src": "/exam-library/pe-first-electrical-2025/effcb5d1c896c7c97415.png",
+          "alt": "2025年度 電気電子部門 Ⅲ－14の公式原問。問題文・全選択肢・図表を確認してください。",
+          "width": 951,
+          "height": 1026
+        }
+      ]
+    },
+    "choiceExplanation": {
+      "sourceHash": "d29f6776b6bed830ac4bb4255d1d98e6c0eaf26e3cd1f79a37f074ed167ccbc3",
+      "correctChoice": 5,
+      "summary": "V1、V2は同相で磁束より90°進み、右向きのdとcに対応する。n1>n2なので小さいcがV2。誘導性負荷のI2はV2より遅れ、下向き斜めのe、fのうち、I2>I1となる長いf。V2とI2の間がh。",
+      "choices": [
+        {
+          "number": 1,
+          "verdict": "incorrect",
+          "reason": "aは電圧に必要な水平方向ではない。電流dも電圧同相となり誘導性負荷に合わない。"
+        },
+        {
+          "number": 2,
+          "verdict": "incorrect",
+          "reason": "V2=cはよいがbは電圧より進み側。誘導性では遅れ側のf。"
+        },
+        {
+          "number": 3,
+          "verdict": "incorrect",
+          "reason": "dは大きい一次電圧。eは小さい一次電流で、iは負荷の電圧電流間角でもない。"
+        },
+        {
+          "number": 4,
+          "verdict": "incorrect",
+          "reason": "V2と角hは正しいがI2はeではなくf。巻数が少ない二次の電流が大きい。"
+        },
+        {
+          "number": 5,
+          "verdict": "correct",
+          "reason": "V2=c、I2=f、負荷遅れ角hで電圧比・電流比・位相が一致。"
+        }
+      ],
+      "sources": [
+        {
+          "title": "日本技術士会 公式問題",
+          "url": "https://www.engineer.or.jp/c_topics/011/attached/attach_11457_6.pdf"
+        },
+        {
+          "title": "日本技術士会 公式正答",
+          "url": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_4.pdf#page=6"
+        }
+      ]
+    }
+  },
+  {
+    "id": "gijutsushi1-electrical-2025-senmon-q15",
+    "number": 15,
+    "text": "2025年度 電気電子部門 専門科目 Ⅲ－15。下の公式原問画像の当該番号に解答してください。同じページにある別の設問は対象外です。",
+    "images": [
+      "/exam-library/pe-first-electrical-2025/1eafd2c49ed9e4ff31dc.png"
+    ],
+    "sourcePages": [
+      11
+    ],
+    "sourceQuestionNumber": 15,
+    "correctChoice": 2,
+    "choiceCount": 5,
+    "answerAuthority": "official",
+    "originalPdf": "https://www.engineer.or.jp/c_topics/011/attached/attach_11457_6.pdf",
+    "answerPdf": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_4.pdf#page=6",
+    "explanation": "同期速度ns=120f/p=1000min⁻¹。目標すべりs2=(1000−960)/1000=0.04。元はs1=0.02。比例推移により同じトルクでは二次抵抗/すべりを同じにするので、総抵抗は0.2×0.04/0.02=0.4Ω。追加分は0.4−0.2=0.2Ω。",
+    "presentation": {
+      "sourceHash": "aa10368f18de7a82db2dce1ab47a901558853a0cee31c8a41f8d35e96f96821e",
+      "prompt": "2025年度 電気電子部門 専門科目 Ⅲ－15。下の公式原問画像の当該番号に解答してください。同じページにある別の設問は対象外です。",
+      "choices": [
+        {
+          "number": 1,
+          "text": "①"
+        },
+        {
+          "number": 2,
+          "text": "②"
+        },
+        {
+          "number": 3,
+          "text": "③"
+        },
+        {
+          "number": 4,
+          "text": "④"
+        },
+        {
+          "number": 5,
+          "text": "⑤"
+        }
+      ],
+      "figures": [
+        {
+          "src": "/exam-library/pe-first-electrical-2025/1eafd2c49ed9e4ff31dc.png",
+          "alt": "2025年度 電気電子部門 Ⅲ－15の公式原問。問題文・全選択肢・図表を確認してください。",
+          "width": 951,
+          "height": 401
+        }
+      ]
+    },
+    "choiceExplanation": {
+      "sourceHash": "aa10368f18de7a82db2dce1ab47a901558853a0cee31c8a41f8d35e96f96821e",
+      "correctChoice": 2,
+      "summary": "同期速度ns=120f/p=1000min⁻¹。目標すべりs2=(1000−960)/1000=0.04。元はs1=0.02。比例推移により同じトルクでは二次抵抗/すべりを同じにするので、総抵抗は0.2×0.04/0.02=0.4Ω。追加分は0.4−0.2=0.2Ω。",
+      "choices": [
+        {
+          "number": 1,
+          "verdict": "incorrect",
+          "reason": "追加0.1Ωでは総抵抗0.3Ωで、対応すべりは3%、速度970min⁻¹。目標4%に届かない。"
+        },
+        {
+          "number": 2,
+          "verdict": "correct",
+          "reason": "総抵抗を0.4Ωへ倍増させる追加0.2Ωが同一トルクのすべり4%に対応。"
+        },
+        {
+          "number": 3,
+          "verdict": "incorrect",
+          "reason": "追加0.3Ωでは総抵抗0.5Ω、すべり5%、速度950min⁻¹となる。"
+        },
+        {
+          "number": 4,
+          "verdict": "incorrect",
+          "reason": "0.4Ωは必要な総抵抗。既存0.2Ωを差し引いた追加分を問われている。"
+        },
+        {
+          "number": 5,
+          "verdict": "incorrect",
+          "reason": "追加0.5Ωでは総抵抗0.7Ω、すべり7%、速度930min⁻¹で目標を外れる。"
+        }
+      ],
+      "sources": [
+        {
+          "title": "日本技術士会 公式問題",
+          "url": "https://www.engineer.or.jp/c_topics/011/attached/attach_11457_6.pdf"
+        },
+        {
+          "title": "日本技術士会 公式正答",
+          "url": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_4.pdf#page=6"
+        }
+      ]
+    }
+  },
+  {
+    "id": "gijutsushi1-electrical-2025-senmon-q16",
+    "number": 16,
+    "text": "2025年度 電気電子部門 専門科目 Ⅲ－16。下の公式原問画像の当該番号に解答してください。同じページにある別の設問は対象外です。",
+    "images": [
+      "/exam-library/pe-first-electrical-2025/0ddf8c08809a121d2e1e.png"
+    ],
+    "sourcePages": [
+      11
+    ],
+    "sourceQuestionNumber": 16,
+    "correctChoice": 3,
+    "choiceCount": 5,
+    "answerAuthority": "official",
+    "originalPdf": "https://www.engineer.or.jp/c_topics/011/attached/attach_11457_6.pdf",
+    "answerPdf": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_4.pdf#page=6",
+    "explanation": "同期速度はns=120f/p=6000/p。8極の場合は750min⁻¹であり、1000min⁻¹は6極の値。",
+    "presentation": {
+      "sourceHash": "1cff4a1f17122668aa94487bda2b9a38bc7df5b515240adf1e8d73b586a89bc2",
+      "prompt": "2025年度 電気電子部門 専門科目 Ⅲ－16。下の公式原問画像の当該番号に解答してください。同じページにある別の設問は対象外です。",
+      "choices": [
+        {
+          "number": 1,
+          "text": "①"
+        },
+        {
+          "number": 2,
+          "text": "②"
+        },
+        {
+          "number": 3,
+          "text": "③"
+        },
+        {
+          "number": 4,
+          "text": "④"
+        },
+        {
+          "number": 5,
+          "text": "⑤"
+        }
+      ],
+      "figures": [
+        {
+          "src": "/exam-library/pe-first-electrical-2025/0ddf8c08809a121d2e1e.png",
+          "alt": "2025年度 電気電子部門 Ⅲ－16の公式原問。問題文・全選択肢・図表を確認してください。",
+          "width": 951,
+          "height": 401
+        }
+      ]
+    },
+    "choiceExplanation": {
+      "sourceHash": "1cff4a1f17122668aa94487bda2b9a38bc7df5b515240adf1e8d73b586a89bc2",
+      "correctChoice": 3,
+      "summary": "同期速度はns=120f/p=6000/p。8極の場合は750min⁻¹であり、1000min⁻¹は6極の値。",
+      "choices": [
+        {
+          "number": 1,
+          "verdict": "incorrect",
+          "reason": "適切。6000/2=3000min⁻¹。"
+        },
+        {
+          "number": 2,
+          "verdict": "incorrect",
+          "reason": "適切。6000/4=1500min⁻¹。"
+        },
+        {
+          "number": 3,
+          "verdict": "correct",
+          "reason": "不適切。6000/8=750min⁻¹。1000min⁻¹に必要な極数は6。"
+        },
+        {
+          "number": 4,
+          "verdict": "incorrect",
+          "reason": "適切。6000/10=600min⁻¹。"
+        },
+        {
+          "number": 5,
+          "verdict": "incorrect",
+          "reason": "適切。6000/12=500min⁻¹。"
+        }
+      ],
+      "sources": [
+        {
+          "title": "日本技術士会 公式問題",
+          "url": "https://www.engineer.or.jp/c_topics/011/attached/attach_11457_6.pdf"
+        },
+        {
+          "title": "日本技術士会 公式正答",
+          "url": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_4.pdf#page=6"
+        }
+      ]
+    }
+  },
+  {
+    "id": "gijutsushi1-electrical-2025-senmon-q17",
+    "number": 17,
+    "text": "2025年度 電気電子部門 専門科目 Ⅲ－17。下の公式原問画像の当該番号に解答してください。同じページにある別の設問は対象外です。",
+    "images": [
+      "/exam-library/pe-first-electrical-2025/3c81405f39e241190a7a.png"
+    ],
+    "sourcePages": [
+      12
+    ],
+    "sourceQuestionNumber": 17,
+    "correctChoice": 2,
+    "choiceCount": 5,
+    "answerAuthority": "official",
+    "originalPdf": "https://www.engineer.or.jp/c_topics/011/attached/attach_11457_6.pdf",
+    "answerPdf": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_4.pdf#page=6",
+    "explanation": "このRL負荷降圧回路ではオン時に電源から給電、オフ時は還流ダイオードで電流が流れる。周期定常でインダクタの平均電圧0よりE2=E1 T1/(T1+T2)。75Vにはデューティ比0.75が必要で、7.5/(7.5+2.5)=0.75。",
+    "presentation": {
+      "sourceHash": "df3f750f8e70500d03b8b2f296c16b32d3b3f2113dec89f804204907b616567b",
+      "prompt": "2025年度 電気電子部門 専門科目 Ⅲ－17。下の公式原問画像の当該番号に解答してください。同じページにある別の設問は対象外です。",
+      "choices": [
+        {
+          "number": 1,
+          "text": "①"
+        },
+        {
+          "number": 2,
+          "text": "②"
+        },
+        {
+          "number": 3,
+          "text": "③"
+        },
+        {
+          "number": 4,
+          "text": "④"
+        },
+        {
+          "number": 5,
+          "text": "⑤"
+        }
+      ],
+      "figures": [
+        {
+          "src": "/exam-library/pe-first-electrical-2025/3c81405f39e241190a7a.png",
+          "alt": "2025年度 電気電子部門 Ⅲ－17の公式原問。問題文・全選択肢・図表を確認してください。",
+          "width": 951,
+          "height": 819
+        }
+      ]
+    },
+    "choiceExplanation": {
+      "sourceHash": "df3f750f8e70500d03b8b2f296c16b32d3b3f2113dec89f804204907b616567b",
+      "correctChoice": 2,
+      "summary": "このRL負荷降圧回路ではオン時に電源から給電、オフ時は還流ダイオードで電流が流れる。周期定常でインダクタの平均電圧0よりE2=E1 T1/(T1+T2)。75Vにはデューティ比0.75が必要で、7.5/(7.5+2.5)=0.75。",
+      "choices": [
+        {
+          "number": 1,
+          "verdict": "incorrect",
+          "reason": "比は7.5/17.5=3/7で平均約42.9V。75Vには0.75が必要。"
+        },
+        {
+          "number": 2,
+          "verdict": "correct",
+          "reason": "オン7.5ms、オフ2.5msなので平均100×0.75=75V。"
+        },
+        {
+          "number": 3,
+          "verdict": "incorrect",
+          "reason": "比10/12.5=0.8で平均80V。"
+        },
+        {
+          "number": 4,
+          "verdict": "incorrect",
+          "reason": "比2.5/10=0.25で平均25V。"
+        },
+        {
+          "number": 5,
+          "verdict": "incorrect",
+          "reason": "比10/17.5=4/7で平均約57.1V。"
+        }
+      ],
+      "sources": [
+        {
+          "title": "日本技術士会 公式問題",
+          "url": "https://www.engineer.or.jp/c_topics/011/attached/attach_11457_6.pdf"
+        },
+        {
+          "title": "日本技術士会 公式正答",
+          "url": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_4.pdf#page=6"
+        }
+      ]
+    }
+  },
+  {
+    "id": "gijutsushi1-electrical-2025-senmon-q18",
+    "number": 18,
+    "text": "2025年度 電気電子部門 専門科目 Ⅲ－18。下の公式原問画像の当該番号に解答してください。同じページにある別の設問は対象外です。",
+    "images": [
+      "/exam-library/pe-first-electrical-2025/e3ce0bc122be93e30eaa.png"
+    ],
+    "sourcePages": [
+      13
+    ],
+    "sourceQuestionNumber": 18,
+    "correctChoice": 3,
+    "choiceCount": 5,
+    "answerAuthority": "official",
+    "originalPdf": "https://www.engineer.or.jp/c_topics/011/attached/attach_11457_6.pdf",
+    "answerPdf": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_4.pdf#page=6",
+    "explanation": "問題が意図する理想容量分圧では同じ電荷Qが直列容量に蓄積し、C1(V1−V2)=C2 V2。C1=100×100/(4000−100)=100/39≈2.564pFで③。比V2/V1=C1/(C1+C2)を使ってもよい。",
+    "presentation": {
+      "sourceHash": "7fa0d6b5a03ca6c84645faa10660c4407c1f0615ece103ef53772f5f711ba778",
+      "prompt": "2025年度 電気電子部門 専門科目 Ⅲ－18。下の公式原問画像の当該番号に解答してください。同じページにある別の設問は対象外です。",
+      "choices": [
+        {
+          "number": 1,
+          "text": "①"
+        },
+        {
+          "number": 2,
+          "text": "②"
+        },
+        {
+          "number": 3,
+          "text": "③"
+        },
+        {
+          "number": 4,
+          "text": "④"
+        },
+        {
+          "number": 5,
+          "text": "⑤"
+        }
+      ],
+      "figures": [
+        {
+          "src": "/exam-library/pe-first-electrical-2025/e3ce0bc122be93e30eaa.png",
+          "alt": "2025年度 電気電子部門 Ⅲ－18の公式原問。問題文・全選択肢・図表を確認してください。",
+          "width": 951,
+          "height": 919
+        }
+      ]
+    },
+    "choiceExplanation": {
+      "sourceHash": "7fa0d6b5a03ca6c84645faa10660c4407c1f0615ece103ef53772f5f711ba778",
+      "correctChoice": 3,
+      "summary": "問題が意図する理想容量分圧では同じ電荷Qが直列容量に蓄積し、C1(V1−V2)=C2 V2。C1=100×100/(4000−100)=100/39≈2.564pFで③。比V2/V1=C1/(C1+C2)を使ってもよい。",
+      "choices": [
+        {
+          "number": 1,
+          "verdict": "incorrect",
+          "reason": "2.44pFでは理想分圧のV2=4000×2.44/102.44≈95.3Vとなり100Vに届かない。"
+        },
+        {
+          "number": 2,
+          "verdict": "incorrect",
+          "reason": "C2×V2/V1=2.50pFはC1にかかる電圧をV1とした近似。正しくはV1−V2=3900V。"
+        },
+        {
+          "number": 3,
+          "verdict": "correct",
+          "reason": "100/39≈2.564pFに最も近く、理想容量分圧の条件を満たす。"
+        },
+        {
+          "number": 4,
+          "verdict": "incorrect",
+          "reason": "2.62pFではV2≈102.1V。必要容量2.564pFより大きい。"
+        },
+        {
+          "number": 5,
+          "verdict": "incorrect",
+          "reason": "2.68pFではV2≈104.4V。容量の増加は低圧側電圧を大きくする。"
+        }
+      ],
+      "sources": [
+        {
+          "title": "日本技術士会 公式問題",
+          "url": "https://www.engineer.or.jp/c_topics/011/attached/attach_11457_6.pdf"
+        },
+        {
+          "title": "日本技術士会 公式正答",
+          "url": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_4.pdf#page=6"
+        }
+      ]
+    }
+  },
+  {
+    "id": "gijutsushi1-electrical-2025-senmon-q19",
+    "number": 19,
+    "text": "2025年度 電気電子部門 専門科目 Ⅲ－19。下の公式原問画像の当該番号に解答してください。同じページにある別の設問は対象外です。",
+    "images": [
+      "/exam-library/pe-first-electrical-2025/b8df129090f7d767b8de.png"
+    ],
+    "sourcePages": [
+      14
+    ],
+    "sourceQuestionNumber": 19,
+    "correctChoice": 2,
+    "choiceCount": 5,
+    "answerAuthority": "official",
+    "originalPdf": "https://www.engineer.or.jp/c_topics/011/attached/attach_11457_6.pdf",
+    "answerPdf": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_4.pdf#page=6",
+    "explanation": "T(s)=(2/s)/(1+2/s)=2/(s+2)=1/(0.5s+1)。一次遅れの標準形K0/(τs+1)からτ=0.5、K0=1。",
+    "presentation": {
+      "sourceHash": "b760c1bf5e56a43eb5a3382b4ff25b74f9a02cfe008ac70587d439b1694c5174",
+      "prompt": "2025年度 電気電子部門 専門科目 Ⅲ－19。下の公式原問画像の当該番号に解答してください。同じページにある別の設問は対象外です。",
+      "choices": [
+        {
+          "number": 1,
+          "text": "①"
+        },
+        {
+          "number": 2,
+          "text": "②"
+        },
+        {
+          "number": 3,
+          "text": "③"
+        },
+        {
+          "number": 4,
+          "text": "④"
+        },
+        {
+          "number": 5,
+          "text": "⑤"
+        }
+      ],
+      "figures": [
+        {
+          "src": "/exam-library/pe-first-electrical-2025/b8df129090f7d767b8de.png",
+          "alt": "2025年度 電気電子部門 Ⅲ－19の公式原問。問題文・全選択肢・図表を確認してください。",
+          "width": 951,
+          "height": 688
+        }
+      ]
+    },
+    "choiceExplanation": {
+      "sourceHash": "b760c1bf5e56a43eb5a3382b4ff25b74f9a02cfe008ac70587d439b1694c5174",
+      "correctChoice": 2,
+      "summary": "T(s)=(2/s)/(1+2/s)=2/(s+2)=1/(0.5s+1)。一次遅れの標準形K0/(τs+1)からτ=0.5、K0=1。",
+      "choices": [
+        {
+          "number": 1,
+          "verdict": "incorrect",
+          "reason": "時定数0.5は正しいが、定常ゲインT(0)=1であって0.5ではない。"
+        },
+        {
+          "number": 2,
+          "verdict": "correct",
+          "reason": "標準形1/(0.5s+1)の時定数と定常ゲインに一致。"
+        },
+        {
+          "number": 3,
+          "verdict": "incorrect",
+          "reason": "2は分子の係数であり、定常ゲインは分母定数2でも割った1。"
+        },
+        {
+          "number": 4,
+          "verdict": "incorrect",
+          "reason": "ゲイン1は正しいが、極−2から時定数は1/2。"
+        },
+        {
+          "number": 5,
+          "verdict": "incorrect",
+          "reason": "時定数も定常ゲインも誤り。分母を定数1に正規化して読む。"
+        }
+      ],
+      "sources": [
+        {
+          "title": "日本技術士会 公式問題",
+          "url": "https://www.engineer.or.jp/c_topics/011/attached/attach_11457_6.pdf"
+        },
+        {
+          "title": "日本技術士会 公式正答",
+          "url": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_4.pdf#page=6"
+        }
+      ]
+    }
+  },
+  {
+    "id": "gijutsushi1-electrical-2025-senmon-q20",
+    "number": 20,
+    "text": "2025年度 電気電子部門 専門科目 Ⅲ－20。下の公式原問画像の当該番号に解答してください。同じページにある別の設問は対象外です。",
+    "images": [
+      "/exam-library/pe-first-electrical-2025/a097b022be10965d9978.png"
+    ],
+    "sourcePages": [
+      15
+    ],
+    "sourceQuestionNumber": 20,
+    "correctChoice": 1,
+    "choiceCount": 5,
+    "answerAuthority": "official",
+    "originalPdf": "https://www.engineer.or.jp/c_topics/011/attached/attach_11457_6.pdf",
+    "answerPdf": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_4.pdf#page=6",
+    "explanation": "理想モデルはK→∞、Ri→∞、Ro→0で、出力関係はvo=K(vi+−vi−)。有限の線形出力を保つ極限では入力差vo/K→0となる。実回路で仮想短絡を適用するには、安定した負帰還と非飽和の動作が必要。",
+    "presentation": {
+      "sourceHash": "5472939f3870acb1086bb31e7ec05ba327068e099af75270a0192497b8a968d1",
+      "prompt": "2025年度 電気電子部門 専門科目 Ⅲ－20。下の公式原問画像の当該番号に解答してください。同じページにある別の設問は対象外です。",
+      "choices": [
+        {
+          "number": 1,
+          "text": "①"
+        },
+        {
+          "number": 2,
+          "text": "②"
+        },
+        {
+          "number": 3,
+          "text": "③"
+        },
+        {
+          "number": 4,
+          "text": "④"
+        },
+        {
+          "number": 5,
+          "text": "⑤"
+        }
+      ],
+      "figures": [
+        {
+          "src": "/exam-library/pe-first-electrical-2025/a097b022be10965d9978.png",
+          "alt": "2025年度 電気電子部門 Ⅲ－20の公式原問。問題文・全選択肢・図表を確認してください。",
+          "width": 951,
+          "height": 1432
+        }
+      ]
+    },
+    "choiceExplanation": {
+      "sourceHash": "5472939f3870acb1086bb31e7ec05ba327068e099af75270a0192497b8a968d1",
+      "correctChoice": 1,
+      "summary": "理想モデルはK→∞、Ri→∞、Ro→0で、出力関係はvo=K(vi+−vi−)。有限の線形出力を保つ極限では入力差vo/K→0となる。実回路で仮想短絡を適用するには、安定した負帰還と非飽和の動作が必要。",
+      "choices": [
+        {
+          "number": 1,
+          "verdict": "correct",
+          "reason": "理想利得・入力抵抗・出力抵抗と出力式が一致。入力差0は有限線形出力を保つ極限として解釈する。"
+        },
+        {
+          "number": 2,
+          "verdict": "incorrect",
+          "reason": "Ri=0とRo=∞が逆。入力から電流を取らず低インピーダンスで出力するためRi=∞、Ro=0。"
+        },
+        {
+          "number": 3,
+          "verdict": "incorrect",
+          "reason": "K=0では増幅しない。入力差と出力式にも誤りがあり、出力はK倍の差電圧。"
+        },
+        {
+          "number": 4,
+          "verdict": "incorrect",
+          "reason": "K、Ri、Roがすべて理想条件と逆で、入力差も∞ではない。"
+        },
+        {
+          "number": 5,
+          "verdict": "incorrect",
+          "reason": "最初の4欄は合うが出力の係数はRo/Riではなく開ループ利得K。"
+        }
+      ],
+      "sources": [
+        {
+          "title": "日本技術士会 公式問題",
+          "url": "https://www.engineer.or.jp/c_topics/011/attached/attach_11457_6.pdf"
+        },
+        {
+          "title": "日本技術士会 公式正答",
+          "url": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_4.pdf#page=6"
+        }
+      ]
+    }
+  },
+  {
+    "id": "gijutsushi1-electrical-2025-senmon-q21",
+    "number": 21,
+    "text": "2025年度 電気電子部門 専門科目 Ⅲ－21。下の公式原問画像の当該番号に解答してください。同じページにある別の設問は対象外です。",
+    "images": [
+      "/exam-library/pe-first-electrical-2025/9b95589ad2513cb1c13d.png"
+    ],
+    "sourcePages": [
+      16
+    ],
+    "sourceQuestionNumber": 21,
+    "correctChoice": 3,
+    "choiceCount": 5,
+    "answerAuthority": "official",
+    "originalPdf": "https://www.engineer.or.jp/c_topics/011/attached/attach_11457_6.pdf",
+    "answerPdf": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_4.pdf#page=6",
+    "explanation": "反転端子は仮想接地で入力電流0。R1を流れるvi/R1がそのままR2へ流れるのでvi/R1=(0−vo)/R2。従ってvo=−(R2/R1)vi。",
+    "presentation": {
+      "sourceHash": "d0ae9b185a2d63bb59d0b1fca281563565f7b5eb9a0fe5bf2017850098540728",
+      "prompt": "2025年度 電気電子部門 専門科目 Ⅲ－21。下の公式原問画像の当該番号に解答してください。同じページにある別の設問は対象外です。",
+      "choices": [
+        {
+          "number": 1,
+          "text": "①"
+        },
+        {
+          "number": 2,
+          "text": "②"
+        },
+        {
+          "number": 3,
+          "text": "③"
+        },
+        {
+          "number": 4,
+          "text": "④"
+        },
+        {
+          "number": 5,
+          "text": "⑤"
+        }
+      ],
+      "figures": [
+        {
+          "src": "/exam-library/pe-first-electrical-2025/9b95589ad2513cb1c13d.png",
+          "alt": "2025年度 電気電子部門 Ⅲ－21の公式原問。問題文・全選択肢・図表を確認してください。",
+          "width": 951,
+          "height": 619
+        }
+      ]
+    },
+    "choiceExplanation": {
+      "sourceHash": "d0ae9b185a2d63bb59d0b1fca281563565f7b5eb9a0fe5bf2017850098540728",
+      "correctChoice": 3,
+      "summary": "反転端子は仮想接地で入力電流0。R1を流れるvi/R1がそのままR2へ流れるのでvi/R1=(0−vo)/R2。従ってvo=−(R2/R1)vi。",
+      "choices": [
+        {
+          "number": 1,
+          "verdict": "incorrect",
+          "reason": "抵抗比が逆。帰還抵抗R2を入力抵抗R1で割る。"
+        },
+        {
+          "number": 2,
+          "verdict": "incorrect",
+          "reason": "R1+R2という和は反転増幅器の利得には現れず、分母もR1が正しい。"
+        },
+        {
+          "number": 3,
+          "verdict": "correct",
+          "reason": "節点の電流連続から得る反転利得−R2/R1に一致。"
+        },
+        {
+          "number": 4,
+          "verdict": "incorrect",
+          "reason": "非反転増幅器の1+R2/R1を符号だけ反転した形。反転回路は−R2/R1。"
+        },
+        {
+          "number": 5,
+          "verdict": "incorrect",
+          "reason": "単なる分圧比ではない。負帰還による仮想接地を用いてR1とR2の電流を等置する。"
+        }
+      ],
+      "sources": [
+        {
+          "title": "日本技術士会 公式問題",
+          "url": "https://www.engineer.or.jp/c_topics/011/attached/attach_11457_6.pdf"
+        },
+        {
+          "title": "日本技術士会 公式正答",
+          "url": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_4.pdf#page=6"
+        }
+      ]
+    }
+  },
+  {
+    "id": "gijutsushi1-electrical-2025-senmon-q22",
+    "number": 22,
+    "text": "2025年度 電気電子部門 専門科目 Ⅲ－22。下の公式原問画像の当該番号に解答してください。同じページにある別の設問は対象外です。",
+    "images": [
+      "/exam-library/pe-first-electrical-2025/a46ef3a6b39d41db0097.png"
+    ],
+    "sourcePages": [
+      16
+    ],
+    "sourceQuestionNumber": 22,
+    "correctChoice": 5,
+    "choiceCount": 5,
+    "answerAuthority": "official",
+    "originalPdf": "https://www.engineer.or.jp/c_topics/011/attached/attach_11457_6.pdf",
+    "answerPdf": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_4.pdf#page=6",
+    "explanation": "プルダウンが導通するのはAB+¬A¬B=1、つまりAとBが同じ値のとき。出力はその否定なのでf=A¬B+¬ABで排他的論理和。00、01、10、11に対し出力0、1、1、0。",
+    "presentation": {
+      "sourceHash": "d1197f07d6f1ef514c5de6cb8c12ac446462584c38ca1bc0f4653cabdeb8f82b",
+      "prompt": "2025年度 電気電子部門 専門科目 Ⅲ－22。下の公式原問画像の当該番号に解答してください。同じページにある別の設問は対象外です。",
+      "choices": [
+        {
+          "number": 1,
+          "text": "①"
+        },
+        {
+          "number": 2,
+          "text": "②"
+        },
+        {
+          "number": 3,
+          "text": "③"
+        },
+        {
+          "number": 4,
+          "text": "④"
+        },
+        {
+          "number": 5,
+          "text": "⑤"
+        }
+      ],
+      "figures": [
+        {
+          "src": "/exam-library/pe-first-electrical-2025/a46ef3a6b39d41db0097.png",
+          "alt": "2025年度 電気電子部門 Ⅲ－22の公式原問。問題文・全選択肢・図表を確認してください。",
+          "width": 951,
+          "height": 688
+        }
+      ]
+    },
+    "choiceExplanation": {
+      "sourceHash": "d1197f07d6f1ef514c5de6cb8c12ac446462584c38ca1bc0f4653cabdeb8f82b",
+      "correctChoice": 5,
+      "summary": "プルダウンが導通するのはAB+¬A¬B=1、つまりAとBが同じ値のとき。出力はその否定なのでf=A¬B+¬ABで排他的論理和。00、01、10、11に対し出力0、1、1、0。",
+      "choices": [
+        {
+          "number": 1,
+          "verdict": "incorrect",
+          "reason": "ANDは11で1になるが、この回路は11で接地へ導通して0となる。"
+        },
+        {
+          "number": 2,
+          "verdict": "incorrect",
+          "reason": "ORは11で1だが本回路は0。異なる入力のときだけ1。"
+        },
+        {
+          "number": 3,
+          "verdict": "incorrect",
+          "reason": "¬A+¬Bに吸収される式で00を1とするが、本回路は¬A・¬B枝が導通し0。"
+        },
+        {
+          "number": 4,
+          "verdict": "incorrect",
+          "reason": "これはプルダウンの導通条件XNOR。出力はプルアップ節点なのでその否定XOR。"
+        },
+        {
+          "number": 5,
+          "verdict": "correct",
+          "reason": "入力が異なる01、10で両枝が遮断され1となり、XORと一致。"
+        }
+      ],
+      "sources": [
+        {
+          "title": "日本技術士会 公式問題",
+          "url": "https://www.engineer.or.jp/c_topics/011/attached/attach_11457_6.pdf"
+        },
+        {
+          "title": "日本技術士会 公式正答",
+          "url": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_4.pdf#page=6"
+        }
+      ]
+    }
+  },
+  {
+    "id": "gijutsushi1-electrical-2025-senmon-q23",
+    "number": 23,
+    "text": "2025年度 電気電子部門 専門科目 Ⅲ－23。下の公式原問画像の当該番号に解答してください。同じページにある別の設問は対象外です。",
+    "images": [
+      "/exam-library/pe-first-electrical-2025/290d104d26c3ce3bfcba.png"
+    ],
+    "sourcePages": [
+      17
+    ],
+    "sourceQuestionNumber": 23,
+    "correctChoice": 1,
+    "choiceCount": 5,
+    "answerAuthority": "official",
+    "originalPdf": "https://www.engineer.or.jp/c_topics/011/attached/attach_11457_6.pdf",
+    "answerPdf": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_4.pdf#page=6",
+    "explanation": "F=(A+B)C+X。X=¬A+¬Cなら、A=0またはC=0でX=1、A=C=1では上段が1となり、Bによらず常に1。回路のブロックに実際に入るのはA、Cである。",
+    "presentation": {
+      "sourceHash": "8b3324a263ae62d09d858303286af4c9615dcee52e1e247b776fcddbc951631e",
+      "prompt": "2025年度 電気電子部門 専門科目 Ⅲ－23。下の公式原問画像の当該番号に解答してください。同じページにある別の設問は対象外です。",
+      "choices": [
+        {
+          "number": 1,
+          "text": "①"
+        },
+        {
+          "number": 2,
+          "text": "②"
+        },
+        {
+          "number": 3,
+          "text": "③"
+        },
+        {
+          "number": 4,
+          "text": "④"
+        },
+        {
+          "number": 5,
+          "text": "⑤"
+        }
+      ],
+      "figures": [
+        {
+          "src": "/exam-library/pe-first-electrical-2025/290d104d26c3ce3bfcba.png",
+          "alt": "2025年度 電気電子部門 Ⅲ－23の公式原問。問題文・全選択肢・図表を確認してください。",
+          "width": 951,
+          "height": 782
+        }
+      ]
+    },
+    "choiceExplanation": {
+      "sourceHash": "8b3324a263ae62d09d858303286af4c9615dcee52e1e247b776fcddbc951631e",
+      "correctChoice": 1,
+      "summary": "F=(A+B)C+X。X=¬A+¬Cなら、A=0またはC=0でX=1、A=C=1では上段が1となり、Bによらず常に1。回路のブロックに実際に入るのはA、Cである。",
+      "choices": [
+        {
+          "number": 1,
+          "verdict": "correct",
+          "reason": "AまたはCが0なら下段1、両方1なら上段1で全8行を満たす。"
+        },
+        {
+          "number": 2,
+          "verdict": "incorrect",
+          "reason": "000で上段0・下段0となりF=0。加えてブロックにはB入力がない。"
+        },
+        {
+          "number": 3,
+          "verdict": "incorrect",
+          "reason": "A=0,C=1,B=0では両段0。否定のANDでなく否定のORが必要。"
+        },
+        {
+          "number": 4,
+          "verdict": "incorrect",
+          "reason": "A=1,B=0,C=0で両段0。さらにBは当該ブロックの入力ではない。"
+        },
+        {
+          "number": 5,
+          "verdict": "incorrect",
+          "reason": "000でF=0となり、全行1の真理値表を満たさない。"
+        }
+      ],
+      "sources": [
+        {
+          "title": "日本技術士会 公式問題",
+          "url": "https://www.engineer.or.jp/c_topics/011/attached/attach_11457_6.pdf"
+        },
+        {
+          "title": "日本技術士会 公式正答",
+          "url": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_4.pdf#page=6"
+        }
+      ]
+    }
+  },
+  {
+    "id": "gijutsushi1-electrical-2025-senmon-q24",
+    "number": 24,
+    "text": "2025年度 電気電子部門 専門科目 Ⅲ－24。下の公式原問画像の当該番号に解答してください。同じページにある別の設問は対象外です。",
+    "images": [
+      "/exam-library/pe-first-electrical-2025/e27a0e22779aff8950a6.png"
+    ],
+    "sourcePages": [
+      18
+    ],
+    "sourceQuestionNumber": 24,
+    "correctChoice": 2,
+    "choiceCount": 5,
+    "answerAuthority": "official",
+    "originalPdf": "https://www.engineer.or.jp/c_topics/011/attached/attach_11457_6.pdf",
+    "answerPdf": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_4.pdf#page=6",
+    "explanation": "H=−Σp log2 p=0.5+2×0.2 log2 5+0.1 log2 10≈1.760964 bit/記号。情報源符号化の下限より平均符号長L≥H。従ってHより小さくはできない。",
+    "presentation": {
+      "sourceHash": "ceab9f3822dcd6fa1a866d9376f969a046200641c8c2f31e6fee09aeb7a38fce",
+      "prompt": "2025年度 電気電子部門 専門科目 Ⅲ－24。下の公式原問画像の当該番号に解答してください。同じページにある別の設問は対象外です。",
+      "choices": [
+        {
+          "number": 1,
+          "text": "①"
+        },
+        {
+          "number": 2,
+          "text": "②"
+        },
+        {
+          "number": 3,
+          "text": "③"
+        },
+        {
+          "number": 4,
+          "text": "④"
+        },
+        {
+          "number": 5,
+          "text": "⑤"
+        }
+      ],
+      "figures": [
+        {
+          "src": "/exam-library/pe-first-electrical-2025/e27a0e22779aff8950a6.png",
+          "alt": "2025年度 電気電子部門 Ⅲ－24の公式原問。問題文・全選択肢・図表を確認してください。",
+          "width": 951,
+          "height": 926
+        }
+      ]
+    },
+    "choiceExplanation": {
+      "sourceHash": "ceab9f3822dcd6fa1a866d9376f969a046200641c8c2f31e6fee09aeb7a38fce",
+      "correctChoice": 2,
+      "summary": "H=−Σp log2 p=0.5+2×0.2 log2 5+0.1 log2 10≈1.760964 bit/記号。情報源符号化の下限より平均符号長L≥H。従ってHより小さくはできない。",
+      "choices": [
+        {
+          "number": 1,
+          "verdict": "incorrect",
+          "reason": "下限の向きは正しいがH=8.97は誤り。4記号なら最大でもlog2 4=2bitである。"
+        },
+        {
+          "number": 2,
+          "verdict": "correct",
+          "reason": "H≈1.76bit、L≥Hの両方を満たす。"
+        },
+        {
+          "number": 3,
+          "verdict": "incorrect",
+          "reason": "下限の向きは正しいが4つのp log2 pを全て足すと約1.76bit。"
+        },
+        {
+          "number": 4,
+          "verdict": "incorrect",
+          "reason": "Hは正しいが不等号の意味が逆。長い冗長符号は作れるので上限ではない。"
+        },
+        {
+          "number": 5,
+          "verdict": "incorrect",
+          "reason": "Hの値と下限の向きが両方誤り。H≈1.76、平均長はそれ以上。"
+        }
+      ],
+      "sources": [
+        {
+          "title": "日本技術士会 公式問題",
+          "url": "https://www.engineer.or.jp/c_topics/011/attached/attach_11457_6.pdf"
+        },
+        {
+          "title": "日本技術士会 公式正答",
+          "url": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_4.pdf#page=6"
+        }
+      ]
+    }
+  },
+  {
+    "id": "gijutsushi1-electrical-2025-senmon-q25",
+    "number": 25,
+    "text": "2025年度 電気電子部門 専門科目 Ⅲ－25。下の公式原問画像の当該番号に解答してください。同じページにある別の設問は対象外です。",
+    "images": [
+      "/exam-library/pe-first-electrical-2025/0e642813609afdba4272.png"
+    ],
+    "sourcePages": [
+      18
+    ],
+    "sourceQuestionNumber": 25,
+    "correctChoice": 3,
+    "choiceCount": 5,
+    "answerAuthority": "official",
+    "originalPdf": "https://www.engineer.or.jp/c_topics/011/attached/attach_11457_6.pdf",
+    "answerPdf": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_4.pdf#page=6",
+    "explanation": "ホスト部は32−27=5bitなので全体32個。ネットワークアドレス.0とブロードキャスト.31を除き、.1〜.30の30個が割当可能。",
+    "presentation": {
+      "sourceHash": "2c87bd0b88ee22d102b24acddf9d41e77c4f77ae7f464e13accb893a5a7ec5dd",
+      "prompt": "2025年度 電気電子部門 専門科目 Ⅲ－25。下の公式原問画像の当該番号に解答してください。同じページにある別の設問は対象外です。",
+      "choices": [
+        {
+          "number": 1,
+          "text": "①"
+        },
+        {
+          "number": 2,
+          "text": "②"
+        },
+        {
+          "number": 3,
+          "text": "③"
+        },
+        {
+          "number": 4,
+          "text": "④"
+        },
+        {
+          "number": 5,
+          "text": "⑤"
+        }
+      ],
+      "figures": [
+        {
+          "src": "/exam-library/pe-first-electrical-2025/0e642813609afdba4272.png",
+          "alt": "2025年度 電気電子部門 Ⅲ－25の公式原問。問題文・全選択肢・図表を確認してください。",
+          "width": 951,
+          "height": 307
+        }
+      ]
+    },
+    "choiceExplanation": {
+      "sourceHash": "2c87bd0b88ee22d102b24acddf9d41e77c4f77ae7f464e13accb893a5a7ec5dd",
+      "correctChoice": 3,
+      "summary": "ホスト部は32−27=5bitなので全体32個。ネットワークアドレス.0とブロードキャスト.31を除き、.1〜.30の30個が割当可能。",
+      "choices": [
+        {
+          "number": 1,
+          "verdict": "incorrect",
+          "reason": "32個から除外するのは通常2個であり、4個ではない。機器用予約を勝手に追加しない。"
+        },
+        {
+          "number": 2,
+          "verdict": "incorrect",
+          "reason": "ゲートウェイ用をさらに引く必要はない。ゲートウェイも割当可能ホストアドレスに含まれる。"
+        },
+        {
+          "number": 3,
+          "verdict": "correct",
+          "reason": "2⁵−2=30で、.1〜.30に対応する。"
+        },
+        {
+          "number": 4,
+          "verdict": "incorrect",
+          "reason": "ネットワークとブロードキャストの片方しか引いていない。両方除く。"
+        },
+        {
+          "number": 5,
+          "verdict": "incorrect",
+          "reason": "32は総アドレス数であり、特殊用途の両端2個を含む。"
+        }
+      ],
+      "sources": [
+        {
+          "title": "日本技術士会 公式問題",
+          "url": "https://www.engineer.or.jp/c_topics/011/attached/attach_11457_6.pdf"
+        },
+        {
+          "title": "日本技術士会 公式正答",
+          "url": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_4.pdf#page=6"
+        }
+      ]
+    }
+  },
+  {
+    "id": "gijutsushi1-electrical-2025-senmon-q26",
+    "number": 26,
+    "text": "2025年度 電気電子部門 専門科目 Ⅲ－26。下の公式原問画像の当該番号に解答してください。同じページにある別の設問は対象外です。",
+    "images": [
+      "/exam-library/pe-first-electrical-2025/78de4ba1b9577a2b75bb.png"
+    ],
+    "sourcePages": [
+      19
+    ],
+    "sourceQuestionNumber": 26,
+    "correctChoice": 5,
+    "choiceCount": 5,
+    "answerAuthority": "official",
+    "originalPdf": "https://www.engineer.or.jp/c_topics/011/attached/attach_11457_6.pdf",
+    "answerPdf": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_4.pdf#page=6",
+    "explanation": "π=πP、PA+PB+PC=1を解く。PB=0.2(PA+PC)+0.4PBよりPB=1/4。PC=0.3(PA+PB)+0.4PCよりPC=1/3。残りPA=5/12。",
+    "presentation": {
+      "sourceHash": "9ac623842fb9f97ce4cc627a7fd766b3bfa5c18c2787d2cd16f327cf2271ab0b",
+      "prompt": "2025年度 電気電子部門 専門科目 Ⅲ－26。下の公式原問画像の当該番号に解答してください。同じページにある別の設問は対象外です。",
+      "choices": [
+        {
+          "number": 1,
+          "text": "①"
+        },
+        {
+          "number": 2,
+          "text": "②"
+        },
+        {
+          "number": 3,
+          "text": "③"
+        },
+        {
+          "number": 4,
+          "text": "④"
+        },
+        {
+          "number": 5,
+          "text": "⑤"
+        }
+      ],
+      "figures": [
+        {
+          "src": "/exam-library/pe-first-electrical-2025/78de4ba1b9577a2b75bb.png",
+          "alt": "2025年度 電気電子部門 Ⅲ－26の公式原問。問題文・全選択肢・図表を確認してください。",
+          "width": 1038,
+          "height": 638
+        }
+      ]
+    },
+    "choiceExplanation": {
+      "sourceHash": "9ac623842fb9f97ce4cc627a7fd766b3bfa5c18c2787d2cd16f327cf2271ab0b",
+      "correctChoice": 5,
+      "summary": "π=πP、PA+PB+PC=1を解く。PB=0.2(PA+PC)+0.4PBよりPB=1/4。PC=0.3(PA+PB)+0.4PCよりPC=1/3。残りPA=5/12。",
+      "choices": [
+        {
+          "number": 1,
+          "verdict": "incorrect",
+          "reason": "Bへの流入は0.2×(11/16)+0.4×(5/16)=21/80でありPB=25/80と一致しない。"
+        },
+        {
+          "number": 2,
+          "verdict": "incorrect",
+          "reason": "Bへの流入は0.2×(3/5)+0.4×(2/5)=7/25で、PB=2/5と違う。"
+        },
+        {
+          "number": 3,
+          "verdict": "incorrect",
+          "reason": "Bへの流入は0.2×(16/27)+0.4×(11/27)=38/135、PB=55/135と違う。"
+        },
+        {
+          "number": 4,
+          "verdict": "incorrect",
+          "reason": "Bへの流入は0.2×(5/8)+0.4×(3/8)=11/40、PB=15/40と違う。"
+        },
+        {
+          "number": 5,
+          "verdict": "correct",
+          "reason": "B流入1/4、C流入1/3、残りA=5/12となり、正規化と全平衡式を満たす。"
+        }
+      ],
+      "sources": [
+        {
+          "title": "日本技術士会 公式問題",
+          "url": "https://www.engineer.or.jp/c_topics/011/attached/attach_11457_6.pdf"
+        },
+        {
+          "title": "日本技術士会 公式正答",
+          "url": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_4.pdf#page=6"
+        }
+      ]
+    }
+  },
+  {
+    "id": "gijutsushi1-electrical-2025-senmon-q27",
+    "number": 27,
+    "text": "2025年度 電気電子部門 専門科目 Ⅲ－27。下の公式原問画像の当該番号に解答してください。同じページにある別の設問は対象外です。",
+    "images": [
+      "/exam-library/pe-first-electrical-2025/f83b92a6880b14736024.png"
+    ],
+    "sourcePages": [
+      19
+    ],
+    "sourceQuestionNumber": 27,
+    "correctChoice": 4,
+    "choiceCount": 5,
+    "answerAuthority": "official",
+    "originalPdf": "https://www.engineer.or.jp/c_topics/011/attached/attach_11457_6.pdf",
+    "answerPdf": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_4.pdf#page=6",
+    "explanation": "非周期であることは帯域制限を意味しない。例えばe^(−|t|)の変換2/(1+ω²)は任意に大きい|ω|でも非零である。時間伸長g(t)=f(t/a)ではG(ω)=|a|F(aω)。",
+    "presentation": {
+      "sourceHash": "0a73bbc64be318fe484b4fb2cb53ace68a7e636a670ecc22a52639e0575b129e",
+      "prompt": "2025年度 電気電子部門 専門科目 Ⅲ－27。下の公式原問画像の当該番号に解答してください。同じページにある別の設問は対象外です。",
+      "choices": [
+        {
+          "number": 1,
+          "text": "①"
+        },
+        {
+          "number": 2,
+          "text": "②"
+        },
+        {
+          "number": 3,
+          "text": "③"
+        },
+        {
+          "number": 4,
+          "text": "④"
+        },
+        {
+          "number": 5,
+          "text": "⑤"
+        }
+      ],
+      "figures": [
+        {
+          "src": "/exam-library/pe-first-electrical-2025/f83b92a6880b14736024.png",
+          "alt": "2025年度 電気電子部門 Ⅲ－27の公式原問。問題文・全選択肢・図表を確認してください。",
+          "width": 951,
+          "height": 607
+        }
+      ]
+    },
+    "choiceExplanation": {
+      "sourceHash": "0a73bbc64be318fe484b4fb2cb53ace68a7e636a670ecc22a52639e0575b129e",
+      "correctChoice": 4,
+      "summary": "非周期であることは帯域制限を意味しない。例えばe^(−|t|)の変換2/(1+ω²)は任意に大きい|ω|でも非零である。時間伸長g(t)=f(t/a)ではG(ω)=|a|F(aω)。",
+      "choices": [
+        {
+          "number": 1,
+          "verdict": "incorrect",
+          "reason": "適切。連続周波数の重ね合わせ、厳密には積分として表す。離散的な有限個の和に限定しない。"
+        },
+        {
+          "number": 2,
+          "verdict": "incorrect",
+          "reason": "適切。周期を大きくすると周波数間隔が縮み、級数和から変換積分へ移る極限を考えられる。"
+        },
+        {
+          "number": 3,
+          "verdict": "incorrect",
+          "reason": "適切。時間積は周波数畳込みに対応する。角周波数の定義では1/(2π)係数が付く。"
+        },
+        {
+          "number": 4,
+          "verdict": "correct",
+          "reason": "不適切。非周期信号でもスペクトルが無限帯域に広がる例がある。「必ず有限」が誤り。"
+        },
+        {
+          "number": 5,
+          "verdict": "incorrect",
+          "reason": "適切。f(t/a)の変換は|a|F(aω)。a<0では時間・周波数の反転も伴う。"
+        }
+      ],
+      "sources": [
+        {
+          "title": "日本技術士会 公式問題",
+          "url": "https://www.engineer.or.jp/c_topics/011/attached/attach_11457_6.pdf"
+        },
+        {
+          "title": "日本技術士会 公式正答",
+          "url": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_4.pdf#page=6"
+        }
+      ]
+    }
+  },
+  {
+    "id": "gijutsushi1-electrical-2025-senmon-q28",
+    "number": 28,
+    "text": "2025年度 電気電子部門 専門科目 Ⅲ－28。下の公式原問画像の当該番号に解答してください。同じページにある別の設問は対象外です。",
+    "images": [
+      "/exam-library/pe-first-electrical-2025/a9b24c1583ef5168c303.png"
+    ],
+    "sourcePages": [
+      20
+    ],
+    "sourceQuestionNumber": 28,
+    "correctChoice": 5,
+    "choiceCount": 5,
+    "answerAuthority": "official",
+    "originalPdf": "https://www.engineer.or.jp/c_topics/011/attached/attach_11457_6.pdf",
+    "answerPdf": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_4.pdf#page=6",
+    "explanation": "負側と正側で分割するとF1=1/(1−jω)+1/(1+jω)=2/(1+ω²)。線形性からF[f1+2f2]=F1+2F2。ω=0の値が面積2となることでも検算できる。",
+    "presentation": {
+      "sourceHash": "a652b6f5255898e61d600bd1547a0a2c5e0d71b379b048c1fab7e1ed6bcd7769",
+      "prompt": "2025年度 電気電子部門 専門科目 Ⅲ－28。下の公式原問画像の当該番号に解答してください。同じページにある別の設問は対象外です。",
+      "choices": [
+        {
+          "number": 1,
+          "text": "①"
+        },
+        {
+          "number": 2,
+          "text": "②"
+        },
+        {
+          "number": 3,
+          "text": "③"
+        },
+        {
+          "number": 4,
+          "text": "④"
+        },
+        {
+          "number": 5,
+          "text": "⑤"
+        }
+      ],
+      "figures": [
+        {
+          "src": "/exam-library/pe-first-electrical-2025/a9b24c1583ef5168c303.png",
+          "alt": "2025年度 電気電子部門 Ⅲ－28の公式原問。問題文・全選択肢・図表を確認してください。",
+          "width": 951,
+          "height": 969
+        }
+      ]
+    },
+    "choiceExplanation": {
+      "sourceHash": "a652b6f5255898e61d600bd1547a0a2c5e0d71b379b048c1fab7e1ed6bcd7769",
+      "correctChoice": 5,
+      "summary": "負側と正側で分割するとF1=1/(1−jω)+1/(1+jω)=2/(1+ω²)。線形性からF[f1+2f2]=F1+2F2。ω=0の値が面積2となることでも検算できる。",
+      "choices": [
+        {
+          "number": 1,
+          "verdict": "incorrect",
+          "reason": "F1=1/ωはω=0で発散し、有限面積2と合わない。正しくは2/(1+ω²)。"
+        },
+        {
+          "number": 2,
+          "verdict": "incorrect",
+          "reason": "F1は正しいが、f2の係数2が変換後に失われている。"
+        },
+        {
+          "number": 3,
+          "verdict": "incorrect",
+          "reason": "F1は実偶関数になるべきで、4/(ω+1)は合わない。F2の係数2も欠く。"
+        },
+        {
+          "number": 4,
+          "verdict": "incorrect",
+          "reason": "F1がω=0で発散する上に、F2の係数も2でなければならない。"
+        },
+        {
+          "number": 5,
+          "verdict": "correct",
+          "reason": "両側積分の結果と線形性の係数が共に正しい。"
+        }
+      ],
+      "sources": [
+        {
+          "title": "日本技術士会 公式問題",
+          "url": "https://www.engineer.or.jp/c_topics/011/attached/attach_11457_6.pdf"
+        },
+        {
+          "title": "日本技術士会 公式正答",
+          "url": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_4.pdf#page=6"
+        }
+      ]
+    }
+  },
+  {
+    "id": "gijutsushi1-electrical-2025-senmon-q29",
+    "number": 29,
+    "text": "2025年度 電気電子部門 専門科目 Ⅲ－29。下の公式原問画像の当該番号に解答してください。同じページにある別の設問は対象外です。",
+    "images": [
+      "/exam-library/pe-first-electrical-2025/3157f8bd47bf01973615.png"
+    ],
+    "sourcePages": [
+      21
+    ],
+    "sourceQuestionNumber": 29,
+    "correctChoice": 2,
+    "choiceCount": 5,
+    "answerAuthority": "official",
+    "originalPdf": "https://www.engineer.or.jp/c_topics/011/attached/attach_11457_6.pdf",
+    "answerPdf": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_4.pdf#page=6",
+    "explanation": "IとQの変化時刻を半シンボルずらすため同時反転を避け、180°位相跳躍に伴う原点付近の通過と包絡線変動を抑えられる。その結果、送信電力増幅器の非線形性の影響を軽減する。",
+    "presentation": {
+      "sourceHash": "7dcf6eb0fc62f53370798600207cd29d05e12daa2f299493ebe5ba1ba81cb633",
+      "prompt": "2025年度 電気電子部門 専門科目 Ⅲ－29。下の公式原問画像の当該番号に解答してください。同じページにある別の設問は対象外です。",
+      "choices": [
+        {
+          "number": 1,
+          "text": "①"
+        },
+        {
+          "number": 2,
+          "text": "②"
+        },
+        {
+          "number": 3,
+          "text": "③"
+        },
+        {
+          "number": 4,
+          "text": "④"
+        },
+        {
+          "number": 5,
+          "text": "⑤"
+        }
+      ],
+      "figures": [
+        {
+          "src": "/exam-library/pe-first-electrical-2025/3157f8bd47bf01973615.png",
+          "alt": "2025年度 電気電子部門 Ⅲ－29の公式原問。問題文・全選択肢・図表を確認してください。",
+          "width": 951,
+          "height": 657
+        }
+      ]
+    },
+    "choiceExplanation": {
+      "sourceHash": "7dcf6eb0fc62f53370798600207cd29d05e12daa2f299493ebe5ba1ba81cb633",
+      "correctChoice": 2,
+      "summary": "IとQの変化時刻を半シンボルずらすため同時反転を避け、180°位相跳躍に伴う原点付近の通過と包絡線変動を抑えられる。その結果、送信電力増幅器の非線形性の影響を軽減する。",
+      "choices": [
+        {
+          "number": 1,
+          "verdict": "incorrect",
+          "reason": "ずらす量と振幅は正しいが、主に緩和するのは増幅器の非線形歪み。"
+        },
+        {
+          "number": 2,
+          "verdict": "correct",
+          "reason": "半シンボルずれ、振幅変動抑制、非線形歪み軽減が一致。"
+        },
+        {
+          "number": 3,
+          "verdict": "incorrect",
+          "reason": "原点通過を避ける効果の空欄は振幅変動であり、歪みは非線形。"
+        },
+        {
+          "number": 4,
+          "verdict": "incorrect",
+          "reason": "1シンボル全長のずれではI,Qの遷移時刻を交互にする半シンボルずれにならない。"
+        },
+        {
+          "number": 5,
+          "verdict": "incorrect",
+          "reason": "ずらす量は半シンボルで、ここで抑える変動は振幅。"
+        }
+      ],
+      "sources": [
+        {
+          "title": "日本技術士会 公式問題",
+          "url": "https://www.engineer.or.jp/c_topics/011/attached/attach_11457_6.pdf"
+        },
+        {
+          "title": "日本技術士会 公式正答",
+          "url": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_4.pdf#page=6"
+        }
+      ]
+    }
+  },
+  {
+    "id": "gijutsushi1-electrical-2025-senmon-q30",
+    "number": 30,
+    "text": "2025年度 電気電子部門 専門科目 Ⅲ－30。下の公式原問画像の当該番号に解答してください。同じページにある別の設問は対象外です。",
+    "images": [
+      "/exam-library/pe-first-electrical-2025/d6c98f74d88f3fc5b2be.png"
+    ],
+    "sourcePages": [
+      21
+    ],
+    "sourceQuestionNumber": 30,
+    "correctChoice": 3,
+    "choiceCount": 5,
+    "answerAuthority": "official",
+    "originalPdf": "https://www.engineer.or.jp/c_topics/011/attached/attach_11457_6.pdf",
+    "answerPdf": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_4.pdf#page=6",
+    "explanation": "OFDMは互いに直交する多数のサブキャリアで並列伝送する方式。適切なガードインターバル、一般にはサイクリックプレフィックスを付け、遅延広がりがその範囲内ならシンボル間干渉を抑えられる。",
+    "presentation": {
+      "sourceHash": "0af4c8c110f63a8a2d88c8831ab3d182adcea053034f1b22c5495155813d4089",
+      "prompt": "2025年度 電気電子部門 専門科目 Ⅲ－30。下の公式原問画像の当該番号に解答してください。同じページにある別の設問は対象外です。",
+      "choices": [
+        {
+          "number": 1,
+          "text": "①"
+        },
+        {
+          "number": 2,
+          "text": "②"
+        },
+        {
+          "number": 3,
+          "text": "③"
+        },
+        {
+          "number": 4,
+          "text": "④"
+        },
+        {
+          "number": 5,
+          "text": "⑤"
+        }
+      ],
+      "figures": [
+        {
+          "src": "/exam-library/pe-first-electrical-2025/d6c98f74d88f3fc5b2be.png",
+          "alt": "2025年度 電気電子部門 Ⅲ－30の公式原問。問題文・全選択肢・図表を確認してください。",
+          "width": 951,
+          "height": 444
+        }
+      ]
+    },
+    "choiceExplanation": {
+      "sourceHash": "0af4c8c110f63a8a2d88c8831ab3d182adcea053034f1b22c5495155813d4089",
+      "correctChoice": 3,
+      "summary": "OFDMは互いに直交する多数のサブキャリアで並列伝送する方式。適切なガードインターバル、一般にはサイクリックプレフィックスを付け、遅延広がりがその範囲内ならシンボル間干渉を抑えられる。",
+      "choices": [
+        {
+          "number": 1,
+          "verdict": "incorrect",
+          "reason": "マルチキャリアは正しいが「強くできない」が誤り。長いシンボルとガード区間が遅延波対策になる。"
+        },
+        {
+          "number": 2,
+          "verdict": "incorrect",
+          "reason": "OFDMは単一キャリアではなく複数の直交サブキャリアを使う。"
+        },
+        {
+          "number": 3,
+          "verdict": "correct",
+          "reason": "ガード区間が遅延波を吸収しマルチパスの影響を軽減できる点が正しい。"
+        },
+        {
+          "number": 4,
+          "verdict": "incorrect",
+          "reason": "各サブキャリアにQAM等は使えるが、OFDM自体の分類は直交周波数分割多重。多値変調そのものではない。"
+        },
+        {
+          "number": 5,
+          "verdict": "incorrect",
+          "reason": "これは拡散通信の説明。OFDMの本質は直交サブキャリアによる多重で、極端に低い電力密度を必ず意味しない。"
+        }
+      ],
+      "sources": [
+        {
+          "title": "日本技術士会 公式問題",
+          "url": "https://www.engineer.or.jp/c_topics/011/attached/attach_11457_6.pdf"
+        },
+        {
+          "title": "日本技術士会 公式正答",
+          "url": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_4.pdf#page=6"
+        }
+      ]
+    }
+  },
+  {
+    "id": "gijutsushi1-electrical-2025-senmon-q31",
+    "number": 31,
+    "text": "2025年度 電気電子部門 専門科目 Ⅲ－31。下の公式原問画像の当該番号に解答してください。同じページにある別の設問は対象外です。",
+    "images": [
+      "/exam-library/pe-first-electrical-2025/820a19f16d9c9e9860fc.png"
+    ],
+    "sourcePages": [
+      22
+    ],
+    "sourceQuestionNumber": 31,
+    "correctChoice": 1,
+    "choiceCount": 5,
+    "answerAuthority": "official",
+    "originalPdf": "https://www.engineer.or.jp/c_topics/011/attached/attach_11457_6.pdf",
+    "answerPdf": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_4.pdf#page=6",
+    "explanation": "直接届く成分は直接波。反射等の経路長の差は到達遅延・位相差を生み、複数経路の波の干渉によって受信強度等が変動するフェージングが起きる。ダイバーシチはこれを軽減する技術。",
+    "presentation": {
+      "sourceHash": "19c26e47b99085681e756ee1c7ed13c55d7ab9d19b52b79f262e0fc5978ea84b",
+      "prompt": "2025年度 電気電子部門 専門科目 Ⅲ－31。下の公式原問画像の当該番号に解答してください。同じページにある別の設問は対象外です。",
+      "choices": [
+        {
+          "number": 1,
+          "text": "①"
+        },
+        {
+          "number": 2,
+          "text": "②"
+        },
+        {
+          "number": 3,
+          "text": "③"
+        },
+        {
+          "number": 4,
+          "text": "④"
+        },
+        {
+          "number": 5,
+          "text": "⑤"
+        }
+      ],
+      "figures": [
+        {
+          "src": "/exam-library/pe-first-electrical-2025/820a19f16d9c9e9860fc.png",
+          "alt": "2025年度 電気電子部門 Ⅲ－31の公式原問。問題文・全選択肢・図表を確認してください。",
+          "width": 951,
+          "height": 732
+        }
+      ]
+    },
+    "choiceExplanation": {
+      "sourceHash": "19c26e47b99085681e756ee1c7ed13c55d7ab9d19b52b79f262e0fc5978ea84b",
+      "correctChoice": 1,
+      "summary": "直接届く成分は直接波。反射等の経路長の差は到達遅延・位相差を生み、複数経路の波の干渉によって受信強度等が変動するフェージングが起きる。ダイバーシチはこれを軽減する技術。",
+      "choices": [
+        {
+          "number": 1,
+          "verdict": "correct",
+          "reason": "直接波、経路長差、マルチパス、干渉によるフェージングという因果が一致。"
+        },
+        {
+          "number": 2,
+          "verdict": "incorrect",
+          "reason": "直接到達波を反射波と呼ぶ点と、伝搬現象を対策技術ダイバーシチと呼ぶ点が誤り。"
+        },
+        {
+          "number": 3,
+          "verdict": "incorrect",
+          "reason": "遅延差の原因は伝送方式の違いではなく伝搬経路長の違い。"
+        },
+        {
+          "number": 4,
+          "verdict": "incorrect",
+          "reason": "直接波とダイバーシチの誤りに加え、シャドウイングは主に遮蔽物による大規模な減衰。"
+        },
+        {
+          "number": 5,
+          "verdict": "incorrect",
+          "reason": "経路長を伝送方式としており、マルチパス干渉による変動もシャドウイングではなくフェージング。"
+        }
+      ],
+      "sources": [
+        {
+          "title": "日本技術士会 公式問題",
+          "url": "https://www.engineer.or.jp/c_topics/011/attached/attach_11457_6.pdf"
+        },
+        {
+          "title": "日本技術士会 公式正答",
+          "url": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_4.pdf#page=6"
+        }
+      ]
+    }
+  },
+  {
+    "id": "gijutsushi1-electrical-2025-senmon-q32",
+    "number": 32,
+    "text": "2025年度 電気電子部門 専門科目 Ⅲ－32。下の公式原問画像の当該番号に解答してください。同じページにある別の設問は対象外です。",
+    "images": [
+      "/exam-library/pe-first-electrical-2025/7ef10e6a8e61718e3ed4.png"
+    ],
+    "sourcePages": [
+      22
+    ],
+    "sourceQuestionNumber": 32,
+    "correctChoice": 1,
+    "choiceCount": 5,
+    "answerAuthority": "official",
+    "originalPdf": "https://www.engineer.or.jp/c_topics/011/attached/attach_11457_6.pdf",
+    "answerPdf": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_4.pdf#page=6",
+    "explanation": "n型の多数キャリアは電子、少数キャリアは正孔。p型では正孔が多数で電子が少数。通常の熱平衡モデルでnp=ni²となり、同じ材料・温度では濃度の積が一定である。",
+    "presentation": {
+      "sourceHash": "3194e290d3f156cd5765b4b02bb7b29d054afe58f2c1abbdf52cddbd8012c83a",
+      "prompt": "2025年度 電気電子部門 専門科目 Ⅲ－32。下の公式原問画像の当該番号に解答してください。同じページにある別の設問は対象外です。",
+      "choices": [
+        {
+          "number": 1,
+          "text": "①"
+        },
+        {
+          "number": 2,
+          "text": "②"
+        },
+        {
+          "number": 3,
+          "text": "③"
+        },
+        {
+          "number": 4,
+          "text": "④"
+        },
+        {
+          "number": 5,
+          "text": "⑤"
+        }
+      ],
+      "figures": [
+        {
+          "src": "/exam-library/pe-first-electrical-2025/7ef10e6a8e61718e3ed4.png",
+          "alt": "2025年度 電気電子部門 Ⅲ－32の公式原問。問題文・全選択肢・図表を確認してください。",
+          "width": 951,
+          "height": 675
+        }
+      ]
+    },
+    "choiceExplanation": {
+      "sourceHash": "3194e290d3f156cd5765b4b02bb7b29d054afe58f2c1abbdf52cddbd8012c83a",
+      "correctChoice": 1,
+      "summary": "n型の多数キャリアは電子、少数キャリアは正孔。p型では正孔が多数で電子が少数。通常の熱平衡モデルでnp=ni²となり、同じ材料・温度では濃度の積が一定である。",
+      "choices": [
+        {
+          "number": 1,
+          "verdict": "correct",
+          "reason": "n型・p型のキャリアの大小と、np=ni²の積が一致する。"
+        },
+        {
+          "number": 2,
+          "verdict": "incorrect",
+          "reason": "n型の多数キャリアを正孔とした点、質量作用則を和とした点が誤り。"
+        },
+        {
+          "number": 3,
+          "verdict": "incorrect",
+          "reason": "電子と正孔は合うが多数・少数の呼称が逆。"
+        },
+        {
+          "number": 4,
+          "verdict": "incorrect",
+          "reason": "n型で多いものは電子であり、多数・少数の位置と和も合わない。"
+        },
+        {
+          "number": 5,
+          "verdict": "incorrect",
+          "reason": "キャリアの区分は正しいが保存するのは和ではなく積np。"
+        }
+      ],
+      "sources": [
+        {
+          "title": "日本技術士会 公式問題",
+          "url": "https://www.engineer.or.jp/c_topics/011/attached/attach_11457_6.pdf"
+        },
+        {
+          "title": "日本技術士会 公式正答",
+          "url": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_4.pdf#page=6"
+        }
+      ]
+    }
+  },
+  {
+    "id": "gijutsushi1-electrical-2025-senmon-q33",
+    "number": 33,
+    "text": "2025年度 電気電子部門 専門科目 Ⅲ－33。下の公式原問画像の当該番号に解答してください。同じページにある別の設問は対象外です。",
+    "images": [
+      "/exam-library/pe-first-electrical-2025/8b4e08219ff78ac08656.png"
+    ],
+    "sourcePages": [
+      23
+    ],
+    "sourceQuestionNumber": 33,
+    "correctChoice": 5,
+    "choiceCount": 5,
+    "answerAuthority": "official",
+    "originalPdf": "https://www.engineer.or.jp/c_topics/011/attached/attach_11457_6.pdf",
+    "answerPdf": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_4.pdf#page=6",
+    "explanation": "pMOSはn型基板中にp+のソース・ドレインを設け、ソースよりゲートを低電位にして正孔の反転層を作る。VDS=VD−VS<0では正孔は高電位のソースから低電位のドレインへ移動する。",
+    "presentation": {
+      "sourceHash": "a4adef9f7d254f5bfc82c132adf0fb8aa6bc9a25eadb84421225ba59f4a6ec63",
+      "prompt": "2025年度 電気電子部門 専門科目 Ⅲ－33。下の公式原問画像の当該番号に解答してください。同じページにある別の設問は対象外です。",
+      "choices": [
+        {
+          "number": 1,
+          "text": "①"
+        },
+        {
+          "number": 2,
+          "text": "②"
+        },
+        {
+          "number": 3,
+          "text": "③"
+        },
+        {
+          "number": 4,
+          "text": "④"
+        },
+        {
+          "number": 5,
+          "text": "⑤"
+        }
+      ],
+      "figures": [
+        {
+          "src": "/exam-library/pe-first-electrical-2025/8b4e08219ff78ac08656.png",
+          "alt": "2025年度 電気電子部門 Ⅲ－33の公式原問。問題文・全選択肢・図表を確認してください。",
+          "width": 951,
+          "height": 851
+        }
+      ]
+    },
+    "choiceExplanation": {
+      "sourceHash": "a4adef9f7d254f5bfc82c132adf0fb8aa6bc9a25eadb84421225ba59f4a6ec63",
+      "correctChoice": 5,
+      "summary": "pMOSはn型基板中にp+のソース・ドレインを設け、ソースよりゲートを低電位にして正孔の反転層を作る。VDS=VD−VS<0では正孔は高電位のソースから低電位のドレインへ移動する。",
+      "choices": [
+        {
+          "number": 1,
+          "verdict": "incorrect",
+          "reason": "n型ソース・ドレインとp型基板はnMOS側の構造。pMOSの担体は電子ではなく正孔。"
+        },
+        {
+          "number": 2,
+          "verdict": "incorrect",
+          "reason": "構造と担体がnMOSの説明で、pMOSの通常動作のVDSは負。"
+        },
+        {
+          "number": 3,
+          "verdict": "incorrect",
+          "reason": "構造と担体はよいがVDSの符号と正孔の移動方向が逆。"
+        },
+        {
+          "number": 4,
+          "verdict": "incorrect",
+          "reason": "構造はよいが担体は正孔であり、VDSは負。"
+        },
+        {
+          "number": 5,
+          "verdict": "correct",
+          "reason": "p+端子、n基板、正孔、負のVDS、ソースからドレインへの移動が一致。"
+        }
+      ],
+      "sources": [
+        {
+          "title": "日本技術士会 公式問題",
+          "url": "https://www.engineer.or.jp/c_topics/011/attached/attach_11457_6.pdf"
+        },
+        {
+          "title": "日本技術士会 公式正答",
+          "url": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_4.pdf#page=6"
+        }
+      ]
+    }
+  },
+  {
+    "id": "gijutsushi1-electrical-2025-senmon-q34",
+    "number": 34,
+    "text": "2025年度 電気電子部門 専門科目 Ⅲ－34。下の公式原問画像の当該番号に解答してください。同じページにある別の設問は対象外です。",
+    "images": [
+      "/exam-library/pe-first-electrical-2025/fecc610cec12769e0c45.png"
+    ],
+    "sourcePages": [
+      23
+    ],
+    "sourceQuestionNumber": 34,
+    "correctChoice": 3,
+    "choiceCount": 5,
+    "answerAuthority": "official",
+    "originalPdf": "https://www.engineer.or.jp/c_topics/011/attached/attach_11457_6.pdf",
+    "answerPdf": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_4.pdf#page=6",
+    "explanation": "避雷器の接地は原則としてA種接地工事であり、B種とした箇所が誤り。B種は高低圧混触時の低圧側電位上昇を抑える変圧器低圧側中性点等の接地に関わる。",
+    "presentation": {
+      "sourceHash": "504ae716d2a06580128dbb26922d44f59147ce75b663ea59fe0f8776a1c8fc1f",
+      "prompt": "2025年度 電気電子部門 専門科目 Ⅲ－34。下の公式原問画像の当該番号に解答してください。同じページにある別の設問は対象外です。",
+      "choices": [
+        {
+          "number": 1,
+          "text": "①"
+        },
+        {
+          "number": 2,
+          "text": "②"
+        },
+        {
+          "number": 3,
+          "text": "③"
+        },
+        {
+          "number": 4,
+          "text": "④"
+        },
+        {
+          "number": 5,
+          "text": "⑤"
+        }
+      ],
+      "figures": [
+        {
+          "src": "/exam-library/pe-first-electrical-2025/fecc610cec12769e0c45.png",
+          "alt": "2025年度 電気電子部門 Ⅲ－34の公式原問。問題文・全選択肢・図表を確認してください。",
+          "width": 951,
+          "height": 563
+        }
+      ]
+    },
+    "choiceExplanation": {
+      "sourceHash": "504ae716d2a06580128dbb26922d44f59147ce75b663ea59fe0f8776a1c8fc1f",
+      "correctChoice": 3,
+      "summary": "避雷器の接地は原則としてA種接地工事であり、B種とした箇所が誤り。B種は高低圧混触時の低圧側電位上昇を抑える変圧器低圧側中性点等の接地に関わる。",
+      "choices": [
+        {
+          "number": 1,
+          "verdict": "incorrect",
+          "reason": "適切。断路器は無負荷で隔離するための機器で、負荷遮断には負荷開閉器・遮断器を使う。"
+        },
+        {
+          "number": 2,
+          "verdict": "incorrect",
+          "reason": "適切。負荷開閉器は規定の負荷電流等を開閉する機器。短絡事故電流まで単独で遮断できるとは一般化しない。"
+        },
+        {
+          "number": 3,
+          "verdict": "correct",
+          "reason": "不適切な箇所はB種接地。避雷器はA種接地が原則。容量・設置条件の一般化とは分けて判定する。"
+        },
+        {
+          "number": 4,
+          "verdict": "incorrect",
+          "reason": "適切。充電部を金属箱内に収めるため接近防止とコンパクト化に利点がある。"
+        },
+        {
+          "number": 5,
+          "verdict": "incorrect",
+          "reason": "適切。PFが短絡電流の遮断、Sが通常の負荷開閉を分担する構成。"
+        }
+      ],
+      "sources": [
+        {
+          "title": "日本技術士会 公式問題",
+          "url": "https://www.engineer.or.jp/c_topics/011/attached/attach_11457_6.pdf"
+        },
+        {
+          "title": "日本技術士会 公式正答",
+          "url": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_4.pdf#page=6"
+        }
+      ]
+    }
+  },
+  {
+    "id": "gijutsushi1-electrical-2025-senmon-q35",
+    "number": 35,
+    "text": "2025年度 電気電子部門 専門科目 Ⅲ－35。下の公式原問画像の当該番号に解答してください。同じページにある別の設問は対象外です。",
+    "images": [
+      "/exam-library/pe-first-electrical-2025/a32e7ec8a75acb63e46c.png"
+    ],
+    "sourcePages": [
+      24
+    ],
+    "sourceQuestionNumber": 35,
+    "correctChoice": 1,
+    "choiceCount": 5,
+    "answerAuthority": "official",
+    "originalPdf": "https://www.engineer.or.jp/c_topics/011/attached/attach_11457_6.pdf",
+    "answerPdf": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_4.pdf#page=6",
+    "explanation": "系統中性点の接地方式は地絡検出や健全相対地電圧の上昇、過渡的異常電圧に関わる。接地方式により地絡電流の大きさは変わるため、単に一線地絡電流を小さくすることを全方式の共通目的とはしない。",
+    "presentation": {
+      "sourceHash": "27bf28dbfa83215194cdeba5bf7e473dd946f7497ef798b6c22890b0d4611ab9",
+      "prompt": "2025年度 電気電子部門 専門科目 Ⅲ－35。下の公式原問画像の当該番号に解答してください。同じページにある別の設問は対象外です。",
+      "choices": [
+        {
+          "number": 1,
+          "text": "①"
+        },
+        {
+          "number": 2,
+          "text": "②"
+        },
+        {
+          "number": 3,
+          "text": "③"
+        },
+        {
+          "number": 4,
+          "text": "④"
+        },
+        {
+          "number": 5,
+          "text": "⑤"
+        }
+      ],
+      "figures": [
+        {
+          "src": "/exam-library/pe-first-electrical-2025/a32e7ec8a75acb63e46c.png",
+          "alt": "2025年度 電気電子部門 Ⅲ－35の公式原問。問題文・全選択肢・図表を確認してください。",
+          "width": 951,
+          "height": 644
+        }
+      ]
+    },
+    "choiceExplanation": {
+      "sourceHash": "27bf28dbfa83215194cdeba5bf7e473dd946f7497ef798b6c22890b0d4611ab9",
+      "correctChoice": 1,
+      "summary": "系統中性点の接地方式は地絡検出や健全相対地電圧の上昇、過渡的異常電圧に関わる。接地方式により地絡電流の大きさは変わるため、単に一線地絡電流を小さくすることを全方式の共通目的とはしない。",
+      "choices": [
+        {
+          "number": 1,
+          "verdict": "correct",
+          "reason": "健全相等の対地電圧上昇の抑制、異常電圧抑制、中性点接地という組合せが適切。"
+        },
+        {
+          "number": 2,
+          "verdict": "incorrect",
+          "reason": "中性点と異常電圧はよいが、接地方式によっては一線地絡電流が増える。共通して下げる対象は対地電圧。"
+        },
+        {
+          "number": 3,
+          "verdict": "incorrect",
+          "reason": "異常高温と過電流、線路導体は系統中性点接地の目的・位置の組合せにならない。"
+        },
+        {
+          "number": 4,
+          "verdict": "incorrect",
+          "reason": "回転数は接地で直接制御する量ではない。接地位置も中性点。"
+        },
+        {
+          "number": 5,
+          "verdict": "incorrect",
+          "reason": "通信雑音対策の接地とは目的が異なる。ここでは地絡保護と対地・異常電圧を扱う。"
+        }
+      ],
+      "sources": [
+        {
+          "title": "日本技術士会 公式問題",
+          "url": "https://www.engineer.or.jp/c_topics/011/attached/attach_11457_6.pdf"
+        },
+        {
+          "title": "日本技術士会 公式正答",
+          "url": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_4.pdf#page=6"
+        }
+      ]
+    }
+  }
+]

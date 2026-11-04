@@ -1,0 +1,80 @@
+{
+  "scope": "qual-new:14",
+  "ownerThreadId": "01a19659-7ad7-7913-ba0a-57def774bf8d",
+  "finalizedAtJst": "2026-11-02T03:54:40.296828+09:00",
+  "status": "PRIVATE_PACKET_COMPLETE_WITH_Q25_REFERENCE_ONLY",
+  "privatePacketComplete": true,
+  "sharedIntegrationComplete": false,
+  "publicationComplete": false,
+  "mainIntegrationContract": "MAIN-INTEGRATION-CONTRACT.json",
+  "questionBindings": "QUESTION-BINDINGS-35.json",
+  "fixedQuestions": {
+    "path": "QUESTIONS-35.json",
+    "bytes": 140624,
+    "sha256": "1952c0d7a45d6db52f16cd055d438ab3d49b7da6ff543492036a09bcbee137d0"
+  },
+  "counts": {
+    "actualPastQuestions": 35,
+    "normalCandidates": 34,
+    "referenceOnly": 1,
+    "choiceReasons": 175,
+    "requiredFigures": 7,
+    "originalQuestionImages": 35,
+    "syntheticQuestions": 0
+  },
+  "independentAcceptance": [
+    "REVIEW-01-18.json + REVIEW-FINAL-DELTA-A.json",
+    "REVIEW-19-26.json + REVIEW-FINAL-DELTA-B.json",
+    "REVIEW-27-34.json",
+    "REVIEW-35.json",
+    "REVIEW-TRANSCRIPTION-01-18.json",
+    "REVIEW-TRANSCRIPTION-19-35.json + REVIEW-FINAL-DELTA-B.json"
+  ],
+  "validationReuse": "VALIDATION.jsonの23チェックを再利用。本文再生成・全QA再実行なし。今回は固定版hash・分割配列・資産結合の梱包整合だけを確認。",
+  "q25": "公式③のまま参考専用。通常採点・履歴・復習への投入不可。公式の採点除外ではない。",
+  "remaining": "mainのcatalog/schema/consumer接続とその必要受入。実UIと現在main採用は未実施。",
+  "apiRequests": 0,
+  "additionalApiCostUsd": 0,
+  "stages": [
+    {
+      "stage": "originalReception",
+      "path": "C:\\Users\\kanet\\Documents\\Codex\\2026-11-01\\qual-new14-private-20261101\\outputs\\receipt.json",
+      "fileLastWriteAtJst": "2026-11-01T18:07:32.494215+09:00",
+      "sha256": "17f0d9eb42627423f1baec31bb5884a653a82f40aac9da05e823a4d038a11196",
+      "timeMeaning": "file modification timestamp, not inferred turn start"
+    },
+    {
+      "stage": "firstProductionFile",
+      "path": "C:\\Users\\kanet\\Documents\\Codex\\2026-11-01\\qual-new14-private-20261101\\work\\content-01-10.json",
+      "fileLastWriteAtJst": "2026-11-01T18:37:06.781905+09:00",
+      "sha256": "46bfeba9fed4620155588c6c9540fc2e95fc0137223f97179806d6ce862a1689",
+      "timeMeaning": "file modification timestamp, not inferred turn start"
+    },
+    {
+      "stage": "allExplanationsPresent",
+      "path": "C:\\Users\\kanet\\Documents\\Codex\\2026-11-01\\qual-new14-private-20261101\\work\\content-35.json",
+      "fileLastWriteAtJst": "2026-11-01T18:58:52.943401+09:00",
+      "sha256": "d648d701e5a8487be21fd613dbec25f9fee2815eb40979883c1cabc097f66125",
+      "timeMeaning": "file modification timestamp, not inferred turn start"
+    },
+    {
+      "stage": "independentDeltaA",
+      "path": "C:\\Users\\kanet\\Documents\\Codex\\2026-11-01\\qual-new14-private-20261101\\outputs\\qual-new14-r7\\REVIEW-FINAL-DELTA-A.json",
+      "fileLastWriteAtJst": "2026-11-01T19:07:47.016638+09:00",
+      "sha256": "bbfe88fbf9c2b38b8eef6ea10a51e43c47faa9f62ec14f281b3a213ca0745e9e",
+      "timeMeaning": "file modification timestamp, not inferred turn start"
+    },
+    {
+      "stage": "independentDeltaB",
+      "path": "C:\\Users\\kanet\\Documents\\Codex\\2026-11-01\\qual-new14-private-20261101\\outputs\\qual-new14-r7\\REVIEW-FINAL-DELTA-B.json",
+      "fileLastWriteAtJst": "2026-11-01T19:07:47.918394+09:00",
+      "sha256": "9e5c82cdbb7297a059dac720beb989e13254a754bbf5f3505235731ae8e6ca48",
+      "timeMeaning": "file modification timestamp, not inferred turn start"
+    }
+  ],
+  "supersedes": [
+    "outputs/QUAL-NEW14-HANDOFF.jsonの年度指定待ち判断",
+    "API-Q35-INPUT.jsonの専有予約状態"
+  ],
+  "finalDelivery": "この固定packetをmainが採用する。ownerは共有へ直接適用しない。"
+}

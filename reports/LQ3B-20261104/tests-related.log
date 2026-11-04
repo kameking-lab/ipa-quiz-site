@@ -1,0 +1,27 @@
+
+ RUN  v3.2.4 C:/Users/kanet/20260522/wt-LQ3
+
+ ✓ __tests__/exam-library-choices.test.ts (11 tests) 23ms
+ ✓ __tests__/exam-library-model.test.ts (11 tests) 42ms
+ ✓ __tests__/exam-library-choice-explanations.test.ts (15 tests) 87ms
+ ✓ __tests__/exam-library-navigation.test.ts (3 tests) 17ms
+ ✓ __tests__/exam-library-session.test.ts (4 tests) 22ms
+ ✓ __tests__/exam-library-progress.test.ts (6 tests) 51ms
+ ✓ __tests__/exam-library-presentation.test.ts (6 tests) 5248ms
+   ✓ safety text presentation > has a complete source-matched transcription for every question and all five choices  5084ms
+ ✓ __tests__/exam-library-integration.test.ts (5 tests) 4961ms
+   ✓ official exam library integration > requires every authored plain explanation to be substantive and preserves its answer-key snapshot  3670ms
+   ✓ official exam library integration > loads only source-matched, five-choice, government-sourced structured overlays  973ms
+ ✓ __tests__/pe-first-continuation.test.tsx (2 tests) 1144ms
+   ✓ LQ3B complete-paper continuation > binds every new question and all choice reasons to the official yearly key  335ms
+   ✓ LQ3B complete-paper continuation > renders the transcribed sanitary problem and its required diagram, then explains all five choices  806ms
+ ✓ __tests__/pe-first-integration.test.tsx (5 tests) 7658ms
+   ✓ LQ3 existing manuscript adoption > makes all connected departments reachable from the actual qualification selector  543ms
+   ✓ LQ3 existing manuscript adoption > preserves all 17 accepted sets and adds only complete continuation papers  4245ms
+   ✓ LQ3 existing manuscript adoption > keeps each accepted image byte-identical and all 2,975 choice reasons accessible  1863ms
+   ✓ LQ3 existing manuscript adoption > shows an original-image question, grades it, exposes every reason, and restores its saved answer  906ms
+
+ Test Files  10 passed (10)
+      Tests  68 passed (68)
+   Start at  01:55:58
+   Duration  27.74s (transform 7.75s, setup 16.56s, collect 33.69s, tests 19.25s, environment 50.37s, prepare 1.57s)

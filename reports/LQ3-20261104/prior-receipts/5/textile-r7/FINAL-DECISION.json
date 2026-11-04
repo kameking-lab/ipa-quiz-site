@@ -1,0 +1,52 @@
+{
+  "scope": "qual-new:5",
+  "title": "技術士第一次・繊維",
+  "atJst": "2026-11-02T03:43:41.379620+09:00",
+  "status": "PRIVATE_CONTENT_COMPLETE_MAIN_ADOPTION_READY_PUBLICATION_HELD",
+  "ownerThread": "01a19656-3ff5-7a60-9db3-62843c1728a1",
+  "mainThread": "01a18919-2bca-71a1-aee9-c0486fa7203b",
+  "target": "令和7年度（2025）第一次試験 専門科目06繊維部門 Ⅲ-1～35",
+  "counts": {
+    "actualOriginalQuestions": 35,
+    "authoredQuestions": 0,
+    "explanations": 35,
+    "choiceReasons": 175,
+    "originalQuestionImages": 35,
+    "essentialFigures": 2,
+    "independentlyAcceptedQuestions": 35
+  },
+  "acceptedPayload": "questions.accepted.json",
+  "acceptedPayloadSha256": "62fcedcfd69e32718362d7dc839bdfaf91c135373ab1a19375dd1a21ef2030ab",
+  "reviewedPayloadSha256": "3dcbc58cec5c0f62031651b826398756c241876a66e9421b463f29d28dd59e7a",
+  "acceptance": "独立担当による全35問175肢と原問画像・公式キーの検査。画像境界とQ5①の指摘を修正し差分再確認済み。Opus指定の実receiptとは主張しない。",
+  "privateContentRemaining": [],
+  "sharedApplied": false,
+  "publicChanges": 0,
+  "runtimeAcceptanceClaimed": false,
+  "remainingOutsideOwnerScope": [
+    {
+      "operation": "採用時点で共有の同部門既収録を限定照合し、必要な5択・画像原問の取込を行う",
+      "owner": "mainのみ",
+      "input": "本packetと固定素材との差分。新たな教材制作や既受入全文再監査を意味しない。"
+    },
+    {
+      "operation": "公開",
+      "owner": "本人およびmainの別工程",
+      "status": "本依頼の実行対象外。公開・build・deploy・pushなし。"
+    }
+  ],
+  "reviewLimits": [
+    "問本文と全選択肢は原本画像を正本とする。全文OCRテキストは未作成であり、テキスト専用表示へ変換済みとは主張しない。",
+    "画像を含む私有教材の内容受入であり、現行runtimeの通常学習・保存UI受入ではない。",
+    "各理由に外部専門家または特定Opusモデルの受入があるとの主張なし。固有の追加契約は未発見で、一律追加gateにしない。",
+    "JIS各規格全文の条項別監査や実験による再現は実施していない。全175肢を個別に追加一次資料で裏付けたとの主張ではない。",
+    "公式PDF/原問画像、公式キー、技術的知識と上記追加一次資料による内容レビュー。教材アプリでの操作・表示の受入や共有素材への適用許可を意味しない。",
+    "METI 20230320003-4.pdfの403停止を尊重し、再取得・別経路取得なし。",
+    "この票以外の本文・共有ファイルをレビュー担当は変更していない。外部有料モデル利用なし。"
+  ],
+  "superseded": "outputs/QUAL-NEW5-HANDOFF.json の年度未指定による停止状態。履歴として残すが現状判定には使わない。",
+  "stopPreserved": "METI資料HTTP403は再取得せず、同操作の別route取得なし。権利調査は本人担当で私有制作の待ち条件にしていない。",
+  "independentReviewDecision": "PASS_WITH_DOCUMENTED_LIMITATIONS",
+  "uiAccepted": false,
+  "mainContract": "MAIN-ADOPTION-CONTRACT.json"
+}

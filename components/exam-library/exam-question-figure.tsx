@@ -10,7 +10,7 @@ export function ExamQuestionFigure({ question, prompt }: ExamQuestionFigureProps
   const figures = question.presentation?.figures ?? [];
   return (
     <div className="min-w-0 space-y-4">
-      <p className="whitespace-pre-line text-base leading-8 [overflow-wrap:anywhere]">
+      <p className="whitespace-pre-wrap text-base leading-8 [overflow-wrap:anywhere]">
         {(question.presentation?.prompt ?? prompt ?? question.text).replace(/^問\s*[0-9０-９]+[\s　]*/, "")}
       </p>
       {figures.map((figure) => (

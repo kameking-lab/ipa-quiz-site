@@ -1,0 +1,613 @@
+{
+  "reviewer": "/root/chemical_review",
+  "type": "independent-original-image-binding-delta-review",
+  "completedAtJST": "2026-11-01T19:16:48.004680+09:00",
+  "verdict": "PASS_FOR_PRIVATE_ORIGINAL_IMAGE_BOUND_CANDIDATE",
+  "fixedInputs": [
+    {
+      "file": "QUESTIONS.json",
+      "sha256": "f4512faecb5e72663562eda6aa935340e57ae5ae7966245656d4261edc0bcac1",
+      "bytes": 99539
+    },
+    {
+      "file": "ORIGINAL-BINDINGS.json",
+      "sha256": "3e7eb5b085714573ee3d0188b515f4712000f0fe9016f43806aa2b359027bb07",
+      "bytes": 52747
+    },
+    {
+      "file": "FIELD-GUARD.json",
+      "sha256": "be5c9fa080daa53aea59b1af4bae1366de7329a9d60b99afcd13d8ab219841cd",
+      "bytes": 7624
+    },
+    {
+      "file": "CONTRACT.json",
+      "sha256": "1e162cb7d0b83ee0346cdc88d8afdd025ff769ae7330e507f70a25d01d558798",
+      "bytes": 1566
+    }
+  ],
+  "retainedExplanationAcceptance": {
+    "sha256": "085b5763f3526cd9c5a5280b6bb7b3b21490299de3d0918067e6e60a46f74d78",
+    "questions": 35,
+    "choiceReasons": 175,
+    "semanticReviewRepeated": false
+  },
+  "checks": {
+    "questionCount": 35,
+    "uniqueIds": 35,
+    "boundOfficialAnswers": 35,
+    "boundReasons": 175,
+    "assets": 21,
+    "byteIdenticalAssets": 21,
+    "fullOriginalQuestionAndFiveChoicesRetained": 35,
+    "requiredFigureQuestions": 9,
+    "newSyntheticQuestions": 0,
+    "transcribedOriginalStatements": 0
+  },
+  "assetChecks": [
+    {
+      "page": 1,
+      "path": "public/questions/gijutsushi1-chemical/2025/page-01.png",
+      "sha256": "00a7c6bd5aec2b4d71fc69f631447f0aad2e77b40592f53b975b6891577c4a1f",
+      "byteIdentical": true,
+      "fullPage": true,
+      "width": 775,
+      "height": 1096
+    },
+    {
+      "page": 2,
+      "path": "public/questions/gijutsushi1-chemical/2025/page-02.png",
+      "sha256": "06702abb5f905790b7d0fdfb9d533ce43244b0840bc69d15a53441886096a1da",
+      "byteIdentical": true,
+      "fullPage": true,
+      "width": 775,
+      "height": 1096
+    },
+    {
+      "page": 3,
+      "path": "public/questions/gijutsushi1-chemical/2025/page-03.png",
+      "sha256": "bc30ed8023b651588367b3900bf7f3f1a9674bb00d9717c7f0dabc21035e4fbd",
+      "byteIdentical": true,
+      "fullPage": true,
+      "width": 775,
+      "height": 1096
+    },
+    {
+      "page": 4,
+      "path": "public/questions/gijutsushi1-chemical/2025/page-04.png",
+      "sha256": "6b7e0475e4158c311bef0ed5fdf623f8947a164971fa0a7ffe42282cb426e046",
+      "byteIdentical": true,
+      "fullPage": true,
+      "width": 775,
+      "height": 1096
+    },
+    {
+      "page": 5,
+      "path": "public/questions/gijutsushi1-chemical/2025/page-05.png",
+      "sha256": "9909aca5a7f3645d4ab056266091cb0380d225ebef272f5d0ee99edae46916af",
+      "byteIdentical": true,
+      "fullPage": true,
+      "width": 775,
+      "height": 1096
+    },
+    {
+      "page": 6,
+      "path": "public/questions/gijutsushi1-chemical/2025/page-06.png",
+      "sha256": "65e2d659a7f046902cc76f402d37d9066fc0618edd1483489f81c25f39f98bc7",
+      "byteIdentical": true,
+      "fullPage": true,
+      "width": 775,
+      "height": 1096
+    },
+    {
+      "page": 7,
+      "path": "public/questions/gijutsushi1-chemical/2025/page-07.png",
+      "sha256": "11797ef95a07aa6dcee5ab23b0d5f4c6b186de300e3000e3a4e0edfadcff2c39",
+      "byteIdentical": true,
+      "fullPage": true,
+      "width": 775,
+      "height": 1096
+    },
+    {
+      "page": 8,
+      "path": "public/questions/gijutsushi1-chemical/2025/page-08.png",
+      "sha256": "80a5f29e661a7a49c958b30075b03534d8e0ad53d17b0975e7b62b3362fc106b",
+      "byteIdentical": true,
+      "fullPage": true,
+      "width": 775,
+      "height": 1096
+    },
+    {
+      "page": 9,
+      "path": "public/questions/gijutsushi1-chemical/2025/page-09.png",
+      "sha256": "ae254cc9c9c80477a7dda2abb721715e2807022789947d5efc21b0bedcd08ebe",
+      "byteIdentical": true,
+      "fullPage": true,
+      "width": 775,
+      "height": 1096
+    },
+    {
+      "page": 10,
+      "path": "public/questions/gijutsushi1-chemical/2025/page-10.png",
+      "sha256": "8d07a22485a1993bd9db336e2489d89664d6e07eacf502ad4ac5c71982f3eca7",
+      "byteIdentical": true,
+      "fullPage": true,
+      "width": 775,
+      "height": 1096
+    },
+    {
+      "page": 11,
+      "path": "public/questions/gijutsushi1-chemical/2025/page-11.png",
+      "sha256": "aea0e3440f35aceec085d37973d26e3ae45337727eeff2134e894d57fbb40308",
+      "byteIdentical": true,
+      "fullPage": true,
+      "width": 775,
+      "height": 1096
+    },
+    {
+      "page": 12,
+      "path": "public/questions/gijutsushi1-chemical/2025/page-12.png",
+      "sha256": "da183ec34eb452300adde5132c41bfcc035700ee2add63f2b05d6cea8414da4b",
+      "byteIdentical": true,
+      "fullPage": true,
+      "width": 775,
+      "height": 1096
+    },
+    {
+      "page": 13,
+      "path": "public/questions/gijutsushi1-chemical/2025/page-13.png",
+      "sha256": "b185caec7b51da317c1e2de1532db6e812489b378ec606ade541e2ddc233fdfa",
+      "byteIdentical": true,
+      "fullPage": true,
+      "width": 775,
+      "height": 1096
+    },
+    {
+      "page": 14,
+      "path": "public/questions/gijutsushi1-chemical/2025/page-14.png",
+      "sha256": "1bdc5f7691612b4d6e479fa8285ea871c0aea89cd40262eb5a37e3ca34157d53",
+      "byteIdentical": true,
+      "fullPage": true,
+      "width": 775,
+      "height": 1096
+    },
+    {
+      "page": 15,
+      "path": "public/questions/gijutsushi1-chemical/2025/page-15.png",
+      "sha256": "acf5f0cea906244068176acda93969d62ac371d3f870f921bf7415560d04e9ad",
+      "byteIdentical": true,
+      "fullPage": true,
+      "width": 775,
+      "height": 1096
+    },
+    {
+      "page": 16,
+      "path": "public/questions/gijutsushi1-chemical/2025/page-16.png",
+      "sha256": "e441588de1107186a400a317fddb3f74833b262b5e884128236651bd9f7ed1e5",
+      "byteIdentical": true,
+      "fullPage": true,
+      "width": 775,
+      "height": 1096
+    },
+    {
+      "page": 17,
+      "path": "public/questions/gijutsushi1-chemical/2025/page-17.png",
+      "sha256": "fcdbe4a6ba5c6320de9f4d11d229c6e8e0d37cf255e5f94652907a2103512c56",
+      "byteIdentical": true,
+      "fullPage": true,
+      "width": 775,
+      "height": 1096
+    },
+    {
+      "page": 18,
+      "path": "public/questions/gijutsushi1-chemical/2025/page-18.png",
+      "sha256": "d015bf2c4687cae6fc7eb4219c338fe1f2ffe47ca9e673d693adbac1ebacc183",
+      "byteIdentical": true,
+      "fullPage": true,
+      "width": 775,
+      "height": 1096
+    },
+    {
+      "page": 19,
+      "path": "public/questions/gijutsushi1-chemical/2025/page-19.png",
+      "sha256": "d0ff5ddd19f1fb43e564f6428c030a97e9b5af61346ce21ff5eaa8146bdc8185",
+      "byteIdentical": true,
+      "fullPage": true,
+      "width": 775,
+      "height": 1096
+    },
+    {
+      "page": 20,
+      "path": "public/questions/gijutsushi1-chemical/2025/page-20.png",
+      "sha256": "5c8d5189041b3cebb71a277ebafe4f16fc2570683313e75bd0e72557ec473d16",
+      "byteIdentical": true,
+      "fullPage": true,
+      "width": 775,
+      "height": 1096
+    },
+    {
+      "page": 21,
+      "path": "public/questions/gijutsushi1-chemical/2025/page-21.png",
+      "sha256": "07d84027739e43d205f753d75a3cd5b7997a505fb4195e74e5a8306b4fa64932",
+      "byteIdentical": true,
+      "fullPage": true,
+      "width": 775,
+      "height": 1096
+    }
+  ],
+  "questionChecks": [
+    {
+      "id": "gijutsushi1-chemical-2025-III-01",
+      "officialNumber": "Ⅲ－1",
+      "page": 1,
+      "answerKey": "エ",
+      "originalFiveChoicesRetainedInImage": true,
+      "requiredFigureRetained": true,
+      "explanationFieldsIdentical": true,
+      "status": "PASS"
+    },
+    {
+      "id": "gijutsushi1-chemical-2025-III-02",
+      "officialNumber": "Ⅲ－2",
+      "page": 1,
+      "answerKey": "ウ",
+      "originalFiveChoicesRetainedInImage": true,
+      "requiredFigureRetained": true,
+      "explanationFieldsIdentical": true,
+      "status": "PASS"
+    },
+    {
+      "id": "gijutsushi1-chemical-2025-III-03",
+      "officialNumber": "Ⅲ－3",
+      "page": 2,
+      "answerKey": "ア",
+      "originalFiveChoicesRetainedInImage": true,
+      "requiredFigureRetained": true,
+      "explanationFieldsIdentical": true,
+      "status": "PASS"
+    },
+    {
+      "id": "gijutsushi1-chemical-2025-III-04",
+      "officialNumber": "Ⅲ－4",
+      "page": 2,
+      "answerKey": "イ",
+      "originalFiveChoicesRetainedInImage": true,
+      "requiredFigureRetained": true,
+      "explanationFieldsIdentical": true,
+      "status": "PASS"
+    },
+    {
+      "id": "gijutsushi1-chemical-2025-III-05",
+      "officialNumber": "Ⅲ－5",
+      "page": 3,
+      "answerKey": "オ",
+      "originalFiveChoicesRetainedInImage": true,
+      "requiredFigureRetained": true,
+      "explanationFieldsIdentical": true,
+      "status": "PASS"
+    },
+    {
+      "id": "gijutsushi1-chemical-2025-III-06",
+      "officialNumber": "Ⅲ－6",
+      "page": 4,
+      "answerKey": "エ",
+      "originalFiveChoicesRetainedInImage": true,
+      "requiredFigureRetained": true,
+      "explanationFieldsIdentical": true,
+      "status": "PASS"
+    },
+    {
+      "id": "gijutsushi1-chemical-2025-III-07",
+      "officialNumber": "Ⅲ－7",
+      "page": 4,
+      "answerKey": "ウ",
+      "originalFiveChoicesRetainedInImage": true,
+      "requiredFigureRetained": true,
+      "explanationFieldsIdentical": true,
+      "status": "PASS"
+    },
+    {
+      "id": "gijutsushi1-chemical-2025-III-08",
+      "officialNumber": "Ⅲ－8",
+      "page": 5,
+      "answerKey": "イ",
+      "originalFiveChoicesRetainedInImage": true,
+      "requiredFigureRetained": true,
+      "explanationFieldsIdentical": true,
+      "status": "PASS"
+    },
+    {
+      "id": "gijutsushi1-chemical-2025-III-09",
+      "officialNumber": "Ⅲ－9",
+      "page": 6,
+      "answerKey": "ウ",
+      "originalFiveChoicesRetainedInImage": true,
+      "requiredFigureRetained": true,
+      "explanationFieldsIdentical": true,
+      "status": "PASS"
+    },
+    {
+      "id": "gijutsushi1-chemical-2025-III-10",
+      "officialNumber": "Ⅲ－10",
+      "page": 6,
+      "answerKey": "イ",
+      "originalFiveChoicesRetainedInImage": true,
+      "requiredFigureRetained": true,
+      "explanationFieldsIdentical": true,
+      "status": "PASS"
+    },
+    {
+      "id": "gijutsushi1-chemical-2025-III-11",
+      "officialNumber": "Ⅲ－11",
+      "page": 7,
+      "answerKey": "オ",
+      "originalFiveChoicesRetainedInImage": true,
+      "requiredFigureRetained": true,
+      "explanationFieldsIdentical": true,
+      "status": "PASS"
+    },
+    {
+      "id": "gijutsushi1-chemical-2025-III-12",
+      "officialNumber": "Ⅲ－12",
+      "page": 8,
+      "answerKey": "エ",
+      "originalFiveChoicesRetainedInImage": true,
+      "requiredFigureRetained": true,
+      "explanationFieldsIdentical": true,
+      "status": "PASS"
+    },
+    {
+      "id": "gijutsushi1-chemical-2025-III-13",
+      "officialNumber": "Ⅲ－13",
+      "page": 9,
+      "answerKey": "イ",
+      "originalFiveChoicesRetainedInImage": true,
+      "requiredFigureRetained": true,
+      "explanationFieldsIdentical": true,
+      "status": "PASS"
+    },
+    {
+      "id": "gijutsushi1-chemical-2025-III-14",
+      "officialNumber": "Ⅲ－14",
+      "page": 9,
+      "answerKey": "ア",
+      "originalFiveChoicesRetainedInImage": true,
+      "requiredFigureRetained": true,
+      "explanationFieldsIdentical": true,
+      "status": "PASS"
+    },
+    {
+      "id": "gijutsushi1-chemical-2025-III-15",
+      "officialNumber": "Ⅲ－15",
+      "page": 10,
+      "answerKey": "オ",
+      "originalFiveChoicesRetainedInImage": true,
+      "requiredFigureRetained": true,
+      "explanationFieldsIdentical": true,
+      "status": "PASS"
+    },
+    {
+      "id": "gijutsushi1-chemical-2025-III-16",
+      "officialNumber": "Ⅲ－16",
+      "page": 11,
+      "answerKey": "ウ",
+      "originalFiveChoicesRetainedInImage": true,
+      "requiredFigureRetained": true,
+      "explanationFieldsIdentical": true,
+      "status": "PASS"
+    },
+    {
+      "id": "gijutsushi1-chemical-2025-III-17",
+      "officialNumber": "Ⅲ－17",
+      "page": 11,
+      "answerKey": "エ",
+      "originalFiveChoicesRetainedInImage": true,
+      "requiredFigureRetained": true,
+      "explanationFieldsIdentical": true,
+      "status": "PASS"
+    },
+    {
+      "id": "gijutsushi1-chemical-2025-III-18",
+      "officialNumber": "Ⅲ－18",
+      "page": 12,
+      "answerKey": "イ",
+      "originalFiveChoicesRetainedInImage": true,
+      "requiredFigureRetained": true,
+      "explanationFieldsIdentical": true,
+      "status": "PASS"
+    },
+    {
+      "id": "gijutsushi1-chemical-2025-III-19",
+      "officialNumber": "Ⅲ－19",
+      "page": 13,
+      "answerKey": "オ",
+      "originalFiveChoicesRetainedInImage": true,
+      "requiredFigureRetained": true,
+      "explanationFieldsIdentical": true,
+      "status": "PASS"
+    },
+    {
+      "id": "gijutsushi1-chemical-2025-III-20",
+      "officialNumber": "Ⅲ－20",
+      "page": 13,
+      "answerKey": "エ",
+      "originalFiveChoicesRetainedInImage": true,
+      "requiredFigureRetained": true,
+      "explanationFieldsIdentical": true,
+      "status": "PASS"
+    },
+    {
+      "id": "gijutsushi1-chemical-2025-III-21",
+      "officialNumber": "Ⅲ－21",
+      "page": 14,
+      "answerKey": "イ",
+      "originalFiveChoicesRetainedInImage": true,
+      "requiredFigureRetained": true,
+      "explanationFieldsIdentical": true,
+      "status": "PASS"
+    },
+    {
+      "id": "gijutsushi1-chemical-2025-III-22",
+      "officialNumber": "Ⅲ－22",
+      "page": 14,
+      "answerKey": "ウ",
+      "originalFiveChoicesRetainedInImage": true,
+      "requiredFigureRetained": true,
+      "explanationFieldsIdentical": true,
+      "status": "PASS"
+    },
+    {
+      "id": "gijutsushi1-chemical-2025-III-23",
+      "officialNumber": "Ⅲ－23",
+      "page": 15,
+      "answerKey": "ア",
+      "originalFiveChoicesRetainedInImage": true,
+      "requiredFigureRetained": true,
+      "explanationFieldsIdentical": true,
+      "status": "PASS"
+    },
+    {
+      "id": "gijutsushi1-chemical-2025-III-24",
+      "officialNumber": "Ⅲ－24",
+      "page": 15,
+      "answerKey": "オ",
+      "originalFiveChoicesRetainedInImage": true,
+      "requiredFigureRetained": true,
+      "explanationFieldsIdentical": true,
+      "status": "PASS"
+    },
+    {
+      "id": "gijutsushi1-chemical-2025-III-25",
+      "officialNumber": "Ⅲ－25",
+      "page": 15,
+      "answerKey": "エ",
+      "originalFiveChoicesRetainedInImage": true,
+      "requiredFigureRetained": true,
+      "explanationFieldsIdentical": true,
+      "status": "PASS"
+    },
+    {
+      "id": "gijutsushi1-chemical-2025-III-26",
+      "officialNumber": "Ⅲ－26",
+      "page": 16,
+      "answerKey": "エ",
+      "originalFiveChoicesRetainedInImage": true,
+      "requiredFigureRetained": true,
+      "explanationFieldsIdentical": true,
+      "status": "PASS"
+    },
+    {
+      "id": "gijutsushi1-chemical-2025-III-27",
+      "officialNumber": "Ⅲ－27",
+      "page": 16,
+      "answerKey": "ウ",
+      "originalFiveChoicesRetainedInImage": true,
+      "requiredFigureRetained": true,
+      "explanationFieldsIdentical": true,
+      "status": "PASS"
+    },
+    {
+      "id": "gijutsushi1-chemical-2025-III-28",
+      "officialNumber": "Ⅲ－28",
+      "page": 17,
+      "answerKey": "ア",
+      "originalFiveChoicesRetainedInImage": true,
+      "requiredFigureRetained": true,
+      "explanationFieldsIdentical": true,
+      "status": "PASS"
+    },
+    {
+      "id": "gijutsushi1-chemical-2025-III-29",
+      "officialNumber": "Ⅲ－29",
+      "page": 18,
+      "answerKey": "ア",
+      "originalFiveChoicesRetainedInImage": true,
+      "requiredFigureRetained": true,
+      "explanationFieldsIdentical": true,
+      "status": "PASS"
+    },
+    {
+      "id": "gijutsushi1-chemical-2025-III-30",
+      "officialNumber": "Ⅲ－30",
+      "page": 18,
+      "answerKey": "エ",
+      "originalFiveChoicesRetainedInImage": true,
+      "requiredFigureRetained": true,
+      "explanationFieldsIdentical": true,
+      "status": "PASS"
+    },
+    {
+      "id": "gijutsushi1-chemical-2025-III-31",
+      "officialNumber": "Ⅲ－31",
+      "page": 19,
+      "answerKey": "イ",
+      "originalFiveChoicesRetainedInImage": true,
+      "requiredFigureRetained": true,
+      "explanationFieldsIdentical": true,
+      "status": "PASS"
+    },
+    {
+      "id": "gijutsushi1-chemical-2025-III-32",
+      "officialNumber": "Ⅲ－32",
+      "page": 19,
+      "answerKey": "オ",
+      "originalFiveChoicesRetainedInImage": true,
+      "requiredFigureRetained": true,
+      "explanationFieldsIdentical": true,
+      "status": "PASS"
+    },
+    {
+      "id": "gijutsushi1-chemical-2025-III-33",
+      "officialNumber": "Ⅲ－33",
+      "page": 20,
+      "answerKey": "エ",
+      "originalFiveChoicesRetainedInImage": true,
+      "requiredFigureRetained": true,
+      "explanationFieldsIdentical": true,
+      "status": "PASS"
+    },
+    {
+      "id": "gijutsushi1-chemical-2025-III-34",
+      "officialNumber": "Ⅲ－34",
+      "page": 20,
+      "answerKey": "エ",
+      "originalFiveChoicesRetainedInImage": true,
+      "requiredFigureRetained": true,
+      "explanationFieldsIdentical": true,
+      "status": "PASS"
+    },
+    {
+      "id": "gijutsushi1-chemical-2025-III-35",
+      "officialNumber": "Ⅲ－35",
+      "page": 21,
+      "answerKey": "ア",
+      "originalFiveChoicesRetainedInImage": true,
+      "requiredFigureRetained": true,
+      "explanationFieldsIdentical": true,
+      "status": "PASS"
+    }
+  ],
+  "visualDeltaReview": {
+    "pagesViewedNow": [
+      1,
+      2,
+      21
+    ],
+    "reason": "複数問の混在を含む先頭頁、構造式選択肢の頁、最終設問を確認。全21頁の内容は前回の原典照合を再利用し、今回は全21枚の同bytes性を確認。",
+    "pageMappingBasis": "前回原問21頁確認で固定した独立ページ対応表と全35件照合。",
+    "noCropOrRewrite": true
+  },
+  "displayContract": {
+    "questionField": "独自の表示案内であり原問本文の転記ではない。",
+    "choicesField": "①〜⑤の回答ボタンラベルであり選択肢本文ではない。選択肢本文は対応画像内に保持。",
+    "multipleQuestionsPerPage": "原問番号をnoticeで指定する。全頁画像のため併載問題がある。",
+    "shuffle": "内部キーア〜オと原典番号①〜⑤の対応を固定し、ラベルを自動で振り直さない。"
+  },
+  "integrationLimitations": [
+    "新examコードは固定union未登録。mainによる登録・catalog/loader連携が必要。",
+    "現行Question[]の型受入、実UI、画像配送、選択ラベルの実動作、保存受入は未実施。",
+    "テキスト全文転記と音声読み上げ用原文は未提供。",
+    "共有変更・公開・外部送信・権限設定変更はこの受入に含まない。",
+    "license文字列は出典識別として扱い、新しい権利許諾の取得証明とはしない。"
+  ],
+  "unresolvedBindingFindings": []
+}

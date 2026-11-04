@@ -34,9 +34,9 @@ import {
 } from "@/lib/exam-qualification-hubs";
 import { SITE_BASE_URL as SITE_URL } from "@/lib/seo/config";
 
-const TITLE = "安全衛生の公表試験問題 過去問演習｜試験・科目・回を選んで1問ずつ";
+const TITLE = "公表試験問題 過去問演習｜試験・科目・回を選んで1問ずつ";
 const DESCRIPTION =
-  "ボイラー技士・クレーン・衛生管理者などの免許試験、作業環境測定士試験、労働安全・労働衛生コンサルタント試験の公表問題を、試験・科目・回を選んで1問ずつ解けます。公式正答がある問題だけ採点し、間違えた問題を解き直せます。";
+  "技術士第一次・測量士補・安全衛生分野の公表問題を、試験・科目・回を選んで1問ずつ解けます。公式正答がある問題だけ採点し、間違えた問題を解き直せます。";
 
 interface ExamLibraryPageProps {
   searchParams: Promise<{ group?: string | string[]; subject?: string | string[] }>;
@@ -126,7 +126,7 @@ export default async function ExamLibraryPage({ searchParams }: ExamLibraryPageP
 
       <header className="mb-6">
         <Link href="/" className="mb-4 inline-flex min-h-11 items-center text-sm text-muted-foreground hover:underline">← IPA・安全を選び直す</Link>
-        <h1 className="text-2xl font-bold tracking-tight sm:text-3xl">安全衛生の過去問</h1>
+        <h1 className="text-2xl font-bold tracking-tight sm:text-3xl">公表試験の過去問</h1>
         <p className="mt-2 text-sm leading-7 text-muted-foreground">資格を選んで、今すぐ解く。年度別からも問題を選べます。</p>
         <p className="mt-2 text-xs text-muted-foreground">{playable.length}科目・回分 / <span>{questionTotal}問</span> / 公式正答で採点 {scoredTotal}問</p>
         {checkedAt ? <p className="mt-1 text-xs text-muted-foreground">公表ページの確認日: {formatExamDate(checkedAt)}</p> : null}

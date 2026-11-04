@@ -1,0 +1,5 @@
+指定gpt-6-astraで航空・宇宙2024を独立再レビューする。read-only、編集・push・PR・デプロイ・秘密値の読出しは禁止。
+
+先のreports/LQ3C-20261104/astra-aerospace.mdはFAIL。Q3の②④と対応理由を原本通りに修正し、Q25設問末尾を補完。2π・ピッチ・エンジン・バイパスを補正し、全30転記の句読点を原本再照合して訂正した。scripts/fix-lq3c-aerospace-review.py、原稿reports/LQ3B-20261104/manuscripts/pe-first-aerospace-2024.json、採用データdata/exam-library/pe-first/pe-first-aerospace-2024.jsonとmanifestを確認する。
+
+全30転記の残存誤字も再確認し、35正答・175肢理由・画像と全ハッシュの一致を独立検証し、PASS/FAILと根拠を返す。原本19ページと連結閲覧画像は前票記載。tests-aerospace.logとtypecheck-aerospace.logは実行済み。終了コード0を記録した。レビュー対象は本35問のみ。権利は確認済みで、取得STOPを理由に止めず、アクセス制限迂回もしない。

@@ -5,13 +5,13 @@ import { loadExamPaper } from "@/lib/exam-library-papers";
 import { describeExamDate } from "@/lib/exam-library-model";
 import { Button } from "@/components/ui/button";
 export const metadata: Metadata = {
-  title: "労働安全衛生の過去問検索",
-  description: "衛生管理者、作業環境測定士、労働安全・労働衛生コンサルタントの公表過去問を、キーワードと試験・科目で検索できます。",
+  title: "公表試験の過去問検索",
+  description: "技術士第一次・測量士補・安全衛生分野の公表過去問を、キーワードと試験・科目で検索できます。",
   robots: { index: false, follow: true },
   alternates: { canonical: "/e-learning/search" },
   openGraph: {
-    title: "労働安全衛生の過去問検索",
-    description: "安全衛生分野の公表過去問を資格・科目とキーワードで検索。",
+    title: "公表試験の過去問検索",
+    description: "公表過去問を資格・科目とキーワードで検索。",
     url: "/e-learning/search",
     type: "website",
   },
@@ -20,18 +20,18 @@ export default async function SafetySearchPage({ searchParams }: { searchParams:
   const params = await searchParams;
   const q = typeof params.q === "string" ? params.q.trim().slice(0,100) : "";
   const healthSubjects = new Set(["労働衛生一般", "労働衛生関係法令", "健康管理", "労働衛生工学"]);
-  const family = (group: string, subject: string) => group === "lckohyo" ? "免許試験" : group === "emkohyo" ? "作業環境測定士" : healthSubjects.has(subject) ? "労働衛生コンサルタント" : "労働安全コンサルタント";
+  const family = (group: string, subject: string) => group === "pe-first" ? "技術士第一次試験" : group === "survey-assistant" ? "測量士補試験" : group === "lckohyo" ? "免許試験" : group === "emkohyo" ? "作業環境測定士" : healthSubjects.has(subject) ? "労働衛生コンサルタント" : "労働安全コンサルタント";
   const subjects = [...new Map(EXAM_CATALOG.map(p => [`${p.group}:${p.subject}`, { value: `${p.group}:${p.subject}`, label: p.group === "lckohyo" ? p.subject : `${family(p.group,p.subject)}｜${p.subject}` }])).values()];
   const subject = subjects.some(s => s.value === params.subject) ? params.subject! : "";
   const words = q.normalize("NFKC").toLowerCase().split(/\s+/).filter(Boolean);
   const results = words.length ? EXAM_CATALOG.filter(p => !subject || `${p.group}:${p.subject}` === subject).flatMap(p => (loadExamPaper(p.id) ?? []).filter(question => words.every(word => question.text.normalize("NFKC").toLowerCase().includes(word))).map(question => ({ paper:p, question }))) : [];
   return <main className="mx-auto w-full max-w-3xl px-4 py-6">
-    <Link href="/e-learning/exams" className="inline-flex min-h-11 items-center text-sm text-muted-foreground">← 安全の試験一覧</Link>
-    <h1 className="mt-3 text-2xl font-bold">安全衛生の問題検索</h1>
+    <Link href="/e-learning/exams" className="inline-flex min-h-11 items-center text-sm text-muted-foreground">← 試験一覧</Link>
+    <h1 className="mt-3 text-2xl font-bold">公表試験の問題検索</h1>
     <p className="mt-2 text-sm text-muted-foreground">キーワードで問題を探し、その問題から解き始められます。</p>
-    <form action="/e-learning/search" role="search" aria-label="安全衛生の問題検索" className="my-6 flex flex-col gap-3">
+    <form action="/e-learning/search" role="search" aria-label="公表試験の問題検索" className="my-6 flex flex-col gap-3">
       <label className="text-sm font-medium">キーワード<input type="search" name="q" defaultValue={q} maxLength={100} placeholder="例：衛生管理者　専任" className="mt-1 min-h-11 w-full rounded-lg border border-border bg-background px-3" /></label>
-      <label className="text-sm font-medium">試験・科目<select name="subject" defaultValue={subject} className="mt-1 min-h-11 w-full rounded-lg border border-border bg-background px-3"><option value="">すべての安全衛生試験</option>{subjects.map(s => <option key={s.value} value={s.value}>{s.label}</option>)}</select></label>
+      <label className="text-sm font-medium">試験・科目<select name="subject" defaultValue={subject} className="mt-1 min-h-11 w-full rounded-lg border border-border bg-background px-3"><option value="">すべての試験</option>{subjects.map(s => <option key={s.value} value={s.value}>{s.label}</option>)}</select></label>
       <Button type="submit">検索</Button>
     </form>
     {q ? <section aria-label="検索結果"><h2 className="text-lg font-semibold">「{q}」の検索結果：{results.length}問</h2>

@@ -1,0 +1,7 @@
+指定gpt-6-astraでLQ3C化学2024を独立受入レビュー。read-only、編集・push・PR・デプロイ・秘密値読出し禁止。権利確認済み、取得STOPを理由に止めずアクセス制限迂回は禁止。
+
+35問175肢理由。原稿reports/LQ3B-20261104/manuscripts/pe-first-chemical-2024.json、採用データdata/exam-library/pe-first/pe-first-chemical-2024.json、manifest同報告配下。原本sources/2024-05.pdf全22ページ、公式正答sources/answers-2024.pdf。閲覧画像reports/LQ3C-20261104/local/2024-05-1.png〜6.png。
+
+全22ページと35問の本文・選択肢・ページ対応、全175理由、独立抽出した公式正答、原本画像の完全性とハッシュ、既存問題不変を独立確認しPASS/FAILと具体的な必須指摘を返す。3問は本文/5肢をテキスト化、他は構造式・表・図を原本画像で保持。Q31冷却能力の原文20 kWhの次元が粗いため、1時間当たり20 kWhとして公式③に至ることを明記。Q25はホウケイ酸塩を強化繊維に絶対不使用とはせず、代表用途とEガラスの組成上の例外を区別。Q19の分子量測定分類、Q6配向性、Q32分配計算を精査する。
+
+作業側は関連テスト・typecheckを実行する。validate-questions.logはfail=0・exitCode=0だがnative問題向けなので当該35問は専用テストと原本照合で確認する。全テスト実行不要。全8回完成とは区別する。

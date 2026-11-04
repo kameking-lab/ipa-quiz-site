@@ -1,0 +1,3222 @@
+[
+  {
+    "id": "pe-first-electrical-2024-q01",
+    "number": 1,
+    "text": "2024年度 電気電子部門 専門科目 Ⅲ－1。下の公式原問画像の当該番号に解答してください。同じページにある別の設問は対象外です。",
+    "images": [
+      "/exam-library/pe-first-electrical-2024/page-01.png"
+    ],
+    "sourcePages": [
+      1
+    ],
+    "sourceQuestionNumber": 1,
+    "correctChoice": 2,
+    "choiceCount": 5,
+    "answerAuthority": "official",
+    "originalPdf": "https://www.engineer.or.jp/c_topics/010/attached/attach_10606_6.pdf",
+    "answerPdf": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_5.pdf#page=6",
+    "explanation": "円筒内部を回るAmpere積分路に含まれる電流はゼロ。外部では1 A全体を囲み、B×2πx=μ0×1よりB=μ0/(2πx)。②。",
+    "presentation": {
+      "sourceHash": "adf7af026c1543d410b885f95e25344923b29593d3fe99eb6bcd47662381c4cb",
+      "prompt": "2024年度 電気電子部門 専門科目 Ⅲ－1。下の公式原問画像の当該番号に解答してください。同じページにある別の設問は対象外です。",
+      "choices": [
+        {
+          "number": 1,
+          "text": "①"
+        },
+        {
+          "number": 2,
+          "text": "②"
+        },
+        {
+          "number": 3,
+          "text": "③"
+        },
+        {
+          "number": 4,
+          "text": "④"
+        },
+        {
+          "number": 5,
+          "text": "⑤"
+        }
+      ],
+      "figures": [
+        {
+          "src": "/exam-library/pe-first-electrical-2024/page-01.png",
+          "width": 1073,
+          "height": 1517,
+          "alt": "2024年度 電気電子部門 専門科目 Ⅲ－1の公式原問（PDF 1ページ）。当該番号の問題文・全選択肢・図表を確認してください。"
+        }
+      ]
+    },
+    "choiceExplanation": {
+      "sourceHash": "adf7af026c1543d410b885f95e25344923b29593d3fe99eb6bcd47662381c4cb",
+      "correctChoice": 2,
+      "summary": "円筒内部を回るAmpere積分路に含まれる電流はゼロ。外部では1 A全体を囲み、B×2πx=μ0×1よりB=μ0/(2πx)。②。",
+      "choices": [
+        {
+          "number": 1,
+          "verdict": "incorrect",
+          "reason": "内部には電流を含まないため磁束密度ゼロであり、内外の式が逆。"
+        },
+        {
+          "number": 2,
+          "verdict": "correct",
+          "reason": "内部ゼロ、外部μ0/(2πx)が円筒対称性とAmpereの法則を満たす。"
+        },
+        {
+          "number": 3,
+          "verdict": "incorrect",
+          "reason": "内部でxに比例するのは中実円柱の内部に体積電流がある場合で、表面電流の本問とは異なる。"
+        },
+        {
+          "number": 4,
+          "verdict": "incorrect",
+          "reason": "内部の積分路は表面電流を囲まないため、外部と同じ1/xの磁界にはならない。"
+        },
+        {
+          "number": 5,
+          "verdict": "incorrect",
+          "reason": "内部ゼロは合うが、外部はxの二乗でなくxに反比例する。"
+        }
+      ],
+      "sources": [
+        {
+          "title": "日本技術士会 公式問題",
+          "url": "https://www.engineer.or.jp/c_topics/010/attached/attach_10606_6.pdf#page=1"
+        },
+        {
+          "title": "日本技術士会 公式正答",
+          "url": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_5.pdf#page=6"
+        }
+      ]
+    }
+  },
+  {
+    "id": "pe-first-electrical-2024-q02",
+    "number": 2,
+    "text": "磁気に関する次の記述のうち,最も不適切なものはどれか。",
+    "images": [
+      "/exam-library/pe-first-electrical-2024/page-02.png"
+    ],
+    "sourcePages": [
+      2
+    ],
+    "sourceQuestionNumber": 2,
+    "correctChoice": 5,
+    "choiceCount": 5,
+    "answerAuthority": "official",
+    "originalPdf": "https://www.engineer.or.jp/c_topics/010/attached/attach_10606_6.pdf",
+    "answerPdf": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_5.pdf#page=6",
+    "explanation": "不適切なのは⑤。一定の磁束密度振幅では、ヒステリシス損は概ね周波数fに、渦電流損はf^2に比例する。両者が逆。",
+    "presentation": {
+      "sourceHash": "879a583d8e3415ec24b105b26457df899d17fd959d35bd1800e2b72f548cff68",
+      "prompt": "磁気に関する次の記述のうち,最も不適切なものはどれか。",
+      "choices": [
+        {
+          "number": 1,
+          "text": "磁気遮断とは、磁界中に中空の強磁性体を置くと,磁束が強磁性体の磁路を進み,中空の部分を通過しない現象を利用したものである。"
+        },
+        {
+          "number": 2,
+          "text": "フレミングの右手の法則とは,右手の人差し指を磁界の向きへ,親指を導体が移動する向きへ指を広げると,中指の方向が誘導起電力の向きとなることである。"
+        },
+        {
+          "number": 3,
+          "text": "比透磁率が大きいとは,磁気抵抗が小さいことであり,磁束が通りやすいことである。"
+        },
+        {
+          "number": 4,
+          "text": "電磁誘導によって生じる誘導起電力の向きは,その誘導電流が作る磁束が,もとの磁束の増減を妨げる向きに生じる。"
+        },
+        {
+          "number": 5,
+          "text": "鉄損は,周波数に比例して発生する渦電流損と,周波数の2乗に比例するヒステリシス損に分けることができる。"
+        }
+      ],
+      "figures": []
+    },
+    "choiceExplanation": {
+      "sourceHash": "879a583d8e3415ec24b105b26457df899d17fd959d35bd1800e2b72f548cff68",
+      "correctChoice": 5,
+      "summary": "不適切なのは⑤。一定の磁束密度振幅では、ヒステリシス損は概ね周波数fに、渦電流損はf^2に比例する。両者が逆。",
+      "choices": [
+        {
+          "number": 1,
+          "verdict": "incorrect",
+          "reason": "高透磁率の材料へ磁束を通し内部の磁界を弱める磁気遮蔽の説明である。"
+        },
+        {
+          "number": 2,
+          "verdict": "incorrect",
+          "reason": "磁界、導体の運動、誘導起電力の方向の対応はFleming右手則に合う。"
+        },
+        {
+          "number": 3,
+          "verdict": "incorrect",
+          "reason": "同じ形状なら透磁率が大きいと磁気抵抗が小さくなり磁束を通しやすい。"
+        },
+        {
+          "number": 4,
+          "verdict": "incorrect",
+          "reason": "誘導電流の磁束は元の磁束変化を妨げるというLenzの法則の説明に合う。"
+        },
+        {
+          "number": 5,
+          "verdict": "correct",
+          "reason": "渦電流損とヒステリシス損の周波数依存を逆にしているため、この肢が不適切。"
+        }
+      ],
+      "sources": [
+        {
+          "title": "日本技術士会 公式問題",
+          "url": "https://www.engineer.or.jp/c_topics/010/attached/attach_10606_6.pdf#page=2"
+        },
+        {
+          "title": "日本技術士会 公式正答",
+          "url": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_5.pdf#page=6"
+        }
+      ]
+    }
+  },
+  {
+    "id": "pe-first-electrical-2024-q03",
+    "number": 3,
+    "text": "2024年度 電気電子部門 専門科目 Ⅲ－3。下の公式原問画像の当該番号に解答してください。同じページにある別の設問は対象外です。",
+    "images": [
+      "/exam-library/pe-first-electrical-2024/page-02.png"
+    ],
+    "sourcePages": [
+      2
+    ],
+    "sourceQuestionNumber": 3,
+    "correctChoice": 3,
+    "choiceCount": 5,
+    "answerAuthority": "official",
+    "originalPdf": "https://www.engineer.or.jp/c_topics/010/attached/attach_10606_6.pdf",
+    "answerPdf": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_5.pdf#page=6",
+    "explanation": "極板間隔は2d。開放直前の電場V/(2d)が電荷保存で保たれ、単位面積の引力はε0E^2/2=ε0V^2/(8d^2)。③。",
+    "presentation": {
+      "sourceHash": "1f7769227cb92cfede0a3b01640e39cc516044e5f84e6606e775edc4bd6cd953",
+      "prompt": "2024年度 電気電子部門 専門科目 Ⅲ－3。下の公式原問画像の当該番号に解答してください。同じページにある別の設問は対象外です。",
+      "choices": [
+        {
+          "number": 1,
+          "text": "①"
+        },
+        {
+          "number": 2,
+          "text": "②"
+        },
+        {
+          "number": 3,
+          "text": "③"
+        },
+        {
+          "number": 4,
+          "text": "④"
+        },
+        {
+          "number": 5,
+          "text": "⑤"
+        }
+      ],
+      "figures": [
+        {
+          "src": "/exam-library/pe-first-electrical-2024/page-02.png",
+          "width": 1073,
+          "height": 1517,
+          "alt": "2024年度 電気電子部門 専門科目 Ⅲ－3の公式原問（PDF 2ページ）。当該番号の問題文・全選択肢・図表を確認してください。"
+        }
+      ]
+    },
+    "choiceExplanation": {
+      "sourceHash": "1f7769227cb92cfede0a3b01640e39cc516044e5f84e6606e775edc4bd6cd953",
+      "correctChoice": 3,
+      "summary": "極板間隔は2d。開放直前の電場V/(2d)が電荷保存で保たれ、単位面積の引力はε0E^2/2=ε0V^2/(8d^2)。③。",
+      "choices": [
+        {
+          "number": 1,
+          "verdict": "incorrect",
+          "reason": "誘電率ε0が分母にあり、電場による圧力ε0E^2/2の式と一致しない。"
+        },
+        {
+          "number": 2,
+          "verdict": "incorrect",
+          "reason": "電圧二乗に反比例する式になっており、電荷・電場が大きいほど引力が増す関係と逆。"
+        },
+        {
+          "number": 3,
+          "verdict": "correct",
+          "reason": "E=V/(2d)を電気的な圧力ε0E^2/2へ代入した引力に一致する。"
+        },
+        {
+          "number": 4,
+          "verdict": "incorrect",
+          "reason": "ε0V^2/(4d^2)はε0E^2であり、他方の極板の電場だけによる力の係数1/2が抜けている。"
+        },
+        {
+          "number": 5,
+          "verdict": "incorrect",
+          "reason": "d^2/V^2に比例しており、極板の電場から得られる単位面積当たりの力ではない。"
+        }
+      ],
+      "sources": [
+        {
+          "title": "日本技術士会 公式問題",
+          "url": "https://www.engineer.or.jp/c_topics/010/attached/attach_10606_6.pdf#page=2"
+        },
+        {
+          "title": "日本技術士会 公式正答",
+          "url": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_5.pdf#page=6"
+        }
+      ]
+    }
+  },
+  {
+    "id": "pe-first-electrical-2024-q04",
+    "number": 4,
+    "text": "電磁波に関する次の記述のうち、最も不適切なものはどれか。",
+    "images": [
+      "/exam-library/pe-first-electrical-2024/page-03.png"
+    ],
+    "sourcePages": [
+      3
+    ],
+    "sourceQuestionNumber": 4,
+    "correctChoice": 1,
+    "choiceCount": 5,
+    "answerAuthority": "official",
+    "originalPdf": "https://www.engineer.or.jp/c_topics/010/attached/attach_10606_6.pdf",
+    "answerPdf": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_5.pdf#page=6",
+    "explanation": "不適切なのは①。同一周波数ではv=1/√(με)、λ=v/f。誘電率が小さくなると速度と波長は大きくなる。",
+    "presentation": {
+      "sourceHash": "08f5e9888c79cb20169d19b4a026f2ec49270627d3057ba7808bcda58b5d678d",
+      "prompt": "電磁波に関する次の記述のうち、最も不適切なものはどれか。",
+      "choices": [
+        {
+          "number": 1,
+          "text": "電磁波の周波数が一定の場合、媒質の誘電率が小さくなると、電磁波の波長は短くなる。"
+        },
+        {
+          "number": 2,
+          "text": "電磁波の周波数が一定の場合、媒質の誘電率が大きくなると、電磁波の速さは小さくなる。"
+        },
+        {
+          "number": 3,
+          "text": "電磁波の周波数が一定の場合、媒質の透磁率が大きくなると、電磁波の速さは小さくなる。"
+        },
+        {
+          "number": 4,
+          "text": "同じ媒質中では周波数が高くなると、電磁波の波長は短くなる。"
+        },
+        {
+          "number": 5,
+          "text": "真空中における電磁波の速度は光速に等しい。"
+        }
+      ],
+      "figures": []
+    },
+    "choiceExplanation": {
+      "sourceHash": "08f5e9888c79cb20169d19b4a026f2ec49270627d3057ba7808bcda58b5d678d",
+      "correctChoice": 1,
+      "summary": "不適切なのは①。同一周波数ではv=1/√(με)、λ=v/f。誘電率が小さくなると速度と波長は大きくなる。",
+      "choices": [
+        {
+          "number": 1,
+          "verdict": "correct",
+          "reason": "誘電率の低下で波長が短くなるという方向が逆。透磁率一定なら波長は長くなる。"
+        },
+        {
+          "number": 2,
+          "verdict": "incorrect",
+          "reason": "v=1/√(με)から誘電率増加で伝播速度が減少するので適切。"
+        },
+        {
+          "number": 3,
+          "verdict": "incorrect",
+          "reason": "透磁率増加でもv=1/√(με)が減るため、速度が小さくなる説明は適切。"
+        },
+        {
+          "number": 4,
+          "verdict": "incorrect",
+          "reason": "同一媒質で速度が同じならλ=v/fなので周波数増加で波長は短くなる。"
+        },
+        {
+          "number": 5,
+          "verdict": "incorrect",
+          "reason": "真空中の電磁波はc=1/√(μ0ε0)で進み、光速に等しい。"
+        }
+      ],
+      "sources": [
+        {
+          "title": "日本技術士会 公式問題",
+          "url": "https://www.engineer.or.jp/c_topics/010/attached/attach_10606_6.pdf#page=3"
+        },
+        {
+          "title": "日本技術士会 公式正答",
+          "url": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_5.pdf#page=6"
+        }
+      ]
+    }
+  },
+  {
+    "id": "pe-first-electrical-2024-q05",
+    "number": 5,
+    "text": "2024年度 電気電子部門 専門科目 Ⅲ－5。下の公式原問画像の当該番号に解答してください。同じページにある別の設問は対象外です。",
+    "images": [
+      "/exam-library/pe-first-electrical-2024/page-03.png"
+    ],
+    "sourcePages": [
+      3
+    ],
+    "sourceQuestionNumber": 5,
+    "correctChoice": 3,
+    "choiceCount": 5,
+    "answerAuthority": "official",
+    "originalPdf": "https://www.engineer.or.jp/c_topics/010/attached/attach_10606_6.pdf",
+    "answerPdf": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_5.pdf#page=6",
+    "explanation": "R2と(R3+R4)の並列合成をR1に直列にし、並列部分の電圧をR4へ分圧する。V=R2R4E/{R1R2+(R1+R2)(R3+R4)}となり③。",
+    "presentation": {
+      "sourceHash": "fce0ec85c27496c0d7234e27af2930c6d7d068f1c8980b3206cefdc647584218",
+      "prompt": "2024年度 電気電子部門 専門科目 Ⅲ－5。下の公式原問画像の当該番号に解答してください。同じページにある別の設問は対象外です。",
+      "choices": [
+        {
+          "number": 1,
+          "text": "①"
+        },
+        {
+          "number": 2,
+          "text": "②"
+        },
+        {
+          "number": 3,
+          "text": "③"
+        },
+        {
+          "number": 4,
+          "text": "④"
+        },
+        {
+          "number": 5,
+          "text": "⑤"
+        }
+      ],
+      "figures": [
+        {
+          "src": "/exam-library/pe-first-electrical-2024/page-03.png",
+          "width": 1073,
+          "height": 1517,
+          "alt": "2024年度 電気電子部門 専門科目 Ⅲ－5の公式原問（PDF 3ページ）。当該番号の問題文・全選択肢・図表を確認してください。"
+        }
+      ]
+    },
+    "choiceExplanation": {
+      "sourceHash": "fce0ec85c27496c0d7234e27af2930c6d7d068f1c8980b3206cefdc647584218",
+      "correctChoice": 3,
+      "summary": "R2と(R3+R4)の並列合成をR1に直列にし、並列部分の電圧をR4へ分圧する。V=R2R4E/{R1R2+(R1+R2)(R3+R4)}となり③。",
+      "choices": [
+        {
+          "number": 1,
+          "verdict": "incorrect",
+          "reason": "分母の回路合成は合うが、分子はR1R4でなくR2R4である。"
+        },
+        {
+          "number": 2,
+          "verdict": "incorrect",
+          "reason": "R1による負荷時の分圧を、単純な二つの独立した分圧の積としており、並列の負荷効果がない。"
+        },
+        {
+          "number": 3,
+          "verdict": "correct",
+          "reason": "R2∥(R3+R4)の分圧と、R3・R4間の分圧を連続して求めた式である。"
+        },
+        {
+          "number": 4,
+          "verdict": "incorrect",
+          "reason": "分母から分岐したR2を通る電流によるR1の電圧降下の影響が抜けている。"
+        },
+        {
+          "number": 5,
+          "verdict": "incorrect",
+          "reason": "R1R2+R3R4という分母では、R2とR3+R4の並列合成を正しく扱えていない。"
+        }
+      ],
+      "sources": [
+        {
+          "title": "日本技術士会 公式問題",
+          "url": "https://www.engineer.or.jp/c_topics/010/attached/attach_10606_6.pdf#page=3"
+        },
+        {
+          "title": "日本技術士会 公式正答",
+          "url": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_5.pdf#page=6"
+        }
+      ]
+    }
+  },
+  {
+    "id": "pe-first-electrical-2024-q06",
+    "number": 6,
+    "text": "2024年度 電気電子部門 専門科目 Ⅲ－6。下の公式原問画像の当該番号に解答してください。同じページにある別の設問は対象外です。",
+    "images": [
+      "/exam-library/pe-first-electrical-2024/page-04.png"
+    ],
+    "sourcePages": [
+      4
+    ],
+    "sourceQuestionNumber": 6,
+    "correctChoice": 1,
+    "choiceCount": 5,
+    "answerAuthority": "official",
+    "originalPdf": "https://www.engineer.or.jp/c_topics/010/attached/attach_10606_6.pdf",
+    "answerPdf": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_5.pdf#page=6",
+    "explanation": "負荷電力P=RL V0^2/(R0+RL)^2。微分すると最大条件RL=R0、このときPmax=V0^2/(4R0)。①。",
+    "presentation": {
+      "sourceHash": "0f876583d1bf2f24d58dcbe8dcc34c15b0acf9ef98b2ded6064aebd6b829bb28",
+      "prompt": "2024年度 電気電子部門 専門科目 Ⅲ－6。下の公式原問画像の当該番号に解答してください。同じページにある別の設問は対象外です。",
+      "choices": [
+        {
+          "number": 1,
+          "text": "①"
+        },
+        {
+          "number": 2,
+          "text": "②"
+        },
+        {
+          "number": 3,
+          "text": "③"
+        },
+        {
+          "number": 4,
+          "text": "④"
+        },
+        {
+          "number": 5,
+          "text": "⑤"
+        }
+      ],
+      "figures": [
+        {
+          "src": "/exam-library/pe-first-electrical-2024/page-04.png",
+          "width": 1073,
+          "height": 1517,
+          "alt": "2024年度 電気電子部門 専門科目 Ⅲ－6の公式原問（PDF 4ページ）。当該番号の問題文・全選択肢・図表を確認してください。"
+        }
+      ]
+    },
+    "choiceExplanation": {
+      "sourceHash": "0f876583d1bf2f24d58dcbe8dcc34c15b0acf9ef98b2ded6064aebd6b829bb28",
+      "correctChoice": 1,
+      "summary": "負荷電力P=RL V0^2/(R0+RL)^2。微分すると最大条件RL=R0、このときPmax=V0^2/(4R0)。①。",
+      "choices": [
+        {
+          "number": 1,
+          "verdict": "correct",
+          "reason": "負荷電力式、抵抗整合RL=R0、最大電力V0^2/(4R0)がすべて正しい。"
+        },
+        {
+          "number": 2,
+          "verdict": "incorrect",
+          "reason": "V0^2/(R0+RL)は内部抵抗も含む総電力で、負荷電力ではない。最大電力の係数も異なる。"
+        },
+        {
+          "number": 3,
+          "verdict": "incorrect",
+          "reason": "電力式は合うが、最大条件はRL=R0/2でなくR0であり、最大電力も異なる。"
+        },
+        {
+          "number": 4,
+          "verdict": "incorrect",
+          "reason": "負荷電力式と最大電力V0^2/(4R0)は合うが、最大となる負荷はR0/2でなくR0である。"
+        },
+        {
+          "number": 5,
+          "verdict": "incorrect",
+          "reason": "負荷電力式と最適負荷RL=R0は正しい。最大電力はV0^2/(2R0)でなくV0^2/(4R0)で、係数が誤り。"
+        }
+      ],
+      "sources": [
+        {
+          "title": "日本技術士会 公式問題",
+          "url": "https://www.engineer.or.jp/c_topics/010/attached/attach_10606_6.pdf#page=4"
+        },
+        {
+          "title": "日本技術士会 公式正答",
+          "url": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_5.pdf#page=6"
+        }
+      ]
+    }
+  },
+  {
+    "id": "pe-first-electrical-2024-q07",
+    "number": 7,
+    "text": "2024年度 電気電子部門 専門科目 Ⅲ－7。下の公式原問画像の当該番号に解答してください。同じページにある別の設問は対象外です。",
+    "images": [
+      "/exam-library/pe-first-electrical-2024/page-05.png"
+    ],
+    "sourcePages": [
+      5
+    ],
+    "sourceQuestionNumber": 7,
+    "correctChoice": 3,
+    "choiceCount": 5,
+    "answerAuthority": "official",
+    "originalPdf": "https://www.engineer.or.jp/c_topics/010/attached/attach_10606_6.pdf",
+    "answerPdf": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_5.pdf#page=6",
+    "explanation": "節点電圧をvとすると、(v−E)/R1+v/R3−I=0。したがってi=v/R3=(E+R1I)/(R1+R3)。③。",
+    "presentation": {
+      "sourceHash": "bd17bf7da0204b2d11662eb81f0af0851a0d64e0e0acf95e9dc14c1004778ca3",
+      "prompt": "2024年度 電気電子部門 専門科目 Ⅲ－7。下の公式原問画像の当該番号に解答してください。同じページにある別の設問は対象外です。",
+      "choices": [
+        {
+          "number": 1,
+          "text": "①"
+        },
+        {
+          "number": 2,
+          "text": "②"
+        },
+        {
+          "number": 3,
+          "text": "③"
+        },
+        {
+          "number": 4,
+          "text": "④"
+        },
+        {
+          "number": 5,
+          "text": "⑤"
+        }
+      ],
+      "figures": [
+        {
+          "src": "/exam-library/pe-first-electrical-2024/page-05.png",
+          "width": 1073,
+          "height": 1517,
+          "alt": "2024年度 電気電子部門 専門科目 Ⅲ－7の公式原問（PDF 5ページ）。当該番号の問題文・全選択肢・図表を確認してください。"
+        }
+      ]
+    },
+    "choiceExplanation": {
+      "sourceHash": "bd17bf7da0204b2d11662eb81f0af0851a0d64e0e0acf95e9dc14c1004778ca3",
+      "correctChoice": 3,
+      "summary": "節点電圧をvとすると、(v−E)/R1+v/R3−I=0。したがってi=v/R3=(E+R1I)/(R1+R3)。③。",
+      "choices": [
+        {
+          "number": 1,
+          "verdict": "incorrect",
+          "reason": "電流源による節点への注入分に掛かる抵抗はR3でなくR1である。"
+        },
+        {
+          "number": 2,
+          "verdict": "incorrect",
+          "reason": "分母は節点に接続するR1とR3の和であり、理想電流源に直列のR2は入らない。"
+        },
+        {
+          "number": 3,
+          "verdict": "correct",
+          "reason": "節点電流則から求まるR3を流れる下向き電流に一致する。"
+        },
+        {
+          "number": 4,
+          "verdict": "incorrect",
+          "reason": "電流源の寄与の係数と分母の抵抗が異なり、節点電流の釣合いを満たさない。"
+        },
+        {
+          "number": 5,
+          "verdict": "incorrect",
+          "reason": "理想電流源の電流IはR2の電圧で変わらないので、分母にR2を用いる式は不適切。"
+        }
+      ],
+      "sources": [
+        {
+          "title": "日本技術士会 公式問題",
+          "url": "https://www.engineer.or.jp/c_topics/010/attached/attach_10606_6.pdf#page=5"
+        },
+        {
+          "title": "日本技術士会 公式正答",
+          "url": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_5.pdf#page=6"
+        }
+      ]
+    }
+  },
+  {
+    "id": "pe-first-electrical-2024-q08",
+    "number": 8,
+    "text": "2024年度 電気電子部門 専門科目 Ⅲ－8。下の公式原問画像の当該番号に解答してください。同じページにある別の設問は対象外です。",
+    "images": [
+      "/exam-library/pe-first-electrical-2024/page-05.png"
+    ],
+    "sourcePages": [
+      5
+    ],
+    "sourceQuestionNumber": 8,
+    "correctChoice": 5,
+    "choiceCount": 5,
+    "answerAuthority": "official",
+    "originalPdf": "https://www.engineer.or.jp/c_topics/010/attached/attach_10606_6.pdf",
+    "answerPdf": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_5.pdf#page=6",
+    "explanation": "開放前はrが短絡されi(0)=E/R。開放後はr+Rとなりi(∞)=E/(r+R)、時定数L/(r+R)。両端条件を満たす⑤。",
+    "presentation": {
+      "sourceHash": "06a34beaf60b365582a1e59190c713395b16784dcc11f5288113b08d05309797",
+      "prompt": "2024年度 電気電子部門 専門科目 Ⅲ－8。下の公式原問画像の当該番号に解答してください。同じページにある別の設問は対象外です。",
+      "choices": [
+        {
+          "number": 1,
+          "text": "①"
+        },
+        {
+          "number": 2,
+          "text": "②"
+        },
+        {
+          "number": 3,
+          "text": "③"
+        },
+        {
+          "number": 4,
+          "text": "④"
+        },
+        {
+          "number": 5,
+          "text": "⑤"
+        }
+      ],
+      "figures": [
+        {
+          "src": "/exam-library/pe-first-electrical-2024/page-05.png",
+          "width": 1073,
+          "height": 1517,
+          "alt": "2024年度 電気電子部門 専門科目 Ⅲ－8の公式原問（PDF 5ページ）。当該番号の問題文・全選択肢・図表を確認してください。"
+        }
+      ]
+    },
+    "choiceExplanation": {
+      "sourceHash": "06a34beaf60b365582a1e59190c713395b16784dcc11f5288113b08d05309797",
+      "correctChoice": 5,
+      "summary": "開放前はrが短絡されi(0)=E/R。開放後はr+Rとなりi(∞)=E/(r+R)、時定数L/(r+R)。両端条件を満たす⑤。",
+      "choices": [
+        {
+          "number": 1,
+          "verdict": "incorrect",
+          "reason": "初期電流E/Rと最終電流E/(r+R)を結ぶ形になっておらず、減衰指数の時定数も違う。"
+        },
+        {
+          "number": 2,
+          "verdict": "incorrect",
+          "reason": "最終値と時定数は合うが、過渡項の前が負号なので初期電流E/Rを満たさない。過渡項は加算する。"
+        },
+        {
+          "number": 3,
+          "verdict": "incorrect",
+          "reason": "最終値をE/Rとしており、開放後にrを含む直列回路の定常電流と違う。"
+        },
+        {
+          "number": 4,
+          "verdict": "incorrect",
+          "reason": "開放後の抵抗を含む時定数になっておらず、初期・最終電流の関係も満たさない。"
+        },
+        {
+          "number": 5,
+          "verdict": "correct",
+          "reason": "i=E/(r+R)+{E/R−E/(r+R)}exp(−(r+R)t/L)となり、電流連続と定常値が両立する。"
+        }
+      ],
+      "sources": [
+        {
+          "title": "日本技術士会 公式問題",
+          "url": "https://www.engineer.or.jp/c_topics/010/attached/attach_10606_6.pdf#page=5"
+        },
+        {
+          "title": "日本技術士会 公式正答",
+          "url": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_5.pdf#page=6"
+        }
+      ]
+    }
+  },
+  {
+    "id": "pe-first-electrical-2024-q09",
+    "number": 9,
+    "text": "2024年度 電気電子部門 専門科目 Ⅲ－9。下の公式原問画像の当該番号に解答してください。同じページにある別の設問は対象外です。",
+    "images": [
+      "/exam-library/pe-first-electrical-2024/page-06.png"
+    ],
+    "sourcePages": [
+      6
+    ],
+    "sourceQuestionNumber": 9,
+    "correctChoice": 4,
+    "choiceCount": 5,
+    "answerAuthority": "official",
+    "originalPdf": "https://www.engineer.or.jp/c_topics/010/attached/attach_10606_6.pdf",
+    "answerPdf": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_5.pdf#page=6",
+    "explanation": "初期コンデンサ電圧V0から抵抗Rへ放電する。直後の電流はV0/R、電圧の傾き−V0/(RC)、時定数RCの時刻にはV0/e。④。",
+    "presentation": {
+      "sourceHash": "4787e83cb99e356b6468d6f41cffb7808c15a316e61d80c44945d3ad5c9e25ba",
+      "prompt": "2024年度 電気電子部門 専門科目 Ⅲ－9。下の公式原問画像の当該番号に解答してください。同じページにある別の設問は対象外です。",
+      "choices": [
+        {
+          "number": 1,
+          "text": "①"
+        },
+        {
+          "number": 2,
+          "text": "②"
+        },
+        {
+          "number": 3,
+          "text": "③"
+        },
+        {
+          "number": 4,
+          "text": "④"
+        },
+        {
+          "number": 5,
+          "text": "⑤"
+        }
+      ],
+      "figures": [
+        {
+          "src": "/exam-library/pe-first-electrical-2024/page-06.png",
+          "width": 1073,
+          "height": 1517,
+          "alt": "2024年度 電気電子部門 専門科目 Ⅲ－9の公式原問（PDF 6ページ）。当該番号の問題文・全選択肢・図表を確認してください。"
+        }
+      ]
+    },
+    "choiceExplanation": {
+      "sourceHash": "4787e83cb99e356b6468d6f41cffb7808c15a316e61d80c44945d3ad5c9e25ba",
+      "correctChoice": 4,
+      "summary": "初期コンデンサ電圧V0から抵抗Rへ放電する。直後の電流はV0/R、電圧の傾き−V0/(RC)、時定数RCの時刻にはV0/e。④。",
+      "choices": [
+        {
+          "number": 1,
+          "verdict": "incorrect",
+          "reason": "初期電流RV0はV0/R、初期傾きRCV0は−V0/(RC)、時定数R/CはRCへ修正が必要。電圧も放電のV0/eとなる。"
+        },
+        {
+          "number": 2,
+          "verdict": "incorrect",
+          "reason": "初期電流はRV0でなくV0/Rで、電圧の傾きは正でなく負。また時定数は1/(RC)でなくRCである。"
+        },
+        {
+          "number": 3,
+          "verdict": "incorrect",
+          "reason": "初期電流は合うが、傾き・時定数・一時定数後の電圧がRC放電の式と異なる。"
+        },
+        {
+          "number": 4,
+          "verdict": "correct",
+          "reason": "vc=V0exp(−t/(RC))をt=0とRCで評価した四つの値に一致する。"
+        },
+        {
+          "number": 5,
+          "verdict": "incorrect",
+          "reason": "放電なのに傾きが正で、電圧を充電時の(1−e^−1)V0としている。"
+        }
+      ],
+      "sources": [
+        {
+          "title": "日本技術士会 公式問題",
+          "url": "https://www.engineer.or.jp/c_topics/010/attached/attach_10606_6.pdf#page=6"
+        },
+        {
+          "title": "日本技術士会 公式正答",
+          "url": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_5.pdf#page=6"
+        }
+      ]
+    }
+  },
+  {
+    "id": "pe-first-electrical-2024-q10",
+    "number": 10,
+    "text": "2024年度 電気電子部門 専門科目 Ⅲ－10。下の公式原問画像の当該番号に解答してください。同じページにある別の設問は対象外です。",
+    "images": [
+      "/exam-library/pe-first-electrical-2024/page-07.png"
+    ],
+    "sourcePages": [
+      7
+    ],
+    "sourceQuestionNumber": 10,
+    "correctChoice": 1,
+    "choiceCount": 5,
+    "answerAuthority": "official",
+    "originalPdf": "https://www.engineer.or.jp/c_topics/010/attached/attach_10606_6.pdf",
+    "answerPdf": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_5.pdf#page=6",
+    "explanation": "二次側開放なので二次電流ゼロ。二次の誘導電圧フェーザはjωMI1で①。厳密な大きさはωM abs(I1)で、自己インダクタンスL2の電圧項は生じない。",
+    "presentation": {
+      "sourceHash": "e6c493af4869698305878c7b3d920ba1d47adfb2e858f6dc2cbd1091d94d839b",
+      "prompt": "2024年度 電気電子部門 専門科目 Ⅲ－10。下の公式原問画像の当該番号に解答してください。同じページにある別の設問は対象外です。",
+      "choices": [
+        {
+          "number": 1,
+          "text": "①"
+        },
+        {
+          "number": 2,
+          "text": "②"
+        },
+        {
+          "number": 3,
+          "text": "③"
+        },
+        {
+          "number": 4,
+          "text": "④"
+        },
+        {
+          "number": 5,
+          "text": "⑤"
+        }
+      ],
+      "figures": [
+        {
+          "src": "/exam-library/pe-first-electrical-2024/page-07.png",
+          "width": 1073,
+          "height": 1517,
+          "alt": "2024年度 電気電子部門 専門科目 Ⅲ－10の公式原問（PDF 7ページ）。当該番号の問題文・全選択肢・図表を確認してください。"
+        }
+      ]
+    },
+    "choiceExplanation": {
+      "sourceHash": "e6c493af4869698305878c7b3d920ba1d47adfb2e858f6dc2cbd1091d94d839b",
+      "correctChoice": 1,
+      "summary": "二次側開放なので二次電流ゼロ。二次の誘導電圧フェーザはjωMI1で①。厳密な大きさはωM abs(I1)で、自己インダクタンスL2の電圧項は生じない。",
+      "choices": [
+        {
+          "number": 1,
+          "verdict": "correct",
+          "reason": "相互インダクタンスによる誘導電圧jωMI1を表す。絶対値ならωM abs(I1)である。"
+        },
+        {
+          "number": 2,
+          "verdict": "incorrect",
+          "reason": "L2は二次自身の電流変化に対する係数。二次開放でその電流はゼロなのでこの式ではない。"
+        },
+        {
+          "number": 3,
+          "verdict": "incorrect",
+          "reason": "L1L2という積は相互誘導電圧の係数ではなく、単位も正しい電圧の式にならない。"
+        },
+        {
+          "number": 4,
+          "verdict": "incorrect",
+          "reason": "開放二次にL2I1という自己誘導項を差し引く必要はなく、相互誘導だけを使う。"
+        },
+        {
+          "number": 5,
+          "verdict": "incorrect",
+          "reason": "MとL1を掛けた量は誘導電圧の係数ではなく、単位も電圧にならない。"
+        }
+      ],
+      "sources": [
+        {
+          "title": "日本技術士会 公式問題",
+          "url": "https://www.engineer.or.jp/c_topics/010/attached/attach_10606_6.pdf#page=7"
+        },
+        {
+          "title": "日本技術士会 公式正答",
+          "url": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_5.pdf#page=6"
+        }
+      ]
+    }
+  },
+  {
+    "id": "pe-first-electrical-2024-q11",
+    "number": 11,
+    "text": "2024年度 電気電子部門 専門科目 Ⅲ－11。下の公式原問画像の当該番号に解答してください。同じページにある別の設問は対象外です。",
+    "images": [
+      "/exam-library/pe-first-electrical-2024/page-08.png"
+    ],
+    "sourcePages": [
+      8
+    ],
+    "sourceQuestionNumber": 11,
+    "correctChoice": 2,
+    "choiceCount": 5,
+    "answerAuthority": "official",
+    "originalPdf": "https://www.engineer.or.jp/c_topics/010/attached/attach_10606_6.pdf",
+    "answerPdf": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_5.pdf#page=6",
+    "explanation": "各条件で(V/I)^2=R^2+(2πfL)^2。2式を差し引いてR^2を消し、L=(1/(2π))√{[(V2/I2)^2−(V1/I1)^2]/(f2^2−f1^2)}。②。",
+    "presentation": {
+      "sourceHash": "a78e1639cac4c1ea03bdbb694efd0f085f5142934bdea302bc49d29919de05cc",
+      "prompt": "2024年度 電気電子部門 専門科目 Ⅲ－11。下の公式原問画像の当該番号に解答してください。同じページにある別の設問は対象外です。",
+      "choices": [
+        {
+          "number": 1,
+          "text": "①"
+        },
+        {
+          "number": 2,
+          "text": "②"
+        },
+        {
+          "number": 3,
+          "text": "③"
+        },
+        {
+          "number": 4,
+          "text": "④"
+        },
+        {
+          "number": 5,
+          "text": "⑤"
+        }
+      ],
+      "figures": [
+        {
+          "src": "/exam-library/pe-first-electrical-2024/page-08.png",
+          "width": 1073,
+          "height": 1517,
+          "alt": "2024年度 電気電子部門 専門科目 Ⅲ－11の公式原問（PDF 8ページ）。当該番号の問題文・全選択肢・図表を確認してください。"
+        }
+      ]
+    },
+    "choiceExplanation": {
+      "sourceHash": "a78e1639cac4c1ea03bdbb694efd0f085f5142934bdea302bc49d29919de05cc",
+      "correctChoice": 2,
+      "summary": "各条件で(V/I)^2=R^2+(2πfL)^2。2式を差し引いてR^2を消し、L=(1/(2π))√{[(V2/I2)^2−(V1/I1)^2]/(f2^2−f1^2)}。②。",
+      "choices": [
+        {
+          "number": 1,
+          "verdict": "incorrect",
+          "reason": "抵抗成分が打ち消される二つのインピーダンスの二乗差になっていない。"
+        },
+        {
+          "number": 2,
+          "verdict": "correct",
+          "reason": "二つの周波数でのインピーダンスの二乗差から、自己インダクタンスを解いた式である。"
+        },
+        {
+          "number": 3,
+          "verdict": "incorrect",
+          "reason": "二乗差の平方根を分子に置き、2πと周波数二乗差を適切に分母へ置く必要がある。"
+        },
+        {
+          "number": 4,
+          "verdict": "incorrect",
+          "reason": "インピーダンスV/IでなくアドミタンスI/Vを用いており、R^2を消す導出と合わない。"
+        },
+        {
+          "number": 5,
+          "verdict": "incorrect",
+          "reason": "電流/電圧の二乗差を使う形では、RL直列回路の自己インダクタンスを求められない。"
+        }
+      ],
+      "sources": [
+        {
+          "title": "日本技術士会 公式問題",
+          "url": "https://www.engineer.or.jp/c_topics/010/attached/attach_10606_6.pdf#page=8"
+        },
+        {
+          "title": "日本技術士会 公式正答",
+          "url": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_5.pdf#page=6"
+        }
+      ]
+    }
+  },
+  {
+    "id": "pe-first-electrical-2024-q12",
+    "number": 12,
+    "text": "2024年度 電気電子部門 専門科目 Ⅲ－12。下の公式原問画像の当該番号に解答してください。同じページにある別の設問は対象外です。",
+    "images": [
+      "/exam-library/pe-first-electrical-2024/page-08.png"
+    ],
+    "sourcePages": [
+      8
+    ],
+    "sourceQuestionNumber": 12,
+    "correctChoice": 1,
+    "choiceCount": 5,
+    "answerAuthority": "official",
+    "originalPdf": "https://www.engineer.or.jp/c_topics/010/attached/attach_10606_6.pdf",
+    "answerPdf": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_5.pdf#page=6",
+    "explanation": "共振条件ω0^2LC=1からC≈1.013 pF。直列共振のQ=ω0L/R=2π×10^6×0.025/1000≈157。①。",
+    "presentation": {
+      "sourceHash": "f0491c712575888093cc4ec1df2999224f046e7c3e925a3c8ba21ab5da3d07a2",
+      "prompt": "2024年度 電気電子部門 専門科目 Ⅲ－12。下の公式原問画像の当該番号に解答してください。同じページにある別の設問は対象外です。",
+      "choices": [
+        {
+          "number": 1,
+          "text": "①"
+        },
+        {
+          "number": 2,
+          "text": "②"
+        },
+        {
+          "number": 3,
+          "text": "③"
+        },
+        {
+          "number": 4,
+          "text": "④"
+        },
+        {
+          "number": 5,
+          "text": "⑤"
+        }
+      ],
+      "figures": [
+        {
+          "src": "/exam-library/pe-first-electrical-2024/page-08.png",
+          "width": 1073,
+          "height": 1517,
+          "alt": "2024年度 電気電子部門 専門科目 Ⅲ－12の公式原問（PDF 8ページ）。当該番号の問題文・全選択肢・図表を確認してください。"
+        }
+      ]
+    },
+    "choiceExplanation": {
+      "sourceHash": "f0491c712575888093cc4ec1df2999224f046e7c3e925a3c8ba21ab5da3d07a2",
+      "correctChoice": 1,
+      "summary": "共振条件ω0^2LC=1からC≈1.013 pF。直列共振のQ=ω0L/R=2π×10^6×0.025/1000≈157。①。",
+      "choices": [
+        {
+          "number": 1,
+          "verdict": "correct",
+          "reason": "C約1 pFとQ約157が、共振条件と直列回路のQの両方に一致する。"
+        },
+        {
+          "number": 2,
+          "verdict": "incorrect",
+          "reason": "容量は合うが、QはπfL/Rではなく2πfL/Rなので約157。"
+        },
+        {
+          "number": 3,
+          "verdict": "incorrect",
+          "reason": "容量は合うが、QはLやRだけでなく角周波数を含めてω0L/Rで求める。"
+        },
+        {
+          "number": 4,
+          "verdict": "incorrect",
+          "reason": "Qは合うが、C=1/(ω0^2L)より約1 pFであって40 pFではない。"
+        },
+        {
+          "number": 5,
+          "verdict": "incorrect",
+          "reason": "容量40 pFとQ25の両方が、1 MHz・25 mH・1 kΩという条件に一致しない。"
+        }
+      ],
+      "sources": [
+        {
+          "title": "日本技術士会 公式問題",
+          "url": "https://www.engineer.or.jp/c_topics/010/attached/attach_10606_6.pdf#page=8"
+        },
+        {
+          "title": "日本技術士会 公式正答",
+          "url": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_5.pdf#page=6"
+        }
+      ]
+    }
+  },
+  {
+    "id": "pe-first-electrical-2024-q13",
+    "number": 13,
+    "text": "電力系統における過渡安定性の向上対策に関する次の記述のうち,最も不適切なものはどれか。",
+    "images": [
+      "/exam-library/pe-first-electrical-2024/page-09.png"
+    ],
+    "sourcePages": [
+      9
+    ],
+    "sourceQuestionNumber": 13,
+    "correctChoice": 1,
+    "choiceCount": 5,
+    "answerAuthority": "official",
+    "originalPdf": "https://www.engineer.or.jp/c_topics/010/attached/attach_10606_6.pdf",
+    "answerPdf": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_5.pdf#page=6",
+    "explanation": "不適切なのは①。速応励磁で内部電圧を高め送電電力を増すと、機械入力と電気出力の差である加速電力を減らす。加速エネルギーを大きくするという説明は逆。",
+    "presentation": {
+      "sourceHash": "98d4ed3b12c82c446811461ea5c0250f8ddfa66152cd148aa530a458567fd914",
+      "prompt": "電力系統における過渡安定性の向上対策に関する次の記述のうち,最も不適切なものはどれか。",
+      "choices": [
+        {
+          "number": 1,
+          "text": "速応励磁方式は,送電線故障時に高速に内部誘起電圧を持ち上げて送電電力を増加させ,加速エネルギーを大きくすることで過渡安定性を向上させる対策である。"
+        },
+        {
+          "number": 2,
+          "text": "送電系統における故障発生時に制動抵抗を投入して一時的に発電機出力を消費させ,かつ故障除去後に適切に切り離すことで,過渡安定性の向上が期待できる。"
+        },
+        {
+          "number": 3,
+          "text": "高速な故障除去と再閉路は過渡安定性の向上に寄与するが,再閉路時間は短絡アークが消えるまでの時間によって制限される。"
+        },
+        {
+          "number": 4,
+          "text": "発電機の短絡比を大きくし,リアクタンスを小さくすると,過渡安定性の向上が期待できる。"
+        },
+        {
+          "number": 5,
+          "text": "高速バルブ制御は系統故障時に中間阻止弁の開閉操作と蒸気溜めを利用してタービンの出力を急速に絞り込むことにより,発電機の機械入力を減少させて過渡安定性を向上させる対策である。"
+        }
+      ],
+      "figures": []
+    },
+    "choiceExplanation": {
+      "sourceHash": "98d4ed3b12c82c446811461ea5c0250f8ddfa66152cd148aa530a458567fd914",
+      "correctChoice": 1,
+      "summary": "不適切なのは①。速応励磁で内部電圧を高め送電電力を増すと、機械入力と電気出力の差である加速電力を減らす。加速エネルギーを大きくするという説明は逆。",
+      "choices": [
+        {
+          "number": 1,
+          "verdict": "correct",
+          "reason": "安定化の狙いは加速エネルギーを減らす又は減速エネルギーを増すこと。加速を大きくするという部分が誤り。"
+        },
+        {
+          "number": 2,
+          "verdict": "incorrect",
+          "reason": "制動抵抗で一時的に電力を消費させて回転子の加速を抑える方法は過渡安定性の向上に役立つ。"
+        },
+        {
+          "number": 3,
+          "verdict": "incorrect",
+          "reason": "故障継続時間を短くすると加速が減り、再閉路にはアーク消弧時間の制約がある。"
+        },
+        {
+          "number": 4,
+          "verdict": "incorrect",
+          "reason": "短絡比を高くし等価リアクタンスを下げると、送電可能な同期化電力を高められる。"
+        },
+        {
+          "number": 5,
+          "verdict": "incorrect",
+          "reason": "系統事故時にタービンの機械入力を絞り、回転子の加速を抑える高速バルブ制御の説明は適切。"
+        }
+      ],
+      "sources": [
+        {
+          "title": "日本技術士会 公式問題",
+          "url": "https://www.engineer.or.jp/c_topics/010/attached/attach_10606_6.pdf#page=9"
+        },
+        {
+          "title": "日本技術士会 公式正答",
+          "url": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_5.pdf#page=6"
+        }
+      ]
+    }
+  },
+  {
+    "id": "pe-first-electrical-2024-q14",
+    "number": 14,
+    "text": "2024年度 電気電子部門 専門科目 Ⅲ－14。下の公式原問画像の当該番号に解答してください。同じページにある別の設問は対象外です。",
+    "images": [
+      "/exam-library/pe-first-electrical-2024/page-09.png"
+    ],
+    "sourcePages": [
+      9
+    ],
+    "sourceQuestionNumber": 14,
+    "correctChoice": 2,
+    "choiceCount": 5,
+    "answerAuthority": "official",
+    "originalPdf": "https://www.engineer.or.jp/c_topics/010/attached/attach_10606_6.pdf",
+    "answerPdf": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_5.pdf#page=6",
+    "explanation": "故障点までのインピーダンスは0.10+j0.20 p.u.で絶対値√0.05。基準電流10 MVA/(√3×6.6 kV)≈0.875 kAより、故障電流≈3.91 kAで②。",
+    "presentation": {
+      "sourceHash": "7c55f8452eb20b056326cd876929d0f7803d92906932c3c62a70b8c639152ed0",
+      "prompt": "2024年度 電気電子部門 専門科目 Ⅲ－14。下の公式原問画像の当該番号に解答してください。同じページにある別の設問は対象外です。",
+      "choices": [
+        {
+          "number": 1,
+          "text": "①"
+        },
+        {
+          "number": 2,
+          "text": "②"
+        },
+        {
+          "number": 3,
+          "text": "③"
+        },
+        {
+          "number": 4,
+          "text": "④"
+        },
+        {
+          "number": 5,
+          "text": "⑤"
+        }
+      ],
+      "figures": [
+        {
+          "src": "/exam-library/pe-first-electrical-2024/page-09.png",
+          "width": 1073,
+          "height": 1517,
+          "alt": "2024年度 電気電子部門 専門科目 Ⅲ－14の公式原問（PDF 9ページ）。当該番号の問題文・全選択肢・図表を確認してください。"
+        }
+      ]
+    },
+    "choiceExplanation": {
+      "sourceHash": "7c55f8452eb20b056326cd876929d0f7803d92906932c3c62a70b8c639152ed0",
+      "correctChoice": 2,
+      "summary": "故障点までのインピーダンスは0.10+j0.20 p.u.で絶対値√0.05。基準電流10 MVA/(√3×6.6 kV)≈0.875 kAより、故障電流≈3.91 kAで②。",
+      "choices": [
+        {
+          "number": 1,
+          "verdict": "incorrect",
+          "reason": "2.27 kAは三相基準電流と合成インピーダンスを正しく使った値ではない。"
+        },
+        {
+          "number": 2,
+          "verdict": "correct",
+          "reason": "故障電流は1/abs(0.1+j0.2)=4.472 p.u.。基準電流を掛けると約3.91 kA。"
+        },
+        {
+          "number": 3,
+          "verdict": "incorrect",
+          "reason": "4.47は故障電流の単位法の値であり、kAへ直すには基準電流約0.875 kAを掛ける。"
+        },
+        {
+          "number": 4,
+          "verdict": "incorrect",
+          "reason": "6.77 kAは相電圧と線間電圧、三相電力の基準を整合させた計算と合わない。"
+        },
+        {
+          "number": 5,
+          "verdict": "incorrect",
+          "reason": "19.5 kAは与えられた直列インピーダンスと基準電力による短絡電流より大きすぎる。"
+        }
+      ],
+      "sources": [
+        {
+          "title": "日本技術士会 公式問題",
+          "url": "https://www.engineer.or.jp/c_topics/010/attached/attach_10606_6.pdf#page=9"
+        },
+        {
+          "title": "日本技術士会 公式正答",
+          "url": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_5.pdf#page=6"
+        }
+      ]
+    }
+  },
+  {
+    "id": "pe-first-electrical-2024-q15",
+    "number": 15,
+    "text": "2024年度 電気電子部門 専門科目 Ⅲ－15。下の公式原問画像の当該番号に解答してください。同じページにある別の設問は対象外です。",
+    "images": [
+      "/exam-library/pe-first-electrical-2024/page-10.png"
+    ],
+    "sourcePages": [
+      10
+    ],
+    "sourceQuestionNumber": 15,
+    "correctChoice": 3,
+    "choiceCount": 5,
+    "answerAuthority": "official",
+    "originalPdf": "https://www.engineer.or.jp/c_topics/010/attached/attach_10606_6.pdf",
+    "answerPdf": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_5.pdf#page=6",
+    "explanation": "一相電圧220/√3 V、負荷枝Z=0.5+0.07/0.02+j3=4+j3 ΩよりI2≈25.4 A。機械出力3I2^2(0.07/0.02)(1−0.02)≈6.64 kWで③。",
+    "presentation": {
+      "sourceHash": "0251a4bfa3b6abcea7e513f1e3fe40e175eb5d5a6dff6850a5e56bbbb7f169c7",
+      "prompt": "2024年度 電気電子部門 専門科目 Ⅲ－15。下の公式原問画像の当該番号に解答してください。同じページにある別の設問は対象外です。",
+      "choices": [
+        {
+          "number": 1,
+          "text": "①"
+        },
+        {
+          "number": 2,
+          "text": "②"
+        },
+        {
+          "number": 3,
+          "text": "③"
+        },
+        {
+          "number": 4,
+          "text": "④"
+        },
+        {
+          "number": 5,
+          "text": "⑤"
+        }
+      ],
+      "figures": [
+        {
+          "src": "/exam-library/pe-first-electrical-2024/page-10.png",
+          "width": 1073,
+          "height": 1517,
+          "alt": "2024年度 電気電子部門 専門科目 Ⅲ－15の公式原問（PDF 10ページ）。当該番号の問題文・全選択肢・図表を確認してください。"
+        }
+      ]
+    },
+    "choiceExplanation": {
+      "sourceHash": "0251a4bfa3b6abcea7e513f1e3fe40e175eb5d5a6dff6850a5e56bbbb7f169c7",
+      "correctChoice": 3,
+      "summary": "一相電圧220/√3 V、負荷枝Z=0.5+0.07/0.02+j3=4+j3 ΩよりI2≈25.4 A。機械出力3I2^2(0.07/0.02)(1−0.02)≈6.64 kWで③。",
+      "choices": [
+        {
+          "number": 1,
+          "verdict": "incorrect",
+          "reason": "約0.14 kWは二次銅損に相当する規模であり、機械出力そのものではない。"
+        },
+        {
+          "number": 2,
+          "verdict": "incorrect",
+          "reason": "約2.21 kWは一相当たりの機械出力。三相全体ではその3倍にする。"
+        },
+        {
+          "number": 3,
+          "verdict": "correct",
+          "reason": "三相空隙電力3I2^2(r2/s)に1−sを掛けた機械出力が約6.64 kW。"
+        },
+        {
+          "number": 4,
+          "verdict": "incorrect",
+          "reason": "約6.78 kWは空隙電力に近い値で、二次銅損を引いて機械出力へ直す必要がある。"
+        },
+        {
+          "number": 5,
+          "verdict": "incorrect",
+          "reason": "8.18 kWは線間電圧・相電圧や枝のインピーダンスを正しく使った機械出力と異なる。"
+        }
+      ],
+      "sources": [
+        {
+          "title": "日本技術士会 公式問題",
+          "url": "https://www.engineer.or.jp/c_topics/010/attached/attach_10606_6.pdf#page=10"
+        },
+        {
+          "title": "日本技術士会 公式正答",
+          "url": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_5.pdf#page=6"
+        }
+      ]
+    }
+  },
+  {
+    "id": "pe-first-electrical-2024-q16",
+    "number": 16,
+    "text": "2024年度 電気電子部門 専門科目 Ⅲ－16。下の公式原問画像の当該番号に解答してください。同じページにある別の設問は対象外です。",
+    "images": [
+      "/exam-library/pe-first-electrical-2024/page-11.png"
+    ],
+    "sourcePages": [
+      11
+    ],
+    "sourceQuestionNumber": 16,
+    "correctChoice": 3,
+    "choiceCount": 5,
+    "answerAuthority": "official",
+    "originalPdf": "https://www.engineer.or.jp/c_topics/010/attached/attach_10606_6.pdf",
+    "answerPdf": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_5.pdf#page=6",
+    "explanation": "Y接地−ΔはΔ内に零相循環電流が流れ、一次の零相インピーダンスはjXT+3RN。Y接地−Y非接地では零相電流の戻り道がなく無限大。③。",
+    "presentation": {
+      "sourceHash": "f07614281a3f398a7228fdf296733994ab583bd98bb936106a716f645e8a44bd",
+      "prompt": "2024年度 電気電子部門 専門科目 Ⅲ－16。下の公式原問画像の当該番号に解答してください。同じページにある別の設問は対象外です。",
+      "choices": [
+        {
+          "number": 1,
+          "text": "①"
+        },
+        {
+          "number": 2,
+          "text": "②"
+        },
+        {
+          "number": 3,
+          "text": "③"
+        },
+        {
+          "number": 4,
+          "text": "④"
+        },
+        {
+          "number": 5,
+          "text": "⑤"
+        }
+      ],
+      "figures": [
+        {
+          "src": "/exam-library/pe-first-electrical-2024/page-11.png",
+          "width": 1073,
+          "height": 1517,
+          "alt": "2024年度 電気電子部門 専門科目 Ⅲ－16の公式原問（PDF 11ページ）。当該番号の問題文・全選択肢・図表を確認してください。"
+        }
+      ]
+    },
+    "choiceExplanation": {
+      "sourceHash": "f07614281a3f398a7228fdf296733994ab583bd98bb936106a716f645e8a44bd",
+      "correctChoice": 3,
+      "summary": "Y接地−ΔはΔ内に零相循環電流が流れ、一次の零相インピーダンスはjXT+3RN。Y接地−Y非接地では零相電流の戻り道がなく無限大。③。",
+      "choices": [
+        {
+          "number": 1,
+          "verdict": "incorrect",
+          "reason": "接地抵抗3RNの項がなく、非接地Y側に零相電流が流れない性質も表していない。"
+        },
+        {
+          "number": 2,
+          "verdict": "incorrect",
+          "reason": "Aの式にある√3は不要で、正しくはjXT+3RN。またBは非接地Yのため零相インピーダンスは無限大。"
+        },
+        {
+          "number": 3,
+          "verdict": "correct",
+          "reason": "接地抵抗は中性点に3倍の零相電流が流れるので3RN、B側は零相経路がなく無限大。"
+        },
+        {
+          "number": 4,
+          "verdict": "incorrect",
+          "reason": "AはΔの閉回路で零相電流を流せるため、一次側の零相インピーダンスを無限大とはしない。"
+        },
+        {
+          "number": 5,
+          "verdict": "incorrect",
+          "reason": "Bは合うが、Aの一次中性点接地抵抗による3RNを加える必要がある。"
+        }
+      ],
+      "sources": [
+        {
+          "title": "日本技術士会 公式問題",
+          "url": "https://www.engineer.or.jp/c_topics/010/attached/attach_10606_6.pdf#page=11"
+        },
+        {
+          "title": "日本技術士会 公式正答",
+          "url": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_5.pdf#page=6"
+        }
+      ]
+    }
+  },
+  {
+    "id": "pe-first-electrical-2024-q17",
+    "number": 17,
+    "text": "架空送電線路の設備に関する次の記述のうち,最も不適切なものはどれか。",
+    "images": [
+      "/exam-library/pe-first-electrical-2024/page-12.png"
+    ],
+    "sourcePages": [
+      12
+    ],
+    "sourceQuestionNumber": 17,
+    "correctChoice": 4,
+    "choiceCount": 5,
+    "answerAuthority": "official",
+    "originalPdf": "https://www.engineer.or.jp/c_topics/010/attached/attach_10606_6.pdf",
+    "answerPdf": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_5.pdf#page=6",
+    "explanation": "不適切なのは④。アーマロッドは支持点付近の応力集中や摩耗を緩和する保護材。振動エネルギーを吸収する主要装置はダンパである。",
+    "presentation": {
+      "sourceHash": "3fe1f5d8036c0a673ee7fa8306918d81be2a02cba28b2bcf178e919c08510ddf",
+      "prompt": "架空送電線路の設備に関する次の記述のうち,最も不適切なものはどれか。",
+      "choices": [
+        {
+          "number": 1,
+          "text": "架空地線は電力線への直撃雷を防止するために設けられている。"
+        },
+        {
+          "number": 2,
+          "text": "スペーサは,複数条の電線で多導体を構成するために用いられる。"
+        },
+        {
+          "number": 3,
+          "text": "がいしは絶縁を維持しながら電線を鉄塔に支持するものであり,沿岸地域では塩害に注意する必要がある。"
+        },
+        {
+          "number": 4,
+          "text": "アーマロッドは振動エネルギーを吸収することで微風振動による電線の疲労を防止するものである。"
+        },
+        {
+          "number": 5,
+          "text": "鋼心アルミより線は機械的強度の高い鋼線の周囲に,導電率の高い導体をより合わせた構成となっている。"
+        }
+      ],
+      "figures": []
+    },
+    "choiceExplanation": {
+      "sourceHash": "3fe1f5d8036c0a673ee7fa8306918d81be2a02cba28b2bcf178e919c08510ddf",
+      "correctChoice": 4,
+      "summary": "不適切なのは④。アーマロッドは支持点付近の応力集中や摩耗を緩和する保護材。振動エネルギーを吸収する主要装置はダンパである。",
+      "choices": [
+        {
+          "number": 1,
+          "verdict": "incorrect",
+          "reason": "架空地線は電力線より上に配置し、直撃雷から電力線を保護する役割を持つ。"
+        },
+        {
+          "number": 2,
+          "verdict": "incorrect",
+          "reason": "スペーサは多導体を構成する素導体同士の間隔を保持するために用いる。"
+        },
+        {
+          "number": 3,
+          "verdict": "incorrect",
+          "reason": "がいしは支持と絶縁を両立し、沿岸では塩分付着による汚損に注意が必要。"
+        },
+        {
+          "number": 4,
+          "verdict": "correct",
+          "reason": "振動エネルギー吸収を主機能とするダンパと、支持点を保護するアーマロッドを取り違えている。"
+        },
+        {
+          "number": 5,
+          "verdict": "incorrect",
+          "reason": "鋼心が機械的強度、外側のアルミが主な導電性を受け持つACSRの構成に合う。"
+        }
+      ],
+      "sources": [
+        {
+          "title": "日本技術士会 公式問題",
+          "url": "https://www.engineer.or.jp/c_topics/010/attached/attach_10606_6.pdf#page=12"
+        },
+        {
+          "title": "日本技術士会 公式正答",
+          "url": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_5.pdf#page=6"
+        }
+      ]
+    }
+  },
+  {
+    "id": "pe-first-electrical-2024-q18",
+    "number": 18,
+    "text": "2024年度 電気電子部門 専門科目 Ⅲ－18。下の公式原問画像の当該番号に解答してください。同じページにある別の設問は対象外です。",
+    "images": [
+      "/exam-library/pe-first-electrical-2024/page-12.png"
+    ],
+    "sourcePages": [
+      12
+    ],
+    "sourceQuestionNumber": 18,
+    "correctChoice": 4,
+    "choiceCount": 5,
+    "answerAuthority": "official",
+    "originalPdf": "https://www.engineer.or.jp/c_topics/010/attached/attach_10606_6.pdf",
+    "answerPdf": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_5.pdf#page=6",
+    "explanation": "COPは成績係数。暖房では有効加熱熱量/電気入力で、外部からくみ上げる熱も加わるので通常1を超える。④。",
+    "presentation": {
+      "sourceHash": "c177c18888b0c0a631072c5ee3e1792b7e00b69aef2717d8328a2bb3b414affc",
+      "prompt": "2024年度 電気電子部門 専門科目 Ⅲ－18。下の公式原問画像の当該番号に解答してください。同じページにある別の設問は対象外です。",
+      "choices": [
+        {
+          "number": 1,
+          "text": "①"
+        },
+        {
+          "number": 2,
+          "text": "②"
+        },
+        {
+          "number": 3,
+          "text": "③"
+        },
+        {
+          "number": 4,
+          "text": "④"
+        },
+        {
+          "number": 5,
+          "text": "⑤"
+        }
+      ],
+      "figures": [
+        {
+          "src": "/exam-library/pe-first-electrical-2024/page-12.png",
+          "width": 1073,
+          "height": 1517,
+          "alt": "2024年度 電気電子部門 専門科目 Ⅲ－18の公式原問（PDF 12ページ）。当該番号の問題文・全選択肢・図表を確認してください。"
+        }
+      ]
+    },
+    "choiceExplanation": {
+      "sourceHash": "c177c18888b0c0a631072c5ee3e1792b7e00b69aef2717d8328a2bb3b414affc",
+      "correctChoice": 4,
+      "summary": "COPは成績係数。暖房では有効加熱熱量/電気入力で、外部からくみ上げる熱も加わるので通常1を超える。④。",
+      "choices": [
+        {
+          "number": 1,
+          "verdict": "incorrect",
+          "reason": "名称は増幅係数でなく成績係数。分子分母と1に対する大小も逆である。"
+        },
+        {
+          "number": 2,
+          "verdict": "incorrect",
+          "reason": "比と大小は合うが、COPの名称は増幅係数でなく成績係数である。"
+        },
+        {
+          "number": 3,
+          "verdict": "incorrect",
+          "reason": "暖房COPは電気入力/加熱熱量でなく、その逆。通常1を上回る。"
+        },
+        {
+          "number": 4,
+          "verdict": "correct",
+          "reason": "成績係数・有効加熱熱量・電気入力・上回っての組合せが暖房COPの定義に一致する。"
+        },
+        {
+          "number": 5,
+          "verdict": "incorrect",
+          "reason": "名称と大小は合うが、加熱熱量を電気入力で割るため分子分母が逆。"
+        }
+      ],
+      "sources": [
+        {
+          "title": "日本技術士会 公式問題",
+          "url": "https://www.engineer.or.jp/c_topics/010/attached/attach_10606_6.pdf#page=12"
+        },
+        {
+          "title": "日本技術士会 公式正答",
+          "url": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_5.pdf#page=6"
+        }
+      ]
+    }
+  },
+  {
+    "id": "pe-first-electrical-2024-q19",
+    "number": 19,
+    "text": "ある三相誘導電動機がトルク10[Nm]、回転数1500[min^−1]で運転している。このときの電動機の出力として、最も適切なものはどれか。",
+    "images": [
+      "/exam-library/pe-first-electrical-2024/page-12.png"
+    ],
+    "sourcePages": [
+      12
+    ],
+    "sourceQuestionNumber": 19,
+    "correctChoice": 2,
+    "choiceCount": 5,
+    "answerAuthority": "official",
+    "originalPdf": "https://www.engineer.or.jp/c_topics/010/attached/attach_10606_6.pdf",
+    "answerPdf": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_5.pdf#page=6",
+    "explanation": "機械出力はP=Tω。1500 min^−1を角速度へ直すと2π×1500/60=50π rad/s。10×50π=500π Wなので②。",
+    "presentation": {
+      "sourceHash": "c9016dc8ba3f352027d45efad3c9427fe6db2f201eb3afc3c9a5e235124f3011",
+      "prompt": "ある三相誘導電動機がトルク10[Nm]、回転数1500[min^−1]で運転している。このときの電動機の出力として、最も適切なものはどれか。",
+      "choices": [
+        {
+          "number": 1,
+          "text": "400π W"
+        },
+        {
+          "number": 2,
+          "text": "500π W"
+        },
+        {
+          "number": 3,
+          "text": "600π W"
+        },
+        {
+          "number": 4,
+          "text": "700π W"
+        },
+        {
+          "number": 5,
+          "text": "800π W"
+        }
+      ],
+      "figures": []
+    },
+    "choiceExplanation": {
+      "sourceHash": "c9016dc8ba3f352027d45efad3c9427fe6db2f201eb3afc3c9a5e235124f3011",
+      "correctChoice": 2,
+      "summary": "機械出力はP=Tω。1500 min^−1を角速度へ直すと2π×1500/60=50π rad/s。10×50π=500π Wなので②。",
+      "choices": [
+        {
+          "number": 1,
+          "verdict": "incorrect",
+          "reason": "400π Wではない。角速度は回転数を60で割って2πを掛けた50π rad/sである。"
+        },
+        {
+          "number": 2,
+          "verdict": "correct",
+          "reason": "トルク10 N mに角速度50π rad/sを掛けた500π Wが正しい。"
+        },
+        {
+          "number": 3,
+          "verdict": "incorrect",
+          "reason": "600π Wは1500 min^−1を秒単位の角速度へ変換した結果と合わない。"
+        },
+        {
+          "number": 4,
+          "verdict": "incorrect",
+          "reason": "700π Wではなく、1分を60秒に換算して回転数25 s^−1を用いる。"
+        },
+        {
+          "number": 5,
+          "verdict": "incorrect",
+          "reason": "800π Wは与えられたトルクと回転速度の積による出力より大きい。"
+        }
+      ],
+      "sources": [
+        {
+          "title": "日本技術士会 公式問題",
+          "url": "https://www.engineer.or.jp/c_topics/010/attached/attach_10606_6.pdf#page=12"
+        },
+        {
+          "title": "日本技術士会 公式正答",
+          "url": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_5.pdf#page=6"
+        }
+      ]
+    }
+  },
+  {
+    "id": "pe-first-electrical-2024-q20",
+    "number": 20,
+    "text": "2024年度 電気電子部門 専門科目 Ⅲ－20。下の公式原問画像の当該番号に解答してください。同じページにある別の設問は対象外です。",
+    "images": [
+      "/exam-library/pe-first-electrical-2024/page-13.png"
+    ],
+    "sourcePages": [
+      13
+    ],
+    "sourceQuestionNumber": 20,
+    "correctChoice": 2,
+    "choiceCount": 5,
+    "answerAuthority": "official",
+    "originalPdf": "https://www.engineer.or.jp/c_topics/010/attached/attach_10606_6.pdf",
+    "answerPdf": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_5.pdf#page=6",
+    "explanation": "定常導通損失はIGBTとダイオードの各電圧×電流×導通率の和。1.75×1000×0.7+1.9×1000×0.3=1795 Wで②。",
+    "presentation": {
+      "sourceHash": "967eef508e0ee1fae9b3b7ad8c0552d4662d4c371be21e999a69c7fb4ca1463f",
+      "prompt": "2024年度 電気電子部門 専門科目 Ⅲ－20。下の公式原問画像の当該番号に解答してください。同じページにある別の設問は対象外です。",
+      "choices": [
+        {
+          "number": 1,
+          "text": "①"
+        },
+        {
+          "number": 2,
+          "text": "②"
+        },
+        {
+          "number": 3,
+          "text": "③"
+        },
+        {
+          "number": 4,
+          "text": "④"
+        },
+        {
+          "number": 5,
+          "text": "⑤"
+        }
+      ],
+      "figures": [
+        {
+          "src": "/exam-library/pe-first-electrical-2024/page-13.png",
+          "width": 1073,
+          "height": 1517,
+          "alt": "2024年度 電気電子部門 専門科目 Ⅲ－20の公式原問（PDF 13ページ）。当該番号の問題文・全選択肢・図表を確認してください。"
+        }
+      ]
+    },
+    "choiceExplanation": {
+      "sourceHash": "967eef508e0ee1fae9b3b7ad8c0552d4662d4c371be21e999a69c7fb4ca1463f",
+      "correctChoice": 2,
+      "summary": "定常導通損失はIGBTとダイオードの各電圧×電流×導通率の和。1.75×1000×0.7+1.9×1000×0.3=1795 Wで②。",
+      "choices": [
+        {
+          "number": 1,
+          "verdict": "incorrect",
+          "reason": "1225 WはIGBTだけの導通損失。ダイオードの570 Wも足す必要がある。"
+        },
+        {
+          "number": 2,
+          "verdict": "correct",
+          "reason": "IGBT1225 Wとダイオード570 Wの平均導通損失の合計に一致する。"
+        },
+        {
+          "number": 3,
+          "verdict": "incorrect",
+          "reason": "1900 Wはダイオードが全時間導通する場合の値で、各素子のデューティ比を反映していない。"
+        },
+        {
+          "number": 4,
+          "verdict": "incorrect",
+          "reason": "3125 WはIGBT分にダイオードの全時間分を加えるなどした過大な値である。"
+        },
+        {
+          "number": 5,
+          "verdict": "incorrect",
+          "reason": "3650 Wは両素子を全時間導通として足した値。実際には0.7と0.3で重み付けする。"
+        }
+      ],
+      "sources": [
+        {
+          "title": "日本技術士会 公式問題",
+          "url": "https://www.engineer.or.jp/c_topics/010/attached/attach_10606_6.pdf#page=13"
+        },
+        {
+          "title": "日本技術士会 公式正答",
+          "url": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_5.pdf#page=6"
+        }
+      ]
+    }
+  },
+  {
+    "id": "pe-first-electrical-2024-q21",
+    "number": 21,
+    "text": "交流単相電力の測定において、負荷インピーダンスZがZ=4+j3[Ω]のとき、交流単相電力の皮相電力として、最も適切な値はどれか。ただし、このときの交流電圧の実効値は100[V]とする。",
+    "images": [
+      "/exam-library/pe-first-electrical-2024/page-13.png"
+    ],
+    "sourcePages": [
+      13
+    ],
+    "sourceQuestionNumber": 21,
+    "correctChoice": 4,
+    "choiceCount": 5,
+    "answerAuthority": "official",
+    "originalPdf": "https://www.engineer.or.jp/c_topics/010/attached/attach_10606_6.pdf",
+    "answerPdf": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_5.pdf#page=6",
+    "explanation": "負荷インピーダンスの大きさは√(4^2+3^2)=5 Ω。電流100/5=20 A、皮相電力S=VI=2000 VA=2 kVAなので④。",
+    "presentation": {
+      "sourceHash": "24ba33a2f2e266c1bdab51184a18d40ad8760fb52349bf9685ca42040d744e45",
+      "prompt": "交流単相電力の測定において、負荷インピーダンスZがZ=4+j3[Ω]のとき、交流単相電力の皮相電力として、最も適切な値はどれか。ただし、このときの交流電圧の実効値は100[V]とする。",
+      "choices": [
+        {
+          "number": 1,
+          "text": "0.5 kVA"
+        },
+        {
+          "number": 2,
+          "text": "1 kVA"
+        },
+        {
+          "number": 3,
+          "text": "1.4 kVA"
+        },
+        {
+          "number": 4,
+          "text": "2 kVA"
+        },
+        {
+          "number": 5,
+          "text": "4 kVA"
+        }
+      ],
+      "figures": []
+    },
+    "choiceExplanation": {
+      "sourceHash": "24ba33a2f2e266c1bdab51184a18d40ad8760fb52349bf9685ca42040d744e45",
+      "correctChoice": 4,
+      "summary": "負荷インピーダンスの大きさは√(4^2+3^2)=5 Ω。電流100/5=20 A、皮相電力S=VI=2000 VA=2 kVAなので④。",
+      "choices": [
+        {
+          "number": 1,
+          "verdict": "incorrect",
+          "reason": "0.5 kVAは電圧100 Vと負荷電流20 Aの積に一致しない。"
+        },
+        {
+          "number": 2,
+          "verdict": "incorrect",
+          "reason": "1 kVAではない。電流実効値は100/5=20 Aとなる。"
+        },
+        {
+          "number": 3,
+          "verdict": "incorrect",
+          "reason": "1.4 kVAは実効値をピーク値へ誤って変換するなどした値であり、皮相電力ではない。"
+        },
+        {
+          "number": 4,
+          "verdict": "correct",
+          "reason": "皮相電力は電圧と電流の実効値の積100×20=2000 VAである。"
+        },
+        {
+          "number": 5,
+          "verdict": "incorrect",
+          "reason": "4 kVAは正しい皮相電力の2倍。与えられた電圧はすでに実効値である。"
+        }
+      ],
+      "sources": [
+        {
+          "title": "日本技術士会 公式問題",
+          "url": "https://www.engineer.or.jp/c_topics/010/attached/attach_10606_6.pdf#page=13"
+        },
+        {
+          "title": "日本技術士会 公式正答",
+          "url": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_5.pdf#page=6"
+        }
+      ]
+    }
+  },
+  {
+    "id": "pe-first-electrical-2024-q22",
+    "number": 22,
+    "text": "PID（Proportional−Integral−Derivative）制御系に関する次の記述のうち、最も不適切なものはどれか。",
+    "images": [
+      "/exam-library/pe-first-electrical-2024/page-14.png"
+    ],
+    "sourcePages": [
+      14
+    ],
+    "sourceQuestionNumber": 22,
+    "correctChoice": 5,
+    "choiceCount": 5,
+    "answerAuthority": "official",
+    "originalPdf": "https://www.engineer.or.jp/c_topics/010/attached/attach_10606_6.pdf",
+    "answerPdf": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_5.pdf#page=6",
+    "explanation": "不適切なのは⑤。積分動作は偏差を累積して補償し、安定した適切な系では定常偏差を減らし、ステップ入力に対してゼロにできる。",
+    "presentation": {
+      "sourceHash": "3cdd0379e665c7c6c6370102dac6046b6686356f56d6b113107a22bb7d5d074d",
+      "prompt": "PID（Proportional−Integral−Derivative）制御系に関する次の記述のうち、最も不適切なものはどれか。",
+      "choices": [
+        {
+          "number": 1,
+          "text": "PID補償をすることにより速応性を改善できる。"
+        },
+        {
+          "number": 2,
+          "text": "比例ゲインを大きくすると定常偏差は小さくなる。"
+        },
+        {
+          "number": 3,
+          "text": "比例ゲインを大きくすると系の応答は振動的になる。"
+        },
+        {
+          "number": 4,
+          "text": "制御系にその微分値を加えて制御すると、速応性を高め、減衰性を改善できる。"
+        },
+        {
+          "number": 5,
+          "text": "積分制御を行うと定常偏差は大きくなる。"
+        }
+      ],
+      "figures": []
+    },
+    "choiceExplanation": {
+      "sourceHash": "3cdd0379e665c7c6c6370102dac6046b6686356f56d6b113107a22bb7d5d074d",
+      "correctChoice": 5,
+      "summary": "不適切なのは⑤。積分動作は偏差を累積して補償し、安定した適切な系では定常偏差を減らし、ステップ入力に対してゼロにできる。",
+      "choices": [
+        {
+          "number": 1,
+          "verdict": "incorrect",
+          "reason": "PIDの各動作を適切に調整することで応答速度を改善できる。"
+        },
+        {
+          "number": 2,
+          "verdict": "incorrect",
+          "reason": "比例ゲインを高めると一般に定常偏差を減らす効果がある。"
+        },
+        {
+          "number": 3,
+          "verdict": "incorrect",
+          "reason": "比例ゲインの過大化は減衰を弱め、振動的応答や不安定化を招くことがある。"
+        },
+        {
+          "number": 4,
+          "verdict": "incorrect",
+          "reason": "微分動作は変化傾向に応じて補償し、適切な調整では応答・減衰の改善に役立つ。"
+        },
+        {
+          "number": 5,
+          "verdict": "correct",
+          "reason": "積分制御は通常定常偏差を減らす目的で用いるため、大きくなるという説明は逆。"
+        }
+      ],
+      "sources": [
+        {
+          "title": "日本技術士会 公式問題",
+          "url": "https://www.engineer.or.jp/c_topics/010/attached/attach_10606_6.pdf#page=14"
+        },
+        {
+          "title": "日本技術士会 公式正答",
+          "url": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_5.pdf#page=6"
+        }
+      ]
+    }
+  },
+  {
+    "id": "pe-first-electrical-2024-q23",
+    "number": 23,
+    "text": "理想オペアンプの特性として、最も適切なものはどれか。",
+    "images": [
+      "/exam-library/pe-first-electrical-2024/page-14.png"
+    ],
+    "sourcePages": [
+      14
+    ],
+    "sourceQuestionNumber": 23,
+    "correctChoice": 1,
+    "choiceCount": 5,
+    "answerAuthority": "official",
+    "originalPdf": "https://www.engineer.or.jp/c_topics/010/attached/attach_10606_6.pdf",
+    "answerPdf": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_5.pdf#page=6",
+    "explanation": "理想オペアンプは差動利得無限大、入力インピーダンス無限大、出力インピーダンスゼロ、帯域無限大、同相利得ゼロ。①。",
+    "presentation": {
+      "sourceHash": "3a3bd9d2cdd713a19a4013b59573fc3176f096e0c612efa299d525934a997e90",
+      "prompt": "理想オペアンプの特性として、最も適切なものはどれか。",
+      "choices": [
+        {
+          "number": 1,
+          "text": "差動電圧利得が無限大である。"
+        },
+        {
+          "number": 2,
+          "text": "周波数帯域幅が0である。"
+        },
+        {
+          "number": 3,
+          "text": "入力インピーダンスが0である。"
+        },
+        {
+          "number": 4,
+          "text": "出力インピーダンスが無限大である。"
+        },
+        {
+          "number": 5,
+          "text": "同相電圧利得が無限大である。"
+        }
+      ],
+      "figures": []
+    },
+    "choiceExplanation": {
+      "sourceHash": "3a3bd9d2cdd713a19a4013b59573fc3176f096e0c612efa299d525934a997e90",
+      "correctChoice": 1,
+      "summary": "理想オペアンプは差動利得無限大、入力インピーダンス無限大、出力インピーダンスゼロ、帯域無限大、同相利得ゼロ。①。",
+      "choices": [
+        {
+          "number": 1,
+          "verdict": "correct",
+          "reason": "差動入力を無限大の利得で増幅するという理想オペアンプの仮定である。"
+        },
+        {
+          "number": 2,
+          "verdict": "incorrect",
+          "reason": "理想の周波数帯域はゼロでなく無限大であり、あらゆる周波数で理想動作を仮定する。"
+        },
+        {
+          "number": 3,
+          "verdict": "incorrect",
+          "reason": "入力電流ゼロを仮定するので、入力インピーダンスはゼロでなく無限大。"
+        },
+        {
+          "number": 4,
+          "verdict": "incorrect",
+          "reason": "理想出力は負荷に左右されない電圧源なので、出力インピーダンスは無限大でなくゼロ。"
+        },
+        {
+          "number": 5,
+          "verdict": "incorrect",
+          "reason": "同相入力成分を増幅しないので、理想的な同相電圧利得はゼロである。"
+        }
+      ],
+      "sources": [
+        {
+          "title": "日本技術士会 公式問題",
+          "url": "https://www.engineer.or.jp/c_topics/010/attached/attach_10606_6.pdf#page=14"
+        },
+        {
+          "title": "日本技術士会 公式正答",
+          "url": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_5.pdf#page=6"
+        }
+      ]
+    }
+  },
+  {
+    "id": "pe-first-electrical-2024-q24",
+    "number": 24,
+    "text": "2024年度 電気電子部門 専門科目 Ⅲ－24。下の公式原問画像の当該番号に解答してください。同じページにある別の設問は対象外です。",
+    "images": [
+      "/exam-library/pe-first-electrical-2024/page-15.png"
+    ],
+    "sourcePages": [
+      15
+    ],
+    "sourceQuestionNumber": 24,
+    "correctChoice": 2,
+    "choiceCount": 5,
+    "answerAuthority": "official",
+    "originalPdf": "https://www.engineer.or.jp/c_topics/010/attached/attach_10606_6.pdf",
+    "answerPdf": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_5.pdf#page=6",
+    "explanation": "反転入力が仮想接地で、抵抗電流vi/Rがそのままダイオードを流れる。vi/R=I0 exp(qvd/(kT))、vd=−voよりvo=−(kT/q)ln(vi/(RI0))。②。",
+    "presentation": {
+      "sourceHash": "0e40adb897b625e152fdedcb01101da4efdf658e26f9cd7ba4b80aa37da33097",
+      "prompt": "2024年度 電気電子部門 専門科目 Ⅲ－24。下の公式原問画像の当該番号に解答してください。同じページにある別の設問は対象外です。",
+      "choices": [
+        {
+          "number": 1,
+          "text": "①"
+        },
+        {
+          "number": 2,
+          "text": "②"
+        },
+        {
+          "number": 3,
+          "text": "③"
+        },
+        {
+          "number": 4,
+          "text": "④"
+        },
+        {
+          "number": 5,
+          "text": "⑤"
+        }
+      ],
+      "figures": [
+        {
+          "src": "/exam-library/pe-first-electrical-2024/page-15.png",
+          "width": 1073,
+          "height": 1517,
+          "alt": "2024年度 電気電子部門 専門科目 Ⅲ－24の公式原問（PDF 15ページ）。当該番号の問題文・全選択肢・図表を確認してください。"
+        }
+      ]
+    },
+    "choiceExplanation": {
+      "sourceHash": "0e40adb897b625e152fdedcb01101da4efdf658e26f9cd7ba4b80aa37da33097",
+      "correctChoice": 2,
+      "summary": "反転入力が仮想接地で、抵抗電流vi/Rがそのままダイオードを流れる。vi/R=I0 exp(qvd/(kT))、vd=−voよりvo=−(kT/q)ln(vi/(RI0))。②。",
+      "choices": [
+        {
+          "number": 1,
+          "verdict": "incorrect",
+          "reason": "対数の外にviが掛かっており、ダイオード式を電圧について解いた形と異なる。"
+        },
+        {
+          "number": 2,
+          "verdict": "correct",
+          "reason": "抵抗電流とダイオード電流の一致を自然対数で解き、出力の反転符号を付けた式である。"
+        },
+        {
+          "number": 3,
+          "verdict": "incorrect",
+          "reason": "電圧の次元を持つ係数はkT/qであり、電気素量qを対数内へ入れる式ではない。"
+        },
+        {
+          "number": 4,
+          "verdict": "incorrect",
+          "reason": "log(RI0/vi)=−log(vi/(RI0))なので、さらに負号を付けると出力の符号が逆になる。"
+        },
+        {
+          "number": 5,
+          "verdict": "incorrect",
+          "reason": "係数から電気素量qによる割算が抜け、対数の引数にも不要なqが入っている。"
+        }
+      ],
+      "sources": [
+        {
+          "title": "日本技術士会 公式問題",
+          "url": "https://www.engineer.or.jp/c_topics/010/attached/attach_10606_6.pdf#page=15"
+        },
+        {
+          "title": "日本技術士会 公式正答",
+          "url": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_5.pdf#page=6"
+        }
+      ]
+    }
+  },
+  {
+    "id": "pe-first-electrical-2024-q25",
+    "number": 25,
+    "text": "2024年度 電気電子部門 専門科目 Ⅲ－25。下の公式原問画像の当該番号に解答してください。同じページにある別の設問は対象外です。",
+    "images": [
+      "/exam-library/pe-first-electrical-2024/page-16.png"
+    ],
+    "sourcePages": [
+      16
+    ],
+    "sourceQuestionNumber": 25,
+    "correctChoice": 3,
+    "choiceCount": 5,
+    "answerAuthority": "official",
+    "originalPdf": "https://www.engineer.or.jp/c_topics/010/attached/attach_10606_6.pdf",
+    "answerPdf": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_5.pdf#page=6",
+    "explanation": "nMOSのプルダウンはAB+NOT(A)NOT(B)で導通し、出力はその否定。f=A NOT(B)+NOT(A)Bという排他的論理和で③。",
+    "presentation": {
+      "sourceHash": "3855be37fac11cea5eea84ef290b8f641bbe86d7ba1ae70b86a8b22d38ec7b7f",
+      "prompt": "2024年度 電気電子部門 専門科目 Ⅲ－25。下の公式原問画像の当該番号に解答してください。同じページにある別の設問は対象外です。",
+      "choices": [
+        {
+          "number": 1,
+          "text": "①"
+        },
+        {
+          "number": 2,
+          "text": "②"
+        },
+        {
+          "number": 3,
+          "text": "③"
+        },
+        {
+          "number": 4,
+          "text": "④"
+        },
+        {
+          "number": 5,
+          "text": "⑤"
+        }
+      ],
+      "figures": [
+        {
+          "src": "/exam-library/pe-first-electrical-2024/page-16.png",
+          "width": 1073,
+          "height": 1517,
+          "alt": "2024年度 電気電子部門 専門科目 Ⅲ－25の公式原問（PDF 16ページ）。当該番号の問題文・全選択肢・図表を確認してください。"
+        }
+      ]
+    },
+    "choiceExplanation": {
+      "sourceHash": "3855be37fac11cea5eea84ef290b8f641bbe86d7ba1ae70b86a8b22d38ec7b7f",
+      "correctChoice": 3,
+      "summary": "nMOSのプルダウンはAB+NOT(A)NOT(B)で導通し、出力はその否定。f=A NOT(B)+NOT(A)Bという排他的論理和で③。",
+      "choices": [
+        {
+          "number": 1,
+          "verdict": "incorrect",
+          "reason": "ANDのABでは入力がともに1のとき高出力になるが、回路ではプルダウンが導通して低出力。"
+        },
+        {
+          "number": 2,
+          "verdict": "incorrect",
+          "reason": "ORのA+Bでは両入力1も高となり、回路の出力と異なる。"
+        },
+        {
+          "number": 3,
+          "verdict": "correct",
+          "reason": "AとBが異なるときだけプルダウンが非導通となり、出力が1になる排他的論理和。"
+        },
+        {
+          "number": 4,
+          "verdict": "incorrect",
+          "reason": "同値関数AB+NOT(A)NOT(B)はプルダウンの導通条件であり、出力はその否定となる。"
+        },
+        {
+          "number": 5,
+          "verdict": "incorrect",
+          "reason": "この式は入力00でも1となるが、実回路では反転入力のnMOS枝が導通して0になる。"
+        }
+      ],
+      "sources": [
+        {
+          "title": "日本技術士会 公式問題",
+          "url": "https://www.engineer.or.jp/c_topics/010/attached/attach_10606_6.pdf#page=16"
+        },
+        {
+          "title": "日本技術士会 公式正答",
+          "url": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_5.pdf#page=6"
+        }
+      ]
+    }
+  },
+  {
+    "id": "pe-first-electrical-2024-q26",
+    "number": 26,
+    "text": "2024年度 電気電子部門 専門科目 Ⅲ－26。下の公式原問画像の当該番号に解答してください。同じページにある別の設問は対象外です。",
+    "images": [
+      "/exam-library/pe-first-electrical-2024/page-16.png"
+    ],
+    "sourcePages": [
+      16
+    ],
+    "sourceQuestionNumber": 26,
+    "correctChoice": 4,
+    "choiceCount": 5,
+    "answerAuthority": "official",
+    "originalPdf": "https://www.engineer.or.jp/c_topics/010/attached/attach_10606_6.pdf",
+    "answerPdf": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_5.pdf#page=6",
+    "explanation": "3個のAND出力はNOT(A)BC、ABC、A NOT(B)C。合計はBC+AC=C(A+B)となるので④。配線の接続点と反転器の入力を追う。",
+    "presentation": {
+      "sourceHash": "1e06eec1b643ff5f55708866cc222d9e0cb3dccfd21a65b70a174dc473bc53de",
+      "prompt": "2024年度 電気電子部門 専門科目 Ⅲ－26。下の公式原問画像の当該番号に解答してください。同じページにある別の設問は対象外です。",
+      "choices": [
+        {
+          "number": 1,
+          "text": "①"
+        },
+        {
+          "number": 2,
+          "text": "②"
+        },
+        {
+          "number": 3,
+          "text": "③"
+        },
+        {
+          "number": 4,
+          "text": "④"
+        },
+        {
+          "number": 5,
+          "text": "⑤"
+        }
+      ],
+      "figures": [
+        {
+          "src": "/exam-library/pe-first-electrical-2024/page-16.png",
+          "width": 1073,
+          "height": 1517,
+          "alt": "2024年度 電気電子部門 専門科目 Ⅲ－26の公式原問（PDF 16ページ）。当該番号の問題文・全選択肢・図表を確認してください。"
+        }
+      ]
+    },
+    "choiceExplanation": {
+      "sourceHash": "1e06eec1b643ff5f55708866cc222d9e0cb3dccfd21a65b70a174dc473bc53de",
+      "correctChoice": 4,
+      "summary": "3個のAND出力はNOT(A)BC、ABC、A NOT(B)C。合計はBC+AC=C(A+B)となるので④。配線の接続点と反転器の入力を追う。",
+      "choices": [
+        {
+          "number": 1,
+          "verdict": "incorrect",
+          "reason": "C=0なら元回路は必ず0だが、このOR式は1になり得るため等価ではない。"
+        },
+        {
+          "number": 2,
+          "verdict": "incorrect",
+          "reason": "NOT(A)C+BCは、A=1、B=0、C=1で0となり、元回路の下段ANDによる1を表せない。"
+        },
+        {
+          "number": 3,
+          "verdict": "incorrect",
+          "reason": "A+CB+C=A+CではC=0、A=1でも1となり、元回路と異なる。"
+        },
+        {
+          "number": 4,
+          "verdict": "correct",
+          "reason": "NOT(A)BC+ABC+A NOT(B)Cを吸収則で整理するとBC+ACとなる。"
+        },
+        {
+          "number": 5,
+          "verdict": "incorrect",
+          "reason": "NOT(A)NOT(C)+BCはC=0でも1を出せるが、元回路の全ANDにはCが必要である。"
+        }
+      ],
+      "sources": [
+        {
+          "title": "日本技術士会 公式問題",
+          "url": "https://www.engineer.or.jp/c_topics/010/attached/attach_10606_6.pdf#page=16"
+        },
+        {
+          "title": "日本技術士会 公式正答",
+          "url": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_5.pdf#page=6"
+        }
+      ]
+    }
+  },
+  {
+    "id": "pe-first-electrical-2024-q27",
+    "number": 27,
+    "text": "2024年度 電気電子部門 専門科目 Ⅲ－27。下の公式原問画像の当該番号に解答してください。同じページにある別の設問は対象外です。",
+    "images": [
+      "/exam-library/pe-first-electrical-2024/page-17.png"
+    ],
+    "sourcePages": [
+      17
+    ],
+    "sourceQuestionNumber": 27,
+    "correctChoice": 2,
+    "choiceCount": 5,
+    "answerAuthority": "official",
+    "originalPdf": "https://www.engineer.or.jp/c_topics/010/attached/attach_10606_6.pdf",
+    "answerPdf": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_5.pdf#page=6",
+    "explanation": "受信語y=[1,0,0,0,1,1,1]に対してs=Hy^TをGF(2)で計算。各行の積和を2で割った余りは[0,1,0]で②。",
+    "presentation": {
+      "sourceHash": "a227c68707d42e4bffc170c97027f64b905958d4b3f9332d8fbb551e443a607c",
+      "prompt": "2024年度 電気電子部門 専門科目 Ⅲ－27。下の公式原問画像の当該番号に解答してください。同じページにある別の設問は対象外です。",
+      "choices": [
+        {
+          "number": 1,
+          "text": "①"
+        },
+        {
+          "number": 2,
+          "text": "②"
+        },
+        {
+          "number": 3,
+          "text": "③"
+        },
+        {
+          "number": 4,
+          "text": "④"
+        },
+        {
+          "number": 5,
+          "text": "⑤"
+        }
+      ],
+      "figures": [
+        {
+          "src": "/exam-library/pe-first-electrical-2024/page-17.png",
+          "width": 1073,
+          "height": 1517,
+          "alt": "2024年度 電気電子部門 専門科目 Ⅲ－27の公式原問（PDF 17ページ）。当該番号の問題文・全選択肢・図表を確認してください。"
+        }
+      ]
+    },
+    "choiceExplanation": {
+      "sourceHash": "a227c68707d42e4bffc170c97027f64b905958d4b3f9332d8fbb551e443a607c",
+      "correctChoice": 2,
+      "summary": "受信語y=[1,0,0,0,1,1,1]に対してs=Hy^TをGF(2)で計算。各行の積和を2で割った余りは[0,1,0]で②。",
+      "choices": [
+        {
+          "number": 1,
+          "verdict": "incorrect",
+          "reason": "第1成分は第1・第5位置が1で和2なので0。第3も和2で0となるため異なる。"
+        },
+        {
+          "number": 2,
+          "verdict": "correct",
+          "reason": "各行の内積は2、1、2となり、mod 2で[0,1,0]を得る。"
+        },
+        {
+          "number": 3,
+          "verdict": "incorrect",
+          "reason": "第2行の内積は受信語の第6ビットによって1となり、[0,0,1]ではない。"
+        },
+        {
+          "number": 4,
+          "verdict": "incorrect",
+          "reason": "第1行の内積は偶数なので0。第2行だけが奇数になる。"
+        },
+        {
+          "number": 5,
+          "verdict": "incorrect",
+          "reason": "第3行の内積は第1と第7ビットから2となり、mod 2で0となる。"
+        }
+      ],
+      "sources": [
+        {
+          "title": "日本技術士会 公式問題",
+          "url": "https://www.engineer.or.jp/c_topics/010/attached/attach_10606_6.pdf#page=17"
+        },
+        {
+          "title": "日本技術士会 公式正答",
+          "url": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_5.pdf#page=6"
+        }
+      ]
+    }
+  },
+  {
+    "id": "pe-first-electrical-2024-q28",
+    "number": 28,
+    "text": "2024年度 電気電子部門 専門科目 Ⅲ－28。下の公式原問画像の当該番号に解答してください。同じページにある別の設問は対象外です。",
+    "images": [
+      "/exam-library/pe-first-electrical-2024/page-17.png"
+    ],
+    "sourcePages": [
+      17
+    ],
+    "sourceQuestionNumber": 28,
+    "correctChoice": 1,
+    "choiceCount": 5,
+    "answerAuthority": "official",
+    "originalPdf": "https://www.engineer.or.jp/c_topics/010/attached/attach_10606_6.pdf",
+    "answerPdf": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_5.pdf#page=6",
+    "explanation": "瞬時復号には接頭語条件が必要。Aは00が000の、Bは1が10等の接頭語で不可。C・D・Eが可能で、平均長C=D=2.3、E=3。X={C,D,E}、Y={C,D}の①。",
+    "presentation": {
+      "sourceHash": "d3b2fb7bfee9853a0627bc4bb8fc12254e189125490d40ad8f583059c996d001",
+      "prompt": "2024年度 電気電子部門 専門科目 Ⅲ－28。下の公式原問画像の当該番号に解答してください。同じページにある別の設問は対象外です。",
+      "choices": [
+        {
+          "number": 1,
+          "text": "①"
+        },
+        {
+          "number": 2,
+          "text": "②"
+        },
+        {
+          "number": 3,
+          "text": "③"
+        },
+        {
+          "number": 4,
+          "text": "④"
+        },
+        {
+          "number": 5,
+          "text": "⑤"
+        }
+      ],
+      "figures": [
+        {
+          "src": "/exam-library/pe-first-electrical-2024/page-17.png",
+          "width": 1073,
+          "height": 1517,
+          "alt": "2024年度 電気電子部門 専門科目 Ⅲ－28の公式原問（PDF 17ページ）。当該番号の問題文・全選択肢・図表を確認してください。"
+        }
+      ]
+    },
+    "choiceExplanation": {
+      "sourceHash": "d3b2fb7bfee9853a0627bc4bb8fc12254e189125490d40ad8f583059c996d001",
+      "correctChoice": 1,
+      "summary": "瞬時復号には接頭語条件が必要。Aは00が000の、Bは1が10等の接頭語で不可。C・D・Eが可能で、平均長C=D=2.3、E=3。X={C,D,E}、Y={C,D}の①。",
+      "choices": [
+        {
+          "number": 1,
+          "verdict": "correct",
+          "reason": "C・D・Eは接頭語なし。確率で重み付けした符号長はCとDが2.3、Eが3で最短集合も合う。"
+        },
+        {
+          "number": 2,
+          "verdict": "incorrect",
+          "reason": "Aの00が000の先頭になり、瞬時復号できない符号Aを含むため誤り。"
+        },
+        {
+          "number": 3,
+          "verdict": "incorrect",
+          "reason": "Xは合うが、Eの平均長は3であり、CとDの2.3より長いのでYにEは入らない。"
+        },
+        {
+          "number": 4,
+          "verdict": "incorrect",
+          "reason": "Aは接頭語条件を満たさず、瞬時復号可能な集合にも最短集合にも入らない。"
+        },
+        {
+          "number": 5,
+          "verdict": "incorrect",
+          "reason": "Bは1が他符号語の接頭語になるため瞬時復号不可。Eは可能なのでXから落とせない。"
+        }
+      ],
+      "sources": [
+        {
+          "title": "日本技術士会 公式問題",
+          "url": "https://www.engineer.or.jp/c_topics/010/attached/attach_10606_6.pdf#page=17"
+        },
+        {
+          "title": "日本技術士会 公式正答",
+          "url": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_5.pdf#page=6"
+        }
+      ]
+    }
+  },
+  {
+    "id": "pe-first-electrical-2024-q29",
+    "number": 29,
+    "text": "2024年度 電気電子部門 専門科目 Ⅲ－29。下の公式原問画像の当該番号に解答してください。同じページにある別の設問は対象外です。",
+    "images": [
+      "/exam-library/pe-first-electrical-2024/page-18.png"
+    ],
+    "sourcePages": [
+      18
+    ],
+    "sourceQuestionNumber": 29,
+    "correctChoice": 5,
+    "choiceCount": 5,
+    "answerAuthority": "official",
+    "originalPdf": "https://www.engineer.or.jp/c_topics/010/attached/attach_10606_6.pdf",
+    "answerPdf": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_5.pdf#page=6",
+    "explanation": "g(t)=exp(−αt)（t≥0）、他は0。Fourier変換は∫0∞ exp(−(α+jω)t)dt=1/(α+jω)なので⑤。α>0が収束条件。",
+    "presentation": {
+      "sourceHash": "4ff6119e3b7a1734ebc5e88ac6a09ea1892d92b22dee9f938b71643716aecdb2",
+      "prompt": "2024年度 電気電子部門 専門科目 Ⅲ－29。下の公式原問画像の当該番号に解答してください。同じページにある別の設問は対象外です。",
+      "choices": [
+        {
+          "number": 1,
+          "text": "①"
+        },
+        {
+          "number": 2,
+          "text": "②"
+        },
+        {
+          "number": 3,
+          "text": "③"
+        },
+        {
+          "number": 4,
+          "text": "④"
+        },
+        {
+          "number": 5,
+          "text": "⑤"
+        }
+      ],
+      "figures": [
+        {
+          "src": "/exam-library/pe-first-electrical-2024/page-18.png",
+          "width": 1073,
+          "height": 1517,
+          "alt": "2024年度 電気電子部門 専門科目 Ⅲ－29の公式原問（PDF 18ページ）。当該番号の問題文・全選択肢・図表を確認してください。"
+        }
+      ]
+    },
+    "choiceExplanation": {
+      "sourceHash": "4ff6119e3b7a1734ebc5e88ac6a09ea1892d92b22dee9f938b71643716aecdb2",
+      "correctChoice": 5,
+      "summary": "g(t)=exp(−αt)（t≥0）、他は0。Fourier変換は∫0∞ exp(−(α+jω)t)dt=1/(α+jω)なので⑤。α>0が収束条件。",
+      "choices": [
+        {
+          "number": 1,
+          "verdict": "incorrect",
+          "reason": "分母に1を用いると減衰率αの役割を表せず、元の指数関数の積分結果と異なる。"
+        },
+        {
+          "number": 2,
+          "verdict": "incorrect",
+          "reason": "ω+jαでは減衰係数と周波数の実部・虚部が逆になっている。"
+        },
+        {
+          "number": 3,
+          "verdict": "incorrect",
+          "reason": "α+jωは分母になる量であり、時間積分による逆数が必要。"
+        },
+        {
+          "number": 4,
+          "verdict": "incorrect",
+          "reason": "分母はω+jαではなくα+jω。周波数ゼロで積分値1/αとなる条件にも合わない。"
+        },
+        {
+          "number": 5,
+          "verdict": "correct",
+          "reason": "正の減衰率αを含む片側指数関数のFourier積分を直接評価した結果である。"
+        }
+      ],
+      "sources": [
+        {
+          "title": "日本技術士会 公式問題",
+          "url": "https://www.engineer.or.jp/c_topics/010/attached/attach_10606_6.pdf#page=18"
+        },
+        {
+          "title": "日本技術士会 公式正答",
+          "url": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_5.pdf#page=6"
+        }
+      ]
+    }
+  },
+  {
+    "id": "pe-first-electrical-2024-q30",
+    "number": 30,
+    "text": "2024年度 電気電子部門 専門科目 Ⅲ－30。下の公式原問画像の当該番号に解答してください。同じページにある別の設問は対象外です。",
+    "images": [
+      "/exam-library/pe-first-electrical-2024/page-19.png"
+    ],
+    "sourcePages": [
+      19
+    ],
+    "sourceQuestionNumber": 30,
+    "correctChoice": 3,
+    "choiceCount": 5,
+    "answerAuthority": "official",
+    "originalPdf": "https://www.engineer.or.jp/c_topics/010/attached/attach_10606_6.pdf",
+    "answerPdf": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_5.pdf#page=6",
+    "explanation": "時間畳込みの周波数領域は積なので帯域は重なる20 kHzまで、標本化は40 kHz超。時間の積は周波数畳込みで帯域20+40=60 kHz、標本化120 kHz超。③。",
+    "presentation": {
+      "sourceHash": "3cc967315daa0cbe7ca7c996e17bdf9731916061276c48fb2987e7a39308b7ee",
+      "prompt": "2024年度 電気電子部門 専門科目 Ⅲ－30。下の公式原問画像の当該番号に解答してください。同じページにある別の設問は対象外です。",
+      "choices": [
+        {
+          "number": 1,
+          "text": "①"
+        },
+        {
+          "number": 2,
+          "text": "②"
+        },
+        {
+          "number": 3,
+          "text": "③"
+        },
+        {
+          "number": 4,
+          "text": "④"
+        },
+        {
+          "number": 5,
+          "text": "⑤"
+        }
+      ],
+      "figures": [
+        {
+          "src": "/exam-library/pe-first-electrical-2024/page-19.png",
+          "width": 1073,
+          "height": 1517,
+          "alt": "2024年度 電気電子部門 専門科目 Ⅲ－30の公式原問（PDF 19ページ）。当該番号の問題文・全選択肢・図表を確認してください。"
+        }
+      ]
+    },
+    "choiceExplanation": {
+      "sourceHash": "3cc967315daa0cbe7ca7c996e17bdf9731916061276c48fb2987e7a39308b7ee",
+      "correctChoice": 3,
+      "summary": "時間畳込みの周波数領域は積なので帯域は重なる20 kHzまで、標本化は40 kHz超。時間の積は周波数畳込みで帯域20+40=60 kHz、標本化120 kHz超。③。",
+      "choices": [
+        {
+          "number": 1,
+          "verdict": "incorrect",
+          "reason": "畳込み側40 kHzは合うが、信号積の帯域は60 kHzなので標本化は100でなく120 kHz超。"
+        },
+        {
+          "number": 2,
+          "verdict": "incorrect",
+          "reason": "時間畳込みの出力にも最高20 kHzを含められるため、標本化は20でなく40 kHz超が必要。"
+        },
+        {
+          "number": 3,
+          "verdict": "correct",
+          "reason": "帯域の共通部分と和集合的な拡がりを区別し、両方にNyquistの2倍条件を適用した値。"
+        },
+        {
+          "number": 4,
+          "verdict": "incorrect",
+          "reason": "両方とも不足。時間畳込みでは40、時間積では120 kHz超に設定する必要がある。"
+        },
+        {
+          "number": 5,
+          "verdict": "incorrect",
+          "reason": "時間積の周波数は最高60 kHzとなるので、80 kHzでは折返しが生じ得る。"
+        }
+      ],
+      "sources": [
+        {
+          "title": "日本技術士会 公式問題",
+          "url": "https://www.engineer.or.jp/c_topics/010/attached/attach_10606_6.pdf#page=19"
+        },
+        {
+          "title": "日本技術士会 公式正答",
+          "url": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_5.pdf#page=6"
+        }
+      ]
+    }
+  },
+  {
+    "id": "pe-first-electrical-2024-q31",
+    "number": 31,
+    "text": "無線通信の受信機に関する次の記述のうち,最も不適切なものはどれか。",
+    "images": [
+      "/exam-library/pe-first-electrical-2024/page-20.png"
+    ],
+    "sourcePages": [
+      20
+    ],
+    "sourceQuestionNumber": 31,
+    "correctChoice": 2,
+    "choiceCount": 5,
+    "answerAuthority": "official",
+    "originalPdf": "https://www.engineer.or.jp/c_topics/010/attached/attach_10606_6.pdf",
+    "answerPdf": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_5.pdf#page=6",
+    "explanation": "不適切なのは②。ダイレクトコンバージョンは受信高周波を直接ベースバンドの同相・直交成分へ変換する。「直接ベースバンド信号には変換せず」が誤り。",
+    "presentation": {
+      "sourceHash": "b8b674ca197a1f9a4123236d2fc179542a855d55bc687a632e2a4790b497e545",
+      "prompt": "無線通信の受信機に関する次の記述のうち,最も不適切なものはどれか。",
+      "choices": [
+        {
+          "number": 1,
+          "text": "受信した高周波数信号を周波数変換した後に,安定に増幅した後,検波又は復調処理を行うものをスーパーヘテロダイン方式という。"
+        },
+        {
+          "number": 2,
+          "text": "ダイレクトコンバージョン方式では,受信した高周波数信号を直接ベースバンド信号には変換せず,直交復調器で同相信号と直交信号にそれぞれ変換・増幅した後に復調処理を行う。"
+        },
+        {
+          "number": 3,
+          "text": "周波数混合器(ミキサ)は,希望波と局部発振器からの信号を混合して和又は差により,中間周波数の信号を生成する。"
+        },
+        {
+          "number": 4,
+          "text": "一般に増幅器への入力信号の振幅が大きいほど,非線形性歪みは大きくなるため,増幅器を線形領域で使用できるように,入力電圧と増幅器の利得を適切に調整する必要がある。"
+        },
+        {
+          "number": 5,
+          "text": "希望波を受信しているときに,変調された強力な不要波が高周波増幅器又は周波数変換器あるいは中間周波数増幅器に混入すると,不要波の変調信号によって希望波が変調を受けて混信が生じる。"
+        }
+      ],
+      "figures": []
+    },
+    "choiceExplanation": {
+      "sourceHash": "b8b674ca197a1f9a4123236d2fc179542a855d55bc687a632e2a4790b497e545",
+      "correctChoice": 2,
+      "summary": "不適切なのは②。ダイレクトコンバージョンは受信高周波を直接ベースバンドの同相・直交成分へ変換する。「直接ベースバンド信号には変換せず」が誤り。",
+      "choices": [
+        {
+          "number": 1,
+          "verdict": "incorrect",
+          "reason": "高周波を中間周波数へ変換して増幅・復調するスーパーヘテロダインの説明に合う。"
+        },
+        {
+          "number": 2,
+          "verdict": "correct",
+          "reason": "直交復調器でI・Qのベースバンド信号へ直接変換する方式なので、本肢の否定が誤り。"
+        },
+        {
+          "number": 3,
+          "verdict": "incorrect",
+          "reason": "ミキサの非線形作用で局発と受信信号の和差周波数を作る説明は適切。"
+        },
+        {
+          "number": 4,
+          "verdict": "incorrect",
+          "reason": "大振幅で非線形歪みが増えるため、線形動作範囲へ収める利得調整は必要。"
+        },
+        {
+          "number": 5,
+          "verdict": "incorrect",
+          "reason": "強い不要波の変調が非線形な増幅器等を介して希望波に移る相互変調・混変調の説明に合う。"
+        }
+      ],
+      "sources": [
+        {
+          "title": "日本技術士会 公式問題",
+          "url": "https://www.engineer.or.jp/c_topics/010/attached/attach_10606_6.pdf#page=20"
+        },
+        {
+          "title": "日本技術士会 公式正答",
+          "url": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_5.pdf#page=6"
+        }
+      ]
+    }
+  },
+  {
+    "id": "pe-first-electrical-2024-q32",
+    "number": 32,
+    "text": "2024年度 電気電子部門 専門科目 Ⅲ－32。下の公式原問画像の当該番号に解答してください。同じページにある別の設問は対象外です。",
+    "images": [
+      "/exam-library/pe-first-electrical-2024/page-21.png"
+    ],
+    "sourcePages": [
+      21
+    ],
+    "sourceQuestionNumber": 32,
+    "correctChoice": 5,
+    "choiceCount": 5,
+    "answerAuthority": "official",
+    "originalPdf": "https://www.engineer.or.jp/c_topics/010/attached/attach_10606_6.pdf",
+    "answerPdf": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_5.pdf#page=6",
+    "explanation": "雑音指数F=(Si/Ni)/(So/No)。電力利得G=So/SiよりF=No/(GNi)。Fが小さいほどS/N劣化が小さく受信感度がよい。⑤。",
+    "presentation": {
+      "sourceHash": "1264980c5bb5ee215cd53f155608031abdd2be8bdc49d7635affa16829bb22ca",
+      "prompt": "2024年度 電気電子部門 専門科目 Ⅲ－32。下の公式原問画像の当該番号に解答してください。同じページにある別の設問は対象外です。",
+      "choices": [
+        {
+          "number": 1,
+          "text": "①"
+        },
+        {
+          "number": 2,
+          "text": "②"
+        },
+        {
+          "number": 3,
+          "text": "③"
+        },
+        {
+          "number": 4,
+          "text": "④"
+        },
+        {
+          "number": 5,
+          "text": "⑤"
+        }
+      ],
+      "figures": [
+        {
+          "src": "/exam-library/pe-first-electrical-2024/page-21.png",
+          "width": 1073,
+          "height": 1517,
+          "alt": "2024年度 電気電子部門 専門科目 Ⅲ－32の公式原問（PDF 21ページ）。当該番号の問題文・全選択肢・図表を確認してください。"
+        }
+      ]
+    },
+    "choiceExplanation": {
+      "sourceHash": "1264980c5bb5ee215cd53f155608031abdd2be8bdc49d7635affa16829bb22ca",
+      "correctChoice": 5,
+      "summary": "雑音指数F=(Si/Ni)/(So/No)。電力利得G=So/SiよりF=No/(GNi)。Fが小さいほどS/N劣化が小さく受信感度がよい。⑤。",
+      "choices": [
+        {
+          "number": 1,
+          "verdict": "incorrect",
+          "reason": "入力と出力のS/N比の比が逆であり、Fが大きいほどよいという結論も逆。"
+        },
+        {
+          "number": 2,
+          "verdict": "incorrect",
+          "reason": "Fの比と利得を逆数で定義しており、雑音指数の標準的な定義に一致しない。"
+        },
+        {
+          "number": 3,
+          "verdict": "incorrect",
+          "reason": "S/Nの入出力比が逆で、Fが大きいほど感度がよいという向きも逆。"
+        },
+        {
+          "number": 4,
+          "verdict": "incorrect",
+          "reason": "Fの定義は合うが、利得をSi/Soと逆にし、雑音電力の式も逆になっている。"
+        },
+        {
+          "number": 5,
+          "verdict": "correct",
+          "reason": "入力S/N対出力S/N、利得So/Si、No/(GNi)、小さいほどよいのすべてが合う。"
+        }
+      ],
+      "sources": [
+        {
+          "title": "日本技術士会 公式問題",
+          "url": "https://www.engineer.or.jp/c_topics/010/attached/attach_10606_6.pdf#page=21"
+        },
+        {
+          "title": "日本技術士会 公式正答",
+          "url": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_5.pdf#page=6"
+        }
+      ]
+    }
+  },
+  {
+    "id": "pe-first-electrical-2024-q33",
+    "number": 33,
+    "text": "無線通信方式に関する次の記述のうち,最も不適切なものはどれか。",
+    "images": [
+      "/exam-library/pe-first-electrical-2024/page-22.png"
+    ],
+    "sourcePages": [
+      22
+    ],
+    "sourceQuestionNumber": 33,
+    "correctChoice": 5,
+    "choiceCount": 5,
+    "answerAuthority": "official",
+    "originalPdf": "https://www.engineer.or.jp/c_topics/010/attached/attach_10606_6.pdf",
+    "answerPdf": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_5.pdf#page=6",
+    "explanation": "不適切なのは⑤。同じ平均シンボル電力と雑音条件で、信号点間距離が大きいBPSKの方が誤りに強く、多値の16QAMは誤りやすい。大小を逆にしている。",
+    "presentation": {
+      "sourceHash": "a8adacbae16f7c8b5595a1589cdcd0ec50571d57aff847a7c1c5ccb9013e1b00",
+      "prompt": "無線通信方式に関する次の記述のうち,最も不適切なものはどれか。",
+      "choices": [
+        {
+          "number": 1,
+          "text": "16QAM(QuadratureAmplitudeModulation)は,1シンボル当たり4ビットの送信データに応じて位相と振幅を両方変化させる変調方式である。"
+        },
+        {
+          "number": 2,
+          "text": "ASK(AmplitudeShiftKeying)方式は,送信データに応じて搬送波の振幅を変化させる変調方式でありPSK(PhaseShiftKeying)は,送信データに応じて搬送波の位相を変化させる変調方式である。"
+        },
+        {
+          "number": 3,
+          "text": "BPSK(BinaryPSK)は1シンボル当たり1ビットのデータを送信する変調方式でありQPSK(QuadraturePSK)は,1シンボル当たり2ビットのデータを送信する変調方式である。"
+        },
+        {
+          "number": 4,
+          "text": "PSKでも1シンボル当たり3ビット以上のデータを変調することは可能である。"
+        },
+        {
+          "number": 5,
+          "text": "BPSK,QPSK,16QAMを,同一の送信電力で送信したとき,シンボル誤り率が最も大きいものはBPSKであり,最も小さいものは16QAMである。"
+        }
+      ],
+      "figures": []
+    },
+    "choiceExplanation": {
+      "sourceHash": "a8adacbae16f7c8b5595a1589cdcd0ec50571d57aff847a7c1c5ccb9013e1b00",
+      "correctChoice": 5,
+      "summary": "不適切なのは⑤。同じ平均シンボル電力と雑音条件で、信号点間距離が大きいBPSKの方が誤りに強く、多値の16QAMは誤りやすい。大小を逆にしている。",
+      "choices": [
+        {
+          "number": 1,
+          "verdict": "incorrect",
+          "reason": "16個の信号点を使うQAMは1シンボルでlog2 16=4ビットを運ぶ。"
+        },
+        {
+          "number": 2,
+          "verdict": "incorrect",
+          "reason": "ASKは振幅、PSKは位相を変えるという変調方式の定義に合う。"
+        },
+        {
+          "number": 3,
+          "verdict": "incorrect",
+          "reason": "BPSKは2点で1ビット、QPSKは4点で2ビットという情報量の説明は正しい。"
+        },
+        {
+          "number": 4,
+          "verdict": "incorrect",
+          "reason": "8PSKなら3ビット、16PSKなら4ビットを1シンボルで送れるので適切。"
+        },
+        {
+          "number": 5,
+          "verdict": "correct",
+          "reason": "同等の雑音・シンボル電力ではBPSKの誤り率が小さく、16QAMの方が大きい。記載の順序が逆。"
+        }
+      ],
+      "sources": [
+        {
+          "title": "日本技術士会 公式問題",
+          "url": "https://www.engineer.or.jp/c_topics/010/attached/attach_10606_6.pdf#page=22"
+        },
+        {
+          "title": "日本技術士会 公式正答",
+          "url": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_5.pdf#page=6"
+        }
+      ]
+    }
+  },
+  {
+    "id": "pe-first-electrical-2024-q34",
+    "number": 34,
+    "text": "2024年度 電気電子部門 専門科目 Ⅲ－34。下の公式原問画像の当該番号に解答してください。同じページにある別の設問は対象外です。",
+    "images": [
+      "/exam-library/pe-first-electrical-2024/page-22.png"
+    ],
+    "sourcePages": [
+      22
+    ],
+    "sourceQuestionNumber": 34,
+    "correctChoice": 1,
+    "choiceCount": 5,
+    "answerAuthority": "official",
+    "originalPdf": "https://www.engineer.or.jp/c_topics/010/attached/attach_10606_6.pdf",
+    "answerPdf": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_5.pdf#page=6",
+    "explanation": "n型の多数キャリアは電子、p型は正孔。接合後の空乏層ではn側のドナーイオンが正、p側アクセプタイオンが負となり、拡散電位が拡散を抑える。①。",
+    "presentation": {
+      "sourceHash": "e464d96c2236b1251c17d667cb21561858c7b77460f4e40682a28732afed42b3",
+      "prompt": "2024年度 電気電子部門 専門科目 Ⅲ－34。下の公式原問画像の当該番号に解答してください。同じページにある別の設問は対象外です。",
+      "choices": [
+        {
+          "number": 1,
+          "text": "①"
+        },
+        {
+          "number": 2,
+          "text": "②"
+        },
+        {
+          "number": 3,
+          "text": "③"
+        },
+        {
+          "number": 4,
+          "text": "④"
+        },
+        {
+          "number": 5,
+          "text": "⑤"
+        }
+      ],
+      "figures": [
+        {
+          "src": "/exam-library/pe-first-electrical-2024/page-22.png",
+          "width": 1073,
+          "height": 1517,
+          "alt": "2024年度 電気電子部門 専門科目 Ⅲ－34の公式原問（PDF 22ページ）。当該番号の問題文・全選択肢・図表を確認してください。"
+        }
+      ]
+    },
+    "choiceExplanation": {
+      "sourceHash": "e464d96c2236b1251c17d667cb21561858c7b77460f4e40682a28732afed42b3",
+      "correctChoice": 1,
+      "summary": "n型の多数キャリアは電子、p型は正孔。接合後の空乏層ではn側のドナーイオンが正、p側アクセプタイオンが負となり、拡散電位が拡散を抑える。①。",
+      "choices": [
+        {
+          "number": 1,
+          "verdict": "correct",
+          "reason": "電子・正孔・正・負・拡散電位が、pn接合のキャリア移動と固定イオンの符号に一致する。"
+        },
+        {
+          "number": 2,
+          "verdict": "incorrect",
+          "reason": "n型とp型の多数キャリアが逆であり、空乏層のイオンの正負も逆。"
+        },
+        {
+          "number": 3,
+          "verdict": "incorrect",
+          "reason": "キャリアは合うが、n側は正、p側は負の固定イオンとなり、平衡を作るのは拡散電位。"
+        },
+        {
+          "number": 4,
+          "verdict": "incorrect",
+          "reason": "空乏層の電荷と拡散電位は合うが、多数キャリアが電子と正孔の逆になっている。"
+        },
+        {
+          "number": 5,
+          "verdict": "incorrect",
+          "reason": "多数キャリアが逆で、拡散を抑える内蔵の電位差を拡散電流とする点も異なる。"
+        }
+      ],
+      "sources": [
+        {
+          "title": "日本技術士会 公式問題",
+          "url": "https://www.engineer.or.jp/c_topics/010/attached/attach_10606_6.pdf#page=22"
+        },
+        {
+          "title": "日本技術士会 公式正答",
+          "url": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_5.pdf#page=6"
+        }
+      ]
+    }
+  },
+  {
+    "id": "pe-first-electrical-2024-q35",
+    "number": 35,
+    "text": "2024年度 電気電子部門 専門科目 Ⅲ－35。下の公式原問画像の当該番号に解答してください。同じページにある別の設問は対象外です。",
+    "images": [
+      "/exam-library/pe-first-electrical-2024/page-23.png"
+    ],
+    "sourcePages": [
+      23
+    ],
+    "sourceQuestionNumber": 35,
+    "correctChoice": 3,
+    "choiceCount": 5,
+    "answerAuthority": "official",
+    "originalPdf": "https://www.engineer.or.jp/c_topics/010/attached/attach_10606_6.pdf",
+    "answerPdf": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_5.pdf#page=6",
+    "explanation": "CMOSインバータはnMOS・pMOS各1個の計2個。入力1でnMOSオン・pMOSオフ、入力0でnMOSオフ・pMOSオンとなり③。",
+    "presentation": {
+      "sourceHash": "77c189d9cf13be5f60ef605460f4afbf4316955f09a2219c924dc8219c6748f6",
+      "prompt": "2024年度 電気電子部門 専門科目 Ⅲ－35。下の公式原問画像の当該番号に解答してください。同じページにある別の設問は対象外です。",
+      "choices": [
+        {
+          "number": 1,
+          "text": "①"
+        },
+        {
+          "number": 2,
+          "text": "②"
+        },
+        {
+          "number": 3,
+          "text": "③"
+        },
+        {
+          "number": 4,
+          "text": "④"
+        },
+        {
+          "number": 5,
+          "text": "⑤"
+        }
+      ],
+      "figures": [
+        {
+          "src": "/exam-library/pe-first-electrical-2024/page-23.png",
+          "width": 1073,
+          "height": 1517,
+          "alt": "2024年度 電気電子部門 専門科目 Ⅲ－35の公式原問（PDF 23ページ）。当該番号の問題文・全選択肢・図表を確認してください。"
+        }
+      ]
+    },
+    "choiceExplanation": {
+      "sourceHash": "77c189d9cf13be5f60ef605460f4afbf4316955f09a2219c924dc8219c6748f6",
+      "correctChoice": 3,
+      "summary": "CMOSインバータはnMOS・pMOS各1個の計2個。入力1でnMOSオン・pMOSオフ、入力0でnMOSオフ・pMOSオンとなり③。",
+      "choices": [
+        {
+          "number": 1,
+          "verdict": "incorrect",
+          "reason": "トランジスタ数2は合うが、入力0でnMOSオンとする状態が逆である。"
+        },
+        {
+          "number": 2,
+          "verdict": "incorrect",
+          "reason": "通常のCMOSインバータは計2個で構成し、入力0のときnMOSオフ・pMOSオンとなる。"
+        },
+        {
+          "number": 3,
+          "verdict": "correct",
+          "reason": "計2個で、入力1を接地側nMOSオンにより0へ、入力0を電源側pMOSオンにより1へ反転する。"
+        },
+        {
+          "number": 4,
+          "verdict": "incorrect",
+          "reason": "入力とオンオフの関係が逆であり、素子数も4でなく2個である。"
+        },
+        {
+          "number": 5,
+          "verdict": "incorrect",
+          "reason": "入力1でnMOSオフ・pMOSオンとする関係が逆。nMOSは高入力でオンになる。"
+        }
+      ],
+      "sources": [
+        {
+          "title": "日本技術士会 公式問題",
+          "url": "https://www.engineer.or.jp/c_topics/010/attached/attach_10606_6.pdf#page=23"
+        },
+        {
+          "title": "日本技術士会 公式正答",
+          "url": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_5.pdf#page=6"
+        }
+      ]
+    }
+  }
+]
