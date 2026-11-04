@@ -12,6 +12,6 @@ it.each([[false, false], [true, false], [false, true], [true, true]])("keeps qui
   observed.native = native;
   const question = FE_QUESTIONS_2009_AUTUMN_AM[0];
   vi.stubGlobal("fetch", vi.fn(async () => Response.json(enabled || native ? { question, access: { kind: "guest", remaining: 9, freeDaily: 10, resetAt: "2026-11-05T15:00:00Z", retryAfter: null } } : question)));
-  render(<QuizClient billingGateEnabled={enabled} poolIds={[question.id]} mode="year" exam="fe" />);
+  render(<QuizClient billingGateEnabled={enabled} poolIds={[question.id]} mode="year" exam="fe" backHref="/fe" />);
   await waitFor(() => expect(observed.player).toHaveBeenLastCalledWith(expect.objectContaining({ quiet: enabled || native })));
 });
