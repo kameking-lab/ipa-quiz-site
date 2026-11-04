@@ -1,9 +1,16 @@
 "use client";
 import { useEffect } from "react";
+import { nativeClient } from "@/mobile/shared/contracts";
 
 export function ServiceWorkerRegistration() {
   useEffect(() => {
     if (!("serviceWorker" in navigator)) return;
+    if (nativeClient()) {
+      // Native offline access is exclusively governed by the signed paid lease.
+      void navigator.serviceWorker.getRegistrations().then(rs=>Promise.all(rs.map(r=>r.unregister())));
+      if(typeof caches!=="undefined")void caches.keys().then(keys=>Promise.all(keys.filter(key=>key.startsWith("ipa-quiz-")).map(key=>caches.delete(key))));
+      return;
+    }
 
     let cancelled = false;
 

@@ -1,4 +1,8 @@
 "use client";
+import {CachedImage} from "@/mobile/shared/CachedImage";
+
+import {NativeQuestionGate} from "@/mobile/shared/NativeQuestionGate";
+
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
@@ -26,8 +30,7 @@ function SourcePages({ question, answer = false }: { question: SecondaryQuestion
     <figcaption className="mb-2 text-sm font-semibold">公式{answer ? "標準解答" : "問題"} PDF p.{page.physicalPage}</figcaption>
     <div role="region" aria-label={`公式${answer ? "標準解答" : "問題"} p.${page.physicalPage} 画像`} tabIndex={0}
       className="max-w-full overflow-x-auto rounded-lg bg-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary">
-      {/* eslint-disable-next-line @next/next/no-img-element -- Preserve the hash-verified source-page rendering and its dimensions. */}
-      <img src={page.url} alt={`${question.year}年度 ${question.subject === "power-management" ? "電力・管理" : "機械・制御"} 問${question.number} ${question.topic}の公式${answer ? "標準解答" : "問題"} p.${page.physicalPage}`}
+      <CachedImage src={page.url} alt={`${question.year}年度 ${question.subject === "power-management" ? "電力・管理" : "機械・制御"} 問${question.number} ${question.topic}の公式${answer ? "標準解答" : "問題"} p.${page.physicalPage}`}
         width={page.width} height={page.height} loading={!answer && index === 0 ? "eager" : "lazy"}
         className="h-auto w-[60rem] max-w-none sm:w-full" />
     </div>
@@ -38,7 +41,7 @@ function SourcePages({ question, answer = false }: { question: SecondaryQuestion
   </figure>)}</div>;
 }
 
-export function SecondaryReader({ question, previous, next }: { question: SecondaryQuestion; previous?: string; next?: string }) {
+function SecondaryReaderBody({ question, previous, next }: { question: SecondaryQuestion; previous?: string; next?: string }) {
   const [draft, setDraft] = useState<Draft>(EMPTY);
   const [revealed, setRevealed] = useState(false);
   const [storageError, setStorageError] = useState(false);
@@ -117,3 +120,5 @@ export function SecondaryReader({ question, previous, next }: { question: Second
     </section>
   </main>;
 }
+
+export function SecondaryReader(props:Parameters<typeof SecondaryReaderBody>[0]) { return <NativeQuestionGate id={props.question.id}><SecondaryReaderBody {...props}/></NativeQuestionGate>; }

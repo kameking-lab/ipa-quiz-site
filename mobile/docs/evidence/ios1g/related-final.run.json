@@ -1,0 +1,32 @@
+{
+  "startedAt": "2026-11-03T16:45:22.164Z",
+  "gitHead": "f22494a03013e9bb501c9010552d334c732fc0c3",
+  "command": [
+    "node_modules/vitest/vitest.mjs",
+    "run",
+    "__tests__/mobile",
+    "__tests__/billing",
+    "__tests__/exam-question-player.test.tsx",
+    "__tests__/exam-library-progress.test.ts",
+    "--exclude",
+    "__tests__/mobile/catalog-parity.test.ts",
+    "--maxWorkers=1"
+  ],
+  "environmentKeys": [
+    "APPDATA",
+    "COMSPEC",
+    "LOCALAPPDATA",
+    "NEXT_TELEMETRY_DISABLED",
+    "NODE_OPTIONS",
+    "NUMBER_OF_PROCESSORS",
+    "PATH",
+    "PATHEXT",
+    "PROCESSOR_ARCHITECTURE",
+    "SYSTEMROOT",
+    "TEMP",
+    "TMP",
+    "USERPROFILE",
+    "WINDIR"
+  ],
+  "strictContentGate": false
+}

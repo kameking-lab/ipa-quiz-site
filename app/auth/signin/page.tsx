@@ -1,3 +1,4 @@
+import {NativeSignInBoundary} from "@/mobile/src/NativeSignInBoundary";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { auth } from "@/lib/auth";
@@ -13,6 +14,9 @@ import {
 import { Badge } from "@/components/ui/badge";
 import { SignInButtons } from "./SignInButtons";
 import { EmailSignInForm } from "./EmailSignInForm";
+import { AppReviewSignInForm } from "./AppReviewSignInForm";
+import { appReviewConfig } from "@/lib/auth/app-review-config";
+import { safeAuthCallback } from "@/lib/auth/redirect";
 
 export const metadata: Metadata = {
   title: "ログイン",
@@ -37,20 +41,6 @@ const KNOWN_AUTH_ERRORS: Record<string, string> = {
   Default: "ログインに失敗しました。",
 };
 
-/**
- * Only allow same-origin relative paths as redirect targets to prevent open redirect.
- * Reject protocol-relative URLs ("//evil.com"), absolute URLs ("https://evil.com"),
- * and anything that doesn't start with a single "/".
- */
-function safeCallbackUrl(raw: string | undefined): string {
-  if (!raw) return "/";
-  if (typeof raw !== "string") return "/";
-  if (!raw.startsWith("/")) return "/";
-  if (raw.startsWith("//")) return "/";
-  if (raw.startsWith("/\\")) return "/";
-  return raw;
-}
-
 function friendlyAuthError(code: string | undefined): string {
   if (!code) return KNOWN_AUTH_ERRORS.Default;
   return KNOWN_AUTH_ERRORS[code] ?? KNOWN_AUTH_ERRORS.Default;
@@ -62,18 +52,20 @@ export default async function SignInPage({
   searchParams: Promise<SearchParams>;
 }) {
   const sp = await searchParams;
-  const callbackUrl = safeCallbackUrl(sp.callbackUrl);
+  const callbackUrl = safeAuthCallback(sp.callbackUrl);
   const session = await auth();
   if (session?.user) redirect(callbackUrl);
 
   const errorMessage = sp.error ? friendlyAuthError(sp.error) : null;
   const forPurchase = callbackUrl === "/billing" || callbackUrl.startsWith("/billing?");
+  const nativeLogin=callbackUrl.startsWith("/api/mobile/auth/complete?");
 
   const providerIds = new Set(
-    authConfig.providers.map((p) => (typeof p === "function" ? p().id : p.id)),
+    authConfig.providers.map((p) => (typeof p === "function" ? p().id : p.id)).filter(id => id !== "app-review"),
   );
 
   return (
+    <NativeSignInBoundary returnTo={callbackUrl}>
     <main className="relative flex flex-1 items-center justify-center px-4 py-10 sm:py-16">
       {/* Decorative background */}
       <div
@@ -117,13 +109,15 @@ export default async function SignInPage({
             </div>
           )}
 
-          {providerIds.size > 0 ? (
+          {providerIds.size > 0 || appReviewConfig() ? (
             <>
               <SignInButtons
                 callbackUrl={callbackUrl}
-                hasGoogle={providerIds.has("google")}
-                hasGitHub={providerIds.has("github")}
+                hasGoogle={providerIds.has("google") && (!nativeLogin || providerIds.has("apple"))}
+                hasGitHub={providerIds.has("github") && (!nativeLogin || providerIds.has("apple"))}
+                hasApple={providerIds.has("apple")}
               />
+              {nativeLogin&&!providerIds.has("apple")&&<p className="text-sm">アプリの通常ログインはAppleログインの設定後に利用できます。審査担当者は下の審査用ログインをご利用ください。</p>}
 
               {providerIds.has("nodemailer") && (
                 <>
@@ -135,6 +129,7 @@ export default async function SignInPage({
                   <EmailSignInForm callbackUrl={callbackUrl} />
                 </>
               )}
+              {appReviewConfig() && <AppReviewSignInForm callbackUrl={callbackUrl} />}
             </>
           ) : (
             <div className="rounded-xl border border-dashed border-border bg-muted/40 px-4 py-6 text-center text-sm text-muted-foreground">
@@ -193,7 +188,7 @@ export default async function SignInPage({
           に同意したものとみなされます。
         </p>
       </div>
-    </main>
+    </main></NativeSignInBoundary>
   );
 }
 

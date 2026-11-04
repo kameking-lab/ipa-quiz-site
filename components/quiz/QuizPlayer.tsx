@@ -1,5 +1,6 @@
 "use client";
 import { isSelfReviewedDescriptiveQuestion } from "@/lib/questions/descriptive";
+import { NativeQuestionGate } from "@/mobile/shared/NativeQuestionGate";
 
 import * as React from "react";
 import { isReferenceOnlyQuestionId } from "@/lib/questions/assessment";
@@ -73,6 +74,7 @@ interface Props {
   completionLabel?: string;
   completionShareHref?: string;
   onNext: () => void;
+  quiet?: boolean;
 }
 
 
@@ -80,7 +82,7 @@ export function QuizPlayer(props: Props) {
   if (isReferenceOnlyQuestionId(props.question?.id)) {
     return <p role="note">この問題は参照専用です。採点・学習記録・報酬の対象には含まれません。</p>;
   }
-  return <ScoredQuizPlayer {...props} />;
+  return <NativeQuestionGate id={props.question?.id}><ScoredQuizPlayer {...props} /></NativeQuestionGate>;
 }
 
 function ScoredQuizPlayer({
@@ -94,6 +96,7 @@ function ScoredQuizPlayer({
   completionLabel,
   completionShareHref,
   onNext,
+  quiet = false,
 }: Props) {
   const router = useRouter();
   const history = React.useMemo(() => createHistoryStore(), []);
@@ -148,7 +151,7 @@ function ScoredQuizPlayer({
 
   React.useEffect(() => {
     if (!question || isReferenceOnlyQuestionId(question.id)) return;
-     
+
     setNativeBResult(undefined);
     setSelected(undefined);
     setPicked([]);
@@ -625,13 +628,13 @@ function ScoredQuizPlayer({
       </div>
 
       <FireworksBurst
-        active={burst !== null}
+        active={!quiet && burst !== null}
         level={burst?.level ?? "small"}
         onDone={() => setBurst(null)}
         key={burst?.nonce ?? 0}
       />
 
-      {pendingAchievement && (
+      {!quiet && pendingAchievement && (
         <AchievementToast
           achievementId={pendingAchievement}
           onClose={() => setPendingAchievement(null)}

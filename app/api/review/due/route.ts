@@ -1,3 +1,4 @@
+import { permittedBatch } from "@/lib/billing/content-grant";
 import { NextResponse } from "next/server";
 import { z } from "zod";
 import { findQuestionById } from "@/lib/questions/pool-server";
@@ -66,10 +67,12 @@ export async function POST(req: Request) {
     dueQuestions.push(q);
   }
 
+  const permitted=await permittedBatch(req,shuffle(dueQuestions));
+  if(permitted.response)return permitted.response;
   return NextResponse.json({
-    questions: shuffle(dueQuestions),
+    questions: permitted.rows,
     seenCount: historyIds.length,
     scheduledCount: Object.keys(reviewStore).length,
     nextReviewDate: futureDates[0] ?? null,
-  });
+  }, {headers:{"Cache-Control":"private, no-store"}});
 }

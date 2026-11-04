@@ -3,23 +3,30 @@
 import { signIn } from "next-auth/react";
 import { Button } from "@/components/ui/button";
 import { trackEvent } from "@/lib/analytics/events";
+import { nativeClient } from "@/mobile/shared/contracts";
 
 interface Props {
   callbackUrl?: string;
   hasGoogle: boolean;
   hasGitHub: boolean;
+  hasApple?: boolean;
 }
 
-export function SignInButtons({ callbackUrl, hasGoogle, hasGitHub }: Props) {
+export function SignInButtons({ callbackUrl, hasGoogle, hasGitHub, hasApple = false }: Props) {
   const redirectTo = callbackUrl || "/";
 
-  function start(provider: "google" | "github") {
+  function start(provider: "google" | "github" | "apple") {
+    if (nativeClient()) {
+      if (!hasApple && provider !== "apple") return;
+      return import("@/mobile/src/login").then(m=>m.beginLogin(window.location.origin,redirectTo));
+    }
     trackEvent({ name: "signin_started", provider, source: redirectTo });
     return signIn(provider, { callbackUrl: redirectTo });
   }
 
   return (
     <div className="flex flex-col gap-2.5">
+      {hasApple && <Button type="button" variant="outline" size="lg" className="w-full gap-3 font-semibold" onClick={()=>start("apple")}>Appleでサインイン</Button>}
       {hasGoogle && (
         <Button
           type="button"

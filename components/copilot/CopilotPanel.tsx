@@ -1,5 +1,7 @@
 "use client";
 
+import { requestAiConsent } from "@/lib/ai/consent";
+
 import * as React from "react";
 import dynamic from "next/dynamic";
 import {
@@ -373,6 +375,7 @@ export function CopilotPanel({
       }
       const trimmed = text.trim();
       if (!trimmed && !quickAction) return;
+      if (!requestAiConsent()) return;
 
       setErrorState(null);
       setRestriction(null);
@@ -411,7 +414,7 @@ export function CopilotPanel({
           method: "POST",
           // 無料枠解除はサーバ署名済み Cookie で判定するため、自己申告ヘッダは送らない
           // （送っても無視される。ヘッダを残すと解除根拠を誤解させる）。
-          headers: { "content-type": "application/json" },
+          headers: { "content-type": "application/json", "X-Kakomon-AI-Consent": "20261103" },
           signal: controller.signal,
           body: JSON.stringify({
             question: { id: question.id },

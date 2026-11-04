@@ -12,7 +12,7 @@ import type {
   EssaySubResult,
 } from "@/lib/essay/types";
 import { INDUSTRY_LABELS } from "@/lib/essay/types";
-import { getEssayQuestionsByExam } from "@/lib/essay/load";
+import { getEssayCatalogByExam } from "@/lib/essay/catalog";
 import { examLabel, formatYearSeason } from "@/lib/utils";
 
 // 強み4: 採点→弱点→次の練習の伴走。汎用LLMは単発採点で終わるが、過去問AIは
@@ -155,7 +155,7 @@ export function EssayResultView({ result, question }: Props) {
 
       {(() => {
         const weak = weakestAxis(result);
-        const nextEssays = getEssayQuestionsByExam(question.exam)
+        const nextEssays = getEssayCatalogByExam(question.exam)
           .filter((q) => q.id !== question.id)
           .slice(0, 3);
         if (!weak && nextEssays.length === 0) return null;

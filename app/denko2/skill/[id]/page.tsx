@@ -1,3 +1,5 @@
+import { strictContentGateEnabled } from "@/lib/billing/content-policy";
+import { ContentPage } from "@/mobile/server/ContentPage";
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
@@ -28,6 +30,8 @@ function diagram(src: string, alt: string) {
 }
 
 export default async function Denko2SkillProblemPage({ params }: Props) {
+  if (strictContentGateEnabled()) { const gatedParams=await params; return <ContentPage path={`/denko2/skill/${gatedParams.id}`}/>; }
+
   if (!isExamPublished("denko2")) notFound();
   const problem = getSkillProblem((await params).id);
   if (!problem) notFound();

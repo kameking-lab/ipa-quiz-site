@@ -1,4 +1,5 @@
 import type { ReactNode } from "react";
+import Link from "next/link";
 import type { HomeDirectoryDomain } from "@/lib/home/home-directory";
 import { HomeHeroImage } from "./HomeHeroImage";
 import { ArrowDown, ArrowRight } from "lucide-react";
@@ -17,6 +18,7 @@ export function HomeHero({ domains, image }: { domains: readonly HomeDirectoryDo
         <h1>過去問の勉強を、<br />ここひとつで。</h1>
         <p className="study-welcome-description">目標はそれぞれ。学ぶ時間は、ちょっと楽しく。<br />あなたの資格の勉強に、小さな相棒を。</p>
         <div className="study-welcome-actions">
+          <Link href="/quiz?mode=random&exam=ip" className="study-primary w-full sm:w-auto">ログインなしで10問を始める<ArrowRight aria-hidden="true" className="h-4 w-4" /></Link>
           <a href="#choose-qualification" className="study-primary w-full sm:w-auto">資格を選んで始める<ArrowRight aria-hidden="true" className="h-4 w-4" /></a>
         </div>
         <div className="mt-4 rounded-lg border border-border px-3 py-2">

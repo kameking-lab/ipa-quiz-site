@@ -1,5 +1,5 @@
 import { ALL_QUIZ_EXAM_CODES } from "@/lib/exam-config";
-import batch1RuntimePins from "./fixtures/batch1-runtime-pins.json";
+import batch2RuntimePins from "./fixtures/batch2-runtime-pins.json";
 import { integrationOracle, runtimeFingerprint, normalizedTextSha256, repositoryTextSha256, sourceFilesUnder } from './fixtures/native-integration-oracle';
 import { describe,expect,it } from 'vitest';
 import { existsSync, readFileSync } from 'node:fs';
@@ -69,10 +69,12 @@ describe('aviation communication68 local registration candidate',()=>{
  it('links the existing qualification calendar and learning hub without inventing an exam date',()=>{expect(tsuginoScheduleUrl(exam)).toBe('https://tsugino-shikaku.jp/shikaku/radio-koku');expect(tsuginoLearningUrl(exam)).toBe('https://tsugino-shikaku.jp/learn/radio-koku');});
  it('retains the reviewed player extensions with generated-question entry retired',()=>{
   const player=readFileSync(path.join(process.cwd(),'components/quiz/QuizPlayer.tsx'),'utf8');
+  // IOS1 (666a49bca) added NativeQuestionGate; refresh only the reviewed UI pins.
   // Reviewed 2026-11-01 urgent release recipe: inline AI, original-answer rewards,
   // next-question focus/loading and explicit retirement of generated questions.
   // The historical pre-reward oracle remains unchanged as provenance.
-  expect(normalizedTextSha256(player)).toBe(batch1RuntimePins['components/quiz/QuizPlayer.tsx']);
+  expect(normalizedTextSha256(player)).toBe(batch2RuntimePins['components/quiz/QuizPlayer.tsx']);
+  expect(player).toContain('NativeQuestionGate');
   expect(player).not.toContain('GenerateSimilar');
   expect(player).not.toContain('/api/generate-question');
   expect(player).toContain('recordStudyReward(');
@@ -84,10 +86,11 @@ describe('aviation communication68 local registration candidate',()=>{
   expect(current).toHaveLength(oracle.originalCount);
   expect(runtimeFingerprint(ordered)).toBe(oracle.normalizedRuntimeSha256);
   expect(sourceFilesUnder(oracle.sourceRoots)).toEqual(oracle.files.filter(pin=>oracle.sourceRoots.some(root=>pin.path.startsWith(root+'/'))).map(pin=>pin.path));
-  // Only this display component has a separately accepted explanation/UI extension.
+  // IOS1 (666a49bca) added account grants to both display components.
+  // Only these display components have separately accepted UI extensions.
   // Every original-data/core pin and the 338-record runtime fingerprint above remain exact.
   const reviewedDisplayPins: Readonly<Record<string,string>> = {
-    ...batch1RuntimePins,
+    ...batch2RuntimePins,
   };
   for(const pin of oracle.files)expect(repositoryTextSha256(pin.path),pin.path).toBe(reviewedDisplayPins[pin.path] ?? pin.sha256);
  });

@@ -1,85 +1,29 @@
 "use client";
+import { deriveSessionPool } from "@/lib/questions/session-pool";
 
 import * as React from "react";
 import type { Question, QuizMode } from "@/lib/questions/types";
 import { QuizPlayer } from "@/components/quiz/QuizPlayer";
-import { createHistoryStore } from "@/lib/storage/history";
 import { startSession } from "@/lib/motivation/session";
-import { orderByPriority } from "@/lib/learning/spaced-repetition";
-import { aggregateByCategory } from "@/lib/learning/analytics";
 import { PracticeDailyLimit, PracticeLoading } from "@/components/quiz/PracticeTransition";
 import Link from "next/link";
 import { fetchPracticeQuestion, PracticeRequestError } from "@/lib/billing/guest-client";
 import type { PracticeAccess } from "@/lib/billing/practice-contract";
+import { posthogCapture } from "@/lib/posthog";
+import { nativeClient } from "@/mobile/shared/contracts";
+import {shuffleChoices} from "@/lib/questions/filter";
 
 const MAX_POOL = 80;
-const WEAKNESS_THRESHOLD = 0.6;
-const WEAKNESS_MIN_ATTEMPTS = 3;
-
-function shuffleInPlace<T>(arr: T[]): T[] {
-  for (let i = arr.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [arr[i], arr[j]] = [arr[j], arr[i]];
-  }
-  return arr;
-}
-
-function selectWeakCategories(
-  categoryById: Record<string, string>,
-): Set<string> | null {
-  const history = createHistoryStore();
-  const lookup = new Map<string, { category: string }>();
-  for (const [id, category] of Object.entries(categoryById)) {
-    lookup.set(id, { category });
-  }
-  const stats = aggregateByCategory(history.getAllEntries(), lookup);
-  const weak = stats
-    .filter((s) => s.attempts >= WEAKNESS_MIN_ATTEMPTS && s.accuracy < WEAKNESS_THRESHOLD)
-    .map((s) => s.category);
-  if (weak.length === 0) return null;
-  return new Set(weak);
-}
-
-function deriveSessionPool(
-  poolIds: string[],
-  mode: QuizMode,
-  categoryById?: Record<string, string>,
-  wrongOnly = false,
-): string[] {
-  let ids = [...poolIds];
-  if (mode === "review" || mode === "unanswered") {
-    const history = createHistoryStore();
-    if (mode === "review") {
-      const wrong = new Set(history.getWrongIds());
-      const starred = new Set(wrongOnly ? [] : history.getStarredIds());
-      ids = ids.filter((id) => wrong.has(id) || starred.has(id));
-    } else {
-      const answered = new Set(history.getAnsweredIds());
-      ids = ids.filter((id) => !answered.has(id));
-    }
-  }
-  if (mode === "weakness" && categoryById) {
-    const weakSet = selectWeakCategories(categoryById);
-    if (weakSet) {
-      ids = ids.filter((id) => {
-        const cat = categoryById[id];
-        return cat ? weakSet.has(cat) : false;
-      });
-    }
-    // fallback: no weak categories detected → no filter, use random shuffle
-  }
-  if (mode === "review") {
-    ids = orderByPriority(ids);
-  } else if (mode === "random" || mode === "unanswered" || mode === "weakness") {
-    shuffleInPlace(ids);
-  }
-  // An annual sitting must include every available original in source order.
-  return mode === "year" ? ids : ids.slice(0, MAX_POOL);
-}
 
 async function fetchQuestion(id: string, shuffle: boolean, start: boolean, signal: AbortSignal): Promise<{ question: Question; access: PracticeAccess | null }> {
   if (start) {
     return fetchPracticeQuestion(id, shuffle, signal);
+  }
+  if(nativeClient()) {
+    try {
+      const cached=await (await import("@/mobile/src/downloads")).downloads.findQuestion(id);
+      if(cached)return {question:shuffle?shuffleChoices(cached):cached,access:null};
+    }catch{/* Expired or unavailable downloads use the online path. */}
   }
   const qs = new URLSearchParams({ id });
   if (shuffle) qs.set("shuffle", "1");
@@ -142,7 +86,7 @@ export function QuizClient({
 
   // Derive session pool once on mount (needs localStorage for history modes).
   React.useEffect(() => {
-     
+
     const url = new URL(window.location.href);
     const signature = JSON.stringify([mode, wrongOnly, poolIds, initialQuestionId]);
     if (initializedPool.current === signature) return;
@@ -199,7 +143,7 @@ export function QuizClient({
     const loadInto = async (id: string, setActive: boolean) => {
       // Gate off keeps the existing GET/cache path independent of the billing API.
       // Gate on rechecks active questions, since prefetched content is not entitlement.
-      const requiresGrant = billingGateEnabled && mode !== "review";
+      const requiresGrant = nativeClient() || billingGateEnabled && mode !== "review";
       if ((!setActive || !requiresGrant) && cache.current.has(id)) {
         if (setActive && !cancelled) setCurrent(cache.current.get(id)!);
         return;
@@ -207,6 +151,7 @@ export function QuizClient({
       try {
         const result = await fetchQuestion(id, shuffle, setActive && requiresGrant, controller.signal);
         if (cancelled) return;
+        if (setActive && result.access?.feedbackBonus?.newlyUsed) posthogCapture("practice_feedback_bonus_used", { remaining: result.access.feedbackBonus.remaining });
         cache.current.set(id, result.question);
         if (setActive) { setCurrent(result.question); setAccess(result.access); setLoadError(false); setAccessError(null); }
       } catch (error) {
@@ -263,7 +208,7 @@ export function QuizClient({
     const loginHref = `/auth/signin?callbackUrl=${encodeURIComponent(window.location.pathname + window.location.search)}`;
     if (accessError === "daily_limit") {
       return <div ref={transitionHost} tabIndex={-1} aria-label="本日の無料演習の終了" className="min-h-[100dvh] scroll-mt-24 outline-none">
-        <PracticeDailyLimit reset={reset} resumeHref={window.location.pathname + window.location.search} backHref={backHref} freeDaily={access?.freeDaily} />
+        <PracticeDailyLimit reset={reset} resumeHref={window.location.pathname + window.location.search} backHref={backHref} freeDaily={access?.freeDaily} onUnlocked={() => setRetryCount(n => n + 1)} />
       </div>;
     }
     const message = accessError === "daily_limit"
@@ -293,10 +238,11 @@ export function QuizClient({
 
   return (
     <div ref={transitionHost} tabIndex={-1} aria-label={`${index + 1}問目 / ${sessionIds.length}問`} className="min-h-[100dvh] scroll-mt-24 outline-none">
-      {access?.kind === "guest" ? (
+      {access?.feedbackBonus && <p role="status" className="mx-auto max-w-4xl px-4 py-3 text-sm">意見による追加10問を利用中です。追加枠は残り{access.feedbackBonus.remaining}問です。</p>}
+      {access?.kind === "guest" && !access.feedbackBonus ? (
         <aside aria-label="ログインなしの無料演習枠" className="mx-auto w-full max-w-4xl space-y-1 border-b border-border px-4 py-3 text-sm">
           <p role="status">ログインなしで無料の連続演習を利用中です。{access.remaining != null ? `今日あと${access.remaining}問（1日${access.freeDaily}問）。` : "残りの演習枠を確認できません。"}次の更新：{resetLabel(access)}</p>
-          <p>学習履歴は設定に応じてこの端末に保存されます。<Link href={`/auth/signin?callbackUrl=${encodeURIComponent(window.location.pathname + window.location.search)}`} className="underline">履歴の同期などは無料ログイン</Link>で利用できます。</p>
+          <p>学習履歴は設定に応じてこの端末に保存されます。</p>
           <p>この演習枠はAIへの質問回数とは別です。</p>
         </aside>
       ) : null}
@@ -310,6 +256,7 @@ export function QuizClient({
       exam={exam}
       completionLabel={completionLabel}
       completionShareHref={completionShareHref}
+      quiet
       onNext={handleNext}
       />
     </div>

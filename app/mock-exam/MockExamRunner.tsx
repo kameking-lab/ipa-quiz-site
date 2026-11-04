@@ -1,4 +1,5 @@
 "use client";
+import { useNativeQuestionGrant, NativeAccessState } from "@/mobile/shared/NativeQuestionGate";
 import { isAcceptedAnswer, formatAcceptedAnswers, getChoiceKeys } from "@/lib/questions/answers";
 
 import * as React from "react";
@@ -54,6 +55,7 @@ export function MockExamRunner({ questions, config, onFinish, resumeFrom }: Prop
       : Array(questions.length).fill(undefined),
   );
   const [phase, setPhase] = React.useState<Phase>("running");
+  const nativePermission = useNativeQuestionGrant(phase === "running" ? questions[index]?.id : undefined);
   const [result, setResult] = React.useState<MockExamResult | null>(null);
 
   const questionTimingsRef = React.useRef<number[]>(Array(questions.length).fill(0));
@@ -171,6 +173,7 @@ export function MockExamRunner({ questions, config, onFinish, resumeFrom }: Prop
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [phase]);
 
+  if (!nativePermission.allowed) return <NativeAccessState permission={nativePermission}/>;
   if (phase === "submitted" && result) {
     return (
       <ResultView

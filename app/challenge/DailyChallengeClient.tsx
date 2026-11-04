@@ -1,4 +1,5 @@
 "use client";
+import { useNativeQuestionGrant, NativeAccessState } from "@/mobile/shared/NativeQuestionGate";
 import { isAcceptedAnswer, getChoiceKeys, CHOICE_SHORTCUTS } from "@/lib/questions/answers";
 
 import * as React from "react";
@@ -67,6 +68,7 @@ export function DailyChallengeClient({ questions, date }: Props) {
   }, [questions, date]);
 
   const current = questions[index];
+  const nativePermission = useNativeQuestionGrant(final ? undefined : current?.id);
   const total = questions.length;
 
   // Arrow-key roving for the answer radiogroup (focus-only; Enter/Space/click
@@ -153,6 +155,7 @@ export function DailyChallengeClient({ questions, date }: Props) {
     });
   }, [index, total, results, date]);
 
+  if (!nativePermission.allowed) return <NativeAccessState permission={nativePermission}/>;
   if (final) {
     const xp = readXp();
     const progress = xpProgress(xp.total);

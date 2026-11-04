@@ -13,13 +13,14 @@
 // the reset mechanism; a 70-day TTL is set on first write for cleanup hygiene.
 //
 // Real providers stop when the cost state cannot be verified. Mock requests do
-// not incur provider spend. This check remains a backstop, not an atomic spend
-// reservation; concurrent requests can still cross the threshold. The Slack path:
+// not incur provider spend. Every HTTP generation path uses atomic spend
+// reservation before provider work, including concurrent calls. The Slack path:
 // if SLACK_WEBHOOK_URL is unset when a threshold is crossed, the breach is logged
 // via console.error (no fail-open swallow).
 
 import { costJpy } from "@/lib/ai/cost-tracker";
 import type { ModelTier } from "@/lib/ai/cost-tracker";
+import { randomUUID } from "node:crypto";
 
 export const MONTHLY_COST_CAP_JPY = 50_000;
 export const MONTHLY_COST_WARN_JPY = 40_000;
@@ -112,15 +113,94 @@ export interface CostCapStatus {
   totalJpy: number | null;
   capJpy: number;
   reason?: "cost_capped" | "budget_unavailable";
+  reservation?: CostReservation;
+}
+
+export interface CostReservation { key: string; receipt: string; amount: number }
+
+/** Text-only byte fallback plus framing overhead; never estimate admission as chars/2. */
+export function textBudget(tier: ModelTier, system: string, messages: readonly { content: string }[], maxTokens: number): RecordCostInput {
+  return { tier, label: "reservation", inputTokens: Buffer.byteLength(system, "utf8")
+    + messages.reduce((sum, m) => sum + Buffer.byteLength(m.content, "utf8") + 128, 0) + 1152,
+    outputTokens: maxTokens };
+}
+
+export const RESERVE_COST_LUA = `-- SEC1_RESERVE
+local raw = redis.call('GET', KEYS[1])
+local total = raw and tonumber(raw) or 0
+local amount, cap, ttl = tonumber(ARGV[1]), tonumber(ARGV[2]), tonumber(ARGV[3])
+if (raw and not tonumber(raw)) or not total or total < 0 or total ~= total or total == math.huge
+  or not amount or amount <= 0 or amount ~= amount or amount == math.huge
+  or not cap or cap <= 0 or not ttl or ttl < 1 then return redis.error_reply('invalid budget') end
+if redis.call('EXISTS', KEYS[2]) ~= 0 then return redis.error_reply('duplicate reservation') end
+if total + amount > cap then return {0, tostring(total)} end
+local updated = redis.call('INCRBYFLOAT', KEYS[1], ARGV[1])
+redis.call('EXPIRE', KEYS[1], ttl)
+redis.call('SET', KEYS[2], ARGV[1], 'EX', ttl)
+return {1, updated}
+`;
+
+export const SETTLE_COST_LUA = `-- SEC1_SETTLE
+local raw = redis.call('GET', KEYS[1])
+local total = raw and tonumber(raw)
+local receipt = redis.call('GET', KEYS[2])
+local reserved = receipt and tonumber(receipt)
+local actual = tonumber(ARGV[1])
+if not total or total < 0 or total ~= total or total == math.huge
+  or (receipt and (not reserved or reserved <= 0 or reserved ~= reserved or reserved == math.huge))
+  or not actual or actual < 0 or actual ~= actual or actual == math.huge then return redis.error_reply('invalid budget') end
+if not receipt then return tostring(total) end
+if total < reserved then return redis.error_reply('inconsistent budget') end
+local updated = redis.call('INCRBYFLOAT', KEYS[1], tostring(actual - reserved))
+redis.call('DEL', KEYS[2])
+return updated
+`;
+
+async function budgetCommand(script: string, reservation: CostReservation, amount: number): Promise<unknown> {
+  const cfg = kvConfig();
+  if (!cfg) return null;
+  try {
+    const response = await fetch(cfg.url, { method: "POST", cache: "no-store", redirect: "error",
+      headers: { Authorization: `Bearer ${cfg.token}`, "Content-Type": "application/json" },
+      signal: AbortSignal.timeout(KV_TIMEOUT_MS),
+      body: JSON.stringify(["EVAL", script, 2, reservation.key, reservation.receipt, amount, MONTHLY_COST_CAP_JPY, BUCKET_TTL_SEC]),
+    });
+    if (!response.ok) return null;
+    const data: unknown = await response.json();
+    return data && typeof data === "object" && "result" in data && !("error" in data) ? data.result : null;
+  } catch { return null; } // No retry: Redis may have committed before the response was lost.
+}
+
+function budgetNumber(value: unknown): number | null {
+  if (typeof value !== "number" && (typeof value !== "string" || !/^\d+(?:\.\d+)?(?:[eE][+-]?\d+)?$/.test(value))) return null;
+  const n = Number(value);
+  return Number.isFinite(n) && n >= 0 ? n : null;
 }
 
 /**
  * Read the running monthly total and decide whether a new AI request may proceed.
  * The caller supplies its resolved provider name, never API-key presence.
  */
-export async function checkMonthlyCostCap(providerName?: string): Promise<CostCapStatus> {
+export async function checkMonthlyCostCap(providerName?: string, budget?: RecordCostInput): Promise<CostCapStatus> {
   if (providerName === "mock") {
     return { allowed: true, totalJpy: 0, capJpy: MONTHLY_COST_CAP_JPY };
+  }
+  if (budget) {
+    const key = monthlyCostKey(), amount = costJpy(budget.tier, budget.inputTokens, budget.outputTokens);
+    const reservation = { key, amount, receipt: `${key}:reservation:${randomUUID()}` };
+    const unavailable: CostCapStatus = { allowed: false, totalJpy: null, capJpy: MONTHLY_COST_CAP_JPY, reason: "budget_unavailable" };
+    if (!Number.isFinite(amount) || amount <= 0) return unavailable;
+    const result = await budgetCommand(RESERVE_COST_LUA, reservation, amount);
+    if (!Array.isArray(result) || result.length !== 2 || ![0, 1].includes(result[0])) return unavailable;
+    const total = budgetNumber(result[1]);
+    if (total === null || result[0] === 1 && (total < amount || total > MONTHLY_COST_CAP_JPY)) return unavailable;
+    if (result[0] === 0 && await firstCrossing(`${key}:notified:reservation-denied`)) {
+      await notifySlack(`[過去問AI] 月間AI予算の残額が不足する生成を停止しました（上限 ¥${MONTHLY_COST_CAP_JPY.toLocaleString()}）。費用カウンタと予約を確認してください。`);
+    }
+    await maybeNotifyThresholds(key, total);
+    return result[0] === 1
+      ? { allowed: true, totalJpy: total, capJpy: MONTHLY_COST_CAP_JPY, reservation }
+      : { allowed: false, totalJpy: total, capJpy: MONTHLY_COST_CAP_JPY, reason: "cost_capped" };
   }
   const total = await readMonthlyCost(monthlyCostKey());
   if (total === null) return {
@@ -139,6 +219,7 @@ export interface RecordCostInput {
   inputTokens: number;
   outputTokens: number;
   label: string;
+  reservation?: CostReservation;
 }
 
 /**
@@ -150,6 +231,12 @@ export async function recordAiCost(input: RecordCostInput): Promise<void> {
   try {
     if (!kvConfig()) return; // dev/CI: no real spend to persist
     const jpy = costJpy(input.tier, input.inputTokens, input.outputTokens);
+    if (input.reservation) {
+      // Keep the conservative charge on missing/ambiguous settlement; never retry.
+      const total = budgetNumber(await budgetCommand(SETTLE_COST_LUA, input.reservation, jpy));
+      if (total !== null) await maybeNotifyThresholds(input.reservation.key, total);
+      return;
+    }
     if (jpy <= 0) return;
 
     const key = monthlyCostKey();
@@ -162,9 +249,9 @@ export async function recordAiCost(input: RecordCostInput): Promise<void> {
     }
 
     await maybeNotifyThresholds(key, total);
-  } catch (err) {
+  } catch {
     // Accounting must never break the user-facing AI response.
-    console.error("[cost-guard] recordAiCost failed", err);
+    console.error("[cost-guard] recordAiCost failed");
   }
 }
 
@@ -215,7 +302,7 @@ async function notifySlack(message: string): Promise<void> {
       body: JSON.stringify({ text: message }),
       signal: AbortSignal.timeout(KV_TIMEOUT_MS),
     });
-  } catch (err) {
-    console.error("[cost-guard] Slack notification failed", err, "message:", message);
+  } catch {
+    console.error("[cost-guard] Slack notification failed");
   }
 }

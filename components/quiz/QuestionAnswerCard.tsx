@@ -1,4 +1,5 @@
 "use client";
+import { NativeQuestionGate } from "@/mobile/shared/NativeQuestionGate";
 
 import { QuestionBody } from "./QuestionBody";
 import { RikuTech2CylinderGuide } from "./RikuTech2CylinderGuide";
@@ -84,7 +85,7 @@ export function QuestionAnswerCard(props: Props) {
       <p className="mt-3 font-semibold">公式正答（参照）: {props.question?.officialAnswerNumber ?? formatAcceptedAnswers(props.answerKey)}</p>
     </section>;
   }
-  return <ScoredQuestionAnswerCard {...props} />;
+  return <NativeQuestionGate id={props.questionId}><ScoredQuestionAnswerCard {...props} /></NativeQuestionGate>;
 }
 
 function ScoredQuestionAnswerCard({

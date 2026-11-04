@@ -5,4 +5,5 @@ export interface PracticeAccess {
   freeDaily: number;
   resetAt: string;
   retryAfter: number | null;
+  feedbackBonus?: { remaining: number; newlyUsed: boolean };
 }

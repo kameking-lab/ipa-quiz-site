@@ -3,7 +3,7 @@ import { ALL_ESSAY_QUESTIONS } from "@/data/questions/essay";
 
 export type EssayExamCode = EssayQuestion["exam"];
 
-export const ESSAY_EXAM_CODES: EssayExamCode[] = ["st", "sa", "pm", "sm", "au"];
+export {ESSAY_EXAM_CODES} from "./exams";
 
 export function getEssayQuestionsByExam(exam: EssayExamCode): EssayQuestion[] {
   return ALL_ESSAY_QUESTIONS.filter((q) => q.exam === exam).sort((a, b) => {

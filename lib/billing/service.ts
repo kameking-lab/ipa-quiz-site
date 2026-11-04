@@ -3,11 +3,13 @@ import { randomUUID } from "node:crypto";
 import { active, BillingError, jstDay, type BillingStore, type CheckoutProvider, type PaymentSnapshot } from "./domain";
 import { checkoutReady, termsHash, transitionEnd, type BillingConfig } from "./config";
 import { mergeFinance, refundState } from "./finance";
+import { strictContentGateEnabled } from "./content-policy";
 
 export class BillingService {
   constructor(private store: BillingStore, readonly config: BillingConfig, private clock = () => new Date()) {}
   private mode() { if (this.config.mode === "off") throw new BillingError("billing_disabled", 503); return this.config.mode; }
   private grace(createdAt: string) {
+    if(strictContentGateEnabled())return false;
     const start = this.config.transitionStartsAt ? Date.parse(this.config.transitionStartsAt) : NaN;
     return Date.parse(createdAt) < start && this.clock().getTime() >= start
       && this.clock().getTime() < Date.parse(transitionEnd(this.config) ?? "");

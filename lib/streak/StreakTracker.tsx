@@ -1,6 +1,7 @@
 "use client";
 
 import * as React from "react";
+import { usePathname } from "next/navigation";
 import { createHistoryStore } from "@/lib/storage/history";
 import { recordStudyToday } from "./storage";
 import { jstDateString } from "./core";
@@ -29,6 +30,7 @@ function writeProbe(probe: { date: string; entryCount: number }): void {
 }
 
 export function StreakTracker() {
+  const pathname = usePathname();
   const [toast, setToast] = React.useState<StreakMilestone | null>(null);
 
   React.useEffect(() => {
@@ -63,5 +65,6 @@ export function StreakTracker() {
     };
   }, []);
 
-  return toast ? <MilestoneToast milestone={toast} onClose={() => setToast(null)} /> : null;
+  // Keep streak recording active without interrupting practice.
+  return toast && pathname !== "/quiz" && !pathname?.startsWith("/q/") ? <MilestoneToast milestone={toast} onClose={() => setToast(null)} /> : null;
 }

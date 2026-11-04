@@ -1,3 +1,5 @@
+import {chushoCasePath,chushoQuestionPath} from "./format";
+export {chushoCasePath,chushoQuestionPath,INDEPENDENT_EXAMPLE_NOTICE} from "./format";
 import { z } from "zod";
 import a25 from "@/data/chusho-secondary/2025-case1.json";
 import b25 from "@/data/chusho-secondary/2025-case2.json";
@@ -63,10 +65,6 @@ export const CHUSHO_SECONDARY_ORIGINAL_COUNT = CHUSHO_SECONDARY_QUESTIONS.length
 export const CHUSHO_SECONDARY_SOLUTION_COUNT = CHUSHO_SECONDARY_QUESTIONS.reduce((sum, q) => sum + q.solutions.length, 0);
 if (CHUSHO_SECONDARY_ORIGINAL_COUNT !== 33 || new Set(CHUSHO_SECONDARY_QUESTIONS.map(q => q.id)).size !== 33
   || CHUSHO_SECONDARY_SOLUTION_COUNT !== 54) throw new Error("Secondary latest-two coverage changed");
-export const chushoCasePath = (year: number, key: string) => `/chusho-secondary/${year}/${key}`;
-export const chushoQuestionPath = (year: number, key: string, number: number) => `${chushoCasePath(year, key)}/q${number}`;
 export const getChushoCase = (year: number, key: string) => CHUSHO_SECONDARY_CASES.find(p => p.year === year && p.case === key);
 export const getChushoQuestion = (year: number, key: string, number: number) => getChushoCase(year, key)?.questions.find(q => q.number === number);
 export const chushoSitemapPaths = () => ["/chusho-secondary", ...CHUSHO_SECONDARY_CASES.flatMap(p => [chushoCasePath(p.year, p.case), ...p.questions.map(q => chushoQuestionPath(p.year, p.case, q.number))])];
-
-export const INDEPENDENT_EXAMPLE_NOTICE = "解答例・解説・自己確認項目は、公式問題と出題趣旨を参考に当サイトが独自に作成しました。公式の模範解答や採点基準ではなく、得点を保証するものではありません。別の妥当な解答も考えられます。";

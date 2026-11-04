@@ -4,7 +4,8 @@ import Link from "next/link";
 import { PRICE_PAGE_LINK } from "@/lib/billing/price-page-link";
 import { QuizResumeLinks } from "./QuizResumeLinks";
 import { ManageSubscriptionButton } from "./ManageSubscriptionButton";
-interface Status { billingModel?: "subscription"; canManage?: boolean; subscription?: { status: string; periodEnd: string; cancelAtPeriodEnd: boolean }; entitled: boolean; expiresAt: string | null; purchase: { id: string; status: string; expiresAt: string | null } | null }
+import { posthogCapture } from "@/lib/posthog";
+interface Status { feedbackSubmitted?: boolean; billingModel?: "subscription"; canManage?: boolean; subscription?: { status: string; periodEnd: string; cancelAtPeriodEnd: boolean }; entitled: boolean; expiresAt: string | null; purchase: { id: string; status: string; expiresAt: string | null } | null }
 export function PurchaseStatus({ order, canceled = false }: { order: string; canceled?: boolean }) {
   const [status, setStatus] = useState<Status | null>(null);
   const [error, setError] = useState("");
@@ -47,6 +48,14 @@ export function PurchaseStatus({ order, canceled = false }: { order: string; can
     return () => { disposed = true; clearTimeout(timer); request.current++; active.current = false; };
   }, [check, canceled]);
   const complete = status?.purchase?.id === order && status.purchase.status === "paid" && status.entitled;
+  useEffect(() => {
+    if (!complete || !status?.feedbackSubmitted) return;
+    // Confirmation views by customers with feedback history, not purchase conversions.
+    // Feedback can postdate this order; a new session can count another view.
+    const key = `kakomon-feedback-purchase:${order}`;
+    try { if (sessionStorage.getItem(key)) return; sessionStorage.setItem(key, "1"); } catch { /* Analytics remains best effort. */ }
+    posthogCapture("practice_feedback_customer_confirmation_viewed", { billingModel: status?.billingModel ?? "pass" });
+  }, [complete, order, status?.billingModel, status?.feedbackSubmitted]);
   const pending = status?.purchase?.status === "pending";
   const labels: Record<string, string> = { failed: "支払いは成立していません。", suspended: "返金手続を確認中のため利用を一時停止しています。", refunded: "返金により、この購入の利用は停止しています。", expired: "利用期間が満了しました。無料の演習・履歴は引き続き使えます。" };
   const title = complete ? "購入が完了しました" : canceled ? "決済画面から戻りました" : pending ? "支払いを確認しています" : "購入状況の確認";

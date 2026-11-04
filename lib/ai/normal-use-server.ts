@@ -33,7 +33,7 @@ export function normalUseWindows(subject: string, endpoint: string, policy: AiNo
 }
 
 export async function checkAiNormalUse(
-  req: Request, endpoint: string, context: AiUsageContext, options: { requireKv?: boolean } = {},
+  req: Request, endpoint: string, context: AiUsageContext, options: { requireKv?: boolean } = { requireKv: Boolean(process.env.GEMINI_API_KEY) },
   policy: AiNormalUsePolicy = DRAFT_AI_NORMAL_USE_POLICY,
   store: NormalUseStore = sharedNormalUseStore, now = Date.now(),
 ): Promise<AiNormalUseResult> {

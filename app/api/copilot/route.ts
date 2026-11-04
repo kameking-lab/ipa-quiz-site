@@ -1,3 +1,5 @@
+import { strictContentGateEnabled } from "@/lib/billing/content-policy";
+import { contentGrant } from "@/lib/billing/content-grant";
 import { NextResponse } from "next/server";
 import { requestsNewQuestion, ORIGINAL_QUESTION_ONLY_MESSAGE } from "@/lib/copilot/original-question-request";
 import { z } from "zod";
@@ -13,7 +15,7 @@ import { runCopilotRAGPipeline } from "@/lib/copilot/rag-pipeline";
 import { assembleCopilotPrompt } from "@/lib/copilot/prompt-assembly";
 import { createCopilotResponseStream } from "@/lib/copilot/streaming";
 import { createCopilotGeminiProvider } from "@/lib/copilot/gemini-flash38";
-import { checkMonthlyCostCap, recordAiCost, estimateTokens } from "@/lib/ai/cost-guard";
+import { checkMonthlyCostCap, recordAiCost, estimateTokens, textBudget } from "@/lib/ai/cost-guard";
 import { tierForModel } from "@/lib/ai/cost-tracker";
 import { COPILOT_MODEL } from "@/lib/copilot/model";
 import { prepareAiUsage, consumeAiUsage, withAiUsageResponse, type AiUsageContext } from "@/lib/ai/usage-server";
@@ -74,6 +76,7 @@ async function handlePost(req: Request, track: (context: AiUsageContext) => void
       { status: 400 },
     );
   }
+  if(strictContentGateEnabled()){ if(req.headers.get("X-Kakomon-AI-Consent")!=="20261103")return NextResponse.json({error:"ai_consent_required"},{status:428}); const grant=await contentGrant(req,question.id);if(!grant.ok)return grant;}
   const selectedKeys = payload.selectedChoice?.split("・") ?? [];
   const selectedChoice = selectedKeys.length > 0 &&
     selectedKeys.every((key) => question.choices?.[key as keyof typeof question.choices] !== undefined)
@@ -152,8 +155,23 @@ async function handlePost(req: Request, track: (context: AiUsageContext) => void
 
   // CLAUDE.md §0 hard cap: stop new real AI requests once the monthly spend
   // reaches ¥50,000 (mock/dev path is free and never blocked).
+  const model = COPILOT_MODEL;
+
+  // Gemini 3.8 Flash counts hidden thinking tokens within maxOutputTokens.
+  // Keep the visible answer length in prompts.ts, with enough token headroom
+  // for the model to finish rather than returning only thought tokens.
+  const maxTokens =
+    payload.responseLength === "short"
+      ? 800
+      : payload.responseLength === "medium"
+        ? 1200
+        : 1800;
+
+  const budget = textBudget(tierForModel(model), system, userMessages, maxTokens);
+  let reservation: Awaited<ReturnType<typeof checkMonthlyCostCap>>["reservation"];
   if (provider.name !== "mock") {
-    const cap = await checkMonthlyCostCap(provider.name);
+    const cap = await checkMonthlyCostCap(provider.name, budget);
+    reservation = cap.reservation;
     if (!cap.allowed) {
     if (!usage.legacy) usage.headers["X-AI-RateLimit-Scope"] = "service-cost";
       return NextResponse.json(
@@ -168,23 +186,13 @@ async function handlePost(req: Request, track: (context: AiUsageContext) => void
     }
   }
 
-  const model = COPILOT_MODEL;
-
-  // Gemini 3.8 Flash counts hidden thinking tokens within maxOutputTokens.
-  // Keep the visible answer length in prompts.ts, with enough token headroom
-  // for the model to finish rather than returning only thought tokens.
-  const maxTokens =
-    payload.responseLength === "short"
-      ? 800
-      : payload.responseLength === "medium"
-        ? 1200
-        : 1800;
-
   const isRealProvider = provider.name !== "mock";
-  const inputChars = system.length + userMessages.reduce((n, m) => n + m.content.length, 0);
 
   const usageDenial = await consumeAiUsage(usage, provider.name);
-  if (usageDenial) return usageDenial;
+  if (usageDenial) {
+    if (reservation) await recordAiCost({ ...budget, inputTokens: 0, outputTokens: 0, reservation });
+    return usageDenial;
+  }
 
   const stream = createCopilotResponseStream({
     provider,
@@ -210,7 +218,7 @@ async function handlePost(req: Request, track: (context: AiUsageContext) => void
           });
           await recordAiCost({
             tier: tierForModel(model),
-            inputTokens: usage?.promptTokens ?? estimateTokens(inputChars),
+            inputTokens: usage?.promptTokens ?? budget.inputTokens,
             // Stream interruption may hide usageMetadata, including billable
             // thinking tokens. Reserve the whole generation budget in that case.
             outputTokens: usage?.totalTokens !== undefined && usage.promptTokens !== undefined
@@ -219,6 +227,7 @@ async function handlePost(req: Request, track: (context: AiUsageContext) => void
                 ? usage.outputTokens + usage.thoughtsTokens
                 : Math.max(maxTokens, (usage?.outputTokens ?? 0) + (usage?.thoughtsTokens ?? 0), estimateTokens(outputChars)),
             label: "copilot",
+            reservation,
           });
         }
       : undefined,

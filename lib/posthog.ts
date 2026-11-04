@@ -25,6 +25,10 @@ export const POSTHOG_CONFIG = {
 // Vercel Analytics 既存イベント (lib/analytics/events.ts) とは独立に
 // PostHog 単体でも分析できるよう、ファネル別の名称を素直に揃える。
 export type PostHogEventName =
+  | "practice_limit_viewed"
+  | "practice_feedback_submitted"
+  | "practice_feedback_bonus_used"
+  | "practice_feedback_customer_confirmation_viewed"
   | "page_view"
   | "question_answered"
   | "ai_query_sent"
