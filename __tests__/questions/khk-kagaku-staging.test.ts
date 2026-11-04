@@ -71,18 +71,23 @@ describe("KHK chemistry source staging", () => {
         if (paper.code.endsWith("X")) {
           expect(fields.lawInstructionsDraft).toContain(`令和${paper.year - 2018}年4月1日`);
         }
-        const hasSharedTable = ["AX", "BX"].includes(paper.code) && q.number >= 8;
+        const hasSharedTable = ["AX", "BX", "CX", "DX"].includes(paper.code) && q.number >= 8;
         const hasDescriptiveFigure = paper.code === "AZ" && (
           (paper.year === 2024 && [2, 3, 4].includes(q.number)) ||
           (paper.year === 2025 && q.number === 4)
         );
         const hasOtsuTable = paper.code === "BZ" && (q.number === 6 || (paper.year === 2025 && q.number === 13));
-        expect(fields.hasImage).toBe(hasSharedTable || hasDescriptiveFigure || hasOtsuTable);
+        const hasLpgFigure = paper.code === "CZ" && ((paper.year === 2024 && q.number === 11) || (paper.year === 2025 && q.number === 15));
+        const hasSpecialFigure = (paper.code === "DY" && paper.year === 2025 && [2, 12, 16].includes(q.number)) ||
+          (paper.code === "DZ" && (paper.year === 2024 ? [3, 13, 17] : [6, 13]).includes(q.number));
+        const needsImage = hasSharedTable || hasDescriptiveFigure || hasOtsuTable || hasLpgFigure || hasSpecialFigure;
+        expect(fields.hasImage).toBe(needsImage);
         const assets = fields.imageAssets as string[];
-        expect(assets).toHaveLength(hasSharedTable || hasDescriptiveFigure || hasOtsuTable ? 1 : 0);
+        expect(assets).toHaveLength(needsImage ? 1 : 0);
         expect(assets.every((file) => review.assets.some((asset) => asset.file === file))).toBe(true);
         if (hasSharedTable) {
-          expect(fields.sharedPassagePdfPages).toEqual([q.number <= 12 ? 4 : 6]);
+          const page = paper.code === "CX" ? (q.number <= 16 ? 4 : 7) : paper.code === "DX" ? (q.number <= 9 ? 4 : 5) : (q.number <= 12 ? 4 : 6);
+          expect(fields.sharedPassagePdfPages).toEqual([page]);
         }
       }
     }
@@ -103,9 +108,9 @@ describe("KHK chemistry source staging", () => {
   it("retains the 100 reviewed Otsu originals, equation typography, tables and booklet conditions", () => {
     const otsu = drafts.papers.filter((p) => ["BX", "BY", "BZ"].includes(p.code));
     expect(otsu.flatMap<(typeof drafts.papers)[number]["questions"][number]>((p) => p.questions).filter((q) => q.transcriptionVerified)).toHaveLength(100);
-    expect(review.counts.transcriptionVerified).toBe(182);
-    expect(review.counts.unreviewed).toBe(240);
-    expect(review.assets).toHaveLength(15);
+    expect(review.counts.transcriptionVerified).toBe(422);
+    expect(review.counts.unreviewed).toBe(0);
+    expect(review.assets).toHaveLength(33);
     const get = (year: number, code: string, number: number) =>
       drafts.papers.find((p) => p.year === year && p.code === code)!.questions[number - 1] as unknown as Record<string, unknown>;
     expect(get(2024, "BX", 17).pdfPages).toEqual([7]);
@@ -122,6 +127,30 @@ describe("KHK chemistry source staging", () => {
     expect(get(2025, "BZ", 2).questionDraft).toContain("28.0×10⁻³ kg/mol");
     expect(get(2025, "BZ", 13).questionDraft).toContain("| 水（g） | −242 |");
     expect(get(2024, "BZ", 5).questionDraft).toContain("同一の反応であれば、用いる触媒や反応条件により変わらない。");
+  });
+
+  it("preserves all 240 Hei originals including graphic choices, fractions and graph references", () => {
+    const get = (year: number, code: string, number: number) =>
+      drafts.papers.find((p) => p.year === year && p.code === code)!.questions[number - 1] as unknown as Record<string, unknown>;
+    expect(drafts.papers.every((p) => p.questions.every((q) => q.transcriptionVerified && q.figuresVerified))).toBe(true);
+    expect(get(2024, "CX", 6).questionDraft).toContain("G＝C/V");
+    expect(get(2024, "DX", 5).questionDraft).toContain("G＝C/V");
+    expect(get(2024, "CZ", 15).questionDraft).toContain("C₄H₁₀ ＋ 6½ O₂");
+    expect(get(2025, "CY", 15).questionDraft).toContain("cm³");
+    expect(get(2024, "DZ", 7).questionDraft).toContain("CH₄ ＋ 2 O₂ → CO₂ ＋ 2 H₂O");
+    expect(get(2025, "DZ", 7).questionDraft).toContain("(7/2) O₂");
+    expect(get(2025, "DZ", 6).choicesDraft).toEqual(["9/2、3、3", "5、3、4", "11/2、4、4", "6、3、3", "13/2、5、4"]);
+    expect(get(2025, "DY", 2).choicesDraft).toEqual(["イ－a、ロ－b、ハ－c", "イ－a、ロ－c、ハ－b", "イ－c、ロ－b、ハ－a", "イ－c、ロ－a、ハ－b", "イ－b、ロ－c、ハ－a"]);
+    for (const number of [12, 16]) {
+      expect(get(2025, "DY", number).choicesDraft).toEqual(["イ－a、ロ－b、ハ－c", "イ－a、ロ－c、ハ－b", "イ－b、ロ－a、ハ－c", "イ－b、ロ－c、ハ－a", "イ－c、ロ－a、ハ－b"]);
+    }
+    for (const p of drafts.papers.filter((p) => p.code !== "AZ")) {
+      for (const q of p.questions) {
+        const fields = q as unknown as Record<string, unknown>;
+        expect((fields.choicesDraft as string[]).every((choice) => choice.trim().length > 0)).toBe(true);
+        expect(fields.questionDraft).not.toMatch(/[\uE000-\uF8FF]|ど\s+[A-D]\s*れか/);
+      }
+    }
   });
 
   it("preserves descriptive subquestions, essential figures and exponents without creating choices", () => {
