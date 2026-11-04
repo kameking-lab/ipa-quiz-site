@@ -1,0 +1,213 @@
+{
+  "status": "DRAFT_PENDING_INDEPENDENT_REVIEW",
+  "qualification": "gijutsushi1-kikai",
+  "year": 2025,
+  "subject": "basis",
+  "expectedFullQualificationCount": 160,
+  "questions": [
+    {
+      "id": "gijutsushi1-kikai-2025-basis-I-1-1",
+      "printedNumber": "Ⅰ－1－1",
+      "questionNumber": 1,
+      "questionText": "構造物の設計に関する次の記述の、［ ］に入る語句の組合せとして、最も適切なものはどれか。\n構造物の設計においては、自然条件、社会条件、施工条件、環境性、経済性等に配慮した個別の設計目的に応じて、所要の性能が発揮されるよう、より［ア］な構造体の築造を図ることが必要である。設計では、構造物の用途・機能を果たすために［イ］を設定し、その［イ］を満たすように構造物の［ウ］を行った後に、［エ］の設定を行い、設計耐用期間を通じて［イ］が満足されていることを照査する。",
+      "choices": {
+        "1": "ア：合理的／イ：使用性能／ウ：施工計画／エ：詳細設計",
+        "2": "ア：不合理／イ：使用性能／ウ：構造計画／エ：構造詳細",
+        "3": "ア：合理的／イ：要求性能／ウ：構造計画／エ：構造詳細",
+        "4": "ア：不合理／イ：要求性能／ウ：施工計画／エ：詳細設計",
+        "5": "ア：合理的／イ：要求性能／ウ：構造計画／エ：詳細設計"
+      },
+      "officialAnswer": 3,
+      "scoringException": null,
+      "explanation": "正答は3です。合理的な構造物を実現するため、要求性能を設定し、それに応じた構造計画を立て、構造詳細を設定したうえで設計耐用期間中の性能を照査するという流れです。",
+      "choiceExplanations": {
+        "1": "設定するのは使用性能だけに限らない要求性能であり、構造計画と構造詳細の組合せが必要です。",
+        "2": "設計が目指すのは不合理でなく合理的な構造体で、設定するのは要求性能です。",
+        "3": "適切です。要求性能、構造計画、構造詳細、性能照査という設計過程に一致します。",
+        "4": "不合理は設計の目的と逆であり、施工計画・詳細設計も本問の空欄に対応しません。",
+        "5": "ア・イ・ウは合っていますが、本問で設定する対象を表すエは構造詳細です。"
+      },
+      "hasRequiredFigure": false,
+      "sourceQuestionUrl": "https://www.engineer.or.jp/c_topics/011/attached/attach_11457_1.pdf",
+      "sourceQuestionPage": 1,
+      "sourceQuestionSha256": "cc4720f1b8335558003467735e01982cb72aebbdeddf06ccbb4ee5891aa164d0",
+      "sourceAnswerUrl": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_4.pdf",
+      "sourceAnswerPage": 1,
+      "sourceAnswerSha256": "6d4f5427838059ab50f0e7785f3f9cb2718fafaf96a8b74afcb332d969d7e311",
+      "sourceAttribution": "出典：公益社団法人日本技術士会 令和7年度技術士第一次試験 基礎科目 Ⅰ－1－1。改行・空白・句読点と数式表記を整理。組合せは列名付きで転記。解説は独自作成。",
+      "transcription": "Official PDF pages1-4 visually checked; all original formulae and combination columns retained as text. Printed group/item retained.",
+      "needsIndependentReview": true,
+      "publicGo": false
+    },
+    {
+      "id": "gijutsushi1-kikai-2025-basis-I-1-2",
+      "printedNumber": "Ⅰ－1－2",
+      "questionNumber": 2,
+      "questionText": "設計や計画のプロジェクトを管理する方法として知られる、PDCAサイクルに関する次の（ア）～（エ）の記述について、正誤の組合せとして、最も適切なものはどれか。\n（ア）Pは、Planの頭文字を取ったもので、プロジェクトの目標とそれを達成するためのプロセスを定めることである。\n（イ）Dは、Doの頭文字を取ったもので、プロジェクトを実施することである。\n（ウ）Cは、Chooseの頭文字を取ったもので、プロジェクトで変更される事項を選ぶことである。\n（エ）Aは、Achieveの頭文字を取ったもので、プロジェクトを成し遂げることである。",
+      "choices": {
+        "1": "ア：誤／イ：誤／ウ：誤／エ：正",
+        "2": "ア：誤／イ：正／ウ：正／エ：正",
+        "3": "ア：正／イ：正／ウ：正／エ：誤",
+        "4": "ア：正／イ：正／ウ：誤／エ：誤",
+        "5": "ア：正／イ：正／ウ：誤／エ：正"
+      },
+      "officialAnswer": 4,
+      "scoringException": null,
+      "explanation": "正答は4です。P＝Plan（計画）、D＝Do（実行）、C＝Check（評価・確認）、A＝Act（改善）です。ア・イが正しく、ウ・エが誤りです。",
+      "choiceExplanations": {
+        "1": "アとイは正しく、エは誤りなので、これらの判定が異なります。",
+        "2": "アは正しく、ウとエは誤りです。ChooseとAchieveではありません。",
+        "3": "ア・イ・エは合っていますが、CはChooseではなくCheckなのでウが誤りです。",
+        "4": "適切です。Plan、Do、Check、Actの各役割に一致します。",
+        "5": "ア・イ・ウの判定は正しいですが、エはActではなくAchieveとする記述なので誤りです。"
+      },
+      "hasRequiredFigure": false,
+      "sourceQuestionUrl": "https://www.engineer.or.jp/c_topics/011/attached/attach_11457_1.pdf",
+      "sourceQuestionPage": 2,
+      "sourceQuestionSha256": "cc4720f1b8335558003467735e01982cb72aebbdeddf06ccbb4ee5891aa164d0",
+      "sourceAnswerUrl": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_4.pdf",
+      "sourceAnswerPage": 1,
+      "sourceAnswerSha256": "6d4f5427838059ab50f0e7785f3f9cb2718fafaf96a8b74afcb332d969d7e311",
+      "sourceAttribution": "出典：公益社団法人日本技術士会 令和7年度技術士第一次試験 基礎科目 Ⅰ－1－2。改行・空白・句読点と数式表記を整理。組合せは列名付きで転記。解説は独自作成。",
+      "transcription": "Official PDF pages1-4 visually checked; all original formulae and combination columns retained as text. Printed group/item retained.",
+      "needsIndependentReview": true,
+      "publicGo": false
+    },
+    {
+      "id": "gijutsushi1-kikai-2025-basis-I-1-3",
+      "printedNumber": "Ⅰ－1－3",
+      "questionNumber": 3,
+      "questionText": "次の記述の、［ ］に入るものの組合せとして、最も適切なものはどれか。\n許容応力は［ア］で求めることができる。安全率は荷重の種類や性質、材料の信頼度を考慮した値が用いられる。基準強さに、引張強さを用いる場合、安全率は［イ］が用いられる。疲労限度を用いる場合、安全率は［ウ］程度が用いられる。",
+      "choices": {
+        "1": "ア：基準強さ÷安全率／イ：1以下の値／ウ：13～20",
+        "2": "ア：基準強さ÷安全率／イ：2以上の値／ウ：1.3～2.0",
+        "3": "ア：基準強さ÷安全率／イ：2以上の値／ウ：13～20",
+        "4": "ア：安全率÷基準強さ／イ：1以下の値／ウ：1.3～2.0",
+        "5": "ア：安全率÷基準強さ／イ：2以上の値／ウ：13～20"
+      },
+      "officialAnswer": 2,
+      "scoringException": null,
+      "explanation": "正答は2です。許容応力は基準強さを安全率で割った値です。本問が示す一般的な目安では、引張強さを基準とする場合は2以上、疲労限度を基準とする場合は1.3～2.0程度です。具体的な安全率は荷重・材料・適用設計条件に応じて選びます。",
+      "choiceExplanations": {
+        "1": "式は正しいですが、引張強さ基準で1以下、疲労基準で13～20という数値の組合せが異なります。",
+        "2": "適切です。許容応力の定義と、本問の基準強さ別の安全率の目安に一致します。",
+        "3": "式とイは正しいですが、ウは13～20でなく1.3～2.0程度です。",
+        "4": "許容応力の式が逆数で次元も合わず、イの1以下も不適切です。",
+        "5": "式が逆数であり、疲労限度に対する目安の桁も異なります。"
+      },
+      "hasRequiredFigure": false,
+      "sourceQuestionUrl": "https://www.engineer.or.jp/c_topics/011/attached/attach_11457_1.pdf",
+      "sourceQuestionPage": 2,
+      "sourceQuestionSha256": "cc4720f1b8335558003467735e01982cb72aebbdeddf06ccbb4ee5891aa164d0",
+      "sourceAnswerUrl": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_4.pdf",
+      "sourceAnswerPage": 1,
+      "sourceAnswerSha256": "6d4f5427838059ab50f0e7785f3f9cb2718fafaf96a8b74afcb332d969d7e311",
+      "sourceAttribution": "出典：公益社団法人日本技術士会 令和7年度技術士第一次試験 基礎科目 Ⅰ－1－3。改行・空白・句読点と数式表記を整理。組合せは列名付きで転記。解説は独自作成。",
+      "transcription": "Official PDF pages1-4 visually checked; all original formulae and combination columns retained as text. Printed group/item retained.",
+      "needsIndependentReview": true,
+      "publicGo": false
+    },
+    {
+      "id": "gijutsushi1-kikai-2025-basis-I-1-4",
+      "printedNumber": "Ⅰ－1－4",
+      "questionNumber": 4,
+      "questionText": "弾性論における2次元近似に関連する用語に、平面応力状態と平面ひずみ状態があるが、その記述として、最も適切なものはどれか。",
+      "choices": {
+        "1": "非常に薄い平板が面内荷重を受ける場合、応力の平板厚さ方向成分は無視してよい。これを平面応力状態という。",
+        "2": "非常に長い柱がその側面に長さ方向に一様な荷重を受ける場合、応力の柱長さ方向成分は無視してよい。これを平面ひずみ状態という。",
+        "3": "非常に長い柱がその側面に長さ方向に一様な荷重を受ける場合、ひずみの柱長さ方向成分は無視してよい。これを平面応力状態という。",
+        "4": "非常に薄い平板が面内荷重を受ける場合、ひずみの平板厚さ方向成分は無視してよい。これを平面ひずみ状態という。",
+        "5": "非常に長い柱がその側面に長さ方向に一様な荷重を受ける場合、応力の柱長さ方向成分は無視してよい。これを平面応力状態という。"
+      },
+      "officialAnswer": 1,
+      "scoringException": null,
+      "explanation": "正答は1です。薄い平板の面内荷重では面外応力を無視する平面応力近似を用います。一方、長い柱の端部から離れ、軸方向変形が拘束されるなど軸方向ひずみを無視できる条件では、平面ひずみ近似を用います。長さだけで軸方向ひずみが0になるわけではありません。",
+      "choiceExplanations": {
+        "1": "適切です。板表面が自由な薄板では厚さ方向の応力は小さい一方、ポアソン効果による厚さ方向ひずみは生じ得ます。",
+        "2": "平面ひずみでは長さ方向のひずみを無視します。その方向の応力は一般に0ではありません。",
+        "3": "長さ方向ひずみを無視する説明ですが、名称は平面応力でなく平面ひずみです。",
+        "4": "薄板では厚さ方向応力を無視するのであり、厚さ方向ひずみは一般にポアソン効果で生じます。",
+        "5": "長い柱で軸方向ひずみを無視できる条件では平面ひずみ近似を用います。長さ方向応力を0と置くものではありません。"
+      },
+      "hasRequiredFigure": false,
+      "sourceQuestionUrl": "https://www.engineer.or.jp/c_topics/011/attached/attach_11457_1.pdf",
+      "sourceQuestionPage": 3,
+      "sourceQuestionSha256": "cc4720f1b8335558003467735e01982cb72aebbdeddf06ccbb4ee5891aa164d0",
+      "sourceAnswerUrl": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_4.pdf",
+      "sourceAnswerPage": 1,
+      "sourceAnswerSha256": "6d4f5427838059ab50f0e7785f3f9cb2718fafaf96a8b74afcb332d969d7e311",
+      "sourceAttribution": "出典：公益社団法人日本技術士会 令和7年度技術士第一次試験 基礎科目 Ⅰ－1－4。改行・空白・句読点と数式表記を整理。組合せは列名付きで転記。解説は独自作成。",
+      "transcription": "Official PDF pages1-4 visually checked; all original formulae and combination columns retained as text. Printed group/item retained.",
+      "needsIndependentReview": true,
+      "publicGo": false
+    },
+    {
+      "id": "gijutsushi1-kikai-2025-basis-I-1-5",
+      "printedNumber": "Ⅰ－1－5",
+      "questionNumber": 5,
+      "questionText": "ある遊園地に1台の入場券売り場があり、ここで入場券を購入するために到着する訪問者の数は、1時間当たり平均36人のポアソン分布に従う。また、この売り場での1人当たりの処理に要する時間は平均50秒の指数分布に従う。このとき、訪問者が入場券売り場の列に並んでから処理が終わるまでの系内に滞在する時間の平均値として、最も近い値はどれか。\nトラフィック密度（利用率）＝到着率÷サービス率\n平均系内列長＝トラフィック密度÷(1−トラフィック密度)\n平均系内滞在時間＝平均系内列長÷到着率",
+      "choices": {
+        "1": "0秒",
+        "2": "25秒",
+        "3": "50秒",
+        "4": "75秒",
+        "5": "100秒"
+      },
+      "officialAnswer": 5,
+      "scoringException": null,
+      "explanation": "正答は5です。到着率λ＝36/3600＝0.01人/s、サービス率μ＝1/50＝0.02人/s、利用率ρ＝0.5です。平均系内人数L＝ρ/(1−ρ)＝1人、平均系内滞在時間W＝L/λ＝100秒です。待ち時間だけでなく処理時間も含みます。",
+      "choiceExplanations": {
+        "1": "利用率が0ではないので待ちが生じ、処理自体にも平均50秒が必要です。",
+        "2": "平均処理時間50秒より短く、この系の平均滞在時間は表しません。平均滞在時間には平均待ち時間も加算します。",
+        "3": "50秒はこの条件での平均処理時間にも平均待ち時間にも等しい値です。系内滞在時間は両者の和100秒です。",
+        "4": "M/M/1の式で計算した100秒と一致しません。利用率0.5なら平均系内人数は1人です。",
+        "5": "適切です。W＝1/(μ−λ)＝1/(0.02−0.01)＝100秒とも求められます。"
+      },
+      "hasRequiredFigure": false,
+      "sourceQuestionUrl": "https://www.engineer.or.jp/c_topics/011/attached/attach_11457_1.pdf",
+      "sourceQuestionPage": 3,
+      "sourceQuestionSha256": "cc4720f1b8335558003467735e01982cb72aebbdeddf06ccbb4ee5891aa164d0",
+      "sourceAnswerUrl": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_4.pdf",
+      "sourceAnswerPage": 1,
+      "sourceAnswerSha256": "6d4f5427838059ab50f0e7785f3f9cb2718fafaf96a8b74afcb332d969d7e311",
+      "sourceAttribution": "出典：公益社団法人日本技術士会 令和7年度技術士第一次試験 基礎科目 Ⅰ－1－5。改行・空白・句読点と数式表記を整理。組合せは列名付きで転記。解説は独自作成。",
+      "transcription": "Official PDF pages1-4 visually checked; all original formulae and combination columns retained as text. Printed group/item retained.",
+      "needsIndependentReview": true,
+      "publicGo": false
+    },
+    {
+      "id": "gijutsushi1-kikai-2025-basis-I-1-6",
+      "printedNumber": "Ⅰ－1－6",
+      "questionNumber": 6,
+      "questionText": "統計的検定に関する次の記述のうち、最も適切なものはどれか。",
+      "choices": {
+        "1": "統計的検定は、成立することを期待した帰無仮説を立てることから始める。",
+        "2": "帰無仮説が成立するかどうかは、有意水準の確率範囲に統計値が入るかどうかによって判定する。この有意水準は、一般に30%が用いられる。",
+        "3": "帰無仮説が真であるにもかかわらず棄却してしまう誤りを第1種の誤りといい、帰無仮説が偽であるにもかかわらず棄却しない誤りを第2種の誤りという。",
+        "4": "平均値の検定において母分散が未知の場合、一般に、標本平均に関する統計量が自由度nのt分布に従うことが用いられる。ここで、nは標本数である。",
+        "5": "区間推定法において、信頼度は、推定値の存在を定義する範囲である信頼区間内に母数が存在する確率で表され、危険率の逆数で表すことができる。"
+      },
+      "officialAnswer": 3,
+      "scoringException": null,
+      "explanation": "正答は3です。第1種の誤りは真の帰無仮説を棄却すること、第2種の誤りは偽の帰無仮説を棄却しないことです。有意水準は第1種の誤りを制御する基準です。",
+      "choiceExplanations": {
+        "1": "一般的な有意性検定では差がない等の基準を帰無仮説として置きます。成立を期待する結論をそのまま帰無仮説とするという説明は不適切です。",
+        "2": "30%を一般的な有意水準とする点が誤りです。通常は目的に応じて5%や1%などを事前に定めます。",
+        "3": "適切です。二種類の誤りの定義を正しく述べています。",
+        "4": "正規母集団の母平均について、母分散未知の一標本t検定では自由度はnでなくn−1です。",
+        "5": "信頼係数は通常1−αであり、危険率αの逆数ではありません。頻度論の信頼区間は固定された母数に対し区間作成手順の被覆率で解釈します。"
+      },
+      "hasRequiredFigure": false,
+      "sourceQuestionUrl": "https://www.engineer.or.jp/c_topics/011/attached/attach_11457_1.pdf",
+      "sourceQuestionPage": 4,
+      "sourceQuestionSha256": "cc4720f1b8335558003467735e01982cb72aebbdeddf06ccbb4ee5891aa164d0",
+      "sourceAnswerUrl": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_4.pdf",
+      "sourceAnswerPage": 1,
+      "sourceAnswerSha256": "6d4f5427838059ab50f0e7785f3f9cb2718fafaf96a8b74afcb332d969d7e311",
+      "sourceAttribution": "出典：公益社団法人日本技術士会 令和7年度技術士第一次試験 基礎科目 Ⅰ－1－6。改行・空白・句読点と数式表記を整理。組合せは列名付きで転記。解説は独自作成。",
+      "transcription": "Official PDF pages1-4 visually checked; all original formulae and combination columns retained as text. Printed group/item retained.",
+      "needsIndependentReview": true,
+      "publicGo": false
+    }
+  ]
+}
