@@ -6,6 +6,7 @@ import drafts from "@/data/questions/khk-kagaku/staging-drafts.json";
 import keys from "@/data/questions/khk-kagaku/official-answer-keys.json";
 import manifest from "@/data/exam-library/source-packs/khk-kagaku/manifest.json";
 import review from "@/data/questions/khk-kagaku/review-progress.json";
+import descriptiveAnswers from "@/data/questions/khk-kagaku/official-descriptive-answer-review.json";
 import { QUALIFICATION_CATALOG } from "@/lib/qualifications/catalog";
 import { QUESTIONS_BY_EXAM } from "@/data/questions";
 
@@ -39,7 +40,8 @@ describe("KHK chemistry source staging", () => {
           expect(q.sourceAnswerUrl).toMatch(/^https:\/\/www\.khk\.or\.jp\//);
           const reviewed = review.reviewedPapers.some((record) => record.year === year && record.code === paper.code && record.questions.some((item) => item.number === q.number));
           expect(q.transcriptionVerified).toBe(reviewed);
-          expect(q.explanationWritten).toBe(false);
+          const explanationWritten = review.explanationReviews.some((record) => record.year === year && record.code === paper.code && record.number === q.number);
+          expect(q.explanationWritten).toBe(explanationWritten);
           expect(q.figuresVerified).toBe(reviewed);
         }
         if (paper.code.endsWith("X")) {
@@ -56,9 +58,9 @@ describe("KHK chemistry source staging", () => {
     const questions = drafts.papers.flatMap<(typeof drafts.papers)[number]["questions"][number]>((paper) => paper.questions);
     expect(questions.filter((q) => q.transcriptionVerified)).toHaveLength(review.counts.transcriptionVerified);
     expect(questions.filter((q) => !q.transcriptionVerified)).toHaveLength(review.counts.unreviewed);
-    expect(questions.filter((q) => q.explanationWritten)).toHaveLength(0);
+    expect(questions.filter((q) => q.explanationWritten)).toHaveLength(10);
     expect(review.counts.originalQuestions).toBe(422);
-    expect(review.counts.descriptiveAnswersVerified).toBe(0);
+    expect(review.counts.descriptiveAnswersVerified).toBe(12);
     for (const record of review.reviewedPapers) {
       const paper = drafts.papers.find((p) => p.year === record.year && p.code === record.code)!;
       expect(paper.sourceSha256).toBe(record.sourceSha256);
@@ -110,7 +112,7 @@ describe("KHK chemistry source staging", () => {
     expect(otsu.flatMap<(typeof drafts.papers)[number]["questions"][number]>((p) => p.questions).filter((q) => q.transcriptionVerified)).toHaveLength(100);
     expect(review.counts.transcriptionVerified).toBe(422);
     expect(review.counts.unreviewed).toBe(0);
-    expect(review.assets).toHaveLength(33);
+    expect(review.assets).toHaveLength(36);
     const get = (year: number, code: string, number: number) =>
       drafts.papers.find((p) => p.year === year && p.code === code)!.questions[number - 1] as unknown as Record<string, unknown>;
     expect(get(2024, "BX", 17).pdfPages).toEqual([7]);
@@ -127,6 +129,79 @@ describe("KHK chemistry source staging", () => {
     expect(get(2025, "BZ", 2).questionDraft).toContain("28.0×10⁻³ kg/mol");
     expect(get(2025, "BZ", 13).questionDraft).toContain("| 水（g） | −242 |");
     expect(get(2024, "BZ", 5).questionDraft).toContain("同一の反応であれば、用いる触媒や反応条件により変わらない。");
+  });
+
+  it("retains all 12 checked official descriptive examples as original full-page images", () => {
+    expect(descriptiveAnswers.publicAllowed).toBe(false);
+    expect(descriptiveAnswers.entries).toHaveLength(12);
+    expect(descriptiveAnswers.assets).toHaveLength(13);
+    for (const year of [2024, 2025]) {
+      expect(descriptiveAnswers.entries.filter((entry) => entry.year === year).map((entry) => entry.number)).toEqual([1, 2, 3, 4, 5, 6]);
+    }
+    for (const entry of descriptiveAnswers.entries) {
+      const { contentSha256, ...content } = entry;
+      expect(createHash("sha256").update(JSON.stringify(content)).digest("hex")).toBe(contentSha256);
+      const q = drafts.papers.find((paper) => paper.year === entry.year && paper.code === "AZ")!.questions[entry.number - 1] as unknown as Record<string, unknown>;
+      expect(q.sourceAnswerUrl).toBe(entry.sourceAnswerUrl);
+      expect(q.officialAnswerExampleVerified).toBe(true);
+      expect(q.officialAnswerExampleReviewId).toBe(`${entry.year}-AZ-${entry.number}`);
+      expect(q.explanationWritten).toBe(false);
+      expect(entry.imageAssets).toHaveLength(entry.answerPdfPages.length);
+      expect(entry.reviewNotes.length).toBeGreaterThan(0);
+      expect(entry.officialAnswerExampleVerified).toBe(true);
+      for (const [index, file] of entry.imageAssets.entries()) {
+        const asset = descriptiveAnswers.assets.find((candidate) => candidate.file === file)!;
+        expect(asset.pdfPage).toBe(entry.answerPdfPages[index]);
+        expect(asset.sourcePdfUrl).toBe(entry.sourceAnswerUrl);
+        expect(asset.sourceSha256).toBe(entry.sourceAnswerSha256);
+      }
+    }
+    for (const asset of descriptiveAnswers.assets) {
+      expect(createHash("sha256").update(readFileSync(resolve(root, asset.file))).digest("hex")).toBe(asset.sha256);
+      expect(manifest.sources.some((source) => source.url === asset.sourcePdfUrl && source.sha256 === asset.sourceSha256)).toBe(true);
+    }
+    expect(descriptiveAnswers.entries.find((entry) => entry.year === 2025 && entry.number === 3)?.answerPdfPages).toEqual([3, 4]);
+  });
+
+  it("retains all 900 original common-log cells and the carry at 9.99", () => {
+    const paper = drafts.papers.find((p) => p.year === 2024 && p.code === "AZ")!;
+    const supplement = paper.supplementalMaterial!;
+    expect(supplement.pdfPages).toEqual([8, 9, 10]);
+    expect(supplement.imageAssets).toHaveLength(3);
+    expect(supplement.numericCellsVerified).toBe(900);
+    expect(supplement.originalTableRows).toHaveLength(90);
+    for (const row of supplement.originalTableRows) {
+      expect(row.values).toHaveLength(10);
+      row.values.forEach((value, col) => {
+        const x = (Math.round(Number(row.firstDecimal) * 100) + col) / 100;
+        expect(value === "1.000" ? 1000 : Number(value)).toBe(Math.round(Math.log10(x) * 1000));
+      });
+    }
+    expect(supplement.originalTableRows.at(-1)?.values.at(-1)).toBe("1.000");
+    expect(paper.questions[5].pdfPages).toEqual([7]);
+  });
+
+  it("retains ten independent explanations and all fifty choice explanations with their official keys", () => {
+    expect(review.explanationReviews).toHaveLength(10);
+    expect(review.counts.explanationWritten).toBe(10);
+    expect(review.counts.explanationPending).toBe(412);
+    const expected = { "2024-2": 2, "2024-3": 2, "2024-6": 5, "2024-8": 3, "2024-9": 2, "2025-2": 3, "2025-3": 2, "2025-6": 5, "2025-8": 3, "2025-13": 2 };
+    for (const record of review.explanationReviews) {
+      const q = drafts.papers.find((p) => p.year === record.year && p.code === record.code)!.questions[record.number - 1] as unknown as Record<string, unknown>;
+      expect(q.officialAnswerNumber).toBe(expected[`${record.year}-${record.number}` as keyof typeof expected]);
+      const choices = q.choiceExplanationsDraft as Record<string, string>;
+      expect(Object.keys(choices)).toEqual(["1", "2", "3", "4", "5"]);
+      expect(Object.values(choices).every((text) => text.length > 20)).toBe(true);
+      expect(createHash("sha256").update(JSON.stringify([q.explanationDraft, choices, q.officialAnswerNumber])).digest("hex")).toBe(record.contentSha256);
+    }
+    expect((150 + 273.15) / (27 + 273.15)).toBeCloseTo(1.41, 2);
+    expect(1 - (27 + 273.15) / (100 + 273.15)).toBeCloseTo(0.196, 3);
+    expect(Math.abs(2 * -394 + 3 * -286 - -84)).toBe(1562);
+    expect(1 / (0.20 / 5 + 0.30 / 3 + 0.50 / 2)).toBeCloseTo(2.56, 2);
+    expect(101300 * 0.028 / (8.31 * 273.15)).toBeCloseTo(1.25, 2);
+    expect(22e6 * 2e-3 / (30 * 8.31 * (173 + 273.15))).toBeCloseTo(0.396, 3);
+    expect(2.5 / 0.21).toBeCloseTo(11.9, 1);
+    expect(2.1 * 2045 / 3891).toBeCloseTo(1.10, 2);
   });
 
   it("preserves all 240 Hei originals including graphic choices, fractions and graph references", () => {

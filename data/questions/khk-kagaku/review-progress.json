@@ -17,8 +17,10 @@
     "originalQuestions": 422,
     "transcriptionVerified": 422,
     "unreviewed": 0,
-    "explanationWritten": 0,
-    "descriptiveAnswersVerified": 0
+    "explanationWritten": 10,
+    "descriptiveAnswersVerified": 12,
+    "supplementalCellsVerified": 900,
+    "explanationPending": 412
   },
   "reviewedPapers": [
     {
@@ -3240,6 +3242,54 @@
       "renderScale": 2.5,
       "alt": "炭素鋼の応力－ひずみ線図。X軸、Y軸、原点0、A〜Gの各点。",
       "servingStatus": "source-pack-only; 演習登録時に配信パスへ移す"
+    },
+    {
+      "file": "images/2024-AZ-supplement-8.png",
+      "sha256": "4474ddd9b2a1bceed3d97b8573e885850b426447720a5519d2828f80bbb56395",
+      "sourcePdfUrl": "https://www.khk.or.jp/Portals/0/khk/exam/2024/R6ACAZ-W.pdf",
+      "sourceSha256": "c31804a87cfcaafd4c3f6b2907519a5f7f18aaf11896b0967cf99231c70eb422",
+      "pdfPage": 8,
+      "cropPdfPoints": [
+        0.0,
+        0.0,
+        595.2747192382812,
+        841.8897094726562
+      ],
+      "renderScale": 2,
+      "alt": "冊子付録・常用対数表の使い方、例示表、対数と指数の関係、公式と使用例。",
+      "servingStatus": "source-pack-only; 演習登録時に配信パスへ移す"
+    },
+    {
+      "file": "images/2024-AZ-supplement-9.png",
+      "sha256": "c917f50da6d691b4db00c5357b3582e681412f830e8064bfe7a9203a3392424c",
+      "sourcePdfUrl": "https://www.khk.or.jp/Portals/0/khk/exam/2024/R6ACAZ-W.pdf",
+      "sourceSha256": "c31804a87cfcaafd4c3f6b2907519a5f7f18aaf11896b0967cf99231c70eb422",
+      "pdfPage": 9,
+      "cropPdfPoints": [
+        0.0,
+        0.0,
+        595.2747192382812,
+        841.8897094726562
+      ],
+      "renderScale": 2,
+      "alt": "冊子付録・常用対数表(1)。1.00〜5.49の全450セル。",
+      "servingStatus": "source-pack-only; 演習登録時に配信パスへ移す"
+    },
+    {
+      "file": "images/2024-AZ-supplement-10.png",
+      "sha256": "c36813ce47566273c407d67b52a038e21973a8da112dcf006d6b87b10dfb9f64",
+      "sourcePdfUrl": "https://www.khk.or.jp/Portals/0/khk/exam/2024/R6ACAZ-W.pdf",
+      "sourceSha256": "c31804a87cfcaafd4c3f6b2907519a5f7f18aaf11896b0967cf99231c70eb422",
+      "pdfPage": 10,
+      "cropPdfPoints": [
+        0.0,
+        0.0,
+        595.2747192382812,
+        841.8897094726562
+      ],
+      "renderScale": 2,
+      "alt": "冊子付録・常用対数表(2)。5.50〜9.99の全450セル。9.99の原表記は1.000。",
+      "servingStatus": "source-pack-only; 演習登録時に配信パスへ移す"
     }
   ],
   "transcriptionCorrections": [
@@ -3914,6 +3964,79 @@
       "before": "次の式はメタンが完全燃焼するときの反応式である。CH4 ＋2 O2 　　CO2 ＋2 H2O標準状態で体積5.0 m³ の気体のメタンを、上式に従って、理論上完全燃焼させるための最少必要空気量（完全燃焼組成の空気量）は、標準状態でおよそ何m³ か。ただし、空気中の酸素濃度は21 vol％とする。",
       "after": "次の式はメタンが完全燃焼するときの反応式である。\n\nCH₄ ＋ 2 O₂ → CO₂ ＋ 2 H₂O\n\n標準状態で体積5.0 m³の気体のメタンを、上式に従って、理論上完全燃焼させるための最少必要空気量（完全燃焼組成の空気量）は、標準状態でおよそ何m³か。ただし、空気中の酸素濃度は21 vol％とする。",
       "reason": "PDF3頁の化学式添字・矢印を本文にも復元。"
+    }
+  ],
+  "descriptiveAnswerReviewFile": "data/questions/khk-kagaku/official-descriptive-answer-review.json",
+  "explanationReviews": [
+    {
+      "year": 2024,
+      "code": "BZ",
+      "number": 2,
+      "officialAnswerNumber": 2,
+      "contentSha256": "291cf9cc7453a7f9a4d65b87ece87bb4f52530e717a7866c731fd085da96c1f0"
+    },
+    {
+      "year": 2024,
+      "code": "BZ",
+      "number": 3,
+      "officialAnswerNumber": 2,
+      "contentSha256": "e4471e64be746a77508493ad37735be5a0cbc201fe2ec3b0e5e2c6d616ce4204"
+    },
+    {
+      "year": 2024,
+      "code": "BZ",
+      "number": 6,
+      "officialAnswerNumber": 5,
+      "contentSha256": "45979b75116a7e018a4177b082e5fd1a8a42272386c6e1f0d628aabb9d4381ea"
+    },
+    {
+      "year": 2024,
+      "code": "BZ",
+      "number": 8,
+      "officialAnswerNumber": 3,
+      "contentSha256": "491267ce1b1b8fef73b39dfeb93c992459a6ac45e689894ed909b64b7fe42563"
+    },
+    {
+      "year": 2024,
+      "code": "BZ",
+      "number": 9,
+      "officialAnswerNumber": 2,
+      "contentSha256": "b05262b9aa502fabb4487911aef26a150d8445e881c9091544f4d8fcef2b570b"
+    },
+    {
+      "year": 2025,
+      "code": "BZ",
+      "number": 2,
+      "officialAnswerNumber": 3,
+      "contentSha256": "0cc143140c1af20afde5f5df62065815c557768e4ffe9cbd14a10f22a114b8f8"
+    },
+    {
+      "year": 2025,
+      "code": "BZ",
+      "number": 3,
+      "officialAnswerNumber": 2,
+      "contentSha256": "67337c1b87b59caefc78aafe5b7c37e7efbdd88ab438b50e8b0dcd2d9f6c214c"
+    },
+    {
+      "year": 2025,
+      "code": "BZ",
+      "number": 6,
+      "officialAnswerNumber": 5,
+      "contentSha256": "a7bdf52b0c9dc46b05b92db7ef3a3087f153aa2b7e22dce874406762a1690b77"
+    },
+    {
+      "year": 2025,
+      "code": "BZ",
+      "number": 8,
+      "officialAnswerNumber": 3,
+      "contentSha256": "31a6a9b42484188ba04d074b9dedf984cf7a3919ec2593fb195c6148329e5944"
+    },
+    {
+      "year": 2025,
+      "code": "BZ",
+      "number": 13,
+      "officialAnswerNumber": 2,
+      "contentSha256": "fafbbb15fe24570c4078f56091911e125aa3085f8b424e275fd7a3798d8b1eff"
     }
   ]
 }
