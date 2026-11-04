@@ -128,5 +128,9 @@ describe("sokuryoshi: two complete private source-image rounds", () => {
     for (const token of ["自律飛行","解除できる","航空法","人口集中"]) expect(section(2025,3,"問B-1")).toContain(token);
     for (const token of ["グラウンドデータ","オリジナルデータ","最近隣法","補備測量","精度管理表"]) expect(section(2026,1,"問D-3")).toContain(token);
     for (const token of ["直接測量費","間接測量費","直接経費","技術管理費","成果検定費"]) expect(section(2026,1,"問C-2")).toContain(token);
+    for (const token of ["緑色","反射","近赤外","透過","屈折"]) expect(section(2026,5,"問C-1")).toContain(token);
+    expect(section(2026,5,"問C-1")).toContain("水中をほとんど透過しない");
+    expect(section(2025,3,"問B-1")).toContain("ブレ");
+    expect(section(2025,3,"問B-1")).not.toContain("ひずみ");
   });
 });
