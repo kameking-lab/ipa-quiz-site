@@ -288,6 +288,24 @@ def source_questions_2025_iv(path):
     return questions
 
 
+def source_questions_m2026_i(path):
+    questions={}
+    terms={1:['イタリア大使館別荘記念公園本邸(栃木県)','軽井沢の山荘(長野県)','旧岩崎家茅町本邸洋館(東京都)','八勝館御幸の間棟(愛知県)','聴竹居(京都府)'],2:['CO濃度','色温度','直達日射量','熱伝導率','ラウドネスレベル'],12:['劇場','事務所ビル','図書館','病院','学校'],19:['換気設備','電気設備','衛生設備','排水設備','ガス設備']}
+    with pdfplumber.open(path) as pdf:
+        for pn in range(2,10):
+            page=pdf.pages[pn-1].filter(lambda o:o.get('object_type')!='char' or o['size']>5.5 and o['top']<790)
+            parts=re.split(r"〔No\.\s*(\d+)〕",unicodedata.normalize('NFKC',page.extract_text(use_text_flow=True)))
+            for i in range(1,len(parts),2):
+                n=int(parts[i]);f=re.split(r"(?m)^\s*([1-5])\s*\.\s*",parts[i+1]);choices={int(f[j]):f[j+1] for j in range(1,len(f),2)}
+                if n in terms:
+                    for k,term in enumerate(terms[n],1):choices[k]=normalize(choices[k]).replace(term,term+' ― ',1)
+                if n==17:choices[5]=normalize(choices[5]).replace('勾配を101と','勾配を1/10と')
+                assert sorted(choices)==[1,2,3,4,5],n
+                questions[n]=(pn,f[0],choices)
+    assert sorted(questions)==list(range(1,26))
+    return questions
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("owner_directory", type=Path)
@@ -309,9 +327,10 @@ def main():
                         assert row == round_["officialAnswers"][subject], (file.name, subject)
                         counts["officialAnswers"] += len(row)
             counts["ownerPdfs"] += 1
-    for year, subject, extract, source in [(2026,"I",source_questions,"R8_2k_1_2.pdf"),(2026,"II",source_questions_ii,"R8_2k_1_2.pdf"),(2026,"III",source_questions_iii,"R8_2k_3_4.pdf"),(2026,"IV",source_questions_iv,"R8_2k_3_4.pdf"),(2025,"I",source_questions_2025_i,"2k-2025-1st-gakka1_2.pdf"),(2025,"II",source_questions_2025_ii,"2k-2025-1st-gakka1_2.pdf"),(2025,"III",source_questions_2025_iii,"2k-2025-1st-gakka3_4.pdf"),(2025,"IV",source_questions_2025_iv,"2k-2025-1st-gakka3_4.pdf")]:
+    for year, subject, extract, source in [(2026,"I",source_questions,"R8_2k_1_2.pdf"),(2026,"II",source_questions_ii,"R8_2k_1_2.pdf"),(2026,"III",source_questions_iii,"R8_2k_3_4.pdf"),(2026,"IV",source_questions_iv,"R8_2k_3_4.pdf"),(2025,"I",source_questions_2025_i,"2k-2025-1st-gakka1_2.pdf"),(2025,"II",source_questions_2025_ii,"2k-2025-1st-gakka1_2.pdf"),(2025,"III",source_questions_2025_iii,"2k-2025-1st-gakka3_4.pdf"),(2025,"IV",source_questions_2025_iv,"2k-2025-1st-gakka3_4.pdf"),(2026,"mokuzo-I",source_questions_m2026_i,"R8_mk_1_2.pdf")]:
         originals = extract(args.owner_directory / source)
-        data = (STAGING / f"{year}-{subject}.ts").read_text(encoding="utf-8")
+        filename = f"mokuzo-{year}-{subject[7:]}.ts" if subject.startswith("mokuzo-") else f"{year}-{subject}.ts"
+        data = (STAGING / filename).read_text(encoding="utf-8")
         staged = json.loads(data.split("= ", 1)[1].rsplit(";", 1)[0])
         assert len(staged) == 25
         for question in staged:

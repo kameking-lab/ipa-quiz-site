@@ -27,7 +27,7 @@ const officialRows = {
   ],
 } as const;
 
-const staged = allStaged.filter(q => q.year === 2026 && q.session === "gakka-I");
+const staged = allStaged.filter(q => q.exam === "kenchikushi2" && q.year === 2026 && q.session === "gakka-I");
 
 describe("Kenchikushi unpublished staging", () => {
   it("pins all 400 answers to the official tables across four distinct rounds", () => {
@@ -58,7 +58,7 @@ describe("Kenchikushi unpublished staging", () => {
     expect(manifest.ingestionState).toBe("in-progress");
     expect(manifest.ingestedQuestionCount).toBe(allStaged.length);
     expect(manifest.batches.reduce((sum, batch) => sum + batch.questionCount, 0)).toBe(allStaged.length);
-    expect(manifest.nextResume).toEqual({ qualificationSlug: "mokuzo-kenchikushi", year: 2026, subject: "I", qNumber: 1 });
+    expect(manifest.nextResume).toEqual({ qualificationSlug: "mokuzo-kenchikushi", year: 2026, subject: "II", qNumber: 1 });
     const home = getHomeDirectory().flatMap(d => [...d.featured, ...d.compact]);
     for (const slug of ["kenchikushi2", "mokuzo-kenchikushi"]) {
       const entry = QUALIFICATION_CATALOG.find(q => q.slug === slug);
@@ -70,7 +70,7 @@ describe("Kenchikushi unpublished staging", () => {
   });
 
   it("pins each ingested subject to 25 complete source records and 125 explanations", () => {
-    expect(allStaged).toHaveLength(200);
+    expect(allStaged).toHaveLength(225);
     expect(new Set(allStaged.map(q => q.id)).size).toBe(allStaged.length);
     for (const batch of manifest.batches) {
       const subjectIndex = ["I", "II", "III", "IV"].indexOf(batch.subject);
@@ -96,7 +96,7 @@ describe("Kenchikushi unpublished staging", () => {
   });
 
   it("retains the 2025 planning subject and its source-specific ruby and fraction", () => {
-    const planning = allStaged.filter(q => q.year === 2025 && q.session === "gakka-I");
+    const planning = allStaged.filter(q => q.exam === "kenchikushi2" && q.year === 2025 && q.session === "gakka-I");
     expect(planning).toHaveLength(25);
     expect(planning.every(q => !q.hasImage)).toBe(true);
     expect(planning[0].sourceRubies).toContainEqual({base:"同仁斎",reading:"どうじんさい"});
@@ -110,7 +110,7 @@ describe("Kenchikushi unpublished staging", () => {
   });
 
   it("retains all law-subject figures, fractions and combination statements", () => {
-    const law = allStaged.filter(q => q.year === 2026 && q.session === "gakka-II");
+    const law = allStaged.filter(q => q.exam === "kenchikushi2" && q.year === 2026 && q.session === "gakka-II");
     expect(law.filter(q => q.hasImage).map(q => q.qNumber)).toEqual([4, 14, 15, 17]);
     for (const q of law) {
       expect(q.sourcePage).toBeGreaterThanOrEqual(11);
@@ -134,7 +134,7 @@ describe("Kenchikushi unpublished staging", () => {
   });
 
   it("retains 2025 law source figures and the specified April amendment exception", () => {
-    const law = allStaged.filter(q => q.year === 2025 && q.session === "gakka-II");
+    const law = allStaged.filter(q => q.exam === "kenchikushi2" && q.year === 2025 && q.session === "gakka-II");
     expect(law).toHaveLength(25);
     expect(law.filter(q => q.hasImage).map(q => q.qNumber)).toEqual([5,14,15,16,18]);
     expect(law[14].originalContent?.tables?.[0].rows).toHaveLength(6);
@@ -155,7 +155,7 @@ describe("Kenchikushi unpublished staging", () => {
   });
 
   it("preserves structure diagrams, tabular choices and mathematical notation", () => {
-    const structure = allStaged.filter(q => q.year === 2026 && q.session === "gakka-III");
+    const structure = allStaged.filter(q => q.exam === "kenchikushi2" && q.year === 2026 && q.session === "gakka-III");
     expect(structure.filter(q => q.hasImage).map(q => q.qNumber)).toEqual([1,2,3,4,5,6,8]);
     expect(structure[0].question).toContain("I_B/I_A");
     expect(structure[3].question).toContain("QC");
@@ -181,7 +181,7 @@ describe("Kenchikushi unpublished staging", () => {
   });
 
   it("preserves construction table choices, fractions and specified contract edition", () => {
-    const construction = allStaged.filter(q => q.year === 2026 && q.session === "gakka-IV");
+    const construction = allStaged.filter(q => q.exam === "kenchikushi2" && q.year === 2026 && q.session === "gakka-IV");
     expect(construction.filter(q => q.hasImage).map(q => q.qNumber)).toEqual([2]);
     expect(construction[1].originalContent?.tables?.[0].rows).toHaveLength(6);
     expect(construction[1].choices?.エ).toBe("特定建設作業実施届／労働基準監督署長／作業開始5日前まで");
