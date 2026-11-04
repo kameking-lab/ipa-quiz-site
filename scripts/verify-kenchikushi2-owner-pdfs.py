@@ -454,7 +454,7 @@ def source_questions_m2025_ii(path):
 
 
 def source_questions_m2025_iii(path):
-    figures={4:(85,110,550,260),5:(250,120,470,610),6:(170,75,515,285),7:(160,85,380,355),8:(75,105,525,470),9:(135,90,465,265),11:(175,400,420,610)};questions={}
+    figures={4:(85,110,550,260),5:(250,120,470,610),6:(170,75,515,285),7:(160,85,380,355),8:(75,105,525,470),9:(135,90,465,265),11:(165,400,440,605)};questions={}
     terms={3:['登り淀','鏡板','挟み束','羽目板','地貫'],19:['1階床荷重(束立て床)','1階天井荷重','2階床荷重(枠組壁工法)','屋根荷重(和小屋寄棟)','屋根荷重(洋小屋)']}
     with pdfplumber.open(path) as pdf:
         for pn in range(2,14):
@@ -472,6 +472,33 @@ def source_questions_m2025_iii(path):
                     for k,term in enumerate(terms[n],1):choices[k]=normalize(choices[k]).replace(term,term+' ― ',1)
                 if n==4:choices[3]=normalize(choices[3]).replace('直径の1001以上','直径の1/100以上')
                 if n==8:f[0]=normalize(f[0]).replace('「b:101l、h:梁せいの41」','「b:1/10l、h:梁せいの1/4」')
+                assert sorted(choices)==[1,2,3,4,5],(n,choices)
+                questions[n]=(pn,f[0],choices)
+    assert sorted(questions)==list(range(1,26))
+    return questions
+
+
+def source_questions_m2025_iv(path):
+    figures={18:(130,280,410,505),19:(95,130,525,645),20:(75,90,530,380),21:(70,95,370,640)};questions={}
+    terms={1:['道路占用許可申請','完了検査申請','建築物除却届','建築工事届','クレーン設置届'],3:['捨てコンクリート地業','砕石地業','スクリューウエイト貫入試験','目つぶし砂利','割栗地業'],6:['杢目材','二方柾材','四方柾材','絞り丸太','四方竹'],7:['屋根','内壁','2階床組','竿縁天井','1階床組'],8:['土台','筋かい','根太','母屋','垂木'],10:['胴差','小屋梁','土台','垂木','広小舞'],11:['小屋梁と軒桁','土台同士の隅角部','小屋束と棟木','間仕切桁と胴差のT字部','折置組の柱と小屋梁'],15:list('イロハニホ'),16:list('イロハニホ'),23:['スコヤ','のみ','きり','のこぎり','かんな']}
+    with pdfplumber.open(path) as pdf:
+        for pn in range(14,25):
+            page=pdf.pages[pn-1];r=figures.get(pn)
+            def retain(o):
+                if o.get('object_type')!='char':return True
+                if o['size']<=5.5 or o['top']>=790:return False
+                return not(r and o['x0']<r[2] and o['x1']>r[0] and o['top']<r[3] and o['bottom']>r[1])
+            text=unicodedata.normalize('NFKC',page.filter(retain).extract_text(use_text_flow=True)).replace('壁倍率\n3.7','壁倍率3.7');parts=re.split(r"〔No\.\s*(\d+)〕",text)
+            for i in range(1,len(parts),2):
+                n=int(parts[i]);f=re.split(r"(?m)^\s*([1-5])\s*\.\s*",parts[i+1]);choices={int(f[j]):f[j+1] for j in range(1,len(f),2)}
+                if n in terms:
+                    for k,term in enumerate(terms[n],1):choices[k]=normalize(choices[k]).replace(term,term+' ― ',1)
+                if n==13:choices[1]=normalize(choices[1]).replace('表目を3倍','表目を√3倍')
+                if n==17:
+                    labels=page.crop((228,100,360,635)).extract_text().splitlines();assert normalize(labels[0])=='名称',labels
+                    choices={j:v for j,v in enumerate(labels[1:],1)}
+                if n==18:choices[4]=normalize(choices[4]).replace('勾配を、2001と','勾配を、1/200と')
+                if n==21:choices[5]=normalize(choices[5]).replace('は、10mmと','は、±10mmと')
                 assert sorted(choices)==[1,2,3,4,5],(n,choices)
                 questions[n]=(pn,f[0],choices)
     assert sorted(questions)==list(range(1,26))
@@ -499,7 +526,7 @@ def main():
                         assert row == round_["officialAnswers"][subject], (file.name, subject)
                         counts["officialAnswers"] += len(row)
             counts["ownerPdfs"] += 1
-    for year, subject, extract, source in [(2026,"I",source_questions,"R8_2k_1_2.pdf"),(2026,"II",source_questions_ii,"R8_2k_1_2.pdf"),(2026,"III",source_questions_iii,"R8_2k_3_4.pdf"),(2026,"IV",source_questions_iv,"R8_2k_3_4.pdf"),(2025,"I",source_questions_2025_i,"2k-2025-1st-gakka1_2.pdf"),(2025,"II",source_questions_2025_ii,"2k-2025-1st-gakka1_2.pdf"),(2025,"III",source_questions_2025_iii,"2k-2025-1st-gakka3_4.pdf"),(2025,"IV",source_questions_2025_iv,"2k-2025-1st-gakka3_4.pdf"),(2026,"mokuzo-I",source_questions_m2026_i,"R8_mk_1_2.pdf"),(2026,"mokuzo-II",source_questions_m2026_ii,"R8_mk_1_2.pdf"),(2026,"mokuzo-III",source_questions_m2026_iii,"R8_mk_3_4.pdf"),(2026,"mokuzo-IV",source_questions_m2026_iv,"R8_mk_3_4.pdf"),(2025,"mokuzo-I",source_questions_m2025_i,"mk-2025-1st-gakka1_2.pdf"),(2025,"mokuzo-II",source_questions_m2025_ii,"mk-2025-1st-gakka1_2.pdf"),(2025,"mokuzo-III",source_questions_m2025_iii,"mk-2025-1st-gakka3_4.pdf")]:
+    for year, subject, extract, source in [(2026,"I",source_questions,"R8_2k_1_2.pdf"),(2026,"II",source_questions_ii,"R8_2k_1_2.pdf"),(2026,"III",source_questions_iii,"R8_2k_3_4.pdf"),(2026,"IV",source_questions_iv,"R8_2k_3_4.pdf"),(2025,"I",source_questions_2025_i,"2k-2025-1st-gakka1_2.pdf"),(2025,"II",source_questions_2025_ii,"2k-2025-1st-gakka1_2.pdf"),(2025,"III",source_questions_2025_iii,"2k-2025-1st-gakka3_4.pdf"),(2025,"IV",source_questions_2025_iv,"2k-2025-1st-gakka3_4.pdf"),(2026,"mokuzo-I",source_questions_m2026_i,"R8_mk_1_2.pdf"),(2026,"mokuzo-II",source_questions_m2026_ii,"R8_mk_1_2.pdf"),(2026,"mokuzo-III",source_questions_m2026_iii,"R8_mk_3_4.pdf"),(2026,"mokuzo-IV",source_questions_m2026_iv,"R8_mk_3_4.pdf"),(2025,"mokuzo-I",source_questions_m2025_i,"mk-2025-1st-gakka1_2.pdf"),(2025,"mokuzo-II",source_questions_m2025_ii,"mk-2025-1st-gakka1_2.pdf"),(2025,"mokuzo-III",source_questions_m2025_iii,"mk-2025-1st-gakka3_4.pdf"),(2025,"mokuzo-IV",source_questions_m2025_iv,"mk-2025-1st-gakka3_4.pdf")]:
         originals = extract(args.owner_directory / source)
         filename = f"mokuzo-{year}-{subject[7:]}.ts" if subject.startswith("mokuzo-") else f"{year}-{subject}.ts"
         data = (STAGING / filename).read_text(encoding="utf-8")
@@ -514,7 +541,7 @@ def main():
             for index, key in enumerate("アイウエオ", 1):
                 assert normalize(choices[index]) == normalize(question["choices"][key].replace("−", "-")), (subject, number, key, choices[index], question["choices"][key])
                 counts["choices"] += 1
-    print(json.dumps({"status": "PASS", "counts": counts, "normalization": "NFKC, whitespace/control removal; I ruby stored separately, q1 text-layer 繁 corrected to printed 繫, q15 fraction 1/8; II q1/q16/q18 fractions restored from page images; II/III figure labels excluded from prose and retained in source PNG crops; III printed I_B/I_A, radicals, exponents and fractions restored from images; III q4/q6 choice tables independently parsed by PDFMiner"}, ensure_ascii=False, indent=2))
+    print(json.dumps({"status": "PASS", "counts": counts, "normalization": "NFKC; whitespace/control removal; wave dash variants normalized to ～; ruby stored separately; source diagrams retained as PNG and labels excluded from prose; printed fractions, radicals, superscripts, ■ and ± restored by visual source comparison; choice tables independently parsed with PDFMiner/pdfplumber; paper-specific normalization documented in staging README and extraction functions"}, ensure_ascii=False, indent=2))
 
 
 if __name__ == "__main__":
