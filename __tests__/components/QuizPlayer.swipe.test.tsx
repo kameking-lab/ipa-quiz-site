@@ -53,7 +53,7 @@ describe("QuizPlayer — swipe suppresses the synthetic click", () => {
     return main;
   }
 
-  let onNext: ReturnType<typeof vi.fn>;
+  let onNext: ReturnType<typeof vi.fn<() => void>>;
   beforeEach(() => {
     onNext = vi.fn();
   });

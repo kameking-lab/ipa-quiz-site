@@ -151,7 +151,8 @@ export async function POST(req: Request) {
       kind: payload.kind,
       receivedAt: new Date().toISOString(),
       ipHash: hashIp(ip),
-      payload: safeBody,
+      // Contact bodies can contain email addresses, essays and credentials.
+      // Deliver them only to the configured support channel, never log stores.
       maskHits: totalHits(maskHits) > 0 ? maskHits : undefined,
     }),
   );
@@ -172,8 +173,8 @@ export async function POST(req: Request) {
           text: safeBody,
         }),
       });
-    } catch (err) {
-      console.error("contact forward failed", err);
+    } catch {
+      console.error("contact forward failed");
     }
   }
 

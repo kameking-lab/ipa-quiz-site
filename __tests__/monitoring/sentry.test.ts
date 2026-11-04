@@ -87,8 +87,8 @@ describe("captureException (sentry bridge)", () => {
     const body = JSON.parse(String(init.body));
     expect(body.level).toBe("error");
     expect(body.transaction).toBe("/api/foo");
-    expect(body.user).toEqual({ id: "u1" });
-    expect(body.exception.values[0].value).toBe("bad thing");
+    expect(body.user).toBeUndefined();
+    expect(body.exception.values[0].value).toBe("Application error");
     expect(body.exception.values[0].type).toBe("TypeError");
   });
 
@@ -117,7 +117,7 @@ describe("captureException (sentry bridge)", () => {
     await expect(mod.captureException(null)).resolves.toBeUndefined();
 
     const firstBody = JSON.parse(String((fetchMock.mock.calls[0] as [string, RequestInit])[1].body));
-    expect(firstBody.exception.values[0].value).toBe("plain string");
+    expect(firstBody.exception.values[0].value).toBe("Application error");
     expect(firstBody.exception.values[0].type).toBe("Error");
   });
 });

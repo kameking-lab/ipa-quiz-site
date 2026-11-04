@@ -63,9 +63,12 @@ async function notifySlack(message: string): Promise<void> {
 }
 
 export async function GET(req: Request): Promise<NextResponse> {
-  // Vercel Cron の認証ヘッダ検証（任意）
+  // A missing scheduler credential must never expose fan-out/Slack publicly.
+  if (!process.env.CRON_SECRET) {
+    return NextResponse.json({ ok: false, error: "cron_unconfigured" }, { status: 503 });
+  }
   const authHeader = req.headers.get("authorization");
-  if (process.env.CRON_SECRET && authHeader !== `Bearer ${process.env.CRON_SECRET}`) {
+  if (authHeader !== `Bearer ${process.env.CRON_SECRET}`) {
     return NextResponse.json({ ok: false, error: "unauthorized" }, { status: 401 });
   }
 

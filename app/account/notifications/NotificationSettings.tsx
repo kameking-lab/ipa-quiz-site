@@ -70,21 +70,12 @@ export function NotificationSettings() {
   }
 
   async function sendTestEmail() {
-    if (!prefs?.email) {
-      setStatus({ kind: "error", message: "メールアドレスを入力してください" });
-      return;
-    }
     setStatus({ kind: "loading", message: "テストメール送信中..." });
     try {
       const res = await fetch("/api/email", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          to: prefs.email,
-          subject: "【過去問AI】通知のテスト送信",
-          text:
-            "このメールは過去問AI の通知設定テストです。\n\n" +
-            "学習リマインダーや週次ダイジェストはここから配信されます。\n",
           type: "test",
         }),
       });
@@ -96,10 +87,10 @@ export function NotificationSettings() {
       if (data.mocked) {
         setStatus({
           kind: "success",
-          message: "モック送信成功（RESEND_API_KEY 未設定のためサーバーログに出力されました）",
+          message: "テスト送信を受け付けました",
         });
       } else {
-        setStatus({ kind: "success", message: `テストメールを送信しました: ${prefs.email}` });
+        setStatus({ kind: "success", message: "テストメールを送信しました（ログイン中のアカウント宛て）" });
       }
     } catch (err) {
       setStatus({
