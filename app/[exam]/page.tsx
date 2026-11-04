@@ -657,7 +657,7 @@ export default async function ExamTopPage({
         )}
 
         {/* High-level exam: AI essay / description grading CTA */}
-        {(["st", "sa", "pm", "sm", "au", "sc", "nw", "db", "es"] as ExamCode[]).includes(code) && (
+        {(["st", "sa", "pm", "sm", "au"] as ExamCode[]).includes(code) && (
           <section
             aria-label="AI 午後問題対策"
             className="mb-8 overflow-hidden rounded-2xl border border-violet-200/70 bg-gradient-to-br from-violet-50 via-card to-card p-5 shadow-sm dark:border-violet-900/40 dark:from-violet-950/40"
@@ -671,11 +671,10 @@ export default async function ExamTopPage({
             <h2 className="mb-1.5 text-base font-bold tracking-tight text-foreground sm:text-lg">
               AI 論述添削で午後問題対策
             </h2>
-            {(["st", "sa", "pm", "sm", "au"] as ExamCode[]).includes(code) ? (
               <>
                 <p className="mb-3 text-sm leading-relaxed text-muted-foreground">
                   AI が学習用の「適合度／論理性／具体性／業種事例」の 4 観点で評価。
-                  業種別の合格答案サンプルも参照しながら、設問ア・イ・ウを段階的に仕上げます。
+                  業種別の練習答案サンプルも参照しながら、設問ア・イ・ウを段階的に仕上げます。
                 </p>
                 <div className="flex flex-wrap gap-2">
                   <Button asChild variant="primary" size="sm">
@@ -695,30 +694,12 @@ export default async function ExamTopPage({
                   </Button>
                   <Button asChild variant="outline" size="sm">
                     {/* 業種別サンプルは複数形 /essays/[exam] (200・noindex)。 */}
-                    <Link href={`/essays/${code}`}>業種別 合格答案サンプル</Link>
+                    <Link href={`/essays/${code}`}>業種別 練習答案サンプル</Link>
                   </Button>
                 </div>
               </>
-            ) : (
-              <>
-                <p className="mb-3 text-sm leading-relaxed text-muted-foreground">
-                  {examLabel(code)} 午後の記述・論述問題を AI が採点・フィードバック。
-                  根拠・論理展開・キーワードの網羅を軸に改善点を提示します。
-                </p>
-                <div className="flex flex-wrap items-center gap-2">
-                  <span className="inline-flex items-center gap-1.5 rounded-lg border border-violet-200 bg-violet-50 px-3 py-1.5 text-xs font-semibold text-violet-600 dark:border-violet-900/60 dark:bg-violet-950/40 dark:text-violet-300">
-                    <Sparkles className="h-3.5 w-3.5" />
-                    Coming Soon
-                  </span>
-                  <span className="text-xs text-muted-foreground">
-                    順次対応予定 — 通知を受け取るには
-                  </span>
-                  <Button asChild variant="ghost" size="sm" className="h-7 px-2 text-xs">
-                    <Link href="/settings#notifications">通知設定</Link>
-                  </Button>
-                </div>
-              </>
-            )}
+
+
           </section>
         )}
 

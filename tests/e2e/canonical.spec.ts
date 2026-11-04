@@ -13,7 +13,7 @@ const CANONICAL_PAGES: [string, string][] = [
   ["/challenge", "/challenge"],
   ["/essay", "/essay"],
   ["/contact", "/contact"],
-  ["/demo/afternoon", "/demo/afternoon"],
+  ["/demo/afternoon", "/demo/essay-grading"],
   ["/sitemap", "/sitemap"],
   [
     "/e-learning/exams/qualifications/dai-1-shu-eisei-kanrisha",

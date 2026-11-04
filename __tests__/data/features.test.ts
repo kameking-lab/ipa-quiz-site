@@ -69,8 +69,8 @@ describe("FEATURE_LANDING_PAGES registry", () => {
 
 // Factuality / 誇大回避: the essay-grading feature hero must not claim the AI
 // references IPA's grading criteria ("採点基準") — those are non-public, and the
-// flagship /essay disclaimer + this page's own FAQ both frame the basis as IPA
-// 公式解答例 (a 参考評価, not the official rubric). Pin the honest framing so the
+// flagship /essay disclaimer + this page's own FAQ both frame the basis as
+// editorial practice and learning support, not official grading. Pin that so the
 // hero can't drift back into over-claiming. "崩れたら落ちる".
 describe("essay-grading feature hero honesty", () => {
   const page = getFeatureBySlug("essay-grading");
@@ -80,9 +80,9 @@ describe("essay-grading feature hero honesty", () => {
     expect(page!.hero.subhead).not.toContain("採点基準を参照");
   });
 
-  it("frames the basis as IPA 公式解答例 + 参考評価 (matches its own FAQ)", () => {
-    expect(page!.hero.subhead).toContain("公式解答例");
-    expect(page!.hero.subhead).toContain("参考評価");
+  it("distinguishes editorial learning feedback from official grading or calibrated pass probabilities", () => {
+    expect(page!.hero.subhead).toContain("編集部の確認観点");
+    expect(page!.hero.subhead).toContain("公式採点や合格率の予測ではありません");
   });
 
   // Hub→spoke: the grading feature page complements "what to write" (業種別

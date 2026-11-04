@@ -117,6 +117,7 @@ const nextConfig: NextConfig = {
       // instead of a 404.
       { source: "/feedback", destination: "/contact?type=error", permanent: true },
       // PRK: retire previews and fictional content in one hop (keep search/bookmarks).
+      { source: "/demo/afternoon", destination: "/demo/essay-grading", statusCode: 301 },
       { source: "/ranking", destination: "/account/dashboard#mock-scores", statusCode: 301 },
       { source: "/referral", destination: "/contact#legacy-benefits", statusCode: 301 },
       { source: "/student", destination: "/contact#legacy-benefits", statusCode: 301 },
