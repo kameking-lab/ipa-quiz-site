@@ -1,8 +1,8 @@
 {
   "exam": "kenchikushi1",
-  "checkedAt": "2026-11-03",
+  "checkedAt": "2026-11-04",
   "officialIndexUrl": "https://www.jaeic.or.jp/shiken/1k/1k-mondai.html",
-  "status": "permission-required",
+  "status": "ready-to-ingest",
   "publicationGo": false,
   "scope": "学科のみ。設計製図は対象外。",
   "sources": [
@@ -70,7 +70,7 @@
       "lawReferenceDate": "2026-01-01",
       "lawReferenceNote": "法令は出題時点に基づく。2026-01-01現在の施行規定による。",
       "expectedQuestions": 125,
-      "transcribedQuestions": 0,
+      "transcribedQuestions": 20,
       "sourceAnswerUrl": "https://www.jaeic.or.jp/.assets/1k-2026-1st-gokakukijun.pdf",
       "subjects": [
         {
@@ -179,7 +179,31 @@
               "officialAnswerNumber": 4,
               "grading": "single-choice"
             }
-          ]
+          ],
+          "transcribedQuestions": 20,
+          "transcribedQuestionNumbers": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            20
+          ],
+          "humanReviewedQuestions": 0
         },
         {
           "subject": "環境・設備",
@@ -1416,5 +1440,15 @@
         }
       ]
     }
-  ]
+  ],
+  "publicAllowed": false,
+  "ingestionBlocked": false,
+  "ownerDecision": {
+    "decidedAt": "2026-11-04T06:10:00+09:00",
+    "action": "本文・図表・独自全肢解説を未公開で収録。転載禁止表示は報告に記録し収録停止理由にしない。",
+    "rightsHolderPermissionObtained": false
+  },
+  "reuseNotice": "公式一覧の注意事項3及び問題PDF表紙に個人利用以外の無断転載・複製禁止表示あり。オーナー判断と権利者の許諾は区別する。",
+  "stagingDirectory": "data/qualification-staging/kenchikushi1",
+  "unavailablePdfUrls": []
 }

@@ -1,5 +1,9 @@
 # 一級建築士（学科）直近2回の追加監査
 
+## 2026-11-04 LK4での方針更新（過去の停止判断を置換）
+
+2026-11-04 06:10のオーナー決定により本文・選択肢・図表の収録停止を解除した。下記の2026-11-03の `permission-required` と許諾取得まで着手しないとの記述は過去の経緯であり、現在の停止条件ではない。公式の転載禁止表示は記録に残す。権利者の許諾取得を意味しない。資格台帳は `ready-to-ingest`、`ingestionBlocked: false`、`publicAllowed: false`、`publicationGo: false` とし、未公開候補を `data/qualification-staging/kenchikushi1/` に収録する。最新の作業結果と次回再開位置は `reports/lk4-kenchikushi1-progress.md` に記録する。
+
 確認日: 2026-11-03。**未完了・未公開**。資格コードは `kenchikushi1`。
 
 ## 対象回の確認
