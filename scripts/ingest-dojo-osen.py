@@ -97,11 +97,25 @@ def main():
                 choices = [original[m.end():chosen[j+1].start() if j < 4 else len(original)].strip()
                            for j, m in enumerate(chosen)] if complete else ['⑴', '⑵', '⑶', '⑷', '⑸']
                 question = original[:chosen[0].start()].strip() if complete else original
+                if not all(choices):
+                    choices = ['⑴', '⑵', '⑶', '⑷', '⑸']
+                    complete = False
+                # This official PDF contains unrelated invisible drafting text
+                # over Q29's two figures. The visible original remains in PNGs.
+                extraction_note = None
+                if name == '2025-am' and number == 29:
+                    original = original.split('残念ながら')[0].strip()
+                    choices = ['11区画', '13区画', '18区画', '21区画', '24区画']
+                    question = original
+                    extraction_note = '文字層の図中に不可視の草稿文字があるため、設問本文と選択肢を原画像で確認。図中の原文は原画像で保持。'
+                # Two-dimensional tables/figures cannot be flattened into five
+                # independent strings without losing their column alignment.
+                image_choices = not complete or '選択肢' in question or bool(re.search(r'(?m)^Ａ\s+Ｂ\s+Ｃ', question))
                 row = {'id': f'dojo-osen-{name}-q{number}', 'exam': 'dojo-osen', 'year': year,
                        'season': 'annual', 'session': session, 'qNumber': number,
                        'category': '調査' if session == 'am' else ('対策' if number <= 25 else '法令等'),
                        'publicAllowed': False, 'question': question, 'choices': choices,
-                       'choiceRepresentation': 'pdf-text' if complete and all(choices) else 'original-image',
+                       'choiceRepresentation': 'original-image' if image_choices else 'pdf-text',
                        'originalText': original, 'sourceImages': images,
                        'sourcePdfUrl': url, 'sourceAnswerUrl': f'https://www.env.go.jp/content/{PDF_IDS[str(year)+"-answer"]}.pdf',
                        'sourcePdfPages': sorted({a['pdfPage'] for a in manifest['assets'] if a['path'] in images}),
@@ -109,6 +123,8 @@ def main():
                        'sourceAttribution': f'出典：環境省 令和{year-2018}年度土壌汚染調査技術管理者試験 {"調査" if session == "am" else "対策・法令等"} 問{number}。原問題画像は公式PDFの切出し。解説は過去問AIの独自作成。',
                        'lastUpdated': '2026-11-04'}
                 rows.append(row)
+                if extraction_note:
+                    row['textExtractionNote'] = extraction_note
                 prior = authored.get(row['id'], {})
                 for field in ['scoring', 'officialAnswerNumber', 'choiceExplanations', 'explanation',
                               'explanationSourceUrls', 'explanationCoverage', 'needsReview']:

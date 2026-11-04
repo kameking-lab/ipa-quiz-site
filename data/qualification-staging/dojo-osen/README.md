@@ -25,6 +25,19 @@
 
 `publicAllowed=false`。公開レジストリ・ナビゲーション・サムネイル・検索インデックスに追加しない。利用条件の確認と公開判断は別途必要で、今回の保存を転載許可取得や公開承認と扱わない。
 
+## 検証
+
+```
+corepack pnpm validate:questions --exam=dojo-osen
+corepack pnpm typecheck
+corepack pnpm exec vitest run __tests__/questions/dojo-osen-staging.test.ts __tests__/lib/home-directory.test.ts __tests__/lib/exam-config-integrity.test.ts
+python scripts/verify-dojo-osen-sources.py <一時PDFディレクトリ>
+```
+
+通常の `validate:questions` へ専用フィルターを追加し、公開の `ExamCode` に登録することなく、画像を必須としたステージングスキーマで160問を検証する。正答固定テスト、全肢解説、35/25/20問の区分、継続ページ、169画像のハッシュ・座標・出典、公開プールとホームへの不混入をテストする。原PDFを使う追加検査では、PDFを別ライブラリで左右に分けて正答表を読み、160欄の一致と本文60,386文字の画像領域内包含を確認した。
+
+解説の一次参考は[環境省ガイドライン第1編・改訂第3.1版](https://www.env.go.jp/content/000076380.pdf)及び[現行のガイドライン一覧](https://www.env.go.jp/water/dojo/gl-man.html)。解説は各冊子の法令基準日による内容であり、2026年度以降の制度への読み替えを行っていない。数式・図表の文字層に欠落や順序混乱があるため、解説の照合にも必ず原画像を用いる。2025年度調査問29には不可視の草稿文字が文字層に含まれるため、それを表示本文へ混入させず、見える原問題の設問・選択肢で確認している。
+
 ## 再抽出
 
 `python scripts/ingest-dojo-osen.py <一時PDFディレクトリ>`。ファイル名は `2024-am.pdf`、`2024-pm.pdf`、`2024-answer.pdf` と2025年度の同名3冊。Python依存は PyMuPDF / pdfplumber / Pillow。原PDF・抽出草稿はコミットしない。再抽出時は既存の採点・解説フィールドを保持する。
