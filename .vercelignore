@@ -13,8 +13,9 @@
 __tests__/
 tests/
 
-# Dev / ops scripts (run locally, never during `next build`)
-scripts/
+# Keep the production migration entry point in the uploaded build context.
+scripts/*
+!scripts/vercel-migrate.mjs
 
 # Internal docs (markdown; not imported by the app)
 docs/

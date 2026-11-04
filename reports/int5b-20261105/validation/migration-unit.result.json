@@ -1,0 +1,14 @@
+{
+  "label": "migration-unit",
+  "command": [
+    "node",
+    "--test",
+    "scripts/vercel-migrate.test.mjs"
+  ],
+  "sourceHead": "7f97cc66184cdf13102ad2e22477f46f3f3d711c",
+  "startedAt": "2026-11-04T15:12:18.907Z",
+  "finishedAt": "2026-11-04T15:12:19.159Z",
+  "exitCode": 0,
+  "logSha256": "de23b35e0a6170f3b6232fbf6d98f75b3de4cf569c4903805a82c591d26bc420",
+  "environment": "Inherited service credentials removed; no secret env files loaded; VERCEL unset; CI=true"
+}

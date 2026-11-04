@@ -1,0 +1,21 @@
+PostgreSQL 18.6 on x86_64-windows, compiled by msvc-19.44.35228, 64-bit
+[vercel-migrate] Preflight passed: 3 pending DB1 migrations.
+[vercel-migrate] Migration deploy and clean postflight passed.
+PASS three: exit=0; verified complete database snapshots and migration history
+[vercel-migrate] Preflight passed: 0 pending DB1 migrations.
+[vercel-migrate] Migration deploy and clean postflight passed.
+PASS zero: exit=0; verified complete database snapshots and migration history
+[vercel-migrate] FAILED: Unexpected pending migrations (only all three DB1 migrations or zero are allowed); no deploy attempted.
+PASS unexpected: exit=1; verified complete database snapshots and migration history
+[vercel-migrate] Skipped: not a hosted Vercel production build.
+[vercel-migrate] Skipped: not a hosted Vercel production build.
+[vercel-migrate] Skipped: not a hosted Vercel production build.
+[vercel-migrate] Skipped: not a hosted Vercel production build.
+[vercel-migrate] Skipped: not a hosted Vercel production build.
+[vercel-migrate] FAILED: A direct database URL is required (DATABASE_URL_UNPOOLED / DIRECT_URL / POSTGRES_URL_NON_POOLING).
+[vercel-migrate] FAILED: Database or migration check failed; build stopped. Database output withheld.
+PASS actual pnpm build: missing direct URL exits 1 before Next.js starts
+[vercel-migrate] FAILED: Failed, unknown, duplicate or modified migration history; no deploy attempted.
+[vercel-migrate] FAILED: Another production migration check is running; build stopped.
+PASS: environment skips, secret suppression, failed-history and concurrent-build guards
+Embedded PostgreSQL stopped. Synthetic cluster retained: C:\Users\kanet\AppData\Local\Temp\int5b-postgres-MfWXh9

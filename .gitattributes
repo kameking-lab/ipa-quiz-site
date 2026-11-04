@@ -27,3 +27,6 @@ reports/cloud-sekou-1kenchiku-review.md -text -whitespace
 # INT5 command outputs and review prompts are byte-preserved audit receipts.
 reports/int5-20261104/validation/** -text -whitespace
 reports/int5-20261104/review*-prompt.txt -text -whitespace
+
+# INT5B validation logs are hashed byte-for-byte.
+reports/int5b-20261105/validation/** -text -whitespace
