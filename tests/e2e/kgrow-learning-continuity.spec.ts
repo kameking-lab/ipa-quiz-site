@@ -66,6 +66,7 @@ test("mobile: a submitted short mock reaches scores, progress, weakness and exac
   await expect(page.getByRole("region", { name: "直近の模試からの学習" })).toContainText("情報処理安全確保支援士");
   await page.getByRole("tab", { name: "弱点", exact: true }).click();
   await expect(page.getByRole("region", { name: "直近の模試からの学習" })).toContainText("重点分野");
+  await expect(page.getByRole("link", { name: "情報処理安全確保支援士の弱点問題を解く" })).toHaveAttribute("href", "/quiz?mode=weakness&exam=sc");
   await page.screenshot({ path: testInfo.outputPath("mock-weakness-mobile.png") });
   await page.getByRole("link", { name: "今回の間違い・未回答を復習" }).click();
   await expect(page.getByRole("radio").first()).toBeVisible();

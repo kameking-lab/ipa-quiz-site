@@ -183,7 +183,7 @@ function buildDayTasks(args: BuildTasksArgs): TaskItem[] {
       tasks.push(
         mk(
           "mock",
-          full ? `模試（${mock?.questions ?? 80}問・本番形式）` : "ミニ模試（20問）",
+          full ? exam === "sg" ? "科目A演習（37問）" : `模試（${mock?.questions ?? 80}問・本番形式）` : "ミニ模試（20問）",
           Math.min(remaining, mockMinutes),
           {
             description: "本番想定の時間配分で解く。終了後に解説を必ず確認。",
@@ -271,13 +271,15 @@ function buildDayTasks(args: BuildTasksArgs): TaskItem[] {
   // weekend, regardless of which weekday the plan starts on. (The previous
   // `dayIndex % 7 === 0` guard landed on the same weekday as day 0, so the mock
   // only ever appeared when the plan happened to start on a weekend.)
+  const mockConfig = getMockConfig(exam);
+  const weeklyMockMinutes = mockConfig ? Math.max(MINUTES_PER_MOCK_SMALL, Math.ceil(mockConfig.minutes * 20 / mockConfig.questions)) : MINUTES_PER_MOCK_SMALL;
   if (
     phase === "middle" &&
     isSaturday(date) &&
-    remaining >= MINUTES_PER_MOCK_SMALL
+    remaining >= weeklyMockMinutes
   ) {
     tasks.push(
-      mk("mock", "週末ミニ模試（20問）", MINUTES_PER_MOCK_SMALL, {
+      mk("mock", "週末ミニ模試（20問）", weeklyMockMinutes, {
         description: "週末の総まとめ。実力推移を可視化。",
         link: `/mock-exam?exam=${exam}&count=20`,
       }),
