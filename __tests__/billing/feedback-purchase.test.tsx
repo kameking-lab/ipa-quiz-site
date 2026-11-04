@@ -1,4 +1,4 @@
-import { cleanup, render, screen } from "@testing-library/react";
+import { cleanup, render, screen, waitFor } from "@testing-library/react";
 import { afterEach, beforeEach, expect, it, vi } from "vitest";
 const capture = vi.hoisted(() => vi.fn());
 vi.mock("@/lib/posthog", () => ({ posthogCapture: capture }));
@@ -10,24 +10,24 @@ it.each([true, false])("tracks confirmation views by customers with feedback his
   vi.stubGlobal("fetch", fetcher);
   const view = render(<PurchaseStatus order="order" />);
   await screen.findByRole("heading", { name: "購入が完了しました" });
-  expect(capture).toHaveBeenCalledTimes(submitted ? 1 : 0);
+  await waitFor(() => expect(capture).toHaveBeenCalledTimes(submitted ? 1 : 0));
   expect(fetcher).toHaveBeenCalledTimes(1);
   expect(fetcher.mock.calls[0]).toEqual(["/api/billing/status?order=order", { cache: "no-store" }]);
   view.unmount();
   render(<PurchaseStatus order="order" />);
   await screen.findByRole("heading", { name: "購入が完了しました" });
-  expect(capture).toHaveBeenCalledTimes(submitted ? 1 : 0);
+  await waitFor(() => expect(capture).toHaveBeenCalledTimes(submitted ? 1 : 0));
 });
 
 it("counts a view of a previously paid order after feedback and a new session as views only", async () => {
   vi.stubGlobal("fetch", vi.fn(async () => Response.json({ entitled: true, feedbackSubmitted: true, purchase: { id: "old-order", status: "paid" } })));
   const first = render(<PurchaseStatus order="old-order" />);
   await screen.findByRole("heading", { name: "購入が完了しました" });
-  expect(capture).toHaveBeenLastCalledWith("practice_feedback_customer_confirmation_viewed", { billingModel: "pass" });
+  await waitFor(() => expect(capture).toHaveBeenLastCalledWith("practice_feedback_customer_confirmation_viewed", { billingModel: "pass" }));
   first.unmount(); sessionStorage.clear();
   render(<PurchaseStatus order="old-order" />);
   await screen.findByRole("heading", { name: "購入が完了しました" });
-  expect(capture).toHaveBeenCalledTimes(2);
+  await waitFor(() => expect(capture).toHaveBeenCalledTimes(2));
   expect(capture.mock.calls.every(([event]) => event === "practice_feedback_customer_confirmation_viewed")).toBe(true);
 });
 it.each([{ entitled: false, id: "order", status: "paid" }, { entitled: true, id: "other", status: "paid" }, { entitled: true, id: "order", status: "failed" }])("does not count an unconfirmed order: %j", async value => {
