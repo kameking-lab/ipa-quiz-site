@@ -253,6 +253,13 @@ export const EXAM_CONFIGS: Record<ExamCode, ExamConfig> = {
     ],
     seasons: ["round1", "round2"], yearRange: { start: 2026, end: 2026 },
   },
+  shihoshoshi: {
+    code: "shihoshoshi", nameFull: "司法書士試験（午前・午後の多肢択一式）", urlSlug: "shihoshoshi", level: "specialist",
+    sessions: [
+      { session: "am", urlSlug: "am", expectedQuestions: 35, label: "午前（多肢択一式）", categories: ["憲法", "民法", "刑法", "会社法・商法"] },
+      { session: "pm", urlSlug: "pm", expectedQuestions: 35, label: "午後（多肢択一式）", categories: ["民事訴訟法・民事執行法・民事保全法", "司法書士法", "供託法", "不動産登記法", "商業登記法"] },
+    ], seasons: ["annual"], yearRange: { start: 2025, end: 2026 },
+  },
   chosashi: {
     code: "chosashi",
     nameFull: "土地家屋調査士試験",
@@ -1306,7 +1313,7 @@ export const EXAM_CONFIGS: Record<ExamCode, ExamConfig> = {
 
 /** IPA-only list retained for fetch/import tooling and legacy IPA invariants. */
 export const ALL_EXAM_CODES = Object.keys(EXAM_CONFIGS).filter(
-  (code): code is IpaExamCode => !(["kisho", "chizai2", "kenchiku-setsubishi", "fp1", "fp2", "fp3", "denken3", "denken2", "denken1", "denko2", "denko1", "takken", "civil2", "civil1", "kankoji2", "zoen2", "zoen1", "tsushin2", "tsushin1", "kaigo", "shakai", "seishin", "tohan", "kanri", "eisei1", "eisei2", "soukan", "hoikushi", "mankan", "kashikin", "sharoushi", "kangoshi", "yakuzaishi", "ahaki-anma", "ahaki-hari-kyu", "hokenshi", "josanshi", "rigaku-ryohoshi", "sagyo-ryohoshi", "shino-kunrenshi", "rinsho-kensagishi", "shinryo-hoshasengishi", "rinsho-kogishi", "riyoshi", "chusho-kigyo-shindanshi", "chosashi", "shika-ishi", "judo-seifukushi", "riku-toku-kokunai", "kai-toku2", "kai-toku3", "koku-toku", "land-special1", "riku-tech1", "maritime4", "aviation-comm", "amateur1", "maritime-special1", "riku-tech2", "amateur2", "maritime-radar", "maritime3", "maritime2", "maritime1", "general3", "general2", "general1", "land-special2", "land-special3", "kanteishi", "kaikeishi", "gas-kou", "gas-otsu", "gas-hei", "jidosha-1-small-written", "jidosha-2-gasoline", "jidosha-2-diesel", "jidosha-2-chassis", "jidosha-2-motorcycle", "jidosha-3-chassis", "jidosha-3-gasoline", "jidosha-3-diesel", "jidosha-3-motorcycle", "jidosha-body", "jidosha-electrical", "biyoshi", "kikenbutsu-otsu1", "kikenbutsu-otsu2", "kikenbutsu-otsu6"]).includes(code),
+  (code): code is IpaExamCode => !(["kisho", "chizai2", "kenchiku-setsubishi", "fp1", "fp2", "fp3", "denken3", "denken2", "denken1", "denko2", "denko1", "takken", "civil2", "civil1", "kankoji2", "zoen2", "zoen1", "tsushin2", "tsushin1", "kaigo", "shakai", "seishin", "tohan", "kanri", "eisei1", "eisei2", "soukan", "hoikushi", "mankan", "kashikin", "sharoushi", "kangoshi", "yakuzaishi", "ahaki-anma", "ahaki-hari-kyu", "hokenshi", "josanshi", "rigaku-ryohoshi", "sagyo-ryohoshi", "shino-kunrenshi", "rinsho-kensagishi", "shinryo-hoshasengishi", "rinsho-kogishi", "riyoshi", "chusho-kigyo-shindanshi", "chosashi", "shika-ishi", "judo-seifukushi", "riku-toku-kokunai", "kai-toku2", "kai-toku3", "koku-toku", "land-special1", "riku-tech1", "maritime4", "aviation-comm", "amateur1", "maritime-special1", "riku-tech2", "amateur2", "maritime-radar", "maritime3", "maritime2", "maritime1", "general3", "general2", "general1", "land-special2", "land-special3", "kanteishi", "kaikeishi", "gas-kou", "gas-otsu", "gas-hei", "jidosha-1-small-written", "jidosha-2-gasoline", "jidosha-2-diesel", "jidosha-2-chassis", "jidosha-2-motorcycle", "jidosha-3-chassis", "jidosha-3-gasoline", "jidosha-3-diesel", "jidosha-3-motorcycle", "jidosha-body", "jidosha-electrical", "biyoshi", "kikenbutsu-otsu1", "kikenbutsu-otsu2", "kikenbutsu-otsu6", "shihoshoshi"]).includes(code),
 );
 
 /** Every exam playable in the application, including external qualifications. */

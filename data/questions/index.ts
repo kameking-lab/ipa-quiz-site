@@ -10,6 +10,7 @@ import { YAMAGUCHI_FUGU_QUESTIONS } from "./yamaguchi-fugu";
 import { getKeiryoshiCandidates } from "./keiryoshi";
 import { KENKI2_QUESTIONS } from "./kenki2";
 import { KENKI1_QUESTIONS } from "./kenki1";
+import { SHIHOSHOSHI_QUESTIONS } from "./shihoshoshi";
 import type { ExamCode, Question } from "@/lib/questions/types";
 import { isPracticeReadyQuestion } from "@/lib/questions/filter";
 import { CHOSASHI_QUESTIONS } from "./chosashi";
@@ -193,6 +194,7 @@ export const QUESTIONS_BY_EXAM: Partial<Record<ExamCode, Question[]>> = {
   ...(isExamPublished("maritime3") ? { "maritime3": MARITIME3_QUESTIONS } : {}),
   ...(isExamPublished("land-special2") ? { "land-special2": LAND_SPECIAL2_QUESTIONS } : {}),
   ...(isExamPublished("land-special3") ? { "land-special3": LAND_SPECIAL3_QUESTIONS } : {}),
+  ...(isExamPublished("shihoshoshi") ? { shihoshoshi: SHIHOSHOSHI_QUESTIONS } : {}),
   ...(isExamPublished("chosashi") ? { chosashi: CHOSASHI_QUESTIONS } : {}),
   ...(isExamPublished("yamaguchi-chori") ? { "yamaguchi-chori": YAMAGUCHI_CHORI_QUESTIONS } : {}),
   ...(isExamPublished("yamaguchi-seika") ? { "yamaguchi-seika": YAMAGUCHI_SEIKA_QUESTIONS } : {}),

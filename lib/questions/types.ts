@@ -70,6 +70,7 @@ export type ExamCode =
   | "shika-ishi"
   | "riyoshi"
   | "chusho-kigyo-shindanshi"
+  | "shihoshoshi"
   | "chosashi"
   | "judo-seifukushi"
   | "riku-toku-kokunai"

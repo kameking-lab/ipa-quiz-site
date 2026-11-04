@@ -60,6 +60,7 @@ const EXAM_LOADERS: Partial<Record<ExamCode, () => Promise<Question[]>>> = {
   "land-special1": async () => isExamPublished("land-special1") ? (await import("@/data/questions/land-special1")).LAND_SPECIAL1_QUESTIONS : [],
   "kai-toku2": async () => isExamPublished("kai-toku2") ? (await import("@/data/questions/kai-toku2")).KAI_TOKU2_ALL_QUESTIONS : [],
   "kai-toku3": async () => isExamPublished("kai-toku3") ? (await import("@/data/questions/kai-toku3")).KAI_TOKU3_QUESTIONS : [],
+  shihoshoshi: async () => isExamPublished("shihoshoshi") ? (await import("@/data/questions/shihoshoshi")).SHIHOSHOSHI_QUESTIONS : [],
   chosashi: async () => isExamPublished("chosashi") ? (await import("@/data/questions/chosashi")).CHOSASHI_QUESTIONS : [],
   shinrishi: async () => isExamPublished("shinrishi") ? (await import("@/data/questions/shinrishi")).SHINRISHI_QUESTIONS : [],
   "yamaguchi-chori": async () => isExamPublished("yamaguchi-chori") ? (await import("@/data/questions/yamaguchi-chori")).YAMAGUCHI_CHORI_QUESTIONS : [],
