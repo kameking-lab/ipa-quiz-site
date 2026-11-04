@@ -82,6 +82,11 @@ describe("弁理士短答式・直近2回の未公開収録", () => {
     expect(name.choiceExplanations[0].explanation).toContain("略称自体にも必要");
     expect(name.choiceExplanations[3].explanation).toContain("商標法38条の2");
     expect(name.choiceExplanations[2].explanation).toContain("特許法77条4項");
+    expect(name.choiceExplanations[4].explanation).toContain("抗弁の提出者は");
+    expect(name.choiceExplanations[4].explanation).toContain("者だけに限定されない");
+    const invalidity = questions.find(q => q.id === "benrishi-2026-patent-10")!;
+    expect(invalidity.statementExplanations[3].correct).toBe(false);
+    expect(invalidity.statementExplanations[3].explanation).toContain("請求できない者も、無効の抗弁を提出できる");
     const utility = questions.find(q => q.id === "benrishi-2025-patent-16")!;
     expect(utility.statementExplanations[4].explanation).toContain("実用新案法6条の2");
     const unfair = questions.find(q => q.id === "benrishi-2025-copyright-unfair-competition-08")!;
