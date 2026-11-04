@@ -10,8 +10,8 @@ import type {
   PageAccessSection,
   SummarySection,
   TrafficSection,
-} from "./types";
-import { dateSeries, rangeSpanDays } from "./range";
+} from "@/lib/admin/metrics/types";
+import { dateSeries, rangeSpanDays } from "@/lib/admin/metrics/range";
 
 function rng(seed: number): () => number {
   let s = seed >>> 0;

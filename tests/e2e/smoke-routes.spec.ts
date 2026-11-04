@@ -19,7 +19,6 @@ const REQUIRED_200_ROUTES = [
   "/settings",
   "/modes/year",
   "/modes/topic",
-  "/referral",
   "/transparency",
   "/review",
   "/recommended-books",

@@ -4,7 +4,6 @@ import { notFound } from "next/navigation";
 import { ArrowLeft, ArrowRight, ChevronRight } from "lucide-react";
 
 import { ExamSourceNotes } from "@/components/exam-library/exam-source-notes";
-import { ExamNoteLinks, collectSubjectNoteLinks } from "@/components/exam-library/exam-note-links";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -194,20 +193,13 @@ export default async function QualificationHubPage({ params }: QualificationHubP
                     </li>
                   ))}
                 </ul>
-                <ExamNoteLinks
-                  links={collectSubjectNoteLinks(subjectPapers.map(({ entry }) => entry), hub.group, subject)}
-                  headingId={`subject-note-links-${subject}`}
-                  heading={`${subject}の解説記事`}
-                  headingLevel="h4"
-                  className="mt-4"
-                />
               </section>
             );
           })}
         </div>
       </section>
 
-      <ExamSourceNotes groupIds={[hub.group]} noteLinks={papers.flatMap(({ entry }) => entry.noteLinks ?? [])} className="mt-10" />
+      <ExamSourceNotes groupIds={[hub.group]} className="mt-10" />
 
       <section aria-labelledby="related-qualifications-heading" className="mt-10">
         <h2 id="related-qualifications-heading" className="text-lg font-bold">

@@ -113,7 +113,7 @@ export function NotificationSettings() {
             メール通知
           </CardTitle>
           <CardDescription>
-            学習リマインダーや週次ダイジェストをメールでお届けします。
+            メール通知の端末内設定です。定期メールの登録受付は終了しました。
           </CardDescription>
         </CardHeader>
         <CardContent className="space-y-4">
@@ -157,18 +157,6 @@ export function NotificationSettings() {
             />
           </div>
 
-          <div className="flex items-center justify-between">
-            <div>
-              <p className="font-medium text-sm">週次ダイジェスト</p>
-              <p className="text-xs text-muted-foreground">毎週日曜日に学習サマリーをお届け</p>
-            </div>
-            <Switch
-              aria-label="週次ダイジェスト"
-              checked={prefs.weeklyDigest}
-              onCheckedChange={(checked) => update({ weeklyDigest: checked })}
-              disabled={!prefs.emailEnabled}
-            />
-          </div>
 
           <div>
             <label className="mb-1 block text-sm font-medium" htmlFor="hour">

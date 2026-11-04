@@ -43,8 +43,6 @@ const BodySchema = z.object({
       weakCategories: z.array(z.string().max(60)).max(10),
     })
     .optional(),
-  character: z.enum(["momo", "haru", "zan"]).optional(),
-  characterEnabled: z.boolean().optional(),
   responseLength: z.enum(["short", "medium", "long"]).optional(),
   // tier is accepted from client but ignored server-side during beta —
   // all users receive the same limits regardless of what they send.
@@ -128,8 +126,6 @@ async function handlePost(req: Request, track: (context: AiUsageContext) => void
     isCorrect,
     quickAction,
     learnerProfile: payload.learnerProfile as LearnerProfile | undefined,
-    character: payload.character,
-    characterEnabled: payload.characterEnabled,
     responseLength: payload.responseLength as ResponseLength | undefined,
     ragDirective: rag.ragDirective,
     ragContextBlock: rag.ragContextBlock,

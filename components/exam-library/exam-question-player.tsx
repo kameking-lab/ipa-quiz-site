@@ -20,8 +20,6 @@ import {
 } from "lucide-react";
 import { isExamReferenceOnly, excludeSurveyAssistantReferenceAnswers } from "@/lib/exam-library/survey-assistant-reference-policy";
 import { SurveyAssistantReferencePanel } from "@/components/exam-library/survey-assistant-reference-panel";
-import { TrackedNoteLink } from "@/components/analytics/TrackedNoteLink";
-import { deriveNoteAccountFromUrl } from "@/lib/note-accounts";
 import { posthogCapture } from "@/lib/posthog";
 import { findExamEntry } from "@/lib/exam-library-catalog";
 import { qualificationHubForEntry } from "@/lib/exam-qualification-hubs";
@@ -43,7 +41,6 @@ import {
   boilerAnswerPage,
   isScorableQuestion,
   officialPdfPageUrl,
-  type ExamNoteLink,
   type ExamQuestion,
   type ExamSourceMode,
 } from "@/lib/exam-library-model";
@@ -75,8 +72,6 @@ interface ExamQuestionPlayerProps {
   sourceMode?: ExamSourceMode;
   indexUrl: string;
   questions: readonly ExamQuestion[];
-  /** 出典: ExamCatalogEntry.noteLinks。存在すれば解答後(submitted)のみ表示する。 */
-  noteLinks?: readonly ExamNoteLink[];
 }
 
 type AnswerStatus = ReturnType<typeof answerResult>;
@@ -145,7 +140,6 @@ export function ExamQuestionPlayer({
   sourceMode = "official-pdf",
   indexUrl,
   questions,
-  noteLinks,
 }: ExamQuestionPlayerProps) {
   const practiceQuestions = useMemo(() => questions.filter(question => !isExamReferenceOnly(question)), [questions]);
   const allIds = useMemo(() => questions.map((question) => question.id), [questions]);
@@ -806,44 +800,6 @@ export function ExamQuestionPlayer({
                   </button>
                 ) : null}
 
-                {noteLinks && noteLinks.length > 0 ? (
-                  <div className="mt-4 border-t border-current/25 pt-3">
-                    <h4 className="font-semibold">関連する解説記事</h4>
-                    <ul className="mt-1 grid gap-1">
-                      {noteLinks.map((link) => {
-                        const account = deriveNoteAccountFromUrl(link.url);
-                        const linkBody = (
-                          <>
-                            {link.title}
-                            <span className="sr-only">（新しいタブで開きます）</span>
-                            <ExternalLink className="h-4 w-4 shrink-0" aria-hidden="true" />
-                          </>
-                        );
-                        return (
-                          <li key={link.url}>
-                            {link.kind ? (
-                              <span
-                                className="mr-1.5 inline-block rounded px-1.5 py-0.5 text-xs font-bold text-white forced-colors:border forced-colors:border-[CanvasText] forced-colors:bg-[Canvas] forced-colors:text-[CanvasText]"
-                                style={{ backgroundColor: link.kind === "free" ? "#0284c7" : "#a16207" }}
-                              >
-                                {link.kind === "free" ? "無料" : "有料"}
-                              </span>
-                            ) : null}
-                            {account ? (
-                              <TrackedNoteLink href={link.url} source="exam_library" account={account} target="_blank" rel="noopener noreferrer" className={linkClass}>
-                                {linkBody}
-                              </TrackedNoteLink>
-                            ) : (
-                              <a href={link.url} target="_blank" rel="noopener noreferrer" className={linkClass}>
-                                {linkBody}
-                              </a>
-                            )}
-                          </li>
-                        );
-                      })}
-                    </ul>
-                  </div>
-                ) : null}
               </div>
             ) : null}
 

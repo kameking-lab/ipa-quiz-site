@@ -32,7 +32,6 @@ import { CopilotInline } from "@/components/copilot/CopilotPanel";
 import { createHistoryStore } from "@/lib/storage/history";
 import { writeLastQuestion } from "@/lib/storage/last-question";
 import { QuestionCommentBox } from "./QuestionCommentBox";
-import { ExamNoteGuide } from "@/components/exam/ExamNoteGuide";
 
 import { recordReview } from "@/lib/learning/spaced-repetition";
 import { LS_KEYS } from "@/lib/storage/keys";
@@ -600,7 +599,6 @@ function ScoredQuizPlayer({
                 <Button asChild variant="outline" className="w-full sm:w-auto">
                   <Link href={questionPagePath(question)}>公開解説・誤り報告を開く</Link>
                 </Button>
-                <ExamNoteGuide exam={question.exam as ExamCode} />
                 <QuestionCommentBox questionId={question.id} />
               </div>
             )}

@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 import { TotalAnswerCounter } from "@/components/home/TotalAnswerCounter";
 import { HomeDirectory } from "@/components/home/landing/HomeDirectory";
 import { HomeScheduleLink } from "@/components/home/landing/HomeScheduleLink";
-import { HomeNoteGuides, HomeTrust } from "@/components/home/landing/HomeGuidesAndTrust";
+import { HomeTrust } from "@/components/home/landing/HomeGuidesAndTrust";
 import { HomeHero } from "@/components/home/landing/HomeHero";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { getHomeDirectory } from "@/lib/home/home-directory";
@@ -33,7 +33,6 @@ export default function HomePage() {
       <HomeDirectory domains={domains} />
       <div className="study-context">
       <HomeScheduleLink />
-      <HomeNoteGuides />
       <HomeTrust />
       </div>
     </main>

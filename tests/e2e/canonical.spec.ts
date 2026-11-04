@@ -8,8 +8,6 @@ const CANONICAL_PAGES: [string, string][] = [
   ["/faq", "/faq"],
   ["/terms", "/terms"],
   ["/transparency", "/transparency"],
-  ["/referral", "/referral"],
-  ["/ranking", "/ranking"],
   ["/blog", "/blog"],
   ["/features", "/features"],
   ["/challenge", "/challenge"],
@@ -17,7 +15,6 @@ const CANONICAL_PAGES: [string, string][] = [
   ["/contact", "/contact"],
   ["/demo/afternoon", "/demo/afternoon"],
   ["/sitemap", "/sitemap"],
-  ["/student", "/student"],
   [
     "/e-learning/exams/qualifications/dai-1-shu-eisei-kanrisha",
     "/e-learning/exams/qualifications/dai-1-shu-eisei-kanrisha",

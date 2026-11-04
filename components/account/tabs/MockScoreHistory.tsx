@@ -1,19 +1,8 @@
 "use client";
 
 import * as React from "react";
-import {
-  Bar,
-  BarChart,
-  Cell,
-  CartesianGrid,
-  ResponsiveContainer,
-  Tooltip,
-  XAxis,
-  YAxis,
-} from "recharts";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
 import { ALL_QUIZ_EXAM_CODES } from "@/lib/exam-config";
 import { examLabel } from "@/lib/utils";
 import {
@@ -24,20 +13,10 @@ import {
 import type { MockScore } from "@/lib/learning/mock-scores";
 import type { ExamCode } from "@/lib/questions/types";
 
-const BUCKETS = [0, 30, 40, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95];
-
-/**
- * Display-only invented distribution. It represents no people or IPA statistics.
- */
-const SYNTHETIC_DISTRIBUTION: Record<string, number[]> = {
-  default: [120, 320, 540, 760, 920, 1100, 980, 720, 480, 280, 140, 60, 25],
-};
-
-export function RankingClient() {
+export function MockScoreHistory() {
   const [exam, setExam] = React.useState<ExamCode>("ap");
   const [nickname, setNicknameState] = React.useState("");
   const [scores, setScores] = React.useState<MockScore[]>([]);
-  const [samplePct, setSamplePct] = React.useState<number | null>(null);
 
   React.useEffect(() => {
     setNicknameState(getNickname());
@@ -52,14 +31,6 @@ export function RankingClient() {
   const examScores = scores.filter((s) => s.exam === exam);
   const latest = examScores[examScores.length - 1];
   const latestPct = latest ? Math.round((latest.score / latest.total) * 100) : null;
-  const distribution = SYNTHETIC_DISTRIBUTION[exam] ?? SYNTHETIC_DISTRIBUTION.default;
-  const userBucket = samplePct !== null ? bucketIndex(samplePct) : -1;
-
-  const chartData = distribution.map((count, i) => ({
-    range: `${BUCKETS[i]}-${BUCKETS[i + 1] ?? 100}`,
-    count,
-    isYou: i === userBucket,
-  }));
 
   return (
     <div className="space-y-6">
@@ -126,38 +97,6 @@ export function RankingClient() {
 
       <Card>
         <CardHeader>
-          <CardTitle className="text-base">仮の分布を使った表示デモ</CardTitle>
-        </CardHeader>
-        <CardContent>
-          <div
-            className="h-72 w-full"
-            role="img"
-            aria-label="架空の分布による表示デモ。実受験者の人数ではありません"
-          >
-            <ResponsiveContainer width="100%" height="100%">
-              <BarChart data={chartData}>
-                <CartesianGrid strokeDasharray="3 3" stroke="#cbd5e1" />
-                <XAxis dataKey="range" tick={{ fontSize: 10 }} />
-                <YAxis tick={{ fontSize: 10 }} />
-                <Tooltip />
-                <Bar dataKey="count" name="表示用の仮値">
-                  {chartData.map((d, i) => (
-                    <Cell key={i} fill={d.isYou ? "#0284c7" : "#cbd5e1"} />
-                  ))}
-                </Bar>
-              </BarChart>
-            </ResponsiveContainer>
-          </div>
-          {samplePct !== null && (
-            <p className="mt-3 text-xs text-sky-700 dark:text-sky-300">
-              青いバーはデモのサンプル得点率 {samplePct}% の位置です。実際の全国順位ではありません。
-            </p>
-          )}
-        </CardContent>
-      </Card>
-
-      <Card>
-        <CardHeader>
           <CardTitle className="text-base">スコア履歴</CardTitle>
         </CardHeader>
         <CardContent>
@@ -175,7 +114,7 @@ export function RankingClient() {
                     className="flex items-center justify-between rounded-lg border border-zinc-200 bg-white px-3 py-2 dark:border-zinc-800 dark:bg-zinc-900"
                   >
                     <span className="text-xs text-zinc-500 dark:text-zinc-400">
-                      {new Date(s.takenAt).toLocaleDateString("ja-JP")}
+                      {new Date(s.takenAt).toLocaleDateString("ja-JP", { timeZone: "Asia/Tokyo" })}
                     </span>
                     <span className="font-medium">
                       {s.score}/{s.total}
@@ -187,22 +126,11 @@ export function RankingClient() {
             </ul>
           )}
           <p className="mt-3 text-xs text-zinc-500 dark:text-zinc-400">
-            ※ 模試スコアはこの端末の localStorage に保存されます。クラウド同期は順次対応予定。
+            ※ 模試スコアはこの端末に保存されます。
           </p>
         </CardContent>
       </Card>
 
-      <Card className="border-sky-200 bg-sky-50/40 dark:border-sky-900/40 dark:bg-sky-950/20">
-        <CardContent className="pt-6 text-sm text-zinc-700 dark:text-zinc-300">
-          <p className="mb-2 font-medium">表示デモを試す</p>
-          <p className="mb-3 text-xs text-zinc-600 dark:text-zinc-400">
-            模試を完了した結果だけを履歴に記録します。デモのサンプルはこの画面内だけで使い、学習履歴に保存しません。
-          </p>
-          <Button size="sm" variant="outline" onClick={() => setSamplePct(Math.floor(50 + Math.random() * 44))}>
-            保存しないサンプルを表示
-          </Button>
-        </CardContent>
-      </Card>
     </div>
   );
 }
@@ -230,11 +158,4 @@ function Stat({
       </div>
     </div>
   );
-}
-
-function bucketIndex(pct: number): number {
-  for (let i = BUCKETS.length - 1; i >= 0; i--) {
-    if (pct >= BUCKETS[i]) return i;
-  }
-  return 0;
 }

@@ -112,7 +112,7 @@ async function main() {
       { url: '/quiz', label: 'Quiz', prefix: 'a-02-quiz' },
       { url: '/mock-exam', label: 'Mock Exam', prefix: 'a-03-mock-exam' },
       { url: '/search', label: 'Search', prefix: 'a-04-search' },
-      { url: '/success-stories', label: 'Success Stories', prefix: 'a-05-success-stories' },
+      { url: '/blog', label: 'Study Guides', prefix: 'a-05-study-guides' },
       { url: '/study-plan', label: 'Study Plan', prefix: 'a-06-study-plan' },
       { url: '/my-progress', label: 'My Progress', prefix: 'a-07-my-progress' },
       { url: '/bookmarks', label: 'Bookmarks', prefix: 'a-08-bookmarks' },
@@ -245,19 +245,12 @@ async function main() {
     await page.screenshot({ path: `${LOG_DIR}/b-06-why.png` }).catch(() => {});
     results.features['B6_why'] = { hasDiffMessage, foundNgWords: foundNg6a };
 
-    // B-7: Success stories
-    console.log('  B-7: Success stories...');
-    await page.goto(`${BASE_URL}/success-stories`, { waitUntil: 'networkidle', timeout: 30000 }).catch(() => {});
-    const pageText7 = await page.content().catch(() => '');
-    const storyCards = await page.$$eval('article, .story-card, [data-story], .card', els => els.length).catch(() => 0);
-    const hasAiDisclaimer = pageText7.includes('AI生成') || pageText7.includes('フィクション') || pageText7.includes('架空') || pageText7.includes('実体験ではない') || pageText7.includes('参考');
-    const hasStoryLinks = await page.$$eval('a[href*="/success-stories/"]', els => els.length).catch(() => 0);
-    await page.screenshot({ path: `${LOG_DIR}/b-07-success-stories.png` }).catch(() => {});
-    results.features['B7_successStories'] = {
-      cardCount: storyCards,
-      storyLinkCount: hasStoryLinks,
-      hasAiDisclaimer,
-      aiDisclaimerSnippet: pageText7.match(/(AI生成|フィクション|架空|実体験ではない)[^。]*。/)?.[0] ?? null,
+    // B-7: Retired fictional stories redirect to real editorial content.
+    console.log('  B-7: Retired story redirect...');
+    await page.goto(`${BASE_URL}/success-stories`, { waitUntil: 'networkidle', timeout: 30000 });
+    results.features['B7_retiredStories'] = {
+      finalPath: new URL(page.url()).pathname,
+      hasOldLinks: await page.locator('a[href*="/success-stories"]').count(),
     };
 
     // B-8: Motivation system
@@ -270,7 +263,7 @@ async function main() {
 
     // ===== BLOCK C: Structured data =====
     console.log('\n=== BLOCK C: Structured Data ===');
-    const structuredPages = ['/', '/success-stories', '/why-kakomon-ai', '/blog', '/essays'];
+    const structuredPages = ['/', '/why-kakomon-ai', '/blog', '/essays'];
     for (const p of structuredPages) {
       await page.goto(`${BASE_URL}${p}`, { waitUntil: 'networkidle', timeout: 30000 }).catch(() => {});
       const jsonLdData = await page.$$eval('script[type="application/ld+json"]', scripts =>
@@ -305,7 +298,7 @@ async function main() {
     }
 
     // Blog and essays sample
-    for (const feedPath of ['/blog', '/essays', '/success-stories']) {
+    for (const feedPath of ['/blog', '/essays']) {
       const feedLinks = await page.goto(`${BASE_URL}${feedPath}`, { waitUntil: 'networkidle', timeout: 30000 })
         .then(() => page.$$eval('a[href*="' + feedPath + '/"]', els => els.map(e => e.href).filter(u => u !== BASE_URL + feedPath + '/').slice(0, 1)))
         .catch(() => []);
@@ -408,7 +401,7 @@ async function main() {
     results.ngChecks.ngWordsFound = ngResults;
 
     // E-2: AI content disclaimers
-    const aiDisclaimerPages = ['/success-stories', '/essays', '/blog'];
+    const aiDisclaimerPages = ['/essays', '/blog'];
     const disclaimerResults = {};
     for (const dp of aiDisclaimerPages) {
       await ngPage.goto(`${BASE_URL}${dp}`, { waitUntil: 'networkidle', timeout: 30000 }).catch(() => {});

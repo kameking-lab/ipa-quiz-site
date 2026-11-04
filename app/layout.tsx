@@ -14,13 +14,10 @@ import { OnboardingTour } from "@/components/onboarding/OnboardingTour";
 import { MobileBottomNav } from "@/components/MobileBottomNav";
 import { VercelAnalyticsWithPrivacy } from "@/components/analytics/VercelAnalyticsWithPrivacy";
 import { Suspense } from "react";
-import { EmailLeadCapture } from "@/components/EmailLeadCapture";
 import { PostHogProvider } from "@/components/PostHogProvider";
 import { StudyPresence } from "@/components/StudyPresence";
 import { EmergencyBanner } from "@/components/EmergencyBanner";
 import { SITE_BASE_URL } from "@/lib/seo/config";
-import { NOTE_PROFILE_URL } from "@/lib/external-links";
-import { TrackedNoteLink } from "@/components/analytics/TrackedNoteLink";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -197,7 +194,7 @@ export default function RootLayout({
                       <li><Link href="/essay" className="block py-2.5 hover:text-foreground">IPA 午後論述AI採点</Link></li>
                       <li><Link href="/challenge" className="block py-2.5 hover:text-foreground">IPA デイリーチャレンジ</Link></li>
                       <li><Link href="/mock-exam" className="block py-2.5 hover:text-foreground">IPA 模試モード</Link></li>
-                      <li><Link href="/ranking" className="block py-2.5 hover:text-foreground">IPA ランキング</Link></li>
+                      <li><Link href="/account/dashboard#mock-scores" className="block py-2.5 hover:text-foreground">模試記録</Link></li>
                       <li><Link href={PRICE_PAGE_LINK.href} className="block py-2.5 hover:text-foreground">{PRICE_PAGE_LINK.label}</Link></li>
                       <li><Link href="/faq" className="block py-2.5 hover:text-foreground">FAQ</Link></li>
                       <li><Link href="/features" className="block py-2.5 hover:text-foreground">機能特集</Link></li>
@@ -236,19 +233,6 @@ export default function RootLayout({
                           X @kakomon_ai_jp
                         </a>
                       </li>
-                      <li>
-                        <TrackedNoteLink
-                          href={NOTE_PROFILE_URL}
-                          source="footer"
-                          account="ipa_quiz_ai"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          aria-label="note 資格の記事一覧（新しいタブで開く）"
-                          className="block py-2.5 hover:text-foreground"
-                        >
-                          note
-                        </TrackedNoteLink>
-                      </li>
                       <li><a href="https://tsugino-shikaku.jp/?utm_source=kakomon_ai&utm_medium=referral&utm_campaign=learning_network" target="_blank" rel="noopener noreferrer" className="block py-2.5 hover:text-foreground">日程・締切を探す・次の資格</a></li>
                       <li><a href="https://www.youtube.com/channel/UCrR65J1ZQ6Zzr0Gs70YPHNA?utm_source=kakomon_ai&utm_medium=referral&utm_campaign=learning_network" target="_blank" rel="noopener noreferrer" className="block py-2.5 hover:text-foreground">耳で復習・ミナト資格ラジオ</a></li>
 
@@ -271,17 +255,11 @@ export default function RootLayout({
                   </nav>
                 </div>
 
-                {/* Theme + email row */}
+                {/* Theme */}
                 <div className="print:hidden mt-6 flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
                   <div className="flex items-center gap-2 text-[11px]">
                     <span className="text-muted-foreground">テーマ</span>
                     <ThemeToggle />
-                  </div>
-                  <div className="space-y-1.5">
-                    <p className="text-[11px] font-semibold uppercase tracking-wide text-foreground">
-                      週1レポート
-                    </p>
-                    <EmailLeadCapture variant="footer" />
                   </div>
                 </div>
 

@@ -71,8 +71,10 @@ describe('aviation communication68 local registration candidate',()=>{
   const player=readFileSync(path.join(process.cwd(),'components/quiz/QuizPlayer.tsx'),'utf8');
   // Reviewed 2026-11-01 urgent release recipe: inline AI, original-answer rewards,
   // next-question focus/loading and explicit retirement of generated questions.
+  // PRK removes only the optional note CTA; rewards, answers and source pins remain.
   // The historical pre-reward oracle remains unchanged as provenance.
   expect(normalizedTextSha256(player)).toBe(batch1RuntimePins['components/quiz/QuizPlayer.tsx']);
+  expect(player).not.toContain('ExamNoteGuide');
   expect(player).not.toContain('GenerateSimilar');
   expect(player).not.toContain('/api/generate-question');
   expect(player).toContain('recordStudyReward(');
