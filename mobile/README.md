@@ -95,6 +95,31 @@ npm run test:e2e
 npm run build
 ```
 
+### CM2: Node 22でのクリーンビルド再現
+
+Node 22.23.4をPATHの先頭に置き、`node --version` が `v22.23.4` であることを確認する。
+コミット済みのローカルリポジトリから新規cloneを作ると、既存の依存・生成物・未追跡ファイルを引き継がずに検証できる。
+以下はmacOS/Linuxのシェル例（`/path/to/ipa-quiz-ios1` は実際のローカルパスへ置き換える）。
+
+```sh
+set -eu
+test "$(node --version)" = v22.23.4
+git clone --no-local --branch feat/ios-app-v1-20261103 /path/to/ipa-quiz-ios1 /tmp/ipa-quiz-cm2-clean
+cd /tmp/ipa-quiz-cm2-clean
+npx --yes pnpm@10.33.0 install --frozen-lockfile --ignore-scripts
+npx --no-install prisma generate
+cd mobile
+npm ci
+npm run typecheck
+npm test
+npm run build
+```
+
+ルートのpnpm依存は共有ソースの解決に必要。mobileの依存は `package-lock.json` に従って `npm ci` で入れ直す。
+検証には環境ファイルやSDKキーを用意しない。Codemagicの配布時の公開キー確認は既存の手順で行う。
+`catalog` はtsxのrequire hookを使って共有ソースを読み込む。mobileのESMとルートのCommonJS境界をNode 22のESM名前付きexport推論で越えないため、ルート全体の `type` 変更やViteの `--configLoader native` は不要。
+VitestはVite経由で変換するため、このローダー境界の回帰確認には通常の `npm run build` まで実行する。
+
 `build` はアプリ用Vite静的アセットの生成だけで、Next.js/Vercelビルドではない。`test:e2e` は毎回モック用鍵を生成する。鍵・本文フィクスチャは `.cache/` だけに置く。通常の配布用ビルドにはテスト用ハーネスと鍵を入れない。テスト後は通常の `build` を実行する。
 
 通常ビルドの最後に `scripts/measure-bundle.mjs` がファイル容量/gzip容量を `docs/bundle-size.json` へ記録し、E2Eハーネスが残っていれば失敗する。IPAとApp Store表示の容量はmacOS/App Storeで別に測定する。購入キャンセル・承認待ちの再起動保持・価格変更・復元対象なしのE2Eも、SDKアダプターへ注入したモックで検証する。

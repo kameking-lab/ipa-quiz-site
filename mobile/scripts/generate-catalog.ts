@@ -1,10 +1,15 @@
 import { writeFile, readdir, stat, mkdir } from "node:fs/promises";
 import { resolve, relative } from "node:path";
 import { fileURLToPath } from "node:url";
+import { createRequire } from "node:module";
 const root=fileURLToPath(new URL("../../",import.meta.url));
 process.chdir(root);
-const {examCatalog,examContent,catalogCodes}=await import("../shared/catalog-source");
-const {getAllEssayQuestions}=await import("../../lib/essay/load");
+// tsx's require hook loads the shared graph consistently across the ESM mobile
+// package and the root package (which defaults to CommonJS). Node 22's ESM
+// loader cannot reliably infer named exports across this boundary.
+const require = createRequire(import.meta.url);
+const {examCatalog,examContent,catalogCodes}=require("../shared/catalog-source.ts") as typeof import("../shared/catalog-source");
+const {getAllEssayQuestions}=require("../../lib/essay/load.ts") as typeof import("../../lib/essay/load");
 await writeFile(resolve(root,"lib/essay/catalog.generated.json"),JSON.stringify(getAllEssayQuestions().map(({id,title,exam,year,season,qNumber})=>({id,title,exam,year,season,qNumber})),null,2)+"\n");
 async function files(dir:string):Promise<string[]> { const result:string[]=[]; for (const item of await readdir(dir,{ withFileTypes:true })) { const path=resolve(dir,item.name); if(item.isDirectory()) result.push(...await files(path)); else result.push(path); } return result; }
 const exams=[];
