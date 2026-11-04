@@ -121,6 +121,7 @@ describe("dojo-osen latest two complete official editions, private staging", () 
     const combinedPoints = rows.find(q => q.id === "dojo-osen-2024-am-q12")!;
     expect(combinedPoints.choiceExplanations[2]).toContain("7地点");
     expect(combinedPoints.choiceExplanations[2]).toContain("3地点");
+    expect(combinedPoints.choiceExplanations[2]).toContain("0.012・0.035・0.025mg/L");
     const fillDepth = rows.find(q => q.id === "dojo-osen-2024-am-q21")!;
     expect(fillDepth.choiceExplanations[2]).toContain("深さ1mの採取が欠ける");
     const overlappingGas = rows.find(q => q.id === "dojo-osen-2024-am-q16")!;
