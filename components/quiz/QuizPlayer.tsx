@@ -140,6 +140,11 @@ function ScoredQuizPlayer({
     quizStartedFiredRef.current = true;
     posthogCapture("quiz_started", {
       exam: question.exam,
+      year: question.year,
+      season: question.season,
+      session: question.session,
+      category: question.category,
+      player: "quiz",
       mode,
       total,
     });

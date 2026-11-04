@@ -1,3 +1,5 @@
+import { TsuginoWelcome } from "@/components/analytics/TsuginoWelcome";
+import { referralPracticeHref } from "@/lib/questions/referral-practice";
 import { PUBLISHED_SENTAKU } from "@/lib/sharoushi/sentaku";
 import { practiceSessionLabel } from "@/lib/questions/practice-session";
 import type { Metadata } from "next";
@@ -287,6 +289,7 @@ export default async function ExamTopPage({
 
       <div className="relative mx-auto w-full max-w-3xl px-4 pb-20 pt-6 sm:px-6 sm:pt-10">
         <JsonLd data={jsonLd} />
+      <TsuginoWelcome href={referralPracticeHref(questions, `/${exam}`)} qualification={examLabel(code)} />
 
         <nav aria-label="パンくずリスト" className="mb-4 text-xs text-muted-foreground">
           <ol className="flex flex-wrap items-center gap-1.5">

@@ -1,3 +1,5 @@
+import { TsuginoWelcome } from "@/components/analytics/TsuginoWelcome";
+import { referralPracticeHref } from "@/lib/questions/referral-practice";
 import { questionNumberLabel } from "@/lib/questions/display";
 import { practiceSessionLabel } from "@/lib/questions/practice-session";
 import type { Metadata } from "next";
@@ -129,6 +131,7 @@ export default async function ExamTopicPage({
 
       <div className="relative mx-auto w-full max-w-3xl px-4 pb-20 pt-6 sm:px-6 sm:pt-10">
         <JsonLd data={jsonLd} />
+      <TsuginoWelcome href={referralPracticeHref(pool, `/${exam}/topic/${encodeURIComponent(category)}`, category)} qualification={`${examLabel(code)}・${category}`} />
 
         <nav
           aria-label="パンくずリスト"

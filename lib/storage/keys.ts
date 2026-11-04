@@ -1,4 +1,8 @@
 export const LS_KEYS = {
+  referral: "ipa-quiz:referral:v1",
+  referralStages: "ipa-quiz:referral-stages:v1",
+  referralVisited: "ipa-quiz:referral-visited:v1",
+  referralWelcomeDismissed: "ipa-quiz:referral-welcome-dismissed:v1",
   petCommandReviewOutbox: "ipa-quiz:pet-command-review-outbox:v1",
   petCommandOutbox: "ipa-quiz:pet-command-outbox:v1",
   petLearning: "ipa-quiz:pet-learning:v1",

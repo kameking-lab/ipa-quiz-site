@@ -190,6 +190,14 @@ export function ExamQuestionPlayer({
   const current = currentId ? byId.get(currentId) : undefined;
   const currentAnswer = currentId ? answers[currentId] : undefined;
   const referenceOnly = Boolean(current && isExamReferenceOnly(current));
+  const startedExam = useRef<string | null>(null);
+  useEffect(() => {
+    if (!current || referenceOnly || view !== "question" || startedExam.current === examId) return;
+    startedExam.current = examId;
+    const entry = findExamEntry(examId);
+    posthogCapture("quiz_started", { exam: entry?.subject ?? examId, examId,
+      player: "exam_library", year: entry?.date.slice(0, 4), hubSlug, total: practiceQuestions.length });
+  }, [current, referenceOnly, view, examId, hubSlug, practiceQuestions.length]);
   const submitted = !referenceOnly && Boolean(currentAnswer?.submitted);
   const status: AnswerStatus = current ? answerResult(current, currentAnswer) : "unanswered";
   const summary = useMemo(() => summarizeExamProgress(questions, answers), [answers, questions]);

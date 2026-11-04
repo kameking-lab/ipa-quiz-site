@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { referralRedirectHref } from "@/lib/analytics/referral-query";
 import type { Metadata } from "next";
 import { permanentRedirect } from "next/navigation";
 import { ExternalLink } from "lucide-react";
@@ -35,7 +36,7 @@ const DESCRIPTION =
   "技術士第一次・測量士補・安全衛生分野の公表問題を、試験・科目・回を選んで1問ずつ解けます。公式正答がある問題だけ採点し、間違えた問題を解き直せます。";
 
 interface ExamLibraryPageProps {
-  searchParams: Promise<{ group?: string | string[]; subject?: string | string[] }>;
+  searchParams: Promise<Record<string, string | string[] | undefined>>;
 }
 
 function firstValue(value: string | string[] | undefined): string | undefined {
@@ -94,7 +95,7 @@ export default async function ExamLibraryPage({ searchParams }: ExamLibraryPageP
   }
   if (requestedGroup) {
     const hub = qualificationHubForSelection(requestedGroup.id, requestedSubject);
-    if (hub) permanentRedirect(qualificationHubPath(hub.slug));
+    if (hub) permanentRedirect(referralRedirectHref(qualificationHubPath(hub.slug), params));
   }
   const initialGroup: ExamGroupId =
     requestedGroup && groups.some((group) => group.id === requestedGroup.id)
@@ -134,6 +135,7 @@ export default async function ExamLibraryPage({ searchParams }: ExamLibraryPageP
           items={items}
           initialGroup={initialGroup}
           initialSubject={initialSubject}
+          initialYear={firstValue(params.year)}
         />
       </div>
 

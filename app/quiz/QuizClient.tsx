@@ -13,6 +13,7 @@ import { fetchPracticeQuestion, PracticeRequestError } from "@/lib/billing/guest
 import type { PracticeAccess } from "@/lib/billing/practice-contract";
 import { shuffleChoices } from "@/lib/questions/filter";
 import { getMockExamHistory } from "@/lib/mock-exam/storage";
+import { posthogCapture } from "@/lib/posthog";
 
 const MAX_POOL = 80;
 const WEAKNESS_THRESHOLD = 0.6;
@@ -136,6 +137,18 @@ export function QuizClient({
   const [related, setRelated] = React.useState<{ id: string; questions: Question[] } | null>(null);
   const transitionHost = React.useRef<HTMLDivElement>(null);
   const navigating = React.useRef(false);
+  const reportedLimits = React.useRef(new Set<string>());
+  React.useEffect(() => {
+    // Count a successful final free grant or confirmed denial, never AI/rate errors.
+    if (!access || !["guest", "trial"].includes(access.kind) ||
+        (access.remaining !== 0 && accessError !== "daily_limit")) return;
+    if (accessError && accessError !== "daily_limit") return;
+    const key = access.resetAt;
+    if (reportedLimits.current.has(key)) return;
+    reportedLimits.current.add(key);
+    posthogCapture("practice_free_limit_reached", { exam, free_daily: access.freeDaily,
+      reset_at: access.resetAt, reason: accessError === "daily_limit" ? "denied" : "last_free_question" });
+  }, [access, accessError, exam]);
   // Layout timing prevents a paint at the old footer after the question collapses.
   React.useLayoutEffect(() => {
     if (!navigating.current) return;

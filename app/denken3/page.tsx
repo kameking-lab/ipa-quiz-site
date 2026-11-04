@@ -1,3 +1,5 @@
+import { TsuginoWelcome } from "@/components/analytics/TsuginoWelcome";
+import { referralPracticeHref } from "@/lib/questions/referral-practice";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight, BookOpenCheck } from "lucide-react";
@@ -40,6 +42,7 @@ export default async function Denken3Page({ searchParams }: { searchParams: Prom
 
   return (
     <main className="mx-auto max-w-5xl px-4 pb-20 pt-8 sm:pt-12">
+      <TsuginoWelcome href={referralPracticeHref(DENKEN3_QUESTIONS.filter(q => q.year === year && q.season === season), "/denken3")} qualification="電験三種" />
       <div className="mb-6">
         <Link href="/qualifications" className="text-sm font-medium text-primary hover:underline">← 資格一覧へ戻る</Link>
       </div>
