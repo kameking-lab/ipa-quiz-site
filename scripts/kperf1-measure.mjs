@@ -201,7 +201,10 @@ try {
       target = page.getByRole('navigation', { name: '解答後の学習操作' }).locator('button[aria-pressed]');
     }
     await target.waitFor();
-    await target.scrollIntoViewIfNeeded();
+    // Trial click performs scroll/actionability checks with Playwright's detach
+    // retry, without dispatching input. Header hydration may replace a node
+    // after networkidle; scrollIntoViewIfNeeded alone does not retry that race.
+    await target.click({ trial: true });
     await page.waitForTimeout(700);
     const beforePressed = await target.getAttribute('aria-pressed');
     const url = page.url();

@@ -31,3 +31,5 @@ Raw Lighthouse JSON and first-sample screenshots: `.cache/kperf1/{before,after}/
 - Local build has no PostHog/Sentry keys; the existing editorial gate has no ad-eligible articles. Cross-origin requests are blocked identically in both phases. Therefore live ad/analytics cost cannot be inferred from these scores; deferred ad behavior needs regression tests. No ad eligibility, ad slot IDs/counts, or production settings are changed.
 
 Final requested report: `C:/Users/kanet/Documents/Codex/2026-11-02/task-2/kperf1-report.md`.
+
+Final evidence uses **before-v5 / after-v5** only. Older phases are diagnostics and must not be pooled. See [the final report](kperf1-report.md), [comparison.json](comparison.json), and [validation.json](validation.json). Runtime validation is pinned to `3f1f431b9`; the later harness-only change stabilizes untimed extra-screen setup with `click({ trial: true })` before the 700 ms wait and measured touch tap. No click is dispatched by that trial. Zero additional reading delay does not guarantee an unprepared explanation; report `preparedBefore` alongside latency.

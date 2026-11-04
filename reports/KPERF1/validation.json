@@ -1,0 +1,84 @@
+{
+  "checks": {
+    "typecheck": {
+      "label": "typecheck",
+      "args": [],
+      "exitCode": 0,
+      "signal": null,
+      "elapsedMs": 15109,
+      "source": "3f1f431b93820b609751ffaa8f3acbe29e6dcee2",
+      "log": "C:\\Users\\kanet\\20260522\\wt-perf-k\\.cache\\kperf1-typecheck-native.log",
+      "environment": "OS whitelist only; local mocks; no production credentials",
+      "timestamp": "2026-11-04T19:40:08.202Z"
+    },
+    "lint": {
+      "label": "lint",
+      "args": [],
+      "exitCode": 0,
+      "signal": null,
+      "elapsedMs": 69546,
+      "source": "3f1f431b93820b609751ffaa8f3acbe29e6dcee2",
+      "log": "C:\\Users\\kanet\\20260522\\wt-perf-k\\.cache\\kperf1-lint-native.log",
+      "environment": "OS whitelist only; local mocks; no production credentials",
+      "timestamp": "2026-11-04T19:41:02.673Z"
+    },
+    "test": {
+      "label": "test",
+      "args": [
+        "--maxWorkers=4"
+      ],
+      "exitCode": 0,
+      "signal": null,
+      "elapsedMs": 320518,
+      "source": "3f1f431b93820b609751ffaa8f3acbe29e6dcee2",
+      "log": "C:\\Users\\kanet\\20260522\\wt-perf-k\\.cache\\kperf1-test-native.log",
+      "environment": "OS whitelist only; local mocks; no production credentials",
+      "timestamp": "2026-11-04T19:38:34.030Z"
+    },
+    "build": {
+      "label": "build",
+      "args": [],
+      "exitCode": 0,
+      "signal": null,
+      "elapsedMs": 745189,
+      "source": "3f1f431b93820b609751ffaa8f3acbe29e6dcee2",
+      "log": "C:\\Users\\kanet\\20260522\\wt-perf-k\\.cache\\kperf1-build-native.log",
+      "environment": "OS whitelist only; local mocks; no production credentials",
+      "timestamp": "2026-11-04T19:45:38.733Z",
+      "buildId": "iZ0BII5uSba9scuDs5xAY"
+    }
+  },
+  "unit": {
+    "files": 714,
+    "passed": 7448,
+    "skipped": 2,
+    "total": 7450
+  },
+  "e2e": {
+    "exitCode": 0,
+    "signal": null,
+    "elapsedMs": 170177,
+    "source": "3f1f431b93820b609751ffaa8f3acbe29e6dcee2",
+    "buildId": "iZ0BII5uSba9scuDs5xAY",
+    "ci": true,
+    "workers": 2,
+    "externalBaseUrl": false,
+    "log": "C:\\Users\\kanet\\20260522\\wt-perf-k\\.cache\\kperf1-e2e-native.log",
+    "environment": "OS whitelist only plus CI and local test config; no production credentials",
+    "stats": {
+      "startTime": "2026-11-04T19:46:52.797Z",
+      "duration": 169321.34600000002,
+      "expected": 370,
+      "skipped": 5,
+      "unexpected": 0,
+      "flaky": 1
+    },
+    "globalErrors": 0
+  },
+  "fileSha256": {
+    "eslint.config.mjs": "6e120322fd62e4639e825fedf705c6c84e37f6f18217fd46a5f66286b1007404",
+    "scripts/kperf1-measure.mjs": "e6ffc8bec1261a6440e2ccf046871993a021e1975ff86c2855d87c29a3a1c5fb",
+    "tests/e2e/home-study-entry.spec.ts": "0c6623b592f08621e724fcbc21c2d76bf05d502500e6b33e958fdc13e6a1ff38",
+    "components/quiz/QuizPlayer.tsx": "121d725cb0d83f270925bb4fb3939c0c566b721f171117fade763607a68fc164"
+  }
+}
