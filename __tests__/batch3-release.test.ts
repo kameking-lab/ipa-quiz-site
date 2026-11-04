@@ -31,7 +31,7 @@ describe("INT7 batch3 public release integration", () => {
     expect(questions.every(isPracticeReadyQuestion)).toBe(true);
     expect(new Set(questions.map(questionPagePath)).size).toBe(questions.length);
     for (const q of questions) {
-      expect(EXAM_CONFIGS[code].sessions.some(s => s.session === q.session)).toBe(true);
+      expect(EXAM_CONFIGS[code].sessions.find(s => s.session === q.session)?.categories).toContain(q.category);
       const [, , exam, yearSeason, section, qnum] = questionPagePath(q).split("/");
       expect(findQuestionByRoute(ALL_QUESTIONS, {exam, yearSeason, section, qnum})?.id).toBe(q.id);
       if (q.hasImage) expect(q.imageUrls?.length).toBeGreaterThan(0);
