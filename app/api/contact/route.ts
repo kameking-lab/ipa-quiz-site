@@ -48,6 +48,7 @@ const ContactSchema = z.object({
     "enterprise",
     "media",
     "other",
+    "tsugino",
   ]),
   name: z.string().max(80).optional().default(""),
   email: z.string().max(120).optional().default(""),
@@ -224,7 +225,8 @@ export async function POST(req: Request) {
 }
 
 function buildSlackText(payload: z.infer<typeof BodySchema>, ipHash: string): string {
-  const head = `[過去問AI] ${payload.kind} 受信 (${ipHash})`;
+  const siteName = payload.kind === "contact" && payload.category === "tsugino" ? "次の資格" : "過去問AI";
+  const head = `[${siteName}] ${payload.kind} 受信 (${ipHash})`;
   switch (payload.kind) {
     case "feedback":
       return `${head}\n選択: ${payload.choice}${payload.source ? ` / ${payload.source}` : ""}\n${payload.comment || "(コメントなし)"}`;

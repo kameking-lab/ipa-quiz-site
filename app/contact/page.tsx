@@ -37,7 +37,13 @@ export const metadata: Metadata = {
   },
 };
 
-export default function ContactPage() {
+export default async function ContactPage({
+  searchParams,
+}: {
+  searchParams: Promise<{ site?: string | string[] }>;
+}) {
+  const { site } = await searchParams;
+  const isTsugino = site === "tsugino";
   const jsonLd = {
     "@context": "https://schema.org",
     "@graph": [
@@ -102,7 +108,12 @@ export default function ContactPage() {
         </CardContent>
       </Card>
 
-      <ContactForm />
+      <p className="mb-4 text-sm text-zinc-600 dark:text-zinc-400">
+        「次の資格」と「過去問AI」は同じ kameking-lab が運営しています。次の資格への質問・不具合報告・訂正依頼は、種別「次の資格について」で受け付けます。
+        {isTsugino ? "このリンクでは「次の資格について」を初期選択しています。" : null}
+        返信が必要な場合は、任意のメールアドレス欄にご記入ください。原則3営業日以内を目安に返信しますが、内容により確認に時間がかかる場合があります。
+      </p>
+      <ContactForm key={isTsugino ? "tsugino" : "default"} initialCategory={isTsugino ? "tsugino" : "improvement"} />
 
       <p className="mt-8 text-xs text-zinc-500 dark:text-zinc-400">
         ※ いただいた個人情報は、お問い合わせ対応のためにのみ利用します。詳細は{" "}

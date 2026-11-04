@@ -62,6 +62,52 @@ beforeEach(() => {
 });
 
 describe("POST /api/contact — Slack 通知は after() で送る", () => {
+  it("次の資格の問い合わせをサイト名つきで通知し、本文・メールをログへ残さない", async () => {
+    const log = vi.spyOn(console, "log").mockImplementation(() => {});
+    try {
+      const res = await POST(req({ kind: "contact", category: "tsugino", body: "日程の訂正をお願いします", email: "reply@example.test" }));
+      expect(res.status).toBe(200);
+      expect(hoisted.slackCalls).toHaveLength(0);
+      await hoisted.afterCallbacks[0]();
+      expect(hoisted.slackCalls[0]).toContain("[次の資格] contact 受信");
+      expect(hoisted.slackCalls[0]).toContain("種別: tsugino");
+      expect(hoisted.slackCalls[0]).toContain("reply@example.test");
+      expect(JSON.stringify(log.mock.calls)).not.toContain("日程の訂正");
+      expect(JSON.stringify(log.mock.calls)).not.toContain("reply@example.test");
+    } finally {
+      log.mockRestore();
+    }
+  });
+
+  it("通常の問い合わせは従来どおり過去問AIとして通知し、返信先なしでも受け付ける", async () => {
+    const res = await POST(req({ kind: "contact", category: "question", body: "使い方を教えてください" }));
+    expect(res.status).toBe(200);
+    await hoisted.afterCallbacks[0]();
+    expect(hoisted.slackCalls[0]).toContain("[過去問AI] contact 受信");
+    expect(hoisted.slackCalls[0]).toContain("メール: (未記入)");
+  });
+
+  it("次の資格でも必須本文・種別の検証を維持する", async () => {
+    for (const payload of [
+      { kind: "contact", category: "tsugino" },
+      { kind: "contact", category: "tsugino", body: "" },
+      { kind: "contact", category: "tsugino", body: "x".repeat(4001) },
+      { kind: "contact", category: "untrusted", body: "問い合わせ" },
+    ]) expect((await POST(req(payload))).status).toBe(400);
+    expect(hoisted.afterCallbacks).toHaveLength(0);
+  });
+
+  it("次の資格でもTurnstile有効時はトークンなしで拒否する", async () => {
+    process.env.TURNSTILE_SECRET_KEY = "test-secret-only";
+    try {
+      const res = await POST(req({ kind: "contact", category: "tsugino", body: "掲載情報の訂正" }));
+      expect(res.status).toBe(403);
+      expect(hoisted.afterCallbacks).toHaveLength(0);
+    } finally {
+      delete process.env.TURNSTILE_SECRET_KEY;
+    }
+  });
+
   it("レスポンスを返す時点では Slack を叩いていない（送信レイテンシを乗せない）", async () => {
     const res = await POST(req({ kind: "feedback", choice: "役に立った", comment: "よい" }));
     expect(res.status).toBe(200);
