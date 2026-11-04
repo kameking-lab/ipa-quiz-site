@@ -75,7 +75,11 @@ test("mobile safety menu keeps search and progress inside safety learning", asyn
   await expect(menu.getByRole("link", { name: "進捗・復習", exact: true })).toHaveAttribute("href", "/e-learning/progress");
   await menu.getByRole("link", { name: "検索", exact: true }).click();
   await expect(page).toHaveURL(/\/e-learning\/search$/);
-  await expect(page.getByRole("heading", { name: "安全衛生の問題検索", exact: true })).toBeVisible();
+  // The shared public-exam search now also covers PE and surveyor papers.
+  await expect(page.getByRole("heading", { name: "公表試験の問題検索", exact: true })).toBeVisible();
+  const search = page.getByRole("search", { name: "公表試験の問題検索", exact: true });
+  await expect(search.getByRole("searchbox", { name: "キーワード" })).toBeVisible();
+  await expect(search.getByRole("combobox", { name: "試験・科目" }).locator("option", { hasText: "第一種衛生管理者" })).toHaveCount(1);
   await expect(page.getByRole("dialog")).toHaveCount(0);
   expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
 });

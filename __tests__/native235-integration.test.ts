@@ -1,3 +1,4 @@
+import { ALL_QUIZ_EXAM_CODES } from "@/lib/exam-config";
 import { integrationOracle, runtimeFingerprint } from './fixtures/native-integration-oracle';
 import { describe,it,expect } from 'vitest';
 import { existsSync } from 'node:fs';
@@ -24,7 +25,7 @@ import { POST as duePOST } from '@/app/api/review/due/route';
 const hold='radio21-amateur1-2026-05-kogaku-q19';
 const cases=[{exam:'amateur1',qs:am,stored:120,ready:119,periodCounts:[59,60]},{exam:'maritime-special1',qs:sea,stored:48,ready:48,periodCounts:[24,24]}] as const;
 describe('235-ready separated candidate integration',()=>{
- it('keeps236 stored originals,235 ready, one exact protected HOLD and the combined registered exam codes',()=>{const all=[...avi,...am,...sea];expect(all).toHaveLength(236);expect(new Set(all.map(q=>q.id)).size).toBe(236);expect(all.filter(isPracticeReadyQuestion)).toHaveLength(235);expect(all.filter(q=>!isPracticeReadyQuestion(q)).map(q=>q.id)).toEqual([hold]);expect(getRegisteredExamCodes()).toHaveLength(84);});
+ it('keeps236 stored originals,235 ready, one exact protected HOLD and the combined registered exam codes',()=>{const all=[...avi,...am,...sea];expect(all).toHaveLength(236);expect(new Set(all.map(q=>q.id)).size).toBe(236);expect(all.filter(isPracticeReadyQuestion)).toHaveLength(235);expect(all.filter(q=>!isPracticeReadyQuestion(q)).map(q=>q.id)).toEqual([hold]);expect(new Set(getRegisteredExamCodes())).toEqual(new Set(ALL_QUIZ_EXAM_CODES));});
  for(const {exam,qs,stored,ready,periodCounts} of cases){
   it(`${exam}: preserves exact normalized final data and every source asset`,async()=>{
    expect(runtimeFingerprint(qs)).toBe(integrationOracle.producers[exam].normalizedRuntimeSha256);expect(qs).toHaveLength(stored);expect(await getQuestionsForExam(exam)).toEqual(qs);expect(QUESTIONS_BY_EXAM[exam]).toEqual(qs.filter(isPracticeReadyQuestion));expect(ALL_EXAM_CODES).not.toContain(exam);expect(qs.every(q=>q.exam===exam&&q.year===2026)).toBe(true);

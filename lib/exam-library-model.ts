@@ -6,7 +6,7 @@
  * それ以外は「採点しない」を返し、推測した正答で判定しない（fail-closed）。
  */
 
-export const EXAM_GROUP_IDS = ["lckohyo", "emkohyo", "cskohyo", "survey-assistant"] as const;
+export const EXAM_GROUP_IDS = ["lckohyo", "emkohyo", "cskohyo", "survey-assistant", "pe-first"] as const;
 export type ExamGroupId = (typeof EXAM_GROUP_IDS)[number];
 
 export type ExamDateKind = "publication" | "exam";
@@ -111,6 +111,7 @@ export interface ExamGroupInfo {
 }
 
 export const EXAM_GROUPS: readonly ExamGroupInfo[] = [
+  { id: "pe-first", title: "技術士第一次試験", shortTitle: "技術士第一次", description: "部門別の専門科目。公式原問・公式正答と全選択肢の学習用解説。", dateNote: "日付は試験実施日です。各年度35問の専門科目を収録しています（本試験では25問選択）。" },
   { id: "survey-assistant", title: "測量士補試験", shortTitle: "測量士補", description: "原本と学習用解説。2026年No.12は参照専用。", dateNote: "日付は試験実施日です。" },
   {
     id: "lckohyo",
@@ -147,7 +148,7 @@ export function findExamGroup(id: string): ExamGroupInfo | undefined {
   return EXAM_GROUPS.find((group) => group.id === id);
 }
 
-export const EXAM_ID_PATTERN = /^(?:lckohyo|emkohyo|cskohyo)-[A-Za-z0-9][A-Za-z0-9-]{0,63}$/u;
+export const EXAM_ID_PATTERN = /^(?:lckohyo|emkohyo|cskohyo|pe-first)-[A-Za-z0-9][A-Za-z0-9-]{0,63}$/u;
 const MONTH_PATTERN = /^(\d{4})-(\d{2})$/u;
 const DAY_PATTERN = /^(\d{4})-(\d{2})-(\d{2})$/u;
 const OFFICIAL_ORIGIN = "https://www.exam.or.jp/";
@@ -212,8 +213,9 @@ export function parseExamCatalogEntry(value: unknown): ExamCatalogEntry | null {
   // 免許試験（lckohyo）の日付は公表時期。実施日として扱わない。
   if (group === "lckohyo" && dateKind !== "publication") return null;
   if (typeof date !== "string" || !isValidMonthOrDay(date, dateKind)) return null;
-  if (typeof pdfUrl !== "string" || !pdfUrl.startsWith(OFFICIAL_ORIGIN)) return null;
-  if (typeof indexUrl !== "string" || !indexUrl.startsWith(OFFICIAL_ORIGIN)) return null;
+  const officialOrigin = group === "pe-first" ? "https://www.engineer.or.jp/" : OFFICIAL_ORIGIN;
+  if (typeof pdfUrl !== "string" || !pdfUrl.startsWith(officialOrigin)) return null;
+  if (typeof indexUrl !== "string" || !indexUrl.startsWith(officialOrigin)) return null;
   if (answerMode !== "official-choice" && answerMode !== "reference") return null;
   if (typeof checkedAt !== "string" || !isValidMonthOrDay(checkedAt, "exam")) return null;
   const sourceMode = value.sourceMode ?? "official-pdf";
@@ -383,7 +385,7 @@ export function examPath(id: string): string {
 }
 
 export function officialPdfPageUrl(pdfUrl: string, page: number | undefined): string {
-  return page ? `${pdfUrl}#page=${page}` : pdfUrl;
+  return page ? `${pdfUrl.split("#")[0]}#page=${page}` : pdfUrl;
 }
 
 /** 旧公式URLは由来として保持し、閲覧には監査済みの保存コピーを使う。 */

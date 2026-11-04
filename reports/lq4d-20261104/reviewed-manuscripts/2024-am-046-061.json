@@ -1,0 +1,589 @@
+{
+  "status": "PARTIAL_CONTENT_DRAFT_NOT_REGISTERED",
+  "qualification": "biru-kan",
+  "year": 2024,
+  "subject": "am",
+  "expectedFullQualificationCount": 360,
+  "questions": [
+    {
+      "id": "biru-kan-2024-am-046",
+      "printedNumber": "46",
+      "questionNumber": 46,
+      "questionText": "次の用語とその単位との組合せとして、誤っているものはどれか。",
+      "choices": {
+        "1": "比エンタルピー―kJ/kg(DA)",
+        "2": "熱伝導率―W/(m・K)",
+        "3": "光度―cd",
+        "4": "音圧―W/m²",
+        "5": "密度―kg/m³"
+      },
+      "officialAnswer": 4,
+      "explanation": "正答は4です。圧力の単位とエネルギー流束の単位を区別します。DAはdry air、乾き空気を示します。",
+      "choiceExplanations": {
+        "1": "正しい組合せです。湿り空気では乾き空気1kg当たりのエンタルピーを表します。",
+        "2": "正しい組合せです。熱伝導率は単位厚さ・面積・温度差に対する熱の伝わりやすさです。",
+        "3": "正しい組合せです。光度のSI単位はカンデラです。",
+        "4": "誤りです。音圧は圧力なのでPaです。W/m²は音の強さの単位です。",
+        "5": "正しい組合せです。密度は単位体積当たりの質量です。"
+      },
+      "hasRequiredFigure": false,
+      "sourceQuestionUrl": "https://www.jahmec.or.jp/kokka/shiken_pdf/2024/2024shiken_am.pdf",
+      "sourceQuestionPage": 17,
+      "sourceAnswerUrl": "https://www.jahmec.or.jp/kokka/shiken_pdf/2024/2024kizyun_seitou.pdf",
+      "sourceAnswerPage": 1,
+      "sourceQuestionSha256": "b788546847af935f8f068f0e0d2a5d5ea9ba302fa083a590ef4ffdd548a75aef",
+      "sourceAnswerSha256": "faebc327503541422b331d5e14ff47035cec23b6ef0fd1048f9d6cd8f3b9c54c",
+      "sourceAttribution": "出典：公益財団法人日本建築衛生管理教育センター 第54回（2024年）建築物環境衛生管理技術者試験 問題46。改行・空白・句読点及び単位表記を整理。組合せ表は列名付きテキストで表現。解説は独自作成。",
+      "explanationReferenceUrls": [],
+      "transcription": "Two saved OCR passes compared against rendered official page; line wraps, spacing and punctuation normalized; combination tables preserved as labeled text; no figures required",
+      "needsIndependentReview": true,
+      "publicGo": false
+    },
+    {
+      "id": "biru-kan-2024-am-047",
+      "printedNumber": "47",
+      "questionNumber": 47,
+      "questionText": "一辺が3mの正方形の壁材料を組み合わせて天井を含む立方体の室を作り、日射が当たらない条件で床面を地表面に固定した。\n隙間換気は無視できるとし、外気温度が－4℃の条件下で内部を1,350Wの発熱により加熱したところ、十分に時間が経過した後の室温度が20℃になった。なお、床面は完全に断熱されており、床を通しての熱貫流はない。このとき、壁の熱貫流率として、最も適当なものは次のうちどれか。",
+      "choices": {
+        "1": "1.05W/(m²・K)",
+        "2": "1.25W/(m²・K)",
+        "3": "1.50W/(m²・K)",
+        "4": "1.60W/(m²・K)",
+        "5": "2.10W/(m²・K)"
+      },
+      "officialAnswer": 2,
+      "explanation": "正答は2です。定常状態では発熱量と床以外からの熱損失がつり合います。温度差は20－(－4)=24Kです。",
+      "choiceExplanations": {
+        "1": "不適当です。伝熱面積45m²、温度差24Kで計算すると1.25です。",
+        "2": "正答です。床以外の5面の面積は5×3×3=45m²で、U=1350/(45×24)=1.25W/(m²・K)です。",
+        "3": "不適当です。天井を除いて壁4面だけで計算しても条件を満たしません。天井も伝熱面に含めます。",
+        "4": "不適当です。定常状態の熱収支1350=U×45×24と合いません。",
+        "5": "不適当です。床まで6面を数えると面積を過大にし、条件を取り違えます。計算結果は1.25です。"
+      },
+      "hasRequiredFigure": true,
+      "sourceQuestionUrl": "https://www.jahmec.or.jp/kokka/shiken_pdf/2024/2024shiken_am.pdf",
+      "sourceQuestionPage": 17,
+      "sourceAnswerUrl": "https://www.jahmec.or.jp/kokka/shiken_pdf/2024/2024kizyun_seitou.pdf",
+      "sourceAnswerPage": 1,
+      "sourceQuestionSha256": "b788546847af935f8f068f0e0d2a5d5ea9ba302fa083a590ef4ffdd548a75aef",
+      "sourceAnswerSha256": "faebc327503541422b331d5e14ff47035cec23b6ef0fd1048f9d6cd8f3b9c54c",
+      "sourceAttribution": "出典：公益財団法人日本建築衛生管理教育センター 第54回（2024年）建築物環境衛生管理技術者試験 問題47。改行・空白・句読点及び単位表記を整理。組合せ表は列名付きテキストで表現。解説は独自作成。",
+      "explanationReferenceUrls": [],
+      "transcription": "Both saved OCR passes compared with official rendered PDF; required figure directly cropped from source PDF, not redrawn; labeled combination tables and formula retained",
+      "needsIndependentReview": true,
+      "publicGo": false,
+      "figures": [
+        {
+          "path": "data/qualification-staging/lq4c-biru-kan/assets/2024-am-047-figure.png",
+          "sha256": "ed9863506abaf4b26fe9736678cddc240f71bd0e6e27b47c1b8e32004147aacf",
+          "alt": "公式原図。一辺3mの立方体の室。床、壁、天井と3方向の3m寸法を示す。",
+          "sourceQuestionPage": 17,
+          "sourceClipPdfPoints": [
+            327.39300537109375,
+            463.0229919433594,
+            529.7814086914062,
+            673.4879882812501
+          ],
+          "renderDpi": 300
+        }
+      ]
+    },
+    {
+      "id": "biru-kan-2024-am-048",
+      "printedNumber": "48",
+      "questionNumber": 48,
+      "questionText": "下の図は、厚さの異なるA、B、C部材で構成された建築物外壁における定常状態の内部温度分布を示している。この図に関する次の記述のうち、最も不適当なものはどれか。",
+      "choices": {
+        "1": "A、B、C部材のなかで、最も熱伝導率が小さい部材はB部材である。",
+        "2": "熱伝達率は、屋外側の方が室内側より大きい。",
+        "3": "B部材が主体構造体であるとすれば、この図は外断熱構造を示している。",
+        "4": "A、B、Cの各部材を流れる単位面積当たりの熱流量に差異はない。",
+        "5": "壁表面近傍で空気温度が急激に変化する部分を境界層という。"
+      },
+      "officialAnswer": 1,
+      "explanation": "正答は1です。温度低下の総量だけでなく、部材厚さ当たりの勾配を見ます。熱流密度q=λΔT/dより、同じqでは勾配が急な部材ほどλが小さくなります。",
+      "choiceExplanations": {
+        "1": "不適当です。定常熱流では温度勾配が急なほど熱伝導率が小さくなります。Bの勾配は緩く、断熱性が最も高いのは急勾配のAです。",
+        "2": "適当です。同じ熱流に対し屋外側の空気と表面の温度差が小さく、表面熱伝達率は大きくなります。",
+        "3": "適当です。主体のBより屋外側に熱伝導率の小さいAが配置されています。",
+        "4": "適当です。内部発熱・蓄熱のない定常一次元伝熱では、各層を通る熱流密度は等しくなります。",
+        "5": "適当です。壁面付近で空気の温度などが変わる領域が境界層です。"
+      },
+      "hasRequiredFigure": true,
+      "sourceQuestionUrl": "https://www.jahmec.or.jp/kokka/shiken_pdf/2024/2024shiken_am.pdf",
+      "sourceQuestionPage": 18,
+      "sourceAnswerUrl": "https://www.jahmec.or.jp/kokka/shiken_pdf/2024/2024kizyun_seitou.pdf",
+      "sourceAnswerPage": 1,
+      "sourceQuestionSha256": "b788546847af935f8f068f0e0d2a5d5ea9ba302fa083a590ef4ffdd548a75aef",
+      "sourceAnswerSha256": "faebc327503541422b331d5e14ff47035cec23b6ef0fd1048f9d6cd8f3b9c54c",
+      "sourceAttribution": "出典：公益財団法人日本建築衛生管理教育センター 第54回（2024年）建築物環境衛生管理技術者試験 問題48。改行・空白・句読点及び単位表記を整理。組合せ表は列名付きテキストで表現。解説は独自作成。",
+      "explanationReferenceUrls": [],
+      "transcription": "Both saved OCR passes compared with official rendered PDF; required figure directly cropped from source PDF, not redrawn; labeled combination tables and formula retained",
+      "needsIndependentReview": true,
+      "publicGo": false,
+      "figures": [
+        {
+          "path": "data/qualification-staging/lq4c-biru-kan/assets/2024-am-048-figure.png",
+          "sha256": "cc2d5e580f207f863fe01ee786c65fe952dc610e0e97523282101cd4fe49f66d",
+          "alt": "公式原図。屋外からA・B・C部材を経て室内に至る定常温度分布。高低の温度軸、各部材厚さ、表面近傍と部材内部の温度変化を保持。",
+          "sourceQuestionPage": 18,
+          "sourceClipPdfPoints": [
+            178.5780029296875,
+            126.27899780273437,
+            404.776806640625,
+            319.90679443359375
+          ],
+          "renderDpi": 300
+        }
+      ]
+    },
+    {
+      "id": "biru-kan-2024-am-049",
+      "printedNumber": "49",
+      "questionNumber": 49,
+      "questionText": "冬季の結露に関する次の記述のうち、最も不適当なものはどれか。",
+      "choices": {
+        "1": "戸建て住宅では、外気に面した壁の出隅部分の室内側で表面結露しやすい。",
+        "2": "室内で家具などを外壁に接して設置すると、家具の裏側での結露防止に効果がある。",
+        "3": "局部的に断熱が途切れて熱橋となった部分は、結露しやすい。",
+        "4": "換気の悪い非暖房室では、暖房室で発生した水蒸気が拡散などにより流入し、温度の低い窓面で結露が生じやすい。",
+        "5": "壁の内部結露の防止には、外壁内断熱層の室内側に防湿層を設けることが有効である。"
+      },
+      "officialAnswer": 2,
+      "explanation": "正答は2です。結露は表面や壁内が露点温度以下になることで生じます。断熱・防湿・換気・空気の流れを合わせて管理します。",
+      "choiceExplanations": {
+        "1": "適当です。出隅部は熱が逃げやすく室内側表面温度が低下しやすい部分です。",
+        "2": "不適当です。家具を密着させると暖かい室内空気が回りにくく、壁面が冷えて結露しやすくなります。",
+        "3": "適当です。熱橋では局所的に熱損失が大きくなり表面温度が低くなります。",
+        "4": "適当です。水蒸気が冷たい面で露点に達すると結露します。",
+        "5": "適当です。冬季には室内の水蒸気が壁内に入ることを防湿層で抑えます。"
+      },
+      "hasRequiredFigure": false,
+      "sourceQuestionUrl": "https://www.jahmec.or.jp/kokka/shiken_pdf/2024/2024shiken_am.pdf",
+      "sourceQuestionPage": 18,
+      "sourceAnswerUrl": "https://www.jahmec.or.jp/kokka/shiken_pdf/2024/2024kizyun_seitou.pdf",
+      "sourceAnswerPage": 1,
+      "sourceQuestionSha256": "b788546847af935f8f068f0e0d2a5d5ea9ba302fa083a590ef4ffdd548a75aef",
+      "sourceAnswerSha256": "faebc327503541422b331d5e14ff47035cec23b6ef0fd1048f9d6cd8f3b9c54c",
+      "sourceAttribution": "出典：公益財団法人日本建築衛生管理教育センター 第54回（2024年）建築物環境衛生管理技術者試験 問題49。改行・空白・句読点及び単位表記を整理。組合せ表は列名付きテキストで表現。解説は独自作成。",
+      "explanationReferenceUrls": [
+        "https://www.nilim.go.jp/lab/hcg/htmldate/energy-saving/index.html"
+      ],
+      "transcription": "Two saved OCR passes compared against rendered official page; line wraps, spacing and punctuation normalized; combination tables preserved as labeled text; no figures required",
+      "needsIndependentReview": true,
+      "publicGo": false
+    },
+    {
+      "id": "biru-kan-2024-am-050",
+      "printedNumber": "50",
+      "questionNumber": 50,
+      "questionText": "熱放射に関する次の記述のうち、最も不適当なものはどれか。",
+      "choices": {
+        "1": "常温物体から射出される電磁波は、波長が10μm付近の赤外線が主体である。",
+        "2": "アスファルトは、新しい亜鉛鉄板より長波長放射率が大きい。",
+        "3": "放射熱伝達式の簡略化では、放射熱伝達率が用いられる。",
+        "4": "アスファルトは、光ったアルミ箔より日射吸収率が大きい。",
+        "5": "物体表面から放射される単位面積当たりの放射熱流は、絶対温度の二乗に比例する。"
+      },
+      "officialAnswer": 5,
+      "explanation": "正答は5です。表面からの射出はεσT⁴で表します。相手面との正味の放射熱交換ではそれぞれの絶対温度の四乗の差等を考えます。",
+      "choiceExplanations": {
+        "1": "適当です。室温付近の物体の放射はおよそ10μm付近を中心とする長波長放射です。",
+        "2": "適当です。アスファルトの長波長放射率は新しい金属表面より高くなります。",
+        "3": "適当です。温度差に比例する形に線形化して扱う際に用います。",
+        "4": "適当です。光沢のあるアルミ箔は日射を反射しやすく、アスファルトは吸収しやすい材料です。",
+        "5": "不適当です。ステファン・ボルツマンの法則では、放射熱流は絶対温度の四乗に比例します。"
+      },
+      "hasRequiredFigure": false,
+      "sourceQuestionUrl": "https://www.jahmec.or.jp/kokka/shiken_pdf/2024/2024shiken_am.pdf",
+      "sourceQuestionPage": 18,
+      "sourceAnswerUrl": "https://www.jahmec.or.jp/kokka/shiken_pdf/2024/2024kizyun_seitou.pdf",
+      "sourceAnswerPage": 1,
+      "sourceQuestionSha256": "b788546847af935f8f068f0e0d2a5d5ea9ba302fa083a590ef4ffdd548a75aef",
+      "sourceAnswerSha256": "faebc327503541422b331d5e14ff47035cec23b6ef0fd1048f9d6cd8f3b9c54c",
+      "sourceAttribution": "出典：公益財団法人日本建築衛生管理教育センター 第54回（2024年）建築物環境衛生管理技術者試験 問題50。改行・空白・句読点及び単位表記を整理。組合せ表は列名付きテキストで表現。解説は独自作成。",
+      "explanationReferenceUrls": [],
+      "transcription": "Two saved OCR passes compared against rendered official page; line wraps, spacing and punctuation normalized; combination tables preserved as labeled text; no figures required",
+      "needsIndependentReview": true,
+      "publicGo": false
+    },
+    {
+      "id": "biru-kan-2024-am-051",
+      "printedNumber": "51",
+      "questionNumber": 51,
+      "questionText": "流体の基礎に関する次の文章の［ ］内に入る語句の組合せとして、正しいものはどれか。\n流管の二つの断面A、B間における流れの力学的エネルギーの保存を仮定すると以下の式が得られる。\n(1/2)ρU_A²＋P_A＋ρgh_A＝(1/2)ρU_B²＋P_B＋ρgh_B\nこの式は、ベルヌーイの定理と呼ばれ、各辺の第一項を［ア］、第二項を［イ］、第三項を位置圧と呼ぶ。なお、実際の流れでは、［ウ］が生じることから、左辺と右辺には差異が生じる。\nただし、ρ：密度、U：速度、P：圧力、g：重力加速度、h：高さ。組合せの順序：ア／イ／ウ。",
+      "choices": {
+        "1": "動圧／絶対圧／圧力損失",
+        "2": "動圧／静圧／圧力損失",
+        "3": "動圧／静圧／圧力水頭",
+        "4": "静圧／動圧／圧力損失",
+        "5": "静圧／絶対圧／圧力水頭"
+      },
+      "officialAnswer": 2,
+      "explanation": "正答は2です。単位体積当たりの運動エネルギーρU²/2を動圧と呼びます。理想流れの保存則に対し、実流れには損失があります。",
+      "choiceExplanations": {
+        "1": "不適当です。第二項は圧力の基準の区別である絶対圧ではなく、静圧です。",
+        "2": "正答です。速度に対応する動圧、流体の静圧、実際の流れの摩擦等による圧力損失が入ります。",
+        "3": "不適当です。圧力水頭は圧力を高さで表した量で、実際の流れで生じる損失の名称ではありません。",
+        "4": "不適当です。第一項と第二項の名称が逆です。",
+        "5": "不適当です。第一項は動圧、第二項は静圧、ウは圧力損失です。"
+      },
+      "hasRequiredFigure": false,
+      "sourceQuestionUrl": "https://www.jahmec.or.jp/kokka/shiken_pdf/2024/2024shiken_am.pdf",
+      "sourceQuestionPage": 19,
+      "sourceAnswerUrl": "https://www.jahmec.or.jp/kokka/shiken_pdf/2024/2024kizyun_seitou.pdf",
+      "sourceAnswerPage": 1,
+      "sourceQuestionSha256": "b788546847af935f8f068f0e0d2a5d5ea9ba302fa083a590ef4ffdd548a75aef",
+      "sourceAnswerSha256": "faebc327503541422b331d5e14ff47035cec23b6ef0fd1048f9d6cd8f3b9c54c",
+      "sourceAttribution": "出典：公益財団法人日本建築衛生管理教育センター 第54回（2024年）建築物環境衛生管理技術者試験 問題51。改行・空白・句読点及び単位表記を整理。組合せ表は列名付きテキストで表現。解説は独自作成。",
+      "explanationReferenceUrls": [],
+      "transcription": "Two saved OCR passes compared against rendered official page; line wraps, spacing and punctuation normalized; combination tables preserved as labeled text; no figures required",
+      "needsIndependentReview": true,
+      "publicGo": false
+    },
+    {
+      "id": "biru-kan-2024-am-052",
+      "printedNumber": "52",
+      "questionNumber": 52,
+      "questionText": "自然換気の換気量に関する次の記述のうち、最も不適当なものはどれか。",
+      "choices": {
+        "1": "温度差による換気量は、給気口と排気口の高さの差の平方根に比例する。",
+        "2": "温度差による換気量は、室内外空気の密度差の平方根に比例する。",
+        "3": "風力による換気量は、風圧係数の差に比例する。",
+        "4": "風力による換気量は、外部風速に比例する。",
+        "5": "開口部の風圧係数は、外部風の風向によって変化する。"
+      },
+      "officialAnswer": 3,
+      "explanation": "正答は3です。開口流量は一般に圧力差の平方根に比例します。風圧係数と風速の次数の違いを押さえます。",
+      "choiceExplanations": {
+        "1": "適当です。他の条件が同じなら、浮力による圧力差が高さに比例し、流量はその平方根に比例します。",
+        "2": "適当です。密度差による圧力差の平方根が流量に関係します。",
+        "3": "不適当です。流量は風圧係数の差の平方根に比例し、差そのものに比例するのではありません。",
+        "4": "適当です。風圧が風速の二乗に比例するため、その平方根に比例する換気量は風速に比例します。",
+        "5": "適当です。建物面に当たる風の方向によって正圧・負圧や係数が変わります。"
+      },
+      "hasRequiredFigure": false,
+      "sourceQuestionUrl": "https://www.jahmec.or.jp/kokka/shiken_pdf/2024/2024shiken_am.pdf",
+      "sourceQuestionPage": 19,
+      "sourceAnswerUrl": "https://www.jahmec.or.jp/kokka/shiken_pdf/2024/2024kizyun_seitou.pdf",
+      "sourceAnswerPage": 1,
+      "sourceQuestionSha256": "b788546847af935f8f068f0e0d2a5d5ea9ba302fa083a590ef4ffdd548a75aef",
+      "sourceAnswerSha256": "faebc327503541422b331d5e14ff47035cec23b6ef0fd1048f9d6cd8f3b9c54c",
+      "sourceAttribution": "出典：公益財団法人日本建築衛生管理教育センター 第54回（2024年）建築物環境衛生管理技術者試験 問題52。改行・空白・句読点及び単位表記を整理。組合せ表は列名付きテキストで表現。解説は独自作成。",
+      "explanationReferenceUrls": [],
+      "transcription": "Two saved OCR passes compared against rendered official page; line wraps, spacing and punctuation normalized; combination tables preserved as labeled text; no figures required",
+      "needsIndependentReview": true,
+      "publicGo": false
+    },
+    {
+      "id": "biru-kan-2024-am-053",
+      "printedNumber": "53",
+      "questionNumber": 53,
+      "questionText": "エアロゾル粒子の一般的な粒径が、大きい順に並んでいるものは次のうちどれか。",
+      "choices": {
+        "1": "花粉＞バクテリア＞ウイルス",
+        "2": "ウイルス＞バクテリア＞花粉",
+        "3": "ウイルス＞花粉＞たばこ煙",
+        "4": "たばこ煙＞ウイルス＞バクテリア",
+        "5": "バクテリア＞花粉＞たばこ煙"
+      },
+      "officialAnswer": 1,
+      "explanation": "正答は1です。これは代表的な粒径の比較です。実際に空中を移動するウイルスは、より大きな飛沫や粒子に含まれる場合があります。",
+      "choiceExplanations": {
+        "1": "正答です。一般に花粉は数十μm程度、細菌はμm程度、ウイルスはそれより小さい粒径です。",
+        "2": "不適当です。一般的な大小関係が逆になっています。",
+        "3": "不適当です。通常、ウイルスより花粉の方が大きい粒径です。",
+        "4": "不適当です。一般に細菌はウイルスより大きいため、末尾の順序が誤りです。",
+        "5": "不適当です。一般に花粉は細菌より大きく、この順序は逆です。"
+      },
+      "hasRequiredFigure": false,
+      "sourceQuestionUrl": "https://www.jahmec.or.jp/kokka/shiken_pdf/2024/2024shiken_am.pdf",
+      "sourceQuestionPage": 19,
+      "sourceAnswerUrl": "https://www.jahmec.or.jp/kokka/shiken_pdf/2024/2024kizyun_seitou.pdf",
+      "sourceAnswerPage": 1,
+      "sourceQuestionSha256": "b788546847af935f8f068f0e0d2a5d5ea9ba302fa083a590ef4ffdd548a75aef",
+      "sourceAnswerSha256": "faebc327503541422b331d5e14ff47035cec23b6ef0fd1048f9d6cd8f3b9c54c",
+      "sourceAttribution": "出典：公益財団法人日本建築衛生管理教育センター 第54回（2024年）建築物環境衛生管理技術者試験 問題53。改行・空白・句読点及び単位表記を整理。組合せ表は列名付きテキストで表現。解説は独自作成。",
+      "explanationReferenceUrls": [],
+      "transcription": "Two saved OCR passes compared against rendered official page; line wraps, spacing and punctuation normalized; combination tables preserved as labeled text; no figures required",
+      "needsIndependentReview": true,
+      "publicGo": false
+    },
+    {
+      "id": "biru-kan-2024-am-054",
+      "printedNumber": "54",
+      "questionNumber": 54,
+      "questionText": "微生物とアレルゲンに関する次の記述のうち、最も不適当なものはどれか。",
+      "choices": {
+        "1": "黄色ブドウ球菌は、細菌に分類される。",
+        "2": "浮遊ダニアレルゲン粒子の除去にエアフィルタが有効である。",
+        "3": "ウイルスは、結露水中で増殖しやすい。",
+        "4": "アスペルギルスは、カビアレルゲンとして挙げられる。",
+        "5": "ダンプネスは、過度の湿気を原因とするカビ臭さや微生物汚染等の問題が確認できるような状態をいう。"
+      },
+      "officialAnswer": 3,
+      "explanation": "正答は3です。水分で増殖しやすいカビ等と、宿主細胞を必要とするウイルスを区別します。",
+      "choiceExplanations": {
+        "1": "適当です。黄色ブドウ球菌は球状の細菌です。",
+        "2": "適当です。抗原を含む浮遊粒子は性能の適したフィルタで捕集できます。",
+        "3": "不適当です。ウイルスは生きた宿主細胞の中で増殖するため、結露水そのもので増殖するわけではありません。",
+        "4": "適当です。アスペルギルスはアレルギーの原因となり得る真菌です。",
+        "5": "適当です。過湿や水分に関連した汚染・臭気等の状態を指します。"
+      },
+      "hasRequiredFigure": false,
+      "sourceQuestionUrl": "https://www.jahmec.or.jp/kokka/shiken_pdf/2024/2024shiken_am.pdf",
+      "sourceQuestionPage": 20,
+      "sourceAnswerUrl": "https://www.jahmec.or.jp/kokka/shiken_pdf/2024/2024kizyun_seitou.pdf",
+      "sourceAnswerPage": 1,
+      "sourceQuestionSha256": "b788546847af935f8f068f0e0d2a5d5ea9ba302fa083a590ef4ffdd548a75aef",
+      "sourceAnswerSha256": "faebc327503541422b331d5e14ff47035cec23b6ef0fd1048f9d6cd8f3b9c54c",
+      "sourceAttribution": "出典：公益財団法人日本建築衛生管理教育センター 第54回（2024年）建築物環境衛生管理技術者試験 問題54。改行・空白・句読点及び単位表記を整理。組合せ表は列名付きテキストで表現。解説は独自作成。",
+      "explanationReferenceUrls": [],
+      "transcription": "Two saved OCR passes compared against rendered official page; line wraps, spacing and punctuation normalized; combination tables preserved as labeled text; no figures required",
+      "needsIndependentReview": true,
+      "publicGo": false
+    },
+    {
+      "id": "biru-kan-2024-am-055",
+      "printedNumber": "55",
+      "questionNumber": 55,
+      "questionText": "放射線は、非電離放射線と電離放射線に分類されるが、非電離放射線に分類されるものは次のうちどれか。",
+      "choices": {
+        "1": "α線",
+        "2": "γ線",
+        "3": "エックス線",
+        "4": "赤外線",
+        "5": "中性子線"
+      },
+      "officialAnswer": 4,
+      "explanation": "正答は4です。粒子線か電磁波かという分類と、電離作用を持つかという分類は別です。",
+      "choiceExplanations": {
+        "1": "該当しません。α線は電離作用を持つ粒子線です。",
+        "2": "該当しません。γ線は高エネルギーの電磁波で電離放射線です。",
+        "3": "該当しません。X線も電離放射線に分類します。",
+        "4": "該当します。赤外線は電離を起こすほどの光子エネルギーを持たない非電離放射線です。",
+        "5": "該当しません。中性子線は物質との相互作用を通じて間接的に電離を起こす電離放射線です。"
+      },
+      "hasRequiredFigure": false,
+      "sourceQuestionUrl": "https://www.jahmec.or.jp/kokka/shiken_pdf/2024/2024shiken_am.pdf",
+      "sourceQuestionPage": 20,
+      "sourceAnswerUrl": "https://www.jahmec.or.jp/kokka/shiken_pdf/2024/2024kizyun_seitou.pdf",
+      "sourceAnswerPage": 1,
+      "sourceQuestionSha256": "b788546847af935f8f068f0e0d2a5d5ea9ba302fa083a590ef4ffdd548a75aef",
+      "sourceAnswerSha256": "faebc327503541422b331d5e14ff47035cec23b6ef0fd1048f9d6cd8f3b9c54c",
+      "sourceAttribution": "出典：公益財団法人日本建築衛生管理教育センター 第54回（2024年）建築物環境衛生管理技術者試験 問題55。改行・空白・句読点及び単位表記を整理。組合せ表は列名付きテキストで表現。解説は独自作成。",
+      "explanationReferenceUrls": [],
+      "transcription": "Two saved OCR passes compared against rendered official page; line wraps, spacing and punctuation normalized; combination tables preserved as labeled text; no figures required",
+      "needsIndependentReview": true,
+      "publicGo": false
+    },
+    {
+      "id": "biru-kan-2024-am-056",
+      "printedNumber": "56",
+      "questionNumber": 56,
+      "questionText": "換気に関する次の記述のうち、最も不適当なものはどれか。",
+      "choices": {
+        "1": "1人当たりの必要換気量は、呼吸による酸素の消費量を基準として求めることが多い。",
+        "2": "換気回数は、換気量を室容積で除したものである。",
+        "3": "局所換気は、室全体ではなく、汚染物質が発生する場所を局所的に換気する方法である。",
+        "4": "機械換気は、送風機や排風機等の機械力を利用して室内の空気の入替えを行う方法である。",
+        "5": "自然換気の原動力は、建物外部の風や建物内外の温度差である。"
+      },
+      "officialAnswer": 1,
+      "explanation": "正答は1です。必要換気量の人員に関する指標として、二酸化炭素濃度が用いられます。",
+      "choiceExplanations": {
+        "1": "不適当です。通常は呼吸で生じる二酸化炭素の発生量と許容する室内濃度等から算定し、酸素消費量を主な基準とはしません。",
+        "2": "適当です。m³/hをm³で割ると回/hとなります。",
+        "3": "適当です。発生源近傍で汚染物を捕集・排出します。",
+        "4": "適当です。送風機等で圧力差をつくり空気を入れ替えます。",
+        "5": "適当です。風圧や室内外の温度・密度差で空気が動きます。"
+      },
+      "hasRequiredFigure": false,
+      "sourceQuestionUrl": "https://www.jahmec.or.jp/kokka/shiken_pdf/2024/2024shiken_am.pdf",
+      "sourceQuestionPage": 20,
+      "sourceAnswerUrl": "https://www.jahmec.or.jp/kokka/shiken_pdf/2024/2024kizyun_seitou.pdf",
+      "sourceAnswerPage": 1,
+      "sourceQuestionSha256": "b788546847af935f8f068f0e0d2a5d5ea9ba302fa083a590ef4ffdd548a75aef",
+      "sourceAnswerSha256": "faebc327503541422b331d5e14ff47035cec23b6ef0fd1048f9d6cd8f3b9c54c",
+      "sourceAttribution": "出典：公益財団法人日本建築衛生管理教育センター 第54回（2024年）建築物環境衛生管理技術者試験 問題56。改行・空白・句読点及び単位表記を整理。組合せ表は列名付きテキストで表現。解説は独自作成。",
+      "explanationReferenceUrls": [
+        "https://www.mhlw.go.jp/content/11130500/000771220.pdf"
+      ],
+      "transcription": "Two saved OCR passes compared against rendered official page; line wraps, spacing and punctuation normalized; combination tables preserved as labeled text; no figures required",
+      "needsIndependentReview": true,
+      "publicGo": false
+    },
+    {
+      "id": "biru-kan-2024-am-057",
+      "printedNumber": "57",
+      "questionNumber": 57,
+      "questionText": "室内における二酸化炭素に関する次の記述のうち、最も不適当なものはどれか。",
+      "choices": {
+        "1": "建築物衛生法における二酸化炭素の管理基準値は、換気量の指標として定められた値である。",
+        "2": "東京都の立入検査結果から見ると、建築物衛生法施行当時の二酸化炭素濃度の不適率は10～20%台であった。",
+        "3": "二酸化炭素の発生源は、ヒトの活動（呼吸）や燃焼器具である。",
+        "4": "二酸化炭素濃度の上昇には、在室者数が設計時の条件を上回るような過密使用状態が関係する。",
+        "5": "二酸化炭素濃度の低減対策として、空調機のエアフィルタが挙げられる。"
+      },
+      "officialAnswer": 5,
+      "explanation": "正答は5です。粒子除去と気体の希釈を区別します。CO₂の管理基準を満たすには換気量の確保が重要です。",
+      "choiceExplanations": {
+        "1": "適当です。CO₂は人に対する換気の充足度を判断する指標として管理します。",
+        "2": "本試験では適当扱いです。施行当時の東京都の検査結果に関する歴史的記述であり、現在の全国不適率を示すものではありません。",
+        "3": "適当です。人の呼気や燃料の燃焼によりCO₂が発生します。",
+        "4": "適当です。人員の増加で発生量が増し、同じ外気量では濃度が上がります。",
+        "5": "不適当です。通常のエアフィルタは粒子を捕集するもので、気体であるCO₂は除去できません。外気導入量や人員等の調整が必要です。"
+      },
+      "hasRequiredFigure": false,
+      "sourceQuestionUrl": "https://www.jahmec.or.jp/kokka/shiken_pdf/2024/2024shiken_am.pdf",
+      "sourceQuestionPage": 20,
+      "sourceAnswerUrl": "https://www.jahmec.or.jp/kokka/shiken_pdf/2024/2024kizyun_seitou.pdf",
+      "sourceAnswerPage": 1,
+      "sourceQuestionSha256": "b788546847af935f8f068f0e0d2a5d5ea9ba302fa083a590ef4ffdd548a75aef",
+      "sourceAnswerSha256": "faebc327503541422b331d5e14ff47035cec23b6ef0fd1048f9d6cd8f3b9c54c",
+      "sourceAttribution": "出典：公益財団法人日本建築衛生管理教育センター 第54回（2024年）建築物環境衛生管理技術者試験 問題57。改行・空白・句読点及び単位表記を整理。組合せ表は列名付きテキストで表現。解説は独自作成。",
+      "explanationReferenceUrls": [
+        "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/kenkou/seikatsu-eisei/gijutukensyuukai/dl/h23_2.pdf"
+      ],
+      "transcription": "Two saved OCR passes compared against rendered official page; line wraps, spacing and punctuation normalized; combination tables preserved as labeled text; no figures required",
+      "needsIndependentReview": true,
+      "publicGo": false
+    },
+    {
+      "id": "biru-kan-2024-am-058",
+      "printedNumber": "58",
+      "questionNumber": 58,
+      "questionText": "揮発性有機化合物とその用途との組合せとして、最も不適当なものは次のうちどれか。",
+      "choices": {
+        "1": "ホルムアルデヒド―ユリア系接着剤",
+        "2": "トルエン―塗料の溶剤",
+        "3": "パラジクロロベンゼン―プラスチックの可塑剤",
+        "4": "スチレン―発泡スチロール",
+        "5": "クロルピリホス―防蟻剤"
+      },
+      "officialAnswer": 3,
+      "explanation": "正答は3です。物質の代表的用途を問う問題です。過去の用途と現在の建築材料に関する使用制限は区別します。",
+      "choiceExplanations": {
+        "1": "適当です。ユリア樹脂系接着剤に関連する放散物質です。",
+        "2": "適当です。トルエンは塗料等の有機溶剤として使われます。",
+        "3": "不適当です。代表的用途は防虫剤や消臭剤で、プラスチックの可塑剤ではありません。",
+        "4": "適当です。スチレンはポリスチレンの原料で、発泡スチロールに関連します。",
+        "5": "適当です。従来、防蟻剤として使用された物質です。現在、居室を有する建築物の建築材料への添加は禁止されており、使用を勧める意味ではありません。"
+      },
+      "hasRequiredFigure": false,
+      "sourceQuestionUrl": "https://www.jahmec.or.jp/kokka/shiken_pdf/2024/2024shiken_am.pdf",
+      "sourceQuestionPage": 21,
+      "sourceAnswerUrl": "https://www.jahmec.or.jp/kokka/shiken_pdf/2024/2024kizyun_seitou.pdf",
+      "sourceAnswerPage": 1,
+      "sourceQuestionSha256": "b788546847af935f8f068f0e0d2a5d5ea9ba302fa083a590ef4ffdd548a75aef",
+      "sourceAnswerSha256": "faebc327503541422b331d5e14ff47035cec23b6ef0fd1048f9d6cd8f3b9c54c",
+      "sourceAttribution": "出典：公益財団法人日本建築衛生管理教育センター 第54回（2024年）建築物環境衛生管理技術者試験 問題58。改行・空白・句読点及び単位表記を整理。組合せ表は列名付きテキストで表現。解説は独自作成。",
+      "explanationReferenceUrls": [],
+      "transcription": "Two saved OCR passes compared against rendered official page; line wraps, spacing and punctuation normalized; combination tables preserved as labeled text; no figures required",
+      "needsIndependentReview": true,
+      "publicGo": false
+    },
+    {
+      "id": "biru-kan-2024-am-059",
+      "printedNumber": "59",
+      "questionNumber": 59,
+      "questionText": "湿り空気線図（h－x線図）を用いて相対湿度を求める場合に必要となる項目の組合せとして、最も不適当なものは次のうちどれか。",
+      "choices": {
+        "1": "乾球温度と湿球温度",
+        "2": "水蒸気分圧と露点温度",
+        "3": "露点温度と比エンタルピー",
+        "4": "比エンタルピーと乾球温度",
+        "5": "湿球温度と絶対湿度"
+      },
+      "officialAnswer": 2,
+      "explanation": "正答は2です。2項目が与えられていても互いに独立でなければ状態は決まりません。線図では一定の大気圧を前提とします。",
+      "choiceExplanations": {
+        "1": "適当です。一定の大気圧で独立した2つの状態量から状態点を定められます。",
+        "2": "不適当です。露点温度は水蒸気分圧と一対一に対応し、同じ情報です。乾球温度等が決まらず相対湿度を一意に定められません。",
+        "3": "適当です。露点から絶対湿度を求め、比エンタルピーと合わせて状態点を決めます。",
+        "4": "適当です。乾球温度と比エンタルピーの組合せで状態点を決められます。",
+        "5": "適当です。湿球温度と絶対湿度の組合せで状態点を決められます。"
+      },
+      "hasRequiredFigure": false,
+      "sourceQuestionUrl": "https://www.jahmec.or.jp/kokka/shiken_pdf/2024/2024shiken_am.pdf",
+      "sourceQuestionPage": 21,
+      "sourceAnswerUrl": "https://www.jahmec.or.jp/kokka/shiken_pdf/2024/2024kizyun_seitou.pdf",
+      "sourceAnswerPage": 1,
+      "sourceQuestionSha256": "b788546847af935f8f068f0e0d2a5d5ea9ba302fa083a590ef4ffdd548a75aef",
+      "sourceAnswerSha256": "faebc327503541422b331d5e14ff47035cec23b6ef0fd1048f9d6cd8f3b9c54c",
+      "sourceAttribution": "出典：公益財団法人日本建築衛生管理教育センター 第54回（2024年）建築物環境衛生管理技術者試験 問題59。改行・空白・句読点及び単位表記を整理。組合せ表は列名付きテキストで表現。解説は独自作成。",
+      "explanationReferenceUrls": [],
+      "transcription": "Two saved OCR passes compared against rendered official page; line wraps, spacing and punctuation normalized; combination tables preserved as labeled text; no figures required",
+      "needsIndependentReview": true,
+      "publicGo": false
+    },
+    {
+      "id": "biru-kan-2024-am-060",
+      "printedNumber": "60",
+      "questionNumber": 60,
+      "questionText": "建築物の空気調和設計における熱負荷の大小関係として、最も適当なものは次のうちどれか。",
+      "choices": {
+        "1": "装置負荷＜熱源負荷＜室内負荷",
+        "2": "室内負荷＜装置負荷＜熱源負荷",
+        "3": "熱源負荷＜装置負荷＜室内負荷",
+        "4": "室内負荷＜熱源負荷＜装置負荷",
+        "5": "装置負荷＜室内負荷＜熱源負荷"
+      },
+      "officialAnswer": 2,
+      "explanation": "正答は2です。本問は一般的な設計上の負荷の加算関係を問うています。ピークの同時性やシステム条件による個別設計とは区別します。",
+      "choiceExplanations": {
+        "1": "不適当です。室内負荷を最大とする順序が逆です。",
+        "2": "正答です。室内負荷に外気等の負荷を加えて装置負荷とし、さらに配管等を考慮して熱源負荷とします。",
+        "3": "不適当です。熱源負荷を最小、室内負荷を最大とする順序が逆です。",
+        "4": "不適当です。一般的な加算関係では熱源負荷が装置負荷より大きくなります。",
+        "5": "不適当です。装置負荷は室内負荷に外気や装置に関する負荷等を加えて求めるため、最小とはなりません。"
+      },
+      "hasRequiredFigure": false,
+      "sourceQuestionUrl": "https://www.jahmec.or.jp/kokka/shiken_pdf/2024/2024shiken_am.pdf",
+      "sourceQuestionPage": 21,
+      "sourceAnswerUrl": "https://www.jahmec.or.jp/kokka/shiken_pdf/2024/2024kizyun_seitou.pdf",
+      "sourceAnswerPage": 1,
+      "sourceQuestionSha256": "b788546847af935f8f068f0e0d2a5d5ea9ba302fa083a590ef4ffdd548a75aef",
+      "sourceAnswerSha256": "faebc327503541422b331d5e14ff47035cec23b6ef0fd1048f9d6cd8f3b9c54c",
+      "sourceAttribution": "出典：公益財団法人日本建築衛生管理教育センター 第54回（2024年）建築物環境衛生管理技術者試験 問題60。改行・空白・句読点及び単位表記を整理。組合せ表は列名付きテキストで表現。解説は独自作成。",
+      "explanationReferenceUrls": [],
+      "transcription": "Two saved OCR passes compared against rendered official page; line wraps, spacing and punctuation normalized; combination tables preserved as labeled text; no figures required",
+      "needsIndependentReview": true,
+      "publicGo": false
+    },
+    {
+      "id": "biru-kan-2024-am-061",
+      "printedNumber": "61",
+      "questionNumber": 61,
+      "questionText": "次の空調熱負荷のうち、潜熱負荷を含む対象として、最も適当なものはどれか。",
+      "choices": {
+        "1": "照明からの発熱負荷",
+        "2": "ガラス窓からの通過熱負荷",
+        "3": "外気負荷",
+        "4": "ダクト通過熱負荷",
+        "5": "送風機による負荷"
+      },
+      "officialAnswer": 3,
+      "explanation": "正答は3です。潜熱負荷は水分量の変化に伴います。外気の処理では温度と湿度の両方を調整します。",
+      "choiceExplanations": {
+        "1": "該当しません。照明は主として顕熱負荷です。",
+        "2": "該当しません。ガラスを通る伝熱は顕熱負荷です。",
+        "3": "該当します。外気の温度差による顕熱だけでなく、水分量の差による除湿・加湿の潜熱負荷を含みます。",
+        "4": "該当しません。ダクト壁を通る伝熱は主として顕熱負荷です。",
+        "5": "該当しません。送風機の仕事が熱となり、主として顕熱を増やします。"
+      },
+      "hasRequiredFigure": false,
+      "sourceQuestionUrl": "https://www.jahmec.or.jp/kokka/shiken_pdf/2024/2024shiken_am.pdf",
+      "sourceQuestionPage": 21,
+      "sourceAnswerUrl": "https://www.jahmec.or.jp/kokka/shiken_pdf/2024/2024kizyun_seitou.pdf",
+      "sourceAnswerPage": 1,
+      "sourceQuestionSha256": "b788546847af935f8f068f0e0d2a5d5ea9ba302fa083a590ef4ffdd548a75aef",
+      "sourceAnswerSha256": "faebc327503541422b331d5e14ff47035cec23b6ef0fd1048f9d6cd8f3b9c54c",
+      "sourceAttribution": "出典：公益財団法人日本建築衛生管理教育センター 第54回（2024年）建築物環境衛生管理技術者試験 問題61。改行・空白・句読点及び単位表記を整理。組合せ表は列名付きテキストで表現。解説は独自作成。",
+      "explanationReferenceUrls": [],
+      "transcription": "Two saved OCR passes compared against rendered official page; line wraps, spacing and punctuation normalized; combination tables preserved as labeled text; no figures required",
+      "needsIndependentReview": true,
+      "publicGo": false
+    }
+  ]
+}

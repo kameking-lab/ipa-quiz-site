@@ -108,65 +108,75 @@ function am2(categories: string[]): SessionConfig {
 // ------- Exam configs -------
 
 export const EXAM_CONFIGS: Record<ExamCode, ExamConfig> = {
-  kanteishi: {
+"chintai": {"code":"chintai","nameFull":"賃貸不動産経営管理士","urlSlug":"chintai","level":"specialist","sessions":[{"session":"gakka","urlSlug":"gakka","expectedQuestions":49,"label":"学科","categories":["管理受託重要事項","重要事項説明書","管理受託契約の変更","契約の有効性","委任契約","防犯設計","予防保全","管理業務報告","原状回復の施工単位","原状回復の範囲","少額訴訟","被災建物の調査","採光規定","外壁定期調査","結露","火災感知器","賃料減額請求","滞納回収の手続","分別管理","サブリース","普通借家の期間・更新","定期借家の終了","破産と賃貸借","個人根保証","賃借権の譲渡・転貸","管理業の登録","従業者証明書","帳簿","標識","管理業の範囲","業務管理者","不当勧誘","監督・罰則","特定賃貸借標準契約","サブリース説明の方法","サブリース説明事項","サブリース説明担当","サブリース締結時書面","消費者契約法","家電リサイクル","住宅管理政策","管理士の職務","媒介報酬","相続税・贈与税","不動産証券化","建築構造","防水工法","ガス設備","管理士の経営支援","損害保険","成年後見","修繕義務","定期建物賃貸借","普通借家の終了","滞納解除","相続と賃貸借","管理業登録","管理業者の義務","委任の報告・費用","重要事項説明の方法","IT重要事項説明","標準管理受託契約","サブリース説明書","サブリースIT説明","勧誘者","誇大広告","サブリース監督処分","合理的配慮","住宅セーフティネット","個人情報","定期報告","設備の法定点検","相隣関係","滞納賃料の回収","賃料増減額","法人の連帯保証","企業会計","原状回復の費用負担","原状回復と少額訴訟","工作物責任","耐震診断","漏水調査","共同住宅の防火","給水設備","不動産登記","土地価格","不動産税務","火災保険","空家対策","管理士の役割","入居者募集","建築基準法の定義","駐車場・昇降機","給湯設備","住宅統計"]}],"seasons":["annual"],"yearRange":{"start":2024,"end":2025}},
+"kyusui": {"code":"kyusui","nameFull":"給水装置工事主任技術者","urlSlug":"kyusui","level":"specialist","sessions":[{"session":"gakka","urlSlug":"gakka","expectedQuestions":60,"label":"学科","categories":["公衆衛生概論","水道行政","給水装置工事法","給水装置の構造及び性能","給水装置計画論","給水装置工事事務論","給水装置の概要","給水装置施工管理法"]}],"seasons":["annual"],"yearRange":{"start":2025,"end":2026}},
+"biru-kan": {"code":"biru-kan","nameFull":"建築物環境衛生管理技術者","urlSlug":"biru-kan","level":"specialist","sessions":[{"session":"gakka","urlSlug":"gakka","expectedQuestions":180,"label":"学科","categories":["am","pm"]}],"seasons":["annual"],"yearRange":{"start":2024,"end":2025}},
+"gijutsushi1-kikai": {"code":"gijutsushi1-kikai","nameFull":"技術士第一次試験・機械部門","urlSlug":"gijutsushi1-kikai","level":"specialist","sessions":[{"session":"ippan","urlSlug":"ippan","expectedQuestions":15,"label":"適性科目","categories":["aptitude"]},{"session":"kiso","urlSlug":"kiso","expectedQuestions":30,"label":"基礎科目","categories":["basis"]},{"session":"kikai","urlSlug":"kikai","expectedQuestions":34,"label":"専門科目","categories":["mechanical"]}],"seasons":["annual"],"yearRange":{"start":2024,"end":2025}},
+"hoshasen-1": {"code":"hoshasen-1","nameFull":"第一種放射線取扱主任者","urlSlug":"hoshasen-1","level":"specialist","sessions":[{"session":"gakka","urlSlug":"gakka","expectedQuestions":269,"label":"学科","categories":["生物学","物理学","化学","実務","法令"]}],"seasons":["annual"],"yearRange":{"start":2025,"end":2026}},
+"hoshasen-2": {"code":"hoshasen-2","nameFull":"第二種放射線取扱主任者","urlSlug":"hoshasen-2","level":"specialist","sessions":[{"session":"gakka","urlSlug":"gakka","expectedQuestions":139,"label":"学科","categories":["生物学","化学","物理学","実務","法令"]}],"seasons":["annual"],"yearRange":{"start":2025,"end":2026}},
+"khk-kikai-kou": {"code":"khk-kikai-kou","nameFull":"高圧ガス製造保安責任者 甲種機械","urlSlug":"khk-kikai-kou","level":"specialist","sessions":[{"session":"hoki","urlSlug":"hoki","expectedQuestions":20,"label":"法令","categories":["法令"]},{"session":"hoan","urlSlug":"hoan","expectedQuestions":15,"label":"保安管理技術","categories":["保安管理技術"]},{"session":"gakushiki","urlSlug":"gakushiki","expectedQuestions":5,"label":"学識","categories":["学識"]}],"seasons":["annual"],"yearRange":{"start":2024,"end":2025}},
+"khk-kikai-otsu": {"code":"khk-kikai-otsu","nameFull":"高圧ガス製造保安責任者 乙種機械","urlSlug":"khk-kikai-otsu","level":"specialist","sessions":[{"session":"hoki","urlSlug":"hoki","expectedQuestions":20,"label":"法令","categories":["法令"]},{"session":"hoan","urlSlug":"hoan","expectedQuestions":15,"label":"保安管理技術","categories":["保安管理技術"]},{"session":"gakushiki","urlSlug":"gakushiki","expectedQuestions":15,"label":"学識","categories":["学識"]}],"seasons":["annual"],"yearRange":{"start":2024,"end":2025}},
+"energy-kanri": {"code":"energy-kanri","nameFull":"エネルギー管理士","urlSlug":"energy-kanri","level":"specialist","sessions":[{"session":"kyotsu","urlSlug":"kyotsu","expectedQuestions":42,"label":"学科","categories":["エネルギー管理法規","エネルギー情勢・政策、エネルギー概論","エネルギー管理技術の基礎"]},{"session":"senmon","urlSlug":"senmon","expectedQuestions":371,"label":"学科","categories":["電気及び電子理論","自動制御及び情報処理","電気計測","工場配電","電気機器・変圧器","電気機器","電動力応用","電気加熱","電気化学","照明","空気調和","熱力学の基礎","流体工学の基礎","伝熱工学の基礎","燃料及び燃焼管理","燃焼計算","計測及び制御","ボイラ・蒸気輸送配管","蒸気原動機・内燃機関・ガスタービン","熱交換器・熱回収装置","冷凍・空気調和設備","工業炉・熱設備材料","蒸留・蒸発・濃縮装置、乾燥装置、乾留・ガス化装置"]}],"seasons":["annual"],"yearRange":{"start":2025,"end":2026}},
+
+kanteishi: {
     code: "kanteishi", nameFull: "不動産鑑定士試験（短答式）", urlSlug: "kanteishi", level: "specialist",
     sessions: [
-      { session: "gyosei", urlSlug: "gyosei", expectedQuestions: 40, label: "不動産に関する行政法規", categories: ["行政法規"] },
-      { session: "riron", urlSlug: "riron", expectedQuestions: 40, label: "不動産の鑑定評価に関する理論", categories: ["鑑定評価理論"] },
+        { session: "gyosei", urlSlug: "gyosei", expectedQuestions: 40, label: "不動産に関する行政法規", categories: ["行政法規"] },
+        { session: "riron", urlSlug: "riron", expectedQuestions: 40, label: "不動産の鑑定評価に関する理論", categories: ["鑑定評価理論"] },
     ],
     seasons: ["annual"], yearRange: { start: 2025, end: 2026 },
-  },
-  kaikeishi: {
+},
+kaikeishi: {
     code: "kaikeishi", nameFull: "公認会計士試験（短答式）", urlSlug: "kaikeishi", level: "specialist",
     sessions: [
-      { session: "kigyo", urlSlug: "kigyo", expectedQuestions: 20, label: "企業法", categories: ["企業法"] },
-      { session: "kanri", urlSlug: "kanri", expectedQuestions: 18, label: "管理会計論", categories: ["管理会計論"] },
-      { session: "kansa", urlSlug: "kansa", expectedQuestions: 20, label: "監査論", categories: ["監査論"] },
-      { session: "zaimu", urlSlug: "zaimu", expectedQuestions: 35, label: "財務会計論", categories: ["財務会計論"] },
+        { session: "kigyo", urlSlug: "kigyo", expectedQuestions: 20, label: "企業法", categories: ["企業法"] },
+        { session: "kanri", urlSlug: "kanri", expectedQuestions: 18, label: "管理会計論", categories: ["管理会計論"] },
+        { session: "kansa", urlSlug: "kansa", expectedQuestions: 20, label: "監査論", categories: ["監査論"] },
+        { session: "zaimu", urlSlug: "zaimu", expectedQuestions: 35, label: "財務会計論", categories: ["財務会計論"] },
     ],
     seasons: ["round1", "round2"], yearRange: { start: 2026, end: 2026 },
-  },
-  chosashi: {
+},
+chosashi: {
     code: "chosashi",
     nameFull: "土地家屋調査士試験",
     urlSlug: "chosashi",
     level: "specialist",
     sessions: [
-      { session: "am", urlSlug: "am", expectedQuestions: 11, label: "午前（択一10・記述1）", categories: ["測量", "測量記述"] },
-      { session: "pm", urlSlug: "pm", expectedQuestions: 22, label: "午後（択一20・記述2）", categories: ["民法", "不動産登記法", "土地家屋調査士法", "土地記述", "建物記述"] },
+        { session: "am", urlSlug: "am", expectedQuestions: 11, label: "午前（択一10・記述1）", categories: ["測量", "測量記述"] },
+        { session: "pm", urlSlug: "pm", expectedQuestions: 22, label: "午後（択一20・記述2）", categories: ["民法", "不動産登記法", "土地家屋調査士法", "土地記述", "建物記述"] },
     ],
     seasons: ["autumn"],
     yearRange: { start: 2024, end: 2025 },
-  },
-  ip: {
+},
+ip: {
     code: "ip",
     nameFull: "ITパスポート試験",
     urlSlug: "ip",
     level: "basic",
     // IP files are always qs.pdf / ans.pdf — no session prefix in filename
     sessions: [{ session: "am", urlSlug: "am", expectedQuestions: 100, label: "試験",
-                 categories: BASIC_CATEGORIES, noSessionPrefix: true }],
+            categories: BASIC_CATEGORIES, noSessionPrefix: true }],
     seasons: ["spring", "autumn"],
     yearRange: { start: 2009, end: 2020 },
     cbtYearRange: { start: 2021, end: 2025 },
-  },
-  sg: {
+},
+sg: {
     code: "sg",
     nameFull: "情報セキュリティマネジメント試験",
     urlSlug: "sg",
     level: "basic",
     sessions: [
-      am50(["情報セキュリティ", "リスクマネジメント", "情報セキュリティ管理", "情報セキュリティ対策", "セキュリティ技術", "法務・規程"]),
+        am50(["情報セキュリティ", "リスクマネジメント", "情報セキュリティ管理", "情報セキュリティ対策", "セキュリティ技術", "法務・規程"]),
     ],
     seasons: ["spring", "autumn"],
     yearRange: { start: 2016, end: 2019 },
     cbtYearRange: { start: 2023, end: 2025 },
     cbtSessions: [
-      { session: "kamoku-a", urlSlug: "kamoku-a", expectedQuestions: 48, label: "科目A",
-        categories: ["情報セキュリティ", "リスクマネジメント", "情報セキュリティ管理", "情報セキュリティ対策", "セキュリティ技術", "法務・規程"] },
+        { session: "kamoku-a", urlSlug: "kamoku-a", expectedQuestions: 48, label: "科目A",
+            categories: ["情報セキュリティ", "リスクマネジメント", "情報セキュリティ管理", "情報セキュリティ対策", "セキュリティ技術", "法務・規程"] },
     ],
-  },
-  fe: {
+},
+fe: {
     code: "fe",
     nameFull: "基本情報技術者試験",
     urlSlug: "fe",
@@ -176,12 +186,12 @@ export const EXAM_CONFIGS: Record<ExamCode, ExamConfig> = {
     yearRange: { start: 2009, end: 2019 },
     cbtYearRange: { start: 2023, end: 2025 },
     cbtSessions: [
-      { session: "kamoku-a", urlSlug: "kamoku-a", expectedQuestions: 60, label: "科目A", categories: BASIC_CATEGORIES },
-      { session: "kamoku-b", urlSlug: "kamoku-b", expectedQuestions: 20, label: "科目B",
-        categories: ["アルゴリズムとプログラミング"] },
+        { session: "kamoku-a", urlSlug: "kamoku-a", expectedQuestions: 60, label: "科目A", categories: BASIC_CATEGORIES },
+        { session: "kamoku-b", urlSlug: "kamoku-b", expectedQuestions: 20, label: "科目B",
+            categories: ["アルゴリズムとプログラミング"] },
     ],
-  },
-  ap: {
+},
+ap: {
     code: "ap",
     nameFull: "応用情報技術者試験",
     urlSlug: "ap",
@@ -189,621 +199,621 @@ export const EXAM_CONFIGS: Record<ExamCode, ExamConfig> = {
     sessions: [am80(ADVANCED_CATEGORIES)],
     seasons: ["spring", "autumn"],
     yearRange: { start: 2009, end: 2025 },
-  },
-  st: {
+},
+st: {
     code: "st",
     nameFull: "ITストラテジスト試験",
     urlSlug: "st",
     level: "specialist",
     sessions: [
-      am1(),
-      am2(["ITストラテジスト専門", "情報戦略", "業務改革", "システム化計画", "プロジェクト推進"]),
+        am1(),
+        am2(["ITストラテジスト専門", "情報戦略", "業務改革", "システム化計画", "プロジェクト推進"]),
     ],
     seasons: ["spring"],
     yearRange: { start: 2021, end: 2025 },
     legacySeasons: ["autumn"],
     legacyYearRange: { start: 2009, end: 2019 },
-  },
-  sa: {
+},
+sa: {
     code: "sa",
     nameFull: "システムアーキテクト試験",
     urlSlug: "sa",
     level: "specialist",
     sessions: [
-      am1(),
-      am2(["システムアーキテクチャ", "要件定義", "システム設計", "ソフトウェア設計", "品質管理"]),
+        am1(),
+        am2(["システムアーキテクチャ", "要件定義", "システム設計", "ソフトウェア設計", "品質管理"]),
     ],
     seasons: ["spring"],
     yearRange: { start: 2021, end: 2025 },
     legacySeasons: ["autumn"],
     legacyYearRange: { start: 2009, end: 2019 },
-  },
-  pm: {
+},
+pm: {
     code: "pm",
     nameFull: "プロジェクトマネージャ試験",
     urlSlug: "pm",
     level: "specialist",
     sessions: [
-      am1(),
-      am2(["プロジェクトマネジメント", "スコープ管理", "コスト管理", "スケジュール管理", "リスク管理", "品質管理", "EVM"]),
+        am1(),
+        am2(["プロジェクトマネジメント", "スコープ管理", "コスト管理", "スケジュール管理", "リスク管理", "品質管理", "EVM"]),
     ],
     seasons: ["autumn"],
     yearRange: { start: 2020, end: 2025 },
     legacySeasons: ["spring"],
     legacyYearRange: { start: 2009, end: 2019 },
-  },
-  nw: {
+},
+nw: {
     code: "nw",
     nameFull: "ネットワークスペシャリスト試験",
     urlSlug: "nw",
     level: "specialist",
     sessions: [
-      am1(),
-      am2(["ネットワーク設計", "TCP/IP", "プロトコル", "ネットワークセキュリティ", "ルーティング", "無線LAN"]),
+        am1(),
+        am2(["ネットワーク設計", "TCP/IP", "プロトコル", "ネットワークセキュリティ", "ルーティング", "無線LAN"]),
     ],
     seasons: ["spring"],
     yearRange: { start: 2021, end: 2025 },
     legacySeasons: ["autumn"],
     legacyYearRange: { start: 2009, end: 2019 },
-  },
-  db: {
+},
+db: {
     code: "db",
     nameFull: "データベーススペシャリスト試験",
     urlSlug: "db",
     level: "specialist",
     sessions: [
-      am1(),
-      am2(["データベース設計", "SQL", "正規化", "トランザクション", "障害回復", "データウェアハウス"]),
+        am1(),
+        am2(["データベース設計", "SQL", "正規化", "トランザクション", "障害回復", "データウェアハウス"]),
     ],
     seasons: ["autumn"],
     yearRange: { start: 2020, end: 2025 },
     legacySeasons: ["spring"],
     legacyYearRange: { start: 2009, end: 2019 },
-  },
-  es: {
+},
+es: {
     code: "es",
     nameFull: "エンベデッドシステムスペシャリスト試験",
     urlSlug: "es",
     level: "specialist",
     sessions: [
-      am1(),
-      am2(["組込みシステム", "リアルタイムOS", "ハードウェア設計", "IoT", "信頼性設計", "安全性設計"]),
+        am1(),
+        am2(["組込みシステム", "リアルタイムOS", "ハードウェア設計", "IoT", "信頼性設計", "安全性設計"]),
     ],
     seasons: ["autumn"],
     yearRange: { start: 2020, end: 2025 },
     legacySeasons: ["spring"],
     legacyYearRange: { start: 2009, end: 2019 },
-  },
-  sc: {
+},
+sc: {
     code: "sc",
     nameFull: "情報処理安全確保支援士試験",
     urlSlug: "sc",
     level: "specialist",
     sessions: [
-      am1(),
-      am2(["情報セキュリティ", "暗号技術", "認証技術", "ネットワークセキュリティ", "セキュリティ管理", "インシデント対応", "法規"]),
+        am1(),
+        am2(["情報セキュリティ", "暗号技術", "認証技術", "ネットワークセキュリティ", "セキュリティ管理", "インシデント対応", "法規"]),
     ],
     seasons: ["spring", "autumn"],
     yearRange: { start: 2009, end: 2025 },
-  },
-  sm: {
+},
+sm: {
     code: "sm",
     nameFull: "ITサービスマネージャ試験",
     urlSlug: "sm",
     level: "specialist",
     sessions: [
-      am1(),
-      am2(["ITサービスマネジメント", "ITIL", "SLA", "インシデント管理", "問題管理", "変更管理", "キャパシティ管理"]),
+        am1(),
+        am2(["ITサービスマネジメント", "ITIL", "SLA", "インシデント管理", "問題管理", "変更管理", "キャパシティ管理"]),
     ],
     seasons: ["spring"],
     yearRange: { start: 2021, end: 2025 },
     legacySeasons: ["autumn"],
     legacyYearRange: { start: 2009, end: 2019 },
-  },
-  au: {
+},
+au: {
     code: "au",
     nameFull: "システム監査技術者試験",
     urlSlug: "au",
     level: "specialist",
     sessions: [
-      am1(),
-      am2(["システム監査", "内部統制", "監査手続", "ITガバナンス", "リスク評価", "コンプライアンス"]),
+        am1(),
+        am2(["システム監査", "内部統制", "監査手続", "ITガバナンス", "リスク評価", "コンプライアンス"]),
     ],
     seasons: ["autumn"],
     yearRange: { start: 2020, end: 2025 },
     legacySeasons: ["spring"],
     legacyYearRange: { start: 2009, end: 2019 },
-  },
-  fp2: {
+},
+fp2: {
     code: "fp2",
     nameFull: "2級ファイナンシャル・プランニング技能検定",
     urlSlug: "fp2",
     level: "basic",
     sessions: [{
-      session: "gakka",
-      urlSlug: "gakka",
-      expectedQuestions: 60,
-      label: "学科",
-      categories: ["ライフプランニングと資金計画", "リスク管理", "金融資産運用", "タックスプランニング", "不動産", "相続・事業承継"],
-    }],
+            session: "gakka",
+            urlSlug: "gakka",
+            expectedQuestions: 60,
+            label: "学科",
+            categories: ["ライフプランニングと資金計画", "リスク管理", "金融資産運用", "タックスプランニング", "不動産", "相続・事業承継"],
+        }],
     seasons: ["may", "september", "january", "published"],
     yearRange: { start: 2024, end: 2026 },
-  },
-  fp1: {
+},
+fp1: {
     code: "fp1",
     nameFull: "1級ファイナンシャル・プランニング技能検定",
     urlSlug: "fp1",
     level: "advanced",
     sessions: [{
-      session: "gakka",
-      urlSlug: "gakka",
-      expectedQuestions: 50,
-      label: "学科・基礎編",
-      categories: ["ライフプランニングと資金計画", "リスク管理", "金融資産運用", "タックスプランニング", "不動産", "相続・事業承継"],
-    }],
+            session: "gakka",
+            urlSlug: "gakka",
+            expectedQuestions: 50,
+            label: "学科・基礎編",
+            categories: ["ライフプランニングと資金計画", "リスク管理", "金融資産運用", "タックスプランニング", "不動産", "相続・事業承継"],
+        }],
     seasons: ["may", "september"],
     yearRange: { start: 2026, end: 2026 },
-  },
-  fp3: {
+},
+fp3: {
     code: "fp3",
     nameFull: "3級ファイナンシャル・プランニング技能検定",
     urlSlug: "fp3",
     level: "basic",
     sessions: [{
-      session: "gakka",
-      urlSlug: "gakka",
-      expectedQuestions: 60,
-      label: "学科",
-      categories: ["ライフプランニングと資金計画", "リスク管理", "金融資産運用", "タックスプランニング", "不動産", "相続・事業承継"],
-    }],
+            session: "gakka",
+            urlSlug: "gakka",
+            expectedQuestions: 60,
+            label: "学科",
+            categories: ["ライフプランニングと資金計画", "リスク管理", "金融資産運用", "タックスプランニング", "不動産", "相続・事業承継"],
+        }],
     seasons: ["published"],
     yearRange: { start: 2024, end: 2025 },
-  },
-  denken3: {
+},
+denken3: {
     code: "denken3",
     nameFull: "第三種電気主任技術者試験",
     urlSlug: "denken3",
     level: "advanced",
     sessions: [
-      { session: "riron", urlSlug: "riron", expectedQuestions: 20, label: "理論", categories: ["電気理論", "電子理論", "電気計測", "電子計測"] },
-      { session: "denryoku", urlSlug: "denryoku", expectedQuestions: 20, label: "電力", categories: ["発電", "変電", "送配電", "電気材料"] },
-      { session: "kikai", urlSlug: "kikai", expectedQuestions: 20, label: "機械", categories: ["電気機器", "パワーエレクトロニクス", "照明", "情報"] },
-      { session: "houki", urlSlug: "houki", expectedQuestions: 20, label: "法規", categories: ["電気事業法", "電気設備技術基準", "電気施設管理"] },
+        { session: "riron", urlSlug: "riron", expectedQuestions: 20, label: "理論", categories: ["電気理論", "電子理論", "電気計測", "電子計測"] },
+        { session: "denryoku", urlSlug: "denryoku", expectedQuestions: 20, label: "電力", categories: ["発電", "変電", "送配電", "電気材料"] },
+        { session: "kikai", urlSlug: "kikai", expectedQuestions: 20, label: "機械", categories: ["電気機器", "パワーエレクトロニクス", "照明", "情報"] },
+        { session: "houki", urlSlug: "houki", expectedQuestions: 20, label: "法規", categories: ["電気事業法", "電気設備技術基準", "電気施設管理"] },
     ],
     seasons: ["first", "second"],
     yearRange: { start: 2024, end: 2025 },
-  },
-  denken1: {
+},
+denken1: {
     code: "denken1",
     nameFull: "第一種電気主任技術者試験 一次試験",
     urlSlug: "denken1",
     level: "advanced",
     sessions: [
-      { session: "riron", urlSlug: "riron", expectedQuestions: 5, label: "理論", categories: ["理論"] },
-      { session: "denryoku", urlSlug: "denryoku", expectedQuestions: 5, label: "電力", categories: ["電力"] },
-      { session: "kikai", urlSlug: "kikai", expectedQuestions: 5, label: "機械", categories: ["機械"] },
-      { session: "houki", urlSlug: "houki", expectedQuestions: 5, label: "法規", categories: ["法規"] },
+        { session: "riron", urlSlug: "riron", expectedQuestions: 5, label: "理論", categories: ["理論"] },
+        { session: "denryoku", urlSlug: "denryoku", expectedQuestions: 5, label: "電力", categories: ["電力"] },
+        { session: "kikai", urlSlug: "kikai", expectedQuestions: 5, label: "機械", categories: ["機械"] },
+        { session: "houki", urlSlug: "houki", expectedQuestions: 5, label: "法規", categories: ["法規"] },
     ],
     seasons: ["primary"],
     yearRange: { start: 2026, end: 2026 },
-  },
-  denken2: {
+},
+denken2: {
     code: "denken2",
     nameFull: "第二種電気主任技術者試験 一次試験",
     urlSlug: "denken2",
     level: "advanced",
     sessions: [
-      { session: "denryoku", urlSlug: "denryoku", expectedQuestions: 35, label: "電力", categories: ["電力"] },
-      { session: "houki", urlSlug: "houki", expectedQuestions: 35, label: "法規", categories: ["法規"] },
+        { session: "denryoku", urlSlug: "denryoku", expectedQuestions: 35, label: "電力", categories: ["電力"] },
+        { session: "houki", urlSlug: "houki", expectedQuestions: 35, label: "法規", categories: ["法規"] },
     ],
     seasons: ["primary"],
     yearRange: { start: 2026, end: 2026 },
-  },
-  denko2: {
+},
+denko2: {
     code: "denko2",
     nameFull: "第二種電気工事士学科試験",
     urlSlug: "denko2",
     level: "basic",
     sessions: [{
-      session: "gakka",
-      urlSlug: "gakka",
-      expectedQuestions: 50,
-      label: "学科",
-      categories: ["電気理論・配電", "電気機器・材料・工具", "施工・法規・検査", "配線図"],
-    }],
+            session: "gakka",
+            urlSlug: "gakka",
+            expectedQuestions: 50,
+            label: "学科",
+            categories: ["電気理論・配電", "電気機器・材料・工具", "施工・法規・検査", "配線図"],
+        }],
     seasons: ["first", "second"],
     yearRange: { start: 2024, end: 2026 },
-  },
-  denko1: {
+},
+denko1: {
     code: "denko1",
     nameFull: "第一種電気工事士学科試験",
     urlSlug: "denko1",
     level: "basic",
     sessions: [{
-      session: "gakka",
-      urlSlug: "gakka",
-      expectedQuestions: 50,
-      label: "学科",
-      categories: ["電気理論・配電", "電気機器・発変電", "高圧設備・材料・施工", "設備図・検査・法令", "配線図(単線結線図)"],
-    }],
+            session: "gakka",
+            urlSlug: "gakka",
+            expectedQuestions: 50,
+            label: "学科",
+            categories: ["電気理論・配電", "電気機器・発変電", "高圧設備・材料・施工", "設備図・検査・法令", "配線図(単線結線図)"],
+        }],
     seasons: ["first", "second"],
     yearRange: { start: 2025, end: 2026 },
-  },
-  takken: {
+},
+takken: {
     code: "takken",
     nameFull: "宅地建物取引士資格試験",
     urlSlug: "takken",
     level: "advanced",
     sessions: [{
-      session: "gakka",
-      urlSlug: "gakka",
-      expectedQuestions: 50,
-      label: "本試験",
-      categories: ["権利関係", "法令上の制限", "税・価格評定", "宅建業法", "免除科目"],
-    }],
+            session: "gakka",
+            urlSlug: "gakka",
+            expectedQuestions: 50,
+            label: "本試験",
+            categories: ["権利関係", "法令上の制限", "税・価格評定", "宅建業法", "免除科目"],
+        }],
     seasons: ["october"],
     yearRange: { start: 2024, end: 2025 },
-  },
-  civil2: {
+},
+civil2: {
     code: "civil2",
     nameFull: "2級土木施工管理技術検定",
     urlSlug: "civil2",
     level: "basic",
     sessions: [{
-      session: "gakka",
-      urlSlug: "gakka",
-      expectedQuestions: 66,
-      label: "第一次検定（前期・土木）",
-      categories: ["土木一般（必須）", "土木一般（選択）", "専門土木（選択）", "法規（選択）", "施工管理（必須）"],
-    }],
+            session: "gakka",
+            urlSlug: "gakka",
+            expectedQuestions: 66,
+            label: "第一次検定（前期・土木）",
+            categories: ["土木一般（必須）", "土木一般（選択）", "専門土木（選択）", "法規（選択）", "施工管理（必須）"],
+        }],
     seasons: ["early", "october"],
     yearRange: { start: 2025, end: 2026 },
-  },
-  kankoji2: {
+},
+kankoji2: {
     code: "kankoji2",
     nameFull: "2級管工事施工管理技術検定",
     urlSlug: "kankoji2",
     level: "basic",
     sessions: [{
-      session: "gakka",
-      urlSlug: "gakka",
-      expectedQuestions: 52,
-      label: "第一次検定",
-      categories: ["一般基礎（必須）", "空調・衛生設備（選択）", "設備機器・材料（必須）", "施工管理法（選択）", "法規（選択）", "施工管理法・基礎的な能力（必須）"],
-    }],
+            session: "gakka",
+            urlSlug: "gakka",
+            expectedQuestions: 52,
+            label: "第一次検定",
+            categories: ["一般基礎（必須）", "空調・衛生設備（選択）", "設備機器・材料（必須）", "施工管理法（選択）", "法規（選択）", "施工管理法・基礎的な能力（必須）"],
+        }],
     seasons: ["early", "late"],
     yearRange: { start: 2025, end: 2026 },
-  },
-  zoen2: {
+},
+zoen2: {
     code: "zoen2",
     nameFull: "2級造園施工管理技術検定",
     urlSlug: "zoen2",
     level: "basic",
     sessions: [{
-      session: "gakka",
-      urlSlug: "gakka",
-      expectedQuestions: 40,
-      label: "第一次検定（前期・後期）",
-      categories: ["造園技術"],
-    }],
+            session: "gakka",
+            urlSlug: "gakka",
+            expectedQuestions: 40,
+            label: "第一次検定（前期・後期）",
+            categories: ["造園技術"],
+        }],
     seasons: ["early", "late"],
     yearRange: { start: 2025, end: 2026 },
-  },
-  zoen1: {
+},
+zoen1: {
     code: "zoen1",
     nameFull: "1級造園施工管理技術検定",
     urlSlug: "zoen1",
     level: "advanced",
     sessions: [
-      { session: "mondai-a", urlSlug: "mondai-a", expectedQuestions: 36, label: "第一次検定 問題A", categories: ["造園技術"] },
-      { session: "mondai-b", urlSlug: "mondai-b", expectedQuestions: 29, label: "第一次検定 問題B", categories: ["施工管理法"] },
+        { session: "mondai-a", urlSlug: "mondai-a", expectedQuestions: 36, label: "第一次検定 問題A", categories: ["造園技術"] },
+        { session: "mondai-b", urlSlug: "mondai-b", expectedQuestions: 29, label: "第一次検定 問題B", categories: ["施工管理法"] },
     ],
     seasons: ["september"],
     yearRange: { start: 2026, end: 2026 },
-  },
-  tsushin2: {
+},
+tsushin2: {
     code: "tsushin2",
     nameFull: "2級電気通信工事施工管理技術検定",
     urlSlug: "tsushin2",
     level: "basic",
     sessions: [{
-      session: "gakka",
-      urlSlug: "gakka",
-      expectedQuestions: 65,
-      label: "第一次検定（前期）",
-      categories: ["電気通信技術"],
-    }],
+            session: "gakka",
+            urlSlug: "gakka",
+            expectedQuestions: 65,
+            label: "第一次検定（前期）",
+            categories: ["電気通信技術"],
+        }],
     seasons: ["early"],
     yearRange: { start: 2026, end: 2026 },
-  },
-  tsushin1: {
+},
+tsushin1: {
     code: "tsushin1",
     nameFull: "1級電気通信工事施工管理技術検定",
     urlSlug: "tsushin1",
     level: "advanced",
     sessions: [
-      { session: "mondai-a", urlSlug: "mondai-a", expectedQuestions: 55, label: "第一次検定 問題A", categories: ["電気通信技術"] },
-      { session: "mondai-b", urlSlug: "mondai-b", expectedQuestions: 35, label: "第一次検定 問題B", categories: ["施工管理法"] },
+        { session: "mondai-a", urlSlug: "mondai-a", expectedQuestions: 55, label: "第一次検定 問題A", categories: ["電気通信技術"] },
+        { session: "mondai-b", urlSlug: "mondai-b", expectedQuestions: 35, label: "第一次検定 問題B", categories: ["施工管理法"] },
     ],
     seasons: ["september"],
     yearRange: { start: 2025, end: 2026 },
-  },
-  kaigo: {
+},
+kaigo: {
     code: "kaigo",
     nameFull: "介護福祉士国家試験",
     urlSlug: "kaigo",
     level: "basic",
     sessions: [{
-      session: "gakka",
-      urlSlug: "gakka",
-      expectedQuestions: 125,
-      label: "筆記試験",
-      categories: [
-        "人間の尊厳と自立", "介護の基本", "社会の理解", "人間関係とコミュニケーション", "コミュニケーション技術",
-        "生活支援技術", "こころとからだのしくみ", "発達と老化の理解", "認知症の理解", "障害の理解",
-        "医療的ケア", "介護過程", "総合問題",
-      ],
-    }],
+            session: "gakka",
+            urlSlug: "gakka",
+            expectedQuestions: 125,
+            label: "筆記試験",
+            categories: [
+                "人間の尊厳と自立", "介護の基本", "社会の理解", "人間関係とコミュニケーション", "コミュニケーション技術",
+                "生活支援技術", "こころとからだのしくみ", "発達と老化の理解", "認知症の理解", "障害の理解",
+                "医療的ケア", "介護過程", "総合問題",
+            ],
+        }],
     seasons: ["annual"],
     yearRange: { start: 2024, end: 2025 },
-  },
-  civil1: {
+},
+civil1: {
     code: "civil1",
     nameFull: "1級土木施工管理技術検定",
     urlSlug: "civil1",
     level: "advanced",
     sessions: [
-      {
-        session: "mondai-a",
-        urlSlug: "mondai-a",
-        expectedQuestions: 66,
-        label: "第一次検定 問題A",
-        categories: ["土木一般（必須）", "土木一般（選択）", "専門土木（選択）", "法規（選択）"],
-      },
-      {
-        session: "mondai-b",
-        urlSlug: "mondai-b",
-        expectedQuestions: 35,
-        label: "第一次検定 問題B",
-        categories: ["共通工学・施工管理法（必須）", "施工管理法・応用能力（必須）"],
-      },
+        {
+            session: "mondai-a",
+            urlSlug: "mondai-a",
+            expectedQuestions: 66,
+            label: "第一次検定 問題A",
+            categories: ["土木一般（必須）", "土木一般（選択）", "専門土木（選択）", "法規（選択）"],
+        },
+        {
+            session: "mondai-b",
+            urlSlug: "mondai-b",
+            expectedQuestions: 35,
+            label: "第一次検定 問題B",
+            categories: ["共通工学・施工管理法（必須）", "施工管理法・応用能力（必須）"],
+        },
     ],
     seasons: ["july"],
     yearRange: { start: 2026, end: 2026 },
-  },
-  shakai: {
+},
+shakai: {
     code: "shakai",
     nameFull: "社会福祉士国家試験",
     urlSlug: "shakai",
     level: "basic",
     sessions: [
-      {
-        session: "kyotsu",
-        urlSlug: "kyotsu",
-        expectedQuestions: 84,
-        label: "共通科目",
-        categories: SSSC_COMMON_SUBJECTS,
-      },
-      {
-        session: "senmon",
-        urlSlug: "senmon",
-        expectedQuestions: 45,
-        label: "専門科目",
-        categories: [
-          "高齢者福祉", "児童・家庭福祉", "貧困に対する支援", "保健医療と福祉",
-          "ソーシャルワークの基盤と専門職（専門）", "ソーシャルワークの理論と方法（専門）", "福祉サービスの組織と経営",
-        ],
-      },
+        {
+            session: "kyotsu",
+            urlSlug: "kyotsu",
+            expectedQuestions: 84,
+            label: "共通科目",
+            categories: SSSC_COMMON_SUBJECTS,
+        },
+        {
+            session: "senmon",
+            urlSlug: "senmon",
+            expectedQuestions: 45,
+            label: "専門科目",
+            categories: [
+                "高齢者福祉", "児童・家庭福祉", "貧困に対する支援", "保健医療と福祉",
+                "ソーシャルワークの基盤と専門職（専門）", "ソーシャルワークの理論と方法（専門）", "福祉サービスの組織と経営",
+            ],
+        },
     ],
     seasons: ["annual"],
     yearRange: { start: 2025, end: 2025 },
-  },
-  seishin: {
+},
+seishin: {
     code: "seishin",
     nameFull: "精神保健福祉士国家試験",
     urlSlug: "seishin",
     level: "basic",
     sessions: [
-      {
-        session: "senmon",
-        urlSlug: "senmon",
-        expectedQuestions: 48,
-        label: "専門科目",
-        categories: [
-          "精神医学と精神医療", "現代の精神保健の課題と支援", "精神保健福祉の原理",
-          "ソーシャルワークの理論と方法（専門）", "精神障害リハビリテーション論", "精神保健福祉制度論",
-        ],
-      },
-      {
-        session: "kyotsu",
-        urlSlug: "kyotsu",
-        expectedQuestions: 84,
-        label: "共通科目",
-        categories: SSSC_COMMON_SUBJECTS,
-      },
+        {
+            session: "senmon",
+            urlSlug: "senmon",
+            expectedQuestions: 48,
+            label: "専門科目",
+            categories: [
+                "精神医学と精神医療", "現代の精神保健の課題と支援", "精神保健福祉の原理",
+                "ソーシャルワークの理論と方法（専門）", "精神障害リハビリテーション論", "精神保健福祉制度論",
+            ],
+        },
+        {
+            session: "kyotsu",
+            urlSlug: "kyotsu",
+            expectedQuestions: 84,
+            label: "共通科目",
+            categories: SSSC_COMMON_SUBJECTS,
+        },
     ],
     seasons: ["annual"],
     yearRange: { start: 2024, end: 2025 },
-  },
-  tohan: {
+},
+tohan: {
     code: "tohan",
     nameFull: "登録販売者試験（関西広域連合）",
     urlSlug: "tohan",
     level: "basic",
     sessions: [{
-      session: "gakka",
-      urlSlug: "gakka",
-      expectedQuestions: 120,
-      label: "試験問題（前半・後半）",
-      categories: [
-        "医薬品に共通する特性と基本的な知識",
-        "人体の働きと医薬品",
-        "主な医薬品とその作用",
-        "薬事に関する法規と制度",
-        "医薬品の適正使用と安全対策",
-      ],
-    }],
+            session: "gakka",
+            urlSlug: "gakka",
+            expectedQuestions: 120,
+            label: "試験問題（前半・後半）",
+            categories: [
+                "医薬品に共通する特性と基本的な知識",
+                "人体の働きと医薬品",
+                "主な医薬品とその作用",
+                "薬事に関する法規と制度",
+                "医薬品の適正使用と安全対策",
+            ],
+        }],
     seasons: ["kansai"],
     yearRange: { start: 2025, end: 2025 },
-  },
-  kanri: {
+},
+kanri: {
     code: "kanri",
     nameFull: "管理業務主任者試験",
     urlSlug: "kanri",
     level: "advanced",
     sessions: [{
-      session: "gakka", urlSlug: "gakka", expectedQuestions: 50, label: "試験問題",
-      categories: ["民法", "標準管理委託契約書"],
-    }],
+            session: "gakka", urlSlug: "gakka", expectedQuestions: 50, label: "試験問題",
+            categories: ["民法", "標準管理委託契約書"],
+        }],
     seasons: ["annual"],
     yearRange: { start: 2025, end: 2025 },
-  },
-  eisei1: {
+},
+eisei1: {
     code: "eisei1",
     nameFull: "第一種衛生管理者免許試験",
     urlSlug: "eisei1",
     level: "basic",
     sessions: [{
-      session: "gakka", urlSlug: "gakka", expectedQuestions: 44, label: "試験問題",
-      categories: ["関係法令", "労働衛生", "労働生理"],
-    }],
+            session: "gakka", urlSlug: "gakka", expectedQuestions: 44, label: "試験問題",
+            categories: ["関係法令", "労働衛生", "労働生理"],
+        }],
     seasons: ["published"],
     yearRange: { start: 2025, end: 2026 },
-  },
-  eisei2: {
+},
+eisei2: {
     code: "eisei2",
     nameFull: "第二種衛生管理者免許試験",
     urlSlug: "eisei2",
     level: "basic",
     sessions: [{
-      session: "gakka", urlSlug: "gakka", expectedQuestions: 30, label: "試験問題",
-      categories: ["関係法令", "労働衛生", "労働生理"],
-    }],
+            session: "gakka", urlSlug: "gakka", expectedQuestions: 30, label: "試験問題",
+            categories: ["関係法令", "労働衛生", "労働生理"],
+        }],
     seasons: ["published"],
     yearRange: { start: 2025, end: 2026 },
-  },
-  soukan: {
+},
+soukan: {
     code: "soukan",
     nameFull: "技術士第二次試験 総合技術監理部門",
     urlSlug: "soukan",
     level: "advanced",
     sessions: [{
-      session: "gakka", urlSlug: "gakka", expectedQuestions: 40, label: "必須科目Ⅰ－1（択一式）",
-      categories: ["経済性管理", "人的資源管理", "情報管理", "安全管理", "社会環境管理"],
-    }],
+            session: "gakka", urlSlug: "gakka", expectedQuestions: 40, label: "必須科目Ⅰ－1（択一式）",
+            categories: ["経済性管理", "人的資源管理", "情報管理", "安全管理", "社会環境管理"],
+        }],
     seasons: ["annual"],
     yearRange: { start: 2025, end: 2026 },
-  },
-  hoikushi: {
+},
+hoikushi: {
     code: "hoikushi",
     nameFull: "保育士試験",
     urlSlug: "hoikushi",
     level: "basic",
     sessions: [
-      { session: "hoiku-genri", urlSlug: "hoiku-genri", expectedQuestions: 20, label: "保育原理", categories: ["保育原理"] },
-      { session: "kyoiku-genri", urlSlug: "kyoiku-genri", expectedQuestions: 10, label: "教育原理", categories: ["教育原理"] },
-      { session: "shakaiteki-yougo", urlSlug: "shakaiteki-yougo", expectedQuestions: 10, label: "社会的養護", categories: ["社会的養護"] },
-      { session: "kodomo-katei-fukushi", urlSlug: "kodomo-katei-fukushi", expectedQuestions: 20, label: "子ども家庭福祉", categories: ["子ども家庭福祉"] },
-      { session: "shakai-fukushi", urlSlug: "shakai-fukushi", expectedQuestions: 20, label: "社会福祉", categories: ["社会福祉"] },
-      { session: "hoiku-shinrigaku", urlSlug: "hoiku-shinrigaku", expectedQuestions: 20, label: "保育の心理学", categories: ["保育の心理学"] },
-      { session: "kodomo-hoken", urlSlug: "kodomo-hoken", expectedQuestions: 20, label: "子どもの保健", categories: ["子どもの保健"] },
-      { session: "kodomo-shokueiyou", urlSlug: "kodomo-shokueiyou", expectedQuestions: 20, label: "子どもの食と栄養", categories: ["子どもの食と栄養"] },
-      { session: "hoiku-jisshu-riron", urlSlug: "hoiku-jisshu-riron", expectedQuestions: 20, label: "保育実習理論", categories: ["保育実習理論"] },
+        { session: "hoiku-genri", urlSlug: "hoiku-genri", expectedQuestions: 20, label: "保育原理", categories: ["保育原理"] },
+        { session: "kyoiku-genri", urlSlug: "kyoiku-genri", expectedQuestions: 10, label: "教育原理", categories: ["教育原理"] },
+        { session: "shakaiteki-yougo", urlSlug: "shakaiteki-yougo", expectedQuestions: 10, label: "社会的養護", categories: ["社会的養護"] },
+        { session: "kodomo-katei-fukushi", urlSlug: "kodomo-katei-fukushi", expectedQuestions: 20, label: "子ども家庭福祉", categories: ["子ども家庭福祉"] },
+        { session: "shakai-fukushi", urlSlug: "shakai-fukushi", expectedQuestions: 20, label: "社会福祉", categories: ["社会福祉"] },
+        { session: "hoiku-shinrigaku", urlSlug: "hoiku-shinrigaku", expectedQuestions: 20, label: "保育の心理学", categories: ["保育の心理学"] },
+        { session: "kodomo-hoken", urlSlug: "kodomo-hoken", expectedQuestions: 20, label: "子どもの保健", categories: ["子どもの保健"] },
+        { session: "kodomo-shokueiyou", urlSlug: "kodomo-shokueiyou", expectedQuestions: 20, label: "子どもの食と栄養", categories: ["子どもの食と栄養"] },
+        { session: "hoiku-jisshu-riron", urlSlug: "hoiku-jisshu-riron", expectedQuestions: 20, label: "保育実習理論", categories: ["保育実習理論"] },
     ],
     seasons: ["early", "late"],
     yearRange: { start: 2025, end: 2026 },
-  },
-  mankan: {
+},
+mankan: {
     code: "mankan",
     nameFull: "マンション管理士試験",
     urlSlug: "mankan",
     level: "advanced",
     sessions: [{
-      session: "gakka", urlSlug: "gakka", expectedQuestions: 50, label: "試験問題",
-      categories: ["区分所有法", "民法", "被災区分所有法", "マンション建替え円滑化法", "都市計画法・建築基準法", "標準管理規約", "維持保全・建物設備", "マンション管理適正化法", "会計・税務"],
-    }],
+            session: "gakka", urlSlug: "gakka", expectedQuestions: 50, label: "試験問題",
+            categories: ["区分所有法", "民法", "被災区分所有法", "マンション建替え円滑化法", "都市計画法・建築基準法", "標準管理規約", "維持保全・建物設備", "マンション管理適正化法", "会計・税務"],
+        }],
     seasons: ["annual"],
     yearRange: { start: 2024, end: 2025 },
-  },
-  kashikin: {
+},
+kashikin: {
     code: "kashikin",
     nameFull: "貸金業務取扱主任者資格試験",
     urlSlug: "kashikin",
     level: "basic",
     sessions: [{
-      session: "gakka", urlSlug: "gakka", expectedQuestions: 50, label: "試験問題",
-      categories: ["法及び関係法令に関すること", "貸付け及び貸付けに付随する取引に関する法令及び実務に関すること", "資金需要者等の保護に関すること", "財務及び会計に関すること"],
-    }],
+            session: "gakka", urlSlug: "gakka", expectedQuestions: 50, label: "試験問題",
+            categories: ["法及び関係法令に関すること", "貸付け及び貸付けに付随する取引に関する法令及び実務に関すること", "資金需要者等の保護に関すること", "財務及び会計に関すること"],
+        }],
     seasons: ["annual"],
     yearRange: { start: 2024, end: 2025 },
-  },
-  "chusho-kigyo-shindanshi": {
+},
+"chusho-kigyo-shindanshi": {
     code: "chusho-kigyo-shindanshi",
     nameFull: "中小企業診断士 第1次試験",
     urlSlug: "chusho-kigyo-shindanshi",
     level: "advanced",
     sessions: [
-      { session: "keizai", urlSlug: "keizai", expectedQuestions: 25, label: "経済学・経済政策", categories: ["経済学・経済政策"] },
-      { session: "zaimu", urlSlug: "zaimu", expectedQuestions: 25, label: "財務・会計", categories: ["財務・会計"] },
-      { session: "kigyo", urlSlug: "kigyo", expectedQuestions: 41, label: "企業経営理論", categories: ["企業経営理論"] },
-      { session: "unei", urlSlug: "unei", expectedQuestions: 44, label: "運営管理（オペレーション・マネジメント）", categories: ["運営管理（オペレーション・マネジメント）"] },
-      { session: "keiei-houmu", urlSlug: "keiei-houmu", expectedQuestions: 25, label: "経営法務", categories: ["経営法務"] },
-      { session: "keiei-joho", urlSlug: "keiei-joho", expectedQuestions: 25, label: "経営情報システム", categories: ["経営情報システム"] },
-      { session: "chusho-seisaku", urlSlug: "chusho-seisaku", expectedQuestions: 42, label: "中小企業経営・中小企業政策", categories: ["中小企業経営・中小企業政策"] },
+        { session: "keizai", urlSlug: "keizai", expectedQuestions: 25, label: "経済学・経済政策", categories: ["経済学・経済政策"] },
+        { session: "zaimu", urlSlug: "zaimu", expectedQuestions: 25, label: "財務・会計", categories: ["財務・会計"] },
+        { session: "kigyo", urlSlug: "kigyo", expectedQuestions: 41, label: "企業経営理論", categories: ["企業経営理論"] },
+        { session: "unei", urlSlug: "unei", expectedQuestions: 44, label: "運営管理（オペレーション・マネジメント）", categories: ["運営管理（オペレーション・マネジメント）"] },
+        { session: "keiei-houmu", urlSlug: "keiei-houmu", expectedQuestions: 25, label: "経営法務", categories: ["経営法務"] },
+        { session: "keiei-joho", urlSlug: "keiei-joho", expectedQuestions: 25, label: "経営情報システム", categories: ["経営情報システム"] },
+        { session: "chusho-seisaku", urlSlug: "chusho-seisaku", expectedQuestions: 42, label: "中小企業経営・中小企業政策", categories: ["中小企業経営・中小企業政策"] },
     ],
     seasons: ["annual"],
     yearRange: { start: 2025, end: 2026 },
-  },
-  sharoushi: {
+},
+sharoushi: {
     code: "sharoushi",
     nameFull: "社会保険労務士試験",
     urlSlug: "sharoushi",
     level: "advanced",
     sessions: [{
-      session: "gakka", urlSlug: "gakka", expectedQuestions: 10, label: "択一式・労働基準法及び労働安全衛生法（収録中の一部10問）",
-      categories: ["労働基準法", "労働安全衛生法"],
-    }, {
-      session: "rousai", urlSlug: "rousai", expectedQuestions: 10, label: "択一式・労災保険法及び徴収法（収録中の一部10問）",
-      categories: ["労働者災害補償保険法", "労働保険徴収法"],
-    }, {
-      session: "koyou", urlSlug: "koyou", expectedQuestions: 10, label: "択一式・雇用保険法及び徴収法（収録中の一部10問）",
-      categories: ["雇用保険法", "労働保険徴収法"],
-    }, {
-      session: "kenpo", urlSlug: "kenpo", expectedQuestions: 10, label: "択一式・健康保険法（収録中の一部10問）",
-      categories: ["健康保険法"],
-    }, {
-      session: "ippan", urlSlug: "ippan", expectedQuestions: 10, label: "択一式・一般常識（収録中の一部10問）",
-      categories: ["労務管理その他の労働及び社会保険に関する一般常識"],
-    }],
+            session: "gakka", urlSlug: "gakka", expectedQuestions: 10, label: "択一式・労働基準法及び労働安全衛生法（収録中の一部10問）",
+            categories: ["労働基準法", "労働安全衛生法"],
+        }, {
+            session: "rousai", urlSlug: "rousai", expectedQuestions: 10, label: "択一式・労災保険法及び徴収法（収録中の一部10問）",
+            categories: ["労働者災害補償保険法", "労働保険徴収法"],
+        }, {
+            session: "koyou", urlSlug: "koyou", expectedQuestions: 10, label: "択一式・雇用保険法及び徴収法（収録中の一部10問）",
+            categories: ["雇用保険法", "労働保険徴収法"],
+        }, {
+            session: "kenpo", urlSlug: "kenpo", expectedQuestions: 10, label: "択一式・健康保険法（収録中の一部10問）",
+            categories: ["健康保険法"],
+        }, {
+            session: "ippan", urlSlug: "ippan", expectedQuestions: 10, label: "択一式・一般常識（収録中の一部10問）",
+            categories: ["労務管理その他の労働及び社会保険に関する一般常識"],
+        }],
     seasons: ["annual"],
     yearRange: { start: 2025, end: 2026 },
-  },
-  yakuzaishi: {
+},
+yakuzaishi: {
     code: "yakuzaishi",
     nameFull: "薬剤師国家試験",
     urlSlug: "yakuzaishi",
     level: "advanced",
     sessions: [
-      { session: "required", urlSlug: "required", expectedQuestions: 90, label: "必須問題", categories: ["必須問題"] },
-      { session: "theory", urlSlug: "theory", expectedQuestions: 105, label: "薬学理論問題", categories: ["一般問題（薬学理論問題）"] },
-      { session: "practical", urlSlug: "practical", expectedQuestions: 150, label: "薬学実践問題", categories: ["一般問題（薬学実践問題）"] },
+        { session: "required", urlSlug: "required", expectedQuestions: 90, label: "必須問題", categories: ["必須問題"] },
+        { session: "theory", urlSlug: "theory", expectedQuestions: 105, label: "薬学理論問題", categories: ["一般問題（薬学理論問題）"] },
+        { session: "practical", urlSlug: "practical", expectedQuestions: 150, label: "薬学実践問題", categories: ["一般問題（薬学実践問題）"] },
     ],
     seasons: ["annual"],
     yearRange: { start: 2025, end: 2026 },
-  },
-  hokenshi: {
+},
+hokenshi: {
     code: "hokenshi",
     nameFull: "保健師国家試験",
     urlSlug: "hokenshi",
     level: "advanced",
     sessions: [
-      { session: "am", urlSlug: "am", expectedQuestions: 55, label: "午前", categories: ["午前"] },
-      { session: "pm", urlSlug: "pm", expectedQuestions: 55, label: "午後", categories: ["午後"] },
+        { session: "am", urlSlug: "am", expectedQuestions: 55, label: "午前", categories: ["午前"] },
+        { session: "pm", urlSlug: "pm", expectedQuestions: 55, label: "午後", categories: ["午後"] },
     ],
     seasons: ["annual"],
     yearRange: { start: 2024, end: 2025 },
-  },
-  josanshi: {
+},
+josanshi: {
     code: "josanshi",
     nameFull: "助産師国家試験",
     urlSlug: "josanshi",
@@ -811,8 +821,8 @@ export const EXAM_CONFIGS: Record<ExamCode, ExamConfig> = {
     sessions: [{ session: "am", urlSlug: "am", expectedQuestions: 55, label: "午前", categories: ["午前"] }],
     seasons: ["annual"],
     yearRange: { start: 2024, end: 2025 },
-  },
-  "sagyo-ryohoshi": {
+},
+"sagyo-ryohoshi": {
     code: "sagyo-ryohoshi",
     nameFull: "作業療法士国家試験",
     urlSlug: "sagyo-ryohoshi",
@@ -820,8 +830,8 @@ export const EXAM_CONFIGS: Record<ExamCode, ExamConfig> = {
     sessions: [{ session: "am", urlSlug: "am", expectedQuestions: 100, label: "午前", categories: ["午前"] }, { session: "pm", urlSlug: "pm", expectedQuestions: 100, label: "午後", categories: ["午後"] }],
     seasons: ["annual"],
     yearRange: { start: 2024, end: 2025 },
-  },
-  "shino-kunrenshi": {
+},
+"shino-kunrenshi": {
     code: "shino-kunrenshi",
     nameFull: "視能訓練士国家試験",
     urlSlug: "shino-kunrenshi",
@@ -829,108 +839,108 @@ export const EXAM_CONFIGS: Record<ExamCode, ExamConfig> = {
     sessions: [{ session: "am", urlSlug: "am", expectedQuestions: 75, label: "午前", categories: ["午前"] }, { session: "pm", urlSlug: "pm", expectedQuestions: 75, label: "午後", categories: ["午後"] }],
     seasons: ["annual"],
     yearRange: { start: 2024, end: 2025 },
-  },
-  "judo-seifukushi": {
+},
+"judo-seifukushi": {
     code: "judo-seifukushi",
     nameFull: "柔道整復師国家試験",
     urlSlug: "judo-seifukushi",
     level: "advanced",
     sessions: [
-      { session: "am", urlSlug: "am", expectedQuestions: 128, label: "午前", categories: ["必修問題", "一般問題（午前）", "解剖学", "生理学", "運動学", "衛生学・公衆衛生学", "関係法規"] },
-      { session: "pm", urlSlug: "pm", expectedQuestions: 122, label: "午後", categories: ["一般問題（午後）", "病理学概論", "一般臨床医学", "外科学概論", "整形外科学", "リハビリテーション医学", "柔道整復理論"] },
+        { session: "am", urlSlug: "am", expectedQuestions: 128, label: "午前", categories: ["必修問題", "一般問題（午前）", "解剖学", "生理学", "運動学", "衛生学・公衆衛生学", "関係法規"] },
+        { session: "pm", urlSlug: "pm", expectedQuestions: 122, label: "午後", categories: ["一般問題（午後）", "病理学概論", "一般臨床医学", "外科学概論", "整形外科学", "リハビリテーション医学", "柔道整復理論"] },
     ],
     seasons: ["annual"],
     yearRange: { start: 2024, end: 2025 },
-  },
-  "rinsho-kogishi": {
+},
+"rinsho-kogishi": {
     code: "rinsho-kogishi",
     nameFull: "臨床工学技士国家試験",
     urlSlug: "rinsho-kogishi",
     level: "advanced",
     sessions: [
-      { session: "am", urlSlug: "am", expectedQuestions: 90, label: "午前", categories: ["午前"] },
-      { session: "pm", urlSlug: "pm", expectedQuestions: 90, label: "午後", categories: ["午後"] },
+        { session: "am", urlSlug: "am", expectedQuestions: 90, label: "午前", categories: ["午前"] },
+        { session: "pm", urlSlug: "pm", expectedQuestions: 90, label: "午後", categories: ["午後"] },
     ],
     seasons: ["annual"],
     yearRange: { start: 2024, end: 2025 },
-  },
-  kangoshi: {
+},
+kangoshi: {
     code: "kangoshi",
     nameFull: "看護師国家試験",
     urlSlug: "kangoshi",
     level: "basic",
     // 収録は第115回・第114回の午前 問1〜50（第115回問32は採点除外のため未収録）。午前全体の問題数ではない。
     sessions: [{
-      session: "am", urlSlug: "am", expectedQuestions: 50, label: "午前",
-      categories: ["必修問題", "一般問題"],
-    }],
+            session: "am", urlSlug: "am", expectedQuestions: 50, label: "午前",
+            categories: ["必修問題", "一般問題"],
+        }],
     seasons: ["annual"],
     yearRange: { start: 2024, end: 2025 },
-  },
-  "ahaki-anma": {
+},
+"ahaki-anma": {
     code: "ahaki-anma",
     nameFull: "あん摩マッサージ指圧師国家試験",
     urlSlug: "ahaki-anma",
     level: "basic",
     sessions: [
-      { session: "am", urlSlug: "am", expectedQuestions: 80, label: "午前", categories: ["あん摩マッサージ指圧師"] },
-      { session: "pm", urlSlug: "pm", expectedQuestions: 80, label: "午後", categories: ["あん摩マッサージ指圧師"] },
+        { session: "am", urlSlug: "am", expectedQuestions: 80, label: "午前", categories: ["あん摩マッサージ指圧師"] },
+        { session: "pm", urlSlug: "pm", expectedQuestions: 80, label: "午後", categories: ["あん摩マッサージ指圧師"] },
     ],
     seasons: ["annual"],
     yearRange: { start: 2025, end: 2026 },
-  },
-  "ahaki-hari-kyu": {
+},
+"ahaki-hari-kyu": {
     code: "ahaki-hari-kyu",
     nameFull: "はり師・きゅう師国家試験",
     urlSlug: "ahaki-hari-kyu",
     level: "basic",
     sessions: [
-      { session: "am", urlSlug: "am", expectedQuestions: 90, label: "午前", categories: ["はり師・きゅう師 共通"] },
-      { session: "pm", urlSlug: "pm", expectedQuestions: 90, label: "午後", categories: ["はり師・きゅう師 共通", "はり師 専用", "きゅう師 専用"] },
+        { session: "am", urlSlug: "am", expectedQuestions: 90, label: "午前", categories: ["はり師・きゅう師 共通"] },
+        { session: "pm", urlSlug: "pm", expectedQuestions: 90, label: "午後", categories: ["はり師・きゅう師 共通", "はり師 専用", "きゅう師 専用"] },
     ],
     seasons: ["annual"],
     yearRange: { start: 2025, end: 2026 },
-  },
-  "rigaku-ryohoshi": {
+},
+"rigaku-ryohoshi": {
     code: "rigaku-ryohoshi",
     nameFull: "理学療法士国家試験",
     urlSlug: "rigaku-ryohoshi",
     level: "advanced",
     sessions: [
-      { session: "am", urlSlug: "am", expectedQuestions: 100, label: "午前", categories: ["午前"] },
-      { session: "pm", urlSlug: "pm", expectedQuestions: 100, label: "午後", categories: ["午後"] },
+        { session: "am", urlSlug: "am", expectedQuestions: 100, label: "午前", categories: ["午前"] },
+        { session: "pm", urlSlug: "pm", expectedQuestions: 100, label: "午後", categories: ["午後"] },
     ],
     seasons: ["annual"],
     yearRange: { start: 2025, end: 2026 },
-  },
-  "gas-kou": {
+},
+"gas-kou": {
     code: "gas-kou", nameFull: "ガス主任技術者試験（甲種）", urlSlug: "gas-kou", level: "advanced",
     sessions: [
-      { session: "gas-law", urlSlug: "gas-law", expectedQuestions: 16, label: "法令", categories: ["法令"] },
-      { session: "gas-basic", urlSlug: "gas-basic", expectedQuestions: 15, label: "基礎", categories: ["基礎"] },
-      { session: "gas-technology", urlSlug: "gas-technology", expectedQuestions: 27, label: "ガス技術", categories: ["製造", "供給", "消費"] },
+        { session: "gas-law", urlSlug: "gas-law", expectedQuestions: 16, label: "法令", categories: ["法令"] },
+        { session: "gas-basic", urlSlug: "gas-basic", expectedQuestions: 15, label: "基礎", categories: ["基礎"] },
+        { session: "gas-technology", urlSlug: "gas-technology", expectedQuestions: 27, label: "ガス技術", categories: ["製造", "供給", "消費"] },
     ],
     seasons: ["annual"], yearRange: { start: 2025, end: 2026 },
-  },
-  "gas-otsu": {
+},
+"gas-otsu": {
     code: "gas-otsu", nameFull: "ガス主任技術者試験（乙種）", urlSlug: "gas-otsu", level: "advanced",
     sessions: [
-      { session: "gas-law", urlSlug: "gas-law", expectedQuestions: 16, label: "法令", categories: ["法令"] },
-      { session: "gas-basic", urlSlug: "gas-basic", expectedQuestions: 15, label: "基礎", categories: ["基礎"] },
-      { session: "gas-technology", urlSlug: "gas-technology", expectedQuestions: 27, label: "ガス技術", categories: ["製造", "供給", "消費"] },
+        { session: "gas-law", urlSlug: "gas-law", expectedQuestions: 16, label: "法令", categories: ["法令"] },
+        { session: "gas-basic", urlSlug: "gas-basic", expectedQuestions: 15, label: "基礎", categories: ["基礎"] },
+        { session: "gas-technology", urlSlug: "gas-technology", expectedQuestions: 27, label: "ガス技術", categories: ["製造", "供給", "消費"] },
     ],
     seasons: ["annual"], yearRange: { start: 2025, end: 2026 },
-  },
-  "gas-hei": {
+},
+"gas-hei": {
     code: "gas-hei", nameFull: "ガス主任技術者試験（丙種）", urlSlug: "gas-hei", level: "advanced",
     sessions: [
-      { session: "gas-law", urlSlug: "gas-law", expectedQuestions: 16, label: "法令", categories: ["法令"] },
-      { session: "gas-basic", urlSlug: "gas-basic", expectedQuestions: 15, label: "基礎", categories: ["基礎"] },
-      { session: "gas-technology", urlSlug: "gas-technology", expectedQuestions: 27, label: "ガス技術", categories: ["製造", "供給", "消費"] },
+        { session: "gas-law", urlSlug: "gas-law", expectedQuestions: 16, label: "法令", categories: ["法令"] },
+        { session: "gas-basic", urlSlug: "gas-basic", expectedQuestions: 15, label: "基礎", categories: ["基礎"] },
+        { session: "gas-technology", urlSlug: "gas-technology", expectedQuestions: 27, label: "ガス技術", categories: ["製造", "供給", "消費"] },
     ],
     seasons: ["annual"], yearRange: { start: 2025, end: 2026 },
-  },
-  "rinsho-kensagishi": {
+},
+"rinsho-kensagishi": {
     code: "rinsho-kensagishi",
     nameFull: "臨床検査技師国家試験",
     urlSlug: "rinsho-kensagishi",
@@ -938,224 +948,621 @@ export const EXAM_CONFIGS: Record<ExamCode, ExamConfig> = {
     sessions: [{ session: "am", urlSlug: "am", expectedQuestions: 100, label: "午前", categories: ["午前"] }, { session: "pm", urlSlug: "pm", expectedQuestions: 100, label: "午後", categories: ["午後"] }],
     seasons: ["annual"],
     yearRange: { start: 2025, end: 2026 },
-  },
-  "shika-ishi": {
+},
+"shika-ishi": {
     code: "shika-ishi",
     nameFull: "歯科医師国家試験",
     urlSlug: "shika-ishi",
     level: "advanced",
     sessions: [
-      { session: "mondai-a", urlSlug: "mondai-a", expectedQuestions: 90, label: "問題A", categories: ["基礎歯学", "口腔衛生", "歯科保存学", "歯科補綴学", "口腔外科学", "小児歯科", "歯科矯正学", "歯科放射線", "歯科麻酔", "歯科医療管理"] },
-      { session: "mondai-b", urlSlug: "mondai-b", expectedQuestions: 90, label: "問題B", categories: ["基礎歯学", "口腔衛生", "歯科保存学", "歯科補綴学", "口腔外科学", "小児歯科", "歯科矯正学", "歯科放射線", "歯科麻酔", "歯科医療管理"] },
-      { session: "mondai-c", urlSlug: "mondai-c", expectedQuestions: 90, label: "問題C", categories: ["基礎歯学", "口腔衛生", "歯科保存学", "歯科補綴学", "口腔外科学", "小児歯科", "歯科矯正学", "歯科放射線", "歯科麻酔", "歯科医療管理"] },
-      { session: "mondai-d", urlSlug: "mondai-d", expectedQuestions: 90, label: "問題D", categories: ["基礎歯学", "口腔衛生", "歯科保存学", "歯科補綴学", "口腔外科学", "小児歯科", "歯科矯正学", "歯科放射線", "歯科麻酔", "歯科医療管理"] },
+        { session: "mondai-a", urlSlug: "mondai-a", expectedQuestions: 90, label: "問題A", categories: ["基礎歯学", "口腔衛生", "歯科保存学", "歯科補綴学", "口腔外科学", "小児歯科", "歯科矯正学", "歯科放射線", "歯科麻酔", "歯科医療管理"] },
+        { session: "mondai-b", urlSlug: "mondai-b", expectedQuestions: 90, label: "問題B", categories: ["基礎歯学", "口腔衛生", "歯科保存学", "歯科補綴学", "口腔外科学", "小児歯科", "歯科矯正学", "歯科放射線", "歯科麻酔", "歯科医療管理"] },
+        { session: "mondai-c", urlSlug: "mondai-c", expectedQuestions: 90, label: "問題C", categories: ["基礎歯学", "口腔衛生", "歯科保存学", "歯科補綴学", "口腔外科学", "小児歯科", "歯科矯正学", "歯科放射線", "歯科麻酔", "歯科医療管理"] },
+        { session: "mondai-d", urlSlug: "mondai-d", expectedQuestions: 90, label: "問題D", categories: ["基礎歯学", "口腔衛生", "歯科保存学", "歯科補綴学", "口腔外科学", "小児歯科", "歯科矯正学", "歯科放射線", "歯科麻酔", "歯科医療管理"] },
     ],
     seasons: ["annual"],
     yearRange: { start: 2025, end: 2026 },
-  },
-  "shinryo-hoshasengishi": {
+},
+"shinryo-hoshasengishi": {
     code: "shinryo-hoshasengishi",
     nameFull: "診療放射線技師国家試験",
     urlSlug: "shinryo-hoshasengishi",
     level: "advanced",
     sessions: [
-      { session: "am", urlSlug: "am", expectedQuestions: 100, label: "午前", categories: ["午前"] },
-      { session: "pm", urlSlug: "pm", expectedQuestions: 100, label: "午後", categories: ["午後"] },
+        { session: "am", urlSlug: "am", expectedQuestions: 100, label: "午前", categories: ["午前"] },
+        { session: "pm", urlSlug: "pm", expectedQuestions: 100, label: "午後", categories: ["午後"] },
     ],
     seasons: ["annual"],
     yearRange: { start: 2025, end: 2026 },
-  },
-  "riku-toku-kokunai": {
+},
+"riku-toku-kokunai": {
     code: "riku-toku-kokunai", nameFull: "国内電信級陸上特殊無線技士試験", urlSlug: "riku-toku-kokunai", level: "specialist",
     sessions: [{ session: "houki", urlSlug: "houki", expectedQuestions: 12, label: "法規", categories: ["無線通信の法規"] }],
     seasons: ["february", "june"], yearRange: { start: 2026, end: 2026 },
-  },
-  "maritime2": {
+},
+"maritime2": {
     code: "maritime2", nameFull: "第二級海上無線通信士試験", urlSlug: "maritime2", level: "specialist",
     sessions: [
-      { session: "kiso", urlSlug: "kiso", expectedQuestions: 25, label: "無線工学の基礎", categories: ["無線工学の基礎"] },
-      { session: "kogaku-a", urlSlug: "kogaku-a", expectedQuestions: 25, label: "無線工学A", categories: ["無線工学A"] },
-      { session: "kogaku-b", urlSlug: "kogaku-b", expectedQuestions: 25, label: "無線工学B", categories: ["無線工学B"] },
-      { session: "houki", urlSlug: "houki", expectedQuestions: 20, label: "法規", categories: ["法規"] },
+        { session: "kiso", urlSlug: "kiso", expectedQuestions: 25, label: "無線工学の基礎", categories: ["無線工学の基礎"] },
+        { session: "kogaku-a", urlSlug: "kogaku-a", expectedQuestions: 25, label: "無線工学A", categories: ["無線工学A"] },
+        { session: "kogaku-b", urlSlug: "kogaku-b", expectedQuestions: 25, label: "無線工学B", categories: ["無線工学B"] },
+        { session: "houki", urlSlug: "houki", expectedQuestions: 20, label: "法規", categories: ["法規"] },
     ],
     seasons: ["march", "september"], yearRange: { start: 2026, end: 2026 },
-  },
-  "maritime1": {
+},
+"maritime1": {
     code: "maritime1", nameFull: "第一級海上無線通信士試験", urlSlug: "maritime1", level: "specialist",
     sessions: [
-      { session: "kiso", urlSlug: "kiso", expectedQuestions: 25, label: "無線工学の基礎", categories: ["無線工学の基礎"] },
-      { session: "kogaku-a", urlSlug: "kogaku-a", expectedQuestions: 25, label: "無線工学A", categories: ["無線工学A"] },
-      { session: "kogaku-b", urlSlug: "kogaku-b", expectedQuestions: 25, label: "無線工学B", categories: ["無線工学B"] },
-      { session: "hoki", urlSlug: "hoki", expectedQuestions: 20, label: "法規", categories: ["法規"] },
+        { session: "kiso", urlSlug: "kiso", expectedQuestions: 25, label: "無線工学の基礎", categories: ["無線工学の基礎"] },
+        { session: "kogaku-a", urlSlug: "kogaku-a", expectedQuestions: 25, label: "無線工学A", categories: ["無線工学A"] },
+        { session: "kogaku-b", urlSlug: "kogaku-b", expectedQuestions: 25, label: "無線工学B", categories: ["無線工学B"] },
+        { session: "hoki", urlSlug: "hoki", expectedQuestions: 20, label: "法規", categories: ["法規"] },
     ],
     seasons: ["march", "september"], yearRange: { start: 2026, end: 2026 },
-  },
-  "general1": {
+},
+"general1": {
     code: "general1", nameFull: "第一級総合無線通信士試験", urlSlug: "general1", level: "specialist",
     sessions: [
-      { session: "kiso", urlSlug: "kiso", expectedQuestions: 25, label: "無線工学の基礎", categories: ["無線工学の基礎"] },
-      { session: "kogaku-a", urlSlug: "kogaku-a", expectedQuestions: 25, label: "無線工学A", categories: ["無線工学A"] },
-      { session: "kogaku-b", urlSlug: "kogaku-b", expectedQuestions: 25, label: "無線工学B", categories: ["無線工学B"] },
-      { session: "hoki", urlSlug: "hoki", expectedQuestions: 25, label: "法規", categories: ["法規"] },
-      { session: "tiri", urlSlug: "tiri", expectedQuestions: 35, label: "地理", categories: ["地理"] },
+        { session: "kiso", urlSlug: "kiso", expectedQuestions: 25, label: "無線工学の基礎", categories: ["無線工学の基礎"] },
+        { session: "kogaku-a", urlSlug: "kogaku-a", expectedQuestions: 25, label: "無線工学A", categories: ["無線工学A"] },
+        { session: "kogaku-b", urlSlug: "kogaku-b", expectedQuestions: 25, label: "無線工学B", categories: ["無線工学B"] },
+        { session: "hoki", urlSlug: "hoki", expectedQuestions: 25, label: "法規", categories: ["法規"] },
+        { session: "tiri", urlSlug: "tiri", expectedQuestions: 35, label: "地理", categories: ["地理"] },
     ],
     seasons: ["march", "september"], yearRange: { start: 2026, end: 2026 },
-  },
-  "general2": {
+},
+"general2": {
     code: "general2", nameFull: "第二級総合無線通信士試験", urlSlug: "general2", level: "specialist",
     sessions: [
-      { session: "kiso", urlSlug: "kiso", expectedQuestions: 25, label: "無線工学の基礎", categories: ["無線工学の基礎"] },
-      { session: "kogaku-a", urlSlug: "kogaku-a", expectedQuestions: 25, label: "無線工学A", categories: ["無線工学A"] },
-      { session: "kogaku-b", urlSlug: "kogaku-b", expectedQuestions: 25, label: "無線工学B", categories: ["無線工学B"] },
-      { session: "hoki", urlSlug: "hoki", expectedQuestions: 25, label: "法規", categories: ["法規"] },
-      { session: "tiri", urlSlug: "tiri", expectedQuestions: 40, label: "地理", categories: ["地理"] },
+        { session: "kiso", urlSlug: "kiso", expectedQuestions: 25, label: "無線工学の基礎", categories: ["無線工学の基礎"] },
+        { session: "kogaku-a", urlSlug: "kogaku-a", expectedQuestions: 25, label: "無線工学A", categories: ["無線工学A"] },
+        { session: "kogaku-b", urlSlug: "kogaku-b", expectedQuestions: 25, label: "無線工学B", categories: ["無線工学B"] },
+        { session: "hoki", urlSlug: "hoki", expectedQuestions: 25, label: "法規", categories: ["法規"] },
+        { session: "tiri", urlSlug: "tiri", expectedQuestions: 40, label: "地理", categories: ["地理"] },
     ],
     seasons: ["march", "september"], yearRange: { start: 2026, end: 2026 },
-  },
-  "general3": {
+},
+"general3": {
     code: "general3", nameFull: "第三級総合無線通信士試験", urlSlug: "general3", level: "specialist",
     sessions: [
-      { session: "kiso", urlSlug: "kiso", expectedQuestions: 25, label: "無線工学の基礎", categories: ["無線工学の基礎"] },
-      { session: "kogaku", urlSlug: "kogaku", expectedQuestions: 25, label: "無線工学", categories: ["無線工学"] },
-      { session: "houki", urlSlug: "houki", expectedQuestions: 20, label: "法規", categories: ["法規"] },
+        { session: "kiso", urlSlug: "kiso", expectedQuestions: 25, label: "無線工学の基礎", categories: ["無線工学の基礎"] },
+        { session: "kogaku", urlSlug: "kogaku", expectedQuestions: 25, label: "無線工学", categories: ["無線工学"] },
+        { session: "houki", urlSlug: "houki", expectedQuestions: 20, label: "法規", categories: ["法規"] },
     ],
     seasons: ["march", "september"], yearRange: { start: 2026, end: 2026 },
-  },
-  "maritime3": {
+},
+"maritime3": {
     code: "maritime3", nameFull: "第三級海上無線通信士試験", urlSlug: "maritime3", level: "specialist",
     sessions: [
-      { session: "kogaku", urlSlug: "kogaku", expectedQuestions: 15, label: "無線工学", categories: ["無線工学"] },
-      { session: "houki", urlSlug: "houki", expectedQuestions: 20, label: "法規", categories: ["法規"] },
+        { session: "kogaku", urlSlug: "kogaku", expectedQuestions: 15, label: "無線工学", categories: ["無線工学"] },
+        { session: "houki", urlSlug: "houki", expectedQuestions: 20, label: "法規", categories: ["法規"] },
     ],
     seasons: ["march", "september"], yearRange: { start: 2026, end: 2026 },
-  },
-  "land-special2": {
+},
+"land-special2": {
     code: "land-special2", nameFull: "第二級陸上特殊無線技士試験", urlSlug: "land-special2", level: "specialist",
     sessions: [
-      { session: "houki", urlSlug: "houki", expectedQuestions: 12, label: "法規", categories: ["法規"] },
-      { session: "kogaku", urlSlug: "kogaku", expectedQuestions: 12, label: "無線工学", categories: ["無線工学"] },
+        { session: "houki", urlSlug: "houki", expectedQuestions: 12, label: "法規", categories: ["法規"] },
+        { session: "kogaku", urlSlug: "kogaku", expectedQuestions: 12, label: "無線工学", categories: ["無線工学"] },
     ],
     seasons: ["october", "february"], yearRange: { start: 2021, end: 2022 },
-  },
-  "land-special3": {
+},
+"land-special3": {
     code: "land-special3", nameFull: "第三級陸上特殊無線技士試験", urlSlug: "land-special3", level: "specialist",
     sessions: [
-      { session: "houki", urlSlug: "houki", expectedQuestions: 12, label: "法規", categories: ["法規"] },
-      { session: "kogaku", urlSlug: "kogaku", expectedQuestions: 12, label: "無線工学", categories: ["無線工学"] },
+        { session: "houki", urlSlug: "houki", expectedQuestions: 12, label: "法規", categories: ["法規"] },
+        { session: "kogaku", urlSlug: "kogaku", expectedQuestions: 12, label: "無線工学", categories: ["無線工学"] },
     ],
     seasons: ["october", "february"], yearRange: { start: 2021, end: 2022 },
-  },
-  "riku-tech1": {
+},
+"riku-tech1": {
     code: "riku-tech1", nameFull: "第一級陸上無線技術士試験", urlSlug: "riku-tech1", level: "specialist",
     sessions: [
-      { session: "kiso", urlSlug: "kiso", expectedQuestions: 25, label: "無線工学の基礎", categories: ["無線工学の基礎"] },
-      { session: "kogaku-a", urlSlug: "kogaku-a", expectedQuestions: 25, label: "無線工学A", categories: ["無線工学A"] },
-      { session: "kogaku-b", urlSlug: "kogaku-b", expectedQuestions: 25, label: "無線工学B", categories: ["無線工学B"] },
-      { session: "houki", urlSlug: "houki", expectedQuestions: 20, label: "法規", categories: ["法規"] },
+        { session: "kiso", urlSlug: "kiso", expectedQuestions: 25, label: "無線工学の基礎", categories: ["無線工学の基礎"] },
+        { session: "kogaku-a", urlSlug: "kogaku-a", expectedQuestions: 25, label: "無線工学A", categories: ["無線工学A"] },
+        { session: "kogaku-b", urlSlug: "kogaku-b", expectedQuestions: 25, label: "無線工学B", categories: ["無線工学B"] },
+        { session: "houki", urlSlug: "houki", expectedQuestions: 20, label: "法規", categories: ["法規"] },
     ],
     seasons: ["january", "july"], yearRange: { start: 2026, end: 2026 },
-  },
-  "riku-tech2": {
+},
+"riku-tech2": {
     code: "riku-tech2", nameFull: "第二級陸上無線技術士試験", urlSlug: "riku-tech2", level: "specialist",
     sessions: [
-      { session: "houki", urlSlug: "houki", expectedQuestions: 20, label: "法規", categories: ["法規"] },
-      { session: "kiso", urlSlug: "kiso", expectedQuestions: 25, label: "無線工学の基礎", categories: ["無線工学の基礎"] },
-      { session: "kogaku-a", urlSlug: "kogaku-a", expectedQuestions: 25, label: "無線工学A", categories: ["無線工学A"] },
-      { session: "kogaku-b", urlSlug: "kogaku-b", expectedQuestions: 25, label: "無線工学B", categories: ["無線工学B"] },
+        { session: "houki", urlSlug: "houki", expectedQuestions: 20, label: "法規", categories: ["法規"] },
+        { session: "kiso", urlSlug: "kiso", expectedQuestions: 25, label: "無線工学の基礎", categories: ["無線工学の基礎"] },
+        { session: "kogaku-a", urlSlug: "kogaku-a", expectedQuestions: 25, label: "無線工学A", categories: ["無線工学A"] },
+        { session: "kogaku-b", urlSlug: "kogaku-b", expectedQuestions: 25, label: "無線工学B", categories: ["無線工学B"] },
     ],
     seasons: ["january", "july"], yearRange: { start: 2026, end: 2026 },
-  },
-  "amateur2": {
+},
+"amateur2": {
     code: "amateur2", nameFull: "第二級アマチュア無線技士試験", urlSlug: "amateur2", level: "specialist",
     sessions: [
-      { session: "kogaku", urlSlug: "kogaku", expectedQuestions: 25, label: "無線工学", categories: ["無線工学"] },
-      { session: "houki", urlSlug: "houki", expectedQuestions: 30, label: "法規", categories: ["法規"] },
+        { session: "kogaku", urlSlug: "kogaku", expectedQuestions: 25, label: "無線工学", categories: ["無線工学"] },
+        { session: "houki", urlSlug: "houki", expectedQuestions: 30, label: "法規", categories: ["法規"] },
     ],
     seasons: ["may", "august"], yearRange: { start: 2026, end: 2026 },
-  },
-  "maritime-radar": {
+},
+"maritime-radar": {
     code: "maritime-radar", nameFull: "レーダー級海上特殊無線技士試験", urlSlug: "maritime-radar", level: "specialist",
     sessions: [
-      { session: "houki", urlSlug: "houki", expectedQuestions: 12, label: "法規", categories: ["法規"] },
-      { session: "kogaku", urlSlug: "kogaku", expectedQuestions: 12, label: "無線工学", categories: ["無線工学"] },
+        { session: "houki", urlSlug: "houki", expectedQuestions: 12, label: "法規", categories: ["法規"] },
+        { session: "kogaku", urlSlug: "kogaku", expectedQuestions: 12, label: "無線工学", categories: ["無線工学"] },
     ],
     seasons: ["february", "june"], yearRange: { start: 2026, end: 2026 },
-  },
-  "amateur1": {
+},
+"amateur1": {
     code: "amateur1", nameFull: "第一級アマチュア無線技士試験", urlSlug: "amateur1", level: "specialist",
     sessions: [
-      { session: "kogaku", urlSlug: "kogaku", expectedQuestions: 30, label: "無線工学", categories: ["無線工学"] },
-      { session: "houki", urlSlug: "houki", expectedQuestions: 30, label: "法規", categories: ["法規"] },
+        { session: "kogaku", urlSlug: "kogaku", expectedQuestions: 30, label: "無線工学", categories: ["無線工学"] },
+        { session: "houki", urlSlug: "houki", expectedQuestions: 30, label: "法規", categories: ["法規"] },
     ],
     seasons: ["may", "august"], yearRange: { start: 2026, end: 2026 },
-  },
-  "maritime-special1": {
+},
+"maritime-special1": {
     code: "maritime-special1", nameFull: "第一級海上特殊無線技士試験", urlSlug: "maritime-special1", level: "specialist",
     sessions: [
-      { session: "kogaku", urlSlug: "kogaku", expectedQuestions: 12, label: "無線工学", categories: ["無線工学"] },
-      { session: "houki", urlSlug: "houki", expectedQuestions: 12, label: "法規", categories: ["法規"] },
+        { session: "kogaku", urlSlug: "kogaku", expectedQuestions: 12, label: "無線工学", categories: ["無線工学"] },
+        { session: "houki", urlSlug: "houki", expectedQuestions: 12, label: "法規", categories: ["法規"] },
     ],
     seasons: ["february", "june"], yearRange: { start: 2026, end: 2026 },
-  },
-  "aviation-comm": {
+},
+"aviation-comm": {
     code: "aviation-comm", nameFull: "航空無線通信士試験", urlSlug: "aviation-comm", level: "specialist",
     sessions: [
-      { session: "kogaku", urlSlug: "kogaku", expectedQuestions: 14, label: "無線工学", categories: ["無線工学"] },
-      { session: "houki", urlSlug: "houki", expectedQuestions: 20, label: "法規", categories: ["法規"] },
+        { session: "kogaku", urlSlug: "kogaku", expectedQuestions: 14, label: "無線工学", categories: ["無線工学"] },
+        { session: "houki", urlSlug: "houki", expectedQuestions: 20, label: "法規", categories: ["法規"] },
     ],
     seasons: ["february", "august"], yearRange: { start: 2026, end: 2026 },
-  },
-  "maritime4": {
+},
+"maritime4": {
     code: "maritime4", nameFull: "第四級海上無線通信士試験", urlSlug: "maritime4", level: "specialist",
     sessions: [
-      { session: "kogaku", urlSlug: "kogaku", expectedQuestions: 18, label: "無線工学", categories: ["無線工学"] },
-      { session: "houki", urlSlug: "houki", expectedQuestions: 20, label: "法規", categories: ["法規"] },
+        { session: "kogaku", urlSlug: "kogaku", expectedQuestions: 18, label: "無線工学", categories: ["無線工学"] },
+        { session: "houki", urlSlug: "houki", expectedQuestions: 20, label: "法規", categories: ["法規"] },
     ],
     seasons: ["february", "august"], yearRange: { start: 2026, end: 2026 },
-  },
-  "land-special1": {
+},
+"land-special1": {
     code: "land-special1", nameFull: "第一級陸上特殊無線技士試験", urlSlug: "land-special1", level: "specialist",
     sessions: [
-      { session: "houki", urlSlug: "houki", expectedQuestions: 12, label: "法規（09:30 A版）", categories: ["無線通信の法規"] },
-      { session: "kogaku", urlSlug: "kogaku", expectedQuestions: 24, label: "無線工学（09:30 A版）", categories: ["無線工学"] },
+        { session: "houki", urlSlug: "houki", expectedQuestions: 12, label: "法規（09:30 A版）", categories: ["無線通信の法規"] },
+        { session: "kogaku", urlSlug: "kogaku", expectedQuestions: 24, label: "無線工学（09:30 A版）", categories: ["無線工学"] },
     ],
     seasons: ["february", "june"], yearRange: { start: 2026, end: 2026 },
-  },
-  "koku-toku": {
+},
+"koku-toku": {
     code: "koku-toku", nameFull: "航空特殊無線技士試験", urlSlug: "koku-toku", level: "specialist",
     sessions: [
-      { session: "houki", urlSlug: "houki", expectedQuestions: 12, label: "法規", categories: ["無線通信の法規"] },
-      { session: "kogaku", urlSlug: "kogaku", expectedQuestions: 12, label: "無線工学", categories: ["無線工学"] },
+        { session: "houki", urlSlug: "houki", expectedQuestions: 12, label: "法規", categories: ["無線通信の法規"] },
+        { session: "kogaku", urlSlug: "kogaku", expectedQuestions: 12, label: "無線工学", categories: ["無線工学"] },
     ],
     seasons: ["february", "june"], yearRange: { start: 2026, end: 2026 },
-  },
-  "kai-toku2": {
+},
+"kai-toku2": {
     code: "kai-toku2", nameFull: "第二級海上特殊無線技士試験", urlSlug: "kai-toku2", level: "specialist",
     sessions: [
-      { session: "houki", urlSlug: "houki", expectedQuestions: 12, label: "法規", categories: ["法規"] },
-      { session: "kogaku", urlSlug: "kogaku", expectedQuestions: 12, label: "無線工学", categories: ["無線工学"] },
+        { session: "houki", urlSlug: "houki", expectedQuestions: 12, label: "法規", categories: ["法規"] },
+        { session: "kogaku", urlSlug: "kogaku", expectedQuestions: 12, label: "無線工学", categories: ["無線工学"] },
     ],
     seasons: ["february", "october"], yearRange: { start: 2022, end: 2023 },
-  },
-  "kai-toku3": {
+},
+"kai-toku3": {
     code: "kai-toku3", nameFull: "第三級海上特殊無線技士試験", urlSlug: "kai-toku3", level: "specialist",
     sessions: [
-      { session: "houki", urlSlug: "houki", expectedQuestions: 20, label: "法規", categories: ["無線通信の法規"] },
-      { session: "kogaku", urlSlug: "kogaku", expectedQuestions: 10, label: "無線工学", categories: ["無線工学"] },
+        { session: "houki", urlSlug: "houki", expectedQuestions: 20, label: "法規", categories: ["無線通信の法規"] },
+        { session: "kogaku", urlSlug: "kogaku", expectedQuestions: 10, label: "無線工学", categories: ["無線工学"] },
     ],
     seasons: ["february", "october"], yearRange: { start: 2022, end: 2023 },
-  },
-  riyoshi: {
+},
+riyoshi: {
     code: "riyoshi", nameFull: "理容師国家試験", urlSlug: "riyoshi", level: "basic",
-    sessions: [{ session: "gakka", urlSlug: "gakka", expectedQuestions: 55, label: "筆記", categories: ["関係法規・制度","運営管理","公衆衛生・環境衛生","感染症","衛生管理技術","人体の構造及び機能","皮膚科学","香粧品化学","文化論及び理容技術理論"] }],
+    sessions: [{ session: "gakka", urlSlug: "gakka", expectedQuestions: 55, label: "筆記", categories: ["関係法規・制度", "運営管理", "公衆衛生・環境衛生", "感染症", "衛生管理技術", "人体の構造及び機能", "皮膚科学", "香粧品化学", "文化論及び理容技術理論"] }],
     seasons: ["first", "second"], yearRange: { start: 2026, end: 2026 },
-  },
+},
+"kenchiku-setsubishi": {
+    code: "kenchiku-setsubishi", nameFull: "建築設備士試験（第一次試験）", urlSlug: "kenchiku-setsubishi", level: "specialist",
+    sessions: [
+        { session: "am1", urlSlug: "am1", expectedQuestions: 27, label: "建築一般知識", categories: ["建築一般知識"] },
+        { session: "am2", urlSlug: "am2", expectedQuestions: 18, label: "建築法規", categories: ["建築法規"] },
+        { session: "pm", urlSlug: "pm", expectedQuestions: 60, label: "建築設備", categories: ["建築設備"] },
+    ],
+    seasons: ["annual"], yearRange: { start: 2025, end: 2026 },
+},
+chizai2: {
+    code: "chizai2", nameFull: "知的財産管理技能検定2級", urlSlug: "chizai2", level: "advanced",
+    sessions: [
+        { session: "gakka", urlSlug: "gakka", expectedQuestions: 40, label: "学科", categories: ["知的財産管理技能検定2級"] },
+        { session: "practical", urlSlug: "practical", expectedQuestions: 40, label: "実技", categories: ["知的財産管理技能検定2級"] },
+    ],
+    seasons: ["spring", "july"], yearRange: { start: 2026, end: 2026 },
+},
+kisho: { code: "kisho", nameFull: "気象予報士試験", urlSlug: "kisho", level: "specialist",
+    sessions: [{ session: "ippan", urlSlug: "ippan", expectedQuestions: 15, label: "学科一般", categories: ["学科一般"] },
+        { session: "senmon", urlSlug: "senmon", expectedQuestions: 15, label: "学科専門", categories: ["学科専門"] }],
+    seasons: ["first", "second"], yearRange: { start: 2026, end: 2026 } },
+"jidosha-1-small-written": {
+    code: "jidosha-1-small-written", nameFull: "一級小型自動車整備士（筆記）", urlSlug: "jidosha-1-small-written", level: "specialist",
+    sessions: [{ session: "gakka", urlSlug: "gakka", expectedQuestions: 50, label: "学科", categories: ["一級小型自動車（筆記）"] }],
+    seasons: ["first", "second"], yearRange: { start: 2025, end: 2026 },
+},
+"jidosha-2-gasoline": {
+    code: "jidosha-2-gasoline", nameFull: "二級ガソリン自動車整備士", urlSlug: "jidosha-2-gasoline", level: "specialist",
+    sessions: [{ session: "gakka", urlSlug: "gakka", expectedQuestions: 40, label: "学科", categories: ["二級ガソリン自動車"] }],
+    seasons: ["first", "second"], yearRange: { start: 2025, end: 2026 },
+},
+"jidosha-2-diesel": {
+    code: "jidosha-2-diesel", nameFull: "二級ジーゼル自動車整備士", urlSlug: "jidosha-2-diesel", level: "specialist",
+    sessions: [{ session: "gakka", urlSlug: "gakka", expectedQuestions: 40, label: "学科", categories: ["二級ジーゼル自動車"] }],
+    seasons: ["first", "second"], yearRange: { start: 2025, end: 2026 },
+},
+"jidosha-2-chassis": {
+    code: "jidosha-2-chassis", nameFull: "二級自動車シャシ整備士", urlSlug: "jidosha-2-chassis", level: "specialist",
+    sessions: [{ session: "gakka", urlSlug: "gakka", expectedQuestions: 30, label: "学科", categories: ["二級自動車シャシ"] }],
+    seasons: ["first", "second"], yearRange: { start: 2025, end: 2026 },
+},
+"jidosha-2-motorcycle": {
+    code: "jidosha-2-motorcycle", nameFull: "二級二輪自動車整備士", urlSlug: "jidosha-2-motorcycle", level: "specialist",
+    sessions: [{ session: "gakka", urlSlug: "gakka", expectedQuestions: 40, label: "学科", categories: ["二級２輪自動車"] }],
+    seasons: ["first", "second"], yearRange: { start: 2025, end: 2026 },
+},
+"jidosha-3-chassis": {
+    code: "jidosha-3-chassis", nameFull: "三級自動車シャシ整備士", urlSlug: "jidosha-3-chassis", level: "specialist",
+    sessions: [{ session: "gakka", urlSlug: "gakka", expectedQuestions: 30, label: "学科", categories: ["三級自動車シャシ"] }],
+    seasons: ["first", "second"], yearRange: { start: 2025, end: 2026 },
+},
+"jidosha-3-gasoline": {
+    code: "jidosha-3-gasoline", nameFull: "三級自動車ガソリン・エンジン整備士", urlSlug: "jidosha-3-gasoline", level: "specialist",
+    sessions: [{ session: "gakka", urlSlug: "gakka", expectedQuestions: 30, label: "学科", categories: ["三級自動車ガソリン・エンジン"] }],
+    seasons: ["first", "second"], yearRange: { start: 2025, end: 2026 },
+},
+"jidosha-3-diesel": {
+    code: "jidosha-3-diesel", nameFull: "三級自動車ジーゼル・エンジン整備士", urlSlug: "jidosha-3-diesel", level: "specialist",
+    sessions: [{ session: "gakka", urlSlug: "gakka", expectedQuestions: 30, label: "学科", categories: ["三級自動車ジーゼル・エンジン"] }],
+    seasons: ["first", "second"], yearRange: { start: 2025, end: 2026 },
+},
+"jidosha-3-motorcycle": {
+    code: "jidosha-3-motorcycle", nameFull: "三級二輪自動車整備士", urlSlug: "jidosha-3-motorcycle", level: "specialist",
+    sessions: [{ session: "gakka", urlSlug: "gakka", expectedQuestions: 30, label: "学科", categories: ["三級２輪自動車"] }],
+    seasons: ["first", "second"], yearRange: { start: 2025, end: 2026 },
+},
+"jidosha-body": {
+    code: "jidosha-body", nameFull: "自動車車体整備士", urlSlug: "jidosha-body", level: "specialist",
+    sessions: [{ session: "gakka", urlSlug: "gakka", expectedQuestions: 40, label: "学科", categories: ["自動車車体"] }],
+    seasons: ["first", "second"], yearRange: { start: 2025, end: 2026 },
+},
+"jidosha-electrical": {
+    code: "jidosha-electrical", nameFull: "自動車電気装置整備士", urlSlug: "jidosha-electrical", level: "specialist",
+    sessions: [{ session: "gakka", urlSlug: "gakka", expectedQuestions: 40, label: "学科", categories: ["自動車電気装置"] }],
+    seasons: ["first", "second"], yearRange: { start: 2025, end: 2026 },
+},
+"biyoshi": { code: "biyoshi", nameFull: "美容師", urlSlug: "biyoshi", level: "basic", sessions: [{ session: "gakka", urlSlug: "gakka", expectedQuestions: 55, label: "筆記", categories: ["美容師筆記"] }], seasons: ["first", "second"], yearRange: { start: 2026, end: 2026 } },
+"kikenbutsu-otsu1": { code: "kikenbutsu-otsu1", nameFull: "危険物取扱者 乙種第1類", urlSlug: "kikenbutsu-otsu1", level: "basic", sessions: [{ session: "gakka", urlSlug: "gakka", expectedQuestions: 10, label: "筆記", categories: ["危険物の性質・火災予防・消火"] }], seasons: ["published"], yearRange: { start: 2026, end: 2026 } },
+"kikenbutsu-otsu2": { code: "kikenbutsu-otsu2", nameFull: "危険物取扱者 乙種第2類", urlSlug: "kikenbutsu-otsu2", level: "basic", sessions: [{ session: "gakka", urlSlug: "gakka", expectedQuestions: 10, label: "筆記", categories: ["危険物の性質並びにその火災予防及び消火の方法"] }], seasons: ["published"], yearRange: { start: 2026, end: 2026 } },
+"kikenbutsu-otsu6": { code: "kikenbutsu-otsu6", nameFull: "危険物取扱者 乙種第6類", urlSlug: "kikenbutsu-otsu6", level: "basic", sessions: [{ session: "gakka", urlSlug: "gakka", expectedQuestions: 10, label: "筆記", categories: ["危険物の性質・火災予防・消火"] }], seasons: ["published"], yearRange: { start: 2026, end: 2026 } },
+jokaso: {
+    code: "jokaso", nameFull: "浄化槽管理士試験", urlSlug: "jokaso", level: "basic",
+    sessions: [
+        { session: "am", urlSlug: "am", expectedQuestions: 40, label: "午前", categories: ["浄化槽概論", "浄化槽行政", "浄化槽の構造及び機能", "浄化槽工事概論"] },
+        { session: "pm", urlSlug: "pm", expectedQuestions: 40, label: "午後", categories: ["浄化槽の点検、調整及び修理", "水質管理", "浄化槽の清掃概論"] },
+    ], seasons: ["annual"], yearRange: { start: 2025, end: 2026 },
+},
+"iji-shuzen": {
+    code: "iji-shuzen", nameFull: "マンション維持修繕技術者", urlSlug: "iji-shuzen", level: "advanced",
+    sessions: [{ session: "gakka", urlSlug: "gakka", expectedQuestions: 47, label: "択一式・記述式", categories: ["維持修繕技術", "関連法令", "記述式"] }],
+    seasons: ["annual"], yearRange: { start: 2024, end: 2025 },
+},
+denki1: {
+    code: "denki1", nameFull: "1級電気工事施工管理技術検定（第一次検定）", urlSlug: "sekou-1denki", level: "advanced",
+    sessions: [{ session: "gakka", urlSlug: "gakka", expectedQuestions: 89, label: "第一次検定",
+            categories: ["電気工学等（必須）", "電気工学等（選択）", "電気設備（選択）", "関連分野（選択）", "施工管理法（必須）", "施工管理法・応用能力（必須）", "施工管理法（選択）", "法規（選択）"],
+        }],
+    seasons: ["annual"], yearRange: { start: 2025, end: 2026 },
+},
+shuwa: {
+    code: "shuwa", nameFull: "手話通訳士（学科試験）", urlSlug: "shuwa", level: "specialist",
+    sessions: [
+        { session: "mondai-a", urlSlug: "mondai-a", expectedQuestions: 20, label: "障害者福祉の基礎知識", categories: ["障害者福祉の基礎知識"] },
+        { session: "mondai-b", urlSlug: "mondai-b", expectedQuestions: 20, label: "聴覚障害者に関する基礎知識", categories: ["聴覚障害者に関する基礎知識"] },
+        { session: "mondai-c", urlSlug: "mondai-c", expectedQuestions: 20, label: "手話通訳のあり方", categories: ["手話通訳のあり方"] },
+        { session: "mondai-d", urlSlug: "mondai-d", expectedQuestions: 20, label: "国語", categories: ["国語"] },
+    ],
+    seasons: ["annual"], yearRange: { start: 2025, end: 2026 },
+},
+"reform-mgr": { code: "reform-mgr", nameFull: "マンションリフォームマネジャー学科試験", urlSlug: "reform-mgr", level: "specialist", sessions: [{ session: "gakka", urlSlug: "gakka", expectedQuestions: 50, label: "学科（未公開）", categories: ["??"] }], seasons: ["annual"], yearRange: { start: 2025, end: 2026 } },
+"shohi-sodan": { code: "shohi-sodan", nameFull: "消費生活相談員資格試験（マークシート部分）", urlSlug: "shohi-sodan", level: "specialist", sessions: [{ session: "gakka", urlSlug: "gakka", expectedQuestions: 160, label: "マークシート式試験（未公開）", categories: ["??"] }], seasons: ["annual"], yearRange: { start: 2024, end: 2025 } },
+"jken-katsuyo1": {
+    code: "jken-katsuyo1", nameFull: "情報検定（J検）情報活用1級", urlSlug: "jken-katsuyo1", level: "basic",
+    sessions: [{ session: "gakka", urlSlug: "gakka", expectedQuestions: 43, label: "情報活用1級", categories: ["情報と情報の利用", "パソコンを利用したシステム", "ネットワークの利用", "情報ネットワーク社会への対応", "情報セキュリティ", "表計算ソフト等を利用した問題解決"] }],
+    seasons: ["first", "second"], yearRange: { start: 2025, end: 2026 },
+},
+"jken-katsuyo2": {
+    code: "jken-katsuyo2", nameFull: "情報検定（J検）情報活用2級", urlSlug: "jken-katsuyo2", level: "basic",
+    sessions: [{ session: "gakka", urlSlug: "gakka", expectedQuestions: 50, label: "情報活用2級", categories: ["経営戦略とシステム戦略", "プロジェクトマネジメント", "データ構造と情報表現", "問題解決処理手順", "パソコンの基礎", "インターネットの基礎", "アプリケーションソフトの利用"] }],
+    seasons: ["first", "second"], yearRange: { start: 2025, end: 2026 },
+},
+"jken-katsuyo3": {
+    code: "jken-katsuyo3", nameFull: "情報検定（J検）情報活用3級", urlSlug: "jken-katsuyo3", level: "basic",
+    sessions: [{ session: "gakka", urlSlug: "gakka", expectedQuestions: 46, label: "情報活用3級", categories: ["情報表現と処理手順", "パソコンの基礎", "インターネットの基礎", "インターネットの利用", "情報機器の基本操作", "情報社会とコンピュータ", "情報モラル"] }],
+    seasons: ["first", "second"], yearRange: { start: 2025, end: 2026 },
+},
+"jken-system": {
+    code: "jken-system", nameFull: "情報検定（J検）情報システム試験", urlSlug: "jken-system", level: "basic",
+    sessions: [
+        { session: "jken-basic", urlSlug: "basic", expectedQuestions: 41, label: "基本スキル", categories: ["基本スキル"] },
+        { session: "jken-programming", urlSlug: "programming", expectedQuestions: 32, label: "プログラミングスキル", categories: ["プログラミングスキル"] },
+        { session: "jken-design", urlSlug: "design", expectedQuestions: 40, label: "システムデザインスキル", categories: ["システムデザインスキル"] },
+    ],
+    seasons: ["late", "early"], yearRange: { start: 2025, end: 2026 },
+},
+shinrishi: {
+    code: "shinrishi", nameFull: "公認心理師試験", urlSlug: "shinrishi", level: "basic",
+    sessions: [
+        { session: "am", urlSlug: "am", expectedQuestions: 77, label: "午前", categories: ["公認心理師"] },
+        { session: "pm", urlSlug: "pm", expectedQuestions: 77, label: "午後", categories: ["公認心理師"] },
+    ],
+    seasons: ["annual"], yearRange: { start: 2025, end: 2026 },
+},
+"khk-reito-3": {
+    code: "khk-reito-3", nameFull: "高圧ガス製造保安責任者試験（第三種冷凍機械）", urlSlug: "khk-reito-3", level: "advanced",
+    sessions: [
+        { session: "houki", urlSlug: "houki", expectedQuestions: 20, label: "法令", categories: ["法令"] },
+        { session: "hoan", urlSlug: "hoan", expectedQuestions: 15, label: "保安管理技術", categories: ["保安管理技術"] },
+    ],
+    seasons: ["annual"], yearRange: { start: 2024, end: 2025 },
+},
+"khk-reito-2": {
+    code: "khk-reito-2", nameFull: "高圧ガス製造保安責任者試験（第二種冷凍機械）", urlSlug: "khk-reito-2", level: "advanced",
+    sessions: [
+        { session: "houki", urlSlug: "houki", expectedQuestions: 20, label: "法令", categories: ["法令"] },
+        { session: "hoan", urlSlug: "hoan", expectedQuestions: 10, label: "保安管理技術", categories: ["保安管理技術"] },
+        { session: "kogaku", urlSlug: "kogaku", expectedQuestions: 10, label: "学識", categories: ["学識"] },
+    ],
+    seasons: ["annual"], yearRange: { start: 2024, end: 2025 },
+},
+"khk-reito-1": {
+    code: "khk-reito-1", nameFull: "高圧ガス製造保安責任者試験（第一種冷凍機械）", urlSlug: "khk-reito-1", level: "advanced",
+    sessions: [
+        { session: "houki", urlSlug: "houki", expectedQuestions: 20, label: "法令", categories: ["法令"] },
+        { session: "hoan", urlSlug: "hoan", expectedQuestions: 15, label: "保安管理技術", categories: ["保安管理技術"] },
+        { session: "kogaku", urlSlug: "kogaku", expectedQuestions: 5, label: "学識", categories: ["学識"] },
+    ],
+    seasons: ["annual"], yearRange: { start: 2024, end: 2025 },
+},
+"sekou-kenchiku2": {
+    code: "sekou-kenchiku2",
+    nameFull: "2級建築施工管理技術検定（第一次検定）",
+    urlSlug: "sekou-kenchiku2",
+    level: "basic",
+    sessions: [{ session: "gakka", urlSlug: "gakka", expectedQuestions: 50,
+            label: "第一次検定",
+            categories: ["建築学等（必須）", "建築学等（選択）", "共通（必須）", "施工（選択）", "施工管理法（必須）", "施工管理法・能力問題（必須）", "法規（選択）"],
+        }],
+    seasons: ["early", "late"],
+    yearRange: { start: 2025, end: 2026 },
+},
+denki2: {
+    code: "denki2", nameFull: "2級電気工事施工管理技術検定（第一次検定）", urlSlug: "sekou-2denki", level: "basic",
+    sessions: [{ session: "gakka", urlSlug: "gakka", expectedQuestions: 62, label: "第一次検定",
+            categories: ["電気工学等（必須）", "電気工学等（選択）", "電気設備（選択）", "関連分野（選択）", "施工管理法（必須）", "施工管理法・能力（必須）", "施工管理法（選択）", "法規（選択）"],
+        }],
+    seasons: ["early", "late"], yearRange: { start: 2025, end: 2026 },
+},
+kankoji1: {
+    code: "kankoji1", nameFull: "1級管工事施工管理技術検定（第一次検定）", urlSlug: "kankoji1", level: "advanced",
+    sessions: [
+        { session: "mondai-a", urlSlug: "mondai-a", expectedQuestions: 44, label: "第一次検定 問題A", categories: ["一般基礎（必須）", "空調・衛生設備（選択）", "設備機器・材料（必須）"] },
+        { session: "mondai-b", urlSlug: "mondai-b", expectedQuestions: 29, label: "第一次検定 問題B", categories: ["施工管理法（必須）", "法規（選択）", "施工管理法・応用能力（必須）"] },
+    ],
+    seasons: ["september"], yearRange: { start: 2026, end: 2026 },
+},
+"yamaguchi-chori": {
+    code: "yamaguchi-chori", nameFull: "調理師（山口県）", urlSlug: "yamaguchi-chori", level: "basic",
+    sessions: [{ session: "gakka", urlSlug: "gakka", expectedQuestions: 60, label: "学科", categories: ["公衆衛生学", "食品学", "栄養学", "食品衛生学", "調理理論", "食文化概論"] }],
+    seasons: ["annual"], yearRange: { start: 2025, end: 2026 },
+},
+"yamaguchi-seika": {
+    code: "yamaguchi-seika", nameFull: "製菓衛生師（山口県）", urlSlug: "yamaguchi-seika", level: "basic",
+    sessions: [
+        { session: "gakka", urlSlug: "gakka", expectedQuestions: 57, label: "学科共通", categories: ["衛生法規", "公衆衛生学", "食品学", "食品衛生学", "栄養学", "製菓理論"] },
+        { session: "wagashi", urlSlug: "wagashi", expectedQuestions: 3, label: "製菓実技・和菓子（選択）", categories: ["製菓実技・和菓子"] },
+        { session: "yogashi", urlSlug: "yogashi", expectedQuestions: 3, label: "製菓実技・洋菓子（選択）", categories: ["製菓実技・洋菓子"] },
+        { session: "seipan", urlSlug: "seipan", expectedQuestions: 3, label: "製菓実技・製パン（選択）", categories: ["製菓実技・製パン"] },
+    ],
+    seasons: ["annual"], yearRange: { start: 2025, end: 2026 },
+},
+"yamaguchi-fugu": {
+    code: "yamaguchi-fugu", nameFull: "ふぐ処理師（山口県・学科）", urlSlug: "yamaguchi-fugu", level: "basic",
+    sessions: [{ session: "gakka", urlSlug: "gakka", expectedQuestions: 100, label: "学科", categories: ["衛生法規", "食品衛生学", "ふぐに関する知識"] }],
+    seasons: ["annual"], yearRange: { start: 2025, end: 2026 },
+},
+"keiryoshi": {
+    "code": "keiryoshi",
+    "nameFull": "一般計量士国家試験",
+    "urlSlug": "keiryoshi",
+    "level": "specialist",
+    "sessions": [
+        {
+            "session": "measurement-basic",
+            "urlSlug": "measurement-basic",
+            "expectedQuestions": 25,
+            "label": "計量に関する基礎知識",
+            "categories": [
+                "一基"
+            ]
+        },
+        {
+            "session": "measurement-mass",
+            "urlSlug": "measurement-mass",
+            "expectedQuestions": 25,
+            "label": "計量器概論及び質量の計量",
+            "categories": [
+                "計質"
+            ]
+        },
+        {
+            "session": "houki",
+            "urlSlug": "houki",
+            "expectedQuestions": 25,
+            "label": "計量関係法規",
+            "categories": [
+                "法規"
+            ]
+        },
+        {
+            "session": "measurement-management",
+            "urlSlug": "measurement-management",
+            "expectedQuestions": 25,
+            "label": "計量管理概論",
+            "categories": [
+                "管理"
+            ]
+        }
+    ],
+    "seasons": [
+        "annual"
+    ],
+    "yearRange": {
+        "start": 2024,
+        "end": 2025
+    }
+},
+"keiryoshi-nodo": {
+    "code": "keiryoshi-nodo",
+    "nameFull": "環境計量士（濃度関係）国家試験",
+    "urlSlug": "keiryoshi-nodo",
+    "level": "specialist",
+    "sessions": [
+        {
+            "session": "measurement-chemistry",
+            "urlSlug": "measurement-chemistry",
+            "expectedQuestions": 25,
+            "label": "環境計量に関する基礎知識（化学）",
+            "categories": [
+                "環化"
+            ]
+        },
+        {
+            "session": "measurement-concentration",
+            "urlSlug": "measurement-concentration",
+            "expectedQuestions": 25,
+            "label": "化学分析概論及び濃度の計量",
+            "categories": [
+                "環濃"
+            ]
+        },
+        {
+            "session": "houki",
+            "urlSlug": "houki",
+            "expectedQuestions": 25,
+            "label": "計量関係法規",
+            "categories": [
+                "法規"
+            ]
+        },
+        {
+            "session": "measurement-management",
+            "urlSlug": "measurement-management",
+            "expectedQuestions": 25,
+            "label": "計量管理概論",
+            "categories": [
+                "管理"
+            ]
+        }
+    ],
+    "seasons": [
+        "annual"
+    ],
+    "yearRange": {
+        "start": 2024,
+        "end": 2025
+    }
+},
+"keiryoshi-soon": {
+    "code": "keiryoshi-soon",
+    "nameFull": "環境計量士（騒音・振動関係）国家試験",
+    "urlSlug": "keiryoshi-soon",
+    "level": "specialist",
+    "sessions": [
+        {
+            "session": "measurement-physics",
+            "urlSlug": "measurement-physics",
+            "expectedQuestions": 25,
+            "label": "環境計量に関する基礎知識（物理）",
+            "categories": [
+                "環物"
+            ]
+        },
+        {
+            "session": "measurement-sound",
+            "urlSlug": "measurement-sound",
+            "expectedQuestions": 25,
+            "label": "音響・振動概論並びに音圧レベル及び振動加速度レベルの計量",
+            "categories": [
+                "環音"
+            ]
+        },
+        {
+            "session": "houki",
+            "urlSlug": "houki",
+            "expectedQuestions": 25,
+            "label": "計量関係法規",
+            "categories": [
+                "法規"
+            ]
+        },
+        {
+            "session": "measurement-management",
+            "urlSlug": "measurement-management",
+            "expectedQuestions": 25,
+            "label": "計量管理概論",
+            "categories": [
+                "管理"
+            ]
+        }
+    ],
+    "seasons": [
+        "annual"
+    ],
+    "yearRange": {
+        "start": 2024,
+        "end": 2025
+    }
+},
+kenki2: {
+    code: "kenki2", nameFull: "2級建設機械施工管理技術検定（第一次検定）", urlSlug: "kenki2", level: "specialist",
+    sessions: [
+        { session: "kyotsu", urlSlug: "kyotsu", expectedQuestions: 32, label: "共通科目", categories: ["土木一般", "施工管理", "建設機械一般", "法規"] },
+        { session: "kenki-type1", urlSlug: "kenki-type1", expectedQuestions: 20, label: "第1種（ブルドーザ等）", categories: ["第1種（ブルドーザ等）"] },
+        { session: "kenki-type2", urlSlug: "kenki-type2", expectedQuestions: 20, label: "第2種（油圧ショベル等）", categories: ["第2種（油圧ショベル等）"] },
+        { session: "kenki-type3", urlSlug: "kenki-type3", expectedQuestions: 20, label: "第3種（モータグレーダ）", categories: ["第3種（モータグレーダ）"] },
+        { session: "kenki-type4", urlSlug: "kenki-type4", expectedQuestions: 20, label: "第4種（締固め機械）", categories: ["第4種（締固め機械）"] },
+        { session: "kenki-type5", urlSlug: "kenki-type5", expectedQuestions: 20, label: "第5種（舗装機械）", categories: ["第5種（舗装機械）"] },
+        { session: "kenki-type6", urlSlug: "kenki-type6", expectedQuestions: 20, label: "第6種（基礎工事機械）", categories: ["第6種（基礎工事機械）"] },
+    ],
+    seasons: ["annual"], yearRange: { start: 2025, end: 2026 },
+},
+kenki1: {
+    code: "kenki1", nameFull: "1級建設機械施工管理技術検定（第一次検定）", urlSlug: "kenki1", level: "specialist",
+    sessions: [{ session: "gakka", urlSlug: "gakka", expectedQuestions: 56, label: "第一次検定", categories: ["土木一般", "施工管理", "建設機械", "法規"] }],
+    seasons: ["annual"], yearRange: { start: 2025, end: 2026 },
+},
+gyosei: {
+    code: "gyosei", nameFull: "行政書士試験", urlSlug: "gyosei", level: "advanced",
+    sessions: [{ session: "gakka", urlSlug: "gakka", expectedQuestions: 56, label: "択一式・多肢選択式・記述式（公式公開分）", categories: ["基礎法学", "憲法", "行政法", "民法", "商法・会社法", "基礎知識"] }],
+    seasons: ["annual"], yearRange: { start: 2024, end: 2025 },
+},
+shihoshoshi: {
+    code: "shihoshoshi", nameFull: "司法書士試験（午前・午後の多肢択一式）", urlSlug: "shihoshoshi", level: "specialist",
+    sessions: [
+        { session: "am", urlSlug: "am", expectedQuestions: 35, label: "午前（多肢択一式）", categories: ["憲法", "民法", "刑法", "会社法・商法"] },
+        { session: "pm", urlSlug: "pm", expectedQuestions: 35, label: "午後（多肢択一式）", categories: ["民事訴訟法・民事執行法・民事保全法", "司法書士法", "供託法", "不動産登記法", "商業登記法"] },
+    ], seasons: ["annual"], yearRange: { start: 2025, end: 2026 },
+}
 };
 
 /** IPA-only list retained for fetch/import tooling and legacy IPA invariants. */
-export const ALL_EXAM_CODES = Object.keys(EXAM_CONFIGS).filter(
-  (code): code is IpaExamCode => !(["fp1", "fp2", "fp3", "denken3", "denken2", "denken1", "denko2", "denko1", "takken", "civil2", "civil1", "kankoji2", "zoen2", "zoen1", "tsushin2", "tsushin1", "kaigo", "shakai", "seishin", "tohan", "kanri", "eisei1", "eisei2", "soukan", "hoikushi", "mankan", "kashikin", "sharoushi", "kangoshi", "yakuzaishi", "ahaki-anma", "ahaki-hari-kyu", "hokenshi", "josanshi", "rigaku-ryohoshi", "sagyo-ryohoshi", "shino-kunrenshi", "rinsho-kensagishi", "shinryo-hoshasengishi", "rinsho-kogishi", "riyoshi", "chusho-kigyo-shindanshi", "chosashi", "shika-ishi", "judo-seifukushi", "riku-toku-kokunai", "kai-toku2", "kai-toku3", "koku-toku", "land-special1", "riku-tech1", "maritime4", "aviation-comm", "amateur1", "maritime-special1", "riku-tech2", "amateur2", "maritime-radar", "maritime3", "maritime2", "maritime1", "general3", "general2", "general1", "land-special2", "land-special3", "kanteishi", "kaikeishi", "gas-kou", "gas-otsu", "gas-hei"] as string[]).includes(code),
-);
+export const ALL_EXAM_CODES: IpaExamCode[] = ["ip", "sg", "fe", "ap", "st", "sa", "pm", "nw", "db", "es", "sc", "sm", "au"];
 
 /** Every exam playable in the application, including external qualifications. */
 export const ALL_QUIZ_EXAM_CODES = (Object.keys(EXAM_CONFIGS) as ExamCode[]).filter(isExamPublished);
@@ -1192,6 +1599,7 @@ export function isPdfDocumentUrl(url: string | undefined): boolean {
 
 /** Honest user-facing label for an IPA source link after fallback handling. */
 export function ipaSourceLabel(url: string | undefined, kind: "question" | "answer"): string {
+  if (url?.startsWith("https://www.jmbsc.or.jp/jp/examination/z/")) return "気象業務支援センター公式問題・解答例（ZIP）";
   if (!isPdfDocumentUrl(url)) {
     if (url?.startsWith("https://www.kinzai.or.jp/")) return kind === "question" ? "主催団体の公式問題" : "主催団体の模範解答";
     if (url) {
@@ -1249,6 +1657,11 @@ export function buildPdfUrl(
   sessionCfg: SessionConfig,
   type: "qs" | "ans",
 ): string {
+  if (cfg.code === "denki1") {
+    return season === "annual" && sessionCfg.session === "gakka" && (year === 2025 || year === 2026)
+      ? `https://www.fcip-shiken.jp/pdf/r0${year - 2018}_1dg_mondai.pdf`
+      : "";
+  }
   // CBT exams have a different URL structure — return empty string as a safe fallback
   if (season === "cbt") return "";
   const rr = String(year - 2018).padStart(2, "0");

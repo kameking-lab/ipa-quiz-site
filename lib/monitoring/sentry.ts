@@ -9,6 +9,8 @@
 // 使い方:
 //   try { ... } catch (err) { captureException(err, { route: "/api/foo" }); }
 
+import { sanitizeTelemetryEvent } from "./privacy";
+
 interface SentryDsn {
   publicKey: string;
   host: string;
@@ -43,7 +45,7 @@ export interface CaptureContext {
 
 export async function captureException(err: unknown, ctx: CaptureContext = {}): Promise<void> {
   // 必ず console には残す（DSN 有無に関係なく）
-  console.error("[capture]", ctx.route ?? "(no-route)", err);
+  console.error("[capture]", ctx.route ?? "(no-route)", "Operation failed");
 
   if (!DSN) return;
 
@@ -80,10 +82,10 @@ export async function captureException(err: unknown, ctx: CaptureContext = {}): 
         "Content-Type": "application/json",
         "X-Sentry-Auth": `Sentry sentry_version=7,sentry_key=${DSN.publicKey},sentry_client=ipa-quiz-site/0.1`,
       },
-      body: JSON.stringify(event),
+      body: JSON.stringify(sanitizeTelemetryEvent(event)),
     });
-  } catch (sendErr) {
-    console.error("[sentry] send failed", sendErr);
+  } catch {
+    console.error("[sentry] send failed");
   }
 }
 

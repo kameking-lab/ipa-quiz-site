@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 import { z } from "zod";
-import { getClientIp } from "@/lib/rate-limit/server";
+import { auth } from "@/lib/auth";
 
 export const runtime = "nodejs";
 
@@ -21,12 +21,8 @@ function rateOk(ip: string): boolean {
 }
 
 const BodySchema = z.object({
-  to: z.string().email().max(254),
-  subject: z.string().min(1).max(200),
-  text: z.string().min(1).max(5000),
-  html: z.string().min(1).max(20000).optional(),
-  type: z.enum(["welcome", "streak-reminder", "weekly-digest", "test"]).default("test"),
-});
+  type: z.literal("test"),
+}).strict();
 
 interface ResendResponse {
   id?: string;
@@ -61,8 +57,16 @@ async function sendViaResend(
 }
 
 export async function POST(req: Request) {
-  const ip = getClientIp(req);
-  if (!rateOk(ip)) {
+  const session = await auth();
+  if (!session?.user?.id || !session.user.email) {
+    return NextResponse.json({ error: "unauthorized" }, { status: 401 });
+  }
+  if (req.headers.get("origin") !== new URL(req.url).origin) {
+    return NextResponse.json({ error: "invalid_origin" }, { status: 403 });
+  }
+  // The authenticated account is the recipient and quota subject. Client IP
+  // rotation cannot turn this notification test into a mail relay.
+  if (!rateOk(session.user.id)) {
     return NextResponse.json(
       { error: "リクエストが多すぎます。少し時間を置いてお試しください。" },
       { status: 429 },
@@ -81,18 +85,20 @@ export async function POST(req: Request) {
     return NextResponse.json({ error: "リクエスト内容が無効です" }, { status: 400 });
   }
 
-  const { to, subject, text, html, type } = parsed.data;
+  const { type } = parsed.data;
+  const to = session.user.email;
+  const subject = "【過去問AI】通知のテスト送信";
+  const text = "このメールは過去問AIの通知設定テストです。";
   const apiKey = process.env.RESEND_API_KEY;
   const from = process.env.RESEND_FROM_EMAIL ?? "noreply@ipa-quiz.example.com";
 
   if (!apiKey) {
-    console.log("[email] mock send", { to, subject, type, preview: text.slice(0, 80) });
     return NextResponse.json({ ok: true, mocked: true, type });
   }
 
-  const result = await sendViaResend(apiKey, from, to, subject, text, html);
+  const result = await sendViaResend(apiKey, from, to, subject, text, undefined);
   if (!result.ok) {
-    console.error("[email] resend failed", result.error);
+    console.error("[email] delivery failed");
     return NextResponse.json(
       { error: "メール送信に失敗しました" },
       { status: 502 },

@@ -1,0 +1,39 @@
+{
+  "status": "FAIL",
+  "completedFlows": 8,
+  "holds": 4,
+  "search": [
+    {
+      "exam": "biyoshi",
+      "status": 200,
+      "total": 106
+    },
+    {
+      "exam": "tsushin2",
+      "status": 200,
+      "total": 129
+    },
+    {
+      "exam": "kikenbutsu-otsu1",
+      "status": 200,
+      "total": 10
+    },
+    {
+      "exam": "kikenbutsu-otsu2",
+      "status": 200,
+      "total": 10
+    },
+    {
+      "exam": "kikenbutsu-otsu6",
+      "status": 200,
+      "total": 10
+    }
+  ],
+  "errors": [
+    {
+      "id": "biyoshi-2026-first-gakka-q44",
+      "error": "Loading chunk app/layout failed.\n(error: http://127.0.0.1:3275/_next/static/chunks/app/layout.js)"
+    }
+  ],
+  "observation": "Intermittent truncated webpack development chunk; production build verification pending. Do not count this run as clean browser acceptance."
+}

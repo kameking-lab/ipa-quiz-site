@@ -1,0 +1,224 @@
+{
+  "schemaVersion": 1,
+  "reviewedAtUtc": "2026-10-11T01:24:39.105Z",
+  "reviewer": "independent hard-question review",
+  "scope": "Four targeted questions only. Original PNGs, all choices, updated official answer index and necessary primary technical references. Not a second review of all 610 explanations.",
+  "publicGo": 0,
+  "draftsEdited": false,
+  "questions": [
+    {
+      "id": "jidosha-2026-first-2-gasoline-q07",
+      "originalSourceVerified": true,
+      "sourceImage": "ocr/jaspa-2026-first-2-gasoline/page-04.png",
+      "officialAnswer": "ウ",
+      "officialAnswerNumber": "3",
+      "status": "pass",
+      "specificCorrections": [
+        {
+          "field": "choiceExplanations.イ",
+          "replacement": "不適切。2葉のロータが2個あり、各ロータが1回転で2区画ずつ気体を運ぶため、装置全体では1回転につき4回の吸入・吐出となる。2回ではない。",
+          "reason": "4回という結論はメーカー一次資料で確認できた。装置全体の回数であることを明確にする。",
+          "required": false
+        },
+        {
+          "field": "officialReferenceUrls",
+          "add": "https://www.taiko-kk.com/jp/product/roots_blower/",
+          "required": true
+        }
+      ],
+      "choiceReview": {
+        "ア": "内外の油膜をもつフルフローティング軸受はシャフトと一体回転しない。同周速という記述は不適切。数値比を未確認のまま追加しない。",
+        "イ": "二葉式の装置全体の吐出数4回/回転を大晃公式製品ページで確認。",
+        "ウ": "低速時の排気エネルギ不足による過給応答の遅れという機構説明は正答と整合。",
+        "エ": "吸気系のバイパスであり、排気側へ過給空気を逃がす説明は不適切。"
+      },
+      "referenceUrls": [
+        "https://www.taiko-kk.com/jp/product/roots_blower/"
+      ],
+      "referenceLocator": "インペラ形状の違いと動作特性 → 二葉ブロワ → 1回転当り吐出数 4回",
+      "remainingBlockers": []
+    },
+    {
+      "id": "jidosha-2026-first-2-gasoline-q29",
+      "originalSourceVerified": true,
+      "sourceImage": "ocr/jaspa-2026-first-2-gasoline/page-11.png",
+      "officialAnswer": "イ",
+      "officialAnswerNumber": "2",
+      "status": "defect",
+      "specificCorrections": [
+        {
+          "field": "choiceExplanations.ウ",
+          "replacement": "不適切。バンド・ブレーキはドラムを締め付けるブレーキ・バンドと、それを作動させるサーボ・ピストン等から構成される。多板式のディッシュ・プレートを構成部品とする説明ではない。",
+          "required": true
+        },
+        {
+          "field": "choiceExplanations.エ",
+          "issue": "固定対象が合わないと繰り返しているだけで、正しい固定対象と連結機構を説明できていない。",
+          "replacement": "不適切。本問で扱う構成では、バンドがリバース・クラッチ・ドラムを締め、そのドラムを介してフロント・サン・ギヤを固定する。フロント・インターナル・ギヤではない。",
+          "candidatePrimarySourceVerified": true,
+          "required": true
+        },
+        {
+          "field": "needsReview",
+          "value": false,
+          "reason": "上記具体的修正後は解除可能。同機構の肯定記述をJASPA公式2014年第1回2級ガソリンQ18(1)と公式正答1で原典確認した。"
+        }
+      ],
+      "choiceReview": {
+        "ア": "ローラ式とスプラグ式の要素を混同。現稿の区別は妥当。",
+        "イ": "油圧ピストンが交互配置された摩擦板を押し付け締結する説明は妥当。",
+        "ウ": "正しい構成要素としてサーボ・ピストンを加える。",
+        "エ": "JASPA公式2014年第1回2級ガソリンQ18(1)と公式正答1により、リバース・クラッチ・ドラムを介してフロント・サン・ギヤを固定する記述を確認。本問の機構に限定し、別形式ATへ一般化しない。"
+      },
+      "referenceUrls": [
+        "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_2g.pdf",
+        "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_kai.pdf",
+        "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/20141005_20150118/20141005_2g.pdf",
+        "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/20141005_20150118/20141005_ka.pdf"
+      ],
+      "verifiedOfficialPrecedent": {
+        "exam": "2014年第1回2級ガソリン自動車整備士",
+        "questionNumber": 18,
+        "choiceNumber": 1,
+        "questionPdfPage": 8,
+        "answerPdfPage": 1,
+        "answerTableColumn": "21(2ガ)",
+        "officialAnswerNumber": 1,
+        "originalImagesVerified": true,
+        "statement": "バンド・ブレーキ機構は、リバース・クラッチ・ドラムを介してフロント・サン・ギヤを固定する。",
+        "scopeNote": "当該設問の構成に対する公式肯定記述と正答表の組合せを根拠とする。メーカーの個別機種構造図を取得したという意味ではない。"
+      },
+      "remainingBlockers": [],
+      "needsReviewAfterSpecificCorrections": false
+    },
+    {
+      "id": "jidosha-2026-first-2-gasoline-q31",
+      "originalSourceVerified": true,
+      "sourceImage": "ocr/jaspa-2026-first-2-gasoline/page-12.png",
+      "officialAnswer": "イ",
+      "officialAnswerNumber": "2",
+      "status": "defect",
+      "specificCorrections": [
+        {
+          "field": "explanation",
+          "issue": "『本試験の教材分類ではテーパ・ローラ型を外す』『シリンドリカル・ローラ型へ置換』という断定に、確認済みの出題教材一次根拠がない。原問にもその限定条件は明記されていない。",
+          "replacement": "公式正答は(2)。ただし一般のメーカー分類では円すいころ軸受もラジアル形に含まれ、ラジアル荷重と一方向のアキシアル荷重を受ける。本問で(2)を不適切とする教材上の区分・出題根拠は未確認のため、根拠照合を保留する。",
+          "required": true
+        },
+        {
+          "field": "choiceExplanations.イ",
+          "replacement": "公式正答では不適切とされている。『テーパ・ローラ型はラジアル軸受ではない』と一般化することはできない。出題教材の該当ページを確認するまでは、シリンドリカル型への置換を確定説明としない。",
+          "required": true
+        },
+        {
+          "field": "needsReview",
+          "value": true,
+          "required": true
+        }
+      ],
+      "choiceReview": {
+        "ア": "M10はおねじ外径の基準寸法10mm、1.25はピッチ。実測外径を公差なく常に10mmとする説明にはしない。",
+        "イ": "NSK分類・負荷能力と衝突するため、教材名・版・ページなしの教材限定理由を採用できない。",
+        "ウ": "半割り軸受部が径方向、つばが軸方向の荷重を受ける説明は妥当。",
+        "エ": "ナット自身の戻り止め構造に関する説明は妥当。"
+      },
+      "referenceUrls": [
+        "https://www.nsk.com/content/dam/nsk/jp/ja/catalogs/pdf/1102.pdf",
+        "https://www.nsk.com/jp-ja/products/roller-bearings/tapered-roller-bearings/"
+      ],
+      "referenceLocators": [
+        "1102.pdf PDF p7 図1.2 転がり軸受の分類（ラジアル形に円すいころ軸受）",
+        "メーカー製品概要：ラジアル荷重と一方向アキシアル荷重を負担"
+      ],
+      "remainingBlockers": [
+        "出題教材の正式な分類・該当版ページ未確認。公式正答2の保管と、その理由の検証を分離する。"
+      ]
+    },
+    {
+      "id": "jidosha-2025-second-1-small-written-q10",
+      "originalSourceVerified": true,
+      "sourceImage": "ocr/jaspa-2025-second-1-small-written/page-08.png",
+      "officialAnswer": "ウ",
+      "officialAnswerNumber": "3",
+      "status": "defect",
+      "answerAndCircuitReasoningStatus": "pass",
+      "specificCorrections": [
+        {
+          "field": "choiceExplanations.エ",
+          "issue": "ECU側電圧2.105263...Vを先に2.10Vと切り捨てて1.31Vへ合わせる説明は、精度の説明が不透明。",
+          "replacement": "ECUの1.5kΩ二本は、2.5V・内部抵抗0.75kΩの等価電源に置き換えられる。V1=2.5×2.5/(0.75+1.5+2.5)=1.315789…V（約1.3V）。選択肢の約1.31Vはこの近似値に対応する。厳密計算を小数第2位へ四捨五入すると1.32Vとなる。",
+          "required": true
+        },
+        {
+          "field": "explanation",
+          "add": "ECUのプルアップとプルダウン各1.5kΩを含める。合成を省略して単純に5Vをセンサと接触抵抗へ分配しない。",
+          "required": false
+        }
+      ],
+      "calculation": {
+        "sourceReadings": {
+          "supplyV": 5,
+          "pullUpKOhm": 1.5,
+          "pullDownKOhm": 1.5,
+          "sensorAt20CKOhm": 2.5,
+          "sensorAt80CKOhm": 0.3
+        },
+        "theveninVoltageV": 2.5,
+        "theveninResistanceKOhm": 0.75,
+        "formula": "I_mA = 2.5 / (0.75 + sensor_kOhm + contact_kOhm)",
+        "measurementPoints": {
+          "V1": "端子⑤からECUアースまで。B信号接触抵抗のセンサ側。",
+          "V2": "端子②からECUアースまで。A信号接触抵抗のECU側。",
+          "V3": "端子①～③、センサ自身の両端。"
+        },
+        "choices": [
+          {
+            "choice": "ア",
+            "resistorKOhm": 0.3,
+            "contactKOhm": 0.5,
+            "measurement": "V3",
+            "expression": "2.5 * 0.3 / (0.75 + 0.5 + 0.3)",
+            "voltage": 0.48387096774193544,
+            "correct": true
+          },
+          {
+            "choice": "イ",
+            "resistorKOhm": 0.3,
+            "contactKOhm": 1.2,
+            "measurement": "V2",
+            "expression": "2.5 * (0.3 + 1.2) / (0.75 + 1.2 + 0.3)",
+            "voltage": 1.6666666666666667,
+            "correct": true
+          },
+          {
+            "choice": "ウ",
+            "resistorKOhm": 2.5,
+            "contactKOhm": 5,
+            "measurement": "V3",
+            "expression": "2.5 * 2.5 / (0.75 + 5 + 2.5)",
+            "voltage": 0.7575757575757576,
+            "ecuSideVoltage": 2.272727272727273,
+            "correct": false
+          },
+          {
+            "choice": "エ",
+            "resistorKOhm": 2.5,
+            "contactKOhm": 1.5,
+            "measurement": "V1",
+            "expression": "2.5 * 2.5 / (0.75 + 1.5 + 2.5)",
+            "voltage": 1.3157894736842106,
+            "ecuSideVoltage": 2.1052631578947367,
+            "correct": true
+          }
+        ],
+        "roundingNote": "(2)も厳密値1.666667Vを小数第2位で四捨五入すれば1.67V。原選択肢の約1.66V／約1.31Vを厳密な四捨五入値として説明しない。"
+      },
+      "referenceUrls": [
+        "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_1k_0.pdf",
+        "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_kai.pdf"
+      ],
+      "remainingBlockers": [],
+      "needsReviewAfterSpecificCorrections": false
+    }
+  ]
+}

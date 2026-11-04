@@ -1,0 +1,103 @@
+{
+  "model": "gpt-6-astra",
+  "scope": "Independent revision-1 re-review restricted to the eight IDs in qa/lq1c-revision1-unreviewed-ids.json against the NEW qa/lq1c-candidates.json. Each original source PNG page was visually inspected; question, all four choices, official answer, overall explanation and all four choice explanations were checked. Candidate canonical SHA-256 values match the NEW packet and revision delta. Local source PDF hashes and physical-page URL bindings were revalidated. Numeric statements were checked; these eight items contain no standalone calculation problem. Cam lift was independently checked as Rmax-rbase = full cam height - base-circle diameter.",
+  "limitations": [
+    "The 61-row readable receipt is a separate restoration bound to lq1c-candidates-initial.json; its 47 PASS, 8 FAIL and 6 HOLD decisions remain unchanged. The original receipt was not modified.",
+    "The supplied answer table is latest-two/official-answers.json; source/official-answers.json is absent. Source whitespace, typography and faithful table linearization are normalized as in the original review.",
+    "The scope of sourcePagesChecked is the candidate source PDF. Additional corroborating images: tmp/lq1c-20160320-body-p08.png, Q21(2), independently confirms matching channel reinforcement outside or inside the side member; https://www.tossnet.or.jp/Portals/0/images/pdf/normal/20241008-61_33.pdf physical page 7, Q25(3), was fetched normally and rendered in memory for visual confirmation of averaging two or three compression measurements.",
+    "Supplementary primary references: hemming and adhesive use, https://www.jstage.jst.go.jp/article/qjjws1943/70/2/70_2_248/_pdf/-char/en section 2.2; neutral-flame temperature, https://www.jarac.or.jp/images/qualification/h26-reibai-houkoku.pdf (flame comparison inspected in the prior review); ROLL acquisition, https://download.tek.com/manual/TekScope-Application-User-Manual-EN-US-077-1699-00_077169900.pdf (manufacturer text inspected in the prior review); reflector requirements, https://www.mlit.go.jp/jidosha/content/S210.pdf Article 210, paragraphs 1 and 3, reread in this review; within-run maximum and between-run averaging, https://www.esco-net.com/wcs/escort/ItemFile/EA5/EA514/EA514BE/EA514BE_MNL_JPN_PDF_OUT%2801%29.pdf steps 5-6 (inspected in the prior review, now corroborated by the TOSSNET diesel examination image).",
+    "The web reader could not reopen the large JARAC and Tektronix PDFs because of content-length limits; prior primary-source excerpts remain the supporting evidence. No access restrictions were bypassed.",
+    "Oscilloscope choice (3) is accepted within the explicitly stated examination context. The revised explanation correctly avoids treating 50 Hz as a universal AUTO-mode limit; no specific textbook instrument model was independently identified.",
+    "No additional exact primary-source correction was established for the six earlier HOLDs. They are outside this eight-ID re-review and have not been converted to PASS."
+  ],
+  "rows": [
+    {
+      "id": "jidosha-2026-first-body-q10",
+      "candidateSha256": "b0d4d73b4e33da50019771cf22f192d511666349195290129347b92e800e0eec",
+      "verdict": "PASS",
+      "sourcePagesChecked": [
+        4
+      ],
+      "answerChecked": true,
+      "allFourExplanationsChecked": true,
+      "findings": []
+    },
+    {
+      "id": "jidosha-2026-first-body-q22",
+      "candidateSha256": "0dac0d2e27ca59e6fdb882db0f19bac445b6aca3da1b19014c21e7bd58465bc2",
+      "verdict": "PASS",
+      "sourcePagesChecked": [
+        7
+      ],
+      "answerChecked": true,
+      "allFourExplanationsChecked": true,
+      "findings": []
+    },
+    {
+      "id": "jidosha-2026-first-body-q24",
+      "candidateSha256": "1a5ea647f84218d5147c4abc23dc3d89f39d5b4b451eedab5143485e9516ed28",
+      "verdict": "PASS",
+      "sourcePagesChecked": [
+        8
+      ],
+      "answerChecked": true,
+      "allFourExplanationsChecked": true,
+      "findings": []
+    },
+    {
+      "id": "jidosha-2025-second-1-small-written-q09",
+      "candidateSha256": "8718f84bbee377b0687999271306eec0785ad3fca5c479b2b30ed1112dcfe7a7",
+      "verdict": "PASS",
+      "sourcePagesChecked": [
+        7
+      ],
+      "answerChecked": true,
+      "allFourExplanationsChecked": true,
+      "findings": []
+    },
+    {
+      "id": "jidosha-2025-second-1-small-written-q48",
+      "candidateSha256": "2599a25d7acb774b97d95f87a52c9eaad167b3155083e5638134f4c7aa03c3dc",
+      "verdict": "PASS",
+      "sourcePagesChecked": [
+        31
+      ],
+      "answerChecked": true,
+      "allFourExplanationsChecked": true,
+      "findings": []
+    },
+    {
+      "id": "jidosha-2025-second-1-small-written-q19",
+      "candidateSha256": "8850cbf214853b45a6dbd7a4bf9755e70b28d0476fa3e5e4fe4b8de9bbfdccf0",
+      "verdict": "PASS",
+      "sourcePagesChecked": [
+        13
+      ],
+      "answerChecked": true,
+      "allFourExplanationsChecked": true,
+      "findings": []
+    },
+    {
+      "id": "jidosha-2025-second-3-gasoline-q01",
+      "candidateSha256": "fde559057a95c4257f291cbd2974d27e048ed7554c2ee77809bce8d443df2c50",
+      "verdict": "PASS",
+      "sourcePagesChecked": [
+        2
+      ],
+      "answerChecked": true,
+      "allFourExplanationsChecked": true,
+      "findings": []
+    },
+    {
+      "id": "jidosha-2025-second-3-diesel-q25",
+      "candidateSha256": "ad06999607829718a82f034c7ec67d8dc2e0ecb3139a64a30262c314fd9223da",
+      "verdict": "PASS",
+      "sourcePagesChecked": [
+        7
+      ],
+      "answerChecked": true,
+      "allFourExplanationsChecked": true,
+      "findings": []
+    }
+  ]
+}

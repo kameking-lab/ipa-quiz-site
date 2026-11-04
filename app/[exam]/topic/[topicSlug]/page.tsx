@@ -1,3 +1,4 @@
+import { questionNumberLabel } from "@/lib/questions/display";
 import { practiceSessionLabel } from "@/lib/questions/practice-session";
 import type { Metadata } from "next";
 import Link from "next/link";
@@ -13,6 +14,7 @@ import {
   groupByCategory,
 } from "@/lib/seo/exam-meta";
 import { questionPagePath } from "@/lib/seo/question-url";
+import { isIndexableCategoryCollection } from "@/lib/seo/collection-policy";
 import { isPlaceholderExplanation } from "@/lib/questions/filter";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { Badge } from "@/components/ui/badge";
@@ -46,6 +48,8 @@ export async function generateMetadata({
     return { title: "分野が見つかりません", robots: { index: false } };
   }
   const category = decodeURIComponent(topicSlug);
+  const questionCount = getQuestionsByExamStrict(exam as ExamCode)
+    .filter((q) => q.category === category).length;
   const title = `${examLabel(exam as ExamCode)} ${category} 過去問・解説`;
   const description = `${examLabel(exam as ExamCode)}試験の「${category}」分野の過去問をまとめて確認できます。AI解説付きで理解を深められます。`;
   const ogImageUrl = `${SITE_BASE_URL}/api/og?${new URLSearchParams({
@@ -57,6 +61,7 @@ export async function generateMetadata({
     title,
     description,
     alternates: { canonical: `/${exam}/topic/${encodeURIComponent(category)}` },
+    robots: { index: isIndexableCategoryCollection(questionCount), follow: true },
     openGraph: {
       title,
       description,
@@ -192,7 +197,7 @@ export default async function ExamTopicPage({
                   className="group flex items-start gap-3 rounded-2xl border border-border bg-card p-4 transition-all hover:-translate-y-0.5 hover:border-primary/40 hover:shadow-md"
                 >
                   <span className="flex h-8 shrink-0 items-center justify-center rounded-lg bg-primary-soft px-2.5 text-xs font-bold text-primary-soft-foreground">
-                    {q.qNumber}
+                    {questionNumberLabel(q)}
                   </span>
                   <span className="flex-1 space-y-1.5 min-w-0">
                     <span className="flex flex-wrap items-center gap-1.5 text-xs">

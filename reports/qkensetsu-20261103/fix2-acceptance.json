@@ -1,0 +1,97 @@
+{
+  "schema": "qkensetsu-fix2-acceptance/v1",
+  "date": "2026-11-03",
+  "task": "QKENSETSUF2",
+  "branch": "qual/qkensetsu-20261103",
+  "baselineHead": "6e5388a20849a5593b51b9a1498f9c1c53ed7780",
+  "status": "LOCAL_BROWSER_PASS_CLEANUP_BLOCKED",
+  "buildId": "esv5sgfLtRcPotVYBkpcn",
+  "reviewClientSha256": "3d7ef3593019321e67c47d07562e1f4845cfdb166e36eccc700eb3e0857ae252",
+  "testedTrackedDiffSha256": "0fca836a4ea4421e4f18dca10b4df9d355db26ce962b1784e1e23686e3f5903e",
+  "browserScriptSha256": "c41a3565028bcd440c68d0de7048599b758e6dfea3954821ba1f5358e6a99051",
+  "checks": {
+    "tests": {
+      "files": 6,
+      "tests": 28,
+      "exitCode": 0
+    },
+    "changedFileLint": 0,
+    "scriptSyntax": 0,
+    "productionBuild": {
+      "exitCode": 0,
+      "staticPages": 12579
+    },
+    "browser": {
+      "exitCode": 0,
+      "status": "PASS",
+      "viewportWidths": [
+        1440,
+        390
+      ],
+      "views": 78,
+      "imageQuestionsPerWidth": 23,
+      "uniqueImageHttp200": 32,
+      "renderedFigures": 64,
+      "publicSearchIds": 209,
+      "publicByYear": {
+        "2025": 105,
+        "2026": 104
+      },
+      "q18DetailHttp": 404,
+      "runtimeExceptions": 0,
+      "unexpectedHttpErrors": 0,
+      "expectedLocalPlatform404": 144
+    }
+  },
+  "restoredTrackedAssets": [
+    {
+      "path": "public/mascot/chihuahua-guide.webp",
+      "bytes": 13716,
+      "sha256": "792a4723b555b254ae16601e444d36b037314fca574ad41daafbbe8fa376bc7e",
+      "matchesBaseline": true
+    },
+    {
+      "path": "public/brand/chihuahua-icon-192.png",
+      "bytes": 59886,
+      "sha256": "70c088d0d4039dbc339c08ede9ad7f4c9fb8c37ca46b10a80e60dc75ad66a444",
+      "matchesBaseline": true
+    }
+  ],
+  "evidenceDirectory": "C:\\Users\\kanet\\Documents\\Codex\\2026-11-02\\task-2\\qkensetsu-fix2-evidence",
+  "browserResultsSha256": "416690d69c473be15e9252667d5db91aa485922edfe36e210c25c5b58a2e2a98",
+  "evidenceIndexSha256": "6d79d266ada21aba2cf180d0607c786dc510c17ad57855fe945f1bd912d3dcf7",
+  "logs": [
+    {
+      "file": "build-final.log",
+      "bytes": 12713,
+      "sha256": "f52b043db6700f333d329dba68d160cb9b7ce75d196995b3f6fa53e62f928496"
+    },
+    {
+      "file": "lint-final.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "file": "tests-final.log",
+      "bytes": 798,
+      "sha256": "09b46034fdf2b1c9515275129ede308de986ae6cabefc47966dc3c13a6708739"
+    }
+  ],
+  "report": "C:/Users/kanet/Documents/Codex/2026-11-02/task-2/qkensetsu-fix2.md",
+  "encoding": "UTF-8",
+  "mockedBrowserData": false,
+  "authenticatedAccountVerified": false,
+  "productionVerified": false,
+  "cleanup": {
+    "serverStopped": true,
+    "nextDirectory": "C:\\Users\\kanet\\20260522\\ipa-qkensetsu-20261103\\.next",
+    "nextExists": true,
+    "deleted": false,
+    "status": "AUTO_REVIEW_REJECTED",
+    "reason": "blocked by policy; detailed reason not exposed",
+    "attempts": 2,
+    "alternateDeletionAttempted": false
+  },
+  "scope": "209 public first-exam originals; 2026 law Q18 remains excluded. Authenticated account/server sync and production readback not claimed. No new specialist re-review of unchanged content.",
+  "prohibitedOperationsPerformed": []
+}

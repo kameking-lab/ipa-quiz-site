@@ -1,0 +1,49 @@
+{
+  "model": "gpt-6-astra",
+  "verdict": "PASS",
+  "scope": {
+    "baselineCommit": "c926248a5",
+    "reviewType": "Final LQ1C implementation and provenance review of the current working tree and final diff. Domain content review excluded as requested.",
+    "releaseOriginals": 607,
+    "baselineOriginalsPreserved": 525,
+    "exactScopeOriginals": 85,
+    "independentPassAdditions": 82,
+    "referenceOriginalsExcluded": 1,
+    "technicalHoldOriginalsExcluded": 2,
+    "checks": [
+      "All prior 525 question objects and ledger rows are unchanged from the baseline.",
+      "The 85 candidate IDs, expected IDs and frozen scope match exactly; all candidate bindings match canonical SHA256 hashes.",
+      "Each of the 82 admitted scope rows equals its current candidate and has a matching copied gpt-6-astra PASS receipt, candidate hash, answer check, four-explanation check and source-page coverage. No admission lacks a matching independent PASS receipt.",
+      "All 607 released candidate hashes and copied receipt byte hashes match the ledger.",
+      "All 85 progress decisions match their copied evidence; the verdict partition is exactly 82 PASS, one REFERENCE and two HOLD.",
+      "The remaining register contains exactly the two excluded HOLD IDs with current candidate hashes and matching readable-findings references. The reference ID is excluded from grading.",
+      "Preparation and revision1 guards raise before any write when frozen artifacts exist.",
+      "Acceptance, materialization and metadata refresh were executed with writes intercepted; all proposed outputs equal current files.",
+      "Source figure counts, physical-page bindings and public image SHA256 hashes match; qualification, catalog, SEO and README counts reproduce the 607 release.",
+      "All four targeted automotive release tests passed.",
+      "Git hash-object clean-filter identities equal raw blob identities for every release evidence file; nested -text preserves receipt bytes without staging or changing the index."
+    ],
+    "testCommand": "pnpm exec vitest run __tests__/automotive-release.test.ts",
+    "constraints": "No data or code edits, agents, secrets, commits, push, PR or deployment. Rights treated as owner verified.",
+    "metadataFollowUp": {
+      "filesReviewed": [
+        "scripts/automotive/refresh-release-metadata.py",
+        "lib/qualifications/catalog.ts"
+      ],
+      "result": "PASS",
+      "checks": [
+        "Unreleased IDs exactly equal stored IDs absent from the 607-row release.",
+        "2-gasoline has one pending-content question and one official withdrawn-all-accepted reference outside ordinary grading.",
+        "Body has one pending-content question and no reference.",
+        "All nine complete subjects have empty remainingWork arrays.",
+        "Per-subject stored and released counts reconcile with the ledger and release.",
+        "Dry execution with writes intercepted exactly reproduces catalog, SEO and README. No product files changed."
+      ],
+      "validation": "Focused assertions and write-intercepted generator execution passed. The prior four passing release tests remain applicable; no additional Vitest run was needed."
+    }
+  },
+  "limitations": [
+    "Domain correctness was not re-reviewed. Independent review provenance was checked against saved receipts; reviewer execution was not repeated. Git clean-filter byte identity was verified without staging or creating a fresh checkout."
+  ],
+  "findings": []
+}

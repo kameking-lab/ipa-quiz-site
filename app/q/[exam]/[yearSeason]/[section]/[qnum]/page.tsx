@@ -1,3 +1,5 @@
+import { isReferenceOnlyQuestionId } from "@/lib/questions/assessment";
+import { isSelfReviewedDescriptiveQuestion } from "@/lib/questions/descriptive";
 import { displayQuestionExplanation } from "@/lib/questions/explanation-display";
 import { questionSourceEdition, questionSourceExam } from "@/lib/questions/source-label";
 import { questionReferenceLabel } from "@/lib/questions/reference-label";
@@ -166,7 +168,7 @@ export default async function QuestionPage({
   }
   // Keep detail pages, paper listings and the interactive player on the same
   // quality boundary. A listed question must also be readable and playable.
-  if (!isPracticeReadyQuestion(q)) notFound();
+  if (!isPracticeReadyQuestion(q) && !(isReferenceOnlyQuestionId(q.id) && !q.needsReview && !hasUnrenderableContent(q))) notFound();
 
   const answerKeys = Array.isArray(q.answer) ? q.answer : [q.answer];
   const answerText = q.type === "ordering" ? undefined :
@@ -423,7 +425,7 @@ export default async function QuestionPage({
         </section>
       )}
 
-      {q.type === "descriptive" && q.exam === "chosashi" && (
+      {isSelfReviewedDescriptiveQuestion(q) && (
         <div className="mt-5">
           <DescriptiveAnswerCard question={q} defaultOpen />
         </div>
@@ -508,7 +510,7 @@ export default async function QuestionPage({
             // 独自解説であることを常に見える位置に示す（ポップオーバー内だけにしない）。
             <p className="mt-4 text-xs leading-relaxed text-muted-foreground">{q.sourceAttribution}</p>
           )}
-          {!(q.exam === "chosashi" && q.type === "descriptive") && <AiTransparencyDisclaimer
+          {!(isSelfReviewedDescriptiveQuestion(q)) && <AiTransparencyDisclaimer
             lastUpdatedISO={lastUpdatedISO}
             lastUpdatedJa={lastUpdatedJa}
             sourcePdfUrl={getSafePdfUrl(q.sourcePdfUrl)}

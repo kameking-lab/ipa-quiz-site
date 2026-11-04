@@ -1,0 +1,111 @@
+{
+  "schemaVersion": 1,
+  "frozenAtUtc": "2026-10-23T12:47:45.111330+00:00",
+  "state": "INDEPENDENTLY_ACCEPTED_EXACT_CORRECTED_CANDIDATE",
+  "count": 1,
+  "questionIds": [
+    "jidosha-2025-second-1-small-written-q14"
+  ],
+  "rows": [
+    {
+      "id": "jidosha-2025-second-1-small-written-q14",
+      "finalCandidate": {
+        "absolutePath": "C:\\Users\\kanet\\Documents\\Codex\\2026-10-23\\task-97\\q14-independent-delta-check\\accepted-candidates\\jidosha-2025-second-1-small-written-q14.json",
+        "sha256": "9182fd7fb81fcfc293315f21186dc2cf2d9c2a64b97f38f95a47af13fd8102a2"
+      },
+      "baseCandidateSha256": "ff2144f4c5336b6331c74081293120afd9960e5710328afa1238fdbc8bc161e5",
+      "proposedDeltaSha256": "2f12579dd0c4d902224448684d92719daa30fd472150f801da909e8e3b4938b0",
+      "sourceBindings": {
+        "originalQuestion": {
+          "id": "jidosha-2025-second-1-small-written-q14",
+          "questionNumber": 14,
+          "examDate": "2026-03-22",
+          "subject": "1-small-written",
+          "sourcePath": "C:\\Users\\kanet\\Documents\\Codex\\2026-10-23\\task-5\\output\\automotive-forward-20261023\\release-1small25a\\sources\\jaspa-2025-second-1-small-written.pdf",
+          "sha256": "9f617d58b464c075aafc9bc042b60ac5b41798654846757490f1a7c7d2102b30",
+          "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_1k_0.pdf",
+          "physicalPages": [
+            10
+          ],
+          "sourcePdfBodySha256": "9f617d58b464c075aafc9bc042b60ac5b41798654846757490f1a7c7d2102b30"
+        },
+        "officialKey": {
+          "path": "C:\\Users\\kanet\\Documents\\Codex\\2026-10-23\\task-5\\output\\automotive-forward-20261023\\release-1small25a\\sources\\jaspa-2025-second-answers.pdf",
+          "sha256": "2f73820401362ca24f052d8339bf20e4865dab2f2afe74b7c7b546b7b90d6701",
+          "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_kai.pdf",
+          "physicalPage": 1,
+          "column": "12 (1小)",
+          "row": 14,
+          "answerNumber": "1",
+          "answerLabel": "ア",
+          "directObservation": {
+            "physicalPage": 1,
+            "column": "12 (1小), first subject column",
+            "questionNumber": 14,
+            "answerNumber": "1",
+            "labelBbox": [
+              50.400001525878906,
+              244.2720489501953,
+              88.68168640136719,
+              253.15203857421875
+            ],
+            "answerBbox": [
+              102.13999938964844,
+              243.11972045898438,
+              107.5999984741211,
+              254.0397186279297
+            ]
+          }
+        },
+        "sourcePageImageEvidence": [
+          {
+            "path": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\codex-takeover-20261011\\automotive-latest-two\\ocr\\jaspa-2025-second-1-small-written\\page-10.png",
+            "sha256": "30a6fc9fdb46b06039c208983a87595f610503b71d2961109bebf06ab37c2c64",
+            "bytes": 347506,
+            "physicalPage": 10,
+            "sourcePdfSha256": "9f617d58b464c075aafc9bc042b60ac5b41798654846757490f1a7c7d2102b30",
+            "use": "Existing original page image visually compared; no new render or OCR."
+          }
+        ],
+        "requiredFigureBindings": [],
+        "figureRequired": false,
+        "supportingTechnicalSource": {
+          "publisher": "NXP Semiconductors, Automotive Innovation Center",
+          "title": "Application Hints TJA1055T Fault-tolerant CAN transceiver",
+          "url": "https://www.nxp.com/docs/en/application-note/AH0801.pdf",
+          "revision": "AH0801, Revision 1.5",
+          "revisionDate": "2016-02-25",
+          "examDate": "2026-03-22",
+          "locators": [
+            "Physical page 2: intended for low-speed passenger-car applications up to 125 kBd; differential operation with single-wire fault capability.",
+            "Physical page 17, section 3.2 and Figure 6: microcontroller/CAN controller and transceiver connection to the physical bus.",
+            "Physical pages 17-18, section 3.3: bus-level scheme and receiver output path to the CAN protocol controller.",
+            "Physical page 18, Figure 7: nominal bus levels and their signed differential voltage."
+          ],
+          "savedObservation": {
+            "absolutePath": "C:\\Users\\kanet\\Documents\\Codex\\2026-10-23\\task-97\\q14-independent-delta-check\\evidence\\NXP-BUS-LEVEL-OBSERVATION.json",
+            "sha256": "2adf1fcd803f1137e31417e1c63f5b2ff8817a9d6915ff519e94988cdec4f453"
+          },
+          "originalSavedObservation": {
+            "absolutePath": "C:\\Users\\kanet\\Documents\\Codex\\2026-10-23\\task-98\\output\\small-first6-authorship-20261023\\evidence\\NXP-BUS-LEVEL-OBSERVATION.json",
+            "sha256": "2adf1fcd803f1137e31417e1c63f5b2ff8817a9d6915ff519e94988cdec4f453"
+          },
+          "evidenceType": "Saved legitimate pre-denial first-party content observation; not PDF body bytes",
+          "pdfBodyObtained": false,
+          "pdfBodySha256": null,
+          "observationHashIsPdfBodyHash": false,
+          "applicability": "Pre-exam-date first-party application note for ISO 11898-3 low-speed fault-tolerant CAN. The values below are the document's nominal 5 V normal-mode example, not guaranteed values for every CAN implementation or a claim that the exam names TJA1055T."
+        }
+      }
+    }
+  ],
+  "independentDeltaReceipt": {
+    "absolutePath": "C:\\Users\\kanet\\Documents\\Codex\\2026-10-23\\task-97\\q14-independent-delta-check\\INDEPENDENT-DELTA-RECEIPT.json",
+    "sha256": "b85e5765e8ead1280ba8a9a4561ff6fcb30f2011a0b9a5159ad32fe297aaf64c"
+  },
+  "repositoryIdGrowth": 0,
+  "publicationIncrement": 0,
+  "permissionVerified": false,
+  "publicGo": 0,
+  "priorAcceptedCandidatesRecounted": false
+}

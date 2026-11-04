@@ -1,0 +1,119 @@
+
+Running 9 tests using 2 workers
+
+corepack : (node:78312) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+発生場所 行:2 文字:46
++ ... .0.1:3147'; corepack pnpm exec playwright test tests/e2e/adk-readines ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: ((node:78312) Wa... env being set.:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:35096) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:78312) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:35096) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  x  2 tests\e2e\adk-readiness.spec.ts:3:5 › singleton category stays readable without JavaScript and points to an explained question (3.2s)
+(node:77008) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:77008) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok 1 tests\e2e\adk-readiness.spec.ts:24:5 › search and mode selection are noindex across query variants (4.3s)
+  x  3 tests\e2e\adk-readiness.spec.ts:44:5 › fresh visitors can read the problem, reasoning and privacy contact without a login or consent dialog (615ms)
+(node:63992) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:63992) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok 4 tests\e2e\adsense-learning-quality.spec.ts:31:7 › /fp3/2026-published exposes static explanation links without JavaScript (970ms)
+  ok 5 tests\e2e\adsense-learning-quality.spec.ts:31:7 › /shika-ishi/2026-annual exposes static explanation links without JavaScript (950ms)
+  ok 6 tests\e2e\adsense-learning-quality.spec.ts:31:7 › /chosashi/2025-autumn exposes static explanation links without JavaScript (1.0s)
+  ok 7 tests\e2e\adsense-learning-quality.spec.ts:45:5 › worked guide contains its problem, comparison, and check and the old URL is a 301 (668ms)
+  ok 8 tests\e2e\adsense-learning-quality.spec.ts:61:5 › dental and land-surveyor pages distinguish originals and independent explanations (851ms)
+  ok 9 tests\e2e\adsense-learning-quality.spec.ts:105:5 › unapproved learning, navigation and error routes never initialize Google ads (1.8s)
+
+
+  1) tests\e2e\adk-readiness.spec.ts:3:5 › singleton category stays readable without JavaScript and points to an explained question 
+
+    Error: [2mexpect([22m[31mlocator[39m[2m).[22mtoHaveAttribute[2m([22m[32mexpected[39m[2m)[22m failed
+
+    Locator: locator('#explanation details')
+    Expected: [32m""[39m
+    Error: strict mode violation: locator('#explanation details') resolved to 3 elements:
+        1) <details open="" class="group">…</details> aka getByText('解説結論 → 詳細 の 2 層構成展開閉じる結論Layer')
+        2) <details open="" class="group/layer">…</details> aka getByText('詳細Layer 2展開閉じる1')
+        3) <details open="" class="group mt-4 rounded-xl border border-border bg-muted/20 p-3 text-xs">…</details> aka getByText('解説・公式出典について解説は学習支援用に作成したもので、試験実施機関による公式解説ではありません。 事実誤認・選択肢の取り違え・最新法令の反映漏れ等を含む可能性')
+
+    Call log:
+    [2m  - Expect "toHaveAttribute" with timeout 5000ms[22m
+    [2m  - waiting for locator('#explanation details')[22m
+
+
+      13 |   await question.click();
+      14 |   await expect(page.locator('meta[name="robots"]')).toHaveAttribute("content", "index, follow");
+    > 15 |   await expect(page.locator('#explanation details')).toHaveAttribute("open", "");
+         |                                                      ^
+      16 |   expect((await page.locator('#explanation').innerText()).length).toBeGreaterThan(30);
+      17 |   expect(await page.getByRole("dialog").count()).toBe(0);
+      18 |   const sitemap = await request.get("/sitemap/exams.xml");
+        at C:\Users\kanet\20260522\wt-batch1\tests\e2e\adk-readiness.spec.ts:15:54
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\adk-readiness-singleton-ca-e6dd3-ts-to-an-explained-question\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\adk-readiness-singleton-ca-e6dd3-ts-to-an-explained-question\error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results\adk-readiness-singleton-ca-e6dd3-ts-to-an-explained-question\trace.zip
+    Usage:
+
+        pnpm exec playwright show-trace test-results\adk-readiness-singleton-ca-e6dd3-ts-to-an-explained-question\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  2) tests\e2e\adk-readiness.spec.ts:44:5 › fresh visitors can read the problem, reasoning and privacy contact without a login or consent dialog 
+
+    Error: [2mexpect([22m[31mlocator[39m[2m).[22mtoHaveAttribute[2m([22m[32mexpected[39m[2m)[22m failed
+
+    Locator: locator('#explanation details')
+    Expected: [32m""[39m
+    Error: strict mode violation: locator('#explanation details') resolved to 4 elements:
+        1) <details open="" class="group">…</details> aka getByText('解説結論 → 詳細 → 補足 の 3 層構成展開閉じる結論')
+        2) <details open="" class="group/layer">…</details> aka getByText('詳細Layer 2展開閉じるnを4で割った余りが1なら3')
+        3) <details open="" class="group/layer">…</details> aka getByText('補足Layer 3展開閉じる次にtempNから始め、m')
+        4) <details open="" class="group mt-4 rounded-xl border border-border bg-muted/20 p-3 text-xs">…</details> aka getByText('解説・公式出典について解説は学習支援用に作成したもので、試験実施機関による公式解説ではありません。 事実誤認・選択肢の取り違え・最新法令の反映漏れ等を含む可能性')
+
+    Call log:
+    [2m  - Expect "toHaveAttribute" with timeout 5000ms[22m
+    [2m  - waiting for locator('#explanation details')[22m
+
+
+      51 |   expect((await page.goto("/q/fe/2025-cbt/kamoku-b/q1"))?.status()).toBe(200);
+      52 |   await expect(page.locator("main h1")).toBeVisible();
+    > 53 |   await expect(page.locator('#explanation details')).toHaveAttribute("open", "");
+         |                                                      ^
+      54 |   await expect(page.getByRole("dialog")).toHaveCount(0);
+      55 |   await page.locator('#explanation').scrollIntoViewIfNeeded();
+      56 |   await page.screenshot({ path: testInfo.outputPath("visible-explanation-mobile.png") });
+        at C:\Users\kanet\20260522\wt-batch1\tests\e2e\adk-readiness.spec.ts:53:54
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\adk-readiness-fresh-visito-b46c0-t-a-login-or-consent-dialog\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\adk-readiness-fresh-visito-b46c0-t-a-login-or-consent-dialog\error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results\adk-readiness-fresh-visito-b46c0-t-a-login-or-consent-dialog\trace.zip
+    Usage:
+
+        pnpm exec playwright show-trace test-results\adk-readiness-fresh-visito-b46c0-t-a-login-or-consent-dialog\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  2 failed
+    tests\e2e\adk-readiness.spec.ts:3:5 › singleton category stays readable without JavaScript and points to an explained question 
+    tests\e2e\adk-readiness.spec.ts:44:5 › fresh visitors can read the problem, reasoning and privacy contact without a login or consent dialog 
+  7 passed (9.2s)

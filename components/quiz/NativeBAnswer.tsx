@@ -14,7 +14,7 @@ export function NativeBAnswerInput({ data, disabled, onAnswer, displayedImageUrl
   const submitted = React.useRef(false);
   const id = React.useId();
   const visibleBankImages = [...new Set(data.bankImageUrls ?? [])].filter((url) => !displayedImageUrls.includes(url));
-  return <form aria-label="五つの空欄の回答" className="space-y-4 rounded-xl border bg-background p-4 text-foreground" onSubmit={(event) => {
+  return <form aria-label={data.slots.length === 4 ? "四つの空欄の回答" : "五つの空欄の回答"} className="space-y-4 rounded-xl border bg-background p-4 text-foreground" onSubmit={(event) => {
     event.preventDefault();
     if (disabled || submitted.current) return;
     submitted.current = true;
@@ -24,7 +24,7 @@ export function NativeBAnswerInput({ data, disabled, onAnswer, displayedImageUrl
     {visibleBankImages.map((url) => <img key={url} src={url} alt={data.bankImageAltTexts?.[data.bankImageUrls!.indexOf(url)] ?? "公式問題の共通語群・数式表"} className="max-h-none max-w-full rounded border" />)}
     {data.candidates.some((candidate) => candidate.imageUrl) && <div aria-label="候補の原図" className="space-y-3">{data.candidates.map((candidate) => candidate.imageUrl && !displayedImageUrls.includes(candidate.imageUrl) && !visibleBankImages.includes(candidate.imageUrl) && <figure key={candidate.id}><figcaption>{candidate.id}: {candidate.label}</figcaption><img src={candidate.imageUrl} alt={`候補 ${candidate.id} の原図`} className="max-w-full" /></figure>)}</div>}
     <fieldset disabled={disabled} className="space-y-3">
-      <legend className="sr-only">五つの独立した回答枠</legend>
+      <legend className="sr-only">{data.slots.length === 4 ? "四つの独立した回答枠" : "五つの独立した回答枠"}</legend>
       {data.slots.map((slot, index) => <div key={slot.label}>
         <label htmlFor={`${id}-${index}`} className="block font-semibold">{slot.label}{slot.prompt && <QuestionBody text={slot.prompt} />}</label>
         <select id={`${id}-${index}`} value={selections[slot.label] ?? ""} onChange={(event) => setSelections((previous) => ({ ...previous, [slot.label]: event.target.value }))} className="min-h-11 w-full rounded border border-input bg-background px-3 text-foreground">
@@ -38,8 +38,8 @@ export function NativeBAnswerInput({ data, disabled, onAnswer, displayedImageUrl
 }
 
 export function NativeBFeedback({ data, result }: { data: NativeBData; result?: NativeBGrade }) {
-  return <section aria-label="五枠の結果と解説" className="space-y-4 rounded-xl border bg-background p-4 text-foreground">
-    <p role="status" className="font-semibold">{result ? `正答枠数 ${result.correctSlots}/5${result.isCorrect ? "（全枠正解）" : ""}` : "各枠の正答と解説"}</p>
+  return <section aria-label="各枠の結果と解説" className="space-y-4 rounded-xl border bg-background p-4 text-foreground">
+    <p role="status" className="font-semibold">{result ? `正答枠数 ${result.correctSlots}/${result.totalSlots}${result.isCorrect ? "（全枠正解）" : ""}` : "各枠の正答と解説"}</p>
     {data.officialScoring && <p className="text-sm">公式配点情報: {[data.officialScoring.maxPoints !== undefined && `満点 ${data.officialScoring.maxPoints}点`, data.officialScoring.pointsPerSlot !== undefined && `1枠 ${data.officialScoring.pointsPerSlot}点`, data.officialScoring.note].filter(Boolean).join(" / ")}</p>}
     <ol className="space-y-4">
       {data.slots.map((slot) => {

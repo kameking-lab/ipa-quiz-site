@@ -1,3 +1,5 @@
+import { ALL_QUIZ_EXAM_CODES } from "@/lib/exam-config";
+import batch1RuntimePins from "./fixtures/batch1-runtime-pins.json";
 import { integrationOracle, runtimeFingerprint, normalizedTextSha256, repositoryTextSha256, sourceFilesUnder } from './fixtures/native-integration-oracle';
 import { describe,expect,it } from 'vitest';
 import { existsSync, readFileSync } from 'node:fs';
@@ -27,7 +29,7 @@ const exam='aviation-comm';
 describe('aviation communication68 local registration candidate',()=>{
  it('registers exactly68 ready originals through eager/lazy/strict/home without changing the IPA-only list',async()=>{
   expect(questions).toHaveLength(68);expect(new Set(questions.map(q=>q.id)).size).toBe(68);
-  expect(getRegisteredExamCodes()).toHaveLength(84);expect(getRegisteredExamCodes()).toContain(exam);expect(ALL_EXAM_CODES).not.toContain(exam);
+  expect(new Set(getRegisteredExamCodes())).toEqual(new Set(ALL_QUIZ_EXAM_CODES));expect(getRegisteredExamCodes()).toContain(exam);expect(ALL_EXAM_CODES).not.toContain(exam);
   expect(await getQuestionsForExam(exam)).toEqual(questions);expect(QUESTIONS_BY_EXAM[exam]).toEqual(questions);expect(ALL_QUESTIONS.filter(q=>q.exam===exam)).toEqual(questions);expect(getQuestionsByExamStrict(exam)).toEqual(questions);expect(questions.every(isPracticeReadyQuestion)).toBe(true);
   const home=getHomeDirectory().flatMap(d=>[...d.featured,...d.compact]).find(q=>q.key===exam)!;expect(home.questionCount).toBe(68);expect(home.periodLabel).toBe('2期分');expect(home.href).toBe('/aviation-comm');
  });
@@ -70,7 +72,7 @@ describe('aviation communication68 local registration candidate',()=>{
   // Reviewed 2026-11-01 urgent release recipe: inline AI, original-answer rewards,
   // next-question focus/loading and explicit retirement of generated questions.
   // The historical pre-reward oracle remains unchanged as provenance.
-  expect(normalizedTextSha256(player)).toBe('3ea50bc6848b73bcaf5caaf17a38d7f51ec822538e6224f3ff9acab38aeff1c4');
+  expect(normalizedTextSha256(player)).toBe(batch1RuntimePins['components/quiz/QuizPlayer.tsx']);
   expect(player).not.toContain('GenerateSimilar');
   expect(player).not.toContain('/api/generate-question');
   expect(player).toContain('recordStudyReward(');
@@ -85,7 +87,7 @@ describe('aviation communication68 local registration candidate',()=>{
   // Only this display component has a separately accepted explanation/UI extension.
   // Every original-data/core pin and the 338-record runtime fingerprint above remain exact.
   const reviewedDisplayPins: Readonly<Record<string,string>> = {
-    'components/quiz/QuestionAnswerCard.tsx': 'a7a97fafb0934c6aeca4b16cfa603ca7a914bfd84896896d1c80dee3738b4c37',
+    ...batch1RuntimePins,
   };
   for(const pin of oracle.files)expect(repositoryTextSha256(pin.path),pin.path).toBe(reviewedDisplayPins[pin.path] ?? pin.sha256);
  });

@@ -1,0 +1,509 @@
+{
+  "before": {
+    "jidosha-2025-second-2-diesel-q13": {
+      "id": "jidosha-2025-second-2-diesel-q13",
+      "qNumber": 13,
+      "question": "図に示すコモンレール式高圧燃料噴射装置における分割噴射について、ECUが行う噴射率制御（分割噴射制御）に関する記述として、適切なものは次のうちどれか。",
+      "choices": {
+        "ア": "(1) A噴射はプレ噴射であり、メーン噴射に対して大きく進角した時期に噴射することで、噴射した燃料と空気をあらかじめ混合された状態にできる。",
+        "イ": "(2) B噴射はポスト噴射であり、メーン噴射に先立ち噴射することで、メーン噴射の着火遅れの短縮ができる。",
+        "ウ": "(3) C噴射はアフタ噴射であり、メーン噴射後の近接した時期に噴射することで、拡散燃焼の活発化、触媒の活性化や排気ガス後処理装置の作動補助ができる。",
+        "エ": "(4) D噴射はパイロット噴射であり、メーン噴射に対して大きく遅角した時期に噴射することで、触媒の活性化や排気ガス後処理装置の作動補助ができる。"
+      },
+      "answer": "ウ",
+      "officialAnswerNumber": "3",
+      "explanation": "適切なのは(3)。図のCは主噴射直後のアフタ噴射で、拡散燃焼と後処理を補助する。",
+      "choiceExplanations": {
+        "ア": "Aは主噴射より大きく前のプレ噴射とされるが、図の名称・目的の組み合わせは適切でない。",
+        "イ": "主噴射前のBはパイロット噴射で、ポスト噴射は主噴射後。",
+        "ウ": "主噴射に近い後続のCがアフタ噴射。",
+        "エ": "大きく遅いDはポスト噴射で、パイロット噴射は主噴射前。"
+      },
+      "explanationCoverage": "full",
+      "hasImage": true,
+      "sourcePages": [
+        7
+      ],
+      "sourceFigureRequired": true,
+      "topicTags": [
+        "分割噴射"
+      ],
+      "difficulty": 3,
+      "isCalculation": false,
+      "needsReview": false,
+      "reviewNotes": [],
+      "officialReferenceUrls": [],
+      "qualification": "jidousha-seibishi-gakka",
+      "session": "gakka",
+      "type": "multiple-choice",
+      "year": 2025,
+      "fiscalYear": 2025,
+      "season": "second",
+      "term": "second",
+      "subject": "2-diesel",
+      "category": "二級ジーゼル自動車",
+      "examDate": "2026-03-22",
+      "sourcePdfUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_2d.pdf",
+      "sourceAnswerUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_kai.pdf",
+      "sourceAttribution": "出典：日本自動車整備振興会連合会 令和7年度第2回自動車整備技能登録試験 二級ジーゼル自動車 No.13",
+      "officialQuestionStatus": "normal",
+      "lastUpdated": "2026-10-11",
+      "permissionVerified": false,
+      "publicGo": 0,
+      "sourcePageReferences": [
+        {
+          "physicalPage": 7,
+          "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_2d.pdf#page=7",
+          "pdfSha256": "97894c45223517f7dab19340d95a1ee8db72f9c5409ee32169e41b782969e65a"
+        }
+      ],
+      "sourceFigureAssets": [
+        {
+          "physicalPage": 7,
+          "relativePath": "figures/jaspa-2025-second-2-diesel-p07.webp"
+        }
+      ]
+    },
+    "jidosha-2025-second-2-diesel-q17": {
+      "id": "jidosha-2025-second-2-diesel-q17",
+      "qNumber": 17,
+      "question": "ATの安全装置に関する記述として、不適切なものは次のうちどれか。",
+      "choices": {
+        "ア": "(1) インヒビタ・スイッチは、セレクト・レバーの位置がPレンジ又はNレンジのみでエンジンの始動を可能にしている。",
+        "イ": "(2) キー・インタロック機構は、セレクト・レバーをPレンジ又はNレンジの位置にしないと、イグニション（キー）・スイッチがハンドル・ロック位置に戻らないようにしている。",
+        "ウ": "(3) シフト・ロック機構は、ブレーキ・ペダルを踏み込んだ状態にしないと、セレクト・レバーをPレンジの位置からほかの位置に操作できないようにしている。",
+        "エ": "(4) R（リバース）位置警報装置は、セレクト・レバーがRレンジの位置にあるときに、音で運転者に知らせるものである。"
+      },
+      "answer": "イ",
+      "officialAnswerNumber": "2",
+      "explanation": "不適切なのは(2)。キー・インタロックはPレンジでのみキーをLOCK位置へ戻せるようにする。",
+      "choiceExplanations": {
+        "ア": "P/Nでのみ始動を許可し誤発進を防ぐ。",
+        "イ": "Nでは解除できず、Pへ入れたときにキーをLOCKへ戻せる。",
+        "ウ": "Pからの誤操作をブレーキ連動のロックで防ぐ。",
+        "エ": "R選択時にブザーで知らせる。"
+      },
+      "explanationCoverage": "full",
+      "hasImage": false,
+      "sourcePages": [
+        9
+      ],
+      "sourceFigureRequired": false,
+      "topicTags": [
+        "AT",
+        "安全装置"
+      ],
+      "difficulty": 2,
+      "isCalculation": false,
+      "needsReview": false,
+      "reviewNotes": [],
+      "officialReferenceUrls": [],
+      "qualification": "jidousha-seibishi-gakka",
+      "session": "gakka",
+      "type": "multiple-choice",
+      "year": 2025,
+      "fiscalYear": 2025,
+      "season": "second",
+      "term": "second",
+      "subject": "2-diesel",
+      "category": "二級ジーゼル自動車",
+      "examDate": "2026-03-22",
+      "sourcePdfUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_2d.pdf",
+      "sourceAnswerUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_kai.pdf",
+      "sourceAttribution": "出典：日本自動車整備振興会連合会 令和7年度第2回自動車整備技能登録試験 二級ジーゼル自動車 No.17",
+      "officialQuestionStatus": "normal",
+      "lastUpdated": "2026-10-11",
+      "permissionVerified": false,
+      "publicGo": 0,
+      "sourcePageReferences": [
+        {
+          "physicalPage": 9,
+          "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_2d.pdf#page=9",
+          "pdfSha256": "97894c45223517f7dab19340d95a1ee8db72f9c5409ee32169e41b782969e65a"
+        }
+      ],
+      "sourceFigureAssets": []
+    },
+    "jidosha-2025-second-2-diesel-q30": {
+      "id": "jidosha-2025-second-2-diesel-q30",
+      "qNumber": 30,
+      "question": "図に示すライト消し忘れ警報装置の不具合要因に関する次の文章の（　）に当てはまるものとして、適切なものはどれか。図のようにイグニション（キー）・スイッチがOFF、ライト・コントロール・スイッチがON、カーテシ・スイッチ（運転席）がONの状態でブザーが吹鳴しないとき、AとE間の電圧が12 V、BとE間の電圧が0 V、CとE間の電圧が12 V、DとE間の電圧が10 Vの場合の不具合要因としては、（　）が考えられる。",
+      "choices": {
+        "ア": "(1) ライト・コントロール・スイッチの接点の抵抗増大",
+        "イ": "(2) リレー1のAとB間の抵抗増大",
+        "ウ": "(3) ヒューズ1の断線",
+        "エ": "(4) リレー1のDとアース間の短絡"
+      },
+      "answer": "ア",
+      "officialAnswerNumber": "1",
+      "explanation": "適切なのは(1)。Eを基準にCは12 V、Dは10 Vなので、リレー1のコイルC―D間には2 Vしか掛かっていない。ONのライト・コントロール・スイッチに10 Vの電圧降下が残ることから、その接点抵抗の増大が考えられる。",
+      "choiceExplanations": {
+        "ア": "適切。ONのスイッチ接点の抵抗が増すとD―E間に10 Vの電圧降下が生じ、C―D間のコイル電圧は12−10＝2 Vとなる。",
+        "イ": "不適切。A―Bは接点側の経路であり、その抵抗増大だけではコイル側Dの対地電圧が10 Vとなる測定条件を説明できない。",
+        "ウ": "不適切。ヒューズ1はカーテシ・スイッチからNOT回路に至る入力経路にあり、その断線だけではライト・コントロール・スイッチ上端Dの10 Vを説明できない。",
+        "エ": "Dがアース短絡ならDはほぼ0 Vで、10 Vにはならない。"
+      },
+      "explanationCoverage": "full",
+      "hasImage": true,
+      "sourcePages": [
+        13
+      ],
+      "sourceFigureRequired": true,
+      "topicTags": [
+        "警報回路",
+        "故障診断"
+      ],
+      "difficulty": 3,
+      "isCalculation": false,
+      "needsReview": false,
+      "reviewNotes": [],
+      "officialReferenceUrls": [],
+      "qualification": "jidousha-seibishi-gakka",
+      "session": "gakka",
+      "type": "multiple-choice",
+      "year": 2025,
+      "fiscalYear": 2025,
+      "season": "second",
+      "term": "second",
+      "subject": "2-diesel",
+      "category": "二級ジーゼル自動車",
+      "examDate": "2026-03-22",
+      "sourcePdfUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_2d.pdf",
+      "sourceAnswerUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_kai.pdf",
+      "sourceAttribution": "出典：日本自動車整備振興会連合会 令和7年度第2回自動車整備技能登録試験 二級ジーゼル自動車 No.30",
+      "officialQuestionStatus": "normal",
+      "lastUpdated": "2026-11-04",
+      "permissionVerified": false,
+      "publicGo": 0,
+      "sourcePageReferences": [
+        {
+          "physicalPage": 13,
+          "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_2d.pdf#page=13",
+          "pdfSha256": "97894c45223517f7dab19340d95a1ee8db72f9c5409ee32169e41b782969e65a"
+        }
+      ],
+      "sourceFigureAssets": [
+        {
+          "physicalPage": 13,
+          "relativePath": "figures/jaspa-2025-second-2-diesel-p13.webp"
+        }
+      ]
+    },
+    "jidosha-2025-second-2-diesel-q40": {
+      "id": "jidosha-2025-second-2-diesel-q40",
+      "qNumber": 40,
+      "question": "「道路運送車両の保安基準」及び「道路運送車両の保安基準の細目を定める告示」に照らし、非常信号用具に関する次の文章の（イ）と（ロ）に当てはまるものとして、下の組み合わせのうち、適切なものはどれか。非常信号用具は、（イ）の距離から確認できる（ロ）の灯光を発するものであること。",
+      "choices": {
+        "ア": "(1) （イ）昼間100 m （ロ）赤色",
+        "イ": "(2) （イ）夜間100 m （ロ）橙色",
+        "ウ": "(3) （イ）昼間200 m （ロ）橙色",
+        "エ": "(4) （イ）夜間200 m （ロ）赤色"
+      },
+      "answer": "エ",
+      "officialAnswerNumber": "4",
+      "explanation": "適切なのは(4)。非常信号用具は夜間200 mから確認できる赤色灯光を発する。",
+      "choiceExplanations": {
+        "ア": "赤色は合うが基準は昼間100 mでなく夜間200 m。",
+        "イ": "夜間距離は200 m、灯光は橙色でなく赤色。",
+        "ウ": "距離・時間帯・色のいずれも基準と異なる。",
+        "エ": "夜間200 mから確認できる赤色の灯光。"
+      },
+      "explanationCoverage": "full",
+      "hasImage": false,
+      "sourcePages": [
+        16
+      ],
+      "sourceFigureRequired": false,
+      "topicTags": [
+        "法令",
+        "非常信号用具"
+      ],
+      "difficulty": 2,
+      "isCalculation": false,
+      "needsReview": false,
+      "reviewNotes": [],
+      "officialReferenceUrls": [],
+      "qualification": "jidousha-seibishi-gakka",
+      "session": "gakka",
+      "type": "multiple-choice",
+      "year": 2025,
+      "fiscalYear": 2025,
+      "season": "second",
+      "term": "second",
+      "subject": "2-diesel",
+      "category": "二級ジーゼル自動車",
+      "examDate": "2026-03-22",
+      "sourcePdfUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_2d.pdf",
+      "sourceAnswerUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_kai.pdf",
+      "sourceAttribution": "出典：日本自動車整備振興会連合会 令和7年度第2回自動車整備技能登録試験 二級ジーゼル自動車 No.40",
+      "officialQuestionStatus": "normal",
+      "lastUpdated": "2026-10-11",
+      "permissionVerified": false,
+      "publicGo": 0,
+      "sourcePageReferences": [
+        {
+          "physicalPage": 16,
+          "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_2d.pdf#page=16",
+          "pdfSha256": "97894c45223517f7dab19340d95a1ee8db72f9c5409ee32169e41b782969e65a"
+        }
+      ],
+      "sourceFigureAssets": []
+    }
+  },
+  "after": {
+    "jidosha-2025-second-2-diesel-q13": {
+      "id": "jidosha-2025-second-2-diesel-q13",
+      "qNumber": 13,
+      "question": "図に示すコモンレール式高圧燃料噴射装置における分割噴射について、ECUが行う噴射率制御（分割噴射制御）に関する記述として、適切なものは次のうちどれか。",
+      "choices": {
+        "ア": "(1) A噴射はプレ噴射であり、メーン噴射に対して大きく進角した時期に噴射することで、噴射した燃料と空気をあらかじめ混合された状態にできる。",
+        "イ": "(2) B噴射はポスト噴射であり、メーン噴射に先立ち噴射することで、メーン噴射の着火遅れの短縮ができる。",
+        "ウ": "(3) C噴射はアフタ噴射であり、メーン噴射後の近接した時期に噴射することで、拡散燃焼の活発化、触媒の活性化や排気ガス後処理装置の作動補助ができる。",
+        "エ": "(4) D噴射はパイロット噴射であり、メーン噴射に対して大きく遅角した時期に噴射することで、触媒の活性化や排気ガス後処理装置の作動補助ができる。"
+      },
+      "answer": "ウ",
+      "officialAnswerNumber": "3",
+      "explanation": "適切なのは(3)。図のCは主噴射直後のアフタ噴射で、拡散燃焼と後処理を補助する。",
+      "choiceExplanations": {
+        "ア": "Aはパイロット噴射である。メーン噴射より大きく進角した時期に噴射して燃料と空気の予混合を図るもので、プレ噴射という名称が誤り。",
+        "イ": "Bはメーン噴射に近接して先行するプレ噴射で、メーン噴射の着火遅れを短くする。ポスト噴射はメーン噴射より大きく遅い時期の噴射。",
+        "ウ": "主噴射に近い後続のCがアフタ噴射。",
+        "エ": "大きく遅いDはポスト噴射で、パイロット噴射は主噴射前。"
+      },
+      "explanationCoverage": "full",
+      "hasImage": true,
+      "sourcePages": [
+        7
+      ],
+      "sourceFigureRequired": true,
+      "topicTags": [
+        "分割噴射"
+      ],
+      "difficulty": 3,
+      "isCalculation": false,
+      "needsReview": false,
+      "reviewNotes": [],
+      "officialReferenceUrls": [
+        "https://www.denso.com/jp/ja/-/media/Global/business/innovation/review/11-1/11-1-doc-disseration03itp6-ja.pdf#page=1"
+      ],
+      "qualification": "jidousha-seibishi-gakka",
+      "session": "gakka",
+      "type": "multiple-choice",
+      "year": 2025,
+      "fiscalYear": 2025,
+      "season": "second",
+      "term": "second",
+      "subject": "2-diesel",
+      "category": "二級ジーゼル自動車",
+      "examDate": "2026-03-22",
+      "sourcePdfUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_2d.pdf",
+      "sourceAnswerUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_kai.pdf",
+      "sourceAttribution": "出典：日本自動車整備振興会連合会 令和7年度第2回自動車整備技能登録試験 二級ジーゼル自動車 No.13",
+      "officialQuestionStatus": "normal",
+      "lastUpdated": "2026-11-04",
+      "permissionVerified": false,
+      "publicGo": 0,
+      "sourcePageReferences": [
+        {
+          "physicalPage": 7,
+          "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_2d.pdf#page=7",
+          "pdfSha256": "97894c45223517f7dab19340d95a1ee8db72f9c5409ee32169e41b782969e65a"
+        }
+      ],
+      "sourceFigureAssets": [
+        {
+          "physicalPage": 7,
+          "relativePath": "figures/jaspa-2025-second-2-diesel-p07.webp"
+        }
+      ]
+    },
+    "jidosha-2025-second-2-diesel-q17": {
+      "id": "jidosha-2025-second-2-diesel-q17",
+      "qNumber": 17,
+      "question": "ATの安全装置に関する記述として、不適切なものは次のうちどれか。",
+      "choices": {
+        "ア": "(1) インヒビタ・スイッチは、セレクト・レバーの位置がPレンジ又はNレンジのみでエンジンの始動を可能にしている。",
+        "イ": "(2) キー・インタロック機構は、セレクト・レバーをPレンジ又はNレンジの位置にしないと、イグニション（キー）・スイッチがハンドル・ロック位置に戻らないようにしている。",
+        "ウ": "(3) シフト・ロック機構は、ブレーキ・ペダルを踏み込んだ状態にしないと、セレクト・レバーをPレンジの位置からほかの位置に操作できないようにしている。",
+        "エ": "(4) R（リバース）位置警報装置は、セレクト・レバーがRレンジの位置にあるときに、音で運転者に知らせるものである。"
+      },
+      "answer": "イ",
+      "officialAnswerNumber": "2",
+      "explanation": "不適切なのは(2)。キー・インタロックはPレンジでのみキーをLOCK位置へ戻せるようにする。",
+      "choiceExplanations": {
+        "ア": "P/Nでのみ始動を許可し誤発進を防ぐ。",
+        "イ": "Nでは解除できず、Pへ入れたときにキーをLOCKへ戻せる。",
+        "ウ": "Pからの誤操作をブレーキ連動のロックで防ぐ。",
+        "エ": "R選択時にブザーで知らせる。"
+      },
+      "explanationCoverage": "full",
+      "hasImage": false,
+      "sourcePages": [
+        8
+      ],
+      "sourceFigureRequired": false,
+      "topicTags": [
+        "AT",
+        "安全装置"
+      ],
+      "difficulty": 2,
+      "isCalculation": false,
+      "needsReview": false,
+      "reviewNotes": [],
+      "officialReferenceUrls": [],
+      "qualification": "jidousha-seibishi-gakka",
+      "session": "gakka",
+      "type": "multiple-choice",
+      "year": 2025,
+      "fiscalYear": 2025,
+      "season": "second",
+      "term": "second",
+      "subject": "2-diesel",
+      "category": "二級ジーゼル自動車",
+      "examDate": "2026-03-22",
+      "sourcePdfUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_2d.pdf",
+      "sourceAnswerUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_kai.pdf",
+      "sourceAttribution": "出典：日本自動車整備振興会連合会 令和7年度第2回自動車整備技能登録試験 二級ジーゼル自動車 No.17",
+      "officialQuestionStatus": "normal",
+      "lastUpdated": "2026-11-04",
+      "permissionVerified": false,
+      "publicGo": 0,
+      "sourcePageReferences": [
+        {
+          "physicalPage": 8,
+          "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_2d.pdf#page=8",
+          "pdfSha256": "97894c45223517f7dab19340d95a1ee8db72f9c5409ee32169e41b782969e65a"
+        }
+      ],
+      "sourceFigureAssets": []
+    },
+    "jidosha-2025-second-2-diesel-q30": {
+      "id": "jidosha-2025-second-2-diesel-q30",
+      "qNumber": 30,
+      "question": "図に示すライト消し忘れ警報装置の不具合要因に関する次の文章の（　）に当てはまるものとして、適切なものはどれか。図のようにイグニション（キー）・スイッチがOFF、ライト・コントロール・スイッチがON、カーテシ・スイッチ（運転席）がONの状態でブザーが吹鳴しないとき、AとE間の電圧が12 V、BとE間の電圧が0 V、CとE間の電圧が12 V、DとE間の電圧が10 Vの場合の不具合要因としては、（　）が考えられる。",
+      "choices": {
+        "ア": "(1) ライト・コントロール・スイッチの接点の抵抗増大",
+        "イ": "(2) リレー1のAとB間の抵抗増大",
+        "ウ": "(3) ヒューズ1の断線",
+        "エ": "(4) リレー1のDとアース間の短絡"
+      },
+      "answer": "ア",
+      "officialAnswerNumber": "1",
+      "explanation": "適切なのは(1)。Eを基準にCは12 V、Dは10 Vなので、リレー1のコイルC―D間には2 Vしか掛かっていない。ONのライト・コントロール・スイッチに10 Vの電圧降下が残ることから、その接点抵抗の増大が考えられる。",
+      "choiceExplanations": {
+        "ア": "適切。ONのスイッチ接点の抵抗が増すとD―E間に10 Vの電圧降下が生じ、C―D間のコイル電圧は12−10＝2 Vとなる。",
+        "イ": "不適切。A―Bは接点側の経路であり、その抵抗増大だけではコイル側Dの対地電圧が10 Vとなる測定条件を説明できない。",
+        "ウ": "不適切。ヒューズ1はリレー1の接点BからAND回路への入力経路にあり、その断線だけでは、正常なら接地されるDの対地電圧が10 Vとなる測定条件を説明できない。",
+        "エ": "Dがアース短絡ならDはほぼ0 Vで、10 Vにはならない。"
+      },
+      "explanationCoverage": "full",
+      "hasImage": true,
+      "sourcePages": [
+        13
+      ],
+      "sourceFigureRequired": true,
+      "topicTags": [
+        "警報回路",
+        "故障診断"
+      ],
+      "difficulty": 3,
+      "isCalculation": false,
+      "needsReview": false,
+      "reviewNotes": [],
+      "officialReferenceUrls": [],
+      "qualification": "jidousha-seibishi-gakka",
+      "session": "gakka",
+      "type": "multiple-choice",
+      "year": 2025,
+      "fiscalYear": 2025,
+      "season": "second",
+      "term": "second",
+      "subject": "2-diesel",
+      "category": "二級ジーゼル自動車",
+      "examDate": "2026-03-22",
+      "sourcePdfUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_2d.pdf",
+      "sourceAnswerUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_kai.pdf",
+      "sourceAttribution": "出典：日本自動車整備振興会連合会 令和7年度第2回自動車整備技能登録試験 二級ジーゼル自動車 No.30",
+      "officialQuestionStatus": "normal",
+      "lastUpdated": "2026-11-04",
+      "permissionVerified": false,
+      "publicGo": 0,
+      "sourcePageReferences": [
+        {
+          "physicalPage": 13,
+          "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_2d.pdf#page=13",
+          "pdfSha256": "97894c45223517f7dab19340d95a1ee8db72f9c5409ee32169e41b782969e65a"
+        }
+      ],
+      "sourceFigureAssets": [
+        {
+          "physicalPage": 13,
+          "relativePath": "figures/jaspa-2025-second-2-diesel-p13.webp"
+        }
+      ]
+    },
+    "jidosha-2025-second-2-diesel-q40": {
+      "id": "jidosha-2025-second-2-diesel-q40",
+      "qNumber": 40,
+      "question": "「道路運送車両の保安基準」及び「道路運送車両の保安基準の細目を定める告示」に照らし、非常信号用具に関する次の文章の（イ）と（ロ）に当てはまるものとして、下の組み合わせのうち、適切なものはどれか。非常信号用具は、（イ）の距離から確認できる（ロ）の灯光を発するものであること。",
+      "choices": {
+        "ア": "(1) （イ）昼間100 m （ロ）赤色",
+        "イ": "(2) （イ）夜間100 m （ロ）橙色",
+        "ウ": "(3) （イ）昼間200 m （ロ）橙色",
+        "エ": "(4) （イ）夜間200 m （ロ）赤色"
+      },
+      "answer": "エ",
+      "officialAnswerNumber": "4",
+      "explanation": "適切なのは(4)。非常信号用具は夜間200 mから確認できる赤色灯光を発する。",
+      "choiceExplanations": {
+        "ア": "赤色は合うが基準は昼間100 mでなく夜間200 m。",
+        "イ": "夜間距離は200 m、灯光は橙色でなく赤色。",
+        "ウ": "距離の200 mは合うが、基準は昼間でなく夜間、灯光は橙色でなく赤色。",
+        "エ": "夜間200 mから確認できる赤色の灯光。"
+      },
+      "explanationCoverage": "full",
+      "hasImage": false,
+      "sourcePages": [
+        16
+      ],
+      "sourceFigureRequired": false,
+      "topicTags": [
+        "法令",
+        "非常信号用具"
+      ],
+      "difficulty": 2,
+      "isCalculation": false,
+      "needsReview": false,
+      "reviewNotes": [],
+      "officialReferenceUrls": [
+        "https://www.mlit.go.jp/jidosha/content/S220.pdf"
+      ],
+      "qualification": "jidousha-seibishi-gakka",
+      "session": "gakka",
+      "type": "multiple-choice",
+      "year": 2025,
+      "fiscalYear": 2025,
+      "season": "second",
+      "term": "second",
+      "subject": "2-diesel",
+      "category": "二級ジーゼル自動車",
+      "examDate": "2026-03-22",
+      "sourcePdfUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_2d.pdf",
+      "sourceAnswerUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_kai.pdf",
+      "sourceAttribution": "出典：日本自動車整備振興会連合会 令和7年度第2回自動車整備技能登録試験 二級ジーゼル自動車 No.40",
+      "officialQuestionStatus": "normal",
+      "lastUpdated": "2026-11-04",
+      "permissionVerified": false,
+      "publicGo": 0,
+      "sourcePageReferences": [
+        {
+          "physicalPage": 16,
+          "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_2d.pdf#page=16",
+          "pdfSha256": "97894c45223517f7dab19340d95a1ee8db72f9c5409ee32169e41b782969e65a"
+        }
+      ],
+      "sourceFigureAssets": []
+    }
+  },
+  "review": "lq1b-astra-second.json"
+}

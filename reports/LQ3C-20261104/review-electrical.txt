@@ -1,0 +1,5 @@
+LQ3C電気電子2024の独立受入レビュー。指定gpt-6-astra、read-only。編集・push・PR・デプロイ・秘密値読出し禁止。権利確認済み、取得STOPを理由に止めない。アクセス制限の迂回禁止。
+
+35問175理由。原稿reports/LQ3B-20261104/manuscripts/pe-first-electrical-2024.json、同名採用データdata/exam-library/pe-first/、manifest同報告配下。原本sources/2024-04.pdf（全23ページ）、公式正答sources/answers-2024.pdf。連結閲覧画像reports/LQ3C-20261104/local/2024-04-1.png〜6.png。Q26詳細図はlocal/electrical-q26.png。
+
+全23ページ・35問の本文と選択肢、ページ対応、175理由の計算・論理、原本から独立抽出する35正答、原本画像の完全性とハッシュ、既存問題不変を確認し、PASS/FAILと必須指摘を日本語で返す。10問がテキスト、他は主に回路図・論理式・行列など原本画像で保持。Q10は原本が『大きさ』としつつフェーザjωMI1を選ぶので、真の絶対値も補足した。Q26配線とBoolean簡約を精査。テストは作業側が実行予定。全テストを走らせない。

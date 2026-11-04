@@ -1,0 +1,228 @@
+{
+  "status": "DRAFT_PENDING_INDEPENDENT_REVIEW",
+  "qualification": "gijutsushi1-kikai",
+  "year": 2024,
+  "subject": "basis",
+  "expectedFullQualificationCount": 160,
+  "questions": [
+    {
+      "id": "gijutsushi1-kikai-2024-basis-I-2-1",
+      "questionNumber": 7,
+      "printedNumber": "Ⅰ－2－1",
+      "questionText": "10進数での「0.6」を2進数表現したものとして、最も適切なものはどれか。ただし、以下の2進数表現では、小数点以下16位までを示している。",
+      "choices": {
+        "1": "0.1001100110011001",
+        "2": "0.1011001100110011",
+        "3": "0.1100000000000000",
+        "4": "0.1100110011001100",
+        "5": "0.1110011001100110"
+      },
+      "officialAnswer": 1,
+      "scoringException": null,
+      "explanation": "正答は1です。小数部分を順に2倍すると、整数部分は1、0、0、1、1、0、0、1…となります。0.6は2進数で0.100110011001…と循環します。",
+      "choiceExplanations": {
+        "1": "適切です。1001の繰返しの先頭16桁です。",
+        "2": "小数第3位が1ですが、正しくは0です。",
+        "3": "これは2進数で3/4、10進数で0.75です。",
+        "4": "先頭2桁が11となり、値は0.75以上になります。",
+        "5": "先頭3桁が111となり、値は0.875以上になります。"
+      },
+      "hasRequiredFigure": false,
+      "sourceQuestionUrl": "https://www.engineer.or.jp/c_topics/010/attached/attach_10606_1.pdf",
+      "sourceQuestionPage": 6,
+      "sourceQuestionSha256": "f4c593ee3d3afee341f56d1049c2ebf60e39b3141457cba2b112b7ac6a72a7b0",
+      "sourceAnswerUrl": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_5.pdf",
+      "sourceAnswerPage": 1,
+      "sourceAnswerSha256": "256a6293b49f67f9849172e8cce6ad0219d8573a1b9ed34b322dea1b9dc91b14",
+      "sourceAttribution": "出典：公益社団法人日本技術士会 令和6年度技術士第一次試験 基礎科目 Ⅰ－2－1。改行・空白・句読点と数式表記を整理。解説は独自作成。",
+      "transcription": "Official PDF and saved OCR checked. Printed group/item and all five choices retained; matrices use row notation.",
+      "needsIndependentReview": true,
+      "publicGo": false
+    },
+    {
+      "id": "gijutsushi1-kikai-2024-basis-I-2-2",
+      "questionNumber": 8,
+      "printedNumber": "Ⅰ－2－2",
+      "questionText": "次の［ ］に当てはまる語句の組合せとして、最も適切なものはどれか。\nx、yを実数とする。\n「x²＋y²＝0」は「x＝y＝0」であるための［ア］。\nまた、「x＋y＞2」は「x＞1又はy＞1」であるための［イ］。",
+      "choices": {
+        "1": "ア：必要十分条件である／イ：必要条件であるが十分条件ではない",
+        "2": "ア：必要十分条件である／イ：十分条件であるが必要条件ではない",
+        "3": "ア：十分条件であるが必要条件ではない／イ：必要十分条件である",
+        "4": "ア：十分条件であるが必要条件ではない／イ：必要条件であるが十分条件ではない",
+        "5": "ア：必要条件であるが十分条件ではない／イ：十分条件であるが必要条件ではない"
+      },
+      "officialAnswer": 2,
+      "scoringException": null,
+      "explanation": "正答は2です。実数の二乗は非負なので、二乗和が0であることと両方が0であることは同値です。x＋y＞2なら少なくとも片方は1を超えますが、その逆はx＝2、y＝−1などで成り立ちません。",
+      "choiceExplanations": {
+        "1": "アは正しいですが、イは十分条件であり、必要条件ではありません。",
+        "2": "適切です。アは同値、イは一方向だけの含意です。",
+        "3": "アは十分条件だけでなく必要条件でもあり、イは同値ではありません。",
+        "4": "アの必要性を落とし、イの必要・十分を逆にしています。",
+        "5": "イは正しいですが、アは必要十分条件です。"
+      },
+      "hasRequiredFigure": false,
+      "sourceQuestionUrl": "https://www.engineer.or.jp/c_topics/010/attached/attach_10606_1.pdf",
+      "sourceQuestionPage": 6,
+      "sourceQuestionSha256": "f4c593ee3d3afee341f56d1049c2ebf60e39b3141457cba2b112b7ac6a72a7b0",
+      "sourceAnswerUrl": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_5.pdf",
+      "sourceAnswerPage": 1,
+      "sourceAnswerSha256": "256a6293b49f67f9849172e8cce6ad0219d8573a1b9ed34b322dea1b9dc91b14",
+      "sourceAttribution": "出典：公益社団法人日本技術士会 令和6年度技術士第一次試験 基礎科目 Ⅰ－2－2。改行・空白・句読点と数式表記を整理。解説は独自作成。",
+      "transcription": "Official PDF and saved OCR checked. Printed group/item and all five choices retained; matrices use row notation.",
+      "needsIndependentReview": true,
+      "publicGo": false
+    },
+    {
+      "id": "gijutsushi1-kikai-2024-basis-I-2-3",
+      "questionNumber": 9,
+      "printedNumber": "Ⅰ－2－3",
+      "questionText": "IPネットワークの経路制御に関する次の記述のうち、最も不適切なものはどれか。",
+      "choices": {
+        "1": "ノードがパケットを受信したとき、次にどのノードに転送するかは、ルーティングプロトコルによって作成されたルーティングテーブルを参照して決定される。経由ノードで同様の動作を繰り返すことにより、IPパケットは宛先ノードまで転送される。",
+        "2": "ルーティングプロトコルは、リンク状態型と距離ベクトル型に大きく分類される。どちらのタイプのルーティングプロトコルにおいても、ノードはネットワークトポロジを把握して経路を決定する。",
+        "3": "リンク状態型ルーティングプロトコルでは、リンクの距離等の情報をネットワーク内に広告し、各ノードが、最短経路計算に基づいてルーティングテーブルを作成する。",
+        "4": "距離ベクトル型ルーティングプロトコルでは、宛先ノードと各ノード間の距離情報がネットワーク内を伝搬し、各ノードが最短距離となる次ホップノードを決定し、ルーティングテーブルを作成する。",
+        "5": "代表的なリンク状態型ルーティングプロトコルとしてOSPFやIS-ISなどがある。一方、代表的な距離ベクトル型ルーティングプロトコルとしてRIPなどがある。"
+      },
+      "officialAnswer": 2,
+      "scoringException": null,
+      "explanation": "正答は2です。距離ベクトル型は隣接ノードから得る宛先までの距離情報で経路を更新し、ネットワーク全体のトポロジを把握する必要はありません。リンク状態型との違いを問う問題です。",
+      "choiceExplanations": {
+        "1": "適切です。各中継ノードで経路表を参照して次ホップへ転送します。",
+        "2": "不適切です。全体のリンク構成を把握するという説明は距離ベクトル型には当てはまりません。",
+        "3": "適切です。リンク状態を共有し、それに基づいて各ノードが最短経路を計算します。",
+        "4": "適切です。隣接ノードから伝わる距離情報を使って次ホップを選びます。",
+        "5": "適切です。OSPF・IS-ISはリンク状態型、RIPは距離ベクトル型の代表例です。"
+      },
+      "hasRequiredFigure": false,
+      "sourceQuestionUrl": "https://www.engineer.or.jp/c_topics/010/attached/attach_10606_1.pdf",
+      "sourceQuestionPage": 7,
+      "sourceQuestionSha256": "f4c593ee3d3afee341f56d1049c2ebf60e39b3141457cba2b112b7ac6a72a7b0",
+      "sourceAnswerUrl": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_5.pdf",
+      "sourceAnswerPage": 1,
+      "sourceAnswerSha256": "256a6293b49f67f9849172e8cce6ad0219d8573a1b9ed34b322dea1b9dc91b14",
+      "sourceAttribution": "出典：公益社団法人日本技術士会 令和6年度技術士第一次試験 基礎科目 Ⅰ－2－3。改行・空白・句読点と数式表記を整理。解説は独自作成。",
+      "transcription": "Official PDF and saved OCR checked. Printed group/item and all five choices retained; matrices use row notation.",
+      "needsIndependentReview": true,
+      "publicGo": false
+    },
+    {
+      "id": "gijutsushi1-kikai-2024-basis-I-2-4",
+      "questionNumber": 10,
+      "printedNumber": "Ⅰ－2－4",
+      "questionText": "データをネットワークで伝送する場合には、ノイズ等の原因で一部のビットが反転する伝送誤りが発生する可能性がある。伝送誤りを検出するために、データの末尾に1ビットの符号を付加して伝送する方法を考える。付加するビットの値は、元のデータの中の値が「1」のビットの数が偶数であれば「0」、奇数であれば「1」とする。\n例えば、元のデータが「1010100」という7ビットであるとき、値が「1」のビットは3個で奇数である。よって付加するビットは「1」であり、「10101001」という8ビットを伝送する。\nこの伝送誤りの検出に関する次の記述のうち、最も適切なものはどれか。",
+      "choices": {
+        "1": "データの中の1ビットが反転したことを検出するためには、元のデータは8ビット以下でなければならない。",
+        "2": "データの中の1ビットが反転したことを検出するためには、元のデータは2ビット以上でなければならない。",
+        "3": "8ビットのデータの中の1ビットが反転した場合には、どのビットが反転したかを特定できる。",
+        "4": "データによっては付加するビットの値を決められないことがある。",
+        "5": "データの中の2ビットが反転した場合には、伝送誤りを検出できない。"
+      },
+      "officialAnswer": 5,
+      "scoringException": null,
+      "explanation": "正答は5です。偶数パリティでは1の総数が偶数になるようにします。奇数個の反転は偶奇を変えるので検出できますが、2ビットなど偶数個の反転は偶奇が変わらず検出できません。",
+      "choiceExplanations": {
+        "1": "ビット数の上限8という制限はありません。",
+        "2": "元データが1ビットでも、その反転は偶奇の変化で検出できます。",
+        "3": "誤りの有無を検出できますが、単一パリティだけでは位置を特定できません。",
+        "4": "1の個数は必ず偶数か奇数のいずれかなので、付加ビットは常に決まります。",
+        "5": "適切です。2ビットの反転では1の個数の偶奇が保存されます。"
+      },
+      "hasRequiredFigure": false,
+      "sourceQuestionUrl": "https://www.engineer.or.jp/c_topics/010/attached/attach_10606_1.pdf",
+      "sourceQuestionPage": 7,
+      "sourceQuestionSha256": "f4c593ee3d3afee341f56d1049c2ebf60e39b3141457cba2b112b7ac6a72a7b0",
+      "sourceAnswerUrl": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_5.pdf",
+      "sourceAnswerPage": 1,
+      "sourceAnswerSha256": "256a6293b49f67f9849172e8cce6ad0219d8573a1b9ed34b322dea1b9dc91b14",
+      "sourceAttribution": "出典：公益社団法人日本技術士会 令和6年度技術士第一次試験 基礎科目 Ⅰ－2－4。改行・空白・句読点と数式表記を整理。解説は独自作成。",
+      "transcription": "Official PDF and saved OCR checked. Printed group/item and all five choices retained; matrices use row notation.",
+      "needsIndependentReview": true,
+      "publicGo": false
+    },
+    {
+      "id": "gijutsushi1-kikai-2024-basis-I-2-5",
+      "questionNumber": 11,
+      "printedNumber": "Ⅰ－2－5",
+      "questionText": "拡張ユークリッド互除法の計算アルゴリズムについて説明した次の記述の、［ ］に入る値の組合せとして、最も適切なものはどれか。\n自然数a、bに対して、その最大公約数を記号gcd(a,b)で表す。ここでは、ユークリッド互除法と行列の計算によって、ax＋by＝gcd(a,b)を満たす整数x、yを計算するアルゴリズムをa＝104、b＝65の例を使って説明する。まず、ユークリッド互除法で割り算を繰り返し、次の式を得る。\n104÷65＝1 余り39 (1)\n65÷39＝1 余り26 (2)\n39÷26＝1 余り13 (3)\n26÷13＝2 余り0\nしたがって、gcd(104,65)＝［ア］である。\n式(1)は行列を使って(65,39)ᵀ＝M(104,65)ᵀ、式(2)は(39,26)ᵀ＝M(65,39)ᵀ、式(3)は(26,13)ᵀ＝M(39,26)ᵀと表される。ただしM＝[[0,1],[1,−1]]である。これらの式をまとめて、M³＝[[−1,2],[［イ］,［ウ］]]であることに注意すれば、104×［イ］＋65×［ウ］＝［ア］となってgcd(a,b)が得られる。",
+      "choices": {
+        "1": "ア：5／イ：2／ウ：−3",
+        "2": "ア：5／イ：−3／ウ：5",
+        "3": "ア：8／イ：3／ウ：−3",
+        "4": "ア：13／イ：2／ウ：−3",
+        "5": "ア：13／イ：−3／ウ：5"
+      },
+      "officialAnswer": 4,
+      "scoringException": null,
+      "explanation": "正答は4です。最後の0でない余りは13です。逆に代入すると13＝39−26＝2×39−65＝2×104−3×65。したがってア＝13、イ＝2、ウ＝−3です。",
+      "choiceExplanations": {
+        "1": "係数は正しいですが、最大公約数は5ではなく13です。",
+        "2": "最大公約数も係数も一致せず、−3×104＋5×65＝13は成り立ちますが、提示された行列の最下行とは異なります。",
+        "3": "最大公約数は8でなく13であり、係数も一致しません。",
+        "4": "適切です。104×2＋65×(−3)＝13で、行列積の最下行も(2,−3)です。",
+        "5": "ベズー等式自体は満たしますが、問題で指定した行列積M³の最下行は(2,−3)であり、(−3,5)ではありません。"
+      },
+      "hasRequiredFigure": true,
+      "sourceQuestionUrl": "https://www.engineer.or.jp/c_topics/010/attached/attach_10606_1.pdf",
+      "sourceQuestionPage": 8,
+      "sourceQuestionSha256": "f4c593ee3d3afee341f56d1049c2ebf60e39b3141457cba2b112b7ac6a72a7b0",
+      "sourceAnswerUrl": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_5.pdf",
+      "sourceAnswerPage": 1,
+      "sourceAnswerSha256": "256a6293b49f67f9849172e8cce6ad0219d8573a1b9ed34b322dea1b9dc91b14",
+      "sourceAttribution": "出典：公益社団法人日本技術士会 令和6年度技術士第一次試験 基礎科目 Ⅰ－2－5。改行・空白・句読点と数式表記を整理。解説は独自作成。",
+      "transcription": "Official PDF and saved OCR checked. Printed group/item and all five choices retained; matrices use row notation.",
+      "needsIndependentReview": true,
+      "publicGo": false,
+      "figures": [
+        {
+          "path": "data/qualification-staging/lq4e-engineer-first/assets/2024-basis-I-2-5.png",
+          "alt": "拡張ユークリッド互除法の割算と行列変換。行列Mは1行目0,1、2行目1,−1。三乗の最下行にイ、ウを配置。",
+          "sourceQuestionPage": 8,
+          "sourceClipPdfPoints": [
+            80,
+            235,
+            530,
+            585
+          ],
+          "renderDpi": 180,
+          "sha256": "7ef3bbad25624ae4fdbb4ef4e513b21eff15d66bfc1c71017888ccf9e33ede55"
+        }
+      ]
+    },
+    {
+      "id": "gijutsushi1-kikai-2024-basis-I-2-6",
+      "questionNumber": 12,
+      "printedNumber": "Ⅰ－2－6",
+      "questionText": "暗号技術に関する次の記述のうち、最も不適切なものはどれか。",
+      "choices": {
+        "1": "ハッシュ関数は、任意長の文字列を一定の長さに圧縮する関数であり、多くの実用的な応用では出力サイズが固定された特定のハッシュ関数を用いるが、理論的に安全性を定義するためにはセキュリティパラメータに関する漸近的な性質として表す必要がある。",
+        "2": "量子計算機に対しても安全と思われる公開鍵暗号を、ポスト量子暗号と呼ぶ。ポスト量子暗号の有力な候補として格子暗号や誤り訂正符号の問題に基づく暗号、多変数多項式の問題に基づく暗号などが挙げられる。",
+        "3": "ディジタル署名（電子署名）では、正しいディジタル署名を作成できるのは署名者本人だけであり、正しい署名者が作成したディジタル署名の正当性は、誰でも検証できる必要がある。",
+        "4": "単純にパスワードや定まった認証情報を検証者に送るような方法で利用者の正当性を示そうとすると、リプレイ攻撃により容易に成りすましが出来る。そのような攻撃を無効にするために多要素認証方式が広く使われている。多要素認証方式には公開鍵系の方式と共通鍵系の方式がある。",
+        "5": "ブロックチェーンにおける重要な技術として、（非対話）ゼロ知識証明が挙げられる。ゼロ知識証明を用いると、例えば「X株買って、従来Y株保有していたが、現在はZ株保有している」という場合に、X、Y、Zを秘匿しながらZ＝Y＋Xという関係が成り立つ（正当に取引が行われている）ことを証明できる。"
+      },
+      "officialAnswer": 4,
+      "scoringException": null,
+      "explanation": "正答は4です。リプレイ攻撃への直接的な対策は、毎回異なるチャレンジを使うチャレンジレスポンスなどです。公開鍵系・共通鍵系という分類もチャレンジレスポンスに対応します。多要素認証は異なる種類の認証要素を組み合わせる概念であり、それだけで再送を無効化する説明にはなりません。",
+      "choiceExplanations": {
+        "1": "適切です。実用上の固定出力長と、理論的な安全性を扱う関数族の説明です。",
+        "2": "適切です。量子計算に対する耐性を目指す暗号の代表的な基礎問題を挙げています。",
+        "3": "適切です。署名の偽造困難性と公開検証可能性を述べています。",
+        "4": "不適切です。多要素認証とチャレンジレスポンスの説明を混同しています。",
+        "5": "適切です。秘密の値自体を公開せず、その間の関係が正しいことを証明できます。"
+      },
+      "hasRequiredFigure": false,
+      "sourceQuestionUrl": "https://www.engineer.or.jp/c_topics/010/attached/attach_10606_1.pdf",
+      "sourceQuestionPage": 9,
+      "sourceQuestionSha256": "f4c593ee3d3afee341f56d1049c2ebf60e39b3141457cba2b112b7ac6a72a7b0",
+      "sourceAnswerUrl": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_5.pdf",
+      "sourceAnswerPage": 1,
+      "sourceAnswerSha256": "256a6293b49f67f9849172e8cce6ad0219d8573a1b9ed34b322dea1b9dc91b14",
+      "sourceAttribution": "出典：公益社団法人日本技術士会 令和6年度技術士第一次試験 基礎科目 Ⅰ－2－6。改行・空白・句読点と数式表記を整理。解説は独自作成。",
+      "transcription": "Official PDF and saved OCR checked. Printed group/item and all five choices retained; matrices use row notation.",
+      "needsIndependentReview": true,
+      "publicGo": false
+    }
+  ]
+}

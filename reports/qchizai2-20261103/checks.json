@@ -1,0 +1,78 @@
+{
+  "schema": {
+    "status": "PASS",
+    "command": "python scripts/verify-chizai2-intake.py --pdf-dir C:/Users/kanet/AppData/Local/Temp/codex-work/qchizai2-20261103",
+    "officialPdfByteHashes": 4,
+    "officialAnswersIndependentlyParsed": 160,
+    "uniqueOriginals": 160,
+    "choiceReasons": 651,
+    "applicationSchemaCommand": "pnpm exec tsx scripts/validate-questions.ts --exam=chizai2",
+    "applicationSchema": {
+      "ok": 160,
+      "fail": 0,
+      "warn": 26
+    },
+    "warnings": "26 overall explanations are under 50 characters; all accepted per-choice reasons are present. Fixed reviewed text was not rewritten to pad length."
+  },
+  "twoRoundCoverage": {
+    "status": "PASS",
+    "command": "pnpm exec tsx scripts/verify-two-round-coverage.ts --exam=chizai2 --expected-per-round=80 --round=2026-spring --round=2026-july",
+    "rounds": 2,
+    "perRound": 80,
+    "perSectionPerRound": 40
+  },
+  "typecheck": {
+    "status": "PASS",
+    "command": "pnpm exec tsc --noEmit",
+    "exitCode": 0,
+    "note": "Current run passed in this task worktree. No DB connection or migration."
+  },
+  "relatedTests": {
+    "status": "PASS",
+    "evidence": "vitest-current.json",
+    "testFiles": 11,
+    "tests": 1178,
+    "failed": 0,
+    "scope": "Current data registries, 160 source/answer/explanation mappings, 4x40 coverage, binary and 9-choice selection, both numeric originals, real React players, anonymous history/revisit state, exam config, source labels and JSON-LD."
+  },
+  "lint": {
+    "status": "PASS",
+    "command": "node node_modules/eslint/bin/eslint.js <changed TypeScript/TSX/MJS files>; git diff --check",
+    "exitCode": 0
+  },
+  "build": {
+    "status": "PASS",
+    "command": "pnpm build",
+    "exitCode": 0,
+    "buildId": "01k-jqZCcj7j5Qc3VzpWc",
+    "staticPages": 12781,
+    "log": "C:/Users/kanet/AppData/Local/Temp/codex-work/qchizai2-20261103/build-local-output.log",
+    "logSha256": "b74eb2da6d0bf38e21a13c32a7d7fe5ad6dde9efa4f296ed4c246764c7ee0bc3",
+    "note": "Stale task output junction was detached; successful build used ordinary worktree-local .next. Existing middleware/edge/chart warnings only."
+  },
+  "browser": {
+    "status": "PASS",
+    "command": "node scripts/verify-chizai2-browser.mjs http://127.0.0.1:43173 C:/Users/kanet/AppData/Local/Temp/codex-work/qchizai2-browser-current",
+    "evidence": "browser-receipt.json",
+    "evidenceSha256": "8c99ba076b105728798cc37d849881abb8fb442fc200b97e37b62c2b724a9043",
+    "cases": 20,
+    "buildId": "01k-jqZCcj7j5Qc3VzpWc",
+    "scope": "5 original format samples x reader/quiz x correct/wrong; all choice reasons, both numeric calculations, fee table, sources, isolated anonymous history and reload. External requests and writes blocked. Server stopped.",
+    "visualInspection": [
+      "Nine-choice reader page",
+      "March practical Q34 fee table and 208000 calculation"
+    ],
+    "harnessCorrections": [
+      "Source links are checked after answering in the normal quiz",
+      "Paragraph whitespace is normalised",
+      "Layered general explanation is checked sentence by sentence; every sentence and all choice reasons remain required"
+    ]
+  },
+  "cleanup": {
+    "status": "BLOCKED_AUTO_APPROVAL",
+    "path": "C:/Users/kanet/20260522/ipa-qchizai2-20261103/.next",
+    "exists": true,
+    "reason": "Automatic approval review rejected recursive deletion: blocked by policy. Exact absolute path and absence of junction were verified; no bypass attempted after the literal-path rejection.",
+    "serverStopped": true
+  }
+}

@@ -1,0 +1,69 @@
+{
+  "taskSlug": "khk-kikai",
+  "publicationStatus": "staging",
+  "publicAllowed": false,
+  "needsIndependentReview": true,
+  "years": [
+    2025,
+    2024
+  ],
+  "qualifications": [
+    {
+      "slug": "khk-kikai-kou",
+      "name": "高圧ガス製造保安責任者 甲種機械",
+      "file": "khk-kikai-kou/questions.json",
+      "counts": {
+        "2025": {
+          "hoki": 20,
+          "hoan": 15,
+          "gakushiki": 5
+        },
+        "2024": {
+          "hoki": 20,
+          "hoan": 15,
+          "gakushiki": 5
+        }
+      },
+      "total": 80
+    },
+    {
+      "slug": "khk-kikai-otsu",
+      "name": "高圧ガス製造保安責任者 乙種機械",
+      "file": "khk-kikai-otsu/questions.json",
+      "counts": {
+        "2025": {
+          "hoki": 20,
+          "hoan": 15,
+          "gakushiki": 15
+        },
+        "2024": {
+          "hoki": 20,
+          "hoan": 15,
+          "gakushiki": 15
+        }
+      },
+      "total": 100
+    }
+  ],
+  "total": 180,
+  "multipleChoice": 170,
+  "choiceExplanations": 850,
+  "descriptive": 10,
+  "exclusions": [],
+  "missingPdfUrls": [],
+  "figurePathBase": "data/qualification-staging/khk-kikai（public配下に置かない）",
+  "normalization": [
+    "全角英数字・括弧等を半角化。改行と空白を整理。問題番号はqNumberに分離。",
+    "埋め込み日本語CIDフォントをPyMuPDFでテキスト抽出。OCRや第三者の問題文は不使用。",
+    "単位の上付き指数及び数学記号の表記を補正。R6甲種学識問4の座屈応力の分数をσk=−4π²EI/(L²A)として転記。",
+    "R6乙種学識問9の公式表を、周方向応力・軸方向応力を明記した5組のテキスト選択肢に転記。",
+    "法令問8〜12・13〜20にはそれぞれの共通設例を本文に併記し、sharedContextにも保存。",
+    "R6甲種学識問1の表及びR7甲種学識問5の計算用数表は本文に保持。必要な線画・グラフのみ画像切出し。",
+    "原図の見えない文字は画像に保持し、クリープ曲線の解答模式図は独自SVG。"
+  ],
+  "handoff": [
+    "監督役による独立レビュー（本作業では起動しない）",
+    "レビューで修正があれば作者へ差戻し",
+    "公開時にはExamCode/Session/license及びEXAM_CONFIGS、データ登録、ルーティングの統合作業が別途必要。現段階では公開レジストリに追加しない。"
+  ]
+}

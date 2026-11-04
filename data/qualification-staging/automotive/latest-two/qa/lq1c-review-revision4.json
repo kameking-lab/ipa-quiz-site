@@ -1,0 +1,53 @@
+{
+  "model": "gpt-6-astra",
+  "scope": "Independent revision-4 review of exactly the two IDs in qa/lq1c-revision4-ids.json against current qa/lq1c-candidates.json and revision4 delta. qa paths are relative to data/qualification-staging/automotive/latest-two/. Hashes use insertion-order compact UTF-8 candidate JSON.",
+  "limitations": [
+    "Examination-specific mechanisms only; no universal AT fail-safe or refrigerant-phase claim is certified. Rights owner verification supplied by user. No candidate/product edits, agents, commits, secrets or access bypass.",
+    "Both current candidate hashes match revision4 delta after-hashes. Both target PDF hashes match candidate source references.",
+    "TOSSNET PDF browser screenshots failed with cache miss; direct public downloads were rendered locally and inspected at ten/1k.pdf physical p25 Q36 and eleven/20110620-1k.pdf physical p12 Q18. Separate official keys for these two historical TOSSNET leads were not independently inspected, so their alleged answer numbers are not used as verified premises. Target keys and copied 2019/2020 supporting keys were visually inspected."
+  ],
+  "rows": [
+    {
+      "id": "jidosha-2026-first-2-diesel-q27",
+      "candidateSha256": "62a37c47adc9d6b6436331caf6cd3cbbfcedc38ab08fda719b8ca1f76b066208",
+      "verdict": "PASS",
+      "sourcePagesChecked": [
+        12
+      ],
+      "answerChecked": true,
+      "allFourExplanationsChecked": true,
+      "findings": [
+        {
+          "field": "question, answer, explanation, choiceExplanations",
+          "issue": "Original question, all four choices and explanations visually checked. Target official column 22 Q27=4 agrees with answer \u30a8. Temperature raises sensing-chamber pressure; throttling produces a low-pressure liquid/vapor mist; outlet sensing regulates supply with load. The identical 2019 box-type diagram explicitly labels A as gas-phase refrigerant, directly supporting choiceExplanations.\u30a6 without relying on an answer key to infer the charge. Its key gives Q27=1 for the reversed temperature/pressure statement. The revision appropriately excludes universal no-liquid-at-any-condition claims. No repair required.",
+          "replacement": null,
+          "source": "tmp/lq1b-sources/jaspa-2026-first-2-diesel-p12.png; tmp/lq1b-sources/jaspa-2026-first-answers-p1.png column 22 Q27=4; qa/lq1c-supporting-sources/lq1c-20190324-2d-p13.png; qa/lq1c-supporting-sources/lq1c-20190324-key-p01.png column 22 Q27=1; https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2018/20190324_2d.pdf#page=13"
+        }
+      ]
+    },
+    {
+      "id": "jidosha-2025-second-1-small-written-q37",
+      "candidateSha256": "525a8c37c5285c5fd51de0ab90a810d3e21b3d9471437259549d94f63018d743",
+      "verdict": "FAIL",
+      "sourcePagesChecked": [
+        26
+      ],
+      "answerChecked": true,
+      "allFourExplanationsChecked": true,
+      "findings": [
+        {
+          "field": "question, answer, explanation, choiceExplanations.\u30a2, choiceExplanations.\u30a6, choiceExplanations.\u30a8",
+          "issue": "Original question and all four options match. Target key column 12 Q37=3 agrees with answer \u30a6. The revised explanations correctly distinguish loss of throttle load input and substitute control, converter lockup control, and the hot-side signal from a shorted negative-temperature-coefficient sensor. They avoid asserting always-maximum pressure or universally denying secondary shock. The historical Q36 and Q18 leads explicitly test the oil-temperature-short/shift-shock and maximum-line-pressure claims; they are corroborating question context, not independently verified keys. No repair identified in these fields.",
+          "replacement": null,
+          "source": "tmp/lq1b-sources/jaspa-2025-second-1-small-written-p26.png; tmp/lq1b-sources/jaspa-2025-second-answers-p1.png column 12 Q37=3; same question PDF p15 Q22(2) for substitute throttle contacts; https://www.tossnet.or.jp/Portals/0/resouce/media/ten/1k.pdf#page=25 Q36; https://www.tossnet.or.jp/Portals/0/resouce/media/eleven/20110620-1k.pdf#page=12 Q18; locally rendered tmp/lq1c-r4-ten-p25.png and tmp/lq1c-r4-eleven-p12.png"
+        },
+        {
+          "field": "choiceExplanations.\u30a4",
+          "issue": "The cited fallback gear allocation loses a material condition. The primary 2020 Q17(4) states that BOTH shift-solenoid A and B have abnormalities while driving. It does not establish that a B-only internal open circuit necessarily produces that allocation. In this explanation of a B-only option, the unqualified opening claim and ensuing numeric allocation imply a broader diagnosis than the cited primary evidence supports. This is a scope-of-evidence defect, not a claim that the B-only fallback must be different.",
+          "replacement": "This is not the correct option in this question; the official answer is the throttle-position-sensor internal open circuit. Shift-solenoid faults concern gear selection and fail-safe operation. As a specifically conditioned example, official 2020-03-22 1-small Q17(4) states that when BOTH shift solenoids A and B become abnormal while driving, D and 2 are fixed in third gear and range 1 in second gear. That example alone does not establish the exact fallback gears for the B-only open circuit in this option, and does not rule out secondary shift shock.",
+          "source": "qa/lq1c-supporting-sources/lq1c-20200322-1k-p12.png Q17(4), explicit simultaneous A-and-B condition; qa/lq1c-supporting-sources/lq1c-20200322-key-p01.png column 12 Q17=4; https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2019/20200322_1k.pdf#page=12; target tmp/lq1b-sources/jaspa-2025-second-1-small-written-p26.png Q37(2) specifies B only"
+        }
+      ]
+    }
+  ]
+}

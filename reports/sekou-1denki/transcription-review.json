@@ -1,0 +1,229 @@
+{
+  "reviewedAt": "2026-11-04",
+  "reviewMethod": "Primary reviewer compared all exceptional fields with rendered original PDF pages; unchanged fields verified automatically. This is transcription QA, separate from independent CLI review.",
+  "fieldsCompared": 902,
+  "normalizedExactFields": 880,
+  "manuallyReviewedFields": 22,
+  "differences": [
+    {
+      "year": 2026,
+      "number": 4,
+      "field": "question",
+      "source": " 内部抵抗rv ，最大目盛が1 V の電圧計に，直列抵抗器Rm1 , Rm2 を図のように接続\nして測定範囲を拡大した。b 及びc の端子で測定した場合のそれぞれの電圧計の最大指示値V b 及びV c の値〔 V 〕の組合せとして，適当なものはどれか。  V b Vc",
+      "saved": "内部抵抗rᵥ，最大目盛が1 Vの電圧計に，直列抵抗器Rₘ₁，Rₘ₂を図のように接続して測定範囲を拡大した。b及びcの端子で測定した場合のそれぞれの電圧計の最大指示値Vb及びVcの値〔V〕の組合せとして，適当なものはどれか。（各選択肢はVb／Vcの順）",
+      "sourceNormalizedSha256": "1672dff24547c2ba7746d6456ca037844c5f5de6bf5a3f10adeab7e57b12097c",
+      "savedNormalizedSha256": "64da39e4fb2b0ffb20b5b4cd2dbe9854e1ad097faf743b8a9f5129c41a3c0be3",
+      "reviewReason": "Equation subscripts restored; table column headings represented explicitly without changing values."
+    },
+    {
+      "year": 2026,
+      "number": 18,
+      "field": "question",
+      "source": " 架空送電線における支持点間の電線のたるみの近似値D〔 m 〕及び電線の実長の近似値L〔 m 〕を求める式の組合せとして，適当なものはどれか。　ただし，各記号は次のとおりとし，電線支持点の高低差はないものとする。　　S：径　間〔 m 〕　　T：電線の最低点の水平張力〔 N 〕　　W：電線の単位長さ当たりの重量〔 N / m 〕  たるみ 実長",
+      "saved": "架空送電線における支持点間の電線のたるみの近似値D〔m〕及び電線の実長の近似値L〔m〕を求める式の組合せとして，適当なものはどれか。ただし，各記号は次のとおりとし，電線支持点の高低差はないものとする。S：径間〔m〕，T：電線の最低点の水平張力〔N〕，W：電線の単位長さ当たりの重量〔N/m〕。（各選択肢はたるみD／実長Lの順）",
+      "sourceNormalizedSha256": "1c15874c705f754bdbd6f73bd0f2de1f0c30f16ee91e3d8006bf813f9fab3ff4",
+      "savedNormalizedSha256": "8fb28092de19993fc26665ce144c2ef6d9d6ee84e36b187a789018df68d3fb49",
+      "reviewReason": "Printed fractions and squares transcribed as unambiguous linear equations; D/L column order stated."
+    },
+    {
+      "year": 2026,
+      "number": 18,
+      "field": "choice1",
+      "source": "D ＝W S23 T 　　L ＝S＋3 D28 S",
+      "saved": "D=WS²/(3T)，L=S+3D²/(8S)",
+      "sourceNormalizedSha256": "acd343ef419085592df5e6e464891c9aa7ead12df5ede119f4d4cda727d2518e",
+      "savedNormalizedSha256": "a5b2ccddbec987f9d039ed633a9bcb2ff8b286c9c30261e0987d3b7c471b7ff5",
+      "reviewReason": "Printed fractions and squares transcribed as unambiguous linear equations; D/L column order stated."
+    },
+    {
+      "year": 2026,
+      "number": 18,
+      "field": "choice2",
+      "source": "D ＝W S28 T 　　L ＝S＋8 D23 S",
+      "saved": "D=WS²/(8T)，L=S+8D²/(3S)",
+      "sourceNormalizedSha256": "f1a8756f5d3d17a30ab9d609f9991d73e3ebbe56c2236d49bed55be14732aad3",
+      "savedNormalizedSha256": "f55c8b89ed562f8c5468305db6e0c1008ab919b5754af3f2c77bd2313d4d764a",
+      "reviewReason": "Printed fractions and squares transcribed as unambiguous linear equations; D/L column order stated."
+    },
+    {
+      "year": 2026,
+      "number": 18,
+      "field": "choice3",
+      "source": "D ＝W S23 T 　　L ＝S＋8 D23 S",
+      "saved": "D=WS²/(3T)，L=S+8D²/(3S)",
+      "sourceNormalizedSha256": "9f6c2795a1b556406a2d586ebb41673c38adb34338d6cd185931d35a0488275e",
+      "savedNormalizedSha256": "ccd7ae967bfffc483bcc830a273ee65507f224a92bb2f56859d19d8f4b76ae40",
+      "reviewReason": "Printed fractions and squares transcribed as unambiguous linear equations; D/L column order stated."
+    },
+    {
+      "year": 2026,
+      "number": 18,
+      "field": "choice4",
+      "source": "D ＝W S28 T 　　L ＝S＋3 D28 S",
+      "saved": "D=WS²/(8T)，L=S+3D²/(8S)",
+      "sourceNormalizedSha256": "b021a094e759d2bb9f1cf8697daaf1c09f7543727bd7a5dfd877ecc9ba9d9100",
+      "savedNormalizedSha256": "9f7139862158236f0d0d1cf88977e91baa73af4a6d694c9c7a3e667d4c838c27",
+      "reviewReason": "Printed fractions and squares transcribed as unambiguous linear equations; D/L column order stated."
+    },
+    {
+      "year": 2026,
+      "number": 47,
+      "field": "question",
+      "source": " 盛土工事を行うために地山を掘削した時の，ほぐした土量が840  m3であった。この\n土量を用いて造成できる盛土の量〔 m3 〕として，正しいものはどれか。　ただし，ほぐした土量の変化率  L，及び締め固めた土量の変化率  C  は次のとおりとする。　L ＝ほぐした土量地山の土量＝1.2　　C ＝締め固めた土量地山の土量＝0.9",
+      "saved": "盛土工事を行うために地山を掘削した時の，ほぐした土量が840 m³であった。この土量を用いて造成できる盛土の量〔m³〕として，正しいものはどれか。ただし，ほぐした土量の変化率L，及び締め固めた土量の変化率Cは次のとおりとする。L＝ほぐした土量／地山の土量＝1.2，C＝締め固めた土量／地山の土量＝0.9。",
+      "sourceNormalizedSha256": "a404a9c22ff54591944847b8cf7f9e1335ecad23d55c442b4fd8efb614e329d1",
+      "savedNormalizedSha256": "726e4cb7689a16e487f1cb1646378961c715f12ce4e56f72d37df0c79387ce26",
+      "reviewReason": "Printed ratios represented with slash notation; units retained."
+    },
+    {
+      "year": 2026,
+      "number": 53,
+      "field": "choice1",
+      "source": "無効電力計",
+      "saved": "図1：varh／無効電力計",
+      "sourceNormalizedSha256": "218c43ed09834ae1fa0cd94244d60219071f4efc5b0d02dce766d20d632f2a3c",
+      "savedNormalizedSha256": "68ce320ab2a73fede6184acdeb5524993112b03dd6794c5b21e85f5a72dfdd62",
+      "reviewReason": "Figure symbols and printed instrument names both retained; original choice numbers map to displayed diagram."
+    },
+    {
+      "year": 2026,
+      "number": 53,
+      "field": "choice2",
+      "source": "電力量計",
+      "saved": "図2：Wh／電力量計",
+      "sourceNormalizedSha256": "e7ffb9f30582fa9b9fcffbecfde7d7c8baa2c42d31ad126550da204241b5cc82",
+      "savedNormalizedSha256": "e1ce2b4da6b1b9bad93c0db5a98f69a49dd4fe47f623e8baba0365cbe95980d8",
+      "reviewReason": "Figure symbols and printed instrument names both retained; original choice numbers map to displayed diagram."
+    },
+    {
+      "year": 2026,
+      "number": 53,
+      "field": "choice3",
+      "source": "力率計",
+      "saved": "図3：cos φ／力率計",
+      "sourceNormalizedSha256": "7232fbf11d5765f04c9088bbf0b3f1f274014662b7a2cfaab904389789257e88",
+      "savedNormalizedSha256": "d18aa3a083e0324e05e83dc5e14b193011474d56a4424906dd5e3c0d98ad86c8",
+      "reviewReason": "Figure symbols and printed instrument names both retained; original choice numbers map to displayed diagram."
+    },
+    {
+      "year": 2026,
+      "number": 53,
+      "field": "choice4",
+      "source": "位相計varhWhcos φφ",
+      "saved": "図4：φ／位相計",
+      "sourceNormalizedSha256": "8636c4d28bc6fa9d81888fd749ded328bbacf02780d03852fdef7c8cf1c7557e",
+      "savedNormalizedSha256": "d3e7d0cf2335a63cfff8d795206915b35c73a406fbf11f607516a47fae55ad7b",
+      "reviewReason": "Figure symbols and printed instrument names both retained; original choice numbers map to displayed diagram."
+    },
+    {
+      "year": 2026,
+      "number": 73,
+      "field": "choice1",
+      "source": "引込用ケーブル ",
+      "saved": "図1：引込用ケーブル（左上）",
+      "sourceNormalizedSha256": "28c1c61b0bad4de5dfbe0f7a2fbdc7b51deae46ce1b1ada6806724f2ec62c5ab",
+      "savedNormalizedSha256": "3fc22e6bbcfee7830ccb0fc0d4bfbb3ee1ca995d7740a08ca791b351310c8e89",
+      "reviewReason": "Two-column graphical choices preserved as source crop; text specifies original number and position."
+    },
+    {
+      "year": 2026,
+      "number": 73,
+      "field": "choice2",
+      "source": "引込用ケーブル",
+      "saved": "図2：引込用ケーブル（右上）",
+      "sourceNormalizedSha256": "28c1c61b0bad4de5dfbe0f7a2fbdc7b51deae46ce1b1ada6806724f2ec62c5ab",
+      "savedNormalizedSha256": "3980786e0f30073bc458da460a134738ed17f1137b27b2412f63b9e8afb5147b",
+      "reviewReason": "Two-column graphical choices preserved as source crop; text specifies original number and position."
+    },
+    {
+      "year": 2026,
+      "number": 73,
+      "field": "choice3",
+      "source": "送出し用ケーブル ",
+      "saved": "図3：送出し用ケーブル（左下）",
+      "sourceNormalizedSha256": "6fa265ea84ff0e1db78c88a376478dd8d9c2f726ba2c8a6d2849065edcc10141",
+      "savedNormalizedSha256": "c6278630610ef5cd09e1f30c639cf26746bae0b90604e21dbebb1f9ca6ad26d5",
+      "reviewReason": "Two-column graphical choices preserved as source crop; text specifies original number and position."
+    },
+    {
+      "year": 2026,
+      "number": 73,
+      "field": "choice4",
+      "source": "送出し用ケーブル",
+      "saved": "図4：送出し用ケーブル（右下）",
+      "sourceNormalizedSha256": "6fa265ea84ff0e1db78c88a376478dd8d9c2f726ba2c8a6d2849065edcc10141",
+      "savedNormalizedSha256": "ed0ae9680b9d16fa8cc0be4f6e1ffea5f89e90e179fcf3813bd314ad55d61cb9",
+      "reviewReason": "Two-column graphical choices preserved as source crop; text specifies original number and position."
+    },
+    {
+      "year": 2025,
+      "number": 12,
+      "field": "choice2",
+      "source": "Y－△始動法の始動時には，全電圧始動時の13の電流が流れる。",
+      "saved": "Y−△始動法の始動時には，全電圧始動時の1/3の電流が流れる。",
+      "sourceNormalizedSha256": "18760b4946c13e07bbe8341be9aac8f8fcd49cba273dbf63ab1d1e0249b3becc",
+      "savedNormalizedSha256": "90323cc7c2d6ef32e80f665d683c12b467858549c1e598a6a92bdcf168bb4052",
+      "reviewReason": "Printed 1 over 3 fractions restored; the intentionally incorrect third option is retained."
+    },
+    {
+      "year": 2025,
+      "number": 12,
+      "field": "choice3",
+      "source": "Y－△始動法の始動時には，各相の固定子巻線に定格電圧の13の電圧が加わる。",
+      "saved": "Y−△始動法の始動時には，各相の固定子巻線に定格電圧の1/3の電圧が加わる。",
+      "sourceNormalizedSha256": "2491c51fe26872af912ae22f28d0f0a40cefc896d9eb3741170ffda9d7c09e23",
+      "savedNormalizedSha256": "9f53d2e3c25731f9500f69f2abaceef98c512ccfd604024fdd800c18647b3240",
+      "reviewReason": "Printed 1 over 3 fractions restored; the intentionally incorrect third option is retained."
+    },
+    {
+      "year": 2025,
+      "number": 14,
+      "field": "question",
+      "source": " 水力発電に用いる水車に関する次の記述のうち，　　　　に当てはまる語句の組合せ\nとして，適当なものはどれか。「ぺルトン水車のア内には，負荷に応じて使用流量を調整するためのイが設けられる。」  　ア　　　　　イ",
+      "saved": "水力発電に用いる水車に関する次の記述のうち，空欄に当てはまる語句の組合せとして，適当なものはどれか。「ぺルトン水車の［ア］内には，負荷に応じて使用流量を調整するための［イ］が設けられる。」（各選択肢はア／イの順）",
+      "sourceNormalizedSha256": "6546fa2fc110d3f74479e96941708ed5138b6aed9e4983419d8cdc8ae735ec1e",
+      "savedNormalizedSha256": "1ca958cc24e0a082978dffde6f93e0d8538075dbfa3eea73f2199cbac2f73ac0",
+      "reviewReason": "Printed blank boxes represented by bracketed identifiers; original hiragana spelling retained."
+    },
+    {
+      "year": 2025,
+      "number": 51,
+      "field": "choice1",
+      "source": "",
+      "saved": "図1（最上段）",
+      "sourceNormalizedSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "savedNormalizedSha256": "066d7be39819be914c9bfac755cb357d716d10377ad825eba8538f0c00045ba5",
+      "reviewReason": "Purely graphical choices preserved as source crop; text specifies original number and vertical position."
+    },
+    {
+      "year": 2025,
+      "number": 51,
+      "field": "choice2",
+      "source": "",
+      "saved": "図2（上から2段目）",
+      "sourceNormalizedSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "savedNormalizedSha256": "d5fe6c74db653d7ff4edf45fe2ca1f37ea302e8c297af7e918e1b2eb855196e9",
+      "reviewReason": "Purely graphical choices preserved as source crop; text specifies original number and vertical position."
+    },
+    {
+      "year": 2025,
+      "number": 51,
+      "field": "choice3",
+      "source": "",
+      "saved": "図3（上から3段目）",
+      "sourceNormalizedSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "savedNormalizedSha256": "95bd2575f885b92d5d73b61accc8085dcce3795be75ea454f5d67f6ff63167b6",
+      "reviewReason": "Purely graphical choices preserved as source crop; text specifies original number and vertical position."
+    },
+    {
+      "year": 2025,
+      "number": 51,
+      "field": "choice4",
+      "source": "",
+      "saved": "図4（最下段）",
+      "sourceNormalizedSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "savedNormalizedSha256": "03188d844f7e25b44dac5315695560efdd9935f664afab1881ff5d366a81b010",
+      "reviewReason": "Purely graphical choices preserved as source crop; text specifies original number and vertical position."
+    }
+  ]
+}

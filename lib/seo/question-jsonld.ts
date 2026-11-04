@@ -1,3 +1,5 @@
+import { isSelfReviewedDescriptiveQuestion } from "@/lib/questions/descriptive";
+import { getQualificationByExamCode } from "@/lib/qualifications/catalog";
 import { questionPagePath } from "@/lib/seo/question-url";
 import { recordedContentDate } from "@/lib/questions/last-updated";
 import { formatNativeBAnswer } from "@/lib/questions/native-b";
@@ -23,9 +25,13 @@ function toJstDateTimeISO(iso: string): string {
 /** Human-readable label for an exam session segment. */
 export function sessionLabel(session: string, exam?: ExamCode): string {
   const parsed = parsePracticeSession(session);
-  if (parsed && (exam === "kanteishi" || exam === "kaikeishi")) return practiceSessionLabel(parsed, exam);
+  if (parsed && (exam === "kisho" || exam === "kenchiku-setsubishi" || exam === "chizai2" || exam === "kanteishi" || exam === "kaikeishi")) return practiceSessionLabel(parsed, exam);
+  if (parsed && (exam === "kanteishi" || exam === "kaikeishi" || exam?.startsWith("khk-reito-"))) return practiceSessionLabel(parsed, exam);
+  if (parsed && (exam === "kenki1" || exam === "kenki2" || exam === "kanteishi" || exam === "kaikeishi")) return practiceSessionLabel(parsed, exam);
   if (parsed && ["gyosei", "kanri", "kansa", "rousai", "koyou", "kenpo", "kounen", "kokunen", "ippan", "sentaku", "required", "theory", "practical", "kiso", "kogaku-a", "kogaku-b", "hoki", "tiri"].includes(parsed)) return practiceSessionLabel(parsed);
   const map: Record<string, string> = {
+    gakushiki: "学識",
+    hoan: "保安管理技術",
     am: "午前",
     am1: "午前I",
     am2: "午前II",
@@ -43,6 +49,22 @@ export function sessionLabel(session: string, exam?: ExamCode): string {
     "gas-law": "法令",
     "gas-basic": "基礎",
     "gas-technology": "ガス技術",
+    "jken-basic": "基本スキル", "jken-programming": "プログラミングスキル", "jken-design": "システムデザインスキル",
+    wagashi: "和菓子（選択）", yogashi: "洋菓子（選択）", seipan: "製パン（選択）",
+    "measurement-basic": "計量に関する基礎知識",
+    "measurement-mass": "計量器概論及び質量の計量",
+    "measurement-chemistry": "環境計量に関する基礎知識（化学）",
+    "measurement-concentration": "化学分析概論及び濃度の計量",
+    "measurement-physics": "環境計量に関する基礎知識（物理）",
+    "measurement-sound": "音響・振動概論並びに音圧レベル及び振動加速度レベルの計量",
+    "measurement-management": "計量管理概論",
+    "kenki-type1": "第1種（ブルドーザ等）",
+    "kenki-type2": "第2種（油圧ショベル等）",
+    "kenki-type3": "第3種（モータグレーダ）",
+    "kenki-type4": "第4種（締固め機械）",
+    "kenki-type5": "第5種（舗装機械）",
+    "kenki-type6": "第6種（基礎工事機械）",
+
     "mondai-a": "問題A",
     "mondai-b": "問題B",
   "mondai-c": "問題C",
@@ -118,12 +140,29 @@ export function buildQuestionJsonLd({
 
   // The administering body authored the question; this site authored the
   // learning explanation. Keep the author inline so the node is self-contained.
-  const questionAuthor = q.exam === "kanteishi"
+  const releaseSource = ["chintai", "kyusui", "biru-kan", "gijutsushi1-kikai", "hoshasen-1", "hoshasen-2", "energy-kanri"].includes(q.exam) ? getQualificationByExamCode(q.exam) : undefined;
+  const questionAuthor = releaseSource
+    ? { "@type": "Organization", name: releaseSource.administrator, url: new URL(releaseSource.officialQuestionsUrl).origin }
+    : q.exam === "kisho"
+    ? { "@type": "Organization", name: "一般財団法人気象業務支援センター", url: "https://www.jmbsc.or.jp/" }
+    : q.exam === "kenchiku-setsubishi"
+    ? { "@type": "Organization", name: "公益財団法人建築技術教育普及センター", url: "https://www.jaeic.or.jp/" }
+    : q.exam === "chizai2"
+    ? { "@type": "Organization", name: "知的財産教育協会", url: "https://www.kentei-info-ip-edu.org/" }
+    : q.license === "SGEC-owner-authorized"
+    ? { "@type": "Organization", name: "一般財団法人職業教育・キャリア教育財団", url: "https://www.jken.sgec.or.jp/" }
+    : q.exam === "kanteishi"
     ? { "@type": "GovernmentOrganization", name: q.sourcePresentation?.originalAuthor ?? "国土交通省", url: "https://www.mlit.go.jp/" }
     : q.exam === "kaikeishi"
     ? { "@type": "GovernmentOrganization", name: q.sourcePresentation?.originalAuthor ?? "公認会計士・監査審査会", url: "https://www.fsa.go.jp/cpaaob/" }
+    : q.license === "KHK-owner-decision"
+    ? { "@type": "Organization", name: "高圧ガス保安協会", url: "https://www.khk.or.jp/" }
+    : q.license === "METI-attributed"
+    ? { "@type": "GovernmentOrganization", name: "経済産業省", url: "https://www.meti.go.jp/" }
     : (q.license === "NICHIMU-educational-reuse" || q.license === "NICHIMU-past-question-study-use")
     ? { "@type": "Organization", name: "公益財団法人日本無線協会", url: "https://www.nichimu.or.jp/" }
+    : q.exam === "kenki1" || q.exam === "kenki2"
+    ? { "@type": "Organization", name: "一般社団法人日本建設機械施工協会", url: "https://jcmanet.or.jp/" }
     : q.exam === "chosashi"
     ? { "@type": "GovernmentOrganization", name: "法務省", url: "https://www.moj.go.jp/" }
     : q.exam === "fp1"
@@ -146,6 +185,8 @@ export function buildQuestionJsonLd({
           name: "一般財団法人 不動産適正取引推進機構",
           url: "https://www.retio.or.jp/",
         }
+    : q.exam === "denki1" || q.exam === "denki2"
+      ? { "@type": "Organization", name: "一般財団法人建設業振興基金", url: "https://www.fcip-shiken.jp/" }
     : q.exam === "civil2" || q.exam === "kankoji2" || q.exam === "civil1" || q.exam === "zoen2" || q.exam === "zoen1" || q.exam === "tsushin2" || q.exam === "tsushin1"
       ? {
           "@type": "Organization",
@@ -212,6 +253,12 @@ export function buildQuestionJsonLd({
           name: "公益財団法人柔道整復研修試験財団",
           url: "https://www.zaijusei.com/",
         }
+    : q.exam === "shinrishi"
+      ? {
+          "@type": "Organization",
+          name: "一般財団法人公認心理師試験研修センター",
+          url: "https://www.jccpp.or.jp/",
+        }
     : q.exam === "kangoshi" || q.exam === "yakuzaishi" || q.exam === "shika-ishi" || q.exam === "rigaku-ryohoshi" || q.exam === "rinsho-kensagishi"
       ? {
           "@type": "Organization",
@@ -229,21 +276,30 @@ export function buildQuestionJsonLd({
           name: "情報処理推進機構 (IPA)",
           url: "https://www.ipa.go.jp/",
         };
-  const licenseUrl = (q.exam === "kanteishi" || q.exam === "kaikeishi")
+  const licenseUrl = releaseSource || q.exam === "chizai2" || q.exam === "kisho" || q.exam === "kenchiku-setsubishi"
+    || q.license === "SGEC-owner-authorized"
+    ? undefined
+    : (q.exam === "kanteishi" || q.exam === "kaikeishi")
     ? q.sourcePresentation?.licenseUrl
+    : q.license === "KHK-owner-decision"
+    ? undefined
+    : q.license === "METI-attributed"
+    ? "https://www.meti.go.jp/main/rules.html"
     : (q.license === "NICHIMU-educational-reuse" || q.license === "NICHIMU-past-question-study-use")
     ? "https://www.nichimu.or.jp/kshiken/siken/index.html"
     : q.exam === "rigaku-ryohoshi" || q.exam === "rinsho-kensagishi"
     ? "https://www.mhlw.go.jp/chosakuken/index.html"
     : q.exam === "chosashi"
     ? "https://www.moj.go.jp/hisho06_00280.html"
+    : q.exam === "shinrishi"
+    ? "https://www.jccpp.or.jp/policy.html"
     : q.exam === "fp1"
     ? "https://www.kinzai.or.jp/ginou/license_terms.html"
     : (q.exam === "fp2" || q.exam === "fp3")
     ? "https://www.jafp.or.jp/exam/mohan/files/exam_riyou.pdf"
     : q.exam === "gas-kou" || q.exam === "gas-otsu" || q.exam === "gas-hei"
       ? undefined
-    : q.exam === "takken" || q.exam === "civil1" || q.exam === "civil2" || q.exam === "kankoji2" || q.exam === "zoen2" || q.exam === "zoen1" || q.exam === "tsushin2" || q.exam === "tsushin1" || q.exam === "kaigo" || q.exam === "denken2" || q.exam === "denken1" || q.exam === "denko1" || q.exam === "shakai" || q.exam === "seishin" || q.exam === "tohan" || q.exam === "kanri" || q.exam === "soukan" || q.exam === "hoikushi" || q.exam === "mankan" || q.exam === "kashikin" || q.exam === "sharoushi" || q.exam === "chusho-kigyo-shindanshi" || q.exam === "kangoshi" || q.exam === "yakuzaishi" || q.exam === "shika-ishi" || q.exam === "judo-seifukushi"
+    : q.exam === "denki1" || q.exam === "denki2" || q.exam === "kenki1" || q.exam === "kenki2" || q.exam === "takken" || q.exam === "civil1" || q.exam === "civil2" || q.exam === "kankoji2" || q.exam === "zoen2" || q.exam === "zoen1" || q.exam === "tsushin2" || q.exam === "tsushin1" || q.exam === "kaigo" || q.exam === "denken2" || q.exam === "denken1" || q.exam === "denko1" || q.exam === "shakai" || q.exam === "seishin" || q.exam === "tohan" || q.exam === "kanri" || q.exam === "soukan" || q.exam === "hoikushi" || q.exam === "mankan" || q.exam === "kashikin" || q.exam === "sharoushi" || q.exam === "chusho-kigyo-shindanshi" || q.exam === "kangoshi" || q.exam === "yakuzaishi" || q.exam === "shika-ishi" || q.exam === "judo-seifukushi"
       ? undefined
     : q.exam === "denken3" || q.exam === "denko2"
       ? "https://www.shiken.or.jp/shiken/faq/faq08/000082.html"
@@ -276,7 +332,7 @@ export function buildQuestionJsonLd({
     author: questionAuthor,
     upvoteCount: 0,
     url: pageUrlAbs,
-    ...(q.exam === "chosashi" && q.type === "descriptive" ? { suggestedAnswer: { ...acceptedAnswers[0], text: q.modelAnswer ?? String(q.answer) } } : { acceptedAnswer }),
+    ...(isSelfReviewedDescriptiveQuestion(q) ? { suggestedAnswer: { ...acceptedAnswers[0], text: q.modelAnswer ?? String(q.answer) } } : { acceptedAnswer }),
   };
 
   const learningResource = {

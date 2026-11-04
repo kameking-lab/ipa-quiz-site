@@ -1,0 +1,111 @@
+{
+  "schema": "qkensetsu-acceptance/v1",
+  "atUtc": "2026-11-03T05:27:07.682580+00:00",
+  "status": "DATA_INGESTED_LOCAL_CHECKS_PASS_PUBLICATION_NOT_ACTIVATED_CLEANUP_BLOCKED",
+  "base": "00e49b94060cc2671e9d098df91d653a4ed3ffe2",
+  "branch": "qual/qkensetsu-20261103",
+  "rounds": {
+    "2025-annual": {
+      "am1": 27,
+      "am2": 18,
+      "pm": 60,
+      "total": 105
+    },
+    "2026-annual": {
+      "am1": 27,
+      "am2": 18,
+      "pm": 60,
+      "total": 105
+    }
+  },
+  "materials": 210,
+  "normalStudyCandidates": 209,
+  "referenceOnly": [
+    "kenchiku-setsubishi-2026-annual-am2-q18"
+  ],
+  "choiceReasons": 840,
+  "figureQuestions": 23,
+  "figureAssets": 32,
+  "fixedOriginalJsonFilesByteIdentical": 6,
+  "originalQuestionContentHashesMatched": 210,
+  "gitIndexChecks": {
+    "originalPackets": 6,
+    "figures": 32,
+    "allMatched": true
+  },
+  "checks": {
+    "schema": 0,
+    "tests": 0,
+    "typecheck": 0,
+    "lint": 0,
+    "build": 0
+  },
+  "tests": {
+    "files": 1,
+    "passed": 3
+  },
+  "build": {
+    "exitCode": 0,
+    "staticPages": 12466,
+    "mode": "webpack",
+    "warnings": [
+      "middleware deprecation",
+      "Edge Runtime deprecation",
+      "existing chart dimensions"
+    ]
+  },
+  "cleanup": "AUTO_REVIEW_REJECTED_REMAINS",
+  "publicationActivated": false,
+  "questionGenerationCalls": 0,
+  "pushPrDeployProductionDbSettingsChanges": 0,
+  "remaining": [
+    "Own .next deletion rejected by automatic review; generated directory remains ignored and uncommitted",
+    "Public loader/catalog/image serving and account history/SRS/rewards integration not activated or accepted in this data-only change",
+    "2026 building law Q18 legal applicability/official correction unresolved; reference-only remains",
+    "Second examination design/drawing not included"
+  ],
+  "proofFiles": [
+    {
+      "path": "reports/qkensetsu-20261103/manifest.json",
+      "sha256": "e39dc780a7689182a6a5f1dc941e74b336fe023ef8217e357a064b2ed09e2e57"
+    },
+    {
+      "path": "reports/qkensetsu-20261103/source-inventory.json",
+      "sha256": "2013b8979adcdbd0cf4228555d3d100826a7679c895aca8cd0ccee1576eeb975"
+    },
+    {
+      "path": "reports/qkensetsu-20261103/CHECKS.json",
+      "sha256": "45274913666409fb817afd5b430779fc10d081bea4ef4fd0a343a911410b2bb9"
+    },
+    {
+      "path": "reports/qkensetsu-20261103/validation.json",
+      "sha256": "022a70aa7b5602f559d8258479023b3cb3ab3f2accd2d6b89b8d9378ebe83685"
+    },
+    {
+      "path": "reports/qkensetsu-20261103/cleanup.json",
+      "sha256": "b7a93c80fda125b9c2ac9aef5e20a8696dbeb8f9b19ad033a139c4342e81887c"
+    },
+    {
+      "path": "reports/qkensetsu-20261103/recovery.json",
+      "sha256": "df2a06717020913efba3f3f4dfd4b48a54a1815083fda4d6a4c06f2d48a1df69"
+    }
+  ],
+  "adapterFiles": [
+    {
+      "path": "data/questions/kenchiku-setsubishi/index.ts",
+      "sha256": "447ce492ff0e6402bfb600d065db274644b152b63f294b34a7dcd07c0461f454"
+    },
+    {
+      "path": "data/questions/kenchiku-setsubishi/saved-source-reader.ts",
+      "sha256": "86a1f06f9b3cd58080ccb5c6b69bc0459352600d77e0b7528665fac684f8b9fc"
+    },
+    {
+      "path": "data/questions/kenchiku-setsubishi/schema.ts",
+      "sha256": "cd09095e004ee79d493aed234e77a3342e8af0f4ffe7faf115e39e0c12748839"
+    },
+    {
+      "path": "data/questions/kenchiku-setsubishi/types.ts",
+      "sha256": "72d9614e3ed89ba74584a9a2a9a6a3fd7dce16f3d1c90d9681cdd5f72a6d8bd6"
+    }
+  ]
+}

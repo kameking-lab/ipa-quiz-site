@@ -1,0 +1,136 @@
+{
+  "scope": "qual-new:25",
+  "reviewer": "/root/independent_acceptance",
+  "reviewerRole": "independent child agent; not the author",
+  "independent": true,
+  "status": "PASS_AFTER_ONE_SCOPED_CORRECTION",
+  "reviewedAtUtc": "2026-11-01T10:29:34.290990+00:00",
+  "initialFixedManifestSha256": "70154a1a7d849d4f75e907d95cdd49c24f34b941567d570e305cef171efb560f",
+  "acceptedContentHashes": {
+    "QUESTIONS.json": "4739d83dc7b1c3a8631fa8186fc269ff32ec389e20c131d726c936ba37683243",
+    "EXPLANATIONS.json": "40510c8b40212c4085ad5c248ce8d26a7b836ffadce51fd837703c1e7302f8f8"
+  },
+  "sourcePdfSha256": "d015ddf87c66aa877bc6aeb0c424d73ecded09fd907205d733faa4150f6cbd8d",
+  "scopeReviewed": {
+    "section": "第6類",
+    "questionNumbers": [
+      26,
+      27,
+      28,
+      29,
+      30,
+      31,
+      32,
+      33,
+      34,
+      35
+    ],
+    "sourcePages": [
+      38,
+      39,
+      40,
+      41,
+      42,
+      43
+    ],
+    "answerPage": 46,
+    "publicationVersion": "2026-06",
+    "examYear": null,
+    "examSession": null,
+    "questionImages": 10,
+    "choiceReasons": 50,
+    "q27Propositions": 4
+  },
+  "method": [
+    "独立に全10枚の切出し画像を視認。問番号・設問全文・全5肢・問27のA-Dを確認。",
+    "保存済み公式正答頁46の第6類欄を視認し、5,1,5,3,3,2,5,5,5,5を確認。第5類欄とは区別。",
+    "固定PDFから同じclipと倍率でメモリ内描画し、配布PNG10枚の画素列と完全一致を確認。原問画像の再制作や書換えなし。",
+    "初期manifestの全記載ファイルhashを照合し不一致0。",
+    "公式番号1〜5から内部キーア〜オ、正答キー、全肢理由の結合を検証。",
+    "全50肢理由を原問の命題と照合し、誤った文を選ぶ設問と正答肢の区別、共通性と個別例外、N10の誤り位置と訂正を検収。",
+    "1件修正後は問30肢5の差分だけを再確認。EXPLANATIONSの差分がquestions[4].choices[4].reasonの1フィールドだけであることを確認。旧manifest対象の変更はEXPLANATIONS.jsonとQUESTIONS.jsonだけで、画像・正答・他の理由は保持。"
+  ],
+  "questionJudgments": [
+    {
+      "question": 26,
+      "answer": 5,
+      "status": "PASS",
+      "note": "各類の全称命題に対する反例と、酸化性・引火性・自己反応性の区別が妥当。"
+    },
+    {
+      "question": 27,
+      "answer": 1,
+      "status": "PASS",
+      "note": "A/Bが共通条件、C/Dは物質別条件。5組合せとA-Dの補足が一致。"
+    },
+    {
+      "question": 28,
+      "answer": 5,
+      "status": "PASS",
+      "note": "銅容器の不適合を明示。少量中和・曝露・換気・混触の4肢も原問に対応。"
+    },
+    {
+      "question": 29,
+      "answer": 3,
+      "status": "PASS",
+      "note": "第5類の自己燃焼性との混同を訂正。水系消火の例外を保持。"
+    },
+    {
+      "question": 30,
+      "answer": 3,
+      "status": "PASS_AFTER_CORRECTION",
+      "note": "肢5の原問にない洗浄記述への言及を除去し、腐食性・薬傷・接触回避の説明へ修正。その他4肢は妥当。"
+    },
+    {
+      "question": 31,
+      "answer": 2,
+      "status": "PASS",
+      "note": "全第6類の共通性と、個々の物質・高濃度条件を区別。"
+    },
+    {
+      "question": 32,
+      "answer": 5,
+      "status": "PASS",
+      "note": "硝酸の性状、分解着色、銅銀の溶解と、濃硝酸での鉄/Al不動態を区別。"
+    },
+    {
+      "question": 33,
+      "answer": 5,
+      "status": "PASS",
+      "note": "HNO3の同定、酸化性、発煙、腐食性と光熱分解に対応。"
+    },
+    {
+      "question": 34,
+      "answer": 5,
+      "status": "PASS",
+      "note": "BrF3の混触反応・液相範囲と、単独物質の爆発性を区別。"
+    },
+    {
+      "question": 35,
+      "answer": 5,
+      "status": "PASS",
+      "note": "金属/触媒による分解、有機可燃物との混触を説明し、リン酸は公式比較の範囲に限定。任意条件で安全とは保証しない。"
+    }
+  ],
+  "closedFindings": [
+    {
+      "id": "Q30-C5-SOURCE-MISMATCH",
+      "severity": "content correction required",
+      "before": "原問が人体洗浄について記述しているかのように説明していた。原文は薬傷と慎重な取扱いの注意。",
+      "after": "過塩素酸は皮膚に対して強い腐食性を示し、接触すると薬傷を起こす。したがって、皮膚接触を避けて慎重に取り扱うという記述は妥当である。",
+      "changedFields": [
+        "EXPLANATIONS.questions[q30].choices[5].reason",
+        "QUESTIONS.questions[q30].choiceExplanations.オ"
+      ],
+      "status": "CLOSED_VERIFIED"
+    }
+  ],
+  "openContentFindings": [],
+  "acceptanceBoundary": "固定原問画像10問と修正済み全肢理由の私有内容・結合受入。共有アプリの型接続、実画面、採点/保存、公開の受入は含まない。",
+  "packagingAction": "作者は本票を固定して最終manifestを更新する。受入対象content hashは上記2値、画像は初期manifestと同一。",
+  "networkRequests": 0,
+  "paidReviews": 0,
+  "sharedEdits": 0,
+  "originalQuestionMutations": 0,
+  "inventedQuestionsIncluded": 0
+}

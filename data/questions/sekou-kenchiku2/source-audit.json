@@ -1,0 +1,44 @@
+{
+  "checkedAt": "2026-11-03",
+  "source": "owner-supplied local official PDFs; no download",
+  "listingEvidence": "data/raw_pdfs/sekou-2kenchiku/LISTINGS.json and COVERAGE.json (ignored local evidence)",
+  "files": [
+    {
+      "file": "r08_2kgz_mondai.pdf",
+      "source_url": "https://www.fcip-shiken.jp/pdf/r08_2kgz_mondai.pdf",
+      "listing_url": "https://www.fcip-shiken.jp/about/index.html",
+      "sha256": "521dd178370ff0bc0111b2d95bad6af1b54cc2380da9fdbfd9f1cbd0acbaf286",
+      "pages": 26,
+      "answer_page": 26
+    },
+    {
+      "file": "r07_2kg_mondai.pdf",
+      "source_url": "https://www.fcip-shiken.jp/pdf/r07_2kg_mondai.pdf",
+      "listing_url": "https://www.fcip-shiken.jp/about/index.html",
+      "sha256": "91c4902e5987ce5e56d793e69a933aca5835c469bfa9087db36254ce87a95aff",
+      "pages": 25,
+      "answer_page": 25
+    }
+  ],
+  "questions": 100,
+  "choiceExplanations": 410,
+  "figureQuestions": [
+    "2026-3",
+    "2026-11",
+    "2026-16",
+    "2025-3",
+    "2025-11"
+  ],
+  "transcription": "Ruby, layout whitespace and line breaks removed; superscripts/subscripts, missing glyphs and fraction restored from renders. Graphical choices have site-authored text descriptions and original figure crops.",
+  "independentReview": "pending; performed separately by supervisor",
+  "verification": {
+    "sha256": "Both local PDF bytes rehashed and matched owner-supplied MANIFEST.json.",
+    "text": "All 100 stems and 410 choices compared with extracted text; rendered question pages checked for missing glyphs, layout and diagrams.",
+    "answers": "All 100 numbers visually matched to rendered R8 p26 and R7 p25 answer tables. Current R7 table title is 正答肢 (not 正答肢（案）).",
+    "figures": "All five WebP crops visually checked against originals, including load values, dimensions and graphical choices.",
+    "explanations": "Author checked all 410 choice explanations and 100 summaries for consistency with official keys.",
+    "excluded": 0,
+    "onHold": 0,
+    "publication": "unpublished staging; supervisor independent review pending"
+  }
+}

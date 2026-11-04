@@ -5,7 +5,8 @@ import { beginSync, readOwnership } from "@/lib/sync/ownership";
 import { LS_KEYS } from "@/lib/storage/keys";
 
 let current: string | null;
-let post: ReturnType<typeof vi.fn>;
+type Post = (url: string, options: RequestInit & { body: string }) => Promise<unknown>;
+let post: ReturnType<typeof vi.fn<Post>>;
 const entry = { id: "q1", at: 1000, selected: "ア", correct: true, nativeBResult: { score: 80, detail: "local" } };
 const data = () => JSON.parse(localStorage.getItem(LS_KEYS.history)!);
 const response = (entries: unknown[], merged = 0) => ({ ok: true, status: 200, json: async () => ({ entries, merged, total: entries.length }) });
@@ -24,10 +25,10 @@ beforeEach(() => {
   localStorage.setItem(LS_KEYS.history, JSON.stringify({ entries: [entry], starredIds: ["old-star"] }));
   localStorage.setItem(LS_KEYS.studyReward, "reward-sentinel");
   localStorage.setItem(LS_KEYS.xpState, "xp-sentinel");
-  post = vi.fn().mockResolvedValue(response([]));
+  post = vi.fn<Post>().mockResolvedValue(response([]));
   vi.stubGlobal("fetch", vi.fn(async (url: string, options?: RequestInit) => {
     if (url === "/api/auth/session") return { ok: true, json: async () => current ? { user: { id: current } } : {} };
-    return post(url, options);
+    return post(url, { ...options, body: String(options?.body ?? "") });
   }));
 });
 afterEach(() => {

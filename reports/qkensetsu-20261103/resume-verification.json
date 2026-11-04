@@ -1,0 +1,31 @@
+{
+  "schema": "qkensetsu-resume-verification/v1",
+  "atUtc": "2026-11-03T05:30:24.812881+00:00",
+  "contentCommit": "e4c85a0a83c7482fe4babd4802f5a28b2f8b0b58",
+  "base": "00e49b94060cc2671e9d098df91d653a4ed3ffe2",
+  "existingAcceptedWorkReused": true,
+  "newQuestionOrExplanationGeneration": 0,
+  "officialIndexRechecked": "https://www.jaeic.or.jp/shiken/bmee/bmee-mondai.html",
+  "latestFirstExamRounds": [
+    2025,
+    2026
+  ],
+  "validation": "PASS: 210 originals, 840 choice reasons, 32 assets; 209 study / 1 reference-only",
+  "relatedTests": {
+    "files": 1,
+    "passed": 3
+  },
+  "committedPacketAndAssetHashes": "PASS: 6 packets / 32 assets",
+  "acceptanceProofAndAdapterHashes": "PASS: 10 files",
+  "historicalCheckLogHashes": "PASS: 6 files",
+  "typecheckAndBuild": "Prior successful checks reused; no source changes since content commit",
+  "cleanup": {
+    "path": "C:\\Users\\kanet\\20260522\\ipa-qkensetsu-20261103\\.next",
+    "exists": true,
+    "status": "AUTO_REVIEW_REJECTED_REMAINS",
+    "reason": "blocked by policy",
+    "detailedReasonProvided": false,
+    "alternativeDeletionAttempted": false
+  },
+  "publicActivation": false
+}

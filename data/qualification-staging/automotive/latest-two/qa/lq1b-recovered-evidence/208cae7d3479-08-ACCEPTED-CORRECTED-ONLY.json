@@ -1,0 +1,640 @@
+{
+  "schemaVersion": 1,
+  "completedAtUtc": "2026-10-23T12:52:26.647731+00:00",
+  "reviewer": "task-98; distinct independent reviewer, not task-96 author",
+  "scope": "Only motorcycle Q37/Q38/Q40 corrected versions and necessary legal/source/key context. No accepted69, Q21/Q24, own Q14 or other batches rereviewed.",
+  "acceptedCorrectedCount": 3,
+  "questionIds": [
+    "jidosha-2026-first-2-motorcycle-q37",
+    "jidosha-2026-first-2-motorcycle-q38",
+    "jidosha-2026-first-2-motorcycle-q40"
+  ],
+  "holdCount": 0,
+  "holdIds": [],
+  "authorPacket": {
+    "path": "C:\\Users\\kanet\\Documents\\Codex\\2026-10-23\\task-96\\output\\motorcycle5-authorship\\AUTHORSHIP-PACKET.json",
+    "sha256": "6113a34b1c5f5c0a9092a8f7926637952fd5544f453dd75d1009284180087c0d",
+    "bytes": 27095
+  },
+  "authorFreezeReceipt": {
+    "path": "C:\\Users\\kanet\\Documents\\Codex\\2026-10-23\\task-96\\output\\motorcycle5-authorship\\AUTHORSHIP-FREEZE-RECEIPT.json",
+    "sha256": "6a997f2b8749a5fe18825bac3289598420801c4e4a2b1c2a6c54c5369777ca74",
+    "bytes": 23760
+  },
+  "rows": [
+    {
+      "id": "jidosha-2026-first-2-motorcycle-q37",
+      "status": "ACCEPTED_UNCHANGED_OTHER_AUTHOR_CORRECTED_VERSION",
+      "candidate": {
+        "path": "C:\\Users\\kanet\\Documents\\Codex\\2026-10-23\\task-98\\output\\motorcycle-legal3-independent-20261023\\accepted-corrected-candidates\\jidosha-2026-first-2-motorcycle-q37.json",
+        "sha256": "2d8a3b0061a48f752124917354549a0942ded095a526f2cf4580cfa76c97ab7c",
+        "bytes": 3063
+      },
+      "candidateCanonicalSha256": "2d8a3b0061a48f752124917354549a0942ded095a526f2cf4580cfa76c97ab7c",
+      "candidateHashConvention": "UTF-8 compact JSON, ensure_ascii=False, sort_keys=True, separators=(comma,colon), no BOM/newline; file and canonical hashes are identical",
+      "authorProposedCandidate": {
+        "path": "C:\\Users\\kanet\\Documents\\Codex\\2026-10-23\\task-96\\output\\motorcycle5-authorship\\candidates\\jidosha-2026-first-2-motorcycle-q37.json",
+        "sha256": "2d8a3b0061a48f752124917354549a0942ded095a526f2cf4580cfa76c97ab7c",
+        "bytes": 3063
+      },
+      "baseCandidateCanonicalSha256": "20622137bd2839a30bc20f6d169d07c0e6c9672f6139741ad9c1e5c542a92fdf",
+      "baseContainer": {
+        "path": "C:\\Users\\kanet\\Documents\\Codex\\2026-10-23\\task-5\\output\\automotive-forward-20261023\\release-2motorcycle18\\PACKET.json",
+        "sha256": "a1e504d8eb70c746fe63f831bda02401a849d8434cfeb8291af04ff59f10e67d",
+        "jsonPointer": "/writtenOriginals/14"
+      },
+      "exactDiff": [
+        {
+          "jsonPointer": "/explanation",
+          "before": "正答。フロント・フォークのステアリング・ステム取付状態が別表第7の2年点検項目である。",
+          "after": "正答はエ。別表第7では、フロント・フォークのステアリング・ステムの取付状態が2年ごとの追加点検項目である。ア・イ・ウは1年ごとの欄にある。なお、2年ごとの点検は1年ごとの点検に追加項目を加えたものであり、1年項目を省くという意味ではない。"
+        },
+        {
+          "jsonPointer": "/choiceExplanations/ア",
+          "before": "排気管・マフラの緩みや損傷は設問の2年ごとの項目ではない。",
+          "after": "エグゾースト・パイプ及びマフラの取付けの緩み及び損傷は、別表第7の1年ごとの点検項目である。2年ごとの追加項目ではない。"
+        },
+        {
+          "jsonPointer": "/choiceExplanations/イ",
+          "before": "燃料漏れは設問の2年ごとの項目ではない。",
+          "after": "原動機の燃料装置の燃料漏れは、別表第7の1年ごとの点検項目である。2年ごとの追加項目ではない。"
+        },
+        {
+          "jsonPointer": "/choiceExplanations/ウ",
+          "before": "クラッチ・レバーの遊びは設問の2年ごとの項目ではない。",
+          "after": "クラッチ・レバーの遊びは、別表第7の1年ごとの点検項目である。クラッチの「作用」は2年ごとの追加項目なので区別する。"
+        },
+        {
+          "jsonPointer": "/officialReferenceUrls",
+          "before": [],
+          "after": [
+            "https://laws.e-gov.go.jp/api/2/law_data/326M50000800070_20231221_505M60000800086",
+            "https://www.mlit.go.jp/jidosha/jidosha/tenkenseibi/images/t_tebiki.pdf"
+          ]
+        }
+      ],
+      "authorCandidateBytesUnchanged": true,
+      "newReviewerSubstantiveEdits": 0,
+      "officialAnswerNumber": "4",
+      "officialKey": {
+        "path": "C:\\Users\\kanet\\Documents\\Codex\\2026-10-23\\task-5\\output\\automotive-forward-20261023\\release-2motorcycle18\\sources\\jaspa-2026-first-answers.pdf",
+        "sha256": "7f3a3405cd428510d0d585ceb96425c0b3ec9fd30c80696607fa5c595f20f23d",
+        "bytes": 101592,
+        "physicalPage": 1,
+        "column": "24 (2に), third subject column",
+        "questionNumber": 37
+      },
+      "originalQuestion": {
+        "path": "C:\\Users\\kanet\\Documents\\Codex\\2026-10-23\\task-5\\output\\automotive-forward-20261023\\release-2motorcycle18\\sources\\jaspa-2026-first-2-motorcycle.pdf",
+        "sha256": "b529ce8b8bbd6e4682272bef69ffae8c2ee7c73c1d086b22ccf402b3b5819c9d",
+        "bytes": 582597,
+        "physicalPage": 13,
+        "savedPageImage": {
+          "path": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\codex-takeover-20261011\\automotive-latest-two\\win-ocr\\jaspa-2026-first-2-motorcycle\\page-13.png",
+          "sha256": "02f64859d34bedccc959cc37e28bd326bf5b404be9e8e0b1bade9227c3a56a36",
+          "bytes": 326893
+        },
+        "sourceTextBinding": {
+          "id": "jidosha-2026-first-2-motorcycle-q37",
+          "textSha256": "ce47fc5559d9a44f1face16a879da1a51fa1f86c6ad2dc7e885f57f2dedeaac5",
+          "sourcePdfSha256": "b529ce8b8bbd6e4682272bef69ffae8c2ee7c73c1d086b22ccf402b3b5819c9d",
+          "physicalPages": [
+            13
+          ],
+          "savedPageImageSha256": [
+            {
+              "page": 13,
+              "sha256": "02f64859d34bedccc959cc37e28bd326bf5b404be9e8e0b1bade9227c3a56a36"
+            }
+          ]
+        }
+      },
+      "requiredFigures": [],
+      "priorMissingEvidenceCondition": "2026-10-04の出題に対応する自動車点検基準・別表第7の該当行と、肢1/2/3の正しい周期。推測で周期を補わない。",
+      "independentFindings": {
+        "decision": "ACCEPTED_UNCHANGED_OTHER_AUTHOR_CORRECTED_VERSION",
+        "priorMissingConditionClosed": "The actual exam-applicable appendix 7 body supplies the formerly missing one-year classifications for options 1/2/3 and the two-year steering-stem attachment row.",
+        "mainExplanation": "The two-year header explicitly adds items to the one-year inspection; the new explanation preserves this rather than saying the one-year items are omitted at year two.",
+        "choiceChecks": {
+          "ア": "Exhaust-pipe/muffler attachment looseness and damage is in the one-year column.",
+          "イ": "Fuel-system fuel leakage is in the one-year column.",
+          "ウ": "Clutch-lever free play is in the one-year column; clutch operation is the two-year addition.",
+          "エ": "Front-fork steering-stem attachment state is in the two-year addition column."
+        },
+        "dateAndApplicability": "The saved e-Gov revision history selects the 2023-12-21 enforced revision as the latest revision not after 2026-10-04. The actual law body appendix 7 is expressly the motorcycle periodic inspection standard.",
+        "evidenceNames": [
+          "egov-inspection-exam-version.json",
+          "egov-inspection-revisions.json",
+          "q37-applicable-table-extract.json",
+          "mlit-maintenance-guide.pdf"
+        ]
+      },
+      "legalEvidence": [
+        {
+          "path": "C:\\Users\\kanet\\Documents\\Codex\\2026-10-23\\task-96\\output\\motorcycle5-authorship\\evidence\\egov-inspection-exam-version.json",
+          "sha256": "cab543d28eea58d3a8e6b2882ac2558fdf23bae53a6a4cf3ae704b849068f401",
+          "bytes": 290533,
+          "hashType": "Saved response body bytes"
+        },
+        {
+          "path": "C:\\Users\\kanet\\Documents\\Codex\\2026-10-23\\task-96\\output\\motorcycle5-authorship\\evidence\\egov-inspection-revisions.json",
+          "sha256": "3c1aaf4b8a715bcfad2d1e094364f0b57381bdf9704994d8ad384e05a939549a",
+          "bytes": 5775,
+          "hashType": "Saved response body bytes"
+        },
+        {
+          "path": "C:\\Users\\kanet\\Documents\\Codex\\2026-10-23\\task-96\\output\\motorcycle5-authorship\\evidence\\q37-applicable-table-extract.json",
+          "sha256": "76ef946f915f71d5d6bd2272c6f1997d7e27cd2458f59b90793e1acb2457dd18",
+          "bytes": 11689,
+          "hashType": "Derived observation/extraction/render file bytes; not an original PDF-body hash"
+        },
+        {
+          "path": "C:\\Users\\kanet\\Documents\\Codex\\2026-10-23\\task-96\\output\\motorcycle5-authorship\\evidence\\mlit-maintenance-guide.pdf",
+          "sha256": "29b7ce83a17b4458a2f8952102ee4703d70ab4ba0728e3114ba9423b3f2cd6af",
+          "bytes": 352357,
+          "hashType": "Saved response body bytes"
+        }
+      ],
+      "remainingBlockers": [],
+      "completeCandidate": {
+        "answer": "エ",
+        "category": "二級２輪自動車",
+        "choiceExplanations": {
+          "ア": "エグゾースト・パイプ及びマフラの取付けの緩み及び損傷は、別表第7の1年ごとの点検項目である。2年ごとの追加項目ではない。",
+          "イ": "原動機の燃料装置の燃料漏れは、別表第7の1年ごとの点検項目である。2年ごとの追加項目ではない。",
+          "ウ": "クラッチ・レバーの遊びは、別表第7の1年ごとの点検項目である。クラッチの「作用」は2年ごとの追加項目なので区別する。",
+          "エ": "正答。フロント・フォークのステアリング・ステム取付状態が別表第7の2年点検項目である。"
+        },
+        "choices": {
+          "ア": "エグゾースト・パイプ及びマフラの取付けの緩み及び損傷",
+          "イ": "原動機の燃料装置の燃料漏れ",
+          "ウ": "動力伝達装置のクラッチのクラッチ・レバーの遊び",
+          "エ": "かじ取り装置のフロント・フォークのステアリング・ステムの取付状態"
+        },
+        "difficulty": 2,
+        "examDate": "2026-10-04",
+        "explanation": "正答はエ。別表第7では、フロント・フォークのステアリング・ステムの取付状態が2年ごとの追加点検項目である。ア・イ・ウは1年ごとの欄にある。なお、2年ごとの点検は1年ごとの点検に追加項目を加えたものであり、1年項目を省くという意味ではない。",
+        "explanationCoverage": "full",
+        "fiscalYear": 2026,
+        "hasImage": false,
+        "id": "jidosha-2026-first-2-motorcycle-q37",
+        "isCalculation": false,
+        "lastUpdated": "2026-10-11",
+        "needsReview": false,
+        "officialAnswerNumber": "4",
+        "officialQuestionStatus": "normal",
+        "officialReferenceUrls": [
+          "https://laws.e-gov.go.jp/api/2/law_data/326M50000800070_20231221_505M60000800086",
+          "https://www.mlit.go.jp/jidosha/jidosha/tenkenseibi/images/t_tebiki.pdf"
+        ],
+        "permissionVerified": false,
+        "publicGo": 0,
+        "qNumber": 37,
+        "qualification": "jidousha-seibishi-gakka",
+        "question": "「自動車点検基準」の別表第7（二輪自動車の定期点検基準）に照らし、点検時期が2年ごとの項目として、適切なものは次のうちどれか。",
+        "reviewNotes": [],
+        "season": "first",
+        "session": "gakka",
+        "sourceAnswerUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_kai.pdf",
+        "sourceAttribution": "出典：日本自動車整備振興会連合会 令和8年度第1回自動車整備技能登録試験 二級２輪自動車 No.37",
+        "sourceFigureAssets": [],
+        "sourceFigureRequired": false,
+        "sourcePageReferences": [
+          {
+            "pdfSha256": "b529ce8b8bbd6e4682272bef69ffae8c2ee7c73c1d086b22ccf402b3b5819c9d",
+            "physicalPage": 13,
+            "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_2n.pdf#page=13"
+          }
+        ],
+        "sourcePages": [
+          13
+        ],
+        "sourcePdfUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_2n.pdf",
+        "subject": "2-motorcycle",
+        "term": "first",
+        "topicTags": [
+          "自動車点検基準の別表第7（二輪自動車の定期点検基準）に照"
+        ],
+        "type": "multiple-choice",
+        "year": 2026
+      }
+    },
+    {
+      "id": "jidosha-2026-first-2-motorcycle-q38",
+      "status": "ACCEPTED_UNCHANGED_OTHER_AUTHOR_CORRECTED_VERSION",
+      "candidate": {
+        "path": "C:\\Users\\kanet\\Documents\\Codex\\2026-10-23\\task-98\\output\\motorcycle-legal3-independent-20261023\\accepted-corrected-candidates\\jidosha-2026-first-2-motorcycle-q38.json",
+        "sha256": "1c26445b329fe7aeda07c8959f668468b6f6d4c800641d2581392d973a594bb2",
+        "bytes": 3092
+      },
+      "candidateCanonicalSha256": "1c26445b329fe7aeda07c8959f668468b6f6d4c800641d2581392d973a594bb2",
+      "candidateHashConvention": "UTF-8 compact JSON, ensure_ascii=False, sort_keys=True, separators=(comma,colon), no BOM/newline; file and canonical hashes are identical",
+      "authorProposedCandidate": {
+        "path": "C:\\Users\\kanet\\Documents\\Codex\\2026-10-23\\task-96\\output\\motorcycle5-authorship\\candidates\\jidosha-2026-first-2-motorcycle-q38.json",
+        "sha256": "1c26445b329fe7aeda07c8959f668468b6f6d4c800641d2581392d973a594bb2",
+        "bytes": 3092
+      },
+      "baseCandidateCanonicalSha256": "81200a6d13bc16fd69734c235c058c36f8ca731e9dcd718967a9a508c4b99010",
+      "baseContainer": {
+        "path": "C:\\Users\\kanet\\Documents\\Codex\\2026-10-23\\task-5\\output\\automotive-forward-20261023\\release-2motorcycle18\\PACKET.json",
+        "sha256": "a1e504d8eb70c746fe63f831bda02401a849d8434cfeb8291af04ff59f10e67d",
+        "jsonPointer": "/writtenOriginals/15"
+      },
+      "exactDiff": [
+        {
+          "jsonPointer": "/explanation",
+          "before": "不適切。二輪の方向指示器について昼間150mから視認という条件は設問の基準に合わない。",
+          "after": "不適切。設問の二輪自動車の方向指示器について、基準が定める視認距離は、指示を表示する方向100mの位置から昼間に点灯を確認できることであり、150mではない（細目告示第215条第1項第1号）。"
+        },
+        {
+          "jsonPointer": "/choiceExplanations/ウ",
+          "before": "不適切。二輪の方向指示器について昼間150mから視認という条件は設問の基準に合わない。",
+          "after": "不適切。設問の二輪自動車の方向指示器について、基準が定める視認距離は、指示を表示する方向100mの位置から昼間に点灯を確認できることであり、150mではない（細目告示第215条第1項第1号）。"
+        },
+        {
+          "jsonPointer": "/officialReferenceUrls",
+          "before": [
+            "https://www.mlit.go.jp/jidosha/jidosha_fr7_000007.html"
+          ],
+          "after": [
+            "https://www.mlit.go.jp/jidosha/jidosha_fr7_000007.html",
+            "https://www.mlit.go.jp/jidosha/content/S161.pdf",
+            "https://www.mlit.go.jp/jidosha/content/S215.pdf"
+          ]
+        }
+      ],
+      "authorCandidateBytesUnchanged": true,
+      "newReviewerSubstantiveEdits": 0,
+      "officialAnswerNumber": "3",
+      "officialKey": {
+        "path": "C:\\Users\\kanet\\Documents\\Codex\\2026-10-23\\task-5\\output\\automotive-forward-20261023\\release-2motorcycle18\\sources\\jaspa-2026-first-answers.pdf",
+        "sha256": "7f3a3405cd428510d0d585ceb96425c0b3ec9fd30c80696607fa5c595f20f23d",
+        "bytes": 101592,
+        "physicalPage": 1,
+        "column": "24 (2に), third subject column",
+        "questionNumber": 38
+      },
+      "originalQuestion": {
+        "path": "C:\\Users\\kanet\\Documents\\Codex\\2026-10-23\\task-5\\output\\automotive-forward-20261023\\release-2motorcycle18\\sources\\jaspa-2026-first-2-motorcycle.pdf",
+        "sha256": "b529ce8b8bbd6e4682272bef69ffae8c2ee7c73c1d086b22ccf402b3b5819c9d",
+        "bytes": 582597,
+        "physicalPage": 13,
+        "savedPageImage": {
+          "path": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\codex-takeover-20261011\\automotive-latest-two\\win-ocr\\jaspa-2026-first-2-motorcycle\\page-13.png",
+          "sha256": "02f64859d34bedccc959cc37e28bd326bf5b404be9e8e0b1bade9227c3a56a36",
+          "bytes": 326893
+        },
+        "sourceTextBinding": {
+          "id": "jidosha-2026-first-2-motorcycle-q38",
+          "textSha256": "b27f3f2b238f21f64f80a8edad29836c3dda7f5fbd72aead5efbec79c9542b97",
+          "sourcePdfSha256": "b529ce8b8bbd6e4682272bef69ffae8c2ee7c73c1d086b22ccf402b3b5819c9d",
+          "physicalPages": [
+            13
+          ],
+          "savedPageImageSha256": [
+            {
+              "page": 13,
+              "sha256": "02f64859d34bedccc959cc37e28bd326bf5b404be9e8e0b1bade9227c3a56a36"
+            }
+          ]
+        }
+      },
+      "requiredFigures": [],
+      "priorMissingEvidenceCondition": "出題に適用される二輪方向指示器の視認距離を定める保安基準・細目告示の保存本文、条項・適用区分・施行版。正しい数値を説明に明示するための根拠が必要。",
+      "independentFindings": {
+        "decision": "ACCEPTED_UNCHANGED_OTHER_AUTHOR_CORRECTED_VERSION",
+        "priorMissingConditionClosed": "The saved section-215 body expressly states daytime 100 m visibility, replacing the unsupported statement that 150 m merely does not fit.",
+        "mainExplanation": "The corrected main/option-3 text names 100 m, daytime, the direction indicated, and section 215(1)(1). It matches the actual saved clause.",
+        "choiceChecks": {
+          "ア": "Section 215(4)(5-2) specifically gives motorcycles upper edge at most 1.2 m and lower edge at least 0.35 m.",
+          "イ": "Section 215(4)(1) gives a constant 60–120 flashes per minute.",
+          "ウ": "Section 215(1)(1) gives daytime visibility at 100 m; the side-repeater 30 m exception is not the stated motorcycle forward/rearward indicator criterion.",
+          "エ": "Section 215(1)(2) gives orange light."
+        },
+        "dateAndApplicability": "MLIT index saved after the exam is explicitly consolidated as of 2026-03-31 and links the section-215 text labelled 2025.6.17. These are pre-exam consolidated version labels, not invented commencement dates. Section 161 selects the in-use vehicle provisions. The question specifies a 100 km/h motorcycle, not a moped or low-speed special vehicle.",
+        "evidenceNames": [
+          "mlit-index.html",
+          "mlit-S161.pdf",
+          "mlit-S215.pdf",
+          "lighting-applicability-and-locators.json"
+        ]
+      },
+      "legalEvidence": [
+        {
+          "path": "C:\\Users\\kanet\\Documents\\Codex\\2026-10-23\\task-96\\output\\motorcycle5-authorship\\evidence\\mlit-index.html",
+          "sha256": "650326229d875cede071d65311d359dfae943c27241c0631f407a1552c7b5741",
+          "bytes": 151348,
+          "hashType": "Saved response body bytes"
+        },
+        {
+          "path": "C:\\Users\\kanet\\Documents\\Codex\\2026-10-23\\task-96\\output\\motorcycle5-authorship\\evidence\\mlit-S161.pdf",
+          "sha256": "ebf5155a8cf7ff6c2970091923cd5db748db74dcd3ffad384a3f035b7e4b95da",
+          "bytes": 46121,
+          "hashType": "Saved response body bytes"
+        },
+        {
+          "path": "C:\\Users\\kanet\\Documents\\Codex\\2026-10-23\\task-96\\output\\motorcycle5-authorship\\evidence\\mlit-S215.pdf",
+          "sha256": "2290e22a1bc1c4ab5f5d9bf0bc69655e3b50af9d1527538c1a9e6a5ee5531d93",
+          "bytes": 185179,
+          "hashType": "Saved response body bytes"
+        },
+        {
+          "path": "C:\\Users\\kanet\\Documents\\Codex\\2026-10-23\\task-96\\output\\motorcycle5-authorship\\evidence\\lighting-applicability-and-locators.json",
+          "sha256": "deff46112140a65e880351083ab4928dfb80fe5367254ea2d5f18e6473b6e9eb",
+          "bytes": 1406,
+          "hashType": "Derived observation/extraction/render file bytes; not an original PDF-body hash"
+        }
+      ],
+      "remainingBlockers": [],
+      "completeCandidate": {
+        "answer": "ウ",
+        "category": "二級２輪自動車",
+        "choiceExplanations": {
+          "ア": "設問の方向指示器の取付高さの条件に合う。",
+          "イ": "毎分60～120回の一定周期で点滅する条件に合う。",
+          "ウ": "不適切。設問の二輪自動車の方向指示器について、基準が定める視認距離は、指示を表示する方向100mの位置から昼間に点灯を確認できることであり、150mではない（細目告示第215条第1項第1号）。",
+          "エ": "方向指示器の灯光は橙色である。"
+        },
+        "choices": {
+          "ア": "その照明部の上縁の高さが地上1.2 m以下、下縁の高さが地上0.35 m以上となるように取り付けられていること。",
+          "イ": "毎分60回以上120回以下の一定の周期で点滅するものであること。",
+          "ウ": "方向の指示を表示する方向150 mの位置から、昼間において点灯を確認できるものであり、かつ、その照射光線は、他の交通を妨げないものであること。",
+          "エ": "灯光の色は、橙色であること。"
+        },
+        "difficulty": 2,
+        "examDate": "2026-10-04",
+        "explanation": "不適切。設問の二輪自動車の方向指示器について、基準が定める視認距離は、指示を表示する方向100mの位置から昼間に点灯を確認できることであり、150mではない（細目告示第215条第1項第1号）。",
+        "explanationCoverage": "full",
+        "fiscalYear": 2026,
+        "hasImage": false,
+        "id": "jidosha-2026-first-2-motorcycle-q38",
+        "isCalculation": false,
+        "lastUpdated": "2026-10-11",
+        "needsReview": false,
+        "officialAnswerNumber": "3",
+        "officialQuestionStatus": "normal",
+        "officialReferenceUrls": [
+          "https://www.mlit.go.jp/jidosha/jidosha_fr7_000007.html",
+          "https://www.mlit.go.jp/jidosha/content/S161.pdf",
+          "https://www.mlit.go.jp/jidosha/content/S215.pdf"
+        ],
+        "permissionVerified": false,
+        "publicGo": 0,
+        "qNumber": 38,
+        "qualification": "jidousha-seibishi-gakka",
+        "question": "「道路運送車両の保安基準」及び「道路運送車両の保安基準の細目を定める告示」に照らし、最高速度が100 km/hの二輪自動車の方向指示器の基準に関する記述として、不適切なものは次のうちどれか。",
+        "reviewNotes": [],
+        "season": "first",
+        "session": "gakka",
+        "sourceAnswerUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_kai.pdf",
+        "sourceAttribution": "出典：日本自動車整備振興会連合会 令和8年度第1回自動車整備技能登録試験 二級２輪自動車 No.38",
+        "sourceFigureAssets": [],
+        "sourceFigureRequired": false,
+        "sourcePageReferences": [
+          {
+            "pdfSha256": "b529ce8b8bbd6e4682272bef69ffae8c2ee7c73c1d086b22ccf402b3b5819c9d",
+            "physicalPage": 13,
+            "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_2n.pdf#page=13"
+          }
+        ],
+        "sourcePages": [
+          13
+        ],
+        "sourcePdfUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_2n.pdf",
+        "subject": "2-motorcycle",
+        "term": "first",
+        "topicTags": [
+          "道路運送車両の保安基準及び道路運送車両の保安基準の細目を"
+        ],
+        "type": "multiple-choice",
+        "year": 2026
+      }
+    },
+    {
+      "id": "jidosha-2026-first-2-motorcycle-q40",
+      "status": "ACCEPTED_UNCHANGED_OTHER_AUTHOR_CORRECTED_VERSION",
+      "candidate": {
+        "path": "C:\\Users\\kanet\\Documents\\Codex\\2026-10-23\\task-98\\output\\motorcycle-legal3-independent-20261023\\accepted-corrected-candidates\\jidosha-2026-first-2-motorcycle-q40.json",
+        "sha256": "6c308e0320c418f0ba38c84a178319ecf57ac53ed9556b942f64e33deb5c7901",
+        "bytes": 3529
+      },
+      "candidateCanonicalSha256": "6c308e0320c418f0ba38c84a178319ecf57ac53ed9556b942f64e33deb5c7901",
+      "candidateHashConvention": "UTF-8 compact JSON, ensure_ascii=False, sort_keys=True, separators=(comma,colon), no BOM/newline; file and canonical hashes are identical",
+      "authorProposedCandidate": {
+        "path": "C:\\Users\\kanet\\Documents\\Codex\\2026-10-23\\task-96\\output\\motorcycle5-authorship\\candidates\\jidosha-2026-first-2-motorcycle-q40.json",
+        "sha256": "6c308e0320c418f0ba38c84a178319ecf57ac53ed9556b942f64e33deb5c7901",
+        "bytes": 3529
+      },
+      "baseCandidateCanonicalSha256": "5b44e20141f33272afe979dd19b21697c683c38e55529e321899f62d7f89e288",
+      "baseContainer": {
+        "path": "C:\\Users\\kanet\\Documents\\Codex\\2026-10-23\\task-5\\output\\automotive-forward-20261023\\release-2motorcycle18\\PACKET.json",
+        "sha256": "a1e504d8eb70c746fe63f831bda02401a849d8434cfeb8291af04ff59f10e67d",
+        "jsonPointer": "/writtenOriginals/17"
+      },
+      "exactDiff": [
+        {
+          "jsonPointer": "/choiceExplanations/イ",
+          "before": "制動灯を昼間後方300mから確認できるという距離は設問の基準ではない。",
+          "after": "不適切。制動灯の基準は、昼間に後方100mの距離から点灯を確認できることであり、300mではない（細目告示第212条第1項第1号）。"
+        },
+        {
+          "jsonPointer": "/choiceExplanations/ウ",
+          "before": "車幅灯の夜間前方40mという距離は設問の基準ではない。",
+          "after": "不適切。車幅灯の基準は、夜間に前方300mの距離から点灯を確認できることであり、40mではない（細目告示第201条第1項第1号）。"
+        },
+        {
+          "jsonPointer": "/choiceExplanations/エ",
+          "before": "尾灯の夜間後方20mという距離は設問の基準ではない。",
+          "after": "不適切。尾灯の基準は、夜間に後方300mの距離から点灯を確認できることであり、20mではない（細目告示第206条第1項第1号）。"
+        },
+        {
+          "jsonPointer": "/officialReferenceUrls",
+          "before": [
+            "https://www.mlit.go.jp/jidosha/jidosha_fr7_000007.html"
+          ],
+          "after": [
+            "https://www.mlit.go.jp/jidosha/jidosha_fr7_000007.html",
+            "https://www.mlit.go.jp/jidosha/content/S161.pdf",
+            "https://www.mlit.go.jp/jidosha/content/S198.pdf",
+            "https://www.mlit.go.jp/jidosha/content/S201.pdf",
+            "https://www.mlit.go.jp/jidosha/content/S206.pdf",
+            "https://www.mlit.go.jp/jidosha/content/S212.pdf"
+          ]
+        }
+      ],
+      "authorCandidateBytesUnchanged": true,
+      "newReviewerSubstantiveEdits": 0,
+      "officialAnswerNumber": "1",
+      "officialKey": {
+        "path": "C:\\Users\\kanet\\Documents\\Codex\\2026-10-23\\task-5\\output\\automotive-forward-20261023\\release-2motorcycle18\\sources\\jaspa-2026-first-answers.pdf",
+        "sha256": "7f3a3405cd428510d0d585ceb96425c0b3ec9fd30c80696607fa5c595f20f23d",
+        "bytes": 101592,
+        "physicalPage": 1,
+        "column": "24 (2に), third subject column",
+        "questionNumber": 40
+      },
+      "originalQuestion": {
+        "path": "C:\\Users\\kanet\\Documents\\Codex\\2026-10-23\\task-5\\output\\automotive-forward-20261023\\release-2motorcycle18\\sources\\jaspa-2026-first-2-motorcycle.pdf",
+        "sha256": "b529ce8b8bbd6e4682272bef69ffae8c2ee7c73c1d086b22ccf402b3b5819c9d",
+        "bytes": 582597,
+        "physicalPage": 14,
+        "savedPageImage": {
+          "path": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\codex-takeover-20261011\\automotive-latest-two\\win-ocr\\jaspa-2026-first-2-motorcycle\\page-14.png",
+          "sha256": "ed7fbd6636c2995b46f41f076d71e800c0dfea510d8f2836468b0c607bb62e3d",
+          "bytes": 206449
+        },
+        "sourceTextBinding": {
+          "id": "jidosha-2026-first-2-motorcycle-q40",
+          "textSha256": "1d31a9586afada60a7d06a7163f8e084e0f0189b982fabf1aa1f4c5a4a8fb085",
+          "sourcePdfSha256": "b529ce8b8bbd6e4682272bef69ffae8c2ee7c73c1d086b22ccf402b3b5819c9d",
+          "physicalPages": [
+            14
+          ],
+          "savedPageImageSha256": [
+            {
+              "page": 14,
+              "sha256": "ed7fbd6636c2995b46f41f076d71e800c0dfea510d8f2836468b0c607bb62e3d"
+            }
+          ]
+        }
+      },
+      "requiredFigures": [],
+      "priorMissingEvidenceCondition": "出題に適用される二輪の制動灯・車幅灯・尾灯について、正しい視認距離を定める保存済み保安基準・細目告示本文と適用版。未知の数値を新規解説へ推測挿入しない。",
+      "independentFindings": {
+        "decision": "ACCEPTED_UNCHANGED_OTHER_AUTHOR_CORRECTED_VERSION",
+        "priorMissingConditionClosed": "Actual saved sections 212, 201 and 206 supply the previously absent corrected stop/position/tail lamp distances, while section 198 independently supports the unchanged correct headlamp choice.",
+        "mainExplanation": "The unchanged headlamp explanation requires all main-beam headlamps illuminated and nighttime obstacle recognition at 100 m.",
+        "choiceChecks": {
+          "ア": "Section 198(2)(1) gives nighttime front 100 m obstacle visibility; the speed-100 motorcycle is outside the named low-speed/special-vehicle exceptions.",
+          "イ": "Section 212(1)(1) gives stop lamps daytime rear 100 m, not 300 m.",
+          "ウ": "Section 201(1)(1) gives position lamps nighttime front 300 m, not 40 m.",
+          "エ": "Section 206(1)(1) gives tail lamps nighttime rear 300 m, not 20 m."
+        },
+        "dateAndApplicability": "The same saved MLIT pre-exam 2026-03-31 index links these 2025.6.17 consolidated texts. Section 161 establishes the in-use context. Motorcycle-specific sections are not replaced with new-vehicle type-approval photometric tests or moped exceptions.",
+        "evidenceNames": [
+          "mlit-index.html",
+          "mlit-S161.pdf",
+          "mlit-S198.pdf",
+          "mlit-S201.pdf",
+          "mlit-S206.pdf",
+          "mlit-S212.pdf",
+          "lighting-applicability-and-locators.json"
+        ]
+      },
+      "legalEvidence": [
+        {
+          "path": "C:\\Users\\kanet\\Documents\\Codex\\2026-10-23\\task-96\\output\\motorcycle5-authorship\\evidence\\mlit-index.html",
+          "sha256": "650326229d875cede071d65311d359dfae943c27241c0631f407a1552c7b5741",
+          "bytes": 151348,
+          "hashType": "Saved response body bytes"
+        },
+        {
+          "path": "C:\\Users\\kanet\\Documents\\Codex\\2026-10-23\\task-96\\output\\motorcycle5-authorship\\evidence\\mlit-S161.pdf",
+          "sha256": "ebf5155a8cf7ff6c2970091923cd5db748db74dcd3ffad384a3f035b7e4b95da",
+          "bytes": 46121,
+          "hashType": "Saved response body bytes"
+        },
+        {
+          "path": "C:\\Users\\kanet\\Documents\\Codex\\2026-10-23\\task-96\\output\\motorcycle5-authorship\\evidence\\mlit-S198.pdf",
+          "sha256": "b794fce361f68e8401331fdfa27510b0b771d86b31e6dadd81719f455d31fa8f",
+          "bytes": 195825,
+          "hashType": "Saved response body bytes"
+        },
+        {
+          "path": "C:\\Users\\kanet\\Documents\\Codex\\2026-10-23\\task-96\\output\\motorcycle5-authorship\\evidence\\mlit-S201.pdf",
+          "sha256": "cc5fa643e4ccf9c8627dc3eefaf07a47e88e867a24e6ad6aa6b1530fec3402bb",
+          "bytes": 136495,
+          "hashType": "Saved response body bytes"
+        },
+        {
+          "path": "C:\\Users\\kanet\\Documents\\Codex\\2026-10-23\\task-96\\output\\motorcycle5-authorship\\evidence\\mlit-S206.pdf",
+          "sha256": "c1b582a6c2a5513fd08280c27a02ba0461fac5452f11f9cf72114130ec045258",
+          "bytes": 129954,
+          "hashType": "Saved response body bytes"
+        },
+        {
+          "path": "C:\\Users\\kanet\\Documents\\Codex\\2026-10-23\\task-96\\output\\motorcycle5-authorship\\evidence\\mlit-S212.pdf",
+          "sha256": "9ebb7b39ba25919bcfd9269a579ae69f0d452c7e1e170bda1b8032a3e15c158a",
+          "bytes": 131283,
+          "hashType": "Saved response body bytes"
+        },
+        {
+          "path": "C:\\Users\\kanet\\Documents\\Codex\\2026-10-23\\task-96\\output\\motorcycle5-authorship\\evidence\\lighting-applicability-and-locators.json",
+          "sha256": "deff46112140a65e880351083ab4928dfb80fe5367254ea2d5f18e6473b6e9eb",
+          "bytes": 1406,
+          "hashType": "Derived observation/extraction/render file bytes; not an original PDF-body hash"
+        }
+      ],
+      "remainingBlockers": [],
+      "completeCandidate": {
+        "answer": "ア",
+        "category": "二級２輪自動車",
+        "choiceExplanations": {
+          "ア": "正答。走行用前照灯は全灯照射時に夜間前方100mの障害物を確認できる性能が必要。",
+          "イ": "不適切。制動灯の基準は、昼間に後方100mの距離から点灯を確認できることであり、300mではない（細目告示第212条第1項第1号）。",
+          "ウ": "不適切。車幅灯の基準は、夜間に前方300mの距離から点灯を確認できることであり、40mではない（細目告示第201条第1項第1号）。",
+          "エ": "不適切。尾灯の基準は、夜間に後方300mの距離から点灯を確認できることであり、20mではない（細目告示第206条第1項第1号）。"
+        },
+        "choices": {
+          "ア": "走行用前照灯は、そのすべてを照射したときには、夜間にその前方100 mの距離にある交通上の障害物を確認できる性能を有するものであること。",
+          "イ": "制動灯は、昼間にその後方300 mの距離から点灯を確認できるものであり、かつ、その照射光線は、他の交通を妨げないものであること。",
+          "ウ": "車幅灯は、夜間にその前方40 mの距離から点灯を確認できるものであり、かつ、その照射光線は、他の交通を妨げないものであること。",
+          "エ": "尾灯は、夜間にその後方20 mの距離から点灯を確認できるものであり、かつ、その照射光線は、他の交通を妨げないものであること。"
+        },
+        "difficulty": 2,
+        "examDate": "2026-10-04",
+        "explanation": "正答。走行用前照灯は全灯照射時に夜間前方100mの障害物を確認できる性能が必要。",
+        "explanationCoverage": "full",
+        "fiscalYear": 2026,
+        "hasImage": false,
+        "id": "jidosha-2026-first-2-motorcycle-q40",
+        "isCalculation": false,
+        "lastUpdated": "2026-10-11",
+        "needsReview": false,
+        "officialAnswerNumber": "1",
+        "officialQuestionStatus": "normal",
+        "officialReferenceUrls": [
+          "https://www.mlit.go.jp/jidosha/jidosha_fr7_000007.html",
+          "https://www.mlit.go.jp/jidosha/content/S161.pdf",
+          "https://www.mlit.go.jp/jidosha/content/S198.pdf",
+          "https://www.mlit.go.jp/jidosha/content/S201.pdf",
+          "https://www.mlit.go.jp/jidosha/content/S206.pdf",
+          "https://www.mlit.go.jp/jidosha/content/S212.pdf"
+        ],
+        "permissionVerified": false,
+        "publicGo": 0,
+        "qNumber": 40,
+        "qualification": "jidousha-seibishi-gakka",
+        "question": "「道路運送車両の保安基準」及び「道路運送車両の保安基準の細目を定める告示」に照らし、最高速度が100 km/hの二輪自動車の灯火の基準に関する記述として、適切なものは次のうちどれか。",
+        "reviewNotes": [],
+        "season": "first",
+        "session": "gakka",
+        "sourceAnswerUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_kai.pdf",
+        "sourceAttribution": "出典：日本自動車整備振興会連合会 令和8年度第1回自動車整備技能登録試験 二級２輪自動車 No.40",
+        "sourceFigureAssets": [],
+        "sourceFigureRequired": false,
+        "sourcePageReferences": [
+          {
+            "pdfSha256": "b529ce8b8bbd6e4682272bef69ffae8c2ee7c73c1d086b22ccf402b3b5819c9d",
+            "physicalPage": 14,
+            "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_2n.pdf#page=14"
+          }
+        ],
+        "sourcePages": [
+          14
+        ],
+        "sourcePdfUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_2n.pdf",
+        "subject": "2-motorcycle",
+        "term": "first",
+        "topicTags": [
+          "道路運送車両の保安基準及び道路運送車両の保安基準の細目を"
+        ],
+        "type": "multiple-choice",
+        "year": 2026
+      }
+    }
+  ],
+  "priorAcceptedRecounted": 0,
+  "publicationIncrement": 0,
+  "repositoryIdIncrement": 0
+}

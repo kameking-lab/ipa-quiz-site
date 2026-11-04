@@ -1,0 +1,83 @@
+# LK1 冷凍機械：ローカル引継ぎ・検証
+
+作業日：2026-11-04（JST）。worktree は `C:/Users/kanet/20260522/wt-khk-reito`、作業ブランチは `qual/khk-reito-20261104`。開始時のHEADは `76b6a7d2d11d7137c3258c441a5a6047523b3c06` で、`origin/claude/busy-pascal-ob27o7` と一致し、作業ツリーはクリーンだった。push・PR・デプロイ・main操作は行わない。
+
+## 対象と公開状態
+
+令和6年度（2024-11-10）・令和7年度（2025-11-09）の国家試験を引き継ぐ。令和8年度は2026-11-08実施予定のため対象外。第一種80問（うち記述式10問）、第二種80問、第三種70問、合計230原問・択一220問・選択肢別解説1,100件。親slugは `khk-reito`、子slugは `khk-reito-1`～`khk-reito-3`。
+
+オーナー決定（2026-11-04 06:10）に従い収録する。公式利用条件には許諾のない転載・複製・再配布等の禁止文言があることを記録する。これは利用許諾取得済みという意味ではない。`data/qualification-staging` と出典パックに保存し、既存の非公開ゲートを維持する。
+
+公式参照： [公表ページ](https://shiken.khk.or.jp/shiken.html)、[申込案内](https://www.khk.or.jp/qualification/qualification_application/)、[利用条件](https://www.khk.or.jp/condition.html)。
+
+## 原本取得・再現確認
+
+出典台帳3点の重複を除いた公式PDF22点を、今回のローカル環境でもHTTP 200のPDFとして取得した。22/22のSHA-256が既存台帳と一致。ログイン・CAPTCHA・ボット拒否の迂回は行っていない。**取得不能URL：なし（0件）**。URLの完全な一覧は `cloud-khk-reito-latest2.md` と `data/qualification-staging/khk-reito/khk-reito-N-sources.json` にある。
+
+一時保存先は `C:/Users/kanet/AppData/Local/Temp/codex-work/lk1-pdfs/`。PDFと抽出草稿はコミットしない。既存の抽出・生成・図版スクリプトを実行し、問題JSON3点、出典台帳3点、図版8点、計14点の再現を確認した。JSONはデータ内容、PNGはサイズとRGBA全画素が一致した。Windowsの改行・PNGエンコーダ差で不要な差分を残さないよう、確認後は生成前のバイト列へ戻した。8図版の目視確認でも、旧指摘の記入前線図の横軸hと余白を含め欠落は見つからなかった。
+
+取得・再現確認の機械ログは同ディレクトリの `fetch-results.json` と `reproduction-results.json`。生成に使う正答TXTは公式正答PDFの全ページをpdfplumberの `extract_text(y_tolerance=6)` で抽出して用意した。
+
+## ローカル検証（修正前チェックポイント）
+
+依存関係は `corepack pnpm install --frozen-lockfile`（指定版10.33.0）で導入した。PATH上のpnpm 9.15.9ではoverrides不一致となったため、lockfileを変更せずCorepackの指定版を使用した。
+
+- `corepack pnpm validate:questions`：26,674件、ok=26,674、fail=0、warn=16,808（既存データの警告）。
+- `corepack pnpm validate:questions --exam=khk-reito-1,khk-reito-2,khk-reito-3`：230件、ok=230、fail=0、warn=0。
+- `NODE_OPTIONS=--max-old-space-size=8192 corepack pnpm typecheck`：終了コード0。
+- 関連11ファイル・109テスト：全件通過。
+- `git diff --check`：通過。
+
+関連テストは `khk-reito-staging`、`QuizPlayer.descriptive`、`QuizPlayer.keyboard`、`StreamQuizPlayer.keyboard`、`QuizPlayer.completion`、`exam-config-integrity`、`home-directory`、`practice-session`、`questions-load`、`chosashi-integrity`、`question-jsonld`。正答列、連番、件数、出典、記述式表示と無採点完了、公開ゲート、既存資格への回帰を確認する。テスト通過だけでは解説内容の十分性は保証しない。
+
+汎用 `verify-two-round-coverage.ts` は公開レジストリに載る資格を前提とし、非公開の本資格ではUsage終了になる。公開を切り替えず、同等の件数・連番・解説・出典チェックを上記の専用テストと対象validateで確認した。
+
+ログ： `C:/Users/kanet/AppData/Local/Temp/codex-work/lk1-validate.log`、`lk1-target-validate.log`、`lk1-typecheck.log`、`lk1-related-tests.log`。
+
+## 独立再レビュー
+
+指定の `C:/Users/kanet/AppData/Roaming/npm/codex.cmd exec -m gpt-6-astra -s read-only` を別プロセスで起動。レビュー対象は `00e49b940` から開始時HEADまでの収録全体。クラウド側2回目PASSは旧指摘と修正差分のみだったため、今回の全体再レビューの代わりとはしない。
+
+初回起動時はPowerShellの標準入力で日本語が `?` になり判定保留だった。この実行はレビュー回数に算入せず、UTF-8の依頼ファイルを読むASCIIプロンプトで起動し直した。有効な全体再レビューは **FAIL**。旧FAIL4項目は解消していたが、第一種・保安管理技術の令和7年度問3ハ・問8ニ・問10ハに説明欠落、令和6年度問15ロに誤記述の訂正不足があった。全文を `reports/lk1-khk-reito-review-1.md` に保存した。レビュー側のVitestはread-only環境のspawn EPERMにより起動できなかったが、親プロセスでは上記の109テストが通過した。
+
+## 追加指摘の修正
+
+生成元の `first-notes.json` を修正し、総合解説と全5選択肢へ再生成した。
+
+- 令和7年度・保安問3：過熱度を吸込み温度と対応する飽和温度の差として定義し、温度・圧力の同時上昇と過熱度上昇を区別する理由を補った。イ・ロ・ニも理由を明示した。
+- 同問8：温度式の感温部による制御と用途、圧力式の停止時の閉止・始動時にバイパスを要する理由を補った。入口圧力を制御する蒸発圧力調整弁と出口圧力を制御する吸入圧力調整弁も区別した。
+- 同問10：低圧受液器が気液を分離して圧縮機へ蒸気を送るため液分離器を兼ねることを明記した。高圧受液器の回収液80％以内・蒸気空間20％以上と熱膨張の理由も明示した。
+- 令和6年度・保安問15：「吐出しガス→吸込み蒸気」「蒸発器→凝縮器」を具体的に訂正し、循環量不足による電動機冷却不足、凝縮器内の液滞留による圧力・動力増加を説明した。
+
+このほか、確認時に曖昧だった第一・第二種の令和6年度法令問9（法第26条第3項の対象と協力会社の作業管理の区別）、第一種の両年度法令問14（認定指定設備を除いた300トンの設備に必要な免状・経験）、令和6年度法令問19（気体耐圧1.25倍と気密試験の区別）、第三種令和7年度法令問1（35℃で1MPaという条件の明示）を明確にした。法令は [出題基準日前施行の高圧ガス保安法](https://laws.e-gov.go.jp/law/326AC0000000204/20231221_504AC0000000074) と [冷凍保安規則](https://laws.e-gov.go.jp/law/341M50000400051/20221001_504M60000400072) の該当箇所を参照した。受液器の容量はKHKの冷凍空調装置施設基準の回収液80％とも整合する。
+
+変更した問題は計10問。開始時HEADとのJSON比較で、変更フィールドは `explanation` と `choiceExplanations` のみであることを検査した。全230問の原文・選択肢・公式正答・記述式解答・図版・出典台帳は保持した。
+
+`manifest.json` と出典パック3点に `publicAllowed: false` を明記し、専用テストで確認する。実際のルート・一覧・ローダーを閉じる既存の `ready-to-ingest` ゲートも維持する。
+
+ローカル再生成ではWindowsの既定改行により全行CRLFとなったため、抽出・生成スクリプトのテキスト入出力をUTF-8・出力改行LFに固定した。`PYTHONUTF8=0` を子プロセスにも継承させ、UTF-8モード0・ロケールcp932で抽出から再実行しても14点の再現に成功した。JSON6点はバイト列も一致し、PNG8点はエンコーダ差があるもののRGBA全画素が一致する。
+
+修正後の対象validateは230/230、エラー・警告0。8GB設定の型検査と関連11ファイル109テストも終了コード0で通過した。最終ログは一時作業ディレクトリの `lk1-final-target-validate.log`、`lk1-final-typecheck.log`、`lk1-final-related-tests.log`。
+
+## 最終結果：PASS・完了
+
+別プロセスの `codex.cmd exec -m gpt-6-astra -s read-only` による修正後の独立再レビューは **PASS**。対象は `76b6a7d2d → 3552697fa` の15ファイル。初回の全体レビューと合わせて判定する。追加指摘の4問はすべて解消し、追加の法令解説・公開制限・メタデータ検証・UTF-8/LF変更にも修正を要する問題は見つからなかった。全22PDFのハッシュ一致もレビュー側で再確認した。全文は `reports/lk1-khk-reito-review-2.md`。
+
+修正後の最終検証は以下のとおり。
+
+- 全体validate：26,674/26,674件、fail=0、warn=16,808（既存分）。
+- 対象validate：230/230件、fail=0、warn=0。
+- typecheck：8GB設定で終了コード0。
+- 関連テスト：11ファイル・109テスト通過。
+- 原本PDF：22/22取得・SHA-256一致、取得不能URLなし。
+- 再生成：JSON6点・PNG8点の内容一致。
+- 原文・選択肢・公式正答・記述式解答：開始時HEADから変更なし。
+- `publicAllowed=false`：manifestと出典パック3点で明示し、ルート・一覧・ローダーも非公開を維持。
+
+機械確認結果の一覧は `reports/lk1-khk-reito-verification.json` に保存した。このJSONはレビュー中に親プロセスが作成した検証記録であり、独立レビューのコミット対象外だった。最終全体validateログは `C:/Users/kanet/AppData/Local/Temp/codex-work/lk1-final-validate.log`。
+
+独立レビューの範囲・制約：初回は収録全体を対象とし、再レビューはその指摘と追加差分を確認した。再レビューで変更のない230問全体の監査・ブラウザ回帰・テスト実行を繰り返したとは扱わない。法令の履歴は索引化された当時の条文と照合したが、履歴ページ全体の取得は完了しなかった。親プロセスでのテスト再実行・原本再取得・再現確認は上記のとおり実施済み。
+
+ローカルコミット：`695e1628c`（引継ぎ・初期検証）、`3552697fa`（解説10問・非公開明示・Windows対応・FAIL記録）。最終報告とPASS記録は後続の報告コミットに保存する。オーナー指定の報告先は `C:/Users/kanet/Documents/Codex/2026-11-02/task-2/lk1-report.md`。
+
+LK1の必須残作業はない。push・PR・デプロイ・main操作は未実施。

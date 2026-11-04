@@ -1,0 +1,132 @@
+{
+  "checkedAtUtc": "2026-11-03T17:59:30.059531+00:00",
+  "sourceCommit": "c926248a5",
+  "releaseOriginals": 607,
+  "choiceExplanations": 2428,
+  "scopeOriginals": 85,
+  "newIndependentPass": 82,
+  "referenceIds": [
+    "jidosha-2025-second-2-gasoline-q13"
+  ],
+  "remainingContentIds": [
+    "jidosha-2026-first-2-gasoline-q31",
+    "jidosha-2026-first-body-q37"
+  ],
+  "commands": {
+    "pnpm validate:questions": {
+      "exitCode": 0,
+      "totalQuestions": 27051,
+      "fail": 0,
+      "warn": 17133
+    },
+    "pnpm typecheck": {
+      "exitCode": 0
+    },
+    "final metadata pnpm typecheck": {
+      "exitCode": 0
+    },
+    "related Vitest": {
+      "exitCode": 0,
+      "files": 7,
+      "tests": 93
+    },
+    "Node automotive validator": {
+      "exitCode": 0,
+      "tests": 5
+    }
+  },
+  "independentReviewCommand": "C:/Users/kanet/AppData/Roaming/npm/codex.cmd exec -m gpt-6-astra",
+  "independentImplementationReceipt": "lq1c-final-implementation-review.json",
+  "cliExecutionLogs": [
+    {
+      "localIgnoredLog": "tmp/lq1c-unreviewed-cli.log",
+      "sha256": "101e7bddf4784926920136f8e56cb774daea79131df721f8ba3f498ba783bbfb",
+      "requestedModelHeaderVerified": true
+    },
+    {
+      "localIgnoredLog": "tmp/lq1c-repaired-cli.log",
+      "sha256": "bd24dbb2cc53ab36a1881f587cbf0ba61668356b16e5e9b2dbe2f069e5f0e33c",
+      "requestedModelHeaderVerified": true
+    },
+    {
+      "localIgnoredLog": "tmp/lq1c-revision1-unreviewed-cli.log",
+      "sha256": "046000ff93d74d31df9df959136639409a30558fd2defe8779fb99affb29937d",
+      "requestedModelHeaderVerified": true
+    },
+    {
+      "localIgnoredLog": "tmp/lq1c-revision1-repaired-cli.log",
+      "sha256": "c6c2ae3e6bf33398966216def4d0c8c02beca2497cfa6501d68a9e8282499801",
+      "requestedModelHeaderVerified": true
+    },
+    {
+      "localIgnoredLog": "tmp/lq1c-implementation-cli.log",
+      "sha256": "302655ad97206eb726ebb3db1df3cddc4f55d02b5a98365499038adb116b6d76",
+      "requestedModelHeaderVerified": true
+    },
+    {
+      "localIgnoredLog": "tmp/lq1c-revision2-cli.log",
+      "sha256": "68f9777d6baa845e78523fb953aa368ae97a7102cc4d1bd1fd6aefc38eb9dadd",
+      "requestedModelHeaderVerified": true
+    },
+    {
+      "localIgnoredLog": "tmp/lq1c-revision3-cli.log",
+      "sha256": "f517430965e576459d75e9248986b0234b867515f9879aea1fae60caf0316b90",
+      "requestedModelHeaderVerified": true
+    },
+    {
+      "localIgnoredLog": "tmp/lq1c-revision4-cli.log",
+      "sha256": "cb133f210104f4d1a51416f06eebc1c377e217cb1a0c332a51f538d71173dd8f",
+      "requestedModelHeaderVerified": true
+    },
+    {
+      "localIgnoredLog": "tmp/lq1c-revision5-cli.log",
+      "sha256": "31ced09bbfa07e0131a6d7452aea28e5da53b2b6f4ed54c063ee4e30d8f168b0",
+      "requestedModelHeaderVerified": true
+    },
+    {
+      "localIgnoredLog": "tmp/lq1c-revision6-cli.log",
+      "sha256": "209cd57aa89ae97f2436c400135e127922f24898500802b6474c896f6681cc33",
+      "requestedModelHeaderVerified": true
+    },
+    {
+      "localIgnoredLog": "tmp/lq1c-final-implementation-cli.log",
+      "sha256": "482bd7abe45ed75f517004fa95a444dcf7e3cefc2d36281ec24250b8dda9cab0",
+      "requestedModelHeaderVerified": true
+    },
+    {
+      "localIgnoredLog": "tmp/lq1c-final-metadata-cli.log",
+      "sha256": "28676469c1f4c594567fda98619b9f9b4576afca75038a77026b7fe4be045b78",
+      "requestedModelHeaderVerified": true
+    }
+  ],
+  "commandLogs": {
+    "final-validate": {
+      "localIgnoredLog": "tmp/lq1c-final-validate.log",
+      "sha256": "b1791146a013c8c6361fcb67bb7c1fea8aad9fe6fb93f1678c71d6f413f3897b"
+    },
+    "final-typecheck": {
+      "localIgnoredLog": "tmp/lq1c-final-typecheck.log",
+      "sha256": "6d1ec826c18a182b863486247163fd39cefb527606df2e469843aae09968180e"
+    },
+    "final-tests": {
+      "localIgnoredLog": "tmp/lq1c-final-tests.log",
+      "sha256": "268082e2bf03b58311fb8cc5d5728473c49aad1467cb91f511d10b72ea8f277f"
+    },
+    "final-node": {
+      "localIgnoredLog": "tmp/lq1c-final-node.log",
+      "sha256": "611d7d9a834fcd0b88b68abe057928c97b8f132c83a764e8f660e1592f031f2a"
+    },
+    "final-metadata-typecheck": {
+      "localIgnoredLog": "tmp/lq1c-final-metadata-typecheck.log",
+      "sha256": "6d1ec826c18a182b863486247163fd39cefb527606df2e469843aae09968180e"
+    }
+  },
+  "limitations": [
+    "Two unresolved originals and one officially all-accepted original remain outside grading.",
+    "Live browser click-through and production build were not performed in LQ1C.",
+    "CLI streams and command logs are retained in local ignored tmp; independent decisions and immutable acceptance receipts are committed."
+  ],
+  "push": false,
+  "pullRequestCreated": false,
+  "deployed": false
+}

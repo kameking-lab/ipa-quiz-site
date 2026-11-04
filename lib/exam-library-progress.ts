@@ -7,7 +7,7 @@
  * - キーはサイト共通の LS_KEYS で管理する。
  */
 import { isExamReferenceOnly, isSurveyAssistantReferenceId, excludeSurveyAssistantReferenceAnswers } from "@/lib/exam-library/survey-assistant-reference-policy";
-import { loadSurveyAssistantGradingPaper as loadSurveyAssistantPaper } from "@/lib/exam-library/survey-assistant-grading-index";
+import { loadReferenceAwareGradingPaper } from "@/lib/exam-library/reference-aware-grading-index";
 import { LS_KEYS } from "@/lib/storage/keys";
 import {
   gradeExamAnswer,
@@ -137,7 +137,7 @@ function notifyChange(): void {
 /** 保存に成功したら true。容量超過・プライベートモード等は false（例外を投げない）。 */
 export function sanitizeExamProgressForStorage(progress: ExamProgress): ExamProgress {
   const answers = excludeSurveyAssistantReferenceAnswers(progress.answers);
-  const questions = loadSurveyAssistantPaper(progress.examId);
+  const questions = loadReferenceAwareGradingPaper(progress.examId);
   const lastQuestionId = progress.lastQuestionId && isSurveyAssistantReferenceId(progress.lastQuestionId) ? null : progress.lastQuestionId;
   return { ...progress, answers, lastQuestionId,
     ...(progress.summary && questions ? { summary: { ...summarizeExamProgress(questions, answers), examTitle: progress.summary.examTitle } } : {}) };

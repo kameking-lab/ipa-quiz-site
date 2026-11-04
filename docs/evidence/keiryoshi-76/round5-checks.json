@@ -1,0 +1,37 @@
+[
+  {
+    "name": "validate",
+    "command": "pnpm validate:questions",
+    "exitCode": 0,
+    "seconds": 4.08,
+    "log": "docs/evidence/keiryoshi-76/round5-validate.log"
+  },
+  {
+    "name": "typecheck",
+    "command": "NODE_OPTIONS=--max-old-space-size=8192 pnpm typecheck",
+    "exitCode": 0,
+    "seconds": 11.27,
+    "log": "docs/evidence/keiryoshi-76/round5-typecheck.log"
+  },
+  {
+    "name": "vitest",
+    "command": "npx vitest run __tests__/keiryoshi-staging.test.ts __tests__/seo",
+    "exitCode": 0,
+    "seconds": 92.2,
+    "log": "docs/evidence/keiryoshi-76/round5-vitest.log"
+  },
+  {
+    "name": "source",
+    "command": "python3 scripts/verify-keiryoshi-source.py",
+    "exitCode": 0,
+    "seconds": 0.22,
+    "log": "docs/evidence/keiryoshi-76/round5-source.log"
+  },
+  {
+    "name": "full-audit",
+    "command": "python3 docs/evidence/keiryoshi-76/verify-full-audit.py",
+    "exitCode": 0,
+    "seconds": 1.92,
+    "log": "docs/evidence/keiryoshi-76/round5-full-audit.log"
+  }
+]

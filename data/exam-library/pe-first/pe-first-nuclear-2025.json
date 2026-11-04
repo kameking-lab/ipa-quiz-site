@@ -1,0 +1,3306 @@
+[
+  {
+    "id": "pe-first-nuclear-2025-q1",
+    "number": 1,
+    "text": "2025年度 原子力・放射線部門 専門科目 Ⅲ－1。下の公式原問画像の当該番号に解答してください。同じページにある別の設問は対象外です。",
+    "images": [
+      "/exam-library/pe-first-nuclear-2025/c890843f8f3724f748c4.png"
+    ],
+    "sourcePages": [
+      1
+    ],
+    "sourceQuestionNumber": 1,
+    "correctChoice": 3,
+    "choiceCount": 5,
+    "answerAuthority": "official",
+    "originalPdf": "https://www.engineer.or.jp/c_topics/011/attached/attach_11458_11.pdf",
+    "answerPdf": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_4.pdf#page=22",
+    "explanation": "Σa=ρNAΣ(wiσi/Ai)。各元素の寄与はNi約0.02902、Cr約0.05007、Fe約0.16207 cm⁻¹で、合計0.241159 cm⁻¹。よって最も近い0.24を選ぶ。質量比を原子量で割って原子数へ換算する。",
+    "presentation": {
+      "sourceHash": "d93328ffa70edecab8d7c67a50400ae354fa2cca92fa484c956087954d8f7939",
+      "prompt": "2025年度 原子力・放射線部門 専門科目 Ⅲ－1。下の公式原問画像の当該番号に解答してください。同じページにある別の設問は対象外です。",
+      "choices": [
+        {
+          "number": 1,
+          "text": "①"
+        },
+        {
+          "number": 2,
+          "text": "②"
+        },
+        {
+          "number": 3,
+          "text": "③"
+        },
+        {
+          "number": 4,
+          "text": "④"
+        },
+        {
+          "number": 5,
+          "text": "⑤"
+        }
+      ],
+      "figures": [
+        {
+          "src": "/exam-library/pe-first-nuclear-2025/c890843f8f3724f748c4.png",
+          "alt": "2025年度 原子力・放射線部門 Ⅲ－1の公式原問。問題文・全選択肢・図表を確認してください。",
+          "width": 998,
+          "height": 300
+        }
+      ]
+    },
+    "choiceExplanation": {
+      "sourceHash": "d93328ffa70edecab8d7c67a50400ae354fa2cca92fa484c956087954d8f7939",
+      "correctChoice": 3,
+      "summary": "Σa=ρNAΣ(wiσi/Ai)。各元素の寄与はNi約0.02902、Cr約0.05007、Fe約0.16207 cm⁻¹で、合計0.241159 cm⁻¹。よって最も近い0.24を選ぶ。質量比を原子量で割って原子数へ換算する。",
+      "choices": [
+        {
+          "number": 1,
+          "verdict": "incorrect",
+          "reason": "計算値約0.241より小さい。質量比を原子量で割り、各元素の原子数密度を求めて足し合わせる。"
+        },
+        {
+          "number": 2,
+          "verdict": "incorrect",
+          "reason": "約0.241に対して過小。主成分FeだけでなくNiとCrの吸収も加える。"
+        },
+        {
+          "number": 3,
+          "verdict": "correct",
+          "reason": "Σ=ρNAΣ(wiσi/Ai)=約0.241 cm⁻¹。最も近い値は0.24。"
+        },
+        {
+          "number": 4,
+          "verdict": "incorrect",
+          "reason": "約0.241に対して過大。質量比をそのまま原子数比として用いず、各原子量で換算する。"
+        },
+        {
+          "number": 5,
+          "verdict": "incorrect",
+          "reason": "約0.241に対して過大。barnからcm²への10⁻²⁴の換算と質量比の合計1を確認する。"
+        }
+      ],
+      "sources": [
+        {
+          "title": "日本技術士会 公式問題",
+          "url": "https://www.engineer.or.jp/c_topics/011/attached/attach_11458_11.pdf"
+        },
+        {
+          "title": "日本技術士会 公式正答",
+          "url": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_4.pdf#page=22"
+        }
+      ]
+    }
+  },
+  {
+    "id": "pe-first-nuclear-2025-q2",
+    "number": 2,
+    "text": "2025年度 原子力・放射線部門 専門科目 Ⅲ－2。下の公式原問画像の当該番号に解答してください。同じページにある別の設問は対象外です。",
+    "images": [
+      "/exam-library/pe-first-nuclear-2025/e9a86fe6b99e96638630.png"
+    ],
+    "sourcePages": [
+      1
+    ],
+    "sourceQuestionNumber": 2,
+    "correctChoice": 1,
+    "choiceCount": 5,
+    "answerAuthority": "official",
+    "originalPdf": "https://www.engineer.or.jp/c_topics/011/attached/attach_11458_11.pdf",
+    "answerPdf": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_4.pdf#page=22",
+    "explanation": "遅発中性子の時間遅れは原子炉制御を容易にする。各先行核の離散成分を重ねた実測スペクトルが幅を持つことと、単純に連続スペクトルと断定することは区別する。",
+    "presentation": {
+      "sourceHash": "370b6313c6a93a860ddf2da2d0035cdbcedcbed37b0326bd0fb1f465c8f6c6c3",
+      "prompt": "2025年度 原子力・放射線部門 専門科目 Ⅲ－2。下の公式原問画像の当該番号に解答してください。同じページにある別の設問は対象外です。",
+      "choices": [
+        {
+          "number": 1,
+          "text": "①"
+        },
+        {
+          "number": 2,
+          "text": "②"
+        },
+        {
+          "number": 3,
+          "text": "③"
+        },
+        {
+          "number": 4,
+          "text": "④"
+        },
+        {
+          "number": 5,
+          "text": "⑤"
+        }
+      ],
+      "figures": [
+        {
+          "src": "/exam-library/pe-first-nuclear-2025/e9a86fe6b99e96638630.png",
+          "alt": "2025年度 原子力・放射線部門 Ⅲ－2の公式原問。問題文・全選択肢・図表を確認してください。",
+          "width": 998,
+          "height": 481
+        }
+      ]
+    },
+    "choiceExplanation": {
+      "sourceHash": "370b6313c6a93a860ddf2da2d0035cdbcedcbed37b0326bd0fb1f465c8f6c6c3",
+      "correctChoice": 1,
+      "summary": "遅発中性子の時間遅れは原子炉制御を容易にする。各先行核の離散成分を重ねた実測スペクトルが幅を持つことと、単純に連続スペクトルと断定することは区別する。",
+      "choices": [
+        {
+          "number": 1,
+          "verdict": "correct",
+          "reason": "誤りは「連続的」。遅発中性子は先行核のβ崩壊後、娘核の準位から放出され、離散的なエネルギー成分を持つ。即発中性子の連続スペクトルと区別する。"
+        },
+        {
+          "number": 2,
+          "verdict": "incorrect",
+          "reason": "適切。生成物の多くは不安定核種で、放出抑制・閉じ込めが必要。"
+        },
+        {
+          "number": 3,
+          "verdict": "incorrect",
+          "reason": "適切。核分裂連鎖反応を停止しても生成物は崩壊を続けるため、停止後の除熱も必要。"
+        },
+        {
+          "number": 4,
+          "verdict": "incorrect",
+          "reason": "適切。例えばXe-135は大きな中性子吸収断面積を持ち、停止後の濃度変化が再起動に影響する。"
+        },
+        {
+          "number": 5,
+          "verdict": "incorrect",
+          "reason": "適切。Xe、Krなどの核分裂ガスが放出・蓄積すると、燃料棒内の圧力が高まる。"
+        }
+      ],
+      "sources": [
+        {
+          "title": "日本技術士会 公式問題",
+          "url": "https://www.engineer.or.jp/c_topics/011/attached/attach_11458_11.pdf"
+        },
+        {
+          "title": "日本技術士会 公式正答",
+          "url": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_4.pdf#page=22"
+        }
+      ]
+    }
+  },
+  {
+    "id": "pe-first-nuclear-2025-q3",
+    "number": 3,
+    "text": "2025年度 原子力・放射線部門 専門科目 Ⅲ－3。下の公式原問画像の当該番号に解答してください。同じページにある別の設問は対象外です。",
+    "images": [
+      "/exam-library/pe-first-nuclear-2025/c828e049e3368eaaddc6.png"
+    ],
+    "sourcePages": [
+      2
+    ],
+    "sourceQuestionNumber": 3,
+    "correctChoice": 2,
+    "choiceCount": 5,
+    "answerAuthority": "official",
+    "originalPdf": "https://www.engineer.or.jp/c_topics/011/attached/attach_11458_11.pdf",
+    "answerPdf": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_4.pdf#page=22",
+    "explanation": "無限増倍率k∞=εpfη。非均質化による主な利点は共鳴吸収を逃れる確率pの増加である。表面吸収と内部束低下の因果を逆にしない。",
+    "presentation": {
+      "sourceHash": "50e06072a027caa87d711d6a736d35ccb655614f4d9dfc938537914b702d8e6e",
+      "prompt": "2025年度 原子力・放射線部門 専門科目 Ⅲ－3。下の公式原問画像の当該番号に解答してください。同じページにある別の設問は対象外です。",
+      "choices": [
+        {
+          "number": 1,
+          "text": "①"
+        },
+        {
+          "number": 2,
+          "text": "②"
+        },
+        {
+          "number": 3,
+          "text": "③"
+        },
+        {
+          "number": 4,
+          "text": "④"
+        },
+        {
+          "number": 5,
+          "text": "⑤"
+        }
+      ],
+      "figures": [
+        {
+          "src": "/exam-library/pe-first-nuclear-2025/c828e049e3368eaaddc6.png",
+          "alt": "2025年度 原子力・放射線部門 Ⅲ－3の公式原問。問題文・全選択肢・図表を確認してください。",
+          "width": 998,
+          "height": 608
+        }
+      ]
+    },
+    "choiceExplanation": {
+      "sourceHash": "50e06072a027caa87d711d6a736d35ccb655614f4d9dfc938537914b702d8e6e",
+      "correctChoice": 2,
+      "summary": "無限増倍率k∞=εpfη。非均質化による主な利点は共鳴吸収を逃れる確率pの増加である。表面吸収と内部束低下の因果を逆にしない。",
+      "choices": [
+        {
+          "number": 1,
+          "verdict": "incorrect",
+          "reason": "適切。燃料の塊では高速中性子が燃料核と相互作用する機会が増え、εが増える。"
+        },
+        {
+          "number": 2,
+          "verdict": "correct",
+          "reason": "誤りは「内部の中性子が増える」。表面で吸収されるため内部の共鳴中性子束は低下する。共鳴自己遮蔽による実効吸収低下がp増加に寄与する。"
+        },
+        {
+          "number": 3,
+          "verdict": "incorrect",
+          "reason": "適切。減速材中で共鳴エネルギーを通過すれば、燃料の共鳴吸収を回避できる。"
+        },
+        {
+          "number": 4,
+          "verdict": "incorrect",
+          "reason": "適切。燃料内中性子束の落ち込みは、減速材などでの吸収に対する燃料吸収の割合を下げる方向に働く。"
+        },
+        {
+          "number": 5,
+          "verdict": "incorrect",
+          "reason": "適切。同じ燃料組成と比較条件ではηは主として核的性質によって決まり、幾何学的分離による変化は小さい。"
+        }
+      ],
+      "sources": [
+        {
+          "title": "日本技術士会 公式問題",
+          "url": "https://www.engineer.or.jp/c_topics/011/attached/attach_11458_11.pdf"
+        },
+        {
+          "title": "日本技術士会 公式正答",
+          "url": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_4.pdf#page=22"
+        }
+      ]
+    }
+  },
+  {
+    "id": "pe-first-nuclear-2025-q4",
+    "number": 4,
+    "text": "2025年度 原子力・放射線部門 専門科目 Ⅲ－4。下の公式原問画像の当該番号に解答してください。同じページにある別の設問は対象外です。",
+    "images": [
+      "/exam-library/pe-first-nuclear-2025/5df0d60e01caae232603.png"
+    ],
+    "sourcePages": [
+      2
+    ],
+    "sourceQuestionNumber": 4,
+    "correctChoice": 2,
+    "choiceCount": 5,
+    "answerAuthority": "official",
+    "originalPdf": "https://www.engineer.or.jp/c_topics/011/attached/attach_11458_11.pdf",
+    "answerPdf": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_4.pdf#page=22",
+    "explanation": "天然存在比、半減期、化学形態を分けて整理する。核種の半減期は化学形態の融点・昇華点とは異なる性質である。",
+    "presentation": {
+      "sourceHash": "634c0f845fa4c9f08fcb4660b9563553830850a0420f574f886b10ea1689f969",
+      "prompt": "2025年度 原子力・放射線部門 専門科目 Ⅲ－4。下の公式原問画像の当該番号に解答してください。同じページにある別の設問は対象外です。",
+      "choices": [
+        {
+          "number": 1,
+          "text": "①"
+        },
+        {
+          "number": 2,
+          "text": "②"
+        },
+        {
+          "number": 3,
+          "text": "③"
+        },
+        {
+          "number": 4,
+          "text": "④"
+        },
+        {
+          "number": 5,
+          "text": "⑤"
+        }
+      ],
+      "figures": [
+        {
+          "src": "/exam-library/pe-first-nuclear-2025/5df0d60e01caae232603.png",
+          "alt": "2025年度 原子力・放射線部門 Ⅲ－4の公式原問。問題文・全選択肢・図表を確認してください。",
+          "width": 998,
+          "height": 330
+        }
+      ]
+    },
+    "choiceExplanation": {
+      "sourceHash": "634c0f845fa4c9f08fcb4660b9563553830850a0420f574f886b10ea1689f969",
+      "correctChoice": 2,
+      "summary": "天然存在比、半減期、化学形態を分けて整理する。核種の半減期は化学形態の融点・昇華点とは異なる性質である。",
+      "choices": [
+        {
+          "number": 1,
+          "verdict": "incorrect",
+          "reason": "適切。天然組成のU-235は約0.7%で、大部分はU-238。"
+        },
+        {
+          "number": 2,
+          "verdict": "correct",
+          "reason": "誤りは核種の取り違え。約45億年はU-238で、U-235は約7億年と短い。"
+        },
+        {
+          "number": 3,
+          "verdict": "incorrect",
+          "reason": "適切。常圧では約56℃で昇華するUF6を気体にして同位体分離に使う。沸点と呼ばない。"
+        },
+        {
+          "number": 4,
+          "verdict": "incorrect",
+          "reason": "適切。ウラン原子が面心立方格子、酸素が四面体位置を占める蛍石型。"
+        },
+        {
+          "number": 5,
+          "verdict": "incorrect",
+          "reason": "適切。UO2は金属ウランより著しく高融点である。数値は概数。"
+        }
+      ],
+      "sources": [
+        {
+          "title": "日本技術士会 公式問題",
+          "url": "https://www.engineer.or.jp/c_topics/011/attached/attach_11458_11.pdf"
+        },
+        {
+          "title": "日本技術士会 公式正答",
+          "url": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_4.pdf#page=22"
+        }
+      ]
+    }
+  },
+  {
+    "id": "pe-first-nuclear-2025-q5",
+    "number": 5,
+    "text": "2025年度 原子力・放射線部門 専門科目 Ⅲ－5。下の公式原問画像の当該番号に解答してください。同じページにある別の設問は対象外です。",
+    "images": [
+      "/exam-library/pe-first-nuclear-2025/19ad497c251678582862.png"
+    ],
+    "sourcePages": [
+      3
+    ],
+    "sourceQuestionNumber": 5,
+    "correctChoice": 4,
+    "choiceCount": 5,
+    "answerAuthority": "official",
+    "originalPdf": "https://www.engineer.or.jp/c_topics/011/attached/attach_11458_11.pdf",
+    "answerPdf": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_4.pdf#page=22",
+    "explanation": "回収・分離と核変換を混同しない。分離だけでは総放射能はなくならない。",
+    "presentation": {
+      "sourceHash": "029df7e123f6c6b5c4ab96fe091dbebec1a1875c016a55895510d096647c6308",
+      "prompt": "2025年度 原子力・放射線部門 専門科目 Ⅲ－5。下の公式原問画像の当該番号に解答してください。同じページにある別の設問は対象外です。",
+      "choices": [
+        {
+          "number": 1,
+          "text": "①"
+        },
+        {
+          "number": 2,
+          "text": "②"
+        },
+        {
+          "number": 3,
+          "text": "③"
+        },
+        {
+          "number": 4,
+          "text": "④"
+        },
+        {
+          "number": 5,
+          "text": "⑤"
+        }
+      ],
+      "figures": [
+        {
+          "src": "/exam-library/pe-first-nuclear-2025/19ad497c251678582862.png",
+          "alt": "2025年度 原子力・放射線部門 Ⅲ－5の公式原問。問題文・全選択肢・図表を確認してください。",
+          "width": 998,
+          "height": 638
+        }
+      ]
+    },
+    "choiceExplanation": {
+      "sourceHash": "029df7e123f6c6b5c4ab96fe091dbebec1a1875c016a55895510d096647c6308",
+      "correctChoice": 4,
+      "summary": "回収・分離と核変換を混同しない。分離だけでは総放射能はなくならない。",
+      "choices": [
+        {
+          "number": 1,
+          "verdict": "incorrect",
+          "reason": "適切。Pu-241が減ってAm-241が増えることで核的特性や取扱条件が変わる。ここでの非核分裂性は熱中性子炉燃料の文脈。"
+        },
+        {
+          "number": 2,
+          "verdict": "incorrect",
+          "reason": "適切。長半減期のMAは放射性毒性や長期の安全評価に関係する。"
+        },
+        {
+          "number": 3,
+          "verdict": "incorrect",
+          "reason": "適切。分離対象を高レベル廃棄物から除けばその廃棄物の発熱負荷を減らせる。ただし回収MA自体が消滅するわけではなく、その後の管理・核変換が必要。"
+        },
+        {
+          "number": 4,
+          "verdict": "correct",
+          "reason": "誤りは「β−崩壊」。Cm-242、Cm-244の主な崩壊はα崩壊であり、そのエネルギーが発熱に寄与する。"
+        },
+        {
+          "number": 5,
+          "verdict": "incorrect",
+          "reason": "適切。中性子捕獲を重ねて同位体組成が変わり、Pu-239など核分裂性同位体の比率が一般に低下する。"
+        }
+      ],
+      "sources": [
+        {
+          "title": "日本技術士会 公式問題",
+          "url": "https://www.engineer.or.jp/c_topics/011/attached/attach_11458_11.pdf"
+        },
+        {
+          "title": "日本技術士会 公式正答",
+          "url": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_4.pdf#page=22"
+        }
+      ]
+    }
+  },
+  {
+    "id": "pe-first-nuclear-2025-q6",
+    "number": 6,
+    "text": "2025年度 原子力・放射線部門 専門科目 Ⅲ－6。下の公式原問画像の当該番号に解答してください。同じページにある別の設問は対象外です。",
+    "images": [
+      "/exam-library/pe-first-nuclear-2025/5e24f5281a0c9701a55f.png"
+    ],
+    "sourcePages": [
+      3
+    ],
+    "sourceQuestionNumber": 6,
+    "correctChoice": 4,
+    "choiceCount": 5,
+    "answerAuthority": "official",
+    "originalPdf": "https://www.engineer.or.jp/c_topics/011/attached/attach_11458_11.pdf",
+    "answerPdf": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_4.pdf#page=22",
+    "explanation": "設計条件から外れることと、実際に障壁が破損することを分ける。設計余裕があっても設計外状態を安全と断定するものではない。",
+    "presentation": {
+      "sourceHash": "1316c2cb8bda49fbcc46705654d3cb3a3bfe8044d395e65a01e5e475fa87c2ef",
+      "prompt": "2025年度 原子力・放射線部門 専門科目 Ⅲ－6。下の公式原問画像の当該番号に解答してください。同じページにある別の設問は対象外です。",
+      "choices": [
+        {
+          "number": 1,
+          "text": "①"
+        },
+        {
+          "number": 2,
+          "text": "②"
+        },
+        {
+          "number": 3,
+          "text": "③"
+        },
+        {
+          "number": 4,
+          "text": "④"
+        },
+        {
+          "number": 5,
+          "text": "⑤"
+        }
+      ],
+      "figures": [
+        {
+          "src": "/exam-library/pe-first-nuclear-2025/5e24f5281a0c9701a55f.png",
+          "alt": "2025年度 原子力・放射線部門 Ⅲ－6の公式原問。問題文・全選択肢・図表を確認してください。",
+          "width": 998,
+          "height": 690
+        }
+      ]
+    },
+    "choiceExplanation": {
+      "sourceHash": "1316c2cb8bda49fbcc46705654d3cb3a3bfe8044d395e65a01e5e475fa87c2ef",
+      "correctChoice": 4,
+      "summary": "設計条件から外れることと、実際に障壁が破損することを分ける。設計余裕があっても設計外状態を安全と断定するものではない。",
+      "choices": [
+        {
+          "number": 1,
+          "verdict": "incorrect",
+          "reason": "適切。燃料損傷後も圧力容器と格納容器が追加の障壁として働く。"
+        },
+        {
+          "number": 2,
+          "verdict": "incorrect",
+          "reason": "適切。圧力容器破損と格納容器破損は別の事象である。"
+        },
+        {
+          "number": 3,
+          "verdict": "incorrect",
+          "reason": "適切。障壁の早期喪失では放射性物質の閉じ込め・保持の時間と能力が失われる。"
+        },
+        {
+          "number": 4,
+          "verdict": "correct",
+          "reason": "誤りは設計圧力と破損限界の同一視。設計圧力超過が直ちに全構成要素の破損を意味するわけではない。実際の限界は温度、荷重、材料、シールなどで決まる。"
+        },
+        {
+          "number": 5,
+          "verdict": "incorrect",
+          "reason": "適切。急激なエネルギー放出が格納容器に機械・熱的負荷を与える。長期過圧などもあり、原因はこれだけではない。"
+        }
+      ],
+      "sources": [
+        {
+          "title": "日本技術士会 公式問題",
+          "url": "https://www.engineer.or.jp/c_topics/011/attached/attach_11458_11.pdf"
+        },
+        {
+          "title": "日本技術士会 公式正答",
+          "url": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_4.pdf#page=22"
+        }
+      ]
+    }
+  },
+  {
+    "id": "pe-first-nuclear-2025-q7",
+    "number": 7,
+    "text": "2025年度 原子力・放射線部門 専門科目 Ⅲ－7。下の公式原問画像の当該番号に解答してください。同じページにある別の設問は対象外です。",
+    "images": [
+      "/exam-library/pe-first-nuclear-2025/f9b0cf654f43b5fac89c.png"
+    ],
+    "sourcePages": [
+      4
+    ],
+    "sourceQuestionNumber": 7,
+    "correctChoice": 1,
+    "choiceCount": 5,
+    "answerAuthority": "official",
+    "originalPdf": "https://www.engineer.or.jp/c_topics/011/attached/attach_11458_11.pdf",
+    "answerPdf": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_4.pdf#page=22",
+    "explanation": "原子と原子が抜けた位置を区別する。閾値を超えるエネルギーが2個の原子に分かれるには、少なくとも2Edが必要になる。",
+    "presentation": {
+      "sourceHash": "c6bd1d977edee3bf129468cfdccc1740e7659db7fb390ca82c6985ff2c6a2a28",
+      "prompt": "2025年度 原子力・放射線部門 専門科目 Ⅲ－7。下の公式原問画像の当該番号に解答してください。同じページにある別の設問は対象外です。",
+      "choices": [
+        {
+          "number": 1,
+          "text": "①"
+        },
+        {
+          "number": 2,
+          "text": "②"
+        },
+        {
+          "number": 3,
+          "text": "③"
+        },
+        {
+          "number": 4,
+          "text": "④"
+        },
+        {
+          "number": 5,
+          "text": "⑤"
+        }
+      ],
+      "figures": [
+        {
+          "src": "/exam-library/pe-first-nuclear-2025/f9b0cf654f43b5fac89c.png",
+          "alt": "2025年度 原子力・放射線部門 Ⅲ－7の公式原問。問題文・全選択肢・図表を確認してください。",
+          "width": 998,
+          "height": 1448
+        }
+      ]
+    },
+    "choiceExplanation": {
+      "sourceHash": "c6bd1d977edee3bf129468cfdccc1740e7659db7fb390ca82c6985ff2c6a2a28",
+      "correctChoice": 1,
+      "summary": "原子と原子が抜けた位置を区別する。閾値を超えるエネルギーが2個の原子に分かれるには、少なくとも2Edが必要になる。",
+      "choices": [
+        {
+          "number": 1,
+          "verdict": "correct",
+          "reason": "正しい。十分なエネルギーを得た標的原子は二次反跳原子となる。運動を終えた入射原子は格子間原子となり、閾値未満0、閾値以上2倍未満1。"
+        },
+        {
+          "number": 2,
+          "verdict": "incorrect",
+          "reason": "aとbが逆。標的から新たに飛び出す原子が二次はじき出し原子、停止した入射原子は格子間原子。"
+        },
+        {
+          "number": 3,
+          "verdict": "incorrect",
+          "reason": "bが誤り。空格子点は原子の抜けた位置であって、入射原子そのものではない。"
+        },
+        {
+          "number": 4,
+          "verdict": "incorrect",
+          "reason": "bに加えてc,dも逆。閾値未満でははじき出せず0、Ed以上では1。"
+        },
+        {
+          "number": 5,
+          "verdict": "incorrect",
+          "reason": "a,bの名称が逆で、c,dの閾値関係も逆。"
+        }
+      ],
+      "sources": [
+        {
+          "title": "日本技術士会 公式問題",
+          "url": "https://www.engineer.or.jp/c_topics/011/attached/attach_11458_11.pdf"
+        },
+        {
+          "title": "日本技術士会 公式正答",
+          "url": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_4.pdf#page=22"
+        }
+      ]
+    }
+  },
+  {
+    "id": "pe-first-nuclear-2025-q8",
+    "number": 8,
+    "text": "2025年度 原子力・放射線部門 専門科目 Ⅲ－8。下の公式原問画像の当該番号に解答してください。同じページにある別の設問は対象外です。",
+    "images": [
+      "/exam-library/pe-first-nuclear-2025/511c5efaef9ef70497d1.png",
+      "/exam-library/pe-first-nuclear-2025/0f29e1fe891a71d0344d.png"
+    ],
+    "sourcePages": [
+      5
+    ],
+    "sourceQuestionNumber": 8,
+    "correctChoice": 1,
+    "choiceCount": 5,
+    "answerAuthority": "official",
+    "originalPdf": "https://www.engineer.or.jp/c_topics/011/attached/attach_11458_11.pdf",
+    "answerPdf": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_4.pdf#page=22",
+    "explanation": "低確率事象の和の近似を用いる。50%時は3.26×10⁻⁶+1.39×10⁻⁴+4.20×10⁻³=4.34226×10⁻³。100%時は3.26×10⁻⁶+5.838×10⁻⁷=3.8438×10⁻⁶。",
+    "presentation": {
+      "sourceHash": "96cfcb5cc874d6fb6593db6b092737eb1cc54596a7b843ece17cbaf2ebecac28",
+      "prompt": "2025年度 原子力・放射線部門 専門科目 Ⅲ－8。下の公式原問画像の当該番号に解答してください。同じページにある別の設問は対象外です。",
+      "choices": [
+        {
+          "number": 1,
+          "text": "①"
+        },
+        {
+          "number": 2,
+          "text": "②"
+        },
+        {
+          "number": 3,
+          "text": "③"
+        },
+        {
+          "number": 4,
+          "text": "④"
+        },
+        {
+          "number": 5,
+          "text": "⑤"
+        }
+      ],
+      "figures": [
+        {
+          "src": "/exam-library/pe-first-nuclear-2025/511c5efaef9ef70497d1.png",
+          "alt": "2025年度 原子力・放射線部門 Ⅲ－8の公式原問。問題文・全選択肢・図表を確認してください。",
+          "width": 998,
+          "height": 1410
+        },
+        {
+          "src": "/exam-library/pe-first-nuclear-2025/0f29e1fe891a71d0344d.png",
+          "alt": "2025年度 原子力・放射線部門 Ⅲ－8の公式原問。問題文・全選択肢・図表を確認してください。",
+          "width": 998,
+          "height": 1245
+        }
+      ]
+    },
+    "choiceExplanation": {
+      "sourceHash": "96cfcb5cc874d6fb6593db6b092737eb1cc54596a7b843ece17cbaf2ebecac28",
+      "correctChoice": 1,
+      "summary": "低確率事象の和の近似を用いる。50%時は3.26×10⁻⁶+1.39×10⁻⁴+4.20×10⁻³=4.34226×10⁻³。100%時は3.26×10⁻⁶+5.838×10⁻⁷=3.8438×10⁻⁶。",
+      "choices": [
+        {
+          "number": 1,
+          "verdict": "correct",
+          "reason": "正しい。50%ずつなら片方故障で流量不足、100%ずつなら両方故障で流量不足。100%時はPT+PAPB=3.8438×10⁻⁶。"
+        },
+        {
+          "number": 2,
+          "verdict": "incorrect",
+          "reason": "50%と100%のゲートが逆。50%ではOR、100%ではAND。"
+        },
+        {
+          "number": 3,
+          "verdict": "incorrect",
+          "reason": "eがポンプ同時故障PAPBだけになっている。共通水源PTを足す必要がある。"
+        },
+        {
+          "number": 4,
+          "verdict": "incorrect",
+          "reason": "ゲートも数値との対応も誤る。50%で積を使うと一方故障による流量不足を見落とす。"
+        },
+        {
+          "number": 5,
+          "verdict": "incorrect",
+          "reason": "aはORなのにbが積なのが誤り。和と積を故障論理に合わせて使う。"
+        }
+      ],
+      "sources": [
+        {
+          "title": "日本技術士会 公式問題",
+          "url": "https://www.engineer.or.jp/c_topics/011/attached/attach_11458_11.pdf"
+        },
+        {
+          "title": "日本技術士会 公式正答",
+          "url": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_4.pdf#page=22"
+        }
+      ]
+    }
+  },
+  {
+    "id": "pe-first-nuclear-2025-q9",
+    "number": 9,
+    "text": "2025年度 原子力・放射線部門 専門科目 Ⅲ－9。下の公式原問画像の当該番号に解答してください。同じページにある別の設問は対象外です。",
+    "images": [
+      "/exam-library/pe-first-nuclear-2025/37f8812f8048d6acbdc2.png"
+    ],
+    "sourcePages": [
+      7
+    ],
+    "sourceQuestionNumber": 9,
+    "correctChoice": 5,
+    "choiceCount": 5,
+    "answerAuthority": "official",
+    "originalPdf": "https://www.engineer.or.jp/c_topics/011/attached/attach_11458_11.pdf",
+    "answerPdf": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_4.pdf#page=22",
+    "explanation": "同じ機能を複数備えること、異なる原理で同じ機能を担うこと、物理的等の分離で同時喪失を防ぐことを区別する。試験で示された令和4年改正時点の定義を対象とする。",
+    "presentation": {
+      "sourceHash": "f18e8f15dcf4a6f6f2c70a90c30121eb631fe8e78e58c0ab4ae3fb02de977777",
+      "prompt": "2025年度 原子力・放射線部門 専門科目 Ⅲ－9。下の公式原問画像の当該番号に解答してください。同じページにある別の設問は対象外です。",
+      "choices": [
+        {
+          "number": 1,
+          "text": "①"
+        },
+        {
+          "number": 2,
+          "text": "②"
+        },
+        {
+          "number": 3,
+          "text": "③"
+        },
+        {
+          "number": 4,
+          "text": "④"
+        },
+        {
+          "number": 5,
+          "text": "⑤"
+        }
+      ],
+      "figures": [
+        {
+          "src": "/exam-library/pe-first-nuclear-2025/37f8812f8048d6acbdc2.png",
+          "alt": "2025年度 原子力・放射線部門 Ⅲ－9の公式原問。問題文・全選択肢・図表を確認してください。",
+          "width": 998,
+          "height": 1095
+        }
+      ]
+    },
+    "choiceExplanation": {
+      "sourceHash": "f18e8f15dcf4a6f6f2c70a90c30121eb631fe8e78e58c0ab4ae3fb02de977777",
+      "correctChoice": 5,
+      "summary": "同じ機能を複数備えること、異なる原理で同じ機能を担うこと、物理的等の分離で同時喪失を防ぐことを区別する。試験で示された令和4年改正時点の定義を対象とする。",
+      "choices": [
+        {
+          "number": 1,
+          "verdict": "incorrect",
+          "reason": "bは構造・動作原理であり、c,dの定義も逆。単に制御方法だけの問題ではない。"
+        },
+        {
+          "number": 2,
+          "verdict": "incorrect",
+          "reason": "aが異なる機能なのは誤り。同じ必要機能を確保する。c,dも所定の定義と異なる。"
+        },
+        {
+          "number": 3,
+          "verdict": "incorrect",
+          "reason": "eが誤り。常時監視するだけでは系統間の故障波及を分離できない。"
+        },
+        {
+          "number": 4,
+          "verdict": "incorrect",
+          "reason": "a,b,c,d,eが定義に合わない。監視と独立性を混同しない。"
+        },
+        {
+          "number": 5,
+          "verdict": "correct",
+          "reason": "正しい。共通要因は複数に同時影響し、従属要因は単一原因から確実に故障を生じさせるものとして設問が定義している。"
+        }
+      ],
+      "sources": [
+        {
+          "title": "日本技術士会 公式問題",
+          "url": "https://www.engineer.or.jp/c_topics/011/attached/attach_11458_11.pdf"
+        },
+        {
+          "title": "日本技術士会 公式正答",
+          "url": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_4.pdf#page=22"
+        }
+      ]
+    }
+  },
+  {
+    "id": "pe-first-nuclear-2025-q10",
+    "number": 10,
+    "text": "2025年度 原子力・放射線部門 専門科目 Ⅲ－10。下の公式原問画像の当該番号に解答してください。同じページにある別の設問は対象外です。",
+    "images": [
+      "/exam-library/pe-first-nuclear-2025/33775882991d3d61595c.png"
+    ],
+    "sourcePages": [
+      8
+    ],
+    "sourceQuestionNumber": 10,
+    "correctChoice": 4,
+    "choiceCount": 5,
+    "answerAuthority": "official",
+    "originalPdf": "https://www.engineer.or.jp/c_topics/011/attached/attach_11458_11.pdf",
+    "answerPdf": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_4.pdf#page=22",
+    "explanation": "反応前後で電子数が同じため、ここでは与えられた原子質量を使える。核力と電気的斥力を混同しない。",
+    "presentation": {
+      "sourceHash": "38b26b3c91b01715942dfaf3edc08a4db28bf95c442b4946630932942d0d1248",
+      "prompt": "2025年度 原子力・放射線部門 専門科目 Ⅲ－10。下の公式原問画像の当該番号に解答してください。同じページにある別の設問は対象外です。",
+      "choices": [
+        {
+          "number": 1,
+          "text": "①"
+        },
+        {
+          "number": 2,
+          "text": "②"
+        },
+        {
+          "number": 3,
+          "text": "③"
+        },
+        {
+          "number": 4,
+          "text": "④"
+        },
+        {
+          "number": 5,
+          "text": "⑤"
+        }
+      ],
+      "figures": [
+        {
+          "src": "/exam-library/pe-first-nuclear-2025/33775882991d3d61595c.png",
+          "alt": "2025年度 原子力・放射線部門 Ⅲ－10の公式原問。問題文・全選択肢・図表を確認してください。",
+          "width": 998,
+          "height": 1290
+        }
+      ]
+    },
+    "choiceExplanation": {
+      "sourceHash": "38b26b3c91b01715942dfaf3edc08a4db28bf95c442b4946630932942d0d1248",
+      "correctChoice": 4,
+      "summary": "反応前後で電子数が同じため、ここでは与えられた原子質量を使える。核力と電気的斥力を混同しない。",
+      "choices": [
+        {
+          "number": 1,
+          "verdict": "incorrect",
+          "reason": "aは光電効果でなくトンネル効果、bは核力でなくクーロン斥力、cは相対的に低いエネルギー。"
+        },
+        {
+          "number": 2,
+          "verdict": "incorrect",
+          "reason": "dはHe-4。質量数は2+3=4+1で保存される。したがってe,fも違う。"
+        },
+        {
+          "number": 3,
+          "verdict": "incorrect",
+          "reason": "a,b,cが誤り。さらに提示質量の差は0.018883uであって0.019723uではない。"
+        },
+        {
+          "number": 4,
+          "verdict": "correct",
+          "reason": "正しい。質量差=2.014102+3.016049−4.002603−1.008665=0.018883u、約17.59MeV。"
+        },
+        {
+          "number": 5,
+          "verdict": "incorrect",
+          "reason": "b,c,dが誤る。軽い核で小さくなる電気的障壁は斥力で、DTの生成核はHe-4。"
+        }
+      ],
+      "sources": [
+        {
+          "title": "日本技術士会 公式問題",
+          "url": "https://www.engineer.or.jp/c_topics/011/attached/attach_11458_11.pdf"
+        },
+        {
+          "title": "日本技術士会 公式正答",
+          "url": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_4.pdf#page=22"
+        }
+      ]
+    }
+  },
+  {
+    "id": "pe-first-nuclear-2025-q11",
+    "number": 11,
+    "text": "2025年度 原子力・放射線部門 専門科目 Ⅲ－11。下の公式原問画像の当該番号に解答してください。同じページにある別の設問は対象外です。",
+    "images": [
+      "/exam-library/pe-first-nuclear-2025/f56a07280b3dd1b9da1a.png",
+      "/exam-library/pe-first-nuclear-2025/e049cca93904cc164aa4.png"
+    ],
+    "sourcePages": [
+      9
+    ],
+    "sourceQuestionNumber": 11,
+    "correctChoice": 1,
+    "choiceCount": 5,
+    "answerAuthority": "official",
+    "originalPdf": "https://www.engineer.or.jp/c_topics/011/attached/attach_11458_11.pdf",
+    "answerPdf": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_4.pdf#page=22",
+    "explanation": "λ=0.693/(8.06×86400)=約9.95×10⁻⁷ s⁻¹、Si=約2.92×10¹⁸ s⁻¹。N∞=約2.94×10²⁴個。生成と崩壊が釣り合うため、無限に増えるわけではない。",
+    "presentation": {
+      "sourceHash": "00e93780c01222fd6dc4090a0a5a164411dc99b20ddf695598a050cd058bd407",
+      "prompt": "2025年度 原子力・放射線部門 専門科目 Ⅲ－11。下の公式原問画像の当該番号に解答してください。同じページにある別の設問は対象外です。",
+      "choices": [
+        {
+          "number": 1,
+          "text": "①"
+        },
+        {
+          "number": 2,
+          "text": "②"
+        },
+        {
+          "number": 3,
+          "text": "③"
+        },
+        {
+          "number": 4,
+          "text": "④"
+        },
+        {
+          "number": 5,
+          "text": "⑤"
+        }
+      ],
+      "figures": [
+        {
+          "src": "/exam-library/pe-first-nuclear-2025/f56a07280b3dd1b9da1a.png",
+          "alt": "2025年度 原子力・放射線部門 Ⅲ－11の公式原問。問題文・全選択肢・図表を確認してください。",
+          "width": 998,
+          "height": 1485
+        },
+        {
+          "src": "/exam-library/pe-first-nuclear-2025/e049cca93904cc164aa4.png",
+          "alt": "2025年度 原子力・放射線部門 Ⅲ－11の公式原問。問題文・全選択肢・図表を確認してください。",
+          "width": 998,
+          "height": 608
+        }
+      ]
+    },
+    "choiceExplanation": {
+      "sourceHash": "00e93780c01222fd6dc4090a0a5a164411dc99b20ddf695598a050cd058bd407",
+      "correctChoice": 1,
+      "summary": "λ=0.693/(8.06×86400)=約9.95×10⁻⁷ s⁻¹、Si=約2.92×10¹⁸ s⁻¹。N∞=約2.94×10²⁴個。生成と崩壊が釣り合うため、無限に増えるわけではない。",
+      "choices": [
+        {
+          "number": 1,
+          "verdict": "correct",
+          "reason": "正しい。生成を加え崩壊を引く。平衡原子数Si/λをNAで割ると約4.88mol、質量約0.640kg。"
+        },
+        {
+          "number": 2,
+          "verdict": "incorrect",
+          "reason": "崩壊項の符号が逆。bは初期条件0にも合わず、tと無次元指数の和差も不整合。"
+        },
+        {
+          "number": 3,
+          "verdict": "incorrect",
+          "reason": "bの指数項の符号が逆。t=0で2Kになり、初期原子数0を満たさない。"
+        },
+        {
+          "number": 4,
+          "verdict": "incorrect",
+          "reason": "崩壊の符号、初期条件、bの次元、c,dがいずれも不適切。"
+        },
+        {
+          "number": 5,
+          "verdict": "incorrect",
+          "reason": "a,bは正しいがc,dが10分の1。MW→W、日→秒を正しく換算する。"
+        }
+      ],
+      "sources": [
+        {
+          "title": "日本技術士会 公式問題",
+          "url": "https://www.engineer.or.jp/c_topics/011/attached/attach_11458_11.pdf"
+        },
+        {
+          "title": "日本技術士会 公式正答",
+          "url": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_4.pdf#page=22"
+        }
+      ]
+    }
+  },
+  {
+    "id": "pe-first-nuclear-2025-q12",
+    "number": 12,
+    "text": "2025年度 原子力・放射線部門 専門科目 Ⅲ－12。下の公式原問画像の当該番号に解答してください。同じページにある別の設問は対象外です。",
+    "images": [
+      "/exam-library/pe-first-nuclear-2025/1b810a1b87432488a3aa.png"
+    ],
+    "sourcePages": [
+      11
+    ],
+    "sourceQuestionNumber": 12,
+    "correctChoice": 4,
+    "choiceCount": 5,
+    "answerAuthority": "official",
+    "originalPdf": "https://www.engineer.or.jp/c_topics/011/attached/attach_11458_11.pdf",
+    "answerPdf": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_4.pdf#page=22",
+    "explanation": "DNBRは核沸騰離脱に対する熱流束比、MCPRは最小限界出力比。温度制御で描ける曲線全体と、熱流束制御での実際の遷移経路を分けて読む。",
+    "presentation": {
+      "sourceHash": "385f83deb24b19064d5cc6d74eaf7f2ca0270491332547c0e782fb49ec43afe6",
+      "prompt": "2025年度 原子力・放射線部門 専門科目 Ⅲ－12。下の公式原問画像の当該番号に解答してください。同じページにある別の設問は対象外です。",
+      "choices": [
+        {
+          "number": 1,
+          "text": "①"
+        },
+        {
+          "number": 2,
+          "text": "②"
+        },
+        {
+          "number": 3,
+          "text": "③"
+        },
+        {
+          "number": 4,
+          "text": "④"
+        },
+        {
+          "number": 5,
+          "text": "⑤"
+        }
+      ],
+      "figures": [
+        {
+          "src": "/exam-library/pe-first-nuclear-2025/1b810a1b87432488a3aa.png",
+          "alt": "2025年度 原子力・放射線部門 Ⅲ－12の公式原問。問題文・全選択肢・図表を確認してください。",
+          "width": 998,
+          "height": 1260
+        }
+      ]
+    },
+    "choiceExplanation": {
+      "sourceHash": "385f83deb24b19064d5cc6d74eaf7f2ca0270491332547c0e782fb49ec43afe6",
+      "correctChoice": 4,
+      "summary": "DNBRは核沸騰離脱に対する熱流束比、MCPRは最小限界出力比。温度制御で描ける曲線全体と、熱流束制御での実際の遷移経路を分けて読む。",
+      "choices": [
+        {
+          "number": 1,
+          "verdict": "incorrect",
+          "reason": "d,eが逆。PWRはDNBR、BWRはMCPR。"
+        },
+        {
+          "number": 2,
+          "verdict": "incorrect",
+          "reason": "b,cが逆。C-Dが遷移沸騰、E-Fが膜沸騰。"
+        },
+        {
+          "number": 3,
+          "verdict": "incorrect",
+          "reason": "aが誤りで、d,eも逆。B-Cはこの図では核沸騰域。"
+        },
+        {
+          "number": 4,
+          "verdict": "correct",
+          "reason": "正しい。熱流束を上げるとCから不安定な遷移域を飛び越え、膜沸騰域へ移って表面温度が急上昇する。"
+        },
+        {
+          "number": 5,
+          "verdict": "incorrect",
+          "reason": "a,b,cとd,eがいずれも図・指標の対応に合わない。"
+        }
+      ],
+      "sources": [
+        {
+          "title": "日本技術士会 公式問題",
+          "url": "https://www.engineer.or.jp/c_topics/011/attached/attach_11458_11.pdf"
+        },
+        {
+          "title": "日本技術士会 公式正答",
+          "url": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_4.pdf#page=22"
+        }
+      ]
+    }
+  },
+  {
+    "id": "pe-first-nuclear-2025-q13",
+    "number": 13,
+    "text": "2025年度 原子力・放射線部門 専門科目 Ⅲ－13。下の公式原問画像の当該番号に解答してください。同じページにある別の設問は対象外です。",
+    "images": [
+      "/exam-library/pe-first-nuclear-2025/71832b5c3989a63c4168.png"
+    ],
+    "sourcePages": [
+      12
+    ],
+    "sourceQuestionNumber": 13,
+    "correctChoice": 1,
+    "choiceCount": 5,
+    "answerAuthority": "official",
+    "originalPdf": "https://www.engineer.or.jp/c_topics/011/attached/attach_11458_11.pdf",
+    "answerPdf": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_4.pdf#page=22",
+    "explanation": "理想PIDならe(t)=ktに対しP=Kpkt、I=Kik t²/2、D=Kdk（開始直後から一定）となる。一方、原問の公式正答は微分D・合成Fであり、一次遅れを含む実用微分ならD=Kdk(1−e^(−t/T))として説明できる。原問にはこの微分フィルタの前提が明記されていない。理想微分のランプ応答を「必ずDの立上がりになる」と一般化しない。",
+    "presentation": {
+      "sourceHash": "2ef6c539d454f42c59cfe58002e755cef43390416ec89bb74962ac831eae0b9a",
+      "prompt": "2025年度 原子力・放射線部門 専門科目 Ⅲ－13。下の公式原問画像の当該番号に解答してください。同じページにある別の設問は対象外です。",
+      "choices": [
+        {
+          "number": 1,
+          "text": "①"
+        },
+        {
+          "number": 2,
+          "text": "②"
+        },
+        {
+          "number": 3,
+          "text": "③"
+        },
+        {
+          "number": 4,
+          "text": "④"
+        },
+        {
+          "number": 5,
+          "text": "⑤"
+        }
+      ],
+      "figures": [
+        {
+          "src": "/exam-library/pe-first-nuclear-2025/71832b5c3989a63c4168.png",
+          "alt": "2025年度 原子力・放射線部門 Ⅲ－13の公式原問。問題文・全選択肢・図表を確認してください。",
+          "width": 998,
+          "height": 1485
+        }
+      ]
+    },
+    "choiceExplanation": {
+      "sourceHash": "2ef6c539d454f42c59cfe58002e755cef43390416ec89bb74962ac831eae0b9a",
+      "correctChoice": 1,
+      "summary": "理想PIDならe(t)=ktに対しP=Kpkt、I=Kik t²/2、D=Kdk（開始直後から一定）となる。一方、原問の公式正答は微分D・合成Fであり、一次遅れを含む実用微分ならD=Kdk(1−e^(−t/T))として説明できる。原問にはこの微分フィルタの前提が明記されていない。理想微分のランプ応答を「必ずDの立上がりになる」と一般化しない。",
+      "choices": [
+        {
+          "number": 1,
+          "verdict": "correct",
+          "reason": "公式正答。PはランプC、Iは放物線B。原図ではDを有限の立上がりで一定となる微分応答として扱い、合成をFとしている。"
+        },
+        {
+          "number": 2,
+          "verdict": "incorrect",
+          "reason": "Pが一定Aなのは誤り。Pは偏差に比例するためランプC。Dも減衰Eではない。"
+        },
+        {
+          "number": 3,
+          "verdict": "incorrect",
+          "reason": "IとDを入れ替えている。ランプの積分は二次関数Bで、微分は定数へ向かうD。"
+        },
+        {
+          "number": 4,
+          "verdict": "incorrect",
+          "reason": "PとIが誤り。PはC、IはB。原図のD要素はEのような減衰応答ではない。"
+        },
+        {
+          "number": 5,
+          "verdict": "incorrect",
+          "reason": "I,Dが逆で、PIDをDだけの飽和応答とする点も誤り。I項があるため合成は増加し続ける。"
+        }
+      ],
+      "sources": [
+        {
+          "title": "日本技術士会 公式問題",
+          "url": "https://www.engineer.or.jp/c_topics/011/attached/attach_11458_11.pdf"
+        },
+        {
+          "title": "日本技術士会 公式正答",
+          "url": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_4.pdf#page=22"
+        }
+      ]
+    }
+  },
+  {
+    "id": "pe-first-nuclear-2025-q14",
+    "number": 14,
+    "text": "2025年度 原子力・放射線部門 専門科目 Ⅲ－14。下の公式原問画像の当該番号に解答してください。同じページにある別の設問は対象外です。",
+    "images": [
+      "/exam-library/pe-first-nuclear-2025/90c0254a16696a5a3132.png"
+    ],
+    "sourcePages": [
+      13
+    ],
+    "sourceQuestionNumber": 14,
+    "correctChoice": 2,
+    "choiceCount": 5,
+    "answerAuthority": "official",
+    "originalPdf": "https://www.engineer.or.jp/c_topics/011/attached/attach_11458_11.pdf",
+    "answerPdf": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_4.pdf#page=22",
+    "explanation": "熱収支を先に立てる。比熱4.2kJ/(kg·℃)は4200J/(kg·℃)、密度1000kg/m³を用いる。与条件で排熱を復水器で全て除去するモデルである。",
+    "presentation": {
+      "sourceHash": "a5e9258bbbfb8423c9ec36a78b2ef1c26b360cd7efd389a969a648b923073141",
+      "prompt": "2025年度 原子力・放射線部門 専門科目 Ⅲ－14。下の公式原問画像の当該番号に解答してください。同じページにある別の設問は対象外です。",
+      "choices": [
+        {
+          "number": 1,
+          "text": "①"
+        },
+        {
+          "number": 2,
+          "text": "②"
+        },
+        {
+          "number": 3,
+          "text": "③"
+        },
+        {
+          "number": 4,
+          "text": "④"
+        },
+        {
+          "number": 5,
+          "text": "⑤"
+        }
+      ],
+      "figures": [
+        {
+          "src": "/exam-library/pe-first-nuclear-2025/90c0254a16696a5a3132.png",
+          "alt": "2025年度 原子力・放射線部門 Ⅲ－14の公式原問。問題文・全選択肢・図表を確認してください。",
+          "width": 998,
+          "height": 645
+        }
+      ]
+    },
+    "choiceExplanation": {
+      "sourceHash": "a5e9258bbbfb8423c9ec36a78b2ef1c26b360cd7efd389a969a648b923073141",
+      "correctChoice": 2,
+      "summary": "熱収支を先に立てる。比熱4.2kJ/(kg·℃)は4200J/(kg·℃)、密度1000kg/m³を用いる。与条件で排熱を復水器で全て除去するモデルである。",
+      "choices": [
+        {
+          "number": 1,
+          "verdict": "incorrect",
+          "reason": "48 m³/sは必要な約55.25 m³/sより小さい。電気出力800MWそのものを除去熱量にせず、熱入力から電気出力を引く。"
+        },
+        {
+          "number": 2,
+          "verdict": "correct",
+          "reason": "正しい。除去熱=800/0.33−800=1624.24MW、流量=1624.24×10⁶/(1000×4200×7)=約55.25m³/s。"
+        },
+        {
+          "number": 3,
+          "verdict": "incorrect",
+          "reason": "63 m³/sは計算値を上回る。温度差は27−20=7℃であり、絶対温度を使わない。"
+        },
+        {
+          "number": 4,
+          "verdict": "incorrect",
+          "reason": "74 m³/sは計算値を上回る。熱効率33%は発電出力/熱入力であって、排熱/熱入力ではない。"
+        },
+        {
+          "number": 5,
+          "verdict": "incorrect",
+          "reason": "86 m³/sは計算値を上回る。熱入力の全量でなく、発電に使った800MWを引いた残りを海水が受け取る。"
+        }
+      ],
+      "sources": [
+        {
+          "title": "日本技術士会 公式問題",
+          "url": "https://www.engineer.or.jp/c_topics/011/attached/attach_11458_11.pdf"
+        },
+        {
+          "title": "日本技術士会 公式正答",
+          "url": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_4.pdf#page=22"
+        }
+      ]
+    }
+  },
+  {
+    "id": "pe-first-nuclear-2025-q15",
+    "number": 15,
+    "text": "2025年度 原子力・放射線部門 専門科目 Ⅲ－15。下の公式原問画像の当該番号に解答してください。同じページにある別の設問は対象外です。",
+    "images": [
+      "/exam-library/pe-first-nuclear-2025/8a9f45028ada7009c097.png"
+    ],
+    "sourcePages": [
+      13
+    ],
+    "sourceQuestionNumber": 15,
+    "correctChoice": 4,
+    "choiceCount": 5,
+    "answerAuthority": "official",
+    "originalPdf": "https://www.engineer.or.jp/c_topics/011/attached/attach_11458_11.pdf",
+    "answerPdf": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_4.pdf#page=22",
+    "explanation": "核質量と中性原子質量を混在させない。原問のMは原子質量なので電子数差を整合させる。",
+    "presentation": {
+      "sourceHash": "a535cf87b45bbee406762a9f8dd7eb8924849ceefe334170bfb46fc8383e8b77",
+      "prompt": "2025年度 原子力・放射線部門 専門科目 Ⅲ－15。下の公式原問画像の当該番号に解答してください。同じページにある別の設問は対象外です。",
+      "choices": [
+        {
+          "number": 1,
+          "text": "①"
+        },
+        {
+          "number": 2,
+          "text": "②"
+        },
+        {
+          "number": 3,
+          "text": "③"
+        },
+        {
+          "number": 4,
+          "text": "④"
+        },
+        {
+          "number": 5,
+          "text": "⑤"
+        }
+      ],
+      "figures": [
+        {
+          "src": "/exam-library/pe-first-nuclear-2025/8a9f45028ada7009c097.png",
+          "alt": "2025年度 原子力・放射線部門 Ⅲ－15の公式原問。問題文・全選択肢・図表を確認してください。",
+          "width": 998,
+          "height": 458
+        }
+      ]
+    },
+    "choiceExplanation": {
+      "sourceHash": "a535cf87b45bbee406762a9f8dd7eb8924849ceefe334170bfb46fc8383e8b77",
+      "correctChoice": 4,
+      "summary": "核質量と中性原子質量を混在させない。原問のMは原子質量なので電子数差を整合させる。",
+      "choices": [
+        {
+          "number": 1,
+          "verdict": "incorrect",
+          "reason": "適切。親原子の電子数Zと、娘原子のZ−2個にHe原子1個に属する2個の電子を足した値は一致する。α崩壊には正の質量差が必要。"
+        },
+        {
+          "number": 2,
+          "verdict": "incorrect",
+          "reason": "適切。β+崩壊を中性原子質量で表すと、陽電子生成と娘原子側の電子数差から2me分の閾値が必要。"
+        },
+        {
+          "number": 3,
+          "verdict": "incorrect",
+          "reason": "適切。β−崩壊では中性原子の電子数差を含めると電子質量が相殺され、M(Z,A)>M(Z+1,A)となる。"
+        },
+        {
+          "number": 4,
+          "verdict": "correct",
+          "reason": "不適切なのは右辺の余分なme。原子質量を使い軌道電子結合を無視すると、ECの条件はM(Z,A)>M(Z−1,A)。捕獲電子は親原子の質量に既に含まれる。"
+        },
+        {
+          "number": 5,
+          "verdict": "incorrect",
+          "reason": "適切。核異性体転移は励起状態から低い準位への遷移であり、核のZ,Aは変わらない。"
+        }
+      ],
+      "sources": [
+        {
+          "title": "日本技術士会 公式問題",
+          "url": "https://www.engineer.or.jp/c_topics/011/attached/attach_11458_11.pdf"
+        },
+        {
+          "title": "日本技術士会 公式正答",
+          "url": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_4.pdf#page=22"
+        }
+      ]
+    }
+  },
+  {
+    "id": "pe-first-nuclear-2025-q16",
+    "number": 16,
+    "text": "2025年度 原子力・放射線部門 専門科目 Ⅲ－16。下の公式原問画像の当該番号に解答してください。同じページにある別の設問は対象外です。",
+    "images": [
+      "/exam-library/pe-first-nuclear-2025/23e567ed117b475fa95a.png"
+    ],
+    "sourcePages": [
+      13
+    ],
+    "sourceQuestionNumber": 16,
+    "correctChoice": 3,
+    "choiceCount": 5,
+    "answerAuthority": "official",
+    "originalPdf": "https://www.engineer.or.jp/c_topics/011/attached/attach_11458_11.pdf",
+    "answerPdf": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_4.pdf#page=22",
+    "explanation": "非相対論的な速度とBethe式の主要依存性を使う設問の近似である。対数項まで含めた阻止能比があらゆるエネルギーで厳密に8になるという意味ではない。",
+    "presentation": {
+      "sourceHash": "7d8f991d74fe3d81f2f0005e59dfab72d7f04f2cbcd969b9d95eb9e4073d80aa",
+      "prompt": "2025年度 原子力・放射線部門 専門科目 Ⅲ－16。下の公式原問画像の当該番号に解答してください。同じページにある別の設問は対象外です。",
+      "choices": [
+        {
+          "number": 1,
+          "text": "①"
+        },
+        {
+          "number": 2,
+          "text": "②"
+        },
+        {
+          "number": 3,
+          "text": "③"
+        },
+        {
+          "number": 4,
+          "text": "④"
+        },
+        {
+          "number": 5,
+          "text": "⑤"
+        }
+      ],
+      "figures": [
+        {
+          "src": "/exam-library/pe-first-nuclear-2025/23e567ed117b475fa95a.png",
+          "alt": "2025年度 原子力・放射線部門 Ⅲ－16の公式原問。問題文・全選択肢・図表を確認してください。",
+          "width": 998,
+          "height": 245
+        }
+      ]
+    },
+    "choiceExplanation": {
+      "sourceHash": "7d8f991d74fe3d81f2f0005e59dfab72d7f04f2cbcd969b9d95eb9e4073d80aa",
+      "correctChoice": 3,
+      "summary": "非相対論的な速度とBethe式の主要依存性を使う設問の近似である。対数項まで含めた阻止能比があらゆるエネルギーで厳密に8になるという意味ではない。",
+      "choices": [
+        {
+          "number": 1,
+          "verdict": "incorrect",
+          "reason": "1:2は質量による速度差だけに相当し、電荷の二乗による4倍を落としている。"
+        },
+        {
+          "number": 2,
+          "verdict": "incorrect",
+          "reason": "1:4は電荷の二乗だけを比べた値。同じ運動エネルギーではα粒子の速度が重陽子より小さい点も入れる。"
+        },
+        {
+          "number": 3,
+          "verdict": "correct",
+          "reason": "正しい近似。S∝z²/v²、同じEでv²∝1/mなのでS∝z²m。重陽子1²×2とα粒子2²×4の比は1:8。"
+        },
+        {
+          "number": 4,
+          "verdict": "incorrect",
+          "reason": "1:16は速度・質量依存を過大に数えた値。1/v²は同一Eでは質量mの一次に比例し、m²ではない。"
+        },
+        {
+          "number": 5,
+          "verdict": "incorrect",
+          "reason": "1:32は電荷や質量因子を重複して数えている。主要因は電荷二乗比4×質量比2=8。"
+        }
+      ],
+      "sources": [
+        {
+          "title": "日本技術士会 公式問題",
+          "url": "https://www.engineer.or.jp/c_topics/011/attached/attach_11458_11.pdf"
+        },
+        {
+          "title": "日本技術士会 公式正答",
+          "url": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_4.pdf#page=22"
+        }
+      ]
+    }
+  },
+  {
+    "id": "pe-first-nuclear-2025-q17",
+    "number": 17,
+    "text": "2025年度 原子力・放射線部門 専門科目 Ⅲ－17。下の公式原問画像の当該番号に解答してください。同じページにある別の設問は対象外です。",
+    "images": [
+      "/exam-library/pe-first-nuclear-2025/d9939921a4ac2b5f6cb6.png"
+    ],
+    "sourcePages": [
+      14
+    ],
+    "sourceQuestionNumber": 17,
+    "correctChoice": 2,
+    "choiceCount": 5,
+    "answerAuthority": "official",
+    "originalPdf": "https://www.engineer.or.jp/c_topics/011/attached/attach_11458_11.pdf",
+    "answerPdf": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_4.pdf#page=22",
+    "explanation": "線量、計数率、エネルギースペクトルは異なる測定量である。検出器が多少の感度を持つことと、その目的の標準的な測定器であることを区別する。",
+    "presentation": {
+      "sourceHash": "55cb67e7527cd3f195a9491442c02642120eff5fa7adf15156edc9e13a143624",
+      "prompt": "2025年度 原子力・放射線部門 専門科目 Ⅲ－17。下の公式原問画像の当該番号に解答してください。同じページにある別の設問は対象外です。",
+      "choices": [
+        {
+          "number": 1,
+          "text": "①"
+        },
+        {
+          "number": 2,
+          "text": "②"
+        },
+        {
+          "number": 3,
+          "text": "③"
+        },
+        {
+          "number": 4,
+          "text": "④"
+        },
+        {
+          "number": 5,
+          "text": "⑤"
+        }
+      ],
+      "figures": [
+        {
+          "src": "/exam-library/pe-first-nuclear-2025/d9939921a4ac2b5f6cb6.png",
+          "alt": "2025年度 原子力・放射線部門 Ⅲ－17の公式原問。問題文・全選択肢・図表を確認してください。",
+          "width": 998,
+          "height": 353
+        }
+      ]
+    },
+    "choiceExplanation": {
+      "sourceHash": "55cb67e7527cd3f195a9491442c02642120eff5fa7adf15156edc9e13a143624",
+      "correctChoice": 2,
+      "summary": "線量、計数率、エネルギースペクトルは異なる測定量である。検出器が多少の感度を持つことと、その目的の標準的な測定器であることを区別する。",
+      "choices": [
+        {
+          "number": 1,
+          "verdict": "incorrect",
+          "reason": "不適切。GM管は入射エネルギーによらずほぼ同じ大きさの放電パルスを生じるため、Cs-137のγ線エネルギー測定には向かない。"
+        },
+        {
+          "number": 2,
+          "verdict": "correct",
+          "reason": "適切。電流型電離箱では空気中に生じた電離電荷を測定し、照射線量（またはその率）の測定に用いる。"
+        },
+        {
+          "number": 3,
+          "verdict": "incorrect",
+          "reason": "不適切。He-3比例計数管は主にHe-3(n,p)H-3反応を使う中性子検出器。Co-60γ線のエネルギー分光用ではない。"
+        },
+        {
+          "number": 4,
+          "verdict": "incorrect",
+          "reason": "不適切。LaBr3(Ce)は一般にγ線分光に使う。中性子スペクトル測定器として単独で挙げる組合せは適切でない。"
+        },
+        {
+          "number": 5,
+          "verdict": "incorrect",
+          "reason": "不適切。Ge検出器は高分解能γ線分光に優れるが、設問の中性子スペクトル測定との組合せは適切でない。"
+        }
+      ],
+      "sources": [
+        {
+          "title": "日本技術士会 公式問題",
+          "url": "https://www.engineer.or.jp/c_topics/011/attached/attach_11458_11.pdf"
+        },
+        {
+          "title": "日本技術士会 公式正答",
+          "url": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_4.pdf#page=22"
+        }
+      ]
+    }
+  },
+  {
+    "id": "pe-first-nuclear-2025-q18",
+    "number": 18,
+    "text": "2025年度 原子力・放射線部門 専門科目 Ⅲ－18。下の公式原問画像の当該番号に解答してください。同じページにある別の設問は対象外です。",
+    "images": [
+      "/exam-library/pe-first-nuclear-2025/186b234a70cad4388ed0.png"
+    ],
+    "sourcePages": [
+      14
+    ],
+    "sourceQuestionNumber": 18,
+    "correctChoice": 3,
+    "choiceCount": 5,
+    "answerAuthority": "official",
+    "originalPdf": "https://www.engineer.or.jp/c_topics/011/attached/attach_11458_11.pdf",
+    "answerPdf": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_4.pdf#page=22",
+    "explanation": "非延長型の分解時間補正式を用いる。検出効率・幾何学的効率を含む計数率と、線源そのものの放射能Bqは同じではない。",
+    "presentation": {
+      "sourceHash": "99bfc77303154973a6ca16c750e8358231a22d37507f893c94fd28cbb1a050ec",
+      "prompt": "2025年度 原子力・放射線部門 専門科目 Ⅲ－18。下の公式原問画像の当該番号に解答してください。同じページにある別の設問は対象外です。",
+      "choices": [
+        {
+          "number": 1,
+          "text": "①"
+        },
+        {
+          "number": 2,
+          "text": "②"
+        },
+        {
+          "number": 3,
+          "text": "③"
+        },
+        {
+          "number": 4,
+          "text": "④"
+        },
+        {
+          "number": 5,
+          "text": "⑤"
+        }
+      ],
+      "figures": [
+        {
+          "src": "/exam-library/pe-first-nuclear-2025/186b234a70cad4388ed0.png",
+          "alt": "2025年度 原子力・放射線部門 Ⅲ－18の公式原問。問題文・全選択肢・図表を確認してください。",
+          "width": 998,
+          "height": 278
+        }
+      ]
+    },
+    "choiceExplanation": {
+      "sourceHash": "99bfc77303154973a6ca16c750e8358231a22d37507f893c94fd28cbb1a050ec",
+      "correctChoice": 3,
+      "summary": "非延長型の分解時間補正式を用いる。検出効率・幾何学的効率を含む計数率と、線源そのものの放射能Bqは同じではない。",
+      "choices": [
+        {
+          "number": 1,
+          "verdict": "incorrect",
+          "reason": "2000cpsは120000cpmを60で割った観測値で、分解時間中の数え落としを補正していない。"
+        },
+        {
+          "number": 2,
+          "verdict": "incorrect",
+          "reason": "2250cpsは補正不足。観測率n=2000、分解時間τ=10⁻⁴sをn/(1−nτ)へ代入する。"
+        },
+        {
+          "number": 3,
+          "verdict": "correct",
+          "reason": "正しい。nτ=0.2なので真の計数率N=2000/(1−0.2)=2500cps。"
+        },
+        {
+          "number": 4,
+          "verdict": "incorrect",
+          "reason": "2750cpsは設問の分解時間補正式から得られない。分母は1−0.2=0.8。"
+        },
+        {
+          "number": 5,
+          "verdict": "incorrect",
+          "reason": "3000cpsは過補正。線源放射能10000Bqを直接計数率に置き換えることもできない。"
+        }
+      ],
+      "sources": [
+        {
+          "title": "日本技術士会 公式問題",
+          "url": "https://www.engineer.or.jp/c_topics/011/attached/attach_11458_11.pdf"
+        },
+        {
+          "title": "日本技術士会 公式正答",
+          "url": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_4.pdf#page=22"
+        }
+      ]
+    }
+  },
+  {
+    "id": "pe-first-nuclear-2025-q19",
+    "number": 19,
+    "text": "2025年度 原子力・放射線部門 専門科目 Ⅲ－19。下の公式原問画像の当該番号に解答してください。同じページにある別の設問は対象外です。",
+    "images": [
+      "/exam-library/pe-first-nuclear-2025/d1c19c2bcf57dd5c4e1f.png"
+    ],
+    "sourcePages": [
+      14
+    ],
+    "sourceQuestionNumber": 19,
+    "correctChoice": 5,
+    "choiceCount": 5,
+    "answerAuthority": "official",
+    "originalPdf": "https://www.engineer.or.jp/c_topics/011/attached/attach_11458_11.pdf",
+    "answerPdf": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_4.pdf#page=22",
+    "explanation": "陽電子消滅で生じた511keV光子が1本逃げるとシングルエスケープピーク、2本ならダブルエスケープピークになる。全て吸収されれば全吸収ピークとなる。",
+    "presentation": {
+      "sourceHash": "bd8efe8d9f01a1a8d522cccfff26048b49900968e2ab9395437f4de595d9c746",
+      "prompt": "2025年度 原子力・放射線部門 専門科目 Ⅲ－19。下の公式原問画像の当該番号に解答してください。同じページにある別の設問は対象外です。",
+      "choices": [
+        {
+          "number": 1,
+          "text": "①"
+        },
+        {
+          "number": 2,
+          "text": "②"
+        },
+        {
+          "number": 3,
+          "text": "③"
+        },
+        {
+          "number": 4,
+          "text": "④"
+        },
+        {
+          "number": 5,
+          "text": "⑤"
+        }
+      ],
+      "figures": [
+        {
+          "src": "/exam-library/pe-first-nuclear-2025/d1c19c2bcf57dd5c4e1f.png",
+          "alt": "2025年度 原子力・放射線部門 Ⅲ－19の公式原問。問題文・全選択肢・図表を確認してください。",
+          "width": 998,
+          "height": 720
+        }
+      ]
+    },
+    "choiceExplanation": {
+      "sourceHash": "bd8efe8d9f01a1a8d522cccfff26048b49900968e2ab9395437f4de595d9c746",
+      "correctChoice": 5,
+      "summary": "陽電子消滅で生じた511keV光子が1本逃げるとシングルエスケープピーク、2本ならダブルエスケープピークになる。全て吸収されれば全吸収ピークとなる。",
+      "choices": [
+        {
+          "number": 1,
+          "verdict": "incorrect",
+          "reason": "適切。γ線は非荷電粒子で、物質との相互作用で生じる二次電子などがエネルギーを検出器へ与える。"
+        },
+        {
+          "number": 2,
+          "verdict": "incorrect",
+          "reason": "適切。光電吸収後の電子や特性X線等も検出器内で吸収されれば、入射光子の全エネルギーに対応するピークとなる。"
+        },
+        {
+          "number": 3,
+          "verdict": "incorrect",
+          "reason": "適切。コンプトン電子の反跳エネルギーは連続分布し、その上端がコンプトン端に対応する。"
+        },
+        {
+          "number": 4,
+          "verdict": "incorrect",
+          "reason": "適切。散乱光子が逃げず、多重散乱の後に光電吸収されれば、合計として全エネルギーが付与される。"
+        },
+        {
+          "number": 5,
+          "verdict": "correct",
+          "reason": "誤りは「全て運動エネルギーになる」。対生成には電子・陽電子の静止質量2mec²=1.022MeVが必要。残りが運動エネルギーになる。"
+        }
+      ],
+      "sources": [
+        {
+          "title": "日本技術士会 公式問題",
+          "url": "https://www.engineer.or.jp/c_topics/011/attached/attach_11458_11.pdf"
+        },
+        {
+          "title": "日本技術士会 公式正答",
+          "url": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_4.pdf#page=22"
+        }
+      ]
+    }
+  },
+  {
+    "id": "pe-first-nuclear-2025-q20",
+    "number": 20,
+    "text": "2025年度 原子力・放射線部門 専門科目 Ⅲ－20。下の公式原問画像の当該番号に解答してください。同じページにある別の設問は対象外です。",
+    "images": [
+      "/exam-library/pe-first-nuclear-2025/3affbbba3111dbbfc835.png"
+    ],
+    "sourcePages": [
+      15
+    ],
+    "sourceQuestionNumber": 20,
+    "correctChoice": 1,
+    "choiceCount": 5,
+    "answerAuthority": "official",
+    "originalPdf": "https://www.engineer.or.jp/c_topics/011/attached/attach_11458_11.pdf",
+    "answerPdf": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_4.pdf#page=22",
+    "explanation": "バンドギャップと電子正孔対の平均生成エネルギーは同一ではない。Geは高分解能だが熱励起キャリアを抑えるため通常冷却して使う。",
+    "presentation": {
+      "sourceHash": "e89ecc08b3e263d271cf2daeae3cdb887ed019f152075c815a34ccbf6c335536",
+      "prompt": "2025年度 原子力・放射線部門 専門科目 Ⅲ－20。下の公式原問画像の当該番号に解答してください。同じページにある別の設問は対象外です。",
+      "choices": [
+        {
+          "number": 1,
+          "text": "①"
+        },
+        {
+          "number": 2,
+          "text": "②"
+        },
+        {
+          "number": 3,
+          "text": "③"
+        },
+        {
+          "number": 4,
+          "text": "④"
+        },
+        {
+          "number": 5,
+          "text": "⑤"
+        }
+      ],
+      "figures": [
+        {
+          "src": "/exam-library/pe-first-nuclear-2025/3affbbba3111dbbfc835.png",
+          "alt": "2025年度 原子力・放射線部門 Ⅲ－20の公式原問。問題文・全選択肢・図表を確認してください。",
+          "width": 998,
+          "height": 683
+        }
+      ]
+    },
+    "choiceExplanation": {
+      "sourceHash": "e89ecc08b3e263d271cf2daeae3cdb887ed019f152075c815a34ccbf6c335536",
+      "correctChoice": 1,
+      "summary": "バンドギャップと電子正孔対の平均生成エネルギーは同一ではない。Geは高分解能だが熱励起キャリアを抑えるため通常冷却して使う。",
+      "choices": [
+        {
+          "number": 1,
+          "verdict": "correct",
+          "reason": "適切。電子正孔対生成には禁制帯幅以外にも格子振動等へのエネルギーが使われる。1MeV/約3eV=約3.3×10⁵対となる。"
+        },
+        {
+          "number": 2,
+          "verdict": "incorrect",
+          "reason": "誤りは「順方向」。検出に使う空乏層を広げ電荷を回収するには通常逆方向バイアスをかける。"
+        },
+        {
+          "number": 3,
+          "verdict": "incorrect",
+          "reason": "誤りは「位置、厚さにのみ」。感度・分解能・対象線種は材料の原子番号、阻止能、電荷輸送、窓、形状等にも依存する。"
+        },
+        {
+          "number": 4,
+          "verdict": "incorrect",
+          "reason": "誤りは「γ線は対象とならない」。Siのγ線検出効率は条件により低くても、γ線・X線との相互作用と検出は可能。"
+        },
+        {
+          "number": 5,
+          "verdict": "incorrect",
+          "reason": "誤りは「室温動作が困難で冷却が必要」。CdTe/CdZnTeは比較的大きなバンドギャップを利用し、室温で動作可能な検出器に用いられる。"
+        }
+      ],
+      "sources": [
+        {
+          "title": "日本技術士会 公式問題",
+          "url": "https://www.engineer.or.jp/c_topics/011/attached/attach_11458_11.pdf"
+        },
+        {
+          "title": "日本技術士会 公式正答",
+          "url": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_4.pdf#page=22"
+        }
+      ]
+    }
+  },
+  {
+    "id": "pe-first-nuclear-2025-q21",
+    "number": 21,
+    "text": "2025年度 原子力・放射線部門 専門科目 Ⅲ－21。下の公式原問画像の当該番号に解答してください。同じページにある別の設問は対象外です。",
+    "images": [
+      "/exam-library/pe-first-nuclear-2025/50ac0f7f7ab0fa17db6a.png"
+    ],
+    "sourcePages": [
+      15
+    ],
+    "sourceQuestionNumber": 21,
+    "correctChoice": 5,
+    "choiceCount": 5,
+    "answerAuthority": "official",
+    "originalPdf": "https://www.engineer.or.jp/c_topics/011/attached/attach_11458_11.pdf",
+    "answerPdf": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_4.pdf#page=22",
+    "explanation": "発光材料、封止・窓を含む検出器の構造、放射線の種類を分けて考える。「効率が低い」「一般的でない」と「原理的に検出不能」は異なる。",
+    "presentation": {
+      "sourceHash": "6c40bb64fd8fd9737af43b2c8c169a54fc0a8f9aea7aa95b6023633b213650d9",
+      "prompt": "2025年度 原子力・放射線部門 専門科目 Ⅲ－21。下の公式原問画像の当該番号に解答してください。同じページにある別の設問は対象外です。",
+      "choices": [
+        {
+          "number": 1,
+          "text": "①"
+        },
+        {
+          "number": 2,
+          "text": "②"
+        },
+        {
+          "number": 3,
+          "text": "③"
+        },
+        {
+          "number": 4,
+          "text": "④"
+        },
+        {
+          "number": 5,
+          "text": "⑤"
+        }
+      ],
+      "figures": [
+        {
+          "src": "/exam-library/pe-first-nuclear-2025/50ac0f7f7ab0fa17db6a.png",
+          "alt": "2025年度 原子力・放射線部門 Ⅲ－21の公式原問。問題文・全選択肢・図表を確認してください。",
+          "width": 998,
+          "height": 758
+        }
+      ]
+    },
+    "choiceExplanation": {
+      "sourceHash": "6c40bb64fd8fd9737af43b2c8c169a54fc0a8f9aea7aa95b6023633b213650d9",
+      "correctChoice": 5,
+      "summary": "発光材料、封止・窓を含む検出器の構造、放射線の種類を分けて考える。「効率が低い」「一般的でない」と「原理的に検出不能」は異なる。",
+      "choices": [
+        {
+          "number": 1,
+          "verdict": "incorrect",
+          "reason": "誤りは「すべて」。高い光収量、速い減衰、透明性、受光器との波長整合は望ましい性質だが、全材料が全条件を満たすわけではない。"
+        },
+        {
+          "number": 2,
+          "verdict": "incorrect",
+          "reason": "不適切箇所は通常のNaI(Tl)をβ・α測定にもそのまま用いるとした点。主用途はγ/X線で、潮解防止の封止等は外部α・βの入射を妨げる。NaI結晶自体がα・βに絶対無感度という意味ではない。"
+        },
+        {
+          "number": 3,
+          "verdict": "incorrect",
+          "reason": "誤りは「高速中性子に使用されない」。水素を含むプラスチックでは反跳陽子による発光を利用し、高速中性子を検出できる。"
+        },
+        {
+          "number": 4,
+          "verdict": "incorrect",
+          "reason": "誤りは発光中心をGeイオンとした点。BGOの発光はBi³⁺に由来する。高密度・高実効原子番号によるγ線効率や非潮解性という長所とは別の論点。"
+        },
+        {
+          "number": 5,
+          "verdict": "correct",
+          "reason": "適切。液体シンチレーション測定では試料を混合できるが、化学・色等のクエンチングで光出力・計数効率が下がり、補正が必要。"
+        }
+      ],
+      "sources": [
+        {
+          "title": "日本技術士会 公式問題",
+          "url": "https://www.engineer.or.jp/c_topics/011/attached/attach_11458_11.pdf"
+        },
+        {
+          "title": "日本技術士会 公式正答",
+          "url": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_4.pdf#page=22"
+        }
+      ]
+    }
+  },
+  {
+    "id": "pe-first-nuclear-2025-q22",
+    "number": 22,
+    "text": "2025年度 原子力・放射線部門 専門科目 Ⅲ－22。下の公式原問画像の当該番号に解答してください。同じページにある別の設問は対象外です。",
+    "images": [
+      "/exam-library/pe-first-nuclear-2025/25dba7e03762e85ece26.png"
+    ],
+    "sourcePages": [
+      16
+    ],
+    "sourceQuestionNumber": 22,
+    "correctChoice": 2,
+    "choiceCount": 5,
+    "answerAuthority": "official",
+    "originalPdf": "https://www.engineer.or.jp/c_topics/011/attached/attach_11458_11.pdf",
+    "answerPdf": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_4.pdf#page=22",
+    "explanation": "Bqは1秒当たりの崩壊数なので半減期の年を秒へ換算する。KCl一式量にはK原子が1個ある。",
+    "presentation": {
+      "sourceHash": "8cdf291b5c2872a3995bc56e9f71b35c47b7fa67c8571cdef41d46321937375f",
+      "prompt": "2025年度 原子力・放射線部門 専門科目 Ⅲ－22。下の公式原問画像の当該番号に解答してください。同じページにある別の設問は対象外です。",
+      "choices": [
+        {
+          "number": 1,
+          "text": "①"
+        },
+        {
+          "number": 2,
+          "text": "②"
+        },
+        {
+          "number": 3,
+          "text": "③"
+        },
+        {
+          "number": 4,
+          "text": "④"
+        },
+        {
+          "number": 5,
+          "text": "⑤"
+        }
+      ],
+      "figures": [
+        {
+          "src": "/exam-library/pe-first-nuclear-2025/25dba7e03762e85ece26.png",
+          "alt": "2025年度 原子力・放射線部門 Ⅲ－22の公式原問。問題文・全選択肢・図表を確認してください。",
+          "width": 998,
+          "height": 413
+        }
+      ]
+    },
+    "choiceExplanation": {
+      "sourceHash": "8cdf291b5c2872a3995bc56e9f71b35c47b7fa67c8571cdef41d46321937375f",
+      "correctChoice": 2,
+      "summary": "Bqは1秒当たりの崩壊数なので半減期の年を秒へ換算する。KCl一式量にはK原子が1個ある。",
+      "choices": [
+        {
+          "number": 1,
+          "verdict": "incorrect",
+          "reason": "1.2×10³Bqは計算値より小さい。KClの物質量からK原子数を出し、その0.0117%だけをK-40として数える。"
+        },
+        {
+          "number": 2,
+          "verdict": "correct",
+          "reason": "正しい。N=500/(39.1+35.5)×6.02×10²³×0.000117、λ=0.693/(1.25×10⁹×365×86400)よりA=λN≈8.30×10³Bq。"
+        },
+        {
+          "number": 3,
+          "verdict": "incorrect",
+          "reason": "1.2×10⁴Bqは原問のKCl500gに対応しない。Kだけ500gとして計算するとKの量を過大に見積もる。"
+        },
+        {
+          "number": 4,
+          "verdict": "incorrect",
+          "reason": "8.3×10⁵Bqは100倍。0.0117%を割合0.000117へ換算する必要がある。"
+        },
+        {
+          "number": 5,
+          "verdict": "incorrect",
+          "reason": "1.2×10⁶Bqは大きすぎる。KClの式量と百分率の両方を確認する。"
+        }
+      ],
+      "sources": [
+        {
+          "title": "日本技術士会 公式問題",
+          "url": "https://www.engineer.or.jp/c_topics/011/attached/attach_11458_11.pdf"
+        },
+        {
+          "title": "日本技術士会 公式正答",
+          "url": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_4.pdf#page=22"
+        }
+      ]
+    }
+  },
+  {
+    "id": "pe-first-nuclear-2025-q23",
+    "number": 23,
+    "text": "2025年度 原子力・放射線部門 専門科目 Ⅲ－23。下の公式原問画像の当該番号に解答してください。同じページにある別の設問は対象外です。",
+    "images": [
+      "/exam-library/pe-first-nuclear-2025/c6fea6d1f09502b7e99a.png"
+    ],
+    "sourcePages": [
+      16
+    ],
+    "sourceQuestionNumber": 23,
+    "correctChoice": 5,
+    "choiceCount": 5,
+    "answerAuthority": "official",
+    "originalPdf": "https://www.engineer.or.jp/c_topics/011/attached/attach_11458_11.pdf",
+    "answerPdf": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_4.pdf#page=22",
+    "explanation": "原問はAm-241の減衰と子孫核種の崩壊を無視する条件なので、放射能一定でA×tを使う。半減期433年を使って別の減衰条件に変更しない。",
+    "presentation": {
+      "sourceHash": "1b6bb66fc395c0fc5b2ea12b9e5e81a85a1dc1c52825d3abae36a3c8f9e62a23",
+      "prompt": "2025年度 原子力・放射線部門 専門科目 Ⅲ－23。下の公式原問画像の当該番号に解答してください。同じページにある別の設問は対象外です。",
+      "choices": [
+        {
+          "number": 1,
+          "text": "①"
+        },
+        {
+          "number": 2,
+          "text": "②"
+        },
+        {
+          "number": 3,
+          "text": "③"
+        },
+        {
+          "number": 4,
+          "text": "④"
+        },
+        {
+          "number": 5,
+          "text": "⑤"
+        }
+      ],
+      "figures": [
+        {
+          "src": "/exam-library/pe-first-nuclear-2025/c6fea6d1f09502b7e99a.png",
+          "alt": "2025年度 原子力・放射線部門 Ⅲ－23の公式原問。問題文・全選択肢・図表を確認してください。",
+          "width": 998,
+          "height": 263
+        }
+      ]
+    },
+    "choiceExplanation": {
+      "sourceHash": "1b6bb66fc395c0fc5b2ea12b9e5e81a85a1dc1c52825d3abae36a3c8f9e62a23",
+      "correctChoice": 5,
+      "summary": "原問はAm-241の減衰と子孫核種の崩壊を無視する条件なので、放射能一定でA×tを使う。半減期433年を使って別の減衰条件に変更しない。",
+      "choices": [
+        {
+          "number": 1,
+          "verdict": "incorrect",
+          "reason": "0.011cm³は約0.434cm³より小さい。α粒子1個が電子を得てHe原子1個となることを用いる。"
+        },
+        {
+          "number": 2,
+          "verdict": "incorrect",
+          "reason": "0.022cm³は計算値より小さい。放射能Bqは毎秒の崩壊数であり、10年間を秒に換算する。"
+        },
+        {
+          "number": 3,
+          "verdict": "incorrect",
+          "reason": "0.043cm³は約10分の1。経過時間を10年として計算する。"
+        },
+        {
+          "number": 4,
+          "verdict": "incorrect",
+          "reason": "0.22cm³は約半分。α粒子が2価であることは、He原子数を半分にする理由にはならない。"
+        },
+        {
+          "number": 5,
+          "verdict": "correct",
+          "reason": "正しい。3.7×10¹⁰×(10×365×86400)/(6.02×10²³)×2.24×10⁴=約0.434cm³。"
+        }
+      ],
+      "sources": [
+        {
+          "title": "日本技術士会 公式問題",
+          "url": "https://www.engineer.or.jp/c_topics/011/attached/attach_11458_11.pdf"
+        },
+        {
+          "title": "日本技術士会 公式正答",
+          "url": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_4.pdf#page=22"
+        }
+      ]
+    }
+  },
+  {
+    "id": "pe-first-nuclear-2025-q24",
+    "number": 24,
+    "text": "2025年度 原子力・放射線部門 専門科目 Ⅲ－24。下の公式原問画像の当該番号に解答してください。同じページにある別の設問は対象外です。",
+    "images": [
+      "/exam-library/pe-first-nuclear-2025/455bba7195e07d2b33d4.png"
+    ],
+    "sourcePages": [
+      16
+    ],
+    "sourceQuestionNumber": 24,
+    "correctChoice": 5,
+    "choiceCount": 5,
+    "answerAuthority": "official",
+    "originalPdf": "https://www.engineer.or.jp/c_topics/011/attached/attach_11458_11.pdf",
+    "answerPdf": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_4.pdf#page=22",
+    "explanation": "親の半減期が十分長く、子の半減期に比べ十分時間が経過した条件。原子数と放射能を区別する。",
+    "presentation": {
+      "sourceHash": "324733f2bbfd17d22b260c741a439e1bc15de49e58b64e874154c0b2b97f8a78",
+      "prompt": "2025年度 原子力・放射線部門 専門科目 Ⅲ－24。下の公式原問画像の当該番号に解答してください。同じページにある別の設問は対象外です。",
+      "choices": [
+        {
+          "number": 1,
+          "text": "①"
+        },
+        {
+          "number": 2,
+          "text": "②"
+        },
+        {
+          "number": 3,
+          "text": "③"
+        },
+        {
+          "number": 4,
+          "text": "④"
+        },
+        {
+          "number": 5,
+          "text": "⑤"
+        }
+      ],
+      "figures": [
+        {
+          "src": "/exam-library/pe-first-nuclear-2025/455bba7195e07d2b33d4.png",
+          "alt": "2025年度 原子力・放射線部門 Ⅲ－24の公式原問。問題文・全選択肢・図表を確認してください。",
+          "width": 998,
+          "height": 435
+        }
+      ]
+    },
+    "choiceExplanation": {
+      "sourceHash": "324733f2bbfd17d22b260c741a439e1bc15de49e58b64e874154c0b2b97f8a78",
+      "correctChoice": 5,
+      "summary": "親の半減期が十分長く、子の半減期に比べ十分時間が経過した条件。原子数と放射能を区別する。",
+      "choices": [
+        {
+          "number": 1,
+          "verdict": "incorrect",
+          "reason": "T2/(T1+T2)はT1≫T2ではほぼ0となり、平衡時の放射能比に合わない。"
+        },
+        {
+          "number": 2,
+          "verdict": "incorrect",
+          "reason": "T2/(T1−T2)もほぼ0になる。過渡平衡の補正を混同せず、永続平衡の生成率と崩壊率の釣合いを使う。"
+        },
+        {
+          "number": 3,
+          "verdict": "incorrect",
+          "reason": "T2/T1は放射能比ではない。永続平衡ではむしろ原子数の比N2/N1≈λ1/λ2=T2/T1となる。"
+        },
+        {
+          "number": 4,
+          "verdict": "incorrect",
+          "reason": "T1/T2は原子数比N1/N2の近似に対応するが、放射能はλNなので同じ比にはならない。"
+        },
+        {
+          "number": 5,
+          "verdict": "correct",
+          "reason": "正しい。子核種の生成率A1と崩壊率A2が釣り合うため、A1/A2≈1。"
+        }
+      ],
+      "sources": [
+        {
+          "title": "日本技術士会 公式問題",
+          "url": "https://www.engineer.or.jp/c_topics/011/attached/attach_11458_11.pdf"
+        },
+        {
+          "title": "日本技術士会 公式正答",
+          "url": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_4.pdf#page=22"
+        }
+      ]
+    }
+  },
+  {
+    "id": "pe-first-nuclear-2025-q25",
+    "number": 25,
+    "text": "2025年度 原子力・放射線部門 専門科目 Ⅲ－25。下の公式原問画像の当該番号に解答してください。同じページにある別の設問は対象外です。",
+    "images": [
+      "/exam-library/pe-first-nuclear-2025/8e0ba8f66228c75d1c74.png"
+    ],
+    "sourcePages": [
+      17
+    ],
+    "sourceQuestionNumber": 25,
+    "correctChoice": 3,
+    "choiceCount": 5,
+    "answerAuthority": "official",
+    "originalPdf": "https://www.engineer.or.jp/c_topics/011/attached/attach_11458_11.pdf",
+    "answerPdf": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_4.pdf#page=22",
+    "explanation": "粒子を曲げる磁場と、運動エネルギーを与える加速電場を混同しない。設問では加速に主として静電場を使う装置を選ぶ。",
+    "presentation": {
+      "sourceHash": "a4c4e4722865d237e6acad627f129f2e9b955a21cd25110e10b4ffa667496451",
+      "prompt": "2025年度 原子力・放射線部門 専門科目 Ⅲ－25。下の公式原問画像の当該番号に解答してください。同じページにある別の設問は対象外です。",
+      "choices": [
+        {
+          "number": 1,
+          "text": "①"
+        },
+        {
+          "number": 2,
+          "text": "②"
+        },
+        {
+          "number": 3,
+          "text": "③"
+        },
+        {
+          "number": 4,
+          "text": "④"
+        },
+        {
+          "number": 5,
+          "text": "⑤"
+        }
+      ],
+      "figures": [
+        {
+          "src": "/exam-library/pe-first-nuclear-2025/8e0ba8f66228c75d1c74.png",
+          "alt": "2025年度 原子力・放射線部門 Ⅲ－25の公式原問。問題文・全選択肢・図表を確認してください。",
+          "width": 998,
+          "height": 608
+        }
+      ]
+    },
+    "choiceExplanation": {
+      "sourceHash": "a4c4e4722865d237e6acad627f129f2e9b955a21cd25110e10b4ffa667496451",
+      "correctChoice": 3,
+      "summary": "粒子を曲げる磁場と、運動エネルギーを与える加速電場を混同しない。設問では加速に主として静電場を使う装置を選ぶ。",
+      "choices": [
+        {
+          "number": 1,
+          "verdict": "incorrect",
+          "reason": "アのシンクロトロンが誤り。シンクロトロンは高周波電場で繰返し加速する。"
+        },
+        {
+          "number": 2,
+          "verdict": "incorrect",
+          "reason": "アが誤り。ウのコッククロフト・ウォルトンは静電型だが、シンクロトロンは高周波型。"
+        },
+        {
+          "number": 3,
+          "verdict": "correct",
+          "reason": "正しい。イのバンデグラフは電荷を運んで高電圧を作り、ウは整流・倍電圧回路で高い直流電圧を作る。"
+        },
+        {
+          "number": 4,
+          "verdict": "incorrect",
+          "reason": "エのリニアックが誤り。通常の高周波線形加速器は時間変化する電場で加速する。"
+        },
+        {
+          "number": 5,
+          "verdict": "incorrect",
+          "reason": "ウは適切だがエは高周波型。静電高電圧のイを選ぶ必要がある。"
+        }
+      ],
+      "sources": [
+        {
+          "title": "日本技術士会 公式問題",
+          "url": "https://www.engineer.or.jp/c_topics/011/attached/attach_11458_11.pdf"
+        },
+        {
+          "title": "日本技術士会 公式正答",
+          "url": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_4.pdf#page=22"
+        }
+      ]
+    }
+  },
+  {
+    "id": "pe-first-nuclear-2025-q26",
+    "number": 26,
+    "text": "2025年度 原子力・放射線部門 専門科目 Ⅲ－26。下の公式原問画像の当該番号に解答してください。同じページにある別の設問は対象外です。",
+    "images": [
+      "/exam-library/pe-first-nuclear-2025/4e0618b7f8bc6816ed1a.png"
+    ],
+    "sourcePages": [
+      17
+    ],
+    "sourceQuestionNumber": 26,
+    "correctChoice": 1,
+    "choiceCount": 5,
+    "answerAuthority": "official",
+    "originalPdf": "https://www.engineer.or.jp/c_topics/011/attached/attach_11458_11.pdf",
+    "answerPdf": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_4.pdf#page=22",
+    "explanation": "ジェネレータの親娘半減期、診断と治療の物理的原理を問う設問であり、個別患者への治療選択を示すものではない。",
+    "presentation": {
+      "sourceHash": "a161fb246d2ea5d38c407e3ec870b856c2ea8e0bb556e9309d47969b1205de98",
+      "prompt": "2025年度 原子力・放射線部門 専門科目 Ⅲ－26。下の公式原問画像の当該番号に解答してください。同じページにある別の設問は対象外です。",
+      "choices": [
+        {
+          "number": 1,
+          "text": "①"
+        },
+        {
+          "number": 2,
+          "text": "②"
+        },
+        {
+          "number": 3,
+          "text": "③"
+        },
+        {
+          "number": 4,
+          "text": "④"
+        },
+        {
+          "number": 5,
+          "text": "⑤"
+        }
+      ],
+      "figures": [
+        {
+          "src": "/exam-library/pe-first-nuclear-2025/4e0618b7f8bc6816ed1a.png",
+          "alt": "2025年度 原子力・放射線部門 Ⅲ－26の公式原問。問題文・全選択肢・図表を確認してください。",
+          "width": 998,
+          "height": 435
+        }
+      ]
+    },
+    "choiceExplanation": {
+      "sourceHash": "a161fb246d2ea5d38c407e3ec870b856c2ea8e0bb556e9309d47969b1205de98",
+      "correctChoice": 1,
+      "summary": "ジェネレータの親娘半減期、診断と治療の物理的原理を問う設問であり、個別患者への治療選択を示すものではない。",
+      "choices": [
+        {
+          "number": 1,
+          "verdict": "correct",
+          "reason": "誤りは半減期の長短が逆である点。親Mo-99は約66時間、娘Tc-99mは約6時間であり、長寿命の親から短寿命の娘を繰り返し得る。"
+        },
+        {
+          "number": 2,
+          "verdict": "incorrect",
+          "reason": "適切。ヨウ素の甲状腺への集積という生理的性質をI-131の診断・治療利用に生かす。"
+        },
+        {
+          "number": 3,
+          "verdict": "incorrect",
+          "reason": "適切。陽子・炭素イオン等の飛程とブラッグピーク位置は入射エネルギーで調節できる。"
+        },
+        {
+          "number": 4,
+          "verdict": "incorrect",
+          "reason": "適切。電子リニアックで電子を加速し、標的で発生させる制動X線を治療に用いる。"
+        },
+        {
+          "number": 5,
+          "verdict": "incorrect",
+          "reason": "適切。PETは陽電子消滅でほぼ反対方向へ放出される2本の光子を同時計数して分布を再構成する。"
+        }
+      ],
+      "sources": [
+        {
+          "title": "日本技術士会 公式問題",
+          "url": "https://www.engineer.or.jp/c_topics/011/attached/attach_11458_11.pdf"
+        },
+        {
+          "title": "日本技術士会 公式正答",
+          "url": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_4.pdf#page=22"
+        }
+      ]
+    }
+  },
+  {
+    "id": "pe-first-nuclear-2025-q27",
+    "number": 27,
+    "text": "2025年度 原子力・放射線部門 専門科目 Ⅲ－27。下の公式原問画像の当該番号に解答してください。同じページにある別の設問は対象外です。",
+    "images": [
+      "/exam-library/pe-first-nuclear-2025/3a8039157974bb2f7297.png"
+    ],
+    "sourcePages": [
+      17
+    ],
+    "sourceQuestionNumber": 27,
+    "correctChoice": 2,
+    "choiceCount": 5,
+    "answerAuthority": "official",
+    "originalPdf": "https://www.engineer.or.jp/c_topics/011/attached/attach_11458_11.pdf",
+    "answerPdf": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_4.pdf#page=22",
+    "explanation": "吸収線量の定義は単位質量当たりの吸収エネルギーで1Gy=1J/kg。平均1回という条件から総通過回数を10¹²とする。",
+    "presentation": {
+      "sourceHash": "1ab44218da3c0ae0a373b95ea001ce7e39a6938b2cccc5d3e71829de6cdc28fc",
+      "prompt": "2025年度 原子力・放射線部門 専門科目 Ⅲ－27。下の公式原問画像の当該番号に解答してください。同じページにある別の設問は対象外です。",
+      "choices": [
+        {
+          "number": 1,
+          "text": "①"
+        },
+        {
+          "number": 2,
+          "text": "②"
+        },
+        {
+          "number": 3,
+          "text": "③"
+        },
+        {
+          "number": 4,
+          "text": "④"
+        },
+        {
+          "number": 5,
+          "text": "⑤"
+        }
+      ],
+      "figures": [
+        {
+          "src": "/exam-library/pe-first-nuclear-2025/3a8039157974bb2f7297.png",
+          "alt": "2025年度 原子力・放射線部門 Ⅲ－27の公式原問。問題文・全選択肢・図表を確認してください。",
+          "width": 998,
+          "height": 278
+        }
+      ]
+    },
+    "choiceExplanation": {
+      "sourceHash": "1ab44218da3c0ae0a373b95ea001ce7e39a6938b2cccc5d3e71829de6cdc28fc",
+      "correctChoice": 2,
+      "summary": "吸収線量の定義は単位質量当たりの吸収エネルギーで1Gy=1J/kg。平均1回という条件から総通過回数を10¹²とする。",
+      "choices": [
+        {
+          "number": 1,
+          "verdict": "incorrect",
+          "reason": "8×10⁻⁴は総吸収エネルギーのJ値に対応する。線量Gyにするには臓器質量0.8kgで割る。"
+        },
+        {
+          "number": 2,
+          "verdict": "correct",
+          "reason": "正しい。総エネルギー=10¹²×5000×1.60×10⁻¹⁹=8×10⁻⁴J。D=E/0.8=1×10⁻³Gy。"
+        },
+        {
+          "number": 3,
+          "verdict": "incorrect",
+          "reason": "8×10⁻²Gyは計算値と合わない。keV→eVとg→kgの換算を分けて行う。"
+        },
+        {
+          "number": 4,
+          "verdict": "incorrect",
+          "reason": "0.8Gyは約800倍。与条件の1細胞当たり5keVを、5MeVなどに置き換えない。"
+        },
+        {
+          "number": 5,
+          "verdict": "incorrect",
+          "reason": "1Gyは1000倍。800gを0.8kgとし、電子1本の付与エネルギーは5000eVを使う。"
+        }
+      ],
+      "sources": [
+        {
+          "title": "日本技術士会 公式問題",
+          "url": "https://www.engineer.or.jp/c_topics/011/attached/attach_11458_11.pdf"
+        },
+        {
+          "title": "日本技術士会 公式正答",
+          "url": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_4.pdf#page=22"
+        }
+      ]
+    }
+  },
+  {
+    "id": "pe-first-nuclear-2025-q28",
+    "number": 28,
+    "text": "2025年度 原子力・放射線部門 専門科目 Ⅲ－28。下の公式原問画像の当該番号に解答してください。同じページにある別の設問は対象外です。",
+    "images": [
+      "/exam-library/pe-first-nuclear-2025/c89a362fd0e77412e4d1.png"
+    ],
+    "sourcePages": [
+      18
+    ],
+    "sourceQuestionNumber": 28,
+    "correctChoice": 3,
+    "choiceCount": 5,
+    "answerAuthority": "official",
+    "originalPdf": "https://www.engineer.or.jp/c_topics/011/attached/attach_11458_11.pdf",
+    "answerPdf": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_4.pdf#page=22",
+    "explanation": "与えられた線量率定数・半価層を使う簡略モデル。20cmは鉛厚とは別の指定距離なので、3cmを足し引きしない。散乱蓄積などの現実条件を追加した輸送設計値とみなさない。",
+    "presentation": {
+      "sourceHash": "cdb6df0892fdcfa214631d338e201b5a455e30a7f9eee6cd58dbb3e567c6bcc6",
+      "prompt": "2025年度 原子力・放射線部門 専門科目 Ⅲ－28。下の公式原問画像の当該番号に解答してください。同じページにある別の設問は対象外です。",
+      "choices": [
+        {
+          "number": 1,
+          "text": "①"
+        },
+        {
+          "number": 2,
+          "text": "②"
+        },
+        {
+          "number": 3,
+          "text": "③"
+        },
+        {
+          "number": 4,
+          "text": "④"
+        },
+        {
+          "number": 5,
+          "text": "⑤"
+        }
+      ],
+      "figures": [
+        {
+          "src": "/exam-library/pe-first-nuclear-2025/c89a362fd0e77412e4d1.png",
+          "alt": "2025年度 原子力・放射線部門 Ⅲ－28の公式原問。問題文・全選択肢・図表を確認してください。",
+          "width": 998,
+          "height": 383
+        }
+      ]
+    },
+    "choiceExplanation": {
+      "sourceHash": "cdb6df0892fdcfa214631d338e201b5a455e30a7f9eee6cd58dbb3e567c6bcc6",
+      "correctChoice": 3,
+      "summary": "与えられた線量率定数・半価層を使う簡略モデル。20cmは鉛厚とは別の指定距離なので、3cmを足し引きしない。散乱蓄積などの現実条件を追加した輸送設計値とみなさない。",
+      "choices": [
+        {
+          "number": 1,
+          "verdict": "incorrect",
+          "reason": "8.6MBqは正しい上限約34.5MBqの4分の1。距離は線源から表面まで0.20mとする。"
+        },
+        {
+          "number": 2,
+          "verdict": "incorrect",
+          "reason": "17MBqは約半分。3.0/0.75=4半価層なので透過率1/16を用いる。"
+        },
+        {
+          "number": 3,
+          "verdict": "correct",
+          "reason": "正しい。5=0.0927×A/(0.20²)×2⁻⁴よりA≈34.52MBq、選択肢34が最も近い。"
+        },
+        {
+          "number": 4,
+          "verdict": "incorrect",
+          "reason": "86MBqでは表面線量率が約12.5μSv/hとなり、上限5を超える。"
+        },
+        {
+          "number": 5,
+          "verdict": "incorrect",
+          "reason": "170MBqでは表面線量率が約24.6μSv/hとなり、上限を超える。"
+        }
+      ],
+      "sources": [
+        {
+          "title": "日本技術士会 公式問題",
+          "url": "https://www.engineer.or.jp/c_topics/011/attached/attach_11458_11.pdf"
+        },
+        {
+          "title": "日本技術士会 公式正答",
+          "url": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_4.pdf#page=22"
+        }
+      ]
+    }
+  },
+  {
+    "id": "pe-first-nuclear-2025-q29",
+    "number": 29,
+    "text": "2025年度 原子力・放射線部門 専門科目 Ⅲ－29。下の公式原問画像の当該番号に解答してください。同じページにある別の設問は対象外です。",
+    "images": [
+      "/exam-library/pe-first-nuclear-2025/be05e2cf382b26a1b586.png"
+    ],
+    "sourcePages": [
+      18
+    ],
+    "sourceQuestionNumber": 29,
+    "correctChoice": 3,
+    "choiceCount": 5,
+    "answerAuthority": "official",
+    "originalPdf": "https://www.engineer.or.jp/c_topics/011/attached/attach_11458_11.pdf",
+    "answerPdf": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_4.pdf#page=22",
+    "explanation": "「サーマル」は熱中性子を指す。原問の政策時点の説明を保持し、後年の政策・施設稼働状況へ置き換えて採点しない。",
+    "presentation": {
+      "sourceHash": "e4b620f625e5a63ebafba120f15a50f72621a74ed9e0b04e55e6c819256a306f",
+      "prompt": "2025年度 原子力・放射線部門 専門科目 Ⅲ－29。下の公式原問画像の当該番号に解答してください。同じページにある別の設問は対象外です。",
+      "choices": [
+        {
+          "number": 1,
+          "text": "①"
+        },
+        {
+          "number": 2,
+          "text": "②"
+        },
+        {
+          "number": 3,
+          "text": "③"
+        },
+        {
+          "number": 4,
+          "text": "④"
+        },
+        {
+          "number": 5,
+          "text": "⑤"
+        }
+      ],
+      "figures": [
+        {
+          "src": "/exam-library/pe-first-nuclear-2025/be05e2cf382b26a1b586.png",
+          "alt": "2025年度 原子力・放射線部門 Ⅲ－29の公式原問。問題文・全選択肢・図表を確認してください。",
+          "width": 998,
+          "height": 871
+        }
+      ]
+    },
+    "choiceExplanation": {
+      "sourceHash": "e4b620f625e5a63ebafba120f15a50f72621a74ed9e0b04e55e6c819256a306f",
+      "correctChoice": 3,
+      "summary": "「サーマル」は熱中性子を指す。原問の政策時点の説明を保持し、後年の政策・施設稼働状況へ置き換えて採点しない。",
+      "choices": [
+        {
+          "number": 1,
+          "verdict": "incorrect",
+          "reason": "適切。再処理で回収した資源を利用し、高レベル廃棄物の減容・有害度低減等を図る核燃料サイクルが日本の基本方針。"
+        },
+        {
+          "number": 2,
+          "verdict": "incorrect",
+          "reason": "適切。利用目的のないPuを持たない原則と、Pu保有量の適切な管理・削減に関する2018年原子力委員会の方針を述べる。"
+        },
+        {
+          "number": 3,
+          "verdict": "correct",
+          "reason": "誤りは「高速中性子でPuとMAを燃焼」。プルサーマルは軽水炉でMOXを用いる利用で、主として熱中性子による核分裂を利用する。高速炉でのMA燃焼と混同している。"
+        },
+        {
+          "number": 4,
+          "verdict": "incorrect",
+          "reason": "適切。PUREX法はTBPによる溶媒抽出を使う。U/Puを分離した後、PuをUと混合して脱硝し、混合酸化物にする工程と区別する。"
+        },
+        {
+          "number": 5,
+          "verdict": "incorrect",
+          "reason": "適切。中間貯蔵・乾式貯蔵は使用済燃料管理の柔軟性を増す。最終処分が不要になることを意味しない。"
+        }
+      ],
+      "sources": [
+        {
+          "title": "日本技術士会 公式問題",
+          "url": "https://www.engineer.or.jp/c_topics/011/attached/attach_11458_11.pdf"
+        },
+        {
+          "title": "日本技術士会 公式正答",
+          "url": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_4.pdf#page=22"
+        }
+      ]
+    }
+  },
+  {
+    "id": "pe-first-nuclear-2025-q30",
+    "number": 30,
+    "text": "2025年度 原子力・放射線部門 専門科目 Ⅲ－30。下の公式原問画像の当該番号に解答してください。同じページにある別の設問は対象外です。",
+    "images": [
+      "/exam-library/pe-first-nuclear-2025/e2716ea83d2016bed91f.png"
+    ],
+    "sourcePages": [
+      19
+    ],
+    "sourceQuestionNumber": 30,
+    "correctChoice": 5,
+    "choiceCount": 5,
+    "answerAuthority": "official",
+    "originalPdf": "https://www.engineer.or.jp/c_topics/011/attached/attach_11458_11.pdf",
+    "answerPdf": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_4.pdf#page=22",
+    "explanation": "浅地中、70m以上の中深度、300m以上の地層処分を区別する。廃棄物の具体的な受入区分・管理終了は制度と個別基準に従う。",
+    "presentation": {
+      "sourceHash": "b0cc1ecb99946932cdeb0b24fc3a4a883a2ac24dc2012824b29b942b510f2f3d",
+      "prompt": "2025年度 原子力・放射線部門 専門科目 Ⅲ－30。下の公式原問画像の当該番号に解答してください。同じページにある別の設問は対象外です。",
+      "choices": [
+        {
+          "number": 1,
+          "text": "①"
+        },
+        {
+          "number": 2,
+          "text": "②"
+        },
+        {
+          "number": 3,
+          "text": "③"
+        },
+        {
+          "number": 4,
+          "text": "④"
+        },
+        {
+          "number": 5,
+          "text": "⑤"
+        }
+      ],
+      "figures": [
+        {
+          "src": "/exam-library/pe-first-nuclear-2025/e2716ea83d2016bed91f.png",
+          "alt": "2025年度 原子力・放射線部門 Ⅲ－30の公式原問。問題文・全選択肢・図表を確認してください。",
+          "width": 998,
+          "height": 788
+        }
+      ]
+    },
+    "choiceExplanation": {
+      "sourceHash": "b0cc1ecb99946932cdeb0b24fc3a4a883a2ac24dc2012824b29b942b510f2f3d",
+      "correctChoice": 5,
+      "summary": "浅地中、70m以上の中深度、300m以上の地層処分を区別する。廃棄物の具体的な受入区分・管理終了は制度と個別基準に従う。",
+      "choices": [
+        {
+          "number": 1,
+          "verdict": "incorrect",
+          "reason": "適切。将来世代への過度な負担を避け、公衆と環境を防護できるよう放射性廃棄物を隔離する考え方。"
+        },
+        {
+          "number": 2,
+          "verdict": "incorrect",
+          "reason": "適切。クリアランスは所定の基準に基づき、放射性物質としての規制から外す制度。微量であれば自己判断で外せるという意味ではない。"
+        },
+        {
+          "number": 3,
+          "verdict": "incorrect",
+          "reason": "適切な概説。非常に低い放射能の廃棄物を浅地中のトレンチに埋設する。約50年は原問の想定管理期間であり、すべての施設で50年後に無条件解除されるという意味ではない。"
+        },
+        {
+          "number": 4,
+          "verdict": "incorrect",
+          "reason": "適切。比較的低い放射能レベルの固化体などを浅地中のコンクリートピットに埋設する方式。"
+        },
+        {
+          "number": 5,
+          "verdict": "correct",
+          "reason": "誤りは一律に「300m以深の地層処分」とした点。炉内構造物・制御棒など比較的放射能が高い低レベル廃棄物は、中深度処分（70m以上）との対応で整理する。"
+        }
+      ],
+      "sources": [
+        {
+          "title": "日本技術士会 公式問題",
+          "url": "https://www.engineer.or.jp/c_topics/011/attached/attach_11458_11.pdf"
+        },
+        {
+          "title": "日本技術士会 公式正答",
+          "url": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_4.pdf#page=22"
+        }
+      ]
+    }
+  },
+  {
+    "id": "pe-first-nuclear-2025-q31",
+    "number": 31,
+    "text": "2025年度 原子力・放射線部門 専門科目 Ⅲ－31。下の公式原問画像の当該番号に解答してください。同じページにある別の設問は対象外です。",
+    "images": [
+      "/exam-library/pe-first-nuclear-2025/46e991baf6cbbc854a3a.png"
+    ],
+    "sourcePages": [
+      19
+    ],
+    "sourceQuestionNumber": 31,
+    "correctChoice": 3,
+    "choiceCount": 5,
+    "answerAuthority": "official",
+    "originalPdf": "https://www.engineer.or.jp/c_topics/011/attached/attach_11458_11.pdf",
+    "answerPdf": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_4.pdf#page=22",
+    "explanation": "年電力量→40年分の原子力電力量→熱量→使用済燃料質量→固化体本数の順に単位をつなぐ。原問で仮定された全量再処理の計算である。",
+    "presentation": {
+      "sourceHash": "5ede9e222df32270d8bcb8aa996a34fffc91d84842c5e7c6c4b47f57aea1dcf7",
+      "prompt": "2025年度 原子力・放射線部門 専門科目 Ⅲ－31。下の公式原問画像の当該番号に解答してください。同じページにある別の設問は対象外です。",
+      "choices": [
+        {
+          "number": 1,
+          "text": "①"
+        },
+        {
+          "number": 2,
+          "text": "②"
+        },
+        {
+          "number": 3,
+          "text": "③"
+        },
+        {
+          "number": 4,
+          "text": "④"
+        },
+        {
+          "number": 5,
+          "text": "⑤"
+        }
+      ],
+      "figures": [
+        {
+          "src": "/exam-library/pe-first-nuclear-2025/46e991baf6cbbc854a3a.png",
+          "alt": "2025年度 原子力・放射線部門 Ⅲ－31の公式原問。問題文・全選択肢・図表を確認してください。",
+          "width": 998,
+          "height": 525
+        }
+      ]
+    },
+    "choiceExplanation": {
+      "sourceHash": "5ede9e222df32270d8bcb8aa996a34fffc91d84842c5e7c6c4b47f57aea1dcf7",
+      "correctChoice": 3,
+      "summary": "年電力量→40年分の原子力電力量→熱量→使用済燃料質量→固化体本数の順に単位をつなぐ。原問で仮定された全量再処理の計算である。",
+      "choices": [
+        {
+          "number": 1,
+          "verdict": "incorrect",
+          "reason": "2000本は約10分の1。40年間の総電力量とkWh→MWdの換算を確認する。"
+        },
+        {
+          "number": 2,
+          "verdict": "incorrect",
+          "reason": "15000本は計算値約19914本より少ない。発電電力量を熱効率0.34で割って核燃料が発生した熱量へ換算する。"
+        },
+        {
+          "number": 3,
+          "verdict": "correct",
+          "reason": "正しい。10¹²kWh/年×0.15×40/0.34/24000=約7.35×10⁸MWd。48000MWd/tで割り、1.3本/tを掛けると約19914本。"
+        },
+        {
+          "number": 4,
+          "verdict": "incorrect",
+          "reason": "200000本は約10倍。1MWd=1000kW×24h=24000kWhを使う。"
+        },
+        {
+          "number": 5,
+          "verdict": "incorrect",
+          "reason": "500000本は過大。総電力量のうち原子力は15%であり、全量を原子力として扱わない。"
+        }
+      ],
+      "sources": [
+        {
+          "title": "日本技術士会 公式問題",
+          "url": "https://www.engineer.or.jp/c_topics/011/attached/attach_11458_11.pdf"
+        },
+        {
+          "title": "日本技術士会 公式正答",
+          "url": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_4.pdf#page=22"
+        }
+      ]
+    }
+  },
+  {
+    "id": "pe-first-nuclear-2025-q32",
+    "number": 32,
+    "text": "2025年度 原子力・放射線部門 専門科目 Ⅲ－32。下の公式原問画像の当該番号に解答してください。同じページにある別の設問は対象外です。",
+    "images": [
+      "/exam-library/pe-first-nuclear-2025/4a8fe3039da9f49707f8.png"
+    ],
+    "sourcePages": [
+      20
+    ],
+    "sourceQuestionNumber": 32,
+    "correctChoice": 5,
+    "choiceCount": 5,
+    "answerAuthority": "official",
+    "originalPdf": "https://www.engineer.or.jp/c_topics/011/attached/attach_11458_11.pdf",
+    "answerPdf": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_4.pdf#page=22",
+    "explanation": "対象は2024年版の公表政策シナリオSTEPS。クリーンエネルギーが増えることだけから、既存燃料の供給途絶リスクまで小さくなるとはいえない。",
+    "presentation": {
+      "sourceHash": "95edc56aa99eade511d30caa7195015b2e3bb7b2c03311522e35d54f05d7a9c3",
+      "prompt": "2025年度 原子力・放射線部門 専門科目 Ⅲ－32。下の公式原問画像の当該番号に解答してください。同じページにある別の設問は対象外です。",
+      "choices": [
+        {
+          "number": 1,
+          "text": "①"
+        },
+        {
+          "number": 2,
+          "text": "②"
+        },
+        {
+          "number": 3,
+          "text": "③"
+        },
+        {
+          "number": 4,
+          "text": "④"
+        },
+        {
+          "number": 5,
+          "text": "⑤"
+        }
+      ],
+      "figures": [
+        {
+          "src": "/exam-library/pe-first-nuclear-2025/4a8fe3039da9f49707f8.png",
+          "alt": "2025年度 原子力・放射線部門 Ⅲ－32の公式原問。問題文・全選択肢・図表を確認してください。",
+          "width": 998,
+          "height": 1005
+        }
+      ]
+    },
+    "choiceExplanation": {
+      "sourceHash": "95edc56aa99eade511d30caa7195015b2e3bb7b2c03311522e35d54f05d7a9c3",
+      "correctChoice": 5,
+      "summary": "対象は2024年版の公表政策シナリオSTEPS。クリーンエネルギーが増えることだけから、既存燃料の供給途絶リスクまで小さくなるとはいえない。",
+      "choices": [
+        {
+          "number": 1,
+          "verdict": "incorrect",
+          "reason": "適切。中東やウクライナの紛争は安全保障リスクを示し、地政学的分断は排出削減の協調にも影響するというWEO2024の説明に合う。"
+        },
+        {
+          "number": 2,
+          "verdict": "incorrect",
+          "reason": "適切。AI利用や冷房需要の増加は電力需要を押し上げる要因とされる。"
+        },
+        {
+          "number": 3,
+          "verdict": "incorrect",
+          "reason": "適切。中国は再エネ設備増加の大きな割合を占め、電池などクリーン技術の供給網も集中している。"
+        },
+        {
+          "number": 4,
+          "verdict": "incorrect",
+          "reason": "適切。列挙された低炭素技術群は、移行と排出削減に寄与する選択肢として報告に位置付けられる。"
+        },
+        {
+          "number": 5,
+          "verdict": "correct",
+          "reason": "誤りは「化石燃料の安定供給リスクが大幅に減る可能性が高い」という結論。WEO2024はSTEPSでも従来型のエネルギー安全保障懸念は減らないとし、特にアジア輸入国の石油・ガス輸入依存を指摘する。"
+        }
+      ],
+      "sources": [
+        {
+          "title": "日本技術士会 公式問題",
+          "url": "https://www.engineer.or.jp/c_topics/011/attached/attach_11458_11.pdf"
+        },
+        {
+          "title": "日本技術士会 公式正答",
+          "url": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_4.pdf#page=22"
+        }
+      ]
+    }
+  },
+  {
+    "id": "pe-first-nuclear-2025-q33",
+    "number": 33,
+    "text": "2025年度 原子力・放射線部門 専門科目 Ⅲ－33。下の公式原問画像の当該番号に解答してください。同じページにある別の設問は対象外です。",
+    "images": [
+      "/exam-library/pe-first-nuclear-2025/86ad75a44d7114f38b9a.png"
+    ],
+    "sourcePages": [
+      21
+    ],
+    "sourceQuestionNumber": 33,
+    "correctChoice": 2,
+    "choiceCount": 5,
+    "answerAuthority": "official",
+    "originalPdf": "https://www.engineer.or.jp/c_topics/011/attached/attach_11458_11.pdf",
+    "answerPdf": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_4.pdf#page=22",
+    "explanation": "両者の設備容量Aは共通なので消去できる。原問の費用仮定の比較であり、現在の実際の発電単価を示すものではない。",
+    "presentation": {
+      "sourceHash": "4f3e9047614b659aaf04b5737fcdb0338114c68da8a9f42af7af11428256d870",
+      "prompt": "2025年度 原子力・放射線部門 専門科目 Ⅲ－33。下の公式原問画像の当該番号に解答してください。同じページにある別の設問は対象外です。",
+      "choices": [
+        {
+          "number": 1,
+          "text": "①"
+        },
+        {
+          "number": 2,
+          "text": "②"
+        },
+        {
+          "number": 3,
+          "text": "③"
+        },
+        {
+          "number": 4,
+          "text": "④"
+        },
+        {
+          "number": 5,
+          "text": "⑤"
+        }
+      ],
+      "figures": [
+        {
+          "src": "/exam-library/pe-first-nuclear-2025/86ad75a44d7114f38b9a.png",
+          "alt": "2025年度 原子力・放射線部門 Ⅲ－33の公式原問。問題文・全選択肢・図表を確認してください。",
+          "width": 998,
+          "height": 833
+        }
+      ]
+    },
+    "choiceExplanation": {
+      "sourceHash": "4f3e9047614b659aaf04b5737fcdb0338114c68da8a9f42af7af11428256d870",
+      "correctChoice": 2,
+      "summary": "両者の設備容量Aは共通なので消去できる。原問の費用仮定の比較であり、現在の実際の発電単価を示すものではない。",
+      "choices": [
+        {
+          "number": 1,
+          "verdict": "incorrect",
+          "reason": "23%では原子力の高い固定費を変動費の低さで回収するには足りない。設備容量で式を割って比較する。"
+        },
+        {
+          "number": 2,
+          "verdict": "correct",
+          "reason": "正しい。50000+8760x×1.9=23000+8760x×9.0からx=27000/(8760×7.1)=約0.434。"
+        },
+        {
+          "number": 3,
+          "verdict": "incorrect",
+          "reason": "63%は均衡点を上回る。固定費差は27000円/kW年、変動費差は7.1円/kWh。"
+        },
+        {
+          "number": 4,
+          "verdict": "incorrect",
+          "reason": "83%も均衡点を上回る。1年の時間数8760hを掛けた年間発電量を使う。"
+        },
+        {
+          "number": 5,
+          "verdict": "incorrect",
+          "reason": "93%も均衡点を上回る。設備利用率は0～1の小数で式に入れ、最後に百分率へ換算する。"
+        }
+      ],
+      "sources": [
+        {
+          "title": "日本技術士会 公式問題",
+          "url": "https://www.engineer.or.jp/c_topics/011/attached/attach_11458_11.pdf"
+        },
+        {
+          "title": "日本技術士会 公式正答",
+          "url": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_4.pdf#page=22"
+        }
+      ]
+    }
+  },
+  {
+    "id": "pe-first-nuclear-2025-q34",
+    "number": 34,
+    "text": "2025年度 原子力・放射線部門 専門科目 Ⅲ－34。下の公式原問画像の当該番号に解答してください。同じページにある別の設問は対象外です。",
+    "images": [
+      "/exam-library/pe-first-nuclear-2025/0068dd50acd57237578f.png"
+    ],
+    "sourcePages": [
+      22
+    ],
+    "sourceQuestionNumber": 34,
+    "correctChoice": 4,
+    "choiceCount": 5,
+    "answerAuthority": "official",
+    "originalPdf": "https://www.engineer.or.jp/c_topics/011/attached/attach_11458_11.pdf",
+    "answerPdf": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_4.pdf#page=22",
+    "explanation": "指標はCO2排出量÷一次エネルギー供給量で、総排出量や発電1kWh当たりの排出係数ではない。国名対応は原図・公式正答で確認する。フランスの原子力比率、日本の原子力停止後の化石燃料依存、中国の石炭依存が図を読む補助になる。",
+    "presentation": {
+      "sourceHash": "0ccea21eabeb11d2b52d5172a9f8c4af17720c8896d1ebc7eac6b05b60f7f41c",
+      "prompt": "2025年度 原子力・放射線部門 専門科目 Ⅲ－34。下の公式原問画像の当該番号に解答してください。同じページにある別の設問は対象外です。",
+      "choices": [
+        {
+          "number": 1,
+          "text": "①"
+        },
+        {
+          "number": 2,
+          "text": "②"
+        },
+        {
+          "number": 3,
+          "text": "③"
+        },
+        {
+          "number": 4,
+          "text": "④"
+        },
+        {
+          "number": 5,
+          "text": "⑤"
+        }
+      ],
+      "figures": [
+        {
+          "src": "/exam-library/pe-first-nuclear-2025/0068dd50acd57237578f.png",
+          "alt": "2025年度 原子力・放射線部門 Ⅲ－34の公式原問。問題文・全選択肢・図表を確認してください。",
+          "width": 998,
+          "height": 1155
+        }
+      ]
+    },
+    "choiceExplanation": {
+      "sourceHash": "0ccea21eabeb11d2b52d5172a9f8c4af17720c8896d1ebc7eac6b05b60f7f41c",
+      "correctChoice": 4,
+      "summary": "指標はCO2排出量÷一次エネルギー供給量で、総排出量や発電1kWh当たりの排出係数ではない。国名対応は原図・公式正答で確認する。フランスの原子力比率、日本の原子力停止後の化石燃料依存、中国の石炭依存が図を読む補助になる。",
+      "choices": [
+        {
+          "number": 1,
+          "verdict": "incorrect",
+          "reason": "A,B,C,Dすべてが誤り。低位のCはフランス、高位のDは中国。日本は2011年以降に上昇するB、ドイツはAに対応する。"
+        },
+        {
+          "number": 2,
+          "verdict": "incorrect",
+          "reason": "B,Cは合うがAとDが逆。高位のDが中国、米国付近で推移するAがドイツ。"
+        },
+        {
+          "number": 3,
+          "verdict": "incorrect",
+          "reason": "C,Dは合うがA,Bが逆。2011年以降にBが上昇する特徴から、日本はBである。"
+        },
+        {
+          "number": 4,
+          "verdict": "correct",
+          "reason": "正しい。A=ドイツ、B=日本、C=フランス、D=中国。原図の2000～2021年の系列を対応付ける。"
+        },
+        {
+          "number": 5,
+          "verdict": "incorrect",
+          "reason": "A,Dは合うがB,Cが逆。フランスは低位のC、日本は2011年以降の高まりを示すB。"
+        }
+      ],
+      "sources": [
+        {
+          "title": "日本技術士会 公式問題",
+          "url": "https://www.engineer.or.jp/c_topics/011/attached/attach_11458_11.pdf"
+        },
+        {
+          "title": "日本技術士会 公式正答",
+          "url": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_4.pdf#page=22"
+        }
+      ]
+    }
+  },
+  {
+    "id": "pe-first-nuclear-2025-q35",
+    "number": 35,
+    "text": "2025年度 原子力・放射線部門 専門科目 Ⅲ－35。下の公式原問画像の当該番号に解答してください。同じページにある別の設問は対象外です。",
+    "images": [
+      "/exam-library/pe-first-nuclear-2025/7bc748f86c56666363aa.png"
+    ],
+    "sourcePages": [
+      23
+    ],
+    "sourceQuestionNumber": 35,
+    "correctChoice": 4,
+    "choiceCount": 5,
+    "answerAuthority": "official",
+    "originalPdf": "https://www.engineer.or.jp/c_topics/011/attached/attach_11458_11.pdf",
+    "answerPdf": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_4.pdf#page=22",
+    "explanation": "2025年2月閣議決定の第7次計画を基準に判定する。旧計画の「依存度低減」を引き継いでしまわない。安全性の確保を大前提とする条件も省略しない。",
+    "presentation": {
+      "sourceHash": "bf8e762bb38bbef4f7a1ff8499c20e54c9ac051b2cd4c3d4156efba17d178537",
+      "prompt": "2025年度 原子力・放射線部門 専門科目 Ⅲ－35。下の公式原問画像の当該番号に解答してください。同じページにある別の設問は対象外です。",
+      "choices": [
+        {
+          "number": 1,
+          "text": "①"
+        },
+        {
+          "number": 2,
+          "text": "②"
+        },
+        {
+          "number": 3,
+          "text": "③"
+        },
+        {
+          "number": 4,
+          "text": "④"
+        },
+        {
+          "number": 5,
+          "text": "⑤"
+        }
+      ],
+      "figures": [
+        {
+          "src": "/exam-library/pe-first-nuclear-2025/7bc748f86c56666363aa.png",
+          "alt": "2025年度 原子力・放射線部門 Ⅲ－35の公式原問。問題文・全選択肢・図表を確認してください。",
+          "width": 998,
+          "height": 855
+        }
+      ]
+    },
+    "choiceExplanation": {
+      "sourceHash": "bf8e762bb38bbef4f7a1ff8499c20e54c9ac051b2cd4c3d4156efba17d178537",
+      "correctChoice": 4,
+      "summary": "2025年2月閣議決定の第7次計画を基準に判定する。旧計画の「依存度低減」を引き継いでしまわない。安全性の確保を大前提とする条件も省略しない。",
+      "choices": [
+        {
+          "number": 1,
+          "verdict": "incorrect",
+          "reason": "適切。太陽光導入拡大では、地域との共生と国民負担の抑制を前提にするという計画の考え方に合う。"
+        },
+        {
+          "number": 2,
+          "verdict": "incorrect",
+          "reason": "適切。陸上の適地制約に対し、北海道・東北等の洋上風力には大きな導入可能性がある。"
+        },
+        {
+          "number": 3,
+          "verdict": "incorrect",
+          "reason": "適切。水力の長期安定供給という価値と、開発リスク・老朽化・設備容量の減少見込みへの対応を述べている。"
+        },
+        {
+          "number": 4,
+          "verdict": "correct",
+          "reason": "誤りは最後の「原発依存度を可能な限り低減」。2025年2月の第7次計画は、安全性確保を大前提に、再エネと原子力を共に最大限活用する方針。前半の燃料備蓄性等ではなく、この政策文言が不一致。"
+        },
+        {
+          "number": 5,
+          "verdict": "incorrect",
+          "reason": "適切。必要な供給容量kWを確保しながら、非効率石炭火力を中心に発電電力量kWhを減らす方向を示す。"
+        }
+      ],
+      "sources": [
+        {
+          "title": "日本技術士会 公式問題",
+          "url": "https://www.engineer.or.jp/c_topics/011/attached/attach_11458_11.pdf"
+        },
+        {
+          "title": "日本技術士会 公式正答",
+          "url": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_4.pdf#page=22"
+        }
+      ]
+    }
+  }
+]

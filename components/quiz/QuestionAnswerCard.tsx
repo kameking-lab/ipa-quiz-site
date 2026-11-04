@@ -10,6 +10,7 @@ import { gradeNativeB, serializeNativeBSelections, formatNativeBAnswer, type Nat
 import { NativeBAnswerInput, NativeBFeedback } from "./NativeBAnswer";
 import dynamic from "next/dynamic";
 import { isAcceptedAnswer, formatAcceptedAnswers, CHOICE_SHORTCUTS, getChoiceKeys, isCompleteSelectionCorrect, formatSelection, selectionInstruction } from "@/lib/questions/answers";
+import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { ArrowRight, BookOpenCheck, Eye, Sparkles } from "lucide-react";
 
@@ -75,7 +76,13 @@ interface Props {
  */
 export function QuestionAnswerCard(props: Props) {
   if (isReferenceOnlyQuestionId(props.questionId) || isReferenceOnlyQuestionId(props.question?.id)) {
-    return <p role="note">この問題は参照専用です。採点・学習記録・報酬の対象には含まれません。</p>;
+    return <section aria-label="参照専用の選択肢">
+      <p role="note">この問題は参照専用です。採点・学習記録・報酬の対象には含まれません。</p>
+      <dl className="mt-3 space-y-3">{Object.entries(props.choices ?? props.question?.choices ?? {}).map(([key, text]) => (
+        <div key={key} className="rounded-lg border border-border p-3"><dt className="font-semibold">{choiceDisplayLabel(props.exam, key as ChoiceKey)}</dt><dd><QuestionBody text={text} /></dd></div>
+      ))}</dl>
+      <p className="mt-3 font-semibold">公式正答（参照）: {props.question?.officialAnswerNumber ?? formatAcceptedAnswers(props.answerKey)}</p>
+    </section>;
   }
   return <ScoredQuestionAnswerCard {...props} />;
 }
@@ -161,11 +168,12 @@ function ScoredQuestionAnswerCard({
     (key: ChoiceKey) => {
       if (isReferenceOnlyQuestionId(questionId) || isReferenceOnlyQuestionId(question?.id) || revealed || ordering) return;
       if (multiSelect) {
+        if (question?.acceptedAnswerCombinations && !picked.includes(key) && picked.length >= requiredSelections) return;
         const next = picked.includes(key) ? picked.filter((k) => k !== key) : [...picked, key];
         setPicked(next);
-        if (next.length === requiredSelections) {
+        if (!question?.acceptedAnswerCombinations && next.length === requiredSelections) {
           setRevealed(true);
-          recordOutcome(formatSelection(next), isCompleteSelectionCorrect(answerKey, next, requiredSelections));
+          recordOutcome(formatSelection(next), isCompleteSelectionCorrect(answerKey, next, requiredSelections, question?.acceptedAnswerCombinations));
         }
         return;
       }
@@ -225,14 +233,20 @@ function ScoredQuestionAnswerCard({
     };
   }, [revealed, ordering, keys, onSelect]);
 
-  const answered = native ? nativeBResult !== undefined : ordering ? orderedSelected !== undefined : numeric ? numericSelected !== undefined : multiSelect ? picked.length === requiredSelections : selected !== undefined;
-  const isCorrect = native ? nativeBResult?.isCorrect === true : ordering ? isOrderingAnswerCorrect(question!, orderedSelected ?? []) : numeric ? isNumericAnswerCorrect(question!, numericSelected ?? "") : multiSelect ? isCompleteSelectionCorrect(answerKey, picked, requiredSelections) : isAcceptedAnswer(answerKey, selected);
+  const answered = native ? nativeBResult !== undefined : ordering ? orderedSelected !== undefined : numeric ? numericSelected !== undefined : multiSelect ? (question?.acceptedAnswerCombinations ? revealed : picked.length === requiredSelections) : selected !== undefined;
+  const isCorrect = native ? nativeBResult?.isCorrect === true : ordering ? isOrderingAnswerCorrect(question!, orderedSelected ?? []) : numeric ? isNumericAnswerCorrect(question!, numericSelected ?? "") : multiSelect ? isCompleteSelectionCorrect(answerKey, picked, requiredSelections, question?.acceptedAnswerCombinations) : isAcceptedAnswer(answerKey, selected);
   const answerLabel = native ? formatNativeBAnswer(question!.nativeB!) : ordering ? formatOrderingAnswer(exam, answerKey as ChoiceKey[]) : numeric ? formatNumericAnswer(question!) : usesNumberedChoices(exam)
     ? (Array.isArray(answerKey) ? answerKey : [answerKey]).map((key) => choiceDisplayLabel(exam, key as ChoiceKey)).join("・")
     : formatAcceptedAnswers(answerKey);
 
   return (
     <div data-study-presence-exam={exam} className="space-y-4">
+      {question?.acceptedAnswerCombinations && !revealed && (
+        <Button disabled={picked.length < 1 || picked.length > requiredSelections}
+          onClick={() => { setRevealed(true); recordOutcome(formatSelection(picked), isCompleteSelectionCorrect(answerKey, picked, requiredSelections, question.acceptedAnswerCombinations)); }}>
+          回答を確定
+        </Button>
+      )}
       {multiSelect && !revealed && (
         <p className="rounded-xl border border-amber-300/60 bg-amber-50 px-3 py-2 text-sm font-semibold text-amber-900 dark:border-amber-700/50 dark:bg-amber-950/40 dark:text-amber-100" data-testid="multi-select-hint">
           {selectionInstruction(answerKey, requiredSelections)}（選択中 {picked.length}/{requiredSelections}）

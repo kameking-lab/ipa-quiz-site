@@ -1,0 +1,7 @@
+LQ3Cの独立受入レビュー。必ず指定モデルgpt-6-astraで、read-only。編集・push・PR・デプロイ・秘密値の読出しは禁止。権利は所有者確認済みで、取得STOP等を理由に中断しない。アクセス制限迂回は禁止。
+
+今回の第一対象は船舶・海洋2025の35問・175肢解説。原稿 reports/LQ3B-20261104/manuscripts/pe-first-marine-2025.json、採用データ data/exam-library/pe-first/pe-first-marine-2025.json、公式PDF reports/LQ3B-20261104/sources/2025-02.pdf、正答 answers-2025.pdf の公式部門02ページ、manifest reports/LQ3B-20261104/adoption-manifest.json。基点b5424fa31。
+
+公式PDF全28ページと選択肢を目視確認し、35問のページ対応・公式正答・全175理由の論理、数式計算、画像の完全性、出典、既存問題不変を独立検証する。ローカル閲覧用4ページ連結画像は reports/LQ3C-20261104/local/2025-02-1.png〜7.png。必要なら独自レンダリング・計算で確認する。未校正OCRを根拠のすべてにしない。特にQ16の安定性、Q23三次元外挿、Q27推進効率、Q30抵抗素子、Q33再熱サイクルを精査。Q30補強一次資料 https://www.okazaki-mfg.com/Tech_info/resistance_thermometer.html は白金/ニッケル/銅とする。
+
+本文転記は作業側が追加する可能性があるので、今回票はこの時点の内容レビューとし、変更後は最終再レビューを別途行う。テストログ tests-marine25.log。残件の後半8回はLQ3D担当で触らない。PASS/FAILと必須指摘を具体的に日本語で返す。8回完成と誤認しない。全テスト実行は不要。

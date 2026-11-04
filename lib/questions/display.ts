@@ -7,13 +7,15 @@ const DENKEN_CHOICE_KEYS: readonly ChoiceKey[] = ["ア", "イ", "ウ", "エ", "�
 const IROHA_CHOICE_KEYS: readonly ChoiceKey[] = ["ア", "イ", "ウ", "エ", "オ", "カ", "キ", "ク", "ケ", "コ", "サ", "シ", "ス", "セ", "ソ"];
 const IROHA_LABELS = ["イ", "ロ", "ハ", "ニ", "ホ", "ヘ", "ト", "チ", "リ", "ヌ", "ル", "ヲ", "ワ", "カ", "ヨ"] as const;
 
-export function questionNumberLabel(q: Pick<Question, "qNumber" | "part" | "nativeB">): string {
+export function questionNumberLabel(q: Pick<Question, "qNumber" | "part" | "nativeB" | "officialQuestionLabel">): string {
+  // Callers add the 問 prefix; keep this helper limited to the printed number.
+  if (q.officialQuestionLabel) return q.officialQuestionLabel.replace(/^問題/, "");
   if (q.nativeB?.officialLabel) return q.nativeB.officialLabel;
   return `${q.qNumber}${q.part ? `(${q.part})` : ""}`;
 }
 
 /** 公式問題が選択肢を算用数字 1〜5 で示す試験。表示も原本の番号に合わせる。 */
-const PLAIN_NUMBER_CHOICE_EXAMS: readonly ExamCode[] = ["kanteishi", "kaikeishi", "riku-toku-kokunai", "kai-toku2", "kai-toku3", "koku-toku", "land-special1", "riku-tech1", "maritime4", "aviation-comm", "amateur1", "maritime-special1", "riku-tech2", "amateur2", "maritime-radar", "maritime3", "maritime2", "maritime1", "general3", "general2", "general1", "land-special2", "land-special3", "chosashi", "kaigo", "shakai", "seishin", "kanri", "mankan", "kangoshi", "yakuzaishi", "ahaki-anma", "ahaki-hari-kyu", "hokenshi", "josanshi", "rigaku-ryohoshi", "sagyo-ryohoshi", "shino-kunrenshi", "rinsho-kensagishi", "shinryo-hoshasengishi", "rinsho-kogishi", "riyoshi", "shika-ishi", "judo-seifukushi", "gas-kou", "gas-otsu", "gas-hei"];
+const PLAIN_NUMBER_CHOICE_EXAMS: readonly ExamCode[] = ["chintai", "kyusui", "biru-kan", "gijutsushi1-kikai", "hoshasen-1", "hoshasen-2", "khk-kikai-kou", "khk-kikai-otsu", "reform-mgr", "denki2", "kankoji1", "kenki1", "kenki2", "kisho", "kenchiku-setsubishi", "kanteishi", "kaikeishi", "riku-toku-kokunai", "kai-toku2", "kai-toku3", "koku-toku", "land-special1", "riku-tech1", "maritime4", "aviation-comm", "amateur1", "maritime-special1", "riku-tech2", "amateur2", "maritime-radar", "maritime3", "maritime2", "maritime1", "general3", "general2", "general1", "land-special2", "land-special3", "chosashi", "kaigo", "shakai", "seishin", "kanri", "mankan", "kangoshi", "yakuzaishi", "ahaki-anma", "ahaki-hari-kyu", "hokenshi", "josanshi", "rigaku-ryohoshi", "sagyo-ryohoshi", "shino-kunrenshi", "rinsho-kensagishi", "shinryo-hoshasengishi", "rinsho-kogishi", "riyoshi", "shika-ishi", "judo-seifukushi", "gas-kou", "gas-otsu", "gas-hei", "biyoshi", "kikenbutsu-otsu1", "kikenbutsu-otsu2", "kikenbutsu-otsu6", "jokaso", "denki1", "shuwa", "shinrishi", "khk-reito-3", "khk-reito-2", "khk-reito-1", "yamaguchi-seika", "yamaguchi-chori", "keiryoshi", "keiryoshi-nodo", "keiryoshi-soon", "gyosei", "shihoshoshi"];
 
 /** 公式問題が選択肢をＡ〜Ｅで示す試験。内部キー ア〜オ と順番で対応させる。 */
 const ALPHABET_CHOICE_EXAMS: readonly ExamCode[] = ["sharoushi"];
@@ -45,6 +47,15 @@ export function choiceDisplayLabel(exam: ExamCode, key: ChoiceKey): string {
 export function formatQuestionAnswerForDisplay(question: Question, value: string | readonly ChoiceKey[], multiSeparator = "・"): string {
   if (question.type === "native-b" && question.nativeB) return formatNativeBAnswer(question.nativeB);
   if (question.type === "numeric") return formatNumericAnswer(question, String(value));
+  // 正答配列は独立した許容肢。全肢許容の訂正を「5肢すべて選ぶ」と表示しない。
+  const choices = Object.keys(question.choices ?? {}) as ChoiceKey[];
+  const accepted = question.answer;
+  if (question.type === "multiple-choice" && (question.requiredSelections ?? 1) === 1 &&
+      Array.isArray(value) && Array.isArray(accepted) && choices.length > 1 &&
+      value.length === choices.length && accepted.length === choices.length &&
+      choices.every(key => value.includes(key) && accepted.includes(key))) {
+    return "全員正解";
+  }
   const separator = question.type === "ordering" ? "→" : multiSeparator;
   const text = Array.isArray(value) ? value.join(separator) : String(value);
   return text.split(/([・→,]\s*)/).map((part) => {

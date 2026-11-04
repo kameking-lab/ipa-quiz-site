@@ -1,0 +1,28 @@
+
+Running 9 tests using 2 workers
+
+corepack : (node:48904) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+発生場所 行:2 文字:157
++ ... .0.1:3147'; corepack pnpm exec playwright test tests/e2e/adk-readines ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: ((node:48904) Wa... env being set.:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:65004) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:65004) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:48904) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok 2 tests\e2e\adk-readiness.spec.ts:3:5 › singleton category stays readable without JavaScript and points to an explained question (810ms)
+  ok 1 tests\e2e\adk-readiness.spec.ts:24:5 › search and mode selection are noindex across query variants (1.5s)
+  ok 3 tests\e2e\adk-readiness.spec.ts:44:5 › fresh visitors can read the problem, reasoning and privacy contact without a login or consent dialog (1.1s)
+  ok 4 tests\e2e\adsense-learning-quality.spec.ts:31:7 › /fp3/2026-published exposes static explanation links without JavaScript (680ms)
+  ok 5 tests\e2e\adsense-learning-quality.spec.ts:31:7 › /shika-ishi/2026-annual exposes static explanation links without JavaScript (836ms)
+  ok 6 tests\e2e\adsense-learning-quality.spec.ts:31:7 › /chosashi/2025-autumn exposes static explanation links without JavaScript (599ms)
+  ok 8 tests\e2e\adsense-learning-quality.spec.ts:61:5 › dental and land-surveyor pages distinguish originals and independent explanations (751ms)
+  ok 7 tests\e2e\adsense-learning-quality.spec.ts:45:5 › worked guide contains its problem, comparison, and check and the old URL is a 301 (811ms)
+  ok 9 tests\e2e\adsense-learning-quality.spec.ts:105:5 › unapproved learning, navigation and error routes never initialize Google ads (1.4s)
+
+  9 passed (5.6s)

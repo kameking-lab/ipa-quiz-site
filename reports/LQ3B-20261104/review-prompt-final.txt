@@ -1,0 +1,12 @@
+指定gpt-6-astraでLQ3Bの独立再レビューを行ってください。read-only、ファイル編集/push/PR/デプロイ/外部メッセージ/モデル変更/秘密値の読出し禁止。
+
+先の完全レビューは reports/LQ3B-20261104/astra-review-1.md。全50ページの本文・全105問/525肢・独自公式正答照合・50ページ画素一致・旧17回不変まで確認し、修正必須は情報2024Q6のコード字下げ、Q11②のADAS注意書きの2件だった。
+
+今回の修正：
+- components/exam-library/exam-question-figure.tsx の本文表示をwhitespace-pre-lineからwhitespace-pre-wrapへ変更。Pythonコードの連続空白・字下げと改行を保持する。
+- 情報2024Q6でpresentation.figuresに公式3ページのコード画像も表示。テキストのコードも保持。
+- 情報2024Q11のsummaryと②reasonを修正し、公式正答①・原問を維持したまま、広義ADASにはレベル0の警報・一時的支援も含まれ『搭載されない』を一般的定義として覚えないと具体的に説明。NHTSAの2022年資料への一次資料リンクを追加。
+- __tests__/pe-first-continuation.test.tsx にPython字下げの文字列・空白保持クラス・原本コード画像の表示・ADAS補足と公式正答維持の回帰検証を追加。
+- 関連5ファイルの最新検証ログはtests-final.log、10ファイル68テストの先の結果はtests-related.log、型検査typecheck-final.log（変更後の再実行中/完了予定）、native検証validate-questions.log。変更後の型検査結果も確認すること。
+
+先の必須2件の解決、修正後原稿/採用データ/manifestの整合性、他のコード表示への影響を独立に確認し、採用済み3回105問範囲でPASS/FAILと根拠を日本語で返す。残り16回560問はPDF・全OCR取得済みだが制作・採用は未完で、全体目標は未完と区別する。独立再確認なしにPASSにしない。全テストは走らせない。read-onlyの実行制限が出たら迂回せず、作業側ログと実装を確認する。

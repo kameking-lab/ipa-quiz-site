@@ -1,0 +1,11 @@
+{
+  "originalCommand": "python3 scripts/verify-keiryoshi-source.py",
+  "originalExitCode": 1,
+  "originalFailure": "assert len(image_urls) == len(figures) == 36",
+  "actualFigures": 73,
+  "proposedPatch": "round4-source-verifier.patch",
+  "temporaryCopyCommand": "python3 /tmp/keiryoshi-r4-source-verifier.py",
+  "temporaryCopyExitCode": 0,
+  "originalScriptModified": false,
+  "note": "画像数固定36のみを外した同一検査を一時コピーで実施。原本コマンドの成功と混同しない。"
+}

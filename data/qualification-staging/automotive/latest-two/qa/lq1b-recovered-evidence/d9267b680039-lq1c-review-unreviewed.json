@@ -1,0 +1,331 @@
+{
+  "model": "gpt-6-astra",
+  "scope": "Independent review of all 61 IDs in lq1c-unreviewed-ids.json against immutable lq1c-candidates.json, source PNGs, official-answers.json and PDF/page bindings. In progress; rows are completed groups only.",
+  "limitations": [
+    "The requested source/official-answers.json path does not exist; the supplied official-answer table is latest-two/official-answers.json and is used instead.",
+    "Whitespace, line wrapping and furigana are treated as non-substantive transcription normalization. Historical permission flags are not acceptance criteria."
+  ],
+  "rows": [
+    {
+      "id": "jidosha-2026-first-body-q02",
+      "candidateSha256": "d66fc43b486a129404997afd989f6d576527a637795168770ebd3f10663ed4e2",
+      "verdict": "PASS",
+      "sourcePagesChecked": [
+        2
+      ],
+      "answerChecked": true,
+      "allFourExplanationsChecked": true,
+      "findings": []
+    },
+    {
+      "id": "jidosha-2026-first-body-q03",
+      "candidateSha256": "fe6538f8fe2f4d91c598f483edcee58cf9e61f4383641ad0fc4e4f82f88b1350",
+      "verdict": "PASS",
+      "sourcePagesChecked": [
+        2
+      ],
+      "answerChecked": true,
+      "allFourExplanationsChecked": true,
+      "findings": []
+    },
+    {
+      "id": "jidosha-2026-first-body-q05",
+      "candidateSha256": "4e132e5879302d49a474a42dadd9b1d817653c076f6e4c15bed459cba4c75a00",
+      "verdict": "PASS",
+      "sourcePagesChecked": [
+        2
+      ],
+      "answerChecked": true,
+      "allFourExplanationsChecked": true,
+      "findings": []
+    },
+    {
+      "id": "jidosha-2026-first-body-q06",
+      "candidateSha256": "16f0c4759a98d9dc28a1dc822f01f1e94b3a9196dd65391c700b2d48599c56fe",
+      "verdict": "PASS",
+      "sourcePagesChecked": [
+        3
+      ],
+      "answerChecked": true,
+      "allFourExplanationsChecked": true,
+      "findings": []
+    },
+    {
+      "id": "jidosha-2026-first-body-q08",
+      "candidateSha256": "a900c0ef2e2c450df9781dbcd4455c31500838e017240db7592441d752e4c302",
+      "verdict": "HOLD",
+      "sourcePagesChecked": [
+        3
+      ],
+      "answerChecked": true,
+      "allFourExplanationsChecked": true,
+      "findings": [
+        {
+          "field": "explanation; choiceExplanations",
+          "issue": "The official count is two, but it does not identify the two true statements. The asserted (?)(?) pair and dismissal of rib reinforcement were not independently substantiated.",
+          "replacement": "Retain official answer (2), but withhold acceptance of the (?)(?) assertion until a JASPA body-structure textbook edition/page establishes each of (?)?(?); then replace every choice explanation with that verified pair.",
+          "source": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_bo.pdf#page=3"
+        }
+      ]
+    },
+    {
+      "id": "jidosha-2026-first-body-q09",
+      "candidateSha256": "a6b1ae7f0d00fe225050fb1f759b50194c5cf77ae51c2d1fe28eb8ddcad6ec1b",
+      "verdict": "PASS",
+      "sourcePagesChecked": [
+        3
+      ],
+      "answerChecked": true,
+      "allFourExplanationsChecked": true,
+      "findings": []
+    },
+    {
+      "id": "jidosha-2026-first-body-q10",
+      "candidateSha256": "8a772e9f3f46e49c480ed2d2929474b87cc1bbe6807cea5789055bca76a8f17c",
+      "verdict": "FAIL",
+      "sourcePagesChecked": [
+        4
+      ],
+      "answerChecked": true,
+      "allFourExplanationsChecked": true,
+      "findings": [
+        {
+          "field": "explanation; choiceExplanations.?",
+          "issue": "The explanation omits the actual beading-versus-hemming error and instead rejects full-perimeter adhesive without evidence.",
+          "replacement": "?????????????????????????????????????????????????????????????????????????????????",
+          "source": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_bo.pdf#page=4; https://www.jstage.jst.go.jp/article/qjjws1943/70/2/70_2_248/_pdf/-char/en (section 2.2)"
+        }
+      ]
+    },
+    {
+      "id": "jidosha-2026-first-body-q12",
+      "candidateSha256": "889f9e42673967780b57131168f791641beb649bc4ce83c6b480ac3a30527ce4",
+      "verdict": "PASS",
+      "sourcePagesChecked": [
+        4
+      ],
+      "answerChecked": true,
+      "allFourExplanationsChecked": true,
+      "findings": []
+    },
+    {
+      "id": "jidosha-2026-first-body-q14",
+      "candidateSha256": "53875a6501e4ccb986135e190d72e83efb763b2b2cf323b8efb2d6febccf4a76",
+      "verdict": "PASS",
+      "sourcePagesChecked": [
+        5
+      ],
+      "answerChecked": true,
+      "allFourExplanationsChecked": true,
+      "findings": []
+    },
+    {
+      "id": "jidosha-2026-first-body-q15",
+      "candidateSha256": "58f3cbf3e8c75126d49a51fbbdb38ccb324c13d6e0f1a516b4bdbf4bb1f5787c",
+      "verdict": "PASS",
+      "sourcePagesChecked": [
+        5
+      ],
+      "answerChecked": true,
+      "allFourExplanationsChecked": true,
+      "findings": []
+    },
+    {
+      "id": "jidosha-2026-first-body-q16",
+      "candidateSha256": "dc93626d5e635b72f04d2ec916a60c1b7f5cfbdbaf652ab1e2335edf120128f4",
+      "verdict": "PASS",
+      "sourcePagesChecked": [
+        6
+      ],
+      "answerChecked": true,
+      "allFourExplanationsChecked": true,
+      "findings": []
+    },
+    {
+      "id": "jidosha-2026-first-body-q17",
+      "candidateSha256": "48fa67f52e2449b139ff3b445e5f88fb029d757cb65767afa1b800642e174f3a",
+      "verdict": "PASS",
+      "sourcePagesChecked": [
+        6
+      ],
+      "answerChecked": true,
+      "allFourExplanationsChecked": true,
+      "findings": []
+    },
+    {
+      "id": "jidosha-2026-first-body-q19",
+      "candidateSha256": "f00911fbb8bf087a3443a4330ca31991702489593caa3f4b6ec6660cc56e59e9",
+      "verdict": "PASS",
+      "sourcePagesChecked": [
+        7
+      ],
+      "answerChecked": true,
+      "allFourExplanationsChecked": true,
+      "findings": []
+    },
+    {
+      "id": "jidosha-2026-first-body-q20",
+      "candidateSha256": "5607151d4beda307f0d6bd0ce0fcb2720332ea5901445617b00372cdab084f19",
+      "verdict": "PASS",
+      "sourcePagesChecked": [
+        7
+      ],
+      "answerChecked": true,
+      "allFourExplanationsChecked": true,
+      "findings": []
+    },
+    {
+      "id": "jidosha-2026-first-body-q21",
+      "candidateSha256": "9a93a564a5eae9c0ac24936b595c0d92d21e136b4213f3f5cd98d9826d60582a",
+      "verdict": "PASS",
+      "sourcePagesChecked": [
+        7
+      ],
+      "answerChecked": true,
+      "allFourExplanationsChecked": true,
+      "findings": []
+    },
+    {
+      "id": "jidosha-2026-first-body-q22",
+      "candidateSha256": "750de718c95092c419c901098515119edee0eece12bc795e73d941821d5861de",
+      "verdict": "FAIL",
+      "sourcePagesChecked": [
+        7
+      ],
+      "answerChecked": true,
+      "allFourExplanationsChecked": true,
+      "findings": [
+        {
+          "field": "explanation; choiceExplanations.?",
+          "issue": "The explanation only says the method is wrong and does not state the correct channel reinforcement placement.",
+          "replacement": "??????????????????????????????????????????????????????????????????????????????????????????????",
+          "source": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/20160320_20160828/20160320_bo.pdf#page=8 (Q21(2)); https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_bo.pdf#page=7"
+        }
+      ]
+    },
+    {
+      "id": "jidosha-2026-first-body-q23",
+      "candidateSha256": "b66123ce743774209be225754c9e4c15fc0a685826e7984d1d2ebd37f4c178eb",
+      "verdict": "PASS",
+      "sourcePagesChecked": [
+        8
+      ],
+      "answerChecked": true,
+      "allFourExplanationsChecked": true,
+      "findings": []
+    },
+    {
+      "id": "jidosha-2026-first-body-q24",
+      "candidateSha256": "8b5316091ef13dde9fc5b49317b4cacd95b5d602e37f56e267cf25ac545f34b1",
+      "verdict": "FAIL",
+      "sourcePagesChecked": [
+        8
+      ],
+      "answerChecked": true,
+      "allFourExplanationsChecked": true,
+      "findings": [
+        {
+          "field": "choiceExplanations.?; choiceExplanations.?",
+          "issue": "The rejected flame descriptions are not corrected precisely. The 1:1 mixture is rejected together with the erroneous temperature, although neutral oxyacetylene flame uses approximately equal supplied gases.",
+          "replacement": "(2) ????????????????????????(3) ?????????3,200??????2,800???????1?1????????????????",
+          "source": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_bo.pdf#page=8"
+        }
+      ]
+    },
+    {
+      "id": "jidosha-2026-first-body-q25",
+      "candidateSha256": "dc4e8a4af17e68c32526516a2e3ae090564b4fc4be9f03cfe21bbd8d5e154817",
+      "verdict": "PASS",
+      "sourcePagesChecked": [
+        8
+      ],
+      "answerChecked": true,
+      "allFourExplanationsChecked": true,
+      "findings": []
+    },
+    {
+      "id": "jidosha-2026-first-body-q26",
+      "candidateSha256": "51ac2378cfe1c88c4bba1b134442ac61f36c3e115bb132e1e9edda849ff6c600",
+      "verdict": "PASS",
+      "sourcePagesChecked": [
+        8
+      ],
+      "answerChecked": true,
+      "allFourExplanationsChecked": true,
+      "findings": []
+    },
+    {
+      "id": "jidosha-2026-first-body-q27",
+      "candidateSha256": "23eadc74d9227b9a26079c3f683c8bd1bb988de6642ea52782f0163369ff3a84",
+      "verdict": "PASS",
+      "sourcePagesChecked": [
+        9
+      ],
+      "answerChecked": true,
+      "allFourExplanationsChecked": true,
+      "findings": []
+    },
+    {
+      "id": "jidosha-2026-first-body-q31",
+      "candidateSha256": "5b5302b3e395e625c5995d8784f50f144ba15fc7b0102b56e71d394e8bdc2f6e",
+      "verdict": "PASS",
+      "sourcePagesChecked": [
+        10
+      ],
+      "answerChecked": true,
+      "allFourExplanationsChecked": true,
+      "findings": []
+    },
+    {
+      "id": "jidosha-2026-first-body-q33",
+      "candidateSha256": "9a457d27f79d21bc03008b285bf1ab4aee3b39123da1c394eaa16eafd6baee4e",
+      "verdict": "PASS",
+      "sourcePagesChecked": [
+        11
+      ],
+      "answerChecked": true,
+      "allFourExplanationsChecked": true,
+      "findings": []
+    },
+    {
+      "id": "jidosha-2026-first-body-q35",
+      "candidateSha256": "13ab36e1d13436788a4a36003ddb967b0d84010c41241db2c03b283a12af05fe",
+      "verdict": "PASS",
+      "sourcePagesChecked": [
+        11
+      ],
+      "answerChecked": true,
+      "allFourExplanationsChecked": true,
+      "findings": []
+    },
+    {
+      "id": "jidosha-2026-first-body-q36",
+      "candidateSha256": "e3ca23d5685658f5d145ad80cb27cce9779098b19f313c4bb3f5321eda5c2fb3",
+      "verdict": "PASS",
+      "sourcePagesChecked": [
+        11
+      ],
+      "answerChecked": true,
+      "allFourExplanationsChecked": true,
+      "findings": []
+    },
+    {
+      "id": "jidosha-2026-first-body-q37",
+      "candidateSha256": "6a75abc94c11ac3b9a596f67ca21728381a2b32fb0eea4c7603969a28b8b09d3",
+      "verdict": "HOLD",
+      "sourcePagesChecked": [
+        12
+      ],
+      "answerChecked": true,
+      "allFourExplanationsChecked": true,
+      "findings": [
+        {
+          "field": "choiceExplanations.?; choiceExplanations.?; choiceExplanations.?",
+          "issue": "All three distractor explanations only reject the listed sets without identifying which machine is misplaced or the correct set. General commercial tool capability cannot establish this textbook-specific table.",
+          "replacement": "Keep official answer (2). Obtain the JASPA body-painting textbook usage table and state the exact approved machine set for old-paint/rust removal, polyester putty and body filler, identifying the erroneous tool in each distractor before release.",
+          "source": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_bo.pdf#page=12"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,51 @@
+{
+  "allAnswersUnchanged": 200,
+  "kanri15OfficialAnswer": "3",
+  "keishitsu19": {
+    "replacements": 10,
+    "changedFields": 8,
+    "otherTextAndSymbolsUnchanged": true
+  },
+  "snModel": {
+    "formula": "y=βM+ε, Var(ε)=σ², β≠0; η=β²/σ², sd(ε/β)=σ/|β|=1/√η",
+    "checks": [
+      {
+        "beta": 2,
+        "sigma": 3,
+        "eta": 0.4444444444444444,
+        "calibratedErrorStandardDeviation": 1.5
+      },
+      {
+        "beta": -2,
+        "sigma": 3,
+        "eta": 0.4444444444444444,
+        "calibratedErrorStandardDeviation": 1.5
+      },
+      {
+        "beta": 4,
+        "sigma": 3,
+        "eta": 1.7777777777777777,
+        "calibratedErrorStandardDeviation": 0.75
+      },
+      {
+        "beta": 2,
+        "sigma": 1.5,
+        "eta": 1.7777777777777777,
+        "calibratedErrorStandardDeviation": 0.75
+      }
+    ],
+    "units": "η has dimension M^-2; calibrated error sd has dimension M",
+    "definitionReference": "https://journal.jogmec.go.jp/oilgas/termsearch/list/alphanumeric/snr.html"
+  },
+  "ichiki10": {
+    "originalChoicePreserved": true,
+    "varianceZeroCase": {
+      "variance": 0,
+      "standardDeviation": 0.0
+    },
+    "variancePositiveCase": {
+      "variance": 4,
+      "standardDeviation": 2.0
+    }
+  }
+}

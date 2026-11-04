@@ -1,0 +1,44 @@
+{
+  "checkedAtUtc": "2026-11-03T17:38:29.469292+00:00",
+  "releaseOriginals": 580,
+  "newIndependentPass": 55,
+  "referenceOriginals": 1,
+  "remainingContentOriginals": 29,
+  "commands": {
+    "pnpm validate:questions": {
+      "exitCode": 0,
+      "totalQuestions": 27024,
+      "fail": 0
+    },
+    "pnpm typecheck": {
+      "exitCode": 0
+    },
+    "related Vitest": {
+      "exitCode": 0,
+      "tests": 34
+    },
+    "Node automotive validator": {
+      "exitCode": 0,
+      "tests": 5
+    }
+  },
+  "logs": {
+    "wave1-tests": {
+      "path": "tmp/lq1c-wave1-tests.log",
+      "sha256": "cc39ee4d8e1da264b2abdbec5b9e1ccd9d94bf5948f29864714d969c10dff7d5"
+    },
+    "wave1-validate": {
+      "path": "tmp/lq1c-wave1-validate.log",
+      "sha256": "cb9f4ac96e4eb6a2181dc655ddfb249a701defc13a553ca9c82016f339842edd"
+    },
+    "wave1-typecheck": {
+      "path": "tmp/lq1c-wave1-typecheck.log",
+      "sha256": "6d1ec826c18a182b863486247163fd39cefb527606df2e469843aae09968180e"
+    },
+    "node-tests": {
+      "path": "tmp/lq1c-node-tests.log",
+      "sha256": "b1be0f42b2da725f2c7dab14973d892929f67e58a914287755f03f3028f30274"
+    }
+  },
+  "implementationReview": "lq1c-implementation-review.json"
+}

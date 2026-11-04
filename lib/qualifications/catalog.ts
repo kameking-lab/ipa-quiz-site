@@ -11,7 +11,8 @@ export type QualificationDomain =
   | "safety"
   | "accounting"
   | "welfare"
-  | "personal-services";
+  | "personal-services"
+  | "automotive";
 
 export type PublicationStatus =
   | "live"
@@ -30,6 +31,7 @@ export interface QualificationCatalogEntry {
   officialQuestionsUrl: string;
   officialReuseTermsUrl: string;
   status: PublicationStatus;
+  stagingDataPath?: string;
   reuseSummary: string;
   attributionTemplate?: string;
   /** 公開前に完了させる作業。空配列は公開可能を意味しない。 */
@@ -41,7 +43,11 @@ export interface QualificationCatalogEntry {
  * 「公式に問題と正答がある」だけでは live にせず、転載条件まで確認する。
  */
 export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
-  {
+{"slug":"keiryoshi","examCode":"keiryoshi","shortName":"一般計量士","fullName":"一般計量士","domain":"construction","administrator":"経済産業省","officialQuestionsUrl":"https://www.meti.go.jp/policy/economy/hyojun/techno_infra/keiryoshi.html","officialReuseTermsUrl":"https://www.meti.go.jp/main/rules.html","status":"live","reuseSummary":"第76回（令和7年実施）のみ100問を収録。第75回は未収録で、2回分の全問収録ではありません。出題時点の法令・基準に基づく全肢解説を確認できます。","remainingWork":["第75回は未収録"]},
+{"slug":"keiryoshi-nodo","examCode":"keiryoshi-nodo","shortName":"環境計量士（濃度関係）","fullName":"環境計量士（濃度関係）","domain":"construction","administrator":"経済産業省","officialQuestionsUrl":"https://www.meti.go.jp/policy/economy/hyojun/techno_infra/keiryoshi.html","officialReuseTermsUrl":"https://www.meti.go.jp/main/rules.html","status":"live","reuseSummary":"第76回（令和7年実施）のみ100問を収録。第75回は未収録で、2回分の全問収録ではありません。出題時点の法令・基準に基づく全肢解説を確認できます。","remainingWork":["第75回は未収録"]},
+{"slug":"keiryoshi-soon","examCode":"keiryoshi-soon","shortName":"環境計量士（騒音・振動関係）","fullName":"環境計量士（騒音・振動関係）","domain":"construction","administrator":"経済産業省","officialQuestionsUrl":"https://www.meti.go.jp/policy/economy/hyojun/techno_infra/keiryoshi.html","officialReuseTermsUrl":"https://www.meti.go.jp/main/rules.html","status":"live","reuseSummary":"第76回（令和7年実施）のみ100問を収録。第75回は未収録で、2回分の全問収録ではありません。出題時点の法令・基準に基づく全肢解説を確認できます。","remainingWork":["第75回は未収録"]},
+
+{
     slug: "kanteishi", examCode: "kanteishi", shortName: "不動産鑑定士", fullName: "不動産鑑定士試験（短答式）",
     domain: "real-estate", administrator: "国土交通省",
     officialQuestionsUrl: "https://www.mlit.go.jp/totikensangyo/kanteishi/content/002001126.pdf",
@@ -49,8 +55,8 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     reuseSummary: "令和7・8年度の短答式160原問を無料・回数制限なしで演習できます。原文・公式正答・全肢解説・原表を保持し、出典と加工内容を表示します。令和7年度行政法規問19は印刷原文と法令用語の違いを注記し、採点は公式正答5を使用します。",
     attributionTemplate: "出典：国土交通省 不動産鑑定士試験（短答式）問題・正答。公共データ利用規約に基づき過去問AIが加工。解説は過去問AIの独自作成。",
     remainingWork: [],
-  },
-  {
+},
+{
     slug: "kaikeishi", examCode: "kaikeishi", shortName: "公認会計士", fullName: "公認会計士試験（短答式）",
     domain: "accounting", administrator: "公認会計士・監査審査会",
     officialQuestionsUrl: "https://www.fsa.go.jp/cpaaob/kouninkaikeishi-shiken/r8shiken/01.pdf",
@@ -58,50 +64,48 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     reuseSummary: "令和8年試験第I回・第II回の短答式186原問を無料・回数制限なしで演習できます。原文・公式正答・実際の5肢または6肢の全解説と共通設例・図表を保持し、出典と加工内容を表示します。",
     attributionTemplate: "出典：公認会計士・監査審査会 令和8年公認会計士試験短答式問題・正答。公共データ利用規約に基づき過去問AIが加工。解説は過去問AIの独自作成。",
     remainingWork: [],
-  },
-  {
+},
+{
     slug: "riku-tech2", examCode: "riku-tech2", shortName: "第二級陸上無線技術士", fullName: "第二級陸上無線技術士試験",
     domain: "electrical", administrator: "公益財団法人日本無線協会",
     officialQuestionsUrl: "https://www.nichimu.or.jp/kshiken/siken/index.html", officialReuseTermsUrl: "https://www.nichimu.or.jp/kshiken/siken/index.html", status: "live",
     reuseSummary: "2026年1月・7月の公表過去問190原問を保存し、189原問を無料で回数制限なく演習できます。確認中の1月無線工学B B5は演習対象外です。原問の番号・図・語群を保持し、B問題は原問単位で5枠を個別採点します。法令は各実施回当時の内容です。",
     attributionTemplate: "出典：公益財団法人日本無線協会 第二級陸上無線技術士試験 公表過去問（日本語・非英語部分）。解説は過去問AI作成。",
     remainingWork: [],
-  },
-  {
+},
+{
     slug: "amateur2", examCode: "amateur2", shortName: "第二級アマチュア無線技士", fullName: "第二級アマチュア無線技士試験",
     domain: "electrical", administrator: "公益財団法人日本無線協会",
     officialQuestionsUrl: "https://www.nichimu.or.jp/kshiken/siken/index.html", officialReuseTermsUrl: "https://www.nichimu.or.jp/kshiken/siken/index.html", status: "live",
     reuseSummary: "2026年5月・8月の公表過去問110原問を保存し、109原問を無料で回数制限なく演習できます。確認中の5月工学A17は演習対象外です。B問題は原問単位で5枠を個別採点します。法令は各実施回当時の内容です。",
     attributionTemplate: "出典：公益財団法人日本無線協会 第二級アマチュア無線技士試験 公表過去問（日本語・非英語部分）。解説は過去問AI作成。",
     remainingWork: [],
-  },
-  {
+},
+{
     slug: "maritime-radar", examCode: "maritime-radar", shortName: "レーダー級海上特殊無線技士", fullName: "レーダー級海上特殊無線技士試験",
     domain: "electrical", administrator: "公益財団法人日本無線協会",
     officialQuestionsUrl: "https://www.nichimu.or.jp/kshiken/siken/index.html", officialReuseTermsUrl: "https://www.nichimu.or.jp/kshiken/siken/index.html", status: "live",
     reuseSummary: "2026年2月・6月の公表過去問48原問を、無料で回数制限なく演習できます。原問番号・全肢解説と必要図を保持しています。法令は各実施回当時の内容です。",
     attributionTemplate: "出典：公益財団法人日本無線協会 レーダー級海上特殊無線技士試験 公表過去問（日本語・非英語部分）。解説は過去問AI作成。",
     remainingWork: [],
-  },
-
-  {
+},
+{
     slug: "amateur1", examCode: "amateur1", shortName: "第一級アマチュア無線技士", fullName: "第一級アマチュア無線技士試験",
     domain: "electrical", administrator: "公益財団法人日本無線協会",
     officialQuestionsUrl: "https://www.nichimu.or.jp/kshiken/siken/index.html", officialReuseTermsUrl: "https://www.nichimu.or.jp/kshiken/siken/index.html", status: "live",
     reuseSummary: "2026年5月・8月の工学・法規120原問を保存し、119原問を無料で回数制限なく演習できます。確認中の5月工学A19は演習対象外です。B問題は原問単位で5枠を個別採点します。法令は各実施回当時の内容です。",
     attributionTemplate: "出典：公益財団法人日本無線協会 第一級アマチュア無線技士試験 公表過去問（日本語・非英語部分）。解説は過去問AI作成。",
     remainingWork: [],
-  },
-  {
+},
+{
     slug: "maritime-special1", examCode: "maritime-special1", shortName: "第一級海上特殊無線技士", fullName: "第一級海上特殊無線技士試験",
     domain: "electrical", administrator: "公益財団法人日本無線協会",
     officialQuestionsUrl: "https://www.nichimu.or.jp/kshiken/siken/index.html", officialReuseTermsUrl: "https://www.nichimu.or.jp/kshiken/siken/index.html", status: "live",
     reuseSummary: "2026年2月・6月の日本語の工学・法規48原問を、無料で回数制限なく演習できます。英語の筆記・口述、通信術は含みません。法令は各実施回当時の内容です。",
     attributionTemplate: "出典：公益財団法人日本無線協会 第一級海上特殊無線技士試験 公表過去問（日本語・非英語部分）。解説は過去問AI作成。",
     remainingWork: [],
-  },
-
-  {
+},
+{
     slug: "aviation-comm", examCode: "aviation-comm",
     shortName: "航空無線通信士", fullName: "航空無線通信士試験",
     domain: "electrical", administrator: "公益財団法人日本無線協会",
@@ -109,8 +113,8 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     reuseSummary: "2026年2月・8月の公表済み日本語筆記2回、各回の無線工学14問・法規20問、計68原問を収録。公式正答・全肢解説・本文や数式と語群を保持した原問題画像で、無料で回数制限なく演習できます。B問題は1原問の5枠を個別に採点します。英語の筆記・英会話・通信術は収録していません。法令は各実施回当時の内容です。",
     attributionTemplate: "出典：公益財団法人日本無線協会 航空無線通信士試験 ○年○月 法規・無線工学 A/B問○（問題・正答）。原問題画像の切出しと解説は過去問AIが作成・加工。",
     remainingWork: [],
-  },
-  {
+},
+{
     slug: "maritime2", examCode: "maritime2",
     shortName: "第二級海上無線通信士", fullName: "第二級海上無線通信士試験",
     domain: "electrical", administrator: "公益財団法人日本無線協会",
@@ -118,8 +122,8 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     reuseSummary: "2026年3月・9月の無線工学の基礎・無線工学A・無線工学B各25問と法規各20問、計190原問を収録。公式正答・全肢の独自解説・原問題画像で無料、回数制限なく演習できます。B問題40原問は各5枠を個別に採点します。英語の筆記・会話と通信術は含みません。法令は各実施回当時の内容です。",
     attributionTemplate: "出典：公益財団法人日本無線協会 第二級海上無線通信士試験 ○年○月 ○科目 A/B問○（問題・正答）。解説と原図の切出しは過去問AIが作成・加工。",
     remainingWork: ["英語・通信術は未収録", "現行法令との違いを学習時に確認"],
-  },
-  {
+},
+{
     slug: "maritime1", examCode: "maritime1",
     shortName: "第一級海上無線通信士", fullName: "第一級海上無線通信士試験",
     domain: "electrical", administrator: "公益財団法人日本無線協会",
@@ -127,8 +131,8 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     reuseSummary: "2026年3月・9月の日本語筆記4科目190問を無料・回数制限なしで演習できます。公式問題画像と全肢解説を掲載し、B40問は各5枠を個別採点します。英語・通信術は未収録です。",
     attributionTemplate: "出典：公益財団法人日本無線協会 第一級海上無線通信士試験 科目別過去問。解説は過去問AIが作成・校閲。",
     remainingWork: ["英語・通信術は未収録"],
-  },
-  {
+},
+{
     slug: "general1", examCode: "general1",
     shortName: "第一級総合無線通信士", fullName: "第一級総合無線通信士試験",
     domain: "electrical", administrator: "公益財団法人日本無線協会",
@@ -136,8 +140,8 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     reuseSummary: "2026年3月・9月の公表済み日本語筆記2回を収録。各回の無線工学の基礎・無線工学A・無線工学B・法規各25問、地理40問、計280原問を保存し、このうち270原問を無料で回数制限なく演習できます。A問題160原問・B問題40原問は原問番号と原問題画像を保持し、B問題は各5枠を個別採点します。地理80原問のうち70原問は選択式で演習でき、10原問は解説確認中のため保留です。英語の筆記・通信術（実技）は未収録です。法令は各実施回当時の内容です。",
     attributionTemplate: "出典：公益財団法人日本無線協会 第一級総合無線通信士試験 ○年○月 無線工学の基礎・無線工学A・無線工学B・法規・地理 A/B問○（問題・正答）。原問題画像の切出しと解説は過去問AIが作成・加工。",
     remainingWork: ["英語の筆記・通信術（実技）は未収録", "現行法令との差を学習時に確認"],
-  },
-  {
+},
+{
     slug: "general2", examCode: "general2",
     shortName: "第二級総合無線通信士", fullName: "第二級総合無線通信士試験",
     domain: "electrical", administrator: "公益財団法人日本無線協会",
@@ -145,8 +149,8 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     reuseSummary: "2026年3月・9月の公表済み日本語筆記2回を収録。各回の無線工学の基礎・無線工学A・無線工学B・法規各25問、地理40問、計280原問を無料で回数制限なく演習できます。A問題160原問・B問題40原問は原問番号と原問題画像を保持し、B問題は各5枠を個別採点します。地理80原問は選択式です。英語の筆記・通信術（実技）は未収録です。法令は各実施回当時の内容です。",
     attributionTemplate: "出典：公益財団法人日本無線協会 第二級総合無線通信士試験 ○年○月 無線工学の基礎・無線工学A・無線工学B・法規・地理 A/B問○（問題・正答）。原問題画像の切出しと解説は過去問AIが作成・加工。",
     remainingWork: ["英語の筆記・通信術（実技）は未収録", "現行法令との差を学習時に確認"],
-  },
-  {
+},
+{
     slug: "general3", examCode: "general3",
     shortName: "第三級総合無線通信士", fullName: "第三級総合無線通信士試験",
     domain: "electrical", administrator: "公益財団法人日本無線協会",
@@ -154,8 +158,8 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     reuseSummary: "2026年3月・9月の公表済み日本語筆記2回、各回の無線工学の基礎25問・無線工学25問・法規20問、計140原問を収録。公式正答と独自解説・原問題画像で無料、回数制限なく演習できます。B問題38原問は各5枠を個別に採点します。英語の筆記と通信術は未収録です。法令は各実施回当時の内容です。",
     attributionTemplate: "出典：公益財団法人日本無線協会 第三級総合無線通信士試験 ○年○月 無線工学の基礎・無線工学・法規 A/B問○（問題・正答）。原問題画像の切出しと解説は過去問AIが作成・加工。",
     remainingWork: ["英語の筆記・通信術は未収録", "現行法令との差を学習時に確認"],
-  },
-  {
+},
+{
     slug: "maritime3", examCode: "maritime3",
     shortName: "第三級海上無線通信士", fullName: "第三級海上無線通信士試験",
     domain: "electrical", administrator: "公益財団法人日本無線協会",
@@ -163,8 +167,8 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     reuseSummary: "2026年3月・9月の無線工学各15問・法規各20問、計70原問を収録。公式正答・全肢解説・原図で演習できます。B問題18原問は各5枠を個別に採点します。英語の筆記・会話と通信術は含みません。法令は実施回当時の内容です。",
     attributionTemplate: "出典：公益財団法人日本無線協会 第三級海上無線通信士試験 ○年○月 ○科目 問○（問題・正答）。解説と原図の切出しは過去問AIが作成・加工。",
     remainingWork: ["英語・通信術は未収録", "現行法令との差を学習時に確認"],
-  },
-  {
+},
+{
     slug: "land-special2", examCode: "land-special2",
     shortName: "第二級陸上特殊無線技士", fullName: "第二級陸上特殊無線技士試験",
     domain: "electrical", administrator: "公益財団法人日本無線協会",
@@ -172,8 +176,8 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     reuseSummary: "公表された2021年10月・2022年2月の歴史筆記2回を収録。各回の法規12問・無線工学12問、計48原問を公式正答・全肢解説・必要な原図で演習できます。現在のCBT例題は含みません。法令は各実施回当時の内容です。",
     attributionTemplate: "出典：公益財団法人日本無線協会 第二級陸上特殊無線技士試験 ○年○月 ○科目 問○（問題・正答）。解説と原図の切出しは過去問AIが作成・加工。",
     remainingWork: ["現在のCBT例題は未収録", "現行法令との差を学習時に確認"],
-  },
-  {
+},
+{
     slug: "land-special3", examCode: "land-special3",
     shortName: "第三級陸上特殊無線技士", fullName: "第三級陸上特殊無線技士試験",
     domain: "electrical", administrator: "公益財団法人日本無線協会",
@@ -181,9 +185,8 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     reuseSummary: "公表された2021年10月・2022年2月の歴史筆記2回を収録。各回の法規12問・無線工学12問、計48原問を公式正答・全肢解説・必要な原図で演習できます。現在のCBT例題は含みません。法令は各実施回当時の内容です。",
     attributionTemplate: "出典：公益財団法人日本無線協会 第三級陸上特殊無線技士試験 ○年○月 ○科目 問○（問題・正答）。解説と原図の切出しは過去問AIが作成・加工。",
     remainingWork: ["現在のCBT例題は未収録", "現行法令との差を学習時に確認"],
-  },
-
-  {
+},
+{
     slug: "riku-toku-kokunai", examCode: "riku-toku-kokunai",
     shortName: "国内電信級陸上特殊無線技士", fullName: "国内電信級陸上特殊無線技士試験",
     domain: "electrical", administrator: "公益財団法人日本無線協会",
@@ -191,8 +194,8 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     reuseSummary: "日本無線協会が公表した2026年2月・6月の筆記法規各12問、計24原問と公式正答、全選択肢の独自解説を収録。受験学習用の公表過去問であり、現在のCBT例題や独自問題は収録していません。法令は各試験当時の内容です。",
     attributionTemplate: "出典：公益財団法人日本無線協会 国内電信級陸上特殊無線技士試験 ○年○月 法規 問○（問題・正答）。解説は過去問AIが独自作成。",
     remainingWork: ["現行法令との違いを学習時に確認"],
-  },
-  {
+},
+{
     slug: "riku-tech1", examCode: "riku-tech1",
     shortName: "第一級陸上無線技術士", fullName: "第一級陸上無線技術士試験",
     domain: "electrical", administrator: "公益財団法人日本無線協会",
@@ -200,8 +203,8 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     reuseSummary: "2026年1月・7月の2回、無線工学の基礎・無線工学A・無線工学B各25問と法規20問、計190原問を収録。公式正答・全肢解説・原図と解答群で演習できます。B問題は1原問の5枠を個別に採点します。法令は各実施回当時の内容です。",
     attributionTemplate: "出典：公益財団法人日本無線協会 第一級陸上無線技術士試験 ○年○月 ○科目 問○（問題・正答）。解説と原図の切出しは過去問AIが作成・加工。",
     remainingWork: ["現行法令との差を学習時に確認"],
-  },
-  {
+},
+{
     slug: "maritime4", examCode: "maritime4",
     shortName: "第四級海上無線通信士", fullName: "第四級海上無線通信士試験",
     domain: "electrical", administrator: "公益財団法人日本無線協会",
@@ -209,8 +212,8 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     reuseSummary: "2026年2月・8月の2回、各回の無線工学18問・法規20問、計76原問を収録。公式正答・全肢解説・原図と解答群で演習できます。A/Bは同じ問題冊子内の区分で、B問題は1原問の5枠を個別に採点します。法令は各実施回当時の内容です。",
     attributionTemplate: "出典：公益財団法人日本無線協会 第四級海上無線通信士試験 ○年○月 法規・無線工学 問○（問題・正答）。解説と原図の切出しは過去問AIが作成・加工。",
     remainingWork: ["現行法令との差を学習時に確認"],
-  },
-  {
+},
+{
     slug: "land-special1", examCode: "land-special1",
     shortName: "第一級陸上特殊無線技士", fullName: "第一級陸上特殊無線技士試験",
     domain: "electrical", administrator: "公益財団法人日本無線協会",
@@ -218,8 +221,8 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     reuseSummary: "2026年2月09:30 A版・6月09:30 A版の2実施回を収録。各回の法規12問・無線工学24問、計72原問を公式正答・全肢の独自解説・必要な原図付きで演習できます。同じ2期の13:30 B版72問は未収録です。法令は各実施回当時の内容です。",
     attributionTemplate: "出典：公益財団法人日本無線協会 第一級陸上特殊無線技士試験 ○年○月09:30 A版 法規・無線工学 問○（問題・正答）。解説と図の切出しは過去問AIが作成・加工。",
     remainingWork: ["2026年2月・6月13:30 B版は未収録の別実施回", "現行法令との差を学習時に確認"],
-  },
-  {
+},
+{
     slug: "koku-toku", examCode: "koku-toku",
     shortName: "航空特殊無線技士", fullName: "航空特殊無線技士試験",
     domain: "electrical", administrator: "公益財団法人日本無線協会",
@@ -227,8 +230,8 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     reuseSummary: "日本無線協会が公表した2026年2月・6月の筆記試験、各回法規12問・無線工学12問、計48原問と公式正答、全選択肢の独自解説を収録。原図は設問ごとに切り出して表示しています。英語科目は含みません。法令は各試験当時の内容です。",
     attributionTemplate: "出典：公益財団法人日本無線協会 航空特殊無線技士試験 ○年○月 法規・無線工学 問○（問題・正答）。解説と図の切出しは過去問AIが作成・加工。",
     remainingWork: ["現行法令との違いを学習時に確認"],
-  },
-  {
+},
+{
     slug: "kai-toku2", examCode: "kai-toku2",
     shortName: "第二級海上特殊無線技士", fullName: "第二級海上特殊無線技士試験",
     domain: "electrical", administrator: "公益財団法人日本無線協会",
@@ -236,8 +239,8 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     reuseSummary: "日本無線協会が公表した2022年10月・2023年2月の旧筆記2回分、各回法規12問・無線工学12問の48原問を保存し、確認済み48原問を演習に収録。公式正答・全選択肢の独自解説・原図付きの過去問を無料で回数制限なく学習できます。現在のCBT例題、英語、独自問題は演習に含みません。法令は各試験当時の内容です。",
     attributionTemplate: "出典：公益財団法人日本無線協会 第二級海上特殊無線技士試験 ○年○月 法規・無線工学 問○（問題・正答）。解説は過去問AIが独自作成。",
     remainingWork: ["現行法令との違いを学習時に確認"],
-  },
-  {
+},
+{
     slug: "kai-toku3", examCode: "kai-toku3",
     shortName: "第三級海上特殊無線技士", fullName: "第三級海上特殊無線技士試験",
     domain: "electrical", administrator: "公益財団法人日本無線協会",
@@ -245,8 +248,8 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     reuseSummary: "日本無線協会が公表した2023年2月・2022年10月の筆記2回分、各回法規20問・無線工学10問、計60原問と公式正答、全選択肢の独自解説を収録。現在のCBT例題や独自問題は収録していません。法令は各試験当時の内容です。",
     attributionTemplate: "出典：公益財団法人日本無線協会 第三級海上特殊無線技士試験 ○年○月 法規・無線工学 問○（問題・正答）。解説は過去問AIが独自作成。",
     remainingWork: ["現行法令との違いを学習時に確認"],
-  },
-  {
+},
+{
     slug: "chosashi",
     examCode: "chosashi",
     shortName: "土地家屋調査士",
@@ -259,14 +262,14 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     reuseSummary: "令和7・6年度の午前各11問・午後各22問、計66原問を収録。択一60問は法務省の公式正答と全選択肢の独自解説を掲載。記述6問は公式問題に基づく独自解答例であり、法務省の公式解答ではありません。法務省の利用条件には第三者権利等の例外があります。",
     attributionTemplate: "出典：法務省 令和○年度土地家屋調査士試験 午前・午後 第○問。解説・記述解答例は過去問AIが独自作成。",
     remainingWork: ["法令改正の継続確認", "第三者権利等の例外条件は掲載者が確認"],
-  },
-  {
+},
+{
     slug: "chusho-secondary", shortName: "中小企業診断士二次", fullName: "中小企業診断士第2次試験", domain: "accounting", administrator: "一般社団法人 日本中小企業診断士協会連合会",
     officialQuestionsUrl: "https://www.jf-cmca.jp/contents/010_c_/shikenmondai.html", officialReuseTermsUrl: "https://www.jf-cmca.jp/contents/017_houtekijikou.html", status: "live",
     reuseSummary: "2025・2024年度の全8事例・33原問・54解答例を収録。公式問題・出題趣旨と、当サイトが作成した独自解答例・計算過程を確認できます。",
     attributionTemplate: "出典：日本中小企業診断士協会連合会 2025・2024年度 中小企業診断士第2次試験", remainingWork: ["次年度公開資料の確認"],
-  },
-  {
+},
+{
     slug: "fp1",
     examCode: "fp1",
     shortName: "FP1級",
@@ -279,8 +282,8 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     reuseSummary: "2026年5月学科は基礎50問・応用15原問62回答欄を収録。2026年9月学科は基礎全50問と応用全15原問57回答欄を収録。各原問の正答と全選択肢または回答欄の解説を掲載。",
     attributionTemplate: "出典：一般社団法人金融財政事情研究会 ファイナンシャル・プランニング技能検定1級 学科試験 基礎編（2026年5月・9月）",
     remainingWork: ["法令改正内容の継続確認"],
-  },
-  {
+},
+{
     slug: "fp3",
     examCode: "fp3",
     shortName: "FP3級",
@@ -293,8 +296,8 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     reuseSummary: "公式に公表された学科・実技の問題と正答を、年度ごとに収録。",
     attributionTemplate: "出典：日本FP協会 3級ファイナンシャル・プランニング技能検定 学科試験（公表年月）",
     remainingWork: ["2026年公表問題の追加", "法改正影響を受ける問題の失効管理"],
-  },
-  {
+},
+{
     slug: "fp2",
     examCode: "fp2",
     shortName: "FP2級",
@@ -306,9 +309,9 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     status: "live",
     reuseSummary: "日本FP協会・金融財政事情研究会が公表した学科・実技の問題を収録。",
     attributionTemplate: "出典：日本FP協会 2級ファイナンシャル・プランニング技能検定（公表年月）",
-      remainingWork: ["次回公表分の追加", "法改正影響の継続確認"],
-  },
-  {
+    remainingWork: ["次回公表分の追加", "法改正影響の継続確認"],
+},
+{
     slug: "denken3",
     examCode: "denken3",
     shortName: "電験三種",
@@ -321,8 +324,8 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     reuseSummary: "従来320回答単位・264原問を保持し、2026年度上期の理論・電力・機械・法規から61原問を追加。固有325原問を収録。2025年度下期の理論・電力・機械・法規は旧演習との重複を除いて数えています。",
     attributionTemplate: "出典：令和○年度○期第三種電気主任技術者試験 ○○科目",
     remainingWork: ["2026年度上期の未掲載原問と法規の保留問を一次根拠で確認", "数式・図のアクセシビリティを継続改善"],
-  },
-  {
+},
+{
     slug: "denken1",
     examCode: "denken1",
     shortName: "電験一種",
@@ -335,8 +338,8 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     reuseSummary: "2026年度一次試験の従来5原問・25空欄を保持し、2025・2026年度の理論・電力・機械36原問・204回答欄を原問単位でも収録。重複2原問を除いた固有の掲載原問は39件です。公式原図・解答群と各欄の解説を確認できます。",
     attributionTemplate: "出典：令和○年度第一種電気主任技術者一次試験○○科目A問題問○",
     remainingWork: ["両年度の未収録原問（個別HOLDを含む）", "二次試験"],
-  },
-  {
+},
+{
     slug: "denken2",
     examCode: "denken2",
     shortName: "電験二種",
@@ -349,8 +352,8 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     reuseSummary: "2026年度一次試験は理論・電力・機械・法規の30原問・155回答欄、2025年度は理論・機械16原問・80回答欄と電力・法規11原問・55回答欄を収録。計57原問・290回答欄です。公式問題の図・数式・解答群と、各欄の正答・解説を確認できます。",
     attributionTemplate: "出典：令和○年度第二種電気主任技術者一次試験○○科目○問題問○",
     remainingWork: ["2025年度法規の未収録3原問と2024年度以前の未収録原問の追加", "二次試験の追加"],
-  },
-  {
+},
+{
     slug: "denko2",
     examCode: "denko2",
     shortName: "第二種電気工事士",
@@ -363,8 +366,8 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     reuseSummary: "公式に公表された過去問題と正答を、年度ごとに収録。",
     attributionTemplate: "出典：令和○年度○期第二種電気工事士学科試験",
     remainingWork: [],
-  },
-  {
+},
+{
     slug: "denko1",
     examCode: "denko1",
     shortName: "第一種電気工事士",
@@ -377,8 +380,8 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     reuseSummary: "令和8年度上期学科試験(CBT)で公表された出題例の全50問(一般問題40問・配線図問題10問)と各選択肢の解説を収録。",
     attributionTemplate: "出典：令和○年度第一種電気工事士○期学科試験",
     remainingWork: ["令和7年度下期など過去の学科試験の追加", "技能試験(候補問題・欠陥判断基準)の掲載検討"],
-  },
-  {
+},
+{
     slug: "sekou-doboku2",
     examCode: "civil2",
     shortName: "2級土木施工管理",
@@ -391,8 +394,8 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     reuseSummary: "令和8年度前期と令和7年度10月実施分の第一次検定（土木）各全66問と各選択肢の解説を収録。",
     attributionTemplate: "出典：全国建設研修センター ○年度2級土木施工管理技術検定 第一次検定（土木）",
     remainingWork: ["他年度・後期の追加", "工事仕様書の改定に伴う解説更新"],
-  },
-  {
+},
+{
     slug: "sekou-kankoji2",
     examCode: "kankoji2",
     shortName: "2級管工事施工管理",
@@ -405,8 +408,8 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     reuseSummary: "令和8年度前期と令和7年度後期の第一次検定を各全52問、各選択肢の解説付きで収録。",
     attributionTemplate: "出典：全国建設研修センター ○年度2級管工事施工管理技術検定 第一次検定（前期／後期）",
     remainingWork: ["他年度の追加", "公共建築工事標準仕様書の改定に伴う解説更新"],
-  },
-  {
+},
+{
     slug: "sekou-zoen2",
     examCode: "zoen2",
     shortName: "2級造園施工管理",
@@ -419,8 +422,8 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     reuseSummary: "令和8年度前期と令和7年度後期の第一次検定を各全40問、計80問収録。公式問題・正答、図表、全選択肢の解説に対応。",
     attributionTemplate: "出典：全国建設研修センター ○年度2級造園施工管理技術検定 第一次検定（前期／後期）",
     remainingWork: ["他年度の追加"],
-  },
-  {
+},
+{
     slug: "sekou-zoen1",
     examCode: "zoen1",
     shortName: "1級造園施工管理",
@@ -433,8 +436,8 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     reuseSummary: "令和8年度の第一次検定の問題A・Bから、公式問題・正答と照合した設問を段階的に収録。",
     attributionTemplate: "出典：全国建設研修センター 令和8年度1級造園施工管理技術検定 第一次検定 試験問題A／B",
     remainingWork: ["同年度の未収録問題・図表の確認と追加", "他年度の追加"],
-  },
-  {
+},
+{
     slug: "sekou-tsushin2",
     examCode: "tsushin2",
     shortName: "2級電気通信工事施工管理",
@@ -444,11 +447,11 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     officialQuestionsUrl: "https://www.jctc.jp/mondai/",
     officialReuseTermsUrl: "https://www.jctc.jp/mondai/",
     status: "live",
-    reuseSummary: "令和8年度前期の第一次検定から、公式問題・正答と照合した設問を段階的に収録。",
-    attributionTemplate: "出典：全国建設研修センター 令和8年度2級電気通信工事施工管理技術検定 第一次検定（前期）",
-    remainingWork: ["同年度の図表を使う問題の確認・追加", "他年度の追加"],
-  },
-  {
+    reuseSummary: "令和7年度後期・令和8年度前期の第一次検定を各65問収録。通常採点129問と公式解答参照1問。",
+    attributionTemplate: "出典：全国建設研修センター 令和7年度後期・令和8年度前期 2級電気通信工事施工管理技術検定 第一次検定",
+    remainingWork: ["第二次検定は未収録"],
+},
+{
     slug: "sekou-tsushin1",
     examCode: "tsushin1",
     shortName: "1級電気通信工事施工管理",
@@ -461,8 +464,8 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     reuseSummary: "2026・2025年度の第一次検定を各90原問（問題A55・B35）、全肢解説付きで収録。2025年度は公開保存コピーから取得し、公式サイトからの直接取得は未確認。",
     attributionTemplate: "出典：全国建設研修センター 令和○年度1級電気通信工事施工管理技術検定 第一次検定 試験問題A／B",
     remainingWork: [],
-  },
-  {
+},
+{
     slug: "kaigo",
     examCode: "kaigo",
     shortName: "介護福祉士",
@@ -475,8 +478,8 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     reuseSummary: "第38回（令和7年度）の全125問（総合問題・図の問題を含む）と全選択肢の解説を収録。",
     attributionTemplate: "出典：公益財団法人社会福祉振興・試験センター 第○回介護福祉士国家試験 問題○",
     remainingWork: ["第37回・第36回の追加", "法改正で成立しなくなった問題の失効管理"],
-  },
-  {
+},
+{
     slug: "shakai",
     examCode: "shakai",
     shortName: "社会福祉士",
@@ -489,8 +492,8 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     reuseSummary: "第38回（令和7年度）の全129問（共通科目84問・専門科目45問）と全選択肢の解説を収録。",
     attributionTemplate: "出典：公益財団法人社会福祉振興・試験センター 第○回社会福祉士国家試験 問題○",
     remainingWork: ["第37回・第36回の追加", "法改正で成立しなくなった問題の失効管理"],
-  },
-  {
+},
+{
     slug: "seishin",
     examCode: "seishin",
     shortName: "精神保健福祉士",
@@ -503,8 +506,8 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     reuseSummary: "第28回（令和7年度）の専門科目48問・共通科目84問と、第27回（令和6年度）の専門科目48問・共通科目81問、全選択肢の解説を収録。",
     attributionTemplate: "出典：公益財団法人社会福祉振興・試験センター 第○回精神保健福祉士国家試験 問題○",
     remainingWork: ["第27回共通科目の保留3問（問題4・69・76）の原典照合", "第26回以前は旧カリキュラムのため収録方針の決定", "法改正で成立しなくなった問題の失効管理"],
-  },
-  {
+},
+{
     slug: "sekou-kenchiku1",
     shortName: "1級建築施工管理",
     fullName: "1級建築施工管理技術検定",
@@ -515,20 +518,8 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     status: "permission-required",
     reuseSummary: "公式ページは問題・正答肢を公開する一方、掲載記事・写真・図表の転載を禁止。",
     remainingWork: ["試験実施機関からWeb問題集への転載許諾を取得", "許諾条件に従い出典表記を確定"],
-  },
-  {
-    slug: "sekou-denki1",
-    shortName: "1級電気工事施工管理",
-    fullName: "1級電気工事施工管理技術検定",
-    domain: "construction",
-    administrator: "建設業振興基金",
-    officialQuestionsUrl: "https://www.fcip-shiken.jp/about/",
-    officialReuseTermsUrl: "https://www.fcip-shiken.jp/about/",
-    status: "permission-required",
-    reuseSummary: "建築施工管理と同じページに転載禁止表示がある。",
-    remainingWork: ["試験実施機関からWeb問題集への転載許諾を取得"],
-  },
-  {
+},
+{
     slug: "sekou-doboku1",
     examCode: "civil1",
     shortName: "1級土木施工管理",
@@ -541,8 +532,8 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     reuseSummary: "令和8年度（7月実施）の第一次検定から、試験問題A全66問と試験問題B 34問を各選択肢の解説付きで収録。",
     attributionTemplate: "出典：全国建設研修センター ○年度1級土木施工管理技術検定 第一次検定 試験問題A／B",
     remainingWork: ["試験問題B No.7の解説確定と追加", "令和7年度分の追加"],
-  },
-  {
+},
+{
     slug: "takken",
     examCode: "takken",
     shortName: "宅建",
@@ -554,8 +545,8 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     status: "live",
     reuseSummary: "2024・2025年度の公式問題・正解番号表を掲載し、各年度の解説に法令基準日を表示。",
     remainingWork: [],
-  },
-  {
+},
+{
     slug: "tohan-kansai",
     examCode: "tohan",
     shortName: "登録販売者（関西）",
@@ -568,8 +559,8 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     reuseSummary: "令和7年度（2025年8月23日実施）の全120問と各選択肢の解説を収録。",
     attributionTemplate: "出典：関西広域連合 令和○年度 登録販売者試験（前半／後半）問○",
     remainingWork: ["令和8年度は公式の「正答(例)」のみで確定正答の公表待ち", "他の年度（令和元〜6年度）の追加", "東京都・神奈川県など他ブロックは個別に確認"],
-  },
-  {
+},
+{
     slug: "kanri",
     examCode: "kanri",
     shortName: "管理業務主任者",
@@ -582,20 +573,8 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     reuseSummary: "令和6年度・令和7年度の公式問題を、公式正答と学習用の全選択肢解説付きで演習できます。掲載数は現在演習できる問題の数です。",
     attributionTemplate: "出典：令和○年度 管理業務主任者試験問題 問○",
     remainingWork: ["令和7年度の残る34問を公式正答・一次根拠と照合", "令和8年度試験の公表後に法令基準日を確認して追加"],
-  },
-  {
-    slug: "gyoseishoshi",
-    shortName: "行政書士",
-    fullName: "行政書士試験",
-    domain: "legal",
-    administrator: "行政書士試験研究センター",
-    officialQuestionsUrl: "https://www.gyosei-shiken.or.jp/",
-    officialReuseTermsUrl: "https://gyosei-shiken.or.jp/doc/about/copyright.html",
-    status: "permission-required",
-    reuseSummary: "書籍・ホームページ等への掲載にはセンターの許諾が必要。",
-    remainingWork: ["掲載許諾を申請", "第三者著作物により非公開の設問を除外"],
-  },
-  {
+},
+{
     slug: "eisei1",
     examCode: "eisei1",
     shortName: "第一種衛生管理者",
@@ -608,8 +587,8 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     reuseSummary: "2025年10月・2026年4月の公表試験各44問、計88問を公式問題・正答と照合して収録。",
     attributionTemplate: "出典：安全衛生技術試験協会 令和8年4月公表 第一種衛生管理者免許試験",
     remainingWork: ["2026年1月以降に施行された法令を扱う問題は別途更新確認"],
-  },
-  {
+},
+{
     slug: "eisei2",
     examCode: "eisei2",
     shortName: "第二種衛生管理者",
@@ -622,8 +601,8 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     reuseSummary: "2025年10月・2026年4月の公表試験各30問、計60問を公式問題・正答と照合して収録。",
     attributionTemplate: "出典：安全衛生技術試験協会 令和○年○月公表 第二種衛生管理者免許試験",
     remainingWork: ["2026年1月以降に施行された法令を扱う問題は別途更新確認"],
-  },
-  {
+},
+{
     slug: "gijutsushi-soukan",
     examCode: "soukan",
     shortName: "技術士 総合技術監理部門",
@@ -636,8 +615,8 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     reuseSummary: "令和7年度・令和8年度の択一式を公式問題PDF・正答PDFと照合して収録。日本技術士会に明示の転載条件はなく、衛生管理者と同様に出典を明記し、解説が独自作成で同会と無関係であることを各問に表示する。",
     attributionTemplate: "出典：公益社団法人日本技術士会 令和○年度技術士第二次試験 総合技術監理部門 必須科目 択一式 Ⅰ－1－○",
     remainingWork: ["各年度の問題冊子が示す法令基準日（4月1日）より後の改正は別途更新確認", "記述式（Ⅰ－2）は模範解答が非公開のため収録しない"],
-  },
-  {
+},
+{
     slug: "hoikushi",
     examCode: "hoikushi",
     shortName: "保育士試験",
@@ -650,8 +629,8 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     reuseSummary: "公開中は令和8年度前期の筆記試験9科目・1回分154問。令和7年度後期は未公開。",
     attributionTemplate: "出典：一般社団法人全国保育士養成協議会 令和○年度○期保育士試験 筆記試験「○○」問○",
     remainingWork: ["問題転載の許諾根拠を再確認", "令和7年度後期の残5科目・全肢解説・独立査読を準備", "法改正・指針改定の継続確認", "第三者の楽譜・図版の権利と再現性を設問単位で確認"],
-  },
-  {
+},
+{
     slug: "mankan",
     examCode: "mankan",
     shortName: "マンション管理士",
@@ -664,8 +643,8 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     reuseSummary: "令和6年度・令和7年度の公式各50問（計100問）を公式問題PDF・正答PDFと照合して収録。マンション管理センターに明示の転載条件の記載はなく、出典を明記し、解説が独自作成で同センターとは無関係であることを各問に表示する公開扱い（司令塔判断）。",
     attributionTemplate: "出典：令和○年度 マンション管理士試験 問○（公益財団法人マンション管理センター）",
     remainingWork: ["令和6年度問40（建築物省エネ法の増築届出基準）は公式正解の法的根拠に一次資料で到達できず保留", "令和8年度試験の公表後に追加を検討"],
-  },
-  {
+},
+{
     slug: "kashikin",
     examCode: "kashikin",
     shortName: "貸金業務取扱主任者",
@@ -678,8 +657,8 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     reuseSummary: "第20回（令和7年度）・第19回（令和6年度）の全50問を公式問題PDF・正答PDFと照合して収録。日本貸金業協会に明示の転載条件はなく、衛生管理者・技術士総合技術監理部門と同様に出典を明記し、解説が独自作成で同協会と無関係であることを各問に表示する。",
     attributionTemplate: "出典：一般社団法人日本貸金業協会 令和○年度（第○回）貸金業務取扱主任者資格試験問題（問題・正答）問○",
     remainingWork: ["各回の問題冊子が示す基準日（試験実施日）より後の法改正は別途更新確認"],
-  },
-  {
+},
+{
     slug: "chusho-kigyo-shindanshi",
     examCode: "chusho-kigyo-shindanshi",
     shortName: "中小企業診断士",
@@ -692,8 +671,8 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     reuseSummary: "2025・2026年度の第1次試験7科目、417原問・454解答単位・2088選択肢を公式問題・正答に照合して準備。問題と正答の出典は試験実施団体、解説は当サイトの独自作成。協会の法的事項は事前承諾のない複製・公開・転載・再利用を禁止し、利用規約は商業目的利用を禁止する。承諾を得た記録はなく、一般掲載可否はオーナー判断待ち。",
     attributionTemplate: "出典：一般社団法人 日本中小企業診断士協会連合会 令和○年度 中小企業診断士 第1次試験 ○科目 問○（問題・正答）",
     remainingWork: ["公式法的事項の事前承諾要件と利用規約の商業目的禁止を踏まえたオーナーの一般掲載判断", "図表の原本照合と画像の最終配置確認"],
-  },
-  {
+},
+{
     slug: "sharoushi",
     examCode: "sharoushi",
     shortName: "社会保険労務士",
@@ -706,8 +685,8 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     reuseSummary: "第58回（令和8年度）・第57回（令和7年度）の択一式107原問・全535肢の解説と、選択式16原問・80空欄を原形で収録しています。最新2回の全156原問中123原問の途中公開です。択一式の労基・安衛16原問、労災保険法14原問、雇用保険法8原問、健康保険法19原問、厚生年金保険法16原問、国民年金法20原問、一般常識14原問を一次資料で確認しました。国民年金法は両年度各10原問が揃っています。出典と試験時点を各問に表示し、解説は過去問AIの独自作成です。一般掲載の可否はオーナーが確認します。",
     attributionTemplate: "出典：全国社会保険労務士会連合会 試験センター 第○回（令和○年度）社会保険労務士試験 択一式・選択式（加工・解説）",
     remainingWork: ["未収録33原問（択一式のみ）の原典・正答・試験時点資料を確認", "一般掲載の可否はオーナー確認"],
-  },
-  {
+},
+{
     slug: "sagyo-ryohoshi",
     examCode: "sagyo-ryohoshi",
     shortName: "作業療法士",
@@ -719,8 +698,8 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     status: "live",
     reuseSummary: "第61・60回の午前・午後から、原文・正答・全肢解説を確認した310問を部分収録。原本図と全肢解説を確認した11問を追加し、公式採点除外の第60回午後98・第61回午前42は出題対象に含めません。図・専門根拠・代替正答の未確認問は未掲載。最新2回の午前と午後全体は未完備です。",
     remainingWork: ["未収録問題の原本図・専門根拠・代替正答の局所確認", "最新2回の残る午前・午後問題"],
-  },
-  {
+},
+{
     slug: "shino-kunrenshi",
     examCode: "shino-kunrenshi",
     shortName: "視能訓練士",
@@ -732,8 +711,8 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     status: "live",
     reuseSummary: "第56・55回の午前・午後から、原文・正答・全肢解説を確認した220問を部分収録。別冊図・専門根拠の未確認問は未掲載。最新2回の午前と午後全体は未完備です。",
     remainingWork: ["未収録問題の別冊図と専門根拠の局所確認", "最新2回の残る午前・午後問題"],
-  },
-  {
+},
+{
     slug: "rinsho-kogishi",
     examCode: "rinsho-kogishi",
     shortName: "臨床工学技士",
@@ -745,8 +724,8 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     status: "live",
     reuseSummary: "第39回（令和7年度）・第38回（令和6年度）の午前・午後から、原本・正答・全肢解説を確認した220問を部分収録。全360問は未収録。問題と正答の出典は医療機器センター、解説は独自作成です。掲載可否はオーナーが判断します。",
     remainingWork: ["午前・午後の未収録問題と専門根拠・図の局所確認", "両回の未収録問題", "掲載可否はオーナー確認"],
-  },
-  {
+},
+{
     slug: "hokenshi",
     examCode: "hokenshi",
     shortName: "保健師",
@@ -758,8 +737,8 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     status: "live",
     reuseSummary: "第112・111回の午前・午後220問のうち、原文・正答・全肢解説を確認した202問を部分収録。第112回午前18問は未収録です。",
     remainingWork: ["第112回午前の未収録18問の公開に関する既存の停止条件を解消"],
-  },
-  {
+},
+{
     slug: "josanshi",
     examCode: "josanshi",
     shortName: "助産師",
@@ -772,8 +751,8 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     reuseSummary: "第109・108回の午前・午後、計220原問のうち採点対象219問を収録。第109回は午前55問・午後54問、第108回は午前55問・午後55問です。公式原文・正答、共通事例、全選択肢の理由と原本図を確認できます。第109回午後問31は厚生労働省が採点対象から除外したため、公式正答を設定せず演習から除外しています。出典と図の切り出し・回転を明示しています。",
     attributionTemplate: "出典：厚生労働省「第○回助産師国家試験」午前・午後 問○（問題・正答）。解説は独自作成です。",
     remainingWork: ["第109回午後問31（採点除外）の未採点表示は未実装"],
-  },
-  {
+},
+{
     slug: "rigaku-ryohoshi",
     examCode: "rigaku-ryohoshi",
     shortName: "理学療法士",
@@ -786,8 +765,8 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     reuseSummary: "第61・60回の午前・午後、計400原問のうち、原文・公式正答・五肢の解説を照合した183原問を部分収録。第61回は午前22問・午後74問、第60回は午前25問・午後62問です。残り217原問は未収録で、両回の完備ではありません。図表、公式正答の代替記載、説明根拠が不足する問は収録していません。",
     attributionTemplate: "出典：厚生労働省「第○回理学療法士国家試験」午前・午後 問○（問題・正答）。解説は独自作成です。",
     remainingWork: ["未収録問の原文・公式正答・図表・説明根拠の確認", "第61回午後問30・第60回午後問31の公式代替正答の採点形式確認"],
-  },
-  {
+},
+{
     slug: "kangoshi",
     examCode: "kangoshi",
     shortName: "看護師",
@@ -800,8 +779,8 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     reuseSummary: "第115・114回 午前 問1〜90のうち178問収録。午前 問91〜120の確認済み57原問と午後229原問を加え、計464原問を部分収録。第115回は午前117問・午後115問、第114回は午前118問・午後114問です。全1918肢の正誤理由と数値記入2問の計算過程を確認できます。第115回午前 問32は厚生労働省が採点対象から除外したため収録していません。第115回午前 問79と未確認問題・未整備図は未収録です。共通症例は各枝問に保持し、全肢解説と原本画像を照合。出典と加工内容を明示。一般掲載可否の確認はオーナー担当で、許諾取得の記録はありません。",
     attributionTemplate: "出典：厚生労働省「第○回看護師国家試験」午前 問○（問題・正答）",
     remainingWork: ["一般掲載可否のオーナー確認", "第115回午前 問79は根拠確認中", "第115回午前4問・第114回午前7問は根拠確認中", "第115回午後14問・第114回午後23問は根拠・図の確認中", "第115回午前 問32（採点除外）は未採点表示の実装まで未収録"],
-  },
-  {
+},
+{
     slug: "yakuzaishi",
     examCode: "yakuzaishi",
     shortName: "薬剤師",
@@ -814,8 +793,8 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     reuseSummary: "第111回・第110回の公式問題と最終正答に照合済みの359原問を部分収録。単答157問、2肢選択202問で、全選択肢の独自解説を掲載。共通症例文は対応する設問に保持。原本・解説・計算根拠等が未確認の問題は未収録。両回全690問の完成ではありません。",
     attributionTemplate: "出典：厚生労働省「第○回薬剤師国家試験」問○（問題・最終正答）",
     remainingWork: ["一般掲載可否のオーナー確認", "未収録問題の出典・図表・共通症例・計算の確認", "後着10問の根拠・解説差分を保持"],
-  },
-  {
+},
+{
     slug: "ahaki-anma",
     examCode: "ahaki-anma",
     shortName: "あん摩マッサージ指圧師",
@@ -828,8 +807,8 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     reuseSummary: "第34・33回の公式問題320原問から318原問を部分収録。第34回159問・第33回159問です。原本と公式正答を照合した四肢択一の全肢解説を掲載し、残る2原問は原文の字形または説明を確認中です。解説は過去問AIの独自作成です。",
     attributionTemplate: "出典：公益財団法人東洋療法研修試験財団 第○回あん摩マッサージ指圧師国家試験 午前・午後 問○（問題・正答）",
     remainingWork: ["第34・33回の未掲載2原問の説明を個別確認"],
-  },
-  {
+},
+{
     slug: "ahaki-hari-kyu",
     examCode: "ahaki-hari-kyu",
     shortName: "はり師・きゅう師",
@@ -842,8 +821,8 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     reuseSummary: "第34・33回の公式問題360原問を収録。各回180問です。午後問161〜170ははり師専用、171〜180はきゅう師専用であり、共通問題と合わせた冊子の原問数を二試験に重複加算しません。解説は過去問AIの独自作成です。",
     attributionTemplate: "出典：公益財団法人東洋療法研修試験財団 第○回はり師・きゅう師国家試験 午前・午後 問○（問題・正答）",
     remainingWork: [],
-  },
-  {
+},
+{
     slug: "shika-ishi",
     examCode: "shika-ishi",
     shortName: "歯科医師",
@@ -856,8 +835,8 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     reuseSummary: "第119回（2026年）・第118回（2025年）のA〜D、計720原問のうち採点対象696問を収録。第119回346問・第118回350問です。公式原文・正答、全肢解説と原本図を確認できます。公式採点除外24問は正答を設定せず演習から除外しています。並べ替え8問と数値記入5問は原問の解答形式で採点します。",
     attributionTemplate: "出典：厚生労働省『第○回歯科医師国家試験』問題・正答。解説は当サイトの独自作成です。",
     remainingWork: ["次回公表分の追加", "公式訂正・診療指針改訂の継続確認"],
-  },
-  {
+},
+{
     slug: "gas-kou", examCode: "gas-kou", shortName: "ガス主任技術者 甲種", fullName: "ガス主任技術者試験（甲種）",
     domain: "safety", administrator: "一般財団法人日本ガス機器検査協会",
     officialQuestionsUrl: "https://www.jia-page.or.jp/exam/examination/answer/",
@@ -866,8 +845,8 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     reuseSummary: "令和8・7年度の法令・基礎・ガス技術から原本・正答・全肢解説を確認した問題を収録。問題と正答の出典は日本ガス機器検査協会、解説は独自作成。",
     attributionTemplate: "出典：一般財団法人日本ガス機器検査協会 ガス主任技術者試験（甲種、年度・科目・問番号）",
     remainingWork: ["法令改正に伴う解説の継続確認"],
-  },
-  {
+},
+{
     slug: "gas-otsu", examCode: "gas-otsu", shortName: "ガス主任技術者 乙種", fullName: "ガス主任技術者試験（乙種）",
     domain: "safety", administrator: "一般財団法人日本ガス機器検査協会",
     officialQuestionsUrl: "https://www.jia-page.or.jp/exam/examination/answer/",
@@ -876,8 +855,8 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     reuseSummary: "令和8・7年度の法令・基礎・ガス技術から原本・正答・全肢解説を確認した問題を収録。問題と正答の出典は日本ガス機器検査協会、解説は独自作成。",
     attributionTemplate: "出典：一般財団法人日本ガス機器検査協会 ガス主任技術者試験（乙種、年度・科目・問番号）",
     remainingWork: ["法令改正に伴う解説の継続確認"],
-  },
-  {
+},
+{
     slug: "gas-hei", examCode: "gas-hei", shortName: "ガス主任技術者 丙種", fullName: "ガス主任技術者試験（丙種）",
     domain: "safety", administrator: "一般財団法人日本ガス機器検査協会",
     officialQuestionsUrl: "https://www.jia-page.or.jp/exam/examination/answer/",
@@ -886,8 +865,8 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     reuseSummary: "令和8・7年度の法令・基礎・ガス技術から原本・正答・全肢解説を確認した問題を収録。問題と正答の出典は日本ガス機器検査協会、解説は独自作成。",
     attributionTemplate: "出典：一般財団法人日本ガス機器検査協会 ガス主任技術者試験（丙種、年度・科目・問番号）",
     remainingWork: ["法令改正に伴う解説の継続確認"],
-  },
-  {
+},
+{
     slug: "rinsho-kensagishi",
     examCode: "rinsho-kensagishi",
     shortName: "臨床検査技師",
@@ -899,8 +878,8 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     status: "live",
     reuseSummary: "第71・72回（2025・2026年実施）の午前・午後から、原文・公式正答・全五肢の学習用解説と照合した106原問を部分収録。必要な公式原図も掲載しています。残りの未収録原問は出題対象外で、最新2回の全問は未完備です。解説は独自作成です。",
     remainingWork: ["未収録原問の原本・別冊図・専門根拠の個別照合", "最新2回の午前・午後の残問"],
-  },
-  {
+},
+{
     slug: "shinryo-hoshasengishi",
     examCode: "shinryo-hoshasengishi",
     shortName: "診療放射線技師",
@@ -912,8 +891,8 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     status: "live",
     reuseSummary: "第77・78回（2025・2026年実施）の午前・午後から、原文・公式正答・全五肢解説・必要図版を照合した398原問を収録。第77回は午前100・午後100問、第78回は午前98・午後100問です。第78回午前23は公式に採点除外、午前15は公式別冊図が省略されているため出題対象に含めていません。解説は独自作成です。",
     remainingWork: ["第78回午前15の正規図版取得", "採点除外の第78回午前23は公式通知と原文を別保存"],
-  },
-  {
+},
+{
     slug: "riyoshi", examCode: "riyoshi", shortName: "理容師", fullName: "理容師国家試験", domain: "personal-services",
     administrator: "公益財団法人理容師美容師試験研修センター",
     officialQuestionsUrl: "https://www.rbc.or.jp/exam/past_question/",
@@ -922,8 +901,8 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     reuseSummary: "第53回（2026年3月1日）・第54回（2026年9月6日）の筆記各55問、計110問・440肢解説と原図を保存。問題と正答は公式PDF、解説は独自作成。掲載可否はオーナー担当で、許諾取得の記録はありません。原本照合は110問、内容準備済み110問、内容保留0問です。原本照合と内容検収を完了し、リリース対象110問を個別IDで指定しています。",
     attributionTemplate: "出典：公益財団法人理容師美容師試験研修センター 第○回理容師筆記試験 問○（問題・正答）。解説は独自作成。",
     remainingWork: [],
-  },
-  {
+},
+{
     slug: "judo-seifukushi",
     examCode: "judo-seifukushi",
     shortName: "柔道整復師",
@@ -936,8 +915,8 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     reuseSummary: "第34・33回の午前128問・午後122問、各250原問を対象に、原本と厚生労働省の最終正答を照合。問題の出典は柔道整復研修試験財団、正答の出典は厚生労働省、全肢解説は独自作成です。掲載可否はオーナーが判断します。出典の記録は転載許諾を取得したという主張ではありません。",
     attributionTemplate: "出典：公益財団法人柔道整復研修試験財団 第○回柔道整復師国家試験 午前・午後 問○（問題）／厚生労働省（最終正答）",
     remainingWork: ["掲載可否のオーナー判断", "法令・医療情報の改訂に伴う継続確認"],
-  },
-  {
+},
+{
     slug: "boki3",
     shortName: "日商簿記3級",
     fullName: "日商簿記検定3級",
@@ -948,7 +927,383 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     status: "permission-required",
     reuseSummary: "過去問は非公開。サンプル問題も無断転載・無断営利利用を禁止。",
     remainingWork: ["利用許諾を取得できない限り問題本文を収録しない"],
-  },
+},
+{ slug: "kisho", examCode: "kisho", shortName: "気象予報士", fullName: "気象予報士試験",
+    domain: "safety", administrator: "一般財団法人 気象業務支援センター",
+    officialQuestionsUrl: "https://www.jmbsc.or.jp/jp/examination/examination-7.html",
+    officialReuseTermsUrl: "https://www.jmbsc.or.jp/jp/examination/examination-7.html", status: "live",
+    reuseSummary: "第65・66回の学科60問・全肢解説、実技18問・237回答欄を収録。実技は公式解答例・作図との手動照合です。",
+    attributionTemplate: "出典：一般財団法人 気象業務支援センター 気象予報士試験問題・解答例。画像化・表記整理、解説は過去問AI作成。",
+    remainingWork: [] },
+{
+    slug: "kenchiku-setsubishi", examCode: "kenchiku-setsubishi", shortName: "建築設備士", fullName: "建築設備士試験（第一次試験）",
+    domain: "construction", administrator: "公益財団法人建築技術教育普及センター",
+    officialQuestionsUrl: "https://www.jaeic.or.jp/shiken/bmee/bmee-mondai.html",
+    officialReuseTermsUrl: "https://www.jaeic.or.jp/shiken/bmee/bmee-mondai.html", status: "live",
+    reuseSummary: "令和7・8年の第一次試験から209問を全肢解説・原図付きで演習できます。令和8年建築法規問18は公式正答と法令適用の疑義が未解消のため公開対象外です。法令は各回の基準日時点の内容です。第二次試験は未収録です。掲載の権利確認はオーナー取得済みとして扱います。",
+    attributionTemplate: "出典：公益財団法人建築技術教育普及センター 建築設備士第一次試験（年度・科目・問番号）。解説は当サイト独自作成。",
+    remainingWork: ["令和8年建築法規問18の出題機関による訂正又は直接解釈の確認", "第二次試験は未収録"],
+},
+{
+    slug: "chizai2", examCode: "chizai2", shortName: "知的財産管理技能検定2級", fullName: "知的財産管理技能検定2級",
+    domain: "legal", administrator: "知的財産教育協会",
+    officialQuestionsUrl: "https://www.kentei-info-ip-edu.org/gakushujoho/kakomon.html",
+    officialReuseTermsUrl: "https://www.kentei-info-ip-edu.org/gakushujoho/kakomon.html",
+    status: "live",
+    reuseSummary: "第53回（2026年3月8日）・第54回（2026年7月12日）の学科・実技各40問、計160原問を収録。選択式158問の全651肢解説、数値記入2問と料金表を保持しています。法令は各試験回の基準日時点です。解説は独自作成です。",
+    attributionTemplate: "出典：知的財産教育協会 第○回 知的財産管理技能検定2級 学科・実技 問○（問題・正答）。解説は過去問AI独自作成。",
+    remainingWork: [],
+},
+{
+    slug: "jidosha-1-small-written", examCode: "jidosha-1-small-written", shortName: "一級小型自動車整備士（筆記）", fullName: "一級小型自動車整備士（筆記）", domain: "automotive",
+    administrator: "一般社団法人日本自動車整備振興会連合会",
+    officialQuestionsUrl: "https://www.jaspa.or.jp/mechanic/past/", officialReuseTermsUrl: "", status: "live",
+    reuseSummary: "令和8年度第1回・令和7年度第2回の開催科目から、保存50原問中50問を部分収録。公式問題・正答と全選択肢の解説、必要な原図を確認できます。科目ごとの直近2回を揃えたものではありません。法令は各試験日時点です。解説は独自作成です。",
+    attributionTemplate: "出典：日本自動車整備振興会連合会 自動車整備技能登録試験（問題・正答）。解説は過去問AI独自作成。",
+    remainingWork: [],
+},
+{
+    slug: "jidosha-2-gasoline", examCode: "jidosha-2-gasoline", shortName: "二級ガソリン自動車整備士", fullName: "二級ガソリン自動車整備士", domain: "automotive",
+    administrator: "一般社団法人日本自動車整備振興会連合会",
+    officialQuestionsUrl: "https://www.jaspa.or.jp/mechanic/past/", officialReuseTermsUrl: "", status: "live",
+    reuseSummary: "令和8年度第1回・令和7年度第2回の開催科目から、保存80原問中79問を部分収録。公式問題・正答と全選択肢の解説、必要な原図を確認できます。科目ごとの直近2回を揃えたものではありません。法令は各試験日時点です。解説は独自作成です。",
+    attributionTemplate: "出典：日本自動車整備振興会連合会 自動車整備技能登録試験（問題・正答）。解説は過去問AI独自作成。",
+    remainingWork: ["公式全員正解1原問は通常採点対象外"],
+},
+{
+    slug: "jidosha-2-diesel", examCode: "jidosha-2-diesel", shortName: "二級ジーゼル自動車整備士", fullName: "二級ジーゼル自動車整備士", domain: "automotive",
+    administrator: "一般社団法人日本自動車整備振興会連合会",
+    officialQuestionsUrl: "https://www.jaspa.or.jp/mechanic/past/", officialReuseTermsUrl: "", status: "live",
+    reuseSummary: "令和8年度第1回・令和7年度第2回の開催科目から、保存80原問中80問を部分収録。公式問題・正答と全選択肢の解説、必要な原図を確認できます。科目ごとの直近2回を揃えたものではありません。法令は各試験日時点です。解説は独自作成です。",
+    attributionTemplate: "出典：日本自動車整備振興会連合会 自動車整備技能登録試験（問題・正答）。解説は過去問AI独自作成。",
+    remainingWork: [],
+},
+{
+    slug: "jidosha-2-chassis", examCode: "jidosha-2-chassis", shortName: "二級自動車シャシ整備士", fullName: "二級自動車シャシ整備士", domain: "automotive",
+    administrator: "一般社団法人日本自動車整備振興会連合会",
+    officialQuestionsUrl: "https://www.jaspa.or.jp/mechanic/past/", officialReuseTermsUrl: "", status: "live",
+    reuseSummary: "令和8年度第1回・令和7年度第2回の開催科目から、保存30原問中30問を部分収録。公式問題・正答と全選択肢の解説、必要な原図を確認できます。科目ごとの直近2回を揃えたものではありません。法令は各試験日時点です。解説は独自作成です。",
+    attributionTemplate: "出典：日本自動車整備振興会連合会 自動車整備技能登録試験（問題・正答）。解説は過去問AI独自作成。",
+    remainingWork: [],
+},
+{
+    slug: "jidosha-2-motorcycle", examCode: "jidosha-2-motorcycle", shortName: "二級二輪自動車整備士", fullName: "二級二輪自動車整備士", domain: "automotive",
+    administrator: "一般社団法人日本自動車整備振興会連合会",
+    officialQuestionsUrl: "https://www.jaspa.or.jp/mechanic/past/", officialReuseTermsUrl: "", status: "live",
+    reuseSummary: "令和8年度第1回・令和7年度第2回の開催科目から、保存40原問中40問を部分収録。公式問題・正答と全選択肢の解説、必要な原図を確認できます。科目ごとの直近2回を揃えたものではありません。法令は各試験日時点です。解説は独自作成です。",
+    attributionTemplate: "出典：日本自動車整備振興会連合会 自動車整備技能登録試験（問題・正答）。解説は過去問AI独自作成。",
+    remainingWork: [],
+},
+{
+    slug: "jidosha-3-chassis", examCode: "jidosha-3-chassis", shortName: "三級自動車シャシ整備士", fullName: "三級自動車シャシ整備士", domain: "automotive",
+    administrator: "一般社団法人日本自動車整備振興会連合会",
+    officialQuestionsUrl: "https://www.jaspa.or.jp/mechanic/past/", officialReuseTermsUrl: "", status: "live",
+    reuseSummary: "令和8年度第1回・令和7年度第2回の開催科目から、保存60原問中60問を部分収録。公式問題・正答と全選択肢の解説、必要な原図を確認できます。科目ごとの直近2回を揃えたものではありません。法令は各試験日時点です。解説は独自作成です。",
+    attributionTemplate: "出典：日本自動車整備振興会連合会 自動車整備技能登録試験（問題・正答）。解説は過去問AI独自作成。",
+    remainingWork: [],
+},
+{
+    slug: "jidosha-3-gasoline", examCode: "jidosha-3-gasoline", shortName: "三級自動車ガソリン・エンジン整備士", fullName: "三級自動車ガソリン・エンジン整備士", domain: "automotive",
+    administrator: "一般社団法人日本自動車整備振興会連合会",
+    officialQuestionsUrl: "https://www.jaspa.or.jp/mechanic/past/", officialReuseTermsUrl: "", status: "live",
+    reuseSummary: "令和8年度第1回・令和7年度第2回の開催科目から、保存60原問中60問を部分収録。公式問題・正答と全選択肢の解説、必要な原図を確認できます。科目ごとの直近2回を揃えたものではありません。法令は各試験日時点です。解説は独自作成です。",
+    attributionTemplate: "出典：日本自動車整備振興会連合会 自動車整備技能登録試験（問題・正答）。解説は過去問AI独自作成。",
+    remainingWork: [],
+},
+{
+    slug: "jidosha-3-diesel", examCode: "jidosha-3-diesel", shortName: "三級自動車ジーゼル・エンジン整備士", fullName: "三級自動車ジーゼル・エンジン整備士", domain: "automotive",
+    administrator: "一般社団法人日本自動車整備振興会連合会",
+    officialQuestionsUrl: "https://www.jaspa.or.jp/mechanic/past/", officialReuseTermsUrl: "", status: "live",
+    reuseSummary: "令和8年度第1回・令和7年度第2回の開催科目から、保存60原問中60問を部分収録。公式問題・正答と全選択肢の解説、必要な原図を確認できます。科目ごとの直近2回を揃えたものではありません。法令は各試験日時点です。解説は独自作成です。",
+    attributionTemplate: "出典：日本自動車整備振興会連合会 自動車整備技能登録試験（問題・正答）。解説は過去問AI独自作成。",
+    remainingWork: [],
+},
+{
+    slug: "jidosha-3-motorcycle", examCode: "jidosha-3-motorcycle", shortName: "三級二輪自動車整備士", fullName: "三級二輪自動車整備士", domain: "automotive",
+    administrator: "一般社団法人日本自動車整備振興会連合会",
+    officialQuestionsUrl: "https://www.jaspa.or.jp/mechanic/past/", officialReuseTermsUrl: "", status: "live",
+    reuseSummary: "令和8年度第1回・令和7年度第2回の開催科目から、保存30原問中30問を部分収録。公式問題・正答と全選択肢の解説、必要な原図を確認できます。科目ごとの直近2回を揃えたものではありません。法令は各試験日時点です。解説は独自作成です。",
+    attributionTemplate: "出典：日本自動車整備振興会連合会 自動車整備技能登録試験（問題・正答）。解説は過去問AI独自作成。",
+    remainingWork: [],
+},
+{
+    slug: "jidosha-body", examCode: "jidosha-body", shortName: "自動車車体整備士", fullName: "自動車車体整備士", domain: "automotive",
+    administrator: "一般社団法人日本自動車整備振興会連合会",
+    officialQuestionsUrl: "https://www.jaspa.or.jp/mechanic/past/", officialReuseTermsUrl: "", status: "live",
+    reuseSummary: "令和8年度第1回・令和7年度第2回の開催科目から、保存80原問中79問を部分収録。公式問題・正答と全選択肢の解説、必要な原図を確認できます。科目ごとの直近2回を揃えたものではありません。法令は各試験日時点です。解説は独自作成です。",
+    attributionTemplate: "出典：日本自動車整備振興会連合会 自動車整備技能登録試験（問題・正答）。解説は過去問AI独自作成。",
+    remainingWork: ["未収録1原問の内容照合"],
+},
+{
+    slug: "jidosha-electrical", examCode: "jidosha-electrical", shortName: "自動車電気装置整備士", fullName: "自動車電気装置整備士", domain: "automotive",
+    administrator: "一般社団法人日本自動車整備振興会連合会",
+    officialQuestionsUrl: "https://www.jaspa.or.jp/mechanic/past/", officialReuseTermsUrl: "", status: "live",
+    reuseSummary: "令和8年度第1回・令和7年度第2回の開催科目から、保存40原問中40問を部分収録。公式問題・正答と全選択肢の解説、必要な原図を確認できます。科目ごとの直近2回を揃えたものではありません。法令は各試験日時点です。解説は独自作成です。",
+    attributionTemplate: "出典：日本自動車整備振興会連合会 自動車整備技能登録試験（問題・正答）。解説は過去問AI独自作成。",
+    remainingWork: [],
+},
+{
+    slug: "jokaso", examCode: "jokaso", shortName: "浄化槽管理士", fullName: "浄化槽管理士試験",
+    domain: "construction", administrator: "公益財団法人日本環境整備教育センター",
+    officialQuestionsUrl: "https://www.jeces.or.jp/pages/27/",
+    officialReuseTermsUrl: "https://www.jeces.or.jp/pages/132/", status: "live",
+    reuseSummary: "令和8・7年度の午前・午後各40問、計160問を収録。公式正答、全選択肢の独自解説と必要な図を確認できます。法令は出題時点の内容です。",
+    attributionTemplate: "出典：公益財団法人日本環境整備教育センター 浄化槽管理士試験 問題・正答。解説は過去問AI作成。",
+    remainingWork: [],
+},
+{
+    slug: "iji-shuzen", examCode: "iji-shuzen",
+    shortName: "マンション維持修繕技術者", fullName: "マンション維持修繕技術者試験",
+    domain: "real-estate", administrator: "一般社団法人マンション管理業協会",
+    officialQuestionsUrl: "https://www.kanrikyo.or.jp/iji/siken.html",
+    officialReuseTermsUrl: "https://www.kanrikyo.or.jp/kanri/pdf/kakomonshiyou.pdf",
+    status: "live",
+    reuseSummary: "権利確認済み。第25回（2025年度）・第24回（2024年度）の各択一45問・記述2問、計94原問を収録。公式正答・全選択肢の独自解説・記述式の公式正解例を保持。法令は各年度4月1日時点。",
+    attributionTemplate: "出典：一般社団法人マンション管理業協会 マンション維持修繕技術者試験 問題・正答。解説は過去問AIの独自作成。",
+    remainingWork: [],
+},
+{
+    slug: "sekou-1denki", examCode: "denki1",
+    shortName: "1級電気工事施工管理", fullName: "1級電気工事施工管理技術検定（第一次検定）",
+    domain: "construction", administrator: "一般財団法人建設業振興基金",
+    officialQuestionsUrl: "https://www.fcip-shiken.jp/about/index.html",
+    officialReuseTermsUrl: "https://www.fcip-shiken.jp/about/index.html",
+    status: "live",
+    reuseSummary: "オーナー権利確認済み。令和8・7年度の全178問、公式正答、全選択肢の独自解説と必要な図を収録。法令・規程は出題時点に基づく。",
+    attributionTemplate: "出典：一般財団法人建設業振興基金 1級電気工事施工管理技術検定 第一次検定。解説は過去問AI作成。",
+    remainingWork: [],
+},
+{
+    slug: "shuwa", examCode: "shuwa", shortName: "手話通訳士", fullName: "手話通訳士（学科試験）",
+    domain: "welfare", administrator: "社会福祉法人聴力障害者情報文化センター",
+    officialQuestionsUrl: "https://www.jyoubun-center.or.jp/slit/exam/past-exam/",
+    officialReuseTermsUrl: "https://www.jyoubun-center.or.jp/slit/exam/past-exam/",
+    status: "live",
+    reuseSummary: "第37回（令和8年度）・第36回（令和7年度）の学科試験160問を収録。公式問題・正答と全選択肢の独自解説を確認できます。法令に関する設問は出題時点の法令に基づきます。",
+    attributionTemplate: "出典：社会福祉法人聴力障害者情報文化センター 手話通訳技能認定試験（手話通訳士試験）学科試験問題・正答。解説は過去問AIの独自作成。",
+    remainingWork: [],
+},
+{
+    slug: "jken-katsuyo3", examCode: "jken-katsuyo3", shortName: "J検 情報活用3級", fullName: "情報検定（J検）情報活用3級",
+    domain: "information-technology", administrator: "一般財団法人職業教育・キャリア教育財団",
+    officialQuestionsUrl: "https://www.jken.sgec.or.jp/docs/past_test.html",
+    officialReuseTermsUrl: "https://www.jken.sgec.or.jp/docs/past_test.html",
+    status: "live",
+    reuseSummary: "令和8年度前期・令和7年度後期の公式問題・正答を収録。解答欄ごとに演習できます。解説は独自作成です。",
+    attributionTemplate: "出典：一般財団法人職業教育・キャリア教育財団 情報検定（J検）情報活用試験。問題・正答は公式公表資料、解説は過去問AI作成。",
+    remainingWork: [],
+},
+{
+    slug: "jken-katsuyo2", examCode: "jken-katsuyo2", shortName: "J検 情報活用2級", fullName: "情報検定（J検）情報活用2級",
+    domain: "information-technology", administrator: "一般財団法人職業教育・キャリア教育財団",
+    officialQuestionsUrl: "https://www.jken.sgec.or.jp/docs/past_test.html",
+    officialReuseTermsUrl: "https://www.jken.sgec.or.jp/docs/past_test.html",
+    status: "live",
+    reuseSummary: "令和8年度前期・令和7年度後期の公式問題・正答を収録。解答欄ごとに演習できます。解説は独自作成です。",
+    attributionTemplate: "出典：一般財団法人職業教育・キャリア教育財団 情報検定（J検）情報活用試験。問題・正答は公式公表資料、解説は過去問AI作成。",
+    remainingWork: [],
+},
+{
+    slug: "jken-katsuyo1", examCode: "jken-katsuyo1", shortName: "J検 情報活用1級", fullName: "情報検定（J検）情報活用1級",
+    domain: "information-technology", administrator: "一般財団法人職業教育・キャリア教育財団",
+    officialQuestionsUrl: "https://www.jken.sgec.or.jp/docs/past_test.html",
+    officialReuseTermsUrl: "https://www.jken.sgec.or.jp/docs/past_test.html",
+    status: "live",
+    reuseSummary: "令和8年度前期・令和7年度後期の公式問題・正答を収録。解答欄ごとに演習できます。解説は独自作成です。",
+    attributionTemplate: "出典：一般財団法人職業教育・キャリア教育財団 情報検定（J検）情報活用試験。問題・正答は公式公表資料、解説は過去問AI作成。",
+    remainingWork: [],
+},
+{
+    slug: "jken-system", examCode: "jken-system", shortName: "J検 情報システム",
+    fullName: "情報検定（J検）情報システム 基本スキル・プログラミングスキル・システムデザインスキル",
+    domain: "information-technology", administrator: "一般財団法人職業教育・キャリア教育財団",
+    officialQuestionsUrl: "https://www.jken.sgec.or.jp/docs/past_test.html",
+    officialReuseTermsUrl: "https://www.jken.sgec.or.jp/docs/past_test.html",
+    status: "live",
+    reuseSummary: "令和8年度前期（2026年9月13日）・令和7年度後期（2026年2月8日）の3スキル全30大問・227解答欄を収録。問題と正答は公式PDFに基づき、解答欄ごとに演習できます。解説は独自作成です。",
+    attributionTemplate: "出典：一般財団法人職業教育・キャリア教育財団 情報検定 情報システム試験（実施回・スキル・大問・解答欄）。解説は独自作成。",
+    remainingWork: [],
+},
+{
+    slug: "shinrishi", examCode: "shinrishi", shortName: "公認心理師", fullName: "公認心理師試験",
+    domain: "welfare", administrator: "一般財団法人公認心理師試験研修センター",
+    officialQuestionsUrl: "https://www.jccpp.or.jp/shiken/shikenjoho/",
+    officialReuseTermsUrl: "https://www.jccpp.or.jp/policy.html", status: "live",
+    reuseSummary: "第8回（2025年3月2日）・第9回（2026年3月1日）の全308原問を無料・回数制限なしで演習できます。公式の問題文・選択肢・正答・出典と、全選択肢の独自解説を保持しています。",
+    attributionTemplate: "出典：一般財団法人公認心理師試験研修センター 公認心理師試験。解説は過去問AI独自作成。",
+    remainingWork: [],
+},
+{
+    slug: "hoshasen",
+    shortName: "放射線取扱主任者（第一種・第二種）",
+    fullName: "第一種・第二種放射線取扱主任者試験",
+    domain: "safety",
+    administrator: "公益財団法人原子力安全技術センター",
+    officialQuestionsUrl: "https://www.nustec.or.jp/syunin/syunin05.html",
+    officialReuseTermsUrl: "https://www.nustec.or.jp/syunin/syunin05.html",
+    status: "ready-to-ingest",
+    reuseSummary: "オーナー決定で権利確認済み。令和8・7年度の両種の公式問題16本・正答4本を取得。第一種は両年度各132原問が揃い、第二種令和8年度74原問・令和7年度75原問と合わせ413原問・5,920肢解説を収録。多肢択一式34原問の438空欄を原問数に加算していません。添付正誤票・全員正解指定を反映。残りは第二種令和8年度化学問9の内容保留1原問で、全414原問完成ではありません。",
+    attributionTemplate: "出典：公益財団法人原子力安全技術センター 令和○年度 第○種放射線取扱主任者試験（科目・問番号）。問題・正答は公式PDF、解説は独自作成。",
+    remainingWork: ["第二種令和8年度化学問9は公式正答5を維持して保留。公式訂正又は肢1を排除できる十分な一次根拠が得られた場合のみ解除", "公開用の試験区分・科目設定とローダーへの接続（別途公開指示が必要）"],
+},
+{
+    slug: "khk-reito", shortName: "高圧ガス 冷凍機械", fullName: "高圧ガス製造保安責任者 第一種冷凍機械・第二種冷凍機械・第三種冷凍機械",
+    domain: "safety", administrator: "高圧ガス保安協会 試験センター",
+    officialQuestionsUrl: "https://shiken.khk.or.jp/shiken.html",
+    officialReuseTermsUrl: "https://www.khk.or.jp/condition.html", status: "ready-to-ingest",
+    reuseSummary: "3資格の親slug。令和7・6年度の国家試験を対象に、資格別の未公開データとして準備する。転載・複製禁止文言は監査記録に保存し、2026-11-04のオーナー判断に基づき収録する。",
+    remainingWork: ["資格別ステージングの公開切替（本タスクでは公開しない）"],
+},
+{
+    slug: "khk-reito-1", examCode: "khk-reito-1", shortName: "第一種冷凍機械",
+    fullName: "高圧ガス製造保安責任者試験（第一種冷凍機械）", domain: "safety",
+    administrator: "高圧ガス保安協会 試験センター",
+    officialQuestionsUrl: "https://shiken.khk.or.jp/shiken.html",
+    officialReuseTermsUrl: "https://www.khk.or.jp/condition.html",
+    status: "live",
+    reuseSummary: "令和7・6年度80問を収録。公式公表問題・正答を出典とし、法令・保安管理技術の選択式と学識の記述式を学習できます。記述答案は公式解答例と手動で照合し、自動採点しません。",
+    attributionTemplate: "出典：高圧ガス保安協会 令和○年度 第一種冷凍機械 ○科目 問○。解説は過去問AI独自作成。法令は出題時点。",
+    remainingWork: [],
+},
+{
+    slug: "khk-reito-2", examCode: "khk-reito-2", shortName: "第二種冷凍機械",
+    fullName: "高圧ガス製造保安責任者試験（第二種冷凍機械）", domain: "safety",
+    administrator: "高圧ガス保安協会 試験センター",
+    officialQuestionsUrl: "https://shiken.khk.or.jp/shiken.html",
+    officialReuseTermsUrl: "https://www.khk.or.jp/condition.html",
+    status: "live",
+    reuseSummary: "令和7・6年度80問を収録。公式公表問題・正答、全選択肢の独自解説と必要な図を確認できます。法令は出題時点の内容です。",
+    attributionTemplate: "出典：高圧ガス保安協会 令和○年度 第二種冷凍機械 ○科目 問○。解説は過去問AI独自作成。法令は出題時点。",
+    remainingWork: [],
+},
+{
+    slug: "khk-reito-3", examCode: "khk-reito-3", shortName: "第三種冷凍機械",
+    fullName: "高圧ガス製造保安責任者試験（第三種冷凍機械）", domain: "safety",
+    administrator: "高圧ガス保安協会 試験センター",
+    officialQuestionsUrl: "https://shiken.khk.or.jp/shiken.html",
+    officialReuseTermsUrl: "https://www.khk.or.jp/condition.html",
+    status: "live",
+    reuseSummary: "令和7・6年度70問を収録。公式公表問題・正答、全選択肢の独自解説と必要な図を確認できます。法令は出題時点の内容です。",
+    attributionTemplate: "出典：高圧ガス保安協会 令和○年度 第三種冷凍機械 ○科目 問○。解説は過去問AI独自作成。法令は出題時点。",
+    remainingWork: [],
+},
+{
+    slug: "sekou-kenchiku2",
+    examCode: "sekou-kenchiku2",
+    shortName: "2級建築施工管理（第一次検定）",
+    fullName: "2級建築施工管理技術検定（第一次検定）",
+    domain: "construction",
+    administrator: "一般財団法人建設業振興基金",
+    officialQuestionsUrl: "https://www.fcip-shiken.jp/about/",
+    officialReuseTermsUrl: "https://www.fcip-shiken.jp/about/",
+    status: "live",
+    reuseSummary: "オーナー権利確認済み。令和8年度前期・令和7年度後期の各50問，計100問を公式PDFから収録。公式正答・全410肢の独自解説・必要図5点・出典を付与。監査：reports/cloud-sekou-2kenchiku-latest2.md。",
+    attributionTemplate: "出典：一般財団法人建設業振興基金 2級建築施工管理技術検定（第一次検定）令和○年度（前期／後期）No.○。解説は本サイト作成。",
+    remainingWork: ["監督役による独立レビューと指摘対応後に公開判定（現在は未公開ステージング）"],
+},
+{
+    slug: "sekou-2denki", examCode: "denki2",
+    shortName: "2級電気工事施工管理", fullName: "2級電気工事施工管理技術検定（第一次検定）",
+    domain: "construction", administrator: "一般財団法人建設業振興基金",
+    officialQuestionsUrl: "https://www.fcip-shiken.jp/about/index.html",
+    officialReuseTermsUrl: "https://www.fcip-shiken.jp/about/index.html",
+    status: "live",
+    reuseSummary: "オーナー権利確認済み。令和8年度前期・令和7年度後期の全124問、公式正答、全選択肢の独自解説と必要な図21件を収録。法令・規程は出題時点に基づく。",
+    attributionTemplate: "出典：一般財団法人建設業振興基金 2級電気工事施工管理技術検定 第一次検定。解説は過去問AI作成。",
+    remainingWork: ["監督役による独立レビュー", "依存パッケージ導入後のpnpm検証", "公開判定"],
+},
+{
+    slug: "sekou-1kankoji", examCode: "kankoji1",
+    shortName: "1級管工事施工管理", fullName: "1級管工事施工管理技術検定（第一次検定）",
+    domain: "construction", administrator: "一般財団法人全国建設研修センター",
+    officialQuestionsUrl: "https://www.jctc.jp/mondai/", officialReuseTermsUrl: "https://www.jctc.jp/mondai/",
+    status: "live",
+    reuseSummary: "オーナー権利確認済み。令和8年度の全73問（A44・B29）、訂正後公式正答、必要図、全肢解説を収録。令和7年度は公式掲載終了・旧URL404のため除外。",
+    attributionTemplate: "出典：一般財団法人全国建設研修センター 令和8年度1級管工事施工管理技術検定 第一次検定 問題A／B。解説は過去問AI作成。",
+    remainingWork: ["監督役による独立レビューと公開判断"],
+},
+{
+    slug: "yamaguchi-fugu", examCode: "yamaguchi-fugu", shortName: "ふぐ処理師（山口県・学科）", fullName: "ふぐ処理師（山口県・学科）",
+    domain: "personal-services", administrator: "山口県 生活衛生課",
+    officialQuestionsUrl: "https://www.pref.yamaguchi.lg.jp/site/syoku-anshin/320296.html",
+    officialReuseTermsUrl: "https://www.pref.yamaguchi.lg.jp/soshiki/21/26951.html",
+    status: "live",
+    reuseSummary: "令和8・7年の公表問題・正答を保存。権利確認はオーナー確認済み。解説は独自作成、法令は各出題時点。",
+    attributionTemplate: "出典：山口県 生活衛生課 ふぐ処理師（山口県・学科） 問題・正答。テキスト整形・図の切出し・解説は過去問AIが作成。",
+    remainingWork: ["監督役による独立レビューと公開判断"],
+},
+{
+    slug: "yamaguchi-seika", examCode: "yamaguchi-seika", shortName: "製菓衛生師（山口県）", fullName: "製菓衛生師（山口県）",
+    domain: "personal-services", administrator: "山口県 生活衛生課",
+    officialQuestionsUrl: "https://www.pref.yamaguchi.lg.jp/site/syoku-anshin/320296.html",
+    officialReuseTermsUrl: "https://www.pref.yamaguchi.lg.jp/soshiki/21/26951.html",
+    status: "live",
+    reuseSummary: "令和8・7年の公表問題・正答を保存。権利確認はオーナー確認済み。解説は独自作成、法令は各出題時点。",
+    attributionTemplate: "出典：山口県 生活衛生課 製菓衛生師（山口県） 問題・正答。テキスト整形・図の切出し・解説は過去問AIが作成。",
+    remainingWork: ["監督役による独立レビューと公開判断"],
+},
+{
+    slug: "yamaguchi-chori", examCode: "yamaguchi-chori", shortName: "調理師（山口県）", fullName: "調理師（山口県）",
+    domain: "personal-services", administrator: "山口県 生活衛生課",
+    officialQuestionsUrl: "https://www.pref.yamaguchi.lg.jp/site/syoku-anshin/320296.html",
+    officialReuseTermsUrl: "https://www.pref.yamaguchi.lg.jp/soshiki/21/26951.html",
+    status: "live",
+    reuseSummary: "令和8・7年の公表問題・正答を保存。権利確認はオーナー確認済み。解説は独自作成、法令は各出題時点。",
+    attributionTemplate: "出典：山口県 生活衛生課 調理師（山口県） 問題・正答。テキスト整形・図の切出し・解説は過去問AIが作成。",
+    remainingWork: ["監督役による独立レビューと公開判断"],
+},
+{
+    slug: "kenki2", examCode: "kenki2", shortName: "2級建設機械施工管理",
+    fullName: "2級建設機械施工管理技術検定（第一次検定）", domain: "construction",
+    administrator: "一般社団法人日本建設機械施工協会",
+    officialQuestionsUrl: "https://jcmanet-shiken.jp/kako-shiken-mondai/",
+    officialReuseTermsUrl: "https://jcmanet.or.jp/kentei/", status: "live",
+    reuseSummary: "権利はオーナー確認済み。令和8・7年度の共通各32問・第1〜6種各20問、計304問を非公開で準備。公式正答・全肢解説・必要図を保存。法規は出題時点の法令。",
+    remainingWork: ["監督側による独立レビューと指摘修正後の合格確認"],
+},
+{
+    slug: "kenki1", examCode: "kenki1", shortName: "1級建設機械施工管理",
+    fullName: "1級建設機械施工管理技術検定（第一次検定）", domain: "construction",
+    administrator: "一般社団法人日本建設機械施工協会",
+    officialQuestionsUrl: "https://jcmanet-shiken.jp/kako-shiken-mondai/",
+    officialReuseTermsUrl: "https://jcmanet.or.jp/kentei/", status: "live",
+    reuseSummary: "権利はオーナー確認済み。令和8・7年度の第一次検定各56問、計112問を非公開で準備。公式問題・正答と全肢解説・必要図を保存。法規は出題時点の法令。",
+    remainingWork: ["監督側による独立レビューと指摘修正後の合格確認"],
+},
+{
+    slug: "gyosei", examCode: "gyosei", shortName: "行政書士", fullName: "行政書士試験",
+    domain: "legal", administrator: "一般財団法人行政書士試験研究センター",
+    officialQuestionsUrl: "https://gyosei-shiken.or.jp/doc/exam/",
+    officialReuseTermsUrl: "https://gyosei-shiken.or.jp/doc/exam/",
+    status: "live",
+    reuseSummary: "権利確認済み。令和7・6年度の公式公開112問を収録。択一は全肢解説、多肢選択は全語群解説、記述式は公式正解例で自己確認。問1・58〜60は公式非掲載のため対象外。",
+    remainingWork: [],
+},
+{
+    slug: "shihoshoshi", examCode: "shihoshoshi", shortName: "司法書士", fullName: "司法書士試験（午前・午後の多肢択一式）",
+    domain: "legal", administrator: "法務省",
+    officialQuestionsUrl: "https://www.moj.go.jp/shikaku_saiyo_index3.html",
+    officialReuseTermsUrl: "https://www.moj.go.jp/hisho06_00280.html",
+    status: "live",
+    reuseSummary: "オーナーにより権利確認済み。令和8・7年度の午前・午後の択一139問を保存。令和7年度午後第33問は公式に全員正解のため通常採点から除外。全選択肢の独自解説に差し替え、バッチ1の固定台帳どおり129問を演習できます。第3回レビュー時点の保留10問は公開・採点から除外したままです。",
+    attributionTemplate: "出典：法務省 令和○年度司法書士試験 午前・午後 第○問。解説は過去問AIが独自作成。",
+    remainingWork: ["バッチ1対象外の保留10問の公開範囲を別途判断", "令和7年度の公式法令基準日の確認（問題PDFは403で取得不能）", "公式PDFと問題文・図表の公開前最終照合", "独立レビューのFAIL指摘への修正内容の再レビュー合格", "指定の質問検証・型検査・関連テストの完了"],
+},
+{"slug":"chintai","examCode":"chintai","shortName":"賃貸不動産経営管理士","fullName":"賃貸不動産経営管理士","domain":"real-estate","administrator":"賃貸不動産経営管理士協議会","officialQuestionsUrl":"https://www.chintaikanrishi.jp/exam/past","officialReuseTermsUrl":"https://www.chintaikanrishi.jp/exam/past","status":"live","reuseSummary":"2024・2025年度100原問を保存。通常演習99問。2025年問9は公式全員正解のため通常採点対象外です。","remainingWork":[]},
+{"slug":"kyusui","examCode":"kyusui","shortName":"給水装置工事主任技術者","fullName":"給水装置工事主任技術者","domain":"construction","administrator":"給水工事技術振興財団","officialQuestionsUrl":"https://www.kyuukou.or.jp/shiken/jyuken-kakomon.html","officialReuseTermsUrl":"https://www.kyuukou.or.jp/shiken/jyuken-kakomon.html","status":"live","reuseSummary":"2025・2026年度120原問を保存。通常演習119問。2025年問18は公式全員正解のため通常採点対象外です。","remainingWork":[]},
+{"slug":"biru-kan","examCode":"biru-kan","shortName":"建築物環境衛生管理技術者","fullName":"建築物環境衛生管理技術者","domain":"construction","administrator":"日本建築衛生管理教育センター","officialQuestionsUrl":"https://www.jahmec.or.jp/kokka/","officialReuseTermsUrl":"https://www.jahmec.or.jp/kokka/","status":"live","reuseSummary":"第54・55回（2024・2025年度）360問。公式問題・公式正答・全肢解説・必要図を収録しています。","remainingWork":[]},
+{"slug":"gijutsushi1-kikai","examCode":"gijutsushi1-kikai","shortName":"技術士第一次試験・機械部門","fullName":"技術士第一次試験・機械部門","domain":"construction","administrator":"日本技術士会","officialQuestionsUrl":"https://www.engineer.or.jp/c_categories/index02021.html","officialReuseTermsUrl":"https://www.engineer.or.jp/c_categories/index02021.html","status":"live","reuseSummary":"2024・2025年度の基礎・適性・機械専門160原問を保存。公式全員正解の専門2問は通常採点対象外、158問を演習できます。","remainingWork":[]},
+{"slug":"hoshasen-1","examCode":"hoshasen-1","shortName":"第一種放射線取扱主任者","fullName":"第一種放射線取扱主任者","domain":"safety","administrator":"原子力安全技術センター","officialQuestionsUrl":"https://www.nustec.or.jp/syunin/","officialReuseTermsUrl":"https://www.nustec.or.jp/syunin/","status":"live","reuseSummary":"2025・2026年の受入済み原問を解答欄単位で演習。複数の解答欄を含む原問は全文を保持して欄ごとに表示します。公式全員正解1欄は通常採点対象外。","remainingWork":[]},
+{"slug":"hoshasen-2","examCode":"hoshasen-2","shortName":"第二種放射線取扱主任者","fullName":"第二種放射線取扱主任者","domain":"safety","administrator":"原子力安全技術センター","officialQuestionsUrl":"https://www.nustec.or.jp/syunin/","officialReuseTermsUrl":"https://www.nustec.or.jp/syunin/","status":"live","reuseSummary":"2025・2026年の受入済み原問を解答欄単位で演習。根拠不足の2026年化学問9は保留のまま公開しません。","remainingWork":[]},
+{"slug":"khk-kikai-kou","examCode":"khk-kikai-kou","shortName":"高圧ガス製造保安責任者 甲種機械","fullName":"高圧ガス製造保安責任者 甲種機械","domain":"safety","administrator":"高圧ガス保安協会","officialQuestionsUrl":"https://www.khk.or.jp/qualification/","officialReuseTermsUrl":"https://www.khk.or.jp/qualification/","status":"live","reuseSummary":"2024・2025年度80問。法令・保安管理技術は選択式、学識10問は公式解答例との手動照合です。記述答案は自動採点しません。","remainingWork":[]},
+{"slug":"khk-kikai-otsu","examCode":"khk-kikai-otsu","shortName":"高圧ガス製造保安責任者 乙種機械","fullName":"高圧ガス製造保安責任者 乙種機械","domain":"safety","administrator":"高圧ガス保安協会","officialQuestionsUrl":"https://www.khk.or.jp/qualification/","officialReuseTermsUrl":"https://www.khk.or.jp/qualification/","status":"live","reuseSummary":"2024・2025年度100問。公式正答・全肢解説・必要図を収録。","remainingWork":[]},
+{"slug":"energy-kanri","examCode":"energy-kanri","shortName":"エネルギー管理士","fullName":"エネルギー管理士","domain":"electrical","administrator":"省エネルギーセンター","officialQuestionsUrl":"https://www.eccj.or.jp/mgr1/test_past/","officialReuseTermsUrl":"https://www.eccj.or.jp/mgr1/test_past/","status":"live","reuseSummary":"第47・48回62原問・842公式解答欄を保存し、837設問を演習できます。順序不問4ペアは各1設問、全員正解1欄は通常採点対象外。","remainingWork":[]},
+{"slug":"reform-mgr","examCode":"reform-mgr","shortName":"マンションリフォームマネジャー","fullName":"マンションリフォームマネジャー","domain":"construction","administrator":"住宅リフォーム・紛争処理支援センター","officialQuestionsUrl":"https://www.chord.or.jp/","officialReuseTermsUrl":"https://www.chord.or.jp/","status":"live","reuseSummary":"2025・2026年度の学科100問を収録。設計製図試験は対象外。","remainingWork":[]},
+{"slug":"shohi-sodan","examCode":"shohi-sodan","shortName":"消費生活相談員","fullName":"消費生活相談員","domain":"legal","administrator":"国民生活センター","officialQuestionsUrl":"https://www.kokusen.go.jp/","officialReuseTermsUrl":"https://www.kokusen.go.jp/","status":"live","reuseSummary":"2024・2025年度のマークシート320小問を収録。原問番号・小問番号は出典に表示します。","remainingWork":[]},
+{"slug":"biyoshi","examCode":"biyoshi","shortName":"美容師","fullName":"美容師","domain":"personal-services","administrator":"理容師美容師試験研修センター","officialQuestionsUrl":"https://www.rbc.or.jp/exam/past_question/","officialReuseTermsUrl":"https://www.rbc.or.jp/exam/past_question/","status":"live","reuseSummary":"第53・54回各53問、106問を演習できます。図等の確認待ち4原問は保留のまま。","remainingWork":[]},
+{"slug":"kikenbutsu-otsu1","examCode":"kikenbutsu-otsu1","shortName":"危険物取扱者 乙種第1類","fullName":"危険物取扱者 乙種第1類","domain":"safety","administrator":"消防試験研究センター","officialQuestionsUrl":"https://www.shoubo-shiken.or.jp/","officialReuseTermsUrl":"https://www.shoubo-shiken.or.jp/","status":"live","reuseSummary":"公式公開の抜粋10問のみ。特定回の全問や2回分の全問を収録したものではありません。","remainingWork":[]},
+{"slug":"kikenbutsu-otsu2","examCode":"kikenbutsu-otsu2","shortName":"危険物取扱者 乙種第2類","fullName":"危険物取扱者 乙種第2類","domain":"safety","administrator":"消防試験研究センター","officialQuestionsUrl":"https://www.shoubo-shiken.or.jp/","officialReuseTermsUrl":"https://www.shoubo-shiken.or.jp/","status":"live","reuseSummary":"公式公開の抜粋10問のみ。特定回の全問や2回分の全問を収録したものではありません。","remainingWork":[]},
+{"slug":"kikenbutsu-otsu6","examCode":"kikenbutsu-otsu6","shortName":"危険物取扱者 乙種第6類","fullName":"危険物取扱者 乙種第6類","domain":"safety","administrator":"消防試験研究センター","officialQuestionsUrl":"https://www.shoubo-shiken.or.jp/","officialReuseTermsUrl":"https://www.shoubo-shiken.or.jp/","status":"live","reuseSummary":"公式公開の抜粋10問のみ。特定回の全問や2回分の全問を収録したものではありません。","remainingWork":[]}
 ] as const;
 
 export function getQualificationByExamCode(exam: ExamCode): QualificationCatalogEntry | undefined {

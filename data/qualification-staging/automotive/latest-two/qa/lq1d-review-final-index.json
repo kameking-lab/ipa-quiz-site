@@ -1,0 +1,148 @@
+{
+  "model": "gpt-6-astra",
+  "verdict": "PASS",
+  "scope": {
+    "reviewType": "Final index/provenance supplement to qa/lq1d-review-implementation1.json",
+    "baselineCommit": "0a80989b07d13ace6fcb945511f4460f6f2f7c8f",
+    "reviewedHead": "98ade346371b337956bcac62f356d1a55067564c",
+    "branch": "qual/LQ1D-20261104",
+    "releaseRows": 608,
+    "deliveryOnly": true,
+    "taskFullyComplete": false,
+    "writePath": "data/qualification-staging/automotive/latest-two/qa/lq1d-review-final-index.json"
+  },
+  "checks": [
+    {
+      "name": "branch baseline and staged scope",
+      "result": "PASS",
+      "detail": {
+        "baseline": "0a80989b07d13ace6fcb945511f4460f6f2f7c8f",
+        "head": "98ade346371b337956bcac62f356d1a55067564c",
+        "branch": "qual/LQ1D-20261104",
+        "stagedPaths": [
+          "data/qualification-staging/automotive/latest-two/qa/lq1d-review-q31.json"
+        ]
+      }
+    },
+    {
+      "name": "Q31 original receipt index repair",
+      "result": "PASS",
+      "detail": {
+        "method": "subprocess binary stdout from git show :path; SHA256 on raw bytes, no clean filters",
+        "indexSha256": "a5e05621e1f578afba7833ebd5db49cfd2dd5d803f52346e4a2933bcf2cefb33",
+        "rawSha256": "a5e05621e1f578afba7833ebd5db49cfd2dd5d803f52346e4a2933bcf2cefb33",
+        "immutableIndexSha256": "a5e05621e1f578afba7833ebd5db49cfd2dd5d803f52346e4a2933bcf2cefb33",
+        "headOriginalSha256": "91e06374e9821c213986ac19e563e5becb5c0352882f0f27d269f770a7c233b4",
+        "indexBytes": 5088,
+        "crlfCount": 53,
+        "headCrLfCount": 0,
+        "headOriginalEqualsIndex": false,
+        "repairState": "Corrected in index only; HEAD original receipt still has LF."
+      }
+    },
+    {
+      "name": "all 608 ledger receipt and supporting evidence bytes",
+      "result": "PASS",
+      "detail": {
+        "rowsChecked": 608,
+        "immutableReceiptReferencesChecked": 608,
+        "uniqueImmutableReceipts": 38,
+        "supportingEvidenceReferencesChecked": 7,
+        "uniqueSupportingEvidencePaths": 5,
+        "supportingEvidence": [
+          {
+            "path": "data/qualification-staging/automotive/latest-two/qa/lq1d-supporting-sources.json",
+            "sha256": "6dfe244ac82dd1633bfe3b472fcde35191d1f4f052b8f3b810ab29208ddb8736"
+          },
+          {
+            "path": "data/qualification-staging/automotive/latest-two/qa/lq1d-supporting-sources/kouron-dictionary-p224.png",
+            "sha256": "7660d407bd2c8812d58543654ca5076c4eb5a0cad105f3cc117b22026a68d86f"
+          },
+          {
+            "path": "data/qualification-staging/automotive/latest-two/qa/lq1d-supporting-sources/tsk-bearing-p18.png",
+            "sha256": "874b5530285b3e9d78768f05ba0b21d089b4f9f6fccfa89e808c88d8e6a5978f"
+          },
+          {
+            "path": "data/qualification-staging/automotive/latest-two/qa/lq1b-recovered-evidence/dddf0ff409c6-AUTOMOTIVE-DELTA-RESULTS.json",
+            "sha256": "dddf0ff409c6b0ef2bb36f0e1c67535c9c526e1d905855363ad0826b3c5fb4a9"
+          },
+          {
+            "path": "data/qualification-staging/automotive/latest-two/qa/lq1b-recovered-evidence/3d4daa5fbedd-AUTOMOTIVE-UNCHANGED-FIELD-HASHES.json",
+            "sha256": "3d4daa5fbedd0aa1820c925b12f85597d59ef3b7d7c3233df50b07b6048d9c42"
+          }
+        ],
+        "method": "Every reference resolved through git show :path; SHA256 and raw worktree byte equality verified."
+      }
+    },
+    {
+      "name": "baseline preservation and release bindings",
+      "result": "PASS",
+      "detail": {
+        "baselineQuestionsAndRowsPreserved": 607,
+        "releaseCandidateHashesChecked": 608,
+        "onlyAdmission": "jidosha-2026-first-2-gasoline-q31",
+        "baselineImmutableReceiptBytesPreserved": true
+      }
+    },
+    {
+      "name": "HOLD and REFERENCE exclusions",
+      "result": "PASS",
+      "detail": {
+        "Q37": "HOLD; absent from released questions and acceptance ledger",
+        "Q13": "REFERENCE; absent from released questions and acceptance ledger",
+        "taskFullyComplete": false
+      }
+    },
+    {
+      "name": "body research and locator handoff boundaries",
+      "result": "PASS",
+      "detail": {
+        "classification": "Unaccepted handoff evidence only; exact option 3/4 corrections remain unresolved. Explicit scope notes do not claim accepted corrections.",
+        "locators": [
+          {
+            "path": "data/qualification-staging/automotive/latest-two/qa/lq1d-body-source-locators/tact-2024-p12.png",
+            "sha256": "f3dc1568f775cf597f2bea3fcaf5ac07cdf32be026bff2be211c8c4ee7484c00",
+            "acceptanceEvidence": false,
+            "scope": "Textbook page locator only: p296 sanding work/equipment combinations. Not the table contents."
+          },
+          {
+            "path": "data/qualification-staging/automotive/latest-two/qa/lq1d-body-source-locators/kansai-137-p10.png",
+            "sha256": "ec7cdf63ef9fc91d1d02a7e6c9736f70fa79d390e49fe55f04f34083b009eebd",
+            "acceptanceEvidence": false,
+            "scope": "Positive product-specific bankin/polipate workflow; does not resolve exact Q37 corrections."
+          },
+          {
+            "path": "data/qualification-staging/automotive/latest-two/qa/lq1d-body-source-locators/saitama-u73-p2.png",
+            "sha256": "edd7af05fe50e942e1181cd37ec4b38e9c38cc251349e9f0e86a13d83136e3ed",
+            "acceptanceEvidence": false,
+            "scope": "Positive generic putty group, material category unspecified; not a complete exam grouping."
+          }
+        ],
+        "storage": "Untracked worktree artifacts; no index/HEAD blobs available. Raw PNG bytes checked."
+      }
+    },
+    {
+      "name": "final automotive release test log",
+      "result": "PASS",
+      "detail": {
+        "path": "tmp/lq1d-final-release-tests.log",
+        "sha256": "e87cd7b8eb715cd61345e39467d266bee2ee66c30e6115cb674a8837aa631b2c",
+        "encoding": "UTF-16LE with BOM",
+        "testFilesPassed": 1,
+        "testsPassed": 4,
+        "commandExitCode": 0,
+        "execution": "Existing final log inspected; tests not rerun."
+      }
+    }
+  ],
+  "findings": [],
+  "limitations": [
+    "PASS is implementation delivery only, conditional on retaining the verified staged Q31 byte repair; HEAD alone retains the LF original receipt defect.",
+    "Q37 remains HOLD without a technical PASS; Q13 remains REFERENCE and excluded. Overall task is not fully complete.",
+    "Prior technical judgments and external source claims were not re-researched. Body research2 and locators are unaccepted handoff material, not corrections or acceptance receipts.",
+    "Untracked handoff artifacts and the test log were checked from raw worktree bytes; all 608 accepted ledger rows and every referenced immutable receipt/supportingEvidence were checked against actual Git index blobs.",
+    "Saved final test log confirms four tests passed and command exit 0; this supplement did not rerun tests or independently establish the log execution chronology.",
+    "No product, candidate or receipt edits; no index changes, commits, push, PR, deployment, agents or secrets. Only the requested review JSON was written."
+  ],
+  "indexFileSha256BeforeAndAfterReview": "d6a3b9c44d57f7a2013bd4ec96259995eeea452ac5d15f8558470e5ebaaf626a"
+}

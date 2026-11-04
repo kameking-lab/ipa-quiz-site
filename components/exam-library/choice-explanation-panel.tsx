@@ -1,6 +1,7 @@
 import { CheckCircle2, ExternalLink, XCircle } from "lucide-react";
 import { Markdown } from "@/components/ui/markdown";
 import type { ExamChoiceExplanation } from "@/lib/exam-library-model";
+import { isGovernmentPrimarySourceUrl } from "@/lib/exam-library-choice-explanations";
 
 interface ChoiceExplanationPanelProps {
   explanation: ExamChoiceExplanation;
@@ -12,6 +13,7 @@ export function ChoiceExplanationPanel({
   explanation,
   selectedChoice,
 }: ChoiceExplanationPanelProps) {
+  const governmentOnly = explanation.sources.every(source => isGovernmentPrimarySourceUrl(source.url));
   return (
     <section aria-label="選択肢ごとの解説" className="mt-3">
       {explanation.provisionalReview ? (
@@ -52,8 +54,8 @@ export function ChoiceExplanationPanel({
         })}
       </ol>
       {explanation.sources.length > 0 ? <div className="mt-4 border-t border-current/20 pt-3">
-        <h5 className="font-bold">確認した政府一次資料</h5>
-        <ul aria-label="政府一次資料" className="mt-1 list-disc space-y-1 pl-5 text-sm">
+        <h5 className="font-bold">{governmentOnly ? "確認した政府一次資料" : "確認した一次資料"}</h5>
+        <ul aria-label={governmentOnly ? "政府一次資料" : "一次資料"} className="mt-1 list-disc space-y-1 pl-5 text-sm">
           {explanation.sources.map((source) => (
             <li key={source.url}>
               <a
@@ -63,7 +65,7 @@ export function ChoiceExplanationPanel({
                 className="inline-flex min-h-11 max-w-full items-center gap-1 font-semibold underline underline-offset-4 [overflow-wrap:anywhere] focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-sky-300"
               >
                 {source.title}
-                <span className="sr-only">（政府サイト・新しいタブで開きます）</span>
+                <span className="sr-only">{governmentOnly ? "（政府サイト・新しいタブで開きます）" : "（一次資料・新しいタブで開きます）"}</span>
                 <ExternalLink className="h-4 w-4 shrink-0" aria-hidden="true" />
               </a>
             </li>

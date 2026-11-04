@@ -35,7 +35,12 @@ for (const width of [390, 1280]) {
     await expect(finder.getByRole("searchbox", { name: "資格名・略称で検索" })).toBeInViewport();
     await expect(finder.getByRole("link", { name: /^ITパスポート/ })).toBeInViewport();
     const filters = finder.locator(".study-filters").getByRole("button", { pressed: false });
-    expect(await filters.count()).toBe(6);
+    // Automotive discovery adds a seventh domain; all remain unselected initially.
+    await expect(filters).toHaveText([
+      "自動車整備", "IT・情報処理", "安全衛生", "電気",
+      "建設・施工管理", "お金・不動産・経営", "医療・福祉",
+    ]);
+    await expect(finder.getByRole("button", { name: "すべて", exact: true })).toHaveAttribute("aria-pressed", "true");
 
     // 各分野の資格カードと一覧ページへの導線。
     const main = page.locator("main");

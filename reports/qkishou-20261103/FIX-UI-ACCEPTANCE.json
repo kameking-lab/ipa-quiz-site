@@ -1,0 +1,40 @@
+{
+  "directoryToKisho": "PASS",
+  "normalAcademicWrongAnswerAndAllChoices": "PASS",
+  "practicalManualComparisonAndDraftReload": "PASS",
+  "mobileDocumentWidth": {
+    "document": 390,
+    "viewport": 390
+  },
+  "localErrors": [],
+  "localInstrumentation404s": [
+    "/_vercel/insights/script.js",
+    "/_vercel/speed-insights/script.js"
+  ],
+  "status": "PASS",
+  "baseUrl": "http://127.0.0.1:48366",
+  "build": "next build (Turbopack), exit 0; served with next start",
+  "visualReview": "PASS: 回・科目一覧、通常学科の誤答・全肢解説、実技の作図と解答例、入力保存の読戻し、390px画面を目視。原寸画像は局所横スクロールで確認。",
+  "screenshots": [
+    {
+      "path": "reports/qkishou-20261103/fix-ui/directory.png",
+      "sha256": "b7c17458838a569b133efb174245e53e7e51a42cfdcacd9dc9246d704c265a22"
+    },
+    {
+      "path": "reports/qkishou-20261103/fix-ui/academic.png",
+      "sha256": "3deaca6d27aa2a4c3e2fc0e32307d2cf80734a98e83d82eb0bcfc5ced2dda4f1"
+    },
+    {
+      "path": "reports/qkishou-20261103/fix-ui/practical-field.png",
+      "sha256": "ef51ff0575e451b83c8cbae3cfaca72d981b4853d1c27e5f8028569cda2b6469"
+    },
+    {
+      "path": "reports/qkishou-20261103/fix-ui/practical-diagram.png",
+      "sha256": "fb8da66319182271ef518b1a513a3ae66bfb1356a60ba42fa4fc03b855d9d21a"
+    },
+    {
+      "path": "reports/qkishou-20261103/fix-ui/mobile.png",
+      "sha256": "28e94b00883e7df45adf248dadd091eeb2eab5207a3df1812c91ed1849d8edc5"
+    }
+  ]
+}

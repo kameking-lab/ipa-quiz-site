@@ -1,0 +1,37 @@
+{
+  "checkedAt": "2026-11-03T22:51:25.261915+00:00",
+  "target": "国家試験（講習の技術検定とは別）",
+  "latestPublishedYears": [
+    2025,
+    2024
+  ],
+  "latestBasis": "公式案内の令和8年度国家試験は2026年11月8日で、確認日時点では実施前。公表ページの令和8年度欄には問題・正答リンクがない。令和7・6年度の問題冊子及び公式正答・解答例を通常公開URLで取得し年度を確認。",
+  "announcement": {
+    "url": "https://shiken.khk.or.jp/shiken.html",
+    "sha256OfHtml": "ae27348030f9067ba4621a9867094b54b4ed2e3c9465580fabfbd9438e9af956",
+    "excerpt": ""
+  },
+  "schedule": {
+    "url": "https://www.khk.or.jp/qualification/qualification_application/",
+    "excerpt": "案内\n申込後の変更手続きについて\n操作・記入方法等\n（国家試験科目が一部免除される講習の受付は、\nこちら\n）\n試験のご案内\n高圧ガス製造保安責任者試験・高圧ガス販売主任者試験のご案内（令和8年度分）\n試験日：令和8年11月8日（日）\n試験の種類\n1.高圧ガス製造保安責任者試験\n（甲種化学責任者、甲種機械責任者、乙種化学責任者、乙種機械責任者、丙種化学（液化石油ガス）責任者、丙種化学（特別試験科目）責任者、第一種冷凍機械責任者、第二種冷凍機械責任者、第三種冷凍機械責任者）\n2.高圧ガス販売主任者試"
+  },
+  "terms": {
+    "url": "https://www.khk.or.jp/condition.html",
+    "quote": "著作権法により認められる「私的使用」や「引用」の場合を除き、KHK又は原著作者、その他の権利者の許諾なく使用、転載、複製、再配布、再出版、販売、貸与等を行う行為を禁止します。",
+    "ownerDecision": "ユーザーの明示指示により収録。転載禁止文言は記録のみとし停止理由にしない。協会の許諾取得を意味する表示はしない。"
+  },
+  "acquisition": {
+    "canonicalPdfSuccesses": 16,
+    "unavailableCanonicalPdfUrls": [],
+    "unavailableAliasUrl": "https://shiken.khk.or.jp/Portals/0/khk/exam/2025/1110/R7ACFZ-W.pdf",
+    "aliasStatus": 404,
+    "aliasResolution": "www.khk.or.jp上の同名公式PDFを通常取得。認証・CAPTCHA・ボット拒否の迂回なし。"
+  },
+  "remoteRefsChecked": [
+    "origin/main",
+    "origin/claude/jolly-goodall-wlxnzx",
+    "origin/ops/cloud-qual-brief"
+  ],
+  "pdfFallbackRef": "origin/ops/source-pdfs-20261104 はローカル参照に存在せず（git ls-treeがNot a valid object name）。fetchは行っていない。",
+  "duplicates": "作業前のdata/questions・lib/qualifications/catalog.ts・data/exam-library・data/qualification-staging及び利用可能なorigin/main・origin/claude参照に同資格の成果なし。qual/*・codex/*のローカルorigin参照なし。"
+}

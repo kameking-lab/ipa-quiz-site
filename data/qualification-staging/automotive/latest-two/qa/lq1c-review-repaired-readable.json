@@ -1,0 +1,465 @@
+{
+  "model": "gpt-6-astra",
+  "scope": "Readable English reconstruction of the original 24-row LQ1C review, bound to lq1c-candidates-initial.json. Original verdicts and hashes preserved; proposed corrections are not applied.",
+  "limitations": [
+    "Reconstructed from the original review conversation because question-mark corruption is irreversible in the old receipt. This is not a new verdict on the other 19 candidates.",
+    "The original review visually checked every listed source page and official answer-sheet PNG. Source retrieval limitations are retained in the findings.",
+    "Unicode choice labels are serialized as JSON escapes. All prose is English ASCII. The two distinct replacement keys for 3-diesel-q11 are restored from the conversation; they had collided as question marks."
+  ],
+  "rows": [
+    {
+      "id": "jidosha-2026-first-2-gasoline-q29",
+      "candidateSha256": "6fdda1fd3977c91df3a67899f5e2b92cd96462dc45c51d5b493bfcb410e2a4f4",
+      "verdict": "FAIL",
+      "sourcePagesChecked": [
+        11
+      ],
+      "answerChecked": true,
+      "allFourExplanationsChecked": true,
+      "findings": [
+        {
+          "field": "choiceExplanations.\u30a8",
+          "issue": "The Nissan 2004 Altima factory manual independently supports front-sun-gear locking. The specific claim about JASPA 2014 Q18 and answer 1 was not verified because both historical PDFs were unavailable. Other explanations and official answer 2 agree.",
+          "replacement": "Incorrect in the mechanism addressed by this question: the brake band locks the front sun gear, not the front internal gear. As a corresponding mechanism, the Nissan 2004 Altima factory manual explicitly lists front-sun-gear locking as the brake-band function. Remove the unverified claim about the 2014 JASPA question and answer.",
+          "source": "tmp/lq1b-sources/jaspa-2026-first-2-gasoline-p11.png; https://device.report/m/5a5467649e35bb91a1ee5a65b7479076778c5684a307d5a46238fadda19705b7.pdf; https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_kai.pdf"
+        }
+      ]
+    },
+    {
+      "id": "jidosha-2026-first-2-gasoline-q31",
+      "candidateSha256": "1fa3e960f73aba53058d37b5f829c57684f46be2a38411b013b9713ae1a57a2b",
+      "verdict": "HOLD",
+      "sourcePagesChecked": [
+        12
+      ],
+      "answerChecked": true,
+      "allFourExplanationsChecked": true,
+      "findings": [
+        {
+          "field": "technicalConflict",
+          "issue": "Visual reading confirms that option 2 says tapered roller type, alongside ball and needle roller types, under radial bearings used in transmissions. This is not an OCR substitution. Official answer 2 conflicts with NSK radial/axial load capability and manual-transmission QAT applications. The other three options are sound. Retain technical HOLD; do not invent a cylindrical-only classification. The NSK large classification PDF was not fetched; its classification was available only in the search index.",
+          "replacement": null,
+          "source": "tmp/lq1b-sources/jaspa-2026-first-2-gasoline-p12.png; https://www.nsk.com/jp-ja/products/roller-bearings/tapered-roller-bearings/; https://www.nsk.com/jp-ja/products/automotive/manual-transmissions/; https://www.nsk.com/content/dam/nsk/jp/ja/catalogs/pdf/bearings/1103_parta.pdf; https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_kai.pdf"
+        }
+      ]
+    },
+    {
+      "id": "jidosha-2026-first-2-diesel-q01",
+      "candidateSha256": "a601f94cc6fc2296bfaab74ae3e7c0042d20fc45a51d5329cc895fcf7d61db37",
+      "verdict": "FAIL",
+      "sourcePagesChecked": [
+        2,
+        6
+      ],
+      "answerChecked": true,
+      "allFourExplanationsChecked": true,
+      "findings": [
+        {
+          "field": "explanation,choiceExplanations.\u30a8",
+          "issue": "The original explanation wrongly calls the widely advanced injection pre-injection. DENSO separates distant pilot injection from close pre-injection. Same-paper Q11 does not validate its option calling injection A pre-injection. CO, SOF and NOx explanations agree.",
+          "replacement": {
+            "explanation": "Option 1 is appropriate. Diesel combustion with excess air produces relatively little CO. SOF comprises soluble organic material from unburned fuel and lubricating oil; NOx forms mainly through high-temperature nitrogen/oxygen reactions. Do not identify widely advanced injection as pre-injection.",
+            "choiceExplanations.\u30a8": "Officially incorrect. In the DENSO five-injection terminology, pilot injection is separated from the main injection, while pre-injection immediately precedes it. Emission effects depend on timing, quantity and operating conditions; do not characterize pre-injection solely as HC reduction."
+          },
+          "source": "tmp/lq1b-sources/jaspa-2026-first-2-diesel-p02.png; tmp/lq1b-sources/jaspa-2026-first-2-diesel-p06.png; https://www.denso.com/jp/ja/-/media/global/business/innovation/review/11-1/11-1-doc-disseration03itp6-ja.pdf?hash=008474745B2CDB43CA664F7F5AA3DD0C&la=ja-jp&rev=262a27a599fc4bcdae2b3b97ffc1e413; https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_kai.pdf"
+        }
+      ]
+    },
+    {
+      "id": "jidosha-2026-first-2-diesel-q08",
+      "candidateSha256": "a966de13a2ea3e0bd8bbadd31fd35473d89c82ada7b1c44abaf0d38bb3f9d919",
+      "verdict": "PASS",
+      "sourcePagesChecked": [
+        4
+      ],
+      "answerChecked": true,
+      "allFourExplanationsChecked": true,
+      "findings": [
+        {
+          "field": "validation",
+          "issue": "All four restored options match the image. A is CPU and B is RAM. Injector calibration registration and quantity inputs are consistent. Target pressure is determined using final injection quantity and speed, with measured-pressure feedback. Official answer 4 agrees.",
+          "replacement": null,
+          "source": "tmp/lq1b-sources/jaspa-2026-first-2-diesel-p04.png; https://old.autonerdz.com/yabbfiles/Attachments/Denso_CRS_service_manual.pdf; https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_kai.pdf"
+        }
+      ]
+    },
+    {
+      "id": "jidosha-2026-first-2-diesel-q12",
+      "candidateSha256": "90094fca0624a8f60c5f94e242c7211bbf2a627180baeba3b41513ff6237c22b",
+      "verdict": "FAIL",
+      "sourcePagesChecked": [
+        6
+      ],
+      "answerChecked": true,
+      "allFourExplanationsChecked": true,
+      "findings": [
+        {
+          "field": "explanation,choiceExplanations.\u30a4",
+          "issue": "The explanation inserts the word only, absent from the source option. Garrett confirms coexistence of journal and thrust functions and also ball-bearing designs. Distinguish the textbook roles without denying actual thrust bearings. Other three explanations agree.",
+          "replacement": {
+            "explanation": "Official answer: option 2. In the textbook distinction, journal bearings support the shaft radially and thrust bearings constrain axial movement. Actual turbos may use both; the answer does not mean thrust bearings are absent.",
+            "choiceExplanations.\u30a4": "Officially treated as incorrect. Journal bearings provide radial shaft support and thrust bearings provide axial restraint in the described arrangement. The printed option does not say only; do not add that restriction to explain the key."
+          },
+          "source": "tmp/lq1b-sources/jaspa-2026-first-2-diesel-p06.png; https://www.garrettmotion.com/knowledge-center-category/turbo-replacement/turbocharger-bearing-systems/; https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_kai.pdf"
+        }
+      ]
+    },
+    {
+      "id": "jidosha-2026-first-2-diesel-q15",
+      "candidateSha256": "30b7ddc1d645162d5734b8b5631731dd41af394b0765354339b57be792947ba5",
+      "verdict": "FAIL",
+      "sourcePagesChecked": [
+        7
+      ],
+      "answerChecked": true,
+      "allFourExplanationsChecked": true,
+      "findings": [
+        {
+          "field": "explanation,choiceExplanations.\u30a4",
+          "issue": "Treating coolant temperature as the sole universal input was unsupported. Navistar gives coolant, oil and conditional intake-temperature examples. Official answer 4, the metal two-coil construction and temperature-dependent current regulation agree.",
+          "replacement": {
+            "explanation": "Option 4 is appropriate. A self-regulating metal glow plug has series-connected rapid-heating and regulating coils inside its protective metal sheath. Intake-heater temperature inputs differ by design.",
+            "choiceExplanations.\u30a4": "Officially incorrect under the textbook coolant-temperature preheat scheme. This does not mean intake heaters never use intake temperature. Manufacturer examples use coolant/oil temperature and, under specified conditions, intake temperature."
+          },
+          "source": "tmp/lq1b-sources/jaspa-2026-first-2-diesel-p07.png; https://www.international.com/-/media/project/tratongroup/international/international/vehicles/resources/tem-body-builder/engine-media/epa-21-international-a26/a26_engine_cold_start_assist_pdf.pdf?rev=e23fedbd33b64aa2a7912dc5b7205919; https://www.ngkntk.com/products/glow-plugs; https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_kai.pdf"
+        }
+      ]
+    },
+    {
+      "id": "jidosha-2026-first-2-diesel-q27",
+      "candidateSha256": "0a7d2b7de6b260c6cce93d34292a693213423a0b4a03e2ce6093a951772b3864",
+      "verdict": "HOLD",
+      "sourcePagesChecked": [
+        12
+      ],
+      "answerChecked": true,
+      "allFourExplanationsChecked": true,
+      "findings": [
+        {
+          "field": "choiceExplanations.\u30a6",
+          "issue": "The source says liquid refrigerant, not liquid refrigerant only. DENSO supports outlet-temperature flow control and sensing-tube gas leakage but does not identify the exact charge or operating phase in illustrated chamber A. Official answer 4 and the other explanations were checked.",
+          "replacement": "Officially treated as incorrect. Temperature-dependent pressure in the sensing charge operates the diaphragm to regulate flow. The exact charge specification of illustrated chamber A is unverified. Do not add only to the printed wording or categorically exclude a liquid phase. Retain technical HOLD pending the matching valve specification.",
+          "source": "tmp/lq1b-sources/jaspa-2026-first-2-diesel-p12.png; https://www.denso-am.eu/products/ac-engine-cooling/expansion-valves; https://www.densoautoparts.com/troubleshooting-charts-clutch-expansion/; https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_kai.pdf"
+        }
+      ]
+    },
+    {
+      "id": "jidosha-2026-first-2-diesel-q38",
+      "candidateSha256": "08696430979215967ed1fbc990f3805870956922f14157be08fdfbaa50366faa",
+      "verdict": "HOLD",
+      "sourcePagesChecked": [
+        15
+      ],
+      "answerChecked": true,
+      "allFourExplanationsChecked": true,
+      "findings": [
+        {
+          "field": "explanation,choiceExplanations.\u30a2,legalApplicability",
+          "issue": "Official answer 1 and all four options were checked. The 2008 Article 102 specifies 550 mm unloaded, symmetry, lateral 100 mm positioning and secure mounting. The 2020 Article 180 has 450 mm and conditional alternatives. Build-date/class transitional applicability remains unresolved.",
+          "replacement": {
+            "explanation": "Official answer: option 1. Under the historical 550 mm provision used in this question, height is measured unloaded, not laden. Later provisions specify 450 mm and conditional alternatives; determine the applicable vehicle category and manufacturing-date rules before applying a limit to an actual vehicle.",
+            "choiceExplanations.\u30a2": "Incorrect under the historical 550 mm rule because the reference state is unloaded. Do not present 550 mm as the current universal limit."
+          },
+          "source": "tmp/lq1b-sources/jaspa-2026-first-2-diesel-p15.png; https://www.mlit.go.jp/jidosha/kijyun/saimokukokuji/saikoku_102_00.pdf; https://www.mlit.go.jp/jidosha/content/S180.pdf; https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_kai.pdf"
+        }
+      ]
+    },
+    {
+      "id": "jidosha-2026-first-2-motorcycle-q12",
+      "candidateSha256": "572c59cdf1642a0e23a2b2d9ee034b7e4a2bee2118e1c4f609be975f0fd9f0ae",
+      "verdict": "PASS",
+      "sourcePagesChecked": [
+        5
+      ],
+      "answerChecked": true,
+      "allFourExplanationsChecked": true,
+      "findings": [
+        {
+          "field": "validation",
+          "issue": "Restored wording matches all four options. Honda factory service instructions show closed power contacts when upright and open contacts when tilted approximately 60 degrees; the relay conducts only when energized. This supports the OFF correction. MAP polarity, TPS quantity input and crank-angle functions agree.",
+          "replacement": null,
+          "source": "tmp/lq1b-sources/jaspa-2026-first-2-motorcycle-p05.png; https://device.report/m/f5f492ba7e847359c40c83c3f4f3ab336599543f745f2406da8ced50251d757c; https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_kai.pdf"
+        }
+      ]
+    },
+    {
+      "id": "jidosha-2026-first-2-motorcycle-q21",
+      "candidateSha256": "08b528ad3caba4b1ab2d65753c1980789847fe65df0d612c41e43b3a723dc116",
+      "verdict": "PASS",
+      "sourcePagesChecked": [
+        8
+      ],
+      "answerChecked": true,
+      "allFourExplanationsChecked": true,
+      "findings": [
+        {
+          "field": "validation",
+          "issue": "All four restored options match. Trail is the distance and caster is an angle. Increasing trail at fixed caster increases the stability tendency and steering effort. The on-road/off-road comparison is explicitly a textbook tendency, not a universal vehicle rule. Official answer 3 agrees.",
+          "replacement": null,
+          "source": "tmp/lq1b-sources/jaspa-2026-first-2-motorcycle-p08.png; https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_kai.pdf"
+        }
+      ]
+    },
+    {
+      "id": "jidosha-2026-first-2-motorcycle-q26",
+      "candidateSha256": "7eae9994ee0c8b9146c247c0be7f3b8c6c0cced3ed23e9eba249f51c69fdf10f",
+      "verdict": "PASS",
+      "sourcePagesChecked": [
+        10
+      ],
+      "answerChecked": true,
+      "allFourExplanationsChecked": true,
+      "findings": [
+        {
+          "field": "validation",
+          "issue": "The diagram supports front bevel-gear power transmission to the propeller shaft, a front universal joint and a rear coupling. The repair resolves reversed power flow and incorrect angular accommodation. Explanations 2 and 4 remain brief but do not affirm the wrong locations or spring action. Official answer 1 agrees.",
+          "replacement": null,
+          "source": "tmp/lq1b-sources/jaspa-2026-first-2-motorcycle-p10.png; https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_kai.pdf"
+        }
+      ]
+    },
+    {
+      "id": "jidosha-2026-first-3-chassis-q09",
+      "candidateSha256": "6adb0552730f0c64b9eef2d70ab71fe55e44cb041760cdaaed5d500a710339f1",
+      "verdict": "HOLD",
+      "sourcePagesChecked": [
+        4
+      ],
+      "answerChecked": true,
+      "allFourExplanationsChecked": true,
+      "findings": [
+        {
+          "field": "choiceExplanations.\u30a4",
+          "issue": "Official answer 4, source wording and other three explanations were checked. Ford specifies an engine-off fluid check, so stopping the engine is not universally wrong. The exact textbook checking condition remains unidentified.",
+          "replacement": "Official answer: option 4. Check fluid under the vehicle-specific service conditions. Some manufacturers specify checking after stopping the engine, so option 2 cannot be rejected as a universal technical rule. The intended textbook condition requires further evidence.",
+          "source": "tmp/lq1b-sources/jaspa-2026-first-3-chassis-p04.png; https://www.fordservicecontent.com/Ford_Content/catalog/owner_guides/10f12og3e.pdf; https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_kai.pdf"
+        }
+      ]
+    },
+    {
+      "id": "jidosha-2026-first-3-gasoline-q04",
+      "candidateSha256": "c29e458e844c647f4a57671bd42ac1729b0ace028be7bf6f5ec20ed433be98bc",
+      "verdict": "PASS",
+      "sourcePagesChecked": [
+        2
+      ],
+      "answerChecked": true,
+      "allFourExplanationsChecked": true,
+      "findings": [
+        {
+          "field": "validation",
+          "issue": "The repair correctly measures axial face runout while rotating the flywheel with a dial indicator. The uses of the other three gauges were checked.",
+          "replacement": null,
+          "source": "tmp/lq1b-sources/jaspa-2026-first-3-gasoline-p02.png; https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_kai.pdf"
+        }
+      ]
+    },
+    {
+      "id": "jidosha-2026-first-3-gasoline-q05",
+      "candidateSha256": "4969f507065c427a2ab753973738ae3db2452a1afe40472f88404d3b5525b544",
+      "verdict": "FAIL",
+      "sourcePagesChecked": [
+        2
+      ],
+      "answerChecked": true,
+      "allFourExplanationsChecked": true,
+      "findings": [
+        {
+          "field": "choiceExplanations.\u30a4",
+          "issue": "The original softened wording still did not explicitly separate the exam minimum from a universal product claim. Manufacturer data specify formulation and volume concentration. Official answer 4 and other explanations agree.",
+          "replacement": "The exam treats approximately 60 percent as a textbook low-freezing-point mixture. The exact minimum depends on formulation and concentration definition; it is not exactly 60 percent for every product. Follow the vehicle and coolant specifications for dilution.",
+          "source": "tmp/lq1b-sources/jaspa-2026-first-3-gasoline-p02.png; https://promo.basf.com/campaign/tasa/fichas-tecnicas/Glysantin%C2%AE%20G48%C2%AE%20-%20Engine%20Coolant%20Concentrate%20-%20TI.pdf; https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_kai.pdf"
+        }
+      ]
+    },
+    {
+      "id": "jidosha-2026-first-3-diesel-q11",
+      "candidateSha256": "5085c9931db8d1076be607c3c1e362d39448fc7b1facc641785f7b920a52be3d",
+      "verdict": "HOLD",
+      "sourcePagesChecked": [
+        4
+      ],
+      "answerChecked": true,
+      "allFourExplanationsChecked": true,
+      "findings": [
+        {
+          "field": "choiceExplanations.\u30a2,choiceExplanations.\u30a6",
+          "issue": "Official answer 4, jiggle-valve venting and cap pressure-valve testing were checked. The precise outlet setting of 82-88 C and 5-7 C difference were not independently established. BASF below -50 C at 60 vol percent alone does not prove freezing at -60 C.",
+          "replacement": {
+            "choiceExplanations.\u30a2": "The exam assumes that its 60 percent mixture freezes at -60 C. Actual freezing temperature depends on formulation and concentration definition; consult the product data.",
+            "choiceExplanations.\u30a6": "The exam uses 82-88 C and an approximately 5-7 C higher outlet-control setting as textbook representative values. These are not universal calibration values; actual opening temperature is specified for the vehicle and part."
+          },
+          "source": "tmp/lq1b-sources/jaspa-2026-first-3-diesel-p04.png; https://fuji-seiko.co.jp/product1/; https://promo.basf.com/campaign/tasa/fichas-tecnicas/Glysantin%C2%AE%20G48%C2%AE%20-%20Engine%20Coolant%20Concentrate%20-%20TI.pdf; https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_kai.pdf"
+        }
+      ]
+    },
+    {
+      "id": "jidosha-2026-first-3-diesel-q15",
+      "candidateSha256": "2246a6b5718074da4475f12454d4e6e8e4d8a52ed24e8b6d83ba0c8c9bfeb294",
+      "verdict": "FAIL",
+      "sourcePagesChecked": [
+        5
+      ],
+      "answerChecked": true,
+      "allFourExplanationsChecked": true,
+      "findings": [
+        {
+          "field": "choiceExplanations.\u30a2",
+          "issue": "The original explanation did not qualify the printed 250-350 C range. ENEOS diesel SDS states approximately 240 C autoignition. Official answer 2 and cold-weather grades, viscosity and pour-point explanations agree.",
+          "replacement": "The exam treats 250-350 C and a slightly yellow appearance as textbook representative properties. Autoignition temperature is not a fixed value shared by all diesel products. ENEOS diesel SDS, for example, reports approximately 240 C. Consult the SDS for the actual product.",
+          "source": "tmp/lq1b-sources/jaspa-2026-first-3-diesel-p05.png; https://www.eneos.co.jp/business/sds/gasoline/pdf/02001_r.pdf; https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_kai.pdf"
+        }
+      ]
+    },
+    {
+      "id": "jidosha-2025-second-2-gasoline-q01",
+      "candidateSha256": "22f63fc3af160a2d52e540cbf3a094f572aa56cba3094d80e57c90f8e34fa26c",
+      "verdict": "HOLD",
+      "sourcePagesChecked": [
+        2
+      ],
+      "answerChecked": true,
+      "allFourExplanationsChecked": true,
+      "findings": [
+        {
+          "field": "choiceExplanations.\u30a6",
+          "issue": "Official answer 2 and conformity, seizure resistance and embeddability definitions agree. MAHLE supports multiple material/geometry/lubrication factors but does not establish the particular tin-content expansion comparison. Do not infer composite-shell expansion from pure-element coefficients.",
+          "replacement": "The exam treats this as appropriate for its assumed bearing alloy. Do not generalize the tin-content expansion relationship without identifying that alloy and construction. Actual oil clearance follows the manufacturer specification for the material, structure and service conditions.",
+          "source": "tmp/lq1b-sources/jaspa-2025-second-2-gasoline-p02.png; https://www.mahle-aftermarket.com/na/en/support/questions-and-comments/; https://www.mahle-aftermarket.com/media/homepage/facelift/media-center/product-catalogs/mahle_bearings_catalog_2025_screen.pdf; https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_kai.pdf"
+        }
+      ]
+    },
+    {
+      "id": "jidosha-2025-second-2-gasoline-q13",
+      "candidateSha256": "826b20228be88d3e3bb2aff722f9f62de78bf18ac75c1cb30eaf28dcb5af2347",
+      "verdict": "REFERENCE",
+      "sourcePagesChecked": [
+        5
+      ],
+      "answerChecked": true,
+      "allFourExplanationsChecked": true,
+      "findings": [
+        {
+          "field": "validation",
+          "issue": "The official answer-sheet footnote gives credit to everyone. Independent calculation: 2*3.14*1200*10/60 = 1256 W = 1.256 kW. Printed options 0.746, 1.265, 2.456 and 4.726 kW all differ. REFERENCE, not normal-scoring PASS.",
+          "replacement": null,
+          "source": "tmp/lq1b-sources/jaspa-2025-second-2-gasoline-p05.png; https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_kai.pdf"
+        }
+      ]
+    },
+    {
+      "id": "jidosha-2025-second-2-gasoline-q15",
+      "candidateSha256": "419955d58b9ec376ec0b7cdec6a0b4273f07c93843123c3a0ceec046bd022631",
+      "verdict": "HOLD",
+      "sourcePagesChecked": [
+        5
+      ],
+      "answerChecked": true,
+      "allFourExplanationsChecked": true,
+      "findings": [
+        {
+          "field": "explanation,choiceExplanations.\u30a6",
+          "issue": "Source, official answer 3 and MAP/Hall/O2 explanations agree. The repaired claim that both flux component and resistance are minimal needs the matching sensor arrangement. AKM general principles do not establish the tooth-facing component. The fetched publisher sample had 24 pages and lacked printed page 137. The repair was not disproved but could not be independently validated.",
+          "replacement": "Official answer: option 3. A magnetoresistive sensor converts rotor-dependent magnetic-field changes into resistance changes. Whether the relevant field component and resistance rise or fall at a tooth requires the matching element type, magnet geometry and detection direction. Do not generalize a particular arrangement to every magnetoresistive sensor; retain HOLD until its construction is documented.",
+          "source": "tmp/lq1b-sources/jaspa-2025-second-2-gasoline-p05.png; https://www.akm.com/jp/ja/products/hall-sensor/tutorial/faq/; https://www.analog.com/jp/resources/reference-designs/circuits-from-the-lab/cn0368.html; https://www.kouronpub-onlineshop.com/html/template/default/assets/pdf/2gmk_2025.pdf; https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_kai.pdf"
+        }
+      ]
+    },
+    {
+      "id": "jidosha-2025-second-2-gasoline-q23",
+      "candidateSha256": "82669d96d582487bba9d1b387f88447a38da8f4153f4ee186655dcd3a6aa5818",
+      "verdict": "FAIL",
+      "sourcePagesChecked": [
+        7
+      ],
+      "answerChecked": true,
+      "allFourExplanationsChecked": true,
+      "findings": [
+        {
+          "field": "choiceExplanations.\u30a4",
+          "issue": "Moving the sleeve-type magnetic input-shaft protrusions to the output shaft is not an adequate correction for a ring-type sensor. A primary patent describes two input-side rings and one pinion-side ring. Other explanations and official answer 1 were checked. The patent was available in the search index; direct retrieval failed.",
+          "replacement": "Incorrect. Option 2 confuses the magnetic input-shaft description of the sleeve type with the ring type. Ring-type designs can detect inductance changes caused by relative movement of input-side and output-side detection rings. Do not replace the option with a claim that magnetic protrusions exist only on the output shaft.",
+          "source": "tmp/lq1b-sources/jaspa-2025-second-2-gasoline-p07.png; https://patents.justia.com/patent/20020129667; https://www.jtekt.co.jp/products/bearing/p/field/automotive-aftermarket/steering/; https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_kai.pdf"
+        },
+        {
+          "field": "followUpProposal:choiceExplanations.\u30a4",
+          "issue": "Follow-up primary-source corroboration, not a new candidate verdict: Toyota Technical Training Course 071, printed p5-18, Fig.5.21 independently confirms input-side rings 1/2 and output-side ring 3. This replaces reliance on a patent search snippet.",
+          "replacement": "Incorrect. The magnetic protruding input shaft described here belongs to the sleeve-type explanation. In the ring-type arrangement illustrated by Toyota, detection rings 1 and 2 are mounted on the input shaft and ring 3 on the output shaft. Torsion-bar twist changes their relative positions and the detection-coil inductance. Do not relocate all magnetic protrusions to the output shaft.",
+          "source": "https://www.mri-auto-diagnostics.com/wp-content/uploads/2020/11/Power-Steering-2004-2009-Prius.pdf PDF p4 / printed 5-18, Fig.5.21; Toyota manufacturer training reproduced on a public mirror."
+        }
+      ]
+    },
+    {
+      "id": "jidosha-2025-second-3-chassis-q07",
+      "candidateSha256": "408ad97025744824edc8755cba91c9d17a7fb2e7cfd47a3527f0b5b8269cc259",
+      "verdict": "PASS",
+      "sourcePagesChecked": [
+        3
+      ],
+      "answerChecked": true,
+      "allFourExplanationsChecked": true,
+      "findings": [
+        {
+          "field": "validation",
+          "issue": "The diagram places the collar on the differential side of the bearing. The repaired chamfer direction, press fit and semi-floating load support agree.",
+          "replacement": null,
+          "source": "tmp/lq1b-sources/jaspa-2025-second-3-chassis-p03.png; https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_kai.pdf"
+        }
+      ]
+    },
+    {
+      "id": "jidosha-2025-second-3-motorcycle-q04",
+      "candidateSha256": "b048b933e62bce9ac3a890eee863da4abf4ecf075219f7bb8ceb679f9f8dea51",
+      "verdict": "PASS",
+      "sourcePagesChecked": [
+        2
+      ],
+      "answerChecked": true,
+      "allFourExplanationsChecked": true,
+      "findings": [
+        {
+          "field": "validation",
+          "issue": "Body, shaft and inner/outer rotors are basic pump parts. The repair distinguishes a filter bypass valve from a pressure-relief valve.",
+          "replacement": null,
+          "source": "tmp/lq1b-sources/jaspa-2025-second-3-motorcycle-p02.png; https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_kai.pdf; https://www.idemitsu.com/jp/apollolink/carlife/mainte/e-oil/index.html"
+        }
+      ]
+    },
+    {
+      "id": "jidosha-2025-second-electrical-q01",
+      "candidateSha256": "0ecb2fa894e3552dce6fd2596e8eeb50d3e38b7dbb7cd70a8808d167710152be",
+      "verdict": "PASS",
+      "sourcePagesChecked": [
+        2
+      ],
+      "answerChecked": true,
+      "allFourExplanationsChecked": true,
+      "findings": [
+        {
+          "field": "validation",
+          "issue": "Official answer 2 agrees. The repair identifies the hydrogen exception and separates valence electrons from free electrons, appropriately qualifying the printed simplifications.",
+          "replacement": null,
+          "source": "tmp/lq1b-sources/jaspa-2025-second-electrical-p02.png; https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_kai.pdf; https://toshiba.semicon-storage.com/jp/semiconductor/knowledge/e-learning/basics-of-schottky-barrier-diodes/chap1/chap1-2.html"
+        }
+      ]
+    },
+    {
+      "id": "jidosha-2025-second-body-q24",
+      "candidateSha256": "03e99323f34c06fe4e692e6bff22b36b734c2c35ae59198b15e83513c13c4365",
+      "verdict": "FAIL",
+      "sourcePagesChecked": [
+        8
+      ],
+      "answerChecked": true,
+      "allFourExplanationsChecked": true,
+      "findings": [
+        {
+          "field": "choiceExplanations.\u30a2",
+          "issue": "The exception for dissimilar filler was added, but the claim that the examiner assumed ordinary steel sheet is undocumented. Compatible filler does not mean identical composition. Official answer 2 and other explanations were checked.",
+          "replacement": "Official answer: option 2; option 1 is not credited. However, selecting filler compatible with the base metal does not require identical composition. Nippon Steel Welding specifies 309-series filler for stainless/carbon-steel joints. Distinguish the official treatment from this practical exception rather than categorically denying use of dissimilar filler.",
+          "source": "tmp/lq1b-sources/jaspa-2025-second-body-p08.png; https://www.weld.nipponsteel.com/techinfo/weldqa/detail.php?id=27TP33C; https://www.tokoc.com/jp/wc.htm; https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_kai.pdf"
+        }
+      ]
+    }
+  ]
+}

@@ -72,5 +72,17 @@ scripts/__pycache__/
 
 # locally downloaded official PDFs and Python bytecode
 /.cache/
+/tmp/lq1b-*
 **/__pycache__/
 *.pyc
+# LQ3B local PDF rendering/OCR cache and verbose execution logs.
+# Reviewed manuscripts, source PDFs, sorted OCR evidence and final receipts are tracked.
+/reports/LQ3B-20261104/rendered/
+/reports/LQ3B-20261104/*-ocr.txt
+/reports/LQ3B-20261104/sanitary-2025-page1.png
+/reports/LQ3B-20261104/*.log
+/reports/LQ3C-20261104/local/
+/reports/LQ3C-20261104/*-execution.log
+
+# LQ7 local PDF comparison and CLI review intermediates
+/tmp/shuwa/

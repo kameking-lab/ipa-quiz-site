@@ -1,0 +1,43 @@
+{
+  "scope": "qual-new:4",
+  "completedAtJST": "2026-11-01T19:17:36.600559+09:00",
+  "state": "PRIVATE_ORIGINAL_BOUND_PACKET_ACCEPTED_MAIN_INTEGRATION_PENDING",
+  "target": "令和7年度 技術士第一次試験 専門05化学 Ⅲ-1〜35",
+  "originalSourceUrl": "https://www.engineer.or.jp/c_topics/011/attached/attach_11457_7.pdf",
+  "sourcePdfSha256": "4cf6833132e202886f47b588efbaf117cd48a00d2f8458de39bf687d496f2152",
+  "questionsSha256": "f4512faecb5e72663562eda6aa935340e57ae5ae7966245656d4261edc0bcac1",
+  "counts": {
+    "actualPastQuestions": 35,
+    "officialChoicesPreservedInImages": 175,
+    "choiceReasonFieldsReusedUnchanged": 175,
+    "fullPageOriginalImages": 21,
+    "newOrParaphrasedQuestions": 0,
+    "newExplanations": 0,
+    "newFetches": 0,
+    "sharedEdits": 0
+  },
+  "originalPreservation": "取得済み原問の全21頁画像を同bytesで保持。本文・選択肢・表・構造式・図の省略や言換えなし。各問は公式番号で画像中の対象を指定。",
+  "acceptance": {
+    "explanation": "../INDEPENDENT-REVIEW.jsonを再利用",
+    "binding": "BINDING-ACCEPTANCE.json",
+    "bindingReceiptSha256": "ca0f8f5a732eddaaf80236eae1c5094d0e18bfe5532b1b3d9fe8d958beb18676",
+    "dataAndImageValidation": "BINDING-VALIDATION.json",
+    "explanationSha256Unchanged": "085b5763f3526cd9c5a5280b6bb7b3b21490299de3d0918067e6e60a46f74d78"
+  },
+  "previousHoldResolution": "../ORIGINAL-PROVENANCE.jsonの原問未収録HOLDをこの固定版では解消。旧候補と旧票は保全。",
+  "payloadManifest": "APPLICATION-MANIFEST.json",
+  "readme": "HANDOFF.txt",
+  "mainOwner": "01a18919-2bca-71a1-aee9-c0486fa7203b",
+  "remaining": [
+    "mainによる新資格コード/catalog/loader登録と共有適用",
+    "共有後の通常閲覧・選択・解説表示の差分受入",
+    "公開は今回の許可対象外"
+  ],
+  "limitations": [
+    "固定型に新試験コードは未登録。既存Question[]へそのまま型受入済みとは主張しない。",
+    "全文画像方式。テキスト検索と原文全文の読み上げは未提供。",
+    "全頁のため他問が併載される場合がある。解答対象番号をquestionNoticeに明示。",
+    "通常UIの実動作・本番公開は未検証。"
+  ],
+  "noNewInputRequiredForPrivateOriginalBinding": true
+}

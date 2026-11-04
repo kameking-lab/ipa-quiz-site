@@ -4,15 +4,16 @@ function robotsContent(html: string): string {
   return html.match(/<meta[^>]*name=["']robots["'][^>]*content=["']([^"']+)["']/i)?.[1]?.toLowerCase() ?? "";
 }
 
-test("empty search landing is indexable while filtered results are noindex,follow", async ({ request }) => {
-  const landing = await request.get("/search");
-  const results = await request.get("/search?q=SQL&exam=ap");
-  expect(landing.ok()).toBe(true);
-  expect(results.ok()).toBe(true);
-  expect(robotsContent(await landing.text())).not.toContain("noindex");
-  const resultRobots = robotsContent(await results.text());
-  expect(resultRobots).toContain("noindex");
-  expect(resultRobots).toContain("follow");
+test("search and topic navigation stay noindex,follow with and without filters", async ({ request }) => {
+  // ADK keeps navigation-only pages out of search, including empty forms.
+  for (const path of ["/search", "/search?q=SQL&exam=ap", "/modes/topic", "/modes/topic?exam=ap"]) {
+    const response = await request.get(path);
+    expect(response.ok(), path).toBe(true);
+    const directives = robotsContent(await response.text()).split(/\s*,\s*/);
+    expect(directives, path).toContain("noindex");
+    expect(directives, path).toContain("follow");
+    expect(directives, path).not.toContain("nofollow");
+  }
 });
 
 test("interactive quiz shells have an H1 and stream mode stays out of the index", async ({ request, page }) => {

@@ -6,6 +6,10 @@ const eslintConfig = defineConfig([
   ...nextVitals,
   ...nextTs,
   {
+    files: ["reports/sekou-2denki/verify-runtime.cjs"],
+    rules: { "@typescript-eslint/no-require-imports": "off" },
+  },
+  {
     rules: {
       // React 19 ships these strict rules but they over-trigger on legitimate
       // client-only patterns we use throughout the app:

@@ -1,0 +1,1112 @@
+[
+  {
+    "session": "measurement-basic",
+    "year": 2025,
+    "season": "annual",
+    "qNumber": 1,
+    "type": "multiple-choice",
+    "category": "一基",
+    "topicTags": [
+      "一基",
+      "第76回"
+    ],
+    "difficulty": 3,
+    "question": "次の記述の中から誤っているものを一つ選べ。",
+    "choices": {
+      "ア": "有理数と無理数の和は無理数である。",
+      "イ": "有理数と無理数の積は無理数になるとは限らない。",
+      "ウ": "循環する無限小数は有理数である。",
+      "エ": "複素数と実数の和は複素数である。",
+      "オ": "無理数と無理数の差は常に無理数である。"
+    },
+    "answer": "オ",
+    "requiredSelections": 1,
+    "explanation": "例えば√2−√2＝0なので、差が常に無理数という主張は誤り。",
+    "choiceExplanations": {
+      "ア": "有理数を加えても無理数の非有理性は変わらない。",
+      "イ": "有理数が0なら積は0になる。",
+      "ウ": "循環節を用いて整数の比に変換できる。",
+      "エ": "実数は複素数に含まれるため和も複素数である。",
+      "オ": "例えば√2−√2＝0なので、差が常に無理数という主張は誤り。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/7_R07ichiki.pdf",
+    "sourceAnswerUrl": "https://www.meti.go.jp/information/license/data/pdf/c251215aj.pdf",
+    "sourceAttribution": "出典：経済産業省 第76回計量士国家試験 一基 問1（問題・訂正版正答）。テキスト化・図の切り出しは過去問AI、解説は独自作成。",
+    "license": "METI-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-11-03",
+    "officialAnswerNumber": "5",
+    "examDate": "2025-12-14",
+    "subject": "一基"
+  },
+  {
+    "session": "measurement-basic",
+    "year": 2025,
+    "season": "annual",
+    "qNumber": 2,
+    "type": "multiple-choice",
+    "category": "一基",
+    "topicTags": [
+      "一基",
+      "第76回"
+    ],
+    "difficulty": 3,
+    "question": "博覧会の来場者 200 人を対象に、2 つのパビリオン（展示館） A、B の入館状況を調査したところ、A に入館した人は 143 人、B に入館した人は 170 人であった。このとき、A と B のいずれにも入館しなかった人数の最大値として正しいものを次の中から一つ選べ。",
+    "choices": {
+      "ア": "0",
+      "イ": "27",
+      "ウ": "30",
+      "エ": "57",
+      "オ": "113"
+    },
+    "answer": "ウ",
+    "requiredSelections": 1,
+    "explanation": "A⊆Bとなる場合、少なくとも一方に入った人は170人。残る200−170＝30人が最大である。",
+    "choiceExplanations": {
+      "ア": "両方に入った人数が少ない場合には0人も可能だが、最大値ではない。",
+      "イ": "Aの未入館者は57人だが、Bの未入館者は30人なので27人は最大でない。",
+      "ウ": "A⊆Bとなる場合、少なくとも一方に入った人は170人。残る200−170＝30人が最大である。",
+      "エ": "どちらにも入らない人はBに入らない30人を超えられない。",
+      "オ": "113人は両方に入った人数の最小値であり、未入館者数ではない。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/7_R07ichiki.pdf",
+    "sourceAnswerUrl": "https://www.meti.go.jp/information/license/data/pdf/c251215aj.pdf",
+    "sourceAttribution": "出典：経済産業省 第76回計量士国家試験 一基 問2（問題・訂正版正答）。テキスト化・図の切り出しは過去問AI、解説は独自作成。",
+    "license": "METI-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-11-03",
+    "officialAnswerNumber": "3",
+    "examDate": "2025-12-14",
+    "subject": "一基"
+  },
+  {
+    "session": "measurement-basic",
+    "year": 2025,
+    "season": "annual",
+    "qNumber": 3,
+    "type": "multiple-choice",
+    "category": "一基",
+    "topicTags": [
+      "一基",
+      "第76回"
+    ],
+    "difficulty": 3,
+    "question": "自然数a、bについて、aを6で割った余りが4、bを6で割った余りが3のとき、a³＋b³を6で割った余りとして正しいものを次の中から一つ選べ。",
+    "choices": {
+      "ア": "1",
+      "イ": "2",
+      "ウ": "3",
+      "エ": "4",
+      "オ": "5"
+    },
+    "answer": "ア",
+    "requiredSelections": 1,
+    "explanation": "a³＋b³≡4³＋3³＝91≡1 (mod 6)である。",
+    "choiceExplanations": {
+      "ア": "a³＋b³≡4³＋3³＝91≡1 (mod 6)である。",
+      "イ": "91を6で割った余りは2ではない。",
+      "ウ": "b³だけでなくa³も加える。",
+      "エ": "aの余り4をそのまま答えにはできない。",
+      "オ": "91＝6×15＋1なので5ではない。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/7_R07ichiki.pdf",
+    "sourceAnswerUrl": "https://www.meti.go.jp/information/license/data/pdf/c251215aj.pdf",
+    "sourceAttribution": "出典：経済産業省 第76回計量士国家試験 一基 問3（問題・訂正版正答）。テキスト化・図の切り出しは過去問AI、解説は独自作成。",
+    "license": "METI-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-11-03",
+    "officialAnswerNumber": "1",
+    "examDate": "2025-12-14",
+    "subject": "一基"
+  },
+  {
+    "session": "measurement-basic",
+    "year": 2025,
+    "season": "annual",
+    "qNumber": 4,
+    "type": "multiple-choice",
+    "category": "一基",
+    "topicTags": [
+      "一基",
+      "第76回"
+    ],
+    "difficulty": 3,
+    "question": "(5/14)¹⁰⁰は小数第何位で、0以外の数字がはじめて現れるか。正しいものを次の中から一つ選べ。ただし、log₁₀2＝0.301、log₁₀7＝0.845とする。",
+    "choices": {
+      "ア": "45",
+      "イ": "46",
+      "ウ": "47",
+      "エ": "48",
+      "オ": "49"
+    },
+    "answer": "ア",
+    "requiredSelections": 1,
+    "explanation": "log₁₀[(5/14)¹⁰⁰]＝100(1−2×0.301−0.845)＝−44.7。10⁻⁴⁵以上10⁻⁴⁴未満なので小数第45位である。",
+    "choiceExplanations": {
+      "ア": "log₁₀[(5/14)¹⁰⁰]＝100(1−2×0.301−0.845)＝−44.7。10⁻⁴⁵以上10⁻⁴⁴未満なので小数第45位である。",
+      "イ": "第46位とするのは小数の桁の境界を一つずらしている。",
+      "ウ": "対数値−44.7から最初の非零桁は45位となる。",
+      "エ": "第48位になるほど小さくはない。",
+      "オ": "第49位ではなく45位が最初の非零桁である。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/7_R07ichiki.pdf",
+    "sourceAnswerUrl": "https://www.meti.go.jp/information/license/data/pdf/c251215aj.pdf",
+    "sourceAttribution": "出典：経済産業省 第76回計量士国家試験 一基 問4（問題・訂正版正答）。テキスト化・図の切り出しは過去問AI、解説は独自作成。",
+    "license": "METI-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-11-03",
+    "officialAnswerNumber": "1",
+    "examDate": "2025-12-14",
+    "subject": "一基"
+  },
+  {
+    "session": "measurement-basic",
+    "year": 2025,
+    "season": "annual",
+    "qNumber": 5,
+    "type": "multiple-choice",
+    "category": "一基",
+    "topicTags": [
+      "一基",
+      "第76回"
+    ],
+    "difficulty": 3,
+    "question": "次の文中のa、bの組合せとして正しいものを以下の中から一つ選べ。\n\ny＝cos xのグラフは、直線x＝aに対して線対称で、点(b, 0)に対して点対称である。ただし、m、nは整数である。",
+    "choices": {
+      "ア": "mπ＋π/2／nπ",
+      "イ": "mπ＋π/2／nπ＋π/2",
+      "ウ": "mπ／nπ",
+      "エ": "mπ／nπ＋π/2",
+      "オ": "mπ＋π/4／nπ＋π/4"
+    },
+    "answer": "エ",
+    "requiredSelections": 1,
+    "explanation": "cosは極値mπの周りで線対称、零点nπ＋π/2の周りで点対称となる。",
+    "choiceExplanations": {
+      "ア": "aとbの対称性の対応が逆である。",
+      "イ": "aは零点でなく極値の位置mπとなる。",
+      "ウ": "点対称の中心は零点なのでb＝nπ＋π/2である。",
+      "エ": "cosは極値mπの周りで線対称、零点nπ＋π/2の周りで点対称となる。",
+      "オ": "π/4ずらした点は極値・零点のいずれでもない。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/7_R07ichiki.pdf",
+    "sourceAnswerUrl": "https://www.meti.go.jp/information/license/data/pdf/c251215aj.pdf",
+    "sourceAttribution": "出典：経済産業省 第76回計量士国家試験 一基 問5（問題・訂正版正答）。テキスト化・図の切り出しは過去問AI、解説は独自作成。",
+    "license": "METI-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-11-03",
+    "officialAnswerNumber": "4",
+    "examDate": "2025-12-14",
+    "subject": "一基",
+    "imageUrls": [
+      "/images/questions/keiryoshi/ichiki-q5.png"
+    ],
+    "imageAltTexts": [
+      "第76回 一基 問5 の公式表（列見出しと全行）"
+    ]
+  },
+  {
+    "session": "measurement-basic",
+    "year": 2025,
+    "season": "annual",
+    "qNumber": 6,
+    "type": "multiple-choice",
+    "category": "一基",
+    "topicTags": [
+      "一基",
+      "第76回"
+    ],
+    "difficulty": 3,
+    "question": "図の正八角形ABCDEFGHにおいて、ベクトルAB＝a、ベクトルAH＝bとする。このとき、ベクトルAGをaとbで表した式として正しいものを次の中から一つ選べ。",
+    "choices": {
+      "ア": "a＋b",
+      "イ": "(1＋√2)(a＋b)",
+      "ウ": "(1＋√2)a＋b",
+      "エ": "a＋(1＋√2)b",
+      "オ": "(1＋√2)a＋2b"
+    },
+    "answer": "エ",
+    "requiredSelections": 1,
+    "explanation": "AG＝AH＋HG。HG＝a＋√2 bなのでAG＝a＋(1＋√2)bとなる。",
+    "choiceExplanations": {
+      "ア": "図の向きで辺長をsとするとa＝(−s,0)、b＝(s/√2,s/√2)であり、a＋bの鉛直成分はs/√2だけである。AGの鉛直成分はs＋s/√2なので一致しない。",
+      "イ": "aの係数も増やすとAGの水平方向成分が合わない。",
+      "ウ": "aだけを増やすと水平方向成分が合わない。",
+      "エ": "AG＝AH＋HG。HG＝a＋√2 bなのでAG＝a＋(1＋√2)bとなる。",
+      "オ": "aとbの両方の係数が目的の変位と合わない。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/7_R07ichiki.pdf",
+    "sourceAnswerUrl": "https://www.meti.go.jp/information/license/data/pdf/c251215aj.pdf",
+    "sourceAttribution": "出典：経済産業省 第76回計量士国家試験 一基 問6（問題・訂正版正答）。テキスト化・図の切り出しは過去問AI、解説は独自作成。",
+    "license": "METI-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-11-03",
+    "imageUrls": [
+      "/images/questions/keiryoshi/ichiki-q6.png"
+    ],
+    "imageAltTexts": [
+      "第76回 一基 問6 の公式図"
+    ],
+    "officialAnswerNumber": "4",
+    "examDate": "2025-12-14",
+    "subject": "一基"
+  },
+  {
+    "session": "measurement-basic",
+    "year": 2025,
+    "season": "annual",
+    "qNumber": 7,
+    "type": "multiple-choice",
+    "category": "一基",
+    "topicTags": [
+      "一基",
+      "第76回"
+    ],
+    "difficulty": 3,
+    "question": "関数y＝√(2x−5)をxで微分した式として正しいものを次の中から一つ選べ。",
+    "choices": {
+      "ア": "1/√(2x−5)",
+      "イ": "−√(2x−5)",
+      "ウ": "1/(2√(x−5))",
+      "エ": "1/√(x−5)",
+      "オ": "2/√(2x−5)"
+    },
+    "answer": "ア",
+    "requiredSelections": 1,
+    "explanation": "合成関数の微分から(1/2)(2x−5)⁻¹ᐟ²×2＝1/√(2x−5)となる。",
+    "choiceExplanations": {
+      "ア": "合成関数の微分から(1/2)(2x−5)⁻¹ᐟ²×2＝1/√(2x−5)となる。",
+      "イ": "符号と指数の両方が微分結果と異なる。",
+      "ウ": "根号内と係数が合わない。",
+      "エ": "根号内はx−5ではなく2x−5である。",
+      "オ": "内側の微分の2は外側の1/2と相殺する。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/7_R07ichiki.pdf",
+    "sourceAnswerUrl": "https://www.meti.go.jp/information/license/data/pdf/c251215aj.pdf",
+    "sourceAttribution": "出典：経済産業省 第76回計量士国家試験 一基 問7（問題・訂正版正答）。テキスト化・図の切り出しは過去問AI、解説は独自作成。",
+    "license": "METI-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-11-03",
+    "officialAnswerNumber": "1",
+    "examDate": "2025-12-14",
+    "subject": "一基"
+  },
+  {
+    "session": "measurement-basic",
+    "year": 2025,
+    "season": "annual",
+    "qNumber": 8,
+    "type": "multiple-choice",
+    "category": "一基",
+    "topicTags": [
+      "一基",
+      "第76回"
+    ],
+    "difficulty": 3,
+    "question": "関数f(x)＝ax²＋bx＋cは、次の二つの条件f′(x)＝6x＋2、∫₋₁⁰f(x)dx＝4を満たす。このとき、a＋b＋cの値として正しいものを次の中から一つ選べ。",
+    "choices": {
+      "ア": "4",
+      "イ": "6",
+      "ウ": "8",
+      "エ": "9",
+      "オ": "10"
+    },
+    "answer": "エ",
+    "requiredSelections": 1,
+    "explanation": "2ax＋b＝6x＋2からa＝3、b＝2。積分はa/3−b/2＋c＝c＝4なので和は9。",
+    "choiceExplanations": {
+      "ア": "微分条件だけでなく積分条件からcを求める必要がある。",
+      "イ": "a＝3、b＝2だがc＝4なので6ではない。",
+      "ウ": "係数和は3＋2＋4＝9である。",
+      "エ": "2ax＋b＝6x＋2からa＝3、b＝2。積分はa/3−b/2＋c＝c＝4なので和は9。",
+      "オ": "積分の下限−1における符号を反映すると9となる。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/7_R07ichiki.pdf",
+    "sourceAnswerUrl": "https://www.meti.go.jp/information/license/data/pdf/c251215aj.pdf",
+    "sourceAttribution": "出典：経済産業省 第76回計量士国家試験 一基 問8（問題・訂正版正答）。テキスト化・図の切り出しは過去問AI、解説は独自作成。",
+    "license": "METI-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-11-03",
+    "officialAnswerNumber": "4",
+    "examDate": "2025-12-14",
+    "subject": "一基"
+  },
+  {
+    "session": "measurement-basic",
+    "year": 2025,
+    "season": "annual",
+    "qNumber": 9,
+    "type": "multiple-choice",
+    "category": "一基",
+    "topicTags": [
+      "一基",
+      "第76回"
+    ],
+    "difficulty": 3,
+    "question": "二次の正方行列Aが、A(1, 0)ᵀ＝(1, −1)ᵀ、A(−1, 1)ᵀ＝(−3, 4)ᵀを満たすとき、正方行列Aとして正しいものを次の中から一つ選べ。",
+    "choices": {
+      "ア": "[[1, −1], [−1, 2]]",
+      "イ": "[[1, −2], [0, 2]]",
+      "ウ": "[[−1, −3], [1, 3]]",
+      "エ": "[[1, −3], [−1, 2]]",
+      "オ": "[[1, −2], [−1, 3]]"
+    },
+    "answer": "オ",
+    "requiredSelections": 1,
+    "explanation": "第1列は(1, −1)ᵀ。第2条件は第2列から第1列を引いたものなので、第2列は(−3, 4)ᵀ＋(1, −1)ᵀ＝(−2, 3)ᵀとなる。",
+    "choiceExplanations": {
+      "ア": "第2条件にこの行列を掛けると上成分が−2となり−3に合わない。",
+      "イ": "第1列の下成分が0で、第1条件を満たさない。",
+      "ウ": "第1列が指定された(1, −1)ᵀと異なる。",
+      "エ": "第2条件の右辺は(−4, 3)ᵀとなり、指定された(−3, 4)ᵀと一致しない。",
+      "オ": "第1列は(1, −1)ᵀ。第2条件は第2列から第1列を引いたものなので、第2列は(−3, 4)ᵀ＋(1, −1)ᵀ＝(−2, 3)ᵀとなる。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/7_R07ichiki.pdf",
+    "sourceAnswerUrl": "https://www.meti.go.jp/information/license/data/pdf/c251215aj.pdf",
+    "sourceAttribution": "出典：経済産業省 第76回計量士国家試験 一基 問9（問題・訂正版正答）。テキスト化・図の切り出しは過去問AI、解説は独自作成。",
+    "license": "METI-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-11-03",
+    "officialAnswerNumber": "5",
+    "examDate": "2025-12-14",
+    "subject": "一基"
+  },
+  {
+    "session": "measurement-basic",
+    "year": 2025,
+    "season": "annual",
+    "qNumber": 10,
+    "type": "multiple-choice",
+    "category": "一基",
+    "topicTags": [
+      "一基",
+      "第76回"
+    ],
+    "difficulty": 3,
+    "question": "確率・統計に関する次の記述の中から誤っているものを一つ選べ。",
+    "choices": {
+      "ア": "大きさの順に並べたデータの中央値はメディアンとも言う。",
+      "イ": "データの五数要約を図化したものが箱ひげ図である。",
+      "ウ": "空集合と任意の事象の積は必ず空集合となる。",
+      "エ": "相関係数は常に 0 から 1 までの間の値をとる。",
+      "オ": "分散の正の平方根を標準偏差と言う。"
+    },
+    "answer": "エ",
+    "requiredSelections": 1,
+    "explanation": "相関係数の範囲は−1から1であり、負にもなる。",
+    "choiceExplanations": {
+      "ア": "中央値の英語名はメディアンである。",
+      "イ": "最小値・四分位数・中央値・最大値による五数要約を箱ひげ図で表す。",
+      "ウ": "空集合との共通部分は空集合となる。",
+      "エ": "相関係数の範囲は−1から1であり、負にもなる。",
+      "オ": "標準偏差は分散の非負の平方根であり、分散が正なら正の平方根となる。分散が0の場合は標準偏差も0である。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/7_R07ichiki.pdf",
+    "sourceAnswerUrl": "https://www.meti.go.jp/information/license/data/pdf/c251215aj.pdf",
+    "sourceAttribution": "出典：経済産業省 第76回計量士国家試験 一基 問10（問題・訂正版正答）。テキスト化・図の切り出しは過去問AI、解説は独自作成。",
+    "license": "METI-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-11-03",
+    "officialAnswerNumber": "4",
+    "examDate": "2025-12-14",
+    "subject": "一基"
+  },
+  {
+    "session": "measurement-basic",
+    "year": 2025,
+    "season": "annual",
+    "qNumber": 11,
+    "type": "multiple-choice",
+    "category": "一基",
+    "topicTags": [
+      "一基",
+      "第76回"
+    ],
+    "difficulty": 3,
+    "question": "A、B、C、D、E、F の 6 人の選手から、くじ引きで 3 人の代表を選ぶ。このとき、代表の中に選手 A が入って、選手 B が入らない確率として正しいものを次の中から一つ選べ。",
+    "choices": {
+      "ア": "2/5",
+      "イ": "1/3",
+      "ウ": "3/10",
+      "エ": "1/4",
+      "オ": "1/5"
+    },
+    "answer": "ウ",
+    "requiredSelections": 1,
+    "explanation": "Aを固定しBを除いた4人から2人を選ぶので、₄C₂/₆C₃＝6/20＝3/10。",
+    "choiceExplanations": {
+      "ア": "条件に合う組合せは6通り、全体は20通りなので2/5ではない。",
+      "イ": "選出は独立ではなく、組合せで求めると3/10である。",
+      "ウ": "Aを固定しBを除いた4人から2人を選ぶので、₄C₂/₆C₃＝6/20＝3/10。",
+      "エ": "1/4ではなく6/20である。",
+      "オ": "Aが入るだけ又はBが入らないだけの確率とは区別する。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/7_R07ichiki.pdf",
+    "sourceAnswerUrl": "https://www.meti.go.jp/information/license/data/pdf/c251215aj.pdf",
+    "sourceAttribution": "出典：経済産業省 第76回計量士国家試験 一基 問11（問題・訂正版正答）。テキスト化・図の切り出しは過去問AI、解説は独自作成。",
+    "license": "METI-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-11-03",
+    "officialAnswerNumber": "3",
+    "examDate": "2025-12-14",
+    "subject": "一基"
+  },
+  {
+    "session": "measurement-basic",
+    "year": 2025,
+    "season": "annual",
+    "qNumber": 12,
+    "type": "multiple-choice",
+    "category": "一基",
+    "topicTags": [
+      "一基",
+      "第76回"
+    ],
+    "difficulty": 3,
+    "question": "2 枚の硬貨を同時に投げるとき、表の出る枚数の期待値として正しいものを次の中から一つ選べ。ただし、いずれの硬貨も表と裏が出る確率は同じとする。",
+    "choices": {
+      "ア": "5/4",
+      "イ": "1",
+      "ウ": "3/4",
+      "エ": "1/2",
+      "オ": "1/4"
+    },
+    "answer": "イ",
+    "requiredSelections": 1,
+    "explanation": "各硬貨の表枚数の期待値は1/2。2枚の合計は1である。",
+    "choiceExplanations": {
+      "ア": "期待値は1/2＋1/2＝1であり、5/4ではない。",
+      "イ": "各硬貨の表枚数の期待値は1/2。2枚の合計は1である。",
+      "ウ": "表が少なくとも1枚出る確率3/4と期待枚数は異なる。",
+      "エ": "1/2は硬貨1枚の期待枚数である。",
+      "オ": "1/4は両方表の確率であり期待枚数ではない。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/7_R07ichiki.pdf",
+    "sourceAnswerUrl": "https://www.meti.go.jp/information/license/data/pdf/c251215aj.pdf",
+    "sourceAttribution": "出典：経済産業省 第76回計量士国家試験 一基 問12（問題・訂正版正答）。テキスト化・図の切り出しは過去問AI、解説は独自作成。",
+    "license": "METI-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-11-03",
+    "officialAnswerNumber": "2",
+    "examDate": "2025-12-14",
+    "subject": "一基"
+  },
+  {
+    "session": "measurement-basic",
+    "year": 2025,
+    "season": "annual",
+    "qNumber": 13,
+    "type": "multiple-choice",
+    "category": "一基",
+    "topicTags": [
+      "一基",
+      "第76回"
+    ],
+    "difficulty": 3,
+    "question": "図のように、長さが L で密度が一様ではない質量 M の直線状の剛体棒が水平面上に置かれている。この剛体棒の一方の端 A を少しもち上げるのに、鉛直上向きに大きさ F の力が必要であった。この剛体棒の端 A から重心位置までの距離を表す式として、正しいものを次の中から一つ選べ。ただし、重力加速度の大きさを g とする。",
+    "choices": {
+      "ア": "(Mg/F)L",
+      "イ": "((Mg−F)/F)L",
+      "ウ": "((F−Mg)/F)L",
+      "エ": "((Mg−F)/(Mg))L",
+      "オ": "((F−Mg)/(Mg))L"
+    },
+    "answer": "エ",
+    "requiredSelections": 1,
+    "explanation": "B回りの釣合いはFL＝Mg(L−x)。従ってx＝(Mg−F)L/(Mg)。",
+    "choiceExplanations": {
+      "ア": "距離は通常0からLであり、この式はL以上となり得る。",
+      "イ": "支点BからのモーメントにはMgを用いる。",
+      "ウ": "重心までの距離が負になる式ではない。",
+      "エ": "B回りの釣合いはFL＝Mg(L−x)。従ってx＝(Mg−F)L/(Mg)。",
+      "オ": "分子の符号が逆で、距離が負になる。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/7_R07ichiki.pdf",
+    "sourceAnswerUrl": "https://www.meti.go.jp/information/license/data/pdf/c251215aj.pdf",
+    "sourceAttribution": "出典：経済産業省 第76回計量士国家試験 一基 問13（問題・訂正版正答）。テキスト化・図の切り出しは過去問AI、解説は独自作成。",
+    "license": "METI-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-11-03",
+    "imageUrls": [
+      "/images/questions/keiryoshi/ichiki-q13.png"
+    ],
+    "imageAltTexts": [
+      "第76回 一基 問13 の公式図"
+    ],
+    "officialAnswerNumber": "4",
+    "examDate": "2025-12-14",
+    "subject": "一基"
+  },
+  {
+    "session": "measurement-basic",
+    "year": 2025,
+    "season": "annual",
+    "qNumber": 14,
+    "type": "multiple-choice",
+    "category": "一基",
+    "topicTags": [
+      "一基",
+      "第76回"
+    ],
+    "difficulty": 3,
+    "question": "図のように、質量mの質点が、ばね定数kで自然長L（おもりをつるさないときのばねの長さ）のばねにつるされ、鉛直方向に単振動する運動を考える。この単振動に関する記述として、正しいものを次の中から一つ選べ。",
+    "choices": {
+      "ア": "質点は、ばねが自然長 L になる位置を中心に単振動する。",
+      "イ": "質点の質量 m が大きいほど単振動の振動数は大きい。",
+      "ウ": "振幅が大きいほど単振動の振動数は大きい。",
+      "エ": "振幅が大きいほど単振動の周期は長い。",
+      "オ": "振幅が大きいほど単振動の力学的エネルギー（運動エネルギーと位置エネルギーの和）は大きい。"
+    },
+    "answer": "オ",
+    "requiredSelections": 1,
+    "explanation": "釣合い位置を基準とする振動エネルギーはkA²/2なので振幅が大きいほど大きい。",
+    "choiceExplanations": {
+      "ア": "中心は自然長ではなく重力でmg/k伸びた釣合い位置である。",
+      "イ": "振動数は(1/(2π))√(k/m)なので質量が大きいほど小さい。",
+      "ウ": "線形ばねの振動数は振幅に依存しない。",
+      "エ": "線形ばねの周期は振幅に依存しない。",
+      "オ": "釣合い位置を基準とする振動エネルギーはkA²/2なので振幅が大きいほど大きい。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/7_R07ichiki.pdf",
+    "sourceAnswerUrl": "https://www.meti.go.jp/information/license/data/pdf/c251215aj.pdf",
+    "sourceAttribution": "出典：経済産業省 第76回計量士国家試験 一基 問14（問題・訂正版正答）。テキスト化・図の切り出しは過去問AI、解説は独自作成。",
+    "license": "METI-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-11-03",
+    "imageUrls": [
+      "/images/questions/keiryoshi/ichiki-q14.png"
+    ],
+    "imageAltTexts": [
+      "第76回 一基 問14 の公式図"
+    ],
+    "officialAnswerNumber": "5",
+    "examDate": "2025-12-14",
+    "subject": "一基"
+  },
+  {
+    "session": "measurement-basic",
+    "year": 2025,
+    "season": "annual",
+    "qNumber": 15,
+    "type": "multiple-choice",
+    "category": "一基",
+    "topicTags": [
+      "一基",
+      "第76回"
+    ],
+    "difficulty": 3,
+    "question": "質量が m で長さが L の直線状の導体棒 PQ を、鉛直上向きの一様な磁場中で質量を無視できる細い導線を用いて等しい長さで水平な台からつるし、大きさ I の直流電流を流した。すると、図のように導線が鉛直から 30°傾き、導体棒は水平に静止した。導体棒 PQ に流した電流の向きと磁場の磁束密度 B の大きさを表す式の組合せとして、正しいものを次の中から一つ選べ。ただし、重力加速度の大きさをg とする。",
+    "choices": {
+      "ア": "P→Qの向き、B＝mg/(√3LI)",
+      "イ": "Q→Pの向き、B＝mg/(√3LI)",
+      "ウ": "P→Qの向き、B＝√3mg/(LI)",
+      "エ": "Q→Pの向き、B＝√3mg/(LI)",
+      "オ": "P→Qの向き、B＝2mg/(LI)"
+    },
+    "answer": "ア",
+    "requiredSelections": 1,
+    "explanation": "図の偏位方向から電流はP→Q。BIL＝mg tan30°＝mg/√3なのでB＝mg/(√3LI)。",
+    "choiceExplanations": {
+      "ア": "図の偏位方向から電流はP→Q。BIL＝mg tan30°＝mg/√3なのでB＝mg/(√3LI)。",
+      "イ": "大きさは合うが電流の向きが逆である。",
+      "ウ": "tan30°は√3ではなく1/√3である。",
+      "エ": "電流方向と磁束密度の大きさの両方が合わない。",
+      "オ": "水平方向の力は2mgではなくmg/√3である。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/7_R07ichiki.pdf",
+    "sourceAnswerUrl": "https://www.meti.go.jp/information/license/data/pdf/c251215aj.pdf",
+    "sourceAttribution": "出典：経済産業省 第76回計量士国家試験 一基 問15（問題・訂正版正答）。テキスト化・図の切り出しは過去問AI、解説は独自作成。",
+    "license": "METI-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-11-03",
+    "imageUrls": [
+      "/images/questions/keiryoshi/ichiki-q15.png"
+    ],
+    "imageAltTexts": [
+      "第76回 一基 問15 の公式図"
+    ],
+    "officialAnswerNumber": "1",
+    "examDate": "2025-12-14",
+    "subject": "一基"
+  },
+  {
+    "session": "measurement-basic",
+    "year": 2025,
+    "season": "annual",
+    "qNumber": 16,
+    "type": "multiple-choice",
+    "category": "一基",
+    "topicTags": [
+      "一基",
+      "第76回"
+    ],
+    "difficulty": 3,
+    "question": "図のように、起電力 V の直流電源、抵抗値がそれぞれ R の 4 つの抵抗、静電容量が C と 3C のコンデンサーで電気回路が構成されている。定常状態において電気容量 C と 3C のコンデンサーのそれぞれに蓄えられる電気量 Q₁ と Q₂ を表す式として、正しい組合せを次の中から一つ選べ。ただし、電源の内部抵抗、および、導線の抵抗は無視できるものとする。",
+    "choices": {
+      "ア": "Q₁＝(2/3)CV、Q₂＝CV",
+      "イ": "Q₁＝CV、Q₂＝(2/3)CV",
+      "ウ": "Q₁＝(1/3)CV、Q₂＝2CV",
+      "エ": "Q₁＝(3/4)CV、Q₂＝(3/4)CV",
+      "オ": "Q₁＝(1/4)CV、Q₂＝(1/2)CV"
+    },
+    "answer": "ウ",
+    "requiredSelections": 1,
+    "explanation": "定常時に中央のRの電流は0。外周の3抵抗で分圧し、CにV/3、3Cに2V/3がかかるためQ₁＝CV/3、Q₂＝2CV。",
+    "choiceExplanations": {
+      "ア": "Cにかかる電圧はV/3であり2V/3ではない。",
+      "イ": "Q₁はCVでなくCV/3となる。",
+      "ウ": "定常時に中央のRの電流は0。外周の3抵抗で分圧し、CにV/3、3Cに2V/3がかかるためQ₁＝CV/3、Q₂＝2CV。",
+      "エ": "両コンデンサは単純な直列接続ではなく、電荷が等しい条件ではない。",
+      "オ": "抵抗による分圧比が異なる。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/7_R07ichiki.pdf",
+    "sourceAnswerUrl": "https://www.meti.go.jp/information/license/data/pdf/c251215aj.pdf",
+    "sourceAttribution": "出典：経済産業省 第76回計量士国家試験 一基 問16（問題・訂正版正答）。テキスト化・図の切り出しは過去問AI、解説は独自作成。",
+    "license": "METI-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-11-03",
+    "imageUrls": [
+      "/images/questions/keiryoshi/ichiki-q16.png"
+    ],
+    "imageAltTexts": [
+      "第76回 一基 問16 の公式図"
+    ],
+    "officialAnswerNumber": "3",
+    "examDate": "2025-12-14",
+    "subject": "一基"
+  },
+  {
+    "session": "measurement-basic",
+    "year": 2025,
+    "season": "annual",
+    "qNumber": 17,
+    "type": "multiple-choice",
+    "category": "一基",
+    "topicTags": [
+      "一基",
+      "第76回"
+    ],
+    "difficulty": 3,
+    "question": "2枚のレンズを組み合わせて、平行光束を広げる光学系として、図に示すようなケプラー式ビームエキスパンダーがある。レンズ1の焦点距離がf₁であるとき、ケプラー式ビームエキスパンダーの倍率L₂/L₁を実現するためのレンズ2の焦点距離f₂を表わす式として正しいものを次の中から一つ選べ。",
+    "choices": {
+      "ア": "(1＋L₁/L₂)f₁",
+      "イ": "(1＋L₂/L₁)f₁",
+      "ウ": "(L₁/L₂＋L₂/L₁)f₁",
+      "エ": "(L₁/L₂)f₁",
+      "オ": "(L₂/L₁)f₁"
+    },
+    "answer": "オ",
+    "requiredSelections": 1,
+    "explanation": "共通焦点を使う相似三角形からL₂/L₁＝f₂/f₁。従ってf₂＝(L₂/L₁)f₁。",
+    "choiceExplanations": {
+      "ア": "倍率の式に1を加える必要はない。",
+      "イ": "1を加えた式は焦点距離比と合わない。",
+      "ウ": "焦点距離は倍率と逆倍率の和ではない。",
+      "エ": "倍率の分子と分母が逆である。",
+      "オ": "共通焦点を使う相似三角形からL₂/L₁＝f₂/f₁。従ってf₂＝(L₂/L₁)f₁。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/7_R07ichiki.pdf",
+    "sourceAnswerUrl": "https://www.meti.go.jp/information/license/data/pdf/c251215aj.pdf",
+    "sourceAttribution": "出典：経済産業省 第76回計量士国家試験 一基 問17（問題・訂正版正答）。テキスト化・図の切り出しは過去問AI、解説は独自作成。",
+    "license": "METI-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-11-03",
+    "imageUrls": [
+      "/images/questions/keiryoshi/ichiki-q17.png"
+    ],
+    "imageAltTexts": [
+      "第76回 一基 問17 の公式図"
+    ],
+    "officialAnswerNumber": "5",
+    "examDate": "2025-12-14",
+    "subject": "一基"
+  },
+  {
+    "session": "measurement-basic",
+    "year": 2025,
+    "season": "annual",
+    "qNumber": 18,
+    "type": "multiple-choice",
+    "category": "一基",
+    "topicTags": [
+      "一基",
+      "第76回"
+    ],
+    "difficulty": 3,
+    "question": "真空中の波長λ、速さcの光が、屈折率nの媒質中を進むときの波長と速さの組合せとして正しいものを次の中から一つ選べ。",
+    "choices": {
+      "ア": "λ／c",
+      "イ": "λ/n／c",
+      "ウ": "λ/n／c/n",
+      "エ": "nλ／c",
+      "オ": "nλ／nc"
+    },
+    "answer": "ウ",
+    "requiredSelections": 1,
+    "explanation": "速さはc/n、振動数は不変なので波長もλ/nとなる。",
+    "choiceExplanations": {
+      "ア": "媒質内では光速がc/nとなる。",
+      "イ": "振動数が一定なので速さもc/nに変化する。",
+      "ウ": "速さはc/n、振動数は不変なので波長もλ/nとなる。",
+      "エ": "波長はn倍でなく1/n倍となる。",
+      "オ": "波長と速さの両方が逆の変化である。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/7_R07ichiki.pdf",
+    "sourceAnswerUrl": "https://www.meti.go.jp/information/license/data/pdf/c251215aj.pdf",
+    "sourceAttribution": "出典：経済産業省 第76回計量士国家試験 一基 問18（問題・訂正版正答）。テキスト化・図の切り出しは過去問AI、解説は独自作成。",
+    "license": "METI-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-11-03",
+    "officialAnswerNumber": "3",
+    "examDate": "2025-12-14",
+    "subject": "一基",
+    "imageUrls": [
+      "/images/questions/keiryoshi/ichiki-q18.png"
+    ],
+    "imageAltTexts": [
+      "第76回 一基 問18 の公式表（列見出しと全行）"
+    ]
+  },
+  {
+    "session": "measurement-basic",
+    "year": 2025,
+    "season": "annual",
+    "qNumber": 19,
+    "type": "multiple-choice",
+    "category": "一基",
+    "topicTags": [
+      "一基",
+      "第76回"
+    ],
+    "difficulty": 3,
+    "question": "セシウム 134 とセシウム 137 の半減期は、それぞれ約 2 年と約 30 年である。現在、同じ個数のセシウム 134 とセシウム 137 がある。セシウム 134 の個数がセシウム 137 の個数の半分になるのは何年後か。最も近いものを次の中から一つ選べ。",
+    "choices": {
+      "ア": "1 年後",
+      "イ": "2 年後",
+      "ウ": "3 年後",
+      "エ": "4 年後",
+      "オ": "5 年後"
+    },
+    "answer": "イ",
+    "requiredSelections": 1,
+    "explanation": "比は2^(−t/2＋t/30)。指数が−1となるt＝15/7≒2.14年なので2年が近い。",
+    "choiceExplanations": {
+      "ア": "比の半減に必要な時間は約2.14年で、1年より長い。",
+      "イ": "比は2^(−t/2＋t/30)。指数が−1となるt＝15/7≒2.14年なので2年が近い。",
+      "ウ": "崩壊定数の差を用いると約2.14年となる。",
+      "エ": "4年では比は半分より小さい。",
+      "オ": "半減期の比を単純に加減する問題ではない。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/7_R07ichiki.pdf",
+    "sourceAnswerUrl": "https://www.meti.go.jp/information/license/data/pdf/c251215aj.pdf",
+    "sourceAttribution": "出典：経済産業省 第76回計量士国家試験 一基 問19（問題・訂正版正答）。テキスト化・図の切り出しは過去問AI、解説は独自作成。",
+    "license": "METI-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-11-03",
+    "officialAnswerNumber": "2",
+    "examDate": "2025-12-14",
+    "subject": "一基"
+  },
+  {
+    "session": "measurement-basic",
+    "year": 2025,
+    "season": "annual",
+    "qNumber": 20,
+    "type": "multiple-choice",
+    "category": "一基",
+    "topicTags": [
+      "一基",
+      "第76回"
+    ],
+    "difficulty": 3,
+    "question": "図のように、平面ガラスの上に平凸レンズを置き、上から単色光を照射すると、平凸レンズの A 点で一部の光は上方へ反射され、残りの光は下の平面ガラスの B 点で上方へ反射される。上方から見ると A 点、B 点で反射された光が干渉し、ニュートンリングが観察される。このとき明線の最小半径 rとして、最も近いものを次の中から一つ選べ。ただし、平凸レンズの曲率半径はR（r≪R）、光の波長は λ 、平面ガラス、平凸レンズの周りは空気であり、空気の屈折率は 1 とする。",
+    "choices": {
+      "ア": "√(λR/2)",
+      "イ": "√(λR)",
+      "ウ": "√(3λR/2)",
+      "エ": "√(2λR)",
+      "オ": "√(5λR/2)"
+    },
+    "answer": "ア",
+    "requiredSelections": 1,
+    "explanation": "片方の反射だけで位相が反転する。明線の最小条件は2t＝λ/2、t≒r²/(2R)よりr＝√(λR/2)。",
+    "choiceExplanations": {
+      "ア": "片方の反射だけで位相が反転する。明線の最小条件は2t＝λ/2、t≒r²/(2R)よりr＝√(λR/2)。",
+      "イ": "この半径では反射光の暗線に対応する。",
+      "ウ": "これはより外側の明線の半径である。",
+      "エ": "最小の明線半径ではない。",
+      "オ": "これはさらに外側の明線の半径である。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/7_R07ichiki.pdf",
+    "sourceAnswerUrl": "https://www.meti.go.jp/information/license/data/pdf/c251215aj.pdf",
+    "sourceAttribution": "出典：経済産業省 第76回計量士国家試験 一基 問20（問題・訂正版正答）。テキスト化・図の切り出しは過去問AI、解説は独自作成。",
+    "license": "METI-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-11-03",
+    "imageUrls": [
+      "/images/questions/keiryoshi/ichiki-q20.png"
+    ],
+    "imageAltTexts": [
+      "第76回 一基 問20 の公式図"
+    ],
+    "officialAnswerNumber": "1",
+    "examDate": "2025-12-14",
+    "subject": "一基"
+  },
+  {
+    "session": "measurement-basic",
+    "year": 2025,
+    "season": "annual",
+    "qNumber": 21,
+    "type": "multiple-choice",
+    "category": "一基",
+    "topicTags": [
+      "一基",
+      "第76回"
+    ],
+    "difficulty": 3,
+    "question": "仕事関数が5.1 eVの金属に光を照射したところ、光電効果によって電子が放出された。このとき、照射した光の波長の最大値として、最も近いものを次の中から一つ選べ。ただし、電気素量を1.6×10⁻¹⁹ C、電子の質量を9.1×10⁻³¹ kg、プランク定数を6.6×10⁻³⁴ Js、真空中の光の速さを3.0×10⁸ m/sとする。",
+    "choices": {
+      "ア": "24 nm",
+      "イ": "120 nm",
+      "ウ": "240 nm",
+      "エ": "480 nm",
+      "オ": "960 nm"
+    },
+    "answer": "ウ",
+    "requiredSelections": 1,
+    "explanation": "hc/λ＝5.1×1.6×10⁻¹⁹からλ≒2.43×10⁻⁷ m＝243 nm。240 nmが近い。",
+    "choiceExplanations": {
+      "ア": "必要エネルギーより大きいが波長の最大値ではない。",
+      "イ": "閾値の約半分の波長で、最大値ではない。",
+      "ウ": "hc/λ＝5.1×1.6×10⁻¹⁹からλ≒2.43×10⁻⁷ m＝243 nm。240 nmが近い。",
+      "エ": "光子エネルギーが仕事関数未満となる。",
+      "オ": "光子エネルギーが仕事関数未満となる。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/7_R07ichiki.pdf",
+    "sourceAnswerUrl": "https://www.meti.go.jp/information/license/data/pdf/c251215aj.pdf",
+    "sourceAttribution": "出典：経済産業省 第76回計量士国家試験 一基 問21（問題・訂正版正答）。テキスト化・図の切り出しは過去問AI、解説は独自作成。",
+    "license": "METI-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-11-03",
+    "officialAnswerNumber": "3",
+    "examDate": "2025-12-14",
+    "subject": "一基"
+  },
+  {
+    "session": "measurement-basic",
+    "year": 2025,
+    "season": "annual",
+    "qNumber": 22,
+    "type": "multiple-choice",
+    "category": "一基",
+    "topicTags": [
+      "一基",
+      "第76回"
+    ],
+    "difficulty": 3,
+    "question": "次の記述の中の空欄に入る式の組合せとして、正しいものを以下の中から一つ選べ。\n\n質量M、温度T₀、比熱cの水の入った容器に、質量m、温度T₁（T₀＜T₁）の金属球を入れ、しばらく待つと温度はTとなった。熱のやり取りは水と金属球との間のみで生じたとすると、水が得た熱量は（A）となる。水が得た熱量と、金属球が失った熱量は等しいことから、金属球の比熱は（B）となる。",
+    "choices": {
+      "ア": "Mc(T−T₀)／[m(T₁−T)/(M(T−T₀))]c",
+      "イ": "Mc(T−T₀)／[M(T−T₀)/(m(T₁−T))]c",
+      "ウ": "(M/c)(T−T₀)／[m(T₁−T)/(M(T−T₀))]c",
+      "エ": "(M/c)(T−T₀)／[M(T−T₀)/(m(T₁−T))]c",
+      "オ": "McT₀／[MT₀/(m(T₁−T))]c"
+    },
+    "answer": "イ",
+    "requiredSelections": 1,
+    "explanation": "水の受熱はMc(T−T₀)。これと金属の放熱mc金属(T₁−T)を等置し、c金属＝Mc(T−T₀)/(m(T₁−T))となる。",
+    "choiceExplanations": {
+      "ア": "Bは温度差と質量の比が逆である。",
+      "イ": "水の受熱はMc(T−T₀)。これと金属の放熱mc金属(T₁−T)を等置し、c金属＝Mc(T−T₀)/(m(T₁−T))となる。",
+      "ウ": "受熱量では比熱を割らず掛ける。",
+      "エ": "Bは合うがAで比熱を割っている。",
+      "オ": "受熱量には初期温度でなく温度上昇を用いる。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/7_R07ichiki.pdf",
+    "sourceAnswerUrl": "https://www.meti.go.jp/information/license/data/pdf/c251215aj.pdf",
+    "sourceAttribution": "出典：経済産業省 第76回計量士国家試験 一基 問22（問題・訂正版正答）。テキスト化・図の切り出しは過去問AI、解説は独自作成。",
+    "license": "METI-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-11-03",
+    "officialAnswerNumber": "2",
+    "examDate": "2025-12-14",
+    "subject": "一基",
+    "imageUrls": [
+      "/images/questions/keiryoshi/ichiki-q22.png"
+    ],
+    "imageAltTexts": [
+      "第76回 一基 問22 の公式表（列見出しと全行）"
+    ]
+  },
+  {
+    "session": "measurement-basic",
+    "year": 2025,
+    "season": "annual",
+    "qNumber": 23,
+    "type": "multiple-choice",
+    "category": "一基",
+    "topicTags": [
+      "一基",
+      "第76回"
+    ],
+    "difficulty": 3,
+    "question": "組立量の次元は、基本量の次元のべき乗の積で表せる。エネルギーの次元の表示として正しいものを次の中から一つ選べ。ただし、長さ、質量、および、時間の次元の記号を、それぞれ L、M、および、T とする。",
+    "choices": {
+      "ア": "LMT⁻¹",
+      "イ": "LMT⁻²",
+      "ウ": "L⁻¹MT⁻²",
+      "エ": "L²MT⁻²",
+      "オ": "L²MT⁻³"
+    },
+    "answer": "エ",
+    "requiredSelections": 1,
+    "explanation": "仕事＝力×距離よりL²MT⁻²である。",
+    "choiceExplanations": {
+      "ア": "LMT⁻¹は運動量の次元である。",
+      "イ": "LMT⁻²は力の次元である。",
+      "ウ": "L⁻¹MT⁻²は圧力の次元である。",
+      "エ": "仕事＝力×距離よりL²MT⁻²である。",
+      "オ": "L²MT⁻³は仕事率の次元である。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/7_R07ichiki.pdf",
+    "sourceAnswerUrl": "https://www.meti.go.jp/information/license/data/pdf/c251215aj.pdf",
+    "sourceAttribution": "出典：経済産業省 第76回計量士国家試験 一基 問23（問題・訂正版正答）。テキスト化・図の切り出しは過去問AI、解説は独自作成。",
+    "license": "METI-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-11-03",
+    "officialAnswerNumber": "4",
+    "examDate": "2025-12-14",
+    "subject": "一基"
+  },
+  {
+    "session": "measurement-basic",
+    "year": 2025,
+    "season": "annual",
+    "qNumber": 24,
+    "type": "multiple-choice",
+    "category": "一基",
+    "topicTags": [
+      "一基",
+      "第76回"
+    ],
+    "difficulty": 3,
+    "question": "密度 800 kg/m³ の液体が体積流量 90 m³ /h で流れている。その質量流量の値として、最も近いものを次の中から一つ選べ。",
+    "choices": {
+      "ア": "20 kg/s",
+      "イ": "410 kg/s",
+      "ウ": "1200 kg/s",
+      "エ": "32000 kg/s",
+      "オ": "72000 kg/s"
+    },
+    "answer": "ア",
+    "requiredSelections": 1,
+    "explanation": "800×90/3600＝20 kg/sである。",
+    "choiceExplanations": {
+      "ア": "800×90/3600＝20 kg/sである。",
+      "イ": "1時間を3600秒に換算する必要がある。",
+      "ウ": "体積流量に密度を掛け、さらに秒へ換算すると20となる。",
+      "エ": "単位換算と密度の積を正しく扱うと20である。",
+      "オ": "72000はkg/hで表した質量流量である。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/7_R07ichiki.pdf",
+    "sourceAnswerUrl": "https://www.meti.go.jp/information/license/data/pdf/c251215aj.pdf",
+    "sourceAttribution": "出典：経済産業省 第76回計量士国家試験 一基 問24（問題・訂正版正答）。テキスト化・図の切り出しは過去問AI、解説は独自作成。",
+    "license": "METI-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-11-03",
+    "officialAnswerNumber": "1",
+    "examDate": "2025-12-14",
+    "subject": "一基"
+  },
+  {
+    "session": "measurement-basic",
+    "year": 2025,
+    "season": "annual",
+    "qNumber": 25,
+    "type": "multiple-choice",
+    "category": "一基",
+    "topicTags": [
+      "一基",
+      "第76回"
+    ],
+    "difficulty": 3,
+    "question": "上部に開いた容器があり、密度 ρ の液体で満たされている。また、底面近くの側面に小さな穴が開いており、この穴から液面までの高さは H である。次の ρ と Hの組合せの中で、穴から噴き出す液体の速さが最も大きくなるものを一つ選べ。ただし、液体の粘度は無視できるほど小さいとする。また、容器の容量に対して、噴き出す液体の量は十分少なく、液面の高さの変化は無視できるものとする。",
+    "choices": {
+      "ア": "ρ＝800 kg/m³、H＝0.8 m",
+      "イ": "ρ＝800 kg/m³、H＝1.0 m",
+      "ウ": "ρ＝800 kg/m³、H＝1.2 m",
+      "エ": "ρ＝1000 kg/m³、H＝0.7 m",
+      "オ": "ρ＝1000 kg/m³、H＝1.1 m"
+    },
+    "answer": "ウ",
+    "requiredSelections": 1,
+    "explanation": "トリチェリの定理により密度によらずHが大きいほど速い。H＝1.2 mが最大。",
+    "choiceExplanations": {
+      "ア": "速さは√(2gH)で、高さ0.8 mは最大でない。",
+      "イ": "高さ1.0 mは最大でない。",
+      "ウ": "トリチェリの定理により密度によらずHが大きいほど速い。H＝1.2 mが最大。",
+      "エ": "密度が大きくても速さを増やす要因ではなく、Hも最小である。",
+      "オ": "H＝1.1 mは1.2 mより小さい。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/7_R07ichiki.pdf",
+    "sourceAnswerUrl": "https://www.meti.go.jp/information/license/data/pdf/c251215aj.pdf",
+    "sourceAttribution": "出典：経済産業省 第76回計量士国家試験 一基 問25（問題・訂正版正答）。テキスト化・図の切り出しは過去問AI、解説は独自作成。",
+    "license": "METI-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-11-03",
+    "officialAnswerNumber": "3",
+    "examDate": "2025-12-14",
+    "subject": "一基"
+  }
+]

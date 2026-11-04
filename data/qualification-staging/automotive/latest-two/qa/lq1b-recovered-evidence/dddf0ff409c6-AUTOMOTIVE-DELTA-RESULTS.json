@@ -1,0 +1,243 @@
+{
+  "sourcePacket": {
+    "path": "C:\\Users\\kanet\\Documents\\Codex\\2026-10-23\\task-5\\output\\automotive-forward-20261023\\retained-3motorcycle30\\PACKET.json",
+    "sha256": "12ce3a6fec811934bd1c8289ee881dfc1c87e1f9b5eaf6dede34b93c9b1f1659"
+  },
+  "priorIndependentReceipt": {
+    "path": "C:\\Users\\kanet\\Documents\\Codex\\2026-10-23\\task-5\\output\\automotive-forward-20261023\\retained-3motorcycle30\\CONTENT-RECEIPT.json",
+    "sha256": "39a51e75d24d7a669fa67d3d7df6965cb796d0f38a68d91059950cef72938f36"
+  },
+  "authorCorrections": {
+    "path": "C:\\Users\\kanet\\Documents\\Codex\\2026-10-23\\task-5\\output\\automotive-forward-20261023\\retained-3motorcycle30\\CANDIDATE-CORRECTIONS.json",
+    "sha256": "8da80cb1f3898de009e11fbc01d358322b8481fcf8fd5e73f748be0648c8ef4e"
+  },
+  "inputFrozenChecks": [
+    {
+      "path": "PACKET.json",
+      "sha256": "12ce3a6fec811934bd1c8289ee881dfc1c87e1f9b5eaf6dede34b93c9b1f1659",
+      "actualSha256": "12ce3a6fec811934bd1c8289ee881dfc1c87e1f9b5eaf6dede34b93c9b1f1659"
+    },
+    {
+      "path": "CLAIMED-IDS.json",
+      "sha256": "cda6b9a47b842491017eab7c5d54fad42868391640561c2d043a8df0efc6c525",
+      "actualSha256": "cda6b9a47b842491017eab7c5d54fad42868391640561c2d043a8df0efc6c525"
+    },
+    {
+      "path": "CONTENT-RECEIPT.json",
+      "sha256": "39a51e75d24d7a669fa67d3d7df6965cb796d0f38a68d91059950cef72938f36",
+      "actualSha256": "39a51e75d24d7a669fa67d3d7df6965cb796d0f38a68d91059950cef72938f36"
+    },
+    {
+      "path": "ACCEPTED-ONLY.json",
+      "sha256": "d43a4220ac0b75ea054eadd7536ebc2f25f9395de9a3b9dd65f378d4e7a54e2a",
+      "actualSha256": "d43a4220ac0b75ea054eadd7536ebc2f25f9395de9a3b9dd65f378d4e7a54e2a"
+    },
+    {
+      "path": "CANDIDATE-CORRECTIONS.json",
+      "sha256": "8da80cb1f3898de009e11fbc01d358322b8481fcf8fd5e73f748be0648c8ef4e",
+      "actualSha256": "8da80cb1f3898de009e11fbc01d358322b8481fcf8fd5e73f748be0648c8ef4e"
+    }
+  ],
+  "sourceChecks": [
+    {
+      "path": "C:\\Users\\kanet\\Documents\\Codex\\2026-10-23\\task-5\\output\\automotive-forward-20261023\\retained-3motorcycle30\\sources\\jaspa-2025-second-3-motorcycle.pdf",
+      "sha256": "e1278a36badf4c8896c7a1ee4362a2badc67dc2bad50f9fa2a91934c40e3e1fc"
+    },
+    {
+      "path": "C:\\Users\\kanet\\Documents\\Codex\\2026-10-23\\task-5\\output\\automotive-forward-20261023\\retained-3motorcycle30\\sources\\jaspa-2025-second-answers.pdf",
+      "sha256": "2f73820401362ca24f052d8339bf20e4865dab2f2afe74b7c7b546b7b90d6701"
+    }
+  ],
+  "headlightPrimary": {
+    "path": "C:\\Users\\kanet\\Documents\\Codex\\2026-10-23\\task-5\\automotive-3-engine-review\\sources\\MLIT-S120.pdf",
+    "sha256": "d78f8a11b62c9ddd8d3cf44a7a95e1871a89f1f0fc92be5c0194756ec6ae5132"
+  },
+  "changedFields": [
+    {
+      "id": "jidosha-2025-second-3-motorcycle-q21",
+      "field": "choiceExplanations.イ",
+      "beforeText": "COは燃料の不完全燃焼で生じる。吹き抜けはブローバイ・ガスの説明である。",
+      "beforeTextSha256": "13d7c3d5106ad9efe757dfb48fa9cfb706886ef87181ca19f5e514a4bde8b525",
+      "afterText": "COは、燃料の炭素が十分に酸化されない不完全燃焼で生じる。混合気が未燃焼のまま排気側へ吹き抜ける現象は主に未燃HCの排出に関係し、COの生成機構とは区別する。",
+      "afterTextSha256": "a0f626b85d4373f597f3436e21ae9841174c50a95ad4ded73d2192f8e127bd4e",
+      "status": "PASS",
+      "candidateAlteredByReviewer": false
+    },
+    {
+      "id": "jidosha-2025-second-3-motorcycle-q29",
+      "field": "explanation",
+      "beforeText": "エンジン作動中は走行用またはすれ違い用の前照灯のいずれかが点灯する構造とする。",
+      "beforeTextSha256": "92bb9448616751d645406940720d18c53c9a769475752f8df9bd5ccafd8b695d",
+      "afterText": "本問の正答は(2)。通常の前照灯構成では原動機作動中に走行用又はすれ違い用のいずれかを点灯させる。細目告示では、二輪自動車の配光可変型前照灯を含む構成や、昼間走行灯が点灯している場合の例外があるため、全車種に例外なく同じ点灯を要求する意味ではない。",
+      "afterTextSha256": "afff0d6480edf51ca6feda1e7dd07090750ceb6d56f942c6b1ee594d8f02c2bb",
+      "status": "PASS",
+      "candidateAlteredByReviewer": false
+    },
+    {
+      "id": "jidosha-2025-second-3-motorcycle-q29",
+      "field": "choiceExplanations.イ",
+      "beforeText": "いずれかが常時点灯する条件を満たす。",
+      "beforeTextSha256": "acd248c0e54ed587698455ba5ca3a3889228acdaf846c56f018661aa6023a664",
+      "afterText": "本問が想定する通常の前照灯構成では正しい。なお、細目告示には二輪自動車で昼間走行灯が点灯している場合などの例外があり、この説明を無条件に一般化しない。",
+      "afterTextSha256": "0d1e729a9e5c46f391789b275ed17f53e7a98c5d4fcb955efd3c5a9f2cbc6353",
+      "status": "PASS",
+      "candidateAlteredByReviewer": false
+    }
+  ],
+  "rows": [
+    {
+      "id": "jidosha-2025-second-3-motorcycle-q21",
+      "status": "CONTENT_ACCEPTED_EXACT_AUTHOR_OVERLAY",
+      "beforeManuscriptCanonicalSha256": "a3b044f5940c7f05cba8c2a3858266389c40c77fe8e034bc808082fb40897f95",
+      "acceptedManuscriptCanonicalSha256": "1b0f06cea42d18187fc5ef636739918b3ae343cd93225ff6129d4da7904fb6bb",
+      "acceptedCandidate": {
+        "path": "C:\\Users\\kanet\\Documents\\Codex\\2026-10-23\\task-22\\output\\repair-delta-review-20261023\\accepted-automotive-candidates\\jidosha-2025-second-3-motorcycle-q21.json",
+        "sha256": "1b0f06cea42d18187fc5ef636739918b3ae343cd93225ff6129d4da7904fb6bb"
+      },
+      "officialAnswerNumber": "1",
+      "officialKeyVerifiedVisually": true,
+      "originalPageVerifiedVisually": [
+        6
+      ],
+      "requiredFigures": [],
+      "changedFieldsReviewed": 1,
+      "newOptionReasonDeltaReviewed": 1,
+      "unchangedCheckedOptionReasonsCarried": [
+        {
+          "label": "ア",
+          "reasonTextSha256": "be36159654abe1d42a61784f652dddc41706becee75d1d211a9f1a0ff664eb20",
+          "priorTechnicalVerdict": "true",
+          "priorTechnicalAssessment": "空気の窒素と炭化水素完全燃焼生成物のCO2/H2Oが主体。",
+          "priorReasonAcceptedFlag": false,
+          "carryMeaning": "Unchanged technically checked field from the pinned prior independent content receipt; not a new semantic re-review or a claim of prior whole-original acceptance."
+        },
+        {
+          "label": "ウ",
+          "reasonTextSha256": "566de7bc36bc65cbaedea69b40b34dc3bb47b7ca25b6de93de938f0ec36588e1",
+          "priorTechnicalVerdict": "false",
+          "priorTechnicalAssessment": "高温で窒素と酸素からNOx。CO2との反応という原文は誤り。",
+          "priorReasonAcceptedFlag": false,
+          "carryMeaning": "Unchanged technically checked field from the pinned prior independent content receipt; not a new semantic re-review or a claim of prior whole-original acceptance."
+        },
+        {
+          "label": "エ",
+          "reasonTextSha256": "5e672bdebab5943049adc950538a8a6d18ddb26781635795101c410f9dc8abda",
+          "priorTechnicalVerdict": "false",
+          "priorTechnicalAssessment": "燃料蒸発ガスと燃焼室からクランクケースへのブローバイは別。",
+          "priorReasonAcceptedFlag": false,
+          "carryMeaning": "Unchanged technically checked field from the pinned prior independent content receipt; not a new semantic re-review or a claim of prior whole-original acceptance."
+        }
+      ],
+      "totalOptionReasonsCoveredByPriorPlusDelta": 4,
+      "generalExplanationDeltaReviewed": 0,
+      "independentAssessment": "The new text removes the false equivalence between mixture blow-through and blow-by. Carbon incompletely oxidized can form CO; an unburned hydrocarbon charge bypassing combustion chiefly carries unburned HC. The statement is not that blow-through can never accompany CO. The unchanged correct key is1.",
+      "evidenceBasis": [
+        "Official original page6 and key page2 table34; pinned prior independent technical checks; explicit independent chemical/physical derivation. technicalEvidence[] was empty in the inherited Q21 row; no external technical document acquisition is claimed.",
+        "Independent chemistry check: C + 1/2 O2 -> CO versus C + O2 -> CO2. Unreacted hydrocarbon fuel remains HC instead of acquiring oxygen through mere bypass. This checks the direction of the mechanism, not an exhaust quantitative composition or emissions factor."
+      ],
+      "fullReviewRepeated": false,
+      "author": "task5",
+      "independentReviewer": "task22",
+      "newUniqueContentAcceptedOriginals": 1,
+      "newAnswerFieldsCreated": 0,
+      "formalIncrement": 0,
+      "publicationIncrement": 0
+    },
+    {
+      "id": "jidosha-2025-second-3-motorcycle-q29",
+      "status": "CONTENT_ACCEPTED_EXACT_AUTHOR_OVERLAY",
+      "beforeManuscriptCanonicalSha256": "ecf26b1b2de75be35ee897bdef1f533c3d1e495d4a66ec19e6293f30450a4b09",
+      "acceptedManuscriptCanonicalSha256": "7e430217e0b8b02a4f1b6f2dfc22691e32d91412c1c03a7a552913ffa15ff952",
+      "acceptedCandidate": {
+        "path": "C:\\Users\\kanet\\Documents\\Codex\\2026-10-23\\task-22\\output\\repair-delta-review-20261023\\accepted-automotive-candidates\\jidosha-2025-second-3-motorcycle-q29.json",
+        "sha256": "7e430217e0b8b02a4f1b6f2dfc22691e32d91412c1c03a7a552913ffa15ff952"
+      },
+      "officialAnswerNumber": "2",
+      "officialKeyVerifiedVisually": true,
+      "originalPageVerifiedVisually": [
+        8
+      ],
+      "requiredFigures": [],
+      "changedFieldsReviewed": 2,
+      "newOptionReasonDeltaReviewed": 1,
+      "unchangedCheckedOptionReasonsCarried": [
+        {
+          "label": "ア",
+          "reasonTextSha256": "5c4dc58e53a719357f17b8d0e2bcf3f518ba6427e35d13728f83f85724084a1e",
+          "priorTechnicalVerdict": "false",
+          "priorTechnicalAssessment": "昼間一律消灯は要求されていない。",
+          "priorReasonAcceptedFlag": false,
+          "carryMeaning": "Unchanged technically checked field from the pinned prior independent content receipt; not a new semantic re-review or a claim of prior whole-original acceptance."
+        },
+        {
+          "label": "ウ",
+          "reasonTextSha256": "13cfb5e952e3c3099ac7f6bb623d9d5bd639f536dcf8c1234c66243945e059e6",
+          "priorTechnicalVerdict": "false",
+          "priorTechnicalAssessment": "常にハイビーム固定という要求ではない。",
+          "priorReasonAcceptedFlag": false,
+          "carryMeaning": "Unchanged technically checked field from the pinned prior independent content receipt; not a new semantic re-review or a claim of prior whole-original acceptance."
+        },
+        {
+          "label": "エ",
+          "reasonTextSha256": "714a4f9e9adc2d95c4321bfaccb94aeaa4e657ec843f5fccc133ecbec64fb7d4",
+          "priorTechnicalVerdict": "false",
+          "priorTechnicalAssessment": "停止でも原動機作動中の条件。",
+          "priorReasonAcceptedFlag": false,
+          "carryMeaning": "Unchanged technically checked field from the pinned prior independent content receipt; not a new semantic re-review or a claim of prior whole-original acceptance."
+        }
+      ],
+      "totalOptionReasonsCoveredByPriorPlusDelta": 4,
+      "generalExplanationDeltaReviewed": 1,
+      "independentAssessment": "S120 dated2025-06-17, article120(7)(11-2), directly includes adaptive headlights and exempts motorcycles while DRL is on. Item12 separately states the sidecar rule. The new overall and choice2 explanations explicitly limit the normal configuration and do not extend the motorcycle exception to sidecars. Key2 is preserved.",
+      "evidenceBasis": [
+        {
+          "path": "C:\\Users\\kanet\\Documents\\Codex\\2026-10-23\\task-5\\automotive-3-engine-review\\sources\\MLIT-S120.pdf",
+          "sha256": "d78f8a11b62c9ddd8d3cf44a7a95e1871a89f1f0fc92be5c0194756ec6ae5132"
+        },
+        "Directly read the2025-06-17 heading and physical6 body; dated edition precedes exam2026-03-22. Existing context and three unmodified checked reasons carried by exact hashes."
+      ],
+      "fullReviewRepeated": false,
+      "author": "task5",
+      "independentReviewer": "task22",
+      "newUniqueContentAcceptedOriginals": 1,
+      "newAnswerFieldsCreated": 0,
+      "formalIncrement": 0,
+      "publicationIncrement": 0
+    }
+  ],
+  "sourceAccepted15Excluded": [
+    "jidosha-2025-second-3-motorcycle-q01",
+    "jidosha-2025-second-3-motorcycle-q03",
+    "jidosha-2025-second-3-motorcycle-q05",
+    "jidosha-2025-second-3-motorcycle-q06",
+    "jidosha-2025-second-3-motorcycle-q07",
+    "jidosha-2025-second-3-motorcycle-q08",
+    "jidosha-2025-second-3-motorcycle-q16",
+    "jidosha-2025-second-3-motorcycle-q19",
+    "jidosha-2025-second-3-motorcycle-q20",
+    "jidosha-2025-second-3-motorcycle-q23",
+    "jidosha-2025-second-3-motorcycle-q24",
+    "jidosha-2025-second-3-motorcycle-q26",
+    "jidosha-2025-second-3-motorcycle-q27",
+    "jidosha-2025-second-3-motorcycle-q28",
+    "jidosha-2025-second-3-motorcycle-q30"
+  ],
+  "sourceHold13Excluded": [
+    "jidosha-2025-second-3-motorcycle-q02",
+    "jidosha-2025-second-3-motorcycle-q04",
+    "jidosha-2025-second-3-motorcycle-q09",
+    "jidosha-2025-second-3-motorcycle-q10",
+    "jidosha-2025-second-3-motorcycle-q11",
+    "jidosha-2025-second-3-motorcycle-q12",
+    "jidosha-2025-second-3-motorcycle-q13",
+    "jidosha-2025-second-3-motorcycle-q14",
+    "jidosha-2025-second-3-motorcycle-q15",
+    "jidosha-2025-second-3-motorcycle-q17",
+    "jidosha-2025-second-3-motorcycle-q18",
+    "jidosha-2025-second-3-motorcycle-q22",
+    "jidosha-2025-second-3-motorcycle-q25"
+  ],
+  "overlapWithEitherExcludedSet": [],
+  "transferred88Reviewed": 0,
+  "deniedDieselTouched": false
+}

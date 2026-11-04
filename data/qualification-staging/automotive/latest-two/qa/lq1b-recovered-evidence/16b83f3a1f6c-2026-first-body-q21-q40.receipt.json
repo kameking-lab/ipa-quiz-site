@@ -1,0 +1,2491 @@
+{
+  "schemaVersion": 1,
+  "reviewKind": "independent-author-external-technical-content-review",
+  "reviewer": "Codex; no Claude used",
+  "createdAtUtc": "2026-10-23T08:15:08.002Z",
+  "batch": "2026-first-body-q21-q40",
+  "fixedRepository": "kameking-lab/ipa-quiz-site",
+  "fixedPr": 731,
+  "fixedCommit": "6f4253b9381e3030863e38dfe75b5ca4068ba526",
+  "scope": {
+    "uniqueQuestions": 20,
+    "choiceReasonsReviewed": 80,
+    "uniqueQuestionsAccepted": 8,
+    "acceptedQuestionChoiceReasons": 32,
+    "heldQuestions": 12,
+    "acceptedRepairFields": 1,
+    "heldRepairProposalFields": 0
+  },
+  "acceptanceRule": "All four existing reasons inspected for technical meaning and application conditions; originals, key, required figures and technical evidence/explicit derivation must correspond. Mechanical checks alone do not confer acceptance.",
+  "rightsHold": false,
+  "publication": false,
+  "upstreamWorkingTreeModified": false,
+  "rows": [
+    {
+      "id": "jidosha-2026-first-body-q21",
+      "manuscriptSha256": "9a93a564a5eae9c0ac24936b595c0d92d21e136b4213f3f5cd98d9826d60582a",
+      "hashContract": "SHA256(UTF8(JSON.stringify(parsed question object))); original property order retained",
+      "fixedCommit": "6f4253b9381e3030863e38dfe75b5ca4068ba526",
+      "fixedBlobSha": "320fa720a1c2326e48c910b4eeaff32c92c7137d",
+      "fixedCommitTargetIdentical": true,
+      "officialOriginal": {
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_bo.pdf",
+        "sha256": "8e824d5f4c06d0db087383868ffd2996e331e28246d42ca4dcb02bf576f91f24",
+        "localFile": "sources/20261004_bo.pdf",
+        "localSha256": "8e824d5f4c06d0db087383868ffd2996e331e28246d42ca4dcb02bf576f91f24",
+        "physicalPages": [
+          7
+        ],
+        "locator": "No.21",
+        "visuallyReviewed": true
+      },
+      "officialKey": {
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_kai.pdf",
+        "sha256": "7f3a3405cd428510d0d585ceb96425c0b3ec9fd30c80696607fa5c595f20f23d",
+        "physicalPage": 1,
+        "subject": "body",
+        "qNumber": 21,
+        "answer": "エ",
+        "number": "4",
+        "storedTableMatches": true,
+        "transcriptionReview": "Existing independent 610-answer review reused; no new full-table transcription counted."
+      },
+      "figureReceipts": [
+        {
+          "bookId": "jaspa-2026-first-body",
+          "physicalPage": 7,
+          "pdfSha256": "8e824d5f4c06d0db087383868ffd2996e331e28246d42ca4dcb02bf576f91f24",
+          "officialUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_bo.pdf#page=7",
+          "originalQuestionIds": [
+            "jidosha-2026-first-body-q21"
+          ],
+          "relativePath": "figures/jaspa-2026-first-body-p07.webp",
+          "width": 1490,
+          "height": 2106,
+          "sha256": "e78aa1dcd6236a83286c93d3d096a9d43725dc92b645bbac6a675c43c8443817",
+          "bytes": 242834,
+          "processing": "Original PDF physical page rendered to PNG, then converted to WebP; no retouch or generated content.",
+          "actualSha256": "e78aa1dcd6236a83286c93d3d096a9d43725dc92b645bbac6a675c43c8443817",
+          "visuallyReviewed": true
+        }
+      ],
+      "evidence": [
+        "official-original:p7:No21",
+        "official-key",
+        "official-key"
+      ],
+      "technicalEvidence": [
+        {
+          "kind": "official-original",
+          "locator": "p7:No21"
+        },
+        {
+          "kind": "official-key",
+          "locator": "existing independently checked answer table"
+        },
+        {
+          "kind": "official-key",
+          "locator": "existing independently checked answer table"
+        }
+      ],
+      "conditions": null,
+      "allChoiceReasons": [
+        {
+          "label": "ア",
+          "statement": "(1) 6mm",
+          "reason": "不適切。端部から6mmでは近すぎる。",
+          "reasonSha256": "3cc89bd2ec47f6b2135f29d104e1d0136368320fee39754dcd605a58dd2d3c19",
+          "independentStatementVerdict": "false",
+          "technicalAssessment": "6mmは公式12mm未満。",
+          "evidence": [
+            "official-original:p7:No21",
+            "official-key",
+            "official-key"
+          ],
+          "reasonDisposition": "reviewed-question-held"
+        },
+        {
+          "label": "イ",
+          "statement": "(2) 8mm",
+          "reason": "不適切。8mmでは基準の12mmに足りない。",
+          "reasonSha256": "7eaa544a88a6b07c11b9d7ecf4a98f55a600a1459ba590ffb674f24cf4836d1a",
+          "independentStatementVerdict": "false",
+          "technicalAssessment": "8mmは不足。",
+          "evidence": [
+            "official-original:p7:No21",
+            "official-key",
+            "official-key"
+          ],
+          "reasonDisposition": "reviewed-question-held"
+        },
+        {
+          "label": "ウ",
+          "statement": "(3) 10mm",
+          "reason": "不適切。10mmでも基準より内側への距離が不足する。",
+          "reasonSha256": "0840fb3440d15a363a965afa4c3a6ae5e328625628ab0bcc91d08e5819a27448",
+          "independentStatementVerdict": "false",
+          "technicalAssessment": "10mmも不足。",
+          "evidence": [
+            "official-original:p7:No21",
+            "official-key",
+            "official-key"
+          ],
+          "reasonDisposition": "reviewed-question-held"
+        },
+        {
+          "label": "エ",
+          "statement": "(4) 12mm",
+          "reason": "適切。フランジ端から12mm以上を確保する。",
+          "reasonSha256": "dd6bc752337bd4345d296e5d681f0d7552a6439c213b3a32c410da220baee5b4",
+          "independentStatementVerdict": "true",
+          "technicalAssessment": "12mm以上が公式寸法。",
+          "evidence": [
+            "official-original:p7:No21",
+            "official-key",
+            "official-key"
+          ],
+          "reasonDisposition": "reviewed-question-held"
+        }
+      ],
+      "status": "HOLD",
+      "holds": [
+        "フランジ端から12mm以上の溶接位置を図とともに示すトラックメーカー一次補修書が未確保。"
+      ],
+      "repairs": [],
+      "candidateManuscriptSha256": "9a93a564a5eae9c0ac24936b595c0d92d21e136b4213f3f5cd98d9826d60582a",
+      "protectedFieldsUnchanged": true
+    },
+    {
+      "id": "jidosha-2026-first-body-q22",
+      "manuscriptSha256": "750de718c95092c419c901098515119edee0eece12bc795e73d941821d5861de",
+      "hashContract": "SHA256(UTF8(JSON.stringify(parsed question object))); original property order retained",
+      "fixedCommit": "6f4253b9381e3030863e38dfe75b5ca4068ba526",
+      "fixedBlobSha": "320fa720a1c2326e48c910b4eeaff32c92c7137d",
+      "fixedCommitTargetIdentical": true,
+      "officialOriginal": {
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_bo.pdf",
+        "sha256": "8e824d5f4c06d0db087383868ffd2996e331e28246d42ca4dcb02bf576f91f24",
+        "localFile": "sources/20261004_bo.pdf",
+        "localSha256": "8e824d5f4c06d0db087383868ffd2996e331e28246d42ca4dcb02bf576f91f24",
+        "physicalPages": [
+          7
+        ],
+        "locator": "No.22",
+        "visuallyReviewed": true
+      },
+      "officialKey": {
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_kai.pdf",
+        "sha256": "7f3a3405cd428510d0d585ceb96425c0b3ec9fd30c80696607fa5c595f20f23d",
+        "physicalPage": 1,
+        "subject": "body",
+        "qNumber": 22,
+        "answer": "イ",
+        "number": "2",
+        "storedTableMatches": true,
+        "transcriptionReview": "Existing independent 610-answer review reused; no new full-table transcription counted."
+      },
+      "figureReceipts": [],
+      "evidence": [
+        "official-original:p7:No22",
+        "official-key",
+        "official-key"
+      ],
+      "technicalEvidence": [
+        {
+          "kind": "official-original",
+          "locator": "p7:No22"
+        },
+        {
+          "kind": "official-key",
+          "locator": "existing independently checked answer table"
+        },
+        {
+          "kind": "official-key",
+          "locator": "existing independently checked answer table"
+        }
+      ],
+      "conditions": null,
+      "allChoiceReasons": [
+        {
+          "label": "ア",
+          "statement": "(1) 補強板がフランジ部で重なり合う場合は、必ず200mm以上のオーバラップをとる必要がある。",
+          "reason": "適切。重ね接合には十分なオーバラップを確保する。",
+          "reasonSha256": "af2a7d134c3a5537c186e192139bee5bad4475f28982c7089a73a110e204b002",
+          "independentStatementVerdict": "true",
+          "technicalAssessment": "重ね補強の200mm基準。",
+          "evidence": [
+            "official-original:p7:No22",
+            "official-key",
+            "official-key"
+          ],
+          "reasonDisposition": "reviewed-question-held"
+        },
+        {
+          "label": "イ",
+          "statement": "(2) コ型（チャンネル型）断面補強は、補強板をサイド・メンバのフランジ部に上向き又は下向きに取り付ける方法で、き裂修正した部分に多く用いられる。",
+          "reason": "不適切。補強板の取り付け方法を誤って説明している。",
+          "reasonSha256": "e9830f525a6ca3ea5894b1a3271578fbc901512fbb7f583b9ebd56e06f7bee55",
+          "independentStatementVerdict": "false",
+          "technicalAssessment": "チャンネル補強の向き・用途の説明が原典と異なる。",
+          "evidence": [
+            "official-original:p7:No22",
+            "official-key",
+            "official-key"
+          ],
+          "reasonDisposition": "reviewed-question-held"
+        },
+        {
+          "label": "ウ",
+          "statement": "(3) フレームのすみ角と補強板の曲り角は、Rを変えて相互に接触しないように加工する。",
+          "reason": "適切。角部の干渉を避けて密着不良や応力集中を防ぐ。",
+          "reasonSha256": "b526438df46c6c6f4bcd02af929be5fe19f4f9c758b5f88f18a5383721a137f9",
+          "independentStatementVerdict": "true",
+          "technicalAssessment": "角Rを干渉しないよう加工。",
+          "evidence": [
+            "official-original:p7:No22",
+            "official-key",
+            "official-key"
+          ],
+          "reasonDisposition": "reviewed-question-held"
+        },
+        {
+          "label": "エ",
+          "statement": "(4) 補強材の材質は、自動車用フレーム鋼板又はそれと同等のものを使用し、板厚はフレーム母材より厚いものを使用しない。",
+          "reason": "適切。同等材を用い、母材より過大な板厚を避ける。",
+          "reasonSha256": "74debc1982ec6e4e154fbbbf7cba1ac5c2c55a86eaa9419bd3fb29e34d441601",
+          "independentStatementVerdict": "true",
+          "technicalAssessment": "同等材・母材超え厚さを避ける。",
+          "evidence": [
+            "official-original:p7:No22",
+            "official-key",
+            "official-key"
+          ],
+          "reasonDisposition": "reviewed-question-held"
+        }
+      ],
+      "status": "HOLD",
+      "holds": [
+        "200mm重ね量、補強板断面とR、板厚条件を揃えて示す一次フレーム補修書が未確保。"
+      ],
+      "repairs": [],
+      "candidateManuscriptSha256": "750de718c95092c419c901098515119edee0eece12bc795e73d941821d5861de",
+      "protectedFieldsUnchanged": true
+    },
+    {
+      "id": "jidosha-2026-first-body-q23",
+      "manuscriptSha256": "b66123ce743774209be225754c9e4c15fc0a685826e7984d1d2ebd37f4c178eb",
+      "hashContract": "SHA256(UTF8(JSON.stringify(parsed question object))); original property order retained",
+      "fixedCommit": "6f4253b9381e3030863e38dfe75b5ca4068ba526",
+      "fixedBlobSha": "320fa720a1c2326e48c910b4eeaff32c92c7137d",
+      "fixedCommitTargetIdentical": true,
+      "officialOriginal": {
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_bo.pdf",
+        "sha256": "8e824d5f4c06d0db087383868ffd2996e331e28246d42ca4dcb02bf576f91f24",
+        "localFile": "sources/20261004_bo.pdf",
+        "localSha256": "8e824d5f4c06d0db087383868ffd2996e331e28246d42ca4dcb02bf576f91f24",
+        "physicalPages": [
+          8
+        ],
+        "locator": "No.23",
+        "visuallyReviewed": true
+      },
+      "officialKey": {
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_kai.pdf",
+        "sha256": "7f3a3405cd428510d0d585ceb96425c0b3ec9fd30c80696607fa5c595f20f23d",
+        "physicalPage": 1,
+        "subject": "body",
+        "qNumber": 23,
+        "answer": "イ",
+        "number": "2",
+        "storedTableMatches": true,
+        "transcriptionReview": "Existing independent 610-answer review reused; no new full-table transcription counted."
+      },
+      "figureReceipts": [],
+      "evidence": [
+        "official-original:p8:No23",
+        "official-key",
+        "official-key"
+      ],
+      "technicalEvidence": [
+        {
+          "kind": "official-original",
+          "locator": "p8:No23"
+        },
+        {
+          "kind": "official-key",
+          "locator": "existing independently checked answer table"
+        },
+        {
+          "kind": "official-key",
+          "locator": "existing independently checked answer table"
+        }
+      ],
+      "conditions": null,
+      "allChoiceReasons": [
+        {
+          "label": "ア",
+          "statement": "(1) サイド・メンバの下側フランジ、上側フランジには、付属品取り付けのために穴を開けてはならない。",
+          "reason": "適切。フランジの追加穴は強度低下を招く。",
+          "reasonSha256": "fac80bfa869051012585eb365ae4aa43e31c6c7d4cfb85b12207737086294bbe",
+          "independentStatementVerdict": "true",
+          "technicalAssessment": "上下フランジへの追加穴を避ける。",
+          "evidence": [
+            "official-original:p8:No23",
+            "official-key",
+            "official-key"
+          ],
+          "reasonDisposition": "reviewed-question-held"
+        },
+        {
+          "label": "イ",
+          "statement": "(2) リベットの大きさは、接合する板の厚みによって決めるが、原則として、接合する板の厚さと同じか、それよりも細いものを使用する。",
+          "reason": "不適切。板厚以下の細いリベットを一律に選ぶ基準ではない。",
+          "reasonSha256": "a3893bdd623a5ce85d819b62cad8aa59bc8443c0bcffea99aa5692320127d1fb",
+          "independentStatementVerdict": "false",
+          "technicalAssessment": "リベット径を板厚以下とするのはせん断強度上不適切。",
+          "evidence": [
+            "official-original:p8:No23",
+            "official-key",
+            "official-key"
+          ],
+          "reasonDisposition": "reviewed-question-held"
+        },
+        {
+          "label": "ウ",
+          "statement": "(3) フレームの菱曲がりの修正後は、クロス・メンバとサイド・メンバとの結合部のリベットがゆるんでいる場合が多いので、必ずリベットの点検を行う。",
+          "reason": "適切。菱曲がり修正後は結合部の緩みを確認する。",
+          "reasonSha256": "e6842c62c84be119be8963369da926aec70943b5602d8c13d5ea50b10222bbbf",
+          "independentStatementVerdict": "true",
+          "technicalAssessment": "菱曲がり後の結合リベット点検。",
+          "evidence": [
+            "official-original:p8:No23",
+            "official-key",
+            "official-key"
+          ],
+          "reasonDisposition": "reviewed-question-held"
+        },
+        {
+          "label": "エ",
+          "statement": "(4) ほとんどのフレーム材質は、引っ張り強さ540MPa級の高張力鋼板を使用しているので、加熱修理を必要とする場合は加熱温度に留意し、A1変態点（723℃）以下で行うこと。",
+          "reason": "適切。高張力鋼板の加熱は材質変化に注意して温度を管理する。",
+          "reasonSha256": "29dc4e0cae2551bc1fc3dfb6252f3e403cbb59328cf8e03a639369c61777dc20",
+          "independentStatementVerdict": "true",
+          "technicalAssessment": "540MPa級とA1点以下の温度条件は車種・材質依存。",
+          "evidence": [
+            "official-original:p8:No23",
+            "official-key",
+            "official-key"
+          ],
+          "reasonDisposition": "reviewed-question-held"
+        }
+      ],
+      "status": "HOLD",
+      "holds": [
+        "「ほとんどのフレーム」が540MPa級という一般化、723℃以下の指定、リベット径基準を一次トラック整備書で確認できていない。"
+      ],
+      "repairs": [],
+      "candidateManuscriptSha256": "b66123ce743774209be225754c9e4c15fc0a685826e7984d1d2ebd37f4c178eb",
+      "protectedFieldsUnchanged": true
+    },
+    {
+      "id": "jidosha-2026-first-body-q24",
+      "manuscriptSha256": "8b5316091ef13dde9fc5b49317b4cacd95b5d602e37f56e267cf25ac545f34b1",
+      "hashContract": "SHA256(UTF8(JSON.stringify(parsed question object))); original property order retained",
+      "fixedCommit": "6f4253b9381e3030863e38dfe75b5ca4068ba526",
+      "fixedBlobSha": "320fa720a1c2326e48c910b4eeaff32c92c7137d",
+      "fixedCommitTargetIdentical": true,
+      "officialOriginal": {
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_bo.pdf",
+        "sha256": "8e824d5f4c06d0db087383868ffd2996e331e28246d42ca4dcb02bf576f91f24",
+        "localFile": "sources/20261004_bo.pdf",
+        "localSha256": "8e824d5f4c06d0db087383868ffd2996e331e28246d42ca4dcb02bf576f91f24",
+        "physicalPages": [
+          8
+        ],
+        "locator": "No.24",
+        "visuallyReviewed": true
+      },
+      "officialKey": {
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_kai.pdf",
+        "sha256": "7f3a3405cd428510d0d585ceb96425c0b3ec9fd30c80696607fa5c595f20f23d",
+        "physicalPage": 1,
+        "subject": "body",
+        "qNumber": 24,
+        "answer": "ア",
+        "number": "1",
+        "storedTableMatches": true,
+        "transcriptionReview": "Existing independent 610-answer review reused; no new full-table transcription counted."
+      },
+      "figureReceipts": [],
+      "evidence": [
+        "official-original:p8:No24",
+        "official-key",
+        "official-key"
+      ],
+      "technicalEvidence": [
+        {
+          "kind": "official-original",
+          "locator": "p8:No24"
+        },
+        {
+          "kind": "official-key",
+          "locator": "existing independently checked answer table"
+        },
+        {
+          "kind": "official-key",
+          "locator": "existing independently checked answer table"
+        }
+      ],
+      "conditions": null,
+      "allChoiceReasons": [
+        {
+          "label": "ア",
+          "statement": "(1) アセチレン・ガスの出し過ぎにより不完全燃焼を起こし、黒い煙を出して燃える炎の状態を炭化炎という。",
+          "reason": "適切。アセチレン過剰で不完全燃焼し黒煙を出す。",
+          "reasonSha256": "7d1852ca773be06a4eaf556264e602e3675b1751c3b33527f820ad80336f527d",
+          "independentStatementVerdict": "true",
+          "technicalAssessment": "アセチレン過剰の黒煙を伴う炎を炭化炎とする。",
+          "evidence": [
+            "official-original:p8:No24",
+            "official-key",
+            "official-key"
+          ],
+          "reasonDisposition": "reviewed-question-held"
+        },
+        {
+          "label": "イ",
+          "statement": "(2) 標準炎の状態からさらに酸素を加えると炎の長さは縮まり、中心の白点は丸くくっきりと輝く。この状態を過酸化炎という。",
+          "reason": "不適切。過酸化炎の炎心の形状と表現が原典の説明と合わない。",
+          "reasonSha256": "589c4049ad0aba5973ad0ea746d24c6fecd89d4dde0f899f677c67e4bcc6f409",
+          "independentStatementVerdict": "false",
+          "technicalAssessment": "過酸化炎の白点形状の記述が異なる。",
+          "evidence": [
+            "official-original:p8:No24",
+            "official-key",
+            "official-key"
+          ],
+          "reasonDisposition": "reviewed-question-held"
+        },
+        {
+          "label": "ウ",
+          "statement": "(3) 燃焼させたときの温度が一番高いのは、アセチレン・ガスと酸素を1対1の混合比で供給したときで、炎のダーク・ブルー（溶接帯）の部分の温度は約2,800℃に達する。",
+          "reason": "不適切。最高温部は炎心先端付近であり、1対1混合・溶接帯2,800℃を最高とする説明は誤り。",
+          "reasonSha256": "7b79eb3c2a87a6e0a8ec1b4a59ce938a22a0970720e8250dc938099a87ffeaeb",
+          "independentStatementVerdict": "false",
+          "technicalAssessment": "最高温位置・混合比・2800℃の併記が合わない。",
+          "evidence": [
+            "official-original:p8:No24",
+            "official-key",
+            "official-key"
+          ],
+          "reasonDisposition": "reviewed-question-held"
+        },
+        {
+          "label": "エ",
+          "statement": "(4) 炭化炎の状態から、さらに酸素の供給を増やしていくと、内側の白点がより短く、鋭くなり、炎の色は暗い紫色となる。この状態を標準炎という。",
+          "reason": "不適切。炭化炎から酸素を増やして標準炎に近づくが、短く鋭い炎心は過酸化炎の特徴。",
+          "reasonSha256": "90bc1232998e9c2db3bed9c38aef3919928835f82ab11d54ac627ca9e1e45669",
+          "independentStatementVerdict": "false",
+          "technicalAssessment": "短く鋭い炎心は標準炎ではない。",
+          "evidence": [
+            "official-original:p8:No24",
+            "official-key",
+            "official-key"
+          ],
+          "reasonDisposition": "reviewed-question-held"
+        }
+      ],
+      "status": "HOLD",
+      "holds": [
+        "酸素アセチレン炎の3種について白点形状・色・温度位置を直接示す溶接機器メーカー一次図が未確保。"
+      ],
+      "repairs": [],
+      "candidateManuscriptSha256": "8b5316091ef13dde9fc5b49317b4cacd95b5d602e37f56e267cf25ac545f34b1",
+      "protectedFieldsUnchanged": true
+    },
+    {
+      "id": "jidosha-2026-first-body-q25",
+      "manuscriptSha256": "dc4e8a4af17e68c32526516a2e3ae090564b4fc4be9f03cfe21bbd8d5e154817",
+      "hashContract": "SHA256(UTF8(JSON.stringify(parsed question object))); original property order retained",
+      "fixedCommit": "6f4253b9381e3030863e38dfe75b5ca4068ba526",
+      "fixedBlobSha": "320fa720a1c2326e48c910b4eeaff32c92c7137d",
+      "fixedCommitTargetIdentical": true,
+      "officialOriginal": {
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_bo.pdf",
+        "sha256": "8e824d5f4c06d0db087383868ffd2996e331e28246d42ca4dcb02bf576f91f24",
+        "localFile": "sources/20261004_bo.pdf",
+        "localSha256": "8e824d5f4c06d0db087383868ffd2996e331e28246d42ca4dcb02bf576f91f24",
+        "physicalPages": [
+          8
+        ],
+        "locator": "No.25",
+        "visuallyReviewed": true
+      },
+      "officialKey": {
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_kai.pdf",
+        "sha256": "7f3a3405cd428510d0d585ceb96425c0b3ec9fd30c80696607fa5c595f20f23d",
+        "physicalPage": 1,
+        "subject": "body",
+        "qNumber": 25,
+        "answer": "ア",
+        "number": "1",
+        "storedTableMatches": true,
+        "transcriptionReview": "Existing independent 610-answer review reused; no new full-table transcription counted."
+      },
+      "figureReceipts": [],
+      "evidence": [
+        "official-original:p8:No25",
+        "official-key",
+        "official-key"
+      ],
+      "technicalEvidence": [
+        {
+          "kind": "official-original",
+          "locator": "p8:No25"
+        },
+        {
+          "kind": "official-key",
+          "locator": "existing independently checked answer table"
+        },
+        {
+          "kind": "official-key",
+          "locator": "existing independently checked answer table"
+        }
+      ],
+      "conditions": null,
+      "allChoiceReasons": [
+        {
+          "label": "ア",
+          "statement": "(1) ボンベの口金は、酸素用は左ねじ、アセチレン用は右ねじと決められている。",
+          "reason": "不適切。酸素と可燃性ガスの口金のねじ方向を取り違えている。",
+          "reasonSha256": "6550afbfb5776b03d1d69e1b11e103f9cb8c50ca23e4d60c38388cd195c524df",
+          "independentStatementVerdict": "false",
+          "technicalAssessment": "酸素右・アセチレン左の逆記載。",
+          "evidence": [
+            "official-original:p8:No25",
+            "official-key",
+            "official-key"
+          ],
+          "reasonDisposition": "reviewed-question-held"
+        },
+        {
+          "label": "イ",
+          "statement": "(2) ホース・チェック・バルブは、ホースと溶接トーチの接合部に取り付ける安全装置（逆流防止弁）で、酸素、アセチレンの両方に取り付けられている。",
+          "reason": "適切。両ガス系に逆流防止装置を設ける。",
+          "reasonSha256": "b421a0cd50140024ac73dfc9ee6a85205957801a1b1580ab6d6dbc79d4bebd00",
+          "independentStatementVerdict": "true",
+          "technicalAssessment": "両ホースの逆流防止。",
+          "evidence": [
+            "official-original:p8:No25",
+            "official-key",
+            "official-key"
+          ],
+          "reasonDisposition": "reviewed-question-held"
+        },
+        {
+          "label": "ウ",
+          "statement": "(3) 溶接棒の太さは、溶接する母材の厚さによって使い分ける。",
+          "reason": "適切。母材厚さに応じた溶接棒径を選ぶ。",
+          "reasonSha256": "1b67bc69908e4969fc5457f95d721395b133e0ac6b276d1654217c13c3df1083",
+          "independentStatementVerdict": "true",
+          "technicalAssessment": "溶接棒径は母材厚で選択。",
+          "evidence": [
+            "official-original:p8:No25",
+            "official-key",
+            "official-key"
+          ],
+          "reasonDisposition": "reviewed-question-held"
+        },
+        {
+          "label": "エ",
+          "statement": "(4) 自動逆流防止装置（アレスタ）は、高圧ガスに対する自動安全バルブで、酸素及びアセチレン・ガスのいずれのボンベにも用いることができる。",
+          "reason": "適切。逆流・逆火の危険に対する安全装置を用いる。",
+          "reasonSha256": "eb7b0275fb27ebec781ccb3f2eb4e1e3fb0b23fc193681af8bdf351e959b73ed",
+          "independentStatementVerdict": "true",
+          "technicalAssessment": "アレスタの適合ガス・取付位置は製品と法規で確認が必要。",
+          "evidence": [
+            "official-original:p8:No25",
+            "official-key",
+            "official-key"
+          ],
+          "reasonDisposition": "reviewed-question-held"
+        }
+      ],
+      "status": "HOLD",
+      "holds": [
+        "酸素・アセチレンのボンベねじ方向、チェックバルブとアレスタの両系適合を示す供給者一次仕様が未確保。"
+      ],
+      "repairs": [],
+      "candidateManuscriptSha256": "dc4e8a4af17e68c32526516a2e3ae090564b4fc4be9f03cfe21bbd8d5e154817",
+      "protectedFieldsUnchanged": true
+    },
+    {
+      "id": "jidosha-2026-first-body-q26",
+      "manuscriptSha256": "51ac2378cfe1c88c4bba1b134442ac61f36c3e115bb132e1e9edda849ff6c600",
+      "hashContract": "SHA256(UTF8(JSON.stringify(parsed question object))); original property order retained",
+      "fixedCommit": "6f4253b9381e3030863e38dfe75b5ca4068ba526",
+      "fixedBlobSha": "320fa720a1c2326e48c910b4eeaff32c92c7137d",
+      "fixedCommitTargetIdentical": true,
+      "officialOriginal": {
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_bo.pdf",
+        "sha256": "8e824d5f4c06d0db087383868ffd2996e331e28246d42ca4dcb02bf576f91f24",
+        "localFile": "sources/20261004_bo.pdf",
+        "localSha256": "8e824d5f4c06d0db087383868ffd2996e331e28246d42ca4dcb02bf576f91f24",
+        "physicalPages": [
+          8
+        ],
+        "locator": "No.26",
+        "visuallyReviewed": true
+      },
+      "officialKey": {
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_kai.pdf",
+        "sha256": "7f3a3405cd428510d0d585ceb96425c0b3ec9fd30c80696607fa5c595f20f23d",
+        "physicalPage": 1,
+        "subject": "body",
+        "qNumber": 26,
+        "answer": "エ",
+        "number": "4",
+        "storedTableMatches": true,
+        "transcriptionReview": "Existing independent 610-answer review reused; no new full-table transcription counted."
+      },
+      "figureReceipts": [],
+      "evidence": [
+        "official-original:p8:No26",
+        "official-key",
+        "official-key"
+      ],
+      "technicalEvidence": [
+        {
+          "kind": "official-original",
+          "locator": "p8:No26"
+        },
+        {
+          "kind": "official-key",
+          "locator": "existing independently checked answer table"
+        },
+        {
+          "kind": "official-key",
+          "locator": "existing independently checked answer table"
+        }
+      ],
+      "conditions": null,
+      "allChoiceReasons": [
+        {
+          "label": "ア",
+          "statement": "(1) トランス内蔵式ガンに用いるための変圧器は、作業者が手で持って作業するため、小型軽量で十分な二次出力容量があることが必要である。",
+          "reason": "適切。手持ちガンには軽量かつ十分な溶接出力が要る。",
+          "reasonSha256": "b91b07a1de229a45e57696e7ee4907cde0f2f3a5d59b2cd493029fae144d6adf",
+          "independentStatementVerdict": "true",
+          "technicalAssessment": "内蔵式ガンは小型軽量と容量が必要。",
+          "evidence": [
+            "official-original:p8:No26",
+            "official-key",
+            "official-key"
+          ],
+          "reasonDisposition": "reviewed-question-held"
+        },
+        {
+          "label": "イ",
+          "statement": "(2) トランス分離式ガンは、溶接機本体から取り出された2本の二次ケーブルの先端に取り付ける構造となっている。",
+          "reason": "適切。分離式は本体からの二次ケーブル先端にガンを置く。",
+          "reasonSha256": "8c805a975fac524e9d7f2fe3151931d7f10ba828538396825bf94a92a151ea34",
+          "independentStatementVerdict": "true",
+          "technicalAssessment": "分離式は二次ケーブル先端で接続。",
+          "evidence": [
+            "official-original:p8:No26",
+            "official-key",
+            "official-key"
+          ],
+          "reasonDisposition": "reviewed-question-held"
+        },
+        {
+          "label": "ウ",
+          "statement": "(3) トランス内蔵式ガンには、トランス本体の前部に二次電流を通電する溶接アーム・ホルダがあり、この部分に種々の交換アームを装着して使用する。",
+          "reason": "適切。交換アームを取り付けて各部の接合に対応する。",
+          "reasonSha256": "c152f6d7b11b3ab1f586eb6347276fe9bf277c1b8959d9bc20bceabd6144a874",
+          "independentStatementVerdict": "true",
+          "technicalAssessment": "内蔵型の交換アーム・ホルダ構成。",
+          "evidence": [
+            "official-original:p8:No26",
+            "official-key",
+            "official-key"
+          ],
+          "reasonDisposition": "reviewed-question-held"
+        },
+        {
+          "label": "エ",
+          "statement": "(4) 動力形式には、サーボモータ式、エア式、手加圧式などの種類があるが、現在車体整備事業者に幅広く使用されているのは、主にサーボモータ式である。",
+          "reason": "不適切。サーボモータ式が現場の主流という説明は合わない。",
+          "reasonSha256": "2863cc27f34300876625789d67932fd35c0bb96f8a0213b89289e3567a10c117",
+          "independentStatementVerdict": "false",
+          "technicalAssessment": "整備事業者の主流がサーボ式という現在の分布は実証不足。",
+          "evidence": [
+            "official-original:p8:No26",
+            "official-key",
+            "official-key"
+          ],
+          "reasonDisposition": "reviewed-question-held"
+        }
+      ],
+      "status": "HOLD",
+      "holds": [
+        "内蔵/分離トランスのガン構造と車体整備事業者のサーボ/エア式普及状況を示すメーカー一次仕様・調査が未確保。"
+      ],
+      "repairs": [],
+      "candidateManuscriptSha256": "51ac2378cfe1c88c4bba1b134442ac61f36c3e115bb132e1e9edda849ff6c600",
+      "protectedFieldsUnchanged": true
+    },
+    {
+      "id": "jidosha-2026-first-body-q27",
+      "manuscriptSha256": "23eadc74d9227b9a26079c3f683c8bd1bb988de6642ea52782f0163369ff3a84",
+      "hashContract": "SHA256(UTF8(JSON.stringify(parsed question object))); original property order retained",
+      "fixedCommit": "6f4253b9381e3030863e38dfe75b5ca4068ba526",
+      "fixedBlobSha": "320fa720a1c2326e48c910b4eeaff32c92c7137d",
+      "fixedCommitTargetIdentical": true,
+      "officialOriginal": {
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_bo.pdf",
+        "sha256": "8e824d5f4c06d0db087383868ffd2996e331e28246d42ca4dcb02bf576f91f24",
+        "localFile": "sources/20261004_bo.pdf",
+        "localSha256": "8e824d5f4c06d0db087383868ffd2996e331e28246d42ca4dcb02bf576f91f24",
+        "physicalPages": [
+          9
+        ],
+        "locator": "No.27",
+        "visuallyReviewed": true
+      },
+      "officialKey": {
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_kai.pdf",
+        "sha256": "7f3a3405cd428510d0d585ceb96425c0b3ec9fd30c80696607fa5c595f20f23d",
+        "physicalPage": 1,
+        "subject": "body",
+        "qNumber": 27,
+        "answer": "ウ",
+        "number": "3",
+        "storedTableMatches": true,
+        "transcriptionReview": "Existing independent 610-answer review reused; no new full-table transcription counted."
+      },
+      "figureReceipts": [],
+      "evidence": [
+        "official-original:p9:No27",
+        "official-key",
+        "https://www.millerwelds.com/en-us/resources/knowledge-hub/mig-welding/how-to/troubleshooting-weld-defects:cold lap and porosity"
+      ],
+      "technicalEvidence": [
+        {
+          "kind": "official-original",
+          "locator": "p9:No27"
+        },
+        {
+          "kind": "official-key",
+          "locator": "existing independently checked answer table"
+        },
+        {
+          "kind": "direct-primary-url",
+          "url": "https://www.millerwelds.com/en-us/resources/knowledge-hub/mig-welding/how-to/troubleshooting-weld-defects",
+          "locator": "cold lap and porosity"
+        }
+      ],
+      "conditions": null,
+      "allChoiceReasons": [
+        {
+          "label": "ア",
+          "statement": "(1) 1つ",
+          "reason": "不適切。正しい記述は3つある。",
+          "reasonSha256": "e4214a5103f5f08333204a5eab3102cdb4ac250ad3b4ec1712bf054c2e2def1f",
+          "independentStatementVerdict": "false",
+          "technicalAssessment": "（イ）（ロ）（ニ）を正とする公式分類なら1つではない。",
+          "evidence": [
+            "official-original:p9:No27",
+            "official-key",
+            "https://www.millerwelds.com/en-us/resources/knowledge-hub/mig-welding/how-to/troubleshooting-weld-defects:cold lap and porosity"
+          ],
+          "reasonDisposition": "reviewed-question-held"
+        },
+        {
+          "label": "イ",
+          "statement": "(2) 2つ",
+          "reason": "不適切。（イ）（ロ）（ニ）を数える。",
+          "reasonSha256": "7a8457ccd58df9f66626768832df546724323f1f4e07704105ee59fe3dafc8b1",
+          "independentStatementVerdict": "false",
+          "technicalAssessment": "3つであり2つではない。",
+          "evidence": [
+            "official-original:p9:No27",
+            "official-key",
+            "https://www.millerwelds.com/en-us/resources/knowledge-hub/mig-welding/how-to/troubleshooting-weld-defects:cold lap and porosity"
+          ],
+          "reasonDisposition": "reviewed-question-held"
+        },
+        {
+          "label": "ウ",
+          "statement": "(3) 3つ",
+          "reason": "適切。アンダカット、オーバラップ、ブローホールの説明を区別する。",
+          "reasonSha256": "19f50b54723d9d59d5bf32a44e60ca76e1e2917bfb07371077453772ed471dee",
+          "independentStatementVerdict": "true",
+          "technicalAssessment": "（ハ）はアンダカットではなくオーバラップの形状説明。",
+          "evidence": [
+            "official-original:p9:No27",
+            "official-key",
+            "https://www.millerwelds.com/en-us/resources/knowledge-hub/mig-welding/how-to/troubleshooting-weld-defects:cold lap and porosity"
+          ],
+          "reasonDisposition": "reviewed-question-held"
+        },
+        {
+          "label": "エ",
+          "statement": "(4) 4つ",
+          "reason": "不適切。（ハ）は欠陥名を取り違えている。",
+          "reasonSha256": "6abda635b19b033ed6ba8d92f1d882cdaa84f7e2749ab6dd3c1c78c812a0adde",
+          "independentStatementVerdict": "false",
+          "technicalAssessment": "（ハ）が偽なので4つではない。",
+          "evidence": [
+            "official-original:p9:No27",
+            "official-key",
+            "https://www.millerwelds.com/en-us/resources/knowledge-hub/mig-welding/how-to/troubleshooting-weld-defects:cold lap and porosity"
+          ],
+          "reasonDisposition": "reviewed-question-held"
+        }
+      ],
+      "status": "HOLD",
+      "holds": [
+        "アンダカットとオーバラップの原因電流を原文どおり断定する溶接メーカー一次資料、湿潤棒と巣穴の直接条件が未確保。"
+      ],
+      "repairs": [],
+      "candidateManuscriptSha256": "23eadc74d9227b9a26079c3f683c8bd1bb988de6642ea52782f0163369ff3a84",
+      "protectedFieldsUnchanged": true
+    },
+    {
+      "id": "jidosha-2026-first-body-q28",
+      "manuscriptSha256": "f5b5a96774bf288a7efe4dd11f2c8d5b07d683c9d3f4559b6705f0e9d2ba64c5",
+      "hashContract": "SHA256(UTF8(JSON.stringify(parsed question object))); original property order retained",
+      "fixedCommit": "6f4253b9381e3030863e38dfe75b5ca4068ba526",
+      "fixedBlobSha": "320fa720a1c2326e48c910b4eeaff32c92c7137d",
+      "fixedCommitTargetIdentical": true,
+      "officialOriginal": {
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_bo.pdf",
+        "sha256": "8e824d5f4c06d0db087383868ffd2996e331e28246d42ca4dcb02bf576f91f24",
+        "localFile": "sources/20261004_bo.pdf",
+        "localSha256": "8e824d5f4c06d0db087383868ffd2996e331e28246d42ca4dcb02bf576f91f24",
+        "physicalPages": [
+          9
+        ],
+        "locator": "No.28",
+        "visuallyReviewed": true
+      },
+      "officialKey": {
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_kai.pdf",
+        "sha256": "7f3a3405cd428510d0d585ceb96425c0b3ec9fd30c80696607fa5c595f20f23d",
+        "physicalPage": 1,
+        "subject": "body",
+        "qNumber": 28,
+        "answer": "イ",
+        "number": "2",
+        "storedTableMatches": true,
+        "transcriptionReview": "Existing independent 610-answer review reused; no new full-table transcription counted."
+      },
+      "figureReceipts": [],
+      "evidence": [
+        "official-original:p9:No28",
+        "official-key",
+        "https://www.millerwelds.com/en-us/resources/knowledge-hub/field-welding/structural-steel/understanding-voltage-drop-in-welding-and-how-technology-can-address-it:larger cable reduces voltage drop",
+        "https://ch-delivery.lincolnelectric.com/api/public/content/9369545624e24e228f825b536a73ac8b?v=9bba695b:arc welding circuit and heat"
+      ],
+      "technicalEvidence": [
+        {
+          "kind": "official-original",
+          "locator": "p9:No28"
+        },
+        {
+          "kind": "official-key",
+          "locator": "existing independently checked answer table"
+        },
+        {
+          "kind": "direct-primary-url",
+          "url": "https://www.millerwelds.com/en-us/resources/knowledge-hub/field-welding/structural-steel/understanding-voltage-drop-in-welding-and-how-technology-can-address-it",
+          "locator": "larger cable reduces voltage drop"
+        },
+        {
+          "kind": "direct-primary-url",
+          "url": "https://ch-delivery.lincolnelectric.com/api/public/content/9369545624e24e228f825b536a73ac8b?v=9bba695b",
+          "locator": "arc welding circuit and heat"
+        }
+      ],
+      "conditions": null,
+      "allChoiceReasons": [
+        {
+          "label": "ア",
+          "statement": "(1) 電源には、交流と直流の両方が使われているが、使用条件、使用目的によって選択される。",
+          "reason": "適切。交流・直流を目的に応じて選ぶ。",
+          "reasonSha256": "3e879744b06eb808af4cab3cfefd32ad9225ae99cb0048f3785bf330e3dfc262",
+          "independentStatementVerdict": "true",
+          "technicalAssessment": "交流・直流は工程・電極で選択する。",
+          "evidence": [
+            "official-original:p9:No28",
+            "official-key",
+            "https://www.millerwelds.com/en-us/resources/knowledge-hub/field-welding/structural-steel/understanding-voltage-drop-in-welding-and-how-technology-can-address-it:larger cable reduces voltage drop",
+            "https://ch-delivery.lincolnelectric.com/api/public/content/9369545624e24e228f825b536a73ac8b?v=9bba695b:arc welding circuit and heat"
+          ],
+          "reasonDisposition": "accepted"
+        },
+        {
+          "label": "イ",
+          "statement": "(2) ケーブルの太過ぎは、電圧降下を起こす原因となるため、溶接機に合った適正なケーブルを利用することが必要である。",
+          "reason": "不適切。導体断面積が大きいほど抵抗は低くなる。",
+          "reasonSha256": "460ccd84043dceb7b438b7c0d230bcdda48b55b1e07d3a60ea5204262595981b",
+          "independentStatementVerdict": "false",
+          "technicalAssessment": "導体断面積を大きくすれば抵抗と電圧降下は減る。",
+          "evidence": [
+            "official-original:p9:No28",
+            "official-key",
+            "https://www.millerwelds.com/en-us/resources/knowledge-hub/field-welding/structural-steel/understanding-voltage-drop-in-welding-and-how-technology-can-address-it:larger cable reduces voltage drop",
+            "https://ch-delivery.lincolnelectric.com/api/public/content/9369545624e24e228f825b536a73ac8b?v=9bba695b:arc welding circuit and heat"
+          ],
+          "reasonDisposition": "accepted"
+        },
+        {
+          "label": "ウ",
+          "statement": "(3) アーク溶接には、カーボン・アーク溶接と金属アーク溶接があり、現在では、一般に、金属アーク溶接が用いられている。",
+          "reason": "適切。一般的には金属アーク溶接が用いられる。",
+          "reasonSha256": "fbccaebd1cba836efd2d801d58d3b77d6d0c254039f1bab1794bb3af392dac45",
+          "independentStatementVerdict": "true",
+          "technicalAssessment": "金属電極アークが一般的。",
+          "evidence": [
+            "official-original:p9:No28",
+            "official-key",
+            "https://www.millerwelds.com/en-us/resources/knowledge-hub/field-welding/structural-steel/understanding-voltage-drop-in-welding-and-how-technology-can-address-it:larger cable reduces voltage drop",
+            "https://ch-delivery.lincolnelectric.com/api/public/content/9369545624e24e228f825b536a73ac8b?v=9bba695b:arc welding circuit and heat"
+          ],
+          "reasonDisposition": "accepted"
+        },
+        {
+          "label": "エ",
+          "statement": "(4) 金属アーク溶接の原理は、電流が電極と溶接部の間でアークを発生し、アークによる強い熱が溶接部の金属を溶かし、溶接を行うものである。",
+          "reason": "適切。アーク熱で母材と溶加材を溶融させる。",
+          "reasonSha256": "e938d5b6a3ef77f3a02cf52a9095dcc4d57979ffd86ccb1434d321c4bd5e97b0",
+          "independentStatementVerdict": "true",
+          "technicalAssessment": "アーク熱で母材・溶加材を溶かす。",
+          "evidence": [
+            "official-original:p9:No28",
+            "official-key",
+            "https://www.millerwelds.com/en-us/resources/knowledge-hub/field-welding/structural-steel/understanding-voltage-drop-in-welding-and-how-technology-can-address-it:larger cable reduces voltage drop",
+            "https://ch-delivery.lincolnelectric.com/api/public/content/9369545624e24e228f825b536a73ac8b?v=9bba695b:arc welding circuit and heat"
+          ],
+          "reasonDisposition": "accepted"
+        }
+      ],
+      "status": "ACCEPT",
+      "holds": [],
+      "repairs": [],
+      "candidateManuscriptSha256": "f5b5a96774bf288a7efe4dd11f2c8d5b07d683c9d3f4559b6705f0e9d2ba64c5",
+      "protectedFieldsUnchanged": true
+    },
+    {
+      "id": "jidosha-2026-first-body-q29",
+      "manuscriptSha256": "2cac444191b27c362586baf27e2370f8be400b90160469bb80ba25e4afd0d208",
+      "hashContract": "SHA256(UTF8(JSON.stringify(parsed question object))); original property order retained",
+      "fixedCommit": "6f4253b9381e3030863e38dfe75b5ca4068ba526",
+      "fixedBlobSha": "320fa720a1c2326e48c910b4eeaff32c92c7137d",
+      "fixedCommitTargetIdentical": true,
+      "officialOriginal": {
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_bo.pdf",
+        "sha256": "8e824d5f4c06d0db087383868ffd2996e331e28246d42ca4dcb02bf576f91f24",
+        "localFile": "sources/20261004_bo.pdf",
+        "localSha256": "8e824d5f4c06d0db087383868ffd2996e331e28246d42ca4dcb02bf576f91f24",
+        "physicalPages": [
+          9
+        ],
+        "locator": "No.29",
+        "visuallyReviewed": true
+      },
+      "officialKey": {
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_kai.pdf",
+        "sha256": "7f3a3405cd428510d0d585ceb96425c0b3ec9fd30c80696607fa5c595f20f23d",
+        "physicalPage": 1,
+        "subject": "body",
+        "qNumber": 29,
+        "answer": "ウ",
+        "number": "3",
+        "storedTableMatches": true,
+        "transcriptionReview": "Existing independent 610-answer review reused; no new full-table transcription counted."
+      },
+      "figureReceipts": [],
+      "evidence": [
+        "official-original:p9:No29",
+        "official-key",
+        "https://ch-delivery.lincolnelectric.com/api/public/content/05e5e7adde284a80b19a0d449d6b898f?v=dd44d888:arc welding hazards including chlorinated solvents",
+        "https://www.osha.gov/sites/default/files/publications/OSHA_SHIPYARD_INDUSTRY.pdf:chlorinated solvents and arc UV; fire and power precautions"
+      ],
+      "technicalEvidence": [
+        {
+          "kind": "official-original",
+          "locator": "p9:No29"
+        },
+        {
+          "kind": "official-key",
+          "locator": "existing independently checked answer table"
+        },
+        {
+          "kind": "direct-primary-url",
+          "url": "https://ch-delivery.lincolnelectric.com/api/public/content/05e5e7adde284a80b19a0d449d6b898f?v=dd44d888",
+          "locator": "arc welding hazards including chlorinated solvents"
+        },
+        {
+          "kind": "direct-primary-url",
+          "url": "https://www.osha.gov/sites/default/files/publications/OSHA_SHIPYARD_INDUSTRY.pdf",
+          "locator": "chlorinated solvents and arc UV; fire and power precautions"
+        }
+      ],
+      "conditions": null,
+      "allChoiceReasons": [
+        {
+          "label": "ア",
+          "statement": "(1) 1つ",
+          "reason": "不適切。正しい記述は3つある。",
+          "reasonSha256": "e4214a5103f5f08333204a5eab3102cdb4ac250ad3b4ec1712bf054c2e2def1f",
+          "independentStatementVerdict": "false",
+          "technicalAssessment": "塩素系溶剤はアーク熱・紫外線で有害ガスの危険があり使用不可。",
+          "evidence": [
+            "official-original:p9:No29",
+            "official-key",
+            "https://ch-delivery.lincolnelectric.com/api/public/content/05e5e7adde284a80b19a0d449d6b898f?v=dd44d888:arc welding hazards including chlorinated solvents",
+            "https://www.osha.gov/sites/default/files/publications/OSHA_SHIPYARD_INDUSTRY.pdf:chlorinated solvents and arc UV; fire and power precautions"
+          ],
+          "reasonDisposition": "accepted"
+        },
+        {
+          "label": "イ",
+          "statement": "(2) 2つ",
+          "reason": "不適切。作業方向、火災防止、電源遮断の3つが正しい。",
+          "reasonSha256": "b436eb67eec6a64542cafd13e13619f6038a95e69d697ed3cf2af85aafa1bcd3",
+          "independentStatementVerdict": "false",
+          "technicalAssessment": "周辺者の飛散被害を避ける。",
+          "evidence": [
+            "official-original:p9:No29",
+            "official-key",
+            "https://ch-delivery.lincolnelectric.com/api/public/content/05e5e7adde284a80b19a0d449d6b898f?v=dd44d888:arc welding hazards including chlorinated solvents",
+            "https://www.osha.gov/sites/default/files/publications/OSHA_SHIPYARD_INDUSTRY.pdf:chlorinated solvents and arc UV; fire and power precautions"
+          ],
+          "reasonDisposition": "accepted"
+        },
+        {
+          "label": "ウ",
+          "statement": "(3) 3つ",
+          "reason": "適切。（ロ）（ハ）（ニ）が安全手順に合う。",
+          "reasonSha256": "0c356ea1672da715457f310242ab32708194961885718b1bbcfb96efccf8c277",
+          "independentStatementVerdict": "true",
+          "technicalAssessment": "火花到達範囲の可燃物を除去。",
+          "evidence": [
+            "official-original:p9:No29",
+            "official-key",
+            "https://ch-delivery.lincolnelectric.com/api/public/content/05e5e7adde284a80b19a0d449d6b898f?v=dd44d888:arc welding hazards including chlorinated solvents",
+            "https://www.osha.gov/sites/default/files/publications/OSHA_SHIPYARD_INDUSTRY.pdf:chlorinated solvents and arc UV; fire and power precautions"
+          ],
+          "reasonDisposition": "accepted"
+        },
+        {
+          "label": "エ",
+          "statement": "(4) 4つ",
+          "reason": "不適切。（イ）は有害分解生成物の危険を無視している。",
+          "reasonSha256": "dc1e01b21fc835c65a7de0ee4c5bf214d7ffca586c0b1c5a824d07670da72070",
+          "independentStatementVerdict": "false",
+          "technicalAssessment": "不使用時の溶接機と一次電源遮断。",
+          "evidence": [
+            "official-original:p9:No29",
+            "official-key",
+            "https://ch-delivery.lincolnelectric.com/api/public/content/05e5e7adde284a80b19a0d449d6b898f?v=dd44d888:arc welding hazards including chlorinated solvents",
+            "https://www.osha.gov/sites/default/files/publications/OSHA_SHIPYARD_INDUSTRY.pdf:chlorinated solvents and arc UV; fire and power precautions"
+          ],
+          "reasonDisposition": "accepted"
+        }
+      ],
+      "status": "ACCEPT",
+      "holds": [],
+      "repairs": [],
+      "candidateManuscriptSha256": "2cac444191b27c362586baf27e2370f8be400b90160469bb80ba25e4afd0d208",
+      "protectedFieldsUnchanged": true
+    },
+    {
+      "id": "jidosha-2026-first-body-q30",
+      "manuscriptSha256": "813140dfa57344d38c180ca3ba7ddbb1713021f6f52d5719322309e6efd0416f",
+      "hashContract": "SHA256(UTF8(JSON.stringify(parsed question object))); original property order retained",
+      "fixedCommit": "6f4253b9381e3030863e38dfe75b5ca4068ba526",
+      "fixedBlobSha": "320fa720a1c2326e48c910b4eeaff32c92c7137d",
+      "fixedCommitTargetIdentical": true,
+      "officialOriginal": {
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_bo.pdf",
+        "sha256": "8e824d5f4c06d0db087383868ffd2996e331e28246d42ca4dcb02bf576f91f24",
+        "localFile": "sources/20261004_bo.pdf",
+        "localSha256": "8e824d5f4c06d0db087383868ffd2996e331e28246d42ca4dcb02bf576f91f24",
+        "physicalPages": [
+          10
+        ],
+        "locator": "No.30",
+        "visuallyReviewed": true
+      },
+      "officialKey": {
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_kai.pdf",
+        "sha256": "7f3a3405cd428510d0d585ceb96425c0b3ec9fd30c80696607fa5c595f20f23d",
+        "physicalPage": 1,
+        "subject": "body",
+        "qNumber": 30,
+        "answer": "イ",
+        "number": "2",
+        "storedTableMatches": true,
+        "transcriptionReview": "Existing independent 610-answer review reused; no new full-table transcription counted."
+      },
+      "figureReceipts": [],
+      "evidence": [
+        "official-original:p10:No30",
+        "official-key",
+        "https://ch-delivery.lincolnelectric.com/api/public/content/6606befc76f347c7934c4a9a401140c8?v=bb5b8eab:pulsed spray for thin materials is a separate low-heat process",
+        "https://www.lincolnelectric.com/en-SG/Welding-and-Cutting-Resource-Center/Weld-Solutions/Stainless-Steel-MIG-Welding-with-Compact-Welders:thin gauge short circuit mode",
+        "derivation:片面アークスポットでは板間隙が接合不良となる"
+      ],
+      "technicalEvidence": [
+        {
+          "kind": "official-original",
+          "locator": "p10:No30"
+        },
+        {
+          "kind": "official-key",
+          "locator": "existing independently checked answer table"
+        },
+        {
+          "kind": "direct-primary-url",
+          "url": "https://ch-delivery.lincolnelectric.com/api/public/content/6606befc76f347c7934c4a9a401140c8?v=bb5b8eab",
+          "locator": "pulsed spray for thin materials is a separate low-heat process"
+        },
+        {
+          "kind": "direct-primary-url",
+          "url": "https://www.lincolnelectric.com/en-SG/Welding-and-Cutting-Resource-Center/Weld-Solutions/Stainless-Steel-MIG-Welding-with-Compact-Welders",
+          "locator": "thin gauge short circuit mode"
+        },
+        {
+          "kind": "explicit-derivation",
+          "locator": "片面アークスポットでは板間隙が接合不良となる"
+        }
+      ],
+      "conditions": null,
+      "allChoiceReasons": [
+        {
+          "label": "ア",
+          "statement": "(1) ガス・シールド方式のため、溶接ビードにスラグが残らず溶接後のかき落とし作業が不要である。",
+          "reason": "適切。保護ガスでスラグをほぼ生じず清掃を減らせる。",
+          "reasonSha256": "d305950c6745c84718712dff01d246d7c6dce63add1be0f50d1ee55c28160f26",
+          "independentStatementVerdict": "true",
+          "technicalAssessment": "ガスシールドのMIGでは被覆棒由来のスラグ除去がない。",
+          "evidence": [
+            "official-original:p10:No30",
+            "official-key",
+            "https://ch-delivery.lincolnelectric.com/api/public/content/6606befc76f347c7934c4a9a401140c8?v=bb5b8eab:pulsed spray for thin materials is a separate low-heat process",
+            "https://www.lincolnelectric.com/en-SG/Welding-and-Cutting-Resource-Center/Weld-Solutions/Stainless-Steel-MIG-Welding-with-Compact-Welders:thin gauge short circuit mode",
+            "derivation:片面アークスポットでは板間隙が接合不良となる"
+          ],
+          "reasonDisposition": "accepted"
+        },
+        {
+          "label": "イ",
+          "statement": "(2) スプレ・アーク法は、薄板の溶接に最も適したメタル移行である。",
+          "reason": "不適切。薄板向きの移行様式としてスプレーアークを選ぶのは誤り。",
+          "reasonSha256": "b9cc30a6852525b5a08966b159a1e175b2dfe36c5421e8553b86026cb3a8a5d9",
+          "independentStatementVerdict": "false",
+          "technicalAssessment": "通常スプレー移行を薄板の「最も適した」方式とするのは誤り。パルススプレーは別条件で薄板使用例がある。",
+          "evidence": [
+            "official-original:p10:No30",
+            "official-key",
+            "https://ch-delivery.lincolnelectric.com/api/public/content/6606befc76f347c7934c4a9a401140c8?v=bb5b8eab:pulsed spray for thin materials is a separate low-heat process",
+            "https://www.lincolnelectric.com/en-SG/Welding-and-Cutting-Resource-Center/Weld-Solutions/Stainless-Steel-MIG-Welding-with-Compact-Welders:thin gauge short circuit mode",
+            "derivation:片面アークスポットでは板間隙が接合不良となる"
+          ],
+          "reasonDisposition": "accepted"
+        },
+        {
+          "label": "ウ",
+          "statement": "(3) 溶加材は、長いワイヤ形状で自動送りになっているので、連続溶接作業ができる。",
+          "reason": "適切。ワイヤ自動供給で連続溶接できる。",
+          "reasonSha256": "5f063619681b1fb328061c42b3c7da18fe0358b852ab67aa9688ec6474c87720",
+          "independentStatementVerdict": "true",
+          "technicalAssessment": "連続ワイヤ供給により連続溶接できる。",
+          "evidence": [
+            "official-original:p10:No30",
+            "official-key",
+            "https://ch-delivery.lincolnelectric.com/api/public/content/6606befc76f347c7934c4a9a401140c8?v=bb5b8eab:pulsed spray for thin materials is a separate low-heat process",
+            "https://www.lincolnelectric.com/en-SG/Welding-and-Cutting-Resource-Center/Weld-Solutions/Stainless-Steel-MIG-Welding-with-Compact-Welders:thin gauge short circuit mode",
+            "derivation:片面アークスポットでは板間隙が接合不良となる"
+          ],
+          "reasonDisposition": "accepted"
+        },
+        {
+          "label": "エ",
+          "statement": "(4) 片面ミグ・アーク・スポット溶接は、2枚の板の加圧密着が十分にできないことから、あらかじめ板の密着をよくするため、ならし作業を行い、クランプで固定する必要がある。",
+          "reason": "適切。片面スポットでは板間密着を事前に確保する。",
+          "reasonSha256": "30c2c91cfade9b0faab08acb863ec0a7f7ac1066d7db402d68f4674df7f1a1eb",
+          "independentStatementVerdict": "true",
+          "technicalAssessment": "片面スポットでは母材の密着確保とクランプが重要。",
+          "evidence": [
+            "official-original:p10:No30",
+            "official-key",
+            "https://ch-delivery.lincolnelectric.com/api/public/content/6606befc76f347c7934c4a9a401140c8?v=bb5b8eab:pulsed spray for thin materials is a separate low-heat process",
+            "https://www.lincolnelectric.com/en-SG/Welding-and-Cutting-Resource-Center/Weld-Solutions/Stainless-Steel-MIG-Welding-with-Compact-Welders:thin gauge short circuit mode",
+            "derivation:片面アークスポットでは板間隙が接合不良となる"
+          ],
+          "reasonDisposition": "accepted"
+        }
+      ],
+      "status": "ACCEPT_WITH_REPAIR",
+      "holds": [],
+      "repairs": [
+        {
+          "field": "choiceExplanations.イ",
+          "before": "不適切。薄板向きの移行様式としてスプレーアークを選ぶのは誤り。",
+          "after": "不適切。通常のスプレ移行を薄板に「最も適した」方式とはいえず、薄板では短絡移行など低入熱の条件が用いられる。パルススプレ移行は低平均電流に設定して薄板に使える別方式なので、一律に薄板へ不適合とはしない。",
+          "why": "既存理由はスプレ移行を薄板から一律に排除するよう読め、パルススプレの薄板適用例と衝突する。"
+        }
+      ],
+      "candidateManuscriptSha256": "a0b50fad3eb3db26eb43db9daa181cebe12327f797eecdfde5735e16d07236b1",
+      "protectedFieldsUnchanged": true
+    },
+    {
+      "id": "jidosha-2026-first-body-q31",
+      "manuscriptSha256": "5b5302b3e395e625c5995d8784f50f144ba15fc7b0102b56e71d394e8bdc2f6e",
+      "hashContract": "SHA256(UTF8(JSON.stringify(parsed question object))); original property order retained",
+      "fixedCommit": "6f4253b9381e3030863e38dfe75b5ca4068ba526",
+      "fixedBlobSha": "320fa720a1c2326e48c910b4eeaff32c92c7137d",
+      "fixedCommitTargetIdentical": true,
+      "officialOriginal": {
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_bo.pdf",
+        "sha256": "8e824d5f4c06d0db087383868ffd2996e331e28246d42ca4dcb02bf576f91f24",
+        "localFile": "sources/20261004_bo.pdf",
+        "localSha256": "8e824d5f4c06d0db087383868ffd2996e331e28246d42ca4dcb02bf576f91f24",
+        "physicalPages": [
+          10
+        ],
+        "locator": "No.31",
+        "visuallyReviewed": true
+      },
+      "officialKey": {
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_kai.pdf",
+        "sha256": "7f3a3405cd428510d0d585ceb96425c0b3ec9fd30c80696607fa5c595f20f23d",
+        "physicalPage": 1,
+        "subject": "body",
+        "qNumber": 31,
+        "answer": "ウ",
+        "number": "3",
+        "storedTableMatches": true,
+        "transcriptionReview": "Existing independent 610-answer review reused; no new full-table transcription counted."
+      },
+      "figureReceipts": [],
+      "evidence": [
+        "official-original:p10:No31",
+        "official-key",
+        "official-key"
+      ],
+      "technicalEvidence": [
+        {
+          "kind": "official-original",
+          "locator": "p10:No31"
+        },
+        {
+          "kind": "official-key",
+          "locator": "existing independently checked answer table"
+        },
+        {
+          "kind": "official-key",
+          "locator": "existing independently checked answer table"
+        }
+      ],
+      "conditions": null,
+      "allChoiceReasons": [
+        {
+          "label": "ア",
+          "statement": "(1) トラム・トラッキング・ゲージは、フレーム下面のサスペンションや伝動装置をまたいだ2点間の測定、ボデーの対角線の測定、ホイール・ベースの測定などができる。",
+          "reason": "適切。トラムゲージは離れた基準点間の寸法を測る。",
+          "reasonSha256": "bdabbdb9b67ae5080c5929181185a3af0891023331d89f84a341148dad25769b",
+          "independentStatementVerdict": "true",
+          "technicalAssessment": "トラムゲージで離れた基準点・対角線を測る。",
+          "evidence": [
+            "official-original:p10:No31",
+            "official-key",
+            "official-key"
+          ],
+          "reasonDisposition": "reviewed-question-held"
+        },
+        {
+          "label": "イ",
+          "statement": "(2) トラム・トラッキング・ゲージを用いて、クロス・メンバごとの対角線を測定し、対角線の長さに差があることでフレームの左右曲がりが確認できる。",
+          "reason": "適切。対角線の差はフレーム変形の確認に用いる。",
+          "reasonSha256": "de9afbb951fd3b819287080f088ad89a63e47e15c44ce1dd41dfc55cda84fa2c",
+          "independentStatementVerdict": "true",
+          "technicalAssessment": "対角線差と横曲がりの説明は測定点配置に依存。",
+          "evidence": [
+            "official-original:p10:No31",
+            "official-key",
+            "official-key"
+          ],
+          "reasonDisposition": "reviewed-question-held"
+        },
+        {
+          "label": "ウ",
+          "statement": "(3) フレーム・センタリング・ゲージの中央部にダイヤモンド・アタッチメントを直角に取り付け、センタ・ピンとダイヤモンド・アタッチメントのサイト・ピンのずれを見て左右曲がりが確認できる。",
+          "reason": "不適切。ダイヤモンドアタッチメントは菱曲がりの検出に用いる。",
+          "reasonSha256": "4489af2ebd74737f83abc3ab36d3c4e0e8958ec09dcc15db921333c77ce7b3be",
+          "independentStatementVerdict": "false",
+          "technicalAssessment": "ダイヤモンド・アタッチメントは菱曲がり用とする公式分類。",
+          "evidence": [
+            "official-original:p10:No31",
+            "official-key",
+            "official-key"
+          ],
+          "reasonDisposition": "reviewed-question-held"
+        },
+        {
+          "label": "エ",
+          "statement": "(4) フレーム・センタリング・ゲージは、左右の幅が調節できる水平バーの中心にセンタ・ピンがあり、伸縮するバーの端にはハンガ・ロッドが備えられている。",
+          "reason": "適切。センタリングゲージの基本構成を述べている。",
+          "reasonSha256": "7957d1f01d28feec426f5f3ef25751bc756807a32db36a9aa2a9ee1d71ab7140",
+          "independentStatementVerdict": "true",
+          "technicalAssessment": "センタリングゲージの部品配置。",
+          "evidence": [
+            "official-original:p10:No31",
+            "official-key",
+            "official-key"
+          ],
+          "reasonDisposition": "reviewed-question-held"
+        }
+      ],
+      "status": "HOLD",
+      "holds": [
+        "トラム対角線による左右曲がりの識別とダイヤモンドアタッチメントの菱曲がり測定を示す器具製造者の一次取扱説明が未確保。"
+      ],
+      "repairs": [],
+      "candidateManuscriptSha256": "5b5302b3e395e625c5995d8784f50f144ba15fc7b0102b56e71d394e8bdc2f6e",
+      "protectedFieldsUnchanged": true
+    },
+    {
+      "id": "jidosha-2026-first-body-q32",
+      "manuscriptSha256": "e07c58eacf58a3b2e712511b531fd0a7b4cf25070b5cf0510f446c5f69925888",
+      "hashContract": "SHA256(UTF8(JSON.stringify(parsed question object))); original property order retained",
+      "fixedCommit": "6f4253b9381e3030863e38dfe75b5ca4068ba526",
+      "fixedBlobSha": "320fa720a1c2326e48c910b4eeaff32c92c7137d",
+      "fixedCommitTargetIdentical": true,
+      "officialOriginal": {
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_bo.pdf",
+        "sha256": "8e824d5f4c06d0db087383868ffd2996e331e28246d42ca4dcb02bf576f91f24",
+        "localFile": "sources/20261004_bo.pdf",
+        "localSha256": "8e824d5f4c06d0db087383868ffd2996e331e28246d42ca4dcb02bf576f91f24",
+        "physicalPages": [
+          10
+        ],
+        "locator": "No.32",
+        "visuallyReviewed": true
+      },
+      "officialKey": {
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_kai.pdf",
+        "sha256": "7f3a3405cd428510d0d585ceb96425c0b3ec9fd30c80696607fa5c595f20f23d",
+        "physicalPage": 1,
+        "subject": "body",
+        "qNumber": 32,
+        "answer": "エ",
+        "number": "4",
+        "storedTableMatches": true,
+        "transcriptionReview": "Existing independent 610-answer review reused; no new full-table transcription counted."
+      },
+      "figureReceipts": [],
+      "evidence": [
+        "official-original:p10:No32",
+        "official-key",
+        "https://www.ppg.com/en-US/industrialcoatings/industrial-blog/coil-extrusion-and-field-applied-coatings:cleaning, pretreatment, primer, topcoat distinct stages",
+        "https://multimedia.3m.com/mws/media/869921O/instruction-bulletin-5-1.pdf:degrease separately from conversion coating"
+      ],
+      "technicalEvidence": [
+        {
+          "kind": "official-original",
+          "locator": "p10:No32"
+        },
+        {
+          "kind": "official-key",
+          "locator": "existing independently checked answer table"
+        },
+        {
+          "kind": "direct-primary-url",
+          "url": "https://www.ppg.com/en-US/industrialcoatings/industrial-blog/coil-extrusion-and-field-applied-coatings",
+          "locator": "cleaning, pretreatment, primer, topcoat distinct stages"
+        },
+        {
+          "kind": "direct-primary-url",
+          "url": "https://multimedia.3m.com/mws/media/869921O/instruction-bulletin-5-1.pdf",
+          "locator": "degrease separately from conversion coating"
+        }
+      ],
+      "conditions": null,
+      "allChoiceReasons": [
+        {
+          "label": "ア",
+          "statement": "(1) 中塗り塗料のプライマ・サフェーサ類は、プライマとしての防錆、付着性と、サフェーサとしての平滑性、吸い込み防止性などの特長を兼ね備えた塗料である。",
+          "reason": "適切。プライマとサフェーサ双方の機能を持つ。",
+          "reasonSha256": "a6a3f2c21f02b060e6be0bfa5eb8b1e04998ab59f471340c05434974428cbf1b",
+          "independentStatementVerdict": "true",
+          "technicalAssessment": "プライマサフェーサは密着と面出しの機能。",
+          "evidence": [
+            "official-original:p10:No32",
+            "official-key",
+            "https://www.ppg.com/en-US/industrialcoatings/industrial-blog/coil-extrusion-and-field-applied-coatings:cleaning, pretreatment, primer, topcoat distinct stages",
+            "https://multimedia.3m.com/mws/media/869921O/instruction-bulletin-5-1.pdf:degrease separately from conversion coating"
+          ],
+          "reasonDisposition": "accepted"
+        },
+        {
+          "label": "イ",
+          "statement": "(2) 上塗り塗料は、一般にトップコートと呼ばれ、塗装の仕上り外観を向上させて塗膜に光沢と耐候性を与えるものである。",
+          "reason": "適切。トップコートが外観、光沢、耐候性を与える。",
+          "reasonSha256": "a935347d840d095cb0aab9603f2e68c45d9503351a19b8766b5218259c0d83f2",
+          "independentStatementVerdict": "true",
+          "technicalAssessment": "トップコートは外観・耐候性を担う。",
+          "evidence": [
+            "official-original:p10:No32",
+            "official-key",
+            "https://www.ppg.com/en-US/industrialcoatings/industrial-blog/coil-extrusion-and-field-applied-coatings:cleaning, pretreatment, primer, topcoat distinct stages",
+            "https://multimedia.3m.com/mws/media/869921O/instruction-bulletin-5-1.pdf:degrease separately from conversion coating"
+          ],
+          "reasonDisposition": "accepted"
+        },
+        {
+          "label": "ウ",
+          "statement": "(3) 下塗り塗料のうちプライマ類は、錆の発生を防ぎ、次に塗装する塗料との付着性を高めるもので、通常は薄く塗装するが、種類により厚膜に塗装するものもある。",
+          "reason": "適切。プライマの防錆・密着機能と膜厚の説明。",
+          "reasonSha256": "c8bd8803281233e9912749da4ff40637b59ff95e674a3e0d8ad8d4f7df237a88",
+          "independentStatementVerdict": "true",
+          "technicalAssessment": "プライマは防錆・密着を担い膜厚は製品で異なる。",
+          "evidence": [
+            "official-original:p10:No32",
+            "official-key",
+            "https://www.ppg.com/en-US/industrialcoatings/industrial-blog/coil-extrusion-and-field-applied-coatings:cleaning, pretreatment, primer, topcoat distinct stages",
+            "https://multimedia.3m.com/mws/media/869921O/instruction-bulletin-5-1.pdf:degrease separately from conversion coating"
+          ],
+          "reasonDisposition": "accepted"
+        },
+        {
+          "label": "エ",
+          "statement": "(4) 前処理剤の脱脂剤は、金属素地表面に薄いリン酸被膜を形成することにより、化学的に錆の発生を止めるとともに、金属表面を荒らして塗料の付着性能を高めるものである。",
+          "reason": "不適切。脱脂とリン酸塩皮膜形成を混同している。",
+          "reasonSha256": "9877cf2a4dbfca99d2858a09bbb7682a391e0d9e1dd1c5b52eb650111740a9a8",
+          "independentStatementVerdict": "false",
+          "technicalAssessment": "脱脂は油脂除去で、リン酸被膜は別の化成前処理。",
+          "evidence": [
+            "official-original:p10:No32",
+            "official-key",
+            "https://www.ppg.com/en-US/industrialcoatings/industrial-blog/coil-extrusion-and-field-applied-coatings:cleaning, pretreatment, primer, topcoat distinct stages",
+            "https://multimedia.3m.com/mws/media/869921O/instruction-bulletin-5-1.pdf:degrease separately from conversion coating"
+          ],
+          "reasonDisposition": "accepted"
+        }
+      ],
+      "status": "ACCEPT",
+      "holds": [],
+      "repairs": [],
+      "candidateManuscriptSha256": "e07c58eacf58a3b2e712511b531fd0a7b4cf25070b5cf0510f446c5f69925888",
+      "protectedFieldsUnchanged": true
+    },
+    {
+      "id": "jidosha-2026-first-body-q33",
+      "manuscriptSha256": "9a457d27f79d21bc03008b285bf1ab4aee3b39123da1c394eaa16eafd6baee4e",
+      "hashContract": "SHA256(UTF8(JSON.stringify(parsed question object))); original property order retained",
+      "fixedCommit": "6f4253b9381e3030863e38dfe75b5ca4068ba526",
+      "fixedBlobSha": "320fa720a1c2326e48c910b4eeaff32c92c7137d",
+      "fixedCommitTargetIdentical": true,
+      "officialOriginal": {
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_bo.pdf",
+        "sha256": "8e824d5f4c06d0db087383868ffd2996e331e28246d42ca4dcb02bf576f91f24",
+        "localFile": "sources/20261004_bo.pdf",
+        "localSha256": "8e824d5f4c06d0db087383868ffd2996e331e28246d42ca4dcb02bf576f91f24",
+        "physicalPages": [
+          11
+        ],
+        "locator": "No.33",
+        "visuallyReviewed": true
+      },
+      "officialKey": {
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_kai.pdf",
+        "sha256": "7f3a3405cd428510d0d585ceb96425c0b3ec9fd30c80696607fa5c595f20f23d",
+        "physicalPage": 1,
+        "subject": "body",
+        "qNumber": 33,
+        "answer": "イ",
+        "number": "2",
+        "storedTableMatches": true,
+        "transcriptionReview": "Existing independent 610-answer review reused; no new full-table transcription counted."
+      },
+      "figureReceipts": [],
+      "evidence": [
+        "official-original:p11:No33",
+        "official-key",
+        "https://www.ppg.com/en-US/pmc/product/sigmaprime-200-lt/614018M1813:epoxy primer corrosion and chemical resistance"
+      ],
+      "technicalEvidence": [
+        {
+          "kind": "official-original",
+          "locator": "p11:No33"
+        },
+        {
+          "kind": "official-key",
+          "locator": "existing independently checked answer table"
+        },
+        {
+          "kind": "direct-primary-url",
+          "url": "https://www.ppg.com/en-US/pmc/product/sigmaprime-200-lt/614018M1813",
+          "locator": "epoxy primer corrosion and chemical resistance"
+        }
+      ],
+      "conditions": null,
+      "allChoiceReasons": [
+        {
+          "label": "ア",
+          "statement": "(1) 樹脂用プライマは、樹脂バンパやスポイラ等に使用される専用プライマで、樹脂素材と中塗り塗料や上塗り塗料との付着性を高める。",
+          "reason": "適切。樹脂表面への塗膜密着を助ける。",
+          "reasonSha256": "a908d91c6ef66dc36f8431c85738821dab8c27bc094385fa28404e409704c574",
+          "independentStatementVerdict": "true",
+          "technicalAssessment": "樹脂プライマはバンパ等の密着補助。",
+          "evidence": [
+            "official-original:p11:No33",
+            "official-key",
+            "https://www.ppg.com/en-US/pmc/product/sigmaprime-200-lt/614018M1813:epoxy primer corrosion and chemical resistance"
+          ],
+          "reasonDisposition": "reviewed-question-held"
+        },
+        {
+          "label": "イ",
+          "statement": "(2) エポキシ系プライマの主成分は、エポキシ樹脂、防錆顔料、ポリアミド樹脂などで、一般鋼板、アルミ合金などへの付着性には優れるが、防錆力と耐薬品性は維持できない。",
+          "reason": "不適切。エポキシ系は防錆力と耐薬品性を備える。",
+          "reasonSha256": "55aaeea6516c4038a80fda7df5902a31efaef1c153d4160ee17c6561ea398a1c",
+          "independentStatementVerdict": "false",
+          "technicalAssessment": "エポキシは一般に耐食・耐薬品性も備える。",
+          "evidence": [
+            "official-original:p11:No33",
+            "official-key",
+            "https://www.ppg.com/en-US/pmc/product/sigmaprime-200-lt/614018M1813:epoxy primer corrosion and chemical resistance"
+          ],
+          "reasonDisposition": "reviewed-question-held"
+        },
+        {
+          "label": "ウ",
+          "statement": "(3) ラッカ・プライマの主成分は、ニトロセルロース（硝化綿）とアルキド樹脂で、ラッカ補修用として使用される。",
+          "reason": "適切。ラッカ補修用プライマの組成を示す。",
+          "reasonSha256": "3176253d04c400539ef5c89fa2c249281ac4be160bcc4201bc67a04faf46e502",
+          "independentStatementVerdict": "true",
+          "technicalAssessment": "ラッカプライマのニトロセルロース・アルキド配合は個別処方依存。",
+          "evidence": [
+            "official-original:p11:No33",
+            "official-key",
+            "https://www.ppg.com/en-US/pmc/product/sigmaprime-200-lt/614018M1813:epoxy primer corrosion and chemical resistance"
+          ],
+          "reasonDisposition": "reviewed-question-held"
+        },
+        {
+          "label": "エ",
+          "statement": "(4) ウォッシュ・プライマは、特にアルミ素材に対する付着力がよく、ステンレスや亜鉛鋼板にも効果がある。",
+          "reason": "適切。ウォッシュプライマは難付着金属の下地に使う。",
+          "reasonSha256": "d4ae5542f01de49a1fb890edbe7b007f9692bba4aaf646e4c075d0230772b78b",
+          "independentStatementVerdict": "true",
+          "technicalAssessment": "ウォッシュプライマの金属別効果は製品で異なる。",
+          "evidence": [
+            "official-original:p11:No33",
+            "official-key",
+            "https://www.ppg.com/en-US/pmc/product/sigmaprime-200-lt/614018M1813:epoxy primer corrosion and chemical resistance"
+          ],
+          "reasonDisposition": "reviewed-question-held"
+        }
+      ],
+      "status": "HOLD",
+      "holds": [
+        "ラッカプライマの指定組成とウォッシュプライマのアルミ/ステンレス/亜鉛めっき適性を示す一次製品資料が未確保。"
+      ],
+      "repairs": [],
+      "candidateManuscriptSha256": "9a457d27f79d21bc03008b285bf1ab4aee3b39123da1c394eaa16eafd6baee4e",
+      "protectedFieldsUnchanged": true
+    },
+    {
+      "id": "jidosha-2026-first-body-q34",
+      "manuscriptSha256": "a463400086a126a5b060220c4048b95c1124b8afa99f2815db7e81fb7f05aa26",
+      "hashContract": "SHA256(UTF8(JSON.stringify(parsed question object))); original property order retained",
+      "fixedCommit": "6f4253b9381e3030863e38dfe75b5ca4068ba526",
+      "fixedBlobSha": "320fa720a1c2326e48c910b4eeaff32c92c7137d",
+      "fixedCommitTargetIdentical": true,
+      "officialOriginal": {
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_bo.pdf",
+        "sha256": "8e824d5f4c06d0db087383868ffd2996e331e28246d42ca4dcb02bf576f91f24",
+        "localFile": "sources/20261004_bo.pdf",
+        "localSha256": "8e824d5f4c06d0db087383868ffd2996e331e28246d42ca4dcb02bf576f91f24",
+        "physicalPages": [
+          11
+        ],
+        "locator": "No.34",
+        "visuallyReviewed": true
+      },
+      "officialKey": {
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_kai.pdf",
+        "sha256": "7f3a3405cd428510d0d585ceb96425c0b3ec9fd30c80696607fa5c595f20f23d",
+        "physicalPage": 1,
+        "subject": "body",
+        "qNumber": 34,
+        "answer": "ウ",
+        "number": "3",
+        "storedTableMatches": true,
+        "transcriptionReview": "Existing independent 610-answer review reused; no new full-table transcription counted."
+      },
+      "figureReceipts": [],
+      "evidence": [
+        "official-original:p11:No34",
+        "official-key",
+        "https://www.osha.gov/etools/shipyard/ship-repair/painting:solvent rags and closed containers",
+        "https://elaws.e-gov.go.jp/document?lawid=347M50002000036_20200828_502M60000100154:有機溶剤中毒予防規則 第19-21条"
+      ],
+      "technicalEvidence": [
+        {
+          "kind": "official-original",
+          "locator": "p11:No34"
+        },
+        {
+          "kind": "official-key",
+          "locator": "existing independently checked answer table"
+        },
+        {
+          "kind": "direct-primary-url",
+          "url": "https://www.osha.gov/etools/shipyard/ship-repair/painting",
+          "locator": "solvent rags and closed containers"
+        },
+        {
+          "kind": "direct-primary-url",
+          "url": "https://elaws.e-gov.go.jp/document?lawid=347M50002000036_20200828_502M60000100154",
+          "locator": "有機溶剤中毒予防規則 第19-21条"
+        }
+      ],
+      "conditions": null,
+      "allChoiceReasons": [
+        {
+          "label": "ア",
+          "statement": "(1) 塗料及びシンナ等が付着した廃ウエス類は、高温多湿時による自然発火を防ぐため、金属製の容器に入れて、安全な場所に保管する。",
+          "reason": "適切。溶剤付きウエスは不燃容器等に安全保管する。",
+          "reasonSha256": "afab54a38a6694c4205d8fec00cccd11751a3df54312ab68ba6dc6db714ffd30",
+          "independentStatementVerdict": "true",
+          "technicalAssessment": "溶剤付着ウエスは蓋付き金属容器で保管。",
+          "evidence": [
+            "official-original:p11:No34",
+            "official-key",
+            "https://www.osha.gov/etools/shipyard/ship-repair/painting:solvent rags and closed containers",
+            "https://elaws.e-gov.go.jp/document?lawid=347M50002000036_20200828_502M60000100154:有機溶剤中毒予防規則 第19-21条"
+          ],
+          "reasonDisposition": "accepted"
+        },
+        {
+          "label": "イ",
+          "statement": "(2) 衣服から塗料の浸透を防ぐため、塗装服、帽子、手袋を着用するとともに、ゴーグルや有機ガス用防毒マスクを着用する。",
+          "reason": "適切。塗料・溶剤の接触と吸入を防ぐ保護具を使用する。",
+          "reasonSha256": "7597f54a4b84ec1f4a0ca01b53cfc547d4b0dcb6cc88226c7de229f65df2d2be",
+          "independentStatementVerdict": "true",
+          "technicalAssessment": "塗装時の皮膚・眼・呼吸器保護。",
+          "evidence": [
+            "official-original:p11:No34",
+            "official-key",
+            "https://www.osha.gov/etools/shipyard/ship-repair/painting:solvent rags and closed containers",
+            "https://elaws.e-gov.go.jp/document?lawid=347M50002000036_20200828_502M60000100154:有機溶剤中毒予防規則 第19-21条"
+          ],
+          "reasonDisposition": "accepted"
+        },
+        {
+          "label": "ウ",
+          "statement": "(3) 塗装ブース、乾燥設備の保守点検を年1回以上実施し、定期自主検査表に記録して1年間保存しなければならない。",
+          "reason": "不適切。保守点検の定期自主検査記録は1年間ではなく3年間保存する。",
+          "reasonSha256": "fe4f61b428feef6d6d4fe27ce3e205cff5349bff6f6a94ac162de4904a965678",
+          "independentStatementVerdict": "false",
+          "technicalAssessment": "有機則の自主検査記録は3年間保存で、1年間は誤り。",
+          "evidence": [
+            "official-original:p11:No34",
+            "official-key",
+            "https://www.osha.gov/etools/shipyard/ship-repair/painting:solvent rags and closed containers",
+            "https://elaws.e-gov.go.jp/document?lawid=347M50002000036_20200828_502M60000100154:有機溶剤中毒予防規則 第19-21条"
+          ],
+          "reasonDisposition": "accepted"
+        },
+        {
+          "label": "エ",
+          "statement": "(4) 塗料は、使用時以外はしっかりと密閉し、蒸気の発生による引火、中毒などの防止をすること。",
+          "reason": "適切。容器の密閉は蒸気の発生と危険を抑える。",
+          "reasonSha256": "8c1951e2a1543fcfb6600dc8fcd231c02536ce40d32c793e0aea42ddc4193c5d",
+          "independentStatementVerdict": "true",
+          "technicalAssessment": "塗料容器を密閉し蒸気暴露・引火を抑える。",
+          "evidence": [
+            "official-original:p11:No34",
+            "official-key",
+            "https://www.osha.gov/etools/shipyard/ship-repair/painting:solvent rags and closed containers",
+            "https://elaws.e-gov.go.jp/document?lawid=347M50002000036_20200828_502M60000100154:有機溶剤中毒予防規則 第19-21条"
+          ],
+          "reasonDisposition": "accepted"
+        }
+      ],
+      "status": "ACCEPT",
+      "holds": [],
+      "repairs": [],
+      "candidateManuscriptSha256": "a463400086a126a5b060220c4048b95c1124b8afa99f2815db7e81fb7f05aa26",
+      "protectedFieldsUnchanged": true
+    },
+    {
+      "id": "jidosha-2026-first-body-q35",
+      "manuscriptSha256": "13ab36e1d13436788a4a36003ddb967b0d84010c41241db2c03b283a12af05fe",
+      "hashContract": "SHA256(UTF8(JSON.stringify(parsed question object))); original property order retained",
+      "fixedCommit": "6f4253b9381e3030863e38dfe75b5ca4068ba526",
+      "fixedBlobSha": "320fa720a1c2326e48c910b4eeaff32c92c7137d",
+      "fixedCommitTargetIdentical": true,
+      "officialOriginal": {
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_bo.pdf",
+        "sha256": "8e824d5f4c06d0db087383868ffd2996e331e28246d42ca4dcb02bf576f91f24",
+        "localFile": "sources/20261004_bo.pdf",
+        "localSha256": "8e824d5f4c06d0db087383868ffd2996e331e28246d42ca4dcb02bf576f91f24",
+        "physicalPages": [
+          11
+        ],
+        "locator": "No.35",
+        "visuallyReviewed": true
+      },
+      "officialKey": {
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_kai.pdf",
+        "sha256": "7f3a3405cd428510d0d585ceb96425c0b3ec9fd30c80696607fa5c595f20f23d",
+        "physicalPage": 1,
+        "subject": "body",
+        "qNumber": 35,
+        "answer": "ウ",
+        "number": "3",
+        "storedTableMatches": true,
+        "transcriptionReview": "Existing independent 610-answer review reused; no new full-table transcription counted."
+      },
+      "figureReceipts": [],
+      "evidence": [
+        "official-original:p11:No35",
+        "official-key",
+        "official-key"
+      ],
+      "technicalEvidence": [
+        {
+          "kind": "official-original",
+          "locator": "p11:No35"
+        },
+        {
+          "kind": "official-key",
+          "locator": "existing independently checked answer table"
+        },
+        {
+          "kind": "official-key",
+          "locator": "existing independently checked answer table"
+        }
+      ],
+      "conditions": null,
+      "allChoiceReasons": [
+        {
+          "label": "ア",
+          "statement": "(1) 速乾性のラッカ・パテで、上塗り塗装前に0.2mm以下の浅い傷などを充てんする場合に使用するもので、グレージング・パテとも呼ばれる。",
+          "reason": "不適切。これはラッカのグレージングパテ。",
+          "reasonSha256": "de73f3aca4eeb7722f2fbe5b3b6fa44818ccb75963f7ac0e8b006111b34d354e",
+          "independentStatementVerdict": "false",
+          "technicalAssessment": "グレージングのラッカパテの説明。",
+          "evidence": [
+            "official-original:p11:No35",
+            "official-key",
+            "official-key"
+          ],
+          "reasonDisposition": "reviewed-question-held"
+        },
+        {
+          "label": "イ",
+          "statement": "(2) 不飽和ポリエステル樹脂を主剤とし、有機過酸化物を硬化剤とする2液タイプのパテで、3mm以上の深い凹みを充てんする場合に使用する。",
+          "reason": "不適切。深い凹み用の厚付けパテの説明である。",
+          "reasonSha256": "eba09da4ecf4ebacf4eeb9feccdb06be6abdccccb06288d59dcfe423635cc0ff",
+          "independentStatementVerdict": "false",
+          "technicalAssessment": "厚付け用途を一般のポリエステルパテとする肢は分類条件が異なる。",
+          "evidence": [
+            "official-original:p11:No35",
+            "official-key",
+            "official-key"
+          ],
+          "reasonDisposition": "reviewed-question-held"
+        },
+        {
+          "label": "ウ",
+          "statement": "(3) 油変性不飽和ポリエステル樹脂を主剤とし、有機過酸化物を硬化剤とする2液タイプのパテで、2mm以下の浅い凹みやペーパー目を充てんする場合に使用する。",
+          "reason": "適切。油変性ポリエステル系の薄付け用途を示す。",
+          "reasonSha256": "7289e3a0903a11c36ed17c33d2220a4f7a17334a5e3ba7c187722bb636efe24c",
+          "independentStatementVerdict": "true",
+          "technicalAssessment": "油変性不飽和ポリエステルの薄付け用途が公式分類。",
+          "evidence": [
+            "official-original:p11:No35",
+            "official-key",
+            "official-key"
+          ],
+          "reasonDisposition": "reviewed-question-held"
+        },
+        {
+          "label": "エ",
+          "statement": "(4) 不飽和ポリエステル樹脂と顔料を主成分とする2液タイプのパテで、パテ付けの困難な部位や1mm程度のスクラッチ傷の補修に有効である。",
+          "reason": "不適切。困難部位・小傷に使う別種のパテの説明。",
+          "reasonSha256": "d55a49aabb1ee7917ded5da9771ed21ae3e7e4429ac53241b04b7bccb1260c4b",
+          "independentStatementVerdict": "false",
+          "technicalAssessment": "小傷・困難部位への別パテを混同。",
+          "evidence": [
+            "official-original:p11:No35",
+            "official-key",
+            "official-key"
+          ],
+          "reasonDisposition": "reviewed-question-held"
+        }
+      ],
+      "status": "HOLD",
+      "holds": [
+        "油変性ポリエステルパテの2mm以下適用、他3種の組成・深さを比較できる塗料メーカー一次製品表が未確保。"
+      ],
+      "repairs": [],
+      "candidateManuscriptSha256": "13ab36e1d13436788a4a36003ddb967b0d84010c41241db2c03b283a12af05fe",
+      "protectedFieldsUnchanged": true
+    },
+    {
+      "id": "jidosha-2026-first-body-q36",
+      "manuscriptSha256": "e3ca23d5685658f5d145ad80cb27cce9779098b19f313c4bb3f5321eda5c2fb3",
+      "hashContract": "SHA256(UTF8(JSON.stringify(parsed question object))); original property order retained",
+      "fixedCommit": "6f4253b9381e3030863e38dfe75b5ca4068ba526",
+      "fixedBlobSha": "320fa720a1c2326e48c910b4eeaff32c92c7137d",
+      "fixedCommitTargetIdentical": true,
+      "officialOriginal": {
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_bo.pdf",
+        "sha256": "8e824d5f4c06d0db087383868ffd2996e331e28246d42ca4dcb02bf576f91f24",
+        "localFile": "sources/20261004_bo.pdf",
+        "localSha256": "8e824d5f4c06d0db087383868ffd2996e331e28246d42ca4dcb02bf576f91f24",
+        "physicalPages": [
+          11
+        ],
+        "locator": "No.36",
+        "visuallyReviewed": true
+      },
+      "officialKey": {
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_kai.pdf",
+        "sha256": "7f3a3405cd428510d0d585ceb96425c0b3ec9fd30c80696607fa5c595f20f23d",
+        "physicalPage": 1,
+        "subject": "body",
+        "qNumber": 36,
+        "answer": "エ",
+        "number": "4",
+        "storedTableMatches": true,
+        "transcriptionReview": "Existing independent 610-answer review reused; no new full-table transcription counted."
+      },
+      "figureReceipts": [],
+      "evidence": [
+        "official-original:p11:No36",
+        "official-key",
+        "official-key"
+      ],
+      "technicalEvidence": [
+        {
+          "kind": "official-original",
+          "locator": "p11:No36"
+        },
+        {
+          "kind": "official-key",
+          "locator": "existing independently checked answer table"
+        },
+        {
+          "kind": "official-key",
+          "locator": "existing independently checked answer table"
+        }
+      ],
+      "conditions": null,
+      "allChoiceReasons": [
+        {
+          "label": "ア",
+          "statement": "(1) 不飽和ポリエステル樹脂を主成分とする重合乾燥型のパテ類は、5℃以下の気温では硬化が促進できない状態になるので、強制乾燥が必要である。",
+          "reason": "適切。低温では硬化が進みにくく温度管理が必要。",
+          "reasonSha256": "6a7a9bd3dd042e2da70a5c64df9e9543a44933d65f6f787f17f4f7c9dde9189f",
+          "independentStatementVerdict": "true",
+          "technicalAssessment": "低温で過酸化物硬化が遅れる。",
+          "evidence": [
+            "official-original:p11:No36",
+            "official-key",
+            "official-key"
+          ],
+          "reasonDisposition": "reviewed-question-held"
+        },
+        {
+          "label": "イ",
+          "statement": "(2) パテ付け後は、いきなり強制乾燥せず、必ず適切なセッティング時間（予備乾燥時間）をとる。",
+          "reason": "適切。強制乾燥前のセッティングを確保する。",
+          "reasonSha256": "ff5ad058e61579fe854e2cc402428a5c82061e5c7aa5c5f8da2f828dcd425434",
+          "independentStatementVerdict": "true",
+          "technicalAssessment": "強制乾燥前の予備時間が必要。",
+          "evidence": [
+            "official-original:p11:No36",
+            "official-key",
+            "official-key"
+          ],
+          "reasonDisposition": "reviewed-question-held"
+        },
+        {
+          "label": "ウ",
+          "statement": "(3) パテの硬化剤は、その量の過不足があると、付着性不良や硬度不足の原因となる。",
+          "reason": "適切。硬化剤量の誤りは物性不良を招く。",
+          "reasonSha256": "ad6bd933815906da25ece8fb1e9518b701aa237aefc3bd5a914d7f6033c0c8fa",
+          "independentStatementVerdict": "true",
+          "technicalAssessment": "硬化剤量が硬度・付着性へ影響。",
+          "evidence": [
+            "official-original:p11:No36",
+            "official-key",
+            "official-key"
+          ],
+          "reasonDisposition": "reviewed-question-held"
+        },
+        {
+          "label": "エ",
+          "statement": "(4) パテの乾燥状態の確認は、パテの塗膜の薄い箇所のほうが反応が早く進むため、パテの塗膜の厚い箇所で行う。",
+          "reason": "不適切。厚い箇所だけでなく硬化が遅れ得る薄い箇所も確認する。",
+          "reasonSha256": "37caa13efcb1e288854b58e305fe3cd3875b50e76d846efd0a0e31acd46c0fd0",
+          "independentStatementVerdict": "false",
+          "technicalAssessment": "薄膜の反応熱散逸を無視した厚膜だけの乾燥確認は誤り。",
+          "evidence": [
+            "official-original:p11:No36",
+            "official-key",
+            "official-key"
+          ],
+          "reasonDisposition": "reviewed-question-held"
+        }
+      ],
+      "status": "HOLD",
+      "holds": [
+        "5℃以下、必須セッティング時間、薄膜の硬化遅延を同一ポリエステルパテの一次施工説明で確認できていない。"
+      ],
+      "repairs": [],
+      "candidateManuscriptSha256": "e3ca23d5685658f5d145ad80cb27cce9779098b19f313c4bb3f5321eda5c2fb3",
+      "protectedFieldsUnchanged": true
+    },
+    {
+      "id": "jidosha-2026-first-body-q37",
+      "manuscriptSha256": "6a75abc94c11ac3b9a596f67ca21728381a2b32fb0eea4c7603969a28b8b09d3",
+      "hashContract": "SHA256(UTF8(JSON.stringify(parsed question object))); original property order retained",
+      "fixedCommit": "6f4253b9381e3030863e38dfe75b5ca4068ba526",
+      "fixedBlobSha": "320fa720a1c2326e48c910b4eeaff32c92c7137d",
+      "fixedCommitTargetIdentical": true,
+      "officialOriginal": {
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_bo.pdf",
+        "sha256": "8e824d5f4c06d0db087383868ffd2996e331e28246d42ca4dcb02bf576f91f24",
+        "localFile": "sources/20261004_bo.pdf",
+        "localSha256": "8e824d5f4c06d0db087383868ffd2996e331e28246d42ca4dcb02bf576f91f24",
+        "physicalPages": [
+          12
+        ],
+        "locator": "No.37",
+        "visuallyReviewed": true
+      },
+      "officialKey": {
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_kai.pdf",
+        "sha256": "7f3a3405cd428510d0d585ceb96425c0b3ec9fd30c80696607fa5c595f20f23d",
+        "physicalPage": 1,
+        "subject": "body",
+        "qNumber": 37,
+        "answer": "イ",
+        "number": "2",
+        "storedTableMatches": true,
+        "transcriptionReview": "Existing independent 610-answer review reused; no new full-table transcription counted."
+      },
+      "figureReceipts": [
+        {
+          "bookId": "jaspa-2026-first-body",
+          "physicalPage": 12,
+          "pdfSha256": "8e824d5f4c06d0db087383868ffd2996e331e28246d42ca4dcb02bf576f91f24",
+          "officialUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_bo.pdf#page=12",
+          "originalQuestionIds": [
+            "jidosha-2026-first-body-q37"
+          ],
+          "relativePath": "figures/jaspa-2026-first-body-p12.webp",
+          "width": 1490,
+          "height": 2106,
+          "sha256": "6eb9904e7d6684955887186d3208c56e0be23de53aa4fdf05e255ac931e73f31",
+          "bytes": 244004,
+          "processing": "Original PDF physical page rendered to PNG, then converted to WebP; no retouch or generated content.",
+          "actualSha256": "6eb9904e7d6684955887186d3208c56e0be23de53aa4fdf05e255ac931e73f31",
+          "visuallyReviewed": true
+        }
+      ],
+      "evidence": [
+        "official-original:p12:No37",
+        "official-key",
+        "https://www.3m.com/3M/en_US/collision-repair-us/applications/metal-shop/small-damage-repair-sop/:DA feather-edge"
+      ],
+      "technicalEvidence": [
+        {
+          "kind": "official-original",
+          "locator": "p12:No37"
+        },
+        {
+          "kind": "official-key",
+          "locator": "existing independently checked answer table"
+        },
+        {
+          "kind": "direct-primary-url",
+          "url": "https://www.3m.com/3M/en_US/collision-repair-us/applications/metal-shop/small-damage-repair-sop/",
+          "locator": "DA feather-edge"
+        }
+      ],
+      "conditions": null,
+      "allChoiceReasons": [
+        {
+          "label": "ア",
+          "statement": "(1) 旧塗膜の剥離、錆の研磨／回転サンダ、ダブル・アクション・サンダ",
+          "reason": "不適切。旧塗膜剥離・錆研磨の指定機器の組合せとしては合わない。",
+          "reasonSha256": "a9d47a753e5d12c22673092afdd333341c61f9f1f5705e20ffe3c4350dd6bc8f",
+          "independentStatementVerdict": "false",
+          "technicalAssessment": "旧塗膜・錆研磨の組合せ全体を適切とする根拠は不足。",
+          "evidence": [
+            "official-original:p12:No37",
+            "official-key",
+            "https://www.3m.com/3M/en_US/collision-repair-us/applications/metal-shop/small-damage-repair-sop/:DA feather-edge"
+          ],
+          "reasonDisposition": "reviewed-question-held"
+        },
+        {
+          "label": "イ",
+          "statement": "(2) フェザ・エッジング／ダブル・アクション・サンダ",
+          "reason": "適切。ダブルアクションで塗膜端を滑らかに研ぐ。",
+          "reasonSha256": "459a3a0cb76bebb1866e319152066af4ec62c2c85b5a0ee0cb704034ae71b508",
+          "independentStatementVerdict": "true",
+          "technicalAssessment": "原紙p12表のフェザーエッジングはDAサンダで一次工程資料も一致。",
+          "evidence": [
+            "official-original:p12:No37",
+            "official-key",
+            "https://www.3m.com/3M/en_US/collision-repair-us/applications/metal-shop/small-damage-repair-sop/:DA feather-edge"
+          ],
+          "reasonDisposition": "reviewed-question-held"
+        },
+        {
+          "label": "ウ",
+          "statement": "(3) ポリパテの研磨／ストレート・サンダ、オービタル・サンダ、ダブル・アクション・サンダ",
+          "reason": "不適切。ポリパテの研磨に列挙した全機器が適切な組合せではない。",
+          "reasonSha256": "3318d51c7e86a31bdaac32f4286cefb2b4401dd33dae7e526709a5d5dac281f6",
+          "independentStatementVerdict": "false",
+          "technicalAssessment": "ポリパテ用途に挙げた全機種の適否は条件依存。",
+          "evidence": [
+            "official-original:p12:No37",
+            "official-key",
+            "https://www.3m.com/3M/en_US/collision-repair-us/applications/metal-shop/small-damage-repair-sop/:DA feather-edge"
+          ],
+          "reasonDisposition": "reviewed-question-held"
+        },
+        {
+          "label": "エ",
+          "statement": "(4) 板金パテの研磨／回転サンダ、ディスク・サンダ、ダブル・アクション・サンダ",
+          "reason": "不適切。板金パテに回転・ディスクサンダを並べる組合せは不適切。",
+          "reasonSha256": "dd915a8fba170a3d1f3d7f675dcfcb6b7ea076124117f86e5af731ad653f848a",
+          "independentStatementVerdict": "false",
+          "technicalAssessment": "板金パテ用回転/ディスクは仕上げ条件で不適切。",
+          "evidence": [
+            "official-original:p12:No37",
+            "official-key",
+            "https://www.3m.com/3M/en_US/collision-repair-us/applications/metal-shop/small-damage-repair-sop/:DA feather-edge"
+          ],
+          "reasonDisposition": "reviewed-question-held"
+        }
+      ],
+      "status": "HOLD",
+      "holds": [
+        "他3肢の機器組合せを「不適切」と一律に排除する根拠が不足。3MはDAによる旧塗膜除去も示し、アの否定には作業条件を特定する必要がある。"
+      ],
+      "repairs": [],
+      "candidateManuscriptSha256": "6a75abc94c11ac3b9a596f67ca21728381a2b32fb0eea4c7603969a28b8b09d3",
+      "protectedFieldsUnchanged": true
+    },
+    {
+      "id": "jidosha-2026-first-body-q38",
+      "manuscriptSha256": "e08ee425592a15f13318299ec43862ec1f5ca84bdb8caecec75d56919e25f79b",
+      "hashContract": "SHA256(UTF8(JSON.stringify(parsed question object))); original property order retained",
+      "fixedCommit": "6f4253b9381e3030863e38dfe75b5ca4068ba526",
+      "fixedBlobSha": "320fa720a1c2326e48c910b4eeaff32c92c7137d",
+      "fixedCommitTargetIdentical": true,
+      "officialOriginal": {
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_bo.pdf",
+        "sha256": "8e824d5f4c06d0db087383868ffd2996e331e28246d42ca4dcb02bf576f91f24",
+        "localFile": "sources/20261004_bo.pdf",
+        "localSha256": "8e824d5f4c06d0db087383868ffd2996e331e28246d42ca4dcb02bf576f91f24",
+        "physicalPages": [
+          12
+        ],
+        "locator": "No.38",
+        "visuallyReviewed": true
+      },
+      "officialKey": {
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_kai.pdf",
+        "sha256": "7f3a3405cd428510d0d585ceb96425c0b3ec9fd30c80696607fa5c595f20f23d",
+        "physicalPage": 1,
+        "subject": "body",
+        "qNumber": 38,
+        "answer": "イ",
+        "number": "2",
+        "storedTableMatches": true,
+        "transcriptionReview": "Existing independent 610-answer review reused; no new full-table transcription counted."
+      },
+      "figureReceipts": [],
+      "evidence": [
+        "official-original:p12:No38",
+        "official-key",
+        "Vehicles-law:第1条・第91条第3項"
+      ],
+      "technicalEvidence": [
+        {
+          "kind": "official-original",
+          "locator": "p12:No38"
+        },
+        {
+          "kind": "official-key",
+          "locator": "existing independently checked answer table"
+        },
+        {
+          "kind": "primary-source-catalog",
+          "id": "Vehicles-law",
+          "url": "https://laws.e-gov.go.jp/api/1/lawdata/326AC0000000185",
+          "localFile": "sources/vehicles-law.xml",
+          "sha256": "f07627b20c37c1d500a0b0ecbf01013d67cde41e665d28e7efc1d7eca12afd0e",
+          "locator": "第1条・第91条第3項"
+        }
+      ],
+      "conditions": null,
+      "allChoiceReasons": [
+        {
+          "label": "ア",
+          "statement": "(1) （イ）公証／（ロ）事故／（ハ）利益",
+          "reason": "不適切。公証は合うが、事故・利益が条文と異なる。",
+          "reasonSha256": "e03e2e5ddedda60457f22cfe5f9d2e1e42e7b94f575a336a5601ab8ccaa23cf2",
+          "independentStatementVerdict": "false",
+          "technicalAssessment": "公証だけ一致し、事故・利益が法文と異なる。",
+          "evidence": [
+            "official-original:p12:No38",
+            "official-key",
+            "Vehicles-law:第1条・第91条第3項"
+          ],
+          "reasonDisposition": "accepted"
+        },
+        {
+          "label": "イ",
+          "statement": "(2) （イ）公証／（ロ）公害／（ハ）福祉",
+          "reason": "適切。3語とも法第1条の文言。",
+          "reasonSha256": "0faa84926456163b7ff32a35154d6496e4d415803df90b7a0285c8a2c697f1da",
+          "independentStatementVerdict": "true",
+          "technicalAssessment": "第1条の公証・公害・福祉が全て一致。",
+          "evidence": [
+            "official-original:p12:No38",
+            "official-key",
+            "Vehicles-law:第1条・第91条第3項"
+          ],
+          "reasonDisposition": "accepted"
+        },
+        {
+          "label": "ウ",
+          "statement": "(3) （イ）証明／（ロ）事故／（ハ）福祉",
+          "reason": "不適切。証明と事故が異なる。",
+          "reasonSha256": "afad8bfc47230bb04428e2adebb9db5aabecaae6548c9f5d85f6228afb5ad226",
+          "independentStatementVerdict": "false",
+          "technicalAssessment": "証明・事故が異なる。",
+          "evidence": [
+            "official-original:p12:No38",
+            "official-key",
+            "Vehicles-law:第1条・第91条第3項"
+          ],
+          "reasonDisposition": "accepted"
+        },
+        {
+          "label": "エ",
+          "statement": "(4) （イ）証明／（ロ）公害／（ハ）利益",
+          "reason": "不適切。公害は合うが、公証と福祉が異なる。",
+          "reasonSha256": "4b2af1e603e7d0ce26b8e8096fba941a1d56d5ad8885d0231ecfbd33a6f423af",
+          "independentStatementVerdict": "false",
+          "technicalAssessment": "公害のみ一致、他2語は異なる。",
+          "evidence": [
+            "official-original:p12:No38",
+            "official-key",
+            "Vehicles-law:第1条・第91条第3項"
+          ],
+          "reasonDisposition": "accepted"
+        }
+      ],
+      "status": "ACCEPT",
+      "holds": [],
+      "repairs": [],
+      "candidateManuscriptSha256": "e08ee425592a15f13318299ec43862ec1f5ca84bdb8caecec75d56919e25f79b",
+      "protectedFieldsUnchanged": true
+    },
+    {
+      "id": "jidosha-2026-first-body-q39",
+      "manuscriptSha256": "cedd29253cee77fb23b098a0f10ca1943b7e210df55cf7ae8a775cca7dbf68a7",
+      "hashContract": "SHA256(UTF8(JSON.stringify(parsed question object))); original property order retained",
+      "fixedCommit": "6f4253b9381e3030863e38dfe75b5ca4068ba526",
+      "fixedBlobSha": "320fa720a1c2326e48c910b4eeaff32c92c7137d",
+      "fixedCommitTargetIdentical": true,
+      "officialOriginal": {
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_bo.pdf",
+        "sha256": "8e824d5f4c06d0db087383868ffd2996e331e28246d42ca4dcb02bf576f91f24",
+        "localFile": "sources/20261004_bo.pdf",
+        "localSha256": "8e824d5f4c06d0db087383868ffd2996e331e28246d42ca4dcb02bf576f91f24",
+        "physicalPages": [
+          12
+        ],
+        "locator": "No.39",
+        "visuallyReviewed": true
+      },
+      "officialKey": {
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_kai.pdf",
+        "sha256": "7f3a3405cd428510d0d585ceb96425c0b3ec9fd30c80696607fa5c595f20f23d",
+        "physicalPage": 1,
+        "subject": "body",
+        "qNumber": 39,
+        "answer": "エ",
+        "number": "4",
+        "storedTableMatches": true,
+        "transcriptionReview": "Existing independent 610-answer review reused; no new full-table transcription counted."
+      },
+      "figureReceipts": [],
+      "evidence": [
+        "official-original:p12:No39",
+        "official-key",
+        "Vehicles-law:第1条・第91条第3項",
+        "https://wwwtb.mlit.go.jp/hokushin/nagano/pdf/2020/200408-10.pdf:特定整備記録簿の保存期間"
+      ],
+      "technicalEvidence": [
+        {
+          "kind": "official-original",
+          "locator": "p12:No39"
+        },
+        {
+          "kind": "official-key",
+          "locator": "existing independently checked answer table"
+        },
+        {
+          "kind": "primary-source-catalog",
+          "id": "Vehicles-law",
+          "url": "https://laws.e-gov.go.jp/api/1/lawdata/326AC0000000185",
+          "localFile": "sources/vehicles-law.xml",
+          "sha256": "f07627b20c37c1d500a0b0ecbf01013d67cde41e665d28e7efc1d7eca12afd0e",
+          "locator": "第1条・第91条第3項"
+        },
+        {
+          "kind": "direct-primary-url",
+          "url": "https://wwwtb.mlit.go.jp/hokushin/nagano/pdf/2020/200408-10.pdf",
+          "locator": "特定整備記録簿の保存期間"
+        }
+      ],
+      "conditions": null,
+      "allChoiceReasons": [
+        {
+          "label": "ア",
+          "statement": "(1) （イ）点検／（ロ）1年間",
+          "reason": "不適切。点検日・1年間とも違う。",
+          "reasonSha256": "0bfd940ac9830f33e095d26bb968253c77576306190e7ca11139655003bc1924",
+          "independentStatementVerdict": "false",
+          "technicalAssessment": "点検日起算で1年は両方異なる。",
+          "evidence": [
+            "official-original:p12:No39",
+            "official-key",
+            "Vehicles-law:第1条・第91条第3項",
+            "https://wwwtb.mlit.go.jp/hokushin/nagano/pdf/2020/200408-10.pdf:特定整備記録簿の保存期間"
+          ],
+          "reasonDisposition": "accepted"
+        },
+        {
+          "label": "イ",
+          "statement": "(2) （イ）記載／（ロ）1年間",
+          "reason": "不適切。記載日は合うが2年間保存する。",
+          "reasonSha256": "fa0e8a060c0e82a1da10a8d7acb15d943c418f393e708b785cca28f4cd3b97bc",
+          "independentStatementVerdict": "false",
+          "technicalAssessment": "記載日は合うが期間は2年。",
+          "evidence": [
+            "official-original:p12:No39",
+            "official-key",
+            "Vehicles-law:第1条・第91条第3項",
+            "https://wwwtb.mlit.go.jp/hokushin/nagano/pdf/2020/200408-10.pdf:特定整備記録簿の保存期間"
+          ],
+          "reasonDisposition": "accepted"
+        },
+        {
+          "label": "ウ",
+          "statement": "(3) （イ）点検／（ロ）2年間",
+          "reason": "不適切。2年間は合うが起算日は記載日。",
+          "reasonSha256": "6546a31f04625c45c79abae58a3fa6a0c8a51ed2f85edad01c22fd6de428dd05",
+          "independentStatementVerdict": "false",
+          "technicalAssessment": "期間は合うが起算日は記載日。",
+          "evidence": [
+            "official-original:p12:No39",
+            "official-key",
+            "Vehicles-law:第1条・第91条第3項",
+            "https://wwwtb.mlit.go.jp/hokushin/nagano/pdf/2020/200408-10.pdf:特定整備記録簿の保存期間"
+          ],
+          "reasonDisposition": "accepted"
+        },
+        {
+          "label": "エ",
+          "statement": "(4) （イ）記載／（ロ）2年間",
+          "reason": "適切。記載の日から2年間保存する。",
+          "reasonSha256": "92a99bd71fa444ac21c5c660a36d6427b44ed90e62bf8cbf73da613b93d814a7",
+          "independentStatementVerdict": "true",
+          "technicalAssessment": "第91条第3項の記載日から2年間に一致。",
+          "evidence": [
+            "official-original:p12:No39",
+            "official-key",
+            "Vehicles-law:第1条・第91条第3項",
+            "https://wwwtb.mlit.go.jp/hokushin/nagano/pdf/2020/200408-10.pdf:特定整備記録簿の保存期間"
+          ],
+          "reasonDisposition": "accepted"
+        }
+      ],
+      "status": "ACCEPT",
+      "holds": [],
+      "repairs": [],
+      "candidateManuscriptSha256": "cedd29253cee77fb23b098a0f10ca1943b7e210df55cf7ae8a775cca7dbf68a7",
+      "protectedFieldsUnchanged": true
+    },
+    {
+      "id": "jidosha-2026-first-body-q40",
+      "manuscriptSha256": "fb9667befd36cf5476893a908dfaab207cd9e0c4be3ce97249ece4b2d2a81797",
+      "hashContract": "SHA256(UTF8(JSON.stringify(parsed question object))); original property order retained",
+      "fixedCommit": "6f4253b9381e3030863e38dfe75b5ca4068ba526",
+      "fixedBlobSha": "320fa720a1c2326e48c910b4eeaff32c92c7137d",
+      "fixedCommitTargetIdentical": true,
+      "officialOriginal": {
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_bo.pdf",
+        "sha256": "8e824d5f4c06d0db087383868ffd2996e331e28246d42ca4dcb02bf576f91f24",
+        "localFile": "sources/20261004_bo.pdf",
+        "localSha256": "8e824d5f4c06d0db087383868ffd2996e331e28246d42ca4dcb02bf576f91f24",
+        "physicalPages": [
+          12
+        ],
+        "locator": "No.40",
+        "visuallyReviewed": true
+      },
+      "officialKey": {
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_kai.pdf",
+        "sha256": "7f3a3405cd428510d0d585ceb96425c0b3ec9fd30c80696607fa5c595f20f23d",
+        "physicalPage": 1,
+        "subject": "body",
+        "qNumber": 40,
+        "answer": "ウ",
+        "number": "3",
+        "storedTableMatches": true,
+        "transcriptionReview": "Existing independent 610-answer review reused; no new full-table transcription counted."
+      },
+      "figureReceipts": [],
+      "evidence": [
+        "official-original:p12:No40",
+        "official-key",
+        "https://www.mlit.go.jp/jidosha/kijyun/saimokukokuji/saikoku_137_00.pdf:第137条方向指示器 昼間100m",
+        "https://wwwtb.mlit.go.jp/kyushu/content/000231912.pdf:車幅灯前方300mと制動灯の性能区分",
+        "MLIT-S121:第121条第3項第1号 前部霧灯同時3個以上不可",
+        "https://www.mlit.go.jp/jidosha/content/S212.pdf:第212条 制動灯の昼間後方100m視認"
+      ],
+      "technicalEvidence": [
+        {
+          "kind": "official-original",
+          "locator": "p12:No40"
+        },
+        {
+          "kind": "official-key",
+          "locator": "existing independently checked answer table"
+        },
+        {
+          "kind": "direct-primary-url",
+          "url": "https://www.mlit.go.jp/jidosha/kijyun/saimokukokuji/saikoku_137_00.pdf",
+          "locator": "第137条方向指示器 昼間100m"
+        },
+        {
+          "kind": "direct-primary-url",
+          "url": "https://wwwtb.mlit.go.jp/kyushu/content/000231912.pdf",
+          "locator": "車幅灯前方300mと制動灯の性能区分"
+        },
+        {
+          "kind": "primary-source-catalog",
+          "id": "MLIT-S121",
+          "url": "https://www.mlit.go.jp/jidosha/content/S121.pdf",
+          "localFile": "sources/MLIT-S121.pdf",
+          "sha256": "d4a08556943f5622227ec3af885079c32d108f9e9c345828ebc0af71428ea83d",
+          "locator": "第121条第3項第1号 前部霧灯同時3個以上不可"
+        },
+        {
+          "kind": "direct-primary-url",
+          "url": "https://www.mlit.go.jp/jidosha/content/S212.pdf",
+          "locator": "第212条 制動灯の昼間後方100m視認"
+        }
+      ],
+      "conditions": null,
+      "allChoiceReasons": [
+        {
+          "label": "ア",
+          "statement": "(1) 方向指示器は、方向の指示を表示する方向100mの位置から、昼間において点灯を確認できるものであること。",
+          "reason": "適切。昼間100mから方向指示の点灯確認が求められる。",
+          "reasonSha256": "18884110f23e3e6e87d761796201457344038bb51a49ce4130cbba363b445b9a",
+          "independentStatementVerdict": "true",
+          "technicalAssessment": "方向指示器は昼間に指示方向100mで確認。",
+          "evidence": [
+            "official-original:p12:No40",
+            "official-key",
+            "https://www.mlit.go.jp/jidosha/kijyun/saimokukokuji/saikoku_137_00.pdf:第137条方向指示器 昼間100m",
+            "https://wwwtb.mlit.go.jp/kyushu/content/000231912.pdf:車幅灯前方300mと制動灯の性能区分",
+            "MLIT-S121:第121条第3項第1号 前部霧灯同時3個以上不可",
+            "https://www.mlit.go.jp/jidosha/content/S212.pdf:第212条 制動灯の昼間後方100m視認"
+          ],
+          "reasonDisposition": "accepted"
+        },
+        {
+          "label": "イ",
+          "statement": "(2) 車幅灯は、夜間にその前方300mの距離から点灯を確認できるものであること。",
+          "reason": "適切。車幅灯の夜間前方視認性の条件を示す。",
+          "reasonSha256": "7a07b80323c3b580ce9fa5f002905f8d1c004f0a51b540fe368ffd7f93207566",
+          "independentStatementVerdict": "true",
+          "technicalAssessment": "車幅灯は夜間前方300mで確認。",
+          "evidence": [
+            "official-original:p12:No40",
+            "official-key",
+            "https://www.mlit.go.jp/jidosha/kijyun/saimokukokuji/saikoku_137_00.pdf:第137条方向指示器 昼間100m",
+            "https://wwwtb.mlit.go.jp/kyushu/content/000231912.pdf:車幅灯前方300mと制動灯の性能区分",
+            "MLIT-S121:第121条第3項第1号 前部霧灯同時3個以上不可",
+            "https://www.mlit.go.jp/jidosha/content/S212.pdf:第212条 制動灯の昼間後方100m視認"
+          ],
+          "reasonDisposition": "accepted"
+        },
+        {
+          "label": "ウ",
+          "statement": "(3) 制動灯は、夜間にその後方300mの距離から点灯を確認できるものであること。",
+          "reason": "不適切。制動灯の夜間視認距離はこの300m条件ではない。",
+          "reasonSha256": "699c3b7885e11e3c50efe91eab54b3cc7af7dd02c745fc643fcc8549adffd441",
+          "independentStatementVerdict": "false",
+          "technicalAssessment": "制動灯を夜間後方300mとするのは規定に合わない。昼間後方100mの別基準。",
+          "evidence": [
+            "official-original:p12:No40",
+            "official-key",
+            "https://www.mlit.go.jp/jidosha/kijyun/saimokukokuji/saikoku_137_00.pdf:第137条方向指示器 昼間100m",
+            "https://wwwtb.mlit.go.jp/kyushu/content/000231912.pdf:車幅灯前方300mと制動灯の性能区分",
+            "MLIT-S121:第121条第3項第1号 前部霧灯同時3個以上不可",
+            "https://www.mlit.go.jp/jidosha/content/S212.pdf:第212条 制動灯の昼間後方100m視認"
+          ],
+          "reasonDisposition": "accepted"
+        },
+        {
+          "label": "エ",
+          "statement": "(4) 前部霧灯は、同時に3個以上点灯しないように取り付けられていること。",
+          "reason": "適切。前部霧灯の同時点灯数は2個まで。",
+          "reasonSha256": "d1923a3e792516af0a468fc10e4d6e46642c79569826a1fb5c1bd139c0510df7",
+          "independentStatementVerdict": "true",
+          "technicalAssessment": "前部霧灯は同時3個以上点灯しない取付け。",
+          "evidence": [
+            "official-original:p12:No40",
+            "official-key",
+            "https://www.mlit.go.jp/jidosha/kijyun/saimokukokuji/saikoku_137_00.pdf:第137条方向指示器 昼間100m",
+            "https://wwwtb.mlit.go.jp/kyushu/content/000231912.pdf:車幅灯前方300mと制動灯の性能区分",
+            "MLIT-S121:第121条第3項第1号 前部霧灯同時3個以上不可",
+            "https://www.mlit.go.jp/jidosha/content/S212.pdf:第212条 制動灯の昼間後方100m視認"
+          ],
+          "reasonDisposition": "accepted"
+        }
+      ],
+      "status": "ACCEPT",
+      "holds": [],
+      "repairs": [],
+      "candidateManuscriptSha256": "fb9667befd36cf5476893a908dfaab207cd9e0c4be3ce97249ece4b2d2a81797",
+      "protectedFieldsUnchanged": true
+    }
+  ]
+}

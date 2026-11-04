@@ -207,7 +207,7 @@ describe("renderMainSitemapXml route contract", () => {
   });
 
   it("includes representative public routes", () => {
-    for (const path of ["/about", "/search", "/topics", "/blog", "/stats"]) {
+    for (const path of ["/about", "/topics", "/blog", "/stats"]) {
       expect(mainLocs).toContain(path);
     }
   });

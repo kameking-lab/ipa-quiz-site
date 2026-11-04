@@ -200,10 +200,12 @@ describe("searchQuestions — snippet", () => {
 });
 
 describe("searchQuestions — 全試験横断（exam 未指定）", () => {
+  // This cold integration path transforms every public chunk in Vitest, unlike
+  // the compiled production loader. Allow for the enlarged corpus on CI hosts.
   it("exam 未指定は全チャンクを母集団に取り、非空で返す", async () => {
     const res = await searchQuestions({ limit: 60 });
     expect(res.total).toBeGreaterThan(0);
     const sumExam = Object.values(res.facets.exam).reduce((a, b) => a + b, 0);
     expect(sumExam).toBe(res.total);
-  });
+  }, 120_000);
 });

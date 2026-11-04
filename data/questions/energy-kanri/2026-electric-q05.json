@@ -1,0 +1,848 @@
+[
+  {
+    "id": "energy-kanri-2026-5-q05-s01",
+    "exam": "energy-kanri",
+    "session": "senmon",
+    "year": 2026,
+    "season": "annual",
+    "qNumber": 5,
+    "officialAnswerNumber": "1",
+    "type": "multiple-choice",
+    "category": "自動制御及び情報処理",
+    "topicTags": [
+      "電気分野",
+      "自動制御及び情報処理"
+    ],
+    "difficulty": 2,
+    "question": "1) 電動機から与えられるトルクと倒立振子の動きの関係は次の運動方程式で表される。\nJθ̈(t)＝mgl sinθ(t)＋T(t) …①\nここで、Jは系全体の慣性モーメントである。θ≒0のとき、式①は次式で近似できる。\nJθ̈(t)＝mglθ(t)＋T(t) …②\n式②の両辺をラプラス変換し、θ(t)のラプラス変換をθ(s)、T(t)のラプラス変換をT(s)で表すと、すべての初期値を零とみなすと、次のように表される。\n［1］＝mglθ(s)＋T(s) …③\nこのとき、トルクT(s)からθ(s)までの伝達関数G(s)は、式［2］と表される。",
+    "questionNotice": "原問の解答番号1を解答してください。",
+    "choices": {
+      "ア": "sJθ(s)",
+      "イ": "s²Jθ(s)",
+      "ウ": "(J/s)θ(s)",
+      "エ": "(J/s²)θ(s)"
+    },
+    "answer": "イ",
+    "explanation": "ℒ[θ̈(t)]＝s²θ(s)−sθ(0)−θ̇(0)。すべての初期値が零なので、左辺はJs²θ(s)となる。",
+    "choiceExplanations": {
+      "ア": "初期値零での2階微分はs²θ(s)となる。s倍は1階微分に対応する。",
+      "イ": "ℒ[θ̈(t)]＝s²θ(s)−sθ(0)−θ̇(0)。すべての初期値が零なので、左辺はJs²θ(s)となる。",
+      "ウ": "1/s倍は積分に対応する。ここで変換するのは2階微分なのでJs²θ(s)が必要である。",
+      "エ": "1/s²倍は2回の積分に対応する。運動方程式の左辺は2階微分なので、s²を掛ける。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.eccj.or.jp/mgr1/test_past/pdf/r08/r08_5.pdf#page=6",
+    "sourceAnswerUrl": "https://www.eccj.or.jp/mgr1/test_past/pdf/r08/r08_k_5.pdf",
+    "sourceAttribution": "出典：一般財団法人省エネルギーセンター 第48回エネルギー管理士試験 電気分野 課目Ⅱ 問題5。解説は過去問AIの独自作成。",
+    "license": "ECCJ-owner-approved",
+    "isCalculation": true,
+    "originalContent": {
+      "body": "1) 電動機から与えられるトルクと倒立振子の動きの関係は次の運動方程式で表される。\nJθ̈(t)＝mgl sinθ(t)＋T(t) …①\nここで、Jは系全体の慣性モーメントである。θ≒0のとき、式①は次式で近似できる。\nJθ̈(t)＝mglθ(t)＋T(t) …②\n式②の両辺をラプラス変換し、θ(t)のラプラス変換をθ(s)、T(t)のラプラス変換をT(s)で表すと、すべての初期値を零とみなすと、次のように表される。\n［1］＝mglθ(s)＋T(s) …③\nこのとき、トルクT(s)からθ(s)までの伝達関数G(s)は、式［2］と表される。",
+      "choices": {
+        "ア": "sJθ(s)",
+        "イ": "s²Jθ(s)",
+        "ウ": "(J/s)θ(s)",
+        "エ": "(J/s²)θ(s)"
+      },
+      "sharedPassages": [
+        {
+          "label": "問題5 共通指示",
+          "text": "（自動制御及び情報処理）\n問題5 次の各文章の［1］～［14］の中に入れるべき最も適切な字句等をそれぞれの解答群から選び、その記号を答えよ。（配点計50点）"
+        },
+        {
+          "label": "(1) 倒立振子の条件",
+          "text": "(1) 図1に示すように、質量m [kg]の質点が長さl [m]の棒の先についている倒立振子の制御について考える。ここで、倒立振子の姿勢やトルクを時間tの関数で表すこととし、電動機から棒に与えるトルクをT(t) [N·m]、鉛直上向き方向からの棒の角度をθ(t) [rad]、θ(t)の時間に関する1階微分をθ̇(t)、2階微分をθ̈(t)、重力加速度をg [m/s²]とする。なお、棒の質量は無視できるものとし、摩擦はないものとする。"
+        }
+      ]
+    },
+    "imageUrls": [
+      "/images/energy-kanri/2026/electric-q05-pendulum.png"
+    ],
+    "imageAltTexts": [
+      "図1。質量mの質点が長さlの棒の先に付く倒立振子。鉛直上向きからの角度θは時計回りを正とし、重力mgは質点から鉛直下向きに作用する。支点の電動機Mが同じ正方向のトルクTを与える。"
+    ]
+  },
+  {
+    "id": "energy-kanri-2026-5-q05-s02",
+    "exam": "energy-kanri",
+    "session": "senmon",
+    "year": 2026,
+    "season": "annual",
+    "qNumber": 5,
+    "officialAnswerNumber": "2",
+    "type": "multiple-choice",
+    "category": "自動制御及び情報処理",
+    "topicTags": [
+      "電気分野",
+      "自動制御及び情報処理"
+    ],
+    "difficulty": 2,
+    "question": "1) 電動機から与えられるトルクと倒立振子の動きの関係は次の運動方程式で表される。\nJθ̈(t)＝mgl sinθ(t)＋T(t) …①\nここで、Jは系全体の慣性モーメントである。θ≒0のとき、式①は次式で近似できる。\nJθ̈(t)＝mglθ(t)＋T(t) …②\n式②の両辺をラプラス変換し、θ(t)のラプラス変換をθ(s)、T(t)のラプラス変換をT(s)で表すと、すべての初期値を零とみなすと、次のように表される。\n［1］＝mglθ(s)＋T(s) …③\nこのとき、トルクT(s)からθ(s)までの伝達関数G(s)は、式［2］と表される。",
+    "questionNotice": "原問の解答番号2を解答してください。",
+    "choices": {
+      "ア": "Js²＋mgl",
+      "イ": "Js²−mgl",
+      "ウ": "1/(Js²＋mgl)",
+      "エ": "1/(Js²−mgl)"
+    },
+    "answer": "エ",
+    "explanation": "Js²θ(s)＝mglθ(s)＋T(s)より、(Js²−mgl)θ(s)＝T(s)。したがってG(s)＝θ(s)/T(s)＝1/(Js²−mgl)。",
+    "choiceExplanations": {
+      "ア": "伝達関数はθ(s)/T(s)であり、多項式そのものではなく逆数になる。重力項の移項後の符号も負になる。",
+      "イ": "Js²−mglはθ(s)に掛かる係数であり、θ(s)/T(s)はその逆数である。",
+      "ウ": "倒立位置では重力トルクは傾きを増す。重力項を左辺に移すと−mglとなり、分母の正符号は不適切。",
+      "エ": "Js²θ(s)＝mglθ(s)＋T(s)より、(Js²−mgl)θ(s)＝T(s)。したがってG(s)＝θ(s)/T(s)＝1/(Js²−mgl)。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.eccj.or.jp/mgr1/test_past/pdf/r08/r08_5.pdf#page=6",
+    "sourceAnswerUrl": "https://www.eccj.or.jp/mgr1/test_past/pdf/r08/r08_k_5.pdf",
+    "sourceAttribution": "出典：一般財団法人省エネルギーセンター 第48回エネルギー管理士試験 電気分野 課目Ⅱ 問題5。解説は過去問AIの独自作成。",
+    "license": "ECCJ-owner-approved",
+    "isCalculation": true,
+    "originalContent": {
+      "body": "1) 電動機から与えられるトルクと倒立振子の動きの関係は次の運動方程式で表される。\nJθ̈(t)＝mgl sinθ(t)＋T(t) …①\nここで、Jは系全体の慣性モーメントである。θ≒0のとき、式①は次式で近似できる。\nJθ̈(t)＝mglθ(t)＋T(t) …②\n式②の両辺をラプラス変換し、θ(t)のラプラス変換をθ(s)、T(t)のラプラス変換をT(s)で表すと、すべての初期値を零とみなすと、次のように表される。\n［1］＝mglθ(s)＋T(s) …③\nこのとき、トルクT(s)からθ(s)までの伝達関数G(s)は、式［2］と表される。",
+      "choices": {
+        "ア": "Js²＋mgl",
+        "イ": "Js²−mgl",
+        "ウ": "1/(Js²＋mgl)",
+        "エ": "1/(Js²−mgl)"
+      },
+      "sharedPassages": [
+        {
+          "label": "問題5 共通指示",
+          "text": "（自動制御及び情報処理）\n問題5 次の各文章の［1］～［14］の中に入れるべき最も適切な字句等をそれぞれの解答群から選び、その記号を答えよ。（配点計50点）"
+        },
+        {
+          "label": "(1) 倒立振子の条件",
+          "text": "(1) 図1に示すように、質量m [kg]の質点が長さl [m]の棒の先についている倒立振子の制御について考える。ここで、倒立振子の姿勢やトルクを時間tの関数で表すこととし、電動機から棒に与えるトルクをT(t) [N·m]、鉛直上向き方向からの棒の角度をθ(t) [rad]、θ(t)の時間に関する1階微分をθ̇(t)、2階微分をθ̈(t)、重力加速度をg [m/s²]とする。なお、棒の質量は無視できるものとし、摩擦はないものとする。"
+        }
+      ]
+    },
+    "imageUrls": [
+      "/images/energy-kanri/2026/electric-q05-pendulum.png"
+    ],
+    "imageAltTexts": [
+      "図1。質量mの質点が長さlの棒の先に付く倒立振子。鉛直上向きからの角度θは時計回りを正とし、重力mgは質点から鉛直下向きに作用する。支点の電動機Mが同じ正方向のトルクTを与える。"
+    ]
+  },
+  {
+    "id": "energy-kanri-2026-5-q05-s03",
+    "exam": "energy-kanri",
+    "session": "senmon",
+    "year": 2026,
+    "season": "annual",
+    "qNumber": 5,
+    "officialAnswerNumber": "3",
+    "type": "multiple-choice",
+    "category": "自動制御及び情報処理",
+    "topicTags": [
+      "電気分野",
+      "自動制御及び情報処理"
+    ],
+    "difficulty": 2,
+    "question": "2) いま、θの目標値θᵣを設定し、速度目標値θ̇ᵣを零にするために、次のフィードバック制御が考えられる。\nT(t)＝K₁(θᵣ(t)−θ(t))−K₂θ̇(t) …④\nここで、K₁及びK₂はある正の定数である。式④の右辺の二つの項のうち、K₁に係る第一項は［3］動作と呼ばれる動作、K₂に係る第二項は［4］動作と呼ばれる動作である。なお、このフィードバック制御を施した系は図2のように示すことができる。",
+    "questionNotice": "原問の解答番号3を解答してください。",
+    "choices": {
+      "ア": "D",
+      "イ": "I",
+      "ウ": "ON-OFF",
+      "エ": "P"
+    },
+    "answer": "エ",
+    "explanation": "P動作は現在の偏差に比例する操作で、K₁(θᵣ(t)−θ(t))に対応する。したがって指定された項の動作である。",
+    "choiceExplanations": {
+      "ア": "D動作は微分に比例する操作で、速度目標値零では−K₂θ̇(t)に対応する。指定された項の動作とは一致しない。",
+      "イ": "I動作は偏差の時間積分に比例する。この式のどちらの項も積分ではない。指定された項の動作とは一致しない。",
+      "ウ": "ON-OFF動作は操作量を二値で切り替える動作で、式④の連続的な比例・微分の項ではない。指定された項の動作とは一致しない。",
+      "エ": "P動作は現在の偏差に比例する操作で、K₁(θᵣ(t)−θ(t))に対応する。したがって指定された項の動作である。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.eccj.or.jp/mgr1/test_past/pdf/r08/r08_5.pdf#page=7",
+    "sourceAnswerUrl": "https://www.eccj.or.jp/mgr1/test_past/pdf/r08/r08_k_5.pdf",
+    "sourceAttribution": "出典：一般財団法人省エネルギーセンター 第48回エネルギー管理士試験 電気分野 課目Ⅱ 問題5。解説は過去問AIの独自作成。",
+    "license": "ECCJ-owner-approved",
+    "isCalculation": true,
+    "originalContent": {
+      "body": "2) いま、θの目標値θᵣを設定し、速度目標値θ̇ᵣを零にするために、次のフィードバック制御が考えられる。\nT(t)＝K₁(θᵣ(t)−θ(t))−K₂θ̇(t) …④\nここで、K₁及びK₂はある正の定数である。式④の右辺の二つの項のうち、K₁に係る第一項は［3］動作と呼ばれる動作、K₂に係る第二項は［4］動作と呼ばれる動作である。なお、このフィードバック制御を施した系は図2のように示すことができる。",
+      "choices": {
+        "ア": "D",
+        "イ": "I",
+        "ウ": "ON-OFF",
+        "エ": "P"
+      },
+      "sharedPassages": [
+        {
+          "label": "問題5 共通指示",
+          "text": "（自動制御及び情報処理）\n問題5 次の各文章の［1］～［14］の中に入れるべき最も適切な字句等をそれぞれの解答群から選び、その記号を答えよ。（配点計50点）"
+        },
+        {
+          "label": "(1) 倒立振子の条件",
+          "text": "(1) 図1に示すように、質量m [kg]の質点が長さl [m]の棒の先についている倒立振子の制御について考える。ここで、倒立振子の姿勢やトルクを時間tの関数で表すこととし、電動機から棒に与えるトルクをT(t) [N·m]、鉛直上向き方向からの棒の角度をθ(t) [rad]、θ(t)の時間に関する1階微分をθ̇(t)、2階微分をθ̈(t)、重力加速度をg [m/s²]とする。なお、棒の質量は無視できるものとし、摩擦はないものとする。"
+        }
+      ]
+    },
+    "imageUrls": [
+      "/images/energy-kanri/2026/electric-q05-pendulum.png",
+      "/images/energy-kanri/2026/electric-q05-feedback.png"
+    ],
+    "imageAltTexts": [
+      "図1。質量mの質点が長さlの棒の先に付く倒立振子。鉛直上向きからの角度θは時計回りを正とし、重力mgは質点から鉛直下向きに作用する。支点の電動機Mが同じ正方向のトルクTを与える。",
+      "図2。θᵣ−θをK₁に通し、θをsK₂に通した信号を負に加えてトルクTとし、制御対象G(s)に入力してθを出力する二重帰還系。"
+    ]
+  },
+  {
+    "id": "energy-kanri-2026-5-q05-s04",
+    "exam": "energy-kanri",
+    "session": "senmon",
+    "year": 2026,
+    "season": "annual",
+    "qNumber": 5,
+    "officialAnswerNumber": "4",
+    "type": "multiple-choice",
+    "category": "自動制御及び情報処理",
+    "topicTags": [
+      "電気分野",
+      "自動制御及び情報処理"
+    ],
+    "difficulty": 2,
+    "question": "2) いま、θの目標値θᵣを設定し、速度目標値θ̇ᵣを零にするために、次のフィードバック制御が考えられる。\nT(t)＝K₁(θᵣ(t)−θ(t))−K₂θ̇(t) …④\nここで、K₁及びK₂はある正の定数である。式④の右辺の二つの項のうち、K₁に係る第一項は［3］動作と呼ばれる動作、K₂に係る第二項は［4］動作と呼ばれる動作である。なお、このフィードバック制御を施した系は図2のように示すことができる。",
+    "questionNotice": "原問の解答番号4を解答してください。",
+    "choices": {
+      "ア": "D",
+      "イ": "I",
+      "ウ": "ON-OFF",
+      "エ": "P"
+    },
+    "answer": "ア",
+    "explanation": "D動作は微分に比例する操作で、速度目標値零では−K₂θ̇(t)に対応する。したがって指定された項の動作である。",
+    "choiceExplanations": {
+      "ア": "D動作は微分に比例する操作で、速度目標値零では−K₂θ̇(t)に対応する。したがって指定された項の動作である。",
+      "イ": "I動作は偏差の時間積分に比例する。この式のどちらの項も積分ではない。指定された項の動作とは一致しない。",
+      "ウ": "ON-OFF動作は操作量を二値で切り替える動作で、式④の連続的な比例・微分の項ではない。指定された項の動作とは一致しない。",
+      "エ": "P動作は現在の偏差に比例する操作で、K₁(θᵣ(t)−θ(t))に対応する。指定された項の動作とは一致しない。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.eccj.or.jp/mgr1/test_past/pdf/r08/r08_5.pdf#page=7",
+    "sourceAnswerUrl": "https://www.eccj.or.jp/mgr1/test_past/pdf/r08/r08_k_5.pdf",
+    "sourceAttribution": "出典：一般財団法人省エネルギーセンター 第48回エネルギー管理士試験 電気分野 課目Ⅱ 問題5。解説は過去問AIの独自作成。",
+    "license": "ECCJ-owner-approved",
+    "isCalculation": true,
+    "originalContent": {
+      "body": "2) いま、θの目標値θᵣを設定し、速度目標値θ̇ᵣを零にするために、次のフィードバック制御が考えられる。\nT(t)＝K₁(θᵣ(t)−θ(t))−K₂θ̇(t) …④\nここで、K₁及びK₂はある正の定数である。式④の右辺の二つの項のうち、K₁に係る第一項は［3］動作と呼ばれる動作、K₂に係る第二項は［4］動作と呼ばれる動作である。なお、このフィードバック制御を施した系は図2のように示すことができる。",
+      "choices": {
+        "ア": "D",
+        "イ": "I",
+        "ウ": "ON-OFF",
+        "エ": "P"
+      },
+      "sharedPassages": [
+        {
+          "label": "問題5 共通指示",
+          "text": "（自動制御及び情報処理）\n問題5 次の各文章の［1］～［14］の中に入れるべき最も適切な字句等をそれぞれの解答群から選び、その記号を答えよ。（配点計50点）"
+        },
+        {
+          "label": "(1) 倒立振子の条件",
+          "text": "(1) 図1に示すように、質量m [kg]の質点が長さl [m]の棒の先についている倒立振子の制御について考える。ここで、倒立振子の姿勢やトルクを時間tの関数で表すこととし、電動機から棒に与えるトルクをT(t) [N·m]、鉛直上向き方向からの棒の角度をθ(t) [rad]、θ(t)の時間に関する1階微分をθ̇(t)、2階微分をθ̈(t)、重力加速度をg [m/s²]とする。なお、棒の質量は無視できるものとし、摩擦はないものとする。"
+        }
+      ]
+    },
+    "imageUrls": [
+      "/images/energy-kanri/2026/electric-q05-pendulum.png",
+      "/images/energy-kanri/2026/electric-q05-feedback.png"
+    ],
+    "imageAltTexts": [
+      "図1。質量mの質点が長さlの棒の先に付く倒立振子。鉛直上向きからの角度θは時計回りを正とし、重力mgは質点から鉛直下向きに作用する。支点の電動機Mが同じ正方向のトルクTを与える。",
+      "図2。θᵣ−θをK₁に通し、θをsK₂に通した信号を負に加えてトルクTとし、制御対象G(s)に入力してθを出力する二重帰還系。"
+    ]
+  },
+  {
+    "id": "energy-kanri-2026-5-q05-s05",
+    "exam": "energy-kanri",
+    "session": "senmon",
+    "year": 2026,
+    "season": "annual",
+    "qNumber": 5,
+    "officialAnswerNumber": "5",
+    "type": "multiple-choice",
+    "category": "自動制御及び情報処理",
+    "topicTags": [
+      "電気分野",
+      "自動制御及び情報処理"
+    ],
+    "difficulty": 2,
+    "question": "3) 2)の図2に示す制御系のθᵣ(s)からθ(s)までの伝達関数をK₁/(s²＋5s＋K₁−2)で表せるとすると、図2は図3のように示される。この系の特性方程式を考えると、この系が漸近安定となるためのK₁の必要十分条件は［5］である。",
+    "questionNotice": "原問の解答番号5を解答してください。",
+    "choices": {
+      "ア": "K₁＞0",
+      "イ": "0＜K₁＜2",
+      "ウ": "K₁＝2",
+      "エ": "K₁＞2"
+    },
+    "answer": "エ",
+    "explanation": "2次多項式s²＋5s＋K₁−2が安定である条件は全係数が正であること。5＞0より、必要十分条件はK₁−2＞0、すなわちK₁＞2。",
+    "choiceExplanations": {
+      "ア": "K₁が正でも2以下では定数項K₁−2が非正となり、漸近安定性を保証しない。",
+      "イ": "この範囲では定数項が負なので、特性根の積が負となって正の実根を持つ。",
+      "ウ": "K₁＝2では特性方程式がs(s＋5)＝0となり、原点の極が残るため漸近安定ではない。",
+      "エ": "2次多項式s²＋5s＋K₁−2が安定である条件は全係数が正であること。5＞0より、必要十分条件はK₁−2＞0、すなわちK₁＞2。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.eccj.or.jp/mgr1/test_past/pdf/r08/r08_5.pdf#page=7",
+    "sourceAnswerUrl": "https://www.eccj.or.jp/mgr1/test_past/pdf/r08/r08_k_5.pdf",
+    "sourceAttribution": "出典：一般財団法人省エネルギーセンター 第48回エネルギー管理士試験 電気分野 課目Ⅱ 問題5。解説は過去問AIの独自作成。",
+    "license": "ECCJ-owner-approved",
+    "isCalculation": true,
+    "originalContent": {
+      "body": "3) 2)の図2に示す制御系のθᵣ(s)からθ(s)までの伝達関数をK₁/(s²＋5s＋K₁−2)で表せるとすると、図2は図3のように示される。この系の特性方程式を考えると、この系が漸近安定となるためのK₁の必要十分条件は［5］である。",
+      "choices": {
+        "ア": "K₁＞0",
+        "イ": "0＜K₁＜2",
+        "ウ": "K₁＝2",
+        "エ": "K₁＞2"
+      },
+      "sharedPassages": [
+        {
+          "label": "問題5 共通指示",
+          "text": "（自動制御及び情報処理）\n問題5 次の各文章の［1］～［14］の中に入れるべき最も適切な字句等をそれぞれの解答群から選び、その記号を答えよ。（配点計50点）"
+        },
+        {
+          "label": "(1) 倒立振子の条件",
+          "text": "(1) 図1に示すように、質量m [kg]の質点が長さl [m]の棒の先についている倒立振子の制御について考える。ここで、倒立振子の姿勢やトルクを時間tの関数で表すこととし、電動機から棒に与えるトルクをT(t) [N·m]、鉛直上向き方向からの棒の角度をθ(t) [rad]、θ(t)の時間に関する1階微分をθ̇(t)、2階微分をθ̈(t)、重力加速度をg [m/s²]とする。なお、棒の質量は無視できるものとし、摩擦はないものとする。"
+        },
+        {
+          "label": "(1) 2) 姿勢と速度のフィードバック",
+          "text": "2) いま、θの目標値θᵣを設定し、速度目標値θ̇ᵣを零にするために、次のフィードバック制御が考えられる。\nT(t)＝K₁(θᵣ(t)−θ(t))−K₂θ̇(t) …④\nここで、K₁及びK₂はある正の定数である。式④の右辺の二つの項のうち、K₁に係る第一項は［3］動作と呼ばれる動作、K₂に係る第二項は［4］動作と呼ばれる動作である。なお、このフィードバック制御を施した系は図2のように示すことができる。"
+        }
+      ]
+    },
+    "imageUrls": [
+      "/images/energy-kanri/2026/electric-q05-pendulum.png",
+      "/images/energy-kanri/2026/electric-q05-feedback.png",
+      "/images/energy-kanri/2026/electric-q05-closed-loop.png"
+    ],
+    "imageAltTexts": [
+      "図1。質量mの質点が長さlの棒の先に付く倒立振子。鉛直上向きからの角度θは時計回りを正とし、重力mgは質点から鉛直下向きに作用する。支点の電動機Mが同じ正方向のトルクTを与える。",
+      "図2。θᵣ−θをK₁に通し、θをsK₂に通した信号を負に加えてトルクTとし、制御対象G(s)に入力してθを出力する二重帰還系。",
+      "図3。目標値θᵣから制御量θへの伝達関数K₁/(s²＋5s＋K₁−2)のブロック図。"
+    ]
+  },
+  {
+    "id": "energy-kanri-2026-5-q05-s06",
+    "exam": "energy-kanri",
+    "session": "senmon",
+    "year": 2026,
+    "season": "annual",
+    "qNumber": 5,
+    "officialAnswerNumber": "6",
+    "type": "multiple-choice",
+    "category": "自動制御及び情報処理",
+    "topicTags": [
+      "電気分野",
+      "自動制御及び情報処理"
+    ],
+    "difficulty": 2,
+    "question": "(2) あらかじめ定められた順序又は手続きに従って制御の各段階を逐次進めていく制御は［6］制御と呼ばれ、家庭用電気機器、交通信号機や工作機械、エレベータなど、広い範囲にわたって使用されている。この制御を実現するために、［7］と呼ばれる制御装置が広く使用されている。",
+    "questionNotice": "原問の解答番号6を解答してください。",
+    "choices": {
+      "ア": "PID",
+      "イ": "カスケード",
+      "ウ": "シーケンス",
+      "エ": "フィードバック"
+    },
+    "answer": "ウ",
+    "explanation": "シーケンス制御はあらかじめ定められた順序や条件に従って各段階を進める制御である。",
+    "choiceExplanations": {
+      "ア": "PID制御は偏差に比例・積分・微分演算を加える方式で、定めた順序で段階を進める方式の名称ではない。",
+      "イ": "カスケード制御は複数の制御ループを内側と外側に構成する方式で、逐次的な手順制御の名称ではない。",
+      "ウ": "シーケンス制御はあらかじめ定められた順序や条件に従って各段階を進める制御である。",
+      "エ": "フィードバック制御は測定した出力を目標と比較して操作量を決める。定めた順序で進行する制御の定義とは異なる。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.eccj.or.jp/mgr1/test_past/pdf/r08/r08_5.pdf#page=8",
+    "sourceAnswerUrl": "https://www.eccj.or.jp/mgr1/test_past/pdf/r08/r08_k_5.pdf",
+    "sourceAttribution": "出典：一般財団法人省エネルギーセンター 第48回エネルギー管理士試験 電気分野 課目Ⅱ 問題5。解説は過去問AIの独自作成。",
+    "license": "ECCJ-owner-approved",
+    "isCalculation": false,
+    "originalContent": {
+      "body": "(2) あらかじめ定められた順序又は手続きに従って制御の各段階を逐次進めていく制御は［6］制御と呼ばれ、家庭用電気機器、交通信号機や工作機械、エレベータなど、広い範囲にわたって使用されている。この制御を実現するために、［7］と呼ばれる制御装置が広く使用されている。",
+      "choices": {
+        "ア": "PID",
+        "イ": "カスケード",
+        "ウ": "シーケンス",
+        "エ": "フィードバック"
+      },
+      "sharedPassages": [
+        {
+          "label": "問題5 共通指示",
+          "text": "（自動制御及び情報処理）\n問題5 次の各文章の［1］～［14］の中に入れるべき最も適切な字句等をそれぞれの解答群から選び、その記号を答えよ。（配点計50点）"
+        }
+      ]
+    }
+  },
+  {
+    "id": "energy-kanri-2026-5-q05-s07",
+    "exam": "energy-kanri",
+    "session": "senmon",
+    "year": 2026,
+    "season": "annual",
+    "qNumber": 5,
+    "officialAnswerNumber": "7",
+    "type": "multiple-choice",
+    "category": "自動制御及び情報処理",
+    "topicTags": [
+      "電気分野",
+      "自動制御及び情報処理"
+    ],
+    "difficulty": 2,
+    "question": "(2) あらかじめ定められた順序又は手続きに従って制御の各段階を逐次進めていく制御は［6］制御と呼ばれ、家庭用電気機器、交通信号機や工作機械、エレベータなど、広い範囲にわたって使用されている。この制御を実現するために、［7］と呼ばれる制御装置が広く使用されている。",
+    "questionNotice": "原問の解答番号7を解答してください。",
+    "choices": {
+      "ア": "LQG",
+      "イ": "MPC",
+      "ウ": "NC",
+      "エ": "PLC"
+    },
+    "answer": "エ",
+    "explanation": "PLCはプログラマブルロジックコントローラで、論理演算やタイマなどでシーケンス制御を実現する装置である。",
+    "choiceExplanations": {
+      "ア": "LQGは線形・2次評価・ガウス雑音を前提とする最適制御の枠組みで、シーケンス制御装置の名称ではない。",
+      "イ": "MPCはモデルによる将来予測と最適化を用いる制御方式で、ここで求める制御装置ではない。",
+      "ウ": "NCは数値指令で工作機械などを制御する数値制御を指す。汎用的なシーケンス制御装置はPLCである。",
+      "エ": "PLCはプログラマブルロジックコントローラで、論理演算やタイマなどでシーケンス制御を実現する装置である。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.eccj.or.jp/mgr1/test_past/pdf/r08/r08_5.pdf#page=8",
+    "sourceAnswerUrl": "https://www.eccj.or.jp/mgr1/test_past/pdf/r08/r08_k_5.pdf",
+    "sourceAttribution": "出典：一般財団法人省エネルギーセンター 第48回エネルギー管理士試験 電気分野 課目Ⅱ 問題5。解説は過去問AIの独自作成。",
+    "license": "ECCJ-owner-approved",
+    "isCalculation": false,
+    "originalContent": {
+      "body": "(2) あらかじめ定められた順序又は手続きに従って制御の各段階を逐次進めていく制御は［6］制御と呼ばれ、家庭用電気機器、交通信号機や工作機械、エレベータなど、広い範囲にわたって使用されている。この制御を実現するために、［7］と呼ばれる制御装置が広く使用されている。",
+      "choices": {
+        "ア": "LQG",
+        "イ": "MPC",
+        "ウ": "NC",
+        "エ": "PLC"
+      },
+      "sharedPassages": [
+        {
+          "label": "問題5 共通指示",
+          "text": "（自動制御及び情報処理）\n問題5 次の各文章の［1］～［14］の中に入れるべき最も適切な字句等をそれぞれの解答群から選び、その記号を答えよ。（配点計50点）"
+        }
+      ]
+    }
+  },
+  {
+    "id": "energy-kanri-2026-5-q05-s08",
+    "exam": "energy-kanri",
+    "session": "senmon",
+    "year": 2026,
+    "season": "annual",
+    "qNumber": 5,
+    "officialAnswerNumber": "8",
+    "type": "multiple-choice",
+    "category": "自動制御及び情報処理",
+    "topicTags": [
+      "電気分野",
+      "自動制御及び情報処理"
+    ],
+    "difficulty": 2,
+    "question": "1) コンピュータでデータを扱う場合、8ビットで表現できる符号付き整数の値域は10進数で［8］から127である。一般に、負の値には2の補数表現を用い、その［9］ビットが［10］となる。",
+    "questionNotice": "原問の解答番号8を解答してください。",
+    "choices": {
+      "ア": "−128",
+      "イ": "−127",
+      "ウ": "−126",
+      "エ": "−125"
+    },
+    "answer": "ア",
+    "explanation": "8ビットの2の補数表現の値域は−2⁷～2⁷−1、すなわち−128～127。0を含む非負側が128通り、負側も128通りになる。",
+    "choiceExplanations": {
+      "ア": "8ビットの2の補数表現の値域は−2⁷～2⁷−1、すなわち−128～127。0を含む非負側が128通り、負側も128通りになる。",
+      "イ": "8ビットの2の補数表現の最小値は−2⁷＝−128であり、−127ではない。全256通りを−128～127に割り当てる。",
+      "ウ": "8ビットの2の補数表現の最小値は−2⁷＝−128であり、−126ではない。全256通りを−128～127に割り当てる。",
+      "エ": "8ビットの2の補数表現の最小値は−2⁷＝−128であり、−125ではない。全256通りを−128～127に割り当てる。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.eccj.or.jp/mgr1/test_past/pdf/r08/r08_5.pdf#page=8",
+    "sourceAnswerUrl": "https://www.eccj.or.jp/mgr1/test_past/pdf/r08/r08_k_5.pdf",
+    "sourceAttribution": "出典：一般財団法人省エネルギーセンター 第48回エネルギー管理士試験 電気分野 課目Ⅱ 問題5。解説は過去問AIの独自作成。",
+    "license": "ECCJ-owner-approved",
+    "isCalculation": true,
+    "originalContent": {
+      "body": "1) コンピュータでデータを扱う場合、8ビットで表現できる符号付き整数の値域は10進数で［8］から127である。一般に、負の値には2の補数表現を用い、その［9］ビットが［10］となる。",
+      "choices": {
+        "ア": "−128",
+        "イ": "−127",
+        "ウ": "−126",
+        "エ": "−125"
+      },
+      "sharedPassages": [
+        {
+          "label": "問題5 共通指示",
+          "text": "（自動制御及び情報処理）\n問題5 次の各文章の［1］～［14］の中に入れるべき最も適切な字句等をそれぞれの解答群から選び、その記号を答えよ。（配点計50点）"
+        },
+        {
+          "label": "(3) データ表現の条件",
+          "text": "(3) コンピュータで扱うデータについて考える。"
+        }
+      ]
+    }
+  },
+  {
+    "id": "energy-kanri-2026-5-q05-s09",
+    "exam": "energy-kanri",
+    "session": "senmon",
+    "year": 2026,
+    "season": "annual",
+    "qNumber": 5,
+    "officialAnswerNumber": "9",
+    "type": "multiple-choice",
+    "category": "自動制御及び情報処理",
+    "topicTags": [
+      "電気分野",
+      "自動制御及び情報処理"
+    ],
+    "difficulty": 2,
+    "question": "1) コンピュータでデータを扱う場合、8ビットで表現できる符号付き整数の値域は10進数で［8］から127である。一般に、負の値には2の補数表現を用い、その［9］ビットが［10］となる。",
+    "questionNotice": "原問の解答番号9を解答してください。",
+    "choices": {
+      "ア": "パリティ",
+      "イ": "最下位",
+      "ウ": "最上位",
+      "エ": "制御"
+    },
+    "answer": "ウ",
+    "explanation": "2の補数表現では最上位ビットが符号に対応し、負の値では1になる。8ビットなら重み−2⁷の位置である。",
+    "choiceExplanations": {
+      "ア": "パリティビットは誤り検出用の冗長ビットであり、2の補数の正負を示すビットではない。",
+      "イ": "最下位ビットは2⁰の位で、主に奇数・偶数を区別する。負数を示す位置ではない。",
+      "ウ": "2の補数表現では最上位ビットが符号に対応し、負の値では1になる。8ビットなら重み−2⁷の位置である。",
+      "エ": "制御ビットは動作などを指示するビットの総称で、符号を示す位置の名称ではない。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.eccj.or.jp/mgr1/test_past/pdf/r08/r08_5.pdf#page=8",
+    "sourceAnswerUrl": "https://www.eccj.or.jp/mgr1/test_past/pdf/r08/r08_k_5.pdf",
+    "sourceAttribution": "出典：一般財団法人省エネルギーセンター 第48回エネルギー管理士試験 電気分野 課目Ⅱ 問題5。解説は過去問AIの独自作成。",
+    "license": "ECCJ-owner-approved",
+    "isCalculation": false,
+    "originalContent": {
+      "body": "1) コンピュータでデータを扱う場合、8ビットで表現できる符号付き整数の値域は10進数で［8］から127である。一般に、負の値には2の補数表現を用い、その［9］ビットが［10］となる。",
+      "choices": {
+        "ア": "パリティ",
+        "イ": "最下位",
+        "ウ": "最上位",
+        "エ": "制御"
+      },
+      "sharedPassages": [
+        {
+          "label": "問題5 共通指示",
+          "text": "（自動制御及び情報処理）\n問題5 次の各文章の［1］～［14］の中に入れるべき最も適切な字句等をそれぞれの解答群から選び、その記号を答えよ。（配点計50点）"
+        },
+        {
+          "label": "(3) データ表現の条件",
+          "text": "(3) コンピュータで扱うデータについて考える。"
+        }
+      ]
+    }
+  },
+  {
+    "id": "energy-kanri-2026-5-q05-s10",
+    "exam": "energy-kanri",
+    "session": "senmon",
+    "year": 2026,
+    "season": "annual",
+    "qNumber": 5,
+    "officialAnswerNumber": "10",
+    "type": "multiple-choice",
+    "category": "自動制御及び情報処理",
+    "topicTags": [
+      "電気分野",
+      "自動制御及び情報処理"
+    ],
+    "difficulty": 2,
+    "question": "1) コンピュータでデータを扱う場合、8ビットで表現できる符号付き整数の値域は10進数で［8］から127である。一般に、負の値には2の補数表現を用い、その［9］ビットが［10］となる。",
+    "questionNotice": "原問の解答番号10を解答してください。",
+    "choices": {
+      "ア": "0",
+      "イ": "1",
+      "ウ": "2",
+      "エ": "126"
+    },
+    "answer": "イ",
+    "explanation": "8ビットの負数は最上位ビットが1になり、その重みを−128として残る7ビットの値を加える。",
+    "choiceExplanations": {
+      "ア": "2の補数表現では最上位ビット0は非負の値に対応する。負の値では1である。",
+      "イ": "8ビットの負数は最上位ビットが1になり、その重みを−128として残る7ビットの値を加える。",
+      "ウ": "1ビットが取れる値は0と1であり、2というビット値は存在しない。",
+      "エ": "1ビットが取れる値は0と1であり、126はビット値ではない。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.eccj.or.jp/mgr1/test_past/pdf/r08/r08_5.pdf#page=8",
+    "sourceAnswerUrl": "https://www.eccj.or.jp/mgr1/test_past/pdf/r08/r08_k_5.pdf",
+    "sourceAttribution": "出典：一般財団法人省エネルギーセンター 第48回エネルギー管理士試験 電気分野 課目Ⅱ 問題5。解説は過去問AIの独自作成。",
+    "license": "ECCJ-owner-approved",
+    "isCalculation": false,
+    "originalContent": {
+      "body": "1) コンピュータでデータを扱う場合、8ビットで表現できる符号付き整数の値域は10進数で［8］から127である。一般に、負の値には2の補数表現を用い、その［9］ビットが［10］となる。",
+      "choices": {
+        "ア": "0",
+        "イ": "1",
+        "ウ": "2",
+        "エ": "126"
+      },
+      "sharedPassages": [
+        {
+          "label": "問題5 共通指示",
+          "text": "（自動制御及び情報処理）\n問題5 次の各文章の［1］～［14］の中に入れるべき最も適切な字句等をそれぞれの解答群から選び、その記号を答えよ。（配点計50点）"
+        },
+        {
+          "label": "(3) データ表現の条件",
+          "text": "(3) コンピュータで扱うデータについて考える。"
+        }
+      ]
+    }
+  },
+  {
+    "id": "energy-kanri-2026-5-q05-s11",
+    "exam": "energy-kanri",
+    "session": "senmon",
+    "year": 2026,
+    "season": "annual",
+    "qNumber": 5,
+    "officialAnswerNumber": "11",
+    "type": "multiple-choice",
+    "category": "自動制御及び情報処理",
+    "topicTags": [
+      "電気分野",
+      "自動制御及び情報処理"
+    ],
+    "difficulty": 2,
+    "question": "2) コンピュータのメモリに、2進数表現である(1111 1110)₂のデータが格納されている場合、このデータを2の補数表現で表された符号付き整数データとして扱うとすると、その値は、10進数において［11］である。",
+    "questionNotice": "原問の解答番号11を解答してください。",
+    "choices": {
+      "ア": "−3",
+      "イ": "−2",
+      "ウ": "−1",
+      "エ": "254"
+    },
+    "answer": "イ",
+    "explanation": "符号なしでは254だが、最上位ビット1の8ビット2の補数なので254−256＝−2。反転して1を加えても絶対値2になる。",
+    "choiceExplanations": {
+      "ア": "−3の8ビット2の補数表現は1111 1101であり、与えられた1111 1110とは異なる。",
+      "イ": "符号なしでは254だが、最上位ビット1の8ビット2の補数なので254−256＝−2。反転して1を加えても絶対値2になる。",
+      "ウ": "−1の2の補数表現はすべてのビットが1の1111 1111であり、与えられた値とは異なる。",
+      "エ": "254は符号なし整数として解釈した値である。指定された符号付き2の補数表現では−2となる。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.eccj.or.jp/mgr1/test_past/pdf/r08/r08_5.pdf#page=8",
+    "sourceAnswerUrl": "https://www.eccj.or.jp/mgr1/test_past/pdf/r08/r08_k_5.pdf",
+    "sourceAttribution": "出典：一般財団法人省エネルギーセンター 第48回エネルギー管理士試験 電気分野 課目Ⅱ 問題5。解説は過去問AIの独自作成。",
+    "license": "ECCJ-owner-approved",
+    "isCalculation": true,
+    "originalContent": {
+      "body": "2) コンピュータのメモリに、2進数表現である(1111 1110)₂のデータが格納されている場合、このデータを2の補数表現で表された符号付き整数データとして扱うとすると、その値は、10進数において［11］である。",
+      "choices": {
+        "ア": "−3",
+        "イ": "−2",
+        "ウ": "−1",
+        "エ": "254"
+      },
+      "sharedPassages": [
+        {
+          "label": "問題5 共通指示",
+          "text": "（自動制御及び情報処理）\n問題5 次の各文章の［1］～［14］の中に入れるべき最も適切な字句等をそれぞれの解答群から選び、その記号を答えよ。（配点計50点）"
+        },
+        {
+          "label": "(3) データ表現の条件",
+          "text": "(3) コンピュータで扱うデータについて考える。"
+        }
+      ]
+    }
+  },
+  {
+    "id": "energy-kanri-2026-5-q05-s12",
+    "exam": "energy-kanri",
+    "session": "senmon",
+    "year": 2026,
+    "season": "annual",
+    "qNumber": 5,
+    "officialAnswerNumber": "12",
+    "type": "multiple-choice",
+    "category": "自動制御及び情報処理",
+    "topicTags": [
+      "電気分野",
+      "自動制御及び情報処理"
+    ],
+    "difficulty": 2,
+    "question": "1) 暗号方式には暗号化と復号に同じ鍵を使用する共通鍵暗号方式と、異なる鍵を使用する［12］暗号方式がある。",
+    "questionNotice": "原問の解答番号12を解答してください。",
+    "choices": {
+      "ア": "DES",
+      "イ": "公開鍵",
+      "ウ": "対称鍵",
+      "エ": "量子"
+    },
+    "answer": "イ",
+    "explanation": "公開鍵暗号方式は公開鍵と秘密鍵という異なる鍵の組を使い、一方で暗号化した内容を対応する他方の鍵で復号する。",
+    "choiceExplanations": {
+      "ア": "DESは同一の秘密鍵を暗号化と復号に使う共通鍵暗号の一種であり、異なる鍵を使う方式の分類ではない。",
+      "イ": "公開鍵暗号方式は公開鍵と秘密鍵という異なる鍵の組を使い、一方で暗号化した内容を対応する他方の鍵で復号する。",
+      "ウ": "対称鍵は暗号化と復号に共通の鍵を使う方式で、設問前半の共通鍵暗号と同じ分類である。",
+      "エ": "量子という語は量子力学を利用する技術の分類であり、異なる鍵の組を使う通常の暗号方式の名称ではない。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.eccj.or.jp/mgr1/test_past/pdf/r08/r08_5.pdf#page=9",
+    "sourceAnswerUrl": "https://www.eccj.or.jp/mgr1/test_past/pdf/r08/r08_k_5.pdf",
+    "sourceAttribution": "出典：一般財団法人省エネルギーセンター 第48回エネルギー管理士試験 電気分野 課目Ⅱ 問題5。解説は過去問AIの独自作成。",
+    "license": "ECCJ-owner-approved",
+    "isCalculation": false,
+    "originalContent": {
+      "body": "1) 暗号方式には暗号化と復号に同じ鍵を使用する共通鍵暗号方式と、異なる鍵を使用する［12］暗号方式がある。",
+      "choices": {
+        "ア": "DES",
+        "イ": "公開鍵",
+        "ウ": "対称鍵",
+        "エ": "量子"
+      },
+      "sharedPassages": [
+        {
+          "label": "問題5 共通指示",
+          "text": "（自動制御及び情報処理）\n問題5 次の各文章の［1］～［14］の中に入れるべき最も適切な字句等をそれぞれの解答群から選び、その記号を答えよ。（配点計50点）"
+        },
+        {
+          "label": "(4) 情報の暗号化",
+          "text": "(4) ネットワーク上の情報の盗聴・漏洩対策として、情報の暗号化がある。"
+        }
+      ]
+    }
+  },
+  {
+    "id": "energy-kanri-2026-5-q05-s13",
+    "exam": "energy-kanri",
+    "session": "senmon",
+    "year": 2026,
+    "season": "annual",
+    "qNumber": 5,
+    "officialAnswerNumber": "13",
+    "type": "multiple-choice",
+    "category": "自動制御及び情報処理",
+    "topicTags": [
+      "電気分野",
+      "自動制御及び情報処理"
+    ],
+    "difficulty": 2,
+    "question": "2) 暗号化のプロトコルとしては、遠隔ログイン、ファイル転送等の暗号化に用いられる［13］や、認証、暗号化、改ざん検出の機能を持ちWebで広く用いられている［14］がある。",
+    "questionNotice": "原問の解答番号13を解答してください。",
+    "choices": {
+      "ア": "FTP",
+      "イ": "PGP",
+      "ウ": "S/MIME",
+      "エ": "SSH"
+    },
+    "answer": "エ",
+    "explanation": "SSHは暗号化された遠隔ログインを提供し、SFTPなどのファイル転送にも使われるプロトコルである。",
+    "choiceExplanations": {
+      "ア": "FTP自体には通信の暗号化機能がない。暗号化した遠隔ログインやファイル転送の基盤はSSHである。",
+      "イ": "PGPは主に電子メールやファイルの暗号化・電子署名に用いる方式で、遠隔ログインのプロトコルではない。",
+      "ウ": "S/MIMEは電子メールの暗号化や署名を扱う規格で、遠隔ログインのプロトコルではない。",
+      "エ": "SSHは暗号化された遠隔ログインを提供し、SFTPなどのファイル転送にも使われるプロトコルである。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.eccj.or.jp/mgr1/test_past/pdf/r08/r08_5.pdf#page=9",
+    "sourceAnswerUrl": "https://www.eccj.or.jp/mgr1/test_past/pdf/r08/r08_k_5.pdf",
+    "sourceAttribution": "出典：一般財団法人省エネルギーセンター 第48回エネルギー管理士試験 電気分野 課目Ⅱ 問題5。解説は過去問AIの独自作成。",
+    "license": "ECCJ-owner-approved",
+    "isCalculation": false,
+    "originalContent": {
+      "body": "2) 暗号化のプロトコルとしては、遠隔ログイン、ファイル転送等の暗号化に用いられる［13］や、認証、暗号化、改ざん検出の機能を持ちWebで広く用いられている［14］がある。",
+      "choices": {
+        "ア": "FTP",
+        "イ": "PGP",
+        "ウ": "S/MIME",
+        "エ": "SSH"
+      },
+      "sharedPassages": [
+        {
+          "label": "問題5 共通指示",
+          "text": "（自動制御及び情報処理）\n問題5 次の各文章の［1］～［14］の中に入れるべき最も適切な字句等をそれぞれの解答群から選び、その記号を答えよ。（配点計50点）"
+        },
+        {
+          "label": "(4) 情報の暗号化",
+          "text": "(4) ネットワーク上の情報の盗聴・漏洩対策として、情報の暗号化がある。"
+        }
+      ]
+    }
+  },
+  {
+    "id": "energy-kanri-2026-5-q05-s14",
+    "exam": "energy-kanri",
+    "session": "senmon",
+    "year": 2026,
+    "season": "annual",
+    "qNumber": 5,
+    "officialAnswerNumber": "14",
+    "type": "multiple-choice",
+    "category": "自動制御及び情報処理",
+    "topicTags": [
+      "電気分野",
+      "自動制御及び情報処理"
+    ],
+    "difficulty": 2,
+    "question": "2) 暗号化のプロトコルとしては、遠隔ログイン、ファイル転送等の暗号化に用いられる［13］や、認証、暗号化、改ざん検出の機能を持ちWebで広く用いられている［14］がある。",
+    "questionNotice": "原問の解答番号14を解答してください。",
+    "choices": {
+      "ア": "HTTP",
+      "イ": "IPSec",
+      "ウ": "SSL/TLS",
+      "エ": "VPN"
+    },
+    "answer": "ウ",
+    "explanation": "SSL/TLSは通信相手の認証、暗号化、改ざん検出を提供する。設問の名称は原文のまま保持し、現在のWeb通信保護にはTLSが用いられる。",
+    "choiceExplanations": {
+      "ア": "HTTP自体は暗号化や通信相手の認証を提供しない。WebではTLSと組み合わせたHTTPSが使われる。",
+      "イ": "IPSecはIP層で暗号化・認証を提供する仕組みで、Webの通信保護として通常用いられるTLSとは異なる。",
+      "ウ": "SSL/TLSは通信相手の認証、暗号化、改ざん検出を提供する。設問の名称は原文のまま保持し、現在のWeb通信保護にはTLSが用いられる。",
+      "エ": "VPNは仮想的な専用ネットワークの総称であり、Web通信保護に使うプロトコル名としての答えはSSL/TLSである。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.eccj.or.jp/mgr1/test_past/pdf/r08/r08_5.pdf#page=9",
+    "sourceAnswerUrl": "https://www.eccj.or.jp/mgr1/test_past/pdf/r08/r08_k_5.pdf",
+    "sourceAttribution": "出典：一般財団法人省エネルギーセンター 第48回エネルギー管理士試験 電気分野 課目Ⅱ 問題5。解説は過去問AIの独自作成。",
+    "license": "ECCJ-owner-approved",
+    "isCalculation": false,
+    "originalContent": {
+      "body": "2) 暗号化のプロトコルとしては、遠隔ログイン、ファイル転送等の暗号化に用いられる［13］や、認証、暗号化、改ざん検出の機能を持ちWebで広く用いられている［14］がある。",
+      "choices": {
+        "ア": "HTTP",
+        "イ": "IPSec",
+        "ウ": "SSL/TLS",
+        "エ": "VPN"
+      },
+      "sharedPassages": [
+        {
+          "label": "問題5 共通指示",
+          "text": "（自動制御及び情報処理）\n問題5 次の各文章の［1］～［14］の中に入れるべき最も適切な字句等をそれぞれの解答群から選び、その記号を答えよ。（配点計50点）"
+        },
+        {
+          "label": "(4) 情報の暗号化",
+          "text": "(4) ネットワーク上の情報の盗聴・漏洩対策として、情報の暗号化がある。"
+        }
+      ]
+    }
+  }
+]

@@ -1,0 +1,1694 @@
+{
+  "status": "PARTIAL_CONTENT_ACCEPTED_NOT_REGISTERED",
+  "qualification": "gijutsushi1-kikai",
+  "year": 2025,
+  "subject": "mechanical",
+  "expectedFullQualificationCount": 160,
+  "questions": [
+    {
+      "id": "gijutsushi1-kikai-2025-mechanical-III-01",
+      "printedNumber": "Ⅲ－1",
+      "questionNumber": 1,
+      "questionText": "下図に示すように、直径 d の丸棒の上端を天井に固定して鉛直につり下げるとき、自重によって丸棒が破断しない長さ l の条件として、最も適切なものはどれか。ただし、丸棒の密度を ρ、重力加速度を g とし、丸棒は引張応力が引張強さ σ_B に達したときに破断するものとする。",
+      "choices": {
+        "1": "l＜4σ_B/(πd²ρg)",
+        "2": "l＜σ_B/(πd²ρg)",
+        "3": "l＜4σ_B/(ρg)",
+        "4": "l＜σ_B/(ρg)",
+        "5": "l＜σ_B/(4ρg)"
+      },
+      "officialAnswer": 4,
+      "scoringException": null,
+      "explanation": "正答は4です。上端の最大引張応力は全自重ρAlgを断面積Aで割ったρlgです。破断しない条件ρlg＜σ_Bからl＜σ_B/(ρg)です。断面積は相殺されます。",
+      "choiceExplanations": {
+        "1": "断面積は重量と応力の計算で相殺されます。直径を含むこの式は長さの次元にもなりません。",
+        "2": "直径d²を残しているため、長さの次元と一致しません。",
+        "3": "最大応力ρlgに断面積の係数4は残らず、許容長さを4倍に過大評価しています。",
+        "4": "適切です。最も大きな上端応力を引張強さ未満とする条件です。",
+        "5": "この条件なら安全側ですが、破断限界長さを表す条件は選択肢4であり、不必要に1/4に制限しています。"
+      },
+      "hasRequiredFigure": true,
+      "figures": [
+        {
+          "path": "data/qualification-staging/lq4e-engineer-first/assets/2025-mechanical-III-1.png",
+          "sha256": "8a324198a7eafb6d339848443e7af2dfee6e5bbdc80abe98ac9e227e9f9b61f9",
+          "alt": "天井から鉛直に吊るされた直径d、長さlの丸棒。",
+          "sourceQuestionPage": 1,
+          "sourceClipPdfPoints": [
+            305,
+            275,
+            485,
+            500
+          ],
+          "renderDpi": 220
+        }
+      ],
+      "sourceQuestionUrl": "https://www.engineer.or.jp/c_topics/011/attached/attach_11457_3.pdf",
+      "sourceQuestionPage": 1,
+      "sourceAnswerUrl": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_4.pdf",
+      "sourceAnswerPage": 3,
+      "sourceQuestionSha256": "41b79ddf3eef92ac0e00be3ad51a0e64e8b1814a86c55f2d234657cec7791112",
+      "sourceAnswerSha256": "6d4f5427838059ab50f0e7785f3f9cb2718fafaf96a8b74afcb332d969d7e311",
+      "sourceAttribution": "出典：公益社団法人日本技術士会 令和7年度技術士第一次試験 専門科目 機械部門 Ⅲ－1。改行・空白・句読点と数式表記を整理。必要図は公式PDFから直接切出し。解説は独自作成。",
+      "transcription": "Official PDF page visually checked against saved page images. Equations and table column headings transcribed explicitly; required diagrams are direct PDF crops.",
+      "needsIndependentReview": false,
+      "publicGo": false,
+      "contentReview": {
+        "status": "PASS",
+        "model": "gpt-6-astra",
+        "report": "reports/lq4e-20261104/independent-review7.md",
+        "scope": "BATCH_ONLY_NOT_FULL_QUALIFICATION"
+      }
+    },
+    {
+      "id": "gijutsushi1-kikai-2025-mechanical-III-02",
+      "printedNumber": "Ⅲ－2",
+      "questionNumber": 2,
+      "questionText": "下図に示すように、剛体床上に鉛直に立てられた長さ h の2本の棒（棒1、棒2）があり、その上に剛体板が水平に置かれている。剛体壁から棒1と棒2の中心軸までの距離はそれぞれ a、b であり、剛体板は点Aで剛体壁とピン結合されている。点Aから距離 L の点Bに鉛直荷重 P を作用させたとき、棒1に発生する応力 σ₁ と棒2に発生する応力 σ₂ の組合せとして、最も適切なものはどれか。ただし、棒1と棒2の断面積はそれぞれ A₁、A₂、縦弾性係数はそれぞれ E₁、E₂ とする。なお、剛体板と棒の自重は無視してよいものとする。",
+      "choices": {
+        "1": "σ₁＝−E₁LP/(A₁E₁a＋A₂E₂a)、σ₂＝−E₂LP/(A₁E₁b＋A₂E₂b)",
+        "2": "σ₁＝−E₁LP/(A₁E₁b＋A₂E₂b)、σ₂＝−E₂LP/(A₁E₁a＋A₂E₂a)",
+        "3": "σ₁＝−E₁aLP/(A₁E₁a²＋A₂E₂b²)、σ₂＝−E₂bLP/(A₁E₁a²＋A₂E₂b²)",
+        "4": "σ₁＝−E₁LP/(A₁E₁a＋A₂E₂b)、σ₂＝−E₂LP/(A₁E₁a＋A₂E₂b)",
+        "5": "σ₁＝−A₁E₁aLP/(A₁A₂E₁a²＋A₂²E₂b²)、σ₂＝−A₂E₂bLP/(A₁²E₁a²＋A₁A₂E₂b²)"
+      },
+      "officialAnswer": 3,
+      "scoringException": null,
+      "explanation": "正答は3です。剛体板の微小回転角をθとすると棒の縮みはaθ、bθです。圧縮応力は−E₁aθ/h、−E₂bθ/h。Aまわりのモーメントの釣合いからθ/h＝PL/(A₁E₁a²＋A₂E₂b²)です。",
+      "choiceExplanations": {
+        "1": "縮みが支点からの距離に比例するという適合条件を満たしません。",
+        "2": "支点からの距離の対応が異なり、モーメント釣合いで必要な距離の二乗もありません。",
+        "3": "適切です。回転による変形の適合と支点まわりの釣合いを同時に満たします。",
+        "4": "両棒のひずみを等しいとした形ですが、板がAまわりに回転するためひずみ比はa：bです。",
+        "5": "応力に余分な断面積の比を含み、軸力のモーメントと変形の適合から得る式に一致しません。"
+      },
+      "hasRequiredFigure": true,
+      "figures": [
+        {
+          "path": "data/qualification-staging/lq4e-engineer-first/assets/2025-mechanical-III-2.png",
+          "sha256": "3b6b4288bcc7dc25fc69c2db564501362ba93f104b7aa601d9cc3842c5048b33",
+          "alt": "Aで壁にピン支持された剛体板を2本の棒が支え、Aから距離Lに下向き荷重P。",
+          "sourceQuestionPage": 2,
+          "sourceClipPdfPoints": [
+            155,
+            220,
+            430,
+            450
+          ],
+          "renderDpi": 220
+        }
+      ],
+      "sourceQuestionUrl": "https://www.engineer.or.jp/c_topics/011/attached/attach_11457_3.pdf",
+      "sourceQuestionPage": 2,
+      "sourceAnswerUrl": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_4.pdf",
+      "sourceAnswerPage": 3,
+      "sourceQuestionSha256": "41b79ddf3eef92ac0e00be3ad51a0e64e8b1814a86c55f2d234657cec7791112",
+      "sourceAnswerSha256": "6d4f5427838059ab50f0e7785f3f9cb2718fafaf96a8b74afcb332d969d7e311",
+      "sourceAttribution": "出典：公益社団法人日本技術士会 令和7年度技術士第一次試験 専門科目 機械部門 Ⅲ－2。改行・空白・句読点と数式表記を整理。必要図は公式PDFから直接切出し。解説は独自作成。",
+      "transcription": "Official PDF page visually checked against saved page images. Equations and table column headings transcribed explicitly; required diagrams are direct PDF crops.",
+      "needsIndependentReview": false,
+      "publicGo": false,
+      "contentReview": {
+        "status": "PASS",
+        "model": "gpt-6-astra",
+        "report": "reports/lq4e-20261104/independent-review7.md",
+        "scope": "BATCH_ONLY_NOT_FULL_QUALIFICATION"
+      }
+    },
+    {
+      "id": "gijutsushi1-kikai-2025-mechanical-III-03",
+      "printedNumber": "Ⅲ－3",
+      "questionNumber": 3,
+      "questionText": "下図に示すように、円柱（長さ l、断面積 A₁、縦弾性係数 E₁、線膨張係数 α₁）と円筒（長さ l、断面積 A₂、縦弾性係数 E₂、線膨張係数 α₂）を同軸で組み合わせて、両端を剛体板で接合している。円柱と円筒の両方に応力が生じていない状態から、温度が ΔT だけ上昇したとき、円柱と円筒の伸び量 Δl として、最も適切なものはどれか。ただし、α₁＜α₂ とし、円柱と円筒の半径方向の変形は無視できるものとする。",
+      "choices": {
+        "1": "Δl＝[(E₁A₁α₁−E₂A₂α₂)/(E₁A₁−E₂A₂)]lΔT",
+        "2": "Δl＝[(E₁A₁α₁＋E₂A₂α₂)/(E₁A₁＋E₂A₂)]lΔT",
+        "3": "Δl＝[(E₁A₁−E₂A₂)/(E₁A₁α₁−E₂A₂α₂)]α₁α₂lΔT",
+        "4": "Δl＝[(E₁A₁＋E₂A₂)/(E₁A₁α₁＋E₂A₂α₂)]α₁α₂lΔT",
+        "5": "Δl＝[(E₁A₁α₁＋2E₂A₂α₂)/(E₁A₁＋2E₂A₂)]lΔT"
+      },
+      "officialAnswer": 2,
+      "scoringException": null,
+      "explanation": "正答は2です。共通のひずみε＝Δl/lに対し、外力がないのでE₁A₁(ε−α₁ΔT)＋E₂A₂(ε−α₂ΔT)＝0。伸びは各線膨張係数を軸剛性EAで重み付けした値になります。",
+      "choiceExplanations": {
+        "1": "2部材の剛性の寄与は和です。差を使うと剛性が等しい場合にも発散し、不適切です。",
+        "2": "適切です。軸力の総和0と伸びの共通性を満たします。",
+        "3": "剛性の差と膨張係数の積を使う式は、軸力の釣合いから得る重み付き平均とは異なります。",
+        "4": "重み付き平均を逆数にした形であり、釣合い式と一致しません。",
+        "5": "円筒断面積A₂はすでに円筒全体の面積なので、追加の係数2は不要です。"
+      },
+      "hasRequiredFigure": true,
+      "figures": [
+        {
+          "path": "data/qualification-staging/lq4e-engineer-first/assets/2025-mechanical-III-3.png",
+          "sha256": "eef28819f9ef515d18bf6f6fca3248f4fe1496c2198999a147c84ec539a12ad8",
+          "alt": "同軸の円柱と円筒を両端の剛体板で接合した側面図と断面図。",
+          "sourceQuestionPage": 3,
+          "sourceClipPdfPoints": [
+            115,
+            190,
+            475,
+            365
+          ],
+          "renderDpi": 220
+        }
+      ],
+      "sourceQuestionUrl": "https://www.engineer.or.jp/c_topics/011/attached/attach_11457_3.pdf",
+      "sourceQuestionPage": 3,
+      "sourceAnswerUrl": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_4.pdf",
+      "sourceAnswerPage": 3,
+      "sourceQuestionSha256": "41b79ddf3eef92ac0e00be3ad51a0e64e8b1814a86c55f2d234657cec7791112",
+      "sourceAnswerSha256": "6d4f5427838059ab50f0e7785f3f9cb2718fafaf96a8b74afcb332d969d7e311",
+      "sourceAttribution": "出典：公益社団法人日本技術士会 令和7年度技術士第一次試験 専門科目 機械部門 Ⅲ－3。改行・空白・句読点と数式表記を整理。必要図は公式PDFから直接切出し。解説は独自作成。",
+      "transcription": "Official PDF page visually checked against saved page images. Equations and table column headings transcribed explicitly; required diagrams are direct PDF crops.",
+      "needsIndependentReview": false,
+      "publicGo": false,
+      "contentReview": {
+        "status": "PASS",
+        "model": "gpt-6-astra",
+        "report": "reports/lq4e-20261104/independent-review7.md",
+        "scope": "BATCH_ONLY_NOT_FULL_QUALIFICATION"
+      }
+    },
+    {
+      "id": "gijutsushi1-kikai-2025-mechanical-III-04",
+      "printedNumber": "Ⅲ－4",
+      "questionNumber": 4,
+      "questionText": "下図に示すように、長さ l の片持ちはりにおいて、三角形状の分布荷重 q が作用している。分布荷重 q が、点Aからの距離 x の関数として q(x)＝(q₀/l)x と表されるとき、点Bに発生する曲げモーメントの絶対値として、最も適切なものはどれか。",
+      "choices": {
+        "1": "q₀l²/6",
+        "2": "q₀l²/3",
+        "3": "2q₀l²/3",
+        "4": "5q₀l²/6",
+        "5": "4q₀l²/3"
+      },
+      "officialAnswer": 1,
+      "scoringException": null,
+      "explanation": "正答は1です。三角形荷重の合力q₀l/2は、荷重の大きい固定端Bからl/3に作用します。固定端モーメントは(q₀l/2)(l/3)＝q₀l²/6です。",
+      "choiceExplanations": {
+        "1": "適切です。合力の大きさとその重心までの腕の積に一致します。",
+        "2": "合力の位置を小さい荷重側のAから測った2l/3と取り違えています。",
+        "3": "積分∫₀ˡ(q₀x/l)(l−x)dxの値より4倍大きくなっています。",
+        "4": "荷重合力と作用位置を正しく計算したq₀l²/6と一致しません。",
+        "5": "荷重合力q₀l/2に腕l/3を掛けた値の8倍であり不適切です。"
+      },
+      "hasRequiredFigure": true,
+      "figures": [
+        {
+          "path": "data/qualification-staging/lq4e-engineer-first/assets/2025-mechanical-III-4.png",
+          "sha256": "736ab98fe956ba53356af391df245b4461ad04c68921d82056cb454364203721",
+          "alt": "自由端Aで0、固定端Bでq₀となる三角形分布荷重を受ける長さlのはり。",
+          "sourceQuestionPage": 4,
+          "sourceClipPdfPoints": [
+            155,
+            180,
+            435,
+            335
+          ],
+          "renderDpi": 220
+        }
+      ],
+      "sourceQuestionUrl": "https://www.engineer.or.jp/c_topics/011/attached/attach_11457_3.pdf",
+      "sourceQuestionPage": 4,
+      "sourceAnswerUrl": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_4.pdf",
+      "sourceAnswerPage": 3,
+      "sourceQuestionSha256": "41b79ddf3eef92ac0e00be3ad51a0e64e8b1814a86c55f2d234657cec7791112",
+      "sourceAnswerSha256": "6d4f5427838059ab50f0e7785f3f9cb2718fafaf96a8b74afcb332d969d7e311",
+      "sourceAttribution": "出典：公益社団法人日本技術士会 令和7年度技術士第一次試験 専門科目 機械部門 Ⅲ－4。改行・空白・句読点と数式表記を整理。必要図は公式PDFから直接切出し。解説は独自作成。",
+      "transcription": "Official PDF page visually checked against saved page images. Equations and table column headings transcribed explicitly; required diagrams are direct PDF crops.",
+      "needsIndependentReview": false,
+      "publicGo": false,
+      "contentReview": {
+        "status": "PASS",
+        "model": "gpt-6-astra",
+        "report": "reports/lq4e-20261104/independent-review7.md",
+        "scope": "BATCH_ONLY_NOT_FULL_QUALIFICATION"
+      }
+    },
+    {
+      "id": "gijutsushi1-kikai-2025-mechanical-III-05",
+      "printedNumber": "Ⅲ－5",
+      "questionNumber": 5,
+      "questionText": "下図に示すように、一様断面を持つ長さ l の片持ちはりにおいて、先端Aに集中荷重 P が作用している。このとき、はり全体に蓄えられるひずみエネルギーとして、最も適切なものはどれか。ただし、はりの曲げ剛性を EI とする。",
+      "choices": {
+        "1": "P²l³/(24EI)",
+        "2": "P²l³/(12EI)",
+        "3": "P²l³/(6EI)",
+        "4": "P²l³/(3EI)",
+        "5": "2P²l³/(3EI)"
+      },
+      "officialAnswer": 3,
+      "scoringException": null,
+      "explanation": "正答は3です。曲げのひずみエネルギーはU＝∫M²/(2EI)dx＝P²l³/(6EI)。先端たわみδ＝Pl³/(3EI)を用いてU＝Pδ/2としても同じ値です。",
+      "choiceExplanations": {
+        "1": "正しい値P²l³/(6EI)の1/4であり、曲げモーメントの二乗の積分と一致しません。",
+        "2": "正しいひずみエネルギーの半分です。",
+        "3": "適切です。荷重を0からPまで徐々に増やす仕事Pδ/2に一致します。",
+        "4": "Pδそのものであり、線形弾性体に荷重を加える仕事に必要な1/2が欠けています。",
+        "5": "正しいエネルギーの4倍で、荷重－たわみの面積と一致しません。"
+      },
+      "hasRequiredFigure": true,
+      "figures": [
+        {
+          "path": "data/qualification-staging/lq4e-engineer-first/assets/2025-mechanical-III-5.png",
+          "sha256": "af86bf5623e51a7842275d1514730e62bffee5c598c98b0f8da0fd5deecee63d",
+          "alt": "自由端Aに集中荷重Pを受ける長さl、曲げ剛性EIの片持ちはり。",
+          "sourceQuestionPage": 4,
+          "sourceClipPdfPoints": [
+            170,
+            490,
+            435,
+            605
+          ],
+          "renderDpi": 220
+        }
+      ],
+      "sourceQuestionUrl": "https://www.engineer.or.jp/c_topics/011/attached/attach_11457_3.pdf",
+      "sourceQuestionPage": 4,
+      "sourceAnswerUrl": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_4.pdf",
+      "sourceAnswerPage": 3,
+      "sourceQuestionSha256": "41b79ddf3eef92ac0e00be3ad51a0e64e8b1814a86c55f2d234657cec7791112",
+      "sourceAnswerSha256": "6d4f5427838059ab50f0e7785f3f9cb2718fafaf96a8b74afcb332d969d7e311",
+      "sourceAttribution": "出典：公益社団法人日本技術士会 令和7年度技術士第一次試験 専門科目 機械部門 Ⅲ－5。改行・空白・句読点と数式表記を整理。必要図は公式PDFから直接切出し。解説は独自作成。",
+      "transcription": "Official PDF page visually checked against saved page images. Equations and table column headings transcribed explicitly; required diagrams are direct PDF crops.",
+      "needsIndependentReview": false,
+      "publicGo": false,
+      "contentReview": {
+        "status": "PASS",
+        "model": "gpt-6-astra",
+        "report": "reports/lq4e-20261104/independent-review7.md",
+        "scope": "BATCH_ONLY_NOT_FULL_QUALIFICATION"
+      }
+    },
+    {
+      "id": "gijutsushi1-kikai-2025-mechanical-III-06",
+      "printedNumber": "Ⅲ－6",
+      "questionNumber": 6,
+      "questionText": "下図に示すように、壁面に片方の端を固定された中実丸棒に、壁面から距離 l₁ にトルク T₁ が、自由端（壁面からの距離 l₁＋l₂）にトルク T₂ が同じ向きに作用するとき、自由端におけるねじれ角として、最も適切なものはどれか。ただし、丸棒の直径は d、横弾性係数は G とする。",
+      "choices": {
+        "1": "16(l₁T₁＋l₂T₂)/(πGd⁴)",
+        "2": "32(l₁T₁＋l₂T₂)/(πGd⁴)",
+        "3": "64(l₁T₁＋l₂T₂)/(πGd⁴)",
+        "4": "32{l₁(T₁＋T₂)＋l₂T₂}/(πGd⁴)",
+        "5": "64{l₁(T₁＋T₂)＋l₂T₂}/(πGd⁴)"
+      },
+      "officialAnswer": 4,
+      "scoringException": null,
+      "explanation": "正答は4です。壁からl₁までの内力トルクはT₁＋T₂、そこから自由端までのl₂区間ではT₂です。各区間のTL/(GJ)を加え、J＝πd⁴/32を使います。",
+      "choiceExplanations": {
+        "1": "固定端側の区間に作用するT₂の寄与を欠き、断面二次極モーメントの係数も違います。",
+        "2": "Jの係数32は正しいですが、T₂はl₁区間もねじるのでl₁T₂が不足しています。",
+        "3": "l₁T₂が不足し、係数64も正しい32の2倍です。",
+        "4": "適切です。両区間のねじれ角を内力トルクの違いに応じて加算しています。",
+        "5": "区間の内力は正しいですが、J＝πd⁴/32なので係数は64でなく32です。"
+      },
+      "hasRequiredFigure": true,
+      "figures": [
+        {
+          "path": "data/qualification-staging/lq4e-engineer-first/assets/2025-mechanical-III-6.png",
+          "sha256": "485bf28c23673ed2e2b0c8ea0f0da1b50475df962b51b13fc030f17f7069ad34",
+          "alt": "壁で固定した丸棒の途中l₁にT₁、さらにl₂先の自由端に同じ向きのT₂。",
+          "sourceQuestionPage": 5,
+          "sourceClipPdfPoints": [
+            135,
+            150,
+            450,
+            365
+          ],
+          "renderDpi": 220
+        }
+      ],
+      "sourceQuestionUrl": "https://www.engineer.or.jp/c_topics/011/attached/attach_11457_3.pdf",
+      "sourceQuestionPage": 5,
+      "sourceAnswerUrl": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_4.pdf",
+      "sourceAnswerPage": 3,
+      "sourceQuestionSha256": "41b79ddf3eef92ac0e00be3ad51a0e64e8b1814a86c55f2d234657cec7791112",
+      "sourceAnswerSha256": "6d4f5427838059ab50f0e7785f3f9cb2718fafaf96a8b74afcb332d969d7e311",
+      "sourceAttribution": "出典：公益社団法人日本技術士会 令和7年度技術士第一次試験 専門科目 機械部門 Ⅲ－6。改行・空白・句読点と数式表記を整理。必要図は公式PDFから直接切出し。解説は独自作成。",
+      "transcription": "Official PDF page visually checked against saved page images. Equations and table column headings transcribed explicitly; required diagrams are direct PDF crops.",
+      "needsIndependentReview": false,
+      "publicGo": false,
+      "contentReview": {
+        "status": "PASS",
+        "model": "gpt-6-astra",
+        "report": "reports/lq4e-20261104/independent-review7.md",
+        "scope": "BATCH_ONLY_NOT_FULL_QUALIFICATION"
+      }
+    },
+    {
+      "id": "gijutsushi1-kikai-2025-mechanical-III-07",
+      "printedNumber": "Ⅲ－7",
+      "questionNumber": 7,
+      "questionText": "下図に示すように、長さ l の柱の両端を固定する。A点は上下に移動できる固定支持である。A点から柱の長軸にそって圧縮荷重 P が作用するとき、座屈荷重 P_cr として、最も適切なものはどれか。ただし、この柱の曲げ剛性を EI とする。",
+      "choices": {
+        "1": "P_cr＝π²EI/(4l²)",
+        "2": "P_cr＝π²EI/(2l²)",
+        "3": "P_cr＝π²EI/l²",
+        "4": "P_cr＝2π²EI/l²",
+        "5": "P_cr＝4π²EI/l²"
+      },
+      "officialAnswer": 5,
+      "scoringException": null,
+      "explanation": "正答は5です。上端は軸方向には動けますが横変位と回転を拘束され、両端固定の座屈条件です。有効長l_e＝l/2なのでP_cr＝π²EI/l_e²＝4π²EI/l²です。",
+      "choiceExplanations": {
+        "1": "固定－自由の柱に対応する値です。A点の回転は拘束されています。",
+        "2": "有効長の条件が合いません。両端固定なら基準π²EI/l²の4倍です。",
+        "3": "両端ピンの場合の値であり、両端の回転拘束を反映していません。",
+        "4": "固定－ピンの近似値に相当し、本問の両端固定の値ではありません。",
+        "5": "適切です。Aの軸方向可動性は圧縮荷重を導入するもので、曲げの端部回転拘束は保たれます。"
+      },
+      "hasRequiredFigure": true,
+      "figures": [
+        {
+          "path": "data/qualification-staging/lq4e-engineer-first/assets/2025-mechanical-III-7.png",
+          "sha256": "be2013f7f7359d0528f5736b7f16fc88fca87ee1bc15eacbd16f8eec9524dede",
+          "alt": "下端固定、上端Aは上下に移動できるが横移動・回転を拘束した柱。",
+          "sourceQuestionPage": 6,
+          "sourceClipPdfPoints": [
+            305,
+            145,
+            420,
+            375
+          ],
+          "renderDpi": 220
+        }
+      ],
+      "sourceQuestionUrl": "https://www.engineer.or.jp/c_topics/011/attached/attach_11457_3.pdf",
+      "sourceQuestionPage": 6,
+      "sourceAnswerUrl": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_4.pdf",
+      "sourceAnswerPage": 3,
+      "sourceQuestionSha256": "41b79ddf3eef92ac0e00be3ad51a0e64e8b1814a86c55f2d234657cec7791112",
+      "sourceAnswerSha256": "6d4f5427838059ab50f0e7785f3f9cb2718fafaf96a8b74afcb332d969d7e311",
+      "sourceAttribution": "出典：公益社団法人日本技術士会 令和7年度技術士第一次試験 専門科目 機械部門 Ⅲ－7。改行・空白・句読点と数式表記を整理。必要図は公式PDFから直接切出し。解説は独自作成。",
+      "transcription": "Official PDF page visually checked against saved page images. Equations and table column headings transcribed explicitly; required diagrams are direct PDF crops.",
+      "needsIndependentReview": false,
+      "publicGo": false,
+      "contentReview": {
+        "status": "PASS",
+        "model": "gpt-6-astra",
+        "report": "reports/lq4e-20261104/independent-review7.md",
+        "scope": "BATCH_ONLY_NOT_FULL_QUALIFICATION"
+      }
+    },
+    {
+      "id": "gijutsushi1-kikai-2025-mechanical-III-08",
+      "printedNumber": "Ⅲ－8",
+      "questionNumber": 8,
+      "questionText": "両端を閉じた薄肉円筒圧力容器（半径 r、肉厚 t、r≫t）に内圧 p が作用している。両端から十分離れた円筒部分における円周方向ひずみ ε_θ と軸方向ひずみ ε_z の組合せとして、最も適切なものはどれか。ただし、縦弾性係数は E、ポアソン比は ν とし、円筒の肉厚は薄いので平面応力状態を仮定する。",
+      "choices": {
+        "1": "ε_θ＝(2−ν)pr/(Et)、ε_z＝(1−2ν)pr/(Et)",
+        "2": "ε_θ＝(2−ν)pr/(2Et)、ε_z＝(1−2ν)pr/(2Et)",
+        "3": "ε_θ＝(2−ν)pr/(2Et)、ε_z＝(1−ν)pr/(2Et)",
+        "4": "ε_θ＝(1−ν)pr/(2Et)、ε_z＝(2−ν)pr/(2Et)",
+        "5": "ε_θ＝(1−2ν)pr/(2Et)、ε_z＝(2−ν)pr/(2Et)"
+      },
+      "officialAnswer": 2,
+      "scoringException": null,
+      "explanation": "正答は2です。膜応力はσ_θ＝pr/t、σ_z＝pr/(2t)。平面応力のフックの法則ε_θ＝(σ_θ−νσ_z)/E、ε_z＝(σ_z−νσ_θ)/Eに代入します。",
+      "choiceExplanations": {
+        "1": "両ひずみとも正しい値の2倍です。軸応力pr/(2t)の係数を反映します。",
+        "2": "適切です。周方向と軸方向の相互のポアソン収縮を含みます。",
+        "3": "周方向は正しいですが、軸方向のポアソン項には周方向応力が軸応力の2倍であることを反映します。",
+        "4": "周方向と軸方向の応力の大小を取り違え、ポアソン項の係数も合いません。",
+        "5": "二つのひずみの式が逆です。周方向の基本応力が軸方向より大きくなります。"
+      },
+      "hasRequiredFigure": false,
+      "sourceQuestionUrl": "https://www.engineer.or.jp/c_topics/011/attached/attach_11457_3.pdf",
+      "sourceQuestionPage": 6,
+      "sourceAnswerUrl": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_4.pdf",
+      "sourceAnswerPage": 3,
+      "sourceQuestionSha256": "41b79ddf3eef92ac0e00be3ad51a0e64e8b1814a86c55f2d234657cec7791112",
+      "sourceAnswerSha256": "6d4f5427838059ab50f0e7785f3f9cb2718fafaf96a8b74afcb332d969d7e311",
+      "sourceAttribution": "出典：公益社団法人日本技術士会 令和7年度技術士第一次試験 専門科目 機械部門 Ⅲ－8。改行・空白・句読点と数式表記を整理。必要図は公式PDFから直接切出し。解説は独自作成。",
+      "transcription": "Official PDF page visually checked against saved page images. Equations and table column headings transcribed explicitly; required diagrams are direct PDF crops.",
+      "needsIndependentReview": false,
+      "publicGo": false,
+      "contentReview": {
+        "status": "PASS",
+        "model": "gpt-6-astra",
+        "report": "reports/lq4e-20261104/independent-review7.md",
+        "scope": "BATCH_ONLY_NOT_FULL_QUALIFICATION"
+      }
+    },
+    {
+      "id": "gijutsushi1-kikai-2025-mechanical-III-09",
+      "printedNumber": "Ⅲ－9",
+      "questionNumber": 9,
+      "questionText": "下図に示すように、平面応力状態となっている構造物の表面において、ある地点の応力状態が、σ_x＝120 MPa、σ_y＝30 MPa、τ_xy＝60 MPaであるとき、主せん断応力の絶対値に最も近い値はどれか。",
+      "choices": {
+        "1": "0 MPa",
+        "2": "38 MPa",
+        "3": "54 MPa",
+        "4": "75 MPa",
+        "5": "108 MPa"
+      },
+      "officialAnswer": 4,
+      "scoringException": null,
+      "explanation": "正答は4です。モールの応力円の半径は√[((120−30)/2)²＋60²]＝√(45²＋60²)＝75 MPaです。主応力は150と0 MPaで、その差の半分とも一致します。",
+      "choiceExplanations": {
+        "1": "せん断応力τ_xy＝60 MPaが存在するので、最大せん断応力が0にはなりません。",
+        "2": "モール円半径の平方和から得る75 MPaより小さく一致しません。",
+        "3": "与えられたせん断応力60 MPaよりも小さく、主せん断応力の最大値になりません。",
+        "4": "適切です。垂直応力差の半分45とせん断応力60の平方和平方根です。",
+        "5": "主せん断応力はモール円の半径75 MPaであり108 MPaではありません。"
+      },
+      "hasRequiredFigure": true,
+      "figures": [
+        {
+          "path": "data/qualification-staging/lq4e-engineer-first/assets/2025-mechanical-III-9.png",
+          "sha256": "46414f18b1a619926282cfa54fd9b729565487ef08c83028cc7366f6a73c7416",
+          "alt": "平面応力要素にσ_x＝120 MPa、σ_y＝30 MPa、τ_xy＝60 MPaを負荷。",
+          "sourceQuestionPage": 7,
+          "sourceClipPdfPoints": [
+            125,
+            130,
+            465,
+            355
+          ],
+          "renderDpi": 220
+        }
+      ],
+      "sourceQuestionUrl": "https://www.engineer.or.jp/c_topics/011/attached/attach_11457_3.pdf",
+      "sourceQuestionPage": 7,
+      "sourceAnswerUrl": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_4.pdf",
+      "sourceAnswerPage": 3,
+      "sourceQuestionSha256": "41b79ddf3eef92ac0e00be3ad51a0e64e8b1814a86c55f2d234657cec7791112",
+      "sourceAnswerSha256": "6d4f5427838059ab50f0e7785f3f9cb2718fafaf96a8b74afcb332d969d7e311",
+      "sourceAttribution": "出典：公益社団法人日本技術士会 令和7年度技術士第一次試験 専門科目 機械部門 Ⅲ－9。改行・空白・句読点と数式表記を整理。必要図は公式PDFから直接切出し。解説は独自作成。",
+      "transcription": "Official PDF page visually checked against saved page images. Equations and table column headings transcribed explicitly; required diagrams are direct PDF crops.",
+      "needsIndependentReview": false,
+      "publicGo": false,
+      "contentReview": {
+        "status": "PASS",
+        "model": "gpt-6-astra",
+        "report": "reports/lq4e-20261104/independent-review7.md",
+        "scope": "BATCH_ONLY_NOT_FULL_QUALIFICATION"
+      }
+    },
+    {
+      "id": "gijutsushi1-kikai-2025-mechanical-III-10",
+      "printedNumber": "Ⅲ－10",
+      "questionNumber": 10,
+      "questionText": "同じ材料を用いて、下図に示す（a）切欠き材と（b）き裂材を作製したとき、破壊における遠方応力がそれぞれ σ_a と σ_b であった。この形状を相似形で2倍の試験片を作製したとき、破壊応力がそれぞれ何倍になるか、次の組合せのうち、最も適切なものはどれか。",
+      "choices": {
+        "1": "a：1.4倍／b：0.7倍",
+        "2": "a：0.7倍／b：0.7倍",
+        "3": "a：1.0倍／b：1.4倍",
+        "4": "a：1.4倍／b：1.4倍",
+        "5": "a：1.0倍／b：0.7倍"
+      },
+      "officialAnswer": 5,
+      "scoringException": null,
+      "explanation": "正答は5です。切欠きの応力集中係数は相似形なら同じなので遠方の破壊応力は変わりません。線形破壊力学ではき裂の応力拡大係数K∝σ√aであり、き裂長さが2倍なら限界Kに達するσは1/√2≒0.7倍です。",
+      "choiceExplanations": {
+        "1": "き裂材の倍率は正しいですが、切欠き材では相似形の応力集中係数は変わりません。",
+        "2": "切欠き材まで1/√2倍とするのは、き裂の寸法効果と混同しています。",
+        "3": "切欠き材は正しいですが、き裂が長くなると破壊応力は上昇せず低下します。",
+        "4": "相似な切欠き材の応力集中係数は同じで、き裂材の破壊応力は低下します。",
+        "5": "適切です。切欠きの応力集中とき裂の応力拡大係数の寸法依存性を区別しています。"
+      },
+      "hasRequiredFigure": true,
+      "figures": [
+        {
+          "path": "data/qualification-staging/lq4e-engineer-first/assets/2025-mechanical-III-10.png",
+          "sha256": "e9ca6d2cff9603b1498fd607871b9c533787311d640245f1a72ae234c0b30931",
+          "alt": "同じ幅比を持つ円孔の切欠き材(a)と、長さ2aのき裂材(b)への遠方引張応力。",
+          "sourceQuestionPage": 8,
+          "sourceClipPdfPoints": [
+            120,
+            140,
+            470,
+            375
+          ],
+          "renderDpi": 220
+        }
+      ],
+      "sourceQuestionUrl": "https://www.engineer.or.jp/c_topics/011/attached/attach_11457_3.pdf",
+      "sourceQuestionPage": 8,
+      "sourceAnswerUrl": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_4.pdf",
+      "sourceAnswerPage": 3,
+      "sourceQuestionSha256": "41b79ddf3eef92ac0e00be3ad51a0e64e8b1814a86c55f2d234657cec7791112",
+      "sourceAnswerSha256": "6d4f5427838059ab50f0e7785f3f9cb2718fafaf96a8b74afcb332d969d7e311",
+      "sourceAttribution": "出典：公益社団法人日本技術士会 令和7年度技術士第一次試験 専門科目 機械部門 Ⅲ－10。改行・空白・句読点と数式表記を整理。必要図は公式PDFから直接切出し。解説は独自作成。",
+      "transcription": "Official PDF page visually checked against saved page images. Equations and table column headings transcribed explicitly; required diagrams are direct PDF crops.",
+      "needsIndependentReview": false,
+      "publicGo": false,
+      "contentReview": {
+        "status": "PASS",
+        "model": "gpt-6-astra",
+        "report": "reports/lq4e-20261104/independent-review7.md",
+        "scope": "BATCH_ONLY_NOT_FULL_QUALIFICATION"
+      }
+    },
+    {
+      "id": "gijutsushi1-kikai-2025-mechanical-III-11",
+      "printedNumber": "Ⅲ－11",
+      "questionNumber": 11,
+      "questionText": "伝達関数 P(s) が P(s)＝1/[s(s＋1)] の式で表される制御対象に対して、コントローラ K(s) を K(s)＝u/(s＋2) として設計することを考える。このとき、閉ループ系が安定に保たれるような u の値として、最も適切なものはどれか。",
+      "choices": {
+        "1": "−1＜u＜1",
+        "2": "−2＜u＜2",
+        "3": "0＜u＜6",
+        "4": "−1＜u＜6",
+        "5": "−2＜u＜6"
+      },
+      "officialAnswer": 3,
+      "scoringException": null,
+      "explanation": "正答は3です。単位負帰還の特性多項式はs(s＋1)(s＋2)＋u＝s³＋3s²＋2s＋u。ラウスの条件はu＞0と3×2＞uであり、0＜u＜6です。",
+      "choiceExplanations": {
+        "1": "u≦0の不安定・安定限界となる範囲を含み、安定範囲の上限6も表していません。",
+        "2": "負のuを含むので閉ループ安定の条件になりません。",
+        "3": "適切です。ラウス表の第一列1、3、(6−u)/3、uがすべて正となります。",
+        "4": "上限は正しいですがu＞0が必要であり、負のuを含められません。",
+        "5": "uが負の部分を含むため、必要十分な安定範囲ではありません。"
+      },
+      "hasRequiredFigure": false,
+      "sourceQuestionUrl": "https://www.engineer.or.jp/c_topics/011/attached/attach_11457_3.pdf",
+      "sourceQuestionPage": 8,
+      "sourceAnswerUrl": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_4.pdf",
+      "sourceAnswerPage": 3,
+      "sourceQuestionSha256": "41b79ddf3eef92ac0e00be3ad51a0e64e8b1814a86c55f2d234657cec7791112",
+      "sourceAnswerSha256": "6d4f5427838059ab50f0e7785f3f9cb2718fafaf96a8b74afcb332d969d7e311",
+      "sourceAttribution": "出典：公益社団法人日本技術士会 令和7年度技術士第一次試験 専門科目 機械部門 Ⅲ－11。改行・空白・句読点と数式表記を整理。必要図は公式PDFから直接切出し。解説は独自作成。",
+      "transcription": "Official PDF page visually checked against saved page images. Equations and table column headings transcribed explicitly; required diagrams are direct PDF crops.",
+      "needsIndependentReview": false,
+      "publicGo": false,
+      "contentReview": {
+        "status": "PASS",
+        "model": "gpt-6-astra",
+        "report": "reports/lq4e-20261104/independent-review7.md",
+        "scope": "BATCH_ONLY_NOT_FULL_QUALIFICATION"
+      }
+    },
+    {
+      "id": "gijutsushi1-kikai-2025-mechanical-III-12",
+      "printedNumber": "Ⅲ－12",
+      "questionNumber": 12,
+      "questionText": "下図に示すように、ある動的システムのステップ応答がある。図中の（ア）～（ウ）に当てはまる語句の組合せとして、最も適切なものはどれか。ここで、y₀は定常値である。",
+      "choices": {
+        "1": "ア：立ち上がり時間／イ：行き過ぎ時間／ウ：遅れ時間",
+        "2": "ア：立ち上がり時間／イ：行き過ぎ時間／ウ：整定時間",
+        "3": "ア：遅れ時間／イ：行き過ぎ時間／ウ：立ち上がり時間",
+        "4": "ア：遅れ時間／イ：立ち上がり時間／ウ：整定時間",
+        "5": "ア：遅れ時間／イ：立ち上がり時間／ウ：行き過ぎ時間"
+      },
+      "officialAnswer": 2,
+      "scoringException": null,
+      "explanation": "正答は2です。アは0.1y₀から0.9y₀までの立ち上がり時間、イは応答が最初の最大値を取る行き過ぎ時間、ウは定常値の±5%以内に収まる整定時間です。",
+      "choiceExplanations": {
+        "1": "アとイは正しいですが、ウは±5%帯内に留まるまでの整定時間です。",
+        "2": "適切です。10～90%の立ち上がり、最初のピーク、許容帯内への整定を図と対応させています。",
+        "3": "アは遅れ時間でなく立ち上がり時間、ウは立ち上がりでなく整定時間です。",
+        "4": "ウは正しいですが、アとイの定義が図に一致しません。",
+        "5": "ア・イ・ウとも、それぞれ立ち上がり・行き過ぎ・整定という図の定義に一致しません。"
+      },
+      "hasRequiredFigure": true,
+      "figures": [
+        {
+          "path": "data/qualification-staging/lq4e-engineer-first/assets/2025-mechanical-III-12.png",
+          "sha256": "cdc94dc89a7e4f96f65e00f0e74c9816e4c27c535e568dab95f3aaf315f9b0c3",
+          "alt": "定常値y₀に振動しながら近づくステップ応答。10～90%時間ア、初ピーク時刻イ、±5%整定時刻ウ。",
+          "sourceQuestionPage": 9,
+          "sourceClipPdfPoints": [
+            100,
+            135,
+            490,
+            405
+          ],
+          "renderDpi": 220
+        }
+      ],
+      "sourceQuestionUrl": "https://www.engineer.or.jp/c_topics/011/attached/attach_11457_3.pdf",
+      "sourceQuestionPage": 9,
+      "sourceAnswerUrl": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_4.pdf",
+      "sourceAnswerPage": 3,
+      "sourceQuestionSha256": "41b79ddf3eef92ac0e00be3ad51a0e64e8b1814a86c55f2d234657cec7791112",
+      "sourceAnswerSha256": "6d4f5427838059ab50f0e7785f3f9cb2718fafaf96a8b74afcb332d969d7e311",
+      "sourceAttribution": "出典：公益社団法人日本技術士会 令和7年度技術士第一次試験 専門科目 機械部門 Ⅲ－12。改行・空白・句読点と数式表記を整理。必要図は公式PDFから直接切出し。解説は独自作成。",
+      "transcription": "Official PDF page visually checked against saved page images. Equations and table column headings transcribed explicitly; required diagrams are direct PDF crops.",
+      "needsIndependentReview": false,
+      "publicGo": false,
+      "contentReview": {
+        "status": "PASS",
+        "model": "gpt-6-astra",
+        "report": "reports/lq4e-20261104/independent-review7.md",
+        "scope": "BATCH_ONLY_NOT_FULL_QUALIFICATION"
+      }
+    },
+    {
+      "id": "gijutsushi1-kikai-2025-mechanical-III-13",
+      "printedNumber": "Ⅲ－13",
+      "questionNumber": 13,
+      "questionText": "下図に示すような入出力システムがある。これを等価変換によって1つのブロックに簡単化するとき、最も適切なものはどれか。",
+      "choices": {
+        "1": "G₂(1−G₁)/(1−G₁−G₁G₂)",
+        "2": "G₂(1＋G₁)/(1＋G₁＋G₁G₂)",
+        "3": "G₁(1−G₂)/(1＋G₁＋G₁G₂)",
+        "4": "G₁(1＋G₂)/(1＋G₂＋G₁G₂)",
+        "5": "G₁(1−G₂)/(1−G₂−G₁G₂)"
+      },
+      "officialAnswer": 5,
+      "scoringException": null,
+      "explanation": "正答は5です。入力をr、G₂の出力をz、出力をyとすると、図の加算符号よりy＝G₁(r＋z)、z＝G₂(z＋y)。zを消去してy/r＝G₁(1−G₂)/(1−G₂−G₁G₂)です。",
+      "choiceExplanations": {
+        "1": "入力rはG₁を通るため分子の主因子はG₂でなくG₁です。",
+        "2": "前向き経路のG₁と帰還経路のG₂が逆で、正帰還の符号も異なります。",
+        "3": "分子は正しいですが、分母は1−G₂−G₁G₂です。選択肢3では−G₂が＋G₁に、−G₁G₂が＋G₁G₂になっています。",
+        "4": "図の正帰還の消去では1−G₂が現れます。和ではありません。",
+        "5": "適切です。二つの加算点の正符号をそのまま連立方程式に反映した結果です。"
+      },
+      "hasRequiredFigure": true,
+      "figures": [
+        {
+          "path": "data/qualification-staging/lq4e-engineer-first/assets/2025-mechanical-III-13.png",
+          "sha256": "c10abeac52a27d1ef9f7a9a8b038561404e8c0518d49c33e22b0545f3fb95259",
+          "alt": "G₁を前向きに置き、G₂出力と系出力を下側加算点で正帰還させるブロック線図。",
+          "sourceQuestionPage": 10,
+          "sourceClipPdfPoints": [
+            185,
+            130,
+            410,
+            195
+          ],
+          "renderDpi": 220
+        }
+      ],
+      "sourceQuestionUrl": "https://www.engineer.or.jp/c_topics/011/attached/attach_11457_3.pdf",
+      "sourceQuestionPage": 10,
+      "sourceAnswerUrl": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_4.pdf",
+      "sourceAnswerPage": 3,
+      "sourceQuestionSha256": "41b79ddf3eef92ac0e00be3ad51a0e64e8b1814a86c55f2d234657cec7791112",
+      "sourceAnswerSha256": "6d4f5427838059ab50f0e7785f3f9cb2718fafaf96a8b74afcb332d969d7e311",
+      "sourceAttribution": "出典：公益社団法人日本技術士会 令和7年度技術士第一次試験 専門科目 機械部門 Ⅲ－13。改行・空白・句読点と数式表記を整理。必要図は公式PDFから直接切出し。解説は独自作成。",
+      "transcription": "Official PDF page visually checked against saved page images. Equations and table column headings transcribed explicitly; required diagrams are direct PDF crops.",
+      "needsIndependentReview": false,
+      "publicGo": false,
+      "contentReview": {
+        "status": "PASS",
+        "model": "gpt-6-astra",
+        "report": "reports/lq4e-20261104/independent-review7.md",
+        "scope": "BATCH_ONLY_NOT_FULL_QUALIFICATION"
+      }
+    },
+    {
+      "id": "gijutsushi1-kikai-2025-mechanical-III-14",
+      "printedNumber": "Ⅲ－14",
+      "questionNumber": 14,
+      "questionText": "次の伝達関数で表される制御系の入力信号を単位ステップ関数 u(t) としたとき、出力信号 f(t) として、最も適切なものはどれか。ただし、eは自然対数の底とする。\nF(s)＝6/(s²＋5s＋6)\n参考：ラプラス変換表 δ(t)↔1、u(t)↔1/s、e^(at)↔1/(s−a)、sinωt↔ω/(s²＋ω²)、cosωt↔s/(s²＋ω²)、e^(at)g(t)↔G(s−a)",
+      "choices": {
+        "1": "6e^((5/2)t)sin(t/2)",
+        "2": "6(e^(−2t)−e^(−3t))",
+        "3": "−3e^(−2t)＋9e^(−3t)",
+        "4": "1＋6(e^(−2t)−e^(−3t))",
+        "5": "1−3e^(−2t)＋2e^(−3t)"
+      },
+      "officialAnswer": 5,
+      "scoringException": null,
+      "explanation": "正答は5です。ステップ入力の1/sを掛けると出力のラプラス変換は6/[s(s＋2)(s＋3)]＝1/s−3/(s＋2)＋2/(s＋3)。逆変換して1−3e^(−2t)＋2e^(−3t)です。",
+      "choiceExplanations": {
+        "1": "極は実数−2、−3であり、この増大する正弦波形にはなりません。",
+        "2": "伝達関数そのものの逆変換であるインパルス応答です。ステップ入力の1/sが欠けています。",
+        "3": "初期値が6となり、厳密にプロパーな本系のステップ応答の初期値0と一致しません。",
+        "4": "初期値が1となります。正しい部分分数の係数は−3と2です。",
+        "5": "適切です。初期値0、定常値1となり、部分分数分解とも一致します。"
+      },
+      "hasRequiredFigure": false,
+      "sourceQuestionUrl": "https://www.engineer.or.jp/c_topics/011/attached/attach_11457_3.pdf",
+      "sourceQuestionPage": 11,
+      "sourceAnswerUrl": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_4.pdf",
+      "sourceAnswerPage": 3,
+      "sourceQuestionSha256": "41b79ddf3eef92ac0e00be3ad51a0e64e8b1814a86c55f2d234657cec7791112",
+      "sourceAnswerSha256": "6d4f5427838059ab50f0e7785f3f9cb2718fafaf96a8b74afcb332d969d7e311",
+      "sourceAttribution": "出典：公益社団法人日本技術士会 令和7年度技術士第一次試験 専門科目 機械部門 Ⅲ－14。改行・空白・句読点と数式表記を整理。必要図は公式PDFから直接切出し。解説は独自作成。",
+      "transcription": "Official PDF page visually checked against saved page images. Equations and table column headings transcribed explicitly; required diagrams are direct PDF crops.",
+      "needsIndependentReview": false,
+      "publicGo": false,
+      "contentReview": {
+        "status": "PASS",
+        "model": "gpt-6-astra",
+        "report": "reports/lq4e-20261104/independent-review7.md",
+        "scope": "BATCH_ONLY_NOT_FULL_QUALIFICATION"
+      }
+    },
+    {
+      "id": "gijutsushi1-kikai-2025-mechanical-III-15",
+      "printedNumber": "Ⅲ－15",
+      "questionNumber": 15,
+      "questionText": "下図に示すような外径 D₁、内径 D₂、質量 M の中空円筒があるとき、x軸回りの慣性モーメントとして、最も適切なものはどれか。",
+      "choices": {
+        "1": "M(D₁²−D₂²)/8",
+        "2": "M(D₁²＋D₂²)/8",
+        "3": "M(D₁²−D₂²)/2",
+        "4": "M(D₁²＋D₂²)/2",
+        "5": "M(D₁⁴−D₂⁴)/32"
+      },
+      "officialAnswer": 2,
+      "scoringException": null,
+      "explanation": "正答は2です。中空円筒の対称軸まわりの質量慣性モーメントはM(R₁²＋R₂²)/2。半径を直径の半分に置換するとM(D₁²＋D₂²)/8です。",
+      "choiceExplanations": {
+        "1": "内径の項は差ではなく和です。質量Mを固定して外側に分布する効果を含みます。",
+        "2": "適切です。中実円筒D₂＝0でもMD₁²/8となります。",
+        "3": "内径項の符号が違い、直径から半径への換算係数も欠けています。",
+        "4": "和の形は正しいですが、半径でなく直径なので係数は1/2でなく1/8です。",
+        "5": "長さの4乗が現れ、質量慣性モーメントML²の次元になりません。"
+      },
+      "hasRequiredFigure": true,
+      "figures": [
+        {
+          "path": "data/qualification-staging/lq4e-engineer-first/assets/2025-mechanical-III-15.png",
+          "sha256": "9f9087b75a04947423a840630a4aa4bfcdcc7f36d0524dabb7594737b2cb94eb",
+          "alt": "中空円筒の外径D₁・内径D₂と、その中心軸x。",
+          "sourceQuestionPage": 12,
+          "sourceClipPdfPoints": [
+            250,
+            195,
+            455,
+            290
+          ],
+          "renderDpi": 220
+        }
+      ],
+      "sourceQuestionUrl": "https://www.engineer.or.jp/c_topics/011/attached/attach_11457_3.pdf",
+      "sourceQuestionPage": 12,
+      "sourceAnswerUrl": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_4.pdf",
+      "sourceAnswerPage": 3,
+      "sourceQuestionSha256": "41b79ddf3eef92ac0e00be3ad51a0e64e8b1814a86c55f2d234657cec7791112",
+      "sourceAnswerSha256": "6d4f5427838059ab50f0e7785f3f9cb2718fafaf96a8b74afcb332d969d7e311",
+      "sourceAttribution": "出典：公益社団法人日本技術士会 令和7年度技術士第一次試験 専門科目 機械部門 Ⅲ－15。改行・空白・句読点と数式表記を整理。必要図は公式PDFから直接切出し。解説は独自作成。",
+      "transcription": "Official PDF page visually checked against saved page images. Equations and table column headings transcribed explicitly; required diagrams are direct PDF crops.",
+      "needsIndependentReview": false,
+      "publicGo": false,
+      "contentReview": {
+        "status": "PASS",
+        "model": "gpt-6-astra",
+        "report": "reports/lq4e-20261104/independent-review7.md",
+        "scope": "BATCH_ONLY_NOT_FULL_QUALIFICATION"
+      }
+    },
+    {
+      "id": "gijutsushi1-kikai-2025-mechanical-III-16",
+      "printedNumber": "Ⅲ－16",
+      "questionNumber": 16,
+      "questionText": "下図に示すような長さ L のゴムひもの中央に質量 m の質点があり、両端を張力 T で引っ張ると、質点が鉛直方向に揺れる。その固有角振動数として、最も適切なものはどれか。ただし、ゴムひもの質量は考えず、ゴムひもが水平と成す角度は微小とする。",
+      "choices": {
+        "1": "√[T/(2mL)]",
+        "2": "√[T/(mL)]",
+        "3": "√[2T/(mL)]",
+        "4": "√[4T/(mL)]",
+        "5": "√[8T/(mL)]"
+      },
+      "officialAnswer": 4,
+      "scoringException": null,
+      "explanation": "正答は4です。中央の鉛直変位yに対し各半分の傾きは約2y/Lです。左右の張力の鉛直復元力の和は2T×2y/L＝4Ty/L。等価剛性4T/Lからω_n＝√[4T/(mL)]です。",
+      "choiceExplanations": {
+        "1": "両側の張力と半長L/2の効果を含めると、剛性はT/(2L)でなく4T/Lです。",
+        "2": "長さL全体を一本として扱った値で、左右二本の幾何的な復元効果が不足しています。",
+        "3": "片側の復元力2Ty/Lに相当し、もう片側も加算する必要があります。",
+        "4": "適切です。左右の張力の鉛直成分を加えた等価剛性を用います。",
+        "5": "等価剛性を2倍に見積もっています。各側の長さはL/2です。"
+      },
+      "hasRequiredFigure": true,
+      "figures": [
+        {
+          "path": "data/qualification-staging/lq4e-engineer-first/assets/2025-mechanical-III-16.png",
+          "sha256": "58aa97d90b2e2ac4abf2db26de1e89ff45a3bfa08aaf03c4d76848bcd1d3202e",
+          "alt": "全長Lの軽いゴムひもの中央の質量mを、左右の張力Tで引く図。",
+          "sourceQuestionPage": 12,
+          "sourceClipPdfPoints": [
+            170,
+            430,
+            445,
+            525
+          ],
+          "renderDpi": 220
+        }
+      ],
+      "sourceQuestionUrl": "https://www.engineer.or.jp/c_topics/011/attached/attach_11457_3.pdf",
+      "sourceQuestionPage": 12,
+      "sourceAnswerUrl": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_4.pdf",
+      "sourceAnswerPage": 3,
+      "sourceQuestionSha256": "41b79ddf3eef92ac0e00be3ad51a0e64e8b1814a86c55f2d234657cec7791112",
+      "sourceAnswerSha256": "6d4f5427838059ab50f0e7785f3f9cb2718fafaf96a8b74afcb332d969d7e311",
+      "sourceAttribution": "出典：公益社団法人日本技術士会 令和7年度技術士第一次試験 専門科目 機械部門 Ⅲ－16。改行・空白・句読点と数式表記を整理。必要図は公式PDFから直接切出し。解説は独自作成。",
+      "transcription": "Official PDF page visually checked against saved page images. Equations and table column headings transcribed explicitly; required diagrams are direct PDF crops.",
+      "needsIndependentReview": false,
+      "publicGo": false,
+      "contentReview": {
+        "status": "PASS",
+        "model": "gpt-6-astra",
+        "report": "reports/lq4e-20261104/independent-review7.md",
+        "scope": "BATCH_ONLY_NOT_FULL_QUALIFICATION"
+      }
+    },
+    {
+      "id": "gijutsushi1-kikai-2025-mechanical-III-17",
+      "printedNumber": "Ⅲ－17",
+      "questionNumber": 17,
+      "questionText": "下図（a）と（b）に示す合成ばねの等価ばね定数の組合せとして、最も適切なものはどれか。",
+      "choices": {
+        "1": "a：2k₁k₂/(k₁＋k₂)／b：k₁＋k₂",
+        "2": "a：k₁k₂/(k₁＋k₂)／b：k₁＋k₂",
+        "3": "a：k₁k₂/(k₁＋k₂)／b：1/k₁＋1/k₂",
+        "4": "a：k₁＋k₂／b：k₁k₂/(k₁＋k₂)",
+        "5": "a：k₁＋k₂／b：2k₁k₂/(k₁＋k₂)"
+      },
+      "officialAnswer": 2,
+      "scoringException": null,
+      "explanation": "正答は2です。(a)は二つのばねを直列に通した端部変位なので1/k_eq＝1/k₁＋1/k₂。(b)は両壁に固定されたばねの中央接続点を動かすため、両ばねの復元力が加算されk_eq＝k₁＋k₂です。",
+      "choiceExplanations": {
+        "1": "bは正しいですが、aの直列ばねの式に余分な係数2があります。",
+        "2": "適切です。aは直列、bは中央接続点に対して復元力を加算する配置です。",
+        "3": "aは正しいですが、bはコンプライアンスの和であり剛性の次元になりません。",
+        "4": "直列端部を動かすaと両端固定の中央点を動かすbの関係が逆です。",
+        "5": "aを並列として扱い、bにも不要な係数2を含んでいます。"
+      },
+      "hasRequiredFigure": true,
+      "figures": [
+        {
+          "path": "data/qualification-staging/lq4e-engineer-first/assets/2025-mechanical-III-17.png",
+          "sha256": "1cc79f0d49265f1681e4d53043fb8ce34f37fe5b2ce50dda3ffaea6576ac9682",
+          "alt": "図(a)は片側固定の直列ばね、図(b)は両端を壁に固定し中央接続点を持つばね。",
+          "sourceQuestionPage": 13,
+          "sourceClipPdfPoints": [
+            315,
+            130,
+            480,
+            340
+          ],
+          "renderDpi": 220
+        }
+      ],
+      "sourceQuestionUrl": "https://www.engineer.or.jp/c_topics/011/attached/attach_11457_3.pdf",
+      "sourceQuestionPage": 13,
+      "sourceAnswerUrl": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_4.pdf",
+      "sourceAnswerPage": 3,
+      "sourceQuestionSha256": "41b79ddf3eef92ac0e00be3ad51a0e64e8b1814a86c55f2d234657cec7791112",
+      "sourceAnswerSha256": "6d4f5427838059ab50f0e7785f3f9cb2718fafaf96a8b74afcb332d969d7e311",
+      "sourceAttribution": "出典：公益社団法人日本技術士会 令和7年度技術士第一次試験 専門科目 機械部門 Ⅲ－17。改行・空白・句読点と数式表記を整理。必要図は公式PDFから直接切出し。解説は独自作成。",
+      "transcription": "Official PDF page visually checked against saved page images. Equations and table column headings transcribed explicitly; required diagrams are direct PDF crops.",
+      "needsIndependentReview": false,
+      "publicGo": false,
+      "contentReview": {
+        "status": "PASS",
+        "model": "gpt-6-astra",
+        "report": "reports/lq4e-20261104/independent-review7.md",
+        "scope": "BATCH_ONLY_NOT_FULL_QUALIFICATION"
+      }
+    },
+    {
+      "id": "gijutsushi1-kikai-2025-mechanical-III-18",
+      "printedNumber": "Ⅲ－18",
+      "questionNumber": 18,
+      "questionText": "下図のように、直径 D、質量 M の円板状の定滑車に質量の無視できる伸び縮みしないロープを巻き付け、その先端の質量 m のおもりが重力によって落下するときの加速度として、最も適切なものはどれか。ただし、定滑車は摩擦なく回転し、定滑車とロープの間にすべりはないものとする。なお、重力加速度は g とし、滑車の中心まわりの慣性モーメントは、I＝MD²/8 と表すことができるものとする。",
+      "choices": {
+        "1": "mg/(m＋M/2)",
+        "2": "mg/(m＋M/4)",
+        "3": "mg/(m＋M/8)",
+        "4": "Mg/(m/2＋M)",
+        "5": "m/(m＋M/2)"
+      },
+      "officialAnswer": 1,
+      "scoringException": null,
+      "explanation": "正答は1です。おもりはmg−T＝ma、滑車はT(D/2)＝Iα、すべりなしでa＝αD/2です。したがってT＝(M/2)aとなりa＝mg/(m＋M/2)です。",
+      "choiceExplanations": {
+        "1": "適切です。滑車の回転慣性が並進換算でM/2として加わります。",
+        "2": "Iを半径の二乗で割るとM/2です。M/4ではありません。",
+        "3": "慣性モーメントの係数1/8をそのまま質量に使わず、半径D/2の二乗で割ります。",
+        "4": "重力による駆動力はおもりのmgであり、滑車のMgではありません。",
+        "5": "gが欠けていて無次元量です。加速度にはなりません。"
+      },
+      "hasRequiredFigure": true,
+      "figures": [
+        {
+          "path": "data/qualification-staging/lq4e-engineer-first/assets/2025-mechanical-III-18.png",
+          "sha256": "645eb6e65285d65bbf17c353ec5e67765ca32af9f79b11231ffb1c7c765d9520",
+          "alt": "直径D・質量Mの定滑車からロープにより質量mのおもりが下がる図。",
+          "sourceQuestionPage": 13,
+          "sourceClipPdfPoints": [
+            255,
+            515,
+            410,
+            740
+          ],
+          "renderDpi": 220
+        }
+      ],
+      "sourceQuestionUrl": "https://www.engineer.or.jp/c_topics/011/attached/attach_11457_3.pdf",
+      "sourceQuestionPage": 13,
+      "sourceAnswerUrl": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_4.pdf",
+      "sourceAnswerPage": 3,
+      "sourceQuestionSha256": "41b79ddf3eef92ac0e00be3ad51a0e64e8b1814a86c55f2d234657cec7791112",
+      "sourceAnswerSha256": "6d4f5427838059ab50f0e7785f3f9cb2718fafaf96a8b74afcb332d969d7e311",
+      "sourceAttribution": "出典：公益社団法人日本技術士会 令和7年度技術士第一次試験 専門科目 機械部門 Ⅲ－18。改行・空白・句読点と数式表記を整理。必要図は公式PDFから直接切出し。解説は独自作成。",
+      "transcription": "Official PDF page visually checked against saved page images. Equations and table column headings transcribed explicitly; required diagrams are direct PDF crops.",
+      "needsIndependentReview": false,
+      "publicGo": false,
+      "contentReview": {
+        "status": "PASS",
+        "model": "gpt-6-astra",
+        "report": "reports/lq4e-20261104/independent-review7.md",
+        "scope": "BATCH_ONLY_NOT_FULL_QUALIFICATION"
+      }
+    },
+    {
+      "id": "gijutsushi1-kikai-2025-mechanical-III-19",
+      "printedNumber": "Ⅲ－19",
+      "questionNumber": 19,
+      "questionText": "下図に示すように、質量 m、半径 r の一様材質で均一な厚さの円板が、壁とばね定数 k のばねで接続され、床面を滑らずに転がりながら振動している。この振動系の固有角振動数として、最も適切なものはどれか。",
+      "choices": {
+        "1": "√(2k/m)",
+        "2": "√[4k/(3m)]",
+        "3": "√(k/m)",
+        "4": "√[2k/(3m)]",
+        "5": "√[k/(2m)]"
+      },
+      "officialAnswer": 4,
+      "scoringException": null,
+      "explanation": "正答は4です。滑らず転がるので中心速度ẋに対し角速度ẋ/r。円板のI＝mr²/2から等価質量m＋I/r²＝3m/2。ω_n＝√[k/(3m/2)]＝√[2k/(3m)]です。",
+      "choiceExplanations": {
+        "1": "円板の並進と回転の両慣性を含めると、実効質量はm/2でなく3m/2です。",
+        "2": "正しい固有角振動数の二乗2k/(3m)を2倍にしています。",
+        "3": "回転慣性を無視した並進だけの値です。滑らず転がる場合は周波数が低下します。",
+        "4": "適切です。並進と回転の運動エネルギーを合わせた実効質量を用います。",
+        "5": "実効質量2mは薄い輪に対応します。一様円板では3m/2です。"
+      },
+      "hasRequiredFigure": true,
+      "figures": [
+        {
+          "path": "data/qualification-staging/lq4e-engineer-first/assets/2025-mechanical-III-19.png",
+          "sha256": "69b1e9a30223696ba27572503bf4ea44aec52c73219f58aeda524dbdb44fb326",
+          "alt": "ばねkを中心に接続した一様円板が床を滑らず転がる系。",
+          "sourceQuestionPage": 14,
+          "sourceClipPdfPoints": [
+            220,
+            185,
+            490,
+            310
+          ],
+          "renderDpi": 220
+        }
+      ],
+      "sourceQuestionUrl": "https://www.engineer.or.jp/c_topics/011/attached/attach_11457_3.pdf",
+      "sourceQuestionPage": 14,
+      "sourceAnswerUrl": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_4.pdf",
+      "sourceAnswerPage": 3,
+      "sourceQuestionSha256": "41b79ddf3eef92ac0e00be3ad51a0e64e8b1814a86c55f2d234657cec7791112",
+      "sourceAnswerSha256": "6d4f5427838059ab50f0e7785f3f9cb2718fafaf96a8b74afcb332d969d7e311",
+      "sourceAttribution": "出典：公益社団法人日本技術士会 令和7年度技術士第一次試験 専門科目 機械部門 Ⅲ－19。改行・空白・句読点と数式表記を整理。必要図は公式PDFから直接切出し。解説は独自作成。",
+      "transcription": "Official PDF page visually checked against saved page images. Equations and table column headings transcribed explicitly; required diagrams are direct PDF crops.",
+      "needsIndependentReview": false,
+      "publicGo": false,
+      "contentReview": {
+        "status": "PASS",
+        "model": "gpt-6-astra",
+        "report": "reports/lq4e-20261104/independent-review7.md",
+        "scope": "BATCH_ONLY_NOT_FULL_QUALIFICATION"
+      }
+    },
+    {
+      "id": "gijutsushi1-kikai-2025-mechanical-III-20",
+      "printedNumber": "Ⅲ－20",
+      "questionNumber": 20,
+      "questionText": "下図に示すように、質量 m の機械がばね定数 k のばねを介して床に固定されている。この機械に角周波数 ω、振幅 f₀ の正弦波状の力 f₀sinωt が作用し、定常状態となったときに、床に伝達される周期的な力 F の振幅をf₀の50%未満にしたい。ばね定数の条件として、最も適切なものはどれか。",
+      "choices": {
+        "1": "k＞mω²/3",
+        "2": "k＜mω²/3",
+        "3": "k＜mω²/(1＋√2)",
+        "4": "k＞mω²",
+        "5": "k＜mω²"
+      },
+      "officialAnswer": 2,
+      "scoringException": null,
+      "explanation": "正答は2です。減衰のない系の力の伝達率はk/|k−mω²|です。これを1/2未満とするには、共振より高周波数側で2k＜mω²−k、すなわちk＜mω²/3が必要です。",
+      "choiceExplanations": {
+        "1": "不等号が逆です。ばねを十分柔らかくすることで伝達率を1/2未満にできます。",
+        "2": "適切です。k/(mω²−k)＜1/2を満たします。",
+        "3": "これは1/3より広い範囲を許すため、その範囲内には伝達率1/2以上の値も含まれます。",
+        "4": "固有角周波数が加振角周波数より大きい側では伝達率は1より大きくなります。",
+        "5": "共振を超える条件だけで、50%未満にするにはさらにk＜mω²/3が必要です。"
+      },
+      "hasRequiredFigure": true,
+      "figures": [
+        {
+          "path": "data/qualification-staging/lq4e-engineer-first/assets/2025-mechanical-III-20.png",
+          "sha256": "443764acb6d39fff2447e8310c1a72e35eeb00c98cf7139a98c00f328f7858e2",
+          "alt": "質量mの機械をばねkで支持し、調和外力f₀sinωtと床への伝達力Fを表示。",
+          "sourceQuestionPage": 14,
+          "sourceClipPdfPoints": [
+            260,
+            475,
+            385,
+            610
+          ],
+          "renderDpi": 220
+        }
+      ],
+      "sourceQuestionUrl": "https://www.engineer.or.jp/c_topics/011/attached/attach_11457_3.pdf",
+      "sourceQuestionPage": 14,
+      "sourceAnswerUrl": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_4.pdf",
+      "sourceAnswerPage": 3,
+      "sourceQuestionSha256": "41b79ddf3eef92ac0e00be3ad51a0e64e8b1814a86c55f2d234657cec7791112",
+      "sourceAnswerSha256": "6d4f5427838059ab50f0e7785f3f9cb2718fafaf96a8b74afcb332d969d7e311",
+      "sourceAttribution": "出典：公益社団法人日本技術士会 令和7年度技術士第一次試験 専門科目 機械部門 Ⅲ－20。改行・空白・句読点と数式表記を整理。必要図は公式PDFから直接切出し。解説は独自作成。",
+      "transcription": "Official PDF page visually checked against saved page images. Equations and table column headings transcribed explicitly; required diagrams are direct PDF crops.",
+      "needsIndependentReview": false,
+      "publicGo": false,
+      "contentReview": {
+        "status": "PASS",
+        "model": "gpt-6-astra",
+        "report": "reports/lq4e-20261104/independent-review7.md",
+        "scope": "BATCH_ONLY_NOT_FULL_QUALIFICATION"
+      }
+    },
+    {
+      "id": "gijutsushi1-kikai-2025-mechanical-III-21",
+      "printedNumber": "Ⅲ－21",
+      "questionNumber": 21,
+      "questionText": "下図に示すように、質量の無視できる長さ l の糸で結ばれた、2つの質点からなる2重振り子がある。2つの質点の質量はどちらも m とする。この系の運動エネルギーを T、支点Oを基準としたポテンシャルエネルギーを U としたとき、振り子の振れ角 θ_A、θ_B を用いて表される運動エネルギー T とポテンシャルエネルギー U の組合せとして、最も適切なものはどれか。",
+      "choices": {
+        "1": "T＝(1/2)ml²θ̇_A²＋(1/2)ml²θ̇_B²、U＝−mgl cosθ_A−mgl cosθ_B",
+        "2": "T＝(1/2)ml²θ̇_A²＋2ml²(θ̇_A＋θ̇_B)²、U＝−mgl cosθ_A−2mgl cos(θ_A＋θ_B)",
+        "3": "T＝(3/2)ml²＋(1/2)ml²cos(θ_A−θ_B)、U＝−2mgl cosθ_A−mgl cosθ_B",
+        "4": "T＝ml²θ̇_A²＋(1/2)ml²θ̇_B²−ml²θ̇_Aθ̇_Bcos(θ_A−θ_B)、U＝2mgl cosθ_A＋mgl cosθ_B",
+        "5": "T＝ml²θ̇_A²＋(1/2)ml²θ̇_B²＋ml²θ̇_Aθ̇_Bcos(θ_A−θ_B)、U＝−2mgl cosθ_A−mgl cosθ_B"
+      },
+      "officialAnswer": 5,
+      "scoringException": null,
+      "explanation": "正答は5です。Aの位置は(l cosθ_A, l sinθ_A)、Bはそこに(l cosθ_B,l sinθ_B)を加えます。両質点の速度の二乗を加算すると正の連成項が現れます。下向き座標xを使うのでU＝−mg(x_A＋x_B)です。",
+      "choiceExplanations": {
+        "1": "下の質点も上側の糸の回転によって動くため、θ̇_A²の寄与と速度の連成項が不足しています。",
+        "2": "θ_Aとθ_Bはいずれも鉛直に対する絶対角であり、和を下側の絶対角として使えません。",
+        "3": "ポテンシャルは正しいですが、印刷されたTの式は角速度を含まず運動エネルギーを表しません。",
+        "4": "運動エネルギーの連成項と、基準Oからの重力ポテンシャルの符号が逆です。",
+        "5": "適切です。二つの質点の速度と高さをそれぞれ加算した式です。"
+      },
+      "hasRequiredFigure": true,
+      "figures": [
+        {
+          "path": "data/qualification-staging/lq4e-engineer-first/assets/2025-mechanical-III-21.png",
+          "sha256": "d6529382d2efaa961bd512892cdcc79909e79c3aa2faa3309007d74d3272f751",
+          "alt": "鉛直からの絶対角θ_A、θ_Bをもつ等長l・等質量mの2重振り子。x下向き、y右向き。",
+          "sourceQuestionPage": 15,
+          "sourceClipPdfPoints": [
+            200,
+            180,
+            390,
+            330
+          ],
+          "renderDpi": 220
+        }
+      ],
+      "sourceQuestionUrl": "https://www.engineer.or.jp/c_topics/011/attached/attach_11457_3.pdf",
+      "sourceQuestionPage": 15,
+      "sourceAnswerUrl": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_4.pdf",
+      "sourceAnswerPage": 3,
+      "sourceQuestionSha256": "41b79ddf3eef92ac0e00be3ad51a0e64e8b1814a86c55f2d234657cec7791112",
+      "sourceAnswerSha256": "6d4f5427838059ab50f0e7785f3f9cb2718fafaf96a8b74afcb332d969d7e311",
+      "sourceAttribution": "出典：公益社団法人日本技術士会 令和7年度技術士第一次試験 専門科目 機械部門 Ⅲ－21。改行・空白・句読点と数式表記を整理。必要図は公式PDFから直接切出し。解説は独自作成。",
+      "transcription": "Official PDF page visually checked against saved page images. Equations and table column headings transcribed explicitly; required diagrams are direct PDF crops.",
+      "needsIndependentReview": false,
+      "publicGo": false,
+      "contentReview": {
+        "status": "PASS",
+        "model": "gpt-6-astra",
+        "report": "reports/lq4e-20261104/independent-review7.md",
+        "scope": "BATCH_ONLY_NOT_FULL_QUALIFICATION"
+      }
+    },
+    {
+      "id": "gijutsushi1-kikai-2025-mechanical-III-22",
+      "printedNumber": "Ⅲ－22",
+      "questionNumber": 22,
+      "questionText": "下図の1自由度振動系において、質量 m が1 kg、ばね定数 k が100 N/m、減衰係数 c が12 Ns/mのとき、減衰比 ζ 及び減衰固有周期 T_d の組合せとして、最も適切なものはどれか。",
+      "choices": {
+        "1": "ζ＝0.30、T_d＝0.66 [s]",
+        "2": "ζ＝0.60、T_d＝0.54 [s]",
+        "3": "ζ＝0.60、T_d＝0.79 [s]",
+        "4": "ζ＝0.85、T_d＝1.2 [s]",
+        "5": "ζ＝0.85、T_d＝0.48 [s]"
+      },
+      "officialAnswer": 3,
+      "scoringException": null,
+      "explanation": "正答は3です。ω_n＝√(k/m)＝10 rad/s、ζ＝c/(2√mk)＝0.60。ω_d＝ω_n√(1−ζ²)＝8 rad/s、T_d＝2π/8≒0.79 sです。",
+      "choiceExplanations": {
+        "1": "減衰比の分母に必要な2√mkを正しく使うと0.30でなく0.60です。",
+        "2": "減衰比は正しいですが、減衰固有周期は2π/[10√(1−0.60²)]≒0.79 sです。",
+        "3": "適切です。減衰によって固有周期は無減衰時の約0.63 sより長くなります。",
+        "4": "減衰比は0.85ではなく0.60であり、周期も一致しません。",
+        "5": "減衰比が違い、周期も無減衰固有周期より短いので不適切です。"
+      },
+      "hasRequiredFigure": true,
+      "figures": [
+        {
+          "path": "data/qualification-staging/lq4e-engineer-first/assets/2025-mechanical-III-22.png",
+          "sha256": "6bb5cde967817097a9d089eceb834e2c946d4e8cd2cbb030cb5f9705a413216a",
+          "alt": "壁と質量mの間にばねk・ダンパcを並列に接続した1自由度振動系。",
+          "sourceQuestionPage": 15,
+          "sourceClipPdfPoints": [
+            385,
+            650,
+            505,
+            730
+          ],
+          "renderDpi": 220
+        }
+      ],
+      "sourceQuestionUrl": "https://www.engineer.or.jp/c_topics/011/attached/attach_11457_3.pdf",
+      "sourceQuestionPage": 15,
+      "sourceAnswerUrl": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_4.pdf",
+      "sourceAnswerPage": 3,
+      "sourceQuestionSha256": "41b79ddf3eef92ac0e00be3ad51a0e64e8b1814a86c55f2d234657cec7791112",
+      "sourceAnswerSha256": "6d4f5427838059ab50f0e7785f3f9cb2718fafaf96a8b74afcb332d969d7e311",
+      "sourceAttribution": "出典：公益社団法人日本技術士会 令和7年度技術士第一次試験 専門科目 機械部門 Ⅲ－22。改行・空白・句読点と数式表記を整理。必要図は公式PDFから直接切出し。解説は独自作成。",
+      "transcription": "Official PDF page visually checked against saved page images. Equations and table column headings transcribed explicitly; required diagrams are direct PDF crops.",
+      "needsIndependentReview": false,
+      "publicGo": false,
+      "contentReview": {
+        "status": "PASS",
+        "model": "gpt-6-astra",
+        "report": "reports/lq4e-20261104/independent-review7.md",
+        "scope": "BATCH_ONLY_NOT_FULL_QUALIFICATION"
+      }
+    },
+    {
+      "id": "gijutsushi1-kikai-2025-mechanical-III-23",
+      "printedNumber": "Ⅲ－23",
+      "questionNumber": 23,
+      "questionText": "次の式のうち、マクスウェルの熱力学的関係式として、最も適切なものはどれか。p、T、v、sはそれぞれ圧力、温度、比体積、比エントロピーを表している。",
+      "choices": {
+        "1": "(∂p/∂T)_v＝(∂v/∂s)_T",
+        "2": "(∂T/∂v)_s＝(∂v/∂s)_p",
+        "3": "(∂T/∂v)_s＝(∂s/∂v)_p",
+        "4": "(∂p/∂T)_v＝−(∂v/∂s)_T",
+        "5": "(∂T/∂p)_s＝(∂v/∂s)_p"
+      },
+      "officialAnswer": 5,
+      "scoringException": null,
+      "explanation": "正答は5です。比エンタルピーの全微分dh＝Tds＋vdpから、混合2階偏微分が等しい条件を使うと(∂T/∂p)_s＝(∂v/∂s)_pとなります。",
+      "choiceExplanations": {
+        "1": "ヘルムホルツ自由エネルギーから得る関係は(∂p/∂T)_v＝(∂s/∂v)_Tであり、右辺が逆です。",
+        "2": "内部エネルギーからの関係は(∂T/∂v)_s＝−(∂p/∂s)_vです。",
+        "3": "右辺の変数の組合せが対応せず、正しい混合偏微分の関係ではありません。",
+        "4": "右辺を逆の偏微分にしたうえ負号をつけてもマクスウェル関係式にはなりません。",
+        "5": "適切です。h(s,p)の混合偏微分の対称性から直接得られます。"
+      },
+      "hasRequiredFigure": false,
+      "sourceQuestionUrl": "https://www.engineer.or.jp/c_topics/011/attached/attach_11457_3.pdf",
+      "sourceQuestionPage": 16,
+      "sourceAnswerUrl": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_4.pdf",
+      "sourceAnswerPage": 3,
+      "sourceQuestionSha256": "41b79ddf3eef92ac0e00be3ad51a0e64e8b1814a86c55f2d234657cec7791112",
+      "sourceAnswerSha256": "6d4f5427838059ab50f0e7785f3f9cb2718fafaf96a8b74afcb332d969d7e311",
+      "sourceAttribution": "出典：公益社団法人日本技術士会 令和7年度技術士第一次試験 専門科目 機械部門 Ⅲ－23。改行・空白・句読点と数式表記を整理。必要図は公式PDFから直接切出し。解説は独自作成。",
+      "transcription": "Official PDF page visually checked against saved page images. Equations and table column headings transcribed explicitly; required diagrams are direct PDF crops.",
+      "needsIndependentReview": false,
+      "publicGo": false,
+      "contentReview": {
+        "status": "PASS",
+        "model": "gpt-6-astra",
+        "report": "reports/lq4e-20261104/independent-review7.md",
+        "scope": "BATCH_ONLY_NOT_FULL_QUALIFICATION"
+      }
+    },
+    {
+      "id": "gijutsushi1-kikai-2025-mechanical-III-24",
+      "printedNumber": "Ⅲ－24",
+      "questionNumber": 24,
+      "questionText": "一定の圧力0.20 MPaのもと、質量1.0 kgの飽和水に1400 kJの熱を加えて湿り蒸気とした。このとき、湿り蒸気の乾き度として、最も近い値はどれか。ただし、圧力0.20 MPaにおける飽和水、飽和水蒸気の比エンタルピーをそれぞれ505 kJ/kg、2706 kJ/kgとする。",
+      "choices": {
+        "1": "0.44",
+        "2": "0.64",
+        "3": "0.71",
+        "4": "0.76",
+        "5": "0.84"
+      },
+      "officialAnswer": 2,
+      "scoringException": null,
+      "explanation": "正答は2です。一定圧力で加えた熱により、単位質量のエンタルピーは505＋1400＝1905 kJ/kgです。乾き度x＝(1905−505)/(2706−505)＝1400/2201≒0.64です。",
+      "choiceExplanations": {
+        "1": "加熱量を蒸発潜熱2201 kJ/kgで割った約0.64と一致しません。",
+        "2": "適切です。湿り蒸気の比エンタルピーh＝h_f＋x(h_g−h_f)に従います。",
+        "3": "最終エンタルピーを飽和蒸気の値で単純に割るのでなく、液相からの増分を潜熱で割ります。",
+        "4": "与えられた加熱量は潜熱の約64%なので、乾き度0.76には達しません。",
+        "5": "0.84は必要な潜熱に対して加熱量を過大評価した値です。"
+      },
+      "hasRequiredFigure": false,
+      "sourceQuestionUrl": "https://www.engineer.or.jp/c_topics/011/attached/attach_11457_3.pdf",
+      "sourceQuestionPage": 16,
+      "sourceAnswerUrl": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_4.pdf",
+      "sourceAnswerPage": 3,
+      "sourceQuestionSha256": "41b79ddf3eef92ac0e00be3ad51a0e64e8b1814a86c55f2d234657cec7791112",
+      "sourceAnswerSha256": "6d4f5427838059ab50f0e7785f3f9cb2718fafaf96a8b74afcb332d969d7e311",
+      "sourceAttribution": "出典：公益社団法人日本技術士会 令和7年度技術士第一次試験 専門科目 機械部門 Ⅲ－24。改行・空白・句読点と数式表記を整理。必要図は公式PDFから直接切出し。解説は独自作成。",
+      "transcription": "Official PDF page visually checked against saved page images. Equations and table column headings transcribed explicitly; required diagrams are direct PDF crops.",
+      "needsIndependentReview": false,
+      "publicGo": false,
+      "contentReview": {
+        "status": "PASS",
+        "model": "gpt-6-astra",
+        "report": "reports/lq4e-20261104/independent-review7.md",
+        "scope": "BATCH_ONLY_NOT_FULL_QUALIFICATION"
+      }
+    },
+    {
+      "id": "gijutsushi1-kikai-2025-mechanical-III-25",
+      "printedNumber": "Ⅲ－25",
+      "questionNumber": 25,
+      "questionText": "熱機関に関する次の記述のうち、最も適切なものはどれか。",
+      "choices": {
+        "1": "オットーサイクルの理論サイクルは、断熱過程と等温過程で構成される。",
+        "2": "オットーサイクルの理論熱効率は、使用する作動流体の比熱比が小さいほど大きい。",
+        "3": "ディーゼルサイクルの理論サイクルは、断熱過程と等積過程、等圧過程で構成される。",
+        "4": "ディーゼルサイクルにおいて、圧縮比を低くすると理論熱効率は向上する。",
+        "5": "圧縮比が等しいとき、オットーサイクルの理論熱効率はディーゼルサイクルより小さい。"
+      },
+      "officialAnswer": 3,
+      "scoringException": null,
+      "explanation": "正答は3です。理想ディーゼルサイクルは断熱圧縮・等圧加熱・断熱膨張・等積放熱からなります。",
+      "choiceExplanations": {
+        "1": "オットーサイクルの熱の授受は等積過程です。等温過程ではありません。",
+        "2": "η＝1−1/r^(κ−1)なので、圧縮比一定なら比熱比κが大きいほど効率が高くなります。",
+        "3": "適切です。二つの断熱過程、等圧加熱、等積放熱で構成されます。",
+        "4": "他の条件を同じにした理論比較では、圧縮比を高くすると効率が向上します。",
+        "5": "同一圧縮比・同一比熱比なら、理想オットーサイクルの熱効率の方が高くなります。"
+      },
+      "hasRequiredFigure": false,
+      "sourceQuestionUrl": "https://www.engineer.or.jp/c_topics/011/attached/attach_11457_3.pdf",
+      "sourceQuestionPage": 16,
+      "sourceAnswerUrl": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_4.pdf",
+      "sourceAnswerPage": 3,
+      "sourceQuestionSha256": "41b79ddf3eef92ac0e00be3ad51a0e64e8b1814a86c55f2d234657cec7791112",
+      "sourceAnswerSha256": "6d4f5427838059ab50f0e7785f3f9cb2718fafaf96a8b74afcb332d969d7e311",
+      "sourceAttribution": "出典：公益社団法人日本技術士会 令和7年度技術士第一次試験 専門科目 機械部門 Ⅲ－25。改行・空白・句読点と数式表記を整理。必要図は公式PDFから直接切出し。解説は独自作成。",
+      "transcription": "Official PDF page visually checked against saved page images. Equations and table column headings transcribed explicitly; required diagrams are direct PDF crops.",
+      "needsIndependentReview": false,
+      "publicGo": false,
+      "contentReview": {
+        "status": "PASS",
+        "model": "gpt-6-astra",
+        "report": "reports/lq4e-20261104/independent-review7.md",
+        "scope": "BATCH_ONLY_NOT_FULL_QUALIFICATION"
+      }
+    },
+    {
+      "id": "gijutsushi1-kikai-2025-mechanical-III-26",
+      "printedNumber": "Ⅲ－26",
+      "questionNumber": 26,
+      "questionText": "厚さ4 mmのガラス窓がある。室内温度が20 ℃、外気温度が−10 ℃のとき、室内から外気への定常状態における熱流束として、最も近い値はどれか。ただし、ガラスの熱伝導率を1.1 W/(m・K)、室内側の熱伝達率を5.0 W/(m²・K)、外気側の熱伝達率を15 W/(m²・K)とする。",
+      "choices": {
+        "1": "0.11 W/m²",
+        "2": "7.7 W/m²",
+        "3": "30 W/m²",
+        "4": "37 W/m²",
+        "5": "111 W/m²"
+      },
+      "officialAnswer": 5,
+      "scoringException": null,
+      "explanation": "正答は5です。直列熱抵抗は1/5＋0.004/1.1＋1/15≒0.2703 m²K/W。熱流束は温度差30 Kをこの抵抗で割り、約111 W/m²です。",
+      "choiceExplanations": {
+        "1": "熱流束は約111 W/m²です。mmをmに換算し、三つの熱抵抗を加算します。",
+        "2": "室内外の対流抵抗を含む直列熱抵抗から求めた値と一致しません。",
+        "3": "30は温度差の数値です。熱流束には熱通過率を掛ける必要があります。",
+        "4": "約37 W/m²は本問の温度差30 Kと熱抵抗0.2703の比には一致しません。",
+        "5": "適切です。室内対流・ガラス伝導・外気対流の抵抗をすべて考慮しています。"
+      },
+      "hasRequiredFigure": false,
+      "sourceQuestionUrl": "https://www.engineer.or.jp/c_topics/011/attached/attach_11457_3.pdf",
+      "sourceQuestionPage": 17,
+      "sourceAnswerUrl": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_4.pdf",
+      "sourceAnswerPage": 3,
+      "sourceQuestionSha256": "41b79ddf3eef92ac0e00be3ad51a0e64e8b1814a86c55f2d234657cec7791112",
+      "sourceAnswerSha256": "6d4f5427838059ab50f0e7785f3f9cb2718fafaf96a8b74afcb332d969d7e311",
+      "sourceAttribution": "出典：公益社団法人日本技術士会 令和7年度技術士第一次試験 専門科目 機械部門 Ⅲ－26。改行・空白・句読点と数式表記を整理。必要図は公式PDFから直接切出し。解説は独自作成。",
+      "transcription": "Official PDF page visually checked against saved page images. Equations and table column headings transcribed explicitly; required diagrams are direct PDF crops.",
+      "needsIndependentReview": false,
+      "publicGo": false,
+      "contentReview": {
+        "status": "PASS",
+        "model": "gpt-6-astra",
+        "report": "reports/lq4e-20261104/independent-review7.md",
+        "scope": "BATCH_ONLY_NOT_FULL_QUALIFICATION"
+      }
+    },
+    {
+      "id": "gijutsushi1-kikai-2025-mechanical-III-27",
+      "printedNumber": "Ⅲ－27",
+      "questionNumber": 27,
+      "questionText": "比熱、比エントロピー、熱拡散率のSI単位の組合せとして、最も適切なものはどれか。",
+      "choices": {
+        "1": "比熱：J/(kg・K)／比エントロピー：J/(kg・K)／熱拡散率：W/(m・K)",
+        "2": "比熱：W/(kg・K)／比エントロピー：W/kg／熱拡散率：m²/s",
+        "3": "比熱：J/(kg・K)／比エントロピー：J/(kg・K)／熱拡散率：m²/s",
+        "4": "比熱：J/(m²・K)／比エントロピー：J/kg／熱拡散率：W/(m²・K)",
+        "5": "比熱：J/(m²・K)／比エントロピー：J/(kg・K)／熱拡散率：W/(m・K)"
+      },
+      "officialAnswer": 3,
+      "scoringException": null,
+      "explanation": "正答は3です。比熱は単位質量・単位温度当たりのエネルギー、比エントロピーも単位質量当たりでJ/(kg・K)です。熱拡散率α＝λ/(ρc)の単位はm²/sです。",
+      "choiceExplanations": {
+        "1": "熱拡散率の欄が熱伝導率の単位W/(m・K)になっています。",
+        "2": "比熱と比エントロピーにエネルギーJではなく仕事率Wを用いています。",
+        "3": "適切です。3物性ともSI単位が正しく対応しています。",
+        "4": "比熱は面積でなく質量当たり、比エントロピーには温度の分母が必要です。熱拡散率も異なります。",
+        "5": "比熱が面積当たりになり、熱拡散率には熱伝導率の単位を用いています。"
+      },
+      "hasRequiredFigure": false,
+      "sourceQuestionUrl": "https://www.engineer.or.jp/c_topics/011/attached/attach_11457_3.pdf",
+      "sourceQuestionPage": 17,
+      "sourceAnswerUrl": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_4.pdf",
+      "sourceAnswerPage": 3,
+      "sourceQuestionSha256": "41b79ddf3eef92ac0e00be3ad51a0e64e8b1814a86c55f2d234657cec7791112",
+      "sourceAnswerSha256": "6d4f5427838059ab50f0e7785f3f9cb2718fafaf96a8b74afcb332d969d7e311",
+      "sourceAttribution": "出典：公益社団法人日本技術士会 令和7年度技術士第一次試験 専門科目 機械部門 Ⅲ－27。改行・空白・句読点と数式表記を整理。必要図は公式PDFから直接切出し。解説は独自作成。",
+      "transcription": "Official PDF page visually checked against saved page images. Equations and table column headings transcribed explicitly; required diagrams are direct PDF crops.",
+      "needsIndependentReview": false,
+      "publicGo": false,
+      "contentReview": {
+        "status": "PASS",
+        "model": "gpt-6-astra",
+        "report": "reports/lq4e-20261104/independent-review7.md",
+        "scope": "BATCH_ONLY_NOT_FULL_QUALIFICATION"
+      }
+    },
+    {
+      "id": "gijutsushi1-kikai-2025-mechanical-III-28",
+      "printedNumber": "Ⅲ－28",
+      "questionNumber": 28,
+      "questionText": "長さ10 cmのなめらかな平板上を温度20 ℃の空気が板に水平に速度20 m/sで流れている。平板表面が一様な温度60 ℃に保たれているとき、その表面（片面）の平均ヌセルト数として、最も近い値はどれか。ただし、空気の動粘性係数は1.5×10^−5 m²/s、プラントル数は0.7とし、0.7^(1/3)≒0.89とする。",
+      "choices": {
+        "1": "28.0",
+        "2": "108",
+        "3": "170",
+        "4": "203",
+        "5": "215"
+      },
+      "officialAnswer": 5,
+      "scoringException": null,
+      "explanation": "正答は5です。Re_L＝UL/ν＝20×0.10/(1.5×10^−5)≒1.33×10^5で層流です。一様温度平板の平均Nu_L＝0.664Re_L^(1/2)Pr^(1/3)≒0.664×365.1×0.89≒216なので最も近い215です。",
+      "choiceExplanations": {
+        "1": "平均ヌセルト数の層流相関式による約216より大幅に小さい値です。",
+        "2": "0.332を使った局所ヌセルト数に近い値です。平均値では係数0.664を用います。",
+        "3": "Re_LとPrを代入した平均ヌセルト数約216と一致しません。",
+        "4": "与えられたPr^(1/3)＝0.89を使うと約216となり、選択肢5の方が近くなります。",
+        "5": "適切です。平均値の相関式から得る約216に最も近い数値です。"
+      },
+      "hasRequiredFigure": false,
+      "sourceQuestionUrl": "https://www.engineer.or.jp/c_topics/011/attached/attach_11457_3.pdf",
+      "sourceQuestionPage": 17,
+      "sourceAnswerUrl": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_4.pdf",
+      "sourceAnswerPage": 3,
+      "sourceQuestionSha256": "41b79ddf3eef92ac0e00be3ad51a0e64e8b1814a86c55f2d234657cec7791112",
+      "sourceAnswerSha256": "6d4f5427838059ab50f0e7785f3f9cb2718fafaf96a8b74afcb332d969d7e311",
+      "sourceAttribution": "出典：公益社団法人日本技術士会 令和7年度技術士第一次試験 専門科目 機械部門 Ⅲ－28。改行・空白・句読点と数式表記を整理。必要図は公式PDFから直接切出し。解説は独自作成。",
+      "transcription": "Official PDF page visually checked against saved page images. Equations and table column headings transcribed explicitly; required diagrams are direct PDF crops.",
+      "needsIndependentReview": false,
+      "publicGo": false,
+      "contentReview": {
+        "status": "PASS",
+        "model": "gpt-6-astra",
+        "report": "reports/lq4e-20261104/independent-review7.md",
+        "scope": "BATCH_ONLY_NOT_FULL_QUALIFICATION"
+      }
+    },
+    {
+      "id": "gijutsushi1-kikai-2025-mechanical-III-29",
+      "printedNumber": "Ⅲ－29",
+      "questionNumber": 29,
+      "questionText": "ある理想気体が、温度 T₁、圧力 P₁ から温度 T₂、圧力 P₂ へと準静的に変化した。このときの理想気体の比エントロピーの変化量 ds として、最も適切なものはどれか。ただし、理想気体の定積比熱、定圧比熱、気体定数をそれぞれ c_v、c_p、R とする。",
+      "choices": {
+        "1": "ds＝c_p ln(T₂/T₁)−R ln(P₂/P₁)",
+        "2": "ds＝c_p ln(P₂/P₁)−R ln(T₂/T₁)",
+        "3": "ds＝c_v ln(P₂/P₁)＋R ln(T₂/T₁)",
+        "4": "ds＝c_p ln(T₂/T₁)＋R ln(P₂/P₁)",
+        "5": "ds＝c_v ln(T₂/T₁)＋R ln(P₂/P₁)"
+      },
+      "officialAnswer": 1,
+      "scoringException": null,
+      "explanation": "正答は1です。理想気体についてTds＝dh−vdp、dh＝c_p dT、v＝RT/pよりds＝c_p dT/T−R dp/pです。比熱一定として初期状態から終状態まで積分します。原文のdsは有限変化量の記号として保持しています。",
+      "choiceExplanations": {
+        "1": "適切です。温度の対数比にc_p、圧力の対数比に−Rを掛けます。",
+        "2": "温度比と圧力比に掛かる係数・符号が入れ替わっています。",
+        "3": "c_vを用いる式なら体積の対数比を使います。この温度・圧力の式とは一致しません。",
+        "4": "圧力項の符号が逆です。温度一定の圧縮ではエントロピーが減少します。",
+        "5": "温度・圧力を用いる式ではc_pが必要であり、圧力項も負号です。"
+      },
+      "hasRequiredFigure": false,
+      "sourceQuestionUrl": "https://www.engineer.or.jp/c_topics/011/attached/attach_11457_3.pdf",
+      "sourceQuestionPage": 18,
+      "sourceAnswerUrl": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_4.pdf",
+      "sourceAnswerPage": 3,
+      "sourceQuestionSha256": "41b79ddf3eef92ac0e00be3ad51a0e64e8b1814a86c55f2d234657cec7791112",
+      "sourceAnswerSha256": "6d4f5427838059ab50f0e7785f3f9cb2718fafaf96a8b74afcb332d969d7e311",
+      "sourceAttribution": "出典：公益社団法人日本技術士会 令和7年度技術士第一次試験 専門科目 機械部門 Ⅲ－29。改行・空白・句読点と数式表記を整理。必要図は公式PDFから直接切出し。解説は独自作成。",
+      "transcription": "Official PDF page visually checked against saved page images. Equations and table column headings transcribed explicitly; required diagrams are direct PDF crops.",
+      "needsIndependentReview": false,
+      "publicGo": false,
+      "contentReview": {
+        "status": "PASS",
+        "model": "gpt-6-astra",
+        "report": "reports/lq4e-20261104/independent-review7.md",
+        "scope": "BATCH_ONLY_NOT_FULL_QUALIFICATION"
+      }
+    },
+    {
+      "id": "gijutsushi1-kikai-2025-mechanical-III-30",
+      "printedNumber": "Ⅲ－30",
+      "questionNumber": 30,
+      "questionText": "静止した空気中を、直径70 mmの球が速度140 km/hで飛んでいる。この球に働く抗力として、最も近い値はどれか。ただし、球の断面積で定義される抗力係数を0.4、空気の密度を1.20 kg/m³とする。",
+      "choices": {
+        "1": "0.04 N",
+        "2": "0.07 N",
+        "3": "1.40 N",
+        "4": "2.80 N",
+        "5": "11.2 N"
+      },
+      "officialAnswer": 3,
+      "scoringException": null,
+      "explanation": "正答は3です。U＝140/3.6≒38.89 m/s、A＝π(0.070)²/4≒0.003848 m²。抗力D＝C_DρU²A/2≒1.40 Nです。",
+      "choiceExplanations": {
+        "1": "速度をm/sに換算し、動圧と投影断面積を用いた約1.40 Nと一致しません。",
+        "2": "約1.40 Nより大幅に小さい値です。面積は直径70 mmからπd²/4で求めます。",
+        "3": "適切です。抗力係数×動圧×投影面積の値です。",
+        "4": "動圧に必要な1/2を忘れると約2.80 Nになります。",
+        "5": "抗力式に与えられた速度・直径をSI単位で代入した値の約8倍です。"
+      },
+      "hasRequiredFigure": false,
+      "sourceQuestionUrl": "https://www.engineer.or.jp/c_topics/011/attached/attach_11457_3.pdf",
+      "sourceQuestionPage": 18,
+      "sourceAnswerUrl": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_4.pdf",
+      "sourceAnswerPage": 3,
+      "sourceQuestionSha256": "41b79ddf3eef92ac0e00be3ad51a0e64e8b1814a86c55f2d234657cec7791112",
+      "sourceAnswerSha256": "6d4f5427838059ab50f0e7785f3f9cb2718fafaf96a8b74afcb332d969d7e311",
+      "sourceAttribution": "出典：公益社団法人日本技術士会 令和7年度技術士第一次試験 専門科目 機械部門 Ⅲ－30。改行・空白・句読点と数式表記を整理。必要図は公式PDFから直接切出し。解説は独自作成。",
+      "transcription": "Official PDF page visually checked against saved page images. Equations and table column headings transcribed explicitly; required diagrams are direct PDF crops.",
+      "needsIndependentReview": false,
+      "publicGo": false,
+      "contentReview": {
+        "status": "PASS",
+        "model": "gpt-6-astra",
+        "report": "reports/lq4e-20261104/independent-review7.md",
+        "scope": "BATCH_ONLY_NOT_FULL_QUALIFICATION"
+      }
+    },
+    {
+      "id": "gijutsushi1-kikai-2025-mechanical-III-31",
+      "printedNumber": "Ⅲ－31",
+      "questionNumber": 31,
+      "questionText": "一様な速度で流れる空気中に直径5 mmの円柱状アンテナが流れに直交して置かれている。空気の動粘性係数は1.50×10^−5 m²/sとし、円柱のレイノルズ数は2.00×10^4である。このアンテナから放出される渦のストローハル数は0.2であった。放出される渦の周波数として、最も近い値はどれか。",
+      "choices": {
+        "1": "24 Hz",
+        "2": "240 Hz",
+        "3": "1.2 kHz",
+        "4": "2.4 kHz",
+        "5": "9.6 kHz"
+      },
+      "officialAnswer": 4,
+      "scoringException": null,
+      "explanation": "正答は4です。Re＝Ud/νよりU＝(2.00×10^4)(1.50×10^−5)/0.005＝60 m/s。St＝fd/Uからf＝0.2×60/0.005＝2400 Hz＝2.4 kHzです。",
+      "choiceExplanations": {
+        "1": "直径5 mmを0.005 mに換算すると2400 Hzとなり、この値の100倍です。",
+        "2": "計算値2400 Hzの1/10です。ReとStの両式で直径の単位をそろえます。",
+        "3": "正しい値の半分です。ストローハル数の代表長さには直径5 mmを使います。",
+        "4": "適切です。レイノルズ数から流速を求め、ストローハル数から周波数を計算しています。",
+        "5": "正しい値の4倍です。直径を半径に取り違えると長さの二乗依存によりこの誤差が生じます。"
+      },
+      "hasRequiredFigure": false,
+      "sourceQuestionUrl": "https://www.engineer.or.jp/c_topics/011/attached/attach_11457_3.pdf",
+      "sourceQuestionPage": 18,
+      "sourceAnswerUrl": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_4.pdf",
+      "sourceAnswerPage": 3,
+      "sourceQuestionSha256": "41b79ddf3eef92ac0e00be3ad51a0e64e8b1814a86c55f2d234657cec7791112",
+      "sourceAnswerSha256": "6d4f5427838059ab50f0e7785f3f9cb2718fafaf96a8b74afcb332d969d7e311",
+      "sourceAttribution": "出典：公益社団法人日本技術士会 令和7年度技術士第一次試験 専門科目 機械部門 Ⅲ－31。改行・空白・句読点と数式表記を整理。必要図は公式PDFから直接切出し。解説は独自作成。",
+      "transcription": "Official PDF page visually checked against saved page images. Equations and table column headings transcribed explicitly; required diagrams are direct PDF crops.",
+      "needsIndependentReview": false,
+      "publicGo": false,
+      "contentReview": {
+        "status": "PASS",
+        "model": "gpt-6-astra",
+        "report": "reports/lq4e-20261104/independent-review7.md",
+        "scope": "BATCH_ONLY_NOT_FULL_QUALIFICATION"
+      }
+    },
+    {
+      "id": "gijutsushi1-kikai-2025-mechanical-III-32",
+      "printedNumber": "Ⅲ－32",
+      "questionNumber": 32,
+      "questionText": "内径20.0 mmの直円管内に、動粘性係数が1.00×10^−5 m²/sの流体が流れている。流量は0.50 L/sであった。この流れの助走区間の長さとして、最も近い値はどれか。",
+      "choices": {
+        "1": "0.02 m",
+        "2": "0.04 m",
+        "3": "0.60 m",
+        "4": "2.0 m",
+        "5": "4.0 m"
+      },
+      "officialAnswer": null,
+      "scoringException": "selected-question-full-credit",
+      "explanation": "公式採点は「当該問題を選択した受験者全員に得点を与える」です。通常の正答番号は設定しません。流量Q＝0.00050 m³/sとD＝0.0200 mから平均速度U≒1.59 m/s、Re≒3180となり、層流・乱流の遷移域です。層流か乱流かで助走区間の相関が異なり、本文の条件から単一の通常正答を採点しません。",
+      "choiceExplanations": {
+        "1": "公式には全員得点です。管径そのものに等しい長さですが、助走区間を管径と同一とはできません。",
+        "2": "公式には全員得点です。管径の2倍だけでは、与えられた流れの助走区間を一意に決められません。",
+        "3": "公式には全員得点です。特定の乱流の見積りだけを用いて通常正答とは扱いません。",
+        "4": "公式には全員得点です。遷移域の条件から、この長さを唯一の正答とは定めません。",
+        "5": "公式には全員得点です。層流の見積りを適用するかどうか自体に問題があるため、通常正答には設定しません。"
+      },
+      "hasRequiredFigure": false,
+      "sourceQuestionUrl": "https://www.engineer.or.jp/c_topics/011/attached/attach_11457_3.pdf",
+      "sourceQuestionPage": 18,
+      "sourceAnswerUrl": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_4.pdf",
+      "sourceAnswerPage": 3,
+      "sourceQuestionSha256": "41b79ddf3eef92ac0e00be3ad51a0e64e8b1814a86c55f2d234657cec7791112",
+      "sourceAnswerSha256": "6d4f5427838059ab50f0e7785f3f9cb2718fafaf96a8b74afcb332d969d7e311",
+      "sourceAttribution": "出典：公益社団法人日本技術士会 令和7年度技術士第一次試験 専門科目 機械部門 Ⅲ－32。改行・空白・句読点と数式表記を整理。必要図は公式PDFから直接切出し。解説は独自作成。",
+      "transcription": "Official PDF page visually checked against saved page images. Equations and table column headings transcribed explicitly; required diagrams are direct PDF crops.",
+      "needsIndependentReview": false,
+      "publicGo": false,
+      "contentReview": {
+        "status": "PASS",
+        "model": "gpt-6-astra",
+        "report": "reports/lq4e-20261104/independent-review7.md",
+        "scope": "BATCH_ONLY_NOT_FULL_QUALIFICATION"
+      }
+    },
+    {
+      "id": "gijutsushi1-kikai-2025-mechanical-III-33",
+      "printedNumber": "Ⅲ－33",
+      "questionNumber": 33,
+      "questionText": "動力0.60 kWの軸流ファンが壁に取り付けられ、室内の空気を室外に排出している。空気の排出口は直径0.3 mの円形である。排出口から秒速22 mで噴き出しているものとし、空気の密度を1.23 kg/m³とする。室内は広く、流入する空気の速さは0とみなせる。またファンの上流側と下流側は大気圧とする。このファンの効率として、最も近い値はどれか。",
+      "choices": {
+        "1": "0.03",
+        "2": "0.04",
+        "3": "0.07",
+        "4": "0.77",
+        "5": "1.00"
+      },
+      "officialAnswer": 4,
+      "scoringException": null,
+      "explanation": "正答は4です。有効動力は空気の運動エネルギー流量ρAU³/2です。A＝π×0.3²/4より約463 W。効率η＝463/600≒0.77です。",
+      "choiceExplanations": {
+        "1": "運動エネルギー流量約463 Wを入力600 Wで割ると0.77であり、この値ではありません。",
+        "2": "入力動力をWに換算し、体積流量AUと動圧ρU²/2の積を求めると約0.77です。",
+        "3": "有効動力は約0.463 kWであり、0.60 kWとの比は0.07ではありません。",
+        "4": "適切です。圧力差の項がなく、出口の運動エネルギー流量を入力で割ります。",
+        "5": "損失0を仮定するのでなく、与えられた出口条件から得る有効動力と比較する必要があります。"
+      },
+      "hasRequiredFigure": false,
+      "sourceQuestionUrl": "https://www.engineer.or.jp/c_topics/011/attached/attach_11457_3.pdf",
+      "sourceQuestionPage": 19,
+      "sourceAnswerUrl": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_4.pdf",
+      "sourceAnswerPage": 3,
+      "sourceQuestionSha256": "41b79ddf3eef92ac0e00be3ad51a0e64e8b1814a86c55f2d234657cec7791112",
+      "sourceAnswerSha256": "6d4f5427838059ab50f0e7785f3f9cb2718fafaf96a8b74afcb332d969d7e311",
+      "sourceAttribution": "出典：公益社団法人日本技術士会 令和7年度技術士第一次試験 専門科目 機械部門 Ⅲ－33。改行・空白・句読点と数式表記を整理。必要図は公式PDFから直接切出し。解説は独自作成。",
+      "transcription": "Official PDF page visually checked against saved page images. Equations and table column headings transcribed explicitly; required diagrams are direct PDF crops.",
+      "needsIndependentReview": false,
+      "publicGo": false,
+      "contentReview": {
+        "status": "PASS",
+        "model": "gpt-6-astra",
+        "report": "reports/lq4e-20261104/independent-review7.md",
+        "scope": "BATCH_ONLY_NOT_FULL_QUALIFICATION"
+      }
+    },
+    {
+      "id": "gijutsushi1-kikai-2025-mechanical-III-34",
+      "printedNumber": "Ⅲ－34",
+      "questionNumber": 34,
+      "questionText": "xy平面上の2次元非圧縮流を考える。x方向成分の速度 u、y方向成分の速度 v がそれぞれ\nu＝ax＋by\nv＝cx＋dy\nと表されるとき、連続の式を満たすための実定数 a、b、c、d の関係を表す式として、最も適切なものはどれか。",
+      "choices": {
+        "1": "a＋b＋c＋d＝0",
+        "2": "a−d＝0",
+        "3": "a＋d＝0",
+        "4": "b−c＝0",
+        "5": "b＋c＝0"
+      },
+      "officialAnswer": 3,
+      "scoringException": null,
+      "explanation": "正答は3です。非圧縮流の連続の式は∂u/∂x＋∂v/∂y＝0。与式から∂u/∂x＝a、∂v/∂y＝dなのでa＋d＝0です。",
+      "choiceExplanations": {
+        "1": "uのy微分とvのx微分は連続の式には入らないため、bとcを加算しません。",
+        "2": "二つの偏微分は差でなく和であり、a＋d＝0です。",
+        "3": "適切です。速度場の発散が0となる条件です。",
+        "4": "b−cは渦度に関係する組合せであり、非圧縮性の条件とは異なります。",
+        "5": "交差方向の係数の和では、速度場の発散を0にできません。"
+      },
+      "hasRequiredFigure": false,
+      "sourceQuestionUrl": "https://www.engineer.or.jp/c_topics/011/attached/attach_11457_3.pdf",
+      "sourceQuestionPage": 19,
+      "sourceAnswerUrl": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_4.pdf",
+      "sourceAnswerPage": 3,
+      "sourceQuestionSha256": "41b79ddf3eef92ac0e00be3ad51a0e64e8b1814a86c55f2d234657cec7791112",
+      "sourceAnswerSha256": "6d4f5427838059ab50f0e7785f3f9cb2718fafaf96a8b74afcb332d969d7e311",
+      "sourceAttribution": "出典：公益社団法人日本技術士会 令和7年度技術士第一次試験 専門科目 機械部門 Ⅲ－34。改行・空白・句読点と数式表記を整理。必要図は公式PDFから直接切出し。解説は独自作成。",
+      "transcription": "Official PDF page visually checked against saved page images. Equations and table column headings transcribed explicitly; required diagrams are direct PDF crops.",
+      "needsIndependentReview": false,
+      "publicGo": false,
+      "contentReview": {
+        "status": "PASS",
+        "model": "gpt-6-astra",
+        "report": "reports/lq4e-20261104/independent-review7.md",
+        "scope": "BATCH_ONLY_NOT_FULL_QUALIFICATION"
+      }
+    },
+    {
+      "id": "gijutsushi1-kikai-2025-mechanical-III-35",
+      "printedNumber": "Ⅲ－35",
+      "questionNumber": 35,
+      "questionText": "水平に設置した直径0.1 mの長い直円管で、流量10 L/sの油（粘性係数は0.085 Pa・s、密度は850 kg/m³）を輸送している。完全発達領域にある測定区間長さは100 mとする。この測定区間の上流側と下流側でそれぞれ圧力を測定した。圧力差として、最も近い値はどれか。",
+      "choices": {
+        "1": "6.49 kPa",
+        "2": "8.58 kPa",
+        "3": "34.5 kPa",
+        "4": "69.2 kPa",
+        "5": "346 kPa"
+      },
+      "officialAnswer": 3,
+      "scoringException": null,
+      "explanation": "正答は3です。Q＝0.010 m³/s、平均速度U＝4Q/(πD²)≒1.273 m/s、Re＝ρUD/μ≒1273で層流です。ハーゲン・ポアズイユ則Δp＝128μLQ/(πD⁴)≒34632 Pa≒34.6 kPaです。",
+      "choiceExplanations": {
+        "1": "層流の圧力損失式に与えられた粘性係数・長さ・流量を代入した約34.6 kPaと一致しません。",
+        "2": "平均速度と管径からRe約1273を確認し、層流式を用いると約34.6 kPaです。",
+        "3": "適切です。完全発達層流の圧力差約34.6 kPaに最も近い値です。",
+        "4": "正しい値の約2倍です。層流の係数128と直径の4乗を用います。",
+        "5": "正しい値の約10倍です。流量10 L/sは0.010 m³/sに換算します。"
+      },
+      "hasRequiredFigure": false,
+      "sourceQuestionUrl": "https://www.engineer.or.jp/c_topics/011/attached/attach_11457_3.pdf",
+      "sourceQuestionPage": 19,
+      "sourceAnswerUrl": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_4.pdf",
+      "sourceAnswerPage": 3,
+      "sourceQuestionSha256": "41b79ddf3eef92ac0e00be3ad51a0e64e8b1814a86c55f2d234657cec7791112",
+      "sourceAnswerSha256": "6d4f5427838059ab50f0e7785f3f9cb2718fafaf96a8b74afcb332d969d7e311",
+      "sourceAttribution": "出典：公益社団法人日本技術士会 令和7年度技術士第一次試験 専門科目 機械部門 Ⅲ－35。改行・空白・句読点と数式表記を整理。必要図は公式PDFから直接切出し。解説は独自作成。",
+      "transcription": "Official PDF page visually checked against saved page images. Equations and table column headings transcribed explicitly; required diagrams are direct PDF crops.",
+      "needsIndependentReview": false,
+      "publicGo": false,
+      "contentReview": {
+        "status": "PASS",
+        "model": "gpt-6-astra",
+        "report": "reports/lq4e-20261104/independent-review7.md",
+        "scope": "BATCH_ONLY_NOT_FULL_QUALIFICATION"
+      }
+    }
+  ]
+}

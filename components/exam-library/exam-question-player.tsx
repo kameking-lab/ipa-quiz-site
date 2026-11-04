@@ -621,7 +621,7 @@ export function ExamQuestionPlayer({
               <div className="mt-5">
                 <SurveyAssistantReferencePanel notice={current.referenceNotice ?? "参照専用です。採点・履歴・復習には算入しません。"} explanation={current.explanation ?? ""} reasons={current.referenceReasons ?? []} officialKey={current.officialKey} />
                 <a href={officialPdfPageUrl(current.originalPdf ?? pdfUrl, sourcePage)} target="_blank" rel="noopener noreferrer" className={linkClass}>原本問題PDFを確認</a>
-                {current.answerPdf ? <a href={officialPdfPageUrl(current.answerPdf, 1)} target="_blank" rel="noopener noreferrer" className={linkClass}>公式解答PDFの記録を確認</a> : null}
+                {current.answerPdf ? <a href={current.answerPdf} target="_blank" rel="noopener noreferrer" className={linkClass}>公式解答PDFの記録を確認</a> : null}
               </div>
             ) : current.choiceCount > 0 ? (
               <fieldset className="mt-5" aria-describedby="exam-answer-help">
@@ -764,7 +764,7 @@ export function ExamQuestionPlayer({
                     </div>
                   ) : null}
                   <div className="mt-1 flex flex-wrap gap-x-4">
-                    {current.answerPdf ? <a href={officialPdfPageUrl(current.answerPdf, 1)} target="_blank" rel="noopener noreferrer" className={linkClass}>公式解答PDFを確認</a> : null}
+                    {current.answerPdf ? <a href={current.answerPdf} target="_blank" rel="noopener noreferrer" className={linkClass}>公式解答PDFを確認</a> : null}
                     {answerPage ? (
                       <a href={officialPdfPageUrl(pdfUrl, answerPage)} target="_blank" rel="noopener noreferrer" className={linkClass}>
                         公式の正答・正答例を確認（PDF {answerPage}ページ）

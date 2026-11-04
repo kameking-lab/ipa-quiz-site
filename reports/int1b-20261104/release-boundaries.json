@@ -1,0 +1,62 @@
+{
+  "generatedAt": "2026-11-04T06:33:53.091278+00:00",
+  "codeHead": "f8fb1871c4d55e81202e719d7ec49935a08e58ef",
+  "base": "00e49b94060cc2671e9d098df91d653a4ed3ffe2",
+  "checkpoint": "23a94a195",
+  "checkpointPreserved": true,
+  "iosBranchIsAncestor": false,
+  "forbiddenPaths": [
+    "lib/ai",
+    "app/api/copilot",
+    "app/api/scoring",
+    "app/api/essay-grade",
+    "app/api/mobile",
+    "mobile",
+    "prisma",
+    "app/api/account/delete",
+    "lib/auth/delete-account.ts"
+  ],
+  "forbiddenChangedFiles": [],
+  "securitySource": "7ab33c41a",
+  "securityIntegrationCommit": "41282ffc8",
+  "selectedSecurityFiles": [
+    "__tests__/components/QuizPlayer.swipe.test.tsx",
+    "__tests__/monitoring/sentry.test.ts",
+    "__tests__/security/cron-boundary.test.ts",
+    "__tests__/security/email-boundary.test.ts",
+    "__tests__/security/nodemailer-compatibility.test.ts",
+    "__tests__/security/sentry-boundary.test.ts",
+    "__tests__/sync/history-ownership.test.ts",
+    "app/account/notifications/NotificationSettings.tsx",
+    "app/api/contact/route.ts",
+    "app/api/cron/health-check/route.ts",
+    "app/api/email/route.ts",
+    "lib/monitoring/privacy.ts",
+    "lib/monitoring/sentry.ts",
+    "lib/notify/slack.ts",
+    "package.json",
+    "pnpm-lock.yaml",
+    "pnpm-workspace.yaml",
+    "sentry.client.config.ts",
+    "sentry.edge.config.ts",
+    "sentry.server.config.ts"
+  ],
+  "deferredSecurityFindings": [
+    "SEC1-02",
+    "SEC1-05"
+  ],
+  "deferredScope": [
+    "AI budget/cost guard and four AI APIs",
+    "iOS branch, patch and overlay"
+  ],
+  "operationsPerformed": {
+    "databaseConnection": false,
+    "migration": false,
+    "push": false,
+    "pullRequest": false,
+    "mainMerge": false,
+    "deploy": false,
+    "vercelOperation": false
+  },
+  "iosMergeBase": "00e49b94060cc2671e9d098df91d653a4ed3ffe2"
+}

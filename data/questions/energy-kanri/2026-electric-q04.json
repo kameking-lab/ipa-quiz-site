@@ -1,0 +1,694 @@
+[
+  {
+    "id": "energy-kanri-2026-5-q04-s01",
+    "exam": "energy-kanri",
+    "session": "senmon",
+    "year": 2026,
+    "season": "annual",
+    "qNumber": 4,
+    "officialAnswerNumber": "1",
+    "type": "multiple-choice",
+    "category": "電気及び電子理論",
+    "topicTags": [
+      "電気分野",
+      "電気及び電子理論"
+    ],
+    "difficulty": 2,
+    "question": "1) 交流電源の瞬時電圧波形vと、電圧に対し位相がφ遅れた瞬時電流波形iは、電圧vを位相の基準として、それぞれ次式のように表され、図1(a)のように示される。\n① v＝√2 V sinωt\n② i＝√2 I sin(ωt−φ)\n式②を展開すると次式になる。\ni＝√2 I cosφ sinωt＋√2×［1］×sin(ωt−π/2)\n＝√2 Iₚ sinωt＋√2 I_q sin(ωt−π/2) …③\n式③において、式①との比較から、Iₚは電圧と同位相の有効電流成分の実効値、I_qは位相がπ/2遅れた無効電流成分の実効値である。\n図1(b)に、電源電圧波形vに対して、A～Cの波形のうちの二つは式③で表される有効電流成分及び無効電流成分の波形を示す。このうち、式③の右辺の第2項に相当する波形はA～Cのうちの［2］である。",
+    "questionNotice": "原問の解答番号1を解答してください。",
+    "choices": {
+      "ア": "I cosφ",
+      "イ": "I sinφ",
+      "ウ": "I(1−cosφ)",
+      "エ": "I(1−sinφ)",
+      "オ": "I(cosφ−sinφ)"
+    },
+    "answer": "イ",
+    "explanation": "加法定理よりi=√2 I cosφ sinωt−√2 I sinφ cosωt。sin(ωt−π/2)=−cosωtなので第2項の係数はI sinφ。",
+    "choiceExplanations": {
+      "ア": "I cosφは電圧と同位相の有効電流成分で、第1項の係数である。",
+      "イ": "加法定理よりi=√2 I cosφ sinωt−√2 I sinφ cosωt。sin(ωt−π/2)=−cosωtなので第2項の係数はI sinφ。",
+      "ウ": "無効電流成分の係数はI sinφであり、1−cosφではない。",
+      "エ": "φ=0では無効電流が0のはずだが、この候補はIになり不適切。",
+      "オ": "有効成分と無効成分の差ではなく、無効成分I sinφを用いる。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.eccj.or.jp/mgr1/test_past/pdf/r08/r08_5.pdf#page=2",
+    "sourceAnswerUrl": "https://www.eccj.or.jp/mgr1/test_past/pdf/r08/r08_k_5.pdf",
+    "sourceAttribution": "出典：一般財団法人省エネルギーセンター 第48回エネルギー管理士試験 電気分野 課目Ⅱ 問題4。解説は過去問AIの独自作成。",
+    "license": "ECCJ-owner-approved",
+    "isCalculation": true,
+    "originalContent": {
+      "body": "1) 交流電源の瞬時電圧波形vと、電圧に対し位相がφ遅れた瞬時電流波形iは、電圧vを位相の基準として、それぞれ次式のように表され、図1(a)のように示される。\n① v＝√2 V sinωt\n② i＝√2 I sin(ωt−φ)\n式②を展開すると次式になる。\ni＝√2 I cosφ sinωt＋√2×［1］×sin(ωt−π/2)\n＝√2 Iₚ sinωt＋√2 I_q sin(ωt−π/2) …③\n式③において、式①との比較から、Iₚは電圧と同位相の有効電流成分の実効値、I_qは位相がπ/2遅れた無効電流成分の実効値である。\n図1(b)に、電源電圧波形vに対して、A～Cの波形のうちの二つは式③で表される有効電流成分及び無効電流成分の波形を示す。このうち、式③の右辺の第2項に相当する波形はA～Cのうちの［2］である。",
+      "choices": {
+        "ア": "I cosφ",
+        "イ": "I sinφ",
+        "ウ": "I(1−cosφ)",
+        "エ": "I(1−sinφ)",
+        "オ": "I(cosφ−sinφ)"
+      },
+      "sharedPassages": [
+        {
+          "label": "問題4 共通指示",
+          "text": "（電気及び電子理論）\n問題4 次の各文章の［1］～［10］の中に入れるべき最も適切な字句等をそれぞれの解答群から選び、その記号を答えよ。（配点計50点）"
+        },
+        {
+          "label": "(1) 単相交流の条件と三角関数の定理",
+          "text": "(1) 電圧の実効値がV、電流の実効値がI、角周波数がωの単相交流電源から負荷に供給される電力について考える。なお、三角関数について以下の定理が成り立つ。\nsin(A±B)＝sinA cosB±cosA sinB\ncos(A±B)＝cosA cosB∓sinA sinB"
+        }
+      ]
+    },
+    "imageUrls": [
+      "/images/energy-kanri/2026/electric-q04-waveforms.png"
+    ],
+    "imageAltTexts": [
+      "図1(a)は瞬時電圧vと位相φ遅れの電流i、(b)はvと波形A～C、(c)は電力の波形D～Fを示す。横軸はωtで0～4π。Aはvと同位相、Bはπ/2遅れ、Cはvと逆位相。DとFは正負に振動し、Eは常に非負でπごとに0になる。"
+    ]
+  },
+  {
+    "id": "energy-kanri-2026-5-q04-s02",
+    "exam": "energy-kanri",
+    "session": "senmon",
+    "year": 2026,
+    "season": "annual",
+    "qNumber": 4,
+    "officialAnswerNumber": "2",
+    "type": "multiple-choice",
+    "category": "電気及び電子理論",
+    "topicTags": [
+      "電気分野",
+      "電気及び電子理論"
+    ],
+    "difficulty": 2,
+    "question": "1) 交流電源の瞬時電圧波形vと、電圧に対し位相がφ遅れた瞬時電流波形iは、電圧vを位相の基準として、それぞれ次式のように表され、図1(a)のように示される。\n① v＝√2 V sinωt\n② i＝√2 I sin(ωt−φ)\n式②を展開すると次式になる。\ni＝√2 I cosφ sinωt＋√2×［1］×sin(ωt−π/2)\n＝√2 Iₚ sinωt＋√2 I_q sin(ωt−π/2) …③\n式③において、式①との比較から、Iₚは電圧と同位相の有効電流成分の実効値、I_qは位相がπ/2遅れた無効電流成分の実効値である。\n図1(b)に、電源電圧波形vに対して、A～Cの波形のうちの二つは式③で表される有効電流成分及び無効電流成分の波形を示す。このうち、式③の右辺の第2項に相当する波形はA～Cのうちの［2］である。",
+    "questionNotice": "原問の解答番号2を解答してください。",
+    "choices": {
+      "ア": "A",
+      "イ": "B",
+      "ウ": "C"
+    },
+    "answer": "イ",
+    "explanation": "第2項は電圧よりπ/2遅れる。図のBはωt=0で負の最大値、π/2で0となる波形である。",
+    "choiceExplanations": {
+      "ア": "Aは電圧と同位相の電流成分で、第1項に対応する。",
+      "イ": "第2項は電圧よりπ/2遅れる。図のBはωt=0で負の最大値、π/2で0となる波形である。",
+      "ウ": "Cは電圧と逆位相であり、π/2遅れの成分ではない。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.eccj.or.jp/mgr1/test_past/pdf/r08/r08_5.pdf#page=2",
+    "sourceAnswerUrl": "https://www.eccj.or.jp/mgr1/test_past/pdf/r08/r08_k_5.pdf",
+    "sourceAttribution": "出典：一般財団法人省エネルギーセンター 第48回エネルギー管理士試験 電気分野 課目Ⅱ 問題4。解説は過去問AIの独自作成。",
+    "license": "ECCJ-owner-approved",
+    "isCalculation": false,
+    "originalContent": {
+      "body": "1) 交流電源の瞬時電圧波形vと、電圧に対し位相がφ遅れた瞬時電流波形iは、電圧vを位相の基準として、それぞれ次式のように表され、図1(a)のように示される。\n① v＝√2 V sinωt\n② i＝√2 I sin(ωt−φ)\n式②を展開すると次式になる。\ni＝√2 I cosφ sinωt＋√2×［1］×sin(ωt−π/2)\n＝√2 Iₚ sinωt＋√2 I_q sin(ωt−π/2) …③\n式③において、式①との比較から、Iₚは電圧と同位相の有効電流成分の実効値、I_qは位相がπ/2遅れた無効電流成分の実効値である。\n図1(b)に、電源電圧波形vに対して、A～Cの波形のうちの二つは式③で表される有効電流成分及び無効電流成分の波形を示す。このうち、式③の右辺の第2項に相当する波形はA～Cのうちの［2］である。",
+      "choices": {
+        "ア": "A",
+        "イ": "B",
+        "ウ": "C"
+      },
+      "sharedPassages": [
+        {
+          "label": "問題4 共通指示",
+          "text": "（電気及び電子理論）\n問題4 次の各文章の［1］～［10］の中に入れるべき最も適切な字句等をそれぞれの解答群から選び、その記号を答えよ。（配点計50点）"
+        },
+        {
+          "label": "(1) 単相交流の条件と三角関数の定理",
+          "text": "(1) 電圧の実効値がV、電流の実効値がI、角周波数がωの単相交流電源から負荷に供給される電力について考える。なお、三角関数について以下の定理が成り立つ。\nsin(A±B)＝sinA cosB±cosA sinB\ncos(A±B)＝cosA cosB∓sinA sinB"
+        }
+      ]
+    },
+    "imageUrls": [
+      "/images/energy-kanri/2026/electric-q04-waveforms.png"
+    ],
+    "imageAltTexts": [
+      "図1(a)は瞬時電圧vと位相φ遅れの電流i、(b)はvと波形A～C、(c)は電力の波形D～Fを示す。横軸はωtで0～4π。Aはvと同位相、Bはπ/2遅れ、Cはvと逆位相。DとFは正負に振動し、Eは常に非負でπごとに0になる。"
+    ]
+  },
+  {
+    "id": "energy-kanri-2026-5-q04-s03",
+    "exam": "energy-kanri",
+    "session": "senmon",
+    "year": 2026,
+    "season": "annual",
+    "qNumber": 4,
+    "officialAnswerNumber": "3",
+    "type": "multiple-choice",
+    "category": "電気及び電子理論",
+    "topicTags": [
+      "電気分野",
+      "電気及び電子理論"
+    ],
+    "difficulty": 2,
+    "question": "2) 式①と式②から、交流電力の瞬時値pは次の式のように表される。\np＝vi＝2VI sinωt sin(ωt−φ)\n＝VIₚ×［3］−VI_q sin2ωt …④\nここで、式④における右辺の第1項を有効電力の瞬時値、第2項を無効電力の瞬時値と呼ぶことにする。",
+    "questionNotice": "原問の解答番号3を解答してください。",
+    "choices": {
+      "ア": "cos2ωt",
+      "イ": "sin2ωt",
+      "ウ": "(1−cos2ωt)",
+      "エ": "(1−sin2ωt)",
+      "オ": "(cos2ωt−sin2ωt)"
+    },
+    "answer": "ウ",
+    "explanation": "有効成分は2VIₚ sin²ωt=VIₚ(1−cos2ωt)。二倍角の公式から求まる。",
+    "choiceExplanations": {
+      "ア": "有効成分には直流分VIₚがあり、cos2ωtだけでは平均値0となってしまう。",
+      "イ": "sin2ωtは平均0であり、有効電力の平均値を表せない。",
+      "ウ": "有効成分は2VIₚ sin²ωt=VIₚ(1−cos2ωt)。二倍角の公式から求まる。",
+      "エ": "二倍角の公式は2sin²ωt=1−cos2ωtであり、sinではない。",
+      "オ": "この候補は平均0で、正の平均有効電力を含められない。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.eccj.or.jp/mgr1/test_past/pdf/r08/r08_5.pdf#page=2",
+    "sourceAnswerUrl": "https://www.eccj.or.jp/mgr1/test_past/pdf/r08/r08_k_5.pdf",
+    "sourceAttribution": "出典：一般財団法人省エネルギーセンター 第48回エネルギー管理士試験 電気分野 課目Ⅱ 問題4。解説は過去問AIの独自作成。",
+    "license": "ECCJ-owner-approved",
+    "isCalculation": true,
+    "originalContent": {
+      "body": "2) 式①と式②から、交流電力の瞬時値pは次の式のように表される。\np＝vi＝2VI sinωt sin(ωt−φ)\n＝VIₚ×［3］−VI_q sin2ωt …④\nここで、式④における右辺の第1項を有効電力の瞬時値、第2項を無効電力の瞬時値と呼ぶことにする。",
+      "choices": {
+        "ア": "cos2ωt",
+        "イ": "sin2ωt",
+        "ウ": "(1−cos2ωt)",
+        "エ": "(1−sin2ωt)",
+        "オ": "(cos2ωt−sin2ωt)"
+      },
+      "sharedPassages": [
+        {
+          "label": "問題4 共通指示",
+          "text": "（電気及び電子理論）\n問題4 次の各文章の［1］～［10］の中に入れるべき最も適切な字句等をそれぞれの解答群から選び、その記号を答えよ。（配点計50点）"
+        },
+        {
+          "label": "(1) 単相交流の条件と三角関数の定理",
+          "text": "(1) 電圧の実効値がV、電流の実効値がI、角周波数がωの単相交流電源から負荷に供給される電力について考える。なお、三角関数について以下の定理が成り立つ。\nsin(A±B)＝sinA cosB±cosA sinB\ncos(A±B)＝cosA cosB∓sinA sinB"
+        },
+        {
+          "label": "式①～③ 瞬時電圧と電流",
+          "text": "① v＝√2 V sinωt、② i＝√2 I sin(ωt−φ)、③ i＝√2 Iₚ sinωt＋√2 I_q sin(ωt−π/2)。Iₚ＝I cosφ、I_q＝I sinφ。"
+        }
+      ]
+    },
+    "imageUrls": [
+      "/images/energy-kanri/2026/electric-q04-waveforms.png"
+    ],
+    "imageAltTexts": [
+      "図1(a)は瞬時電圧vと位相φ遅れの電流i、(b)はvと波形A～C、(c)は電力の波形D～Fを示す。横軸はωtで0～4π。Aはvと同位相、Bはπ/2遅れ、Cはvと逆位相。DとFは正負に振動し、Eは常に非負でπごとに0になる。"
+    ]
+  },
+  {
+    "id": "energy-kanri-2026-5-q04-s04",
+    "exam": "energy-kanri",
+    "session": "senmon",
+    "year": 2026,
+    "season": "annual",
+    "qNumber": 4,
+    "officialAnswerNumber": "4",
+    "type": "multiple-choice",
+    "category": "電気及び電子理論",
+    "topicTags": [
+      "電気分野",
+      "電気及び電子理論"
+    ],
+    "difficulty": 2,
+    "question": "図1(c)のD～Fの波形のうちの二つは、図1(a)の電源に対応した有効電力の瞬時値及び無効電力の瞬時値の波形を示す。このうち、有効電力の瞬時値に相当する波形は［4］であり、交流電源の2倍の角周波数で変動していることがわかる。",
+    "questionNotice": "原問の解答番号4を解答してください。",
+    "choices": {
+      "ア": "D",
+      "イ": "E",
+      "ウ": "F"
+    },
+    "answer": "イ",
+    "explanation": "有効電力の瞬時値はVIₚ(1−cos2ωt)で常に非負となり、πごとに0になるEに対応する。",
+    "choiceExplanations": {
+      "ア": "Dは正負に振動する波形で、VIₚ(1−cos2ωt)の非負の波形ではない。",
+      "イ": "有効電力の瞬時値はVIₚ(1−cos2ωt)で常に非負となり、πごとに0になるEに対応する。",
+      "ウ": "Fは正負に振動する無効電力成分であり、常に非負の有効成分とは異なる。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.eccj.or.jp/mgr1/test_past/pdf/r08/r08_5.pdf#page=3",
+    "sourceAnswerUrl": "https://www.eccj.or.jp/mgr1/test_past/pdf/r08/r08_k_5.pdf",
+    "sourceAttribution": "出典：一般財団法人省エネルギーセンター 第48回エネルギー管理士試験 電気分野 課目Ⅱ 問題4。解説は過去問AIの独自作成。",
+    "license": "ECCJ-owner-approved",
+    "isCalculation": false,
+    "originalContent": {
+      "body": "図1(c)のD～Fの波形のうちの二つは、図1(a)の電源に対応した有効電力の瞬時値及び無効電力の瞬時値の波形を示す。このうち、有効電力の瞬時値に相当する波形は［4］であり、交流電源の2倍の角周波数で変動していることがわかる。",
+      "choices": {
+        "ア": "D",
+        "イ": "E",
+        "ウ": "F"
+      },
+      "sharedPassages": [
+        {
+          "label": "問題4 共通指示",
+          "text": "（電気及び電子理論）\n問題4 次の各文章の［1］～［10］の中に入れるべき最も適切な字句等をそれぞれの解答群から選び、その記号を答えよ。（配点計50点）"
+        },
+        {
+          "label": "(1) 単相交流の条件と三角関数の定理",
+          "text": "(1) 電圧の実効値がV、電流の実効値がI、角周波数がωの単相交流電源から負荷に供給される電力について考える。なお、三角関数について以下の定理が成り立つ。\nsin(A±B)＝sinA cosB±cosA sinB\ncos(A±B)＝cosA cosB∓sinA sinB"
+        },
+        {
+          "label": "式①～③ 瞬時電圧と電流",
+          "text": "① v＝√2 V sinωt、② i＝√2 I sin(ωt−φ)、③ i＝√2 Iₚ sinωt＋√2 I_q sin(ωt−π/2)。Iₚ＝I cosφ、I_q＝I sinφ。"
+        },
+        {
+          "label": "式④ 瞬時電力",
+          "text": "④ p＝VIₚ(1−cos2ωt)−VI_q sin2ωt。右辺第1項を有効電力の瞬時値、第2項を無効電力の瞬時値と呼ぶ。"
+        }
+      ]
+    },
+    "imageUrls": [
+      "/images/energy-kanri/2026/electric-q04-waveforms.png"
+    ],
+    "imageAltTexts": [
+      "図1(a)は瞬時電圧vと位相φ遅れの電流i、(b)はvと波形A～C、(c)は電力の波形D～Fを示す。横軸はωtで0～4π。Aはvと同位相、Bはπ/2遅れ、Cはvと逆位相。DとFは正負に振動し、Eは常に非負でπごとに0になる。"
+    ]
+  },
+  {
+    "id": "energy-kanri-2026-5-q04-s05",
+    "exam": "energy-kanri",
+    "session": "senmon",
+    "year": 2026,
+    "season": "annual",
+    "qNumber": 4,
+    "officialAnswerNumber": "5",
+    "type": "multiple-choice",
+    "category": "電気及び電子理論",
+    "topicTags": [
+      "電気分野",
+      "電気及び電子理論"
+    ],
+    "difficulty": 2,
+    "question": "1) まず、R₁、R₂、R₃から、Y結線三相負荷回路のa相抵抗Rₐ［Ω］、b相抵抗R𝑏［Ω］及びc相抵抗R𝑐［Ω］を求める。このうち、RₐとR𝑏は次の値となる。\nRₐ＝［5］［Ω］、R𝑏＝［6］［Ω］ …⑤\n次に、三相負荷のY−Δ変換によって、1)で求めた抵抗Rₐ、R𝑏、R𝑐から、図2(b)に示す抵抗R_ab［Ω］、R_bc［Ω］、R_ca［Ω］を求める。このうち、R_abとR_bcは次の値となる。\nR_ab＝11 Ω、R_bc＝11/2 Ω …⑥",
+    "questionNotice": "原問の解答番号5を解答してください。",
+    "choices": {
+      "ア": "1",
+      "イ": "2",
+      "ウ": "3",
+      "エ": "4",
+      "オ": "5",
+      "カ": "6"
+    },
+    "answer": "イ",
+    "explanation": "Rₐ+R𝑏=5、R𝑏+R𝑐=4、R𝑐+Rₐ=3より、2Rₐ=5+3−4=4なのでRₐ=2 Ω。",
+    "choiceExplanations": {
+      "ア": "1ではない。Rₐ+R𝑏=5、R𝑏+R𝑐=4、R𝑐+Rₐ=3より、2Rₐ=5+3−4=4なのでRₐ=2 Ω。",
+      "イ": "Rₐ+R𝑏=5、R𝑏+R𝑐=4、R𝑐+Rₐ=3より、2Rₐ=5+3−4=4なのでRₐ=2 Ω。",
+      "ウ": "3ではない。Rₐ+R𝑏=5、R𝑏+R𝑐=4、R𝑐+Rₐ=3より、2Rₐ=5+3−4=4なのでRₐ=2 Ω。",
+      "エ": "4ではない。Rₐ+R𝑏=5、R𝑏+R𝑐=4、R𝑐+Rₐ=3より、2Rₐ=5+3−4=4なのでRₐ=2 Ω。",
+      "オ": "5ではない。Rₐ+R𝑏=5、R𝑏+R𝑐=4、R𝑐+Rₐ=3より、2Rₐ=5+3−4=4なのでRₐ=2 Ω。",
+      "カ": "6ではない。Rₐ+R𝑏=5、R𝑏+R𝑐=4、R𝑐+Rₐ=3より、2Rₐ=5+3−4=4なのでRₐ=2 Ω。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.eccj.or.jp/mgr1/test_past/pdf/r08/r08_5.pdf#page=4",
+    "sourceAnswerUrl": "https://www.eccj.or.jp/mgr1/test_past/pdf/r08/r08_k_5.pdf",
+    "sourceAttribution": "出典：一般財団法人省エネルギーセンター 第48回エネルギー管理士試験 電気分野 課目Ⅱ 問題4。解説は過去問AIの独自作成。",
+    "license": "ECCJ-owner-approved",
+    "isCalculation": true,
+    "originalContent": {
+      "body": "1) まず、R₁、R₂、R₃から、Y結線三相負荷回路のa相抵抗Rₐ［Ω］、b相抵抗R𝑏［Ω］及びc相抵抗R𝑐［Ω］を求める。このうち、RₐとR𝑏は次の値となる。\nRₐ＝［5］［Ω］、R𝑏＝［6］［Ω］ …⑤\n次に、三相負荷のY−Δ変換によって、1)で求めた抵抗Rₐ、R𝑏、R𝑐から、図2(b)に示す抵抗R_ab［Ω］、R_bc［Ω］、R_ca［Ω］を求める。このうち、R_abとR_bcは次の値となる。\nR_ab＝11 Ω、R_bc＝11/2 Ω …⑥",
+      "choices": {
+        "ア": "1",
+        "イ": "2",
+        "ウ": "3",
+        "エ": "4",
+        "オ": "5",
+        "カ": "6"
+      },
+      "sharedPassages": [
+        {
+          "label": "問題4 共通指示",
+          "text": "（電気及び電子理論）\n問題4 次の各文章の［1］～［10］の中に入れるべき最も適切な字句等をそれぞれの解答群から選び、その記号を答えよ。（配点計50点）"
+        },
+        {
+          "label": "(2) 三相Y結線負荷と電源条件",
+          "text": "(2) 図2(a)に示すY結線の三相負荷回路がある。電源は対称三相交流電源であり、各相間の負荷にかかる電圧をそれぞれV̇_ab［V］、V̇_bc［V］、V̇_ca［V］、各相の線電流をそれぞれİ_a［A］、İ_b［A］、İ_c［A］とし、相順はa→b→c相とする。また、V̇_abの位相を位相の基準として、V̇_ab＝110＋j0［V］とする。なお、a−b端子間の負荷抵抗R₁は、R₁＝Rₐ＋R𝑏＝5［Ω］、b−c端子間の負荷抵抗R₂は、R₂＝R𝑏＋R𝑐＝4［Ω］、c−a端子間の負荷抵抗R₃は、R₃＝R𝑐＋Rₐ＝3［Ω］であるとする。\nこの回路において、線電流と負荷で消費する有効電力を求める過程を考える。ただし、負荷以外のインピーダンスは無視するものとする。"
+        }
+      ]
+    },
+    "imageUrls": [
+      "/images/energy-kanri/2026/electric-q04-star-delta.png"
+    ],
+    "imageAltTexts": [
+      "図2(a)は中性点に接続されたY負荷Rₐ・R𝑏・R𝑐、(b)は等価なΔ負荷R_ab・R_bc・R_ca。枝電流İ_abはa→b、İ_bcはb→c、İ_caはc→a。線電流İ_aは電源からa端子へ流入する。"
+    ]
+  },
+  {
+    "id": "energy-kanri-2026-5-q04-s06",
+    "exam": "energy-kanri",
+    "session": "senmon",
+    "year": 2026,
+    "season": "annual",
+    "qNumber": 4,
+    "officialAnswerNumber": "6",
+    "type": "multiple-choice",
+    "category": "電気及び電子理論",
+    "topicTags": [
+      "電気分野",
+      "電気及び電子理論"
+    ],
+    "difficulty": 2,
+    "question": "1) まず、R₁、R₂、R₃から、Y結線三相負荷回路のa相抵抗Rₐ［Ω］、b相抵抗R𝑏［Ω］及びc相抵抗R𝑐［Ω］を求める。このうち、RₐとR𝑏は次の値となる。\nRₐ＝［5］［Ω］、R𝑏＝［6］［Ω］ …⑤\n次に、三相負荷のY−Δ変換によって、1)で求めた抵抗Rₐ、R𝑏、R𝑐から、図2(b)に示す抵抗R_ab［Ω］、R_bc［Ω］、R_ca［Ω］を求める。このうち、R_abとR_bcは次の値となる。\nR_ab＝11 Ω、R_bc＝11/2 Ω …⑥",
+    "questionNotice": "原問の解答番号6を解答してください。",
+    "choices": {
+      "ア": "1",
+      "イ": "2",
+      "ウ": "3",
+      "エ": "4",
+      "オ": "5",
+      "カ": "6"
+    },
+    "answer": "ウ",
+    "explanation": "Rₐ=2 ΩよりR𝑏=5−2=3 Ω。残るR𝑐=1 Ωとも整合する。",
+    "choiceExplanations": {
+      "ア": "1ではない。Rₐ=2 ΩよりR𝑏=5−2=3 Ω。残るR𝑐=1 Ωとも整合する。",
+      "イ": "2ではない。Rₐ=2 ΩよりR𝑏=5−2=3 Ω。残るR𝑐=1 Ωとも整合する。",
+      "ウ": "Rₐ=2 ΩよりR𝑏=5−2=3 Ω。残るR𝑐=1 Ωとも整合する。",
+      "エ": "4ではない。Rₐ=2 ΩよりR𝑏=5−2=3 Ω。残るR𝑐=1 Ωとも整合する。",
+      "オ": "5ではない。Rₐ=2 ΩよりR𝑏=5−2=3 Ω。残るR𝑐=1 Ωとも整合する。",
+      "カ": "6ではない。Rₐ=2 ΩよりR𝑏=5−2=3 Ω。残るR𝑐=1 Ωとも整合する。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.eccj.or.jp/mgr1/test_past/pdf/r08/r08_5.pdf#page=4",
+    "sourceAnswerUrl": "https://www.eccj.or.jp/mgr1/test_past/pdf/r08/r08_k_5.pdf",
+    "sourceAttribution": "出典：一般財団法人省エネルギーセンター 第48回エネルギー管理士試験 電気分野 課目Ⅱ 問題4。解説は過去問AIの独自作成。",
+    "license": "ECCJ-owner-approved",
+    "isCalculation": true,
+    "originalContent": {
+      "body": "1) まず、R₁、R₂、R₃から、Y結線三相負荷回路のa相抵抗Rₐ［Ω］、b相抵抗R𝑏［Ω］及びc相抵抗R𝑐［Ω］を求める。このうち、RₐとR𝑏は次の値となる。\nRₐ＝［5］［Ω］、R𝑏＝［6］［Ω］ …⑤\n次に、三相負荷のY−Δ変換によって、1)で求めた抵抗Rₐ、R𝑏、R𝑐から、図2(b)に示す抵抗R_ab［Ω］、R_bc［Ω］、R_ca［Ω］を求める。このうち、R_abとR_bcは次の値となる。\nR_ab＝11 Ω、R_bc＝11/2 Ω …⑥",
+      "choices": {
+        "ア": "1",
+        "イ": "2",
+        "ウ": "3",
+        "エ": "4",
+        "オ": "5",
+        "カ": "6"
+      },
+      "sharedPassages": [
+        {
+          "label": "問題4 共通指示",
+          "text": "（電気及び電子理論）\n問題4 次の各文章の［1］～［10］の中に入れるべき最も適切な字句等をそれぞれの解答群から選び、その記号を答えよ。（配点計50点）"
+        },
+        {
+          "label": "(2) 三相Y結線負荷と電源条件",
+          "text": "(2) 図2(a)に示すY結線の三相負荷回路がある。電源は対称三相交流電源であり、各相間の負荷にかかる電圧をそれぞれV̇_ab［V］、V̇_bc［V］、V̇_ca［V］、各相の線電流をそれぞれİ_a［A］、İ_b［A］、İ_c［A］とし、相順はa→b→c相とする。また、V̇_abの位相を位相の基準として、V̇_ab＝110＋j0［V］とする。なお、a−b端子間の負荷抵抗R₁は、R₁＝Rₐ＋R𝑏＝5［Ω］、b−c端子間の負荷抵抗R₂は、R₂＝R𝑏＋R𝑐＝4［Ω］、c−a端子間の負荷抵抗R₃は、R₃＝R𝑐＋Rₐ＝3［Ω］であるとする。\nこの回路において、線電流と負荷で消費する有効電力を求める過程を考える。ただし、負荷以外のインピーダンスは無視するものとする。"
+        }
+      ]
+    },
+    "imageUrls": [
+      "/images/energy-kanri/2026/electric-q04-star-delta.png"
+    ],
+    "imageAltTexts": [
+      "図2(a)は中性点に接続されたY負荷Rₐ・R𝑏・R𝑐、(b)は等価なΔ負荷R_ab・R_bc・R_ca。枝電流İ_abはa→b、İ_bcはb→c、İ_caはc→a。線電流İ_aは電源からa端子へ流入する。"
+    ]
+  },
+  {
+    "id": "energy-kanri-2026-5-q04-s07",
+    "exam": "energy-kanri",
+    "session": "senmon",
+    "year": 2026,
+    "season": "annual",
+    "qNumber": 4,
+    "officialAnswerNumber": "7",
+    "type": "multiple-choice",
+    "category": "電気及び電子理論",
+    "topicTags": [
+      "電気分野",
+      "電気及び電子理論"
+    ],
+    "difficulty": 2,
+    "question": "2) 次に、線電流を求める。\n図2(b)に示す抵抗R_abに流れる電流İ_ab［A］、抵抗R_bcに流れる電流İ_bc［A］、抵抗R_caに流れる電流İ_ca［A］を用いて、線電流İ_aは次式のように表される。\nİ_a＝［7］［A］ …⑦\nここで、V̇_ab＝110＋j0［V］であり、相順はa→b→c相の対称三相交流電源であるので、V̇_caは次の値となる。\nV̇_ca＝［8］［V］ …⑧\nしたがって、線電流İ_aは次の値となる。\nİ_a＝［9］［A］ …⑨",
+    "questionNotice": "原問の解答番号7を解答してください。",
+    "choices": {
+      "ア": "İ_ab＋İ_bc",
+      "イ": "İ_ab−İ_bc",
+      "ウ": "İ_ab＋İ_ca",
+      "エ": "İ_ab−İ_ca",
+      "オ": "−İ_ab＋İ_ca"
+    },
+    "answer": "エ",
+    "explanation": "a端子の電流則İ_a+İ_ca=İ_abよりİ_a=İ_ab−İ_ca。",
+    "choiceExplanations": {
+      "ア": "İ_bcはa端子に直接接続される枝電流ではない。",
+      "イ": "a端子で差し引くのはc→aのİ_caで、İ_bcではない。",
+      "ウ": "İ_caはa端子に流入する向きなので、İ_abに加算しない。",
+      "エ": "a端子の電流則İ_a+İ_ca=İ_abよりİ_a=İ_ab−İ_ca。",
+      "オ": "線電流İ_aの定義方向と逆になっている。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.eccj.or.jp/mgr1/test_past/pdf/r08/r08_5.pdf#page=5",
+    "sourceAnswerUrl": "https://www.eccj.or.jp/mgr1/test_past/pdf/r08/r08_k_5.pdf",
+    "sourceAttribution": "出典：一般財団法人省エネルギーセンター 第48回エネルギー管理士試験 電気分野 課目Ⅱ 問題4。解説は過去問AIの独自作成。",
+    "license": "ECCJ-owner-approved",
+    "isCalculation": true,
+    "originalContent": {
+      "body": "2) 次に、線電流を求める。\n図2(b)に示す抵抗R_abに流れる電流İ_ab［A］、抵抗R_bcに流れる電流İ_bc［A］、抵抗R_caに流れる電流İ_ca［A］を用いて、線電流İ_aは次式のように表される。\nİ_a＝［7］［A］ …⑦\nここで、V̇_ab＝110＋j0［V］であり、相順はa→b→c相の対称三相交流電源であるので、V̇_caは次の値となる。\nV̇_ca＝［8］［V］ …⑧\nしたがって、線電流İ_aは次の値となる。\nİ_a＝［9］［A］ …⑨",
+      "choices": {
+        "ア": "İ_ab＋İ_bc",
+        "イ": "İ_ab−İ_bc",
+        "ウ": "İ_ab＋İ_ca",
+        "エ": "İ_ab−İ_ca",
+        "オ": "−İ_ab＋İ_ca"
+      },
+      "sharedPassages": [
+        {
+          "label": "問題4 共通指示",
+          "text": "（電気及び電子理論）\n問題4 次の各文章の［1］～［10］の中に入れるべき最も適切な字句等をそれぞれの解答群から選び、その記号を答えよ。（配点計50点）"
+        },
+        {
+          "label": "(2) 三相Y結線負荷と電源条件",
+          "text": "(2) 図2(a)に示すY結線の三相負荷回路がある。電源は対称三相交流電源であり、各相間の負荷にかかる電圧をそれぞれV̇_ab［V］、V̇_bc［V］、V̇_ca［V］、各相の線電流をそれぞれİ_a［A］、İ_b［A］、İ_c［A］とし、相順はa→b→c相とする。また、V̇_abの位相を位相の基準として、V̇_ab＝110＋j0［V］とする。なお、a−b端子間の負荷抵抗R₁は、R₁＝Rₐ＋R𝑏＝5［Ω］、b−c端子間の負荷抵抗R₂は、R₂＝R𝑏＋R𝑐＝4［Ω］、c−a端子間の負荷抵抗R₃は、R₃＝R𝑐＋Rₐ＝3［Ω］であるとする。\nこの回路において、線電流と負荷で消費する有効電力を求める過程を考える。ただし、負荷以外のインピーダンスは無視するものとする。"
+        },
+        {
+          "label": "Y−Δ変換の前段",
+          "text": "⑤ Rₐ＝2 Ω、R𝑏＝3 Ω、R𝑐＝1 Ω。⑥ R_ab＝11 Ω、R_bc＝11/2 Ω。図2(b)のİ_abはa→b、İ_bcはb→c、İ_caはc→a向きである。"
+        }
+      ]
+    },
+    "imageUrls": [
+      "/images/energy-kanri/2026/electric-q04-star-delta.png"
+    ],
+    "imageAltTexts": [
+      "図2(a)は中性点に接続されたY負荷Rₐ・R𝑏・R𝑐、(b)は等価なΔ負荷R_ab・R_bc・R_ca。枝電流İ_abはa→b、İ_bcはb→c、İ_caはc→a。線電流İ_aは電源からa端子へ流入する。"
+    ]
+  },
+  {
+    "id": "energy-kanri-2026-5-q04-s08",
+    "exam": "energy-kanri",
+    "session": "senmon",
+    "year": 2026,
+    "season": "annual",
+    "qNumber": 4,
+    "officialAnswerNumber": "8",
+    "type": "multiple-choice",
+    "category": "電気及び電子理論",
+    "topicTags": [
+      "電気分野",
+      "電気及び電子理論"
+    ],
+    "difficulty": 2,
+    "question": "2) 次に、線電流を求める。\n図2(b)に示す抵抗R_abに流れる電流İ_ab［A］、抵抗R_bcに流れる電流İ_bc［A］、抵抗R_caに流れる電流İ_ca［A］を用いて、線電流İ_aは次式のように表される。\nİ_a＝［7］［A］ …⑦\nここで、V̇_ab＝110＋j0［V］であり、相順はa→b→c相の対称三相交流電源であるので、V̇_caは次の値となる。\nV̇_ca＝［8］［V］ …⑧\nしたがって、線電流İ_aは次の値となる。\nİ_a＝［9］［A］ …⑨",
+    "questionNotice": "原問の解答番号8を解答してください。",
+    "choices": {
+      "ア": "55＋j55√3",
+      "イ": "55−j55√3",
+      "ウ": "−55＋j55√3",
+      "エ": "−55−j55√3",
+      "オ": "−55√3＋j55"
+    },
+    "answer": "ウ",
+    "explanation": "a→b→cの相順でV̇_caはV̇_abより120度進むので110(cos120°+j sin120°)=−55+j55√3。",
+    "choiceExplanations": {
+      "ア": "V̇_caの位相は+120度であり実部は負になる。",
+      "イ": "この候補は−60度であり、必要な+120度と逆向き。",
+      "ウ": "a→b→cの相順でV̇_caはV̇_abより120度進むので110(cos120°+j sin120°)=−55+j55√3。",
+      "エ": "この候補は−120度のV̇_bcに対応する。",
+      "オ": "+120度では実部が−55、虚部が55√3となる。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.eccj.or.jp/mgr1/test_past/pdf/r08/r08_5.pdf#page=5",
+    "sourceAnswerUrl": "https://www.eccj.or.jp/mgr1/test_past/pdf/r08/r08_k_5.pdf",
+    "sourceAttribution": "出典：一般財団法人省エネルギーセンター 第48回エネルギー管理士試験 電気分野 課目Ⅱ 問題4。解説は過去問AIの独自作成。",
+    "license": "ECCJ-owner-approved",
+    "isCalculation": true,
+    "originalContent": {
+      "body": "2) 次に、線電流を求める。\n図2(b)に示す抵抗R_abに流れる電流İ_ab［A］、抵抗R_bcに流れる電流İ_bc［A］、抵抗R_caに流れる電流İ_ca［A］を用いて、線電流İ_aは次式のように表される。\nİ_a＝［7］［A］ …⑦\nここで、V̇_ab＝110＋j0［V］であり、相順はa→b→c相の対称三相交流電源であるので、V̇_caは次の値となる。\nV̇_ca＝［8］［V］ …⑧\nしたがって、線電流İ_aは次の値となる。\nİ_a＝［9］［A］ …⑨",
+      "choices": {
+        "ア": "55＋j55√3",
+        "イ": "55−j55√3",
+        "ウ": "−55＋j55√3",
+        "エ": "−55−j55√3",
+        "オ": "−55√3＋j55"
+      },
+      "sharedPassages": [
+        {
+          "label": "問題4 共通指示",
+          "text": "（電気及び電子理論）\n問題4 次の各文章の［1］～［10］の中に入れるべき最も適切な字句等をそれぞれの解答群から選び、その記号を答えよ。（配点計50点）"
+        },
+        {
+          "label": "(2) 三相Y結線負荷と電源条件",
+          "text": "(2) 図2(a)に示すY結線の三相負荷回路がある。電源は対称三相交流電源であり、各相間の負荷にかかる電圧をそれぞれV̇_ab［V］、V̇_bc［V］、V̇_ca［V］、各相の線電流をそれぞれİ_a［A］、İ_b［A］、İ_c［A］とし、相順はa→b→c相とする。また、V̇_abの位相を位相の基準として、V̇_ab＝110＋j0［V］とする。なお、a−b端子間の負荷抵抗R₁は、R₁＝Rₐ＋R𝑏＝5［Ω］、b−c端子間の負荷抵抗R₂は、R₂＝R𝑏＋R𝑐＝4［Ω］、c−a端子間の負荷抵抗R₃は、R₃＝R𝑐＋Rₐ＝3［Ω］であるとする。\nこの回路において、線電流と負荷で消費する有効電力を求める過程を考える。ただし、負荷以外のインピーダンスは無視するものとする。"
+        },
+        {
+          "label": "Y−Δ変換の前段",
+          "text": "⑤ Rₐ＝2 Ω、R𝑏＝3 Ω、R𝑐＝1 Ω。⑥ R_ab＝11 Ω、R_bc＝11/2 Ω。図2(b)のİ_abはa→b、İ_bcはb→c、İ_caはc→a向きである。"
+        }
+      ]
+    },
+    "imageUrls": [
+      "/images/energy-kanri/2026/electric-q04-star-delta.png"
+    ],
+    "imageAltTexts": [
+      "図2(a)は中性点に接続されたY負荷Rₐ・R𝑏・R𝑐、(b)は等価なΔ負荷R_ab・R_bc・R_ca。枝電流İ_abはa→b、İ_bcはb→c、İ_caはc→a。線電流İ_aは電源からa端子へ流入する。"
+    ]
+  },
+  {
+    "id": "energy-kanri-2026-5-q04-s09",
+    "exam": "energy-kanri",
+    "session": "senmon",
+    "year": 2026,
+    "season": "annual",
+    "qNumber": 4,
+    "officialAnswerNumber": "9",
+    "type": "multiple-choice",
+    "category": "電気及び電子理論",
+    "topicTags": [
+      "電気分野",
+      "電気及び電子理論"
+    ],
+    "difficulty": 2,
+    "question": "2) 次に、線電流を求める。\n図2(b)に示す抵抗R_abに流れる電流İ_ab［A］、抵抗R_bcに流れる電流İ_bc［A］、抵抗R_caに流れる電流İ_ca［A］を用いて、線電流İ_aは次式のように表される。\nİ_a＝［7］［A］ …⑦\nここで、V̇_ab＝110＋j0［V］であり、相順はa→b→c相の対称三相交流電源であるので、V̇_caは次の値となる。\nV̇_ca＝［8］［V］ …⑧\nしたがって、線電流İ_aは次の値となる。\nİ_a＝［9］［A］ …⑨",
+    "questionNotice": "原問の解答番号9を解答してください。",
+    "choices": {
+      "ア": "25＋j15√3",
+      "イ": "25−j15√3",
+      "ウ": "−25＋j15√3",
+      "エ": "25√3＋j15",
+      "オ": "25√3−j15"
+    },
+    "answer": "イ",
+    "explanation": "Y−Δ変換でR_ca=1+2+1×2/3=11/3 Ω。İ_ab=110/11=10、İ_ca=(−55+j55√3)/(11/3)=−15+j15√3なので、İ_a=25−j15√3。",
+    "choiceExplanations": {
+      "ア": "枝電流İ_caの虚部は正で、これを引くİ_aの虚部は負となる。",
+      "イ": "Y−Δ変換でR_ca=1+2+1×2/3=11/3 Ω。İ_ab=110/11=10、İ_ca=(−55+j55√3)/(11/3)=−15+j15√3なので、İ_a=25−j15√3。",
+      "ウ": "線電流の定義方向と逆の符号になっている。",
+      "エ": "実部と虚部に√3を付ける位置が逆で、虚部の符号も異なる。",
+      "オ": "√3を掛けるのは虚部15であり、実部25ではない。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.eccj.or.jp/mgr1/test_past/pdf/r08/r08_5.pdf#page=5",
+    "sourceAnswerUrl": "https://www.eccj.or.jp/mgr1/test_past/pdf/r08/r08_k_5.pdf",
+    "sourceAttribution": "出典：一般財団法人省エネルギーセンター 第48回エネルギー管理士試験 電気分野 課目Ⅱ 問題4。解説は過去問AIの独自作成。",
+    "license": "ECCJ-owner-approved",
+    "isCalculation": true,
+    "originalContent": {
+      "body": "2) 次に、線電流を求める。\n図2(b)に示す抵抗R_abに流れる電流İ_ab［A］、抵抗R_bcに流れる電流İ_bc［A］、抵抗R_caに流れる電流İ_ca［A］を用いて、線電流İ_aは次式のように表される。\nİ_a＝［7］［A］ …⑦\nここで、V̇_ab＝110＋j0［V］であり、相順はa→b→c相の対称三相交流電源であるので、V̇_caは次の値となる。\nV̇_ca＝［8］［V］ …⑧\nしたがって、線電流İ_aは次の値となる。\nİ_a＝［9］［A］ …⑨",
+      "choices": {
+        "ア": "25＋j15√3",
+        "イ": "25−j15√3",
+        "ウ": "−25＋j15√3",
+        "エ": "25√3＋j15",
+        "オ": "25√3−j15"
+      },
+      "sharedPassages": [
+        {
+          "label": "問題4 共通指示",
+          "text": "（電気及び電子理論）\n問題4 次の各文章の［1］～［10］の中に入れるべき最も適切な字句等をそれぞれの解答群から選び、その記号を答えよ。（配点計50点）"
+        },
+        {
+          "label": "(2) 三相Y結線負荷と電源条件",
+          "text": "(2) 図2(a)に示すY結線の三相負荷回路がある。電源は対称三相交流電源であり、各相間の負荷にかかる電圧をそれぞれV̇_ab［V］、V̇_bc［V］、V̇_ca［V］、各相の線電流をそれぞれİ_a［A］、İ_b［A］、İ_c［A］とし、相順はa→b→c相とする。また、V̇_abの位相を位相の基準として、V̇_ab＝110＋j0［V］とする。なお、a−b端子間の負荷抵抗R₁は、R₁＝Rₐ＋R𝑏＝5［Ω］、b−c端子間の負荷抵抗R₂は、R₂＝R𝑏＋R𝑐＝4［Ω］、c−a端子間の負荷抵抗R₃は、R₃＝R𝑐＋Rₐ＝3［Ω］であるとする。\nこの回路において、線電流と負荷で消費する有効電力を求める過程を考える。ただし、負荷以外のインピーダンスは無視するものとする。"
+        },
+        {
+          "label": "Y−Δ変換の前段",
+          "text": "⑤ Rₐ＝2 Ω、R𝑏＝3 Ω、R𝑐＝1 Ω。⑥ R_ab＝11 Ω、R_bc＝11/2 Ω。図2(b)のİ_abはa→b、İ_bcはb→c、İ_caはc→a向きである。"
+        }
+      ]
+    },
+    "imageUrls": [
+      "/images/energy-kanri/2026/electric-q04-star-delta.png"
+    ],
+    "imageAltTexts": [
+      "図2(a)は中性点に接続されたY負荷Rₐ・R𝑏・R𝑐、(b)は等価なΔ負荷R_ab・R_bc・R_ca。枝電流İ_abはa→b、İ_bcはb→c、İ_caはc→a。線電流İ_aは電源からa端子へ流入する。"
+    ]
+  },
+  {
+    "id": "energy-kanri-2026-5-q04-s10",
+    "exam": "energy-kanri",
+    "session": "senmon",
+    "year": 2026,
+    "season": "annual",
+    "qNumber": 4,
+    "officialAnswerNumber": "10",
+    "type": "multiple-choice",
+    "category": "電気及び電子理論",
+    "topicTags": [
+      "電気分野",
+      "電気及び電子理論"
+    ],
+    "difficulty": 2,
+    "question": "3) 最後に、図2(b)に示す各相の電圧、抵抗から、負荷で消費する三相合計の有効電力P［W］を求めると、次の値となる。\nP＝［10］［W］ …⑩",
+    "questionNotice": "原問の解答番号10を解答してください。",
+    "choices": {
+      "ア": "60",
+      "イ": "1100",
+      "ウ": "2200",
+      "エ": "3300",
+      "オ": "6600"
+    },
+    "answer": "オ",
+    "explanation": "Δの各枝に110 Vがかかる。R_ca=11/3 Ωより、P=110²×(1/11+2/11+3/11)=6600 W。不平衡負荷なので1枝の電力を単純に3倍しない。",
+    "choiceExplanations": {
+      "ア": "60ではない。Δの各枝に110 Vがかかる。R_ca=11/3 Ωより、P=110²×(1/11+2/11+3/11)=6600 W。不平衡負荷なので1枝の電力を単純に3倍しない。",
+      "イ": "1100ではない。Δの各枝に110 Vがかかる。R_ca=11/3 Ωより、P=110²×(1/11+2/11+3/11)=6600 W。不平衡負荷なので1枝の電力を単純に3倍しない。",
+      "ウ": "2200ではない。Δの各枝に110 Vがかかる。R_ca=11/3 Ωより、P=110²×(1/11+2/11+3/11)=6600 W。不平衡負荷なので1枝の電力を単純に3倍しない。",
+      "エ": "3300ではない。Δの各枝に110 Vがかかる。R_ca=11/3 Ωより、P=110²×(1/11+2/11+3/11)=6600 W。不平衡負荷なので1枝の電力を単純に3倍しない。",
+      "オ": "Δの各枝に110 Vがかかる。R_ca=11/3 Ωより、P=110²×(1/11+2/11+3/11)=6600 W。不平衡負荷なので1枝の電力を単純に3倍しない。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.eccj.or.jp/mgr1/test_past/pdf/r08/r08_5.pdf#page=5",
+    "sourceAnswerUrl": "https://www.eccj.or.jp/mgr1/test_past/pdf/r08/r08_k_5.pdf",
+    "sourceAttribution": "出典：一般財団法人省エネルギーセンター 第48回エネルギー管理士試験 電気分野 課目Ⅱ 問題4。解説は過去問AIの独自作成。",
+    "license": "ECCJ-owner-approved",
+    "isCalculation": true,
+    "originalContent": {
+      "body": "3) 最後に、図2(b)に示す各相の電圧、抵抗から、負荷で消費する三相合計の有効電力P［W］を求めると、次の値となる。\nP＝［10］［W］ …⑩",
+      "choices": {
+        "ア": "60",
+        "イ": "1100",
+        "ウ": "2200",
+        "エ": "3300",
+        "オ": "6600"
+      },
+      "sharedPassages": [
+        {
+          "label": "問題4 共通指示",
+          "text": "（電気及び電子理論）\n問題4 次の各文章の［1］～［10］の中に入れるべき最も適切な字句等をそれぞれの解答群から選び、その記号を答えよ。（配点計50点）"
+        },
+        {
+          "label": "(2) 三相Y結線負荷と電源条件",
+          "text": "(2) 図2(a)に示すY結線の三相負荷回路がある。電源は対称三相交流電源であり、各相間の負荷にかかる電圧をそれぞれV̇_ab［V］、V̇_bc［V］、V̇_ca［V］、各相の線電流をそれぞれİ_a［A］、İ_b［A］、İ_c［A］とし、相順はa→b→c相とする。また、V̇_abの位相を位相の基準として、V̇_ab＝110＋j0［V］とする。なお、a−b端子間の負荷抵抗R₁は、R₁＝Rₐ＋R𝑏＝5［Ω］、b−c端子間の負荷抵抗R₂は、R₂＝R𝑏＋R𝑐＝4［Ω］、c−a端子間の負荷抵抗R₃は、R₃＝R𝑐＋Rₐ＝3［Ω］であるとする。\nこの回路において、線電流と負荷で消費する有効電力を求める過程を考える。ただし、負荷以外のインピーダンスは無視するものとする。"
+        },
+        {
+          "label": "Y−Δ変換の前段",
+          "text": "⑤ Rₐ＝2 Ω、R𝑏＝3 Ω、R𝑐＝1 Ω。⑥ R_ab＝11 Ω、R_bc＝11/2 Ω。図2(b)のİ_abはa→b、İ_bcはb→c、İ_caはc→a向きである。"
+        }
+      ]
+    },
+    "imageUrls": [
+      "/images/energy-kanri/2026/electric-q04-star-delta.png"
+    ],
+    "imageAltTexts": [
+      "図2(a)は中性点に接続されたY負荷Rₐ・R𝑏・R𝑐、(b)は等価なΔ負荷R_ab・R_bc・R_ca。枝電流İ_abはa→b、İ_bcはb→c、İ_caはc→a。線電流İ_aは電源からa端子へ流入する。"
+    ]
+  }
+]
