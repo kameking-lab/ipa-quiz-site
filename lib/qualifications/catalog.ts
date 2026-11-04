@@ -43,6 +43,16 @@ export interface QualificationCatalogEntry {
  * 「公式に問題と正答がある」だけでは live にせず、転載条件まで確認する。
  */
 export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
+{
+    slug: "jokaso-setsubishi", shortName: "浄化槽設備士（学科）", fullName: "浄化槽設備士試験（学科）",
+    domain: "construction", administrator: "公益財団法人日本環境整備教育センター",
+    officialQuestionsUrl: "https://www.jeces.or.jp/pages/27/",
+    officialReuseTermsUrl: "https://www.jeces.or.jp/pages/132/", status: "permission-required",
+    stagingDataPath: "data/qualification-staging/jokaso-setsubishi",
+    reuseSummary: "令和8・7年の学科各50問を未公開で準備。浄化槽管理士とは別資格。公式問題・正答、独自全肢解説と原本画像を保存。publicAllowed=false。",
+    attributionTemplate: "出典：公益財団法人日本環境整備教育センター 浄化槽設備士試験（学科）問題・正答。解説は過去問AIの独自作成。",
+    remainingWork: ["公開時の権利確認と公開判断（本タスクは未公開収録のみ）"],
+},
 {"slug":"keiryoshi","examCode":"keiryoshi","shortName":"一般計量士","fullName":"一般計量士","domain":"construction","administrator":"経済産業省","officialQuestionsUrl":"https://www.meti.go.jp/policy/economy/hyojun/techno_infra/keiryoshi.html","officialReuseTermsUrl":"https://www.meti.go.jp/main/rules.html","status":"live","reuseSummary":"第76回（令和7年実施）のみ100問を収録。第75回は未収録で、2回分の全問収録ではありません。出題時点の法令・基準に基づく全肢解説を確認できます。","remainingWork":["第75回は未収録"]},
 {"slug":"keiryoshi-nodo","examCode":"keiryoshi-nodo","shortName":"環境計量士（濃度関係）","fullName":"環境計量士（濃度関係）","domain":"construction","administrator":"経済産業省","officialQuestionsUrl":"https://www.meti.go.jp/policy/economy/hyojun/techno_infra/keiryoshi.html","officialReuseTermsUrl":"https://www.meti.go.jp/main/rules.html","status":"live","reuseSummary":"第76回（令和7年実施）のみ100問を収録。第75回は未収録で、2回分の全問収録ではありません。出題時点の法令・基準に基づく全肢解説を確認できます。","remainingWork":["第75回は未収録"]},
 {"slug":"keiryoshi-soon","examCode":"keiryoshi-soon","shortName":"環境計量士（騒音・振動関係）","fullName":"環境計量士（騒音・振動関係）","domain":"construction","administrator":"経済産業省","officialQuestionsUrl":"https://www.meti.go.jp/policy/economy/hyojun/techno_infra/keiryoshi.html","officialReuseTermsUrl":"https://www.meti.go.jp/main/rules.html","status":"live","reuseSummary":"第76回（令和7年実施）のみ100問を収録。第75回は未収録で、2回分の全問収録ではありません。出題時点の法令・基準に基づく全肢解説を確認できます。","remainingWork":["第75回は未収録"]},
