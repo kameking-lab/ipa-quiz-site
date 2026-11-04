@@ -1,3 +1,4 @@
+import { validateBenrishiStaging } from "./lib/validate-benrishi-staging";
 import { PRACTICE_SESSIONS } from "@/lib/questions/practice-session";
 import { EXAM_CONFIGS } from "@/lib/exam-config";
 import { NativeBDataSchema, nativeBQuestionIssue } from "../lib/questions/native-b";
@@ -478,6 +479,10 @@ function reportFixes(questions: Question[]): void {
 // ─── Main ────────────────────────────────────────────────────────────────────
 
 const opts = parseCliOptions();
+if (!opts.exams.length || opts.exams.includes("benrishi")) {
+  console.log(`[private-staging] benrishi: validated ${validateBenrishiStaging()} unpublished questions (publicAllowed=false)`);
+}
+
 const questions = opts.exams.length > 0
   ? VALIDATION_QUESTIONS.filter((q) => opts.exams.includes(q.exam))
   : VALIDATION_QUESTIONS;

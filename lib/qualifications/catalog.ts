@@ -43,6 +43,16 @@ export interface QualificationCatalogEntry {
  * 「公式に問題と正答がある」だけでは live にせず、転載条件まで確認する。
  */
 export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
+{
+    slug: "benrishi", shortName: "弁理士（短答式）", fullName: "弁理士試験 短答式筆記試験（特許庁）",
+    domain: "legal", administrator: "特許庁",
+    officialQuestionsUrl: "https://www.jpo.go.jp/news/benrishi/shiken-mondai/2026tanto.html",
+    officialReuseTermsUrl: "https://www.jpo.go.jp/toppage/about/index.html",
+    status: "terms-review-required", stagingDataPath: "data/qualification-staging/benrishi",
+    reuseSummary: "COV1 B 第5候補。2026・2025年度の短答式各60問を通常GETで取得し、未公開ステージングに原文・公式正答・全600肢の独自解説・全原ページ画像を保存。publicAllowed=false。一般利用規約の本文取得と公開前の人手校閲は未了。",
+    attributionTemplate: "出典：特許庁 弁理士試験短答式筆記試験。過去問AIがテキスト化・整形。解説は過去問AI独自作成。",
+    remainingWork: ["利用規約・別紙の一次本文の再確認", "出題時点の法令・判例に関する人手校閲（needsReviewを維持）", "2025年度の公式法令基準日の一次本文確認", "公開は別途指示がある場合のみ判断"],
+},
 {"slug":"keiryoshi","examCode":"keiryoshi","shortName":"一般計量士","fullName":"一般計量士","domain":"construction","administrator":"経済産業省","officialQuestionsUrl":"https://www.meti.go.jp/policy/economy/hyojun/techno_infra/keiryoshi.html","officialReuseTermsUrl":"https://www.meti.go.jp/main/rules.html","status":"live","reuseSummary":"第76回（令和7年実施）のみ100問を収録。第75回は未収録で、2回分の全問収録ではありません。出題時点の法令・基準に基づく全肢解説を確認できます。","remainingWork":["第75回は未収録"]},
 {"slug":"keiryoshi-nodo","examCode":"keiryoshi-nodo","shortName":"環境計量士（濃度関係）","fullName":"環境計量士（濃度関係）","domain":"construction","administrator":"経済産業省","officialQuestionsUrl":"https://www.meti.go.jp/policy/economy/hyojun/techno_infra/keiryoshi.html","officialReuseTermsUrl":"https://www.meti.go.jp/main/rules.html","status":"live","reuseSummary":"第76回（令和7年実施）のみ100問を収録。第75回は未収録で、2回分の全問収録ではありません。出題時点の法令・基準に基づく全肢解説を確認できます。","remainingWork":["第75回は未収録"]},
 {"slug":"keiryoshi-soon","examCode":"keiryoshi-soon","shortName":"環境計量士（騒音・振動関係）","fullName":"環境計量士（騒音・振動関係）","domain":"construction","administrator":"経済産業省","officialQuestionsUrl":"https://www.meti.go.jp/policy/economy/hyojun/techno_infra/keiryoshi.html","officialReuseTermsUrl":"https://www.meti.go.jp/main/rules.html","status":"live","reuseSummary":"第76回（令和7年実施）のみ100問を収録。第75回は未収録で、2回分の全問収録ではありません。出題時点の法令・基準に基づく全肢解説を確認できます。","remainingWork":["第75回は未収録"]},

@@ -120,9 +120,6 @@ def extract(src, year):
                           "correctChoice": keys[index], "sourceQuestionUrl": qurl,
                           "sourceAnswerUrl": aurl, "sourcePageUrl": f"https://www.jpo.go.jp/news/benrishi/shiken-mondai/{year}tanto.html",
                           "attribution": "出典：特許庁 弁理士試験短答式筆記試験問題・解答。過去問AIがテキスト化・整形。解説は過去問AIの独自作成（特許庁による作成・保証ではありません）。"})
-    explanations = json.loads((OUT / "explanations.json").read_text(encoding="utf-8"))
-    for question in questions:
-        question["explanation"] = "出題時点の法令に基づく独自解説。" + explanations[question["id"]]
     notes = {}
     for path in sorted((OUT / "editorial").glob("*.json")):
         packet = json.loads(path.read_text(encoding="utf-8"))
@@ -146,6 +143,14 @@ def extract(src, year):
             question["officialReferenceUrls"] = ["https://laws.e-gov.go.jp/law/405AC0000000047"]
         if slug == "patent":
             question["officialReferenceUrls"].append("https://laws.e-gov.go.jp/law/334AC0000000123")
+        historical = json.loads((OUT / "legal-sources.json").read_text(encoding="utf-8"))["documents"]
+        source_names = {"patent": ["patent", "utility"], "design": ["design"], "trademark": ["trademark"], "copyright-unfair-competition": ["copyright" if question["number"] <= 5 else "unfair"]}
+        if slug in source_names:
+            question["officialReferenceUrls"] = [d["citationUrl"] for d in historical if d["year"] == year and d["id"] in source_names[slug]]
+        elif question["number"] <= 5:
+            question["officialReferenceUrls"].extend(["https://www.wipo.int/en/web/pct-system/texts/rules/r66", "https://www.wipo.int/en/web/pct-system/texts/rules/r91"])
+            if year == 2026:
+                question["officialReferenceUrls"].append("https://www.wipo.int/en/web/pct-system/texts/rules/r89bis")
         if year == 2026:
             question["lawReferenceDate"] = "2026-05-17"
         note = notes.get(question["id"].removeprefix("benrishi-"))
@@ -179,8 +184,10 @@ def extract(src, year):
             # Replace abbreviated prior summaries with the full statement rationale.
             if statements:
                 question["explanation"] = "出題時点の法令に基づく独自解説。\n" + "\n".join(f"記述{label}：{'正しい' if correct else '誤り'}。{reason}" for label, correct, reason in statements)
+            else:
+                question["explanation"] = "出題時点の法令に基づく独自解説。\n" + "\n".join(f"選択肢{i + 1}：{reason}" for i, reason in enumerate(reasons))
         else:
-            question["explanationCoverage"] = "draft"
+            raise ValueError(f"Missing editorial notes: {question['id']}")
     return {"year": year, "publicAllowed": False, "publication": "HOLD", "lawBasis": "出題時点の法令に基づく",
             "sourceQuestionSha256": hashlib.sha256(qp.read_bytes()).hexdigest(),
             "sourceAnswerSha256": hashlib.sha256(ap.read_bytes()).hexdigest(),
@@ -200,7 +207,7 @@ def main():
             stored = json.loads(target.read_text(encoding="utf-8"))
             assert stored == paper, f"Source mismatch: {year}"
         else:
-            target.write_text(json.dumps(paper, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+            target.write_text(json.dumps(paper, ensure_ascii=False, indent=2) + "\n", encoding="utf-8", newline="\n")
         print(f"{year}: 60 text questions / 300 choices / 60 official answers {'verified' if args.check else 'extracted'}")
 
 

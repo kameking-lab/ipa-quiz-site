@@ -1,7 +1,7 @@
 {
   "slug": "benrishi",
   "publicAllowed": false,
-  "status": "draft",
+  "status": "private-staged",
   "baseCommit": "bb912dfd0494f7095ec5387f9f2e53f46381cd1f",
   "candidateEvidence": "COV1 B #5 (2026-11-04)",
   "downloadedSources": [
@@ -59,7 +59,7 @@
     "2025": "2025-05-19",
     "2026": "2026-05-18"
   },
-  "lawBasis": "出題時点の法令。公式の法令基準日を一次本文で確認できるまでは日付を推測しない。",
+  "lawBasis": "出題時点の法令に基づく。2026年度は受験案内の試験日・法令適用基準を一次PDFで確認。2025年度の基準日は一次本文未確認のため日付未設定。",
   "reuseTerms": {
     "url": "https://www.jpo.go.jp/toppage/about/index.html",
     "appendixUrl": "https://www.jpo.go.jp/toppage/about/appendix.html",
@@ -1776,6 +1776,20 @@
       "page": 24,
       "images": 0,
       "drawings": 97
+    }
+  ],
+  "referenceSources": [
+    {
+      "kind": "2026-exam-guide",
+      "url": "https://www.jpo.go.jp/news/benrishi/document/jukenannai/01jukenannai.pdf",
+      "method": "GET",
+      "status": 200,
+      "bytes": 4168717,
+      "sha256": "b43e0e26d00de546320b20f0964fca590e35e1539229e5dbba68608cd20996ae",
+      "checkedOn": "2026-11-04",
+      "pdfPage": 1,
+      "examDate": "2026-05-17",
+      "lawRule": "試験実施日に施行されている特許法等に関して出題する旨を表紙で確認"
     }
   ]
 }
