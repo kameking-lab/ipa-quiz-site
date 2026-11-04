@@ -116,5 +116,14 @@ describe("sokuryoshi: two complete private source-image rounds", () => {
     expect(section(2025,5,"問B-1")).toContain("条件点");
     expect(section(2025,5,"問B-1")).toContain("線形図データファイル");
     expect(SOKURYOSHI_STAGING.manifest.afternoonExplanationSectionCount).toBe(104);
+    const river = find(2026,"am",28);
+    expect(river.choices![1].explanation).toContain("両岸");
+    expect(river.choices![2].explanation).toContain("水準基標");
+    expect(river.choices![3].explanation).toContain("定期縦断測量");
+    expect(river.choices![3].explanation).toContain("平地");
+    expect(section(2025,5,"問C-2")).toContain("左右各12m");
+    for (const token of ["公共団体","補助","土地の測量","測量の重複","測量の正確さ","測量用写真の撮影","測量成果","局地的","基本測量以外の測量","測量士","測量成果の正確さ"]) expect(section(2025,1,"問A")).toContain(token);
+    for (const token of ["測量の基礎","測量成果","測量記録","基本測量以外の測量","営業所"]) expect(section(2026,1,"問A")).toContain(token);
+    expect(section(2026,1,"問B-3")).toContain("セキュリティ対策の施されていないパソコンの使用");
   });
 });
