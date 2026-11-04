@@ -31,3 +31,7 @@ python scripts/audit-benrishi-source.py PDF_DIRECTORY
 ```
 
 PDF_DIRECTORYには通常GETで得た `2025-question.pdf`、`2025-answer.pdf`、`2026-question.pdf`、`2026-answer.pdf` を置く。再取得時はmanifestのSHA-256と照合する。本文再抽出にはPyMuPDF、独立照合にはpypdfを使用する。アプリ・Vitest検証はPythonやPDFを必要としない。
+
+## 独立レビュー結果
+
+指定のgpt-6-astraを別プロセス・read-onlyで6回実行し、FAIL指摘を修正後、実装コミット `efb78e7b08694151b6e41ee7c73b42327d96bcba` が未公開収録としてPASS。[レビュー結果](../../../reports/cq1-benrishi/review-r6.md)と[検証記録](../../../reports/cq1-benrishi/qa.json)を保存。公開許可・人手専門家校閲の完了を意味しない。
