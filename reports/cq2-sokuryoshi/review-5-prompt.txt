@@ -1,0 +1,21 @@
+CQ2の独立再レビュー5をread-onlyで実施してください。編集・commit・push・PR・deploy・main操作は禁止。
+対象: C:/Users/kanet/20260522/wt-sokuryoshi
+base: bb912dfd0494f7095ec5387f9f2e53f46381cd1f
+
+要件と画像正本方式は reports/cq2-sokuryoshi/review-1-prompt.txt をUTF-8で読んでください。
+前回の指摘と修正は同ディレクトリ内の review-1～4-result.md / review-1～4-fixes.md で確認してください。
+
+レビュー4は前回5件を修正確認した上で、新規3件の午後語群問題の説明不足によりFAILでした。3件を修正し、同形式の未指摘8箇所も原問・公式画像を確認して個別空欄の説明へ具体化しました。詳細はreview-4-fixes.md。
+主要原稿: data/qualification-staging/sokuryoshi/pm-notes.json
+生成データ: 2025.json / 2026.json
+
+全66原問・午前280肢・午後104説明節・原本186ページ・publicAllowed=falseは維持。
+全小問ラベルは公式午後解答例PDFから独立抽出し、生成時・validator・テストで完全一致を検査しています。
+原文と正答／午後の解答例はassetsの原本ページ画像に完全保持されています。画像正本方式や人手による公開前確認ガードneedsReview=true自体ではなく、今回の非公開収録の内容・対応・検証を評価してください。
+
+過去指摘の修正を原本で確認し、今回も未指摘の実質的な誤りや解説不足が残っていないか批判的に確認してください。
+PDF原本・公式準則standards.pdf/txt・補助OCR:
+C:/Users/kanet/AppData/Local/Temp/codex-work/cq2-sokuryoshi
+最新の通常実行検証ログ: reports/cq2-sokuryoshi/{validate-questions,typecheck,related-tests}.log
+read-onlyでspawn EPERMが出る場合は制約を迂回せず分離して報告してください。
+最後にPASS又はFAILを明記。FAILなら具体的設問・根拠・修正案を示してください。

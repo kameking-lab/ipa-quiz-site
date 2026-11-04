@@ -125,5 +125,8 @@ describe("sokuryoshi: two complete private source-image rounds", () => {
     for (const token of ["公共団体","補助","土地の測量","測量の重複","測量の正確さ","測量用写真の撮影","測量成果","局地的","基本測量以外の測量","測量士","測量成果の正確さ"]) expect(section(2025,1,"問A")).toContain(token);
     for (const token of ["測量の基礎","測量成果","測量記録","基本測量以外の測量","営業所"]) expect(section(2026,1,"問A")).toContain(token);
     expect(section(2026,1,"問B-3")).toContain("セキュリティ対策の施されていないパソコンの使用");
+    for (const token of ["自律飛行","解除できる","航空法","人口集中"]) expect(section(2025,3,"問B-1")).toContain(token);
+    for (const token of ["グラウンドデータ","オリジナルデータ","最近隣法","補備測量","精度管理表"]) expect(section(2026,1,"問D-3")).toContain(token);
+    for (const token of ["直接測量費","間接測量費","直接経費","技術管理費","成果検定費"]) expect(section(2026,1,"問C-2")).toContain(token);
   });
 });
