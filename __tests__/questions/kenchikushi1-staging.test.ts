@@ -34,7 +34,7 @@ describe("一級建築士（学科）の公開前登録", () => {
     expect(manifest.ownerDecision.decidedAt).toBe("2026-11-04T06:10:00+09:00");
     expect(manifest.ownerDecision.rightsHolderPermissionObtained).toBe(false);
     expect(manifest.rounds.map(r => [r.year, r.expectedQuestions, r.transcribedQuestions])).toEqual([
-      [2026, 125, 20], [2025, 125, 20],
+      [2026, 125, 40], [2025, 125, 20],
     ]);
     expect(manifest.sources).toHaveLength(8);
     for (const source of manifest.sources) {
@@ -45,16 +45,22 @@ describe("一級建築士（学科）の公開前登録", () => {
   });
 
   it("validates real staged originals and all four original explanations against the final official answers", () => {
-    expect(KENCHIKUSHI1_CANDIDATES).toHaveLength(40);
-    expect(new Set(KENCHIKUSHI1_CANDIDATES.map(q => q.id)).size).toBe(40);
+    expect(KENCHIKUSHI1_CANDIDATES).toHaveLength(60);
+    expect(new Set(KENCHIKUSHI1_CANDIDATES.map(q => q.id)).size).toBe(60);
     expect(KENCHIKUSHI1_CANDIDATES.map(q => q.officialAnswerNumber)).toEqual(
       [4,4,2,4,1,1,2,2,2,1,1,3,2,2,3,1,4,3,3,4,
-       4,2,1,3,4,2,2,3,1,2,3,4,4,1,4,4,2,2,1,3].map(String),
+       4,2,1,3,4,2,2,3,1,2,3,4,4,1,4,4,2,2,1,3,
+       2,1,4,3,3,4,1,4,4,2,1,4,2,2,3,1,4,3,2,3].map(String),
     );
     for (const round of manifest.rounds) {
       const candidates = KENCHIKUSHI1_CANDIDATES.filter(q => q.year === round.year);
       expect(candidates).toHaveLength(round.transcribedQuestions);
-      expect(candidates.map(q => q.qNumber)).toEqual(Array.from({ length: 20 }, (_, i) => i + 1));
+      for (const subject of round.subjects) {
+        const paper = candidates.filter(q => q.session === subject.session);
+        const count = subject.session === "keikaku" || (round.year === 2026 && subject.session === "kankyo-setsubi") ? 20 : 0;
+        expect(paper.map(q => q.qNumber)).toEqual(Array.from({ length: count }, (_, i) => i + 1));
+        if ("transcribedQuestions" in subject) expect(paper).toHaveLength(subject.transcribedQuestions!);
+      }
     }
     for (const q of KENCHIKUSHI1_CANDIDATES) {
       const round = manifest.rounds.find(r => r.year === q.year)!;
@@ -88,11 +94,30 @@ describe("一級建築士（学科）の公開前登録", () => {
     expect(area.questionNotice).toContain("2025-04-01");
   });
 
+  it("preserves superscripts, unit divisions and sensor references from the environmental paper", () => {
+    const env = KENCHIKUSHI1_CANDIDATES.filter(q => q.session === "kankyo-setsubi");
+    expect(env).toHaveLength(20);
+    expect(env[1].choices?.エ).toContain("SET＊");
+    expect(env[2].question).toContain("0.030 m³／（h・人）");
+    for (const choice of Object.values(env[2].choices!)) expect(choice).toContain("m³／（h・人）");
+    expect(env[7].choices?.ウ).toContain("５B 4／6");
+    expect(env[7].choices?.ウ).toContain("５B 6／4");
+    expect(env[9].choices?.エ).toContain("10⁻⁵倍");
+    expect(env[9].choices?.ウ).not.toContain("倍にする");
+    expect(env[17].choices?.ア).toContain("120 m³／min");
+    expect(env[17].choices?.イ).toContain("120 kg／m³");
+    expect(env[11].choices?.エ).toContain("TH②");
+    expect(env[11].choices?.エ).toContain("TH③");
+  });
+
   it("retains the original table and diagram outside the public directory", () => {
     const illustrated = KENCHIKUSHI1_CANDIDATES.filter(q => q.hasImage);
-    expect(illustrated.map(q => [q.year, q.qNumber])).toEqual([[2026, 3], [2026, 19]]);
+    expect(illustrated.map(q => [q.year, q.session, q.qNumber])).toEqual([
+      [2026, "keikaku", 3], [2026, "keikaku", 19],
+      [2026, "kankyo-setsubi", 4], [2026, "kankyo-setsubi", 12],
+    ]);
     for (const q of illustrated) {
-      expect(q.originalContent?.tables?.[0].rows).toHaveLength(5);
+      if (q.session === "keikaku") expect(q.originalContent?.tables?.[0].rows).toHaveLength(5);
       expect(q.imageUrls).toHaveLength(1);
       expect(q.imageAltTexts).toHaveLength(1);
       for (const url of q.imageUrls!) {
