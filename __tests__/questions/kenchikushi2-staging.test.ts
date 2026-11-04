@@ -58,7 +58,7 @@ describe("Kenchikushi unpublished staging", () => {
     expect(manifest.ingestionState).toBe("in-progress");
     expect(manifest.ingestedQuestionCount).toBe(allStaged.length);
     expect(manifest.batches.reduce((sum, batch) => sum + batch.questionCount, 0)).toBe(allStaged.length);
-    expect(manifest.nextResume).toEqual({ qualificationSlug: "kenchikushi2", year: 2025, subject: "IV", qNumber: 1 });
+    expect(manifest.nextResume).toEqual({ qualificationSlug: "mokuzo-kenchikushi", year: 2026, subject: "I", qNumber: 1 });
     const home = getHomeDirectory().flatMap(d => [...d.featured, ...d.compact]);
     for (const slug of ["kenchikushi2", "mokuzo-kenchikushi"]) {
       const entry = QUALIFICATION_CATALOG.find(q => q.slug === slug);
@@ -70,7 +70,7 @@ describe("Kenchikushi unpublished staging", () => {
   });
 
   it("pins each ingested subject to 25 complete source records and 125 explanations", () => {
-    expect(allStaged).toHaveLength(175);
+    expect(allStaged).toHaveLength(200);
     expect(new Set(allStaged.map(q => q.id)).size).toBe(allStaged.length);
     for (const batch of manifest.batches) {
       const subjectIndex = ["I", "II", "III", "IV"].indexOf(batch.subject);
@@ -181,7 +181,7 @@ describe("Kenchikushi unpublished staging", () => {
   });
 
   it("preserves construction table choices, fractions and specified contract edition", () => {
-    const construction = allStaged.filter(q => q.session === "gakka-IV");
+    const construction = allStaged.filter(q => q.year === 2026 && q.session === "gakka-IV");
     expect(construction.filter(q => q.hasImage).map(q => q.qNumber)).toEqual([2]);
     expect(construction[1].originalContent?.tables?.[0].rows).toHaveLength(6);
     expect(construction[1].choices?.エ).toBe("特定建設作業実施届／労働基準監督署長／作業開始5日前まで");

@@ -263,6 +263,31 @@ def source_questions_2025_iii(path):
     return questions
 
 
+def source_questions_2025_iv(path):
+    figures={14:(120,140,480,334),22:(70,75,510,236)};questions={}
+    with pdfplumber.open(path) as pdf:
+        for pn in range(14,24):
+            page=pdf.pages[pn-1];r=figures.get(pn)
+            def retain(o):
+                if o.get("object_type")!="char":return True
+                if o["size"]<=5.5 or o["top"]>=790:return False
+                return not(r and o["x0"]<r[2] and o["x1"]>r[0] and o["top"]<r[3] and o["bottom"]>r[1])
+            parts=re.split(r"〔No\.\s*(\d+)〕",unicodedata.normalize("NFKC",page.filter(retain).extract_text(use_text_flow=True)))
+            for i in range(1,len(parts),2):
+                n=int(parts[i]);f=re.split(r"(?m)^\s*([1-5])\s*\.\s*",parts[i+1]);choices={int(f[j]):f[j+1] for j in range(1,len(f),2)}
+                if n==11:choices[3]=normalize(choices[3]).replace('から41付近','から1/4付近')
+                if n==20:choices[2]=normalize(choices[2]).replace('から41の高さ','から1/4の高さ')
+                if n==16:
+                    for k,term in enumerate(['短ざく金物','折曲げ金物','ひねり金物','くら金物','ホールダウン金物(引寄せ金物)'],1):choices[k]=normalize(choices[k]).replace(term,term+' ― ',1)
+                if n==23:
+                    tables=[x for x in page.extract_tables() if len(x)==6 and len(x[0])==3];assert len(tables)==1,tables
+                    choices={k:'／'.join(row) for k,row in enumerate(tables[0][1:],1)}
+                assert sorted(choices)==[1,2,3,4,5],(n,choices)
+                questions[n]=(pn,f[0],choices)
+    assert sorted(questions)==list(range(1,26))
+    return questions
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("owner_directory", type=Path)
@@ -284,7 +309,7 @@ def main():
                         assert row == round_["officialAnswers"][subject], (file.name, subject)
                         counts["officialAnswers"] += len(row)
             counts["ownerPdfs"] += 1
-    for year, subject, extract, source in [(2026,"I",source_questions,"R8_2k_1_2.pdf"),(2026,"II",source_questions_ii,"R8_2k_1_2.pdf"),(2026,"III",source_questions_iii,"R8_2k_3_4.pdf"),(2026,"IV",source_questions_iv,"R8_2k_3_4.pdf"),(2025,"I",source_questions_2025_i,"2k-2025-1st-gakka1_2.pdf"),(2025,"II",source_questions_2025_ii,"2k-2025-1st-gakka1_2.pdf"),(2025,"III",source_questions_2025_iii,"2k-2025-1st-gakka3_4.pdf")]:
+    for year, subject, extract, source in [(2026,"I",source_questions,"R8_2k_1_2.pdf"),(2026,"II",source_questions_ii,"R8_2k_1_2.pdf"),(2026,"III",source_questions_iii,"R8_2k_3_4.pdf"),(2026,"IV",source_questions_iv,"R8_2k_3_4.pdf"),(2025,"I",source_questions_2025_i,"2k-2025-1st-gakka1_2.pdf"),(2025,"II",source_questions_2025_ii,"2k-2025-1st-gakka1_2.pdf"),(2025,"III",source_questions_2025_iii,"2k-2025-1st-gakka3_4.pdf"),(2025,"IV",source_questions_2025_iv,"2k-2025-1st-gakka3_4.pdf")]:
         originals = extract(args.owner_directory / source)
         data = (STAGING / f"{year}-{subject}.ts").read_text(encoding="utf-8")
         staged = json.loads(data.split("= ", 1)[1].rsplit(";", 1)[0])
