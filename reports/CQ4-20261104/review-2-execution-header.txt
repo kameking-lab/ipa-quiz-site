@@ -1,0 +1,18 @@
+codex.cmd : OpenAI Codex v0.166.0
+発生場所 行:2 文字:157
++ ... rompt.txt | & 'C:/Users/kanet/AppData/Roaming/npm/codex.cmd' exec -m  ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (OpenAI Codex v0.166.0:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+
+--------
+workdir: C:\Users\kanet\20260522\wt-jokaso-setsubishi
+model: gpt-6-astra
+provider: openai
+approval: never
+sandbox: read-only
+reasoning effort: low
+reasoning summaries: none
+session id: 01a1a693-686e-7060-8229-0f08dc087077
+--------
+user

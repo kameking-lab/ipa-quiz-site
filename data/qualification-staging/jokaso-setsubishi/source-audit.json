@@ -1636,5 +1636,13 @@
       "renderingNote": "Full-page PNG followed by raster crop. PNG assets avoid heading/choice-number loss observed when inspecting WebP/direct-clip artifacts."
     }
   ],
-  "reviewStatus": "author-visual-check; independent review pending"
+  "reviewStatus": "independent-PASS",
+  "reviewEvidence": {
+    "firstReview": "reports/CQ4-20261104/independent-review-1.md",
+    "firstVerdict": "FAIL",
+    "finalReview": "reports/CQ4-20261104/independent-review-2.md",
+    "finalVerdict": "PASS",
+    "reviewedCommit": "649527dc7f5e02375eb135125315a853de311297",
+    "finalReviewSha256": "783ca7497db7bbf99c733165855a6a997d4df8afefe2c56b3aff37f9f942757a"
+  }
 }
