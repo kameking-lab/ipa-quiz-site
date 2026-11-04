@@ -11,6 +11,7 @@ import { PracticeDailyLimit, PracticeLoading } from "@/components/quiz/PracticeT
 import Link from "next/link";
 import { fetchPracticeQuestion, PracticeRequestError } from "@/lib/billing/guest-client";
 import type { PracticeAccess } from "@/lib/billing/practice-contract";
+import { shuffleChoices } from "@/lib/questions/filter";
 
 const MAX_POOL = 80;
 const WEAKNESS_THRESHOLD = 0.6;
@@ -148,18 +149,24 @@ export function QuizClient({
     if (!current) return;
     const controller = new AbortController();
     const id = current.id;
-    void fetch(`/api/questions/related?id=${encodeURIComponent(id)}`, { signal: controller.signal })
+    const params = new URLSearchParams({ id });
+    if (mode === "year") params.set("year", String(current.year));
+    void fetch(`/api/questions/related?${params}`, { signal: controller.signal })
       .then(async (response) => {
         if (!response.ok) throw new Error("related-unavailable");
         const data = await response.json() as { questions: Question[] };
         if (controller.signal.aborted) return;
-        for (const question of data.questions) cache.current.set(question.id, question);
-        setRelated({ id, questions: data.questions });
+        const available = new Set(poolIds);
+        const questions = data.questions.filter((q) => available.has(q.id));
+        for (const question of questions) {
+          if (!cache.current.has(question.id)) cache.current.set(question.id, mode === "random" ? shuffleChoices(question) : question);
+        }
+        setRelated({ id, questions });
       }).catch(() => {
         if (!controller.signal.aborted) setRelated({ id, questions: [] });
       });
     return () => controller.abort();
-  }, [current]);
+  }, [current, mode, poolIds]);
 
   // Derive session pool once on mount (needs localStorage for history modes).
   React.useEffect(() => {
