@@ -1,5 +1,7 @@
 # LK2 ローカル継続記録
 
+> 最新の進捗・次回再開位置は `reports/lk2b-khk-kagaku-20261104.md` を参照。以下はLK2終了時点の履歴であり、作成済み解説をやり直さない。
+
 2026-11-04。worktree `C:/Users/kanet/20260522/wt-khk-kagaku`、ブランチ `qual/khk-kagaku-20261104`。クラウド成果 `ed8c63d42`（origin/claude/wonderful-gates-ghouxr）を継承。
 
 ## 区切り1：乙種化学100問

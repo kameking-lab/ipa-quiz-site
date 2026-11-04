@@ -58,7 +58,7 @@ describe("KHK chemistry source staging", () => {
     const questions = drafts.papers.flatMap<(typeof drafts.papers)[number]["questions"][number]>((paper) => paper.questions);
     expect(questions.filter((q) => q.transcriptionVerified)).toHaveLength(review.counts.transcriptionVerified);
     expect(questions.filter((q) => !q.transcriptionVerified)).toHaveLength(review.counts.unreviewed);
-    expect(questions.filter((q) => q.explanationWritten)).toHaveLength(99);
+    expect(questions.filter((q) => q.explanationWritten)).toHaveLength(129);
     expect(review.counts.originalQuestions).toBe(422);
     expect(review.counts.descriptiveAnswersVerified).toBe(12);
     for (const record of review.reviewedPapers) {
@@ -181,11 +181,13 @@ describe("KHK chemistry source staging", () => {
     expect(paper.questions[5].pdfPages).toEqual([7]);
   });
 
-  it("retains 99 independent explanations and all 495 choice explanations with their official keys", () => {
-    expect(review.explanationReviews).toHaveLength(99);
-    expect(review.counts.explanationWritten).toBe(99);
-    expect(review.counts.explanationPending).toBe(323);
+  it("retains 129 independent explanations and all 645 choice explanations with their official keys", () => {
+    expect(review.explanationReviews).toHaveLength(129);
+    expect(review.counts.explanationWritten).toBe(129);
+    expect(review.counts.explanationPending).toBe(293);
     const expected = {
+      "2024-AY": [1, 3, 2, 5, 2, 3, 1, 2, 3, 1, 1, 4, 1, 2, 3],
+      "2025-AY": [5, 4, 1, 3, 4, 2, 1, 3, 1, 2, 5, 4, 5, 3, 2],
       "2024-BY": [3, 4, 3, 4, 5, 4, 5, 2, 4, 2, 3, 5, 2, 3, 4],
       "2025-BY": [2, 2, 3, 1, 5, 4, 3, 1, 5, 4, 1, 4, 3, 5, 4],
       "2024-BZ": [5, 2, 2, 3, 1, 5, 3, 3, 2, 2, 5, 3, 4, 5, 2],
@@ -193,7 +195,7 @@ describe("KHK chemistry source staging", () => {
       "2024-CZ": [5, 3, 4, 1, 5, 1, 2, 5, 5, 5, 4, 2, 2, 3, 1, 3, 2, 4, 1, 5],
       "2025-CZ": [2, 3, 4, 5, 3, 1, 2, 3, 2, 2, 3, 1, 1, 4, 3, 5, 4, 1, 4, 5],
     };
-    expect(review.explanationReviews.every((record) => ["BY", "BZ", "CZ"].includes(record.code))).toBe(true);
+    expect(review.explanationReviews.every((record) => ["AY", "BY", "BZ", "CZ"].includes(record.code))).toBe(true);
     for (const record of review.explanationReviews) {
       const q = drafts.papers.find((p) => p.year === record.year && p.code === record.code)!.questions[record.number - 1] as unknown as Record<string, unknown>;
       expect(q.officialAnswerNumber).toBe(expected[`${record.year}-${record.code}` as keyof typeof expected][record.number - 1]);
