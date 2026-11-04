@@ -19,12 +19,13 @@ const CATEGORIES = [
   { id: "enterprise", label: "企業での活用ご相談" },
   { id: "media", label: "取材・メディア" },
   { id: "other", label: "その他" },
+  { id: "tsugino", label: "次の資格について" },
 ] as const;
 
 type CategoryId = (typeof CATEGORIES)[number]["id"];
 
-export function ContactForm() {
-  const [category, setCategory] = React.useState<CategoryId>("improvement");
+export function ContactForm({ initialCategory = "improvement" }: { initialCategory?: CategoryId }) {
+  const [category, setCategory] = React.useState<CategoryId>(initialCategory);
   const [name, setName] = React.useState("");
   const [email, setEmail] = React.useState("");
   const [body, setBody] = React.useState("");
