@@ -47,3 +47,5 @@ LK5Dでは学科Ⅱ（建築法規）問1～25・125肢解説を `2026-II.ts` �
 木造2025年学科IV25問を追加。床伏図の柱凡例・小屋組断面・合印表等4図と表1件を保存。角目の√3、断熱厚さの±10、軒どいの1/200を原本画像から保持した。
 
 収録進捗：400/400問の本文・選択肢・図表・公式正答・全肢解説を入力済み。未収録問題はないが、全400問の人手確認と公開判断は未実施。再開位置は二級2026年・学科I問1からの人手による原本・根拠確認（manifest.nextResume.stage=human-source-and-explanation-review）。全問を needsReview=true / publicAllowed=false で保持し、公開側へ接続しない。
+
+LK5Dの15追加バッチは全て gpt-6-astra / read-only の独立レビューでPASS。レビュー原文・FAIL時の修正記録は reports/lk5d-*-review-*.md に保持。人手確認待ちは解除しない。既知の404補助資料参照は到達可能な一次資料へ更新し、reports/lk5d-reference-check.json に記録した。
