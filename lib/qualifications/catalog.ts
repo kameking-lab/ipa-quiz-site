@@ -43,6 +43,16 @@ export interface QualificationCatalogEntry {
  * 「公式に問題と正答がある」だけでは live にせず、転載条件まで確認する。
  */
 export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
+{
+    slug: "chiiki-ryoko", shortName: "地域限定旅行業務取扱管理者", fullName: "地域限定旅行業務取扱管理者試験",
+    domain: "personal-services", administrator: "観光庁",
+    officialQuestionsUrl: "https://www.mlit.go.jp/kankocho/seisaku_seido/ryokogyoho/chiikigenteikanrisha.html",
+    officialReuseTermsUrl: "https://www.mlit.go.jp/kankocho/site-policy.html", status: "ready-to-ingest",
+    stagingDataPath: "data/qualification-staging/chiiki-ryoko",
+    reuseSummary: "COV1 B #8。2025・2026年度の全科目版各59問、計118問と全472肢の独自解説、原本ページ画像を未公開で保存。publicAllowed=false。免除版は重複収録しない。",
+    attributionTemplate: "出典：観光庁 地域限定旅行業務取扱管理者試験（全科目）問題・正解及び配点。原本画像化・文章整形・独自解説の追加は過去問AIによる加工。",
+    remainingWork: ["未公開を維持。公開用の試験設定・複数選択の厳密採点・表示への接続は別タスク"],
+},
 {"slug":"keiryoshi","examCode":"keiryoshi","shortName":"一般計量士","fullName":"一般計量士","domain":"construction","administrator":"経済産業省","officialQuestionsUrl":"https://www.meti.go.jp/policy/economy/hyojun/techno_infra/keiryoshi.html","officialReuseTermsUrl":"https://www.meti.go.jp/main/rules.html","status":"live","reuseSummary":"第76回（令和7年実施）のみ100問を収録。第75回は未収録で、2回分の全問収録ではありません。出題時点の法令・基準に基づく全肢解説を確認できます。","remainingWork":["第75回は未収録"]},
 {"slug":"keiryoshi-nodo","examCode":"keiryoshi-nodo","shortName":"環境計量士（濃度関係）","fullName":"環境計量士（濃度関係）","domain":"construction","administrator":"経済産業省","officialQuestionsUrl":"https://www.meti.go.jp/policy/economy/hyojun/techno_infra/keiryoshi.html","officialReuseTermsUrl":"https://www.meti.go.jp/main/rules.html","status":"live","reuseSummary":"第76回（令和7年実施）のみ100問を収録。第75回は未収録で、2回分の全問収録ではありません。出題時点の法令・基準に基づく全肢解説を確認できます。","remainingWork":["第75回は未収録"]},
 {"slug":"keiryoshi-soon","examCode":"keiryoshi-soon","shortName":"環境計量士（騒音・振動関係）","fullName":"環境計量士（騒音・振動関係）","domain":"construction","administrator":"経済産業省","officialQuestionsUrl":"https://www.meti.go.jp/policy/economy/hyojun/techno_infra/keiryoshi.html","officialReuseTermsUrl":"https://www.meti.go.jp/main/rules.html","status":"live","reuseSummary":"第76回（令和7年実施）のみ100問を収録。第75回は未収録で、2回分の全問収録ではありません。出題時点の法令・基準に基づく全肢解説を確認できます。","remainingWork":["第75回は未収録"]},
