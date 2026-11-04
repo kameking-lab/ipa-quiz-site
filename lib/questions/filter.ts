@@ -20,7 +20,7 @@ export function isPlaceholderExplanation(q: Question): boolean {
  * paper page from promising more questions than the quiz can actually serve.
  */
 export function isPracticeReadyQuestion(q: Question): boolean {
-  return !isReferenceOnlyQuestionId(q.id) && !nativeBQuestionIssue(q) && !numericQuestionIssue(q) && !orderingQuestionIssue(q) && !hasUnrenderableContent(q) && !q.needsReview && !isPlaceholderExplanation(q);
+  return !q.officialScoring && q.publicAllowed !== false && !isReferenceOnlyQuestionId(q.id) && !nativeBQuestionIssue(q) && !numericQuestionIssue(q) && !orderingQuestionIssue(q) && !hasUnrenderableContent(q) && !q.needsReview && !isPlaceholderExplanation(q);
 }
 
 export function filterQuestions(

@@ -5,6 +5,7 @@ import { isPracticeReadyQuestion } from "@/lib/questions/filter";
 import { questionSourceEdition } from "@/lib/questions/source-label";
 import { examLabel } from "@/lib/utils";
 export const EXAM_DESCRIPTIONS: Partial<Record<ExamCode, string>> = {
+  kenchikushi1: () => "????????????????????????????",
 "keiryoshi": "第76回（令和7年実施）のみ100問を収録。第75回は未収録で、2回分の全問収録ではありません。出題時点の法令・基準に基づく全肢解説を確認できます。",
 "keiryoshi-nodo": "第76回（令和7年実施）のみ100問を収録。第75回は未収録で、2回分の全問収録ではありません。出題時点の法令・基準に基づく全肢解説を確認できます。",
 "keiryoshi-soon": "第76回（令和7年実施）のみ100問を収録。第75回は未収録で、2回分の全問収録ではありません。出題時点の法令・基準に基づく全肢解説を確認できます。",
@@ -219,6 +220,7 @@ export function examTopDescription(exam: ExamCode, questionCount: number): strin
     return `${base}${examLabel(exam)}の過去問${questionCount}問を年度別・分野別に収録。AIコパイロット付きで効率的に学習。`;
 }
 const EXAM_FULL_NAMES: Record<ExamCode, string> = {
+  kenchikushi1: "?????????",
     "chintai": "賃貸不動産経営管理士",
     "kyusui": "給水装置工事主任技術者",
     "biru-kan": "建築物環境衛生管理技術者",

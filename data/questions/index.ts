@@ -1,3 +1,4 @@
+import { KENCHIKUSHI1_QUESTIONS } from "./kenchikushi1";
 import { BATCH1_QUESTIONS } from "./batch1";
 import { REFORM_MGR_QUESTIONS } from "./reform-mgr";
 import { SHOHI_SODAN_QUESTIONS } from "./shohi-sodan";
@@ -120,6 +121,7 @@ import { GYOSEI_QUESTIONS } from "./gyosei";
 import { SHIHOSHOSHI_BATCH1_QUESTIONS } from "./shihoshoshi";
 
 export const QUESTIONS_BY_EXAM: Partial<Record<ExamCode, Question[]>> = {
+  ...(isExamPublished("kenchikushi1") ? { kenchikushi1: KENCHIKUSHI1_QUESTIONS.filter(isPracticeReadyQuestion) } : {}),
   "reform-mgr": REFORM_MGR_QUESTIONS,
   "shohi-sodan": SHOHI_SODAN_QUESTIONS,
 ...(isExamPublished("chintai") ? { "chintai": BATCH1_QUESTIONS["chintai"]!.filter(isPracticeReadyQuestion) } : {}),

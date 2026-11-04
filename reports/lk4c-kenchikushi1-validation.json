@@ -1,0 +1,74 @@
+{
+  "checkedAt": "2026-11-04T05:33:01.375650+00:00",
+  "checks": {
+    "tests": {
+      "exitCode": 0
+    },
+    "typecheck": {
+      "exitCode": 0
+    },
+    "validation-all": {
+      "exitCode": 0
+    },
+    "validation-staging": {
+      "exitCode": 0
+    }
+  },
+  "globalCounts": {
+    "validated": 26694,
+    "ok": 26694,
+    "fail": 0,
+    "warn": 17058
+  },
+  "stagingCounts": {
+    "validated": 250,
+    "ok": 250,
+    "fail": 0,
+    "warn": 250
+  },
+  "relatedTests": {
+    "files": 6,
+    "passed": 66
+  },
+  "candidateCounts": {
+    "year2026": 125,
+    "year2025": 125,
+    "total": 250,
+    "choiceExplanations": 1000,
+    "assets": 31
+  },
+  "files": [
+    {
+      "path": "data/qualification-staging/kenchikushi1/2025-houki.ts",
+      "sha256": "8e12d0963eaaaf37309454b1116aaa1ff895bf027bab5b97205911905509f8bf"
+    },
+    {
+      "path": "data/qualification-staging/kenchikushi1/2025-kankyo-setsubi.ts",
+      "sha256": "0f41c6a05cccce26f8cdd4aa6e608478694483f88f4287f9e4e7be846059a57e"
+    },
+    {
+      "path": "data/qualification-staging/kenchikushi1/2025-keikaku.ts",
+      "sha256": "1ee31ccbb74b7769198199430e8d799cb8f18c3629be63a7aa65cbdb937629f2"
+    },
+    {
+      "path": "data/qualification-staging/kenchikushi1/2025-kozo.ts",
+      "sha256": "1b7c7245b7130e966856e1ca017dce9b88f4f154b1a2f3a4ef410ff0002f123e"
+    },
+    {
+      "path": "data/qualification-staging/kenchikushi1/2025-sekou.ts",
+      "sha256": "5917316995db9363867629cef8191bfcb3dd2e8405df577fbb10b7b1ebdf9c0b"
+    },
+    {
+      "path": "data/qualification-staging/kenchikushi1/index.ts",
+      "sha256": "030e85cb0ecf9543397e87a25f0cf4a3ad0f36b7b781acc29ac74c92f9bace3b"
+    },
+    {
+      "path": "data/questions/kenchikushi1/source-manifest.json",
+      "sha256": "0cbd59bb19235d25c2e535b85c40a71a97f3ed5cef8142f4288240daf2805ad4"
+    },
+    {
+      "path": "__tests__/questions/kenchikushi1-staging.test.ts",
+      "sha256": "cedb80118e98c281c0898e6880331810a62e1e32d1c7a782b6f8b926bd214a05"
+    }
+  ]
+}
