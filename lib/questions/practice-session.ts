@@ -36,6 +36,7 @@ export function parsePracticeSession(value?: string): Session | undefined {
 }
 
 export function practiceSessionLabel(session: Session, exam?: ExamCode): string {
+  if (exam && ["benrishi", "sokuryoshi", "dokugeki-chiba", "jokaso-setsubishi", "chiiki-ryoko", "junkango-kansai", "kukaku-seiri", "dojo-osen", "kenchikushi2", "mokuzo-kenchikushi"].includes(exam)) return EXAM_CONFIGS[exam].sessions.find(item => item.session === session)?.label ?? session;
   if (exam?.startsWith("khk-reito-")) {
     const labels: Partial<Record<Session, string>> = { houki: "法令", hoan: "保安管理技術", kogaku: "学識" };
     if (labels[session]) return labels[session]!;

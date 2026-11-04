@@ -103,7 +103,7 @@ export function QuizClient({
   // Optional content is fetched while the learner reads the current question.
   // Activation still uses the ordinary practice access check below.
   React.useEffect(() => {
-    if (!current) return;
+    if (!current || nativeClient()) return;
     const controller = new AbortController();
     const id = current.id;
     const eligible = sessionIds?.slice(index + 1) ?? [];

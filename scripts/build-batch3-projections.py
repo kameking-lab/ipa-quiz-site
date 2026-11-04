@@ -65,7 +65,7 @@ def project(code, q, year):
         documents = {d['id']: d for d in read(STAGING / code / 'source-manifest.json')['documents']}
         def pages(refs):
             return [next(p['asset'] for p in documents[r['documentId']]['pages'] if p['page'] == r['page']) for r in refs]
-        images = pages(q['originalQuestion']['sourcePages'])
+        images = pages(q['originalQuestion']['sourcePages']) + pages(q.get('answerSheetPages', []))
         answer_images = pages(q['originalAnswer']['sourcePages']) if q['session'] == 'pm' else []
         question = q['originalQuestion'].get('selector', q['officialQuestionLabel']) + '\n原問題の本文・選択肢・図表は次の原本画像で確認してください。'
         choices = {KEYS[i]: f'原本の選択肢{c["officialNumber"]}' for i, c in enumerate(q.get('choices', []))}
@@ -97,7 +97,7 @@ def project(code, q, year):
         'license': 'INT7-owner-decision', 'publicAllowed': True, 'needsReview': False,
         'lastUpdated': q.get('lastUpdated', '2026-11-05'), 'hasImage': bool(images),
     }
-    for field in ['fiscalYear', 'examDate', 'officialAnswerNumber', 'officialQuestionLabel', 'requiredSelections', 'lawReferenceDate', 'originalContent', 'questionNotice', 'sourceRubies', 'choiceFactTruth', 'acceptedAnswerCombinations', 'modelAnswer', 'scoringCriteria', 'explanationSections']:
+    for field in ['fiscalYear', 'examDate', 'officialAnswerNumber', 'officialQuestionLabel', 'requiredSelections', 'lawReferenceDate', 'originalContent', 'questionNotice', 'sourceRubies', 'choiceFactTruth', 'acceptedAnswerCombinations', 'modelAnswer', 'scoringCriteria', 'explanationSections', 'officialReferenceUrls']:
         if q.get(field) is not None:
             result[field] = q[field]
     if choices:
@@ -121,7 +121,7 @@ def project(code, q, year):
         result['answer'] = result['modelAnswer']
         result['scoringCriteria'] = '公式解答例と独自解説を用いて自己確認します。記述・作図は自動採点しません。必須No.1と選択No.2〜5から2題が実際の解答対象です。'
     if q.get('sourceIssue'):
-        result['questionNotice'] = q['sourceIssue']
+        result['questionNotice'] = q['sourceIssue'] + ' ???????????????????????????????'
     assert result['question'] and result['explanation'], (code, q['id'])
     return result
 

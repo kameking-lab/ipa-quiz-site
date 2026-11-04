@@ -75,7 +75,7 @@ export function DescriptiveAnswerCard({
         <a href={question.sourcePdfUrl} target="_blank" rel="noopener noreferrer" className="min-h-11 py-3 underline">
           {khk ? "高圧ガス保安協会の公式問題PDF" : official ? "センターの公式問題PDF" : ministry ? "法務省の公式問題PDF" : "実施団体の公式問題PDF"}
         </a>
-        {(official || khk) && question.sourceAnswerUrl && <a href={question.sourceAnswerUrl} target="_blank" rel="noopener noreferrer" className="min-h-11 py-3 underline">{khk ? "高圧ガス保安協会の公式解答例PDF" : "公式正解例の出典"}</a>}
+        {(official || khk || question.exam === "sokuryoshi") && question.sourceAnswerUrl && <a href={question.sourceAnswerUrl} target="_blank" rel="noopener noreferrer" className="min-h-11 py-3 underline">{khk ? "高圧ガス保安協会の公式解答例PDF" : "公式正解例の出典"}</a>}
         {(question.officialReferenceUrls ?? []).map((url) => (
           <a key={url} href={url} target="_blank" rel="noopener noreferrer" className="min-h-11 py-3 underline">
             {questionReferenceLabel(question, url)}
