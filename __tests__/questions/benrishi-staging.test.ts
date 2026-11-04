@@ -81,6 +81,17 @@ describe("弁理士短答式・直近2回の未公開収録", () => {
     const name = questions.find(q => q.id === "benrishi-2025-trademark-05")!;
     expect(name.choiceExplanations[0].explanation).toContain("略称自体にも必要");
     expect(name.choiceExplanations[3].explanation).toContain("商標法38条の2");
+    expect(name.choiceExplanations[2].explanation).toContain("特許法77条4項");
+    const utility = questions.find(q => q.id === "benrishi-2025-patent-16")!;
+    expect(utility.statementExplanations[4].explanation).toContain("実用新案法6条の2");
+    const unfair = questions.find(q => q.id === "benrishi-2025-copyright-unfair-competition-08")!;
+    expect(unfair.choiceExplanations[2].explanation).toContain("19条1項9号ロ");
+    expect(unfair.choiceExplanations[4].explanation).toContain("19条1項7号");
+    const examination = questions.find(q => q.id === "benrishi-2025-patent-17")!;
+    expect(examination.statementExplanations[2].explanation).toContain("請求前にしたものを対象から除く");
+    expect(examination.statementExplanations[3].explanation).toContain("54条1項");
+    const costs = questions.find(q => q.id === "benrishi-2026-patent-20")!;
+    expect(costs.statementExplanations[4].explanation).toContain("費用額は請求により");
   });
 
   it("原表・語群20語・番号付き空欄と番号なし空欄を省略しない", () => {
