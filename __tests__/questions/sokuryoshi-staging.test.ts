@@ -133,5 +133,7 @@ describe("sokuryoshi: two complete private source-image rounds", () => {
     expect(section(2025,3,"問B-1")).toContain("ブレ");
     expect(section(2025,3,"問B-1")).not.toContain("ひずみ");
     expect(find(2025,"am",16).choices![1].explanation).toContain("入射角1.5度以上");
+    expect(section(2026,5,"問B-3")).toContain("対応は三点");
+    for (const token of ["JA40～B16","JA41～JA40","B25～JA41","再測"]) expect(section(2026,5,"問B-3")).toContain(token);
   });
 });
