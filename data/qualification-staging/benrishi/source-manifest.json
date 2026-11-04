@@ -1,0 +1,75 @@
+{
+  "slug": "benrishi",
+  "publicAllowed": false,
+  "status": "draft",
+  "baseCommit": "bb912dfd0494f7095ec5387f9f2e53f46381cd1f",
+  "candidateEvidence": "COV1 B #5 (2026-11-04)",
+  "downloadedSources": [
+    {
+      "year": 2025,
+      "kind": "question",
+      "url": "https://www.jpo.go.jp/news/benrishi/shiken-mondai/document/2025tanto/question.pdf",
+      "method": "GET",
+      "client": "Windows PowerShell Invoke-WebRequest -UseBasicParsing (default headers)",
+      "status": 200,
+      "bytes": 380480,
+      "sha256": "69b5c0a44a121615bd80282cdb54f37a1b4a7dae7d495618f949c615c4aef477",
+      "checkedOn": "2026-11-04",
+      "pages": 65
+    },
+    {
+      "year": 2025,
+      "kind": "answer",
+      "url": "https://www.jpo.go.jp/news/benrishi/shiken-mondai/document/2025tanto/answer.pdf",
+      "method": "GET",
+      "client": "Windows PowerShell Invoke-WebRequest -UseBasicParsing (default headers)",
+      "status": 200,
+      "bytes": 86721,
+      "sha256": "02ddb509a45d36b0f585f8f4b58c548d7f7e1282d39277e20904528e05d5e295",
+      "checkedOn": "2026-11-04",
+      "pages": 1
+    },
+    {
+      "year": 2026,
+      "kind": "question",
+      "url": "https://www.jpo.go.jp/news/benrishi/shiken-mondai/document/2026tanto/question.pdf",
+      "method": "GET",
+      "client": "Windows PowerShell Invoke-WebRequest -UseBasicParsing (default headers)",
+      "status": 200,
+      "bytes": 641024,
+      "sha256": "dc75d689f4bd4869bbb53c3b3918bad935604dafe46cdc08c49b527b65a96529",
+      "checkedOn": "2026-11-04",
+      "pages": 65
+    },
+    {
+      "year": 2026,
+      "kind": "answer",
+      "url": "https://www.jpo.go.jp/news/benrishi/shiken-mondai/document/2026tanto/answer.pdf",
+      "method": "GET",
+      "client": "Windows PowerShell Invoke-WebRequest -UseBasicParsing (default headers)",
+      "status": 200,
+      "bytes": 42983,
+      "sha256": "d64d3dd342c06181c437730e255a3dae3db2f257f674589c0f1508918c1f182e",
+      "checkedOn": "2026-11-04",
+      "pages": 1
+    }
+  ],
+  "unavailablePdfUrls": [],
+  "publicationDates": {
+    "2025": "2025-05-19",
+    "2026": "2026-05-18"
+  },
+  "lawBasis": "出題時点の法令。公式の法令基準日を一次本文で確認できるまでは日付を推測しない。",
+  "reuseTerms": {
+    "url": "https://www.jpo.go.jp/toppage/about/index.html",
+    "appendixUrl": "https://www.jpo.go.jp/toppage/about/appendix.html",
+    "directGetStatus": 202,
+    "directBodyBytes": 0,
+    "status": "要再確認（検索インデックスはPDL1.0を示すが通常GET本文未取得）"
+  },
+  "priorDraft": {
+    "commit": "3989c0f8f",
+    "path": "data/staging/benrishi",
+    "use": "転記及び問題単位の独自解説草稿を再利用。今回取得原本のハッシュと再抽出で検証し、全肢解説を追加する。"
+  }
+}
