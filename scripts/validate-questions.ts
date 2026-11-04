@@ -3,6 +3,9 @@ import { SHOHI_SODAN_QUESTIONS } from "@/data/questions/shohi-sodan";
 import { REFORM_MGR_QUESTIONS } from "@/data/questions/reform-mgr";
 import { JKEN_SYSTEM_QUESTIONS } from "@/data/questions/jken-system";
 import { NativeBDataSchema, nativeBQuestionIssue } from "../lib/questions/native-b";
+// Native staging is validated on import, independently of the public question pool.
+import { HOSHASEN_STAGED_QUESTIONS } from "../data/questions/hoshasen";
+console.log(`放射線取扱主任者の未公開ステージング: ${HOSHASEN_STAGED_QUESTIONS.length}問（スキーマ検証済み）`);
 /**
  * data/questions/ 配下の問題データを検証・品質スコア算出。
  *
