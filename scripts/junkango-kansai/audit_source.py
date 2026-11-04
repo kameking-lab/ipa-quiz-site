@@ -70,7 +70,7 @@ def main(source_dir):
               'officialAnswerCells': 300, 'answerTableMatches': True, 'results': results}
     output = DEST / 'qa/source-audit.json'
     output.parent.mkdir(parents=True, exist_ok=True)
-    output.write_text(json.dumps(report, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
+    output.write_text(json.dumps(report, ensure_ascii=False, indent=2) + '\n', encoding='utf-8', newline='\n')
     print(json.dumps({k: v for k, v in report.items() if k != 'results'}, ensure_ascii=False))
 
 

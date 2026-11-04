@@ -41,7 +41,7 @@ def main():
             notice = row.get('scoringNotice', '')
             row['explanation'] = (notice + '\n' if notice else '') + '\n'.join(f'{key}：{text}' for key, text in row['choiceExplanations'].items())
             row['officialReferenceUrls'] = [ref['url'] for ref in references if f'{year}-q{row["qNumber"]}' in ref['questions']]
-        source.write_text(json.dumps(rows, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
+        source.write_text(json.dumps(rows, ensure_ascii=False, indent=2) + '\n', encoding='utf-8', newline='\n')
     print('Applied 1,200 original choice explanations; all 300 source-text hashes unchanged.')
 
 
