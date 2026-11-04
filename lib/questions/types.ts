@@ -29,6 +29,7 @@ export type ExamCode =
   | "denko1"
   | "takken"
   | "civil2"
+  | "denki1"
   | "kankoji2"
   | "zoen2"
   | "zoen1"
@@ -259,7 +260,7 @@ export interface Question {
   sourceAttribution?: string;
   /** 問題・正答以外の公式根拠（法令・制度概要等）。 */
   officialReferenceUrls?: string[];
-  license: "JMBSC-permission-required" | "JAEIC-permission-required" | "IP-EDU-authorized-reuse" | "MLIT-PDL-1.0" | "CPAAOB-PDL-1.0" | "IPA-public" | "JAFP-reuse-with-attribution" | "KINZAI-reuse-with-attribution" | "ECEE-educational-reuse" | "RETIO-reuse" | "JCTC-authorized-reuse" | "SSSC-reuse" | "KANSAI-UNION-reuse" | "KANRIKYO-educational-reuse" | "EXAM-OR-JP-attributed" | "IPEJ-attributed" | "HOYOKYO-attributed" | "MANKAN-attributed" | "JFSA-attributed" | "SHAROSI-attributed" | "MHLW-attributed" | "AHK-attributed" | "JAAME-attributed" | "RBC-attributed" | "JF-CMCA-attributed" | "JCTC-attributed" | "MOJ-attributed" | "ZAIJUSEI-attributed" | "NICHIMU-educational-reuse" | "NICHIMU-past-question-study-use" | "JIA-attributed" | "JASPA-owner-authorized" | "SHOUBO-owner-authorized" | "JECES-owner-cleared";
+  license: "JMBSC-permission-required" | "JAEIC-permission-required" | "IP-EDU-authorized-reuse" | "MLIT-PDL-1.0" | "CPAAOB-PDL-1.0" | "IPA-public" | "JAFP-reuse-with-attribution" | "KINZAI-reuse-with-attribution" | "ECEE-educational-reuse" | "RETIO-reuse" | "JCTC-authorized-reuse" | "SSSC-reuse" | "KANSAI-UNION-reuse" | "KANRIKYO-educational-reuse" | "EXAM-OR-JP-attributed" | "IPEJ-attributed" | "HOYOKYO-attributed" | "MANKAN-attributed" | "JFSA-attributed" | "SHAROSI-attributed" | "MHLW-attributed" | "AHK-attributed" | "JAAME-attributed" | "RBC-attributed" | "JF-CMCA-attributed" | "JCTC-attributed" | "MOJ-attributed" | "ZAIJUSEI-attributed" | "NICHIMU-educational-reuse" | "NICHIMU-past-question-study-use" | "JIA-attributed" | "JASPA-owner-authorized" | "SHOUBO-owner-authorized" | "JECES-owner-cleared" | "FCIP-owner-confirmed";
   isCalculation?: boolean;
   /** 解説品質が低い・要確認の問題。出題プールから除外される。 */
   needsReview?: boolean;

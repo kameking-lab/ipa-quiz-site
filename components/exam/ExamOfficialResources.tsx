@@ -90,6 +90,9 @@ export function ExamOfficialResources({ exam }: { exam: ExamCode }) {
         href: "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/09/20260907e_seitou.pdf",
         description: "問題A・問題Bの正答肢PDF。",
       },
+    ] : exam === "denki1" ? [
+      { label: "建設業振興基金 公式問題・正答（令和8年度）", href: "https://www.fcip-shiken.jp/pdf/r08_1dg_mondai.pdf", description: "第一次検定の全89問。PDF末尾に正答肢を掲載。" },
+      { label: "建設業振興基金 公式問題・正答（令和7年度）", href: "https://www.fcip-shiken.jp/pdf/r07_1dg_mondai.pdf", description: "第一次検定の全89問。PDF末尾に正答肢を掲載。" },
     ] : exam === "kankoji2" ? [
       {
         label: "全国建設研修センター 公式問題・正答肢（令和8年度前期）",
