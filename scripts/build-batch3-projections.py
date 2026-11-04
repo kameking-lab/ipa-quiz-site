@@ -55,6 +55,8 @@ def project(code, q, year):
         session = {'特許・実用新案': 'patent', '意匠': 'design', '商標': 'trademark', '条約': 'treaty', '著作権法・不正競争防止法': 'copyright'}[q['category']]
     if code == 'dokugeki-chiba':
         session = 'dokugeki-' + q['track']
+    category_names = {'hoki': '旅行業法令', 'yakkan': '旅行業約款', 'jitsumu': '国内旅行実務'} if code == 'chiiki-ryoko' else {}
+    category = category_names.get(q.get('category', session), q.get('category', session))
     number = q.get('qNumber', q.get('number', q.get('officialQuestionNumber')))
     images = q.get('sourceImages', q.get('sourcePageImages', [q['sourceImage']] if q.get('sourceImage') else q.get('imageUrls', [])))
     answer_images = q.get('answerImageUrls', [])
@@ -89,8 +91,8 @@ def project(code, q, year):
         question = context + '\n\n' + question
     result = {
         'id': q['id'], 'exam': code, 'year': year, 'season': q.get('season', 'annual'), 'session': session,
-        'qNumber': number, 'type': q.get('type', 'multiple-choice'), 'category': q.get('category', session),
-        'topicTags': q.get('topicTags', [q.get('category', session)]), 'difficulty': q.get('difficulty', 3),
+        'qNumber': number, 'type': q.get('type', 'multiple-choice'), 'category': category,
+        'topicTags': [category_names.get(tag, tag) for tag in q.get('topicTags', [category])], 'difficulty': q.get('difficulty', 3),
         'question': question, 'answer': answer, 'explanation': q.get('explanation', ''),
         'sourcePdfUrl': q.get('sourcePdfUrl', q.get('sourcePdfUrls', [''])[0]),
         'sourceAnswerUrl': q.get('sourceAnswerUrl'), 'sourceAttribution': q.get('sourceAttribution', q.get('attribution')),

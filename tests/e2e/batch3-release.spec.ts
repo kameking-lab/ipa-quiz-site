@@ -13,6 +13,8 @@ test("batch3: new qualification hubs and retained GSC entry URLs work at mobile 
     const response = await page.goto(`/${code}`);
     expect(response?.status(), code).toBe(200);
     await expect(page.locator("main h1").first()).toBeVisible();
+    if (code === "dokugeki-chiba") await expect(page.getByText(/一般・農業用品目・特定品目/).first()).toBeVisible();
+    if (code === "dojo-osen") await expect(page.getByText(/午前・午後（選択式）/).first()).toBeVisible();
     expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth + 1), code).toBe(true);
   }
   for (const url of ["/sc", "/nw", "/st", "/sa", "/ap", "/blog", "/blog/it-shikaku-rirekisho-kakikata", "/blog/ipa-shiken-fukusuu-kubun-juken", "/blog/koudo-gozen1-taisaku", "/blog/nw-gogo-jikan-haibun"]) {

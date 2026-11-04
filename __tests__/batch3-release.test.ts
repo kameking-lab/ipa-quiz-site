@@ -20,6 +20,9 @@ const codes = Object.keys(scope) as (keyof typeof scope)[];
 describe("INT7 batch3 public release integration", () => {
   it.each(codes)("serves %s through eager/lazy registries, canonical routes, home and question API", async code => {
     const questions = QUESTIONS_BY_EXAM[code]!;
+    expect(EXAM_CONFIGS[code].sessions.every(s => /[一-龯ぁ-んァ-ン]/.test(s.label))).toBe(true);
+    if (code === "dojo-osen") expect(EXAM_CONFIGS[code].sessions.find(s => s.session === "pm")?.label).toBe("午後（選択式）");
+    if (code === "chiiki-ryoko") expect(questions.every(q => /[一-龯ぁ-んァ-ン]/.test(q.category))).toBe(true);
     expect(questions).toHaveLength(scope[code].exercises);
     expect(await getQuestionsForExam(code)).toEqual(questions);
     expect(getRegisteredExamCodes()).toContain(code);

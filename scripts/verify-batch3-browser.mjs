@@ -39,7 +39,7 @@ try {
   const screenshot = async (name, url, locator) => {
     const response = await page.goto(origin + url, { waitUntil: "networkidle" });
     if (response?.status() !== 200) throw new Error(`${url}: ${response?.status()}`);
-    if (locator) await page.locator(locator).first().scrollIntoViewIfNeeded();
+    if (locator) await page.locator(locator).first().evaluate(element => element.scrollIntoView({block: "start"}));
     const path = resolve(output, "screenshots", name + ".png");
     await page.screenshot({ path });
     const overflow = await page.evaluate(() => document.documentElement.scrollWidth > innerWidth + 1);
@@ -53,6 +53,7 @@ try {
   await screenshot("surveyor-afternoon-manual", "/q/sokuryoshi/2026-annual/pm/q1", 'section[aria-label="記述の独自解答例"]');
   await screenshot("nurse-alternate-answer", "/q/junkango-kansai/2026-annual/gakka/q139");
   await screenshot("contact-tsugino", "/contact?site=tsugino");
+  await screenshot("contact-tsugino-selection", "/contact?site=tsugino", 'input[value="tsugino"]');
   await screenshot("gsc-sc", "/sc");
   await screenshot("gsc-blog", "/blog/it-shikaku-rirekisho-kakikata");
   if (errors.length) throw new Error(`Browser errors: ${errors.join("; ")}`);
