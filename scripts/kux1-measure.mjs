@@ -6,7 +6,7 @@ import { createHash } from 'node:crypto';
 import { chromium } from '@playwright/test';
 import { assertListenerOwner } from './kperf1-local.mjs';
 
-const [phase, root, port] = process.argv.slice(2);
+const [phase, root, port, selection] = process.argv.slice(2);
 assert.match(phase ?? '', /^(before|after)-[a-z0-9-]+$/);
 const base = `http://127.0.0.1:${Number(port)}`;
 const server = JSON.parse(await fs.readFile(path.join(root, `.cache/kperf1/server-${Number(port)}.json`), 'utf8'));
@@ -17,20 +17,30 @@ const out = path.resolve(`.cache/kux1/${phase}`);
 await fs.mkdir(out, { recursive: true });
 const exams = ['sc', 'nw', 'st', 'sa', 'ap'];
 const blogs = ['it-shikaku-rirekisho-kakikata', 'ipa-shiken-fukusuu-kubun-juken', 'koudo-gozen1-taisaku', 'nw-gogo-jikan-haibun'];
+const practiceMap = JSON.parse(await fs.readFile(path.join(root, 'data/blog/practice-map.json'), 'utf8'));
 const routes = [
   ...[false, true].flatMap(tsugino => [
     ...exams.map(exam => ({ name: `${tsugino ? 'tsugino' : 'search'}-${exam}`, url: `/${exam}${tsugino ? '?utm_source=tsugino&utm_medium=referral' : ''}`, exam })),
     ...blogs.map(slug => ({ name: `${tsugino ? 'tsugino' : 'search'}-${slug}`, url: `/blog/${slug}${tsugino ? '?utm_source=tsugino&utm_medium=referral' : ''}`, blog: true })),
+    // The embedded question also permits scrolling straight to the choices:
+    // zero start taps, one answer tap. Keep this distinct from the anchor path.
+    ...blogs.map(slug => ({ name: `${tsugino ? 'tsugino' : 'search'}-${slug}-scroll`, url: `/blog/${slug}${tsugino ? '?utm_source=tsugino&utm_medium=referral' : ''}`, blog: true, direct: true })),
   ]),
   { name: 'tsugino-direct-quiz-ap', url: '/quiz?mode=random&exam=ap&utm_source=tsugino&utm_medium=referral', direct: true },
 ];
+if (selection && !routes.some(route => route.name === selection)) throw new Error('Unknown route selection');
 const browser = await chromium.launch();
 const samples = [];
-const provenance = { buildId: server.buildId, scriptSha256: createHash('sha256').update(await fs.readFile(import.meta.filename)).digest('hex'), browser: browser.version(), node: process.version, viewport: '390x844@1', cpuSlowdown: 4, runs: 3, readingPauseMs: 700, environment: server.environment, storage: 'empty; no onboarding flag', network: 'local unthrottled; external requests blocked' };
+const provenance = { buildId: server.buildId, scriptSha256: createHash('sha256').update(await fs.readFile(import.meta.filename)).digest('hex'), browser: browser.version(), node: process.version, viewport: '390x844@1', cpuSlowdown: 4, runs: 3, selection: selection ?? 'all', readingPauseMs: 700, environment: server.environment, storage: 'empty; no onboarding flag', network: 'local unthrottled; external requests blocked', workload: 'fixed browser random seed per route; choice shuffle removed from measured API requests only; real question API and pools' };
 try {
-  for (let run = 0; run < 3; run++) for (const route of routes) {
+  for (let run = 0; run < 3; run++) for (const route of routes.filter(route => !selection || route.name === selection)) {
     const context = await browser.newContext({ viewport: { width: 390, height: 844 }, deviceScaleFactor: 1, isMobile: true, hasTouch: true, reducedMotion: 'reduce', serviceWorkers: 'block' });
     await context.route('**/*', r => new URL(r.request().url()).origin === base ? r.continue() : r.abort());
+    await context.route('**/api/questions/next?**', r => {
+      const url = new URL(r.request().url());
+      url.searchParams.delete('shuffle');
+      return r.continue({ url: url.href });
+    });
     const page = await context.newPage();
     const cdp = await context.newCDPSession(page);
     await cdp.send('Emulation.setCPUThrottlingRate', { rate: 4 });
@@ -46,7 +56,14 @@ try {
     page.on('dialog', async d => { dialogs.push(d.message()); await d.dismiss(); });
     page.on('pageerror', e => errors.push(e.message));
     page.on('request', r => { const u = new URL(r.url()); if (/\/api\//.test(u.pathname)) requests.push(u.pathname); if (/\/api\/(copilot|essay|afternoon|ai)/.test(u.pathname)) ai.push(u.pathname); });
-    await page.addInitScript(() => {
+    const seed = createHash('sha256').update(route.name).digest().readUInt32LE(0);
+    await page.addInitScript(seed => {
+      // Stable input workload; never persisted and never used outside this lab.
+      let state = seed;
+      Math.random = () => {
+        state = (Math.imul(1664525, state) + 1013904223) >>> 0;
+        return state / 4294967296;
+      };
       window.__kuxTaps = 0; window.__kuxOverlays = [];
       document.addEventListener('pointerdown', () => { window.__kuxTaps++; window.__kuxTap(); }, true);
       new MutationObserver(() => {
@@ -56,7 +73,7 @@ try {
           }
         }
       }).observe(document, { subtree: true, childList: true, attributes: true });
-    });
+    }, seed);
     const started = performance.now();
     const response = await page.goto(base + route.url, { waitUntil: 'domcontentloaded' });
     assert.equal(response.status(), 200);
@@ -75,6 +92,9 @@ try {
     await choice.waitFor({ state: 'visible', timeout: 30000 });
     await choice.scrollIntoViewIfNeeded();
     const readyMs = performance.now() - started - screenshotMs;
+    const questionText = await page.locator('[data-study-presence-exam]').first().innerText();
+    const choiceLabels = await (route.blog ? page.locator('#article-practice').getByRole('radio') : page.getByRole('radio', { name: /^選択肢 / })).evaluateAll(els => els.map(el => el.getAttribute('aria-label')));
+    const questionUiSha256 = createHash('sha256').update(JSON.stringify([questionText, choiceLabels])).digest('hex');
     const beforeAnswer = await page.evaluate(() => ({ taps: window.__kuxTaps, scrollY, text: document.body.innerText, url: location.href }));
     const tapsToQuestion = taps;
     await screenshot('question');
@@ -94,7 +114,14 @@ try {
     assert.equal(final.overflow, false);
     if (run === 0) await page.screenshot({ path: path.join(out, `${route.name}-explanation.png`) });
     assert.equal(taps, route.direct ? 1 : 2);
-    samples.push({ route: route.name, url: route.url, run, readyMs, answeredMs, explanationMs, ctaY, tapsToQuestion, tapsToAnswer: taps, scrollBeforeAnswer: beforeAnswer.scrollY, overlays: final.overlays, dialogs, ads: final.ads, achievementToast: final.achievementToast, swipeHint: beforeAnswer.text.includes('左スワイプ'), errors, ai, requests, notices: beforeAnswer.text.split('\n').filter(t => /ログイン|無料|同意|Cookie|広告|登録/.test(t)).slice(0, 20) });
+    const questionId = route.blog ? practiceMap[route.url.split('?')[0].slice('/blog/'.length)].questionId : new URL(beforeAnswer.url).searchParams.get('question');
+    assert.ok(questionId);
+    const prior = samples.find(sample => sample.route === route.name);
+    if (prior) {
+      assert.equal(questionId, prior.questionId, 'Question must repeat across runs');
+      assert.equal(questionUiSha256, prior.questionUiSha256, 'Question and ordered choices must repeat');
+    }
+    samples.push({ route: route.name, url: route.url, seed, questionUrl: beforeAnswer.url, questionId, questionUiSha256, choiceLabels, selectedChoice: choiceLabels[0], run, readyMs, answeredMs, explanationMs, ctaY, tapsToQuestion, tapsToAnswer: taps, scrollBeforeAnswer: beforeAnswer.scrollY, overlays: final.overlays, dialogs, ads: final.ads, achievementToast: final.achievementToast, swipeHint: beforeAnswer.text.includes('左スワイプ'), errors, ai, requests, notices: beforeAnswer.text.split('\n').filter(t => /ログイン|無料|同意|Cookie|広告|登録/.test(t)).slice(0, 20) });
     await fs.writeFile(path.join(out, 'summary.json'), JSON.stringify({ phase, provenance, samples }, null, 2));
     console.log(`${route.name} ${run + 1}/3: ${final.taps} taps, ${(answeredMs / 1000).toFixed(2)}s`);
     await context.close();

@@ -4,7 +4,7 @@ test.use({
   viewport: { width: 390, height: 844 }, isMobile: true, hasTouch: true,
   storageState: { cookies: [], origins: [] }, serviceWorkers: "block",
 });
-test.setTimeout(60_000);
+test.setTimeout(90_000);
 test.beforeEach(async ({ page }) => { await page.route("https://**", route => route.abort()); });
 
 for (const source of ["search", "tsugino"]) {
@@ -20,15 +20,19 @@ for (const source of ["search", "tsugino"]) {
       expect(box!.height).toBeGreaterThanOrEqual(44);
       await expect(page.getByRole("dialog")).toHaveCount(0);
       await start.tap();
-      const answer = page.getByRole("radio", { name: /^選択肢 / }).first();
-      await expect(answer).toBeEnabled();
-      await expect(page.locator('a[href^="/auth/signin"]:visible')).toHaveCount(0);
-      const url = page.url();
-      await answer.tap();
-      await expect(page.getByRole("region", { name: /^(正解|不正解)の解説$/ })).toBeInViewport();
-      expect(page.url()).toBe(url);
-      await expect(page.getByRole("dialog")).toHaveCount(0);
-      await expect(page.getByTestId("achievement-toast")).toHaveCount(0);
+      for (let index = 0; index < 10; index++) {
+        const answer = page.getByRole("radio", { name: /^選択肢 / }).first();
+        await expect(answer).toBeEnabled();
+        await expect(page.locator('a[href^="/auth/signin"]:visible')).toHaveCount(0);
+        const url = page.url();
+        await answer.tap();
+        await expect(page.getByRole("region", { name: /^(正解|不正解)の解説$/ })).toBeInViewport();
+        expect(page.url()).toBe(url);
+        await expect(page.getByRole("dialog")).toHaveCount(0);
+        await expect(page.getByTestId("achievement-toast")).toHaveCount(0);
+        if (index < 9) await page.getByRole("navigation", { name: "解答後の学習操作" }).getByRole("button", { name: "次の1問" }).tap();
+      }
+      expect(await page.evaluate(() => JSON.parse(localStorage.getItem("ipa-quiz:history:v1")!).entries.length)).toBe(10);
       expect(ai).toEqual([]);
       expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
     });
@@ -44,6 +48,17 @@ for (const source of ["search", "tsugino"]) {
       await expect(page.getByLabel("チャレンジの解答結果")).toBeInViewport();
       expect(page.url()).toBe(url);
       await expect(page.getByRole("dialog")).toHaveCount(0);
+      await page.getByRole("link", { name: "同じ分野の演習を続ける", exact: true }).tap();
+      for (let index = 0; index < 9; index++) {
+        const answer = page.getByRole("radio", { name: /^選択肢 / }).first();
+        await expect(answer).toBeEnabled();
+        await expect(page.locator('a[href^="/auth/signin"]:visible')).toHaveCount(0);
+        await answer.tap();
+        await expect(page.getByRole("region", { name: /^(正解|不正解)の解説$/ })).toBeInViewport();
+        await expect(page.getByRole("dialog")).toHaveCount(0);
+        if (index < 8) await page.getByRole("navigation", { name: "解答後の学習操作" }).getByRole("button", { name: "次の1問" }).tap();
+      }
+      expect(await page.evaluate(() => JSON.parse(localStorage.getItem("ipa-quiz:history:v1")!).entries.length)).toBe(10);
     });
   }
 }

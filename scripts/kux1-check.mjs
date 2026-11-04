@@ -6,6 +6,7 @@ import { spawn, execFileSync } from 'node:child_process';
 
 const [label, ...extra] = process.argv.slice(2);
 if (!['typecheck', 'lint', 'test', 'build', 'e2e'].includes(label)) throw new Error('Unknown check');
+if (fs.readdirSync('.').some(name => /^\.env(?:\.|$)/.test(name) && name !== '.env.example')) throw new Error('Local env files must not be loaded by isolated verification');
 const out = path.resolve('.cache/kux1/validation');
 fs.mkdirSync(out, { recursive: true });
 const env = Object.fromEntries(Object.entries(process.env).filter(([key]) => ['systemroot', 'windir', 'path', 'comspec', 'temp', 'tmp', 'pathext', 'userprofile', 'localappdata', 'appdata'].includes(key.toLowerCase())));
