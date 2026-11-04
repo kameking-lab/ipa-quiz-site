@@ -1,5 +1,7 @@
 "use client";
 import Link from "next/link";
+import { TsuginoWelcome } from "@/components/analytics/TsuginoWelcome";
+import { filterReferralPapers } from "@/lib/analytics/referral-query";
 import { ArrowLeft, ArrowRight, Calendar, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -30,13 +32,15 @@ interface ExamCatalogBrowserProps {
   items: readonly ExamCatalogItem[];
   initialGroup: ExamGroupId;
   initialSubject: string | null;
+  initialYear?: string;
 }
 
-export function ExamCatalogBrowser({ groups, items, initialGroup, initialSubject }: ExamCatalogBrowserProps) {
+export function ExamCatalogBrowser({ groups, items, initialGroup, initialSubject, initialYear }: ExamCatalogBrowserProps) {
   const group = initialGroup;
   const subject = initialSubject;
   const activeItems = items.filter((item) => item.group === group);
-  const papers = activeItems.filter((item) => item.subject === subject).sort((a,b) => b.date.localeCompare(a.date));
+  const papers = filterReferralPapers(activeItems, subject ?? undefined, initialYear)
+    .filter(item => item.subject === subject).sort((a,b) => b.date.localeCompare(a.date));
   const latest = papers.find((item) => item.questionCount !== null);
   const sections: readonly {
     id: string;
@@ -77,6 +81,7 @@ export function ExamCatalogBrowser({ groups, items, initialGroup, initialSubject
         </section>;
       })}
     </section> : <section aria-labelledby="safety-subject-heading" className="space-y-5">
+      <TsuginoWelcome href={latest?.href ?? null} qualification={subject} />
       <Link href={examLibraryHref()} className="inline-flex min-h-11 items-center gap-2 text-sm text-muted-foreground hover:text-foreground"><ArrowLeft className="h-4 w-4" aria-hidden="true" />資格を選び直す</Link>
       <div className="rounded-2xl border border-border bg-card p-5">
         <h2 id="safety-subject-heading" className="text-2xl font-bold">{subject}の過去問</h2>

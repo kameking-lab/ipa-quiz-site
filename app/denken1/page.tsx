@@ -1,3 +1,5 @@
+import { TsuginoWelcome } from "@/components/analytics/TsuginoWelcome";
+import { referralPracticeHref } from "@/lib/questions/referral-practice";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight, BookOpenCheck } from "lucide-react";
@@ -23,6 +25,7 @@ export default function Denken1Page() {
   const total = DENKEN1_QUESTIONS.length;
   return (
     <main className="mx-auto max-w-5xl px-4 pb-20 pt-8 sm:pt-12">
+      <TsuginoWelcome href={referralPracticeHref(DENKEN1_QUESTIONS, "/denken1")} qualification="電験一種" />
       <div className="mb-6"><Link href="/qualifications" className="text-sm font-medium text-primary hover:underline">← 資格一覧へ戻る</Link></div>
       <h1 className="text-3xl font-bold tracking-tight sm:text-4xl">電験一種 一次試験の過去問</h1>
       <p className="mt-3 max-w-2xl leading-relaxed text-muted-foreground">

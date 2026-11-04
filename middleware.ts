@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
+import { referralRedirectHref } from "@/lib/analytics/referral-query";
 import { EXAM_CATALOG, EXAM_LIBRARY_PATH } from "@/lib/exam-library-catalog";
 import {
   EXAM_GROUP_IDS,
@@ -102,6 +103,8 @@ function examLibraryRedirect(req: NextRequest): NextResponse {
   const hub = qualificationHubForSelection(groupId, subject, EXAM_CATALOG);
   if (!hub) return NextResponse.next();
   destination.pathname = qualificationHubPath(hub.slug);
+  destination.search = new URL(referralRedirectHref(destination.pathname,
+    Object.fromEntries(req.nextUrl.searchParams)), req.url).search;
   return NextResponse.redirect(destination, 308);
 }
 

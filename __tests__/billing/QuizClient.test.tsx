@@ -16,6 +16,7 @@ describe("QuizClient authorization boundary", () => {
     const fetcher = vi.fn(async (url: string) => {
       if (url === "/api/questions/related") return Response.json({ questions: [] });
       if (url.includes("billing")) throw new Error("billing outage");
+      if (url === "/api/questions/related") return Response.json({ questions: [] });
       return Response.json({ id: url.includes("q1") ? "q1" : "q2" });
     }); vi.stubGlobal("fetch", fetcher);
     render(<QuizClient poolIds={["q1", "q2"]} mode="year" backHref="/" billingGateEnabled={gateReady(c)} />);

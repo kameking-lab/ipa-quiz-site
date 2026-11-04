@@ -30,7 +30,7 @@ export function PracticeDailyLimit({ reset, resumeHref, backHref, freeDaily, onU
       </div>
       <p className="text-base leading-relaxed">月額プランなら、収録済みの年度別・通常の連続演習を<br className="hidden sm:block" />回数制限なく、自分のペースで進められます。</p>
       <div className="space-y-2">
-        <Link href={billingHref(resumeHref)} onClick={() => { try { saveQuizReturn(window.sessionStorage, resumeHref); } catch { /* The link retains the exact context even without storage. */ } }} className="flex min-h-14 w-full items-center justify-center rounded-2xl bg-gradient-to-r from-sky-600 to-indigo-600 px-4 py-4 text-lg font-bold text-white shadow-md transition-shadow hover:shadow-lg focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-sky-600">有料にして続きを解く<span aria-hidden="true" className="ml-2">→</span></Link>
+        <Link href={billingHref(resumeHref)} onClick={() => { posthogCapture("practice_upgrade_clicked", { source: "daily_limit" }); try { saveQuizReturn(window.sessionStorage, resumeHref); } catch { /* The link retains the exact context even without storage. */ } }} className="flex min-h-14 w-full items-center justify-center rounded-2xl bg-gradient-to-r from-sky-600 to-indigo-600 px-4 py-4 text-lg font-bold text-white shadow-md transition-shadow hover:shadow-lg focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-sky-600">有料にして続きを解く<span aria-hidden="true" className="ml-2">→</span></Link>
         <p className="text-xs leading-relaxed text-muted-foreground">料金・自動更新の条件を確認する画面へ進みます。<br />このボタンだけで課金は始まりません。</p>
       </div>
       <div className="space-y-3 border-t border-border pt-5">

@@ -1,3 +1,5 @@
+import { setPostHogClient } from "@/lib/posthog";
+import type { PostHog } from "posthog-js";
 import { StrictMode } from "react";
 import { cleanup, fireEvent, render, screen, waitFor } from "@testing-library/react";
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
@@ -18,10 +20,12 @@ beforeEach(() => {
   Object.defineProperty(HTMLElement.prototype, "scrollIntoView", { configurable: true, value: vi.fn() });
   vi.spyOn(window, "scrollTo").mockImplementation(() => {});
 });
-afterEach(() => { cleanup(); vi.unstubAllGlobals(); vi.restoreAllMocks(); });
+afterEach(() => { setPostHogClient(null); cleanup(); vi.unstubAllGlobals(); vi.restoreAllMocks(); });
 
 describe("QuizClient with the real player and local learning stores", () => {
   it("answers ordinary questions across qualifications, preserves player state and storage, and offers exits at the eleventh", async () => {
+    window.history.replaceState({}, "", "/quiz?mode=year&exam=fe&utm_source=tsugino_shikaku&utm_content=fe.hero");
+    const capture = vi.fn(); setPostHogClient({ capture } as unknown as PostHog);
     const fe = FE_QUESTIONS_2009_AUTUMN_AM.slice(0, 6);
     const fp = FP3_QUESTIONS.slice(0, 6);
     const questions = new Map([...fe, ...fp].map(question => [question.id, question]));
@@ -99,7 +103,16 @@ describe("QuizClient with the real player and local learning stores", () => {
     expect(sessionStorage.getItem(LS_KEYS.studyReward)).toBe(reward);
     expect(JSON.parse(localStorage.getItem(LS_KEYS.studyRewardPreferences)!)).toEqual({ closed: false, paused: true });
     expect(createHistoryStore().getAllEntries().some(entry => entry.id === fp[5].id)).toBe(false);
-    expect(fetcher.mock.calls.every(([url]) => url.startsWith("/api/questions/next?") || url === "/api/questions/related" || url === "/api/billing/question")).toBe(true);
+    expect(fetcher.mock.calls.every(([url]) => url.startsWith("/api/questions/next?") || url === "/api/billing/question" || url === "/api/questions/related")).toBe(true);
+    expect(capture.mock.calls.filter(call => call[0] === "referral_landed")).toHaveLength(1);
+    const limits = capture.mock.calls.filter(call => call[0] === "practice_free_limit_reached");
+    expect(limits).toHaveLength(1);
+    expect(limits[0][1]).toMatchObject({ utm_source: "tsugino_shikaku", utm_content: "fe.hero", reason: "last_free_question", free_daily: 10 });
+    expect(capture.mock.calls.some(call => call[0] === "quiz_started" && call[1].utm_content === "fe.hero")).toBe(true);
+    const upgrade = screen.getByRole("link", { name: "有料にして続きを解く" });
+    upgrade.addEventListener("click", event => event.preventDefault());
+    fireEvent.click(upgrade);
+    expect(capture.mock.calls.some(call => call[0] === "practice_upgrade_clicked" && call[1].utm_content === "fe.hero")).toBe(true);
   });
 
   it.each([

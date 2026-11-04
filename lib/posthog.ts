@@ -10,6 +10,7 @@
 // プロバイダ初期化はクライアント側 PostHogProvider で行う。
 
 import type { PostHog } from "posthog-js";
+import { hasReferralStage, markReferralStage, currentReferral, referralProps } from "@/lib/analytics/referral";
 
 const POSTHOG_KEY = process.env.NEXT_PUBLIC_POSTHOG_KEY;
 const POSTHOG_HOST = process.env.NEXT_PUBLIC_POSTHOG_HOST ?? "https://us.i.posthog.com";
@@ -30,6 +31,12 @@ export type PostHogEventName =
   | "practice_feedback_bonus_used"
   | "practice_feedback_customer_confirmation_viewed"
   | "page_view"
+  | "referral_landed"
+  | "referral_practice_clicked"
+  | "practice_free_limit_reached"
+  | "practice_upgrade_clicked"
+  | "checkout_started"
+  | "checkout_completed"
   | "question_answered"
   | "ai_query_sent"
   | "feedback_submitted"
@@ -57,20 +64,53 @@ export type PostHogEventName =
 export type PostHogEventProps = Record<string, string | number | boolean | null | undefined>;
 
 let posthogClient: PostHog | null = null;
+const pending: { name: PostHogEventName; props?: PostHogEventProps }[] = [];
+const landed = new Set<string>();
+const deliveredStages = new Set<string>();
+
+function deliver(name: PostHogEventName, props?: PostHogEventProps): void {
+  if (!posthogClient) {
+    if (isPostHogConfigured && pending.length < 100) pending.push({ name, props });
+    return;
+  }
+  const referralId = typeof props?.referral_id === "string" ? props.referral_id : null;
+  const stage = name === "referral_landed" ? "landed"
+    : name === "practice_free_limit_reached" ? `free_limit:${props?.reset_at ?? "unknown"}`
+    : name === "checkout_completed" ? "checkout_completed" : null;
+  const key = referralId && stage ? `${referralId}:${stage}` : null;
+  if (key && (deliveredStages.has(key) || hasReferralStage(referralId!, stage!))) return;
+  try {
+    posthogClient.capture(name, props);
+    if (key) {
+      deliveredStages.add(key);
+      markReferralStage(referralId!, stage!);
+    }
+  } catch {
+    if (name === "referral_landed" && referralId) landed.delete(referralId);
+    // A later milestone may retry its landing; analytics never blocks UI.
+  }
+}
 
 export function setPostHogClient(client: PostHog | null): void {
   posthogClient = client;
+  if (client) for (const event of pending.splice(0)) deliver(event.name, event.props);
 }
 
 export function getPostHogClient(): PostHog | null {
   return posthogClient;
 }
 
-/** クライアント側からイベントを投げる。未初期化なら黙って捨てる。 */
+/** Configured clients buffer hydration events until the lazy SDK is ready. */
 export function posthogCapture(name: PostHogEventName, props?: PostHogEventProps): void {
-  if (!posthogClient) return;
+  if (!posthogClient && !isPostHogConfigured) return;
   try {
-    posthogClient.capture(name, props);
+    const referral = currentReferral();
+    const attribution = referralProps();
+    if (referral && !landed.has(referral.referral_id)) {
+      landed.add(referral.referral_id);
+      deliver("referral_landed", attribution);
+    }
+    deliver(name, referral ? { ...attribution, ...props } : props);
   } catch {
     // analytics は決して例外で UI を壊さない
   }

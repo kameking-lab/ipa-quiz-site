@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import { usePathname, useSearchParams } from "next/navigation";
 import { POSTHOG_CONFIG, isPostHogConfigured, posthogCapture, setPostHogClient } from "@/lib/posthog";
 import { nativeClient } from "@/mobile/shared/contracts";
+import { markReferralVisit } from "@/lib/analytics/referral";
 
 /**
  * PostHog 初期化 + page_view 自動送信のクライアントプロバイダ。
@@ -14,7 +15,9 @@ export function PostHogProvider() {
   const [ready, setReady] = useState(false);
 
   useEffect(() => {
-    if (!isPostHogConfigured || typeof window === "undefined" || nativeClient() || location.pathname.startsWith("/auth/")) return;
+    if (typeof window === "undefined" || nativeClient() || location.pathname.startsWith("/auth/")) return;
+    markReferralVisit();
+    if (!isPostHogConfigured) return;
     let cancelled = false;
     void (async () => {
       try {
