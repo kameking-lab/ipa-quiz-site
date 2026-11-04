@@ -58,7 +58,7 @@ describe("Kenchikushi unpublished staging", () => {
     expect(manifest.ingestionState).toBe("in-progress");
     expect(manifest.ingestedQuestionCount).toBe(allStaged.length);
     expect(manifest.batches.reduce((sum, batch) => sum + batch.questionCount, 0)).toBe(allStaged.length);
-    expect(manifest.nextResume).toEqual({ qualificationSlug: "kenchikushi2", year: 2025, subject: "II", qNumber: 1 });
+    expect(manifest.nextResume).toEqual({ qualificationSlug: "kenchikushi2", year: 2025, subject: "III", qNumber: 1 });
     const home = getHomeDirectory().flatMap(d => [...d.featured, ...d.compact]);
     for (const slug of ["kenchikushi2", "mokuzo-kenchikushi"]) {
       const entry = QUALIFICATION_CATALOG.find(q => q.slug === slug);
@@ -70,7 +70,7 @@ describe("Kenchikushi unpublished staging", () => {
   });
 
   it("pins each ingested subject to 25 complete source records and 125 explanations", () => {
-    expect(allStaged).toHaveLength(125);
+    expect(allStaged).toHaveLength(150);
     expect(new Set(allStaged.map(q => q.id)).size).toBe(allStaged.length);
     for (const batch of manifest.batches) {
       const subjectIndex = ["I", "II", "III", "IV"].indexOf(batch.subject);
@@ -110,7 +110,7 @@ describe("Kenchikushi unpublished staging", () => {
   });
 
   it("retains all law-subject figures, fractions and combination statements", () => {
-    const law = allStaged.filter(q => q.session === "gakka-II");
+    const law = allStaged.filter(q => q.year === 2026 && q.session === "gakka-II");
     expect(law.filter(q => q.hasImage).map(q => q.qNumber)).toEqual([4, 14, 15, 17]);
     for (const q of law) {
       expect(q.sourcePage).toBeGreaterThanOrEqual(11);
@@ -131,6 +131,27 @@ describe("Kenchikushi unpublished staging", () => {
     expect(law[17].choices?.エ).toContain("1/2");
     for (const statement of ["イ．", "ロ．", "ハ．", "ニ．"]) expect(law[1].question).toContain(statement);
     expect(law[9].choices?.ウ).toContain("設ければならない");
+  });
+
+  it("retains 2025 law source figures and the specified April amendment exception", () => {
+    const law = allStaged.filter(q => q.year === 2025 && q.session === "gakka-II");
+    expect(law).toHaveLength(25);
+    expect(law.filter(q => q.hasImage).map(q => q.qNumber)).toEqual([5,14,15,16,18]);
+    expect(law[14].originalContent?.tables?.[0].rows).toHaveLength(6);
+    expect(law[14].choices?.ア).toBe("準耐火建築物／工業地域（5/10）／防火地域／あり／6/10");
+    expect(law[7].sourceRubies).toContainEqual({base:"臥梁",reading:"がりょう"});
+    for (const q of law) {
+      expect(q.questionNotice).toContain("2025年4月1日");
+      expect(q.sourcePdfUrl).toBe(manifest.rounds[1].questionDocuments[0].url);
+      expect(q.sourcePage).toBeGreaterThanOrEqual(11);
+      expect(q.sourcePage).toBeLessThanOrEqual(24);
+      expect(q.sourcePrintedPage).toBe(`法規 ${q.sourcePage-1}`);
+      for (const path of q.imageUrls ?? []) {
+        expect(path.startsWith("data/qualification-staging/kenchikushi2/assets/")).toBe(true);
+        expect(readFileSync(resolve(path)).subarray(0,8).toString("hex")).toBe("89504e470d0a1a0a");
+      }
+      if (q.hasImage) expect(q.imageAltTexts?.[0].length).toBeGreaterThan(50);
+    }
   });
 
   it("preserves structure diagrams, tabular choices and mathematical notation", () => {

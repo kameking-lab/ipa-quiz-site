@@ -194,6 +194,37 @@ def source_questions_2025_i(path):
     return questions
 
 
+def source_questions_2025_ii(path):
+    figures={13:(82,100,528,408),17:(130,350,480,578),18:(70,120,545,371),19:(120,120,485,301),20:(120,185,485,500)}
+    questions={}
+    with pdfplumber.open(path) as pdf:
+        for pn in range(11,25):
+            page=pdf.pages[pn-1];r=figures.get(pn)
+            def retain(o):
+                if o.get("object_type")!="char":return True
+                if o["size"]<=5.5 or o["top"]>=790:return False
+                return not(r and o["x0"]<r[2] and o["x1"]>r[0] and o["top"]<r[3] and o["bottom"]>r[1])
+            parts=re.split(r"〔No\.\s*(\d+)〕",unicodedata.normalize("NFKC",page.filter(retain).extract_text(use_text_flow=True)))
+            for i in range(1,len(parts),2):
+                n=int(parts[i]);f=re.split(r"(?m)^\s*([1-5])\s*\.\s*",parts[i+1]);choices={int(f[j]):f[j+1] for j in range(1,len(f),2)}
+                if n==15:
+                    table=page.extract_tables()[0]
+                    assert len(table)==8 and len(table[0])==5,table
+                    choices={}
+                    for j,row in enumerate(table[3:],1):
+                        cells=[normalize(c) for c in row]
+                        # Merged header and vertically typeset fractions are flattened explicitly.
+                        fraction=re.search(r"([568])",cells[1])[1]
+                        region=re.sub(r"[()0-9]","",cells[1])
+                        cells[1]=region+"（"+fraction+"/10）"
+                        cells[4]=cells[4][0]+"/10"
+                        choices[j]="／".join(cells)
+                assert sorted(choices)==[1,2,3,4,5],(n,choices)
+                questions[n]=(pn,f[0],choices)
+    assert sorted(questions)==list(range(1,26))
+    return questions
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("owner_directory", type=Path)
@@ -215,7 +246,7 @@ def main():
                         assert row == round_["officialAnswers"][subject], (file.name, subject)
                         counts["officialAnswers"] += len(row)
             counts["ownerPdfs"] += 1
-    for year, subject, extract, source in [(2026,"I",source_questions,"R8_2k_1_2.pdf"),(2026,"II",source_questions_ii,"R8_2k_1_2.pdf"),(2026,"III",source_questions_iii,"R8_2k_3_4.pdf"),(2026,"IV",source_questions_iv,"R8_2k_3_4.pdf"),(2025,"I",source_questions_2025_i,"2k-2025-1st-gakka1_2.pdf")]:
+    for year, subject, extract, source in [(2026,"I",source_questions,"R8_2k_1_2.pdf"),(2026,"II",source_questions_ii,"R8_2k_1_2.pdf"),(2026,"III",source_questions_iii,"R8_2k_3_4.pdf"),(2026,"IV",source_questions_iv,"R8_2k_3_4.pdf"),(2025,"I",source_questions_2025_i,"2k-2025-1st-gakka1_2.pdf"),(2025,"II",source_questions_2025_ii,"2k-2025-1st-gakka1_2.pdf")]:
         originals = extract(args.owner_directory / source)
         data = (STAGING / f"{year}-{subject}.ts").read_text(encoding="utf-8")
         staged = json.loads(data.split("= ", 1)[1].rsplit(";", 1)[0])
