@@ -15,7 +15,7 @@
     "construction": "https://laws.e-gov.go.jp/law/324AC0000000100",
     "construction-rule": "https://laws.e-gov.go.jp/law/324M50004000014",
     "contract": "https://www1.mlit.go.jp/common/001067862.pdf",
-    "color": "https://www.kubota.co.jp/product/johkasou/products/small/hs2/pdf/HSII_maintenance_manual_2104.pdf",
+    "color": "https://www.zenjohkyou.net/relays/download/38/62/331/0/?file=%2Ffiles%2Flibs%2F658%2F202003041000329953.pdf",
     "microbe": "https://www.mlit.go.jp/jutakukentiku/build/content/001881565.pdf",
     "maintenance": "https://www.env.go.jp/hourei/11/000288.html",
     "water": "https://www.env.go.jp/water/impure/haisui.html",
@@ -23,5 +23,25 @@
     "recycle": "https://laws.e-gov.go.jp/law/412AC0000000104",
     "electric": "https://laws.e-gov.go.jp/law/335AC1000000139"
   },
-  "correction": "2026 q35: unverified black-colour draft corrected to yellow after checking the manufacturer maintenance manual."
+  "correction": "2026 q35: yellow valve identification verified in the primary registration criteria PDF page 8. Cached search text pointed to obsolete Kubota URLs; those return404 under normal GET and are not the final reference. 2026 q29: 1.8m indoor passage clearance and 30 degrees or less for temporary passages verified in MHLW rules articles542/552.",
+  "referenceFetchNotes": [
+    {
+      "url": "https://www.zenjohkyou.net/relays/download/38/62/331/0/?file=%2Ffiles%2Flibs%2F658%2F202003041000329953.pdf",
+      "status": 200,
+      "evidence": "空気逃がし管用を黄色",
+      "page": 8
+    },
+    {
+      "url": "https://www.kubota.co.jp/product/johkasou/products/small/hs2/pdf/HSII_maintenance_manual_2104.pdf",
+      "status": 404
+    },
+    {
+      "url": "https://www.kubota.co.jp/product/johkasou/products/small/hs2/pdf/hsII.pdf",
+      "status": 404
+    },
+    {
+      "url": "https://jsa02.or.jp/02seibi/hb_r5/06.pdf",
+      "status": "TLS verification failed; no bypass"
+    }
+  ]
 }

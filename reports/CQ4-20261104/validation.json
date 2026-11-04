@@ -1,0 +1,59 @@
+{
+  "checkedAt": "2026-11-04T21:39+09:00",
+  "packageManager": "pnpm10.33.0 via Corepack",
+  "dependencyInstall": "corepack pnpm install --frozen-lockfile; exit0; lockfile unchanged",
+  "checks": [
+    {
+      "command": "corepack pnpm validate:questions",
+      "exitCode": 0,
+      "staging": {
+        "questions": 100,
+        "publicAllowed": false
+      },
+      "existingQuestions": 34383,
+      "ok": 34383,
+      "fail": 0,
+      "existingWarnings": 20263
+    },
+    {
+      "command": "corepack pnpm typecheck",
+      "exitCode": 0
+    },
+    {
+      "command": "corepack pnpm test __tests__/questions/jokaso-setsubishi-staging.test.ts __tests__/lib/exam-config-integrity.test.ts",
+      "exitCode": 0,
+      "testFilesPassed": 2,
+      "testsPassed": 10
+    },
+    {
+      "command": "python scripts/audit-jokaso-setsubishi-source.py --source-dir <official-pdf-directory>",
+      "exitCode": 0,
+      "pdfHashes": 4,
+      "officialAnswers": 100,
+      "pixelComparisons": 100,
+      "textIntegrityReceipts": 100
+    },
+    {
+      "command": "git diff --check",
+      "exitCode": 0
+    }
+  ],
+  "logs": {
+    "validate-all-final": {
+      "sha256": "88cf20bfc0a4d3c6a4115b9a5ec15afc5263e0b333c045b50b39ade1bd162798",
+      "temporaryLogPath": "C:\\Users\\kanet\\AppData\\Local\\Temp\\codex-work\\cq4\\validate-all-final.log"
+    },
+    "typecheck-final": {
+      "sha256": "834314a5a233217793f35d5cb4a28fba1de4905e24aa5081ac4800165a69fe2c",
+      "temporaryLogPath": "C:\\Users\\kanet\\AppData\\Local\\Temp\\codex-work\\cq4\\typecheck-final.log"
+    },
+    "tests-final": {
+      "sha256": "dc9f2e4a1577ddb836fb9648a4e4316dc80f1f60bd99e7a002de27450cc938d9",
+      "temporaryLogPath": "C:\\Users\\kanet\\AppData\\Local\\Temp\\codex-work\\cq4\\tests-final.log"
+    },
+    "source-audit-final": {
+      "sha256": "95997028d34db99c0e626019bd52c11a905d46d2c71bfc288bda69ecceac666e",
+      "temporaryLogPath": "C:\\Users\\kanet\\AppData\\Local\\Temp\\codex-work\\cq4\\source-audit-final.log"
+    }
+  }
+}

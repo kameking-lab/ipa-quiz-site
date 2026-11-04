@@ -31,7 +31,7 @@ describe("CQ4 浄化槽設備士学科 private staging", () => {
       { choices: { ...q.choices, "1": "別の選択肢" } },
       { choiceExplanations: { "1": "公式正答のとおり" } },
       { sourceAnswerUrl: questions[50]!.sourceAnswerUrl },
-      { sourceImage: "images/2025-q02.webp" },
+      { sourceImage: "images/2025-q02-original.png" },
       { sourceImageSha256: "0".repeat(64) }, { lawReferenceDate: "2025-04-01" },
     ]) expect(schema.safeParse({ ...q, ...change }).success, JSON.stringify(change)).toBe(false);
   });

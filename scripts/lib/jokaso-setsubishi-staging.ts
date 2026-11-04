@@ -30,7 +30,7 @@ export const JokasoSetsubishiStagingSchema = z.object({
   explanationCoverage: z.literal("full"), explanationAuthorship: z.literal("original"),
   sourcePdfUrl: z.string().url(), sourceAnswerUrl: z.string().url(),
   sourcePage: z.number().int().min(1).max(21),
-  sourceImage: z.string().regex(/^images\/(2025|2026)-q\d{2}\.webp$/),
+  sourceImage: z.string().regex(/^images\/(2025|2026)-q\d{2}-original\.png$/),
   sourceImageSha256: z.string().regex(/^[a-f0-9]{64}$/),
   sourceTextSha256: z.string().regex(/^[a-f0-9]{64}$/),
   sourceImageAlt: z.string().min(10), sourceAttribution: z.string().min(30),
@@ -59,10 +59,15 @@ export const JokasoSetsubishiStagingSchema = z.object({
   if (!printed || printed.sourcePage !== q.sourcePage || printed.officialAnswerNumber !== q.officialAnswerNumber ||
       printed.sourceTextSha256 !== q.sourceTextSha256 || sha256(text) !== q.sourceTextSha256 ||
       printed.sourceImageSha256 !== q.sourceImageSha256) fail("source audit receipt mismatch");
-  const expectedImage = `images/${q.year}-q${String(q.qNumber).padStart(2, "0")}.webp`;
+  const expectedImage = `images/${q.year}-q${String(q.qNumber).padStart(2, "0")}-original.png`;
   if (q.sourceImage !== expectedImage) fail("wrong question image");
   const file = path.join(root, q.sourceImage);
-  if (!existsSync(file) || sha256(readFileSync(file)) !== q.sourceImageSha256) fail("missing or modified original image");
+  if (!existsSync(file)) fail("missing original image");
+  else {
+    const bytes = readFileSync(file);
+    if (sha256(bytes) !== q.sourceImageSha256) fail("modified original image");
+    if (!bytes.subarray(0, 8).equals(Buffer.from([137, 80, 78, 71, 13, 10, 26, 10]))) fail("original image must be PNG");
+  }
   if (q.year === 2026 && q.qNumber === 16 && !q.diagramExplanations) fail("all four inner diagrams require explanations");
   if (Object.values(q.choices).some((s) => /^[⑴⑵⑶⑷]$/.test(s)) && !q.requiresOriginalImage) fail("diagram choices must require the original image");
 });

@@ -54,10 +54,15 @@ def main():
             assert q["officialAnswerNumber"] == answer_map[q["qNumber"]], q["id"]
             receipt = evidence[q["id"]]
             page = pdf[q["sourcePage"]-1]
-            pix = page.get_pixmap(matrix=fitz.Matrix(receipt["renderScale"], receipt["renderScale"]),
-                                 clip=fitz.Rect(receipt["clip"]))
-            actual = Image.frombytes("RGB", (pix.width, pix.height), pix.samples)
+            scale = receipt["renderScale"]
+            assert receipt["renderMode"] == "full-page-png-crop", q["id"]
+            # Render the entire page before cropping. Direct PDF clip renders
+            # and inspected WebP artifacts previously lost heading/choice glyphs.
+            pix = page.get_pixmap(matrix=fitz.Matrix(scale, scale))
+            actual = Image.open(io.BytesIO(pix.tobytes("png"))).convert("RGB")
+            actual = actual.crop(tuple(round(v * scale) for v in receipt["clip"]))
             saved_bytes = (staging / q["sourceImage"]).read_bytes()
+            assert saved_bytes.startswith(b"\x89PNG\r\n\x1a\n"), q["id"]
             saved = Image.open(io.BytesIO(saved_bytes)).convert("RGB")
             assert actual.size == saved.size and ImageChops.difference(actual, saved).getbbox() is None, q["id"]
             assert sha(saved_bytes) == q["sourceImageSha256"] == receipt["sourceImageSha256"]
