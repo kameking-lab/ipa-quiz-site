@@ -24,7 +24,7 @@ const auQuestion: Question = {
   question: "これはテスト問題です。",
   choices: { ア: "選択肢ア", イ: "選択肢イ", ウ: "選択肢ウ", エ: "選択肢エ" },
   answer: "イ",
-  explanation: "正解はイです。",
+  explanation: "選択肢イは、監査の独立性を確保するための方法です。",
   hasImage: false,
   sourcePdfUrl: "https://example.com/q.pdf",
   license: "IPA-public",
@@ -40,7 +40,7 @@ describe("QuizPlayer after article retirement", () => {
   it.each(["au", "ap"] as const)("keeps %s answer → explanation → history without external article links", (exam) => {
     const { container } = render(<QuizPlayer question={{ ...auQuestion, exam }} index={0} total={10} mode="random" onNext={() => {}} />);
     fireEvent.keyDown(window, { key: "2" });
-    expect(screen.getByText("正解はイです。")).toBeInTheDocument();
+    expect(screen.getByText("選択肢イは、監査の独立性を確保するための方法です。")).toBeInTheDocument();
     const entries = createHistoryStore().getAllEntries();
     expect(entries).toHaveLength(1);
     expect(entries[0]?.correct).toBe(true);

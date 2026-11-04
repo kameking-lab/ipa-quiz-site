@@ -202,7 +202,7 @@ export default async function AccountPage() {
               >
                 <span>
                   <span className="font-medium">模試の記録</span>
-                  <span className="ml-2 text-xs text-muted-foreground">パーセンタイル</span>
+                  <span className="ml-2 text-xs text-muted-foreground">この端末の得点履歴</span>
                 </span>
                 <ArrowRight className="h-4 w-4 text-muted-foreground" />
               </Link>
