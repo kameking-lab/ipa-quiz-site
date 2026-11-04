@@ -713,11 +713,11 @@ export const KENCHIKUSHI2_2025_IV: readonly StagedKenchikushiQuestion[] = [
     },
     "answer": "ウ",
     "officialAnswerNumber": "3",
-    "explanation": "公式正答は3。大引の継手は床束心で腰掛けあり継ぎ等とし、一体性を確保する。単なる突付け継ぎとする3は不適当。",
+    "explanation": "公式正答は3。大引の継手は床束心から150 mm程度持ち出した位置で腰掛けあり継ぎ等とし、一体性を確保する。単なる突付け継ぎとする3は不適当。",
     "choiceExplanations": {
       "ア": "適当。敷居溝の底に堅木を埋めると、建具の摺動による摩耗を抑え、滑りや耐久性を改善できる。",
       "イ": "適当。垂木の継手は支持点である母屋上に設け、継手が同じ位置へ集中しないよう乱に配置する。",
-      "ウ": "不適当。大引の継手は床束心で腰掛けあり継ぎ等により接合する。単なる突付け継ぎでは継手の一体性を確保できない。",
+      "ウ": "不適当。大引の継手は床束心から150 mm程度持ち出した位置で腰掛けあり継ぎ等により接合する。単なる突付け継ぎでは継手の一体性を確保できない。",
       "エ": "適当。構造材にはJASに適合する構造用製材を用い、強度・品質の条件を満たすものとする。",
       "オ": "適当。和室の畳床の根太間隔455 mmは標準的な配置。床材の種類や厚さ等に応じて適切な間隔を確保する。"
     },
@@ -1248,7 +1248,7 @@ export const KENCHIKUSHI2_2025_IV: readonly StagedKenchikushiQuestion[] = [
     },
     "answer": "エ",
     "officialAnswerNumber": "4",
-    "explanation": "公式正答は4。施工計画で工期・品質の確保に問題が明らかな場合、監理者は受注者へ助言し発注者へ報告する。4は相手を逆にしている。指定は令和4年9月改正約款。",
+    "explanation": "公式正答は4。施工計画で工期・品質の確保に問題が明らかな場合、監理者は受注者へ助言し発注者へ報告する。4は相手を逆にしている。指定は令和4年9月改正約款の第9条第1項第8号（PDF6ページ）。",
     "choiceExplanations": {
       "ア": "適当。発注者は受注者又は設計図書作成者の求めに応じ、設計意図を伝える質疑応答・説明の内容を受注者と監理者へ通知する。",
       "イ": "適当。監理者は受注者と打ち合わせ、工事を円滑に進めるため必要な時期に説明用図書を受注者へ交付する。",
@@ -1269,7 +1269,7 @@ export const KENCHIKUSHI2_2025_IV: readonly StagedKenchikushiQuestion[] = [
     "sourcePage": 23,
     "sourcePrintedPage": "施工 22",
     "officialReferenceUrls": [
-      "https://www.mlit.go.jp/totikensangyo/const/content/001499465.pdf"
+      "https://www.mlit.go.jp/tochi_fudousan_kensetsugyo/const/content/001519399.pdf"
     ]
   }
 ];
