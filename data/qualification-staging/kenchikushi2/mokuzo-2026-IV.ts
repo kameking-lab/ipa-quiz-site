@@ -504,9 +504,9 @@ export const MOKUZO_2026_IV: readonly StagedKenchikushiQuestion[] = [
     },
     "answer": "ア",
     "officialAnswerNumber": "1",
-    "explanation": "公式正答は1。ひら金物SM-15Sは土台等の隅角部を補強する金物。垂木と軒桁の接合用とする1が誤り。",
+    "explanation": "公式正答は1。ひら金物SM-15Sは柱と土台・桁等の横架材との接合を補強する金物。垂木と軒桁の接合用とする1が誤り。",
     "choiceExplanations": {
-      "ア": "不適当。ひら金物SM-15Sは土台等の隅角部の接合を補強する金物。垂木と軒桁の接合という用途ではない。",
+      "ア": "不適当。ひら金物SM-15Sは柱と土台・桁等の横架材の接合を補強する。隅柱柱脚等の土台切れ端部には用いない。垂木と軒桁の接合という用途ではない。",
       "イ": "適当。火打金物HBは2階床組等の隅角部で水平構面の変形を抑えるために使用する。",
       "ウ": "適当。かね折り金物SA・Sは通し柱と胴差など、直角に取り付く接合部を補強するために用いる。",
       "エ": "適当。羽子板パイプSP・Eは上下階の管柱相互等の引張力を伝達する所定の接合に用いる。",
@@ -523,7 +523,10 @@ export const MOKUZO_2026_IV: readonly StagedKenchikushiQuestion[] = [
     "sourceAnswerUrl": "https://www.jaeic.or.jp/.assets/R08_mk_gokakukizyun.pdf",
     "sourceAttribution": "出典：公益財団法人建築技術教育普及センター 令和8年木造建築士試験 学科Ⅳ（建築施工）",
     "sourcePage": 17,
-    "sourcePrintedPage": "施工 16"
+    "sourcePrintedPage": "施工 16",
+    "officialReferenceUrls": [
+      "https://www.howtec.or.jp/relays/download/134/318/227/517/?file=/files/libs/517/201706291243095194.pdf"
+    ]
   },
   {
     "id": "mokuzo-kenchikushi-2026-annual-IV-q12",
