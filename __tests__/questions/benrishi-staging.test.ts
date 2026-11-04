@@ -122,17 +122,17 @@ describe("弁理士短答式・直近2回の未公開収録", () => {
     expect(() => validateBenrishiPaper(p,keys["2025"])).toThrow();
   });
 
-  it("公開設定・問題プール・ナビゲーションへ接続しない", () => {
+  it("INT7公開投影を接続し、原稿の非公開設定を保持する", () => {
     expect(BENRISHI_REGISTRATION.publicAllowed).toBe(false);
     const entry = QUALIFICATION_CATALOG.find(q => q.slug === "benrishi")!;
-    expect(entry.status).toBe("terms-review-required");
-    expect(entry.examCode).toBeUndefined();
+    expect(entry.status).toBe("live");
+    expect(entry.examCode).toBe("benrishi");
     expect(entry.stagingDataPath).toBe("data/qualification-staging/benrishi");
-    expect(Object.keys(EXAM_CONFIGS)).not.toContain("benrishi");
-    expect(ALL_QUIZ_EXAM_CODES).not.toContain("benrishi");
-    expect(ALL_QUESTIONS.some(q => q.id.startsWith("benrishi-"))).toBe(false);
-    expect(getHomeDirectory().flatMap(d => [...d.featured,...d.compact]).some(c => c.href.includes("benrishi"))).toBe(false);
-    expect(readFileSync("lib/questions/get-questions.ts","utf8")).not.toContain("benrishi");
+    expect(Object.keys(EXAM_CONFIGS)).toContain("benrishi");
+    expect(ALL_QUIZ_EXAM_CODES).toContain("benrishi");
+    expect(ALL_QUESTIONS.some(q => q.id.startsWith("benrishi-"))).toBe(true);
+    expect(getHomeDirectory().flatMap(d => [...d.featured,...d.compact]).some(c => c.href.includes("benrishi"))).toBe(true);
+    expect(readFileSync("lib/questions/get-questions.ts","utf8")).not.toContain("qualification-staging/benrishi");
     expect(existsSync("public/questions/benrishi")).toBe(false);
     expect(existsSync("app/benrishi")).toBe(false);
   });

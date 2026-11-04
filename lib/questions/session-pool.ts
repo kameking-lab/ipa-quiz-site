@@ -1,6 +1,6 @@
 import type { QuizMode } from "./types";
 import { createHistoryStore } from "@/lib/storage/history";
-import { orderByPriority } from "@/lib/learning/spaced-repetition";
+import { getDueCards, orderByPriority } from "@/lib/learning/spaced-repetition";
 import { aggregateByCategory } from "@/lib/learning/analytics";
 const MAX_POOL = 80;
 const WEAKNESS_THRESHOLD = 0.6;
@@ -42,7 +42,8 @@ export function deriveSessionPool(
     if (mode === "review") {
       const wrong = new Set(history.getWrongIds());
       const starred = new Set(wrongOnly ? [] : history.getStarredIds());
-      ids = ids.filter((id) => wrong.has(id) || starred.has(id));
+      const due = new Set(wrongOnly ? [] : getDueCards().map(card => card.id));
+      ids = ids.filter((id) => wrong.has(id) || starred.has(id) || due.has(id));
     } else {
       const answered = new Set(history.getAnsweredIds());
       ids = ids.filter((id) => !answered.has(id));

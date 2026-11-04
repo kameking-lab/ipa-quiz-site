@@ -53,7 +53,7 @@ describe("Kenchikushi unpublished staging", () => {
     }
   });
 
-  it("keeps both qualifications unpublished while recording the actual ingestion progress", () => {
+  it("keeps source manuscripts private and publishes both INT7 qualification projections", () => {
     expect(manifest.publicAllowed).toBe(false);
     expect(manifest.ingestionState).toBe("transcribed-human-review-pending");
     expect(manifest.ingestedQuestionCount).toBe(allStaged.length);
@@ -62,10 +62,10 @@ describe("Kenchikushi unpublished staging", () => {
     const home = getHomeDirectory().flatMap(d => [...d.featured, ...d.compact]);
     for (const slug of ["kenchikushi2", "mokuzo-kenchikushi"]) {
       const entry = QUALIFICATION_CATALOG.find(q => q.slug === slug);
-      expect(entry?.status).toBe("ready-to-ingest");
-      expect(entry?.examCode).toBeUndefined();
-      expect(home.some(q => q.href === `/${slug}`)).toBe(false);
-      expect(ALL_QUESTIONS.some(q => String(q.exam) === slug)).toBe(false);
+      expect(entry?.status).toBe("live");
+      expect(entry?.examCode).toBe(slug);
+      expect(home.some(q => q.href === `/${slug}`)).toBe(true);
+      expect(ALL_QUESTIONS.some(q => String(q.exam) === slug)).toBe(true);
     }
   });
 

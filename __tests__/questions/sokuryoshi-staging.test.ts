@@ -39,9 +39,9 @@ describe("sokuryoshi: two complete private source-image rounds", () => {
       expect(q.publicAllowed).toBe(false);
       expect(q.needsReview).toBe(true); // human source review remains a separate publication prerequisite
     }
-    expect(QUALIFICATION_CATALOG.some(q=>q.slug==="sokuryoshi")).toBe(false);
-    expect(ALL_QUIZ_EXAM_CODES as readonly string[]).not.toContain("sokuryoshi");
-    expect(getRegisteredExamCodes()).not.toContain("sokuryoshi");
+    expect(QUALIFICATION_CATALOG.some(q=>q.slug==="sokuryoshi")).toBe(true);
+    expect(ALL_QUIZ_EXAM_CODES as readonly string[]).toContain("sokuryoshi");
+    expect(getRegisteredExamCodes()).toContain("sokuryoshi");
     for (const p of ["public/questions/sokuryoshi","public/exam-library/sokuryoshi"]) expect(existsSync(p)).toBe(false);
     for (const file of ["data/questions/index.ts","lib/questions/get-questions.ts","lib/exam-library-catalog.ts"]) {
       expect(readFileSync(file,"utf8")).not.toContain("qualification-staging/sokuryoshi");

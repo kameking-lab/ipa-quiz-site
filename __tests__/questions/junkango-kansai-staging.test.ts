@@ -107,9 +107,9 @@ describe("CQ6 准看護師（関西広域連合）の未公開2回分", () => {
   it("keeps the corpus and all assets outside public registries, routes and catalog", () => {
     expect(JUNKANGO_KANSAI_REGISTRATION.publicAllowed).toBe(false);
     expect(questions.every(q => q.publicAllowed === false && q.publicationStatus === "staging")).toBe(true);
-    expect(ALL_QUESTIONS.some(q => q.id.startsWith("junkango-kansai-"))).toBe(false);
-    expect(Object.keys(EXAM_CONFIGS)).not.toContain("junkango-kansai");
-    expect(QUALIFICATION_CATALOG.some(q => q.slug === "junkango-kansai")).toBe(false);
+    expect(ALL_QUESTIONS.some(q => q.id.startsWith("junkango-kansai-"))).toBe(true);
+    expect(Object.keys(EXAM_CONFIGS)).toContain("junkango-kansai");
+    expect(QUALIFICATION_CATALOG.some(q => q.slug === "junkango-kansai")).toBe(true);
     expect(readFileSync("data/exam-library/official-catalog.json", "utf8")).not.toContain('"junkango-kansai"');
     expect(existsSync("public/questions/junkango-kansai")).toBe(false);
     expect(existsSync("app/junkango-kansai")).toBe(false);

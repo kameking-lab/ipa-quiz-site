@@ -243,7 +243,7 @@ export function QuizClient({
     navigating.current = true;
     transitionHost.current?.scrollIntoView({ block: "start", behavior: "instant" });
     const nextId = sessionIds?.[index + 1];
-    setCurrent(!billingGateEnabled || mode === "review" ? cache.current.get(nextId ?? "") ?? null : null);
+    setCurrent(!(nativeClient() || billingGateEnabled && mode !== "review") ? cache.current.get(nextId ?? "") ?? null : null);
     setAccess(null);
     setLoadError(false);
     setIndex((i) => i + 1);
@@ -261,7 +261,7 @@ export function QuizClient({
       window.sessionStorage.setItem(`ipa-quiz:active-pool:v1:${url.pathname}${url.search}:related-order`, JSON.stringify(nextIds));
     } catch { /* Continue in place when session storage is unavailable. */ }
     setSessionIds(nextIds);
-    setCurrent(!billingGateEnabled || mode === "review" ? cache.current.get(question.id) ?? null : null);
+    setCurrent(!(nativeClient() || billingGateEnabled && mode !== "review") ? cache.current.get(question.id) ?? null : null);
     setAccess(null);
     setLoadError(false);
     setIndex(index + 1);

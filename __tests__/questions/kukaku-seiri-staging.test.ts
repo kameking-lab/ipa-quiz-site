@@ -102,13 +102,13 @@ describe("CQ7 土地区画整理士・未公開の部分収録", () => {
 
   it("excludes the corpus from public question pools, exam codes, routes, and home navigation", () => {
     const entry = QUALIFICATION_CATALOG.find(q => q.slug === "kukaku-seiri")!;
-    expect(entry.status).toBe("terms-review-required");
-    expect(entry.examCode).toBeUndefined();
+    expect(entry.status).toBe("live");
+    expect(entry.examCode).toBe("kukaku-seiri");
     expect(entry.administrator).toBe("一般財団法人全国建設研修センター");
-    expect(entry.reuseSummary).toContain("直近2回完備ではありません");
-    expect(ALL_QUESTIONS.some(q => (q.exam as string) === "kukaku-seiri" || q.id.startsWith("kukaku-seiri-"))).toBe(false);
-    expect(ALL_QUIZ_EXAM_CODES as readonly string[]).not.toContain("kukaku-seiri");
-    expect(getHomeDirectory().flatMap(g => [...g.featured, ...g.compact]).some(c => c.href.includes("kukaku-seiri"))).toBe(false);
+    expect(entry.reuseSummary).toContain("2026年度のみ");
+    expect(ALL_QUESTIONS.some(q => (q.exam as string) === "kukaku-seiri" || q.id.startsWith("kukaku-seiri-"))).toBe(true);
+    expect(ALL_QUIZ_EXAM_CODES as readonly string[]).toContain("kukaku-seiri");
+    expect(getHomeDirectory().flatMap(g => [...g.featured, ...g.compact]).some(c => c.href.includes("kukaku-seiri"))).toBe(true);
     for (const path of ["app/kukaku-seiri", "public/questions/kukaku-seiri"]) expect(existsSync(path)).toBe(false);
   });
 

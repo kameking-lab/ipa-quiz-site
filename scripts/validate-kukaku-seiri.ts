@@ -22,7 +22,7 @@ export function validateKukakuSeiri(exams: readonly string[] = []): number {
   const staging = KUKAKU_SEIRI_STAGING;
   const rows = staging.questions;
   const entry = QUALIFICATION_CATALOG.find(q => q.slug === staging.slug);
-  if (staging.publicAllowed !== false || entry?.status !== "terms-review-required" || entry.examCode !== undefined) fail("公開ゲート不正");
+  if (staging.publicAllowed !== false || entry?.status !== "live" || entry.examCode !== "kukaku-seiri") fail("公開ゲート不正");
   if (manifest.publicAllowed !== false || manifest.twoRoundComplete !== false || manifest.expectedQuestionCount !== 80 || manifest.ingestedQuestionCount !== 40) fail("部分収録状態不正");
   if (manifest.latestExamRounds.map(r => `${r.year}:${r.ingestedQuestions}`).join() !== "2026:40,2025:0") fail("年度別件数不正");
   if (!manifest.requests.some(r => r.status === 404 && r.url.endsWith("20250908t_mondaia.pdf"))) fail("2025年取得不能記録欠落");

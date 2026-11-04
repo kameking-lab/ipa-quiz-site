@@ -68,7 +68,7 @@ export function validateChiikiRyokoRows(input: unknown): number {
 export function validateChiikiRyoko(exams: readonly string[] = []): number {
   if (exams.length && !exams.includes("chiiki-ryoko")) return 0;
   const catalog = QUALIFICATION_CATALOG.find(q => q.slug === "chiiki-ryoko");
-  if (!catalog || catalog.status !== "ready-to-ingest" || catalog.examCode || "chiiki-ryoko" in EXAM_CONFIGS) throw Error("chiiki-ryoko: publication isolation broken");
+  if (!catalog || catalog.status !== "live" || catalog.examCode !== "chiiki-ryoko" || !("chiiki-ryoko" in EXAM_CONFIGS)) throw Error("chiiki-ryoko: publication isolation broken");
   if (manifest.publicAllowed !== false || manifest.publicationStatus !== "staging" || manifest.expectedQuestions !== 118) throw Error("chiiki-ryoko: private manifest required");
   const count = validateChiikiRyokoRows(CHIIKI_RYOKO_STAGING);
   if (manifest.assets.length !== 51 || new Set(manifest.assets.map(a => a.file)).size !== 51) throw Error("chiiki-ryoko: incomplete source images");

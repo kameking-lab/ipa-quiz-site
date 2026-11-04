@@ -54,22 +54,22 @@ describe("CQ4 浄化槽設備士学科 private staging", () => {
     expect(find(2026, 47).choices["4"]).toContain("800コロニー形成単位");
   });
 
-  it("never exposes the new qualification in public question registries, config or ID lookup", () => {
-    expect(getRegisteredExamCodes()).not.toContain("jokaso-setsubishi");
-    expect(EXAM_CONFIGS).not.toHaveProperty("jokaso-setsubishi");
-    expect(ALL_QUESTIONS.some((q) => q.id.startsWith("jokaso-setsubishi-"))).toBe(false);
+  it("serves only the INT7 public projection through registries and ID lookup", () => {
+    expect(getRegisteredExamCodes()).toContain("jokaso-setsubishi");
+    expect(EXAM_CONFIGS).toHaveProperty("jokaso-setsubishi");
+    expect(ALL_QUESTIONS.some((q) => q.id.startsWith("jokaso-setsubishi-"))).toBe(true);
     for (const q of questions) {
-      expect(getQuestionById(q.id)).toBeUndefined();
+      expect(getQuestionById(q.id)).toMatchObject({ id: q.id, publicAllowed: true, needsReview: false });
       expect(q.publicAllowed).toBe(false);
       expect(existsSync(path.join(process.cwd(), "public", "images", "jokaso-setsubishi", path.basename(q.sourceImage)))).toBe(false);
     }
     const entries = QUALIFICATION_CATALOG.filter((q) => q.slug === "jokaso-setsubishi");
     expect(entries).toHaveLength(1);
-    expect(entries[0]!.examCode).toBeUndefined();
-    expect(entries[0]!.status).not.toBe("live");
+    expect(entries[0]!.examCode).toBe("jokaso-setsubishi");
+    expect(entries[0]!.status).toBe("live");
     // Public runtime modules must not gain imports of private staging files.
     for (const file of ["data/questions/index.ts", "lib/questions/get-questions.ts", "lib/questions/load.ts"]) {
-      expect(readFileSync(file, "utf8")).not.toContain("jokaso-setsubishi");
+      expect(readFileSync(file, "utf8")).not.toContain("qualification-staging/jokaso-setsubishi");
     }
   });
 });

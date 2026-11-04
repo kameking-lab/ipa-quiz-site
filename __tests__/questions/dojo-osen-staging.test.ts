@@ -134,12 +134,12 @@ describe("dojo-osen latest two complete official editions, private staging", () 
     expect(DOJO_OSEN_STAGING.sourceImagesAreCanonical).toBe(true);
     const catalog = QUALIFICATION_CATALOG.filter(q => q.slug === "dojo-osen");
     expect(catalog).toHaveLength(1);
-    expect(catalog[0].status).toBe("terms-review-required");
-    expect(catalog[0].examCode).toBeUndefined();
-    expect("dojo-osen" in EXAM_CONFIGS).toBe(false);
-    expect(ALL_QUESTIONS.some(q => q.id.startsWith("dojo-osen-"))).toBe(false);
+    expect(catalog[0].status).toBe("live");
+    expect(catalog[0].examCode).toBe("dojo-osen");
+    expect("dojo-osen" in EXAM_CONFIGS).toBe(true);
+    expect(ALL_QUESTIONS.some(q => q.id.startsWith("dojo-osen-"))).toBe(true);
     const cards = getHomeDirectory().flatMap(d => [...d.featured, ...d.compact]);
-    expect(cards.some(c => c.href.includes("dojo-osen"))).toBe(false);
+    expect(cards.some(c => c.href.includes("dojo-osen"))).toBe(true);
     expect(existsSync("public/questions/dojo-osen")).toBe(false);
     expect(existsSync("app/dojo-osen")).toBe(false);
   });

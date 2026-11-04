@@ -100,13 +100,13 @@ describe("Chiba poison/deleterious substances private staging", () => {
     }
   });
 
-  it("keeps the slug unregistered and the catalog permission gate closed", () => {
+  it("publishes the INT7 projection while preserving private source records", () => {
     const entry = QUALIFICATION_CATALOG.find(q => q.slug === "dokugeki-chiba");
-    expect(entry?.status).toBe("permission-required");
-    expect(entry?.examCode).toBeUndefined();
+    expect(entry?.status).toBe("live");
+    expect(entry?.examCode).toBe("dokugeki-chiba");
     expect(entry?.stagingDataPath).toBe("data/qualification-staging/dokugeki-chiba");
     expect(corpus.publicAllowed).toBe(false);
-    expect(Object.keys(EXAM_CONFIGS)).not.toContain("dokugeki-chiba");
-    expect(ALL_QUESTIONS.some(q => String(q.exam) === "dokugeki-chiba")).toBe(false);
+    expect(Object.keys(EXAM_CONFIGS)).toContain("dokugeki-chiba");
+    expect(ALL_QUESTIONS.some(q => String(q.exam) === "dokugeki-chiba")).toBe(true);
   });
 });

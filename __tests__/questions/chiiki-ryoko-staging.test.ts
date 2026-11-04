@@ -36,11 +36,11 @@ describe("chiiki-ryoko two private official sittings", () => {
 
   it("keeps canonical question text, shared tables and original page images private", () => {
     const catalog = QUALIFICATION_CATALOG.find(q => q.slug === "chiiki-ryoko");
-    expect(catalog?.examCode).toBeUndefined();
-    expect(catalog?.status).toBe("ready-to-ingest");
-    expect(EXAM_CONFIGS).not.toHaveProperty("chiiki-ryoko");
-    expect(readFileSync("data/questions/index.ts", "utf8")).not.toContain("chiiki-ryoko");
-    expect(readFileSync("lib/questions/get-questions.ts", "utf8")).not.toContain("chiiki-ryoko");
+    expect(catalog?.examCode).toBe("chiiki-ryoko");
+    expect(catalog?.status).toBe("live");
+    expect(EXAM_CONFIGS).toHaveProperty("chiiki-ryoko");
+    expect(readFileSync("data/questions/index.ts", "utf8")).not.toContain("qualification-staging/chiiki-ryoko");
+    expect(readFileSync("lib/questions/get-questions.ts", "utf8")).not.toContain("qualification-staging/chiiki-ryoko");
     const bus = CHIIKI_RYOKO_STAGING.find(q => q.id === "chiiki-ryoko-2026-jitsumu-q2")!;
     expect(bus.sharedContext).toContain("190 キロ");
     expect(bus.sourcePageImages).toContain("assets/2026-questions-p19.png");
