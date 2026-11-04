@@ -11,7 +11,7 @@ import { isPracticeReadyQuestion, shuffleChoices } from "@/lib/questions/filter"
 import { isAcceptedAnswer, isCompleteSelectionCorrect } from "@/lib/questions/answers";
 import { questionSourceEdition } from "@/lib/questions/source-label";
 import { questionPagePath, findQuestionByRoute } from "@/lib/seo/question-url";
-import { buildQuestionJsonLd } from "@/lib/seo/question-jsonld";
+import { sessionLabel, buildQuestionJsonLd } from "@/lib/seo/question-jsonld";
 import { GET as nextGET } from "@/app/api/questions/next/route";
 import scope from "@/reports/int7-20261105/release-scope.json";
 import receipt from "@/reports/int7-20261105/projection-receipt.json";
@@ -33,6 +33,10 @@ describe("INT7 batch3 public release integration", () => {
       expect(findQuestionByRoute(ALL_QUESTIONS, {exam, yearSeason, section, qnum})?.id).toBe(q.id);
       if (q.hasImage) expect(q.imageUrls?.length).toBeGreaterThan(0);
       expect(q.sourceAttribution).toBeTruthy();
+      expect(sessionLabel(q.session, q.exam)).toMatch(/[一-龯ぁ-んァ-ン]/);
+      for (const text of [q.questionNotice ?? "", questionSourceEdition(q), sessionLabel(q.session, q.exam)]) {
+        expect(text).not.toMatch(/\?{3,}|\uFFFD/);
+      }
     }
     const sample = questions[0];
     const response = await nextGET(new Request(`http://localhost/api/questions/next?id=${sample.id}`));
@@ -59,6 +63,7 @@ describe("INT7 batch3 public release integration", () => {
     }
     const nurse = QUESTIONS_BY_EXAM["junkango-kansai"]!.find(q => q.year === 2026 && q.qNumber === 139)!;
     expect(nurse.answer).toEqual(["イ", "エ"]);
+    expect(questionSourceEdition(nurse)).toBe("令和7年度（2026年実施）");
     expect(nurse.requiredSelections).toBeUndefined();
     expect(isAcceptedAnswer(nurse.answer, "イ")).toBe(true);
     expect(isAcceptedAnswer(nurse.answer, "エ")).toBe(true);

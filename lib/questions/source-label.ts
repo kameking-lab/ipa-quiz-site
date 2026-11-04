@@ -30,8 +30,8 @@ const VERIFIED_MEDICAL_EDITIONS: Readonly<Record<string, Readonly<Record<string,
 export function questionSourceEdition(q: Pick<Question, "year" | "season" | "sourcePdfUrl"> & Partial<Pick<Question, "exam" | "fiscalYear">>): string {
   if (q.exam === "junkango-kansai") {
     return q.fiscalYear !== undefined
-      ? `??${q.fiscalYear - 2018}???${q.year}????`
-      : `${q.year}???`;
+      ? `令和${q.fiscalYear - 2018}年度（${q.year}年実施）`
+      : `${q.year}年実施`;
   }
 
 if (q.exam?.startsWith("jidosha-")) {

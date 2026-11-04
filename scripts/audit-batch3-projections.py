@@ -57,6 +57,8 @@ for code, source in originals:
         if source.get(field) is not None:assert target.get(field)==source[field],(source['id'],field)
     for field in ['sourcePdfUrl','sourceAnswerUrl','sourceAttribution']:
         if source.get(field):assert target[field]==source[field],(source['id'],field)
+    if source.get('sourceIssue'):
+        assert target['questionNotice']==source['sourceIssue'].removesuffix('公開前に要確認。').strip()
     checked+=1
 assert checked==1782 and len(excluded)==2 and len(originals)==1784
 for path,item in receipt['assets'].items():

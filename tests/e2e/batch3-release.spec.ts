@@ -41,7 +41,7 @@ test("batch3: travel multi-selection preserves exact grading and source diagrams
   await page.goto(`/quiz?mode=year&exam=chiiki-ryoko&year=${question.year}&season=annual&session=${question.session}&question=${question.id}`);
   const group = page.getByRole("group", {name: /選択肢/});
   await expect(group).toBeVisible();
-  for (const key of question.answer as string[]) await group.getByRole("checkbox", {name: new RegExp(`^??? ${key}:`)}).click();
+  for (const key of question.answer as string[]) await group.getByRole("checkbox", {name: new RegExp(`^選択肢 ${key}:`)}).click();
   await expect(page.getByText("正解です。解説が表示されました。", {exact: true})).toHaveCount(1);
 });
 test("batch3: source figures render and contact site parameter retains both support paths", async ({page}, testInfo) => {
@@ -50,7 +50,7 @@ test("batch3: source figures render and contact site parameter retains both supp
   await expect(page.locator('img[src^="/images/questions/batch3/"]').first()).toBeVisible();
   await page.screenshot({path: testInfo.outputPath("benrishi-mobile.png"), fullPage: true});
   await page.goto("/contact?site=tsugino");
-  await expect(page.locator("select")).toHaveValue("tsugino");
+  await expect(page.getByRole("radio", {name: "次の資格について"})).toBeChecked();
   await expect(page.locator("#legacy-benefits")).toBeVisible();
   expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth + 1)).toBe(true);
   mkdirSync("reports/int7-20261105/screenshots", {recursive:true});

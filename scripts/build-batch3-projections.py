@@ -125,7 +125,7 @@ def project(code, q, year):
     if references:
         result['officialReferenceUrls'] = list(dict.fromkeys(references))
     if q.get('sourceIssue'):
-        result['questionNotice'] = q['sourceIssue'] + ' ???????????????????????????????'
+        result['questionNotice'] = q['sourceIssue'].removesuffix('公開前に要確認。').strip()
     assert result['question'] and result['explanation'], (code, q['id'])
     return result
 
