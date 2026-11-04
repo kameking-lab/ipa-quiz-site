@@ -38,6 +38,7 @@ import { CIVIL1_QUESTIONS } from "@/data/questions/civil1";
 import type { Question } from "@/lib/questions/types";
 import { detectAnswerDispute } from "@/lib/questions/explanation-consistency";
 import { z } from "zod";
+import { validateDojoOsenStaging } from "@/data/qualification-staging/dojo-osen";
 import { RIYOSHI_CANDIDATES } from "@/data/questions/riyoshi";
 import { validateSokuryoshiStaging } from "./qualification-ingestion/validate-sokuryoshi";
 import { validateJokasoSetsubishiStaging } from "./lib/jokaso-setsubishi-staging";
@@ -522,6 +523,14 @@ if (opts.exams.length === 0 || opts.exams.includes("jokaso-setsubishi")) {
 validateChiikiRyoko(opts.exams);
 // CQ7 is a private, partial corpus and has no public ExamCode.
 const privateStagedCount = validateKukakuSeiri(opts.exams);
+// A private editorial corpus has its own image-required schema and is never
+// registered as a public ExamCode merely to make a validation filter find it.
+if (opts.exams.includes("dojo-osen")) {
+  const count = validateDojoOsenStaging();
+  console.log(`Validated ${count} dojo-osen staged questions. ok=${count} fail=0 publicAllowed=false`);
+  opts.exams = opts.exams.filter(exam => exam !== "dojo-osen");
+  if (opts.exams.length === 0) process.exit(0);
+}
 const questions = opts.exams.length > 0
   ? VALIDATION_QUESTIONS.filter((q) => opts.exams.includes(q.exam))
   : VALIDATION_QUESTIONS;
