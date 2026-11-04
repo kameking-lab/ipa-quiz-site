@@ -28,6 +28,7 @@ import { DENKO1_QUESTIONS } from "./denko1";
 import { SEKOU_KENCHIKU2_QUESTIONS } from "./sekou-kenchiku2";
 import { CIVIL2_QUESTIONS } from "./civil2";
 import { DENKI1_QUESTIONS } from "./denki1";
+import { DENKI2_QUESTIONS } from "./denki2";
 import { KANKOJI2_QUESTIONS } from "./kankoji2";
 import { ZOEN2_QUESTIONS } from "./zoen2";
 import { ZOEN1_QUESTIONS } from "./zoen1";
@@ -207,6 +208,7 @@ export const QUESTIONS_BY_EXAM: Partial<Record<ExamCode, Question[]>> = {
   ...(isExamPublished("denko1") ? { denko1: DENKO1_QUESTIONS } : {}),
   ...(isExamPublished("civil2") ? { civil2: CIVIL2_QUESTIONS } : {}),
   ...(isExamPublished("denki1") ? { denki1: DENKI1_QUESTIONS } : {}),
+  ...(isExamPublished("denki2") ? { denki2: DENKI2_QUESTIONS } : {}),
   ...(isExamPublished("kankoji2") ? { kankoji2: KANKOJI2_QUESTIONS } : {}),
   ...(isExamPublished("zoen2") ? { zoen2: ZOEN2_QUESTIONS } : {}),
   ...(isExamPublished("zoen1") ? { zoen1: ZOEN1_QUESTIONS } : {}),

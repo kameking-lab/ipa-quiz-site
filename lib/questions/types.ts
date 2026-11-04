@@ -33,6 +33,7 @@ export type ExamCode =
   | "civil2"
   | "denki1"
   | "sekou-kenchiku2"
+  | "denki2"
   | "kankoji2"
   | "zoen2"
   | "zoen1"

@@ -80,6 +80,7 @@ export const EXAM_LABELS: Record<string, string> = {
   "sekou-kenchiku2": "2級建築施工管理（第一次検定）",
   civil2: "2級土木施工管理技士",
   denki1: "1級電気工事施工管理（第一次検定）",
+  denki2: "2級電気工事施工管理（第一次検定）",
   kankoji2: "2級管工事施工管理技士",
   zoen2: "2級造園施工管理技士",
   zoen1: "1級造園施工管理技士",
