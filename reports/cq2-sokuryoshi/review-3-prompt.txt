@@ -1,0 +1,28 @@
+CQ2の独立再レビュー3をread-onlyで実施してください。編集・commit・push・PR・deploy・main操作は禁止。
+対象: C:/Users/kanet/20260522/wt-sokuryoshi
+base: bb912dfd0494f7095ec5387f9f2e53f46381cd1f
+
+以下をUTF-8で読んで要件と前回の指摘を確認してください。
+- reports/cq2-sokuryoshi/review-1-prompt.txt （最初の要件、画像正本方式等）
+- reports/cq2-sokuryoshi/review-1-result.md と review-1-fixes.md
+- reports/cq2-sokuryoshi/review-2-result.md と review-2-fixes.md
+
+レビュー2は前回7件の修正を確認した上で新規3件によりFAILでした。新規3件も修正しました。
+1. 2025午後No.4 B-4の座標系整合の解説追加。
+2. 2025午後No.5 B-1を線形決定（路線選定・線形図データファイル・条件点を放射法）へ修正。
+3. 2025午後No.5 A-4に独立座標較差とTS対辺測定距離較差という二方法を明示。
+
+現在は午後104説明節（2025年57、2026年47）。全66原問、午前280肢、原文186ページの画像と未公開ガードは同じ。
+新設official-descriptive-sections.jsonは公式午後解答例PDFの文字層から小問見出しを独立抽出した一覧です。
+生成スクリプト、validator、テストでこの一覧との完全一致を検査するように変更しました。
+一覧が実際の公式解答例の全小問と一致するかも確認してください。親見出しは子がない問Aだけを数えます。
+
+修正の原稿は data/qualification-staging/sokuryoshi/pm-notes.json、生成データは2025.json/2026.json。
+その他の未指摘の実質的な誤り、全小問網羅、全肢説明と公式正答の矛盾がないかも再確認してください。
+原文はassetsの無劣化原本ページ画像です。PDF原本・公式準則・補助OCRの場所:
+C:/Users/kanet/AppData/Local/Temp/codex-work/cq2-sokuryoshi
+
+通常実行の最新検証ログはreports/cq2-sokuryoshi/{validate-questions,typecheck,related-tests}.log。
+read-onlyでspawn EPERMが出る場合は制約を迂回せず分離して報告してください。
+レビュー2以前の指摘は全ての正確性を保証するチェックリストではないので、今回も内容を批判的に監査してください。
+最後にPASS又はFAILを明記し、FAILなら具体的設問・根拠・修正案を記載してください。

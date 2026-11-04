@@ -33,6 +33,26 @@ def run():
         keys[str(year)] = {"sourceUrl": f"https://www.gsi.go.jp/common/{doc_id}.pdf",
             "sourcePages": pages(doc_id, 1), "answers": [a for _, a in entries]}
     write("official-answer-keys.json", keys)
+    # Extract all small-question headings independently from the official example
+    # sheets. Parent A/B headings are kept only when they have no numbered children.
+    descriptive_keys = {}
+    for year, doc_id in [(2025, "000271324"), (2026, "000279272")]:
+        doc = fitz.open(cache / f"{doc_id}.pdf")
+        items = {}
+        for number in range(1, 6):
+            text = unicodedata.normalize("NFKC", doc[2*number-2].get_text() + doc[2*number-1].get_text())
+            headings = re.findall(r"問\s*([ABCD])\s*[−ー\-]?\s*([1-9])?", text)
+            labels = []
+            for letter in "ABCD":
+                children = sorted({int(n) for k, n in headings if k == letter and n})
+                if children:
+                    labels.extend(f"{letter}-{n}" for n in children)
+                elif any(k == letter for k, _ in headings):
+                    labels.append(letter)
+            assert labels, (year, number)
+            items[str(number)] = {"labels": labels, "sourcePages": pages(doc_id, 2*number-1, 2*number)}
+        descriptive_keys[str(year)] = {"sourceUrl":f"https://www.gsi.go.jp/common/{doc_id}.pdf", "questions":items}
+    write("official-descriptive-sections.json", descriptive_keys)
     maps = {
         2026: [pages("000278970", *ns) for ns in [
             [3],[4],[5],[6],[7],[8],[9,10],[11],[12],[12],[13],[13],[14],[15],
@@ -91,6 +111,7 @@ def run():
         answer_id, sheet_id = ("000279272","000279273") if year == 2026 else ("000271324","000271266")
         for i, refs in enumerate(pm_maps[year], 1):
             note = pm_notes[str(year)][str(i)]
+            assert list(note["parts"]) == descriptive_keys[str(year)]["questions"][str(i)]["labels"], (year, i, "missing or misordered explanation section")
             questions.append({"id":f"sokuryoshi-{year}-annual-pm-q{i}", "slug":"sokuryoshi",
                 "year":year, "session":"pm", "officialQuestionNumber":i,
                 "officialQuestionLabel":("必須" if i==1 else "選択")+f"〔No. {i}〕", "type":"descriptive",
@@ -117,6 +138,7 @@ def run():
         "administrator":"国土地理院","publicationStatus":"staged","publicAllowed":False,
         "canonicalFormat":"lossless-original-page-images","reviewStatus":"awaiting-independent-review",
         "originalCount":66,"morningCount":56,"afternoonOriginalCount":10,"choiceExplanationCount":280,
+        "afternoonExplanationSectionCount":sum(r["afternoonExplanationSectionCount"] for r in rounds),
         "rounds":rounds,"officialIndexUrl":"https://www.gsi.go.jp/LAW/SHIKEN/past.html",
         "officialReuseTermsUrl":"https://www.gsi.go.jp/kikakuchousei/kikakuchousei40182.html",
         "missingPdfUrls":[],"remainingPublicationWork":["人手による原本と技術根拠の最終確認","地図等の測量成果・第三者権利と利用手続の個別確認","公開を明示的に承認する別タスク"]})

@@ -4,6 +4,7 @@ import { join } from "node:path";
 import { SOKURYOSHI_STAGED_QUESTIONS, SOKURYOSHI_STAGING } from "@/data/qualification-staging/sokuryoshi";
 import source from "@/data/qualification-staging/sokuryoshi/source-manifest.json";
 import keys from "@/data/qualification-staging/sokuryoshi/official-answer-keys.json";
+import descriptiveKeys from "@/data/qualification-staging/sokuryoshi/official-descriptive-sections.json";
 import { validateSokuryoshiStaging } from "@/scripts/qualification-ingestion/validate-sokuryoshi";
 import { QUALIFICATION_CATALOG } from "@/lib/qualifications/catalog";
 import { ALL_QUIZ_EXAM_CODES } from "@/lib/exam-config";
@@ -69,6 +70,9 @@ describe("sokuryoshi: two complete private source-image rounds", () => {
       expect(q.originalAnswer.sourcePages.map(p=>p.page)).toEqual([2*q.officialQuestionNumber-1,2*q.officialQuestionNumber]);
       expect(q.answerSheetPages).toHaveLength(2);
       expect(q.explanationSections!.length).toBeGreaterThanOrEqual(8);
+      const table = descriptiveKeys[String(q.year) as keyof typeof descriptiveKeys].questions;
+      const official = table[String(q.officialQuestionNumber) as keyof typeof table];
+      expect(q.explanationSections!.map(s=>s.label.replace(/^問/,""))).toEqual(official.labels);
       expect(q).not.toHaveProperty("officialAnswerNumber");
       expect(q).not.toHaveProperty("choices");
     }
@@ -106,5 +110,11 @@ describe("sokuryoshi: two complete private source-image rounds", () => {
     expect(section(2025,2,"問A-4")).toContain("全ての既知点");
     expect(section(2026,1,"問D-2")).toContain("新技術を公共測量に用いる際");
     expect(section(2026,3,"問C-1")).toContain("aは○");
+    expect(section(2025,4,"問B-4")).toContain("座標系");
+    expect(section(2025,5,"問A-4")).toContain("別の既知点");
+    expect(section(2025,5,"問A-4")).toContain("対辺測定");
+    expect(section(2025,5,"問B-1")).toContain("条件点");
+    expect(section(2025,5,"問B-1")).toContain("線形図データファイル");
+    expect(SOKURYOSHI_STAGING.manifest.afternoonExplanationSectionCount).toBe(104);
   });
 });

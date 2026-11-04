@@ -35,8 +35,9 @@ export function validateSokuryoshiStaging(root = process.cwd()): { count: number
     const manifest = read("manifest.json");
     const source = read("source-manifest.json");
     const keys = read("official-answer-keys.json");
+    const descriptiveKeys = read("official-descriptive-sections.json");
     if (manifest.publicAllowed !== false || source.publicAllowed !== false) errors.push("publicAllowed must be false");
-    if (manifest.slug !== "sokuryoshi" || manifest.originalCount !== 66 || manifest.choiceExplanationCount !== 280) errors.push("manifest counts/slug mismatch");
+    if (manifest.slug !== "sokuryoshi" || manifest.originalCount !== 66 || manifest.choiceExplanationCount !== 280 || manifest.afternoonExplanationSectionCount !== 104) errors.push("manifest counts/slug mismatch");
     if (source.documents.length !== 13 || source.missingPdfUrls.length) errors.push("expected all 13 official PDFs");
     const pageKeys = new Set<string>();
     const documentUrls = new Map<string, string>();
@@ -89,6 +90,10 @@ export function validateSokuryoshiStaging(root = process.cwd()): { count: number
           for (const [i, choice] of q.choices.entries()) if (choice.officialNumber !== i+1 || choice.originalChoice.printedNumber !== i+1) errors.push(`choice order ${q.id}`);
           if (new Set(q.choices.map(c => c.explanation)).size !== 5) errors.push(`duplicated option explanation ${q.id}`);
         } else {
+          const labels = q.explanationSections.map(s=>s.label.replace(/^問/,""));
+          const expected = descriptiveKeys[String(year)].questions[String(q.officialQuestionNumber)];
+          if (JSON.stringify(labels) !== JSON.stringify(expected.labels)) errors.push(`official descriptive section coverage ${q.id}`);
+          if (q.sourceAnswerUrl !== descriptiveKeys[String(year)].sourceUrl) errors.push(`official descriptive source ${q.id}`);
           if (new Set(q.explanationSections.map(s => s.label)).size !== q.explanationSections.length) errors.push(`duplicate descriptive labels ${q.id}`);
           const expectedPages = [2*q.officialQuestionNumber-1,2*q.officialQuestionNumber];
           for (const refs of [q.originalAnswer.sourcePages,q.answerSheetPages]) if (JSON.stringify(refs.map(p=>p.page)) !== JSON.stringify(expectedPages)) errors.push(`afternoon answer mapping ${q.id}`);
