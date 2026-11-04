@@ -1,12 +1,14 @@
-# CocoaPods supplies xcodeproj. Executed only by prepare-ios.mjs on macOS.
+# CocoaPods supplies xcodeproj on CI; Windows verification also needs this gem.
 require 'xcodeproj'
+require 'json'
+bundle_id = 'jp.kakomon-ai.app'
 project = Xcodeproj::Project.open('ios/App/App.xcodeproj')
 target = project.targets.find { |item| item.name == 'App' }
 raise 'App target missing' unless target
 build_number = ENV.fetch('BUILD_NUMBER', '1')
-raise 'Invalid build number' unless build_number.match?(/\A\d+\z/)
+raise 'Invalid build number' unless build_number.match?(/\A[1-9]\d*\z/)
 target.build_configurations.each do |configuration|
-  configuration.build_settings['PRODUCT_BUNDLE_IDENTIFIER'] = 'jp.kakomon-ai.app'
+  configuration.build_settings['PRODUCT_BUNDLE_IDENTIFIER'] = bundle_id
   configuration.build_settings['MARKETING_VERSION'] = '1.0.0'
   configuration.build_settings['CURRENT_PROJECT_VERSION'] = build_number
   configuration.build_settings['TARGETED_DEVICE_FAMILY'] = '1'
@@ -37,10 +39,17 @@ project.root_object.attributes['TargetAttributes'][target.uuid]['SystemCapabilit
 project.save
 plist_path = 'ios/App/App/Info.plist'
 plist = Xcodeproj::Plist.read_from_path(plist_path)
+plist['CFBundleIdentifier'] = '$(PRODUCT_BUNDLE_IDENTIFIER)'
 plist['CFBundleDevelopmentRegion'] = 'ja'
 plist['CFBundleLocalizations'] = ['ja']
 plist['CFBundleDisplayName'] = '過去問AI'
 plist['ITSAppUsesNonExemptEncryption'] = false
 plist['NSUserTrackingUsageDescription'] = '他社のアプリやウェブサイトでの利用情報と、このアプリの利用情報を組み合わせて、興味に合った広告の表示と広告の効果測定に利用します。許可しなくても学習機能を利用できます。'
-plist['CFBundleURLTypes'] = [{ 'CFBundleURLName' => 'jp.kakomon-ai.app.auth', 'CFBundleURLSchemes' => ['kakomonai'] }]
+plist['CFBundleURLTypes'] = [{ 'CFBundleURLName' => "#{bundle_id}.auth", 'CFBundleURLSchemes' => ['kakomonai'] }]
 Xcodeproj::Plist.write_to_path(plist, plist_path)
+# cap sync copies the CLI-only appId into this bundled JSON on every run.
+# Keep the shipped runtime identity consistent with Bundle.main / StoreKit.
+config_path = 'ios/App/App/capacitor.config.json'
+config = JSON.parse(File.read(config_path))
+config['appId'] = bundle_id
+File.write(config_path, JSON.pretty_generate(config) + "\n")

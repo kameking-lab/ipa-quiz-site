@@ -1,6 +1,9 @@
 import type { CapacitorConfig } from "@capacitor/cli";
 const config: CapacitorConfig = {
-  appId: "jp.kakomon-ai.app",
+  // CLI 8 validates Java package syntax on `cap add`, even for iOS.
+  // Generation only: configure-ios.rb restores the registered Apple Bundle ID
+  // (jp.kakomon-ai.app) in every App configuration and the native runtime config.
+  appId: "jp.kakomonai.app",
   appName: "過去問AI",
   webDir: "dist",
   ios: { contentInset: "never", preferredContentMode: "mobile" },

@@ -67,12 +67,17 @@ workflows:
           set -euo pipefail
           cd "$CM_BUILD_DIR/mobile"
           npm run ios:prepare
+          npm run ios:test
           plutil -lint ios/App/App/Info.plist ios/App/App/PrivacyInfo.xcprivacy
       - name: Apply App Store provisioning profiles
         script: |
           set -euo pipefail
           cd "$CM_BUILD_DIR/mobile"
-          xcode-project use-profiles
+          mkdir -p build/ios
+          xcode-project use-profiles \
+            --project ios/App/App.xcodeproj \
+            --export-options-plist build/ios/export_options.plist
+          ruby scripts/verify-ios.rb build/ios/export_options.plist
       - name: Build signed IPA
         script: |
           set -euo pipefail
@@ -80,7 +85,9 @@ workflows:
           xcode-project build-ipa \
             --workspace ios/App/App.xcworkspace \
             --scheme App \
-            --config Release
+            --config Release \
+            --export-options-plist build/ios/export_options.plist \
+            --ipa-directory build/ios/ipa
     artifacts:
       - mobile/build/ios/ipa/*.ipa
       - /tmp/xcodebuild_logs/*.log
