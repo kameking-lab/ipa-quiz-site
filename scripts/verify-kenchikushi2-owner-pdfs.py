@@ -306,6 +306,41 @@ def source_questions_m2026_i(path):
     return questions
 
 
+def source_questions_m2026_ii(path):
+    figures={13:(110,480,500,775),17:(110,135,485,445),18:(110,135,470,445),19:(65,155,550,740)};questions={}
+    with pdfplumber.open(path) as pdf:
+        for pn in range(10,24):
+            page=pdf.pages[pn-1];r=figures.get(pn)
+            def retain(o):
+                if o.get('object_type')!='char':return True
+                if o['size']<=5.5 or o['top']>=790:return False
+                return not(r and o['x0']<r[2] and o['x1']>r[0] and o['top']<r[3] and o['bottom']>r[1])
+            parts=re.split(r"〔No\.\s*(\d+)〕",unicodedata.normalize('NFKC',page.filter(retain).extract_text(use_text_flow=True)))
+            for i in range(1,len(parts),2):
+                n=int(parts[i]);source=parts[i+1].replace('面積を\n1.8','面積を1.8');f=re.split(r"(?m)^\s*([1-5])\s*\.\s*",source);choices={int(f[j]):f[j+1] for j in range(1,len(f),2)}
+                if n==1:choices[5]=normalize(choices[5]).replace('高さの21のもの','高さの1/2のもの')
+                if n==2:
+                    choices[2]=normalize(choices[2]).replace('面積の71の場合','面積の1/7の場合');choices[5]=normalize(choices[5]).replace('合計の2001を','合計の1/200を')
+                if n==5:choices[5]=normalize(choices[5]).replace('幅の21だけ','幅の1/2だけ')
+                if n==11:choices[4]=normalize(choices[4]).replace('床面積の201未満','床面積の1/20未満')
+                if n==18:
+                    table=page.crop((90,550,450,750)).extract_tables()[0];assert len(table)==6 and len(table[0])==2,table
+                    choices={}
+                    for j,row in enumerate(table[1:],1):
+                        formula=normalize(row[0]);height=normalize(row[1])
+                        if j==2:
+                            assert formula.startswith('(1.2-1)'),formula
+                            formula=formula.replace('(1.2-1)','',1).removesuffix('2')+'(1.2-1)/2'
+                        if j==3:
+                            assert formula.startswith('1.2'),formula
+                            formula=formula.removeprefix('1.2').removesuffix('2')+'1.2/2'
+                        choices[j]=formula+'／'+height
+                assert sorted(choices)==[1,2,3,4,5],(n,choices)
+                questions[n]=(pn,f[0],choices)
+    assert sorted(questions)==list(range(1,26))
+    return questions
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("owner_directory", type=Path)
@@ -327,7 +362,7 @@ def main():
                         assert row == round_["officialAnswers"][subject], (file.name, subject)
                         counts["officialAnswers"] += len(row)
             counts["ownerPdfs"] += 1
-    for year, subject, extract, source in [(2026,"I",source_questions,"R8_2k_1_2.pdf"),(2026,"II",source_questions_ii,"R8_2k_1_2.pdf"),(2026,"III",source_questions_iii,"R8_2k_3_4.pdf"),(2026,"IV",source_questions_iv,"R8_2k_3_4.pdf"),(2025,"I",source_questions_2025_i,"2k-2025-1st-gakka1_2.pdf"),(2025,"II",source_questions_2025_ii,"2k-2025-1st-gakka1_2.pdf"),(2025,"III",source_questions_2025_iii,"2k-2025-1st-gakka3_4.pdf"),(2025,"IV",source_questions_2025_iv,"2k-2025-1st-gakka3_4.pdf"),(2026,"mokuzo-I",source_questions_m2026_i,"R8_mk_1_2.pdf")]:
+    for year, subject, extract, source in [(2026,"I",source_questions,"R8_2k_1_2.pdf"),(2026,"II",source_questions_ii,"R8_2k_1_2.pdf"),(2026,"III",source_questions_iii,"R8_2k_3_4.pdf"),(2026,"IV",source_questions_iv,"R8_2k_3_4.pdf"),(2025,"I",source_questions_2025_i,"2k-2025-1st-gakka1_2.pdf"),(2025,"II",source_questions_2025_ii,"2k-2025-1st-gakka1_2.pdf"),(2025,"III",source_questions_2025_iii,"2k-2025-1st-gakka3_4.pdf"),(2025,"IV",source_questions_2025_iv,"2k-2025-1st-gakka3_4.pdf"),(2026,"mokuzo-I",source_questions_m2026_i,"R8_mk_1_2.pdf"),(2026,"mokuzo-II",source_questions_m2026_ii,"R8_mk_1_2.pdf")]:
         originals = extract(args.owner_directory / source)
         filename = f"mokuzo-{year}-{subject[7:]}.ts" if subject.startswith("mokuzo-") else f"{year}-{subject}.ts"
         data = (STAGING / filename).read_text(encoding="utf-8")
