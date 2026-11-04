@@ -22,7 +22,7 @@ START = re.compile(r'^問題\s*([0-9０-９]+)(?:\s|$)')
 
 
 def write_json(path, data):
-    path.write_text(json.dumps(data, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
+    path.write_text(json.dumps(data, ensure_ascii=False, indent=2) + '\n', encoding='utf-8', newline='\n')
 
 
 def main():
@@ -36,6 +36,12 @@ def main():
     manifest = {'slug': 'dojo-osen', 'publicAllowed': False, 'retrievedOn': '2026-11-04',
                 'method': 'ordinary HTTPS GET; no authentication or access-control bypass',
                 'unavailablePdfUrls': [], 'documents': [], 'assets': []}
+    previous_manifest = OUT / 'source-manifest.json'
+    if previous_manifest.exists():
+        previous = json.loads(previous_manifest.read_text(encoding='utf-8'))
+        for field in ['referenceImages', 'supportingDocuments']:
+            if field in previous:
+                manifest[field] = previous[field]
     rows = []
     for name, pdf_id in PDF_IDS.items():
         pdf = args.source_dir / (name + '.pdf')

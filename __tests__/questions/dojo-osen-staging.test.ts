@@ -75,6 +75,12 @@ describe("dojo-osen latest two complete official editions, private staging", () 
       expect(asset.clipRectPoints[2]).toBeGreaterThan(590);
       expect(readFileSync(asset.path).subarray(0, 8).toString("hex")).toBe("89504e470d0a1a0a");
     }
+    expect(manifest.referenceImages).toHaveLength(6);
+    expect(manifest.referenceImages.filter(a => a.purpose === "official-answer-sheet")).toHaveLength(2);
+    for (const reference of manifest.referenceImages) {
+      expect(hash(reference.path)).toBe(reference.sha256);
+      expect(manifest.documents.find(d => d.url === reference.pdfUrl)?.sha256).toBe(reference.pdfSha256);
+    }
     for (const q of rows) {
       expect(q.sourcePdfPages).toEqual(q.sourceImages.map(path => manifest.assets.find(a => a.path === path)!.pdfPage));
       expect(q.sourceImages.every(path => manifest.assets.find(a => a.path === path)!.pdfUrl === q.sourcePdfUrl)).toBe(true);
@@ -93,6 +99,16 @@ describe("dojo-osen latest two complete official editions, private staging", () 
     expect(q.explanation).toContain("5.0・6.0・6.0m");
     expect(rows.filter(q => q.scoring.kind === "all-correct")).toHaveLength(1);
     expect(DojoOsenQuestionSchema.safeParse({ ...q, scoring: { kind: "single-choice", correctChoice: 2 }, officialAnswerNumber: 2 }).success).toBe(false);
+  });
+
+  it("keeps the reconciled diagram arithmetic and distinction between recorder and custodian", () => {
+    const q14 = rows.find(q => q.id === "dojo-osen-2025-am-q14")!;
+    expect(q14.explanation).toContain("0.09mg/L");
+    expect(q14.explanation).toContain("0.090mg/L");
+    const q28 = rows.find(q => q.id === "dojo-osen-2025-am-q28")!;
+    for (const count of ["12区画", "10区画", "33区画", "21区画"]) expect(q28.explanation).toContain(count);
+    const record = rows.find(q => q.id === "dojo-osen-2024-pm-q33")!;
+    expect(record.choiceExplanations[1]).toContain("5年間保存するのは土地の所有者等");
   });
 
   it("excludes the entire corpus and assets from public registries and navigation", () => {

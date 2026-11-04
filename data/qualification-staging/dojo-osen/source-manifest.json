@@ -2252,5 +2252,111 @@
       ],
       "sha256": "61321108f46a2078b057c10d634f9e8ac262f4747f4c78c4c42fa2e3aeec4e50"
     }
+  ],
+  "referenceImages": [
+    {
+      "path": "data/qualification-staging/dojo-osen/sources/2025-am-page1.png",
+      "pdfUrl": "https://www.env.go.jp/content/000351243.pdf",
+      "pdfSha256": "d980599bae3756e2874bdc781a0e59f6a02d799a8f5fd46b02384990ac180e86",
+      "pdfPage": 1,
+      "sha256": "4873e5a6e8eae71363c8a1ae365e300df5ffdcac5755a95be341bf6d2f812e2f",
+      "purpose": "cover-with-law-reference-date"
+    },
+    {
+      "path": "data/qualification-staging/dojo-osen/sources/2025-pm-page1.png",
+      "pdfUrl": "https://www.env.go.jp/content/000351244.pdf",
+      "pdfSha256": "79bd5f64800dc56a413b3c416cb3f1a7cee78311f2b50af85f0f74f08e99595a",
+      "pdfPage": 1,
+      "sha256": "af83dc319ed237687374ea572d4db44af461e39348dd9ded613c216be425771f",
+      "purpose": "cover-with-law-reference-date"
+    },
+    {
+      "path": "data/qualification-staging/dojo-osen/sources/2025-answer-page1.png",
+      "pdfUrl": "https://www.env.go.jp/content/000361889.pdf",
+      "pdfSha256": "3ed07818f68ff58dbb043d865c5e72c2de71fcc2ab90b9bad5802898fe084e37",
+      "pdfPage": 1,
+      "sha256": "48fd61e6ddc7131ddb5ce6111d8c94c6896c7a64d3e887deb473292c04a52f40",
+      "purpose": "official-answer-sheet"
+    },
+    {
+      "path": "data/qualification-staging/dojo-osen/sources/2024-am-page1.png",
+      "pdfUrl": "https://www.env.go.jp/content/000264442.pdf",
+      "pdfSha256": "f42b85a7269625952aa1913a71fab2b7bf48423e8a17a644dc802fca4c330b2b",
+      "pdfPage": 1,
+      "sha256": "6e806aed94300f63d668438f0e48b87110bcb2956b416f92b10229ed576bef5d",
+      "purpose": "cover-with-law-reference-date"
+    },
+    {
+      "path": "data/qualification-staging/dojo-osen/sources/2024-pm-page1.png",
+      "pdfUrl": "https://www.env.go.jp/content/000264387.pdf",
+      "pdfSha256": "1be623e34963976d9825cdb0bb594290935221018463bb2622a71b0766621c11",
+      "pdfPage": 1,
+      "sha256": "baf9d5b123066ef288f6c6db806019114c0ef8f94a9c96d2542ac5942599abdb",
+      "purpose": "cover-with-law-reference-date"
+    },
+    {
+      "path": "data/qualification-staging/dojo-osen/sources/2024-answer-page1.png",
+      "pdfUrl": "https://www.env.go.jp/content/000264386.pdf",
+      "pdfSha256": "b9b91a668990dc23952638dc89d7c2ee6b928206baf61e73eb226bbac8f64ce0",
+      "pdfPage": 1,
+      "sha256": "7d22b7d462d3beae74f4e01316a831b333d618dcd52e788c8a4707248048ac8c",
+      "purpose": "official-answer-sheet"
+    }
+  ],
+  "supportingDocuments": [
+    {
+      "name": "2025-result",
+      "url": "https://www.env.go.jp/water/dojo/kikan/exam/r07_result.html",
+      "httpStatus": 200,
+      "sha256": "5d30e1decba2ba362d91cd5634be7f803d454730ddeeef26230d848e96c26be3"
+    },
+    {
+      "name": "2024-result",
+      "url": "https://www.env.go.jp/water/dojo/kikan/exam/r06_result.html",
+      "httpStatus": 200,
+      "sha256": "4d7a831c90c41338209417ba167320e9c20aa93699bf3cb9f8270871aba1b2c9"
+    },
+    {
+      "name": "2025-correction",
+      "url": "https://www.env.go.jp/water/dojo/kikan/exam/post_24.html",
+      "httpStatus": 200,
+      "sha256": "c8f4795ff26097d6f843e6342d5052637789e403e9a2be3bfe6299b2c59f9146"
+    },
+    {
+      "name": "schedule",
+      "url": "https://www.env.go.jp/water/dojo/kikan/exam/post_23.html",
+      "httpStatus": 200,
+      "sha256": "bde229a674daa20eed5076ccee234f4dc1bd9c3a6e1caee3d551a6a6a8ad8343"
+    },
+    {
+      "name": "terms",
+      "url": "https://www.env.go.jp/mail.html",
+      "httpStatus": 200,
+      "sha256": "ea4331992f643fb2db9649ea134b793c875f2ee1535f4b8bb109ae8a4f8bc8b4"
+    },
+    {
+      "name": "guideline1",
+      "url": "https://www.env.go.jp/content/000076380.pdf",
+      "httpStatus": 200,
+      "sha256": "c91cc19b096c39da0a621a6e6b73f2817b6c18f701374ee2c6726fe4637545b4"
+    },
+    {
+      "name": "guideline2",
+      "url": "https://www.env.go.jp/content/000218372.pdf",
+      "httpStatus": 200,
+      "sha256": "8faf706757f678cee5b54f79f1992b9f59207d161e29af0ac721699ba6a50b0c"
+    },
+    {
+      "name": "guideline3",
+      "url": "https://www.env.go.jp/content/000316944.pdf",
+      "httpStatus": 200,
+      "sha256": "a65e1218052e2698d2c7c36dd51f46317434addfd4f9a8c58357031eca1af6c9"
+    },
+    {
+      "name": "guideline4",
+      "url": "https://www.env.go.jp/content/000303757.pdf",
+      "httpStatus": 200,
+      "sha256": "185fbe015701dc6948c6a226336ff41241f05b4f1d3480266bfc0ee42a4871fc"
+    }
   ]
 }
