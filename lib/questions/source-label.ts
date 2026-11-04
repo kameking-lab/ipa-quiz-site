@@ -4,7 +4,7 @@ import { formatYearSeason } from "@/lib/utils";
 
 /** exam is the learning filter; the shared AM1 paper is not that exam's AM2. */
 export function questionSourceExam(q: Pick<Question, "exam" | "year" | "season" | "session">): string {
-  return q.session === "am1" ? "高度試験共通" : examLabelAt(q.exam, q.year, q.season);
+  return q.session === "am1" && q.exam !== "kenchiku-setsubishi" ? "高度試験共通" : examLabelAt(q.exam, q.year, q.season);
 }
 
 /** 公式冊子の表紙で照合した回次・実施年。保存年や既存URLは年度/実施年が混在するため表示に使わない。 */
@@ -28,6 +28,11 @@ const VERIFIED_MEDICAL_EDITIONS: Readonly<Record<string, Readonly<Record<string,
 };
 
 export function questionSourceEdition(q: Pick<Question, "year" | "season" | "sourcePdfUrl"> & Partial<Pick<Question, "exam">>): string {
+  if (q.exam === "chizai2" && q.year === 2026) {
+    if (q.season === "spring") return "第53回（2026年3月8日実施）";
+    if (q.season === "july") return "第54回（2026年7月12日実施）";
+  }
+  if (q.exam === "kisho" && q.year === 2026) return q.season === "second" ? "第65回（2026年1月25日）" : "第66回（2026年8月23日）";
   if (q.exam === "riku-tech1" && q.season === "july") return `${q.year}年7月試験`;
   if (q.exam === "shika-ishi" && q.season === "annual" && (q.year === 2025 || q.year === 2026)) {
     return `第${q.year - 1907}回（${q.year}年実施）`;

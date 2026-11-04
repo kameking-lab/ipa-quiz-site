@@ -23,7 +23,7 @@ function toJstDateTimeISO(iso: string): string {
 /** Human-readable label for an exam session segment. */
 export function sessionLabel(session: string, exam?: ExamCode): string {
   const parsed = parsePracticeSession(session);
-  if (parsed && (exam === "kanteishi" || exam === "kaikeishi")) return practiceSessionLabel(parsed, exam);
+  if (parsed && (exam === "kisho" || exam === "kenchiku-setsubishi" || exam === "chizai2" || exam === "kanteishi" || exam === "kaikeishi")) return practiceSessionLabel(parsed, exam);
   if (parsed && ["gyosei", "kanri", "kansa", "rousai", "koyou", "kenpo", "kounen", "kokunen", "ippan", "sentaku", "required", "theory", "practical", "kiso", "kogaku-a", "kogaku-b", "hoki", "tiri"].includes(parsed)) return practiceSessionLabel(parsed);
   const map: Record<string, string> = {
     am: "午前",
@@ -118,7 +118,13 @@ export function buildQuestionJsonLd({
 
   // The administering body authored the question; this site authored the
   // learning explanation. Keep the author inline so the node is self-contained.
-  const questionAuthor = q.exam === "kanteishi"
+  const questionAuthor = q.exam === "kisho"
+    ? { "@type": "Organization", name: "一般財団法人気象業務支援センター", url: "https://www.jmbsc.or.jp/" }
+    : q.exam === "kenchiku-setsubishi"
+    ? { "@type": "Organization", name: "公益財団法人建築技術教育普及センター", url: "https://www.jaeic.or.jp/" }
+    : q.exam === "chizai2"
+    ? { "@type": "Organization", name: "知的財産教育協会", url: "https://www.kentei-info-ip-edu.org/" }
+    : q.exam === "kanteishi"
     ? { "@type": "GovernmentOrganization", name: q.sourcePresentation?.originalAuthor ?? "国土交通省", url: "https://www.mlit.go.jp/" }
     : q.exam === "kaikeishi"
     ? { "@type": "GovernmentOrganization", name: q.sourcePresentation?.originalAuthor ?? "公認会計士・監査審査会", url: "https://www.fsa.go.jp/cpaaob/" }
@@ -229,7 +235,9 @@ export function buildQuestionJsonLd({
           name: "情報処理推進機構 (IPA)",
           url: "https://www.ipa.go.jp/",
         };
-  const licenseUrl = (q.exam === "kanteishi" || q.exam === "kaikeishi")
+  const licenseUrl = q.exam === "chizai2" || q.exam === "kisho" || q.exam === "kenchiku-setsubishi"
+    ? undefined
+    : (q.exam === "kanteishi" || q.exam === "kaikeishi")
     ? q.sourcePresentation?.licenseUrl
     : (q.license === "NICHIMU-educational-reuse" || q.license === "NICHIMU-past-question-study-use")
     ? "https://www.nichimu.or.jp/kshiken/siken/index.html"

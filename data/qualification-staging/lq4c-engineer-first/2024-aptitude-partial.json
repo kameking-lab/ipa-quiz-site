@@ -1,0 +1,220 @@
+{
+  "status": "PARTIAL_CONTENT_ACCEPTED_NOT_REGISTERED",
+  "qualification": "gijutsushi1-kikai",
+  "year": 2024,
+  "subject": "aptitude",
+  "expectedFullQualificationCount": 160,
+  "questions": [
+    {
+      "id": "gijutsushi1-kikai-2024-aptitude-II-01",
+      "printedNumber": "Ⅱ－1",
+      "questionNumber": 1,
+      "questionText": "次に掲げる技術士法第四章の内容において、［ア］～［オ］に入る語句の組合せとして、最も適切なものはどれか。\n（信用失墜行為の禁止）\n第44条 技術士又は技術士補は、技術士若しくは技術士補の信用を傷つけ、又は技術士及び技術士補全体の不名誉となるような行為をしてはならない。\n（技術士等の秘密保持［ア］）\n第45条 技術士又は技術士補は、正当の理由がなく、その業務に関して知り得た秘密を漏らし、又は盗用してはならない。技術士又は技術士補でなくなった後においても、同様とする。\n（技術士等の［イ］確保の［ウ］）\n第45条の2 技術士又は技術士補は、その業務を行うに当たっては、公共の安全、環境の保全その他の［イ］を害することのないよう努めなければならない。\n（技術士の名称表示の場合の［ア］）\n第46条 技術士は、その業務に関して技術士の名称を表示するときは、その登録を受けた［エ］を明示してするものとし、登録を受けていない［エ］を表示してはならない。\n（技術士補の業務の制限等）\n第47条 技術士補は、第2条第1項に規定する業務について技術士を補助する場合を除くほか、技術士補の名称を表示して当該業務を行ってはならない。\n2 前条の規定は、技術士補がその補助する技術士の業務に関してする技術士補の名称の表示について準用する。\n（技術士の［オ］向上の［ウ］）\n第47条の2 技術士は、常に、その業務に関して有する知識及び技能の水準を向上させ、その他その［オ］の向上を図るよう努めなければならない。",
+      "choices": {
+        "1": "ア：責務／イ：安全／ウ：義務／エ：専門部門／オ：能力",
+        "2": "ア：義務／イ：安全／ウ：責務／エ：技術部門／オ：資質",
+        "3": "ア：責務／イ：安全／ウ：義務／エ：技術部門／オ：能力",
+        "4": "ア：義務／イ：公益／ウ：責務／エ：技術部門／オ：資質",
+        "5": "ア：義務／イ：公益／ウ：責務／エ：専門部門／オ：資質"
+      },
+      "officialAnswer": 4,
+      "explanation": "正答は4です。技術士法の秘密保持・名称表示は義務、公益確保・資質向上は責務と表現されています。登録を受けて名称に明示する単位は技術部門です。",
+      "choiceExplanations": {
+        "1": "不適切です。秘密保持は「義務」、公益確保と資質向上は「責務」です。また登録の単位は「技術部門」、向上を図る対象は「資質」です。",
+        "2": "不適切です。ア・ウ・エ・オは合っていますが、イは「安全」ではなく「公益」です。公共の安全と環境保全は公益の具体例です。",
+        "3": "不適切です。エの「技術部門」以外は一致しません。秘密保持義務、公益確保の責務、資質向上の責務と整理します。",
+        "4": "適切です。ア＝義務、イ＝公益、ウ＝責務、エ＝技術部門、オ＝資質で、各条文と見出しに一致します。",
+        "5": "不適切です。エは「専門部門」ではなく、登録を受けた「技術部門」です。他の空欄は合っています。"
+      },
+      "hasRequiredFigure": false,
+      "sourceQuestionUrl": "https://www.engineer.or.jp/c_topics/010/attached/attach_10606_2.pdf",
+      "sourceQuestionPage": 1,
+      "sourceAnswerUrl": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_5.pdf",
+      "sourceAnswerPage": 2,
+      "sourceQuestionSha256": "8c5879fd8a535352bed4295a0de6e1040a41dca0e33c439728953cf6e0c5ec0b",
+      "sourceAnswerSha256": "256a6293b49f67f9849172e8cce6ad0219d8573a1b9ed34b322dea1b9dc91b14",
+      "sourceAttribution": "出典：公益社団法人日本技術士会 令和6年度技術士第一次試験 適性科目 Ⅱ－1。改行・空白・句読点を整理。組合せ表は列名付きテキストで表現。解説は独自作成。",
+      "explanationReferenceUrls": [
+        "https://laws.e-gov.go.jp/law/358AC0000000025"
+      ],
+      "transcription": "160dpi/PSM3 and 220dpi/PSM6 OCR compared against the rendered official page; tables represented with explicit column labels; no raster figure required",
+      "needsIndependentReview": false,
+      "publicGo": false,
+      "contentReview": {
+        "status": "PASS",
+        "model": "gpt-6-astra",
+        "report": "reports/lq4c-20261104/independent-review3.md",
+        "scope": "PARTIAL_BATCH_NOT_FULL_QUALIFICATION"
+      }
+    },
+    {
+      "id": "gijutsushi1-kikai-2024-aptitude-II-04",
+      "printedNumber": "Ⅱ－4",
+      "questionNumber": 4,
+      "questionText": "組織の社会的責任（SR：Social Responsibility）の国際規格として、2010年、ISO 26000「Guidance on social responsibility」が発行された。また、それに続き、2012年、ISO規格の国内版（JIS）として、JIS Z 26000：2012（社会的責任に関する手引）が制定されている。\nこの手引きにおいて社会的責任の原則に関する次の記述の、［ア］～［オ］に入る語句の組合せとして、最も適切なものはどれか。\n組織が社会的責任に取り組み、実践するとき、その包括的な目的は［ア］に最大限に貢献することである。この目的に関して社会的責任の原則を網羅した明確なリストは存在しないが、組織は、以下に示す7つの原則を尊重すべきである。\n組織は、たとえそれが困難だと思われる場合でも、具体的な状況において、正しい又はよいと一般に認められている行動の原則と一致した基準、指針及び規範に基づいて行動すべきである。\nこの規格を適用する際に、組織は、［イ］との整合性をとりつつ、経済状況の違いに加えて、社会、環境、法、文化、政治及び組織の［ウ］を考慮に入れることが望ましい。\n1）説明責任\n2）［エ］\n3）倫理的な行動\n4）ステークホルダーの利害の尊重\n5）法の支配の尊重\n6）国際行動規範の尊重\n7）［オ］",
+      "choices": {
+        "1": "ア：持続可能な発展／イ：国際行動規範／ウ：多様性／エ：透明性／オ：人権の尊重",
+        "2": "ア：公共の福祉の発展／イ：自国の法規／ウ：多様性／エ：機密情報の保護／オ：公共の福祉",
+        "3": "ア：持続可能な発展／イ：国際行動規範／ウ：独自性／エ：透明性／オ：人権の尊重",
+        "4": "ア：公共の福祉の発展／イ：自国の法規／ウ：独自性／エ：機密情報の保護／オ：公共の福祉",
+        "5": "ア：持続可能な発展／イ：国際行動規範／ウ：多様性／エ：機密情報の保護／オ：人権の尊重"
+      },
+      "officialAnswer": 1,
+      "explanation": "正答は1です。ISO 26000の7原則は、説明責任、透明性、倫理的な行動、ステークホルダーの利害の尊重、法の支配の尊重、国際行動規範の尊重、人権の尊重です。",
+      "choiceExplanations": {
+        "1": "適切です。持続可能な発展への貢献を目的とし、国際行動規範と整合させ、多様性を考慮します。7原則には透明性と人権の尊重が含まれます。",
+        "2": "不適切です。アは持続可能な発展、イは国際行動規範です。エ・オも、それぞれ透明性・人権の尊重に直す必要があります。",
+        "3": "不適切です。ウは「独自性」ではなく「多様性」です。社会・文化等の違いを考慮します。",
+        "4": "不適切です。ア・イ・ウが異なり、7原則のエ・オも透明性・人権の尊重と一致しません。",
+        "5": "不適切です。エは「機密情報の保護」ではなく「透明性」です。透明性は正当な秘密情報の無制限な公開を要求する趣旨ではありません。"
+      },
+      "hasRequiredFigure": false,
+      "sourceQuestionUrl": "https://www.engineer.or.jp/c_topics/010/attached/attach_10606_2.pdf",
+      "sourceQuestionPage": 4,
+      "sourceAnswerUrl": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_5.pdf",
+      "sourceAnswerPage": 2,
+      "sourceQuestionSha256": "8c5879fd8a535352bed4295a0de6e1040a41dca0e33c439728953cf6e0c5ec0b",
+      "sourceAnswerSha256": "256a6293b49f67f9849172e8cce6ad0219d8573a1b9ed34b322dea1b9dc91b14",
+      "sourceAttribution": "出典：公益社団法人日本技術士会 令和6年度技術士第一次試験 適性科目 Ⅱ－4。改行・空白・句読点を整理。組合せ表は列名付きテキストで表現。解説は独自作成。",
+      "explanationReferenceUrls": [
+        "https://www.iso.org/iso-26000-social-responsibility.html"
+      ],
+      "transcription": "160dpi/PSM3 and 220dpi/PSM6 OCR compared against the rendered official page; tables represented with explicit column labels; no raster figure required",
+      "needsIndependentReview": false,
+      "publicGo": false,
+      "contentReview": {
+        "status": "PASS",
+        "model": "gpt-6-astra",
+        "report": "reports/lq4c-20261104/independent-review3.md",
+        "scope": "PARTIAL_BATCH_NOT_FULL_QUALIFICATION"
+      }
+    },
+    {
+      "id": "gijutsushi1-kikai-2024-aptitude-II-06",
+      "printedNumber": "Ⅱ－6",
+      "questionNumber": 6,
+      "questionText": "SDGs（Sustainable Development Goals：持続可能な開発目標）は、持続可能でよりよい社会の実現を目指す世界共通の目標である。2015年の国連サミットにおいてすべての加盟国が合意した「持続可能な開発のための2030アジェンダ」の中で掲げられ、2030年を達成年限として17のゴールと169のターゲットから構成されている。これを鑑み、日本では2016年に「持続可能な開発目標（SDGs）実施指針」が策定されている。\n「持続可能な開発目標（SDGs）と日本の取組」（外務省国際協力局）に示されている次の記述の、［ア］～［エ］に適当な語句を入れるとした場合、どれにも当てはまらないものはどれか。\n17のゴールは、（1）貧困や飢餓、教育など未だに解決を見ない社会面の開発アジェンダ、（2）エネルギーや資源の有効活用、働き方の改善、不平等の解消など、すべての国が持続可能な形で経済成長を目指す［ア］アジェンダ、そして（3）地球環境や気候変動など地球規模で取組むべき環境アジェンダといった世界が直面する課題を網羅的に示している。SDGsは、これら社会、［ア］、環境の3側面から捉えることのできる17のゴールを［イ］的に解決しながら持続可能なよりよい未来を築くことを目標としている。\n前身のMDGs（Millennium Development Goals：ミレニアム開発目標）は主として開発途上国向けの目標であったが、SDGsは先進国も含めすべての国が取組むべき［ウ］的な目標となっている。我が国は、脆弱な立場にある一人一人に焦点を当てる「人間の［エ］保障」の考え方を国際社会で長年主導してきた。「誰一人取り残さない」というSDGsの理念は、こうした考え方とも一致している。",
+      "choices": {
+        "1": "安全",
+        "2": "平和",
+        "3": "経済",
+        "4": "普遍",
+        "5": "統合"
+      },
+      "officialAnswer": 2,
+      "explanation": "正答は2です。ア＝経済、イ＝統合、ウ＝普遍、エ＝安全となり、選択肢のうち平和だけが空欄に入りません。",
+      "choiceExplanations": {
+        "1": "空欄エに当てはまります。「人間の安全保障」であり、本問の正答にはなりません。",
+        "2": "どの空欄にも当てはまらず、これが正答です。平和はSDGsの重要な要素ですが、この引用文の4つの空欄を埋める語句ではありません。",
+        "3": "空欄アに当てはまります。社会・経済・環境の3側面を扱います。",
+        "4": "空欄ウに当てはまります。SDGsは途上国だけでなく先進国も取り組む普遍的な目標です。",
+        "5": "空欄イに当てはまります。17のゴールを統合的に解決することが求められます。"
+      },
+      "hasRequiredFigure": false,
+      "sourceQuestionUrl": "https://www.engineer.or.jp/c_topics/010/attached/attach_10606_2.pdf",
+      "sourceQuestionPage": 6,
+      "sourceAnswerUrl": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_5.pdf",
+      "sourceAnswerPage": 2,
+      "sourceQuestionSha256": "8c5879fd8a535352bed4295a0de6e1040a41dca0e33c439728953cf6e0c5ec0b",
+      "sourceAnswerSha256": "256a6293b49f67f9849172e8cce6ad0219d8573a1b9ed34b322dea1b9dc91b14",
+      "sourceAttribution": "出典：公益社団法人日本技術士会 令和6年度技術士第一次試験 適性科目 Ⅱ－6。改行・空白・句読点を整理。組合せ表は列名付きテキストで表現。解説は独自作成。",
+      "explanationReferenceUrls": [
+        "https://www.mofa.go.jp/mofaj/gaiko/oda/sdgs/pdf/SDGs_pamphlet.pdf"
+      ],
+      "transcription": "160dpi/PSM3 and 220dpi/PSM6 OCR compared against the rendered official page; tables represented with explicit column labels; no raster figure required",
+      "needsIndependentReview": false,
+      "publicGo": false,
+      "contentReview": {
+        "status": "PASS",
+        "model": "gpt-6-astra",
+        "report": "reports/lq4c-20261104/independent-review3.md",
+        "scope": "PARTIAL_BATCH_NOT_FULL_QUALIFICATION"
+      }
+    },
+    {
+      "id": "gijutsushi1-kikai-2024-aptitude-II-11",
+      "printedNumber": "Ⅱ－11",
+      "questionNumber": 11,
+      "questionText": "2023年3月に改定された「技術士倫理綱領」（公益社団法人日本技術士会）では、「技術士は、科学技術の利用が社会や環境に重大な影響を与えることを十分に認識し、業務の履行を通して安全で持続可能な社会の実現など、公益の確保に貢献する。」とされている。この改定に当たって基本綱領の下に、実践すべき具体的な行動を示す指針が列記された。なお、「技術者倫理綱領」の理解向上のために、「技術士倫理綱領への手引き」には技術士のあるべき姿が具体的に示されている。\n次の記述のうち、「技術士倫理綱領」で指針として記載されているものの数はどれか。\n（ア）技術士は、業務の履行が公衆の安全、健康や福利を損なう可能性がある場合には、適切にリスクを評価し、履行の妥当性を客観的に検証する。\n（イ）技術士は、業務の履行が環境・経済・社会に与える負の影響を可能な限り低減する。\n（ウ）技術士は、業務上知り得た秘密情報を、漏洩や改ざん等が生じないよう、適切に管理する。\n（エ）技術士は、業務に関わる国・地域の社会慣行、生活様式、宗教等の文化を尊重する。\n（オ）技術士は、社会に貢献する技術者の育成に努める。",
+      "choices": {
+        "1": "1",
+        "2": "2",
+        "3": "3",
+        "4": "4",
+        "5": "5"
+      },
+      "officialAnswer": 5,
+      "explanation": "正答は5です。5記述すべてが2023年改定の技術士倫理綱領に記載された指針です。公衆の安全、持続可能性、秘密情報、文化、人材育成を一体で捉えます。",
+      "choiceExplanations": {
+        "1": "誤りです。該当する指針は1つだけではなく、アからオまでの5つすべてです。",
+        "2": "誤りです。アのリスク評価とイの負の影響低減に加えて、ウ・エ・オも指針に記載されています。",
+        "3": "誤りです。秘密情報の適切な管理だけでなく、文化の尊重と技術者育成も綱領の指針です。",
+        "4": "誤りです。5記述のうち除外すべきものはありません。技術者の育成も指針に含まれます。",
+        "5": "正答です。アは安全・健康・福利の優先、イは持続可能な社会の実現、ウは秘密情報の保護、エは文化的価値の尊重、オは人材の育成に対応します。"
+      },
+      "hasRequiredFigure": false,
+      "sourceQuestionUrl": "https://www.engineer.or.jp/c_topics/010/attached/attach_10606_2.pdf",
+      "sourceQuestionPage": 11,
+      "sourceAnswerUrl": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_5.pdf",
+      "sourceAnswerPage": 2,
+      "sourceQuestionSha256": "8c5879fd8a535352bed4295a0de6e1040a41dca0e33c439728953cf6e0c5ec0b",
+      "sourceAnswerSha256": "256a6293b49f67f9849172e8cce6ad0219d8573a1b9ed34b322dea1b9dc91b14",
+      "sourceAttribution": "出典：公益社団法人日本技術士会 令和6年度技術士第一次試験 適性科目 Ⅱ－11。改行・空白・句読点を整理。組合せ表は列名付きテキストで表現。解説は独自作成。",
+      "explanationReferenceUrls": [
+        "https://www.engineer.or.jp/c_topics/009/attached/attach_9289_1.pdf"
+      ],
+      "transcription": "160dpi/PSM3 and 220dpi/PSM6 OCR compared against the rendered official page; tables represented with explicit column labels; no raster figure required",
+      "needsIndependentReview": false,
+      "publicGo": false,
+      "contentReview": {
+        "status": "PASS",
+        "model": "gpt-6-astra",
+        "report": "reports/lq4c-20261104/independent-review3.md",
+        "scope": "PARTIAL_BATCH_NOT_FULL_QUALIFICATION"
+      }
+    },
+    {
+      "id": "gijutsushi1-kikai-2024-aptitude-II-15",
+      "printedNumber": "Ⅱ－15",
+      "questionNumber": 15,
+      "questionText": "技術士や技術者の継続的な資質向上のための取組をCPD（Continuing Professional Development）と呼ぶが、次の記述のうち、適切なものの数はどれか。\n（ア）技術士は常にCPDによって、業務に関する知識及び技能の水準を向上させる努力をすることが求められている。\n（イ）技術士CPD活動の登録において、実施したCPDの内容などに関する第三者からの問合せに対しては、記録とともに証拠となるものを提示し、技術士本人の責任において説明できるようにしておかなければならない。\n（ウ）2021年の文部科学省省令改正により、技術士登録簿に「資質向上の取組状況」欄が新たに設けられた。この改正に沿い日本技術士会は、技術士登録簿に技術士CPD実績を記載するほかCPD実績のある技術士に対して、技術士（CPD認定）の認定、認定証の発行、名簿の公表、等を実施している。\n（エ）技術提供サービスを行うコンサルティング企業に勤務し、現在の知識を適用した通常の業務として自身の技術分野に相当する業務を遂行しているのであれば、それ自体がCPDの要件をすべて満たしている。\n（オ）CPDへの適切な取組を促すため、それぞれの学協会は積極的な支援を行うとともに、質や量のチェックシステムを導入して、資格継続に制約を課している場合がある。",
+      "choices": {
+        "1": "5",
+        "2": "4",
+        "3": "3",
+        "4": "2",
+        "5": "1"
+      },
+      "officialAnswer": 2,
+      "explanation": "正答は2（4つ）です。既存知識の適用だけで行う通常業務と、新たな知識・技能の修得を伴う継続研鑽を区別します。エの「それ自体が要件をすべて満たす」という断定が不適切です。",
+      "choiceExplanations": {
+        "1": "誤りです。エが不適切なので、5つすべてが適切ではありません。通常業務を行うだけでCPDの要件が自動的にすべて満たされるわけではありません。",
+        "2": "正答です。ア・イ・ウ・オの4つが適切です。資質向上への継続的取組と、説明可能な活動記録が重要です。",
+        "3": "誤りです。適切なのはア・イ・ウ・オの4つです。2021年の制度整備に関するウも、2024年の出題時点の説明として適切です。",
+        "4": "誤りです。適切な記述は2つではなく4つです。学協会ごとの資格継続の仕組みを述べたオも適切です。",
+        "5": "誤りです。エを除く4つが適切です。アの努力、イの証拠と説明、ウの制度、オの支援・確認はいずれもCPDに関係します。"
+      },
+      "hasRequiredFigure": false,
+      "sourceQuestionUrl": "https://www.engineer.or.jp/c_topics/010/attached/attach_10606_2.pdf",
+      "sourceQuestionPage": 15,
+      "sourceAnswerUrl": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_5.pdf",
+      "sourceAnswerPage": 2,
+      "sourceQuestionSha256": "8c5879fd8a535352bed4295a0de6e1040a41dca0e33c439728953cf6e0c5ec0b",
+      "sourceAnswerSha256": "256a6293b49f67f9849172e8cce6ad0219d8573a1b9ed34b322dea1b9dc91b14",
+      "sourceAttribution": "出典：公益社団法人日本技術士会 令和6年度技術士第一次試験 適性科目 Ⅱ－15。改行・空白・句読点を整理。組合せ表は列名付きテキストで表現。解説は独自作成。",
+      "explanationReferenceUrls": [
+        "https://www.engineer.or.jp/c_topics/008/attached/attach_8205_2.pdf",
+        "https://laws.e-gov.go.jp/law/358AC0000000025"
+      ],
+      "transcription": "160dpi/PSM3 and 220dpi/PSM6 OCR compared against the rendered official page; tables represented with explicit column labels; no raster figure required",
+      "needsIndependentReview": false,
+      "publicGo": false,
+      "contentReview": {
+        "status": "PASS",
+        "model": "gpt-6-astra",
+        "report": "reports/lq4c-20261104/independent-review3.md",
+        "scope": "PARTIAL_BATCH_NOT_FULL_QUALIFICATION"
+      }
+    }
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "status": "PASS",
+  "checks": [
+    {
+      "name": "validate-questions",
+      "exitCode": 0,
+      "log": "reports/lq4c-20261104/validate-questions.log",
+      "sha256": "bbfb4df41ea84f2c84d824d13fa5bbb4cbd992927c95924d60cd860567953c77"
+    },
+    {
+      "name": "typecheck",
+      "exitCode": 0,
+      "log": "reports/lq4c-20261104/typecheck.log",
+      "sha256": "e4d9f9e26c4fa65386bba4d9419185a432c56fbbf0b7ade4fd72b19c84026058"
+    },
+    {
+      "name": "related-tests",
+      "exitCode": 0,
+      "log": "reports/lq4c-20261104/related-tests.log",
+      "sha256": "06f60dca737f4289b0011dfbe4bf8d5d9b8a4fdc1185e4d59fd72766ffbd62cc"
+    },
+    {
+      "name": "staging-tests",
+      "exitCode": 0,
+      "log": "reports/lq4c-20261104/staging-tests.log",
+      "sha256": "47983ff4f7d3b00369d56dba16419de2ff9ac4ed6f06ba705441bc2693d06664"
+    },
+    {
+      "name": "lint",
+      "exitCode": 0,
+      "log": "reports/lq4c-20261104/lint.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "publicRuntimeChanged": false,
+  "buildRerun": false,
+  "note": "Staging content has its own strict validator; common validate:questions excludes staging. Related Vitest:25files/282tests. Staging tests:14. Existing build evidence belongs to LQ4B."
+}

@@ -35,7 +35,7 @@ export async function generateMetadata({
   };
 }
 
-const VALID_EXAMS: ExamCode[] = ["kanteishi", "kaikeishi",
+const VALID_EXAMS: ExamCode[] = ["kisho", "kenchiku-setsubishi", "chizai2", "kanteishi", "kaikeishi",
   "land-special1", "riku-tech1", "maritime4", "aviation-comm", "amateur1", "maritime-special1", "riku-tech2", "amateur2", "maritime-radar", "maritime3", "maritime2", "maritime1", "general3", "general2", "general1", "land-special2", "land-special3", "kai-toku2",
   "riku-toku-kokunai",
   "kai-toku3",
@@ -129,6 +129,8 @@ export default async function TopicModePage({
           <p className="mt-3 max-w-xl text-pretty text-sm text-muted-foreground sm:text-base">
             {isApPool
               ? "応用情報の出題範囲を AP・FE・IP・SG から横断学習できます。同じ知識領域を異なる難度・出題形式で攻略。"
+              : exam === "kenchiku-setsubishi"
+              ? "建築一般知識・建築法規・建築設備から科目を選んで過去問を学習できます。"
               : `セキュリティ・ネットワーク・データベース・経営戦略など、分野を絞って${label}の過去問を学習できます。`}
           </p>
           <div className="mt-3 flex flex-wrap gap-2 text-xs">

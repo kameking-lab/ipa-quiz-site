@@ -41,6 +41,32 @@ export interface QualificationCatalogEntry {
  * 「公式に問題と正答がある」だけでは live にせず、転載条件まで確認する。
  */
 export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
+  { slug: "kisho", examCode: "kisho", shortName: "気象予報士", fullName: "気象予報士試験",
+    domain: "safety", administrator: "一般財団法人 気象業務支援センター",
+    officialQuestionsUrl: "https://www.jmbsc.or.jp/jp/examination/examination-7.html",
+    officialReuseTermsUrl: "https://www.jmbsc.or.jp/jp/examination/examination-7.html", status: "live",
+    reuseSummary: "第65・66回の学科60問・全肢解説、実技18問・237回答欄を収録。実技は公式解答例・作図との手動照合です。",
+    attributionTemplate: "出典：一般財団法人 気象業務支援センター 気象予報士試験問題・解答例。画像化・表記整理、解説は過去問AI作成。",
+    remainingWork: [] },
+  {
+    slug: "kenchiku-setsubishi", examCode: "kenchiku-setsubishi", shortName: "建築設備士", fullName: "建築設備士試験（第一次試験）",
+    domain: "construction", administrator: "公益財団法人建築技術教育普及センター",
+    officialQuestionsUrl: "https://www.jaeic.or.jp/shiken/bmee/bmee-mondai.html",
+    officialReuseTermsUrl: "https://www.jaeic.or.jp/shiken/bmee/bmee-mondai.html", status: "live",
+    reuseSummary: "令和7・8年の第一次試験から209問を全肢解説・原図付きで演習できます。令和8年建築法規問18は公式正答と法令適用の疑義が未解消のため公開対象外です。法令は各回の基準日時点の内容です。第二次試験は未収録です。掲載の権利確認はオーナー取得済みとして扱います。",
+    attributionTemplate: "出典：公益財団法人建築技術教育普及センター 建築設備士第一次試験（年度・科目・問番号）。解説は当サイト独自作成。",
+    remainingWork: ["令和8年建築法規問18の出題機関による訂正又は直接解釈の確認", "第二次試験は未収録"],
+  },
+  {
+    slug: "chizai2", examCode: "chizai2", shortName: "知的財産管理技能検定2級", fullName: "知的財産管理技能検定2級",
+    domain: "legal", administrator: "知的財産教育協会",
+    officialQuestionsUrl: "https://www.kentei-info-ip-edu.org/gakushujoho/kakomon.html",
+    officialReuseTermsUrl: "https://www.kentei-info-ip-edu.org/gakushujoho/kakomon.html",
+    status: "live",
+    reuseSummary: "第53回（2026年3月8日）・第54回（2026年7月12日）の学科・実技各40問、計160原問を収録。選択式158問の全651肢解説、数値記入2問と料金表を保持しています。法令は各試験回の基準日時点です。解説は独自作成です。",
+    attributionTemplate: "出典：知的財産教育協会 第○回 知的財産管理技能検定2級 学科・実技 問○（問題・正答）。解説は過去問AI独自作成。",
+    remainingWork: [],
+  },
   {
     slug: "kanteishi", examCode: "kanteishi", shortName: "不動産鑑定士", fullName: "不動産鑑定士試験（短答式）",
     domain: "real-estate", administrator: "国土交通省",

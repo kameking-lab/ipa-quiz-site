@@ -120,6 +120,7 @@ interface OtherCardDef {
 }
 
 const OTHER_CARDS: readonly OtherCardDef[] = [
+  { code: "kisho", name: "気象予報士", sub: "第65・66回 学科60問・実技18問（手動照合）", domain: "safety" },
   { code: "kanteishi", name: "不動産鑑定士", sub: "令和7・8年度 短答式160問・全肢解説", domain: "money" },
   { code: "kaikeishi", name: "公認会計士", sub: "令和8年試験 第I・II回 短答式186問・全肢解説", domain: "money" },
   { code: "maritime1", name: "第一級海上無線通信士", sub: "2026年3月・9月 日本語筆記4科目190問・全肢解説・原図209枚、B40問は各5枠", domain: "electrical" },
@@ -149,6 +150,7 @@ const OTHER_CARDS: readonly OtherCardDef[] = [
   { code: "denken2", name: "電験二種", sub: "一次試験（理論・電力・機械・法規）", domain: "electrical" },
   { code: "denken1", name: "電験一種", sub: "一次試験（理論・電力・機械・法規の各1問）", domain: "electrical" },
   { code: "denko2", name: "第二種電気工事士", sub: "学科試験", domain: "electrical" },
+  { code: "kenchiku-setsubishi", name: "建築設備士", sub: "第一次試験（令和7・8年、確認中1問を除く）", domain: "construction" },
   { code: "civil1", name: "1級土木施工管理", sub: "第一次検定（問題A・B）", domain: "construction" },
   { code: "denko1", name: "第一種電気工事士", sub: "学科試験", domain: "electrical" },
   { code: "civil2", name: "2級土木施工管理", sub: "第一次検定（土木）", domain: "construction" },
@@ -165,6 +167,7 @@ const OTHER_CARDS: readonly OtherCardDef[] = [
   { code: "shakai", name: "社会福祉士", sub: "国家試験（共通・専門科目）", domain: "welfare" },
   { code: "seishin", name: "精神保健福祉士", sub: "国家試験（専門・共通科目）", domain: "welfare" },
   { code: "tohan", name: "登録販売者", sub: "関西広域連合（前半・後半）", domain: "welfare" },
+  { code: "chizai2", name: "知的財産管理技能検定2級", sub: "第53・54回 学科・実技160原問と全肢解説", domain: "money" },
   { code: "kanri", name: "管理業務主任者", sub: "2024・2025年度の公式公開問題", domain: "money" },
   { code: "eisei1", name: "第一種衛生管理者", sub: "2025年10月・2026年4月公表（88問）", domain: "safety" },
   { code: "eisei2", name: "第二種衛生管理者", sub: "2025年10月・2026年4月公表（60問）", domain: "safety" },

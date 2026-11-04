@@ -108,6 +108,27 @@ function am2(categories: string[]): SessionConfig {
 // ------- Exam configs -------
 
 export const EXAM_CONFIGS: Record<ExamCode, ExamConfig> = {
+  "kenchiku-setsubishi": {
+    code: "kenchiku-setsubishi", nameFull: "建築設備士試験（第一次試験）", urlSlug: "kenchiku-setsubishi", level: "specialist",
+    sessions: [
+      { session: "am1", urlSlug: "am1", expectedQuestions: 27, label: "建築一般知識", categories: ["建築一般知識"] },
+      { session: "am2", urlSlug: "am2", expectedQuestions: 18, label: "建築法規", categories: ["建築法規"] },
+      { session: "pm", urlSlug: "pm", expectedQuestions: 60, label: "建築設備", categories: ["建築設備"] },
+    ],
+    seasons: ["annual"], yearRange: { start: 2025, end: 2026 },
+  },
+  chizai2: {
+    code: "chizai2", nameFull: "知的財産管理技能検定2級", urlSlug: "chizai2", level: "advanced",
+    sessions: [
+      { session: "gakka", urlSlug: "gakka", expectedQuestions: 40, label: "学科", categories: ["知的財産管理技能検定2級"] },
+      { session: "practical", urlSlug: "practical", expectedQuestions: 40, label: "実技", categories: ["知的財産管理技能検定2級"] },
+    ],
+    seasons: ["spring", "july"], yearRange: { start: 2026, end: 2026 },
+  },
+  kisho: { code: "kisho", nameFull: "気象予報士試験", urlSlug: "kisho", level: "specialist",
+    sessions: [{ session: "ippan", urlSlug: "ippan", expectedQuestions: 15, label: "学科一般", categories: ["学科一般"] },
+      { session: "senmon", urlSlug: "senmon", expectedQuestions: 15, label: "学科専門", categories: ["学科専門"] }],
+    seasons: ["first", "second"], yearRange: { start: 2026, end: 2026 } },
   kanteishi: {
     code: "kanteishi", nameFull: "不動産鑑定士試験（短答式）", urlSlug: "kanteishi", level: "specialist",
     sessions: [
@@ -1154,7 +1175,7 @@ export const EXAM_CONFIGS: Record<ExamCode, ExamConfig> = {
 
 /** IPA-only list retained for fetch/import tooling and legacy IPA invariants. */
 export const ALL_EXAM_CODES = Object.keys(EXAM_CONFIGS).filter(
-  (code): code is IpaExamCode => !(["fp1", "fp2", "fp3", "denken3", "denken2", "denken1", "denko2", "denko1", "takken", "civil2", "civil1", "kankoji2", "zoen2", "zoen1", "tsushin2", "tsushin1", "kaigo", "shakai", "seishin", "tohan", "kanri", "eisei1", "eisei2", "soukan", "hoikushi", "mankan", "kashikin", "sharoushi", "kangoshi", "yakuzaishi", "ahaki-anma", "ahaki-hari-kyu", "hokenshi", "josanshi", "rigaku-ryohoshi", "sagyo-ryohoshi", "shino-kunrenshi", "rinsho-kensagishi", "shinryo-hoshasengishi", "rinsho-kogishi", "riyoshi", "chusho-kigyo-shindanshi", "chosashi", "shika-ishi", "judo-seifukushi", "riku-toku-kokunai", "kai-toku2", "kai-toku3", "koku-toku", "land-special1", "riku-tech1", "maritime4", "aviation-comm", "amateur1", "maritime-special1", "riku-tech2", "amateur2", "maritime-radar", "maritime3", "maritime2", "maritime1", "general3", "general2", "general1", "land-special2", "land-special3", "kanteishi", "kaikeishi", "gas-kou", "gas-otsu", "gas-hei"] as string[]).includes(code),
+  (code): code is IpaExamCode => !(["kisho", "chizai2", "kenchiku-setsubishi", "fp1", "fp2", "fp3", "denken3", "denken2", "denken1", "denko2", "denko1", "takken", "civil2", "civil1", "kankoji2", "zoen2", "zoen1", "tsushin2", "tsushin1", "kaigo", "shakai", "seishin", "tohan", "kanri", "eisei1", "eisei2", "soukan", "hoikushi", "mankan", "kashikin", "sharoushi", "kangoshi", "yakuzaishi", "ahaki-anma", "ahaki-hari-kyu", "hokenshi", "josanshi", "rigaku-ryohoshi", "sagyo-ryohoshi", "shino-kunrenshi", "rinsho-kensagishi", "shinryo-hoshasengishi", "rinsho-kogishi", "riyoshi", "chusho-kigyo-shindanshi", "chosashi", "shika-ishi", "judo-seifukushi", "riku-toku-kokunai", "kai-toku2", "kai-toku3", "koku-toku", "land-special1", "riku-tech1", "maritime4", "aviation-comm", "amateur1", "maritime-special1", "riku-tech2", "amateur2", "maritime-radar", "maritime3", "maritime2", "maritime1", "general3", "general2", "general1", "land-special2", "land-special3", "kanteishi", "kaikeishi", "gas-kou", "gas-otsu", "gas-hei"] as string[]).includes(code),
 );
 
 /** Every exam playable in the application, including external qualifications. */
@@ -1192,6 +1213,7 @@ export function isPdfDocumentUrl(url: string | undefined): boolean {
 
 /** Honest user-facing label for an IPA source link after fallback handling. */
 export function ipaSourceLabel(url: string | undefined, kind: "question" | "answer"): string {
+  if (url?.startsWith("https://www.jmbsc.or.jp/jp/examination/z/")) return "気象業務支援センター公式問題・解答例（ZIP）";
   if (!isPdfDocumentUrl(url)) {
     if (url?.startsWith("https://www.kinzai.or.jp/")) return kind === "question" ? "主催団体の公式問題" : "主催団体の模範解答";
     if (url) {

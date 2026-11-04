@@ -1,0 +1,86 @@
+{
+  "schema": "qkishou-local-ingestion/v1",
+  "task": "qkishou",
+  "branch": "qual/qkishou-20261103",
+  "baseCommit": "00e49b94060cc2671e9d098df91d653a4ed3ffe2",
+  "fixedAcceptedCommit": "dd69af1742f44a20da7d193ff00edbc814f06742",
+  "status": "LOCAL_FIX_VALIDATED_NOT_DEPLOYED",
+  "expected": {
+    "round65": 40,
+    "round66": 38,
+    "originals": 78,
+    "academic": 60,
+    "choiceExplanations": 300,
+    "practical": 18,
+    "practicalAnswerFields": 237,
+    "imageAssets": 130
+  },
+  "newlyAuthoredOriginals": 0,
+  "missingOriginalsWithinAcceptedTwoRounds": 0,
+  "reusedFiles": 145,
+  "unchangedAcceptedFiles": 144,
+  "changedFiles": {
+    "data/qualification-staging/kisho-65-66-private/source-pages.json": "Accepted six diagram binding postimage d9fc1a0d244f396c4f0cd218f1dafae10b0dc2e033e80b93f3af4340050f53c0"
+  },
+  "explanationOverlay": "Accepted exact six-field overlay on kisho-65-senmon-q04; applied at read time; raw preserved",
+  "originalContentReview": "Reuse pinned independent acceptance; no new or inferred question text, choices, answers or diagrams",
+  "latestOfficialArchives": {
+    "listing": "https://www.jmbsc.or.jp/jp/examination/examination-7.html",
+    "publicationDate": "2026-09-02",
+    "round65": "https://www.jmbsc.or.jp/jp/examination/z/cwfe_65_z1.zip",
+    "round66": "https://www.jmbsc.or.jp/jp/examination/z/cwfe_66_z_correction1.zip",
+    "sameAcceptedAnswerAndPracticalPdfs": true,
+    "academicPdfByteDrift": 4,
+    "latestAcademicEditionFullSemanticReacceptance": true,
+    "focusedVisualComparison": [
+      "round65 ippan physical2",
+      "round65 senmon physical12",
+      "round66 senmon physical6"
+    ],
+    "comparisonCaveat": "See FIX-EDITION-ACCEPTANCE.json. Old/current PDFs differ in fonts, placement and rendering; no substantive question/choice/figure/answer delta detected. Existing normalized manuscript retained; no claim of literal transcription.",
+    "reacceptanceMode": "Whole-edition delta adjudication against independently accepted page images; all 39 academic content pages / 60 originals. Explanations reused, not newly rereviewed.",
+    "editionReceipt": "FIX-EDITION-ACCEPTANCE.json"
+  },
+  "rights": "User states obtained; no permission waiting gate. Immutable historical flags are retained without representing a new rights determination.",
+  "remaining": [
+    "Production publication and deployed-page verification are outside this task and were not performed."
+  ],
+  "publicGo": false,
+  "publication": 0,
+  "checks": {
+    "artifactHashes": "PASS: python scripts/verify-kisho-acceptance.py (145 originals)",
+    "candidateSchema": "PASS: 78 originals",
+    "typecheck": "PASS: exit 0, fix-typecheck-verified.log",
+    "lint": "PASS: exit 0, fix-lint-verified.log; final browser script lint also exit 0",
+    "relatedTests": "PASS: 6 files / 118 tests; fix-tests-verified.log",
+    "build": "PASS: default Turbopack next build, exit 0; fix-build-verified.log and fix-build-verified-exit.json",
+    "browser": "PASS: production build served locally, FIX-UI-ACCEPTANCE.json",
+    "processExits": "FIX-CHECK-EXITS.json"
+  },
+  "dependencyNotes": [
+    "Own regular node_modules directory, no outside-worktree junction. Corepack pnpm 10.33.0; frozen lockfile, force restoration of missing files, prisma generate.",
+    "Package, lockfile and settings unchanged; versions and hashes in FIX-ENVIRONMENT.json.",
+    "Default Turbopack build passed. Existing middleware/edge/Recharts build warnings remain nonfatal.",
+    "Local next start does not serve Vercel analytics/speed-insights scripts; only those two 404 paths are separately recorded and excluded from learning-flow errors."
+  ],
+  "repositoryLineEndings": {
+    "files": [
+      "data/qualification-staging/kisho-65-66-private/q04-overlay-accepted.json",
+      "data/qualification-staging/kisho-65-66-private/raw-combined.json",
+      "data/qualification-staging/kisho-65-66-private/source-pages.json"
+    ],
+    "operation": "Git normalizes CRLF to LF; JSON values unchanged; original immutable byte hashes retained as acceptedArtifactSha256 in FILES.json",
+    "settingsChanged": false
+  },
+  "previousCandidateCommit": "6369991e3a6038f6da5c788174351fa0749a4390",
+  "localStudyIntegration": {
+    "status": "PASS",
+    "entry": "/qualifications -> /kisho -> /quiz or /kisho/study/[id]",
+    "academicOriginals": 60,
+    "practicalOriginals": 18,
+    "manualAnswerFields": 237,
+    "publicImageAssets": 130,
+    "uiReceipt": "FIX-UI-ACCEPTANCE.json",
+    "privateArtifactsUnchanged": 145
+  }
+}

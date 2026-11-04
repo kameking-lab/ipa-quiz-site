@@ -7,9 +7,10 @@ import { POST } from "@/app/api/review/due/route";
 import { IP_QUESTIONS } from "@/data/questions/ip";
 import { SHIKA_ISHI_QUESTIONS } from "@/data/questions/shika-ishi";
 import { ZOEN2_QUESTIONS } from "@/data/questions/zoen2";
+import { KENCHIKU_SETSUBISHI_STUDY_QUESTIONS } from "@/data/questions/kenchiku-setsubishi";
 import { LS_KEYS } from "@/lib/storage/keys";
 import { createHistoryStore } from "@/lib/storage/history";
-import type { Question } from "@/lib/questions/types";
+import type { ChoiceKey, Question } from "@/lib/questions/types";
 const ip = IP_QUESTIONS.find((q) => q.id === "ip-2009a-am-q1")!;
 const ap: Question = { ...ip, id: "ap-history-item", exam: "ap", question: "APだけの履歴の問題" };
 const shino: Question = { ...ip, id: "hyphenated-history-id", exam: "shino-kunrenshi", question: "視能訓練士だけの履歴の問題" };
@@ -22,6 +23,22 @@ beforeEach(() => {
 });
 afterEach(() => { cleanup(); vi.unstubAllGlobals(); });
 describe("scoped review preserves mixed qualification history", () => {
+  it("keeps official numbered choices and their diagrams in building equipment review", async () => {
+    const figure = KENCHIKU_SETSUBISHI_STUDY_QUESTIONS.find(q => q.year === 2025 && q.session === "pm" && q.qNumber === 32)!;
+    findQuestionById.mockImplementation(async (id: string) => id === figure.id ? figure : undefined);
+    createHistoryStore().record({ id: figure.id, selected: "ア", correct: false, at: 1 });
+    const historyBefore = localStorage.getItem(LS_KEYS.history);
+    render(<ReviewClient examFromQuery="kenchiku-setsubishi" />);
+    await screen.findByText(figure.question);
+    for (const [index, key] of (Object.keys(figure.choices!) as ChoiceKey[]).entries()) {
+      const button = screen.getByRole("button", { name: new RegExp(`^${index + 1} `) });
+      expect(button).toHaveTextContent(figure.choices![key]!);
+      expect(button.querySelector("img")).toHaveAttribute("src", figure.choiceImageUrls![key]);
+    }
+    fireEvent.click(screen.getByRole("button", { name: /^1 / }));
+    expect(screen.getByText("正解: 1")).toBeInTheDocument();
+    expect(localStorage.getItem(LS_KEYS.history)).toBe(historyBefore);
+  });
   it("filters questions, counts and next date by resolved exam metadata", async () => {
     const res = await POST(request({ historyIds: pool.map((q) => q.id), exam: "shino-kunrenshi", today: "2026-10-11", reviewStore: { [ap.id]: { nextReviewAt: "2026-10-12" }, [shino.id]: { nextReviewAt: "2026-10-20" } } }));
     expect(await res.json()).toEqual({ questions: [], seenCount: 1, scheduledCount: 1, nextReviewDate: "2026-10-20" });

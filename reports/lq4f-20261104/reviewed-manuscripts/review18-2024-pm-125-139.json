@@ -1,0 +1,656 @@
+{
+  "status": "PARTIAL_CONTENT_ACCEPTED_NOT_REGISTERED",
+  "qualification": "biru-kan",
+  "year": 2024,
+  "subject": "pm",
+  "expectedFullQualificationCount": 360,
+  "questions": [
+    {
+      "id": "biru-kan-2024-pm-125",
+      "printedNumber": "125",
+      "questionNumber": 125,
+      "questionText": "雑用水設備に関する次の記述のうち、最も不適当なものはどれか。",
+      "choices": {
+        "1": "雑用水供給設備は、雑用水受水槽、ポンプ、配管類、末端の器具等で構成される。",
+        "2": "原水にし尿を含む雑用水は、散水用水に利用できる。",
+        "3": "雑用水受水槽の内面は、合成樹脂防水モルタル等で防水処理を行う。",
+        "4": "雑用水の配管は、上水管と異なる色で塗装する。",
+        "5": "排水を再処理した雑用水では、スライムが発生しやすい。"
+      },
+      "officialAnswer": 2,
+      "explanation": "正答は2です。雑用水でも、用途ごとに原水や水質の条件があります。",
+      "choiceExplanations": {
+        "1": "適当です。貯留・加圧・配水する機器類からなります。",
+        "2": "不適当です。し尿を含む原水は、散水等の用途には使用できません。水洗便所用水とは原水条件が異なります。",
+        "3": "適当です。漏水等を防ぐ内面処理を行います。",
+        "4": "適当です。上水との誤接続を防ぐため識別します。",
+        "5": "適当です。残留有機物等により微生物膜が形成されやすくなります。"
+      },
+      "hasRequiredFigure": false,
+      "sourceQuestionUrl": "https://www.jahmec.or.jp/kokka/shiken_pdf/2024/2024shiken_pm.pdf",
+      "sourceQuestionPage": 13,
+      "sourceAnswerUrl": "https://www.jahmec.or.jp/kokka/shiken_pdf/2024/2024kizyun_seitou.pdf",
+      "sourceAnswerPage": 1,
+      "sourceQuestionSha256": "3af224c2aa9fab1ca58032efd8911ad1339c3c005751745a046c7154b0ec0e73",
+      "sourceAnswerSha256": "faebc327503541422b331d5e14ff47035cec23b6ef0fd1048f9d6cd8f3b9c54c",
+      "sourceAttribution": "出典：公益財団法人日本建築衛生管理教育センター 第54回（2024年）建築物環境衛生管理技術者試験 問題125。改行・空白・句読点及び単位表記を整理。組合せ表は列名付きテキストで表現。解説は独自作成。",
+      "explanationReferenceUrls": [],
+      "transcription": "Two saved OCR passes compared against rendered official page; line wraps, spacing and punctuation normalized; combination tables preserved as labeled text; no figures required",
+      "needsIndependentReview": false,
+      "publicGo": false,
+      "contentReview": {
+        "status": "PASS",
+        "model": "gpt-6-astra",
+        "report": "reports/lq4f-20261104/independent-review11.md",
+        "scope": "PARTIAL_BATCH_NOT_FULL_QUALIFICATION"
+      }
+    },
+    {
+      "id": "biru-kan-2024-pm-126",
+      "printedNumber": "126",
+      "questionNumber": 126,
+      "questionText": "雑用水として使用する場合の標準的な雨水処理施設における次の処理フローの空欄内に入る単位装置の組合せとして、最も適当なものはどれか。",
+      "choices": {
+        "1": "ア：沈砂槽、イ：活性炭吸着装置",
+        "2": "ア：流量調整槽、イ：活性炭吸着装置",
+        "3": "ア：沈砂槽、イ：沈殿槽",
+        "4": "ア：生物処理槽、イ：沈殿槽",
+        "5": "ア：流量調整槽、イ：生物処理槽"
+      },
+      "officialAnswer": 3,
+      "explanation": "正答は3です。集水→スクリーン→沈砂槽→沈殿槽→雨水貯留槽→消毒装置→雑用水槽→給水という標準的な構成です。",
+      "choiceExplanations": {
+        "1": "不適当です。標準的な雨水処理では沈砂に続いて沈殿させ、活性炭吸着を基本とはしません。",
+        "2": "不適当です。提示フローの空欄には沈砂・沈殿の組合せが入ります。",
+        "3": "適当です。スクリーンで粗大物を除き、沈砂槽、沈殿槽で土砂や懸濁物を除去します。",
+        "4": "不適当です。有機汚濁の少ない通常の雨水に生物処理を基本とはしません。",
+        "5": "不適当です。通常の雨水の主な除去対象は土砂・懸濁物です。"
+      },
+      "hasRequiredFigure": true,
+      "sourceQuestionUrl": "https://www.jahmec.or.jp/kokka/shiken_pdf/2024/2024shiken_pm.pdf",
+      "sourceQuestionPage": 13,
+      "sourceAnswerUrl": "https://www.jahmec.or.jp/kokka/shiken_pdf/2024/2024kizyun_seitou.pdf",
+      "sourceAnswerPage": 1,
+      "sourceQuestionSha256": "3af224c2aa9fab1ca58032efd8911ad1339c3c005751745a046c7154b0ec0e73",
+      "sourceAnswerSha256": "faebc327503541422b331d5e14ff47035cec23b6ef0fd1048f9d6cd8f3b9c54c",
+      "sourceAttribution": "出典：公益財団法人日本建築衛生管理教育センター 第54回（2024年）建築物環境衛生管理技術者試験 問題126。改行・空白・句読点及び単位表記を整理。組合せ表は列名付きテキストで表現。解説は独自作成。",
+      "explanationReferenceUrls": [],
+      "transcription": "Both saved OCR passes compared with official rendered PDF; original diagrams and choice table directly cropped from source PDF, not redrawn; labeled text supplements original table.",
+      "needsIndependentReview": false,
+      "publicGo": false,
+      "figures": [
+        {
+          "path": "data/qualification-staging/lq4c-biru-kan/assets/2024-pm-126-figure.png",
+          "sha256": "441dd16add75e31ae017b8e2d8b68e6b7f3c1e7b9e2dc76ffc31620e45c1831e",
+          "alt": "公式原図。集水、スクリーン、ア、イ、雨水貯留槽、消毒装置、雑用水槽、給水を矢印で結ぶ雨水処理フロー。",
+          "sourceQuestionPage": 13,
+          "sourceClipPdfPoints": [
+            107.1468017578125,
+            260.9765954589844,
+            494.0658081054687,
+            315.69749450683594
+          ],
+          "renderDpi": 300
+        },
+        {
+          "path": "data/qualification-staging/lq4c-biru-kan/assets/2024-pm-126-table.png",
+          "sha256": "6dd668420a609bd0af00fd8172113cc9c647017ea529b7a067f129319a4778eb",
+          "alt": "公式原表。ア・イの列名と5組の処理装置の組合せ選択肢。",
+          "sourceQuestionPage": 13,
+          "sourceClipPdfPoints": [
+            107.1468017578125,
+            332.5346942138672,
+            333.34560546875,
+            454.60439208984377
+          ],
+          "renderDpi": 300
+        }
+      ],
+      "contentReview": {
+        "status": "PASS",
+        "model": "gpt-6-astra",
+        "report": "reports/lq4f-20261104/independent-review11.md",
+        "scope": "PARTIAL_BATCH_NOT_FULL_QUALIFICATION"
+      }
+    },
+    {
+      "id": "biru-kan-2024-pm-127",
+      "printedNumber": "127",
+      "questionNumber": 127,
+      "questionText": "建築物衛生法施行規則に基づく雑用水の水質検査において、2か月以内ごとに1回、定期に行う項目として、正しいものは次のうちどれか。",
+      "choices": {
+        "1": "外観",
+        "2": "臭気",
+        "3": "pH",
+        "4": "大腸菌",
+        "5": "残留塩素"
+      },
+      "officialAnswer": 4,
+      "explanation": "正答は4です。雑用水は飲用にはしませんが、衛生上の検査と消毒管理が必要です。",
+      "choiceExplanations": {
+        "1": "該当しません。外観は7日以内ごとに1回の検査項目です。",
+        "2": "該当しません。臭気は7日以内ごとに1回の検査項目です。",
+        "3": "該当しません。pHは7日以内ごとに1回の検査項目です。",
+        "4": "該当します。大腸菌は2か月以内ごとに1回の検査項目です。",
+        "5": "該当しません。残留塩素は7日以内ごとに1回の検査項目です。"
+      },
+      "hasRequiredFigure": false,
+      "sourceQuestionUrl": "https://www.jahmec.or.jp/kokka/shiken_pdf/2024/2024shiken_pm.pdf",
+      "sourceQuestionPage": 13,
+      "sourceAnswerUrl": "https://www.jahmec.or.jp/kokka/shiken_pdf/2024/2024kizyun_seitou.pdf",
+      "sourceAnswerPage": 1,
+      "sourceQuestionSha256": "3af224c2aa9fab1ca58032efd8911ad1339c3c005751745a046c7154b0ec0e73",
+      "sourceAnswerSha256": "faebc327503541422b331d5e14ff47035cec23b6ef0fd1048f9d6cd8f3b9c54c",
+      "sourceAttribution": "出典：公益財団法人日本建築衛生管理教育センター 第54回（2024年）建築物環境衛生管理技術者試験 問題127。改行・空白・句読点及び単位表記を整理。組合せ表は列名付きテキストで表現。解説は独自作成。",
+      "explanationReferenceUrls": [],
+      "transcription": "Two saved OCR passes compared against rendered official page; line wraps, spacing and punctuation normalized; combination tables preserved as labeled text; no figures required",
+      "needsIndependentReview": false,
+      "publicGo": false,
+      "contentReview": {
+        "status": "PASS",
+        "model": "gpt-6-astra",
+        "report": "reports/lq4f-20261104/independent-review11.md",
+        "scope": "PARTIAL_BATCH_NOT_FULL_QUALIFICATION"
+      }
+    },
+    {
+      "id": "biru-kan-2024-pm-128",
+      "printedNumber": "128",
+      "questionNumber": 128,
+      "questionText": "下水道に関する次の記述のうち、最も不適当なものはどれか。",
+      "choices": {
+        "1": "合流式とは、生活排水と工場排水を同一の管渠系統で排除する方式をいう。",
+        "2": "下水道は、流域下水道、公共下水道、都市下水路に分けられる。",
+        "3": "下水道施設は、排水管渠、処理施設及びポンプ施設等から構成されている。",
+        "4": "公共下水道の事業主体は、原則として市町村である。",
+        "5": "排水水質のBODが基準値以上の場合には、除害施設を設置する必要がある。"
+      },
+      "officialAnswer": 1,
+      "explanation": "正答は1です。合流式と分流式の違いは、汚水と雨水を同じ系統に流すかどうかです。",
+      "choiceExplanations": {
+        "1": "不適当です。合流式は汚水と雨水を同一の管渠で排除する方式です。",
+        "2": "適当です。下水道法における主要な分類です。",
+        "3": "適当です。収集・輸送・処理の各機能の施設で構成されます。",
+        "4": "適当です。原則として市町村が設置・管理します。",
+        "5": "適当です。適用される排除基準に適合させるための処理等が必要です。対象や具体的措置は法・条例等によります。"
+      },
+      "hasRequiredFigure": false,
+      "sourceQuestionUrl": "https://www.jahmec.or.jp/kokka/shiken_pdf/2024/2024shiken_pm.pdf",
+      "sourceQuestionPage": 13,
+      "sourceAnswerUrl": "https://www.jahmec.or.jp/kokka/shiken_pdf/2024/2024kizyun_seitou.pdf",
+      "sourceAnswerPage": 1,
+      "sourceQuestionSha256": "3af224c2aa9fab1ca58032efd8911ad1339c3c005751745a046c7154b0ec0e73",
+      "sourceAnswerSha256": "faebc327503541422b331d5e14ff47035cec23b6ef0fd1048f9d6cd8f3b9c54c",
+      "sourceAttribution": "出典：公益財団法人日本建築衛生管理教育センター 第54回（2024年）建築物環境衛生管理技術者試験 問題128。改行・空白・句読点及び単位表記を整理。組合せ表は列名付きテキストで表現。解説は独自作成。",
+      "explanationReferenceUrls": [],
+      "transcription": "Two saved OCR passes compared against rendered official page; line wraps, spacing and punctuation normalized; combination tables preserved as labeled text; no figures required",
+      "needsIndependentReview": false,
+      "publicGo": false,
+      "contentReview": {
+        "status": "PASS",
+        "model": "gpt-6-astra",
+        "report": "reports/lq4f-20261104/independent-review11.md",
+        "scope": "PARTIAL_BATCH_NOT_FULL_QUALIFICATION"
+      }
+    },
+    {
+      "id": "biru-kan-2024-pm-129",
+      "printedNumber": "129",
+      "questionNumber": 129,
+      "questionText": "排水通気設備に関する次の記述のうち、最も不適当なものはどれか。",
+      "choices": {
+        "1": "厨房用の口径100mmの排水管に設置する掃除口の口径は、100mmとする。",
+        "2": "管径125mmの排水横管の最小勾配は、1/150とする。",
+        "3": "ドーム状のルーフドレンのストレーナ部分の開口面積は、それに接続する排水管の管断面積の2倍程度が必要である。",
+        "4": "器具排水管から各個通気管を取り出す場合、各個通気管は、トラップのウェアから管径の2倍以上離れた位置からとする。",
+        "5": "飲料用貯水槽の間接排水管の口径が65mmの場合、排水口空間は、最小125mmとする。"
+      },
+      "officialAnswer": 5,
+      "explanation": "正答は5です。一般の間接排水の表と、飲料用貯水槽等に必要な排水口空間を区別します。",
+      "choiceExplanations": {
+        "1": "適当です。清掃器具が通るよう管径と同径にします。",
+        "2": "適当です。管径に応じた最小勾配の区分です。",
+        "3": "適当です。ごみ等による閉塞を考慮して十分な開口を確保します。",
+        "4": "適当です。近すぎる取出しは通気不良等の原因になります。",
+        "5": "不適当です。飲料用貯水槽等の間接排水管の排水口空間は、管径によらず最小150mmとする基準に対応するため、125mmでは不足します。"
+      },
+      "hasRequiredFigure": false,
+      "sourceQuestionUrl": "https://www.jahmec.or.jp/kokka/shiken_pdf/2024/2024shiken_pm.pdf",
+      "sourceQuestionPage": 14,
+      "sourceAnswerUrl": "https://www.jahmec.or.jp/kokka/shiken_pdf/2024/2024kizyun_seitou.pdf",
+      "sourceAnswerPage": 1,
+      "sourceQuestionSha256": "3af224c2aa9fab1ca58032efd8911ad1339c3c005751745a046c7154b0ec0e73",
+      "sourceAnswerSha256": "faebc327503541422b331d5e14ff47035cec23b6ef0fd1048f9d6cd8f3b9c54c",
+      "sourceAttribution": "出典：公益財団法人日本建築衛生管理教育センター 第54回（2024年）建築物環境衛生管理技術者試験 問題129。改行・空白・句読点及び単位表記を整理。組合せ表は列名付きテキストで表現。解説は独自作成。",
+      "explanationReferenceUrls": [
+        "https://www.gesui.metro.tokyo.lg.jp/documents/d/gesui/3_3_R3youkou"
+      ],
+      "transcription": "Two saved OCR passes compared against rendered official page; line wraps, spacing and punctuation normalized; combination tables preserved as labeled text; no figures required",
+      "needsIndependentReview": false,
+      "publicGo": false,
+      "contentReview": {
+        "status": "PASS",
+        "model": "gpt-6-astra",
+        "report": "reports/lq4f-20261104/independent-review11.md",
+        "scope": "PARTIAL_BATCH_NOT_FULL_QUALIFICATION"
+      }
+    },
+    {
+      "id": "biru-kan-2024-pm-130",
+      "printedNumber": "130",
+      "questionNumber": 130,
+      "questionText": "排水槽と排水ポンプに関する次の記述のうち、最も不適当なものはどれか。",
+      "choices": {
+        "1": "排水槽の底の勾配は、吸込みピットに向かって1/15とする。",
+        "2": "排水槽内は、ブロワによってばっ気すると正圧になるので排気を行う。",
+        "3": "厨房用排水槽から排水を排除するには、汚水ポンプを用いる。",
+        "4": "排水水中ポンプは、排水槽の吸込みピットの壁面から200mm以上離して設置する。",
+        "5": "排水槽のマンホールは、排水水中ポンプ又はフート弁の直上に設置する。"
+      },
+      "officialAnswer": 3,
+      "explanation": "正答は3です。排水の性状に対応する通過径・構造を持つポンプを選びます。",
+      "choiceExplanations": {
+        "1": "適当です。底部の水や汚泥をピットに集めます。",
+        "2": "適当です。導入した空気と槽内ガスの排出経路を確保します。",
+        "3": "不適当です。厨房排水には固形物・油脂等を扱う汚物用等の適切なポンプを選定し、一般の汚水用ポンプとの用途を区別します。",
+        "4": "適当です。点検・吸込み等に必要な離隔を設けます。",
+        "5": "適当です。点検・引上げができる配置とします。"
+      },
+      "hasRequiredFigure": false,
+      "sourceQuestionUrl": "https://www.jahmec.or.jp/kokka/shiken_pdf/2024/2024shiken_pm.pdf",
+      "sourceQuestionPage": 14,
+      "sourceAnswerUrl": "https://www.jahmec.or.jp/kokka/shiken_pdf/2024/2024kizyun_seitou.pdf",
+      "sourceAnswerPage": 1,
+      "sourceQuestionSha256": "3af224c2aa9fab1ca58032efd8911ad1339c3c005751745a046c7154b0ec0e73",
+      "sourceAnswerSha256": "faebc327503541422b331d5e14ff47035cec23b6ef0fd1048f9d6cd8f3b9c54c",
+      "sourceAttribution": "出典：公益財団法人日本建築衛生管理教育センター 第54回（2024年）建築物環境衛生管理技術者試験 問題130。改行・空白・句読点及び単位表記を整理。組合せ表は列名付きテキストで表現。解説は独自作成。",
+      "explanationReferenceUrls": [],
+      "transcription": "Two saved OCR passes compared against rendered official page; line wraps, spacing and punctuation normalized; combination tables preserved as labeled text; no figures required",
+      "needsIndependentReview": false,
+      "publicGo": false,
+      "contentReview": {
+        "status": "PASS",
+        "model": "gpt-6-astra",
+        "report": "reports/lq4f-20261104/independent-review11.md",
+        "scope": "PARTIAL_BATCH_NOT_FULL_QUALIFICATION"
+      }
+    },
+    {
+      "id": "biru-kan-2024-pm-131",
+      "printedNumber": "131",
+      "questionNumber": 131,
+      "questionText": "排水通気配管に関する次の記述のうち、最も不適当なものはどれか。",
+      "choices": {
+        "1": "結合通気管は、高層建築物のブランチ間隔10以上の排水立て管において、最上階から数えてブランチ間隔10以内ごとに設ける。",
+        "2": "通気管の末端は、窓・換気口等の付近で大気に開放する場合、窓・換気口の上端から600mm以上立ち上げて開口する。",
+        "3": "通気立て管の下部は、排水立て管に接続されている最低位の排水横枝管より高い位置で、排水立て管から取り出す。",
+        "4": "伸頂通気方式では、排水立て管と排水横主管の接続には、大曲がりベンドなどを用いる。",
+        "5": "通気立て管の上部は、最高位の衛生器具のあふれ縁から150mm以上高い位置で伸頂通気管に接続する。"
+      },
+      "officialAnswer": 3,
+      "explanation": "正答は3です。通気立て管の上下の接続位置を、それぞれ最低位枝管・最高位器具と関連づけます。",
+      "choiceExplanations": {
+        "1": "適当です。高層系統の圧力変動を緩和する配置です。",
+        "2": "適当です。開口から臭気が再流入しないよう離隔を確保します。",
+        "3": "不適当です。下部は最低位の排水横枝管より低い位置で取り出します。",
+        "4": "適当です。立て管基部で流れの向きを緩やかに変えます。",
+        "5": "適当です。排水が通気系へ流入しない高さで接続します。"
+      },
+      "hasRequiredFigure": false,
+      "sourceQuestionUrl": "https://www.jahmec.or.jp/kokka/shiken_pdf/2024/2024shiken_pm.pdf",
+      "sourceQuestionPage": 14,
+      "sourceAnswerUrl": "https://www.jahmec.or.jp/kokka/shiken_pdf/2024/2024kizyun_seitou.pdf",
+      "sourceAnswerPage": 1,
+      "sourceQuestionSha256": "3af224c2aa9fab1ca58032efd8911ad1339c3c005751745a046c7154b0ec0e73",
+      "sourceAnswerSha256": "faebc327503541422b331d5e14ff47035cec23b6ef0fd1048f9d6cd8f3b9c54c",
+      "sourceAttribution": "出典：公益財団法人日本建築衛生管理教育センター 第54回（2024年）建築物環境衛生管理技術者試験 問題131。改行・空白・句読点及び単位表記を整理。組合せ表は列名付きテキストで表現。解説は独自作成。",
+      "explanationReferenceUrls": [],
+      "transcription": "Two saved OCR passes compared against rendered official page; line wraps, spacing and punctuation normalized; combination tables preserved as labeled text; no figures required",
+      "needsIndependentReview": false,
+      "publicGo": false,
+      "contentReview": {
+        "status": "PASS",
+        "model": "gpt-6-astra",
+        "report": "reports/lq4f-20261104/independent-review11.md",
+        "scope": "PARTIAL_BATCH_NOT_FULL_QUALIFICATION"
+      }
+    },
+    {
+      "id": "biru-kan-2024-pm-132",
+      "printedNumber": "132",
+      "questionNumber": 132,
+      "questionText": "排水通気設備に関する語句の組合せとして、最も不適当なものは次のうちどれか。",
+      "choices": {
+        "1": "特殊継手排水システム―ホテルの客室系統に適用",
+        "2": "通気弁―寒冷地の集合住宅に適用",
+        "3": "排水鋼管用可とう継手―排水用硬質塩化ビニルライニング鋼管の接続",
+        "4": "プールのオーバフロー排水―排水口開放として排水",
+        "5": "即時排水型ビルピット設備―排水槽の悪臭防止に有効"
+      },
+      "officialAnswer": 4,
+      "explanation": "正答は4です。排水口開放と、排水口空間を確保する間接排水を区別します。",
+      "choiceExplanations": {
+        "1": "適当です。特殊継手で空気流路を確保する系統として適用できます。",
+        "2": "適当です。通気末端の凍結等への対応に用いる場合があります。",
+        "3": "適当です。適合した専用継手で接続します。",
+        "4": "不適当です。プールのオーバフロー排水は排水口空間を設けた間接排水とします。",
+        "5": "適当です。長時間の貯留を避け、腐敗と臭気の発生を抑制します。"
+      },
+      "hasRequiredFigure": true,
+      "sourceQuestionUrl": "https://www.jahmec.or.jp/kokka/shiken_pdf/2024/2024shiken_pm.pdf",
+      "sourceQuestionPage": 14,
+      "sourceAnswerUrl": "https://www.jahmec.or.jp/kokka/shiken_pdf/2024/2024kizyun_seitou.pdf",
+      "sourceAnswerPage": 1,
+      "sourceQuestionSha256": "3af224c2aa9fab1ca58032efd8911ad1339c3c005751745a046c7154b0ec0e73",
+      "sourceAnswerSha256": "faebc327503541422b331d5e14ff47035cec23b6ef0fd1048f9d6cd8f3b9c54c",
+      "sourceAttribution": "出典：公益財団法人日本建築衛生管理教育センター 第54回（2024年）建築物環境衛生管理技術者試験 問題132。改行・空白・句読点及び単位表記を整理。組合せ表は列名付きテキストで表現。解説は独自作成。",
+      "explanationReferenceUrls": [],
+      "transcription": "Both saved OCR passes compared with official rendered PDF; original diagrams and choice table directly cropped from source PDF, not redrawn; labeled text supplements original table.",
+      "needsIndependentReview": false,
+      "publicGo": false,
+      "figures": [
+        {
+          "path": "data/qualification-staging/lq4c-biru-kan/assets/2024-pm-132-table.png",
+          "sha256": "deff87abed78835a47c531ff106196bcf3f392a375ae41d2e51362c9fbca70e0",
+          "alt": "公式原表。特殊継手排水システム、通気弁、可とう継手、プール排水、即時排水型設備と対応事項の5行。",
+          "sourceQuestionPage": 14,
+          "sourceClipPdfPoints": [
+            107.1468017578125,
+            639.8135888671875,
+            529.7814086914062,
+            757.6739868164062
+          ],
+          "renderDpi": 300
+        }
+      ],
+      "contentReview": {
+        "status": "PASS",
+        "model": "gpt-6-astra",
+        "report": "reports/lq4f-20261104/independent-review11.md",
+        "scope": "PARTIAL_BATCH_NOT_FULL_QUALIFICATION"
+      }
+    },
+    {
+      "id": "biru-kan-2024-pm-133",
+      "printedNumber": "133",
+      "questionNumber": 133,
+      "questionText": "排水ますと掃除口に関する次の記述のうち、最も不適当なものはどれか。",
+      "choices": {
+        "1": "排水横管への掃除口の設置間隔は、管径100mmを超える場合は、通常30m以内とする。",
+        "2": "敷地排水管の直管が長い場合、排水ますは管内径の120倍を超えない範囲内に設置する。",
+        "3": "雨水ますの流出管は、流入管よりも管底を20mm程度下げて設ける。",
+        "4": "排水立て管に設置する掃除口は、3〜5階おき程度の間隔で設ける。",
+        "5": "雨水ますの底部には、100mm程度の泥だめを設ける。"
+      },
+      "officialAnswer": 5,
+      "explanation": "正答は5です。雨水ますでは土砂を沈める泥だめ深さを確保します。",
+      "choiceExplanations": {
+        "1": "適当です。清掃可能な距離を考慮した配置の目安です。",
+        "2": "適当です。管径に対して長すぎない区間で清掃・点検できるようにします。",
+        "3": "適当です。流れを円滑にする落差です。",
+        "4": "適当です。高層部でも清掃器具を挿入できるようにします。",
+        "5": "不適当です。雨水ますの泥だめは150mm以上を確保します。"
+      },
+      "hasRequiredFigure": false,
+      "sourceQuestionUrl": "https://www.jahmec.or.jp/kokka/shiken_pdf/2024/2024shiken_pm.pdf",
+      "sourceQuestionPage": 15,
+      "sourceAnswerUrl": "https://www.jahmec.or.jp/kokka/shiken_pdf/2024/2024kizyun_seitou.pdf",
+      "sourceAnswerPage": 1,
+      "sourceQuestionSha256": "3af224c2aa9fab1ca58032efd8911ad1339c3c005751745a046c7154b0ec0e73",
+      "sourceAnswerSha256": "faebc327503541422b331d5e14ff47035cec23b6ef0fd1048f9d6cd8f3b9c54c",
+      "sourceAttribution": "出典：公益財団法人日本建築衛生管理教育センター 第54回（2024年）建築物環境衛生管理技術者試験 問題133。改行・空白・句読点及び単位表記を整理。組合せ表は列名付きテキストで表現。解説は独自作成。",
+      "explanationReferenceUrls": [],
+      "transcription": "Two saved OCR passes compared against rendered official page; line wraps, spacing and punctuation normalized; combination tables preserved as labeled text; no figures required",
+      "needsIndependentReview": false,
+      "publicGo": false,
+      "contentReview": {
+        "status": "PASS",
+        "model": "gpt-6-astra",
+        "report": "reports/lq4f-20261104/independent-review11.md",
+        "scope": "PARTIAL_BATCH_NOT_FULL_QUALIFICATION"
+      }
+    },
+    {
+      "id": "biru-kan-2024-pm-134",
+      "printedNumber": "134",
+      "questionNumber": 134,
+      "questionText": "排水設備の維持管理に関する次の記述のうち、最も不適当なものはどれか。",
+      "choices": {
+        "1": "排水水中ポンプは、6か月〜1年に1回、メカニカルシール部のオイル交換を行う。",
+        "2": "排水槽内の悪臭防止対策としては、排水貯留時間が5〜6時間程度となるように、タイマ制御による強制排水を行う。",
+        "3": "グリース阻集器に設置されたトラップの清掃は、2か月に1回程度行う。",
+        "4": "排水槽の清掃作業は、酸素濃度を確認した後、硫化水素濃度が10ppm以下であることを測定・確認して行う。",
+        "5": "通気管は、1年に1回程度、定期的に、系統ごとに異常がないことを点検・確認する。"
+      },
+      "officialAnswer": 2,
+      "explanation": "正答は2です。排水槽の悪臭対策は、腐敗を進める滞留を短くすることが基本です。",
+      "choiceExplanations": {
+        "1": "適当です。使用条件・製造者の指定に従い、シール部の油を点検・交換します。",
+        "2": "不適当です。臭気対策では長時間貯留を避け、通常2時間程度以内を目安に排水します。",
+        "3": "適当です。トラップ部分の清掃周期の目安です。バスケットや浮上油脂はより頻繁に除去します。",
+        "4": "適当です。酸素18%以上・硫化水素10ppm以下等の作業環境の確認と換気が必要です。一度の測定のみで安全が保証されるわけではありません。",
+        "5": "適当です。閉塞、破損や接続等を定期確認します。"
+      },
+      "hasRequiredFigure": false,
+      "sourceQuestionUrl": "https://www.jahmec.or.jp/kokka/shiken_pdf/2024/2024shiken_pm.pdf",
+      "sourceQuestionPage": 15,
+      "sourceAnswerUrl": "https://www.jahmec.or.jp/kokka/shiken_pdf/2024/2024kizyun_seitou.pdf",
+      "sourceAnswerPage": 1,
+      "sourceQuestionSha256": "3af224c2aa9fab1ca58032efd8911ad1339c3c005751745a046c7154b0ec0e73",
+      "sourceAnswerSha256": "faebc327503541422b331d5e14ff47035cec23b6ef0fd1048f9d6cd8f3b9c54c",
+      "sourceAttribution": "出典：公益財団法人日本建築衛生管理教育センター 第54回（2024年）建築物環境衛生管理技術者試験 問題134。改行・空白・句読点及び単位表記を整理。組合せ表は列名付きテキストで表現。解説は独自作成。",
+      "explanationReferenceUrls": [],
+      "transcription": "Two saved OCR passes compared against rendered official page; line wraps, spacing and punctuation normalized; combination tables preserved as labeled text; no figures required",
+      "needsIndependentReview": false,
+      "publicGo": false,
+      "contentReview": {
+        "status": "PASS",
+        "model": "gpt-6-astra",
+        "report": "reports/lq4f-20261104/independent-review11.md",
+        "scope": "PARTIAL_BATCH_NOT_FULL_QUALIFICATION"
+      }
+    },
+    {
+      "id": "biru-kan-2024-pm-135",
+      "printedNumber": "135",
+      "questionNumber": 135,
+      "questionText": "排水管の清掃・維持管理に関する次の記述のうち、最も不適当なものはどれか。",
+      "choices": {
+        "1": "スネークワイヤ法は、排水立て管の清掃に使用する場合では、長さ30m程度が限界である。",
+        "2": "排水管の有機性付着物は、アルカリ性洗浄剤を用いて除去する。",
+        "3": "高圧洗浄による排水管の清掃では、5〜30MPaの圧力の水を噴射させて洗浄する。",
+        "4": "ロッド法では、1〜1.8mのロッドをつなぎ合わせ、手動で排水管内に挿入し清掃する。",
+        "5": "排水管内部の腐食状況の診断には、内視鏡以外にX線などの非破壊検査機器が用いられる。"
+      },
+      "officialAnswer": 1,
+      "explanation": "正答は1です。清掃可能な長さは管の方向、曲がり、機材等によって異なります。",
+      "choiceExplanations": {
+        "1": "不適当です。厚生労働省「建築物における維持管理マニュアル」では、排水立て管はワイヤの重量から20m程度が限界とされ、排水横管は25mまでとされています。",
+        "2": "適当です。油脂等の有機性汚れにはアルカリ性洗浄剤が用いられます。",
+        "3": "適当です。対象管の耐圧・材質・劣化状態に合わせて条件を選びます。",
+        "4": "適当です。連結したロッドの先端器具で付着物等を除去します。",
+        "5": "適当です。肉厚等の状態を非破壊的に調べる方法があります。"
+      },
+      "hasRequiredFigure": false,
+      "sourceQuestionUrl": "https://www.jahmec.or.jp/kokka/shiken_pdf/2024/2024shiken_pm.pdf",
+      "sourceQuestionPage": 15,
+      "sourceAnswerUrl": "https://www.jahmec.or.jp/kokka/shiken_pdf/2024/2024kizyun_seitou.pdf",
+      "sourceAnswerPage": 1,
+      "sourceQuestionSha256": "3af224c2aa9fab1ca58032efd8911ad1339c3c005751745a046c7154b0ec0e73",
+      "sourceAnswerSha256": "faebc327503541422b331d5e14ff47035cec23b6ef0fd1048f9d6cd8f3b9c54c",
+      "sourceAttribution": "出典：公益財団法人日本建築衛生管理教育センター 第54回（2024年）建築物環境衛生管理技術者試験 問題135。改行・空白・句読点及び単位表記を整理。組合せ表は列名付きテキストで表現。解説は独自作成。",
+      "explanationReferenceUrls": [
+        "https://www.mhlw.go.jp/bunya/kenkou/seikatsu-eisei09/pdf/03e.pdf"
+      ],
+      "transcription": "Two saved OCR passes compared against rendered official page; line wraps, spacing and punctuation normalized; combination tables preserved as labeled text; no figures required",
+      "needsIndependentReview": false,
+      "publicGo": false,
+      "contentReview": {
+        "status": "PASS",
+        "model": "gpt-6-astra",
+        "report": "reports/lq4f-20261104/independent-review11.md",
+        "scope": "PARTIAL_BATCH_NOT_FULL_QUALIFICATION"
+      }
+    },
+    {
+      "id": "biru-kan-2024-pm-136",
+      "printedNumber": "136",
+      "questionNumber": 136,
+      "questionText": "衛生器具設備の保守管理に関する次の記述のうち、最も不適当なものはどれか。",
+      "choices": {
+        "1": "プラスチック製の衛生器具は、水やぬるま湯に浸した柔らかい布を絞って拭く。",
+        "2": "小便器の排水状態は、6か月に1回、定期に点検する。",
+        "3": "ステンレスに付いた脂汚れは、薄めた中性洗剤を付けたスポンジなどで洗い、洗剤分を完全に洗い落とす。",
+        "4": "大便器の洗浄タンク内の汚れ状態は、6か月に1回、定期に点検する。",
+        "5": "洗面器のトラップの接合部の緩みの有無は、1年に1回、定期に点検する。"
+      },
+      "officialAnswer": 5,
+      "explanation": "正答は5です。漏水につながる接合部は、年1回より頻繁に確認します。",
+      "choiceExplanations": {
+        "1": "適当です。傷や薬品による損傷を避けて清掃します。",
+        "2": "適当です。定期点検の目安です。日常の使用時の異常も確認します。",
+        "3": "適当です。洗剤を残さず、表面を傷めないようにします。",
+        "4": "適当です。沈殿物等の汚れを定期確認します。",
+        "5": "不適当です。接合部の緩みや漏水は1か月に1回程度を目安に点検します。"
+      },
+      "hasRequiredFigure": false,
+      "sourceQuestionUrl": "https://www.jahmec.or.jp/kokka/shiken_pdf/2024/2024shiken_pm.pdf",
+      "sourceQuestionPage": 15,
+      "sourceAnswerUrl": "https://www.jahmec.or.jp/kokka/shiken_pdf/2024/2024kizyun_seitou.pdf",
+      "sourceAnswerPage": 1,
+      "sourceQuestionSha256": "3af224c2aa9fab1ca58032efd8911ad1339c3c005751745a046c7154b0ec0e73",
+      "sourceAnswerSha256": "faebc327503541422b331d5e14ff47035cec23b6ef0fd1048f9d6cd8f3b9c54c",
+      "sourceAttribution": "出典：公益財団法人日本建築衛生管理教育センター 第54回（2024年）建築物環境衛生管理技術者試験 問題136。改行・空白・句読点及び単位表記を整理。組合せ表は列名付きテキストで表現。解説は独自作成。",
+      "explanationReferenceUrls": [],
+      "transcription": "Two saved OCR passes compared against rendered official page; line wraps, spacing and punctuation normalized; combination tables preserved as labeled text; no figures required",
+      "needsIndependentReview": false,
+      "publicGo": false,
+      "contentReview": {
+        "status": "PASS",
+        "model": "gpt-6-astra",
+        "report": "reports/lq4f-20261104/independent-review11.md",
+        "scope": "PARTIAL_BATCH_NOT_FULL_QUALIFICATION"
+      }
+    },
+    {
+      "id": "biru-kan-2024-pm-137",
+      "printedNumber": "137",
+      "questionNumber": 137,
+      "questionText": "浄化槽法第1条（目的）に規定されている事項として、誤っているものは次のうちどれか。",
+      "choices": {
+        "1": "浄化槽の設置、保守点検、清掃及び製造について規制すること。",
+        "2": "浄化槽製造業の登録制度を整備すること。",
+        "3": "浄化槽清掃業の許可制度を整備すること。",
+        "4": "浄化槽設備士及び浄化槽管理士の資格を定めること。",
+        "5": "浄化槽によるし尿及び雑排水の適正な処理を図ること。"
+      },
+      "officialAnswer": 2,
+      "explanation": "正答は2です。浄化槽工事業は登録、浄化槽清掃業は許可という区別です。",
+      "choiceExplanations": {
+        "1": "正しい記述です。設置から製造・維持管理までの規制を目的に含みます。",
+        "2": "誤りです。第1条は浄化槽工事業の登録制度を規定しており、製造業の登録制度ではありません。",
+        "3": "正しい記述です。清掃業について許可制度を整えます。",
+        "4": "正しい記述です。施工・維持管理を担う資格を定めます。",
+        "5": "正しい記述です。適正処理によって生活環境保全・公衆衛生向上を図ります。"
+      },
+      "hasRequiredFigure": false,
+      "sourceQuestionUrl": "https://www.jahmec.or.jp/kokka/shiken_pdf/2024/2024shiken_pm.pdf",
+      "sourceQuestionPage": 16,
+      "sourceAnswerUrl": "https://www.jahmec.or.jp/kokka/shiken_pdf/2024/2024kizyun_seitou.pdf",
+      "sourceAnswerPage": 1,
+      "sourceQuestionSha256": "3af224c2aa9fab1ca58032efd8911ad1339c3c005751745a046c7154b0ec0e73",
+      "sourceAnswerSha256": "faebc327503541422b331d5e14ff47035cec23b6ef0fd1048f9d6cd8f3b9c54c",
+      "sourceAttribution": "出典：公益財団法人日本建築衛生管理教育センター 第54回（2024年）建築物環境衛生管理技術者試験 問題137。改行・空白・句読点及び単位表記を整理。組合せ表は列名付きテキストで表現。解説は独自作成。",
+      "explanationReferenceUrls": [],
+      "transcription": "Two saved OCR passes compared against rendered official page; line wraps, spacing and punctuation normalized; combination tables preserved as labeled text; no figures required",
+      "needsIndependentReview": false,
+      "publicGo": false,
+      "contentReview": {
+        "status": "PASS",
+        "model": "gpt-6-astra",
+        "report": "reports/lq4f-20261104/independent-review11.md",
+        "scope": "PARTIAL_BATCH_NOT_FULL_QUALIFICATION"
+      }
+    },
+    {
+      "id": "biru-kan-2024-pm-138",
+      "printedNumber": "138",
+      "questionNumber": 138,
+      "questionText": "特殊設備に関する次の記述のうち、最も不適当なものはどれか。",
+      "choices": {
+        "1": "入浴設備において、気泡発生装置などのエアロゾルを発生させる設備を設置する場合には、空気取入口から土ぼこりが入らないような構造とする。",
+        "2": "プール水の消毒設備には、塩素剤に加えてオゾン消毒や紫外線消毒を併用する例がある。",
+        "3": "子供が水遊びをする親水施設の用水には、衛生性の確保の面から利用形態によりプール並みの浄化装置が必要となる。",
+        "4": "食品製造に関する管理システムのHACCP方式は、製造した最終製品を対象に安全確認検査を行う手法である。",
+        "5": "入浴設備の循環水は、浴槽の底部に近い部分から供給する。"
+      },
+      "officialAnswer": 4,
+      "explanation": "正答は4です。HACCPは最終製品検査だけに頼る方式とは異なります。",
+      "choiceExplanations": {
+        "1": "適当です。土壌由来の微生物等が侵入しないようにします。",
+        "2": "適当です。塩素による残留効果を確保しつつ補助的に使います。",
+        "3": "適当です。接触・誤飲等を考慮して衛生性を確保します。",
+        "4": "不適当です。HACCPは工程ごとに危害要因を分析し、重要管理点を継続監視する予防的管理です。",
+        "5": "適当です。水面付近の汚れを滞留させないよう供給位置を計画します。"
+      },
+      "hasRequiredFigure": false,
+      "sourceQuestionUrl": "https://www.jahmec.or.jp/kokka/shiken_pdf/2024/2024shiken_pm.pdf",
+      "sourceQuestionPage": 16,
+      "sourceAnswerUrl": "https://www.jahmec.or.jp/kokka/shiken_pdf/2024/2024kizyun_seitou.pdf",
+      "sourceAnswerPage": 1,
+      "sourceQuestionSha256": "3af224c2aa9fab1ca58032efd8911ad1339c3c005751745a046c7154b0ec0e73",
+      "sourceAnswerSha256": "faebc327503541422b331d5e14ff47035cec23b6ef0fd1048f9d6cd8f3b9c54c",
+      "sourceAttribution": "出典：公益財団法人日本建築衛生管理教育センター 第54回（2024年）建築物環境衛生管理技術者試験 問題138。改行・空白・句読点及び単位表記を整理。組合せ表は列名付きテキストで表現。解説は独自作成。",
+      "explanationReferenceUrls": [],
+      "transcription": "Two saved OCR passes compared against rendered official page; line wraps, spacing and punctuation normalized; combination tables preserved as labeled text; no figures required",
+      "needsIndependentReview": false,
+      "publicGo": false,
+      "contentReview": {
+        "status": "PASS",
+        "model": "gpt-6-astra",
+        "report": "reports/lq4f-20261104/independent-review11.md",
+        "scope": "PARTIAL_BATCH_NOT_FULL_QUALIFICATION"
+      }
+    },
+    {
+      "id": "biru-kan-2024-pm-139",
+      "printedNumber": "139",
+      "questionNumber": 139,
+      "questionText": "防火設備及び消防用設備の保守管理に関する次の記述のうち、最も不適当なものはどれか。",
+      "choices": {
+        "1": "防火設備定期検査制度により、建築基準法施行令と特定行政庁が定めた条件を満たす建築物の防火設備は、一級建築士、二級建築士または防火設備検査員が、1年に1回作動状況等を確認する。",
+        "2": "消防用設備等に附置される動力消防ポンプは、1年に1回機器点検を行う。",
+        "3": "防火管理者は日常の点検項目として、消防用設備の異常信号などについて確認し、異常が認められたら直ちに修理し、機能回復を図る。",
+        "4": "特定防火対象物における法定定期点検の結果とその不備に関する是正措置の報告は、1年に1回行う。",
+        "5": "機器点検のうち外観点検とは、消防用設備等の機器の適正な配置など、主として外観から判断できる事項を点検基準に従い確認することである。"
+      },
+      "officialAnswer": 2,
+      "explanation": "正答は2です。機器点検6か月、総合点検1年、特定防火対象物の報告1年という周期を区別します。",
+      "choiceExplanations": {
+        "1": "適当です。対象の防火設備の検査・報告制度です。",
+        "2": "不適当です。消防用設備等の機器点検は6か月に1回で、動力消防ポンプもこの周期です。",
+        "3": "適当です。異常を放置せず、必要な修理を手配して機能を回復します。",
+        "4": "適当です。特定防火対象物の消防設備点検結果の報告は原則年1回です。",
+        "5": "適当です。主に配置・損傷等の外観上の事項を確認します。"
+      },
+      "hasRequiredFigure": false,
+      "sourceQuestionUrl": "https://www.jahmec.or.jp/kokka/shiken_pdf/2024/2024shiken_pm.pdf",
+      "sourceQuestionPage": 16,
+      "sourceAnswerUrl": "https://www.jahmec.or.jp/kokka/shiken_pdf/2024/2024kizyun_seitou.pdf",
+      "sourceAnswerPage": 1,
+      "sourceQuestionSha256": "3af224c2aa9fab1ca58032efd8911ad1339c3c005751745a046c7154b0ec0e73",
+      "sourceAnswerSha256": "faebc327503541422b331d5e14ff47035cec23b6ef0fd1048f9d6cd8f3b9c54c",
+      "sourceAttribution": "出典：公益財団法人日本建築衛生管理教育センター 第54回（2024年）建築物環境衛生管理技術者試験 問題139。改行・空白・句読点及び単位表記を整理。組合せ表は列名付きテキストで表現。解説は独自作成。",
+      "explanationReferenceUrls": [],
+      "transcription": "Two saved OCR passes compared against rendered official page; line wraps, spacing and punctuation normalized; combination tables preserved as labeled text; no figures required",
+      "needsIndependentReview": false,
+      "publicGo": false,
+      "contentReview": {
+        "status": "PASS",
+        "model": "gpt-6-astra",
+        "report": "reports/lq4f-20261104/independent-review11.md",
+        "scope": "PARTIAL_BATCH_NOT_FULL_QUALIFICATION"
+      }
+    }
+  ]
+}

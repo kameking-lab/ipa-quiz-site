@@ -1,3 +1,5 @@
+import { CHIZAI2_QUESTIONS } from "./chizai2";
+import { KISHO_QUESTIONS } from "./kisho";
 import type { ExamCode, Question } from "@/lib/questions/types";
 import { isPracticeReadyQuestion } from "@/lib/questions/filter";
 import { CHOSASHI_QUESTIONS } from "./chosashi";
@@ -46,6 +48,7 @@ import { isExamPublished } from "@/lib/qualifications/catalog";
 // 5. Uncomment the matching loader in lib/questions/get-questions.ts
 // ────────────────────────────────────────────────────────────────────────────
 
+import { KENCHIKU_SETSUBISHI_STUDY_QUESTIONS } from "./kenchiku-setsubishi";
 import { KANTEISHI_QUESTIONS } from "./kanteishi";
 import { KAIKEISHI_QUESTIONS } from "./kaikeishi";
 import { EISEI1_QUESTIONS } from "./eisei1";
@@ -97,6 +100,9 @@ import { LAND_SPECIAL2_QUESTIONS } from "./land-special2";
 import { LAND_SPECIAL3_QUESTIONS } from "./land-special3";
 
 export const QUESTIONS_BY_EXAM: Partial<Record<ExamCode, Question[]>> = {
+  ...(isExamPublished("kenchiku-setsubishi") ? { "kenchiku-setsubishi": KENCHIKU_SETSUBISHI_STUDY_QUESTIONS.filter(isPracticeReadyQuestion) } : {}),
+  ...(isExamPublished("chizai2") ? { chizai2: CHIZAI2_QUESTIONS.filter(isPracticeReadyQuestion) } : {}),
+  ...(isExamPublished("kisho") ? { kisho: KISHO_QUESTIONS } : {}),
   ...(isExamPublished("kanteishi") ? { kanteishi: KANTEISHI_QUESTIONS.filter(isPracticeReadyQuestion) } : {}),
   ...(isExamPublished("kaikeishi") ? { kaikeishi: KAIKEISHI_QUESTIONS.filter(isPracticeReadyQuestion) } : {}),
   ...(isExamPublished("riku-tech2") ? { "riku-tech2": RIKU_TECH2_QUESTIONS.filter(isPracticeReadyQuestion) } : {}),

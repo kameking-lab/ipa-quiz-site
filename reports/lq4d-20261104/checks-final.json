@@ -1,0 +1,32 @@
+[
+  {
+    "command": "corepack pnpm validate:questions",
+    "exitCode": 0,
+    "log": "reports/lq4d-20261104/validate-questions.log",
+    "logSha256": "3973ab5d331036e85537816a6378c026e88a7a97bee7242049e3cac4c8fbfa0d"
+  },
+  {
+    "command": "NODE_OPTIONS=--max-old-space-size=12288 corepack pnpm typecheck",
+    "exitCode": 0,
+    "log": "reports/lq4d-20261104/typecheck.log",
+    "logSha256": "e4d9f9e26c4fa65386bba4d9419185a432c56fbbf0b7ade4fd72b19c84026058"
+  },
+  {
+    "command": "corepack pnpm exec vitest run qkensetsu chizai2 kisho ReviewClient practice-session questions-filter category-pool exam-config-integrity QuizModeTabs PracticeSessionTabs QuizClient.year get-questions questions-load exam-library-coverage question-jsonld question-meta --maxWorkers=2",
+    "exitCode": 0,
+    "log": "reports/lq4d-20261104/related-tests.log",
+    "logSha256": "1c95f8b3f283010abe703ed64efb55a51c1a7b7fa7e7949fdcaa209ef7f3d088"
+  },
+  {
+    "command": "node --test scripts/validate-lq4-staging.test.mjs",
+    "exitCode": 0,
+    "log": "reports/lq4d-20261104/staging-tests.log",
+    "logSha256": "384f6714d39f552b10897597a4f7fd50822fb97a746c8945768a800503291e69"
+  },
+  {
+    "command": "node scripts/validate-lq4-staging.mjs --require-reviewed --sources",
+    "exitCode": 0,
+    "log": "reports/lq4d-20261104/staging-validation-final.json",
+    "logSha256": "d14496582dd598effd9aa7580fcdcf376babf86793d5683aa606823093e3c0a7"
+  }
+]

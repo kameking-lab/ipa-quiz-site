@@ -1,5 +1,6 @@
 import { QUESTIONS_BY_EXAM } from "../data/questions/index";
 import type { ExamCode, Question } from "../lib/questions/types";
+import { numericQuestionIssue } from "../lib/questions/numeric";
 
 /** Run before claiming that a qualification has two complete, explained official rounds. */
 function argument(name: string): string | undefined {
@@ -25,7 +26,7 @@ for (const round of rounds) {
   if (ids.size !== paper.length) errors.push(`${round}: 問題IDが重複`);
   for (const question of paper) {
     const keys = Object.keys(question.choices ?? {});
-    const complete = keys.length >= 2 && keys.every((key) => {
+    const complete = question.type === "numeric" ? !numericQuestionIssue(question) : keys.length >= 2 && keys.every((key) => {
       const explanation = question.choiceExplanations?.[key as keyof typeof question.choiceExplanations];
       return typeof explanation === "string" && explanation.trim().length > 0;
     });

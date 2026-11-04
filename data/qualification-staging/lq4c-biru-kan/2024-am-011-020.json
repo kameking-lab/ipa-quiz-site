@@ -1,0 +1,435 @@
+{
+  "status": "PARTIAL_CONTENT_ACCEPTED_NOT_REGISTERED",
+  "qualification": "biru-kan",
+  "year": 2024,
+  "subject": "am",
+  "expectedFullQualificationCount": 360,
+  "questions": [
+    {
+      "id": "biru-kan-2024-am-011",
+      "printedNumber": "11",
+      "questionNumber": 11,
+      "questionText": "建築物環境衛生管理基準において、水洗便所の用に供する水に飲料水以外の水（雑用水）を使用している場合の水質検査項目として、最も不適当なものは次のうちどれか。",
+      "choices": {
+        "1": "pH値",
+        "2": "臭気",
+        "3": "外観",
+        "4": "大腸菌",
+        "5": "濁度"
+      },
+      "officialAnswer": 5,
+      "explanation": "正答は5です。同じ雑用水でも、水洗便所用と散水・修景・清掃用で濁度の扱いが異なります。pH・臭気・外観・大腸菌は双方の管理対象です。",
+      "choiceExplanations": {
+        "1": "対象項目です。水洗便所用の雑用水にもpHの基準があり、7日以内ごとに1回検査します。",
+        "2": "対象項目です。臭気は異常でないことが必要で、7日以内ごとに1回検査します。",
+        "3": "対象項目です。外観はほとんど無色透明であることが必要で、7日以内ごとに1回検査します。",
+        "4": "対象項目です。大腸菌は検出されないことが必要で、2か月以内ごとに1回検査します。",
+        "5": "最も不適当です。水洗便所用水では濁度は当該水質基準・定期検査の対象に含まれません。散水・修景・清掃用の雑用水では対象となります。"
+      },
+      "hasRequiredFigure": false,
+      "sourceQuestionUrl": "https://www.jahmec.or.jp/kokka/shiken_pdf/2024/2024shiken_am.pdf",
+      "sourceQuestionPage": 7,
+      "sourceAnswerUrl": "https://www.jahmec.or.jp/kokka/shiken_pdf/2024/2024kizyun_seitou.pdf",
+      "sourceAnswerPage": 1,
+      "sourceQuestionSha256": "b788546847af935f8f068f0e0d2a5d5ea9ba302fa083a590ef4ffdd548a75aef",
+      "sourceAnswerSha256": "faebc327503541422b331d5e14ff47035cec23b6ef0fd1048f9d6cd8f3b9c54c",
+      "sourceAttribution": "出典：公益財団法人日本建築衛生管理教育センター 第54回（2024年）建築物環境衛生管理技術者試験 問題11。改行・空白・句読点及び単位表記を整理。組合せ表は列名付きテキストで表現。解説は独自作成。",
+      "explanationReferenceUrls": [
+        "https://www.mhlw.go.jp/web/t_doc?dataId=79073000",
+        "https://www.mhlw.go.jp/bunya/kenkou/seikatsu-eisei10/index.html"
+      ],
+      "transcription": "160dpi/PSM3 and 220dpi/PSM6 OCR compared against the rendered official page; line wraps, spacing and punctuation normalized; no figures required",
+      "needsIndependentReview": false,
+      "publicGo": false,
+      "contentReview": {
+        "status": "PASS",
+        "model": "gpt-6-astra",
+        "report": "reports/lq4c-20261104/independent-review12.md",
+        "scope": "PARTIAL_BATCH_NOT_FULL_QUALIFICATION"
+      }
+    },
+    {
+      "id": "biru-kan-2024-am-012",
+      "printedNumber": "12",
+      "questionNumber": 12,
+      "questionText": "建築物衛生法に基づく事業の登録に必要な物的要件のうち、機械器具以外の設備を必要としない登録事業は次のうちどれか。",
+      "choices": {
+        "1": "建築物清掃業",
+        "2": "建築物飲料水水質検査業",
+        "3": "建築物飲料水貯水槽清掃業",
+        "4": "建築物排水管清掃業",
+        "5": "建築物ねずみ昆虫等防除業"
+      },
+      "officialAnswer": 1,
+      "explanation": "正答は1です。登録の物的基準は業種ごとに異なり、水質検査業の検査室や貯水槽清掃業等の専用保管庫と区別します。登録基準に保管庫の列挙がないことは、不適切に器具を保管してよいという意味ではありません。",
+      "choiceExplanations": {
+        "1": "正答です。清掃業の登録の物的基準には真空掃除機・床みがき機が必要ですが、専用保管庫等の機械器具以外の設備は登録基準として列挙されていません。",
+        "2": "該当しません。水質検査を適確に行える検査室という設備が必要です。",
+        "3": "該当しません。必要機械器具を適切に保管できる専用の保管庫が必要です。",
+        "4": "該当しません。排水管清掃用の機械器具を適切に保管できる専用の保管庫が必要です。",
+        "5": "該当しません。機械器具と防除用薬剤を適切に保管するための専用の保管庫が必要です。"
+      },
+      "hasRequiredFigure": false,
+      "sourceQuestionUrl": "https://www.jahmec.or.jp/kokka/shiken_pdf/2024/2024shiken_am.pdf",
+      "sourceQuestionPage": 7,
+      "sourceAnswerUrl": "https://www.jahmec.or.jp/kokka/shiken_pdf/2024/2024kizyun_seitou.pdf",
+      "sourceAnswerPage": 1,
+      "sourceQuestionSha256": "b788546847af935f8f068f0e0d2a5d5ea9ba302fa083a590ef4ffdd548a75aef",
+      "sourceAnswerSha256": "faebc327503541422b331d5e14ff47035cec23b6ef0fd1048f9d6cd8f3b9c54c",
+      "sourceAttribution": "出典：公益財団法人日本建築衛生管理教育センター 第54回（2024年）建築物環境衛生管理技術者試験 問題12。改行・空白・句読点及び単位表記を整理。組合せ表は列名付きテキストで表現。解説は独自作成。",
+      "explanationReferenceUrls": [
+        "https://www.mhlw.go.jp/web/t_doc?dataId=79073000"
+      ],
+      "transcription": "160dpi/PSM3 and 220dpi/PSM6 OCR compared against the rendered official page; line wraps, spacing and punctuation normalized; no figures required",
+      "needsIndependentReview": false,
+      "publicGo": false,
+      "contentReview": {
+        "status": "PASS",
+        "model": "gpt-6-astra",
+        "report": "reports/lq4c-20261104/independent-review12.md",
+        "scope": "PARTIAL_BATCH_NOT_FULL_QUALIFICATION"
+      }
+    },
+    {
+      "id": "biru-kan-2024-am-013",
+      "printedNumber": "13",
+      "questionNumber": 13,
+      "questionText": "建築物衛生法に基づく特定建築物の立入検査に関する次の記述のうち、最も適当なものはどれか。",
+      "choices": {
+        "1": "特定建築物に該当していない建築物であっても、多数の者が使用し、又は利用する建築物であれば、立入検査を行うことができる。",
+        "2": "立入検査を1人で実施してはならない。",
+        "3": "立入検査は、検査日時を事前に通知しなければならない。",
+        "4": "特定建築物内にある住居に立ち入る場合、その居住者の承諾を得なければならない。",
+        "5": "立入検査を行う職員を環境衛生指導員という。"
+      },
+      "officialAnswer": 4,
+      "explanation": "正答は4です。行政の立入検査権限があっても、住居部分については居住者の承諾が必要です。検査担当者の名称は環境衛生監視員です。",
+      "choiceExplanations": {
+        "1": "不適当です。法第11条の立入検査は特定建築物が対象です。多数の者が使用することだけで同条の対象にはなりません。",
+        "2": "不適当です。同法には、立入検査を必ず複数の職員で行わなければならないという規定はありません。",
+        "3": "不適当です。同法は検査日時の事前通知を必須とはしていません。",
+        "4": "適当です。法第11条第1項ただし書により、住居に立ち入るときには居住者の承諾が必要です。",
+        "5": "不適当です。施行規則第21条第2項で定める名称は「環境衛生監視員」です。「環境衛生指導員」ではありません。"
+      },
+      "hasRequiredFigure": false,
+      "sourceQuestionUrl": "https://www.jahmec.or.jp/kokka/shiken_pdf/2024/2024shiken_am.pdf",
+      "sourceQuestionPage": 7,
+      "sourceAnswerUrl": "https://www.jahmec.or.jp/kokka/shiken_pdf/2024/2024kizyun_seitou.pdf",
+      "sourceAnswerPage": 1,
+      "sourceQuestionSha256": "b788546847af935f8f068f0e0d2a5d5ea9ba302fa083a590ef4ffdd548a75aef",
+      "sourceAnswerSha256": "faebc327503541422b331d5e14ff47035cec23b6ef0fd1048f9d6cd8f3b9c54c",
+      "sourceAttribution": "出典：公益財団法人日本建築衛生管理教育センター 第54回（2024年）建築物環境衛生管理技術者試験 問題13。改行・空白・句読点及び単位表記を整理。組合せ表は列名付きテキストで表現。解説は独自作成。",
+      "explanationReferenceUrls": [
+        "https://www.mhlw.go.jp/web/t_doc?dataId=79071000",
+        "https://www.mhlw.go.jp/web/t_doc?dataId=79073000"
+      ],
+      "transcription": "160dpi/PSM3 and 220dpi/PSM6 OCR compared against the rendered official page; line wraps, spacing and punctuation normalized; no figures required",
+      "needsIndependentReview": false,
+      "publicGo": false,
+      "contentReview": {
+        "status": "PASS",
+        "model": "gpt-6-astra",
+        "report": "reports/lq4c-20261104/independent-review12.md",
+        "scope": "PARTIAL_BATCH_NOT_FULL_QUALIFICATION"
+      }
+    },
+    {
+      "id": "biru-kan-2024-am-014",
+      "printedNumber": "14",
+      "questionNumber": 14,
+      "questionText": "地域保健法に基づく保健所の事業として、最も不適当なものは次のうちどれか。",
+      "choices": {
+        "1": "人口動態統計その他地域保健に係る統計に関する事項",
+        "2": "地域保健に関する思想の普及及び向上に関する事項",
+        "3": "公共医療事業の向上及び増進に関する事項",
+        "4": "労働者の安全及び衛生に関する事項",
+        "5": "医事及び薬事に関する事項"
+      },
+      "officialAnswer": 4,
+      "explanation": "正答は4です。地域住民の健康を対象とする保健行政と、労働者の安全衛生を扱う労働行政の担当を区別します。",
+      "choiceExplanations": {
+        "1": "適当です。地域保健法第6条第2号に列挙されています。地域の出生・死亡等の人口動態統計を扱います。",
+        "2": "適当です。同条第1号に掲げられた保健所の事業です。",
+        "3": "適当です。同条第7号に掲げられた保健所の事業です。",
+        "4": "不適当です。労働者の安全衛生は労働行政の事項であり、地域保健法第6条の保健所事業の列挙にはありません。",
+        "5": "適当です。同条第5号に掲げられた保健所の事業です。"
+      },
+      "hasRequiredFigure": false,
+      "sourceQuestionUrl": "https://www.jahmec.or.jp/kokka/shiken_pdf/2024/2024shiken_am.pdf",
+      "sourceQuestionPage": 8,
+      "sourceAnswerUrl": "https://www.jahmec.or.jp/kokka/shiken_pdf/2024/2024kizyun_seitou.pdf",
+      "sourceAnswerPage": 1,
+      "sourceQuestionSha256": "b788546847af935f8f068f0e0d2a5d5ea9ba302fa083a590ef4ffdd548a75aef",
+      "sourceAnswerSha256": "faebc327503541422b331d5e14ff47035cec23b6ef0fd1048f9d6cd8f3b9c54c",
+      "sourceAttribution": "出典：公益財団法人日本建築衛生管理教育センター 第54回（2024年）建築物環境衛生管理技術者試験 問題14。改行・空白・句読点及び単位表記を整理。組合せ表は列名付きテキストで表現。解説は独自作成。",
+      "explanationReferenceUrls": [
+        "https://www.mhlw.go.jp/web/t_doc?dataId=78301000"
+      ],
+      "transcription": "160dpi/PSM3 and 220dpi/PSM6 OCR compared against the rendered official page; line wraps, spacing and punctuation normalized; no figures required",
+      "needsIndependentReview": false,
+      "publicGo": false,
+      "contentReview": {
+        "status": "PASS",
+        "model": "gpt-6-astra",
+        "report": "reports/lq4c-20261104/independent-review12.md",
+        "scope": "PARTIAL_BATCH_NOT_FULL_QUALIFICATION"
+      }
+    },
+    {
+      "id": "biru-kan-2024-am-015",
+      "printedNumber": "15",
+      "questionNumber": 15,
+      "questionText": "学校保健安全法における教室等の環境に係る学校環境衛生基準のうち、揮発性有機化合物の検査項目に含まれていない物質は次のうちどれか。",
+      "choices": {
+        "1": "ホルムアルデヒド",
+        "2": "アセトアルデヒド",
+        "3": "トルエン",
+        "4": "キシレン",
+        "5": "パラジクロロベンゼン"
+      },
+      "officialAnswer": 2,
+      "explanation": "正答は2です。室内空気の指針値がある物質と、学校環境衛生基準の検査項目は同一ではありません。2024年の出題ではアセトアルデヒドが列挙に含まれない物質です。",
+      "choiceExplanations": {
+        "1": "含まれています。ホルムアルデヒドは学校環境衛生基準の揮発性有機化合物の検査項目です。",
+        "2": "含まれず、これが正答です。アセトアルデヒドは室内空気中化学物質として問題になる物質ですが、この学校環境衛生基準の検査項目には含まれません。",
+        "3": "含まれています。トルエンは同基準で検査対象となっています。",
+        "4": "含まれています。キシレンは同基準で検査対象となっています。",
+        "5": "含まれています。パラジクロロベンゼンは同基準で検査対象となっています。"
+      },
+      "hasRequiredFigure": false,
+      "sourceQuestionUrl": "https://www.jahmec.or.jp/kokka/shiken_pdf/2024/2024shiken_am.pdf",
+      "sourceQuestionPage": 8,
+      "sourceAnswerUrl": "https://www.jahmec.or.jp/kokka/shiken_pdf/2024/2024kizyun_seitou.pdf",
+      "sourceAnswerPage": 1,
+      "sourceQuestionSha256": "b788546847af935f8f068f0e0d2a5d5ea9ba302fa083a590ef4ffdd548a75aef",
+      "sourceAnswerSha256": "faebc327503541422b331d5e14ff47035cec23b6ef0fd1048f9d6cd8f3b9c54c",
+      "sourceAttribution": "出典：公益財団法人日本建築衛生管理教育センター 第54回（2024年）建築物環境衛生管理技術者試験 問題15。改行・空白・句読点及び単位表記を整理。組合せ表は列名付きテキストで表現。解説は独自作成。",
+      "explanationReferenceUrls": [
+        "https://www.mext.go.jp/content/20230817-mext_kenshoku-100000613_2.pdf"
+      ],
+      "transcription": "160dpi/PSM3 and 220dpi/PSM6 OCR compared against the rendered official page; line wraps, spacing and punctuation normalized; no figures required",
+      "needsIndependentReview": false,
+      "publicGo": false,
+      "contentReview": {
+        "status": "PASS",
+        "model": "gpt-6-astra",
+        "report": "reports/lq4c-20261104/independent-review12.md",
+        "scope": "PARTIAL_BATCH_NOT_FULL_QUALIFICATION"
+      }
+    },
+    {
+      "id": "biru-kan-2024-am-016",
+      "printedNumber": "16",
+      "questionNumber": 16,
+      "questionText": "下水道法に関する次の記述のうち、最も不適当なものはどれか。",
+      "choices": {
+        "1": "下水道の整備を図り、もって都市の健全な発達及び公衆衛生の向上に寄与し、あわせて公共用水域の水質の保全に資することを目的とする。",
+        "2": "国土交通大臣は、緊急の必要があると認めるときは、公共下水道等の工事又は維持管理に関して必要な指示をすることができる。",
+        "3": "終末処理場とは、下水を最終的に処理して河川等に放流するために、下水道の施設として設けられる処理施設及びこれを補完する施設をいう。",
+        "4": "都道府県は、下水道の整備に関する総合的な基本計画を定めなければならない。",
+        "5": "厚生労働大臣は、緊急の必要があると認めるときは、終末処理場の維持管理に関して必要な指示をすることができる。"
+      },
+      "officialAnswer": 5,
+      "explanation": "正答は5です。国土交通大臣の工事・維持管理に関する権限と、環境大臣の終末処理場の維持管理に関する権限を区別します。",
+      "choiceExplanations": {
+        "1": "適当です。都市の健全な発達、公衆衛生の向上、公共用水域の水質保全は法第1条の目的に含まれます。",
+        "2": "適当です。法第37条は緊急時に国土交通大臣が工事又は維持管理について指示する権限を定めています。",
+        "3": "適当です。法第2条の終末処理場の定義に一致します。最終処理の施設とこれを補完する施設を含みます。",
+        "4": "適当です。都道府県は下水道の整備に関する総合的な基本計画を定めることとされています。",
+        "5": "不適当です。終末処理場の維持管理について、緊急時に指示できる大臣として定められているのは環境大臣です。厚生労働大臣ではありません。"
+      },
+      "hasRequiredFigure": false,
+      "sourceQuestionUrl": "https://www.jahmec.or.jp/kokka/shiken_pdf/2024/2024shiken_am.pdf",
+      "sourceQuestionPage": 8,
+      "sourceAnswerUrl": "https://www.jahmec.or.jp/kokka/shiken_pdf/2024/2024kizyun_seitou.pdf",
+      "sourceAnswerPage": 1,
+      "sourceQuestionSha256": "b788546847af935f8f068f0e0d2a5d5ea9ba302fa083a590ef4ffdd548a75aef",
+      "sourceAnswerSha256": "faebc327503541422b331d5e14ff47035cec23b6ef0fd1048f9d6cd8f3b9c54c",
+      "sourceAttribution": "出典：公益財団法人日本建築衛生管理教育センター 第54回（2024年）建築物環境衛生管理技術者試験 問題16。改行・空白・句読点及び単位表記を整理。組合せ表は列名付きテキストで表現。解説は独自作成。",
+      "explanationReferenceUrls": [
+        "https://laws.e-gov.go.jp/law/333AC0000000079?occasion_date=20240517"
+      ],
+      "transcription": "160dpi/PSM3 and 220dpi/PSM6 OCR compared against the rendered official page; line wraps, spacing and punctuation normalized; no figures required",
+      "needsIndependentReview": false,
+      "publicGo": false,
+      "contentReview": {
+        "status": "PASS",
+        "model": "gpt-6-astra",
+        "report": "reports/lq4c-20261104/independent-review12.md",
+        "scope": "PARTIAL_BATCH_NOT_FULL_QUALIFICATION"
+      }
+    },
+    {
+      "id": "biru-kan-2024-am-017",
+      "printedNumber": "17",
+      "questionNumber": 17,
+      "questionText": "大気汚染防止法第1条の目的に関する次の記述のうち、誤っているものはどれか。",
+      "choices": {
+        "1": "揮発性有機化合物及び粉じんの排出等を規制する。",
+        "2": "自動車排出ガスに係る許容限度を定める。",
+        "3": "水銀等の排出を規制する。",
+        "4": "排出ガス中のダイオキシン類について、特定施設の種類及び構造に応じて排出基準を定める。",
+        "5": "人の健康に係る被害が生じた場合における事業者の損害賠償の責任について定める。"
+      },
+      "officialAnswer": 4,
+      "explanation": "正答は4です。大気汚染防止法とダイオキシン類対策特別措置法の規制体系を区別します。",
+      "choiceExplanations": {
+        "1": "正しい記述です。揮発性有機化合物や粉じんの排出等の規制は大気汚染防止法の目的に含まれます。",
+        "2": "正しい記述です。自動車排出ガスの許容限度の設定も同法の目的に含まれます。",
+        "3": "正しい記述です。水銀等の排出規制は同法の規制対象です。",
+        "4": "誤りです。ダイオキシン類の特定施設に対する排出基準はダイオキシン類対策特別措置法で定める枠組みです。大気汚染防止法第1条の目的としての記述ではありません。",
+        "5": "正しい記述です。大気汚染による健康被害が生じた場合の事業者の損害賠償責任も、目的条文に含まれます。"
+      },
+      "hasRequiredFigure": false,
+      "sourceQuestionUrl": "https://www.jahmec.or.jp/kokka/shiken_pdf/2024/2024shiken_am.pdf",
+      "sourceQuestionPage": 8,
+      "sourceAnswerUrl": "https://www.jahmec.or.jp/kokka/shiken_pdf/2024/2024kizyun_seitou.pdf",
+      "sourceAnswerPage": 1,
+      "sourceQuestionSha256": "b788546847af935f8f068f0e0d2a5d5ea9ba302fa083a590ef4ffdd548a75aef",
+      "sourceAnswerSha256": "faebc327503541422b331d5e14ff47035cec23b6ef0fd1048f9d6cd8f3b9c54c",
+      "sourceAttribution": "出典：公益財団法人日本建築衛生管理教育センター 第54回（2024年）建築物環境衛生管理技術者試験 問題17。改行・空白・句読点及び単位表記を整理。組合せ表は列名付きテキストで表現。解説は独自作成。",
+      "explanationReferenceUrls": [
+        "https://laws.e-gov.go.jp/law/343AC0000000097",
+        "https://laws.e-gov.go.jp/law/411AC0100000105"
+      ],
+      "transcription": "160dpi/PSM3 and 220dpi/PSM6 OCR compared against the rendered official page; line wraps, spacing and punctuation normalized; no figures required",
+      "needsIndependentReview": false,
+      "publicGo": false,
+      "contentReview": {
+        "status": "PASS",
+        "model": "gpt-6-astra",
+        "report": "reports/lq4c-20261104/independent-review12.md",
+        "scope": "PARTIAL_BATCH_NOT_FULL_QUALIFICATION"
+      }
+    },
+    {
+      "id": "biru-kan-2024-am-018",
+      "printedNumber": "18",
+      "questionNumber": 18,
+      "questionText": "事務所衛生基準規則第2条に規定されている次の条文の［ ］内に入る語句及び数値の組合せとして、正しいものはどれか。\n事業者は、労働者を常時就業させる室の［ア］を、設備の占める容積及び床面から［イ］メートルをこえる高さにある空間を除き、労働者1人について、［ウ］立方メートル以上としなければならない。",
+      "choices": {
+        "1": "ア：容積／イ：3／ウ：8",
+        "2": "ア：気積／イ：3／ウ：10",
+        "3": "ア：気積／イ：4／ウ：10",
+        "4": "ア：容積／イ：4／ウ：12",
+        "5": "ア：気積／イ：5／ウ：12"
+      },
+      "officialAnswer": 3,
+      "explanation": "正答は3です。室の気積から設備の容積と床上4 mをこえる空間を除外し、常時就業する労働者1人当たり10 m³以上を確保します。",
+      "choiceExplanations": {
+        "1": "誤りです。法令の語は気積、除外する高さは4 mをこえる部分、1人当たりの最低値は10 m³で、すべて違います。",
+        "2": "誤りです。気積と10 m³は合っていますが、除外する高さは3 mではなく4 mをこえる部分です。",
+        "3": "正しい組合せです。ア＝気積、イ＝4、ウ＝10で、規則第2条に一致します。",
+        "4": "誤りです。高さ4 mは合っていますが、アは気積、ウは10です。",
+        "5": "誤りです。アの気積は合っていますが、除外する高さは4 mをこえる部分、必要気積は1人当たり10 m³以上です。"
+      },
+      "hasRequiredFigure": false,
+      "sourceQuestionUrl": "https://www.jahmec.or.jp/kokka/shiken_pdf/2024/2024shiken_am.pdf",
+      "sourceQuestionPage": 9,
+      "sourceAnswerUrl": "https://www.jahmec.or.jp/kokka/shiken_pdf/2024/2024kizyun_seitou.pdf",
+      "sourceAnswerPage": 1,
+      "sourceQuestionSha256": "b788546847af935f8f068f0e0d2a5d5ea9ba302fa083a590ef4ffdd548a75aef",
+      "sourceAnswerSha256": "faebc327503541422b331d5e14ff47035cec23b6ef0fd1048f9d6cd8f3b9c54c",
+      "sourceAttribution": "出典：公益財団法人日本建築衛生管理教育センター 第54回（2024年）建築物環境衛生管理技術者試験 問題18。改行・空白・句読点及び単位表記を整理。組合せ表は列名付きテキストで表現。解説は独自作成。",
+      "explanationReferenceUrls": [
+        "https://www.mhlw.go.jp/web/t_doc?dataId=74089000"
+      ],
+      "transcription": "160dpi/PSM3 and 220dpi/PSM6 OCR compared against the rendered official page; line wraps, spacing and punctuation normalized; no figures required",
+      "needsIndependentReview": false,
+      "publicGo": false,
+      "contentReview": {
+        "status": "PASS",
+        "model": "gpt-6-astra",
+        "report": "reports/lq4c-20261104/independent-review12.md",
+        "scope": "PARTIAL_BATCH_NOT_FULL_QUALIFICATION"
+      }
+    },
+    {
+      "id": "biru-kan-2024-am-019",
+      "printedNumber": "19",
+      "questionNumber": 19,
+      "questionText": "健康増進法に定める受動喫煙防止対策における施設とその対応との組合せとして、最も不適当なものは次のうちどれか。",
+      "choices": {
+        "1": "学校 ― 敷地内禁煙",
+        "2": "病院 ― 敷地内禁煙",
+        "3": "行政機関の庁舎 ― 原則屋内禁煙",
+        "4": "事務所 ― 原則屋内禁煙",
+        "5": "ホテル・旅館 ― 原則屋内禁煙"
+      },
+      "officialAnswer": 3,
+      "explanation": "正答は3です。学校・病院・行政機関の庁舎の第一種施設と、事務所・ホテル等の第二種施設で、禁煙の範囲が異なります。特定屋外喫煙場所や居住場所等の例外も区別します。",
+      "choiceExplanations": {
+        "1": "適当です。学校は第一種施設で原則敷地内禁煙です。要件を満たす特定屋外喫煙場所を設けられる場合があります。",
+        "2": "適当です。病院も第一種施設で原則敷地内禁煙です。",
+        "3": "不適当です。行政機関の庁舎は第一種施設として原則敷地内禁煙です。単に原則屋内禁煙とする区分ではありません。",
+        "4": "適当です。一般の事務所は第二種施設として原則屋内禁煙です。所定の喫煙専用室等を設ける場合の規定があります。",
+        "5": "適当です。ホテル・旅館は第二種施設として原則屋内禁煙です。ただし客室等の人の居住の用に供する場所には適用除外があります。"
+      },
+      "hasRequiredFigure": false,
+      "sourceQuestionUrl": "https://www.jahmec.or.jp/kokka/shiken_pdf/2024/2024shiken_am.pdf",
+      "sourceQuestionPage": 9,
+      "sourceAnswerUrl": "https://www.jahmec.or.jp/kokka/shiken_pdf/2024/2024kizyun_seitou.pdf",
+      "sourceAnswerPage": 1,
+      "sourceQuestionSha256": "b788546847af935f8f068f0e0d2a5d5ea9ba302fa083a590ef4ffdd548a75aef",
+      "sourceAnswerSha256": "faebc327503541422b331d5e14ff47035cec23b6ef0fd1048f9d6cd8f3b9c54c",
+      "sourceAttribution": "出典：公益財団法人日本建築衛生管理教育センター 第54回（2024年）建築物環境衛生管理技術者試験 問題19。改行・空白・句読点及び単位表記を整理。組合せ表は列名付きテキストで表現。解説は独自作成。",
+      "explanationReferenceUrls": [
+        "https://www.mhlw.go.jp/web/t_doc?da=&dataId=78aa3837",
+        "https://www.mhlw.go.jp/content/10900000/000525322.pdf"
+      ],
+      "transcription": "160dpi/PSM3 and 220dpi/PSM6 OCR compared against the rendered official page; line wraps, spacing and punctuation normalized; no figures required",
+      "needsIndependentReview": false,
+      "publicGo": false,
+      "contentReview": {
+        "status": "PASS",
+        "model": "gpt-6-astra",
+        "report": "reports/lq4c-20261104/independent-review12.md",
+        "scope": "PARTIAL_BATCH_NOT_FULL_QUALIFICATION"
+      }
+    },
+    {
+      "id": "biru-kan-2024-am-020",
+      "printedNumber": "20",
+      "questionNumber": 20,
+      "questionText": "建築物衛生法と関連する法律に関する次の記述のうち、最も不適当なものはどれか。",
+      "choices": {
+        "1": "建築物衛生法は、給水の水質基準等について、水道法の基準の一部を準用している。",
+        "2": "地域保健法に基づいて設置された保健所は、建築物環境衛生に関する相談指導等を行う。",
+        "3": "建築物衛生法に定める特定建築物の建築確認の際には、特定行政庁、建築主事等又は指定確認検査機関は、建築基準法が規定する許可又は確認について、保健所長の同意を得なければならない。",
+        "4": "専ら事務所の用に供せられる建築物衛生法の特定建築物の環境衛生管理については、利用者はほとんど労働者であるために、労働安全衛生法と建築物衛生法の二つの規制の適用を受ける。",
+        "5": "学校保健安全法に定める学校は、建築物衛生法の規制対象である特定用途に該当する。"
+      },
+      "officialAnswer": 3,
+      "explanation": "正答は3です。建築確認と消防同意の仕組みを、保健所長の同意に置き換えた記述が誤りです。建築物衛生法は水道法、地域保健法、労働安全衛生法等と関連して適用されます。",
+      "choiceExplanations": {
+        "1": "適当です。飲料水の水質は水道法に基づく水質基準との適合が求められます。",
+        "2": "適当です。地域保健法の環境衛生に関する保健所業務として、建築物環境衛生の相談指導等を行います。",
+        "3": "不適当です。保健所長の同意を建築確認の一律の要件とする規定ではありません。建築基準法の消防長又は消防署長の同意と混同しています。",
+        "4": "適当です。事務所が両法律の適用要件を満たすとき、一方の適用によって他方が一律に除外されるわけではありません。",
+        "5": "適当です。学校は建築物衛生法の特定用途に含まれます。特定建築物となるには別途規模要件を満たす必要があります。"
+      },
+      "hasRequiredFigure": false,
+      "sourceQuestionUrl": "https://www.jahmec.or.jp/kokka/shiken_pdf/2024/2024shiken_am.pdf",
+      "sourceQuestionPage": 9,
+      "sourceAnswerUrl": "https://www.jahmec.or.jp/kokka/shiken_pdf/2024/2024kizyun_seitou.pdf",
+      "sourceAnswerPage": 1,
+      "sourceQuestionSha256": "b788546847af935f8f068f0e0d2a5d5ea9ba302fa083a590ef4ffdd548a75aef",
+      "sourceAnswerSha256": "faebc327503541422b331d5e14ff47035cec23b6ef0fd1048f9d6cd8f3b9c54c",
+      "sourceAttribution": "出典：公益財団法人日本建築衛生管理教育センター 第54回（2024年）建築物環境衛生管理技術者試験 問題20。改行・空白・句読点及び単位表記を整理。組合せ表は列名付きテキストで表現。解説は独自作成。",
+      "explanationReferenceUrls": [
+        "https://www.mhlw.go.jp/web/t_doc?dataId=79071000",
+        "https://laws.e-gov.go.jp/law/325AC0000000201",
+        "https://www.mhlw.go.jp/web/t_doc?dataId=78301000"
+      ],
+      "transcription": "160dpi/PSM3 and 220dpi/PSM6 OCR compared against the rendered official page; line wraps, spacing and punctuation normalized; no figures required",
+      "needsIndependentReview": false,
+      "publicGo": false,
+      "contentReview": {
+        "status": "PASS",
+        "model": "gpt-6-astra",
+        "report": "reports/lq4c-20261104/independent-review12.md",
+        "scope": "PARTIAL_BATCH_NOT_FULL_QUALIFICATION"
+      }
+    }
+  ]
+}

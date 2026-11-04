@@ -1,0 +1,27 @@
+{
+  "status": "PASS",
+  "scope": "LQ4D_PARTIAL_BUILDING_HYGIENE_HANDOFF",
+  "auditedHead": "c87ff10b6",
+  "contentHead": "dfa7e4813",
+  "completedAt": "2026-11-03T19:21:44.215Z",
+  "newOriginals": 135,
+  "newChoiceExplanations": 675,
+  "acceptedBuildingOriginals": 180,
+  "remainingBuildingOriginals": 180,
+  "publicGo": false,
+  "report": "reports/lq4d-20261104/REPORT.md",
+  "externalReport": "C:/Users/kanet/Documents/Codex/2026-11-02/task-2/lq4d-report.md",
+  "reportSha256": "48c3ae4adf7f41fc1be27a903b8dfc6a97e8bbdadf221739bf7a6765f7be649c",
+  "independentAudit": {
+    "review": 17,
+    "modelCommand": "C:/Users/kanet/AppData/Roaming/npm/codex.cmd exec -m gpt-6-astra",
+    "exitCode": 0,
+    "prompt": "reports/lq4d-20261104/review17-prompt.txt",
+    "promptSha256": "43654640b7970c45b355f47abaa51689f3e3c4f5f857c4adc669b28a8d82e8f0",
+    "report": "reports/lq4d-20261104/independent-review17.md",
+    "reportSha256": "ecab5afb9ceae0c1aa7c0241cdef8d82330e3f265b68c26ebd5ea30b9538519c",
+    "rawLog": "C:/Users/kanet/AppData/Local/Temp/codex-work/lq4d-review17.log",
+    "rawLogSha256": "79c2d50108a0c745c6a5d15a74d2664aeddfe3b63e496f7cfad407a7b6538c44"
+  },
+  "preserveByteExactEvidence": "SHA結合済みの原稿・レビュー票・保存版・図は改行やMarkdown末尾空白を一括整形しない。"
+}
