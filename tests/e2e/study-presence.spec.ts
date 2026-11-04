@@ -40,7 +40,9 @@ async function expectGuidance(page: Page) {
   const suggestions = guidance.locator(".study-room-guidance li a");
   await expect(suggestions).toHaveCount(6);
   for (const link of await suggestions.all()) await expect(link).toHaveAttribute("href", /^\/(?!\/)/);
-  await expect(guidance.getByRole("link")).toHaveCount(7);
+  await expect(guidance.getByRole("link", { name: "資格を選んで1問始める", exact: true })).toHaveCount(2);
+  for (const link of await guidance.getByRole("link", { name: "資格を選んで1問始める", exact: true }).all()) await expect(link).toHaveAttribute("href", "/#choose-qualification");
+  await expect(guidance.getByRole("link")).toHaveCount(9);
   await expect(guidance.getByText(/実際の学習人数では|利用者個人や実際の行動/)).toHaveCount(0);
   await expect(guidance.getByRole("list", { name: "資格別の学習人数" })).toHaveCount(0);
   await expect(guidance.locator("time")).toHaveCount(0);
@@ -89,7 +91,8 @@ test("qualification presence is compact on desktop and mobile and distinguishes 
     await expect(region.getByRole("region", { name: "チワワと、ひと休み。", exact: true }).getByRole("button", { name: "チワワのひと休みを閉じる", exact: true })).toBeVisible();
     await expect(region.getByText(fallbackLabel, { exact: true })).toHaveCount(0);
     await expect(region.getByRole("link", { name: "資格から問題を探す", exact: true })).toBeVisible();
-    await expect(region.getByRole("link")).toHaveCount(7);
+    await expect(region.getByRole("link", { name: "資格を選んで1問始める", exact: true })).toHaveCount(2);
+    await expect(region.getByRole("link")).toHaveCount(9);
     await expectBounded(page);
 
     await show(page, { mode: "stale", snapshot: null, previous: fresh.snapshot, reason: "unavailable" });
