@@ -1,0 +1,114 @@
+{
+  "checkedOn": "2026-11-04",
+  "changes": [
+    {
+      "file": "data/qualification-staging/kenchikushi2/2026-III.ts",
+      "qNumber": 12,
+      "oldUrls": [
+        "https://www.mlit.go.jp/common/001855615.pdf"
+      ],
+      "newUrls": [
+        "https://www.mlit.go.jp/common/001769650.pdf"
+      ]
+    },
+    {
+      "file": "data/qualification-staging/kenchikushi2/2025-III.ts",
+      "qNumber": 11,
+      "oldUrls": [
+        "https://www.mlit.go.jp/common/001845916.pdf",
+        "https://www.mlit.go.jp/common/001855615.pdf"
+      ],
+      "newUrls": [
+        "https://www.mlit.go.jp/common/001845916.pdf"
+      ]
+    },
+    {
+      "file": "data/qualification-staging/kenchikushi2/2025-III.ts",
+      "qNumber": 12,
+      "oldUrls": [
+        "https://www.mlit.go.jp/common/001845916.pdf",
+        "https://www.mlit.go.jp/common/001855615.pdf"
+      ],
+      "newUrls": [
+        "https://www.mlit.go.jp/common/001845916.pdf"
+      ]
+    },
+    {
+      "file": "data/qualification-staging/kenchikushi2/mokuzo-2026-III.ts",
+      "qNumber": 15,
+      "oldUrls": [
+        "https://www.mlit.go.jp/common/001855615.pdf",
+        "https://www.mlit.go.jp/common/001855621.pdf"
+      ],
+      "newUrls": [
+        "https://www.mlit.go.jp/gobuild/content/001888858.pdf",
+        "https://jpma.jp/data/kouzou-3/kouzou-3-1_pr.pdf"
+      ]
+    },
+    {
+      "file": "data/qualification-staging/kenchikushi2/mokuzo-2026-III.ts",
+      "qNumber": 16,
+      "oldUrls": [
+        "https://www.mlit.go.jp/common/001855615.pdf",
+        "https://www.mlit.go.jp/common/001855621.pdf"
+      ],
+      "newUrls": [
+        "https://www.mlit.go.jp/common/001855621.pdf"
+      ]
+    },
+    {
+      "file": "data/qualification-staging/kenchikushi2/mokuzo-2026-IV.ts",
+      "qNumber": 9,
+      "oldUrls": [
+        "https://www.jaeic.or.jp/koshuannai/teikikoshu/teiki_inf.files/manual1008_ver3.pdf"
+      ],
+      "newUrls": [
+        "https://jpma.jp/data/kouzou-3/kouzou-3-1_pr.pdf",
+        "https://www.mlit.go.jp/gobuild/content/001888858.pdf"
+      ]
+    },
+    {
+      "file": "data/qualification-staging/kenchikushi2/mokuzo-2025-IV.ts",
+      "qNumber": 9,
+      "oldUrls": [
+        "https://www.mlit.go.jp/gobuild/content/001888858.pdf"
+      ],
+      "newUrls": [
+        "https://jpma.jp/data/kouzou-3/kouzou-3-1_pr.pdf",
+        "https://www.mlit.go.jp/gobuild/content/001888858.pdf"
+      ]
+    }
+  ],
+  "newReferenceChecks": [
+    {
+      "url": "https://jpma.jp/data/kouzou-3/kouzou-3-1_pr.pdf",
+      "httpStatus": 200,
+      "contentType": "application/pdf"
+    },
+    {
+      "url": "https://www.mlit.go.jp/common/001769650.pdf",
+      "httpStatus": 200,
+      "contentType": "application/pdf"
+    },
+    {
+      "url": "https://www.mlit.go.jp/common/001845916.pdf",
+      "httpStatus": 200,
+      "contentType": "application/pdf"
+    },
+    {
+      "url": "https://www.mlit.go.jp/common/001855621.pdf",
+      "httpStatus": 200,
+      "contentType": "application/pdf"
+    },
+    {
+      "url": "https://www.mlit.go.jp/gobuild/content/001888858.pdf",
+      "httpStatus": 200,
+      "contentType": "application/pdf"
+    }
+  ],
+  "notes": [
+    "本文・選択肢・正答・解説は変更せず、既知404の補助参照を到達可能な一次資料へ更新。",
+    "枠組壁の間隔・アンカー：国交省2024年第2版。合板耐力壁と床：日本合板工業組合連合会の構造用合板資料。一般床施工：国交省木造工事標準仕様書。",
+    "二級2025構造11・12は既存の到達可能な国交省資料001845916を保持し、404補助URLを削除。"
+  ]
+}

@@ -603,8 +603,7 @@ export const KENCHIKUSHI2_2025_III: readonly StagedKenchikushiQuestion[] = [
     "sourcePage": 7,
     "sourcePrintedPage": "構造 6",
     "officialReferenceUrls": [
-      "https://www.mlit.go.jp/common/001845916.pdf",
-      "https://www.mlit.go.jp/common/001855615.pdf"
+      "https://www.mlit.go.jp/common/001845916.pdf"
     ]
   },
   {
@@ -652,8 +651,7 @@ export const KENCHIKUSHI2_2025_III: readonly StagedKenchikushiQuestion[] = [
     "sourcePage": 8,
     "sourcePrintedPage": "構造 7",
     "officialReferenceUrls": [
-      "https://www.mlit.go.jp/common/001845916.pdf",
-      "https://www.mlit.go.jp/common/001855615.pdf"
+      "https://www.mlit.go.jp/common/001845916.pdf"
     ]
   },
   {

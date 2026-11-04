@@ -797,8 +797,8 @@ export const MOKUZO_2026_III: readonly StagedKenchikushiQuestion[] = [
     "sourcePage": 9,
     "sourcePrintedPage": "構造 8",
     "officialReferenceUrls": [
-      "https://www.mlit.go.jp/common/001855615.pdf",
-      "https://www.mlit.go.jp/common/001855621.pdf"
+      "https://www.mlit.go.jp/gobuild/content/001888858.pdf",
+      "https://jpma.jp/data/kouzou-3/kouzou-3-1_pr.pdf"
     ]
   },
   {
@@ -846,7 +846,6 @@ export const MOKUZO_2026_III: readonly StagedKenchikushiQuestion[] = [
     "sourcePage": 10,
     "sourcePrintedPage": "構造 9",
     "officialReferenceUrls": [
-      "https://www.mlit.go.jp/common/001855615.pdf",
       "https://www.mlit.go.jp/common/001855621.pdf"
     ]
   },

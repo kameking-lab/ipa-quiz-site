@@ -669,7 +669,7 @@ export const KENCHIKUSHI2_2026_III: readonly StagedKenchikushiQuestion[] = [
     "sourcePage": 8,
     "sourcePrintedPage": "構造 7",
     "officialReferenceUrls": [
-      "https://www.mlit.go.jp/common/001855615.pdf"
+      "https://www.mlit.go.jp/common/001769650.pdf"
     ]
   },
   {

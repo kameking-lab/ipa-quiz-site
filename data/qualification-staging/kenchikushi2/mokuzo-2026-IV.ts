@@ -432,7 +432,8 @@ export const MOKUZO_2026_IV: readonly StagedKenchikushiQuestion[] = [
     "sourcePage": 17,
     "sourcePrintedPage": "施工 16",
     "officialReferenceUrls": [
-      "https://www.jaeic.or.jp/koshuannai/teikikoshu/teiki_inf.files/manual1008_ver3.pdf"
+      "https://jpma.jp/data/kouzou-3/kouzou-3-1_pr.pdf",
+      "https://www.mlit.go.jp/gobuild/content/001888858.pdf"
     ]
   },
   {

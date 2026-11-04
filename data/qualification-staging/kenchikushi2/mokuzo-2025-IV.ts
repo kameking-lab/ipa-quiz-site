@@ -441,6 +441,7 @@ export const MOKUZO_2025_IV: readonly StagedKenchikushiQuestion[] = [
     "sourcePage": 16,
     "sourcePrintedPage": "施工 15",
     "officialReferenceUrls": [
+      "https://jpma.jp/data/kouzou-3/kouzou-3-1_pr.pdf",
       "https://www.mlit.go.jp/gobuild/content/001888858.pdf"
     ]
   },
