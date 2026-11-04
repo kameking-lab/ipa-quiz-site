@@ -18,3 +18,15 @@ OCRは転記照合の補助であり、原文の代わりにしない。
 一般利用規約に加えて、地図・空中写真等の測量成果の複製・使用に関する手続と
 第三者権利の確認は公開判断時に別途必要。未公開収録は転載許可済みという意味ではない。
 法令・作業規程等は出題時点のものと現行のものを混同しない。
+
+検証:
+
+```powershell
+pnpm validate:questions --staging=sokuryoshi
+pnpm typecheck
+pnpm exec vitest run __tests__/questions/sokuryoshi-staging.test.ts __tests__/questions/qualification-expansion.test.ts __tests__/exam-catalog-browser.test.tsx __tests__/survey-assistant-candidate.test.ts
+```
+
+午後の公式解答例は採点基準の全体ではない。記述・作図の一例として原文画像を保持し、
+択一正答や完全一致による自動採点へ変換しない。`needsReview=true`は人手による
+最終原本・根拠確認前の公開を防ぐために維持する。

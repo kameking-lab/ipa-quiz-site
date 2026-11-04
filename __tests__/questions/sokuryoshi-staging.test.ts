@@ -81,4 +81,30 @@ describe("sokuryoshi: two complete private source-image rounds", () => {
     const files = readdirSync(join(process.cwd(),"data/qualification-staging/sokuryoshi"),{recursive:true});
     expect(files.filter(f=>String(f).endsWith(".pdf"))).toEqual([]);
   });
+
+  it("locks the reviewed calculation and subquestion mappings to the official examples", () => {
+    const find = (year: number, session: string, number: number) => SOKURYOSHI_STAGED_QUESTIONS.find(
+      q=>q.year===year&&q.session===session&&q.officialQuestionNumber===number,
+    )!;
+    const uav = find(2026,"am",20);
+    expect(uav.officialAnswerNumber).toBe(3);
+    expect(uav.explanation).toContain("45度以上");
+    expect(uav.choices![2].explanation).toContain("全て正しい");
+    expect(uav.choices![4].explanation).toContain("数値写真");
+    // Independently solve equal triangle areas; the diagram's 150 degrees is an exterior angle.
+    const ap = 37*74/(74*Math.cos(Math.PI/6)+37*Math.sin(Math.PI/6));
+    expect(ap).toBeCloseTo(33.1529,3);
+    const boundary = find(2026,"am",27);
+    expect(boundary.explanation).toContain("148/(2√3+1)");
+    expect(boundary.explanation).toContain("∠PAB=30度");
+    const section = (year: number, number: number, label: string) => find(year,"pm",number).explanationSections!.find(s=>s.label===label)!.text;
+    for (const [label, value] of [["問A-1","1820m"],["問A-2","8コース"],["問A-3","248枚"],["問A-4","2100m"]]) {
+      expect(section(2025,3,label)).toContain(value);
+    }
+    expect(section(2025,3,"問B-4")).toContain("3460m以下");
+    expect(section(2025,2,"問B-3")).toContain("1.5km");
+    expect(section(2025,2,"問A-4")).toContain("全ての既知点");
+    expect(section(2026,1,"問D-2")).toContain("新技術を公共測量に用いる際");
+    expect(section(2026,3,"問C-1")).toContain("aは○");
+  });
 });

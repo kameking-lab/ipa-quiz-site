@@ -8,6 +8,7 @@ import { NativeBDataSchema, nativeBQuestionIssue } from "../lib/questions/native
  *   pnpm validate:questions                  # 全試験
  *   pnpm validate:questions --exam=ap        # AP のみ
  *   pnpm validate:questions --exam=ap,fe     # AP + FE
+ *   pnpm validate:questions --staging=sokuryoshi # 非公開の測量士原本・解説
  *   pnpm validate:questions --report         # docs/QUESTION_QUALITY.md を生成
  *   pnpm validate:questions --fix            # 自動修正可能な問題のみ報告
  */
