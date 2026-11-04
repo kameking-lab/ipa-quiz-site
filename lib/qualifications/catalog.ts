@@ -43,6 +43,15 @@ export interface QualificationCatalogEntry {
  * 「公式に問題と正答がある」だけでは live にせず、転載条件まで確認する。
  */
 export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
+{
+    slug: "kukaku-seiri", shortName: "土地区画整理士（学科）", fullName: "土地区画整理士技術検定（学科試験）",
+    domain: "construction", administrator: "一般財団法人全国建設研修センター",
+    officialQuestionsUrl: "https://www.jctc.jp/mondai/", officialReuseTermsUrl: "https://www.jctc.jp/mondai/",
+    status: "terms-review-required", stagingDataPath: "data/qualification-staging/kukaku-seiri",
+    reuseSummary: "未公開の部分収録。2026年度学科40原問・公式正答・全160肢の独自解説草稿・原本図表を保存。2025年度は公式正答のみで問題本文は未取得のため、直近2回完備ではありません。再利用条件の確認は未完了です。",
+    attributionTemplate: "出典：一般財団法人全国建設研修センター 令和○年度土地区画整理士技術検定 学科 No.○。解説は過去問AIの独自作成。",
+    remainingWork: ["2025年度学科問題40問の公式原本確保・全肢解説・図表収録", "原文・解説の人手最終確認", "再利用条件の確認及び公開可否の判断"],
+},
 {"slug":"keiryoshi","examCode":"keiryoshi","shortName":"一般計量士","fullName":"一般計量士","domain":"construction","administrator":"経済産業省","officialQuestionsUrl":"https://www.meti.go.jp/policy/economy/hyojun/techno_infra/keiryoshi.html","officialReuseTermsUrl":"https://www.meti.go.jp/main/rules.html","status":"live","reuseSummary":"第76回（令和7年実施）のみ100問を収録。第75回は未収録で、2回分の全問収録ではありません。出題時点の法令・基準に基づく全肢解説を確認できます。","remainingWork":["第75回は未収録"]},
 {"slug":"keiryoshi-nodo","examCode":"keiryoshi-nodo","shortName":"環境計量士（濃度関係）","fullName":"環境計量士（濃度関係）","domain":"construction","administrator":"経済産業省","officialQuestionsUrl":"https://www.meti.go.jp/policy/economy/hyojun/techno_infra/keiryoshi.html","officialReuseTermsUrl":"https://www.meti.go.jp/main/rules.html","status":"live","reuseSummary":"第76回（令和7年実施）のみ100問を収録。第75回は未収録で、2回分の全問収録ではありません。出題時点の法令・基準に基づく全肢解説を確認できます。","remainingWork":["第75回は未収録"]},
 {"slug":"keiryoshi-soon","examCode":"keiryoshi-soon","shortName":"環境計量士（騒音・振動関係）","fullName":"環境計量士（騒音・振動関係）","domain":"construction","administrator":"経済産業省","officialQuestionsUrl":"https://www.meti.go.jp/policy/economy/hyojun/techno_infra/keiryoshi.html","officialReuseTermsUrl":"https://www.meti.go.jp/main/rules.html","status":"live","reuseSummary":"第76回（令和7年実施）のみ100問を収録。第75回は未収録で、2回分の全問収録ではありません。出題時点の法令・基準に基づく全肢解説を確認できます。","remainingWork":["第75回は未収録"]},

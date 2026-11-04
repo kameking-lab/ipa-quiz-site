@@ -14,8 +14,21 @@
 
 解説は独自作成の編集草稿。`needsReview=true` を保持する。法令基準日の一律指定は公式問題・受検の手引で確認できず、日付を推定しない。出題時点の問題として扱う。公開閲覧と転載許諾を同一視せず、再利用条件の確認・2025年度原本確保・人手最終確認を公開前の残作業とする。
 
+法令の条項、国交省の運用指針、福岡市の土地評価基準等を解説参照先に記録した。自治体の地区別基準は手法の適用例であり、全国一律の基準とは扱わない。問6・10・17・22・24・30等には公式問題と正答を出発点に整理した技術的解説を含み、参照URLの取得成功が全解説の専門的な正しさを保証するわけではない。
+
 ## 再開・再生成
 
 通常GETで取得したPDFを一時ディレクトリに置き、`python scripts/ingest-kukaku-seiri.py <一時ディレクトリ>` で再生成する。PyMuPDFが必要。ダウンロード原本・抽出草稿はコミットしない。取得日時・HTTP状態・SHA256・ページ番号・切出し座標は各manifestに保存する。
 
 2025年度問題が公式で取得可能になった場合、まず本文40問・図表・共通指示を取得し、正答は保存済みの公式40件と再照合する。全肢解説を追加し、検証・独立レビュー後に `twoRoundComplete` を見直す。
+
+## 検証
+
+```powershell
+pnpm validate:questions --exam=kukaku-seiri
+pnpm typecheck
+pnpm exec vitest run __tests__/questions/kukaku-seiri-staging.test.ts __tests__/questions/qualification-expansion.test.ts
+python scripts/audit-kukaku-seiri.py <一時PDFディレクトリ> reports/cq7-20261104/original-audit.json
+```
+
+検証コマンドは取得済み2026年度40問を検証し、2025年度の未収録と `twoRoundComplete=false` を明示する。独立原文監査はPyMuPDFとは別のpdfplumber/pdfminerを使い、印刷余白を含むMediaBoxからCropBoxへの座標変換を考慮している。問24以外39問の文字列と両年度の公式正答表を照合し、全問の文字が画像に収まることも検証する。
