@@ -42,6 +42,14 @@ export function questionSourceEdition(q: Pick<Question, "year" | "season" | "sou
   }
   if (q.exam === "shinrishi" && q.year === 2025) return "第8回（2025年3月2日実施）";
   if (q.exam === "shinrishi" && q.year === 2026) return "第9回（2026年3月1日実施）";
+  if (q.year === 2024 && q.season === "annual" &&
+      /^https:\/\/www\.meti\.go\.jp\/policy\/economy\/hyojun\/techno_infra\/[1-8]_R06(?:kanka|kanbutsu|kannou|kanon|houki|kanri|ichiki|keishitsu)\.pdf$/.test(q.sourcePdfUrl)) {
+    return "第75回（令和6年12月実施）";
+  }
+  if (q.year === 2025 && q.season === "annual" &&
+      /^https:\/\/www\.meti\.go\.jp\/policy\/economy\/hyojun\/techno_infra\/00_download\/[1-8]_R07(?:kanka|kanbutsu|kannou|kanon|houki|kanri|ichiki|keishitsu)\.pdf$/.test(q.sourcePdfUrl)) {
+    return "第76回（令和7年12月実施）";
+  }
   if (q.exam === "riku-tech1" && q.season === "july") return `${q.year}年7月試験`;
   if (q.exam === "shika-ishi" && q.season === "annual" && (q.year === 2025 || q.year === 2026)) {
     return `第${q.year - 1907}回（${q.year}年実施）`;

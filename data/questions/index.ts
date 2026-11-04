@@ -7,6 +7,7 @@ import { JKEN_SYSTEM_QUESTIONS } from "./jken-system";
 import { YAMAGUCHI_CHORI_QUESTIONS } from "./yamaguchi-chori";
 import { YAMAGUCHI_SEIKA_QUESTIONS } from "./yamaguchi-seika";
 import { YAMAGUCHI_FUGU_QUESTIONS } from "./yamaguchi-fugu";
+import { getKeiryoshiCandidates } from "./keiryoshi";
 import type { ExamCode, Question } from "@/lib/questions/types";
 import { isPracticeReadyQuestion } from "@/lib/questions/filter";
 import { CHOSASHI_QUESTIONS } from "./chosashi";
@@ -160,6 +161,10 @@ export const QUESTIONS_BY_EXAM: Partial<Record<ExamCode, Question[]>> = {
   ...(isExamPublished("khk-reito-2") ? { "khk-reito-2": KHK_REITO_2_QUESTIONS.filter(isPracticeReadyQuestion) } : {}),
   ...(isExamPublished("khk-reito-1") ? { "khk-reito-1": KHK_REITO_1_QUESTIONS.filter(isPracticeReadyQuestion) } : {}),
   ...(isExamPublished("sekou-kenchiku2") ? { "sekou-kenchiku2": SEKOU_KENCHIKU2_QUESTIONS } : {}),
+  ...(isExamPublished("keiryoshi") ? { "keiryoshi": getKeiryoshiCandidates("keiryoshi") } : {}),
+  ...(isExamPublished("keiryoshi-nodo") ? { "keiryoshi-nodo": getKeiryoshiCandidates("keiryoshi-nodo") } : {}),
+  ...(isExamPublished("keiryoshi-soon") ? { "keiryoshi-soon": getKeiryoshiCandidates("keiryoshi-soon") } : {}),
+
   ...(isExamPublished("kanteishi") ? { kanteishi: KANTEISHI_QUESTIONS.filter(isPracticeReadyQuestion) } : {}),
   ...(isExamPublished("kaikeishi") ? { kaikeishi: KAIKEISHI_QUESTIONS.filter(isPracticeReadyQuestion) } : {}),
   ...(isExamPublished("riku-tech2") ? { "riku-tech2": RIKU_TECH2_QUESTIONS.filter(isPracticeReadyQuestion) } : {}),

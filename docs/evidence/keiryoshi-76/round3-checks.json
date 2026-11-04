@@ -1,0 +1,113 @@
+{
+  "checkedAt": "2026-11-03",
+  "checks": [
+    {
+      "command": "pnpm validate:questions",
+      "exitCode": 0,
+      "outputTail": "[WARN] keiryoshi-soon-2025-annual-measurement-management-q10: explanation < 50文字 (34字)\n[WARN] keiryoshi-soon-2025-annual-measurement-management-q11: explanation < 50文字 (45字)\n[WARN] keiryoshi-soon-2025-annual-measurement-management-q13: explanation < 50文字 (41字)\n[WARN] keiryoshi-soon-2025-annual-measurement-management-q14: explanation < 50文字 (44字)\n[WARN] keiryoshi-soon-2025-annual-measurement-management-q15: explanation < 50文字 (38字)\n[WARN] keiryoshi-soon-2025-annual-measurement-management-q17: explanation < 50文字 (48字)\n[WARN] keiryoshi-soon-2025-annual-measurement-management-q20: explanation < 50文字 (34字)\n[WARN] keiryoshi-soon-2025-annual-measurement-management-q21: explanation < 50文字 (35字)\n[WARN] keiryoshi-soon-2025-annual-measurement-management-q22: explanation < 50文字 (37字)\n[WARN] keiryoshi-soon-2025-annual-measurement-management-q23: explanation < 50文字 (46字)\n\nValidated 26744 questions. ok=26744 fail=0 warn=16956",
+      "fullExecutionOutputSha256": "95816c23f40686227e17465c2d929919d35bb55ec143047addc1a7891a2f9f4f"
+    },
+    {
+      "command": "NODE_OPTIONS=--max-old-space-size=8192 pnpm typecheck",
+      "exitCode": 0,
+      "outputTail": "\n> ipa-quiz-site@1.0.0 typecheck /home/user/ipa-quiz-site\n> tsc --noEmit\n",
+      "fullExecutionOutputSha256": "0dc697c8d01e3a91a42cd2e956526811e66ef4fa69bbcdd5bdc3cf176986b67e"
+    },
+    {
+      "command": "npx vitest run __tests__/keiryoshi-staging.test.ts __tests__/seo",
+      "exitCode": 0,
+      "outputTail": " ✓ __tests__/seo/exam-success-story-disclosure.test.ts (1 test) 4ms\n ✓ __tests__/seo/blog-cta-label-in-name.test.ts (1 test) 4ms\n ✓ __tests__/seo/streak-og-image.test.tsx (4 tests) 357ms\n ✓ __tests__/seo/ipa-title-dedup.test.ts (1 test) 4ms\n\n Test Files  111 passed (111)\n      Tests  597 passed (597)\n   Start at  18:54:17\n   Duration  99.18s (transform 27.34s, setup 7.58s, collect 179.76s, tests 16.36s, environment 52.81s, prepare 10.46s)\n\n prepare 13.65s)\n",
+      "fullExecutionOutputSha256": "0267f54d3d269007fe29db895c2ba02307d3866c146151fd769fb2fdaf37dcd8"
+    },
+    {
+      "command": "python3 scripts/verify-keiryoshi-source.py",
+      "exitCode": 0,
+      "outputTail": "  \"pdfHashesVerified\": 9,\n  \"officialAnswersVerified\": 200,\n  \"sourceQuestions\": 200,\n  \"choiceExplanations\": 1000,\n  \"qualificationQuestionCounts\": {\n    \"keiryoshi\": 100,\n    \"keiryoshi-nodo\": 100,\n    \"keiryoshi-soon\": 100\n  },\n  \"figuresVerified\": 36,\n  \"scope\": \"source-data audit only; pnpm validation/typecheck/tests are separate\"\n}",
+      "fullExecutionOutputSha256": "38403c85e46908f5bdb4f91adfeab323e09a7261102e5672b4a48d4a84534a0e"
+    },
+    {
+      "command": "python3 docs/evidence/keiryoshi-76/figure-pixel-audit.py",
+      "exitCode": 0,
+      "result": {
+        "images": 36,
+        "pixelEqual": 36,
+        "contained": 36,
+        "originalKnownMissing": 5,
+        "originalCoordinatesUnknown": 3
+      }
+    },
+    {
+      "command": "python3 docs/evidence/keiryoshi-76/verify-full-audit.py",
+      "exitCode": 0,
+      "result": "all 1200 fields covered; 506 residual fields have exact recorded dispositions; all source/data/evidence hashes current"
+    },
+    {
+      "command": "git diff --check",
+      "exitCode": 0
+    }
+  ],
+  "changedPaths": [
+    "data/questions/keiryoshi/2025-houki.json",
+    "data/questions/keiryoshi/2025-kanbutsu.json",
+    "data/questions/keiryoshi/2025-kanri.json",
+    "data/questions/keiryoshi/2025-keishitsu.json",
+    "docs/evidence/keiryoshi-76/figure-crops.json",
+    "docs/evidence/keiryoshi-76/transcription-ledger.json",
+    "docs/evidence/keiryoshi-76/typography-review.json",
+    "docs/evidence/keiryoshi-76/typography-scan.json",
+    "public/images/questions/keiryoshi/ichiki-q13.png",
+    "public/images/questions/keiryoshi/ichiki-q14.png",
+    "public/images/questions/keiryoshi/ichiki-q15.png",
+    "public/images/questions/keiryoshi/ichiki-q16.png",
+    "public/images/questions/keiryoshi/ichiki-q17.png",
+    "public/images/questions/keiryoshi/ichiki-q20.png",
+    "public/images/questions/keiryoshi/ichiki-q6.png",
+    "public/images/questions/keiryoshi/kanbutsu-q10.png",
+    "public/images/questions/keiryoshi/kanbutsu-q11.png",
+    "public/images/questions/keiryoshi/kanbutsu-q13.png",
+    "public/images/questions/keiryoshi/kanbutsu-q14.png",
+    "public/images/questions/keiryoshi/kanbutsu-q16.png",
+    "public/images/questions/keiryoshi/kanbutsu-q18.png",
+    "public/images/questions/keiryoshi/kanbutsu-q20.png",
+    "public/images/questions/keiryoshi/kanbutsu-q21.png",
+    "public/images/questions/keiryoshi/kanbutsu-q22.png",
+    "public/images/questions/keiryoshi/kanbutsu-q23.png",
+    "public/images/questions/keiryoshi/kanbutsu-q6.png",
+    "public/images/questions/keiryoshi/kanbutsu-q7.png",
+    "public/images/questions/keiryoshi/kanbutsu-q8.png",
+    "public/images/questions/keiryoshi/kanka-q11.png",
+    "public/images/questions/keiryoshi/kanka-q13.png",
+    "public/images/questions/keiryoshi/kanka-q18.png",
+    "public/images/questions/keiryoshi/kanka-q9.png",
+    "public/images/questions/keiryoshi/kanon-q14.png",
+    "public/images/questions/keiryoshi/kanon-q22.png",
+    "public/images/questions/keiryoshi/kanon-q5.png",
+    "public/images/questions/keiryoshi/kanri-q16.png",
+    "public/images/questions/keiryoshi/kanri-q20.png",
+    "public/images/questions/keiryoshi/kanri-q8.png",
+    "public/images/questions/keiryoshi/keishitsu-q15.png",
+    "public/images/questions/keiryoshi/keishitsu-q18.png",
+    "public/images/questions/keiryoshi/keishitsu-q20.png",
+    "public/images/questions/keiryoshi/keishitsu-q23.png",
+    "public/images/questions/keiryoshi/keishitsu-q5.png",
+    "public/images/questions/keiryoshi/keishitsu-q7.png",
+    "docs/evidence/keiryoshi-76/figure-pixel-audit.json",
+    "docs/evidence/keiryoshi-76/figure-pixel-audit.py",
+    "docs/evidence/keiryoshi-76/full-text-audit.json",
+    "docs/evidence/keiryoshi-76/full-text-audit.py",
+    "docs/evidence/keiryoshi-76/round3-full-audit.md",
+    "docs/evidence/keiryoshi-76/text-before-corrections.json",
+    "docs/evidence/keiryoshi-76/text-difference-review.json",
+    "docs/evidence/keiryoshi-76/text-difference-review.py",
+    "docs/evidence/keiryoshi-76/text-differences.md",
+    "docs/evidence/keiryoshi-76/text-field-regions.json",
+    "docs/evidence/keiryoshi-76/verify-full-audit.py"
+  ],
+  "allowedChangeScope": [
+    "data/questions/keiryoshi/",
+    "docs/evidence/keiryoshi-76/",
+    "public/images/questions/keiryoshi/"
+  ],
+  "commitsCreated": 0,
+  "pushesPerformed": 0
+}

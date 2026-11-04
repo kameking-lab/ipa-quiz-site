@@ -396,6 +396,55 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     remainingWork: ["監督役による独立レビューと公開判断"],
   },
   {
+    "slug": "keiryoshi",
+    "examCode": "keiryoshi",
+    "shortName": "一般計量士",
+    "fullName": "一般計量士国家試験",
+    "domain": "safety",
+    "administrator": "経済産業省",
+    "officialQuestionsUrl": "https://www.meti.go.jp/policy/economy/hyojun/techno_infra/23_kakomon.html",
+    "officialReuseTermsUrl": "https://www.meti.go.jp/main/rules.html",
+    "status": "ready-to-ingest",
+    "reuseSummary": "オーナー権利確認済み。第76回・第75回（2025・2024年）の公式問題・正答に基づき各資格200問を未公開ステージングに収録。第76回の公式訂正を反映。解説は独自作成。",
+    "remainingWork": [
+      "第75回の監督役による独立レビューと公開判断"
+    ],
+    "attributionTemplate": "出典：経済産業省 第76回・第75回計量士国家試験 問題・正答（第76回は訂正版）。テキスト化・図の切り出しは過去問AI、解説は独自作成。"
+  },
+  {
+    "slug": "keiryoshi-nodo",
+    "examCode": "keiryoshi-nodo",
+    "shortName": "環境計量士（濃度関係）",
+    "fullName": "環境計量士（濃度関係）国家試験",
+    "domain": "safety",
+    "administrator": "経済産業省",
+    "officialQuestionsUrl": "https://www.meti.go.jp/policy/economy/hyojun/techno_infra/23_kakomon.html",
+    "officialReuseTermsUrl": "https://www.meti.go.jp/main/rules.html",
+    "status": "ready-to-ingest",
+    "reuseSummary": "オーナー権利確認済み。第76回・第75回（2025・2024年）の公式問題・正答に基づき各資格200問を未公開ステージングに収録。第76回の公式訂正を反映。解説は独自作成。",
+    "remainingWork": [
+      "第75回の監督役による独立レビューと公開判断"
+    ],
+    "attributionTemplate": "出典：経済産業省 第76回・第75回計量士国家試験 問題・正答（第76回は訂正版）。テキスト化・図の切り出しは過去問AI、解説は独自作成。"
+  },
+  {
+    "slug": "keiryoshi-soon",
+    "examCode": "keiryoshi-soon",
+    "shortName": "環境計量士（騒音・振動関係）",
+    "fullName": "環境計量士（騒音・振動関係）国家試験",
+    "domain": "safety",
+    "administrator": "経済産業省",
+    "officialQuestionsUrl": "https://www.meti.go.jp/policy/economy/hyojun/techno_infra/23_kakomon.html",
+    "officialReuseTermsUrl": "https://www.meti.go.jp/main/rules.html",
+    "status": "ready-to-ingest",
+    "reuseSummary": "オーナー権利確認済み。第76回・第75回（2025・2024年）の公式問題・正答に基づき各資格200問を未公開ステージングに収録。第76回の公式訂正を反映。解説は独自作成。",
+    "remainingWork": [
+      "第75回の監督役による独立レビューと公開判断"
+    ],
+    "attributionTemplate": "出典：経済産業省 第76回・第75回計量士国家試験 問題・正答（第76回は訂正版）。テキスト化・図の切り出しは過去問AI、解説は独自作成。"
+  },
+
+  {
     slug: "kanteishi", examCode: "kanteishi", shortName: "不動産鑑定士", fullName: "不動産鑑定士試験（短答式）",
     domain: "real-estate", administrator: "国土交通省",
     officialQuestionsUrl: "https://www.mlit.go.jp/totikensangyo/kanteishi/content/002001126.pdf",

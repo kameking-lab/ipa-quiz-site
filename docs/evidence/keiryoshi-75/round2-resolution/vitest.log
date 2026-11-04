@@ -1,0 +1,135 @@
+
+ RUN  v3.2.4 /home/user/ipa-quiz-site
+
+ ✓ __tests__/seo/exam-topic-link-resolvability.test.ts (4 tests) 3259ms
+   ✓ examTopicPageExists gates /q topic links to resolvable pages > examTopicPageExists agrees with the topic route's static params for every (exam, category)  413ms
+   ✓ examTopicPageExists gates /q topic links to resolvable pages > at least one rendered question is gated to plain text (the branch is real)  2831ms
+ ✓ __tests__/seo/sitemap-resolvability.test.ts (8 tests) 2427ms
+   ✓ sitemap data-driven URLs all resolve (no 404s emitted) > all safety exam papers in the main sitemap contain playable questions  802ms
+   ✓ sitemap data-driven URLs all resolve (no 404s emitted) > every question URL resolves to an answerable, non-needsReview question  822ms
+   ✓ sitemap data-driven URLs all resolve (no 404s emitted) > every exam hub / year-season / category URL resolves  764ms
+ ✓ __tests__/seo/sitemap-static-indexable.test.ts (8 tests) 5002ms
+   ✓ sitemap が載せる具象 static ルートは全て indexable（noindex 矛盾なし） > どの具象 static ルートも robots:noindex ではない  4747ms
+ ✓ __tests__/seo/denken-year-archive-links.test.tsx (9 tests) 2171ms
+   ✓ dedicated electrical-exam hubs link to existing year archives > denken3 links exactly its practice-ready years, with a return link  1300ms
+   ✓ dedicated electrical-exam hubs link to existing year archives > denken2 links exactly its practice-ready years, with a return link  388ms
+ ✓ __tests__/seo/sitemap-render.test.ts (34 tests) 2156ms
+   ✓ renderQuestionsSitemapChunkXml pagination > partitions all indexable questions across chunks without loss or overlap  450ms
+ ✓ __tests__/seo/qualification-study-guide-relevance.test.tsx (8 tests) 1922ms
+   ✓ qualification study-guide promises > omits misleading IPA fallback guides on kanri  634ms
+ ✓ __tests__/keiryoshi-staging.test.ts (7 tests) 969ms
+   ✓ 第76回計量士・未公開ステージング > 通常の一覧・同期/非同期ローダー・ID指定から公開前データを取得させない  748ms
+ ✓ __tests__/seo/qualification-coverage-copy.test.tsx (6 tests) 1139ms
+   ✓ learner-facing qualification coverage > includes both restored table questions in the current exercise count  1122ms
+ ✓ __tests__/seo/question-sequential-nav.test.ts (7 tests) 1100ms
+   ✓ /q 前後ナビ — リンク先は実在問題のみ (no 404) > サンプル各回の prev/next は全て実在する問題ページへ解決する  941ms
+ ✓ __tests__/seo/year-common-title.test.ts (2 tests) 584ms
+   ✓ common morning-I year pages > distinguishes each exam context without claiming specialist questions  577ms
+ ✓ __tests__/seo/question-canonical.test.ts (6 tests) 1060ms
+   ✓ morning-I canonical representative > lists every representative and no exact-duplicate alias in the sitemap pool  996ms
+ ✓ __tests__/seo/topic-link-href.test.ts (3 tests) 331ms
+ ✓ __tests__/seo/topics-no-needsreview.test.ts (2 tests) 291ms
+ ✓ __tests__/seo/blog-faq-jsonld.test.ts (6 tests) 171ms
+ ✓ __tests__/seo/topics-static-params.test.ts (2 tests) 155ms
+ ✓ __tests__/seo/exam-meta-description.test.ts (12 tests) 277ms
+ ✓ __tests__/seo/nonblog-external-ipa-link-health.test.ts (7 tests) 55ms
+ ✓ __tests__/seo/essay-flagship-jsonld.test.ts (16 tests) 112ms
+ ✓ __tests__/seo/exam-data-invariants.test.ts (13 tests) 46ms
+ ✓ __tests__/seo/gogo-kijutsu-buhanten-funnel.test.ts (5 tests) 31ms
+ ✓ __tests__/seo/question-counts.test.ts (5 tests) 50ms
+ ✓ __tests__/seo/question-jsonld.test.ts (10 tests) 38ms
+ ✓ __tests__/seo/no-hardcoded-counts.test.ts (6 tests) 80ms
+ ✓ __tests__/seo/cbt-toujitsu-nagare-funnel.test.ts (5 tests) 37ms
+ ✓ __tests__/seo/indexnow.test.ts (13 tests) 17ms
+ ✓ __tests__/seo/blog-external-link-allowlist.test.ts (3 tests) 37ms
+ ✓ __tests__/seo/ipa-shiken-fukusuu-kubun-juken-funnel.test.ts (6 tests) 16ms
+ ✓ __tests__/seo/fe-kamoku-b-kakomon-funnel.test.ts (5 tests) 16ms
+ ✓ __tests__/seo/exam-meta-grouping.test.ts (8 tests) 9ms
+ ✓ __tests__/seo/electrical-paper-metadata.test.ts (2 tests) 25ms
+ ✓ __tests__/seo/fe-kamoku-b-sort-trace-funnel.test.ts (7 tests) 15ms
+ ✓ __tests__/seo/gogo-kaitourei-jiko-saiten-funnel.test.ts (6 tests) 34ms
+ ✓ __tests__/seo/blog-feed-xml.test.ts (10 tests) 27ms
+ ✓ __tests__/seo/fe-kamoku-b-renketsu-list-funnel.test.ts (7 tests) 15ms
+ ✓ __tests__/seo/koudo-ronbun-jikan-haibun-funnel.test.ts (6 tests) 22ms
+ ✓ __tests__/seo/sg-goukaku-ten-irt-funnel.test.ts (5 tests) 18ms
+ ✓ __tests__/seo/koudo-gozen1-taisaku-funnel.test.ts (6 tests) 30ms
+ ✓ __tests__/seo/fe-kamoku-b-trace-renshu-funnel.test.ts (7 tests) 17ms
+ ✓ __tests__/seo/kamoku-goukaku-nai-funnel.test.ts (5 tests) 15ms
+ ✓ __tests__/seo/fe-kamoku-b-tree-trace-funnel.test.ts (7 tests) 17ms
+ ✓ __tests__/seo/fe-kamoku-b-stack-queue-funnel.test.ts (7 tests) 19ms
+ ✓ __tests__/seo/fe-kamoku-b-saiki-trace-funnel.test.ts (7 tests) 16ms
+ ✓ __tests__/seo/fe-kamoku-b-gijigengo-kihou-funnel.test.ts (8 tests) 50ms
+ ✓ __tests__/seo/ipa-gozen1-menjo-jouken-funnel.test.ts (5 tests) 27ms
+ ✓ __tests__/seo/fe-kamoku-b-security-funnel.test.ts (6 tests) 29ms
+ ✓ __tests__/seo/fe-kamoku-b-nibun-tansaku-funnel.test.ts (7 tests) 37ms
+ ✓ __tests__/seo/koudo-goukaku-ten-ashikiri-funnel.test.ts (5 tests) 29ms
+ ✓ __tests__/seo/cbt-goukaku-happyou-funnel.test.ts (5 tests) 16ms
+ ✓ __tests__/seo/ipa-juken-shikaku-nenrei-funnel.test.ts (5 tests) 18ms
+ ✓ __tests__/seo/fe-kamoku-a-menjo-funnel.test.ts (6 tests) 45ms
+ ✓ __tests__/seo/ap-benkyou-jikan-meyasu-funnel.test.ts (5 tests) 36ms
+ ✓ __tests__/seo/koudo-ronbun-hyouka-rank-funnel.test.ts (5 tests) 27ms
+ ✓ __tests__/seo/robots.test.ts (8 tests) 18ms
+ ✓ __tests__/seo/sg-kamoku-b-jirei-mondai-funnel.test.ts (5 tests) 28ms
+ ✓ __tests__/seo/essays-exam-soft-404.test.ts (7 tests) 8ms
+ ✓ __tests__/seo/success-stories-soft-404.test.ts (4 tests) 6ms
+ ✓ __tests__/seo/denko2-meta-context.test.ts (1 test) 27ms
+ ✓ __tests__/seo/cpu-seinou-keisan-lp.test.ts (3 tests) 10ms
+ ✓ __tests__/seo/johoryo-huffman-keisan-lp.test.ts (3 tests) 12ms
+ ✓ __tests__/seo/blog-practice-cta.test.ts (7 tests) 18ms
+ ✓ __tests__/seo/question-url.test.ts (9 tests) 33ms
+ ✓ __tests__/seo/safety-qualification-hubs.test.ts (4 tests) 17ms
+ ✓ __tests__/seo/cbt-vs-pbt-koudo-cbt-transition.test.ts (5 tests) 6ms
+ ✓ __tests__/seo/goukaku-shoumeisho-koufu-funnel.test.ts (6 tests) 20ms
+ ✓ __tests__/seo/juken-tokubetsu-sochi-funnel.test.ts (6 tests) 20ms
+ ✓ __tests__/seo/cache-jikkou-access-lp.test.ts (3 tests) 13ms
+ ✓ __tests__/seo/health-check-expectations.test.ts (7 tests) 17ms
+ ✓ __tests__/seo/structured-data.test.ts (6 tests) 7ms
+ ✓ __tests__/seo/gyoushu-essay-flagship-funnel.test.ts (6 tests) 7ms
+ ✓ __tests__/seo/fe-hub-kamoku-b-cta.test.ts (2 tests) 11ms
+ ✓ __tests__/seo/question-meta.test.ts (7 tests) 19ms
+ ✓ __tests__/seo/kakuritsu-kitaichi-keisan-lp.test.ts (3 tests) 6ms
+ ✓ __tests__/seo/nendaibetsu-roadmap-reskilling.test.ts (4 tests) 18ms
+ ✓ __tests__/seo/ronjutsu-stub-essay-flagship-funnel.test.ts (6 tests) 15ms
+ ✓ __tests__/seo/recommended-books-essay-flagship-cta.test.ts (6 tests) 8ms
+ ✓ __tests__/seo/zenkubun-hikaku-shiken-jikan.test.ts (5 tests) 14ms
+ ✓ __tests__/seo/ronri-enzan-keisan-lp.test.ts (3 tests) 5ms
+ ✓ __tests__/seo/label-in-name-misc.test.ts (4 tests) 6ms
+ ✓ __tests__/seo/fukushousuten-gosa-keisan-lp.test.ts (3 tests) 17ms
+ ✓ __tests__/seo/machi-gyoretsu-keisan-lp.test.ts (3 tests) 12ms
+ ✓ __tests__/seo/remote-juken-cbt-transition.test.ts (6 tests) 17ms
+ ✓ __tests__/seo/hosuu-keisan-lp.test.ts (3 tests) 9ms
+ ✓ __tests__/seo/blog-quota-copy-sync.test.ts (2 tests) 6ms
+ ✓ __tests__/seo/keyword-article-publisher.test.ts (4 tests) 16ms
+ ✓ __tests__/seo/home-metadata.test.ts (6 tests) 19ms
+ ✓ __tests__/seo/page-og-image.test.ts (3 tests) 15ms
+ ✓ __tests__/seo/goukaku-tsuchi-jiki-fe-cbt.test.ts (5 tests) 6ms
+ ✓ __tests__/seo/throughput-keisan-lp.test.ts (3 tests) 10ms
+ ✓ __tests__/seo/saishin-doukou-cbt-transition.test.ts (6 tests) 14ms
+ ✓ __tests__/seo/kadouritsu-keisan-lp.test.ts (3 tests) 6ms
+ ✓ __tests__/seo/category-tips.test.ts (3 tests) 8ms
+ ✓ __tests__/seo/moushikomi-mynumber-fe-cbt.test.ts (3 tests) 9ms
+ ✓ __tests__/seo/quiz-noindex.test.ts (5 tests) 6ms
+ ✓ __tests__/seo/keisanryou-order-lp.test.ts (3 tests) 10ms
+ ✓ __tests__/seo/score-report-cbt-vs-pbt-funnel.test.ts (4 tests) 5ms
+ ✓ __tests__/seo/exam-hub-essay-flagship-cta.test.ts (3 tests) 6ms
+ ✓ __tests__/seo/blog-cta-label-in-name.test.ts (1 test) 4ms
+ ✓ __tests__/seo/nonblog-internal-link-resolvability.test.ts (2 tests) 5ms
+ ✓ __tests__/seo/recommended-books-anchor.test.ts (5 tests) 6ms
+ ✓ __tests__/seo/recommended-books-static-params.test.ts (3 tests) 8ms
+ ✓ __tests__/seo/afternoon-essay-flagship-funnel.test.ts (3 tests) 9ms
+ ✓ __tests__/seo/website-node.test.ts (3 tests) 12ms
+ ✓ __tests__/seo/exam-hub-org-provider.test.ts (3 tests) 11ms
+ ✓ __tests__/seo/not-found-flagship-link.test.ts (2 tests) 4ms
+ ✓ __tests__/seo/topic-slug.test.ts (4 tests) 5ms
+ ✓ __tests__/seo/footer-social-label-in-name.test.ts (2 tests) 5ms
+ ✓ __tests__/seo/exam-success-story-disclosure.test.ts (1 test) 4ms
+ ✓ __tests__/seo/faq-metadata.test.ts (1 test) 5ms
+ ✓ __tests__/seo/keywords-index-inbound.test.ts (1 test) 4ms
+ ✓ __tests__/seo/streak-og-image.test.tsx (4 tests) 403ms
+ ✓ __tests__/seo/ipa-title-dedup.test.ts (1 test) 4ms
+
+ Test Files  111 passed (111)
+      Tests  599 passed (599)
+   Start at  23:47:08
+   Duration  124.92s (transform 22.20s, setup 11.67s, collect 209.45s, tests 25.19s, environment 70.14s, prepare 16.24s)
+

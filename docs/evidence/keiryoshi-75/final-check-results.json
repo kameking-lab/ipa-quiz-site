@@ -1,0 +1,42 @@
+{
+  "validate": {
+    "command": [
+      "pnpm",
+      "validate:questions"
+    ],
+    "exitCode": 0,
+    "elapsedSeconds": 6.6,
+    "log": "validate.log"
+  },
+  "typecheck": {
+    "command": [
+      "pnpm",
+      "typecheck"
+    ],
+    "exitCode": 0,
+    "elapsedSeconds": 33.86,
+    "log": "typecheck.log",
+    "NODE_OPTIONS": "--max-old-space-size=8192"
+  },
+  "vitest": {
+    "command": [
+      "npx",
+      "vitest",
+      "run",
+      "__tests__/keiryoshi-staging.test.ts",
+      "__tests__/seo"
+    ],
+    "exitCode": 0,
+    "elapsedSeconds": 99.36,
+    "log": "vitest.log"
+  },
+  "source-verifier": {
+    "command": [
+      "python3",
+      "scripts/verify-keiryoshi-source.py"
+    ],
+    "exitCode": 0,
+    "elapsedSeconds": 3.07,
+    "log": "source-verifier.log"
+  }
+}

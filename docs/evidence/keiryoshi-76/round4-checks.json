@@ -1,0 +1,48 @@
+{
+  "validateQuestions": {
+    "command": "pnpm validate:questions",
+    "exitCode": 0,
+    "questions": 26744,
+    "fail": 0,
+    "warn": 16955,
+    "log": "round4-validate-summary.log"
+  },
+  "typecheck": {
+    "command": "NODE_OPTIONS=--max-old-space-size=8192 pnpm typecheck",
+    "exitCode": 0,
+    "log": "round4-typecheck.log"
+  },
+  "vitest": {
+    "requestedCommand": "npx vitest run __tests__/keiryoshi-staging.test.ts __tests__/seo",
+    "firstExitCode": 143,
+    "firstResult": "process interrupted before summary; not counted as pass",
+    "successfulCommand": "npx vitest run __tests__/keiryoshi-staging.test.ts __tests__/seo --maxWorkers=2",
+    "exitCode": 0,
+    "files": 111,
+    "tests": 597,
+    "log": "round4-vitest.log"
+  },
+  "sourceAudit": {
+    "command": "python3 scripts/verify-keiryoshi-source.py",
+    "exitCode": 1,
+    "result": "fixed figure count 36 conflicts with 73 retained figures",
+    "log": "round4-original-source-verifier.log",
+    "proposedPatch": "round4-source-verifier.patch",
+    "temporaryCopyExitCode": 0,
+    "temporaryCopyResult": "round4-source-audit-result.json",
+    "scopeExceptionApproval": "requested, no response; original script unchanged"
+  },
+  "fullAudit": {
+    "command": "python3 docs/evidence/keiryoshi-76/verify-full-audit.py",
+    "exitCode": 0
+  },
+  "geometry": {
+    "images": 73,
+    "pixelEqual": 73,
+    "marginContained": 73,
+    "result": "figure-pixel-audit.json"
+  },
+  "scope": "Only question data, evidence, reports and PNG images changed",
+  "gitCommit": "not run",
+  "gitPush": "not run"
+}

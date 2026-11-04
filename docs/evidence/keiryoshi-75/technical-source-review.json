@@ -1,0 +1,94 @@
+{
+  "checkedOn": "2026-11-03",
+  "method": "公式問題・公式正答の原本照合、著者による一次資料調査。第三者独立レビューではない。",
+  "sources": [
+    {
+      "questions": [
+        "管理9",
+        "管理11",
+        "管理14",
+        "管理15",
+        "管理16"
+      ],
+      "urls": [
+        "https://www.bipm.org/documents/20126/2071204/JCGM_100_2008_E.pdf",
+        "https://jcgm.bipm.org/vim/en/2.41.html",
+        "https://www.nist.gov/metrology/metrological-traceability"
+      ],
+      "findings": "合成不確かさ・トレーサビリティの定義を一次資料と照合。回帰残差自由度・原点回帰・SN比はrecalculate-all.pyで独立な数値例も検算。"
+    },
+    {
+      "questions": [
+        "計質20"
+      ],
+      "urls": [
+        "https://www.nkkk.or.jp/pdf/public_business_report_2023/4-31-2023.pdf",
+        "https://www2.ishida.co.jp/keiryohou/method.html"
+      ],
+      "findings": "2024年3月資料を含む検定機関・メーカー資料でカテゴリXの1kg以下は60回であることを確認。ひょう量と試験荷重を区別。"
+    },
+    {
+      "questions": [
+        "環音12"
+      ],
+      "urls": [
+        "https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/210326_sekoukisoku.pdf"
+      ],
+      "findings": "JIS C1516修理の原状回復と機能追加の区別を確認。軽微・簡易・その他の修理を区別。"
+    },
+    {
+      "questions": [
+        "環音15"
+      ],
+      "urls": [
+        "https://www.env.go.jp/kijun/oto2.html"
+      ],
+      "findings": "航空機騒音の測定期間7日間及び暗騒音との差10dBを公式基準と照合。"
+    },
+    {
+      "questions": [
+        "環音21",
+        "環音24"
+      ],
+      "urls": [
+        "https://www.jemima.or.jp/tech/5-03.html",
+        "https://svmeas.rion.co.jp/products/unavailable/VM-55.html",
+        "https://www.onosokki.co.jp/HP-WK/c_support/faq/vr/vr6100_techterm.htm"
+      ],
+      "findings": "業界団体・メーカーの一次資料で基準加速度と鉛直補正の定義、JISC1510/1517適合関係を確認。製品仕様をJIS本文の代わりに全文確認済みとは扱わない。"
+    },
+    {
+      "questions": [
+        "環濃14"
+      ],
+      "urls": [
+        "https://www.env.go.jp/hourei/10/000022.html"
+      ],
+      "findings": "臭気の測定方法と採取条件を環境省の告示資料と照合。法令基準日は2024-12-15。"
+    },
+    {
+      "questions": [
+        "環濃23"
+      ],
+      "urls": [
+        "https://icp-ms.help.agilent.com/en/HowTo/Help/Reference/GC.htm",
+        "https://www.an.shimadzu.co.jp/service-support/technical-support/analysis-basics/lcms/unit-principle_01/index.html",
+        "https://pubs.acs.org/doi/10.1021/ac801406t"
+      ],
+      "findings": "GC-ICP-MS接続と液体試料を用いるESIの通常の接続を確認。GC-ESIの研究例があるため絶対不可能とは説明しない。"
+    },
+    {
+      "questions": [
+        "法規5",
+        "法規11"
+      ],
+      "urls": [
+        "https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/keiryoudoukou202305r.pdf",
+        "https://www.meti.go.jp/policy/tsutatsutou/tuuti1/aa26.pdf",
+        "https://www.pref.wakayama.lg.jp/prefg/060100/keiryou1/kousahyou_d/fil/tokutei-bunrui.pdf"
+      ],
+      "findings": "商品量目・商品分類・登録関係を行政資料と照合。法規全25問は別途e-Govの出題時点施行版に基づく。"
+    }
+  ],
+  "standardTextLimitations": "JISの公開全文をすべて公式サイトから取得したわけではない。出題された規格の条件は問題原本と公式正答、定義・メーカー・検定機関資料を併用して確認。"
+}

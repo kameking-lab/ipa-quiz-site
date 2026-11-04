@@ -1629,6 +1629,160 @@ export const EXAM_CONFIGS: Record<ExamCode, ExamConfig> = {
       { session: "pm", urlSlug: "pm", expectedQuestions: 40, label: "午後", categories: ["浄化槽の点検、調整及び修理", "水質管理", "浄化槽の清掃概論"] },
     ], seasons: ["annual"], yearRange: { start: 2025, end: 2026 },
   },
+  "keiryoshi": {
+    "code": "keiryoshi",
+    "nameFull": "一般計量士国家試験",
+    "urlSlug": "keiryoshi",
+    "level": "specialist",
+    "sessions": [
+      {
+        "session": "measurement-basic",
+        "urlSlug": "measurement-basic",
+        "expectedQuestions": 25,
+        "label": "計量に関する基礎知識",
+        "categories": [
+          "一基"
+        ]
+      },
+      {
+        "session": "measurement-mass",
+        "urlSlug": "measurement-mass",
+        "expectedQuestions": 25,
+        "label": "計量器概論及び質量の計量",
+        "categories": [
+          "計質"
+        ]
+      },
+      {
+        "session": "houki",
+        "urlSlug": "houki",
+        "expectedQuestions": 25,
+        "label": "計量関係法規",
+        "categories": [
+          "法規"
+        ]
+      },
+      {
+        "session": "measurement-management",
+        "urlSlug": "measurement-management",
+        "expectedQuestions": 25,
+        "label": "計量管理概論",
+        "categories": [
+          "管理"
+        ]
+      }
+    ],
+    "seasons": [
+      "annual"
+    ],
+    "yearRange": {
+      "start": 2024,
+      "end": 2025
+    }
+  },
+  "keiryoshi-nodo": {
+    "code": "keiryoshi-nodo",
+    "nameFull": "環境計量士（濃度関係）国家試験",
+    "urlSlug": "keiryoshi-nodo",
+    "level": "specialist",
+    "sessions": [
+      {
+        "session": "measurement-chemistry",
+        "urlSlug": "measurement-chemistry",
+        "expectedQuestions": 25,
+        "label": "環境計量に関する基礎知識（化学）",
+        "categories": [
+          "環化"
+        ]
+      },
+      {
+        "session": "measurement-concentration",
+        "urlSlug": "measurement-concentration",
+        "expectedQuestions": 25,
+        "label": "化学分析概論及び濃度の計量",
+        "categories": [
+          "環濃"
+        ]
+      },
+      {
+        "session": "houki",
+        "urlSlug": "houki",
+        "expectedQuestions": 25,
+        "label": "計量関係法規",
+        "categories": [
+          "法規"
+        ]
+      },
+      {
+        "session": "measurement-management",
+        "urlSlug": "measurement-management",
+        "expectedQuestions": 25,
+        "label": "計量管理概論",
+        "categories": [
+          "管理"
+        ]
+      }
+    ],
+    "seasons": [
+      "annual"
+    ],
+    "yearRange": {
+      "start": 2024,
+      "end": 2025
+    }
+  },
+  "keiryoshi-soon": {
+    "code": "keiryoshi-soon",
+    "nameFull": "環境計量士（騒音・振動関係）国家試験",
+    "urlSlug": "keiryoshi-soon",
+    "level": "specialist",
+    "sessions": [
+      {
+        "session": "measurement-physics",
+        "urlSlug": "measurement-physics",
+        "expectedQuestions": 25,
+        "label": "環境計量に関する基礎知識（物理）",
+        "categories": [
+          "環物"
+        ]
+      },
+      {
+        "session": "measurement-sound",
+        "urlSlug": "measurement-sound",
+        "expectedQuestions": 25,
+        "label": "音響・振動概論並びに音圧レベル及び振動加速度レベルの計量",
+        "categories": [
+          "環音"
+        ]
+      },
+      {
+        "session": "houki",
+        "urlSlug": "houki",
+        "expectedQuestions": 25,
+        "label": "計量関係法規",
+        "categories": [
+          "法規"
+        ]
+      },
+      {
+        "session": "measurement-management",
+        "urlSlug": "measurement-management",
+        "expectedQuestions": 25,
+        "label": "計量管理概論",
+        "categories": [
+          "管理"
+        ]
+      }
+    ],
+    "seasons": [
+      "annual"
+    ],
+    "yearRange": {
+      "start": 2024,
+      "end": 2025
+    }
+  },
+
   kanteishi: {
     code: "kanteishi", nameFull: "不動産鑑定士試験（短答式）", urlSlug: "kanteishi", level: "specialist",
     sessions: [
@@ -2735,6 +2889,7 @@ export const ALL_EXAM_CODES = Object.keys(EXAM_CONFIGS).filter(
   (code): code is IpaExamCode => !(["sekou-kenchiku2", "fp1", "fp2", "fp3", "denken3", "denken2", "denken1", "denko2", "denko1", "takken", "civil2", "civil1", "kankoji2", "zoen2", "zoen1", "tsushin2", "tsushin1", "kaigo", "shakai", "seishin", "tohan", "kanri", "eisei1", "eisei2", "soukan", "hoikushi", "mankan", "kashikin", "sharoushi", "kangoshi", "yakuzaishi", "ahaki-anma", "ahaki-hari-kyu", "hokenshi", "josanshi", "rigaku-ryohoshi", "sagyo-ryohoshi", "shino-kunrenshi", "rinsho-kensagishi", "shinryo-hoshasengishi", "rinsho-kogishi", "riyoshi", "chusho-kigyo-shindanshi", "chosashi", "shika-ishi", "judo-seifukushi", "riku-toku-kokunai", "kai-toku2", "kai-toku3", "koku-toku", "land-special1", "riku-tech1", "maritime4", "aviation-comm", "amateur1", "maritime-special1", "riku-tech2", "amateur2", "maritime-radar", "maritime3", "maritime2", "maritime1", "general3", "general2", "general1", "land-special2", "land-special3", "kanteishi", "kaikeishi", "gas-kou", "gas-otsu", "gas-hei"] as string[]).includes(code),
   (code): code is IpaExamCode => !(["fp1", "fp2", "fp3", "denken3", "denken2", "denken1", "denko2", "denko1", "takken", "civil2", "civil1", "kankoji2", "denki2", "zoen2", "zoen1", "tsushin2", "tsushin1", "kaigo", "shakai", "seishin", "tohan", "kanri", "eisei1", "eisei2", "soukan", "hoikushi", "mankan", "kashikin", "sharoushi", "kangoshi", "yakuzaishi", "ahaki-anma", "ahaki-hari-kyu", "hokenshi", "josanshi", "rigaku-ryohoshi", "sagyo-ryohoshi", "shino-kunrenshi", "rinsho-kensagishi", "shinryo-hoshasengishi", "rinsho-kogishi", "riyoshi", "chusho-kigyo-shindanshi", "chosashi", "shika-ishi", "judo-seifukushi", "riku-toku-kokunai", "kai-toku2", "kai-toku3", "koku-toku", "land-special1", "riku-tech1", "maritime4", "aviation-comm", "amateur1", "maritime-special1", "riku-tech2", "amateur2", "maritime-radar", "maritime3", "maritime2", "maritime1", "general3", "general2", "general1", "land-special2", "land-special3", "kanteishi", "kaikeishi", "gas-kou", "gas-otsu", "gas-hei"] as string[]).includes(code),
   (code): code is IpaExamCode => !(["yamaguchi-fugu", "yamaguchi-seika", "fp1", "fp2", "fp3", "denken3", "denken2", "denken1", "denko2", "denko1", "takken", "civil2", "civil1", "kankoji2", "zoen2", "zoen1", "tsushin2", "tsushin1", "kaigo", "shakai", "seishin", "tohan", "kanri", "eisei1", "eisei2", "soukan", "hoikushi", "mankan", "kashikin", "sharoushi", "kangoshi", "yakuzaishi", "ahaki-anma", "ahaki-hari-kyu", "hokenshi", "josanshi", "rigaku-ryohoshi", "sagyo-ryohoshi", "shino-kunrenshi", "rinsho-kensagishi", "shinryo-hoshasengishi", "rinsho-kogishi", "riyoshi", "chusho-kigyo-shindanshi", "chosashi", "shika-ishi", "judo-seifukushi", "riku-toku-kokunai", "kai-toku2", "kai-toku3", "koku-toku", "land-special1", "riku-tech1", "maritime4", "aviation-comm", "amateur1", "maritime-special1", "riku-tech2", "amateur2", "maritime-radar", "maritime3", "maritime2", "maritime1", "general3", "general2", "general1", "land-special2", "land-special3", "kanteishi", "kaikeishi", "gas-kou", "gas-otsu", "gas-hei", "yamaguchi-chori"] as string[]).includes(code),
+  (code): code is IpaExamCode => !(["fp1", "fp2", "fp3", "denken3", "denken2", "denken1", "denko2", "denko1", "takken", "civil2", "civil1", "kankoji2", "zoen2", "zoen1", "tsushin2", "tsushin1", "kaigo", "shakai", "seishin", "tohan", "kanri", "eisei1", "eisei2", "soukan", "hoikushi", "mankan", "kashikin", "sharoushi", "kangoshi", "yakuzaishi", "ahaki-anma", "ahaki-hari-kyu", "hokenshi", "josanshi", "rigaku-ryohoshi", "sagyo-ryohoshi", "shino-kunrenshi", "rinsho-kensagishi", "shinryo-hoshasengishi", "rinsho-kogishi", "riyoshi", "chusho-kigyo-shindanshi", "chosashi", "shika-ishi", "judo-seifukushi", "riku-toku-kokunai", "kai-toku2", "kai-toku3", "koku-toku", "land-special1", "riku-tech1", "maritime4", "aviation-comm", "amateur1", "maritime-special1", "riku-tech2", "amateur2", "maritime-radar", "maritime3", "maritime2", "maritime1", "general3", "general2", "general1", "land-special2", "land-special3", "kanteishi", "kaikeishi", "gas-kou", "gas-otsu", "gas-hei", "keiryoshi", "keiryoshi-nodo", "keiryoshi-soon"] as string[]).includes(code),
 );
 
 /** Every exam playable in the application, including external qualifications. */
