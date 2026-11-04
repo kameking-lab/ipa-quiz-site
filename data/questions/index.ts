@@ -35,6 +35,7 @@ import { TSUSHIN1_QUESTIONS } from "./tsushin1";
 import { KAIGO_QUESTIONS } from "./kaigo";
 import { CIVIL1_QUESTIONS } from "./civil1";
 import { SHAKAI_QUESTIONS } from "./shakai";
+import { SHINRISHI_QUESTIONS } from "./shinrishi";
 import { SEISHIN_QUESTIONS } from "./seishin";
 import { TOHAN_QUESTIONS } from "./tohan";
 import { IJI_SHUZEN_QUESTIONS } from "./iji-shuzen";
@@ -202,6 +203,7 @@ export const QUESTIONS_BY_EXAM: Partial<Record<ExamCode, Question[]>> = {
   ...(isExamPublished("kaigo") ? { kaigo: KAIGO_QUESTIONS } : {}),
   ...(isExamPublished("civil1") ? { civil1: CIVIL1_QUESTIONS } : {}),
   ...(isExamPublished("shakai") ? { shakai: SHAKAI_QUESTIONS } : {}),
+  ...(isExamPublished("shinrishi") ? { shinrishi: SHINRISHI_QUESTIONS } : {}),
   ...(isExamPublished("seishin") ? { seishin: SEISHIN_QUESTIONS } : {}),
   ...(isExamPublished("tohan") ? { tohan: TOHAN_QUESTIONS } : {}),
   ...(isExamPublished("iji-shuzen") ? { "iji-shuzen": IJI_SHUZEN_QUESTIONS } : {}),

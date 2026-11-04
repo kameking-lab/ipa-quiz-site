@@ -53,6 +53,7 @@ const EXAM_LOADERS: Partial<Record<ExamCode, () => Promise<Question[]>>> = {
   "kai-toku2": async () => isExamPublished("kai-toku2") ? (await import("@/data/questions/kai-toku2")).KAI_TOKU2_ALL_QUESTIONS : [],
   "kai-toku3": async () => isExamPublished("kai-toku3") ? (await import("@/data/questions/kai-toku3")).KAI_TOKU3_QUESTIONS : [],
   chosashi: async () => isExamPublished("chosashi") ? (await import("@/data/questions/chosashi")).CHOSASHI_QUESTIONS : [],
+  shinrishi: async () => isExamPublished("shinrishi") ? (await import("@/data/questions/shinrishi")).SHINRISHI_QUESTIONS : [],
   riyoshi: async () => isExamPublished("riyoshi") ? (await import("@/data/questions/riyoshi")).RIYOSHI_QUESTIONS : [],
   ap: async () => (await import("@/data/questions/ap")).AP_QUESTIONS,
   ip: async () => (await import("@/data/questions/ip")).IP_QUESTIONS,

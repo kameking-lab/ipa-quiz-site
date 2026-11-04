@@ -40,6 +40,8 @@ export function questionSourceEdition(q: Pick<Question, "year" | "season" | "sou
     if (q.year === 2026 && q.season === "first" && /\/260621_mondaijk0[123]\.pdf$/.test(q.sourcePdfUrl)) return "令和8年度前期（2026年6月21日実施）";
     if (q.year === 2025 && q.season === "second" && /\/251221_mondaijk0[123]\.pdf$/.test(q.sourcePdfUrl)) return "令和7年度後期（2025年12月21日実施）";
   }
+  if (q.exam === "shinrishi" && q.year === 2025) return "第8回（2025年3月2日実施）";
+  if (q.exam === "shinrishi" && q.year === 2026) return "第9回（2026年3月1日実施）";
   if (q.exam === "riku-tech1" && q.season === "july") return `${q.year}年7月試験`;
   if (q.exam === "shika-ishi" && q.season === "annual" && (q.year === 2025 || q.year === 2026)) {
     return `第${q.year - 1907}回（${q.year}年実施）`;

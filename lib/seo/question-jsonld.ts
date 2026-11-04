@@ -223,6 +223,12 @@ export function buildQuestionJsonLd({
           name: "公益財団法人柔道整復研修試験財団",
           url: "https://www.zaijusei.com/",
         }
+    : q.exam === "shinrishi"
+      ? {
+          "@type": "Organization",
+          name: "一般財団法人公認心理師試験研修センター",
+          url: "https://www.jccpp.or.jp/",
+        }
     : q.exam === "kangoshi" || q.exam === "yakuzaishi" || q.exam === "shika-ishi" || q.exam === "rigaku-ryohoshi" || q.exam === "rinsho-kensagishi"
       ? {
           "@type": "Organization",
@@ -251,6 +257,8 @@ export function buildQuestionJsonLd({
     ? "https://www.mhlw.go.jp/chosakuken/index.html"
     : q.exam === "chosashi"
     ? "https://www.moj.go.jp/hisho06_00280.html"
+    : q.exam === "shinrishi"
+    ? "https://www.jccpp.or.jp/policy.html"
     : q.exam === "fp1"
     ? "https://www.kinzai.or.jp/ginou/license_terms.html"
     : (q.exam === "fp2" || q.exam === "fp3")

@@ -168,6 +168,7 @@ const OTHER_CARDS: readonly OtherCardDef[] = [
   { code: "takken", name: "宅建", sub: "宅地建物取引士資格試験", domain: "money" },
   { code: "kaigo", name: "介護福祉士", sub: "国家試験（総合問題を含む）", domain: "welfare" },
   { code: "shakai", name: "社会福祉士", sub: "国家試験（共通・専門科目）", domain: "welfare" },
+  { code: "shinrishi", name: "公認心理師", sub: "国家試験（午前・午後）", domain: "welfare" },
   { code: "seishin", name: "精神保健福祉士", sub: "国家試験（専門・共通科目）", domain: "welfare" },
   { code: "tohan", name: "登録販売者", sub: "関西広域連合（前半・後半）", domain: "welfare" },
   { code: "chizai2", name: "知的財産管理技能検定2級", sub: "第53・54回 学科・実技160原問と全肢解説", domain: "money" },
