@@ -30,16 +30,18 @@ for (const slug of ["it-shikaku-rirekisho-kakikata", "ipa-shiken-fukusuu-kubun-j
   });
 }
 
-test("the ad stays after the article, separated from the answer controls", async ({ page }) => {
+test("the practice stays before the article and the existing ad review gate remains closed", async ({ page }) => {
   await page.route("**/pagead/**", route => route.abort());
   await page.goto("/blog/ip-hinnshutsu-ronten-toppu10");
   const practice = page.locator("#article-practice");
-  const ad = page.getByRole("complementary", { name: "広告" });
-  await expect(ad).toHaveCount(1);
+  // The inherited editorial review registry is empty: do not enable an ad just
+  // to exercise its layout. The existing source/rendering tests protect the
+  // gated content-end slot; here verify the real production gate and ordering.
+  await expect(page.locator('aside[aria-label="広告"]')).toHaveCount(0);
+  await expect(page.locator("ins.adsbygoogle")).toHaveCount(0);
   expect(await practice.evaluate(el => {
     const article = document.querySelector("#article-body")!;
-    const ad = document.querySelector('aside[aria-label="広告"]')!;
-    return el.getBoundingClientRect().bottom <= article.getBoundingClientRect().top && article.getBoundingClientRect().bottom + 40 <= ad.getBoundingClientRect().top;
+    return el.getBoundingClientRect().bottom <= article.getBoundingClientRect().top;
   })).toBe(true);
 });
 
@@ -58,7 +60,8 @@ test("390px: a six-choice worked example keeps all choices and its actual choice
 test("a supplement remains editable after failure and receives a receipt after retry", async ({ page }) => {
   let calls = 0;
   await page.route("**/api/contact", route => route.fulfill({ status: ++calls === 1 ? 503 : 200, json: calls === 1 ? { ok: false } : { ok: true, delivery: "delivered", receiptId: "KG-e2e" } }));
-  await page.goto("/q/nw/2010-autumn/am2/q15");
+  await page.goto("/quiz?mode=year&exam=nw&year=2010&season=autumn&session=am2");
+  await page.getByRole("radio").first().click();
   const box = page.getByRole("textbox", { name: "コメント本文" });
   await box.fill("補足のテスト送信です");
   await page.getByRole("button", { name: "運営へ送信する" }).click();
