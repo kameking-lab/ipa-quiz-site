@@ -167,8 +167,8 @@ importers:
         specifier: 8.0.3
         version: 8.0.3(@capacitor/core@8.6.0)
       '@revenuecat/purchases-capacitor':
-        specifier: 14.0.0
-        version: 14.0.0(@capacitor/core@8.6.0)
+        specifier: 13.8.0
+        version: 13.8.0(@capacitor/core@8.6.0)
       react:
         specifier: 19.2.6
         version: 19.2.6
@@ -1338,13 +1338,13 @@ packages:
       react-redux:
         optional: true
 
-  '@revenuecat/purchases-capacitor@14.0.0':
-    resolution: {integrity: sha512-Thiaix8JZNoh2ka0Mh6K+/K4sz+Yaxf5eArEA/6IZdqZ4xGQNlT3uJClKavqrmm2JB998sqU0YOX1hjPIGClbQ==}
+  '@revenuecat/purchases-capacitor@13.8.0':
+    resolution: {integrity: sha512-ZktCol/FdDGhtBiIIZpSxF9gUvSSrza9iJt420dyb5nv2jd5VMPYXsDoBl4oa75GGHboVJjG25Js0mSKP6az0Q==}
     peerDependencies:
       '@capacitor/core': '>=8.0.0'
 
-  '@revenuecat/purchases-typescript-internal-esm@20.0.0':
-    resolution: {integrity: sha512-xvAzzvDTzfSt8Td2mTfEzRAtc2eU8/lZIUCXCSiLeRqpVLTQAeE70aVvOYKglkk+uIicWzYr1zyupXTF0AwxrA==}
+  '@revenuecat/purchases-typescript-internal-esm@19.17.0':
+    resolution: {integrity: sha512-Ys7MTgxLu4/HE92G+Ji+nWiL08optp+xySutCL6lqP4uIByY/98dShcDZ3PEatzX3ZroffJCG2krWANBvb83UQ==}
 
   '@rolldown/binding-android-arm-eabi@1.2.16':
     resolution: {integrity: sha512-ia3DwAs0OsMGS7+IConptSiyk9pEXkOx/AbJ2n/lAGxH3QkWQus1t8d7gnAT38FCU2sQu8lUbeR6AiZFv4JxaA==}
@@ -6368,12 +6368,12 @@ snapshots:
       react: 19.2.6
       react-redux: 9.2.0(@types/react@19.2.14)(react@19.2.6)(redux@5.0.1)
 
-  '@revenuecat/purchases-capacitor@14.0.0(@capacitor/core@8.6.0)':
+  '@revenuecat/purchases-capacitor@13.8.0(@capacitor/core@8.6.0)':
     dependencies:
       '@capacitor/core': 8.6.0
-      '@revenuecat/purchases-typescript-internal-esm': 20.0.0
+      '@revenuecat/purchases-typescript-internal-esm': 19.17.0
 
-  '@revenuecat/purchases-typescript-internal-esm@20.0.0': {}
+  '@revenuecat/purchases-typescript-internal-esm@19.17.0': {}
 
   '@rolldown/binding-android-arm-eabi@1.2.16':
     optional: true
