@@ -1,0 +1,10 @@
+{
+  "status": "PASS",
+  "counts": {
+    "ownerPdfs": 12,
+    "officialAnswers": 400,
+    "questionBodies": 275,
+    "choices": 1375
+  },
+  "normalization": "NFKC, whitespace/control removal; I ruby stored separately, q1 text-layer 繁 corrected to printed 繫, q15 fraction 1/8; II q1/q16/q18 fractions restored from page images; II/III figure labels excluded from prose and retained in source PNG crops; III printed I_B/I_A, radicals, exponents and fractions restored from images; III q4/q6 choice tables independently parsed by PDFMiner"
+}

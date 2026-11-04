@@ -341,6 +341,32 @@ def source_questions_m2026_ii(path):
     return questions
 
 
+def source_questions_m2026_iii(path):
+    figures={4:(120,110,495,415),5:(280,100,460,400),6:(70,95,500,570),7:(175,395,430,665),8:(145,135,500,500),9:(135,90,465,280)};questions={}
+    with pdfplumber.open(path) as pdf:
+        for pn in range(2,14):
+            page=pdf.pages[pn-1];r=figures.get(pn)
+            def retain(o):
+                if o.get('object_type')!='char':return True
+                if o['size']<=5.5 or o['top']>=790:return False
+                return not(r and o['x0']<r[2] and o['x1']>r[0] and o['top']<r[3] and o['bottom']>r[1])
+            parts=re.split(r"〔No\.\s*(\d+)〕",unicodedata.normalize('NFKC',page.filter(retain).extract_text(use_text_flow=True)))
+            for i in range(1,len(parts),2):
+                n=int(parts[i]);source=parts[i+1].replace('倍率は\n2.5','倍率は2.5');f=re.split(r"(?m)^\s*([1-5])\s*\.\s*",source);choices={int(f[j]):f[j+1] for j in range(1,len(f),2)}
+                if n==3:
+                    for k,term in enumerate(['鼻隠','格縁','方立','長押','敷目板'],1):choices[k]=normalize(choices[k]).replace(term,term+' ― ',1)
+                if n==9:
+                    table=page.crop((90,440,230,570)).extract_tables()[0];assert len(table)==6 and len(table[0])==2,table
+                    choices={j:'2階用：'+row[0]+'、1階用：'+row[1] for j,row in enumerate(table[1:],1)}
+                if n==12:f[0]=normalize(f[0]).replace('面材張り(部分)','面材張り(■部分)')
+                if n==16:choices[1]=normalize(choices[1]).replace('長さの43以下','長さの3/4以下')
+                if n==17:choices[2]=normalize(choices[2]).replace('床面積の41で','床面積の1/4で')
+                assert sorted(choices)==[1,2,3,4,5],(n,choices)
+                questions[n]=(pn,f[0],choices)
+    assert sorted(questions)==list(range(1,26))
+    return questions
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("owner_directory", type=Path)
@@ -362,7 +388,7 @@ def main():
                         assert row == round_["officialAnswers"][subject], (file.name, subject)
                         counts["officialAnswers"] += len(row)
             counts["ownerPdfs"] += 1
-    for year, subject, extract, source in [(2026,"I",source_questions,"R8_2k_1_2.pdf"),(2026,"II",source_questions_ii,"R8_2k_1_2.pdf"),(2026,"III",source_questions_iii,"R8_2k_3_4.pdf"),(2026,"IV",source_questions_iv,"R8_2k_3_4.pdf"),(2025,"I",source_questions_2025_i,"2k-2025-1st-gakka1_2.pdf"),(2025,"II",source_questions_2025_ii,"2k-2025-1st-gakka1_2.pdf"),(2025,"III",source_questions_2025_iii,"2k-2025-1st-gakka3_4.pdf"),(2025,"IV",source_questions_2025_iv,"2k-2025-1st-gakka3_4.pdf"),(2026,"mokuzo-I",source_questions_m2026_i,"R8_mk_1_2.pdf"),(2026,"mokuzo-II",source_questions_m2026_ii,"R8_mk_1_2.pdf")]:
+    for year, subject, extract, source in [(2026,"I",source_questions,"R8_2k_1_2.pdf"),(2026,"II",source_questions_ii,"R8_2k_1_2.pdf"),(2026,"III",source_questions_iii,"R8_2k_3_4.pdf"),(2026,"IV",source_questions_iv,"R8_2k_3_4.pdf"),(2025,"I",source_questions_2025_i,"2k-2025-1st-gakka1_2.pdf"),(2025,"II",source_questions_2025_ii,"2k-2025-1st-gakka1_2.pdf"),(2025,"III",source_questions_2025_iii,"2k-2025-1st-gakka3_4.pdf"),(2025,"IV",source_questions_2025_iv,"2k-2025-1st-gakka3_4.pdf"),(2026,"mokuzo-I",source_questions_m2026_i,"R8_mk_1_2.pdf"),(2026,"mokuzo-II",source_questions_m2026_ii,"R8_mk_1_2.pdf"),(2026,"mokuzo-III",source_questions_m2026_iii,"R8_mk_3_4.pdf")]:
         originals = extract(args.owner_directory / source)
         filename = f"mokuzo-{year}-{subject[7:]}.ts" if subject.startswith("mokuzo-") else f"{year}-{subject}.ts"
         data = (STAGING / filename).read_text(encoding="utf-8")
