@@ -4,6 +4,8 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 
 import { BlogMarkdown } from "@/components/blog/BlogMarkdown";
+import { BlogPractice } from "@/components/blog/BlogPractice";
+import { getBlogPractice } from "@/lib/blog/practice";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { ViewTracker } from "@/components/analytics/ViewTracker";
 import { BlogScrollTracker } from "@/components/blog/BlogScrollTracker";
@@ -101,6 +103,7 @@ export default async function BlogArticlePage({ params }: PageProps) {
 
   const url = `${SITE_BASE_URL}/blog/${slug}`;
   const related = getRelatedPosts(slug, 4);
+  const practice = getBlogPractice(slug);
   const relatedQuestions = getRelatedQuestionsForPost(post.exam, post.tags, 3);
   const articleOgParams = new URLSearchParams({
     type: "blog",
@@ -293,10 +296,12 @@ export default async function BlogArticlePage({ params }: PageProps) {
         )}
         {post.editorialKind === "study-guide" && <p className="mt-3 text-xs text-zinc-600 dark:text-zinc-400">編集上の学習ガイドです。受験者の実測調査・出題頻度ランキングではありません。</p>}
         {post.sourceUrls && <ul className="mt-3 space-y-1 text-xs">{post.sourceUrls.map((url, i) => <li key={url}><a href={url} className="underline" target="_blank" rel="noopener noreferrer">参照資料 {i + 1}（IPA）</a></li>)}</ul>}
-
+        {practice && <nav aria-label="記事と演習" className="mt-3 flex gap-4 text-sm"><a href="#article-practice" className="inline-flex min-h-11 items-center underline">まず1問解く</a><a href="#article-body" className="inline-flex min-h-11 items-center underline">本文から読む</a></nav>}
       </header>
 
-      <article>
+      {practice && <BlogPractice key={practice.question.id} {...practice} slug={slug} />}
+
+      <article id="article-body" className="scroll-mt-24">
         <BlogMarkdown>{post.body}</BlogMarkdown>
       </article>
 

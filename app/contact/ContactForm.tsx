@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button";
 import { TurnstileWidget } from "@/components/TurnstileWidget";
 import { cn } from "@/lib/utils";
 import { posthogCapture } from "@/lib/posthog";
+import { submitSupport } from "@/lib/feedback/submit";
 
 // Inlined at build time. When unset (dev / CI / pre-activation) the widget is
 // not rendered and the server verification fails open, so the form behaves
@@ -30,13 +31,16 @@ export function ContactForm() {
   const [body, setBody] = React.useState("");
   const [status, setStatus] = React.useState<"idle" | "sending" | "ok" | "error">("idle");
   const [error, setError] = React.useState<string | null>(null);
+  const [receiptId, setReceiptId] = React.useState("");
   const [invalidField, setInvalidField] = React.useState<"body" | "email" | null>(null);
   const [turnstileToken, setTurnstileToken] = React.useState("");
+  const [turnstileRevision, setTurnstileRevision] = React.useState(0);
   const emailRef = React.useRef<HTMLInputElement>(null);
   const bodyRef = React.useRef<HTMLTextAreaElement>(null);
 
   const submit = async (e: React.FormEvent) => {
     e.preventDefault();
+    if (status === "sending") return;
     setError(null);
     setInvalidField(null);
     if (body.trim().length < 5) {
@@ -57,29 +61,25 @@ export function ContactForm() {
     }
     setStatus("sending");
     try {
-      const res = await fetch("/api/contact", {
-        method: "POST",
-        headers: { "content-type": "application/json" },
-        body: JSON.stringify({
-          kind: "contact",
-          category,
-          name: name.trim().slice(0, 80),
-          email: email.trim().slice(0, 120),
-          body: body.trim().slice(0, 4000),
-          turnstileToken: turnstileToken || undefined,
-        }),
+      const receipt = await submitSupport({
+        kind: "contact",
+        category,
+        name: name.trim().slice(0, 80),
+        email: email.trim().slice(0, 120),
+        body: body.trim().slice(0, 4000),
+        turnstileToken: turnstileToken || undefined,
       });
-      if (!res.ok) {
-        setStatus("error");
-        setError("送信に失敗しました。時間をおいて再度お試しください。");
-        return;
-      }
+      setReceiptId(receipt);
       posthogCapture("contact_form_submitted", { category });
       setStatus("ok");
       setBody("");
-    } catch {
+    } catch (cause) {
+      // Verification consumes the token even when operator delivery then fails.
+      // Remount for a fresh challenge while retaining all user input.
+      setTurnstileToken("");
+      setTurnstileRevision(revision => revision + 1);
       setStatus("error");
-      setError("ネットワークエラーが発生しました。");
+      setError(cause instanceof Error ? cause.message : "送信できませんでした。時間をおいて再送信してください。");
     }
   };
 
@@ -95,8 +95,9 @@ export function ContactForm() {
           <span className="font-semibold">お問い合わせを受け付けました</span>
         </div>
         <p className="text-zinc-700 dark:text-zinc-300">
-          いただいた内容にすべて目を通します。返信が必要な場合は、ご記入いただいたメールアドレス宛てにご連絡します。
+          運営の受付先への送信を確認しました。返信が必要な場合は、ご記入いただいたメールアドレス宛てにご連絡します。
         </p>
+        <p className="mt-2 break-all text-xs">受付番号: {receiptId}</p>
         <button
           type="button"
           onClick={() => {
@@ -133,6 +134,7 @@ export function ContactForm() {
             >
               <input
                 type="radio"
+                disabled={status === "sending"}
                 name="category"
                 value={c.id}
                 checked={category === c.id}
@@ -154,6 +156,7 @@ export function ContactForm() {
         </label>
         <input
           id="contact-name"
+          disabled={status === "sending"}
           autoComplete="name"
           value={name}
           onChange={(e) => setName(e.target.value.slice(0, 80))}
@@ -172,6 +175,7 @@ export function ContactForm() {
         </label>
         <input
           id="contact-email"
+          disabled={status === "sending"}
           ref={emailRef}
           type="email"
           autoComplete="email"
@@ -194,6 +198,7 @@ export function ContactForm() {
         </label>
         <textarea
           id="contact-body"
+          disabled={status === "sending"}
           ref={bodyRef}
           value={body}
           onChange={(e) => setBody(e.target.value.slice(0, 4000))}
@@ -234,6 +239,7 @@ export function ContactForm() {
 
       {TURNSTILE_SITE_KEY && (
         <TurnstileWidget
+          key={turnstileRevision}
           siteKey={TURNSTILE_SITE_KEY}
           onToken={setTurnstileToken}
           onError={() => setTurnstileToken("")}

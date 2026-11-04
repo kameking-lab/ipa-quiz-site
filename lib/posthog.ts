@@ -33,6 +33,8 @@ export type PostHogEventName =
   | "quiz_completed"
   | "faq_expanded"
   | "blog_viewed"
+  | "blog_practice_answered"
+  | "blog_practice_continued"
   | "blog_article_scrolled"
   | "essay_viewed"
   | "essay_industry_switched"

@@ -10,6 +10,7 @@ import {
 import { maskPII, totalHits } from "@/lib/feedback/pii-masker";
 import { verifyTurnstileToken } from "@/lib/turnstile";
 import { sendSlackMessage } from "@/lib/notify/slack";
+import { randomUUID } from "node:crypto";
 
 export const runtime = "nodejs";
 
@@ -157,10 +158,13 @@ export async function POST(req: Request) {
     }),
   );
 
-  // Optional: forward to Resend if configured
-  if (process.env.RESEND_API_KEY && process.env.CONTACT_NOTIFY_EMAIL) {
+  const receiptId = `KG-${randomUUID()}`;
+  // A support submission is accepted only after a configured operator channel
+  // acknowledges delivery. No public comment database or background queue.
+  async function forwardEmail(): Promise<boolean> {
+    if (!process.env.RESEND_API_KEY || !process.env.CONTACT_NOTIFY_EMAIL) return false;
     try {
-      await fetch("https://api.resend.com/emails", {
+      const response = await fetch("https://api.resend.com/emails", {
         method: "POST",
         headers: {
           authorization: `Bearer ${process.env.RESEND_API_KEY}`,
@@ -169,14 +173,28 @@ export async function POST(req: Request) {
         body: JSON.stringify({
           from: process.env.CONTACT_FROM_EMAIL ?? "noreply@kakomon-ai.dev",
           to: process.env.CONTACT_NOTIFY_EMAIL,
-          subject: `[過去問 AI] ${payload.kind} 受信`,
-          text: safeBody,
+          subject: `[過去問 AI] ${payload.kind} ${receiptId}`,
+          text: `受付番号: ${receiptId}\n${safeBody}`,
         }),
+        signal: AbortSignal.timeout(5_000),
       });
+      return response.ok;
     } catch {
       console.error("contact forward failed");
+      return false;
     }
   }
+
+  if (payload.kind !== "feedback") {
+    const slackDelivered = await sendSlackMessage(`受付番号: ${receiptId}\n${buildSlackText(maskedPayload, hashIp(ip))}`);
+    const delivered = slackDelivered || await forwardEmail();
+    if (!delivered) return NextResponse.json({ ok: false, error: "delivery_failed", message: "運営への送信を確認できませんでした。入力内容を残したまま、時間をおいて再送信してください。" }, { status: 503 });
+    return NextResponse.json({ ok: true, receiptId, delivery: "delivered" });
+  }
+
+  // Preserve the existing feedback/unlock path, including its best-effort
+  // notifications. This change does not alter AI access or its signed cookie.
+  await forwardEmail();
 
   // Forward to Slack so inbound signals reach the team (the old admin/feedback
   // dashboard read a file nothing wrote to and was always empty).

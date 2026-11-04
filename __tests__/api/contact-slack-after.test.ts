@@ -70,12 +70,12 @@ describe("POST /api/contact — Slack 通知は after() で送る", () => {
     expect(hoisted.afterCallbacks).toHaveLength(1);
   });
 
-  it("after のコールバックが実際に Slack へ送る", async () => {
-    await POST(req({ kind: "question-comment", questionId: "ap-2024h-am-q1", comment: "誤植" }));
-    expect(hoisted.afterCallbacks).toHaveLength(1);
-    await hoisted.afterCallbacks[0]();
+  it("補足は応答前に運営への配信を確認する", async () => {
+    const res = await POST(req({ kind: "question-comment", questionId: "ap-2024h-am-q1", comment: "誤植" }));
+    expect(hoisted.afterCallbacks).toHaveLength(0);
     expect(hoisted.slackCalls).toHaveLength(1);
     expect(hoisted.slackCalls[0]).toContain("ap-2024h-am-q1");
+    expect(await res.json()).toMatchObject({ ok: true, delivery: "delivered", receiptId: expect.stringMatching(/^KG-/) });
   });
 
   it("Slack が失敗しても問い合わせは受理済み（fail-open）", async () => {

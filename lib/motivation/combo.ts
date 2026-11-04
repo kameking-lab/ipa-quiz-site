@@ -6,7 +6,7 @@ export interface MotivationSettings {
 }
 
 const DEFAULTS: MotivationSettings = {
-  soundEnabled: true,
+  soundEnabled: false,
   reduceMotion: false,
 };
 
