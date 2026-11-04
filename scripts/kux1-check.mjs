@@ -15,10 +15,7 @@ if (label === 'e2e') {
   env.PLAYWRIGHT_JSON_OUTPUT_FILE = path.join(out, 'e2e-results.json');
 }
 const source = execFileSync('git', ['rev-parse', 'HEAD'], { encoding: 'utf8' }).trim();
-const files = execFileSync('git', ['ls-files', '-z'], { encoding: 'utf8' }).split('\0').filter(Boolean);
-const sourceSha256 = createHash('sha256');
-for (const file of files) { sourceSha256.update(file); sourceSha256.update(fs.readFileSync(file)); }
-const sourceHash = sourceSha256.digest('hex');
+const sourceHash = createHash('sha256').update(source).update(execFileSync('git', ['diff', 'HEAD'], { maxBuffer: 16 * 1024 * 1024 })).digest('hex');
 const log = path.join(out, `${label}.log`);
 const fd = fs.openSync(log, 'w');
 const started = Date.now();
