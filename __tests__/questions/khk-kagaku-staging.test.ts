@@ -71,14 +71,15 @@ describe("KHK chemistry source staging", () => {
         if (paper.code.endsWith("X")) {
           expect(fields.lawInstructionsDraft).toContain(`令和${paper.year - 2018}年4月1日`);
         }
-        const hasSharedTable = paper.code === "AX" && q.number >= 8;
+        const hasSharedTable = ["AX", "BX"].includes(paper.code) && q.number >= 8;
         const hasDescriptiveFigure = paper.code === "AZ" && (
           (paper.year === 2024 && [2, 3, 4].includes(q.number)) ||
           (paper.year === 2025 && q.number === 4)
         );
-        expect(fields.hasImage).toBe(hasSharedTable || hasDescriptiveFigure);
+        const hasOtsuTable = paper.code === "BZ" && (q.number === 6 || (paper.year === 2025 && q.number === 13));
+        expect(fields.hasImage).toBe(hasSharedTable || hasDescriptiveFigure || hasOtsuTable);
         const assets = fields.imageAssets as string[];
-        expect(assets).toHaveLength(hasSharedTable || hasDescriptiveFigure ? 1 : 0);
+        expect(assets).toHaveLength(hasSharedTable || hasDescriptiveFigure || hasOtsuTable ? 1 : 0);
         expect(assets.every((file) => review.assets.some((asset) => asset.file === file))).toBe(true);
         if (hasSharedTable) {
           expect(fields.sharedPassagePdfPages).toEqual([q.number <= 12 ? 4 : 6]);
@@ -97,6 +98,30 @@ describe("KHK chemistry source staging", () => {
       return counts;
     }, {});
     expect(byQualification).toEqual({ "甲種化学": 82, "乙種化学": 100, "丙種化学（液石）": 120, "丙種化学（特別）": 120 });
+  });
+
+  it("retains the 100 reviewed Otsu originals, equation typography, tables and booklet conditions", () => {
+    const otsu = drafts.papers.filter((p) => ["BX", "BY", "BZ"].includes(p.code));
+    expect(otsu.flatMap<(typeof drafts.papers)[number]["questions"][number]>((p) => p.questions).filter((q) => q.transcriptionVerified)).toHaveLength(100);
+    expect(review.counts.transcriptionVerified).toBe(182);
+    expect(review.counts.unreviewed).toBe(240);
+    expect(review.assets).toHaveLength(15);
+    const get = (year: number, code: string, number: number) =>
+      drafts.papers.find((p) => p.year === year && p.code === code)!.questions[number - 1] as unknown as Record<string, unknown>;
+    expect(get(2024, "BX", 17).pdfPages).toEqual([7]);
+    expect(get(2024, "BX", 18).questionDraft).not.toMatch(/\bB\b/);
+    expect(get(2024, "BY", 15).pdfPages).toEqual([6]);
+    for (const year of [2024, 2025]) {
+      expect(get(year, "BZ", 15).pdfPages).toEqual([year === 2024 ? 5 : 6]);
+      expect(get(year, "BZ", 6).questionDraft).toContain("| 選択肢 | a | b | c | d |");
+      expect(get(year, "BZ", 6).questionDraft).toContain("→");
+      expect(get(year, "BZ", 7).questionDraft).toContain("K_c");
+      expect((get(year, "BZ", 1).sharedPassagesDraft as string[]).join()).toContain("絶対圧力");
+    }
+    expect(get(2024, "BZ", 1).questionDraft).toContain("kg･m³･s⁻²");
+    expect(get(2025, "BZ", 2).questionDraft).toContain("28.0×10⁻³ kg/mol");
+    expect(get(2025, "BZ", 13).questionDraft).toContain("| 水（g） | −242 |");
+    expect(get(2024, "BZ", 5).questionDraft).toContain("同一の反応であれば、用いる触媒や反応条件により変わらない。");
   });
 
   it("preserves descriptive subquestions, essential figures and exponents without creating choices", () => {
@@ -144,6 +169,7 @@ describe("KHK chemistry source staging", () => {
 
   it("keeps unfinished source drafts out of published qualifications and practice questions", () => {
     expect(drafts.status).toBe("source-draft-only");
+    expect(drafts.publicAllowed).toBe(false);
     const entry = QUALIFICATION_CATALOG.find((q) => q.slug === "khk-kagaku");
     expect(entry?.status).toBe("ready-to-ingest");
     expect(entry?.examCode).toBeUndefined();
