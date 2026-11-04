@@ -18,6 +18,8 @@ import type { ChoiceKey, Question } from "@/lib/questions/types";
 import { choiceDisplayLabel, questionNumberLabel } from "@/lib/questions/display";
 import { formatOrderingAnswer, isOrderingAnswerCorrect } from "@/lib/questions/ordering";
 import { OrderingAnswerInput } from "../OrderingAnswerInput";
+import { NumericAnswerInput } from "../NumericAnswerInput";
+import { formatNumericAnswer, isNumericAnswerCorrect } from "@/lib/questions/numeric";
 import { createHistoryStore } from "@/lib/storage/history";
 import { FOCUSABLE_SELECTOR, trapTabTarget } from "@/lib/a11y/focus-trap";
 import { ArrowLeft, ChevronUp, ChevronDown, Check, X, Flame } from "lucide-react";
@@ -114,7 +116,7 @@ export function StreamQuizPlayer({ questions, backHref = "/ipa" }: { questions: 
 
   const onSelect = React.useCallback(
     (key: ChoiceKey) => {
-      if (!question || revealed || question.type === "ordering") return;
+      if (!question || revealed || question.type === "ordering" || question.type === "numeric") return;
       const correct = isAcceptedAnswer(question.answer, key);
       setSelected(key);
       setRevealed(true);
@@ -156,6 +158,16 @@ export function StreamQuizPlayer({ questions, backHref = "/ipa" }: { questions: 
         return next;
       });
     } else setCombo(0);
+  }, [question, revealed, history]);
+
+  const onNumericAnswer = React.useCallback((value: string) => {
+    if (!question || question.type !== "numeric" || revealed) return;
+    const correct = isNumericAnswerCorrect(question, value);
+    setRevealed(true);
+    setAnswers(previous => [...previous, { questionId: question.id, selected: value, correct }]);
+    history.record({ id: question.id, selected: value, correct, at: Date.now() });
+    if (correct) setCombo(previous => previous + 1);
+    else setCombo(0);
   }, [question, revealed, history]);
 
   React.useEffect(() => {
@@ -226,7 +238,7 @@ export function StreamQuizPlayer({ questions, backHref = "/ipa" }: { questions: 
     );
   }
 
-  const answerKey = question.type === "native-b" ? formatNativeBAnswer(question.nativeB!) : question.type === "ordering" ? formatOrderingAnswer(question.exam, question.answer as ChoiceKey[]) : formatAcceptedAnswers(question.answer);
+  const answerKey = question.type === "native-b" ? formatNativeBAnswer(question.nativeB!) : question.type === "ordering" ? formatOrderingAnswer(question.exam, question.answer as ChoiceKey[]) : question.type === "numeric" ? formatNumericAnswer(question) : formatAcceptedAnswers(question.answer);
 
   return (
     <div
@@ -290,7 +302,7 @@ export function StreamQuizPlayer({ questions, backHref = "/ipa" }: { questions: 
         </div>
 
         <div className="space-y-2">
-          {question.type === "native-b" ? <NativeBAnswerInput key={question.id} data={question.nativeB!} displayedImageUrls={question.imageUrls} disabled={revealed} onAnswer={onNativeBAnswer} /> : question.type === "ordering" ? <OrderingAnswerInput key={question.id} question={question} disabled={revealed} onAnswer={onOrderingAnswer} /> : question.choices &&
+          {question.type === "native-b" ? <NativeBAnswerInput key={question.id} data={question.nativeB!} displayedImageUrls={question.imageUrls} disabled={revealed} onAnswer={onNativeBAnswer} /> : question.type === "ordering" ? <OrderingAnswerInput key={question.id} question={question} disabled={revealed} onAnswer={onOrderingAnswer} /> : question.type === "numeric" ? <div className="text-foreground"><NumericAnswerInput key={question.id} unit={question.numericAnswer!.unit} specification={question.numericAnswer} disabled={revealed} onAnswer={onNumericAnswer} /></div> : question.choices &&
             getChoiceKeys(question.choices).map((key) => {
               const isCorrect = isAcceptedAnswer(question.answer, key);
               const isSelected = selected === key;
@@ -420,7 +432,7 @@ function ReviewOverlay({
     }
   };
 
-  const answerKey = question.type === "native-b" ? formatNativeBAnswer(question.nativeB!) : question.type === "ordering" ? formatOrderingAnswer(question.exam, question.answer as ChoiceKey[]) : formatAcceptedAnswers(question.answer);
+  const answerKey = question.type === "native-b" ? formatNativeBAnswer(question.nativeB!) : question.type === "ordering" ? formatOrderingAnswer(question.exam, question.answer as ChoiceKey[]) : question.type === "numeric" ? formatNumericAnswer(question) : formatAcceptedAnswers(question.answer);
 
   return (
     <div

@@ -303,7 +303,7 @@ function validate(questions: Question[]): ValidationResult {
         continue;
       }
       const answers = Array.isArray(q.answer) ? q.answer : [q.answer];
-      const ans = answers.find(key => !["ア", "イ", "ウ", "エ", "オ", "カ", "キ", "ク", "ケ", "コ", "サ", "シ", "ス", "セ", "ソ"].includes(key) || !q.choices?.[key as keyof typeof q.choices]);
+      const ans = answers.find(key => !["ア", "イ", "ウ", "エ", "オ", "カ", "キ", "ク", "ケ", "コ", "サ", "シ", "ス", "セ", "ソ", "タ"].includes(key) || !q.choices?.[key as keyof typeof q.choices]);
       if (ans !== undefined || answers.length === 0) {
         fail++;
         byExam[examKey].fail++;

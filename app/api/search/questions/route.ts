@@ -1,4 +1,5 @@
 import { ALL_QUIZ_EXAM_CODES } from "@/lib/exam-config";
+import { PRACTICE_SESSIONS } from "@/lib/questions/practice-session";
 import { NextResponse } from "next/server";
 import { z } from "zod";
 import { searchQuestions } from "@/lib/search/question-index";
@@ -9,19 +10,7 @@ export const runtime = "nodejs";
 const EXAM_CODES = ALL_QUIZ_EXAM_CODES;
 
 const SEASONS = ["spring", "autumn", "cbt", "published", "first", "second", "early", "may", "september", "january", "october", "late", "annual", "july", "primary", "kansai", "february", "june", "august", "march", "round1", "round2"] as const;
-const SESSIONS = ["gyosei", "kanri", "kansa", "kigyo", "zaimu",
-  "houki", "hoki", "kogaku", "kiso", "kogaku-a", "kogaku-b",
-  "am",
-  "am1",
-  "am2",
-  "pm",
-  "pm1",
-  "pm2",
-  "kamoku-a",
-  "kamoku-b",
-  "gakka",
-  "riron",
-] as const;
+const SESSIONS = [...PRACTICE_SESSIONS, "pm1", "pm2"] as const;
 
 const QuerySchema = z.object({
   q: z.string().trim().max(120).optional(),
