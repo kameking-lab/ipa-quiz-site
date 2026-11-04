@@ -20,7 +20,7 @@ const CANONICAL_PAGES: [string, string][] = [
     "/e-learning/exams/qualifications/dai-1-shu-eisei-kanrisha",
   ],
   // ─── クイズ関連 ────────────────────────────────────────────────────────────
-  ["/quiz/review", "/quiz/review"],
+  ["/quiz/review", "/review"],
   ["/quiz/stream", "/quiz/stream"],
   ["/mock-exam", "/mock-exam"],
   ["/modes/topic", "/modes/topic"],

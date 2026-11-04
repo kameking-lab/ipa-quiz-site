@@ -2,6 +2,7 @@
 import { isAcceptedAnswer, formatAcceptedAnswers, getChoiceKeys } from "@/lib/questions/answers";
 
 import * as React from "react";
+import Link from "next/link";
 import type { ChoiceKey } from "@/lib/questions/types";
 import { createHistoryStore } from "@/lib/storage/history";
 import {
@@ -21,6 +22,10 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { addGold, addXp } from "@/lib/gamification/economy";
 import { evaluateAchievementsAfterMock } from "@/lib/gamification/achievements";
+import { recordReview } from "@/lib/learning/spaced-repetition";
+import { recordStudyOnDate } from "@/lib/motivation/heatmap";
+import { readSettings } from "@/lib/storage/settings";
+import { mockReviewHref } from "@/lib/mock-exam/review";
 
 
 interface Props {
@@ -55,6 +60,7 @@ export function MockExamRunner({ questions, config, onFinish, resumeFrom }: Prop
   );
   const [phase, setPhase] = React.useState<Phase>("running");
   const [result, setResult] = React.useState<MockExamResult | null>(null);
+  const submittedRef = React.useRef(false);
 
   const questionTimingsRef = React.useRef<number[]>(Array(questions.length).fill(0));
   const questionStartTimeRef = React.useRef<number>(Date.now());
@@ -88,6 +94,8 @@ export function MockExamRunner({ questions, config, onFinish, resumeFrom }: Prop
 
   const submit = React.useCallback(
     (auto: boolean) => {
+      if (submittedRef.current) return;
+      submittedRef.current = true;
       const finishedAt = Date.now();
       const timeUsedSec = Math.round((finishedAt - startedAt) / 1000);
 
@@ -112,15 +120,19 @@ export function MockExamRunner({ questions, config, onFinish, resumeFrom }: Prop
         if (!byCategory[cat]) byCategory[cat] = { total: 0, correct: 0 };
         byCategory[cat].total++;
         if (isCorrect) byCategory[cat].correct++;
-        if (ans !== undefined) {
+        // A submitted blank is an assessed miss, so it also reaches weakness
+        // analysis and review. Keep the existing history shape (empty selection).
+        if (readSettings().recordHistory) {
           store.record({
             id: q.id,
-            selected: ans,
+            selected: ans ?? "",
             correct: isCorrect,
             at: finishedAt,
           });
         }
+        recordReview(q.id, isCorrect);
       }
+      recordStudyOnDate();
       const answered = answers.filter((a) => a !== undefined).length;
       const scorePct = Math.round((correct / questions.length) * 100);
       const passed = scorePct / 100 >= config.passThreshold;
@@ -158,18 +170,12 @@ export function MockExamRunner({ questions, config, onFinish, resumeFrom }: Prop
   React.useEffect(() => {
     if (phase !== "running") return;
     const id = setInterval(() => {
-      setRemaining((r) => {
-        if (r <= 1) {
-          clearInterval(id);
-          submit(true);
-          return 0;
-        }
-        return r - 1;
-      });
+      const seconds = Math.max(0, Math.ceil((startedAt + totalSec * 1000 - Date.now()) / 1000));
+      setRemaining(seconds);
+      if (seconds === 0) submit(true);
     }, 1000);
     return () => clearInterval(id);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [phase]);
+  }, [phase, startedAt, totalSec, submit]);
 
   if (phase === "submitted" && result) {
     return (
@@ -460,6 +466,12 @@ function ResultView({
       </Card>
 
       {/* 分野別正答率 */}
+      <nav aria-label="模試後の学習" className="mb-4 grid gap-2 sm:grid-cols-3">
+        {result.wrongQuestionIds?.length ? <Button asChild><Link href={mockReviewHref(result)}>今回の間違い・未回答を復習</Link></Button> : <p className="self-center text-sm font-semibold">全問正解です</p>}
+        <Button asChild variant="outline"><Link href="/account/dashboard#mock-scores">進捗で模試記録を見る</Link></Button>
+        <Button asChild variant="outline"><Link href="/account/dashboard#weakness">弱点を確認</Link></Button>
+      </nav>
+      <p className="mb-4 text-xs text-muted-foreground">模試結果を端末に保存しました。{readSettings().recordHistory ? "未回答を含む採点結果は進捗・弱点にも反映されます。" : "回答履歴の記録がオフのため、進捗・弱点への回答追加は行いません。"}</p>
       <Card className="mb-4">
         <CardContent className="pt-5">
           <h2 className="mb-3 text-sm font-semibold" id="result-categories">

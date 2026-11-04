@@ -50,6 +50,7 @@ function write(data: MockExamStorage): void {
 
 export function recordMockExam(result: MockExamResult): void {
   const data = read();
+  if (data.history.some((item) => item.id === result.id)) return;
   data.history.push(result);
   if (data.history.length > 50) {
     data.history = data.history.slice(-50);

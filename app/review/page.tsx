@@ -5,6 +5,7 @@ export const metadata: Metadata = {
   title: "間隔反復学習",
   description: "エビングハウスの忘却曲線に基づいて復習タイミングを最適化。今日復習すべき問題を自動表示します。",
   robots: { index: false, follow: false },
+  alternates: { canonical: "/review" },
 };
 
 export default async function ReviewPage({ searchParams }: { searchParams: Promise<{ exam?: string; returnTo?: string }> }) {

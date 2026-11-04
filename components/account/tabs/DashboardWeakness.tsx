@@ -4,6 +4,7 @@ import { Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { WeaknessHeatmapClient } from "@/app/account/weakness/WeaknessHeatmapClient";
+import { MockExamInsight } from "../MockExamInsight";
 
 interface Props {
   categoryById: Record<string, string>;
@@ -12,6 +13,7 @@ interface Props {
 export function DashboardWeakness({ categoryById }: Props) {
   return (
     <div className="space-y-6">
+      <MockExamInsight />
       <Card className="border-rose-200 bg-rose-50/40 dark:border-rose-900/60 dark:bg-rose-950/20">
         <CardContent className="flex flex-col items-start gap-3 p-5 sm:flex-row sm:items-center sm:justify-between">
           <div>
