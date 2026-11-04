@@ -58,7 +58,7 @@ describe("Kenchikushi unpublished staging", () => {
     expect(manifest.ingestionState).toBe("in-progress");
     expect(manifest.ingestedQuestionCount).toBe(allStaged.length);
     expect(manifest.batches.reduce((sum, batch) => sum + batch.questionCount, 0)).toBe(allStaged.length);
-    expect(manifest.nextResume).toEqual({ qualificationSlug: "kenchikushi2", year: 2026, subject: "III", qNumber: 1 });
+    expect(manifest.nextResume).toEqual({ qualificationSlug: "kenchikushi2", year: 2026, subject: "IV", qNumber: 1 });
     const home = getHomeDirectory().flatMap(d => [...d.featured, ...d.compact]);
     for (const slug of ["kenchikushi2", "mokuzo-kenchikushi"]) {
       const entry = QUALIFICATION_CATALOG.find(q => q.slug === slug);
@@ -70,7 +70,7 @@ describe("Kenchikushi unpublished staging", () => {
   });
 
   it("pins each ingested subject to 25 complete source records and 125 explanations", () => {
-    expect(allStaged).toHaveLength(50);
+    expect(allStaged).toHaveLength(75);
     expect(new Set(allStaged.map(q => q.id)).size).toBe(allStaged.length);
     for (const batch of manifest.batches) {
       const subjectIndex = ["I", "II", "III", "IV"].indexOf(batch.subject);
@@ -116,6 +116,32 @@ describe("Kenchikushi unpublished staging", () => {
     expect(law[17].choices?.エ).toContain("1/2");
     for (const statement of ["イ．", "ロ．", "ハ．", "ニ．"]) expect(law[1].question).toContain(statement);
     expect(law[9].choices?.ウ).toContain("設ければならない");
+  });
+
+  it("preserves structure diagrams, tabular choices and mathematical notation", () => {
+    const structure = allStaged.filter(q => q.session === "gakka-III");
+    expect(structure.filter(q => q.hasImage).map(q => q.qNumber)).toEqual([1,2,3,4,5,6,8]);
+    expect(structure[0].question).toContain("I_B/I_A");
+    expect(structure[3].question).toContain("QC");
+    expect(structure[4].choices?.イ).toBe("−√2 kN");
+    expect(structure[5].choices?.エ).toContain("15×10⁻⁵ m⁴");
+    expect(structure[3].originalContent?.tables?.[0].rows).toHaveLength(6);
+    expect(structure[5].originalContent?.tables?.[0].rows).toHaveLength(6);
+    expect(structure[10].choices?.オ).toContain("1/3");
+    expect(structure[13].choices?.ア).toContain("1/30");
+    expect(structure[15].choices?.イ).toContain("1×10⁴");
+    expect(structure[15].choices?.オ).toContain("1/200");
+    for (const q of structure) {
+      expect(q.sourcePdfUrl).toBe(manifest.rounds[0].questionDocuments[1].url);
+      expect(q.sourcePage).toBeGreaterThanOrEqual(2);
+      expect(q.sourcePage).toBeLessThanOrEqual(13);
+      expect(q.sourcePrintedPage).toBe(`構造 ${q.sourcePage-1}`);
+      for (const path of q.imageUrls ?? []) {
+        expect(path.startsWith("data/qualification-staging/kenchikushi2/assets/")).toBe(true);
+        expect(readFileSync(resolve(path)).subarray(0,8).toString("hex")).toBe("89504e470d0a1a0a");
+      }
+      if (q.hasImage) expect(q.imageAltTexts?.[0].length).toBeGreaterThan(50);
+    }
   });
 
   it("contains exactly the first complete subject, with 125 explanations and pinned official answers", () => {

@@ -87,6 +87,64 @@ def source_questions_ii(path):
     return questions
 
 
+def source_questions_iii(path):
+    figures = {2: [(90,155,510,412)], 3: [(210,96,505,246),(220,366,495,607)],
+               4: [(70,122,410,468)], 5: [(180,75,540,322),(70,458,455,677)],
+               6: [(210,415,545,576)]}
+    questions = {}
+    with pdfplumber.open(path) as pdf:
+        for page_number in range(2,14):
+            rects = figures.get(page_number, [])
+            def retain(obj):
+                if obj.get("object_type") != "char": return True
+                if obj["top"] >= 790 or obj["size"] <= 5.5: return False
+                return not any(obj["x0"] < r[2] and obj["x1"] > r[0] and obj["top"] < r[3] and obj["bottom"] > r[1] for r in rects)
+            page = pdf.pages[page_number-1]
+            text = unicodedata.normalize("NFKC", page.filter(retain).extract_text(use_text_flow=True))
+            parts = re.split(r"〔No\.\s*(\d+)〕", text)
+            for i in range(1,len(parts),2):
+                number = int(parts[i])
+                fields = re.split(r"(?m)^\s*([1-5])\s*\.\s*", parts[i+1])
+                choices = {int(fields[j]):fields[j+1] for j in range(1,len(fields),2)}
+                body = fields[0]
+                if number == 1:
+                    # The printed numerator is I_B; text flow outputs denominator first.
+                    body = re.sub(r"とするとき、\s*I\s*A\s*I\s*B", "とするとき、I_B/I_A", body)
+                if number in [4,6]:
+                    tables = [t for t in page.extract_tables() if len(t) == 6 and len(t[0]) == (3 if number == 4 else 2)]
+                    assert len(tables) == 1, (number, tables)
+                    table = tables[0]
+                    assert len(table) == 6 and len(table[0]) == (3 if number == 4 else 2), (number, table)
+                    choices = {}
+                    for j,row in enumerate(table[1:],1):
+                        if number == 4:
+                            choices[j] = f"R_A：{row[0]}、R_B：{row[1]}、Q_Cの絶対値：{row[2]}"
+                        else:
+                            # Exponent and unit normalized to the original table's headings.
+                            value = normalize(row[1]).replace("−", "-")
+                            assert value.endswith("×10-5"), value
+                            choices[j] = f"L：{row[0]} m、I：{value[:-5]}×10⁻⁵ m⁴"
+                if number == 5:
+                    for j in [1,2,4,5]:
+                        choices[j] = re.sub(r"[\s\x00-\x1f]*2\s*kN", "√2 kN", choices[j])
+                if number == 10:
+                    for j,term in enumerate(["内法貫","転び止め","長押","配付け垂木","根太掛け"],1):
+                        choices[j] = choices[j].replace(term,term+" ― ",1)
+                if number == 11: choices[5] = re.sub(r"断面積の\s*3\s*1", "断面積の1/3", choices[5])
+                if number == 14:
+                    choices[1] = re.sub(r"距離の\s*30\s*1", "距離の1/30", choices[1])
+                    choices[4] = re.sub(r"長さの\s*10\s*1", "長さの1/10", choices[4])
+                if number == 16:
+                    for denominator in [200,250]:
+                        choices[5] = re.sub(r"スパンの\s*"+str(denominator)+r"\s*1", "スパンの1/"+str(denominator), choices[5])
+                assert sorted(choices) == [1,2,3,4,5], (number, choices)
+                # U+2212 and fullwidth source minus are mathematically identical here.
+                choices = {k:v.replace("−","-") for k,v in choices.items()}
+                questions[number] = (page_number, body, choices)
+    assert sorted(questions) == list(range(1,26))
+    return questions
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("owner_directory", type=Path)
@@ -108,8 +166,8 @@ def main():
                         assert row == round_["officialAnswers"][subject], (file.name, subject)
                         counts["officialAnswers"] += len(row)
             counts["ownerPdfs"] += 1
-    for subject, extract in [("I", source_questions), ("II", source_questions_ii)]:
-        originals = extract(args.owner_directory / "R8_2k_1_2.pdf")
+    for subject, extract in [("I", source_questions), ("II", source_questions_ii), ("III", source_questions_iii)]:
+        originals = extract(args.owner_directory / ("R8_2k_3_4.pdf" if subject == "III" else "R8_2k_1_2.pdf"))
         data = (STAGING / f"2026-{subject}.ts").read_text(encoding="utf-8")
         staged = json.loads(data.split("= ", 1)[1].rsplit(";", 1)[0])
         assert len(staged) == 25
@@ -120,9 +178,9 @@ def main():
             assert normalize(body) == normalize(question["question"]), (subject, number, "body", body)
             counts["questionBodies"] += 1
             for index, key in enumerate("アイウエオ", 1):
-                assert normalize(choices[index]) == normalize(question["choices"][key]), (subject, number, key, choices[index], question["choices"][key])
+                assert normalize(choices[index]) == normalize(question["choices"][key].replace("−", "-")), (subject, number, key, choices[index], question["choices"][key])
                 counts["choices"] += 1
-    print(json.dumps({"status": "PASS", "counts": counts, "normalization": "NFKC, whitespace/control removal; I ruby stored separately, q1 text-layer 繁 corrected to printed 繫, q15 fraction 1/8; II q1/q16/q18 fractions restored from page images; II figure labels excluded from prose and retained in source PNG crops"}, ensure_ascii=False, indent=2))
+    print(json.dumps({"status": "PASS", "counts": counts, "normalization": "NFKC, whitespace/control removal; I ruby stored separately, q1 text-layer 繁 corrected to printed 繫, q15 fraction 1/8; II q1/q16/q18 fractions restored from page images; II/III figure labels excluded from prose and retained in source PNG crops; III printed I_B/I_A, radicals, exponents and fractions restored from images; III q4/q6 choice tables independently parsed by PDFMiner"}, ensure_ascii=False, indent=2))
 
 
 if __name__ == "__main__":
