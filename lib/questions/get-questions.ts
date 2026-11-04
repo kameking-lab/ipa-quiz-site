@@ -35,6 +35,8 @@ const EXAM_LOADERS: Partial<Record<ExamCode, () => Promise<Question[]>>> = {
   "keiryoshi": async () => isExamPublished("keiryoshi") ? (await import("@/data/questions/keiryoshi")).getKeiryoshiCandidates("keiryoshi") : [],
   "keiryoshi-nodo": async () => isExamPublished("keiryoshi-nodo") ? (await import("@/data/questions/keiryoshi")).getKeiryoshiCandidates("keiryoshi-nodo") : [],
   "keiryoshi-soon": async () => isExamPublished("keiryoshi-soon") ? (await import("@/data/questions/keiryoshi")).getKeiryoshiCandidates("keiryoshi-soon") : [],
+  kenki2: async () => isExamPublished("kenki2") ? (await import("@/data/questions/kenki2")).KENKI2_QUESTIONS : [],
+  kenki1: async () => isExamPublished("kenki1") ? (await import("@/data/questions/kenki1")).KENKI1_QUESTIONS : [],
   kanteishi: async () => isExamPublished("kanteishi") ? (await import("@/data/questions/kanteishi")).KANTEISHI_QUESTIONS : [],
   kaikeishi: async () => isExamPublished("kaikeishi") ? (await import("@/data/questions/kaikeishi")).KAIKEISHI_QUESTIONS : [],
   "riku-tech2": async () => isExamPublished("riku-tech2") ? (await import("@/data/questions/riku-tech2")).RIKU_TECH2_QUESTIONS : [],

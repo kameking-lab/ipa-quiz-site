@@ -265,6 +265,13 @@ describe("sessionLabel", () => {
       "measurement-physics": true,
       "measurement-sound": true,
       "measurement-management": true,
+      "kenki-type1": true,
+      "kenki-type2": true,
+      "kenki-type3": true,
+      "kenki-type4": true,
+      "kenki-type5": true,
+      "kenki-type6": true,
+
     };
     for (const session of Object.keys(SESSION_PRESENCE) as Session[]) {
       expect(sessionLabel(session)).not.toBe(session.toUpperCase());

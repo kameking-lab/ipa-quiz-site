@@ -445,6 +445,24 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
   },
 
   {
+    slug: "kenki2", examCode: "kenki2", shortName: "2級建設機械施工管理",
+    fullName: "2級建設機械施工管理技術検定（第一次検定）", domain: "construction",
+    administrator: "一般社団法人日本建設機械施工協会",
+    officialQuestionsUrl: "https://jcmanet-shiken.jp/kako-shiken-mondai/",
+    officialReuseTermsUrl: "https://jcmanet.or.jp/kentei/", status: "ready-to-ingest",
+    reuseSummary: "権利はオーナー確認済み。令和8・7年度の共通各32問・第1〜6種各20問、計304問を非公開で準備。公式正答・全肢解説・必要図を保存。法規は出題時点の法令。",
+    remainingWork: ["監督側による独立レビューと指摘修正後の合格確認"],
+  },
+  {
+    slug: "kenki1", examCode: "kenki1", shortName: "1級建設機械施工管理",
+    fullName: "1級建設機械施工管理技術検定（第一次検定）", domain: "construction",
+    administrator: "一般社団法人日本建設機械施工協会",
+    officialQuestionsUrl: "https://jcmanet-shiken.jp/kako-shiken-mondai/",
+    officialReuseTermsUrl: "https://jcmanet.or.jp/kentei/", status: "ready-to-ingest",
+    reuseSummary: "権利はオーナー確認済み。令和8・7年度の第一次検定各56問、計112問を非公開で準備。公式問題・正答と全肢解説・必要図を保存。法規は出題時点の法令。",
+    remainingWork: ["監督側による独立レビューと指摘修正後の合格確認"],
+  },
+  {
     slug: "kanteishi", examCode: "kanteishi", shortName: "不動産鑑定士", fullName: "不動産鑑定士試験（短答式）",
     domain: "real-estate", administrator: "国土交通省",
     officialQuestionsUrl: "https://www.mlit.go.jp/totikensangyo/kanteishi/content/002001126.pdf",
