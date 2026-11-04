@@ -64,7 +64,7 @@ import q2025_heat_q15 from "./2025-heat-q15.json";
 import q2025_electric_q15 from "./2025-electric-q15.json";
 import q2025_electric_q09 from "./2025-electric-q09.json";
 
-/** 公開前データ。資格コード・利用区分の本登録と全課目の完成までは演習レジストリへ接続しない。 */
+/** 全課目収録済みの未公開データ。公開する決定と資格コード・公開ルート登録までは演習レジストリへ接続しない。 */
 export type StagedEnergyKanriQuestion = Omit<Question, "exam" | "license"> & {
   exam: "energy-kanri";
   license: "ECCJ-owner-approved";
