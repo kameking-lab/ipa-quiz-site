@@ -1,0 +1,33 @@
+CQ4の独立再レビューをしてください。ファイルは編集せず、最後にPASS又はFAILを明示してください。FAILなら具体的な対象と修正を示してください。指定モデルgpt-6-astra、sandbox read-onlyの別プロセスです。ほかのエージェントに委任しないでください。
+
+初回の独立レビューは reports/CQ4-20261104/independent-review-1.md。全100問の本文・400肢と400肢解説・正答・非公開隔離を確認し、2026問2・39の原本画像の見出し／肢番号欠落でFAILでした。
+
+今回の修正:
+1. 全100枚を、PDF原ページ全体のPNG描画→ラスタ切出しに統一して再生成。images/2025-qNN-original.png、2026-qNN-original.pngが最終資産。旧WebPは削除。
+2. 各問の画像パスとSHA-256、source-audit.jsonのrenderScale（2025=2.5、2026=2）とrenderMode=full-page-png-cropを更新。監査スクリプトも同方法で全100枚を検証し、PNGシグネチャを要求。
+3. 特に2026問2・39は主担当が原寸表示で見出しと全肢番号を確認済み。
+4. 2025年正答の公式一覧上の公開日は7月14日。ファイル名が7月15日でも公開日とはみなさずmanifestを修正。実施日7月13日の公式合格者一覧を根拠に追加。
+5. 2026問35の古いクボタ参照URLは通常GETで404だったため、正常GET200で取得できる全浄協の一次資料へ差替え。PDF物理8ページに全4用途の色が列挙される。reference-checks.jsonに記録。学科問題・学科正答4本はすべて通常GET200。
+6. 依存をCorepackのpnpm10.33.0、--frozen-lockfileで揃えた。検証結果はvalidation.json（作成済みなら参照）と対応する一時ログで確認できる。初回レビュー中にtsc不在だったのは依存の入替時間帯で、現在は復旧している。
+
+画像の検査では可能なら view_image の detail="original" を指定してください。既定のhigh表示では同じ画像でも左側の文字が欠けて見えることがあり、主担当はPNGの原寸表示、別名PNGへのデコード、PDFの全ページPNGとピクセル比較で確認しました。これは欠落を無視してよいという意味ではありません。原寸でも欠ける場合はFAILにしてください。
+
+今回再生成した全100画像を原本と目視照合し、問2・39の見出し・1〜4肢番号、図表・数式・選択肢内図版の保持を確認してください。本文・正答・解説は初回審査対象と同一（画像パス等の付帯情報、問35の参考URLのみ変更）であることをgit差分で確認し、必要な箇所を再照合してください。
+
+元原本はまだ C:/Users/kanet/AppData/Local/Temp/codex-work/cq4/ にあります。
+2025-questions.pdf（画像17ページ）、2025-answers.pdf、2026-questions.pdf（21ページ、問題は物理5ページ以降）、2026-answers.pdf。
+元ページPNGは同領域の2025/、2026/。指摘2枚を再検査したPNGはq39-final-check.png等にもありますが、審査すべき最終資産はstaging/images/の100枚です。
+
+根拠:
+- 資格は浄化槽設備士の学科、slug jokaso-setsubishi。管理士jokasoとは別。COV1 B候補7。
+- 基点bb912dfd0494f7095ec5387f9f2e53f46381cd1f。全変更が公開されずpublicAllowed=falseで保存され、ExamCode・通常ローダー・公開レジストリ・publicの画像へ接続しないこと。
+- 原本の空白・改行・ルビ・数式のテキスト表記は整理し、印刷体裁は原本画像に保持する仕様。法令基準日は未確認なのでlawReferenceDate=null。
+- 一般公開の権利許可や未完成の最終報告書を、新たな停止条件にはしない。
+
+コマンド:
+corepack pnpm validate:questions --exam=jokaso-setsubishi
+corepack pnpm test __tests__/questions/jokaso-setsubishi-staging.test.ts __tests__/lib/exam-config-integrity.test.ts
+corepack pnpm exec tsc --noEmit --incremental false（読取専用で型検査する場合）
+python scripts/audit-jokaso-setsubishi-source.py --source-dir C:/Users/kanet/AppData/Local/Temp/codex-work/cq4
+
+レビュー結果には、修正確認の範囲、検証実行／記録確認の区別、PASS又はFAILを明示してください。
