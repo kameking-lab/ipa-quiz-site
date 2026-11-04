@@ -2,7 +2,6 @@ import { describe, it, expect, beforeEach, afterEach, vi } from "vitest";
 import { render, screen, cleanup, fireEvent, waitFor } from "@testing-library/react";
 
 import { SocialShare } from "@/components/motivation/SocialShare";
-import { ReferralClient } from "@/app/referral/ReferralClient";
 
 beforeEach(() => {
   cleanup();
@@ -34,17 +33,4 @@ describe("共有導線のコピー成功 SR 通知", () => {
     });
   });
 
-  it("ReferralClient: 紹介URLコピーで polite live region に成功が反映される", async () => {
-    render(<ReferralClient />);
-
-    const status = screen.getByRole("status");
-    expect(status).toHaveAttribute("aria-live", "polite");
-    expect(status).toHaveTextContent("");
-
-    fireEvent.click(screen.getByRole("button", { name: /URLをコピー/ }));
-
-    await waitFor(() => {
-      expect(screen.getByRole("status")).toHaveTextContent("紹介 URL をコピーしました");
-    });
-  });
 });

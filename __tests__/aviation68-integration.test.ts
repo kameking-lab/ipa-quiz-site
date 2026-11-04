@@ -72,9 +72,11 @@ describe('aviation communication68 local registration candidate',()=>{
   // IOS1 (666a49bca) added NativeQuestionGate; refresh only the reviewed UI pins.
   // Reviewed 2026-11-01 urgent release recipe: inline AI, original-answer rewards,
   // next-question focus/loading and explicit retirement of generated questions.
+  // PRK removes only the optional note CTA; rewards, answers and source pins remain.
   // The historical pre-reward oracle remains unchanged as provenance.
   expect(normalizedTextSha256(player)).toBe(batch2RuntimePins['components/quiz/QuizPlayer.tsx']);
   expect(player).toContain('NativeQuestionGate');
+  expect(player).not.toContain('ExamNoteGuide');
   expect(player).not.toContain('GenerateSimilar');
   expect(player).not.toContain('/api/generate-question');
   expect(player).toContain('recordStudyReward(');

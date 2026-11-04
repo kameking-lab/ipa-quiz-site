@@ -2,7 +2,7 @@ import { describe, it, expect, beforeEach, afterEach, vi } from "vitest";
 import { render, screen, cleanup } from "@testing-library/react";
 
 import { MetricsDashboard } from "@/app/admin/metrics/MetricsDashboard";
-import { buildMockMetrics } from "@/lib/admin/metrics/mock-data";
+import { buildMockMetrics } from "@/__tests__/fixtures/admin-metrics";
 
 beforeEach(() => {
   // マウント時の /api/admin/metrics フェッチを無害化（永久 pending で state 更新なし）

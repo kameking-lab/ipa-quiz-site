@@ -74,7 +74,6 @@ import { downloadMarkdown } from "@/lib/chat/export-markdown";
 import { useChatSession } from "@/hooks/useChatSession";
 import type { ChatSession, SharePayload } from "@/lib/chat/types";
 import { examLabel, formatYearSeason } from "@/lib/utils";
-import { readCharacterState } from "@/lib/storage/character";
 import { posthogCapture } from "@/lib/posthog";
 import { AiAccessNotice, useAiAccessNotice } from "@/components/ai/AiAccessNotice";
 import { aiPolicyDenialMessage } from "@/lib/ai/access-client";
@@ -404,7 +403,6 @@ export function CopilotPanel({
       beginAiAccess();
       let responseReceived = false;
       try {
-        const characterState = readCharacterState();
         posthogCapture("ai_query_sent", {
           questionId: question?.id,
           exam: question?.exam,
@@ -423,8 +421,6 @@ export function CopilotPanel({
             tier: "free",
             quickAction,
             learnerProfile: profile,
-            character: characterState.id,
-            characterEnabled: characterState.enabled,
             responseLength,
             messages: nextMessages.slice(-20).map((m) => ({ role: m.role, content: m.content })),
           }),

@@ -49,7 +49,6 @@ export type PostHogEventName =
   | "copilot_related_question_clicked"
   | "copilot_question_example_clicked"
   | "contact_form_submitted"
-  | "note_outbound_click"
   | "book_click"
   | "exam_library_answered"
   | "exam_library_ai_query"

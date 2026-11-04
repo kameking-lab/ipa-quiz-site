@@ -192,6 +192,7 @@ export default function EssayHomePage() {
       <section className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
         {ESSAY_EXAM_CODES.map((exam) => {
           const questions = getEssayQuestionsByExam(exam);
+          if (questions.length === 0) return null;
           return (
             <Card key={exam}>
               <CardHeader>
@@ -218,11 +219,6 @@ export default function EssayHomePage() {
                 {questions.length > 3 && (
                   <p className="text-xs text-zinc-500 dark:text-zinc-400">
                     他 {questions.length - 3} 問
-                  </p>
-                )}
-                {questions.length === 0 && (
-                  <p className="text-xs text-zinc-500 dark:text-zinc-400">
-                    準備中（順次追加）
                   </p>
                 )}
               </CardContent>

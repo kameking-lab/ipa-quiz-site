@@ -49,7 +49,6 @@ import {
 import { examTopicPageExists } from "@/lib/seo/exam-meta";
 import { buildQuestionJsonLd, questionBreadcrumbItems, sessionLabel } from "@/lib/seo/question-jsonld";
 import { questionSnippet, questionTitle } from "@/lib/seo/question-meta";
-import { ExamNoteGuide } from "@/components/exam/ExamNoteGuide";
 import { CurrentLearningLinks } from "@/components/term-relations/CurrentLearningLinks";
 import { QuestionAnswerCard } from "@/components/quiz/QuestionAnswerCard";
 import { DescriptiveAnswerCard } from "@/components/quiz/DescriptiveAnswerCard";
@@ -533,7 +532,6 @@ export default async function QuestionPage({
         <span>この問題を共有</span>
         <ShareButtons url={requestedPageUrlAbs} text={title} compact />
       </div>
-      <div className="print:hidden"><ExamNoteGuide exam={q.exam} /></div>
 
       {/* Category-level study guidance */}
       <div className="print:hidden">

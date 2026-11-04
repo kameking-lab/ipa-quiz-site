@@ -21,7 +21,7 @@ import { buildOrgNode, buildWebsiteNode } from "@/lib/seo/structured-data";
 import { examLabel } from "@/lib/utils";
 import type { ExamCode } from "@/lib/questions/types";
 import { EXAM_QUESTION_COUNTS } from "@/lib/constants/exam-question-counts";
-import { APPROX_QUESTION_COUNT_LABEL } from "@/lib/constants/question-counts";
+import { ALL_EXAM_CODES } from "@/lib/exam-config";
 import { isPracticeReadyQuestion } from "@/lib/questions/filter";
 
 const HOME_TITLE = "IPA過去問×AI、無料枠と月額プラン";
@@ -30,7 +30,8 @@ const HOME_SOCIAL_TITLE = `${HOME_TITLE} | 過去問AI`;
 // （IP/SG/FE/…）— that list ate ~40 low-value chars of the visible SERP window and
 // pushed Google toward synthesising a worse snippet from the page body. Kept
 // under the ~150 full-width-char budget. (empirical review 致命傷⑦)
-const HOME_DESCRIPTION = `情報処理技術者試験 全13区分の個別問題や学習用解説を無料公開し、連続演習には無料枠と月額プランを提供。ITパスポート・基本情報・応用情報から高度試験まで ${APPROX_QUESTION_COUNT_LABEL}問超を収録し、年度別・分野別・模試・苦手復習の6モードと学習履歴で効率学習。登録不要、スマホ片手で。`;
+const HOME_DESCRIPTION = "情報処理技術者試験 全13区分の個別問題や学習用解説を無料公開し、連続演習には無料枠と月額プランを提供。ITパスポート・基本情報・応用情報から高度試験まで、年度別・分野別・模試・苦手復習と学習履歴を使って対策できます。AI機能の利用条件は料金ページで確認してください。";
+const IPA_EXAM_CODES = new Set<string>(ALL_EXAM_CODES);
 
 export const metadata: Metadata = {
   title: HOME_TITLE,
@@ -63,7 +64,7 @@ export default function IpaPage() {
   const availableExamEntries = (
     Object.entries(questionCounts) as Array<[ExamCode, number]>
   )
-    .filter(([, count]) => count > 0)
+    .filter(([code, count]) => IPA_EXAM_CODES.has(code) && count > 0)
     .sort(([, a], [, b]) => b - a);
 
   // Stable pool for the returning-user 'today's picks' carousel. The
@@ -86,7 +87,7 @@ export default function IpaPage() {
     "@context": "https://schema.org",
     "@graph": [
       buildWebsiteNode(
-        `IPA 情報処理技術者試験 13 区分・${APPROX_QUESTION_COUNT_LABEL} 問超を AI コパイロット付きで学習できる無料の過去問サイト。`,
+        HOME_DESCRIPTION,
       ),
       {
         ...buildOrgNode(),

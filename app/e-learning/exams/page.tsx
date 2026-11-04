@@ -9,10 +9,6 @@ import {
 } from "@/components/exam-library/exam-catalog-browser";
 import { ExamSourceNotes } from "@/components/exam-library/exam-source-notes";
 import {
-  ExamNoteLinks,
-  collectSubjectNoteLinks,
-} from "@/components/exam-library/exam-note-links";
-import {
   EXAM_CATALOG,
   EXAM_LIBRARY_PATH,
   latestCheckedAt,
@@ -112,7 +108,6 @@ export default async function ExamLibraryPage({ searchParams }: ExamLibraryPageP
   // G10: 科目で絞られているときは、その科目の解説記事をこの一覧ページにも出す。
   // 資格カレンダー側の導線はこの URL を指しているため、ここに出ないと科目専用の
   // 解説記事は個別の回ページまで進まないと読者に見えない。
-  const subjectNoteLinks = collectSubjectNoteLinks(EXAM_CATALOG, initialGroup, initialSubject);
 
   const playable = items.filter((item) => item.questionCount !== null);
   const questionTotal = playable.reduce((total, item) => total + (item.questionCount ?? 0), 0);
@@ -141,13 +136,6 @@ export default async function ExamLibraryPage({ searchParams }: ExamLibraryPageP
           initialSubject={initialSubject}
         />
       </div>
-
-      <ExamNoteLinks
-        links={subjectNoteLinks}
-        headingId="exam-subject-note-links-title"
-        heading={initialSubject ? `${initialSubject}の解説記事` : "関連する解説記事"}
-        className="mt-8"
-      />
 
       <ExamSourceNotes className="mt-10" />
 

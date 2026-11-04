@@ -77,14 +77,6 @@ export default async function AccountPage() {
             <ShieldCheck className="h-3 w-3" />
             アカウント
           </div>
-          <Link
-            href="/referral"
-            className="inline-flex items-center gap-1.5 rounded-full border border-amber-200 bg-amber-50 px-2.5 py-1 text-[11px] font-semibold text-amber-800 shadow-sm transition hover:bg-amber-100 dark:border-amber-900/60 dark:bg-amber-950/40 dark:text-amber-200 dark:hover:bg-amber-900/40"
-            aria-label="友達招待で AI コパイロット利用回数 +30 回"
-          >
-            <span aria-hidden="true">🎁</span>
-            友達招待 AI+30回
-          </Link>
         </div>
         <h1 className="text-balance text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
           ようこそ、{session.user.name ?? session.user.email?.split("@")[0] ?? "ゲスト"} さん
@@ -206,12 +198,12 @@ export default async function AccountPage() {
             </li>
             <li>
               <Link
-                href="/ranking"
+                href="/account/dashboard#mock-scores"
                 className="flex items-center justify-between rounded-xl border border-border bg-muted/30 p-3 text-sm transition-colors hover:bg-muted/60"
               >
                 <span>
-                  <span className="font-medium">全国模試ランキング</span>
-                  <span className="ml-2 text-xs text-muted-foreground">パーセンタイル</span>
+                  <span className="font-medium">模試の記録</span>
+                  <span className="ml-2 text-xs text-muted-foreground">この端末の得点履歴</span>
                 </span>
                 <ArrowRight className="h-4 w-4 text-muted-foreground" />
               </Link>

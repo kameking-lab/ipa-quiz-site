@@ -6,13 +6,13 @@ const OG_IMAGE = (() => {
     type: "topic",
     title: "設定",
     subtitle: "学習スタイルを最適化",
-    body: "テーマ・AIキャラ・通知・学習履歴を一画面でカスタマイズ。",
+    body: "テーマ・通知・学習履歴を一画面でカスタマイズ。",
   });
   return `${SITE_BASE_URL}/api/og?${params.toString()}`;
 })();
 
 const DESCRIPTION =
-  "過去問AI の表示テーマ・AI キャラクター・クイズオプション・通知・試験予定・学習履歴・APIキーなどをまとめて管理する設定ページ。学習スタイルを自分仕様に最適化できます。";
+  "過去問AI の表示テーマ・クイズオプション・通知・試験予定・学習履歴・APIキーなどをまとめて管理する設定ページ。学習スタイルを自分仕様に最適化できます。";
 
 export const metadata: Metadata = {
   title: "設定",
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: `設定 | ${SITE_NAME}`,
     description:
-      "テーマ・AIキャラ・通知・学習履歴・APIキーをまとめて管理する設定ページ。",
+      "テーマ・通知・学習履歴・APIキーをまとめて管理する設定ページ。",
     url: `${SITE_BASE_URL}/settings`,
     type: "website",
     siteName: SITE_NAME,

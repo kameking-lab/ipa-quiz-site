@@ -3,7 +3,7 @@ import { readFileSync } from "node:fs";
 import { join } from "node:path";
 
 // WCAG 2.5.3 Label in Name (Level A): 全ページ共通フッターの SNS リンクは
-// 可視テキスト（"X @kakomon_ai_jp" / "note"）を発話して起動できる必要がある。
+// 可視テキスト（"X @kakomon_ai_jp"）を発話して起動できる必要がある。
 // aria-label が可視ラベルを含まないと音声操作ユーザーが起動できない。
 // 過去に X リンクが aria-label="X（Twitter）でフォロー..." で可視ハンドルを
 // 欠いていた回帰を防ぐ（source-read ガード）。
@@ -19,7 +19,8 @@ describe("フッター SNS リンク — Label in Name (WCAG 2.5.3)", () => {
     expect(source).not.toContain('aria-label="X（Twitter）でフォロー');
   });
 
-  it("note リンクの aria-label が可視テキスト「note」を含む", () => {
-    expect(source).toMatch(/aria-label="note /);
+  it("廃止したnoteの記事導線を表示しない", () => {
+    expect(source).not.toContain("TrackedNoteLink");
+    expect(source).not.toContain("NOTE_PROFILE_URL");
   });
 });

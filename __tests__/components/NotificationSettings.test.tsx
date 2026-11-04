@@ -31,11 +31,11 @@ describe("NotificationSettings — トグルのアクセシブルネーム", () 
     ).toBeInTheDocument();
   });
 
-  it("「週次ダイジェスト」スイッチがアクセシブルネームで参照できる", () => {
+  it("廃止した週次ダイジェストを募集しない", () => {
     render(<NotificationSettings />);
     expect(
-      screen.getByRole("switch", { name: "週次ダイジェスト" }),
-    ).toBeInTheDocument();
+      screen.queryByRole("switch", { name: "週次ダイジェスト" }),
+    ).not.toBeInTheDocument();
   });
 });
 

@@ -8,8 +8,11 @@ import { DashboardProgress } from "./tabs/DashboardProgress";
 import { DashboardWeakness } from "./tabs/DashboardWeakness";
 import { DashboardBadges } from "./tabs/DashboardBadges";
 
+import { MockScoreHistory } from "./tabs/MockScoreHistory";
+
 const TABS = [
   { value: "overview", label: "概要" },
+  { value: "mock-scores", label: "模試記録" },
   { value: "progress", label: "進捗" },
   { value: "weakness", label: "弱点" },
   { value: "badges", label: "バッジ・ストリーク" },
@@ -65,13 +68,13 @@ export function DashboardTabs({ categoryById }: Props) {
           学習ダッシュボード
         </h1>
         <p className="mt-1 text-xs text-zinc-500 dark:text-zinc-400">
-          学習データを 4 つの観点で一望できます。
+          学習データを 5 つの観点で一望できます。
         </p>
       </header>
 
       <div className="mb-6"><SafetyLearningProgress compact /></div>
       <Tabs value={tab} onValueChange={handleChange}>
-        <TabsList className="mb-6 flex w-full flex-nowrap justify-start">
+        <TabsList className="mb-6 flex w-full flex-nowrap justify-start overflow-x-auto">
           {TABS.map((t) => (
             <TabsTrigger
               key={t.value}
@@ -85,6 +88,9 @@ export function DashboardTabs({ categoryById }: Props) {
 
         <TabsContent value="overview">
           <DashboardOverview />
+        </TabsContent>
+        <TabsContent value="mock-scores">
+          <MockScoreHistory />
         </TabsContent>
         <TabsContent value="progress">
           <DashboardProgress />

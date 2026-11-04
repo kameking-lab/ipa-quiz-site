@@ -6,30 +6,25 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 
 export const metadata: Metadata = {
-  title: "AI 論述添削 品質サンプル — 採点根拠を全公開",
+  title: "論述の見直し例 — 編集部作成の練習答案と改善点",
   description:
-    "AI による論述添削の品質を実際のサンプルでご確認いただけます。架空の受験生答案 (PM 午後II) に対する観点別スコア、採点根拠、改善箇所を詳細に提示。",
+    "編集部が作成したプロジェクト管理の練習答案を、設問との対応・論理・具体性・業務の前提から見直す例です。実際のAI採点結果や合格実績ではありません。",
   alternates: { canonical: "/demo/essay-grading" },
   robots: { index: false, follow: true },
 };
 
 const SAMPLE = {
   examLabel: "プロジェクトマネージャ (PM) 午後II 論述",
-  year: 2024,
-  season: "spring" as const,
   questionTitle:
     "問1 プロジェクトの計画段階におけるリスクの特定と対応について",
   prompt:
     "あなたが携わったプロジェクトについて、計画段階でのリスク特定とリスク対応計画について、設問ア〜ウに従って論述せよ。",
-  industry: "金融業（地方銀行 勘定系 PM 経験）",
-  totalChars: 2840,
-  rank: "B",
-  passProb: 62,
+  industry: "金融業（地方銀行の勘定系プロジェクトという想定）",
   axes: [
-    { name: "設問適合度", score: 78, comment: "ア・イ・ウの 3 段で求められた論点に対し、概ね回答できている。" },
-    { name: "論理性", score: 72, comment: "リスク識別 → 対応の流れは明確だが、対応案を選んだ「理由付け」が薄い。" },
-    { name: "具体性", score: 68, comment: "金額 / 工数 / 期間など定量的な記述は一部のみ。設問ウで特に薄い。" },
-    { name: "業種適合性", score: 80, comment: "金融業勘定系という前提が活きており、PM 設問の典型業種に合致。" },
+    { name: "設問適合度", comment: "ア・イ・ウの各段落に、求められた論点を対応付けて読む。" },
+    { name: "論理性", comment: "リスク識別から対応へ進む理由を確認する。この例では対応案を選んだ根拠の説明を補いたい。" },
+    { name: "具体性", comment: "金額・工数・期間の記述が判断を説明しているか確認する。設問ウでは試算と結果の差を説明したい。" },
+    { name: "業種適合性", comment: "業務の前提と施策の関係を確認する。この例では勘定系移行中の二重運用負荷を取り上げる。" },
   ],
 };
 
@@ -37,7 +32,6 @@ const ESSAY_BLOCKS = [
   {
     key: "ア" as const,
     title: "設問ア — プロジェクト概要とリスク特定の前提",
-    chars: 820,
     answer:
       "私は地方銀行 X 行の勘定系システム部分刷新プロジェクトに、PM として参画した。本プロジェクトは現行ホストの預金・融資サブシステムをオープン系基盤に再構築するもので、開発期間は 18 ヶ月、開発費用は約 12 億円、ステークホルダーは経営企画部、業務統括部、システム部に加え、開発委託先ベンダ A 社・B 社の 2 社共同体制であった。\n\n計画段階で識別したリスクは大きく 3 つある。第一は移行期間中の二重運用負荷で、現行と新環境を 2 ヶ月並行稼働させる必要があり、業務部門の人員が逼迫する可能性があった。第二はベンダ間の責任境界曖昧化で、勘定系コアと周辺サブシステムを別ベンダが担当するため、結合テスト工程での障害切り分けが課題であった。第三は規制変更リスクで、開発期間中に金融庁モニタリング指針の改訂が予定されており、新指針への対応が後付けで必要になる可能性があった。\n\n本論では、最も影響度の大きい二重運用負荷リスクを対象に、特定プロセスと対応計画について述べる。",
     feedback: {
@@ -55,7 +49,6 @@ const ESSAY_BLOCKS = [
   {
     key: "イ" as const,
     title: "設問イ — リスク対応計画とその実施詳細",
-    chars: 1240,
     answer:
       "二重運用負荷リスクへの対応として、私は以下 3 点を計画段階に組み込んだ。\n\n第一に、業務量の事前試算である。業務統括部と協働で、並行稼働 2 ヶ月の業務トランザクション量を日次・時間帯別に算出し、現行人員の処理能力との差分を可視化した。試算の結果、預金窓口業務でピーク時 1.6 倍、融資審査で 1.3 倍の負荷増が見込まれることが判明した。\n\n第二に、追加要員の事前予算化である。試算結果に基づき、ピーク 2 ヶ月分の派遣スタッフ 12 名分の予算（約 4,800 万円）をプロジェクト予備費から充当する案を経営会議に上申し、承認を得た。これにより、並行稼働開始時に人員不足で業務停滞が発生することを防いだ。\n\n第三に、業務優先順位ルールの事前合意である。並行稼働期間中に対応が遅延した場合に備え、「現行系を最優先で確実に処理し、新系は翌営業日にリトライ」という業務ルールを業務部門と合意の上、運用手順書に明文化した。これにより、現場での判断ブレと顧客影響を最小化した。\n\n以上 3 点の対応により、並行稼働 2 ヶ月期間中の重大インシデント（顧客影響を伴う処理遅延）はゼロで完了することができた。",
     feedback: {
@@ -74,7 +67,6 @@ const ESSAY_BLOCKS = [
   {
     key: "ウ" as const,
     title: "設問ウ — 評価と今後の改善点",
-    chars: 780,
     answer:
       "本対応の評価として、まず重大インシデントゼロという結果は所期の目的を達成した。一方で、振り返りの中で 2 点の改善余地を認識した。\n\n第一は、業務量試算の精度である。実際のピーク時負荷は試算より 10% 程度高く出ており、派遣スタッフの稼働率が想定より高くなった。今後は過去類似プロジェクトの実績データを参照する仕組みを整備し、試算精度を高めたい。\n\n第二は、ベンダ間の責任境界に関するリスク（特定はしたが本論で深掘りしなかった項目）の早期顕在化である。結合テストでベンダ A 社・B 社の障害切り分けに想定以上の時間を要した経験から、計画段階で RACI マトリクスをより詳細に作り込むべきであった。\n\n以上の経験を踏まえ、今後同種のマルチベンダ案件においては、リスク特定段階で「業務量」「責任境界」「規制変更」の 3 軸を必ず明文化し、それぞれに定量的指標を設定する標準プロセスを部内で展開していきたい。",
     feedback: {
@@ -98,7 +90,7 @@ const STRENGTHS_OVERALL = [
 ];
 
 const NEXT_STEPS = [
-  "影響度 × 発生確率のリスクマトリクスを設問アで明示する → 論理性 +5 点見込み",
+  "影響度 × 発生確率のリスクマトリクスを設問アで明示し、優先順位の理由を説明する",
   "ベンダ間 RACI を設問イ後半に組み込む → 業種適合性・具体性同時に向上",
   "業務量試算誤差の原因仮説を設問ウに 1 文追加 → 設問ウの薄さが解消",
 ];
@@ -107,22 +99,18 @@ const RUBRIC = [
   {
     axis: "設問適合度",
     description: "ア・イ・ウで問われている論点（概要・対応詳細・評価）に過不足なく回答できているか",
-    weight: "30%",
   },
   {
     axis: "論理性",
     description: "課題 → 施策 → 結果の因果関係が破綻なく、対応案を選んだ理由が示されているか",
-    weight: "25%",
   },
   {
     axis: "具体性",
     description: "金額・人数・期間・倍率・KPI など定量データで施策を裏付けているか",
-    weight: "25%",
   },
   {
     axis: "業種適合性",
     description: "受験生の業務経験（業種・規模・役割）が論述内容と整合しているか",
-    weight: "20%",
   },
 ];
 
@@ -139,26 +127,24 @@ export default function EssayGradingDemoPage() {
       <header className="mb-8">
         <div className="mb-3 flex flex-wrap items-center gap-2">
           <Badge variant="success">
-            <Sparkles className="h-3 w-3" /> 添削品質サンプル
+            <Sparkles className="h-3 w-3" /> 編集部作成の練習例
           </Badge>
-          <Badge variant="outline">採点根拠を全公開</Badge>
+          <Badge variant="outline">見直しの観点と改善例</Badge>
         </div>
         <h1 className="mb-3 text-3xl font-bold tracking-tight text-zinc-900 dark:text-zinc-50 sm:text-4xl">
-          論述添削品質サンプル
+          論述の見直し例
         </h1>
         <p className="text-sm leading-relaxed text-zinc-600 dark:text-zinc-400 sm:text-base">
-          AI 論述添削の品質を、架空の受験生答案に対する実際の採点結果を通してご確認いただけます。
-          観点別スコアの内訳、ブロック単位での採点根拠、改善箇所の特定までを完全公開し、
-          稟議資料 / 教材選定の判断材料としてご活用ください。
+          編集部が作成した練習答案とコメントを使い、論述を見直す手順を説明します。
+          各段落を設問の要求に対応付け、判断の理由や不足する説明を確かめてください。
         </p>
       </header>
 
       <Card className="mb-6 border-zinc-200 bg-zinc-50 dark:border-zinc-800 dark:bg-zinc-900/40">
         <CardContent className="p-4 text-xs leading-relaxed text-zinc-600 dark:text-zinc-400">
           <strong>サンプルの位置付け:</strong>{" "}
-          本ページの受験生答案・採点結果は説明用に編集者が作成した架空のものです。実利用では IPA
-          公表の出題趣旨・採点講評・解答例に基づき AI が採点を行います。スコアはあくまで学習補助で、
-          実試験の合否を保証するものではありません。
+          設問・答案・コメントはすべて編集部作成です。実際の受験生の体験、IPAの過去問・公式答案、
+          AIの実行結果、合格実績ではありません。実試験の配点や合格率を示す数値は設けていません。
         </CardContent>
       </Card>
 
@@ -166,10 +152,7 @@ export default function EssayGradingDemoPage() {
         <CardHeader className="pb-3">
           <div className="flex flex-wrap items-center justify-between gap-2">
             <CardTitle className="text-base">対象設問</CardTitle>
-            <Badge variant="outline">
-              {SAMPLE.year}
-              {SAMPLE.season === "spring" ? "春" : "秋"}
-            </Badge>
+            <Badge variant="outline">独自の練習設問</Badge>
           </div>
         </CardHeader>
         <CardContent className="space-y-2 text-sm">
@@ -178,7 +161,7 @@ export default function EssayGradingDemoPage() {
           <p className="leading-relaxed text-zinc-700 dark:text-zinc-300">{SAMPLE.prompt}</p>
           <div className="mt-3 flex flex-wrap gap-2 text-xs">
             <Badge variant="default">業種: {SAMPLE.industry}</Badge>
-            <Badge variant="outline">総文字数 {SAMPLE.totalChars} 字</Badge>
+            <Badge variant="outline">総文字数 {ESSAY_BLOCKS.reduce((sum, block) => sum + Array.from(block.answer).length, 0)} 字（改行を含む）</Badge>
           </div>
         </CardContent>
       </Card>
@@ -187,11 +170,7 @@ export default function EssayGradingDemoPage() {
         <Card className="border-sky-300 bg-sky-50/40 dark:border-sky-800 dark:bg-sky-950/20">
           <CardHeader>
             <div className="flex flex-wrap items-center justify-between gap-2">
-              <CardTitle className="text-base">採点サマリ</CardTitle>
-              <div className="flex flex-wrap items-center gap-2">
-                <Badge variant="default">ランク {SAMPLE.rank}</Badge>
-                <Badge variant="success">合格率予測 {SAMPLE.passProb}%</Badge>
-              </div>
+              <CardTitle className="text-base">見直しの観点</CardTitle>
             </div>
           </CardHeader>
           <CardContent>
@@ -205,15 +184,6 @@ export default function EssayGradingDemoPage() {
                     <span className="text-sm font-medium text-zinc-800 dark:text-zinc-200">
                       {axis.name}
                     </span>
-                    <span className="text-base font-bold tabular-nums text-sky-600 dark:text-sky-400">
-                      {axis.score}
-                    </span>
-                  </div>
-                  <div className="mt-1 h-1.5 w-full rounded-full bg-zinc-100 dark:bg-zinc-800">
-                    <div
-                      className="h-1.5 rounded-full bg-gradient-to-r from-sky-500 to-violet-500"
-                      style={{ width: `${axis.score}%` }}
-                    />
                   </div>
                   <p className="mt-1.5 text-xs leading-relaxed text-zinc-600 dark:text-zinc-400">
                     {axis.comment}
@@ -227,7 +197,7 @@ export default function EssayGradingDemoPage() {
 
       <section className="mb-10">
         <h2 className="mb-3 text-xl font-bold tracking-tight text-zinc-900 dark:text-zinc-50">
-          設問ブロック別の採点詳細
+          設問ブロック別の見直し例
         </h2>
         <div className="space-y-4">
           {ESSAY_BLOCKS.map((block) => (
@@ -240,13 +210,13 @@ export default function EssayGradingDemoPage() {
                     </span>
                     {block.title}
                   </CardTitle>
-                  <Badge variant="outline">{block.chars} 字</Badge>
+                  <Badge variant="outline">{Array.from(block.answer).length} 字（改行を含む）</Badge>
                 </div>
               </CardHeader>
               <CardContent className="space-y-4 text-sm">
                 <details className="rounded-xl border border-zinc-200 bg-zinc-50 p-3 dark:border-zinc-800 dark:bg-zinc-900/50" open>
                   <summary className="cursor-pointer text-xs font-semibold uppercase tracking-wide text-zinc-500 dark:text-zinc-400">
-                    受験生の答案を表示
+                    編集部作成の練習答案を表示
                   </summary>
                   <p className="mt-2 whitespace-pre-line leading-relaxed text-zinc-700 dark:text-zinc-300">
                     {block.answer}
@@ -345,7 +315,7 @@ export default function EssayGradingDemoPage() {
 
       <section className="mb-10">
         <h2 className="mb-3 text-xl font-bold tracking-tight text-zinc-900 dark:text-zinc-50">
-          採点ルーブリック（全 4 観点）
+          編集部の確認項目（全 4 観点）
         </h2>
         <Card>
           <CardContent className="p-0">
@@ -354,8 +324,7 @@ export default function EssayGradingDemoPage() {
                 <thead>
                   <tr className="border-b border-zinc-200 text-left text-xs font-semibold text-zinc-500 dark:border-zinc-800 dark:text-zinc-400">
                     <th scope="col" className="px-4 py-2.5">観点</th>
-                    <th scope="col" className="px-4 py-2.5">採点基準</th>
-                    <th scope="col" className="px-4 py-2.5 text-right">配点</th>
+                    <th scope="col" className="px-4 py-2.5">確認する内容</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -366,9 +335,6 @@ export default function EssayGradingDemoPage() {
                       </td>
                       <td className="px-4 py-2.5 text-zinc-700 dark:text-zinc-300">
                         {r.description}
-                      </td>
-                      <td className="px-4 py-2.5 text-right tabular-nums text-zinc-600 dark:text-zinc-400">
-                        {r.weight}
                       </td>
                     </tr>
                   ))}
@@ -387,7 +353,7 @@ export default function EssayGradingDemoPage() {
                 自分の論述で試す
               </div>
               <p className="text-sm text-zinc-700 dark:text-zinc-300">
-                ST/SA/PM/SM/AU の過去問に対して、業種選択 → 設問ア・イ・ウ記述 → AI 採点までを実環境でご利用いただけます。
+                論述学習ページで対象問題と利用条件を確認できます。AI添削の提供状態は各画面の案内に従ってください。
               </p>
             </div>
             <Button asChild variant="primary">
@@ -401,7 +367,7 @@ export default function EssayGradingDemoPage() {
       </section>
 
       <p className="mt-8 text-center text-xs text-zinc-500 dark:text-zinc-400">
-        出典: IPA 情報処理技術者試験
+        作成: 過去問AI編集部（設問・答案・コメント）。公式の問題・出題趣旨・採点講評はIPAの公開資料で確認してください。
       </p>
     </main>
   );

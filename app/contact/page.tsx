@@ -102,6 +102,12 @@ export default function ContactPage() {
         </CardContent>
       </Card>
 
+      <section id="legacy-benefits" className="mb-6 scroll-mt-20 rounded-2xl border border-border p-5" aria-labelledby="legacy-benefits-title">
+        <h2 id="legacy-benefits-title" className="font-semibold">以前に案内された特典について</h2>
+        <p className="mt-2 text-sm leading-7">紹介・学割の受付やクーポンの新規発行は終了しました。以前に個別案内を受けた特典については、下のフォームから案内内容をお知らせください。学生証などの証明書類は送らないでください。</p>
+        <p className="mt-2 text-sm"><Link href="/billing" className="underline">現在の料金・既存契約の確認はこちら</Link>。</p>
+      </section>
+
       <ContactForm />
 
       <p className="mt-8 text-xs text-zinc-500 dark:text-zinc-400">

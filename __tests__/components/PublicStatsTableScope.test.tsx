@@ -19,13 +19,13 @@ describe("公開データテーブル — 列見出しの scope=\"col\"", () => 
     expect(colHeaders.length).toBe(3);
   });
 
-  it("/demo/essay-grading の採点ルーブリック表が列見出し scope=\"col\" を 3 つ持つ", () => {
+  it("/demo/essay-grading の見直し項目表が列見出し scope=\"col\" を 2 つ持つ", () => {
     const source = readFileSync(
       join(process.cwd(), "app/demo/essay-grading/page.tsx"),
       "utf8",
     );
     const colHeaders = source.match(/<th scope="col"/g) ?? [];
-    // 観点 / 採点基準 / 配点 の 3 列
-    expect(colHeaders.length).toBe(3);
+    // 観点 / 確認内容。実試験の配点を示す列は設けない。
+    expect(colHeaders.length).toBe(2);
   });
 });

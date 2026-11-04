@@ -14,7 +14,6 @@ import {
   Bookmark,
   ClipboardList,
   CalendarRange,
-  Trophy,
   Sparkles,
   HelpCircle,
   FileText,
@@ -391,18 +390,6 @@ function SiteHeaderContent({ search }: { search: Pick<URLSearchParams, "get"> | 
                       aria-hidden="true"
                     />
                     機能特集
-                  </Link>
-                </SheetClose>
-                <SheetClose asChild>
-                  <Link
-                    href="/success-stories"
-                    className="flex min-h-[44px] items-center gap-3 rounded-lg px-3 py-2.5 text-sm font-medium text-foreground transition-colors hover:bg-muted"
-                  >
-                    <Trophy
-                      className="h-4 w-4 text-muted-foreground"
-                      aria-hidden="true"
-                    />
-                    合格体験記
                   </Link>
                 </SheetClose>
                 <SheetClose asChild>

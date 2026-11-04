@@ -113,7 +113,6 @@ export function HomeExamGrid({ questionCounts }: Props) {
   }, []);
 
   const availableExams = EXAM_CARDS.filter((e) => (questionCounts[e.id] ?? 0) > 0);
-  const comingSoonExams = EXAM_CARDS.filter((e) => (questionCounts[e.id] ?? 0) === 0);
 
   return (
     <>
@@ -138,39 +137,6 @@ export function HomeExamGrid({ questionCounts }: Props) {
         </div>
       )}
 
-      {comingSoonExams.length > 0 && (
-        <>
-          <p className="mb-2 mt-4 text-xs font-medium text-zinc-400 dark:text-zinc-500">
-            近日公開
-          </p>
-          <div className="grid grid-cols-1 gap-3 min-[480px]:grid-cols-2 sm:grid-cols-3 lg:grid-cols-4">
-            {comingSoonExams.map((exam) => (
-              <div
-                key={exam.id}
-                aria-disabled="true"
-                className="flex flex-col gap-1.5 rounded-2xl border border-zinc-200 bg-zinc-50 p-3.5 opacity-55 dark:border-zinc-800 dark:bg-zinc-900 sm:p-4"
-              >
-                <div className="flex items-start justify-between gap-1">
-                  <span className="rounded-lg bg-zinc-400 px-2 py-0.5 text-sm font-bold text-white dark:bg-zinc-600">
-                    {exam.abbr}
-                  </span>
-                  <span className="rounded-full bg-zinc-200 px-2 py-0.5 text-[10px] font-semibold text-zinc-500 dark:bg-zinc-700 dark:text-zinc-400">
-                    近日公開
-                  </span>
-                </div>
-                <div>
-                  <p className="text-sm font-semibold text-zinc-700 dark:text-zinc-300">
-                    {exam.name}
-                  </p>
-                  {exam.sub && (
-                    <p className="text-xs text-zinc-500 dark:text-zinc-500">{exam.sub}</p>
-                  )}
-                </div>
-              </div>
-            ))}
-          </div>
-        </>
-      )}
     </>
   );
 }

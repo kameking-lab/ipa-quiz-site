@@ -54,52 +54,12 @@ describe("ExamQuestionPlayer", () => {
     window.sessionStorage.clear();
   });
 
-  // reports/revenue-eco-20260913 で検証済みの労働衛生コンサルタント(保健衛生区分)向け
-  // noteLinks が、解答前には出ず解答後にだけ出ることを確認する。労働安全コンサルタント
-  // (別試験)向けリンクをここに混ぜない、という指示の裏取りでもある。
-  const healthConsultantNoteLinks = [
-    {
-      title: "無料記事: 労働衛生コンサルタント「保健衛生」区分の始め方｜健康管理を答案にする手順",
-      url: "https://note.com/anzen_ai_jp/n/n8ffef6a2eb2d",
-      kind: "free" as const,
-    },
-  ];
-
-  it("does not show noteLinks before an answer is revealed", () => {
-    render(
-      <ExamQuestionPlayer
-        examId={EXAM_ID}
-        examTitle="テスト試験"
-        pdfUrl={PDF_URL}
-        indexUrl="https://www.exam.or.jp/cskohyo/"
-        questions={questions}
-        noteLinks={healthConsultantNoteLinks}
-      />,
-    );
-    expect(screen.queryByText(/健康管理を答案にする手順/)).not.toBeInTheDocument();
-  });
-
-  it("shows the verified free noteLink after answering, with a 無料 badge and the qualification-filtered catalog", () => {
-    render(
-      <ExamQuestionPlayer
-        examId={EXAM_ID}
-        examTitle="テスト試験"
-        pdfUrl={PDF_URL}
-        indexUrl="https://www.exam.or.jp/cskohyo/"
-        questions={questions}
-        noteLinks={healthConsultantNoteLinks}
-      />,
-    );
+  it("shows local explanations and official sources without article CTAs after answering", () => {
+    const { container } = renderPlayer();
     answer(3);
-    expect(screen.getByText("無料")).toBeInTheDocument();
-    const link = screen.getByRole("link", { name: /健康管理を答案にする手順/ });
-    expect(link).toHaveAttribute("href", "https://tsugino-shikaku.jp/articles?qualification=rodo-eisei-consultant");
-  });
-
-  it("renders no noteLinks section when the prop is omitted (existing exams unaffected)", () => {
-    renderPlayer();
-    answer(3);
-    expect(screen.queryByText("関連する解説記事")).not.toBeInTheDocument();
+    expect(screen.getByText("問1の解説本文")).toBeInTheDocument();
+    expect(container.querySelector('a[href^="https://note.com/"]')).toBeNull();
+    expect(container.querySelector('a[href*="tsugino-shikaku.jp/articles"]')).toBeNull();
   });
 
   it("offers contextual AI questions only after the answer is revealed", () => {
@@ -109,35 +69,6 @@ describe("ExamQuestionPlayer", () => {
     fireEvent.click(screen.getByRole("button", { name: "この問題をAIに質問" }));
     expect(screen.getByRole("textbox", { name: "どこが分からないですか？" })).toBeInTheDocument();
     expect(screen.getByText(/AIの説明は公式見解ではありません/)).toBeInTheDocument();
-  });
-
-  // safety-free-02 (労働衛生工学区分) の公開検証: reports/revenue-eco-20260913/receipts/
-  // safety-free-02-eisei-kijutsu.json (ok:true) -> data/exam-library/official-catalog.json
-  // の cskohyo-CS20251911(subject: 労働衛生工学) に付与した noteLinks と同じ形。
-  const laborHygieneEngineeringNoteLinks = [
-    {
-      title: "無料記事: 労働衛生コンサルタント「労働衛生工学」区分｜記述式2問を設問の型から組む",
-      url: "https://note.com/anzen_ai_jp/n/n6143ee15b9d5",
-      kind: "free" as const,
-    },
-  ];
-
-  it("shows the verified 労働衛生工学 noteLink only after answering, never before", () => {
-    render(
-      <ExamQuestionPlayer
-        examId={EXAM_ID}
-        examTitle="テスト試験"
-        pdfUrl={PDF_URL}
-        indexUrl="https://www.exam.or.jp/cskohyo/"
-        questions={questions}
-        noteLinks={laborHygieneEngineeringNoteLinks}
-      />,
-    );
-    expect(screen.queryByText(/記述式2問を設問の型から組む/)).not.toBeInTheDocument();
-    answer(3);
-    expect(screen.getByText("無料")).toBeInTheDocument();
-    const link = screen.getByRole("link", { name: /記述式2問を設問の型から組む/ });
-    expect(link).toHaveAttribute("href", "https://tsugino-shikaku.jp/articles?qualification=rodo-eisei-consultant");
   });
 
   it("shows selectable question text and answer controls without a whole-question screenshot", () => {

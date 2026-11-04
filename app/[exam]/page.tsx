@@ -40,8 +40,6 @@ const ExamBrowseTabs = dynamic(
 );
 import { ExamOfficialResources } from "@/components/exam/ExamOfficialResources";
 import { ExamRoadmap } from "@/components/exam/ExamRoadmap";
-import { ExamNoteGuide } from "@/components/exam/ExamNoteGuide";
-import { ExamNoteMaterialIndex } from "@/components/exam/ExamNoteMaterialIndex";
 import {
   ExamDeepLead,
   ExamMainTopics,
@@ -67,7 +65,6 @@ import {
   isAsinFilled,
 } from "@/data/recommended-books";
 import { getBlogPostsByExam } from "@/data/blog";
-import { getRelatedSuccessStoriesByExam } from "@/lib/success-stories/related-content";
 import { EXAM_ROADMAP } from "@/lib/seo/exam-resources";
 import { getQualificationByExamCode } from "@/lib/qualifications/catalog";
 import ahakiCoverage from "@/data/questions/ahaki/held-ids.json";
@@ -170,7 +167,6 @@ export default async function ExamTopPage({
   const categories = groupByCategory(questions);
   const books = (RECOMMENDED_BOOKS[code] ?? []).slice(0, 3);
   const posts = getBlogPostsByExam(code).slice(0, 3);
-  const successStories = getRelatedSuccessStoriesByExam(code, 3);
   const absUrl = `${SITE_BASE_URL}/${exam}`;
   const roadmapSteps = EXAM_ROADMAP[code] ?? [];
   const externalQualification = getQualificationByExamCode(code);
@@ -601,8 +597,6 @@ export default async function ExamTopPage({
         {/* Official IPA resources — E-E-A-T */}
         <ExamOfficialResources exam={code} />
 
-        <ExamNoteGuide exam={code} />
-        <ExamNoteMaterialIndex exam={code} />
 
         {/* Recommended books */}
         {books.length > 0 && (
@@ -663,7 +657,7 @@ export default async function ExamTopPage({
         )}
 
         {/* High-level exam: AI essay / description grading CTA */}
-        {(["st", "sa", "pm", "sm", "au", "sc", "nw", "db", "es"] as ExamCode[]).includes(code) && (
+        {(["st", "sa", "pm", "sm", "au"] as ExamCode[]).includes(code) && (
           <section
             aria-label="AI 午後問題対策"
             className="mb-8 overflow-hidden rounded-2xl border border-violet-200/70 bg-gradient-to-br from-violet-50 via-card to-card p-5 shadow-sm dark:border-violet-900/40 dark:from-violet-950/40"
@@ -677,11 +671,10 @@ export default async function ExamTopPage({
             <h2 className="mb-1.5 text-base font-bold tracking-tight text-foreground sm:text-lg">
               AI 論述添削で午後問題対策
             </h2>
-            {(["st", "sa", "pm", "sm", "au"] as ExamCode[]).includes(code) ? (
               <>
                 <p className="mb-3 text-sm leading-relaxed text-muted-foreground">
                   AI が学習用の「適合度／論理性／具体性／業種事例」の 4 観点で評価。
-                  業種別の合格答案サンプルも参照しながら、設問ア・イ・ウを段階的に仕上げます。
+                  業種別の練習答案サンプルも参照しながら、設問ア・イ・ウを段階的に仕上げます。
                 </p>
                 <div className="flex flex-wrap gap-2">
                   <Button asChild variant="primary" size="sm">
@@ -701,30 +694,12 @@ export default async function ExamTopPage({
                   </Button>
                   <Button asChild variant="outline" size="sm">
                     {/* 業種別サンプルは複数形 /essays/[exam] (200・noindex)。 */}
-                    <Link href={`/essays/${code}`}>業種別 合格答案サンプル</Link>
+                    <Link href={`/essays/${code}`}>業種別 練習答案サンプル</Link>
                   </Button>
                 </div>
               </>
-            ) : (
-              <>
-                <p className="mb-3 text-sm leading-relaxed text-muted-foreground">
-                  {examLabel(code)} 午後の記述・論述問題を AI が採点・フィードバック。
-                  根拠・論理展開・キーワードの網羅を軸に改善点を提示します。
-                </p>
-                <div className="flex flex-wrap items-center gap-2">
-                  <span className="inline-flex items-center gap-1.5 rounded-lg border border-violet-200 bg-violet-50 px-3 py-1.5 text-xs font-semibold text-violet-600 dark:border-violet-900/60 dark:bg-violet-950/40 dark:text-violet-300">
-                    <Sparkles className="h-3.5 w-3.5" />
-                    Coming Soon
-                  </span>
-                  <span className="text-xs text-muted-foreground">
-                    順次対応予定 — 通知を受け取るには
-                  </span>
-                  <Button asChild variant="ghost" size="sm" className="h-7 px-2 text-xs">
-                    <Link href="/settings#notifications">通知設定</Link>
-                  </Button>
-                </div>
-              </>
-            )}
+
+
           </section>
         )}
 
@@ -798,55 +773,6 @@ export default async function ExamTopPage({
                       </p>
                       <p className="mt-0.5 line-clamp-2 text-xs text-muted-foreground">
                         {p.description}
-                      </p>
-                    </div>
-                    <ArrowRight className="mt-1 h-4 w-4 shrink-0 text-muted-foreground transition-transform group-hover:translate-x-0.5 group-hover:text-primary" />
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </section>
-        )}
-
-        {/* Fictional learning cases — labels must not imply real testimonials. */}
-        {successStories.length > 0 && (
-          <section aria-label="架空の学習ケース" className="mb-8">
-            <div className="mb-3 flex items-center justify-between">
-              <h2 className="flex items-center gap-2 text-base font-semibold text-foreground">
-                <FileText className="h-4 w-4 text-muted-foreground" />
-                {examLabel(code)} 学習ケース（架空）
-              </h2>
-              <Link
-                href={`/success-stories/${exam}`}
-                className="text-xs text-sky-600 hover:underline dark:text-sky-400"
-              >
-                ケース一覧 →
-              </Link>
-            </div>
-            <p className="mb-3 text-xs leading-relaxed text-muted-foreground">
-              実在の合格者の証言ではなく、学習上の判断例を示す架空ケースです。
-            </p>
-            <ul className="space-y-2">
-              {successStories.map((s) => (
-                <li key={s.slug}>
-                  <Link
-                    href={`/success-stories/${s.exam}/${s.slug}`}
-                    className="group flex items-start justify-between gap-3 rounded-xl border border-border bg-card p-3.5 text-sm transition-all hover:-translate-y-0.5 hover:border-primary/40 hover:shadow-md"
-                  >
-                    <div className="min-w-0">
-                      <div className="mb-1 flex flex-wrap items-center gap-1.5 text-[11px] text-muted-foreground">
-                        <span className="rounded bg-muted px-1.5 py-0.5">
-                          {s.ageRange} / {s.occupation}
-                        </span>
-                        <span className="rounded bg-emerald-100 px-1.5 py-0.5 text-emerald-700 dark:bg-emerald-950 dark:text-emerald-300">
-                          {s.studyMonths}か月 / {s.totalStudyHours}h
-                        </span>
-                      </div>
-                      <p className="font-medium text-foreground group-hover:text-primary">
-                        {s.title}
-                      </p>
-                      <p className="mt-0.5 line-clamp-2 text-xs text-muted-foreground">
-                        {s.description}
                       </p>
                     </div>
                     <ArrowRight className="mt-1 h-4 w-4 shrink-0 text-muted-foreground transition-transform group-hover:translate-x-0.5 group-hover:text-primary" />

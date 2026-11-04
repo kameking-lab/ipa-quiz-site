@@ -4,7 +4,6 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowLeft } from "lucide-react";
-import { ExamNoteLinks } from "@/components/exam-library/exam-note-links";
 import { ExamStructuredData } from "@/components/exam-library/exam-structured-data";
 import { ExamQuestionPlayer } from "@/components/exam-library/exam-question-player";
 import { ExamSourceNotes } from "@/components/exam-library/exam-source-notes";
@@ -155,13 +154,6 @@ export default async function ExamPage({ params, searchParams }: ExamPageProps) 
         sourceMode={entry.sourceMode}
         indexUrl={entry.indexUrl}
         questions={questions}
-        noteLinks={entry.noteLinks}
-      />
-
-      <ExamNoteLinks
-        links={entry.noteLinks ?? []}
-        headingId="exam-note-links-title"
-        className="mt-8"
       />
 
       <ExamSourceNotes entry={entry} className="mt-10" />
