@@ -6,6 +6,7 @@ import { KENKI2_QUESTIONS } from "@/data/questions/kenki2";
 import { KENKI1_QUESTIONS } from "@/data/questions/kenki1";
 import { GYOSEI_QUESTIONS } from "../data/questions/gyosei";
 import { SHIHOSHOSHI_QUESTIONS } from "@/data/questions/shihoshoshi";
+import { validateKhkKikai } from "./validate-khk-kikai";
 import { NativeBDataSchema, nativeBQuestionIssue } from "../lib/questions/native-b";
 // Native staging is validated on import, independently of the public question pool.
 import { HOSHASEN_STAGED_QUESTIONS } from "../data/questions/hoshasen";
@@ -540,6 +541,7 @@ const opts = parseCliOptions();
 if (opts.exams.length === 0 || opts.exams.includes("chintai")) {
   console.log(`Validated chintai unpublished staging: ${validateChintaiStaging()} questions.`);
 }
+validateKhkKikai(opts.exams);
 const questions = opts.exams.length > 0
   ? VALIDATION_QUESTIONS.filter((q) => opts.exams.includes(q.exam))
   : VALIDATION_QUESTIONS;
