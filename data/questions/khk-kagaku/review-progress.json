@@ -17,10 +17,10 @@
     "originalQuestions": 422,
     "transcriptionVerified": 422,
     "unreviewed": 0,
-    "explanationWritten": 209,
+    "explanationWritten": 289,
     "descriptiveAnswersVerified": 12,
     "supplementalCellsVerified": 900,
-    "explanationPending": 213
+    "explanationPending": 133
   },
   "reviewedPapers": [
     {
@@ -1632,7 +1632,7 @@
         },
         {
           "number": 18,
-          "contentSha256": "156e456e7bbe77f234e05830e67d04ea6886e1da1da3664898df623be5749ba0"
+          "contentSha256": "9de817a6d6024681ee3743005360ece6be14543a894473a537b952fe6e39f963"
         },
         {
           "number": 19,
@@ -3964,6 +3964,15 @@
       "before": "次の式はメタンが完全燃焼するときの反応式である。CH4 ＋2 O2 　　CO2 ＋2 H2O標準状態で体積5.0 m³ の気体のメタンを、上式に従って、理論上完全燃焼させるための最少必要空気量（完全燃焼組成の空気量）は、標準状態でおよそ何m³ か。ただし、空気中の酸素濃度は21 vol％とする。",
       "after": "次の式はメタンが完全燃焼するときの反応式である。\n\nCH₄ ＋ 2 O₂ → CO₂ ＋ 2 H₂O\n\n標準状態で体積5.0 m³の気体のメタンを、上式に従って、理論上完全燃焼させるための最少必要空気量（完全燃焼組成の空気量）は、標準状態でおよそ何m³か。ただし、空気中の酸素濃度は21 vol％とする。",
       "reason": "PDF3頁の化学式添字・矢印を本文にも復元。"
+    },
+    {
+      "year": 2024,
+      "code": "DX",
+      "number": 18,
+      "field": "questionDraft",
+      "before": "次のイ、ロ、ハの記述のうち、この事業所に適用される技術上の基準について正しいものはど          Xれか。\n\nイ．液化窒素の貯槽は、不活性ガスの高圧ガス設備であるが、所定の耐震に関する性能を有すべき設備に該当する。\n\nロ．これらの製造設備（ガスが通る部分に限る。）のうち、その外面から火気（その製造設備内のものを除く。）を取り扱う施設に対し8 メートル以上の距離を有し、又は定められた措置を講じなければならないのは、アセチレンの製造設備のみである。\n\nハ．アセチレンの製造設備の高圧ガス設備の配管に係る変更工事後の完成検査において気密試験を行うときは、常用の圧力以上の圧力で行ってはならない。",
+      "after": "次のイ、ロ、ハの記述のうち、この事業所に適用される技術上の基準について正しいものはどれか。\n\nイ．液化窒素の貯槽は、不活性ガスの高圧ガス設備であるが、所定の耐震に関する性能を有すべき設備に該当する。\n\nロ．これらの製造設備（ガスが通る部分に限る。）のうち、その外面から火気（その製造設備内のものを除く。）を取り扱う施設に対し8 メートル以上の距離を有し、又は定められた措置を講じなければならないのは、アセチレンの製造設備のみである。\n\nハ．アセチレンの製造設備の高圧ガス設備の配管に係る変更工事後の完成検査において気密試験を行うときは、常用の圧力以上の圧力で行ってはならない。",
+      "reason": "LK2CでPDF8頁全体画像を確認。右余白の区分記号DXのXが見出しの「どれか」に混入していたため除去。rawExtractedText・公式正答は保持。"
     }
   ],
   "descriptiveAnswerReviewFile": "data/questions/khk-kagaku/official-descriptive-answer-review.json",
@@ -5427,6 +5436,566 @@
     {
       "year": 2025,
       "code": "BX",
+      "number": 20,
+      "officialAnswerNumber": 1,
+      "contentSha256": "b4d19b53138b87094d0c3068da0bb1b41de742fea047416446b78a388cfe3ba4"
+    },
+    {
+      "year": 2024,
+      "code": "CX",
+      "number": 1,
+      "officialAnswerNumber": 1,
+      "contentSha256": "a87b3c3d62c34635bf798e5032ae2bf544954d1890659c0ef1d7515d33d42074"
+    },
+    {
+      "year": 2024,
+      "code": "CX",
+      "number": 2,
+      "officialAnswerNumber": 4,
+      "contentSha256": "7121ebbdad634c40007e71c19262b9ed2c387aa19fa77967a4e612a070fe6403"
+    },
+    {
+      "year": 2024,
+      "code": "CX",
+      "number": 3,
+      "officialAnswerNumber": 4,
+      "contentSha256": "4774303cc0807503f3189d89e4db853501af1dc637e5324ced6e68a86c513cd4"
+    },
+    {
+      "year": 2024,
+      "code": "CX",
+      "number": 4,
+      "officialAnswerNumber": 3,
+      "contentSha256": "5ce89d7bcb2029a66a5cdc6a319d79832e9207ff0ef5f6bf12a04dc51c7516e9"
+    },
+    {
+      "year": 2024,
+      "code": "CX",
+      "number": 5,
+      "officialAnswerNumber": 4,
+      "contentSha256": "32ad3e5d31539afca0dd3a249ec5ac539e6f48cc3b293d0ce981b2c796ca04ae"
+    },
+    {
+      "year": 2024,
+      "code": "CX",
+      "number": 6,
+      "officialAnswerNumber": 3,
+      "contentSha256": "0097128dac36b93c72eb77d2d864e134800ded3c1b8f9bb93048ff76a2f98ad4"
+    },
+    {
+      "year": 2024,
+      "code": "CX",
+      "number": 7,
+      "officialAnswerNumber": 2,
+      "contentSha256": "26801ff59a64bd61d54b5a67bff6f42b60f0a9d7d77301e06fe8ac387de558ff"
+    },
+    {
+      "year": 2024,
+      "code": "CX",
+      "number": 8,
+      "officialAnswerNumber": 5,
+      "contentSha256": "a1904799f9e30aca1bf6e61e9fb150977dea6ded0248d99fa0a0a543b894d5fe"
+    },
+    {
+      "year": 2024,
+      "code": "CX",
+      "number": 9,
+      "officialAnswerNumber": 2,
+      "contentSha256": "360eb1814e6f7e1de2b822a949a0d90f647d742b3059f09817758a598c221c02"
+    },
+    {
+      "year": 2024,
+      "code": "CX",
+      "number": 10,
+      "officialAnswerNumber": 4,
+      "contentSha256": "8c13219034fa92c918bc5a451046c33204d190a6a9fdbf9db2eaa02a2badf44e"
+    },
+    {
+      "year": 2024,
+      "code": "CX",
+      "number": 11,
+      "officialAnswerNumber": 1,
+      "contentSha256": "411077d1356858033520c686abc1976ace7a7a532407c0871457a23348fc5458"
+    },
+    {
+      "year": 2024,
+      "code": "CX",
+      "number": 12,
+      "officialAnswerNumber": 3,
+      "contentSha256": "38b88c8a3be9d215e1dc002c8d475c65d2542243c049128d6af6616aa65478cd"
+    },
+    {
+      "year": 2024,
+      "code": "CX",
+      "number": 13,
+      "officialAnswerNumber": 2,
+      "contentSha256": "c122005fcd56f5053f4fdba0a81fc79edcad099bb2ed7e602cafccda06617e0f"
+    },
+    {
+      "year": 2024,
+      "code": "CX",
+      "number": 14,
+      "officialAnswerNumber": 1,
+      "contentSha256": "15d002606160fe03a210d3e59133470a37c6b35a43984568743a3bcce942ba18"
+    },
+    {
+      "year": 2024,
+      "code": "CX",
+      "number": 15,
+      "officialAnswerNumber": 2,
+      "contentSha256": "ef2c7547bb491970ded7cda4f05ff64de2d2eada5131c9047f51d89ff5c415d3"
+    },
+    {
+      "year": 2024,
+      "code": "CX",
+      "number": 16,
+      "officialAnswerNumber": 1,
+      "contentSha256": "47a738a8c78cf7d4b24b3af10bafdc6d879fa3c994a67cefe72209960fb09a35"
+    },
+    {
+      "year": 2024,
+      "code": "CX",
+      "number": 17,
+      "officialAnswerNumber": 3,
+      "contentSha256": "dc12e2a4dcc1b45ea2e611ebe2664b7cd1cd8241f353deef86a0955776bd715f"
+    },
+    {
+      "year": 2024,
+      "code": "CX",
+      "number": 18,
+      "officialAnswerNumber": 3,
+      "contentSha256": "8d8b155bb2549d921b67aff6442602ba685a4dbea8ad5619dcabd955cc1fa693"
+    },
+    {
+      "year": 2024,
+      "code": "CX",
+      "number": 19,
+      "officialAnswerNumber": 4,
+      "contentSha256": "60f1371f0b6ac222609f0a9f373ca645a484ebbbb60d15f45d3f86ab983d9db9"
+    },
+    {
+      "year": 2024,
+      "code": "CX",
+      "number": 20,
+      "officialAnswerNumber": 4,
+      "contentSha256": "10ee5f4209570c1820346051b5b9910fb4444ae44a01d1be169ada313228f006"
+    },
+    {
+      "year": 2025,
+      "code": "CX",
+      "number": 1,
+      "officialAnswerNumber": 2,
+      "contentSha256": "b0c15170545561ae64646142d2d472a3df76b8d6c56bf0b7a7d390fce51ef8d6"
+    },
+    {
+      "year": 2025,
+      "code": "CX",
+      "number": 2,
+      "officialAnswerNumber": 4,
+      "contentSha256": "2261d1f836c9593ca7652e48368d3e687d211e197250c41edee1598c7624c75d"
+    },
+    {
+      "year": 2025,
+      "code": "CX",
+      "number": 3,
+      "officialAnswerNumber": 2,
+      "contentSha256": "97730feab94326d2381f8bc0cd9eba11380744caf6665983a6af8ec393659b38"
+    },
+    {
+      "year": 2025,
+      "code": "CX",
+      "number": 4,
+      "officialAnswerNumber": 1,
+      "contentSha256": "49fc5a2592285fb978f3da85a6715a13e4110307e692f42d9972605503d344c7"
+    },
+    {
+      "year": 2025,
+      "code": "CX",
+      "number": 5,
+      "officialAnswerNumber": 4,
+      "contentSha256": "ed57c5f74e27a62b06c225bd30c4c0a186b2e8a6490ef8c93fee82449569e35f"
+    },
+    {
+      "year": 2025,
+      "code": "CX",
+      "number": 6,
+      "officialAnswerNumber": 3,
+      "contentSha256": "c36025d65bb18eb68a4bcd94e4c9847dec58638bbd9836c531cbe10786f8d7f2"
+    },
+    {
+      "year": 2025,
+      "code": "CX",
+      "number": 7,
+      "officialAnswerNumber": 5,
+      "contentSha256": "3e277814b5762ca21e899c02b13b9a0361d49c7decba32b7b29c6978a716b4c2"
+    },
+    {
+      "year": 2025,
+      "code": "CX",
+      "number": 8,
+      "officialAnswerNumber": 5,
+      "contentSha256": "7e028616b6130aacf2b814971a928a3e850fa9fa6c07bb699d93a08baf0d1401"
+    },
+    {
+      "year": 2025,
+      "code": "CX",
+      "number": 9,
+      "officialAnswerNumber": 2,
+      "contentSha256": "98b2bea65c4b48af3e1abae39caae58843e08ac70b8490773fdd8426b538f4a1"
+    },
+    {
+      "year": 2025,
+      "code": "CX",
+      "number": 10,
+      "officialAnswerNumber": 1,
+      "contentSha256": "6578fe13d8d0c045202834540707347b8d1972643264b5736c3bf2e6ec69646d"
+    },
+    {
+      "year": 2025,
+      "code": "CX",
+      "number": 11,
+      "officialAnswerNumber": 1,
+      "contentSha256": "fc2f8c8132f5ff8942c7ea8b43201fe33af85e997e6fb7076989b2d9cb21d9ac"
+    },
+    {
+      "year": 2025,
+      "code": "CX",
+      "number": 12,
+      "officialAnswerNumber": 2,
+      "contentSha256": "efdfa2b454eb3b6e43c624d83fbd5282ad60e7894dc8c787a9464632ec3f08d6"
+    },
+    {
+      "year": 2025,
+      "code": "CX",
+      "number": 13,
+      "officialAnswerNumber": 2,
+      "contentSha256": "f7a04abd195d8254c730f3106384795cad6653b7e36f302e61244ef9bcb2dc4b"
+    },
+    {
+      "year": 2025,
+      "code": "CX",
+      "number": 14,
+      "officialAnswerNumber": 5,
+      "contentSha256": "dbae979c9d726b2ee336818ff4674172dc8708bede0fef16dfb03228ff609c22"
+    },
+    {
+      "year": 2025,
+      "code": "CX",
+      "number": 15,
+      "officialAnswerNumber": 4,
+      "contentSha256": "9df1732c152dae24210508ac45057ffd774da53b1beef8ae1fb7211f336dcf85"
+    },
+    {
+      "year": 2025,
+      "code": "CX",
+      "number": 16,
+      "officialAnswerNumber": 5,
+      "contentSha256": "d041b16e939ed5c1215cc37be706edbd2a20971ead357450f7d1fc646b65fa1c"
+    },
+    {
+      "year": 2025,
+      "code": "CX",
+      "number": 17,
+      "officialAnswerNumber": 1,
+      "contentSha256": "2c06a0506b8c76859d8f65b07c2659d24feff46ccc609c5f1ee36e361169fc5f"
+    },
+    {
+      "year": 2025,
+      "code": "CX",
+      "number": 18,
+      "officialAnswerNumber": 3,
+      "contentSha256": "d275a541ca5f73a1bfd4d9f6b9d83ef7e47cbba30d4107f32c451636fbb53bfa"
+    },
+    {
+      "year": 2025,
+      "code": "CX",
+      "number": 19,
+      "officialAnswerNumber": 1,
+      "contentSha256": "ffd77b5891c8abc8796f527e6fa61c73f42abcdb4b89e010cec9ca580653b003"
+    },
+    {
+      "year": 2025,
+      "code": "CX",
+      "number": 20,
+      "officialAnswerNumber": 5,
+      "contentSha256": "dddc062e973782601c132ac6a604e5e167f2ba45ca2ff867e8e08903e52e88ef"
+    },
+    {
+      "year": 2024,
+      "code": "DX",
+      "number": 1,
+      "officialAnswerNumber": 1,
+      "contentSha256": "a87b3c3d62c34635bf798e5032ae2bf544954d1890659c0ef1d7515d33d42074"
+    },
+    {
+      "year": 2024,
+      "code": "DX",
+      "number": 2,
+      "officialAnswerNumber": 4,
+      "contentSha256": "7121ebbdad634c40007e71c19262b9ed2c387aa19fa77967a4e612a070fe6403"
+    },
+    {
+      "year": 2024,
+      "code": "DX",
+      "number": 3,
+      "officialAnswerNumber": 4,
+      "contentSha256": "4774303cc0807503f3189d89e4db853501af1dc637e5324ced6e68a86c513cd4"
+    },
+    {
+      "year": 2024,
+      "code": "DX",
+      "number": 4,
+      "officialAnswerNumber": 3,
+      "contentSha256": "5ce89d7bcb2029a66a5cdc6a319d79832e9207ff0ef5f6bf12a04dc51c7516e9"
+    },
+    {
+      "year": 2024,
+      "code": "DX",
+      "number": 5,
+      "officialAnswerNumber": 1,
+      "contentSha256": "e5c5c23061bb2c58e5165073ca4fd0f34c3f9345d936dc0bcb6863aab1162d0d"
+    },
+    {
+      "year": 2024,
+      "code": "DX",
+      "number": 6,
+      "officialAnswerNumber": 3,
+      "contentSha256": "5422722f1829349bd7dc95c76bd453ef1062f368e1c51897d523f78f7989981c"
+    },
+    {
+      "year": 2024,
+      "code": "DX",
+      "number": 7,
+      "officialAnswerNumber": 2,
+      "contentSha256": "26801ff59a64bd61d54b5a67bff6f42b60f0a9d7d77301e06fe8ac387de558ff"
+    },
+    {
+      "year": 2024,
+      "code": "DX",
+      "number": 8,
+      "officialAnswerNumber": 4,
+      "contentSha256": "88b643bd76c69a7b4cbe51140caf22fdb38d3e2ffdaa9e90a0cb670d558d3004"
+    },
+    {
+      "year": 2024,
+      "code": "DX",
+      "number": 9,
+      "officialAnswerNumber": 2,
+      "contentSha256": "2ac9fa08b10bb9142d1481d1d6258f93e9849d974acf5eec5ab28494e3c81854"
+    },
+    {
+      "year": 2024,
+      "code": "DX",
+      "number": 10,
+      "officialAnswerNumber": 5,
+      "contentSha256": "2fc7d1112b7eebb825327909f926cc0b6c88fb335db6eba9f80013a8261c2675"
+    },
+    {
+      "year": 2024,
+      "code": "DX",
+      "number": 11,
+      "officialAnswerNumber": 1,
+      "contentSha256": "86d1e44ec105b52e74d54b2f480e49c0b3ba3546c497847313ece69a6ffc4e57"
+    },
+    {
+      "year": 2024,
+      "code": "DX",
+      "number": 12,
+      "officialAnswerNumber": 4,
+      "contentSha256": "aad41500ae17967d8a4771cce88d4389a68354030111e2e75c35e7a3c07f8a02"
+    },
+    {
+      "year": 2024,
+      "code": "DX",
+      "number": 13,
+      "officialAnswerNumber": 5,
+      "contentSha256": "aa7d48e788f1acb157bbfac4659b752b6b2077c7bc782f546d2ec56949b96279"
+    },
+    {
+      "year": 2024,
+      "code": "DX",
+      "number": 14,
+      "officialAnswerNumber": 1,
+      "contentSha256": "d1473ca4885f0801cd243fdf5922bc0b4ce17e3e6f403cab5956b03cb7524567"
+    },
+    {
+      "year": 2024,
+      "code": "DX",
+      "number": 15,
+      "officialAnswerNumber": 3,
+      "contentSha256": "6c48ec06fda886712c465cf4519ce834713a0eed34a4bc7e37a2edc6fe64b0a0"
+    },
+    {
+      "year": 2024,
+      "code": "DX",
+      "number": 16,
+      "officialAnswerNumber": 5,
+      "contentSha256": "5cb037e14777524a343fd3712ff6ee4b1c4bfea7f5aba070d2563b41a633d262"
+    },
+    {
+      "year": 2024,
+      "code": "DX",
+      "number": 17,
+      "officialAnswerNumber": 5,
+      "contentSha256": "99a1fdfc0b6382f7e453d7b5d44436816eaf5dc0faf8473f4162d5313411de4b"
+    },
+    {
+      "year": 2024,
+      "code": "DX",
+      "number": 18,
+      "officialAnswerNumber": 1,
+      "contentSha256": "1032b4fb9425b9284371e31eb77b03e5d41254c6d26a21b49b6c3c1347e0ea11"
+    },
+    {
+      "year": 2024,
+      "code": "DX",
+      "number": 19,
+      "officialAnswerNumber": 2,
+      "contentSha256": "31ae9f62e512929a16bdaaaba3e7d99c6c9f2ae07a7ed5129fe79ce4a50d06c4"
+    },
+    {
+      "year": 2024,
+      "code": "DX",
+      "number": 20,
+      "officialAnswerNumber": 4,
+      "contentSha256": "fe2d43b04d66d1b09f31e2836ae00628c817abd68ac74d9c7438acd60e048fff"
+    },
+    {
+      "year": 2025,
+      "code": "DX",
+      "number": 1,
+      "officialAnswerNumber": 2,
+      "contentSha256": "b0c15170545561ae64646142d2d472a3df76b8d6c56bf0b7a7d390fce51ef8d6"
+    },
+    {
+      "year": 2025,
+      "code": "DX",
+      "number": 2,
+      "officialAnswerNumber": 4,
+      "contentSha256": "2261d1f836c9593ca7652e48368d3e687d211e197250c41edee1598c7624c75d"
+    },
+    {
+      "year": 2025,
+      "code": "DX",
+      "number": 3,
+      "officialAnswerNumber": 2,
+      "contentSha256": "97730feab94326d2381f8bc0cd9eba11380744caf6665983a6af8ec393659b38"
+    },
+    {
+      "year": 2025,
+      "code": "DX",
+      "number": 4,
+      "officialAnswerNumber": 1,
+      "contentSha256": "49fc5a2592285fb978f3da85a6715a13e4110307e692f42d9972605503d344c7"
+    },
+    {
+      "year": 2025,
+      "code": "DX",
+      "number": 5,
+      "officialAnswerNumber": 2,
+      "contentSha256": "9efb29bae5c2957f0b6c6e32574cbf698e4d5168e7016e35ef421b29ac69efeb"
+    },
+    {
+      "year": 2025,
+      "code": "DX",
+      "number": 6,
+      "officialAnswerNumber": 1,
+      "contentSha256": "c281640d40da3e3ebc9e34c40fde44f158502b5f6e880bcf299026ec63bb7edc"
+    },
+    {
+      "year": 2025,
+      "code": "DX",
+      "number": 7,
+      "officialAnswerNumber": 5,
+      "contentSha256": "3e277814b5762ca21e899c02b13b9a0361d49c7decba32b7b29c6978a716b4c2"
+    },
+    {
+      "year": 2025,
+      "code": "DX",
+      "number": 8,
+      "officialAnswerNumber": 5,
+      "contentSha256": "45010f8fd2b4437c106465615928728dd3d709557f04d57d08a9d223faa91ec5"
+    },
+    {
+      "year": 2025,
+      "code": "DX",
+      "number": 9,
+      "officialAnswerNumber": 3,
+      "contentSha256": "1e0d8c382c726c127dc0ff63008cdb91db012d5db9c25efafbaadda7f36853b6"
+    },
+    {
+      "year": 2025,
+      "code": "DX",
+      "number": 10,
+      "officialAnswerNumber": 5,
+      "contentSha256": "eaa790eaa11f7a186520c5d9016d9fdabddb82696f10fcbe4bef06f85e3c9ebe"
+    },
+    {
+      "year": 2025,
+      "code": "DX",
+      "number": 11,
+      "officialAnswerNumber": 3,
+      "contentSha256": "217ce207dc117141b524f6845e58fd7c24ba3774602f864a3f8093f4574b0b58"
+    },
+    {
+      "year": 2025,
+      "code": "DX",
+      "number": 12,
+      "officialAnswerNumber": 3,
+      "contentSha256": "bc1cfe8e32f3ec0bd3a6633afafd38f50d87ea198f8b03b606ba0286893f4877"
+    },
+    {
+      "year": 2025,
+      "code": "DX",
+      "number": 13,
+      "officialAnswerNumber": 4,
+      "contentSha256": "6b960f57fce5dd92d9c3677f8e3dbdd698f0732e0d8aa153cc4fab635c345812"
+    },
+    {
+      "year": 2025,
+      "code": "DX",
+      "number": 14,
+      "officialAnswerNumber": 1,
+      "contentSha256": "19a33df59f0a9047445bb8c1916ab136fb7c4227e77b511f3a2c505bc9ae1f41"
+    },
+    {
+      "year": 2025,
+      "code": "DX",
+      "number": 15,
+      "officialAnswerNumber": 1,
+      "contentSha256": "a021997d6bc9d91ce3e9d1d8d8a8ec114d51ffc4b50e5fc82421b978e89380be"
+    },
+    {
+      "year": 2025,
+      "code": "DX",
+      "number": 16,
+      "officialAnswerNumber": 4,
+      "contentSha256": "6a93b941c1025ad4efc4f637fe6459ea181baca0be759c2aecdb502a028fbf0b"
+    },
+    {
+      "year": 2025,
+      "code": "DX",
+      "number": 17,
+      "officialAnswerNumber": 2,
+      "contentSha256": "3a104ebaa7504f9852f9f81bb7c2fdadcf88dfb0b19a8f111ef4c131adbb1ff1"
+    },
+    {
+      "year": 2025,
+      "code": "DX",
+      "number": 18,
+      "officialAnswerNumber": 3,
+      "contentSha256": "7576a450bb53385f27ae133640376bed5154bad923dc6e94843997151c30494c"
+    },
+    {
+      "year": 2025,
+      "code": "DX",
+      "number": 19,
+      "officialAnswerNumber": 4,
+      "contentSha256": "330f8d717933140740b9db613ecc8debe62b129034196d8d090411e0a12c8a14"
+    },
+    {
+      "year": 2025,
+      "code": "DX",
       "number": 20,
       "officialAnswerNumber": 1,
       "contentSha256": "b4d19b53138b87094d0c3068da0bb1b41de742fea047416446b78a388cfe3ba4"

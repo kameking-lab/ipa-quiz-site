@@ -59,7 +59,7 @@ describe("KHK chemistry source staging", () => {
     const questions = drafts.papers.flatMap<(typeof drafts.papers)[number]["questions"][number]>((paper) => paper.questions);
     expect(questions.filter((q) => q.transcriptionVerified)).toHaveLength(review.counts.transcriptionVerified);
     expect(questions.filter((q) => !q.transcriptionVerified)).toHaveLength(review.counts.unreviewed);
-    expect(questions.filter((q) => q.explanationWritten)).toHaveLength(209);
+    expect(questions.filter((q) => q.explanationWritten)).toHaveLength(289);
     expect(review.counts.originalQuestions).toBe(422);
     expect(review.counts.descriptiveAnswersVerified).toBe(12);
     for (const record of review.reviewedPapers) {
@@ -182,15 +182,19 @@ describe("KHK chemistry source staging", () => {
     expect(paper.questions[5].pdfPages).toEqual([7]);
   });
 
-  it("retains 209 independent explanations and all 1045 choice explanations with their official keys", () => {
-    expect(review.explanationReviews).toHaveLength(209);
-    expect(review.counts.explanationWritten).toBe(209);
-    expect(review.counts.explanationPending).toBe(213);
+  it("retains 289 independent explanations and all 1445 choice explanations with their official keys", () => {
+    expect(review.explanationReviews).toHaveLength(289);
+    expect(review.counts.explanationWritten).toBe(289);
+    expect(review.counts.explanationPending).toBe(133);
     const expected = {
       "2024-AX": [2, 4, 4, 1, 1, 2, 2, 5, 1, 5, 5, 1, 3, 4, 2, 5, 2, 1, 2, 1],
       "2025-AX": [3, 1, 1, 4, 3, 2, 5, 5, 3, 4, 3, 4, 2, 5, 2, 2, 1, 3, 4, 1],
       "2024-BX": [2, 4, 4, 1, 1, 2, 2, 5, 1, 5, 5, 1, 2, 5, 1, 2, 1, 4, 2, 4],
       "2025-BX": [3, 1, 1, 4, 3, 2, 5, 5, 3, 4, 3, 5, 5, 2, 3, 1, 2, 1, 4, 1],
+      "2024-CX": [1, 4, 4, 3, 4, 3, 2, 5, 2, 4, 1, 3, 2, 1, 2, 1, 3, 3, 4, 4],
+      "2025-CX": [2, 4, 2, 1, 4, 3, 5, 5, 2, 1, 1, 2, 2, 5, 4, 5, 1, 3, 1, 5],
+      "2024-DX": [1, 4, 4, 3, 1, 3, 2, 4, 2, 5, 1, 4, 5, 1, 3, 5, 5, 1, 2, 4],
+      "2025-DX": [2, 4, 2, 1, 2, 1, 5, 5, 3, 5, 3, 3, 4, 1, 1, 4, 2, 3, 4, 1],
       "2024-AY": [1, 3, 2, 5, 2, 3, 1, 2, 3, 1, 1, 4, 1, 2, 3],
       "2025-AY": [5, 4, 1, 3, 4, 2, 1, 3, 1, 2, 5, 4, 5, 3, 2],
       "2024-BY": [3, 4, 3, 4, 5, 4, 5, 2, 4, 2, 3, 5, 2, 3, 4],
@@ -200,7 +204,7 @@ describe("KHK chemistry source staging", () => {
       "2024-CZ": [5, 3, 4, 1, 5, 1, 2, 5, 5, 5, 4, 2, 2, 3, 1, 3, 2, 4, 1, 5],
       "2025-CZ": [2, 3, 4, 5, 3, 1, 2, 3, 2, 2, 3, 1, 1, 4, 3, 5, 4, 1, 4, 5],
     };
-    expect(review.explanationReviews.every((record) => ["AX", "AY", "BX", "BY", "BZ", "CZ"].includes(record.code))).toBe(true);
+    expect(review.explanationReviews.every((record) => ["AX", "AY", "BX", "BY", "BZ", "CX", "CZ", "DX"].includes(record.code))).toBe(true);
     for (const record of review.explanationReviews) {
       const q = drafts.papers.find((p) => p.year === record.year && p.code === record.code)!.questions[record.number - 1] as unknown as Record<string, unknown>;
       expect(q.officialAnswerNumber).toBe(expected[`${record.year}-${record.code}` as keyof typeof expected][record.number - 1]);
@@ -219,7 +223,7 @@ describe("KHK chemistry source staging", () => {
     expect(2.1 * 2045 / 3891).toBeCloseTo(1.10, 2);
   });
 
-  it("binds every AX/BX legal rationale to its dated legislation and distinguishes critical limits", () => {
+  it("binds all 160 legal rationales to their dated legislation and distinguishes critical limits", () => {
     expect(lawSources.publicAllowed).toBe(false);
     expect(lawSources.sources).toHaveLength(12);
     expect(new Set(lawSources.sources.map((source) => `${source.lawReferenceDate}-${source.lawId}`)).size).toBe(12);
@@ -230,7 +234,7 @@ describe("KHK chemistry source staging", () => {
       expect(source.url).toBe(`https://laws.e-gov.go.jp/law/${source.lawRevisionId}`);
       expect(source.responseSha256).toMatch(/^[a-f0-9]{64}$/);
     }
-    for (const p of drafts.papers.filter((paper) => ["AX", "BX"].includes(paper.code))) {
+    for (const p of drafts.papers.filter((paper) => ["AX", "BX", "CX", "DX"].includes(paper.code))) {
       for (const question of p.questions) {
         const q = question as unknown as Record<string, unknown>;
         const explanation = q.explanationDraft as string;
@@ -262,6 +266,14 @@ describe("KHK chemistry source staging", () => {
     expect(get(2025, "AX", 13).explanationDraft).toContain("耐震設計構造物");
     expect(get(2025, "BX", 16).explanationDraft).toContain("1.5倍");
     expect(get(2024, "BX", 12).explanationDraft).toContain("届出は要求されていない");
+    expect(get(2024, "CX", 4).explanationDraft).toContain("10年間");
+    expect(get(2024, "CX", 6).explanationDraft).toContain("G=V/C");
+    expect(get(2025, "CX", 10).explanationDraft).toContain("製造施設について");
+    expect(get(2025, "CX", 20).explanationDraft).toContain("一般の充塡所にこの例外を広げない");
+    expect(get(2025, "DX", 11).explanationDraft).toContain("翌年度開始日から3年以内");
+    expect(get(2025, "DX", 11).explanationDraft).toContain("選任日から6か月以内");
+    expect(get(2024, "DX", 18).questionDraft).toMatch(/^次のイ、ロ、ハの記述のうち、この事業所に適用される技術上の基準について正しいものはどれか。\n\n/);
+    expect(review.transcriptionCorrections.some((correction) => correction.year === 2024 && correction.code === "DX" && correction.number === 18)).toBe(true);
   });
 
   it("checks LPG calculations in absolute units and keeps unresolved material claims pending", () => {
@@ -311,7 +323,7 @@ describe("KHK chemistry source staging", () => {
       for (const q of p.questions) {
         const fields = q as unknown as Record<string, unknown>;
         expect((fields.choicesDraft as string[]).every((choice) => choice.trim().length > 0)).toBe(true);
-        expect(fields.questionDraft).not.toMatch(/[\uE000-\uF8FF]|ど\s+[A-D]\s*れか/);
+        expect(fields.questionDraft).not.toMatch(/[\uE000-\uF8FF]|ど\s+[A-Z]\s*れか/);
       }
     }
   });
