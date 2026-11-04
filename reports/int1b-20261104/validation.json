@@ -101,5 +101,16 @@
   },
   "httpSecurity": "http-security.json",
   "excludedScope": "release-boundaries.json",
-  "independentReview": "PENDING re-review; prior three findings fixed"
+  "independentReview": {
+    "status": "PASS",
+    "model": "gpt-6-astra",
+    "sandbox": "read-only",
+    "reviewedHead": "2d431b376",
+    "baseline": "00e49b94060cc2671e9d098df91d653a4ed3ffe2",
+    "artifact": "independent-review2.md",
+    "sha256": "9d81f087fabd0240dbbf1459bb178f151f8c981001bfcb393512d501ed70a901",
+    "command": "C:/Users/kanet/AppData/Roaming/npm/codex.cmd exec -m gpt-6-astra -s read-only",
+    "scope": "Read-only code, data and evidence inspection. No independent whole-suite/browser replay or production approval."
+  },
+  "finalizedAt": "2026-11-04T06:52:09.486219+00:00"
 }
