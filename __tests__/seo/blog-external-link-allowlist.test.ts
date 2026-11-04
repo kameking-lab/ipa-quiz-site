@@ -19,6 +19,9 @@ import { getAllBlogPosts } from "@/data/blog";
 //
 // Newly added URLs verified resolving (HEAD, HTTP 200, no redirect) on 2026-09-28:
 const EXPECTED_EXTERNAL_URLS = [
+  // AD2: original journal abstract checked 2026-11-05. The article explicitly
+  // distinguishes the prose-recall experiment from this site's outcomes.
+  "https://www.psychologicalscience.org/journals/psychological-science/j.1467-9280.2006.01693.x/",
   "https://cbt-s.com/examinee/ipa_cbt-faq/detail/4342.html",
   "https://cbt-s.com/page/itee_id",
   "https://www.ipa.go.jp/shiken/",
@@ -80,6 +83,7 @@ const ALLOWED_HOSTS = new Set([
   "www.ipa.go.jp",
   "www3.jitec.ipa.go.jp",
   "cbt-s.com",
+  "www.psychologicalscience.org",
 ]);
 
 // In markdown link form `[text](url)`, the URL ends at the closing paren, so the
