@@ -14,6 +14,9 @@ import {
 import { Badge } from "@/components/ui/badge";
 import { SignInButtons } from "./SignInButtons";
 import { EmailSignInForm } from "./EmailSignInForm";
+import { AppReviewSignInForm } from "./AppReviewSignInForm";
+import { appReviewConfig } from "@/lib/auth/app-review-config";
+import { safeAuthCallback } from "@/lib/auth/redirect";
 
 export const metadata: Metadata = {
   title: "ログイン",
@@ -38,20 +41,6 @@ const KNOWN_AUTH_ERRORS: Record<string, string> = {
   Default: "ログインに失敗しました。",
 };
 
-/**
- * Only allow same-origin relative paths as redirect targets to prevent open redirect.
- * Reject protocol-relative URLs ("//evil.com"), absolute URLs ("https://evil.com"),
- * and anything that doesn't start with a single "/".
- */
-function safeCallbackUrl(raw: string | undefined): string {
-  if (!raw) return "/";
-  if (typeof raw !== "string") return "/";
-  if (!raw.startsWith("/")) return "/";
-  if (raw.startsWith("//")) return "/";
-  if (raw.startsWith("/\\")) return "/";
-  return raw;
-}
-
 function friendlyAuthError(code: string | undefined): string {
   if (!code) return KNOWN_AUTH_ERRORS.Default;
   return KNOWN_AUTH_ERRORS[code] ?? KNOWN_AUTH_ERRORS.Default;
@@ -63,7 +52,7 @@ export default async function SignInPage({
   searchParams: Promise<SearchParams>;
 }) {
   const sp = await searchParams;
-  const callbackUrl = safeCallbackUrl(sp.callbackUrl);
+  const callbackUrl = safeAuthCallback(sp.callbackUrl);
   const session = await auth();
   if (session?.user) redirect(callbackUrl);
 
@@ -72,7 +61,7 @@ export default async function SignInPage({
   const nativeLogin=callbackUrl.startsWith("/api/mobile/auth/complete?");
 
   const providerIds = new Set(
-    authConfig.providers.map((p) => (typeof p === "function" ? p().id : p.id)),
+    authConfig.providers.map((p) => (typeof p === "function" ? p().id : p.id)).filter(id => id !== "app-review"),
   );
 
   return (
@@ -120,7 +109,7 @@ export default async function SignInPage({
             </div>
           )}
 
-          {providerIds.size > 0 ? (
+          {providerIds.size > 0 || appReviewConfig() ? (
             <>
               <SignInButtons
                 callbackUrl={callbackUrl}
@@ -140,6 +129,7 @@ export default async function SignInPage({
                   <EmailSignInForm callbackUrl={callbackUrl} />
                 </>
               )}
+              {appReviewConfig() && <AppReviewSignInForm callbackUrl={callbackUrl} />}
             </>
           ) : (
             <div className="rounded-xl border border-dashed border-border bg-muted/40 px-4 py-6 text-center text-sm text-muted-foreground">

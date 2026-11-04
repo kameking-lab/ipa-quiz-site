@@ -1,4 +1,4 @@
-import { beforeEach, expect, it, vi } from "vitest";
+import { afterEach, beforeEach, expect, it, vi } from "vitest";
 import { createHash, randomBytes } from "node:crypto";
 import { decode } from "next-auth/jwt";
 const m=vi.hoisted(()=>({user:"u1" as string|null,rows:new Map<string,{userId:string;challenge:string;expiresAt:Date}>(),profile:vi.fn()}));
@@ -6,10 +6,29 @@ vi.mock("@/lib/auth",()=>({auth:async()=>m.user?{user:{id:m.user}}:null}));
 vi.mock("@/lib/billing/runtime",()=>({billingFailure:(e:{status?:number;code?:string})=>Response.json({error:e.code??"unavailable"},{status:e.status??503})}));
 vi.mock("@/lib/db/prisma",()=>({prisma:{user:{findUnique:m.profile},$executeRawUnsafe:async(sql:string,...values:unknown[])=>{
   if(sql.startsWith("INSERT"))m.rows.set(values[0] as string,{userId:values[1] as string,challenge:values[2] as string,expiresAt:values[3] as Date});return 1;
-},$queryRawUnsafe:async(_sql:string,hash:string,challenge:string)=>{const row=m.rows.get(hash);if(!row||row.challenge!==challenge||row.expiresAt.getTime()<=Date.now())return [];m.rows.delete(hash);return [{userId:row.userId}];}}}));
+},$queryRawUnsafe:async(_sql:string,hash:string,challenge:string)=>{const row=m.rows.get(hash);if(!row||row.challenge.split(".")[0]!==challenge||row.expiresAt.getTime()<=Date.now())return [];m.rows.delete(hash);return [{userId:row.userId,challenge:row.challenge}];}}}));
 import { complete, exchange } from "@/mobile/server/auth";
+import { reviewSessionClaims } from "@/lib/auth/app-review";
 const hash=(s:string)=>createHash("sha256").update(s).digest("base64url");
 beforeEach(()=>{m.user="u1";m.rows.clear();m.profile.mockReset();m.profile.mockResolvedValue({id:"u1",name:"Mock User",email:"mock@example.test",image:null,plan:"free"});vi.stubEnv("AUTH_SECRET","mock-auth-secret-for-unit-tests-only-32chars");});
+afterEach(()=>vi.unstubAllEnvs());
+it.each(["valid", "rotated", "expired", "disabled", "removed"])("binds native review PKCE exchange to the original configuration: %s", async change=>{
+  for(const [key,value] of Object.entries({APP_REVIEW_LOGIN_ENABLED:"true",APP_REVIEW_USER_ID:"u1",APP_REVIEW_EMAIL:"mock@example.test",APP_REVIEW_CODE_SHA256:randomBytes(32).toString("hex"),APP_REVIEW_EXPIRES_AT:new Date(Date.now()+3600000).toISOString(),AUTH_URL:"https://site.test",DATABASE_URL:"postgresql://unused.invalid/test",KV_REST_API_URL:"https://kv.example.invalid",KV_REST_API_TOKEN:randomBytes(32).toString("hex")}))vi.stubEnv(key,value);
+  const code=randomBytes(32).toString("base64url"),verifier=randomBytes(32).toString("base64url");
+  const version=reviewSessionClaims("u1").reviewVersion;
+  m.rows.set(hash(code),{userId:"u1",challenge:`${hash(verifier)}.${version}`,expiresAt:new Date(Date.now()+60000)});
+  if(change==="rotated")vi.stubEnv("APP_REVIEW_CODE_SHA256",randomBytes(32).toString("hex"));
+  if(change==="expired")vi.stubEnv("APP_REVIEW_EXPIRES_AT",new Date(Date.now()-1).toISOString());
+  if(change==="disabled")vi.stubEnv("APP_REVIEW_LOGIN_ENABLED","false");
+  if(change==="removed"){vi.stubEnv("APP_REVIEW_LOGIN_ENABLED","");vi.stubEnv("APP_REVIEW_USER_ID","");}
+  const response=await exchange(new Request("https://site.test/api/mobile/auth/exchange",{method:"POST",headers:{"X-Kakomon-Native":"ios"},body:JSON.stringify({code,verifier})}));
+  expect(response.status).toBe(change==="valid"?200:401);
+  if(change==="valid"){
+    const jwt=response.headers.get("set-cookie")!.split(";")[0].split("=")[1];
+    expect(await decode({token:jwt,salt:"__Secure-authjs.session-token",secret:process.env.AUTH_SECRET!})).toMatchObject({reviewVersion:version});
+  }else expect(response.headers.has("set-cookie")).toBe(false);
+  expect(m.rows.size).toBe(0);
+});
 it("uses a one-use short-lived PKCE code without putting the session token into the app URL",async()=>{
   const verifier=randomBytes(32).toString("base64url"),state=randomBytes(32).toString("base64url");
   const address=`https://site.test/api/mobile/auth/complete?challenge=${hash(verifier)}&state=${state}`;

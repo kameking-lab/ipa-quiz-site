@@ -67,10 +67,12 @@ describe('aviation communication68 local registration candidate',()=>{
  it('links the existing qualification calendar and learning hub without inventing an exam date',()=>{expect(tsuginoScheduleUrl(exam)).toBe('https://tsugino-shikaku.jp/shikaku/radio-koku');expect(tsuginoLearningUrl(exam)).toBe('https://tsugino-shikaku.jp/learn/radio-koku');});
  it('retains the reviewed player extensions with generated-question entry retired',()=>{
   const player=readFileSync(path.join(process.cwd(),'components/quiz/QuizPlayer.tsx'),'utf8');
+  // IOS1 (666a49bca) added NativeQuestionGate; refresh only the reviewed UI pins.
   // Reviewed 2026-11-01 urgent release recipe: inline AI, original-answer rewards,
   // next-question focus/loading and explicit retirement of generated questions.
   // The historical pre-reward oracle remains unchanged as provenance.
-  expect(normalizedTextSha256(player)).toBe('3ea50bc6848b73bcaf5caaf17a38d7f51ec822538e6224f3ff9acab38aeff1c4');
+  expect(normalizedTextSha256(player)).toBe('2ff5e6f8fb8e3c449222f3e45232697af9d455699df5023874fdc3f075b4ef43');
+  expect(player).toContain('NativeQuestionGate');
   expect(player).not.toContain('GenerateSimilar');
   expect(player).not.toContain('/api/generate-question');
   expect(player).toContain('recordStudyReward(');
@@ -82,10 +84,12 @@ describe('aviation communication68 local registration candidate',()=>{
   expect(current).toHaveLength(oracle.originalCount);
   expect(runtimeFingerprint(ordered)).toBe(oracle.normalizedRuntimeSha256);
   expect(sourceFilesUnder(oracle.sourceRoots)).toEqual(oracle.files.filter(pin=>oracle.sourceRoots.some(root=>pin.path.startsWith(root+'/'))).map(pin=>pin.path));
-  // Only this display component has a separately accepted explanation/UI extension.
+  // IOS1 (666a49bca) added account grants to both display components.
+  // Only these display components have separately accepted UI extensions.
   // Every original-data/core pin and the 338-record runtime fingerprint above remain exact.
   const reviewedDisplayPins: Readonly<Record<string,string>> = {
-    'components/quiz/QuestionAnswerCard.tsx': 'a7a97fafb0934c6aeca4b16cfa603ca7a914bfd84896896d1c80dee3738b4c37',
+    'components/quiz/stream/StreamQuizPlayer.tsx': 'bb8f4a70a3f02b18fb4a09b5200acf35aa8a9e7103688502085fa4637fc22abb',
+    'components/quiz/QuestionAnswerCard.tsx': 'a7b27821a5ddec47060353daee7cad3ffa8b455f7472d837b34a55c73c6ad3c4',
   };
   for(const pin of oracle.files)expect(repositoryTextSha256(pin.path),pin.path).toBe(reviewedDisplayPins[pin.path] ?? pin.sha256);
  });

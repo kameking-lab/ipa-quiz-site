@@ -5,6 +5,7 @@ import { prisma } from "@/lib/db/prisma";
 import { auth } from "@/lib/auth";
 import { BillingError } from "@/lib/billing/domain";
 import { billingFailure } from "@/lib/billing/runtime";
+import { reviewSessionClaims, reviewSessionValid } from "@/lib/auth/app-review";
 const digest = (s: string) => createHash("sha256").update(s).digest("base64url");
 function consentProof(user:string,nonce:string,challenge:string,state:string){
   const secret=process.env.AUTH_SECRET;if(!secret)throw new BillingError("auth_unavailable",503);
@@ -29,7 +30,10 @@ export async function complete(request: Request) {
     if(!nonce||!/^[\w-]{43}$/.test(nonce)||!proof||!/^\w{64}$/.test(proof)||!timingSafeEqual(Buffer.from(proof),Buffer.from(consentProof(session.user.id,nonce,challenge,state))))throw new BillingError("invalid_consent",403);
     const code = randomBytes(32).toString("base64url");
     await prisma.$executeRawUnsafe('DELETE FROM "MobileAuthCode" WHERE "expiresAt" < NOW()');
-    await prisma.$executeRawUnsafe('INSERT INTO "MobileAuthCode" ("codeHash", "userId", "challenge", "expiresAt", "authenticatedAt") VALUES ($1,$2,$3,$4,$5)', digest(code), session.user.id, challenge, new Date(Date.now() + 60000), session.authenticatedAt ?? 0);
+    // Bind review authorization version to the existing TEXT challenge column.
+    // No new columns/tables: old pending codes cannot survive code rotation.
+    const boundChallenge = session.reviewVersion ? `${challenge}.${session.reviewVersion}` : challenge;
+    await prisma.$executeRawUnsafe('INSERT INTO "MobileAuthCode" ("codeHash", "userId", "challenge", "expiresAt", "authenticatedAt") VALUES ($1,$2,$3,$4,$5)', digest(code), session.user.id, boundChallenge, new Date(Date.now() + 60000), session.authenticatedAt ?? 0);
     return new Response(null, { status: 302, headers: { Location: `kakomonai://auth?code=${code}&state=${state}`, "Cache-Control": "no-store", "Referrer-Policy": "no-referrer","Set-Cookie":`${cookie}=; Path=/; HttpOnly; SameSite=Lax; Max-Age=0${secure?"; Secure":""}` } });
   } catch (error) { return billingFailure(error); }
 }
@@ -42,15 +46,19 @@ export async function exchange(request: Request) {
     const value=JSON.parse(body) as {code?:string;verifier?:string;returnTo?:string};
     const code=value.code,verifier=value.verifier;
     if (!code || !verifier || !/^[\w-]{43}$/.test(code) || !/^[\w-]{43}$/.test(verifier)) throw new BillingError("invalid_auth_request", 400);
-    const rows = await prisma.$queryRawUnsafe<Array<{ userId: string; authenticatedAt: bigint | number | null }>>('DELETE FROM "MobileAuthCode" WHERE "codeHash"=$1 AND "challenge"=$2 AND "expiresAt">NOW() RETURNING "userId", "authenticatedAt"', digest(code), digest(verifier));
+    const rows = await prisma.$queryRawUnsafe<Array<{ userId: string; authenticatedAt: bigint | number | null; challenge: string }>>('DELETE FROM "MobileAuthCode" WHERE "codeHash"=$1 AND split_part("challenge",\'.\',1)=$2 AND "expiresAt">NOW() RETURNING "userId", "authenticatedAt", "challenge"', digest(code), digest(verifier));
     if (!rows[0]) throw new BillingError("auth_code_expired", 401);
     const user=await prisma.user.findUnique({where:{id:rows[0].userId},select:{id:true,name:true,email:true,image:true,plan:true}});
     if(!user)throw new BillingError("auth_account_unavailable",401);
+    const reviewClaims = reviewSessionClaims(user.id);
+    const boundVersion = rows[0].challenge?.split(".")[1];
+    if ((boundVersion || reviewClaims.reviewVersion) && boundVersion !== reviewClaims.reviewVersion) throw new BillingError("auth_account_unavailable",401);
+    if (!reviewSessionValid({ id: user.id, ...reviewClaims })) throw new BillingError("auth_account_unavailable",401);
     const secret = process.env.AUTH_SECRET;
     if (!secret) throw new BillingError("auth_unavailable", 503);
     const secure = url.protocol === "https:", cookie = `${secure ? "__Secure-" : ""}authjs.session-token`;
     const maxAge = 30 * 86400;
-    const token = await encode({ secret, salt: cookie, token: { id:user.id,sub:user.id,name:user.name,email:user.email,picture:user.image,plan:user.plan,authenticatedAt:Number(rows[0].authenticatedAt??0) }, maxAge });
+    const token = await encode({ secret, salt: cookie, token: { id:user.id,sub:user.id,name:user.name,email:user.email,picture:user.image,plan:user.plan,authenticatedAt:Number(rows[0].authenticatedAt??0), ...reviewClaims }, maxAge });
     const requested=typeof value.returnTo==="string"?value.returnTo:"/";
     const destination=requested.startsWith("/")&&!requested.startsWith("//")&&!requested.startsWith("/\\")?new URL(requested,url):new URL("/",url);
     return Response.json({redirectTo:destination.origin===url.origin?destination.href:new URL("/",url).href}, { headers: { "Cache-Control": "no-store", "Referrer-Policy": "no-referrer",

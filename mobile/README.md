@@ -1,5 +1,7 @@
 # 過去問AI iOS — IOS1D
 
+審査前IOS2の広告/ATT方針と審査用コード認証は [docs/ios2-release.md](./docs/ios2-release.md) を参照。現行WKWebViewのAdSenseは停止しており、広告SDK導入承認と実機検証が残る。
+
 IOS1Dの変更と公開前に必要な実環境確認は [docs/ios1d-release.md](./docs/ios1d-release.md) を参照。
 
 2026-11-03の所有者の最終指示に対応した初版。旧36問アプリを廃止し、App Storeの月額課金も初版に実装した。公開・審査・実機ビルドの完了報告ではない。

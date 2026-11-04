@@ -18,12 +18,24 @@ import Google from "next-auth/providers/google";
 import GitHub from "next-auth/providers/github";
 import Nodemailer from "next-auth/providers/nodemailer";
 import Apple from "next-auth/providers/apple";
+import Credentials from "next-auth/providers/credentials";
 
 function hasEnv(...keys: string[]) {
   return keys.every((k) => !!process.env[k]);
 }
 
 const providers: NextAuthConfig["providers"] = [];
+
+// Authorize on the server only. Keep the endpoint registered so disabling the
+// feature at runtime cannot leave a stale provider accepting credentials.
+providers.push(Credentials({
+  id: "app-review", name: "App Review",
+  credentials: { email: { type: "email" }, code: { type: "password" } },
+  async authorize(credentials, request) {
+    const { authorizeAppReview } = await import("./app-review");
+    return authorizeAppReview(credentials, request);
+  },
+}));
 
 if (hasEnv("AUTH_APPLE_ID", "AUTH_APPLE_SECRET")) {
   providers.push(Apple({ clientId: process.env.AUTH_APPLE_ID, clientSecret: process.env.AUTH_APPLE_SECRET }));
@@ -78,6 +90,7 @@ export const authConfig: NextAuthConfig = {
       return token;
     },
     async session({ session, token }) {
+      if (typeof token.reviewVersion === "string") session.reviewVersion = token.reviewVersion;
       if (session.user) {
         session.authenticatedAt = typeof token.authenticatedAt === "number" ? token.authenticatedAt : 0;
         session.user.id = (token.id as string | undefined) ?? session.user.id;
@@ -89,4 +102,4 @@ export const authConfig: NextAuthConfig = {
   trustHost: true,
 };
 
-export const isAuthConfigured = providers.length > 0;
+export const isAuthConfigured = providers.some(p => typeof p === "function" || p.id !== "app-review") || process.env.APP_REVIEW_LOGIN_ENABLED === "true";

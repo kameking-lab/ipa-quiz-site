@@ -31,6 +31,8 @@ function makeQuestion(): EssayQuestion {
 beforeEach(() => {
   cleanup();
   window.localStorage.clear();
+  // Exercise evaluation after the separately tested IOS1 Gemini consent flow.
+  localStorage.setItem("kakomon:ai-consent:20261103", "allowed");
 });
 
 // 各論述 textarea は CardTitle「設問X」と紐づかない裸のコントロールだった。

@@ -2,6 +2,7 @@ import { fireEvent, render, waitFor } from "@testing-library/react";
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 
 import { ContentEndAd } from "@/components/ads/ContentEndAd";
+vi.mock("@/mobile/shared/contracts", () => ({ nativeClient: () => Boolean((window as unknown as { nativeTest?: boolean }).nativeTest) }));
 
 vi.mock("next/script", () => ({
   default: ({ onReady }: { onReady?: () => void }) => (
@@ -36,8 +37,17 @@ describe("ContentEndAd", () => {
   });
 
   afterEach(() => {
+    delete (window as unknown as { nativeTest?: boolean }).nativeTest;
     vi.restoreAllMocks();
     vi.unstubAllGlobals();
+  });
+
+  it("does not mount the script or request ads in the native WebView", () => {
+    (window as unknown as { nativeTest?: boolean }).nativeTest = true;
+    const { container, queryByTestId } = render(<ContentEndAd />);
+    expect(container.querySelector("ins")).toBeNull();
+    expect(queryByTestId("load-ad-script")).toBeNull();
+    expect(window.adsbygoogle).toHaveLength(0);
   });
 
   it("requests the configured content-end unit once after the lazy script is ready", () => {

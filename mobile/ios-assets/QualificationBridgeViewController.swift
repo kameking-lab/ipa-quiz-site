@@ -2,11 +2,14 @@ import Capacitor
 import UIKit
 import EventKit
 import EventKitUI
+import WebKit
 
 @objc(QualificationBridgeViewController)
 class QualificationBridgeViewController: CAPBridgeViewController {
     override func capacitorDidLoad() {
         bridge?.registerPluginInstance(QualificationBridgePlugin())
+        bridge?.registerPluginInstance(TrackingTransparencyPlugin())
+
     }
 }
 

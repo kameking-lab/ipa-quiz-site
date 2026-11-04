@@ -24,6 +24,7 @@ import { Share } from "@capacitor/share";
 import catalog from "./generated/catalog.json";
 import { QualificationCardActions } from "./QualificationActions";
 import "./native.css";
+import { prepareTrackingPrivacy } from "./tracking";
 const ORIGIN="https://www.kakomon-ai.jp";
 const MaterialReader=lazy(()=>import("./MaterialReader"));
 function App() {
@@ -118,6 +119,8 @@ function App() {
   </>;
 }
 async function start() {
+  // Install native request blocking before any UI/deep-link can leave the shell.
+  await prepareTrackingPrivacy();
   // Preferences is shared with the online WebView, whose Next.js code has no Vite env.
   const publicSdkKey = import.meta.env.MOBILE_RC_IOS_PUBLIC_KEY;
   if (Capacitor.isNativePlatform() && publicSdkKey) {

@@ -19,6 +19,8 @@ reference = group.files.find { |file| file.path == 'PrivacyInfo.xcprivacy' } || 
 target.resources_build_phase.add_file_reference(reference, true)
 native_source = group.files.find { |file| file.path == 'QualificationBridgeViewController.swift' } || group.new_file('QualificationBridgeViewController.swift')
 target.source_build_phase.add_file_reference(native_source, true)
+tracking_source = group.files.find { |file| file.path == 'TrackingTransparencyPlugin.swift' } || group.new_file('TrackingTransparencyPlugin.swift')
+target.source_build_phase.add_file_reference(tracking_source, true)
 storyboard_path = 'ios/App/App/Base.lproj/Main.storyboard'
 storyboard = File.read(storyboard_path)
 unless storyboard.include?('customClass="QualificationBridgeViewController"')
@@ -39,5 +41,6 @@ plist['CFBundleDevelopmentRegion'] = 'ja'
 plist['CFBundleLocalizations'] = ['ja']
 plist['CFBundleDisplayName'] = '過去問AI'
 plist['ITSAppUsesNonExemptEncryption'] = false
+plist['NSUserTrackingUsageDescription'] = '他社のアプリやウェブサイトでの利用情報と、このアプリの利用情報を組み合わせて、興味に合った広告の表示と広告の効果測定に利用します。許可しなくても学習機能を利用できます。'
 plist['CFBundleURLTypes'] = [{ 'CFBundleURLName' => 'jp.kakomon-ai.app.auth', 'CFBundleURLSchemes' => ['kakomonai'] }]
 Xcodeproj::Plist.write_to_path(plist, plist_path)

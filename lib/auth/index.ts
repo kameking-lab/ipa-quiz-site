@@ -11,6 +11,7 @@ import NextAuth from "next-auth";
 import { PrismaAdapter } from "@auth/prisma-adapter";
 import { authConfig, isAuthConfigured } from "./config";
 import { prisma } from "@/lib/db/prisma";
+import { reviewSessionClaims, reviewSessionValid } from "./app-review";
 
 const adapter = process.env.DATABASE_URL ? PrismaAdapter(prisma) : undefined;
 
@@ -22,6 +23,8 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
     async jwt(args) {
       const token = await authConfig.callbacks!.jwt!(args);
       if (!token) return null;
+      if (args.user?.id) Object.assign(token, reviewSessionClaims(args.user.id));
+      if (!reviewSessionValid(token)) return null;
       // Deletion revokes every JWT, including devices retaining an old cookie.
       if (process.env.DATABASE_URL && typeof token.id === "string" &&
           (token.id.startsWith("deleted-billing-") || !await prisma.user.findUnique({where:{id:token.id},select:{id:true}}))) return null;

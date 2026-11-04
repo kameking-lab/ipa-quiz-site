@@ -2,6 +2,7 @@
 
 import Script from "next/script";
 import { useCallback, useEffect, useRef, useState } from "react";
+import { nativeClient } from "@/mobile/shared/contracts";
 
 const ADSENSE_CLIENT = "ca-pub-8751260838396451";
 const CONTENT_END_SLOT = "3773902048";
@@ -13,6 +14,14 @@ declare global {
 }
 
 export function ContentEndAd() {
+  // Render nothing on SSR and before environment detection. In particular,
+  // never mount next/script in the Capacitor WKWebView (even with ATT granted).
+  const [browser, setBrowser] = useState(false);
+  useEffect(() => { setBrowser(!nativeClient()); }, []);
+  return browser ? <BrowserContentEndAd /> : null;
+}
+
+function BrowserContentEndAd() {
   const adRef = useRef<HTMLModElement>(null);
   const requestedRef = useRef(false);
   const scriptReadyRef = useRef(false);

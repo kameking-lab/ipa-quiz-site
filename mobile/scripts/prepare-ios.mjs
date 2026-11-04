@@ -14,6 +14,7 @@ catch { run("npx", ["--no-install", "cap", "add", "ios", "--packagemanager", "Co
 run("npx", ["--no-install", "cap", "sync", "ios"]);
 await copyFile(new URL("../ios-assets/PrivacyInfo.xcprivacy", import.meta.url), new URL("../ios/App/App/PrivacyInfo.xcprivacy", import.meta.url));
 await copyFile(new URL("../ios-assets/QualificationBridgeViewController.swift", import.meta.url), new URL("../ios/App/App/QualificationBridgeViewController.swift", import.meta.url));
+await copyFile(new URL("../ios-assets/TrackingTransparencyPlugin.swift", import.meta.url), new URL("../ios/App/App/TrackingTransparencyPlugin.swift", import.meta.url));
 await cp(new URL("../ios-assets/AppIcon.appiconset/", import.meta.url),
   new URL("../ios/App/App/Assets.xcassets/AppIcon.appiconset/", import.meta.url), { recursive: true, force: true });
 run("ruby", ["scripts/configure-ios.rb"]);
