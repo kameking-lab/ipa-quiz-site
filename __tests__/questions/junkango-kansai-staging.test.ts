@@ -116,6 +116,15 @@ describe("CQ6 准看護師（関西広域連合）の未公開2回分", () => {
     expect(questions.every(q => q.sourceImages.every(path => path.startsWith("data/qualification-staging/")))).toBe(true);
   });
 
+  it("distinguishes acute from delayed chemotherapy nausea without denying symptoms at 5–7 days", () => {
+    const q = find(2025, 88);
+    expect(q.officialAnswerNumber).toBe("3");
+    expect(q.choiceExplanations["2"]).toContain("急性は投与後24時間以内");
+    expect(q.choiceExplanations["2"]).toContain("遅発性は24時間以降");
+    expect(q.choiceExplanations["2"]).toContain("5〜7日頃の悪心・嘔吐もあり得る");
+    expect(q.officialReferenceUrls).toContain("https://www.ncc.go.jp/jp/ncce/division/pharmacy/kouganzai/supportivecare_antiemetic.html");
+  });
+
   it.each([
     ["publicAllowed", true, "publicAllowed"],
     ["choices", { "1": "a", "2": "b", "3": "c" }, "4"],
