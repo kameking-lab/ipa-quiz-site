@@ -1,0 +1,27 @@
+独立レビューを行ってください。モデルは指定のgpt-6-astra、sandboxはread-onlyです。編集やコミットをせず、最後に必ずPASS又はFAILを明示し、FAILは具体的なファイル・設問・根拠・必要な修正を列挙してください。未確認を確認済みとせず、必要な範囲を実際に照合してください。他のエージェントへの委任は禁止。
+
+タスクCQ4: 日本環境整備教育センターの浄化槽設備士試験（学科）、slug jokaso-setsubishi。COV1 B候補7が根拠。浄化槽管理士jokasoとは別資格。origin/main bb912dfd0494f7095ec5387f9f2e53f46381cd1fからの本ブランチの全変更を対象に、未公開の2回分収録が完了しているか確認してください。
+
+主な対象:
+- data/qualification-staging/jokaso-setsubishi/ の2025.json、2026.json（各50問）、manifest.json、official-answers.json、source-audit.json、images/全100枚、README。
+- scripts/lib/jokaso-setsubishi-staging.ts、scripts/audit-jokaso-setsubishi-source.py、scripts/validate-questions.tsへの接続、専用テスト。
+- lib/qualifications/catalog.tsの新規資格1件。publicAllowed=false、公開レジストリ・ExamCode・public画像・通常ローダーから隔離されていること。
+- reports/CQ4-20261104/transcription、reference-checks.json。
+
+公式PDFは通常GETで取得済み、次のローカル領域から読めます:
+C:/Users/kanet/AppData/Local/Temp/codex-work/cq4/2025-questions.pdf （画像のみ17ページ）
+C:/Users/kanet/AppData/Local/Temp/codex-work/cq4/2025-answers.pdf
+C:/Users/kanet/AppData/Local/Temp/codex-work/cq4/2026-questions.pdf （21ページ、問題は物理5ページ以降）
+C:/Users/kanet/AppData/Local/Temp/codex-work/cq4/2026-answers.pdf
+原ページのPNGは同領域の2025/、2026/。2025の別解像度OCRは2025-pass2/。高解像度の各問原本画像はstaging/images/にあるため必ず目視にも使ってください。Pythonのfitz、Pillowを利用できます。read-onlyでキャッシュや成果物は書かず、既存の画像とPDFから直接調べてください。
+
+重点確認:
+1. 両回全100問の原文・400肢の順序と数字・公式正答を照合。空白・改行・ルビ・数式のプレーンテキスト表記だけは整形し、印刷体裁は画像で保持する仕様です。図だけの肢は印刷番号をchoicesとし原本画像を必須扱いにしています。
+2. 2025は2解像度OCR後に著者が全原ページを目視。特に問24、25、26はOCRの選択肢順誤りを画像で修正済み。全原文の独立した照合をお願いします。画像・表・囲み・数式・脚注が切れていないこと。
+3. 全肢解説の技術・法令・計算・正誤の整合性。正解肢だけでなく400肢を読む。2025問7/15/27/34、2026問7/12/16/17/27/42の図の説明、2026問29の1.8mと30度以下、問35の空気逃がし弁色、問47の令和7年4月改正を注意。
+4. 出題当時の説明と現行法を混同していないこと。公式法令基準日は不明なのでlawReferenceDate=null。試験時点のlegalContextDateとは分離。
+5. 自己生成ハッシュは原文一致の独立証拠ではありません。原本監査はPDFの4hash・座標で拾う全100正答・画像100枚のpixel一致を検査し、文字起こしは著者照合とあなたの別レビューで確認する設計です。
+6. 検証が本100問を実際に対象にすること、関連テストとtypecheckの妥当性。必要なら pnpm validate:questions --exam=jokaso-setsubishi、pnpm test __tests__/questions/jokaso-setsubishi-staging.test.ts __tests__/lib/exam-config-integrity.test.ts、pnpm typecheck（tsbuildinfo書込を避けるなら pnpm exec tsc --noEmit --incremental false）。独立実行は必須ではなく実装・実行記録の確認で構いません。
+
+収録問題にアクセス制限回避はありません。権利の一般公開許可は確認済みと称さず未公開で準備するタスクです。公開の許可取得を本タスクの未公開保存のPASS条件に追加しないでください。
+報告書はこのレビュー後に主担当が作成します。その未作成のみでFAILにせず、収録・検証・隔離・原文・解説を審査してください。

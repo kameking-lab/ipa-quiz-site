@@ -18,3 +18,20 @@ OCRを公式本文とみなさず、原本と正答表を別に照合する。
 各問の`legalContextDate`は説明対象の試験時点を表す。
 
 原本PDFと一時OCR画像はコミットしない。再取得用URL・HTTP結果・SHA-256はmanifestに保持する。
+
+## 検証と再照合
+
+```powershell
+pnpm validate:questions --exam=jokaso-setsubishi
+pnpm test __tests__/questions/jokaso-setsubishi-staging.test.ts __tests__/lib/exam-config-integrity.test.ts
+pnpm typecheck
+python scripts/audit-jokaso-setsubishi-source.py --source-dir <原本PDF保存先>
+```
+
+`validate:questions`は専用の厳密スキーマで100問の番号・公式正答・本文ハッシュ・原本画像ハッシュ・全肢解説・未公開設定を確認する。
+最後に表示される通常問題の件数は0であり、その前の`[staging] ... 100 questions`が本データの検証結果。
+引数なしの全資格検証でも本ステージングを検証する。
+
+原本監査スクリプトは4PDFのSHA-256、座標に基づく全100正答表セル、100枚の原本画像のピクセル一致を検証する。
+本文ハッシュは目視照合後の改変検知用であり、原本との文字単位照合そのものを証明しない。
+スキャン原文の独立照合と解説の正確性は、別プロセスのread-onlyレビューで確認する。
