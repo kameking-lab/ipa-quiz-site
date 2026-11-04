@@ -5,7 +5,7 @@
   "publicationStatus": "staged",
   "publicAllowed": false,
   "canonicalFormat": "lossless-original-page-images",
-  "reviewStatus": "awaiting-independent-review",
+  "reviewStatus": "independent-review-passed",
   "originalCount": 66,
   "morningCount": 56,
   "afternoonOriginalCount": 10,
@@ -34,5 +34,13 @@
     "人手による原本と技術根拠の最終確認",
     "地図等の測量成果・第三者権利と利用手続の個別確認",
     "公開を明示的に承認する別タスク"
-  ]
+  ],
+  "independentReview": {
+    "verdict": "PASS",
+    "model": "gpt-6-astra",
+    "sandbox": "read-only",
+    "reviewedImplementationCommit": "86874a7db1f4de0fb4b1887e8b713b1df44c9b4e",
+    "reportPath": "reports/cq2-sokuryoshi/review-8-result.md",
+    "reviewedAt": "2026-11-04"
+  }
 }
