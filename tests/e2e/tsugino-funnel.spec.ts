@@ -25,6 +25,7 @@ test.beforeAll(async () => {
   await new Promise<void>(resolve => kv.listen(3375, "127.0.0.1", resolve));
 });
 test.afterAll(async () => { if (kv) await new Promise<void>((resolve, reject) => kv.close(error => error ? reject(error) : resolve())); });
+test.skip(process.env.E2E_BASE_URL !== "http://127.0.0.1:3374", "Requires the dedicated local mock-gate server; never run against a hosted deployment");
 test.describe.configure({ mode: "serial", timeout: 120_000 });
 test.use({ navigationTimeout: 90_000, serviceWorkers: "block",
   // PostHog intentionally filters the HeadlessChrome bot user agent.

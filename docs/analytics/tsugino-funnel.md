@@ -28,3 +28,9 @@ PostHogのFunnelsで `referral_landed → quiz_started → practice_free_limit_r
 既存の資格・年度・分野URLとcanonicalを維持する。公表試験の旧URL転送はUTM・科目・年度を引き継ぎ、資格ハブでも厳密に絞る。不正な科目・年度から別の問題へフォールバックしない。
 
 初回の次の資格送客には「この資格の過去問を1問目から無料で」をインライン表示する。ログインやモーダルを挟まない。通常演習は資格・年度・期・科目・分野・問題IDを持ったURLへ進む。既存の演習無料枠・料金・有効化条件を変えない。
+
+## ローカルE2E
+
+`tests/e2e/tsugino-funnel.spec.ts` は専用の `E2E_BASE_URL=http://127.0.0.1:3374` の場合だけ実行し、通常のE2Eやホストされた環境ではskipする。開発サーバー側を `BILLING_MODE=mock`、`BILLING_SUBSCRIPTION_ENABLED=false`、`BILLING_ORIGIN=http://127.0.0.1:3374`、`BILLING_LEGAL_REVIEWED=true`、過去の `BILLING_NOTICE_AT / BILLING_TRANSITION_STARTS_AT`、`KV_REST_API_URL=http://127.0.0.1:3375` として起動する。AUTH_SECRETとKVトークン、PostHogキーはローカル検証専用のダミーを使い、DATABASE_URLやAIキーは空にする。本番の環境ファイルをコピーしない。
+
+テストが3375番のKV stand-inを立ち上げ、署名Cookieと演習HTTP APIを通す。PostHog SDKの外部リクエストはPlaywrightで捕捉する。実決済は行わず、申込成功・失敗・支払確認はコンポーネントテストで検証する。`KFUN1_EVIDENCE_DIR` を設定すると画面と個人情報を含まない段階別集計を保存する。
