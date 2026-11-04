@@ -67,6 +67,8 @@ describe("弁理士短答式・直近2回の未公開収録", () => {
     expect(split.statementExplanations.filter(s => !s.correct).map(s => s.label)).toEqual(["イ","ニ"]);
     expect(split.statementExplanations[0].explanation).toContain("Ｂの出願日は遡及しない");
     expect(split.statementExplanations[1].explanation).toContain("期間を例外とする");
+    const evidence = questions.find(q => q.id === "benrishi-2025-patent-05")!;
+    expect(evidence.choiceExplanations[3].explanation).toContain("151条で準用する民訴法238条");
     const suspension = questions.find(q => q.id === "benrishi-2026-patent-03")!;
     expect(suspension.statementExplanations[4].correct).toBe(true);
     expect(suspension.statementExplanations[4].explanation).toContain("民訴法131条1項");
