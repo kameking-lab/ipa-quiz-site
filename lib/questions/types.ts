@@ -200,7 +200,9 @@ export interface Question {
   term?: "upper" | "lower";
   examDate?: string;
   subject?: string;
-  officialAnswerNumber?: string;
+  officialAnswerNumber?: string | null;
+  /** 正答肢のない公式訂正。answer は空配列とし、全肢正解と区別する。 */
+  officialScoring?: { kind: "credit-for-all"; reason: string };
   type: QuestionType;
   /** 数値記入。answer は単位を除いた正規化済み非負数文字列。 */
   nativeB?: NativeBData;

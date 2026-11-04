@@ -43,6 +43,7 @@ export function choiceDisplayLabel(exam: ExamCode, key: ChoiceKey): string {
 
 /** Render stored choice keys individually, retaining the answer's order and separators. */
 export function formatQuestionAnswerForDisplay(question: Question, value: string | readonly ChoiceKey[], multiSeparator = "・"): string {
+  if (question.officialScoring?.kind === "credit-for-all" && Array.isArray(value) && value.length === 0) return "正答肢なし（全員加点）";
   if (question.type === "native-b" && question.nativeB) return formatNativeBAnswer(question.nativeB);
   if (question.type === "numeric") return formatNumericAnswer(question, String(value));
   const separator = question.type === "ordering" ? "→" : multiSeparator;

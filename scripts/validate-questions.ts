@@ -15,6 +15,7 @@ import { writeFileSync, mkdirSync } from "node:fs";
 import { join } from "node:path";
 import { numericQuestionIssue } from "@/lib/questions/numeric";
 import { orderingQuestionIssue } from "@/lib/questions/ordering";
+import { officialScoringIssue } from "@/lib/questions/official-scoring";
 import { ALL_QUESTIONS } from "@/data/questions";
 import { DENKEN3_QUESTIONS } from "@/data/questions/denken3";
 import { DENKEN2_QUESTIONS } from "@/data/questions/denken2";
@@ -105,6 +106,7 @@ const QuestionSchema = z.object({
     .refine((choices) => Object.values(choices).filter(Boolean).length >= 2, "選択肢は2個以上必要です")
     .optional(),
   answer: z.union([z.string(), z.array(z.string().min(1))]),
+  officialScoring: z.object({ kind: z.literal("credit-for-all"), reason: z.string().trim().min(1) }).optional(),
   requiredSelections: z.number().int().min(1).max(4).optional(),
   explanation: z.string().min(1),
   choiceExplanations: z.record(z.string(), z.string()).optional(),
@@ -282,6 +284,13 @@ function validate(questions: Question[]): ValidationResult {
       }
     }
 
+    const scoringIssue = officialScoringIssue(q);
+    if (scoringIssue) {
+      fail++;
+      byExam[examKey].fail++;
+      issues.push({ id: q.id, level: "error", message: scoringIssue });
+      continue;
+    }
     const nativeIssue = nativeBQuestionIssue(q);
     if (nativeIssue || (q.type !== "native-b" && typeof q.answer === "string" && !q.answer.trim())) {
       fail++;
@@ -302,7 +311,7 @@ function validate(questions: Question[]): ValidationResult {
       }
       const answers = Array.isArray(q.answer) ? q.answer : [q.answer];
       const ans = answers.find(key => !["ア", "イ", "ウ", "エ", "オ", "カ", "キ", "ク", "ケ", "コ", "サ", "シ", "ス", "セ", "ソ"].includes(key) || !q.choices?.[key as keyof typeof q.choices]);
-      if (ans !== undefined || answers.length === 0) {
+      if (!q.officialScoring && (ans !== undefined || answers.length === 0)) {
         fail++;
         byExam[examKey].fail++;
         issues.push({ id: q.id, level: "error", message: `answer 不正: "${ans}"` });

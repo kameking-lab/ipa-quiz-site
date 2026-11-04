@@ -11,6 +11,9 @@ import { getQuestionsForExam } from "@/lib/questions/get-questions";
 import { getQualificationByExamCode, isExamPublished } from "@/lib/qualifications/catalog";
 import { getHomeDirectory } from "@/lib/home/home-directory";
 import { defaultPracticeSession, parsePracticeSession, practiceSessionLabel } from "@/lib/questions/practice-session";
+import { evaluateOfficialScore, officialScoringIssue } from "@/lib/questions/official-scoring";
+import { formatQuestionAnswerForDisplay } from "@/lib/questions/display";
+import { isAcceptedAnswer } from "@/lib/questions/answers";
 
 // Publication boundaries must keep working when real candidate questions are added.
 describe("一級建築士（学科）の公開前登録", () => {
@@ -34,7 +37,7 @@ describe("一級建築士（学科）の公開前登録", () => {
     expect(manifest.ownerDecision.decidedAt).toBe("2026-11-04T06:10:00+09:00");
     expect(manifest.ownerDecision.rightsHolderPermissionObtained).toBe(false);
     expect(manifest.rounds.map(r => [r.year, r.expectedQuestions, r.transcribedQuestions])).toEqual([
-      [2026, 125, 40], [2025, 125, 20],
+      [2026, 125, 70], [2025, 125, 20],
     ]);
     expect(manifest.sources).toHaveLength(8);
     for (const source of manifest.sources) {
@@ -45,19 +48,20 @@ describe("一級建築士（学科）の公開前登録", () => {
   });
 
   it("validates real staged originals and all four original explanations against the final official answers", () => {
-    expect(KENCHIKUSHI1_CANDIDATES).toHaveLength(60);
-    expect(new Set(KENCHIKUSHI1_CANDIDATES.map(q => q.id)).size).toBe(60);
+    expect(KENCHIKUSHI1_CANDIDATES).toHaveLength(90);
+    expect(new Set(KENCHIKUSHI1_CANDIDATES.map(q => q.id)).size).toBe(90);
     expect(KENCHIKUSHI1_CANDIDATES.map(q => q.officialAnswerNumber)).toEqual(
       [4,4,2,4,1,1,2,2,2,1,1,3,2,2,3,1,4,3,3,4,
        4,2,1,3,4,2,2,3,1,2,3,4,4,1,4,4,2,2,1,3,
-       2,1,4,3,3,4,1,4,4,2,1,4,2,2,3,1,4,3,2,3].map(String),
+       2,1,4,3,3,4,1,4,4,2,1,4,2,2,3,1,4,3,2,3,
+       2,3,2,4,4,1,3,2,1,2,2,2,4,3,2,3,3,1,3,1,4,1,3,2,4,3,4,4,null,4].map(a => a === null ? null : String(a)),
     );
     for (const round of manifest.rounds) {
       const candidates = KENCHIKUSHI1_CANDIDATES.filter(q => q.year === round.year);
       expect(candidates).toHaveLength(round.transcribedQuestions);
       for (const subject of round.subjects) {
         const paper = candidates.filter(q => q.session === subject.session);
-        const count = subject.session === "keikaku" || (round.year === 2026 && subject.session === "kankyo-setsubi") ? 20 : 0;
+        const count = subject.session === "keikaku" || (round.year === 2026 && subject.session === "kankyo-setsubi") ? 20 : round.year === 2026 && subject.session === "houki" ? 30 : 0;
         expect(paper.map(q => q.qNumber)).toEqual(Array.from({ length: count }, (_, i) => i + 1));
         if ("transcribedQuestions" in subject) expect(paper).toHaveLength(subject.transcribedQuestions!);
       }
@@ -66,12 +70,13 @@ describe("一級建築士（学科）の公開前登録", () => {
       const round = manifest.rounds.find(r => r.year === q.year)!;
       const subject = round.subjects.find(s => s.session === q.session)!;
       const official = subject.answers.find(a => a.qNumber === q.qNumber)!;
-      expect(q.officialAnswerNumber).toBe(String(official.officialAnswerNumber));
-      expect(q.answer).toBe("アイウエ"[official.officialAnswerNumber! - 1]);
+      expect(q.officialAnswerNumber).toBe(official.officialAnswerNumber === null ? null : String(official.officialAnswerNumber));
+      if (official.grading === "credit-for-all") expect(q.answer).toEqual([]);
+      else expect(q.answer).toBe("アイウエ"[official.officialAnswerNumber! - 1]);
       expect(q.sourcePdfUrl).toBe(subject.sourcePdfUrl);
       expect(q.sourceAnswerUrl).toBe(round.sourceAnswerUrl);
       expect(q.lawReferenceDate).toBe(round.lawReferenceDate);
-      expect(q.questionNotice).toBe(round.lawReferenceNote);
+      expect(q.questionNotice).toContain(round.lawReferenceNote);
       expect(q.originalContent?.body).toBe(q.question);
       expect(q.originalContent?.choices).toEqual(q.choices);
       expect(Object.keys(q.choices!)).toEqual(["ア", "イ", "ウ", "エ"]);
@@ -115,6 +120,7 @@ describe("一級建築士（学科）の公開前登録", () => {
     expect(illustrated.map(q => [q.year, q.session, q.qNumber])).toEqual([
       [2026, "keikaku", 3], [2026, "keikaku", 19],
       [2026, "kankyo-setsubi", 4], [2026, "kankyo-setsubi", 12],
+      [2026, "houki", 4], [2026, "houki", 16], [2026, "houki", 17],
     ]);
     for (const q of illustrated) {
       if (q.session === "keikaku") expect(q.originalContent?.tables?.[0].rows).toHaveLength(5);
@@ -127,6 +133,47 @@ describe("一級建築士（学科）の公開前登録", () => {
         expect(readFileSync(path).subarray(0, 8).toString("hex")).toBe("89504e470d0a1a0a");
         expect(existsSync(resolve(process.cwd(), "public", url))).toBe(false);
       }
+    }
+  });
+
+  it("separates the corrected all-candidate credit from correct choices, including a blank response", () => {
+    const q = KENCHIKUSHI1_CANDIDATES.find(q => q.session === "houki" && q.qNumber === 29)!;
+    expect(q.officialAnswerNumber).toBeNull();
+    expect(q.answer).toEqual([]);
+    expect(q.officialScoring?.reason).toContain("完了検査");
+    expect(officialScoringIssue(q)).toBeUndefined();
+    for (const selected of [undefined, "", "ア", "イ", "ウ", "エ"]) {
+      expect(evaluateOfficialScore(q, selected)).toEqual({ awarded: true, correctChoice: false, label: "正答肢なし（全員加点）" });
+      expect(isAcceptedAnswer(q.answer, selected)).toBe(false);
+    }
+    expect(formatQuestionAnswerForDisplay(q, q.answer)).toBe("正答肢なし（全員加点）");
+    expect(formatQuestionAnswerForDisplay(q, "ア")).not.toContain("全員加点");
+    expect(officialScoringIssue({ ...q, answer: ["ア", "イ", "ウ", "エ"] })).toBeTruthy();
+    expect(officialScoringIssue({ ...q, officialAnswerNumber: "1" })).toBeTruthy();
+    expect(officialScoringIssue({ ...q, sourceAnswerUrl: undefined })).toBeTruthy();
+    expect(isPracticeReadyQuestion({ ...q, publicAllowed: true, needsReview: false })).toBe(false);
+    const normal = KENCHIKUSHI1_CANDIDATES[0];
+    expect(evaluateOfficialScore(normal, String(normal.answer)).awarded).toBe(true);
+    expect(evaluateOfficialScore(normal, undefined).awarded).toBe(false);
+  });
+
+  it("retains law fractions, units, original table cells and booklet assumptions", () => {
+    const law = KENCHIKUSHI1_CANDIDATES.filter(q => q.session === "houki");
+    expect(law).toHaveLength(30);
+    expect(law[1].choices?.ア).toContain("1/100");
+    expect(law[1].choices?.ウ).toContain("1/8");
+    expect(law[2].choices?.イ).toContain("10 m²");
+    expect(law[3].originalContent?.tables?.[0].rows).toHaveLength(5);
+    expect(law[9].choices?.ア).toContain("m³／時");
+    expect(law[11].choices?.イ).toContain("24 N／mm²");
+    expect(law[11].choices?.イ).toContain("1/3");
+    expect(law[15].choices).toEqual({ ア: "30/10", イ: "39/10", ウ: "42/10", エ: "45/10" });
+    expect(law[19].choices?.イ).toContain("1/7");
+    expect(law[19].choices?.ウ).toContain("歩行距離は、40 m以下");
+    for (const q of law) {
+      expect(q.questionNotice).toContain("区画避難安全検証法");
+      expect(q.questionNotice).toContain("情報通信");
+      expect(q.questionNotice).toContain("地方公共団体の条例");
     }
   });
 
