@@ -58,7 +58,7 @@ describe("Kenchikushi unpublished staging", () => {
     expect(manifest.ingestionState).toBe("in-progress");
     expect(manifest.ingestedQuestionCount).toBe(allStaged.length);
     expect(manifest.batches.reduce((sum, batch) => sum + batch.questionCount, 0)).toBe(allStaged.length);
-    expect(manifest.nextResume).toEqual({ qualificationSlug: "kenchikushi2", year: 2026, subject: "IV", qNumber: 1 });
+    expect(manifest.nextResume).toEqual({ qualificationSlug: "kenchikushi2", year: 2025, subject: "I", qNumber: 1 });
     const home = getHomeDirectory().flatMap(d => [...d.featured, ...d.compact]);
     for (const slug of ["kenchikushi2", "mokuzo-kenchikushi"]) {
       const entry = QUALIFICATION_CATALOG.find(q => q.slug === slug);
@@ -70,7 +70,7 @@ describe("Kenchikushi unpublished staging", () => {
   });
 
   it("pins each ingested subject to 25 complete source records and 125 explanations", () => {
-    expect(allStaged).toHaveLength(75);
+    expect(allStaged).toHaveLength(100);
     expect(new Set(allStaged.map(q => q.id)).size).toBe(allStaged.length);
     for (const batch of manifest.batches) {
       const subjectIndex = ["I", "II", "III", "IV"].indexOf(batch.subject);
@@ -141,6 +141,31 @@ describe("Kenchikushi unpublished staging", () => {
         expect(readFileSync(resolve(path)).subarray(0,8).toString("hex")).toBe("89504e470d0a1a0a");
       }
       if (q.hasImage) expect(q.imageAltTexts?.[0].length).toBeGreaterThan(50);
+    }
+  });
+
+  it("preserves construction table choices, fractions and specified contract edition", () => {
+    const construction = allStaged.filter(q => q.session === "gakka-IV");
+    expect(construction.filter(q => q.hasImage).map(q => q.qNumber)).toEqual([2]);
+    expect(construction[1].originalContent?.tables?.[0].rows).toHaveLength(6);
+    expect(construction[1].choices?.エ).toBe("特定建設作業実施届／労働基準監督署長／作業開始5日前まで");
+    expect(construction[7].choices?.ア).toContain("1/6");
+    expect(construction[11].choices?.ア).toContain("1/20");
+    expect(construction[12].choices?.ア).toContain("1/2");
+    expect(construction[14].choices?.イ).toContain("1/1,000");
+    expect(construction[20].choices?.エ).toContain("1/100");
+    expect(construction[24].question).toContain("令和7年12月改正");
+    expect(construction[24].choices?.イ).toContain("説明用図書を発注者に交付");
+    expect(construction[24].sourceRubies).toContainEqual({base: "誤謬", reading: "ごびゅう"});
+    for (const q of construction) {
+      expect(q.sourcePdfUrl).toBe(manifest.rounds[0].questionDocuments[1].url);
+      expect(q.sourcePage).toBeGreaterThanOrEqual(14);
+      expect(q.sourcePage).toBeLessThanOrEqual(23);
+      expect(q.sourcePrintedPage).toBe(`施工 ${q.sourcePage-1}`);
+      for (const path of q.imageUrls ?? []) {
+        expect(path.startsWith("data/qualification-staging/kenchikushi2/assets/")).toBe(true);
+        expect(readFileSync(resolve(path)).subarray(0,8).toString("hex")).toBe("89504e470d0a1a0a");
+      }
     }
   });
 

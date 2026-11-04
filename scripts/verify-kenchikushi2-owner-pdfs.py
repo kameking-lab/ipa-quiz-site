@@ -145,6 +145,39 @@ def source_questions_iii(path):
     return questions
 
 
+def source_questions_iv(path):
+    questions = {}
+    with pdfplumber.open(path) as pdf:
+        for page_number in range(14,24):
+            page = pdf.pages[page_number-1]
+            def retain(obj):
+                if obj.get("object_type") != "char": return True
+                if obj["top"] >= 790 or obj["size"] <= 5.5: return False
+                return not (page_number == 14 and obj["x0"] < 532 and obj["x1"] > 70 and obj["top"] < 622 and obj["bottom"] > 458)
+            text = unicodedata.normalize("NFKC", page.filter(retain).extract_text(use_text_flow=True))
+            parts = re.split(r"〔No\.\s*(\d+)〕",text)
+            for i in range(1,len(parts),2):
+                number = int(parts[i])
+                fields = re.split(r"(?m)^\s*([1-5])\s*\.\s*",parts[i+1])
+                choices = {int(fields[j]):fields[j+1] for j in range(1,len(fields),2)}
+                if number == 2:
+                    tables = [t for t in page.extract_tables() if len(t)==6 and len(t[0])==3]
+                    assert len(tables)==1, tables
+                    choices = {j:"／".join(row) for j,row in enumerate(tables[0][1:],1)}
+                if number == 8: choices[1] = re.sub(r"鉄筋径の\s*6\s*1", "鉄筋径の1/6",choices[1])
+                if number == 12: choices[1] = re.sub(r"面が\s*20\s*1", "面が1/20",choices[1])
+                if number == 13: choices[1] = re.sub(r"サイズの\s*2\s*1", "サイズの1/2",choices[1])
+                if number == 15: choices[2] = re.sub(r"ともに\s*1,000\s*1", "ともに1/1,000",choices[2])
+                if number == 21: choices[4] = re.sub(r"ので、\s*100\s*1", "ので、1/100",choices[4])
+                if number == 23:
+                    for j,term in enumerate(["距離測量","平板測量","トラバース測量","角測量","水準測量"],1):
+                        choices[j] = choices[j].replace(term,term+" ― ",1)
+                assert sorted(choices)==[1,2,3,4,5],number
+                questions[number]=(page_number,fields[0],choices)
+    assert sorted(questions)==list(range(1,26))
+    return questions
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("owner_directory", type=Path)
@@ -166,8 +199,8 @@ def main():
                         assert row == round_["officialAnswers"][subject], (file.name, subject)
                         counts["officialAnswers"] += len(row)
             counts["ownerPdfs"] += 1
-    for subject, extract in [("I", source_questions), ("II", source_questions_ii), ("III", source_questions_iii)]:
-        originals = extract(args.owner_directory / ("R8_2k_3_4.pdf" if subject == "III" else "R8_2k_1_2.pdf"))
+    for subject, extract in [("I", source_questions), ("II", source_questions_ii), ("III", source_questions_iii), ("IV",source_questions_iv)]:
+        originals = extract(args.owner_directory / ("R8_2k_3_4.pdf" if subject in ["III","IV"] else "R8_2k_1_2.pdf"))
         data = (STAGING / f"2026-{subject}.ts").read_text(encoding="utf-8")
         staged = json.loads(data.split("= ", 1)[1].rsplit(";", 1)[0])
         assert len(staged) == 25
