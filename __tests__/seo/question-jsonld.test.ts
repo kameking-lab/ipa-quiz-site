@@ -203,6 +203,7 @@ describe("sessionLabel", () => {
       "jken-basic": true, "jken-programming": true, "jken-design": true,
       gyosei: true, kanri: true, kansa: true,
       hoan: true, gyosei: true, kanri: true, kansa: true,
+      wagashi: true, yogashi: true, seipan: true,
       am: true,
       am1: true,
       am2: true,

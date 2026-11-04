@@ -4,6 +4,9 @@ import { getAutomotiveQuestions } from "./automotive";
 import { JOKASO_CANDIDATES } from "./jokaso";
 import { SHUWA_QUESTIONS } from "./shuwa";
 import { JKEN_SYSTEM_QUESTIONS } from "./jken-system";
+import { YAMAGUCHI_CHORI_QUESTIONS } from "./yamaguchi-chori";
+import { YAMAGUCHI_SEIKA_QUESTIONS } from "./yamaguchi-seika";
+import { YAMAGUCHI_FUGU_QUESTIONS } from "./yamaguchi-fugu";
 import type { ExamCode, Question } from "@/lib/questions/types";
 import { isPracticeReadyQuestion } from "@/lib/questions/filter";
 import { CHOSASHI_QUESTIONS } from "./chosashi";
@@ -181,6 +184,9 @@ export const QUESTIONS_BY_EXAM: Partial<Record<ExamCode, Question[]>> = {
   ...(isExamPublished("land-special2") ? { "land-special2": LAND_SPECIAL2_QUESTIONS } : {}),
   ...(isExamPublished("land-special3") ? { "land-special3": LAND_SPECIAL3_QUESTIONS } : {}),
   ...(isExamPublished("chosashi") ? { chosashi: CHOSASHI_QUESTIONS } : {}),
+  ...(isExamPublished("yamaguchi-chori") ? { "yamaguchi-chori": YAMAGUCHI_CHORI_QUESTIONS } : {}),
+  ...(isExamPublished("yamaguchi-seika") ? { "yamaguchi-seika": YAMAGUCHI_SEIKA_QUESTIONS } : {}),
+  ...(isExamPublished("yamaguchi-fugu") ? { "yamaguchi-fugu": YAMAGUCHI_FUGU_QUESTIONS } : {}),
   ...(isExamPublished("riyoshi") ? { riyoshi: RIYOSHI_QUESTIONS } : {}),
   ap: AP_QUESTIONS,
   ip: IP_QUESTIONS,

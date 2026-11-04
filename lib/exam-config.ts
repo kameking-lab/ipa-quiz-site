@@ -2694,6 +2694,26 @@ export const EXAM_CONFIGS: Record<ExamCode, ExamConfig> = {
     ],
     seasons: ["february", "october"], yearRange: { start: 2022, end: 2023 },
   },
+  "yamaguchi-chori": {
+    code: "yamaguchi-chori", nameFull: "調理師（山口県）", urlSlug: "yamaguchi-chori", level: "basic",
+    sessions: [{ session: "gakka", urlSlug: "gakka", expectedQuestions: 60, label: "学科", categories: ["公衆衛生学", "食品学", "栄養学", "食品衛生学", "調理理論", "食文化概論"] }],
+    seasons: ["annual"], yearRange: { start: 2025, end: 2026 },
+  },
+  "yamaguchi-seika": {
+    code: "yamaguchi-seika", nameFull: "製菓衛生師（山口県）", urlSlug: "yamaguchi-seika", level: "basic",
+    sessions: [
+      { session: "gakka", urlSlug: "gakka", expectedQuestions: 57, label: "学科共通", categories: ["衛生法規", "公衆衛生学", "食品学", "食品衛生学", "栄養学", "製菓理論"] },
+      { session: "wagashi", urlSlug: "wagashi", expectedQuestions: 3, label: "製菓実技・和菓子（選択）", categories: ["製菓実技・和菓子"] },
+      { session: "yogashi", urlSlug: "yogashi", expectedQuestions: 3, label: "製菓実技・洋菓子（選択）", categories: ["製菓実技・洋菓子"] },
+      { session: "seipan", urlSlug: "seipan", expectedQuestions: 3, label: "製菓実技・製パン（選択）", categories: ["製菓実技・製パン"] },
+    ],
+    seasons: ["annual"], yearRange: { start: 2025, end: 2026 },
+  },
+  "yamaguchi-fugu": {
+    code: "yamaguchi-fugu", nameFull: "ふぐ処理師（山口県・学科）", urlSlug: "yamaguchi-fugu", level: "basic",
+    sessions: [{ session: "gakka", urlSlug: "gakka", expectedQuestions: 100, label: "学科", categories: ["衛生法規", "食品衛生学", "ふぐに関する知識"] }],
+    seasons: ["annual"], yearRange: { start: 2025, end: 2026 },
+  },
   riyoshi: {
     code: "riyoshi", nameFull: "理容師国家試験", urlSlug: "riyoshi", level: "basic",
     sessions: [{ session: "gakka", urlSlug: "gakka", expectedQuestions: 55, label: "筆記", categories: ["関係法規・制度","運営管理","公衆衛生・環境衛生","感染症","衛生管理技術","人体の構造及び機能","皮膚科学","香粧品化学","文化論及び理容技術理論"] }],
@@ -2714,6 +2734,7 @@ export const ALL_EXAM_CODES = Object.keys(EXAM_CONFIGS).filter(
   (code): code is IpaExamCode => !(["fp1", "fp2", "fp3", "denken3", "denken2", "denken1", "denko2", "denko1", "takken", "civil2", "civil1", "kankoji2", "zoen2", "zoen1", "tsushin2", "tsushin1", "kaigo", "shakai", "seishin", "tohan", "kanri", "eisei1", "eisei2", "soukan", "hoikushi", "mankan", "kashikin", "sharoushi", "kangoshi", "yakuzaishi", "ahaki-anma", "ahaki-hari-kyu", "hokenshi", "josanshi", "rigaku-ryohoshi", "sagyo-ryohoshi", "shino-kunrenshi", "rinsho-kensagishi", "shinryo-hoshasengishi", "rinsho-kogishi", "riyoshi", "chusho-kigyo-shindanshi", "chosashi", "shika-ishi", "judo-seifukushi", "riku-toku-kokunai", "kai-toku2", "kai-toku3", "koku-toku", "land-special1", "riku-tech1", "maritime4", "aviation-comm", "amateur1", "maritime-special1", "riku-tech2", "amateur2", "maritime-radar", "maritime3", "maritime2", "maritime1", "general3", "general2", "general1", "land-special2", "land-special3", "kanteishi", "kaikeishi", "gas-kou", "gas-otsu", "gas-hei", "khk-reito-1", "khk-reito-2", "khk-reito-3"] as string[]).includes(code),
   (code): code is IpaExamCode => !(["sekou-kenchiku2", "fp1", "fp2", "fp3", "denken3", "denken2", "denken1", "denko2", "denko1", "takken", "civil2", "civil1", "kankoji2", "zoen2", "zoen1", "tsushin2", "tsushin1", "kaigo", "shakai", "seishin", "tohan", "kanri", "eisei1", "eisei2", "soukan", "hoikushi", "mankan", "kashikin", "sharoushi", "kangoshi", "yakuzaishi", "ahaki-anma", "ahaki-hari-kyu", "hokenshi", "josanshi", "rigaku-ryohoshi", "sagyo-ryohoshi", "shino-kunrenshi", "rinsho-kensagishi", "shinryo-hoshasengishi", "rinsho-kogishi", "riyoshi", "chusho-kigyo-shindanshi", "chosashi", "shika-ishi", "judo-seifukushi", "riku-toku-kokunai", "kai-toku2", "kai-toku3", "koku-toku", "land-special1", "riku-tech1", "maritime4", "aviation-comm", "amateur1", "maritime-special1", "riku-tech2", "amateur2", "maritime-radar", "maritime3", "maritime2", "maritime1", "general3", "general2", "general1", "land-special2", "land-special3", "kanteishi", "kaikeishi", "gas-kou", "gas-otsu", "gas-hei"] as string[]).includes(code),
   (code): code is IpaExamCode => !(["fp1", "fp2", "fp3", "denken3", "denken2", "denken1", "denko2", "denko1", "takken", "civil2", "civil1", "kankoji2", "denki2", "zoen2", "zoen1", "tsushin2", "tsushin1", "kaigo", "shakai", "seishin", "tohan", "kanri", "eisei1", "eisei2", "soukan", "hoikushi", "mankan", "kashikin", "sharoushi", "kangoshi", "yakuzaishi", "ahaki-anma", "ahaki-hari-kyu", "hokenshi", "josanshi", "rigaku-ryohoshi", "sagyo-ryohoshi", "shino-kunrenshi", "rinsho-kensagishi", "shinryo-hoshasengishi", "rinsho-kogishi", "riyoshi", "chusho-kigyo-shindanshi", "chosashi", "shika-ishi", "judo-seifukushi", "riku-toku-kokunai", "kai-toku2", "kai-toku3", "koku-toku", "land-special1", "riku-tech1", "maritime4", "aviation-comm", "amateur1", "maritime-special1", "riku-tech2", "amateur2", "maritime-radar", "maritime3", "maritime2", "maritime1", "general3", "general2", "general1", "land-special2", "land-special3", "kanteishi", "kaikeishi", "gas-kou", "gas-otsu", "gas-hei"] as string[]).includes(code),
+  (code): code is IpaExamCode => !(["yamaguchi-fugu", "yamaguchi-seika", "fp1", "fp2", "fp3", "denken3", "denken2", "denken1", "denko2", "denko1", "takken", "civil2", "civil1", "kankoji2", "zoen2", "zoen1", "tsushin2", "tsushin1", "kaigo", "shakai", "seishin", "tohan", "kanri", "eisei1", "eisei2", "soukan", "hoikushi", "mankan", "kashikin", "sharoushi", "kangoshi", "yakuzaishi", "ahaki-anma", "ahaki-hari-kyu", "hokenshi", "josanshi", "rigaku-ryohoshi", "sagyo-ryohoshi", "shino-kunrenshi", "rinsho-kensagishi", "shinryo-hoshasengishi", "rinsho-kogishi", "riyoshi", "chusho-kigyo-shindanshi", "chosashi", "shika-ishi", "judo-seifukushi", "riku-toku-kokunai", "kai-toku2", "kai-toku3", "koku-toku", "land-special1", "riku-tech1", "maritime4", "aviation-comm", "amateur1", "maritime-special1", "riku-tech2", "amateur2", "maritime-radar", "maritime3", "maritime2", "maritime1", "general3", "general2", "general1", "land-special2", "land-special3", "kanteishi", "kaikeishi", "gas-kou", "gas-otsu", "gas-hei", "yamaguchi-chori"] as string[]).includes(code),
 );
 
 /** Every exam playable in the application, including external qualifications. */

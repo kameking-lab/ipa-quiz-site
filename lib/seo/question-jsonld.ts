@@ -47,6 +47,7 @@ export function sessionLabel(session: string, exam?: ExamCode): string {
     "gas-basic": "基礎",
     "gas-technology": "ガス技術",
     "jken-basic": "基本スキル", "jken-programming": "プログラミングスキル", "jken-design": "システムデザインスキル",
+    wagashi: "和菓子（選択）", yogashi: "洋菓子（選択）", seipan: "製パン（選択）",
     "mondai-a": "問題A",
     "mondai-b": "問題B",
   "mondai-c": "問題C",
