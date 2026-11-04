@@ -31,7 +31,7 @@ for (const sample of samples) {
 const result = { status: 'RUNNING', base: base.href, sourceHead: execFileSync('git', ['rev-parse', 'HEAD'], { encoding: 'utf8' }).trim(),
   buildId: fs.readFileSync('.next/BUILD_ID', 'utf8').trim(), startedAt: new Date().toISOString(),
   scope: 'Real built local app, anonymous isolated history. External requests, all non-GET requests and AI routes blocked. No route responses mocked.',
-  views: [], assets: [], blocked: [], errors: [] };
+  views: [], assets: [], search: [], native: [], blocked: [], errors: [] };
 const save = () => fs.writeFileSync(path.join(out, 'receipt.json'), JSON.stringify(result, null, 2) + '\n');
 const browser = await chromium.launch({ headless: true, channel: 'chrome' });
 async function contextFor(width) {
@@ -57,6 +57,13 @@ async function screenshot(page, name, target) {
 try {
   // All generated question/answer image bytes must actually be served unchanged.
   const http = await browser.newContext();
+  for (const row of audit.rows) {
+    const response = await http.request.get(new URL(`/api/search/questions?exam=${row.code}&limit=1`, base).href, { timeout: 120000 });
+    assert.equal(response.status(), 200, row.code);
+    const body = await response.json();
+    assert.equal(body.total, row.practiceCount, `${row.code}: actual HTTP search pool`);
+    result.search.push({ code: row.code, expected: row.practiceCount, actual: body.total, status: response.status() });
+  }
   for (const file of fs.readdirSync('public/images/questions/batch1')) {
     const url = `/images/questions/batch1/${file}`;
     const response = await http.request.get(new URL(url, base).href);
@@ -94,10 +101,17 @@ try {
       const squash = text => text.replace(/\s/g, '');
       assert.ok(squash(await page.locator('body').innerText()).includes(squash(q.question.slice(0, 80))), `${name}: stem`);
       await expect(page.locator(`a[href="${q.sourcePdfUrl}"]`).first()).toBeAttached();
+      for (const src of q.imageUrls ?? []) {
+        const image = page.locator(`img[src="${src}"]`).first();
+        await image.scrollIntoViewIfNeeded();
+        await expect(image).toBeVisible();
+        await expect.poll(() => image.evaluate(img => img.complete && img.naturalWidth > 0)).toBe(true);
+      }
     }
     const before = await screenshot(page, `${name}-question`, page.locator('h1'));
     const radios = page.getByRole('radio'), checkboxes = page.getByRole('checkbox');
     const numeric = page.getByRole('form', { name: '数値記入の解答' });
+    const extraScreenshots = [];
     let answerMode, expectedCorrect;
     if (q?.type === 'descriptive' || (!(await radios.count()) && !(await checkboxes.count()) && !(await numeric.count()))) {
       answerMode = 'self-assessment';
@@ -109,12 +123,14 @@ try {
         const image = page.locator(`img[src="${src}"]`).first();
         await image.scrollIntoViewIfNeeded();
         await expect.poll(() => image.evaluate(img => img.complete && img.naturalWidth > 0)).toBe(true);
+        extraScreenshots.push(await screenshot(page, `${name}-answer-figure-${q.answerImageUrls.indexOf(src)}`, image));
       }
       const history = await page.evaluate(() => JSON.parse(localStorage.getItem('ipa-quiz:history:v1') ?? '{"entries":[]}').entries);
       assert.equal(history.length, 0, `${name}: self-assessment must not auto-score`);
     } else {
       if (await numeric.count()) {
         answerMode = 'numeric'; assert.ok(q, `${name}: numeric answer fixture required`);
+        extraScreenshots.push(await screenshot(page, `${name}-input`, numeric));
         await numeric.getByRole('textbox').fill(String(q.answer));
         await numeric.getByRole('button', { name: '採点する', exact: true }).click(); expectedCorrect = true;
       } else if (await checkboxes.count()) {
@@ -142,9 +158,34 @@ try {
     const after = await screenshot(page, `${name}-explanation`, page.locator('#explanation'));
     result.views.push({ code: sample.code, label: sample.label, width, path: sample.url,
       flow: 'qualification listing → qualification → period list → question → answer → explanation', answerMode,
-      expectedCorrect, screenshots: [hub, before, after] });
+      expectedCorrect, screenshots: [hub, before, after, ...extraScreenshots] });
     await context.close(); save();
     console.log(`PASS ${name} ${answerMode}`);
+  }
+  for (const paperId of ['pe-first-biotechnology-2024', 'pe-first-information-2025']) {
+    const context = await contextFor(390), page = await context.newPage();
+    page.on('pageerror', error => result.errors.push({ sample: paperId, message: error.message }));
+    const catalog = [...read('data/exam-library/pe-first/catalog.json'), ...read('data/exam-library/pe-first/catalog-lq3d.json')];
+    const entry = catalog.find(item => item.id === paperId);
+    const q = read(`data/exam-library/pe-first/${paperId}.json`)[0];
+    await page.goto(new URL(`/e-learning/exams?group=pe-first&subject=${encodeURIComponent(entry.subject)}`, base).href, { waitUntil: 'networkidle' });
+    await page.locator(`a[href="/e-learning/exams/${paperId}"]`).first().click();
+    await expect(page.getByRole('radio')).toHaveCount(q.choiceCount);
+    await expect(page.locator('section[aria-labelledby="exam-question-heading"]')).toContainText(q.presentation?.prompt ?? q.text);
+    // Archive page images are replaced by the accepted full transcription when
+    // presentation.figures is empty. Validate the actual rendered figures.
+    for (const src of (q.presentation?.figures ?? []).map(figure => figure.src)) {
+      const image = page.locator(`img[src="${src}"]`).first();
+      await image.scrollIntoViewIfNeeded();
+      await expect.poll(() => image.evaluate(img => img.complete && img.naturalWidth > 0)).toBe(true);
+    }
+    const before = await screenshot(page, `${paperId}-question`, page.locator('h1'));
+    await page.getByRole('radio').nth(q.correctChoice - 1).click();
+    await expect(page.locator('[data-answer-state="correct"]')).toBeVisible();
+    await expect(page.locator('[data-answer-state="correct"]')).toContainText(q.explanation);
+    const after = await screenshot(page, `${paperId}-explanation`, page.locator('[data-answer-state="correct"]'));
+    result.native.push({ id: paperId, questionId: q.id, correct: true, screenshots: [before, after] });
+    await context.close(); save();
   }
   assert.ok(new Set(result.views.map(view => view.code)).size >= 10);
   assert.deepEqual(result.errors, []);

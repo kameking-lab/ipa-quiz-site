@@ -1,0 +1,26 @@
+{
+  "status": "PASS",
+  "scope": "Loopback HTTP only; no cookies or external calls; rejected empty anonymous POST",
+  "checks": [
+    {
+      "path": "/api/health",
+      "status": 200
+    },
+    {
+      "path": "/api/cron/health-check",
+      "status": 503
+    },
+    {
+      "path": "/api/email",
+      "status": 401
+    }
+  ],
+  "headers": {
+    "content-security-policy": "default-src 'self'; script-src 'self' 'unsafe-inline' https://vercel.live https://cdn.jsdelivr.net https://us-assets.i.posthog.com https://va.vercel-scripts.com https://vitals.vercel-insights.com https://challenges.cloudflare.com https://pagead2.googlesyndication.com https://ep2.adtrafficquality.google; style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net; img-src 'self' data: blob: https://*.ipa.go.jp https://pagead2.googlesyndication.com https://googleads.g.doubleclick.net https://ep1.adtrafficquality.google https://ep2.adtrafficquality.google; font-src 'self' https://cdn.jsdelivr.net; worker-src 'self'; manifest-src 'self'; object-src 'none'; connect-src 'self' https://generativelanguage.googleapis.com https://vercel.live wss://ws-us3.pusher.com wss://ws-eu.pusher.com https://us.i.posthog.com https://us-assets.i.posthog.com https://o4511300167860224.ingest.us.sentry.io https://va.vercel-scripts.com https://vitals.vercel-insights.com https://pagead2.googlesyndication.com https://googleads.g.doubleclick.net https://ep1.adtrafficquality.google https://ep2.adtrafficquality.google; frame-src https://vercel.live https://challenges.cloudflare.com https://googleads.g.doubleclick.net https://ep2.adtrafficquality.google https://www.google.com; frame-ancestors 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests",
+    "strict-transport-security": "max-age=63072000; includeSubDomains; preload",
+    "x-frame-options": "DENY",
+    "x-content-type-options": "nosniff",
+    "referrer-policy": "strict-origin-when-cross-origin",
+    "permissions-policy": "camera=(), microphone=(), geolocation=(), payment=(), browsing-topics=()"
+  }
+}
