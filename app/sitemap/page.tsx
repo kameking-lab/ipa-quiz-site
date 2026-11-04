@@ -100,7 +100,7 @@ export default function HtmlSitemapPage() {
             { href: "/why-kakomon-ai", label: "過去問AI を選ぶ理由" },
             { href: "/mock-exam", label: "模試モード" },
             { href: "/quiz/stream", label: "ストリーム学習" },
-            { href: "/study-plan", label: "AI学習スケジュール" },
+            { href: "/study-plan", label: "学習スケジュール" },
             { href: "/challenge", label: "今日の1問" },
             { href: "/essay", label: "AI 論述添削" },
             { href: "/stats", label: "公開ダッシュボード" },

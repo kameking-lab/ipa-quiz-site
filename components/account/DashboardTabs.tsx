@@ -9,9 +9,11 @@ import { DashboardWeakness } from "./tabs/DashboardWeakness";
 import { DashboardBadges } from "./tabs/DashboardBadges";
 
 import { MockScoreHistory } from "./tabs/MockScoreHistory";
+import { DashboardStudyPlan } from "./tabs/DashboardStudyPlan";
 
 const TABS = [
   { value: "overview", label: "概要" },
+  { value: "study-plan", label: "今日の計画" },
   { value: "mock-scores", label: "模試記録" },
   { value: "progress", label: "進捗" },
   { value: "weakness", label: "弱点" },
@@ -40,6 +42,19 @@ function readInitialTab(): TabValue | null {
 
 export function DashboardTabs({ categoryById }: Props) {
   const [tab, setTab] = React.useState<TabValue>("overview");
+  const tabListHost = React.useRef<HTMLDivElement>(null);
+
+  React.useEffect(() => {
+    const list = tabListHost.current?.querySelector<HTMLElement>('[role="tablist"]');
+    const active = list?.querySelector<HTMLElement>('[role="tab"][aria-selected="true"]');
+    if (!list || !active) return;
+    const bounds = list.getBoundingClientRect();
+    const tabBounds = active.getBoundingClientRect();
+    const left = tabBounds.left - bounds.left - 4;
+    const right = tabBounds.right - bounds.right + 4;
+    if (left < 0) list.scrollLeft += left;
+    else if (right > 0) list.scrollLeft += right;
+  }, [tab]);
 
   React.useEffect(() => {
     const initial = readInitialTab();
@@ -68,12 +83,13 @@ export function DashboardTabs({ categoryById }: Props) {
           学習ダッシュボード
         </h1>
         <p className="mt-1 text-xs text-zinc-500 dark:text-zinc-400">
-          学習データを 5 つの観点で一望できます。
+          今日の計画・模試記録・進捗・弱点をまとめて確認できます。
         </p>
       </header>
 
       <div className="mb-6"><SafetyLearningProgress compact /></div>
       <Tabs value={tab} onValueChange={handleChange}>
+        <div ref={tabListHost}>
         <TabsList className="mb-6 flex w-full flex-nowrap justify-start overflow-x-auto">
           {TABS.map((t) => (
             <TabsTrigger
@@ -85,12 +101,16 @@ export function DashboardTabs({ categoryById }: Props) {
             </TabsTrigger>
           ))}
         </TabsList>
+        </div>
 
         <TabsContent value="overview">
           <DashboardOverview />
         </TabsContent>
         <TabsContent value="mock-scores">
           <MockScoreHistory />
+        </TabsContent>
+        <TabsContent value="study-plan">
+          <DashboardStudyPlan />
         </TabsContent>
         <TabsContent value="progress">
           <DashboardProgress />

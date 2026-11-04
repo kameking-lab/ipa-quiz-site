@@ -19,6 +19,7 @@ import type {
   TaskKind,
 } from "./types";
 import type { IpaExamCode } from "@/lib/questions/types";
+import { getMockConfig } from "@/lib/mock-exam/config";
 
 /**
  * Returns the inclusive list of ISO date strings from `from` to `to`.
@@ -93,7 +94,9 @@ interface CategoryPlan {
  */
 function buildCategoryPlan(
   input: StudyPlanInput,
+  availableCategories?: string[],
 ): CategoryPlan[] {
+  if (availableCategories?.length) return availableCategories.map((category) => ({ category, weight: input.weakCategories.includes(category) ? 1.5 : 1 }));
   const cfg = EXAM_CONFIGS[input.exam];
   if (!cfg) return [{ category: "総合演習", weight: 1 }];
   const all = new Set<string>();
@@ -171,18 +174,20 @@ function buildDayTasks(args: BuildTasksArgs): TaskItem[] {
 
   // Late phase: mock-heavy + final review
   if (phase === "late") {
-    const mockMinutes = remaining >= MINUTES_PER_MOCK_FULL
-      ? MINUTES_PER_MOCK_FULL
-      : MINUTES_PER_MOCK_SMALL;
-    if (remaining >= MINUTES_PER_MOCK_SMALL) {
+    const mock = getMockConfig(exam);
+    const fullMinutes = mock?.minutes ?? MINUTES_PER_MOCK_FULL;
+    const smallMinutes = mock ? Math.ceil(mock.minutes * 20 / mock.questions) : MINUTES_PER_MOCK_SMALL;
+    const full = remaining >= fullMinutes;
+    const mockMinutes = full ? fullMinutes : smallMinutes;
+    if (remaining >= mockMinutes) {
       tasks.push(
         mk(
           "mock",
-          mockMinutes >= MINUTES_PER_MOCK_FULL ? "模試（80問・本番形式）" : "ミニ模試（20問）",
+          full ? exam === "sg" ? "科目A演習（37問）" : `模試（${mock?.questions ?? 80}問・本番形式）` : "ミニ模試（20問）",
           Math.min(remaining, mockMinutes),
           {
             description: "本番想定の時間配分で解く。終了後に解説を必ず確認。",
-            link: `/mock-exam?exam=${exam}`,
+            link: `/mock-exam?exam=${exam}${full ? "" : "&count=20"}`,
           },
         ),
       );
@@ -197,7 +202,7 @@ function buildDayTasks(args: BuildTasksArgs): TaskItem[] {
           Math.min(remaining, reviewQs * MINUTES_PER_QUESTION),
           {
             description: "これまで間違えた問題のみを集中復習。",
-            link: `/${exam}?mode=review`,
+            link: `/quiz?mode=review&scope=exam&exam=${exam}`,
             category,
           },
         ),
@@ -233,7 +238,7 @@ function buildDayTasks(args: BuildTasksArgs): TaskItem[] {
           phase === "early"
             ? "全分野を満遍なくカバー。間違えてもOK、まずは慣れる。"
             : "弱点分野を重点演習。間違いはその場でAIに質問。",
-        link: `/${exam}?mode=topic&category=${encodeURIComponent(category)}`,
+        link: `/quiz?mode=topic&exam=${exam}&category=${encodeURIComponent(category)}`,
         category,
       },
     ),
@@ -266,15 +271,17 @@ function buildDayTasks(args: BuildTasksArgs): TaskItem[] {
   // weekend, regardless of which weekday the plan starts on. (The previous
   // `dayIndex % 7 === 0` guard landed on the same weekday as day 0, so the mock
   // only ever appeared when the plan happened to start on a weekend.)
+  const mockConfig = getMockConfig(exam);
+  const weeklyMockMinutes = mockConfig ? Math.max(MINUTES_PER_MOCK_SMALL, Math.ceil(mockConfig.minutes * 20 / mockConfig.questions)) : MINUTES_PER_MOCK_SMALL;
   if (
     phase === "middle" &&
     isSaturday(date) &&
-    remaining >= MINUTES_PER_MOCK_SMALL
+    remaining >= weeklyMockMinutes
   ) {
     tasks.push(
-      mk("mock", "週末ミニ模試（20問）", MINUTES_PER_MOCK_SMALL, {
+      mk("mock", "週末ミニ模試（20問）", weeklyMockMinutes, {
         description: "週末の総まとめ。実力推移を可視化。",
-        link: `/mock-exam?exam=${exam}`,
+        link: `/mock-exam?exam=${exam}&count=20`,
       }),
     );
   }
@@ -288,14 +295,14 @@ function daysBetween(fromIso: string, toIso: string): number {
   return Math.round((b.getTime() - a.getTime()) / (1000 * 60 * 60 * 24));
 }
 
-export function generateStudyPlan(input: StudyPlanInput): StudyPlan {
+export function generateStudyPlan(input: StudyPlanInput, availableCategories?: string[]): StudyPlan {
   const today = todayLocalDate();
   const dates = listDates(today, input.examDate);
   // Drop the exam date itself — it's the test day, not a study day.
   const studyDates = dates.length > 0 ? dates.slice(0, -1) : [];
 
   const totalDays = studyDates.length;
-  const categories = buildCategoryPlan(input);
+  const categories = buildCategoryPlan(input, availableCategories);
 
   const requiredHours =
     (REQUIRED_HOURS[input.exam as IpaExamCode] ?? 100) * LEVEL_MULTIPLIERS[input.level];

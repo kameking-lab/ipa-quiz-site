@@ -1,6 +1,7 @@
 "use client";
 
 import * as React from "react";
+import Link from "next/link";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { ALL_QUIZ_EXAM_CODES } from "@/lib/exam-config";
@@ -12,15 +13,22 @@ import {
 } from "@/lib/learning/mock-scores";
 import type { MockScore } from "@/lib/learning/mock-scores";
 import type { ExamCode } from "@/lib/questions/types";
+import { getMockExamHistory, type MockExamResult } from "@/lib/mock-exam/storage";
+import { mockReviewHref } from "@/lib/mock-exam/review";
 
 export function MockScoreHistory() {
   const [exam, setExam] = React.useState<ExamCode>("ap");
   const [nickname, setNicknameState] = React.useState("");
   const [scores, setScores] = React.useState<MockScore[]>([]);
+  const [results, setResults] = React.useState<MockExamResult[]>([]);
 
   React.useEffect(() => {
     setNicknameState(getNickname());
     setScores(getMockScores());
+    const saved = getMockExamHistory();
+    setResults(saved);
+    const latest = saved.at(-1);
+    if (latest) setExam(latest.exam);
   }, []);
 
   function persistNickname(value: string) {
@@ -36,7 +44,7 @@ export function MockScoreHistory() {
     <div className="space-y-6">
       <Card>
         <CardHeader>
-          <CardTitle className="text-base">プロフィール</CardTitle>
+          <CardTitle className="text-base">模試記録の表示</CardTitle>
         </CardHeader>
         <CardContent>
           <div className="flex flex-col gap-3 sm:flex-row">
@@ -111,8 +119,9 @@ export function MockScoreHistory() {
                 return (
                   <li
                     key={s.id}
-                    className="flex items-center justify-between rounded-lg border border-zinc-200 bg-white px-3 py-2 dark:border-zinc-800 dark:bg-zinc-900"
+                    className="space-y-3 rounded-lg border border-zinc-200 bg-white px-3 py-3 dark:border-zinc-800 dark:bg-zinc-900"
                   >
+                    <div className="flex items-center justify-between gap-2">
                     <span className="text-xs text-zinc-500 dark:text-zinc-400">
                       {new Date(s.takenAt).toLocaleDateString("ja-JP", { timeZone: "Asia/Tokyo" })}
                     </span>
@@ -120,6 +129,8 @@ export function MockScoreHistory() {
                       {s.score}/{s.total}
                     </span>
                     <Badge variant="outline">{pct}%</Badge>
+                    </div>
+                    <MockResultDetails result={results.find((result) => result.id === s.id)} />
                   </li>
                 );
               })}
@@ -128,11 +139,25 @@ export function MockScoreHistory() {
           <p className="mt-3 text-xs text-zinc-500 dark:text-zinc-400">
             ※ 模試スコアはこの端末に保存されます。
           </p>
+          <Link href={`/mock-exam?exam=${exam}`} className="mt-3 inline-flex min-h-11 items-center text-sm font-semibold text-primary underline">模試を受ける</Link>
         </CardContent>
       </Card>
 
     </div>
   );
+}
+
+function MockResultDetails({ result }: { result?: MockExamResult }) {
+  if (!result) return null;
+  const weak = Object.entries(result.byCategory).filter(([, stat]) => stat.total > 0 && stat.correct / stat.total < 0.6);
+  return <div className="space-y-2 text-xs">
+    <p>未回答 {result.totalQuestions - result.answered}問 ・ 所要 {Math.floor(result.timeUsedSec / 60)}分{result.timeUsedSec % 60}秒</p>
+    <p>重点分野: {weak.map(([category]) => category).join("・") || "今回の模試ではありません"}</p>
+    <div className="flex flex-wrap gap-3">
+      {result.wrongQuestionIds?.length ? <Link href={mockReviewHref(result)} className="inline-flex min-h-11 items-center font-semibold text-primary underline">今回の間違い・未回答を復習</Link> : null}
+      <Link href={`/mock-exam?exam=${result.exam}`} className="inline-flex min-h-11 items-center underline">同じ資格の模試に再挑戦</Link>
+    </div>
+  </div>;
 }
 
 function Stat({

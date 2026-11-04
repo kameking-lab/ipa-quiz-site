@@ -28,6 +28,7 @@ describe("QuizClient with the real player and local learning stores", () => {
     const started = new Set<string>();
     let cookie = false;
     const fetcher = vi.fn(async (url: string, options?: RequestInit) => {
+      if (url === "/api/questions/related") return Response.json({ questions: [] });
       if (url.startsWith("/api/questions/next?")) {
         return Response.json(questions.get(new URL(url, "http://localhost").searchParams.get("id")!));
       }
@@ -98,7 +99,7 @@ describe("QuizClient with the real player and local learning stores", () => {
     expect(sessionStorage.getItem(LS_KEYS.studyReward)).toBe(reward);
     expect(JSON.parse(localStorage.getItem(LS_KEYS.studyRewardPreferences)!)).toEqual({ closed: false, paused: true });
     expect(createHistoryStore().getAllEntries().some(entry => entry.id === fp[5].id)).toBe(false);
-    expect(fetcher.mock.calls.every(([url]) => url.startsWith("/api/questions/next?") || url === "/api/billing/question")).toBe(true);
+    expect(fetcher.mock.calls.every(([url]) => url.startsWith("/api/questions/next?") || url === "/api/questions/related" || url === "/api/billing/question")).toBe(true);
   });
 
   it.each([

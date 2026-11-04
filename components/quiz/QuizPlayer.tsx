@@ -37,7 +37,7 @@ import { QuestionCommentBox } from "./QuestionCommentBox";
 import { recordReview } from "@/lib/learning/spaced-repetition";
 import { LS_KEYS } from "@/lib/storage/keys";
 import { Button } from "@/components/ui/button";
-import { ArrowLeft, Timer, Share2, Check, Copy, Sparkles } from "lucide-react";
+import { ArrowLeft, Timer, Share2, Check, Copy, Sparkles, Star, ArrowRight, BookOpen } from "lucide-react";
 import { examLabel } from "@/lib/utils";
 import { FireworksBurst } from "@/components/motivation/FireworksBurst";
 import { ComboCounter } from "@/components/motivation/ComboCounter";
@@ -74,6 +74,8 @@ interface Props {
   completionShareHref?: string;
   onNext: () => void;
   quiet?: boolean;
+  relatedQuestions?: Question[];
+  onRelated?: (question: Question) => void;
 }
 
 
@@ -96,6 +98,8 @@ function ScoredQuizPlayer({
   completionShareHref,
   onNext,
   quiet = false,
+  relatedQuestions,
+  onRelated,
 }: Props) {
   const router = useRouter();
   const history = React.useMemo(() => createHistoryStore(), []);
@@ -109,6 +113,8 @@ function ScoredQuizPlayer({
   const [completed, setCompleted] = React.useState(false);
   const questionStartRef = React.useRef<HTMLDivElement>(null);
   const answerResultRef = React.useRef<HTMLDivElement>(null);
+  const relatedRef = React.useRef<HTMLElement>(null);
+  const [showRelated, setShowRelated] = React.useState(false);
   const [copilotRequest, setCopilotRequest] = React.useState<{ questionId: string; sequence: number; prompt?: string } | null>(null);
   const [copilotQuery, setCopilotQuery] = React.useState<"why-wrong" | "open" | null>(null);
   const [starred, setStarred] = React.useState(false);
@@ -157,6 +163,7 @@ function ScoredQuizPlayer({
     setNumericSelected(undefined);
     setOrderedSelected(undefined);
     setRevealed(false);
+    setShowRelated(false);
     setCopilotQuery(null);
     setStarred(history.isStarred(question.id));
   }, [question, history]);
@@ -514,7 +521,7 @@ function ScoredQuizPlayer({
 
       <div className="flex flex-1">
         <main
-          className="flex-1 px-3 pb-8 pt-4 sm:px-6"
+          className="flex-1 px-3 pb-32 pt-4 sm:px-6"
           onTouchStart={onTouchStart}
           onTouchEnd={onTouchEnd}
         >
@@ -599,6 +606,24 @@ function ScoredQuizPlayer({
                     !isCorrect ? () => { setCopilotQuery("why-wrong"); setCopilotRequest((value) => ({ questionId: question!.id, sequence: (value?.sequence ?? 0) + 1, prompt: "私が選んだ答えがなぜ違うのか、正解との違いをこの問題に沿って説明してください。" })); } : undefined
                   }
                 />
+                {onRelated && (
+                  <section ref={relatedRef} tabIndex={-1} aria-label="同じ科目の関連問題" className="scroll-mt-28 rounded-2xl border border-border bg-background p-4 outline-none">
+                    <button type="button" onClick={() => setShowRelated((value) => !value)} aria-expanded={showRelated} className="flex min-h-11 w-full items-center justify-between text-left font-semibold">
+                      同じ科目の関連問題 <span aria-hidden="true">{showRelated ? "−" : "＋"}</span>
+                    </button>
+                    {showRelated && (
+                      <div className="space-y-2">
+                        <p className="text-xs text-muted-foreground">{question.category}・選ぶとこの画面で続けて解けます。</p>
+                        {relatedQuestions?.length ? relatedQuestions.map((item) => (
+                          <button key={item.id} type="button" onClick={() => onRelated(item)} className="block min-h-11 w-full rounded-xl border border-border p-3 text-left text-sm hover:bg-muted">
+                            <span className="block text-xs text-muted-foreground">{item.year}年 問{item.qNumber}</span>
+                            <span className="line-clamp-2">{item.question}</span>
+                          </button>
+                        )) : <p role="status" className="py-2 text-sm text-muted-foreground">{relatedQuestions ? "この科目の関連問題はありません。次の問題へ進めます。" : "関連問題を取得中です。次の問題へ進むこともできます。"}</p>}
+                      </div>
+                    )}
+                  </section>
+                )}
                 <Button asChild variant="outline" className="w-full sm:w-auto">
                   <Link href={questionPagePath(question)}>公開解説・誤り報告を開く</Link>
                 </Button>
@@ -624,6 +649,20 @@ function ScoredQuizPlayer({
         </main>
 
       </div>
+
+      {revealed && (
+        <nav aria-label="解答後の学習操作" className="fixed inset-x-0 bottom-0 z-30 border-t border-border bg-background px-3 pb-[max(0.75rem,env(safe-area-inset-bottom))] pt-3 shadow-lg">
+          <div className="mx-auto grid max-w-2xl grid-cols-3 gap-2">
+            <Button variant="outline" className="min-h-12 px-2 text-xs sm:text-sm" disabled={!onRelated} onClick={() => {
+              setShowRelated(true);
+              requestAnimationFrame(() => { relatedRef.current?.focus({ preventScroll: true }); relatedRef.current?.scrollIntoView({ block: "center", behavior: "instant" }); });
+            }}><BookOpen className="h-4 w-4" aria-hidden="true" />関連問題</Button>
+            <Button variant="outline" className="min-h-12 px-2 text-xs sm:text-sm" aria-pressed={starred} onClick={toggleStar}><Star className="h-4 w-4" aria-hidden="true" fill={starred ? "currentColor" : "none"} />{starred ? "復習登録済み" : "復習に登録"}</Button>
+            <Button className="min-h-12 px-2 text-xs sm:text-sm" onClick={goNext}>{index + 1 >= total ? "学習結果へ" : "次の1問"}<ArrowRight className="h-4 w-4" aria-hidden="true" /></Button>
+          </div>
+          <p role="status" className="mx-auto mt-1 max-w-2xl text-center text-xs text-muted-foreground">{starred ? "復習に登録しました。「あとで復習」から解き直せます。" : "解説を読んだら、関連問題か次の1問へ。"}</p>
+        </nav>
+      )}
 
       <FireworksBurst
         active={!quiet && burst !== null}

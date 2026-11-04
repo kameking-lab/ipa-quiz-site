@@ -12,11 +12,13 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { readLastQuestion } from "@/lib/storage/last-question";
 import { EXAM_LABELS, examLabel } from "@/lib/utils";
-import { createHistoryStore } from "@/lib/storage/history";
 import { jstDateString } from "@/lib/streak/core";
 import type { ChoiceKey, Question } from "@/lib/questions/types";
 import { quizBackHref } from "@/lib/questions/practice-session";
 import { LS_KEYS } from "@/lib/storage/keys";
+import { buildReviewRequest } from "@/lib/learning/review-queue";
+import { recordReview } from "@/lib/learning/spaced-repetition";
+import { recordStudyOnDate } from "@/lib/motivation/heatmap";
 
 const REVIEW_KEY = LS_KEYS.reviewSchedule;
 
@@ -28,6 +30,7 @@ interface ReviewRecord {
   level: number; // 0 = 初回, 1 = 1日後, ...
   nextReviewAt: string; // ISO date string
   correctStreak: number;
+  lastReviewedAt?: number;
 }
 
 type ReviewStore = Record<string, ReviewRecord>;
@@ -103,12 +106,7 @@ export function ReviewClient({ examFromQuery, returnTo }: { examFromQuery?: stri
 
         const last = readLastQuestion();
         if (last && Object.hasOwn(EXAM_LABELS, last.exam)) setLastExam(last.exam);
-        const today = getTodayStr();
-        const historyIds = createHistoryStore().getAnsweredIds();
-
-        const reviewStore = Object.fromEntries(
-          Object.entries(loaded).map(([id, r]) => [id, { nextReviewAt: r.nextReviewAt }]),
-        );
+        const { historyIds, reviewStore, today } = buildReviewRequest(loaded);
 
         const res = await fetch("/api/review/due", {
           method: "POST",
@@ -162,9 +160,12 @@ export function ReviewClient({ examFromQuery, returnTo }: { examFromQuery?: stri
         level: newLevel,
         nextReviewAt: getNextReviewDate(newLevel),
         correctStreak: isCorrect ? current.correctStreak + 1 : 0,
+        lastReviewedAt: Date.now(),
       };
 
       saveStore({ ...store, [q.id]: newRecord });
+      recordReview(q.id, isCorrect);
+      recordStudyOnDate();
       setSessionStats((prev) => ({
         correct: prev.correct + (isCorrect ? 1 : 0),
         incorrect: prev.incorrect + (isCorrect ? 0 : 1),

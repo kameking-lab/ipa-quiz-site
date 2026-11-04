@@ -46,7 +46,9 @@ export function loadActiveSession(): MockExamActiveSession | null {
       clearActiveSession();
       return null;
     }
-    return parsed;
+    return { ...parsed, answers: Array.isArray(parsed.answers)
+      ? parsed.answers.map((answer) => answer ?? undefined)
+      : Array(parsed.questions.length).fill(undefined) };
   } catch {
     return null;
   }

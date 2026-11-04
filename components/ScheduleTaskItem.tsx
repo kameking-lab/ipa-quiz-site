@@ -5,6 +5,8 @@ import Link from "next/link";
 import { BookOpen, CheckCircle2, Circle, FileText, GraduationCap, ListChecks, Repeat } from "lucide-react";
 import { cn } from "@/lib/utils";
 import type { TaskItem } from "@/lib/study-plan/types";
+import type { ExamCode } from "@/lib/questions/types";
+import { studyTaskLink } from "@/lib/study-plan/task-link";
 
 function TaskIcon({ kind, className }: { kind: TaskItem["kind"]; className?: string }) {
   switch (kind) {
@@ -25,9 +27,12 @@ interface Props {
   task: TaskItem;
   done: boolean;
   onToggle: (next: boolean) => void;
+  exam?: ExamCode;
+  planId?: string;
 }
 
-export function ScheduleTaskItem({ task, done, onToggle }: Props) {
+export function ScheduleTaskItem({ task, done, onToggle, exam, planId }: Props) {
+  const href = studyTaskLink(task, exam, planId);
   const content = (
     <div
       className={cn(
@@ -65,7 +70,7 @@ export function ScheduleTaskItem({ task, done, onToggle }: Props) {
       <button
         type="button"
         onClick={() => onToggle(!done)}
-        className="mt-1.5 shrink-0 text-muted-foreground hover:text-primary"
+        className="flex min-h-11 min-w-11 shrink-0 items-center justify-center rounded-lg text-muted-foreground hover:bg-muted hover:text-primary"
         aria-label={done ? "未完了にする" : "完了にする"}
         aria-pressed={done}
       >
@@ -75,9 +80,9 @@ export function ScheduleTaskItem({ task, done, onToggle }: Props) {
           <Circle className="h-5 w-5" aria-hidden />
         )}
       </button>
-      {task.link ? (
+      {href ? (
         <Link
-          href={task.link}
+          href={href}
           className="flex flex-1 rounded-lg hover:bg-muted"
           aria-label={`${task.title}（リンクを開く）`}
         >

@@ -54,6 +54,7 @@ interface SearchParams {
   limit?: string;
   returnTo?: string;
   source?: string;
+  mock?: string;
   ids?: string | string[];
   /** Serialized /search filters, retained for diagnostics and shareability. */
   search?: string;
@@ -169,6 +170,7 @@ export default async function QuizPage({
         completionShareHref={isSearchPool ? backHref : undefined}
         categoryById={categoryById}
         wrongOnly={mode === "review" && sp.reviewKind === "wrong"}
+        mockResultId={mode === "review" ? sp.mock : undefined}
       />
     </>
   );

@@ -14,6 +14,7 @@ import { nativeClient } from "@/mobile/shared/contracts";
 import {shuffleChoices} from "@/lib/questions/filter";
 
 const MAX_POOL = 80;
+import { getMockExamHistory } from "@/lib/mock-exam/storage";
 
 async function fetchQuestion(id: string, shuffle: boolean, start: boolean, signal: AbortSignal): Promise<{ question: Question; access: PracticeAccess | null }> {
   if (start) {
@@ -49,6 +50,7 @@ export function QuizClient({
   completionShareHref,
   categoryById,
   wrongOnly = false,
+  mockResultId,
   initialQuestionId,
   billingGateEnabled = false,
 }: {
@@ -61,6 +63,7 @@ export function QuizClient({
   completionShareHref?: string;
   categoryById?: Record<string, string>;
   wrongOnly?: boolean;
+  mockResultId?: string;
   initialQuestionId?: string;
   billingGateEnabled?: boolean;
 }) {
@@ -72,6 +75,7 @@ export function QuizClient({
   const [access, setAccess] = React.useState<PracticeAccess | null>(null);
   const [invalidQuestionId, setInvalidQuestionId] = React.useState(false);
   const [retryCount, setRetryCount] = React.useState(0);
+  const [related, setRelated] = React.useState<{ id: string; questions: Question[] } | null>(null);
   const transitionHost = React.useRef<HTMLDivElement>(null);
   const navigating = React.useRef(false);
   // Layout timing prevents a paint at the old footer after the question collapses.
@@ -84,11 +88,36 @@ export function QuizClient({
   const cache = React.useRef<Map<string, Question>>(new Map());
   const initializedPool = React.useRef<string | null>(null);
 
+  // Optional content is fetched while the learner reads the current question.
+  // Activation still uses the ordinary practice access check below.
+  React.useEffect(() => {
+    if (!current) return;
+    const controller = new AbortController();
+    const id = current.id;
+    const eligible = sessionIds?.slice(index + 1) ?? [];
+    void fetch("/api/questions/related", { method: "POST", headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ id, ids: eligible }), signal: controller.signal })
+      .then(async (response) => {
+        if (!response.ok) throw new Error("related-unavailable");
+        const data = await response.json() as { questions: Question[] };
+        if (controller.signal.aborted) return;
+        const available = new Set(eligible);
+        const questions = data.questions.filter((q) => available.has(q.id));
+        for (const question of questions) {
+          if (!cache.current.has(question.id)) cache.current.set(question.id, mode === "random" ? shuffleChoices(question) : question);
+        }
+        setRelated({ id, questions });
+      }).catch(() => {
+        if (!controller.signal.aborted) setRelated({ id, questions: [] });
+      });
+    return () => controller.abort();
+  }, [current, mode, sessionIds, index]);
+
   // Derive session pool once on mount (needs localStorage for history modes).
   React.useEffect(() => {
 
     const url = new URL(window.location.href);
-    const signature = JSON.stringify([mode, wrongOnly, poolIds, initialQuestionId]);
+    const signature = JSON.stringify([mode, wrongOnly, poolIds, initialQuestionId, mockResultId]);
     if (initializedPool.current === signature) return;
     initializedPool.current = signature;
     const currentId = initialQuestionId ?? url.searchParams.get("question");
@@ -101,15 +130,27 @@ export function QuizClient({
     setInvalidQuestionId(false);
     url.searchParams.delete("question");
     const sessionKey = `ipa-quiz:active-pool:v1:${url.pathname}${url.search}`;
-    let ids = deriveSessionPool(poolIds, mode, categoryById, wrongOnly);
+    let ids = mockResultId
+      ? (getMockExamHistory().find((result) => result.id === mockResultId)?.wrongQuestionIds ?? [])
+        .filter((id) => poolIds.includes(id))
+      : deriveSessionPool(poolIds, mode, categoryById, wrongOnly);
+    if (mockResultId && currentId && !ids.includes(currentId)) {
+      setInvalidQuestionId(true);
+      setSessionIds([]);
+      setCurrent(null);
+      return;
+    }
     const sessionLimit = mode === "year" ? poolIds.length : MAX_POOL;
     try {
       const saved: unknown = JSON.parse(window.sessionStorage.getItem(sessionKey) ?? "null");
+      const relatedOrder = window.sessionStorage.getItem(`${sessionKey}:related-order`);
       const available = new Set(poolIds);
       if (currentId && Array.isArray(saved) && saved.length > 0 && saved.length <= sessionLimit &&
-          saved.every((id) => typeof id === "string" && available.has(id)) && saved.includes(currentId) &&
-          // Annual pools always follow the latest complete source order, including new additions.
-          (mode !== "year" || (saved.length === ids.length && saved.every((id, i) => id === ids[i])))) {
+          saved.every((id) => typeof id === "string" && available.has(id)) && new Set(saved).size === saved.length && saved.includes(currentId) &&
+          // Ordinary annual sessions retain source order. An explicit related
+          // selection may reorder the same complete set, and is marked separately.
+          (mode !== "year" || (saved.length === ids.length && ids.every((id) => saved.includes(id)) &&
+            (saved.every((id, i) => id === ids[i]) || relatedOrder === JSON.stringify(saved))))) {
         ids = saved as string[];
       } else if (currentId && poolIds.includes(currentId) && !ids.includes(currentId)) {
         ids = [currentId, ...ids].slice(0, sessionLimit);
@@ -125,7 +166,16 @@ export function QuizClient({
     setLoadError(false);
     cache.current.clear();
     startSession(mode);
-  }, [poolIds, mode, categoryById, wrongOnly, initialQuestionId]);
+  }, [poolIds, mode, categoryById, wrongOnly, initialQuestionId, mockResultId]);
+
+  React.useEffect(() => {
+    if (!sessionIds?.length) return;
+    const url = new URL(window.location.href);
+    url.searchParams.delete("question");
+    try {
+      window.sessionStorage.setItem(`ipa-quiz:active-pool:v1:${url.pathname}${url.search}`, JSON.stringify(sessionIds));
+    } catch { /* Practice remains usable without session storage. */ }
+  }, [sessionIds]);
 
   // Load current + prefetch next whenever index advances.
   React.useEffect(() => {
@@ -180,11 +230,30 @@ export function QuizClient({
     if (navigating.current) return;
     navigating.current = true;
     transitionHost.current?.scrollIntoView({ block: "start", behavior: "instant" });
-    setCurrent(null);
+    const nextId = sessionIds?.[index + 1];
+    setCurrent(!billingGateEnabled || mode === "review" ? cache.current.get(nextId ?? "") ?? null : null);
     setAccess(null);
     setLoadError(false);
     setIndex((i) => i + 1);
-  }, []);
+  }, [sessionIds, index, billingGateEnabled, mode]);
+
+  const handleRelated = (question: Question) => {
+    if (navigating.current || !sessionIds || !current || related?.id !== current.id ||
+        !related.questions.some((item) => item.id === question.id)) return;
+    navigating.current = true;
+    const nextIds = [...sessionIds.slice(0, index + 1), question.id,
+      ...sessionIds.slice(index + 1).filter((id) => id !== question.id)];
+    try {
+      const url = new URL(window.location.href);
+      url.searchParams.delete("question");
+      window.sessionStorage.setItem(`ipa-quiz:active-pool:v1:${url.pathname}${url.search}:related-order`, JSON.stringify(nextIds));
+    } catch { /* Continue in place when session storage is unavailable. */ }
+    setSessionIds(nextIds);
+    setCurrent(!billingGateEnabled || mode === "review" ? cache.current.get(question.id) ?? null : null);
+    setAccess(null);
+    setLoadError(false);
+    setIndex(index + 1);
+  };
 
   if (!sessionIds) {
     return (
@@ -258,6 +327,8 @@ export function QuizClient({
       completionShareHref={completionShareHref}
       quiet={billingGateEnabled || nativeClient()}
       onNext={handleNext}
+      relatedQuestions={related?.id === current?.id ? related?.questions : undefined}
+      onRelated={handleRelated}
       />
     </div>
   );
