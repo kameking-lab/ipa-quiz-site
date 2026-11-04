@@ -1,6 +1,6 @@
 # INT5 公開バッチ2 統合報告
 
-状態：ローカル統合・全検証PASS、最終独立レビュー待ち。公開・pushは未実施。
+状態：ローカル統合・全検証・最終独立レビューPASS。公開・pushは未実施。
 
 ## 作業先と固定成果
 
@@ -57,7 +57,7 @@ SEC1 `7ab33c41a` の共通予算予約・精算、KV不明時の拒否、Gemini 
 
 ## 検証と独立レビュー
 
-最終結果は [validation.json](validation.json)、コマンド・終了コード・ログSHA256は [validation/](validation/)、実画面は [browser/receipt.json](browser/receipt.json) に保存した。
+最終結果は [validation.json](validation.json)、コマンド・終了コード・ログSHA256は [validation/](validation/)、実画面は [browser/receipt.json](browser/receipt.json) に保存した。CI相当E2E自身が出力した5画像も [ci-browser/receipt.json](ci-browser/receipt.json) に別途保管した。
 
 | 検証 | 結果 |
 |---|---|
@@ -87,6 +87,6 @@ strict監査は `c017ab7b0` の隔離worktree `C:/Users/kanet/AppData/Local/Temp
 
 全テストの追加実行で購入確認の分析effectに対する待機不足を1件検出し、イベント名・回数・重複防止の期待値を保持して完了を待つよう修正した。E2Eでは無条件quietによる通常Webバッジ抑制を修正した。独立レビュー4の必須prop欠落も修正し、その後の型検査を通した。
 
-独立レビューは指定の `C:/Users/kanet/AppData/Roaming/npm/codex.cmd exec -m gpt-6-astra -s read-only` を別プロセスで実施。初回FAIL→再レビュー2 PASS（`48c28c74b`）、追加修正レビュー3 PASS（`c017ab7b0`）、レビュー4のテスト型不備FAIL→修正。最終レビューを待つ。全原問の再校閲・本番疎通・デプロイ承認を意味しない。
+独立レビューは指定の `C:/Users/kanet/AppData/Roaming/npm/codex.cmd exec -m gpt-6-astra -s read-only` を別プロセスで実施。初回FAIL→再レビュー2 PASS（`48c28c74b`）、追加修正レビュー3 PASS（`c017ab7b0`）、レビュー4のテスト型不備FAIL→修正→最終レビュー5 PASS（検証証跡を含む `178f827f4`）。[最終独立レビュー](independent-review5.md) は9検証ログと80画面画像のハッシュ一致も独立に確認した。全原問の再校閲・本番疎通・デプロイ承認を意味しない。
 
 push・PR・mainマージ・デプロイ・本番設定変更・本番DB接続は実施していない。秘密値をログ・Git・本報告へ出していない。`C:/Users/kanet/secrets-local` は参照していない。
