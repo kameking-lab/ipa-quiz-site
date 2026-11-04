@@ -98,9 +98,9 @@ if (!process.env.KPERF_INTERACTIONS_ONLY) {
 if (process.env.KPERF_LIGHTHOUSE_ONLY) process.exit(0);
 const browser = await chromium.launch();
 try {
-  for (const historySize of [0, 2000]) for (const kind of ['quiz', 'blog']) {
+  for (const historySize of [0, 2000]) for (const kind of ['quiz', 'blog']) for (const settleMs of kind === 'quiz' && historySize === 2000 ? [700, 0] : [700]) {
     for (let run = 1; run <= 10; run++) {
-      if (results.interactions.some(row => row.kind === kind && row.historySize === historySize && row.run === run)) continue;
+      if (results.interactions.some(row => row.kind === kind && row.historySize === historySize && row.waitMs === settleMs && row.run === run)) continue;
       const context = await browser.newContext({ viewport: { width: 390, height: 844 }, isMobile: true, hasTouch: true, deviceScaleFactor: 1, serviceWorkers: 'block' });
       await context.route('**/*', route => new URL(route.request().url()).origin === base ? route.continue() : route.abort());
       await context.addInitScript(seed, { count: historySize, questionId });
@@ -124,18 +124,21 @@ try {
       const choice = page.getByRole('radio').first();
       await choice.waitFor();
       await choice.scrollIntoViewIfNeeded();
-      await page.waitForTimeout(700);
+      await page.waitForTimeout(settleMs);
+      const preparedBefore = await page.locator('[aria-label="解答結果"][aria-hidden="true"][inert]').count() > 0;
       const url = page.url();
       requests.length = 0;
+      const tapCommandAt = performance.now();
       await choice.tap();
       await page.waitForFunction(() => window.__perf.paint !== null);
+      const automationTapToResult = performance.now() - tapCommandAt;
       await page.waitForTimeout(150);
       const data = await page.evaluate(() => {
         const rect = document.querySelector('[aria-label="解答結果"]:not([aria-hidden="true"]) [aria-label$="解説"], [aria-label="チャレンジの解答結果"]').getBoundingClientRect();
         return { ...window.__perf, resultVisible: rect.top < innerHeight && rect.bottom > 0, history: JSON.parse(localStorage.getItem('ipa-quiz:history:v1') ?? '{}').entries?.length, noOverflow: document.documentElement.scrollWidth <= innerWidth };
       });
       const events = data.events.filter(e => e.startTime >= data.tap - 8);
-      const entry = { kind, historySize, run, tapToPaint: data.paint - data.tap, pointerInputDelay: data.tapHandlerAt - data.tap, eventTimingMax: events.length ? Math.max(...events.map(e => e.duration)) : null, events, urlUnchanged: page.url() === url, answerApiCalls: requests.filter(u => /\/api\/(copilot|questions\/next|practice\/)/.test(u)).length, historyAfter: data.history, noOverflow: data.noOverflow, resultVisible: data.resultVisible };
+      const entry = { kind, historySize, waitMs: settleMs, run, preparedBefore, tapToPaint: data.paint - data.tap, automationTapToResult, pointerInputDelay: data.tapHandlerAt - data.tap, eventTimingMax: events.length ? Math.max(...events.map(e => e.duration)) : null, events, urlUnchanged: page.url() === url, answerApiCalls: requests.filter(u => /\/api\/(copilot|questions\/next|practice\/)/.test(u)).length, historyAfter: data.history, noOverflow: data.noOverflow, resultVisible: data.resultVisible };
       entry.apiPaths = requests.filter(u => new URL(u).pathname.startsWith('/api/')).map(u => new URL(u).pathname);
       assert.equal(new URL(page.url()).origin, base);
       assert.equal(entry.urlUnchanged, true);
@@ -145,7 +148,7 @@ try {
       assert.equal(entry.noOverflow, true);
       assert.equal(entry.resultVisible, true);
       results.interactions.push(entry);
-      if (run === 1) await page.screenshot({ path: path.join(out, `${kind}-${historySize}.png`), fullPage: false });
+      if (run === 1) await page.screenshot({ path: path.join(out, `${kind}-${historySize}${settleMs === 0 ? '-early' : ''}.png`), fullPage: false });
       await save();
       console.log(JSON.stringify(entry));
       await context.close();

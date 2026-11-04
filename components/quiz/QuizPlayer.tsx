@@ -602,7 +602,7 @@ function ScoredQuizPlayer({
             {/* Shape/layout the static explanation while the learner reads. Keep
                 it invisible, out of flow and inert until the explicit answer. */}
             {(revealed || preparedExplanationId === question.id) && (
-              <div key={question.id} ref={answerResultRef} tabIndex={-1} aria-hidden={!revealed} inert={!revealed}
+              <div key={`explanation:${question.id}`} ref={answerResultRef} tabIndex={-1} aria-hidden={!revealed} inert={!revealed}
                 className={`scroll-mt-80 space-y-4 outline-none${revealed ? "" : " invisible pointer-events-none absolute inset-x-0 top-0 h-0 overflow-hidden"}`} aria-label="解答結果">
                 <ExplanationCard
                   question={question}
