@@ -1,0 +1,156 @@
+{
+  "task": "LQ7",
+  "date": "2026-11-04",
+  "baseRef": "origin/claude/gifted-johnson-5qkmco",
+  "baseCommit": "927db9412",
+  "branch": "qual/shuwa-20261104",
+  "expectedQuestionCount": 160,
+  "reviewedQuestionCount": 160,
+  "pendingQuestionCount": 0,
+  "publication": "staging",
+  "publicationChanged": false,
+  "rightsDecision": "owner-confirmed 2026-11-04 01:30",
+  "pdfChecks": [
+    {
+      "url": "https://www.jyoubun-center.or.jp/jbmain/wp-content/uploads/2026/08/s-d3_37_03-04.pdf",
+      "sha256": "5176e72dcd31d816051631b1f948441d1bd585a2611f15d3dfc31bb20cd987ad",
+      "matchesStoredHash": true
+    },
+    {
+      "url": "https://www.jyoubun-center.or.jp/jbmain/wp-content/uploads/2025/08/s-d3_36_01-02.pdf",
+      "sha256": "1876088991c44ebf75275838cc17b2a5e05b654542b04912739439af685e578b",
+      "matchesStoredHash": true
+    },
+    {
+      "url": "https://www.jyoubun-center.or.jp/jbmain/wp-content/uploads/2026/08/37_answers.pdf",
+      "sha256": "728a107f5366ea4a19f712c7d330b1f7319aede594a5d172e6441bb418d020bb",
+      "matchesStoredHash": true
+    },
+    {
+      "url": "https://www.jyoubun-center.or.jp/jbmain/wp-content/uploads/2025/10/s-d3-36_03-04-2.pdf",
+      "sha256": "82c138f58ae7a55618f234d6cafb02b9ac96feeb76c256d7e01290560303f427",
+      "matchesStoredHash": true
+    },
+    {
+      "url": "https://www.jyoubun-center.or.jp/jbmain/wp-content/uploads/2026/09/s-d3_37_01-02.pdf",
+      "sha256": "c9ec9f4fd02c1db792904c2e8eca31eb85f705eabe04ca701d712a8d54cbb189",
+      "matchesStoredHash": true
+    },
+    {
+      "url": "https://www.jyoubun-center.or.jp/jbmain/wp-content/uploads/2025/08/36_answers.pdf",
+      "sha256": "e940fd2ae7e359420f76a83342447b0ba817873802dca8a89a75e61098160d0b",
+      "matchesStoredHash": true
+    }
+  ],
+  "questionFiles": [
+    {
+      "path": "data/questions/shuwa/2026-reviewed.json",
+      "count": 80,
+      "sha256": "b7375f27447b205b428a054016f806c663a1850a116a57bcfa842250556c7b06"
+    },
+    {
+      "path": "data/questions/shuwa/2025-reviewed.json",
+      "count": 80,
+      "sha256": "eab10d8b2a860065182c09ffc96749500c6cfcd2bcf5f837affeeb0b2bb760e5"
+    }
+  ],
+  "figures": [
+    {
+      "path": "public/images/questions/shuwa/2025-mondai-b-06.png",
+      "sha256": "f40ddf5e8803c63a98bb3f7a713f354f664449f0e4cc9916506b50562e06c360"
+    },
+    {
+      "path": "public/images/questions/shuwa/2025-mondai-d-02.png",
+      "sha256": "e5b00a6e3179a2b7cfb20e2c95a19a83fcd1d5094a585d5697a5b3fb1514095f"
+    },
+    {
+      "path": "public/images/questions/shuwa/2025-mondai-d-20.png",
+      "sha256": "a2d4b6bb43d9a25ac906c5b532064f8e3251556cec89bd8478005e53197d03e4"
+    },
+    {
+      "path": "public/images/questions/shuwa/2026-mondai-b-10.png",
+      "sha256": "cf2ca7365ddfaecdfb3c258f9937707e34242494f0c0e86abd1dbb3549079ef0"
+    },
+    {
+      "path": "public/images/questions/shuwa/2026-mondai-b-19.png",
+      "sha256": "2afaf858045d7f58df29a0f3fbd06e07693f4205dd6cca8a29e31fad52044b36"
+    }
+  ],
+  "reviewCommand": "C:/Users/kanet/AppData/Roaming/npm/codex.cmd exec -m gpt-6-astra -s read-only --ephemeral",
+  "reviewScopes": [
+    {
+      "year": 2026,
+      "session": "mondai-a",
+      "questions": "1-20",
+      "result": "PASS",
+      "record": "reports/LQ7/2026-a-review.md"
+    },
+    {
+      "year": 2026,
+      "session": "mondai-b",
+      "questions": "1-20",
+      "result": "PASS",
+      "record": "reports/LQ7/2026-b-review.md"
+    },
+    {
+      "year": 2026,
+      "session": "mondai-c",
+      "questions": "1-20",
+      "result": "PASS",
+      "record": "reports/LQ7/2026-c-review.md"
+    },
+    {
+      "year": 2026,
+      "session": "mondai-d",
+      "questions": "1-20",
+      "result": "PASS",
+      "record": "reports/LQ7/2026-d-review.md"
+    },
+    {
+      "year": 2025,
+      "session": "mondai-a",
+      "questions": "1-20",
+      "result": "PASS",
+      "record": "reports/LQ7/2025-a-review.md"
+    },
+    {
+      "year": 2025,
+      "session": "mondai-b",
+      "questions": "1-20",
+      "result": "PASS",
+      "record": "reports/LQ7/2025-b-review.md"
+    },
+    {
+      "year": 2025,
+      "session": "mondai-c",
+      "questions": "1-20",
+      "result": "PASS",
+      "record": "reports/LQ7/2025-c-review.md"
+    },
+    {
+      "year": 2025,
+      "session": "mondai-d",
+      "questions": "1-20",
+      "result": "PASS",
+      "record": "reports/LQ7/2025-d-review.md"
+    }
+  ],
+  "inheritedQuestionsReview": "reports/LQ7/inherited-review.md",
+  "validation": {
+    "validateQuestions": {
+      "total": 26604,
+      "fail": 0,
+      "warn": 16859
+    },
+    "typecheck": "PASS after prisma generate",
+    "relatedTests": {
+      "files": 3,
+      "passed": 1081
+    },
+    "diffCheck": "PASS"
+  },
+  "localEvidenceDirectory": "tmp/shuwa (gitignored; PDFs and rendered original pages retained)",
+  "formatting": "Whitespace, line breaks, numeral styles normalized; original choice numbers mapped 1/2/3/4 to ア/イ/ウ/エ; underlines represented with brackets; ruby/glyphs retained in original crops where needed.",
+  "integrationReview": "reports/LQ7/integration-review.md",
+  "integrationReviewResult": "PASS"
+}

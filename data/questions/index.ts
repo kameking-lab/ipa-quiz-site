@@ -2,6 +2,7 @@ import { CHIZAI2_QUESTIONS } from "./chizai2";
 import { KISHO_QUESTIONS } from "./kisho";
 import { getAutomotiveQuestions } from "./automotive";
 import { JOKASO_CANDIDATES } from "./jokaso";
+import { SHUWA_QUESTIONS } from "./shuwa";
 import type { ExamCode, Question } from "@/lib/questions/types";
 import { isPracticeReadyQuestion } from "@/lib/questions/filter";
 import { CHOSASHI_QUESTIONS } from "./chosashi";
@@ -129,6 +130,7 @@ export const QUESTIONS_BY_EXAM: Partial<Record<ExamCode, Question[]>> = {
   "kikenbutsu-otsu6": OT6_QUESTIONS,
 
   ...(isExamPublished("jokaso") ? { jokaso: JOKASO_CANDIDATES.filter(isPracticeReadyQuestion) } : {}),
+  ...(isExamPublished("shuwa") ? { shuwa: SHUWA_QUESTIONS.filter(isPracticeReadyQuestion) } : {}),
   ...(isExamPublished("kanteishi") ? { kanteishi: KANTEISHI_QUESTIONS.filter(isPracticeReadyQuestion) } : {}),
   ...(isExamPublished("kaikeishi") ? { kaikeishi: KAIKEISHI_QUESTIONS.filter(isPracticeReadyQuestion) } : {}),
   ...(isExamPublished("riku-tech2") ? { "riku-tech2": RIKU_TECH2_QUESTIONS.filter(isPracticeReadyQuestion) } : {}),
