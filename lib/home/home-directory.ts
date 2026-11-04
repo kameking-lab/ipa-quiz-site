@@ -283,7 +283,16 @@ function domain(
 }
 
 export function getHomeDirectory(): HomeDirectoryDomain[] {
-  const others = OTHER_CARDS.filter((def) => isLiveExam(def.code)).map((def) => ({ def, item: otherItem(def) }));
+  const catalogDomains: Record<string, OtherCardDef["domain"]> = {
+    "information-technology": "it", finance: "money", "real-estate": "money", accounting: "money",
+    electrical: "electrical", construction: "construction", safety: "safety", legal: "money",
+    welfare: "welfare", pharmacy: "welfare", "personal-services": "welfare",
+  };
+  const additionalCards: OtherCardDef[] = QUALIFICATION_CATALOG.flatMap((entry) => {
+    if (entry.status !== "live" || !entry.examCode || entry.domain === "automotive" || OTHER_CARDS.some((card) => card.code === entry.examCode)) return [];
+    return [{ code: entry.examCode, name: entry.shortName, sub: entry.reuseSummary, domain: catalogDomains[entry.domain] ?? "safety" }];
+  });
+  const others = [...OTHER_CARDS, ...additionalCards].filter((def) => isLiveExam(def.code)).map((def) => ({ def, item: otherItem(def) }));
   const byDomain = (id: OtherCardDef["domain"]) => others.filter(({ def }) => def.domain === id).map(({ item }) => item);
 
   const domains = [

@@ -261,10 +261,11 @@ function ScoredQuizPlayer({
     (key: ChoiceKey) => {
       if (!question || isReferenceOnlyQuestionId(question.id) || revealed || question.type === "ordering") return;
       const required = requiredSelectionCount(question);
+      if (question.acceptedAnswerCombinations && !picked.includes(key) && picked.length >= required) return;
       if (required > 1) {
         const next = picked.includes(key) ? picked.filter((k) => k !== key) : [...picked, key];
         setPicked(next);
-        if (next.length === required) commitAnswer(formatSelection(next), isCompleteSelectionCorrect(question.answer, next, required), { kind: "multiple-choice", selected: [...next] });
+        if (!question.acceptedAnswerCombinations && next.length === required) commitAnswer(formatSelection(next), isCompleteSelectionCorrect(question.answer, next, required, question.acceptedAnswerCombinations), { kind: "multiple-choice", selected: [...next] });
         return;
       }
       setSelected(key);
@@ -294,7 +295,6 @@ function ScoredQuizPlayer({
   React.useEffect(() => {
     const handler = (e: KeyboardEvent) => {
       if (!question || isReferenceOnlyQuestionId(question.id) || isSelfReviewedDescriptiveQuestion(question)) return;
-      if (!question || isReferenceOnlyQuestionId(question.id) || ((["chosashi", "gyosei"].includes(question.exam)) && question.type === "descriptive")) return;
       if (e.isComposing || e.keyCode === 229) return;
       if (e.target instanceof HTMLElement) {
         if (e.target.isContentEditable || e.target.closest('[contenteditable]:not([contenteditable="false"]), [role="textbox"], [role="combobox"]')) return;
@@ -377,7 +377,6 @@ function ScoredQuizPlayer({
   }
 
   if (completed && isSelfReviewedDescriptiveQuestion(question) && stats.answered === 0) {
-  if (completed && question && (["chosashi", "gyosei"].includes(question.exam)) && question.type === "descriptive" && stats.answered === 0) {
     return (
       <main className="mx-auto max-w-3xl space-y-5 px-4 py-6">
         <h1 className="text-xl font-semibold">記述の確認を終えました</h1>
@@ -399,7 +398,6 @@ function ScoredQuizPlayer({
         scheduleUrl={tsuginoScheduleUrl(question?.exam)}
         learningUrl={tsuginoLearningUrl(question?.exam)}
         onReviewLast={question && !isSelfReviewedDescriptiveQuestion(question) && revealed ? () => {
-        onReviewLast={question && !((["chosashi", "gyosei"].includes(question.exam)) && question.type === "descriptive") && revealed ? () => {
           setCompleted(false);
           setCopilotQuery("open");
             setCopilotRequest((value) => ({ questionId: question!.id, sequence: (value?.sequence ?? 0) + 1 }));
@@ -424,7 +422,6 @@ function ScoredQuizPlayer({
   }
 
   if (isSelfReviewedDescriptiveQuestion(question)) {
-  if (question.type === "descriptive" && (["chosashi", "gyosei"].includes(question.exam))) {
     return (
       <main className="mx-auto max-w-3xl space-y-5 px-4 py-6">
         <Button variant="outline" onClick={() => router.push(backHref)}>{backLabel}</Button>
@@ -451,7 +448,7 @@ function ScoredQuizPlayer({
   const requiredSelections = requiredSelectionCount(question);
   const multiSelect = !ordering && requiredSelections > 1;
   const isCorrect = native ? nativeBResult?.isCorrect === true : ordering ? isOrderingAnswerCorrect(question, orderedSelected ?? []) : numeric ? isNumericAnswerCorrect(question, numericSelected ?? "") : multiSelect
-    ? isCompleteSelectionCorrect(question.answer, picked, requiredSelections)
+    ? isCompleteSelectionCorrect(question.answer, picked, requiredSelections, question.acceptedAnswerCombinations)
     : isAcceptedAnswer(question.answer, selected);
   const selectionLabel = native ? nativeBResult?.slotResults.map((slot) => `${slot.label}: ${slot.selectedCandidateId ?? "未回答"}`).join(" / ") : ordering ? (orderedSelected ? formatOrderingAnswer(question.exam, orderedSelected) : undefined) : numeric ? numericSelected : multiSelect ? (picked.length > 0 ? formatSelection(picked) : undefined) : selected;
 
@@ -525,6 +522,12 @@ function ScoredQuizPlayer({
               progress={{ current: index, total }}
             />
 
+            {question.acceptedAnswerCombinations && !revealed && (
+              <Button disabled={picked.length < 1 || picked.length > requiredSelections}
+                onClick={() => commitAnswer(formatSelection(picked), isCompleteSelectionCorrect(question.answer, picked, requiredSelections, question.acceptedAnswerCombinations), { kind: "multiple-choice", selected: [...picked] })}>
+                回答を確定
+              </Button>
+            )}
             {multiSelect && !revealed && (
               <p className="rounded-xl border border-amber-300/60 bg-amber-50 px-3 py-2 text-sm font-semibold text-amber-900 dark:border-amber-700/50 dark:bg-amber-950/40 dark:text-amber-100" data-testid="multi-select-hint">
                 {selectionInstruction(question.answer, requiredSelections)}（選択中 {picked.length}/{requiredSelections}）

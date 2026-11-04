@@ -1,15 +1,7 @@
 import type { ExamCode } from "./types";
 
 /** 指定資格では、公表済みの過去問だけを演習に使う。 */
-const OFFICIAL_PAST_ONLY_EXAMS = [
-  "kenchiku-setsubishi", "chizai2", "kanteishi", "kaikeishi",
-  "shuwa", "kanteishi", "kaikeishi",
-  "kanteishi", "kaikeishi", "jken-katsuyo3", "jken-katsuyo2", "jken-katsuyo1",
-  "riku-tech1", "maritime4", "land-special1", "maritime3", "maritime2", "maritime1", "general3", "general2", "general1",
-  "land-special2", "land-special3", "aviation-comm", "amateur1",
-  "maritime-special1", "riku-tech2", "amateur2", "maritime-radar",
-  "riku-toku-kokunai", "kai-toku2", "kai-toku3", "koku-toku",
-] as const satisfies readonly ExamCode[];
+const OFFICIAL_PAST_ONLY_EXAMS = ["kanteishi","kaikeishi","riku-tech1","maritime4","land-special1","maritime3","maritime2","maritime1","general3","general2","general1","land-special2","land-special3","aviation-comm","amateur1","maritime-special1","riku-tech2","amateur2","maritime-radar","riku-toku-kokunai","kai-toku2","kai-toku3","koku-toku","kenchiku-setsubishi","chizai2","shuwa","jken-katsuyo3","jken-katsuyo2","jken-katsuyo1"] as const satisfies readonly ExamCode[];
 
 const pastOnlyExams = new Set<string>(OFFICIAL_PAST_ONLY_EXAMS);
 const originalIdAliases: Partial<Record<ExamCode, string>> = {
@@ -23,9 +15,7 @@ const originalIdAliases: Partial<Record<ExamCode, string>> = {
 };
 const originalIdPrefixes = OFFICIAL_PAST_ONLY_EXAMS.map(
   (exam) => `radio21-${originalIdAliases[exam] ?? exam}-`,
-).concat(["kenchiku-setsubishi-", "chizai2-", "kanteishi-", "kaikeishi-", "riku-toku-kokunai-", "kai-toku2-", "kai-toku3-", "koku-toku-"]);
-).concat(["shuwa-", "kanteishi-", "kaikeishi-", "riku-toku-kokunai-", "kai-toku2-", "kai-toku3-", "koku-toku-"]);
-).concat(["kanteishi-", "kaikeishi-", "jken-katsuyo3-", "jken-katsuyo2-", "jken-katsuyo1-", "riku-toku-kokunai-", "kai-toku2-", "kai-toku3-", "koku-toku-"]);
+).concat(["kanteishi-","kaikeishi-","riku-toku-kokunai-","kai-toku2-","kai-toku3-","koku-toku-","kenchiku-setsubishi-","chizai2-","shuwa-","jken-katsuyo3-","jken-katsuyo2-","jken-katsuyo1-"]);
 
 export function isOfficialPastOnlyExam(exam: unknown): boolean {
   return typeof exam === "string" && pastOnlyExams.has(exam);

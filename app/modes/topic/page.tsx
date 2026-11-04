@@ -1,3 +1,4 @@
+import { ALL_QUIZ_EXAM_CODES } from "@/lib/exam-config";
 import { defaultPracticeSession, parsePracticeSession, PRACTICE_SESSIONS } from "@/lib/questions/practice-session";
 import { PracticeSessionTabs } from "@/components/quiz/PracticeSessionTabs";
 import type { Metadata } from "next";
@@ -35,28 +36,7 @@ export async function generateMetadata({
   };
 }
 
-const VALID_EXAMS: ExamCode[] = ["kisho", "kenchiku-setsubishi", "chizai2", "kanteishi", "kaikeishi", "land-special1", "riku-tech1", "maritime4", "aviation-comm", "amateur1", "maritime-special1", "riku-tech2", "amateur2", "maritime-radar", "maritime3", "maritime2", "maritime1", "general3", "general2", "general1", "land-special2", "land-special3", "kai-toku2", "jken-katsuyo3", "jken-katsuyo2", "jken-katsuyo1",
-  "riku-toku-kokunai",
-  "kai-toku3",
-  "koku-toku",
-  "ip",
-  "sg",
-  "fe",
-  "ap",
-  "st",
-  "sa",
-  "pm",
-  "nw",
-  "db",
-  "es",
-  "sc",
-  "sm",
-  "au",
-  "takken",
-  "tohan",
-  "kanri",
-  "chusho-kigyo-shindanshi",
-];
+const VALID_EXAMS = ALL_QUIZ_EXAM_CODES;
 
 function isExamCode(s: unknown): s is ExamCode {
   return typeof s === "string" && (VALID_EXAMS as string[]).includes(s);

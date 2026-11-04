@@ -1,16 +1,6 @@
-import { SHUWA_QUESTIONS } from "@/data/questions/shuwa";
-import { SHOHI_SODAN_QUESTIONS } from "@/data/questions/shohi-sodan";
-import { REFORM_MGR_QUESTIONS } from "@/data/questions/reform-mgr";
-import { JKEN_SYSTEM_QUESTIONS } from "@/data/questions/jken-system";
-import { KENKI2_QUESTIONS } from "@/data/questions/kenki2";
-import { KENKI1_QUESTIONS } from "@/data/questions/kenki1";
-import { GYOSEI_QUESTIONS } from "../data/questions/gyosei";
-import { SHIHOSHOSHI_QUESTIONS } from "@/data/questions/shihoshoshi";
-import { validateKhkKikai } from "./validate-khk-kikai";
+import { PRACTICE_SESSIONS } from "@/lib/questions/practice-session";
+import { EXAM_CONFIGS } from "@/lib/exam-config";
 import { NativeBDataSchema, nativeBQuestionIssue } from "../lib/questions/native-b";
-// Native staging is validated on import, independently of the public question pool.
-import { HOSHASEN_STAGED_QUESTIONS } from "../data/questions/hoshasen";
-console.log(`放射線取扱主任者の未公開ステージング: ${HOSHASEN_STAGED_QUESTIONS.length}問（スキーマ検証済み）`);
 /**
  * data/questions/ 配下の問題データを検証・品質スコア算出。
  *
@@ -26,17 +16,13 @@ import { writeFileSync, mkdirSync } from "node:fs";
 import { join } from "node:path";
 import { numericQuestionIssue } from "@/lib/questions/numeric";
 import { orderingQuestionIssue } from "@/lib/questions/ordering";
-import { JOKASO_CANDIDATES } from "@/data/questions/jokaso";
 import { ALL_QUESTIONS } from "@/data/questions";
 import { DENKEN3_QUESTIONS } from "@/data/questions/denken3";
 import { DENKEN2_QUESTIONS } from "@/data/questions/denken2";
 import { DENKEN1_QUESTIONS } from "@/data/questions/denken1";
 import { DENKO2_QUESTIONS } from "@/data/questions/denko2";
 import { DENKO1_QUESTIONS } from "@/data/questions/denko1";
-import { SEKOU_KENCHIKU2_QUESTIONS } from "@/data/questions/sekou-kenchiku2";
 import { CIVIL2_QUESTIONS } from "@/data/questions/civil2";
-import { DENKI1_QUESTIONS } from "@/data/questions/denki1";
-import { DENKI2_QUESTIONS } from "@/data/questions/denki2";
 import { KANKOJI2_QUESTIONS } from "@/data/questions/kankoji2";
 import { ZOEN2_QUESTIONS } from "@/data/questions/zoen2";
 import { ZOEN1_QUESTIONS } from "@/data/questions/zoen1";
@@ -46,50 +32,13 @@ import { CIVIL1_QUESTIONS } from "@/data/questions/civil1";
 import type { Question } from "@/lib/questions/types";
 import { detectAnswerDispute } from "@/lib/questions/explanation-consistency";
 import { z } from "zod";
-import { IJI_SHUZEN_QUESTIONS } from "@/data/questions/iji-shuzen";
-import { SHINRISHI_CANDIDATES } from "@/data/questions/shinrishi";
-import { KEIRYOSHI_CANDIDATES } from "@/data/questions/keiryoshi";
 import { RIYOSHI_CANDIDATES } from "@/data/questions/riyoshi";
-import { validateChintaiStaging } from "./lib/chintai-staging";
-
-import { JKEN_KATSUYO1_QUESTIONS } from "@/data/questions/jken-katsuyo1";
-
-import { JKEN_KATSUYO2_QUESTIONS } from "@/data/questions/jken-katsuyo2";
-
-import { JKEN_KATSUYO3_QUESTIONS } from "@/data/questions/jken-katsuyo3";
-
-import { KHK_REITO_1_CANDIDATES } from "@/data/questions/khk-reito-1";
-
-import { KHK_REITO_2_CANDIDATES } from "@/data/questions/khk-reito-2";
-
-import { KHK_REITO_3_CANDIDATES } from "@/data/questions/khk-reito-3";
 
 // Publication-gated pilots still require the same schema and source validation
 // before their release gate can be lifted.
-import { YAMAGUCHI_CHORI_QUESTIONS } from "@/data/questions/yamaguchi-chori";
-
-import { YAMAGUCHI_SEIKA_QUESTIONS } from "@/data/questions/yamaguchi-seika";
-
-import { YAMAGUCHI_FUGU_QUESTIONS } from "@/data/questions/yamaguchi-fugu";
-
 const VALIDATION_QUESTIONS = [
   ...new Map(
-    [...ALL_QUESTIONS, ...JOKASO_CANDIDATES, ...RIYOSHI_CANDIDATES, ...DENKEN3_QUESTIONS, ...DENKEN2_QUESTIONS, ...DENKEN1_QUESTIONS, ...DENKO2_QUESTIONS, ...DENKO1_QUESTIONS, ...CIVIL2_QUESTIONS, ...CIVIL1_QUESTIONS, ...KANKOJI2_QUESTIONS, ...ZOEN2_QUESTIONS, ...ZOEN1_QUESTIONS, ...TSUSHIN2_QUESTIONS, ...TSUSHIN1_QUESTIONS].map((question) => [question.id, question]),
-    [...ALL_QUESTIONS, ...IJI_SHUZEN_QUESTIONS, ...RIYOSHI_CANDIDATES, ...DENKEN3_QUESTIONS, ...DENKEN2_QUESTIONS, ...DENKEN1_QUESTIONS, ...DENKO2_QUESTIONS, ...DENKO1_QUESTIONS, ...CIVIL2_QUESTIONS, ...CIVIL1_QUESTIONS, ...KANKOJI2_QUESTIONS, ...ZOEN2_QUESTIONS, ...ZOEN1_QUESTIONS, ...TSUSHIN2_QUESTIONS, ...TSUSHIN1_QUESTIONS].map((question) => [question.id, question]),
-    [...ALL_QUESTIONS, ...RIYOSHI_CANDIDATES, ...DENKEN3_QUESTIONS, ...DENKEN2_QUESTIONS, ...DENKEN1_QUESTIONS, ...DENKO2_QUESTIONS, ...DENKO1_QUESTIONS, ...CIVIL2_QUESTIONS, ...CIVIL1_QUESTIONS, ...KANKOJI2_QUESTIONS, ...DENKI1_QUESTIONS, ...ZOEN2_QUESTIONS, ...ZOEN1_QUESTIONS, ...TSUSHIN2_QUESTIONS, ...TSUSHIN1_QUESTIONS].map((question) => [question.id, question]),
-    [...SHUWA_QUESTIONS, ...ALL_QUESTIONS, ...RIYOSHI_CANDIDATES, ...DENKEN3_QUESTIONS, ...DENKEN2_QUESTIONS, ...DENKEN1_QUESTIONS, ...DENKO2_QUESTIONS, ...DENKO1_QUESTIONS, ...CIVIL2_QUESTIONS, ...CIVIL1_QUESTIONS, ...KANKOJI2_QUESTIONS, ...ZOEN2_QUESTIONS, ...ZOEN1_QUESTIONS, ...TSUSHIN2_QUESTIONS, ...TSUSHIN1_QUESTIONS].map((question) => [question.id, question]),
-    [...SHOHI_SODAN_QUESTIONS, ...REFORM_MGR_QUESTIONS, ...ALL_QUESTIONS, ...RIYOSHI_CANDIDATES, ...DENKEN3_QUESTIONS, ...DENKEN2_QUESTIONS, ...DENKEN1_QUESTIONS, ...DENKO2_QUESTIONS, ...DENKO1_QUESTIONS, ...CIVIL2_QUESTIONS, ...CIVIL1_QUESTIONS, ...KANKOJI2_QUESTIONS, ...ZOEN2_QUESTIONS, ...ZOEN1_QUESTIONS, ...TSUSHIN2_QUESTIONS, ...TSUSHIN1_QUESTIONS].map((question) => [question.id, question]),
-    [...ALL_QUESTIONS, ...JKEN_KATSUYO3_QUESTIONS, ...JKEN_KATSUYO2_QUESTIONS, ...JKEN_KATSUYO1_QUESTIONS, ...RIYOSHI_CANDIDATES, ...DENKEN3_QUESTIONS, ...DENKEN2_QUESTIONS, ...DENKEN1_QUESTIONS, ...DENKO2_QUESTIONS, ...DENKO1_QUESTIONS, ...CIVIL2_QUESTIONS, ...CIVIL1_QUESTIONS, ...KANKOJI2_QUESTIONS, ...ZOEN2_QUESTIONS, ...ZOEN1_QUESTIONS, ...TSUSHIN2_QUESTIONS, ...TSUSHIN1_QUESTIONS].map((question) => [question.id, question]),
-    [...ALL_QUESTIONS, ...JKEN_SYSTEM_QUESTIONS, ...RIYOSHI_CANDIDATES, ...DENKEN3_QUESTIONS, ...DENKEN2_QUESTIONS, ...DENKEN1_QUESTIONS, ...DENKO2_QUESTIONS, ...DENKO1_QUESTIONS, ...CIVIL2_QUESTIONS, ...CIVIL1_QUESTIONS, ...KANKOJI2_QUESTIONS, ...ZOEN2_QUESTIONS, ...ZOEN1_QUESTIONS, ...TSUSHIN2_QUESTIONS, ...TSUSHIN1_QUESTIONS].map((question) => [question.id, question]),
-    [...ALL_QUESTIONS, ...SHINRISHI_CANDIDATES, ...RIYOSHI_CANDIDATES, ...DENKEN3_QUESTIONS, ...DENKEN2_QUESTIONS, ...DENKEN1_QUESTIONS, ...DENKO2_QUESTIONS, ...DENKO1_QUESTIONS, ...CIVIL2_QUESTIONS, ...CIVIL1_QUESTIONS, ...KANKOJI2_QUESTIONS, ...ZOEN2_QUESTIONS, ...ZOEN1_QUESTIONS, ...TSUSHIN2_QUESTIONS, ...TSUSHIN1_QUESTIONS].map((question) => [question.id, question]),
-    [...KHK_REITO_3_CANDIDATES, ...KHK_REITO_2_CANDIDATES, ...KHK_REITO_1_CANDIDATES, ...ALL_QUESTIONS, ...RIYOSHI_CANDIDATES, ...DENKEN3_QUESTIONS, ...DENKEN2_QUESTIONS, ...DENKEN1_QUESTIONS, ...DENKO2_QUESTIONS, ...DENKO1_QUESTIONS, ...CIVIL2_QUESTIONS, ...CIVIL1_QUESTIONS, ...KANKOJI2_QUESTIONS, ...ZOEN2_QUESTIONS, ...ZOEN1_QUESTIONS, ...TSUSHIN2_QUESTIONS, ...TSUSHIN1_QUESTIONS].map((question) => [question.id, question]),
-    [...ALL_QUESTIONS, ...SEKOU_KENCHIKU2_QUESTIONS, ...RIYOSHI_CANDIDATES, ...DENKEN3_QUESTIONS, ...DENKEN2_QUESTIONS, ...DENKEN1_QUESTIONS, ...DENKO2_QUESTIONS, ...DENKO1_QUESTIONS, ...CIVIL2_QUESTIONS, ...CIVIL1_QUESTIONS, ...KANKOJI2_QUESTIONS, ...ZOEN2_QUESTIONS, ...ZOEN1_QUESTIONS, ...TSUSHIN2_QUESTIONS, ...TSUSHIN1_QUESTIONS].map((question) => [question.id, question]),
-    [...ALL_QUESTIONS, ...RIYOSHI_CANDIDATES, ...DENKEN3_QUESTIONS, ...DENKEN2_QUESTIONS, ...DENKEN1_QUESTIONS, ...DENKO2_QUESTIONS, ...DENKO1_QUESTIONS, ...CIVIL2_QUESTIONS, ...CIVIL1_QUESTIONS, ...KANKOJI2_QUESTIONS, ...DENKI2_QUESTIONS, ...ZOEN2_QUESTIONS, ...ZOEN1_QUESTIONS, ...TSUSHIN2_QUESTIONS, ...TSUSHIN1_QUESTIONS].map((question) => [question.id, question]),
-    [...ALL_QUESTIONS, ...YAMAGUCHI_FUGU_QUESTIONS, ...YAMAGUCHI_SEIKA_QUESTIONS, ...YAMAGUCHI_CHORI_QUESTIONS, ...RIYOSHI_CANDIDATES, ...DENKEN3_QUESTIONS, ...DENKEN2_QUESTIONS, ...DENKEN1_QUESTIONS, ...DENKO2_QUESTIONS, ...DENKO1_QUESTIONS, ...CIVIL2_QUESTIONS, ...CIVIL1_QUESTIONS, ...KANKOJI2_QUESTIONS, ...ZOEN2_QUESTIONS, ...ZOEN1_QUESTIONS, ...TSUSHIN2_QUESTIONS, ...TSUSHIN1_QUESTIONS].map((question) => [question.id, question]),
-    [...ALL_QUESTIONS, ...KEIRYOSHI_CANDIDATES, ...RIYOSHI_CANDIDATES, ...DENKEN3_QUESTIONS, ...DENKEN2_QUESTIONS, ...DENKEN1_QUESTIONS, ...DENKO2_QUESTIONS, ...DENKO1_QUESTIONS, ...CIVIL2_QUESTIONS, ...CIVIL1_QUESTIONS, ...KANKOJI2_QUESTIONS, ...ZOEN2_QUESTIONS, ...ZOEN1_QUESTIONS, ...TSUSHIN2_QUESTIONS, ...TSUSHIN1_QUESTIONS].map((question) => [question.id, question]),
-    [...ALL_QUESTIONS, ...KENKI1_QUESTIONS, ...KENKI2_QUESTIONS, ...RIYOSHI_CANDIDATES, ...DENKEN3_QUESTIONS, ...DENKEN2_QUESTIONS, ...DENKEN1_QUESTIONS, ...DENKO2_QUESTIONS, ...DENKO1_QUESTIONS, ...CIVIL2_QUESTIONS, ...CIVIL1_QUESTIONS, ...KANKOJI2_QUESTIONS, ...ZOEN2_QUESTIONS, ...ZOEN1_QUESTIONS, ...TSUSHIN2_QUESTIONS, ...TSUSHIN1_QUESTIONS].map((question) => [question.id, question]),
-    [...GYOSEI_QUESTIONS, ...ALL_QUESTIONS, ...RIYOSHI_CANDIDATES, ...DENKEN3_QUESTIONS, ...DENKEN2_QUESTIONS, ...DENKEN1_QUESTIONS, ...DENKO2_QUESTIONS, ...DENKO1_QUESTIONS, ...CIVIL2_QUESTIONS, ...CIVIL1_QUESTIONS, ...KANKOJI2_QUESTIONS, ...ZOEN2_QUESTIONS, ...ZOEN1_QUESTIONS, ...TSUSHIN2_QUESTIONS, ...TSUSHIN1_QUESTIONS].map((question) => [question.id, question]),
-    [...ALL_QUESTIONS, ...SHIHOSHOSHI_QUESTIONS, ...RIYOSHI_CANDIDATES, ...DENKEN3_QUESTIONS, ...DENKEN2_QUESTIONS, ...DENKEN1_QUESTIONS, ...DENKO2_QUESTIONS, ...DENKO1_QUESTIONS, ...CIVIL2_QUESTIONS, ...CIVIL1_QUESTIONS, ...KANKOJI2_QUESTIONS, ...ZOEN2_QUESTIONS, ...ZOEN1_QUESTIONS, ...TSUSHIN2_QUESTIONS, ...TSUSHIN1_QUESTIONS].map((question) => [question.id, question]),
+    [...ALL_QUESTIONS, ...RIYOSHI_CANDIDATES, ...DENKEN3_QUESTIONS, ...DENKEN2_QUESTIONS, ...DENKEN1_QUESTIONS, ...DENKO2_QUESTIONS, ...DENKO1_QUESTIONS, ...CIVIL2_QUESTIONS, ...CIVIL1_QUESTIONS, ...KANKOJI2_QUESTIONS, ...ZOEN2_QUESTIONS, ...ZOEN1_QUESTIONS, ...TSUSHIN2_QUESTIONS, ...TSUSHIN1_QUESTIONS].map((question) => [question.id, question]),
   ).values(),
 ];
 
@@ -120,18 +69,8 @@ function parseCliOptions(): CliOptions {
 
 const QuestionSchema = z.object({
   id: z.string().min(1),
-  exam: z.enum(["kisho", "kenchiku-setsubishi", "chizai2", "ip", "sg", "fe", "ap", "st", "sa", "pm", "nw", "db", "es", "sc", "sm", "au", "fp1", "fp2", "fp3", "denken3", "denken2", "denken1", "denko2", "denko1", "takken", "civil2", "civil1", "kankoji2", "zoen2", "zoen1", "tsushin2", "tsushin1", "kaigo", "shakai", "seishin", "tohan", "kanri", "eisei1", "eisei2", "soukan", "hoikushi", "mankan", "kashikin", "sharoushi", "kangoshi", "yakuzaishi", "ahaki-anma", "ahaki-hari-kyu", "hokenshi", "josanshi", "rigaku-ryohoshi", "sagyo-ryohoshi", "shino-kunrenshi", "rinsho-kensagishi", "shinryo-hoshasengishi", "rinsho-kogishi", "riyoshi", "chusho-kigyo-shindanshi", "chosashi", "shika-ishi", "judo-seifukushi", "riku-toku-kokunai", "kai-toku2", "kai-toku3", "koku-toku", "land-special1", "riku-tech1", "maritime4", "aviation-comm", "amateur1", "maritime-special1", "riku-tech2", "amateur2", "maritime-radar", "maritime3", "maritime2", "maritime1", "general3", "general2", "general1", "land-special2", "land-special3", "kanteishi", "kaikeishi", "gas-kou", "gas-otsu", "gas-hei", "jidosha-1-small-written", "jidosha-2-gasoline", "jidosha-2-diesel", "jidosha-2-chassis", "jidosha-2-motorcycle", "jidosha-3-chassis", "jidosha-3-gasoline", "jidosha-3-diesel", "jidosha-3-motorcycle", "jidosha-body", "jidosha-electrical", "biyoshi", "kikenbutsu-otsu1", "kikenbutsu-otsu2", "kikenbutsu-otsu6", "jokaso", "iji-shuzen", "denki1", "shuwa", "shohi-sodan", "reform-mgr", "jken-katsuyo1", "jken-katsuyo2", "jken-katsuyo3", "shinrishi", "sekou-kenchiku2", "denki2", "gyosei", "shihoshoshi"]),
-  session: z.enum(["am", "am1", "am2", "pm", "pm1", "pm2", "kamoku-a", "kamoku-b", "gakka", "rousai", "koyou", "kenpo", "kounen", "kokunen", "ippan", "sentaku", "required", "theory", "practical", "riron", "denryoku", "kikai", "houki", "mondai-a", "mondai-b", "mondai-c", "mondai-d", "kyotsu", "senmon", "hoiku-genri", "kyoiku-genri", "shakaiteki-yougo", "kodomo-katei-fukushi", "shakai-fukushi", "hoiku-shinrigaku", "kodomo-hoken", "kodomo-shokueiyou", "hoiku-jisshu-riron", "keizai", "zaimu", "kigyo", "unei", "keiei-houmu", "keiei-joho", "chusho-seisaku", "kogaku", "kiso", "kogaku-a", "kogaku-b", "hoki", "tiri", "gyosei", "kanri", "kansa", "gas-law", "gas-basic", "gas-technology"]),
-  exam: z.enum(["ip", "sg", "fe", "ap", "st", "sa", "pm", "nw", "db", "es", "sc", "sm", "au", "fp1", "fp2", "fp3", "denken3", "denken2", "denken1", "denko2", "denko1", "takken", "civil2", "civil1", "kankoji2", "zoen2", "zoen1", "tsushin2", "tsushin1", "kaigo", "shakai", "seishin", "tohan", "kanri", "eisei1", "eisei2", "soukan", "hoikushi", "mankan", "kashikin", "sharoushi", "kangoshi", "yakuzaishi", "ahaki-anma", "ahaki-hari-kyu", "hokenshi", "josanshi", "rigaku-ryohoshi", "sagyo-ryohoshi", "shino-kunrenshi", "rinsho-kensagishi", "shinryo-hoshasengishi", "rinsho-kogishi", "riyoshi", "chusho-kigyo-shindanshi", "chosashi", "shika-ishi", "judo-seifukushi", "riku-toku-kokunai", "kai-toku2", "kai-toku3", "koku-toku", "land-special1", "riku-tech1", "maritime4", "aviation-comm", "amateur1", "maritime-special1", "riku-tech2", "amateur2", "maritime-radar", "maritime3", "maritime2", "maritime1", "general3", "general2", "general1", "land-special2", "land-special3", "kanteishi", "kaikeishi", "gas-kou", "gas-otsu", "gas-hei", "jken-system"]),
-  session: z.enum(["jken-basic", "jken-programming", "jken-design", "am", "am1", "am2", "pm", "pm1", "pm2", "kamoku-a", "kamoku-b", "gakka", "rousai", "koyou", "kenpo", "kounen", "kokunen", "ippan", "sentaku", "required", "theory", "practical", "riron", "denryoku", "kikai", "houki", "mondai-a", "mondai-b", "mondai-c", "mondai-d", "kyotsu", "senmon", "hoiku-genri", "kyoiku-genri", "shakaiteki-yougo", "kodomo-katei-fukushi", "shakai-fukushi", "hoiku-shinrigaku", "kodomo-hoken", "kodomo-shokueiyou", "hoiku-jisshu-riron", "keizai", "zaimu", "kigyo", "unei", "keiei-houmu", "keiei-joho", "chusho-seisaku", "kogaku", "kiso", "kogaku-a", "kogaku-b", "hoki", "tiri", "gyosei", "kanri", "kansa", "gas-law", "gas-basic", "gas-technology"]),
-  exam: z.enum(["ip", "sg", "fe", "ap", "st", "sa", "pm", "nw", "db", "es", "sc", "sm", "au", "fp1", "fp2", "fp3", "denken3", "denken2", "denken1", "denko2", "denko1", "takken", "civil2", "civil1", "kankoji2", "zoen2", "zoen1", "tsushin2", "tsushin1", "kaigo", "shakai", "seishin", "tohan", "kanri", "eisei1", "eisei2", "soukan", "hoikushi", "mankan", "kashikin", "sharoushi", "kangoshi", "yakuzaishi", "ahaki-anma", "ahaki-hari-kyu", "hokenshi", "josanshi", "rigaku-ryohoshi", "sagyo-ryohoshi", "shino-kunrenshi", "rinsho-kensagishi", "shinryo-hoshasengishi", "rinsho-kogishi", "riyoshi", "chusho-kigyo-shindanshi", "chosashi", "shika-ishi", "judo-seifukushi", "riku-toku-kokunai", "kai-toku2", "kai-toku3", "koku-toku", "land-special1", "riku-tech1", "maritime4", "aviation-comm", "amateur1", "maritime-special1", "riku-tech2", "amateur2", "maritime-radar", "maritime3", "maritime2", "maritime1", "general3", "general2", "general1", "land-special2", "land-special3", "kanteishi", "kaikeishi", "gas-kou", "gas-otsu", "gas-hei", "khk-reito-1", "khk-reito-2", "khk-reito-3"]),
-  session: z.enum(["hoan", "am", "am1", "am2", "pm", "pm1", "pm2", "kamoku-a", "kamoku-b", "gakka", "rousai", "koyou", "kenpo", "kounen", "kokunen", "ippan", "sentaku", "required", "theory", "practical", "riron", "denryoku", "kikai", "houki", "mondai-a", "mondai-b", "mondai-c", "mondai-d", "kyotsu", "senmon", "hoiku-genri", "kyoiku-genri", "shakaiteki-yougo", "kodomo-katei-fukushi", "shakai-fukushi", "hoiku-shinrigaku", "kodomo-hoken", "kodomo-shokueiyou", "hoiku-jisshu-riron", "keizai", "zaimu", "kigyo", "unei", "keiei-houmu", "keiei-joho", "chusho-seisaku", "kogaku", "kiso", "kogaku-a", "kogaku-b", "hoki", "tiri", "gyosei", "kanri", "kansa", "gas-law", "gas-basic", "gas-technology"]),
-  exam: z.enum(["yamaguchi-fugu", "yamaguchi-seika", "ip", "sg", "fe", "ap", "st", "sa", "pm", "nw", "db", "es", "sc", "sm", "au", "fp1", "fp2", "fp3", "denken3", "denken2", "denken1", "denko2", "denko1", "takken", "civil2", "civil1", "kankoji2", "zoen2", "zoen1", "tsushin2", "tsushin1", "kaigo", "shakai", "seishin", "tohan", "kanri", "eisei1", "eisei2", "soukan", "hoikushi", "mankan", "kashikin", "sharoushi", "kangoshi", "yakuzaishi", "ahaki-anma", "ahaki-hari-kyu", "hokenshi", "josanshi", "rigaku-ryohoshi", "sagyo-ryohoshi", "shino-kunrenshi", "rinsho-kensagishi", "shinryo-hoshasengishi", "rinsho-kogishi", "riyoshi", "chusho-kigyo-shindanshi", "chosashi", "shika-ishi", "judo-seifukushi", "riku-toku-kokunai", "kai-toku2", "kai-toku3", "koku-toku", "land-special1", "riku-tech1", "maritime4", "aviation-comm", "amateur1", "maritime-special1", "riku-tech2", "amateur2", "maritime-radar", "maritime3", "maritime2", "maritime1", "general3", "general2", "general1", "land-special2", "land-special3", "kanteishi", "kaikeishi", "gas-kou", "gas-otsu", "gas-hei", "yamaguchi-chori"]),
-  session: z.enum(["wagashi", "yogashi", "seipan", "am", "am1", "am2", "pm", "pm1", "pm2", "kamoku-a", "kamoku-b", "gakka", "rousai", "koyou", "kenpo", "kounen", "kokunen", "ippan", "sentaku", "required", "theory", "practical", "riron", "denryoku", "kikai", "houki", "mondai-a", "mondai-b", "mondai-c", "mondai-d", "kyotsu", "senmon", "hoiku-genri", "kyoiku-genri", "shakaiteki-yougo", "kodomo-katei-fukushi", "shakai-fukushi", "hoiku-shinrigaku", "kodomo-hoken", "kodomo-shokueiyou", "hoiku-jisshu-riron", "keizai", "zaimu", "kigyo", "unei", "keiei-houmu", "keiei-joho", "chusho-seisaku", "kogaku", "kiso", "kogaku-a", "kogaku-b", "hoki", "tiri", "gyosei", "kanri", "kansa", "gas-law", "gas-basic", "gas-technology"]),
-  exam: z.enum(["ip", "sg", "fe", "ap", "st", "sa", "pm", "nw", "db", "es", "sc", "sm", "au", "fp1", "fp2", "fp3", "denken3", "denken2", "denken1", "denko2", "denko1", "takken", "civil2", "civil1", "kankoji2", "zoen2", "zoen1", "tsushin2", "tsushin1", "kaigo", "shakai", "seishin", "tohan", "kanri", "eisei1", "eisei2", "soukan", "hoikushi", "mankan", "kashikin", "sharoushi", "kangoshi", "yakuzaishi", "ahaki-anma", "ahaki-hari-kyu", "hokenshi", "josanshi", "rigaku-ryohoshi", "sagyo-ryohoshi", "shino-kunrenshi", "rinsho-kensagishi", "shinryo-hoshasengishi", "rinsho-kogishi", "riyoshi", "chusho-kigyo-shindanshi", "chosashi", "shika-ishi", "judo-seifukushi", "riku-toku-kokunai", "kai-toku2", "kai-toku3", "koku-toku", "land-special1", "riku-tech1", "maritime4", "aviation-comm", "amateur1", "maritime-special1", "riku-tech2", "amateur2", "maritime-radar", "maritime3", "maritime2", "maritime1", "general3", "general2", "general1", "land-special2", "land-special3", "kanteishi", "kaikeishi", "gas-kou", "gas-otsu", "gas-hei", "keiryoshi", "keiryoshi-nodo", "keiryoshi-soon"]),
-  session: z.enum(["am", "am1", "am2", "pm", "pm1", "pm2", "kamoku-a", "kamoku-b", "gakka", "rousai", "koyou", "kenpo", "kounen", "kokunen", "ippan", "sentaku", "required", "theory", "practical", "riron", "denryoku", "kikai", "houki", "mondai-a", "mondai-b", "mondai-c", "mondai-d", "kyotsu", "senmon", "hoiku-genri", "kyoiku-genri", "shakaiteki-yougo", "kodomo-katei-fukushi", "shakai-fukushi", "hoiku-shinrigaku", "kodomo-hoken", "kodomo-shokueiyou", "hoiku-jisshu-riron", "keizai", "zaimu", "kigyo", "unei", "keiei-houmu", "keiei-joho", "chusho-seisaku", "kogaku", "kiso", "kogaku-a", "kogaku-b", "hoki", "tiri", "gyosei", "kanri", "kansa", "gas-law", "gas-basic", "gas-technology", "measurement-basic", "measurement-mass", "measurement-chemistry", "measurement-concentration", "measurement-physics", "measurement-sound", "measurement-management"]),
-  exam: z.enum(["kenki2", "kenki1", "ip", "sg", "fe", "ap", "st", "sa", "pm", "nw", "db", "es", "sc", "sm", "au", "fp1", "fp2", "fp3", "denken3", "denken2", "denken1", "denko2", "denko1", "takken", "civil2", "civil1", "kankoji2", "zoen2", "zoen1", "tsushin2", "tsushin1", "kaigo", "shakai", "seishin", "tohan", "kanri", "eisei1", "eisei2", "soukan", "hoikushi", "mankan", "kashikin", "sharoushi", "kangoshi", "yakuzaishi", "ahaki-anma", "ahaki-hari-kyu", "hokenshi", "josanshi", "rigaku-ryohoshi", "sagyo-ryohoshi", "shino-kunrenshi", "rinsho-kensagishi", "shinryo-hoshasengishi", "rinsho-kogishi", "riyoshi", "chusho-kigyo-shindanshi", "chosashi", "shika-ishi", "judo-seifukushi", "riku-toku-kokunai", "kai-toku2", "kai-toku3", "koku-toku", "land-special1", "riku-tech1", "maritime4", "aviation-comm", "amateur1", "maritime-special1", "riku-tech2", "amateur2", "maritime-radar", "maritime3", "maritime2", "maritime1", "general3", "general2", "general1", "land-special2", "land-special3", "kanteishi", "kaikeishi", "gas-kou", "gas-otsu", "gas-hei"]),
-  session: z.enum(["kenki-type1", "kenki-type2", "kenki-type3", "kenki-type4", "kenki-type5", "kenki-type6", "am", "am1", "am2", "pm", "pm1", "pm2", "kamoku-a", "kamoku-b", "gakka", "rousai", "koyou", "kenpo", "kounen", "kokunen", "ippan", "sentaku", "required", "theory", "practical", "riron", "denryoku", "kikai", "houki", "mondai-a", "mondai-b", "mondai-c", "mondai-d", "kyotsu", "senmon", "hoiku-genri", "kyoiku-genri", "shakaiteki-yougo", "kodomo-katei-fukushi", "shakai-fukushi", "hoiku-shinrigaku", "kodomo-hoken", "kodomo-shokueiyou", "hoiku-jisshu-riron", "keizai", "zaimu", "kigyo", "unei", "keiei-houmu", "keiei-joho", "chusho-seisaku", "kogaku", "kiso", "kogaku-a", "kogaku-b", "hoki", "tiri", "gyosei", "kanri", "kansa", "gas-law", "gas-basic", "gas-technology"]),
+  exam: z.enum(Object.keys(EXAM_CONFIGS) as [string, ...string[]]),
+  session: z.enum([...PRACTICE_SESSIONS] as [string, ...string[]]),
   year: z.number().int().min(2000).max(2100),
   season: z.enum(["spring", "autumn", "cbt", "published", "first", "second", "early", "may", "september", "january", "october", "late", "annual", "july", "primary", "kansai", "february", "june", "august", "march", "round1", "round2"]),
   qNumber: z.number().int().min(1),
@@ -139,7 +78,7 @@ const QuestionSchema = z.object({
   type: z.enum(["multiple-choice", "ordering", "numeric", "descriptive", "essay", "native-b"]),
   nativeB: NativeBDataSchema.optional(),
   numericAnswer: z.discriminatedUnion("format", [
-    z.object({ format: z.literal("scientific"), precision: z.literal(2), unit: z.string().trim().min(1), fixedSign: z.literal("negative").optional() }),
+    z.object({ format: z.literal("scientific"), precision: z.literal(2), unit: z.string().trim().min(1) }),
     z.object({ format: z.literal("integer"), unit: z.string().trim().min(1), fixedSign: z.literal("negative").optional() }),
     z.object({ format: z.literal("decimal"), precision: z.union([z.literal(1), z.literal(2)]), unit: z.string().trim().min(1), fixedSign: z.literal("negative").optional() }),
   ]).optional(),
@@ -182,7 +121,7 @@ const QuestionSchema = z.object({
   sourceAttribution: z.string().min(1).optional(),
   lawReferenceDate: z.string().regex(/^\d{4}-\d{2}-\d{2}$/).optional(),
   officialReferenceUrls: z.array(z.string().url()).optional(),
-  license: z.enum(["JMBSC-permission-required", "JAEIC-permission-required", "IP-EDU-authorized-reuse", "IPA-public", "JAFP-reuse-with-attribution", "KINZAI-reuse-with-attribution", "ECEE-educational-reuse", "RETIO-reuse", "JCTC-authorized-reuse", "SSSC-reuse", "KANSAI-UNION-reuse", "KANRIKYO-educational-reuse", "EXAM-OR-JP-attributed", "IPEJ-attributed", "HOYOKYO-attributed", "MANKAN-attributed", "JFSA-attributed", "SHAROSI-attributed", "MHLW-attributed", "AHK-attributed", "JAAME-attributed", "RBC-attributed", "JF-CMCA-attributed", "JCTC-attributed", "MOJ-attributed", "ZAIJUSEI-attributed", "NICHIMU-educational-reuse", "NICHIMU-past-question-study-use", "MLIT-PDL-1.0", "CPAAOB-PDL-1.0", "JIA-attributed", "JASPA-owner-authorized", "SHOUBO-owner-authorized", "JECES-owner-cleared", "FCIP-owner-confirmed", "JYOUBUN-owner-authorized", "KOKUSEN-owner-authorized", "CHORD-owner-authorized", "SGEC-owner-authorized", "JKEN-owner-cleared", "JCCPP-attributed", "KHK-owner-decision", "FCIP-owner-authorized", "YAMAGUCHI-attributed", "METI-attributed", "JCM-authorized-reuse", "GYOSEI-owner-cleared"]),
+  license: z.enum(["CHINTAI-owner-authorized", "KYUSUI-owner-authorized", "JAHMEC-owner-authorized", "NUSTEC-owner-authorized", "ECCJ-owner-approved", "MLIT-PDL-1.0", "CPAAOB-PDL-1.0", "IPA-public", "JAFP-reuse-with-attribution", "KINZAI-reuse-with-attribution", "ECEE-educational-reuse", "RETIO-reuse", "JCTC-authorized-reuse", "SSSC-reuse", "KANSAI-UNION-reuse", "KANRIKYO-educational-reuse", "EXAM-OR-JP-attributed", "IPEJ-attributed", "HOYOKYO-attributed", "MANKAN-attributed", "JFSA-attributed", "SHAROSI-attributed", "MHLW-attributed", "AHK-attributed", "JAAME-attributed", "RBC-attributed", "JF-CMCA-attributed", "JCTC-attributed", "MOJ-attributed", "ZAIJUSEI-attributed", "NICHIMU-educational-reuse", "NICHIMU-past-question-study-use", "JIA-attributed", "JMBSC-permission-required", "JAEIC-permission-required", "IP-EDU-authorized-reuse", "JASPA-owner-authorized", "SHOUBO-owner-authorized", "JECES-owner-cleared", "FCIP-owner-confirmed", "JYOUBUN-owner-authorized", "KOKUSEN-owner-authorized", "CHORD-owner-authorized", "SGEC-owner-authorized", "JKEN-owner-cleared", "JCCPP-attributed", "KHK-owner-decision", "FCIP-owner-authorized", "YAMAGUCHI-attributed", "METI-attributed", "JCM-authorized-reuse", "GYOSEI-owner-cleared"]),
   isCalculation: z.boolean().optional(),
 });
 
@@ -391,7 +330,7 @@ function validate(questions: Question[]): ValidationResult {
       }
 
       if (q.license !== "IPA-public") {
-        const officialSummary = q.explanationCoverage === "official-summary" && q.exam === "denken3";
+        const officialSummary = q.exam === "denken3" && q.explanationCoverage === "official-summary";
         if ((!q.choiceExplanations && !officialSummary) || !q.sourceAnswerUrl || !q.sourceAttribution) {
           fail++;
           byExam[examKey].fail++;
@@ -538,10 +477,6 @@ function reportFixes(questions: Question[]): void {
 // ─── Main ────────────────────────────────────────────────────────────────────
 
 const opts = parseCliOptions();
-if (opts.exams.length === 0 || opts.exams.includes("chintai")) {
-  console.log(`Validated chintai unpublished staging: ${validateChintaiStaging()} questions.`);
-}
-validateKhkKikai(opts.exams);
 const questions = opts.exams.length > 0
   ? VALIDATION_QUESTIONS.filter((q) => opts.exams.includes(q.exam))
   : VALIDATION_QUESTIONS;

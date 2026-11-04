@@ -18,6 +18,9 @@ export function hasUnrenderableContent(q: Question): boolean {
   // 貸金業務取扱主任者 第19回問48は、損益計算書の科目・金額を全文文字起こしして
   // ステムに含めている（原本は表組みだが数値の欠落はない）。
   if (q.exam === "kashikin" && q.id === "kashikin-2024-annual-gakka-q48") return false;
+  // These accepted originals preserve every table row in the visible transcript.
+  if (q.id === "gijutsushi1-kikai-2024-basis-I-1-5" && q.question.includes("原料A［kg］：1／2／12") && q.question.includes("利益［万円/kg］：300／200／適用なし")) return false;
+  if (q.exam === "jken-system" && /^jken-system-260913-js01-q[24]-\d+$/.test(q.id) && q.question.includes("```text")) return false;
   if (q.hasImage) return true;
   return /次の表|以下の表|下の表|表のように|表に示す|表のとおり|次の図|以下の図|下の図|図のように|図に示す|図中の/.test(q.question);
 }

@@ -29,6 +29,7 @@ export function sessionLabel(session: string, exam?: ExamCode): string {
   if (parsed && (exam === "kenki1" || exam === "kenki2" || exam === "kanteishi" || exam === "kaikeishi")) return practiceSessionLabel(parsed, exam);
   if (parsed && ["gyosei", "kanri", "kansa", "rousai", "koyou", "kenpo", "kounen", "kokunen", "ippan", "sentaku", "required", "theory", "practical", "kiso", "kogaku-a", "kogaku-b", "hoki", "tiri"].includes(parsed)) return practiceSessionLabel(parsed);
   const map: Record<string, string> = {
+    gakushiki: "??",
     hoan: "保安管理技術",
     am: "午前",
     am1: "午前I",
@@ -144,7 +145,7 @@ export function buildQuestionJsonLd({
     ? { "@type": "Organization", name: "公益財団法人建築技術教育普及センター", url: "https://www.jaeic.or.jp/" }
     : q.exam === "chizai2"
     ? { "@type": "Organization", name: "知的財産教育協会", url: "https://www.kentei-info-ip-edu.org/" }
-  const questionAuthor = q.license === "SGEC-owner-authorized"
+    : q.license === "SGEC-owner-authorized"
     ? { "@type": "Organization", name: "一般財団法人職業教育・キャリア教育財団", url: "https://www.jken.sgec.or.jp/" }
     : q.exam === "kanteishi"
     ? { "@type": "GovernmentOrganization", name: q.sourcePresentation?.originalAuthor ?? "国土交通省", url: "https://www.mlit.go.jp/" }
@@ -180,8 +181,7 @@ export function buildQuestionJsonLd({
           name: "一般財団法人 不動産適正取引推進機構",
           url: "https://www.retio.or.jp/",
         }
-    : q.exam === "denki1"
-    : q.exam === "denki2"
+    : q.exam === "denki1" || q.exam === "denki2"
       ? { "@type": "Organization", name: "一般財団法人建設業振興基金", url: "https://www.fcip-shiken.jp/" }
     : q.exam === "civil2" || q.exam === "kankoji2" || q.exam === "civil1" || q.exam === "zoen2" || q.exam === "zoen1" || q.exam === "tsushin2" || q.exam === "tsushin1"
       ? {
@@ -273,7 +273,7 @@ export function buildQuestionJsonLd({
           url: "https://www.ipa.go.jp/",
         };
   const licenseUrl = q.exam === "chizai2" || q.exam === "kisho" || q.exam === "kenchiku-setsubishi"
-  const licenseUrl = q.license === "SGEC-owner-authorized"
+    || q.license === "SGEC-owner-authorized"
     ? undefined
     : (q.exam === "kanteishi" || q.exam === "kaikeishi")
     ? q.sourcePresentation?.licenseUrl
@@ -295,9 +295,7 @@ export function buildQuestionJsonLd({
     ? "https://www.jafp.or.jp/exam/mohan/files/exam_riyou.pdf"
     : q.exam === "gas-kou" || q.exam === "gas-otsu" || q.exam === "gas-hei"
       ? undefined
-    : q.exam === "denki1" || q.exam === "takken" || q.exam === "civil1" || q.exam === "civil2" || q.exam === "kankoji2" || q.exam === "zoen2" || q.exam === "zoen1" || q.exam === "tsushin2" || q.exam === "tsushin1" || q.exam === "kaigo" || q.exam === "denken2" || q.exam === "denken1" || q.exam === "denko1" || q.exam === "shakai" || q.exam === "seishin" || q.exam === "tohan" || q.exam === "kanri" || q.exam === "soukan" || q.exam === "hoikushi" || q.exam === "mankan" || q.exam === "kashikin" || q.exam === "sharoushi" || q.exam === "chusho-kigyo-shindanshi" || q.exam === "kangoshi" || q.exam === "yakuzaishi" || q.exam === "shika-ishi" || q.exam === "judo-seifukushi"
-    : q.exam === "denki2" || q.exam === "takken" || q.exam === "civil1" || q.exam === "civil2" || q.exam === "kankoji2" || q.exam === "zoen2" || q.exam === "zoen1" || q.exam === "tsushin2" || q.exam === "tsushin1" || q.exam === "kaigo" || q.exam === "denken2" || q.exam === "denken1" || q.exam === "denko1" || q.exam === "shakai" || q.exam === "seishin" || q.exam === "tohan" || q.exam === "kanri" || q.exam === "soukan" || q.exam === "hoikushi" || q.exam === "mankan" || q.exam === "kashikin" || q.exam === "sharoushi" || q.exam === "chusho-kigyo-shindanshi" || q.exam === "kangoshi" || q.exam === "yakuzaishi" || q.exam === "shika-ishi" || q.exam === "judo-seifukushi"
-    : q.exam === "kenki1" || q.exam === "kenki2" || q.exam === "takken" || q.exam === "civil1" || q.exam === "civil2" || q.exam === "kankoji2" || q.exam === "zoen2" || q.exam === "zoen1" || q.exam === "tsushin2" || q.exam === "tsushin1" || q.exam === "kaigo" || q.exam === "denken2" || q.exam === "denken1" || q.exam === "denko1" || q.exam === "shakai" || q.exam === "seishin" || q.exam === "tohan" || q.exam === "kanri" || q.exam === "soukan" || q.exam === "hoikushi" || q.exam === "mankan" || q.exam === "kashikin" || q.exam === "sharoushi" || q.exam === "chusho-kigyo-shindanshi" || q.exam === "kangoshi" || q.exam === "yakuzaishi" || q.exam === "shika-ishi" || q.exam === "judo-seifukushi"
+    : q.exam === "denki1" || q.exam === "denki2" || q.exam === "kenki1" || q.exam === "kenki2" || q.exam === "takken" || q.exam === "civil1" || q.exam === "civil2" || q.exam === "kankoji2" || q.exam === "zoen2" || q.exam === "zoen1" || q.exam === "tsushin2" || q.exam === "tsushin1" || q.exam === "kaigo" || q.exam === "denken2" || q.exam === "denken1" || q.exam === "denko1" || q.exam === "shakai" || q.exam === "seishin" || q.exam === "tohan" || q.exam === "kanri" || q.exam === "soukan" || q.exam === "hoikushi" || q.exam === "mankan" || q.exam === "kashikin" || q.exam === "sharoushi" || q.exam === "chusho-kigyo-shindanshi" || q.exam === "kangoshi" || q.exam === "yakuzaishi" || q.exam === "shika-ishi" || q.exam === "judo-seifukushi"
       ? undefined
     : q.exam === "denken3" || q.exam === "denko2"
       ? "https://www.shiken.or.jp/shiken/faq/faq08/000082.html"
