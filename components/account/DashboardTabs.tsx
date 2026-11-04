@@ -42,6 +42,12 @@ function readInitialTab(): TabValue | null {
 
 export function DashboardTabs({ categoryById }: Props) {
   const [tab, setTab] = React.useState<TabValue>("overview");
+  const tabListHost = React.useRef<HTMLDivElement>(null);
+
+  React.useEffect(() => {
+    tabListHost.current?.querySelector<HTMLElement>('[role="tab"][aria-selected="true"]')
+      ?.scrollIntoView({ block: "nearest", inline: "nearest", behavior: "instant" });
+  }, [tab]);
 
   React.useEffect(() => {
     const initial = readInitialTab();
@@ -76,6 +82,7 @@ export function DashboardTabs({ categoryById }: Props) {
 
       <div className="mb-6"><SafetyLearningProgress compact /></div>
       <Tabs value={tab} onValueChange={handleChange}>
+        <div ref={tabListHost}>
         <TabsList className="mb-6 flex w-full flex-nowrap justify-start overflow-x-auto">
           {TABS.map((t) => (
             <TabsTrigger
@@ -87,6 +94,7 @@ export function DashboardTabs({ categoryById }: Props) {
             </TabsTrigger>
           ))}
         </TabsList>
+        </div>
 
         <TabsContent value="overview">
           <DashboardOverview />
