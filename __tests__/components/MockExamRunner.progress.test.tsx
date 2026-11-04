@@ -19,6 +19,22 @@ beforeEach(() => { localStorage.clear(); vi.useFakeTimers(); vi.setSystemTime(ne
 afterEach(() => { cleanup(); vi.useRealTimers(); vi.unstubAllGlobals(); });
 
 describe("mock submission → progress, review and score history", () => {
+  it("submits on the original deadline even while answers keep changing", async () => {
+    render(<MockExamRunner questions={questions} config={{ ...getMockConfig("ap"), minutes: 2 / 60 }} onFinish={vi.fn()} />);
+    for (let i = 0; i < 4; i++) {
+      await act(async () => { await vi.advanceTimersByTimeAsync(400); });
+      fireEvent.click(screen.getByRole("button", { name: i % 2 ? "イ 送信" : "ア 名前解決" }));
+    }
+    await act(async () => { await vi.advanceTimersByTimeAsync(500); });
+    expect(getMockExamHistory()).toHaveLength(1);
+    expect(getMockExamHistory()[0]).toMatchObject({ answered: 1, correct: 0, timeUsedSec: 2 });
+  });
+  it("rejects an answer after expiry before the next timer tick", () => {
+    render(<MockExamRunner questions={questions} config={{ ...getMockConfig("ap"), minutes: 1 / 60 }} onFinish={vi.fn()} />);
+    vi.setSystemTime(new Date("2026-11-04T14:00:02Z"));
+    fireEvent.click(screen.getByRole("button", { name: "ア 名前解決" }));
+    expect(getMockExamHistory()[0]).toMatchObject({ answered: 0, correct: 0 });
+  });
   it("auto-submits the latest answer once and records blanks as misses", async () => {
     render(<MockExamRunner questions={questions} config={{ ...getMockConfig("ap"), minutes: 1 / 60 }} onFinish={vi.fn()} />);
     fireEvent.click(screen.getByRole("button", { name: "ア 名前解決" }));

@@ -95,6 +95,13 @@ describe("computeRemainingSec — 模試タイマー残り秒", () => {
 });
 
 describe("saveActiveSession / loadActiveSession — 中断状態の往復", () => {
+  it("normalizes JSON null blanks back to unanswered entries on resume", () => {
+    saveActiveSession(session({ questions: [Q, { ...Q, id: "q2" }], answers: ["ア", undefined] }));
+    expect(JSON.parse(localStorage.getItem(SESSION_KEY)!).answers).toEqual(["ア", null]);
+    const restored = loadActiveSession()!;
+    expect(restored.answers).toEqual(["ア", undefined]);
+    expect(restored.answers.filter((answer) => answer !== undefined)).toHaveLength(1);
+  });
   it("保存した内容を往復で復元できる（全フィールド保持）", () => {
     const s = session({ index: 2, answers: ["ア"], totalSec: 4200 });
     saveActiveSession(s);

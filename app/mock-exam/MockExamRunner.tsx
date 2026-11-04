@@ -55,9 +55,10 @@ export function MockExamRunner({ questions, config, onFinish, resumeFrom }: Prop
   const [index, setIndex] = React.useState(resumeFrom?.index ?? 0);
   const [answers, setAnswers] = React.useState<(ChoiceKey | undefined)[]>(() =>
     resumeFrom?.answers && resumeFrom.answers.length === questions.length
-      ? [...resumeFrom.answers]
+      ? resumeFrom.answers.map((answer) => answer ?? undefined)
       : Array(questions.length).fill(undefined),
   );
+  const answersRef = React.useRef(answers);
   const [phase, setPhase] = React.useState<Phase>("running");
   const [result, setResult] = React.useState<MockExamResult | null>(null);
   const submittedRef = React.useRef(false);
@@ -110,9 +111,10 @@ export function MockExamRunner({ questions, config, onFinish, resumeFrom }: Prop
       const byCategory: Record<string, { total: number; correct: number }> = {};
       const wrongQuestionIds: string[] = [];
       const store = createHistoryStore();
+      const latestAnswers = answersRef.current;
       for (let i = 0; i < questions.length; i++) {
         const q = questions[i];
-        const ans = answers[i];
+        const ans = latestAnswers[i];
         const isCorrect = isAcceptedAnswer(q.answer, ans);
         if (isCorrect) correct++;
         else wrongQuestionIds.push(q.id);
@@ -133,7 +135,7 @@ export function MockExamRunner({ questions, config, onFinish, resumeFrom }: Prop
         recordReview(q.id, isCorrect);
       }
       recordStudyOnDate();
-      const answered = answers.filter((a) => a !== undefined).length;
+      const answered = latestAnswers.filter((a) => a !== undefined).length;
       const scorePct = Math.round((correct / questions.length) * 100);
       const passed = scorePct / 100 >= config.passThreshold;
       const r: MockExamResult = {
@@ -164,18 +166,32 @@ export function MockExamRunner({ questions, config, onFinish, resumeFrom }: Prop
       setPhase("submitted");
       void auto;
     },
-    [answers, questions, startedAt, config],
+    [questions, startedAt, config],
   );
+
+  const submitRef = React.useRef(submit);
+  React.useLayoutEffect(() => { submitRef.current = submit; }, [submit]);
+
+  const updateAnswer = (answer: ChoiceKey | undefined) => {
+    if (submittedRef.current) return;
+    if (Date.now() >= startedAt + totalSec * 1000) { submitRef.current(true); return; }
+    const next = [...answersRef.current];
+    next[index] = answer;
+    answersRef.current = next;
+    setAnswers(next);
+  };
 
   React.useEffect(() => {
     if (phase !== "running") return;
-    const id = setInterval(() => {
+    const tick = () => {
       const seconds = Math.max(0, Math.ceil((startedAt + totalSec * 1000 - Date.now()) / 1000));
       setRemaining(seconds);
-      if (seconds === 0) submit(true);
-    }, 1000);
+      if (seconds === 0) submitRef.current(true);
+    };
+    tick();
+    const id = setInterval(tick, 1000);
     return () => clearInterval(id);
-  }, [phase, startedAt, totalSec, submit]);
+  }, [phase, startedAt, totalSec]);
 
   if (phase === "submitted" && result) {
     return (
@@ -261,11 +277,7 @@ export function MockExamRunner({ questions, config, onFinish, resumeFrom }: Prop
                 return (
                   <button
                     key={k}
-                    onClick={() => {
-                      const next = [...answers];
-                      next[index] = k;
-                      setAnswers(next);
-                    }}
+                    onClick={() => updateAnswer(k)}
                     aria-pressed={selected}
                     className={`block w-full rounded-xl border px-4 py-3 text-left text-sm transition ${
                       selected
@@ -296,11 +308,7 @@ export function MockExamRunner({ questions, config, onFinish, resumeFrom }: Prop
         <div className="flex items-center gap-2">
           <Button
             variant="ghost"
-            onClick={() => {
-              const next = [...answers];
-              next[index] = undefined;
-              setAnswers(next);
-            }}
+            onClick={() => updateAnswer(undefined)}
           >
             クリア
           </Button>

@@ -43,6 +43,8 @@ test("mobile: a submitted short mock reaches scores, progress, weakness and exac
   await expect(page.getByRole("combobox", { name: "演習する問題数" })).toHaveValue("10");
   await page.getByRole("button", { name: "模試を開始する", exact: true }).click();
   await page.getByRole("button", { name: /^ア/ }).click();
+  await page.reload();
+  await page.getByRole("button", { name: "再開する", exact: true }).click();
   await page.getByRole("button", { name: "問10へ移動", exact: true }).click();
   page.once("dialog", (dialog) => dialog.accept());
   await page.getByRole("button", { name: "提出する", exact: true }).click();
