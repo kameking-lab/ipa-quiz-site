@@ -226,7 +226,7 @@ def source_questions_2025_ii(path):
 
 
 def source_questions_2025_iii(path):
-    figures={2:(225,137,543,405),3:(283,99,550,242),4:(70,120,440,550),5:(220,95,550,278),12:(142,98,430,317)}
+    figures={2:(225,137,543,405),3:(283,99,550,242),4:(70,120,440,550),5:(220,95,550,278),12:(142,98,440,317)}
     questions={}
     with pdfplumber.open(path) as pdf:
         for pn in range(2,14):
