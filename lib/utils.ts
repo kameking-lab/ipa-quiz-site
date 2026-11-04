@@ -84,6 +84,7 @@ export const EXAM_LABELS: Record<string, string> = {
   seishin: "精神保健福祉士",
   tohan: "登録販売者",
   kanri: "管理業務主任者",
+  "iji-shuzen": "マンション維持修繕技術者",
   eisei1: "第一種衛生管理者",
   jokaso: "浄化槽管理士",
   eisei2: "第二種衛生管理者",

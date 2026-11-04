@@ -40,6 +40,7 @@ export type ExamCode =
   | "seishin"
   | "tohan"
   | "kanri"
+  | "iji-shuzen"
   | "eisei1"
   | "eisei2"
   | "soukan"
