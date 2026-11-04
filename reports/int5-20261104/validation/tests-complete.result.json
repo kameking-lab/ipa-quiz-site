@@ -1,0 +1,17 @@
+{
+  "label": "tests-complete",
+  "command": [
+    "pnpm",
+    "test",
+    "--maxWorkers=4",
+    "--reporter=default",
+    "--reporter=json",
+    "--outputFile=reports/int5-20261104/validation/tests-complete.json"
+  ],
+  "sourceHead": "c017ab7b04d0751fce05b868a042c15b0eb14d2a",
+  "startedAt": "2026-11-04T10:44:30.884Z",
+  "finishedAt": "2026-11-04T10:56:36.048Z",
+  "exitCode": 0,
+  "logSha256": "7e9e9c473bbb10d79347462290088ace6da200900328e3a18e6fe93429a62a87",
+  "environment": "CI=true; inherited service credentials and mobile/feedback rollout configuration removed; no secret env files loaded"
+}

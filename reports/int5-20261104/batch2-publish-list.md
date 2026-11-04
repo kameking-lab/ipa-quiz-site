@@ -20,7 +20,7 @@
 一覧・年度・科目・検索・サイトマップは共通公開レジストリに接続する。
 
 iOSサーバーは `aaff4ba4d` を固定して統合。DB1の3本はソースに含むが、本番未適用。
-mobile有効化・mobile認証・アカウント削除を使う前に `docs/mobile-db-migrations.md` の順序でmigrationを適用する。
+`docs/mobile-db-migrations.md` に従い、DB1事前確認→3本migration適用→事後確認→iOSサーバー反映→mobile設定有効化・利用の順とする。mobile認証・アカウント削除の利用前に必ず適用する。
 `MOBILE_IAP_ENABLED` 未設定時は既存Web経路を維持する。
 
 SEC1による4 AI経路の変更を含む。CLAUDE.md §7の実AI Preview実行・STOP・実測費用増加の確認は、デプロイ禁止のため未実施。公開前の残条件として扱う。

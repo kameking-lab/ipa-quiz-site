@@ -1,0 +1,13 @@
+{
+  "label": "e2e-ci",
+  "command": [
+    "pnpm",
+    "e2e"
+  ],
+  "sourceHead": "a58a2a30b6a3eaa7d491e2acbe9be9ccc6b4f0be",
+  "startedAt": "2026-11-04T10:59:33.796Z",
+  "finishedAt": "2026-11-04T11:04:17.327Z",
+  "exitCode": 1,
+  "logSha256": "9934302240bb3f9fe9ea0e5dee7e556872f8e5ee2882030304e618d6ea99503f",
+  "environment": "CI=true; inherited service credentials and mobile/feedback rollout configuration removed; no secret env files loaded"
+}

@@ -1,0 +1,47 @@
+{
+  "status": "PASS",
+  "origin": "http://127.0.0.1:3052",
+  "results": [
+    {
+      "path": "/api/health",
+      "status": 200,
+      "securityHeaders": [
+        "strict-transport-security",
+        "x-content-type-options",
+        "x-frame-options",
+        "referrer-policy",
+        "permissions-policy",
+        "content-security-policy"
+      ]
+    },
+    {
+      "path": "/api/cron/health-check",
+      "status": 503,
+      "securityHeaders": [
+        "strict-transport-security",
+        "x-content-type-options",
+        "x-frame-options",
+        "referrer-policy",
+        "permissions-policy",
+        "content-security-policy"
+      ]
+    },
+    {
+      "path": "/api/email",
+      "status": 401,
+      "securityHeaders": [
+        "strict-transport-security",
+        "x-content-type-options",
+        "x-frame-options",
+        "referrer-policy",
+        "permissions-policy",
+        "content-security-policy"
+      ]
+    },
+    {
+      "path": "/sitemap/exams.xml",
+      "status": 200,
+      "releaseQualifications": 8
+    }
+  ]
+}

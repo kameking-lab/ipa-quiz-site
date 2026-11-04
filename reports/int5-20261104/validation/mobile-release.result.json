@@ -1,0 +1,16 @@
+{
+  "label": "mobile-release",
+  "command": [
+    "pnpm",
+    "--dir",
+    "mobile",
+    "run",
+    "build"
+  ],
+  "sourceHead": "4c8e24cf4cbfece4f7d722caba11660962ba2ab6",
+  "startedAt": "2026-11-04T11:18:14.893Z",
+  "finishedAt": "2026-11-04T11:19:50.131Z",
+  "exitCode": 0,
+  "logSha256": "6c1d7699f2c2a044a24cdee1f71ceeab855c60f855160f83720412628e32e08a",
+  "environment": "CI=true; inherited service credentials and mobile/feedback rollout configuration removed; no secret env files loaded"
+}

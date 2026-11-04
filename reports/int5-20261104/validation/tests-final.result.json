@@ -1,0 +1,17 @@
+{
+  "label": "tests-final",
+  "command": [
+    "pnpm",
+    "test",
+    "--maxWorkers=4",
+    "--reporter=default",
+    "--reporter=json",
+    "--outputFile=reports/int5-20261104/validation/tests-final.json"
+  ],
+  "sourceHead": "48c28c74b5447505dfe82aeb8ac989e4d9afb862",
+  "startedAt": "2026-11-04T10:36:42.107Z",
+  "finishedAt": "2026-11-04T10:43:31.761Z",
+  "exitCode": 1,
+  "logSha256": "0d4886f8f22915c73e9a39b95b012f05047ae7ffe12ce4362844c29341e498b5",
+  "environment": "CI=true; inherited service credentials and mobile/feedback rollout configuration removed; no secret env files loaded"
+}

@@ -1,0 +1,51 @@
+
+> kakomon-ai-ios@1.0.0 build C:\Users\kanet\20260522\wt-batch2\mobile
+> npm run catalog && npm run typecheck && vite build && node scripts/measure-bundle.mjs
+
+npm warn Unknown env config "dir". This will stop working in the next major version of npm.
+npm warn Unknown env config "node-linker". This will stop working in the next major version of npm.
+npm warn Unknown env config "npm-globalconfig". This will stop working in the next major version of npm.
+npm warn Unknown env config "overrides". This will stop working in the next major version of npm.
+npm warn Unknown env config "verify-deps-before-run". This will stop working in the next major version of npm.
+npm warn Unknown env config "_jsr-registry". This will stop working in the next major version of npm.
+
+> kakomon-ai-ios@1.0.0 catalog
+> tsx --tsconfig tsconfig.scripts.json scripts/generate-catalog.ts
+
+Catalog: 307 exams, 37509 questions; 128 web page patterns. No question bodies bundled.
+npm warn Unknown env config "dir". This will stop working in the next major version of npm.
+npm warn Unknown env config "node-linker". This will stop working in the next major version of npm.
+npm warn Unknown env config "npm-globalconfig". This will stop working in the next major version of npm.
+npm warn Unknown env config "overrides". This will stop working in the next major version of npm.
+npm warn Unknown env config "verify-deps-before-run". This will stop working in the next major version of npm.
+npm warn Unknown env config "_jsr-registry". This will stop working in the next major version of npm.
+
+> kakomon-ai-ios@1.0.0 typecheck
+> tsc --noEmit
+
+vite v8.3.5 building client environment for production...
+transforming...
+✓ 2754 modules transformed.
+rendering chunks...
+computing gzip size...
+dist/index.html                             0.83 kB │ gzip:   0.47 kB
+dist/assets/index-Dcwx3Q_d.css            182.47 kB │ gzip:  27.80 kB
+dist/assets/web-CjN75J-O.js                 0.36 kB │ gzip:   0.24 kB
+dist/assets/web-B8nxsAtk.js                 0.36 kB │ gzip:   0.24 kB
+dist/assets/web-B76ug08c.js                 0.84 kB │ gzip:   0.40 kB
+dist/assets/web-CXGdPRns.js                 1.10 kB │ gzip:   0.53 kB
+dist/assets/web-fveHb5bp.js                 1.19 kB │ gzip:   0.54 kB
+dist/assets/preload-helper-CRzLMJPS.js      1.53 kB │ gzip:   0.80 kB
+dist/assets/web-Ln-76Jf5.js                 4.43 kB │ gzip:   1.29 kB
+dist/assets/web-ChRGUgvm.js                 8.43 kB │ gzip:   2.80 kB
+dist/assets/FeedbackUnlock-B013yVk2.js      9.32 kB │ gzip:   4.09 kB
+dist/assets/MaterialReader-BhAqOsaL.js     96.94 kB │ gzip:  23.58 kB
+dist/assets/index-BV4vf_wc.js           1,530.00 kB │ gzip: 393.26 kB
+
+[plugin builtin:vite-reporter] 
+(!) Some chunks are larger than 500 kB after minification. Consider:
+- Using dynamic import() to code-split the application
+- Use build.rolldownOptions.output.codeSplitting to improve chunking: https://rolldown.rs/reference/OutputOptions.codeSplitting
+- Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.
+✓ built in 2.83s
+Release web assets: 13 files, 1837857 bytes; gzip 453769 bytes. IPA size requires Xcode/App Store measurement.

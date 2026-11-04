@@ -1,0 +1,14 @@
+{
+  "label": "browser-release",
+  "command": [
+    "node",
+    "scripts/verify-batch2-browser.mjs",
+    "http://127.0.0.1:3052"
+  ],
+  "sourceHead": "4c8e24cf4cbfece4f7d722caba11660962ba2ab6",
+  "startedAt": "2026-11-04T11:22:38.273Z",
+  "finishedAt": "2026-11-04T11:24:20.810Z",
+  "exitCode": 0,
+  "logSha256": "fd61cc8a5c97549ac2f30a9ea52b42e6587aec580e3983ccd191839c4c5e2178",
+  "environment": "CI=true; inherited service credentials and mobile/feedback rollout configuration removed; no secret env files loaded"
+}
