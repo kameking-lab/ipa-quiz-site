@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { KENCHIKUSHI2_SOURCE_MANIFEST as manifest, KENCHIKUSHI2_STAGED_QUESTIONS as staged } from "@/data/qualification-staging/kenchikushi2";
+import { KENCHIKUSHI2_SOURCE_MANIFEST as manifest, KENCHIKUSHI2_STAGED_QUESTIONS as allStaged } from "@/data/qualification-staging/kenchikushi2";
 import { readFileSync } from "node:fs";
 import { resolve } from "node:path";
 import { QUALIFICATION_CATALOG } from "@/lib/qualifications/catalog";
@@ -27,7 +27,9 @@ const officialRows = {
   ],
 } as const;
 
-describe("LK5C unpublished staging", () => {
+const staged = allStaged.filter(q => q.session === "gakka-I");
+
+describe("Kenchikushi unpublished staging", () => {
   it("pins all 400 answers to the official tables across four distinct rounds", () => {
     expect(manifest.rounds.map(r => `${r.qualificationSlug}-${r.year}`).sort()).toEqual(Object.keys(officialRows).sort());
     for (const round of manifest.rounds) {
@@ -54,9 +56,9 @@ describe("LK5C unpublished staging", () => {
   it("keeps both qualifications unpublished while recording the actual ingestion progress", () => {
     expect(manifest.publicAllowed).toBe(false);
     expect(manifest.ingestionState).toBe("in-progress");
-    expect(manifest.ingestedQuestionCount).toBe(staged.length);
-    expect(manifest.batches.reduce((sum, batch) => sum + batch.questionCount, 0)).toBe(staged.length);
-    expect(manifest.nextResume).toEqual({ qualificationSlug: "kenchikushi2", year: 2026, subject: "II", qNumber: 1 });
+    expect(manifest.ingestedQuestionCount).toBe(allStaged.length);
+    expect(manifest.batches.reduce((sum, batch) => sum + batch.questionCount, 0)).toBe(allStaged.length);
+    expect(manifest.nextResume).toEqual({ qualificationSlug: "kenchikushi2", year: 2026, subject: "III", qNumber: 1 });
     const home = getHomeDirectory().flatMap(d => [...d.featured, ...d.compact]);
     for (const slug of ["kenchikushi2", "mokuzo-kenchikushi"]) {
       const entry = QUALIFICATION_CATALOG.find(q => q.slug === slug);
@@ -65,6 +67,55 @@ describe("LK5C unpublished staging", () => {
       expect(home.some(q => q.href === `/${slug}`)).toBe(false);
       expect(ALL_QUESTIONS.some(q => String(q.exam) === slug)).toBe(false);
     }
+  });
+
+  it("pins each ingested subject to 25 complete source records and 125 explanations", () => {
+    expect(allStaged).toHaveLength(50);
+    expect(new Set(allStaged.map(q => q.id)).size).toBe(allStaged.length);
+    for (const batch of manifest.batches) {
+      const subjectIndex = ["I", "II", "III", "IV"].indexOf(batch.subject);
+      const questions = allStaged.filter(q => q.session === `gakka-${batch.subject}`);
+      expect(questions).toHaveLength(25);
+      expect(questions.map(q => q.qNumber)).toEqual(Array.from({length: 25}, (_, i) => i + 1));
+      expect(questions.map(q => q.officialAnswerNumber).join("")).toBe(officialRows["kenchikushi2-2026"][subjectIndex]);
+      for (const q of questions) {
+        expect(q.id).toBe(`kenchikushi2-2026-annual-${batch.subject}-q${q.qNumber}`);
+        expect(Object.keys(q.choices ?? {})).toEqual(["ア", "イ", "ウ", "エ", "オ"]);
+        expect(Object.keys(q.choiceExplanations ?? {})).toEqual(["ア", "イ", "ウ", "エ", "オ"]);
+        expect(q.answer).toBe("アイウエオ"[Number(q.officialAnswerNumber)-1]);
+        for (const explanation of Object.values(q.choiceExplanations ?? {})) expect(explanation.length).toBeGreaterThan(20);
+        expect(q.explanation.length).toBeGreaterThan(40);
+        expect(q.publicAllowed).toBe(false);
+        expect(q.needsReview).toBe(true);
+        expect(q.explanationCoverage).toBe("full");
+        expect(q.lawReferenceDate).toBe("2026-01-01");
+        expect(q.sourceAnswerUrl).toBe(manifest.rounds[0].answerDocument.url);
+      }
+    }
+  });
+
+  it("retains all law-subject figures, fractions and combination statements", () => {
+    const law = allStaged.filter(q => q.session === "gakka-II");
+    expect(law.filter(q => q.hasImage).map(q => q.qNumber)).toEqual([4, 14, 15, 17]);
+    for (const q of law) {
+      expect(q.sourcePage).toBeGreaterThanOrEqual(11);
+      expect(q.sourcePage).toBeLessThanOrEqual(24);
+      expect(q.sourcePrintedPage).toBe(`法規 ${q.sourcePage-1}`);
+      expect(q.officialReferenceUrls?.length).toBeGreaterThan(0);
+      if (q.hasImage) {
+        expect(q.imageUrls).toHaveLength(1);
+        expect(q.imageAltTexts?.[0].length).toBeGreaterThan(50);
+        const path = q.imageUrls?.[0] ?? "";
+        expect(path.startsWith("data/qualification-staging/kenchikushi2/assets/")).toBe(true);
+        const bytes = readFileSync(resolve(path));
+        expect(bytes.subarray(0, 8).toString("hex")).toBe("89504e470d0a1a0a");
+      }
+    }
+    expect(law[0].choices?.イ).toContain("1/2");
+    for (const fraction of ["1/8", "1/3", "1/50", "1/100"]) expect(Object.values(law[15].choices ?? {}).join("")).toContain(fraction);
+    expect(law[17].choices?.エ).toContain("1/2");
+    for (const statement of ["イ．", "ロ．", "ハ．", "ニ．"]) expect(law[1].question).toContain(statement);
+    expect(law[9].choices?.ウ).toContain("設ければならない");
   });
 
   it("contains exactly the first complete subject, with 125 explanations and pinned official answers", () => {

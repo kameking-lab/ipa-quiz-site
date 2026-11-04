@@ -52,6 +52,41 @@ def source_questions(path):
     return questions
 
 
+def source_questions_ii(path):
+    """Independent PDFMiner text comparison; figures are checked as images."""
+    figures = {12: (140, 330, 465, 663), 17: (165, 350, 445, 536),
+               18: (90, 120, 510, 380), 20: (78, 188, 530, 516)}
+    questions = {}
+    with pdfplumber.open(path) as pdf:
+        for page_number in range(11, 25):
+            rect = figures.get(page_number)
+            def retain(obj):
+                if obj.get("object_type") != "char":
+                    return True
+                if obj["top"] >= 790 or (obj["size"] <= 6 and not (obj["size"] > 5 and obj.get("text", "").isdigit())):
+                    return False
+                return not (rect and obj["x0"] < rect[2] and obj["x1"] > rect[0]
+                            and obj["top"] < rect[3] and obj["bottom"] > rect[1])
+            text = unicodedata.normalize("NFKC", pdf.pages[page_number-1].filter(retain).extract_text(use_text_flow=True))
+            parts = re.split(r"〔No\.\s*(\d+)〕", text)
+            for i in range(1, len(parts), 2):
+                number = int(parts[i])
+                fields = re.split(r"(?m)^\s*([1-5])\s*\.\s*", parts[i+1])
+                choices = {int(fields[j]): fields[j+1] for j in range(1, len(fields), 2)}
+                assert sorted(choices) == [1, 2, 3, 4, 5], number
+                # Text flow puts denominators before numerators; restored from page images.
+                if number == 1:
+                    choices[2] = re.sub(r"高さの\s*2\s*1\s*のもの", "高さの1/2のもの", choices[2])
+                if number == 16:
+                    for choice, denominator in [(1, 8), (2, 3), (3, 50), (5, 100)]:
+                        choices[choice] = re.sub(r"の\s*"+str(denominator)+r"\s*1\s*", "の1/"+str(denominator), choices[choice])
+                if number == 18:
+                    choices[4] = re.sub(r"ものの\s*2\s*1\s*だけ", "ものの1/2だけ", choices[4])
+                questions[number] = (page_number, fields[0], choices)
+    assert sorted(questions) == list(range(1, 26))
+    return questions
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("owner_directory", type=Path)
@@ -73,20 +108,21 @@ def main():
                         assert row == round_["officialAnswers"][subject], (file.name, subject)
                         counts["officialAnswers"] += len(row)
             counts["ownerPdfs"] += 1
-    originals = source_questions(args.owner_directory / "R8_2k_1_2.pdf")
-    data = (STAGING / "2026-I.ts").read_text(encoding="utf-8")
-    staged = json.loads(data.split("= ", 1)[1].rsplit(";", 1)[0])
-    assert len(staged) == 25
-    for question in staged:
-        number = question["qNumber"]
-        page, body, choices = originals[number]
-        assert page == question["sourcePage"], number
-        assert normalize(body) == normalize(question["question"]), (number, "body", body)
-        counts["questionBodies"] += 1
-        for index, key in enumerate("アイウエオ", 1):
-            assert normalize(choices[index]) == normalize(question["choices"][key]), (number, key, choices[index])
-            counts["choices"] += 1
-    print(json.dumps({"status": "PASS", "counts": counts, "normalization": "NFKC, whitespace/control removal; ruby stored separately; q1 text-layer 繁 corrected to printed 繫; q15 fraction 1/8 visually verified"}, ensure_ascii=False, indent=2))
+    for subject, extract in [("I", source_questions), ("II", source_questions_ii)]:
+        originals = extract(args.owner_directory / "R8_2k_1_2.pdf")
+        data = (STAGING / f"2026-{subject}.ts").read_text(encoding="utf-8")
+        staged = json.loads(data.split("= ", 1)[1].rsplit(";", 1)[0])
+        assert len(staged) == 25
+        for question in staged:
+            number = question["qNumber"]
+            page, body, choices = originals[number]
+            assert page == question["sourcePage"], (subject, number)
+            assert normalize(body) == normalize(question["question"]), (subject, number, "body", body)
+            counts["questionBodies"] += 1
+            for index, key in enumerate("アイウエオ", 1):
+                assert normalize(choices[index]) == normalize(question["choices"][key]), (subject, number, key, choices[index], question["choices"][key])
+                counts["choices"] += 1
+    print(json.dumps({"status": "PASS", "counts": counts, "normalization": "NFKC, whitespace/control removal; I ruby stored separately, q1 text-layer 繁 corrected to printed 繫, q15 fraction 1/8; II q1/q16/q18 fractions restored from page images; II figure labels excluded from prose and retained in source PNG crops"}, ensure_ascii=False, indent=2))
 
 
 if __name__ == "__main__":
