@@ -40,3 +40,11 @@
 全144問の本文・選択肢・正答、596肢の解説を確認しました。R7 No.57の訂正正答「3または4」も反映済みです。全11画像は公式PDFの切出し範囲の再描画と画素一致し、未公開設定も維持されています。
 
 ただし、今回のVitestは一時ディレクトリ作成エラーでテスト開始前に停止しています。判定は原本照合と静的レビューに基づきます。コード・ファイルの変更はありません。
+
+## 2026-11-04 RS1Kローカル再レビュー：PASS
+
+指定worktree・ブランチで全144問を公式PDFに再照合した。今回の独立レビュー1はR7 No.31肢3の解説誤りを追加指摘しFAIL。
+公式仕様書に基づき肢別・総合解説を修正後、`C:/Users/kanet/AppData/Roaming/npm/codex.cmd exec -m gpt-6-astra -s read-only` による別プロセスの再レビューで **PASS** を得た。
+対象HEAD：`6b6a61d48ab8f9072ed9082b523fff16dbe1aabf`。
+[今回のFAIL記録](rs1k-20261104/independent-review-1.md)・[再レビューPASS全文](rs1k-20261104/independent-review-2.md)・[原本照合と検証記録](rs1k-20261104/README.md)。
+未公開を維持。作者側関連Vitest1,190件成功、再レビュアーの型検査・144問検証も成功。レビュアー側Vitestはread-only環境のesbuild `spawn EPERM` により開始前に停止した。
