@@ -105,4 +105,14 @@ b2ac99a4b feat(staging): ingest mokuzo 2025 gakka II with all explanations
 
 外部報告: C:/Users/kanet/Documents/Codex/2026-11-02/task-2/lk5d-report.md
 
-同内容を reports/lk5d-report.md に保存する。最終レビュー結果・保存状態は末尾へ追記する。
+同内容を reports/lk5d-report.md に保存する。最終レビュー結果・保存状態は次節に記録。
+
+## 最終レビューと保存状態
+
+最終独立レビューは **PASS**（reports/lk5d-final-review.md）。開始HEAD a8d477ae5 と、その後の空白整理 ed9be00e2 を確認。15バッチのPASS証跡・コミット対応、補助参照7問の変更、400問の集計、非公開構成、原本照合の再実行、報告書2コピーのバイト一致に追加の必須修正なし。最終レビューは400問全体の再技術レビューではなく、各バッチPASS後の参照更新・管理情報・証跡・報告を対象とした。指定CLIプロセスの終了コードも0。
+
+本文収録完了コミットは28ed3ec6e、補助参照・学科III PASS保存は3709e7fdd、報告・検証結果・学科IV PASS保存はa8d477ae5、レビュー証跡の末尾空白整理はed9be00e2。この最終節・最終レビュー原文・最終原本照合JSONを最後の文書コミットに保存する。
+
+2026-11-04 20:29 JST時点で作業を完了（3時間枠内）。最終コミット後にworktree cleanと開始HEAD以降のgit diff --check PASSを確認。公開に関する禁止操作は一切実施していない。内外報告を同一内容に保存した。
+
+再開位置：未収録0問。二級2026年・学科I問1（R8_2k_1_2.pdf PDF2ページ、計画1）から人手で原本・技術根拠を確認する。全400問の needsReview=true / publicAllowed=false を維持。公開判断は未実施。
