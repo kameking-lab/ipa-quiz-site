@@ -64,7 +64,7 @@ export function buildOpenApiSpec(baseUrl: string) {
           ],
           properties: {
             format: { type: "string", enum: ["integer", "decimal"] },
-            precision: { type: "integer", enum: [1], description: "小数記入の場合は必須。小数第1位まで。整数記入では省略。" },
+            precision: { type: "integer", enum: [1, 2], description: "小数記入の場合は必須。原問指定の小数第1位または第2位まで。整数記入では省略。" },
             unit: { type: "string", minLength: 1, example: "滴/分" },
           },
         },
