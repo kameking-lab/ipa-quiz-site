@@ -294,14 +294,16 @@
     "numPendingTests": 10,
     "numTotalTestSuites": 1901,
     "numPassedTestSuites": 1901,
-    "numFailedTestSuites": 0
+    "numFailedTestSuites": 0,
+    "testFiles": 774
   },
   "e2e": {
     "passed": 371,
     "skipped": 12,
     "flaky": 1,
     "failed": 0,
-    "total": 384
+    "total": 384,
+    "flakyReason": "Existing nonexistent-URL test: initial read ECONNRESET; CI retry 1 passed in 28ms."
   },
   "funnel": {
     "passed": 7,
@@ -356,5 +358,14 @@
     "reports/int7-20261105/screenshots/home-regression/quiz-result-400x606.png": "7b711398562f19598bb8d5b058ffdd66107b1c68d290d34ca91f9bb20294a7ad",
     "reports/int7-20261105/screenshots/home-regression/returning-390.png": "ed26b2ffcc047868712fc24b38f1608339e73392c248ecf3d2711ecbebf19ea0"
   },
-  "supersededRuns": "All runs other than candidate-* are intermediate. Initial failures were corrected. test-release/test-verified/test-ready and build-ready were explicitly terminated as superseded or to reduce memory use; none are counted as PASS."
+  "supersededRuns": "All runs other than candidate-* are intermediate. Initial failures were corrected. test-release/test-verified/test-ready and build-ready were explicitly terminated as superseded or to reduce memory use; none are counted as PASS.",
+  "independentReview": {
+    "reviewedHead": "ae52186d939b6a5895208fbe6c826def08d5dba8",
+    "model": "gpt-6-astra",
+    "sandbox": "read-only",
+    "exitCode": 0,
+    "verdict": "PASS",
+    "reviewSha256": "2fc16d0e2f21b3e70d55433ce018168c295bf4140459eee7cf2b5ae5c8c97a71",
+    "reviewLogSha256": "ebd139d60c4a4aa93eea19f0b9df867b4c421f62c14a55f479b49bf3372404c8"
+  }
 }
