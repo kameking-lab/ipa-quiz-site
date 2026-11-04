@@ -5,7 +5,7 @@ import type { Question, QuizMode } from "@/lib/questions/types";
 import { QuizPlayer } from "@/components/quiz/QuizPlayer";
 import { createHistoryStore } from "@/lib/storage/history";
 import { startSession } from "@/lib/motivation/session";
-import { orderByPriority } from "@/lib/learning/spaced-repetition";
+import { getDueCards, orderByPriority } from "@/lib/learning/spaced-repetition";
 import { aggregateByCategory } from "@/lib/learning/analytics";
 import { PracticeDailyLimit, PracticeLoading } from "@/components/quiz/PracticeTransition";
 import Link from "next/link";
@@ -52,7 +52,8 @@ function deriveSessionPool(
     if (mode === "review") {
       const wrong = new Set(history.getWrongIds());
       const starred = new Set(wrongOnly ? [] : history.getStarredIds());
-      ids = ids.filter((id) => wrong.has(id) || starred.has(id));
+      const due = new Set(wrongOnly ? [] : getDueCards().map((card) => card.id));
+      ids = ids.filter((id) => wrong.has(id) || starred.has(id) || due.has(id));
     } else {
       const answered = new Set(history.getAnsweredIds());
       ids = ids.filter((id) => !answered.has(id));
@@ -128,6 +129,7 @@ export function QuizClient({
   const [access, setAccess] = React.useState<PracticeAccess | null>(null);
   const [invalidQuestionId, setInvalidQuestionId] = React.useState(false);
   const [retryCount, setRetryCount] = React.useState(0);
+  const [related, setRelated] = React.useState<{ id: string; questions: Question[] } | null>(null);
   const transitionHost = React.useRef<HTMLDivElement>(null);
   const navigating = React.useRef(false);
   // Layout timing prevents a paint at the old footer after the question collapses.
@@ -139,6 +141,25 @@ export function QuizClient({
   }, [index, current, loadError]);
   const cache = React.useRef<Map<string, Question>>(new Map());
   const initializedPool = React.useRef<string | null>(null);
+
+  // Optional content is fetched while the learner reads the current question.
+  // Activation still uses the ordinary practice access check below.
+  React.useEffect(() => {
+    if (!current) return;
+    const controller = new AbortController();
+    const id = current.id;
+    void fetch(`/api/questions/related?id=${encodeURIComponent(id)}`, { signal: controller.signal })
+      .then(async (response) => {
+        if (!response.ok) throw new Error("related-unavailable");
+        const data = await response.json() as { questions: Question[] };
+        if (controller.signal.aborted) return;
+        for (const question of data.questions) cache.current.set(question.id, question);
+        setRelated({ id, questions: data.questions });
+      }).catch(() => {
+        if (!controller.signal.aborted) setRelated({ id, questions: [] });
+      });
+    return () => controller.abort();
+  }, [current]);
 
   // Derive session pool once on mount (needs localStorage for history modes).
   React.useEffect(() => {
@@ -235,11 +256,24 @@ export function QuizClient({
     if (navigating.current) return;
     navigating.current = true;
     transitionHost.current?.scrollIntoView({ block: "start", behavior: "instant" });
-    setCurrent(null);
+    const nextId = sessionIds?.[index + 1];
+    setCurrent(!billingGateEnabled || mode === "review" ? cache.current.get(nextId ?? "") ?? null : null);
     setAccess(null);
     setLoadError(false);
     setIndex((i) => i + 1);
-  }, []);
+  }, [sessionIds, index, billingGateEnabled, mode]);
+
+  const handleRelated = (question: Question) => {
+    if (navigating.current || !sessionIds || !current || related?.id !== current.id ||
+        !related.questions.some((item) => item.id === question.id)) return;
+    navigating.current = true;
+    setSessionIds([...sessionIds.slice(0, index + 1), question.id,
+      ...sessionIds.slice(index + 1).filter((id) => id !== question.id)]);
+    setCurrent(!billingGateEnabled || mode === "review" ? cache.current.get(question.id) ?? null : null);
+    setAccess(null);
+    setLoadError(false);
+    setIndex(index + 1);
+  };
 
   if (!sessionIds) {
     return (
@@ -311,6 +345,8 @@ export function QuizClient({
       completionLabel={completionLabel}
       completionShareHref={completionShareHref}
       onNext={handleNext}
+      relatedQuestions={related?.id === current?.id ? related?.questions : undefined}
+      onRelated={handleRelated}
       />
     </div>
   );
