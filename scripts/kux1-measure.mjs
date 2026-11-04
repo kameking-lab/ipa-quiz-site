@@ -92,7 +92,12 @@ try {
     await choice.waitFor({ state: 'visible', timeout: 30000 });
     await choice.scrollIntoViewIfNeeded();
     const readyMs = performance.now() - started - screenshotMs;
-    const questionText = await page.locator('[data-study-presence-exam]').first().innerText();
+    // Hash the authored question, not asynchronously hydrated reading controls.
+    const questionText = await page.locator('[data-study-presence-exam]').first().evaluate(el => {
+      const copy = el.cloneNode(true);
+      copy.querySelectorAll('button, input, select, [role="status"], [role="tooltip"]').forEach(control => control.remove());
+      return copy.textContent.replace(/\s+/g, ' ').trim();
+    });
     const choiceLabels = await (route.blog ? page.locator('#article-practice').getByRole('radio') : page.getByRole('radio', { name: /^選択肢 / })).evaluateAll(els => els.map(el => el.getAttribute('aria-label')));
     const questionUiSha256 = createHash('sha256').update(JSON.stringify([questionText, choiceLabels])).digest('hex');
     const beforeAnswer = await page.evaluate(() => ({ taps: window.__kuxTaps, scrollY, text: document.body.innerText, url: location.href }));
@@ -121,7 +126,7 @@ try {
       assert.equal(questionId, prior.questionId, 'Question must repeat across runs');
       assert.equal(questionUiSha256, prior.questionUiSha256, 'Question and ordered choices must repeat');
     }
-    samples.push({ route: route.name, url: route.url, seed, questionUrl: beforeAnswer.url, questionId, questionUiSha256, choiceLabels, selectedChoice: choiceLabels[0], run, readyMs, answeredMs, explanationMs, ctaY, tapsToQuestion, tapsToAnswer: taps, scrollBeforeAnswer: beforeAnswer.scrollY, overlays: final.overlays, dialogs, ads: final.ads, achievementToast: final.achievementToast, swipeHint: beforeAnswer.text.includes('左スワイプ'), errors, ai, requests, notices: beforeAnswer.text.split('\n').filter(t => /ログイン|無料|同意|Cookie|広告|登録/.test(t)).slice(0, 20) });
+    samples.push({ route: route.name, url: route.url, seed, questionUrl: beforeAnswer.url, questionId, questionText, questionUiSha256, choiceLabels, selectedChoice: choiceLabels[0], run, readyMs, answeredMs, explanationMs, ctaY, tapsToQuestion, tapsToAnswer: taps, scrollBeforeAnswer: beforeAnswer.scrollY, overlays: final.overlays, dialogs, ads: final.ads, achievementToast: final.achievementToast, swipeHint: beforeAnswer.text.includes('左スワイプ'), errors, ai, requests, notices: beforeAnswer.text.split('\n').filter(t => /ログイン|無料|同意|Cookie|広告|登録/.test(t)).slice(0, 20) });
     await fs.writeFile(path.join(out, 'summary.json'), JSON.stringify({ phase, provenance, samples }, null, 2));
     console.log(`${route.name} ${run + 1}/3: ${final.taps} taps, ${(answeredMs / 1000).toFixed(2)}s`);
     await context.close();

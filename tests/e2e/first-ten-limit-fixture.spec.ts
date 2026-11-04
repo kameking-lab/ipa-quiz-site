@@ -45,6 +45,8 @@ test("quota UI fixture: ten uninterrupted answers, then free exits before the op
   expect(await top(free)).toBeLessThan(await top(plan));
   await expect(plan).toHaveAttribute("href", /returnTo=/);
   await expect(page.getByRole("dialog")).toHaveCount(0);
+  const mascot = page.locator('section[aria-labelledby="practice-limit-title"] img');
+  await expect.poll(() => mascot.evaluate(el => (el as HTMLImageElement).naturalWidth)).toBeGreaterThan(0);
   await testInfo.attach("quota-wall-mobile", { body: await page.screenshot({ fullPage: true }), contentType: "image/png" });
   await free.tap();
   await expect(page).toHaveURL(/\/review$/);
