@@ -29,6 +29,9 @@ import { Button } from "@/components/ui/button";
 import dynamic from "next/dynamic";
 import { ExamAiTransparencyNote } from "@/components/exam/ExamAiTransparencyNote";
 import { FirstPracticeEntry, FIRST_PRACTICE_EXAMS } from "@/components/exam/FirstPracticeEntry";
+import { ExamTopBrowse } from "@/components/exam/ExamTopBrowse";
+import { ExamTopGuide } from "@/components/exam/ExamTopGuide";
+import { examEntrySummary, isExamEntryCode } from "@/lib/seo/exam-entry";
 import { KanriCoverageNote } from "@/components/exam/KanriCoverageNote";
 import { Tsushin1CoverageNote } from "@/components/exam/Tsushin1CoverageNote";
 const ExamBrowseTabs = dynamic(
@@ -273,9 +276,7 @@ export default async function ExamTopPage({
   const hasAm1 = questions.some((q) => q.session === "am1");
   const hasAm2 = questions.some((q) => q.session === "am2");
   const isHighLevel = code !== "kenchiku-setsubishi" && hasAm1 && hasAm2;
-  const summary = code === "sc"
-    ? "掲載済みの午前I・午前II過去問を、年度・分野を選んで学べます。AI支援で作成した学習用解説と公式出典を確認できます。"
-    : code === "hokenshi" || code === "josanshi" || code === "rinsho-kensagishi" || code === "shinryo-hoshasengishi" || code === "sagyo-ryohoshi"
+  const summary = isExamEntryCode(code) ? examEntrySummary(code) : code === "hokenshi" || code === "josanshi" || code === "rinsho-kensagishi" || code === "shinryo-hoshasengishi" || code === "sagyo-ryohoshi"
     ? examMetaDescription(code, publishedOriginalCount)
     : EXAM_DESCRIPTIONS[code] ?? `${examLabel(code)}の過去問演習。`;
 
@@ -321,9 +322,9 @@ export default async function ExamTopPage({
             {examLabel(code)} 過去問
           </h1>
           <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{summary}</p>
-          {FIRST_PRACTICE_EXAMS.some((entry) => entry === code) && <FirstPracticeEntry exam={code} />}
+          {isExamEntryCode(code) && <FirstPracticeEntry exam={code} />}
           <div className="mt-3 flex flex-wrap gap-2 text-xs">
-            <Badge variant="outline">収録 {publishedOriginalCount} 問</Badge>
+            <Badge variant="outline">{isExamEntryCode(code) ? "午前の収録" : "収録"} {publishedOriginalCount} 問</Badge>
             <Badge variant="outline">{years.length} 期分</Badge>
             <Badge variant="outline">{categories.length} 分野</Badge>
           </div>
@@ -478,13 +479,15 @@ export default async function ExamTopPage({
         )}
 
         {/* Browse tabs */}
-        <section aria-label="問題を探す" className="mb-8">
+        {isExamEntryCode(code) ? <ExamTopBrowse exam={code} years={years} categories={categories} /> : <section aria-label="問題を探す" className="mb-8">
           {/* Deep-link targets for sitemap "年度別一覧 (#years)" / "分野別一覧 (#topics)".
               ExamBrowseTabs reads the hash to pre-select the matching tab. */}
           <span id="years" aria-hidden className="block scroll-mt-20" />
           <span id="topics" aria-hidden className="block scroll-mt-20" />
           <ExamBrowseTabs exam={code} years={years} categories={categories} />
-        </section>
+        </section>}
+
+        {isExamEntryCode(code) && <ExamTopGuide exam={code} />}
 
         {/* Progress */}
         <section aria-label="進捗" className="mb-8">
@@ -630,7 +633,7 @@ export default async function ExamTopPage({
         )}
 
         {/* High-level exam: AI essay / description grading CTA */}
-        {(["st", "sa", "pm", "sm", "au", "sc", "nw", "db", "es"] as ExamCode[]).includes(code) && (
+        {!isExamEntryCode(code) && (["pm", "sm", "au", "db", "es"] as ExamCode[]).includes(code) && (
           <section
             aria-label="AI 午後問題対策"
             className="mb-8 overflow-hidden rounded-2xl border border-violet-200/70 bg-gradient-to-br from-violet-50 via-card to-card p-5 shadow-sm dark:border-violet-900/40 dark:from-violet-950/40"
@@ -642,53 +645,38 @@ export default async function ExamTopPage({
                 : "午後 記述対策"}
             </div>
             <h2 className="mb-1.5 text-base font-bold tracking-tight text-foreground sm:text-lg">
-              AI 論述添削で午後問題対策
+              {(["pm", "sm", "au"] as ExamCode[]).includes(code) ? "オリジナル論述教材で午後II対策" : "午後記述のAI採点は未対応です"}
             </h2>
             {(["st", "sa", "pm", "sm", "au"] as ExamCode[]).includes(code) ? (
               <>
                 <p className="mb-3 text-sm leading-relaxed text-muted-foreground">
-                  AI が学習用の「適合度／論理性／具体性／業種事例」の 4 観点で評価。
-                  業種別の合格答案サンプルも参照しながら、設問ア・イ・ウを段階的に仕上げます。
+                  編集者作成のオリジナル論述教材で、設問ア・イ・ウを段階的に仕上げます。
+                  AIの添削は学習用の参考評価で、公式過去問の採点ではありません。
                 </p>
                 <div className="flex flex-wrap gap-2">
                   <Button asChild variant="primary" size="sm">
-                    {/* 旗艦＝実際の IPA 午後II 過去問を AI 採点する indexable ハブ /essay
-                        (LearningResource/OG/sitemap 済・session34-36)。高オーソリティな
-                        試験ハブ(sitemap priority 0.9)から旗艦へ内部リンク equity を流す。
-                        /[exam]/afternoon は練習用モック(AI採点ベータ・HD-4)のため primary は旗艦に寄せる。 */}
                     <Link href="/essay">
-                      実際の午後II過去問で AI 添削
+                      オリジナル論述教材で AI 添削
                       <ArrowRight className="h-3.5 w-3.5" />
                     </Link>
                   </Button>
                   <Button asChild variant="outline" size="sm">
-                    {/* 練習用オリジナル問題（AI採点ベータ・モック=HD-4）。誇大回避のため
-                        旗艦の実過去問採点とは別物として「練習・ベータ」を明示する。 */}
-                    <Link href={`/${code}/afternoon`}>練習問題で腕試し（ベータ）</Link>
-                  </Button>
-                  <Button asChild variant="outline" size="sm">
                     {/* 業種別サンプルは複数形 /essays/[exam] (200・noindex)。 */}
-                    <Link href={`/essays/${code}`}>業種別 合格答案サンプル</Link>
+                    <Link href={`/essays/${code}`}>業種別の答案サンプル</Link>
                   </Button>
                 </div>
               </>
             ) : (
               <>
                 <p className="mb-3 text-sm leading-relaxed text-muted-foreground">
-                  {examLabel(code)} 午後の記述・論述問題を AI が採点・フィードバック。
-                  根拠・論理展開・キーワードの網羅を軸に改善点を提示します。
+                  現在、{examLabel(code)}の午後記述をAIで採点する機能は利用できません。
+                  過去問・解答例は、このページのIPA公式資料へのリンクから確認してください。
                 </p>
                 <div className="flex flex-wrap items-center gap-2">
                   <span className="inline-flex items-center gap-1.5 rounded-lg border border-violet-200 bg-violet-50 px-3 py-1.5 text-xs font-semibold text-violet-600 dark:border-violet-900/60 dark:bg-violet-950/40 dark:text-violet-300">
                     <Sparkles className="h-3.5 w-3.5" />
-                    Coming Soon
+                    AI採点は未対応
                   </span>
-                  <span className="text-xs text-muted-foreground">
-                    順次対応予定 — 通知を受け取るには
-                  </span>
-                  <Button asChild variant="ghost" size="sm" className="h-7 px-2 text-xs">
-                    <Link href="/settings#notifications">通知設定</Link>
-                  </Button>
                 </div>
               </>
             )}

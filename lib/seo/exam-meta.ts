@@ -4,6 +4,7 @@ import type { ExamCode, Question } from "@/lib/questions/types";
 import { isPracticeReadyQuestion } from "@/lib/questions/filter";
 import { questionSourceEdition } from "@/lib/questions/source-label";
 import { examLabel } from "@/lib/utils";
+import { examEntryDescription, isExamEntryCode } from "@/lib/seo/exam-entry";
 export const EXAM_DESCRIPTIONS: Partial<Record<ExamCode, string>> = {
 "keiryoshi": "第76回（令和7年実施）のみ100問を収録。第75回は未収録で、2回分の全問収録ではありません。出題時点の法令・基準に基づく全肢解説を確認できます。",
 "keiryoshi-nodo": "第76回（令和7年実施）のみ100問を収録。第75回は未収録で、2回分の全問収録ではありません。出題時点の法令・基準に基づく全肢解説を確認できます。",
@@ -210,9 +211,11 @@ export function groupByCategory(questions: Question[]): {
         .sort((a, b) => b.count - a.count);
 }
 export function examTopTitle(exam: ExamCode): string {
+    if (isExamEntryCode(exam)) return `${examLabel(exam)} 過去問・午前解説と午後対策`;
     return `${examLabel(exam)} 過去問一覧・AI解説`;
 }
 export function examTopDescription(exam: ExamCode, questionCount: number): string {
+    if (isExamEntryCode(exam)) return examEntryDescription(exam, examFullName(exam), questionCount);
     if (exam === "shika-ishi" || exam === "rinsho-kensagishi" || exam === "shinryo-hoshasengishi")
         return examMetaDescription(exam, questionCount);
     const base = EXAM_DESCRIPTIONS[exam] ?? "";
@@ -510,6 +513,7 @@ function publishedYearRange(exam: ExamCode): string {
     return first === last ? `${first}年度` : `${first}〜${last}年度`;
 }
 export function examMetaDescription(exam: ExamCode, questionCount: number, mode?: "year" | "topic"): string {
+    if (!mode && isExamEntryCode(exam)) return examEntryDescription(exam, examFullName(exam), questionCount);
     const name = EXAM_FULL_NAMES[exam];
     const questions = getQuestionsByExamStrict(exam);
     const yearCount = groupByYearSeason(questions).length;
