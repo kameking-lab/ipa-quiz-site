@@ -2,6 +2,7 @@ import { test, expect, type Page } from "@playwright/test";
 import { createServer, type Server } from "node:http";
 import { gunzipSync } from "node:zlib";
 import { join } from "node:path";
+import { writeFileSync } from "node:fs";
 
 // Local Redis REST stand-in: the real question route, signed guest cookie and
 // client run normally. No account, production DB, provider or remote KV is used.
@@ -106,6 +107,14 @@ for (const width of [390, 1440]) {
     }
     expect(events.some(event => event.event === "checkout_started")).toBe(false);
     expect(new Set(events.filter(event => event.properties.referral_id).map(event => event.properties.referral_id)).size).toBe(1);
+    const funnel = ["referral_landed", "quiz_started", "practice_free_limit_reached", "practice_upgrade_clicked"];
+    const indices = funnel.map(name => events.findIndex(event => event.event === name));
+    expect(indices.every((index, position) => position === 0 || index > indices[position - 1])).toBe(true);
+    if (process.env.KFUN1_EVIDENCE_DIR) writeFileSync(join(process.env.KFUN1_EVIDENCE_DIR, `native-funnel-${width}.json`), JSON.stringify({
+      environment: "local mock KV; real guest API and PostHog SDK; all remote traffic intercepted",
+      stages: funnel.map(name => ({ event: name, count: events.filter(event => event.event === name).length,
+        utm_source: "tsugino_shikaku", utm_content: "kfun1.hero" })), same_referral: true,
+    }, null, 2));
   });
 
   test(`subject/year referral starts the same public exam and keeps UTM (${width})`, async ({ page }) => {
@@ -119,7 +128,8 @@ for (const width of [390, 1440]) {
     expect(href).toContain("2025");
     await page.screenshot({ path: screenshotPath(`library-welcome-${width}.png`) });
     await start.click();
-    await expect(page.getByRole("radio").first()).toBeVisible();
+    await page.waitForURL(url => url.pathname === new URL(href!, "http://localhost").pathname);
+    await expect(page.getByRole("radio").first()).toBeVisible({ timeout: 30_000 });
     await expect.poll(() => events.some(event => event.event === "quiz_started" && event.properties.player === "exam_library")).toBe(true);
     const started = events.find(event => event.event === "quiz_started")!;
     expect(started.properties.exam).toBe("潜水士");
@@ -130,14 +140,17 @@ for (const width of [390, 1440]) {
 
 test("legacy multi-subject redirect preserves the exact subject, year and UTM", async ({ page }) => {
   await isolateNetwork(page);
-  await page.goto(`/e-learning/exams?group=emkohyo&subject=${encodeURIComponent("労働衛生一般")}&year=2025&${utm}`);
+  await page.goto(`/e-learning/exams?group=emkohyo&subject=${encodeURIComponent("労働衛生一般")}&year=2026&${utm}`);
   const url = new URL(page.url());
   expect(url.pathname).toBe("/e-learning/exams/qualifications/sagyo-kankyo-sokuteishi");
   expect(url.searchParams.get("subject")).toBe("労働衛生一般");
-  expect(url.searchParams.get("year")).toBe("2025");
+  expect(url.searchParams.get("year")).toBe("2026");
   expect(url.searchParams.get("utm_content")).toBe("kfun1.hero");
   await expect(page.getByRole("heading", { name: "労働衛生一般", exact: true })).toBeVisible();
   await expect(page.getByRole("heading", { name: "作業環境測定関係法令", exact: true })).toHaveCount(0);
+  const absentYear = new URL(page.url());
+  absentYear.searchParams.set("year", "2025");
+  expect((await page.goto(absentYear.toString()))?.status()).toBe(404);
 });
 
 test("category starts and continues inside the selected category; dismissed welcome stays closed", async ({ page }) => {
@@ -149,7 +162,8 @@ test("category starts and continues inside the selected category; dismissed welc
   const href = new URL((await welcome.getByRole("link").getAttribute("href"))!, page.url());
   expect(href.searchParams.get("category")).toBe(category);
   await welcome.getByRole("link").click();
-  await expect(page.getByRole("radio").first()).toBeEnabled();
+  await page.waitForURL(/\/quiz\?/);
+  await expect(page.getByRole("radio").first()).toBeEnabled({ timeout: 30_000 });
   const responses: string[] = [];
   page.on("response", async response => {
     if (response.url().includes("/api/billing/question") && response.ok()) {
