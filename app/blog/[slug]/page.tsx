@@ -5,6 +5,7 @@ import { notFound } from "next/navigation";
 
 import { BlogMarkdown } from "@/components/blog/BlogMarkdown";
 import { BlogPractice } from "@/components/blog/BlogPractice";
+import { Markdown } from "@/components/ui/markdown";
 import { getBlogPractice } from "@/lib/blog/practice";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { ViewTracker } from "@/components/analytics/ViewTracker";
@@ -299,7 +300,7 @@ export default async function BlogArticlePage({ params }: PageProps) {
         {practice && <nav aria-label="記事と演習" className="mt-3 flex gap-4 text-sm"><a href="#article-practice" className="inline-flex min-h-11 items-center underline">まず1問解く</a><a href="#article-body" className="inline-flex min-h-11 items-center underline">本文から読む</a></nav>}
       </header>
 
-      {practice && <BlogPractice key={practice.question.id} {...practice} slug={slug} />}
+      {practice && <BlogPractice key={practice.question.id} {...practice} slug={slug} explanation={<Markdown>{practice.question.explanation}</Markdown>} />}
 
       <article id="article-body" className="scroll-mt-24">
         <BlogMarkdown>{post.body}</BlogMarkdown>

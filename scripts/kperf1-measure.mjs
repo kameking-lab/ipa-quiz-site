@@ -56,6 +56,7 @@ function seed({ count, questionId }) {
 }
 const results = await fs.readFile(path.join(out, 'summary.json'), 'utf8').then(JSON.parse).catch(error => { if (error.code !== 'ENOENT') throw error; return { phase, base, timestamp: new Date().toISOString(), provenance, runs: 3, lighthouseResults: [], interactions: [] }; });
 assert.deepEqual(results.provenance, provenance, 'Use a fresh phase: build, browser or harness changed');
+results.screenInteractions ??= [];
 const save = () => fs.writeFile(path.join(out, 'summary.json'), JSON.stringify(redactUrls(results), null, 2));
 if (!process.env.KPERF_INTERACTIONS_ONLY) {
   for (const route of routes) {
@@ -73,7 +74,7 @@ if (!process.env.KPERF_INTERACTIONS_ONLY) {
           if (route.answer) {
             await page.waitForSelector('[role="radio"]');
             await page.click('[role="radio"]');
-            await page.waitForSelector('[aria-label$="解説"]');
+            await page.waitForSelector('[aria-label="解答結果"]:not([aria-hidden="true"]) [aria-label$="解説"]');
           }
         }, { name: route.name });
         const report = await flow.createFlowResult();
@@ -105,14 +106,14 @@ try {
       await context.addInitScript(seed, { count: historySize, questionId });
       await context.addInitScript(() => {
         window.__perf = { events: [], tap: null, paint: null };
-        new PerformanceObserver(list => { for (const e of list.getEntries()) if (e.interactionId) window.__perf.events.push({ name: e.name, duration: e.duration, startTime: e.startTime, interactionId: e.interactionId }); }).observe({ type: 'event', buffered: true, durationThreshold: 16 });
-        document.addEventListener('pointerdown', e => { if (e.target.closest('[role="radio"]')) window.__perf.tap = performance.now(); }, true);
+        new PerformanceObserver(list => { for (const e of list.getEntries()) if (e.interactionId) window.__perf.events.push({ name: e.name, duration: e.duration, startTime: e.startTime, processingStart: e.processingStart, interactionId: e.interactionId }); }).observe({ type: 'event', buffered: true, durationThreshold: 16 });
+        document.addEventListener('pointerdown', e => { if (e.target.closest('[role="radio"]')) { window.__perf.tap = e.timeStamp; window.__perf.tapHandlerAt = performance.now(); } }, true);
         const observer = new MutationObserver(() => {
           if (window.__perf.tap === null || window.__perf.paint !== null) return;
-          const result = document.querySelector('[aria-label$="解説"], [aria-label="チャレンジの解答結果"]');
+          const result = document.querySelector('[aria-label="解答結果"]:not([aria-hidden="true"]) [aria-label$="解説"], [aria-label="チャレンジの解答結果"]');
           if (result) requestAnimationFrame(() => requestAnimationFrame(() => { window.__perf.paint ??= performance.now(); }));
         });
-        observer.observe(document, { childList: true, subtree: true });
+        observer.observe(document, { childList: true, subtree: true, attributes: true, attributeFilter: ['aria-hidden'] });
       });
       const page = await context.newPage();
       const cdp = await context.newCDPSession(page);
@@ -130,11 +131,11 @@ try {
       await page.waitForFunction(() => window.__perf.paint !== null);
       await page.waitForTimeout(150);
       const data = await page.evaluate(() => {
-        const rect = document.querySelector('[aria-label$="解説"], [aria-label="チャレンジの解答結果"]').getBoundingClientRect();
+        const rect = document.querySelector('[aria-label="解答結果"]:not([aria-hidden="true"]) [aria-label$="解説"], [aria-label="チャレンジの解答結果"]').getBoundingClientRect();
         return { ...window.__perf, resultVisible: rect.top < innerHeight && rect.bottom > 0, history: JSON.parse(localStorage.getItem('ipa-quiz:history:v1') ?? '{}').entries?.length, noOverflow: document.documentElement.scrollWidth <= innerWidth };
       });
-      const events = data.events.filter(e => e.startTime >= data.tap - 1);
-      const entry = { kind, historySize, run, tapToPaint: data.paint - data.tap, eventTimingMax: events.length ? Math.max(...events.map(e => e.duration)) : null, events, urlUnchanged: page.url() === url, answerApiCalls: requests.filter(u => /\/api\/(copilot|questions\/next|practice\/)/.test(u)).length, historyAfter: data.history, noOverflow: data.noOverflow, resultVisible: data.resultVisible };
+      const events = data.events.filter(e => e.startTime >= data.tap - 8);
+      const entry = { kind, historySize, run, tapToPaint: data.paint - data.tap, pointerInputDelay: data.tapHandlerAt - data.tap, eventTimingMax: events.length ? Math.max(...events.map(e => e.duration)) : null, events, urlUnchanged: page.url() === url, answerApiCalls: requests.filter(u => /\/api\/(copilot|questions\/next|practice\/)/.test(u)).length, historyAfter: data.history, noOverflow: data.noOverflow, resultVisible: data.resultVisible };
       entry.apiPaths = requests.filter(u => new URL(u).pathname.startsWith('/api/')).map(u => new URL(u).pathname);
       assert.equal(new URL(page.url()).origin, base);
       assert.equal(entry.urlUnchanged, true);
@@ -149,5 +150,66 @@ try {
       console.log(JSON.stringify(entry));
       await context.close();
     }
+  }
+  // Navigation Lighthouse cannot supply field INP. Define one visible local
+  // action per remaining screen and collect Event Timing independently.
+  for (const screen of ['home', 'qualification', 'explanation', 'review']) for (let run = 1; run <= 10; run++) {
+    if (results.screenInteractions.some(row => row.screen === screen && row.run === run)) continue;
+    const context = await browser.newContext({ viewport: { width: 390, height: 844 }, isMobile: true, hasTouch: true, deviceScaleFactor: 1, serviceWorkers: 'block' });
+    await context.route('**/*', route => new URL(route.request().url()).origin === base ? route.continue() : route.abort());
+    await context.addInitScript(seed, { count: 2000, questionId });
+    await context.addInitScript(() => {
+      window.__screenEvents = [];
+      new PerformanceObserver(list => { for (const e of list.getEntries()) if (e.interactionId) window.__screenEvents.push({ name: e.name, duration: e.duration, startTime: e.startTime, processingStart: e.processingStart, interactionId: e.interactionId }); }).observe({ type: 'event', buffered: true, durationThreshold: 16 });
+      document.addEventListener('pointerdown', e => { if (e.target.closest('button')) window.__screenTap = { at: e.timeStamp, handledAt: performance.now() }; }, true);
+    });
+    const page = await context.newPage();
+    const cdp = await context.newCDPSession(page);
+    await cdp.send('Emulation.setCPUThrottlingRate', { rate: 4 });
+    const requests = [];
+    page.on('request', r => requests.push(r.url()));
+    const route = routes.find(route => route.name === screen);
+    await page.goto(base + route.url);
+    const explanationSelector = '[aria-label="解答結果"]:not([aria-hidden="true"]) [aria-label$="解説"]';
+    let action;
+    let target;
+    if (screen === 'home' || screen === 'qualification') {
+      action = 'open-mobile-menu';
+      target = page.getByRole('button', { name: 'メニューを開く', exact: true }).first();
+    } else if (screen === 'review') {
+      action = 'answer-review-question';
+      target = page.getByRole('radio').first();
+    } else {
+      const choice = page.getByRole('radio').first();
+      await choice.waitFor();
+      await choice.scrollIntoViewIfNeeded();
+      await page.waitForTimeout(700);
+      await choice.tap();
+      await page.locator(explanationSelector).waitFor({ state: 'visible' });
+      action = 'toggle-review-registration';
+      target = page.getByRole('navigation', { name: '解答後の学習操作' }).locator('button[aria-pressed]');
+    }
+    await target.waitFor();
+    await target.scrollIntoViewIfNeeded();
+    await page.waitForTimeout(700);
+    const beforePressed = await target.getAttribute('aria-pressed');
+    const url = page.url();
+    await page.evaluate(() => { window.__screenEvents = []; window.__screenTap = null; });
+    requests.length = 0;
+    await target.tap();
+    if (action === 'open-mobile-menu') await page.getByRole('dialog').waitFor({ state: 'visible' });
+    else if (action === 'answer-review-question') await page.locator(explanationSelector).waitFor({ state: 'visible' });
+    else assert.notEqual(await target.getAttribute('aria-pressed'), beforePressed);
+    await page.waitForTimeout(250);
+    const data = await page.evaluate(() => ({ tap: window.__screenTap, events: window.__screenEvents }));
+    assert.ok(data.tap && Number.isFinite(data.tap.at));
+    const events = data.events.filter(e => e.startTime >= data.tap.at - 8);
+    const entry = { screen, action, run, historySize: 2000, eventTimingMax: events.length ? Math.max(...events.map(e => e.duration)) : null, pointerInputDelay: data.tap.handledAt - data.tap.at, events, urlUnchanged: page.url() === url, apiPaths: requests.filter(u => new URL(u).pathname.startsWith('/api/')).map(u => new URL(u).pathname) };
+    assert.equal(entry.urlUnchanged, true);
+    assert.equal(entry.apiPaths.some(p => /copilot|generate|essay|grade|\/ai\//.test(p)), false);
+    results.screenInteractions.push(entry);
+    await save();
+    console.log(JSON.stringify(entry));
+    await context.close();
   }
 } finally { await browser.close(); }

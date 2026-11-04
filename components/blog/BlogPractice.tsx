@@ -1,11 +1,10 @@
 "use client";
 
-import { useRef, useState } from "react";
+import { useRef, useState, type ReactNode } from "react";
 import Link from "next/link";
 import type { ChoiceKey, Question } from "@/lib/questions/types";
 import { QuestionCard } from "@/components/quiz/QuestionCard";
 import { ChoiceButton } from "@/components/quiz/ChoiceButton";
-import { Markdown } from "@/components/ui/markdown";
 import { Button } from "@/components/ui/button";
 import { questionPagePath } from "@/lib/seo/question-url";
 import { getSafePdfUrl, ipaSourceLabel } from "@/lib/exam-config";
@@ -17,7 +16,7 @@ import { posthogCapture } from "@/lib/posthog";
 import { writeLastQuestion } from "@/lib/storage/last-question";
 import { practiceSessionLabel } from "@/lib/questions/practice-session";
 
-export function BlogPractice({ question, reason, continueHref, slug }: { question: Question; reason: string; continueHref: string; slug: string }) {
+export function BlogPractice({ question, reason, continueHref, slug, explanation }: { question: Question; reason: string; continueHref: string; slug: string; explanation: ReactNode }) {
   const [selected, setSelected] = useState<ChoiceKey | null>(null);
   const resultRef = useRef<HTMLDivElement>(null);
   const submitted = useRef(false);
@@ -52,7 +51,7 @@ export function BlogPractice({ question, reason, continueHref, slug }: { questio
       {selected !== null && (
         <div ref={resultRef} tabIndex={-1} aria-label="チャレンジの解答結果" className="mt-4 scroll-mt-24 rounded-xl border border-border bg-background p-4 outline-none focus-visible:ring-2 focus-visible:ring-sky-500">
           <p role="status" className="font-bold">{correct ? "正解です" : `不正解です。正解は${question.answer}です`}</p>
-          <Markdown>{question.explanation}</Markdown>
+          {explanation}
           <a href={getSafePdfUrl(question.sourcePdfUrl)} target="_blank" rel="noopener noreferrer" className="inline-flex min-h-11 items-center text-sm underline">{ipaSourceLabel(question.sourcePdfUrl, "question")}（原典PDF）</a>
           <div className="mt-3 flex flex-col gap-2 sm:flex-row">
             <Button asChild variant="primary" className="min-h-12"><Link href={continueHref} onClick={() => posthogCapture("blog_practice_continued", { slug, exam: question.exam })}>同じ分野の演習を続ける</Link></Button>

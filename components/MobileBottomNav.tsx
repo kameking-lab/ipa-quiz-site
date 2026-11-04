@@ -122,6 +122,7 @@ export function MobileBottomNav() {
               <li key={tab.href} className="flex-1">
                 <Link
                   href={tab.href}
+                  prefetch={tab.href === "/account/dashboard" ? false : undefined}
                   aria-current={active ? "page" : undefined}
                   className={cn(
                     "relative flex min-h-[48px] flex-col items-center justify-center gap-0.5 px-1 pb-1.5 pt-2 text-[10px] font-medium leading-none transition-colors",

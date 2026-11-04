@@ -9,7 +9,7 @@ const question = { id: "ap-blog-test", exam: "ap", year: 2025, season: "spring",
 beforeEach(() => localStorage.clear());
 afterEach(cleanup);
 it("grades once, shows explanation and continuation, and respects the history setting", () => {
-  render(<BlogPractice question={question} reason="学習を体験" continueHref="/quiz?exam=ap&session=am" slug="test" />);
+  render(<BlogPractice question={question} reason="学習を体験" continueHref="/quiz?exam=ap&session=am" slug="test" explanation={<p>根拠の説明です。</p>} />);
   expect(screen.queryByText("根拠の説明です。")).not.toBeInTheDocument();
   fireEvent.click(screen.getByRole("radio", { name: /誤答/ }));
   expect(screen.getByRole("status")).toHaveTextContent("不正解です。正解はイです");
@@ -19,7 +19,7 @@ it("grades once, shows explanation and continuation, and respects the history se
   expect(JSON.parse(localStorage.getItem(LS_KEYS.history)!).entries).toHaveLength(1);
   cleanup(); localStorage.clear();
   localStorage.setItem(LS_KEYS.settings, JSON.stringify({ recordHistory: false }));
-  render(<BlogPractice question={question} reason="学習を体験" continueHref="/quiz?exam=ap" slug="test" />);
+  render(<BlogPractice question={question} reason="学習を体験" continueHref="/quiz?exam=ap" slug="test" explanation={<p>根拠の説明です。</p>} />);
   fireEvent.click(screen.getByRole("radio", { name: /正答/ }));
   expect(screen.getByRole("status")).toHaveTextContent("正解です");
   expect(localStorage.getItem(LS_KEYS.history)).toBeNull();
