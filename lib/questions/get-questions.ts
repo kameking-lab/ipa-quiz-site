@@ -23,6 +23,7 @@ const EXAM_LOADERS: Partial<Record<ExamCode, () => Promise<Question[]>>> = {
   "kikenbutsu-otsu2": async () => (await import("@/data/questions/kikenbutsu-otsu2")).QUESTIONS,
   "kikenbutsu-otsu6": async () => (await import("@/data/questions/kikenbutsu-otsu6")).QUESTIONS,
 
+  jokaso: async () => isExamPublished("jokaso") ? (await import("@/data/questions/jokaso")).JOKASO_CANDIDATES : [],
   kanteishi: async () => isExamPublished("kanteishi") ? (await import("@/data/questions/kanteishi")).KANTEISHI_QUESTIONS : [],
   kaikeishi: async () => isExamPublished("kaikeishi") ? (await import("@/data/questions/kaikeishi")).KAIKEISHI_QUESTIONS : [],
   "riku-tech2": async () => isExamPublished("riku-tech2") ? (await import("@/data/questions/riku-tech2")).RIKU_TECH2_QUESTIONS : [],
