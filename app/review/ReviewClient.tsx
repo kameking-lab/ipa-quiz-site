@@ -30,6 +30,7 @@ interface ReviewRecord {
   level: number; // 0 = 初回, 1 = 1日後, ...
   nextReviewAt: string; // ISO date string
   correctStreak: number;
+  lastReviewedAt?: number;
 }
 
 type ReviewStore = Record<string, ReviewRecord>;
@@ -159,6 +160,7 @@ export function ReviewClient({ examFromQuery, returnTo }: { examFromQuery?: stri
         level: newLevel,
         nextReviewAt: getNextReviewDate(newLevel),
         correctStreak: isCorrect ? current.correctStreak + 1 : 0,
+        lastReviewedAt: Date.now(),
       };
 
       saveStore({ ...store, [q.id]: newRecord });

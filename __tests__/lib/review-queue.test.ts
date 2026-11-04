@@ -7,6 +7,16 @@ import { LS_KEYS } from "@/lib/storage/keys";
 beforeEach(() => { localStorage.clear(); vi.useFakeTimers(); vi.setSystemTime(new Date("2026-11-04T14:00:00Z")); });
 afterEach(() => { vi.useRealTimers(); });
 describe("shared review queue", () => {
+  it("preserves undated legacy appointments over an older SRS card", () => {
+    recordReview("ap-legacy", false);
+    const request = buildReviewRequest({ "ap-legacy": { nextReviewAt: "2099-01-01" } });
+    expect(request.reviewStore["ap-legacy"].nextReviewAt).toBe("2099-01-01");
+  });
+  it("keeps a successful saved-question review scheduled in the future", () => {
+    createHistoryStore().toggleStar("ap-star");
+    recordReview("ap-star", true);
+    expect(buildReviewRequest({}).reviewStore["ap-star"].nextReviewAt).toBe("2026-11-05");
+  });
   it("includes starred-only and SRS-only questions without altering legacy saved data", () => {
     createHistoryStore().toggleStar("ap-star-only");
     recordReview("ap-srs-only", true);
