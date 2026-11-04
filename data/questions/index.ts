@@ -3,6 +3,7 @@ import { KISHO_QUESTIONS } from "./kisho";
 import { getAutomotiveQuestions } from "./automotive";
 import { JOKASO_CANDIDATES } from "./jokaso";
 import { SHUWA_QUESTIONS } from "./shuwa";
+import { JKEN_SYSTEM_QUESTIONS } from "./jken-system";
 import type { ExamCode, Question } from "@/lib/questions/types";
 import { isPracticeReadyQuestion } from "@/lib/questions/filter";
 import { CHOSASHI_QUESTIONS } from "./chosashi";
@@ -141,6 +142,7 @@ export const QUESTIONS_BY_EXAM: Partial<Record<ExamCode, Question[]>> = {
   ...(isExamPublished("jken-katsuyo3") ? { "jken-katsuyo3": JKEN_KATSUYO3_QUESTIONS } : {}),
   ...(isExamPublished("jken-katsuyo2") ? { "jken-katsuyo2": JKEN_KATSUYO2_QUESTIONS } : {}),
   ...(isExamPublished("jken-katsuyo1") ? { "jken-katsuyo1": JKEN_KATSUYO1_QUESTIONS } : {}),
+  ...(isExamPublished("jken-system") ? { "jken-system": JKEN_SYSTEM_QUESTIONS } : {}),
   ...(isExamPublished("kanteishi") ? { kanteishi: KANTEISHI_QUESTIONS.filter(isPracticeReadyQuestion) } : {}),
   ...(isExamPublished("kaikeishi") ? { kaikeishi: KAIKEISHI_QUESTIONS.filter(isPracticeReadyQuestion) } : {}),
   ...(isExamPublished("riku-tech2") ? { "riku-tech2": RIKU_TECH2_QUESTIONS.filter(isPracticeReadyQuestion) } : {}),

@@ -43,6 +43,7 @@ export function sessionLabel(session: string, exam?: ExamCode): string {
     "gas-law": "法令",
     "gas-basic": "基礎",
     "gas-technology": "ガス技術",
+    "jken-basic": "基本スキル", "jken-programming": "プログラミングスキル", "jken-design": "システムデザインスキル",
     "mondai-a": "問題A",
     "mondai-b": "問題B",
   "mondai-c": "問題C",

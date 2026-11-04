@@ -312,6 +312,17 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
   },
 
   {
+    slug: "jken-system", examCode: "jken-system", shortName: "J検 情報システム",
+    fullName: "情報検定（J検）情報システム 基本スキル・プログラミングスキル・システムデザインスキル",
+    domain: "information-technology", administrator: "一般財団法人職業教育・キャリア教育財団",
+    officialQuestionsUrl: "https://www.jken.sgec.or.jp/docs/past_test.html",
+    officialReuseTermsUrl: "https://www.jken.sgec.or.jp/docs/past_test.html",
+    status: "ready-to-ingest",
+    reuseSummary: "オーナー権利確認済み。令和8年度前期（2026年9月13日）・令和7年度後期（2026年2月8日）の3スキル全30大問・227解答欄をステージング保存。問題と正答は公式PDF，解説は独自作成。未公開。",
+    attributionTemplate: "出典：一般財団法人職業教育・キャリア教育財団 情報検定 情報システム試験（実施回・スキル・大問・解答欄）。解説は独自作成。",
+    remainingWork: ["オーナーによる公開切替（依頼に従い現在はステージング）"],
+  },
+  {
     slug: "kanteishi", examCode: "kanteishi", shortName: "不動産鑑定士", fullName: "不動産鑑定士試験（短答式）",
     domain: "real-estate", administrator: "国土交通省",
     officialQuestionsUrl: "https://www.mlit.go.jp/totikensangyo/kanteishi/content/002001126.pdf",
