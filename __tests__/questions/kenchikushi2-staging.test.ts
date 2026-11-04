@@ -27,7 +27,7 @@ const officialRows = {
   ],
 } as const;
 
-const staged = allStaged.filter(q => q.session === "gakka-I");
+const staged = allStaged.filter(q => q.year === 2026 && q.session === "gakka-I");
 
 describe("Kenchikushi unpublished staging", () => {
   it("pins all 400 answers to the official tables across four distinct rounds", () => {
@@ -58,7 +58,7 @@ describe("Kenchikushi unpublished staging", () => {
     expect(manifest.ingestionState).toBe("in-progress");
     expect(manifest.ingestedQuestionCount).toBe(allStaged.length);
     expect(manifest.batches.reduce((sum, batch) => sum + batch.questionCount, 0)).toBe(allStaged.length);
-    expect(manifest.nextResume).toEqual({ qualificationSlug: "kenchikushi2", year: 2025, subject: "I", qNumber: 1 });
+    expect(manifest.nextResume).toEqual({ qualificationSlug: "kenchikushi2", year: 2025, subject: "II", qNumber: 1 });
     const home = getHomeDirectory().flatMap(d => [...d.featured, ...d.compact]);
     for (const slug of ["kenchikushi2", "mokuzo-kenchikushi"]) {
       const entry = QUALIFICATION_CATALOG.find(q => q.slug === slug);
@@ -70,16 +70,17 @@ describe("Kenchikushi unpublished staging", () => {
   });
 
   it("pins each ingested subject to 25 complete source records and 125 explanations", () => {
-    expect(allStaged).toHaveLength(100);
+    expect(allStaged).toHaveLength(125);
     expect(new Set(allStaged.map(q => q.id)).size).toBe(allStaged.length);
     for (const batch of manifest.batches) {
       const subjectIndex = ["I", "II", "III", "IV"].indexOf(batch.subject);
-      const questions = allStaged.filter(q => q.session === `gakka-${batch.subject}`);
+      const questions = allStaged.filter(q => q.exam === batch.qualificationSlug && q.year === batch.year && q.session === `gakka-${batch.subject}`);
+      const fixture = officialRows[`${batch.qualificationSlug}-${batch.year}` as keyof typeof officialRows];
       expect(questions).toHaveLength(25);
       expect(questions.map(q => q.qNumber)).toEqual(Array.from({length: 25}, (_, i) => i + 1));
-      expect(questions.map(q => q.officialAnswerNumber).join("")).toBe(officialRows["kenchikushi2-2026"][subjectIndex]);
+      expect(questions.map(q => q.officialAnswerNumber).join("")).toBe(fixture[subjectIndex]);
       for (const q of questions) {
-        expect(q.id).toBe(`kenchikushi2-2026-annual-${batch.subject}-q${q.qNumber}`);
+        expect(q.id).toBe(`${batch.qualificationSlug}-${batch.year}-annual-${batch.subject}-q${q.qNumber}`);
         expect(Object.keys(q.choices ?? {})).toEqual(["ア", "イ", "ウ", "エ", "オ"]);
         expect(Object.keys(q.choiceExplanations ?? {})).toEqual(["ア", "イ", "ウ", "エ", "オ"]);
         expect(q.answer).toBe("アイウエオ"[Number(q.officialAnswerNumber)-1]);
@@ -88,9 +89,23 @@ describe("Kenchikushi unpublished staging", () => {
         expect(q.publicAllowed).toBe(false);
         expect(q.needsReview).toBe(true);
         expect(q.explanationCoverage).toBe("full");
-        expect(q.lawReferenceDate).toBe("2026-01-01");
-        expect(q.sourceAnswerUrl).toBe(manifest.rounds[0].answerDocument.url);
+        expect(q.lawReferenceDate).toBe(`${batch.year}-01-01`);
+        expect(q.sourceAnswerUrl).toBe(manifest.rounds.find(r => r.qualificationSlug === batch.qualificationSlug && r.year === batch.year)?.answerDocument.url);
       }
+    }
+  });
+
+  it("retains the 2025 planning subject and its source-specific ruby and fraction", () => {
+    const planning = allStaged.filter(q => q.year === 2025 && q.session === "gakka-I");
+    expect(planning).toHaveLength(25);
+    expect(planning.every(q => !q.hasImage)).toBe(true);
+    expect(planning[0].sourceRubies).toContainEqual({base:"同仁斎",reading:"どうじんさい"});
+    expect(planning[14].choices?.エ).toContain("1/3");
+    for (const q of planning) {
+      expect(q.sourcePdfUrl).toBe(manifest.rounds[1].questionDocuments[0].url);
+      expect(q.sourcePage).toBeGreaterThanOrEqual(2);
+      expect(q.sourcePage).toBeLessThanOrEqual(10);
+      expect(q.sourcePrintedPage).toBe(`計画 ${q.sourcePage-1}`);
     }
   });
 

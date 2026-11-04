@@ -178,6 +178,22 @@ def source_questions_iv(path):
     return questions
 
 
+def source_questions_2025_i(path):
+    questions = {}
+    with pdfplumber.open(path) as pdf:
+        for page_number in range(2,11):
+            page = pdf.pages[page_number-1].filter(lambda o:o.get("object_type")!="char" or o["size"]>5.5 and o["top"]<790)
+            text = unicodedata.normalize("NFKC",page.extract_text(use_text_flow=True))
+            parts = re.split(r"〔No\.\s*(\d+)〕",text)
+            for i in range(1,len(parts),2):
+                n=int(parts[i]);fields=re.split(r"(?m)^\s*([1-5])\s*\.\s*",parts[i+1]);choices={int(fields[j]):fields[j+1] for j in range(1,len(fields),2)}
+                if n==15: choices[4]=re.sub(r"延べ面積の\s*3\s*1","延べ面積の1/3",choices[4])
+                assert sorted(choices)==[1,2,3,4,5],n
+                questions[n]=(page_number,fields[0],choices)
+    assert sorted(questions)==list(range(1,26))
+    return questions
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("owner_directory", type=Path)
@@ -199,9 +215,9 @@ def main():
                         assert row == round_["officialAnswers"][subject], (file.name, subject)
                         counts["officialAnswers"] += len(row)
             counts["ownerPdfs"] += 1
-    for subject, extract in [("I", source_questions), ("II", source_questions_ii), ("III", source_questions_iii), ("IV",source_questions_iv)]:
-        originals = extract(args.owner_directory / ("R8_2k_3_4.pdf" if subject in ["III","IV"] else "R8_2k_1_2.pdf"))
-        data = (STAGING / f"2026-{subject}.ts").read_text(encoding="utf-8")
+    for year, subject, extract, source in [(2026,"I",source_questions,"R8_2k_1_2.pdf"),(2026,"II",source_questions_ii,"R8_2k_1_2.pdf"),(2026,"III",source_questions_iii,"R8_2k_3_4.pdf"),(2026,"IV",source_questions_iv,"R8_2k_3_4.pdf"),(2025,"I",source_questions_2025_i,"2k-2025-1st-gakka1_2.pdf")]:
+        originals = extract(args.owner_directory / source)
+        data = (STAGING / f"{year}-{subject}.ts").read_text(encoding="utf-8")
         staged = json.loads(data.split("= ", 1)[1].rsplit(";", 1)[0])
         assert len(staged) == 25
         for question in staged:
