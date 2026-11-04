@@ -1,3 +1,4 @@
+import khkPublication from "@/data/qualification-staging/khk-kagaku/manifest.json";
 import type { ExamCode } from "@/lib/questions/types";
 
 export type QualificationDomain =
@@ -43,6 +44,21 @@ export interface QualificationCatalogEntry {
  * 「公式に問題と正答がある」だけでは live にせず、転載条件まで確認する。
  */
 export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
+  {
+    slug: "khk-kagaku",
+    examCode: "khk-kagaku",
+    shortName: "高圧ガス製造保安責任者（化学）",
+    fullName: "高圧ガス製造保安責任者 甲種化学・乙種化学・丙種化学（液石）・丙種化学（特別）",
+    domain: "safety",
+    administrator: "高圧ガス保安協会 試験センター",
+    officialQuestionsUrl: "https://shiken.khk.or.jp/shiken.html",
+    officialReuseTermsUrl: "https://www.khk.or.jp/condition.html",
+    status: "ready-to-ingest",
+    reuseSummary: "オーナー決定2026-11-04 06:10に基づき収録対象。2024・2025年度422原問（択一410・記述12）と公式正答・原図33画像・付録3画像・解答例13画像を照合。全2050肢の独自解説と記述12問の独自解答・自己採点基準を作成し、科目別に演習登録済み。R6液石学識問20は公式採点と材料特性の技術的留保を分けて注記。publicAllowed=falseで未公開。",
+    attributionTemplate: "出典：高圧ガス保安協会 高圧ガス製造保安責任者試験 ○年度 ○種化学 ○科目 問○（問題・正答）。解説は過去問AIが独自作成。",
+    remainingWork: ["未公開を維持。公開は本タスクの対象外", "R6液石学識問20の材料特性に関する原文・公式採点・技術的留保の注記を公開前に再確認"],
+  },
+
   {
     slug: "kenchikushi1", examCode: "kenchikushi1", shortName: "一級建築士（学科）", fullName: "一級建築士試験（学科の試験）",
     domain: "construction", administrator: "公益財団法人建築技術教育普及センター",
@@ -1322,5 +1338,6 @@ export function getQualificationByExamCode(exam: ExamCode): QualificationCatalog
 
 /** Public routes and question registries must call this gate before exposing external data. */
 export function isExamPublished(exam: ExamCode): boolean {
+  if (exam === "khk-kagaku" && !khkPublication.publicAllowed) return false;
   return getQualificationByExamCode(exam)?.status === "live" || !getQualificationByExamCode(exam);
 }

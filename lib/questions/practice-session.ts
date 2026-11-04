@@ -2,7 +2,7 @@ import { EXAM_CONFIGS } from "@/lib/exam-config";
 import type { ExamCode, Session } from "./types";
 
 export const SPECIALIST_EXAMS: readonly ExamCode[] = ["st", "sa", "pm", "nw", "db", "es", "sc", "sm", "au"];
-export const PRACTICE_SESSIONS: readonly Session[] = ["keikaku", "kankyo-setsubi", "kozo", "sekou", "gakushiki", "gyosei","kanri","kansa","am","am1","am2","pm","kamoku-a","kamoku-b","gakka","rousai","koyou","kenpo","kounen","kokunen","ippan","sentaku","riron","denryoku","kikai","houki","hoki","kogaku","kiso","kogaku-a","kogaku-b","tiri","mondai-a","mondai-b","mondai-c","mondai-d","kyotsu","senmon","hoiku-genri","kyoiku-genri","shakaiteki-yougo","kodomo-katei-fukushi","shakai-fukushi","hoiku-shinrigaku","kodomo-hoken","kodomo-shokueiyou","hoiku-jisshu-riron","keizai","zaimu","kigyo","unei","keiei-houmu","keiei-joho","chusho-seisaku","required","theory","practical","gas-law","gas-basic","gas-technology","jken-basic","jken-programming","jken-design","hoan","wagashi","yogashi","seipan","measurement-basic","measurement-mass","measurement-chemistry","measurement-concentration","measurement-physics","measurement-sound","measurement-management","kenki-type1","kenki-type2","kenki-type3","kenki-type4","kenki-type5","kenki-type6"];
+export const PRACTICE_SESSIONS: readonly Session[] = ["khk-ax", "khk-ay", "khk-az", "khk-bx", "khk-by", "khk-bz", "khk-cx", "khk-cy", "khk-cz", "khk-dx", "khk-dy", "khk-dz", "keikaku", "kankyo-setsubi", "kozo", "sekou", "gakushiki", "gyosei","kanri","kansa","am","am1","am2","pm","kamoku-a","kamoku-b","gakka","rousai","koyou","kenpo","kounen","kokunen","ippan","sentaku","riron","denryoku","kikai","houki","hoki","kogaku","kiso","kogaku-a","kogaku-b","tiri","mondai-a","mondai-b","mondai-c","mondai-d","kyotsu","senmon","hoiku-genri","kyoiku-genri","shakaiteki-yougo","kodomo-katei-fukushi","shakai-fukushi","hoiku-shinrigaku","kodomo-hoken","kodomo-shokueiyou","hoiku-jisshu-riron","keizai","zaimu","kigyo","unei","keiei-houmu","keiei-joho","chusho-seisaku","required","theory","practical","gas-law","gas-basic","gas-technology","jken-basic","jken-programming","jken-design","hoan","wagashi","yogashi","seipan","measurement-basic","measurement-mass","measurement-chemistry","measurement-concentration","measurement-physics","measurement-sound","measurement-management","kenki-type1","kenki-type2","kenki-type3","kenki-type4","kenki-type5","kenki-type6"];
 
 /** Specialist practice starts with the specialist paper; common AM I is explicit. */
 export function defaultPracticeSession(exam: ExamCode, year?: number): Session {
@@ -53,7 +53,7 @@ export function practiceSessionLabel(session: Session, exam?: ExamCode): string 
   if (exam === "kanteishi" && session === "riron") return "鑑定評価理論";
   if (exam === "kaikeishi" && session === "kigyo") return "企業法";
   if (exam === "kaikeishi" && session === "zaimu") return "財務会計論";
-  return ({ keikaku: "??", "kankyo-setsubi": "?????", kozo: "??", sekou: "??", gakushiki: "学識", gyosei: "行政法規",
+  return ({ "khk-ax": "甲種化学 法令", "khk-ay": "甲種化学 保安管理技術", "khk-az": "甲種化学 学識", "khk-bx": "乙種化学 法令", "khk-by": "乙種化学 保安管理技術", "khk-bz": "乙種化学 学識", "khk-cx": "丙種化学（液石） 法令", "khk-cy": "丙種化学（液石） 保安管理技術", "khk-cz": "丙種化学（液石） 学識", "khk-dx": "丙種化学（特別） 法令", "khk-dy": "丙種化学（特別） 保安管理技術", "khk-dz": "丙種化学（特別） 学識",  keikaku: "??", "kankyo-setsubi": "?????", kozo: "??", sekou: "??", gakushiki: "学識", gyosei: "行政法規",
 kanri: "管理会計論",
 kansa: "監査論",
 am: "午前",

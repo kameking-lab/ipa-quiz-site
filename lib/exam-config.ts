@@ -108,6 +108,25 @@ function am2(categories: string[]): SessionConfig {
 // ------- Exam configs -------
 
 export const EXAM_CONFIGS: Record<ExamCode, ExamConfig> = {
+  "khk-kagaku": {
+    code: "khk-kagaku", nameFull: "高圧ガス製造保安責任者（化学）", urlSlug: "khk-kagaku", level: "advanced",
+    sessions: [
+      { session: "khk-ax", urlSlug: "khk-ax", expectedQuestions: 20, label: "甲種化学 法令", categories: ["甲種化学 法令"] },
+      { session: "khk-ay", urlSlug: "khk-ay", expectedQuestions: 15, label: "甲種化学 保安管理技術", categories: ["甲種化学 保安管理技術"] },
+      { session: "khk-az", urlSlug: "khk-az", expectedQuestions: 6, label: "甲種化学 学識", categories: ["甲種化学 学識"] },
+      { session: "khk-bx", urlSlug: "khk-bx", expectedQuestions: 20, label: "乙種化学 法令", categories: ["乙種化学 法令"] },
+      { session: "khk-by", urlSlug: "khk-by", expectedQuestions: 15, label: "乙種化学 保安管理技術", categories: ["乙種化学 保安管理技術"] },
+      { session: "khk-bz", urlSlug: "khk-bz", expectedQuestions: 15, label: "乙種化学 学識", categories: ["乙種化学 学識"] },
+      { session: "khk-cx", urlSlug: "khk-cx", expectedQuestions: 20, label: "丙種化学（液石） 法令", categories: ["丙種化学（液石） 法令"] },
+      { session: "khk-cy", urlSlug: "khk-cy", expectedQuestions: 20, label: "丙種化学（液石） 保安管理技術", categories: ["丙種化学（液石） 保安管理技術"] },
+      { session: "khk-cz", urlSlug: "khk-cz", expectedQuestions: 20, label: "丙種化学（液石） 学識", categories: ["丙種化学（液石） 学識"] },
+      { session: "khk-dx", urlSlug: "khk-dx", expectedQuestions: 20, label: "丙種化学（特別） 法令", categories: ["丙種化学（特別） 法令"] },
+      { session: "khk-dy", urlSlug: "khk-dy", expectedQuestions: 20, label: "丙種化学（特別） 保安管理技術", categories: ["丙種化学（特別） 保安管理技術"] },
+      { session: "khk-dz", urlSlug: "khk-dz", expectedQuestions: 20, label: "丙種化学（特別） 学識", categories: ["丙種化学（特別） 学識"] },
+    ],
+    seasons: ["annual"], yearRange: { start: 2024, end: 2025 },
+  },
+
   kenchikushi1: {
     code: "kenchikushi1", nameFull: "一級建築士（学科）", urlSlug: "kenchikushi1", level: "specialist",
     sessions: [

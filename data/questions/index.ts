@@ -1,3 +1,4 @@
+import { PUBLIC_KHK_KAGAKU_QUESTIONS } from "./khk-kagaku/public";
 import { KENCHIKUSHI1_QUESTIONS } from "./kenchikushi1";
 import { BATCH1_QUESTIONS } from "./batch1";
 import { REFORM_MGR_QUESTIONS } from "./reform-mgr";
@@ -121,6 +122,7 @@ import { GYOSEI_QUESTIONS } from "./gyosei";
 import { SHIHOSHOSHI_BATCH1_QUESTIONS } from "./shihoshoshi";
 
 export const QUESTIONS_BY_EXAM: Partial<Record<ExamCode, Question[]>> = {
+  ...(isExamPublished("khk-kagaku") ? { "khk-kagaku": PUBLIC_KHK_KAGAKU_QUESTIONS.filter(isPracticeReadyQuestion) } : {}),
   ...(isExamPublished("kenchikushi1") ? { kenchikushi1: KENCHIKUSHI1_QUESTIONS.filter(isPracticeReadyQuestion) } : {}),
   "reform-mgr": REFORM_MGR_QUESTIONS,
   "shohi-sodan": SHOHI_SODAN_QUESTIONS,

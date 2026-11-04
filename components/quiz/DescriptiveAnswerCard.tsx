@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import type { Question } from "@/lib/questions/types";
 import { Button } from "@/components/ui/button";
 import { Markdown } from "@/components/ui/markdown";
@@ -22,7 +23,12 @@ export function DescriptiveAnswerCard({
   onNext,
   nextLabel = "次の問題へ",
 }: Props) {
-  const khk = question.exam.startsWith("khk-reito-") || question.exam === "khk-kikai-kou";
+  const isKhk = question.exam === "khk-kagaku";
+  const [checked, setChecked] = useState<number[]>([]);
+  const rubric = question.selfAssessment ?? [];
+  const totalPoints = rubric.reduce((sum, item) => sum + item.points, 0);
+  const points = rubric.reduce((sum, item, index) => sum + (checked.includes(index) ? item.points : 0), 0);
+  const khk = isKhk || question.exam.startsWith("khk-reito-") || question.exam === "khk-kikai-kou";
   const official = question.exam === "gyosei";
   const ministry = question.exam === "chosashi";
   const modelAnswer = (question.modelAnswer ?? String(question.answer)).replace(
@@ -47,6 +53,21 @@ export function DescriptiveAnswerCard({
             <h3 className="font-semibold">自己確認の観点（独自作成）</h3>
             <Markdown>{question.scoringCriteria}</Markdown>
           </div>
+        )}
+        {isKhk && rubric.length > 0 && (
+          <fieldset className="mt-4 space-y-3 border-t border-border pt-4">
+            <legend className="font-semibold">自己採点：満たした観点を選択</legend>
+            {rubric.map((item, index) => (
+              <label key={item.label} className="flex min-h-11 items-start gap-3 py-2">
+                <input type="checkbox" className="mt-1 size-5" checked={checked.includes(index)} onChange={(event) => {
+                  const selected = event.currentTarget.checked;
+                  setChecked((previous) => selected ? [...previous.filter((value) => value !== index), index] : previous.filter((value) => value !== index));
+                }} />
+                <span>{item.criterion}（{item.points}点）</span>
+              </label>
+            ))}
+            <p role="status" aria-live="polite">自己採点 {points} / {totalPoints} 点</p>
+          </fieldset>
         )}
       </details>
       <div className="flex flex-wrap gap-x-5 gap-y-2 text-sm">

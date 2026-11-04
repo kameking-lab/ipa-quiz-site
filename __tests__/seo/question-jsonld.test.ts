@@ -216,7 +216,7 @@ describe("sessionLabel", () => {
         expect(sessionLabel("xyz")).toBe("XYZ");
     });
     it("maps every Session union member to a real label", () => {
-        const SESSION_PRESENCE: Record<Session, true> = { keikaku: true, "kankyo-setsubi": true, kozo: true, sekou: true,  gakushiki: true,
+        const SESSION_PRESENCE: Record<Session, true> = { "khk-ax": true, "khk-ay": true, "khk-az": true, "khk-bx": true, "khk-by": true, "khk-bz": true, "khk-cx": true, "khk-cy": true, "khk-cz": true, "khk-dx": true, "khk-dy": true, "khk-dz": true,  keikaku: true, "kankyo-setsubi": true, kozo: true, sekou: true,  gakushiki: true,
             "jken-basic": true, "jken-programming": true, "jken-design": true,
             gyosei: true, kanri: true, kansa: true,
             hoan: true,
