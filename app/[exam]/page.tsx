@@ -28,6 +28,7 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import dynamic from "next/dynamic";
 import { ExamAiTransparencyNote } from "@/components/exam/ExamAiTransparencyNote";
+import { FirstPracticeEntry, FIRST_PRACTICE_EXAMS } from "@/components/exam/FirstPracticeEntry";
 import { KanriCoverageNote } from "@/components/exam/KanriCoverageNote";
 import { Tsushin1CoverageNote } from "@/components/exam/Tsushin1CoverageNote";
 const ExamBrowseTabs = dynamic(
@@ -320,6 +321,7 @@ export default async function ExamTopPage({
             {examLabel(code)} 過去問
           </h1>
           <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{summary}</p>
+          {FIRST_PRACTICE_EXAMS.some((entry) => entry === code) && <FirstPracticeEntry exam={code} />}
           <div className="mt-3 flex flex-wrap gap-2 text-xs">
             <Badge variant="outline">収録 {publishedOriginalCount} 問</Badge>
             <Badge variant="outline">{years.length} 期分</Badge>
@@ -409,37 +411,8 @@ export default async function ExamTopPage({
         )}
 
         {/* Big CTA */}
-        <section aria-label="今すぐ解く" className="mb-8">
-          {code === "sc" ? (
-            <div className="rounded-2xl border border-border bg-card p-4 shadow-sm sm:p-5">
-              <h2 className="text-sm font-semibold text-foreground">年度・分野を選んで始める</h2>
-              <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-                個別問題の閲覧は無料です。年度別で実施回を開き、午前I・午前IIの各問の「解説を見る」から問題・正答・解説を確認できます。
-              </p>
-              <nav aria-label="SCの問題を選ぶ" className="mt-3 grid gap-2 sm:grid-cols-2">
-                <Button asChild variant="outline" size="lg" className="w-full">
-                  <a href="#years">年度から問題を選ぶ</a>
-                </Button>
-                <Button asChild variant="outline" size="lg" className="w-full">
-                  <a href="#topics">分野から問題を選ぶ</a>
-                </Button>
-              </nav>
-              <div className="mt-4 border-t border-border pt-4">
-                <h3 className="text-sm font-semibold text-foreground">ランダムに続けて解く</h3>
-                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-                  連続演習はログインなしでも1日10問まで無料です。午前IIは専門問題、午前Iは共通問題です。
-                </p>
-                <div className="mt-3 grid gap-2 sm:grid-cols-2">
-                  <Button asChild variant="gradient" size="lg" className="w-full font-semibold">
-                    <Link href={`/quiz?mode=random&exam=${exam}&session=am2`}>午前IIを連続演習</Link>
-                  </Button>
-                  <Button asChild variant="outline" size="lg" className="w-full">
-                    <Link href={`/quiz?mode=random&exam=${exam}&session=am1`}>午前Iを連続演習</Link>
-                  </Button>
-                </div>
-              </div>
-            </div>
-          ) : code === "fp2" || code === "fp3" ? (
+        {!FIRST_PRACTICE_EXAMS.some((entry) => entry === code) && <section aria-label="今すぐ解く" className="mb-8">
+          {code === "fp2" || code === "fp3" ? (
             <div className="grid gap-3 sm:grid-cols-2">
               <Button asChild variant="gradient" size="lg" className="w-full font-semibold">
                 <Link href={`/quiz?mode=random&exam=${code}&session=gakka`}>学科を解く</Link>
@@ -492,7 +465,7 @@ export default async function ExamTopPage({
               </Link>
             </Button>
           )}
-        </section>
+        </section>}
 
         {code === "denko2" && (
           <section aria-label="技能試験" className="mb-8 rounded-2xl border border-blue-200 bg-blue-50 p-5">

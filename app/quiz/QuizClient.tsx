@@ -364,14 +364,8 @@ export function QuizClient({
 
   return (
     <div ref={transitionHost} tabIndex={-1} aria-label={`${index + 1}問目 / ${sessionIds.length}問`} className="min-h-[100dvh] scroll-mt-24 outline-none">
-      {access?.kind === "guest" ? (
-        <aside aria-label="ログインなしの無料演習枠" className="mx-auto w-full max-w-4xl space-y-1 border-b border-border px-4 py-3 text-sm">
-          <p role="status">ログインなしで無料の連続演習を利用中です。{access.remaining != null ? `今日あと${access.remaining}問（1日${access.freeDaily}問）。` : "残りの演習枠を確認できません。"}次の更新：{resetLabel(access)}</p>
-          <p>学習履歴は設定に応じてこの端末に保存されます。<Link href={`/auth/signin?callbackUrl=${encodeURIComponent(window.location.pathname + window.location.search)}`} className="underline">履歴の同期などは無料ログイン</Link>で利用できます。</p>
-          <p>この演習枠はAIへの質問回数とは別です。</p>
-        </aside>
-      ) : null}
       <QuizPlayer
+      quiet
       question={current}
       index={index}
       total={sessionIds.length}

@@ -1,6 +1,7 @@
 import { ALL_QUIZ_EXAM_CODES } from "@/lib/exam-config";
 import batch1RuntimePins from "./fixtures/batch1-runtime-pins.json";
 import kperfRuntimePins from "./fixtures/kperf1-runtime-pins.json";
+import kuxRuntimePins from "./fixtures/kux1-runtime-pins.json";
 import { integrationOracle, runtimeFingerprint, normalizedTextSha256, repositoryTextSha256, sourceFilesUnder } from './fixtures/native-integration-oracle';
 import { describe,expect,it } from 'vitest';
 import { existsSync, readFileSync } from 'node:fs';
@@ -77,7 +78,9 @@ describe('aviation communication68 local registration candidate',()=>{
   // The prior KGROW1/PRK fixtures stay intact as provenance;
   // rewards, answers and every original-data/core pin below remain exact.
   // The historical pre-reward oracle remains unchanged as provenance.
-  expect(normalizedTextSha256(player)).toBe(kperfRuntimePins['components/quiz/QuizPlayer.tsx']);
+  // KUX1 only quiets automatic decoration/hints. The accepted KPERF1 fixture
+  // stays intact, and its answer/recording boundary is still checked below.
+  expect(normalizedTextSha256(player)).toBe(kuxRuntimePins['components/quiz/QuizPlayer.tsx']);
   expect(normalizedTextSha256(player.slice(player.indexOf('  const commitAnswer ='), player.indexOf('  const onNativeBAnswer =')))).toBe(kperfRuntimePins.commitAnswer);
   expect(player).not.toContain('ExamNoteGuide');
   expect(player).not.toContain('GenerateSimilar');

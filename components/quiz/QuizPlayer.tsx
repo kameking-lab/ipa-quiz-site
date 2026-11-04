@@ -76,6 +76,7 @@ interface Props {
   exam?: string;
   completionLabel?: string;
   completionShareHref?: string;
+  quiet?: boolean;
   onNext: () => void;
   relatedQuestions?: Question[];
   onRelated?: (question: Question) => void;
@@ -99,6 +100,7 @@ function ScoredQuizPlayer({
   exam = "ap",
   completionLabel,
   completionShareHref,
+  quiet = false,
   onNext,
   relatedQuestions,
   onRelated,
@@ -140,11 +142,11 @@ function ScoredQuizPlayer({
   React.useEffect(() => {
     motivationSettingsRef.current = readMotivationSettings();
     const alreadyShown = localStorage.getItem(LS_KEYS.swipeHintShown) === "true";
-    if (!alreadyShown) {
+    if (!quiet && !alreadyShown) {
       setShowSwipeHint(true);
       localStorage.setItem(LS_KEYS.swipeHintShown, "true");
     }
-  }, []);
+  }, [quiet]);
 
   // 最初の問題がロードされた瞬間に quiz_started を一度だけ送信
   React.useEffect(() => {
@@ -650,7 +652,7 @@ function ScoredQuizPlayer({
                 ? "Enter / → で次の問題へ / R でスター / ? でヘルプ"
                 : native ? "五つの枠を選んで「回答を採点する」で解答 / R でスター / ? でヘルプ" : ordering ? "各位置を選んで採点する / R でスター / ? でヘルプ" : numeric ? "数値を入力し、Enter または「採点する」で解答 / R でスター / ? でヘルプ" : `キーボード: ${choiceCount <= 9 ? `1〜${choiceCount}` : choiceCount === 10 ? "1〜9・0" : "1〜9・0（先頭10肢）"} で選択 / R でスター / ? でヘルプ`}
             </div>
-            {!revealed && showSwipeHint && (
+            {!quiet && !revealed && showSwipeHint && (
               <div className="mt-4 rounded-xl bg-sky-50 p-3 text-xs text-sky-700 [@media(hover:hover)_and_(pointer:fine)]:hidden dark:bg-sky-950/30 dark:text-sky-300">
                 解答後、左スワイプで次の問題へ進めます
               </div>
@@ -678,14 +680,14 @@ function ScoredQuizPlayer({
         </nav>
       )}
 
-      {burst && <FireworksBurst
+      {!quiet && burst && <FireworksBurst
         active
         level={burst?.level ?? "small"}
         onDone={() => setBurst(null)}
         key={burst?.nonce ?? 0}
       />}
 
-      {pendingAchievement && (
+      {!quiet && pendingAchievement && (
         <AchievementToast
           achievementId={pendingAchievement}
           onClose={() => setPendingAchievement(null)}
