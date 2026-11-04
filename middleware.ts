@@ -18,6 +18,9 @@ const REALM = "Kakomon AI Admin";
 // マッチャは config.matcher 側に同じパスを列挙する必要がある（gone-paths-in-matcher
 // の回帰テストで両者の同期をガードしている）。
 export const GONE_PATHS: readonly string[] = [
+  "/characters/normal.svg", // Retired human-character assets (Chihuahua is separate).
+  "/characters/sweet.svg",
+  "/characters/spicy.svg",
   "/commerce", // 旧 特定商取引法表記（全機能無料化で不要）
   "/pricing", // 旧 料金表
   "/premium", // 旧 プレミアム LP
@@ -177,6 +180,9 @@ export const config = {
     "/api/admin/:path*",
     "/e-learning/exams",
     // --- GONE_PATHS（410 Gone・後継なし削除ページ）---
+    "/characters/normal.svg",
+    "/characters/sweet.svg",
+    "/characters/spicy.svg",
     "/commerce",
     "/pricing",
     "/premium",

@@ -20,6 +20,14 @@ test.describe("prune batch A", () => {
     });
   }
 
+  test("retired character asset URLs return 410", async ({ request }) => {
+    for (const asset of ["normal", "sweet", "spicy"]) {
+      const response = await request.get(`/characters/${asset}.svg`);
+      expect(response.status()).toBe(410);
+      expect(await response.text()).toContain("恒久的に削除");
+    }
+  });
+
   test("weekly signup no longer accepts email addresses", async ({ request }) => {
     const response = await request.post("/api/email-list", { data: { email: "test@example.invalid" } });
     expect(response.status()).toBe(410);
