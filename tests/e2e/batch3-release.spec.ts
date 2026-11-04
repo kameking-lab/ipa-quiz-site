@@ -31,10 +31,16 @@ test("batch3: surveyor afternoon uses manual assessment, original figures and of
   await expect(model.getByRole("link", {name: "公式正解例の出典"})).toHaveAttribute("href", "https://www.gsi.go.jp/common/000279272.pdf");
   await expect(model.locator('img')).toHaveCount(2);
   await page.getByRole("link", {name: /クイズモードで開く/}).first().click();
+  await expect(page).toHaveURL(/\/quiz\?/);
+  await expect(page.getByRole("heading", {name: "測量士 年度別過去問演習"})).toBeVisible();
   const practice = page.getByRole("region", {name: "記述の独自解答例"});
   await expect(practice).toBeVisible();
   await practice.locator("summary").click();
-  await expect(practice.locator('img').first()).toBeVisible();
+  await expect(practice.locator("details")).toHaveJSProperty("open", true);
+  const example = practice.locator('img').first();
+  await example.scrollIntoViewIfNeeded();
+  await expect.poll(() => example.evaluate((image: HTMLImageElement) => image.complete && image.naturalWidth > 0)).toBe(true);
+  await expect(example).toBeVisible();
   await expect(page.getByRole("radiogroup")).toHaveCount(0);
   expect(await page.evaluate(() => localStorage.getItem("ipa-quiz:history:v1"))).toBeNull();
 });
