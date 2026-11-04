@@ -5,9 +5,9 @@ import { isPracticeReadyQuestion } from "@/lib/questions/filter";
 import { questionSourceEdition } from "@/lib/questions/source-label";
 import { examLabel } from "@/lib/utils";
 export const EXAM_DESCRIPTIONS: Partial<Record<ExamCode, string>> = {
-  "sekou-1kenchiku": (c, y, k) => `1?????????????????????7?8???${c}??${y}??${k}???????????????????????`,
-  "khk-kagaku": (c) => `????????????????2024?2025????${c}??????????????????????????`,
-  kenchikushi1: () => "????????????????????????????",
+  kenchikushi1: "令和7・8年の学科5科目250原問を保存し、全員加点1問を除く249問を演習できます。最終公式正答・全肢解説・必要図を収録。設計製図は対象外です。",
+  "khk-kagaku": "2024・2025年度の甲種・乙種・丙種（液石・特別）422原問。択一410問は全肢解説、甲種学識12問は独自解答・自己採点基準・公式解答例で確認できます。記述答案は自動採点しません。",
+  "sekou-1kenchiku": "令和7・8年度の第一次検定、各72問・計144問を全肢解説と必要図付きで収録。令和7年度No.57は公式訂正に従い3・4いずれも正答です。第二次検定は対象外です。",
 "keiryoshi": "第76回（令和7年実施）のみ100問を収録。第75回は未収録で、2回分の全問収録ではありません。出題時点の法令・基準に基づく全肢解説を確認できます。",
 "keiryoshi-nodo": "第76回（令和7年実施）のみ100問を収録。第75回は未収録で、2回分の全問収録ではありません。出題時点の法令・基準に基づく全肢解説を確認できます。",
 "keiryoshi-soon": "第76回（令和7年実施）のみ100問を収録。第75回は未収録で、2回分の全問収録ではありません。出題時点の法令・基準に基づく全肢解説を確認できます。",
@@ -222,9 +222,9 @@ export function examTopDescription(exam: ExamCode, questionCount: number): strin
     return `${base}${examLabel(exam)}の過去問${questionCount}問を年度別・分野別に収録。AIコパイロット付きで効率的に学習。`;
 }
 const EXAM_FULL_NAMES: Record<ExamCode, string> = {
-  "sekou-1kenchiku": "1??????????????????",
-  "khk-kagaku": "?????????????????",
-  kenchikushi1: "?????????",
+  kenchikushi1: "一級建築士（学科）",
+  "khk-kagaku": "高圧ガス製造保安責任者試験（化学）",
+  "sekou-1kenchiku": "1級建築施工管理技術検定（第一次検定）",
     "chintai": "賃貸不動産経営管理士",
     "kyusui": "給水装置工事主任技術者",
     "biru-kan": "建築物環境衛生管理技術者",
@@ -368,6 +368,9 @@ export function examFullName(exam: ExamCode): string {
     return EXAM_FULL_NAMES[exam];
 }
 const EXAM_META_DESC_DIVERSE: Record<ExamCode, (c: string, y: number, k: number) => string> = {
+  kenchikushi1: (c) => `一級建築士（学科）の令和7・8年から${c}問。`,
+  "khk-kagaku": (c) => `高圧ガス製造保安責任者（化学）から${c}原問。`,
+  "sekou-1kenchiku": (c) => `1級建築施工管理第一次検定から${c}問。`,
     "chintai": () => "2024・2025年度100原問を保存。通常演習99問。2025年問9は公式全員正解のため通常採点対象外です。",
     "kyusui": () => "2025・2026年度120原問を保存。通常演習119問。2025年問18は公式全員正解のため通常採点対象外です。",
     "biru-kan": () => "第54・55回（2024・2025年度）360問。公式問題・公式正答・全肢解説・必要図を収録しています。",

@@ -1,5 +1,6 @@
 import { readFileSync } from "node:fs";
 import { expect, it } from "vitest";
+import sourceGaps from "../shared/qualification-source-gaps.json";
 import catalog from "../src/generated/catalog.json";
 import { qualificationTargets, isQualificationUrl, qualificationUrl } from "../shared/qualification-schedules";
 const read = (file: string) => readFileSync(new URL(file, import.meta.url), "utf8");
@@ -11,7 +12,7 @@ it("covers every catalog qualification with an exact mapping or an explicit sour
     if (!targets.length) unavailable.add(key);
     for (const target of targets) expect(isQualificationUrl(qualificationUrl(target.id))).toBe(true);
   }
-  expect([...unavailable].sort()).toEqual(["gas-hei", "gas-otsu"]);
+  expect([...unavailable].sort()).toEqual(sourceGaps.qualifications);
 });
 it("uses only the system editor and never introduces calendar read permissions or direct saves", () => {
   const swift = read("../ios-assets/QualificationBridgeViewController.swift");

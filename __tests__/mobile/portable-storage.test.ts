@@ -1,7 +1,7 @@
 import {beforeEach,afterEach,expect,it,vi} from "vitest";
 import {LS_KEYS} from "@/lib/storage/keys";
 const m=vi.hoisted(()=>({preferences:new Map<string,string>()}));
-vi.mock("@/mobile/node_modules/@capacitor/preferences",()=>({Preferences:{
+vi.mock("@capacitor/preferences",()=>({Preferences:{
   get:async({key}:{key:string})=>({value:m.preferences.get(key)??null}),
   set:async({key,value}:{key:string;value:string})=>{m.preferences.set(key,value);},
   keys:async()=>({keys:[...m.preferences.keys()]}),

@@ -17,19 +17,19 @@ import { isAcceptedAnswer } from "@/lib/questions/answers";
 
 // Publication boundaries must keep working when real candidate questions are added.
 describe("一級建築士（学科）の公開前登録", () => {
-  it("keeps synchronous and lazy registries and public navigation closed", async () => {
-    expect(getQualificationByExamCode("kenchikushi1")?.status).toBe("ready-to-ingest");
-    expect(isExamPublished("kenchikushi1")).toBe(false);
-    expect(ALL_QUIZ_EXAM_CODES).not.toContain("kenchikushi1");
+  it("publishes the approved projection and preserves staged originals", async () => {
+    expect(getQualificationByExamCode("kenchikushi1")?.status).toBe("live");
+    expect(isExamPublished("kenchikushi1")).toBe(true);
+    expect(ALL_QUIZ_EXAM_CODES).toContain("kenchikushi1");
     expect(ALL_EXAM_CODES).not.toContain("kenchikushi1");
-    expect(QUESTIONS_BY_EXAM.kenchikushi1).toBeUndefined();
-    expect(ALL_QUESTIONS.some(q => q.exam === "kenchikushi1")).toBe(false);
-    expect(await getQuestionsForExam("kenchikushi1")).toEqual([]);
-    expect(JSON.stringify(getHomeDirectory())).not.toContain("kenchikushi1");
+    expect(QUESTIONS_BY_EXAM.kenchikushi1).toHaveLength(249);
+    expect(ALL_QUESTIONS.some(q => q.exam === "kenchikushi1")).toBe(true);
+    expect(await getQuestionsForExam("kenchikushi1")).toEqual(KENCHIKUSHI1_QUESTIONS);
+    expect(JSON.stringify(getHomeDirectory())).toContain("kenchikushi1");
   });
 
   it("does not count a source manifest as completed past questions", () => {
-    expect(KENCHIKUSHI1_QUESTIONS).toEqual([]);
+    expect(KENCHIKUSHI1_QUESTIONS).toHaveLength(249);
     expect(manifest.publicationGo).toBe(false);
     expect(manifest.publicAllowed).toBe(false);
     expect(manifest.ingestionBlocked).toBe(false);

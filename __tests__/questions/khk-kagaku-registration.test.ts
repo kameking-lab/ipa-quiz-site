@@ -61,29 +61,18 @@ describe("KHK complete but unpublished practice registration", () => {
     }
   });
 
-  it("keeps the whole corpus absent from public registries, discovery, and lazy loaders", async () => {
-    expect(catalog.isExamPublished("khk-kagaku")).toBe(false);
-    expect(QUESTIONS_BY_EXAM["khk-kagaku"]).toBeUndefined();
-    expect(PUBLIC_KHK_KAGAKU_QUESTIONS).toEqual([]);
-    const registry = readFileSync(resolve("data/questions/index.ts"), "utf8");
-    expect(registry).toContain('from "./khk-kagaku/public"');
-    expect(registry).not.toMatch(/from ["']\.\/khk-kagaku["']/);
-    expect(readFileSync(resolve("data/questions/khk-kagaku/index.ts"), "utf8")).toContain('import "server-only"');
-    expect(ALL_QUIZ_EXAM_CODES).not.toContain("khk-kagaku");
-    expect(getRegisteredExamCodes()).not.toContain("khk-kagaku");
-    expect(getAvailableExams()).not.toContain("khk-kagaku");
-    expect(await getQuestionsForExam("khk-kagaku")).toEqual([]);
-    const entry = catalog.QUALIFICATION_CATALOG.find((q) => q.examCode === "khk-kagaku")!;
-    const previous = entry.status;
-    // publicAllowed=false must win even over an accidental catalog-live change.
-    try {
-      entry.status = "live";
-      expect(catalog.isExamPublished("khk-kagaku")).toBe(false);
-      expect(await getQuestionsForExam("khk-kagaku")).toEqual([]);
-    } finally { entry.status = previous; }
+  it("publishes the approved corpus through synchronous, discovery and lazy registries", async () => {
+    expect(catalog.isExamPublished("khk-kagaku")).toBe(true);
+    expect(QUESTIONS_BY_EXAM["khk-kagaku"]).toEqual(KHK_KAGAKU_QUESTIONS);
+    expect(PUBLIC_KHK_KAGAKU_QUESTIONS).toEqual(KHK_KAGAKU_QUESTIONS);
+    expect(ALL_QUIZ_EXAM_CODES).toContain("khk-kagaku");
+    expect(getRegisteredExamCodes()).toContain("khk-kagaku");
+    expect(getAvailableExams()).toContain("khk-kagaku");
+    expect(await getQuestionsForExam("khk-kagaku")).toEqual(KHK_KAGAKU_QUESTIONS);
   });
 
-  it("references all 49 original images and blocks every image while unpublished", async () => {
+  it("references all 49 original images and blocks every image when publication is closed", async () => {
+    vi.spyOn(catalog, "isExamPublished").mockReturnValue(false);
     const urls = KHK_KAGAKU_QUESTIONS.flatMap((q) => [...(q.imageUrls ?? []), ...(q.modelAnswer?.match(/\/api\/qualification-assets\/khk-kagaku\/[^)]+\.png/g) ?? [])]);
     expect(new Set(urls.map((url) => `images/${url.split("/").at(-1)}`))).toEqual(new Set(assetFiles));
     for (const asset of assetFiles) {

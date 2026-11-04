@@ -120,7 +120,9 @@ interface OtherCardDef {
 }
 
 const OTHER_CARDS: readonly OtherCardDef[] = [
-  { code: "kenchikushi1", name: "?????????", sub: "??5???????", domain: "construction" },
+  { code: "khk-kagaku", name: "高圧ガス化学", sub: "甲種・乙種・丙種（液石・特別）422原問", domain: "safety" },
+  { code: "sekou-1kenchiku", name: "1級建築施工管理", sub: "第一次検定（令和7・8年度144問）", domain: "construction" },
+  { code: "kenchikushi1", name: "一級建築士（学科）", sub: "令和7・8年の学科5科目（全員加点1問を除く）", domain: "construction" },
   { code: "kisho", name: "気象予報士", sub: "第65・66回 学科60問・実技18問（手動照合）", domain: "safety" },
   { code: "jken-katsuyo3", name: "J検 情報活用3級", sub: "令和8年度前期・令和7年度後期", domain: "it" },
   { code: "jken-katsuyo2", name: "J検 情報活用2級", sub: "令和8年度前期・令和7年度後期", domain: "it" },

@@ -53,7 +53,7 @@ export function practiceSessionLabel(session: Session, exam?: ExamCode): string 
   if (exam === "kanteishi" && session === "riron") return "鑑定評価理論";
   if (exam === "kaikeishi" && session === "kigyo") return "企業法";
   if (exam === "kaikeishi" && session === "zaimu") return "財務会計論";
-  return ({ "khk-ax": "甲種化学 法令", "khk-ay": "甲種化学 保安管理技術", "khk-az": "甲種化学 学識", "khk-bx": "乙種化学 法令", "khk-by": "乙種化学 保安管理技術", "khk-bz": "乙種化学 学識", "khk-cx": "丙種化学（液石） 法令", "khk-cy": "丙種化学（液石） 保安管理技術", "khk-cz": "丙種化学（液石） 学識", "khk-dx": "丙種化学（特別） 法令", "khk-dy": "丙種化学（特別） 保安管理技術", "khk-dz": "丙種化学（特別） 学識",  keikaku: "??", "kankyo-setsubi": "?????", kozo: "??", sekou: "??", gakushiki: "学識", gyosei: "行政法規",
+  return ({ "khk-ax": "甲種化学 法令", "khk-ay": "甲種化学 保安管理技術", "khk-az": "甲種化学 学識", "khk-bx": "乙種化学 法令", "khk-by": "乙種化学 保安管理技術", "khk-bz": "乙種化学 学識", "khk-cx": "丙種化学（液石） 法令", "khk-cy": "丙種化学（液石） 保安管理技術", "khk-cz": "丙種化学（液石） 学識", "khk-dx": "丙種化学（特別） 法令", "khk-dy": "丙種化学（特別） 保安管理技術", "khk-dz": "丙種化学（特別） 学識",  keikaku: "計画", "kankyo-setsubi": "環境・設備", kozo: "構造", sekou: "施工", gakushiki: "学識", gyosei: "行政法規",
 kanri: "管理会計論",
 kansa: "監査論",
 am: "午前",

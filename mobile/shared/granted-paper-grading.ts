@@ -4,3 +4,5 @@ export function loadSurveyAssistantGradingPaper(_id: string): readonly ExamQuest
   void _id;
   return null;
 }
+
+export const loadReferenceAwareGradingPaper = loadSurveyAssistantGradingPaper;

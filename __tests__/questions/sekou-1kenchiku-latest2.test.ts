@@ -64,13 +64,13 @@ describe("1級建築施工管理 第一次検定 令和7・8年度ステージ�
       expect(questions.find(q => q.year === figure.year && q.qNumber === figure.number)!.imageUrls).toContain(figure.path);
     }
   });
-  it("retains canonical route metadata while excluding staging from all public registries", async () => {
-    expect(isExamPublished("sekou-1kenchiku")).toBe(false);
-    expect(ALL_QUIZ_EXAM_CODES).not.toContain("sekou-1kenchiku");
+  it("retains canonical route metadata while publishing the reviewed questions in public registries", async () => {
+    expect(isExamPublished("sekou-1kenchiku")).toBe(true);
+    expect(ALL_QUIZ_EXAM_CODES).toContain("sekou-1kenchiku");
     expect(ALL_EXAM_CODES).not.toContain("sekou-1kenchiku");
-    expect(getRegisteredExamCodes()).not.toContain("sekou-1kenchiku");
-    expect(ALL_QUESTIONS.some(q => q.exam === "sekou-1kenchiku")).toBe(false);
-    expect(await getQuestionsForExam("sekou-1kenchiku")).toEqual([]);
+    expect(getRegisteredExamCodes()).toContain("sekou-1kenchiku");
+    expect(ALL_QUESTIONS.some(q => q.exam === "sekou-1kenchiku")).toBe(true);
+    expect(await getQuestionsForExam("sekou-1kenchiku")).toEqual(questions);
     expect(questionPagePath(questions[0]!)).toBe("/q/sekou-1kenchiku/2025-july/am/q1");
   });
 });

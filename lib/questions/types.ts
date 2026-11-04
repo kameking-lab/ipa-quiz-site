@@ -62,9 +62,9 @@ term?: "upper" | "lower";
 examDate?: string;
 subject?: string;
 officialAnswerNumber?: number | string | null;
-/** ??????????????????? */
+/** Official credit-for-all is excluded from normal practice. */
 officialScoring?: { kind: "credit-for-all"; reason: string };
-/** false ???????? */
+/** false marks unpublished candidates. */
 publicAllowed?: boolean;
 type: QuestionType;
 /** 数値記入。answer は単位を除いた正規化済み非負数文字列。 */
@@ -116,7 +116,7 @@ explanationCoverage?: "full" | "official-summary";
 choiceImageUrls?: Partial<Record<ChoiceKey, string>>;
 modelAnswer?: string;
 scoringCriteria?: string;
-/** ???????????????????????? */
+/** Official credit-for-all is excluded from normal practice. */
 selfAssessment?: { label: string; criterion: string; points: number }[];
 hasImage: boolean;
 imageUrls?: string[];

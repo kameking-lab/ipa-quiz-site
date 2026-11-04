@@ -38,6 +38,9 @@ const eslintConfig = defineConfig([
     "build/**",
     // Local PDF/OCR outputs and one-off audit bundles are not application code.
     "tmp/**",
+    // Historical generated audit evidence is retained byte-for-byte.
+    "mobile/docs/evidence/**",
+    "mobile/dist/**",
     "next-env.d.ts",
   ]),
 ]);

@@ -1,3 +1,5 @@
+// Provider regression fixture: admission is tested independently in security/normal-use suites.
+vi.mock("@/lib/ai/normal-use-server", () => ({ checkAiNormalUse: async () => ({ ok: true }) }));
 // TEST ONLY corpus injection: retain generic grading/provider/cost contracts, not public availability.
 vi.mock("@/lib/afternoon/load", async () => await import("@/__tests__/fixtures/archived-afternoon-load"));
 import { describe, it, expect, beforeEach, vi } from "vitest";

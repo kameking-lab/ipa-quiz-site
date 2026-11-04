@@ -1,3 +1,4 @@
+// @vitest-environment node
 import { afterEach, beforeEach, expect, it, vi } from "vitest";
 import { createHash, randomBytes } from "node:crypto";
 import { decode } from "next-auth/jwt";

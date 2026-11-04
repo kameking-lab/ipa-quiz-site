@@ -30,6 +30,7 @@ export function sessionLabel(session: string, exam?: ExamCode): string {
   if (parsed && (exam === "kenki1" || exam === "kenki2" || exam === "kanteishi" || exam === "kaikeishi")) return practiceSessionLabel(parsed, exam);
   if (parsed && ["gyosei", "kanri", "kansa", "rousai", "koyou", "kenpo", "kounen", "kokunen", "ippan", "sentaku", "required", "theory", "practical", "kiso", "kogaku-a", "kogaku-b", "hoki", "tiri"].includes(parsed)) return practiceSessionLabel(parsed);
   const map: Record<string, string> = {
+    keikaku: "計画", "kankyo-setsubi": "環境・設備", kozo: "構造", sekou: "施工",
     gakushiki: "学識",
     hoan: "保安管理技術",
     am: "午前",
@@ -152,7 +153,7 @@ export function buildQuestionJsonLd({
 
   // The administering body authored the question; this site authored the
   // learning explanation. Keep the author inline so the node is self-contained.
-  const releaseSource = ["chintai", "kyusui", "biru-kan", "gijutsushi1-kikai", "hoshasen-1", "hoshasen-2", "energy-kanri"].includes(q.exam) ? getQualificationByExamCode(q.exam) : undefined;
+  const releaseSource = ["kenchikushi1", "khk-kagaku", "sekou-1kenchiku", "chintai", "kyusui", "biru-kan", "gijutsushi1-kikai", "hoshasen-1", "hoshasen-2", "energy-kanri"].includes(q.exam) ? getQualificationByExamCode(q.exam) : undefined;
   const questionAuthor = releaseSource
     ? { "@type": "Organization", name: releaseSource.administrator, url: new URL(releaseSource.officialQuestionsUrl).origin }
     : q.exam === "kisho"

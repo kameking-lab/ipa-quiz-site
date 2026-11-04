@@ -41,7 +41,8 @@ for(const path of artifacts.sort()) {
 if(protectedRsc<expected.length)throw new Error("Missing generated protected RSC payloads");
 const chunks=(await files(resolve(root,".next/static/chunks"))).filter(path=>path.endsWith(".js"));
 const index=JSON.parse(await readFile(resolve(root,"data/exam-library/survey-assistant/grading-index.json"),"utf8")) as {questions:{id:string}[]}[];
-const indexIds=index.flatMap(paper=>paper.questions.map(q=>q.id));
+const informationIndex=JSON.parse(await readFile(resolve(root,"data/exam-library/pe-first/information-grading-index.json"),"utf8")) as {id:string}[];
+const indexIds=[...index.flatMap(paper=>paper.questions.map(q=>q.id)),...informationIndex.map(q=>q.id)];
 const samples=[...new Set([...routeSources.values()].flatMap(source=>fingerprints(source)))];
 const escape=(s:string)=>s.replace(/[.*+?^${}()|[\]\\]/g,"\\$&");
 const pattern=new RegExp([...new Set(samples.flatMap(s=>[s,JSON.stringify(s).slice(1,-1)]))].map(escape).join("|"));

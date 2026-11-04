@@ -34,7 +34,7 @@ describe("KHK chemistry source staging", () => {
       const papers = drafts.papers.filter((paper) => paper.year === year);
       expect(papers.map((paper) => paper.expectedQuestions)).toEqual([20, 15, 6, 20, 15, 15, 20, 20, 20, 20, 20, 20]);
       for (const paper of papers) {
-        expect(paper.questions.map((q) => q.number)).toEqual(Array.from({ length: paper.expectedQuestions }, (_, i) => i + 1));
+        expect([...paper.questions].map((q) => q.number)).toEqual(Array.from({ length: paper.expectedQuestions }, (_, i) => i + 1));
         for (const q of paper.questions) {
           expect(q.rawExtractedText.length).toBeGreaterThan(30);
           expect(q.sourcePdfUrl).toBe(paper.sourcePdfUrl);
@@ -377,7 +377,7 @@ describe("KHK chemistry source staging", () => {
         const paper = drafts.papers.find((p) => p.year === year && p.code === code)!;
         const retained = keys[`${year}-${code}` as keyof typeof keys];
         expect(retained).toEqual(official);
-        expect(paper.questions.map((q) => "officialAnswerNumber" in q ? q.officialAnswerNumber : undefined)).toEqual(official);
+        expect([...paper.questions].map((q) => "officialAnswerNumber" in q ? q.officialAnswerNumber : undefined)).toEqual(official);
         expect(paper.questions.every((q) => "choicesDraft" in q && q.choicesDraft?.length === 5)).toBe(true);
         checked += official.length;
       }
@@ -389,9 +389,9 @@ describe("KHK chemistry source staging", () => {
     expect(drafts.status).toBe("registered-unpublished");
     expect(drafts.publicAllowed).toBe(false);
     const entry = QUALIFICATION_CATALOG.find((q) => q.slug === "khk-kagaku");
-    expect(entry?.status).toBe("ready-to-ingest");
+    expect(entry?.status).toBe("live");
     expect(entry?.examCode).toBe("khk-kagaku");
-    expect(entry?.remainingWork.length).toBeGreaterThan(0);
-    expect(Object.values(QUESTIONS_BY_EXAM).flat().some((q) => q.id.startsWith("khk-kagaku-"))).toBe(false);
+    expect(entry?.remainingWork).toEqual([]);
+    expect(Object.values(QUESTIONS_BY_EXAM).flat().some((q) => q.id.startsWith("khk-kagaku-"))).toBe(true);
   });
 });

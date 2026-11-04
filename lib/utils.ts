@@ -4,9 +4,9 @@ export function cn(...inputs: ClassValue[]) {
     return twMerge(clsx(inputs));
 }
 export const EXAM_LABELS: Record<string, string> = {
-  "sekou-1kenchiku": "1????????????",
-  "khk-kagaku": "???????????????",
-  kenchikushi1: "?????????",
+  "sekou-1kenchiku": "1級建築施工管理（第一次）",
+  "khk-kagaku": "高圧ガス製造保安責任者（化学）",
+  kenchikushi1: "一級建築士（学科）",
     shihoshoshi: "司法書士",
     "chintai": "賃貸不動産経営管理士",
     "kyusui": "給水装置工事主任技術者",
