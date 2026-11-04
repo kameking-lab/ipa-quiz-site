@@ -52,7 +52,35 @@
         "data/qualification-staging/benrishi/assets/2026-question-p02.png"
       ],
       "lastUpdated": "2026-11-04",
-      "explanationCoverage": "draft"
+      "officialReferenceUrls": [
+        "https://laws.e-gov.go.jp/law/334AC0000000121",
+        "https://laws.e-gov.go.jp/law/334AC0000000123"
+      ],
+      "lawReferenceDate": "2026-05-17",
+      "statementExplanations": [],
+      "choiceExplanations": [
+        {
+          "number": 1,
+          "explanation": "誤り。私信メールを特定の第三者へ送る行為は、直ちに29条1項3号の「公衆に利用可能」とする行為ではない。公開されたウェブ掲載等と区別する。"
+        },
+        {
+          "number": 2,
+          "explanation": "誤り。30条3項は申出書を出願と同時、証明書を出願から30日以内とする。両書面とも30日以内とする点が違う。"
+        },
+        {
+          "number": 3,
+          "explanation": "誤り。刊行物は公衆が閲覧できる状態に置かれれば29条1項3号の資料となる。実際の閲覧・複写がなかったことでは排除できない。"
+        },
+        {
+          "number": 4,
+          "explanation": "正しい。36条1項は願書に出願人の氏名・名称及び住所・居所、発明者の氏名及び住所・居所を記載することを求める。"
+        },
+        {
+          "number": 5,
+          "explanation": "誤り。38条の2は通知前の自発的な補完も認める。明細書欠落の補完を長官の通知を受けた後に限定していない。"
+        }
+      ],
+      "explanationCoverage": "all-choices"
     },
     {
       "id": "benrishi-2026-patent-02",
@@ -89,7 +117,7 @@
       "sourceAnswerUrl": "https://www.jpo.go.jp/news/benrishi/shiken-mondai/document/2026tanto/answer.pdf",
       "sourcePageUrl": "https://www.jpo.go.jp/news/benrishi/shiken-mondai/2026tanto.html",
       "attribution": "出典：特許庁 弁理士試験短答式筆記試験問題・解答。過去問AIがテキスト化・整形。解説は過去問AIの独自作成（特許庁による作成・保証ではありません）。",
-      "explanation": "出題時点の法令に基づく独自解説。誤りはイとニの2つ。請求人として参加した者は請求取下げ後も審判を続行できる場合があり、無効審判は請求の認諾によって終了しない。権利の有効性について対世的な効果を持つ手続であるため、通常の当事者間の金銭訴訟とは扱いが異なる。",
+      "explanation": "出題時点の法令に基づく独自解説。\n記述イ：誤り。148条3項により、請求人として参加した者は元の請求人の取下げ後も手続を続行できる場合がある。\n記述ロ：正しい。156条は事件が審決に熟したときの審理終結通知を定め、審決予告後の訂正請求を経た場合も予告しないときは終結を通知する。\n記述ハ：正しい。157条3項は審決謄本を当事者・参加人だけでなく参加申請を拒否された者にも送達するよう求める。\n記述ニ：誤り。無効審判には対世的な権利有効性の判断があり、通常訴訟の請求認諾によって当然に手続を終了する制度ではない。\n記述ホ：正しい。裁定による通常実施権に基づく実施者も権利の有効性について利害関係を有し、123条の無効審判請求ができる。",
       "publicAllowed": false,
       "needsReview": true,
       "sourcePdfUrl": "https://www.jpo.go.jp/news/benrishi/shiken-mondai/document/2026tanto/question.pdf",
@@ -99,7 +127,61 @@
         "data/qualification-staging/benrishi/assets/2026-question-p03.png"
       ],
       "lastUpdated": "2026-11-04",
-      "explanationCoverage": "draft"
+      "officialReferenceUrls": [
+        "https://laws.e-gov.go.jp/law/334AC0000000121",
+        "https://laws.e-gov.go.jp/law/334AC0000000123"
+      ],
+      "lawReferenceDate": "2026-05-17",
+      "statementExplanations": [
+        {
+          "label": "イ",
+          "correct": false,
+          "explanation": "148条3項により、請求人として参加した者は元の請求人の取下げ後も手続を続行できる場合がある。"
+        },
+        {
+          "label": "ロ",
+          "correct": true,
+          "explanation": "156条は事件が審決に熟したときの審理終結通知を定め、審決予告後の訂正請求を経た場合も予告しないときは終結を通知する。"
+        },
+        {
+          "label": "ハ",
+          "correct": true,
+          "explanation": "157条3項は審決謄本を当事者・参加人だけでなく参加申請を拒否された者にも送達するよう求める。"
+        },
+        {
+          "label": "ニ",
+          "correct": false,
+          "explanation": "無効審判には対世的な権利有効性の判断があり、通常訴訟の請求認諾によって当然に手続を終了する制度ではない。"
+        },
+        {
+          "label": "ホ",
+          "correct": true,
+          "explanation": "裁定による通常実施権に基づく実施者も権利の有効性について利害関係を有し、123条の無効審判請求ができる。"
+        }
+      ],
+      "choiceExplanations": [
+        {
+          "number": 1,
+          "explanation": "誤答。正しい記述はロ・ハ・ホ、誤った記述はイ・ニ。選択肢の「１つ」ではなく、該当する記述は2つである。"
+        },
+        {
+          "number": 2,
+          "explanation": "正解。正しい記述はロ・ハ・ホ、誤った記述はイ・ニ。選択肢の「２つ」が該当する。"
+        },
+        {
+          "number": 3,
+          "explanation": "誤答。正しい記述はロ・ハ・ホ、誤った記述はイ・ニ。選択肢の「３つ」ではなく、該当する記述は2つである。"
+        },
+        {
+          "number": 4,
+          "explanation": "誤答。正しい記述はロ・ハ・ホ、誤った記述はイ・ニ。選択肢の「４つ」ではなく、該当する記述は2つである。"
+        },
+        {
+          "number": 5,
+          "explanation": "誤答。正しい記述はロ・ハ・ホ、誤った記述はイ・ニ。選択肢の「５つ」ではなく、該当する記述は2つである。"
+        }
+      ],
+      "explanationCoverage": "all-choices"
     },
     {
       "id": "benrishi-2026-patent-03",
@@ -136,7 +218,7 @@
       "sourceAnswerUrl": "https://www.jpo.go.jp/news/benrishi/shiken-mondai/document/2026tanto/answer.pdf",
       "sourcePageUrl": "https://www.jpo.go.jp/news/benrishi/shiken-mondai/2026tanto.html",
       "attribution": "出典：特許庁 弁理士試験短答式筆記試験問題・解答。過去問AIがテキスト化・整形。解説は過去問AIの独自作成（特許庁による作成・保証ではありません）。",
-      "explanation": "出題時点の法令に基づく独自解説。正しいのはイとホの2つ。プログラムは物に含まれ、当事者の不定期間の故障には審査手続の中止を命じ得る。休日による期間繰下げは存続期間の満了には適用されず、国内優先権主張には特別授権が必要である。",
+      "explanation": "出題時点の法令に基づく独自解説。\n記述イ：正しい。2条3項1号は物にプログラム等を含める。プログラムは方法の発明にしかならないものではない。\n記述ロ：誤り。3条2項の休日による繰下げは手続の期間の規律であり、実体的な特許権の存続期間満了を延ばさない。\n記述ハ：誤り。4条の遠隔・交通不便を理由とする法定期間の延長は、期間経過後の請求による回復を認める規定ではない。\n記述ニ：誤り。9条は国内優先権主張について特別の授権を要する。在外者の特許管理人の権限に関する例外を国内代理人へ及ぼせない。\n記述ホ：正しい。24条で準用する民訴法130条により、不定期間の故障で手続を続行できないとき長官は決定で中止を命じることができる。",
       "publicAllowed": false,
       "needsReview": true,
       "sourcePdfUrl": "https://www.jpo.go.jp/news/benrishi/shiken-mondai/document/2026tanto/question.pdf",
@@ -146,7 +228,61 @@
         "data/qualification-staging/benrishi/assets/2026-question-p04.png"
       ],
       "lastUpdated": "2026-11-04",
-      "explanationCoverage": "draft"
+      "officialReferenceUrls": [
+        "https://laws.e-gov.go.jp/law/334AC0000000121",
+        "https://laws.e-gov.go.jp/law/334AC0000000123"
+      ],
+      "lawReferenceDate": "2026-05-17",
+      "statementExplanations": [
+        {
+          "label": "イ",
+          "correct": true,
+          "explanation": "2条3項1号は物にプログラム等を含める。プログラムは方法の発明にしかならないものではない。"
+        },
+        {
+          "label": "ロ",
+          "correct": false,
+          "explanation": "3条2項の休日による繰下げは手続の期間の規律であり、実体的な特許権の存続期間満了を延ばさない。"
+        },
+        {
+          "label": "ハ",
+          "correct": false,
+          "explanation": "4条の遠隔・交通不便を理由とする法定期間の延長は、期間経過後の請求による回復を認める規定ではない。"
+        },
+        {
+          "label": "ニ",
+          "correct": false,
+          "explanation": "9条は国内優先権主張について特別の授権を要する。在外者の特許管理人の権限に関する例外を国内代理人へ及ぼせない。"
+        },
+        {
+          "label": "ホ",
+          "correct": true,
+          "explanation": "24条で準用する民訴法130条により、不定期間の故障で手続を続行できないとき長官は決定で中止を命じることができる。"
+        }
+      ],
+      "choiceExplanations": [
+        {
+          "number": 1,
+          "explanation": "誤答。正しい記述はイ・ホ、誤った記述はロ・ハ・ニ。選択肢の「１つ」ではなく、該当する記述は2つである。"
+        },
+        {
+          "number": 2,
+          "explanation": "正解。正しい記述はイ・ホ、誤った記述はロ・ハ・ニ。選択肢の「２つ」が該当する。"
+        },
+        {
+          "number": 3,
+          "explanation": "誤答。正しい記述はイ・ホ、誤った記述はロ・ハ・ニ。選択肢の「３つ」ではなく、該当する記述は2つである。"
+        },
+        {
+          "number": 4,
+          "explanation": "誤答。正しい記述はイ・ホ、誤った記述はロ・ハ・ニ。選択肢の「４つ」ではなく、該当する記述は2つである。"
+        },
+        {
+          "number": 5,
+          "explanation": "誤答。正しい記述はイ・ホ、誤った記述はロ・ハ・ニ。選択肢の「５つ」ではなく、該当する記述は2つである。"
+        }
+      ],
+      "explanationCoverage": "all-choices"
     },
     {
       "id": "benrishi-2026-patent-04",
@@ -184,7 +320,7 @@
       "sourceAnswerUrl": "https://www.jpo.go.jp/news/benrishi/shiken-mondai/document/2026tanto/answer.pdf",
       "sourcePageUrl": "https://www.jpo.go.jp/news/benrishi/shiken-mondai/2026tanto.html",
       "attribution": "出典：特許庁 弁理士試験短答式筆記試験問題・解答。過去問AIがテキスト化・整形。解説は過去問AIの独自作成（特許庁による作成・保証ではありません）。",
-      "explanation": "出題時点の法令に基づく独自解説。正しいのはロとホの2つ。承継型の職務発明の権利を二重譲渡した場合、出願が第三者対抗要件となる。他方、相当の利益は金銭に限らず、会社負担の留学機会等も含み得る。丁会社への原始帰属を定めた発明と、乙会社への後の承継を定めた発明を区別する。",
+      "explanation": "出題時点の法令に基づく独自解説。\n記述イ：誤り。丙の職務発明持分は35条3項により発生時から丁会社に帰属する。甲の持分譲渡について丙本人の同意を得るという記述は異なる。\n記述ロ：正しい。乙会社は承継型であるため34条1項の出願による対抗要件を要する。先に出願した二重譲受人戊に乙会社は承継を対抗できない。\n記述ハ：誤り。職務発明性は発明をした時の職務・雇用関係で判断する。転職前に乙との職務で完成したハが転職により丁へ原始帰属するものではない。\n記述ニ：誤り。35条5項の不合理性は協議・基準開示・意見聴取等の状況を総合して判断する。一部手続を欠けば必ず不合理となるものではない。\n記述ホ：正しい。35条4項の相当の利益は金銭に限られない。会社費用負担の留学機会も経済上の利益として定め得る。",
       "publicAllowed": false,
       "needsReview": true,
       "sourcePdfUrl": "https://www.jpo.go.jp/news/benrishi/shiken-mondai/document/2026tanto/question.pdf",
@@ -195,7 +331,61 @@
         "data/qualification-staging/benrishi/assets/2026-question-p06.png"
       ],
       "lastUpdated": "2026-11-04",
-      "explanationCoverage": "draft"
+      "officialReferenceUrls": [
+        "https://laws.e-gov.go.jp/law/334AC0000000121",
+        "https://laws.e-gov.go.jp/law/334AC0000000123"
+      ],
+      "lawReferenceDate": "2026-05-17",
+      "statementExplanations": [
+        {
+          "label": "イ",
+          "correct": false,
+          "explanation": "丙の職務発明持分は35条3項により発生時から丁会社に帰属する。甲の持分譲渡について丙本人の同意を得るという記述は異なる。"
+        },
+        {
+          "label": "ロ",
+          "correct": true,
+          "explanation": "乙会社は承継型であるため34条1項の出願による対抗要件を要する。先に出願した二重譲受人戊に乙会社は承継を対抗できない。"
+        },
+        {
+          "label": "ハ",
+          "correct": false,
+          "explanation": "職務発明性は発明をした時の職務・雇用関係で判断する。転職前に乙との職務で完成したハが転職により丁へ原始帰属するものではない。"
+        },
+        {
+          "label": "ニ",
+          "correct": false,
+          "explanation": "35条5項の不合理性は協議・基準開示・意見聴取等の状況を総合して判断する。一部手続を欠けば必ず不合理となるものではない。"
+        },
+        {
+          "label": "ホ",
+          "correct": true,
+          "explanation": "35条4項の相当の利益は金銭に限られない。会社費用負担の留学機会も経済上の利益として定め得る。"
+        }
+      ],
+      "choiceExplanations": [
+        {
+          "number": 1,
+          "explanation": "誤答。正しい記述はロ・ホ、誤った記述はイ・ハ・ニ。選択肢の「１つ」ではなく、該当する記述は2つである。"
+        },
+        {
+          "number": 2,
+          "explanation": "正解。正しい記述はロ・ホ、誤った記述はイ・ハ・ニ。選択肢の「２つ」が該当する。"
+        },
+        {
+          "number": 3,
+          "explanation": "誤答。正しい記述はロ・ホ、誤った記述はイ・ハ・ニ。選択肢の「３つ」ではなく、該当する記述は2つである。"
+        },
+        {
+          "number": 4,
+          "explanation": "誤答。正しい記述はロ・ホ、誤った記述はイ・ハ・ニ。選択肢の「４つ」ではなく、該当する記述は2つである。"
+        },
+        {
+          "number": 5,
+          "explanation": "誤答。正しい記述はロ・ホ、誤った記述はイ・ハ・ニ。選択肢の「５つ」ではなく、該当する記述は2つである。"
+        }
+      ],
+      "explanationCoverage": "all-choices"
     },
     {
       "id": "benrishi-2026-patent-05",
@@ -232,7 +422,7 @@
       "sourceAnswerUrl": "https://www.jpo.go.jp/news/benrishi/shiken-mondai/document/2026tanto/answer.pdf",
       "sourcePageUrl": "https://www.jpo.go.jp/news/benrishi/shiken-mondai/2026tanto.html",
       "attribution": "出典：特許庁 弁理士試験短答式筆記試験問題・解答。過去問AIがテキスト化・整形。解説は過去問AIの独自作成（特許庁による作成・保証ではありません）。",
-      "explanation": "出題時点の法令に基づく独自解説。正しいのはロ・ハ・ニ・ホの4つ。実用新案の基礎的要件違反による出願却下に対して、拒絶査定不服審判は請求できない。請求項削除の訂正には通常の一回限りの訂正とは異なる規律があり、出願変更の期限は実用新案から特許への変更とその逆とで区別する。",
+      "explanation": "出題時点の法令に基づく独自解説。\n記述イ：誤り。実用新案法の基礎的要件違反による出願却下は拒絶査定ではなく、拒絶査定不服審判の対象とはならない。\n記述ロ：正しい。同日特許出願の協議不成立拒絶については先願地位が残る例外があり、後願の同一考案は実用新案法7条の先願要件を満たさない。\n記述ハ：正しい。適法に変更した実用新案登録出願について技術評価請求は可能である。元の特許出願の拒絶査定が評価請求を禁止するものではない。\n記述ニ：正しい。実用新案法14条の2の請求項削除の訂正は通常の一回訂正と異なり、最初の答弁期間後でもできる場合がある。\n記述ホ：正しい。特許出願から実用新案への変更の上限は原則出願から9年6月であり、適法な分割による遡及日から4年の設例は期間内である。",
       "publicAllowed": false,
       "needsReview": true,
       "sourcePdfUrl": "https://www.jpo.go.jp/news/benrishi/shiken-mondai/document/2026tanto/question.pdf",
@@ -242,7 +432,61 @@
         "data/qualification-staging/benrishi/assets/2026-question-p07.png"
       ],
       "lastUpdated": "2026-11-04",
-      "explanationCoverage": "draft"
+      "officialReferenceUrls": [
+        "https://laws.e-gov.go.jp/law/334AC0000000121",
+        "https://laws.e-gov.go.jp/law/334AC0000000123"
+      ],
+      "lawReferenceDate": "2026-05-17",
+      "statementExplanations": [
+        {
+          "label": "イ",
+          "correct": false,
+          "explanation": "実用新案法の基礎的要件違反による出願却下は拒絶査定ではなく、拒絶査定不服審判の対象とはならない。"
+        },
+        {
+          "label": "ロ",
+          "correct": true,
+          "explanation": "同日特許出願の協議不成立拒絶については先願地位が残る例外があり、後願の同一考案は実用新案法7条の先願要件を満たさない。"
+        },
+        {
+          "label": "ハ",
+          "correct": true,
+          "explanation": "適法に変更した実用新案登録出願について技術評価請求は可能である。元の特許出願の拒絶査定が評価請求を禁止するものではない。"
+        },
+        {
+          "label": "ニ",
+          "correct": true,
+          "explanation": "実用新案法14条の2の請求項削除の訂正は通常の一回訂正と異なり、最初の答弁期間後でもできる場合がある。"
+        },
+        {
+          "label": "ホ",
+          "correct": true,
+          "explanation": "特許出願から実用新案への変更の上限は原則出願から9年6月であり、適法な分割による遡及日から4年の設例は期間内である。"
+        }
+      ],
+      "choiceExplanations": [
+        {
+          "number": 1,
+          "explanation": "誤答。正しい記述はロ・ハ・ニ・ホ、誤った記述はイ。選択肢の「１つ」ではなく、該当する記述は4つである。"
+        },
+        {
+          "number": 2,
+          "explanation": "誤答。正しい記述はロ・ハ・ニ・ホ、誤った記述はイ。選択肢の「２つ」ではなく、該当する記述は4つである。"
+        },
+        {
+          "number": 3,
+          "explanation": "誤答。正しい記述はロ・ハ・ニ・ホ、誤った記述はイ。選択肢の「３つ」ではなく、該当する記述は4つである。"
+        },
+        {
+          "number": 4,
+          "explanation": "正解。正しい記述はロ・ハ・ニ・ホ、誤った記述はイ。選択肢の「４つ」が該当する。"
+        },
+        {
+          "number": 5,
+          "explanation": "誤答。正しい記述はロ・ハ・ニ・ホ、誤った記述はイ。選択肢の「５つ」ではなく、該当する記述は4つである。"
+        }
+      ],
+      "explanationCoverage": "all-choices"
     },
     {
       "id": "benrishi-2026-patent-06",
@@ -289,7 +533,35 @@
         "data/qualification-staging/benrishi/assets/2026-question-p08.png"
       ],
       "lastUpdated": "2026-11-04",
-      "explanationCoverage": "draft"
+      "officialReferenceUrls": [
+        "https://laws.e-gov.go.jp/law/334AC0000000121",
+        "https://laws.e-gov.go.jp/law/334AC0000000123"
+      ],
+      "lawReferenceDate": "2026-05-17",
+      "statementExplanations": [],
+      "choiceExplanations": [
+        {
+          "number": 1,
+          "explanation": "誤り。実用新案法51条にも登録実用新案である旨の表示についての努力義務があり、特許だけの義務ではない。"
+        },
+        {
+          "number": 2,
+          "explanation": "誤り。実用新案法56条等には侵害とみなされる行為にも刑罰を科す規定がある。間接侵害は一律に不可罰ではない。"
+        },
+        {
+          "number": 3,
+          "explanation": "正しい。技術評価書による警告は民事上の権利行使の規律であり、侵害行為の刑事罰について評価書作成を必須条件とはしていない。"
+        },
+        {
+          "number": 4,
+          "explanation": "誤り。34条の返還対象は無効審決が確定した年の翌年以後の各年分であり、返還請求をした年の翌年を起算点としない。"
+        },
+        {
+          "number": 5,
+          "explanation": "誤り。無効審決の確定は実用新案原簿だけでなく実用新案公報の掲載事項にも含まれる。"
+        }
+      ],
+      "explanationCoverage": "all-choices"
     },
     {
       "id": "benrishi-2026-patent-07",
@@ -326,7 +598,7 @@
       "sourceAnswerUrl": "https://www.jpo.go.jp/news/benrishi/shiken-mondai/document/2026tanto/answer.pdf",
       "sourcePageUrl": "https://www.jpo.go.jp/news/benrishi/shiken-mondai/2026tanto.html",
       "attribution": "出典：特許庁 弁理士試験短答式筆記試験問題・解答。過去問AIがテキスト化・整形。解説は過去問AIの独自作成（特許庁による作成・保証ではありません）。",
-      "explanation": "出題時点の法令に基づく独自解説。誤りはイ・ハ・ホの3つ。査証命令には即時抗告の制度があり、第三者意見募集では他の当事者の意見を聴く。信用回復措置は損害賠償に代えてだけでなく、損害賠償とともに命じることもできる。正当理由のない査証拒否には真実擬制の制裁があり得る。",
+      "explanation": "出題時点の法令に基づく独自解説。\n記述イ：誤り。105条の2の査証命令の決定には即時抗告を認める規定がある。秘密情報に関わる立入りの不服手段が保障される。\n記述ロ：正しい。105条の2の5により、正当理由のない立入拒否等について裁判所は立証事項に関する相手の主張を真実と認めることができる。\n記述ハ：誤り。105条の2の11の意見募集では他の当事者の意見を聴かなければならず、それを省略できるとする点が誤りである。\n記述ニ：正しい。105条の2の損害計算鑑定は当事者の申立てによるもので、申立人を原告特許権者だけに限定していない。\n記述ホ：誤り。106条は信用回復措置を損害賠償に代えて、又は損害賠償とともに命じることを認める。併用禁止ではない。",
       "publicAllowed": false,
       "needsReview": true,
       "sourcePdfUrl": "https://www.jpo.go.jp/news/benrishi/shiken-mondai/document/2026tanto/question.pdf",
@@ -336,7 +608,61 @@
         "data/qualification-staging/benrishi/assets/2026-question-p09.png"
       ],
       "lastUpdated": "2026-11-04",
-      "explanationCoverage": "draft"
+      "officialReferenceUrls": [
+        "https://laws.e-gov.go.jp/law/334AC0000000121",
+        "https://laws.e-gov.go.jp/law/334AC0000000123"
+      ],
+      "lawReferenceDate": "2026-05-17",
+      "statementExplanations": [
+        {
+          "label": "イ",
+          "correct": false,
+          "explanation": "105条の2の査証命令の決定には即時抗告を認める規定がある。秘密情報に関わる立入りの不服手段が保障される。"
+        },
+        {
+          "label": "ロ",
+          "correct": true,
+          "explanation": "105条の2の5により、正当理由のない立入拒否等について裁判所は立証事項に関する相手の主張を真実と認めることができる。"
+        },
+        {
+          "label": "ハ",
+          "correct": false,
+          "explanation": "105条の2の11の意見募集では他の当事者の意見を聴かなければならず、それを省略できるとする点が誤りである。"
+        },
+        {
+          "label": "ニ",
+          "correct": true,
+          "explanation": "105条の2の損害計算鑑定は当事者の申立てによるもので、申立人を原告特許権者だけに限定していない。"
+        },
+        {
+          "label": "ホ",
+          "correct": false,
+          "explanation": "106条は信用回復措置を損害賠償に代えて、又は損害賠償とともに命じることを認める。併用禁止ではない。"
+        }
+      ],
+      "choiceExplanations": [
+        {
+          "number": 1,
+          "explanation": "誤答。正しい記述はロ・ニ、誤った記述はイ・ハ・ホ。選択肢の「１つ」ではなく、該当する記述は3つである。"
+        },
+        {
+          "number": 2,
+          "explanation": "誤答。正しい記述はロ・ニ、誤った記述はイ・ハ・ホ。選択肢の「２つ」ではなく、該当する記述は3つである。"
+        },
+        {
+          "number": 3,
+          "explanation": "正解。正しい記述はロ・ニ、誤った記述はイ・ハ・ホ。選択肢の「３つ」が該当する。"
+        },
+        {
+          "number": 4,
+          "explanation": "誤答。正しい記述はロ・ニ、誤った記述はイ・ハ・ホ。選択肢の「４つ」ではなく、該当する記述は3つである。"
+        },
+        {
+          "number": 5,
+          "explanation": "誤答。正しい記述はロ・ニ、誤った記述はイ・ハ・ホ。選択肢の「５つ」ではなく、該当する記述は3つである。"
+        }
+      ],
+      "explanationCoverage": "all-choices"
     },
     {
       "id": "benrishi-2026-patent-08",
@@ -383,7 +709,35 @@
         "data/qualification-staging/benrishi/assets/2026-question-p10.png"
       ],
       "lastUpdated": "2026-11-04",
-      "explanationCoverage": "draft"
+      "officialReferenceUrls": [
+        "https://laws.e-gov.go.jp/law/334AC0000000121",
+        "https://laws.e-gov.go.jp/law/334AC0000000123"
+      ],
+      "lawReferenceDate": "2026-05-17",
+      "statementExplanations": [],
+      "choiceExplanations": [
+        {
+          "number": 1,
+          "explanation": "正しい。50条の2の通知がされる分割出願では、最初の拒絶理由通知後でも17条の2第5項の補正目的制限が及ぶ場合がある。"
+        },
+        {
+          "number": 2,
+          "explanation": "誤り。17条の3は1年4月内でも出願公開請求後の要約書補正を認めない。早期公開請求をした点を見落とせない。"
+        },
+        {
+          "number": 3,
+          "explanation": "誤り。訂正拒絶理由通知への対応は訂正審判請求書に添付した訂正明細書等の補正であり、元の出願添付書類を直接補正する手続ではない。"
+        },
+        {
+          "number": 4,
+          "explanation": "誤り。17条の2第1項は審判請求と同時の補正等の機会を限定する。請求後3月内ならいつでも補正できるわけではない。"
+        },
+        {
+          "number": 5,
+          "explanation": "誤り。限定的減縮の要件違反に対しては53条の補正却下を行う。補正後の出願をそのことだけで拒絶査定する扱いではない。"
+        }
+      ],
+      "explanationCoverage": "all-choices"
     },
     {
       "id": "benrishi-2026-patent-09",
@@ -421,7 +775,7 @@
       "sourceAnswerUrl": "https://www.jpo.go.jp/news/benrishi/shiken-mondai/document/2026tanto/answer.pdf",
       "sourcePageUrl": "https://www.jpo.go.jp/news/benrishi/shiken-mondai/2026tanto.html",
       "attribution": "出典：特許庁 弁理士試験短答式筆記試験問題・解答。過去問AIがテキスト化・整形。解説は過去問AIの独自作成（特許庁による作成・保証ではありません）。",
-      "explanation": "出題時点の法令に基づく独自解説。正しい組合せはロとニ。国内優先権の基礎となる発明は先願の当初明細書等を基準とし、その後削除された部分にも効果が認められ得る。基礎出願に特許査定があった場合は、みなし取下げの例外により1年4月後にも設定登録が可能となる。実用新案登録に基づく特許出願は国内優先権の基礎にできない。",
+      "explanation": "出題時点の法令に基づく独自解説。\n記述イ：誤り。41条1項は46条の2による実用新案登録に基づく特許出願を国内優先権の基礎から除く。出願Ａから5月内でも利用できない。\n記述ロ：正しい。41条の基礎記載は先願Ａの当初明細書等による。後の補正で発明ロを削除しても、その当初記載を優先権の基礎にできる。\n記述ハ：誤り。41条2項の優先権累積の制限により、Ｂを基礎とする国内優先権だけで発明イの基準日が第一国出願Ａの1月1日に遡るわけではない。\n記述ニ：正しい。42条のみなし取下げには特許査定謄本が所定期間内に送達された場合の例外があり、1年4月後でも設定登録され得る。\n記述ホ：誤り。基礎出願Ｂに係る優先権主張をやめるのは取下げの手続である。優先権主張書面からＢの記載を補正削除する方法ではない。",
       "publicAllowed": false,
       "needsReview": true,
       "sourcePdfUrl": "https://www.jpo.go.jp/news/benrishi/shiken-mondai/document/2026tanto/question.pdf",
@@ -432,7 +786,61 @@
         "data/qualification-staging/benrishi/assets/2026-question-p12.png"
       ],
       "lastUpdated": "2026-11-04",
-      "explanationCoverage": "draft"
+      "officialReferenceUrls": [
+        "https://laws.e-gov.go.jp/law/334AC0000000121",
+        "https://laws.e-gov.go.jp/law/334AC0000000123"
+      ],
+      "lawReferenceDate": "2026-05-17",
+      "statementExplanations": [
+        {
+          "label": "イ",
+          "correct": false,
+          "explanation": "41条1項は46条の2による実用新案登録に基づく特許出願を国内優先権の基礎から除く。出願Ａから5月内でも利用できない。"
+        },
+        {
+          "label": "ロ",
+          "correct": true,
+          "explanation": "41条の基礎記載は先願Ａの当初明細書等による。後の補正で発明ロを削除しても、その当初記載を優先権の基礎にできる。"
+        },
+        {
+          "label": "ハ",
+          "correct": false,
+          "explanation": "41条2項の優先権累積の制限により、Ｂを基礎とする国内優先権だけで発明イの基準日が第一国出願Ａの1月1日に遡るわけではない。"
+        },
+        {
+          "label": "ニ",
+          "correct": true,
+          "explanation": "42条のみなし取下げには特許査定謄本が所定期間内に送達された場合の例外があり、1年4月後でも設定登録され得る。"
+        },
+        {
+          "label": "ホ",
+          "correct": false,
+          "explanation": "基礎出願Ｂに係る優先権主張をやめるのは取下げの手続である。優先権主張書面からＢの記載を補正削除する方法ではない。"
+        }
+      ],
+      "choiceExplanations": [
+        {
+          "number": 1,
+          "explanation": "誤答。正しい記述はロ・ニ、誤った記述はイ・ハ・ホ。この組合せのイ・ニは、正しい記述の組合せと異なる。"
+        },
+        {
+          "number": 2,
+          "explanation": "誤答。正しい記述はロ・ニ、誤った記述はイ・ハ・ホ。この組合せのロ・ホは、正しい記述の組合せと異なる。"
+        },
+        {
+          "number": 3,
+          "explanation": "誤答。正しい記述はロ・ニ、誤った記述はイ・ハ・ホ。この組合せのハ・ホは、正しい記述の組合せと異なる。"
+        },
+        {
+          "number": 4,
+          "explanation": "誤答。正しい記述はロ・ニ、誤った記述はイ・ハ・ホ。この組合せのイ・ハは、正しい記述の組合せと異なる。"
+        },
+        {
+          "number": 5,
+          "explanation": "正解。正しい記述はロ・ニ、誤った記述はイ・ハ・ホ。この組合せのロ・ニは、ともに正しい記述であり選ぶべき組合せとなる。"
+        }
+      ],
+      "explanationCoverage": "all-choices"
     },
     {
       "id": "benrishi-2026-patent-10",
@@ -469,7 +877,7 @@
       "sourceAnswerUrl": "https://www.jpo.go.jp/news/benrishi/shiken-mondai/document/2026tanto/answer.pdf",
       "sourcePageUrl": "https://www.jpo.go.jp/news/benrishi/shiken-mondai/2026tanto.html",
       "attribution": "出典：特許庁 弁理士試験短答式筆記試験問題・解答。過去問AIがテキスト化・整形。解説は過去問AIの独自作成（特許庁による作成・保証ではありません）。",
-      "explanation": "出題時点の法令に基づく独自解説。正しいのはハのみ。専用実施権の侵害にも過失推定が適用される。専用品型の間接侵害には汎用品除外が当然に適用されるわけではなく、損害額の参酌も故意がないだけで義務となるものではない。確定判決後の無効審決による蒸し返しは制限される。",
+      "explanation": "出題時点の法令に基づく独自解説。\n記述イ：誤り。101条4号の専用品型間接侵害に汎用品除外はない。一般流通品除外のある同条5号の非専用品型と区別する。\n記述ロ：誤り。102条5項は故意又は重大な過失がない場合の裁判所による裁量的参酌であり、単なる故意の不存在で必ず参酌する義務ではない。\n記述ハ：正しい。103条は他人の特許権又は専用実施権を侵害した者について過失を推定し、専用実施権侵害も含む。\n記述ニ：誤り。104条の3第3項の無効抗弁資格の制限は冒認・共同出願違反等に関する特例である。一般の無効理由すべてを無効審判請求人だけに限定しない。\n記述ホ：誤り。104条の4は侵害訴訟の終局判決確定後の無効審決を再審等で主張することを制限し、支払後の紛争の蒸し返しを防ぐ。",
       "publicAllowed": false,
       "needsReview": true,
       "sourcePdfUrl": "https://www.jpo.go.jp/news/benrishi/shiken-mondai/document/2026tanto/question.pdf",
@@ -479,7 +887,61 @@
         "data/qualification-staging/benrishi/assets/2026-question-p13.png"
       ],
       "lastUpdated": "2026-11-04",
-      "explanationCoverage": "draft"
+      "officialReferenceUrls": [
+        "https://laws.e-gov.go.jp/law/334AC0000000121",
+        "https://laws.e-gov.go.jp/law/334AC0000000123"
+      ],
+      "lawReferenceDate": "2026-05-17",
+      "statementExplanations": [
+        {
+          "label": "イ",
+          "correct": false,
+          "explanation": "101条4号の専用品型間接侵害に汎用品除外はない。一般流通品除外のある同条5号の非専用品型と区別する。"
+        },
+        {
+          "label": "ロ",
+          "correct": false,
+          "explanation": "102条5項は故意又は重大な過失がない場合の裁判所による裁量的参酌であり、単なる故意の不存在で必ず参酌する義務ではない。"
+        },
+        {
+          "label": "ハ",
+          "correct": true,
+          "explanation": "103条は他人の特許権又は専用実施権を侵害した者について過失を推定し、専用実施権侵害も含む。"
+        },
+        {
+          "label": "ニ",
+          "correct": false,
+          "explanation": "104条の3第3項の無効抗弁資格の制限は冒認・共同出願違反等に関する特例である。一般の無効理由すべてを無効審判請求人だけに限定しない。"
+        },
+        {
+          "label": "ホ",
+          "correct": false,
+          "explanation": "104条の4は侵害訴訟の終局判決確定後の無効審決を再審等で主張することを制限し、支払後の紛争の蒸し返しを防ぐ。"
+        }
+      ],
+      "choiceExplanations": [
+        {
+          "number": 1,
+          "explanation": "正解。正しい記述はハ、誤った記述はイ・ロ・ニ・ホ。選択肢の「１つ」が該当する。"
+        },
+        {
+          "number": 2,
+          "explanation": "誤答。正しい記述はハ、誤った記述はイ・ロ・ニ・ホ。選択肢の「２つ」ではなく、該当する記述は1つである。"
+        },
+        {
+          "number": 3,
+          "explanation": "誤答。正しい記述はハ、誤った記述はイ・ロ・ニ・ホ。選択肢の「３つ」ではなく、該当する記述は1つである。"
+        },
+        {
+          "number": 4,
+          "explanation": "誤答。正しい記述はハ、誤った記述はイ・ロ・ニ・ホ。選択肢の「４つ」ではなく、該当する記述は1つである。"
+        },
+        {
+          "number": 5,
+          "explanation": "誤答。正しい記述はハ、誤った記述はイ・ロ・ニ・ホ。選択肢の「５つ」ではなく、該当する記述は1つである。"
+        }
+      ],
+      "explanationCoverage": "all-choices"
     },
     {
       "id": "benrishi-2026-patent-11",
@@ -526,7 +988,35 @@
         "data/qualification-staging/benrishi/assets/2026-question-p14.png"
       ],
       "lastUpdated": "2026-11-04",
-      "explanationCoverage": "draft"
+      "officialReferenceUrls": [
+        "https://laws.e-gov.go.jp/law/334AC0000000121",
+        "https://laws.e-gov.go.jp/law/334AC0000000123"
+      ],
+      "lawReferenceDate": "2026-05-17",
+      "statementExplanations": [],
+      "choiceExplanations": [
+        {
+          "number": 1,
+          "explanation": "誤り。121条の請求人は拒絶査定を受けた者であり、審判結果に利害関係がある第三者一般には請求権がない。"
+        },
+        {
+          "number": 2,
+          "explanation": "誤り。164条の前置報告は審査官から長官への報告であり、その結果を請求人へ通知することを義務付けていない。"
+        },
+        {
+          "number": 3,
+          "explanation": "誤り。164条2項は特許査定をする場合を除き前置審査での補正却下を制限する。特許にできない場合は却下決定をせず報告する。"
+        },
+        {
+          "number": 4,
+          "explanation": "正しい。162条は審判請求と同時の明細書等の補正があれば前置審査を要するとし、名称だけの補正も明細書補正に当たる。"
+        },
+        {
+          "number": 5,
+          "explanation": "誤り。134条4項の審尋は書面でも行える。口頭審理によることを必須とするものではない。"
+        }
+      ],
+      "explanationCoverage": "all-choices"
     },
     {
       "id": "benrishi-2026-patent-12",
@@ -564,7 +1054,7 @@
       "sourceAnswerUrl": "https://www.jpo.go.jp/news/benrishi/shiken-mondai/document/2026tanto/answer.pdf",
       "sourcePageUrl": "https://www.jpo.go.jp/news/benrishi/shiken-mondai/2026tanto.html",
       "attribution": "出典：特許庁 弁理士試験短答式筆記試験問題・解答。過去問AIがテキスト化・整形。解説は過去問AIの独自作成（特許庁による作成・保証ではありません）。",
-      "explanation": "出題時点の法令に基づく独自解説。正しいのはロとニの2つ。国外譲渡時に日本を販売先から除外する留保がない設例では、並行輸入品に対する権利行使は制限される。また、用語の解釈には明細書・図面を考慮する。均等の公知技術要件は製造時ではなく出願時を基準とし、新たな特許製品の製造と認められる再生には消尽は及ばない。",
+      "explanation": "出題時点の法令に基づく独自解説。\n記述イ：誤り。均等論の公知技術に関する要件は特許出願時を基準とする。製造時点で公知であることだけでは均等を否定できない。\n記述ロ：正しい。権利者が国外で譲渡し日本を販売先から除く合意がない場合、設例の並行輸入品について日本での特許権行使は制限される。\n記述ハ：誤り。同一性を欠く新たな特許製品の製造と認められる再生には元製品の消尽の効果は及ばない。新製品への権利行使が可能となる。\n記述ニ：正しい。70条2項は用語の意義の解釈に明細書及び図面を考慮すると定め、特段の事情がなければ考慮不可という扱いではない。\n記述ホ：誤り。プロダクト・バイ・プロセスの物の発明の技術的範囲は、原則として製造方法にかかわらず構造・特性が同一の物に及び、方法の相違だけで非侵害とならない。",
       "publicAllowed": false,
       "needsReview": true,
       "sourcePdfUrl": "https://www.jpo.go.jp/news/benrishi/shiken-mondai/document/2026tanto/question.pdf",
@@ -575,7 +1065,61 @@
         "data/qualification-staging/benrishi/assets/2026-question-p16.png"
       ],
       "lastUpdated": "2026-11-04",
-      "explanationCoverage": "draft"
+      "officialReferenceUrls": [
+        "https://laws.e-gov.go.jp/law/334AC0000000121",
+        "https://laws.e-gov.go.jp/law/334AC0000000123"
+      ],
+      "lawReferenceDate": "2026-05-17",
+      "statementExplanations": [
+        {
+          "label": "イ",
+          "correct": false,
+          "explanation": "均等論の公知技術に関する要件は特許出願時を基準とする。製造時点で公知であることだけでは均等を否定できない。"
+        },
+        {
+          "label": "ロ",
+          "correct": true,
+          "explanation": "権利者が国外で譲渡し日本を販売先から除く合意がない場合、設例の並行輸入品について日本での特許権行使は制限される。"
+        },
+        {
+          "label": "ハ",
+          "correct": false,
+          "explanation": "同一性を欠く新たな特許製品の製造と認められる再生には元製品の消尽の効果は及ばない。新製品への権利行使が可能となる。"
+        },
+        {
+          "label": "ニ",
+          "correct": true,
+          "explanation": "70条2項は用語の意義の解釈に明細書及び図面を考慮すると定め、特段の事情がなければ考慮不可という扱いではない。"
+        },
+        {
+          "label": "ホ",
+          "correct": false,
+          "explanation": "プロダクト・バイ・プロセスの物の発明の技術的範囲は、原則として製造方法にかかわらず構造・特性が同一の物に及び、方法の相違だけで非侵害とならない。"
+        }
+      ],
+      "choiceExplanations": [
+        {
+          "number": 1,
+          "explanation": "誤答。正しい記述はロ・ニ、誤った記述はイ・ハ・ホ。選択肢の「１つ」ではなく、該当する記述は2つである。"
+        },
+        {
+          "number": 2,
+          "explanation": "正解。正しい記述はロ・ニ、誤った記述はイ・ハ・ホ。選択肢の「２つ」が該当する。"
+        },
+        {
+          "number": 3,
+          "explanation": "誤答。正しい記述はロ・ニ、誤った記述はイ・ハ・ホ。選択肢の「３つ」ではなく、該当する記述は2つである。"
+        },
+        {
+          "number": 4,
+          "explanation": "誤答。正しい記述はロ・ニ、誤った記述はイ・ハ・ホ。選択肢の「４つ」ではなく、該当する記述は2つである。"
+        },
+        {
+          "number": 5,
+          "explanation": "誤答。正しい記述はロ・ニ、誤った記述はイ・ハ・ホ。選択肢の「５つ」ではなく、該当する記述は2つである。"
+        }
+      ],
+      "explanationCoverage": "all-choices"
     },
     {
       "id": "benrishi-2026-patent-13",
@@ -612,7 +1156,7 @@
       "sourceAnswerUrl": "https://www.jpo.go.jp/news/benrishi/shiken-mondai/document/2026tanto/answer.pdf",
       "sourcePageUrl": "https://www.jpo.go.jp/news/benrishi/shiken-mondai/2026tanto.html",
       "attribution": "出典：特許庁 弁理士試験短答式筆記試験問題・解答。過去問AIがテキスト化・整形。解説は過去問AIの独自作成（特許庁による作成・保証ではありません）。",
-      "explanation": "出題時点の法令に基づく独自解説。5つすべて誤り。特許異議は書面審理で、複数申立ては原則併合する。条約違反も異議理由となり、取消理由通知後の取下げは権利者の承諾があっても認められない。全請求項に異議がある場合など、申立期間経過前に審理を始められる例外もある。",
+      "explanation": "出題時点の法令に基づく独自解説。\n記述イ：誤り。118条の特許異議審理は書面審理である。審判の原則口頭審理の規定を異議事件へ持ち込めない。\n記述ロ：誤り。120条の3は同一特許への複数異議を原則併合し、特別の事情があるときに併合しない扱いとする。記述は原則と例外が逆である。\n記述ハ：誤り。113条は特許が条約に違反してされたことを異議理由にも列挙する。無効審判だけの理由ではない。\n記述ニ：誤り。120条の4では取消理由通知後は異議の取下げができず、権利者の意見書提出や承諾によって取下げ可能になるものではない。\n記述ホ：誤り。全請求項に異議がある場合などには申立期間経過前に審理を開始できる特例があり、経過まで一律に審理禁止ではない。",
       "publicAllowed": false,
       "needsReview": true,
       "sourcePdfUrl": "https://www.jpo.go.jp/news/benrishi/shiken-mondai/document/2026tanto/question.pdf",
@@ -622,7 +1166,61 @@
         "data/qualification-staging/benrishi/assets/2026-question-p17.png"
       ],
       "lastUpdated": "2026-11-04",
-      "explanationCoverage": "draft"
+      "officialReferenceUrls": [
+        "https://laws.e-gov.go.jp/law/334AC0000000121",
+        "https://laws.e-gov.go.jp/law/334AC0000000123"
+      ],
+      "lawReferenceDate": "2026-05-17",
+      "statementExplanations": [
+        {
+          "label": "イ",
+          "correct": false,
+          "explanation": "118条の特許異議審理は書面審理である。審判の原則口頭審理の規定を異議事件へ持ち込めない。"
+        },
+        {
+          "label": "ロ",
+          "correct": false,
+          "explanation": "120条の3は同一特許への複数異議を原則併合し、特別の事情があるときに併合しない扱いとする。記述は原則と例外が逆である。"
+        },
+        {
+          "label": "ハ",
+          "correct": false,
+          "explanation": "113条は特許が条約に違反してされたことを異議理由にも列挙する。無効審判だけの理由ではない。"
+        },
+        {
+          "label": "ニ",
+          "correct": false,
+          "explanation": "120条の4では取消理由通知後は異議の取下げができず、権利者の意見書提出や承諾によって取下げ可能になるものではない。"
+        },
+        {
+          "label": "ホ",
+          "correct": false,
+          "explanation": "全請求項に異議がある場合などには申立期間経過前に審理を開始できる特例があり、経過まで一律に審理禁止ではない。"
+        }
+      ],
+      "choiceExplanations": [
+        {
+          "number": 1,
+          "explanation": "誤答。正しい記述はなし、誤った記述はイ・ロ・ハ・ニ・ホ。選択肢の「１つ」ではなく、該当する記述は5つである。"
+        },
+        {
+          "number": 2,
+          "explanation": "誤答。正しい記述はなし、誤った記述はイ・ロ・ハ・ニ・ホ。選択肢の「２つ」ではなく、該当する記述は5つである。"
+        },
+        {
+          "number": 3,
+          "explanation": "誤答。正しい記述はなし、誤った記述はイ・ロ・ハ・ニ・ホ。選択肢の「３つ」ではなく、該当する記述は5つである。"
+        },
+        {
+          "number": 4,
+          "explanation": "誤答。正しい記述はなし、誤った記述はイ・ロ・ハ・ニ・ホ。選択肢の「４つ」ではなく、該当する記述は5つである。"
+        },
+        {
+          "number": 5,
+          "explanation": "正解。正しい記述はなし、誤った記述はイ・ロ・ハ・ニ・ホ。選択肢の「５つ」が該当する。"
+        }
+      ],
+      "explanationCoverage": "all-choices"
     },
     {
       "id": "benrishi-2026-patent-14",
@@ -659,7 +1257,7 @@
       "sourceAnswerUrl": "https://www.jpo.go.jp/news/benrishi/shiken-mondai/document/2026tanto/answer.pdf",
       "sourcePageUrl": "https://www.jpo.go.jp/news/benrishi/shiken-mondai/2026tanto.html",
       "attribution": "出典：特許庁 弁理士試験短答式筆記試験問題・解答。過去問AIがテキスト化・整形。解説は過去問AIの独自作成（特許庁による作成・保証ではありません）。",
-      "explanation": "出題時点の法令に基づく独自解説。誤りはイ・ロ・ハ・ニの4つ。参加許否決定への独立の不服申立てはできず、取消判決後も別の理由等による再度の無効判断はあり得る。請求項ごとの訴えも可能である。特許庁長官の意見陳述は訴訟当事者としての参加によるものではない。",
+      "explanation": "出題時点の法令に基づく独自解説。\n記述イ：誤り。149条5項は参加許否の決定に対する不服申立てを認めていない。参加の利益に争いがあっても独立して不服申立てできない。\n記述ロ：誤り。取消判決の拘束力は判決理由の判断について働く。別の無効理由等による改めての無効審決まで一律に禁止されない。\n記述ハ：誤り。無効審判の審決取消訴訟は請求項単位で争える場合があり、無効とされた全請求項を必ず対象とする必要はない。\n記述ニ：誤り。180条の2の長官の意見陳述は当事者参加とは別の制度である。長官が訴訟当事者として参加して意見を述べるわけではない。\n記述ホ：正しい。186条の営業秘密記載書類の非公開には例外があり、長官が必要と認める場合には申出があっても閲覧を認められる。",
       "publicAllowed": false,
       "needsReview": true,
       "sourcePdfUrl": "https://www.jpo.go.jp/news/benrishi/shiken-mondai/document/2026tanto/question.pdf",
@@ -669,7 +1267,61 @@
         "data/qualification-staging/benrishi/assets/2026-question-p18.png"
       ],
       "lastUpdated": "2026-11-04",
-      "explanationCoverage": "draft"
+      "officialReferenceUrls": [
+        "https://laws.e-gov.go.jp/law/334AC0000000121",
+        "https://laws.e-gov.go.jp/law/334AC0000000123"
+      ],
+      "lawReferenceDate": "2026-05-17",
+      "statementExplanations": [
+        {
+          "label": "イ",
+          "correct": false,
+          "explanation": "149条5項は参加許否の決定に対する不服申立てを認めていない。参加の利益に争いがあっても独立して不服申立てできない。"
+        },
+        {
+          "label": "ロ",
+          "correct": false,
+          "explanation": "取消判決の拘束力は判決理由の判断について働く。別の無効理由等による改めての無効審決まで一律に禁止されない。"
+        },
+        {
+          "label": "ハ",
+          "correct": false,
+          "explanation": "無効審判の審決取消訴訟は請求項単位で争える場合があり、無効とされた全請求項を必ず対象とする必要はない。"
+        },
+        {
+          "label": "ニ",
+          "correct": false,
+          "explanation": "180条の2の長官の意見陳述は当事者参加とは別の制度である。長官が訴訟当事者として参加して意見を述べるわけではない。"
+        },
+        {
+          "label": "ホ",
+          "correct": true,
+          "explanation": "186条の営業秘密記載書類の非公開には例外があり、長官が必要と認める場合には申出があっても閲覧を認められる。"
+        }
+      ],
+      "choiceExplanations": [
+        {
+          "number": 1,
+          "explanation": "誤答。正しい記述はホ、誤った記述はイ・ロ・ハ・ニ。選択肢の「１つ」ではなく、該当する記述は4つである。"
+        },
+        {
+          "number": 2,
+          "explanation": "誤答。正しい記述はホ、誤った記述はイ・ロ・ハ・ニ。選択肢の「２つ」ではなく、該当する記述は4つである。"
+        },
+        {
+          "number": 3,
+          "explanation": "誤答。正しい記述はホ、誤った記述はイ・ロ・ハ・ニ。選択肢の「３つ」ではなく、該当する記述は4つである。"
+        },
+        {
+          "number": 4,
+          "explanation": "正解。正しい記述はホ、誤った記述はイ・ロ・ハ・ニ。選択肢の「４つ」が該当する。"
+        },
+        {
+          "number": 5,
+          "explanation": "誤答。正しい記述はホ、誤った記述はイ・ロ・ハ・ニ。選択肢の「５つ」ではなく、該当する記述は4つである。"
+        }
+      ],
+      "explanationCoverage": "all-choices"
     },
     {
       "id": "benrishi-2026-patent-15",
@@ -706,7 +1358,7 @@
       "sourceAnswerUrl": "https://www.jpo.go.jp/news/benrishi/shiken-mondai/document/2026tanto/answer.pdf",
       "sourcePageUrl": "https://www.jpo.go.jp/news/benrishi/shiken-mondai/2026tanto.html",
       "attribution": "出典：特許庁 弁理士試験短答式筆記試験問題・解答。過去問AIがテキスト化・整形。解説は過去問AIの独自作成（特許庁による作成・保証ではありません）。",
-      "explanation": "出題時点の法令に基づく独自解説。誤りはロとホの2つ。前置審査の審査官には審判請求書の方式補正命令の権限はない。査定を取り消して審査に差し戻すことはできるが、重大な欠陥があれば必ず差し戻すという義務ではない。審判請求の取下げは審決の送達時ではなく確定時まで可能である。",
+      "explanation": "出題時点の法令に基づく独自解説。\n記述イ：正しい。155条の審判請求取下げは審決が確定するまで可能であり、謄本が送達された後も未確定なら取下げできる場合がある。\n記述ロ：誤り。審判請求書の方式補正命令は133条の審判長の権限であり、前置審査の審査官にこの権限はない。\n記述ハ：正しい。53条の補正却下の決定は、拒絶査定不服審判において拒絶査定と併せて適否を争える。\n記述ニ：正しい。169条の拒絶査定不服審判に関する費用は請求人の負担とされる。結果だけで長官負担とはならない。\n記述ホ：誤り。160条は査定を取り消して審査に付すことが「できる」とする。重大な手続欠陥があっても常に差戻審決を義務付けるものではない。",
       "publicAllowed": false,
       "needsReview": true,
       "sourcePdfUrl": "https://www.jpo.go.jp/news/benrishi/shiken-mondai/document/2026tanto/question.pdf",
@@ -716,7 +1368,61 @@
         "data/qualification-staging/benrishi/assets/2026-question-p19.png"
       ],
       "lastUpdated": "2026-11-04",
-      "explanationCoverage": "draft"
+      "officialReferenceUrls": [
+        "https://laws.e-gov.go.jp/law/334AC0000000121",
+        "https://laws.e-gov.go.jp/law/334AC0000000123"
+      ],
+      "lawReferenceDate": "2026-05-17",
+      "statementExplanations": [
+        {
+          "label": "イ",
+          "correct": true,
+          "explanation": "155条の審判請求取下げは審決が確定するまで可能であり、謄本が送達された後も未確定なら取下げできる場合がある。"
+        },
+        {
+          "label": "ロ",
+          "correct": false,
+          "explanation": "審判請求書の方式補正命令は133条の審判長の権限であり、前置審査の審査官にこの権限はない。"
+        },
+        {
+          "label": "ハ",
+          "correct": true,
+          "explanation": "53条の補正却下の決定は、拒絶査定不服審判において拒絶査定と併せて適否を争える。"
+        },
+        {
+          "label": "ニ",
+          "correct": true,
+          "explanation": "169条の拒絶査定不服審判に関する費用は請求人の負担とされる。結果だけで長官負担とはならない。"
+        },
+        {
+          "label": "ホ",
+          "correct": false,
+          "explanation": "160条は査定を取り消して審査に付すことが「できる」とする。重大な手続欠陥があっても常に差戻審決を義務付けるものではない。"
+        }
+      ],
+      "choiceExplanations": [
+        {
+          "number": 1,
+          "explanation": "誤答。正しい記述はイ・ハ・ニ、誤った記述はロ・ホ。選択肢の「１つ」ではなく、該当する記述は2つである。"
+        },
+        {
+          "number": 2,
+          "explanation": "正解。正しい記述はイ・ハ・ニ、誤った記述はロ・ホ。選択肢の「２つ」が該当する。"
+        },
+        {
+          "number": 3,
+          "explanation": "誤答。正しい記述はイ・ハ・ニ、誤った記述はロ・ホ。選択肢の「３つ」ではなく、該当する記述は2つである。"
+        },
+        {
+          "number": 4,
+          "explanation": "誤答。正しい記述はイ・ハ・ニ、誤った記述はロ・ホ。選択肢の「４つ」ではなく、該当する記述は2つである。"
+        },
+        {
+          "number": 5,
+          "explanation": "誤答。正しい記述はイ・ハ・ニ、誤った記述はロ・ホ。選択肢の「５つ」ではなく、該当する記述は2つである。"
+        }
+      ],
+      "explanationCoverage": "all-choices"
     },
     {
       "id": "benrishi-2026-patent-16",
@@ -763,7 +1469,35 @@
         "data/qualification-staging/benrishi/assets/2026-question-p20.png"
       ],
       "lastUpdated": "2026-11-04",
-      "explanationCoverage": "draft"
+      "officialReferenceUrls": [
+        "https://laws.e-gov.go.jp/law/334AC0000000121",
+        "https://laws.e-gov.go.jp/law/334AC0000000123"
+      ],
+      "lawReferenceDate": "2026-05-17",
+      "statementExplanations": [],
+      "choiceExplanations": [
+        {
+          "number": 1,
+          "explanation": "誤り。48条の3第2項の分割後30日は通常の出願から3年の請求期間を補う特例である。通常期間内なら30日経過後も審査請求できる。"
+        },
+        {
+          "number": 2,
+          "explanation": "誤り。44条7項の救済は査定後等の所定の分割期間に関するもので、拒絶理由通知の指定期間徒過すべてを対象にしない。"
+        },
+        {
+          "number": 3,
+          "explanation": "正しい。査定謄本送達から30日内でも、既に特許権の設定登録がされ出願が係属していなければ分割できない。"
+        },
+        {
+          "number": 4,
+          "explanation": "誤り。46条の2は権利者自身が技術評価請求をした場合を除外する。甲の請求済みの登録について、別の請求項だけにしても回避できない。"
+        },
+        {
+          "number": 5,
+          "explanation": "誤り。50条の2の同一拒絶理由に関する通知は分割出願Ｂだけに限らず、原出願Ａが対象となる場合もある。"
+        }
+      ],
+      "explanationCoverage": "all-choices"
     },
     {
       "id": "benrishi-2026-patent-17",
@@ -800,7 +1534,7 @@
       "sourceAnswerUrl": "https://www.jpo.go.jp/news/benrishi/shiken-mondai/document/2026tanto/answer.pdf",
       "sourcePageUrl": "https://www.jpo.go.jp/news/benrishi/shiken-mondai/2026tanto.html",
       "attribution": "出典：特許庁 弁理士試験短答式筆記試験問題・解答。過去問AIがテキスト化・整形。解説は過去問AIの独自作成（特許庁による作成・保証ではありません）。",
-      "explanation": "出題時点の法令に基づく独自解説。正しいのはイ・ロ・ホの3つ。先使用権には国内での実施又は準備が必要であり、抵触関係の裁定では一方の実施を認めないまま他方だけを認めることはできない。質権には侵害賠償請求権への物上代位があり得る。対価の受領不能時は供託の規律に従う。",
+      "explanation": "出題時点の法令に基づく独自解説。\n記述イ：正しい。79条の先使用権は他人の発明を知らずに自ら発明等をし、特許出願時に日本国内で実施事業又はその準備をしていることを要する。\n記述ロ：正しい。92条の相互の裁定実施権は一方の許諾に対応する制度であり、甲の実施権設定を認めないのに乙の対抗裁定だけを認めることはできない。\n記述ハ：誤り。88条2号は受領者が対価を受領できないとき供託を要するとする。長期旅行の不在でも支払義務が消えるわけではない。\n記述ニ：誤り。通常実施権の質権設定の承諾と、質権実行時の権利移転の承諾は別である。設定時の承諾だけで移転の承諾を当然に省略できない。\n記述ホ：正しい。96条の物上代位により、質権者は専用実施権の侵害による損害賠償請求権に対し、支払前の差押えを経て質権を行使できる。",
       "publicAllowed": false,
       "needsReview": true,
       "sourcePdfUrl": "https://www.jpo.go.jp/news/benrishi/shiken-mondai/document/2026tanto/question.pdf",
@@ -810,7 +1544,61 @@
         "data/qualification-staging/benrishi/assets/2026-question-p21.png"
       ],
       "lastUpdated": "2026-11-04",
-      "explanationCoverage": "draft"
+      "officialReferenceUrls": [
+        "https://laws.e-gov.go.jp/law/334AC0000000121",
+        "https://laws.e-gov.go.jp/law/334AC0000000123"
+      ],
+      "lawReferenceDate": "2026-05-17",
+      "statementExplanations": [
+        {
+          "label": "イ",
+          "correct": true,
+          "explanation": "79条の先使用権は他人の発明を知らずに自ら発明等をし、特許出願時に日本国内で実施事業又はその準備をしていることを要する。"
+        },
+        {
+          "label": "ロ",
+          "correct": true,
+          "explanation": "92条の相互の裁定実施権は一方の許諾に対応する制度であり、甲の実施権設定を認めないのに乙の対抗裁定だけを認めることはできない。"
+        },
+        {
+          "label": "ハ",
+          "correct": false,
+          "explanation": "88条2号は受領者が対価を受領できないとき供託を要するとする。長期旅行の不在でも支払義務が消えるわけではない。"
+        },
+        {
+          "label": "ニ",
+          "correct": false,
+          "explanation": "通常実施権の質権設定の承諾と、質権実行時の権利移転の承諾は別である。設定時の承諾だけで移転の承諾を当然に省略できない。"
+        },
+        {
+          "label": "ホ",
+          "correct": true,
+          "explanation": "96条の物上代位により、質権者は専用実施権の侵害による損害賠償請求権に対し、支払前の差押えを経て質権を行使できる。"
+        }
+      ],
+      "choiceExplanations": [
+        {
+          "number": 1,
+          "explanation": "誤答。正しい記述はイ・ロ・ホ、誤った記述はハ・ニ。選択肢の「１つ」ではなく、該当する記述は3つである。"
+        },
+        {
+          "number": 2,
+          "explanation": "誤答。正しい記述はイ・ロ・ホ、誤った記述はハ・ニ。選択肢の「２つ」ではなく、該当する記述は3つである。"
+        },
+        {
+          "number": 3,
+          "explanation": "正解。正しい記述はイ・ロ・ホ、誤った記述はハ・ニ。選択肢の「３つ」が該当する。"
+        },
+        {
+          "number": 4,
+          "explanation": "誤答。正しい記述はイ・ロ・ホ、誤った記述はハ・ニ。選択肢の「４つ」ではなく、該当する記述は3つである。"
+        },
+        {
+          "number": 5,
+          "explanation": "誤答。正しい記述はイ・ロ・ホ、誤った記述はハ・ニ。選択肢の「５つ」ではなく、該当する記述は3つである。"
+        }
+      ],
+      "explanationCoverage": "all-choices"
     },
     {
       "id": "benrishi-2026-patent-18",
@@ -847,7 +1635,7 @@
       "sourceAnswerUrl": "https://www.jpo.go.jp/news/benrishi/shiken-mondai/document/2026tanto/answer.pdf",
       "sourcePageUrl": "https://www.jpo.go.jp/news/benrishi/shiken-mondai/2026tanto.html",
       "attribution": "出典：特許庁 弁理士試験短答式筆記試験問題・解答。過去問AIがテキスト化・整形。解説は過去問AIの独自作成（特許庁による作成・保証ではありません）。",
-      "explanation": "出題時点の法令に基づく独自解説。5つすべて誤り。取消理由通知の相手方は権利者・参加人であり、申立人ではない。取消決定の効果は原則遡及し、維持決定への不服申立ては認められない。請求項の一部取消しはその請求項について効力を生じ、後の訂正は先の訂正案だけを基準とするものでもない。",
+      "explanation": "出題時点の法令に基づく独自解説。\n記述イ：誤り。120条の5の取消理由通知の相手は特許権者及び参加人であり、未主張理由を職権審理した場合も異議申立人へ同じ通知をする義務はない。\n記述ロ：誤り。114条の取消決定確定の効果は初めからの不存在である。後発的無効理由の125条ただし書の扱いを異議取消しに適用しない。\n記述ハ：誤り。114条5項は維持決定に対する不服申立てを認めない。取消決定の訴えと同列には扱われない。\n記述ニ：誤り。185条の請求項別の扱いにより、一部請求項の取消確定はその請求項に効果を生じ、残りの請求項まで当然に取り消さない。\n記述ホ：誤り。後の訂正は先の訂正案だけに拘束されず、先の訂正請求は所定の範囲で取り下げられたものとみなされる。元の記載を基準とする訂正要件で判断する。",
       "publicAllowed": false,
       "needsReview": true,
       "sourcePdfUrl": "https://www.jpo.go.jp/news/benrishi/shiken-mondai/document/2026tanto/question.pdf",
@@ -857,7 +1645,61 @@
         "data/qualification-staging/benrishi/assets/2026-question-p22.png"
       ],
       "lastUpdated": "2026-11-04",
-      "explanationCoverage": "draft"
+      "officialReferenceUrls": [
+        "https://laws.e-gov.go.jp/law/334AC0000000121",
+        "https://laws.e-gov.go.jp/law/334AC0000000123"
+      ],
+      "lawReferenceDate": "2026-05-17",
+      "statementExplanations": [
+        {
+          "label": "イ",
+          "correct": false,
+          "explanation": "120条の5の取消理由通知の相手は特許権者及び参加人であり、未主張理由を職権審理した場合も異議申立人へ同じ通知をする義務はない。"
+        },
+        {
+          "label": "ロ",
+          "correct": false,
+          "explanation": "114条の取消決定確定の効果は初めからの不存在である。後発的無効理由の125条ただし書の扱いを異議取消しに適用しない。"
+        },
+        {
+          "label": "ハ",
+          "correct": false,
+          "explanation": "114条5項は維持決定に対する不服申立てを認めない。取消決定の訴えと同列には扱われない。"
+        },
+        {
+          "label": "ニ",
+          "correct": false,
+          "explanation": "185条の請求項別の扱いにより、一部請求項の取消確定はその請求項に効果を生じ、残りの請求項まで当然に取り消さない。"
+        },
+        {
+          "label": "ホ",
+          "correct": false,
+          "explanation": "後の訂正は先の訂正案だけに拘束されず、先の訂正請求は所定の範囲で取り下げられたものとみなされる。元の記載を基準とする訂正要件で判断する。"
+        }
+      ],
+      "choiceExplanations": [
+        {
+          "number": 1,
+          "explanation": "誤答。正しい記述はなし、誤った記述はイ・ロ・ハ・ニ・ホ。選択肢の「１つ」ではなく、該当する記述は5つである。"
+        },
+        {
+          "number": 2,
+          "explanation": "誤答。正しい記述はなし、誤った記述はイ・ロ・ハ・ニ・ホ。選択肢の「２つ」ではなく、該当する記述は5つである。"
+        },
+        {
+          "number": 3,
+          "explanation": "誤答。正しい記述はなし、誤った記述はイ・ロ・ハ・ニ・ホ。選択肢の「３つ」ではなく、該当する記述は5つである。"
+        },
+        {
+          "number": 4,
+          "explanation": "誤答。正しい記述はなし、誤った記述はイ・ロ・ハ・ニ・ホ。選択肢の「４つ」ではなく、該当する記述は5つである。"
+        },
+        {
+          "number": 5,
+          "explanation": "正解。正しい記述はなし、誤った記述はイ・ロ・ハ・ニ・ホ。選択肢の「５つ」が該当する。"
+        }
+      ],
+      "explanationCoverage": "all-choices"
     },
     {
       "id": "benrishi-2026-patent-19",
@@ -906,7 +1748,35 @@
         "data/qualification-staging/benrishi/assets/2026-question-p24.png"
       ],
       "lastUpdated": "2026-11-04",
-      "explanationCoverage": "draft"
+      "officialReferenceUrls": [
+        "https://laws.e-gov.go.jp/law/334AC0000000121",
+        "https://laws.e-gov.go.jp/law/334AC0000000123"
+      ],
+      "lawReferenceDate": "2026-05-17",
+      "statementExplanations": [],
+      "choiceExplanations": [
+        {
+          "number": 1,
+          "explanation": "誤り。先願Ａに記載された発明イも甲乙の共同発明であり、29条の2の同一発明者の例外が働く。出願人の相違だけで拒絶できない。"
+        },
+        {
+          "number": 2,
+          "explanation": "誤り。国内優先権を伴う国際出願の国際公開には41条3項等の特則が働き、先のＡの当初記載に基づく拡大先願の排除効が生じ得る。"
+        },
+        {
+          "number": 3,
+          "explanation": "誤り。適法な分割Ｂは出願日が遡り、公開されたＢは当初記載された発明ロについてＣの先願となり得る。Ａの取下げだけで排除効がなくならない。"
+        },
+        {
+          "number": 4,
+          "explanation": "誤り。46条の2による適法な登録に基づく特許出願では、基礎となる実用新案登録との関係に先願適用の特例がある。同一考案だけで39条4項の拒絶とはならない。"
+        },
+        {
+          "number": 5,
+          "explanation": "正しい。39条4項は同一日の特許出願と実用新案登録出願の対象が同一の場合、協議により定めた者のみが権利取得できるとする。"
+        }
+      ],
+      "explanationCoverage": "all-choices"
     },
     {
       "id": "benrishi-2026-patent-20",
@@ -943,7 +1813,7 @@
       "sourceAnswerUrl": "https://www.jpo.go.jp/news/benrishi/shiken-mondai/document/2026tanto/answer.pdf",
       "sourcePageUrl": "https://www.jpo.go.jp/news/benrishi/shiken-mondai/2026tanto.html",
       "attribution": "出典：特許庁 弁理士試験短答式筆記試験問題・解答。過去問AIがテキスト化・整形。解説は過去問AIの独自作成（特許庁による作成・保証ではありません）。",
-      "explanation": "出題時点の法令に基づく独自解説。正しいのはイとロの2つ。外国語書面出願の新規事項追加では翻訳文を基準とする違反と原文を超える違反を区別する。無効審判請求書の副本送達前の理由補正には特則がある。元配偶者に関する証人の宣誓拒絶や虚偽陳述の罰則を否定する記述は誤りで、費用負担と費用額を定める手続も同一ではない。",
+      "explanation": "出題時点の法令に基づく独自解説。\n記述イ：正しい。123条は外国語書面出願を17条の2第3項違反という無効理由から除き、原文新規事項違反等を別に判断する。翻訳文基準の違反と区別する。\n記述ロ：誤り。131条の2第3項は請求書副本送達前に提出された要旨変更補正の許可を禁止する。補正書が早期に出されたことだけで許可される特例はない。\n記述ハ：誤り。151条で準用する民訴法の規定は元配偶者に著しい利害関係のある事項でも宣誓拒絶を認める。離婚でその保護がなくなるわけではない。\n記述ニ：正しい。199条の宣誓証人の偽証の法定刑は拘禁刑であり、罰金刑は規定されていない。処罰されないという意味ではなく刑の種類の問題である。\n記述ホ：誤り。169条の費用負担と170条の費用額決定は別である。費用額まで審決等により職権で必ず定めるという記述は誤りである。",
       "publicAllowed": false,
       "needsReview": true,
       "sourcePdfUrl": "https://www.jpo.go.jp/news/benrishi/shiken-mondai/document/2026tanto/question.pdf",
@@ -953,7 +1823,61 @@
         "data/qualification-staging/benrishi/assets/2026-question-p25.png"
       ],
       "lastUpdated": "2026-11-04",
-      "explanationCoverage": "draft"
+      "officialReferenceUrls": [
+        "https://laws.e-gov.go.jp/law/334AC0000000121",
+        "https://laws.e-gov.go.jp/law/334AC0000000123"
+      ],
+      "lawReferenceDate": "2026-05-17",
+      "statementExplanations": [
+        {
+          "label": "イ",
+          "correct": true,
+          "explanation": "123条は外国語書面出願を17条の2第3項違反という無効理由から除き、原文新規事項違反等を別に判断する。翻訳文基準の違反と区別する。"
+        },
+        {
+          "label": "ロ",
+          "correct": false,
+          "explanation": "131条の2第3項は請求書副本送達前に提出された要旨変更補正の許可を禁止する。補正書が早期に出されたことだけで許可される特例はない。"
+        },
+        {
+          "label": "ハ",
+          "correct": false,
+          "explanation": "151条で準用する民訴法の規定は元配偶者に著しい利害関係のある事項でも宣誓拒絶を認める。離婚でその保護がなくなるわけではない。"
+        },
+        {
+          "label": "ニ",
+          "correct": true,
+          "explanation": "199条の宣誓証人の偽証の法定刑は拘禁刑であり、罰金刑は規定されていない。処罰されないという意味ではなく刑の種類の問題である。"
+        },
+        {
+          "label": "ホ",
+          "correct": false,
+          "explanation": "169条の費用負担と170条の費用額決定は別である。費用額まで審決等により職権で必ず定めるという記述は誤りである。"
+        }
+      ],
+      "choiceExplanations": [
+        {
+          "number": 1,
+          "explanation": "誤答。正しい記述はイ・ニ、誤った記述はロ・ハ・ホ。選択肢の「１つ」ではなく、該当する記述は2つである。"
+        },
+        {
+          "number": 2,
+          "explanation": "正解。正しい記述はイ・ニ、誤った記述はロ・ハ・ホ。選択肢の「２つ」が該当する。"
+        },
+        {
+          "number": 3,
+          "explanation": "誤答。正しい記述はイ・ニ、誤った記述はロ・ハ・ホ。選択肢の「３つ」ではなく、該当する記述は2つである。"
+        },
+        {
+          "number": 4,
+          "explanation": "誤答。正しい記述はイ・ニ、誤った記述はロ・ハ・ホ。選択肢の「４つ」ではなく、該当する記述は2つである。"
+        },
+        {
+          "number": 5,
+          "explanation": "誤答。正しい記述はイ・ニ、誤った記述はロ・ハ・ホ。選択肢の「５つ」ではなく、該当する記述は2つである。"
+        }
+      ],
+      "explanationCoverage": "all-choices"
     },
     {
       "id": "benrishi-2026-design-01",
@@ -1000,7 +1924,34 @@
         "data/qualification-staging/benrishi/assets/2026-question-p26.png"
       ],
       "lastUpdated": "2026-11-04",
-      "explanationCoverage": "draft"
+      "officialReferenceUrls": [
+        "https://laws.e-gov.go.jp/law/334AC0000000125"
+      ],
+      "lawReferenceDate": "2026-05-17",
+      "statementExplanations": [],
+      "choiceExplanations": [
+        {
+          "number": 1,
+          "explanation": "正しい。2条1項の物品の意匠には部分意匠も含まれ、物品全体だけに登録対象を限っていない。"
+        },
+        {
+          "number": 2,
+          "explanation": "正しい。8条の組物の意匠も部分意匠として登録できる制度となっており、組物全体だけが登録対象ではない。"
+        },
+        {
+          "number": 3,
+          "explanation": "正しい。8条の2の内装の意匠についても、その部分を登録対象とすることができる。"
+        },
+        {
+          "number": 4,
+          "explanation": "正しい。2条2項3号は画像表示プログラム等を含む画像記録媒体の譲渡を画像意匠の実施に含める。"
+        },
+        {
+          "number": 5,
+          "explanation": "誤り。2条2項2号の建築物の意匠の実施には輸出・輸入を列挙していない。物品意匠の実施行為を混ぜている。"
+        }
+      ],
+      "explanationCoverage": "all-choices"
     },
     {
       "id": "benrishi-2026-design-02",
@@ -1047,7 +1998,34 @@
         "data/qualification-staging/benrishi/assets/2026-question-p27.png"
       ],
       "lastUpdated": "2026-11-04",
-      "explanationCoverage": "draft"
+      "officialReferenceUrls": [
+        "https://laws.e-gov.go.jp/law/334AC0000000125"
+      ],
+      "lawReferenceDate": "2026-05-17",
+      "statementExplanations": [],
+      "choiceExplanations": [
+        {
+          "number": 1,
+          "explanation": "誤り。8条の組物は複数の構成物を全体として統一した意匠として保護する。家具セットの構成物が同一物品でないことだけで登録不能とはならない。"
+        },
+        {
+          "number": 2,
+          "explanation": "誤り。8条の2の内装には物品・建築物・画像の組合せを含め得る。照明制御画面の画像追加だけで登録が禁止されない。"
+        },
+        {
+          "number": 3,
+          "explanation": "誤り。内装の全体としての美感を判断するため、個々の家具が公知となったことだけで内装全体の新規性等が必ず失われるわけではない。"
+        },
+        {
+          "number": 4,
+          "explanation": "正しい。組物の意匠権は組物全体に係る権利である。構成物のイだけを独立した登録意匠として通常実施権許諾することはできない。"
+        },
+        {
+          "number": 5,
+          "explanation": "誤り。統一性を欠く組物出願も2以上の意匠を含む場合には10条の2による分割が可能であり、拒絶理由通知でその機会を失うものではない。"
+        }
+      ],
+      "explanationCoverage": "all-choices"
     },
     {
       "id": "benrishi-2026-design-03",
@@ -1094,7 +2072,34 @@
         "data/qualification-staging/benrishi/assets/2026-question-p28.png"
       ],
       "lastUpdated": "2026-11-04",
-      "explanationCoverage": "draft"
+      "officialReferenceUrls": [
+        "https://laws.e-gov.go.jp/law/334AC0000000125"
+      ],
+      "lawReferenceDate": "2026-05-17",
+      "statementExplanations": [],
+      "choiceExplanations": [
+        {
+          "number": 1,
+          "explanation": "正しい。共有意匠権に基づく差止請求は保存行為として各共有者が単独で行うことができ、丙との共同提訴は必須ではない。"
+        },
+        {
+          "number": 2,
+          "explanation": "誤り。38条には非専用品型の間接侵害もあり、他の腕時計にも使えることだけでは間接侵害を一律に否定できない。"
+        },
+        {
+          "number": 3,
+          "explanation": "誤り。39条の損害計算は実施能力超過部分についても実施料相当額を加算できる場合を認め、全額を当然に排除しない。"
+        },
+        {
+          "number": 4,
+          "explanation": "誤り。意匠法には特許法の査証制度を準用する規定がない。特許侵害訴訟と同じ査証を発令できるわけではない。"
+        },
+        {
+          "number": 5,
+          "explanation": "誤り。40条の過失は「推定」であり、反証を許さない「みなし」ではない。過失不存在を立証する余地がある。"
+        }
+      ],
+      "explanationCoverage": "all-choices"
     },
     {
       "id": "benrishi-2026-design-04",
@@ -1141,7 +2146,34 @@
         "data/qualification-staging/benrishi/assets/2026-question-p29.png"
       ],
       "lastUpdated": "2026-11-04",
-      "explanationCoverage": "draft"
+      "officialReferenceUrls": [
+        "https://laws.e-gov.go.jp/law/334AC0000000125"
+      ],
+      "lawReferenceDate": "2026-05-17",
+      "statementExplanations": [],
+      "choiceExplanations": [
+        {
+          "number": 1,
+          "explanation": "正しい。乙の先の公開によりＡが拒絶され公報掲載がなければ3条の2の要件を欠く。Ｂは自己公開の新規性喪失例外を満たすため登録可能な場合がある。"
+        },
+        {
+          "number": 2,
+          "explanation": "誤り。先願の自転車意匠の一部に類似する他人のハンドル後願は、先願の公報発行等を条件に3条の2の拒絶対象となる。"
+        },
+        {
+          "number": 3,
+          "explanation": "誤り。内装の机一台との類似だけで、新規な組物全体が先願意匠の一部と同一・類似とはいえない。机二台の組物が当然に登録不能になるわけではない。"
+        },
+        {
+          "number": 4,
+          "explanation": "誤り。公開動画に現れた机の組合せ等も新規性・創作非容易性の判断資料となる。類似の机二台を同じ横並びにするだけでは登録できない。"
+        },
+        {
+          "number": 5,
+          "explanation": "誤り。映画に現れた画像も公知意匠・創作の基礎資料となり得る。公開されたアイコン画像に類似するものは、アニメ内の画像だったことだけで登録可能にならない。"
+        }
+      ],
+      "explanationCoverage": "all-choices"
     },
     {
       "id": "benrishi-2026-design-05",
@@ -1178,7 +2210,7 @@
       "sourceAnswerUrl": "https://www.jpo.go.jp/news/benrishi/shiken-mondai/document/2026tanto/answer.pdf",
       "sourcePageUrl": "https://www.jpo.go.jp/news/benrishi/shiken-mondai/2026tanto.html",
       "attribution": "出典：特許庁 弁理士試験短答式筆記試験問題・解答。過去問AIがテキスト化・整形。解説は過去問AIの独自作成（特許庁による作成・保証ではありません）。",
-      "explanation": "出題時点の法令に基づく独自解説。正しいのはイとハの2つ。出願段階の仮通常実施権の許諾が可能であり、基礎意匠と関連意匠に専用実施権を設定するときは同一人への一体的な設定を要する。専用実施権者の再許諾には権利者の承諾が必要で、先使用権は実施事業とともに移転できる。",
+      "explanation": "出題時点の法令に基づく独自解説。\n記述イ：正しい。意匠法の仮通常実施権の制度により、出願中の意匠及びこれに類似する意匠の範囲内で将来の権利について許諾できる。\n記述ロ：誤り。27条の専用実施権者による通常実施権許諾は意匠権者の承諾を要する。専用実施権の設定だけで自由な再許諾権は生じない。\n記述ハ：正しい。27条の基礎意匠及び関連意匠の専用実施権は、同一人へ同時に設定しなければならない。\n記述ニ：誤り。先使用権と先出願による通常実施権の双方の要件を満たせば、先出願権だけに主張が制限される規定はない。\n記述ホ：誤り。先使用による通常実施権は実施事業とともに移転でき、その場合に権利者の承諾を別途要求しない。",
       "publicAllowed": false,
       "needsReview": true,
       "sourcePdfUrl": "https://www.jpo.go.jp/news/benrishi/shiken-mondai/document/2026tanto/question.pdf",
@@ -1188,7 +2220,60 @@
         "data/qualification-staging/benrishi/assets/2026-question-p30.png"
       ],
       "lastUpdated": "2026-11-04",
-      "explanationCoverage": "draft"
+      "officialReferenceUrls": [
+        "https://laws.e-gov.go.jp/law/334AC0000000125"
+      ],
+      "lawReferenceDate": "2026-05-17",
+      "statementExplanations": [
+        {
+          "label": "イ",
+          "correct": true,
+          "explanation": "意匠法の仮通常実施権の制度により、出願中の意匠及びこれに類似する意匠の範囲内で将来の権利について許諾できる。"
+        },
+        {
+          "label": "ロ",
+          "correct": false,
+          "explanation": "27条の専用実施権者による通常実施権許諾は意匠権者の承諾を要する。専用実施権の設定だけで自由な再許諾権は生じない。"
+        },
+        {
+          "label": "ハ",
+          "correct": true,
+          "explanation": "27条の基礎意匠及び関連意匠の専用実施権は、同一人へ同時に設定しなければならない。"
+        },
+        {
+          "label": "ニ",
+          "correct": false,
+          "explanation": "先使用権と先出願による通常実施権の双方の要件を満たせば、先出願権だけに主張が制限される規定はない。"
+        },
+        {
+          "label": "ホ",
+          "correct": false,
+          "explanation": "先使用による通常実施権は実施事業とともに移転でき、その場合に権利者の承諾を別途要求しない。"
+        }
+      ],
+      "choiceExplanations": [
+        {
+          "number": 1,
+          "explanation": "誤答。正しい記述はイ・ハ、誤った記述はロ・ニ・ホ。選択肢の「１つ」ではなく、該当する記述は2つである。"
+        },
+        {
+          "number": 2,
+          "explanation": "正解。正しい記述はイ・ハ、誤った記述はロ・ニ・ホ。選択肢の「２つ」が該当する。"
+        },
+        {
+          "number": 3,
+          "explanation": "誤答。正しい記述はイ・ハ、誤った記述はロ・ニ・ホ。選択肢の「３つ」ではなく、該当する記述は2つである。"
+        },
+        {
+          "number": 4,
+          "explanation": "誤答。正しい記述はイ・ハ、誤った記述はロ・ニ・ホ。選択肢の「４つ」ではなく、該当する記述は2つである。"
+        },
+        {
+          "number": 5,
+          "explanation": "誤答。正しい記述はイ・ハ、誤った記述はロ・ニ・ホ。選択肢の「５つ」ではなく、該当する記述は2つである。"
+        }
+      ],
+      "explanationCoverage": "all-choices"
     },
     {
       "id": "benrishi-2026-design-06",
@@ -1235,7 +2320,34 @@
         "data/qualification-staging/benrishi/assets/2026-question-p31.png"
       ],
       "lastUpdated": "2026-11-04",
-      "explanationCoverage": "draft"
+      "officialReferenceUrls": [
+        "https://laws.e-gov.go.jp/law/334AC0000000125"
+      ],
+      "lawReferenceDate": "2026-05-17",
+      "statementExplanations": [],
+      "choiceExplanations": [
+        {
+          "number": 1,
+          "explanation": "誤り。60条の9は国際意匠登録出願について14条の秘密意匠制度を適用しない。国際公表延期と国内秘密意匠請求は異なる。"
+        },
+        {
+          "number": 2,
+          "explanation": "誤り。個別指定手数料返還の期間は拒絶査定・審決の送達日だけでなく、その確定等の所定の起算点で判断する。送達後6月で一律に打ち切られない。"
+        },
+        {
+          "number": 3,
+          "explanation": "誤り。60条の19の国際登録簿による管理の特例は、国内の意匠権を目的とする質権の登録まで一律に国際登録簿へ移すものではない。"
+        },
+        {
+          "number": 4,
+          "explanation": "正しい。60条の6により意匠ごとの国内出願とみなされ、同じ国際出願中の相互に類似する意匠にも9条2項の同日協議が問題となり得る。"
+        },
+        {
+          "number": 5,
+          "explanation": "誤り。60条の12の登録前補償金は、登録意匠の実施に対し受けるべき金銭の額、すなわち実施料相当額であり、業務上の損失全額ではない。"
+        }
+      ],
+      "explanationCoverage": "all-choices"
     },
     {
       "id": "benrishi-2026-design-07",
@@ -1282,7 +2394,34 @@
         "data/qualification-staging/benrishi/assets/2026-question-p32.png"
       ],
       "lastUpdated": "2026-11-04",
-      "explanationCoverage": "draft"
+      "officialReferenceUrls": [
+        "https://laws.e-gov.go.jp/law/334AC0000000125"
+      ],
+      "lawReferenceDate": "2026-05-17",
+      "statementExplanations": [],
+      "choiceExplanations": [
+        {
+          "number": 1,
+          "explanation": "誤り。17条の2の補正却下は拒絶理由通知とは異なり、却下されたことによって意見書提出機会が当然に与えられる手続ではない。"
+        },
+        {
+          "number": 2,
+          "explanation": "誤り。17条の2は補正却下決定後の所定期間に査定を留保させ、拒絶査定だけでなく登録査定もその対象となる。"
+        },
+        {
+          "number": 3,
+          "explanation": "誤り。17条の3の新出願の出願日は補正書提出時に遡るにとどまる。提出前の乙の類似意匠出願Ｂに優先できず、先願理由で拒絶され得る。"
+        },
+        {
+          "number": 4,
+          "explanation": "誤り。17条の3による特別な新出願Ｂをすると元のＡは取り下げられたものとみなされるため、Ａを根拠に後願Ｃを9条の先願で排除できない。"
+        },
+        {
+          "number": 5,
+          "explanation": "正しい。設例は17条の3による特別な新出願を指定していない。単に補正後の意匠を別途出願してもＡの取下げ擬制は当然に生じない。"
+        }
+      ],
+      "explanationCoverage": "all-choices"
     },
     {
       "id": "benrishi-2026-design-08",
@@ -1319,7 +2458,7 @@
       "sourceAnswerUrl": "https://www.jpo.go.jp/news/benrishi/shiken-mondai/document/2026tanto/answer.pdf",
       "sourcePageUrl": "https://www.jpo.go.jp/news/benrishi/shiken-mondai/2026tanto.html",
       "attribution": "出典：特許庁 弁理士試験短答式筆記試験問題・解答。過去問AIがテキスト化・整形。解説は過去問AIの独自作成（特許庁による作成・保証ではありません）。",
-      "explanation": "出題時点の法令に基づく独自解説。正しいのはイ・ロ・ニの3つ。甲がハを承継して連鎖する関連意匠とする方法と、協議により乙がハを取得する方法がある。ロとハの同日抵触は協議により一方を定めるのであり、イはハと非類似で協議対象外である。届出欠缺時の協議不成立の擬制は長官が行うことができるもので、自動的に生じるものではない。",
+      "explanation": "出題時点の法令に基づく独自解説。\n記述イ：正しい。甲がハの出願を承継すればロに類似するハを連鎖する関連意匠とでき、10条の要件の下でイ・ロ・ハを登録できる。\n記述ロ：正しい。イとハは非類似であり、協議でロを取り下げる等の方法により、乙がハの登録を受けても甲のイの登録とは抵触しない。\n記述ハ：誤り。ロとハは同日で類似する他人間の出願である。協議でロを選んで登録したまま、乙がハも重ねて登録することはできない。\n記述ニ：正しい。イには拒絶理由がなく、ハとも非類似なのでロ・ハ間の協議の成否にかかわらずイは登録を受けられる。\n記述ホ：誤り。9条は結果届出がない場合に長官が協議不成立と「みなすことができる」とする。自動的な不成立擬制ではない。",
       "publicAllowed": false,
       "needsReview": true,
       "sourcePdfUrl": "https://www.jpo.go.jp/news/benrishi/shiken-mondai/document/2026tanto/question.pdf",
@@ -1329,7 +2468,60 @@
         "data/qualification-staging/benrishi/assets/2026-question-p33.png"
       ],
       "lastUpdated": "2026-11-04",
-      "explanationCoverage": "draft"
+      "officialReferenceUrls": [
+        "https://laws.e-gov.go.jp/law/334AC0000000125"
+      ],
+      "lawReferenceDate": "2026-05-17",
+      "statementExplanations": [
+        {
+          "label": "イ",
+          "correct": true,
+          "explanation": "甲がハの出願を承継すればロに類似するハを連鎖する関連意匠とでき、10条の要件の下でイ・ロ・ハを登録できる。"
+        },
+        {
+          "label": "ロ",
+          "correct": true,
+          "explanation": "イとハは非類似であり、協議でロを取り下げる等の方法により、乙がハの登録を受けても甲のイの登録とは抵触しない。"
+        },
+        {
+          "label": "ハ",
+          "correct": false,
+          "explanation": "ロとハは同日で類似する他人間の出願である。協議でロを選んで登録したまま、乙がハも重ねて登録することはできない。"
+        },
+        {
+          "label": "ニ",
+          "correct": true,
+          "explanation": "イには拒絶理由がなく、ハとも非類似なのでロ・ハ間の協議の成否にかかわらずイは登録を受けられる。"
+        },
+        {
+          "label": "ホ",
+          "correct": false,
+          "explanation": "9条は結果届出がない場合に長官が協議不成立と「みなすことができる」とする。自動的な不成立擬制ではない。"
+        }
+      ],
+      "choiceExplanations": [
+        {
+          "number": 1,
+          "explanation": "誤答。正しい記述はイ・ロ・ニ、誤った記述はハ・ホ。選択肢の「１つ」ではなく、該当する記述は3つである。"
+        },
+        {
+          "number": 2,
+          "explanation": "誤答。正しい記述はイ・ロ・ニ、誤った記述はハ・ホ。選択肢の「２つ」ではなく、該当する記述は3つである。"
+        },
+        {
+          "number": 3,
+          "explanation": "正解。正しい記述はイ・ロ・ニ、誤った記述はハ・ホ。選択肢の「３つ」が該当する。"
+        },
+        {
+          "number": 4,
+          "explanation": "誤答。正しい記述はイ・ロ・ニ、誤った記述はハ・ホ。選択肢の「４つ」ではなく、該当する記述は3つである。"
+        },
+        {
+          "number": 5,
+          "explanation": "誤答。正しい記述はイ・ロ・ニ、誤った記述はハ・ホ。選択肢の「５つ」ではなく、該当する記述は3つである。"
+        }
+      ],
+      "explanationCoverage": "all-choices"
     },
     {
       "id": "benrishi-2026-design-09",
@@ -1366,7 +2558,7 @@
       "sourceAnswerUrl": "https://www.jpo.go.jp/news/benrishi/shiken-mondai/document/2026tanto/answer.pdf",
       "sourcePageUrl": "https://www.jpo.go.jp/news/benrishi/shiken-mondai/2026tanto.html",
       "attribution": "出典：特許庁 弁理士試験短答式筆記試験問題・解答。過去問AIがテキスト化・整形。解説は過去問AIの独自作成（特許庁による作成・保証ではありません）。",
-      "explanation": "出題時点の法令に基づく独自解説。正しいのはハのみ。秘密意匠であること自体は関連意匠の登録を妨げない。本意匠と関連意匠には類似関係を要し、本意匠の権利消滅や専用実施権設定には制限がある。また同じ基礎意匠に係る意匠権は分離して移転できない。",
+      "explanation": "出題時点の法令に基づく独自解説。\n記述イ：誤り。10条は本意匠権が登録料不納等で消滅した場合を関連意匠登録の制限とする。後願の出願時に存続していれば足りるわけではない。\n記述ロ：誤り。本意匠のみに類似すること等が関連意匠の基本要件であり、本意匠と非類似のロをイの関連意匠として登録できない。\n記述ハ：正しい。秘密意匠の請求は公報での意匠内容の公開を遅らせる制度であり、本意匠を基礎とする関連意匠の登録を妨げない。\n記述ニ：誤り。10条は本意匠権に専用実施権が設定された場合の関連意匠登録を制限し、本意匠と関連意匠の権利関係の分裂を防ぐ。\n記述ホ：誤り。22条は基礎意匠及び同じ系列の関連意匠権の分離移転を認めない。一体的な権利移転を要する。",
       "publicAllowed": false,
       "needsReview": true,
       "sourcePdfUrl": "https://www.jpo.go.jp/news/benrishi/shiken-mondai/document/2026tanto/question.pdf",
@@ -1376,7 +2568,60 @@
         "data/qualification-staging/benrishi/assets/2026-question-p34.png"
       ],
       "lastUpdated": "2026-11-04",
-      "explanationCoverage": "draft"
+      "officialReferenceUrls": [
+        "https://laws.e-gov.go.jp/law/334AC0000000125"
+      ],
+      "lawReferenceDate": "2026-05-17",
+      "statementExplanations": [
+        {
+          "label": "イ",
+          "correct": false,
+          "explanation": "10条は本意匠権が登録料不納等で消滅した場合を関連意匠登録の制限とする。後願の出願時に存続していれば足りるわけではない。"
+        },
+        {
+          "label": "ロ",
+          "correct": false,
+          "explanation": "本意匠のみに類似すること等が関連意匠の基本要件であり、本意匠と非類似のロをイの関連意匠として登録できない。"
+        },
+        {
+          "label": "ハ",
+          "correct": true,
+          "explanation": "秘密意匠の請求は公報での意匠内容の公開を遅らせる制度であり、本意匠を基礎とする関連意匠の登録を妨げない。"
+        },
+        {
+          "label": "ニ",
+          "correct": false,
+          "explanation": "10条は本意匠権に専用実施権が設定された場合の関連意匠登録を制限し、本意匠と関連意匠の権利関係の分裂を防ぐ。"
+        },
+        {
+          "label": "ホ",
+          "correct": false,
+          "explanation": "22条は基礎意匠及び同じ系列の関連意匠権の分離移転を認めない。一体的な権利移転を要する。"
+        }
+      ],
+      "choiceExplanations": [
+        {
+          "number": 1,
+          "explanation": "正解。正しい記述はハ、誤った記述はイ・ロ・ニ・ホ。選択肢の「１つ」が該当する。"
+        },
+        {
+          "number": 2,
+          "explanation": "誤答。正しい記述はハ、誤った記述はイ・ロ・ニ・ホ。選択肢の「２つ」ではなく、該当する記述は1つである。"
+        },
+        {
+          "number": 3,
+          "explanation": "誤答。正しい記述はハ、誤った記述はイ・ロ・ニ・ホ。選択肢の「３つ」ではなく、該当する記述は1つである。"
+        },
+        {
+          "number": 4,
+          "explanation": "誤答。正しい記述はハ、誤った記述はイ・ロ・ニ・ホ。選択肢の「４つ」ではなく、該当する記述は1つである。"
+        },
+        {
+          "number": 5,
+          "explanation": "誤答。正しい記述はハ、誤った記述はイ・ロ・ニ・ホ。選択肢の「５つ」ではなく、該当する記述は1つである。"
+        }
+      ],
+      "explanationCoverage": "all-choices"
     },
     {
       "id": "benrishi-2026-design-10",
@@ -1423,7 +2668,34 @@
         "data/qualification-staging/benrishi/assets/2026-question-p35.png"
       ],
       "lastUpdated": "2026-11-04",
-      "explanationCoverage": "draft"
+      "officialReferenceUrls": [
+        "https://laws.e-gov.go.jp/law/334AC0000000125"
+      ],
+      "lawReferenceDate": "2026-05-17",
+      "statementExplanations": [],
+      "choiceExplanations": [
+        {
+          "number": 1,
+          "explanation": "正しい。24条2項の類否は需要者の視覚を通じた美感に基づく。共通の美感がなければイと類似する意匠の実施とはならない。"
+        },
+        {
+          "number": 2,
+          "explanation": "正しい。26条により後願登録意匠が他人の先願登録意匠を利用するとき、その権利の許諾なく業として実施できない。"
+        },
+        {
+          "number": 3,
+          "explanation": "正しい。26条は登録意匠に類似する意匠の範囲が他人の先願権と抵触する場合にも、その範囲の実施を制限する。"
+        },
+        {
+          "number": 4,
+          "explanation": "正しい。登録された部分が完成品の外観に現れず視覚で認識できない設例では、当該部分意匠の利用として実施を制限する関係にならない。"
+        },
+        {
+          "number": 5,
+          "explanation": "誤り。38条の専用品型にも非専用品型にも該当しない一般流通品の机の製造を、設例の条件だけで後願意匠ロの間接侵害とみなすことはできない。"
+        }
+      ],
+      "explanationCoverage": "all-choices"
     },
     {
       "id": "benrishi-2026-trademark-01",
@@ -1460,7 +2732,7 @@
       "sourceAnswerUrl": "https://www.jpo.go.jp/news/benrishi/shiken-mondai/document/2026tanto/answer.pdf",
       "sourcePageUrl": "https://www.jpo.go.jp/news/benrishi/shiken-mondai/2026tanto.html",
       "attribution": "出典：特許庁 弁理士試験短答式筆記試験問題・解答。過去問AIがテキスト化・整形。解説は過去問AIの独自作成（特許庁による作成・保証ではありません）。",
-      "explanation": "出題時点の法令に基づく独自解説。誤りはハとホの2つ。商品の譲渡のために音商標を流す行為も使用に該当し、商品発売前の広告でも標章を付した写真の配信が使用となる場合がある。物理的に商品へ印字する行為だけでなく、役務提供・広告・電磁的表示も使用の定義に含まれる。",
+      "explanation": "出題時点の法令に基づく独自解説。\n記述イ：正しい。2条の電磁的表示の規定により、ダウンロード後の起動時に画面へ表示されるよう標章情報をプログラムに組み込む行為も使用に含まれる。\n記述ロ：正しい。役務提供の用に供する物に標章を付して役務提供のため展示する行為は2条3項の使用に該当する。\n記述ハ：誤り。商品の譲渡等のため音商標を発する行為も2条3項の使用であり、店内放送で流す音も対象となる。\n記述ニ：正しい。飲食物を運ぶロボットは役務提供の用に供する物であり、標章を付したその物を用いて役務を提供する行為は使用となる。\n記述ホ：誤り。2条3項8号の広告を内容とする情報への標章表示・電磁的提供は販売前でも使用に該当し得る。発売済みであることは必須ではない。",
       "publicAllowed": false,
       "needsReview": true,
       "sourcePdfUrl": "https://www.jpo.go.jp/news/benrishi/shiken-mondai/document/2026tanto/question.pdf",
@@ -1470,7 +2742,60 @@
         "data/qualification-staging/benrishi/assets/2026-question-p36.png"
       ],
       "lastUpdated": "2026-11-04",
-      "explanationCoverage": "draft"
+      "officialReferenceUrls": [
+        "https://laws.e-gov.go.jp/law/334AC0000000127"
+      ],
+      "lawReferenceDate": "2026-05-17",
+      "statementExplanations": [
+        {
+          "label": "イ",
+          "correct": true,
+          "explanation": "2条の電磁的表示の規定により、ダウンロード後の起動時に画面へ表示されるよう標章情報をプログラムに組み込む行為も使用に含まれる。"
+        },
+        {
+          "label": "ロ",
+          "correct": true,
+          "explanation": "役務提供の用に供する物に標章を付して役務提供のため展示する行為は2条3項の使用に該当する。"
+        },
+        {
+          "label": "ハ",
+          "correct": false,
+          "explanation": "商品の譲渡等のため音商標を発する行為も2条3項の使用であり、店内放送で流す音も対象となる。"
+        },
+        {
+          "label": "ニ",
+          "correct": true,
+          "explanation": "飲食物を運ぶロボットは役務提供の用に供する物であり、標章を付したその物を用いて役務を提供する行為は使用となる。"
+        },
+        {
+          "label": "ホ",
+          "correct": false,
+          "explanation": "2条3項8号の広告を内容とする情報への標章表示・電磁的提供は販売前でも使用に該当し得る。発売済みであることは必須ではない。"
+        }
+      ],
+      "choiceExplanations": [
+        {
+          "number": 1,
+          "explanation": "誤答。正しい記述はイ・ロ・ニ、誤った記述はハ・ホ。選択肢の「１つ」ではなく、該当する記述は2つである。"
+        },
+        {
+          "number": 2,
+          "explanation": "正解。正しい記述はイ・ロ・ニ、誤った記述はハ・ホ。選択肢の「２つ」が該当する。"
+        },
+        {
+          "number": 3,
+          "explanation": "誤答。正しい記述はイ・ロ・ニ、誤った記述はハ・ホ。選択肢の「３つ」ではなく、該当する記述は2つである。"
+        },
+        {
+          "number": 4,
+          "explanation": "誤答。正しい記述はイ・ロ・ニ、誤った記述はハ・ホ。選択肢の「４つ」ではなく、該当する記述は2つである。"
+        },
+        {
+          "number": 5,
+          "explanation": "誤答。正しい記述はイ・ロ・ニ、誤った記述はハ・ホ。選択肢の「５つ」ではなく、該当する記述は2つである。"
+        }
+      ],
+      "explanationCoverage": "all-choices"
     },
     {
       "id": "benrishi-2026-trademark-02",
@@ -1507,7 +2832,7 @@
       "sourceAnswerUrl": "https://www.jpo.go.jp/news/benrishi/shiken-mondai/document/2026tanto/answer.pdf",
       "sourcePageUrl": "https://www.jpo.go.jp/news/benrishi/shiken-mondai/2026tanto.html",
       "attribution": "出典：特許庁 弁理士試験短答式筆記試験問題・解答。過去問AIがテキスト化・整形。解説は過去問AIの独自作成（特許庁による作成・保証ではありません）。",
-      "explanation": "出題時点の法令に基づく独自解説。正しいのはイのみ。普通名称にはその略称も含まれ得る。音にも慣用商標はあり、登録後の使用開始時に一般的な証拠提出義務が生じるわけではない。地域団体商標には地域名と普通名称等の組合せを保護する特則があり、識別力ある文字との結合にも権利不要求の手続は要求されない。",
+      "explanation": "出題時点の法令に基づく独自解説。\n記述イ：正しい。3条1項1号の普通名称は正式名称だけに限られず、取引上普通名称として認識される略称も含む。\n記述ロ：誤り。音も業界等で慣用され出所識別力を欠くことがあり、3条1項2号の慣用商標となり得る。\n記述ハ：誤り。使用意思による登録は可能だが、登録後の使用開始ごとに証拠を長官へ提出する一般的な義務はない。\n記述ニ：誤り。7条の2の地域団体商標の特例では、地域名と商品普通名称等の組合せも所定の周知性等を満たして登録できる。3条2項だけに限定されない。\n記述ホ：誤り。識別力ある文字との結合商標は全体として識別力を判断する。日本法に立体形状部分の権利不要求を一律に求める制度はない。",
       "publicAllowed": false,
       "needsReview": true,
       "sourcePdfUrl": "https://www.jpo.go.jp/news/benrishi/shiken-mondai/document/2026tanto/question.pdf",
@@ -1517,7 +2842,60 @@
         "data/qualification-staging/benrishi/assets/2026-question-p37.png"
       ],
       "lastUpdated": "2026-11-04",
-      "explanationCoverage": "draft"
+      "officialReferenceUrls": [
+        "https://laws.e-gov.go.jp/law/334AC0000000127"
+      ],
+      "lawReferenceDate": "2026-05-17",
+      "statementExplanations": [
+        {
+          "label": "イ",
+          "correct": true,
+          "explanation": "3条1項1号の普通名称は正式名称だけに限られず、取引上普通名称として認識される略称も含む。"
+        },
+        {
+          "label": "ロ",
+          "correct": false,
+          "explanation": "音も業界等で慣用され出所識別力を欠くことがあり、3条1項2号の慣用商標となり得る。"
+        },
+        {
+          "label": "ハ",
+          "correct": false,
+          "explanation": "使用意思による登録は可能だが、登録後の使用開始ごとに証拠を長官へ提出する一般的な義務はない。"
+        },
+        {
+          "label": "ニ",
+          "correct": false,
+          "explanation": "7条の2の地域団体商標の特例では、地域名と商品普通名称等の組合せも所定の周知性等を満たして登録できる。3条2項だけに限定されない。"
+        },
+        {
+          "label": "ホ",
+          "correct": false,
+          "explanation": "識別力ある文字との結合商標は全体として識別力を判断する。日本法に立体形状部分の権利不要求を一律に求める制度はない。"
+        }
+      ],
+      "choiceExplanations": [
+        {
+          "number": 1,
+          "explanation": "正解。正しい記述はイ、誤った記述はロ・ハ・ニ・ホ。選択肢の「１つ」が該当する。"
+        },
+        {
+          "number": 2,
+          "explanation": "誤答。正しい記述はイ、誤った記述はロ・ハ・ニ・ホ。選択肢の「２つ」ではなく、該当する記述は1つである。"
+        },
+        {
+          "number": 3,
+          "explanation": "誤答。正しい記述はイ、誤った記述はロ・ハ・ニ・ホ。選択肢の「３つ」ではなく、該当する記述は1つである。"
+        },
+        {
+          "number": 4,
+          "explanation": "誤答。正しい記述はイ、誤った記述はロ・ハ・ニ・ホ。選択肢の「４つ」ではなく、該当する記述は1つである。"
+        },
+        {
+          "number": 5,
+          "explanation": "誤答。正しい記述はイ、誤った記述はロ・ハ・ニ・ホ。選択肢の「５つ」ではなく、該当する記述は1つである。"
+        }
+      ],
+      "explanationCoverage": "all-choices"
     },
     {
       "id": "benrishi-2026-trademark-03",
@@ -1564,7 +2942,34 @@
         "data/qualification-staging/benrishi/assets/2026-question-p38.png"
       ],
       "lastUpdated": "2026-11-04",
-      "explanationCoverage": "draft"
+      "officialReferenceUrls": [
+        "https://laws.e-gov.go.jp/law/334AC0000000127"
+      ],
+      "lawReferenceDate": "2026-05-17",
+      "statementExplanations": [],
+      "choiceExplanations": [
+        {
+          "number": 1,
+          "explanation": "誤り。消滅した他人の商標について1年間登録を排除していた旧4条1項13号は廃止されており、設例の一律禁止は現行制度にない。"
+        },
+        {
+          "number": 2,
+          "explanation": "誤り。4条1項12号は他人の登録防護標章と「同一」の商標を対象とし、類似の商標すべてを当然に登録不能としない。"
+        },
+        {
+          "number": 3,
+          "explanation": "誤り。4条1項16号の品質誤認には誤認のおそれがあれば足り、表示する品質を有する商品の製造・販売が現実に行われていることは要件ではない。"
+        },
+        {
+          "number": 4,
+          "explanation": "誤り。4条1項18号は商品等が当然に備える特徴のみからなる商標を排除し、使用による識別力取得で当然に回避できる規定ではない。"
+        },
+        {
+          "number": 5,
+          "explanation": "正しい。4条1項1号は商標全体と菊花紋章等の同一・類似で判断する。一部に含んでも全体として非類似なら同号で必ず拒絶されない。"
+        }
+      ],
+      "explanationCoverage": "all-choices"
     },
     {
       "id": "benrishi-2026-trademark-04",
@@ -1611,7 +3016,34 @@
         "data/qualification-staging/benrishi/assets/2026-question-p39.png"
       ],
       "lastUpdated": "2026-11-04",
-      "explanationCoverage": "draft"
+      "officialReferenceUrls": [
+        "https://laws.e-gov.go.jp/law/334AC0000000127"
+      ],
+      "lawReferenceDate": "2026-05-17",
+      "statementExplanations": [],
+      "choiceExplanations": [
+        {
+          "number": 1,
+          "explanation": "誤り。4条1項11号の無効主張における類否でも取引の実情を考慮する場合があり、侵害判断だけの考慮事項ではない。"
+        },
+        {
+          "number": 2,
+          "explanation": "誤り。商標法は特許法105条の7の当事者尋問等の非公開規定を準用していない。特許訴訟の営業秘密保護制度をそのまま移せない。"
+        },
+        {
+          "number": 3,
+          "explanation": "誤り。権利者の不使用は実施料相当額の損害不存在と同義ではない。不使用だけを証明して必ず賠償を免れるものではない。"
+        },
+        {
+          "number": 4,
+          "explanation": "正しい。秘密保持命令の発令に即時抗告はできないが、要件を欠くことを理由に別途命令取消しを申し立てることはできる。"
+        },
+        {
+          "number": 5,
+          "explanation": "誤り。取消審判で取り消されるべき事由と無効の抗弁は同一ではない。取消事由があるだけで常に権利行使不能となるものではない。"
+        }
+      ],
+      "explanationCoverage": "all-choices"
     },
     {
       "id": "benrishi-2026-trademark-05",
@@ -1648,7 +3080,7 @@
       "sourceAnswerUrl": "https://www.jpo.go.jp/news/benrishi/shiken-mondai/document/2026tanto/answer.pdf",
       "sourcePageUrl": "https://www.jpo.go.jp/news/benrishi/shiken-mondai/2026tanto.html",
       "attribution": "出典：特許庁 弁理士試験短答式筆記試験問題・解答。過去問AIがテキスト化・整形。解説は過去問AIの独自作成（特許庁による作成・保証ではありません）。",
-      "explanation": "出題時点の法令に基づく独自解説。誤りはホのみ。登録商標等を表示する物の製造専用品については、業としての製造・譲渡・引渡し・輸入が対象であり、譲渡のための所持まで一律に侵害とみなす規定ではない。商標表示物そのものの所持と、その製造に用いる専用品の所持を区別する。",
+      "explanation": "出題時点の法令に基づく独自解説。\n記述イ：正しい。37条2号は登録商標等を付した指定商品又は類似商品を譲渡等のため所持する行為を侵害とみなす。\n記述ロ：正しい。37条4号は役務提供に用いる標章付き物品を他人に提供させるため譲渡等の目的で所持する行為を対象にする。\n記述ハ：正しい。37条5号は指定商品・役務等について標章を使用するため、商標表示物を所持する行為を侵害とみなす。\n記述ニ：正しい。37条6号は他人に商標使用をさせるための商標表示物の譲渡等の目的での所持を対象にする。\n記述ホ：誤り。37条8号の表示物製造専用品は業としての製造・譲渡・引渡し・輸入が対象であり、譲渡目的の所持だけは列挙されていない。",
       "publicAllowed": false,
       "needsReview": true,
       "sourcePdfUrl": "https://www.jpo.go.jp/news/benrishi/shiken-mondai/document/2026tanto/question.pdf",
@@ -1658,7 +3090,60 @@
         "data/qualification-staging/benrishi/assets/2026-question-p40.png"
       ],
       "lastUpdated": "2026-11-04",
-      "explanationCoverage": "draft"
+      "officialReferenceUrls": [
+        "https://laws.e-gov.go.jp/law/334AC0000000127"
+      ],
+      "lawReferenceDate": "2026-05-17",
+      "statementExplanations": [
+        {
+          "label": "イ",
+          "correct": true,
+          "explanation": "37条2号は登録商標等を付した指定商品又は類似商品を譲渡等のため所持する行為を侵害とみなす。"
+        },
+        {
+          "label": "ロ",
+          "correct": true,
+          "explanation": "37条4号は役務提供に用いる標章付き物品を他人に提供させるため譲渡等の目的で所持する行為を対象にする。"
+        },
+        {
+          "label": "ハ",
+          "correct": true,
+          "explanation": "37条5号は指定商品・役務等について標章を使用するため、商標表示物を所持する行為を侵害とみなす。"
+        },
+        {
+          "label": "ニ",
+          "correct": true,
+          "explanation": "37条6号は他人に商標使用をさせるための商標表示物の譲渡等の目的での所持を対象にする。"
+        },
+        {
+          "label": "ホ",
+          "correct": false,
+          "explanation": "37条8号の表示物製造専用品は業としての製造・譲渡・引渡し・輸入が対象であり、譲渡目的の所持だけは列挙されていない。"
+        }
+      ],
+      "choiceExplanations": [
+        {
+          "number": 1,
+          "explanation": "正解。正しい記述はイ・ロ・ハ・ニ、誤った記述はホ。選択肢の「１つ」が該当する。"
+        },
+        {
+          "number": 2,
+          "explanation": "誤答。正しい記述はイ・ロ・ハ・ニ、誤った記述はホ。選択肢の「２つ」ではなく、該当する記述は1つである。"
+        },
+        {
+          "number": 3,
+          "explanation": "誤答。正しい記述はイ・ロ・ハ・ニ、誤った記述はホ。選択肢の「３つ」ではなく、該当する記述は1つである。"
+        },
+        {
+          "number": 4,
+          "explanation": "誤答。正しい記述はイ・ロ・ハ・ニ、誤った記述はホ。選択肢の「４つ」ではなく、該当する記述は1つである。"
+        },
+        {
+          "number": 5,
+          "explanation": "誤答。正しい記述はイ・ロ・ハ・ニ、誤った記述はホ。選択肢の「なし」ではなく、該当する記述は1つである。"
+        }
+      ],
+      "explanationCoverage": "all-choices"
     },
     {
       "id": "benrishi-2026-trademark-06",
@@ -1705,7 +3190,34 @@
         "data/qualification-staging/benrishi/assets/2026-question-p41.png"
       ],
       "lastUpdated": "2026-11-04",
-      "explanationCoverage": "draft"
+      "officialReferenceUrls": [
+        "https://laws.e-gov.go.jp/law/334AC0000000127"
+      ],
+      "lawReferenceDate": "2026-05-17",
+      "statementExplanations": [],
+      "choiceExplanations": [
+        {
+          "number": 1,
+          "explanation": "正しい。標準文字は長官指定の文字による登録であり、あらゆる文字書体を特定しない包括的な商標とみなす制度ではない。"
+        },
+        {
+          "number": 2,
+          "explanation": "正しい。立体商標の詳細な説明には省令に基づき省略できる場合があり、あらゆる立体商標に必須というわけではない。"
+        },
+        {
+          "number": 3,
+          "explanation": "誤り。補正後商標の特別な新出願の出願日は補正書提出時であり、元の同日出願商標とは異なる。先願商標と非類似なら8条1項違反を当然には生じない。"
+        },
+        {
+          "number": 4,
+          "explanation": "正しい。13条の2の登録前金銭請求には書面を提示した警告を要する。特許の補償金と異なり、相手が知っていたことだけでは警告に代わらない。"
+        },
+        {
+          "number": 5,
+          "explanation": "正しい。12条の2の出願公開は商標登録出願について行うが、防護標章の存続期間更新出願へ同じ公開を適用する規定はない。"
+        }
+      ],
+      "explanationCoverage": "all-choices"
     },
     {
       "id": "benrishi-2026-trademark-07",
@@ -1752,7 +3264,34 @@
         "data/qualification-staging/benrishi/assets/2026-question-p42.png"
       ],
       "lastUpdated": "2026-11-04",
-      "explanationCoverage": "draft"
+      "officialReferenceUrls": [
+        "https://laws.e-gov.go.jp/law/334AC0000000127"
+      ],
+      "lawReferenceDate": "2026-05-17",
+      "statementExplanations": [],
+      "choiceExplanations": [
+        {
+          "number": 1,
+          "explanation": "誤り。国との共有権で国以外の持分相当額に減額される扱いは持分の定めがある場合である。定めがない設例で半額納付とはできない。"
+        },
+        {
+          "number": 2,
+          "explanation": "誤り。21条の満了時に遡る更新の効果は更新登録による。満了後の申請と登録料納付だけで既に更新登録されたとみなすものではない。"
+        },
+        {
+          "number": 3,
+          "explanation": "誤り。公益主体の特定商標権も所定の移転先・事業承継等の条件により移転できる場合があり、一律に移転不能ではない。"
+        },
+        {
+          "number": 4,
+          "explanation": "誤り。商標権及び専用使用権は登録が効力発生要件だが、通常使用権は契約で生じる。通常使用権登録は第三者対抗等の問題である。"
+        },
+        {
+          "number": 5,
+          "explanation": "正しい。65条の3の防護標章更新出願は出願人事項と登録番号等で対象を特定し、登録済みの標章及び指定商品・役務の再記載を要しない。"
+        }
+      ],
+      "explanationCoverage": "all-choices"
     },
     {
       "id": "benrishi-2026-trademark-08",
@@ -1789,7 +3328,7 @@
       "sourceAnswerUrl": "https://www.jpo.go.jp/news/benrishi/shiken-mondai/document/2026tanto/answer.pdf",
       "sourcePageUrl": "https://www.jpo.go.jp/news/benrishi/shiken-mondai/2026tanto.html",
       "attribution": "出典：特許庁 弁理士試験短答式筆記試験問題・解答。過去問AIがテキスト化・整形。解説は過去問AIの独自作成（特許庁による作成・保証ではありません）。",
-      "explanation": "出題時点の法令に基づく独自解説。正しいのはロとホの2つ。不正使用取消し後の再登録禁止期間の起算点は審決の謄本送達日ではなく審決確定日であり、送達から5年後でも禁止が残ることがある。審理終結後でも必要があれば再開できる。使用権者の不正使用には故意だけを要件とする制限はない。",
+      "explanation": "出題時点の法令に基づく独自解説。\n記述イ：誤り。後発的無効理由の発生日を特定できない場合の擬制は無効審判請求の「登録」の日を用い、請求書提出日ではない。\n記述ロ：正しい。51条2項の再登録禁止5年は審決確定日を起点とする。送達後5年経過しても確定から5年経過前なら登録できない場合がある。\n記述ハ：誤り。53条の使用権者による品質誤認使用は故意に限らない。権利者の相当注意の有無等の別の要件を確認する。\n記述ニ：誤り。53条の2の外国商標権者等に基づく請求人には単なる質権相当の担保権者は含まれない。\n記述ホ：正しい。審理終結通知後も必要があれば審理を再開でき、拒絶理由を解消する補正を踏まえて再開する場合がある。",
       "publicAllowed": false,
       "needsReview": true,
       "sourcePdfUrl": "https://www.jpo.go.jp/news/benrishi/shiken-mondai/document/2026tanto/question.pdf",
@@ -1799,7 +3338,60 @@
         "data/qualification-staging/benrishi/assets/2026-question-p43.png"
       ],
       "lastUpdated": "2026-11-04",
-      "explanationCoverage": "draft"
+      "officialReferenceUrls": [
+        "https://laws.e-gov.go.jp/law/334AC0000000127"
+      ],
+      "lawReferenceDate": "2026-05-17",
+      "statementExplanations": [
+        {
+          "label": "イ",
+          "correct": false,
+          "explanation": "後発的無効理由の発生日を特定できない場合の擬制は無効審判請求の「登録」の日を用い、請求書提出日ではない。"
+        },
+        {
+          "label": "ロ",
+          "correct": true,
+          "explanation": "51条2項の再登録禁止5年は審決確定日を起点とする。送達後5年経過しても確定から5年経過前なら登録できない場合がある。"
+        },
+        {
+          "label": "ハ",
+          "correct": false,
+          "explanation": "53条の使用権者による品質誤認使用は故意に限らない。権利者の相当注意の有無等の別の要件を確認する。"
+        },
+        {
+          "label": "ニ",
+          "correct": false,
+          "explanation": "53条の2の外国商標権者等に基づく請求人には単なる質権相当の担保権者は含まれない。"
+        },
+        {
+          "label": "ホ",
+          "correct": true,
+          "explanation": "審理終結通知後も必要があれば審理を再開でき、拒絶理由を解消する補正を踏まえて再開する場合がある。"
+        }
+      ],
+      "choiceExplanations": [
+        {
+          "number": 1,
+          "explanation": "誤答。正しい記述はロ・ホ、誤った記述はイ・ハ・ニ。選択肢の「１つ」ではなく、該当する記述は2つである。"
+        },
+        {
+          "number": 2,
+          "explanation": "正解。正しい記述はロ・ホ、誤った記述はイ・ハ・ニ。選択肢の「２つ」が該当する。"
+        },
+        {
+          "number": 3,
+          "explanation": "誤答。正しい記述はロ・ホ、誤った記述はイ・ハ・ニ。選択肢の「３つ」ではなく、該当する記述は2つである。"
+        },
+        {
+          "number": 4,
+          "explanation": "誤答。正しい記述はロ・ホ、誤った記述はイ・ハ・ニ。選択肢の「４つ」ではなく、該当する記述は2つである。"
+        },
+        {
+          "number": 5,
+          "explanation": "誤答。正しい記述はロ・ホ、誤った記述はイ・ハ・ニ。選択肢の「５つ」ではなく、該当する記述は2つである。"
+        }
+      ],
+      "explanationCoverage": "all-choices"
     },
     {
       "id": "benrishi-2026-trademark-09",
@@ -1846,7 +3438,34 @@
         "data/qualification-staging/benrishi/assets/2026-question-p44.png"
       ],
       "lastUpdated": "2026-11-04",
-      "explanationCoverage": "draft"
+      "officialReferenceUrls": [
+        "https://laws.e-gov.go.jp/law/334AC0000000127"
+      ],
+      "lawReferenceDate": "2026-05-17",
+      "statementExplanations": [],
+      "choiceExplanations": [
+        {
+          "number": 1,
+          "explanation": "誤り。審判書記官を指定する主体は特許庁長官であり、審判長ではない。"
+        },
+        {
+          "number": 2,
+          "explanation": "誤り。異議申立ての審理・決定は3人又は5人の合議体で行うことができ、3人だけに限定されない。"
+        },
+        {
+          "number": 3,
+          "explanation": "正しい。取消理由通知前の取下げで異議事件は終了し、審判官がその取下げ済み事件を職権で継続審理することはできない。"
+        },
+        {
+          "number": 4,
+          "explanation": "誤り。単に商標権者から金銭を借りているだけでは、権利の存否についての参加に必要な法律上の利害関係を満たさない。"
+        },
+        {
+          "number": 5,
+          "explanation": "誤り。専用使用権者その他の権利者への異議申立て通知は長官の権限であり、審判長を主体とする記載が違う。"
+        }
+      ],
+      "explanationCoverage": "all-choices"
     },
     {
       "id": "benrishi-2026-trademark-10",
@@ -1893,7 +3512,34 @@
         "data/qualification-staging/benrishi/assets/2026-question-p45.png"
       ],
       "lastUpdated": "2026-11-04",
-      "explanationCoverage": "draft"
+      "officialReferenceUrls": [
+        "https://laws.e-gov.go.jp/law/334AC0000000127"
+      ],
+      "lawReferenceDate": "2026-05-17",
+      "statementExplanations": [],
+      "choiceExplanations": [
+        {
+          "number": 1,
+          "explanation": "誤り。セントラルアタック後の再出願には登録料の特例があり、元の国際登録から10年内の登録査定の場合に常に国内登録料を要するわけではない。"
+        },
+        {
+          "number": 2,
+          "explanation": "正しい。不使用取消審判では日本での設定登録後の不使用期間が問題となる。国際登録から3年以上でも国内設定から3年未満なら請求できない場合がある。"
+        },
+        {
+          "number": 3,
+          "explanation": "誤り。日本の防護標章登録も国際登録出願の基礎とすることができる。国内の通常商標登録だけに基礎を限定しない。"
+        },
+        {
+          "number": 4,
+          "explanation": "誤り。国際登録の放棄による国内商標権の消滅は国際登録に従う特例があり、国内質権者の承諾を消滅の効力要件とはしない。"
+        },
+        {
+          "number": 5,
+          "explanation": "誤り。事後指定でも存続期間は元の国際登録の日を基準とする。事後指定の日から新たに10年間が始まるものではない。"
+        }
+      ],
+      "explanationCoverage": "all-choices"
     },
     {
       "id": "benrishi-2026-treaties-01",
@@ -1940,7 +3586,36 @@
         "data/qualification-staging/benrishi/assets/2026-question-p46.png"
       ],
       "lastUpdated": "2026-11-04",
-      "explanationCoverage": "draft"
+      "officialReferenceUrls": [
+        "https://wipolex-res.wipo.int/edocs/lexdocs/treaties/ja/pct/trt_pct_001ja.html",
+        "https://www.jpo.go.jp/system/laws/gaikoku/paris/patent/chap1.html",
+        "https://www.jpo.go.jp/system/laws/gaikoku/trips/index.html"
+      ],
+      "lawReferenceDate": "2026-05-17",
+      "statementExplanations": [],
+      "choiceExplanations": [
+        {
+          "number": 1,
+          "explanation": "誤り。規則91.3(c)により、出願時の国際出願の誤記訂正は国際出願日から有効となり、訂正請求提出日からではない。"
+        },
+        {
+          "number": 2,
+          "explanation": "誤り。出題時点の規則89の2は所定の通知等の下で紙書類の電子的再提出を求める扱いを認める。電子形式のみ受理するとの通知がない限り紙を必ず無条件処理するわけではない。"
+        },
+        {
+          "number": 3,
+          "explanation": "誤り。国際事務局の書簡・通知の言語は規則92等で定められ、英語だけに限定されていない。"
+        },
+        {
+          "number": 4,
+          "explanation": "正しい。PCT22条は指定国法が遅い発明者表示を認める場合、願書未記載の事項を優先日から30月までに指定官庁へ届け出る扱いを定める。"
+        },
+        {
+          "number": 5,
+          "explanation": "誤り。規則6.3の先行技術の特徴と特徴部分に分ける請求項形式は適切な場合に用いるもので、すべての請求項で必須ではない。"
+        }
+      ],
+      "explanationCoverage": "all-choices"
     },
     {
       "id": "benrishi-2026-treaties-02",
@@ -1987,7 +3662,36 @@
         "data/qualification-staging/benrishi/assets/2026-question-p47.png"
       ],
       "lastUpdated": "2026-11-04",
-      "explanationCoverage": "draft"
+      "officialReferenceUrls": [
+        "https://wipolex-res.wipo.int/edocs/lexdocs/treaties/ja/pct/trt_pct_001ja.html",
+        "https://www.jpo.go.jp/system/laws/gaikoku/paris/patent/chap1.html",
+        "https://www.jpo.go.jp/system/laws/gaikoku/trips/index.html"
+      ],
+      "lawReferenceDate": "2026-05-17",
+      "statementExplanations": [],
+      "choiceExplanations": [
+        {
+          "number": 1,
+          "explanation": "誤り。PCT11条の国際出願日認定の最低要件に発明の名称は含まれず、その欠缺だけで出願日が認められないわけではない。"
+        },
+        {
+          "number": 2,
+          "explanation": "誤り。規則48.3による非英語公開時の英語の要約等の翻訳には国際事務局の作成するものがあり、出願人が必ず英語翻訳全文を提出する制度ではない。"
+        },
+        {
+          "number": 3,
+          "explanation": "誤り。規則92の2の変更記録には優先日から30月経過後の受理等の制限があり、「いかなる場合も」記録する義務ではない。"
+        },
+        {
+          "number": 4,
+          "explanation": "正しい。規則22.1の出願記録原本の確認制度は、優先日から14月後に受理官庁へ写しの認証を請求し認証謄本を国際事務局に送付できるとする。"
+        },
+        {
+          "number": 5,
+          "explanation": "誤り。PCT46条の誤訳による範囲超過を遡及限定し無効とできる主体は締約国の権限ある機関であり、国際事務局ではない。"
+        }
+      ],
+      "explanationCoverage": "all-choices"
     },
     {
       "id": "benrishi-2026-treaties-03",
@@ -2024,7 +3728,7 @@
       "sourceAnswerUrl": "https://www.jpo.go.jp/news/benrishi/shiken-mondai/document/2026tanto/answer.pdf",
       "sourcePageUrl": "https://www.jpo.go.jp/news/benrishi/shiken-mondai/2026tanto.html",
       "attribution": "出典：特許庁 弁理士試験短答式筆記試験問題・解答。過去問AIがテキスト化・整形。解説は過去問AIの独自作成（特許庁による作成・保証ではありません）。",
-      "explanation": "出題時点の法令に基づく独自解説。正しいのはロとハの2つ。国際予備審査を管轄する機関が関係取決めに従って特定され、出願人には原則として書面による見解と答弁の機会が与えられる。予備審査は別個の請求による手続であり、報告には明瞭性や裏付けに関する意見が付される場合もある。",
+      "explanation": "出題時点の法令に基づく独自解説。\n記述イ：誤り。PCT31条3項は国際予備審査を国際出願とは別個の請求書で請求すると定める。国際出願に含めるだけでは請求できない。\n記述ロ：正しい。PCT32条2項により受理官庁又は総会が、予備審査機関と国際事務局の取決めに従って管轄機関を特定する。\n記述ハ：正しい。PCT34条2項(c)は所定の例外を除き少なくとも一回の書面見解及び答弁の機会を保障する。\n記述ニ：誤り。PCT35条2項の報告には明瞭性・明細書の裏付けに関する意見も付すことができ、新規性等だけに限らない。\n記述ホ：誤り。PCT38条の秘密保持には出願人の請求又は承諾等による例外があり、出願人が承諾しても一切情報提供できないとはしていない。",
       "publicAllowed": false,
       "needsReview": true,
       "sourcePdfUrl": "https://www.jpo.go.jp/news/benrishi/shiken-mondai/document/2026tanto/question.pdf",
@@ -2034,7 +3738,62 @@
         "data/qualification-staging/benrishi/assets/2026-question-p48.png"
       ],
       "lastUpdated": "2026-11-04",
-      "explanationCoverage": "draft"
+      "officialReferenceUrls": [
+        "https://wipolex-res.wipo.int/edocs/lexdocs/treaties/ja/pct/trt_pct_001ja.html",
+        "https://www.jpo.go.jp/system/laws/gaikoku/paris/patent/chap1.html",
+        "https://www.jpo.go.jp/system/laws/gaikoku/trips/index.html"
+      ],
+      "lawReferenceDate": "2026-05-17",
+      "statementExplanations": [
+        {
+          "label": "イ",
+          "correct": false,
+          "explanation": "PCT31条3項は国際予備審査を国際出願とは別個の請求書で請求すると定める。国際出願に含めるだけでは請求できない。"
+        },
+        {
+          "label": "ロ",
+          "correct": true,
+          "explanation": "PCT32条2項により受理官庁又は総会が、予備審査機関と国際事務局の取決めに従って管轄機関を特定する。"
+        },
+        {
+          "label": "ハ",
+          "correct": true,
+          "explanation": "PCT34条2項(c)は所定の例外を除き少なくとも一回の書面見解及び答弁の機会を保障する。"
+        },
+        {
+          "label": "ニ",
+          "correct": false,
+          "explanation": "PCT35条2項の報告には明瞭性・明細書の裏付けに関する意見も付すことができ、新規性等だけに限らない。"
+        },
+        {
+          "label": "ホ",
+          "correct": false,
+          "explanation": "PCT38条の秘密保持には出願人の請求又は承諾等による例外があり、出願人が承諾しても一切情報提供できないとはしていない。"
+        }
+      ],
+      "choiceExplanations": [
+        {
+          "number": 1,
+          "explanation": "誤答。正しい記述はロ・ハ、誤った記述はイ・ニ・ホ。選択肢の「１つ」ではなく、該当する記述は2つである。"
+        },
+        {
+          "number": 2,
+          "explanation": "正解。正しい記述はロ・ハ、誤った記述はイ・ニ・ホ。選択肢の「２つ」が該当する。"
+        },
+        {
+          "number": 3,
+          "explanation": "誤答。正しい記述はロ・ハ、誤った記述はイ・ニ・ホ。選択肢の「３つ」ではなく、該当する記述は2つである。"
+        },
+        {
+          "number": 4,
+          "explanation": "誤答。正しい記述はロ・ハ、誤った記述はイ・ニ・ホ。選択肢の「４つ」ではなく、該当する記述は2つである。"
+        },
+        {
+          "number": 5,
+          "explanation": "誤答。正しい記述はロ・ハ、誤った記述はイ・ニ・ホ。選択肢の「５つ」ではなく、該当する記述は2つである。"
+        }
+      ],
+      "explanationCoverage": "all-choices"
     },
     {
       "id": "benrishi-2026-treaties-04",
@@ -2081,7 +3840,36 @@
         "data/qualification-staging/benrishi/assets/2026-question-p49.png"
       ],
       "lastUpdated": "2026-11-04",
-      "explanationCoverage": "draft"
+      "officialReferenceUrls": [
+        "https://wipolex-res.wipo.int/edocs/lexdocs/treaties/ja/pct/trt_pct_001ja.html",
+        "https://www.jpo.go.jp/system/laws/gaikoku/paris/patent/chap1.html",
+        "https://www.jpo.go.jp/system/laws/gaikoku/trips/index.html"
+      ],
+      "lawReferenceDate": "2026-05-17",
+      "statementExplanations": [],
+      "choiceExplanations": [
+        {
+          "number": 1,
+          "explanation": "正しい。規則53.8は複数の出願人が予備審査請求をするとき、そのすべての請求人の署名を原則として求める。"
+        },
+        {
+          "number": 2,
+          "explanation": "正しい。規則64及び70は基準日前の非書面開示についても報告で注意を喚起する扱いを定める。書面以外の開示をすべて無視するものではない。"
+        },
+        {
+          "number": 3,
+          "explanation": "誤り。規則66.6は予備審査機関による電話又は面談での非公式連絡を認める。正式な書面手続があることは非公式連絡の禁止を意味しない。"
+        },
+        {
+          "number": 4,
+          "explanation": "正しい。規則82の4は戦争・天災・感染症等による全般的混乱について、機関が一般的な延長期間を設定する制度を定める。"
+        },
+        {
+          "number": 5,
+          "explanation": "正しい。規則91.1の許可権限により、予備審査開始等の所定条件下では34条補正書の明白な誤記を予備審査機関の許可で訂正できる。"
+        }
+      ],
+      "explanationCoverage": "all-choices"
     },
     {
       "id": "benrishi-2026-treaties-05",
@@ -2118,7 +3906,7 @@
       "sourceAnswerUrl": "https://www.jpo.go.jp/news/benrishi/shiken-mondai/document/2026tanto/answer.pdf",
       "sourcePageUrl": "https://www.jpo.go.jp/news/benrishi/shiken-mondai/2026tanto.html",
       "attribution": "出典：特許庁 弁理士試験短答式筆記試験問題・解答。過去問AIがテキスト化・整形。解説は過去問AIの独自作成（特許庁による作成・保証ではありません）。",
-      "explanation": "出題時点の法令に基づく独自解説。正しい記述は2つ。国際特許出願では国内書面に発明者の氏名・住所等を記載し、図面を欠く国際実用新案出願では図面提出とその補正扱いの特則がある。翻訳文等の提出遅滞には救済の可能性があり、原文を超える記載は設定登録前でも拒絶理由となる。",
+      "explanation": "出題時点の法令に基づく独自解説。\n記述イ：正しい。特許法184条の5は国内書面に発明者の氏名及び住所又は居所等を記載して国内書面提出期間内に提出することを求める。\n記述ロ：誤り。翻訳文提出期間や管理人選任の徒過には所定の救済制度があるため、設例の経過後提出が必ずみなし取下げに終わるとは限らない。\n記述ハ：誤り。184条の18の原文新規事項違反は設定登録後の異議・無効理由だけでなく、設定登録前にも拒絶理由となる。\n記述ニ：正しい。実用新案法48条の7の図面を欠く国際出願の特例は、図面及びその簡単な説明の提出を手続補正とみなす。\n記述ホ：誤り。規則66.2により原出願範囲を超えた補正についての見解・理由を出願人へ通知する手続が必要であり、常に通知なしで報告を作成してよいわけではない。",
       "publicAllowed": false,
       "needsReview": true,
       "sourcePdfUrl": "https://www.jpo.go.jp/news/benrishi/shiken-mondai/document/2026tanto/question.pdf",
@@ -2128,7 +3916,62 @@
         "data/qualification-staging/benrishi/assets/2026-question-p50.png"
       ],
       "lastUpdated": "2026-11-04",
-      "explanationCoverage": "draft"
+      "officialReferenceUrls": [
+        "https://wipolex-res.wipo.int/edocs/lexdocs/treaties/ja/pct/trt_pct_001ja.html",
+        "https://www.jpo.go.jp/system/laws/gaikoku/paris/patent/chap1.html",
+        "https://www.jpo.go.jp/system/laws/gaikoku/trips/index.html"
+      ],
+      "lawReferenceDate": "2026-05-17",
+      "statementExplanations": [
+        {
+          "label": "イ",
+          "correct": true,
+          "explanation": "特許法184条の5は国内書面に発明者の氏名及び住所又は居所等を記載して国内書面提出期間内に提出することを求める。"
+        },
+        {
+          "label": "ロ",
+          "correct": false,
+          "explanation": "翻訳文提出期間や管理人選任の徒過には所定の救済制度があるため、設例の経過後提出が必ずみなし取下げに終わるとは限らない。"
+        },
+        {
+          "label": "ハ",
+          "correct": false,
+          "explanation": "184条の18の原文新規事項違反は設定登録後の異議・無効理由だけでなく、設定登録前にも拒絶理由となる。"
+        },
+        {
+          "label": "ニ",
+          "correct": true,
+          "explanation": "実用新案法48条の7の図面を欠く国際出願の特例は、図面及びその簡単な説明の提出を手続補正とみなす。"
+        },
+        {
+          "label": "ホ",
+          "correct": false,
+          "explanation": "規則66.2により原出願範囲を超えた補正についての見解・理由を出願人へ通知する手続が必要であり、常に通知なしで報告を作成してよいわけではない。"
+        }
+      ],
+      "choiceExplanations": [
+        {
+          "number": 1,
+          "explanation": "誤答。正しい記述はイ・ニ、誤った記述はロ・ハ・ホ。選択肢の「１つ」ではなく、該当する記述は2つである。"
+        },
+        {
+          "number": 2,
+          "explanation": "正解。正しい記述はイ・ニ、誤った記述はロ・ハ・ホ。選択肢の「２つ」が該当する。"
+        },
+        {
+          "number": 3,
+          "explanation": "誤答。正しい記述はイ・ニ、誤った記述はロ・ハ・ホ。選択肢の「３つ」ではなく、該当する記述は2つである。"
+        },
+        {
+          "number": 4,
+          "explanation": "誤答。正しい記述はイ・ニ、誤った記述はロ・ハ・ホ。選択肢の「４つ」ではなく、該当する記述は2つである。"
+        },
+        {
+          "number": 5,
+          "explanation": "誤答。正しい記述はイ・ニ、誤った記述はロ・ハ・ホ。選択肢の「５つ」ではなく、該当する記述は2つである。"
+        }
+      ],
+      "explanationCoverage": "all-choices"
     },
     {
       "id": "benrishi-2026-treaties-06",
@@ -2175,7 +4018,36 @@
         "data/qualification-staging/benrishi/assets/2026-question-p51.png"
       ],
       "lastUpdated": "2026-11-04",
-      "explanationCoverage": "draft"
+      "officialReferenceUrls": [
+        "https://wipolex-res.wipo.int/edocs/lexdocs/treaties/ja/pct/trt_pct_001ja.html",
+        "https://www.jpo.go.jp/system/laws/gaikoku/paris/patent/chap1.html",
+        "https://www.jpo.go.jp/system/laws/gaikoku/trips/index.html"
+      ],
+      "lawReferenceDate": "2026-05-17",
+      "statementExplanations": [],
+      "choiceExplanations": [
+        {
+          "number": 1,
+          "explanation": "正しい。ジュネーブ改正協定5条の国際出願は、規則の定める一つの言語で作成する。複数言語の混在を自由に認めるものではない。"
+        },
+        {
+          "number": 2,
+          "explanation": "誤り。協定8条の不備審査及び補正要求を行う主体は国際事務局であり、経由官庁がその受理時に同じ形式審査を行う制度ではない。"
+        },
+        {
+          "number": 3,
+          "explanation": "正しい。協定12条1項は指定官庁が国際出願の形式・記載要件を再審査し、条約等と追加的又は異なる国内要件によって効果を拒絶することを禁じる。"
+        },
+        {
+          "number": 4,
+          "explanation": "正しい。マドリッド議定書3条3項は識別性ある特徴として色彩を主張するとき、その表示・色彩特定及び色彩付き写しを要求する。"
+        },
+        {
+          "number": 5,
+          "explanation": "正しい。マドリッド議定書4条の2は同一名義人、商品等の包含、国内登録後の領域指定効果等を条件に、既得権を害さず国内登録へ代替する仕組みを定める。"
+        }
+      ],
+      "explanationCoverage": "all-choices"
     },
     {
       "id": "benrishi-2026-treaties-07",
@@ -2222,7 +4094,36 @@
         "data/qualification-staging/benrishi/assets/2026-question-p52.png"
       ],
       "lastUpdated": "2026-11-04",
-      "explanationCoverage": "draft"
+      "officialReferenceUrls": [
+        "https://wipolex-res.wipo.int/edocs/lexdocs/treaties/ja/pct/trt_pct_001ja.html",
+        "https://www.jpo.go.jp/system/laws/gaikoku/paris/patent/chap1.html",
+        "https://www.jpo.go.jp/system/laws/gaikoku/trips/index.html"
+      ],
+      "lawReferenceDate": "2026-05-17",
+      "statementExplanations": [],
+      "choiceExplanations": [
+        {
+          "number": 1,
+          "explanation": "誤り。パリ条約5条A(3)は最初の強制実施許諾から2年を満了する前に失効・取消手続をしてはならないとする。"
+        },
+        {
+          "number": 2,
+          "explanation": "誤り。5条Bは意匠の不実施を理由として保護を失わせることを禁止する。特許の不実施に関する規定とは異なる。"
+        },
+        {
+          "number": 3,
+          "explanation": "誤り。8条は商号が商標の一部であるか否かを問わず、出願又は登録義務なしに同盟国で保護するとする。"
+        },
+        {
+          "number": 4,
+          "explanation": "正しい。6条の4は事業と商標の一体移転を要求する国でも、当該国の事業部分と排他的製造・販売権の移転で足りるとする。"
+        },
+        {
+          "number": 5,
+          "explanation": "誤り。2条3項は司法・行政手続、管轄、住所・代理人等の国内法令を留保しており、手続全般の無条件な同一扱いまで要求しない。"
+        }
+      ],
+      "explanationCoverage": "all-choices"
     },
     {
       "id": "benrishi-2026-treaties-08",
@@ -2259,7 +4160,7 @@
       "sourceAnswerUrl": "https://www.jpo.go.jp/news/benrishi/shiken-mondai/document/2026tanto/answer.pdf",
       "sourcePageUrl": "https://www.jpo.go.jp/news/benrishi/shiken-mondai/2026tanto.html",
       "attribution": "出典：特許庁 弁理士試験短答式筆記試験問題・解答。過去問AIがテキスト化・整形。解説は過去問AIの独自作成（特許庁による作成・保証ではありません）。",
-      "explanation": "出題時点の法令に基づく独自解説。正しいのはイとハの2つ。商標の優先期間は6月であり、複合的な特許出願の分割では原出願の日付と優先権利益を保有する。特許と実用新案との間の優先権は相互に可能で、内国民待遇は原産地表示や不正競争防止を相互主義に置き換えるものではない。",
+      "explanation": "出題時点の法令に基づく独自解説。\n記述イ：正しい。パリ条約4条A・Cは正規の商標出願人又は承継人に、他の同盟国への出願について6月の優先期間を認める。\n記述ロ：誤り。4条E(2)は特許から実用新案、実用新案から特許の双方について優先権主張を認めている。\n記述ハ：正しい。4条Gは複合的な特許出願を分割し、各分割出願について原出願日及び優先権利益を保持できるとする。\n記述ニ：誤り。1条・2条の内国民待遇は原産地表示や不正競争防止も対象とし、それらだけを相互主義にする規定ではない。\n記述ホ：誤り。4条の2の特許独立は出願した特許に及び、他国特許からの独立を登録後だけに限定していない。",
       "publicAllowed": false,
       "needsReview": true,
       "sourcePdfUrl": "https://www.jpo.go.jp/news/benrishi/shiken-mondai/document/2026tanto/question.pdf",
@@ -2269,7 +4170,62 @@
         "data/qualification-staging/benrishi/assets/2026-question-p53.png"
       ],
       "lastUpdated": "2026-11-04",
-      "explanationCoverage": "draft"
+      "officialReferenceUrls": [
+        "https://wipolex-res.wipo.int/edocs/lexdocs/treaties/ja/pct/trt_pct_001ja.html",
+        "https://www.jpo.go.jp/system/laws/gaikoku/paris/patent/chap1.html",
+        "https://www.jpo.go.jp/system/laws/gaikoku/trips/index.html"
+      ],
+      "lawReferenceDate": "2026-05-17",
+      "statementExplanations": [
+        {
+          "label": "イ",
+          "correct": true,
+          "explanation": "パリ条約4条A・Cは正規の商標出願人又は承継人に、他の同盟国への出願について6月の優先期間を認める。"
+        },
+        {
+          "label": "ロ",
+          "correct": false,
+          "explanation": "4条E(2)は特許から実用新案、実用新案から特許の双方について優先権主張を認めている。"
+        },
+        {
+          "label": "ハ",
+          "correct": true,
+          "explanation": "4条Gは複合的な特許出願を分割し、各分割出願について原出願日及び優先権利益を保持できるとする。"
+        },
+        {
+          "label": "ニ",
+          "correct": false,
+          "explanation": "1条・2条の内国民待遇は原産地表示や不正競争防止も対象とし、それらだけを相互主義にする規定ではない。"
+        },
+        {
+          "label": "ホ",
+          "correct": false,
+          "explanation": "4条の2の特許独立は出願した特許に及び、他国特許からの独立を登録後だけに限定していない。"
+        }
+      ],
+      "choiceExplanations": [
+        {
+          "number": 1,
+          "explanation": "誤答。正しい記述はイ・ハ、誤った記述はロ・ニ・ホ。選択肢の「１つ」ではなく、該当する記述は2つである。"
+        },
+        {
+          "number": 2,
+          "explanation": "正解。正しい記述はイ・ハ、誤った記述はロ・ニ・ホ。選択肢の「２つ」が該当する。"
+        },
+        {
+          "number": 3,
+          "explanation": "誤答。正しい記述はイ・ハ、誤った記述はロ・ニ・ホ。選択肢の「３つ」ではなく、該当する記述は2つである。"
+        },
+        {
+          "number": 4,
+          "explanation": "誤答。正しい記述はイ・ハ、誤った記述はロ・ニ・ホ。選択肢の「４つ」ではなく、該当する記述は2つである。"
+        },
+        {
+          "number": 5,
+          "explanation": "誤答。正しい記述はイ・ハ、誤った記述はロ・ニ・ホ。選択肢の「５つ」ではなく、該当する記述は2つである。"
+        }
+      ],
+      "explanationCoverage": "all-choices"
     },
     {
       "id": "benrishi-2026-treaties-09",
@@ -2306,7 +4262,7 @@
       "sourceAnswerUrl": "https://www.jpo.go.jp/news/benrishi/shiken-mondai/document/2026tanto/answer.pdf",
       "sourcePageUrl": "https://www.jpo.go.jp/news/benrishi/shiken-mondai/2026tanto.html",
       "attribution": "出典：特許庁 弁理士試験短答式筆記試験問題・解答。過去問AIがテキスト化・整形。解説は過去問AIの独自作成（特許庁による作成・保証ではありません）。",
-      "explanation": "出題時点の法令に基づく独自解説。正しいのはハとホの2つ。国境措置の担保には濫用防止と手続利用を妨げないことの均衡を要し、不正商標商品の無変更での積戻しは原則禁止される。合理的な弁護士費用、証拠保全の暫定措置、荷送人等の情報提供の権限を否定する記述は誤りとなる。",
+      "explanation": "出題時点の法令に基づく独自解説。\n記述イ：誤り。TRIPS45条2項は費用に適当な弁護人の費用を含めることができるとし、一切含めてはならないという禁止はない。\n記述ロ：誤り。50条1項は侵害防止だけでなく、侵害に関する証拠の保全のための迅速な暫定措置の権限も求める。\n記述ハ：正しい。53条1項は十分な担保・保証を要求できるが、手続利用を不当に妨げないことを条件とする。\n記述ニ：誤り。57条は本案の肯定的決定があれば荷送人・輸入者等の情報を権利者へ通報する権限を与えることができるとする。禁止ではない。\n記述ホ：正しい。59条は所定の廃棄・処分の権限を求め、不正商標商品の無変更での積戻し等を例外的場合を除いて禁じる。",
       "publicAllowed": false,
       "needsReview": true,
       "sourcePdfUrl": "https://www.jpo.go.jp/news/benrishi/shiken-mondai/document/2026tanto/question.pdf",
@@ -2316,7 +4272,62 @@
         "data/qualification-staging/benrishi/assets/2026-question-p54.png"
       ],
       "lastUpdated": "2026-11-04",
-      "explanationCoverage": "draft"
+      "officialReferenceUrls": [
+        "https://wipolex-res.wipo.int/edocs/lexdocs/treaties/ja/pct/trt_pct_001ja.html",
+        "https://www.jpo.go.jp/system/laws/gaikoku/paris/patent/chap1.html",
+        "https://www.jpo.go.jp/system/laws/gaikoku/trips/index.html"
+      ],
+      "lawReferenceDate": "2026-05-17",
+      "statementExplanations": [
+        {
+          "label": "イ",
+          "correct": false,
+          "explanation": "TRIPS45条2項は費用に適当な弁護人の費用を含めることができるとし、一切含めてはならないという禁止はない。"
+        },
+        {
+          "label": "ロ",
+          "correct": false,
+          "explanation": "50条1項は侵害防止だけでなく、侵害に関する証拠の保全のための迅速な暫定措置の権限も求める。"
+        },
+        {
+          "label": "ハ",
+          "correct": true,
+          "explanation": "53条1項は十分な担保・保証を要求できるが、手続利用を不当に妨げないことを条件とする。"
+        },
+        {
+          "label": "ニ",
+          "correct": false,
+          "explanation": "57条は本案の肯定的決定があれば荷送人・輸入者等の情報を権利者へ通報する権限を与えることができるとする。禁止ではない。"
+        },
+        {
+          "label": "ホ",
+          "correct": true,
+          "explanation": "59条は所定の廃棄・処分の権限を求め、不正商標商品の無変更での積戻し等を例外的場合を除いて禁じる。"
+        }
+      ],
+      "choiceExplanations": [
+        {
+          "number": 1,
+          "explanation": "誤答。正しい記述はハ・ホ、誤った記述はイ・ロ・ニ。選択肢の「１つ」ではなく、該当する記述は2つである。"
+        },
+        {
+          "number": 2,
+          "explanation": "正解。正しい記述はハ・ホ、誤った記述はイ・ロ・ニ。選択肢の「２つ」が該当する。"
+        },
+        {
+          "number": 3,
+          "explanation": "誤答。正しい記述はハ・ホ、誤った記述はイ・ロ・ニ。選択肢の「３つ」ではなく、該当する記述は2つである。"
+        },
+        {
+          "number": 4,
+          "explanation": "誤答。正しい記述はハ・ホ、誤った記述はイ・ロ・ニ。選択肢の「４つ」ではなく、該当する記述は2つである。"
+        },
+        {
+          "number": 5,
+          "explanation": "誤答。正しい記述はハ・ホ、誤った記述はイ・ロ・ニ。選択肢の「５つ」ではなく、該当する記述は2つである。"
+        }
+      ],
+      "explanationCoverage": "all-choices"
     },
     {
       "id": "benrishi-2026-treaties-10",
@@ -2363,7 +4374,36 @@
         "data/qualification-staging/benrishi/assets/2026-question-p55.png"
       ],
       "lastUpdated": "2026-11-04",
-      "explanationCoverage": "draft"
+      "officialReferenceUrls": [
+        "https://wipolex-res.wipo.int/edocs/lexdocs/treaties/ja/pct/trt_pct_001ja.html",
+        "https://www.jpo.go.jp/system/laws/gaikoku/paris/patent/chap1.html",
+        "https://www.jpo.go.jp/system/laws/gaikoku/trips/index.html"
+      ],
+      "lawReferenceDate": "2026-05-17",
+      "statementExplanations": [],
+      "choiceExplanations": [
+        {
+          "number": 1,
+          "explanation": "正しい。31条の2及び附属書の制度は輸出国で適当な報酬を支払う場合、輸入国側に同じ報酬義務を重ねて課さない。"
+        },
+        {
+          "number": 2,
+          "explanation": "正しい。附属書は通告した輸入国の必要量に生産を限定し、その生産量全部を当該輸入国へ輸出する条件を要求する。"
+        },
+        {
+          "number": 3,
+          "explanation": "正しい。附属書は特定のラベル又はマーク等により制度に基づく医薬品と明確に識別できるよう求める。"
+        },
+        {
+          "number": 4,
+          "explanation": "正しい。附属書は船積み前に数量及び製品の特徴等をウェブサイトへ掲示する条件を定める。"
+        },
+        {
+          "number": 5,
+          "explanation": "誤り。輸入国・輸出国のTRIPS理事会への通告はWTO内部機関の承認を要しない。通告を事前承認の申請と混同している。"
+        }
+      ],
+      "explanationCoverage": "all-choices"
     },
     {
       "id": "benrishi-2026-copyright-unfair-competition-01",
@@ -2410,7 +4450,34 @@
         "data/qualification-staging/benrishi/assets/2026-question-p56.png"
       ],
       "lastUpdated": "2026-11-04",
-      "explanationCoverage": "draft"
+      "officialReferenceUrls": [
+        "https://laws.e-gov.go.jp/law/345AC0000000048"
+      ],
+      "lawReferenceDate": "2026-05-17",
+      "statementExplanations": [],
+      "choiceExplanations": [
+        {
+          "number": 1,
+          "explanation": "適切。2条1項11号の二次的著作物は既存著作物に依拠して翻訳・翻案等により創作するもので、独立創作とは区別される。"
+        },
+        {
+          "number": 2,
+          "explanation": "不適切。自然物を素材としても配置・組合せ等に創作的表現があれば美術著作物となり得る。素材が花であることだけで除外されない。"
+        },
+        {
+          "number": 3,
+          "explanation": "不適切。ナビゲーション用のプログラムも思想又は感情の創作的表現等の要件を満たせばプログラム著作物となり、組込み用途で除外されない。"
+        },
+        {
+          "number": 4,
+          "explanation": "不適切。12条の編集著作物の素材は事実やデータでもよく、素材自体に著作物性は必要ない。選択又は配列の創作性で判断する。"
+        },
+        {
+          "number": 5,
+          "explanation": "不適切。共同著作物には共同創作を要する。既存動画の音声の文字起こしを後から行っただけで甲乙の共同創作になるわけではない。"
+        }
+      ],
+      "explanationCoverage": "all-choices"
     },
     {
       "id": "benrishi-2026-copyright-unfair-competition-02",
@@ -2457,7 +4524,34 @@
         "data/qualification-staging/benrishi/assets/2026-question-p57.png"
       ],
       "lastUpdated": "2026-11-04",
-      "explanationCoverage": "draft"
+      "officialReferenceUrls": [
+        "https://laws.e-gov.go.jp/law/345AC0000000048"
+      ],
+      "lawReferenceDate": "2026-05-17",
+      "statementExplanations": [],
+      "choiceExplanations": [
+        {
+          "number": 1,
+          "explanation": "適切。2条1項3号の実演は著作物を演じない芸能的性質の行為も含み、手品も実演として隣接権保護を受け得る。"
+        },
+        {
+          "number": 2,
+          "explanation": "適切。共同著作物の人格権侵害についても各著作者は自己の利益の救済を単独で請求でき、乙による氏名不表示を甲が単独で争える。"
+        },
+        {
+          "number": 3,
+          "explanation": "適切。91条の録音録画権は画質の良さを侵害要件としない。実演を識別できる無断録画なら低画質でも侵害となり得る。"
+        },
+        {
+          "number": 4,
+          "explanation": "不適切。実演家人格権は氏名表示権・同一性保持権で、公表権は規定されていない。無断録画やSNS公開の財産権侵害とは別の論点である。"
+        },
+        {
+          "number": 5,
+          "explanation": "適切。法人著作の制度を実演家に適用する規定はない。雇用・法人名義公表でも実際に演奏した自然人が実演家となる。"
+        }
+      ],
+      "explanationCoverage": "all-choices"
     },
     {
       "id": "benrishi-2026-copyright-unfair-competition-03",
@@ -2504,7 +4598,34 @@
         "data/qualification-staging/benrishi/assets/2026-question-p58.png"
       ],
       "lastUpdated": "2026-11-04",
-      "explanationCoverage": "draft"
+      "officialReferenceUrls": [
+        "https://laws.e-gov.go.jp/law/345AC0000000048"
+      ],
+      "lawReferenceDate": "2026-05-17",
+      "statementExplanations": [],
+      "choiceExplanations": [
+        {
+          "number": 1,
+          "explanation": "不適切。61条1項は著作権の全部又は一部の譲渡を認める。複製権の利用態様のうち録画に係る部分だけを譲渡することもできる。"
+        },
+        {
+          "number": 2,
+          "explanation": "不適切。103条で準用する61条により著作隣接権の一部譲渡も可能であり、録画権だけの譲渡を一律に禁じていない。"
+        },
+        {
+          "number": 3,
+          "explanation": "不適切。101条1項1号の実演の権利の存続期間は実演を行った時に始まり、最初の固定を待たない。"
+        },
+        {
+          "number": 4,
+          "explanation": "不適切。101条1項2号のレコードの権利は音の最初の固定時に始まる。発行時は原則の権利発生時ではない。"
+        },
+        {
+          "number": 5,
+          "explanation": "適切。101条1項3号は放送について、その放送を行った時から隣接権の存続期間が始まると定める。"
+        }
+      ],
+      "explanationCoverage": "all-choices"
     },
     {
       "id": "benrishi-2026-copyright-unfair-competition-04",
@@ -2551,7 +4672,34 @@
         "data/qualification-staging/benrishi/assets/2026-question-p59.png"
       ],
       "lastUpdated": "2026-11-04",
-      "explanationCoverage": "draft"
+      "officialReferenceUrls": [
+        "https://laws.e-gov.go.jp/law/345AC0000000048"
+      ],
+      "lawReferenceDate": "2026-05-17",
+      "statementExplanations": [],
+      "choiceExplanations": [
+        {
+          "number": 1,
+          "explanation": "不適切。試験問題利用の36条及び翻訳等の規定による財産権制限があっても、50条により著作者人格権に影響しない。同一性保持権を常に侵害しないとはいえない。"
+        },
+        {
+          "number": 2,
+          "explanation": "不適切。36条は営利目的の試験にも必要範囲の利用を認めるが補償金を課す。営利企業の入社試験だから必ず事前許諾を要するわけではない。"
+        },
+        {
+          "number": 3,
+          "explanation": "適切。書画を一部塗りつぶす改変と別人の落款への差替えは20条・19条の権利を侵害し得る。原作品所有権はその改変権限を含まない。"
+        },
+        {
+          "number": 4,
+          "explanation": "不適切。歌唱による引用の出所明示は48条の慣行等による規律に従う。すべての歌唱引用に無条件で明示義務があるわけではない。"
+        },
+        {
+          "number": 5,
+          "explanation": "不適切。乙はその漫画の著作者ではなく、その作品について氏名表示権を有しない。虚偽の著作者名表示は別の法的問題となる。"
+        }
+      ],
+      "explanationCoverage": "all-choices"
     },
     {
       "id": "benrishi-2026-copyright-unfair-competition-05",
@@ -2598,7 +4746,34 @@
         "data/qualification-staging/benrishi/assets/2026-question-p60.png"
       ],
       "lastUpdated": "2026-11-04",
-      "explanationCoverage": "draft"
+      "officialReferenceUrls": [
+        "https://laws.e-gov.go.jp/law/345AC0000000048"
+      ],
+      "lawReferenceDate": "2026-05-17",
+      "statementExplanations": [],
+      "choiceExplanations": [
+        {
+          "number": 1,
+          "explanation": "不適切。18条の公表同意推定は譲渡された権利の行使について働く。演奏権だけの譲渡で楽譜のウェブ送信まで同意したとは推定されない。"
+        },
+        {
+          "number": 2,
+          "explanation": "不適切。60条は死後も人格的利益を保護する。公表しないとしていた未完小説について、財産権者の同意だけで当然に公表できるわけではない。"
+        },
+        {
+          "number": 3,
+          "explanation": "不適切。18条3項の行政機関等への提供の特例には、提出時に反対の意思を表示する場合の扱いがある。秘匿の通知をしても当然に同意擬制されるわけではない。"
+        },
+        {
+          "number": 4,
+          "explanation": "不適切。年齢・身長という単独の事実に著作物性がなくても、その変更が作品全体の創作的表現を改変すれば同一性保持権を侵害し得る。"
+        },
+        {
+          "number": 5,
+          "explanation": "適切。20条2項の建築物の増改築等の例外があっても、所有者の好みだけによる装飾的螺旋階段の変更が当然に許されるわけではなく侵害となり得る。"
+        }
+      ],
+      "explanationCoverage": "all-choices"
     },
     {
       "id": "benrishi-2026-copyright-unfair-competition-06",
@@ -2645,7 +4820,34 @@
         "data/qualification-staging/benrishi/assets/2026-question-p61.png"
       ],
       "lastUpdated": "2026-11-04",
-      "explanationCoverage": "draft"
+      "officialReferenceUrls": [
+        "https://laws.e-gov.go.jp/law/405AC0000000047"
+      ],
+      "lawReferenceDate": "2026-05-17",
+      "statementExplanations": [],
+      "choiceExplanations": [
+        {
+          "number": 1,
+          "explanation": "適切。役務の証明に用いる標章も出所等の表示機能を有すれば商品等表示となり、主体の業態だけで保護から排除されない。"
+        },
+        {
+          "number": 2,
+          "explanation": "適切。不競法の営業は公的主体の事業も含み得る。公立大学の名称にも商品等表示として保護される余地がある。"
+        },
+        {
+          "number": 3,
+          "explanation": "適切。単発の映画の題名は通常作品内容を特定する表示であり、シリーズ名のような配給事業者の出所表示と同じ扱いにはならない。"
+        },
+        {
+          "number": 4,
+          "explanation": "不適切。航空機の忠実な模型上の標章は実物再現の一部であって、模型の出所を表示する使用とは限らない。著名商標があるだけで不正競争となるものではない。"
+        },
+        {
+          "number": 5,
+          "explanation": "適切。2条1項2号の著名表示冒用は混同を要件としない。ドメイン名も商品等表示として使用されれば同号に該当し得る。"
+        }
+      ],
+      "explanationCoverage": "all-choices"
     },
     {
       "id": "benrishi-2026-copyright-unfair-competition-07",
@@ -2692,7 +4894,34 @@
         "data/qualification-staging/benrishi/assets/2026-question-p62.png"
       ],
       "lastUpdated": "2026-11-04",
-      "explanationCoverage": "draft"
+      "officialReferenceUrls": [
+        "https://laws.e-gov.go.jp/law/405AC0000000047"
+      ],
+      "lawReferenceDate": "2026-05-17",
+      "statementExplanations": [],
+      "choiceExplanations": [
+        {
+          "number": 1,
+          "explanation": "不適切。データベースの情報内容をコピーすることは、それだけで商品の形態を模倣する2条1項3号の行為にはならない。著作権やデータ保護は別に判断する。"
+        },
+        {
+          "number": 2,
+          "explanation": "不適切。まだ商品化されずスケッチで提案しただけの形は、その提案者が商品形態模倣を理由に差止めを請求できる対象とはならない。"
+        },
+        {
+          "number": 3,
+          "explanation": "適切。2条1項3号の商品形態は立体形状に限られず、カレンダーのような平面的形態をそのままコピーした販売も該当する。"
+        },
+        {
+          "number": 4,
+          "explanation": "不適切。ドメイン名の不正取得等は他人の商品等表示と同一・類似であることを要する。営業表示でない無職の個人の氏名だけでは要件を満たさない。"
+        },
+        {
+          "number": 5,
+          "explanation": "不適切。ドメイン名の使用権限の取得も不正競争の対象である。害する目的で使用許諾を受けた場合、使用開始前だから当然に除外されるものではない。"
+        }
+      ],
+      "explanationCoverage": "all-choices"
     },
     {
       "id": "benrishi-2026-copyright-unfair-competition-08",
@@ -2739,7 +4968,34 @@
         "data/qualification-staging/benrishi/assets/2026-question-p63.png"
       ],
       "lastUpdated": "2026-11-04",
-      "explanationCoverage": "draft"
+      "officialReferenceUrls": [
+        "https://laws.e-gov.go.jp/law/405AC0000000047"
+      ],
+      "lawReferenceDate": "2026-05-17",
+      "statementExplanations": [],
+      "choiceExplanations": [
+        {
+          "number": 1,
+          "explanation": "不適切。差止めは事実審口頭弁論終結時の侵害状態、損害賠償は過去の行為時の要件で判断する。後の周知性喪失だけで過去の賠償まで否定されない。"
+        },
+        {
+          "number": 2,
+          "explanation": "不適切。3条2項の除去措置は必要な範囲に限る。包装のロゴを抹消すれば足りる場合に商品石けん全体の廃棄まで当然に請求できない。"
+        },
+        {
+          "number": 3,
+          "explanation": "不適切。5条の使用許諾料相当額の損害請求について、現実損害がこれより少ないという立証だけで当然にその下へ減額できるわけではない。"
+        },
+        {
+          "number": 4,
+          "explanation": "適切。21条の周知前の善意先使用者の業務承継人にも適用除外が及ぶ一方、混同防止表示の付加請求は認められる。"
+        },
+        {
+          "number": 5,
+          "explanation": "不適切。商品形態模倣の3年の保護期間は日本国内で最初に販売された日が基準となる。米国で4年前に販売しただけでは国内1年の保護を否定できない。"
+        }
+      ],
+      "explanationCoverage": "all-choices"
     },
     {
       "id": "benrishi-2026-copyright-unfair-competition-09",
@@ -2786,7 +5042,34 @@
         "data/qualification-staging/benrishi/assets/2026-question-p64.png"
       ],
       "lastUpdated": "2026-11-04",
-      "explanationCoverage": "draft"
+      "officialReferenceUrls": [
+        "https://laws.e-gov.go.jp/law/405AC0000000047"
+      ],
+      "lawReferenceDate": "2026-05-17",
+      "statementExplanations": [],
+      "choiceExplanations": [
+        {
+          "number": 1,
+          "explanation": "適切。失敗した実験結果も無駄な試行の回避などに有用であり、有用性・秘密管理性・非公知性を満たせば営業秘密となる。"
+        },
+        {
+          "number": 2,
+          "explanation": "不適切。取引時に善意無重過失で取得した者には21条の適用除外があり、後に不正介在を知っても取得時の権原内の使用等がすべて差止対象となるわけではない。"
+        },
+        {
+          "number": 3,
+          "explanation": "適切。2条1項7号の秘密を示された者の図利加害目的の使用等には、明示の秘密保持契約を一律の成立要件とはしていない。"
+        },
+        {
+          "number": 4,
+          "explanation": "適切。「その他の不正の手段」は刑法上の犯罪行為に限られない。見学範囲を逸脱した秘密工程の隠し撮りも不正取得となり得る。"
+        },
+        {
+          "number": 5,
+          "explanation": "適切。業務用アクセス権限があっても、承諾を欺いて取得し私的媒体へ複製持出しする行為が適法となるものではなく、不正取得に該当し得る。"
+        }
+      ],
+      "explanationCoverage": "all-choices"
     },
     {
       "id": "benrishi-2026-copyright-unfair-competition-10",
@@ -2833,7 +5116,34 @@
         "data/qualification-staging/benrishi/assets/2026-question-p65.png"
       ],
       "lastUpdated": "2026-11-04",
-      "explanationCoverage": "draft"
+      "officialReferenceUrls": [
+        "https://laws.e-gov.go.jp/law/405AC0000000047"
+      ],
+      "lawReferenceDate": "2026-05-17",
+      "statementExplanations": [],
+      "choiceExplanations": [
+        {
+          "number": 1,
+          "explanation": "適切。原産地誤認は需要者が表示をどう理解するかによる。「エベレスト」をイメージ表示と理解する設例では国外産との誤認を生じない。"
+        },
+        {
+          "number": 2,
+          "explanation": "適切。実在しない大学・公的機関の認定をうたう表示も、認証による品質を備えるとの誤認を生じさせる表示となり得る。"
+        },
+        {
+          "number": 3,
+          "explanation": "適切。2条1項22号は外国の商標権等について代理人等による国内での無断使用を規制し、国際的な不正競争防止のための特例である。"
+        },
+        {
+          "number": 4,
+          "explanation": "適切。法定守秘義務違反による不正開示を後に知った取得者の継続使用は、取得の経緯・権原等によって不正競争として評価され得る。"
+        },
+        {
+          "number": 5,
+          "explanation": "不適切。「開示」は公知化に限らず秘密を特定の他人へ知らせることを含む。一社だけに秘密保持条件付きで共有しても開示に当たり得る。"
+        }
+      ],
+      "explanationCoverage": "all-choices"
     }
   ]
 }

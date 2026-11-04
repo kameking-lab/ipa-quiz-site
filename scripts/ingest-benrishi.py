@@ -136,6 +136,18 @@ def extract(src, year):
         question["originalText"] = "\n\f\n".join(doc[p - 1].get_text() for p in question["sourcePages"])
         question["sourceImages"] = [f"data/qualification-staging/benrishi/assets/{year}-question-p{p:02}.png" for p in question["sourcePages"]]
         question["lastUpdated"] = EDITORIAL_VERSION
+        law_ids = {"patent": "334AC0000000121", "design": "334AC0000000125", "trademark": "334AC0000000127", "copyright-unfair-competition": "345AC0000000048"}
+        slug = question["id"].removeprefix(f"benrishi-{year}-").rsplit("-", 1)[0]
+        question["officialReferenceUrls"] = (
+            ["https://wipolex-res.wipo.int/edocs/lexdocs/treaties/ja/pct/trt_pct_001ja.html", "https://www.jpo.go.jp/system/laws/gaikoku/paris/patent/chap1.html", "https://www.jpo.go.jp/system/laws/gaikoku/trips/index.html"]
+            if slug == "treaties" else [f"https://laws.e-gov.go.jp/law/{law_ids[slug]}"]
+        )
+        if slug == "copyright-unfair-competition" and question["number"] > 5:
+            question["officialReferenceUrls"] = ["https://laws.e-gov.go.jp/law/405AC0000000047"]
+        if slug == "patent":
+            question["officialReferenceUrls"].append("https://laws.e-gov.go.jp/law/334AC0000000123")
+        if year == 2026:
+            question["lawReferenceDate"] = "2026-05-17"
         note = notes.get(question["id"].removeprefix("benrishi-"))
         if note:
             statements = note.get("statements", [])
