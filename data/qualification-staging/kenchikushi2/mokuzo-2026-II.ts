@@ -44,7 +44,7 @@ export const MOKUZO_2026_II: readonly StagedKenchikushiQuestion[] = [
     "sourceAnswerUrl": "https://www.jaeic.or.jp/.assets/R08_mk_gokakukizyun.pdf",
     "sourceAttribution": "出典：公益財団法人建築技術教育普及センター 令和8年木造建築士試験 学科Ⅱ（建築法規）",
     "sourcePage": 10,
-    "sourcePrintedPage": "計画 9",
+    "sourcePrintedPage": "法規 9",
     "officialReferenceUrls": [
       "https://laws.e-gov.go.jp/law/325AC0000000201_20251201_507AC0000000035",
       "https://laws.e-gov.go.jp/law/325CO0000000338_20251201_507CO0000000377"
@@ -93,7 +93,7 @@ export const MOKUZO_2026_II: readonly StagedKenchikushiQuestion[] = [
     "sourceAnswerUrl": "https://www.jaeic.or.jp/.assets/R08_mk_gokakukizyun.pdf",
     "sourceAttribution": "出典：公益財団法人建築技術教育普及センター 令和8年木造建築士試験 学科Ⅱ（建築法規）",
     "sourcePage": 10,
-    "sourcePrintedPage": "計画 9",
+    "sourcePrintedPage": "法規 9",
     "officialReferenceUrls": [
       "https://laws.e-gov.go.jp/law/325AC0000000201_20251201_507AC0000000035",
       "https://laws.e-gov.go.jp/law/325CO0000000338_20251201_507CO0000000377"
@@ -142,7 +142,7 @@ export const MOKUZO_2026_II: readonly StagedKenchikushiQuestion[] = [
     "sourceAnswerUrl": "https://www.jaeic.or.jp/.assets/R08_mk_gokakukizyun.pdf",
     "sourceAttribution": "出典：公益財団法人建築技術教育普及センター 令和8年木造建築士試験 学科Ⅱ（建築法規）",
     "sourcePage": 11,
-    "sourcePrintedPage": "計画 10",
+    "sourcePrintedPage": "法規 10",
     "officialReferenceUrls": [
       "https://laws.e-gov.go.jp/law/325AC0000000201_20251201_507AC0000000035",
       "https://laws.e-gov.go.jp/law/325CO0000000338_20251201_507CO0000000377"
@@ -191,7 +191,7 @@ export const MOKUZO_2026_II: readonly StagedKenchikushiQuestion[] = [
     "sourceAnswerUrl": "https://www.jaeic.or.jp/.assets/R08_mk_gokakukizyun.pdf",
     "sourceAttribution": "出典：公益財団法人建築技術教育普及センター 令和8年木造建築士試験 学科Ⅱ（建築法規）",
     "sourcePage": 11,
-    "sourcePrintedPage": "計画 10",
+    "sourcePrintedPage": "法規 10",
     "officialReferenceUrls": [
       "https://laws.e-gov.go.jp/law/325AC0000000201_20251201_507AC0000000035",
       "https://laws.e-gov.go.jp/law/325CO0000000338_20251201_507CO0000000377"
@@ -240,7 +240,7 @@ export const MOKUZO_2026_II: readonly StagedKenchikushiQuestion[] = [
     "sourceAnswerUrl": "https://www.jaeic.or.jp/.assets/R08_mk_gokakukizyun.pdf",
     "sourceAttribution": "出典：公益財団法人建築技術教育普及センター 令和8年木造建築士試験 学科Ⅱ（建築法規）",
     "sourcePage": 12,
-    "sourcePrintedPage": "計画 11",
+    "sourcePrintedPage": "法規 11",
     "officialReferenceUrls": [
       "https://laws.e-gov.go.jp/law/325AC0000000201_20251201_507AC0000000035",
       "https://laws.e-gov.go.jp/law/325CO0000000338_20251201_507CO0000000377"
@@ -289,7 +289,7 @@ export const MOKUZO_2026_II: readonly StagedKenchikushiQuestion[] = [
     "sourceAnswerUrl": "https://www.jaeic.or.jp/.assets/R08_mk_gokakukizyun.pdf",
     "sourceAttribution": "出典：公益財団法人建築技術教育普及センター 令和8年木造建築士試験 学科Ⅱ（建築法規）",
     "sourcePage": 12,
-    "sourcePrintedPage": "計画 11",
+    "sourcePrintedPage": "法規 11",
     "officialReferenceUrls": [
       "https://laws.e-gov.go.jp/law/325AC0000000201_20251201_507AC0000000035",
       "https://laws.e-gov.go.jp/law/325CO0000000338_20251201_507CO0000000377"
@@ -338,7 +338,7 @@ export const MOKUZO_2026_II: readonly StagedKenchikushiQuestion[] = [
     "sourceAnswerUrl": "https://www.jaeic.or.jp/.assets/R08_mk_gokakukizyun.pdf",
     "sourceAttribution": "出典：公益財団法人建築技術教育普及センター 令和8年木造建築士試験 学科Ⅱ（建築法規）",
     "sourcePage": 13,
-    "sourcePrintedPage": "計画 12",
+    "sourcePrintedPage": "法規 12",
     "officialReferenceUrls": [
       "https://laws.e-gov.go.jp/law/325AC0000000201_20251201_507AC0000000035",
       "https://laws.e-gov.go.jp/law/325CO0000000338_20251201_507CO0000000377"
@@ -387,7 +387,7 @@ export const MOKUZO_2026_II: readonly StagedKenchikushiQuestion[] = [
     "sourceAnswerUrl": "https://www.jaeic.or.jp/.assets/R08_mk_gokakukizyun.pdf",
     "sourceAttribution": "出典：公益財団法人建築技術教育普及センター 令和8年木造建築士試験 学科Ⅱ（建築法規）",
     "sourcePage": 13,
-    "sourcePrintedPage": "計画 12",
+    "sourcePrintedPage": "法規 12",
     "imageUrls": [
       "data/qualification-staging/kenchikushi2/assets/mokuzo-2026-II-q8.png"
     ],
@@ -442,7 +442,7 @@ export const MOKUZO_2026_II: readonly StagedKenchikushiQuestion[] = [
     "sourceAnswerUrl": "https://www.jaeic.or.jp/.assets/R08_mk_gokakukizyun.pdf",
     "sourceAttribution": "出典：公益財団法人建築技術教育普及センター 令和8年木造建築士試験 学科Ⅱ（建築法規）",
     "sourcePage": 14,
-    "sourcePrintedPage": "計画 13",
+    "sourcePrintedPage": "法規 13",
     "officialReferenceUrls": [
       "https://laws.e-gov.go.jp/law/325AC0000000201_20251201_507AC0000000035",
       "https://laws.e-gov.go.jp/law/325CO0000000338_20251201_507CO0000000377"
@@ -491,7 +491,7 @@ export const MOKUZO_2026_II: readonly StagedKenchikushiQuestion[] = [
     "sourceAnswerUrl": "https://www.jaeic.or.jp/.assets/R08_mk_gokakukizyun.pdf",
     "sourceAttribution": "出典：公益財団法人建築技術教育普及センター 令和8年木造建築士試験 学科Ⅱ（建築法規）",
     "sourcePage": 14,
-    "sourcePrintedPage": "計画 13",
+    "sourcePrintedPage": "法規 13",
     "officialReferenceUrls": [
       "https://laws.e-gov.go.jp/law/325AC0000000201_20251201_507AC0000000035",
       "https://laws.e-gov.go.jp/law/325CO0000000338_20251201_507CO0000000377"
@@ -540,7 +540,7 @@ export const MOKUZO_2026_II: readonly StagedKenchikushiQuestion[] = [
     "sourceAnswerUrl": "https://www.jaeic.or.jp/.assets/R08_mk_gokakukizyun.pdf",
     "sourceAttribution": "出典：公益財団法人建築技術教育普及センター 令和8年木造建築士試験 学科Ⅱ（建築法規）",
     "sourcePage": 15,
-    "sourcePrintedPage": "計画 14",
+    "sourcePrintedPage": "法規 14",
     "officialReferenceUrls": [
       "https://laws.e-gov.go.jp/law/325AC0000000201_20251201_507AC0000000035",
       "https://laws.e-gov.go.jp/law/325CO0000000338_20251201_507CO0000000377"
@@ -589,7 +589,7 @@ export const MOKUZO_2026_II: readonly StagedKenchikushiQuestion[] = [
     "sourceAnswerUrl": "https://www.jaeic.or.jp/.assets/R08_mk_gokakukizyun.pdf",
     "sourceAttribution": "出典：公益財団法人建築技術教育普及センター 令和8年木造建築士試験 学科Ⅱ（建築法規）",
     "sourcePage": 15,
-    "sourcePrintedPage": "計画 14",
+    "sourcePrintedPage": "法規 14",
     "officialReferenceUrls": [
       "https://laws.e-gov.go.jp/law/325AC0000000201_20251201_507AC0000000035",
       "https://laws.e-gov.go.jp/law/325CO0000000338_20251201_507CO0000000377"
@@ -638,7 +638,7 @@ export const MOKUZO_2026_II: readonly StagedKenchikushiQuestion[] = [
     "sourceAnswerUrl": "https://www.jaeic.or.jp/.assets/R08_mk_gokakukizyun.pdf",
     "sourceAttribution": "出典：公益財団法人建築技術教育普及センター 令和8年木造建築士試験 学科Ⅱ（建築法規）",
     "sourcePage": 16,
-    "sourcePrintedPage": "計画 15",
+    "sourcePrintedPage": "法規 15",
     "officialReferenceUrls": [
       "https://laws.e-gov.go.jp/law/325AC0000000201_20251201_507AC0000000035",
       "https://laws.e-gov.go.jp/law/325CO0000000338_20251201_507CO0000000377"
@@ -687,7 +687,7 @@ export const MOKUZO_2026_II: readonly StagedKenchikushiQuestion[] = [
     "sourceAnswerUrl": "https://www.jaeic.or.jp/.assets/R08_mk_gokakukizyun.pdf",
     "sourceAttribution": "出典：公益財団法人建築技術教育普及センター 令和8年木造建築士試験 学科Ⅱ（建築法規）",
     "sourcePage": 16,
-    "sourcePrintedPage": "計画 15",
+    "sourcePrintedPage": "法規 15",
     "officialReferenceUrls": [
       "https://laws.e-gov.go.jp/law/325AC0000000201_20251201_507AC0000000035",
       "https://laws.e-gov.go.jp/law/325CO0000000338_20251201_507CO0000000377"
@@ -736,7 +736,7 @@ export const MOKUZO_2026_II: readonly StagedKenchikushiQuestion[] = [
     "sourceAnswerUrl": "https://www.jaeic.or.jp/.assets/R08_mk_gokakukizyun.pdf",
     "sourceAttribution": "出典：公益財団法人建築技術教育普及センター 令和8年木造建築士試験 学科Ⅱ（建築法規）",
     "sourcePage": 16,
-    "sourcePrintedPage": "計画 15",
+    "sourcePrintedPage": "法規 15",
     "officialReferenceUrls": [
       "https://laws.e-gov.go.jp/law/325AC0000000201_20251201_507AC0000000035",
       "https://laws.e-gov.go.jp/law/325CO0000000338_20251201_507CO0000000377"
@@ -769,7 +769,7 @@ export const MOKUZO_2026_II: readonly StagedKenchikushiQuestion[] = [
     "explanation": "公式正答は3。川に接する2項道路は川と反対の敷地側へ4 mを確保するため、敷地の幅14 mから2 m後退し12 mとなる。角地加算により上部7/10、下部9/10。12×9×0.7+12×10×0.9=183.6 m²。",
     "choiceExplanations": {
       "ア": "不正解。川沿い2項道路の後退は片側2 mで、残る敷地幅は12 m。さらに各用途地域の建蔽率へ角地加算を適用する。",
-      "イ": "不正解。角地加算を考慮せずに算定した値に相当する。指定角地なので、それぞれの地域の指定率に1/10を加える。",
+      "イ": "不正解。後退後の108 m²に7/10、120 m²に9/10を適用すると183.6 m²となる。171.0 m²ではない。角地加算なしの値は160.8 m²。",
       "ウ": "正解。後退後の上部108 m²には0.7、下部120 m²には0.9を適用し、75.6+108=183.6 m²となる。",
       "エ": "不正解。通常の中心線後退1 mではなく、川と反対側へ道路幅4 mを確保するので敷地側後退は2 m。",
       "オ": "不正解。道路後退部分を敷地面積に含めてはならない。幅14 mのままで角地加算を適用すると過大な値になる。"
@@ -785,7 +785,7 @@ export const MOKUZO_2026_II: readonly StagedKenchikushiQuestion[] = [
     "sourceAnswerUrl": "https://www.jaeic.or.jp/.assets/R08_mk_gokakukizyun.pdf",
     "sourceAttribution": "出典：公益財団法人建築技術教育普及センター 令和8年木造建築士試験 学科Ⅱ（建築法規）",
     "sourcePage": 17,
-    "sourcePrintedPage": "計画 16",
+    "sourcePrintedPage": "法規 16",
     "imageUrls": [
       "data/qualification-staging/kenchikushi2/assets/mokuzo-2026-II-q16.png"
     ],
@@ -840,7 +840,7 @@ export const MOKUZO_2026_II: readonly StagedKenchikushiQuestion[] = [
     "sourceAnswerUrl": "https://www.jaeic.or.jp/.assets/R08_mk_gokakukizyun.pdf",
     "sourceAttribution": "出典：公益財団法人建築技術教育普及センター 令和8年木造建築士試験 学科Ⅱ（建築法規）",
     "sourcePage": 18,
-    "sourcePrintedPage": "計画 17",
+    "sourcePrintedPage": "法規 17",
     "imageUrls": [
       "data/qualification-staging/kenchikushi2/assets/mokuzo-2026-II-q17.png"
     ],
@@ -895,7 +895,7 @@ export const MOKUZO_2026_II: readonly StagedKenchikushiQuestion[] = [
     "sourceAnswerUrl": "https://www.jaeic.or.jp/.assets/R08_mk_gokakukizyun.pdf",
     "sourceAttribution": "出典：公益財団法人建築技術教育普及センター 令和8年木造建築士試験 学科Ⅱ（建築法規）",
     "sourcePage": 19,
-    "sourcePrintedPage": "計画 18",
+    "sourcePrintedPage": "法規 18",
     "imageUrls": [
       "data/qualification-staging/kenchikushi2/assets/mokuzo-2026-II-q18.png"
     ],
@@ -934,7 +934,7 @@ export const MOKUZO_2026_II: readonly StagedKenchikushiQuestion[] = [
       ]
     },
     "imageAltTexts": [
-      "第一種低層住居専用地域・指定容積率10/10。西側道路幅5 m、道路中心は地盤面より1.2 m低い。敷地は東西10 m、南北11 m。建物の道路側最小後退1 m、Aはその東へさらに1 m。北境界からAへ真北方向距離2+2=4 m。北は図上。計算式・高さの選択肢表は本文の構造化表にも保持。"
+      "第一種低層住居専用地域・指定容積率10/10。西側道路幅5 m、道路中心は地盤面より1.2 m低い。敷地は東西10 m、南北12 m（2+2+1+6+1）。建物の道路側最小後退1 m、Aはその東へさらに1 m。北境界からAへ真北方向距離2+2=4 m。北は図上。計算式・高さの選択肢表は本文の構造化表にも保持。"
     ],
     "officialReferenceUrls": [
       "https://laws.e-gov.go.jp/law/325AC0000000201_20251201_507AC0000000035",
@@ -984,7 +984,7 @@ export const MOKUZO_2026_II: readonly StagedKenchikushiQuestion[] = [
     "sourceAnswerUrl": "https://www.jaeic.or.jp/.assets/R08_mk_gokakukizyun.pdf",
     "sourceAttribution": "出典：公益財団法人建築技術教育普及センター 令和8年木造建築士試験 学科Ⅱ（建築法規）",
     "sourcePage": 20,
-    "sourcePrintedPage": "計画 19",
+    "sourcePrintedPage": "法規 19",
     "officialReferenceUrls": [
       "https://laws.e-gov.go.jp/law/325AC0000000201_20251201_507AC0000000035",
       "https://laws.e-gov.go.jp/law/325CO0000000338_20251201_507CO0000000377"
@@ -1033,7 +1033,7 @@ export const MOKUZO_2026_II: readonly StagedKenchikushiQuestion[] = [
     "sourceAnswerUrl": "https://www.jaeic.or.jp/.assets/R08_mk_gokakukizyun.pdf",
     "sourceAttribution": "出典：公益財団法人建築技術教育普及センター 令和8年木造建築士試験 学科Ⅱ（建築法規）",
     "sourcePage": 20,
-    "sourcePrintedPage": "計画 19",
+    "sourcePrintedPage": "法規 19",
     "officialReferenceUrls": [
       "https://laws.e-gov.go.jp/law/325AC0000000201_20251201_507AC0000000035",
       "https://laws.e-gov.go.jp/law/325CO0000000338_20251201_507CO0000000377"
@@ -1082,7 +1082,7 @@ export const MOKUZO_2026_II: readonly StagedKenchikushiQuestion[] = [
     "sourceAnswerUrl": "https://www.jaeic.or.jp/.assets/R08_mk_gokakukizyun.pdf",
     "sourceAttribution": "出典：公益財団法人建築技術教育普及センター 令和8年木造建築士試験 学科Ⅱ（建築法規）",
     "sourcePage": 21,
-    "sourcePrintedPage": "計画 20",
+    "sourcePrintedPage": "法規 20",
     "officialReferenceUrls": [
       "https://laws.e-gov.go.jp/law/325AC1000000202_20250601_504AC0000000068"
     ]
@@ -1130,7 +1130,7 @@ export const MOKUZO_2026_II: readonly StagedKenchikushiQuestion[] = [
     "sourceAnswerUrl": "https://www.jaeic.or.jp/.assets/R08_mk_gokakukizyun.pdf",
     "sourceAttribution": "出典：公益財団法人建築技術教育普及センター 令和8年木造建築士試験 学科Ⅱ（建築法規）",
     "sourcePage": 21,
-    "sourcePrintedPage": "計画 20",
+    "sourcePrintedPage": "法規 20",
     "officialReferenceUrls": [
       "https://laws.e-gov.go.jp/law/325AC1000000202_20250601_504AC0000000068"
     ]
@@ -1159,12 +1159,12 @@ export const MOKUZO_2026_II: readonly StagedKenchikushiQuestion[] = [
     },
     "answer": "エ",
     "officialAnswerNumber": "4",
-    "explanation": "公式正答は4。適合判定通知書は確認申請と同時に必ず提出するものではなく、確認済証交付までの所定の段階で提出できる。4の同時提出必須という説明が誤り。",
+    "explanation": "公式正答は4。適合判定通知書は確認申請と同時に必ず提出するものではなく、確認審査期間の末日の3日前までに提出する。4の同時提出必須という説明が誤り。",
     "choiceExplanations": {
       "ア": "正しい。省エネ性能向上に資する新築の計画を作成し、所管行政庁へ建築物エネルギー消費性能向上計画の認定を申請できる。",
       "イ": "正しい。所定の小規模等の除外を除き、新築は原則省エネ基準へ適合させる義務がある。住宅か非住宅かだけで除かれない。",
       "ウ": "正しい。適判後の所定の変更は、着工前に変更後計画について適合性判定を受ける必要がある。軽微な変更等の例外とは区別する。",
-      "エ": "誤り。適合判定通知書等は確認申請と同時の提出が必須ではない。適判と確認を並行して進め、確認済証交付前に所定の提出を行える。",
+      "エ": "誤り。適合判定通知書等は確認申請と同時の提出が必須ではない。適判と確認を並行して進め、確認審査期間の末日の3日前までに建築主事等へ提出する。",
       "オ": "正しい。設計を行う建築士には、委託者へ省エネ性能その他性能向上に資する事項を説明する努力義務がある。"
     },
     "explanationCoverage": "full",
@@ -1178,7 +1178,7 @@ export const MOKUZO_2026_II: readonly StagedKenchikushiQuestion[] = [
     "sourceAnswerUrl": "https://www.jaeic.or.jp/.assets/R08_mk_gokakukizyun.pdf",
     "sourceAttribution": "出典：公益財団法人建築技術教育普及センター 令和8年木造建築士試験 学科Ⅱ（建築法規）",
     "sourcePage": 22,
-    "sourcePrintedPage": "計画 21",
+    "sourcePrintedPage": "法規 21",
     "officialReferenceUrls": [
       "https://laws.e-gov.go.jp/law/427AC0000000053_20250601_504AC0000000068"
     ]
@@ -1226,7 +1226,7 @@ export const MOKUZO_2026_II: readonly StagedKenchikushiQuestion[] = [
     "sourceAnswerUrl": "https://www.jaeic.or.jp/.assets/R08_mk_gokakukizyun.pdf",
     "sourceAttribution": "出典：公益財団法人建築技術教育普及センター 令和8年木造建築士試験 学科Ⅱ（建築法規）",
     "sourcePage": 22,
-    "sourcePrintedPage": "計画 21",
+    "sourcePrintedPage": "法規 21",
     "officialReferenceUrls": [
       "https://laws.e-gov.go.jp/law/418AC0000000091",
       "https://laws.e-gov.go.jp/law/418CO0000000379"
@@ -1275,7 +1275,7 @@ export const MOKUZO_2026_II: readonly StagedKenchikushiQuestion[] = [
     "sourceAnswerUrl": "https://www.jaeic.or.jp/.assets/R08_mk_gokakukizyun.pdf",
     "sourceAttribution": "出典：公益財団法人建築技術教育普及センター 令和8年木造建築士試験 学科Ⅱ（建築法規）",
     "sourcePage": 23,
-    "sourcePrintedPage": "計画 22",
+    "sourcePrintedPage": "法規 22",
     "officialReferenceUrls": [
       "https://laws.e-gov.go.jp/law/420AC0000000087",
       "https://laws.e-gov.go.jp/law/336AC0000000191",

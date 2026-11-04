@@ -89,6 +89,8 @@ describe("Kenchikushi unpublished staging", () => {
         expect(q.publicAllowed).toBe(false);
         expect(q.needsReview).toBe(true);
         expect(q.explanationCoverage).toBe("full");
+        const printedSubject = ({ I: "計画", II: "法規", III: "構造", IV: "施工" } as Record<string, string>)[batch.subject];
+        expect(q.sourcePrintedPage).toMatch(new RegExp(`^${printedSubject} \\d+$`));
         expect(q.lawReferenceDate).toBe(`${batch.year}-01-01`);
         expect(q.sourceAnswerUrl).toBe(manifest.rounds.find(r => r.qualificationSlug === batch.qualificationSlug && r.year === batch.year)?.answerDocument.url);
       }
