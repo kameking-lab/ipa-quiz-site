@@ -132,5 +132,6 @@ describe("sokuryoshi: two complete private source-image rounds", () => {
     expect(section(2026,5,"問C-1")).toContain("水中をほとんど透過しない");
     expect(section(2025,3,"問B-1")).toContain("ブレ");
     expect(section(2025,3,"問B-1")).not.toContain("ひずみ");
+    expect(find(2025,"am",16).choices![1].explanation).toContain("入射角1.5度以上");
   });
 });
