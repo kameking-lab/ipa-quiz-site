@@ -31,4 +31,8 @@ describe("blog copy: AI quota claims derive from the SSOT, never a stale literal
     expect(post!.body).not.toContain("初回 10 回");
     expect(post!.body).not.toContain("30 回");
   });
+  it("no generated article promotes the retired 300-yen offer or unsupported morning-efficiency multiplier", () => {
+    const offenders = posts.filter(post => /月\s*300\s*円|全試験・全機能|学習効率は\s*2[〜～]3\s*倍|効率は\s*2[〜～]3\s*倍/.test(post.body));
+    expect(offenders.map(post => post.slug)).toEqual([]);
+  });
 });
