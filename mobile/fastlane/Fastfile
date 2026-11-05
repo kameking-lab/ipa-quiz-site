@@ -64,6 +64,14 @@ platform :ios do
     end
     unless config[:submit]
       version.select_build(build_id: builds.first.id)
+      # deliver reads the version's review detail and crashes with "No data" when the
+      # first version has none yet (fastlane issue). Create an empty one up front.
+      begin
+        version.fetch_app_store_review_detail
+      rescue RuntimeError => e
+        raise unless e.message.include?("No data")
+        Spaceship::ConnectAPI.post_app_store_review_detail(app_store_version_id: version.id, attributes: {})
+      end
       # Stage only approved fields. Review notes/contact/code remain absent unless ready.
       metadata = File.join(asc_root, "fastlane/metadata")
       options = {
