@@ -140,7 +140,16 @@ async function handlePost(req: Request, track: (context: AiUsageContext) => void
     hasGrounding: false,
     timeoutMs: 35_000,
     onComplete: provider.name === "mock" ? undefined : async (outputChars, usage) => {
-      await recordAiCost({
+      console.info("[copilot/exam-library] completed", {
+        questionId, model: COPILOT_MODEL,
+        finishReason: usage?.finishReason,
+        promptTokens: usage?.promptTokens,
+        outputTokens: usage?.outputTokens,
+        thoughtsTokens: usage?.thoughtsTokens,
+        totalTokens: usage?.totalTokens,
+      });
+      // Persist and log the result before the stream closes (serverless freeze).
+      const costStatus = await recordAiCost({
         tier: tierForModel(COPILOT_MODEL),
         inputTokens: usage?.promptTokens ?? budget.inputTokens,
         outputTokens: usage?.totalTokens !== undefined && usage.promptTokens !== undefined
@@ -149,7 +158,10 @@ async function handlePost(req: Request, track: (context: AiUsageContext) => void
             ? usage.outputTokens + usage.thoughtsTokens
             : Math.max(maxTokens, (usage?.outputTokens ?? 0) + (usage?.thoughtsTokens ?? 0), estimateTokens(outputChars)),
         label: "copilot",
-            reservation,
+        reservation,
+      });
+      console.info("[copilot/exam-library] cost", {
+        questionId, model: COPILOT_MODEL, status: costStatus,
       });
     },
   });
