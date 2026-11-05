@@ -151,37 +151,23 @@ workflows:
           cd "$CM_BUILD_DIR/mobile"
           mkdir -p build/asc
           cp asc/api-followup.md build/asc/asc-api-followup.md
-          python3 scripts/asc_validate.py
+          # Fail before credentials/network work if committed images are incomplete.
+          python3 scripts/asc_validate.py --screenshots
           ruby -r ./scripts/asc_config -e 'AscConfig.read(ENV); puts "ASC request validation PASS"'
           # Secrets originate only from the existing Codemagic integration.
           : "${APP_STORE_CONNECT_KEY_IDENTIFIER:?ASC integration key ID missing}"
           : "${APP_STORE_CONNECT_ISSUER_ID:?ASC integration issuer missing}"
           : "${APP_STORE_CONNECT_PRIVATE_KEY:?ASC integration key missing}"
-      - name: Install shared web and isolated app dependencies
+      - name: Install screenshot validation and listing upload dependencies
         script: |
           set -euo pipefail
           if [[ "${ASC_SETUP_MODE:-false}" == true ]]; then exit 0; fi
-          cd "$CM_BUILD_DIR"
-          npx --yes pnpm@10.33.0 install --frozen-lockfile --ignore-scripts
-          npx --no-install prisma generate
           cd "$CM_BUILD_DIR/mobile"
           npm ci
+          node scripts/asc_repository_check.mjs
           bundle config set --local path vendor/bundle
           bundle config set --local frozen true
           bundle install
-      - name: Prepare actual native app and capture two five-screen sets
-        script: |
-          set -euo pipefail
-          if [[ "${ASC_SETUP_MODE:-false}" == true ]]; then exit 0; fi
-          cd "$CM_BUILD_DIR/mobile"
-          if [[ -z "${MOBILE_RC_IOS_PUBLIC_KEY:-}" || "$MOBILE_RC_IOS_PUBLIC_KEY" != appl_* ]]; then
-            echo "Set the existing RevenueCat public iOS SDK key in kakomon_ios." >&2
-            exit 1
-          fi
-          # Simulator only. The ASC build is already uploaded by the other workflow.
-          npm run build
-          BUILD_NUMBER="$ASC_BUILD_NUMBER" bundle exec npm run ios:prepare
-          bash scripts/asc_capture.sh
       - name: Upload listing and screenshots; optionally submit for review
         script: |
           set -euo pipefail

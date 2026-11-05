@@ -1,4 +1,8 @@
-# App Store掲載・匿名撮影・タグ起動（ASC7）
+# App Store掲載・画像・タグ起動（ASC9）
+
+**ASC9で撮影方式を変更した。[リポジトリ画像の運用](repository-screenshots.md)を優先する。**
+掲載workflowはSimulatorで撮影せず、Git管理した10枚を検証してアップロードする。
+下記のSimulator撮影説明は旧方式・手動診断のために残す。
 
 ASC5の商品作成・審査画像・年齢/価格/地域/暗号設定・初回IAPドラフトは
 [setup-README.md](setup-README.md)を参照。submitタグはREADY_FOR_REVIEWの
@@ -25,7 +29,7 @@ git tag asc-kakomon-v1.0.0-b17-r20261105-01 HEAD
 git push origin refs/tags/asc-kakomon-v1.0.0-b17-r20261105-01
 ```
 
-`kakomon-asc-metadata` が撮影し、掲載情報と画像をアップロードする。審査提出はfalse。
+`kakomon-asc-metadata` がリポジトリ画像を検証し、掲載情報と画像をアップロードする。審査提出はfalse。
 成果物の10枚、manifest、`result.json` を確認し、画像と提出対象Archiveの機能・表示が一致することを確認する。
 同じ版・番号を再実行する場合はRUNを変え、新しいタグを使う。タグを移動・強制pushしない。
 

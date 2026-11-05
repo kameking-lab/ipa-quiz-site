@@ -10,4 +10,8 @@ vendor/bundle/
 .bundle/
 fastlane/screenshots/*
 !fastlane/screenshots/.gitkeep
+!fastlane/screenshots/manifest.json
+!fastlane/screenshots/ja/
+fastlane/screenshots/ja/*
+!fastlane/screenshots/ja/*.jpg
 fastlane/report.xml

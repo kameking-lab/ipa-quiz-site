@@ -6,11 +6,29 @@ import shutil
 import subprocess
 import unittest
 from unittest.mock import patch
+import yaml
 
 import asc_capture
 
 ROOT = Path(__file__).resolve().parents[1]
 RUBY = os.environ.get("ASC_TEST_RUBY") or shutil.which("ruby")
+
+
+class RepositoryWorkflowTest(unittest.TestCase):
+    def test_metadata_upload_requires_committed_images_and_never_captures(self):
+        workflow = yaml.safe_load((ROOT.parent / "codemagic.yaml").read_text(encoding="utf-8"))["workflows"]["kakomon-asc-metadata"]
+        self.assertEqual(workflow["triggering"]["events"], ["tag"])
+        self.assertEqual(workflow["environment"]["vars"]["SUBMIT_FOR_REVIEW"], "false")
+        scripts = [step["script"] for step in workflow["scripts"]]
+        combined = "\n".join(scripts)
+        for forbidden in ("asc_capture.sh", "asc_capture_windows", "ios:prepare", "npm run build", "prisma generate", "pnpm@"):
+            self.assertNotIn(forbidden, combined)
+        validation = next(i for i, script in enumerate(scripts) if "asc_validate.py --screenshots" in script)
+        decoding = next(i for i, script in enumerate(scripts) if "node scripts/asc_repository_check.mjs" in script)
+        upload = next(i for i, script in enumerate(scripts) if "fastlane ios asc_metadata" in script)
+        self.assertLess(validation, decoding)
+        self.assertLess(decoding, upload)
+        self.assertNotIn("publishing", workflow)
 
 
 class AnonymousCaptureTest(unittest.TestCase):
