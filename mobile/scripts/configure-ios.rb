@@ -1,6 +1,7 @@
 # CocoaPods supplies xcodeproj on CI; Windows verification also needs this gem.
 require 'xcodeproj'
 require 'json'
+require_relative 'ios-ads-config'
 bundle_id = 'jp.kakomon-ai.app'
 project = Xcodeproj::Project.open('ios/App/App.xcodeproj')
 target = project.targets.find { |item| item.name == 'App' }
@@ -44,29 +45,38 @@ plist['CFBundleDevelopmentRegion'] = 'ja'
 plist['CFBundleLocalizations'] = ['ja']
 plist['CFBundleDisplayName'] = '過去問AI'
 plist['ITSAppUsesNonExemptEncryption'] = false
-# WebView-only integration: official exemption from the native-ad App ID check.
-# Do not call MobileAds.start or ship Google's sample App ID as a fallback.
-plist['GADIntegrationManager'] = 'webview'
-app_id = ENV.fetch('MOBILE_GAD_APPLICATION_ID', '').strip
-raise 'Invalid MOBILE_GAD_APPLICATION_ID' unless app_id.empty? || app_id.match?(/\Aca-app-pub-\d{16}~\d{10}\z/)
-app_id.empty? ? plist.delete('GADApplicationIdentifier') : plist['GADApplicationIdentifier'] = app_id
-client = ENV.fetch('MOBILE_ADSENSE_CLIENT', '').strip
-slot = ENV.fetch('MOBILE_ADSENSE_SLOT', '').strip
-cmp_url = ENV.fetch('MOBILE_ADS_CMP_SCRIPT_URL', '').strip
-# Use the exact script URL supplied by Google's Privacy & messaging UI, bound
-# to this publisher. No arbitrary URL or executable snippet is accepted.
-publisher = client.sub(/\Aca-/, '')
-valid_ads = client.match?(/\Aca-pub-\d{16}\z/) && slot.match?(/\A\d{10}\z/) &&
-  cmp_url.match?(%r{\Ahttps://fundingchoicesmessages\.google\.com/i/#{Regexp.escape(publisher)}\?ers=1\z})
-enabled = ENV['MOBILE_ADS_ENABLED'] == 'true' && ENV['MOBILE_ADS_WEB_CONSENT_READY'] == 'true' && valid_ads
+ads = IosAdsConfig.read
+enabled, app_id, client, slot, cmp_url = ads.values_at(:enabled, :app_id, :client, :slot, :cmp_url)
 plist['KakomonAdsEnabled'] = enabled
 plist['KakomonAdsenseClient'] = enabled ? client : ''
 plist['KakomonAdsenseSlot'] = enabled ? slot : ''
 plist['KakomonAdsCMPScriptURL'] = enabled ? cmp_url : ''
 puts "ADS1: WebView ads #{enabled ? 'configured' : 'disabled (optional settings absent or invalid)'}"
-plist['NSUserTrackingUsageDescription'] = '他社のアプリやウェブサイトでの利用情報と、このアプリの利用情報を組み合わせて、興味に合った広告の表示と広告の効果測定に利用します。許可しなくても学習機能を利用できます。'
+if enabled
+  # WebView-only integration: exemption from the native-ad App ID check.
+  # Do not call MobileAds.start or ship Google's sample App ID as a fallback.
+  plist['GADIntegrationManager'] = 'webview'
+  app_id.empty? ? plist.delete('GADApplicationIdentifier') : plist['GADApplicationIdentifier'] = app_id
+  plist['NSUserTrackingUsageDescription'] = '他社のアプリやウェブサイトでの利用情報と、このアプリの利用情報を組み合わせて、興味に合った広告の表示と広告の効果測定に利用します。許可しなくても学習機能を利用できます。'
+else
+  plist.delete('NSUserTrackingUsageDescription')
+  plist.delete_if { |key, _| key.start_with?('GAD') }
+end
 plist['CFBundleURLTypes'] = [{ 'CFBundleURLName' => "#{bundle_id}.auth", 'CFBundleURLSchemes' => ['kakomonai'] }]
 Xcodeproj::Plist.write_to_path(plist, plist_path)
+# Always start from the advertising template so off/on/off regeneration cannot
+# retain tracking declarations or lose the original ads-enabled disclosures.
+privacy = Xcodeproj::Plist.read_from_path(File.expand_path('../ios-assets/PrivacyInfo.xcprivacy', __dir__))
+unless enabled
+  privacy['NSPrivacyTracking'] = false
+  privacy.delete('NSPrivacyTrackingDomains')
+  privacy['NSPrivacyCollectedDataTypes'].reject! do |data|
+    data['NSPrivacyCollectedDataTypeTracking'] = false
+    data['NSPrivacyCollectedDataTypePurposes'].delete('NSPrivacyCollectedDataTypePurposeThirdPartyAdvertising')
+    ['NSPrivacyCollectedDataTypeDeviceID', 'NSPrivacyCollectedDataTypeAdvertisingData', 'NSPrivacyCollectedDataTypeCoarseLocation'].include?(data['NSPrivacyCollectedDataType'])
+  end
+end
+Xcodeproj::Plist.write_to_path(privacy, 'ios/App/App/PrivacyInfo.xcprivacy')
 # cap sync copies the CLI-only appId into this bundled JSON on every run.
 # Keep the shipped runtime identity consistent with Bundle.main / StoreKit.
 config_path = 'ios/App/App/capacitor.config.json'

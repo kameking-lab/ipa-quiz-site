@@ -1,6 +1,8 @@
 import Capacitor
 import AppTrackingTransparency
+#if canImport(GoogleMobileAds)
 import GoogleMobileAds
+#endif
 import UIKit
 import WebKit
 
@@ -109,6 +111,7 @@ public class TrackingTransparencyPlugin: CAPPlugin, CAPBridgedPlugin {
                 self.blockAds()
                 call.resolve(["enabled": false]); return
             }
+            #if canImport(GoogleMobileAds)
             if !self.registered {
                 // Actual Capacitor WKWebView, on main, before the first ad tag.
                 // WebView-only usage does not call MobileAds.shared.start.
@@ -118,6 +121,10 @@ public class TrackingTransparencyPlugin: CAPPlugin, CAPBridgedPlugin {
             webView.configuration.userContentController.remove(list)
             self.adsAllowed = true
             call.resolve(["enabled": true])
+            #else
+            self.blockAds()
+            call.resolve(["enabled": false])
+            #endif
         }
     }
     @objc func disableAds(_ call: CAPPluginCall) {
