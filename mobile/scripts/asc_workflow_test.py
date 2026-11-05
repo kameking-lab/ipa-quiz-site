@@ -28,24 +28,23 @@ class AnonymousDriver:
             if forbidden in script:
                 raise AssertionError("Anonymous capture boundary violated: " + forbidden)
         self.scripts.append((script, args))
+        if "buttons:" in script:
+            return []
         return True
 
 
 class AnonymousCaptureTest(unittest.TestCase):
-    def test_five_frames_use_only_three_real_answer_clicks(self):
+    def test_five_frames_never_request_quiz_or_fabricate_history(self):
         driver = AnonymousDriver()
         frames = []
-        with patch.object(asc_capture, "click", wraps=asc_capture.click) as click, \
-                patch.object(asc_capture, "click_text", wraps=asc_capture.click_text) as text:
+        with patch.object(asc_capture, "log"), patch.object(asc_capture, "click_text", wraps=asc_capture.click_text) as text:
             # No code parameter and no async_js/request method exist on this
             # driver: any reintroduced login/AI request fails the test.
             asc_capture.capture_free_screens(driver, lambda name, selector: frames.append(name))
         self.assertEqual(frames, asc_capture.CONFIG["screens"])
-        self.assertEqual(click.call_count, 3)
-        self.assertEqual([c.args[1] for c in text.call_args_list], ["次の問題へ", "次の問題へ", "端末内で学習"])
-        self.assertEqual(driver.paths, ["/quiz?mode=random&exam=ap", "/account/dashboard"])
-        self.assertTrue(any('ログインなしの無料演習枠' in script for script, _ in driver.scripts)
-                        or any('ログインなしの無料演習枠' in str(args) for _, args in driver.scripts))
+        self.assertEqual([c.args[1] for c in text.call_args_list], ["IT・情報処理", "端末内で学習"])
+        self.assertEqual(driver.paths, ["/ap", "/review", "/account/dashboard"])
+        self.assertFalse(any('[role="radio"]' in str(args) for _, args in driver.scripts))
 
     def test_capture_entry_point_has_no_environment_secret_reads(self):
         tree = ast.parse((ROOT / "scripts/asc_capture.py").read_text(encoding="utf-8"))

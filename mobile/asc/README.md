@@ -1,4 +1,4 @@
-# App Store掲載・匿名撮影・タグ起動（ASC3）
+# App Store掲載・匿名撮影・タグ起動（ASC4）
 
 Codemagicの既存 `App Store Key` 連携と `kakomon_ios` グループを利用する。
 ClaudeはAPIキー・Codemagicトークン・審査コードを取得・入力せず、Gitタグのpushで起動できる。
@@ -39,19 +39,52 @@ git push origin refs/tags/asc-kakomon-submit-v1.0.0-b17-r20261105-01
 ## 匿名の5画面
 
 1. 資格選択（IT分野・IPA）
-2. 最初の無料演習の問題・選択肢（未回答）
-3. 実際に選択肢を押した後の結果・解説
-4. 3問の実回答による端末内学習履歴・統計
+2. 応用情報の資格詳細（`/ap`）
+3. 復習メニューの実際の初期状態（`/review`）
+4. 学習ダッシュボードの実際の空状態（`/account/dashboard`）
 5. 端末内の学習リマインダー（ASC1 §8.2の代替）
 
-新しいSimulatorを機種ごとに作成し、ログインせず3問だけ回答する。AI質問や追加10問は消費しない。
-`ASC_SCREENSHOT_REVIEW_CODE` は不要で、設定済みでも読み取らない。匿名枠の表示がなければ停止する。
+ASC4は**無料枠を使わない代替構成を常に使用**する。1日10問のIP単位枠は、Simulatorを
+作り直しても回復しない。残数を消費せず安全に確認できる匿名APIはこの撮影実装では使わず、
+既に枠切れでも撮影できる同じ5画面を選ぶ。`/quiz` だけでなく `/q/*` もネイティブでは
+問題取得による枠消費があるため開かない。撮影コードのナビゲーション許可リストでも拒否する。
+問題・解説や3問の実績の撮影と誤認させないよう、ファイル名とmanifestの `capture_plan`、
+`quota_grants: 0` に構成を明記する。空の復習・履歴は実際の状態であり、履歴は追加しない。
+新しいSimulatorを機種ごとに作成し、ログイン・AI質問・追加10問・会員権利の偽装は行わない。
+`ASC_SCREENSHOT_REVIEW_CODE` は不要で、撮影・ログインには使わない。
 権利・履歴・応答の偽造はしない。05は保存・オフライン権利の証明ではない。
 iPhone 16 Pro（1206×2622）と16 Pro Max（1320×2868）の各5枚、合計10枚。
 原寸PNGをJPEGへ変換し、寸法・枚数・SHA-256を送信前に検証する。画像の引き伸ばしはしない。
 Mac/Xcode・該当Simulator・公開Web接続と既存 `MOBILE_RC_IOS_PUBLIC_KEY` は必要。
 シミュレーター用Debug生成物のみWKWebView inspectionを有効化し、作成した端末だけを削除する。
 fastlane 2.241.2、Appium 3.9.0、XCUITest driver 12.22.8を利用する。
+
+## 失敗時の診断（ASC4）
+
+標準出力の `[ASC4]` に端末、画面、操作、待機条件を表示する。失敗時は直前の例外・
+Appium HTTPエラー本文とstacktrace・simctlのstdout/stderrを省略せず出力する（秘密値はマスク）。
+WKWebViewに接続できれば現在URL、本文先頭6000文字、要素の件数・表示有無、画像・font状態も出力する。
+接続自体が壊れている場合は取得失敗のエラーを記録し、残りの証拠収集を続ける。
+
+Codemagicのartifactsには次を保存する。失敗したステップの後続アップロードは実行されない。
+
+- `mobile/build/asc/diagnostics/capture.log`: 撮影操作・待機・エラー全文
+- `.../appium.log`: loopback Appium/XCUITest/WDAログ（起動から終了まで）
+- `.../appium-install.log`, `.../xcuitest-install.log`: ツール導入ログ
+- `.../<device>/failure.txt`, `failure.png`: 失敗時点の状態と、端末削除前のスクリーンショット
+- `.../<device>/web-state.json`, `web-source.html`, `native-source.xml`, `contexts.json`, `simulator-state.json`
+- `mobile/build/asc/simulator-build.log`: Debugビルドログ
+
+Appiumとビルドの生ログはパイプ内でマスクしてから保存する。環境の秘密変数値、PEM、
+Authorization、Cookie、JWT、URLのquery/fragment/userinfoを除去する。ページソースはscript/style、
+フォームのvalueとtextarea内容も除去する。新規匿名端末だけを使い、認証画面を開かない。
+画像は匿名UIの原寸保存で加工しない。SimulatorやWDAが利用不能なら取得できない証拠はあり得るが、
+その取得失敗も標準出力に残す。最初に `failure.txt` とsimctl撮影を行い、死んだWebDriverを待って失わないようにする。
+
+起動は `bootstatus -b` を最大300秒待ち、ローカル画面の描画後に本番へ移動する。
+通知・ATTのシステムダイアログは日本語／英語の明示的な拒否ボタンを押す。
+WebのCookie・広告同意は拒否、案内はスキップ。未知のダイアログは無条件に同意せず診断付きで停止する。
+WebViewの切替時はcontextを再取得する。Simulatorの解像度・枚数・ハッシュの検証は従来通り行う。
 
 ## 審査情報・提出の条件
 

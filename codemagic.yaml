@@ -181,3 +181,9 @@ workflows:
       - mobile/build/asc/*.md
       - mobile/build/asc/result.json
       - mobile/build/asc/simulator-build.log
+      - mobile/build/asc/diagnostics/**/*.log
+      - mobile/build/asc/diagnostics/**/*.txt
+      - mobile/build/asc/diagnostics/**/*.json
+      - mobile/build/asc/diagnostics/**/*.html
+      - mobile/build/asc/diagnostics/**/*.xml
+      - mobile/build/asc/diagnostics/**/*.png
