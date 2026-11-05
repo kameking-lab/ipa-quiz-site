@@ -1,5 +1,7 @@
 # App Store掲載・画像・タグ起動（ASC9）
 
+ASC11の認証方式・公式仕様・診断手順は [authentication.md](authentication.md) を参照。
+
 **ASC9で撮影方式を変更した。[リポジトリ画像の運用](repository-screenshots.md)を優先する。**
 掲載workflowはSimulatorで撮影せず、Git管理した10枚を検証してアップロードする。
 下記のSimulator撮影説明は旧方式・手動診断のために残す。

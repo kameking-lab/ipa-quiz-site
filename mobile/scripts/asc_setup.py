@@ -3,7 +3,6 @@
 Apple OpenAPI 4.6 (2026-11-05). All mutations require a dedicated tag and an
 explicit non-secret confirmation. Credentials stay in the Codemagic integration.
 """
-import base64
 import hashlib
 import json
 import os
@@ -56,18 +55,10 @@ def transfer(method, url, body=None, headers=None):
 
 class Client:
     def token(self):
-        from cryptography.hazmat.primitives import hashes, serialization
-        from cryptography.hazmat.primitives.asymmetric import ec
-        from cryptography.hazmat.primitives.asymmetric.utils import decode_dss_signature
-        def b64(data):
-            return base64.urlsafe_b64encode(data).rstrip(b"=")
-        now = int(time.time())
-        header = {"alg": "ES256", "kid": os.environ["APP_STORE_CONNECT_KEY_IDENTIFIER"], "typ": "JWT"}
-        claims = {"iss": os.environ["APP_STORE_CONNECT_ISSUER_ID"], "iat": now, "exp": now + 600, "aud": "appstoreconnect-v1"}
-        message = b".".join(b64(json.dumps(v).encode()) for v in (header, claims))
-        key = serialization.load_pem_private_key(os.environ["APP_STORE_CONNECT_PRIVATE_KEY"].encode(), password=None)
-        r, s = decode_dss_signature(key.sign(message, ec.ECDSA(hashes.SHA256())))
-        return (message + b"." + b64(r.to_bytes(32, "big") + s.to_bytes(32, "big"))).decode()
+        from asc_auth import client
+        if not hasattr(self, "_auth_client"):
+            self._auth_client = client()
+        return self._auth_client.jwt
 
     def request(self, method, path, payload=None, query=None):
         url = path if path.startswith("https://") else API + path

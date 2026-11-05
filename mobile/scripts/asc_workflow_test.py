@@ -30,6 +30,24 @@ class RepositoryWorkflowTest(unittest.TestCase):
         self.assertLess(decoding, upload)
         self.assertNotIn("publishing", workflow)
 
+    def test_all_asc_routes_use_official_auth_without_key_or_token_export(self):
+        workflow = yaml.safe_load((ROOT.parent / "codemagic.yaml").read_text(encoding="utf-8"))["workflows"]["kakomon-asc-metadata"]
+        self.assertEqual(workflow["integrations"]["app_store_connect"], "App Store Key")
+        scripts = [step["script"] for step in workflow["scripts"]]
+        auth = next(i for i, script in enumerate(scripts) if "asc_auth.py --check" in script)
+        upload = next(i for i, script in enumerate(scripts) if "fastlane ios asc_metadata" in script)
+        setup = next(i for i, script in enumerate(scripts) if '"$ASC_SETUP_PYTHON" scripts/asc_setup.py' in script)
+        self.assertLess(auth, upload)
+        self.assertLess(auth, setup)
+        self.assertNotIn("ASC_SETUP_MODE", scripts[auth])
+        self.assertIn("-r asc/auth-requirements.txt", scripts[auth])
+        combined = "\n".join(scripts)
+        for forbidden in ("APP_STORE_CONNECT_PRIVATE_KEY", "--token-for-pipe", "set -x", "printenv"):
+            self.assertNotIn(forbidden, combined)
+        lane = (ROOT / "fastlane/Fastfile").read_text()
+        self.assertIn("AscCodemagicToken.new(in_house: false)", lane)
+        self.assertNotIn("app_store_connect_api_key(", lane)
+
 
 class AnonymousCaptureTest(unittest.TestCase):
     def test_five_frames_never_request_quiz_or_fabricate_history(self):

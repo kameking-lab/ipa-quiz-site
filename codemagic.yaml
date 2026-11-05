@@ -154,13 +154,16 @@ workflows:
           # Fail before credentials/network work if committed images are incomplete.
           python3 scripts/asc_validate.py --screenshots
           ruby -r ./scripts/asc_config -e 'AscConfig.read(ENV); puts "ASC request validation PASS"'
-          # Official integration variables: PRIVATE_KEY is .p8 content, not a
-          # path. asc_api_key.rb normalizes it into a mode-600 temporary file;
-          # fastlane reads key_filepath with Base64 decoding disabled.
-          # Never echo the key or write it to CM_ENV/build artifacts.
-          : "${APP_STORE_CONNECT_KEY_IDENTIFIER:?ASC integration key ID missing}"
-          : "${APP_STORE_CONNECT_ISSUER_ID:?ASC integration issuer missing}"
-          : "${APP_STORE_CONNECT_PRIVATE_KEY:?ASC integration key missing}"
+      - name: Authenticate with the existing integration using official Codemagic tooling
+        script: |
+          set -euo pipefail
+          cd "$CM_BUILD_DIR/mobile"
+          python3 -m venv .cache/asc-auth-venv
+          .cache/asc-auth-venv/bin/pip install --disable-pip-version-check -r asc/auth-requirements.txt
+          # Only a non-secret executable path crosses build steps. Keys and JWTs
+          # never go to CM_ENV, command arguments, artifacts or a disk cache.
+          echo "ASC_SETUP_PYTHON=$PWD/.cache/asc-auth-venv/bin/python" >> "$CM_ENV"
+          .cache/asc-auth-venv/bin/python scripts/asc_auth.py --check
       - name: Install screenshot validation and listing upload dependencies
         script: |
           set -euo pipefail
@@ -176,11 +179,6 @@ workflows:
           set -euo pipefail
           if [[ "${ASC_SETUP_MODE:-false}" == true ]]; then exit 0; fi
           cd "$CM_BUILD_DIR/mobile"
-          if [[ "${SUBMIT_FOR_REVIEW:-false}" == true ]]; then
-            python3 -m venv .cache/asc5-venv
-            .cache/asc5-venv/bin/pip install --disable-pip-version-check cryptography==48.0.1
-            export ASC_SETUP_PYTHON="$PWD/.cache/asc5-venv/bin/python"
-          fi
           # No publishing block: only the guarded fastlane lane can submit.
           FASTLANE_SKIP_UPDATE_CHECK=1 FASTLANE_HIDE_CHANGELOG=1 \
             bundle exec fastlane ios asc_metadata
@@ -189,9 +187,7 @@ workflows:
           set -euo pipefail
           if [[ "${ASC_SETUP_MODE:-false}" != true ]]; then exit 0; fi
           cd "$CM_BUILD_DIR/mobile"
-          python3 -m venv .cache/asc5-venv
-          .cache/asc5-venv/bin/pip install --disable-pip-version-check cryptography==48.0.1
-          .cache/asc5-venv/bin/python scripts/asc_setup.py
+          "$ASC_SETUP_PYTHON" scripts/asc_setup.py
     artifacts:
       - mobile/fastlane/screenshots/ja/*.jpg
       - mobile/fastlane/screenshots/manifest.json
