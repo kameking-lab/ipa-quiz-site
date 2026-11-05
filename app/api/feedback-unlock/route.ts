@@ -7,6 +7,7 @@ import { verifyTurnstileToken } from "@/lib/turnstile";
 import { maskPII } from "@/lib/feedback/pii-masker";
 import { UnlockFeedbackSchema } from "@/lib/feedback/unlock-contract";
 import { feedbackHash, feedbackStore, unlockIdentity } from "@/lib/feedback/unlock-runtime";
+import { notifyFeedbackUnlock } from "@/lib/feedback/unlock-notify";
 export const runtime = "nodejs";
 
 export async function GET(request: Request) {
@@ -21,6 +22,7 @@ export async function GET(request: Request) {
 }
 
 export async function POST(request: Request) {
+  const receivedAt = new Date().toISOString();
   try {
     sameOrigin(request);
     if (process.env.FEEDBACK_UNLOCK_ENABLED !== "true") throw new BillingError("feedback_unavailable", 503);
@@ -50,13 +52,15 @@ export async function POST(request: Request) {
     const bot = await verifyTurnstileToken(data.turnstileToken, ip);
     if (!bot.ok || bot.skipped) throw new BillingError("turnstile_failed", 403);
     if (identity.account) await store.claim(identity);
-    const result = await store.submit({ ...identity, browser: null },
-      null, {
-        choices: data.choices,
-        requestedQualifications: data.requestedQualifications.map(q => maskPII(q).masked.slice(0, 80)),
-        commentMasked: maskPII(data.comment).masked.slice(0, 1000),
-      });
-    // No copilot token, local grant or notification is issued by this separate benefit.
+    const maskedFeedback = {
+      choices: data.choices,
+      requestedQualifications: data.requestedQualifications.map(q => maskPII(q).masked.slice(0, 80)),
+      commentMasked: maskPII(data.comment).masked.slice(0, 1000),
+    };
+    const result = await store.submit({ ...identity, browser: null }, null, maskedFeedback);
+    // Await delivery before serverless freezes the request. Notification failure
+    // must not undo the committed feedback or its ten-question benefit.
+    await notifyFeedbackUnlock({ receivedAt, ...maskedFeedback });
     return json({ ok: true, ...result });
   } catch (error) {
     const status = error instanceof ZodError ? 400 : error instanceof BillingError ? error.status : 503;
