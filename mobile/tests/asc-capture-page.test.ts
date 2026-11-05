@@ -8,7 +8,7 @@ const script = controller.match(/static let pageScript = #"""\n([\s\S]*?)\n"""#/
 function fixture(route = "/review") {
   let now = 0;
   const element = (textContent = "") => ({
-    textContent, innerText: textContent, disabled: false,
+    textContent, innerText: textContent, disabled: false, children: [],
     getClientRects: () => [1], getBoundingClientRect: () => ({ top: 10, bottom: 100 }),
     scrollIntoView: vi.fn(), click: vi.fn(), getAttribute: vi.fn(() => "true"),
   });
@@ -22,6 +22,7 @@ function fixture(route = "/review") {
     'input[type=time]': target, 'main[data-mobile-ready=true]': main,
   };
   const dialogs: ReturnType<typeof element>[] = [];
+  const loading: ReturnType<typeof element>[] = [];
   const context = {
     location: { origin: route === "reminder" ? "capacitor://localhost" : "https://www.kakomon-ai.jp", pathname: route },
     document: {
@@ -30,11 +31,13 @@ function fixture(route = "/review") {
       images: [] as { complete: boolean; naturalWidth: number; getBoundingClientRect: () => { top: number; bottom: number } }[],
       activeElement: { blur: vi.fn() },
       querySelector: (selector: string) => selectors[selector],
-      querySelectorAll: (selector: string) => selector === '#choose-qualification button' ? [filter] : dialogs,
+      querySelectorAll: (selector: string) => selector === '#choose-qualification button' ? [filter]
+        : selector === '[role=dialog],dialog[open]' ? dialogs
+        : selector === 'main p,main span,main div' ? loading : [],
     },
     window: {}, Date: { now: () => now }, scrollY: 100, innerHeight: 800, captureRequest: { route },
   };
-  return { context, selectors, dialogs, element, filter, main, target,
+  return { context, selectors, dialogs, loading, element, filter, main, target,
     tick: (time = 0) => { now = time; return runInNewContext(`(() => {${script}\n})()`, context); } };
 }
 
@@ -121,10 +124,26 @@ it("captures the existing reminder UI without clicking its notification controls
   expect(f.tick(3000)).toBe("waiting for screen");
 });
 
+it("blocks visible loading text even when heading, tools and layout are already settled", () => {
+  const f = fixture("/ap");
+  f.loading.push(f.element("読み込み中..."));
+  expect(f.tick()).toBe("waiting for loading indicator");
+  expect(f.tick(60000)).toBe("waiting for loading indicator");
+  f.loading.length = 0;
+  expect(f.tick(61000)).toBe("waiting for stable layout");
+  expect(f.tick(63000)).toBe("ready");
+});
+
 it("keeps all launch parsing and automation inside the dedicated simulator compilation guard", () => {
   const helper = controller.slice(controller.indexOf("#if ASC_CAPTURE && DEBUG && targetEnvironment(simulator)\nprivate final class ASCCapture"), controller.indexOf("@objc(QualificationBridgePlugin)"));
   expect(helper).toContain('ProcessInfo.processInfo.arguments');
   expect(helper).toContain('UUID(uuidString: token)');
+  expect(helper).toContain('value("-ascCaptureRoute")');
+  expect(helper).toContain('value("-ascCaptureToken")');
+  expect(helper).toContain('subsystem: "jp.kakomon-ai.app.asc-capture"');
+  expect(helper).toContain('ASC_CAPTURE_%{public}@ %{public}@ %{public}@');
+  expect(helper).toContain('type: .default');
+  expect(helper).toContain('try data.write(to: path, options: .atomic)');
   expect(helper).toContain('static let routes = ["/", "/ap", "/review", "/account/dashboard", "reminder"]');
   expect(helper.trimEnd()).toMatch(/#endif$/);
   const gate = controller.slice(controller.indexOf("enum ASCCaptureGate"), controller.indexOf("private final class ASCCapture"));

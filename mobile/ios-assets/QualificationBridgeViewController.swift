@@ -3,6 +3,7 @@ import UIKit
 import EventKit
 import EventKitUI
 import WebKit
+import os.log
 
 @objc(QualificationBridgeViewController)
 class QualificationBridgeViewController: CAPBridgeViewController {
@@ -37,11 +38,16 @@ private final class ASCCapture {
     static let routes = ["/", "/ap", "/review", "/account/dashboard", "reminder"]
     static let request: (route: String, token: String)? = {
         let arguments = ProcessInfo.processInfo.arguments
-        let routes = arguments.filter { $0.hasPrefix("-ascCaptureRoute=") }
-        let tokens = arguments.filter { $0.hasPrefix("-ascCaptureToken=") }
-        guard routes.count == 1, tokens.count == 1 else { return nil }
-        let route = String(routes[0].dropFirst("-ascCaptureRoute=".count))
-        let token = String(tokens[0].dropFirst("-ascCaptureToken=".count))
+        // simctl passes application arguments after the bundle ID: -key value.
+        // Reject duplicate, missing and legacy key=value forms rather than
+        // silently enabling a different capture request.
+        func value(_ key: String) -> String? {
+            guard !arguments.contains(where: { $0.hasPrefix(key + "=") }) else { return nil }
+            let indices = arguments.indices.filter { arguments[$0] == key }
+            guard indices.count == 1, let index = indices.first, index + 1 < arguments.count else { return nil }
+            return arguments[index + 1]
+        }
+        guard let route = value("-ascCaptureRoute"), let token = value("-ascCaptureToken") else { return nil }
         guard ASCCapture.routes.contains(route), UUID(uuidString: token) != nil else { return nil }
         return (route, token)
     }()
@@ -50,21 +56,50 @@ private final class ASCCapture {
     private var timer: Timer?
     private var evaluating = false
     private var navigated = false
+    private var finished = false
     private var ticks = 0
-    private let deadline = Date().addingTimeInterval(110)
+    private let deadline = Date().addingTimeInterval(150)
+    private static let captureLog = OSLog(subsystem: "jp.kakomon-ai.app.asc-capture", category: "readiness")
+
+    private func emit(_ event: String, _ detail: String) {
+        guard let request = Self.request else { return }
+        // Public placeholders are deliberate: only the non-secret launch UUID,
+        // allowlisted route and fixed state labels are emitted, never DOM/URLs.
+        os_log("ASC_CAPTURE_%{public}@ %{public}@ %{public}@", log: Self.captureLog,
+               type: .default, event, request.token, detail)
+        // Independent of unified logging subscription, privacy and persistence.
+        // Python may only fall back to pixels with this launch's READY receipt.
+        do {
+            let directory = FileManager.default.urls(for: .cachesDirectory, in: .userDomainMask)[0]
+            let path = directory.appendingPathComponent("asc-capture-" + request.token + ".json")
+            let data = try JSONSerialization.data(withJSONObject: [
+                "token": request.token, "route": request.route, "event": event, "detail": detail
+            ])
+            try data.write(to: path, options: .atomic)
+        } catch {
+            os_log("ASC_CAPTURE_RECEIPT_ERROR %{public}@", log: Self.captureLog, type: .error, request.token)
+        }
+    }
 
     init(webView: WKWebView) {
         self.webView = webView
+        emit("STARTED", Self.request!.route)
         timer = Timer.scheduledTimer(withTimeInterval: 0.5, repeats: true) { [weak self] _ in self?.poll() }
     }
     deinit { timer?.invalidate() }
     private func poll() {
+        guard !finished else { return }
         guard let request = Self.request, let webView = webView else { timer?.invalidate(); return }
         guard Date() < deadline else {
-            NSLog("ASC_CAPTURE_FAILED %@ timeout", request.token)
+            finished = true
+            emit("FAILED", "timeout")
             timer?.invalidate(); return
         }
-        guard !evaluating, !webView.isLoading else { return }
+        ticks += 1
+        guard !evaluating, !webView.isLoading else {
+            if ticks % 20 == 0 { emit("STATE", evaluating ? "javascript-pending" : "webview-loading") }
+            return
+        }
         evaluating = true
         if !navigated {
             // Wait for privacy blocking, public SDK config, React and actual
@@ -72,7 +107,11 @@ private final class ASCCapture {
             webView.evaluateJavaScript("location.origin === 'capacitor://localhost' && !!document.querySelector('#root main[data-mobile-ready=true]')") { [weak self] result, _ in
                 guard let self = self else { return }
                 self.evaluating = false
-                guard result as? Bool == true else { return }
+                guard !self.finished, Date() < self.deadline else { return }
+                guard result as? Bool == true else {
+                    if self.ticks % 20 == 0 { self.emit("STATE", "local-bootstrap-pending") }
+                    return
+                }
                 self.navigated = true
                 if request.route != "reminder", let url = URL(string: "https://www.kakomon-ai.jp" + request.route) {
                     webView.load(URLRequest(url: url))
@@ -85,12 +124,13 @@ private final class ASCCapture {
         webView.evaluateJavaScript("(() => {\n" + prefix + Self.pageScript + "\n})()") { [weak self] result, error in
             guard let self = self else { return }
             self.evaluating = false
-            self.ticks += 1
+            guard !self.finished, Date() < self.deadline else { return }
             if let state = result as? String, state == "ready" {
-                NSLog("ASC_CAPTURE_READY %@ %@", request.token, request.route)
+                self.finished = true
+                self.emit("READY", request.route)
                 self.timer?.invalidate()
             } else if self.ticks % 20 == 0 {
-                NSLog("ASC_CAPTURE_STATE %@ %@", request.token, (result as? String) ?? (error == nil ? "pending" : "javascript-error"))
+                self.emit("STATE", (result as? String) ?? (error == nil ? "pending" : "javascript-error"))
             }
         }
     }
@@ -103,8 +143,11 @@ if (location.origin !== (local ? 'capacitor://localhost' : 'https://www.kakomon-
     (!local && location.pathname !== route)) return 'waiting for expected URL';
 if (document.readyState !== 'complete') return 'waiting for document';
 const visible = e => !!e && e.getClientRects().length > 0;
+const inViewport = e => { if (!visible(e)) return false; const r = e.getBoundingClientRect(); return r.bottom > 0 && r.top < innerHeight; };
 const state = window.__ascCapturePage ??= { stable: '', since: Date.now() };
 const pending = reason => { state.stable = ''; state.since = Date.now(); return reason; };
+if ([...document.querySelectorAll('main [aria-busy=true],main [role=progressbar],main .animate-spin')].some(inViewport) ||
+    [...document.querySelectorAll('main p,main span,main div')].some(e => inViewport(e) && e.children.length === 0 && /^(読み込み中|Loading)[.…。\s]*$/i.test(e.innerText.trim()))) return pending('waiting for loading indicator');
 // Use existing, explicit dismissal controls; never accept consent or start a quiz.
 for (const dialog of document.querySelectorAll('[role=dialog],dialog[open]')) {
   if (!visible(dialog)) continue;

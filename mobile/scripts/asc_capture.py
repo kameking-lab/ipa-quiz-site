@@ -18,10 +18,12 @@ ROOT = Path(__file__).resolve().parents[1]
 CONFIG = json.loads((ROOT / "asc/capture.json").read_text(encoding="utf-8"))
 DIAGNOSTICS = ROOT / "build/asc/diagnostics"
 STATE = {"device": "setup", "screen": "setup", "operation": "setup", "waiting_for": None}
+READY_SECONDS = 180
+LOG_SUBSYSTEM = "jp.kakomon-ai.app.asc-capture"
 
 
 def log(message):
-    line = redact(f"[ASC7] {json.dumps(STATE, ensure_ascii=False)} {message}")
+    line = redact(f"[ASC8] {json.dumps(STATE, ensure_ascii=False)} {message}")
     print(line, flush=True)
     DIAGNOSTICS.mkdir(parents=True, exist_ok=True)
     with (DIAGNOSTICS / "capture.log").open("a", encoding="utf-8") as output:
@@ -59,13 +61,23 @@ class CaptureLog:
         self.events = queue.Queue()
         self.path = DIAGNOSTICS / STATE["device"] / (STATE["screen"] + "-app.log")
         self.path.parent.mkdir(parents=True, exist_ok=True)
+        self.history_path = self.path.with_name(STATE["screen"] + "-history.log")
+        # No process-name dependency (the executable is App, not the bundle ID).
+        # Include the subsystem even when a logger renders the UUID as private.
+        self.predicate = f'subsystem == "{LOG_SUBSYSTEM}" OR eventMessage CONTAINS "{token}"'
         operation("start simctl log stream")
-        self.process = subprocess.Popen([
-            "xcrun", "simctl", "spawn", udid, "log", "stream", "--style", "compact", "--level", "info",
-            "--predicate", f'eventMessage CONTAINS "{token}"',
-        ], stdout=subprocess.PIPE, stderr=subprocess.STDOUT, text=True, encoding="utf-8", errors="replace")
-        self.thread = threading.Thread(target=self._read, daemon=True)
-        self.thread.start()
+        self.process, self.thread = None, None
+        try:
+            self.process = subprocess.Popen([
+                "xcrun", "simctl", "spawn", udid, "log", "stream", "--style", "compact", "--level", "debug",
+                "--predicate", self.predicate,
+            ], stdout=subprocess.PIPE, stderr=subprocess.STDOUT, text=True, encoding="utf-8", errors="replace")
+            self.thread = threading.Thread(target=self._read, daemon=True)
+            self.thread.start()
+        except OSError as error:
+            self.path.write_text(redact(str(error)), encoding="utf-8")
+            log("Log stream unavailable: " + str(error))
+            self.events.put(None)
 
     def _read(self):
         try:
@@ -79,65 +91,126 @@ class CaptureLog:
             self.process.stdout.close()
             self.events.put(None)
 
-    def wait_ready(self, route, seconds=120):
+    def snapshot(self, timeout):
+        """Best effort only: a slow log show must never abort app startup."""
+        try:
+            result = run("xcrun", "simctl", "spawn", self.udid, "log", "show", "--last", "5m",
+                         "--style", "compact", "--info", "--debug", "--predicate", self.predicate, timeout=timeout)
+        except Exception as error:
+            result = "Log history unavailable: " + str(error)
+            log(result)
+        with self.history_path.open("a", encoding="utf-8") as output:
+            output.write(redact(result) + "\n")
+        for saved in result.splitlines():
+            # Command errors may contain echoed predicates/partial output; only
+            # successful history results can satisfy the readiness protocol.
+            if not result.startswith("Log history unavailable:"):
+                self.events.put(redact(saved))
+
+    def wait_ready(self, route, seconds=READY_SECONDS):
         STATE["waiting_for"] = "ASC_CAPTURE_READY " + route
         operation("wait for app readiness log")
         deadline = time.monotonic() + seconds
-        next_snapshot = time.monotonic() + 5
+        next_snapshot = time.monotonic() + 15
         expected = f"ASC_CAPTURE_READY {self.token} {route}"
         failure = f"ASC_CAPTURE_FAILED {self.token} "
         while time.monotonic() < deadline:
             try:
                 line = self.events.get(timeout=min(1, max(0.001, deadline - time.monotonic())))
             except queue.Empty:
-                if time.monotonic() >= next_snapshot:
-                    # log stream starts asynchronously. Recover an event emitted
-                    # before it subscribed from the persistent unified log store.
-                    snapshot = run("xcrun", "simctl", "spawn", self.udid, "log", "show", "--last", "2m",
-                                   "--style", "compact", "--info", "--predicate",
-                                   f'eventMessage CONTAINS "{self.token}"', timeout=10)
-                    for saved in snapshot.splitlines():
-                        self.events.put(redact(saved))
-                    next_snapshot = time.monotonic() + 5
+                remaining = deadline - time.monotonic()
+                if remaining > 0 and time.monotonic() >= next_snapshot:
+                    self.snapshot(timeout=min(3, remaining))
+                    next_snapshot = time.monotonic() + 30
+                    operation("wait for app readiness log")
                 continue
             if line is None:
-                raise RuntimeError("simctl log stream ended before readiness; see " + str(self.path))
+                log("Log stream ended; continue bounded wait/history recovery: " + str(self.path))
+                continue
             log("APP " + line.rstrip())
             if line.rstrip().endswith(expected):
                 STATE["waiting_for"] = None
-                return
+                return True
             if failure in line:
                 raise RuntimeError("App capture readiness failed; see " + str(self.path))
-        raise RuntimeError(f"Timed out ({seconds}s) waiting for {expected}; see {self.path}")
+        log(f"No ready log after {seconds}s; require native READY receipt + pixel validation. See {self.path}")
+        return False
 
     def close(self):
-        if self.process.poll() is None:
+        if self.process is not None and self.process.poll() is None:
             self.process.terminate()
             try:
                 self.process.wait(timeout=5)
             except subprocess.TimeoutExpired:
                 self.process.kill()
                 self.process.wait(timeout=5)
-        self.thread.join(timeout=5)
-        if self.thread.is_alive():
+        if self.thread is not None:
+            self.thread.join(timeout=5)
+        if self.thread is not None and self.thread.is_alive():
             raise RuntimeError("simctl log reader did not stop")
 
 
-def launch_screen(udid, name, route):
+def native_receipt(udid, token, route):
+    container = run("xcrun", "simctl", "get_app_container", udid, CONFIG["bundleId"], "data", timeout=15)
+    source = Path(container) / "Library/Caches" / ("asc-capture-" + token + ".json")
+    receipt = json.loads(source.read_text(encoding="utf-8"))
+    destination = DIAGNOSTICS / STATE["device"] / (STATE["screen"] + "-receipt.json")
+    destination.parent.mkdir(parents=True, exist_ok=True)
+    destination.write_text(redact(json.dumps(receipt, ensure_ascii=False)), encoding="utf-8")
+    if receipt.get("token") != token or receipt.get("route") != route or receipt.get("event") != "READY" or receipt.get("detail") != route:
+        raise RuntimeError("Native receipt is not READY for this launch/route: " + str(destination))
+    return receipt
+
+
+def checked_screenshot(udid, png, device, fallback):
+    operation("screenshot and pixel validation")
+    run("xcrun", "simctl", "io", udid, "screenshot", "--type=png", str(png), timeout=30)
+    args = ["node", str(ROOT / "scripts/asc_image_check.mjs"), str(png), str(device["width"]), str(device["height"])]
+    if fallback:
+        # Two separate frames must be nonblank, contain distributed content and
+        # settle. Native receipt supplies semantic URL/UI readiness; pixels alone
+        # cannot distinguish an error page or the wrong route from a valid UI.
+        time.sleep(3)
+        second = png.with_name(png.stem + "-settled.png")
+        run("xcrun", "simctl", "io", udid, "screenshot", "--type=png", str(second), timeout=30)
+        args.append(str(second))
+    result = json.loads(run(*args, timeout=30))
+    stats = png.with_name(png.stem + "-pixels.json")
+    stats.write_text(json.dumps(result, indent=2), encoding="utf-8")
+    log("PIXELS " + json.dumps(result))
+    if not result["accepted"]:
+        raise RuntimeError("Screenshot rejected (blank/loading/unstable); see " + str(stats))
+    return result
+
+
+def launch_screen(udid, name, route, device):
     if CAPTURE_ROUTES.get(name) != route or route not in ALLOWED_ROUTES:
         raise ValueError("Capture route is not quota-free: " + route)
     STATE["screen"] = name
     token = str(uuid.uuid4())
+    STATE.update(capture_token=token, readiness=None, waiting_for=None)
     stream = CaptureLog(udid, token)
     try:
         # --terminate-running-process guarantees each argument set reaches a new
         # process. A fresh token prevents earlier launches satisfying readiness.
         run("xcrun", "simctl", "launch", "--terminate-running-process", udid, CONFIG["bundleId"],
             "-AppleLanguages", "(ja)", "-AppleLocale", "ja_JP",
-            "-ascCaptureRoute=" + route, "-ascCaptureToken=" + token, timeout=30)
-        stream.wait_ready(route)
+            "-ascCaptureRoute", route, "-ascCaptureToken", token, timeout=60)
+        ready = stream.wait_ready(route)
+        if not ready:
+            try:
+                native_receipt(udid, token, route)
+            except Exception as error:
+                raise RuntimeError("No ready log and no valid native READY receipt (check Debug ASC_CAPTURE flags, arguments and app state): " + str(error)) from error
+        STATE.update(readiness="log" if ready else "receipt+pixels", waiting_for=None)
+        png = DIAGNOSTICS / STATE["device"] / (name + "-candidate.png")
+        pixels = checked_screenshot(udid, png, device, fallback=not ready)
+        if not ready:
+            png = png.with_name(png.stem + "-settled.png")
+        return png, {"readiness": STATE["readiness"], "pixels": pixels}
     finally:
         stream.close()
+        log("App log artifacts: " + str(stream.path) + "; " + str(stream.history_path))
 
 
 def failure_evidence(udid, error):
@@ -155,6 +228,14 @@ def failure_evidence(udid, error):
             (directory / "simulator-state.json").write_text(redact(run("xcrun", "simctl", "list", "devices", "--json")), encoding="utf-8")
         except Exception as secondary:
             log("Simulator state failed: " + str(secondary))
+    # Full redacted streams remain artifacts; expose a concise useful summary
+    # on CI stdout even if the log command itself failed or produced no markers.
+    for path in sorted(directory.glob("*")):
+        if path.is_file():
+            log(f"FAILURE ARTIFACT {path.name} ({path.stat().st_size} bytes)")
+            if path.suffix == ".log":
+                tail = path.read_text(encoding="utf-8", errors="replace").splitlines()[-20:]
+                log("LOG TAIL " + path.name + "\n" + "\n".join(tail))
 
 
 def simulator_inventory():
@@ -188,7 +269,7 @@ def capture_device(device, app, output):
     try:
         selection = selected_simulator(device, simulator_inventory())
         STATE["simulator"] = selection
-        udid = run("xcrun", "simctl", "create", "ASC7-" + device["slug"], selection["device_type"], selection["runtime"])
+        udid = run("xcrun", "simctl", "create", "ASC8-" + device["slug"], selection["device_type"], selection["runtime"])
         log("Created simulator UDID=" + udid)
         check_created_simulator(udid)
         run("xcrun", "simctl", "boot", udid)
@@ -197,14 +278,11 @@ def capture_device(device, app, output):
         run("xcrun", "simctl", "status_bar", udid, "override", "--time", "9:41", "--dataNetwork", "wifi", "--wifiMode", "active", "--wifiBars", "3", "--cellularMode", "active", "--cellularBars", "4", "--batteryState", "charged", "--batteryLevel", "100")
         run("xcrun", "simctl", "install", udid, str(app))
         for name, route in CAPTURE_ROUTES.items():
-            launch_screen(udid, name, route)
-            operation("screenshot " + name)
-            png = ROOT / "build/asc" / (device["slug"] + ".png")
+            png, verification = launch_screen(udid, name, route, device)
+            operation("convert verified screenshot " + name)
             dest = output / f"{name}-{device['slug']}.jpg"
-            run("xcrun", "simctl", "io", udid, "screenshot", "--type=png", str(png))
             run("sips", "-s", "format", "jpeg", str(png), "--out", str(dest))
-            png.unlink()
-            images.append({"file": dest.name, "sha256": hashlib.sha256(dest.read_bytes()).hexdigest(), "width": device["width"], "height": device["height"], "screen": name, "simulator": selection})
+            images.append({"file": dest.name, "sha256": hashlib.sha256(dest.read_bytes()).hexdigest(), "width": device["width"], "height": device["height"], "screen": name, "simulator": selection, **verification})
             log("SAVED " + dest.name)
 
         return images

@@ -103,6 +103,8 @@ class CaptureDiagnosticsTest(unittest.TestCase):
         stream.token = str(uuid.uuid4())
         stream.udid = "udid"
         stream.path = self.directory / "app.log"
+        stream.history_path = self.directory / "history.log"
+        stream.predicate = f'subsystem == "{capture.LOG_SUBSYSTEM}" OR eventMessage CONTAINS "{stream.token}"'
         stream.events = queue.Queue()
         for line in lines:
             stream.events.put(line)
@@ -117,53 +119,87 @@ class CaptureDiagnosticsTest(unittest.TestCase):
         self.assertIsNone(capture.STATE["waiting_for"])
         self.assertTrue(stream.events.empty())
 
-    def test_failure_and_dead_log_stream_abort(self):
-        for value in (None, "failed"):
-            stream = self.stream_fixture()
-            stream.events.put(f"ASC_CAPTURE_FAILED {stream.token} timeout" if value else None)
-            with self.assertRaises(RuntimeError):
-                stream.wait_ready("/review", seconds=1)
+    def test_explicit_native_failure_aborts(self):
+        stream = self.stream_fixture()
+        stream.events.put(f"ASC_CAPTURE_FAILED {stream.token} timeout")
+        with self.assertRaisesRegex(RuntimeError, "App capture readiness failed"):
+            stream.wait_ready("/review", seconds=1)
 
-    def test_timeout_never_counts_as_ready(self):
+    def test_timeout_never_counts_as_ready_and_dead_stream_can_recover(self):
         stream = self.stream_fixture()
         with patch.object(capture.time, "monotonic", side_effect=[0, 0, 2]):
-            with self.assertRaisesRegex(RuntimeError, "Timed out"):
-                stream.wait_ready("/review", seconds=1)
+            self.assertFalse(stream.wait_ready("/review", seconds=1))
+        stream.events.put(None)
+        stream.events.put(f"ASC_CAPTURE_READY {stream.token} /review")
+        self.assertTrue(stream.wait_ready("/review", seconds=1))
 
     def test_log_subscription_race_recovers_only_this_token_from_log_show(self):
         stream = self.stream_fixture()
         stream.events = Mock()
         stream.events.get.side_effect = [queue.Empty, "prefix " + f"ASC_CAPTURE_READY {stream.token} /review"]
-        with patch.object(capture.time, "monotonic", side_effect=[0, 0, 6, 6, 6, 6, 7, 7]), patch.object(capture, "run", return_value=f"ASC_CAPTURE_READY {stream.token} /review") as run:
+        with patch.object(capture.time, "monotonic", return_value=20), patch.object(capture, "run", return_value=f"ASC_CAPTURE_READY {stream.token} /review") as run:
+            # Invoke the same bounded recovery called by the wait loop.
+            stream.snapshot(timeout=3)
             stream.wait_ready("/review")
         self.assertIn("show", run.call_args.args)
         self.assertIn(stream.token, run.call_args.args[-1])
-        self.assertEqual(run.call_args.kwargs["timeout"], 10)
+        self.assertEqual(run.call_args.kwargs["timeout"], 3)
+
+    def test_slow_log_show_is_nonfatal_and_waits_past_initial_60_seconds(self):
+        stream = self.stream_fixture()
+        now = [0]
+        def get(timeout):
+            now[0] += timeout
+            if now[0] >= 65:
+                return f"ASC_CAPTURE_READY {stream.token} /review"
+            raise queue.Empty
+        stream.events = Mock()
+        stream.events.get.side_effect = get
+        with patch.object(capture.time, "monotonic", side_effect=lambda: now[0]), patch.object(capture, "run", side_effect=RuntimeError("Command timed out (3s)\npartial log")) as run:
+            self.assertTrue(stream.wait_ready("/review", seconds=90))
+        self.assertGreaterEqual(now[0], 65)
+        self.assertGreaterEqual(run.call_count, 2)
+        self.assertIn("partial log", stream.history_path.read_text())
+
+    def test_continually_failing_history_remains_bounded_and_does_not_accept_partial_ready(self):
+        stream = self.stream_fixture()
+        now = [0]
+        def get(timeout):
+            now[0] += timeout
+            raise queue.Empty
+        def slow(*args, timeout):
+            now[0] += timeout
+            raise RuntimeError(f"Command timed out\nASC_CAPTURE_READY {stream.token} /review")
+        stream.events = Mock()
+        stream.events.get.side_effect = get
+        with patch.object(capture.time, "monotonic", side_effect=lambda: now[0]), patch.object(capture, "run", side_effect=slow):
+            self.assertFalse(stream.wait_ready("/review", seconds=90))
+        self.assertLessEqual(now[0], 90)
 
     def test_launch_subscribes_before_restarting_app_and_always_closes_stream(self):
         events = []
         stream = Mock()
-        stream.wait_ready.side_effect = lambda route: events.append(("ready", route))
+        stream.wait_ready.side_effect = lambda route: events.append(("ready", route)) or True
         stream.close.side_effect = lambda: events.append(("close",))
-        with patch.object(capture, "CaptureLog", side_effect=lambda *args: events.append(("subscribe",)) or stream), patch.object(capture, "run", side_effect=lambda *args, **kwargs: events.append(args)):
-            capture.launch_screen("udid", "03-review", "/review")
+        with patch.object(capture, "CaptureLog", side_effect=lambda *args: events.append(("subscribe",)) or stream), patch.object(capture, "run", side_effect=lambda *args, **kwargs: events.append(args)), patch.object(capture, "checked_screenshot", return_value={"accepted": True}):
+            capture.launch_screen("udid", "03-review", "/review", capture.CONFIG["devices"][0])
         self.assertEqual(events[0], ("subscribe",))
         self.assertEqual(events[1][:6], ("xcrun", "simctl", "launch", "--terminate-running-process", "udid", capture.CONFIG["bundleId"]))
-        self.assertIn("-ascCaptureRoute=/review", events[1])
-        token = next(a.split("=", 1)[1] for a in events[1] if a.startswith("-ascCaptureToken="))
+        self.assertEqual(events[1][-4:-2], ("-ascCaptureRoute", "/review"))
+        token = events[1][-1]
         uuid.UUID(token)
         self.assertEqual(events[-2:], [("ready", "/review"), ("close",)])
         stream.wait_ready.side_effect = RuntimeError("readiness failed")
         with patch.object(capture, "CaptureLog", return_value=stream), patch.object(capture, "run"):
             with self.assertRaisesRegex(RuntimeError, "readiness failed"):
-                capture.launch_screen("udid", "03-review", "/review")
+                capture.launch_screen("udid", "03-review", "/review", capture.CONFIG["devices"][0])
         self.assertEqual(stream.close.call_count, 2)
 
     def test_no_quota_or_credential_routes_can_launch(self):
         with patch.object(capture, "CaptureLog") as stream, patch.object(capture, "run") as run:
             for route in ("/quiz?mode=random&exam=ap", "/q/ap/2022-autumn/am/q1", "/auth/signin", "/billing", "https://evil.invalid", "/ap?quiz=1"):
                 with self.assertRaises(ValueError):
-                    capture.launch_screen("udid", "03-review", route)
+                    capture.launch_screen("udid", "03-review", route, capture.CONFIG["devices"][0])
         stream.assert_not_called()
         run.assert_not_called()
 
@@ -198,6 +234,55 @@ class CaptureDiagnosticsTest(unittest.TestCase):
         self.assertIn("primary timeout", (self.directory / "iphone-medium/failure.txt").read_text(encoding="utf-8"))
         self.assertTrue((self.directory / "iphone-medium/simulator-state.json").exists())
 
+    def test_fallback_requires_current_route_and_token_ready_receipt(self):
+        token = str(uuid.uuid4())
+        caches = self.directory / "Library/Caches"
+        caches.mkdir(parents=True)
+        receipt = caches / ("asc-capture-" + token + ".json")
+        valid = {"token": token, "route": "/review", "event": "READY", "detail": "/review"}
+        with patch.object(capture, "run", return_value=str(self.directory)):
+            for overrides in ({"token": "old-token"}, {"route": "/ap"}, {"event": "STATE"}, {"event": "FAILED"}, {"detail": "/ap"}):
+                receipt.write_text(json.dumps({**valid, **overrides}))
+                with self.assertRaisesRegex(RuntimeError, "not READY"):
+                    capture.native_receipt("udid", token, "/review")
+            receipt.write_text(json.dumps(valid))
+            self.assertEqual(capture.native_receipt("udid", token, "/review"), valid)
+
+    def test_fallback_never_accepts_pixels_without_semantic_ready_and_closes_after_rejection(self):
+        stream = Mock()
+        stream.wait_ready.return_value = False
+        device = capture.CONFIG["devices"][0]
+        with patch.object(capture, "CaptureLog", return_value=stream), patch.object(capture, "run"), patch.object(capture, "native_receipt", side_effect=FileNotFoundError("no receipt")), patch.object(capture, "checked_screenshot") as pixels:
+            with self.assertRaisesRegex(RuntimeError, "Debug ASC_CAPTURE"):
+                capture.launch_screen("udid", "03-review", "/review", device)
+            pixels.assert_not_called()
+        with patch.object(capture, "CaptureLog", return_value=stream), patch.object(capture, "run"), patch.object(capture, "native_receipt"), patch.object(capture, "checked_screenshot", return_value={"accepted": True}) as pixels:
+            path, verification = capture.launch_screen("udid", "03-review", "/review", device)
+            self.assertEqual(verification["readiness"], "receipt+pixels")
+            self.assertTrue(pixels.call_args.kwargs["fallback"])
+        with patch.object(capture, "CaptureLog", return_value=stream), patch.object(capture, "run"), patch.object(capture, "native_receipt"), patch.object(capture, "checked_screenshot", side_effect=RuntimeError("blank/loading")):
+            with self.assertRaisesRegex(RuntimeError, "blank/loading"):
+                capture.launch_screen("udid", "03-review", "/review", device)
+        self.assertEqual(stream.close.call_count, 3)
+
+    def test_checked_screenshot_preserves_both_frames_and_stats(self):
+        png = self.directory / "candidate.png"
+        device = capture.CONFIG["devices"][0]
+        def command(*args, **kwargs):
+            if "screenshot" in args:
+                Path(args[-1]).write_bytes(b"second" if "settled" in args[-1] else b"first")
+                return ""
+            return json.dumps({"accepted": True})
+        with patch.object(capture, "run", side_effect=command) as run, patch.object(capture.time, "sleep") as sleep:
+            capture.checked_screenshot("udid", png, device, fallback=True)
+        sleep.assert_called_once_with(3)
+        self.assertEqual(png.read_bytes(), b"first")
+        self.assertEqual((self.directory / "candidate-settled.png").read_bytes(), b"second")
+        self.assertTrue((self.directory / "candidate-pixels.json").exists())
+        with patch.object(capture, "run", side_effect=lambda *args, **kwargs: json.dumps({"accepted": False})), patch.object(capture.time, "sleep"):
+            with self.assertRaisesRegex(RuntimeError, "blank/loading/unstable"):
+                capture.checked_screenshot("udid", png, device, fallback=False)
+
     def test_log_reader_redacts_before_persistence_and_handles_cleanup_kill(self):
         process = Mock(stdout=io.StringIO("prefix secret-fixture\n"))
         process.poll.return_value = None
@@ -210,6 +295,14 @@ class CaptureDiagnosticsTest(unittest.TestCase):
         self.assertNotIn("secret-fixture", stream.path.read_text(encoding="utf-8"))
         process.terminate.assert_called_once()
         process.kill.assert_called_once()
+
+    def test_stream_start_failure_preserves_error_and_allows_receipt_fallback(self):
+        with patch.object(capture.subprocess, "Popen", side_effect=OSError("stream spawn failed")):
+            stream = capture.CaptureLog("udid", str(uuid.uuid4()))
+        self.assertIn("stream spawn failed", stream.path.read_text())
+        with patch.object(capture.time, "monotonic", side_effect=[0, 0, 181]):
+            self.assertFalse(stream.wait_ready("/review"))
+        stream.close()
 
 
 if __name__ == "__main__":
