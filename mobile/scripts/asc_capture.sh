@@ -5,7 +5,7 @@ cd "$(dirname "$0")/.."
 mkdir -p build/asc/diagnostics
 export PYTHONUNBUFFERED=1
 export PYTHONIOENCODING=utf-8
-STAGE=prepare-inspection
+STAGE=simulator-preflight
 APPIUM_PID=''
 LOG_PID=''
 cleanup() {
@@ -29,6 +29,10 @@ failure() {
 }
 trap failure ERR
 trap cleanup EXIT
+# Fail before the Debug build/tool installation when no native-size pair exists.
+# Do not download multi-GB runtimes automatically on the finite CI worker.
+python3 -u scripts/asc_capture.py --check-simulators
+STAGE=prepare-inspection
 # Modify only the generated controller, never ios-assets or the distribution build.
 python3 - <<'PY'
 from pathlib import Path

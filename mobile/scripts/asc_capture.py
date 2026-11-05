@@ -11,6 +11,7 @@ import urllib.error
 import urllib.request
 
 from asc_diagnostics import redact, safe_source
+from asc_simulators import select_simulator
 
 ROOT = Path(__file__).resolve().parents[1]
 CONFIG = json.loads((ROOT / "asc/capture.json").read_text(encoding="utf-8"))
@@ -257,19 +258,40 @@ def failure_evidence(driver, udid, error):
         collect("simulator-state.json", lambda: run("xcrun", "simctl", "list", "devices", "--json"))
 
 
+def simulator_inventory():
+    runtimes = json.loads(run("xcrun", "simctl", "list", "runtimes", "--json"))["runtimes"]
+    log("Simulator runtimes=" + json.dumps(runtimes, ensure_ascii=False))
+    types = json.loads(run("xcrun", "simctl", "list", "devicetypes", "--json"))["devicetypes"]
+    log("Simulator devicetypes=" + json.dumps(types, ensure_ascii=False))
+    return runtimes, types
+
+
+def selected_simulator(device, inventory):
+    device_type, runtime = select_simulator(device, *inventory)
+    selection = {"device_type": device_type["identifier"], "device_name": device_type["name"],
+                 "runtime": runtime["identifier"], "runtime_version": runtime["version"],
+                 "runtime_build": runtime.get("buildversion")}
+    log(f"Selected simulator for {device['slug']} ({device['width']}x{device['height']})=" + json.dumps(selection))
+    return selection
+
+
+def check_created_simulator(udid):
+    devices = json.loads(run("xcrun", "simctl", "list", "devices", "--json"))["devices"]
+    created = next((d for group in devices.values() for d in group if d["udid"] == udid), None)
+    log("Created simulator state=" + json.dumps(created))
+    if not created or created.get("isAvailable") is not True or created.get("availabilityError"):
+        raise RuntimeError("Created simulator is unavailable before boot: " + json.dumps(created))
+
+
 def capture_device(device, app, output):
-    STATE.update(device=device["slug"], screen="startup", operation="setup", waiting_for=None, selector=None)
+    STATE.update(device=device["slug"], screen="startup", operation="setup", waiting_for=None, selector=None, simulator=None)
     udid, driver, images = None, None, []
     try:
-        types = json.loads(run("xcrun", "simctl", "list", "devicetypes", "--json"))["devicetypes"]
-        runtimes = json.loads(run("xcrun", "simctl", "list", "runtimes", "--json"))["runtimes"]
-        matches = [d for d in types if d["name"] == device["name"]]
-        runtimes = sorted((r for r in runtimes if r.get("isAvailable") and ".iOS-" in r["identifier"]), key=lambda r: tuple(map(int, r["version"].split("."))))
-        log(f"Requested device={device['name']}; matching types={matches}; available runtimes={runtimes}")
-        if not matches or not runtimes:
-            raise RuntimeError("Install an iOS simulator runtime for " + device["name"] + "; no resizing fallback")
-        udid = run("xcrun", "simctl", "create", "ASC4-" + device["slug"], matches[0]["identifier"], runtimes[-1]["identifier"])
+        selection = selected_simulator(device, simulator_inventory())
+        STATE["simulator"] = selection
+        udid = run("xcrun", "simctl", "create", "ASC6-" + device["slug"], selection["device_type"], selection["runtime"])
         log("Created simulator UDID=" + udid)
+        check_created_simulator(udid)
         run("xcrun", "simctl", "boot", udid)
         run("xcrun", "simctl", "bootstatus", udid, "-b", timeout=300)
         run("xcrun", "simctl", "ui", udid, "appearance", "light")
@@ -298,7 +320,7 @@ def capture_device(device, app, output):
             run("xcrun", "simctl", "io", udid, "screenshot", "--type=png", str(png))
             run("sips", "-s", "format", "jpeg", str(png), "--out", str(dest))
             png.unlink()
-            images.append({"file": dest.name, "sha256": hashlib.sha256(dest.read_bytes()).hexdigest(), "width": device["width"], "height": device["height"], "screen": name})
+            images.append({"file": dest.name, "sha256": hashlib.sha256(dest.read_bytes()).hexdigest(), "width": device["width"], "height": device["height"], "screen": name, "simulator": selection})
             log("SAVED " + dest.name)
 
         capture_free_screens(driver, shot)
@@ -323,6 +345,13 @@ def capture_device(device, app, output):
 def main():
     if platform.system() != "Darwin":
         raise RuntimeError("Capture requires macOS + Xcode")
+    if sys.argv[1:] == ["--check-simulators"]:
+        inventory = simulator_inventory()
+        for device in CONFIG["devices"]:
+            selected_simulator(device, inventory)
+        return
+    if sys.argv[1:]:
+        raise ValueError("Usage: asc_capture.py [--check-simulators]")
     app = ROOT / "build/asc-simulator/Build/Products/Debug-iphonesimulator/App.app"
     if not app.is_dir():
         raise RuntimeError("Build the Debug simulator .app first using asc_capture.sh")

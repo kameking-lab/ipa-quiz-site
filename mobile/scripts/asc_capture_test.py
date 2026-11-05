@@ -12,6 +12,7 @@ import urllib.error
 
 import asc_capture as capture
 from asc_diagnostics import redact, safe_source, stream_log
+from asc_simulators_test import RUNTIMES, TYPES
 
 
 class CaptureDiagnosticsTest(unittest.TestCase):
@@ -85,9 +86,11 @@ class CaptureDiagnosticsTest(unittest.TestCase):
         driver.start.side_effect = RuntimeError("orientation failed")
         def command(*args, **kwargs):
             if "devicetypes" in args:
-                return json.dumps({"devicetypes": [{"name": device["name"], "identifier": "device-type"}]})
+                return json.dumps({"devicetypes": TYPES})
             if "runtimes" in args:
-                return json.dumps({"runtimes": [{"isAvailable": True, "identifier": "runtime.iOS-26", "version": "26.0"}]})
+                return json.dumps({"runtimes": RUNTIMES})
+            if "devices" in args:
+                return json.dumps({"devices": {RUNTIMES[0]["identifier"]: [{"udid": "udid", "isAvailable": True}]}})
             return "udid"
         events = []
         driver.close.side_effect = lambda: events.append("close")
@@ -95,9 +98,50 @@ class CaptureDiagnosticsTest(unittest.TestCase):
             with self.assertRaisesRegex(RuntimeError, "orientation failed"):
                 capture.capture_device(device, Path("App.app"), self.directory)
         self.assertEqual(events, [("evidence", "created-session"), "close"])
+        create = next(c for c in run.call_args_list if "create" in c.args)
+        self.assertEqual(create.args[-2:], (TYPES[1]["identifier"], RUNTIMES[0]["identifier"]))
         boot = next(c for c in run.call_args_list if "bootstatus" in c.args)
         self.assertEqual(boot.kwargs["timeout"], 300)
         self.assertIn("delete", run.call_args_list[-1].args)
+
+    def test_no_compatible_pair_logs_inventory_and_never_creates_or_boots(self):
+        def command(*args, **kwargs):
+            return json.dumps({"runtimes": RUNTIMES, "devicetypes": []})
+        with patch.object(capture, "run", side_effect=command) as run, patch.object(capture, "Driver") as driver:
+            with self.assertRaisesRegex(RuntimeError, "No compatible"):
+                capture.capture_device(capture.CONFIG["devices"][0], Path("App.app"), self.directory)
+        self.assertEqual(len(run.call_args_list), 2)
+        driver.assert_not_called()
+        self.assertIn("iOS-26-5", self.stdout.getvalue())
+        self.assertIn("isAvailable", self.stdout.getvalue())
+        self.assertIn("Simulator devicetypes=[]", self.stdout.getvalue())
+
+    def test_created_availability_error_stops_before_boot_and_cleans_only_created_udid(self):
+        def command(*args, **kwargs):
+            if "runtimes" in args:
+                return json.dumps({"runtimes": RUNTIMES})
+            if "devicetypes" in args:
+                return json.dumps({"devicetypes": TYPES})
+            if "devices" in args:
+                return json.dumps({"devices": {RUNTIMES[0]["identifier"]: [{
+                    "udid": "created-udid", "isAvailable": False,
+                    "availabilityError": 'runtime profile not found using "System" match policy'}]}})
+            return "created-udid"
+        with patch.object(capture, "run", side_effect=command) as run, patch.object(capture, "Driver") as driver:
+            with self.assertRaisesRegex(RuntimeError, "Created simulator is unavailable before boot"):
+                capture.capture_device(capture.CONFIG["devices"][0], Path("App.app"), self.directory)
+        commands = [c.args for c in run.call_args_list]
+        self.assertFalse(any("boot" in c or "bootstatus" in c for c in commands))
+        self.assertEqual(commands[-2:], [("xcrun", "simctl", "shutdown", "created-udid"), ("xcrun", "simctl", "delete", "created-udid")])
+        driver.assert_not_called()
+        self.assertIn("runtime profile not found", (self.directory / "iphone-medium/failure.txt").read_text(encoding="utf-8"))
+
+    def test_preflight_checks_all_required_sizes_without_build_appium_or_creation(self):
+        with patch.object(capture.platform, "system", return_value="Darwin"), patch.object(capture.sys, "argv", ["asc_capture.py", "--check-simulators"]), patch.object(capture, "simulator_inventory", return_value=(RUNTIMES, TYPES)), patch.object(capture, "run") as run:
+            capture.main()
+        run.assert_not_called()
+        for device in capture.CONFIG["devices"]:
+            self.assertIn("Selected simulator for " + device["slug"], self.stdout.getvalue())
 
     def test_quota_or_credential_routes_rejected_before_request(self):
         driver = capture.Driver("udid")
