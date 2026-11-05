@@ -1,4 +1,4 @@
-# ASC2: API外の作業・今回の自動化の範囲
+# ASC3: API外の作業・今回の自動化の範囲
 
 2026-11-05。出典資料: ASC1 `asc1-kakomon-listing.md`（task-2）。
 この一覧はビルドartifactにも保存する。実行結果は `result.json` を確認する。
@@ -26,7 +26,9 @@
 - **著作権**: `ASC_COPYRIGHT` を指定したときだけ反映。ASC1候補は `2026 kameking-lab`。
   候補の採用可否を確定するまで空のままにし、架空の権利者を作らない。
 - **審査担当者氏名・電話・メール、審査コード、Notes**: API/deliverで入力可能。
-  `ASC_REVIEW_INFO_READY=true` と全 `ASC_REVIEW_*` の秘密環境変数を設定したときのみ更新する。
+  `ASC_REVIEW_INFO_READY=true` のときだけ更新する。ASC3の初期経路 `ASC_REVIEW_SOURCE=existing` は
+  オーナーがASCの対象版へ直接登録済みの連絡先・コードをAPIで確認し、NotesだけPATCHする。
+  Codemagicへの審査コードの入力は不要。任意の `environment` 経路のみ全 `ASC_REVIEW_*` 秘密変数が必要。
   Notesは `asc/review-notes.ja.txt`。未確認機能を確認済みとして送らない。
 - **IAP商品・サブスクリプショングループ・980円/月の価格・日本語説明・IAP審査画像・初回提出への追加**:
   公開APIで多くを管理できるが、deliverのアプリ掲載アップロードには含まれない。ASC1 §7を別実装で反映する。
@@ -44,7 +46,8 @@
 - 05はASC1 §8.2で認められた「学習リマインダー」代替。オフライン保存の撮影・検証済みとは扱わない。
 - 撮影するオンライン画面は実行時の公開Web版。提出対象Archiveとの機能・表示の一致を確認する。
 
-`SUBMIT_FOR_REVIEW=true` は審査提出を実行する。加えてレビュー情報・著作権の入力と
+専用 `asc-kakomon-submit-vVERSION-bBUILD-rRUN` タグのwebhookだけが
+`SUBMIT_FOR_REVIEW=true` を導出し審査提出を実行する。加えてレビュー情報・著作権の入力と
 `ASC_PREREQUISITES_CONFIRMED=true`（上記とASC1の提出条件を担当者が確認済み）が必要。
 デフォルトはアップロードだけ。審査通過後の公開方式も手動で、自動リリースしない。
 

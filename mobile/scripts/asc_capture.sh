@@ -2,7 +2,6 @@
 set -euo pipefail
 cd "$(dirname "$0")/.."
 [[ "$(uname -s)" == Darwin ]] || { echo 'Capture requires macOS.' >&2; exit 1; }
-: "${ASC_SCREENSHOT_REVIEW_CODE:?Set the secret active IOS3 review code}"
 mkdir -p build/asc
 # Modify only the generated controller, never ios-assets or the distribution build.
 python3 - <<'PY'

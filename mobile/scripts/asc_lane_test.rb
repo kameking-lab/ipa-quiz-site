@@ -46,8 +46,13 @@ class LaneHarness
   def sleep(_seconds); end
   def run; @lane.call; end
 end
-Version = Struct.new(:id, :version_string, :app_version_state, :app_store_state, :selected) do
+ReviewRecord = Struct.new(:contact_first_name, :contact_last_name, :contact_phone, :contact_email,
+                         :demo_account_name, :demo_account_password, :demo_account_required, :updates) do
+  def update(attributes:); self.updates = attributes; end
+end
+Version = Struct.new(:id, :version_string, :app_version_state, :app_store_state, :selected, :review) do
   def select_build(build_id:); self.selected = build_id; end
+  def fetch_app_store_review_detail; review; end
 end
 AppRecord = Struct.new(:id, :version, :editable) do
   def get_app_store_versions(**); [version]; end
@@ -80,9 +85,37 @@ Dir.chdir(File.join(root, "fastlane")) do
   raise "Mutated build before mismatch rejection" if v.selected
   Spaceship::ConnectAPI.app.editable = v
   ENV.update("SUBMIT_FOR_REVIEW" => "true", "ASC_REVIEW_INFO_READY" => "true",
-    "ASC_PREREQUISITES_CONFIRMED" => "true", "ASC_COPYRIGHT" => "2026 Test")
+    "ASC_PREREQUISITES_CONFIRMED" => "true", "ASC_COPYRIGHT" => "2026 Test",
+    "CM_TAG" => "asc-kakomon-submit-v1.0.0-b17-rtest", "CM_TRIGGER_SOURCE" => "webhook",
+    "ASC_REVIEW_SOURCE" => "environment")
   AscConfig::REVIEW_ENV.each_value { |key| ENV[key] = "test" }
   ENV["ASC_REVIEW_CODE"] = "A" * 43
+  h.return_without_submission = false
+  begin; h.run; rescue UploadBoundary; end
+  raise "Environment review route changed" unless h.options[:app_review_information][:demo_password] == "A" * 43
+  # The normal ASC3 route needs no review secrets in Codemagic. Stop before
+  # mutations if any ASC field is missing, then verify a notes-only PATCH.
+  ENV["ASC_REVIEW_SOURCE"] = "existing"
+  AscConfig::REVIEW_ENV.each_value { |key| ENV.delete(key) }
+  v.review = ReviewRecord.new("First", "Last", "+81000000000", "test@example.invalid", "App Review", "A" * 43, true)
+  %i[contact_first_name contact_last_name contact_phone contact_email demo_account_name demo_account_password demo_account_required].each do |field|
+    saved = v.review.public_send(field)
+    v.review.public_send("#{field}=", nil)
+    v.selected = nil
+    begin
+      h.run
+      raise "Missing stored review field should fail"
+    rescue RuntimeError => error
+      raise unless error.message.start_with?("Complete existing ASC review contact")
+    end
+    raise "Selected build before review rejection" if v.selected
+    raise "Patched incomplete review" if v.review.updates
+    v.review.public_send("#{field}=", saved)
+  end
+  begin; h.run; rescue UploadBoundary; end
+  raise "Stored credentials leaked into deliver arguments" if h.options.key?(:app_review_information)
+  raise "Notes PATCH changed owner fields" unless v.review.updates.keys == [:notes]
+  raise "Wrong notes" unless v.review.updates[:notes] == File.read(File.join(root, "asc/review-notes.ja.txt"), encoding: "UTF-8")
   h.return_without_submission = true
   begin
     h.run

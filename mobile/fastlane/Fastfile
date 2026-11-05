@@ -38,6 +38,18 @@ platform :ios do
     end
     editable = app.get_edit_app_store_version(platform: "IOS")
     UI.user_error!("deliver would target another version") unless editable && editable.id == version.id
+    # The owner may provision review access directly in ASC once. Keep credentials
+    # out of Codemagic variables, deliver summaries and build artifacts.
+    review_detail = nil
+    if config[:review_ready] && config[:review_source] == "existing"
+      review_detail = version.fetch_app_store_review_detail
+      fields = %i[contact_first_name contact_last_name contact_phone contact_email demo_account_name demo_account_password]
+      valid = review_detail && review_detail.demo_account_required == true &&
+        fields.all? { |field| !review_detail.public_send(field).to_s.strip.empty? } &&
+        review_detail.demo_account_name == "App Review" &&
+        review_detail.demo_account_password.match?(/\A[A-Za-z0-9_-]{43,128}\z/)
+      UI.user_error!("Complete existing ASC review contact and App Review code are required; owner must verify production access") unless valid
+    end
     version.select_build(build_id: builds.first.id)
     # Stage only approved fields. Review notes/contact/code remain absent unless ready.
     metadata = File.join(asc_root, "fastlane/metadata")
@@ -52,9 +64,13 @@ platform :ios do
       precheck_include_in_app_purchases: false
     }
     options[:copyright] = ENV["ASC_COPYRIGHT"] if config[:copyright]
-    if config[:review_ready]
+    notes = File.read(File.join(asc_root, "asc/review-notes.ja.txt"), encoding: "UTF-8")
+    if review_detail
+      # A notes-only API PATCH preserves the owner's contact and credentials.
+      review_detail.update(attributes: { notes: notes })
+    elsif config[:review_ready]
       options[:app_review_information] = config[:review].merge(
-        demo_user: "App Review", notes: File.read(File.join(asc_root, "asc/review-notes.ja.txt"), encoding: "UTF-8")
+        demo_user: "App Review", notes: notes
       )
     end
     # fastlane masks app_review_information.demo_password in its summary.

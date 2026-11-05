@@ -101,12 +101,19 @@ workflows:
         submit_to_testflight: false
         submit_to_app_store: false
 
-  # Intentionally no `triggering`: Codemagic UI/API manual start only.
-  # This workflow does not build/upload an IPA or run on a normal push.
+  # Dedicated tags only; ordinary branch pushes still use TestFlight above.
+  # Tag format and submission guards are enforced again by AscConfig.
   kakomon-asc-metadata:
-    name: Kakomon AI - App Store listing and screenshots (manual)
+    name: Kakomon AI - App Store listing and screenshots
     instance_type: mac_mini_m2
     max_build_duration: 90
+    triggering:
+      events:
+        - tag
+      tag_patterns:
+        - pattern: "asc-kakomon-*"
+          include: true
+      cancel_previous_builds: false
     integrations:
       app_store_connect: App Store Key
     environment:
@@ -116,13 +123,17 @@ workflows:
         ASC_APP_VERSION: "1.0.0"
         ASC_BUILD_NUMBER: ""
         SUBMIT_FOR_REVIEW: "false"
-        ASC_REVIEW_INFO_READY: "false"
-        ASC_PREREQUISITES_CONFIRMED: "false"
       node: "22"
       ruby: "3.4.7"
       xcode: latest
       cocoapods: default
     scripts:
+      - name: Resolve dedicated tag into non-secret request parameters
+        script: |
+          set -euo pipefail
+          cd "$CM_BUILD_DIR/mobile"
+          # Only version/build/submission are written; never export review secrets.
+          ruby scripts/asc_config.rb >> "$CM_ENV"
       - name: Validate request and emit API follow-up report
         script: |
           set -euo pipefail
@@ -135,7 +146,6 @@ workflows:
           : "${APP_STORE_CONNECT_KEY_IDENTIFIER:?ASC integration key ID missing}"
           : "${APP_STORE_CONNECT_ISSUER_ID:?ASC integration issuer missing}"
           : "${APP_STORE_CONNECT_PRIVATE_KEY:?ASC integration key missing}"
-          : "${ASC_SCREENSHOT_REVIEW_CODE:?Set secret active IOS3 review code}"
       - name: Install shared web and isolated app dependencies
         script: |
           set -euo pipefail
