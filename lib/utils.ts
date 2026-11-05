@@ -4,6 +4,20 @@ export function cn(...inputs: ClassValue[]) {
     return twMerge(clsx(inputs));
 }
 export const EXAM_LABELS: Record<string, string> = {
+  "benrishi": "弁理士（短答式）",
+  "sokuryoshi": "測量士",
+  "dokugeki-chiba": "毒物劇物取扱者（千葉県）",
+  "jokaso-setsubishi": "浄化槽設備士（学科）",
+  "chiiki-ryoko": "地域限定旅行業務取扱管理者",
+  "junkango-kansai": "准看護師（関西広域連合）",
+  "kukaku-seiri": "土地区画整理士（学科）",
+  "dojo-osen": "土壌汚染調査技術管理者",
+  "kenchikushi2": "二級建築士（学科）",
+  "mokuzo-kenchikushi": "木造建築士（学科）",
+
+  "sekou-1kenchiku": "1級建築施工管理（第一次）",
+  "khk-kagaku": "高圧ガス製造保安責任者（化学）",
+  kenchikushi1: "一級建築士（学科）",
     shihoshoshi: "司法書士",
     "chintai": "賃貸不動産経営管理士",
     "kyusui": "給水装置工事主任技術者",

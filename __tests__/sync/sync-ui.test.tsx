@@ -5,7 +5,8 @@ import { CloudSyncPanel } from "@/components/account/CloudSyncPanel";
 import { HistorySyncPanel } from "@/app/account/HistorySyncPanel";
 import { LS_KEYS } from "@/lib/storage/keys";
 import type { SyncAllResult } from "@/lib/sync";
-const mock = vi.hoisted(() => ({ syncAll: vi.fn(), history: vi.fn() }));
+const mock = vi.hoisted(() => ({ syncAll: vi.fn(), history: vi.fn(), pathname: "/" }));
+vi.mock("next/navigation", () => ({ usePathname: () => mock.pathname }));
 vi.mock("@/lib/sync", () => ({ syncAll: mock.syncAll, readSyncMeta: () => ({ lastSyncedAt: 0 }) }));
 vi.mock("@/lib/sync/history-sync", () => ({ syncHistory: mock.history }));
 let user: string;
@@ -20,6 +21,7 @@ function result(overall: SyncAllResult["overall"]): SyncAllResult {
 function owner() { localStorage.setItem(LS_KEYS.syncLocalOwner, JSON.stringify({ userId: user, token: user + "-token" })); }
 beforeEach(() => {
   user = "A";
+  mock.pathname = "/";
   localStorage.clear();
   sessionStorage.clear();
   vi.clearAllMocks();
@@ -65,6 +67,14 @@ describe("optional browser-data import UI", () => {
   });
 });
 describe("automatic completion and retries", () => {
+  it.each(["/quiz", "/q/ip/2011a/am/1"])("completes sync on %s without a popup", async (pathname) => {
+    mock.pathname = pathname;
+    owner();
+    render(<CloudSyncAutoSync />);
+    await waitFor(() => expect(sessionStorage.getItem(LS_KEYS.syncSessionSuccessPrefix + "A")).toBe("1"));
+    expect(mock.syncAll).toHaveBeenCalledTimes(1);
+    expect(screen.queryByRole("status")).toBeNull();
+  });
   it("does not send unowned data automatically", async () => {
     render(<CloudSyncAutoSync />);
     await waitFor(() => expect(fetch).toHaveBeenCalled());

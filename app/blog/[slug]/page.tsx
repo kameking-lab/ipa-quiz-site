@@ -4,11 +4,14 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 
 import { BlogMarkdown } from "@/components/blog/BlogMarkdown";
+import { BlogPractice } from "@/components/blog/BlogPractice";
+import { Markdown } from "@/components/ui/markdown";
+import { getBlogPractice } from "@/lib/blog/practice";
+import { strictContentGateEnabled } from "@/lib/billing/content-policy";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { ViewTracker } from "@/components/analytics/ViewTracker";
 import { BlogScrollTracker } from "@/components/blog/BlogScrollTracker";
 import { getExamQuestionCount } from "@/lib/constants/exam-question-counts";
-import { TOTAL_QUESTIONS_PUBLISHED } from "@/lib/constants/question-counts";
 import {
   getAllBlogSlugs,
   getBlogPostBySlug,
@@ -101,6 +104,7 @@ export default async function BlogArticlePage({ params }: PageProps) {
 
   const url = `${SITE_BASE_URL}/blog/${slug}`;
   const related = getRelatedPosts(slug, 4);
+  const practice = getBlogPractice(slug);
   const relatedQuestions = getRelatedQuestionsForPost(post.exam, post.tags, 3);
   const articleOgParams = new URLSearchParams({
     type: "blog",
@@ -282,6 +286,7 @@ export default async function BlogArticlePage({ params }: PageProps) {
         <h1 className="text-2xl font-bold tracking-tight text-zinc-900 dark:text-zinc-50 sm:text-3xl">
           {post.title}
         </h1>
+        {practice && <nav aria-label="記事と演習" className="mt-3 flex flex-wrap gap-x-4 text-sm"><a href="#article-practice" className="inline-flex min-h-11 items-center rounded-xl bg-primary px-4 font-semibold text-primary-foreground">まず1問解く</a><a href="#article-body" className="inline-flex min-h-11 items-center underline">本文から読む</a></nav>}
         <p className="mt-3 text-sm leading-relaxed text-zinc-600 dark:text-zinc-400">
           {post.description}
         </p>
@@ -293,10 +298,17 @@ export default async function BlogArticlePage({ params }: PageProps) {
         )}
         {post.editorialKind === "study-guide" && <p className="mt-3 text-xs text-zinc-600 dark:text-zinc-400">編集上の学習ガイドです。受験者の実測調査・出題頻度ランキングではありません。</p>}
         {post.sourceUrls && <ul className="mt-3 space-y-1 text-xs">{post.sourceUrls.map((url, i) => <li key={url}><a href={url} className="underline" target="_blank" rel="noopener noreferrer">参照資料 {i + 1}（IPA）</a></li>)}</ul>}
-
       </header>
 
-      <article>
+      {practice && (strictContentGateEnabled() ? (
+        <section id="article-practice" aria-label="記事から1問チャレンジ" className="mb-8 scroll-mt-24 rounded-2xl border border-border p-5">
+          <h2 className="text-lg font-bold">記事から1問チャレンジ</h2>
+          <p className="mt-2 text-sm text-muted-foreground">ウェブ・アプリ共通の演習枠を確認してから、問題と解説を表示します。</p>
+          <Link href={`${practice.continueHref}&question=${encodeURIComponent(practice.question.id)}`} className="mt-3 inline-flex min-h-12 items-center rounded-xl bg-primary px-4 font-semibold text-primary-foreground">利用枠を確認して1問解く</Link>
+        </section>
+      ) : <BlogPractice key={practice.question.id} {...practice} slug={slug} explanation={<Markdown>{practice.question.explanation}</Markdown>} />)}
+
+      <article id="article-body" className="scroll-mt-24">
         <BlogMarkdown>{post.body}</BlogMarkdown>
       </article>
 
@@ -306,18 +318,19 @@ export default async function BlogArticlePage({ params }: PageProps) {
             {examLabel(post.exam)} の過去問で実戦演習する
           </h2>
           <p className="mb-3 leading-relaxed">
-            記事の内容を実戦で確認しましょう。AI コパイロット付きで分からない点はその場で解決できます。
+            記事の内容を問題と解説で確認しましょう。AI機能の利用枠と提供状態は
+            <Link href="/billing" className="underline">料金・利用条件</Link>と各機能画面で確認できます。
           </p>
           <div className="flex flex-wrap items-center gap-2">
             <Link
               href={`/quiz?mode=random&exam=${post.exam}`}
-              aria-label={`この試験を演習する（${examLabel(post.exam)}・${getExamQuestionCount(post.exam)}問・無料）`}
+              aria-label={`この試験を演習する（${examLabel(post.exam)}・${getExamQuestionCount(post.exam)}問）`}
               className="inline-flex min-h-[48px] items-center gap-1.5 rounded-full bg-sky-600 px-5 py-2 text-sm font-semibold text-white shadow-sm transition hover:bg-sky-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-500 focus-visible:ring-offset-2 focus-visible:ring-offset-background"
             >
               この試験を演習する（{getExamQuestionCount(post.exam).toLocaleString("ja-JP")}問）→
             </Link>
             <span className="inline-flex items-center gap-1 rounded-full bg-emerald-100 px-2.5 py-1 text-[11px] font-medium text-emerald-800 dark:bg-emerald-950/50 dark:text-emerald-300">
-              <span aria-hidden="true">✓</span>無料・登録不要
+              <span aria-hidden="true">✓</span>問題・解説の閲覧は無料
             </span>
             <Link
               href={`/${post.exam}`}
@@ -339,18 +352,19 @@ export default async function BlogArticlePage({ params }: PageProps) {
             過去問AI で各試験区分の対策を始める
           </h2>
           <p className="mb-3 leading-relaxed">
-            13 区分・{TOTAL_QUESTIONS_PUBLISHED.toLocaleString("ja-JP")} 問を AI コパイロット付きで学習できます。受験予定の試験区分から始めましょう。
+            公開済みの問題と解説を資格別に確認し、演習できます。AI機能の利用枠と提供状態は
+            <Link href="/billing" className="underline">料金・利用条件</Link>と各機能画面で確認してください。
           </p>
           <div className="flex flex-wrap items-center gap-2">
             <Link
               href="/"
-              aria-label="過去問演習を始める（13区分・無料登録不要）"
+              aria-label="過去問演習を始める（資格別の問題と解説）"
               className="inline-flex min-h-[48px] items-center gap-1.5 rounded-full bg-sky-600 px-5 py-2 text-sm font-semibold text-white shadow-sm transition hover:bg-sky-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-500 focus-visible:ring-offset-2 focus-visible:ring-offset-background"
             >
               過去問演習を始める →
             </Link>
             <span className="inline-flex items-center gap-1 rounded-full bg-emerald-100 px-2.5 py-1 text-[11px] font-medium text-emerald-800 dark:bg-emerald-950/50 dark:text-emerald-300">
-              <span aria-hidden="true">✓</span>無料・登録不要
+              <span aria-hidden="true">✓</span>問題・解説の閲覧は無料
             </span>
             <Link
               href="/blog"

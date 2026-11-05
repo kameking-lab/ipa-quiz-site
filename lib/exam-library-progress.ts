@@ -1,7 +1,7 @@
 /**
  * 公表試験問題プレーヤーの端末内進捗（任意・明示的なオプトイン時のみ）。
  *
- * - 保存先はこのブラウザの localStorage だけ。サーバーへ送信しない。
+ * - 保存先はこのブラウザの localStorage。制限有効時の結果復元では選択番号と許可証明だけを本人確認付きAPIへ送り、記述メモは送らない。
  * - 保存するのは選んだ番号と記述メモだけ。正誤は読込時に現在の問題データから再計算し、
  *   保存値を採点結果として信用しない。
  * - キーはサイト共通の LS_KEYS で管理する。
@@ -27,6 +27,8 @@ export interface ExamSessionAnswer {
   memo: string;
   /** 回答を確定した（記述式は「確認済み」にした）か */
   submitted: boolean;
+  /** Server-signed permission to restore this owner's result; never a body grant. */
+  reviewProof?: string;
 }
 
 export type ExamSessionAnswers = Record<string, ExamSessionAnswer>;
@@ -83,7 +85,7 @@ export function parseExamProgress(
     const submitted =
       stored.submitted === true && (question.choiceCount === 0 || choice !== null);
     if (choice === null && memo === "" && !submitted) continue;
-    answers[questionId] = { choice, memo, submitted };
+    answers[questionId] = { choice, memo, submitted, ...(typeof stored.reviewProof === "string" && /^[a-f0-9]{64}$/.test(stored.reviewProof) ? {reviewProof: stored.reviewProof} : {}) };
   }
 
   const lastQuestionId =
@@ -108,7 +110,7 @@ export function createExamProgress(
     if (isSurveyAssistantReferenceId(questionId)) continue;
     const memo = clampMemo(answer.memo);
     if (answer.choice === null && memo === "" && !answer.submitted) continue;
-    compact[questionId] = { choice: answer.choice, memo, submitted: answer.submitted };
+    compact[questionId] = { choice: answer.choice, memo, submitted: answer.submitted, ...(answer.reviewProof ? {reviewProof:answer.reviewProof} : {}) };
   }
   return {
     version: 1,

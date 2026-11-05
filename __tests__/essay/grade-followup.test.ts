@@ -20,8 +20,8 @@ describe("EssayResultView — 採点後の弱点→次の練習 導線（強み4
     expect(source).toContain("弱点を踏まえて次に取り組む");
   });
 
-  it("同区分の他の論述問題を getEssayQuestionsByExam で提示する（自分は除外）", () => {
-    expect(source).toContain("getEssayQuestionsByExam(question.exam)");
+  it("同区分の他の論述問題を本文を含まない目次で提示する（自分は除外）", () => {
+    expect(source).toContain("getEssayCatalogByExam(question.exam)");
     expect(source).toMatch(/filter\(\(q\) => q\.id !== question\.id\)/);
     expect(source).toContain("/essay/${q.exam}/${q.id}");
   });

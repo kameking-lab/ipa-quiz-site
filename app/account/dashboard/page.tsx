@@ -5,7 +5,7 @@ import { DashboardTabs } from "@/components/account/DashboardTabs";
 export const metadata: Metadata = {
   title: "学習ダッシュボード",
   description:
-    "概要・進捗・弱点・バッジ／ストリークの 4 タブで学習データを一望する統合ダッシュボード。",
+    "今日の計画・模試記録・進捗・弱点・バッジをまとめて確認できる学習ダッシュボード。",
   alternates: { canonical: "/account/dashboard" },
   robots: { index: false, follow: false },
 };

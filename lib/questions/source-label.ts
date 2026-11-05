@@ -27,7 +27,13 @@ const VERIFIED_MEDICAL_EDITIONS: Readonly<Record<string, Readonly<Record<string,
   },
 };
 
-export function questionSourceEdition(q: Pick<Question, "year" | "season" | "sourcePdfUrl"> & Partial<Pick<Question, "exam">>): string {
+export function questionSourceEdition(q: Pick<Question, "year" | "season" | "sourcePdfUrl"> & Partial<Pick<Question, "exam" | "fiscalYear">>): string {
+  if (q.exam === "junkango-kansai") {
+    return q.fiscalYear !== undefined
+      ? `令和${q.fiscalYear - 2018}年度（${q.year}年実施）`
+      : `${q.year}年実施`;
+  }
+
 if (q.exam?.startsWith("jidosha-")) {
     if (q.year === 2026 && q.season === "first")
         return "令和8年度第1回（2026年10月4日実施）";

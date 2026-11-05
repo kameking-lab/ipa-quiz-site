@@ -1,0 +1,17 @@
+{
+  "sourceHead": "122a252a0b4ca0f0dfbd6e1d499d49bcbaa2fc64",
+  "startedAt": "2026-11-04T19:21:05.658794+00:00",
+  "endedAt": "2026-11-04T19:21:13.392277+00:00",
+  "command": [
+    "corepack.cmd",
+    "pnpm",
+    "exec",
+    "eslint",
+    "tests/e2e/batch3-release.spec.ts"
+  ],
+  "exitCode": 0,
+  "seconds": 7.73,
+  "log": "reports/int7-20261105/candidate-qa-lint.log",
+  "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "environment": "allowlisted OS variables only; CI=1, telemetry disabled, NODE_OPTIONS=4096; no service credentials or env files"
+}

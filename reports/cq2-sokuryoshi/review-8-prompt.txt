@@ -1,0 +1,20 @@
+CQ2の独立再レビュー8をread-onlyで実施してください。編集・commit・push・PR・deploy・main操作は禁止。
+対象: C:/Users/kanet/20260522/wt-sokuryoshi
+base: bb912dfd0494f7095ec5387f9f2e53f46381cd1f
+
+要件は reports/cq2-sokuryoshi/review-1-prompt.txt をUTF-8で確認してください。
+過去の全指摘と修正は同ディレクトリのreview-1～7-result.md / review-1～7-fixes.mdにあります。
+レビュー7の新規1件（2026午後No.5 B-3で三つ中一つ不足）は修正しました。
+原稿と生成JSONの両方で、JA40～B16の未記載、JA41～JA40の許容値、B25～JA41の較差超過・必要時再測の三点を説明しました。
+回帰テストもこの三点を確認します。2025午後No.4 C-2の既存の処理説明には、機能3バッファ・機能5差分の名称も明記しました。
+
+主要データ: data/qualification-staging/sokuryoshi/
+全66原問・午前280肢・午後104小問・原本186ページ・publicAllowed=false。
+PDF原本・公式準則standards.pdf/txt・補助OCR:
+C:/Users/kanet/AppData/Local/Temp/codex-work/cq2-sokuryoshi
+最新通常実行ログ: reports/cq2-sokuryoshi/{validate-questions,typecheck,related-tests}.log
+
+過去指摘の修正を原本で確認し、未指摘の実質的な誤り・不足も批判的に再確認してください。
+画像正本方式及び人手による公開前確認ガードneedsReview=true自体ではなく、今回の非公開収録の内容・対応・検証を評価してください。
+read-onlyでspawn EPERMが出た場合は制約を迂回せず、保存ログと分離して報告してください。
+最後にPASS又はFAILを明記。FAILなら具体的設問・根拠・修正案を示してください。

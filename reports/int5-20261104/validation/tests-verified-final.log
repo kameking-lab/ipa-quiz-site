@@ -1,0 +1,1795 @@
+
+> ipa-quiz-site@1.0.0 test C:\Users\kanet\20260522\wt-batch2
+> vitest run "--maxWorkers=6" "--reporter=default" "--reporter=json" "--outputFile=reports/int5-20261104/validation/tests-verified-final.json"
+
+
+ RUN  v4.1.12 C:/Users/kanet/20260522/wt-batch2
+
+ ✓ __tests__/mobile/asset-inventory.test.ts (3 tests) 40686ms
+   ✓ covers image references independently read from every paper renderer input and answer registry  3242ms
+   ✓ covers each non-paper renderer's own image and required-PDF input fields  37432ms
+ ✓ __tests__/api/copilot.test.ts (8 tests) 10596ms
+     ✓ uses a published ID even if the browser sends altered answer data  10168ms
+     ✓ returns a streamed text/plain body via mock provider with expected headers  395ms
+ ✓ __tests__/questions/lab75-local-release.test.tsx (6 tests) 11661ms
+     ✓ adds exactly75 across static and lazy loaders while preserving the35 stored originals and six remaining holds  356ms
+     ✓ adds75 usable canonical routes and exposes the exact106 partial count to SEO and hub metadata  1764ms
+     ✓ renders every native Next detail page with its official sources and full five reasons  9235ms
+ ✓ __tests__/copilot/rag.test.ts (6 tests) 18550ms
+     ✓ returns passages for a clear knowledge query  8450ms
+     ✓ respects topN  10087ms
+ ✓ __tests__/questions/sharoushi-kangoshi-routes.test.ts (582 tests) 18216ms
+ ✓ __tests__/copilot/rag-pipeline.test.ts (7 tests) 19096ms
+     ✓ topScore が ragMinScore 未満なら ragResult は保持しつつ grounding しない  9660ms
+     ✓ 閾値を満たすと grounding 出力一式を返す  9426ms
+ ✓ __tests__/copilot/related-header.test.ts (10 tests) 9336ms
+     ✓ 有効なクエリは limit 件以下・スコア降順・question 種別のみを返す  9251ms
+ ✓ __tests__/ai/mock-provider.test.ts (16 tests) 5892ms
+     ✓ 「なぜ」「間違」「誤答」→ whyWrong 応答  840ms
+     ✓ 「用語」「解説」「term」→ term 応答  1137ms
+     ✓ どのキーワードにも当たらない → default 応答  326ms
+     ✓ 空メッセージ配列 → default 応答（last は空文字でどのキーワードにも非該当）  343ms
+     ✓ 分岐は最後の user メッセージ内容で決まる（過去メッセージは無視）  405ms
+     ✓ 大文字小文字を無視（toLowerCase 経由）  536ms
+     ✓ チャンク連結は元応答と無損失一致  377ms
+     ✓ 各チャンクは 24 字以下、末尾以外は厳密に 24 字（.{1,24} 貪欲分割）  336ms
+     ✓ 改行を含めて分割される（dotAll フラグ）— 連結で改行が保持される  334ms
+     ✓ シグナル未指定なら正常完走する  379ms
+ ✓ __tests__/mobile/catalog-parity.test.ts (2 tests) 7477ms
+   ✓ includes exactly every web-published practice question, library paper and alternative reader  7468ms
+stderr | __tests__/auth/apple-flow.test.ts > completes Apple's real Auth.js form_post with a private relay email and keeps destination /account (wrong-state)
+[31m[auth][error][0m CallbackRouteError: Read more at https://errors.authjs.dev#callbackrouteerror
+[31m[auth][cause][0m: OperationProcessingError: unexpected "state" response parameter value
+    at OPE (file:///C:/Users/kanet/20260522/wt-batch2/node_modules/oauth4webapi/build/index.js:116:12)
+    at Module.validateAuthResponse (file:///C:/Users/kanet/20260522/wt-batch2/node_modules/oauth4webapi/build/index.js:2089:23)
+    at handleOAuth (file:///C:/Users/kanet/20260522/wt-batch2/node_modules/@auth/core/lib/actions/callback/oauth/callback.js:93:29)
+    at Module.callback (file:///C:/Users/kanet/20260522/wt-batch2/node_modules/@auth/core/lib/actions/callback/index.js:37:41)
+    at AuthInternal (file:///C:/Users/kanet/20260522/wt-batch2/node_modules/@auth/core/lib/index.js:56:24)
+    at Auth (file:///C:/Users/kanet/20260522/wt-batch2/node_modules/@auth/core/index.js:111:34)
+    at C:/Users/kanet/20260522/wt-batch2/__tests__/auth/apple-flow.test.ts:64:23
+    at file:///C:/Users/kanet/20260522/wt-batch2/node_modules/@vitest/runner/dist/chunk-artifact.js:1903:20
+[31m[auth][details][0m: {
+  "expected": "eyJhbGciOiJkaXIiLCJlbmMiOiJBMjU2Q0JDLUhTNTEyIiwia2lkIjoicHVmVGtGSUk4cXUyMXFFa2tBWnVDdkIyOC12X1NYd0lxZ2UybWhRdmdqZDdqMEFKVzNMV3RRdXVjRGNoaDMzSzZENUt4a2M2ZllXcDdmcW1ORGduY0EifQ..H-tkkb2A06T-TklCpzmoag.7JyZ6DL2d00MaVcfIppWT-Q6NeU5c__haqAOYxcNdetMcWx6BhyJei6OCib5kRaIprUhrHF09suZgBPIyc_qjWpO1W9OS2k6Egsy2Fx2ll8ULyRd4KVfLwSwv2vZpdfhmYOamXRLetFtvwNPqSf-42_GyKQWQXr5HgF8aJ3ccjXj6kUudu3Ha-fRCWyJxTzO.2q8sRG6-WzdUQ7bFBObgRBfvv7ATKz7b_5xivi_AwhE",
+  "parameters": {},
+  "provider": "apple"
+}
+
+ ✓ __tests__/billing/routes.test.ts (6 tests) 445ms
+     ✓ missing/under-review questions consume nothing; cross-origin cannot consume quota  419ms
+stderr | __tests__/auth/apple-flow.test.ts > completes Apple's real Auth.js form_post with a private relay email and keeps destination /account (wrong-nonce)
+[31m[auth][error][0m CallbackRouteError: Read more at https://errors.authjs.dev#callbackrouteerror
+[31m[auth][cause][0m: OperationProcessingError: unexpected ID Token "nonce" claim value
+    at OPE (file:///C:/Users/kanet/20260522/wt-batch2/node_modules/oauth4webapi/build/index.js:116:12)
+    at processAuthorizationCodeOpenIDResponse (file:///C:/Users/kanet/20260522/wt-batch2/node_modules/oauth4webapi/build/index.js:1439:15)
+    at handleOAuth (file:///C:/Users/kanet/20260522/wt-batch2/node_modules/@auth/core/lib/actions/callback/oauth/callback.js:162:35)
+    at Module.callback (file:///C:/Users/kanet/20260522/wt-batch2/node_modules/@auth/core/lib/actions/callback/index.js:37:41)
+    at AuthInternal (file:///C:/Users/kanet/20260522/wt-batch2/node_modules/@auth/core/lib/index.js:56:24)
+    at Auth (file:///C:/Users/kanet/20260522/wt-batch2/node_modules/@auth/core/index.js:111:34)
+    at C:/Users/kanet/20260522/wt-batch2/__tests__/auth/apple-flow.test.ts:64:23
+    at file:///C:/Users/kanet/20260522/wt-batch2/node_modules/@vitest/runner/dist/chunk-artifact.js:1903:20
+[31m[auth][details][0m: {
+  "expected": "jGVZZK9ZjNcvU6IjbOIhpxYs-EgKe8akm3jRiQX5HlY",
+  "claims": {
+    "iss": "https://appleid.apple.com",
+    "aud": "synthetic.services.id",
+    "sub": "synthetic-apple-subject",
+    "nonce": "invalid-nonce",
+    "email": "private-user@privaterelay.appleid.com",
+    "email_verified": true,
+    "iat": 1793790523,
+    "exp": 1793790823
+  },
+  "claim": "nonce",
+  "provider": "apple"
+}
+
+stderr | __tests__/auth/apple-flow.test.ts > completes Apple's real Auth.js form_post with a private relay email and keeps destination /account (email-collision)
+[31m[auth][error][0m OAuthAccountNotLinked: Another account already exists with the same e-mail address. Read more at https://errors.authjs.dev#oauthaccountnotlinked
+    at handleLoginOrRegister (file:///C:/Users/kanet/20260522/wt-batch2/node_modules/@auth/core/lib/actions/callback/handle-login.js:250:23)
+    at Module.callback (file:///C:/Users/kanet/20260522/wt-batch2/node_modules/@auth/core/lib/actions/callback/index.js:70:50)
+    at AuthInternal (file:///C:/Users/kanet/20260522/wt-batch2/node_modules/@auth/core/lib/index.js:56:24)
+    at Auth (file:///C:/Users/kanet/20260522/wt-batch2/node_modules/@auth/core/index.js:111:34)
+    at C:/Users/kanet/20260522/wt-batch2/__tests__/auth/apple-flow.test.ts:64:23
+    at file:///C:/Users/kanet/20260522/wt-batch2/node_modules/@vitest/runner/dist/chunk-artifact.js:1903:20
+
+ ✓ __tests__/auth/apple-flow.test.ts (6 tests) 1172ms
+   ✓ completes Apple's real Auth.js form_post with a private relay email and keeps destination /account (success)  802ms
+ ✓ __tests__/questions/ipa-paper-player-parity.test.ts (3 tests) 6490ms
+     ✓ uses the same playable IDs for every exam/year/season/session  6473ms
+ ✓ __tests__/billing/QuizClient.player.test.tsx (5 tests) 4374ms
+     ✓ answers ordinary questions across qualifications, preserves player state and storage, and offers exits at the eleventh  2768ms
+   ✓ submits feedback at the wall, answers bonus questions 11-20, stops at 21 and preserves exhaustion on reload  1510ms
+ ✓ __tests__/copilot/ip-choice-rag-regression.test.ts (2 tests) 8635ms
+     ✓ uses the actual corpus while excluding nursing context and unrelated practice candidates  8629ms
+ ✓ __tests__/seo/sitemap-static-indexable.test.ts (8 tests) 11762ms
+     ✓ どの具象 static ルートも robots:noindex ではない  9344ms
+     ✓ 掲載される全 essay 問題で robots:noindex にならない  2399ms
+stdout | __tests__/api/cost-record-durability.test.ts > コスト計上はレスポンス完了前に永続化を終える > /api/scoring — ストリームが閉じる時点で recordAiCost が解決済み
+[provider] model resolved tier=grading model=gemini-2.5-flash pricing=flash
+
+stdout | __tests__/api/cost-record-durability.test.ts > コスト計上はレスポンス完了前に永続化を終える > /api/scoring — ストリームが閉じる時点で recordAiCost が解決済み
+[scoring] response received {
+  questionId: 'ap-2024h-pm-q1',
+  model: 'gemini-2.5-flash',
+  finishReason: undefined,
+  promptTokens: undefined,
+  outputTokens: undefined,
+  thoughtsTokens: undefined
+}
+
+stdout | __tests__/api/cost-record-durability.test.ts > コスト計上はレスポンス完了前に永続化を終える > /api/essay-grade — レスポンス返却時点で recordAiCost が解決済み
+[essay-grade] response received {
+  questionId: 'au-2024a-pm2-q1',
+  model: 'gemini-2.5-flash',
+  finishReason: undefined,
+  promptTokens: undefined,
+  outputTokens: undefined,
+  thoughtsTokens: undefined
+}
+
+stderr | __tests__/api/cost-record-durability.test.ts > コスト計上はレスポンス完了前に永続化を終える > /api/essay-grade — レスポンス返却時点で recordAiCost が解決済み
+[essay-grade] unavailable: AI応答の解析に失敗 {
+  questionId: 'au-2024a-pm2-q1',
+  provider: 'gemini',
+  model: 'gemini-2.5-flash',
+  rawChars: 32,
+  finishReason: undefined,
+  truncated: false,
+  outputTokens: undefined,
+  thoughtsTokens: undefined
+}
+
+stderr | __tests__/api/cost-record-durability.test.ts > コスト計上はレスポンス完了前に永続化を終える > /api/essay-grade — レスポンス返却時点で recordAiCost が解決済み
+[slack] notification unavailable
+
+ ✓ __tests__/maritime2-data-contract.test.tsx (4 tests) 2282ms
+     ✓ renders every MC alternative through the real answer card with aligned explanations  807ms
+     ✓ renders190 standard official-answer links, source images and attributed JSONLD without private source paths  1424ms
+stdout | __tests__/api/scoring-cost-guard.test.ts > /api/scoring — コスト上限装置への配線 > 月間上限に到達していると 503 cost_capped を返し、AI を一切呼ばない
+[provider] model resolved tier=grading model=gemini-2.5-pro pricing=pro
+
+stdout | __tests__/api/scoring-cost-guard.test.ts > /api/scoring — コスト上限装置への配線 > 上限未到達なら採点し、完了後に月間累計へ計上する
+[scoring] response received {
+  questionId: 'ap-2024h-pm-q1',
+  model: 'gemini-2.5-pro',
+  finishReason: undefined,
+  promptTokens: undefined,
+  outputTokens: undefined,
+  thoughtsTokens: undefined
+}
+
+ ✓ __tests__/api/scoring-cost-guard.test.ts (3 tests) 1057ms
+     ✓ 月間上限に到達していると 503 cost_capped を返し、AI を一切呼ばない  906ms
+stdout | __tests__/api/cost-record-durability.test.ts > コスト計上はレスポンス完了前に永続化を終える > /api/copilot — ストリームが閉じる時点で recordAiCost が解決済み
+[copilot] completed {
+  questionId: 'ap-2023h-am-q1',
+  model: 'gemini-3.8-flash',
+  finishReason: undefined,
+  promptTokens: undefined,
+  outputTokens: undefined,
+  thoughtsTokens: undefined,
+  totalTokens: undefined
+}
+
+ ✓ __tests__/api/cost-record-durability.test.ts (4 tests) 6782ms
+     ✓ /api/scoring — ストリームが閉じる時点で recordAiCost が解決済み  2487ms
+     ✓ /api/copilot — ストリームが閉じる時点で recordAiCost が解決済み  4150ms
+ ✓ __tests__/seo/exam-topic-link-resolvability.test.ts (4 tests) 3645ms
+     ✓ examTopicPageExists agrees with the topic route's static params for every (exam, category)  765ms
+     ✓ at least one rendered question is gated to plain text (the branch is real)  2867ms
+ ✓ __tests__/copilot/corpus.test.ts (10 tests) 3107ms
+     ✓ 同一プロセス内では同じ参照を返す（再構築しない）  320ms
+     ✓ resetCorpusCache 後は再構築するが内容は等価  903ms
+     ✓ 全 question doc が直接ページと同じ公開条件を満たす  344ms
+ ✓ __tests__/components/NativeB.integration.test.tsx (25 tests) 3101ms
+     ✓ normal player preserves one original/history/result then resets next question  352ms
+     ✓ normal player preserves one original/history/result then resets next question  300ms
+ ✓ __tests__/questions/get-questions.test.ts (147 tests) 4549ms
+     ✓ ap は非空で、全問が exam=ap である  313ms
+ ✓ __tests__/native580-integration.test.ts (15 tests) 3332ms
+     ✓ riku-tech2: shows only practice-ready totals and free past-paper scope  1123ms
+     ✓ riku-tech2: public unauthenticated next API and due review preserve original IDs and protect HOLD  534ms
+     ✓ excludes each of the three HOLDs from central load, ID lookup, sitemap, server pools and explicit history pools  1000ms
+ ✓ __tests__/sea2-integration.test.tsx (5 tests) 3756ms
+     ✓ stores48 and exposes exactly48 ready originals through eager, lazy-filtered, strict and practice pools  1223ms
+     ✓ keeps48 official keys, numeric printed order and192 accepted explanations in actual card/JSONLD consumers  2186ms
+ ✓ __tests__/search/question-index.test.ts (17 tests) 5681ms
+     ✓ limit 未指定は DEFAULT_LIMIT=30・offset 未指定は 0  366ms
+     ✓ exam 未指定は全チャンクを母集団に取り、非空で返す  5135ms
+ ✓ __tests__/questions/sharoushi-rousai-source-gate.test.ts (3 tests) 2470ms
+     ✓ 雇用保険3問と健康保険1問を科目固有の公式番号で分離する  2231ms
+ ✓ __tests__/pe-first-continuation.test.tsx (3 tests) 1068ms
+     ✓ binds every new question and all choice reasons to the official yearly key  746ms
+ ✓ __tests__/components/QuizClient.year.test.tsx (14 tests) 2293ms
+     ✓ traverses all 120 originals without the previous cutoff at 80  1882ms
+ ✓ __tests__/search/search-route.test.ts (22 tests) 4391ms
+     ✓ パラメータ無しでも 200（全項目 optional）  3824ms
+ ✓ __tests__/search/pool-server.test.ts (10 tests) 4157ms
+     ✓ 存在しない id は undefined  3826ms
+ ✓ __tests__/components/Chizai2.player.test.tsx (15 tests) 1610ms
+ ✓ __tests__/questions/chusho-latest-two.test.ts (5 tests) 219ms
+ ✓ __tests__/exam-library-archive-links.test.tsx (19 tests) 1284ms
+     ✓ uses the saved PDF in the complete 'cskohyo-CS20211901' page and revealed answer  302ms
+ ✓ __tests__/kankoji2-first-stage.test.ts (12 tests) 101ms
+ ✓ __tests__/questions/shino-saved-go34.test.ts (37 tests) 69ms
+ ✓ __tests__/components/ExamBrowseTabs.mock-support.test.tsx (283 tests) 4331ms
+stdout | __tests__/security/grading-failure-cost.test.ts > failed grading still persists the whole unknown generation budget > scoring records cost exactly once before returning an error
+[provider] model resolved tier=grading model=gemini-2.5-flash pricing=flash
+
+ ✓ __tests__/security/grading-failure-cost.test.ts (2 tests) 2887ms
+     ✓ scoring records cost exactly once before returning an error  2644ms
+ ✓ __tests__/mobile/authorized-paper.test.tsx (9 tests) 2707ms
+   ✓ retains whole-paper answers and wrong review after reload: paid=false, save=false  529ms
+   ✓ retains whole-paper answers and wrong review after reload: paid=false, save=true  425ms
+   ✓ retains whole-paper answers and wrong review after reload: paid=true, save=false  394ms
+   ✓ retains whole-paper answers and wrong review after reload: paid=true, save=true  379ms
+   ✓ keeps the free eleventh body and key behind the server denial  367ms
+ ✓ __tests__/native580-entrypoints.test.tsx (16 tests) 2297ms
+     ✓ riku-tech2: real topic headings and selected pools never fall back to AP  548ms
+     ✓ amateur2: real topic headings and selected pools never fall back to AP  413ms
+     ✓ maritime-radar: real topic headings and selected pools never fall back to AP  329ms
+ ✓ __tests__/native338-integration.test.ts (7 tests) 171ms
+ ✓ __tests__/seo/sitemap-resolvability.test.ts (8 tests) 1765ms
+     ✓ all safety exam papers in the main sitemap contain playable questions  427ms
+     ✓ every question URL resolves to an answerable, non-needsReview question  711ms
+     ✓ every exam hub / year-season / category URL resolves  613ms
+ ✓ __tests__/questions/qkensetsu-public.test.ts (3 tests) 568ms
+     ✓ serves the same 209 originals through eager/lazy loaders and public counts  546ms
+ ✓ __tests__/native235-integration.test.ts (11 tests) 1747ms
+     ✓ amateur1: preserves exact normalized final data and every source asset  302ms
+     ✓ amateur1: shows only practice-ready totals and free past-paper scope  548ms
+     ✓ amateur1: public unauthenticated next API and due review preserve original IDs and protect HOLD  366ms
+     ✓ excludes A19 from load, ID lookup, sitemap, server subject pools and explicit history pool  340ms
+ ✓ __tests__/questions/tsushin2-two-rounds.test.ts (5 tests) 237ms
+ ✓ __tests__/questions/qkensetsu-two-rounds.test.ts (3 tests) 348ms
+     ✓ binds all originals, official answers, reasons, assets and reused acceptance to fixed hashes  342ms
+ ✓ __tests__/seo/sitemap-render.test.ts (34 tests) 1370ms
+     ✓ partitions all indexable questions across chunks without loss or overlap  466ms
+ ✓ __tests__/seo/no-hardcoded-counts.test.ts (6 tests) 10643ms
+     ✓ uses the SSOT instead of raw/stale count numbers in source  10638ms
+ ✓ __tests__/denko2-latest-two.test.ts (8 tests) 2502ms
+     ✓ pins every original row and figure crop to its saved bytes  2437ms
+ ✓ __tests__/pe-first-integration.test.tsx (5 tests) 10577ms
+     ✓ preserves all 17 accepted sets and adds only complete continuation papers  765ms
+     ✓ keeps each accepted image byte-identical and all 2,975 choice reasons accessible  9300ms
+     ✓ shows an original-image question, grades it, exposes every reason, and restores its saved answer  348ms
+ ✓ __tests__/keiryoshi-staging.test.ts (7 tests) 1942ms
+     ✓ batch1公開後: 通常の一覧・同期/非同期ローダー・ID指定から公開前データを取得させない  1531ms
+ ✓ __tests__/components/QuizPlayer.completion.test.tsx (3 tests) 1031ms
+     ✓ finishes three questions on a results screen without navigating home  622ms
+ ✓ __tests__/land72-integration.test.ts (4 tests) 106ms
+ ✓ __tests__/automotive-release.test.ts (4 tests) 2105ms
+     ✓ connects all 11 separate qualifications through eager and lazy registries  603ms
+     ✓ preserves accepted candidate bytes with matching receipt hashes and excludes unresolved originals  844ms
+     ✓ matches each official answer and retains all four explanations and required image bytes  441ms
+ ✓ __tests__/questions/soukan-two-rounds.test.ts (6 tests) 128ms
+stderr | __tests__/api/grading-fallback-alert.test.ts > notifyOpsOnce — 異常は届き、鳴りすぎない > Slack 送信が失敗しても throw しない（通知の都合で採点を壊さない）
+[slack] send failed
+
+ ✓ __tests__/api/grading-fallback-alert.test.ts (9 tests) 149ms
+ ✓ __tests__/api/answer-count.test.ts (1 test) 86ms
+ ✓ __tests__/monitoring/sentry-sdk-import.test.ts (1 test) 17680ms
+   ✓ loads the actual patched Sentry SDK and existing instrumentation without starting a client  17679ms
+ ✓ __tests__/merge-consultant-choice-drafts.test.ts (7 tests) 792ms
+ ✓ __tests__/maritime2-integration.test.ts (8 tests) 1296ms
+     ✓ serves every original through both standard and shuffled API requests  475ms
+     ✓ shows the exact free past-paper scope and190 originals at home  512ms
+ ✓ __tests__/native166-entrypoints.test.tsx (12 tests) 1396ms
+     ✓ maritime3 keeps its heading and navigation on topic  461ms
+     ✓ land-special2 keeps its heading and navigation on topic  465ms
+     ✓ land-special3 keeps its heading and navigation on topic  337ms
+ ✓ __tests__/seo/question-sequential-nav.test.ts (7 tests) 1136ms
+     ✓ サンプル各回の prev/next は全て実在する問題ページへ解決する  1017ms
+ ✓ __tests__/navigation/no-dead-internal-links.test.ts (6 tests) 518ms
+ ✓ __tests__/data/success-stories-index.test.ts (18 tests) 1140ms
+     ✓ rendered related essay links require public supply and preserve qualification recovery  992ms
+ ✓ __tests__/seo/question-canonical.test.ts (6 tests) 821ms
+     ✓ lists every representative and no exact-duplicate alias in the sitemap pool  791ms
+ ✓ __tests__/questions/st-q23-note-entry.test.tsx (4 tests) 734ms
+     ✓ offers one explicitly non-scoring entry beside the ordinary quiz entry  319ms
+ ✓ __tests__/native338-entrypoints.test.tsx (6 tests) 1336ms
+     ✓ serves the selected qualification in year/topic/stream instead of AP  644ms
+ ✓ __tests__/seo/adk-collection-indexing.test.ts (2 tests) 1131ms
+     ✓ keeps every category usable but advertises only collections of multiple explained questions  1120ms
+ ✓ __tests__/seo/qualification-study-guide-relevance.test.tsx (8 tests) 1154ms
+     ✓ omits misleading IPA fallback guides on kanri  329ms
+ ✓ __tests__/batch1-release.test.ts (1 test) 1377ms
+     ✓ matches sync, lazy, practice, URL and native paper coverage  1375ms
+ ✓ __tests__/exam-library-presentation.test.ts (6 tests) 713ms
+     ✓ has a complete source-matched transcription for every question and all five choices  695ms
+ ✓ __tests__/components/QuizPlayer.numeric.test.tsx (5 tests) 959ms
+     ✓ keeps an unfilled original ungraded and blocks a partially numeric input  318ms
+ ✓ __tests__/components/TotalAnswerCounter.zero.test.tsx (10 tests) 450ms
+ ✓ __tests__/questions/kyusui-staging.test.ts (10 tests | 2 skipped) 2414ms
+     ✓ retains every source document and image with hashes and PDF-region provenance  1721ms
+     ✓ batch1公開後: replaces permission-pending with staging and stays outside all public question pools and navigation  623ms
+ ✓ __tests__/components/QuizPlayer.decimal.test.tsx (3 tests) 545ms
+ ✓ __tests__/components/ReviewClient.context.test.tsx (8 tests) 437ms
+ ✓ __tests__/questions/riku-tech2-mc-consumer-regression.test.tsx (5 tests) 406ms
+     ✓ connects every preserved official answer URL to the standard field and real explanation link  331ms
+ ✓ __tests__/pages/transparency-public-counts.test.tsx (2 tests) 969ms
+     ✓ renders the same published counts as the actual home page  863ms
+ ✓ __tests__/automotive-drafts.test.ts (6 tests) 110ms
+ ✓ __tests__/mobile/paper-history-restore.test.tsx (8 tests) 2117ms
+   ✓ restores 11 answers with 0 daily grants used and save=false, without bulk body grants  454ms
+ ✓ __tests__/questions/official-2025-spring-corrections.test.ts (6 tests) 688ms
+     ✓ sc matches all 30 official keys and restores missing material  311ms
+ ✓ __tests__/chusho-secondary-latest-two.test.tsx (6 tests) 1109ms
+     ✓ indexes all 42 paths and gives the native exam a working homepage link  631ms
+     ✓ distinguishes editorial secondary examples from official answer material in the qualification directory  392ms
+ ✓ __tests__/kisho-private-reader.test.tsx (7 tests) 466ms
+     ✓ navigates all 78 items, grades academic answers, and saves practical drafts  426ms
+ ✓ __tests__/questions/kankoji1-staging.test.tsx (10 tests) 716ms
+     ✓ 訂正後も1を含まない二肢は不正解、1を含む二肢は正解  316ms
+ ✓ __tests__/batch2-release.test.ts (3 tests) 872ms
+     ✓ connects complete reviewed scopes through eager/lazy/search/home/sitemap and distinct routes  757ms
+ ✓ __tests__/exam-library-choice-fallback.test.ts (2 tests) 205ms
+ ✓ __tests__/components/MockExamLanding.context.test.tsx (25 tests) 384ms
+ ✓ __tests__/safety-reviewed-repairs.test.ts (4 tests) 87ms
+ ✓ __tests__/seo/denken-year-archive-links.test.tsx (9 tests) 1139ms
+     ✓ denken3 links exactly its practice-ready years, with a return link  720ms
+ ✓ __tests__/components/lq5-study.test.tsx (4 tests) 817ms
+     ✓ 'biyoshi' scores the accepted original, reveals every reason and persists history  339ms
+ ✓ __tests__/questions/khk-kagaku-registration.test.ts (5 tests) 450ms
+ ✓ __tests__/api/study-presence.test.ts (25 tests) 245ms
+ ✓ __tests__/exam-library-integration.test.ts (5 tests) 504ms
+     ✓ requires every authored plain explanation to be substantive and preserves its answer-key snapshot  397ms
+ ✓ __tests__/seo/topic-link-href.test.ts (3 tests) 466ms
+ ✓ __tests__/questions/denken3-launch-data.test.ts (7 tests) 293ms
+ ✓ __tests__/dentist-latest-two.test.ts (4 tests) 4564ms
+     ✓ matches the original image ledger and verifies each public asset digest  4405ms
+ ✓ __tests__/storage/history-store.test.ts (18 tests) 900ms
+     ✓ record は 2000 件上限で最古を捨てる（localStorage 無限増殖を防ぐ不変条件）  891ms
+stderr | __tests__/components/SiteHeader.qualification-context.test.tsx > SiteHeader qualification context > keeps fp3 in desktop and mobile learning links and omits unsupported modes
+Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+
+stderr | __tests__/components/SiteHeader.qualification-context.test.tsx > SiteHeader qualification context > keeps shika-ishi in desktop and mobile learning links and omits unsupported modes
+Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+
+stderr | __tests__/components/SiteHeader.qualification-context.test.tsx > SiteHeader qualification context > keeps chosashi in desktop and mobile learning links and omits unsupported modes
+Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+
+ ✓ __tests__/components/SiteHeader.qualification-context.test.tsx (5 tests) 660ms
+     ✓ keeps fp3 in desktop and mobile learning links and omits unsupported modes  314ms
+ ✓ __tests__/questions/chizai2-learning-modes.test.tsx (8 tests) 364ms
+ ✓ __tests__/questions/sagyo-ot13-routes.test.tsx (5 tests) 807ms
+     ✓ resolves all 11 recovered routes on demand and keeps official exclusions unavailable  324ms
+ ✓ __tests__/denken3-native-originals.test.tsx (5 tests) 4580ms
+     ✓ matches and decodes all official page images, and indexes only GO routes  4186ms
+ ✓ __tests__/questions/hokenshi-latest-two.test.tsx (4 tests) 144ms
+ ✓ __tests__/kisho-study.test.tsx (5 tests) 974ms
+     ✓ 130公開画像の実体・ハッシュと全78問・237欄の参照が一致する  529ms
+ ✓ __tests__/components/HomeQualificationFinder.test.tsx (17 tests) 916ms
+ ✓ __tests__/lib/practice-session.test.ts (29 tests) 624ms
+     ✓ every exam index, question ID and named source PDF agrees with the stored session  492ms
+ ✓ __tests__/exam-question-player.test.tsx (19 tests) 1682ms
+ ✓ __tests__/components/tsushin2-study.test.tsx (3 tests) 740ms
+     ✓ 2025 Q1 answer → explanation → next → revisit retains ordinary history  458ms
+ ✓ __tests__/exam-library/subject-note-hub-integration.test.tsx (12 tests) 1213ms
+     ✓ cskohyo / 労働衛生関係法令 は恒久ハブ上に重複のない記事ラベルを表示する  705ms
+ ✓ __tests__/aviation68-integration.test.ts (9 tests) 825ms
+     ✓ registers exactly68 ready originals through eager/lazy/strict/home without changing the IPA-only list  403ms
+ ✓ __tests__/questions/kangoshi-am-q76-90.test.tsx (5 tests) 603ms
+     ✓ opens Q90 from its real year list as an unanswered quiz with the correct return target  318ms
+stdout | __tests__/api/simplified-grading-disclosure.test.ts > /api/scoring — 簡易判定の開示 > AI 応答が解析できないと gradingMode:'simplified' を返し、ログに残す
+[provider] model resolved tier=grading model=gemini-2.5-flash pricing=flash
+
+stdout | __tests__/api/simplified-grading-disclosure.test.ts > /api/scoring — 簡易判定の開示 > AI 応答が解析できないと gradingMode:'simplified' を返し、ログに残す
+[scoring] response received {
+  questionId: 'ap-2024h-pm-q1',
+  model: 'gemini-2.5-flash',
+  finishReason: undefined,
+  promptTokens: undefined,
+  outputTokens: undefined,
+  thoughtsTokens: undefined
+}
+
+stderr | __tests__/api/simplified-grading-disclosure.test.ts > /api/scoring — 簡易判定の開示 > AI 応答が解析できないと gradingMode:'simplified' を返し、ログに残す
+[slack] notification unavailable
+
+stdout | __tests__/api/simplified-grading-disclosure.test.ts > /api/scoring — 簡易判定の開示 > AI 採点が成立すれば gradingMode:'ai'
+[scoring] response received {
+  questionId: 'ap-2024h-pm-q1',
+  model: 'gemini-2.5-flash',
+  finishReason: undefined,
+  promptTokens: undefined,
+  outputTokens: undefined,
+  thoughtsTokens: undefined
+}
+
+stdout | __tests__/api/simplified-grading-disclosure.test.ts > /api/essay-grade — 簡易判定の開示 > AI 応答が解析できないと gradingMode:'simplified' + X-Grading-Mode を返し、ログに残す
+[essay-grade] response received {
+  questionId: 'au-2024a-pm2-q1',
+  model: 'gemini-2.5-flash',
+  finishReason: undefined,
+  promptTokens: undefined,
+  outputTokens: undefined,
+  thoughtsTokens: undefined
+}
+
+stderr | __tests__/api/simplified-grading-disclosure.test.ts > /api/essay-grade — 簡易判定の開示 > AI 応答が解析できないと gradingMode:'simplified' + X-Grading-Mode を返し、ログに残す
+[slack] notification unavailable
+
+stdout | __tests__/api/simplified-grading-disclosure.test.ts > /api/essay-grade — 簡易判定の開示 > AI 採点が成立すれば gradingMode:'ai' + X-Grading-Mode:'ai'
+[essay-grade] response received {
+  questionId: 'au-2024a-pm2-q1',
+  model: 'gemini-2.5-flash',
+  finishReason: undefined,
+  promptTokens: undefined,
+  outputTokens: undefined,
+  thoughtsTokens: undefined
+}
+
+ ✓ __tests__/api/simplified-grading-disclosure.test.ts (7 tests) 1492ms
+     ✓ AI 応答が解析できないと gradingMode:'simplified' を返し、ログに残す  1214ms
+ ✓ __tests__/billing/FeedbackUnlock.test.tsx (9 tests) 539ms
+ ✓ __tests__/seo/qualification-coverage-copy.test.tsx (6 tests) 814ms
+     ✓ includes both restored table questions in the current exercise count  795ms
+ ✓ __tests__/components/QuestionAnswerCard.test.tsx (17 tests) 632ms
+ ✓ __tests__/native235-entrypoints.test.tsx (10 tests) 1203ms
+ ✓ __tests__/aviation68-entrypoints.test.tsx (8 tests) 935ms
+     ✓ keeps aviation heading and navigation on topic for both subjects  371ms
+ ✓ __tests__/components/QuizPlayer.keyboard.test.tsx (8 tests) 754ms
+ ✓ __tests__/components/QuizPlayer.noteGuide.test.tsx (4 tests) 572ms
+ ✓ __tests__/study-reward-quiz.test.tsx (3 tests) 655ms
+     ✓ does not reward an all-blank native-B submission  322ms
+ ✓ __tests__/seo/streak-og-image.test.tsx (4 tests) 605ms
+     ✓ renders a PNG for promised day 7 with the expected 7-day label  495ms
+stderr | __tests__/components/MetricsDashboard.test.tsx > MetricsDashboard — カスタム期間 date input のアクセシブルネーム > 集計開始日 input がラベルで参照でき、date input である
+The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+
+stderr | __tests__/components/MetricsDashboard.test.tsx > MetricsDashboard — カスタム期間 date input のアクセシブルネーム > 集計終了日 input がラベルで参照でき、date input である
+The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+
+stderr | __tests__/components/MetricsDashboard.test.tsx > MetricsDashboard — 日次推移チャートの代替テキスト > 日次推移チャートが role=img と説明ラベルを持つ
+The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+
+ ✓ __tests__/components/MetricsDashboard.test.tsx (3 tests) 557ms
+ ✓ __tests__/billing/QuizClient.test.tsx (5 tests) 296ms
+ ✓ __tests__/sync/sync-ui.test.tsx (9 tests) 441ms
+ ✓ __tests__/questions/lab-rad-saved-batch1.test.tsx (6 tests) 519ms
+     ✓ rinsho-kensagishi: exposes correct names and partial coverage on the hub, static question and quiz card  331ms
+ ✓ __tests__/questions/shino-saved-go34-route.test.tsx (2 tests) 300ms
+ ✓ __tests__/denken1-native-originals.test.tsx (5 tests) 3854ms
+     ✓ has byte-identical, decodable official images and an exact native sitemap  3755ms
+ ✓ __tests__/components/ReviewClient.history.test.tsx (6 tests) 489ms
+stderr | __tests__/auth/app-review.test.ts > restricted review credentials > uses the production Auth.js CSRF flow, issues a real session and revokes it on disable
+[31m[auth][error][0m MissingCSRF: CSRF token was missing during an action callback. Read more at https://errors.authjs.dev#missingcsrf
+    at validateCSRF (file:///C:/Users/kanet/20260522/wt-batch2/node_modules/@auth/core/lib/actions/callback/oauth/csrf-token.js:38:11)
+    at AuthInternal (file:///C:/Users/kanet/20260522/wt-batch2/node_modules/@auth/core/lib/index.js:55:21)
+    at Auth (file:///C:/Users/kanet/20260522/wt-batch2/node_modules/@auth/core/index.js:111:34)
+    at C:/Users/kanet/20260522/wt-batch2/__tests__/auth/app-review.test.ts:137:22
+    at file:///C:/Users/kanet/20260522/wt-batch2/node_modules/@vitest/runner/dist/chunk-artifact.js:1903:20
+
+ ✓ __tests__/auth/app-review.test.ts (17 tests) 299ms
+ ✓ __tests__/validate-safety-exams-explanations.test.ts (4 tests) 2107ms
+     ✓ accepts a complete structured five-choice explanation without duplicate narrative text  1724ms
+ ✓ __tests__/components/StudyRoom-stages.test.tsx (11 tests) 255ms
+ ✓ __tests__/questions/kenchikushi1-staging.test.ts (11 tests) 688ms
+     ✓ publishes the approved projection and preserves staged originals  513ms
+ ✓ __tests__/questions/josanshi-latest-two.test.tsx (4 tests) 267ms
+ ✓ __tests__/pe-first-lq3d.test.tsx (1 test) 8345ms
+     ✓ binds every new question and all choice reasons to the official yearly key  8341ms
+ ✓ __tests__/denken2-native-originals.test.tsx (4 tests) 3704ms
+     ✓ has every source image byte-identical, decodable, and linked from native question routes  3620ms
+ ✓ __tests__/denken2-secondary-originals.test.tsx (6 tests) 3525ms
+     ✓ has all 59 rendered source pages byte-identical and decodable  3134ms
+ ✓ __tests__/validate-government-source-links.test.ts (2 tests) 192ms
+ ✓ __tests__/seo/year-common-title.test.ts (2 tests) 651ms
+     ✓ distinguishes each exam context without claiming specialist questions  646ms
+ ✓ __tests__/fp2-2026-may.test.ts (54 tests) 153ms
+ ✓ __tests__/billing/guest-client.test.ts (8 tests) 329ms
+stdout | __tests__/billing/coverage.test.ts > existing real content (not generated) > audits ap actual annual pools and per-choice coverage
+{"base":"0a79ccec11f30e0e8cbcea3e7bc660649101fdce","exam":"ap","ready":2354,"allChoiceReasons":0,"sessions":["am"],"years":[2009,2010,2011,2012,2013,2014,2015,2016,2017,2018,2019,2020,2021,2022,2023,2024,2025],"bySession":[{"session":"am","ready":2354,"allChoiceReasons":0}],"example":null}
+
+stdout | __tests__/billing/coverage.test.ts > existing real content (not generated) > audits st actual annual pools and per-choice coverage
+{"base":"0a79ccec11f30e0e8cbcea3e7bc660649101fdce","exam":"st","ready":817,"allChoiceReasons":459,"sessions":["am1","am2"],"years":[2009,2010,2011,2012,2013,2014,2015,2016,2017,2018,2019,2021,2022,2023,2024,2025],"bySession":[{"session":"am1","ready":418,"allChoiceReasons":60},{"session":"am2","ready":399,"allChoiceReasons":399}],"example":"st-2009a-am2-q1"}
+
+stdout | __tests__/billing/coverage.test.ts > existing real content (not generated) > audits fp2 actual annual pools and per-choice coverage
+{"base":"0a79ccec11f30e0e8cbcea3e7bc660649101fdce","exam":"fp2","ready":300,"allChoiceReasons":300,"sessions":["gakka"],"years":[2024,2025,2026],"bySession":[{"session":"gakka","ready":300,"allChoiceReasons":300}],"example":"fp2-2026-published-gakka-q1"}
+
+ ✓ __tests__/billing/coverage.test.ts (4 tests) 390ms
+ ✓ __tests__/questions/khk-kagaku-staging.test.ts (14 tests) 543ms
+ ✓ __tests__/kaigo-2025-official.test.tsx (7 tests) 133ms
+ ✓ __tests__/components/HistorySyncPanel-transitions.test.tsx (4 tests) 316ms
+ ✓ __tests__/components/EssayEditor.test.tsx (7 tests) 477ms
+ ✓ __tests__/survey-assistant-integration.test.tsx (3 tests) 360ms
+ ✓ __tests__/questions/medical44-prepublication.test.ts (5 tests) 537ms
+     ✓ keeps unresolved historical originals out while restoring independently checked additions  508ms
+ ✓ __tests__/questions/medical-question-labels.test.tsx (5 tests) 450ms
+     ✓ shows 保健師 in the Q45 breadcrumb, heading, badge, and quiz question card  392ms
+ ✓ __tests__/questions/kangoshi-pm115-q1-50.test.tsx (4 tests) 398ms
+     ✓ keeps AM/PM pools and same-number year links distinct  355ms
+ ✓ __tests__/dentist-integration.test.ts (3 tests) 691ms
+     ✓ advertises the same complete count and retains both dentist and main's new paper sessions  550ms
+ ✓ __tests__/questions/kangoshi-am49-next.test.tsx (4 tests) 461ms
+     ✓ opens Q107 from its original morning year list  346ms
+ ✓ __tests__/sssc-seishin27-official.test.ts (6 tests) 258ms
+ ✓ __tests__/questions/sharoushi-ippan-statistics.test.ts (2 tests) 762ms
+     ✓ 各年度の公式問1～3だけを科目別ルートに載せる  759ms
+ ✓ __tests__/questions/kangoshi114-next57.test.tsx (3 tests) 656ms
+     ✓ opens the real decimal PM90 from the year list without initial answer exposure or fake choices  587ms
+ ✓ __tests__/questions/kisho-learning-modes.test.tsx (3 tests) 516ms
+     ✓ retains all 60 academic originals through year and topic links  507ms
+ ✓ __tests__/components/QuizPlayer.descriptive.test.tsx (10 tests) 575ms
+ ✓ __tests__/questions/qualification-expansion.test.ts (1066 tests) 410ms
+stdout | __tests__/api/contact.test.ts > POST /api/contact > accepts a question-rating and forwards it to Slack
+{"tag":"kakomon-ai:inbound","kind":"question-rating","receivedAt":"2026-11-04T11:11:13.419Z","ipHash":"ip-gr87p2"}
+
+stdout | __tests__/api/contact.test.ts > POST /api/contact > forwards a feedback submission to Slack
+{"tag":"kakomon-ai:inbound","kind":"feedback","receivedAt":"2026-11-04T11:11:13.445Z","ipHash":"ip-gr87p2"}
+
+stderr | __tests__/api/contact.test.ts > POST /api/contact > forwards a feedback submission to Slack
+[feedback-token] AUTH_SECRET が未設定のため無料枠解除トークンを発行できません
+
+ ✓ __tests__/api/contact.test.ts (4 tests) 598ms
+     ✓ accepts a question-rating and forwards it to Slack  568ms
+ ✓ __tests__/components/QuizPlayer.detailLink.test.tsx (3 tests) 574ms
+     ✓ 'ip' link appears only after answering and preserves the original part  406ms
+ ✓ __tests__/rate-limit/ip-rate-limit.test.ts (18 tests) 42ms
+ ✓ __tests__/fp1-2026-may-addition.test.ts (6 tests) 387ms
+     ✓ resolves each new topic through the page and link consumers  362ms
+ ✓ __tests__/questions/denko1-publication.test.ts (108 tests) 274ms
+ ✓ __tests__/sssc-shakai-seishin-official.test.ts (6 tests) 198ms
+ ✓ __tests__/exam-library/subject-note-links.test.tsx (7 tests) 331ms
+     ✓ リンクがあれば見出しとアンカーを出し、無ければ何も出さない  322ms
+ ✓ __tests__/sync/history-ownership.test.ts (13 tests) 309ms
+ ✓ __tests__/mobile/qualification-actions.test.tsx (6 tests) 273ms
+ ✓ __tests__/components/TwoChoiceSelection.test.tsx (5 tests) 504ms
+ ✓ __tests__/seo/topics-no-needsreview.test.ts (2 tests) 293ms
+ ✓ __tests__/questions/qkensetsu-player.test.tsx (4 tests) 445ms
+ ✓ __tests__/questions/denken2-launch-data.test.ts (5 tests) 104ms
+ ✓ __tests__/components/QuizCompleteScreen.test.tsx (4 tests) 240ms
+ ✓ __tests__/questions/sagyo-ot13-recovered.test.ts (18 tests) 153ms
+ ✓ __tests__/billing/monthly-unknown-tax.test.ts (37 tests) 285ms
+ ✓ __tests__/components/SearchClient.continuity.test.tsx (2 tests) 211ms
+ ✓ __tests__/components/QuestionListWithFilter.test.tsx (3 tests) 264ms
+ ✓ __tests__/components/QuizPlayer.swipe.test.tsx (2 tests) 300ms
+ ✓ __tests__/rate-limit/feedback-token-sharing.test.ts (8 tests) 180ms
+ ✓ __tests__/components/AcceptedSelectionCount.test.tsx (3 tests) 368ms
+ ✓ __tests__/fp1-applied-q61-q65.test.tsx (8 tests) 308ms
+ ✓ __tests__/billing/monthly-ui.test.tsx (3 tests) 147ms
+ ✓ __tests__/questions/jken-system-latest-two.test.ts (5 tests) 249ms
+ ✓ __tests__/questions/live-qualification-coverage.test.ts (7 tests) 175ms
+ ✓ __tests__/fp1-applied-q52.test.tsx (3 tests) 198ms
+ ✓ __tests__/components/AfternoonResultView.test.tsx (3 tests) 111ms
+ ✓ __tests__/pwa/mobile-install.test.tsx (19 tests) 262ms
+ ✓ __tests__/questions/gyosei-latest2.test.tsx (7 tests) 324ms
+ ✓ __tests__/presence-hourly.test.tsx (8 tests) 120ms
+stderr | __tests__/components/SessionSummaryDialog.test.tsx > SessionSummaryDialog — シェア開閉ボタンの aria-expanded > 初期は aria-expanded='false'、クリックで 'true' に同期する
+Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+
+stderr | __tests__/components/SessionSummaryDialog.test.tsx > SessionSummaryDialog — ダイアログのアクセシブルネーム > role='dialog' が見出しテキストでアクセシブルネームを持つ
+Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+
+ ✓ __tests__/components/SessionSummaryDialog.test.tsx (2 tests) 132ms
+ ✓ __tests__/native166-integration.test.ts (5 tests) 90ms
+ ✓ __tests__/components/DailyChallengeClient.test.tsx (3 tests) 104ms
+ ✓ __tests__/questions/lq9-staging.test.ts (6 tests) 292ms
+ ✓ __tests__/billing/monthly-unallocated-refund.test.ts (20 tests) 106ms
+ ✓ __tests__/fp1-applied-q54-q60.test.tsx (9 tests) 283ms
+ ✓ __tests__/lib/home-directory.test.ts (11 tests) 272ms
+ ✓ __tests__/components/StudyPresence.test.tsx (14 tests) 90ms
+ ✓ __tests__/components/FeedbackGateModal.test.tsx (2 tests) 144ms
+ ✓ __tests__/billing/monthly-no-tax.test.ts (56 tests) 144ms
+ ✓ __tests__/components/TTSButton.lifecycle.test.tsx (9 tests) 160ms
+ ✓ __tests__/mobile/disabled-web-db.test.ts (1 test) 150ms
+ ✓ __tests__/questions/radiology-latest-two.test.ts (3 tests) 174ms
+Error: Not implemented: navigation (except hash changes)
+    at module.exports (C:\Users\kanet\20260522\wt-batch2\node_modules\jsdom\lib\jsdom\browser\not-implemented.js:9:17)
+    at navigateFetch (C:\Users\kanet\20260522\wt-batch2\node_modules\jsdom\lib\jsdom\living\window\navigation.js:77:3)
+    at exports.navigate (C:\Users\kanet\20260522\wt-batch2\node_modules\jsdom\lib\jsdom\living\window\navigation.js:55:3)
+    at Timeout._onTimeout (C:\Users\kanet\20260522\wt-batch2\node_modules\jsdom\lib\jsdom\living\nodes\HTMLHyperlinkElementUtils-impl.js:80:7)
+    at listOnTimeout (node:internal/timers:605:17)
+    at processTimers (node:internal/timers:541:7) undefined
+Error: Not implemented: navigation (except hash changes)
+    at module.exports (C:\Users\kanet\20260522\wt-batch2\node_modules\jsdom\lib\jsdom\browser\not-implemented.js:9:17)
+    at navigateFetch (C:\Users\kanet\20260522\wt-batch2\node_modules\jsdom\lib\jsdom\living\window\navigation.js:77:3)
+    at exports.navigate (C:\Users\kanet\20260522\wt-batch2\node_modules\jsdom\lib\jsdom\living\window\navigation.js:55:3)
+    at Timeout._onTimeout (C:\Users\kanet\20260522\wt-batch2\node_modules\jsdom\lib\jsdom\living\nodes\HTMLHyperlinkElementUtils-impl.js:80:7)
+    at listOnTimeout (node:internal/timers:605:17)
+    at processTimers (node:internal/timers:541:7) undefined
+Error: Not implemented: navigation (except hash changes)
+    at module.exports (C:\Users\kanet\20260522\wt-batch2\node_modules\jsdom\lib\jsdom\browser\not-implemented.js:9:17)
+    at navigateFetch (C:\Users\kanet\20260522\wt-batch2\node_modules\jsdom\lib\jsdom\living\window\navigation.js:77:3)
+    at exports.navigate (C:\Users\kanet\20260522\wt-batch2\node_modules\jsdom\lib\jsdom\living\window\navigation.js:55:3)
+    at Timeout._onTimeout (C:\Users\kanet\20260522\wt-batch2\node_modules\jsdom\lib\jsdom\living\nodes\HTMLHyperlinkElementUtils-impl.js:80:7)
+    at listOnTimeout (node:internal/timers:605:17)
+    at processTimers (node:internal/timers:541:7) undefined
+Error: Not implemented: navigation (except hash changes)
+    at module.exports (C:\Users\kanet\20260522\wt-batch2\node_modules\jsdom\lib\jsdom\browser\not-implemented.js:9:17)
+    at navigateFetch (C:\Users\kanet\20260522\wt-batch2\node_modules\jsdom\lib\jsdom\living\window\navigation.js:77:3)
+    at exports.navigate (C:\Users\kanet\20260522\wt-batch2\node_modules\jsdom\lib\jsdom\living\window\navigation.js:55:3)
+    at Timeout._onTimeout (C:\Users\kanet\20260522\wt-batch2\node_modules\jsdom\lib\jsdom\living\nodes\HTMLHyperlinkElementUtils-impl.js:80:7)
+    at listOnTimeout (node:internal/timers:605:17)
+    at processTimers (node:internal/timers:541:7) undefined
+ ✓ __tests__/components/NwNoteMaterialIndex.test.tsx (6 tests) 81ms
+ ✓ __tests__/components/khk-descriptive-self-assessment.test.tsx (1 test) 130ms
+ ✓ __tests__/questions/sharoushi-kokunen-late6.test.ts (4 tests) 283ms
+ ✓ __tests__/billing/monthly-cancel-at.test.ts (22 tests) 114ms
+ ✓ __tests__/sharoushi-sentaku.test.tsx (10 tests) 297ms
+ ✓ __tests__/questions/kisho-two-rounds.test.ts (4 tests) 264ms
+ ✓ __tests__/questions/hoikushi-round1.test.ts (7 tests) 100ms
+ ✓ __tests__/components/CopilotDesktopFloating.focus.test.tsx (4 tests) 152ms
+ ✓ __tests__/components/OrderingAnswer.test.tsx (4 tests) 538ms
+ ✓ __tests__/components/LearningCalendar.test.tsx (2 tests) 113ms
+ ✓ __tests__/rate-limit/server-concurrency.test.ts (11 tests) 141ms
+ ✓ __tests__/questions/judo-seifukushi-latest-two.test.ts (8 tests) 135ms
+ ✓ __tests__/components/dashboard-observed-record.test.tsx (4 tests) 165ms
+ ✓ __tests__/survey-assistant-candidate.test.ts (5 tests) 130ms
+ ✓ __tests__/components/QuizModeTabs.test.tsx (4 tests) 107ms
+ ✓ __tests__/questions/riyoshi-figures.test.tsx (2 tests) 94ms
+ ✓ __tests__/components/HistorySyncPanel.test.tsx (3 tests) 142ms
+ ✓ __tests__/study-reward.test.tsx (9 tests) 114ms
+ ✓ __tests__/study-reward-player.test.tsx (3 tests) 153ms
+ ✓ __tests__/components/answer-analytics-events.test.tsx (4 tests) 166ms
+ ✓ __tests__/components/AfternoonPlayer.test.tsx (7 tests) 203ms
+ ✓ __tests__/components/StudyPlanClient.test.tsx (3 tests) 97ms
+ ✓ __tests__/questions/sharoushi-post668-ready24.test.ts (2 tests) 239ms
+ ✓ __tests__/fp1-applied-extension.test.tsx (12 tests) 237ms
+ ✓ __tests__/questions/sharoushi-six-release.test.ts (3 tests) 258ms
+ ✓ __tests__/components/ExplanationCard.navigation.test.tsx (9 tests) 144ms
+ ✓ __tests__/fp1-applied-q51-page.test.tsx (2 tests) 214ms
+ ✓ __tests__/components/ChushoSecondaryAnswerPractice.test.tsx (2 tests) 144ms
+ ✓ __tests__/questions/energy-kanri-staging.test.ts (17 tests) 148ms
+ ✓ __tests__/billing/monthly-stripe.test.ts (19 tests) 118ms
+ ✓ __tests__/seo/topics-static-params.test.ts (2 tests) 178ms
+ ✓ __tests__/components/StudyRoom.test.tsx (5 tests) 231ms
+ ✓ __tests__/billing/QuizClient.quiet.test.tsx (4 tests) 113ms
+ ❯ __tests__/billing/feedback-purchase.test.tsx (6 tests | 1 failed) 146ms
+   ✓ tracks confirmation views by customers with feedback history (true), without claiming conversion 92ms
+   ✓ tracks confirmation views by customers with feedback history (false), without claiming conversion 20ms
+   × counts a view of a previously paid order after feedback and a new session as views only 14ms
+   ✓ does not count an unconfirmed order: {"entitled":false,"id":"order","status":"paid"} 6ms
+   ✓ does not count an unconfirmed order: {"entitled":true,"id":"other","status":"paid"} 5ms
+   ✓ does not count an unconfirmed order: {"entitled":true,"id":"order","status":"failed"} 8ms
+ ✓ __tests__/components/QuestionAnswerCard.decimal.test.tsx (3 tests) 140ms
+ ✓ __tests__/components/KeyboardShortcutsHelp.test.tsx (3 tests) 128ms
+ ✓ __tests__/questions/shinrishi-staging.test.ts (5 tests) 131ms
+ ✓ __tests__/jken-katsuyo.test.ts (10 tests) 147ms
+ ✓ __tests__/components/copy-live-region-extra.test.tsx (2 tests) 110ms
+ ✓ __tests__/components/QuestionAnswerCard.numeric.test.tsx (5 tests) 295ms
+ ✓ __tests__/questions/khk-kikai-staging.test.ts (9 tests) 165ms
+ ✓ __tests__/components/qualification-content-context.test.tsx (6 tests) 183ms
+ ✓ __tests__/billing/cancel-return.test.tsx (2 tests) 245ms
+ ✓ __tests__/components/DescriptiveAnswerCard.test.tsx (4 tests) 266ms
+ ✓ __tests__/lib/study-presence-store.test.ts (10 tests) 94ms
+ ✓ __tests__/civil2-2025-batch.test.ts (31 tests) 55ms
+ ✓ __tests__/pages/public-explanation-followup.test.tsx (5 tests) 147ms
+ ✓ __tests__/components/RankingClientChart.test.tsx (2 tests) 159ms
+ ✓ __tests__/components/grading-result-truth.test.tsx (4 tests) 104ms
+ ✓ __tests__/questions/pdl-public-connected.test.tsx (11 tests) 138ms
+ ✓ __tests__/exam-catalog-browser.test.tsx (2 tests) 164ms
+ ✓ __tests__/components/StreamQuizPlayer.keyboard.test.tsx (8 tests) 283ms
+ ✓ __tests__/merge-consultant-descriptive-drafts.test.ts (2 tests) 142ms
+ ✓ __tests__/billing/monthly-refund-candidate.test.ts (39 tests) 116ms
+ ✓ __tests__/components/NotificationSettings.test.tsx (5 tests) 174ms
+ ✓ __tests__/components/HomePracticeEntry.test.tsx (1 test) 136ms
+ ✓ __tests__/a11y/use-quiz-choice-roving.test.tsx (6 tests) 119ms
+ ✓ __tests__/api/study-presence.integration.test.ts (2 tests) 112ms
+ ✓ __tests__/lib/ipa-audit-corrections.test.ts (4 tests) 96ms
+ ✓ __tests__/questions/denki2-latest2.test.ts (6 tests) 85ms
+ ✓ __tests__/mobile/subscription-management.test.tsx (3 tests) 122ms
+ ✓ __tests__/components/DashboardProgress.test.tsx (1 test) 104ms
+ ✓ __tests__/billing/monthly-tax-shape.test.ts (24 tests) 125ms
+ ✓ __tests__/components/LearningHeatmap.test.tsx (1 test) 116ms
+ ✓ __tests__/components/ApiKeysClient.test.tsx (1 test) 112ms
+ ✓ __tests__/lib/google-account-linking.test.ts (2 tests) 97ms
+ ✓ __tests__/components/NumericAnswerInput.precision.test.tsx (3 tests) 172ms
+ ✓ __tests__/data/blog-worked-examples.test.ts (3 tests) 196ms
+ ✓ __tests__/questions/kashikin-two-rounds.test.ts (6 tests) 110ms
+ ✓ __tests__/questions/kanri-table-display.test.tsx (4 tests) 101ms
+ ✓ __tests__/seo/exam-meta-description.test.ts (12 tests) 181ms
+ ✓ __tests__/components/StudentIdUpload.test.tsx (2 tests) 97ms
+ ✓ __tests__/components/EssayIndustryTabs.test.tsx (2 tests) 96ms
+ ✓ __tests__/data/blog-index.test.ts (17 tests) 188ms
+ ✓ __tests__/questions/maritime1-registration.test.ts (4 tests) 87ms
+stdout | __tests__/ai/grading-model-tier.test.ts > resolveModel — grading 層（採点専用の上位モデル） > grading の既定は安全側の flash（env 未設定で pro に上がらない）
+[provider] model resolved tier=grading model=gemini-2.5-flash pricing=flash
+
+stdout | __tests__/ai/grading-model-tier.test.ts > resolveModel — grading 層（採点専用の上位モデル） > free/premium は従来どおり（採点以外のコスト効率を維持）
+[provider] model resolved tier=free model=gemini-2.5-flash-lite pricing=flash-lite
+[provider] model resolved tier=premium model=gemini-2.5-flash pricing=flash
+
+stderr | __tests__/ai/grading-model-tier.test.ts > resolveModel — env の想定外な値は安全側へ倒す > 単価表に無いモデル名（タイプミス）は採用せず既定へ倒す
+[provider] grading のモデル指定 "gemini-2.5-flsh" は単価表に無いため採用しません。既定の gemini-2.5-flash を使います。
+
+stderr | __tests__/ai/grading-model-tier.test.ts > resolveModel — env の想定外な値は安全側へ倒す > 単価不明の他社・未知モデルを指定されても採用しない
+[provider] grading のモデル指定 "gpt-4o" は単価表に無いため採用しません。既定の gemini-2.5-flash を使います。
+
+stderr | __tests__/ai/grading-model-tier.test.ts > resolveModel — env の想定外な値は安全側へ倒す > free / premium も同じ検証を通る（採点層だけの手当てにしない）
+[provider] premium のモデル指定 "not-a-real-model" は単価表に無いため採用しません。既定の gemini-2.5-flash を使います。
+
+stderr | __tests__/ai/grading-model-tier.test.ts > resolveModel — env の想定外な値は安全側へ倒す > 不変条件: resolveModel の戻り値は常に単価が確定できる
+[provider] grading のモデル指定 "gpt-4o" は単価表に無いため採用しません。既定の gemini-2.5-flash を使います。
+[provider] grading のモデル指定 "claude-opus" は単価表に無いため採用しません。既定の gemini-2.5-flash を使います。
+[provider] grading のモデル指定 "gemini-2.5-flsh" は単価表に無いため採用しません。既定の gemini-2.5-flash を使います。
+
+ ✓ __tests__/ai/grading-model-tier.test.ts (14 tests) 14ms
+ ✓ __tests__/fp1-applied-q53.test.tsx (3 tests) 202ms
+ ✓ __tests__/questions/sekou-1denki.test.ts (7 tests) 95ms
+ ✓ __tests__/questions/tsushin1-latest-two.test.ts (6 tests) 106ms
+ ✓ __tests__/components/TransparencyStatsCharts.test.tsx (2 tests) 71ms
+ ✓ __tests__/questions/mankan-two-rounds.test.ts (6 tests) 103ms
+ ✓ __tests__/components/HomeHeroImage-ssr-contract.test.tsx (1 test) 24ms
+ ✓ __tests__/questions/pharmacy-reviewed52.test.tsx (4 tests) 92ms
+ ✓ __tests__/components/ContactForm.test.tsx (2 tests) 129ms
+ ✓ __tests__/components/WeaknessHeatmapClient.test.tsx (1 test) 75ms
+ ✓ __tests__/questions/khk-reito-staging.test.ts (14 tests) 92ms
+ ✓ __tests__/reward-billing.integration.test.tsx (3 tests) 151ms
+ ✓ __tests__/db/studyrecord-unique.test.ts (2 tests) 9ms
+ ✓ __tests__/components/PostHogProvider.test.tsx (1 test) 86ms
+ ✓ __tests__/navigation/footer-bottomnav-links-resolve.test.ts (7 tests) 115ms
+ ✓ __tests__/components/share-copy-live-region.test.tsx (2 tests) 125ms
+ ✓ __tests__/questions/kangoshi-scope.test.ts (9 tests) 113ms
+ ✓ __tests__/components/AchievementToast.test.tsx (6 tests) 102ms
+ ✓ __tests__/security/sentry-boundary.test.ts (4 tests) 76ms
+ ✓ __tests__/components/ShareButtons.test.tsx (2 tests) 119ms
+ ✓ __tests__/components/InlineBookHint-amazon.test.tsx (4 tests) 141ms
+ ✓ __tests__/questions/ahaki-two-rounds.test.ts (3 tests) 140ms
+ ✓ __tests__/components/MarkdownTableScope.test.tsx (2 tests) 93ms
+ ✓ __tests__/questions/sekou-kenchiku2.test.ts (104 tests) 62ms
+ ✓ __tests__/lib/native-b.test.ts (12 tests) 65ms
+ ✓ __tests__/ads/native-consent.test.ts (29 tests) 92ms
+ ✓ __tests__/questions/hoshasen-staging.test.ts (8 tests) 92ms
+ ✓ __tests__/exam-library-source-links.test.tsx (2 tests) 64ms
+ ✓ __tests__/questions/shihoshoshi-staging.test.ts (5 tests) 110ms
+ ✓ __tests__/components/QuestionBody.test.tsx (6 tests) 127ms
+ ✓ __tests__/components/ContentEndAd.test.tsx (6 tests) 106ms
+ ✓ __tests__/components/BookmarkButton.test.tsx (2 tests) 84ms
+ ✓ __tests__/components/EmailLeadCapture.test.tsx (1 test) 110ms
+ ✓ __tests__/components/ScientificNumericAnswer.test.tsx (18 tests) 102ms
+ ✓ __tests__/billing/monthly-refund-http.test.ts (4 tests) 90ms
+ ✓ __tests__/questions/kangoshi-original-pm-figures.test.tsx (4 tests) 72ms
+ ✓ __tests__/seo/question-counts.test.ts (5 tests) 85ms
+ ✓ __tests__/questions/jokaso-latest-two.test.ts (4 tests) 66ms
+ ✓ __tests__/questions/explanation-consistency.test.ts (8 tests) 91ms
+ ✓ __tests__/billing/monthly-http.test.ts (5 tests) 53ms
+ ✓ __tests__/aviation48-integration.test.ts (4 tests) 54ms
+ ✓ __tests__/questions/kenki-staging.test.ts (6 tests) 126ms
+ ✓ __tests__/components/AfternoonEssayHint.test.tsx (3 tests) 79ms
+ ✓ __tests__/components/TrackedBookLink.test.tsx (4 tests) 89ms
+ ✓ __tests__/components/FireworksBurst.test.tsx (4 tests) 92ms
+ ✓ __tests__/components/HomeHeroImage.test.tsx (6 tests) 77ms
+ ✓ __tests__/questions/chizai2-two-rounds.test.ts (4 tests) 62ms
+ ✓ __tests__/questions/yamaguchi-shoku.test.ts (9 tests) 66ms
+ ✓ __tests__/components/ComboCounter.test.tsx (2 tests) 50ms
+ ✓ __tests__/billing/monthly-offer-display.test.tsx (7 tests) 37ms
+ ✓ __tests__/a11y/use-roving-radio.test.tsx (3 tests) 110ms
+ ✓ __tests__/questions/nurse-afternoon-nine-go.test.tsx (4 tests) 69ms
+ ✓ __tests__/components/TutorClient.test.tsx (1 test) 85ms
+ ✓ __tests__/components/FixedSignNumericAnswer.test.tsx (2 tests) 72ms
+ ✓ __tests__/mobile/cached-image.test.tsx (2 tests) 65ms
+ ✓ __tests__/components/BlogMarkdown-notice.test.tsx (3 tests) 48ms
+ ✓ __tests__/components/EmailSignInForm.test.tsx (2 tests) 80ms
+ ✓ __tests__/components/HomeFoundationKamokuB.test.tsx (2 tests) 54ms
+ ✓ __tests__/seo/essay-flagship-jsonld.test.ts (16 tests) 59ms
+ ✓ __tests__/questions/lq5-registry.test.ts (5 tests) 56ms
+ ✓ __tests__/admin/launch-monitoring-pageviews.test.ts (1 test) 24ms
+ ✓ __tests__/components/ExplanationLayers.test.tsx (7 tests) 60ms
+ ✓ __tests__/questions/rigaku-remaining141.test.ts (2 tests) 49ms
+Error: Not implemented: navigation (except hash changes)
+    at module.exports (C:\Users\kanet\20260522\wt-batch2\node_modules\jsdom\lib\jsdom\browser\not-implemented.js:9:17)
+    at navigateFetch (C:\Users\kanet\20260522\wt-batch2\node_modules\jsdom\lib\jsdom\living\window\navigation.js:77:3)
+    at exports.navigate (C:\Users\kanet\20260522\wt-batch2\node_modules\jsdom\lib\jsdom\living\window\navigation.js:55:3)
+    at Timeout._onTimeout (C:\Users\kanet\20260522\wt-batch2\node_modules\jsdom\lib\jsdom\living\nodes\HTMLHyperlinkElementUtils-impl.js:80:7)
+    at listOnTimeout (node:internal/timers:605:17)
+    at processTimers (node:internal/timers:541:7) undefined
+ ✓ __tests__/components/ExamNoteGuide.test.tsx (4 tests) 91ms
+ ✓ __tests__/copilot/answer-citation-integrity.test.tsx (7 tests) 116ms
+ ✓ __tests__/questions/sc-two-year-choice-explanations.test.ts (5 tests) 58ms
+ ✓ __tests__/mobile/native-gate.test.tsx (3 tests) 84ms
+ ✓ __tests__/billing/guest-claim-recovery.test.ts (26 tests) 40ms
+stdout | __tests__/ai/get-provider.test.ts > resolveModel（既定モデルは承認必須＝§9/§10） > free の既定は gemini-2.5-flash-lite
+[provider] model resolved tier=free model=gemini-2.5-flash-lite pricing=flash-lite
+
+stdout | __tests__/ai/get-provider.test.ts > resolveModel（既定モデルは承認必須＝§9/§10） > premium の既定は gemini-2.5-flash
+[provider] model resolved tier=premium model=gemini-2.5-flash pricing=flash
+
+stderr | __tests__/ai/get-provider.test.ts > resolveModel（既定モデルは承認必須＝§9/§10） > 単価表に無い名前では上書きできず既定に戻る（原価が黙って跳ねるのを防ぐ）
+[provider] free のモデル指定 "custom-free-model" は単価表に無いため採用しません。既定の gemini-2.5-flash-lite を使います。
+[provider] premium のモデル指定 "custom-premium-model" は単価表に無いため採用しません。既定の gemini-2.5-flash を使います。
+
+ ✓ __tests__/ai/get-provider.test.ts (12 tests) 42ms
+ ✓ __tests__/questions/nurse-pm-four-later.test.ts (3 tests) 30ms
+ ✓ __tests__/questions/shuwa.test.ts (4 tests) 43ms
+ ✓ __tests__/questions/nurse-pm-go9.test.ts (3 tests) 41ms
+ ✓ __tests__/components/KamokuBStudyHint.test.tsx (4 tests) 91ms
+ ✓ __tests__/components/HomeExamGrid.labelInName.test.tsx (1 test) 113ms
+ ✓ __tests__/questions/nurse-am7-followup.test.tsx (5 tests) 44ms
+ ✓ __tests__/billing/monthly-recovery-http.test.ts (2 tests) 59ms
+ ✓ __tests__/questions/sekou-1kenchiku-latest2.test.ts (6 tests) 60ms
+ ✓ __tests__/seo/blog-faq-jsonld.test.ts (6 tests) 55ms
+ ✓ __tests__/questions/nurse-pm-category-correction.test.ts (3 tests) 49ms
+ ✓ __tests__/questions/nurse-afternoon-figure-go.test.tsx (2 tests) 121ms
+ ✓ __tests__/components/TrackedNoteLink.test.tsx (5 tests) 56ms
+ ✓ __tests__/tohan-kansai-2025.test.ts (7 tests) 53ms
+ ✓ __tests__/questions/nurse-sharo-next-bundle.test.ts (2 tests) 297ms
+ ✓ __tests__/components/PracticeSessionTabs.test.tsx (3 tests) 62ms
+ ✓ __tests__/components/AfternoonResultView.score-scale.test.tsx (4 tests) 79ms
+ ✓ __tests__/questions/st-two-year-choice-explanations.test.ts (8 tests) 49ms
+ ✓ __tests__/api/essay-grade.test.ts (8 tests) 22ms
+ ✓ __tests__/fp1-applied-q51.test.ts (4 tests) 47ms
+ ✓ __tests__/questions/energy-kanri-registration.test.ts (3 tests) 47ms
+ ✓ __tests__/questions/ahaki-literal67.test.ts (3 tests) 33ms
+stderr | __tests__/components/StatsCharts.test.tsx > StatsCharts — データ可視化チャートの代替テキスト (WCAG 1.1.1) > ImpressionsTrendChart が role=img と説明ラベルを持つ
+The tag <stop> is unrecognized in this browser. If you meant to render a React component, start its name with an uppercase letter.
+<linearGradient /> is using incorrect casing. Use PascalCase for React components, or lowercase for HTML elements.
+The tag <linearGradient> is unrecognized in this browser. If you meant to render a React component, start its name with an uppercase letter.
+The tag <defs> is unrecognized in this browser. If you meant to render a React component, start its name with an uppercase letter.
+
+ ✓ __tests__/components/StatsCharts.test.tsx (4 tests) 57ms
+ ✓ __tests__/questions/lab71-safe7.test.ts (3 tests) 37ms
+ ✓ __tests__/fp2-two-year-coverage.test.ts (6 tests) 49ms
+ ✓ __tests__/lib/blog-related-questions.test.ts (7 tests) 63ms
+ ✓ __tests__/seo/nonblog-external-ipa-link-health.test.ts (7 tests) 67ms
+ ✓ __tests__/questions/jctc-first-wave.test.ts (7 tests) 51ms
+ ✓ __tests__/billing/guest-practice.test.ts (28 tests) 33ms
+ ✓ __tests__/kaigo-2024-official.test.tsx (5 tests) 25ms
+ ✓ __tests__/mobile/paper-results.test.ts (5 tests) 30ms
+ ✓ __tests__/fp2-2026-practical.test.ts (2 tests) 37ms
+ ✓ __tests__/mobile/auth.test.ts (12 tests) 44ms
+ ✓ __tests__/lib/exam-config-integrity.test.ts (6 tests) 36ms
+ ✓ __tests__/radio84-integration.test.ts (8 tests) 39ms
+ ✓ __tests__/questions/tsushin1-pilot.test.ts (4 tests) 57ms
+ ✓ __tests__/components/AfternoonGradingDemo.test.tsx (1 test) 37ms
+ ✓ __tests__/billing/billing-page.test.tsx (6 tests) 30ms
+ ✓ __tests__/questions/eisei1-two-publications.test.ts (4 tests) 37ms
+ ✓ __tests__/civil2-2026-completion.test.ts (4 tests) 26ms
+ ✓ __tests__/navigation/site-header-links-resolve.test.ts (2 tests) 32ms
+ ✓ __tests__/questions/shino-sagyo-pm-ready.test.ts (3 tests) 43ms
+ ✓ __tests__/mobile/native-quota.test.ts (5 tests) 37ms
+ ✓ __tests__/fp3-two-year-coverage.test.ts (3 tests) 18ms
+ ✓ __tests__/billing/webhook-state-integration.test.ts (8 tests) 32ms
+ ✓ __tests__/afternoon-content-integrity.test.ts (87 tests) 35ms
+ ✓ __tests__/security/budget-reservation.test.ts (3 tests) 34ms
+ ✓ __tests__/questions/nurse-afternoon-three-go.test.tsx (3 tests) 28ms
+ ✓ __tests__/questions/kangoshi-afternoon-go.test.tsx (3 tests) 25ms
+ ✓ __tests__/admin/exam-usage-fetch.test.ts (21 tests) 27ms
+ ✓ __tests__/seo/safety-qualification-hubs.test.ts (4 tests) 18ms
+ ✓ __tests__/questions/riyoshi-latest-two.test.ts (5 tests) 99ms
+ ✓ __tests__/civil1-2026-july.test.ts (5 tests) 30ms
+stdout | __tests__/api/grading-unavailable-contract.test.ts > essay evaluation contract > retains genuine content feedback
+[provider] model resolved tier=grading model=gemini-2.5-flash pricing=flash
+
+stdout | __tests__/api/grading-unavailable-contract.test.ts > essay evaluation contract > retains genuine content feedback
+[essay-grade] response received {
+  questionId: 'au-2024a-pm2-q1',
+  model: 'gemini-2.5-flash',
+  finishReason: undefined,
+  promptTokens: undefined,
+  outputTokens: undefined,
+  thoughtsTokens: undefined
+}
+
+stdout | __tests__/api/grading-unavailable-contract.test.ts > essay evaluation contract > invalid response is ungraded: not JSON
+[essay-grade] response received {
+  questionId: 'au-2024a-pm2-q1',
+  model: 'gemini-2.5-flash',
+  finishReason: undefined,
+  promptTokens: undefined,
+  outputTokens: undefined,
+  thoughtsTokens: undefined
+}
+
+stderr | __tests__/api/grading-unavailable-contract.test.ts > essay evaluation contract > invalid response is ungraded: not JSON
+[essay-grade] unavailable: AI応答の解析に失敗 {
+  questionId: 'au-2024a-pm2-q1',
+  provider: 'gemini',
+  model: 'gemini-2.5-flash',
+  rawChars: 8,
+  finishReason: undefined,
+  truncated: false,
+  outputTokens: undefined,
+  thoughtsTokens: undefined
+}
+
+stdout | __tests__/api/grading-unavailable-contract.test.ts > essay evaluation contract > invalid response is ungraded: {
+[essay-grade] response received {
+  questionId: 'au-2024a-pm2-q1',
+  model: 'gemini-2.5-flash',
+  finishReason: undefined,
+  promptTokens: undefined,
+  outputTokens: undefined,
+  thoughtsTokens: undefined
+}
+
+stderr | __tests__/api/grading-unavailable-contract.test.ts > essay evaluation contract > invalid response is ungraded: {
+[essay-grade] unavailable: AI応答の解析に失敗 {
+  questionId: 'au-2024a-pm2-q1',
+  provider: 'gemini',
+  model: 'gemini-2.5-flash',
+  rawChars: 1,
+  finishReason: undefined,
+  truncated: false,
+  outputTokens: undefined,
+  thoughtsTokens: undefined
+}
+
+stdout | __tests__/api/grading-unavailable-contract.test.ts > essay evaluation contract > invalid response is ungraded: {"subResults":[]}
+[essay-grade] response received {
+  questionId: 'au-2024a-pm2-q1',
+  model: 'gemini-2.5-flash',
+  finishReason: undefined,
+  promptTokens: undefined,
+  outputTokens: undefined,
+  thoughtsTokens: undefined
+}
+
+stderr | __tests__/api/grading-unavailable-contract.test.ts > essay evaluation contract > invalid response is ungraded: {"subResults":[]}
+[essay-grade] unavailable: AI応答の解析に失敗 {
+  questionId: 'au-2024a-pm2-q1',
+  provider: 'gemini',
+  model: 'gemini-2.5-flash',
+  rawChars: 17,
+  finishReason: undefined,
+  truncated: false,
+  outputTokens: undefined,
+  thoughtsTokens: undefined
+}
+
+stdout | __tests__/api/grading-unavailable-contract.test.ts > essay evaluation contract > invalid response is ungraded: {"rank":"B","passProbability":50,"subResults":[{"score":null}],"overallAdvice":"改善を確認","unnecessaryElements":[]}
+[essay-grade] response received {
+  questionId: 'au-2024a-pm2-q1',
+  model: 'gemini-2.5-flash',
+  finishReason: undefined,
+  promptTokens: undefined,
+  outputTokens: undefined,
+  thoughtsTokens: undefined
+}
+
+stderr | __tests__/api/grading-unavailable-contract.test.ts > essay evaluation contract > invalid response is ungraded: {"rank":"B","passProbability":50,"subResults":[{"score":null}],"overallAdvice":"改善を確認","unnecessaryElements":[]}
+[essay-grade] unavailable: AI応答の解析に失敗 {
+  questionId: 'au-2024a-pm2-q1',
+  provider: 'gemini',
+  model: 'gemini-2.5-flash',
+  rawChars: 112,
+  finishReason: undefined,
+  truncated: false,
+  outputTokens: undefined,
+  thoughtsTokens: undefined
+}
+
+stderr | __tests__/api/grading-unavailable-contract.test.ts > essay evaluation contract > provider failure cannot create a grade
+[essay-grade] provider request failed
+
+stdout | __tests__/api/grading-unavailable-contract.test.ts > essay evaluation contract > truncated output has an explicit unavailable state
+[essay-grade] response received {
+  questionId: 'au-2024a-pm2-q1',
+  model: 'gemini-2.5-flash',
+  finishReason: 'MAX_TOKENS',
+  promptTokens: undefined,
+  outputTokens: undefined,
+  thoughtsTokens: undefined
+}
+
+stderr | __tests__/api/grading-unavailable-contract.test.ts > essay evaluation contract > truncated output has an explicit unavailable state
+[essay-grade] unavailable: AI応答の解析に失敗 {
+  questionId: 'au-2024a-pm2-q1',
+  provider: 'gemini',
+  model: 'gemini-2.5-flash',
+  rawChars: 1,
+  finishReason: 'MAX_TOKENS',
+  truncated: true,
+  outputTokens: undefined,
+  thoughtsTokens: undefined
+}
+
+stdout | __tests__/api/grading-unavailable-contract.test.ts > afternoon evaluation contract > retains genuine content feedback
+[scoring] response received {
+  questionId: 'ap-2024h-pm-q1',
+  model: 'gemini-2.5-flash',
+  finishReason: undefined,
+  promptTokens: undefined,
+  outputTokens: undefined,
+  thoughtsTokens: undefined
+}
+
+stdout | __tests__/api/grading-unavailable-contract.test.ts > afternoon evaluation contract > invalid response is ungraded: not JSON
+[scoring] response received {
+  questionId: 'ap-2024h-pm-q1',
+  model: 'gemini-2.5-flash',
+  finishReason: undefined,
+  promptTokens: undefined,
+  outputTokens: undefined,
+  thoughtsTokens: undefined
+}
+
+stderr | __tests__/api/grading-unavailable-contract.test.ts > afternoon evaluation contract > invalid response is ungraded: not JSON
+[scoring] unavailable: AI応答の解析に失敗 {
+  questionId: 'ap-2024h-pm-q1',
+  provider: 'gemini',
+  model: 'gemini-2.5-flash',
+  rawChars: 8,
+  finishReason: undefined,
+  truncated: false,
+  outputTokens: undefined,
+  thoughtsTokens: undefined
+}
+
+stdout | __tests__/api/grading-unavailable-contract.test.ts > afternoon evaluation contract > invalid response is ungraded: {
+[scoring] response received {
+  questionId: 'ap-2024h-pm-q1',
+  model: 'gemini-2.5-flash',
+  finishReason: undefined,
+  promptTokens: undefined,
+  outputTokens: undefined,
+  thoughtsTokens: undefined
+}
+
+stderr | __tests__/api/grading-unavailable-contract.test.ts > afternoon evaluation contract > invalid response is ungraded: {
+[scoring] unavailable: AI応答の解析に失敗 {
+  questionId: 'ap-2024h-pm-q1',
+  provider: 'gemini',
+  model: 'gemini-2.5-flash',
+  rawChars: 1,
+  finishReason: undefined,
+  truncated: false,
+  outputTokens: undefined,
+  thoughtsTokens: undefined
+}
+
+stdout | __tests__/api/grading-unavailable-contract.test.ts > afternoon evaluation contract > invalid response is ungraded: {"subResults":[]}
+[scoring] response received {
+  questionId: 'ap-2024h-pm-q1',
+  model: 'gemini-2.5-flash',
+  finishReason: undefined,
+  promptTokens: undefined,
+  outputTokens: undefined,
+  thoughtsTokens: undefined
+}
+
+stderr | __tests__/api/grading-unavailable-contract.test.ts > afternoon evaluation contract > invalid response is ungraded: {"subResults":[]}
+[scoring] unavailable: AI応答の解析に失敗 {
+  questionId: 'ap-2024h-pm-q1',
+  provider: 'gemini',
+  model: 'gemini-2.5-flash',
+  rawChars: 17,
+  finishReason: undefined,
+  truncated: false,
+  outputTokens: undefined,
+  thoughtsTokens: undefined
+}
+
+stdout | __tests__/api/grading-unavailable-contract.test.ts > afternoon evaluation contract > invalid response is ungraded: {"totalScore":60,"subResults":[{"score":null}],"overallComment":"改善を確認"}
+[scoring] response received {
+  questionId: 'ap-2024h-pm-q1',
+  model: 'gemini-2.5-flash',
+  finishReason: undefined,
+  promptTokens: undefined,
+  outputTokens: undefined,
+  thoughtsTokens: undefined
+}
+
+stderr | __tests__/api/grading-unavailable-contract.test.ts > afternoon evaluation contract > invalid response is ungraded: {"totalScore":60,"subResults":[{"score":null}],"overallComment":"改善を確認"}
+[scoring] unavailable: AI応答の解析に失敗 {
+  questionId: 'ap-2024h-pm-q1',
+  provider: 'gemini',
+  model: 'gemini-2.5-flash',
+  rawChars: 72,
+  finishReason: undefined,
+  truncated: false,
+  outputTokens: undefined,
+  thoughtsTokens: undefined
+}
+
+stdout | __tests__/api/grading-unavailable-contract.test.ts > afternoon evaluation contract > truncated output has an explicit unavailable state
+[scoring] response received {
+  questionId: 'ap-2024h-pm-q1',
+  model: 'gemini-2.5-flash',
+  finishReason: 'MAX_TOKENS',
+  promptTokens: undefined,
+  outputTokens: undefined,
+  thoughtsTokens: undefined
+}
+
+stderr | __tests__/api/grading-unavailable-contract.test.ts > afternoon evaluation contract > truncated output has an explicit unavailable state
+[scoring] unavailable: AI応答の解析に失敗 {
+  questionId: 'ap-2024h-pm-q1',
+  provider: 'gemini',
+  model: 'gemini-2.5-flash',
+  rawChars: 1,
+  finishReason: 'MAX_TOKENS',
+  truncated: true,
+  outputTokens: undefined,
+  thoughtsTokens: undefined
+}
+
+stdout | __tests__/api/grading-unavailable-contract.test.ts > afternoon complete-response boundary > missing even one required label cannot create a grade
+[scoring] response received {
+  questionId: 'ap-2024h-pm-q1',
+  model: 'gemini-2.5-flash',
+  finishReason: undefined,
+  promptTokens: undefined,
+  outputTokens: undefined,
+  thoughtsTokens: undefined
+}
+
+stderr | __tests__/api/grading-unavailable-contract.test.ts > afternoon complete-response boundary > missing even one required label cannot create a grade
+[scoring] unavailable: AI応答の解析に失敗 {
+  questionId: 'ap-2024h-pm-q1',
+  provider: 'gemini',
+  model: 'gemini-2.5-flash',
+  rawChars: 261,
+  finishReason: undefined,
+  truncated: false,
+  outputTokens: undefined,
+  thoughtsTokens: undefined
+}
+
+ ✓ __tests__/api/grading-unavailable-contract.test.ts (15 tests) 29ms
+ ✓ __tests__/components/ExamSourceNotesCatalog.test.tsx (4 tests) 33ms
+ ✓ __tests__/ai/cost-guard.test.ts (7 tests) 32ms
+ ✓ __tests__/billing/finance.test.ts (15 tests) 25ms
+ ✓ __tests__/components/ChoiceButton.test.tsx (2 tests) 48ms
+ ✓ __tests__/api/numeric-v1-boundary.test.ts (18 tests) 22ms
+ ✓ __tests__/takken-2024-official.test.ts (3 tests) 22ms
+ ✓ __tests__/billing/monthly-unknown-tax-http.test.ts (3 tests) 39ms
+ ✓ __tests__/questions/chosashi-integrity.test.ts (5 tests) 144ms
+ ✓ __tests__/copilot/citation-meta.test.ts (9 tests) 40ms
+ ✓ __tests__/data/blog-generators.test.ts (244 tests) 40ms
+ ✓ __tests__/billing/monthly-practice-http.test.ts (6 tests) 34ms
+ ✓ __tests__/essays/load.test.ts (16 tests) 54ms
+ ✓ __tests__/questions/shino-sagyo-am-ready.test.ts (3 tests) 35ms
+ ✓ __tests__/sssc-shakai37-hold.test.ts (3 tests) 45ms
+ ✓ __tests__/takken-2025-official.test.ts (3 tests) 22ms
+ ✓ __tests__/billing/feedback-unlock.test.ts (13 tests) 21ms
+ ✓ __tests__/questions/gas-latest-two.test.ts (10 tests) 14ms
+ ✓ __tests__/questions/rinsho-kogishi-ready.test.ts (2 tests) 29ms
+ ✓ __tests__/questions/iji-shuzen.test.ts (3 tests) 30ms
+ ✓ __tests__/questions/nurse-pm-three-later.test.ts (3 tests) 37ms
+ ✓ __tests__/questions/nurse-pm-five-next.test.ts (4 tests) 22ms
+ ✓ __tests__/copilot/pinned-actions.test.ts (6 tests) 24ms
+ ✓ __tests__/billing/stripe.test.ts (13 tests) 34ms
+ ✓ __tests__/seo/question-jsonld.test.ts (14 tests) 33ms
+ ✓ __tests__/questions/sharoushi-later15.test.ts (4 tests) 44ms
+ ✓ __tests__/streak/practice-quiet.test.tsx (2 tests) 22ms
+ ✓ __tests__/auth/app-review-revocation.test.ts (7 tests) 20ms
+ ✓ __tests__/data/success-story-generators.test.ts (7 tests) 18ms
+ ✓ __tests__/middleware.test.ts (21 tests) 21ms
+ ✓ __tests__/billing/service.test.ts (22 tests) 15ms
+ ✓ __tests__/questions/nurse-pm4-followup.test.ts (3 tests) 26ms
+ ✓ __tests__/billing/guest-route.test.ts (5 tests) 21ms
+ ✓ __tests__/lib/success-stories-accessors.test.ts (10 tests) 21ms
+ ✓ __tests__/seo/fe-kamoku-b-trace-renshu-funnel.test.ts (7 tests) 13ms
+ ✓ __tests__/billing/monthly-service.test.ts (26 tests) 23ms
+stdout | __tests__/api/grading-truncation.test.ts > /api/scoring — thinking budget と打ち切り開示 > thinkingBudget と responseMimeType をプロバイダに渡す
+[provider] model resolved tier=grading model=gemini-2.5-flash pricing=flash
+
+stdout | __tests__/api/grading-truncation.test.ts > /api/scoring — thinking budget と打ち切り開示 > thinkingBudget と responseMimeType をプロバイダに渡す
+[scoring] response received {
+  questionId: 'ap-2024h-pm-q1',
+  model: 'gemini-2.5-flash',
+  finishReason: 'STOP',
+  promptTokens: 1975,
+  outputTokens: 632,
+  thoughtsTokens: undefined
+}
+
+stdout | __tests__/api/grading-truncation.test.ts > /api/scoring — thinking budget と打ち切り開示 > STOP で完走したら gradingMode は ai になる
+[scoring] response received {
+  questionId: 'ap-2024h-pm-q1',
+  model: 'gemini-2.5-flash',
+  finishReason: 'STOP',
+  promptTokens: 1975,
+  outputTokens: 632,
+  thoughtsTokens: undefined
+}
+
+stdout | __tests__/api/grading-truncation.test.ts > /api/scoring — thinking budget と打ち切り開示 > MAX_TOKENS で切れたら「出力上限で途中終了」と開示する
+[scoring] response received {
+  questionId: 'ap-2024h-pm-q1',
+  model: 'gemini-2.5-flash',
+  finishReason: 'MAX_TOKENS',
+  promptTokens: 1975,
+  outputTokens: 400,
+  thoughtsTokens: 1091
+}
+
+stderr | __tests__/api/grading-truncation.test.ts > /api/scoring — thinking budget と打ち切り開示 > MAX_TOKENS で切れたら「出力上限で途中終了」と開示する
+[scoring] unavailable: AI応答の解析に失敗 {
+  questionId: 'ap-2024h-pm-q1',
+  provider: 'gemini',
+  model: 'gemini-2.5-flash',
+  rawChars: 99,
+  finishReason: 'MAX_TOKENS',
+  truncated: true,
+  outputTokens: 400,
+  thoughtsTokens: 1091
+}
+
+stderr | __tests__/api/grading-truncation.test.ts > /api/scoring — thinking budget と打ち切り開示 > MAX_TOKENS で切れたら「出力上限で途中終了」と開示する
+[slack] notification unavailable
+
+stdout | __tests__/api/grading-truncation.test.ts > /api/scoring — thinking budget と打ち切り開示 > 思考トークンを出力トークンとして計上する
+[scoring] response received {
+  questionId: 'ap-2024h-pm-q1',
+  model: 'gemini-2.5-flash',
+  finishReason: 'MAX_TOKENS',
+  promptTokens: 1975,
+  outputTokens: 400,
+  thoughtsTokens: 1091
+}
+
+stderr | __tests__/api/grading-truncation.test.ts > /api/scoring — thinking budget と打ち切り開示 > 思考トークンを出力トークンとして計上する
+[scoring] unavailable: AI応答の解析に失敗 {
+  questionId: 'ap-2024h-pm-q1',
+  provider: 'gemini',
+  model: 'gemini-2.5-flash',
+  rawChars: 99,
+  finishReason: 'MAX_TOKENS',
+  truncated: true,
+  outputTokens: 400,
+  thoughtsTokens: 1091
+}
+
+stderr | __tests__/api/grading-truncation.test.ts > /api/scoring — thinking budget と打ち切り開示 > 思考トークンを出力トークンとして計上する
+[slack] notification unavailable
+
+stdout | __tests__/api/grading-truncation.test.ts > /api/essay-grade — thinking budget と打ち切り開示 > thinkingBudget と responseMimeType をプロバイダに渡す
+[essay-grade] response received {
+  questionId: 'pm-2024a-pm2-q1',
+  model: 'gemini-2.5-flash',
+  finishReason: 'STOP',
+  promptTokens: 1975,
+  outputTokens: 632,
+  thoughtsTokens: undefined
+}
+
+stderr | __tests__/api/grading-truncation.test.ts > /api/essay-grade — thinking budget と打ち切り開示 > thinkingBudget と responseMimeType をプロバイダに渡す
+[essay-grade] unavailable: AI応答の解析に失敗 {
+  questionId: 'pm-2024a-pm2-q1',
+  provider: 'gemini',
+  model: 'gemini-2.5-flash',
+  rawChars: 377,
+  finishReason: 'STOP',
+  truncated: false,
+  outputTokens: 632,
+  thoughtsTokens: undefined
+}
+
+stderr | __tests__/api/grading-truncation.test.ts > /api/essay-grade — thinking budget と打ち切り開示 > thinkingBudget と responseMimeType をプロバイダに渡す
+[slack] notification unavailable
+
+stdout | __tests__/api/grading-truncation.test.ts > /api/essay-grade — thinking budget と打ち切り開示 > MAX_TOKENS で切れたら simplified として開示する
+[essay-grade] response received {
+  questionId: 'pm-2024a-pm2-q1',
+  model: 'gemini-2.5-flash',
+  finishReason: 'MAX_TOKENS',
+  promptTokens: 1975,
+  outputTokens: 400,
+  thoughtsTokens: 1091
+}
+
+stderr | __tests__/api/grading-truncation.test.ts > /api/essay-grade — thinking budget と打ち切り開示 > MAX_TOKENS で切れたら simplified として開示する
+[essay-grade] unavailable: AI応答の解析に失敗 {
+  questionId: 'pm-2024a-pm2-q1',
+  provider: 'gemini',
+  model: 'gemini-2.5-flash',
+  rawChars: 99,
+  finishReason: 'MAX_TOKENS',
+  truncated: true,
+  outputTokens: 400,
+  thoughtsTokens: 1091
+}
+
+stderr | __tests__/api/grading-truncation.test.ts > /api/essay-grade — thinking budget と打ち切り開示 > MAX_TOKENS で切れたら simplified として開示する
+[slack] notification unavailable
+
+stdout | __tests__/api/grading-truncation.test.ts > /api/essay-grade — thinking budget と打ち切り開示 > 思考トークンを出力トークンとして計上する
+[essay-grade] response received {
+  questionId: 'pm-2024a-pm2-q1',
+  model: 'gemini-2.5-flash',
+  finishReason: 'MAX_TOKENS',
+  promptTokens: 1975,
+  outputTokens: 400,
+  thoughtsTokens: 1091
+}
+
+stderr | __tests__/api/grading-truncation.test.ts > /api/essay-grade — thinking budget と打ち切り開示 > 思考トークンを出力トークンとして計上する
+[essay-grade] unavailable: AI応答の解析に失敗 {
+  questionId: 'pm-2024a-pm2-q1',
+  provider: 'gemini',
+  model: 'gemini-2.5-flash',
+  rawChars: 99,
+  finishReason: 'MAX_TOKENS',
+  truncated: true,
+  outputTokens: 400,
+  thoughtsTokens: 1091
+}
+
+stderr | __tests__/api/grading-truncation.test.ts > /api/essay-grade — thinking budget と打ち切り開示 > 思考トークンを出力トークンとして計上する
+[slack] notification unavailable
+
+ ✓ __tests__/api/grading-truncation.test.ts (7 tests) 26ms
+ ✓ __tests__/questions/chintai-staging.test.ts (4 tests) 23ms
+ ✓ __tests__/lib/questions-load.test.ts (7 tests) 48ms
+ ✓ __tests__/billing/stripe-finance.test.ts (11 tests) 27ms
+ ✓ __tests__/fp1-2026-september-q36-q50-q61-q65.test.ts (5 tests) 18ms
+ ✓ __tests__/api/mock-exam-eligibility.test.ts (6 tests) 18ms
+ ✓ __tests__/lib/success-stories/related-content.test.ts (7 tests) 11ms
+ ✓ __tests__/api/scoring.test.ts (7 tests) 19ms
+ ✓ __tests__/seo/electrical-paper-metadata.test.ts (2 tests) 16ms
+ ✓ __tests__/essays/industry-corpus-integrity.test.ts (12 tests) 18ms
+ ✓ __tests__/stats/content-count.test.ts (8 tests) 26ms
+ ✓ __tests__/questions/eisei2-two-publications.test.ts (3 tests) 27ms
+ ✓ __tests__/questions/nurse-pm114-q107-primary.test.ts (3 tests) 28ms
+ ✓ __tests__/lib/achievements.test.ts (25 tests) 21ms
+ ✓ __tests__/study-plan/storage.test.ts (19 tests) 15ms
+ ✓ __tests__/lib/question-source-label.test.ts (18 tests) 29ms
+ ✓ __tests__/stats/gsc.test.ts (12 tests) 18ms
+ ✓ __tests__/questions/source-presentation.test.tsx (5 tests) 14ms
+ ✓ __tests__/billing/feedback-question.test.ts (4 tests) 16ms
+ ✓ __tests__/api/exam-library-copilot.test.ts (5 tests) 19ms
+ ✓ __tests__/billing/reconciliation.test.ts (5 tests) 17ms
+ ✓ __tests__/afternoon/load.test.ts (25 tests) 14ms
+ ✓ __tests__/constants/current-year.test.ts (5 tests) 15ms
+stdout | __tests__/api/contact-slack-after.test.ts > POST /api/contact — Slack 通知は after() で送る > レスポンスを返す時点では Slack を叩いていない（送信レイテンシを乗せない）
+{"tag":"kakomon-ai:inbound","kind":"feedback","receivedAt":"2026-11-04T11:13:33.952Z","ipHash":"ip-1hsg7yc"}
+
+stderr | __tests__/api/contact-slack-after.test.ts > POST /api/contact — Slack 通知は after() で送る > レスポンスを返す時点では Slack を叩いていない（送信レイテンシを乗せない）
+[feedback-token] AUTH_SECRET が未設定のため無料枠解除トークンを発行できません
+
+stdout | __tests__/api/contact-slack-after.test.ts > POST /api/contact — Slack 通知は after() で送る > after のコールバックが実際に Slack へ送る
+{"tag":"kakomon-ai:inbound","kind":"question-comment","receivedAt":"2026-11-04T11:13:33.956Z","ipHash":"ip-1hsg7yd"}
+
+stdout | __tests__/api/contact-slack-after.test.ts > POST /api/contact — Slack 通知は after() で送る > Slack が失敗しても問い合わせは受理済み（fail-open）
+{"tag":"kakomon-ai:inbound","kind":"feedback","receivedAt":"2026-11-04T11:13:33.957Z","ipHash":"ip-1hsg7ye"}
+
+stderr | __tests__/api/contact-slack-after.test.ts > POST /api/contact — Slack 通知は after() で送る > Slack が失敗しても問い合わせは受理済み（fail-open）
+[feedback-token] AUTH_SECRET が未設定のため無料枠解除トークンを発行できません
+
+stdout | __tests__/api/contact-slack-after.test.ts > POST /api/contact — Slack 通知は after() で送る > after() が使えない文脈でも 500 にせず通知を試みる（fail-open）
+{"tag":"kakomon-ai:inbound","kind":"feedback","receivedAt":"2026-11-04T11:13:33.958Z","ipHash":"ip-1hsg7yf"}
+
+stderr | __tests__/api/contact-slack-after.test.ts > POST /api/contact — Slack 通知は after() で送る > after() が使えない文脈でも 500 にせず通知を試みる（fail-open）
+[feedback-token] AUTH_SECRET が未設定のため無料枠解除トークンを発行できません
+
+ ✓ __tests__/api/contact-slack-after.test.ts (4 tests) 13ms
+ ✓ __tests__/seo/exam-data-invariants.test.ts (13 tests) 13ms
+ ✓ __tests__/auth/sync-account-boundary.test.ts (16 tests) 20ms
+ ✓ __tests__/auth/dependency-regression.test.ts (4 tests) 17ms
+ ✓ __tests__/seo/gogo-kaitourei-jiko-saiten-funnel.test.ts (6 tests) 11ms
+ ✓ __tests__/data/blog-editorial-evidence.test.ts (5 tests) 25ms
+ ✓ __tests__/seo/ipa-gozen1-menjo-jouken-funnel.test.ts (5 tests) 20ms
+ ✓ __tests__/monitoring/sentry.test.ts (5 tests) 21ms
+ ✓ __tests__/storage/bookmarks.test.ts (17 tests) 17ms
+ ✓ __tests__/scripts/audit-question-answer.test.ts (12 tests) 18ms
+ ✓ __tests__/lib/ipa-blank-choice-restoration.test.ts (6 tests) 19ms
+ ✓ __tests__/questions/ahaki-q156-release.test.ts (1 test) 15ms
+ ✓ __tests__/seo/sg-goukaku-ten-irt-funnel.test.ts (5 tests) 15ms
+ ✓ __tests__/questions/lab-rad-safe34.test.ts (3 tests) 23ms
+ ✓ __tests__/mobile/routes.test.ts (5 tests) 24ms
+ ✓ __tests__/data/blog-consolidation-followup.test.ts (5 tests) 14ms
+ ✓ __tests__/seo/koudo-goukaku-ten-ashikiri-funnel.test.ts (5 tests) 16ms
+ ✓ __tests__/exam-qualification-hubs.test.ts (5 tests) 13ms
+ ✓ __tests__/fp1-2026-may.test.ts (3 tests) 12ms
+ ✓ __tests__/seo/fe-kamoku-b-kakomon-funnel.test.ts (5 tests) 11ms
+ ✓ __tests__/billing/webhook.test.ts (4 tests) 17ms
+ ✓ __tests__/lib/study-plan-generator.test.ts (17 tests) 19ms
+ ✓ __tests__/questions/sharoushi-ten.test.ts (13 tests) 15ms
+ ✓ __tests__/seo/indexnow.test.ts (13 tests) 12ms
+ ✓ __tests__/seo/koudo-ronbun-hyouka-rank-funnel.test.ts (5 tests) 12ms
+ ✓ __tests__/seo/fe-kamoku-b-sort-trace-funnel.test.ts (7 tests) 15ms
+ ✓ __tests__/seo/fe-kamoku-a-menjo-funnel.test.ts (6 tests) 11ms
+ ✓ __tests__/lib/daily-challenge.test.ts (17 tests) 10ms
+ ✓ __tests__/exam-library-coverage.test.ts (4 tests) 14ms
+ ✓ __tests__/civil2-2025-source-map.test.ts (2 tests) 6ms
+stdout | __tests__/api/contact-feedback-unlock.test.ts > /api/contact — 無料枠解除トークンの発行 > feedback 投稿で HttpOnly な署名 Cookie を発行する
+{"tag":"kakomon-ai:inbound","kind":"feedback","receivedAt":"2026-11-04T11:13:43.158Z","ipHash":"ip-8hnxd4"}
+
+stdout | __tests__/api/contact-feedback-unlock.test.ts > /api/contact — 無料枠解除トークンの発行 > 発行された Cookie を積むと解除が認められる（往復の実接続）
+{"tag":"kakomon-ai:inbound","kind":"feedback","receivedAt":"2026-11-04T11:13:43.162Z","ipHash":"ip-8hnxd5"}
+
+stdout | __tests__/api/contact-feedback-unlock.test.ts > /api/contact — 無料枠解除トークンの発行 > feedback 以外の kind では解除 Cookie を発行しない
+{"tag":"kakomon-ai:inbound","kind":"question-comment","receivedAt":"2026-11-04T11:13:43.164Z","ipHash":"ip-8hnxd6"}
+
+stdout | __tests__/api/contact-feedback-unlock.test.ts > /api/contact — 無料枠解除トークンの発行 > feedback 以外の kind では解除 Cookie を発行しない
+{"tag":"kakomon-ai:inbound","kind":"contact","receivedAt":"2026-11-04T11:13:43.166Z","ipHash":"ip-8hnxd7"}
+
+ ✓ __tests__/api/contact-feedback-unlock.test.ts (3 tests) 14ms
+ ✓ __tests__/billing/health-isolation.test.ts (6 tests) 11ms
+ ✓ __tests__/seo/kamoku-goukaku-nai-funnel.test.ts (5 tests) 12ms
+ ✓ __tests__/lib/dashboard-analytics.test.ts (17 tests) 9ms
+ ✓ __tests__/seo/fe-kamoku-b-renketsu-list-funnel.test.ts (7 tests) 14ms
+ ✓ __tests__/fp2-evidence-ledger.test.ts (2 tests) 8ms
+ ✓ __tests__/seo/fe-kamoku-b-security-funnel.test.ts (6 tests) 18ms
+ ✓ __tests__/seo/exam-meta-grouping.test.ts (8 tests) 8ms
+ ✓ __tests__/questions/denken1-theory-q03.test.ts (2 tests) 17ms
+ ✓ __tests__/billing/signature.test.ts (2 tests) 5ms
+ ✓ __tests__/mobile/revenuecat.test.ts (7 tests) 10ms
+ ✓ __tests__/lib/blog-related-content.test.ts (8 tests) 15ms
+ ✓ __tests__/lib/turnstile.test.ts (6 tests) 10ms
+stderr | __tests__/rate-limit/server-helpers.test.ts > readFeedbackFlag — サーバ署名済み Cookie のみを根拠にする > AUTH_SECRET 未設定なら発行も検証もしない（fail-closed）
+[feedback-token] AUTH_SECRET が未設定のため無料枠解除トークンを発行できません
+
+ ✓ __tests__/rate-limit/server-helpers.test.ts (15 tests) 14ms
+ ✓ __tests__/sync/sync-all.test.ts (11 tests) 13ms
+ ✓ __tests__/seo/ipa-juken-shikaku-nenrei-funnel.test.ts (5 tests) 13ms
+ ✓ __tests__/seo/fe-kamoku-b-tree-trace-funnel.test.ts (7 tests) 16ms
+ ✓ __tests__/auth/history-sync-regression.test.ts (4 tests) 15ms
+ ✓ __tests__/lib/note-guides.test.ts (17 tests) 13ms
+ ✓ __tests__/seo/ap-benkyou-jikan-meyasu-funnel.test.ts (5 tests) 17ms
+ ✓ __tests__/lib/motivation-heatmap.test.ts (13 tests) 10ms
+ ✓ __tests__/seo/robots.test.ts (8 tests) 12ms
+ ✓ __tests__/billing/gate-off.test.ts (1 test) 12ms
+ ✓ __tests__/data/keywords.test.ts (17 tests) 15ms
+ ✓ __tests__/billing/preview-origin.test.ts (62 tests) 26ms
+ ✓ __tests__/seo/fe-kamoku-b-stack-queue-funnel.test.ts (7 tests) 16ms
+ ✓ __tests__/api/review-due-numeric.test.ts (3 tests) 14ms
+ ✓ __tests__/seo/cbt-toujitsu-nagare-funnel.test.ts (5 tests) 17ms
+ ✓ __tests__/seo/gogo-kijutsu-buhanten-funnel.test.ts (5 tests) 16ms
+ ✓ __tests__/exam-library-choice-explanations.test.ts (15 tests) 11ms
+ ✓ __tests__/seo/label-in-name-misc.test.ts (4 tests) 10ms
+stderr | __tests__/ai/cost-tracker-tier.test.ts > tierForModel — モデル ID から課金層を導出 > 未知モデル・未定義は最上位単価(pro)にフォールバックする
+[cost-tracker] unknown model "gemini-9.9-unknown" — pro 単価で計上します
+[cost-tracker] unknown model "undefined" — pro 単価で計上します
+[cost-tracker] unknown model "" — pro 単価で計上します
+
+stdout | __tests__/ai/cost-tracker-tier.test.ts > tierForModel — モデル ID から課金層を導出 > GEMINI_MODEL_GRADING 未設定なら既定は安全側で、pro 層へは上がらない
+[provider] model resolved tier=grading model=gemini-2.5-flash pricing=flash
+
+stdout | __tests__/ai/cost-tracker-tier.test.ts > tierForModel — モデル ID から課金層を導出 > resolveModel('free') の実戻り値は flash-lite 層のまま
+[provider] model resolved tier=free model=gemini-2.5-flash-lite pricing=flash-lite
+
+ ✓ __tests__/ai/cost-tracker-tier.test.ts (11 tests) 10ms
+ ✓ __tests__/seo/fe-kamoku-b-saiki-trace-funnel.test.ts (7 tests) 10ms
+ ✓ __tests__/billing/preview-config.test.ts (21 tests) 15ms
+ ✓ __tests__/lib/numeric-answers.test.ts (31 tests) 12ms
+ ✓ __tests__/security/email-boundary.test.ts (4 tests) 11ms
+ ✓ __tests__/seo/ipa-shiken-fukusuu-kubun-juken-funnel.test.ts (6 tests) 12ms
+ ✓ __tests__/seo/koudo-ronbun-jikan-haibun-funnel.test.ts (6 tests) 19ms
+ ✓ __tests__/seo/koudo-gozen1-taisaku-funnel.test.ts (6 tests) 17ms
+ ✓ __tests__/lib/study-presence.test.ts (9 tests) 17ms
+ ✓ __tests__/seo/fe-kamoku-b-gijigengo-kihou-funnel.test.ts (8 tests) 18ms
+ ✓ __tests__/lib/questions-filter.test.ts (21 tests) 15ms
+ ✓ __tests__/data/recommended-books.test.ts (24 tests) 12ms
+ ✓ __tests__/seo/fe-kamoku-b-nibun-tansaku-funnel.test.ts (7 tests) 13ms
+ ✓ __tests__/mobile/account-delete.test.ts (2 tests) 11ms
+ ✓ __tests__/seo/cbt-goukaku-happyou-funnel.test.ts (5 tests) 12ms
+ ✓ __tests__/questions/shino-sagyo-pm01-20-ready.test.ts (3 tests) 8ms
+ ✓ __tests__/mobile/entitlement.test.ts (4 tests) 17ms
+ ✓ __tests__/questions/fp3-2026-may-first-batch.test.ts (1 test) 10ms
+ ✓ __tests__/chat/storage.test.ts (11 tests) 9ms
+ ✓ __tests__/questions/rigaku-ready29.test.ts (2 tests) 16ms
+ ✓ __tests__/data/official-catalog-note-links.test.ts (6 tests) 11ms
+ ✓ __tests__/ai/gemini-thinking-config.test.ts (8 tests) 10ms
+ ✓ __tests__/copilot/retriever.test.ts (19 tests) 15ms
+ ✓ __tests__/kanri-2025-pilot.test.ts (2 tests) 11ms
+ ✓ __tests__/storage/coupon.test.ts (11 tests) 8ms
+ ✓ __tests__/seo/denko2-meta-context.test.ts (1 test) 18ms
+ ✓ __tests__/questions/kanri-two-publications.test.ts (3 tests) 10ms
+ ✓ __tests__/seo/sg-kamoku-b-jirei-mondai-funnel.test.ts (5 tests) 12ms
+ ✓ __tests__/lib/motivation-session.test.ts (19 tests) 11ms
+ ✓ __tests__/lib/xp-state.test.ts (12 tests) 10ms
+ ✓ __tests__/mobile/apple-delete.test.ts (2 tests) 6ms
+ ✓ __tests__/questions/hoikushi-release-scope.test.ts (2 tests) 6ms
+ ✓ __tests__/fp1-2026-september-q04-q20-ready.test.ts (4 tests) 7ms
+ ✓ __tests__/seo/blog-feed-xml.test.ts (10 tests) 20ms
+ ✓ __tests__/copilot/gemini-flash38.test.ts (2 tests) 8ms
+ ✓ __tests__/lib/xp-curve.test.ts (10 tests) 9ms
+ ✓ __tests__/lib/exam-config-pdf-url.test.ts (16 tests) 6ms
+ ✓ __tests__/billing/monthly-refund-copy.test.tsx (1 test) 8ms
+ ✓ __tests__/mobile/resume-page.test.tsx (2 tests) 6ms
+ ✓ __tests__/api/openapi.test.ts (7 tests) 7ms
+ ✓ __tests__/lib/metrics-range.test.ts (9 tests) 8ms
+ ✓ __tests__/data/faq.test.ts (7 tests) 8ms
+ ✓ __tests__/lib/essay-rate-limit.test.ts (7 tests) 5ms
+ ✓ __tests__/seo/hosuu-keisan-lp.test.ts (3 tests) 6ms
+ ✓ __tests__/lib/economy.test.ts (14 tests) 12ms
+ ✓ __tests__/seo/machi-gyoretsu-keisan-lp.test.ts (3 tests) 6ms
+ ✓ __tests__/seo/home-metadata.test.ts (6 tests) 5ms
+ ✓ __tests__/seo/essays-exam-soft-404.test.ts (7 tests) 5ms
+ ✓ __tests__/storage/essay-history.test.ts (11 tests) 12ms
+ ✓ __tests__/lib/posthog.test.ts (9 tests) 12ms
+ ✓ __tests__/copilot/related-topic.test.ts (7 tests) 6ms
+ ✓ __tests__/mobile/strict-service.test.ts (1 test) 7ms
+ ✓ __tests__/questions/explicit-pool.test.ts (9 tests) 5ms
+ ✓ __tests__/lib/motivation-share.test.ts (9 tests) 7ms
+ ✓ __tests__/sync/merge.test.ts (13 tests) 11ms
+ ✓ __tests__/billing/monthly-store.test.ts (4 tests) 9ms
+ ✓ __tests__/seo/cache-jikkou-access-lp.test.ts (3 tests) 5ms
+ ✓ __tests__/billing/finance-store.test.ts (2 tests) 5ms
+ ✓ __tests__/copilot/tokenize.test.ts (11 tests) 6ms
+ ✓ __tests__/auth/redirect.test.ts (14 tests) 5ms
+ ✓ __tests__/chat/export-markdown.test.ts (8 tests) 6ms
+ ✓ __tests__/lib/missions.test.ts (12 tests) 12ms
+ ✓ __tests__/seo/health-check-expectations.test.ts (7 tests) 8ms
+ ✓ __tests__/mobile/portable-storage.test.ts (9 tests) 13ms
+ ✓ __tests__/seo/blog-external-link-allowlist.test.ts (3 tests) 5ms
+ ✓ __tests__/billing/monthly-disclosure-config.test.ts (18 tests) 5ms
+ ✓ __tests__/lib/utils-cn.test.ts (7 tests) 9ms
+ ✓ __tests__/lib/decimal-answers.test.ts (29 tests) 8ms
+ ✓ __tests__/copilot/prompt-assembly.test.ts (15 tests) 14ms
+ ✓ __tests__/ai/characters.test.ts (9 tests) 4ms
+ ✓ __tests__/storage/last-question.test.ts (6 tests) 5ms
+ ✓ __tests__/ai/grading-scope-guard.test.ts (8 tests) 5ms
+ ✓ __tests__/storage/user-context.test.ts (4 tests) 5ms
+ ✓ __tests__/fp1-september-combined.test.ts (3 tests) 9ms
+ ✓ __tests__/lib/spaced-repetition.test.ts (10 tests) 9ms
+ ✓ __tests__/public-copy.test.ts (5 tests) 6ms
+ ✓ __tests__/lib/mock-scores.test.ts (4 tests) 4ms
+ ✓ __tests__/admin/funnel-fetch.test.ts (5 tests) 11ms
+ ✓ __tests__/questions/denken1-launch-data.test.ts (2 tests) 9ms
+ ✓ __tests__/stats/posthog.test.ts (10 tests) 10ms
+ ✓ __tests__/seo/gyoushu-essay-flagship-funnel.test.ts (6 tests) 4ms
+ ✓ __tests__/a11y/focus-trap.test.ts (12 tests) 4ms
+ ✓ __tests__/seo/fe-hub-kamoku-b-cta.test.ts (2 tests) 7ms
+ ✓ __tests__/security/nodemailer-compatibility.test.ts (1 test) 9ms
+ ✓ __tests__/copilot/streaming.test.ts (8 tests) 7ms
+ ✓ __tests__/lib/note-accounts.test.ts (5 tests) 9ms
+ ✓ __tests__/ai/stub-providers.test.ts (4 tests) 6ms
+ ✓ __tests__/fp1-2026-september-q01-q03.test.ts (2 tests) 7ms
+ ✓ __tests__/seo/structured-data.test.ts (6 tests) 6ms
+ ✓ __tests__/fp2-practical-choices.test.ts (2 tests) 10ms
+ ✓ __tests__/fp1-2026-september-applied-q51-q55.test.ts (2 tests) 8ms
+ ✓ __tests__/billing/monthly-practice-gate.test.ts (6 tests) 7ms
+ ✓ __tests__/seo/cpu-seinou-keisan-lp.test.ts (3 tests) 4ms
+ ✓ __tests__/lib/industry-labels.test.ts (4 tests) 5ms
+ ✓ __tests__/streak/storage.test.ts (12 tests) 11ms
+ ✓ __tests__/api-keys/storage.test.ts (11 tests) 13ms
+ ✓ __tests__/mobile/content-ssr.test.tsx (2 tests) 6ms
+ ✓ __tests__/admin/funnel-steps.test.ts (6 tests) 5ms
+ ✓ __tests__/api/rate-limit-key.test.ts (7 tests) 11ms
+ ✓ __tests__/seo/blog-quota-copy-sync.test.ts (2 tests) 4ms
+ ✓ __tests__/copilot/visibility.test.ts (5 tests) 4ms
+ ✓ __tests__/rate-limit/quota-client-behavior.test.ts (9 tests) 10ms
+ ✓ __tests__/sync/wrappers.test.ts (7 tests) 10ms
+ ✓ __tests__/storage/character.test.ts (7 tests) 7ms
+ ✓ __tests__/essay/grading-rubric.test.ts (9 tests) 7ms
+ ✓ __tests__/lib/exam-config-prompts.test.ts (6 tests) 4ms
+ ✓ __tests__/lib/study-presence-service.test.ts (6 tests) 8ms
+ ✓ __tests__/ai/response-length.test.ts (3 tests) 3ms
+ ✓ __tests__/seo/saishin-doukou-cbt-transition.test.ts (6 tests) 4ms
+ ✓ __tests__/lib/study-room.test.ts (2 tests) 6ms
+ ✓ __tests__/lib/motivation-badges.test.ts (12 tests) 10ms
+ ✓ __tests__/scripts/st-review-gate.test.ts (9 tests) 11ms
+ ✓ __tests__/seo/page-og-image.test.ts (3 tests) 6ms
+ ✓ __tests__/exam-library-model.test.ts (11 tests) 7ms
+ ✓ __tests__/storage/mock-exam-storage.test.ts (5 tests) 11ms
+ ✓ __tests__/seo/recommended-books-essay-flagship-cta.test.ts (6 tests) 5ms
+ ✓ __tests__/lib/slack-notify.test.ts (4 tests) 7ms
+ ✓ __tests__/exam-library-progress.test.ts (6 tests) 8ms
+ ✓ __tests__/admin/metrics-posthog-source.test.ts (2 tests) 4ms
+ ✓ __tests__/exam-library-session.test.ts (4 tests) 6ms
+ ✓ __tests__/components/CopilotPanel.aria.test.tsx (3 tests) 3ms
+ ✓ __tests__/mobile/ai-consent.test.ts (2 tests) 6ms
+ ✓ __tests__/blog/cbt-2026-application.test.ts (4 tests) 6ms
+ ✓ __tests__/seo/remote-juken-cbt-transition.test.ts (6 tests) 4ms
+ ✓ __tests__/storage/migrate-key.test.ts (6 tests) 6ms
+ ✓ __tests__/scripts/sc-review-gate.test.ts (9 tests) 4ms
+ ✓ __tests__/lib/streak-core.test.ts (15 tests) 13ms
+ ✓ __tests__/seo/success-stories-soft-404.test.ts (4 tests) 4ms
+ ✓ __tests__/seo/kakuritsu-kitaichi-keisan-lp.test.ts (3 tests) 3ms
+ ✓ __tests__/afternoon/public-route-boundary.test.ts (1 test) 4ms
+ ✓ __tests__/questions/chosashi-stream-route.test.ts (1 test) 5ms
+ ✓ __tests__/ai/prompts-context.test.ts (13 tests) 12ms
+ ✓ __tests__/seo/quiz-noindex.test.ts (5 tests) 5ms
+ ✓ __tests__/components/PublicStatsTableScope.test.tsx (2 tests) 4ms
+ ✓ __tests__/security/cron-boundary.test.ts (3 tests) 9ms
+ ✓ __tests__/onboarding/state.test.ts (13 tests) 10ms
+ ✓ __tests__/seo/topic-slug.test.ts (4 tests) 7ms
+ ✓ __tests__/mock-exam/session.test.ts (14 tests) 10ms
+ ✓ __tests__/questions/nurse-am114-q114-source.test.ts (2 tests) 6ms
+ ✓ __tests__/components/question-body-parse.test.ts (12 tests) 10ms
+ ✓ __tests__/seo/recommended-books-static-params.test.ts (3 tests) 3ms
+ ✓ __tests__/billing/live-config.test.ts (22 tests) 6ms
+ ✓ __tests__/lib/related-cross-exam.test.ts (11 tests) 6ms
+ ✓ __tests__/copilot/reranker.test.ts (20 tests) 8ms
+ ✓ __tests__/essays/audit-essay-conditions.test.ts (9 tests) 6ms
+ ✓ __tests__/questions/rigaku-literal-overlay9.test.ts (2 tests) 6ms
+ ✓ __tests__/seo/cbt-vs-pbt-koudo-cbt-transition.test.ts (5 tests) 3ms
+ ✓ __tests__/questions/fp3-q11-category.test.ts (3 tests) 7ms
+ ✓ __tests__/ci/adsense-csp.test.ts (1 test) 6ms
+ ✓ __tests__/seo/keyword-article-publisher.test.ts (4 tests) 6ms
+ ✓ __tests__/seo/keisanryou-order-lp.test.ts (3 tests) 3ms
+ ✓ __tests__/lib/learning-daysUntil.test.ts (6 tests) 4ms
+ ✓ __tests__/seo/goukaku-tsuchi-jiki-fe-cbt.test.ts (5 tests) 4ms
+ ✓ __tests__/seo/nendaibetsu-roadmap-reskilling.test.ts (4 tests) 5ms
+ ✓ __tests__/seo/recommended-books-anchor.test.ts (5 tests) 8ms
+ ✓ __tests__/billing/feedback-export.test.ts (2 tests) 7ms
+ ✓ __tests__/admin/launch-monitoring-alerts.test.ts (13 tests) 8ms
+ ✓ __tests__/seo/zenkubun-hikaku-shiken-jikan.test.ts (5 tests) 3ms
+ ✓ __tests__/billing/monthly-finance.test.ts (2 tests) 9ms
+ ✓ __tests__/lib/motivation-daily-goal.test.ts (12 tests) 10ms
+ ✓ __tests__/a11y/exam-browse-anchor.test.ts (4 tests) 3ms
+ ✓ __tests__/essays/sa-2024-reviewed-industry.test.ts (4 tests) 7ms
+ ✓ __tests__/seo/goukaku-shoumeisho-koufu-funnel.test.ts (6 tests) 5ms
+ ✓ __tests__/essay/grade-followup.test.ts (3 tests) 4ms
+ ✓ __tests__/billing/feedback-browser.test.ts (3 tests) 6ms
+ ✓ __tests__/data/features.test.ts (8 tests) 9ms
+ ✓ __tests__/seo/throughput-keisan-lp.test.ts (3 tests) 5ms
+ ✓ __tests__/blog/cbt-2026-exam-day.test.ts (4 tests) 6ms
+ ✓ __tests__/seo/ronri-enzan-keisan-lp.test.ts (3 tests) 5ms
+ ✓ __tests__/seo/blog-practice-cta.test.ts (7 tests) 5ms
+ ✓ __tests__/seo/question-url.test.ts (9 tests) 7ms
+ ✓ __tests__/a11y/settings-switch-accessible-name.test.ts (3 tests) 8ms
+ ✓ __tests__/study-plan/constants.test.ts (8 tests) 7ms
+ ✓ __tests__/essay/load.test.ts (10 tests) 7ms
+ ✓ __tests__/seo/question-meta.test.ts (7 tests) 8ms
+ ✓ __tests__/questions/civil2-2026-first-wave.test.ts (1 test) 6ms
+ ✓ __tests__/lib/motivation-combo.test.ts (9 tests) 6ms
+ ✓ __tests__/lib/utils-labels.test.ts (10 tests) 7ms
+ ✓ __tests__/seo/nonblog-internal-link-resolvability.test.ts (2 tests) 7ms
+ ✓ __tests__/seo/juken-tokubetsu-sochi-funnel.test.ts (6 tests) 7ms
+ ✓ __tests__/questions/fe2025-b-q2-explanation.test.ts (6 tests) 6ms
+ ✓ __tests__/lib/exam-naming-history.test.ts (10 tests) 8ms
+ ✓ __tests__/mobile/reference-assets.test.ts (1 test) 5ms
+ ✓ __tests__/lib/category-pool.test.ts (7 tests) 12ms
+ ✓ __tests__/exam-library-choices.test.ts (11 tests) 7ms
+ ✓ __tests__/billing/finance-snapshot.test.ts (4 tests) 7ms
+ ✓ __tests__/lib/study-presence-contract.test.ts (15 tests) 7ms
+ ✓ __tests__/blog/exam-format.test.ts (6 tests) 5ms
+ ✓ __tests__/lib/pii-masker.test.ts (15 tests) 5ms
+ ✓ __tests__/seo/exam-hub-essay-flagship-cta.test.ts (3 tests) 3ms
+ ✓ __tests__/components/RecommendedBooksTable.test.tsx (2 tests) 4ms
+ ✓ __tests__/lib/mock-exam-selection.test.ts (6 tests) 6ms
+ ✓ __tests__/questions/nurse-am-q99-primary-candidate.test.ts (3 tests) 6ms
+ ✓ __tests__/search/practice-url.test.ts (2 tests) 3ms
+ ✓ __tests__/ai/cost-tracker.test.ts (8 tests) 7ms
+ ✓ __tests__/lib/learning-analytics.test.ts (11 tests) 7ms
+ ✓ __tests__/lib/recommended-paths.test.ts (5 tests) 8ms
+ ✓ __tests__/seo/johoryo-huffman-keisan-lp.test.ts (3 tests) 6ms
+ ✓ __tests__/analytics/events.test.ts (5 tests) 6ms
+ ✓ __tests__/questions/medical-am3-ready.test.ts (2 tests) 7ms
+ ✓ __tests__/a11y/privacy-section-anchor.test.ts (3 tests) 4ms
+ ✓ __tests__/scripts/codegen-pdf-url-gate.test.ts (4 tests) 4ms
+ ✓ __tests__/billing/monthly-config.test.ts (9 tests) 6ms
+ ✓ __tests__/storage/feedback-unlock-migration.test.ts (5 tests) 6ms
+ ✓ __tests__/lib/questions-last-updated.test.ts (4 tests) 4ms
+ ✓ __tests__/mock-exam/config.test.ts (10 tests) 8ms
+ ✓ __tests__/seo/fukushousuten-gosa-keisan-lp.test.ts (3 tests) 8ms
+ ✓ __tests__/data/glossary.test.ts (4 tests) 8ms
+ ✓ __tests__/a11y/essay-result-scroll-margin.test.ts (1 test) 4ms
+ ✓ __tests__/exam-library-navigation.test.ts (3 tests) 4ms
+ ✓ __tests__/copilot/aliases.test.ts (9 tests) 7ms
+ ✓ __tests__/browser-api-fixtures.test.ts (2 tests) 5ms
+ ✓ __tests__/ai/learner-profile-client.test.ts (6 tests) 7ms
+ ✓ __tests__/data/ip-three-week-plan.test.ts (2 tests) 5ms
+ ✓ __tests__/storage/custom-tags.test.ts (5 tests) 5ms
+ ✓ __tests__/auth/redirect-page.test.tsx (4 tests) 9ms
+ ✓ __tests__/ci/stale-pr-alert.test.ts (5 tests) 4ms
+ ✓ __tests__/questions/zoen1-pilot.test.ts (3 tests) 7ms
+ ✓ __tests__/copilot/citations.test.ts (9 tests) 8ms
+ ✓ __tests__/navigation/redirects-no-chain.test.ts (2 tests) 4ms
+ ✓ __tests__/seo/ronjutsu-stub-essay-flagship-funnel.test.ts (6 tests) 6ms
+ ✓ __tests__/seo/footer-social-label-in-name.test.ts (2 tests) 3ms
+ ✓ __tests__/storage/settings.test.ts (6 tests) 4ms
+ ✓ __tests__/unit/exam-source-label.test.ts (3 tests) 5ms
+ ✓ __tests__/seo/afternoon-essay-flagship-funnel.test.ts (3 tests) 5ms
+ ✓ __tests__/storage/notifications.test.ts (5 tests) 7ms
+ ✓ __tests__/a11y/settings-anchor-scroll-margin.test.ts (2 tests) 4ms
+ ✓ __tests__/components/WhyKakomonAiTable.test.tsx (2 tests) 3ms
+ ✓ __tests__/ai/quick-actions-data.test.ts (4 tests) 5ms
+ ✓ __tests__/seo/exam-hub-org-provider.test.ts (3 tests) 5ms
+ ✓ __tests__/lib/tsugino-qualification.test.ts (3 tests) 4ms
+ ✓ __tests__/note-catalog.test.ts (2 tests) 4ms
+ ✓ __tests__/seo/ipa-title-dedup.test.ts (1 test) 4ms
+ ✓ __tests__/components/EssayResultView-rank-guide-link.test.ts (2 tests) 3ms
+ ✓ __tests__/navigation/learning-focus.test.ts (5 tests) 5ms
+ ✓ __tests__/seo/kadouritsu-keisan-lp.test.ts (3 tests) 6ms
+ ✓ __tests__/mobile/metadata.test.ts (2 tests) 4ms
+ ✓ __tests__/components/ReviewClient.dates.test.tsx (4 tests) 5ms
+ ✓ __tests__/seo/website-node.test.ts (3 tests) 5ms
+ ✓ __tests__/seo/moushikomi-mynumber-fe-cbt.test.ts (3 tests) 3ms
+ ✓ __tests__/seo/score-report-cbt-vs-pbt-funnel.test.ts (4 tests) 4ms
+ ✓ __tests__/seo/category-tips.test.ts (3 tests) 3ms
+ ✓ __tests__/a11y/student-anchor-scroll-margin.test.ts (1 test) 5ms
+ ✓ __tests__/a11y/settings-toast-live-region.test.ts (2 tests) 5ms
+ ✓ __tests__/search/recently-viewed.test.ts (2 tests) 6ms
+ ✓ __tests__/seo/keywords-index-inbound.test.ts (1 test) 4ms
+ ✓ __tests__/seo/not-found-flagship-link.test.ts (2 tests) 4ms
+ ✓ __tests__/a11y/q-explanation-scroll-margin.test.ts (2 tests) 4ms
+ ✓ __tests__/lib/accepted-answers.test.ts (1 test) 4ms
+ ✓ __tests__/rate-limit/quota-sync.test.ts (2 tests) 4ms
+ ✓ __tests__/mobile/essay-history-content.test.tsx (1 test) 5ms
+ ↓ __tests__/billing/feedback-postgres.test.ts (8 tests | 8 skipped)
+ ✓ __tests__/a11y/about-attribution-anchor.test.ts (2 tests) 3ms
+ ✓ __tests__/seo/exam-success-story-disclosure.test.ts (1 test) 5ms
+ ✓ __tests__/seo/blog-cta-label-in-name.test.ts (1 test) 4ms
+ ✓ __tests__/seo/faq-metadata.test.ts (1 test) 2ms
+ ✓ __tests__/dentist-display.test.ts (1 test) 3ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  __tests__/billing/feedback-purchase.test.tsx > counts a view of a previously paid order after feedback and a new session as views only
+AssertionError: expected last "vi.fn()" call to have been called with [ …(2) ]
+
+- Expected:
+[
+  "practice_feedback_customer_confirmation_viewed",
+  {
+    "billingModel": "pass",
+  },
+]
+
++ Received:
+undefined
+
+ ❯ __tests__/billing/feedback-purchase.test.tsx:26:19
+     24|   const first = render(<PurchaseStatus order="old-order" />);
+     25|   await screen.findByRole("heading", { name: "購入が完了しました" });
+     26|   expect(capture).toHaveBeenLastCalledWith("practice_feedback_customer…
+       |                   ^
+     27|   first.unmount(); sessionStorage.clear();
+     28|   render(<PurchaseStatus order="old-order" />);
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed | 769 passed | 1 skipped (771)
+      Tests  1 failed | 7871 passed | 10 skipped (7882)
+   Start at  20:07:14
+   Duration  467.56s (transform 353.19s, setup 168.83s, import 1237.03s, tests 422.64s, environment 789.22s)
+
+JSON report written to C:/Users/kanet/20260522/wt-batch2/reports/int5-20261104/validation/tests-verified-final.json
+ ELIFECYCLE  Test failed. See above for more details.

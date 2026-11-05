@@ -1,0 +1,18 @@
+{
+  "command": [
+    "corepack.cmd",
+    "pnpm",
+    "exec",
+    "vitest",
+    "run",
+    "__tests__/batch3-release.test.ts",
+    "__tests__/batch3-related-gate.test.ts",
+    "--maxWorkers=1",
+    "--reporter=verbose"
+  ],
+  "exitCode": 0,
+  "seconds": 16.96,
+  "log": "reports/int7-20261105/release-test-final.log",
+  "sha256": "913d56be5ad6859b55bbcf61f4858da3986b09aecb295d6bc3e4598b6ba33e6d",
+  "environment": "allowlisted OS variables only; CI=1, telemetry disabled, NODE_OPTIONS=4096; no service credentials or env files"
+}

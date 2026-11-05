@@ -41,6 +41,8 @@ function makeQuestion(): AfternoonQuestion {
 
 beforeEach(() => {
   cleanup();
+  // IOS1 added explicit Gemini consent; these grading UI tests run after consent.
+  localStorage.setItem("kakomon:ai-consent:20261103", "allowed");
 });
 
 afterEach(() => {

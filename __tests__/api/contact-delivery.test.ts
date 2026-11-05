@@ -1,0 +1,50 @@
+import { afterEach, beforeEach, expect, it, vi } from "vitest";
+import { POST } from "@/app/api/contact/route";
+vi.mock("@/lib/rate-limit/server", () => ({ checkRateLimit: async () => ({ ok: true }), getClientIp: () => "test", readFeedbackTokenInfo: () => ({ valid: false }) }));
+vi.mock("@/lib/turnstile", () => ({ verifyTurnstileToken: async () => ({ ok: true }) }));
+const request = (kind = "question-comment") => new Request("http://test/api/contact", { method: "POST", body: JSON.stringify(kind === "contact" ? { kind, category: "question", body: "private support text", email: "person@example.test" } : { kind, questionId: "ap-test", comment: "補足の内容" }) });
+beforeEach(() => {
+  vi.stubEnv("SLACK_WEBHOOK_URL", "https://hooks.slack.test/support");
+  vi.stubEnv("RESEND_API_KEY", ""); vi.stubEnv("CONTACT_NOTIFY_EMAIL", "");
+});
+afterEach(() => { vi.unstubAllGlobals(); vi.unstubAllEnvs(); vi.restoreAllMocks(); });
+it("waits for an acknowledged delivery and includes the receipt in both message and response", async () => {
+  let release!: (value: Response) => void;
+  const fetcher = vi.fn(() => new Promise<Response>(resolve => { release = resolve; }));
+  vi.stubGlobal("fetch", fetcher);
+  let settled = false;
+  const pending = POST(request()).then(response => { settled = true; return response; });
+  await vi.waitFor(() => expect(fetcher).toHaveBeenCalled());
+  expect(settled).toBe(false);
+  release(new Response("ok"));
+  const response = await pending;
+  const result = await response.json();
+  expect(response.status).toBe(200);
+  expect(result).toMatchObject({ delivery: "delivered", receiptId: expect.stringMatching(/^KG-/) });
+  expect(fetcher.mock.calls[0]).toBeDefined();
+  expect(JSON.stringify(fetcher.mock.calls)).toContain(result.receiptId);
+});
+it("returns 503 when unconfigured, rejected, or the network fails", async () => {
+  vi.stubEnv("SLACK_WEBHOOK_URL", "");
+  const fetcher = vi.fn().mockResolvedValue(new Response("no", { status: 500 }));
+  vi.stubGlobal("fetch", fetcher);
+  expect((await POST(request())).status).toBe(503);
+  expect(fetcher).not.toHaveBeenCalled();
+  vi.stubEnv("SLACK_WEBHOOK_URL", "https://hooks.slack.test/support");
+  expect((await POST(request())).status).toBe(503);
+  fetcher.mockRejectedValueOnce(new Error("network"));
+  expect((await POST(request())).status).toBe(503);
+});
+it("uses the existing mail fallback, checks its HTTP status, and never logs contact text", async () => {
+  vi.stubEnv("RESEND_API_KEY", "test"); vi.stubEnv("CONTACT_NOTIFY_EMAIL", "operator@example.test");
+  const log = vi.spyOn(console, "log").mockImplementation(() => {});
+  const fetcher = vi.fn().mockResolvedValueOnce(new Response("no", { status: 500 })).mockResolvedValueOnce(new Response("accepted"));
+  vi.stubGlobal("fetch", fetcher);
+  expect((await POST(request("contact"))).status).toBe(200);
+  expect(fetcher).toHaveBeenCalledTimes(2);
+  expect(fetcher.mock.calls[1][0]).toBe("https://api.resend.com/emails");
+  expect(fetcher.mock.calls[1][1].signal).toBeInstanceOf(AbortSignal);
+  expect(JSON.stringify(log.mock.calls)).not.toMatch(/private support text|person@example/);
+  fetcher.mockResolvedValue(new Response("rejected", { status: 403 }));
+  expect((await POST(request("contact"))).status).toBe(503);
+});

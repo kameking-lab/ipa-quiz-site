@@ -1,4 +1,6 @@
 "use client";
+import Link from "next/link";
+import { useNativeQuestionGrant, NativeAccessState } from "@/mobile/shared/NativeQuestionGate";
 
 import {
   useCallback,
@@ -20,13 +22,12 @@ import {
 } from "lucide-react";
 import { isExamReferenceOnly, excludeSurveyAssistantReferenceAnswers } from "@/lib/exam-library/survey-assistant-reference-policy";
 import { SurveyAssistantReferencePanel } from "@/components/exam-library/survey-assistant-reference-panel";
-import { TrackedNoteLink } from "@/components/analytics/TrackedNoteLink";
-import { deriveNoteAccountFromUrl } from "@/lib/note-accounts";
 import { posthogCapture } from "@/lib/posthog";
 import { findExamEntry } from "@/lib/exam-library-catalog";
 import { qualificationHubForEntry } from "@/lib/exam-qualification-hubs";
-import Image from "next/image";
-import answerFiguresJson from "@/data/exam-library/answer-figures.json";
+import { paperPlaceholder, type PaperQuestionIndex } from "@/mobile/shared/paper-index";
+import { answerFiguresFor } from "@/lib/learning-assets";
+import { AnswerFigureView } from "./answer-figure";
 import { ChihuahuaMascot } from "@/components/ChihuahuaMascot";
 import { StudyRewardCorner } from "@/components/home/StudyRewardCorner";
 import { recordStudyReward } from "@/lib/study-reward";
@@ -43,7 +44,6 @@ import {
   boilerAnswerPage,
   isScorableQuestion,
   officialPdfPageUrl,
-  type ExamNoteLink,
   type ExamQuestion,
   type ExamSourceMode,
 } from "@/lib/exam-library-model";
@@ -59,12 +59,8 @@ import {
   saveExamProgress,
   subscribeExamProgress,
   summarizeExamProgress,
-  wrongQuestionIds,
   type ExamSessionAnswers,
 } from "@/lib/exam-library-progress";
-
-type AnswerFigure = { src: string; alt: string; width: number; height: number; official?: boolean };
-const answerFigures: Record<string, AnswerFigure[]> = answerFiguresJson;
 
 interface ExamQuestionPlayerProps {
   initialQuestionId?: string;
@@ -75,13 +71,15 @@ interface ExamQuestionPlayerProps {
   sourceMode?: ExamSourceMode;
   indexUrl: string;
   questions: readonly ExamQuestion[];
-  /** 出典: ExamCatalogEntry.noteLinks。存在すれば解答後(submitted)のみ表示する。 */
-  noteLinks?: readonly ExamNoteLink[];
+  questionIndex?: readonly PaperQuestionIndex[];
+  resolveQuestion?: (id: string, signal: AbortSignal) => Promise<ExamQuestion>;
+  resolveResults?: (answers: {id:string;choice:number|null;proof?:string}[], signal:AbortSignal) => Promise<{id:string;choice:number|null;result:"correct"|"incorrect"|"unscored"}[]>;
 }
 
-type AnswerStatus = ReturnType<typeof answerResult>;
+type AnswerStatus = ReturnType<typeof answerResult> | "pending";
 
 const STATUS_LABEL: Record<AnswerStatus, string> = {
+  pending: "採点確認待ち",
   correct: "正解",
   incorrect: "不正解",
   unscored: "回答済み・採点なし",
@@ -89,6 +87,7 @@ const STATUS_LABEL: Record<AnswerStatus, string> = {
 };
 
 const STATUS_MARK: Record<AnswerStatus, string> = {
+  pending: "待",
   correct: "正",
   incorrect: "誤",
   unscored: "済",
@@ -96,6 +95,7 @@ const STATUS_MARK: Record<AnswerStatus, string> = {
 };
 
 const STATUS_CELL_CLASS: Record<AnswerStatus, string> = {
+  pending: "border-slate-400 bg-slate-50 text-slate-700",
   correct:
     "border-emerald-800 bg-emerald-50 text-emerald-950 dark:border-emerald-300 dark:bg-emerald-950/50 dark:text-emerald-50",
   incorrect:
@@ -144,9 +144,22 @@ export function ExamQuestionPlayer({
   pdfUrl,
   sourceMode = "official-pdf",
   indexUrl,
-  questions,
-  noteLinks,
+  questions: sourceQuestions,
+  questionIndex,
+  resolveQuestion,
+  resolveResults,
 }: ExamQuestionPlayerProps) {
+  // The paper's complete ID set owns progress; granted bodies are a separate cache.
+  const [granted, setGranted] = useState<Record<string, ExamQuestion>>({});
+  const grantedRef = useRef(granted);
+  const contentGeneration = useRef(0);
+  const [contentError, setContentError] = useState("");
+  const [contentAttempt, setContentAttempt] = useState(0);
+  const [reviewResults, setReviewResults] = useState<Record<string, {choice:number|null;result:"correct"|"incorrect"|"unscored"}>>({});
+  const [reviewError, setReviewError] = useState("");
+  const questions = useMemo(() => questionIndex
+    ? questionIndex.map(item => granted[item.id] ?? paperPlaceholder(item))
+    : sourceQuestions, [questionIndex, granted, sourceQuestions]);
   const practiceQuestions = useMemo(() => questions.filter(question => !isExamReferenceOnly(question)), [questions]);
   const allIds = useMemo(() => questions.map((question) => question.id), [questions]);
   const byId = useMemo(
@@ -156,6 +169,7 @@ export function ExamQuestionPlayer({
   const [answers, setAnswers] = useState<ExamSessionAnswers>({});
   const [roundIds, setRoundIds] = useState<string[]>(allIds);
   const [retryRound, setRetryRound] = useState(false);
+  const [pendingRetries, setPendingRetries] = useState<string[]>([]);
   const [index, setIndex] = useState(Math.max(0, allIds.indexOf(initialQuestionId ?? "")));
   const [view, setView] = useState<"question" | "summary">(initialView);
   const [draftChoice, setDraftChoice] = useState<number | null>(null);
@@ -166,6 +180,7 @@ export function ExamQuestionPlayer({
   const feedbackRef = useRef<HTMLHeadingElement>(null);
   const summaryRef = useRef<HTMLHeadingElement>(null);
   const tabRestoredRef = useRef(false);
+  const [tabRestoreReady, setTabRestoreReady] = useState(false);
   const firstChoiceRef = useRef<HTMLButtonElement>(null);
 
   // admin/exam-usage の資格別集計キー。ハブが未対応のカタログ項目は null のまま送る
@@ -194,17 +209,85 @@ export function ExamQuestionPlayer({
 
   const currentId = roundIds[index];
   const current = currentId ? byId.get(currentId) : undefined;
+  const nativePermission = useNativeQuestionGrant(resolveQuestion ? undefined : current?.id, examId);
   const currentAnswer = currentId ? answers[currentId] : undefined;
   const referenceOnly = Boolean(current && isExamReferenceOnly(current));
+  const startedExam = useRef<string | null>(null);
+  useEffect(() => {
+    if (!current || referenceOnly || view !== "question" || startedExam.current === examId) return;
+    startedExam.current = examId;
+    const entry = findExamEntry(examId);
+    posthogCapture("quiz_started", { exam: entry?.subject ?? examId, examId,
+      player: "exam_library", year: entry?.date.slice(0, 4), hubSlug, total: practiceQuestions.length });
+  }, [current, referenceOnly, view, examId, hubSlug, practiceQuestions.length]);
   const submitted = !referenceOnly && Boolean(currentAnswer?.submitted);
   const status: AnswerStatus = current ? answerResult(current, currentAnswer) : "unanswered";
-  const summary = useMemo(() => summarizeExamProgress(questions, answers), [answers, questions]);
-  const wrongIds = useMemo(() => wrongQuestionIds(questions, answers), [answers, questions]);
+  const resultFor = useCallback((question: ExamQuestion, source = answers): AnswerStatus => {
+    const answer = source[question.id];
+    if (!resolveQuestion || granted[question.id] || !answer?.submitted) return answerResult(question, answer);
+    const result = reviewResults[question.id];
+    return result && result.choice === answer.choice ? result.result : "pending";
+  }, [answers, granted, resolveQuestion, reviewResults]);
+  const summaryFor = useCallback((source: ExamSessionAnswers) => {
+    const next = {...summarizeExamProgress(questions, {}), pending:0};
+    if (questionIndex) next.scorable = questionIndex.filter(q=>q.scorable).length;
+    for (const question of practiceQuestions) {
+      const result = resultFor(question, source);
+      if (result !== "unanswered") { next.answered++; next[result]++; }
+    }
+    return next;
+  }, [questions, questionIndex, practiceQuestions, resultFor]);
+  const summary = summaryFor(answers);
+  const wrongIds = practiceQuestions.filter(q=>resultFor(q)==="incorrect").map(q=>q.id);
   const firstUnansweredIndex = allIds.findIndex((id) => !isExamReferenceOnly(byId.get(id)!) && !answers[id]?.submitted);
+
+  // Only an explicitly opened current body consumes the daily quota.
+  const neededIds = resolveQuestion && tabRestoreReady ? [...new Set([
+    ...(view === "question" && currentId ? [currentId] : []),
+  ])] : [];
+  const neededKey = neededIds.join("|");
+  const contentPending = neededIds.some(id=>!granted[id]);
+  useEffect(() => {
+    if (!resolveQuestion || !neededKey) return;
+    const controller = new AbortController();
+    const generation = contentGeneration.current;
+    setContentError("");
+    void Promise.all(neededKey.split("|").map(async id => {
+      if (grantedRef.current[id]) return;
+      const question = await resolveQuestion(id, controller.signal);
+      if (question.id !== id) throw new Error("問題の一致を確認できません。");
+      if (controller.signal.aborted || generation !== contentGeneration.current) return;
+      grantedRef.current = {...grantedRef.current, [id]:question};
+      setGranted(grantedRef.current);
+    })).catch(error => {if (!controller.signal.aborted) setContentError(error instanceof Error ? error.message : "利用枠を確認できません。");});
+    return () => controller.abort();
+  }, [neededKey, resolveQuestion, contentAttempt]);
+  const reviewKey = JSON.stringify(Object.entries(answers).filter(([id,a])=>a.submitted && !granted[id])
+    .map(([id,a])=>({id,choice:a.choice,...(a.reviewProof?{proof:a.reviewProof}:{})})));
+  useEffect(() => {
+    if (!resolveResults || reviewKey === "[]") return;
+    const controller = new AbortController();
+    setReviewError("");
+    void resolveResults(JSON.parse(reviewKey), controller.signal).then(rows => {
+      if (!controller.signal.aborted) {
+        setReviewResults(Object.fromEntries(rows.map(r=>[r.id,r])));
+        if (rows.length < JSON.parse(reviewKey).length) setReviewError("unverified_answers");
+      }
+    }).catch(error => {if (!controller.signal.aborted) setReviewError(error instanceof Error ? error.message : "結果を確認できません。");});
+    return () => controller.abort();
+  }, [reviewKey, resolveResults, contentAttempt]);
+  useEffect(() => {
+    if (!resolveQuestion) return;
+    const clear = () => {contentGeneration.current++;grantedRef.current={};setGranted({});setReviewResults({});setContentAttempt(n=>n+1);};
+    window.addEventListener("mobile:entitlement-changed", clear);
+    window.addEventListener("mobile:account-deleted", clear);
+    return () => {window.removeEventListener("mobile:entitlement-changed", clear);window.removeEventListener("mobile:account-deleted", clear);};
+  }, [resolveQuestion]);
 
   useEffect(() => {
     if (tabRestoredRef.current) return;
     tabRestoredRef.current = true;
+    setTabRestoreReady(true);
     const disk = getBrowserStorage();
     const diskProgress = disk ? parseExamProgress(readExamProgressRaw(disk, examId), examId, questions) : null;
     const progress = readExamTabProgress(examId, questions) ?? (initialView === "summary" ? diskProgress : null);
@@ -222,18 +305,19 @@ export function ExamQuestionPlayer({
     (next: ExamSessionAnswers, lastQuestionId: string | null) => {
       next = excludeSurveyAssistantReferenceAnswers(next);
       setAnswers(next);
-      writeExamTabProgress(createExamProgress(examId, next, lastQuestionId), questions, examTitle);
+      const nextSummary = summaryFor(next);
+      writeExamTabProgress(createExamProgress(examId, next, lastQuestionId), questions, examTitle, nextSummary);
       if (!saveEnabled) return;
       const storage = getBrowserStorage();
       const ok =
         storage !== null &&
-        saveExamProgress(storage, { ...createExamProgress(examId, next, lastQuestionId), summary: { ...summarizeExamProgress(questions, next), examTitle } });
+        saveExamProgress(storage, { ...createExamProgress(examId, next, lastQuestionId), summary: { ...nextSummary, examTitle } });
       if (!ok) {
         setSaveEnabled(false);
         setSaveStatus("端末への保存に失敗したため、保存をオフにしました。回答はこの画面では続けられます。");
       }
     },
-    [examId, examTitle, questions, saveEnabled],
+    [examId, examTitle, questions, saveEnabled, summaryFor],
   );
 
   const showQuestion = useCallback(
@@ -268,22 +352,22 @@ export function ExamQuestionPlayer({
 
   const selectChoice = useCallback(
     (choice: number) => {
-      if (!current || isExamReferenceOnly(current) || submitted || choice < 1 || choice > current.choiceCount) return;
+      if (!current || contentPending || isExamReferenceOnly(current) || submitted || choice < 1 || choice > current.choiceCount) return;
       const entry = findExamEntry(examId);
       recordStudyReward({ scope: `library:${examId}`, questionId: current.id, exam: entry ? `library:${entry.subject}` : "unknown", label: entry?.subject ?? "学習のひと休み" });
       setDraftChoice(choice);
       commit({
         ...answers,
-        [current.id]: { choice, memo: currentAnswer?.memo ?? "", submitted: true },
+        [current.id]: { choice, memo: currentAnswer?.memo ?? "", submitted: true, reviewProof: (current as ExamQuestion & {reviewProof?:string}).reviewProof },
       }, current.id);
       posthogCapture("exam_library_answered", { examId, hubSlug: hubSlug ?? undefined });
       focusLater(feedbackRef);
     },
-    [answers, commit, current, currentAnswer?.memo, examId, hubSlug, submitted],
+    [answers, commit, current, currentAnswer?.memo, examId, hubSlug, submitted, contentPending],
   );
 
   const submitAnswer = useCallback(() => {
-    if (!current || isExamReferenceOnly(current) || submitted) return;
+    if (!current || contentPending || isExamReferenceOnly(current) || submitted) return;
     if (current.choiceCount > 0 && draftChoice === null) {
       firstChoiceRef.current?.focus();
       return;
@@ -300,13 +384,14 @@ export function ExamQuestionPlayer({
           choice: current.choiceCount > 0 ? draftChoice : null,
           memo: currentAnswer?.memo ?? "",
           submitted: true,
+          reviewProof: (current as ExamQuestion & {reviewProof?:string}).reviewProof,
         },
       },
       current.id,
     );
     posthogCapture("exam_library_answered", { examId, hubSlug: hubSlug ?? undefined });
     focusLater(feedbackRef);
-  }, [answers, commit, current, currentAnswer?.memo, draftChoice, examId, hubSlug, submitted]);
+  }, [answers, commit, current, currentAnswer?.memo, draftChoice, examId, hubSlug, submitted, contentPending]);
 
   const retryCurrent = useCallback(() => {
     if (!current || isExamReferenceOnly(current)) return;
@@ -325,6 +410,7 @@ export function ExamQuestionPlayer({
           choice: currentAnswer?.choice ?? null,
           memo: value.slice(0, EXAM_PROGRESS_MEMO_MAX_LENGTH),
           submitted: currentAnswer?.submitted ?? false,
+          reviewProof: currentAnswer?.reviewProof,
         },
       },
       current.id,
@@ -332,6 +418,7 @@ export function ExamQuestionPlayer({
   };
 
   const startRound = (ids: string[], retry: boolean, source: ExamSessionAnswers, startIndex = 0) => {
+    if (!retry) setPendingRetries([]);
     setRoundIds(ids);
     setRetryRound(retry);
     showQuestion(startIndex, ids, source);
@@ -339,10 +426,20 @@ export function ExamQuestionPlayer({
 
   const retryWrong = () => {
     if (wrongIds.length === 0) return;
-    const next = resetAnswers(answers, wrongIds);
+    // A refused review body must not erase the learner's historical answers.
+    // Gated rounds clear each answer only after its body has been permitted.
+    const next = resolveQuestion ? answers : resetAnswers(answers, wrongIds);
+    setPendingRetries(resolveQuestion ? wrongIds : []);
     commit(next, wrongIds[0] ?? null);
     startRound(wrongIds, true, next);
   };
+
+  useEffect(() => {
+    if (!retryRound || view !== "question" || !currentId || !granted[currentId] || !pendingRetries.includes(currentId)) return;
+    commit(resetAnswers(answers, [currentId]), currentId);
+    setDraftChoice(null);
+    setPendingRetries(ids=>ids.filter(id=>id!==currentId));
+  }, [retryRound, view, currentId, granted, pendingRetries, answers, commit]);
 
   const continueUnanswered = () => {
     if (firstUnansweredIndex < 0) return;
@@ -365,7 +462,7 @@ export function ExamQuestionPlayer({
     const unanswered = allIds.findIndex((id) => !isExamReferenceOnly(byId.get(id)!) && !saved.answers[id]?.submitted);
     const startIndex = lastIndex >= 0 ? lastIndex : Math.max(unanswered, 0);
     setAnswers(saved.answers);
-    writeExamTabProgress(saved, questions, examTitle);
+    writeExamTabProgress(saved, questions, examTitle, summaryFor(saved.answers));
     setSaveEnabled(true);
     setRestoreHandled(true);
     setSaveStatus("保存した進捗を読み込みました。以降の回答もこの端末に保存します。");
@@ -437,6 +534,12 @@ export function ExamQuestionPlayer({
     return () => window.removeEventListener("keydown", onKeyDown);
   }, [current, moveNext, selectChoice, submitAnswer, submitted, view]);
 
+  if (!nativePermission.allowed) return <NativeAccessState permission={nativePermission}/>;
+  if (contentPending) return <section className="space-y-4" aria-live="polite">
+    {contentError ? <p role="alert">{contentError === "daily_limit" ? "本日の無料10問を使い切りました。日本時間0時に更新されます。" : contentError === "sign_in_required" ? "無料枠を端末間で共有するためログインが必要です。" : contentError}</p> : <p role="status">利用枠と回答済みの問題を確認しています…</p>}
+    {contentError && <><button type="button" onClick={()=>setContentAttempt(n=>n+1)}>再確認</button><p><a href={`/auth/signin?callbackUrl=${encodeURIComponent(`/e-learning/exams/${examId}?question=${currentId ?? ""}`)}`}>ログイン・本人確認</a> · <Link href="/billing">有料会員・購入復元</Link></p></>}
+    <nav className="flex flex-wrap gap-4"><button type="button" disabled={index<=0} onClick={()=>goTo(index-1)}>前の問題</button><button type="button" disabled={index>=roundIds.length-1} onClick={()=>goTo(index+1)}>次の問題</button><button type="button" onClick={showSummary}>結果を見る</button></nav>
+  </section>;
   if (questions.length === 0) return null;
 
   const scoredAnswered = summary.correct + summary.incorrect;
@@ -492,6 +595,7 @@ export function ExamQuestionPlayer({
             >
               {retryRound ? "解き直しの結果" : "結果と見直し"}
             </h2>
+            {summary.pending > 0 && <p role="status">{reviewError ? `${summary.pending}問の採点を確認できません。問題を開くと再確認できます。` : `${summary.pending}問の採点を確認しています。`}<button type="button" onClick={()=>setContentAttempt(n=>n+1)}>結果を再確認</button></p>}
             <dl className="mt-4 grid grid-cols-2 gap-3 sm:grid-cols-4">
               {[
                 ["回答", `${summary.answered}／${summary.total}問`],
@@ -509,7 +613,8 @@ export function ExamQuestionPlayer({
               ))}
             </dl>
             <p className="mt-3 text-sm font-bold leading-6">
-              {scoredAnswered > 0
+              {summary.pending > 0 ? "確認済みの回答だけを集計しています。"
+                : scoredAnswered > 0
                 ? `公式正答で採点した${scoredAnswered}問のうち${summary.correct}問が正解（${Math.round((summary.correct / scoredAnswered) * 100)}%）。`
                 : "公式正答で採点した問題はまだありません。"}
               {summary.scorable < summary.total
@@ -542,7 +647,7 @@ export function ExamQuestionPlayer({
             <ol className="mt-3 divide-y divide-slate-200 rounded-2xl border-2 border-slate-300 dark:divide-slate-700 dark:border-slate-600 forced-colors:border-[CanvasText]">
               {practiceQuestions.map((question) => {
                 const answer = answers[question.id];
-                const itemStatus = answerResult(question, answer);
+                const itemStatus = resultFor(question);
                 return (
                   <li
                     key={question.id}
@@ -751,16 +856,9 @@ export function ExamQuestionPlayer({
                       {sourcePage ? `（${sourcePage}ページ）` : ""}で確認できます。
                     </p>
                   )}
-                  {answerFigures[current.id]?.length ? (
+                  {answerFiguresFor(current).length ? (
                     <div className="mt-4 grid gap-4">
-                      {answerFigures[current.id]!.map((figure) => (
-                        <figure key={figure.src}>
-                          <a href={figure.src} target="_blank" rel="noopener noreferrer" aria-label={`${figure.alt}を拡大（新しいタブ）`}>
-                            <Image src={figure.src} alt={figure.alt} width={figure.width} height={figure.height} className="h-auto max-w-full rounded-lg bg-white" />
-                          </a>
-                          <figcaption className="mt-1 text-xs">{figure.alt}：{figure.official ? "公式の正答例から抜粋" : "模範解答用の模式図（独自作成）"}。図を押すと拡大できます。</figcaption>
-                        </figure>
-                      ))}
+                      {answerFiguresFor(current).map(figure => <AnswerFigureView key={figure.src} figure={figure}/>)}
                     </div>
                   ) : null}
                   <div className="mt-1 flex flex-wrap gap-x-4">
@@ -806,44 +904,6 @@ export function ExamQuestionPlayer({
                   </button>
                 ) : null}
 
-                {noteLinks && noteLinks.length > 0 ? (
-                  <div className="mt-4 border-t border-current/25 pt-3">
-                    <h4 className="font-semibold">関連する解説記事</h4>
-                    <ul className="mt-1 grid gap-1">
-                      {noteLinks.map((link) => {
-                        const account = deriveNoteAccountFromUrl(link.url);
-                        const linkBody = (
-                          <>
-                            {link.title}
-                            <span className="sr-only">（新しいタブで開きます）</span>
-                            <ExternalLink className="h-4 w-4 shrink-0" aria-hidden="true" />
-                          </>
-                        );
-                        return (
-                          <li key={link.url}>
-                            {link.kind ? (
-                              <span
-                                className="mr-1.5 inline-block rounded px-1.5 py-0.5 text-xs font-bold text-white forced-colors:border forced-colors:border-[CanvasText] forced-colors:bg-[Canvas] forced-colors:text-[CanvasText]"
-                                style={{ backgroundColor: link.kind === "free" ? "#0284c7" : "#a16207" }}
-                              >
-                                {link.kind === "free" ? "無料" : "有料"}
-                              </span>
-                            ) : null}
-                            {account ? (
-                              <TrackedNoteLink href={link.url} source="exam_library" account={account} target="_blank" rel="noopener noreferrer" className={linkClass}>
-                                {linkBody}
-                              </TrackedNoteLink>
-                            ) : (
-                              <a href={link.url} target="_blank" rel="noopener noreferrer" className={linkClass}>
-                                {linkBody}
-                              </a>
-                            )}
-                          </li>
-                        );
-                      })}
-                    </ul>
-                  </div>
-                ) : null}
               </div>
             ) : null}
 
@@ -888,7 +948,7 @@ export function ExamQuestionPlayer({
             {roundIds.map((id, position) => {
               const question = byId.get(id);
               if (!question) return null;
-              const cellStatus = answerResult(question, answers[id]);
+              const cellStatus = resultFor(question);
               const active = view === "question" && position === index;
               return (
                 <li key={id}>

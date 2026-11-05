@@ -79,7 +79,7 @@ function collectCategories(exam: ExamCode): string[] {
   return Array.from(set);
 }
 
-export function SchedulePlanner() {
+export function SchedulePlanner({ categoriesByExam }: { categoriesByExam?: Record<string, string[]> }) {
   const router = useRouter();
   const [step, setStep] = React.useState(1);
   const [exam, setExam] = React.useState<ExamCode>("ap");
@@ -90,7 +90,7 @@ export function SchedulePlanner() {
   const [weak, setWeak] = React.useState<Set<string>>(new Set());
   const [submitting, setSubmitting] = React.useState(false);
 
-  const categories = React.useMemo(() => collectCategories(exam), [exam]);
+  const categories = React.useMemo(() => categoriesByExam?.[exam] ?? collectCategories(exam), [exam, categoriesByExam]);
 
   React.useEffect(() => {
     setWeak(new Set());
@@ -122,7 +122,7 @@ export function SchedulePlanner() {
       weekendMinutes,
       weakCategories: Array.from(weak),
     };
-    const plan = generateStudyPlan(input);
+    const plan = generateStudyPlan(input, categories);
     savePlan(plan);
     router.push(`/study-plan/result/${plan.id}`);
   };

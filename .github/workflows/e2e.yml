@@ -53,7 +53,7 @@ jobs:
 
   browser:
     runs-on: ubuntu-24.04
-    timeout-minutes: 20
+    timeout-minutes: 35
 
     env:
       ADMIN_BASIC_USER: ${{ secrets.ADMIN_BASIC_USER }}

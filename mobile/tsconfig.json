@@ -1,0 +1,11 @@
+{
+  "compilerOptions": {
+    "target": "ES2022", "lib": ["ES2022", "DOM", "DOM.Iterable"],
+    "module": "ESNext", "moduleResolution": "Bundler", "jsx": "react-jsx",
+    "strict": true, "noEmit": true, "skipLibCheck": true,
+    "resolveJsonModule": true, "esModuleInterop": true,
+    "types": ["node", "vite/client"],
+    "paths": { "@/*": ["../*"], "react": ["../node_modules/@types/react"], "react/*": ["../node_modules/@types/react/*"] }
+  },
+  "include": ["src", "tests", "server", "shared", "../types/next-auth.d.ts", "scripts/*.ts", "*.ts"]
+}

@@ -1,0 +1,25 @@
+import assert from 'node:assert/strict';
+import fs from 'node:fs';
+import path from 'node:path';
+import { createHash } from 'node:crypto';
+import { execFileSync } from 'node:child_process';
+import { DB1_MIGRATIONS, pendingMigrations } from '../../scripts/vercel-migrate.mjs';
+
+const base = 'f95bd49d0a9affc4ad34795b94dc9d3f20ecf9eb';
+const incoming = '127be5504';
+const git = args => execFileSync('git', args, { maxBuffer: 32 * 1024 * 1024 });
+const paths = ['prisma', 'scripts/vercel-migrate.mjs', 'scripts/vercel-migrate.test.mjs', 'package.json', 'pnpm-lock.yaml'];
+assert.equal(git(['diff', base, '--', ...paths]).length, 0, 'Schema, migrations, gate and build command must stay unchanged');
+assert.equal(git(['diff', `${base}...${incoming}`, '--', ...paths]).length, 0, 'Incoming branch must have no DB or build-command changes');
+const files = fs.readdirSync('prisma/migrations', { withFileTypes: true }).filter(e => e.isDirectory()).map(e => ({ name: e.name, sql: fs.readFileSync(path.join('prisma/migrations', e.name, 'migration.sql'), 'utf8') })).sort((a, b) => a.name.localeCompare(b.name));
+const applied = file => ({ migration_name: file.name, checksum: createHash('sha256').update(file.sql).digest('hex'), finished_at: '2026-11-05', rolled_back_at: null });
+assert.deepEqual(pendingMigrations(files, files.map(applied)), []);
+assert.deepEqual(pendingMigrations(files, files.filter(f => !DB1_MIGRATIONS.includes(f.name)).map(applied)), DB1_MIGRATIONS);
+const missingFeedback = files.filter(f => !f.name.startsWith('20261103')).map(applied);
+assert.throws(() => pendingMigrations(files, missingFeedback), /Unexpected pending/);
+assert.throws(() => pendingMigrations([...files, { name: '20261105000000_unapproved_feedback_bonus', sql: 'SELECT 1;' }], files.map(applied)), /Unexpected pending/);
+const map = JSON.parse(fs.readFileSync('data/blog/practice-map.json', 'utf8'));
+assert.equal(Object.keys(map).length, 179);
+const receipt = { base, incoming: git(['rev-parse', incoming]).toString().trim(), unchanged: paths, migrationCount: files.length, schemaSha256: createHash('sha256').update(fs.readFileSync('prisma/schema.prisma')).digest('hex'), guardSha256: createHash('sha256').update(fs.readFileSync('scripts/vercel-migrate.mjs')).digest('hex'), tests: ['zero pending accepted', 'all three DB1 pending accepted', 'existing feedback missing rejected', 'extra unapproved migration rejected'], blogMappings: Object.keys(map).length, productionDatabaseAccessed: false };
+fs.writeFileSync('reports/int8-20261105/integration-audit.json', JSON.stringify(receipt, null, 2) + '\n');
+console.log(JSON.stringify(receipt));

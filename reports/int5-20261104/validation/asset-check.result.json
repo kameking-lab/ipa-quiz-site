@@ -1,0 +1,17 @@
+{
+  "label": "asset-check",
+  "command": [
+    "node",
+    "node_modules/vitest/vitest.mjs",
+    "run",
+    "__tests__/mobile/asset-inventory.test.ts",
+    "--reporter=json",
+    "--outputFile=reports/int5-20261104/validation/asset-check.json"
+  ],
+  "sourceHead": "48c28c74b5447505dfe82aeb8ac989e4d9afb862",
+  "startedAt": "2026-11-04T10:38:29.369Z",
+  "finishedAt": "2026-11-04T10:38:50.694Z",
+  "exitCode": 1,
+  "logSha256": "99ad363cc0aad59863f7ebf0b36759623b32f366c9f7ff1051b85b2339f8a09b",
+  "environment": "CI=true; inherited service credentials and mobile/feedback rollout configuration removed; no secret env files loaded"
+}

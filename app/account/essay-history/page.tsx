@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { EssayHistoryView } from "./EssayHistoryView";
+import { getAllEssayQuestions } from "@/lib/essay/load";
 
 export const metadata: Metadata = {
   title: "AI 論述添削 履歴",
@@ -18,7 +19,7 @@ export default function EssayHistoryPage() {
           過去の採点結果（ローカル保存・最新50件）。
         </p>
       </header>
-      <EssayHistoryView />
+      <EssayHistoryView questions={getAllEssayQuestions().map(({id,title})=>({id,title}))} />
     </main>
   );
 }

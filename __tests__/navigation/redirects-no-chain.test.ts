@@ -50,7 +50,10 @@ describe("next.config redirects", () => {
   it("301s retired pages to their consolidated successors", async () => {
     const redirects = await nextConfig.redirects!();
     const expected: Record<string, string> = {
-      "/testimonials": "/success-stories",
+      "/testimonials": "/blog",
+      "/ranking": "/account/dashboard#mock-scores",
+      "/referral": "/contact#legacy-benefits",
+      "/student": "/contact#legacy-benefits",
       "/trust": "/why-kakomon-ai",
       "/account/audio": "/settings",
       "/account/avatar": "/settings",
@@ -60,7 +63,7 @@ describe("next.config redirects", () => {
       const entry = redirects.find((r) => r.source === source);
       expect(entry, `missing redirect for ${source}`).toBeDefined();
       expect(entry!.destination).toBe(destination);
-      expect(entry!.permanent).toBe(true);
+      expect(entry!.statusCode === 301 || entry!.permanent === true).toBe(true);
     }
   });
 });

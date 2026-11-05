@@ -30,6 +30,22 @@ export function sessionLabel(session: string, exam?: ExamCode): string {
   if (parsed && (exam === "kenki1" || exam === "kenki2" || exam === "kanteishi" || exam === "kaikeishi")) return practiceSessionLabel(parsed, exam);
   if (parsed && ["gyosei", "kanri", "kansa", "rousai", "koyou", "kenpo", "kounen", "kokunen", "ippan", "sentaku", "required", "theory", "practical", "kiso", "kogaku-a", "kogaku-b", "hoki", "tiri"].includes(parsed)) return practiceSessionLabel(parsed);
   const map: Record<string, string> = {
+    "patent": "特許・実用新案",
+    "design": "意匠",
+    "trademark": "商標",
+    "treaty": "条約",
+    "copyright": "著作権法・不正競争防止法",
+    "dokugeki-ippan": "一般",
+    "dokugeki-nougyou": "農業用品目",
+    "dokugeki-tokutei": "特定品目",
+    "gakka-I": "学科I（計画）",
+    "gakka-II": "学科II（法規）",
+    "gakka-III": "学科III（構造）",
+    "gakka-IV": "学科IV（施工）",
+    "yakkan": "旅行業約款",
+    "jitsumu": "国内旅行実務",
+
+    keikaku: "計画", "kankyo-setsubi": "環境・設備", kozo: "構造", sekou: "施工",
     gakushiki: "学識",
     hoan: "保安管理技術",
     am: "午前",
@@ -48,6 +64,18 @@ export function sessionLabel(session: string, exam?: ExamCode): string {
     kogaku: "無線工学",
     "gas-law": "法令",
     "gas-basic": "基礎",
+    "khk-ax": "KHK AX",
+    "khk-ay": "KHK AY",
+    "khk-az": "KHK AZ",
+    "khk-bx": "KHK BX",
+    "khk-by": "KHK BY",
+    "khk-bz": "KHK BZ",
+    "khk-cx": "KHK CX",
+    "khk-cy": "KHK CY",
+    "khk-cz": "KHK CZ",
+    "khk-dx": "KHK DX",
+    "khk-dy": "KHK DY",
+    "khk-dz": "KHK DZ",
     "gas-technology": "ガス技術",
     "jken-basic": "基本スキル", "jken-programming": "プログラミングスキル", "jken-design": "システムデザインスキル",
     wagashi: "和菓子（選択）", yogashi: "洋菓子（選択）", seipan: "製パン（選択）",
@@ -140,7 +168,7 @@ export function buildQuestionJsonLd({
 
   // The administering body authored the question; this site authored the
   // learning explanation. Keep the author inline so the node is self-contained.
-  const releaseSource = ["chintai", "kyusui", "biru-kan", "gijutsushi1-kikai", "hoshasen-1", "hoshasen-2", "energy-kanri"].includes(q.exam) ? getQualificationByExamCode(q.exam) : undefined;
+  const releaseSource = ["benrishi", "sokuryoshi", "dokugeki-chiba", "jokaso-setsubishi", "chiiki-ryoko", "junkango-kansai", "kukaku-seiri", "dojo-osen", "kenchikushi2", "mokuzo-kenchikushi", "kenchikushi1", "khk-kagaku", "sekou-1kenchiku", "chintai", "kyusui", "biru-kan", "gijutsushi1-kikai", "hoshasen-1", "hoshasen-2", "energy-kanri"].includes(q.exam) ? getQualificationByExamCode(q.exam) : undefined;
   const questionAuthor = releaseSource
     ? { "@type": "Organization", name: releaseSource.administrator, url: new URL(releaseSource.officialQuestionsUrl).origin }
     : q.exam === "kisho"

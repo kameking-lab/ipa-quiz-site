@@ -1,6 +1,7 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
+import { posthogCapture } from "@/lib/posthog";
 import type { ChushoSolution } from "@/lib/chusho-secondary/data";
 
 export function AnswerPractice({ questionId, solutions }: { questionId: string; solutions: ChushoSolution[] }) {
@@ -8,6 +9,12 @@ export function AnswerPractice({ questionId, solutions }: { questionId: string; 
   const [ready, setReady] = useState(false);
   const [message, setMessage] = useState("");
   const [visible, setVisible] = useState(false);
+  const started = useRef<string | null>(null);
+  useEffect(() => {
+    if (!ready || started.current === questionId) return;
+    started.current = questionId;
+    posthogCapture("quiz_started", { exam: "chusho-secondary", questionId, player: "descriptive" });
+  }, [questionId, ready]);
   useEffect(() => {
     setReady(false);
     setVisible(false);

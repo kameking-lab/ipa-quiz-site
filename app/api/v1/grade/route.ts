@@ -1,3 +1,5 @@
+import { strictContentGateEnabled } from "@/lib/billing/content-policy";
+import { contentGrant } from "@/lib/billing/content-grant";
 import { isCompleteSelectionCorrect, requiredSelectionCount } from "@/lib/questions/answers";
 import { isPracticeReadyQuestion } from "@/lib/questions/filter";
 import { NextResponse } from "next/server";
@@ -43,6 +45,7 @@ export async function POST(req: Request) {
     );
   }
 
+  if(strictContentGateEnabled()){const grant=await contentGrant(req,parsed.questionId);if(!grant.ok)return grant;}
   const q = await findQuestionById(parsed.questionId);
   if (!q) {
     return NextResponse.json(
@@ -77,6 +80,6 @@ export async function POST(req: Request) {
       explanation: q.explanation,
       sourcePdfUrl: getSafePdfUrl(q.sourcePdfUrl),
     },
-    { headers: buildRateLimitHeaders(rl) },
+    { headers: {...buildRateLimitHeaders(rl),"Cache-Control":"private, no-store"} },
   );
 }

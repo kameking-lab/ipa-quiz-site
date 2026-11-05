@@ -1,0 +1,257 @@
+{
+  "status": "PASS",
+  "codeHead": "3339fd295753c5489079e014fe61b3225f6ac1b3",
+  "applicationHead": "5b45d3fb8",
+  "commands": {
+    "typecheck-release": {
+      "label": "typecheck-release",
+      "command": [
+        "pnpm",
+        "typecheck"
+      ],
+      "sourceHead": "4c8e24cf4cbfece4f7d722caba11660962ba2ab6",
+      "startedAt": "2026-11-04T11:19:15.180Z",
+      "finishedAt": "2026-11-04T11:19:40.415Z",
+      "exitCode": 0,
+      "logSha256": "e2abc9113230d37b742fe54adbd1c6693deb4f5c3acf08cca0d7cf006c129583",
+      "environment": "CI=true; inherited service credentials and mobile/feedback rollout configuration removed; no secret env files loaded"
+    },
+    "lint-release": {
+      "label": "lint-release",
+      "command": [
+        "pnpm",
+        "lint"
+      ],
+      "sourceHead": "4c8e24cf4cbfece4f7d722caba11660962ba2ab6",
+      "startedAt": "2026-11-04T11:19:15.162Z",
+      "finishedAt": "2026-11-04T11:20:37.111Z",
+      "exitCode": 0,
+      "logSha256": "ddd9adeb7b4f170213213c5a2be3db94b6f79fa41f5744e9d3824d346eaa80ce",
+      "environment": "CI=true; inherited service credentials and mobile/feedback rollout configuration removed; no secret env files loaded"
+    },
+    "tests-release": {
+      "label": "tests-release",
+      "command": [
+        "pnpm",
+        "test",
+        "--maxWorkers=4",
+        "--reporter=default",
+        "--reporter=json",
+        "--outputFile=reports/int5-20261104/validation/tests-release.json"
+      ],
+      "sourceHead": "4c8e24cf4cbfece4f7d722caba11660962ba2ab6",
+      "startedAt": "2026-11-04T11:17:11.746Z",
+      "finishedAt": "2026-11-04T11:27:44.043Z",
+      "exitCode": 0,
+      "logSha256": "a53c02d0bfb62cffa3c53ce9198f819f91e2c71b612954b189aa8cdc7df9d0bf",
+      "environment": "CI=true; inherited service credentials and mobile/feedback rollout configuration removed; no secret env files loaded"
+    },
+    "web-build-verified": {
+      "label": "web-build-verified",
+      "command": [
+        "pnpm",
+        "build"
+      ],
+      "sourceHead": "5b45d3fb8dda8fdfe9fcca01a9225d256dca1ae0",
+      "startedAt": "2026-11-04T11:06:16.857Z",
+      "finishedAt": "2026-11-04T11:21:46.317Z",
+      "exitCode": 0,
+      "logSha256": "6267379feac8f94a13f9dc3f5446995ae319281f23e274983e23b29506b3d192",
+      "environment": "CI=true; inherited service credentials and mobile/feedback rollout configuration removed; no secret env files loaded"
+    },
+    "e2e-release": {
+      "label": "e2e-release",
+      "command": [
+        "pnpm",
+        "e2e"
+      ],
+      "sourceHead": "4c8e24cf4cbfece4f7d722caba11660962ba2ab6",
+      "startedAt": "2026-11-04T11:22:18.038Z",
+      "finishedAt": "2026-11-04T11:26:19.075Z",
+      "exitCode": 0,
+      "logSha256": "50a128ef5f1ea993486f0c5719b40eeb3e772d10639a7a7c33bb92356e477de3",
+      "environment": "CI=true; inherited service credentials and mobile/feedback rollout configuration removed; no secret env files loaded"
+    },
+    "browser-release": {
+      "label": "browser-release",
+      "command": [
+        "node",
+        "scripts/verify-batch2-browser.mjs",
+        "http://127.0.0.1:3052"
+      ],
+      "sourceHead": "4c8e24cf4cbfece4f7d722caba11660962ba2ab6",
+      "startedAt": "2026-11-04T11:22:38.273Z",
+      "finishedAt": "2026-11-04T11:24:20.810Z",
+      "exitCode": 0,
+      "logSha256": "fd61cc8a5c97549ac2f30a9ea52b42e6587aec580e3983ccd191839c4c5e2178",
+      "environment": "CI=true; inherited service credentials and mobile/feedback rollout configuration removed; no secret env files loaded"
+    },
+    "http-release": {
+      "label": "http-release",
+      "command": [
+        "node",
+        "scripts/verify-batch2-http.mjs",
+        "http://127.0.0.1:3052"
+      ],
+      "sourceHead": "4c8e24cf4cbfece4f7d722caba11660962ba2ab6",
+      "startedAt": "2026-11-04T11:24:20.890Z",
+      "finishedAt": "2026-11-04T11:24:21.201Z",
+      "exitCode": 0,
+      "logSha256": "3cd2800f4797a9d8ab3e081d2bd84b92446851eac2aad09d738c9dafe87ef73f",
+      "environment": "CI=true; inherited service credentials and mobile/feedback rollout configuration removed; no secret env files loaded"
+    },
+    "mobile-release": {
+      "label": "mobile-release",
+      "command": [
+        "pnpm",
+        "--dir",
+        "mobile",
+        "run",
+        "build"
+      ],
+      "sourceHead": "4c8e24cf4cbfece4f7d722caba11660962ba2ab6",
+      "startedAt": "2026-11-04T11:18:14.893Z",
+      "finishedAt": "2026-11-04T11:19:50.131Z",
+      "exitCode": 0,
+      "logSha256": "6c1d7699f2c2a044a24cdee1f71ceeab855c60f855160f83720412628e32e08a",
+      "environment": "CI=true; inherited service credentials and mobile/feedback rollout configuration removed; no secret env files loaded"
+    },
+    "mobile-tests-release": {
+      "label": "mobile-tests-release",
+      "command": [
+        "pnpm",
+        "--dir",
+        "mobile",
+        "test"
+      ],
+      "sourceHead": "4c8e24cf4cbfece4f7d722caba11660962ba2ab6",
+      "startedAt": "2026-11-04T11:19:50.201Z",
+      "finishedAt": "2026-11-04T11:19:52.981Z",
+      "exitCode": 0,
+      "logSha256": "149eb4bdc4c89346fbf0a9810686f495e6cb89f15faa9185057dcc41c14af4d7",
+      "environment": "CI=true; inherited service credentials and mobile/feedback rollout configuration removed; no secret env files loaded"
+    }
+  },
+  "unitTests": {
+    "files": 771,
+    "passed": 7872,
+    "failed": 0,
+    "skipped": 10,
+    "skipDetails": [
+      {
+        "file": "__tests__/billing/feedback-postgres.test.ts",
+        "test": "feedback wallet on disposable PostgreSQL migrates, enforces concurrent submissions and prevents cookie/day/network reacquisition"
+      },
+      {
+        "file": "__tests__/billing/feedback-postgres.test.ts",
+        "test": "feedback wallet on disposable PostgreSQL grants only ten of eleven simultaneous questions, with idempotent reopen across days"
+      },
+      {
+        "file": "__tests__/billing/feedback-postgres.test.ts",
+        "test": "feedback wallet on disposable PostgreSQL allows only one account to claim a legacy anonymous wallet and blocks logout reuse"
+      },
+      {
+        "file": "__tests__/billing/feedback-postgres.test.ts",
+        "test": "feedback wallet on disposable PostgreSQL does not stack an account wallet with simultaneous claims from two anonymous browsers"
+      },
+      {
+        "file": "__tests__/billing/feedback-postgres.test.ts",
+        "test": "feedback wallet on disposable PostgreSQL rolls back both account binding and inserted grant on a mid-transaction failure"
+      },
+      {
+        "file": "__tests__/billing/feedback-postgres.test.ts",
+        "test": "feedback wallet on disposable PostgreSQL keeps the same balance across auth key/session/realm changes and enforces user uniqueness in SQL"
+      },
+      {
+        "file": "__tests__/billing/feedback-postgres.test.ts",
+        "test": "feedback wallet on disposable PostgreSQL fails closed for old keyed receipts, then preserves their spent balance after backfill and rotation"
+      },
+      {
+        "file": "__tests__/billing/feedback-postgres.test.ts",
+        "test": "feedback wallet on disposable PostgreSQL rolls back backfill if old keys or realms already issued duplicate account receipts"
+      },
+      {
+        "file": "__tests__/questions/kyusui-staging.test.ts",
+        "test": "kyusui private staging, latest two officially published editions matches independent Poppler extraction of the saved official answer PDFs"
+      },
+      {
+        "file": "__tests__/questions/kyusui-staging.test.ts",
+        "test": "kyusui private staging, latest two officially published editions covers every body word in all four papers using independent Poppler coordinates"
+      }
+    ]
+  },
+  "e2e": {
+    "total": 347,
+    "passedWithoutRetry": 341,
+    "passedOnRetry": 1,
+    "skipped": 5,
+    "failed": 0,
+    "note": "CI=true, same pnpm e2e command/config, 2 workers, 1 retry; local Windows, Node 24.13.1. 404 first request ECONNRESET then retry PASS; enterprise checks skipped with PAID_MODE off."
+  },
+  "browser": {
+    "buildId": "zxw_VJsiM8-34Xi0okI_x",
+    "flows": 24,
+    "qualifications": 8,
+    "libraryFlows": 2,
+    "searchExams": 141,
+    "exactImages": 80,
+    "screenshots": 80,
+    "errors": []
+  },
+  "gatedAudit": {
+    "buildId": "Znx3Xkp1EVbXx4A0q6RSk",
+    "clientChunks": 135,
+    "expectedProtectedRoutes": 9151,
+    "protectedHtml": 9151,
+    "protectedRsc": 9151,
+    "htmlByFamily": {
+      "chusho-secondary": 33,
+      "denken1": 36,
+      "denken2": 63,
+      "denken3": 121,
+      "denko2": 104,
+      "essay": 12,
+      "essays": 3,
+      "fp1": 30,
+      "fp2": 200,
+      "fp3": 60,
+      "q": 8472,
+      "sharoushi": 16,
+      "st": 1
+    },
+    "sourceFingerprints": 71298,
+    "gradingIndexIds": 90,
+    "corpusLeaks": 0,
+    "serializedAnswerLeaks": 0,
+    "gradingIndexLeaks": 0,
+    "artifactSha256": "bea143580aca849283bd9afadb38b856cf52f668812df3a31565f9d384e828b9",
+    "scope": "Generated HTML/RSC and browser chunks; dynamic on-demand routes and live services are outside this static audit."
+  },
+  "questionValidation": {
+    "questions": 35199,
+    "failed": 0,
+    "qualityWarnings": 20515
+  },
+  "lint": {
+    "errors": 0,
+    "warnings": 12
+  },
+  "mobile": {
+    "unitTests": 79,
+    "e2eTests": 34,
+    "xcodeOrStoreBuild": false
+  },
+  "previewRealAi": "NOT RUN: deployment forbidden; CLAUDE.md section 7 release prerequisite",
+  "productionOperations": false,
+  "verificationHead": "4c8e24cf4",
+  "postVerificationChange": "3339fd295: EOL-only application normalization, verified git diff --ignore-space-at-eol empty; archival receipt attributes only",
+  "finalIndependentReview": {
+    "target": "178f827f4",
+    "model": "gpt-6-astra",
+    "sandbox": "read-only",
+    "verdict": "PASS",
+    "file": "independent-review5.md",
+    "sha256": "4e44a6677ba6dae5dd3e963123ee4a53259a8ec67967be8b5722b59ea3175687",
+    "limits": "Source and evidence review; not independently rerunning full suites or production/live services."
+  }
+}

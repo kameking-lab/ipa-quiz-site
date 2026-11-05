@@ -11,7 +11,6 @@ import {
   Menu,
   Bookmark,
   CalendarRange,
-  Trophy,
   HelpCircle,
   FileText,
   BookOpen,
@@ -53,7 +52,6 @@ const TABS: TabItem[] = [
 const SECONDARY_NAV: { href: string; label: string; icon: React.ComponentType<{ className?: string }> }[] = [
   { href: "/bookmarks", label: "ブックマーク", icon: Bookmark },
   { href: "/study-plan", label: "学習計画", icon: CalendarRange },
-  { href: "/success-stories", label: "学習例（架空）", icon: Trophy },
   { href: "/why-kakomon-ai", label: "過去問AIを選ぶ理由", icon: HelpCircle },
   { href: "/features", label: "機能特集", icon: Sparkles },
   { href: "/essays", label: "論述例", icon: FileText },
@@ -124,6 +122,7 @@ export function MobileBottomNav() {
               <li key={tab.href} className="flex-1">
                 <Link
                   href={tab.href}
+                  prefetch={tab.href === "/account/dashboard" ? false : undefined}
                   aria-current={active ? "page" : undefined}
                   className={cn(
                     "relative flex min-h-[48px] flex-col items-center justify-center gap-0.5 px-1 pb-1.5 pt-2 text-[10px] font-medium leading-none transition-colors",

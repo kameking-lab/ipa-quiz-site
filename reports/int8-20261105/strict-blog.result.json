@@ -1,0 +1,20 @@
+{
+  "label": "strict-blog",
+  "args": [
+    "exec",
+    "vitest",
+    "run",
+    "__tests__/seo/blog-practice-gate.test.tsx",
+    "--maxWorkers=1"
+  ],
+  "started": "2026-11-04T23:06:08.639Z",
+  "finished": "2026-11-04T23:06:30.713Z",
+  "elapsedMs": 22074,
+  "code": 0,
+  "signal": null,
+  "baseHead": "f95bd49d0a9affc4ad34795b94dc9d3f20ecf9eb",
+  "sourceHash": "4f1a4218584de8f23adfee759aea4a633891f4344f16d60113279898bfc28a6c",
+  "environment": "OS allowlist only; no env files or service credentials",
+  "logSha256": "d959d65f40b5057a6ab308f9130d5a715ba4c72437a7d39796e798049e8f84c6",
+  "buildId": null
+}

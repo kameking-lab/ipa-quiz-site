@@ -1,4 +1,5 @@
 import type { NextConfig } from "next";
+import { resolve } from "node:path";
 import { BLOG_ARTICLE_ALIASES } from "./lib/blog/article-aliases";
 
 const isDev = process.env.NODE_ENV === "development";
@@ -11,9 +12,9 @@ const cspDirectives = [
   // challenges.cloudflare.com: Cloudflare Turnstile (contact-form spam protection)
   // AdSense bootstrap + SODAR traffic-quality runtime. Keep these host-specific;
   // do not relax the whole directive to https:.
-  `script-src 'self' 'unsafe-inline'${isDev ? " 'unsafe-eval'" : ""} https://vercel.live https://cdn.jsdelivr.net https://us-assets.i.posthog.com https://va.vercel-scripts.com https://vitals.vercel-insights.com https://challenges.cloudflare.com https://pagead2.googlesyndication.com https://ep2.adtrafficquality.google`,
+  `script-src 'self' 'unsafe-inline'${isDev ? " 'unsafe-eval'" : ""} https://vercel.live https://cdn.jsdelivr.net https://us-assets.i.posthog.com https://va.vercel-scripts.com https://vitals.vercel-insights.com https://challenges.cloudflare.com https://pagead2.googlesyndication.com https://ep2.adtrafficquality.google https://fundingchoicesmessages.google.com https://www.gstatic.com`,
   "style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net",
-  "img-src 'self' data: blob: https://*.ipa.go.jp https://pagead2.googlesyndication.com https://googleads.g.doubleclick.net https://ep1.adtrafficquality.google https://ep2.adtrafficquality.google",
+  "img-src 'self' data: blob: https://*.ipa.go.jp https://pagead2.googlesyndication.com https://googleads.g.doubleclick.net https://ep1.adtrafficquality.google https://ep2.adtrafficquality.google https://fundingchoicesmessages.google.com https://www.gstatic.com",
   "font-src 'self' https://cdn.jsdelivr.net",
   // worker-src: service worker at /sw.js (PWA)
   "worker-src 'self'",
@@ -22,8 +23,8 @@ const cspDirectives = [
   // object-src: block plugins/Flash XSS vectors entirely
   "object-src 'none'",
   // connect-src: Gemini API + Vercel Live + PostHog + Sentry + Vercel Analytics + Speed Insights + AdSense
-  "connect-src 'self' https://generativelanguage.googleapis.com https://vercel.live wss://ws-us3.pusher.com wss://ws-eu.pusher.com https://us.i.posthog.com https://us-assets.i.posthog.com https://o4511300167860224.ingest.us.sentry.io https://va.vercel-scripts.com https://vitals.vercel-insights.com https://pagead2.googlesyndication.com https://googleads.g.doubleclick.net https://ep1.adtrafficquality.google https://ep2.adtrafficquality.google",
-  "frame-src https://vercel.live https://challenges.cloudflare.com https://googleads.g.doubleclick.net https://ep2.adtrafficquality.google https://www.google.com",
+  "connect-src 'self' https://generativelanguage.googleapis.com https://vercel.live wss://ws-us3.pusher.com wss://ws-eu.pusher.com https://us.i.posthog.com https://us-assets.i.posthog.com https://o4511300167860224.ingest.us.sentry.io https://va.vercel-scripts.com https://vitals.vercel-insights.com https://pagead2.googlesyndication.com https://googleads.g.doubleclick.net https://ep1.adtrafficquality.google https://ep2.adtrafficquality.google https://fundingchoicesmessages.google.com",
+  "frame-src https://vercel.live https://challenges.cloudflare.com https://googleads.g.doubleclick.net https://ep2.adtrafficquality.google https://www.google.com https://fundingchoicesmessages.google.com",
   "frame-ancestors 'none'",
   "base-uri 'self'",
   "form-action 'self'",
@@ -60,12 +61,42 @@ const longCacheImmutable = {
 };
 
 const nextConfig: NextConfig = {
+  webpack(config, { webpack }) {
+    if (process.env.MOBILE_IAP_ENABLED === "true") {
+      config.resolve.alias["@/lib/kisho-study$"] = resolve(process.cwd(), "mobile/shared/gated-kisho-study.ts");
+      config.plugins.push(new webpack.NormalModuleReplacementPlugin(
+        /(?:^|[\\/])kisho-study(?:\.ts)?$/,
+        resolve(process.cwd(), "mobile/shared/gated-kisho-study.ts"),
+      ));
+      config.resolve.alias["@/lib/exam-library/reference-aware-grading-index$"] = resolve(process.cwd(), "mobile/shared/granted-paper-grading.ts");
+      config.resolve.alias["@/lib/exam-library/survey-assistant-grading-index$"] = resolve(process.cwd(), "mobile/shared/granted-paper-grading.ts");
+      // Next's TS-path resolver can resolve the import before the exact alias.
+      // Replace both the original request and its resolved absolute resource.
+      config.plugins.push(new webpack.NormalModuleReplacementPlugin(
+        /(?:^|[\\/])(?:survey-assistant-grading-index|reference-aware-grading-index)(?:\.ts)?$/,
+        resolve(process.cwd(), "mobile/shared/granted-paper-grading.ts"),
+      ));
+    }
+    return config;
+  },
+  turbopack: {
+    resolveAlias: process.env.MOBILE_IAP_ENABLED === "true" ? {
+      "@/lib/kisho-study": "./mobile/shared/gated-kisho-study.ts",
+      "./kisho-study": "./mobile/shared/gated-kisho-study.ts",
+      "@/lib/exam-library/survey-assistant-grading-index": "./mobile/shared/granted-paper-grading.ts",
+      "@/lib/exam-library/reference-aware-grading-index": "./mobile/shared/granted-paper-grading.ts",
+    } : {},
+  },
   outputFileTracingIncludes: {
     "/e-learning/exams": ["./data/exam-library/papers/*.json", "./data/exam-library/presentation/*.json", "./data/exam-library/pe-first/*.json"],
     "/api/home/resume": ["./data/exam-library/pe-first/*.json"],
     "/api/copilot/exam-library": ["./data/exam-library/pe-first/*.json"],
     "/e-learning/search": ["./data/exam-library/pe-first/*.json"],
     "/e-learning/exams/*": ["./data/exam-library/papers/*.json", "./data/exam-library/presentation/*.json", "./data/exam-library/pe-first/*.json"],
+    "/api/mobile/catalog": ["./data/exam-library/papers/*.json", "./data/exam-library/presentation/*.json"],
+    "/api/mobile/download": ["./data/exam-library/papers/*.json", "./data/exam-library/presentation/*.json"],
+    "/api/billing/question": ["./data/exam-library/papers/*.json", "./data/exam-library/presentation/*.json"],
+    "/api/mobile/paper-results": ["./data/exam-library/papers/*.json", "./data/exam-library/presentation/*.json"],
   },
   async redirects() {
     return [
@@ -116,10 +147,17 @@ const nextConfig: NextConfig = {
       // unified contact form; redirect so any stale link/bookmark lands there
       // instead of a 404.
       { source: "/feedback", destination: "/contact?type=error", permanent: true },
-      // /testimonials (旧「合格体験記・口コミ / ユーザーの声」) was folded into the
-      // richer /success-stories (「IPA試験 合格体験記｜13区分の合格者ストーリー集」).
-      // 301 protects inbound links / crawl equity for the 合格体験記 intent.
-      { source: "/testimonials", destination: "/success-stories", permanent: true },
+      // PRK: retire previews and fictional content in one hop (keep search/bookmarks).
+      { source: "/demo/afternoon", destination: "/demo/essay-grading", statusCode: 301 },
+      { source: "/ranking", destination: "/account/dashboard#mock-scores", statusCode: 301 },
+      { source: "/referral", destination: "/contact#legacy-benefits", statusCode: 301 },
+      { source: "/student", destination: "/contact#legacy-benefits", statusCode: 301 },
+      { source: "/success-stories", destination: "/blog", statusCode: 301 },
+      { source: "/success-stories/:exam(ip|sg|fe|ap|st|sa|pm|nw|db|es|sc|sm|au)/:slug*", destination: "/:exam", statusCode: 301 },
+      { source: "/success-stories/:path*", destination: "/blog", statusCode: 301 },
+      { source: "/admin/moderation", destination: "/admin", statusCode: 301 },
+      { source: "/admin/competitors", destination: "/admin", statusCode: 301 },
+      { source: "/testimonials", destination: "/blog", statusCode: 301 },
       // /trust (旧「信頼性ポリシー — なぜ過去問AIが選ばれるのか」) は同インテントの
       // /why-kakomon-ai（「過去問AI を選ぶ理由」）に統合済。301 で誘導する。
       { source: "/trust", destination: "/why-kakomon-ai", permanent: true },

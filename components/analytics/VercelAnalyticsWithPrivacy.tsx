@@ -3,6 +3,8 @@
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import type { BeforeSendEvent } from "@vercel/analytics";
+import { useEffect, useState } from "react";
+import { nativeClient } from "@/mobile/shared/contracts";
 
 // Strip known PII-like query params before sending page view events to Vercel Analytics.
 // Vercel Analytics is cookie-free and collects only aggregate traffic data.
@@ -26,6 +28,9 @@ function beforeSend(event: BeforeSendEvent): BeforeSendEvent | null {
 }
 
 export function VercelAnalyticsWithPrivacy() {
+  const [browser, setBrowser] = useState(false);
+  useEffect(() => { setBrowser(!nativeClient() && !location.pathname.startsWith("/auth/")); }, []);
+  if (!browser) return null;
   return (
     <>
       <Analytics beforeSend={beforeSend} />

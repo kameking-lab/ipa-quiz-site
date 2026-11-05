@@ -1,0 +1,17 @@
+
+> ipa-quiz-site@1.0.0 test C:\Users\kanet\20260522\wt-batch3
+> vitest run "__tests__/batch3-release.test.ts" "__tests__/mobile-content-catalog.test.ts" "--maxWorkers=1"
+
+
+[1m[30m[46m RUN [49m[39m[22m [36mv4.1.12 [39m[90mC:/Users/kanet/20260522/wt-batch3[39m
+
+ [32m✓[39m __tests__/batch3-release.test.ts [2m([22m[2m14 tests[22m[2m)[22m[33m 5430[2mms[22m[39m
+     [33m[2m✓[22m[39m serves benrishi through eager/lazy registries, canonical routes, home and question API [33m 731[2mms[22m[39m
+     [33m[2m✓[22m[39m serves dokugeki-chiba through eager/lazy registries, canonical routes, home and question API [33m 540[2mms[22m[39m
+     [33m[2m✓[22m[39m keeps source asset mappings byte-identical in their public copies [33m 3331[2mms[22m[39m
+
+[2m Test Files [22m [1m[32m1 passed[39m[22m[90m (1)[39m
+[2m      Tests [22m [1m[32m14 passed[39m[22m[90m (14)[39m
+[2m   Start at [22m 03:35:33
+[2m   Duration [22m 35.65s[2m (transform 23.26s, setup 277ms, import 28.62s, tests 5.43s, environment 1.11s)[22m
+

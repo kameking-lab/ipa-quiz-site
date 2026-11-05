@@ -1,3 +1,5 @@
+import { strictContentGateEnabled } from "@/lib/billing/content-policy";
+import { ContentPage } from "@/mobile/server/ContentPage";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { SecondaryReader } from "@/components/denken2/SecondaryReader";
@@ -20,6 +22,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 }
 export default async function Page({ params }: Props) {
+  if (strictContentGateEnabled()) { const gatedParams=await params; return <ContentPage path={`/denken2/secondary/${gatedParams.year}/${gatedParams.subject}/${gatedParams.number}`}/>; }
+
   const q = resolve(await params);
   if (!q) notFound();
   const group = SECONDARY_QUESTIONS.filter(item => item.year === q.year && item.subject === q.subject);

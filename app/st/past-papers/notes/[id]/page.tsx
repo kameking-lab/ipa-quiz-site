@@ -1,3 +1,5 @@
+import { strictContentGateEnabled } from "@/lib/billing/content-policy";
+import { ContentPage } from "@/mobile/server/ContentPage";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
@@ -21,6 +23,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 }
 
 export default async function AnnotatedNotePage({ params }: Props) {
+  if (strictContentGateEnabled()) { const gatedParams=await params; return <ContentPage path={`/st/past-papers/notes/${gatedParams.id}`}/>; }
+
   const note = getAnnotatedNote((await params).id);
   if (!note) notFound();
   return (

@@ -1,3 +1,4 @@
+import { permittedBatch } from "@/lib/billing/content-grant";
 import { NextResponse } from "next/server";
 
 import { ALL_QUESTIONS } from "@/data/questions";
@@ -36,6 +37,9 @@ export async function GET(
   const config = getMockConfig(exam);
 
   const url = new URL(req.url);
+  const countParam = url.searchParams.get("count");
+  const count = countParam === "10" || countParam === "20" || countParam === String(Math.ceil(config.questions / 2))
+    ? Math.min(config.questions, Number(countParam)) : config.questions;
   const modeParam = url.searchParams.get("mode");
   const mode: SelectionMode =
     modeParam && VALID_MODES.has(modeParam as SelectionMode)
@@ -52,10 +56,12 @@ export async function GET(
 
   const picked = selectMockExamQuestions({
     pool,
-    target: config.questions,
+    target: count,
     mode,
   });
-  const selected = picked.map(shuffleChoices).map(toSlim);
+  const permitted=await permittedBatch(req,picked);
+  if(permitted.response)return permitted.response;
+  const selected = permitted.rows.map(shuffleChoices).map(toSlim);
 
   return NextResponse.json(
     { exam, mode, total: selected.length, questions: selected },
@@ -63,7 +69,7 @@ export async function GET(
       headers: {
         // Per-request randomization — cache is fine for repeat-tab reloads
         // but should not be shared across users for too long.
-        "Cache-Control": "private, max-age=0, must-revalidate",
+        "Cache-Control": "private, no-store",
       },
     },
   );

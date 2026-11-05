@@ -1,8 +1,9 @@
+import { strictContentGateEnabled } from "@/lib/billing/content-policy";
+import { ContentPage } from "@/mobile/server/ContentPage";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowLeft } from "lucide-react";
-import { ExamNoteLinks } from "@/components/exam-library/exam-note-links";
 import { ExamStructuredData } from "@/components/exam-library/exam-structured-data";
 import { ExamQuestionPlayer } from "@/components/exam-library/exam-question-player";
 import { ExamSourceNotes } from "@/components/exam-library/exam-source-notes";
@@ -72,6 +73,11 @@ export async function generateMetadata({ params }: ExamPageProps): Promise<Metad
 }
 
 export default async function ExamPage({ params, searchParams }: ExamPageProps) {
+  if (strictContentGateEnabled()) {
+    const [gatedParams,query]=await Promise.all([params,searchParams]);
+    return <ContentPage path={`/e-learning/exams/${gatedParams.id}`} initialId={typeof query?.question==="string"?query.question:undefined} initialView={query?.view==="summary"?"summary":"question"}/>;
+  }
+
   const { id } = await params;
   const resolved = resolveExam(id);
   if (!resolved) notFound();
@@ -148,13 +154,6 @@ export default async function ExamPage({ params, searchParams }: ExamPageProps) 
         sourceMode={entry.sourceMode}
         indexUrl={entry.indexUrl}
         questions={questions}
-        noteLinks={entry.noteLinks}
-      />
-
-      <ExamNoteLinks
-        links={entry.noteLinks ?? []}
-        headingId="exam-note-links-title"
-        className="mt-8"
       />
 
       <ExamSourceNotes entry={entry} className="mt-10" />

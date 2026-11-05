@@ -12,7 +12,7 @@ import { deletePlan, listPlans } from "@/lib/study-plan/storage";
 import { LEVEL_LABELS } from "@/lib/study-plan/constants";
 import type { StudyPlan } from "@/lib/study-plan/types";
 
-export function StudyPlanLanding() {
+export function StudyPlanLanding({ categoriesByExam }: { categoriesByExam?: Record<string, string[]> }) {
   const [plans, setPlans] = React.useState<StudyPlan[]>([]);
   const [mounted, setMounted] = React.useState(false);
 
@@ -45,9 +45,10 @@ export function StudyPlanLanding() {
         </h1>
         <p className="mt-2 text-sm text-muted-foreground sm:text-base">
           学習期間は2・4・8週間から選択。1日に何分とれるかを入力すると、
-          IPA 全 13 区分に対応した「序盤→中盤→終盤」の個別最適スケジュールを自動生成します。
-          進捗はブラウザに保存され、複数試験の並行受験にも対応します。
+          IPA 全 13 区分に対応した「序盤→中盤→終盤」のスケジュールを計算します。
+          進捗はブラウザに保存され、毎日の実行はダッシュボードの「今日の計画」にまとまります。
         </p>
+        <Button asChild variant="outline" className="mt-4 min-h-11"><Link href="/account/dashboard#study-plan">今日の計画を進める</Link></Button>
       </header>
 
       {mounted && plans.length > 0 && (
@@ -100,12 +101,12 @@ export function StudyPlanLanding() {
         <h2 id="new-plan" className="mb-4 text-lg font-semibold">
           新しいプランを作成
         </h2>
-        <SchedulePlanner />
+        <SchedulePlanner categoriesByExam={categoriesByExam} />
       </section>
 
       <p className="mt-8 text-xs text-muted-foreground">
-        生成したスケジュールはお使いの端末のブラウザにのみ保存されます。
-        端末を変更すると引き継がれません。
+        スケジュールは学習期間・時間・知識レベルから計算します。AIへの送信は行いません。
+        計画と進捗はこのブラウザに保存されます。ログイン済みの場合は、アカウントのクラウド同期から引き継げます。
       </p>
     </main>
   );

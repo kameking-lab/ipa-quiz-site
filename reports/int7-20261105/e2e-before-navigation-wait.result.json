@@ -1,0 +1,16 @@
+{
+  "sourceHead": "1ca14f4ce39be16b8b00660800bd05a225ff0ee2",
+  "startedAt": "2026-11-04T19:14:44.030548+00:00",
+  "endedAt": "2026-11-04T19:18:22.266292+00:00",
+  "command": [
+    "corepack.cmd",
+    "pnpm",
+    "e2e"
+  ],
+  "exitCode": 1,
+  "seconds": 218.24,
+  "log": "reports/int7-20261105/e2e-before-navigation-wait.log",
+  "sha256": "a20336868c386882463ece89bbe0e44edf82807a52759fe732c89df90cb510e6",
+  "environment": "allowlisted OS variables only; CI=1, telemetry disabled, NODE_OPTIONS=4096; no service credentials or env files",
+  "supersededReason": "E2E summary click occurred before Next.js navigation completed; product files unchanged."
+}

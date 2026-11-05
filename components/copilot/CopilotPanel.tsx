@@ -1,5 +1,7 @@
 "use client";
 
+import { requestAiConsent } from "@/lib/ai/consent";
+
 import * as React from "react";
 import dynamic from "next/dynamic";
 import {
@@ -72,7 +74,6 @@ import { downloadMarkdown } from "@/lib/chat/export-markdown";
 import { useChatSession } from "@/hooks/useChatSession";
 import type { ChatSession, SharePayload } from "@/lib/chat/types";
 import { examLabel, formatYearSeason } from "@/lib/utils";
-import { readCharacterState } from "@/lib/storage/character";
 import { posthogCapture } from "@/lib/posthog";
 import { AiAccessNotice, useAiAccessNotice } from "@/components/ai/AiAccessNotice";
 import { aiPolicyDenialMessage } from "@/lib/ai/access-client";
@@ -373,6 +374,7 @@ export function CopilotPanel({
       }
       const trimmed = text.trim();
       if (!trimmed && !quickAction) return;
+      if (!requestAiConsent()) return;
 
       setErrorState(null);
       setRestriction(null);
@@ -401,7 +403,6 @@ export function CopilotPanel({
       beginAiAccess();
       let responseReceived = false;
       try {
-        const characterState = readCharacterState();
         posthogCapture("ai_query_sent", {
           questionId: question?.id,
           exam: question?.exam,
@@ -411,7 +412,7 @@ export function CopilotPanel({
           method: "POST",
           // 無料枠解除はサーバ署名済み Cookie で判定するため、自己申告ヘッダは送らない
           // （送っても無視される。ヘッダを残すと解除根拠を誤解させる）。
-          headers: { "content-type": "application/json" },
+          headers: { "content-type": "application/json", "X-Kakomon-AI-Consent": "20261103" },
           signal: controller.signal,
           body: JSON.stringify({
             question: { id: question.id },
@@ -420,8 +421,6 @@ export function CopilotPanel({
             tier: "free",
             quickAction,
             learnerProfile: profile,
-            character: characterState.id,
-            characterEnabled: characterState.enabled,
             responseLength,
             messages: nextMessages.slice(-20).map((m) => ({ role: m.role, content: m.content })),
           }),

@@ -1,0 +1,14 @@
+{
+  "sourceHead": "1ca14f4ce39be16b8b00660800bd05a225ff0ee2",
+  "startedAt": "2026-11-04T18:36:47.167967+00:00",
+  "endedAt": "2026-11-04T18:36:56.479640+00:00",
+  "command": [
+    "python",
+    "scripts/audit-batch3-projections.py"
+  ],
+  "exitCode": 0,
+  "seconds": 9.31,
+  "log": "reports/int7-20261105/candidate-projection-audit.log",
+  "sha256": "d84c6dd71b58b6bac2e51b57f57917e707712e7fffbb8c7763b279ec5e152c09",
+  "environment": "allowlisted OS variables only; CI=1, telemetry disabled, NODE_OPTIONS=4096; no service credentials or env files"
+}

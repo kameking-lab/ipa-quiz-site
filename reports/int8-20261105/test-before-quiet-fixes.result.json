@@ -1,0 +1,20 @@
+{
+  "label": "test-final",
+  "args": [
+    "test",
+    "--maxWorkers=2",
+    "--reporter=default",
+    "--reporter=json",
+    "--outputFile=reports/int8-20261105/test-final.json"
+  ],
+  "started": "2026-11-04T23:19:29.293Z",
+  "finished": "2026-11-04T23:32:45.800Z",
+  "elapsedMs": 796507,
+  "code": 1,
+  "signal": null,
+  "baseHead": "f95bd49d0a9affc4ad34795b94dc9d3f20ecf9eb",
+  "sourceHash": "50003d093dcaadda95f8ed4bddc43d2649cc3c060499267c1a7f4574911bee7d",
+  "environment": "OS allowlist only; no env files or service credentials",
+  "logSha256": "1076103d8ccb89c3fe97f0e436e2d0f413200bcef8ba78f7dfb89e7455ed1540",
+  "buildId": "rLYtLffAkkksdVeHFcCJ4"
+}

@@ -15,7 +15,7 @@ import { FEEDBACK_COOKIE_NAME } from "@/lib/rate-limit/feedback-token";
  *  4. 発行された値は自己申告では作れない（署名検証を通る必要がある）
  */
 
-vi.mock("@/lib/notify/slack", () => ({ sendSlackMessage: vi.fn() }));
+vi.mock("@/lib/notify/slack", () => ({ sendSlackMessage: vi.fn().mockResolvedValue(true) }));
 
 beforeAll(() => {
   process.env.AUTH_SECRET = "test-secret-for-contact-unlock";

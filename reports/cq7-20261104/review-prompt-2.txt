@@ -1,0 +1,20 @@
+CQ7の修正後の独立再レビューを行ってください。日本語で回答。モデル gpt-6-astra、read-only の別プロセスです。編集・コミット・push・PR・デプロイ・main操作・外部連絡は禁止。
+
+対象: C:/Users/kanet/20260522/wt-kukaku-seiri
+基点: bb912dfd0494f7095ec5387f9f2e53f46381cd1f (origin/main)。基点から現在HEADまでの全CQ7差分が対象です。
+初回レビュー: reports/cq7-20261104/review-1.md。初回条件と検査範囲は review-prompt-1.txt を参照。
+
+初回はFAIL/PARTIAL。修正対象2件:
+1. 問1の都市計画法施行令の参照を「第9条」から「第10条第1号」へ変更。
+2. 問12の土地区画整理法施行令の参照を「第1条（公共施設）」から「第67条」へ変更。
+各々explanations.jsonと2026-annual.jsonの双方を修正し、独立取得した公式XMLの条項で確認しました。回帰テストを1件追加し、原文監査の対象SHA256を更新しています。問題本文・4肢・正答番号・全160肢の解説本文・44原本画像は変えていません。
+併せて、再生成時のJSON・監査receiptの改行をWindowsでもLFに固定し、再生成で全行差分が出ないようにしました。データをJSONとして初回snapshotと比較し、変更フィールドが問1・問12のexplanationReferencesだけであることも確認しています。
+
+今回も修正箇所だけでなく、原文・正答・全肢解説・数式/表・参照根拠・公開隔離・検証接続を確認し、他の明確な不具合があれば具体的に報告してください。2025年度は問題本文が公式で未取得、正答のみのため、twoRoundComplete=false、40/80、publicAllowed=false、needsReview=trueを維持しています。取得不能の候補URLを通常GETの404記録とともに報告しており、未完了を隠していません。
+
+一時原本: C:/Users/kanet/AppData/Local/Temp/codex-work/cq7
+20260907t_mondaia.pdf、20260907t_seitou.pdf、20250908t_seitou.pdf、datasheets20251212.pdf、公式法令XML、kaigisiryou5.pdf、001740690.pdf、reference-audit-map.jsonなどがあります。初回後も保持中。取得制限の迂回は禁止、追加取得は必要なら通常GETのみ。
+
+main実行の修正後ログは reports/cq7-20261104/{validate-questions,typecheck,related-tests}.log。原文監査は original-audit.json。typecheckはキャッシュ書込を避ける場合は --incremental false を使用してください。子プロセス起動がread-only環境でEPERMとなった場合は、その事実とログ読取を実際の再実行成功と区別してください。
+
+最終出力は先頭にPASSまたはFAIL。タスク完了状況COMPLETE/PARTIALを別記。FAILなら具体箇所・根拠・影響を示してください。PASSでも2025年度本文40問・再利用条件・人手最終確認という残作業と、技術的解説の裏付け範囲の限界を明記してください。初回2件が直っていることと、再検査した範囲を報告してください。

@@ -1,0 +1,558 @@
+
+> ipa-quiz-site@1.0.0 e2e C:\Users\kanet\20260522\wt-batch3
+> playwright test
+
+
+Running 433 tests using 2 workers
+
+  ok   2 tests\e2e\adk-readiness.spec.ts:3:5 › singleton category stays readable without JavaScript and points to an explained question (6.3s)
+  ok   1 tests\e2e\adk-readiness.spec.ts:24:5 › search and mode selection are noindex across query variants (7.5s)
+  ok   4 tests\e2e\admin-auth.spec.ts:25:7 › /admin Basic Auth › bare /admin answers fast with an auth-gate status (no hang) (127ms)
+  ok   5 tests\e2e\admin-auth.spec.ts:33:7 › /admin Basic Auth › bare /admin/ (trailing slash) resolves to the auth gate (no hang) (10ms)
+  ok   6 tests\e2e\admin-auth.spec.ts:44:9 › /admin Basic Auth › configured admin auth (local webServer) › no credentials → 401 with a Basic challenge (configured, NOT 503) (10ms)
+  ok   7 tests\e2e\admin-auth.spec.ts:50:9 › /admin Basic Auth › configured admin auth (local webServer) › nested admin route without credentials → 401 (not 503) (19ms)
+  ok   8 tests\e2e\admin-auth.spec.ts:55:9 › /admin Basic Auth › configured admin auth (local webServer) › wrong credentials → 401 (25ms)
+  ok   9 tests\e2e\admin-auth.spec.ts:63:9 › /admin Basic Auth › configured admin auth (local webServer) › valid credentials → 200 (full configured path through real middleware) (39ms)
+  ok   3 tests\e2e\adk-readiness.spec.ts:44:5 › fresh visitors can read the problem, reasoning and privacy contact without a login or consent dialog (1.6s)
+  ok  10 tests\e2e\adsense-learning-quality.spec.ts:10:5 › FP3 question survives the static-page CTA and normal-mode switch (1.2s)
+  ok  11 tests\e2e\adsense-learning-quality.spec.ts:31:7 › /fp3/2026-published exposes static explanation links without JavaScript (1.1s)
+  ok  13 tests\e2e\adsense-learning-quality.spec.ts:31:7 › /chosashi/2025-autumn exposes static explanation links without JavaScript (1.2s)
+  ok  12 tests\e2e\adsense-learning-quality.spec.ts:31:7 › /shika-ishi/2026-annual exposes static explanation links without JavaScript (1.4s)
+  ok  14 tests\e2e\adsense-learning-quality.spec.ts:45:5 › worked guide contains its problem, comparison, and check and the old URL is a 301 (1.5s)
+  ok  15 tests\e2e\adsense-learning-quality.spec.ts:61:5 › dental and land-surveyor pages distinguish originals and independent explanations (1.7s)
+  ok  17 tests\e2e\adsense-learning-quality.spec.ts:79:9 › fp3 header keeps the qualification in every learning mode on mobile (2.2s)
+  ok  16 tests\e2e\adsense-learning-quality.spec.ts:79:9 › fp3 header keeps the qualification in every learning mode on desktop (2.9s)
+  ok  18 tests\e2e\adsense-learning-quality.spec.ts:79:9 › shika-ishi header keeps the qualification in every learning mode on desktop (2.4s)
+  ok  19 tests\e2e\adsense-learning-quality.spec.ts:79:9 › shika-ishi header keeps the qualification in every learning mode on mobile (2.6s)
+  ok  20 tests\e2e\adsense-learning-quality.spec.ts:79:9 › chosashi header keeps the qualification in every learning mode on desktop (2.5s)
+  ok  21 tests\e2e\adsense-learning-quality.spec.ts:79:9 › chosashi header keeps the qualification in every learning mode on mobile (2.6s)
+  ok  23 tests\e2e\afternoon-retired-boundary.spec.ts:9:5 › retired afternoon supply is empty over HTTP and its scoring target returns 404 (443ms)
+  ok  24 tests\e2e\auth-session.spec.ts:4:7 › /api/auth/session › returns 200 with JSON body even without AUTH_SECRET (11ms)
+  ok  25 tests\e2e\badge-toast-overlap.spec.ts:17:7 › quiet achievements / post-answer controls › the first badge is recorded without covering the explanation (875ms)
+  ok  22 tests\e2e\adsense-learning-quality.spec.ts:105:5 › unapproved learning, navigation and error routes never initialize Google ads (2.3s)
+  ok  26 tests\e2e\badge-toast-overlap.spec.ts:24:7 › quiet achievements / post-answer controls › the next-question CTA bar is usable immediately (902ms)
+  ok  28 tests\e2e\badge-toast-overlap.spec.ts:40:7 › quiet achievements / post-answer controls › review registration stays clickable after a badge unlock (1.0s)
+  ok  29 tests\e2e\batch3-release.spec.ts:10:5 › batch3: new qualification hubs and retained GSC entry URLs work at mobile width (4.0s)
+  ok  30 tests\e2e\batch3-release.spec.ts:27:5 › batch3: surveyor afternoon uses manual assessment, original figures and official examples (1.0s)
+  ok  27 tests\e2e\badge-toast-overlap.spec.ts:33:7 › quiet achievements / post-answer controls › no delayed badge interrupts reading the first explanation (7.0s)
+  ok  31 tests\e2e\batch3-release.spec.ts:47:5 › batch3: travel multi-selection preserves exact grading and source diagrams (800ms)
+  ok  33 tests\e2e\blog-question-count.spec.ts:43:7 › blog ↔ exam-list question-count consistency (SSOT) › IP blog CTA count equals the IPA exam-list IP count (35ms)
+  ok  32 tests\e2e\batch3-release.spec.ts:55:5 › batch3: source figures render and contact site parameter retains both support paths (1.7s)
+  ok  35 tests\e2e\chosashi-descriptive.spec.ts:3:5 › 土地家屋調査士の記述を独自解答例として閲覧し、同じ問をクイズで開ける (1.4s)
+  ok  34 tests\e2e\canonical.spec.ts:62:5 › 主要ページの canonical URL が自ページを指している (3.2s)
+  ok  36 tests\e2e\chosashi-descriptive.spec.ts:18:5 › 土地家屋調査士の建物記述に計算図と公式出題趣旨を表示する (829ms)
+  ok  38 tests\e2e\civil1-first-stage.spec.ts:25:7 › 1級土木施工管理 第一次検定 › 問題A No.3 は公式図を表示し、誤答すると正解を示す (829ms)
+  ok  37 tests\e2e\civil1-first-stage.spec.ts:7:7 › 1級土木施工管理 第一次検定 › 年度一覧に問題A 66問・問題B 34問と公式6区分が並ぶ (1.7s)
+  ok  39 tests\e2e\civil1-first-stage.spec.ts:34:7 › 1級土木施工管理 第一次検定 › 問題B No.6 は正答エで正解になる (1.0s)
+  ok  40 tests\e2e\cloud-sync.spec.ts:11:7 › cloud sync: opt-in, non-intrusive › /settings renders the クラウド同期 section (1.0s)
+  ok  41 tests\e2e\cloud-sync.spec.ts:16:7 › cloud sync: opt-in, non-intrusive › signed-out user sees a sign-in CTA, not a destructive action (886ms)
+  ok  42 tests\e2e\cloud-sync.spec.ts:24:7 › cloud sync: opt-in, non-intrusive › home page shows no account-creation banner (LocalStorage-first) (971ms)
+  ok  44 tests\e2e\cloud-sync.spec.ts:38:7 › cloud sync: opt-in, non-intrusive › sync endpoints are reachable and gated (503 without DB / 401 without auth) (162ms)
+  -   45 tests\e2e\contact-enterprise.spec.ts:8:7 › POST /api/contact/enterprise › valid payload returns 200
+  -   46 tests\e2e\contact-enterprise.spec.ts:25:7 › POST /api/contact/enterprise › missing required fields returns 400
+  -   47 tests\e2e\contact-enterprise.spec.ts:32:7 › POST /api/contact/enterprise › invalid email returns 400
+  -   48 tests\e2e\contact-enterprise.spec.ts:43:7 › /contact/enterprise GET page (PAID_MODE only) › loads form page with 200
+  -   49 tests\e2e\contact-enterprise.spec.ts:51:7 › /contact/enterprise GET page (PAID_MODE only) › /contact/enterprise/thanks loads with 200
+  ok  43 tests\e2e\cloud-sync.spec.ts:30:7 › cloud sync: opt-in, non-intrusive › bookmarking still works without signing in (929ms)
+  ok  50 tests\e2e\contact-enterprise.spec.ts:61:7 › /contact/enterprise GET page (educational contribution mode) › returns 410 Gone in educational contribution mode (419ms)
+  ok  52 tests\e2e\contact-site.spec.ts:18:7 › 通常・未対応・重複queryは従来の初期種別  (717ms)
+  ok  53 tests\e2e\contact-site.spec.ts:18:7 › 通常・未対応・重複queryは従来の初期種別 ?site=unknown (478ms)
+  ok  54 tests\e2e\contact-site.spec.ts:18:7 › 通常・未対応・重複queryは従来の初期種別 ?site=tsugino&site=unknown (475ms)
+  ok  55 tests\e2e\contact-site.spec.ts:26:5 › 種別を変更でき、短すぎる本文では送信しない (547ms)
+  ok  56 tests\e2e\contact-site.spec.ts:38:5 › 390pxでもフォームは画面幅に収まり、プライバシーに転送先を説明する (701ms)
+  ok  57 tests\e2e\denken1-launch.spec.ts:9:7 › denken1 理論 card opens its 10 selected blanks (875ms)
+  ok  58 tests\e2e\denken1-launch.spec.ts:9:7 › denken1 電力 card opens its 5 selected blanks (868ms)
+  ok  59 tests\e2e\denken1-launch.spec.ts:9:7 › denken1 機械 card opens its 5 selected blanks (888ms)
+  x   51 tests\e2e\contact-site.spec.ts:3:5 › 次の資格を初期選択し、任意項目を空のまま既存APIへ送信できる (5.8s)
+  ok  60 tests\e2e\denken1-launch.spec.ts:9:7 › denken1 法規 card opens its 5 selected blanks (926ms)
+  ok  62 tests\e2e\denken1-launch.spec.ts:23:5 › denken1 question page shows official kana answer options (689ms)
+  ok  63 tests\e2e\denken1-launch.spec.ts:29:5 › denken1 theory question keeps official iroha choice labels (653ms)
+  ok  64 tests\e2e\denken1-launch.spec.ts:36:5 › denken1 unsupported subject stays redirected to the exam index (433ms)
+  ok  65 tests\e2e\denken1-launch.spec.ts:42:5 › denken1 theory question 3 shows the two official figures and original options (758ms)
+  ok  66 tests\e2e\denken2-launch.spec.ts:11:7 › denken2 電力 card starts the 2026 first-stage paper (941ms)
+  ok  67 tests\e2e\denken2-launch.spec.ts:11:7 › denken2 法規 card starts the 2026 first-stage paper (851ms)
+  ok  68 tests\e2e\denken2-launch.spec.ts:29:5 › blank units have direct pages with official iroha labels and all-choice reasons (990ms)
+::error file=tests\e2e\contact-site.spec.ts,title=tests\e2e\contact-site.spec.ts:3:5 › 次の資格を初期選択し、任意項目を空のまま既存APIへ送信できる,line=14,col=80::  1) tests\e2e\contact-site.spec.ts:3:5 › 次の資格を初期選択し、任意項目を空のまま既存APIへ送信できる ──────────────────────────%0A    Error: expect(locator).toBeVisible() failed%0A%0A    Locator: getByRole('status').filter({ hasText: 'お問い合わせを受け付けました' })%0A    Expected: visible%0A    Timeout: 5000ms%0A    Error: element(s) not found%0A%0A    Call log:%0A      - Expect "toBeVisible" with timeout 5000ms%0A      - waiting for getByRole('status').filter({ hasText: 'お問い合わせを受け付けました' })%0A%0A%0A      12 |   await page.getByRole("button", { name: "送信する", exact: true }).click();%0A      13 |   expect((await posted).postDataJSON()).toMatchObject({ kind: "contact", category: "tsugino", name: "", email: "" });%0A    > 14 |   await expect(page.getByRole("status").filter({ hasText: "お問い合わせを受け付けました" })).toBeVisible();%0A         |                                                                                ^%0A      15 | });%0A      16 |%0A      17 | for (const query of ["", "?site=unknown", "?site=tsugino&site=unknown"]) {%0A        at C:\Users\kanet\20260522\wt-batch3\tests\e2e\contact-site.spec.ts:14:80
+::error file=tests\e2e\contact-site.spec.ts,title=tests\e2e\contact-site.spec.ts:3:5 › 次の資格を初期選択し、任意項目を空のまま既存APIへ送信できる,line=14,col=80::  1) tests\e2e\contact-site.spec.ts:3:5 › 次の資格を初期選択し、任意項目を空のまま既存APIへ送信できる ──────────────────────────%0A%0A    Retry #1 ───────────────────────────────────────────────────────────────────────────────────────%0A    Error: expect(locator).toBeVisible() failed%0A%0A    Locator: getByRole('status').filter({ hasText: 'お問い合わせを受け付けました' })%0A    Expected: visible%0A    Timeout: 5000ms%0A    Error: element(s) not found%0A%0A    Call log:%0A      - Expect "toBeVisible" with timeout 5000ms%0A      - waiting for getByRole('status').filter({ hasText: 'お問い合わせを受け付けました' })%0A%0A%0A      12 |   await page.getByRole("button", { name: "送信する", exact: true }).click();%0A      13 |   expect((await posted).postDataJSON()).toMatchObject({ kind: "contact", category: "tsugino", name: "", email: "" });%0A    > 14 |   await expect(page.getByRole("status").filter({ hasText: "お問い合わせを受け付けました" })).toBeVisible();%0A         |                                                                                ^%0A      15 | });%0A      16 |%0A      17 | for (const query of ["", "?site=unknown", "?site=tsugino&site=unknown"]) {%0A        at C:\Users\kanet\20260522\wt-batch3\tests\e2e\contact-site.spec.ts:14:80
+  x   61 tests\e2e\contact-site.spec.ts:3:5 › 次の資格を初期選択し、任意項目を空のまま既存APIへ送信できる (retry #1) (5.7s)
+  ok  69 tests\e2e\denken2-launch.spec.ts:41:5 › figure questions render the cropped official figure (641ms)
+  ok  70 tests\e2e\denken2-launch.spec.ts:46:5 › off-scope denken2 quiz links return to the landing page (442ms)
+  ok  71 tests\e2e\denken3-launch.spec.ts:15:11 › 2024 first 理論 card starts the selected paper (961ms)
+  ok  73 tests\e2e\denken3-launch.spec.ts:15:11 › 2024 first 電力 card starts the selected paper (972ms)
+  ok  72 tests\e2e\denken2-launch.spec.ts:51:5 › latest two secondary papers preserve written answers and review status (1.6s)
+  ok  74 tests\e2e\denken3-launch.spec.ts:15:11 › 2024 first 機械 card starts the selected paper (1.3s)
+  ok  75 tests\e2e\denko1-academic.spec.ts:8:7 › 第一種電気工事士 学科 › 試験トップから令和8年度上期の50問一覧へ進める (1.3s)
+  ok  77 tests\e2e\denko1-academic.spec.ts:25:7 › 第一種電気工事士 学科 › 配線図の問題は公式の単線結線図を表示し、誤答で全肢の解説が出る (758ms)
+  ok  76 tests\e2e\denken3-launch.spec.ts:15:11 › 2024 first 法規 card starts the selected paper (1.3s)
+  ok  78 tests\e2e\denko1-academic.spec.ts:39:7 › 第一種電気工事士 学科 › 図の選択肢は4つの図を表示し、正答を選ぶと正解になる (630ms)
+  ok  80 tests\e2e\denko2-skill.spec.ts:6:5 › skill exam: date → question diagram and figure 2 → official answer → return (1.3s)
+  ok  79 tests\e2e\denken3-launch.spec.ts:15:11 › 2024 second 理論 card starts the selected paper (1.5s)
+  ok  81 tests\e2e\denko2-skill.spec.ts:28:5 › skill exam: small-screen problem and answer images remain readable and zoomable (631ms)
+  ok  82 tests\e2e\denken3-launch.spec.ts:15:11 › 2024 second 電力 card starts the selected paper (999ms)
+  ok  84 tests\e2e\denken3-launch.spec.ts:15:11 › 2024 second 機械 card starts the selected paper (921ms)
+  ok  83 tests\e2e\exam-top-entry.spec.ts:9:11 › exam top at 320px › sc: visible menu, real destinations and accurate afternoon scope (1.3s)
+  ok  85 tests\e2e\denken3-launch.spec.ts:15:11 › 2024 second 法規 card starts the selected paper (903ms)
+  ok  86 tests\e2e\exam-top-entry.spec.ts:9:11 › exam top at 320px › nw: visible menu, real destinations and accurate afternoon scope (1.2s)
+  ok  87 tests\e2e\denken3-launch.spec.ts:15:11 › 2025 first 理論 card starts the selected paper (826ms)
+  ok  88 tests\e2e\exam-top-entry.spec.ts:9:11 › exam top at 320px › st: visible menu, real destinations and accurate afternoon scope (1.4s)
+  ok  89 tests\e2e\denken3-launch.spec.ts:15:11 › 2025 first 電力 card starts the selected paper (917ms)
+  ok  91 tests\e2e\denken3-launch.spec.ts:15:11 › 2025 first 機械 card starts the selected paper (992ms)
+  ok  90 tests\e2e\exam-top-entry.spec.ts:9:11 › exam top at 320px › sa: visible menu, real destinations and accurate afternoon scope (1.3s)
+  ok  92 tests\e2e\denken3-launch.spec.ts:15:11 › 2025 first 法規 card starts the selected paper (924ms)
+  ok  93 tests\e2e\exam-top-entry.spec.ts:9:11 › exam top at 320px › ap: visible menu, real destinations and accurate afternoon scope (1.2s)
+  ok  94 tests\e2e\denken3-launch.spec.ts:15:11 › 2025 second 理論 card starts the selected paper (889ms)
+  ok  95 tests\e2e\exam-top-entry.spec.ts:9:11 › exam top at 390px › sc: visible menu, real destinations and accurate afternoon scope (1.2s)
+  ok  96 tests\e2e\denken3-launch.spec.ts:15:11 › 2025 second 電力 card starts the selected paper (838ms)
+  ok  98 tests\e2e\denken3-launch.spec.ts:15:11 › 2025 second 機械 card starts the selected paper (881ms)
+  ok  97 tests\e2e\exam-top-entry.spec.ts:9:11 › exam top at 390px › nw: visible menu, real destinations and accurate afternoon scope (1.2s)
+  ok  99 tests\e2e\denken3-launch.spec.ts:15:11 › 2025 second 法規 card starts the selected paper (900ms)
+  ok 100 tests\e2e\exam-top-entry.spec.ts:9:11 › exam top at 390px › st: visible menu, real destinations and accurate afternoon scope (1.4s)
+  ok 101 tests\e2e\denken3-launch.spec.ts:29:5 › branch parts have distinct direct pages and official labels (1.4s)
+  ok 103 tests\e2e\denken3-launch.spec.ts:39:5 › official-summary paper discloses its explanation scope (793ms)
+  ok 102 tests\e2e\exam-top-entry.spec.ts:9:11 › exam top at 390px › sa: visible menu, real destinations and accurate afternoon scope (1.7s)
+  ok 104 tests\e2e\exam-top-entry.spec.ts:9:11 › exam top at 390px › ap: visible menu, real destinations and accurate afternoon scope (1.3s)
+  ok 105 tests\e2e\exam-top-entry.spec.ts:9:11 › exam top at 1440px › sc: visible menu, real destinations and accurate afternoon scope (1.4s)
+  ok 106 tests\e2e\exam-top-entry.spec.ts:9:11 › exam top at 1440px › nw: visible menu, real destinations and accurate afternoon scope (1.3s)
+  ok 107 tests\e2e\exam-top-entry.spec.ts:9:11 › exam top at 1440px › st: visible menu, real destinations and accurate afternoon scope (1.4s)
+  ok 108 tests\e2e\exam-top-entry.spec.ts:9:11 › exam top at 1440px › sa: visible menu, real destinations and accurate afternoon scope (1.4s)
+  ok 109 tests\e2e\exam-top-entry.spec.ts:9:11 › exam top at 1440px › ap: visible menu, real destinations and accurate afternoon scope (1.4s)
+  ok 110 tests\e2e\exam-top-entry.spec.ts:55:9 › native exam navigation before JavaScript › sc: browse older years and every field without hydration (829ms)
+  ok 111 tests\e2e\exam-top-entry.spec.ts:55:9 › native exam navigation before JavaScript › nw: browse older years and every field without hydration (799ms)
+  ok 112 tests\e2e\exam-top-entry.spec.ts:55:9 › native exam navigation before JavaScript › st: browse older years and every field without hydration (803ms)
+  ok 113 tests\e2e\exam-top-entry.spec.ts:55:9 › native exam navigation before JavaScript › sa: browse older years and every field without hydration (813ms)
+  ok 114 tests\e2e\exam-top-entry.spec.ts:55:9 › native exam navigation before JavaScript › ap: browse older years and every field without hydration (884ms)
+  ok 115 tests\e2e\exam-year-coverage.spec.ts:4:7 › ap year cards separate coverage range from total count (612ms)
+  ok 116 tests\e2e\exam-year-coverage.spec.ts:4:7 › sc year cards separate coverage range from total count (732ms)
+  ok 118 tests\e2e\feedback-redirect.spec.ts:6:7 › /feedback redirect (no 404) › GET /feedback redirects to /contact (not 404) (87ms)
+  ok 117 tests\e2e\exam-year-coverage.spec.ts:4:7 › fe year cards separate coverage range from total count (638ms)
+  ok 119 tests\e2e\feedback-redirect.spec.ts:12:7 › /feedback redirect (no 404) › following /feedback lands on the contact page with 200 (481ms)
+  ok 120 tests\e2e\first-ten-limit-fixture.spec.ts:6:5 › quota UI fixture: ten uninterrupted answers, then free exits before the optional plan (3.9s)
+  ok 121 tests\e2e\first-ten.spec.ts:13:9 › search /sc: one start tap, one answer tap, inline explanation (3.7s)
+  ok 122 tests\e2e\first-ten.spec.ts:13:9 › search /nw: one start tap, one answer tap, inline explanation (3.6s)
+  ok 123 tests\e2e\first-ten.spec.ts:13:9 › search /st: one start tap, one answer tap, inline explanation (3.7s)
+  ok 124 tests\e2e\first-ten.spec.ts:13:9 › search /sa: one start tap, one answer tap, inline explanation (3.9s)
+  ok 125 tests\e2e\first-ten.spec.ts:13:9 › search /ap: one start tap, one answer tap, inline explanation (3.8s)
+  ok 126 tests\e2e\first-ten.spec.ts:41:9 › search article it-shikaku-rirekisho-kakikata: one anchor tap and one answer tap (3.3s)
+  ok 127 tests\e2e\first-ten.spec.ts:41:9 › search article ipa-shiken-fukusuu-kubun-juken: one anchor tap and one answer tap (3.7s)
+  ok 128 tests\e2e\first-ten.spec.ts:41:9 › search article koudo-gozen1-taisaku: one anchor tap and one answer tap (3.4s)
+  ok 129 tests\e2e\first-ten.spec.ts:41:9 › search article nw-gogo-jikan-haibun: one anchor tap and one answer tap (3.3s)
+  ok 130 tests\e2e\first-ten.spec.ts:13:9 › tsugino /sc: one start tap, one answer tap, inline explanation (3.7s)
+  ok 131 tests\e2e\first-ten.spec.ts:13:9 › tsugino /nw: one start tap, one answer tap, inline explanation (3.6s)
+  ok 132 tests\e2e\first-ten.spec.ts:13:9 › tsugino /st: one start tap, one answer tap, inline explanation (3.6s)
+  ok 133 tests\e2e\first-ten.spec.ts:13:9 › tsugino /sa: one start tap, one answer tap, inline explanation (3.6s)
+  ok 135 tests\e2e\first-ten.spec.ts:41:9 › tsugino article it-shikaku-rirekisho-kakikata: one anchor tap and one answer tap (3.8s)
+  ok 134 tests\e2e\first-ten.spec.ts:13:9 › tsugino /ap: one start tap, one answer tap, inline explanation (4.2s)
+  ok 136 tests\e2e\first-ten.spec.ts:41:9 › tsugino article ipa-shiken-fukusuu-kubun-juken: one anchor tap and one answer tap (3.6s)
+  ok 137 tests\e2e\first-ten.spec.ts:41:9 › tsugino article koudo-gozen1-taisaku: one anchor tap and one answer tap (3.6s)
+  ok 138 tests\e2e\first-ten.spec.ts:41:9 › tsugino article nw-gogo-jikan-haibun: one anchor tap and one answer tap (3.2s)
+  ok 140 tests\e2e\fouc-css-delivery.spec.ts:21:7 › no FOUC on /q/* › head ships render-blocking, same-origin stylesheets (no async swap) (73ms)
+  ok 141 tests\e2e\fouc-css-delivery.spec.ts:35:7 › no FOUC on /q/* › Tailwind is applied on first render (no unstyled flash) (776ms)
+  ok 139 tests\e2e\first-ten.spec.ts:66:5 › a fresh visitor can answer ten real questions without account prompts or automatic celebrations (3.9s)
+  ok 142 tests\e2e\fp2-academic-two-year.spec.ts:5:5 › FP2 academic papers expose four complete official sessions and preserve the 2026 pilot label (818ms)
+  ok 143 tests\e2e\fp2-academic-two-year.spec.ts:17:5 › FP2 academic question keeps text choices, figure crop and per-choice explanations (823ms)
+  ok 145 tests\e2e\fp2-practical.spec.ts:21:5 › FP2 CBT published practical paper exposes its final model answer (613ms)
+  ok 146 tests\e2e\fp2-practical.spec.ts:29:5 › FP2 2026 practical calendar and all combination reasons remain readable on mobile (858ms)
+  ok 144 tests\e2e\fp2-practical.spec.ts:3:5 › FP2 practical papers remain separate from academic practice and show exact model answers (1.7s)
+  ok 147 tests\e2e\fp2-practical.spec.ts:42:5 › FP2 numeric practical choices are separate cards and the answer includes the choice text (704ms)
+  ok 148 tests\e2e\fp2-practical.spec.ts:53:5 › FP2 practical solutions show every option reason and preserve shared source tables (1.1s)
+  ok 150 tests\e2e\fp3-practical.spec.ts:25:5 › FP3 final practical question keeps back navigation and official sources (911ms)
+  ok 149 tests\e2e\fp3-practical.spec.ts:3:5 › FP3 offers three complete practical years with readable choices and explanations (1.9s)
+  ok 152 tests\e2e\fp3-q11-category.spec.ts:30:5 › FP3 financial category and topic filters retain the selected 2026 question ID (908ms)
+  ok 151 tests\e2e\fp3-q11-category.spec.ts:7:5 › FP3 question 11 keeps its year-list solve and static explanation links after category correction (1.5s)
+  ok 153 tests\e2e\home-categories.spec.ts:8:7 › qualification coverage opens below the sticky header at 400px (979ms)
+  ok 154 tests\e2e\home-categories.spec.ts:8:7 › qualification coverage opens below the sticky header at 1280px (851ms)
+  ok 155 tests\e2e\home-categories.spec.ts:28:7 › home lets learners jump straight to a qualification at 390px (3.1s)
+  ok 156 tests\e2e\home-categories.spec.ts:28:7 › home lets learners jump straight to a qualification at 1280px (3.0s)
+  ok 157 tests\e2e\home-categories.spec.ts:96:5 › home sends exam schedule questions to 次の資格 (795ms)
+  ok 158 tests\e2e\home-cta-click.spec.ts:17:7 › home qualification card -> start works with real clicks at 360px (1.6s)
+  ok 159 tests\e2e\home-cta-click.spec.ts:17:7 › home qualification card -> start works with real clicks at 1280px (1.6s)
+  ok 161 tests\e2e\home-snippet.spec.ts:30:7 › home SERP snippet › meta description is clean and mirrored to og/twitter (24ms)
+  ok 160 tests\e2e\home-cta-click.spec.ts:32:5 › first qualification remains stable through hydration (1.3s)
+  ok 162 tests\e2e\home-snippet.spec.ts:48:7 › home SERP snippet › qualification catalog replaces the demo while preserving IPA structured data (1.4s)
+  ok 163 tests\e2e\home-study-entry.spec.ts:8:7 › hero reaches the finder, then qualification reaches its question in two actions and restores filters at 390px (2.6s)
+  ok 164 tests\e2e\home-study-entry.spec.ts:8:7 › hero reaches the finder, then qualification reaches its question in two actions and restores filters at 1280px (2.8s)
+  ok 165 tests\e2e\home-study-entry.spec.ts:46:5 › real saved question and wrong answers stay within the selected exam (1.9s)
+  ok 166 tests\e2e\home-study-entry.spec.ts:63:5 › invalid saved coordinates produce no invented progress (783ms)
+  ok 168 tests\e2e\home-study-entry.spec.ts:86:5 › challenge direct access requires a qualification (1.0s)
+  ok 167 tests\e2e\home-study-entry.spec.ts:70:5 › year list starts the chosen question without revealing its answer (1.3s)
+  ok 170 tests\e2e\home-study-entry.spec.ts:143:5 › safety paper resumes its real saved question without a guessed score (1.0s)
+  ok 169 tests\e2e\home-study-entry.spec.ts:95:5 › answer actions keep focus and next question survives reload on a short phone (2.0s)
+  ok 171 tests\e2e\ipa-session-navigation.spec.ts:6:5 › specialist practice defaults to morning II and switches explicitly (1.4s)
+  ok 172 tests\e2e\ipa-session-navigation.spec.ts:18:5 › annual page keeps selected session and return target across learning modes (1.3s)
+  ok 173 tests\e2e\ipa-session-navigation.spec.ts:31:5 › question detail quiz returns to the same question (1.3s)
+  ok 174 tests\e2e\ipa-session-navigation.spec.ts:40:5 › ST 2025 spring AM II listing and player expose the same questions (2.2s)
+  ok 175 tests\e2e\ipa-session-navigation.spec.ts:66:5 › ST 2024 keeps AM I and AM II separate and renders audited figures (2.0s)
+  ok 176 tests\e2e\ipa-session-navigation.spec.ts:87:7 › ST 2024 am1 shows the selected wrong reason and browser back preserves the question (1.6s)
+  ok 177 tests\e2e\ipa-session-navigation.spec.ts:87:7 › ST 2024 am2 shows the selected wrong reason and browser back preserves the question (2.9s)
+  ok 178 tests\e2e\ipa-session-navigation.spec.ts:87:7 › ST 2025 am1 shows the selected wrong reason and browser back preserves the question (3.1s)
+  ok 179 tests\e2e\ipa-session-navigation.spec.ts:87:7 › ST 2025 am2 shows the selected wrong reason and browser back preserves the question (1.6s)
+  ok 181 tests\e2e\kaigo-official.spec.ts:20:7 › 介護福祉士 第37回・第38回 › question page keeps ruby, numbers choices 1-5, and grades in place (1.5s)
+  ok 180 tests\e2e\kaigo-official.spec.ts:4:7 › 介護福祉士 第37回・第38回 › exam hub shows 250 questions and each year shows 125 with the independence notice (1.8s)
+  ok 182 tests\e2e\kaigo-official.spec.ts:33:7 › 介護福祉士 第37回・第38回 › figure-only choices of question 49 render the cropped official figures (936ms)
+  ok 183 tests\e2e\kaigo-official.spec.ts:43:7 › 介護福祉士 第37回・第38回 › 第37回問題121は公式系図を表示し、選択肢2を正答として採点する (931ms)
+  ok 184 tests\e2e\kankoji2-first-stage.spec.ts:8:9 › 2級管工事施工管理 第一次検定 › 2025-late の年度一覧に全52問と公式6区分が並ぶ (1.5s)
+  ok 185 tests\e2e\kankoji2-first-stage.spec.ts:8:9 › 2級管工事施工管理 第一次検定 › 2026-early の年度一覧に全52問と公式6区分が並ぶ (1.5s)
+  ok 187 tests\e2e\kankoji2-first-stage.spec.ts:38:7 › 2級管工事施工管理 第一次検定 › No.50 で一肢だけ正しい組合せは不正解 (791ms)
+  ok 186 tests\e2e\kankoji2-first-stage.spec.ts:25:7 › 2級管工事施工管理 第一次検定 › No.49 は1肢目で採点せず、正答の2肢をそろえると正解 (845ms)
+  ok 188 tests\e2e\kankoji2-first-stage.spec.ts:46:7 › 2級管工事施工管理 第一次検定 › 公式図付きの問題は原図を表示し、1肢選択で採点できる (1.2s)
+  ok 189 tests\e2e\kgrow-learning-continuity.spec.ts:5:5 › mobile: hash-selected dashboard tabs scroll horizontally without moving the page (1.7s)
+  ok 190 tests\e2e\kgrow-learning-continuity.spec.ts:19:5 › mobile: answer → explanation → related → review → next survives reload (2.1s)
+  ok 191 tests\e2e\kgrow-learning-continuity.spec.ts:55:5 › mobile: a submitted short mock reaches scores, progress, weakness and exact review (3.3s)
+  ok 192 tests\e2e\kgrow-learning-continuity.spec.ts:98:5 › mobile: one calculated plan preserves daily progress and its old result URL (2.0s)
+  ok 193 tests\e2e\kgrow2-blog-practice.spec.ts:5:7 › it-shikaku-rirekisho-kakikata: answer in the article and continue with the mapped exam and session (1.8s)
+  ok 194 tests\e2e\kgrow2-blog-practice.spec.ts:5:7 › ipa-shiken-fukusuu-kubun-juken: answer in the article and continue with the mapped exam and session (1.5s)
+  ok 196 tests\e2e\kgrow2-blog-practice.spec.ts:5:7 › nw-gogo-jikan-haibun: answer in the article and continue with the mapped exam and session (1.4s)
+  ok 195 tests\e2e\kgrow2-blog-practice.spec.ts:5:7 › koudo-gozen1-taisaku: answer in the article and continue with the mapped exam and session (1.4s)
+  ok 197 tests\e2e\kgrow2-blog-practice.spec.ts:33:5 › the practice stays before the article and the existing ad review gate remains closed (769ms)
+  ok 198 tests\e2e\kgrow2-blog-practice.spec.ts:48:5 › 390px: a six-choice worked example keeps all choices and its actual choice count (898ms)
+  ok 200 tests\e2e\kgrow2-blog-practice.spec.ts:75:5 › the study room returns to the qualification last answered on this device (1.2s)
+  ok 199 tests\e2e\kgrow2-blog-practice.spec.ts:60:5 › a supplement remains editable after failure and receives a receipt after retry (1.8s)
+  ok 201 tests\e2e\kperf1-explanation-ready.spec.ts:5:5 › prepared explanation stays hidden and inert until a real answer, then receives focus without navigation or AI (1.0s)
+  ok 202 tests\e2e\mankan.spec.ts:4:7 › マンション管理士試験 › the exam top names the source, the law reference dates and the independence notice (846ms)
+  ok 203 tests\e2e\mankan.spec.ts:11:7 › マンション管理士試験 › a question page grades the official answer and shows the attribution (1.3s)
+  ok 204 tests\e2e\medical161-release.spec.ts:15:9 › 視能訓練士 saved release: native reader and original figures at 1280px (1.1s)
+  ok 205 tests\e2e\medical161-release.spec.ts:15:9 › 臨床検査技師 saved release: native reader and original figures at 1280px (904ms)
+  ok 206 tests\e2e\medical161-release.spec.ts:15:9 › 薬剤師 saved release: native reader and original figures at 1280px (1.1s)
+  ok 208 tests\e2e\medical161-release.spec.ts:15:9 › 臨床検査技師 saved release: native reader and original figures at 390px (650ms)
+  ok 207 tests\e2e\medical161-release.spec.ts:15:9 › 視能訓練士 saved release: native reader and original figures at 390px (959ms)
+  ok 209 tests\e2e\medical161-release.spec.ts:15:9 › 薬剤師 saved release: native reader and original figures at 390px (669ms)
+  ok 210 tests\e2e\mobile-bottomnav-learning-routes.spec.ts:17:7 › MobileBottomNav visibility by route › hidden on /quiz, and the next-question CTA is tappable after answering (724ms)
+  ok 211 tests\e2e\mobile-bottomnav-learning-routes.spec.ts:30:7 › MobileBottomNav visibility by route › hidden on /q/* question pages (642ms)
+  ok 212 tests\e2e\mobile-bottomnav-learning-routes.spec.ts:35:7 › MobileBottomNav visibility by route › visible on the home page (611ms)
+  ok 214 tests\e2e\mobile-bottomnav-spacing.spec.ts:26:7 › / keeps its final card/CTA at least 8px above the mobile nav (728ms)
+  ok 213 tests\e2e\mobile-bottomnav-learning-routes.spec.ts:40:7 › MobileBottomNav visibility by route › visible on /search and /mock-exam (no bottom-CTA collision there) (1.1s)
+  ok 215 tests\e2e\mobile-bottomnav-spacing.spec.ts:26:7 › /ipa keeps its final card/CTA at least 8px above the mobile nav (644ms)
+  ok 216 tests\e2e\mobile-bottomnav-spacing.spec.ts:26:7 › /recommended-books/ap keeps its final card/CTA at least 8px above the mobile nav (801ms)
+  ok 217 tests\e2e\mobile-bottomnav-spacing.spec.ts:42:5 › footer links remain above the fixed mobile nav (686ms)
+  ok 218 tests\e2e\number-key-selection.spec.ts:17:7 › number-key 1 selects the first displayed choice › /quiz (QuizPlayer) (725ms)
+  ok 219 tests\e2e\number-key-selection.spec.ts:21:7 › number-key 1 selects the first displayed choice › /q/* (QuestionAnswerCard) (682ms)
+  ok 221 tests\e2e\number-key-selection.spec.ts:36:7 › number-key 1 selects the first displayed choice › /challenge with a selected exam starts that exam's five-question quiz (940ms)
+  ok 222 tests\e2e\pricing.spec.ts:7:7 › /pricing は恒久削除（410 Gone） › /pricing は 410 を返す (20ms)
+  ok 220 tests\e2e\number-key-selection.spec.ts:25:7 › number-key 1 selects the first displayed choice › /challenge starts with choosing an exam (1.2s)
+  ok 224 tests\e2e\pricing.spec.ts:25:7 › /pricing は恒久削除（410 Gone） › Sitemap returns 200 (28ms)
+  ok 225 tests\e2e\prune-a.spec.ts:16:9 › prune batch A › /referral returns a single 301 to /contact#legacy-benefits (10ms)
+  ok 226 tests\e2e\prune-a.spec.ts:16:9 › prune batch A › /student returns a single 301 to /contact#legacy-benefits (11ms)
+  ok 227 tests\e2e\prune-a.spec.ts:16:9 › prune batch A › /ranking returns a single 301 to /account/dashboard#mock-scores (11ms)
+  ok 228 tests\e2e\prune-a.spec.ts:16:9 › prune batch A › /success-stories returns a single 301 to /blog (18ms)
+  ok 229 tests\e2e\prune-a.spec.ts:16:9 › prune batch A › /success-stories/ap returns a single 301 to /ap (10ms)
+  ok 230 tests\e2e\prune-a.spec.ts:16:9 › prune batch A › /success-stories/ap/old-case returns a single 301 to /ap (29ms)
+  ok 231 tests\e2e\prune-a.spec.ts:16:9 › prune batch A › /success-stories/unknown/old-case returns a single 301 to /blog (13ms)
+  ok 232 tests\e2e\prune-a.spec.ts:16:9 › prune batch A › /testimonials returns a single 301 to /blog (53ms)
+  ok 233 tests\e2e\prune-a.spec.ts:16:9 › prune batch A › /admin/moderation returns a single 301 to /admin (11ms)
+  ok 234 tests\e2e\prune-a.spec.ts:16:9 › prune batch A › /admin/competitors returns a single 301 to /admin (14ms)
+  ok 223 tests\e2e\pricing.spec.ts:12:7 › /pricing は恒久削除（410 Gone） › /about の料金案内が無料範囲と月額プランを伝えている (547ms)
+  ok 235 tests\e2e\prune-a.spec.ts:23:7 › prune batch A › retired character asset URLs return 410 (211ms)
+  ok 236 tests\e2e\prune-a.spec.ts:31:7 › prune batch A › weekly signup no longer accepts email addresses (86ms)
+  ok 237 tests\e2e\prune-a.spec.ts:37:7 › prune batch A › old character preferences do not reintroduce the selector (584ms)
+  ok 238 tests\e2e\prune-a.spec.ts:49:7 › prune batch A › retained scores open from the legacy ranking link without a fabricated distribution (657ms)
+  ok 239 tests\e2e\prune-a.spec.ts:61:7 › prune batch A › contact preserves an explanation for previously promised benefits (503ms)
+  ok 241 tests\e2e\purchase-faq-release.spec.ts:8:5 › purchase offer keeps essential terms visible and detailed terms accessible at narrow width (799ms)
+  ok 240 tests\e2e\prune-a.spec.ts:68:7 › prune batch A › public learning pages have no note or article catalog CTA (1.8s)
+  ok 242 tests\e2e\purchase-faq-release.spec.ts:22:5 › difficulty FAQ does not assert unverified scoring sources (901ms)
+  ok 244 tests\e2e\pwa-offline.spec.ts:4:7 › PWA offline support › manifest is served with PWA-required fields (49ms)
+  ok 245 tests\e2e\pwa-offline.spec.ts:20:7 › PWA offline support › service worker is served with no-cache + scope headers (13ms)
+  ok 243 tests\e2e\purchase-faq-release.spec.ts:31:5 › success and cancel without an order do not falsely claim a completed purchase or send billing requests (1.0s)
+  ok 246 tests\e2e\pwa-offline.spec.ts:35:7 › PWA offline support › /offline page renders the offline shell (847ms)
+  ok 248 tests\e2e\q-inline-answer.spec.ts:26:7 › /q inline answer › server-rendered HTML keeps the choices + honest JSON-LD (SEO/no-JS) (326ms)
+  ok 247 tests\e2e\pwa-offline.spec.ts:44:7 › PWA offline support › apple-mobile-web-app meta tags are present in the document head (841ms)
+  ok 250 tests\e2e\q-inline-answer.spec.ts:67:7 › /q inline answer › a choice is keyboard-operable (role=radio, Enter activates) (754ms)
+  ok 249 tests\e2e\q-inline-answer.spec.ts:45:7 › /q inline answer › clicking a choice grades in place and reveals the explanation (no nav) (1.0s)
+  ok 252 tests\e2e\qa-schema.spec.ts:38:7 › question structured-data semantics › SSR uses an educational Question and does not claim user-generated Q&A (36ms)
+  ok 251 tests\e2e\q-inline-answer.spec.ts:79:7 › /q inline answer › an anonymous learner can prepare and manually send an inline AI question about a wrong answer without navigation (1.9s)
+  ok 253 tests\e2e\qualification-expansion.spec.ts:54:7 › fp2: qualification → year/subject → answer → back/progress (2.6s)
+  ok 255 tests\e2e\qualification-expansion.spec.ts:86:5 › denken3 is reachable after content acceptance (465ms)
+  ok 254 tests\e2e\qualification-expansion.spec.ts:54:7 › fp3: qualification → year/subject → answer → back/progress (2.9s)
+  ok 256 tests\e2e\qualification-expansion.spec.ts:92:5 › denko2 publishes five full sittings with wrong-choice explanations and return progress (2.7s)
+  ok 257 tests\e2e\qualification-expansion.spec.ts:120:5 › denko2 complete 2026 sitting publishes question 10 and all-choice explanations (1.2s)
+  ok 258 tests\e2e\qualification-expansion.spec.ts:142:5 › FP2 negative questions explain why a selected true statement is not the answer (808ms)
+  ok 259 tests\e2e\qualification-expansion.spec.ts:155:5 › FP2 uses the common quiz player with its law reference date and each-choice explanations (910ms)
+  ok 260 tests\e2e\qualification-learning-context.spec.ts:6:9 › qualification learning context (desktop) › denko2 offers practice instead of an unrelated mock (654ms)
+  ok 262 tests\e2e\qualification-learning-context.spec.ts:31:9 › qualification learning context (desktop) › supported query uses IP settings and the original return page (827ms)
+  ok 261 tests\e2e\qualification-learning-context.spec.ts:14:9 › qualification learning context (desktop) › unsupported and unknown query cannot silently start AP, and back/repeat stays denko2 (1.7s)
+  ok 263 tests\e2e\qualification-learning-context.spec.ts:39:9 › qualification learning context (desktop) › public explanation enters scoped review and returns without deleting mixed history (1.9s)
+  ok 265 tests\e2e\qualification-learning-context.spec.ts:6:9 › qualification learning context (mobile) › denko2 offers practice instead of an unrelated mock (502ms)
+  ok 264 tests\e2e\qualification-learning-context.spec.ts:56:9 › qualification learning context (desktop) › answer links the same question to the public explanation and error reporting (2.4s)
+  ok 267 tests\e2e\qualification-learning-context.spec.ts:31:9 › qualification learning context (mobile) › supported query uses IP settings and the original return page (552ms)
+  ok 266 tests\e2e\qualification-learning-context.spec.ts:14:9 › qualification learning context (mobile) › unsupported and unknown query cannot silently start AP, and back/repeat stays denko2 (1.3s)
+  ok 268 tests\e2e\qualification-learning-context.spec.ts:39:9 › qualification learning context (mobile) › public explanation enters scoped review and returns without deleting mixed history (1.3s)
+  ok 270 tests\e2e\quiz-canonical.spec.ts:19:7 › /quiz canonical & robots — honest signals › bare /quiz still 30x-redirects to the homepage (unchanged) (175ms)
+  ok 271 tests\e2e\quiz-canonical.spec.ts:27:7 › /quiz canonical & robots — honest signals › /quiz?mode=… renders with noindex + canonical pointing to '/' (24ms)
+  ok 272 tests\e2e\quiz-canonical.spec.ts:57:7 › /quiz canonical & robots — honest signals › the rendered page is reachable (link-follow stays intact for the agent UX) (49ms)
+  ok 273 tests\e2e\quiz-radiogroup.spec.ts:7:7 › quiz answer radiogroup › renders a radiogroup of 4 radios with roving arrow keys and Space select (790ms)
+  ok 269 tests\e2e\qualification-learning-context.spec.ts:56:9 › qualification learning context (mobile) › answer links the same question to the public explanation and error reporting (2.4s)
+  ok 275 tests\e2e\safety-qualification-hubs.spec.ts:40:7 › safety qualification hubs › measurement and consultant item lists never cross qualification boundaries (77ms)
+  ok 276 tests\e2e\safety-qualification-hubs.spec.ts:66:7 › safety qualification hubs › legacy filters redirect to canonical hubs and invalid filters recover cleanly (317ms)
+  ok 274 tests\e2e\safety-qualification-hubs.spec.ts:14:7 › safety qualification hubs › first-class health supervisor has unique SEO signals and real paper links (744ms)
+  ok 277 tests\e2e\safety-qualification-hubs.spec.ts:93:7 › safety qualification hubs › unknown qualification slug is a real 404 (17ms)
+  ok 278 tests\e2e\sc-choice-explanations.spec.ts:3:5 › SC wrong answer shows its reason, official evidence, and preserves the return route (1.9s)
+  ok 280 tests\e2e\security-headers.spec.ts:12:7 › security response headers › Server header is the app override, never the platform name (14ms)
+  ok 281 tests\e2e\security-headers.spec.ts:19:7 › security response headers › X-Powered-By is suppressed (15ms)
+  ok 282 tests\e2e\security-headers.spec.ts:24:7 › security response headers › core security headers are present (15ms)
+  ok 283 tests\e2e\seo-indexing-policy.spec.ts:7:5 › search and topic navigation stay noindex,follow with and without filters (376ms)
+  ok 279 tests\e2e\sc-choice-explanations.spec.ts:19:5 › SC recent papers expose every AM1 and AM2 question without mixing (2.7s)
+  ok 285 tests\e2e\seo-indexing-policy.spec.ts:31:5 › noindex stream player is omitted from the XML sitemap (18ms)
+  ok 284 tests\e2e\seo-indexing-policy.spec.ts:19:5 › interactive quiz shells have an H1 and stream mode stays out of the index (555ms)
+  ok 286 tests\e2e\seo-indexing-policy.spec.ts:37:5 › IPA index fallback is not described as a PDF (232ms)
+  ok 288 tests\e2e\smoke-routes.spec.ts:42:7 › smoke: 44 routes › 必須 200 ルートが 14 件すべて 200 (271ms)
+  ok 287 tests\e2e\skip-link.spec.ts:7:7 › skip link › first Tab focuses the skip link, Enter jumps to #main-content (918ms)
+  ok 289 tests\e2e\smoke-routes.spec.ts:50:7 › smoke: 44 routes › 試験区分 13 件が 200 (688ms)
+  ok 291 tests\e2e\smoke-routes.spec.ts:66:7 › smoke: 44 routes › 恒久削除ルートは 410 Gone、純・意図的ルートは 404 (146ms)
+  ok 292 tests\e2e\smoke-routes.spec.ts:79:7 › smoke: 44 routes › ルート総数 = 44（必須200×14 + 試験区分13 + 書籍13 + 410Gone×2 + 意図的404×2） (1ms)
+  ok 290 tests\e2e\smoke-routes.spec.ts:58:7 › smoke: 44 routes › 書籍 13 件が 200 (1.0s)
+  ok 293 tests\e2e\soukan.spec.ts:4:7 › 技術士 総合技術監理部門 択一式 › the exam top names the source, the law reference dates and the independence notice (1.1s)
+  ok 294 tests\e2e\soukan.spec.ts:11:7 › 技術士 総合技術監理部門 択一式 › a question page grades the official answer and shows the attribution (1.2s)
+  ok 295 tests\e2e\sssc-seishin27.spec.ts:4:7 › 精神保健福祉士 第27回 › the 2024 year page lists the specialized and common subjects and names the held questions (913ms)
+  ok 297 tests\e2e\sssc-seishin27.spec.ts:23:7 › 精神保健福祉士 第27回 › common questions are self-canonical and held questions are not published (430ms)
+  ok 296 tests\e2e\sssc-seishin27.spec.ts:13:7 › 精神保健福祉士 第27回 › a choose-two specialized question grades only after both official answers are selected (1.4s)
+  ok 299 tests\e2e\sssc-shakai-seishin.spec.ts:14:7 › 社会福祉士 第38回・精神保健福祉士 第28回 › a choose-two question grades only after both official answers are selected (2.3s)
+  ok 298 tests\e2e\sssc-shakai-seishin.spec.ts:4:7 › 社会福祉士 第38回・精神保健福祉士 第28回 › shakai hub lists 129 questions and the year page splits common and specialized subjects (2.9s)
+  ok 301 tests\e2e\study-calendar-tap-target.spec.ts:7:7 › learning heatmap tap targets › dashboard heatmap cells are at least 24x24px (1.5s)
+  ok 300 tests\e2e\sssc-shakai-seishin.spec.ts:26:7 › 社会福祉士 第38回・精神保健福祉士 第28回 › seishin exposes its specialized paper and points shared common questions to shakai (2.2s)
+  ok 303 tests\e2e\study-presence.spec.ts:125:5 › many qualifications stay within a keyboard-scrollable small list (3.8s)
+  ok 304 tests\e2e\study-presence.spec.ts:218:5 › a loaded quiz publishes only its real question qualification and automation sends no heartbeat (615ms)
+  ok 302 tests\e2e\study-presence.spec.ts:53:5 › qualification presence is compact on desktop and mobile and distinguishes zero/failure (5.4s)
+  ok 305 tests\e2e\three-domains-release.spec.ts:8:5 › qualification finder has direct-load styles and both sharoushi discovery contexts (1.7s)
+  ok 306 tests\e2e\three-domains-release.spec.ts:26:5 › Q05 explanation keeps the optional learning aid behind the reveal control (2.1s)
+  ok 307 tests\e2e\three-domains-release.spec.ts:53:5 › registered difficulty stays qualified and the existing inline draft is retained (1.1s)
+  -  309 tests\e2e\tsugino-funnel.spec.ts:75:7 › anonymous native practice reaches question ten and the upgrade exit with attributed events (390)
+  -  310 tests\e2e\tsugino-funnel.spec.ts:121:7 › subject/year referral starts the same public exam and keeps UTM (390)
+  -  311 tests\e2e\tsugino-funnel.spec.ts:75:7 › anonymous native practice reaches question ten and the upgrade exit with attributed events (1440)
+  -  312 tests\e2e\tsugino-funnel.spec.ts:121:7 › subject/year referral starts the same public exam and keeps UTM (1440)
+  -  313 tests\e2e\tsugino-funnel.spec.ts:142:5 › legacy multi-subject redirect preserves the exact subject, year and UTM
+  -  314 tests\e2e\tsugino-funnel.spec.ts:157:5 › category starts and continues inside the selected category; dismissed welcome stays closed
+  -  315 tests\e2e\tsugino-funnel.spec.ts:184:5 › GSC entry URLs retain their status and canonical
+  ok 308 tests\e2e\three-domains-release.spec.ts:69:5 › only the recognized article notice is upright on the existing article route (1.2s)
+  ok 316 tests\e2e\unified-learning.spec.ts:6:5 › safety answers survive navigation, result links and wrong-answer retry (1.5s)
+  ok 317 tests\e2e\unified-learning.spec.ts:27:5 › safety search opens the exact matched question and keeps safety navigation (964ms)
+  ok 318 tests\e2e\unified-learning.spec.ts:47:5 › IPA shows annual selection before long exam guidance (627ms)
+  ok 320 tests\e2e\unified-learning.spec.ts:70:5 › mobile safety menu keeps search and progress inside safety learning (1.1s)
+  ok 321 tests\e2e\user-journey-blog.spec.ts:8:7 › user journey: blog HTTP status › /blog index returns 200 (25ms)
+  ok 319 tests\e2e\unified-learning.spec.ts:57:5 › IPA three-question practice ends on results instead of the home chooser (1.1s)
+  ok 322 tests\e2e\user-journey-blog.spec.ts:13:7 › user journey: blog HTTP status › /blog/ipa-cyokusen-1shukan returns 200 (43ms)
+  ok 323 tests\e2e\user-journey-blog.spec.ts:18:7 › user journey: blog HTTP status › /blog/kakomon-nannenbun returns 200 (43ms)
+  ok 324 tests\e2e\user-journey-blog.spec.ts:23:7 › user journey: blog HTTP status › nonexistent blog slug returns 404 (16ms)
+  ok 326 tests\e2e\user-journey-blog.spec.ts:39:7 › user journey: blog page content › /blog article page has h1 heading (553ms)
+  ok 325 tests\e2e\user-journey-blog.spec.ts:31:7 › user journey: blog page content › /blog index has article links (671ms)
+  ok 328 tests\e2e\user-journey-blog.spec.ts:53:7 › user journey: blog page content › /blog article contains exam-related content (653ms)
+  ok 327 tests\e2e\user-journey-blog.spec.ts:45:7 › user journey: blog page content › /blog article page has internal navigation links (768ms)
+  ok 329 tests\e2e\user-journey-bookmark.spec.ts:6:7 › bookmark page: HTTP & structure › GET /bookmarks returns 200 (36ms)
+  ok 330 tests\e2e\user-journey-bookmark.spec.ts:11:7 › bookmark page: HTTP & structure › /bookmarks page has ブックマーク heading (423ms)
+  ok 331 tests\e2e\user-journey-bookmark.spec.ts:18:7 › bookmark page: HTTP & structure › /bookmarks page shows bookmark count (430ms)
+  ok 332 tests\e2e\user-journey-bookmark.spec.ts:26:7 › bookmark page: HTTP & structure › /bookmarks page has export/import buttons when empty (440ms)
+  ok 334 tests\e2e\user-journey-bookmark.spec.ts:54:7 › bookmark: question page integration › question page returns 200 (386ms)
+  ok 335 tests\e2e\user-journey-bookmark.spec.ts:59:7 › bookmark: question page integration › question page renders bookmark-related UI element (610ms)
+  ok 333 tests\e2e\user-journey-bookmark.spec.ts:35:7 › bookmark page: empty state › /bookmarks shows empty state when no bookmarks in localStorage (1.6s)
+  ok 336 tests\e2e\user-journey-bookmark.spec.ts:93:7 › bookmark: localStorage round-trip › /bookmarks reflects data injected into localStorage (1.6s)
+  ok 337 tests\e2e\user-journey-bookmark.spec.ts:107:7 › bookmark: localStorage round-trip › /bookmarks shows remove button for stored bookmarks (1.5s)
+  x  339 tests\e2e\user-journey-error.spec.ts:7:7 › user journey: 404 and error pages › nonexistent URL returns 404 (7.3s)
+  ok 338 tests\e2e\user-journey-copilot-rag.spec.ts:40:7 › copilot API: basic contract › POST /api/copilot returns 200 with streaming text (7.7s)
+  ok 340 tests\e2e\user-journey-copilot-rag.spec.ts:49:7 › copilot API: basic contract › POST /api/copilot with invalid body returns 400 (13ms)
+  ok 341 tests\e2e\user-journey-copilot-rag.spec.ts:57:7 › copilot API: basic contract › POST /api/copilot 200 response includes RAG headers (386ms)
+  ok 342 tests\e2e\user-journey-copilot-rag.spec.ts:70:7 › copilot API: basic contract › POST /api/copilot does not advertise an obsolete ten-question quota (380ms)
+  ok 343 tests\e2e\user-journey-copilot-rag.spec.ts:85:7 › copilot UI: question page integration › question page returns 200 (19ms)
+::error file=tests\e2e\user-journey-error.spec.ts,title=tests\e2e\user-journey-error.spec.ts:7:7 › user journey: 404 and error pages › nonexistent URL returns 404,line=8,col=31::  2) tests\e2e\user-journey-error.spec.ts:7:7 › user journey: 404 and error pages › nonexistent URL returns 404 %0A    Error: apiRequestContext.get: read ECONNRESET%0A    Call log:%0A      - → GET http://127.0.0.1:3000/this-page-does-not-exist-xyz-abc-123%0A        - user-agent: Playwright/1.60.0 (x64; windows 10.0) node/24.13 CI/1%0A        - accept: */*%0A        - accept-encoding: gzip,deflate,br%0A%0A%0A       6 | test.describe("user journey: 404 and error pages", () => {%0A       7 |   test("nonexistent URL returns 404", async ({ request }) => {%0A    >  8 |     const res = await request.get(NONEXISTENT);%0A         |                               ^%0A       9 |     expect(res.status()).toBe(404);%0A      10 |   });%0A      11 |%0A        at C:\Users\kanet\20260522\wt-batch3\tests\e2e\user-journey-error.spec.ts:8:31
+  ok 345 tests\e2e\user-journey-error.spec.ts:7:7 › user journey: 404 and error pages › nonexistent URL returns 404 (retry #1) (28ms)
+  ok 346 tests\e2e\user-journey-error.spec.ts:12:7 › user journey: 404 and error pages › nonexistent exam code returns 404 (15ms)
+  ok 347 tests\e2e\user-journey-error.spec.ts:18:7 › user journey: 404 and error pages › nonexistent year/season for valid exam returns 404 (10ms)
+  ok 344 tests\e2e\user-journey-copilot-rag.spec.ts:90:7 › copilot UI: question page integration › question page renders AI copilot section (656ms)
+  ok 348 tests\e2e\user-journey-error.spec.ts:23:7 › user journey: 404 and error pages › 404 page renders navigable HTML (has links) (647ms)
+  ok 349 tests\e2e\user-journey-copilot-rag.spec.ts:97:7 › copilot UI: question page integration › copilot section shows quick action examples (779ms)
+  ok 350 tests\e2e\user-journey-error.spec.ts:32:7 › user journey: 404 and error pages › 404 page does not show a blank screen (501ms)
+  ok 352 tests\e2e\user-journey-essays.spec.ts:24:7 › user journey: essays HTTP status › essays exam index /essays/sc returns 200 (127ms)
+  ok 353 tests\e2e\user-journey-essays.spec.ts:29:7 › user journey: essays HTTP status › essay question page /essays/sc/2025-spring/pm2/q1 returns 200 (80ms)
+  ok 351 tests\e2e\user-journey-copilot-rag.spec.ts:103:7 › copilot UI: question page integration › copilot panel is keyboard-accessible (focusable child elements) (670ms)
+  ok 355 tests\e2e\user-journey-copilot-rag.spec.ts:114:7 › copilot API: edge cases › POST /api/copilot with empty messages array returns 400 (120ms)
+  ok 354 tests\e2e\user-journey-essays.spec.ts:34:7 › user journey: essays HTTP status › nonexistent essay /essays/sc/2025-spring/pm2/q99 returns 404 (200ms)
+  ok 357 tests\e2e\user-journey-essays.spec.ts:40:7 › user journey: essays HTTP status › nonexistent year /essays/sc/1999-spring/pm2/q1 returns 404 (10ms)
+  ok 356 tests\e2e\user-journey-copilot-rag.spec.ts:123:7 › copilot API: edge cases › POST /api/copilot with message too long returns 400 (9ms)
+  ok 358 tests\e2e\user-journey-essays.spec.ts:48:7 › user journey: essays industry selector UI › essay question page has the industry selector group (491ms)
+  ok 359 tests\e2e\user-journey-essays.spec.ts:54:7 › user journey: essays industry selector UI › essay question page has all 8 industry buttons (635ms)
+  ok 360 tests\e2e\user-journey-essays.spec.ts:65:7 › user journey: essays industry selector UI › first industry button (IT) is pressed by default (554ms)
+  ok 361 tests\e2e\user-journey-essays.spec.ts:76:7 › user journey: essays industry selector UI › clicking 製造業 presses it and unpresses IT (647ms)
+  ok 363 tests\e2e\user-journey-mobile.spec.ts:13:7 › user journey: mobile viewport (375x667) › exam index /ap renders without horizontal scroll (645ms)
+  ok 362 tests\e2e\user-journey-essays.spec.ts:89:7 › user journey: essays industry selector UI › switching industry changes the visible answer panel (934ms)
+  ok 365 tests\e2e\user-journey-mobile.spec.ts:26:7 › user journey: mobile viewport (375x667) › essay page /essays/sc/2025-spring/pm2/q1 industry selector visible on mobile (503ms)
+  ok 364 tests\e2e\user-journey-mobile.spec.ts:19:7 › user journey: mobile viewport (375x667) › quiz question /q/ap/2024-spring/am/q1 choices visible on mobile (560ms)
+  ok 367 tests\e2e\user-journey-mobile.spec.ts:39:7 › user journey: mobile viewport (375x667) › /blog index renders without horizontal scroll on mobile (628ms)
+  ok 366 tests\e2e\user-journey-mobile.spec.ts:33:7 › user journey: mobile viewport (375x667) › /stats page renders without horizontal scroll on mobile (722ms)
+  ok 368 tests\e2e\user-journey-mock-exam.spec.ts:21:7 › mock exam: HTTP & structure › GET /mock-exam returns 200 (20ms)
+  ok 369 tests\e2e\user-journey-mock-exam.spec.ts:26:7 › mock exam: HTTP & structure › /mock-exam has 模試モード heading (449ms)
+  ok 370 tests\e2e\user-journey-mock-exam.spec.ts:33:7 › mock exam: HTTP & structure › /mock-exam page contains exam selection UI (436ms)
+  ok 372 tests\e2e\user-journey-mock-exam.spec.ts:50:7 › mock exam: API › GET /api/mock-exam/ap returns 200 or correct error (55ms)
+  ok 373 tests\e2e\user-journey-mock-exam.spec.ts:56:7 › mock exam: API › GET /api/mock-exam/ap returns questions on success (22ms)
+  ok 374 tests\e2e\user-journey-mock-exam.spec.ts:68:7 › mock exam: API › GET /api/mock-exam/invalid-exam returns 404 or 400 (13ms)
+  ok 375 tests\e2e\user-journey-mock-exam.spec.ts:75:7 › mock exam: history from localStorage › /mock-exam shows past results from localStorage (431ms)
+  ok 376 tests\e2e\user-journey-mock-exam.spec.ts:92:7 › mock exam: history from localStorage › /mock-exam shows passed indicator for passing score (450ms)
+  ok 377 tests\e2e\user-journey-mock-exam.spec.ts:110:7 › mock exam: timer UI (with URL param) › GET /mock-exam?exam=ap returns 200 (87ms)
+  ok 378 tests\e2e\user-journey-progress.spec.ts:8:7 › /my-progress legacy redirect › GET /my-progress returns 308 (Next.js permanent redirect) (9ms)
+  ok 371 tests\e2e\user-journey-mock-exam.spec.ts:40:7 › mock exam: HTTP & structure › /mock-exam page contains exam list and start prompt (1.3s)
+  ok 380 tests\e2e\user-journey-pwa.spec.ts:4:7 › PWA: manifest & service worker › GET /manifest.webmanifest returns 200 (17ms)
+  ok 381 tests\e2e\user-journey-pwa.spec.ts:9:7 › PWA: manifest & service worker › manifest.webmanifest has required PWA fields (29ms)
+  ok 382 tests\e2e\user-journey-pwa.spec.ts:21:7 › PWA: manifest & service worker › manifest.webmanifest has correct app name (11ms)
+  ok 383 tests\e2e\user-journey-pwa.spec.ts:27:7 › PWA: manifest & service worker › manifest.webmanifest includes shortcut entries (17ms)
+  ok 384 tests\e2e\user-journey-pwa.spec.ts:34:7 › PWA: manifest & service worker › GET /sw.js returns 200 with correct headers (14ms)
+  ok 385 tests\e2e\user-journey-pwa.spec.ts:46:7 › PWA: manifest & service worker › GET /sw.js content includes fetch event listener (14ms)
+  ok 386 tests\e2e\user-journey-pwa.spec.ts:56:7 › PWA: offline page › GET /offline returns 200 (122ms)
+  ok 379 tests\e2e\user-journey-progress.spec.ts:17:7 › /my-progress legacy redirect › Following /my-progress lands on the dashboard page (581ms)
+  ok 387 tests\e2e\user-journey-pwa.spec.ts:61:7 › PWA: offline page › /offline page renders offline mode heading (720ms)
+  ok 388 tests\e2e\user-journey-pwa.spec.ts:72:7 › PWA: offline page › /offline page has bookmarks section (657ms)
+  ok 390 tests\e2e\user-journey-pwa.spec.ts:86:7 › PWA: meta tags in document › home page has manifest link tag (741ms)
+  ok 389 tests\e2e\user-journey-pwa.spec.ts:78:7 › PWA: offline page › /offline page has recent questions section (788ms)
+  ok 391 tests\e2e\user-journey-pwa.spec.ts:92:7 › PWA: meta tags in document › home page has apple-mobile-web-app meta tags (673ms)
+  ok 392 tests\e2e\user-journey-pwa.spec.ts:100:7 › PWA: meta tags in document › home page has theme-color meta tag (699ms)
+  ok 393 tests\e2e\user-journey-quiz.spec.ts:16:7 › user journey: quiz HTTP status › exam index /ap returns 200 (31ms)
+  ok 394 tests\e2e\user-journey-quiz.spec.ts:21:7 › user journey: quiz HTTP status › year/season list /ap/2024-spring returns 200 (16ms)
+  ok 395 tests\e2e\user-journey-quiz.spec.ts:26:7 › user journey: quiz HTTP status › question page /q/ap/2024-spring/am/q1 returns 200 (45ms)
+  ok 396 tests\e2e\user-journey-quiz.spec.ts:31:7 › user journey: quiz HTTP status › nonexistent question /q/ap/2024-spring/am/q9999 returns 404 (55ms)
+  ok 397 tests\e2e\user-journey-quiz.spec.ts:37:7 › user journey: quiz HTTP status › needsReview question /q/fe/2019-spring/am/q5 returns 404 (62ms)
+  ok 398 tests\e2e\user-journey-quiz.spec.ts:45:7 › user journey: quiz page content › exam index /ap has heading with exam name (697ms)
+  ok 399 tests\e2e\user-journey-quiz.spec.ts:52:7 › user journey: quiz page content › year/season list /ap/2024-spring opens its selected question in unanswered quiz (1.2s)
+  ok 400 tests\e2e\user-journey-quiz.spec.ts:72:7 › user journey: quiz page content › question page has choices section with ア イ ウ エ (671ms)
+  ok 401 tests\e2e\user-journey-quiz.spec.ts:85:7 › user journey: quiz page content › question page has the inline answer and explanation sections (709ms)
+  ok 402 tests\e2e\user-journey-quiz.spec.ts:93:7 › user journey: quiz page content › question page has adjacent question navigation (653ms)
+  ok 403 tests\e2e\user-journey-search.spec.ts:15:7 › search page: HTTP & structure › GET /search returns 200 (97ms)
+  ok 404 tests\e2e\user-journey-search.spec.ts:20:7 › search page: HTTP & structure › /search has IPA過去問 横断検索 heading (472ms)
+  ok 405 tests\e2e\user-journey-search.spec.ts:28:7 › search page: HTTP & structure › /search has search input field (475ms)
+  ok 406 tests\e2e\user-journey-search.spec.ts:36:7 › search page: HTTP & structure › /search has 問題検索 section with aria-label (632ms)
+  ok 407 tests\e2e\user-journey-search.spec.ts:46:7 › search page: HTTP & structure › /search filter panel appears after submitting a search term (641ms)
+  ok 408 tests\e2e\user-journey-search.spec.ts:57:7 › search API: contract › GET /api/search/questions with empty query returns 200 empty result (399ms)
+  ok 409 tests\e2e\user-journey-search.spec.ts:66:7 › search API: contract › GET /api/search/questions with keyword returns results shape (509ms)
+  ok 410 tests\e2e\user-journey-search.spec.ts:75:7 › search API: contract › GET /api/search/questions with exam filter (150ms)
+  ok 411 tests\e2e\user-journey-search.spec.ts:82:7 › search API: contract › GET /api/search/questions with difficulty filter (125ms)
+  ok 413 tests\e2e\user-journey-search.spec.ts:124:7 › search: keyword interaction › an empty result never offers a misleading all-question practice CTA (1.3s)
+  ok 412 tests\e2e\user-journey-search.spec.ts:91:7 › search: keyword interaction › practice CTA carries the exact bounded result IDs and search return URL (2.1s)
+  ok 414 tests\e2e\user-journey-search.spec.ts:131:7 › search: keyword interaction › practice CTA is hidden while results for a changed query are pending (1.8s)
+  ok 416 tests\e2e\user-journey-search.spec.ts:186:7 › search: keyword interaction › duplicate ids parameters fail closed instead of crashing or widening the pool (749ms)
+  ok 415 tests\e2e\user-journey-search.spec.ts:155:7 › search: keyword interaction › recent-only selection survives the quiz round trip (2.0s)
+  ok 417 tests\e2e\user-journey-search.spec.ts:200:7 › search: keyword interaction › submitting search triggers results section (859ms)
+  ok 418 tests\e2e\user-journey-search.spec.ts:209:7 › search: keyword interaction › results list is not a verbose live region; count is announced concisely (1.0s)
+  ok 419 tests\e2e\user-journey-search.spec.ts:222:7 › search: keyword interaction › clear button appears after submitting search (676ms)
+  ok 420 tests\e2e\user-journey-search.spec.ts:231:7 › search: keyword interaction › clicking clear button empties the search input (606ms)
+  ok 422 tests\e2e\user-journey-stats.spec.ts:4:7 › user journey: /stats page › /stats returns 200 (151ms)
+  ok 421 tests\e2e\user-journey-search.spec.ts:243:7 › search: keyword interaction › clear-all button appears when filters active (753ms)
+  ok 423 tests\e2e\user-journey-stats.spec.ts:9:7 › user journey: /stats page › /stats page has public statistics heading (808ms)
+  ok 424 tests\e2e\user-journey-stats.spec.ts:16:7 › user journey: /stats page › /stats page has content sections with data (765ms)
+  ok 426 tests\e2e\user-journey-study-plan.spec.ts:27:7 › study plan: HTTP & structure › GET /study-plan returns 200 (40ms)
+  ok 425 tests\e2e\user-journey-stats.spec.ts:24:7 › user journey: /stats page › /stats page has IPA source attribution (852ms)
+  ok 427 tests\e2e\user-journey-study-plan.spec.ts:32:7 › study plan: HTTP & structure › /study-plan has 自動学習スケジュール作成 heading (566ms)
+  ok 428 tests\e2e\user-journey-study-plan.spec.ts:39:7 › study plan: HTTP & structure › /study-plan shows new-plan creation section (454ms)
+  ok 429 tests\e2e\user-journey-study-plan.spec.ts:45:7 › study plan: HTTP & structure › /study-plan shows new-plan section (always rendered) (442ms)
+  ok 431 tests\e2e\user-journey-study-plan.spec.ts:62:7 › study plan: result page › GET /study-plan/result/nonexistent returns 200 or 404 (36ms)
+  ok 430 tests\e2e\user-journey-study-plan.spec.ts:52:7 › study plan: HTTP & structure › the planner uses a study period and sends exam dates to Tsugino (519ms)
+  ok 432 tests\e2e\user-journey-study-plan.spec.ts:68:7 › study plan: result page › /study-plan/result/[id] renders when plan in localStorage (530ms)
+  ok 433 tests\e2e\user-journey-study-plan.spec.ts:93:7 › study plan: empty state › /study-plan with no plans shows creation form (643ms)
+  ok 434 tests\e2e\user-journey-study-plan.spec.ts:105:7 › study plan: existing plans in localStorage › /study-plan shows stored plan with delete button (2.0s)
+  ok 435 tests\e2e\user-journey-study-plan.spec.ts:118:7 › study plan: existing plans in localStorage › /study-plan shows link to plan result from stored plan (1.9s)
+::notice title=🎭 Playwright Run Summary::  1 failed%0A    tests\e2e\contact-site.spec.ts:3:5 › 次の資格を初期選択し、任意項目を空のまま既存APIへ送信できる ───────────────────────────%0A  1 flaky%0A    tests\e2e\user-journey-error.spec.ts:7:7 › user journey: 404 and error pages › nonexistent URL returns 404 %0A  12 skipped%0A  419 passed (4.2m)
+
+
+  1) tests\e2e\contact-site.spec.ts:3:5 › 次の資格を初期選択し、任意項目を空のまま既存APIへ送信できる ──────────────────────────
+
+    Error: [2mexpect([22m[31mlocator[39m[2m).[22mtoBeVisible[2m([22m[2m)[22m failed
+
+    Locator: getByRole('status').filter({ hasText: 'お問い合わせを受け付けました' })
+    Expected: visible
+    Timeout: 5000ms
+    Error: element(s) not found
+
+    Call log:
+    [2m  - Expect "toBeVisible" with timeout 5000ms[22m
+    [2m  - waiting for getByRole('status').filter({ hasText: 'お問い合わせを受け付けました' })[22m
+
+
+      12 |   await page.getByRole("button", { name: "送信する", exact: true }).click();
+      13 |   expect((await posted).postDataJSON()).toMatchObject({ kind: "contact", category: "tsugino", name: "", email: "" });
+    > 14 |   await expect(page.getByRole("status").filter({ hasText: "お問い合わせを受け付けました" })).toBeVisible();
+         |                                                                                ^
+      15 | });
+      16 |
+      17 | for (const query of ["", "?site=unknown", "?site=tsugino&site=unknown"]) {
+        at C:\Users\kanet\20260522\wt-batch3\tests\e2e\contact-site.spec.ts:14:80
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\contact-site-次の資格を初期選択し、任意項目を空のまま既存APIへ送信できる\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\contact-site-次の資格を初期選択し、任意項目を空のまま既存APIへ送信できる\error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results\contact-site-次の資格を初期選択し、任意項目を空のまま既存APIへ送信できる\trace.zip
+    Usage:
+
+        pnpm exec playwright show-trace test-results\contact-site-次の資格を初期選択し、任意項目を空のまま既存APIへ送信できる\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Retry #1 ───────────────────────────────────────────────────────────────────────────────────────
+
+    Error: [2mexpect([22m[31mlocator[39m[2m).[22mtoBeVisible[2m([22m[2m)[22m failed
+
+    Locator: getByRole('status').filter({ hasText: 'お問い合わせを受け付けました' })
+    Expected: visible
+    Timeout: 5000ms
+    Error: element(s) not found
+
+    Call log:
+    [2m  - Expect "toBeVisible" with timeout 5000ms[22m
+    [2m  - waiting for getByRole('status').filter({ hasText: 'お問い合わせを受け付けました' })[22m
+
+
+      12 |   await page.getByRole("button", { name: "送信する", exact: true }).click();
+      13 |   expect((await posted).postDataJSON()).toMatchObject({ kind: "contact", category: "tsugino", name: "", email: "" });
+    > 14 |   await expect(page.getByRole("status").filter({ hasText: "お問い合わせを受け付けました" })).toBeVisible();
+         |                                                                                ^
+      15 | });
+      16 |
+      17 | for (const query of ["", "?site=unknown", "?site=tsugino&site=unknown"]) {
+        at C:\Users\kanet\20260522\wt-batch3\tests\e2e\contact-site.spec.ts:14:80
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\contact-site-次の資格を初期選択し、任意項目を空のまま既存APIへ送信できる-retry1\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\contact-site-次の資格を初期選択し、任意項目を空のまま既存APIへ送信できる-retry1\error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results\contact-site-次の資格を初期選択し、任意項目を空のまま既存APIへ送信できる-retry1\trace.zip
+    Usage:
+
+        pnpm exec playwright show-trace test-results\contact-site-次の資格を初期選択し、任意項目を空のまま既存APIへ送信できる-retry1\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  2) tests\e2e\user-journey-error.spec.ts:7:7 › user journey: 404 and error pages › nonexistent URL returns 404 
+
+    Error: apiRequestContext.get: read ECONNRESET
+    Call log:
+    [2m  - → GET http://127.0.0.1:3000/this-page-does-not-exist-xyz-abc-123[22m
+    [2m    - user-agent: Playwright/1.60.0 (x64; windows 10.0) node/24.13 CI/1[22m
+    [2m    - accept: */*[22m
+    [2m    - accept-encoding: gzip,deflate,br[22m
+
+
+       6 | test.describe("user journey: 404 and error pages", () => {
+       7 |   test("nonexistent URL returns 404", async ({ request }) => {
+    >  8 |     const res = await request.get(NONEXISTENT);
+         |                               ^
+       9 |     expect(res.status()).toBe(404);
+      10 |   });
+      11 |
+        at C:\Users\kanet\20260522\wt-batch3\tests\e2e\user-journey-error.spec.ts:8:31
+
+    Error Context: test-results\user-journey-error-user-jo-67b03-nonexistent-URL-returns-404\error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results\user-journey-error-user-jo-67b03-nonexistent-URL-returns-404\trace.zip
+    Usage:
+
+        pnpm exec playwright show-trace test-results\user-journey-error-user-jo-67b03-nonexistent-URL-returns-404\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  1 failed
+    tests\e2e\contact-site.spec.ts:3:5 › 次の資格を初期選択し、任意項目を空のまま既存APIへ送信できる ───────────────────────────
+  1 flaky
+    tests\e2e\user-journey-error.spec.ts:7:7 › user journey: 404 and error pages › nonexistent URL returns 404 
+  12 skipped
+  419 passed (4.2m)
+ ELIFECYCLE  Command failed with exit code 1.

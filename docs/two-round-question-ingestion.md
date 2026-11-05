@@ -16,3 +16,7 @@ pnpm exec tsc --noEmit
 ```
 
 `verify-two-round-coverage.ts` は収録数、選択肢解説の存在、出典、査読状態を機械検査する。解説の法的・技術的な正確さや権利者の許可を証明するものではない。CI・本番配信後に匿名画面で年度、問番号、正誤、誤答解説を確認する。
+
+公開資格コードをまだ登録しない未公開原稿は、`data/qualification-staging/<slug>/` に資格名・`publicAllowed=false`・各回の本文・公式正答・全肢解説・原本図表・受領ハッシュを保存し、専用の型と検証器で確認する。別資格の`ExamCode`やライセンスを流用しない。全体の`validate:questions`は公開レジストリの検査なので、それだけで未接続原稿を検証済みと扱わない。
+
+CQ6（准看護師・関西）の例：`pnpm exec tsx scripts/validate-junkango-kansai.ts`、`pnpm exec vitest run __tests__/questions/junkango-kansai-staging.test.ts`、`pnpm typecheck`。公式全員正解は通常の正答肢と区別して無回答にも点を与え、複数の単独正解を「両方を選択」と混同しない。原本PDFの再取得後は`extract.py`、`enrich.py`、`audit_source.py`の順に実行する。`needsReview=true`と独立コードレビューのPASSは別々に記録し、専門家の公開前確認を捏造しない。

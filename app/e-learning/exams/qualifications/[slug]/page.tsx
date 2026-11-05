@@ -1,10 +1,11 @@
+import { TsuginoWelcome } from "@/components/analytics/TsuginoWelcome";
+import { filterReferralPapers } from "@/lib/analytics/referral-query";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowLeft, ArrowRight, ChevronRight } from "lucide-react";
 
 import { ExamSourceNotes } from "@/components/exam-library/exam-source-notes";
-import { ExamNoteLinks, collectSubjectNoteLinks } from "@/components/exam-library/exam-note-links";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -25,6 +26,7 @@ import { SITE_BASE_URL } from "@/lib/seo/config";
 
 interface QualificationHubPageProps {
   params: Promise<{ slug: string }>;
+  searchParams?: Promise<{ subject?: string | string[]; year?: string | string[] }>;
 }
 
 interface HubPaper {
@@ -67,12 +69,16 @@ export async function generateMetadata({ params }: QualificationHubPageProps): P
   };
 }
 
-export default async function QualificationHubPage({ params }: QualificationHubPageProps) {
+export default async function QualificationHubPage({ params, searchParams }: QualificationHubPageProps) {
   const { slug } = await params;
   const hub = findQualificationHub(slug);
   if (!hub) notFound();
 
-  const papers = getHubPapers(hub);
+  const query = await searchParams;
+  const subject = Array.isArray(query?.subject) ? query.subject[0] : query?.subject;
+  const year = Array.isArray(query?.year) ? query.year[0] : query?.year;
+  const selected = filterReferralPapers(getHubPapers(hub).map(paper => ({ ...paper, ...paper.entry })), subject, year);
+  const papers: HubPaper[] = selected;
   if (papers.length === 0) notFound();
 
   const subjects = [...new Set(papers.map(({ entry }) => entry.subject))];
@@ -119,6 +125,7 @@ export default async function QualificationHubPage({ params }: QualificationHubP
   return (
     <div className="mx-auto w-full max-w-3xl px-4 py-8 sm:px-6">
       <JsonLd data={schemas} />
+      <TsuginoWelcome href={latest ? examPath(latest.entry.id) : null} qualification={hub.name} />
 
       <nav aria-label="パンくずリスト" className="mb-5 text-sm text-muted-foreground">
         <Link
@@ -194,20 +201,13 @@ export default async function QualificationHubPage({ params }: QualificationHubP
                     </li>
                   ))}
                 </ul>
-                <ExamNoteLinks
-                  links={collectSubjectNoteLinks(subjectPapers.map(({ entry }) => entry), hub.group, subject)}
-                  headingId={`subject-note-links-${subject}`}
-                  heading={`${subject}の解説記事`}
-                  headingLevel="h4"
-                  className="mt-4"
-                />
               </section>
             );
           })}
         </div>
       </section>
 
-      <ExamSourceNotes groupIds={[hub.group]} noteLinks={papers.flatMap(({ entry }) => entry.noteLinks ?? [])} className="mt-10" />
+      <ExamSourceNotes groupIds={[hub.group]} className="mt-10" />
 
       <section aria-labelledby="related-qualifications-heading" className="mt-10">
         <h2 id="related-qualifications-heading" className="text-lg font-bold">

@@ -1,0 +1,16 @@
+{
+  "command": [
+    "corepack.cmd",
+    "pnpm",
+    "install",
+    "--frozen-lockfile",
+    "--offline",
+    "--ignore-scripts",
+    "--package-import-method=hardlink"
+  ],
+  "exitCode": 0,
+  "seconds": 82.69,
+  "log": "reports/int7-20261105/install-worktree-hardlink.log",
+  "sha256": "32144bb32c612dfbe3070fa9f3e496aa87b6a872008515d8514a2143027a56c3",
+  "environment": "allowlisted OS variables only; CI=1, telemetry disabled, NODE_OPTIONS=4096; no service credentials or env files"
+}

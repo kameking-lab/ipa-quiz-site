@@ -1,0 +1,14 @@
+@import "../../app/globals.css";
+@source "../../components";
+@source "../../app/quiz";
+@source "./";
+body { padding-top:env(safe-area-inset-top); padding-bottom:env(safe-area-inset-bottom); }
+.native-shell { max-width:850px; margin:0 auto; padding:20px; }
+.native-shell button,.native-shell select,.native-shell input { min-height:44px; padding:8px 12px; border:1px solid var(--color-border,#bbb); border-radius:10px; }
+.native-shell label { display:flex; flex-direction:column; gap:5px; }
+.native-shell h1 { font-size:1.8rem; font-weight:700; margin:20px 0; }
+.native-shell h2 { font-size:1.3rem; font-weight:600; margin:16px 0; }
+.native-shell p { margin:10px 0; }
+.native-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:12px; }
+.native-exam { border:1px solid #ccc; border-radius:16px; padding:16px; }
+.native-exam button { margin-top:10px; }

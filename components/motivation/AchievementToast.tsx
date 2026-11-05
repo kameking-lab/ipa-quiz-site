@@ -54,14 +54,13 @@ export function AchievementToast({ achievementId, onClose }: Props) {
       // 共有) and the desktop floating copilot — all anchored to the bottom —
       // blocking interaction. Anchoring to the top keeps it clear of every
       // bottom control while staying visible and auto-dismissing.
-      className="fixed inset-x-4 top-[4.5rem] z-[70] mx-auto max-w-sm"
-      style={{ animation: "slide-down 220ms cubic-bezier(0.2, 0.8, 0.2, 1)" }}
+      className="pointer-events-none fixed inset-x-4 top-[4.5rem] z-[70] mx-auto max-w-sm"
     >
-      <div className="relative overflow-hidden rounded-2xl border border-amber-200 bg-gradient-to-br from-amber-50 via-yellow-50 to-orange-50 p-4 shadow-xl dark:border-amber-900/60 dark:from-amber-950/70 dark:via-yellow-950/60 dark:to-orange-950/70">
+      <div className="relative overflow-hidden rounded-xl border border-amber-200 bg-amber-50 p-3 shadow-sm dark:border-amber-900/60 dark:bg-amber-950">
         <button
           type="button"
           onClick={onClose}
-          className="absolute right-2 top-2 rounded-lg p-1 text-zinc-500 transition-colors hover:bg-white/40 dark:text-zinc-400 dark:hover:bg-black/20"
+          className="pointer-events-auto absolute right-0 top-0 flex h-11 w-11 items-center justify-center rounded-lg text-zinc-500 transition-colors hover:bg-white/40 dark:text-zinc-400 dark:hover:bg-black/20"
           aria-label="閉じる"
         >
           <X className="h-4 w-4" />

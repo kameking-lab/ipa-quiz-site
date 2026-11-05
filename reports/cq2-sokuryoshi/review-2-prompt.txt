@@ -1,0 +1,24 @@
+CQ2の修正後独立再レビューをread-onlyで実施してください。元のレビュー担当とは別実行のgpt-6-astraです。
+編集・commit・push・PR・deploy・main操作は禁止。
+
+対象: C:/Users/kanet/20260522/wt-sokuryoshi
+base: bb912dfd0494f7095ec5387f9f2e53f46381cd1f
+要件全文・構成は reports/cq2-sokuryoshi/review-1-prompt.txt をUTF-8で読んでください。
+前回のFAIL: reports/cq2-sokuryoshi/review-1-result.md
+修正対応: reports/cq2-sokuryoshi/review-1-fixes.md
+
+全7件を原稿と年別JSONの両方で修正済みです。ほかの小問説明も原本画像に基づき具体化しました。
+主な原稿: data/qualification-staging/sokuryoshi/{2025-am-notes,2026-am-notes,pm-notes}.json
+原文・公式答・図表の正本は同フォルダassets内の全ページ画像であり、OCRを原文文字として採用していません。
+PDF原本・公式準則standards.pdf/txt・補助OCRは C:/Users/kanet/AppData/Local/Temp/codex-work/cq2-sokuryoshi にあります。
+
+レビュー1の7指摘の修正を、元PDF又は原本画像を見て確認し、修正で生じた誤りや未指摘の実質的誤りも検査してください。
+特に原本の設問番号と午後小問の解説を照合し、公式正答と解説が矛盾しないことを確認してください。
+全66原問・全280肢・午後103説明・原文186ページの対応と未公開ガードの前提は同じです。
+needsReview=trueは人手による公開前確認ガードであり、非公開収録の未完了を意味しません。
+
+通常実行での検証ログは reports/cq2-sokuryoshi/{validate-questions,typecheck,related-tests}.log にあります。
+Windows PowerShellで出力したログはBOMに応じてUTF-16又はUTF-8で読んでください。read-only sandboxでnode spawn EPERMになる場合は環境制約として分離し、制約の迂回はしないでください。
+必要ならnodeでTypeScriptのtranspileModuleを用いて専用validatorを直接実行でき、tscは --incremental false なら書込みなしで実行できます。
+
+最後はPASS又はFAILを明記。FAILの場合は具体的なファイル・設問・根拠・修正案を示してください。前回指摘7件の結果と今回新たな指摘を区別してください。

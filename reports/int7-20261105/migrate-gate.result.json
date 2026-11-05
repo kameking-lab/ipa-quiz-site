@@ -1,0 +1,12 @@
+{
+  "command": [
+    "node",
+    "--test",
+    "scripts/vercel-migrate.test.mjs"
+  ],
+  "exitCode": 0,
+  "seconds": 0.13,
+  "log": "reports/int7-20261105/migrate-gate.log",
+  "sha256": "685ac542d279e17ea75b18fe269d7bcff27bb48ef725aeec0ea8c29efd853e9d",
+  "environment": "allowlisted OS variables only; CI=1, telemetry disabled, NODE_OPTIONS=4096; no service credentials or env files"
+}

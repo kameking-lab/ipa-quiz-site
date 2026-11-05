@@ -1,0 +1,46 @@
+{
+  "checkedOn": "2026-11-04",
+  "checks": [
+    {
+      "check": "tests-final-verified",
+      "exitCode": 0,
+      "seconds": 45.88,
+      "command": "C:\\Program Files\\nodejs\\corepack.CMD pnpm exec vitest run __tests__/questions/kenchikushi2-staging.test.ts __tests__/lib/home-directory.test.ts __tests__/questions/live-qualification-coverage.test.ts --maxWorkers=1 --no-file-parallelism",
+      "log": ".cache/lk5d/tests-final-verified.log"
+    },
+    {
+      "check": "typecheck-final-verified",
+      "exitCode": 0,
+      "seconds": 26.36,
+      "command": "C:\\Program Files\\nodejs\\corepack.CMD pnpm typecheck",
+      "log": ".cache/lk5d/typecheck-final-verified.log"
+    },
+    {
+      "check": "source-final-verified",
+      "exitCode": 0,
+      "seconds": 15.27,
+      "command": "python scripts/verify-kenchikushi2-owner-pdfs.py C:/Users/kanet/Documents/Codex/2026-11-02/task-2/owner-provided/kenchikushi2",
+      "log": ".cache/lk5d/source-final-verified.log"
+    }
+  ],
+  "staging": {
+    "questions": 400,
+    "choices": 2000,
+    "choiceExplanations": 2000,
+    "images": 63,
+    "structuredTables": 15,
+    "allPublicAllowedFalse": true,
+    "allNeedsReviewTrue": true,
+    "allImagesExist": true
+  },
+  "publicValidation": {
+    "command": "corepack pnpm validate:questions",
+    "questions": 26444,
+    "ok": 26444,
+    "fail": 0,
+    "warn": 16808,
+    "log": ".cache/lk5d/validate-final.log",
+    "scope": "Existing public question collection only; staging checked separately."
+  },
+  "status": "PASS"
+}

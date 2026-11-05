@@ -15,16 +15,6 @@ export type ExamSourceMode = "official-pdf" | "official-archive-copy";
 export type ExamAnswerAuthority = "official" | "unconfirmed" | "descriptive";
 export type ExamAnswerResult = "correct" | "incorrect" | "unscored";
 
-export interface ExamNoteLink {
-  title: string;
-  url: string;
-  /**
-   * 省略時はバッジを表示しない(旧データ互換)。"paid" を free の文言/バッジで
-   * 出してはならない（逆も同様）— components/exam/ExamNoteGuide.tsx と同じ方針。
-   */
-  kind?: "free" | "paid";
-}
-
 export interface ExamCatalogEntry {
   id: string;
   group: ExamGroupId;
@@ -41,8 +31,6 @@ export interface ExamCatalogEntry {
   checkedAt: string;
   questionCount?: number;
   scoredCount?: number;
-  /** 実在する関連解説記事（提供された場合のみ表示） */
-  noteLinks?: ExamNoteLink[];
 }
 
 export interface ExamQuestionPresentation {
@@ -179,25 +167,6 @@ function isValidMonthOrDay(value: string, kind: ExamDateKind): boolean {
   return true;
 }
 
-function isHttpsUrl(value: unknown): value is string {
-  if (typeof value !== "string") return false;
-  try {
-    return new URL(value).protocol === "https:";
-  } catch {
-    return false;
-  }
-}
-
-function parseNoteLinks(value: unknown): ExamNoteLink[] | undefined {
-  if (!Array.isArray(value)) return undefined;
-  const links = value.flatMap((item): ExamNoteLink[] => {
-    if (!isRecord(item) || !nonEmptyString(item.title) || !isHttpsUrl(item.url)) return [];
-    const kind = item.kind === "free" || item.kind === "paid" ? item.kind : undefined;
-    return [{ title: item.title.trim(), url: item.url, ...(kind ? { kind } : {}) }];
-  });
-  return links.length > 0 ? links : undefined;
-}
-
 /** カタログ1件を検証する。契約外の値は null（表示しない）。 */
 export function parseExamCatalogEntry(value: unknown): ExamCatalogEntry | null {
   if (!isRecord(value)) return null;
@@ -243,8 +212,6 @@ export function parseExamCatalogEntry(value: unknown): ExamCatalogEntry | null {
   if (sourceMode === "official-archive-copy") entry.archiveSourceUrl = value.archiveSourceUrl as string;
   if (isNonNegativeInteger(value.questionCount)) entry.questionCount = value.questionCount;
   if (isNonNegativeInteger(value.scoredCount)) entry.scoredCount = value.scoredCount;
-  const noteLinks = parseNoteLinks(value.noteLinks);
-  if (noteLinks) entry.noteLinks = noteLinks;
   return entry;
 }
 

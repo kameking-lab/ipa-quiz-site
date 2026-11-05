@@ -120,6 +120,19 @@ interface OtherCardDef {
 }
 
 const OTHER_CARDS: readonly OtherCardDef[] = [
+  { code: "khk-kagaku", name: "高圧ガス化学", sub: "甲種・乙種・丙種（液石・特別）422原問", domain: "safety" },
+  { code: "sekou-1kenchiku", name: "1級建築施工管理", sub: "第一次検定（令和7・8年度144問）", domain: "construction" },
+  {"code": "benrishi", "name": "弁理士（短答式）", "sub": "公式問題・正答・独自解説と原本図表を収録", "domain": "money"},
+  {"code": "sokuryoshi", "name": "測量士", "sub": "公式問題・正答・独自解説と原本図表を収録", "domain": "construction"},
+  {"code": "dokugeki-chiba", "name": "毒物劇物取扱者（千葉県）", "sub": "公式問題・正答・独自解説と原本図表を収録", "domain": "safety"},
+  {"code": "jokaso-setsubishi", "name": "浄化槽設備士（学科）", "sub": "公式問題・正答・独自解説と原本図表を収録", "domain": "construction"},
+  {"code": "chiiki-ryoko", "name": "地域限定旅行業務取扱管理者", "sub": "公式問題・正答・独自解説と原本図表を収録", "domain": "money"},
+  {"code": "junkango-kansai", "name": "准看護師（関西広域連合）", "sub": "公式問題・正答・独自解説と原本図表を収録", "domain": "welfare"},
+  {"code": "kukaku-seiri", "name": "土地区画整理士（学科）", "sub": "2026年度のみ40問。2025年度は未収録。", "domain": "construction"},
+  {"code": "dojo-osen", "name": "土壌汚染調査技術管理者", "sub": "公式問題・正答・独自解説と原本図表を収録", "domain": "construction"},
+  {"code": "kenchikushi2", "name": "二級建築士（学科）", "sub": "公式問題・正答・独自解説と原本図表を収録", "domain": "construction"},
+  {"code": "mokuzo-kenchikushi", "name": "木造建築士（学科）", "sub": "公式問題・正答・独自解説と原本図表を収録", "domain": "construction"},
+  { code: "kenchikushi1", name: "一級建築士（学科）", sub: "令和7・8年の学科5科目（全員加点1問を除く）", domain: "construction" },
   { code: "kisho", name: "気象予報士", sub: "第65・66回 学科60問・実技18問（手動照合）", domain: "safety" },
   { code: "jken-katsuyo3", name: "J検 情報活用3級", sub: "令和8年度前期・令和7年度後期", domain: "it" },
   { code: "jken-katsuyo2", name: "J検 情報活用2級", sub: "令和8年度前期・令和7年度後期", domain: "it" },

@@ -1,3 +1,16 @@
+import { QUESTIONS as BATCH3_0 } from "./benrishi";
+import { QUESTIONS as BATCH3_1 } from "./sokuryoshi";
+import { QUESTIONS as BATCH3_2 } from "./dokugeki-chiba";
+import { QUESTIONS as BATCH3_3 } from "./jokaso-setsubishi";
+import { QUESTIONS as BATCH3_4 } from "./chiiki-ryoko";
+import { QUESTIONS as BATCH3_5 } from "./junkango-kansai";
+import { QUESTIONS as BATCH3_6 } from "./kukaku-seiri";
+import { QUESTIONS as BATCH3_7 } from "./dojo-osen";
+import { QUESTIONS as BATCH3_8 } from "./kenchikushi2";
+import { QUESTIONS as BATCH3_9 } from "./mokuzo-kenchikushi";
+import { SEKOU_1KENCHIKU_QUESTIONS } from "./sekou-1kenchiku";
+import { PUBLIC_KHK_KAGAKU_QUESTIONS } from "./khk-kagaku/public";
+import { KENCHIKUSHI1_QUESTIONS } from "./kenchikushi1";
 import { BATCH1_QUESTIONS } from "./batch1";
 import { REFORM_MGR_QUESTIONS } from "./reform-mgr";
 import { SHOHI_SODAN_QUESTIONS } from "./shohi-sodan";
@@ -120,6 +133,20 @@ import { GYOSEI_QUESTIONS } from "./gyosei";
 import { SHIHOSHOSHI_BATCH1_QUESTIONS } from "./shihoshoshi";
 
 export const QUESTIONS_BY_EXAM: Partial<Record<ExamCode, Question[]>> = {
+  ...(isExamPublished("benrishi") ? { "benrishi": BATCH3_0.filter(isPracticeReadyQuestion) } : {}),
+  ...(isExamPublished("sokuryoshi") ? { "sokuryoshi": BATCH3_1.filter(isPracticeReadyQuestion) } : {}),
+  ...(isExamPublished("dokugeki-chiba") ? { "dokugeki-chiba": BATCH3_2.filter(isPracticeReadyQuestion) } : {}),
+  ...(isExamPublished("jokaso-setsubishi") ? { "jokaso-setsubishi": BATCH3_3.filter(isPracticeReadyQuestion) } : {}),
+  ...(isExamPublished("chiiki-ryoko") ? { "chiiki-ryoko": BATCH3_4.filter(isPracticeReadyQuestion) } : {}),
+  ...(isExamPublished("junkango-kansai") ? { "junkango-kansai": BATCH3_5.filter(isPracticeReadyQuestion) } : {}),
+  ...(isExamPublished("kukaku-seiri") ? { "kukaku-seiri": BATCH3_6.filter(isPracticeReadyQuestion) } : {}),
+  ...(isExamPublished("dojo-osen") ? { "dojo-osen": BATCH3_7.filter(isPracticeReadyQuestion) } : {}),
+  ...(isExamPublished("kenchikushi2") ? { "kenchikushi2": BATCH3_8.filter(isPracticeReadyQuestion) } : {}),
+  ...(isExamPublished("mokuzo-kenchikushi") ? { "mokuzo-kenchikushi": BATCH3_9.filter(isPracticeReadyQuestion) } : {}),
+
+  ...(isExamPublished("sekou-1kenchiku") ? { "sekou-1kenchiku": SEKOU_1KENCHIKU_QUESTIONS.filter(isPracticeReadyQuestion) } : {}),
+  ...(isExamPublished("khk-kagaku") ? { "khk-kagaku": PUBLIC_KHK_KAGAKU_QUESTIONS.filter(isPracticeReadyQuestion) } : {}),
+  ...(isExamPublished("kenchikushi1") ? { kenchikushi1: KENCHIKUSHI1_QUESTIONS.filter(isPracticeReadyQuestion) } : {}),
   "reform-mgr": REFORM_MGR_QUESTIONS,
   "shohi-sodan": SHOHI_SODAN_QUESTIONS,
 ...(isExamPublished("chintai") ? { "chintai": BATCH1_QUESTIONS["chintai"]!.filter(isPracticeReadyQuestion) } : {}),

@@ -1,3 +1,5 @@
+import { setPostHogClient } from "@/lib/posthog";
+import type { PostHog } from "posthog-js";
 import { StrictMode } from "react";
 import { cleanup, fireEvent, render, screen, waitFor } from "@testing-library/react";
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
@@ -18,16 +20,19 @@ beforeEach(() => {
   Object.defineProperty(HTMLElement.prototype, "scrollIntoView", { configurable: true, value: vi.fn() });
   vi.spyOn(window, "scrollTo").mockImplementation(() => {});
 });
-afterEach(() => { cleanup(); vi.unstubAllGlobals(); vi.restoreAllMocks(); });
+afterEach(() => { setPostHogClient(null); cleanup(); vi.unstubAllGlobals(); vi.restoreAllMocks(); });
 
 describe("QuizClient with the real player and local learning stores", () => {
   it("answers ordinary questions across qualifications, preserves player state and storage, and offers exits at the eleventh", async () => {
+    window.history.replaceState({}, "", "/quiz?mode=year&exam=fe&utm_source=tsugino_shikaku&utm_content=fe.hero");
+    const capture = vi.fn(); setPostHogClient({ capture } as unknown as PostHog);
     const fe = FE_QUESTIONS_2009_AUTUMN_AM.slice(0, 6);
     const fp = FP3_QUESTIONS.slice(0, 6);
     const questions = new Map([...fe, ...fp].map(question => [question.id, question]));
     const started = new Set<string>();
     let cookie = false;
     const fetcher = vi.fn(async (url: string, options?: RequestInit) => {
+      if (url === "/api/questions/related") return Response.json({ questions: [] });
       if (url.startsWith("/api/questions/next?")) {
         return Response.json(questions.get(new URL(url, "http://localhost").searchParams.get("id")!));
       }
@@ -44,16 +49,20 @@ describe("QuizClient with the real player and local learning stores", () => {
 
     for (let i = 0; i < 5; i += 1) {
       await waitFor(() => {
-        expect(screen.getByRole("complementary", { name: "ログインなしの無料演習枠" })).toHaveTextContent(`今日あと${9 - i}問`);
         expect(screen.getAllByRole("radio")[0]).not.toBeDisabled();
       });
       expect(screen.queryByText("1問、回答しました。")).toBeNull();
+      expect(screen.queryByRole("link", { name: /ログイン/ })).toBeNull();
+      expect(screen.queryByTestId("achievement-toast")).toBeNull();
+      expect(screen.queryByRole("dialog")).toBeNull();
+      expect(screen.queryByRole("complementary", { name: "ログインなしの無料演習枠" })).toBeNull();
       const choice = screen.getAllByRole("radio")[0];
       fireEvent.click(choice); fireEvent.click(choice);
       expect(screen.getByRole("region", { name: /^(正解|不正解)の解説$/ })).toBeInTheDocument();
+      expect(screen.queryByTestId("achievement-toast")).toBeNull();
       expect(createHistoryStore().getAllEntries()).toHaveLength(i + 1);
       expect(getStudyReward()?.questionId).toBe(fe[i].id);
-      // The cumulative count would reset here if the banner re-mounted Player.
+      // The cumulative count must survive every question transition.
       expect(screen.getByLabelText(new RegExp(`回答済み ${i + 1}（`))).toBeInTheDocument();
       if (i < 4) fireEvent.click(screen.getByRole("button", { name: "次の問題へ" }));
     }
@@ -62,12 +71,15 @@ describe("QuizClient with the real player and local learning stores", () => {
     render(<QuizClient billingGateEnabled poolIds={fp.map(q => q.id)} mode="year" exam="fp3" backHref="/fp3" />);
     for (let i = 0; i < 5; i += 1) {
       await waitFor(() => {
-        expect(screen.getByRole("complementary", { name: "ログインなしの無料演習枠" })).toHaveTextContent(`今日あと${4 - i}問`);
         expect(screen.getAllByRole("radio")[0]).not.toBeDisabled();
       });
       expect(screen.queryByText("1問、回答しました。")).toBeNull();
+      expect(screen.queryByRole("link", { name: /ログイン/ })).toBeNull();
+      expect(screen.queryByTestId("achievement-toast")).toBeNull();
+      expect(screen.queryByRole("dialog")).toBeNull();
       fireEvent.click(screen.getAllByRole("radio")[0]);
       expect(screen.getByRole("region", { name: /^(正解|不正解)の解説$/ })).toBeInTheDocument();
+      expect(screen.queryByTestId("achievement-toast")).toBeNull();
       expect(createHistoryStore().getAllEntries()).toHaveLength(i + 6);
       if (i < 4) fireEvent.click(screen.getByRole("button", { name: "次の問題へ" }));
     }
@@ -78,7 +90,7 @@ describe("QuizClient with the real player and local learning stores", () => {
     expect(limit).toHaveTextContent("本日の無料連続演習枠（10問）を使い切りました");
     expect(limit).toHaveTextContent("10/31 0:00（日本時間）");
     expect(screen.getByRole("link", { name: "保存済みの履歴を無料で復習する" })).toHaveAttribute("href", "/review");
-    const billing = new URL(screen.getByRole("link", { name: "有料にして続きを解く" }).getAttribute("href")!, window.location.origin);
+    const billing = new URL(screen.getByRole("link", { name: "月額プランの料金・条件を見る" }).getAttribute("href")!, window.location.origin);
     expect(billing.pathname).toBe("/billing");
     const resume = billing.searchParams.get("returnTo");
     expect(resume).toBe(`/quiz?mode=year&exam=fp3&question=${fp[5].id}`);
@@ -92,7 +104,16 @@ describe("QuizClient with the real player and local learning stores", () => {
     expect(sessionStorage.getItem(LS_KEYS.studyReward)).toBe(reward);
     expect(JSON.parse(localStorage.getItem(LS_KEYS.studyRewardPreferences)!)).toEqual({ closed: false, paused: true });
     expect(createHistoryStore().getAllEntries().some(entry => entry.id === fp[5].id)).toBe(false);
-    expect(fetcher.mock.calls.every(([url]) => url.startsWith("/api/questions/next?") || url === "/api/billing/question")).toBe(true);
+    expect(fetcher.mock.calls.every(([url]) => url.startsWith("/api/questions/next?") || url === "/api/billing/question" || url === "/api/questions/related")).toBe(true);
+    expect(capture.mock.calls.filter(call => call[0] === "referral_landed")).toHaveLength(1);
+    const limits = capture.mock.calls.filter(call => call[0] === "practice_free_limit_reached");
+    expect(limits).toHaveLength(1);
+    expect(limits[0][1]).toMatchObject({ utm_source: "tsugino_shikaku", utm_content: "fe.hero", reason: "last_free_question", free_daily: 10 });
+    expect(capture.mock.calls.some(call => call[0] === "quiz_started" && call[1].utm_content === "fe.hero")).toBe(true);
+    const upgrade = screen.getByRole("link", { name: "月額プランの料金・条件を見る" });
+    upgrade.addEventListener("click", event => event.preventDefault());
+    fireEvent.click(upgrade);
+    expect(capture.mock.calls.some(call => call[0] === "practice_upgrade_clicked" && call[1].utm_content === "fe.hero")).toBe(true);
   });
 
   it.each([
@@ -112,4 +133,58 @@ describe("QuizClient with the real player and local learning stores", () => {
     await waitFor(() => expect(fetcher).toHaveBeenCalledTimes(status === 428 ? 2 : 1));
     expect(screen.queryByText(/本日の無料連続演習枠を使い切りました/)).toBeNull();
   });
+});
+it("submits feedback at the wall, answers bonus questions 11-20, stops at 21 and preserves exhaustion on reload", async () => {
+  const pool = FE_QUESTIONS_2009_AUTUMN_AM.slice(0, 21);
+  const questions = new Map(pool.map(q => [q.id, q]));
+  const ordinary = new Set(pool.slice(0, 10).map(q => q.id));
+  const bonus = new Set<string>();
+  let submitted = false;
+  let loggedIn = false;
+  const fetcher = vi.fn(async (url: string, init?: RequestInit) => {
+    if (url === "/api/feedback-unlock") {
+      if (!loggedIn) return Response.json({ eligible: false, requiresLogin: true });
+      if (init?.method === "POST") { submitted = true; return Response.json({ ok: true, remaining: 10 }); }
+      return Response.json({ eligible: !submitted, submitted, remaining: submitted ? 10 - bonus.size : 0 });
+    }
+    if (url.startsWith("/api/questions/next?")) return Response.json(questions.get(new URL(url, "http://localhost").searchParams.get("id")!));
+    if (url !== "/api/billing/question") throw new Error(`Unexpected request: ${url}`);
+    const { id } = JSON.parse(init!.body as string);
+    if (ordinary.has(id)) return Response.json({ question: questions.get(id), access: { ...baseAccess, kind: "trial", remaining: 0 } });
+    if (!submitted || (!bonus.has(id) && bonus.size >= 10)) return Response.json({ error: "daily_limit", access: { ...baseAccess, kind: "trial", remaining: 0 } }, { status: 429 });
+    const newlyUsed = !bonus.has(id); bonus.add(id);
+    return Response.json({ question: questions.get(id), access: { ...baseAccess, kind: "trial", remaining: 10 - bonus.size, feedbackBonus: { remaining: 10 - bonus.size, newlyUsed } } });
+  });
+  vi.stubGlobal("fetch", fetcher);
+  const anonymous = render(<QuizClient billingGateEnabled poolIds={pool.map(q => q.id)} initialQuestionId={pool[10].id} mode="year" exam="fe" backHref="/fe" />);
+  const login = await screen.findByRole("link", { name: "ログインして意見を送ると、さらに10問" }, { timeout: 5000 });
+  expect(screen.queryByRole("textbox")).toBeNull();
+  const callback = new URL(login.getAttribute("href")!, window.location.origin).searchParams.get("callbackUrl")!;
+  expect(callback).toContain(`question=${pool[10].id}#feedback-unlock`);
+  anonymous.unmount();
+  loggedIn = true;
+  window.history.replaceState({}, "", callback);
+  const first = render(<QuizClient billingGateEnabled poolIds={pool.map(q => q.id)} initialQuestionId={pool[10].id} mode="year" exam="fe" backHref="/fe" />);
+  await screen.findByRole("textbox", { name: /自由記述/ });
+  fireEvent.click(screen.getByLabelText("スマホでの使いやすさ"));
+  fireEvent.click(screen.getByRole("button", { name: "意見を送信して10問追加" }));
+  for (let n = 0; n < 10; n++) {
+    await waitFor(() => {
+      expect(screen.getByText(`意見による追加10問を利用中です。追加枠は残り${9 - n}問です。`)).toBeInTheDocument();
+      expect(screen.getAllByRole("radio")[0]).not.toBeDisabled();
+    });
+    expect(screen.queryByText(/今日あと/)).toBeNull();
+    fireEvent.click(screen.getAllByRole("radio")[0]);
+    expect(createHistoryStore().getAllEntries()).toHaveLength(n + 1);
+    fireEvent.click(screen.getByRole("button", { name: "次の問題へ" }));
+  }
+  await screen.findByRole("region", { name: "今日の無料演習はここまで" });
+  expect(bonus.size).toBe(10);
+  const saved = localStorage.getItem(LS_KEYS.history);
+  first.unmount();
+  render(<QuizClient billingGateEnabled poolIds={pool.map(q => q.id)} initialQuestionId={pool[20].id} mode="year" exam="fe" backHref="/fe" />);
+  await screen.findByRole("region", { name: "今日の無料演習はここまで" });
+  expect(screen.queryByRole("radiogroup")).toBeNull();
+  expect(localStorage.getItem(LS_KEYS.history)).toBe(saved);
+  expect(bonus.size).toBe(10);
 });

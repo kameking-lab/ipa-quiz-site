@@ -1,0 +1,440 @@
+
+> ipa-quiz-site@1.0.0 e2e C:\Users\kanet\20260522\wt-batch3
+> playwright test "--list"
+
+Listing tests:
+  adk-readiness.spec.ts:3:5 › singleton category stays readable without JavaScript and points to an explained question
+  adk-readiness.spec.ts:24:5 › search and mode selection are noindex across query variants
+  adk-readiness.spec.ts:44:5 › fresh visitors can read the problem, reasoning and privacy contact without a login or consent dialog
+  admin-auth.spec.ts:25:7 › /admin Basic Auth › bare /admin answers fast with an auth-gate status (no hang)
+  admin-auth.spec.ts:33:7 › /admin Basic Auth › bare /admin/ (trailing slash) resolves to the auth gate (no hang)
+  admin-auth.spec.ts:44:9 › /admin Basic Auth › configured admin auth (local webServer) › no credentials → 401 with a Basic challenge (configured, NOT 503)
+  admin-auth.spec.ts:50:9 › /admin Basic Auth › configured admin auth (local webServer) › nested admin route without credentials → 401 (not 503)
+  admin-auth.spec.ts:55:9 › /admin Basic Auth › configured admin auth (local webServer) › wrong credentials → 401
+  admin-auth.spec.ts:63:9 › /admin Basic Auth › configured admin auth (local webServer) › valid credentials → 200 (full configured path through real middleware)
+  adsense-learning-quality.spec.ts:10:5 › FP3 question survives the static-page CTA and normal-mode switch
+  adsense-learning-quality.spec.ts:31:7 › /fp3/2026-published exposes static explanation links without JavaScript
+  adsense-learning-quality.spec.ts:31:7 › /shika-ishi/2026-annual exposes static explanation links without JavaScript
+  adsense-learning-quality.spec.ts:31:7 › /chosashi/2025-autumn exposes static explanation links without JavaScript
+  adsense-learning-quality.spec.ts:45:5 › worked guide contains its problem, comparison, and check and the old URL is a 301
+  adsense-learning-quality.spec.ts:61:5 › dental and land-surveyor pages distinguish originals and independent explanations
+  adsense-learning-quality.spec.ts:79:9 › fp3 header keeps the qualification in every learning mode on desktop
+  adsense-learning-quality.spec.ts:79:9 › fp3 header keeps the qualification in every learning mode on mobile
+  adsense-learning-quality.spec.ts:79:9 › shika-ishi header keeps the qualification in every learning mode on desktop
+  adsense-learning-quality.spec.ts:79:9 › shika-ishi header keeps the qualification in every learning mode on mobile
+  adsense-learning-quality.spec.ts:79:9 › chosashi header keeps the qualification in every learning mode on desktop
+  adsense-learning-quality.spec.ts:79:9 › chosashi header keeps the qualification in every learning mode on mobile
+  adsense-learning-quality.spec.ts:105:5 › unapproved learning, navigation and error routes never initialize Google ads
+  afternoon-retired-boundary.spec.ts:9:5 › retired afternoon supply is empty over HTTP and its scoring target returns 404
+  auth-session.spec.ts:4:7 › /api/auth/session › returns 200 with JSON body even without AUTH_SECRET
+  badge-toast-overlap.spec.ts:17:7 › quiet achievements / post-answer controls › the first badge is recorded without covering the explanation
+  badge-toast-overlap.spec.ts:24:7 › quiet achievements / post-answer controls › the next-question CTA bar is usable immediately
+  badge-toast-overlap.spec.ts:33:7 › quiet achievements / post-answer controls › no delayed badge interrupts reading the first explanation
+  badge-toast-overlap.spec.ts:40:7 › quiet achievements / post-answer controls › review registration stays clickable after a badge unlock
+  batch3-release.spec.ts:10:5 › batch3: new qualification hubs and retained GSC entry URLs work at mobile width
+  batch3-release.spec.ts:27:5 › batch3: surveyor afternoon uses manual assessment, original figures and official examples
+  batch3-release.spec.ts:47:5 › batch3: travel multi-selection preserves exact grading and source diagrams
+  batch3-release.spec.ts:55:5 › batch3: source figures render and contact site parameter retains both support paths
+  blog-question-count.spec.ts:43:7 › blog ↔ exam-list question-count consistency (SSOT) › IP blog CTA count equals the IPA exam-list IP count
+  canonical.spec.ts:62:5 › 主要ページの canonical URL が自ページを指している
+  chosashi-descriptive.spec.ts:3:5 › 土地家屋調査士の記述を独自解答例として閲覧し、同じ問をクイズで開ける
+  chosashi-descriptive.spec.ts:18:5 › 土地家屋調査士の建物記述に計算図と公式出題趣旨を表示する
+  civil1-first-stage.spec.ts:7:7 › 1級土木施工管理 第一次検定 › 年度一覧に問題A 66問・問題B 34問と公式6区分が並ぶ
+  civil1-first-stage.spec.ts:25:7 › 1級土木施工管理 第一次検定 › 問題A No.3 は公式図を表示し、誤答すると正解を示す
+  civil1-first-stage.spec.ts:34:7 › 1級土木施工管理 第一次検定 › 問題B No.6 は正答エで正解になる
+  cloud-sync.spec.ts:11:7 › cloud sync: opt-in, non-intrusive › /settings renders the クラウド同期 section
+  cloud-sync.spec.ts:16:7 › cloud sync: opt-in, non-intrusive › signed-out user sees a sign-in CTA, not a destructive action
+  cloud-sync.spec.ts:24:7 › cloud sync: opt-in, non-intrusive › home page shows no account-creation banner (LocalStorage-first)
+  cloud-sync.spec.ts:30:7 › cloud sync: opt-in, non-intrusive › bookmarking still works without signing in
+  cloud-sync.spec.ts:38:7 › cloud sync: opt-in, non-intrusive › sync endpoints are reachable and gated (503 without DB / 401 without auth)
+  contact-enterprise.spec.ts:8:7 › POST /api/contact/enterprise › valid payload returns 200
+  contact-enterprise.spec.ts:25:7 › POST /api/contact/enterprise › missing required fields returns 400
+  contact-enterprise.spec.ts:32:7 › POST /api/contact/enterprise › invalid email returns 400
+  contact-enterprise.spec.ts:43:7 › /contact/enterprise GET page (PAID_MODE only) › loads form page with 200
+  contact-enterprise.spec.ts:51:7 › /contact/enterprise GET page (PAID_MODE only) › /contact/enterprise/thanks loads with 200
+  contact-enterprise.spec.ts:61:7 › /contact/enterprise GET page (educational contribution mode) › returns 410 Gone in educational contribution mode
+  contact-site.spec.ts:3:5 › 次の資格を初期選択し、任意項目を空のまま既存APIへ送信できる
+  contact-site.spec.ts:18:7 › 通常・未対応・重複queryは従来の初期種別 
+  contact-site.spec.ts:18:7 › 通常・未対応・重複queryは従来の初期種別 ?site=unknown
+  contact-site.spec.ts:18:7 › 通常・未対応・重複queryは従来の初期種別 ?site=tsugino&site=unknown
+  contact-site.spec.ts:26:5 › 種別を変更でき、短すぎる本文では送信しない
+  contact-site.spec.ts:38:5 › 390pxでもフォームは画面幅に収まり、プライバシーに転送先を説明する
+  denken1-launch.spec.ts:9:7 › denken1 理論 card opens its 10 selected blanks
+  denken1-launch.spec.ts:9:7 › denken1 電力 card opens its 5 selected blanks
+  denken1-launch.spec.ts:9:7 › denken1 機械 card opens its 5 selected blanks
+  denken1-launch.spec.ts:9:7 › denken1 法規 card opens its 5 selected blanks
+  denken1-launch.spec.ts:23:5 › denken1 question page shows official kana answer options
+  denken1-launch.spec.ts:29:5 › denken1 theory question keeps official iroha choice labels
+  denken1-launch.spec.ts:36:5 › denken1 unsupported subject stays redirected to the exam index
+  denken1-launch.spec.ts:42:5 › denken1 theory question 3 shows the two official figures and original options
+  denken2-launch.spec.ts:11:7 › denken2 電力 card starts the 2026 first-stage paper
+  denken2-launch.spec.ts:11:7 › denken2 法規 card starts the 2026 first-stage paper
+  denken2-launch.spec.ts:29:5 › blank units have direct pages with official iroha labels and all-choice reasons
+  denken2-launch.spec.ts:41:5 › figure questions render the cropped official figure
+  denken2-launch.spec.ts:46:5 › off-scope denken2 quiz links return to the landing page
+  denken2-launch.spec.ts:51:5 › latest two secondary papers preserve written answers and review status
+  denken3-launch.spec.ts:15:11 › 2024 first 理論 card starts the selected paper
+  denken3-launch.spec.ts:15:11 › 2024 first 電力 card starts the selected paper
+  denken3-launch.spec.ts:15:11 › 2024 first 機械 card starts the selected paper
+  denken3-launch.spec.ts:15:11 › 2024 first 法規 card starts the selected paper
+  denken3-launch.spec.ts:15:11 › 2024 second 理論 card starts the selected paper
+  denken3-launch.spec.ts:15:11 › 2024 second 電力 card starts the selected paper
+  denken3-launch.spec.ts:15:11 › 2024 second 機械 card starts the selected paper
+  denken3-launch.spec.ts:15:11 › 2024 second 法規 card starts the selected paper
+  denken3-launch.spec.ts:15:11 › 2025 first 理論 card starts the selected paper
+  denken3-launch.spec.ts:15:11 › 2025 first 電力 card starts the selected paper
+  denken3-launch.spec.ts:15:11 › 2025 first 機械 card starts the selected paper
+  denken3-launch.spec.ts:15:11 › 2025 first 法規 card starts the selected paper
+  denken3-launch.spec.ts:15:11 › 2025 second 理論 card starts the selected paper
+  denken3-launch.spec.ts:15:11 › 2025 second 電力 card starts the selected paper
+  denken3-launch.spec.ts:15:11 › 2025 second 機械 card starts the selected paper
+  denken3-launch.spec.ts:15:11 › 2025 second 法規 card starts the selected paper
+  denken3-launch.spec.ts:29:5 › branch parts have distinct direct pages and official labels
+  denken3-launch.spec.ts:39:5 › official-summary paper discloses its explanation scope
+  denko1-academic.spec.ts:8:7 › 第一種電気工事士 学科 › 試験トップから令和8年度上期の50問一覧へ進める
+  denko1-academic.spec.ts:25:7 › 第一種電気工事士 学科 › 配線図の問題は公式の単線結線図を表示し、誤答で全肢の解説が出る
+  denko1-academic.spec.ts:39:7 › 第一種電気工事士 学科 › 図の選択肢は4つの図を表示し、正答を選ぶと正解になる
+  denko2-skill.spec.ts:6:5 › skill exam: date → question diagram and figure 2 → official answer → return
+  denko2-skill.spec.ts:28:5 › skill exam: small-screen problem and answer images remain readable and zoomable
+  exam-top-entry.spec.ts:9:11 › exam top at 320px › sc: visible menu, real destinations and accurate afternoon scope
+  exam-top-entry.spec.ts:9:11 › exam top at 320px › nw: visible menu, real destinations and accurate afternoon scope
+  exam-top-entry.spec.ts:9:11 › exam top at 320px › st: visible menu, real destinations and accurate afternoon scope
+  exam-top-entry.spec.ts:9:11 › exam top at 320px › sa: visible menu, real destinations and accurate afternoon scope
+  exam-top-entry.spec.ts:9:11 › exam top at 320px › ap: visible menu, real destinations and accurate afternoon scope
+  exam-top-entry.spec.ts:9:11 › exam top at 390px › sc: visible menu, real destinations and accurate afternoon scope
+  exam-top-entry.spec.ts:9:11 › exam top at 390px › nw: visible menu, real destinations and accurate afternoon scope
+  exam-top-entry.spec.ts:9:11 › exam top at 390px › st: visible menu, real destinations and accurate afternoon scope
+  exam-top-entry.spec.ts:9:11 › exam top at 390px › sa: visible menu, real destinations and accurate afternoon scope
+  exam-top-entry.spec.ts:9:11 › exam top at 390px › ap: visible menu, real destinations and accurate afternoon scope
+  exam-top-entry.spec.ts:9:11 › exam top at 1440px › sc: visible menu, real destinations and accurate afternoon scope
+  exam-top-entry.spec.ts:9:11 › exam top at 1440px › nw: visible menu, real destinations and accurate afternoon scope
+  exam-top-entry.spec.ts:9:11 › exam top at 1440px › st: visible menu, real destinations and accurate afternoon scope
+  exam-top-entry.spec.ts:9:11 › exam top at 1440px › sa: visible menu, real destinations and accurate afternoon scope
+  exam-top-entry.spec.ts:9:11 › exam top at 1440px › ap: visible menu, real destinations and accurate afternoon scope
+  exam-top-entry.spec.ts:55:9 › native exam navigation before JavaScript › sc: browse older years and every field without hydration
+  exam-top-entry.spec.ts:55:9 › native exam navigation before JavaScript › nw: browse older years and every field without hydration
+  exam-top-entry.spec.ts:55:9 › native exam navigation before JavaScript › st: browse older years and every field without hydration
+  exam-top-entry.spec.ts:55:9 › native exam navigation before JavaScript › sa: browse older years and every field without hydration
+  exam-top-entry.spec.ts:55:9 › native exam navigation before JavaScript › ap: browse older years and every field without hydration
+  exam-year-coverage.spec.ts:4:7 › ap year cards separate coverage range from total count
+  exam-year-coverage.spec.ts:4:7 › sc year cards separate coverage range from total count
+  exam-year-coverage.spec.ts:4:7 › fe year cards separate coverage range from total count
+  feedback-redirect.spec.ts:6:7 › /feedback redirect (no 404) › GET /feedback redirects to /contact (not 404)
+  feedback-redirect.spec.ts:12:7 › /feedback redirect (no 404) › following /feedback lands on the contact page with 200
+  first-ten-limit-fixture.spec.ts:6:5 › quota UI fixture: ten uninterrupted answers, then free exits before the optional plan
+  first-ten.spec.ts:13:9 › search /sc: one start tap, one answer tap, inline explanation
+  first-ten.spec.ts:13:9 › search /nw: one start tap, one answer tap, inline explanation
+  first-ten.spec.ts:13:9 › search /st: one start tap, one answer tap, inline explanation
+  first-ten.spec.ts:13:9 › search /sa: one start tap, one answer tap, inline explanation
+  first-ten.spec.ts:13:9 › search /ap: one start tap, one answer tap, inline explanation
+  first-ten.spec.ts:41:9 › search article it-shikaku-rirekisho-kakikata: one anchor tap and one answer tap
+  first-ten.spec.ts:41:9 › search article ipa-shiken-fukusuu-kubun-juken: one anchor tap and one answer tap
+  first-ten.spec.ts:41:9 › search article koudo-gozen1-taisaku: one anchor tap and one answer tap
+  first-ten.spec.ts:41:9 › search article nw-gogo-jikan-haibun: one anchor tap and one answer tap
+  first-ten.spec.ts:13:9 › tsugino /sc: one start tap, one answer tap, inline explanation
+  first-ten.spec.ts:13:9 › tsugino /nw: one start tap, one answer tap, inline explanation
+  first-ten.spec.ts:13:9 › tsugino /st: one start tap, one answer tap, inline explanation
+  first-ten.spec.ts:13:9 › tsugino /sa: one start tap, one answer tap, inline explanation
+  first-ten.spec.ts:13:9 › tsugino /ap: one start tap, one answer tap, inline explanation
+  first-ten.spec.ts:41:9 › tsugino article it-shikaku-rirekisho-kakikata: one anchor tap and one answer tap
+  first-ten.spec.ts:41:9 › tsugino article ipa-shiken-fukusuu-kubun-juken: one anchor tap and one answer tap
+  first-ten.spec.ts:41:9 › tsugino article koudo-gozen1-taisaku: one anchor tap and one answer tap
+  first-ten.spec.ts:41:9 › tsugino article nw-gogo-jikan-haibun: one anchor tap and one answer tap
+  first-ten.spec.ts:66:5 › a fresh visitor can answer ten real questions without account prompts or automatic celebrations
+  fouc-css-delivery.spec.ts:21:7 › no FOUC on /q/* › head ships render-blocking, same-origin stylesheets (no async swap)
+  fouc-css-delivery.spec.ts:35:7 › no FOUC on /q/* › Tailwind is applied on first render (no unstyled flash)
+  fp2-academic-two-year.spec.ts:5:5 › FP2 academic papers expose four complete official sessions and preserve the 2026 pilot label
+  fp2-academic-two-year.spec.ts:17:5 › FP2 academic question keeps text choices, figure crop and per-choice explanations
+  fp2-practical.spec.ts:3:5 › FP2 practical papers remain separate from academic practice and show exact model answers
+  fp2-practical.spec.ts:21:5 › FP2 CBT published practical paper exposes its final model answer
+  fp2-practical.spec.ts:29:5 › FP2 2026 practical calendar and all combination reasons remain readable on mobile
+  fp2-practical.spec.ts:42:5 › FP2 numeric practical choices are separate cards and the answer includes the choice text
+  fp2-practical.spec.ts:53:5 › FP2 practical solutions show every option reason and preserve shared source tables
+  fp3-practical.spec.ts:3:5 › FP3 offers three complete practical years with readable choices and explanations
+  fp3-practical.spec.ts:25:5 › FP3 final practical question keeps back navigation and official sources
+  fp3-q11-category.spec.ts:7:5 › FP3 question 11 keeps its year-list solve and static explanation links after category correction
+  fp3-q11-category.spec.ts:30:5 › FP3 financial category and topic filters retain the selected 2026 question ID
+  home-categories.spec.ts:8:7 › qualification coverage opens below the sticky header at 400px
+  home-categories.spec.ts:8:7 › qualification coverage opens below the sticky header at 1280px
+  home-categories.spec.ts:28:7 › home lets learners jump straight to a qualification at 390px
+  home-categories.spec.ts:28:7 › home lets learners jump straight to a qualification at 1280px
+  home-categories.spec.ts:96:5 › home sends exam schedule questions to 次の資格
+  home-cta-click.spec.ts:17:7 › home qualification card -> start works with real clicks at 360px
+  home-cta-click.spec.ts:17:7 › home qualification card -> start works with real clicks at 1280px
+  home-cta-click.spec.ts:32:5 › first qualification remains stable through hydration
+  home-snippet.spec.ts:30:7 › home SERP snippet › meta description is clean and mirrored to og/twitter
+  home-snippet.spec.ts:48:7 › home SERP snippet › qualification catalog replaces the demo while preserving IPA structured data
+  home-study-entry.spec.ts:8:7 › hero reaches the finder, then qualification reaches its question in two actions and restores filters at 390px
+  home-study-entry.spec.ts:8:7 › hero reaches the finder, then qualification reaches its question in two actions and restores filters at 1280px
+  home-study-entry.spec.ts:46:5 › real saved question and wrong answers stay within the selected exam
+  home-study-entry.spec.ts:63:5 › invalid saved coordinates produce no invented progress
+  home-study-entry.spec.ts:70:5 › year list starts the chosen question without revealing its answer
+  home-study-entry.spec.ts:86:5 › challenge direct access requires a qualification
+  home-study-entry.spec.ts:95:5 › answer actions keep focus and next question survives reload on a short phone
+  home-study-entry.spec.ts:143:5 › safety paper resumes its real saved question without a guessed score
+  ipa-session-navigation.spec.ts:6:5 › specialist practice defaults to morning II and switches explicitly
+  ipa-session-navigation.spec.ts:18:5 › annual page keeps selected session and return target across learning modes
+  ipa-session-navigation.spec.ts:31:5 › question detail quiz returns to the same question
+  ipa-session-navigation.spec.ts:40:5 › ST 2025 spring AM II listing and player expose the same questions
+  ipa-session-navigation.spec.ts:66:5 › ST 2024 keeps AM I and AM II separate and renders audited figures
+  ipa-session-navigation.spec.ts:87:7 › ST 2024 am1 shows the selected wrong reason and browser back preserves the question
+  ipa-session-navigation.spec.ts:87:7 › ST 2024 am2 shows the selected wrong reason and browser back preserves the question
+  ipa-session-navigation.spec.ts:87:7 › ST 2025 am1 shows the selected wrong reason and browser back preserves the question
+  ipa-session-navigation.spec.ts:87:7 › ST 2025 am2 shows the selected wrong reason and browser back preserves the question
+  kaigo-official.spec.ts:4:7 › 介護福祉士 第37回・第38回 › exam hub shows 250 questions and each year shows 125 with the independence notice
+  kaigo-official.spec.ts:20:7 › 介護福祉士 第37回・第38回 › question page keeps ruby, numbers choices 1-5, and grades in place
+  kaigo-official.spec.ts:33:7 › 介護福祉士 第37回・第38回 › figure-only choices of question 49 render the cropped official figures
+  kaigo-official.spec.ts:43:7 › 介護福祉士 第37回・第38回 › 第37回問題121は公式系図を表示し、選択肢2を正答として採点する
+  kankoji2-first-stage.spec.ts:8:9 › 2級管工事施工管理 第一次検定 › 2026-early の年度一覧に全52問と公式6区分が並ぶ
+  kankoji2-first-stage.spec.ts:8:9 › 2級管工事施工管理 第一次検定 › 2025-late の年度一覧に全52問と公式6区分が並ぶ
+  kankoji2-first-stage.spec.ts:25:7 › 2級管工事施工管理 第一次検定 › No.49 は1肢目で採点せず、正答の2肢をそろえると正解
+  kankoji2-first-stage.spec.ts:38:7 › 2級管工事施工管理 第一次検定 › No.50 で一肢だけ正しい組合せは不正解
+  kankoji2-first-stage.spec.ts:46:7 › 2級管工事施工管理 第一次検定 › 公式図付きの問題は原図を表示し、1肢選択で採点できる
+  kgrow-learning-continuity.spec.ts:5:5 › mobile: hash-selected dashboard tabs scroll horizontally without moving the page
+  kgrow-learning-continuity.spec.ts:19:5 › mobile: answer → explanation → related → review → next survives reload
+  kgrow-learning-continuity.spec.ts:55:5 › mobile: a submitted short mock reaches scores, progress, weakness and exact review
+  kgrow-learning-continuity.spec.ts:98:5 › mobile: one calculated plan preserves daily progress and its old result URL
+  kgrow2-blog-practice.spec.ts:5:7 › it-shikaku-rirekisho-kakikata: answer in the article and continue with the mapped exam and session
+  kgrow2-blog-practice.spec.ts:5:7 › ipa-shiken-fukusuu-kubun-juken: answer in the article and continue with the mapped exam and session
+  kgrow2-blog-practice.spec.ts:5:7 › koudo-gozen1-taisaku: answer in the article and continue with the mapped exam and session
+  kgrow2-blog-practice.spec.ts:5:7 › nw-gogo-jikan-haibun: answer in the article and continue with the mapped exam and session
+  kgrow2-blog-practice.spec.ts:33:5 › the practice stays before the article and the existing ad review gate remains closed
+  kgrow2-blog-practice.spec.ts:48:5 › 390px: a six-choice worked example keeps all choices and its actual choice count
+  kgrow2-blog-practice.spec.ts:60:5 › a supplement remains editable after failure and receives a receipt after retry
+  kgrow2-blog-practice.spec.ts:75:5 › the study room returns to the qualification last answered on this device
+  kperf1-explanation-ready.spec.ts:5:5 › prepared explanation stays hidden and inert until a real answer, then receives focus without navigation or AI
+  mankan.spec.ts:4:7 › マンション管理士試験 › the exam top names the source, the law reference dates and the independence notice
+  mankan.spec.ts:11:7 › マンション管理士試験 › a question page grades the official answer and shows the attribution
+  medical161-release.spec.ts:15:9 › 視能訓練士 saved release: native reader and original figures at 1280px
+  medical161-release.spec.ts:15:9 › 臨床検査技師 saved release: native reader and original figures at 1280px
+  medical161-release.spec.ts:15:9 › 薬剤師 saved release: native reader and original figures at 1280px
+  medical161-release.spec.ts:15:9 › 視能訓練士 saved release: native reader and original figures at 390px
+  medical161-release.spec.ts:15:9 › 臨床検査技師 saved release: native reader and original figures at 390px
+  medical161-release.spec.ts:15:9 › 薬剤師 saved release: native reader and original figures at 390px
+  mobile-bottomnav-learning-routes.spec.ts:17:7 › MobileBottomNav visibility by route › hidden on /quiz, and the next-question CTA is tappable after answering
+  mobile-bottomnav-learning-routes.spec.ts:30:7 › MobileBottomNav visibility by route › hidden on /q/* question pages
+  mobile-bottomnav-learning-routes.spec.ts:35:7 › MobileBottomNav visibility by route › visible on the home page
+  mobile-bottomnav-learning-routes.spec.ts:40:7 › MobileBottomNav visibility by route › visible on /search and /mock-exam (no bottom-CTA collision there)
+  mobile-bottomnav-spacing.spec.ts:26:7 › / keeps its final card/CTA at least 8px above the mobile nav
+  mobile-bottomnav-spacing.spec.ts:26:7 › /ipa keeps its final card/CTA at least 8px above the mobile nav
+  mobile-bottomnav-spacing.spec.ts:26:7 › /recommended-books/ap keeps its final card/CTA at least 8px above the mobile nav
+  mobile-bottomnav-spacing.spec.ts:42:5 › footer links remain above the fixed mobile nav
+  number-key-selection.spec.ts:17:7 › number-key 1 selects the first displayed choice › /quiz (QuizPlayer)
+  number-key-selection.spec.ts:21:7 › number-key 1 selects the first displayed choice › /q/* (QuestionAnswerCard)
+  number-key-selection.spec.ts:25:7 › number-key 1 selects the first displayed choice › /challenge starts with choosing an exam
+  number-key-selection.spec.ts:36:7 › number-key 1 selects the first displayed choice › /challenge with a selected exam starts that exam's five-question quiz
+  pricing.spec.ts:7:7 › /pricing は恒久削除（410 Gone） › /pricing は 410 を返す
+  pricing.spec.ts:12:7 › /pricing は恒久削除（410 Gone） › /about の料金案内が無料範囲と月額プランを伝えている
+  pricing.spec.ts:25:7 › /pricing は恒久削除（410 Gone） › Sitemap returns 200
+  prune-a.spec.ts:16:9 › prune batch A › /referral returns a single 301 to /contact#legacy-benefits
+  prune-a.spec.ts:16:9 › prune batch A › /student returns a single 301 to /contact#legacy-benefits
+  prune-a.spec.ts:16:9 › prune batch A › /ranking returns a single 301 to /account/dashboard#mock-scores
+  prune-a.spec.ts:16:9 › prune batch A › /success-stories returns a single 301 to /blog
+  prune-a.spec.ts:16:9 › prune batch A › /success-stories/ap returns a single 301 to /ap
+  prune-a.spec.ts:16:9 › prune batch A › /success-stories/ap/old-case returns a single 301 to /ap
+  prune-a.spec.ts:16:9 › prune batch A › /success-stories/unknown/old-case returns a single 301 to /blog
+  prune-a.spec.ts:16:9 › prune batch A › /testimonials returns a single 301 to /blog
+  prune-a.spec.ts:16:9 › prune batch A › /admin/moderation returns a single 301 to /admin
+  prune-a.spec.ts:16:9 › prune batch A › /admin/competitors returns a single 301 to /admin
+  prune-a.spec.ts:23:7 › prune batch A › retired character asset URLs return 410
+  prune-a.spec.ts:31:7 › prune batch A › weekly signup no longer accepts email addresses
+  prune-a.spec.ts:37:7 › prune batch A › old character preferences do not reintroduce the selector
+  prune-a.spec.ts:49:7 › prune batch A › retained scores open from the legacy ranking link without a fabricated distribution
+  prune-a.spec.ts:61:7 › prune batch A › contact preserves an explanation for previously promised benefits
+  prune-a.spec.ts:68:7 › prune batch A › public learning pages have no note or article catalog CTA
+  purchase-faq-release.spec.ts:8:5 › purchase offer keeps essential terms visible and detailed terms accessible at narrow width
+  purchase-faq-release.spec.ts:22:5 › difficulty FAQ does not assert unverified scoring sources
+  purchase-faq-release.spec.ts:31:5 › success and cancel without an order do not falsely claim a completed purchase or send billing requests
+  pwa-offline.spec.ts:4:7 › PWA offline support › manifest is served with PWA-required fields
+  pwa-offline.spec.ts:20:7 › PWA offline support › service worker is served with no-cache + scope headers
+  pwa-offline.spec.ts:35:7 › PWA offline support › /offline page renders the offline shell
+  pwa-offline.spec.ts:44:7 › PWA offline support › apple-mobile-web-app meta tags are present in the document head
+  q-inline-answer.spec.ts:26:7 › /q inline answer › server-rendered HTML keeps the choices + honest JSON-LD (SEO/no-JS)
+  q-inline-answer.spec.ts:45:7 › /q inline answer › clicking a choice grades in place and reveals the explanation (no nav)
+  q-inline-answer.spec.ts:67:7 › /q inline answer › a choice is keyboard-operable (role=radio, Enter activates)
+  q-inline-answer.spec.ts:79:7 › /q inline answer › an anonymous learner can prepare and manually send an inline AI question about a wrong answer without navigation
+  qa-schema.spec.ts:38:7 › question structured-data semantics › SSR uses an educational Question and does not claim user-generated Q&A
+  qualification-expansion.spec.ts:54:7 › fp2: qualification → year/subject → answer → back/progress
+  qualification-expansion.spec.ts:54:7 › fp3: qualification → year/subject → answer → back/progress
+  qualification-expansion.spec.ts:86:5 › denken3 is reachable after content acceptance
+  qualification-expansion.spec.ts:92:5 › denko2 publishes five full sittings with wrong-choice explanations and return progress
+  qualification-expansion.spec.ts:120:5 › denko2 complete 2026 sitting publishes question 10 and all-choice explanations
+  qualification-expansion.spec.ts:142:5 › FP2 negative questions explain why a selected true statement is not the answer
+  qualification-expansion.spec.ts:155:5 › FP2 uses the common quiz player with its law reference date and each-choice explanations
+  qualification-learning-context.spec.ts:6:9 › qualification learning context (desktop) › denko2 offers practice instead of an unrelated mock
+  qualification-learning-context.spec.ts:14:9 › qualification learning context (desktop) › unsupported and unknown query cannot silently start AP, and back/repeat stays denko2
+  qualification-learning-context.spec.ts:31:9 › qualification learning context (desktop) › supported query uses IP settings and the original return page
+  qualification-learning-context.spec.ts:39:9 › qualification learning context (desktop) › public explanation enters scoped review and returns without deleting mixed history
+  qualification-learning-context.spec.ts:56:9 › qualification learning context (desktop) › answer links the same question to the public explanation and error reporting
+  qualification-learning-context.spec.ts:6:9 › qualification learning context (mobile) › denko2 offers practice instead of an unrelated mock
+  qualification-learning-context.spec.ts:14:9 › qualification learning context (mobile) › unsupported and unknown query cannot silently start AP, and back/repeat stays denko2
+  qualification-learning-context.spec.ts:31:9 › qualification learning context (mobile) › supported query uses IP settings and the original return page
+  qualification-learning-context.spec.ts:39:9 › qualification learning context (mobile) › public explanation enters scoped review and returns without deleting mixed history
+  qualification-learning-context.spec.ts:56:9 › qualification learning context (mobile) › answer links the same question to the public explanation and error reporting
+  quiz-canonical.spec.ts:19:7 › /quiz canonical & robots — honest signals › bare /quiz still 30x-redirects to the homepage (unchanged)
+  quiz-canonical.spec.ts:27:7 › /quiz canonical & robots — honest signals › /quiz?mode=… renders with noindex + canonical pointing to '/'
+  quiz-canonical.spec.ts:57:7 › /quiz canonical & robots — honest signals › the rendered page is reachable (link-follow stays intact for the agent UX)
+  quiz-radiogroup.spec.ts:7:7 › quiz answer radiogroup › renders a radiogroup of 4 radios with roving arrow keys and Space select
+  safety-qualification-hubs.spec.ts:14:7 › safety qualification hubs › first-class health supervisor has unique SEO signals and real paper links
+  safety-qualification-hubs.spec.ts:40:7 › safety qualification hubs › measurement and consultant item lists never cross qualification boundaries
+  safety-qualification-hubs.spec.ts:66:7 › safety qualification hubs › legacy filters redirect to canonical hubs and invalid filters recover cleanly
+  safety-qualification-hubs.spec.ts:93:7 › safety qualification hubs › unknown qualification slug is a real 404
+  sc-choice-explanations.spec.ts:3:5 › SC wrong answer shows its reason, official evidence, and preserves the return route
+  sc-choice-explanations.spec.ts:19:5 › SC recent papers expose every AM1 and AM2 question without mixing
+  security-headers.spec.ts:12:7 › security response headers › Server header is the app override, never the platform name
+  security-headers.spec.ts:19:7 › security response headers › X-Powered-By is suppressed
+  security-headers.spec.ts:24:7 › security response headers › core security headers are present
+  seo-indexing-policy.spec.ts:7:5 › search and topic navigation stay noindex,follow with and without filters
+  seo-indexing-policy.spec.ts:19:5 › interactive quiz shells have an H1 and stream mode stays out of the index
+  seo-indexing-policy.spec.ts:31:5 › noindex stream player is omitted from the XML sitemap
+  seo-indexing-policy.spec.ts:37:5 › IPA index fallback is not described as a PDF
+  skip-link.spec.ts:7:7 › skip link › first Tab focuses the skip link, Enter jumps to #main-content
+  smoke-routes.spec.ts:42:7 › smoke: 44 routes › 必須 200 ルートが 14 件すべて 200
+  smoke-routes.spec.ts:50:7 › smoke: 44 routes › 試験区分 13 件が 200
+  smoke-routes.spec.ts:58:7 › smoke: 44 routes › 書籍 13 件が 200
+  smoke-routes.spec.ts:66:7 › smoke: 44 routes › 恒久削除ルートは 410 Gone、純・意図的ルートは 404
+  smoke-routes.spec.ts:79:7 › smoke: 44 routes › ルート総数 = 44（必須200×14 + 試験区分13 + 書籍13 + 410Gone×2 + 意図的404×2）
+  soukan.spec.ts:4:7 › 技術士 総合技術監理部門 択一式 › the exam top names the source, the law reference dates and the independence notice
+  soukan.spec.ts:11:7 › 技術士 総合技術監理部門 択一式 › a question page grades the official answer and shows the attribution
+  sssc-seishin27.spec.ts:4:7 › 精神保健福祉士 第27回 › the 2024 year page lists the specialized and common subjects and names the held questions
+  sssc-seishin27.spec.ts:13:7 › 精神保健福祉士 第27回 › a choose-two specialized question grades only after both official answers are selected
+  sssc-seishin27.spec.ts:23:7 › 精神保健福祉士 第27回 › common questions are self-canonical and held questions are not published
+  sssc-shakai-seishin.spec.ts:4:7 › 社会福祉士 第38回・精神保健福祉士 第28回 › shakai hub lists 129 questions and the year page splits common and specialized subjects
+  sssc-shakai-seishin.spec.ts:14:7 › 社会福祉士 第38回・精神保健福祉士 第28回 › a choose-two question grades only after both official answers are selected
+  sssc-shakai-seishin.spec.ts:26:7 › 社会福祉士 第38回・精神保健福祉士 第28回 › seishin exposes its specialized paper and points shared common questions to shakai
+  study-calendar-tap-target.spec.ts:7:7 › learning heatmap tap targets › dashboard heatmap cells are at least 24x24px
+  study-presence.spec.ts:53:5 › qualification presence is compact on desktop and mobile and distinguishes zero/failure
+  study-presence.spec.ts:125:5 › many qualifications stay within a keyboard-scrollable small list
+  study-presence.spec.ts:218:5 › a loaded quiz publishes only its real question qualification and automation sends no heartbeat
+  three-domains-release.spec.ts:8:5 › qualification finder has direct-load styles and both sharoushi discovery contexts
+  three-domains-release.spec.ts:26:5 › Q05 explanation keeps the optional learning aid behind the reveal control
+  three-domains-release.spec.ts:53:5 › registered difficulty stays qualified and the existing inline draft is retained
+  three-domains-release.spec.ts:69:5 › only the recognized article notice is upright on the existing article route
+  tsugino-funnel.spec.ts:75:7 › anonymous native practice reaches question ten and the upgrade exit with attributed events (390)
+  tsugino-funnel.spec.ts:121:7 › subject/year referral starts the same public exam and keeps UTM (390)
+  tsugino-funnel.spec.ts:75:7 › anonymous native practice reaches question ten and the upgrade exit with attributed events (1440)
+  tsugino-funnel.spec.ts:121:7 › subject/year referral starts the same public exam and keeps UTM (1440)
+  tsugino-funnel.spec.ts:142:5 › legacy multi-subject redirect preserves the exact subject, year and UTM
+  tsugino-funnel.spec.ts:157:5 › category starts and continues inside the selected category; dismissed welcome stays closed
+  tsugino-funnel.spec.ts:184:5 › GSC entry URLs retain their status and canonical
+  unified-learning.spec.ts:6:5 › safety answers survive navigation, result links and wrong-answer retry
+  unified-learning.spec.ts:27:5 › safety search opens the exact matched question and keeps safety navigation
+  unified-learning.spec.ts:47:5 › IPA shows annual selection before long exam guidance
+  unified-learning.spec.ts:57:5 › IPA three-question practice ends on results instead of the home chooser
+  unified-learning.spec.ts:70:5 › mobile safety menu keeps search and progress inside safety learning
+  user-journey-blog.spec.ts:8:7 › user journey: blog HTTP status › /blog index returns 200
+  user-journey-blog.spec.ts:13:7 › user journey: blog HTTP status › /blog/ipa-cyokusen-1shukan returns 200
+  user-journey-blog.spec.ts:18:7 › user journey: blog HTTP status › /blog/kakomon-nannenbun returns 200
+  user-journey-blog.spec.ts:23:7 › user journey: blog HTTP status › nonexistent blog slug returns 404
+  user-journey-blog.spec.ts:31:7 › user journey: blog page content › /blog index has article links
+  user-journey-blog.spec.ts:39:7 › user journey: blog page content › /blog article page has h1 heading
+  user-journey-blog.spec.ts:45:7 › user journey: blog page content › /blog article page has internal navigation links
+  user-journey-blog.spec.ts:53:7 › user journey: blog page content › /blog article contains exam-related content
+  user-journey-bookmark.spec.ts:6:7 › bookmark page: HTTP & structure › GET /bookmarks returns 200
+  user-journey-bookmark.spec.ts:11:7 › bookmark page: HTTP & structure › /bookmarks page has ブックマーク heading
+  user-journey-bookmark.spec.ts:18:7 › bookmark page: HTTP & structure › /bookmarks page shows bookmark count
+  user-journey-bookmark.spec.ts:26:7 › bookmark page: HTTP & structure › /bookmarks page has export/import buttons when empty
+  user-journey-bookmark.spec.ts:35:7 › bookmark page: empty state › /bookmarks shows empty state when no bookmarks in localStorage
+  user-journey-bookmark.spec.ts:54:7 › bookmark: question page integration › question page returns 200
+  user-journey-bookmark.spec.ts:59:7 › bookmark: question page integration › question page renders bookmark-related UI element
+  user-journey-bookmark.spec.ts:93:7 › bookmark: localStorage round-trip › /bookmarks reflects data injected into localStorage
+  user-journey-bookmark.spec.ts:107:7 › bookmark: localStorage round-trip › /bookmarks shows remove button for stored bookmarks
+  user-journey-copilot-rag.spec.ts:40:7 › copilot API: basic contract › POST /api/copilot returns 200 with streaming text
+  user-journey-copilot-rag.spec.ts:49:7 › copilot API: basic contract › POST /api/copilot with invalid body returns 400
+  user-journey-copilot-rag.spec.ts:57:7 › copilot API: basic contract › POST /api/copilot 200 response includes RAG headers
+  user-journey-copilot-rag.spec.ts:70:7 › copilot API: basic contract › POST /api/copilot does not advertise an obsolete ten-question quota
+  user-journey-copilot-rag.spec.ts:85:7 › copilot UI: question page integration › question page returns 200
+  user-journey-copilot-rag.spec.ts:90:7 › copilot UI: question page integration › question page renders AI copilot section
+  user-journey-copilot-rag.spec.ts:97:7 › copilot UI: question page integration › copilot section shows quick action examples
+  user-journey-copilot-rag.spec.ts:103:7 › copilot UI: question page integration › copilot panel is keyboard-accessible (focusable child elements)
+  user-journey-copilot-rag.spec.ts:114:7 › copilot API: edge cases › POST /api/copilot with empty messages array returns 400
+  user-journey-copilot-rag.spec.ts:123:7 › copilot API: edge cases › POST /api/copilot with message too long returns 400
+  user-journey-error.spec.ts:7:7 › user journey: 404 and error pages › nonexistent URL returns 404
+  user-journey-error.spec.ts:12:7 › user journey: 404 and error pages › nonexistent exam code returns 404
+  user-journey-error.spec.ts:18:7 › user journey: 404 and error pages › nonexistent year/season for valid exam returns 404
+  user-journey-error.spec.ts:23:7 › user journey: 404 and error pages › 404 page renders navigable HTML (has links)
+  user-journey-error.spec.ts:32:7 › user journey: 404 and error pages › 404 page does not show a blank screen
+  user-journey-essays.spec.ts:24:7 › user journey: essays HTTP status › essays exam index /essays/sc returns 200
+  user-journey-essays.spec.ts:29:7 › user journey: essays HTTP status › essay question page /essays/sc/2025-spring/pm2/q1 returns 200
+  user-journey-essays.spec.ts:34:7 › user journey: essays HTTP status › nonexistent essay /essays/sc/2025-spring/pm2/q99 returns 404
+  user-journey-essays.spec.ts:40:7 › user journey: essays HTTP status › nonexistent year /essays/sc/1999-spring/pm2/q1 returns 404
+  user-journey-essays.spec.ts:48:7 › user journey: essays industry selector UI › essay question page has the industry selector group
+  user-journey-essays.spec.ts:54:7 › user journey: essays industry selector UI › essay question page has all 8 industry buttons
+  user-journey-essays.spec.ts:65:7 › user journey: essays industry selector UI › first industry button (IT) is pressed by default
+  user-journey-essays.spec.ts:76:7 › user journey: essays industry selector UI › clicking 製造業 presses it and unpresses IT
+  user-journey-essays.spec.ts:89:7 › user journey: essays industry selector UI › switching industry changes the visible answer panel
+  user-journey-mobile.spec.ts:13:7 › user journey: mobile viewport (375x667) › exam index /ap renders without horizontal scroll
+  user-journey-mobile.spec.ts:19:7 › user journey: mobile viewport (375x667) › quiz question /q/ap/2024-spring/am/q1 choices visible on mobile
+  user-journey-mobile.spec.ts:26:7 › user journey: mobile viewport (375x667) › essay page /essays/sc/2025-spring/pm2/q1 industry selector visible on mobile
+  user-journey-mobile.spec.ts:33:7 › user journey: mobile viewport (375x667) › /stats page renders without horizontal scroll on mobile
+  user-journey-mobile.spec.ts:39:7 › user journey: mobile viewport (375x667) › /blog index renders without horizontal scroll on mobile
+  user-journey-mock-exam.spec.ts:21:7 › mock exam: HTTP & structure › GET /mock-exam returns 200
+  user-journey-mock-exam.spec.ts:26:7 › mock exam: HTTP & structure › /mock-exam has 模試モード heading
+  user-journey-mock-exam.spec.ts:33:7 › mock exam: HTTP & structure › /mock-exam page contains exam selection UI
+  user-journey-mock-exam.spec.ts:40:7 › mock exam: HTTP & structure › /mock-exam page contains exam list and start prompt
+  user-journey-mock-exam.spec.ts:50:7 › mock exam: API › GET /api/mock-exam/ap returns 200 or correct error
+  user-journey-mock-exam.spec.ts:56:7 › mock exam: API › GET /api/mock-exam/ap returns questions on success
+  user-journey-mock-exam.spec.ts:68:7 › mock exam: API › GET /api/mock-exam/invalid-exam returns 404 or 400
+  user-journey-mock-exam.spec.ts:75:7 › mock exam: history from localStorage › /mock-exam shows past results from localStorage
+  user-journey-mock-exam.spec.ts:92:7 › mock exam: history from localStorage › /mock-exam shows passed indicator for passing score
+  user-journey-mock-exam.spec.ts:110:7 › mock exam: timer UI (with URL param) › GET /mock-exam?exam=ap returns 200
+  user-journey-progress.spec.ts:8:7 › /my-progress legacy redirect › GET /my-progress returns 308 (Next.js permanent redirect)
+  user-journey-progress.spec.ts:17:7 › /my-progress legacy redirect › Following /my-progress lands on the dashboard page
+  user-journey-pwa.spec.ts:4:7 › PWA: manifest & service worker › GET /manifest.webmanifest returns 200
+  user-journey-pwa.spec.ts:9:7 › PWA: manifest & service worker › manifest.webmanifest has required PWA fields
+  user-journey-pwa.spec.ts:21:7 › PWA: manifest & service worker › manifest.webmanifest has correct app name
+  user-journey-pwa.spec.ts:27:7 › PWA: manifest & service worker › manifest.webmanifest includes shortcut entries
+  user-journey-pwa.spec.ts:34:7 › PWA: manifest & service worker › GET /sw.js returns 200 with correct headers
+  user-journey-pwa.spec.ts:46:7 › PWA: manifest & service worker › GET /sw.js content includes fetch event listener
+  user-journey-pwa.spec.ts:56:7 › PWA: offline page › GET /offline returns 200
+  user-journey-pwa.spec.ts:61:7 › PWA: offline page › /offline page renders offline mode heading
+  user-journey-pwa.spec.ts:72:7 › PWA: offline page › /offline page has bookmarks section
+  user-journey-pwa.spec.ts:78:7 › PWA: offline page › /offline page has recent questions section
+  user-journey-pwa.spec.ts:86:7 › PWA: meta tags in document › home page has manifest link tag
+  user-journey-pwa.spec.ts:92:7 › PWA: meta tags in document › home page has apple-mobile-web-app meta tags
+  user-journey-pwa.spec.ts:100:7 › PWA: meta tags in document › home page has theme-color meta tag
+  user-journey-quiz.spec.ts:16:7 › user journey: quiz HTTP status › exam index /ap returns 200
+  user-journey-quiz.spec.ts:21:7 › user journey: quiz HTTP status › year/season list /ap/2024-spring returns 200
+  user-journey-quiz.spec.ts:26:7 › user journey: quiz HTTP status › question page /q/ap/2024-spring/am/q1 returns 200
+  user-journey-quiz.spec.ts:31:7 › user journey: quiz HTTP status › nonexistent question /q/ap/2024-spring/am/q9999 returns 404
+  user-journey-quiz.spec.ts:37:7 › user journey: quiz HTTP status › needsReview question /q/fe/2019-spring/am/q5 returns 404
+  user-journey-quiz.spec.ts:45:7 › user journey: quiz page content › exam index /ap has heading with exam name
+  user-journey-quiz.spec.ts:52:7 › user journey: quiz page content › year/season list /ap/2024-spring opens its selected question in unanswered quiz
+  user-journey-quiz.spec.ts:72:7 › user journey: quiz page content › question page has choices section with ア イ ウ エ
+  user-journey-quiz.spec.ts:85:7 › user journey: quiz page content › question page has the inline answer and explanation sections
+  user-journey-quiz.spec.ts:93:7 › user journey: quiz page content › question page has adjacent question navigation
+  user-journey-search.spec.ts:15:7 › search page: HTTP & structure › GET /search returns 200
+  user-journey-search.spec.ts:20:7 › search page: HTTP & structure › /search has IPA過去問 横断検索 heading
+  user-journey-search.spec.ts:28:7 › search page: HTTP & structure › /search has search input field
+  user-journey-search.spec.ts:36:7 › search page: HTTP & structure › /search has 問題検索 section with aria-label
+  user-journey-search.spec.ts:46:7 › search page: HTTP & structure › /search filter panel appears after submitting a search term
+  user-journey-search.spec.ts:57:7 › search API: contract › GET /api/search/questions with empty query returns 200 empty result
+  user-journey-search.spec.ts:66:7 › search API: contract › GET /api/search/questions with keyword returns results shape
+  user-journey-search.spec.ts:75:7 › search API: contract › GET /api/search/questions with exam filter
+  user-journey-search.spec.ts:82:7 › search API: contract › GET /api/search/questions with difficulty filter
+  user-journey-search.spec.ts:91:7 › search: keyword interaction › practice CTA carries the exact bounded result IDs and search return URL
+  user-journey-search.spec.ts:124:7 › search: keyword interaction › an empty result never offers a misleading all-question practice CTA
+  user-journey-search.spec.ts:131:7 › search: keyword interaction › practice CTA is hidden while results for a changed query are pending
+  user-journey-search.spec.ts:155:7 › search: keyword interaction › recent-only selection survives the quiz round trip
+  user-journey-search.spec.ts:186:7 › search: keyword interaction › duplicate ids parameters fail closed instead of crashing or widening the pool
+  user-journey-search.spec.ts:200:7 › search: keyword interaction › submitting search triggers results section
+  user-journey-search.spec.ts:209:7 › search: keyword interaction › results list is not a verbose live region; count is announced concisely
+  user-journey-search.spec.ts:222:7 › search: keyword interaction › clear button appears after submitting search
+  user-journey-search.spec.ts:231:7 › search: keyword interaction › clicking clear button empties the search input
+  user-journey-search.spec.ts:243:7 › search: keyword interaction › clear-all button appears when filters active
+  user-journey-stats.spec.ts:4:7 › user journey: /stats page › /stats returns 200
+  user-journey-stats.spec.ts:9:7 › user journey: /stats page › /stats page has public statistics heading
+  user-journey-stats.spec.ts:16:7 › user journey: /stats page › /stats page has content sections with data
+  user-journey-stats.spec.ts:24:7 › user journey: /stats page › /stats page has IPA source attribution
+  user-journey-study-plan.spec.ts:27:7 › study plan: HTTP & structure › GET /study-plan returns 200
+  user-journey-study-plan.spec.ts:32:7 › study plan: HTTP & structure › /study-plan has 自動学習スケジュール作成 heading
+  user-journey-study-plan.spec.ts:39:7 › study plan: HTTP & structure › /study-plan shows new-plan creation section
+  user-journey-study-plan.spec.ts:45:7 › study plan: HTTP & structure › /study-plan shows new-plan section (always rendered)
+  user-journey-study-plan.spec.ts:52:7 › study plan: HTTP & structure › the planner uses a study period and sends exam dates to Tsugino
+  user-journey-study-plan.spec.ts:62:7 › study plan: result page › GET /study-plan/result/nonexistent returns 200 or 404
+  user-journey-study-plan.spec.ts:68:7 › study plan: result page › /study-plan/result/[id] renders when plan in localStorage
+  user-journey-study-plan.spec.ts:93:7 › study plan: empty state › /study-plan with no plans shows creation form
+  user-journey-study-plan.spec.ts:105:7 › study plan: existing plans in localStorage › /study-plan shows stored plan with delete button
+  user-journey-study-plan.spec.ts:118:7 › study plan: existing plans in localStorage › /study-plan shows link to plan result from stored plan
+Total: 433 tests in 81 files
+::notice title=🎭 Playwright Run Summary::  433 did not run

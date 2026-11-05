@@ -1,4 +1,3 @@
-import { NOTE_CATALOG_URL } from "@/lib/note-catalog";
 import Link from "next/link";
 import { ShieldCheck, UserRound } from "lucide-react";
 
@@ -7,10 +6,6 @@ import { ShieldCheck, UserRound } from "lucide-react";
 
 
 
-
-export function HomeNoteGuides() {
-  return <section className="mt-10 rounded-2xl border border-border p-4"><h2 className="text-lg font-bold">資格の記事を探す</h2><p className="mt-2 text-sm text-muted-foreground">運営者3アカウントのnote記事をまとめて検索（PR）</p><a href={NOTE_CATALOG_URL} className="mt-3 inline-flex min-h-11 items-center font-semibold text-primary underline">サムネイルで記事を選ぶ →</a></section>;
-}
 
 const TRUST_LINKS = [
   { href: "/operator", label: "運営者情報", icon: UserRound },

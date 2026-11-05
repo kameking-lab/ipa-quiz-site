@@ -1,0 +1,81 @@
+[36mvite v8.3.5 [32mbuilding client environment for e2e...[36m[39m
+transforming...
+✓ 3100 modules transformed.
+rendering chunks...
+computing gzip size...
+dist/tests/e2e/harness.html                               0.79 kB │ gzip:   0.36 kB
+dist/index.html                                           1.14 kB │ gzip:   0.53 kB
+dist/assets/native-B75vsam-.css                         181.23 kB │ gzip:  27.73 kB
+dist/assets/open-subscription-management-C9M-KoUj.js      0.25 kB │ gzip:   0.25 kB
+dist/assets/web-CBryIF04.js                               0.36 kB │ gzip:   0.24 kB
+dist/assets/web-CsxfUsTb.js                               0.36 kB │ gzip:   0.24 kB
+dist/assets/delete-device-data-BrdJVSYV.js                0.63 kB │ gzip:   0.40 kB
+dist/assets/web-DRKAFCf7.js                               0.84 kB │ gzip:   0.40 kB
+dist/assets/web-98nES7P6.js                               1.10 kB │ gzip:   0.53 kB
+dist/assets/web-Bvlkdr89.js                               1.19 kB │ gzip:   0.54 kB
+dist/assets/preload-helper-CRzLMJPS.js                    1.53 kB │ gzip:   0.80 kB
+dist/assets/web-CDy4jZt4.js                               4.43 kB │ gzip:   1.28 kB
+dist/assets/dist-Dohoh47q.js                              7.75 kB │ gzip:   3.10 kB
+dist/assets/web-BH4cjZBZ.js                               8.47 kB │ gzip:   2.83 kB
+dist/assets/web-BxvjTldN.js                               9.98 kB │ gzip:   2.02 kB
+dist/assets/FeedbackUnlock-BkVmSQTi.js                   10.98 kB │ gzip:   4.37 kB
+dist/assets/app-CpSnU55g.js                              15.88 kB │ gzip:   5.38 kB
+dist/assets/jsx-dev-runtime-CPpRWyOA.js                  26.19 kB │ gzip:   8.42 kB
+dist/assets/utils-CJnfTkR7.js                            31.75 kB │ gzip:  10.78 kB
+dist/assets/harness-0JFyGEZ2.js                          40.29 kB │ gzip:  12.92 kB
+dist/assets/MaterialReader-BikOVmXT.js                  147.82 kB │ gzip:  29.75 kB
+dist/assets/native-CUVMfsGm.js                        1,625.34 kB │ gzip: 424.22 kB
+
+[33m[plugin builtin:vite-reporter] 
+(!) Some chunks are larger than 500 kB after minification. Consider:
+- Using dynamic import() to code-split the application
+- Use build.rolldownOptions.output.codeSplitting to improve chunking: https://rolldown.rs/reference/OutputOptions.codeSplitting
+- Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.[39m
+[32m✓ built in 7.17s[39m
+[33m[33m[PLUGIN_TIMINGS] [0mJavaScript callbacks ran for 4.4s of this 7.1s build (62%).
+The slowest callbacks, timed inside each callback (the wait before a callback starts is excluded, the time it awaits is included):
+  - plugin @tailwindcss/vite:generate:build transform (54%, 3.8s, 1 call)
+Additional callback time came from the callbacks below and from callbacks under 1s.
+1 callback is listed without a time. Its calls overlapped, so the time inside one call includes work from other calls. To find its cost, profile the build with `node --cpu-prof`:
+  - plugin vite:build-html transform (2 calls)
+See https://rolldown.rs/reference/InputOptions.checks#bundlertimings for more details.
+[39m
+
+Running 34 tests using 1 worker
+
+  ok  1 tests\e2e\parity.spec.ts:37:1 › bundled full catalog works at first offline launch without a free question pack (6.1s)
+  ok  2 tests\e2e\parity.spec.ts:45:1 › alternative FP practical reader reuses the web view from a paid downloaded qualification (1.3s)
+  ok  3 tests\e2e\parity.spec.ts:54:1 › paid qualification download uses shared quiz, keeps history on restart, and is disabled on revocation (3.2s)
+  ok  4 tests\e2e\parity.spec.ts:63:1 › free membership explains paid-only downloads and never requests the download endpoint (755ms)
+  ok  5 tests\e2e\parity.spec.ts:68:1 › existing web subscribers see no second purchase, with restore and App Store management available (815ms)
+  ok  6 tests\e2e\parity.spec.ts:80:1 › a changed store price does not start a purchase or leave the membership locked as pending (440ms)
+  ok  7 tests\e2e\parity.spec.ts:87:1 › cancelled purchases allow retry while pending approval survives a reload and prevents another purchase (1.1s)
+  ok  8 tests\e2e\parity.spec.ts:99:1 › restore with no verified entitlement explains the missing purchase instead of reporting success (528ms)
+  ok  9 tests\e2e\parity.spec.ts:106:1 › qualification dates require confirmation, recheck before saving and fall back to the in-app browser (838ms)
+  ok 10 tests\e2e\parity.spec.ts:121:1 › unconfirmed dates have no add button and an installed target app avoids browser fallback (807ms)
+  ok 11 tests\e2e\parity.spec.ts:135:1 › server denial never renders the eleventh question and AI refusal sends nothing (912ms)
+  ok 12 tests\e2e\parity.spec.ts:147:1 › unviewed diagram survives save, restart and airplane mode (857ms)
+  ok 13 tests\e2e\parity.spec.ts:156:1 › account deletion requires explicit confirmation and recent login (506ms)
+  ok 14 tests\e2e\parity.spec.ts:168:38 › unviewed answer figures survive Cache purge, cold restart and offline enlargement: lckohyo-LC20260401-2-q2 (1.5s)
+  ok 15 tests\e2e\parity.spec.ts:168:38 › unviewed answer figures survive Cache purge, cold restart and offline enlargement: cskohyo-CS20251905-q4 (1.3s)
+  ok 16 tests\e2e\parity.spec.ts:168:38 › unviewed answer figures survive Cache purge, cold restart and offline enlargement: cskohyo-CS20241911-q4 (2.1s)
+  ok 17 tests\e2e\parity.spec.ts:198:63 › whole-paper progress and wrong review after reload: paid=false, save=false (1.1s)
+  ok 18 tests\e2e\parity.spec.ts:198:63 › whole-paper progress and wrong review after reload: paid=false, save=true (1.1s)
+  ok 19 tests\e2e\parity.spec.ts:198:63 › whole-paper progress and wrong review after reload: paid=true, save=false (1.1s)
+  ok 20 tests\e2e\parity.spec.ts:198:63 › whole-paper progress and wrong review after reload: paid=true, save=true (1.7s)
+  ok 21 tests\e2e\parity.spec.ts:220:1 › middle-paper resume requests only the specified question (419ms)
+  ok 22 tests\e2e\parity.spec.ts:227:1 › deletion page opens existing web management without checkout and remains usable on portal failure (438ms)
+  ok 23 tests\e2e\parity.spec.ts:234:63 › cold restart respects progress save opt-in: paid=false, save=false (1.0s)
+  ok 24 tests\e2e\parity.spec.ts:234:63 › cold restart respects progress save opt-in: paid=false, save=true (1.2s)
+  ok 25 tests\e2e\parity.spec.ts:234:63 › cold restart respects progress save opt-in: paid=true, save=false (1.0s)
+  ok 26 tests\e2e\parity.spec.ts:234:63 › cold restart respects progress save opt-in: paid=true, save=true (1.2s)
+  ok 27 tests\e2e\parity.spec.ts:255:97 › 11-answer history crosses JST midnight: paid-to-free=false, save=false, used=4 (2.4s)
+  ok 28 tests\e2e\parity.spec.ts:255:97 › 11-answer history crosses JST midnight: paid-to-free=false, save=false, used=10 (2.4s)
+  ok 29 tests\e2e\parity.spec.ts:255:97 › 11-answer history crosses JST midnight: paid-to-free=false, save=true, used=4 (3.3s)
+  ok 30 tests\e2e\parity.spec.ts:255:97 › 11-answer history crosses JST midnight: paid-to-free=false, save=true, used=10 (2.8s)
+  ok 31 tests\e2e\parity.spec.ts:255:97 › 11-answer history crosses JST midnight: paid-to-free=true, save=false, used=4 (2.2s)
+  ok 32 tests\e2e\parity.spec.ts:255:97 › 11-answer history crosses JST midnight: paid-to-free=true, save=false, used=10 (2.2s)
+  ok 33 tests\e2e\parity.spec.ts:255:97 › 11-answer history crosses JST midnight: paid-to-free=true, save=true, used=4 (2.5s)
+  ok 34 tests\e2e\parity.spec.ts:255:97 › 11-answer history crosses JST midnight: paid-to-free=true, save=true, used=10 (2.5s)
+
+  34 passed (1.0m)

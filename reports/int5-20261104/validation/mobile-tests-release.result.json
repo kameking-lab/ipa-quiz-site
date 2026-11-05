@@ -1,0 +1,15 @@
+{
+  "label": "mobile-tests-release",
+  "command": [
+    "pnpm",
+    "--dir",
+    "mobile",
+    "test"
+  ],
+  "sourceHead": "4c8e24cf4cbfece4f7d722caba11660962ba2ab6",
+  "startedAt": "2026-11-04T11:19:50.201Z",
+  "finishedAt": "2026-11-04T11:19:52.981Z",
+  "exitCode": 0,
+  "logSha256": "149eb4bdc4c89346fbf0a9810686f495e6cb89f15faa9185057dcc41c14af4d7",
+  "environment": "CI=true; inherited service credentials and mobile/feedback rollout configuration removed; no secret env files loaded"
+}

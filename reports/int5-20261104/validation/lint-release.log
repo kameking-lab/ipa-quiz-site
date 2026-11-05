@@ -1,0 +1,35 @@
+
+> ipa-quiz-site@1.0.0 lint C:\Users\kanet\20260522\wt-batch2
+> eslint
+
+
+C:\Users\kanet\20260522\wt-batch2\__tests__\pe-first-lq3d.test.tsx
+   4:19  warning  'fireEvent' is defined but never used           @typescript-eslint/no-unused-vars
+   4:30  warning  'render' is defined but never used              @typescript-eslint/no-unused-vars
+   4:38  warning  'screen' is defined but never used              @typescript-eslint/no-unused-vars
+  12:10  warning  'ExamQuestionPlayer' is defined but never used  @typescript-eslint/no-unused-vars
+
+C:\Users\kanet\20260522\wt-batch2\app\account\delete\AccountDeletionClient.tsx
+  26:299  warning  Do not use `location.assign()` to navigate to internal Next.js pages. Use `redirect()` in the render phase, or `useRouter().push()` in Client Components' event handlers instead. See: https://nextjs.org/docs/messages/no-location-assign-relative-destination  @next/next/no-location-assign-relative-destination
+
+C:\Users\kanet\20260522\wt-batch2\app\billing\PurchaseStatus.tsx
+  48:66  warning  The ref value 'request.current' will likely have changed by the time this effect cleanup function runs. If this ref points to a node rendered by React, copy 'request.current' to a variable inside the effect, and use that variable in the cleanup function  react-hooks/exhaustive-deps
+
+C:\Users\kanet\20260522\wt-batch2\app\billing\mock\MockCheckout.tsx
+  12:7  warning  Do not use `window.location.assign()` to navigate to internal Next.js pages. Use `redirect()` in the render phase, or `useRouter().push()` in Client Components' event handlers instead. See: https://nextjs.org/docs/messages/no-location-assign-relative-destination  @next/next/no-location-assign-relative-destination
+
+C:\Users\kanet\20260522\wt-batch2\app\q\[exam]\[yearSeason]\[section]\[qnum]\page.tsx
+  247:9  warning  'examPath' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+C:\Users\kanet\20260522\wt-batch2\mobile\shared\AuthorizedContent.tsx
+  37:72  warning  'pdfUrl' is assigned a value but never used    @typescript-eslint/no-unused-vars
+  37:82  warning  'indexUrl' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+C:\Users\kanet\20260522\wt-batch2\mobile\src\images.ts
+  17:45  warning  'raw' is defined but never used  @typescript-eslint/no-unused-vars
+
+C:\Users\kanet\20260522\wt-batch2\reports\civil2-2026-completion-20260926\parse-fenced-results.mjs
+  3:9  warning  'base' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+✖ 12 problems (0 errors, 12 warnings)
+

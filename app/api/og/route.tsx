@@ -250,7 +250,7 @@ export async function GET(request: Request) {
               marginLeft: "4px",
             }}
           >
-            全機能無料
+            過去問と解説で学ぶ
           </div>
         </div>
 

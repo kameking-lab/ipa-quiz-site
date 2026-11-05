@@ -79,6 +79,7 @@ export function createGeminiProvider(): LLMProvider {
           promptTokens: usage?.promptTokenCount,
           outputTokens: usage?.candidatesTokenCount,
           thoughtsTokens: usage?.thoughtsTokenCount,
+          totalTokens: usage?.totalTokenCount,
           truncated: finishReason === "MAX_TOKENS",
         });
       }

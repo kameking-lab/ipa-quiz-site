@@ -1,7 +1,8 @@
+import {FIELD_LABELS,sentakuParagraphs,sentakuPath} from "./sentaku-format";
+export {FIELD_LABELS,sentakuParagraphs,sentakuPath} from "./sentaku-format";
 import { z } from "zod";
 import originalData from "@/data/questions/sharoushi/sentaku/originals.json";
 
-export const FIELD_LABELS = ["A", "B", "C", "D", "E"] as const;
 const text = z.string().trim().min(1);
 const label = z.enum(FIELD_LABELS);
 const hash = z.string().regex(/^[a-f0-9]{64}$/);
@@ -19,11 +20,6 @@ const common = {
   review: z.object({ status: z.enum(["approved","hold"]), reason: text, evidenceUrls: z.array(z.url()) }).strict(),
 };
 /** PDF soft line wraps are removed; original numbered sections retain paragraph breaks. */
-export function sentakuParagraphs(raw:string):string[]{
- const body=raw.split(/〔問\s*\d+〕/)[1]?.split("選択肢\n")[0];
- if(!body) throw new Error("Missing original body / word bank boundary");
- return body.split(/\n(?=[₁₂₃₄₅₆₇₈₉]\s)/).map(part=>part.replace(/[₀-₉]/g,c=>String(c.charCodeAt(0)-0x2080)).replace(/\s+/g,"").replace(/[Ａ-Ｅ]/g,c=>`{{${String.fromCharCode(c.charCodeAt(0)-0xfee0)}}}`)).filter(Boolean);
-}
 const schema = z.discriminatedUnion("wordBankMode", [
   z.object({ ...common, wordBankMode: z.literal("shared-20"), sharedWordBank: z.array(option).length(20), blankWordBanks: z.null() }).strict(),
   z.object({ ...common, wordBankMode: z.literal("per-blank-4"), sharedWordBank: z.array(option).length(0), blankWordBanks: z.object({ A:z.array(option).length(4),B:z.array(option).length(4),C:z.array(option).length(4),D:z.array(option).length(4),E:z.array(option).length(4) }).strict() }).strict(),
@@ -56,7 +52,7 @@ export function parseSentakuOriginals(input:unknown):SentakuQuestion[]{
 export const SENTAKU_ORIGINALS=parseSentakuOriginals(originalData);
 export const PUBLISHED_SENTAKU=SENTAKU_ORIGINALS.filter(q=>q.review.status==="approved");
 export const SENTAKU_EDITIONS=[...new Set(PUBLISHED_SENTAKU.map(q=>String(q.year)))].sort().reverse();
-export const sentakuPath=(year:string|number,number?:number)=>`/sharoushi/sentaku/${year}${number===undefined?"":`/${number}`}`;
+
 export const getSentakuEdition=(year:string)=>PUBLISHED_SENTAKU.filter(q=>String(q.year)===year);
 export function getSentakuQuestion(year:string,number:string){return getSentakuEdition(year).find(q=>String(q.questionNumber)===number);}
 export const sentakuSitemapPaths=()=>["/sharoushi/sentaku",...SENTAKU_EDITIONS.map(y=>sentakuPath(y)),...PUBLISHED_SENTAKU.map(q=>sentakuPath(q.year,q.questionNumber))];

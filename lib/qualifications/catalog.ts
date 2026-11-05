@@ -1,3 +1,4 @@
+import khkPublication from "@/data/qualification-staging/khk-kagaku/manifest.json";
 import type { ExamCode } from "@/lib/questions/types";
 
 export type QualificationDomain =
@@ -43,6 +44,92 @@ export interface QualificationCatalogEntry {
  * 「公式に問題と正答がある」だけでは live にせず、転載条件まで確認する。
  */
 export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
+{"slug": "junkango-kansai", "examCode": "junkango-kansai", "shortName": "准看護師（関西広域連合）", "fullName": "准看護師（関西広域連合）", "domain": "welfare", "administrator": "関西広域連合", "officialQuestionsUrl": "https://www.kouiki-kansai.jp/koikirengo/jisijimu/shikakumenkyo/junan_top/jyunkangosisiken/9022.html", "officialReuseTermsUrl": "https://www.kouiki-kansai.jp/about_site.html", "status": "live", "stagingDataPath": "data/qualification-staging/junkango-kansai", "reuseSummary": "2025・2026年の公式問題・正答・独自解説と原本図表を収録。300原問中、公式全員正解1問を除く299問を演習。2026年問139は2または4の単独選択を正解とします。問題・正答は公式原本、解説は過去問AIの独自作成です。", "remainingWork": []},
+{"slug": "sokuryoshi", "examCode": "sokuryoshi", "shortName": "測量士", "fullName": "測量士", "domain": "construction", "administrator": "国土地理院", "officialQuestionsUrl": "https://www.gsi.go.jp/LAW/SHIKEN/past.html", "officialReuseTermsUrl": "https://www.gsi.go.jp/kikakuchousei/kikakuchousei40182.html", "status": "live", "stagingDataPath": "data/qualification-staging/sokuryoshi", "reuseSummary": "2025・2026年の公式問題・正答・独自解説と原本図表を収録。午前56問・午後10大問。午後は必須1題と選択4題から2題。記述・作図は公式解答例で自己確認し、自動採点しません。問題・正答は公式原本、解説は過去問AIの独自作成です。", "remainingWork": []},
+  {
+    slug: "khk-kagaku",
+    examCode: "khk-kagaku",
+    shortName: "高圧ガス製造保安責任者（化学）",
+    fullName: "高圧ガス製造保安責任者 甲種化学・乙種化学・丙種化学（液石）・丙種化学（特別）",
+    domain: "safety",
+    administrator: "高圧ガス保安協会 試験センター",
+    officialQuestionsUrl: "https://shiken.khk.or.jp/shiken.html",
+    officialReuseTermsUrl: "https://www.khk.or.jp/condition.html",
+    status: "live",
+    reuseSummary: "2024・2025年度422原問（択一410・記述12）。全2050肢の独自解説と記述の独自解答・自己採点基準を収録。原図33・付録3・公式解答例13画像を表示。R6液石学識問20は公式採点と技術的留保を併記。記述答案の自動採点・公式合否判定は行いません。",
+    attributionTemplate: "出典：高圧ガス保安協会 高圧ガス製造保安責任者試験 ○年度 ○種化学 ○科目 問○（問題・正答）。解説は過去問AIが独自作成。",
+    remainingWork: [],
+  },
+
+  {
+    slug: "kenchikushi1", examCode: "kenchikushi1", shortName: "一級建築士（学科）", fullName: "一級建築士試験（学科の試験）",
+    domain: "construction", administrator: "公益財団法人建築技術教育普及センター",
+    officialQuestionsUrl: "https://www.jaeic.or.jp/shiken/1k/1k-mondai.html",
+    officialReuseTermsUrl: "https://www.jaeic.or.jp/shiken/1k/1k-mondai.html",
+    status: "live",
+    reuseSummary: "令和7・8年の学科5科目250原問のうち、全員加点1問を除く249問。公式最終正答・独自全肢解説・必要図を収録。設計製図は対象外。INT5のオーナー公開指示に基づく公開設定であり、権利者の許諾取得を意味しません。",
+    remainingWork: [],
+  },
+
+{
+    slug: "benrishi", examCode: "benrishi", shortName: "弁理士（短答式）", fullName: "弁理士試験 短答式筆記試験（特許庁）",
+    domain: "legal", administrator: "特許庁",
+    officialQuestionsUrl: "https://www.jpo.go.jp/news/benrishi/shiken-mondai/2026tanto.html",
+    officialReuseTermsUrl: "https://www.jpo.go.jp/toppage/about/index.html",
+    status: "live", stagingDataPath: "data/qualification-staging/benrishi",
+    reuseSummary: "2025・2026年の公式問題・正答・独自解説と原本図表を収録。問題・正答は公式原本、解説は過去問AIの独自作成です。",
+    attributionTemplate: "出典：特許庁 弁理士試験短答式筆記試験。過去問AIがテキスト化・整形。解説は過去問AI独自作成。",
+    remainingWork: [],
+},
+{
+    slug: "dokugeki-chiba", examCode: "dokugeki-chiba", shortName: "毒物劇物取扱者（千葉県）", fullName: "毒物劇物取扱者試験（千葉県）一般・農業用品目・特定品目",
+    domain: "pharmacy", administrator: "千葉県",
+    officialQuestionsUrl: "https://www.pref.chiba.lg.jp/yakumu/dokugeki/r8shikenzissikekka.html",
+    officialReuseTermsUrl: "https://www.pref.chiba.lg.jp/homepage/about-site/link.html",
+    status: "live", stagingDataPath: "data/qualification-staging/dokugeki-chiba",
+    reuseSummary: "2025・2026年の公式問題・正答・独自解説と原本図表を収録。一般・農業用品目・特定品目の各回各80解答欄、計480欄。原文の用語の疑義は注記します。問題・正答は公式原本、解説は過去問AIの独自作成です。",
+    attributionTemplate: "出典：千葉県 毒物劇物取扱者試験 問題・正答。解説は過去問AIの独自作成。",
+    remainingWork: [],
+},
+{
+    slug: "jokaso-setsubishi", examCode: "jokaso-setsubishi", shortName: "浄化槽設備士（学科）", fullName: "浄化槽設備士試験（学科）",
+    domain: "construction", administrator: "公益財団法人日本環境整備教育センター",
+    officialQuestionsUrl: "https://www.jeces.or.jp/pages/27/",
+    officialReuseTermsUrl: "https://www.jeces.or.jp/pages/132/", status: "live",
+    stagingDataPath: "data/qualification-staging/jokaso-setsubishi",
+    reuseSummary: "2025・2026年の公式問題・正答・独自解説と原本図表を収録。問題・正答は公式原本、解説は過去問AIの独自作成です。",
+    attributionTemplate: "出典：公益財団法人日本環境整備教育センター 浄化槽設備士試験（学科）問題・正答。解説は過去問AIの独自作成。",
+    remainingWork: [],
+},
+{
+    slug: "chiiki-ryoko", examCode: "chiiki-ryoko", shortName: "地域限定旅行業務取扱管理者", fullName: "地域限定旅行業務取扱管理者試験",
+    domain: "personal-services", administrator: "観光庁",
+    officialQuestionsUrl: "https://www.mlit.go.jp/kankocho/seisaku_seido/ryokogyoho/chiikigenteikanrisha.html",
+    officialReuseTermsUrl: "https://www.mlit.go.jp/kankocho/site-policy.html", status: "live",
+    stagingDataPath: "data/qualification-staging/chiiki-ryoko",
+    reuseSummary: "2025・2026年の公式問題・正答・独自解説と原本図表を収録。全科目版118問。「すべて選ぶ」は全選択一致で採点します。問題・正答は公式原本、解説は過去問AIの独自作成です。",
+    attributionTemplate: "出典：観光庁 地域限定旅行業務取扱管理者試験（全科目）問題・正解及び配点。原本画像化・文章整形・独自解説の追加は過去問AIによる加工。",
+    remainingWork: [],
+},
+{
+    slug: "kukaku-seiri", examCode: "kukaku-seiri", shortName: "土地区画整理士（学科）", fullName: "土地区画整理士技術検定（学科試験）",
+    domain: "construction", administrator: "一般財団法人全国建設研修センター",
+    officialQuestionsUrl: "https://www.jctc.jp/mondai/", officialReuseTermsUrl: "https://www.jctc.jp/mondai/",
+    status: "live", stagingDataPath: "data/qualification-staging/kukaku-seiri",
+    reuseSummary: "2026年度のみ学科40問を収録。2025年度の問題本文は未収録です。実地試験は対象外です。問題・正答は公式原本、解説は過去問AIの独自作成です。",
+    attributionTemplate: "出典：一般財団法人全国建設研修センター 令和○年度土地区画整理士技術検定 学科 No.○。解説は過去問AIの独自作成。",
+    remainingWork: ["2025年度問題本文は未収録"],
+},
+{
+    slug: "dojo-osen", examCode: "dojo-osen", shortName: "土壌汚染調査技術管理者", fullName: "土壌汚染調査技術管理者試験",
+    domain: "construction", administrator: "環境省",
+    officialQuestionsUrl: "https://www.env.go.jp/water/dojo/kanri.html",
+    officialReuseTermsUrl: "https://www.env.go.jp/mail.html", status: "live",
+    stagingDataPath: "data/qualification-staging/dojo-osen",
+    reuseSummary: "2024・2025年の公式問題・正答・独自解説と原本図表を収録。160原問中、2025年度調査問30の公式全員正解1問を除く159問を演習できます。問題・正答は公式原本、解説は過去問AIの独自作成です。",
+    attributionTemplate: "出典：環境省 令和○年度土壌汚染調査技術管理者試験 ○科目 問○。原問題画像は公式PDFの切出し。解説は過去問AIの独自作成。",
+    remainingWork: [],
+},
 {"slug":"keiryoshi","examCode":"keiryoshi","shortName":"一般計量士","fullName":"一般計量士","domain":"construction","administrator":"経済産業省","officialQuestionsUrl":"https://www.meti.go.jp/policy/economy/hyojun/techno_infra/keiryoshi.html","officialReuseTermsUrl":"https://www.meti.go.jp/main/rules.html","status":"live","reuseSummary":"第76回（令和7年実施）のみ100問を収録。第75回は未収録で、2回分の全問収録ではありません。出題時点の法令・基準に基づく全肢解説を確認できます。","remainingWork":["第75回は未収録"]},
 {"slug":"keiryoshi-nodo","examCode":"keiryoshi-nodo","shortName":"環境計量士（濃度関係）","fullName":"環境計量士（濃度関係）","domain":"construction","administrator":"経済産業省","officialQuestionsUrl":"https://www.meti.go.jp/policy/economy/hyojun/techno_infra/keiryoshi.html","officialReuseTermsUrl":"https://www.meti.go.jp/main/rules.html","status":"live","reuseSummary":"第76回（令和7年実施）のみ100問を収録。第75回は未収録で、2回分の全問収録ではありません。出題時点の法令・基準に基づく全肢解説を確認できます。","remainingWork":["第75回は未収録"]},
 {"slug":"keiryoshi-soon","examCode":"keiryoshi-soon","shortName":"環境計量士（騒音・振動関係）","fullName":"環境計量士（騒音・振動関係）","domain":"construction","administrator":"経済産業省","officialQuestionsUrl":"https://www.meti.go.jp/policy/economy/hyojun/techno_infra/keiryoshi.html","officialReuseTermsUrl":"https://www.meti.go.jp/main/rules.html","status":"live","reuseSummary":"第76回（令和7年実施）のみ100問を収録。第75回は未収録で、2回分の全問収録ではありません。出題時点の法令・基準に基づく全肢解説を確認できます。","remainingWork":["第75回は未収録"]},
@@ -508,16 +595,16 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     remainingWork: ["第27回共通科目の保留3問（問題4・69・76）の原典照合", "第26回以前は旧カリキュラムのため収録方針の決定", "法改正で成立しなくなった問題の失効管理"],
 },
 {
-    slug: "sekou-kenchiku1",
+    slug: "sekou-kenchiku1", examCode: "sekou-1kenchiku",
     shortName: "1級建築施工管理",
     fullName: "1級建築施工管理技術検定",
     domain: "construction",
     administrator: "建設業振興基金",
     officialQuestionsUrl: "https://www.fcip-shiken.jp/about/",
     officialReuseTermsUrl: "https://www.fcip-shiken.jp/about/",
-    status: "permission-required",
-    reuseSummary: "公式ページは問題・正答肢を公開する一方、掲載記事・写真・図表の転載を禁止。",
-    remainingWork: ["試験実施機関からWeb問題集への転載許諾を取得", "許諾条件に従い出典表記を確定"],
+    status: "live",
+    reuseSummary: "令和7・8年度の第一次検定各72問、計144問。全肢解説と必要図を収録。令和7年度No.57は公式訂正に従い3・4いずれも正答。RS1Kの独立再レビューPASSを確認。第二次検定は対象外。",
+    remainingWork: [],
 },
 {
     slug: "sekou-doboku1",
@@ -915,8 +1002,32 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     reuseSummary: "第34・33回の午前128問・午後122問、各250原問を対象に、原本と厚生労働省の最終正答を照合。問題の出典は柔道整復研修試験財団、正答の出典は厚生労働省、全肢解説は独自作成です。掲載可否はオーナーが判断します。出典の記録は転載許諾を取得したという主張ではありません。",
     attributionTemplate: "出典：公益財団法人柔道整復研修試験財団 第○回柔道整復師国家試験 午前・午後 問○（問題）／厚生労働省（最終正答）",
     remainingWork: ["掲載可否のオーナー判断", "法令・医療情報の改訂に伴う継続確認"],
-},
-{
+  },
+  {
+    slug: "kenchikushi2", examCode: "kenchikushi2",
+    shortName: "二級建築士（学科）",
+    fullName: "二級建築士試験（学科の試験）",
+    domain: "construction",
+    administrator: "公益財団法人建築技術教育普及センター",
+    officialQuestionsUrl: "https://www.jaeic.or.jp/shiken/2k/2k-mondai.html",
+    officialReuseTermsUrl: "https://www.jaeic.or.jp/shiken/2k/2k-mondai.html",
+    status: "live",
+    reuseSummary: "2025・2026年の公式問題・正答・独自解説と原本図表を収録。学科I〜IV各25問、各年100問。設計製図は対象外です。問題・正答は公式原本、解説は過去問AIの独自作成です。",
+    remainingWork: [],
+  },
+  {
+    slug: "mokuzo-kenchikushi", examCode: "mokuzo-kenchikushi",
+    shortName: "木造建築士（学科）",
+    fullName: "木造建築士試験（学科の試験）",
+    domain: "construction",
+    administrator: "公益財団法人建築技術教育普及センター",
+    officialQuestionsUrl: "https://www.jaeic.or.jp/shiken/mk/mk-mondai.html",
+    officialReuseTermsUrl: "https://www.jaeic.or.jp/shiken/mk/mk-mondai.html",
+    status: "live",
+    reuseSummary: "2025・2026年の公式問題・正答・独自解説と原本図表を収録。学科I〜IV各25問、各年100問。設計製図は対象外です。問題・正答は公式原本、解説は過去問AIの独自作成です。",
+    remainingWork: [],
+  },
+  {
     slug: "boki3",
     shortName: "日商簿記3級",
     fullName: "日商簿記検定3級",
@@ -1312,5 +1423,6 @@ export function getQualificationByExamCode(exam: ExamCode): QualificationCatalog
 
 /** Public routes and question registries must call this gate before exposing external data. */
 export function isExamPublished(exam: ExamCode): boolean {
+  if (exam === "khk-kagaku" && !khkPublication.publicAllowed) return false;
   return getQualificationByExamCode(exam)?.status === "live" || !getQualificationByExamCode(exam);
 }

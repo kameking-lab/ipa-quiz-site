@@ -69,7 +69,9 @@ test.describe("safety qualification hubs", () => {
       { maxRedirects: 0 },
     );
     expect(legacy.status()).toBe(308);
-    expect(legacy.headers().location).toBe(FIRST_HUB);
+    const location = new URL(legacy.headers().location, "http://localhost");
+    expect(location.pathname).toBe(FIRST_HUB);
+    expect(location.searchParams.get("subject")).toBe("第一種衛生管理者");
 
     const invalid = await request.get("/e-learning/exams?group=unknown&subject=unknown", {
       maxRedirects: 0,

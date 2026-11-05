@@ -1,14 +1,11 @@
 "use client";
 
 import type { ProgressMap, StoredProgress, StudyPlan } from "./types";
+import { LS_KEYS } from "@/lib/storage/keys";
 
-/**
- * LocalStorage keys for the study planner. Kept inside lib/study-plan to
- * stay self-contained — this feature does not yet depend on the global
- * lib/storage/keys registry, and isolation makes it easy to migrate later.
- */
-const PLANS_KEY = "ipa-quiz:study-plans:v1";
-const PROGRESS_KEY = "ipa-quiz:study-plan-progress:v1";
+/** Preserve the original planner keys and cloud-sync payloads. */
+const PLANS_KEY = LS_KEYS.studyPlans;
+const PROGRESS_KEY = LS_KEYS.studyPlanProgress;
 
 /** Maximum number of plans we retain. Older plans are evicted on save. */
 const MAX_PLANS = 20;

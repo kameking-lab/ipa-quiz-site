@@ -36,9 +36,9 @@ describe("comboLevel", () => {
 });
 
 describe("readMotivationSettings / writeMotivationSettings", () => {
-  it("未設定では既定（sound 有効・motion 低減なし）を返す", () => {
+  it("未設定では既定（無音・motion 低減なし）を返す", () => {
     expect(readMotivationSettings()).toEqual({
-      soundEnabled: true,
+      soundEnabled: false,
       reduceMotion: false,
     });
   });
@@ -65,14 +65,14 @@ describe("readMotivationSettings / writeMotivationSettings", () => {
   it("壊れた JSON は既定にフォールバックする", () => {
     window.localStorage.setItem("ipa-quiz:motivation:v1", "{not json");
     expect(readMotivationSettings()).toEqual({
-      soundEnabled: true,
+      soundEnabled: false,
       reduceMotion: false,
     });
   });
 
   it("既定の返却はミューテーション分離されている（共有参照を返さない）", () => {
     const a = readMotivationSettings();
-    a.soundEnabled = false;
-    expect(readMotivationSettings().soundEnabled).toBe(true);
+    a.soundEnabled = true;
+    expect(readMotivationSettings().soundEnabled).toBe(false);
   });
 });

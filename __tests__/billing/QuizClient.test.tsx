@@ -11,16 +11,18 @@ const access = { kind: "trial", remaining: 9, freeDaily: 10, resetAt: "2026-10-3
 beforeEach(() => { window.history.replaceState({}, "", "/quiz?mode=year"); window.sessionStorage.clear(); });
 afterEach(() => { cleanup(); vi.unstubAllGlobals(); });
 describe("QuizClient authorization boundary", () => {
-  it("off ignores malformed billing settings and uses only original GET/cache even if billing is down", async () => {
+  it("off ignores malformed billing settings and keeps question GET/cache independent of billing", async () => {
     const c = billingConfig({ BILLING_MODE: "off", BILLING_ORIGIN: "%%%", BILLING_PRICE_YEN: "broken", BILLING_TRANSITION_STARTS_AT: "bad" });
     const fetcher = vi.fn(async (url: string) => {
+      if (url === "/api/questions/related") return Response.json({ questions: [] });
       if (url.includes("billing")) throw new Error("billing outage");
       return Response.json({ id: url.includes("q1") ? "q1" : "q2" });
     }); vi.stubGlobal("fetch", fetcher);
     render(<QuizClient poolIds={["q1", "q2"]} mode="year" backHref="/" billingGateEnabled={gateReady(c)} />);
-    await screen.findByText("q1"); await waitFor(() => expect(fetcher).toHaveBeenCalledTimes(2));
+    await screen.findByText("q1"); await waitFor(() => expect(fetcher.mock.calls.filter(([url]) => url.startsWith("/api/questions/next?"))).toHaveLength(2));
     fireEvent.click(screen.getByText("next")); await screen.findByText("q2");
-    expect(fetcher).toHaveBeenCalledTimes(2); expect(fetcher.mock.calls.every(([url]) => url.startsWith("/api/questions/next?"))).toBe(true);
+    expect(fetcher.mock.calls.filter(([url]) => url.startsWith("/api/questions/next?"))).toHaveLength(2);
+    expect(fetcher.mock.calls.every(([url]) => url.startsWith("/api/questions/next?") || url === "/api/questions/related")).toBe(true);
   });
   it("existing wrong-answer review remains free and makes no billing requests", async () => {
     const fetcher = vi.fn(async (url: string) => Response.json({ id: url.includes("q1") ? "q1" : "unexpected" })); vi.stubGlobal("fetch", fetcher);

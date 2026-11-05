@@ -1,0 +1,19 @@
+{
+  "label": "asset-fixed",
+  "command": [
+    "pnpm",
+    "exec",
+    "vitest",
+    "run",
+    "__tests__/mobile/asset-inventory.test.ts",
+    "__tests__/mobile/reference-assets.test.ts",
+    "__tests__/kisho-study.test.tsx",
+    "--maxWorkers=2"
+  ],
+  "sourceHead": "48c28c74b5447505dfe82aeb8ac989e4d9afb862",
+  "startedAt": "2026-11-04T10:43:06.626Z",
+  "finishedAt": "2026-11-04T10:43:40.474Z",
+  "exitCode": 0,
+  "logSha256": "8f9e40650a92d63ccf6e7856479cfec7e3c8a3af86412cf768a94f9c9acc5f60",
+  "environment": "CI=true; inherited service credentials and mobile/feedback rollout configuration removed; no secret env files loaded"
+}

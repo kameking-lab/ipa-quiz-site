@@ -4,6 +4,19 @@ import { isExamPublished } from "@/lib/qualifications/catalog";
 // Bundler-friendly lazy loaders — each exam chunk is only loaded on demand.
 // To add a new exam: (1) create data/questions/{exam}/index.ts, (2) uncomment the loader.
 const EXAM_LOADERS: Partial<Record<ExamCode, () => Promise<Question[]>>> = {
+  "sekou-1kenchiku": async () => isExamPublished("sekou-1kenchiku") ? (await import("@/data/questions/sekou-1kenchiku")).SEKOU_1KENCHIKU_QUESTIONS : [],
+  "khk-kagaku": async () => isExamPublished("khk-kagaku") ? (await import("@/data/questions/khk-kagaku")).KHK_KAGAKU_QUESTIONS : [],
+  "benrishi": async () => isExamPublished("benrishi") ? (await import("@/data/questions/benrishi")).QUESTIONS : [],
+  "sokuryoshi": async () => isExamPublished("sokuryoshi") ? (await import("@/data/questions/sokuryoshi")).QUESTIONS : [],
+  "dokugeki-chiba": async () => isExamPublished("dokugeki-chiba") ? (await import("@/data/questions/dokugeki-chiba")).QUESTIONS : [],
+  "jokaso-setsubishi": async () => isExamPublished("jokaso-setsubishi") ? (await import("@/data/questions/jokaso-setsubishi")).QUESTIONS : [],
+  "chiiki-ryoko": async () => isExamPublished("chiiki-ryoko") ? (await import("@/data/questions/chiiki-ryoko")).QUESTIONS : [],
+  "junkango-kansai": async () => isExamPublished("junkango-kansai") ? (await import("@/data/questions/junkango-kansai")).QUESTIONS : [],
+  "kukaku-seiri": async () => isExamPublished("kukaku-seiri") ? (await import("@/data/questions/kukaku-seiri")).QUESTIONS : [],
+  "dojo-osen": async () => isExamPublished("dojo-osen") ? (await import("@/data/questions/dojo-osen")).QUESTIONS : [],
+  "kenchikushi2": async () => isExamPublished("kenchikushi2") ? (await import("@/data/questions/kenchikushi2")).QUESTIONS : [],
+  "mokuzo-kenchikushi": async () => isExamPublished("mokuzo-kenchikushi") ? (await import("@/data/questions/mokuzo-kenchikushi")).QUESTIONS : [],
+  kenchikushi1: async () => isExamPublished("kenchikushi1") ? (await import("@/data/questions/kenchikushi1")).KENCHIKUSHI1_QUESTIONS : [],
   "reform-mgr": async () => (await import("@/data/questions/reform-mgr")).REFORM_MGR_QUESTIONS,
   "shohi-sodan": async () => (await import("@/data/questions/shohi-sodan")).SHOHI_SODAN_QUESTIONS,
 "chintai": async () => isExamPublished("chintai") ? (await import("@/data/questions/batch1/chintai.json")).default as Question[] : [],

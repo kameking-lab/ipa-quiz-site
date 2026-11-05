@@ -1,0 +1,24 @@
+{
+  "label": "qa-lint",
+  "args": [
+    "exec",
+    "eslint",
+    "tests/e2e/contact-site.spec.ts",
+    "__tests__/billing/QuizClient.quiet.test.tsx",
+    "__tests__/streak/practice-quiet.test.tsx",
+    "reports/int8-20261105/audit.mjs",
+    "reports/int8-20261105/check.mjs",
+    "reports/int8-20261105/visual.mjs",
+    "reports/int8-20261105/finalize-evidence.mjs"
+  ],
+  "started": "2026-11-04T23:35:33.221Z",
+  "finished": "2026-11-04T23:35:44.522Z",
+  "elapsedMs": 11301,
+  "code": 0,
+  "signal": null,
+  "baseHead": "f95bd49d0a9affc4ad34795b94dc9d3f20ecf9eb",
+  "sourceHash": "50003d093dcaadda95f8ed4bddc43d2649cc3c060499267c1a7f4574911bee7d",
+  "environment": "OS allowlist only; no env files or service credentials",
+  "logSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "buildId": "rLYtLffAkkksdVeHFcCJ4"
+}

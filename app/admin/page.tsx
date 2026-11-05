@@ -7,8 +7,6 @@ import {
   Gauge,
   LineChart,
   Rocket,
-  ShieldCheck,
-  Sparkles,
   TrendingUp,
   Trophy,
   Users,
@@ -28,6 +26,7 @@ export const metadata: Metadata = {
 };
 
 const TOOLS: { href: string; title: string; desc: string; icon: typeof Activity }[] = [
+  { href: "/admin/feedback", title: "改善の意見", desc: "追加10問の意見・希望資格・選択肢集計", icon: Users },
   { href: "/admin/launch-monitoring", title: "ローンチ監視", desc: "稼働状況・初日監視ハブ", icon: Rocket },
   { href: "/admin/metrics", title: "メトリクス", desc: "主要 KPI ダッシュボード", icon: BarChart3 },
   { href: "/admin/stats", title: "統計", desc: "学習・利用統計", icon: LineChart },
@@ -35,10 +34,8 @@ const TOOLS: { href: string; title: string; desc: string; icon: typeof Activity 
   { href: "/admin/exam-usage", title: "資格別利用状況", desc: "資格別の回答数ランキング・eラーニング利用状況", icon: Trophy },
   { href: "/admin/retention", title: "リテンション", desc: "継続率・復帰率", icon: Users },
   { href: "/admin/api-usage", title: "API 使用量", desc: "AI コスト・リクエスト数", icon: Gauge },
-  { href: "/admin/moderation", title: "モデレーション", desc: "投稿コンテンツの確認", icon: ShieldCheck },
   { href: "/admin/errors", title: "エラー", desc: "実行時エラーの記録", icon: AlertTriangle },
   { href: "/admin/deployment-status", title: "デプロイ状況", desc: "Vercel デプロイ監視", icon: Activity },
-  { href: "/admin/competitors", title: "競合", desc: "競合ベンチマーク", icon: Sparkles },
 ];
 
 export default function AdminIndexPage() {

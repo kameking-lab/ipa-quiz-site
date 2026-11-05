@@ -7,7 +7,6 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { readEssayHistory, clearEssayHistory } from "@/lib/storage/essay-history";
-import { findEssayQuestion } from "@/lib/essay/load";
 import type { EssayHistoryEntry, EssayRank } from "@/lib/essay/types";
 import { INDUSTRY_LABELS } from "@/lib/essay/types";
 import { examLabel } from "@/lib/utils";
@@ -26,7 +25,7 @@ const RANK_TEXT: Record<EssayRank, string> = {
   fail: "要見直し",
 };
 
-export function EssayHistoryView() {
+export function EssayHistoryView({questions}: {questions: readonly {id:string;title:string}[]}) {
   const [entries, setEntries] = useState<EssayHistoryEntry[] | null>(null);
 
   useEffect(() => {
@@ -103,7 +102,7 @@ export function EssayHistoryView() {
 
       <ul className="space-y-3">
         {entries.map((entry) => {
-          const q = findEssayQuestion(entry.questionId);
+          const q = questions.find(question=>question.id===entry.questionId);
           return (
             <li key={entry.id}>
               <Link

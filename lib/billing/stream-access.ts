@@ -4,6 +4,10 @@ import { billingIdentity, billingRuntime } from "./runtime";
 import { monthlyConfig, monthlySelected } from "./subscription/config";
 /** Existing stream remains untouched while off. Errors never grant paid access. */
 export async function streamAccess() {
+  if (process.env.MOBILE_IAP_ENABLED === "true") {
+    const id = await (await import("./runtime")).optionalBillingIdentity();
+    if (id && await (await import("@/mobile/server/revenuecat")).revenueCatAccess(id)) return true;
+  }
   if (monthlySelected()) {
     try {
       if (!monthlyConfig().enabled) return true;

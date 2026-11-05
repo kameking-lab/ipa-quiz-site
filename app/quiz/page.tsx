@@ -54,6 +54,7 @@ interface SearchParams {
   limit?: string;
   returnTo?: string;
   source?: string;
+  mock?: string;
   ids?: string | string[];
   /** Serialized /search filters, retained for diagnostics and shareability. */
   search?: string;
@@ -113,7 +114,7 @@ export default async function QuizPage({
   const isSearchPool = sp.source === "search";
   const session = isSearchPool || (mode === "review" && sp.scope === "exam")
     ? undefined
-    : parsePracticeSession(sp.session) ?? (examGroup?.length ? undefined : defaultPracticeSession(exam, sp.year ? Number(sp.year) : undefined));
+    : parsePracticeSession(sp.session) ?? (examGroup?.length || sp.category || sp.categoryGroup || sp.topic ? undefined : defaultPracticeSession(exam, sp.year ? Number(sp.year) : undefined));
   const examQuestions = await getQuestionsForExam(exam);
   const sessions = PRACTICE_SESSIONS.filter((s) => examQuestions.some((q) => q.session === s && (!sp.year || q.year === Number(sp.year)) && (!sp.season || q.season === sp.season)));
   const filter: QuizFilter = {
@@ -169,6 +170,7 @@ export default async function QuizPage({
         completionShareHref={isSearchPool ? backHref : undefined}
         categoryById={categoryById}
         wrongOnly={mode === "review" && sp.reviewKind === "wrong"}
+        mockResultId={mode === "review" ? sp.mock : undefined}
       />
     </>
   );

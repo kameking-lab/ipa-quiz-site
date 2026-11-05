@@ -1,6 +1,8 @@
 import { NextResponse } from "next/server";
 import { findQuestionById } from "@/lib/questions/pool-server";
 import { isPracticeReadyQuestion, shuffleChoices } from "@/lib/questions/filter";
+import { strictContentGateEnabled } from "@/lib/billing/content-policy";
+import { contentGrant } from "@/lib/billing/content-grant";
 
 export const runtime = "nodejs";
 
@@ -9,6 +11,12 @@ export async function GET(request: Request) {
   const id = url.searchParams.get("id");
   if (!id) {
     return NextResponse.json({ error: "missing id" }, { status: 400 });
+  }
+  if (strictContentGateEnabled() || request.headers.get("X-Kakomon-Native") === "ios") {
+    const grant = await contentGrant(request,id);
+    if(!grant.ok)return grant;
+    const body=await grant.json();
+    return NextResponse.json(url.searchParams.get("shuffle")==="1"?shuffleChoices(body.question):body.question,{headers:{"Cache-Control":"private, no-store",Vary:"Cookie"}});
   }
   const question = await findQuestionById(id);
   if (!question) {

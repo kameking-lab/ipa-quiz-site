@@ -1,0 +1,26 @@
+[
+  {
+    "stage": "code",
+    "model": "gpt-6-astra",
+    "sandbox": "read-only",
+    "command": "C:/Users/kanet/AppData/Roaming/npm/codex.cmd exec -m gpt-6-astra -s read-only",
+    "exitCode": 0,
+    "verdict": "PASS",
+    "verdictFile": "independent-review.md",
+    "verdictSha256": "287cf1809ccc1558d9951067b5c4f333c53bcd6e235203eca1bb2c2f2dc3737a",
+    "logFile": "validation/astra-review.log",
+    "logSha256": "8405f28db39fce1dca2d1dcb2a4fd20846722a19303f0d378e36372816b37e69"
+  },
+  {
+    "stage": "final",
+    "model": "gpt-6-astra",
+    "sandbox": "read-only",
+    "command": "C:/Users/kanet/AppData/Roaming/npm/codex.cmd exec -m gpt-6-astra -s read-only",
+    "exitCode": 0,
+    "verdict": "PASS",
+    "verdictFile": "independent-review-final.md",
+    "verdictSha256": "124e2044f0d1e05840838a558e11708784c2146319d13b2717a237637aa4e698",
+    "logFile": "validation/astra-review-final.log",
+    "logSha256": "9639aa08601fa21e00a27dcbf1affae2221b8c3ed8a1d02d7e3984467ab9032e"
+  }
+]

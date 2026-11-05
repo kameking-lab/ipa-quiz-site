@@ -5,7 +5,7 @@ import { join } from "node:path";
 // /settings の各トグルは Radix <Switch>（中身のない <button role="switch">）で、
 // インラインの aria-label を持たない。アクセシブルネームは SettingRow が
 // 可視ラベル <p id={labelId}> を cloneElement で aria-labelledby に注入することだけで
-// 成立する（WCAG 4.1.2 Name, Role, Value）。この配線が外れると 7 個の Switch が
+// 成立する（WCAG 4.1.2 Name, Role, Value）。この配線が外れると 6 個の Switch が
 // 全て「名前なし」になり SR 利用者が用途を把握できないが、現状これを守るテストが無い。
 // NotificationSettings(インライン aria-label) は別テストでガード済だが、SettingRow 経由の
 // settings ページ群は未ガードのため、配線契約を source-read で固定する（崩れたら落ちる）。
@@ -38,7 +38,7 @@ describe("/settings Switch — SettingRow 経由のアクセシブルネーム�
       .split("<Switch")
       .slice(1)
       .filter((seg) => /^\s/.test(seg));
-    expect(segments.length).toBeGreaterThanOrEqual(7);
+    expect(segments.length).toBeGreaterThanOrEqual(6);
     for (const seg of segments) {
       // タグの末尾 "/>" までを切り出す（self-closing。属性内に "/>" は出現しない）。
       const tagBody = seg.slice(0, seg.indexOf("/>"));

@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { referralRedirectHref } from "@/lib/analytics/referral-query";
 import type { Metadata } from "next";
 import { permanentRedirect } from "next/navigation";
 import { ExternalLink } from "lucide-react";
@@ -8,10 +9,6 @@ import {
   type ExamCatalogItem,
 } from "@/components/exam-library/exam-catalog-browser";
 import { ExamSourceNotes } from "@/components/exam-library/exam-source-notes";
-import {
-  ExamNoteLinks,
-  collectSubjectNoteLinks,
-} from "@/components/exam-library/exam-note-links";
 import {
   EXAM_CATALOG,
   EXAM_LIBRARY_PATH,
@@ -39,7 +36,7 @@ const DESCRIPTION =
   "技術士第一次・測量士補・安全衛生分野の公表問題を、試験・科目・回を選んで1問ずつ解けます。公式正答がある問題だけ採点し、間違えた問題を解き直せます。";
 
 interface ExamLibraryPageProps {
-  searchParams: Promise<{ group?: string | string[]; subject?: string | string[] }>;
+  searchParams: Promise<Record<string, string | string[] | undefined>>;
 }
 
 function firstValue(value: string | string[] | undefined): string | undefined {
@@ -98,7 +95,7 @@ export default async function ExamLibraryPage({ searchParams }: ExamLibraryPageP
   }
   if (requestedGroup) {
     const hub = qualificationHubForSelection(requestedGroup.id, requestedSubject);
-    if (hub) permanentRedirect(qualificationHubPath(hub.slug));
+    if (hub) permanentRedirect(referralRedirectHref(qualificationHubPath(hub.slug), params));
   }
   const initialGroup: ExamGroupId =
     requestedGroup && groups.some((group) => group.id === requestedGroup.id)
@@ -112,7 +109,6 @@ export default async function ExamLibraryPage({ searchParams }: ExamLibraryPageP
   // G10: 科目で絞られているときは、その科目の解説記事をこの一覧ページにも出す。
   // 資格カレンダー側の導線はこの URL を指しているため、ここに出ないと科目専用の
   // 解説記事は個別の回ページまで進まないと読者に見えない。
-  const subjectNoteLinks = collectSubjectNoteLinks(EXAM_CATALOG, initialGroup, initialSubject);
 
   const playable = items.filter((item) => item.questionCount !== null);
   const questionTotal = playable.reduce((total, item) => total + (item.questionCount ?? 0), 0);
@@ -139,15 +135,9 @@ export default async function ExamLibraryPage({ searchParams }: ExamLibraryPageP
           items={items}
           initialGroup={initialGroup}
           initialSubject={initialSubject}
+          initialYear={firstValue(params.year)}
         />
       </div>
-
-      <ExamNoteLinks
-        links={subjectNoteLinks}
-        headingId="exam-subject-note-links-title"
-        heading={initialSubject ? `${initialSubject}の解説記事` : "関連する解説記事"}
-        className="mt-8"
-      />
 
       <ExamSourceNotes className="mt-10" />
 

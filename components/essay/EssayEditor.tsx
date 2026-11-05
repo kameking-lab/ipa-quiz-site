@@ -1,4 +1,7 @@
 "use client";
+import {NativeQuestionGate} from "@/mobile/shared/NativeQuestionGate";
+import { requestAiConsent } from "@/lib/ai/consent";
+
 
 import { useCallback, useEffect, useMemo, useState } from "react";
 import { Loader2, Save, Sparkles, AlertCircle } from "lucide-react";
@@ -43,7 +46,7 @@ interface Props {
   question: EssayQuestion;
 }
 
-export function EssayEditor({ question }: Props) {
+function EssayEditorBody({ question }: Props) {
   const [industry, setIndustry] = useState<Industry>("it");
   const [answers, setAnswers] = useState<{ ア: string; イ: string; ウ: string }>({
     ア: "",
@@ -97,6 +100,7 @@ export function EssayEditor({ question }: Props) {
 
   const handleSubmit = useCallback(async () => {
     if (!canSubmit) return;
+    if (!requestAiConsent()) return;
     if (!isPremium && remaining <= 0) {
       setError(
         "今月の AI 添削上限（月3回）に達しました。翌月に利用枠が更新されます。",
@@ -109,7 +113,7 @@ export function EssayEditor({ question }: Props) {
     try {
       const res = await fetch("/api/essay-grade", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
+        headers: { "Content-Type": "application/json", "X-Kakomon-AI-Consent": "20261103" },
         body: JSON.stringify({ questionId: question.id, industry, answers }),
       });
       if (!res.ok) {
@@ -353,3 +357,5 @@ function formatTime(iso: string): string {
     return "";
   }
 }
+
+export function EssayEditor(props:Parameters<typeof EssayEditorBody>[0]) { return <NativeQuestionGate id={props.question.id}><EssayEditorBody {...props}/></NativeQuestionGate>; }

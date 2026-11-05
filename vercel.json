@@ -1,5 +1,6 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
+  "buildCommand": "pnpm run build",
   "git": {
     "deploymentEnabled": {
       "release/robots-collection-20261026": false,

@@ -9,7 +9,7 @@ import { SITE_BASE_URL, SITE_NAME } from "@/lib/seo/config";
 
 const FEATURES_TITLE = "機能特集 — AIコパイロット・午後採点・模試モード";
 const FEATURES_DESCRIPTION =
-  "AI コパイロットによる選択肢別解説、業種別の論述合格答案サンプル、AI 午後採点（β）、本番形式の模試モード、学習計画自動生成など、IPA 過去問学習を一段引き上げる過去問AI 独自機能をまとめた特集ページ。各機能の使い方と狙いをページ別に詳しく紹介します。";
+  "過去問の解説、業種別の練習答案、論述の見直し、模試、学習計画の使い方を紹介します。AIの提供状態と利用条件は各機能の画面で確認できます。";
 
 // Page-specific OG card. The /api/og route reserves a "feature" type style for
 // this page; without an explicit images entry the openGraph override would drop

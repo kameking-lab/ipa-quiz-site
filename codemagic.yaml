@@ -1,0 +1,102 @@
+workflows:
+  kakomon-ios-testflight:
+    name: Kakomon AI - TestFlight
+    instance_type: mac_mini_m2
+    max_build_duration: 60
+    triggering:
+      # Every push to an iOS branch builds and uploads automatically. Web-only commits do not.
+      events:
+        - push
+      branch_patterns:
+        - pattern: "feat/ios-app-*"
+          include: true
+          source: true
+      cancel_previous_builds: true
+    when:
+      changeset:
+        includes:
+          - "mobile/**"
+          - "codemagic.yaml"
+    integrations:
+      app_store_connect: App Store Key
+    environment:
+      groups:
+        - kakomon_ios
+      ios_signing:
+        distribution_type: app_store
+        bundle_identifier: jp.kakomon-ai.app
+      vars:
+        APP_STORE_APPLE_ID: "6830358918"
+      node: "22"
+      xcode: latest
+      cocoapods: default
+    scripts:
+      - name: Install shared web and isolated app dependencies
+        script: |
+          set -euo pipefail
+          cd "$CM_BUILD_DIR"
+          npx --yes pnpm@10.33.0 install --frozen-lockfile --ignore-scripts
+          npx --no-install prisma generate
+          cd "$CM_BUILD_DIR/mobile"
+          npm ci
+      - name: Typecheck, test and bundle local screens
+        script: |
+          set -euo pipefail
+          cd "$CM_BUILD_DIR/mobile"
+          # Never print the key. Only the public iOS SDK key is bundled.
+          if [[ -z "${MOBILE_RC_IOS_PUBLIC_KEY:-}" || "$MOBILE_RC_IOS_PUBLIC_KEY" != appl_* ]]; then
+            echo "Set MOBILE_RC_IOS_PUBLIC_KEY to the RevenueCat public iOS SDK key in kakomon_ios." >&2
+            exit 1
+          fi
+          npm run typecheck
+          npm test
+          npm run build
+      - name: Select next TestFlight build number
+        script: |
+          set -euo pipefail
+          LATEST_BUILD_NUMBER=$(app-store-connect get-latest-testflight-build-number "$APP_STORE_APPLE_ID")
+          # An empty successful result means no builds yet. API failures stop here.
+          LATEST_BUILD_NUMBER=${LATEST_BUILD_NUMBER:-0}
+          if [[ ! "$LATEST_BUILD_NUMBER" =~ ^[0-9]+$ ]]; then
+            echo "Expected an integer TestFlight build number." >&2
+            exit 1
+          fi
+          echo "BUILD_NUMBER=$((10#$LATEST_BUILD_NUMBER + 1))" >> "$CM_ENV"
+      # Optional MOBILE_ADS_* settings in kakomon_ios are consumed by ios:prepare.
+      # Missing values produce a functioning app with ads disabled.
+      - name: Generate native project, Ads SDK, privacy manifest and icon
+        script: |
+          set -euo pipefail
+          cd "$CM_BUILD_DIR/mobile"
+          npm run ios:prepare
+          npm run ios:test
+          plutil -lint ios/App/App/Info.plist ios/App/App/PrivacyInfo.xcprivacy
+      - name: Apply App Store provisioning profiles
+        script: |
+          set -euo pipefail
+          cd "$CM_BUILD_DIR/mobile"
+          mkdir -p build/ios
+          xcode-project use-profiles \
+            --project ios/App/App.xcodeproj \
+            --export-options-plist build/ios/export_options.plist
+          ruby scripts/verify-ios.rb build/ios/export_options.plist
+      - name: Build signed IPA
+        script: |
+          set -euo pipefail
+          cd "$CM_BUILD_DIR/mobile"
+          xcode-project build-ipa \
+            --workspace ios/App/App.xcworkspace \
+            --scheme App \
+            --config Release \
+            --export-options-plist build/ios/export_options.plist \
+            --ipa-directory build/ios/ipa
+    artifacts:
+      - mobile/build/ios/ipa/*.ipa
+      - /tmp/xcodebuild_logs/*.log
+      - $HOME/Library/Developer/Xcode/DerivedData/**/Build/**/*.dSYM
+    publishing:
+      app_store_connect:
+        auth: integration
+        # Upload only. No TestFlight beta distribution; the owner tests on device after release.
+        submit_to_testflight: false
+        submit_to_app_store: false

@@ -41,9 +41,9 @@ describe("levelForXp", () => {
   });
 
   it("caps at the top level for very large XP", () => {
-    // 16 thresholds → max level 16.
-    expect(levelForXp(28000)).toBe(16);
-    expect(levelForXp(1_000_000)).toBe(16);
+    // Shared quadratic curve: 50 * (level - 1) * level, capped at 100.
+    expect(levelForXp(28000)).toBe(24);
+    expect(levelForXp(1_000_000)).toBe(100);
   });
 });
 
@@ -64,10 +64,11 @@ describe("xpToNext", () => {
     expect(p.pct).toBeLessThanOrEqual(1);
   });
 
-  it("synthesizes a band past the max level without dividing by zero", () => {
-    const p = xpToNext(28000);
-    expect(p.current).toBe(28000);
-    expect(p.next).toBeGreaterThan(p.current);
+  it("reports completion at the shared maximum level", () => {
+    const p = xpToNext(495000);
+    expect(p.current).toBe(495000);
+    expect(p.next).toBe(p.current);
+    expect(p.pct).toBe(1);
     expect(Number.isFinite(p.pct)).toBe(true);
   });
 });

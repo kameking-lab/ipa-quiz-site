@@ -1,0 +1,45 @@
+{
+  "allPassed": true,
+  "checks": [
+    {
+      "label": "typecheck",
+      "exitCode": 0,
+      "logSha256": "e2abc9113230d37b742fe54adbd1c6693deb4f5c3acf08cca0d7cf006c129583"
+    },
+    {
+      "label": "lint-final",
+      "exitCode": 0,
+      "logSha256": "ddd9adeb7b4f170213213c5a2be3db94b6f79fa41f5744e9d3824d346eaa80ce"
+    },
+    {
+      "label": "tests",
+      "exitCode": 0,
+      "logSha256": "6b50e7924b6ed8a3f2bb39aee7b65e1168e0d409fbdcbdfed76d7f21dd684188"
+    },
+    {
+      "label": "build",
+      "exitCode": 0,
+      "logSha256": "386c82efd66d4d4f948d36f6da436834dcbf23da1c7ddabe302250c9d5a62b37"
+    },
+    {
+      "label": "migration-unit",
+      "exitCode": 0,
+      "logSha256": "de23b35e0a6170f3b6232fbf6d98f75b3de4cf569c4903805a82c591d26bc420"
+    },
+    {
+      "label": "migration-postgres",
+      "exitCode": 0,
+      "logSha256": "34e29bab61d5e19610c584a93f4af691491d3bf80364df4a1edf6bfdcb4b506a"
+    }
+  ],
+  "implementationHashesVerified": 21,
+  "tests": {
+    "filesPassed": 770,
+    "filesSkipped": 1,
+    "passed": 7872,
+    "skipped": 10,
+    "failed": 0
+  },
+  "buildStaticPages": 17958,
+  "scope": "Local credential-free checks only; no production database or live AI access; no push/PR/deploy"
+}

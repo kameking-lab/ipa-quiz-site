@@ -1,5 +1,7 @@
 import type { Question } from "@/lib/questions/types";
 import type { PracticeAccess } from "./practice-contract";
+import { nativeClient, NATIVE_HEADER } from "@/mobile/shared/contracts";
+import { shuffleChoices } from "@/lib/questions/filter";
 
 const LOCK_NAME = "kakomon-ai:practice-cookie:v1";
 const REQUEST_TIMEOUT_MS = 20_000;
@@ -27,13 +29,13 @@ function readAccess(value: unknown): PracticeAccess | null {
   return value as PracticeAccess;
 }
 
-async function postQuestion(id: string, shuffle: boolean) {
+async function postQuestion(id: string, shuffle: boolean, paper?: string, hash?:string) {
   const controller = new AbortController();
   const timeout = setTimeout(() => controller.abort(), REQUEST_TIMEOUT_MS);
   try {
     const response = await fetch("/api/billing/question", {
       method: "POST", cache: "no-store", credentials: "same-origin",
-      headers: { "Content-Type": "application/json" },
+      headers: { "Content-Type": "application/json", ...(nativeClient() ? { [NATIVE_HEADER]: "ios" } : {}), ...(paper ? { "X-Kakomon-Paper": paper } : {}),...(hash?{"X-Kakomon-Question-Hash":hash}:{}) },
       body: JSON.stringify({ id, shuffle }), signal: controller.signal,
     });
     const body: unknown = await response.json();
@@ -46,13 +48,20 @@ async function postQuestion(id: string, shuffle: boolean) {
   }
 }
 
-async function performRequest(id: string, shuffle: boolean, signal?: AbortSignal) {
+async function performRequest(id: string, shuffle: boolean, signal?: AbortSignal, paper?: string) {
   if (signal?.aborted) throw aborted();
-  let result = await postQuestion(id, shuffle);
+  let cached:Question|null=null,hash:string|undefined;
+  if(nativeClient()&&!paper) {
+    try {
+      const {downloads,hex}=await import("@/mobile/src/downloads");cached=await downloads.findQuestion(id);
+      if(cached)hash=hex(await crypto.subtle.digest("SHA-256",new TextEncoder().encode(JSON.stringify(cached))));
+    }catch{/* Free users and expired caches always use the server response. */}
+  }
+  let result = await postQuestion(id, shuffle, paper,hash);
   if (signal?.aborted) throw aborted();
   // The first 428 only establishes the HttpOnly cookie; it grants no question.
   if (result.response.status === 428 && result.payload.error === "guest_cookie_required") {
-    result = await postQuestion(id, shuffle);
+    result = await postQuestion(id, shuffle, paper,hash);
     if (signal?.aborted) throw aborted();
   }
   const { response, payload, access } = result;
@@ -63,6 +72,10 @@ async function performRequest(id: string, shuffle: boolean, signal?: AbortSignal
       typeof (payload.question as Record<string, unknown>).id !== "string") {
     throw new PracticeRequestError("billing_unavailable", access);
   }
+  if(payload.cached===true) {
+    if(!cached||!hash)throw new PracticeRequestError("cache_unavailable",access);
+    return {question:shuffle?shuffleChoices(cached):cached,access};
+  }
   return { question: payload.question as Question, access };
 }
 
@@ -72,14 +85,14 @@ async function performRequest(id: string, shuffle: boolean, signal?: AbortSignal
  * Locks the queue still works within this tab; simultaneous first visits in
  * different tabs cannot be guaranteed to establish a single anonymous ID.
  */
-export function fetchPracticeQuestion(id: string, shuffle: boolean, signal?: AbortSignal) {
+export function fetchPracticeQuestion(id: string, shuffle: boolean, signal?: AbortSignal, paper?: string) {
   if (signal?.aborted) return Promise.reject(aborted());
   const pending = requestQueue.then(async () => {
     if (signal?.aborted) throw aborted();
     if (typeof navigator !== "undefined" && navigator.locks?.request) {
-      return navigator.locks.request(LOCK_NAME, { mode: "exclusive" }, () => performRequest(id, shuffle, signal));
+      return navigator.locks.request(LOCK_NAME, { mode: "exclusive" }, () => performRequest(id, shuffle, signal, paper));
     }
-    return performRequest(id, shuffle, signal);
+    return performRequest(id, shuffle, signal, paper);
   });
   requestQueue = pending.then(() => undefined, () => undefined);
   if (!signal) return pending;

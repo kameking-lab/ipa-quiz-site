@@ -1,0 +1,630 @@
+{
+  "sourceRevision": "ca99d7f72698cbd0b1e0aced3db767852fb6713f",
+  "verifiedAt": "2026-11-04T10:54:48.105Z",
+  "mappings": [
+    {
+      "qualificationId": "anma-massage-shiatsushi",
+      "sourceKey": "ahaki-anma",
+      "scope": "あん摩マッサージ指圧師",
+      "url": "https://www.kakomon-ai.jp/ahaki-anma"
+    },
+    {
+      "qualificationId": "ap",
+      "sourceKey": "ap",
+      "scope": "応用情報技術者",
+      "url": "https://www.kakomon-ai.jp/ap"
+    },
+    {
+      "qualificationId": "au",
+      "sourceKey": "au",
+      "scope": "システム監査技術者",
+      "url": "https://www.kakomon-ai.jp/au"
+    },
+    {
+      "qualificationId": "blasting-technician",
+      "sourceKey": "lckohyo-発破技士",
+      "scope": "発破技士",
+      "url": "https://www.kakomon-ai.jp/e-learning/exams?group=lckohyo&subject=%E7%99%BA%E7%A0%B4%E6%8A%80%E5%A3%AB"
+    },
+    {
+      "qualificationId": "boiler-1kyu",
+      "sourceKey": "lckohyo-一級ボイラー技士",
+      "scope": "一級ボイラー技士",
+      "url": "https://www.kakomon-ai.jp/e-learning/exams?group=lckohyo&subject=%E4%B8%80%E7%B4%9A%E3%83%9C%E3%82%A4%E3%83%A9%E3%83%BC%E6%8A%80%E5%A3%AB"
+    },
+    {
+      "qualificationId": "boiler-2kyu",
+      "sourceKey": "ni-kyu-boiler-gishi",
+      "scope": "二級ボイラー技士",
+      "url": "https://www.kakomon-ai.jp/e-learning/exams/qualifications/ni-kyu-boiler-gishi"
+    },
+    {
+      "qualificationId": "boiler-seibishi",
+      "sourceKey": "lckohyo-ボイラー整備士",
+      "scope": "ボイラー整備士",
+      "url": "https://www.kakomon-ai.jp/e-learning/exams?group=lckohyo&subject=%E3%83%9C%E3%82%A4%E3%83%A9%E3%83%BC%E6%95%B4%E5%82%99%E5%A3%AB"
+    },
+    {
+      "qualificationId": "boiler-tokkyu",
+      "sourceKey": "lckohyo-特級ボイラー技士",
+      "scope": "特級ボイラー技士",
+      "url": "https://www.kakomon-ai.jp/e-learning/exams?group=lckohyo&subject=%E7%89%B9%E7%B4%9A%E3%83%9C%E3%82%A4%E3%83%A9%E3%83%BC%E6%8A%80%E5%A3%AB"
+    },
+    {
+      "qualificationId": "care-worker",
+      "sourceKey": "kaigo",
+      "scope": "介護福祉士",
+      "url": "https://www.kakomon-ai.jp/kaigo"
+    },
+    {
+      "qualificationId": "cargo-lifting-appliance-operator",
+      "sourceKey": "lckohyo-揚貨装置運転士",
+      "scope": "揚貨装置運転士",
+      "url": "https://www.kakomon-ai.jp/e-learning/exams?group=lckohyo&subject=%E6%8F%9A%E8%B2%A8%E8%A3%85%E7%BD%AE%E9%81%8B%E8%BB%A2%E5%A3%AB"
+    },
+    {
+      "qualificationId": "chusho-kigyo-shindanshi",
+      "sourceKey": "chusho-kigyo-shindanshi",
+      "scope": "中小企業診断士",
+      "url": "https://www.kakomon-ai.jp/chusho-kigyo-shindanshi"
+    },
+    {
+      "qualificationId": "chusho-kigyo-shindanshi",
+      "sourceKey": "chusho-secondary",
+      "scope": "中小企業診断士二次",
+      "url": "https://www.kakomon-ai.jp/chusho-secondary"
+    },
+    {
+      "qualificationId": "clinical-engineer",
+      "sourceKey": "rinsho-kogishi",
+      "scope": "臨床工学技士",
+      "url": "https://www.kakomon-ai.jp/rinsho-kogishi"
+    },
+    {
+      "qualificationId": "cpa",
+      "sourceKey": "kaikeishi",
+      "scope": "公認会計士",
+      "url": "https://www.kakomon-ai.jp/kaikeishi"
+    },
+    {
+      "qualificationId": "crane-derrick-crane-limited",
+      "sourceKey": "lckohyo-クレーン・デリック運転士〔クレーン限定〕",
+      "scope": "クレーン・デリック運転士〔クレーン限定〕",
+      "url": "https://www.kakomon-ai.jp/e-learning/exams?group=lckohyo&subject=%E3%82%AF%E3%83%AC%E3%83%BC%E3%83%B3%E3%83%BB%E3%83%87%E3%83%AA%E3%83%83%E3%82%AF%E9%81%8B%E8%BB%A2%E5%A3%AB%E3%80%94%E3%82%AF%E3%83%AC%E3%83%BC%E3%83%B3%E9%99%90%E5%AE%9A%E3%80%95"
+    },
+    {
+      "qualificationId": "crane-derrick-untenshi",
+      "sourceKey": "crane-derrick-unlimited",
+      "scope": "クレーン・デリック運転士（限定なし）",
+      "url": "https://www.kakomon-ai.jp/e-learning/exams/qualifications/crane-derrick-unlimited"
+    },
+    {
+      "qualificationId": "db",
+      "sourceKey": "db",
+      "scope": "データベーススペシャリスト",
+      "url": "https://www.kakomon-ai.jp/db"
+    },
+    {
+      "qualificationId": "denken-1shu",
+      "sourceKey": "denken1",
+      "scope": "電験一種",
+      "url": "https://www.kakomon-ai.jp/denken1"
+    },
+    {
+      "qualificationId": "denken-2shu",
+      "sourceKey": "denken2",
+      "scope": "電験二種",
+      "url": "https://www.kakomon-ai.jp/denken2"
+    },
+    {
+      "qualificationId": "denken-3shu",
+      "sourceKey": "denken3",
+      "scope": "電験三種",
+      "url": "https://www.kakomon-ai.jp/denken3"
+    },
+    {
+      "qualificationId": "denko2",
+      "sourceKey": "denko2",
+      "scope": "第二種電気工事士",
+      "url": "https://www.kakomon-ai.jp/denko2"
+    },
+    {
+      "qualificationId": "dentsu-sekou-1kyu",
+      "sourceKey": "tsushin1",
+      "scope": "1級電気通信工事施工管理",
+      "url": "https://www.kakomon-ai.jp/tsushin1"
+    },
+    {
+      "qualificationId": "dentsu-sekou-2kyu",
+      "sourceKey": "tsushin2",
+      "scope": "2級電気通信工事施工管理",
+      "url": "https://www.kakomon-ai.jp/tsushin2"
+    },
+    {
+      "qualificationId": "doboku-sekou-1kyu",
+      "sourceKey": "civil1",
+      "scope": "1級土木施工管理",
+      "url": "https://www.kakomon-ai.jp/civil1"
+    },
+    {
+      "qualificationId": "doboku-sekou-1kyu-ho",
+      "sourceKey": "civil1",
+      "scope": "1級土木施工管理",
+      "url": "https://www.kakomon-ai.jp/civil1"
+    },
+    {
+      "qualificationId": "doboku-sekou-2kyu",
+      "sourceKey": "civil2",
+      "scope": "2級土木施工管理",
+      "url": "https://www.kakomon-ai.jp/civil2"
+    },
+    {
+      "qualificationId": "eisei-kanrisha-1shu",
+      "sourceKey": "dai-1-shu-eisei-kanrisha",
+      "scope": "第一種衛生管理者",
+      "url": "https://www.kakomon-ai.jp/e-learning/exams/qualifications/dai-1-shu-eisei-kanrisha"
+    },
+    {
+      "qualificationId": "eisei-kanrisha-2shu",
+      "sourceKey": "dai-2-shu-eisei-kanrisha",
+      "scope": "第二種衛生管理者",
+      "url": "https://www.kakomon-ai.jp/e-learning/exams/qualifications/dai-2-shu-eisei-kanrisha"
+    },
+    {
+      "qualificationId": "electrician-type1",
+      "sourceKey": "denko1",
+      "scope": "第一種電気工事士",
+      "url": "https://www.kakomon-ai.jp/denko1"
+    },
+    {
+      "qualificationId": "es",
+      "sourceKey": "es",
+      "scope": "エンベデッドシステムスペシャリスト",
+      "url": "https://www.kakomon-ai.jp/es"
+    },
+    {
+      "qualificationId": "forestry-cable-work-supervisor",
+      "sourceKey": "lckohyo-林業架線作業主任者",
+      "scope": "林業架線作業主任者",
+      "url": "https://www.kakomon-ai.jp/e-learning/exams?group=lckohyo&subject=%E6%9E%97%E6%A5%AD%E6%9E%B6%E7%B7%9A%E4%BD%9C%E6%A5%AD%E4%B8%BB%E4%BB%BB%E8%80%85"
+    },
+    {
+      "qualificationId": "fp-3kyu",
+      "sourceKey": "fp3",
+      "scope": "FP3級",
+      "url": "https://www.kakomon-ai.jp/fp3"
+    },
+    {
+      "qualificationId": "fp1",
+      "sourceKey": "fp1",
+      "scope": "FP1級",
+      "url": "https://www.kakomon-ai.jp/fp1"
+    },
+    {
+      "qualificationId": "fp2",
+      "sourceKey": "fp2",
+      "scope": "FP2級",
+      "url": "https://www.kakomon-ai.jp/fp2"
+    },
+    {
+      "qualificationId": "fudosan-kanteishi",
+      "sourceKey": "kanteishi",
+      "scope": "不動産鑑定士",
+      "url": "https://www.kakomon-ai.jp/kanteishi"
+    },
+    {
+      "qualificationId": "gamma-ray-radiography-work-supervisor",
+      "sourceKey": "lckohyo-ガンマ線透過写真撮影作業主任者",
+      "scope": "ガンマ線透過写真撮影作業主任者",
+      "url": "https://www.kakomon-ai.jp/e-learning/exams?group=lckohyo&subject=%E3%82%AC%E3%83%B3%E3%83%9E%E7%B7%9A%E9%80%8F%E9%81%8E%E5%86%99%E7%9C%9F%E6%92%AE%E5%BD%B1%E4%BD%9C%E6%A5%AD%E4%B8%BB%E4%BB%BB%E8%80%85"
+    },
+    {
+      "qualificationId": "gas-shunin-kou",
+      "sourceKey": "gas-kou",
+      "scope": "ガス主任技術者 甲種",
+      "url": "https://www.kakomon-ai.jp/gas-kou"
+    },
+    {
+      "qualificationId": "gas-welding-work-supervisor",
+      "sourceKey": "lckohyo-ガス溶接作業主任者",
+      "scope": "ガス溶接作業主任者",
+      "url": "https://www.kakomon-ai.jp/e-learning/exams?group=lckohyo&subject=%E3%82%AC%E3%82%B9%E6%BA%B6%E6%8E%A5%E4%BD%9C%E6%A5%AD%E4%B8%BB%E4%BB%BB%E8%80%85"
+    },
+    {
+      "qualificationId": "gijutsushi-second",
+      "sourceKey": "soukan",
+      "scope": "技術士 総合技術監理部門",
+      "url": "https://www.kakomon-ai.jp/soukan"
+    },
+    {
+      "qualificationId": "guide-2026-0690f982ea63ecdf",
+      "sourceKey": "koku-toku",
+      "scope": "航空特殊無線技士",
+      "url": "https://www.kakomon-ai.jp/koku-toku"
+    },
+    {
+      "qualificationId": "guide-2026-10b384ea45c8ea54",
+      "sourceKey": "lckohyo-特別ボイラー溶接士",
+      "scope": "特別ボイラー溶接士",
+      "url": "https://www.kakomon-ai.jp/e-learning/exams?group=lckohyo&subject=%E7%89%B9%E5%88%A5%E3%83%9C%E3%82%A4%E3%83%A9%E3%83%BC%E6%BA%B6%E6%8E%A5%E5%A3%AB"
+    },
+    {
+      "qualificationId": "guide-2026-10b384ea45c8ea54",
+      "sourceKey": "lckohyo-普通ボイラー溶接士",
+      "scope": "普通ボイラー溶接士",
+      "url": "https://www.kakomon-ai.jp/e-learning/exams?group=lckohyo&subject=%E6%99%AE%E9%80%9A%E3%83%9C%E3%82%A4%E3%83%A9%E3%83%BC%E6%BA%B6%E6%8E%A5%E5%A3%AB"
+    },
+    {
+      "qualificationId": "guide-2026-4c8fce478e1549b5",
+      "sourceKey": "amateur1",
+      "scope": "第一級アマチュア無線技士",
+      "url": "https://www.kakomon-ai.jp/amateur1"
+    },
+    {
+      "qualificationId": "guide-2026-4c8fce478e1549b5",
+      "sourceKey": "amateur2",
+      "scope": "第二級アマチュア無線技士",
+      "url": "https://www.kakomon-ai.jp/amateur2"
+    },
+    {
+      "qualificationId": "guide-2026-89baef7227f18d4b",
+      "sourceKey": "shika-ishi",
+      "scope": "歯科医師",
+      "url": "https://www.kakomon-ai.jp/shika-ishi"
+    },
+    {
+      "qualificationId": "guide-2026-b86b350b54ba1126",
+      "sourceKey": "shino-kunrenshi",
+      "scope": "視能訓練士",
+      "url": "https://www.kakomon-ai.jp/shino-kunrenshi"
+    },
+    {
+      "qualificationId": "guide-2026-f0c4cb4ac642c68f",
+      "sourceKey": "kai-toku2",
+      "scope": "第二級海上特殊無線技士",
+      "url": "https://www.kakomon-ai.jp/kai-toku2"
+    },
+    {
+      "qualificationId": "guide-2026-f0c4cb4ac642c68f",
+      "sourceKey": "kai-toku3",
+      "scope": "第三級海上特殊無線技士",
+      "url": "https://www.kakomon-ai.jp/kai-toku3"
+    },
+    {
+      "qualificationId": "guide-2026-f0c4cb4ac642c68f",
+      "sourceKey": "maritime-radar",
+      "scope": "レーダー級海上特殊無線技士",
+      "url": "https://www.kakomon-ai.jp/maritime-radar"
+    },
+    {
+      "qualificationId": "guide-2026-f0c4cb4ac642c68f",
+      "sourceKey": "maritime-special1",
+      "scope": "第一級海上特殊無線技士",
+      "url": "https://www.kakomon-ai.jp/maritime-special1"
+    },
+    {
+      "qualificationId": "hoikushi",
+      "sourceKey": "hoikushi",
+      "scope": "保育士試験",
+      "url": "https://www.kakomon-ai.jp/hoikushi"
+    },
+    {
+      "qualificationId": "hokenshi-kokka",
+      "sourceKey": "hokenshi",
+      "scope": "保健師",
+      "url": "https://www.kakomon-ai.jp/hokenshi"
+    },
+    {
+      "qualificationId": "idoshiki-crane-untenshi",
+      "sourceKey": "lckohyo-移動式クレーン運転士",
+      "scope": "移動式クレーン運転士",
+      "url": "https://www.kakomon-ai.jp/e-learning/exams?group=lckohyo&subject=%E7%A7%BB%E5%8B%95%E5%BC%8F%E3%82%AF%E3%83%AC%E3%83%BC%E3%83%B3%E9%81%8B%E8%BB%A2%E5%A3%AB"
+    },
+    {
+      "qualificationId": "itpassport",
+      "sourceKey": "ip",
+      "scope": "ITパスポート",
+      "url": "https://www.kakomon-ai.jp/ip"
+    },
+    {
+      "qualificationId": "josanshi-kokka",
+      "sourceKey": "josanshi",
+      "scope": "助産師",
+      "url": "https://www.kakomon-ai.jp/josanshi"
+    },
+    {
+      "qualificationId": "judo-seifukushi",
+      "sourceKey": "judo-seifukushi",
+      "scope": "柔道整復師",
+      "url": "https://www.kakomon-ai.jp/judo-seifukushi"
+    },
+    {
+      "qualificationId": "kangoshi-kokka",
+      "sourceKey": "kangoshi",
+      "scope": "看護師",
+      "url": "https://www.kakomon-ai.jp/kangoshi"
+    },
+    {
+      "qualificationId": "kankoji-sekou-2kyu",
+      "sourceKey": "kankoji2",
+      "scope": "2級管工事施工管理",
+      "url": "https://www.kakomon-ai.jp/kankoji2"
+    },
+    {
+      "qualificationId": "kanri-gyomu-shuninsha",
+      "sourceKey": "kanri",
+      "scope": "管理業務主任者",
+      "url": "https://www.kakomon-ai.jp/kanri"
+    },
+    {
+      "qualificationId": "kashikin",
+      "sourceKey": "kashikin",
+      "scope": "貸金業務取扱主任者",
+      "url": "https://www.kakomon-ai.jp/kashikin"
+    },
+    {
+      "qualificationId": "kihon-joho",
+      "sourceKey": "fe",
+      "scope": "基本情報技術者",
+      "url": "https://www.kakomon-ai.jp/fe"
+    },
+    {
+      "qualificationId": "kouatsu-shitsunai-shuninsha",
+      "sourceKey": "lckohyo-高圧室内作業主任者",
+      "scope": "高圧室内作業主任者",
+      "url": "https://www.kakomon-ai.jp/e-learning/exams?group=lckohyo&subject=%E9%AB%98%E5%9C%A7%E5%AE%A4%E5%86%85%E4%BD%9C%E6%A5%AD%E4%B8%BB%E4%BB%BB%E8%80%85"
+    },
+    {
+      "qualificationId": "land-special-radio-operator-1",
+      "sourceKey": "land-special1",
+      "scope": "第一級陸上特殊無線技士",
+      "url": "https://www.kakomon-ai.jp/land-special1"
+    },
+    {
+      "qualificationId": "land-special-radio-operator-2",
+      "sourceKey": "land-special2",
+      "scope": "第二級陸上特殊無線技士",
+      "url": "https://www.kakomon-ai.jp/land-special2"
+    },
+    {
+      "qualificationId": "land-special-radio-operator-3",
+      "sourceKey": "land-special3",
+      "scope": "第三級陸上特殊無線技士",
+      "url": "https://www.kakomon-ai.jp/land-special3"
+    },
+    {
+      "qualificationId": "land-special-radio-operator-domestic-telegraph",
+      "sourceKey": "riku-toku-kokunai",
+      "scope": "国内電信級陸上特殊無線技士",
+      "url": "https://www.kakomon-ai.jp/riku-toku-kokunai"
+    },
+    {
+      "qualificationId": "mansion-kanrishi",
+      "sourceKey": "mankan",
+      "scope": "マンション管理士",
+      "url": "https://www.kakomon-ai.jp/mankan"
+    },
+    {
+      "qualificationId": "nw",
+      "sourceKey": "nw",
+      "scope": "ネットワークスペシャリスト",
+      "url": "https://www.kakomon-ai.jp/nw"
+    },
+    {
+      "qualificationId": "pm",
+      "sourceKey": "pm",
+      "scope": "プロジェクトマネージャ",
+      "url": "https://www.kakomon-ai.jp/pm"
+    },
+    {
+      "qualificationId": "radio-kaijo-1",
+      "sourceKey": "maritime1",
+      "scope": "第一級海上無線通信士",
+      "url": "https://www.kakomon-ai.jp/maritime1"
+    },
+    {
+      "qualificationId": "radio-kaijo-2",
+      "sourceKey": "maritime2",
+      "scope": "第二級海上無線通信士",
+      "url": "https://www.kakomon-ai.jp/maritime2"
+    },
+    {
+      "qualificationId": "radio-kaijo-3",
+      "sourceKey": "maritime3",
+      "scope": "第三級海上無線通信士",
+      "url": "https://www.kakomon-ai.jp/maritime3"
+    },
+    {
+      "qualificationId": "radio-kaijo-4",
+      "sourceKey": "maritime4",
+      "scope": "第四級海上無線通信士",
+      "url": "https://www.kakomon-ai.jp/maritime4"
+    },
+    {
+      "qualificationId": "radio-koku",
+      "sourceKey": "aviation-comm",
+      "scope": "航空無線通信士",
+      "url": "https://www.kakomon-ai.jp/aviation-comm"
+    },
+    {
+      "qualificationId": "radio-riku-1",
+      "sourceKey": "riku-tech1",
+      "scope": "第一級陸上無線技術士",
+      "url": "https://www.kakomon-ai.jp/riku-tech1"
+    },
+    {
+      "qualificationId": "radio-riku-2",
+      "sourceKey": "riku-tech2",
+      "scope": "第二級陸上無線技術士",
+      "url": "https://www.kakomon-ai.jp/riku-tech2"
+    },
+    {
+      "qualificationId": "radio-sogo-1",
+      "sourceKey": "general1",
+      "scope": "第一級総合無線通信士",
+      "url": "https://www.kakomon-ai.jp/general1"
+    },
+    {
+      "qualificationId": "radio-sogo-2",
+      "sourceKey": "general2",
+      "scope": "第二級総合無線通信士",
+      "url": "https://www.kakomon-ai.jp/general2"
+    },
+    {
+      "qualificationId": "radio-sogo-3",
+      "sourceKey": "general3",
+      "scope": "第三級総合無線通信士",
+      "url": "https://www.kakomon-ai.jp/general3"
+    },
+    {
+      "qualificationId": "rigaku-ryohoshi",
+      "sourceKey": "rigaku-ryohoshi",
+      "scope": "理学療法士",
+      "url": "https://www.kakomon-ai.jp/rigaku-ryohoshi"
+    },
+    {
+      "qualificationId": "rinsho-kensagishi",
+      "sourceKey": "rinsho-kensagishi",
+      "scope": "臨床検査技師",
+      "url": "https://www.kakomon-ai.jp/rinsho-kensagishi"
+    },
+    {
+      "qualificationId": "riyoushi",
+      "sourceKey": "riyoshi",
+      "scope": "理容師",
+      "url": "https://www.kakomon-ai.jp/riyoshi"
+    },
+    {
+      "qualificationId": "rodo-anzen-consultant",
+      "sourceKey": "rodo-anzen-consultant",
+      "scope": "労働安全コンサルタント",
+      "url": "https://www.kakomon-ai.jp/e-learning/exams/qualifications/rodo-anzen-consultant"
+    },
+    {
+      "qualificationId": "rodo-eisei-consultant",
+      "sourceKey": "rodo-eisei-consultant",
+      "scope": "労働衛生コンサルタント",
+      "url": "https://www.kakomon-ai.jp/e-learning/exams/qualifications/rodo-eisei-consultant"
+    },
+    {
+      "qualificationId": "sa",
+      "sourceKey": "sa",
+      "scope": "システムアーキテクト",
+      "url": "https://www.kakomon-ai.jp/sa"
+    },
+    {
+      "qualificationId": "sagyo-ryohoshi",
+      "sourceKey": "sagyo-ryohoshi",
+      "scope": "作業療法士",
+      "url": "https://www.kakomon-ai.jp/sagyo-ryohoshi"
+    },
+    {
+      "qualificationId": "sc",
+      "sourceKey": "sc",
+      "scope": "情報処理安全確保支援士",
+      "url": "https://www.kakomon-ai.jp/sc"
+    },
+    {
+      "qualificationId": "seishin-hoken-fukushishi",
+      "sourceKey": "seishin",
+      "scope": "精神保健福祉士",
+      "url": "https://www.kakomon-ai.jp/seishin"
+    },
+    {
+      "qualificationId": "sensuishi",
+      "sourceKey": "lckohyo-潜水士",
+      "scope": "潜水士",
+      "url": "https://www.kakomon-ai.jp/e-learning/exams?group=lckohyo&subject=%E6%BD%9C%E6%B0%B4%E5%A3%AB"
+    },
+    {
+      "qualificationId": "sg",
+      "sourceKey": "sg",
+      "scope": "情報セキュリティマネジメント",
+      "url": "https://www.kakomon-ai.jp/sg"
+    },
+    {
+      "qualificationId": "sharoushi",
+      "sourceKey": "sharoushi",
+      "scope": "社会保険労務士",
+      "url": "https://www.kakomon-ai.jp/sharoushi"
+    },
+    {
+      "qualificationId": "shinryo-hoshasengishi",
+      "sourceKey": "shinryo-hoshasengishi",
+      "scope": "診療放射線技師",
+      "url": "https://www.kakomon-ai.jp/shinryo-hoshasengishi"
+    },
+    {
+      "qualificationId": "sm",
+      "sourceKey": "sm",
+      "scope": "ITサービスマネージャ",
+      "url": "https://www.kakomon-ai.jp/sm"
+    },
+    {
+      "qualificationId": "social-worker",
+      "sourceKey": "shakai",
+      "scope": "社会福祉士",
+      "url": "https://www.kakomon-ai.jp/shakai"
+    },
+    {
+      "qualificationId": "sokuryoshiho",
+      "sourceKey": "survey-assistant",
+      "scope": "測量士補",
+      "url": "https://www.kakomon-ai.jp/e-learning/exams/qualifications/survey-assistant"
+    },
+    {
+      "qualificationId": "st",
+      "sourceKey": "st",
+      "scope": "ITストラテジスト",
+      "url": "https://www.kakomon-ai.jp/st"
+    },
+    {
+      "qualificationId": "takken",
+      "sourceKey": "takken",
+      "scope": "宅建",
+      "url": "https://www.kakomon-ai.jp/takken"
+    },
+    {
+      "qualificationId": "tochi-kaoku-chosashi",
+      "sourceKey": "chosashi",
+      "scope": "土地家屋調査士",
+      "url": "https://www.kakomon-ai.jp/chosashi"
+    },
+    {
+      "qualificationId": "touroku-hanbaisha",
+      "sourceKey": "tohan",
+      "scope": "登録販売者",
+      "url": "https://www.kakomon-ai.jp/tohan"
+    },
+    {
+      "qualificationId": "work-environment-measurement-expert-first",
+      "sourceKey": "sagyo-kankyo-sokuteishi",
+      "scope": "作業環境測定士",
+      "url": "https://www.kakomon-ai.jp/e-learning/exams/qualifications/sagyo-kankyo-sokuteishi"
+    },
+    {
+      "qualificationId": "x-ray-work-supervisor",
+      "sourceKey": "lckohyo-エックス線作業主任者",
+      "scope": "エックス線作業主任者",
+      "url": "https://www.kakomon-ai.jp/e-learning/exams?group=lckohyo&subject=%E3%82%A8%E3%83%83%E3%82%AF%E3%82%B9%E7%B7%9A%E4%BD%9C%E6%A5%AD%E4%B8%BB%E4%BB%BB%E8%80%85"
+    },
+    {
+      "qualificationId": "yakuzaishi-kokka",
+      "sourceKey": "yakuzaishi",
+      "scope": "薬剤師",
+      "url": "https://www.kakomon-ai.jp/yakuzaishi"
+    },
+    {
+      "qualificationId": "zouen-sekou-1kyu",
+      "sourceKey": "zoen1",
+      "scope": "1級造園施工管理",
+      "url": "https://www.kakomon-ai.jp/zoen1"
+    },
+    {
+      "qualificationId": "zouen-sekou-2kyu",
+      "sourceKey": "zoen2",
+      "scope": "2級造園施工管理",
+      "url": "https://www.kakomon-ai.jp/zoen2"
+    }
+  ]
+}

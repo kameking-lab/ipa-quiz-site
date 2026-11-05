@@ -1,0 +1,17 @@
+{
+  "command": [
+    "corepack.cmd",
+    "pnpm",
+    "--dir",
+    ".cache/int7-deps",
+    "install",
+    "--frozen-lockfile",
+    "--offline",
+    "--ignore-scripts"
+  ],
+  "exitCode": 0,
+  "seconds": 61.33,
+  "log": "reports/int7-20261105/install-local.log",
+  "sha256": "80b2cfebdd917d38271b442531c6ca79d126e4cb5f2541d25c0d0c9a2b77270c",
+  "environment": "allowlisted OS variables only; CI=1, telemetry disabled, NODE_OPTIONS=4096; no service credentials or env files"
+}

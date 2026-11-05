@@ -10,6 +10,7 @@ import {
   setTaskDone,
 } from "@/lib/study-plan/storage";
 import type { DailyTask, ProgressMap, StudyPlan } from "@/lib/study-plan/types";
+import { formatLocalDate } from "@/lib/study-plan/generator";
 
 const PHASE_BADGE: Record<DailyTask["phase"], { label: string; tone: string }> = {
   early: { label: "序盤", tone: "bg-sky-100 text-sky-800 dark:bg-sky-950 dark:text-sky-200" },
@@ -28,7 +29,7 @@ function startOfWeek(isoDate: string): string {
   const day = d.getDay(); // 0=Sun
   const diff = day === 0 ? -6 : 1 - day; // ISO week: Monday start
   d.setDate(d.getDate() + diff);
-  return d.toISOString().slice(0, 10);
+  return formatLocalDate(d);
 }
 
 function formatDateLabel(iso: string): string {
@@ -148,6 +149,8 @@ export function ScheduleCalendar({ plan }: Props) {
                           <ScheduleTaskItem
                             key={t.key}
                             task={t}
+                            exam={plan.input.exam}
+                            planId={plan.id}
                             done={Boolean(progress[t.key]?.done)}
                             onToggle={(next) => handleToggle(t.key, next)}
                           />

@@ -1,7 +1,8 @@
+import {NativeQuestionGate} from "@/mobile/shared/NativeQuestionGate";
 import Link from "next/link";
 import type { Fp1AppliedExtension, Fp1AppliedExtensionQuestion } from "@/lib/fp1/applied-extension";
 import { AppliedExtensionAnswers, AppliedExtensionQuestionBody, AppliedExtensionSharedCase } from "./extension-view";
-export function AppliedExtensionPage({ data, question }: { data: Fp1AppliedExtension; question: Fp1AppliedExtensionQuestion }) {
+function AppliedExtensionPageBody({ data, question }: { data: Omit<Fp1AppliedExtension,"questions">; question: Fp1AppliedExtensionQuestion }) {
   const sharedCase = data.sharedCases.find((item) => item.number === question.caseNumber)!;
   const editionLabel = data.edition === "202609" ? "2026年9月" : "2026年5月";
   return <main data-study-presence-exam="fp1" className="mx-auto w-full min-w-0 max-w-3xl break-words px-4 py-8 sm:py-12">
@@ -16,3 +17,5 @@ export function AppliedExtensionPage({ data, question }: { data: Fp1AppliedExten
     <nav className="mt-8"><Link href={`/fp1/applied/${data.edition}`} className="text-primary underline">問題一覧へ</Link></nav>
   </main>;
 }
+
+export function AppliedExtensionPage(props:Parameters<typeof AppliedExtensionPageBody>[0]) { return <NativeQuestionGate id={props.question.id}><AppliedExtensionPageBody {...props}/></NativeQuestionGate>; }

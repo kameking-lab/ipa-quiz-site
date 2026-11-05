@@ -1,0 +1,1066 @@
+
+> ipa-quiz-site@1.0.0 test C:\Users\kanet\20260522\wt-batch3
+> vitest run "--maxWorkers=2" "--reporter=default" "--reporter=json" "--outputFile=reports/int8-20261105/test.json"
+
+
+[1m[30m[46m RUN [49m[39m[22m [36mv4.1.12 [39m[90mC:/Users/kanet/20260522/wt-batch3[39m
+
+[90mstdout[2m | __tests__/api/contact-slack-after.test.ts[2m > [22m[2mPOST /api/contact — 配信確認と既存feedbackの非同期通知[2m > [22m[2m通常の問い合わせは従来どおり過去問AIとして通知し、返信先なしでも受け付ける
+[22m[39m{"tag":"kakomon-ai:inbound","kind":"contact","receivedAt":"2026-11-04T23:00:56.881Z","ipHash":"ip-1hsg7yd"}
+
+[90mstdout[2m | __tests__/api/contact-slack-after.test.ts[2m > [22m[2mPOST /api/contact — 配信確認と既存feedbackの非同期通知[2m > [22m[2mレスポンスを返す時点では Slack を叩いていない（送信レイテンシを乗せない）
+[22m[39m{"tag":"kakomon-ai:inbound","kind":"feedback","receivedAt":"2026-11-04T23:00:56.885Z","ipHash":"ip-1hsg7yj"}
+
+[90mstderr[2m | __tests__/api/contact-slack-after.test.ts[2m > [22m[2mPOST /api/contact — 配信確認と既存feedbackの非同期通知[2m > [22m[2mレスポンスを返す時点では Slack を叩いていない（送信レイテンシを乗せない）
+[22m[39m[feedback-token] AUTH_SECRET が未設定のため無料枠解除トークンを発行できません
+
+[90mstdout[2m | __tests__/api/contact-slack-after.test.ts[2m > [22m[2mPOST /api/contact — 配信確認と既存feedbackの非同期通知[2m > [22m[2m補足は応答前に運営への配信を確認する
+[22m[39m{"tag":"kakomon-ai:inbound","kind":"question-comment","receivedAt":"2026-11-04T23:00:56.886Z","ipHash":"ip-1hsg7yk"}
+
+[90mstdout[2m | __tests__/api/contact-slack-after.test.ts[2m > [22m[2mPOST /api/contact — 配信確認と既存feedbackの非同期通知[2m > [22m[2mSlack が失敗しても問い合わせは受理済み（fail-open）
+[22m[39m{"tag":"kakomon-ai:inbound","kind":"feedback","receivedAt":"2026-11-04T23:00:56.887Z","ipHash":"ip-xsdl64"}
+
+[90mstderr[2m | __tests__/api/contact-slack-after.test.ts[2m > [22m[2mPOST /api/contact — 配信確認と既存feedbackの非同期通知[2m > [22m[2mSlack が失敗しても問い合わせは受理済み（fail-open）
+[22m[39m[feedback-token] AUTH_SECRET が未設定のため無料枠解除トークンを発行できません
+
+[90mstdout[2m | __tests__/api/contact-slack-after.test.ts[2m > [22m[2mPOST /api/contact — 配信確認と既存feedbackの非同期通知[2m > [22m[2mafter() が使えない文脈でも 500 にせず通知を試みる（fail-open）
+[22m[39m{"tag":"kakomon-ai:inbound","kind":"feedback","receivedAt":"2026-11-04T23:00:56.887Z","ipHash":"ip-xsdl65"}
+
+[90mstderr[2m | __tests__/api/contact-slack-after.test.ts[2m > [22m[2mPOST /api/contact — 配信確認と既存feedbackの非同期通知[2m > [22m[2mafter() が使えない文脈でも 500 にせず通知を試みる（fail-open）
+[22m[39m[feedback-token] AUTH_SECRET が未設定のため無料枠解除トークンを発行できません
+
+ [32m✓[39m __tests__/api/contact-slack-after.test.ts [2m([22m[2m8 tests[22m[2m)[22m[32m 15[2mms[22m[39m
+ [32m✓[39m __tests__/billing/QuizClient.player.test.tsx [2m([22m[2m5 tests[22m[2m)[22m[33m 3804[2mms[22m[39m
+     [33m[2m✓[22m[39m answers ordinary questions across qualifications, preserves player state and storage, and offers exits at the eleventh [33m 1691[2mms[22m[39m
+     [33m[2m✓[22m[39m keeps free exits and storage when 429 guest_rate_limited is returned [33m 684[2mms[22m[39m
+   [33m[2m✓[22m[39m submits feedback at the wall, answers bonus questions 11-20, stops at 21 and preserves exhaustion on reload [33m 1373[2mms[22m[39m
+ [32m✓[39m __tests__/copilot/rag.test.ts [2m([22m[2m6 tests[22m[2m)[22m[33m 13315[2mms[22m[39m
+     [33m[2m✓[22m[39m returns passages for a clear knowledge query [33m 6144[2mms[22m[39m
+     [33m[2m✓[22m[39m respects topN [33m 7165[2mms[22m[39m
+ [32m✓[39m __tests__/copilot/rag-pipeline.test.ts [2m([22m[2m7 tests[22m[2m)[22m[33m 13282[2mms[22m[39m
+     [33m[2m✓[22m[39m topScore が ragMinScore 未満なら ragResult は保持しつつ grounding しない [33m 6089[2mms[22m[39m
+     [33m[2m✓[22m[39m 閾値を満たすと grounding 出力一式を返す [33m 7180[2mms[22m[39m
+ [32m✓[39m __tests__/copilot/related-header.test.ts [2m([22m[2m10 tests[22m[2m)[22m[33m 6490[2mms[22m[39m
+     [33m[2m✓[22m[39m 有効なクエリは limit 件以下・スコア降順・question 種別のみを返す [33m 6442[2mms[22m[39m
+ [32m✓[39m __tests__/questions/sharoushi-kangoshi-routes.test.ts [2m([22m[2m582 tests[22m[2m)[22m[33m 12184[2mms[22m[39m
+ [32m✓[39m __tests__/questions/lab75-local-release.test.tsx [2m([22m[2m6 tests[22m[2m)[22m[33m 7322[2mms[22m[39m
+     [33m[2m✓[22m[39m adds75 usable canonical routes and exposes the exact106 partial count to SEO and hub metadata [33m 1089[2mms[22m[39m
+     [33m[2m✓[22m[39m renders every native Next detail page with its official sources and full five reasons [33m 5901[2mms[22m[39m
+ [32m✓[39m __tests__/copilot/ip-choice-rag-regression.test.ts [2m([22m[2m2 tests[22m[2m)[22m[33m 6585[2mms[22m[39m
+     [33m[2m✓[22m[39m uses the actual corpus while excluding nursing context and unrelated practice candidates [33m 6575[2mms[22m[39m
+ [32m✓[39m __tests__/seo/sitemap-static-indexable.test.ts [2m([22m[2m8 tests[22m[2m)[22m[33m 5225[2mms[22m[39m
+     [33m[2m✓[22m[39m どの具象 static ルートも robots:noindex ではない [33m 4605[2mms[22m[39m
+     [33m[2m✓[22m[39m 掲載される全 essay 問題で robots:noindex にならない [33m 607[2mms[22m[39m
+ [32m✓[39m __tests__/mobile/catalog-parity.test.ts [2m([22m[2m2 tests[22m[2m)[22m[33m 4733[2mms[22m[39m
+   [33m[2m✓[22m[39m includes exactly every web-published practice question, library paper and alternative reader [33m 4728[2mms[22m[39m
+ [32m✓[39m __tests__/questions/kyusui-staging.test.ts [2m([22m[2m10 tests[22m[2m | [22m[33m2 skipped[39m[2m)[22m[33m 602[2mms[22m[39m
+     [33m[2m✓[22m[39m batch1公開後: replaces permission-pending with staging and stays outside all public question pools and navigation [33m 370[2mms[22m[39m
+ [32m✓[39m __tests__/api/copilot.test.ts [2m([22m[2m8 tests[22m[2m)[22m[33m 7169[2mms[22m[39m
+     [33m[2m✓[22m[39m uses a published ID even if the browser sends altered answer data [33m 6769[2mms[22m[39m
+     [33m[2m✓[22m[39m returns a streamed text/plain body via mock provider with expected headers [33m 382[2mms[22m[39m
+[90mstdout[2m | __tests__/api/cost-record-durability.test.ts[2m > [22m[2mコスト計上はレスポンス完了前に永続化を終える[2m > [22m[2m/api/scoring — ストリームが閉じる時点で recordAiCost が解決済み
+[22m[39m[provider] model resolved tier=grading model=gemini-2.5-flash pricing=flash
+
+[90mstdout[2m | __tests__/api/cost-record-durability.test.ts[2m > [22m[2mコスト計上はレスポンス完了前に永続化を終える[2m > [22m[2m/api/scoring — ストリームが閉じる時点で recordAiCost が解決済み
+[22m[39m[scoring] response received {
+  questionId: [32m'ap-2024h-pm-q1'[39m,
+  model: [32m'gemini-2.5-flash'[39m,
+  finishReason: [90mundefined[39m,
+  promptTokens: [90mundefined[39m,
+  outputTokens: [90mundefined[39m,
+  thoughtsTokens: [90mundefined[39m
+}
+
+[90mstdout[2m | __tests__/api/cost-record-durability.test.ts[2m > [22m[2mコスト計上はレスポンス完了前に永続化を終える[2m > [22m[2m/api/essay-grade — レスポンス返却時点で recordAiCost が解決済み
+[22m[39m[essay-grade] response received {
+  questionId: [32m'au-2024a-pm2-q1'[39m,
+  model: [32m'gemini-2.5-flash'[39m,
+  finishReason: [90mundefined[39m,
+  promptTokens: [90mundefined[39m,
+  outputTokens: [90mundefined[39m,
+  thoughtsTokens: [90mundefined[39m
+}
+
+[90mstderr[2m | __tests__/api/cost-record-durability.test.ts[2m > [22m[2mコスト計上はレスポンス完了前に永続化を終える[2m > [22m[2m/api/essay-grade — レスポンス返却時点で recordAiCost が解決済み
+[22m[39m[essay-grade] unavailable: AI応答の解析に失敗 {
+  questionId: [32m'au-2024a-pm2-q1'[39m,
+  provider: [32m'gemini'[39m,
+  model: [32m'gemini-2.5-flash'[39m,
+  rawChars: [33m32[39m,
+  finishReason: [90mundefined[39m,
+  truncated: [33mfalse[39m,
+  outputTokens: [90mundefined[39m,
+  thoughtsTokens: [90mundefined[39m
+}
+
+[90mstderr[2m | __tests__/api/cost-record-durability.test.ts[2m > [22m[2mコスト計上はレスポンス完了前に永続化を終える[2m > [22m[2m/api/essay-grade — レスポンス返却時点で recordAiCost が解決済み
+[22m[39m[slack] notification unavailable
+
+[90mstdout[2m | __tests__/api/cost-record-durability.test.ts[2m > [22m[2mコスト計上はレスポンス完了前に永続化を終える[2m > [22m[2m/api/copilot — ストリームが閉じる時点で recordAiCost が解決済み
+[22m[39m[copilot] completed {
+  questionId: [32m'ap-2023h-am-q1'[39m,
+  model: [32m'gemini-3.8-flash'[39m,
+  finishReason: [90mundefined[39m,
+  promptTokens: [90mundefined[39m,
+  outputTokens: [90mundefined[39m,
+  thoughtsTokens: [90mundefined[39m,
+  totalTokens: [90mundefined[39m
+}
+
+ [32m✓[39m __tests__/api/cost-record-durability.test.ts [2m([22m[2m4 tests[22m[2m)[22m[33m 4008[2mms[22m[39m
+     [33m[2m✓[22m[39m /api/scoring — ストリームが閉じる時点で recordAiCost が解決済み [33m 1155[2mms[22m[39m
+     [33m[2m✓[22m[39m /api/copilot — ストリームが閉じる時点で recordAiCost が解決済み [33m 2773[2mms[22m[39m
+ [32m✓[39m __tests__/native580-integration.test.ts [2m([22m[2m15 tests[22m[2m)[22m[33m 1939[2mms[22m[39m
+     [33m[2m✓[22m[39m riku-tech2: shows only practice-ready totals and free past-paper scope [33m 410[2mms[22m[39m
+     [33m[2m✓[22m[39m riku-tech2: public unauthenticated next API and due review preserve original IDs and protect HOLD [33m 344[2mms[22m[39m
+     [33m[2m✓[22m[39m excludes each of the three HOLDs from central load, ID lookup, sitemap, server pools and explicit history pools [33m 639[2mms[22m[39m
+ [32m✓[39m __tests__/questions/ipa-paper-player-parity.test.ts [2m([22m[2m3 tests[22m[2m)[22m[33m 5004[2mms[22m[39m
+     [33m[2m✓[22m[39m uses the same playable IDs for every exam/year/season/session [33m 4991[2mms[22m[39m
+ [32m✓[39m __tests__/batch3-release.test.ts [2m([22m[2m14 tests[22m[2m)[22m[33m 4235[2mms[22m[39m
+     [33m[2m✓[22m[39m serves benrishi through eager/lazy registries, canonical routes, home and question API [33m 389[2mms[22m[39m
+     [33m[2m✓[22m[39m keeps source asset mappings byte-identical in their public copies [33m 3063[2mms[22m[39m
+ [32m✓[39m __tests__/search/question-index.test.ts [2m([22m[2m17 tests[22m[2m)[22m[33m 2216[2mms[22m[39m
+     [33m[2m✓[22m[39m exam 未指定は全チャンクを母集団に取り、非空で返す [33m 1975[2mms[22m[39m
+ [32m✓[39m __tests__/ai/mock-provider.test.ts [2m([22m[2m16 tests[22m[2m)[22m[33m 5359[2mms[22m[39m
+     [33m[2m✓[22m[39m 「なぜ」「間違」「誤答」→ whyWrong 応答 [33m 764[2mms[22m[39m
+     [33m[2m✓[22m[39m 「用語」「解説」「term」→ term 応答 [33m 1030[2mms[22m[39m
+     [33m[2m✓[22m[39m どのキーワードにも当たらない → default 応答 [33m 322[2mms[22m[39m
+     [33m[2m✓[22m[39m 空メッセージ配列 → default 応答（last は空文字でどのキーワードにも非該当） [33m 324[2mms[22m[39m
+     [33m[2m✓[22m[39m 分岐は最後の user メッセージ内容で決まる（過去メッセージは無視） [33m 339[2mms[22m[39m
+     [33m[2m✓[22m[39m 大文字小文字を無視（toLowerCase 経由） [33m 479[2mms[22m[39m
+     [33m[2m✓[22m[39m チャンク連結は元応答と無損失一致 [33m 341[2mms[22m[39m
+     [33m[2m✓[22m[39m 各チャンクは 24 字以下、末尾以外は厳密に 24 字（.{1,24} 貪欲分割） [33m 311[2mms[22m[39m
+     [33m[2m✓[22m[39m 改行を含めて分割される（dotAll フラグ）— 連結で改行が保持される [33m 311[2mms[22m[39m
+     [33m[2m✓[22m[39m シグナル未指定なら正常完走する [33m 339[2mms[22m[39m
+ [32m✓[39m __tests__/sea2-integration.test.tsx [2m([22m[2m5 tests[22m[2m)[22m[33m 2119[2mms[22m[39m
+     [33m[2m✓[22m[39m stores48 and exposes exactly48 ready originals through eager, lazy-filtered, strict and practice pools [33m 417[2mms[22m[39m
+     [33m[2m✓[22m[39m keeps48 official keys, numeric printed order and192 accepted explanations in actual card/JSONLD consumers [33m 1352[2mms[22m[39m
+ [32m✓[39m __tests__/copilot/corpus.test.ts [2m([22m[2m10 tests[22m[2m)[22m[33m 2318[2mms[22m[39m
+     [33m[2m✓[22m[39m resetCorpusCache 後は再構築するが内容は等価 [33m 620[2mms[22m[39m
+ [32m✓[39m __tests__/components/ExamBrowseTabs.mock-support.test.tsx [2m([22m[2m303 tests[22m[2m)[22m[33m 1743[2mms[22m[39m
+ [32m✓[39m __tests__/questions/get-questions.test.ts [2m([22m[2m157 tests[22m[2m)[22m[33m 2358[2mms[22m[39m
+ [32m✓[39m __tests__/components/NativeB.integration.test.tsx [2m([22m[2m25 tests[22m[2m)[22m[33m 3123[2mms[22m[39m
+     [33m[2m✓[22m[39m normal player preserves one original/history/result then resets next question [33m 360[2mms[22m[39m
+     [33m[2m✓[22m[39m normal player preserves one original/history/result then resets next question [33m 324[2mms[22m[39m
+ [32m✓[39m __tests__/seo/exam-topic-link-resolvability.test.ts [2m([22m[2m4 tests[22m[2m)[22m[33m 3223[2mms[22m[39m
+     [33m[2m✓[22m[39m examTopicPageExists agrees with the topic route's static params for every (exam, category) [33m 757[2mms[22m[39m
+     [33m[2m✓[22m[39m at least one rendered question is gated to plain text (the branch is real) [33m 2457[2mms[22m[39m
+ [32m✓[39m __tests__/search/search-route.test.ts [2m([22m[2m22 tests[22m[2m)[22m[33m 2167[2mms[22m[39m
+     [33m[2m✓[22m[39m パラメータ無しでも 200（全項目 optional） [33m 1831[2mms[22m[39m
+ [32m✓[39m __tests__/mobile/authorized-paper.test.tsx [2m([22m[2m9 tests[22m[2m)[22m[33m 1371[2mms[22m[39m
+ [32m✓[39m __tests__/questions/hoikushi-round1.test.ts [2m([22m[2m7 tests[22m[2m)[22m[32m 91[2mms[22m[39m
+ [32m✓[39m __tests__/pe-first-continuation.test.tsx [2m([22m[2m3 tests[22m[2m)[22m[33m 393[2mms[22m[39m
+ [32m✓[39m __tests__/questions/sharoushi-rousai-source-gate.test.ts [2m([22m[2m3 tests[22m[2m)[22m[33m 1721[2mms[22m[39m
+     [33m[2m✓[22m[39m 雇用保険3問と健康保険1問を科目固有の公式番号で分離する [33m 1529[2mms[22m[39m
+ [32m✓[39m __tests__/native235-integration.test.ts [2m([22m[2m11 tests[22m[2m)[22m[33m 1553[2mms[22m[39m
+     [33m[2m✓[22m[39m amateur1: shows only practice-ready totals and free past-paper scope [33m 523[2mms[22m[39m
+     [33m[2m✓[22m[39m amateur1: public unauthenticated next API and due review preserve original IDs and protect HOLD [33m 442[2mms[22m[39m
+     [33m[2m✓[22m[39m excludes A19 from load, ID lookup, sitemap, server subject pools and explicit history pool [33m 327[2mms[22m[39m
+ [32m✓[39m __tests__/search/pool-server.test.ts [2m([22m[2m10 tests[22m[2m)[22m[33m 2388[2mms[22m[39m
+     [33m[2m✓[22m[39m 存在しない id は undefined [33m 2172[2mms[22m[39m
+ [32m✓[39m __tests__/keiryoshi-staging.test.ts [2m([22m[2m7 tests[22m[2m)[22m[33m 1206[2mms[22m[39m
+     [33m[2m✓[22m[39m batch1公開後: 通常の一覧・同期/非同期ローダー・ID指定から公開前データを取得させない [33m 1058[2mms[22m[39m
+ [32m✓[39m __tests__/seo/sitemap-resolvability.test.ts [2m([22m[2m8 tests[22m[2m)[22m[33m 1326[2mms[22m[39m
+     [33m[2m✓[22m[39m all safety exam papers in the main sitemap contain playable questions [33m 317[2mms[22m[39m
+     [33m[2m✓[22m[39m every question URL resolves to an answerable, non-needsReview question [33m 484[2mms[22m[39m
+     [33m[2m✓[22m[39m every exam hub / year-season / category URL resolves [33m 509[2mms[22m[39m
+ [32m✓[39m __tests__/pe-first-integration.test.tsx [2m([22m[2m5 tests[22m[2m)[22m[33m 1106[2mms[22m[39m
+     [33m[2m✓[22m[39m preserves all 17 accepted sets and adds only complete continuation papers [33m 376[2mms[22m[39m
+     [33m[2m✓[22m[39m keeps each accepted image byte-identical and all 2,975 choice reasons accessible [33m 504[2mms[22m[39m
+ [32m✓[39m __tests__/questions/radiology-latest-two.test.ts [2m([22m[2m3 tests[22m[2m)[22m[32m 105[2mms[22m[39m
+[90mstdout[2m | __tests__/security/grading-failure-cost.test.ts[2m > [22m[2mfailed grading still persists the whole unknown generation budget[2m > [22m[2mscoring records cost exactly once before returning an error
+[22m[39m[provider] model resolved tier=grading model=gemini-2.5-flash pricing=flash
+
+ [32m✓[39m __tests__/security/grading-failure-cost.test.ts [2m([22m[2m2 tests[22m[2m)[22m[33m 3581[2mms[22m[39m
+     [33m[2m✓[22m[39m scoring records cost exactly once before returning an error [33m 3350[2mms[22m[39m
+ [32m✓[39m __tests__/monitoring/sentry-sdk-import.test.ts [2m([22m[2m1 test[22m[2m)[22m[33m 3370[2mms[22m[39m
+   [33m[2m✓[22m[39m loads the actual patched Sentry SDK and existing instrumentation without starting a client [33m 3369[2mms[22m[39m
+ [32m✓[39m __tests__/seo/question-sequential-nav.test.ts [2m([22m[2m7 tests[22m[2m)[22m[33m 891[2mms[22m[39m
+     [33m[2m✓[22m[39m サンプル各回の prev/next は全て実在する問題ページへ解決する [33m 834[2mms[22m[39m
+ [32m✓[39m __tests__/native235-entrypoints.test.tsx [2m([22m[2m10 tests[22m[2m)[22m[33m 625[2mms[22m[39m
+ [32m✓[39m __tests__/automotive-release.test.ts [2m([22m[2m4 tests[22m[2m)[22m[33m 1377[2mms[22m[39m
+     [33m[2m✓[22m[39m connects all 11 separate qualifications through eager and lazy registries [33m 438[2mms[22m[39m
+     [33m[2m✓[22m[39m preserves accepted candidate bytes with matching receipt hashes and excludes unresolved originals [33m 536[2mms[22m[39m
+     [33m[2m✓[22m[39m matches each official answer and retains all four explanations and required image bytes [33m 324[2mms[22m[39m
+ [32m✓[39m __tests__/mobile/paper-history-restore.test.tsx [2m([22m[2m8 tests[22m[2m)[22m[33m 856[2mms[22m[39m
+ [32m✓[39m __tests__/native338-entrypoints.test.tsx [2m([22m[2m6 tests[22m[2m)[22m[33m 742[2mms[22m[39m
+ [32m✓[39m __tests__/components/QuizClient.year.test.tsx [2m([22m[2m14 tests[22m[2m)[22m[33m 1474[2mms[22m[39m
+     [33m[2m✓[22m[39m traverses all 120 originals without the previous cutoff at 80 [33m 1239[2mms[22m[39m
+ [32m✓[39m __tests__/maritime2-integration.test.ts [2m([22m[2m8 tests[22m[2m)[22m[33m 728[2mms[22m[39m
+     [33m[2m✓[22m[39m shows the exact free past-paper scope and190 originals at home [33m 341[2mms[22m[39m
+ [32m✓[39m __tests__/components/Chizai2.player.test.tsx [2m([22m[2m15 tests[22m[2m)[22m[33m 599[2mms[22m[39m
+ [32m✓[39m __tests__/native580-entrypoints.test.tsx [2m([22m[2m16 tests[22m[2m)[22m[33m 1898[2mms[22m[39m
+     [33m[2m✓[22m[39m riku-tech2: real topic headings and selected pools never fall back to AP [33m 353[2mms[22m[39m
+ [32m✓[39m __tests__/batch1-release.test.ts [2m([22m[2m1 test[22m[2m)[22m[33m 1019[2mms[22m[39m
+     [33m[2m✓[22m[39m matches sync, lazy, practice, URL and native paper coverage [33m 1017[2mms[22m[39m
+ [32m✓[39m __tests__/exam-question-player.test.tsx [2m([22m[2m16 tests[22m[2m)[22m[33m 631[2mms[22m[39m
+ [32m✓[39m __tests__/aviation68-integration.test.ts [2m([22m[2m9 tests[22m[2m)[22m[33m 721[2mms[22m[39m
+     [33m[2m✓[22m[39m registers exactly68 ready originals through eager/lazy/strict/home without changing the IPA-only list [33m 425[2mms[22m[39m
+ [32m✓[39m __tests__/seo/adk-collection-indexing.test.ts [2m([22m[2m2 tests[22m[2m)[22m[33m 873[2mms[22m[39m
+     [33m[2m✓[22m[39m keeps every category usable but advertises only collections of multiple explained questions [33m 863[2mms[22m[39m
+[90mstdout[2m | __tests__/api/simplified-grading-disclosure.test.ts[2m > [22m[2m/api/scoring — 簡易判定の開示[2m > [22m[2mAI 応答が解析できないと gradingMode:'simplified' を返し、ログに残す
+[22m[39m[provider] model resolved tier=grading model=gemini-2.5-flash pricing=flash
+
+[90mstdout[2m | __tests__/api/simplified-grading-disclosure.test.ts[2m > [22m[2m/api/scoring — 簡易判定の開示[2m > [22m[2mAI 応答が解析できないと gradingMode:'simplified' を返し、ログに残す
+[22m[39m[scoring] response received {
+  questionId: [32m'ap-2024h-pm-q1'[39m,
+  model: [32m'gemini-2.5-flash'[39m,
+  finishReason: [90mundefined[39m,
+  promptTokens: [90mundefined[39m,
+  outputTokens: [90mundefined[39m,
+  thoughtsTokens: [90mundefined[39m
+}
+
+[90mstderr[2m | __tests__/api/simplified-grading-disclosure.test.ts[2m > [22m[2m/api/scoring — 簡易判定の開示[2m > [22m[2mAI 応答が解析できないと gradingMode:'simplified' を返し、ログに残す
+[22m[39m[slack] notification unavailable
+
+[90mstdout[2m | __tests__/api/simplified-grading-disclosure.test.ts[2m > [22m[2m/api/scoring — 簡易判定の開示[2m > [22m[2mAI 採点が成立すれば gradingMode:'ai'
+[22m[39m[scoring] response received {
+  questionId: [32m'ap-2024h-pm-q1'[39m,
+  model: [32m'gemini-2.5-flash'[39m,
+  finishReason: [90mundefined[39m,
+  promptTokens: [90mundefined[39m,
+  outputTokens: [90mundefined[39m,
+  thoughtsTokens: [90mundefined[39m
+}
+
+[90mstdout[2m | __tests__/api/simplified-grading-disclosure.test.ts[2m > [22m[2m/api/essay-grade — 簡易判定の開示[2m > [22m[2mAI 応答が解析できないと gradingMode:'simplified' + X-Grading-Mode を返し、ログに残す
+[22m[39m[essay-grade] response received {
+  questionId: [32m'au-2024a-pm2-q1'[39m,
+  model: [32m'gemini-2.5-flash'[39m,
+  finishReason: [90mundefined[39m,
+  promptTokens: [90mundefined[39m,
+  outputTokens: [90mundefined[39m,
+  thoughtsTokens: [90mundefined[39m
+}
+
+[90mstderr[2m | __tests__/api/simplified-grading-disclosure.test.ts[2m > [22m[2m/api/essay-grade — 簡易判定の開示[2m > [22m[2mAI 応答が解析できないと gradingMode:'simplified' + X-Grading-Mode を返し、ログに残す
+[22m[39m[slack] notification unavailable
+
+[90mstdout[2m | __tests__/api/simplified-grading-disclosure.test.ts[2m > [22m[2m/api/essay-grade — 簡易判定の開示[2m > [22m[2mAI 採点が成立すれば gradingMode:'ai' + X-Grading-Mode:'ai'
+[22m[39m[essay-grade] response received {
+  questionId: [32m'au-2024a-pm2-q1'[39m,
+  model: [32m'gemini-2.5-flash'[39m,
+  finishReason: [90mundefined[39m,
+  promptTokens: [90mundefined[39m,
+  outputTokens: [90mundefined[39m,
+  thoughtsTokens: [90mundefined[39m
+}
+
+ [32m✓[39m __tests__/api/simplified-grading-disclosure.test.ts [2m([22m[2m7 tests[22m[2m)[22m[33m 621[2mms[22m[39m
+     [33m[2m✓[22m[39m AI 応答が解析できないと gradingMode:'simplified' を返し、ログに残す [33m 487[2mms[22m[39m
+ [32m✓[39m __tests__/seo/sitemap-render.test.ts [2m([22m[2m34 tests[22m[2m)[22m[33m 1018[2mms[22m[39m
+     [33m[2m✓[22m[39m partitions all indexable questions across chunks without loss or overlap [33m 305[2mms[22m[39m
+ [32m✓[39m __tests__/questions/soukan-two-rounds.test.ts [2m([22m[2m6 tests[22m[2m)[22m[32m 54[2mms[22m[39m
+ [32m✓[39m __tests__/sssc-shakai-seishin-official.test.ts [2m([22m[2m6 tests[22m[2m)[22m[32m 77[2mms[22m[39m
+ [32m✓[39m __tests__/aviation68-entrypoints.test.tsx [2m([22m[2m8 tests[22m[2m)[22m[33m 503[2mms[22m[39m
+ [32m✓[39m __tests__/questions/sagyo-ot13-routes.test.tsx [2m([22m[2m5 tests[22m[2m)[22m[33m 557[2mms[22m[39m
+ [32m✓[39m __tests__/seo/denken-year-archive-links.test.tsx [2m([22m[2m9 tests[22m[2m)[22m[33m 1001[2mms[22m[39m
+     [33m[2m✓[22m[39m denken3 links exactly its practice-ready years, with a return link [33m 554[2mms[22m[39m
+ [32m✓[39m __tests__/questions/kenchikushi1-staging.test.ts [2m([22m[2m11 tests[22m[2m)[22m[33m 656[2mms[22m[39m
+     [33m[2m✓[22m[39m publishes the approved projection and preserves staged originals [33m 514[2mms[22m[39m
+ [32m✓[39m __tests__/dentist-latest-two.test.ts [2m([22m[2m4 tests[22m[2m)[22m[33m 825[2mms[22m[39m
+     [33m[2m✓[22m[39m matches the original image ledger and verifies each public asset digest [33m 720[2mms[22m[39m
+ [32m✓[39m __tests__/pages/transparency-public-counts.test.tsx [2m([22m[2m2 tests[22m[2m)[22m[33m 828[2mms[22m[39m
+     [33m[2m✓[22m[39m renders the same published counts as the actual home page [33m 684[2mms[22m[39m
+ [32m✓[39m __tests__/seo/qualification-study-guide-relevance.test.tsx [2m([22m[2m8 tests[22m[2m)[22m[33m 786[2mms[22m[39m
+ [32m✓[39m __tests__/exam-library-archive-links.test.tsx [2m([22m[2m19 tests[22m[2m)[22m[33m 452[2mms[22m[39m
+ [32m✓[39m __tests__/native166-entrypoints.test.tsx [2m([22m[2m12 tests[22m[2m)[22m[33m 327[2mms[22m[39m
+ [32m✓[39m __tests__/seo/no-hardcoded-counts.test.ts [2m([22m[2m6 tests[22m[2m)[22m[33m 705[2mms[22m[39m
+     [33m[2m✓[22m[39m uses the SSOT instead of raw/stale count numbers in source [33m 700[2mms[22m[39m
+[90mstderr[2m | __tests__/auth/app-review.test.ts[2m > [22m[2mrestricted review credentials[2m > [22m[2muses the production Auth.js CSRF flow, issues a real session and revokes it on disable
+[22m[39m[31m[auth][error][0m MissingCSRF: CSRF token was missing during an action callback. Read more at https://errors.authjs.dev#missingcsrf
+    at validateCSRF (file:///C:/Users/kanet/20260522/wt-batch3/node_modules/@auth/core/lib/actions/callback/oauth/csrf-token.js:38:11)
+    at AuthInternal (file:///C:/Users/kanet/20260522/wt-batch3/node_modules/@auth/core/lib/index.js:55:21)
+    at Auth (file:///C:/Users/kanet/20260522/wt-batch3/node_modules/@auth/core/index.js:111:34)
+    at C:/Users/kanet/20260522/wt-batch3/__tests__/auth/app-review.test.ts:137:22
+    at file:///C:/Users/kanet/20260522/wt-batch3/node_modules/@vitest/runner/dist/chunk-artifact.js:1903:20
+
+ [32m✓[39m __tests__/auth/app-review.test.ts [2m([22m[2m17 tests[22m[2m)[22m[32m 189[2mms[22m[39m
+ [32m✓[39m __tests__/questions/dojo-osen-staging.test.ts [2m([22m[2m9 tests[22m[2m)[22m[33m 759[2mms[22m[39m
+     [33m[2m✓[22m[39m excludes the entire corpus and assets from public registries and navigation [33m 490[2mms[22m[39m
+ [32m✓[39m __tests__/questions/benrishi-staging.test.ts [2m([22m[2m14 tests[22m[2m)[22m[33m 550[2mms[22m[39m
+     [33m[2m✓[22m[39m INT7公開投影を接続し、原稿の非公開設定を保持する [33m 394[2mms[22m[39m
+ [32m✓[39m __tests__/seo/question-canonical.test.ts [2m([22m[2m6 tests[22m[2m)[22m[33m 625[2mms[22m[39m
+     [33m[2m✓[22m[39m lists every representative and no exact-duplicate alias in the sitemap pool [33m 604[2mms[22m[39m
+ [32m✓[39m __tests__/seo/qualification-coverage-copy.test.tsx [2m([22m[2m6 tests[22m[2m)[22m[33m 586[2mms[22m[39m
+     [33m[2m✓[22m[39m includes both restored table questions in the current exercise count [33m 571[2mms[22m[39m
+ [32m✓[39m __tests__/sssc-seishin27-official.test.ts [2m([22m[2m6 tests[22m[2m)[22m[32m 106[2mms[22m[39m
+ [32m✓[39m __tests__/components/ReviewClient.context.test.tsx [2m([22m[2m8 tests[22m[2m)[22m[33m 361[2mms[22m[39m
+ [32m✓[39m __tests__/components/HomeQualificationFinder.test.tsx [2m([22m[2m17 tests[22m[2m)[22m[33m 740[2mms[22m[39m
+ [32m✓[39m __tests__/chusho-secondary-latest-two.test.tsx [2m([22m[2m6 tests[22m[2m)[22m[33m 871[2mms[22m[39m
+     [33m[2m✓[22m[39m indexes all 42 paths and gives the native exam a working homepage link [33m 491[2mms[22m[39m
+     [33m[2m✓[22m[39m distinguishes editorial secondary examples from official answer material in the qualification directory [33m 316[2mms[22m[39m
+ [32m✓[39m __tests__/questions/kenchikushi2-staging.test.ts [2m([22m[2m11 tests[22m[2m)[22m[33m 572[2mms[22m[39m
+     [33m[2m✓[22m[39m keeps source manuscripts private and publishes both INT7 qualification projections [33m 450[2mms[22m[39m
+ [32m✓[39m __tests__/questions/kankoji1-staging.test.tsx [2m([22m[2m10 tests[22m[2m)[22m[33m 400[2mms[22m[39m
+ [32m✓[39m __tests__/batch2-release.test.ts [2m([22m[2m3 tests[22m[2m)[22m[33m 561[2mms[22m[39m
+     [33m[2m✓[22m[39m connects complete reviewed scopes through eager/lazy/search/home/sitemap and distinct routes [33m 509[2mms[22m[39m
+ [32m✓[39m __tests__/storage/history-store.test.ts [2m([22m[2m18 tests[22m[2m)[22m[33m 629[2mms[22m[39m
+     [33m[2m✓[22m[39m record は 2000 件上限で最古を捨てる（localStorage 無限増殖を防ぐ不変条件） [33m 623[2mms[22m[39m
+ [32m✓[39m __tests__/maritime2-data-contract.test.tsx [2m([22m[2m4 tests[22m[2m)[22m[33m 565[2mms[22m[39m
+[90mstdout[2m | __tests__/questions/dokugeki-chiba-staging.test.ts[2m > [22m[2mChiba poison/deleterious substances private staging[2m > [22m[2mkeeps all 12 source receipts and 228 lossless pages out of public/
+[22m[39mValidated 480 private dokugeki-chiba questions; 6 editions, 2400 choice explanations, 228 source pages. publicAllowed=false
+
+ [32m✓[39m __tests__/questions/dokugeki-chiba-staging.test.ts [2m([22m[2m11 tests[22m[2m)[22m[33m 334[2mms[22m[39m
+ [32m✓[39m __tests__/questions/sharoushi-ippan-statistics.test.ts [2m([22m[2m2 tests[22m[2m)[22m[32m 268[2mms[22m[39m
+ [32m✓[39m __tests__/questions/lq9-staging.test.ts [2m([22m[2m6 tests[22m[2m)[22m[32m 79[2mms[22m[39m
+ [32m✓[39m __tests__/denken3-native-originals.test.tsx [2m([22m[2m5 tests[22m[2m)[22m[33m 522[2mms[22m[39m
+     [33m[2m✓[22m[39m matches and decodes all official page images, and indexes only GO routes [33m 307[2mms[22m[39m
+[90mstdout[2m | __tests__/api/scoring-cost-guard.test.ts[2m > [22m[2m/api/scoring — コスト上限装置への配線[2m > [22m[2m月間上限に到達していると 503 cost_capped を返し、AI を一切呼ばない
+[22m[39m[provider] model resolved tier=grading model=gemini-2.5-pro pricing=pro
+
+[90mstdout[2m | __tests__/api/scoring-cost-guard.test.ts[2m > [22m[2m/api/scoring — コスト上限装置への配線[2m > [22m[2m上限未到達なら採点し、完了後に月間累計へ計上する
+[22m[39m[scoring] response received {
+  questionId: [32m'ap-2024h-pm-q1'[39m,
+  model: [32m'gemini-2.5-pro'[39m,
+  finishReason: [90mundefined[39m,
+  promptTokens: [90mundefined[39m,
+  outputTokens: [90mundefined[39m,
+  thoughtsTokens: [90mundefined[39m
+}
+
+ [32m✓[39m __tests__/api/scoring-cost-guard.test.ts [2m([22m[2m3 tests[22m[2m)[22m[33m 578[2mms[22m[39m
+     [33m[2m✓[22m[39m 月間上限に到達していると 503 cost_capped を返し、AI を一切呼ばない [33m 499[2mms[22m[39m
+ [32m✓[39m __tests__/questions/chizai2-learning-modes.test.tsx [2m([22m[2m8 tests[22m[2m)[22m[32m 225[2mms[22m[39m
+ [32m✓[39m __tests__/seo/topic-link-href.test.ts [2m([22m[2m3 tests[22m[2m)[22m[33m 304[2mms[22m[39m
+ [32m✓[39m __tests__/questions/kangoshi-am-q76-90.test.tsx [2m([22m[2m5 tests[22m[2m)[22m[33m 613[2mms[22m[39m
+     [33m[2m✓[22m[39m opens Q90 from its real year list as an unanswered quiz with the correct return target [33m 308[2mms[22m[39m
+ [32m✓[39m __tests__/components/lq5-study.test.tsx [2m([22m[2m4 tests[22m[2m)[22m[32m 299[2mms[22m[39m
+ [32m✓[39m __tests__/kisho-study.test.tsx [2m([22m[2m5 tests[22m[2m)[22m[33m 493[2mms[22m[39m
+[90mstderr[2m | __tests__/auth/apple-flow.test.ts[2m > [22m[2mcompletes Apple's real Auth.js form_post with a private relay email and keeps destination /account (wrong-state)
+[22m[39m[31m[auth][error][0m CallbackRouteError: Read more at https://errors.authjs.dev#callbackrouteerror
+[31m[auth][cause][0m: OperationProcessingError: unexpected "state" response parameter value
+    at OPE (file:///C:/Users/kanet/20260522/wt-batch3/node_modules/oauth4webapi/build/index.js:116:12)
+    at Module.validateAuthResponse (file:///C:/Users/kanet/20260522/wt-batch3/node_modules/oauth4webapi/build/index.js:2089:23)
+    at handleOAuth (file:///C:/Users/kanet/20260522/wt-batch3/node_modules/@auth/core/lib/actions/callback/oauth/callback.js:93:29)
+    at Module.callback (file:///C:/Users/kanet/20260522/wt-batch3/node_modules/@auth/core/lib/actions/callback/index.js:37:41)
+    at AuthInternal (file:///C:/Users/kanet/20260522/wt-batch3/node_modules/@auth/core/lib/index.js:56:24)
+    at Auth (file:///C:/Users/kanet/20260522/wt-batch3/node_modules/@auth/core/index.js:111:34)
+    at C:/Users/kanet/20260522/wt-batch3/__tests__/auth/apple-flow.test.ts:64:23
+    at file:///C:/Users/kanet/20260522/wt-batch3/node_modules/@vitest/runner/dist/chunk-artifact.js:1903:20
+[31m[auth][details][0m: {
+  "expected": "eyJhbGciOiJkaXIiLCJlbmMiOiJBMjU2Q0JDLUhTNTEyIiwia2lkIjoicHVmVGtGSUk4cXUyMXFFa2tBWnVDdkIyOC12X1NYd0lxZ2UybWhRdmdqZDdqMEFKVzNMV3RRdXVjRGNoaDMzSzZENUt4a2M2ZllXcDdmcW1ORGduY0EifQ..DxNAfyPpIEanFJ3Hq_vi5A.PumQV5mfmKYjRZRd51WZIeWCrw81li914_bRbXRMcIdUhGf8YIcot8GbixAJcrlJEVIGq53TIJkRCNYw-xOTsIZm8jAdSh6w7qPN12y7ny0KVRUJF2MmLVUPRH_zDVFxnZRrAPnDGbJp9SY-rwKOhPgUnnUu49GPaeR80NB0R7mMzxIaHt5rNsu8CN-ezqJS.7B_uRMzEJJmHuC06QT_AK3vejyQCoP5N4hrA9O0jbTA",
+  "parameters": {},
+  "provider": "apple"
+}
+
+[90mstderr[2m | __tests__/auth/apple-flow.test.ts[2m > [22m[2mcompletes Apple's real Auth.js form_post with a private relay email and keeps destination /account (wrong-nonce)
+[22m[39m[31m[auth][error][0m CallbackRouteError: Read more at https://errors.authjs.dev#callbackrouteerror
+[31m[auth][cause][0m: OperationProcessingError: unexpected ID Token "nonce" claim value
+    at OPE (file:///C:/Users/kanet/20260522/wt-batch3/node_modules/oauth4webapi/build/index.js:116:12)
+    at processAuthorizationCodeOpenIDResponse (file:///C:/Users/kanet/20260522/wt-batch3/node_modules/oauth4webapi/build/index.js:1439:15)
+    at handleOAuth (file:///C:/Users/kanet/20260522/wt-batch3/node_modules/@auth/core/lib/actions/callback/oauth/callback.js:162:35)
+    at Module.callback (file:///C:/Users/kanet/20260522/wt-batch3/node_modules/@auth/core/lib/actions/callback/index.js:37:41)
+    at AuthInternal (file:///C:/Users/kanet/20260522/wt-batch3/node_modules/@auth/core/lib/index.js:56:24)
+    at Auth (file:///C:/Users/kanet/20260522/wt-batch3/node_modules/@auth/core/index.js:111:34)
+    at C:/Users/kanet/20260522/wt-batch3/__tests__/auth/apple-flow.test.ts:64:23
+    at file:///C:/Users/kanet/20260522/wt-batch3/node_modules/@vitest/runner/dist/chunk-artifact.js:1903:20
+[31m[auth][details][0m: {
+  "expected": "daFmIfegr7F6a9FdYjkLtE9Gvsj6Ztyh4u8VqpxEECU",
+  "claims": {
+    "iss": "https://appleid.apple.com",
+    "aud": "synthetic.services.id",
+    "sub": "synthetic-apple-subject",
+    "nonce": "invalid-nonce",
+    "email": "private-user@privaterelay.appleid.com",
+    "email_verified": true,
+    "iat": 1793833486,
+    "exp": 1793833786
+  },
+  "claim": "nonce",
+  "provider": "apple"
+}
+
+[90mstderr[2m | __tests__/auth/apple-flow.test.ts[2m > [22m[2mcompletes Apple's real Auth.js form_post with a private relay email and keeps destination /account (email-collision)
+[22m[39m[31m[auth][error][0m OAuthAccountNotLinked: Another account already exists with the same e-mail address. Read more at https://errors.authjs.dev#oauthaccountnotlinked
+    at handleLoginOrRegister (file:///C:/Users/kanet/20260522/wt-batch3/node_modules/@auth/core/lib/actions/callback/handle-login.js:250:23)
+    at Module.callback (file:///C:/Users/kanet/20260522/wt-batch3/node_modules/@auth/core/lib/actions/callback/index.js:70:50)
+    at AuthInternal (file:///C:/Users/kanet/20260522/wt-batch3/node_modules/@auth/core/lib/index.js:56:24)
+    at Auth (file:///C:/Users/kanet/20260522/wt-batch3/node_modules/@auth/core/index.js:111:34)
+    at C:/Users/kanet/20260522/wt-batch3/__tests__/auth/apple-flow.test.ts:64:23
+    at file:///C:/Users/kanet/20260522/wt-batch3/node_modules/@vitest/runner/dist/chunk-artifact.js:1903:20
+
+ [32m✓[39m __tests__/auth/apple-flow.test.ts [2m([22m[2m6 tests[22m[2m)[22m[33m 362[2mms[22m[39m
+ [32m✓[39m __tests__/seo/year-common-title.test.ts [2m([22m[2m2 tests[22m[2m)[22m[33m 398[2mms[22m[39m
+     [33m[2m✓[22m[39m distinguishes each exam context without claiming specialist questions [33m 392[2mms[22m[39m
+ [32m✓[39m __tests__/questions/qkensetsu-public.test.ts [2m([22m[2m3 tests[22m[2m)[22m[33m 385[2mms[22m[39m
+     [33m[2m✓[22m[39m serves the same 209 originals through eager/lazy loaders and public counts [33m 375[2mms[22m[39m
+ [32m✓[39m __tests__/questions/junkango-kansai-staging.test.ts [2m([22m[2m13 tests[22m[2m)[22m[32m 147[2mms[22m[39m
+ [32m✓[39m __tests__/questions/kukaku-seiri-staging.test.ts [2m([22m[2m12 tests[22m[2m)[22m[32m 294[2mms[22m[39m
+ [32m✓[39m __tests__/questions/official-2025-spring-corrections.test.ts [2m([22m[2m6 tests[22m[2m)[22m[33m 443[2mms[22m[39m
+ [32m✓[39m __tests__/questions/st-q23-note-entry.test.tsx [2m([22m[2m4 tests[22m[2m)[22m[33m 601[2mms[22m[39m
+ [32m✓[39m __tests__/questions/medical44-prepublication.test.ts [2m([22m[2m5 tests[22m[2m)[22m[32m 193[2mms[22m[39m
+ [32m✓[39m __tests__/lib/practice-session.test.ts [2m([22m[2m29 tests[22m[2m)[22m[33m 413[2mms[22m[39m
+     [33m[2m✓[22m[39m every exam index, question ID and named source PDF agrees with the stored session [33m 340[2mms[22m[39m
+ [32m✓[39m __tests__/questions/shino-saved-go34-route.test.tsx [2m([22m[2m2 tests[22m[2m)[22m[33m 415[2mms[22m[39m
+ [32m✓[39m __tests__/denken2-secondary-originals.test.tsx [2m([22m[2m6 tests[22m[2m)[22m[33m 444[2mms[22m[39m
+ [32m✓[39m __tests__/merge-consultant-choice-drafts.test.ts [2m([22m[2m7 tests[22m[2m)[22m[33m 358[2mms[22m[39m
+ [32m✓[39m __tests__/components/MockExamLanding.context.test.tsx [2m([22m[2m25 tests[22m[2m)[22m[32m 276[2mms[22m[39m
+ [32m✓[39m __tests__/components/QuizPlayer.completion.test.tsx [2m([22m[2m3 tests[22m[2m)[22m[33m 334[2mms[22m[39m
+ [32m✓[39m __tests__/dentist-integration.test.ts [2m([22m[2m3 tests[22m[2m)[22m[33m 327[2mms[22m[39m
+     [33m[2m✓[22m[39m advertises the same complete count and retains both dentist and main's new paper sessions [33m 302[2mms[22m[39m
+ [32m✓[39m __tests__/questions/kangoshi-pm115-q1-50.test.tsx [2m([22m[2m4 tests[22m[2m)[22m[32m 138[2mms[22m[39m
+ [32m✓[39m __tests__/sync/sync-ui.test.tsx [2m([22m[2m9 tests[22m[2m)[22m[33m 437[2mms[22m[39m
+ [32m✓[39m __tests__/billing/FeedbackUnlock.test.tsx [2m([22m[2m9 tests[22m[2m)[22m[33m 318[2mms[22m[39m
+ [32m✓[39m __tests__/questions/nurse-sharo-next-bundle.test.ts [2m([22m[2m2 tests[22m[2m)[22m[32m 18[2mms[22m[39m
+ [32m✓[39m __tests__/questions/khk-kagaku-staging.test.ts [2m([22m[2m14 tests[22m[2m)[22m[32m 253[2mms[22m[39m
+ [32m✓[39m __tests__/exam-library-integration.test.ts [2m([22m[2m5 tests[22m[2m)[22m[32m 299[2mms[22m[39m
+ [32m✓[39m __tests__/exam-library-presentation.test.ts [2m([22m[2m6 tests[22m[2m)[22m[32m 231[2mms[22m[39m
+ [32m✓[39m __tests__/fp1-2026-may-addition.test.ts [2m([22m[2m6 tests[22m[2m)[22m[32m 129[2mms[22m[39m
+ [32m✓[39m __tests__/denken1-native-originals.test.tsx [2m([22m[2m5 tests[22m[2m)[22m[32m 228[2mms[22m[39m
+ [32m✓[39m __tests__/components/QuizPlayer.numeric.test.tsx [2m([22m[2m5 tests[22m[2m)[22m[33m 350[2mms[22m[39m
+ [32m✓[39m __tests__/questions/sokuryoshi-staging.test.ts [2m([22m[2m6 tests[22m[2m)[22m[32m 148[2mms[22m[39m
+ [32m✓[39m __tests__/questions/kangoshi114-next57.test.tsx [2m([22m[2m3 tests[22m[2m)[22m[32m 273[2mms[22m[39m
+ [32m✓[39m __tests__/questions/denko1-publication.test.ts [2m([22m[2m108 tests[22m[2m)[22m[32m 97[2mms[22m[39m
+ [32m✓[39m __tests__/components/SupportDelivery.test.tsx [2m([22m[2m5 tests[22m[2m)[22m[32m 199[2mms[22m[39m
+ [32m✓[39m __tests__/questions/lab-rad-saved-batch1.test.tsx [2m([22m[2m6 tests[22m[2m)[22m[33m 349[2mms[22m[39m
+ [32m✓[39m __tests__/components/StreakTracker.test.tsx [2m([22m[2m2 tests[22m[2m)[22m[32m 18[2mms[22m[39m
+[90mstderr[2m | __tests__/components/SiteHeader.qualification-context.test.tsx[2m > [22m[2mSiteHeader qualification context[2m > [22m[2mkeeps fp3 in desktop and mobile learning links and omits unsupported modes
+[22m[39mWarning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+
+[90mstderr[2m | __tests__/components/SiteHeader.qualification-context.test.tsx[2m > [22m[2mSiteHeader qualification context[2m > [22m[2mkeeps shika-ishi in desktop and mobile learning links and omits unsupported modes
+[22m[39mWarning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+
+[90mstderr[2m | __tests__/components/SiteHeader.qualification-context.test.tsx[2m > [22m[2mSiteHeader qualification context[2m > [22m[2mkeeps chosashi in desktop and mobile learning links and omits unsupported modes
+[22m[39mWarning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+
+ [32m✓[39m __tests__/components/SiteHeader.qualification-context.test.tsx [2m([22m[2m5 tests[22m[2m)[22m[32m 244[2mms[22m[39m
+ [32m✓[39m __tests__/components/TotalAnswerCounter.zero.test.tsx [2m([22m[2m10 tests[22m[2m)[22m[33m 330[2mms[22m[39m
+ [32m✓[39m __tests__/questions/medical-question-labels.test.tsx [2m([22m[2m5 tests[22m[2m)[22m[32m 281[2mms[22m[39m
+ [32m✓[39m __tests__/mobile/asset-inventory.test.ts [2m([22m[2m3 tests[22m[2m)[22m[33m 6572[2mms[22m[39m
+   [33m[2m✓[22m[39m covers image references independently read from every paper renderer input and answer registry [33m 662[2mms[22m[39m
+   [33m[2m✓[22m[39m covers each non-paper renderer's own image and required-PDF input fields [33m 5898[2mms[22m[39m
+ [32m✓[39m __tests__/questions/live-qualification-coverage.test.ts [2m([22m[2m7 tests[22m[2m)[22m[32m 119[2mms[22m[39m
+ [32m✓[39m __tests__/components/OrderingAnswer.test.tsx [2m([22m[2m4 tests[22m[2m)[22m[32m 195[2mms[22m[39m
+ [32m✓[39m __tests__/denken2-native-originals.test.tsx [2m([22m[2m4 tests[22m[2m)[22m[32m 294[2mms[22m[39m
+ [32m✓[39m __tests__/components/QuizPlayer.detailLink.test.tsx [2m([22m[2m4 tests[22m[2m)[22m[32m 288[2mms[22m[39m
+ [32m✓[39m __tests__/native338-integration.test.ts [2m([22m[2m7 tests[22m[2m)[22m[32m 111[2mms[22m[39m
+ [32m✓[39m __tests__/components/QuestionAnswerCard.test.tsx [2m([22m[2m17 tests[22m[2m)[22m[32m 213[2mms[22m[39m
+ [32m✓[39m __tests__/kisho-private-reader.test.tsx [2m([22m[2m7 tests[22m[2m)[22m[32m 264[2mms[22m[39m
+ [32m✓[39m __tests__/questions/qualification-expansion.test.ts [2m([22m[2m1066 tests[22m[2m)[22m[32m 122[2mms[22m[39m
+ [32m✓[39m __tests__/validate-safety-exams-explanations.test.ts [2m([22m[2m4 tests[22m[2m)[22m[32m 218[2mms[22m[39m
+ [32m✓[39m __tests__/navigation/no-dead-internal-links.test.ts [2m([22m[2m6 tests[22m[2m)[22m[32m 172[2mms[22m[39m
+ [32m✓[39m __tests__/questions/kangoshi-am49-next.test.tsx [2m([22m[2m4 tests[22m[2m)[22m[32m 175[2mms[22m[39m
+ [32m✓[39m __tests__/components/QuizPlayer.keyboard.test.tsx [2m([22m[2m8 tests[22m[2m)[22m[32m 258[2mms[22m[39m
+ [32m✓[39m __tests__/sync/history-ownership.test.ts [2m([22m[2m13 tests[22m[2m)[22m[33m 304[2mms[22m[39m
+ [32m✓[39m __tests__/fp1-applied-q61-q65.test.tsx [2m([22m[2m8 tests[22m[2m)[22m[32m 102[2mms[22m[39m
+ [32m✓[39m __tests__/api/study-presence.test.ts [2m([22m[2m25 tests[22m[2m)[22m[32m 142[2mms[22m[39m
+ [32m✓[39m __tests__/questions/riku-tech2-mc-consumer-regression.test.tsx [2m([22m[2m5 tests[22m[2m)[22m[33m 343[2mms[22m[39m
+[90mstdout[2m | __tests__/billing/coverage.test.ts[2m > [22m[2mexisting real content (not generated)[2m > [22m[2maudits ap actual annual pools and per-choice coverage
+[22m[39m{"base":"0a79ccec11f30e0e8cbcea3e7bc660649101fdce","exam":"ap","ready":2354,"allChoiceReasons":0,"sessions":["am"],"years":[2009,2010,2011,2012,2013,2014,2015,2016,2017,2018,2019,2020,2021,2022,2023,2024,2025],"bySession":[{"session":"am","ready":2354,"allChoiceReasons":0}],"example":null}
+
+[90mstdout[2m | __tests__/billing/coverage.test.ts[2m > [22m[2mexisting real content (not generated)[2m > [22m[2maudits st actual annual pools and per-choice coverage
+[22m[39m{"base":"0a79ccec11f30e0e8cbcea3e7bc660649101fdce","exam":"st","ready":817,"allChoiceReasons":459,"sessions":["am1","am2"],"years":[2009,2010,2011,2012,2013,2014,2015,2016,2017,2018,2019,2021,2022,2023,2024,2025],"bySession":[{"session":"am1","ready":418,"allChoiceReasons":60},{"session":"am2","ready":399,"allChoiceReasons":399}],"example":"st-2009a-am2-q1"}
+
+[90mstdout[2m | __tests__/billing/coverage.test.ts[2m > [22m[2mexisting real content (not generated)[2m > [22m[2maudits fp2 actual annual pools and per-choice coverage
+[22m[39m{"base":"0a79ccec11f30e0e8cbcea3e7bc660649101fdce","exam":"fp2","ready":300,"allChoiceReasons":300,"sessions":["gakka"],"years":[2024,2025,2026],"bySession":[{"session":"gakka","ready":300,"allChoiceReasons":300}],"example":"fp2-2026-published-gakka-q1"}
+
+ [32m✓[39m __tests__/billing/coverage.test.ts [2m([22m[2m4 tests[22m[2m)[22m[32m 219[2mms[22m[39m
+ [32m✓[39m __tests__/seo/referral-landing.test.tsx [2m([22m[2m4 tests[22m[2m)[22m[32m 206[2mms[22m[39m
+ [32m✓[39m __tests__/questions/energy-kanri-staging.test.ts [2m([22m[2m17 tests[22m[2m)[22m[32m 108[2mms[22m[39m
+ [32m✓[39m __tests__/seo/topics-no-needsreview.test.ts [2m([22m[2m2 tests[22m[2m)[22m[32m 120[2mms[22m[39m
+ [32m✓[39m __tests__/components/tsushin2-study.test.tsx [2m([22m[2m3 tests[22m[2m)[22m[32m 250[2mms[22m[39m
+ [32m✓[39m __tests__/seo/streak-og-image.test.tsx [2m([22m[2m4 tests[22m[2m)[22m[33m 306[2mms[22m[39m
+ [32m✓[39m __tests__/components/QuizPlayer.decimal.test.tsx [2m([22m[2m3 tests[22m[2m)[22m[32m 237[2mms[22m[39m
+ [32m✓[39m __tests__/components/StudyRoom-stages.test.tsx [2m([22m[2m11 tests[22m[2m)[22m[32m 251[2mms[22m[39m
+ [32m✓[39m __tests__/questions/kisho-learning-modes.test.tsx [2m([22m[2m3 tests[22m[2m)[22m[33m 348[2mms[22m[39m
+     [33m[2m✓[22m[39m retains all 60 academic originals through year and topic links [33m 331[2mms[22m[39m
+ [32m✓[39m __tests__/questions/pdl-public-connected.test.tsx [2m([22m[2m11 tests[22m[2m)[22m[32m 84[2mms[22m[39m
+ [32m✓[39m __tests__/pwa/mobile-install.test.tsx [2m([22m[2m19 tests[22m[2m)[22m[32m 189[2mms[22m[39m
+ [32m✓[39m __tests__/seo/tsugino-crosslinks.test.ts [2m([22m[2m1 test[22m[2m)[22m[32m 143[2mms[22m[39m
+ [32m✓[39m __tests__/mobile/qualification-actions.test.tsx [2m([22m[2m6 tests[22m[2m)[22m[32m 193[2mms[22m[39m
+ [32m✓[39m __tests__/billing/guest-client.test.ts [2m([22m[2m8 tests[22m[2m)[22m[32m 216[2mms[22m[39m
+ [32m✓[39m __tests__/lib/home-directory.test.ts [2m([22m[2m11 tests[22m[2m)[22m[32m 150[2mms[22m[39m
+ [32m✓[39m __tests__/fp1-applied-q54-q60.test.tsx [2m([22m[2m9 tests[22m[2m)[22m[32m 98[2mms[22m[39m
+ [32m✓[39m __tests__/survey-assistant-integration.test.tsx [2m([22m[2m3 tests[22m[2m)[22m[32m 204[2mms[22m[39m
+ [32m✓[39m __tests__/study-reward-quiz.test.tsx [2m([22m[2m3 tests[22m[2m)[22m[32m 266[2mms[22m[39m
+[90mstderr[2m | __tests__/components/MetricsDashboard.test.tsx[2m > [22m[2mMetricsDashboard — カスタム期間 date input のアクセシブルネーム[2m > [22m[2m集計開始日 input がラベルで参照でき、date input である
+[22m[39mThe width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+
+[90mstderr[2m | __tests__/components/MetricsDashboard.test.tsx[2m > [22m[2mMetricsDashboard — カスタム期間 date input のアクセシブルネーム[2m > [22m[2m集計終了日 input がラベルで参照でき、date input である
+[22m[39mThe width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+
+[90mstderr[2m | __tests__/components/MetricsDashboard.test.tsx[2m > [22m[2mMetricsDashboard — 日次推移チャートの代替テキスト[2m > [22m[2m日次推移チャートが role=img と説明ラベルを持つ
+[22m[39mThe width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+
+ [32m✓[39m __tests__/components/MetricsDashboard.test.tsx [2m([22m[2m3 tests[22m[2m)[22m[32m 223[2mms[22m[39m
+ [32m✓[39m __tests__/questions/khk-kagaku-registration.test.ts [2m([22m[2m5 tests[22m[2m)[22m[32m 247[2mms[22m[39m
+ [32m✓[39m __tests__/api/study-presence.integration.test.ts [2m([22m[2m2 tests[22m[2m)[22m[32m 105[2mms[22m[39m
+ [32m✓[39m __tests__/pe-first-lq3d.test.tsx [2m([22m[2m1 test[22m[2m)[22m[32m 208[2mms[22m[39m
+[90mstdout[2m | __tests__/api/contact.test.ts[2m > [22m[2mPOST /api/contact[2m > [22m[2maccepts a question-rating and forwards it to Slack
+[22m[39m{"tag":"kakomon-ai:inbound","kind":"question-rating","receivedAt":"2026-11-04T23:06:07.600Z","ipHash":"ip-gr87p2"}
+
+[90mstdout[2m | __tests__/api/contact.test.ts[2m > [22m[2mPOST /api/contact[2m > [22m[2mforwards a feedback submission to Slack
+[22m[39m{"tag":"kakomon-ai:inbound","kind":"feedback","receivedAt":"2026-11-04T23:06:07.611Z","ipHash":"ip-gr87p2"}
+
+[90mstderr[2m | __tests__/api/contact.test.ts[2m > [22m[2mPOST /api/contact[2m > [22m[2mforwards a feedback submission to Slack
+[22m[39m[feedback-token] AUTH_SECRET が未設定のため無料枠解除トークンを発行できません
+
+ [32m✓[39m __tests__/api/contact.test.ts [2m([22m[2m4 tests[22m[2m)[22m[32m 155[2mms[22m[39m
+ [32m✓[39m __tests__/questions/gyosei-latest2.test.tsx [2m([22m[2m7 tests[22m[2m)[22m[32m 151[2mms[22m[39m
+ [32m✓[39m __tests__/billing/referral-checkout.test.tsx [2m([22m[2m7 tests[22m[2m)[22m[32m 210[2mms[22m[39m
+ [32m✓[39m __tests__/components/ReviewClient.history.test.tsx [2m([22m[2m6 tests[22m[2m)[22m[32m 236[2mms[22m[39m
+ [32m✓[39m __tests__/components/EssayEditor.test.tsx [2m([22m[2m7 tests[22m[2m)[22m[32m 199[2mms[22m[39m
+ [32m✓[39m __tests__/components/AfternoonPlayer.test.tsx [2m([22m[2m7 tests[22m[2m)[22m[32m 161[2mms[22m[39m
+ [32m✓[39m __tests__/exam-library/subject-note-hub-integration.test.tsx [2m([22m[2m2 tests[22m[2m)[22m[32m 164[2mms[22m[39m
+ [32m✓[39m __tests__/questions/sharoushi-kokunen-late6.test.ts [2m([22m[2m4 tests[22m[2m)[22m[32m 172[2mms[22m[39m
+ [32m✓[39m __tests__/questions/kashikin-two-rounds.test.ts [2m([22m[2m6 tests[22m[2m)[22m[32m 45[2mms[22m[39m
+ [32m✓[39m __tests__/components/HistorySyncPanel-transitions.test.tsx [2m([22m[2m4 tests[22m[2m)[22m[32m 227[2mms[22m[39m
+ [32m✓[39m __tests__/questions/sharoushi-post668-ready24.test.ts [2m([22m[2m2 tests[22m[2m)[22m[32m 228[2mms[22m[39m
+ [32m✓[39m __tests__/components/TwoChoiceSelection.test.tsx [2m([22m[2m5 tests[22m[2m)[22m[32m 172[2mms[22m[39m
+ [32m✓[39m __tests__/components/QuizPlayer.descriptive.test.tsx [2m([22m[2m10 tests[22m[2m)[22m[32m 221[2mms[22m[39m
+ [32m✓[39m __tests__/validate-government-source-links.test.ts [2m([22m[2m2 tests[22m[2m)[22m[32m 157[2mms[22m[39m
+ [32m✓[39m __tests__/questions/sharoushi-six-release.test.ts [2m([22m[2m3 tests[22m[2m)[22m[32m 225[2mms[22m[39m
+ [32m✓[39m __tests__/questions/jken-system-latest-two.test.ts [2m([22m[2m5 tests[22m[2m)[22m[32m 125[2mms[22m[39m
+ [32m✓[39m __tests__/questions/qkensetsu-player.test.tsx [2m([22m[2m4 tests[22m[2m)[22m[32m 145[2mms[22m[39m
+ [32m✓[39m __tests__/billing/routes.test.ts [2m([22m[2m6 tests[22m[2m)[22m[32m 216[2mms[22m[39m
+ [32m✓[39m __tests__/rate-limit/ip-rate-limit.test.ts [2m([22m[2m18 tests[22m[2m)[22m[32m 31[2mms[22m[39m
+ [32m✓[39m __tests__/billing/monthly-unknown-tax.test.ts [2m([22m[2m37 tests[22m[2m)[22m[32m 96[2mms[22m[39m
+ [32m✓[39m __tests__/components/AcceptedSelectionCount.test.tsx [2m([22m[2m3 tests[22m[2m)[22m[32m 117[2mms[22m[39m
+ [32m✓[39m __tests__/components/MockScoreHistory.test.tsx [2m([22m[2m2 tests[22m[2m)[22m[32m 98[2mms[22m[39m
+ [32m✓[39m __tests__/questions/kisho-two-rounds.test.ts [2m([22m[2m4 tests[22m[2m)[22m[32m 134[2mms[22m[39m
+ [32m✓[39m __tests__/components/DashboardStudyPlan.test.tsx [2m([22m[2m2 tests[22m[2m)[22m[32m 62[2mms[22m[39m
+ [32m✓[39m __tests__/billing/monthly-no-tax.test.ts [2m([22m[2m56 tests[22m[2m)[22m[32m 120[2mms[22m[39m
+ [32m✓[39m __tests__/exam-catalog-browser.test.tsx [2m([22m[2m2 tests[22m[2m)[22m[32m 108[2mms[22m[39m
+ [32m✓[39m __tests__/exam-library-choice-fallback.test.ts [2m([22m[2m2 tests[22m[2m)[22m[32m 156[2mms[22m[39m
+ [32m✓[39m __tests__/billing/feedback-purchase.test.tsx [2m([22m[2m6 tests[22m[2m)[22m[32m 179[2mms[22m[39m
+ [32m✓[39m __tests__/fp1-applied-extension.test.tsx [2m([22m[2m12 tests[22m[2m)[22m[32m 75[2mms[22m[39m
+ [32m✓[39m __tests__/pages/public-explanation-followup.test.tsx [2m([22m[2m5 tests[22m[2m)[22m[32m 101[2mms[22m[39m
+ [32m✓[39m __tests__/sharoushi-sentaku.test.tsx [2m([22m[2m10 tests[22m[2m)[22m[32m 259[2mms[22m[39m
+ [32m✓[39m __tests__/components/MockExamRunner.progress.test.tsx [2m([22m[2m4 tests[22m[2m)[22m[32m 131[2mms[22m[39m
+[90mstderr[2m | __tests__/api/grading-fallback-alert.test.ts[2m > [22m[2mnotifyOpsOnce — 異常は届き、鳴りすぎない[2m > [22m[2mSlack 送信が失敗しても throw しない（通知の都合で採点を壊さない）
+[22m[39m[slack] send failed
+
+ [32m✓[39m __tests__/api/grading-fallback-alert.test.ts [2m([22m[2m9 tests[22m[2m)[22m[32m 74[2mms[22m[39m
+ [32m✓[39m __tests__/data/blog-worked-examples.test.ts [2m([22m[2m3 tests[22m[2m)[22m[32m 181[2mms[22m[39m
+ [32m✓[39m __tests__/questions/kenki-staging.test.ts [2m([22m[2m6 tests[22m[2m)[22m[32m 44[2mms[22m[39m
+ [32m✓[39m __tests__/billing/monthly-refund-candidate.test.ts [2m([22m[2m39 tests[22m[2m)[22m[32m 66[2mms[22m[39m
+ [32m✓[39m __tests__/questions/judo-seifukushi-latest-two.test.ts [2m([22m[2m8 tests[22m[2m)[22m[32m 94[2mms[22m[39m
+ [32m✓[39m __tests__/billing/QuizClient.test.tsx [2m([22m[2m5 tests[22m[2m)[22m[32m 156[2mms[22m[39m
+ [32m✓[39m __tests__/denko2-latest-two.test.ts [2m([22m[2m8 tests[22m[2m)[22m[32m 106[2mms[22m[39m
+ [32m✓[39m __tests__/components/StudyPlan.unified.test.tsx [2m([22m[2m2 tests[22m[2m)[22m[32m 114[2mms[22m[39m
+ [32m✓[39m __tests__/study-reward-player.test.tsx [2m([22m[2m3 tests[22m[2m)[22m[32m 116[2mms[22m[39m
+ [32m✓[39m __tests__/components/khk-descriptive-self-assessment.test.tsx [2m([22m[2m1 test[22m[2m)[22m[32m 79[2mms[22m[39m
+ [32m✓[39m __tests__/components/ExplanationCard.navigation.test.tsx [2m([22m[2m9 tests[22m[2m)[22m[32m 95[2mms[22m[39m
+ [32m✓[39m __tests__/components/TTSButton.lifecycle.test.tsx [2m([22m[2m9 tests[22m[2m)[22m[32m 117[2mms[22m[39m
+ [32m✓[39m __tests__/navigation/footer-bottomnav-links-resolve.test.ts [2m([22m[2m6 tests[22m[2m)[22m[32m 29[2mms[22m[39m
+[90mstderr[2m | __tests__/components/SessionSummaryDialog.test.tsx[2m > [22m[2mSessionSummaryDialog — シェア開閉ボタンの aria-expanded[2m > [22m[2m初期は aria-expanded='false'、クリックで 'true' に同期する
+[22m[39mWarning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+
+[90mstderr[2m | __tests__/components/SessionSummaryDialog.test.tsx[2m > [22m[2mSessionSummaryDialog — ダイアログのアクセシブルネーム[2m > [22m[2mrole='dialog' が見出しテキストでアクセシブルネームを持つ
+[22m[39mWarning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+
+ [32m✓[39m __tests__/components/SessionSummaryDialog.test.tsx [2m([22m[2m2 tests[22m[2m)[22m[32m 94[2mms[22m[39m
+ [32m✓[39m __tests__/components/qualification-content-context.test.tsx [2m([22m[2m6 tests[22m[2m)[22m[32m 55[2mms[22m[39m
+ [32m✓[39m __tests__/mobile/disabled-web-db.test.ts [2m([22m[2m1 test[22m[2m)[22m[32m 76[2mms[22m[39m
+ [32m✓[39m __tests__/mobile/subscription-management.test.tsx [2m([22m[2m3 tests[22m[2m)[22m[32m 100[2mms[22m[39m
+ [32m✓[39m __tests__/components/HomePracticeEntry.test.tsx [2m([22m[2m1 test[22m[2m)[22m[32m 63[2mms[22m[39m
+ [32m✓[39m __tests__/components/CopilotDesktopFloating.focus.test.tsx [2m([22m[2m4 tests[22m[2m)[22m[32m 111[2mms[22m[39m
+ [32m✓[39m __tests__/seo/topics-static-params.test.ts [2m([22m[2m2 tests[22m[2m)[22m[32m 118[2mms[22m[39m
+ [32m✓[39m __tests__/billing/monthly-unallocated-refund.test.ts [2m([22m[2m20 tests[22m[2m)[22m[32m 86[2mms[22m[39m
+ [32m✓[39m __tests__/components/HistorySyncPanel.test.tsx [2m([22m[2m3 tests[22m[2m)[22m[32m 158[2mms[22m[39m
+ [32m✓[39m __tests__/rate-limit/server-concurrency.test.ts [2m([22m[2m11 tests[22m[2m)[22m[32m 122[2mms[22m[39m
+ [32m✓[39m __tests__/components/QuizClient.continuity.test.tsx [2m([22m[2m3 tests[22m[2m)[22m[32m 129[2mms[22m[39m
+ [32m✓[39m __tests__/components/NumericAnswerInput.precision.test.tsx [2m([22m[2m3 tests[22m[2m)[22m[32m 80[2mms[22m[39m
+ [32m✓[39m __tests__/questions/khk-kikai-staging.test.ts [2m([22m[2m9 tests[22m[2m)[22m[32m 65[2mms[22m[39m
+ [32m✓[39m __tests__/components/StreamQuizPlayer.keyboard.test.tsx [2m([22m[2m8 tests[22m[2m)[22m[32m 116[2mms[22m[39m
+ [32m✓[39m __tests__/components/QuestionAnswerCard.numeric.test.tsx [2m([22m[2m5 tests[22m[2m)[22m[32m 111[2mms[22m[39m
+ [32m✓[39m __tests__/jken-katsuyo.test.ts [2m([22m[2m10 tests[22m[2m)[22m[32m 42[2mms[22m[39m
+ [32m✓[39m __tests__/fp1-applied-q52.test.tsx [2m([22m[2m3 tests[22m[2m)[22m[32m 60[2mms[22m[39m
+ [32m✓[39m __tests__/components/FeedbackGateModal.test.tsx [2m([22m[2m2 tests[22m[2m)[22m[32m 106[2mms[22m[39m
+ [32m✓[39m __tests__/components/StudyRoom.test.tsx [2m([22m[2m5 tests[22m[2m)[22m[32m 135[2mms[22m[39m
+ [32m✓[39m __tests__/components/answer-analytics-events.test.tsx [2m([22m[2m4 tests[22m[2m)[22m[32m 110[2mms[22m[39m
+ [32m✓[39m __tests__/components/ContactForm.test.tsx [2m([22m[2m2 tests[22m[2m)[22m[32m 68[2mms[22m[39m
+ [32m✓[39m __tests__/components/KeyboardShortcutsHelp.test.tsx [2m([22m[2m3 tests[22m[2m)[22m[32m 114[2mms[22m[39m
+ [32m✓[39m __tests__/billing/monthly-stripe.test.ts [2m([22m[2m19 tests[22m[2m)[22m[32m 70[2mms[22m[39m
+ [32m✓[39m __tests__/components/QuizPlayer.article-retirement.test.tsx [2m([22m[2m2 tests[22m[2m)[22m[32m 101[2mms[22m[39m
+ [32m✓[39m __tests__/components/QuizCompleteScreen.test.tsx [2m([22m[2m4 tests[22m[2m)[22m[32m 81[2mms[22m[39m
+ [32m✓[39m __tests__/components/dashboard-observed-record.test.tsx [2m([22m[2m4 tests[22m[2m)[22m[32m 133[2mms[22m[39m
+ [32m✓[39m __tests__/fp1-applied-q53.test.tsx [2m([22m[2m3 tests[22m[2m)[22m[32m 76[2mms[22m[39m
+ [32m✓[39m __tests__/components/NotificationSettings.test.tsx [2m([22m[2m5 tests[22m[2m)[22m[32m 108[2mms[22m[39m
+ [32m✓[39m __tests__/components/SearchClient.continuity.test.tsx [2m([22m[2m2 tests[22m[2m)[22m[32m 128[2mms[22m[39m
+ [32m✓[39m __tests__/questions/denken3-launch-data.test.ts [2m([22m[2m7 tests[22m[2m)[22m[32m 63[2mms[22m[39m
+ [32m✓[39m __tests__/billing/monthly-tax-shape.test.ts [2m([22m[2m24 tests[22m[2m)[22m[32m 63[2mms[22m[39m
+ [32m✓[39m __tests__/billing/cancel-return.test.tsx [2m([22m[2m2 tests[22m[2m)[22m[32m 78[2mms[22m[39m
+ [32m✓[39m __tests__/data/blog-index.test.ts [2m([22m[2m17 tests[22m[2m)[22m[32m 68[2mms[22m[39m
+ [32m✓[39m __tests__/a11y/use-quiz-choice-roving.test.tsx [2m([22m[2m6 tests[22m[2m)[22m[32m 70[2mms[22m[39m
+ [32m✓[39m __tests__/questions/ahaki-two-rounds.test.ts [2m([22m[2m3 tests[22m[2m)[22m[32m 51[2mms[22m[39m
+ [32m✓[39m __tests__/questions/shihoshoshi-staging.test.ts [2m([22m[2m5 tests[22m[2m)[22m[32m 41[2mms[22m[39m
+ [32m✓[39m __tests__/components/HomeHeroImage.test.tsx [2m([22m[2m6 tests[22m[2m)[22m[32m 60[2mms[22m[39m
+ [32m✓[39m __tests__/survey-assistant-candidate.test.ts [2m([22m[2m5 tests[22m[2m)[22m[32m 65[2mms[22m[39m
+ [32m✓[39m __tests__/questions/sagyo-ot13-recovered.test.ts [2m([22m[2m18 tests[22m[2m)[22m[32m 101[2mms[22m[39m
+ [32m✓[39m __tests__/study-reward.test.tsx [2m([22m[2m9 tests[22m[2m)[22m[32m 94[2mms[22m[39m
+ [32m✓[39m __tests__/merge-consultant-descriptive-drafts.test.ts [2m([22m[2m2 tests[22m[2m)[22m[32m 103[2mms[22m[39m
+ [32m✓[39m __tests__/questions/maritime1-registration.test.ts [2m([22m[2m4 tests[22m[2m)[22m[32m 104[2mms[22m[39m
+ [32m✓[39m __tests__/components/QuizPlayer.swipe.test.tsx [2m([22m[2m2 tests[22m[2m)[22m[32m 102[2mms[22m[39m
+ [32m✓[39m __tests__/components/DescriptiveAnswerCard.test.tsx [2m([22m[2m4 tests[22m[2m)[22m[32m 100[2mms[22m[39m
+ [32m✓[39m __tests__/questions/shinrishi-staging.test.ts [2m([22m[2m5 tests[22m[2m)[22m[32m 122[2mms[22m[39m
+ [32m✓[39m __tests__/components/QuestionListWithFilter.test.tsx [2m([22m[2m3 tests[22m[2m)[22m[32m 91[2mms[22m[39m
+ [32m✓[39m __tests__/questions/denken2-launch-data.test.ts [2m([22m[2m5 tests[22m[2m)[22m[32m 67[2mms[22m[39m
+ [32m✓[39m __tests__/native166-integration.test.ts [2m([22m[2m5 tests[22m[2m)[22m[32m 43[2mms[22m[39m
+ [32m✓[39m __tests__/billing/monthly-ui.test.tsx [2m([22m[2m3 tests[22m[2m)[22m[32m 86[2mms[22m[39m
+ [32m✓[39m __tests__/components/WeaknessHeatmapClient.test.tsx [2m([22m[2m1 test[22m[2m)[22m[32m 64[2mms[22m[39m
+ [32m✓[39m __tests__/seo/exam-meta-description.test.ts [2m([22m[2m12 tests[22m[2m)[22m[32m 60[2mms[22m[39m
+ [32m✓[39m __tests__/components/ChushoSecondaryAnswerPractice.test.tsx [2m([22m[2m2 tests[22m[2m)[22m[32m 102[2mms[22m[39m
+ [32m✓[39m __tests__/ads/native-consent.test.ts [2m([22m[2m29 tests[22m[2m)[22m[32m 50[2mms[22m[39m
+ [32m✓[39m __tests__/components/QuestionAnswerCard.decimal.test.tsx [2m([22m[2m3 tests[22m[2m)[22m[32m 100[2mms[22m[39m
+ [32m✓[39m __tests__/presence-hourly.test.tsx [2m([22m[2m8 tests[22m[2m)[22m[32m 102[2mms[22m[39m
+ [32m✓[39m __tests__/questions/khk-reito-staging.test.ts [2m([22m[2m14 tests[22m[2m)[22m[32m 108[2mms[22m[39m
+ [32m✓[39m __tests__/questions/jokaso-setsubishi-staging.test.ts [2m([22m[2m4 tests[22m[2m)[22m[32m 89[2mms[22m[39m
+ [32m✓[39m __tests__/land72-integration.test.ts [2m([22m[2m4 tests[22m[2m)[22m[32m 59[2mms[22m[39m
+ [32m✓[39m __tests__/copilot/answer-citation-integrity.test.tsx [2m([22m[2m7 tests[22m[2m)[22m[32m 51[2mms[22m[39m
+ [32m✓[39m __tests__/lib/ipa-audit-corrections.test.ts [2m([22m[2m4 tests[22m[2m)[22m[32m 37[2mms[22m[39m
+ [32m✓[39m __tests__/components/LearningCalendar.test.tsx [2m([22m[2m2 tests[22m[2m)[22m[32m 82[2mms[22m[39m
+ [32m✓[39m __tests__/security/sentry-boundary.test.ts [2m([22m[2m4 tests[22m[2m)[22m[32m 58[2mms[22m[39m
+ [32m✓[39m __tests__/billing/monthly-cancel-at.test.ts [2m([22m[2m22 tests[22m[2m)[22m[32m 78[2mms[22m[39m
+ [32m✓[39m __tests__/rate-limit/feedback-token-sharing.test.ts [2m([22m[2m8 tests[22m[2m)[22m[32m 86[2mms[22m[39m
+ [32m✓[39m __tests__/components/PublicStatsTableScope.test.tsx [2m([22m[2m2 tests[22m[2m)[22m[32m 3[2mms[22m[39m
+ [32m✓[39m __tests__/questions/sekou-1denki.test.ts [2m([22m[2m7 tests[22m[2m)[22m[32m 27[2mms[22m[39m
+ [32m✓[39m __tests__/fp2-2026-may.test.ts [2m([22m[2m54 tests[22m[2m)[22m[32m 63[2mms[22m[39m
+ [32m✓[39m __tests__/reward-billing.integration.test.tsx [2m([22m[2m3 tests[22m[2m)[22m[32m 74[2mms[22m[39m
+ [32m✓[39m __tests__/questions/riyoshi-figures.test.tsx [2m([22m[2m2 tests[22m[2m)[22m[32m 64[2mms[22m[39m
+ [32m✓[39m __tests__/components/AfternoonEssayHint.test.tsx [2m([22m[2m3 tests[22m[2m)[22m[32m 52[2mms[22m[39m
+ [32m✓[39m __tests__/components/AfternoonResultView.test.tsx [2m([22m[2m3 tests[22m[2m)[22m[32m 77[2mms[22m[39m
+ [32m✓[39m __tests__/components/TsuginoWelcome.test.tsx [2m([22m[2m3 tests[22m[2m)[22m[32m 53[2mms[22m[39m
+ [32m✓[39m __tests__/questions/kangoshi-scope.test.ts [2m([22m[2m9 tests[22m[2m)[22m[32m 37[2mms[22m[39m
+ [32m✓[39m __tests__/components/QuestionBody.test.tsx [2m([22m[2m6 tests[22m[2m)[22m[32m 60[2mms[22m[39m
+ [32m✓[39m __tests__/components/LearningHeatmap.test.tsx [2m([22m[2m1 test[22m[2m)[22m[32m 70[2mms[22m[39m
+ [32m✓[39m __tests__/components/QuizModeTabs.test.tsx [2m([22m[2m4 tests[22m[2m)[22m[32m 81[2mms[22m[39m
+ [32m✓[39m __tests__/questions/nurse-afternoon-nine-go.test.tsx [2m([22m[2m4 tests[22m[2m)[22m[32m 40[2mms[22m[39m
+ [32m✓[39m __tests__/lib/google-account-linking.test.ts [2m([22m[2m2 tests[22m[2m)[22m[32m 47[2mms[22m[39m
+ [32m✓[39m __tests__/components/ApiKeysClient.test.tsx [2m([22m[2m1 test[22m[2m)[22m[32m 81[2mms[22m[39m
+[90mstdout[2m | __tests__/questions/chiiki-ryoko-staging.test.ts[2m > [22m[2mchiiki-ryoko two private official sittings[2m > [22m[2mvalidates every question, explanation, original image and source pin
+[22m[39m[chiiki-ryoko] private staging: 118 questions, 472 choice explanations, 51 original page images validated
+
+ [32m✓[39m __tests__/questions/chiiki-ryoko-staging.test.ts [2m([22m[2m10 tests[22m[2m)[22m[32m 69[2mms[22m[39m
+ [32m✓[39m __tests__/questions/mankan-two-rounds.test.ts [2m([22m[2m6 tests[22m[2m)[22m[32m 42[2mms[22m[39m
+ [32m✓[39m __tests__/questions/hoshasen-staging.test.ts [2m([22m[2m8 tests[22m[2m)[22m[32m 66[2mms[22m[39m
+ [32m✓[39m __tests__/questions/hokenshi-latest-two.test.tsx [2m([22m[2m4 tests[22m[2m)[22m[32m 59[2mms[22m[39m
+ [32m✓[39m __tests__/components/DashboardProgress.test.tsx [2m([22m[2m1 test[22m[2m)[22m[32m 73[2mms[22m[39m
+ [32m✓[39m __tests__/questions/tsushin1-latest-two.test.ts [2m([22m[2m6 tests[22m[2m)[22m[32m 77[2mms[22m[39m
+ [32m✓[39m __tests__/exam-library-source-links.test.tsx [2m([22m[2m2 tests[22m[2m)[22m[32m 38[2mms[22m[39m
+ [32m✓[39m __tests__/components/grading-result-truth.test.tsx [2m([22m[2m4 tests[22m[2m)[22m[32m 74[2mms[22m[39m
+ [32m✓[39m __tests__/lib/blog-related-questions.test.ts [2m([22m[2m7 tests[22m[2m)[22m[32m 38[2mms[22m[39m
+ [32m✓[39m __tests__/questions/chizai2-two-rounds.test.ts [2m([22m[2m4 tests[22m[2m)[22m[32m 31[2mms[22m[39m
+ [32m✓[39m __tests__/questions/sekou-kenchiku2.test.ts [2m([22m[2m104 tests[22m[2m)[22m[32m 70[2mms[22m[39m
+ [32m✓[39m __tests__/questions/pharmacy-reviewed52.test.tsx [2m([22m[2m4 tests[22m[2m)[22m[32m 65[2mms[22m[39m
+ [32m✓[39m __tests__/components/PostHogProvider.test.tsx [2m([22m[2m1 test[22m[2m)[22m[32m 79[2mms[22m[39m
+ [32m✓[39m __tests__/kaigo-2025-official.test.tsx [2m([22m[2m7 tests[22m[2m)[22m[32m 61[2mms[22m[39m
+ [32m✓[39m __tests__/components/TransparencyStatsCharts.test.tsx [2m([22m[2m2 tests[22m[2m)[22m[32m 38[2mms[22m[39m
+ [32m✓[39m __tests__/components/ShareButtons.test.tsx [2m([22m[2m2 tests[22m[2m)[22m[32m 77[2mms[22m[39m
+ [32m✓[39m __tests__/a11y/use-roving-radio.test.tsx [2m([22m[2m3 tests[22m[2m)[22m[32m 59[2mms[22m[39m
+ [31m❯[39m __tests__/billing/QuizClient.quiet.test.tsx [2m([22m[2m4 tests[22m[2m | [22m[31m1 failed[39m[2m)[22m[33m 1058[2mms[22m[39m
+[31m   [31m×[31m keeps quiet presentation scoped to gated or native practice: gate=false native=false[39m[33m 1034[2mms[22m[39m
+   [32m✓[39m keeps quiet presentation scoped to gated or native practice: gate=true native=false[32m 4[2mms[22m[39m
+   [32m✓[39m keeps quiet presentation scoped to gated or native practice: gate=false native=true[32m 5[2mms[22m[39m
+   [32m✓[39m keeps quiet presentation scoped to gated or native practice: gate=true native=true[32m 12[2mms[22m[39m
+ [32m✓[39m __tests__/components/StudyPresence.test.tsx [2m([22m[2m14 tests[22m[2m)[22m[32m 87[2mms[22m[39m
+ [32m✓[39m __tests__/questions/chusho-latest-two.test.ts [2m([22m[2m5 tests[22m[2m)[22m[32m 51[2mms[22m[39m
+ [32m✓[39m __tests__/questions/denki2-latest2.test.ts [2m([22m[2m6 tests[22m[2m)[22m[32m 73[2mms[22m[39m
+ [32m✓[39m __tests__/components/share-copy-live-region.test.tsx [2m([22m[2m1 test[22m[2m)[22m[32m 78[2mms[22m[39m
+ [32m✓[39m __tests__/fp1-applied-q51-page.test.tsx [2m([22m[2m2 tests[22m[2m)[22m[32m 70[2mms[22m[39m
+ [32m✓[39m __tests__/questions/riyoshi-latest-two.test.ts [2m([22m[2m5 tests[22m[2m)[22m[32m 18[2mms[22m[39m
+ [32m✓[39m __tests__/questions/kanri-table-display.test.tsx [2m([22m[2m4 tests[22m[2m)[22m[32m 68[2mms[22m[39m
+ [32m✓[39m __tests__/components/EssayReviewExample.test.tsx [2m([22m[2m1 test[22m[2m)[22m[32m 69[2mms[22m[39m
+[90mstdout[2m | __tests__/api/contact-delivery.test.ts[2m > [22m[2mwaits for an acknowledged delivery and includes the receipt in both message and response
+[22m[39m{"tag":"kakomon-ai:inbound","kind":"question-comment","receivedAt":"2026-11-04T23:08:11.555Z","ipHash":"ip-2487m"}
+
+ [32m✓[39m __tests__/questions/explanation-consistency.test.ts [2m([22m[2m8 tests[22m[2m)[22m[32m 46[2mms[22m[39m
+[90mstdout[2m | __tests__/api/contact-delivery.test.ts[2m > [22m[2mreturns 503 when unconfigured, rejected, or the network fails
+[22m[39m{"tag":"kakomon-ai:inbound","kind":"question-comment","receivedAt":"2026-11-04T23:08:11.607Z","ipHash":"ip-2487m"}
+
+[90mstderr[2m | __tests__/api/contact-delivery.test.ts[2m > [22m[2mreturns 503 when unconfigured, rejected, or the network fails
+[22m[39m[slack] notification unavailable
+
+[90mstdout[2m | __tests__/api/contact-delivery.test.ts[2m > [22m[2mreturns 503 when unconfigured, rejected, or the network fails
+[22m[39m{"tag":"kakomon-ai:inbound","kind":"question-comment","receivedAt":"2026-11-04T23:08:11.608Z","ipHash":"ip-2487m"}
+
+[90mstdout[2m | __tests__/api/contact-delivery.test.ts[2m > [22m[2mreturns 503 when unconfigured, rejected, or the network fails
+[22m[39m{"tag":"kakomon-ai:inbound","kind":"question-comment","receivedAt":"2026-11-04T23:08:11.608Z","ipHash":"ip-2487m"}
+
+[90mstderr[2m | __tests__/api/contact-delivery.test.ts[2m > [22m[2mreturns 503 when unconfigured, rejected, or the network fails
+[22m[39m[slack] send failed
+
+ [32m✓[39m __tests__/api/contact-delivery.test.ts [2m([22m[2m3 tests[22m[2m)[22m[32m 62[2mms[22m[39m
+ [32m✓[39m __tests__/safety-reviewed-repairs.test.ts [2m([22m[2m4 tests[22m[2m)[22m[32m 72[2mms[22m[39m
+ [32m✓[39m __tests__/components/AchievementToast.test.tsx [2m([22m[2m6 tests[22m[2m)[22m[32m 58[2mms[22m[39m
+ [32m✓[39m __tests__/components/InlineBookHint-amazon.test.tsx [2m([22m[2m4 tests[22m[2m)[22m[32m 60[2mms[22m[39m
+ [32m✓[39m __tests__/components/copy-live-region-extra.test.tsx [2m([22m[2m1 test[22m[2m)[22m[32m 55[2mms[22m[39m
+ [32m✓[39m __tests__/components/TutorClient.test.tsx [2m([22m[2m1 test[22m[2m)[22m[32m 54[2mms[22m[39m
+ [32m✓[39m __tests__/components/FireworksBurst.test.tsx [2m([22m[2m4 tests[22m[2m)[22m[32m 57[2mms[22m[39m
+ [32m✓[39m __tests__/kankoji2-first-stage.test.ts [2m([22m[2m12 tests[22m[2m)[22m[32m 41[2mms[22m[39m
+ [32m✓[39m __tests__/components/ScientificNumericAnswer.test.tsx [2m([22m[2m18 tests[22m[2m)[22m[32m 58[2mms[22m[39m
+ [32m✓[39m __tests__/components/EssayIndustryTabs.test.tsx [2m([22m[2m2 tests[22m[2m)[22m[32m 62[2mms[22m[39m
+ [32m✓[39m __tests__/components/DashboardWeakness.context.test.tsx [2m([22m[2m2 tests[22m[2m)[22m[32m 51[2mms[22m[39m
+ [32m✓[39m __tests__/components/PracticeSessionTabs.test.tsx [2m([22m[2m3 tests[22m[2m)[22m[32m 46[2mms[22m[39m
+ [32m✓[39m __tests__/automotive-drafts.test.ts [2m([22m[2m6 tests[22m[2m)[22m[32m 60[2mms[22m[39m
+ [32m✓[39m __tests__/api/answer-count.test.ts [2m([22m[2m1 test[22m[2m)[22m[32m 50[2mms[22m[39m
+ [32m✓[39m __tests__/components/KamokuBStudyHint.test.tsx [2m([22m[2m4 tests[22m[2m)[22m[32m 45[2mms[22m[39m
+ [32m✓[39m __tests__/data/blog-generators.test.ts [2m([22m[2m244 tests[22m[2m)[22m[32m 25[2mms[22m[39m
+ [32m✓[39m __tests__/questions/josanshi-latest-two.test.tsx [2m([22m[2m4 tests[22m[2m)[22m[32m 44[2mms[22m[39m
+ [32m✓[39m __tests__/components/TrackedBookLink.test.tsx [2m([22m[2m4 tests[22m[2m)[22m[32m 46[2mms[22m[39m
+ [32m✓[39m __tests__/components/ExplanationLayers.test.tsx [2m([22m[2m7 tests[22m[2m)[22m[32m 41[2mms[22m[39m
+ [32m✓[39m __tests__/seo/question-counts.test.ts [2m([22m[2m5 tests[22m[2m)[22m[32m 31[2mms[22m[39m
+ [32m✓[39m __tests__/components/FixedSignNumericAnswer.test.tsx [2m([22m[2m2 tests[22m[2m)[22m[32m 51[2mms[22m[39m
+ [32m✓[39m __tests__/questions/qkensetsu-two-rounds.test.ts [2m([22m[2m3 tests[22m[2m)[22m[32m 38[2mms[22m[39m
+ [32m✓[39m __tests__/components/MarkdownTableScope.test.tsx [2m([22m[2m2 tests[22m[2m)[22m[32m 52[2mms[22m[39m
+ [32m✓[39m __tests__/components/ContentEndAd.test.tsx [2m([22m[2m9 tests[22m[2m)[22m[32m 63[2mms[22m[39m
+ [32m✓[39m __tests__/lib/study-presence-store.test.ts [2m([22m[2m10 tests[22m[2m)[22m[32m 41[2mms[22m[39m
+ [32m✓[39m __tests__/questions/jokaso-latest-two.test.ts [2m([22m[2m4 tests[22m[2m)[22m[32m 22[2mms[22m[39m
+[90mstderr[2m | __tests__/components/StatsCharts.test.tsx[2m > [22m[2mStatsCharts — データ可視化チャートの代替テキスト (WCAG 1.1.1)[2m > [22m[2mImpressionsTrendChart が role=img と説明ラベルを持つ
+[22m[39mThe tag <stop> is unrecognized in this browser. If you meant to render a React component, start its name with an uppercase letter.
+<linearGradient /> is using incorrect casing. Use PascalCase for React components, or lowercase for HTML elements.
+The tag <linearGradient> is unrecognized in this browser. If you meant to render a React component, start its name with an uppercase letter.
+The tag <defs> is unrecognized in this browser. If you meant to render a React component, start its name with an uppercase letter.
+
+ [32m✓[39m __tests__/components/StatsCharts.test.tsx [2m([22m[2m4 tests[22m[2m)[22m[32m 41[2mms[22m[39m
+ [32m✓[39m __tests__/mobile/native-gate.test.tsx [2m([22m[2m3 tests[22m[2m)[22m[32m 49[2mms[22m[39m
+ [32m✓[39m __tests__/billing/monthly-refund-http.test.ts [2m([22m[2m4 tests[22m[2m)[22m[32m 47[2mms[22m[39m
+[90mstdout[2m | __tests__/api/grading-unavailable-contract.test.ts[2m > [22m[2messay evaluation contract[2m > [22m[2mretains genuine content feedback
+[22m[39m[provider] model resolved tier=grading model=gemini-2.5-flash pricing=flash
+
+[90mstdout[2m | __tests__/api/grading-unavailable-contract.test.ts[2m > [22m[2messay evaluation contract[2m > [22m[2mretains genuine content feedback
+[22m[39m[essay-grade] response received {
+  questionId: [32m'au-2024a-pm2-q1'[39m,
+  model: [32m'gemini-2.5-flash'[39m,
+  finishReason: [90mundefined[39m,
+  promptTokens: [90mundefined[39m,
+  outputTokens: [90mundefined[39m,
+  thoughtsTokens: [90mundefined[39m
+}
+
+[90mstdout[2m | __tests__/api/grading-unavailable-contract.test.ts[2m > [22m[2messay evaluation contract[2m > [22m[2minvalid response is ungraded: not JSON
+[22m[39m[essay-grade] response received {
+  questionId: [32m'au-2024a-pm2-q1'[39m,
+  model: [32m'gemini-2.5-flash'[39m,
+  finishReason: [90mundefined[39m,
+  promptTokens: [90mundefined[39m,
+  outputTokens: [90mundefined[39m,
+  thoughtsTokens: [90mundefined[39m
+}
+
+[90mstderr[2m | __tests__/api/grading-unavailable-contract.test.ts[2m > [22m[2messay evaluation contract[2m > [22m[2minvalid response is ungraded: not JSON
+[22m[39m[essay-grade] unavailable: AI応答の解析に失敗 {
+  questionId: [32m'au-2024a-pm2-q1'[39m,
+  provider: [32m'gemini'[39m,
+  model: [32m'gemini-2.5-flash'[39m,
+  rawChars: [33m8[39m,
+  finishReason: [90mundefined[39m,
+  truncated: [33mfalse[39m,
+  outputTokens: [90mundefined[39m,
+  thoughtsTokens: [90mundefined[39m
+}
+
+[90mstdout[2m | __tests__/api/grading-unavailable-contract.test.ts[2m > [22m[2messay evaluation contract[2m > [22m[2minvalid response is ungraded: {
+[22m[39m[essay-grade] response received {
+  questionId: [32m'au-2024a-pm2-q1'[39m,
+  model: [32m'gemini-2.5-flash'[39m,
+  finishReason: [90mundefined[39m,
+  promptTokens: [90mundefined[39m,
+  outputTokens: [90mundefined[39m,
+  thoughtsTokens: [90mundefined[39m
+}
+
+[90mstderr[2m | __tests__/api/grading-unavailable-contract.test.ts[2m > [22m[2messay evaluation contract[2m > [22m[2minvalid response is ungraded: {
+[22m[39m[essay-grade] unavailable: AI応答の解析に失敗 {
+  questionId: [32m'au-2024a-pm2-q1'[39m,
+  provider: [32m'gemini'[39m,
+  model: [32m'gemini-2.5-flash'[39m,
+  rawChars: [33m1[39m,
+  finishReason: [90mundefined[39m,
+  truncated: [33mfalse[39m,
+  outputTokens: [90mundefined[39m,
+  thoughtsTokens: [90mundefined[39m
+}
+
+[90mstdout[2m | __tests__/api/grading-unavailable-contract.test.ts[2m > [22m[2messay evaluation contract[2m > [22m[2minvalid response is ungraded: {"subResults":[]}
+[22m[39m[essay-grade] response received {
+  questionId: [32m'au-2024a-pm2-q1'[39m,
+  model: [32m'gemini-2.5-flash'[39m,
+  finishReason: [90mundefined[39m,
+  promptTokens: [90mundefined[39m,
+  outputTokens: [90mundefined[39m,
+  thoughtsTokens: [90mundefined[39m
+}
+
+[90mstderr[2m | __tests__/api/grading-unavailable-contract.test.ts[2m > [22m[2messay evaluation contract[2m > [22m[2minvalid response is ungraded: {"subResults":[]}
+[22m[39m[essay-grade] unavailable: AI応答の解析に失敗 {
+  questionId: [32m'au-2024a-pm2-q1'[39m,
+  provider: [32m'gemini'[39m,
+  model: [32m'gemini-2.5-flash'[39m,
+  rawChars: [33m17[39m,
+  finishReason: [90mundefined[39m,
+  truncated: [33mfalse[39m,
+  outputTokens: [90mundefined[39m,
+  thoughtsTokens: [90mundefined[39m
+}
+
+[90mstdout[2m | __tests__/api/grading-unavailable-contract.test.ts[2m > [22m[2messay evaluation contract[2m > [22m[2minvalid response is ungraded: {"rank":"B","passProbability":50,"subResults":[{"score":null}],"overallAdvice":"改善を確認","unnecessaryElements":[]}
+[22m[39m[essay-grade] response received {
+  questionId: [32m'au-2024a-pm2-q1'[39m,
+  model: [32m'gemini-2.5-flash'[39m,
+  finishReason: [90mundefined[39m,
+  promptTokens: [90mundefined[39m,
+  outputTokens: [90mundefined[39m,
+  thoughtsTokens: [90mundefined[39m
+}
+
+[90mstderr[2m | __tests__/api/grading-unavailable-contract.test.ts[2m > [22m[2messay evaluation contract[2m > [22m[2minvalid response is ungraded: {"rank":"B","passProbability":50,"subResults":[{"score":null}],"overallAdvice":"改善を確認","unnecessaryElements":[]}
+[22m[39m[essay-grade] unavailable: AI応答の解析に失敗 {
+  questionId: [32m'au-2024a-pm2-q1'[39m,
+  provider: [32m'gemini'[39m,
+  model: [32m'gemini-2.5-flash'[39m,
+  rawChars: [33m112[39m,
+  finishReason: [90mundefined[39m,
+  truncated: [33mfalse[39m,
+  outputTokens: [90mundefined[39m,
+  thoughtsTokens: [90mundefined[39m
+}
+
+[90mstderr[2m | __tests__/api/grading-unavailable-contract.test.ts[2m > [22m[2messay evaluation contract[2m > [22m[2mprovider failure cannot create a grade
+[22m[39m[essay-grade] provider request failed
+
+[90mstdout[2m | __tests__/api/grading-unavailable-contract.test.ts[2m > [22m[2messay evaluation contract[2m > [22m[2mtruncated output has an explicit unavailable state
+[22m[39m[essay-grade] response received {
+  questionId: [32m'au-2024a-pm2-q1'[39m,
+  model: [32m'gemini-2.5-flash'[39m,
+  finishReason: [32m'MAX_TOKENS'[39m,
+  promptTokens: [90mundefined[39m,
+  outputTokens: [90mundefined[39m,
+  thoughtsTokens: [90mundefined[39m
+}
+
+[90mstderr[2m | __tests__/api/grading-unavailable-contract.test.ts[2m > [22m[2messay evaluation contract[2m > [22m[2mtruncated output has an explicit unavailable state
+[22m[39m[essay-grade] unavailable: AI応答の解析に失敗 {
+  questionId: [32m'au-2024a-pm2-q1'[39m,
+  provider: [32m'gemini'[39m,
+  model: [32m'gemini-2.5-flash'[39m,
+  rawChars: [33m1[39m,
+  finishReason: [32m'MAX_TOKENS'[39m,
+  truncated: [33mtrue[39m,
+  outputTokens: [90mundefined[39m,
+  thoughtsTokens: [90mundefined[39m
+}
+
+[90mstdout[2m | __tests__/api/grading-unavailable-contract.test.ts[2m > [22m[2mafternoon evaluation contract[2m > [22m[2mretains genuine content feedback
+[22m[39m[scoring] response received {
+  questionId: [32m'ap-2024h-pm-q1'[39m,
+  model: [32m'gemini-2.5-flash'[39m,
+  finishReason: [90mundefined[39m,
+  promptTokens: [90mundefined[39m,
+  outputTokens: [90mundefined[39m,
+  thoughtsTokens: [90mundefined[39m
+}
+
+[90mstdout[2m | __tests__/api/grading-unavailable-contract.test.ts[2m > [22m[2mafternoon evaluation contract[2m > [22m[2minvalid response is ungraded: not JSON
+[22m[39m[scoring] response received {
+  questionId: [32m'ap-2024h-pm-q1'[39m,
+  model: [32m'gemini-2.5-flash'[39m,
+  finishReason: [90mundefined[39m,
+  promptTokens: [90mundefined[39m,
+  outputTokens: [90mundefined[39m,
+  thoughtsTokens: [90mundefined[39m
+}
+
+[90mstderr[2m | __tests__/api/grading-unavailable-contract.test.ts[2m > [22m[2mafternoon evaluation contract[2m > [22m[2minvalid response is ungraded: not JSON
+[22m[39m[scoring] unavailable: AI応答の解析に失敗 {
+  questionId: [32m'ap-2024h-pm-q1'[39m,
+  provider: [32m'gemini'[39m,
+  model: [32m'gemini-2.5-flash'[39m,
+  rawChars: [33m8[39m,
+  finishReason: [90mundefined[39m,
+  truncated: [33mfalse[39m,
+  outputTokens: [90mundefined[39m,
+  thoughtsTokens: [90mundefined[39m
+}
+
+[90mstdout[2m | __tests__/api/grading-unavailable-contract.test.ts[2m > [22m[2mafternoon evaluation contract[2m > [22m[2minvalid response is ungraded: {
+[22m[39m[scoring] response received {
+  questionId: [32m'ap-2024h-pm-q1'[39m,
+  model: [32m'gemini-2.5-flash'[39m,
+  finishReason: [90mundefined[39m,
+  promptTokens: [90mundefined[39m,
+  outputTokens: [90mundefined[39m,
+  thoughtsTokens: [90mundefined[39m
+}
+
+[90mstderr[2m | __tests__/api/grading-unavailable-contract.test.ts[2m > [22m[2mafternoon evaluation contract[2m > [22m[2minvalid response is ungraded: {
+[22m[39m[scoring] unavailable: AI応答の解析に失敗 {
+  questionId: [32m'ap-2024h-pm-q1'[39m,
+  provider: [32m'gemini'[39m,
+  model: [32m'gemini-2.5-flash'[39m,
+  rawChars: [33m1[39m,
+  finishReason: [90mundefined[39m,
+  truncated: [33mfalse[39m,
+  outputTokens: [90mundefined[39m,
+  thoughtsTokens: [90mundefined[39m
+}
+
+[90mstdout[2m | __tests__/api/grading-unavailable-contract.test.ts[2m > [22m[2mafternoon evaluation contract[2m > [22m[2minvalid response is ungraded: {"subResults":[]}
+[22m[39m[scoring] response received {
+  questionId: [32m'ap-2024h-pm-q1'[39m,
+  model: [32m'gemini-2.5-flash'[39m,
+  finishReason: [90mundefined[39m,
+  promptTokens: [90mundefined[39m,
+  outputTokens: [90mundefined[39m,
+  thoughtsTokens: [90mundefined[39m
+}
+
+[90mstderr[2m | __tests__/api/grading-unavailable-contract.test.ts[2m > [22m[2mafternoon evaluation contract[2m > [22m[2minvalid response is ungraded: {"subResults":[]}
+[22m[39m[scoring] unavailable: AI応答の解析に失敗 {
+  questionId: [32m'ap-2024h-pm-q1'[39m,
+  provider: [32m'gemini'[39m,
+  model: [32m'gemini-2.5-flash'[39m,
+  rawChars: [33m17[39m,
+  finishReason: [90mundefined[39m,
+  truncated: [33mfalse[39m,
+  outputTokens: [90mundefined[39m,
+  thoughtsTokens: [90mundefined[39m
+}
+
+[90mstdout[2m | __tests__/api/grading-unavailable-contract.test.ts[2m > [22m[2mafternoon evaluation contract[2m > [22m[2minvalid response is ungraded: {"totalScore":60,"subResults":[{"score":null}],"overallComment":"改善を確認"}
+[22m[39m[scoring] response received {
+  questionId: [32m'ap-2024h-pm-q1'[39m,
+  model: [32m'gemini-2.5-flash'[39m,
+  finishReason: [90mundefined[39m,
+  promptTokens: [90mundefined[39m,
+  outputTokens: [90mundefined[39m,
+  thoughtsTokens: [90mundefined[39m
+}
+
+[90mstderr[2m | __tests__/api/grading-unavailable-contract.test.ts[2m > [22m[2mafternoon evaluation contract[2m > [22m[2minvalid response is ungraded: {"totalScore":60,"subResults":[{"score":null}],"overallComment":"改善を確認"}
+[22m[39m[scoring] unavailable: AI応答の解析に失敗 {
+  questionId: [32m'ap-2024h-pm-q1'[39m,
+  provider: [32m'gemini'[39m,
+  model: [32m'gemini-2.5-flash'[39m,
+  rawChars: [33m72[39m,
+  finishReason: [90mundefined[39m,
+  truncated: [33mfalse[39m,
+  outputTokens: [90mundefined[39m,
+  thoughtsTokens: [90mundefined[39m
+}
+
+[90mstdout[2m | __tests__/api/grading-unavailable-contract.test.ts[2m > [22m[2mafternoon evaluation contract[2m > [22m[2mtruncated output has an explicit unavailable state
+[22m[39m[scoring] response received {
+  questionId: [32m'ap-2024h-pm-q1'[39m,
+  model: [32m'gemini-2.5-flash'[39m,
+  finishReason: [32m'MAX_TOKENS'[39m,
+  promptTokens: [90mundefined[39m,
+  outputTokens: [90mundefined[39m,
+  thoughtsTokens: [90mundefined[39m
+}
+
+[90mstderr[2m | __tests__/api/grading-unavailable-contract.test.ts[2m > [22m[2mafternoon evaluation contract[2m > [22m[2mtruncated output has an explicit unavailable state
+[22m[39m[scoring] unavailable: AI応答の解析に失敗 {
+  questionId: [32m'ap-2024h-pm-q1'[39m,
+  provider: [32m'gemini'[39m,
+  model: [32m'gemini-2.5-flash'[39m,
+  rawChars: [33m1[39m,
+  finishReason: [32m'MAX_TOKENS'[39m,
+  truncated: [33mtrue[39m,
+  outputTokens: [90mundefined[39m,
+  thoughtsTokens: [90mundefined[39m
+}
+
+[90mstdout[2m | __tests__/api/grading-unavailable-contract.test.ts[2m > [22m[2mafternoon complete-response boundary[2m > [22m[2mmissing even one required label cannot create a grade
+[22m[39m[scoring] response received {
+  questionId: [32m'ap-2024h-pm-q1'[39m,
+  model: [32m'gemini-2.5-flash'[39m,
+  finishReason: [90mundefined[39m,
+  promptTokens: [90mundefined[39m,
+  outputTokens: [90mundefined[39m,
+  thoughtsTokens: [90mundefined[39m
+}
+
+[90mstderr[2m | __tests__/api/grading-unavailable-contract.test.ts[2m > [22m[2mafternoon complete-response boundary[2m > [22m[2mmissing even one required label cannot create a grade
+[22m[39m[scoring] unavailable: AI応答の解析に失敗 {
+  questionId: [32m'ap-2024h-pm-q1'[39m,
+  provider: [32m'gemini'[39m,
+  model: [32m'gemini-2.5-flash'[39m,
+  rawChars: [33m261[39m,
+  finishReason: [90mundefined[39m,
+  truncated: [33mfalse[39m,
+  outputTokens: [90mundefined[39m,
+  thoughtsTokens: [90mundefined[39m
+}
+
+ [32m✓[39m __tests__/api/grading-unavailable-contract.test.ts [2m([22m[2m15 tests[22m[2m)[22m[32m 20[2mms[22m[39m
+ [32m✓[39m __tests__/components/EmailSignInForm.test.tsx [2m([22m[2m2 tests[22m[2m)[22m[32m 50[2mms[22m[39m
+ [32m✓[39m __tests__/lib/questions-load.test.ts [2m([22m[2m7 tests[22m[2m)[22m[32m 18[2mms[22m[39m
+ [32m✓[39m __tests__/components/BookmarkButton.test.tsx [2m([22m[2m2 tests[22m[2m)[22m[32m 44[2mms[22m[39m
+ [32m✓[39m __tests__/questions/shino-saved-go34.test.ts [2m([22m[2m37 tests[22m[2m)[22m[32m 34[2mms[22m[39m
+ [32m✓[39m __tests__/components/HomeExamGrid.labelInName.test.tsx [2m([22m[2m1 test[22m[2m)[22m[32m 44[2mms[22m[39m
+ [32m✓[39m __tests__/components/AfternoonResultView.score-scale.test.tsx [2m([22m[2m4 tests[22m[2m)[22m[32m 46[2mms[22m[39m
+ [32m✓[39m __tests__/billing/monthly-http.test.ts [2m([22m[2m5 tests[22m[2m)[22m[32m 37[2mms[22m[39m
+ [32m✓[39m __tests__/questions/shuwa.test.ts [2m([22m[2m4 tests[22m[2m)[22m[32m 47[2mms[22m[39m
+ [32m✓[39m __tests__/radio84-integration.test.ts [2m([22m[2m8 tests[22m[2m)[22m[32m 43[2mms[22m[39m

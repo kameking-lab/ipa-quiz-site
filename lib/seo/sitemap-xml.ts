@@ -128,15 +128,12 @@ const STATIC_ROUTES: UrlEntry[] = [
   ),
   { url: `${SITE_BASE_URL}/why-kakomon-ai`, lastModified: STATIC_CONTENT_DATE, changeFrequency: "monthly", priority: 0.8 },
   { url: `${SITE_BASE_URL}/blog`, changeFrequency: "weekly", priority: 0.8 },
-  // /success-stories と /essays は AI 生成の架空コンテンツで noindex（致命傷③）。
+  // /success-stories は廃止・301。/essays は noindex。
   // noindex ページを sitemap に載せるとクローラ signal が矛盾するため除外する。
   { url: `${SITE_BASE_URL}/mock-exam`, lastModified: STATIC_CONTENT_DATE, changeFrequency: "monthly", priority: 0.6 },
   { url: `${SITE_BASE_URL}/challenge`, changeFrequency: "daily", priority: 0.6 },
   { url: `${SITE_BASE_URL}/essay`, lastModified: STATIC_CONTENT_DATE, changeFrequency: "monthly", priority: 0.6 },
   { url: `${SITE_BASE_URL}/study-plan`, lastModified: STATIC_CONTENT_DATE, changeFrequency: "monthly", priority: 0.7 },
-  { url: `${SITE_BASE_URL}/student`, lastModified: STATIC_CONTENT_DATE, changeFrequency: "monthly", priority: 0.6 },
-  { url: `${SITE_BASE_URL}/referral`, lastModified: STATIC_CONTENT_DATE, changeFrequency: "monthly", priority: 0.4 },
-  { url: `${SITE_BASE_URL}/ranking`, changeFrequency: "weekly", priority: 0.5 },
   { url: `${SITE_BASE_URL}/sitemap`, lastModified: STATIC_CONTENT_DATE, changeFrequency: "weekly", priority: 0.5 },
   { url: `${SITE_BASE_URL}/faq`, lastModified: STATIC_CONTENT_DATE, changeFrequency: "monthly", priority: 0.4 },
   { url: `${SITE_BASE_URL}/about`, lastModified: STATIC_CONTENT_DATE, changeFrequency: "monthly", priority: 0.8 },

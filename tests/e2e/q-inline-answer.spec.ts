@@ -112,6 +112,19 @@ test.describe("/q inline answer", () => {
     await expect(input).toBeFocused();
     await expect(inline).toHaveCount(1);
     expect(sent).toHaveLength(0); // Answering/focusing/editing are not automatic sends.
+    page.once("dialog", async dialog => {
+      expect(dialog.type()).toBe("confirm");
+      expect(dialog.message()).toContain("Google Gemini");
+      await dialog.dismiss();
+    });
+    await inline.getByRole("button", { name: "送信", exact: true }).click();
+    await expect(input).toHaveValue(draft);
+    expect(sent).toHaveLength(0); // Refusing AI consent must not send the draft.
+    page.once("dialog", async dialog => {
+      expect(dialog.type()).toBe("confirm");
+      expect(dialog.message()).toContain("Google Gemini");
+      await dialog.accept();
+    });
     await inline.getByRole("button", { name: "送信", exact: true }).click();
     await expect.poll(() => sent.length).toBe(1);
     expect(sent[0]).toMatchObject({ question: { id: "tohan-2025-kansai-gakka-q1" }, selectedChoice: "ア", isCorrect: false });

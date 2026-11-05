@@ -4,7 +4,22 @@ import type { ExamCode, Question } from "@/lib/questions/types";
 import { isPracticeReadyQuestion } from "@/lib/questions/filter";
 import { questionSourceEdition } from "@/lib/questions/source-label";
 import { examLabel } from "@/lib/utils";
+import { examEntryDescription, isExamEntryCode } from "@/lib/seo/exam-entry";
 export const EXAM_DESCRIPTIONS: Partial<Record<ExamCode, string>> = {
+  "benrishi": "2025・2026年の公式問題・正答・独自解説と原本図表を収録。",
+  "sokuryoshi": "2025・2026年の公式問題・正答・独自解説と原本図表を収録。午前56問・午後10大問。午後は必須1題と選択4題から2題。記述・作図は公式解答例で自己確認し、自動採点しません。",
+  "dokugeki-chiba": "2025・2026年の公式問題・正答・独自解説と原本図表を収録。一般・農業用品目・特定品目の各回各80解答欄、計480欄。原文の用語の疑義は注記します。",
+  "jokaso-setsubishi": "2025・2026年の公式問題・正答・独自解説と原本図表を収録。",
+  "chiiki-ryoko": "2025・2026年の公式問題・正答・独自解説と原本図表を収録。全科目版118問。「すべて選ぶ」は全選択一致で採点します。",
+  "junkango-kansai": "2025・2026年の公式問題・正答・独自解説と原本図表を収録。300原問中、公式全員正解1問を除く299問を演習。2026年問139は2または4の単独選択を正解とします。",
+  "kukaku-seiri": "2026年度のみ学科40問を収録。2025年度の問題本文は未収録です。実地試験は対象外です。",
+  "dojo-osen": "2024・2025年の公式問題・正答・独自解説と原本図表を収録。160原問中、2025年度調査問30の公式全員正解1問を除く159問を演習できます。",
+  "kenchikushi2": "2025・2026年の公式問題・正答・独自解説と原本図表を収録。学科I〜IV各25問、各年100問。設計製図は対象外です。",
+  "mokuzo-kenchikushi": "2025・2026年の公式問題・正答・独自解説と原本図表を収録。学科I〜IV各25問、各年100問。設計製図は対象外です。",
+
+  kenchikushi1: "令和7・8年の学科5科目250原問を保存し、全員加点1問を除く249問を演習できます。最終公式正答・全肢解説・必要図を収録。設計製図は対象外です。",
+  "khk-kagaku": "2024・2025年度の甲種・乙種・丙種（液石・特別）422原問。択一410問は全肢解説、甲種学識12問は独自解答・自己採点基準・公式解答例で確認できます。記述答案は自動採点しません。",
+  "sekou-1kenchiku": "令和7・8年度の第一次検定、各72問・計144問を全肢解説と必要図付きで収録。令和7年度No.57は公式訂正に従い3・4いずれも正答です。第二次検定は対象外です。",
 "keiryoshi": "第76回（令和7年実施）のみ100問を収録。第75回は未収録で、2回分の全問収録ではありません。出題時点の法令・基準に基づく全肢解説を確認できます。",
 "keiryoshi-nodo": "第76回（令和7年実施）のみ100問を収録。第75回は未収録で、2回分の全問収録ではありません。出題時点の法令・基準に基づく全肢解説を確認できます。",
 "keiryoshi-soon": "第76回（令和7年実施）のみ100問を収録。第75回は未収録で、2回分の全問収録ではありません。出題時点の法令・基準に基づく全肢解説を確認できます。",
@@ -210,15 +225,31 @@ export function groupByCategory(questions: Question[]): {
         .sort((a, b) => b.count - a.count);
 }
 export function examTopTitle(exam: ExamCode): string {
+    if (isExamEntryCode(exam)) return `${examLabel(exam)} 過去問・午前解説と午後対策`;
     return `${examLabel(exam)} 過去問一覧・AI解説`;
 }
 export function examTopDescription(exam: ExamCode, questionCount: number): string {
+    if (isExamEntryCode(exam)) return examEntryDescription(exam, examFullName(exam), questionCount);
     if (exam === "shika-ishi" || exam === "rinsho-kensagishi" || exam === "shinryo-hoshasengishi")
         return examMetaDescription(exam, questionCount);
     const base = EXAM_DESCRIPTIONS[exam] ?? "";
     return `${base}${examLabel(exam)}の過去問${questionCount}問を年度別・分野別に収録。AIコパイロット付きで効率的に学習。`;
 }
 const EXAM_FULL_NAMES: Record<ExamCode, string> = {
+  "benrishi": "弁理士（短答式）",
+  "sokuryoshi": "測量士",
+  "dokugeki-chiba": "毒物劇物取扱者（千葉県）",
+  "jokaso-setsubishi": "浄化槽設備士（学科）",
+  "chiiki-ryoko": "地域限定旅行業務取扱管理者",
+  "junkango-kansai": "准看護師（関西広域連合）",
+  "kukaku-seiri": "土地区画整理士（学科）",
+  "dojo-osen": "土壌汚染調査技術管理者",
+  "kenchikushi2": "二級建築士（学科）",
+  "mokuzo-kenchikushi": "木造建築士（学科）",
+
+  kenchikushi1: "一級建築士（学科）",
+  "khk-kagaku": "高圧ガス製造保安責任者試験（化学）",
+  "sekou-1kenchiku": "1級建築施工管理技術検定（第一次検定）",
     "chintai": "賃貸不動産経営管理士",
     "kyusui": "給水装置工事主任技術者",
     "biru-kan": "建築物環境衛生管理技術者",
@@ -362,6 +393,20 @@ export function examFullName(exam: ExamCode): string {
     return EXAM_FULL_NAMES[exam];
 }
 const EXAM_META_DESC_DIVERSE: Record<ExamCode, (c: string, y: number, k: number) => string> = {
+  "benrishi": (count) => "弁理士（短答式）の公開演習" + count + "問。" + "2025・2026年の公式問題・正答・独自解説と原本図表を収録。",
+  "sokuryoshi": (count) => "測量士の公開演習" + count + "問。" + "2025・2026年の公式問題・正答・独自解説と原本図表を収録。午前56問・午後10大問。午後は必須1題と選択4題から2題。記述・作図は公式解答例で自己確認し、自動採点しません。",
+  "dokugeki-chiba": (count) => "毒物劇物取扱者（千葉県）の公開演習" + count + "問。" + "2025・2026年の公式問題・正答・独自解説と原本図表を収録。一般・農業用品目・特定品目の各回各80解答欄、計480欄。原文の用語の疑義は注記します。",
+  "jokaso-setsubishi": (count) => "浄化槽設備士（学科）の公開演習" + count + "問。" + "2025・2026年の公式問題・正答・独自解説と原本図表を収録。",
+  "chiiki-ryoko": (count) => "地域限定旅行業務取扱管理者の公開演習" + count + "問。" + "2025・2026年の公式問題・正答・独自解説と原本図表を収録。全科目版118問。「すべて選ぶ」は全選択一致で採点します。",
+  "junkango-kansai": (count) => "准看護師（関西広域連合）の公開演習" + count + "問。" + "2025・2026年の公式問題・正答・独自解説と原本図表を収録。300原問中、公式全員正解1問を除く299問を演習。2026年問139は2または4の単独選択を正解とします。",
+  "kukaku-seiri": (count) => "土地区画整理士（学科）の公開演習" + count + "問。" + "2026年度のみ学科40問を収録。2025年度の問題本文は未収録です。実地試験は対象外です。",
+  "dojo-osen": (count) => "土壌汚染調査技術管理者の公開演習" + count + "問。" + "2024・2025年の公式問題・正答・独自解説と原本図表を収録。160原問中、2025年度調査問30の公式全員正解1問を除く159問を演習できます。",
+  "kenchikushi2": (count) => "二級建築士（学科）の公開演習" + count + "問。" + "2025・2026年の公式問題・正答・独自解説と原本図表を収録。学科I〜IV各25問、各年100問。設計製図は対象外です。",
+  "mokuzo-kenchikushi": (count) => "木造建築士（学科）の公開演習" + count + "問。" + "2025・2026年の公式問題・正答・独自解説と原本図表を収録。学科I〜IV各25問、各年100問。設計製図は対象外です。",
+
+  kenchikushi1: (c) => `一級建築士（学科）の令和7・8年から${c}問。`,
+  "khk-kagaku": (c) => `高圧ガス製造保安責任者（化学）から${c}原問。`,
+  "sekou-1kenchiku": (c) => `1級建築施工管理第一次検定から${c}問。`,
     "chintai": () => "2024・2025年度100原問を保存。通常演習99問。2025年問9は公式全員正解のため通常採点対象外です。",
     "kyusui": () => "2025・2026年度120原問を保存。通常演習119問。2025年問18は公式全員正解のため通常採点対象外です。",
     "biru-kan": () => "第54・55回（2024・2025年度）360問。公式問題・公式正答・全肢解説・必要図を収録しています。",
@@ -510,6 +555,7 @@ function publishedYearRange(exam: ExamCode): string {
     return first === last ? `${first}年度` : `${first}〜${last}年度`;
 }
 export function examMetaDescription(exam: ExamCode, questionCount: number, mode?: "year" | "topic"): string {
+    if (!mode && isExamEntryCode(exam)) return examEntryDescription(exam, examFullName(exam), questionCount);
     const name = EXAM_FULL_NAMES[exam];
     const questions = getQuestionsByExamStrict(exam);
     const yearCount = groupByYearSeason(questions).length;

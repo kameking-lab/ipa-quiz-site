@@ -1,5 +1,7 @@
 import { isReferenceOnlyQuestionId } from "@/lib/questions/assessment";
 import { isSelfReviewedDescriptiveQuestion } from "@/lib/questions/descriptive";
+import { strictContentGateEnabled } from "@/lib/billing/content-policy";
+import { ContentPage } from "@/mobile/server/ContentPage";
 import { displayQuestionExplanation } from "@/lib/questions/explanation-display";
 import { questionSourceEdition, questionSourceExam } from "@/lib/questions/source-label";
 import { questionReferenceLabel } from "@/lib/questions/reference-label";
@@ -47,7 +49,6 @@ import {
 import { examTopicPageExists } from "@/lib/seo/exam-meta";
 import { buildQuestionJsonLd, questionBreadcrumbItems, sessionLabel } from "@/lib/seo/question-jsonld";
 import { questionSnippet, questionTitle } from "@/lib/seo/question-meta";
-import { ExamNoteGuide } from "@/components/exam/ExamNoteGuide";
 import { CurrentLearningLinks } from "@/components/term-relations/CurrentLearningLinks";
 import { QuestionAnswerCard } from "@/components/quiz/QuestionAnswerCard";
 import { DescriptiveAnswerCard } from "@/components/quiz/DescriptiveAnswerCard";
@@ -95,6 +96,7 @@ export async function generateMetadata({
 }: {
   params: Promise<QuestionRouteParams>;
 }): Promise<Metadata> {
+  if(strictContentGateEnabled())return {title:"問題・教材の演習",description:"ログインしてウェブ・アプリ共通の無料1日10問、または有料会員の演習を利用できます。",robots:{index:false,follow:true}};
   const p = await params;
   const q = findQuestionByRoute(ALL_QUESTIONS, p);
   if (!q) {
@@ -156,6 +158,8 @@ export default async function QuestionPage({
 }: {
   params: Promise<QuestionRouteParams>;
 }) {
+  if (strictContentGateEnabled()) { const gatedParams=await params; return <ContentPage path={`/q/${gatedParams.exam}/${gatedParams.yearSeason}/${gatedParams.section}/${gatedParams.qnum}`}/>; }
+
   const p = await params;
   const q = findQuestionByRoute(ALL_QUESTIONS, p);
   if (!q) {
@@ -528,7 +532,6 @@ export default async function QuestionPage({
         <span>この問題を共有</span>
         <ShareButtons url={requestedPageUrlAbs} text={title} compact />
       </div>
-      <div className="print:hidden"><ExamNoteGuide exam={q.exam} /></div>
 
       {/* Category-level study guidance */}
       <div className="print:hidden">

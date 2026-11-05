@@ -7,7 +7,6 @@ import {
   QUICK_ACTIONS,
 } from "@/lib/ai/prompts";
 import type { LearnerProfile, QuickActionId, ResponseLength } from "@/lib/ai/prompts";
-import { CHARACTERS, isCharacterId } from "@/lib/ai/characters";
 
 export interface PromptAssemblyInput {
   question: Question;
@@ -16,8 +15,6 @@ export interface PromptAssemblyInput {
   isCorrect?: boolean;
   quickAction?: QuickActionId;
   learnerProfile?: LearnerProfile;
-  character?: string;
-  characterEnabled?: boolean;
   responseLength?: ResponseLength;
   ragDirective: string | null;
   ragContextBlock: string;
@@ -41,8 +38,6 @@ export function assembleCopilotPrompt(input: PromptAssemblyInput): PromptAssembl
     isCorrect,
     quickAction,
     learnerProfile,
-    character,
-    characterEnabled,
     responseLength,
     ragDirective,
     ragContextBlock,
@@ -59,18 +54,12 @@ export function assembleCopilotPrompt(input: PromptAssemblyInput): PromptAssembl
     ? buildLearnerProfileContext(learnerProfile satisfies LearnerProfile)
     : null;
 
-  const characterPrompt =
-    characterEnabled && character && isCharacterId(character)
-      ? CHARACTERS[character].systemPrompt
-      : null;
-
   const responseLengthDirective = responseLength
     ? buildResponseLengthDirective(responseLength satisfies ResponseLength)
     : null;
 
   const system = [
     COPILOT_SYSTEM_PROMPT,
-    ...(characterPrompt ? [characterPrompt] : []),
     ...(responseLengthDirective ? [responseLengthDirective] : []),
     ...(ragDirective ? [ragDirective] : []),
     "---",

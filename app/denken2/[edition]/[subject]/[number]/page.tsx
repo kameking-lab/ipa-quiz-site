@@ -1,3 +1,5 @@
+import { strictContentGateEnabled } from "@/lib/billing/content-policy";
+import { ContentPage } from "@/mobile/server/ContentPage";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { NativeReader } from "@/components/denken2/NativeReader";
@@ -24,6 +26,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 }
 export default async function Page({ params }: Props) {
+  if (strictContentGateEnabled()) { const gatedParams=await params; return <ContentPage path={`/denken2/${gatedParams.edition}/${gatedParams.subject}/${gatedParams.number}`}/>; }
+
   const q = resolve(await params);
   if (!q) notFound();
   return <NativeReader question={q} />;

@@ -1,0 +1,12 @@
+{
+  "command": [
+    "node",
+    "scripts/validate-government-source-links.mjs",
+    "--skip-live"
+  ],
+  "exitCode": 0,
+  "seconds": 0.11,
+  "log": "reports/int7-20261105/government-sources.log",
+  "sha256": "f0de96d9787a2e9875f4f5a8b5f5935de8c738b3505b5524e91843cf560700eb",
+  "environment": "allowlisted OS variables only; CI=1, telemetry disabled, NODE_OPTIONS=4096; no service credentials or env files"
+}

@@ -124,6 +124,7 @@ export function ScheduleResultClient({ planId }: { planId: string }) {
       </Card>
 
       <ScheduleCalendar plan={plan} />
+      <Button asChild className="mt-6 min-h-12 w-full sm:w-auto"><Link href={`/account/dashboard?plan=${encodeURIComponent(plan.id)}#study-plan`}>今日の計画をダッシュボードで進める</Link></Button>
 
       <div className="mt-10 rounded-2xl border border-border bg-muted/40 p-4 text-xs text-muted-foreground">
         学習中に分からないことが出たら、画面右下の AI コパイロットに質問できます。

@@ -1,0 +1,19 @@
+{
+  "sourceHead": "afe77c0b9d91409eacc6224766de5c1ccfcb1a63",
+  "startedAt": "2026-11-04T18:35:12.689734+00:00",
+  "endedAt": "2026-11-04T18:35:31.609843+00:00",
+  "command": [
+    "corepack.cmd",
+    "pnpm",
+    "exec",
+    "tsx",
+    "--tsconfig",
+    "mobile/tsconfig.scripts.json",
+    "mobile/scripts/generate-catalog.ts"
+  ],
+  "exitCode": 0,
+  "seconds": 18.92,
+  "log": "reports/int7-20261105/mobile-catalog-coherent.log",
+  "sha256": "437d07d894cf08d97221c8924f63fe291f2135cadc4b1e8888ea426196454214",
+  "environment": "allowlisted OS variables only; CI=1, telemetry disabled, NODE_OPTIONS=4096; no service credentials or env files"
+}

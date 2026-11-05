@@ -1,0 +1,30 @@
+CQ2 の独立レビューを行ってください。あなたは実装者とは別のレビュアーです。read-onlyを維持し、ファイル編集・commit・push・PR・deploy・main操作は禁止。
+
+対象worktree: C:/Users/kanet/20260522/wt-sokuryoshi
+base: bb912dfd0494f7095ec5387f9f2e53f46381cd1f (fetch後のorigin/mainから分岐)
+要求: 国土地理院の測量士 slug sokuryoshi、直近2回2025/2026、午前・午後を公式問題・公式正答の原文どおり収録。午前全肢に独自解説。図表省略なし。未公開publicAllowed=false。validate:questions、typecheck、関連テスト。FAILなら修正して別実行で再レビュー。
+
+主要ファイル:
+- data/qualification-staging/sokuryoshi/{manifest,source-manifest,official-answer-keys,2025,2026,2025-am-notes,2026-am-notes,pm-notes}.json
+- 同ディレクトリassets/は13PDF・186ページの無劣化144dpi WebP原本画像。公開静的領域へは一切置いていない。
+- 原文の正本は原本画像（画像を正式な原文保持形式としている）。OCRに誤りが多いため、文字転記を原文として採用していない。originalQuestionのページ参照と設問番号で原文・選択肢・式・図を保持。複数問が同一ページにある場合も設問番号で特定。
+- 午後は10大問を記述式で保持し、各大問の公式解答例・解答用紙を対応。自動採点しない。103の小問単位の独自説明。
+- reports/cq2-sokuryoshi/transcription に解像度2倍/2.5倍の独立OCRと機械差分。OCR差分は原文画像へ戻す方針であり、未確定OCRを原文文字として流用しない。
+- scripts/qualification-ingestion/{validate-sokuryoshi.ts,sokuryoshi-build.py,sokuryoshi-sources.py}
+- scripts/validate-questions.ts の --staging=sokuryoshi 専用分岐
+- __tests__/questions/sokuryoshi-staging.test.ts
+
+PDF原本と全OCR・PNGを必要に応じて読む場所:
+C:/Users/kanet/AppData/Local/Temp/codex-work/cq2-sokuryoshi
+通常GETで全13件200取得済み。source-manifestにURLとPDF SHA256がある。
+同フォルダstandards.pdf/txtは令和7年3月31日改正の公式作業規程の準則 https://www.gsi.go.jp/common/000258734.pdf。
+同フォルダ000278970-ocr.txt等は補助OCR（誤認・行順異常あり）。公式解答表のPDFは日本語文字層があり、その独立抽出を固定したテストがある。
+
+検査してほしい事項:
+1. 元PDF/原本画像と各設問・公式正答・午後解答例の対応が全問分正しいか。図表・続きページ・語群・作図の欠落がないか。
+2. 特に午前全280肢の解説に、公式正答との矛盾、技術・法令・計算の誤りがないか。組合せ問題は記述の正誤と選択肢番号を区別。
+3. 午後小問ラベル・説明が原問と合うか。無関係な説明、解法の誤り、重要な説明不足がないか。図・表の正本は原本画像に保存されておりテキストだけの置換を要求しない。
+4. private stagingから公開ルート・レジストリ・APIへの漏出がないか。needsReview=trueは人手確認前に公開しないガードであり、今回の非公開収録に意図的に維持している。
+5. 検証がゼロ問PASSや自己参照だけになっていないか、型とCLIの回帰がないか。
+
+まず全差分を確認し、公式画像と技術根拠も照合してください。実質的な不備があれば遠慮なくFAIL。最後に「PASS」または「FAIL」を明記し、FAILでは具体的なファイル・設問番号・問題点・修正案を列挙してください。公開判断の残タスクを今回の非公開収録タスクと混同しないでください。画像正本による原文収録という方式自体ではなく、内容・対応関係・非公開ガード・検証を評価してください。
