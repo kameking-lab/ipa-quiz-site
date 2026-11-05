@@ -5,7 +5,7 @@
 作成直後の端末に `runtime profile not found using "System" match policy` があり、
 WKWebView待機に進む前に起動が失敗した。SDKの版とインストール済みSimulator runtimeは別に確認する。
 
-`asc_capture.sh` はDebugビルドとAppium導入の前に
+`asc_capture.sh` はDebugビルドの前に
 `python3 -u scripts/asc_capture.py --check-simulators` を実行する。
 以下のJSON全体を既存の秘密値マスク付き `diagnostics/capture.log` と標準出力へ残す。
 
@@ -23,7 +23,7 @@ device typeの `minRuntimeVersion` / `maxRuntimeVersion`（数値またはString
 
 撮影時にも一覧を取り直して選択する。`simctl create` には両方のidentifierを明示し、
 直後に `simctl list devices --json` から作成したUDIDの `isAvailable` と
-`availabilityError` を確認する。利用不能ならboot/Appiumに進まず証拠を残し、
+`availabilityError` を確認する。利用不能ならboot・撮影に進まず証拠を残し、
 その回に作った端末だけをshutdown/deleteする。ホスト全体の端末削除・resetは行わない。
 選択した端末名・type ID・runtime ID・版・buildはログと各画像のmanifestへ保存する。
 

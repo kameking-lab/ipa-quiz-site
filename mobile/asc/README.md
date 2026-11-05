@@ -1,4 +1,4 @@
-# App Store掲載・匿名撮影・タグ起動（ASC4）
+# App Store掲載・匿名撮影・タグ起動（ASC7）
 
 ASC5の商品作成・審査画像・年齢/価格/地域/暗号設定・初回IAPドラフトは
 [setup-README.md](setup-README.md)を参照。submitタグはREADY_FOR_REVIEWの
@@ -62,35 +62,34 @@ ASC4は**無料枠を使わない代替構成を常に使用**する。1日10問
 iPhone 16 Pro（1206×2622）と16 Pro Max（1320×2868）の各5枚、合計10枚。
 原寸PNGをJPEGへ変換し、寸法・枚数・SHA-256を送信前に検証する。画像の引き伸ばしはしない。
 Mac/Xcode・該当Simulator・公開Web接続と既存 `MOBILE_RC_IOS_PUBLIC_KEY` は必要。
-シミュレーター用Debug生成物のみWKWebView inspectionを有効化し、作成した端末だけを削除する。
-fastlane 2.241.2、Appium 3.9.0、XCUITest driver 12.22.8を利用する。
+ASC7はAppium・XCUITest・WebDriverAgent・WebView inspectionを使わず、
+`simctl launch` と `simctl io screenshot` で撮影する。fastlane 2.241.2は掲載処理に使用する。
+撮影用起動引数・コンパイル条件・準備完了の検知は [capture-simctl.md](capture-simctl.md) を参照。
 
-## 失敗時の診断（ASC4）
+## 失敗時の診断（ASC7）
 
-標準出力の `[ASC4]` に端末、画面、操作、待機条件を表示する。失敗時は直前の例外・
-Appium HTTPエラー本文とstacktrace・simctlのstdout/stderrを省略せず出力する（秘密値はマスク）。
-WKWebViewに接続できれば現在URL、本文先頭6000文字、要素の件数・表示有無、画像・font状態も出力する。
-接続自体が壊れている場合は取得失敗のエラーを記録し、残りの証拠収集を続ける。
+標準出力の `[ASC7]` に端末、画面、操作、待機条件を表示する。失敗時は直前の例外と
+simctlのstdout/stderrを出力する（秘密値はマスク）。アプリは待機理由を定期出力し、
+準備完了ログを受信できない場合は撮影・掲載へ進まず停止する。
 
 Codemagicのartifactsには次を保存する。失敗したステップの後続アップロードは実行されない。
 
 - `mobile/build/asc/diagnostics/capture.log`: 撮影操作・待機・エラー全文
-- `.../appium.log`: loopback Appium/XCUITest/WDAログ（起動から終了まで）
-- `.../appium-install.log`, `.../xcuitest-install.log`: ツール導入ログ
+- `.../<device>/<screen>-app.log`: 起動ごとの識別子に一致するアプリの準備状態ログ
 - `.../<device>/failure.txt`, `failure.png`: 失敗時点の状態と、端末削除前のスクリーンショット
-- `.../<device>/web-state.json`, `web-source.html`, `native-source.xml`, `contexts.json`, `simulator-state.json`
+- `.../<device>/simulator-state.json`: 作成したSimulatorの状態
 - `mobile/build/asc/simulator-build.log`: Debugビルドログ
 
-Appiumとビルドの生ログはパイプ内でマスクしてから保存する。環境の秘密変数値、PEM、
-Authorization、Cookie、JWT、URLのquery/fragment/userinfoを除去する。ページソースはscript/style、
-フォームのvalueとtextarea内容も除去する。新規匿名端末だけを使い、認証画面を開かない。
-画像は匿名UIの原寸保存で加工しない。SimulatorやWDAが利用不能なら取得できない証拠はあり得るが、
-その取得失敗も標準出力に残す。最初に `failure.txt` とsimctl撮影を行い、死んだWebDriverを待って失わないようにする。
+ビルド・アプリログはマスクしてから保存する。環境の秘密変数値、Authorization、Cookie、JWT、
+URLのquery/fragment/userinfoを除去する。ビルドログの複数行PEMも除去する。
+新規匿名端末だけを使い、認証画面を開かない。DOM本文やページソースは取得しない。
+画像は匿名UIの原寸保存で加工しない。診断の取得失敗も標準出力に残し、
+`failure.txt` と失敗時のsimctl撮影を試みてから、その回に作った端末だけを削除する。
 
 起動は `bootstatus -b` を最大300秒待ち、ローカル画面の描画後に本番へ移動する。
-通知・ATTのシステムダイアログは日本語／英語の明示的な拒否ボタンを押す。
+撮影起動では広告設定を無効にし、ATTを要求しない。通知ボタンは操作せず、許可を要求しない。
 WebのCookie・広告同意は拒否、案内はスキップ。未知のダイアログは無条件に同意せず診断付きで停止する。
-WebViewの切替時はcontextを再取得する。Simulatorの解像度・枚数・ハッシュの検証は従来通り行う。
+Simulatorの解像度・枚数・ハッシュの検証は従来通り行う。
 
 ## 審査情報・提出の条件
 

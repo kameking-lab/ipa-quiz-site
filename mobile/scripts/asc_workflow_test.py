@@ -13,38 +13,15 @@ ROOT = Path(__file__).resolve().parents[1]
 RUBY = os.environ.get("ASC_TEST_RUBY") or shutil.which("ruby")
 
 
-class AnonymousDriver:
-    def __init__(self):
-        self.paths = []
-        self.scripts = []
-
-    def navigate(self, path):
-        self.paths.append(path)
-
-    def js(self, script, *args):
-        # Real UI interactions and history reads only. A credential flow, AI
-        # request or synthetic stored history would violate this boundary.
-        for forbidden in ("fetch(", "XMLHttpRequest", "setItem(", "document.cookie", "auth/callback", "AIへの質問"):
-            if forbidden in script:
-                raise AssertionError("Anonymous capture boundary violated: " + forbidden)
-        self.scripts.append((script, args))
-        if "buttons:" in script:
-            return []
-        return True
-
-
 class AnonymousCaptureTest(unittest.TestCase):
     def test_five_frames_never_request_quiz_or_fabricate_history(self):
-        driver = AnonymousDriver()
-        frames = []
-        with patch.object(asc_capture, "log"), patch.object(asc_capture, "click_text", wraps=asc_capture.click_text) as text:
-            # No code parameter and no async_js/request method exist on this
-            # driver: any reintroduced login/AI request fails the test.
-            asc_capture.capture_free_screens(driver, lambda name, selector: frames.append(name))
-        self.assertEqual(frames, asc_capture.CONFIG["screens"])
-        self.assertEqual([c.args[1] for c in text.call_args_list], ["IT・情報処理", "端末内で学習"])
-        self.assertEqual(driver.paths, ["/ap", "/review", "/account/dashboard"])
-        self.assertFalse(any('[role="radio"]' in str(args) for _, args in driver.scripts))
+        self.assertEqual(list(asc_capture.CAPTURE_ROUTES), asc_capture.CONFIG["screens"])
+        self.assertEqual(list(asc_capture.CAPTURE_ROUTES.values()), ["/", "/ap", "/review", "/account/dashboard", "reminder"])
+        shell = (ROOT / "scripts/asc_capture.sh").read_text()
+        self.assertIn("DEBUG ASC_CAPTURE", shell)
+        self.assertNotIn("npm install", shell)
+        self.assertNotIn("driver install", shell)
+        self.assertNotIn("isInspectable", shell)
 
     def test_capture_entry_point_has_no_environment_secret_reads(self):
         tree = ast.parse((ROOT / "scripts/asc_capture.py").read_text(encoding="utf-8"))

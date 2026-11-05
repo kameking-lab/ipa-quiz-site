@@ -21,7 +21,7 @@ public class TrackingTransparencyPlugin: CAPPlugin, CAPBridgedPlugin {
     private var adsAllowed = false
     private var observer: NSObjectProtocol?
 
-    private var configured: Bool { Bundle.main.object(forInfoDictionaryKey: "KakomonAdsEnabled") as? Bool == true }
+    private var configured: Bool { !ASCCaptureGate.isActive && Bundle.main.object(forInfoDictionaryKey: "KakomonAdsEnabled") as? Bool == true }
     private var trustedPage: Bool {
         guard let url = bridge?.webView?.url else { return false }
         return url.scheme == "https" && url.host == "www.kakomon-ai.jp" && url.port == nil
