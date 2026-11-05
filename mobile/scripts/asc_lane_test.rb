@@ -2,6 +2,7 @@
 # credentials, network or artifacts. Stop exactly at the upload boundary.
 require "json"
 require "fileutils"
+require "openssl"
 $LOADED_FEATURES << "spaceship.rb"
 
 module UI
@@ -13,9 +14,6 @@ module Spaceship
   module ConnectAPI
     class << self
       attr_accessor :token, :app, :builds
-    end
-    class Token
-      def self.create(**_options); Object.new; end
     end
     class App
       def self.find(_bundle); ConnectAPI.app; end
@@ -30,7 +28,7 @@ module Spaceship
 end
 class UploadBoundary < StandardError; end
 class LaneHarness
-  attr_reader :options
+  attr_reader :options, :key_paths
   attr_accessor :return_without_submission
   def default_platform(*); end
   def platform(*); yield; end
@@ -38,6 +36,16 @@ class LaneHarness
   def lane(*, &block); @lane = block; end
   def sh(_python, script, _flag)
     raise "Wrong validation path under fastlane cwd" unless File.file?(script)
+  end
+  def app_store_connect_api_key(**options)
+    raise "Unsafe API key arguments" if options.key?(:key_content) || options[:is_key_content_base64] != false ||
+      options[:set_spaceship_token] != true || options[:duration] != 1200 || options[:in_house] != false ||
+      options[:key_id] != "TEST" || options[:issuer_id] != "TEST"
+    path = options.fetch(:key_filepath)
+    (@key_paths ||= []) << path
+    key = OpenSSL::PKey::EC.new(File.binread(path))
+    raise "Wrong API key curve" unless key.private? && key.group.curve_name == "prime256v1"
+    Spaceship::ConnectAPI.token = Object.new
   end
   def deliver(**options)
     @options = options
@@ -63,7 +71,8 @@ AppRecord = Struct.new(:id, :version, :editable) do
 end
 BuildRecord = Struct.new(:id, :expired)
 ENV.update("ASC_BUILD_NUMBER" => "17", "SUBMIT_FOR_REVIEW" => "false", "ASC_REVIEW_INFO_READY" => "false",
-  "APP_STORE_CONNECT_KEY_IDENTIFIER" => "TEST", "APP_STORE_CONNECT_ISSUER_ID" => "TEST", "APP_STORE_CONNECT_PRIVATE_KEY" => "TEST")
+  "APP_STORE_CONNECT_KEY_IDENTIFIER" => "TEST", "APP_STORE_CONNECT_ISSUER_ID" => "TEST",
+  "APP_STORE_CONNECT_PRIVATE_KEY" => OpenSSL::PKey::EC.generate("prime256v1").private_to_pem.gsub("\n", '\\n'))
 root = File.expand_path("..", __dir__)
 Dir.chdir(File.join(root, "fastlane")) do
   v = Version.new("v1", "1.0.0", "PREPARE_FOR_SUBMISSION")
@@ -131,5 +140,6 @@ Dir.chdir(File.join(root, "fastlane")) do
     raise unless error.message.start_with?("Review was requested but ASC did not confirm submission")
   end
   raise "Staged submission changed build/notes" if v.selected || v.review.updates
+  raise "Temporary authentication key survived lane" unless h.key_paths.all? { |path| !File.exist?(path) }
 end
 puts "ASC Fastfile directory, build-selection and upload-boundary checks PASS"

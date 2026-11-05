@@ -154,7 +154,10 @@ workflows:
           # Fail before credentials/network work if committed images are incomplete.
           python3 scripts/asc_validate.py --screenshots
           ruby -r ./scripts/asc_config -e 'AscConfig.read(ENV); puts "ASC request validation PASS"'
-          # Secrets originate only from the existing Codemagic integration.
+          # Official integration variables: PRIVATE_KEY is .p8 content, not a
+          # path. asc_api_key.rb normalizes it into a mode-600 temporary file;
+          # fastlane reads key_filepath with Base64 decoding disabled.
+          # Never echo the key or write it to CM_ENV/build artifacts.
           : "${APP_STORE_CONNECT_KEY_IDENTIFIER:?ASC integration key ID missing}"
           : "${APP_STORE_CONNECT_ISSUER_ID:?ASC integration issuer missing}"
           : "${APP_STORE_CONNECT_PRIVATE_KEY:?ASC integration key missing}"

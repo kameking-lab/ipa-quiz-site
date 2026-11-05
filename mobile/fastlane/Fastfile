@@ -1,4 +1,5 @@
 require_relative "../scripts/asc_config"
+require_relative "../scripts/asc_api_key"
 asc_root = File.expand_path("..", __dir__)
 
 default_platform(:ios)
@@ -11,12 +12,16 @@ platform :ios do
     require "fileutils"
     config = AscConfig.read(ENV)
     sh("python3", File.join(asc_root, "scripts/asc_validate.py"), "--screenshots")
-    # Consume Codemagic's integration directly. No key file, Apple ID or password.
-    Spaceship::ConnectAPI.token = Spaceship::ConnectAPI::Token.create(
-      key_id: ENV.fetch("APP_STORE_CONNECT_KEY_IDENTIFIER"),
-      issuer_id: ENV.fetch("APP_STORE_CONNECT_ISSUER_ID"),
-      key: ENV.fetch("APP_STORE_CONNECT_PRIVATE_KEY"), duration: 1200
-    )
+    # app_store_connect_api_key marks its returned key hash as sensitive. Only
+    # pass a normalized temporary filepath; unlink on success or failure.
+    AscApiKey.with_key_file(ENV) do |key_filepath|
+      app_store_connect_api_key(
+        key_id: ENV.fetch("APP_STORE_CONNECT_KEY_IDENTIFIER"),
+        issuer_id: ENV.fetch("APP_STORE_CONNECT_ISSUER_ID"),
+        key_filepath: key_filepath, is_key_content_base64: false,
+        duration: 1200, in_house: false, set_spaceship_token: true
+      )
+    end
     app = Spaceship::ConnectAPI::App.find("jp.kakomon-ai.app")
     UI.user_error!("ASC app identity mismatch") unless app && app.id == "6830358918"
     builds = Spaceship::ConnectAPI::Build.all(
