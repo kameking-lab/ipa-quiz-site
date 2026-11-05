@@ -8,7 +8,7 @@ import net from 'node:net';
 import { tmpdir } from 'node:os';
 import { dirname, join, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { DB1_MIGRATIONS } from './vercel-migrate.mjs';
+import { DB1_MIGRATIONS, MIG2_MIGRATIONS } from './vercel-migrate.mjs';
 
 const repo = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const tooling = resolve(process.argv[2]);
@@ -43,6 +43,7 @@ try {
   console.log((await admin.query('SELECT version()')).rows[0].version);
   const names = (await readdir(join(repo, 'prisma/migrations'))).filter(name => /^\d/.test(name)).sort();
   const beforeDb1 = names.filter(name => !DB1_MIGRATIONS.includes(name));
+  const beforeMig2 = names.filter(name => !MIG2_MIGRATIONS.includes(name));
   async function baseline(database, include) {
     await admin.query(`CREATE DATABASE "${database}"`);
     const root = join(temp, database);
@@ -50,6 +51,12 @@ try {
     await writeFile(join(root, 'schema.prisma'), 'datasource db {\n provider = "postgresql"\n url = env("DATABASE_URL")\n}\n');
     await cp(join(repo, 'prisma/migrations/migration_lock.toml'), join(root, 'migrations/migration_lock.toml'));
     for (const name of include) await cp(join(repo, 'prisma/migrations', name), join(root, 'migrations', name), { recursive: true });
+    // Three/zero must also work with the original, pre-approval SQL checksum.
+    if (include.includes(MIG2_MIGRATIONS[0])) {
+      const feedbackSql = join(root, 'migrations', MIG2_MIGRATIONS[0], 'migration.sql');
+      await writeFile(feedbackSql, (await readFile(feedbackSql, 'utf8')).replace(/^-- Owner approved[^\r\n]+/,
+        '-- Branch-only migration: production application requires separate owner approval.'));
+    }
     execFileSync(process.execPath, [cli, 'migrate', 'deploy', '--schema', join(root, 'schema.prisma')], {
       cwd: root, env: { ...env, DATABASE_URL: url(database) }, encoding: 'utf8', windowsHide: true, timeout: 120_000, stdio: 'pipe',
     });
@@ -77,9 +84,10 @@ try {
     for (const { tablename } of tables) result[tablename] = (await client.query(`SELECT to_jsonb(t) AS value FROM "${tablename}" t ORDER BY to_jsonb(t)::text`)).rows;
     return result;
   }
-  for (const mode of ['three', 'zero', 'unexpected']) {
+  for (const mode of ['five', 'three', 'zero', 'unexpected']) {
     const database = `int5b_${mode}`;
-    const included = mode === 'zero' ? names : mode === 'unexpected' ? beforeDb1.slice(0, -1) : beforeDb1;
+    const included = mode === 'zero' ? names : mode === 'five' ? beforeMig2
+      : mode === 'unexpected' ? beforeDb1.slice(0, -1) : beforeDb1;
     const client = await baseline(database, included);
     try {
       const before = await snapshot(client);
@@ -89,9 +97,10 @@ try {
         assert.equal(result.code, 1);
         assert.deepEqual(after, before, 'unexpected pending: every table and history row unchanged');
         assert.doesNotMatch(result.output, /Preflight passed|deploy and clean/);
+        for (const name of names.filter(name => !included.includes(name))) assert.ok(result.output.includes(name), `error lists ${name}`);
       } else {
         assert.equal(result.code, 0);
-        assert.match(result.output, new RegExp(`Preflight passed: ${mode === 'three' ? 3 : 0} pending`));
+        assert.match(result.output, new RegExp(`Preflight passed: ${mode === 'five' ? 5 : mode === 'three' ? 3 : 0} pending`));
         assert.match(result.output, /deploy and clean postflight passed/);
         for (const [table, rows] of Object.entries(before)) {
           if (table !== '_prisma_migrations') assert.deepEqual(after[table], rows, `preserve ${table}`);
@@ -104,6 +113,15 @@ try {
         assert.ok(notices.some(notice => notice.includes('MobileAuthCode:')));
         const columns = (await client.query(`SELECT column_name FROM information_schema.columns WHERE table_schema='public' AND table_name IN ('MobileAuthCode','MobileRevenueCatAccount','DeletedBillingRetention')`)).rows;
         assert.equal(columns.length, 13);
+        for (const table of ['feedback_unlock', 'feedback_unlock_grant', 'feedback_unlock_rate']) {
+          assert.ok(Object.hasOwn(after, table), `${table} exists`);
+        }
+        const feedbackColumn = (await client.query(`SELECT data_type FROM information_schema.columns WHERE table_schema='public' AND table_name='feedback_unlock' AND column_name='user_id'`)).rows;
+        assert.deepEqual(feedbackColumn, [{ data_type: 'text' }]);
+        if (mode === 'five') {
+          assert.equal(run(database).code, 0, 'five applied: rerun accepts zero pending');
+          assert.deepEqual(await snapshot(client), after, 'rerun preserves all data and history');
+        }
       }
       console.log(`PASS ${mode}: exit=${result.code}; verified complete database snapshots and migration history`);
     } finally { await client.end(); }

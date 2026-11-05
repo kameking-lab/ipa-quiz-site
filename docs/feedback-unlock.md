@@ -18,13 +18,19 @@ F1G: トップの主導線はログイン不要の1タップ開始。短い3問�
 Turnstileトークンは保存せず、復帰後に再確認して利用者が送信する。
 一時保存できないブラウザでは画面を残し、別タブでログイン後に再確認できる。
 
-## 有効化（本ブランチでは実施しない）
+## 本番migration承認と有効化
 
-1. 所有者の別途承認後、既存のDBマイグレーション手順で
+2026-11-05 12:10 JST、オーナーが「フィードバックで+10問」の下記2本をiOS用DB1の3本と一緒に本番へ適用することを承認した（MIG2）。同日10:12の診断ビルドでは、この5本が本番の未適用として確認されている。
+
+適用は [DB1手順書](./mobile-db-migrations.md) のVercel本番ビルドガードを通して行う。未適用は、feedbackの2本→DB1の3本の**計5本ちょうど（migration名の昇順）**、**DB1の3本ちょうど**、**0本**だけを許可する。それ以外は名前をエラーに出し、何も適用せずビルドを停止する。MIG2の作業はガード・文書・ローカル検証と専用ブランチのpushまでで、本番接続・適用・デプロイは実施しない。機能のenv設定・note連携の有効化や旧HMAC台帳のbackfillは、このmigration承認には含めない。
+
+1. 承認済みの自動適用手順で
    `prisma/migrations/20261103000000_feedback_unlock/migration.sql` と
    `prisma/migrations/20261103010000_feedback_unlock_user_id/migration.sql` を適用する。
    追加テーブルは `feedback_unlock` / `feedback_unlock_grant` / `feedback_unlock_rate`。
    既存のUser、課金、学習記録テーブルは変更しない。既存課金と同じパラメーター付きSQL境界を使う。
+   先頭の承認注記だけを更新したため、ガードは旧注記のチェックサムもこの1本に限って許容する。
+   実行SQLの変更は従来どおり拒否し、適用済み履歴の書換えや自動resolveは行わない。
 2. 過去問AIで `FEEDBACK_UNLOCK_ENABLED=true` を設定する。
    `DATABASE_URL` と `AUTH_SECRET`、通常演習の既存課金ゲート・ゲストKV設定が必要。
    bot検証は既存 `TURNSTILE_SECRET_KEY` と `NEXT_PUBLIC_TURNSTILE_SITE_KEY` を利用する。
