@@ -30,10 +30,21 @@ platform :ios do
       UI.user_error!("Version is not editable; no automatic cancellation") unless allowed.include?(version.app_version_state || version.app_store_state)
     else
       UI.user_error!("Stage app and IAP review items before submitting") if config[:submit]
-      UI.user_error!("Another editable version exists") if app.get_edit_app_store_version(platform: "IOS")
-      version = Spaceship::ConnectAPI.post_app_store_version(app_id: app.id, attributes: {
-        platform: "IOS", versionString: config[:version], releaseType: "MANUAL"
-      }).first
+      existing = app.get_edit_app_store_version(platform: "IOS")
+      if existing
+        # A new ASC app starts with an empty "1.0" draft. Reuse it (renaming the version
+        # string) only while it is still a plain draft; never touch reviewed or live versions.
+        state = existing.app_version_state || existing.app_store_state
+        UI.user_error!("Another editable version exists") unless state == "PREPARE_FOR_SUBMISSION"
+        existing.update(attributes: { versionString: config[:version] })
+        version = app.get_app_store_versions(filter: { platform: "IOS", versionString: config[:version] })
+          .find { |v| v.version_string == config[:version] }
+        UI.user_error!("Draft version rename did not take effect") unless version && version.id == existing.id
+      else
+        version = Spaceship::ConnectAPI.post_app_store_version(app_id: app.id, attributes: {
+          platform: "IOS", versionString: config[:version], releaseType: "MANUAL"
+        }).first
+      end
     end
     unless config[:submit]
       editable = app.get_edit_app_store_version(platform: "IOS")
