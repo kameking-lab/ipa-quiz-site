@@ -28,16 +28,19 @@ platform :ios do
     versions = app.get_app_store_versions(filter: { platform: "IOS", versionString: config[:version] })
     version = versions.find { |v| v.version_string == config[:version] }
     if version
-      allowed = %w[PREPARE_FOR_SUBMISSION DEVELOPER_REJECTED REJECTED METADATA_REJECTED]
+      allowed = config[:submit] ? %w[READY_FOR_REVIEW] : %w[PREPARE_FOR_SUBMISSION DEVELOPER_REJECTED REJECTED METADATA_REJECTED]
       UI.user_error!("Version is not editable; no automatic cancellation") unless allowed.include?(version.app_version_state || version.app_store_state)
     else
+      UI.user_error!("Stage app and IAP review items before submitting") if config[:submit]
       UI.user_error!("Another editable version exists") if app.get_edit_app_store_version(platform: "IOS")
       version = Spaceship::ConnectAPI.post_app_store_version(app_id: app.id, attributes: {
         platform: "IOS", versionString: config[:version], releaseType: "MANUAL"
       }).first
     end
-    editable = app.get_edit_app_store_version(platform: "IOS")
-    UI.user_error!("deliver would target another version") unless editable && editable.id == version.id
+    unless config[:submit]
+      editable = app.get_edit_app_store_version(platform: "IOS")
+      UI.user_error!("deliver would target another version") unless editable && editable.id == version.id
+    end
     # The owner may provision review access directly in ASC once. Keep credentials
     # out of Codemagic variables, deliver summaries and build artifacts.
     review_detail = nil
@@ -50,31 +53,38 @@ platform :ios do
         review_detail.demo_account_password.match?(/\A[A-Za-z0-9_-]{43,128}\z/)
       UI.user_error!("Complete existing ASC review contact and App Review code are required; owner must verify production access") unless valid
     end
-    version.select_build(build_id: builds.first.id)
-    # Stage only approved fields. Review notes/contact/code remain absent unless ready.
-    metadata = File.join(asc_root, "fastlane/metadata")
-    options = {
-      app_identifier: "jp.kakomon-ai.app", app_version: config[:version],
-      build_number: config[:build], metadata_path: metadata,
-      screenshots_path: File.join(asc_root, "fastlane/screenshots"),
-      skip_binary_upload: true, skip_app_version_update: true,
-      skip_metadata: false, skip_screenshots: false, overwrite_screenshots: true,
-      submit_for_review: config[:submit], automatic_release: false,
-      force: true, reject_if_possible: false,
-      precheck_include_in_app_purchases: false
-    }
-    options[:copyright] = ENV["ASC_COPYRIGHT"] if config[:copyright]
-    notes = File.read(File.join(asc_root, "asc/review-notes.ja.txt"), encoding: "UTF-8")
-    if review_detail
-      # A notes-only API PATCH preserves the owner's contact and credentials.
-      review_detail.update(attributes: { notes: notes })
-    elsif config[:review_ready]
-      options[:app_review_information] = config[:review].merge(
-        demo_user: "App Review", notes: notes
-      )
+    unless config[:submit]
+      version.select_build(build_id: builds.first.id)
+      # Stage only approved fields. Review notes/contact/code remain absent unless ready.
+      metadata = File.join(asc_root, "fastlane/metadata")
+      options = {
+        app_identifier: "jp.kakomon-ai.app", app_version: config[:version],
+        build_number: config[:build], metadata_path: metadata,
+        screenshots_path: File.join(asc_root, "fastlane/screenshots"),
+        skip_binary_upload: true, skip_app_version_update: true,
+        skip_metadata: false, skip_screenshots: false, overwrite_screenshots: true,
+        # ASC5 submits the exact app + IAP draft below. fastlane's submitter
+        # rejects drafts containing IAP items it did not create itself.
+        submit_for_review: false, automatic_release: false,
+        force: true, reject_if_possible: false,
+        precheck_include_in_app_purchases: false
+      }
+      options[:copyright] = ENV["ASC_COPYRIGHT"] if config[:copyright]
+      notes = File.read(File.join(asc_root, "asc/review-notes.ja.txt"), encoding: "UTF-8")
+      if review_detail
+        # A notes-only API PATCH preserves the owner's contact and credentials.
+        review_detail.update(attributes: { notes: notes })
+      elsif config[:review_ready]
+        options[:app_review_information] = config[:review].merge(
+          demo_user: "App Review", notes: notes
+        )
+      end
+      # fastlane masks app_review_information.demo_password in its summary.
+      deliver(**options)
+    else
+      # The staged version snapshots metadata. Do not change it after iapreview.
+      sh(ENV.fetch("ASC_SETUP_PYTHON"), File.join(asc_root, "scripts/asc_setup.py"), "--submit-staged-review")
     end
-    # fastlane masks app_review_information.demo_password in its summary.
-    deliver(**options)
     # deliver can return normally when precheck blocks submission. Record observed
     # state, never turn a requested flag into a successful-submission claim.
     submitted = false
@@ -93,8 +103,8 @@ platform :ios do
     FileUtils.mkdir_p(File.join(asc_root, "build/asc"))
     File.write(File.join(asc_root, "build/asc/result.json"), JSON.pretty_generate({
       app_id: app.id, version: config[:version], build: config[:build],
-      metadata_uploaded: true, screenshots_uploaded: true,
-      review_information_uploaded: config[:review_ready], submitted_for_review: submitted,
+      metadata_uploaded: !config[:submit], screenshots_uploaded: !config[:submit],
+      review_information_uploaded: !config[:submit] && config[:review_ready], submitted_for_review: submitted,
       observed_review_state: observed_state,
       release: "manual", follow_up: "asc-api-followup.md"
     }))

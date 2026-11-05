@@ -1,60 +1,37 @@
-# ASC3: API外の作業・今回の自動化の範囲
+# ASC5: API外の作業と自動化の範囲
 
-2026-11-05。出典資料: ASC1 `asc1-kakomon-listing.md`（task-2）。
-この一覧はビルドartifactにも保存する。実行結果は `result.json` を確認する。
-一覧の出力は、ASCの設定が完了していることを意味しない。
+2026-11-05。元資料はASC1 asc1-kakomon-listing.md（task-2）。この一覧は掲載workflowのartifactにも保存する。記載だけで設定完了とは扱わない。
 
-## 公開APIで入力できず、別の認証済み手段が必要な項目
+## オーナーがASC画面で行う操作
 
-- **App Privacyの収集データ・利用目的・ユーザーへの紐付け・トラッキング回答と公開**。
-  公開App Store Connect APIには、この質問票の書き込みエンドポイントがない。
-  `privacy_url.txt` の反映やPrivacyInfo.xcprivacyの同梱では代替できない。
-  Claudeは既存の認証済みASCセッション等を使える担当者と連携して入力・公開する。
-  APIキーからApple IDログインセッションを作ることはできない。
-  Apple公開OpenAPI仕様4.5.1（2026-11-05取得）でも質問票用のpathがないことを確認した。
-  ASC1 §4の案をGoogle広告SDK・RevenueCat・実通信・保持期間で確定してから反映する。
-- **契約への同意、必要に応じた税務・銀行・本人確認など、Account Holder等の本人操作**。
-  API連携への権限追加で本人同意を代行できるとは扱わない。
-  DSA事業者情報の認証・法的確認を含め、アカウント状態に応じた対応を担当者へ引き継ぐ。
+- アプリレコード新規作成: Apps APIは既存レコードの管理用。過去問AI6830358918は作成済み。次の資格・安全AIの未作成レコードはオーナーが作成する。Bundle ID登録とは別の作業。
+- App Privacyの収集データ・利用目的・関連付け・Tracking回答と公開: 公開OpenAPI **4.6**（2026-11-05取得、1,027 paths）に質問票の書込みpathはない。privacyPolicyUrl / PrivacyInfo.xcprivacy / Xcode privacy reportはラベル回答の代わりにならない。元資料§4の保留を実通信・保持設定で確定してから、オーナーが入力・公開する。
+- 必要な本人・法的手続き: Account Holder等の契約同意、未完了の場合の税務・銀行・本人確認、配信地域に応じたDSA情報など。APIキーからApple IDセッションを作ることはできない。
 
-## APIで扱えるが、このworkflowでは入力しない／条件が必要な項目
+## 過去問AIで実装済みのAPI経路（ASCへの反映は未実施）
 
-- **年齢区分質問票**: APIの `ageRatingDeclarations` で更新可能。ASC1 §3の医療教材・UGC・広告を
-  含む全範囲の回答案を確認後、別実装で反映する。4+を固定しない。
-- **Content Rights**: App情報APIで扱える。第三者問題の権利・出典確認後に確定する。
-- **価格・提供国・主言語**: APIで扱える。無料アプリ、ja、日本先行の判断等は今回変更しない。
-- **著作権**: `ASC_COPYRIGHT` を指定したときだけ反映。ASC1候補は `2026 kameking-lab`。
-  候補の採用可否を確定するまで空のままにし、架空の権利者を作らない。
-- **審査担当者氏名・電話・メール、審査コード、Notes**: API/deliverで入力可能。
-  `ASC_REVIEW_INFO_READY=true` のときだけ更新する。ASC3の初期経路 `ASC_REVIEW_SOURCE=existing` は
-  オーナーがASCの対象版へ直接登録済みの連絡先・コードをAPIで確認し、NotesだけPATCHする。
-  Codemagicへの審査コードの入力は不要。任意の `environment` 経路のみ全 `ASC_REVIEW_*` 秘密変数が必要。
-  Notesは `asc/review-notes.ja.txt`。未確認機能を確認済みとして送らない。
-- **IAP商品・サブスクリプショングループ・980円/月の価格・日本語説明・IAP審査画像・初回提出への追加**:
-  公開APIで多くを管理できるが、deliverのアプリ掲載アップロードには含まれない。ASC1 §7を別実装で反映する。
-  `kakomon_pro` は現時点ではRevenueCat entitlement ID。実際のProduct IDを決めつけない。
-- **輸出コンプライアンス・必要な書類**: Info.plistと関連公開APIで対応可能な部分がある。
-  Archive内SDKを確認してから回答・書類要否を確定する。法律上の分類を自動推測しない。
-- **アプリアイコン**: 署名済みArchiveのAsset Catalog由来。掲載文workflowから差し替えない。
+- 従来の掲載タグ: ja掲載文・ストア画像・明示した既存buildの選択。
+- 審査連絡先・コード・Notes: ASC_REVIEW_INFO_READY=true時の既存ASC再利用、または従来のCodemagic秘密変数environment経路。画面入力は必須ではない。実値をチャット/リポジトリ/成果物に保存せず、本番ログイン・期限は別途確認する。
+- **catalog準備タグ**: グループ、kakomon_proの新規自動更新商品、ja表示名/説明、審査メモ、1か月980円の価格、日本での販売。別の既存Product IDを自動置換しない。ASC1では権利IDのみ確認されていたが、ASC5ではユーザーが新規Product IDとして指定。MOBILE_RC_PRODUCT_ID・RevenueCatと一致すると確認してから実行する。
+- **iapshot準備タグ**: 実際の購入画面のPNGを、予約→PUT→MD5commit→COMPLETE確認で添付。実画像の別撮影とRevenueCat設定が必要。匿名5画面は購入画面の代わりにならない。
+- **settings準備タグ**: 年齢質問票、Content Rights、ja、アプリ本体無料、日本配信、明示したbuildへの免除暗号申告。全回答の確認フラグが必要。4+や暗号分類を自動推測しない。既存価格/配信国が案と異なる場合は止め、技術担当がAPIで調整方針を決める。
+- **iapreview準備タグ**: App版 + subscriptionVersion + subscriptionGroupVersionを同一ドラフトへ追加。snapshot作成後の元情報変更を避け、未添付の古いsnapshotは明示停止して照合する。
+- 既存submitタグ: app/IAP/groupの3件・ID・状態・選択build・レビュー情報・MANUAL公開設定を検証して提出。専用webhook、ready、copyright、ASC_PREREQUISITES_CONFIRMED=trueの従来ガードを維持。新規準備タグは提出も公開もしない。詳細は [setup-README.md](setup-README.md)。
 
-## ASCへの入力以外に残る実装・検証
+次の資格・安全AIはこの過去問AI専用workflowの対象外。APIを使える項目も、担当者が対象IDへの接続を実装/実行する作業が残る。安全AI初版はPro新規販売なしでIAPを追加しない。非免除暗号の実書類・宣言管理、承認後のrelease requestもAPIで扱えるが、今回自動実行しない。
 
-- 公開privacy/termsのiOS広告・課金・削除・同意撤回説明の整合。
-- Sign in with Appleの本番設定、IOS3コードの本番有効化と審査期間中の期限管理。
-- RevenueCatとStoreKit商品・サーバー権利・復元・オフライン保存の実機確認。
-- ADS1のATT/CMP同意前後の実通信確認。拒否時も学習可能なこと。
-- 05はASC1 §8.2で認められた「学習リマインダー」代替。オフライン保存の撮影・検証済みとは扱わない。
-- 撮影するオンライン画面は実行時の公開Web版。提出対象Archiveとの機能・表示の一致を確認する。
+## ASC入力以外に残る検証
 
-専用 `asc-kakomon-submit-vVERSION-bBUILD-rRUN` タグのwebhookだけが
-`SUBMIT_FOR_REVIEW=true` を導出し審査提出を実行する。加えてレビュー情報・著作権の入力と
-`ASC_PREREQUISITES_CONFIRMED=true`（上記とASC1の提出条件を担当者が確認済み）が必要。
-デフォルトはアップロードだけ。審査通過後の公開方式も手動で、自動リリースしない。
+- 公開privacy/termsとiOS広告・課金・削除・同意撤回説明の整合。
+- Sign in with Appleの本番設定、IOS3審査コードの有効化と審査中の期限確保。
+- RevenueCat/StoreKit商品・サーバー権利・購入復元・オフライン保存の実機確認。
+- ADS1 ATT/CMP同意前後の実通信。拒否時も学習できること。
+- 掲載画像は実行時のWeb/Simulator。対象Archiveとの機能・表示一致を担当者が確認する。05は学習リマインダー代替で、保存・オフライン動作の撮影済みとは扱わない。
 
 ## 一次資料
 
-- [Apple App Store Connect API / OpenAPI](https://developer.apple.com/documentation/appstoreconnectapi)
+- [Apple Apps API](https://developer.apple.com/documentation/appstoreconnectapi/apps)
+- [Apple公開OpenAPI](https://developer.apple.com/sample-code/app-store-connect/app-store-connect-openapi-specification.zip)
 - [Apple App Privacyの入力と公開](https://developer.apple.com/help/app-store-connect/manage-app-information/manage-app-privacy)
-- [Appleスクリーンショット仕様](https://developer.apple.com/help/app-store-connect/reference/app-information/screenshot-specifications/)
-- [fastlane deliver](https://docs.fastlane.tools/actions/deliver/)
-- [Codemagic ASC連携](https://docs.codemagic.io/yaml-publishing/app-store-connect/)
+- [AppleサブスクAPI](https://developer.apple.com/documentation/appstoreconnectapi/managing-auto-renewable-subscriptions)
+- [Apple審査画像API](https://developer.apple.com/documentation/appstoreconnectapi/subscription-app-store-review-screenshots)

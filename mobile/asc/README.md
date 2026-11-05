@@ -1,5 +1,11 @@
 # App Store掲載・匿名撮影・タグ起動（ASC4）
 
+ASC5の商品作成・審査画像・年齢/価格/地域/暗号設定・初回IAPドラフトは
+[setup-README.md](setup-README.md)を参照。submitタグはREADY_FOR_REVIEWの
+app + subscription + groupを含むドラフトを事前準備してから実行する。
+fastlaneのIAP入りドラフト拒否を避け、ASC5がその3件のID/状態/buildを再検証して提出する。
+提出時は掲載/画像を再変更しない。準備タグは提出を実行しない。
+
 Codemagicの既存 `App Store Key` 連携と `kakomon_ios` グループを利用する。
 ClaudeはAPIキー・Codemagicトークン・審査コードを取得・入力せず、Gitタグのpushで起動できる。
 通常ブランチpushは従来のTestFlightビルドだけ。ASC workflowは `tag` イベントだけを監視する。

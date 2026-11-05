@@ -56,7 +56,10 @@ Version = Struct.new(:id, :version_string, :app_version_state, :app_store_state,
 end
 AppRecord = Struct.new(:id, :version, :editable) do
   def get_app_store_versions(**); [version]; end
-  def get_edit_app_store_version(**); editable; end
+  # Match fastlane 2.241.2: READY_FOR_REVIEW is not an editable version.
+  def get_edit_app_store_version(**)
+    editable && editable.app_version_state == "READY_FOR_REVIEW" ? nil : editable
+  end
 end
 BuildRecord = Struct.new(:id, :expired)
 ENV.update("ASC_BUILD_NUMBER" => "17", "SUBMIT_FOR_REVIEW" => "false", "ASC_REVIEW_INFO_READY" => "false",
@@ -84,9 +87,9 @@ Dir.chdir(File.join(root, "fastlane")) do
   end
   raise "Mutated build before mismatch rejection" if v.selected
   Spaceship::ConnectAPI.app.editable = v
-  ENV.update("SUBMIT_FOR_REVIEW" => "true", "ASC_REVIEW_INFO_READY" => "true",
+  ENV.update("SUBMIT_FOR_REVIEW" => "false", "ASC_REVIEW_INFO_READY" => "true",
     "ASC_PREREQUISITES_CONFIRMED" => "true", "ASC_COPYRIGHT" => "2026 Test",
-    "CM_TAG" => "asc-kakomon-submit-v1.0.0-b17-rtest", "CM_TRIGGER_SOURCE" => "webhook",
+    "CM_TAG" => "asc-kakomon-v1.0.0-b17-rtest", "CM_TRIGGER_SOURCE" => "webhook",
     "ASC_REVIEW_SOURCE" => "environment")
   AscConfig::REVIEW_ENV.each_value { |key| ENV[key] = "test" }
   ENV["ASC_REVIEW_CODE"] = "A" * 43
@@ -117,11 +120,16 @@ Dir.chdir(File.join(root, "fastlane")) do
   raise "Notes PATCH changed owner fields" unless v.review.updates.keys == [:notes]
   raise "Wrong notes" unless v.review.updates[:notes] == File.read(File.join(root, "asc/review-notes.ja.txt"), encoding: "UTF-8")
   h.return_without_submission = true
+  ENV.update("SUBMIT_FOR_REVIEW" => "true", "CM_TAG" => "asc-kakomon-submit-v1.0.0-b17-rtest", "ASC_SETUP_PYTHON" => "python3")
+  v.app_version_state = "READY_FOR_REVIEW"
+  v.selected = nil
+  v.review.updates = nil
   begin
     h.run
     raise "A precheck block should not report submission success"
   rescue RuntimeError => error
     raise unless error.message.start_with?("Review was requested but ASC did not confirm submission")
   end
+  raise "Staged submission changed build/notes" if v.selected || v.review.updates
 end
 puts "ASC Fastfile directory, build-selection and upload-boundary checks PASS"

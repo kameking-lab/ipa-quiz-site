@@ -127,15 +127,27 @@ workflows:
       xcode: latest
       cocoapods: default
     scripts:
+      - name: Route preparation tags without selecting or submitting an app build
+        script: |
+          set -euo pipefail
+          cd "$CM_BUILD_DIR/mobile"
+          if [[ "${CM_TAG:-}" =~ ^asc-kakomon-(catalog|iapshot|settings|iapreview)- ]]; then
+            python3 scripts/asc_setup.py --validate
+            echo 'ASC_SETUP_MODE=true' >> "$CM_ENV"
+          else
+            echo 'ASC_SETUP_MODE=false' >> "$CM_ENV"
+          fi
       - name: Resolve dedicated tag into non-secret request parameters
         script: |
           set -euo pipefail
+          if [[ "${ASC_SETUP_MODE:-false}" == true ]]; then exit 0; fi
           cd "$CM_BUILD_DIR/mobile"
           # Only version/build/submission are written; never export review secrets.
           ruby scripts/asc_config.rb >> "$CM_ENV"
       - name: Validate request and emit API follow-up report
         script: |
           set -euo pipefail
+          if [[ "${ASC_SETUP_MODE:-false}" == true ]]; then exit 0; fi
           cd "$CM_BUILD_DIR/mobile"
           mkdir -p build/asc
           cp asc/api-followup.md build/asc/asc-api-followup.md
@@ -148,6 +160,7 @@ workflows:
       - name: Install shared web and isolated app dependencies
         script: |
           set -euo pipefail
+          if [[ "${ASC_SETUP_MODE:-false}" == true ]]; then exit 0; fi
           cd "$CM_BUILD_DIR"
           npx --yes pnpm@10.33.0 install --frozen-lockfile --ignore-scripts
           npx --no-install prisma generate
@@ -159,6 +172,7 @@ workflows:
       - name: Prepare actual native app and capture two five-screen sets
         script: |
           set -euo pipefail
+          if [[ "${ASC_SETUP_MODE:-false}" == true ]]; then exit 0; fi
           cd "$CM_BUILD_DIR/mobile"
           if [[ -z "${MOBILE_RC_IOS_PUBLIC_KEY:-}" || "$MOBILE_RC_IOS_PUBLIC_KEY" != appl_* ]]; then
             echo "Set the existing RevenueCat public iOS SDK key in kakomon_ios." >&2
@@ -171,15 +185,30 @@ workflows:
       - name: Upload listing and screenshots; optionally submit for review
         script: |
           set -euo pipefail
+          if [[ "${ASC_SETUP_MODE:-false}" == true ]]; then exit 0; fi
           cd "$CM_BUILD_DIR/mobile"
+          if [[ "${SUBMIT_FOR_REVIEW:-false}" == true ]]; then
+            python3 -m venv .cache/asc5-venv
+            .cache/asc5-venv/bin/pip install --disable-pip-version-check cryptography==48.0.1
+            export ASC_SETUP_PYTHON="$PWD/.cache/asc5-venv/bin/python"
+          fi
           # No publishing block: only the guarded fastlane lane can submit.
           FASTLANE_SKIP_UPDATE_CHECK=1 FASTLANE_HIDE_CHANGELOG=1 \
             bundle exec fastlane ios asc_metadata
+      - name: Prepare ASC resources through API without review submission
+        script: |
+          set -euo pipefail
+          if [[ "${ASC_SETUP_MODE:-false}" != true ]]; then exit 0; fi
+          cd "$CM_BUILD_DIR/mobile"
+          python3 -m venv .cache/asc5-venv
+          .cache/asc5-venv/bin/pip install --disable-pip-version-check cryptography==48.0.1
+          .cache/asc5-venv/bin/python scripts/asc_setup.py
     artifacts:
       - mobile/fastlane/screenshots/ja/*.jpg
       - mobile/fastlane/screenshots/manifest.json
       - mobile/build/asc/*.md
       - mobile/build/asc/result.json
+      - mobile/build/asc/setup-result.json
       - mobile/build/asc/simulator-build.log
       - mobile/build/asc/diagnostics/**/*.log
       - mobile/build/asc/diagnostics/**/*.txt
