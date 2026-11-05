@@ -121,7 +121,6 @@ workflows:
         - kakomon_ios
       vars:
         ASC_APP_VERSION: "1.0.0"
-        ASC_BUILD_NUMBER: ""
         SUBMIT_FOR_REVIEW: "false"
       node: "22"
       ruby: "3.4.7"
