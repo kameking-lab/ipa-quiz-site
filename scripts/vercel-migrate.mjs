@@ -14,6 +14,16 @@ export const DB1_MIGRATIONS = Object.freeze([
   '20261104020000_mobile_store_environments',
 ]);
 
+// Owner approved both feedback migrations with DB1 on 2026-11-05 12:10 JST.
+export const MIG2_MIGRATIONS = Object.freeze([
+  '20261103000000_feedback_unlock',
+  '20261103010000_feedback_unlock_user_id',
+  ...DB1_MIGRATIONS,
+]);
+
+const feedbackApproval = '-- Owner approved production application with DB1: 2026-11-05 12:10 JST (MIG2).';
+const feedbackOriginalNote = '-- Branch-only migration: production application requires separate owner approval.';
+
 class MigrationGateError extends Error {}
 
 export function isProductionBuild(env) {
@@ -37,9 +47,16 @@ export function directDatabaseUrl(env) {
   return env[key];
 }
 
-function checksums(sql) {
+function checksums({ name, sql }) {
+  // Only the approval comment changed. Accept histories created before approval
+  // without accepting any change to the executable SQL or other migrations.
+  const versions = [sql];
+  if (name === MIG2_MIGRATIONS[0] && (sql.startsWith(`${feedbackApproval}\n`)
+    || sql.startsWith(`${feedbackApproval}\r\n`))) {
+    versions.push(feedbackOriginalNote + sql.slice(feedbackApproval.length));
+  }
   // Prisma accepts the original, LF and CRLF versions of a migration checksum.
-  return [sql, sql.replace(/\r\n/g, '\n'), sql.replace(/\r?\n/g, '\r\n')]
+  return versions.flatMap(value => [value, value.replace(/\r\n/g, '\n'), value.replace(/\r?\n/g, '\r\n')])
     .map(value => createHash('sha256').update(value).digest('hex'));
 }
 
@@ -50,18 +67,19 @@ export function pendingMigrations(files, history) {
     if (row.rolled_back_at) continue;
     const migration = files.find(file => file.name === row.migration_name);
     if (!row.finished_at || !migration || applied.has(row.migration_name)
-      || !checksums(migration.sql).includes(row.checksum)) {
+      || !checksums(migration).includes(row.checksum)) {
       throw new MigrationGateError('Failed, unknown, duplicate or modified migration history; no deploy attempted.');
     }
     applied.add(row.migration_name);
   }
   const pending = files.filter(file => !applied.has(file.name)).map(file => file.name);
-  if (pending.length !== 0 && (pending.length !== DB1_MIGRATIONS.length
-    || pending.some((name, index) => name !== DB1_MIGRATIONS[index]))) {
-    throw new MigrationGateError('Unexpected pending migrations (only all three DB1 migrations or zero are allowed); no deploy attempted.');
+  const allowed = [MIG2_MIGRATIONS, DB1_MIGRATIONS, []];
+  if (!allowed.some(group => pending.length === group.length
+    && pending.every((name, index) => name === group[index]))) {
+    throw new MigrationGateError(`Unexpected pending migrations: ${pending.join(', ')} (only all five MIG2 migrations, all three DB1 migrations or zero are allowed); no deploy attempted.`);
   }
-  if (DB1_MIGRATIONS.some(name => !files.some(file => file.name === name))) {
-    throw new MigrationGateError('DB1 migration files are missing; no deploy attempted.');
+  if (MIG2_MIGRATIONS.some(name => !files.some(file => file.name === name))) {
+    throw new MigrationGateError('Approved migration files are missing; no deploy attempted.');
   }
   return pending;
 }
@@ -112,7 +130,7 @@ export async function migrateForVercel(env = process.env) {
       const history = () => tx.$queryRawUnsafe('SELECT migration_name, checksum, finished_at, rolled_back_at FROM "_prisma_migrations" ORDER BY started_at, id');
       const pending = pendingMigrations(files, await history());
       prisma('status', pending);
-      console.log(`[vercel-migrate] Preflight passed: ${pending.length} pending DB1 migrations.`);
+      console.log(`[vercel-migrate] Preflight passed: ${pending.length} pending approved migrations.`);
       prisma('deploy');
       if (pendingMigrations(files, await history()).length !== 0) throw new MigrationGateError('Migrations remain after deploy; build stopped.');
       prisma('status');

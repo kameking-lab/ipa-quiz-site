@@ -1,4 +1,4 @@
--- Branch-only migration: production application requires separate owner approval.
+-- Owner approved production application with DB1: 2026-11-05 12:10 JST (MIG2).
 -- Billing tables also use SQL migrations rather than generated Prisma models.
 CREATE TABLE feedback_unlock (
   event_id text PRIMARY KEY,
