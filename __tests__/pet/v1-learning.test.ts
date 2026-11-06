@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { applyPetLearningFact, petLearningDay } from "@/lib/pet/v1/learning";
+import { applyPetLearningFact, petLearningDay, PET_EVENT_LEDGER_LIMIT } from "@/lib/pet/v1/learning";
 import { emptyPetProfiles, petProfileDocumentSchema, petProfileStorageKey, PET_DOCUMENT_MAX_BYTES, serializePetProfileDocument } from "@/lib/pet/v1/profile";
 import { LS_KEYS } from "@/lib/storage/keys";
 import type { PetLearningFact } from "@/lib/pet/v1/profile";
@@ -147,5 +147,25 @@ describe("P03 revealed-answer and restore boundaries", () => {
     if (loaded.status !== "ready") throw new Error(loaded.status);
     expect(applyPetLearningFact(loaded.document, fact()).outcome).toBe("duplicate");
     expect(loaded.document.events).toHaveLength(1); expect(loaded.document.profiles[0].growth).toBe(3);
+  });
+});
+
+describe("bounded fact ledger", () => {
+  it("keeps the stored ledger bounded while question-level dedupe still blocks farming", () => {
+    let doc = fresh();
+    const total = PET_EVENT_LEDGER_LIMIT + 50;
+    for (let i = 0; i < total; i++) doc = applyPetLearningFact(doc, fact({ eventId: `e-${i}`, canonicalQuestionId: `ap-q${i}`, occurredAt: at + i * 1000 })).document;
+    expect(doc.events).toHaveLength(PET_EVENT_LEDGER_LIMIT);
+    expect(doc.events.at(-1)?.eventId).toBe(`e-${total - 1}`);
+    expect(doc.profiles[0].questions).toHaveLength(total);
+    // A pruned event's question cannot be rewarded again within the review interval.
+    const replay = applyPetLearningFact(doc, fact({ eventId: "late-replay", canonicalQuestionId: "ap-q0", occurredAt: at + total * 1000 }));
+    expect(replay.reward).toEqual({ growth: 0, bond: 0 });
+  });
+  it("keeps a same-day reveal past the cap so the answer still counts as reading", () => {
+    let doc = applyPetLearningFact(fresh(), fact({ eventId: "reveal", canonicalQuestionId: "peek", attemptKind: "revealed", grade: "ungraded" })).document;
+    for (let i = 0; i < PET_EVENT_LEDGER_LIMIT + 5; i++) doc = applyPetLearningFact(doc, fact({ eventId: `e-${i}`, canonicalQuestionId: `ap-q${i}`, occurredAt: at + i })).document;
+    expect(doc.events.some(event => event.eventId === "reveal")).toBe(true);
+    expect(applyPetLearningFact(doc, fact({ eventId: "after", canonicalQuestionId: "peek", occurredAt: at + 60_000 })).reaction).toBe("read");
   });
 });

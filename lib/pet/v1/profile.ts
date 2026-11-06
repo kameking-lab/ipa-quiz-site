@@ -141,9 +141,12 @@ export function serializePetProfileDocument(document: PetProfileDocument): strin
 export function parsePetProfileDocument(raw: string): PetProfileDocument {
   if (new TextEncoder().encode(raw).length > PET_DOCUMENT_MAX_BYTES) throw new Error("pet_document_too_large");
   const document = petProfileDocumentSchema.parse(JSON.parse(raw));
-  // Capacity is independent of the current revision's digit width. Otherwise
-  // restoring a full backup into revision 9 would overflow when it becomes 10.
+  assertPetDocumentFits(document);
+  return document;
+}
+/** Capacity is independent of the current revision's digit width. Otherwise
+ * restoring a full backup into revision 9 would overflow when it becomes 10. */
+export function assertPetDocumentFits(document: PetProfileDocument) {
   const reserved = serializePetProfileDocument({ ...document, revision: Number.MAX_SAFE_INTEGER });
   if (new TextEncoder().encode(reserved).length > PET_DOCUMENT_MAX_BYTES) throw new Error("pet_document_too_large");
-  return document;
 }

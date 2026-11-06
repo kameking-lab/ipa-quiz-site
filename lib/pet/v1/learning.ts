@@ -123,7 +123,19 @@ export function applyPetLearningFact(document: PetProfileDocument, input: unknow
     }
   }
   next.events.push(event);
+  next.events = prunePetEvents(next.events, event.occurredAt);
   return { outcome: "applied", document: petProfileDocumentSchema.parse(next), reward, reaction, comboMilestone, overcame };
+}
+
+/** Raw facts only guard retries and the 24h "read the answer" window. Semantic
+ * reward dedupe lives on each question, so the ledger stays bounded instead of
+ * growing (and being reparsed) on every answer for the lifetime of the pet. */
+export const PET_EVENT_LEDGER_LIMIT = 200;
+function prunePetEvents(events: PetProfileDocument["events"], now: number): PetProfileDocument["events"] {
+  if (events.length <= PET_EVENT_LEDGER_LIMIT) return events;
+  const recent = new Set(events.slice(-PET_EVENT_LEDGER_LIMIT));
+  return events.filter(event => recent.has(event) ||
+    (event.attemptKind === "revealed" && now - event.occurredAt < PET_REVIEW_INTERVAL_MS));
 }
 
 /** A stable identity within the local document; it includes the active exam,

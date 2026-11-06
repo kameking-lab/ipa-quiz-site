@@ -1,6 +1,6 @@
 import { LS_KEYS } from "@/lib/storage/keys";
 import type { PetExclusivePort, PetStoragePort } from "../client/contracts";
-import { emptyPetProfiles, parsePetProfileDocument, petProfileDocumentSchema, petProfileStorageKey, PET_BACKUP_MAX_BYTES,
+import { assertPetDocumentFits, emptyPetProfiles, parsePetProfileDocument, petProfileDocumentSchema, petProfileStorageKey, PET_BACKUP_MAX_BYTES,
   compactPetProfileDocument, serializePetProfileDocument } from "./profile";
 import type { PetProfileDocument } from "./profile";
 import { migrateLegacyPetProfiles } from "./migration";
@@ -57,9 +57,11 @@ export class PetProfileStore {
         } catch { return { status: "invalid_data" }; }
         if (!current()) return { status: "owner_changed" };
         if (JSON.stringify(candidate) === JSON.stringify(previous)) return { status: "ready", document: previous };
-        const document = petProfileDocumentSchema.parse({ ...candidate, revision: previous.revision + 1 });
-        // Reparse byte bound before writing; overlarge state stays recoverable.
-        const raw = serializePetProfileDocument(document); parsePetProfileDocument(raw);
+        // `candidate` is already schema-validated; only the revision changes.
+        const document: PetProfileDocument = { ...candidate, revision: previous.revision + 1 };
+        // Byte bound before writing; overlarge state stays recoverable.
+        assertPetDocumentFits(document);
+        const raw = serializePetProfileDocument(document);
         this.options.storage.setItem(key, raw);
         return { status: "ready", document };
       });

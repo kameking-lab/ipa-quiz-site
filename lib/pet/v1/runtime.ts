@@ -24,11 +24,20 @@ export interface PetAttempt {
   reviewBefore: PetLearningFact["reviewBefore"];
 }
 export interface PetOwnerLease extends PetOwnerContext { revalidate(): Promise<boolean> }
-async function readPetAccount() {
+let pendingAccount: ReturnType<typeof readSyncAccount> | null = null;
+/** Concurrent pet views/sessions on one page share a single in-flight session
+ * request. Nothing is cached after it settles, so every later revalidation
+ * still sees an account switch. */
+function readPetAccount() {
+  if (pendingAccount) return pendingAccount;
   const controller = new AbortController();
   const timeout = setTimeout(() => controller.abort(), 5000);
-  try { return await readSyncAccount(controller.signal); }
-  finally { clearTimeout(timeout); }
+  const request = (async () => {
+    try { return await readSyncAccount(controller.signal); }
+    finally { clearTimeout(timeout); if (pendingAccount === request) pendingAccount = null; }
+  })();
+  pendingAccount = request;
+  return request;
 }
 /** Session truth comes from auth, never the last cloud-sync owner alone. */
 export async function preparePetOwner(isCurrent: () => boolean): Promise<PetOwnerLease | null> {
