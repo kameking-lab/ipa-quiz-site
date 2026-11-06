@@ -58,8 +58,8 @@ export const metadata: Metadata = {
   },
   icons: {
     icon: [
-      { url: "/favicon.png?v=chihuahua", type: "image/png", sizes: "64x64" },
-      { url: "/brand/chihuahua-icon-192.png", type: "image/png", sizes: "192x192" },
+      { url: "/favicon.png?v=appicon-20261106", type: "image/png", sizes: "64x64" },
+      { url: "/icon-192.png", type: "image/png", sizes: "192x192" },
     ],
     apple: [
       { url: "/apple-icon.png", sizes: "180x180", type: "image/png" },
