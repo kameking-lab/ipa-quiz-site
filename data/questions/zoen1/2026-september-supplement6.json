@@ -1,0 +1,206 @@
+{
+  "exam": "zoen1",
+  "year": 2026,
+  "season": "september",
+  "allQuestionsRequired": true,
+  "appliedMultipleAnswerRange": {
+    "paper": "mondai-b",
+    "from": 24,
+    "to": 29
+  },
+  "answerUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/09/20260907z_seitou.pdf",
+  "answerSha256": "6faa5bee113cde6b5c4665ddcfcde223bae90a11083348c813e1f530f6d81a7d",
+  "papers": [
+    {
+      "session": "mondai-a",
+      "paper": "A",
+      "officialQuestionCount": 36,
+      "questionUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/09/20260907z_mondaia.pdf",
+      "questionSha256": "fd2af674b3049915a085ec0c1e5d0a2360549f7cfed0e3fea23be346b9e4f0da",
+      "publishedCount": 1,
+      "questions": [
+        {
+          "number": 36,
+          "pdfPage": 16,
+          "question": "下図に示すネットワーク式工程表で表される工事において，A の工事を2 日短縮し，D の工事を1 日短縮し，H の工事を2 日短縮すると，全体工期は何日短縮されるか。 ただし，図中のイベント間の A～I は作業内容を，日数は作業日数を表す。",
+          "choices": [
+            "1 日",
+            "2 日",
+            "3 日",
+            "4 日"
+          ],
+          "officialAnswerNumbers": [
+            2
+          ],
+          "category": "施工管理",
+          "topic": "ネットワーク工程の短縮",
+          "explanation": "短縮前の最長経路は B→D→ダミー→F→H の11日です。短縮後はこの経路が8日となり、B→ダミー→E→I の9日が最長になります。全体工期は11日から9日へ、2日短縮されます。",
+          "choiceExplanations": [
+            "1日ではありません。短縮後の最長経路は9日で、短縮前の11日との差は2日です。",
+            "正しい値です。B→D→ダミー→F→H は短縮前3＋2＋0＋2＋4＝11日、短縮後3＋1＋0＋2＋2＝8日です。一方、B→ダミー→E→I は9日のままなので、新しい全体工期は9日となります。",
+            "3日は旧最長経路だけを比較した差です。その経路が11日から8日になっても、9日を要する別経路が残るため全体は3日短縮されません。",
+            "4日ではありません。A の2日短縮が、A を通らない経路にも加わるわけではありません。全経路を再計算すると9日の経路が全体工期を決めます。"
+          ],
+          "officialReferenceUrls": [
+            "https://courses.ems.psu.edu/geog871/book/export/html/1745"
+          ],
+          "imageUrls": [
+            "/images/questions/zoen1/2026-september-a-q36-network.png"
+          ],
+          "imageAltTexts": [
+            "イベント1〜8の工程図。A:1→5、4日。B:1→2、3日。C:1→3、2日。D:2→4、2日。E:3→7、3日。F:5→6、2日。G:4→8、2日。H:6→8、4日。I:7→8、3日。ダミーは2→3と4→5で、日数0。"
+          ]
+        }
+      ]
+    },
+    {
+      "session": "mondai-b",
+      "paper": "B",
+      "officialQuestionCount": 29,
+      "questionUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/09/20260907z_mondaib.pdf",
+      "questionSha256": "f3b0df0c1a8cc7feeb2b659faa7854a0ff1bf41e01b365fe47127b671756a06d",
+      "publishedCount": 5,
+      "questions": [
+        {
+          "number": 2,
+          "pdfPage": 3,
+          "question": "次に示す条件で，ほぐした土量 1,500 m³ の土を運搬するために必要な最小日数として，正しいものはどれか。 ただし，人員や機械などは現場に用意されており，準備及び跡片付けなどの時間は考慮しないものとする。 〔条件〕 ・ダンプトラックの台数 ：3 台 ・ダンプトラックの積載量（ほぐした土量） ：5 m³ ・ダンプトラックのサイクルタイム ：30 分 ・ダンプトラックの作業効率 ：0.9 ・ダンプトラックの1 日平均作業時間 ：6 時間 ・土量換算係数 ：1.0",
+          "choices": [
+            "7 日",
+            "8 日",
+            "9 日",
+            "10 日"
+          ],
+          "officialAnswerNumbers": [
+            4
+          ],
+          "category": "施工管理",
+          "topic": "ダンプトラック運搬日数",
+          "explanation": "1台の1時間当たり運搬量は5×（60÷30）×0.9＝9m³です。3台・1日6時間では162m³を運搬できます。1,500÷162＝約9.26日となるため、最小の整数日数は10日です。",
+          "choiceExplanations": [
+            "7日間の運搬量は162×7＝1,134m³で、必要な1,500m³に足りません。",
+            "8日間では162×8＝1,296m³となり、必要量を運搬し終えられません。",
+            "9日間では162×9＝1,458m³です。42m³が残るため、約9.26日を9日に切り捨てることはできません。",
+            "10日が最小です。作業効率を考慮した日運搬量162m³で割り、約9.26日を切り上げると10日になります。"
+          ],
+          "officialReferenceUrls": [
+            "https://www.rinya.maff.go.jp/j/sekou/gijutu/attach/pdf/bugakarisankou-58.pdf"
+          ]
+        },
+        {
+          "number": 7,
+          "pdfPage": 6,
+          "question": "植栽基盤の調査に関する次の（イ），（ロ）の記述について，（Ａ），（Ｂ）に当てはまる「良」，「不良」の組合せとして，適当なものはどれか。 （イ） 長谷川式土壌貫入計を用いて，対象土壌の硬度を測定したところ，深さ 20 cm ～ 30 cm の土層で，Ｓ値が 0.6 cm/drop ～ 0.8 cm/drop の範囲で連続していたので，植栽基盤として（Ａ）と判定した。 （ロ） 長谷川式簡易現場透水試験器を用いて，対象土壌の透水性を測定したところ，最終減水能が8 mm/hr であったので，植栽基盤として（Ｂ）と判定した。\n\n（Ａ） （Ｂ）",
+          "choices": [
+            "良 ― 良",
+            "良 ― 不良",
+            "不良 ― 良",
+            "不良 ― 不良"
+          ],
+          "officialAnswerNumbers": [
+            4
+          ],
+          "category": "施工管理",
+          "topic": "植栽基盤の硬度と透水性",
+          "explanation": "深さ20〜30cmの10cmにわたりS値0.6〜0.8cm/dropが続く土層は、根系の発達を阻害する硬い層です。最終減水能8mm/hrも10mm/hr以下の不良区分に当たります。したがって（A）不良・（B）不良です。",
+          "choiceExplanations": [
+            "（A）も（B）も良ではありません。10cm連続する低いS値と8mm/hrの減水能は、ともに植栽基盤の不良を示します。",
+            "（B）の不良判定は合っていますが、（A）を良とする点が誤りです。S値1.0以下の層が10cm連続しているため、土壌硬度も不良です。",
+            "（A）の不良判定は合っていますが、（B）を良とする点が誤りです。最終減水能8mm/hrは10mm/hr以下であり、排水性が不良です。",
+            "適当です。硬度はS値1.0以下が10cm連続する不良土層、透水性は最終減水能10mm/hr以下の不良区分です。両方を不良と判定します。"
+          ],
+          "officialReferenceUrls": [
+            "https://www.greenery-niigata.or.jp/center/documents/manual01.pdf",
+            "https://www.daitoutg.co.jp/images/dlmanual/tousui.pdf"
+          ]
+        },
+        {
+          "number": 11,
+          "pdfPage": 8,
+          "question": "建設工事における品質管理に関する記述のうち，適当でないものはどれか。",
+          "choices": [
+            "品質標準は，施工に際して実現しようとする品質の目標であり，設計品質に対して余裕のある設定としなければならない。",
+            "ヒストグラムは，データが規格値を満足しているかどうかを確かめるものとして用いられる。",
+            "管理図は，一般に工程の安定性を判定するために使用され，点の並び方にかかわらず，点が全て管理限界線内にあれば，工程が安定している状態にあると判定される。",
+            "管理しようとする品質特性は，最終品質（設計品質）に影響を及ぼすと考えられるもののうち，できるだけ工程の初期で測定できるもの，または，早期に結果が得られるものがよい。"
+          ],
+          "officialAnswerNumbers": [
+            3
+          ],
+          "category": "施工管理",
+          "topic": "品質管理の管理図",
+          "explanation": "管理図は、点が管理限界内かどうかに加え、連続した偏りや上昇・下降などの並び方も確認します。全ての点が限界内であっても異常な傾向があり得るため、選択肢3が不適当です。",
+          "choiceExplanations": [
+            "適当です。品質にはばらつきがあるため、設計・仕様の規格を満たせるよう余裕を持った目標を設定します。",
+            "適当です。ヒストグラムに規格値を示すと、測定値の分布と規格の範囲との関係を確認できます。",
+            "不適当です。管理限界内でも、点が中心線の片側に連続するなど非ランダムな並びは工程異常の手掛かりになります。限界内にあることだけで安定と断定できません。",
+            "適当です。最終品質に影響する特性のうち、工程中に処置を取りやすいものを選びます。早く測定・判定できれば、不具合が進む前に工程へ反映できます。"
+          ],
+          "officialReferenceUrls": [
+            "https://www.pref.chiba.lg.jp/kouchi/seibi-sekisan/documents/2528sekoukanritebiki.pdf",
+            "https://www.itl.nist.gov/div898/handbook/pmc/section3/pmc32.htm"
+          ]
+        },
+        {
+          "number": 12,
+          "pdfPage": 8,
+          "question": "「工種」と「品質特性」及びその「試験方法」に関する組合せとして，適当なものはどれか。 （工種） （品質特性） （試験方法）",
+          "choices": [
+            "土工 ／ 含水比 ／ 平板載荷試験",
+            "路盤工 ／ 支持力 ／ 現場CBR試験",
+            "コンクリート工 ／ 安定性 ／ スランプ試験",
+            "アスファルト舗装工 ／ 平坦性 ／ コア採取による測定"
+          ],
+          "officialAnswerNumbers": [
+            2
+          ],
+          "category": "施工管理",
+          "topic": "品質特性と試験方法",
+          "explanation": "現場CBR試験は、現場の土・路盤の支持力を評価する試験です。平板載荷試験は支持特性、スランプ試験はコンシステンシー、採取コアは舗装厚などの確認に用いるため、適当なのは選択肢2です。",
+          "choiceExplanations": [
+            "不適当です。平板載荷試験は載荷に対する変位から地盤の支持特性・変形特性を求めます。土の含水比を測定する試験ではありません。",
+            "適当です。現場CBR試験は現場の地盤・路盤の支持力を確認する方法であり、路盤工の支持力との組合せが合っています。",
+            "不適当です。スランプ試験で評価するのは、まだ固まらないコンクリートの変形・流動に対する抵抗性であるコンシステンシーです。安定性との組合せではありません。",
+            "不適当です。舗装の平坦性は路面の凹凸を測定して確認します。コア採取による測定は舗装厚などを確認する方法で、平坦性の測定方法ではありません。"
+          ],
+          "officialReferenceUrls": [
+            "https://www.jiban.or.jp/file/file/jgs1521_201109.pdf",
+            "https://www.mlit.go.jp/common/001286199.pdf",
+            "https://www.jtccm.or.jp/sites/default/files/2024-05/kisochishiki_vol1-13.pdf",
+            "https://www.hkd.mlit.go.jp/ky/jg/gijyutu/slo5pa000000kv6k-att/slo5pa000000kvby.pdf",
+            "https://www.thr.mlit.go.jp/akita/branch_office/honjoukantokukansitu/newkantokukanHP/kakotopics/topics/nisime-highschool.html",
+            "https://www.thr.mlit.go.jp/akita/branch_office/honjoukantokukansitu/newkantokukanHP/kakotopics/topics/nisime-highschool.html"
+          ]
+        },
+        {
+          "number": 28,
+          "pdfPage": 16,
+          "question": "本工事の高木植栽に用いる樹木の寸法規格の判定として，「公共用緑化樹木等品質寸法規格基準（案）」に照らし，合格となるものを全て選びなさい。\n\n| 樹種 | 樹高（m） | 幹周（m） | 枝張（m） | 株立数 |\n| --- | --- | --- | --- | --- |\n| シラカシ | 4.5 | 0.25 | 1.2 | － |\n| コナラ | 3.0 | 0.15 | － | 3本立 |",
+          "choices": [
+            "樹高が 5.2 m のシラカシで，幹周が 0.29 m，枝張が最大幅で 1.4 m，最小幅で 1.0 m のもの。",
+            "樹高が 4.7 m のシラカシで，幹周が 0.26 m，枝張が最大幅で 1.3 m，最小幅で 1.2 m のもの。",
+            "3本立のコナラで，樹高がそれぞれ 3.2 m，3.0 m，2.1 m，幹周がそれぞれ 0.08 m， 0.07 m，0.05 m のもの。",
+            "4本立のコナラで，樹高がそれぞれ 3.3 m，3.1 m，2.2 m，1.9 m，幹周がそれぞれ 0.09 m，0.08 m，0.05 m，0.04 m のもの。"
+          ],
+          "officialAnswerNumbers": [
+            1,
+            2,
+            4
+          ],
+          "category": "施工管理",
+          "topic": "株立樹木の寸法検収",
+          "explanation": "シラカシの枝張は最大幅と最小幅の平均で判定します。コナラは指定の3本について高さを確認し、幹周は対象3本の周長の合計に0.7を掛けます。選択肢3は換算幹周0.14mで不足するため不合格、合格は1・2・4です。",
+          "choiceExplanations": [
+            "合格です。枝張は（1.4＋1.0）÷2＝1.2mで規格以上です。樹高5.2m、幹周0.29mも、それぞれ4.5m・0.25m以上を満たします。",
+            "合格です。枝張は（1.3＋1.2）÷2＝1.25mで1.2m以上です。樹高4.7m、幹周0.26mも規格以上です。",
+            "不合格です。3本の換算幹周は（0.08＋0.07＋0.05）×0.7＝0.14mで、規格0.15mに足りません。高さは2本が3.0m以上、残る1本がその70％の2.1m以上ですが、幹周の不足で合格になりません。",
+            "合格です。3本立の指定では、太い順の対象3本を使うため換算幹周は（0.09＋0.08＋0.05）×0.7＝0.154mで0.15m以上です。その3本は2本が3.0m以上、残る1本が2.1m以上です。1.9mの4本目を指定3本の検収対象に加える判定ではありません。"
+          ],
+          "officialReferenceUrls": [
+            "https://www.jpgreen.or.jp/book/books/koukyouyou_2.pdf"
+          ]
+        }
+      ]
+    }
+  ]
+}
