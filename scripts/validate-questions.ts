@@ -39,6 +39,8 @@ import type { Question } from "@/lib/questions/types";
 import { detectAnswerDispute } from "@/lib/questions/explanation-consistency";
 import { z } from "zod";
 import { validateDojoOsenStaging } from "@/data/qualification-staging/dojo-osen";
+import { validateKhkHanbaiStaging } from "./validate-khk-hanbai";
+import { KIKAI_HOZEN_STAGED_QUESTIONS } from "@/data/qualification-staging/kikai-hozen";
 import { RIYOSHI_CANDIDATES } from "@/data/questions/riyoshi";
 import { validateSokuryoshiStaging } from "./qualification-ingestion/validate-sokuryoshi";
 import { validateJokasoSetsubishiStaging } from "./lib/jokaso-setsubishi-staging";
@@ -496,6 +498,16 @@ function reportFixes(questions: Question[]): void {
 // ─── Main ────────────────────────────────────────────────────────────────────
 
 const opts = parseCliOptions();
+if (opts.exams.length === 0 || opts.exams.some(exam => ["khk-hanbai", "khk-hanbai2", "khk-setsubishi"].includes(exam))) {
+  const staging = validateKhkHanbaiStaging();
+  console.log(`[staging:khk-hanbai] ${staging.count} questions, ${staging.errors.length} errors; private`);
+  for (const error of staging.errors) console.error(`[FAIL] ${error}`);
+  if (staging.errors.length > 0) process.exit(1);
+}
+if (KIKAI_HOZEN_STAGED_QUESTIONS.length !== 100 || KIKAI_HOZEN_STAGED_QUESTIONS.some((q) => q.publicAllowed)) {
+  throw new Error("kikai-hozen staging must hold 100 private questions");
+}
+console.log(`[staging] kikai-hozen: ${KIKAI_HOZEN_STAGED_QUESTIONS.length} questions; publicAllowed=false`);
 if (!opts.exams.length || opts.exams.includes("benrishi")) {
   console.log(`[private-staging] benrishi: validated ${validateBenrishiStaging()} unpublished questions (publicAllowed=false)`);
 }
