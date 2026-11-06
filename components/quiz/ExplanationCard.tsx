@@ -6,16 +6,13 @@ import { questionReferenceLabel } from "@/lib/questions/reference-label";
 import * as React from "react";
 import type { NativeBGrade } from "@/lib/questions/types";
 import { NativeBFeedback } from "./NativeBAnswer";
-import Link from "next/link";
-import { Star, Sparkles, ArrowRight, AlertCircle, CheckCircle2, FileText, Tags } from "lucide-react";
+import { Star, Sparkles, ArrowRight, AlertCircle, CheckCircle2, FileText } from "lucide-react";
 import type { ChoiceKey, Question } from "@/lib/questions/types";
 import { choiceDisplayLabel, formatQuestionAnswerForDisplay } from "@/lib/questions/display";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { getOfficialAnswerPdfUrl, getSafePdfUrl, ipaSourceLabel } from "@/lib/exam-config";
-import { ShareButtons } from "@/components/ShareButtons";
 import { BookmarkButton } from "@/components/BookmarkButton";
-import { questionPagePath } from "@/lib/seo/question-url";
 import { QuestionBody } from "./QuestionBody";
 import { QuestionSourcePresentation } from "./QuestionSourcePresentation";
 import { RikuTech2CylinderGuide } from "./RikuTech2CylinderGuide";
@@ -134,12 +131,6 @@ export function ExplanationCard({
         </Button>
       </div>
 
-      {question.explanationCoverage === "official-summary" && (
-        <p className="mb-3 rounded-lg border border-amber-300 bg-amber-50 px-3 py-2 text-xs font-medium text-amber-900 dark:border-amber-700 dark:bg-amber-950/40 dark:text-amber-100">
-          公式正答と一般解説を掲載しています。選択肢ごとの解説は掲載していません。
-        </p>
-      )}
-
       {!isCorrect && onAnalyzeWrong && (
         <button
           onClick={onAnalyzeWrong}
@@ -219,41 +210,7 @@ export function ExplanationCard({
         </Button>
       </div>
 
-      {isCorrect && (
-        <div className="mt-4 rounded-xl border border-emerald-200 bg-white/60 p-3 dark:border-emerald-900/40 dark:bg-zinc-950/40">
-          <p className="mb-2 text-[11px] font-semibold text-emerald-800 dark:text-emerald-200">
-            ✨ 正解おめでとうございます！教育貢献プロジェクトをシェアして仲間と学習しませんか？
-          </p>
-          <ShareButtons
-            url={`https://www.kakomon-ai.jp${questionPagePath(question)}`}
-            text={`過去問AI で「${question.question.slice(0, 40)}...」の問題を解きました！`}
-            hashtags={["過去問AI", "資格試験"]}
-            compact
-          />
-        </div>
-      )}
-
-      {!isCorrect && (
-        <div className="mt-3 rounded-xl border border-amber-200 bg-amber-50/60 px-4 py-3 dark:border-amber-900/40 dark:bg-amber-950/20">
-          <p className="mb-2 text-xs font-medium text-amber-800 dark:text-amber-200">
-            苦手分野を克服しませんか？
-          </p>
-          <Link
-            href={`/${question.exam}/topic/${encodeURIComponent(question.category)}`}
-            prefetch={false}
-            data-track="explanation-cta-topic"
-            className="inline-flex items-center gap-1.5 rounded-lg bg-amber-600 px-3 py-1.5 text-xs font-semibold text-white transition hover:bg-amber-700 active:scale-95"
-          >
-            <Tags className="h-3.5 w-3.5" />
-            分野別で集中対策
-          </Link>
-        </div>
-      )}
-
-      <div className="mt-3 space-y-2 rounded-lg border border-zinc-200/80 bg-zinc-50/60 px-3 py-2.5 dark:border-zinc-700/50 dark:bg-zinc-900/30">
-        <p className="text-sm leading-7 text-zinc-700 dark:text-zinc-200">
-          ※ 解説は誤りを含む可能性があります。重要な判断は公式資料でご確認ください。
-        </p>
+      <div className="mt-3 space-y-2">
         <div className="flex flex-wrap gap-1.5">
           <a
             href={getSafePdfUrl(question.sourcePdfUrl)}

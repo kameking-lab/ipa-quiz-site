@@ -94,12 +94,6 @@ test.describe("copilot UI: question page integration", () => {
     await expect(copilot).toBeVisible();
   });
 
-  test("copilot section shows quick action examples", async ({ page }) => {
-    await page.goto(QUESTION);
-    const quickActions = page.locator("[aria-label='AIへの質問例']");
-    await expect(quickActions).toBeVisible();
-  });
-
   test("copilot panel is keyboard-accessible (focusable child elements)", async ({ page }) => {
     await page.goto(QUESTION);
     const copilot = page.locator("[aria-label='AI コパイロット']");

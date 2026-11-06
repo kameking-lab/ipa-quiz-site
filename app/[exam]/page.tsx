@@ -5,7 +5,7 @@ import { practiceSessionLabel } from "@/lib/questions/practice-session";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { ArrowRight, BookOpen, ChevronRight, Clock, Code2, FileText, PenLine, Sparkles, TrendingUp } from "lucide-react";
+import { ArrowRight, ChevronRight, Clock, Code2, PenLine, Sparkles, TrendingUp } from "lucide-react";
 
 import type { ExamCode } from "@/lib/questions/types";
 import { examLabel } from "@/lib/utils";
@@ -29,7 +29,6 @@ import { JsonLd } from "@/components/seo/JsonLd";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import dynamic from "next/dynamic";
-import { ExamAiTransparencyNote } from "@/components/exam/ExamAiTransparencyNote";
 import { FirstPracticeEntry, FIRST_PRACTICE_EXAMS } from "@/components/exam/FirstPracticeEntry";
 import { ExamTopBrowse } from "@/components/exam/ExamTopBrowse";
 import { ExamTopGuide } from "@/components/exam/ExamTopGuide";
@@ -45,7 +44,6 @@ const ExamBrowseTabs = dynamic(
   },
 );
 import { ExamOfficialResources } from "@/components/exam/ExamOfficialResources";
-import { ExamRoadmap } from "@/components/exam/ExamRoadmap";
 import {
   ExamDeepLead,
   ExamMainTopics,
@@ -56,22 +54,8 @@ import {
 // 初期ロードのバンドルから外して TBT を削減する目的で dynamic import する。
 const ExamProgressBar = dynamic(
   () => import("@/components/exam/ExamProgressBar").then((m) => m.ExamProgressBar),
-  {
-    loading: () => (
-      <div className="h-24 animate-pulse rounded-2xl bg-zinc-100 dark:bg-zinc-900" />
-    ),
-  },
+  { loading: () => null },
 );
-import {
-  RECOMMENDED_BOOKS,
-  buildAmazonUrl,
-  getAmazonAssociateTag,
-  getAmazonLinkDisclosure,
-  getDifficultyLabel,
-  isAsinFilled,
-} from "@/data/recommended-books";
-import { getBlogPostsByExam } from "@/data/blog";
-import { EXAM_ROADMAP } from "@/lib/seo/exam-resources";
 import { getQualificationByExamCode } from "@/lib/qualifications/catalog";
 import ahakiCoverage from "@/data/questions/ahaki/held-ids.json";
 
@@ -171,10 +155,7 @@ export default async function ExamTopPage({
     };
   });
   const categories = groupByCategory(questions);
-  const books = (RECOMMENDED_BOOKS[code] ?? []).slice(0, 3);
-  const posts = getBlogPostsByExam(code).slice(0, 3);
   const absUrl = `${SITE_BASE_URL}/${exam}`;
-  const roadmapSteps = EXAM_ROADMAP[code] ?? [];
   const externalQualification = getQualificationByExamCode(code);
 
   const credentialId = `${absUrl}#credential`;
@@ -208,22 +189,6 @@ export default async function ExamTopPage({
       inLanguage: "ja",
     },
   };
-  const howToNode =
-    roadmapSteps.length > 0
-      ? {
-          "@type": "HowTo",
-          "@id": `${absUrl}#howto`,
-          name: `${examLabel(code)} 合格への学習ロードマップ`,
-          description: "試験本番から逆算した、月単位の進め方の目安",
-          inLanguage: "ja",
-          step: roadmapSteps.map((s, i) => ({
-            "@type": "HowToStep",
-            position: i + 1,
-            name: s.title,
-            text: s.body,
-          })),
-        }
-      : null;
   const jsonLd = {
     "@context": "https://schema.org",
     "@graph": [
@@ -259,7 +224,6 @@ export default async function ExamTopPage({
         competencyRequired: categories.map((c) => c.category).slice(0, 12),
       },
       courseNode,
-      ...(howToNode ? [howToNode] : []),
       {
         "@type": "BreadcrumbList",
         itemListElement: [
@@ -383,9 +347,6 @@ export default async function ExamTopPage({
         {code === "soukan" && (
           <section aria-label="受験日程と受験条件" className="mb-8 rounded-2xl border border-border bg-card p-5">
             <h2 className="font-semibold text-foreground">第二次試験の日程を確認する</h2>
-            <p className="mt-2 text-sm text-muted-foreground">
-              択一式の演習を進めながら、次の資格で技術士第二次試験の申込期間と試験日を確認できます。
-            </p>
             <a
               href="https://tsugino-shikaku.jp/shikaku/gijutsushi-second?utm_source=kakomon_ai&utm_medium=referral&utm_campaign=soukan_two_rounds"
               target="_blank"
@@ -400,9 +361,6 @@ export default async function ExamTopPage({
         {code === "eisei2" && (
           <section aria-label="受験日程と受験条件" className="mb-8 rounded-2xl border border-border bg-card p-5">
             <h2 className="font-semibold text-foreground">受験日程と受験条件を確認する</h2>
-            <p className="mt-2 text-sm text-muted-foreground">
-              公表問題の演習を進めながら、次の資格で今後の日程と申込条件を確認できます。
-            </p>
             <a
               href="https://tsugino-shikaku.jp/shikaku/eisei-kanrisha-2shu?utm_source=kakomon_ai&utm_medium=referral&utm_campaign=eisei2_two_editions"
               target="_blank"
@@ -474,7 +432,6 @@ export default async function ExamTopPage({
         {code === "denko2" && (
           <section aria-label="技能試験" className="mb-8 rounded-2xl border border-blue-200 bg-blue-50 p-5">
             <h2 className="text-lg font-bold text-slate-950">技能試験の問題図・完成例</h2>
-            <p className="mt-1 text-sm text-slate-700">試験日と候補No.から、施工条件、公式の概念図・複線図・完成作品例を確認できます。</p>
             <Button asChild variant="outline" className="mt-4 bg-white">
               <Link href="/denko2/skill">技能試験を探す <ChevronRight className="h-4 w-4" /></Link>
             </Button>
@@ -493,7 +450,7 @@ export default async function ExamTopPage({
         {isExamEntryCode(code) && <ExamTopGuide exam={code} />}
 
         {/* Progress */}
-        <section aria-label="進捗" className="mb-8">
+        <section aria-label="進捗" className="mb-8 empty:hidden">
           <ExamProgressBar exam={code} totalQuestions={questions.length} />
         </section>
 
@@ -531,9 +488,6 @@ export default async function ExamTopPage({
                     {stats.studyHoursLow}–{stats.studyHoursHigh}
                     <span className="ml-0.5 text-base font-medium text-muted-foreground">時間</span>
                   </p>
-                  <p className="mt-1 text-[11px] leading-relaxed text-muted-foreground">
-                    IT 経験・前提資格に応じて変動。1 日 1-2 時間で 3-6 ヶ月が目安。
-                  </p>
                 </div>
                 <div className="rounded-2xl border border-border bg-card p-4 shadow-sm">
                   <div className="mb-1 flex items-center gap-1.5 text-[11px] font-semibold uppercase tracking-wider text-muted-foreground">
@@ -557,9 +511,6 @@ export default async function ExamTopPage({
                   )}
                 </div>
               </div>
-              <p className="mt-2 text-[10px] text-muted-foreground">
-                ※ 合格率はおおよそのレンジ。最新の確定値は IPA 公式統計をご確認ください。
-              </p>
             </section>
           );
         })()}
@@ -570,111 +521,34 @@ export default async function ExamTopPage({
         {/* Main topics — exam-specific syllabus highlights */}
         <ExamMainTopics exam={code} />
 
-        {/* Study roadmap — month-by-month plan */}
-        <ExamRoadmap exam={code} />
-
         {/* Official IPA resources — E-E-A-T */}
         <ExamOfficialResources exam={code} />
 
-
-        {/* Recommended books */}
-        {books.length > 0 && (
-          <section aria-label="おすすめ書籍" className="mb-8">
-            <div className="mb-3 flex items-center justify-between">
-              <h2 className="flex items-center gap-2 text-base font-semibold text-foreground">
-                <BookOpen className="h-4 w-4 text-muted-foreground" />
-                おすすめ書籍
-              </h2>
-              <Link
-                href={`/recommended-books/${exam}`}
-                className="text-xs text-sky-600 hover:underline dark:text-sky-400"
-              >
-                すべて見る →
-              </Link>
-            </div>
-            <ul className="space-y-2">
-              {books.map((b) => (
-                <li
-                  key={b.id}
-                  className="rounded-xl border border-border bg-card p-3.5 text-sm shadow-sm"
-                >
-                  <div className="flex items-start justify-between gap-3">
-                    <div className="min-w-0">
-                      <p className="font-medium text-foreground">{b.title}</p>
-                      <p className="mt-0.5 text-xs text-muted-foreground">
-                        {b.author}・{b.publisher}（{b.year}）
-                      </p>
-                      <div className="mt-1 flex flex-wrap items-center gap-1.5 text-[11px]">
-                        <Badge variant="outline">{getDifficultyLabel(b.difficulty)}</Badge>
-                        <span className="text-muted-foreground">{b.recommendedFor}</span>
-                      </div>
-                    </div>
-                    {isAsinFilled(b.asin) && (
-                      <div className="flex shrink-0 flex-col items-end gap-0.5">
-                        {getAmazonAssociateTag(`/${code}`) && <span className="text-[9px] text-zinc-400 dark:text-zinc-500">PR</span>}
-                        <a
-                          href={buildAmazonUrl(b.asin, `/${code}`)}
-                          target="_blank"
-                          rel={getAmazonAssociateTag(`/${code}`) ? "noopener noreferrer sponsored" : "noopener noreferrer"}
-                          className="inline-flex items-center justify-center rounded-lg bg-amber-500 px-3 py-2 text-xs font-semibold text-white hover:bg-amber-600"
-                          style={{ minWidth: 88, minHeight: 44 }}
-                        >
-                          Amazon →
-                        </a>
-                      </div>
-                    )}
-                  </div>
-                </li>
-              ))}
-            </ul>
-            {code === "ip" && (
-              <p className="mt-3 text-xs leading-relaxed text-muted-foreground">
-                {getAmazonLinkDisclosure(`/${code}`)}
-              </p>
-            )}
-          </section>
-        )}
-
         {/* High-level exam: AI essay / description grading CTA */}
-        {!isExamEntryCode(code) && (["pm", "sm", "au", "db", "es"] as ExamCode[]).includes(code) && (
+        {!isExamEntryCode(code) && (["pm", "sm", "au"] as ExamCode[]).includes(code) && (
           <section
             aria-label="AI 午後問題対策"
             className="mb-8 overflow-hidden rounded-2xl border border-violet-200/70 bg-gradient-to-br from-violet-50 via-card to-card p-5 shadow-sm dark:border-violet-900/40 dark:from-violet-950/40"
           >
             <div className="mb-3 inline-flex items-center gap-1.5 rounded-full bg-violet-100 px-2.5 py-0.5 text-[11px] font-semibold text-violet-700 dark:bg-violet-950 dark:text-violet-300">
               <PenLine className="h-3 w-3" />
-              {(["st", "sa", "pm", "sm", "au"] as ExamCode[]).includes(code)
-                ? "午後 II 論述対策"
-                : "午後 記述対策"}
+              午後 II 論述対策
             </div>
             <h2 className="mb-1.5 text-base font-bold tracking-tight text-foreground sm:text-lg">
-              {(["pm", "sm", "au"] as ExamCode[]).includes(code) ? "オリジナル論述教材で午後II対策" : "午後記述のAI採点は未対応です"}
+              オリジナル論述教材で午後II対策
             </h2>
-            {(["pm", "sm", "au"] as ExamCode[]).includes(code) ? (
-              <>
-                <p className="mb-3 text-sm leading-relaxed text-muted-foreground">
-                  編集者作成のオリジナル論述教材で、設問ア・イ・ウを段階的に仕上げます。
-                  AIの添削は学習用の参考評価で、公式過去問の採点ではありません。
-                </p>
-                <div className="flex flex-wrap gap-2">
-                  <Button asChild variant="primary" size="sm">
-                    <Link href="/essay">
-                      オリジナル論述教材で AI 添削
-                      <ArrowRight className="h-3.5 w-3.5" />
-                    </Link>
-                  </Button>
-                  <Button asChild variant="outline" size="sm">
-                    {/* 業種別サンプルは複数形 /essays/[exam] (200・noindex)。 */}
-                    <Link href={`/essays/${code}`}>業種別 練習答案サンプル</Link>
-                  </Button>
-                </div>
-              </>
-            ) : (
-              <p className="text-sm leading-relaxed text-muted-foreground">
-                現在、{examLabel(code)}の午後記述をAIで採点する機能は利用できません。
-                過去問・解答例は、このページのIPA公式資料へのリンクから確認してください。
-              </p>
-            )}
+            <div className="mt-3 flex flex-wrap gap-2">
+              <Button asChild variant="primary" size="sm">
+                <Link href="/essay">
+                  オリジナル論述教材で AI 添削
+                  <ArrowRight className="h-3.5 w-3.5" />
+                </Link>
+              </Button>
+              <Button asChild variant="outline" size="sm">
+                {/* 業種別サンプルは複数形 /essays/[exam] (200・noindex)。 */}
+                <Link href={`/essays/${code}`}>業種別 練習答案サンプル</Link>
+              </Button>
+            </div>
           </section>
         )}
 
@@ -694,11 +568,7 @@ export default async function ExamTopPage({
             <h2 className="mb-1.5 text-base font-bold tracking-tight text-foreground sm:text-lg">
               科目B（擬似言語）を AI と体系的に攻略
             </h2>
-            <p className="mb-3 text-sm leading-relaxed text-muted-foreground">
-              基本情報の合否は科目B＝擬似言語のトレース力で決まります。読み方の型から
-              整理し、AI コパイロットに「1 行ずつトレースして」と聞きながら解けます。
-            </p>
-            <div className="flex flex-wrap gap-2">
+            <div className="mt-3 flex flex-wrap gap-2">
               <Button asChild variant="primary" size="sm">
                 <Link href="/blog/fe-kamoku-b-taisaku">
                   科目B 完全対策を読む
@@ -716,47 +586,6 @@ export default async function ExamTopPage({
 
         {/* Related exams — cross-link to neighboring exam categories */}
         <ExamRelatedExams exam={code} />
-
-        {/* AI transparency for the exam page */}
-        <ExamAiTransparencyNote />
-
-        {/* Related blog posts */}
-        {posts.length > 0 && (
-          <section aria-label="関連ブログ" className="mb-8">
-            <div className="mb-3 flex items-center justify-between">
-              <h2 className="flex items-center gap-2 text-base font-semibold text-foreground">
-                <FileText className="h-4 w-4 text-muted-foreground" />
-                関連ブログ
-              </h2>
-              <Link
-                href="/blog"
-                className="text-xs text-sky-600 hover:underline dark:text-sky-400"
-              >
-                すべて見る →
-              </Link>
-            </div>
-            <ul className="space-y-2">
-              {posts.map((p) => (
-                <li key={p.slug}>
-                  <Link
-                    href={`/blog/${p.slug}`}
-                    className="group flex items-start justify-between gap-3 rounded-xl border border-border bg-card p-3.5 text-sm transition-all hover:-translate-y-0.5 hover:border-primary/40 hover:shadow-md"
-                  >
-                    <div className="min-w-0">
-                      <p className="font-medium text-foreground group-hover:text-primary">
-                        {p.title}
-                      </p>
-                      <p className="mt-0.5 line-clamp-2 text-xs text-muted-foreground">
-                        {p.description}
-                      </p>
-                    </div>
-                    <ArrowRight className="mt-1 h-4 w-4 shrink-0 text-muted-foreground transition-transform group-hover:translate-x-0.5 group-hover:text-primary" />
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </section>
-        )}
 
         {/* Qualification hubs have no completed page-specific ad review. */}
       </div>

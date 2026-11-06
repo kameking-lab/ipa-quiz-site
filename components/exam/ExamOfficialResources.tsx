@@ -14,260 +14,213 @@ export function ExamOfficialResources({ exam }: { exam: ExamCode }) {
       {
         label: "日本中小企業診断士協会連合会 第1次試験問題",
         href: qualification.officialQuestionsUrl,
-        description: "2026・2025年度を含む、全7科目の公式問題PDF。",
       },
       {
         label: "2026年度（令和8年度）公式正答",
         href: "https://www.jf-cmca.jp/contents/010_c_/010_c_r08_shiken/R08_1ji_shiken_kaitou.html",
-        description: "7科目すべての正答・配点表。本サイトの全227設問と照合済み。",
       },
       {
         label: "2025年度（令和7年度）公式正答",
         href: "https://www.jf-cmca.jp/contents/010_c_/010_c_r07_shiken/R07_1ji_shiken_kaitou.html",
-        description: "訂正後の正答表を採用し、7科目すべての全227設問と照合済み。",
       },
       {
         label: "2025年度 正解・配点の訂正通知",
         href: "https://www.jf-cmca.jp/attach/test/r07/seikai_teisei_20250902.pdf",
-        description: "運営管理第33問・経営情報システム第12問は全員正解。演習でも全選択肢を正解として扱います。",
       },
     ] : exam === "fp1" ? [
       {
         label: "金融財政事情研究会 2026年5月学科・基礎編の公式問題",
         href: "https://www.kinzai.or.jp/fp/news-fp/50260.html",
-        description: "同回の基礎編50問を掲載。サイト内でも公式問題・模範解答と照合した全50問を収録しています。",
       },
       {
         label: "金融財政事情研究会 2026年5月学科の模範解答",
         href: "https://www.kinzai.or.jp/fp/news-fp/50274.html",
-        description: "基礎編の公式正答表が掲載されています。",
       },
     ] : exam === "civil1" ? [
       {
         label: "全国建設研修センター 公式問題A",
         href: "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/07/20260706d_mondaia.pdf",
-        description: "令和8年度 1級土木施工管理技術検定 第一次検定の試験問題A（No.1〜66）。",
       },
       {
         label: "全国建設研修センター 公式問題B",
         href: "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/07/20260706d_mondaib.pdf",
-        description: "同じ試験回の試験問題B（No.1〜35）。",
       },
       {
         label: "全国建設研修センター 公式正答肢",
         href: "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/07/20260706d_seitou.pdf",
-        description: "問題A・問題Bの正答肢PDF。",
       },
     ] : exam === "zoen1" ? [
       {
         label: "全国建設研修センター 公式問題A",
         href: "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/09/20260907z_mondaia.pdf",
-        description: "令和8年度 1級造園施工管理技術検定 第一次検定の試験問題A（全36問・全問必須）。",
       },
       {
         label: "全国建設研修センター 公式問題B",
         href: "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/09/20260907z_mondaib.pdf",
-        description: "同じ試験回の試験問題B（全29問・全問必須）。No.24〜29は正解番号を全て選びます。",
       },
       {
         label: "全国建設研修センター 公式正答肢",
         href: "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/09/20260907z_seitou.pdf",
-        description: "問題A・問題Bの正答肢PDF。",
       },
     ] : exam === "tsushin1" ? [
       {
         label: "全国建設研修センター 公式問題A",
         href: "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/09/20260907e_mondaia.pdf",
-        description: "令和8年度 1級電気通信工事施工管理技術検定 第一次検定の試験問題A（全55問）。",
       },
       {
         label: "全国建設研修センター 公式問題B",
         href: "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/09/20260907e_mondaib.pdf",
-        description: "同じ試験回の試験問題B（全35問）。",
       },
       {
         label: "全国建設研修センター 公式正答肢",
         href: "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/09/20260907e_seitou.pdf",
-        description: "問題A・問題Bの正答肢PDF。",
       },
     ] : exam === "denki1" ? [
-      { label: "建設業振興基金 公式問題・正答（令和8年度）", href: "https://www.fcip-shiken.jp/pdf/r08_1dg_mondai.pdf", description: "第一次検定の全89問。PDF末尾に正答肢を掲載。" },
-      { label: "建設業振興基金 公式問題・正答（令和7年度）", href: "https://www.fcip-shiken.jp/pdf/r07_1dg_mondai.pdf", description: "第一次検定の全89問。PDF末尾に正答肢を掲載。" },
+      { label: "建設業振興基金 公式問題・正答（令和8年度）", href: "https://www.fcip-shiken.jp/pdf/r08_1dg_mondai.pdf" },
+      { label: "建設業振興基金 公式問題・正答（令和7年度）", href: "https://www.fcip-shiken.jp/pdf/r07_1dg_mondai.pdf" },
     ] : exam === "denki2" ? [
-      { label: "建設業振興基金 公式問題・正答（令和8年度前期）", href: "https://www.fcip-shiken.jp/pdf/r08_2dgz_mondai.pdf", description: "第一次検定の全62問。PDF末尾に正答肢を掲載。" },
-      { label: "建設業振興基金 公式問題・正答（令和7年度後期）", href: "https://www.fcip-shiken.jp/pdf/r07_2dg_mondai.pdf", description: "第一次検定の全62問。PDF末尾に正答肢を掲載。" },
+      { label: "建設業振興基金 公式問題・正答（令和8年度前期）", href: "https://www.fcip-shiken.jp/pdf/r08_2dgz_mondai.pdf" },
+      { label: "建設業振興基金 公式問題・正答（令和7年度後期）", href: "https://www.fcip-shiken.jp/pdf/r07_2dg_mondai.pdf" },
     ] : exam === "kankoji2" ? [
       {
         label: "全国建設研修センター 公式問題・正答肢（令和8年度前期）",
         href: "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/06/20260608k_mondai.pdf",
-        description: "2級管工事施工管理技術検定 第一次検定（前期）の問題PDF。正答肢は同じページの「正答肢」PDF。",
       },
       {
         label: "全国建設研修センター 公式問題（令和7年度後期）",
         href: "https://www.jctc.jp/wjctcp/wp-content/uploads/2025/11/20251117k_mondaia.pdf",
-        description: "第一次検定（後期）の問題PDF。No.16の正答訂正を含む正答肢PDFは試験問題/正答肢ページから確認できます。",
       },
       {
         label: "全国建設研修センター 試験問題/正答肢",
         href: "https://www.jctc.jp/mondai/",
-        description: "各試験回の問題・正答肢PDFの一覧。",
       },
     ] : exam === "denko1" ? [
       {
         label: "電気技術者試験センター 公式問題（令和8年度上期学科・出題例）",
         href: "https://www.shiken.or.jp/construction/upload/20260401_co_first_q01.pdf",
-        description: "第一種電気工事士 上期学科試験(CBT)の出題例の問題PDF。一般問題40問・配線図問題10問。",
       },
       {
         label: "電気技術者試験センター 公式解答",
         href: "https://www.shiken.or.jp/construction/upload/20260401_co_first_a01.pdf",
-        description: "同じ出題例の解答PDF。",
       },
       {
         label: "第一種電気工事士試験の問題と解答",
         href: "https://www.shiken.or.jp/construction/first/qa/",
-        description: "学科・技能の各試験回の問題と解答の一覧。",
       },
     ] : exam === "civil2" ? [
       {
         label: "全国建設研修センター 公式問題",
         href: "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/06/20260608d_mondai.pdf",
-        description: "令和8年度前期・第一次検定（土木）の問題PDF。",
       },
       {
         label: "全国建設研修センター 公式正答",
         href: "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/06/20260608d_seitou.pdf",
-        description: "同じ試験回の正答肢PDF。",
       },
     ] : exam === "zoen2" ? [
       {
         label: "全国建設研修センター 公式問題（令和8年度前期）",
         href: "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/06/20260608z_mondaia.pdf",
-        description: `${qualification.fullName} 第一次検定（前期）の問題PDF。`,
       },
       {
         label: "全国建設研修センター 公式正答肢（令和8年度前期）",
         href: "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/06/20260608z_seitou.pdf",
-        description: "同じ試験回の正答肢PDF。",
       },
       {
         label: "全国建設研修センター 公式問題（令和7年度後期）",
         href: "https://www.jctc.jp/wjctcp/wp-content/uploads/2025/11/20251117z_mondaia.pdf",
-        description: "令和7年度後期の全40問を、公式問題・正答と全選択肢の解説で収録。",
       },
       {
         label: "全国建設研修センター 公式正答肢（令和7年度後期）",
         href: "https://www.jctc.jp/wjctcp/wp-content/uploads/2025/11/20251117z_seitou.pdf",
-        description: "同じ試験回の正答肢PDF。",
       },
     ] : exam === "tsushin2" ? [
       {
         label: "全国建設研修センター 公式問題（令和8年度前期）",
         href: "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/06/20260608e_mondai.pdf",
-        description: `${qualification.fullName} 第一次検定（前期）の問題PDF。`,
       },
       {
         label: "全国建設研修センター 公式正答肢（令和8年度前期）",
         href: "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/06/20260608e_seitou.pdf",
-        description: "同じ試験回の正答肢PDF。",
       },
     ] : exam === "denken1" ? [
       {
         label: `${qualification.administrator} 公式問題・正答`,
         href: qualification.officialQuestionsUrl,
-        description: "第一種電気主任技術者試験の問題と公式解答の一次情報。",
       },
     ] : exam === "denken2" ? [
       {
         label: `${qualification.administrator} 公式問題・正答`,
         href: qualification.officialQuestionsUrl,
-        description: "第二種電気主任技術者試験の問題と公式解答の一次情報。",
       },
     ] : exam === "shakai" ? [
       {
         label: "社会福祉振興・試験センター 過去の試験問題",
         href: "https://www.sssc.or.jp/shakai/past_exam/index.html",
-        description: "第38回の共通科目・専門科目の問題PDF掲載ページ。",
       },
       {
         label: "第38回 合格基準・正答一覧",
         href: "https://www.sssc.or.jp/shakai/past_exam/pdf/no38/s_kijun_seitou.pdf",
-        description: "全129問の公式正答。本サイトの正答はこのPDFと全問照合済み。",
       },
     ] : exam === "seishin" ? [
       {
         label: "社会福祉振興・試験センター 過去の試験問題",
         href: "https://www.sssc.or.jp/seishin/past_exam/index.html",
-        description: "第28回・第27回の専門科目・共通科目の問題PDF掲載ページ。",
       },
       {
         label: "第28回 合格基準・正答一覧",
         href: "https://www.sssc.or.jp/seishin/past_exam/pdf/no28/se_kijun_seitou.pdf",
-        description: "専門科目48問・共通科目84問の公式正答。本サイトの正答はこのPDFと全問照合済み。",
       },
       {
         label: "第27回 合格基準・正答一覧",
         href: "https://www.sssc.or.jp/seishin/past_exam/pdf/no27/se_kijun_seitou.pdf",
-        description: "専門科目48問・共通科目84問の公式正答。本サイトの掲載分はこのPDFと全問照合済み。",
       },
     ] : exam === "kaigo" ? [
       {
         label: "社会福祉振興・試験センター 過去の試験問題",
         href: "https://www.sssc.or.jp/kaigo/past_exam/index.html",
-        description: "第38回の科目別問題PDF・音声読み上げ用問題の掲載ページ。",
       },
       {
         label: "第38回 合格基準・正答一覧",
         href: "https://www.sssc.or.jp/kaigo/past_exam/pdf/no38/k_kijun_seitou.pdf",
-        description: "全125問の公式正答。本サイトの正答はこのPDFと全問照合済み。",
       },
     ] : exam === "rinsho-kensagishi" ? [
       {
         label: "厚生労働省 第72回臨床検査技師 午前の公式問題",
         href: "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-07a_01.pdf",
-        description: "2026年実施回の午前問題。本サイトの収録は一部で、全問ではありません。",
       },
       {
         label: "厚生労働省 第72回臨床検査技師 午後の公式問題",
         href: "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-07b_01.pdf",
-        description: "2026年実施回の午後問題。本サイトの収録は一部で、全問ではありません。",
       },
       {
         label: "厚生労働省 第72回臨床検査技師 公式正答",
         href: "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-07seitou.pdf",
-        description: "同じ試験回の公式正答表。サイトの学習用解説とは区別してください。",
       },
       {
         label: "厚生労働省 第71回臨床検査技師 午前の公式問題",
         href: "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-07a_01.pdf",
-        description: "2025年実施回の午前問題。本サイトの収録は一部で、全問ではありません。",
       },
       {
         label: "厚生労働省 第71回臨床検査技師 午後の公式問題",
         href: "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-07b_01.pdf",
-        description: "2025年実施回の午後問題。本サイトの収録は一部で、全問ではありません。",
       },
       {
         label: "厚生労働省 第71回臨床検査技師 公式正答",
         href: "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-07seitou.pdf",
-        description: "同じ試験回の公式正答表。サイトの学習用解説とは区別してください。",
       },
     ] : exam === "tohan" ? [
       {
         label: "関西広域連合 過去問題及び解答",
         href: qualification.officialQuestionsUrl,
-        description: "令和元年度以降の試験問題（前半・後半）と解答のPDF。",
       },
       {
         label: "厚生労働省 試験問題の作成に関する手引き（令和7年4月）",
         href: "https://www.mhlw.go.jp/content/001478036.pdf",
-        description: "令和7年度試験の出題範囲。本サイトの解説の根拠資料。",
       },
     ] : [
       {
         label: `${qualification.administrator} 公式問題・正答`,
         href: qualification.officialQuestionsUrl,
-        description: "問題と公式正答の一次情報。公開範囲や基準日も確認できます。",
       },
     ];
     return (
@@ -276,10 +229,7 @@ export function ExamOfficialResources({ exam }: { exam: ExamCode }) {
           <span className="inline-flex h-9 w-9 items-center justify-center rounded-xl bg-sky-500/10 text-sky-600 dark:text-sky-400">
             <Landmark className="h-4 w-4" />
           </span>
-          <div className="leading-tight">
-            <h2 className="text-base font-bold tracking-tight text-foreground sm:text-lg">公式リソース</h2>
-            <p className="text-[11px] text-muted-foreground">問題・正答の一次情報</p>
-          </div>
+          <h2 className="text-base font-bold tracking-tight text-foreground sm:text-lg">公式リソース</h2>
         </div>
         <ul className="grid gap-2 sm:grid-cols-2">
           {items.map((item) => (
@@ -288,7 +238,6 @@ export function ExamOfficialResources({ exam }: { exam: ExamCode }) {
                 <div className="flex items-center gap-1 font-medium text-foreground group-hover:text-primary">
                   {item.label}<ExternalLink className="h-3 w-3 opacity-60" />
                 </div>
-                <p className="mt-1 text-[11px] leading-relaxed text-muted-foreground">{item.description}</p>
               </a>
             </li>
           ))}
@@ -299,21 +248,18 @@ export function ExamOfficialResources({ exam }: { exam: ExamCode }) {
 
   if (!links) return null;
 
-  const items: { label: string; href: string; description: string }[] = [
+  const items: { label: string; href: string }[] = [
     {
       label: "IPA 公式 試験概要",
       href: links.overview,
-      description: "受験資格・試験時間・出題形式・合格基準などの一次情報。",
     },
     {
       label: "シラバス（出題範囲）",
       href: links.syllabus,
-      description: "IPA が公開する公式シラバス。学習計画の根拠資料。",
     },
     {
       label: "過去問題の公開ページ",
       href: links.pastQuestions,
-      description: "IPA 公式が掲載する過去問 PDF と解答例の一覧。",
     },
   ];
 
@@ -326,14 +272,9 @@ export function ExamOfficialResources({ exam }: { exam: ExamCode }) {
         <span className="inline-flex h-9 w-9 items-center justify-center rounded-xl bg-sky-500/10 text-sky-600 dark:text-sky-400">
           <Landmark className="h-4 w-4" />
         </span>
-        <div className="leading-tight">
-          <h2 className="text-base font-bold tracking-tight text-foreground sm:text-lg">
-            IPA 公式リソース
-          </h2>
-          <p className="text-[11px] text-muted-foreground">
-            受験前に確認したい一次情報（外部リンク）
-          </p>
-        </div>
+        <h2 className="text-base font-bold tracking-tight text-foreground sm:text-lg">
+          IPA 公式リソース
+        </h2>
       </div>
       <ul className="grid gap-2 sm:grid-cols-3">
         {items.map((it) => (
@@ -348,9 +289,6 @@ export function ExamOfficialResources({ exam }: { exam: ExamCode }) {
                 {it.label}
                 <ExternalLink className="h-3 w-3 opacity-60" />
               </div>
-              <p className="mt-1 text-[11px] leading-relaxed text-muted-foreground">
-                {it.description}
-              </p>
             </a>
           </li>
         ))}
