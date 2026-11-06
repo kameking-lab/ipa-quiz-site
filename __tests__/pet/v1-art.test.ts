@@ -5,6 +5,7 @@ import { petArtFor, PET_GENERIC_ART } from "@/lib/pet/v1/art";
 import outfits from "@/lib/pet/v1/outfits.generated.json";
 import catalog from "@/lib/home/study-room-mascots.generated.json";
 import audit from "@/lib/pet/v1/art-audit.generated.json";
+import fields from "@/lib/pet/v1/fields.json";
 
 it("ships only small derivatives of the accepted original or recorded ANIM2 sources", () => {
   expect(audit.accepted).toBe(109); expect(audit.planned).toBe(0);
@@ -33,8 +34,8 @@ it("never falls back to the slimmer guide art; other qualifications keep their o
     expect(`/images/home/study-room-mascots/${name}-break.webp`).toBe(pair.break);
   }
   expect(Object.keys(outfits).sort()).toEqual(Object.keys(catalog.exams).sort());
-  expect(petArtFor("sharoushi", "partner", "study")).toBe("/images/home/study-room-mascots/sharoushi-study.webp");
-  expect(petArtFor("sharoushi", "puppy", "rest")).toBe("/images/home/study-room-mascots/sharoushi-break.webp");
+  expect(petArtFor("sharoushi", "puppy", "study")).toBe("/images/home/study-room-mascots/sharoushi-study.webp");
+  expect(petArtFor("sharoushi", "puppy", "slack")).toBe("/images/home/study-room-mascots/sharoushi-break.webp");
   for (const exam of Object.keys(outfits)) for (const pose of ["study", "correct", "incorrect", "revealed", "rest", "meal", "petted", "slack"] as const) {
     const src = petArtFor(exam, "puppy", pose);
     expect(src).not.toContain("/mascot/");
@@ -60,6 +61,30 @@ it("every stage of the eight pet qualifications has its own drawn look in all po
       const src = petArtFor(exam, stage, pose);
       expect(src).toBe(`/images/pet-v1/${exam}-${stage}-${pose}.webp`);
       expect(readFileSync(`public${src}`).length).toBeLessThan(60000);
+    }
+  }
+});
+
+it("every catalog qualification has drawn art for every stage and pose: dedicated, then field, then its study-room pair", () => {
+  const fieldOf = fields as Record<string, string>;
+  expect(fieldOf).toEqual(catalog.away.examFields);
+  const room = "/images/home/study-room-mascots/";
+  for (const exam of Object.keys(catalog.exams)) {
+    const field = Object.hasOwn(fieldOf, exam) ? fieldOf[exam] : null;
+    for (const stage of ["puppy", "partner", "expert"] as const) for (const pose of POSES) {
+      const src = petArtFor(exam, stage, pose);
+      expect(existsSync(`public${src}`), `${exam}/${stage}/${pose} -> ${src}`).toBe(true);
+      expect(readFileSync(`public${src}`).length).toBeLessThan(60000);
+      expect(Object.values(PET_GENERIC_ART)).not.toContain(src);
+      const own = stage === "puppy" && (pose === "study" || pose === "slack");
+      if (own && src.startsWith(room)) {
+        // The puppy studies and takes breaks at its own study-room seat (own outfit + desk prop).
+        expect(src).toBe(catalog.exams[exam as keyof typeof catalog.exams][pose === "study" ? "study" : "break"]);
+      } else if (field) {
+        expect(src).toBe(`/images/pet-v1/field-${field}-${stage}-${pose}.webp`);
+      } else {
+        expect(src).toBe(`/images/pet-v1/${exam}-${stage}-${pose}.webp`);
+      }
     }
   }
 });

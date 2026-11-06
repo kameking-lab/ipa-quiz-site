@@ -3,6 +3,9 @@ import outfits from "./outfits.generated.json";
 // Reaction poses drawn for qualifications whose study/break pair comes from the
 // study room (same round style and outfit); their study/slack poses use that pair.
 import extra from "./art-extra.json";
+// Qualifications without a dedicated character share their field's drawn set
+// (same field outfit as their study-room seat). Mirrors the study room's field map.
+import fields from "./fields.json";
 import type { PetProfile } from "./profile";
 const art: Record<string, string> = { ...files, ...extra };
 export type PetPose = "study" | "correct" | "incorrect" | "revealed" | "rest" | "meal" | "petted" | "slack";
@@ -20,6 +23,12 @@ export function petArtFor(qualificationId: string | null, stage: PetProfile["sel
     for (const key of [`${qualification}-${stage}-${pose}`, `${qualification}-${stage}-study`,
       `${qualification}-puppy-${pose}`, `${qualification}-puppy-study`, `takken-anim-${pose}`, "takken-anim-study"]) {
       if (key.startsWith("takken-") && qualification !== "takken") continue;
+      if (Object.hasOwn(art, key)) return art[key];
+    }
+    // Field-shared set. The puppy's study/slack are not drawn here on purpose: the
+    // qualification's own study-room pair (field outfit + its own desk prop) is used.
+    if (Object.hasOwn(fields, qualification)) {
+      const key = `field-${(fields as Record<string, string>)[qualification]}-${stage}-${pose}`;
       if (Object.hasOwn(art, key)) return art[key];
     }
     // Every qualification keeps its own study-room outfit (study + break pair).
