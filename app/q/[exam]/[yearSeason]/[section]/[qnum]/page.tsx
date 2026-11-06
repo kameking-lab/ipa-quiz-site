@@ -242,7 +242,6 @@ export default async function QuestionPage({
   const canonicalQuestion = getQuestionCanonicalRepresentative(ALL_QUESTIONS, q);
   const canonicalPageUrlAbs = `${SITE_BASE_URL}${questionPagePath(canonicalQuestion)}`;
   const requestedPageUrlAbs = `${SITE_BASE_URL}${questionPagePath(q)}`;
-  const examPath = `/${q.exam}`;
   const title = questionTitle(q);
   const lastUpdatedISO = getRecordedLastUpdatedISO(q);
   const lastUpdatedJa = lastUpdatedISO ? formatLastUpdatedJa(lastUpdatedISO) : undefined;
