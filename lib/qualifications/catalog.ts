@@ -82,7 +82,7 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     remainingWork: [],
 },
 {
-    slug: "dokugeki-chiba", examCode: "dokugeki-chiba", shortName: "毒物劇物取扱者（千葉県）", fullName: "毒物劇物取扱者試験（千葉県）一般・農業用品目・特定品目",
+    slug: "dokugeki-chiba", examCode: "dokugeki-chiba", shortName: "毒物劇物取扱者", fullName: "毒物劇物取扱者試験 一般・農業用品目・特定品目",
     domain: "pharmacy", administrator: "千葉県",
     officialQuestionsUrl: "https://www.pref.chiba.lg.jp/yakumu/dokugeki/r8shikenzissikekka.html",
     officialReuseTermsUrl: "https://www.pref.chiba.lg.jp/homepage/about-site/link.html",

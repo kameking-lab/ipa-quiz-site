@@ -245,7 +245,7 @@ export function examTopDescription(exam: ExamCode, questionCount: number): strin
 const EXAM_FULL_NAMES: Record<ExamCode, string> = {
   "benrishi": "弁理士（短答式）",
   "sokuryoshi": "測量士",
-  "dokugeki-chiba": "毒物劇物取扱者（千葉県）",
+  "dokugeki-chiba": "毒物劇物取扱者",
   "jokaso-setsubishi": "浄化槽設備士（学科）",
   "chiiki-ryoko": "地域限定旅行業務取扱管理者",
   "junkango-kansai": "准看護師",
@@ -409,7 +409,7 @@ export function examFullName(exam: ExamCode): string {
 const EXAM_META_DESC_DIVERSE: Record<ExamCode, (c: string, y: number, k: number) => string> = {
   "benrishi": (count) => "弁理士（短答式）の公開演習" + count + "問。" + "2025・2026年の公式問題・正答・独自解説と原本図表を収録。",
   "sokuryoshi": (count) => "測量士の公開演習" + count + "問。" + "2025・2026年の公式問題・正答・独自解説と原本図表を収録。午前56問・午後10大問。午後は必須1題と選択4題から2題。記述・作図は公式解答例で自己確認し、自動採点しません。",
-  "dokugeki-chiba": (count) => "毒物劇物取扱者（千葉県）の公開演習" + count + "問。" + "2025・2026年の公式問題・正答・独自解説と原本図表を収録。一般・農業用品目・特定品目の各回各80解答欄、計480欄。原文の用語の疑義は注記します。",
+  "dokugeki-chiba": (count) => "毒物劇物取扱者の公開演習" + count + "問。" + "2025・2026年の公式問題・正答・独自解説と原本図表を収録。一般・農業用品目・特定品目の各回各80解答欄、計480欄。原文の用語の疑義は注記します。",
   "jokaso-setsubishi": (count) => "浄化槽設備士（学科）の公開演習" + count + "問。" + "2025・2026年の公式問題・正答・独自解説と原本図表を収録。",
   "chiiki-ryoko": (count) => "地域限定旅行業務取扱管理者の公開演習" + count + "問。" + "2025・2026年の公式問題・正答・独自解説と原本図表を収録。全科目版118問。「すべて選ぶ」は全選択一致で採点します。",
   "junkango-kansai": (count) => "准看護師の公開演習" + count + "問。" + "2025・2026年の公式問題・正答・独自解説と原本図表を収録。300原問中、公式全員正解1問を除く299問を演習。2026年問139は2または4の単独選択を正解とします。",

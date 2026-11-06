@@ -38,7 +38,7 @@ describe("登録販売者試験令和7年度 全120問", () => {
     expect(isExamPublished("tohan")).toBe(true);
     expect(getQualificationByExamCode("tohan")?.officialReuseTermsUrl).toBe("https://www.kouiki-kansai.jp/site/221.html");
     expect(defaultPracticeSession("tohan")).toBe("gakka");
-    expect(formatYearSeason(2025, "kansai")).toBe("令和7年度 関西広域連合");
+    expect(formatYearSeason(2025, "kansai")).toBe("令和7年度");
     expect(EXAM_CONFIGS.tohan.sessions[0]?.expectedQuestions).toBe(120);
     expect(EXAM_CONFIGS.tohan.sessions[0]?.categories).toEqual([...TOHAN_CATEGORIES]);
     expect(TOHAN_QUESTIONS).toHaveLength(120);

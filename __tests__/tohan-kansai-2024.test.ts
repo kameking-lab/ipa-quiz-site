@@ -24,7 +24,7 @@ const chapterOf = (n: number) =>
         : n <= 100 ? "薬事に関する法規と制度"
           : "医薬品の適正使用と安全対策";
 
-describe("登録販売者試験（関西広域連合）令和6年度 全120問", () => {
+describe("登録販売者試験令和6年度 全120問", () => {
   it("問1〜120がそろい、令和7年度と合わせて2回分になる", () => {
     expect(TOHAN_2024_KANSAI_QUESTIONS).toHaveLength(120);
     expect(TOHAN_2024_KANSAI_QUESTIONS.map((q) => q.qNumber)).toEqual(Array.from({ length: 120 }, (_, i) => i + 1));

@@ -353,7 +353,7 @@ export default async function ExamYearSeasonPage({
           )}
           {code === "tohan" && parsed.season === "kansai" && (
             <p className="mt-2 text-sm text-muted-foreground">
-              令和{parsed.year - 2018}年度試験 全{pool.length}問です。出典は関西広域連合（滋賀・京都・大阪・兵庫・和歌山・奈良・徳島）の公式問題・正答。選択肢は原本と同じ番号(1)〜(5)で表示しています。
+              令和{parsed.year - 2018}年度試験 全{pool.length}問です。出典は関西広域連合の公式問題・正答。選択肢は原本と同じ番号(1)〜(5)で表示しています。
             </p>
           )}
           <div className="mt-3 flex flex-wrap gap-2 text-xs">
