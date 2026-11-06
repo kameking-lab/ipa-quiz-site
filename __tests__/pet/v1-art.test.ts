@@ -1,7 +1,9 @@
 import { expect, it } from "vitest";
 import { existsSync, readFileSync } from "node:fs";
 import { createHash } from "node:crypto";
-import { petArtFor } from "@/lib/pet/v1/art";
+import { petArtFor, PET_GENERIC_ART } from "@/lib/pet/v1/art";
+import outfits from "@/lib/pet/v1/outfits.generated.json";
+import catalog from "@/lib/home/study-room-mascots.generated.json";
 import audit from "@/lib/pet/v1/art-audit.generated.json";
 
 it("ships only small derivatives of the accepted original or recorded ANIM2 sources", () => {
@@ -19,6 +21,24 @@ it("keeps qualification outfits and explicit pharmacy alias; never borrows anoth
     for (const qualification of ["ip", "ap", "takken", "fp3", "civil2", "yakuzaishi"]) expect(petArtFor(qualification, stage, pose)).toContain(`/${qualification}-${stage}-${pose}.webp`);
   }
   expect(petArtFor("pharmacy", "puppy", "study")).toBe(petArtFor("yakuzaishi", "puppy", "study"));
-  expect(petArtFor("__proto__", "puppy", "correct")).toBe("/mascot/chihuahua-guide.webp");
+  expect(petArtFor("__proto__", "puppy", "correct")).toBe(PET_GENERIC_ART.study);
+  expect(petArtFor(null, "puppy", "rest")).toBe(PET_GENERIC_ART.rest);
   for (const qualification of ["ip", "ap", "takken", "fp3", "civil2", "yakuzaishi"]) expect(existsSync(`public${petArtFor(qualification, "puppy", "study")}`)).toBe(true);
+});
+
+it("never falls back to the slimmer guide art; other qualifications keep their own round study-room outfit", () => {
+  for (const [exam, pair] of Object.entries(catalog.exams)) {
+    const name = (outfits as Record<string, string>)[exam];
+    expect(`/images/home/study-room-mascots/${name}-study.webp`).toBe(pair.study);
+    expect(`/images/home/study-room-mascots/${name}-break.webp`).toBe(pair.break);
+  }
+  expect(Object.keys(outfits).sort()).toEqual(Object.keys(catalog.exams).sort());
+  expect(petArtFor("sharoushi", "partner", "study")).toBe("/images/home/study-room-mascots/sharoushi-study.webp");
+  expect(petArtFor("sharoushi", "puppy", "rest")).toBe("/images/home/study-room-mascots/sharoushi-break.webp");
+  for (const exam of Object.keys(outfits)) for (const pose of ["study", "correct", "incorrect", "revealed", "rest", "meal", "petted", "slack"] as const) {
+    const src = petArtFor(exam, "puppy", pose);
+    expect(src).not.toContain("/mascot/");
+    expect(existsSync(`public${src}`)).toBe(true);
+  }
+  for (const src of Object.values(PET_GENERIC_ART)) expect(existsSync(`public${src}`)).toBe(true);
 });

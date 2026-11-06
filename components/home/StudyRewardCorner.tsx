@@ -5,6 +5,7 @@ import { LS_KEYS } from "@/lib/storage/keys";
 import { getStudyReward, subscribeStudyReward, type StudyReward } from "@/lib/study-reward";
 import { StudyReturnLink } from "./StudyReturnLink";
 import { LearningPetCorner } from "@/components/pet/LearningPetCorner";
+import { PET_GENERIC_ART } from "@/lib/pet/v1/art";
 
 const captions = {
   swim: "ぷかぷか、海のひと休み。",
@@ -69,9 +70,9 @@ export function RewardCorner({ reward, showIdle = false, playbackToken = 0, show
       <div className="reward-scene" aria-hidden="true">
         <span className="reward-halo" />
         <span className="reward-spark reward-spark-one" /><span className="reward-spark reward-spark-two" />
-        {/* Fixed 14KB local WebP, also usable in the offline preview without a Next image server. */}
+        {/* Small local WebP in the round study-room style, usable offline without a Next image server. */}
         {/* eslint-disable-next-line @next/next/no-img-element */}
-        <span className="reward-dog"><img src="/mascot/chihuahua-guide.webp" width="144" height="144" alt="" /></span>
+        <span className="reward-dog"><img src={PET_GENERIC_ART.rest} width="144" height="144" alt="" /></span>
         <span className="reward-prop">{theme === "code" ? "⌨" : theme === "coins" ? "¥" : theme === "light" ? "☀" : theme === "swim" ? "〜" : "✿"}</span>
         <span className="reward-water" />
       </div>

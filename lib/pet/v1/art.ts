@@ -1,14 +1,15 @@
 import files from "./art.generated.json";
+import outfits from "./outfits.generated.json";
 import type { PetProfile } from "./profile";
 export type PetPose = "study" | "correct" | "incorrect" | "revealed" | "rest" | "meal" | "petted" | "slack";
 export function petPathArtFor(path: NonNullable<PetProfile["selectedPath"]>): string {
   return files[`lineage-${path}`];
 }
-const fallback: Record<string, string> = {
-  fp3: "/images/home/study-room-mascots/fp3-study.webp",
-  civil2: "/images/home/study-room-mascots/civil2-study.webp",
-  yakuzaishi: "/images/home/study-room-mascots/pharmacy-study.webp",
-};
+const ROOM = "/images/home/study-room-mascots/";
+/** Round, fluffy study-room style only (never the slimmer early guide art).
+ * Atlas tiles without a headband: 8 studies at a laptop, 9 naps on a book. */
+export const PET_GENERIC_ART = { study: `${ROOM}generic-8.webp`, rest: `${ROOM}generic-9.webp` } as const;
+const resting = (pose: PetPose) => pose === "rest" || pose === "slack";
 export function petArtFor(qualificationId: string | null, stage: PetProfile["selectedStage"], pose: PetPose): string {
   const qualification = qualificationId === "pharmacy" ? "yakuzaishi" : qualificationId;
   const art = files as Record<string, string>;
@@ -18,7 +19,9 @@ export function petArtFor(qualificationId: string | null, stage: PetProfile["sel
       if (key.startsWith("takken-") && qualification !== "takken") continue;
       if (Object.hasOwn(art, key)) return art[key];
     }
-    if (Object.hasOwn(fallback, qualification)) return fallback[qualification];
+    // Every qualification keeps its own study-room outfit (study + break pair).
+    const outfit = (outfits as Record<string, string>)[qualification];
+    if (Object.hasOwn(outfits, qualification)) return `${ROOM}${outfit}-${resting(pose) ? "break" : "study"}.webp`;
   }
-  return "/mascot/chihuahua-guide.webp";
+  return resting(pose) ? PET_GENERIC_ART.rest : PET_GENERIC_ART.study;
 }
