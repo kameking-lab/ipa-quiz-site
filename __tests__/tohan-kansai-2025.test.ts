@@ -1,7 +1,7 @@
 import { readFileSync } from "node:fs";
 import path from "node:path";
 import { describe, expect, it } from "vitest";
-import { TOHAN_CATEGORIES, TOHAN_QUESTIONS } from "@/data/questions/tohan";
+import { TOHAN_2025_KANSAI_QUESTIONS as TOHAN_QUESTIONS, TOHAN_CATEGORIES, TOHAN_QUESTIONS as ALL_TOHAN_QUESTIONS } from "@/data/questions/tohan";
 import { EXAM_CONFIGS } from "@/lib/exam-config";
 import { getQualificationByExamCode, isExamPublished } from "@/lib/qualifications/catalog";
 import { choiceDisplayLabel } from "@/lib/questions/display";
@@ -108,7 +108,7 @@ describe("登録販売者試験（関西広域連合）令和7年度 全120問",
     for (const q of TOHAN_QUESTIONS) {
       const [, , exam, yearSeason, section, qnum] = questionPagePath(q).split("/");
       expect(yearSeason, q.id).toBe("2025-kansai");
-      expect(findQuestionByRoute(TOHAN_QUESTIONS, { exam, yearSeason, section, qnum })?.id, q.id).toBe(q.id);
+      expect(findQuestionByRoute(ALL_TOHAN_QUESTIONS, { exam, yearSeason, section, qnum })?.id, q.id).toBe(q.id);
     }
   });
 

@@ -1,0 +1,71 @@
+{
+  "slug": "caremanager",
+  "name": "介護支援専門員実務研修受講試験",
+  "shortName": "ケアマネ",
+  "publicationStatus": "staging",
+  "publishable": false,
+  "ownerRightsDecision": "2026-11-04: 権利の文言では止めない（オーナー決定）。転載条件の文言は報告に記録するだけ。",
+  "checkedAt": "2026-11-06",
+  "expectedQuestions": 120,
+  "questionCount": 120,
+  "nationalCommonQuestions": true,
+  "note": "全国共通問題。都道府県（東京都・山梨県）が掲載した公式PDF・正答表を出典にする。表示名に都道府県名は付けない。",
+  "sittings": [
+    {
+      "year": 2025,
+      "round": 28,
+      "examDate": "2025-10-12",
+      "publisher": "東京都福祉局",
+      "indexUrl": "https://www.fukushi.metro.tokyo.lg.jp/kourei/shikaku/r7_seitoukijyun"
+    },
+    {
+      "year": 2024,
+      "round": 27,
+      "examDate": "2024-10-13",
+      "publisher": "山梨県",
+      "indexUrl": "https://www.pref.yamanashi.jp/chouju/keamane/jukousiken/r06gouhitou.html"
+    }
+  ],
+  "files": [
+    {
+      "filename": "r7shikenmondai.pdf",
+      "url": "https://www.fukushi.metro.tokyo.lg.jp/documents/d/fukushi/r7shikenmondai",
+      "sha256": "892f293a94ed6f2cf69c39b3361b5640af22832aba7e4364bfbff7a3bcd8ecfe",
+      "year": 2025,
+      "round": 28,
+      "kind": "question"
+    },
+    {
+      "filename": "r7seitoubangou1-25.png",
+      "url": "https://www.fukushi.metro.tokyo.lg.jp/documents/d/fukushi/r7seitoubangou1-25",
+      "sha256": "7b6fe46899e160b018fb075b946f1295477399a8d9f5f2100a8b4e57cbe1f98f",
+      "year": 2025,
+      "round": 28,
+      "kind": "answer"
+    },
+    {
+      "filename": "r7seitoubangou26-60.png",
+      "url": "https://www.fukushi.metro.tokyo.lg.jp/documents/d/fukushi/r7seitoubangou26-60",
+      "sha256": "325669e0ff256e3bbdb2ce41c81eb8845522a640f9d8d604804725534a80f7ee",
+      "year": 2025,
+      "round": 28,
+      "kind": "answer"
+    },
+    {
+      "filename": "02_r06sikenmondai.pdf",
+      "url": "https://www.pref.yamanashi.jp/documents/118362/02_r06sikenmondai.pdf",
+      "sha256": "8484f2f49b073c7794e3357fdf841ae6199a507368f17748704c5d0ae0f8ede4",
+      "year": 2024,
+      "round": 27,
+      "kind": "question"
+    },
+    {
+      "filename": "03_r06seitoubangou.pdf",
+      "url": "https://www.pref.yamanashi.jp/documents/118362/03_r06seitoubangou.pdf",
+      "sha256": "5a507999f7718684d74443fb53048075ee8153c1928bff39aaba09ea783c363a",
+      "year": 2024,
+      "round": 27,
+      "kind": "answer"
+    }
+  ]
+}

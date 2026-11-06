@@ -1,0 +1,57 @@
+{
+  "slug": "caremanager",
+  "checkedAt": "2026-11-06",
+  "retrievedAt": "2026-11-06T22:38:43+09:00",
+  "sources": [
+    {
+      "filename": "r7shikenmondai.pdf",
+      "url": "https://www.fukushi.metro.tokyo.lg.jp/documents/d/fukushi/r7shikenmondai",
+      "sha256": "892f293a94ed6f2cf69c39b3361b5640af22832aba7e4364bfbff7a3bcd8ecfe",
+      "year": 2025,
+      "round": 28,
+      "kind": "question",
+      "sha256Verified": true
+    },
+    {
+      "filename": "r7seitoubangou1-25.png",
+      "url": "https://www.fukushi.metro.tokyo.lg.jp/documents/d/fukushi/r7seitoubangou1-25",
+      "sha256": "7b6fe46899e160b018fb075b946f1295477399a8d9f5f2100a8b4e57cbe1f98f",
+      "year": 2025,
+      "round": 28,
+      "kind": "answer",
+      "sha256Verified": true
+    },
+    {
+      "filename": "r7seitoubangou26-60.png",
+      "url": "https://www.fukushi.metro.tokyo.lg.jp/documents/d/fukushi/r7seitoubangou26-60",
+      "sha256": "325669e0ff256e3bbdb2ce41c81eb8845522a640f9d8d604804725534a80f7ee",
+      "year": 2025,
+      "round": 28,
+      "kind": "answer",
+      "sha256Verified": true
+    },
+    {
+      "filename": "02_r06sikenmondai.pdf",
+      "url": "https://www.pref.yamanashi.jp/documents/118362/02_r06sikenmondai.pdf",
+      "sha256": "8484f2f49b073c7794e3357fdf841ae6199a507368f17748704c5d0ae0f8ede4",
+      "year": 2024,
+      "round": 27,
+      "kind": "question",
+      "sha256Verified": true
+    },
+    {
+      "filename": "03_r06seitoubangou.pdf",
+      "url": "https://www.pref.yamanashi.jp/documents/118362/03_r06seitoubangou.pdf",
+      "sha256": "5a507999f7718684d74443fb53048075ee8153c1928bff39aaba09ea783c363a",
+      "year": 2024,
+      "round": 27,
+      "kind": "answer",
+      "sha256Verified": true
+    }
+  ],
+  "transcription": "問題PDFはスキャン画像（テキスト層なし）。150〜500dpiのページ画像から転記し、全60問×2回を画像と再照合。別エージェントの独立レビューで各回14〜18問を抜き取り照合し誤りなし。",
+  "answers": "公式正答番号表（東京都PNG2枚・山梨県PDF1枚）から転記し、作業者が画像を見て独立に読み取った値と120問すべて一致。「Nつ選べ」の数と正答数も全問一致。",
+  "explanations": "全600肢を独自作成。別エージェントの独立レビュー（一次資料照合）で 第28回 PASS57/FIX3、第27回 PASS56/FIX4、HOLD0。FIXはすべて反映済み。",
+  "excluded": [],
+  "notYetAvailable": "第29回（2026-10-11実施）は正答が合格発表（2026-11-24予定）まで未公表のため未収録。"
+}
