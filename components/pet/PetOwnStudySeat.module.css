@@ -1,0 +1,10 @@
+.seat { min-height:264px; padding:16px; border-top:1px solid var(--border,#ccc); overflow-wrap:anywhere; }
+.seat h3,.seat h4 { font-weight:650; font-size:14px; }
+.body { display:grid; grid-template-columns:112px minmax(0,1fr); align-items:center; gap:12px; margin-top:8px; }
+.body p { font-size:13px; line-height:1.7; }
+.art { position:relative; width:112px; height:112px; }
+.art img { object-fit:contain; }
+.badge { position:absolute; bottom:0; right:0; }
+.story { margin-top:6px; }
+.body .note { font-size:11px; margin-top:6px; }
+@media(max-width:360px) { .body { grid-template-columns:88px minmax(0,1fr); gap:8px; } .art,.art>img:first-child { width:88px; height:88px; } }

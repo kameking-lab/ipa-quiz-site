@@ -8,7 +8,7 @@ for (const slug of ["it-shikaku-rirekisho-kakikata", "ipa-shiken-fukusuu-kubun-j
     await page.goto(`/blog/${slug}`);
     const practice = page.getByRole("region", { name: "記事から1問チャレンジ" });
     await expect(practice).toBeVisible();
-    await practice.getByRole("heading").scrollIntoViewIfNeeded();
+    await practice.getByRole("heading", { name: "記事から1問チャレンジ", exact: true }).scrollIntoViewIfNeeded();
     await page.screenshot({ path: testInfo.outputPath("article-360.png") });
     await expect(practice.getByRole("link", { name: "同じ分野の演習を続ける" })).toHaveCount(0);
     await practice.getByRole("radio").first().click();

@@ -32,6 +32,7 @@ describe("QuizClient with the real player and local learning stores", () => {
     const started = new Set<string>();
     let cookie = false;
     const fetcher = vi.fn(async (url: string, options?: RequestInit) => {
+      if (url === "/api/auth/session") return Response.json({});
       if (url === "/api/questions/related") return Response.json({ questions: [] });
       if (url.startsWith("/api/questions/next?")) {
         return Response.json(questions.get(new URL(url, "http://localhost").searchParams.get("id")!));
@@ -104,7 +105,7 @@ describe("QuizClient with the real player and local learning stores", () => {
     expect(sessionStorage.getItem(LS_KEYS.studyReward)).toBe(reward);
     expect(JSON.parse(localStorage.getItem(LS_KEYS.studyRewardPreferences)!)).toEqual({ closed: false, paused: true });
     expect(createHistoryStore().getAllEntries().some(entry => entry.id === fp[5].id)).toBe(false);
-    expect(fetcher.mock.calls.every(([url]) => url.startsWith("/api/questions/next?") || url === "/api/billing/question" || url === "/api/questions/related")).toBe(true);
+    expect(fetcher.mock.calls.every(([url]) => url.startsWith("/api/questions/next?") || url === "/api/billing/question" || url === "/api/questions/related" || url === "/api/auth/session")).toBe(true);
     expect(capture.mock.calls.filter(call => call[0] === "referral_landed")).toHaveLength(1);
     const limits = capture.mock.calls.filter(call => call[0] === "practice_free_limit_reached");
     expect(limits).toHaveLength(1);
@@ -123,14 +124,16 @@ describe("QuizClient with the real player and local learning stores", () => {
   ])("keeps free exits and storage when %s %s is returned", async (status, error, access, message) => {
     localStorage.setItem(LS_KEYS.history, JSON.stringify({ entries: [{ id: "prior", correct: false, selected: "ア", at: 1 }], starredIds: [] }));
     const history = localStorage.getItem(LS_KEYS.history);
-    const fetcher = vi.fn(async () => Response.json({ error, access }, { status: status as number }));
+    const fetcher = vi.fn(async (url: string) => url === "/api/auth/session" ? Response.json({}) : Response.json({ error, access }, { status: status as number }));
     vi.stubGlobal("fetch", fetcher);
     render(<QuizClient billingGateEnabled poolIds={["normal-question"]} mode="year" backHref="/fe" />);
     await screen.findByText(message as RegExp);
     expect(screen.getByRole("link", { name: "保存済みの履歴・無料復習" })).toHaveAttribute("href", "/review");
     expect(screen.getByRole("link", { name: "科目選択へ戻る" })).toHaveAttribute("href", "/fe");
     expect(localStorage.getItem(LS_KEYS.history)).toBe(history);
-    await waitFor(() => expect(fetcher).toHaveBeenCalledTimes(status === 428 ? 2 : 1));
+    // Optional local pet views verify auth independently of billing. Count the
+    // billing boundary itself, rather than racing deferred session checks.
+    await waitFor(() => expect(fetcher.mock.calls.filter(([url]) => url === "/api/billing/question")).toHaveLength(status === 428 ? 2 : 1));
     expect(screen.queryByText(/本日の無料連続演習枠を使い切りました/)).toBeNull();
   });
 });
@@ -142,6 +145,7 @@ it("submits feedback at the wall, answers bonus questions 11-20, stops at 21 and
   let submitted = false;
   let loggedIn = false;
   const fetcher = vi.fn(async (url: string, init?: RequestInit) => {
+    if (url === "/api/auth/session") return Response.json(loggedIn ? { user: { id: "billing-test" } } : {});
     if (url === "/api/feedback-unlock") {
       if (!loggedIn) return Response.json({ eligible: false, requiresLogin: true });
       if (init?.method === "POST") { submitted = true; return Response.json({ ok: true, remaining: 10 }); }

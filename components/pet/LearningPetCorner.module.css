@@ -1,0 +1,20 @@
+.panel { min-width:0; min-height:264px; border:1px solid #d8d6cd; border-radius:20px; padding:12px; background:linear-gradient(135deg,#fbf8ee,#edf5ec); color:#273c32; }
+.header { display:flex; justify-content:space-between; gap:8px; align-items:center; min-height:44px; }
+.title { min-width:0; overflow-wrap:anywhere; font-size:14px; font-weight:650; line-height:1.5; }
+.header .button { flex-shrink:0; min-width:44px; }
+.button { min-height:44px; border:1px solid #9daea1; border-radius:12px; padding:8px 12px; font-size:13px; background:#fff; color:#273c32; }
+.button:focus-visible { outline:3px solid #167c73; outline-offset:3px; }
+.body { display:grid; grid-template-columns:96px minmax(0,1fr); gap:12px; align-items:center; min-height:112px; }
+.image { width:96px; height:96px; object-fit:contain; }
+.art { position:relative; width:96px; height:96px; }
+.badge { position:absolute; bottom:0; right:0; width:28px; height:28px; object-fit:contain; }
+.caption { font-size:13px; line-height:1.7; overflow-wrap:anywhere; }
+.small { font-size:11px; line-height:1.6; opacity:.85; }
+.actions { display:flex; flex-wrap:wrap; gap:8px; align-items:center; min-height:44px; }
+.actions .button { padding:8px 6px; font-size:12px; }
+.gesture { animation:pet-nod 800ms ease-in-out both; }
+.rest { animation:pet-rest 2s ease-in-out 3; }
+@keyframes pet-nod { 45% { transform:translateY(-4px) rotate(-3deg); } }
+@keyframes pet-rest { 50% { transform:rotate(3deg); } }
+@media(prefers-reduced-motion:reduce) { .gesture,.rest { animation:none; } }
+@media(prefers-color-scheme:dark) { .panel { background:linear-gradient(135deg,#242b25,#1d2c29); color:#eef5ee; border-color:#506056; } }

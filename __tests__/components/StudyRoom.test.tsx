@@ -68,3 +68,28 @@ it("selects the intended qualification from the non-overlapping seat list and re
   expect(seats[1]).toHaveFocus();
   expect(seats[1]).toHaveAttribute("aria-pressed", "false");
 });
+
+it("loads only occupied seat images with accessible qualification/state and keeps the visit on remount", () => {
+  sessionStorage.setItem("study-room-mascot-visit:v1", "0"); // room without an away dog
+  const mixed = measuredPresence({ count: 12, exams: [{ exam: "ip", count: 6 }, { exam: "yakuzaishi", count: 6 }] }, Date.now());
+  const { container, rerender, unmount } = render(<StudyRoom snapshot={mixed} suggestions={[]} />);
+  const images = () => [...container.querySelectorAll<HTMLImageElement>(".study-room-seat img")];
+  expect(images()).toHaveLength(12);
+  const initial = images().map(img => img.outerHTML);
+  images().forEach((img, index) => {
+    expect(img).toHaveAttribute("loading", "lazy");
+    expect(img).toHaveAttribute("decoding", "async");
+    expect(img.src).toContain(index < 6 ? "/ip-" : "/pharmacy-");
+    expect(img.alt).toMatch(index < 6 ? /^ITパスポートのチワワ（(勉強中|あるある：)/ : /^薬剤師のチワワ（(勉強中|あるある：)/);
+    expect(img.closest('[aria-hidden="true"]')).toBeNull();
+  });
+  fireEvent.click(screen.getByRole("group", { name: "自習室の席を選ぶ" }).querySelectorAll("button")[2]);
+  rerender(<StudyRoom snapshot={{ ...mixed }} suggestions={[]} />);
+  expect(images().map(img => img.outerHTML)).toEqual(initial);
+  expect(container.querySelectorAll('[data-mascot-state="break"]').length).toBeLessThanOrEqual(3);
+  unmount();
+  const remounted = render(<StudyRoom snapshot={mixed} suggestions={[]} />);
+  expect([...remounted.container.querySelectorAll(".study-room-seat img")].map(img => img.outerHTML)).toEqual(initial);
+  remounted.rerender(<StudyRoom snapshot={snapshot(0)} suggestions={[]} />);
+  expect(remounted.container.querySelectorAll(".study-room-seat img")).toHaveLength(0);
+});

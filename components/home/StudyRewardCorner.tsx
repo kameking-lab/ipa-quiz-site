@@ -4,6 +4,7 @@ import { useEffect, useId, useRef, useState, useSyncExternalStore } from "react"
 import { LS_KEYS } from "@/lib/storage/keys";
 import { getStudyReward, subscribeStudyReward, type StudyReward } from "@/lib/study-reward";
 import { StudyReturnLink } from "./StudyReturnLink";
+import { LearningPetCorner } from "@/components/pet/LearningPetCorner";
 
 const captions = {
   swim: "ぷかぷか、海のひと休み。",
@@ -82,6 +83,10 @@ export function RewardCorner({ reward, showIdle = false, playbackToken = 0, show
 
 /** Qualification/question scope prevents a previous answer appearing on another exam. */
 export function StudyRewardCorner({ scope, questionId, showIdle = false, answered = true }: { scope?: string; questionId?: string; showIdle?: boolean; answered?: boolean }) {
+  if (!scope || scope.startsWith("quiz:")) return <LearningPetCorner qualificationId={scope?.slice(5)} questionId={questionId} />;
+  return <LegacyStudyRewardCorner scope={scope} questionId={questionId} showIdle={showIdle} answered={answered} />;
+}
+function LegacyStudyRewardCorner({ scope, questionId, showIdle = false, answered = true }: { scope?: string; questionId?: string; showIdle?: boolean; answered?: boolean }) {
   const latest = useSyncExternalStore(subscribeStudyReward, getStudyReward, () => null);
   const [playbackToken, setPlaybackToken] = useState(0);
   // Only a fresh submission notification can start motion. Restoring/filtering a

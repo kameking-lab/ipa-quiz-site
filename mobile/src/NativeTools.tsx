@@ -19,6 +19,7 @@ import { isQualificationUrl } from "../shared/qualification-schedules";
 import { openQualificationUrl } from "./qualification-platform";
 import { ManageSubscriptionButton } from "@/app/billing/ManageSubscriptionButton";
 import { blocksNativeWebPurchase } from "../shared/native-billing-policy";
+import { installNativePetSupport, observePetStudyWrites, persistStudyAfterPets } from "./pet-support";
 const defaultMembership = new Membership();
 export const SITE_ORIGIN = "https://www.kakomon-ai.jp";
 const localUrl = "capacitor://localhost/index.html";
@@ -76,11 +77,13 @@ export function NativeTools({ membershipOnly = false, membership = defaultMember
     if (!Capacitor.isNativePlatform() || !inSite) return;
     const disposers: Array<()=>void> = []; let disposed = false;
     const keep = (dispose: ()=>void)=> { if (disposed) dispose(); else disposers.push(dispose); };
+    keep(installNativePetSupport());
+    keep(observePetStudyWrites(()=>({ready:studyReady.current,owner:user.current}),e=>setNotice(String(e))));
     void refresh().catch(e=>setNotice(String(e)));
     void observeLogin(SITE_ORIGIN, e=>setNotice(String(e))).then(keep);
     void App.addListener("appStateChange", s=>{
       if(s.isActive)void refresh(true).catch(e=>setNotice(String(e)));
-      else if(studyReady.current)void persistStudy(user.current).catch(e=>setNotice(String(e)));
+      else if(studyReady.current)void persistStudyAfterPets(user.current).catch(e=>setNotice(String(e)));
     }).then(h=>keep(()=>{ void h.remove(); }));
     void observeReminderTap(()=>window.location.assign(`${SITE_ORIGIN}/review`)).then(keep);
     void Purchases.addCustomerInfoUpdateListener(()=>{ void refresh(true).catch(e=>setNotice(String(e))); }).then(id=>keep(()=>{ void Purchases.removeCustomerInfoUpdateListener({ listenerToRemove: id }); })).catch(()=>{});
@@ -115,7 +118,7 @@ export function NativeTools({ membershipOnly = false, membership = defaultMember
   }); },[open,inSite,refresh,run,membership]);
   if (!inSite) return null;
   return <aside aria-label="iPhoneの学習機能" className="border-b bg-card p-3 pt-[max(12px,env(safe-area-inset-top))]">
-    {!membershipOnly && <div className="flex flex-wrap gap-3"><button onClick={()=>setOpen(!open)}>iPhone設定・会員・保存</button><button onClick={()=>void run(async()=>{await persistStudy(user.current);location.assign(localUrl);})}>端末内で学習</button><button onClick={()=>void run(async()=>{ await Share.share({ title:"過去問AI", url:location.href }); })}>共有</button></div>}
+    {!membershipOnly && <div className="flex flex-wrap gap-3"><button onClick={()=>setOpen(!open)}>iPhone設定・会員・保存</button><button onClick={()=>void run(async()=>{await persistStudyAfterPets(user.current);location.assign(localUrl);})}>端末内で学習</button><button onClick={()=>void run(async()=>{ await Share.share({ title:"過去問AI", url:location.href }); })}>共有</button></div>}
     {!membershipOnly && <Suspense fallback={null}><NativePageQualificationActions /></Suspense>}
     {open && <section className="mx-auto max-w-2xl space-y-4 py-4">
       <h1 className="text-xl font-bold">過去問AI 有料会員・端末設定</h1>

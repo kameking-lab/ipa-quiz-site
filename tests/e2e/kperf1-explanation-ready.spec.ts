@@ -1,8 +1,13 @@
 import { expect, test } from "@playwright/test";
+import { allowLoopbackWebKit } from "./helpers/local-webkit";
 
-test.use({ viewport: { width: 390, height: 844 }, isMobile: true, hasTouch: true });
+test.use({ viewport: { width: 390, height: 844 }, isMobile: true, hasTouch: true, serviceWorkers: "block" });
+test.beforeEach(async ({ page, browserName }) => allowLoopbackWebKit(page, browserName));
 
-test("prepared explanation stays hidden and inert until a real answer, then receives focus without navigation or AI", async ({ page }) => {
+for (const width of [320, 390]) for (const reducedMotion of ["reduce", "no-preference"] as const)
+test(`prepared explanation receives focus without navigation or AI (${width}px, ${reducedMotion})`, async ({ page }) => {
+  await page.setViewportSize({ width, height: 844 });
+  await page.emulateMedia({ reducedMotion });
   let aiCalls = 0;
   await page.route("**/api/copilot**", route => { aiCalls++; return route.abort(); });
   await page.goto("/quiz?mode=year&exam=ap&year=2023&season=spring&session=am");
@@ -27,4 +32,9 @@ test("prepared explanation stays hidden and inert until a real answer, then rece
   const box = await next.boundingBox();
   expect(box!.height).toBeGreaterThanOrEqual(44);
   expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
+  // Root overflow clipping can hide a wider flex item without increasing the
+  // document scrollWidth. Check the actual result's edges as well.
+  const resultBox = await result.boundingBox();
+  expect(resultBox!.x).toBeGreaterThanOrEqual(0);
+  expect(resultBox!.x + resultBox!.width).toBeLessThanOrEqual(width);
 });

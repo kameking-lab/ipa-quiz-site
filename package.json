@@ -49,7 +49,8 @@
     "audit:essays:ci": "tsx scripts/audit-essays.ts --ci",
     "copilot:index": "tsx scripts/build-copilot-index.ts",
     "copilot:eval": "tsx scripts/eval-copilot-rag.ts",
-    "test": "vitest run"
+    "test": "vitest run",
+    "mascots:build": "tsx scripts/build-study-room-mascots.ts"
   },
   "dependencies": {
     "@auth/prisma-adapter": "2.11.3",

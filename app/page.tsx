@@ -29,7 +29,7 @@ export default function HomePage() {
       <JsonLd data={{ "@context": "https://schema.org", "@graph": [buildWebsiteNode(description), buildOrgNode()] }} />
       <HomeHero domains={domains} />
       <TotalAnswerCounter suggestions={roomItems.filter(item => item.questionCount > 0)
-        .map(({ name, href }) => ({ name, href }))} />
+        .map(({ name, href, key }) => ({ name, href, exam: key }))} />
       <HomeDirectory domains={domains} />
       <div className="study-context">
       <HomeScheduleLink />
