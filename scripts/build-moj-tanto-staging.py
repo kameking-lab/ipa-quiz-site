@@ -182,6 +182,16 @@ def build_unit_records(slug: str, year: int, subject_slug: str, packet: dict, sr
     if appendix:
         # Printed after the options (e.g. 参照条文); verbatim like the rest.
         verbatim(where + " appendix", appendix, raw_norm)
+    # Coverage: nothing printed in the official question may be silently dropped.
+    rest = raw_norm
+    pieces = [ed.get("stem", ""), appendix] + [s["text"] for s in statements] + [o["text"] for o in ed.get("options", [])]
+    for piece in sorted(pieces, key=len, reverse=True):
+        if piece:
+            rest = rest.replace(norm(piece), "", 1)
+    rest = re.sub(r"^〔第[０-９0-9]+問〕（配点：[０-９0-9]+）", "", rest)
+    rest = re.sub(r"[１-９0-9]+．|[ア-コ]．|[①-⑳]|[，、。]", "", rest)
+    if len(rest) > 12:
+        fail(where, f"official text not covered by the transcription: {rest[:60]}…")
     records: list[dict] = []
 
     if fmt == "per-statement":
@@ -211,7 +221,7 @@ def build_unit_records(slug: str, year: int, subject_slug: str, packet: dict, sr
                 "id": f"{slug}-{year}-annual-{subject_slug}-q{src['q']}-{i + 1}",
                 "part": str(i + 1),
                 "officialQuestionLabel": f"第{src['q']}問［No.{no}］",
-                "question": f"{stem}\n\n{lab}．{s['text'].strip()}",
+                "question": f"{stem}\n\n{lab}．{s['text'].strip()}" + (f"\n\n{appendix}" if appendix else ""),
                 "questionNotice": f"原問は記述{'・'.join(labels)}を解答欄［No.{nos[0]}］〜［No.{nos[-1]}］で個別に解答します。この設問は記述{lab}（［No.{no}］）です。",
                 "choices": {"ア": labels_map["1"], "イ": labels_map["2"]},
                 "answer": correct,
@@ -240,6 +250,8 @@ def build_unit_records(slug: str, year: int, subject_slug: str, packet: dict, sr
     question_text = stem
     if statements:
         question_text += "\n" + "\n".join(f"{s['label']}．{s['text'].strip()}" for s in statements)
+    if appendix:
+        question_text += f"\n\n{appendix}"
     stmt_lines = "\n".join(f"記述{lab}：{st_ex[lab].strip()}" for lab in labels if lab in st_ex)
     explanation = overview + (f"\n\n{stmt_lines}" if stmt_lines else "") + f"\n\n{law_note}"
     rec = dict(base)
@@ -365,6 +377,8 @@ def build(slug: str, check_only: bool, only: str | None = None) -> int:
         total += len(recs)
         out = base / f"{year}.json"
         text = json.dumps(recs, ensure_ascii=False, indent=1) + "\n"
+        if only:
+            continue  # single-subject verification never writes output
         if check_only:
             if not out.exists() or out.read_text(encoding="utf-8") != text:
                 fail(f"{slug} {year}", f"{out.name} is stale; rerun the build")
