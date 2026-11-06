@@ -44,7 +44,7 @@ export interface QualificationCatalogEntry {
  * 「公式に問題と正答がある」だけでは live にせず、転載条件まで確認する。
  */
 export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
-{"slug": "junkango-kansai", "examCode": "junkango-kansai", "shortName": "准看護師（関西広域連合）", "fullName": "准看護師（関西広域連合）", "domain": "welfare", "administrator": "関西広域連合", "officialQuestionsUrl": "https://www.kouiki-kansai.jp/koikirengo/jisijimu/shikakumenkyo/junan_top/jyunkangosisiken/9022.html", "officialReuseTermsUrl": "https://www.kouiki-kansai.jp/about_site.html", "status": "live", "stagingDataPath": "data/qualification-staging/junkango-kansai", "reuseSummary": "2025・2026年の公式問題・正答・独自解説と原本図表を収録。300原問中、公式全員正解1問を除く299問を演習。2026年問139は2または4の単独選択を正解とします。問題・正答は公式原本、解説は過去問AIの独自作成です。", "remainingWork": []},
+{"slug": "junkango-kansai", "examCode": "junkango-kansai", "shortName": "准看護師", "fullName": "准看護師", "domain": "welfare", "administrator": "関西広域連合", "officialQuestionsUrl": "https://www.kouiki-kansai.jp/koikirengo/jisijimu/shikakumenkyo/junan_top/jyunkangosisiken/9022.html", "officialReuseTermsUrl": "https://www.kouiki-kansai.jp/about_site.html", "status": "live", "stagingDataPath": "data/qualification-staging/junkango-kansai", "reuseSummary": "2025・2026年の公式問題・正答・独自解説と原本図表を収録。300原問中、公式全員正解1問を除く299問を演習。2026年問139は2または4の単独選択を正解とします。問題・正答は公式原本、解説は過去問AIの独自作成です。", "remainingWork": []},
 {"slug": "sokuryoshi", "examCode": "sokuryoshi", "shortName": "測量士", "fullName": "測量士", "domain": "construction", "administrator": "国土地理院", "officialQuestionsUrl": "https://www.gsi.go.jp/LAW/SHIKEN/past.html", "officialReuseTermsUrl": "https://www.gsi.go.jp/kikakuchousei/kikakuchousei40182.html", "status": "live", "stagingDataPath": "data/qualification-staging/sokuryoshi", "reuseSummary": "2025・2026年の公式問題・正答・独自解説と原本図表を収録。午前56問・午後10大問。午後は必須1題と選択4題から2題。記述・作図は公式解答例で自己確認し、自動採点しません。問題・正答は公式原本、解説は過去問AIの独自作成です。", "remainingWork": []},
   {
     slug: "khk-kagaku",
@@ -636,8 +636,8 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
 {
     slug: "tohan-kansai",
     examCode: "tohan",
-    shortName: "登録販売者（関西）",
-    fullName: "登録販売者試験（関西広域連合：滋賀・京都・大阪・兵庫・和歌山・奈良・徳島）",
+    shortName: "登録販売者",
+    fullName: "登録販売者試験",
     domain: "pharmacy",
     administrator: "関西広域連合",
     officialQuestionsUrl: "https://www.kouiki-kansai.jp/koikirengo/jisijimu/shikakumenkyo/touroku/7607.html",
@@ -1334,33 +1334,33 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     remainingWork: ["監督役による独立レビューと公開判断"],
 },
 {
-    slug: "yamaguchi-fugu", examCode: "yamaguchi-fugu", shortName: "ふぐ処理師（山口県・学科）", fullName: "ふぐ処理師（山口県・学科）",
+    slug: "yamaguchi-fugu", examCode: "yamaguchi-fugu", shortName: "ふぐ処理師（学科）", fullName: "ふぐ処理師（学科）",
     domain: "personal-services", administrator: "山口県 生活衛生課",
     officialQuestionsUrl: "https://www.pref.yamaguchi.lg.jp/site/syoku-anshin/320296.html",
     officialReuseTermsUrl: "https://www.pref.yamaguchi.lg.jp/soshiki/21/26951.html",
     status: "live",
     reuseSummary: "令和8・7年の公表問題・正答を保存。権利確認はオーナー確認済み。解説は独自作成、法令は各出題時点。",
-    attributionTemplate: "出典：山口県 生活衛生課 ふぐ処理師（山口県・学科） 問題・正答。テキスト整形・図の切出し・解説は過去問AIが作成。",
+    attributionTemplate: "出典：山口県 生活衛生課 ふぐ処理師（学科） 問題・正答。テキスト整形・図の切出し・解説は過去問AIが作成。",
     remainingWork: ["監督役による独立レビューと公開判断"],
 },
 {
-    slug: "yamaguchi-seika", examCode: "yamaguchi-seika", shortName: "製菓衛生師（山口県）", fullName: "製菓衛生師（山口県）",
+    slug: "yamaguchi-seika", examCode: "yamaguchi-seika", shortName: "製菓衛生師", fullName: "製菓衛生師",
     domain: "personal-services", administrator: "山口県 生活衛生課",
     officialQuestionsUrl: "https://www.pref.yamaguchi.lg.jp/site/syoku-anshin/320296.html",
     officialReuseTermsUrl: "https://www.pref.yamaguchi.lg.jp/soshiki/21/26951.html",
     status: "live",
     reuseSummary: "令和8・7年の公表問題・正答を保存。権利確認はオーナー確認済み。解説は独自作成、法令は各出題時点。",
-    attributionTemplate: "出典：山口県 生活衛生課 製菓衛生師（山口県） 問題・正答。テキスト整形・図の切出し・解説は過去問AIが作成。",
+    attributionTemplate: "出典：山口県 生活衛生課 製菓衛生師 問題・正答。テキスト整形・図の切出し・解説は過去問AIが作成。",
     remainingWork: ["監督役による独立レビューと公開判断"],
 },
 {
-    slug: "yamaguchi-chori", examCode: "yamaguchi-chori", shortName: "調理師（山口県）", fullName: "調理師（山口県）",
+    slug: "yamaguchi-chori", examCode: "yamaguchi-chori", shortName: "調理師", fullName: "調理師",
     domain: "personal-services", administrator: "山口県 生活衛生課",
     officialQuestionsUrl: "https://www.pref.yamaguchi.lg.jp/site/syoku-anshin/320296.html",
     officialReuseTermsUrl: "https://www.pref.yamaguchi.lg.jp/soshiki/21/26951.html",
     status: "live",
     reuseSummary: "令和8・7年の公表問題・正答を保存。権利確認はオーナー確認済み。解説は独自作成、法令は各出題時点。",
-    attributionTemplate: "出典：山口県 生活衛生課 調理師（山口県） 問題・正答。テキスト整形・図の切出し・解説は過去問AIが作成。",
+    attributionTemplate: "出典：山口県 生活衛生課 調理師 問題・正答。テキスト整形・図の切出し・解説は過去問AIが作成。",
     remainingWork: ["監督役による独立レビューと公開判断"],
 },
 {

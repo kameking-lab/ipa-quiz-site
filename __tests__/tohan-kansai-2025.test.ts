@@ -33,7 +33,7 @@ const chapterOf = (n: number) =>
         : n <= 100 ? "薬事に関する法規と制度"
           : "医薬品の適正使用と安全対策";
 
-describe("登録販売者試験（関西広域連合）令和7年度 全120問", () => {
+describe("登録販売者試験令和7年度 全120問", () => {
   it("公開済みで、年度・試験回・演習区分が決まっている", () => {
     expect(isExamPublished("tohan")).toBe(true);
     expect(getQualificationByExamCode("tohan")?.officialReuseTermsUrl).toBe("https://www.kouiki-kansai.jp/site/221.html");
