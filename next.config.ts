@@ -62,7 +62,7 @@ const longCacheImmutable = {
 
 const nextConfig: NextConfig = {
   webpack(config, { webpack }) {
-    if (process.env.MOBILE_IAP_ENABLED === "true") {
+    if (process.env.WEB_STRICT_CONTENT_GATE === "true") {
       config.resolve.alias["@/lib/kisho-study$"] = resolve(process.cwd(), "mobile/shared/gated-kisho-study.ts");
       config.plugins.push(new webpack.NormalModuleReplacementPlugin(
         /(?:^|[\\/])kisho-study(?:\.ts)?$/,
@@ -80,7 +80,7 @@ const nextConfig: NextConfig = {
     return config;
   },
   turbopack: {
-    resolveAlias: process.env.MOBILE_IAP_ENABLED === "true" ? {
+    resolveAlias: process.env.WEB_STRICT_CONTENT_GATE === "true" ? {
       "@/lib/kisho-study": "./mobile/shared/gated-kisho-study.ts",
       "./kisho-study": "./mobile/shared/gated-kisho-study.ts",
       "@/lib/exam-library/survey-assistant-grading-index": "./mobile/shared/granted-paper-grading.ts",

@@ -20,8 +20,9 @@ IOS1Dの変更と公開前に必要な実環境確認は [docs/ios1d-release.md]
 
 ## 無料枠・会員権利
 
-- モバイルサービス有効時はウェブも含めてログイン必須、全資格・全問題から共通の1日10問。JST 0時更新、その日に許可した異なる問題IDをサーバーの既存台帳で数える。再取得は重複消費しない。
-- `MOBILE_IAP_ENABLED=true` をビルド時・実行時の両方で設定した構成では、匿名ID再発行・ヘッダー省略・公開GET・SSR/RSC・模試・復習・採点による回避を防ぐ。移行猶予や意見送信による追加枠はこの構成では付与しない。無効な既存ウェブ構成は従来の公開動作を維持する。
+- アプリ（`X-Kakomon-Native: ios`）はウェブと同じモデル：ログイン不要の匿名ゲストで全資格共通の1日10問 → 意見送信1回で+10問（ログインは意見送信の段階だけ）→ それ以上はウェブ月額会員またはApp Storeサブスク（`kakomon_pro`）。JST 0時更新、その日に許可した異なる問題IDをサーバーの既存台帳で数える。再取得は重複消費しない。
+- `MOBILE_IAP_ENABLED` はiOSのRevenueCat経路（SDKキー・Offering配布、権利確認、Webhook）だけを有効にする。ウェブの挙動は変えない。
+- ウェブ全体の厳格ゲート（ログイン必須・SSR問題ページの差し替え・公開GET/AIの本文付与制限）は別フラグ `WEB_STRICT_CONTENT_GATE=true`（既定オフ）。ビルド時・実行時の両方で設定した場合のみ有効。この構成では移行猶予や意見送信による追加枠は付与しない。
 - 通常演習、問題ページ、模試、ストリーム、チャレンジ、別形式のアプリ用UIは共通のサーバー開始判定を通す。ローカルのpremiumフラグやSDKの自己申告では解除しない。
 - 有効なウェブ会員権利を最優先し、次にサーバーがRevenueCatから確認した `kakomon_pro` を採用する。有料は全資格を回数無制限。既存AIの不正利用防止・費用上限は保持する。
 
@@ -39,7 +40,8 @@ App User IDは認証済み会員IDからHMACで生成する。Webhookは認証�
 
 | 設定 | 用途 |
 |---|---|
-| `MOBILE_IAP_ENABLED` | RevenueCat連携の有効化 |
+| `MOBILE_IAP_ENABLED` | iOSのRevenueCat連携の有効化（ウェブの演習ゲートには影響しない） |
+| `WEB_STRICT_CONTENT_GATE` | ウェブ厳格ゲート。既定オフ。アプリ販売には不要 |
 | `MOBILE_RC_IOS_PUBLIC_KEY` | iOS用公開SDKキー |
 | `MOBILE_RC_PRODUCT_ID` / `MOBILE_RC_OFFERING_ID` | 月額商品とOffering |
 | `MOBILE_RC_ENTITLEMENT` | `kakomon_pro` |

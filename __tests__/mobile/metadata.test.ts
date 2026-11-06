@@ -10,7 +10,7 @@ import {generateMetadata as fp2} from "@/app/fp2/practical/[edition]/[number]/pa
 import {generateMetadata as fp3} from "@/app/fp3/practical/[edition]/[number]/page";
 afterEach(()=>vi.unstubAllEnvs());
 it("does not put protected FP bodies into HTML/Flight metadata when the shared gate is enabled",async()=>{
-  vi.stubEnv("MOBILE_IAP_ENABLED","true");
+  vi.stubEnv("WEB_STRICT_CONTENT_GATE","true");
   for(const metadata of [fp2,fp3]){
     const result=await metadata({params:Promise.resolve({edition:"fixture",number:"1"})});
     expect(JSON.stringify(result)).not.toContain(body);
@@ -18,6 +18,6 @@ it("does not put protected FP bodies into HTML/Flight metadata when the shared g
   }
 });
 it("keeps ordinary public metadata when the shared gate is disabled",async()=>{
-  vi.stubEnv("MOBILE_IAP_ENABLED","false");
+  vi.stubEnv("WEB_STRICT_CONTENT_GATE","false");vi.stubEnv("MOBILE_IAP_ENABLED","true");
   for(const metadata of [fp2,fp3])expect((await metadata({params:Promise.resolve({edition:"fixture",number:"1"})})).description).toBe(body);
 });

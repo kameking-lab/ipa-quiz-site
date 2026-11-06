@@ -1,4 +1,4 @@
-import { beforeEach, expect, it, vi } from "vitest";
+import { beforeEach, describe, expect, it, vi } from "vitest";
 import { BillingError } from "@/lib/billing/domain";
 const m=vi.hoisted(()=>({user:null as string|null,webPaid:false,rc:vi.fn(),enabled:false,ids:new Set<string>(),bonus:vi.fn()}));
 vi.mock("@/lib/questions/pool-server",()=>({findQuestionById:async(id:string)=>({id,answer:"a"})}));
@@ -15,6 +15,8 @@ vi.mock("@/lib/billing/guest-practice",()=>({readGuestCookie:()=>"same-web-cooki
 }}));
 vi.mock("@/lib/feedback/unlock-runtime",()=>({readFeedbackBrowser:()=>null,feedbackBrowserHeader:()=>"",unlockIdentity:()=>({account:m.user}),feedbackStore:()=>({grant:m.bonus})}));
 import { POST } from "@/app/api/billing/question/route";
+import { strictContentGateEnabled } from "@/lib/billing/content-policy";
+import { mobileConfig } from "@/mobile/server/config";
 import { GET } from "@/app/api/questions/next/route";
 import {validPaperReviewProof} from "@/mobile/server/paper-review";
 const req=(id:string,headers:Record<string,string>={})=>new Request("https://site.test/api/billing/question",{method:"POST",headers:{"X-Kakomon-Native":"ios",...headers},body:JSON.stringify({id})});
@@ -33,8 +35,8 @@ it("web paid rights win over RevenueCat outages; verified IAP rights grant unlim
   m.webPaid=false;m.rc.mockResolvedValue({expiresAt:new Date(Date.now()+10000)});for(let i=0;i<12;i++)expect((await POST(req("q"+i))).status).toBe(200);expect(m.ids.size).toBe(0);
   m.rc.mockResolvedValue(null);for(let i=0;i<10;i++)await POST(req("q"+i));expect((await POST(req("q99"))).status).toBe(429);
 });
-it("enforces one server quota without native headers, including direct GET, and forbids new anonymous identities",async()=>{
-  vi.stubEnv("MOBILE_IAP_ENABLED","true");
+it("WEB_STRICT_CONTENT_GATE enforces one server quota without native headers, including direct GET, and forbids new anonymous identities",async()=>{
+  vi.stubEnv("WEB_STRICT_CONTENT_GATE","true");
   const web=(id:string)=>new Request("https://site.test/api/billing/question",{method:"POST",body:JSON.stringify({id})});
   expect((await POST(web("ip-0"))).status).toBe(401);
   m.user="u";
@@ -56,4 +58,46 @@ it("issues an owner-bound result-only proof only after a successful paper body g
   m.ids.clear();for(let n=0;n<10;n++)m.ids.add(`other-${n}`);
   const blocked=await POST(req("library-q1",{"X-Kakomon-Paper":"test"}));
   expect(blocked.status).toBe(429);expect(await blocked.text()).not.toContain("reviewProof");
+});
+describe("MOBILE_IAP_ENABLED only enables the iOS RevenueCat path",()=>{
+  beforeEach(()=>{vi.stubEnv("MOBILE_IAP_ENABLED","true");vi.stubEnv("WEB_STRICT_CONTENT_GATE",undefined);});
+  const web=(id:string)=>new Request("https://site.test/api/billing/question",{method:"POST",body:JSON.stringify({id})});
+  it("does not turn on the web strict gate",()=>{
+    expect(strictContentGateEnabled()).toBe(false);
+    expect(strictContentGateEnabled({MOBILE_IAP_ENABLED:"true"})).toBe(false);
+    expect(strictContentGateEnabled({WEB_STRICT_CONTENT_GATE:"true"})).toBe(true);
+    expect(mobileConfig({MOBILE_IAP_ENABLED:"true"} as unknown as NodeJS.ProcessEnv).enabled).toBe(true);
+    expect(mobileConfig({WEB_STRICT_CONTENT_GATE:"true"} as unknown as NodeJS.ProcessEnv).enabled).toBe(false);
+  });
+  it("leaves web unchanged: ungated web stays free, gated web keeps the anonymous guest 10",async()=>{
+    m.enabled=false;
+    for(let i=0;i<12;i++){const r=await POST(web("ip-"+i));expect(r.status).toBe(200);expect((await r.json()).access.kind).toBe("free");}
+    expect(m.ids.size).toBe(0);
+    m.enabled=true;
+    for(let i=0;i<10;i++)expect((await POST(web("ip-"+i))).status).toBe(200);
+    const blocked=await POST(web("ip-10"));expect(blocked.status).toBe(429);expect((await blocked.json()).error).toBe("daily_limit");
+    expect(m.rc).not.toHaveBeenCalled();
+  });
+  it("native anonymous guest gets 10 without login, then the daily limit (not sign_in_required)",async()=>{
+    for(let i=0;i<10;i++){const r=await POST(req("ap-"+i));expect(r.status).toBe(200);const b=await r.json();expect(b.access.kind).toBe("guest");expect(b.access.remaining).toBe(9-i);}
+    const blocked=await POST(req("ap-10"));expect(blocked.status).toBe(429);expect((await blocked.json()).error).toBe("daily_limit");
+    expect(m.bonus).not.toHaveBeenCalled();
+  });
+  it("native signed-in user gets the one-time feedback +10 after the ordinary 10, like web",async()=>{
+    vi.stubEnv("FEEDBACK_UNLOCK_ENABLED","true");m.user="u";
+    for(let i=0;i<10;i++)expect((await POST(req("ap-"+i))).status).toBe(200);
+    m.bonus.mockResolvedValueOnce({remaining:9,newlyUsed:true});
+    const bonus=await POST(req("ap-10"));expect(bonus.status).toBe(200);
+    const body=await bonus.json();expect(body.access.kind).toBe("trial");expect(body.access.feedbackBonus).toEqual({remaining:9,newlyUsed:true});
+    m.bonus.mockResolvedValueOnce(null);
+    expect((await POST(req("ap-11"))).status).toBe(429);
+  });
+  it("native App Store subscriber (kakomon_pro via RevenueCat) is unlimited; non-subscriber is limited",async()=>{
+    m.user="u";m.rc.mockResolvedValue({expiresAt:new Date(Date.now()+60_000)});
+    for(let i=0;i<15;i++){const r=await POST(req("ap-"+i));expect(r.status).toBe(200);expect((await r.json()).access).toMatchObject({kind:"pass",remaining:null});}
+    expect(m.ids.size).toBe(0);
+    m.rc.mockResolvedValue(null);
+    for(let i=0;i<10;i++)expect((await POST(req("ap-"+i))).status).toBe(200);
+    expect((await POST(req("ap-99"))).status).toBe(429);
+  });
 });
