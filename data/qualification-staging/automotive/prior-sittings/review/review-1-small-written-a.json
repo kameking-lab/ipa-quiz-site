@@ -1,0 +1,322 @@
+{
+ "subject": "一級小型自動車（筆記） 令和6年度第2回 (2024_20250323_1k) No.1-25",
+ "reviewer": "claude-independent",
+ "pagesChecked": [
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  11,
+  12,
+  13,
+  14,
+  15,
+  16,
+  "2024_20250323_kai_p01"
+ ],
+ "answerKeyReadFromImage": [
+  3,
+  4,
+  3,
+  1,
+  2,
+  2,
+  3,
+  3,
+  2,
+  4,
+  4,
+  4,
+  2,
+  3,
+  1,
+  2,
+  1,
+  3,
+  2,
+  4,
+  1,
+  2,
+  4,
+  4,
+  2
+ ],
+ "rows": [
+  {
+   "qNumber": 1,
+   "verdict": "PASS",
+   "sourcePagesChecked": [
+    2
+   ],
+   "answerChecked": true,
+   "allFourExplanationsChecked": true,
+   "issues": []
+  },
+  {
+   "qNumber": 2,
+   "verdict": "FIX",
+   "sourcePagesChecked": [
+    3
+   ],
+   "answerChecked": true,
+   "allFourExplanationsChecked": true,
+   "issues": [
+    {
+     "field": "explanation",
+     "problem": "States that ⑧ injection quantity stays 0 throughout cranking (クランキング中に噴射量が0のまま). Zoomed figure (rv_1ka_1/2) shows ⑧ steps up to about 18-20mm³/str partway through the starter-ON period, i.e. during cranking. The defensible point is that ⑧ shows no large start-up enrichment (it stays at a small constant ~20mm³/str), not that it is zero during cranking.",
+     "correctText": "正答は(4)。⑧の燃料噴射量はクランキング開始直後は0で、クランキング途中から約20mm³/strの小さな一定値のまま推移しており、冷間始動時に始動用の増量噴射を行う始動モードのデータとは整合しない。公式解答では⑩のポンプ電流目標値信号もこの運転制御モードに該当しないデータとされている。"
+    },
+    {
+     "field": "choiceExplanations.エ",
+     "problem": "Same factual error: describes ⑧ as 'クランキング中に噴射量が出ていない', but the figure shows injection quantity rising to ~20mm³/str during cranking.",
+     "correctText": "正答。クランキング中から始動後まで始動用の増量が見られず約20mm³/strの一定値で推移する⑧と、公式解答で該当しないとされる⑩の組み合わせである。"
+    }
+   ]
+  },
+  {
+   "qNumber": 3,
+   "verdict": "PASS",
+   "sourcePagesChecked": [
+    4
+   ],
+   "answerChecked": true,
+   "allFourExplanationsChecked": true,
+   "issues": []
+  },
+  {
+   "qNumber": 4,
+   "verdict": "PASS",
+   "sourcePagesChecked": [
+    4
+   ],
+   "answerChecked": true,
+   "allFourExplanationsChecked": true,
+   "issues": []
+  },
+  {
+   "qNumber": 5,
+   "verdict": "PASS",
+   "sourcePagesChecked": [
+    4
+   ],
+   "answerChecked": true,
+   "allFourExplanationsChecked": true,
+   "issues": []
+  },
+  {
+   "qNumber": 6,
+   "verdict": "PASS",
+   "sourcePagesChecked": [
+    5
+   ],
+   "answerChecked": true,
+   "allFourExplanationsChecked": true,
+   "issues": []
+  },
+  {
+   "qNumber": 7,
+   "verdict": "PASS",
+   "sourcePagesChecked": [
+    5
+   ],
+   "answerChecked": true,
+   "allFourExplanationsChecked": true,
+   "issues": []
+  },
+  {
+   "qNumber": 8,
+   "verdict": "PASS",
+   "sourcePagesChecked": [
+    6
+   ],
+   "answerChecked": true,
+   "allFourExplanationsChecked": true,
+   "issues": []
+  },
+  {
+   "qNumber": 9,
+   "verdict": "PASS",
+   "sourcePagesChecked": [
+    7
+   ],
+   "answerChecked": true,
+   "allFourExplanationsChecked": true,
+   "issues": []
+  },
+  {
+   "qNumber": 10,
+   "verdict": "PASS",
+   "sourcePagesChecked": [
+    8
+   ],
+   "answerChecked": true,
+   "allFourExplanationsChecked": true,
+   "issues": []
+  },
+  {
+   "qNumber": 11,
+   "verdict": "PASS",
+   "sourcePagesChecked": [
+    8
+   ],
+   "answerChecked": true,
+   "allFourExplanationsChecked": true,
+   "issues": []
+  },
+  {
+   "qNumber": 12,
+   "verdict": "PASS",
+   "sourcePagesChecked": [
+    9
+   ],
+   "answerChecked": true,
+   "allFourExplanationsChecked": true,
+   "issues": []
+  },
+  {
+   "qNumber": 13,
+   "verdict": "PASS",
+   "sourcePagesChecked": [
+    9
+   ],
+   "answerChecked": true,
+   "allFourExplanationsChecked": true,
+   "issues": []
+  },
+  {
+   "qNumber": 14,
+   "verdict": "PASS",
+   "sourcePagesChecked": [
+    10
+   ],
+   "answerChecked": true,
+   "allFourExplanationsChecked": true,
+   "issues": []
+  },
+  {
+   "qNumber": 15,
+   "verdict": "PASS",
+   "sourcePagesChecked": [
+    11
+   ],
+   "answerChecked": true,
+   "allFourExplanationsChecked": true,
+   "issues": []
+  },
+  {
+   "qNumber": 16,
+   "verdict": "PASS",
+   "sourcePagesChecked": [
+    12
+   ],
+   "answerChecked": true,
+   "allFourExplanationsChecked": true,
+   "issues": []
+  },
+  {
+   "qNumber": 17,
+   "verdict": "PASS",
+   "sourcePagesChecked": [
+    12
+   ],
+   "answerChecked": true,
+   "allFourExplanationsChecked": true,
+   "issues": []
+  },
+  {
+   "qNumber": 18,
+   "verdict": "PASS",
+   "sourcePagesChecked": [
+    13
+   ],
+   "answerChecked": true,
+   "allFourExplanationsChecked": true,
+   "issues": []
+  },
+  {
+   "qNumber": 19,
+   "verdict": "PASS",
+   "sourcePagesChecked": [
+    13
+   ],
+   "answerChecked": true,
+   "allFourExplanationsChecked": true,
+   "issues": []
+  },
+  {
+   "qNumber": 20,
+   "verdict": "PASS",
+   "sourcePagesChecked": [
+    14
+   ],
+   "answerChecked": true,
+   "allFourExplanationsChecked": true,
+   "issues": []
+  },
+  {
+   "qNumber": 21,
+   "verdict": "PASS",
+   "sourcePagesChecked": [
+    14
+   ],
+   "answerChecked": true,
+   "allFourExplanationsChecked": true,
+   "issues": []
+  },
+  {
+   "qNumber": 22,
+   "verdict": "PASS",
+   "sourcePagesChecked": [
+    14
+   ],
+   "answerChecked": true,
+   "allFourExplanationsChecked": true,
+   "issues": []
+  },
+  {
+   "qNumber": 23,
+   "verdict": "PASS",
+   "sourcePagesChecked": [
+    15
+   ],
+   "answerChecked": true,
+   "allFourExplanationsChecked": true,
+   "issues": []
+  },
+  {
+   "qNumber": 24,
+   "verdict": "PASS",
+   "sourcePagesChecked": [
+    15
+   ],
+   "answerChecked": true,
+   "allFourExplanationsChecked": true,
+   "issues": []
+  },
+  {
+   "qNumber": 25,
+   "verdict": "PASS",
+   "sourcePagesChecked": [
+    16
+   ],
+   "answerChecked": true,
+   "allFourExplanationsChecked": true,
+   "issues": []
+  }
+ ],
+ "summary": {
+  "pass": 24,
+  "fix": 1
+ },
+ "notes": [
+  "All 25 answers equal official key column 12(1小).",
+  "Q15 verified: lower 1.5kΩ is between signal line and sensor earth (⑧) line; (イ)2.0V→V1=1.667, (ロ)V3=0.484 (誤), (ハ)V2=1.4286 printed 約1.42 (truncation) consistent with key (1).",
+  "Q25 'アクチェータ' in stem confirmed as printed.",
+  "Q7 choiceExplanations.イ '一般に10分程度' is a modest manufacturer-dependent remark; not flagged."
+ ]
+}
