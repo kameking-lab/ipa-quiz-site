@@ -39,6 +39,10 @@ if (q.exam?.startsWith("jidosha-")) {
         return "令和8年度第1回（2026年10月4日実施）";
     if (q.year === 2025 && q.season === "second")
         return "令和7年度第2回（2026年3月22日実施）";
+    if (q.year === 2025 && q.season === "first")
+        return "令和7年度第1回（2025年10月5日実施）";
+    if (q.year === 2024 && q.season === "second")
+        return "令和6年度第2回（2025年3月23日実施）";
 }
 if (q.exam === "biyoshi" && q.year === 2026) {
     if (q.season === "first")

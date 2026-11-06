@@ -656,7 +656,7 @@ shakai: {
         },
     ],
     seasons: ["annual"],
-    yearRange: { start: 2025, end: 2025 },
+    yearRange: { start: 2024, end: 2025 },
 },
 seishin: {
     code: "seishin",
@@ -704,7 +704,7 @@ tohan: {
             ],
         }],
     seasons: ["kansai"],
-    yearRange: { start: 2025, end: 2025 },
+    yearRange: { start: 2024, end: 2025 },
 },
 kanri: {
     code: "kanri",
@@ -1234,7 +1234,7 @@ kisho: { code: "kisho", nameFull: "気象予報士試験", urlSlug: "kisho", lev
 "jidosha-1-small-written": {
     code: "jidosha-1-small-written", nameFull: "一級小型自動車整備士（筆記）", urlSlug: "jidosha-1-small-written", level: "specialist",
     sessions: [{ session: "gakka", urlSlug: "gakka", expectedQuestions: 50, label: "学科", categories: ["一級小型自動車（筆記）"] }],
-    seasons: ["first", "second"], yearRange: { start: 2025, end: 2026 },
+    seasons: ["first", "second"], yearRange: { start: 2024, end: 2026 },
 },
 "jidosha-2-gasoline": {
     code: "jidosha-2-gasoline", nameFull: "二級ガソリン自動車整備士", urlSlug: "jidosha-2-gasoline", level: "specialist",
@@ -1249,7 +1249,7 @@ kisho: { code: "kisho", nameFull: "気象予報士試験", urlSlug: "kisho", lev
 "jidosha-2-chassis": {
     code: "jidosha-2-chassis", nameFull: "二級自動車シャシ整備士", urlSlug: "jidosha-2-chassis", level: "specialist",
     sessions: [{ session: "gakka", urlSlug: "gakka", expectedQuestions: 30, label: "学科", categories: ["二級自動車シャシ"] }],
-    seasons: ["first", "second"], yearRange: { start: 2025, end: 2026 },
+    seasons: ["first", "second"], yearRange: { start: 2024, end: 2026 },
 },
 "jidosha-2-motorcycle": {
     code: "jidosha-2-motorcycle", nameFull: "二級二輪自動車整備士", urlSlug: "jidosha-2-motorcycle", level: "specialist",
@@ -1274,7 +1274,7 @@ kisho: { code: "kisho", nameFull: "気象予報士試験", urlSlug: "kisho", lev
 "jidosha-3-motorcycle": {
     code: "jidosha-3-motorcycle", nameFull: "三級二輪自動車整備士", urlSlug: "jidosha-3-motorcycle", level: "specialist",
     sessions: [{ session: "gakka", urlSlug: "gakka", expectedQuestions: 30, label: "学科", categories: ["三級２輪自動車"] }],
-    seasons: ["first", "second"], yearRange: { start: 2025, end: 2026 },
+    seasons: ["first", "second"], yearRange: { start: 2024, end: 2026 },
 },
 "jidosha-body": {
     code: "jidosha-body", nameFull: "自動車車体整備士", urlSlug: "jidosha-body", level: "specialist",
@@ -1284,7 +1284,7 @@ kisho: { code: "kisho", nameFull: "気象予報士試験", urlSlug: "kisho", lev
 "jidosha-electrical": {
     code: "jidosha-electrical", nameFull: "自動車電気装置整備士", urlSlug: "jidosha-electrical", level: "specialist",
     sessions: [{ session: "gakka", urlSlug: "gakka", expectedQuestions: 40, label: "学科", categories: ["自動車電気装置"] }],
-    seasons: ["first", "second"], yearRange: { start: 2025, end: 2026 },
+    seasons: ["first", "second"], yearRange: { start: 2024, end: 2026 },
 },
 "biyoshi": { code: "biyoshi", nameFull: "美容師", urlSlug: "biyoshi", level: "basic", sessions: [{ session: "gakka", urlSlug: "gakka", expectedQuestions: 55, label: "筆記", categories: ["美容師筆記"] }], seasons: ["first", "second"], yearRange: { start: 2026, end: 2026 } },
 "kikenbutsu-otsu1": { code: "kikenbutsu-otsu1", nameFull: "危険物取扱者 乙種第1類", urlSlug: "kikenbutsu-otsu1", level: "basic", sessions: [{ session: "gakka", urlSlug: "gakka", expectedQuestions: 10, label: "筆記", categories: ["危険物の性質・火災予防・消火"] }], seasons: ["published"], yearRange: { start: 2026, end: 2026 } },
