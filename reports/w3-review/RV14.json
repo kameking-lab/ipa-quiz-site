@@ -1,0 +1,9 @@
+{"reviewer":"RV14","scope":"yobi-tanto 2025 criminal-procedure Q14-Q26 (No.20-40)","verdict":"PASS","checkedQuestions":13,
+ "findings":[
+  {"file":"yobi-tanto/editorial/2025-criminal-procedure.json","q":26,"field":"stem","key":null,
+   "severity":"minor","problem":"転記: 【見解】の1番目の見出しが全角ラテン文字「Ｉ」になっている（グリフ復元由来）。原本p23はローマ数字「Ⅰ」で、記述ア・イ等の「Ⅰの見解」やⅡ・Ⅲとも不揃い。生成物 q26-1〜5 の question にもそのまま出ている。",
+   "old":"Ｉ．任意にされたものでない疑いのある自白は、黙秘権","new":"Ⅰ．任意にされたものでない疑いのある自白は、黙秘権"},
+  {"file":"yobi-tanto/editorial/2025-criminal-procedure.json","q":20,"field":"statementExplanations","key":"ウ",
+   "severity":"minor","problem":"事例で甲が同意したのはポリ袋を拾うことだけで、予試験への同意は示されていない。それなのに解説は「甲の同意がある本件のような場合」と、本件で予試験に同意があったように書いている。結論（誤り）は正しい。",
+   "old":"少なくとも甲の同意がある本件のような場合に令状は不要であるから","new":"少なくとも被疑者の同意がある場合には令状は不要であるから"}
+ ]}
