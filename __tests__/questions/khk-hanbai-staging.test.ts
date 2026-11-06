@@ -10,10 +10,10 @@ import { QUALIFICATION_CATALOG } from "@/lib/qualifications/catalog";
 const questions = KHK_HANBAI_STAGING.flatMap(s => [...s.questions]);
 
 describe("KHK sales and equipment academic papers in isolated staging", () => {
-  it("validates 190 source-matched questions and all 950 choice explanations", () => {
-    expect(validateKhkHanbaiStaging()).toEqual({ count: 190, errors: [] });
-    expect(questions.reduce((n, q) => n + Object.keys(q.choiceExplanations).length, 0)).toBe(950);
-    expect(KHK_HANBAI_STAGING.map(s => s.questions.length)).toEqual([80, 80, 30]);
+  it("validates 230 source-matched questions and all 1150 choice explanations", () => {
+    expect(validateKhkHanbaiStaging()).toEqual({ count: 230, errors: [] });
+    expect(questions.reduce((n, q) => n + Object.keys(q.choiceExplanations).length, 0)).toBe(1150);
+    expect(KHK_HANBAI_STAGING.map(s => s.questions.length)).toEqual([80, 80, 70]);
   });
 
   it("pins every annual subject answer to independently transcribed official rows", () => {
@@ -27,11 +27,11 @@ describe("KHK sales and equipment academic papers in isolated staging", () => {
     });
     for (const entry of KHK_HANBAI_STAGING) {
       for (const year of [2025, 2024]) {
-        for (const session of entry.slug === "khk-setsubishi" ? ["houki"] : ["houki", "gas-technology"]) {
+        for (const session of entry.slug === "khk-setsubishi" ? ["houki", "piping"] : ["houki", "gas-technology"]) {
           const rows = entry.questions.filter(q => q.year === year && q.session === session);
           const prefix = entry.slug === "khk-hanbai" ? "J" : entry.slug === "khk-hanbai2" ? "K" : "L";
           const code = `${year}-${prefix}${session === "houki" ? "X" : "Y"}` as keyof typeof fixed;
-          expect(rows.map(q => q.qNumber)).toEqual(Array.from({ length: entry.slug === "khk-setsubishi" ? 15 : 20 }, (_, i) => i + 1));
+          expect(rows.map(q => q.qNumber)).toEqual(Array.from({ length: entry.slug === "khk-setsubishi" && session === "houki" ? 15 : 20 }, (_, i) => i + 1));
           expect(rows.map(q => q.officialAnswerNumber).join("")).toBe(fixed[code]);
         }
       }
@@ -43,7 +43,8 @@ describe("KHK sales and equipment academic papers in isolated staging", () => {
       expect(entry.publicAllowed).toBe(false);
       expect(entry.questions.every(q => q.publicAllowed === false && q.needsReview === true)).toBe(true);
       const catalog = QUALIFICATION_CATALOG.find(q => q.slug === entry.slug);
-      expect(catalog?.status).toBe("ready-to-ingest");
+      // The catalog entry is applied by the parent from reports/khk-hanbai-registry.md; until then it may be absent.
+      if (catalog) expect(catalog.status).toBe("ready-to-ingest");
       expect(catalog?.examCode).toBeUndefined();
       expect(Object.keys(EXAM_CONFIGS)).not.toContain(entry.slug);
       expect(Object.keys(QUESTIONS_BY_EXAM)).not.toContain(entry.slug);
@@ -61,7 +62,11 @@ describe("KHK sales and equipment academic papers in isolated staging", () => {
     expect(find("khk-hanbai2-2024-gas-technology-q8").question).toContain("Qmax");
     expect(find("khk-hanbai-2025-gas-technology-q1").question).toContain("ｍ³");
     expect(find("khk-hanbai-2024-gas-technology-q1").choices.ア).toContain("kg/m³");
-    expect(questions.every(q => q.hasImage === false)).toBe(true);
+    const withImages = questions.filter(q => q.hasImage).map(q => q.id).sort();
+    expect(withImages).toEqual([
+      "khk-setsubishi-2024-piping-q12", "khk-setsubishi-2024-piping-q20",
+      "khk-setsubishi-2025-piping-q12", "khk-setsubishi-2025-piping-q20",
+    ]);
   });
 
   it("keeps the previously reviewed explanation corrections", () => {
@@ -83,7 +88,7 @@ describe("KHK sales and equipment academic papers in isolated staging", () => {
   });
 
   it("preserves both R7 equipment cover instructions in all 15 questions", () => {
-    const rows = KHK_HANBAI_STAGING[2].questions.filter(q => q.year === 2025);
+    const rows = KHK_HANBAI_STAGING[2].questions.filter(q => q.year === 2025 && q.session === "houki");
     expect(rows).toHaveLength(15);
     for (const q of rows) {
       expect(q.sharedContext).toContain("問題中において特に記述のない場合、圧力はゲージ圧力で表しています。");
@@ -97,12 +102,20 @@ describe("KHK sales and equipment academic papers in isolated staging", () => {
     expect(validateKhkHanbaiStaging(broken).errors.some(e => e.includes("required equipment cover instructions missing"))).toBe(true);
   });
 
-  it("reports equipment piping as 40 missing questions rather than invented records", () => {
+  it("completes equipment piping (LY) from the recovered official -W-W.pdf papers", () => {
     expect(manifest.targetTotal).toBe(230);
-    expect(manifest.remainingQuestions).toBe(40);
-    expect(manifest.missingPdfUrls).toHaveLength(2);
-    expect(manifest.qualifications.find(q => q.slug === "khk-setsubishi")?.complete).toBe(false);
-    expect(KHK_HANBAI_STAGING[2].questions.every(q => q.session === "houki")).toBe(true);
+    expect(manifest.remainingQuestions).toBe(0);
+    expect(manifest.missingPdfUrls).toHaveLength(0);
+    expect(manifest.qualifications.find(q => q.slug === "khk-setsubishi")?.complete).toBe(true);
+    const piping = KHK_HANBAI_STAGING[2].questions.filter(q => q.session === "piping");
+    expect(piping).toHaveLength(40);
+    expect(piping.every(q => q.sourcePdfUrl.endsWith("ACLY-W-W.pdf") && q.category === "配管理論等")).toBe(true);
+    const r7 = piping.find(q => q.id === "khk-setsubishi-2025-piping-q1")!;
+    expect(r7.sharedContext).toContain("ゲージ圧力");
+    const broken = structuredClone(questions);
+    const victim = broken.find(q => q.id === "khk-setsubishi-2025-piping-q12")! as Record<string, unknown>;
+    victim.imageSha256s = ["0".repeat(64)];
+    expect(validateKhkHanbaiStaging(broken).errors.some(e => e.includes("image"))).toBe(true);
   });
 
   it.each([

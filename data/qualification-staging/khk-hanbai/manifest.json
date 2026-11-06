@@ -8,8 +8,8 @@
     2024
   ],
   "targetTotal": 230,
-  "total": 190,
-  "choiceExplanations": 950,
+  "total": 230,
+  "choiceExplanations": 1150,
   "qualifications": [
     {
       "slug": "khk-hanbai",
@@ -51,32 +51,31 @@
       "slug": "khk-setsubishi",
       "name": "液化石油ガス設備士（学科）",
       "file": "khk-setsubishi/questions.json",
-      "total": 30,
+      "total": 70,
       "targetTotal": 70,
       "counts": {
         "2025": {
-          "LX": 15
+          "LX": 15,
+          "LY": 20
         },
         "2024": {
-          "LX": 15
+          "LX": 15,
+          "LY": 20
         }
       },
-      "complete": false
+      "complete": true
     }
   ],
-  "missingPdfUrls": [
-    "https://www.khk.or.jp/Portals/0/khk/exam/2025/1110/R7ACLY-W.pdf",
-    "https://www.khk.or.jp/Portals/0/khk/exam/2024/R6ACLY-W.pdf"
-  ],
-  "missingPdfUrlNote": "試験記号LYと他冊子の命名に基づく取得候補。旧公式リンク自体は未確認。両年度・両公式ホストとも404。",
-  "remainingQuestions": 40,
-  "remainingScope": "液化石油ガス設備士 配管理論等：2025年20問・2024年20問。技能試験は対象外。",
+  "missingPdfUrls": [],
+  "remainingQuestions": 0,
+  "remainingScope": "なし（3資格・令和7・6年度の学科全230問を収録）。技能試験は対象外。",
   "normalization": [
     "印刷用柱・ノンブルを除去、改行と空白を整理。問題本文・全5肢の並びを公式PDFと照合。",
     "引継ぎデータの追記「出題基準」見出しを本文からlawNoteへ分離。公式の共通条件はsharedContextに保存。",
     "選択肢キーのア〜オは公式番号1〜5に順に対応。本文内イ・ロ・ハ・ニとは別。",
     "全問needsReview=trueを維持。公式問題原本・抽出草稿はコミット対象外。",
-    "PDFの字位置に従い、面積・体積の単位m²・m³（全角ｍを含む）の上付き指数を復元。Qmaxの下付きmaxはプレーンテキストで表現。"
+    "PDFの字位置に従い、面積・体積の単位m²・m³（全角ｍを含む）の上付き指数を復元。Qmaxの下付きmaxはプレーンテキストで表現。",
+    "配管理論等（LY）40問は session=piping。問12・問20の図と別紙寸法早見表は images/ のwebpを併用し、本文末尾に【図】【表】【別紙抜粋】として数値を文章化（原本の文章ではなく転記補助）。"
   ],
   "independentReview": {
     "status": "PASS",
@@ -84,7 +83,15 @@
     "sandbox": "read-only",
     "reviewedCommit": "8f457fd69",
     "report": "reports/lk6-review-2.md",
-    "scope": "収録済み190問。設備士配管理論等の未取得40問は完了対象外。",
+    "scope": "収録済み190問（2026-11-04 PASS）。配管理論等40問は2026-11-06追加分として別途独立レビュー（lyReview参照）。",
     "humanReviewFlagsRetained": true
+  },
+  "recoveredPdfUrls": [
+    "https://www.khk.or.jp/Portals/0/khk/exam/2025/1110/R7ACLY-W-W.pdf",
+    "https://www.khk.or.jp/Portals/0/khk/exam/2024/R6ACLY-W-W.pdf"
+  ],
+  "recoveredPdfNote": "2026-11-06、Wayback CDX の記録から令和7年度の正しいファイル名（末尾「-W-W.pdf」）を特定し、両年度とも公式サーバー（www.khk.or.jp）から通常GETで取得（HTTP 200）。ログイン・CAPTCHA等の迂回なし。",
+  "lyReview": {
+    "status": "pending"
   }
 }

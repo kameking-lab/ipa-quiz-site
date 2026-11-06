@@ -1,5 +1,7 @@
 import { z } from "zod";
 import { createHash } from "node:crypto";
+import { existsSync, readFileSync } from "node:fs";
+import path from "node:path";
 import { KHK_HANBAI_STAGING } from "../data/qualification-staging/khk-hanbai";
 import answers from "../data/qualification-staging/khk-hanbai/official-answers.json";
 import contexts from "../data/qualification-staging/khk-hanbai/shared-contexts.json";
@@ -15,14 +17,16 @@ const fiveTexts = z.object({
 const schema = z.object({
   id: z.string().min(1), exam: z.enum(["khk-hanbai", "khk-hanbai2", "khk-setsubishi"]),
   year: z.union([z.literal(2025), z.literal(2024)]), season: z.literal("annual"),
-  session: z.enum(["houki", "gas-technology"]), qNumber: z.number().int().min(1).max(20),
+  session: z.enum(["houki", "gas-technology", "piping"]), qNumber: z.number().int().min(1).max(20),
   type: z.literal("multiple-choice"), question: z.string().min(10), choices: fiveTexts,
   answer: z.enum(keys), officialAnswerNumber: z.enum(["1", "2", "3", "4", "5"]),
   explanation: z.string().min(30), choiceExplanations: fiveTexts,
   sourcePdfUrl: z.url(), sourceAnswerUrl: z.url(), sourceAttribution: z.string().startsWith("出典：高圧ガス保安協会"),
   sourcePages: z.array(z.number().int().positive()).min(1),
   sharedContext: z.string().min(10), lawReferenceDate: z.string().optional(), lawNote: z.string().optional(),
-  hasImage: z.literal(false), publicAllowed: z.literal(false), needsReview: z.literal(true),
+  hasImage: z.boolean(), imageUrls: z.array(z.string().regex(/^images\/r[67]-ly-[a-z0-9-]+\.webp$/)).optional(),
+  imageAltTexts: z.array(z.string().min(10)).optional(), imageSha256s: z.array(z.string().length(64)).optional(),
+  publicAllowed: z.literal(false), needsReview: z.literal(true),
   explanationCoverage: z.literal("full"), license: z.literal("KHK-owner-approved-staging"),
 });
 
@@ -53,11 +57,22 @@ export function validateKhkHanbaiStaging(input: unknown = KHK_HANBAI_STAGING.fla
     if (q.id !== `${q.exam}-${q.year}-${q.session}-q${q.qNumber}`) errors.push(`${q.id}: identity mismatch`);
     const source = sources.find(s => s.acquired && s.url === q.sourcePdfUrl);
     const answerSource = sources.find(s => s.acquired && s.url === q.sourceAnswerUrl && s.name === `R${q.year - 2018}fy_kaitou.pdf`);
-    if (!source || !answerSource || !q.sourcePdfUrl.endsWith(`R${q.year - 2018}AC${code}-W.pdf`)) errors.push(`${q.id}: source mismatch`);
+    // LY（配管理論等）の公式ファイル名は両年度とも末尾が「-W-W.pdf」。
+    const fileSuffix = code === "LY" ? "-W-W.pdf" : "-W.pdf";
+    if (!source || !answerSource || !q.sourcePdfUrl.endsWith(`R${q.year - 2018}AC${code}${fileSuffix}`)) errors.push(`${q.id}: source mismatch`);
+    if ((q.session === "piping") !== (code === "LY") || (q.session === "piping" && q.exam !== "khk-setsubishi")) errors.push(`${q.id}: session mismatch`);
+    const images = q.imageUrls ?? [];
+    if (q.hasImage !== images.length > 0 || (q.hasImage && (q.imageAltTexts?.length !== images.length || q.imageSha256s?.length !== images.length))) {
+      errors.push(`${q.id}: image metadata mismatch`);
+    }
+    images.forEach((image, i) => {
+      const file = path.join(process.cwd(), "data/qualification-staging/khk-hanbai", image);
+      if (!existsSync(file) || createHash("sha256").update(readFileSync(file)).digest("hex") !== q.imageSha256s?.[i]) errors.push(`${q.id}: image ${image} missing or changed`);
+    });
     if (source && q.sourcePages.some(p => p > (source.pages ?? 0))) errors.push(`${q.id}: page outside source`);
     const contextKey = `${answerKey}-${q.session === "houki" ? (code === "KX" && q.qNumber > 10 ? "second" : "first") : "pressure"}`;
     if (q.sharedContext !== contexts[contextKey as keyof typeof contexts]) errors.push(`${q.id}: shared context mismatch`);
-    if (q.exam === "khk-setsubishi" && q.year === 2025 &&
+    if (q.exam === "khk-setsubishi" && q.year === 2025 && q.session === "houki" &&
         (!q.sharedContext.includes("圧力はゲージ圧力で表しています。") || !q.sharedContext.includes("およびその政省令に基づいて答えてください。"))) {
       errors.push(`${q.id}: required equipment cover instructions missing`);
     }
@@ -71,9 +86,9 @@ export function validateKhkHanbaiStaging(input: unknown = KHK_HANBAI_STAGING.fla
     const subset = rows.filter(q => q.exam === qualification.slug);
     if (subset.length !== qualification.total) errors.push(`${qualification.slug}: count mismatch`);
     for (const year of manifest.years) {
-      for (const session of qualification.slug === "khk-setsubishi" ? ["houki"] : ["houki", "gas-technology"]) {
+      for (const session of qualification.slug === "khk-setsubishi" ? ["houki", "piping"] : ["houki", "gas-technology"]) {
         const numbers = subset.filter(q => q.year === year && q.session === session).map(q => q.qNumber).sort((a, b) => a - b);
-        const expected = Array.from({ length: qualification.slug === "khk-setsubishi" ? 15 : 20 }, (_, i) => i + 1);
+        const expected = Array.from({ length: qualification.slug === "khk-setsubishi" && session === "houki" ? 15 : 20 }, (_, i) => i + 1);
         if (numbers.join() !== expected.join()) errors.push(`${qualification.slug}/${year}/${session}: gap or duplicate`);
       }
     }
