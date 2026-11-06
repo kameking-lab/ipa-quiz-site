@@ -1,0 +1,477 @@
+{
+ "subject": "自動車電気装置 令和6年度第2回 (2024_20250323_el)",
+ "reviewer": "claude-independent",
+ "pagesChecked": [
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  11,
+  12,
+  13,
+  14,
+  15
+ ],
+ "answerKeyReadFromImage": [
+  3,
+  4,
+  2,
+  1,
+  1,
+  4,
+  3,
+  2,
+  1,
+  4,
+  2,
+  4,
+  3,
+  3,
+  2,
+  1,
+  3,
+  3,
+  1,
+  3,
+  4,
+  2,
+  1,
+  1,
+  4,
+  4,
+  2,
+  2,
+  4,
+  2,
+  2,
+  3,
+  4,
+  1,
+  2,
+  4,
+  3,
+  1,
+  1,
+  1
+ ],
+ "rows": [
+  {
+   "qNumber": 1,
+   "verdict": "PASS",
+   "sourcePagesChecked": [
+    2
+   ],
+   "answerChecked": true,
+   "allFourExplanationsChecked": true,
+   "issues": []
+  },
+  {
+   "qNumber": 2,
+   "verdict": "PASS",
+   "sourcePagesChecked": [
+    2
+   ],
+   "answerChecked": true,
+   "allFourExplanationsChecked": true,
+   "issues": []
+  },
+  {
+   "qNumber": 3,
+   "verdict": "FIX",
+   "sourcePagesChecked": [
+    2
+   ],
+   "answerChecked": true,
+   "allFourExplanationsChecked": true,
+   "issues": [
+    {
+     "field": "choiceExplanations.エ",
+     "problem": "States 12μF arises from \"simply adding the series parts\", which is false: adding the series parts gives 8+(4+4)=16, then +4=20μF, not 12μF (12μF would come from 4+8, ignoring the lower 4μF||4μF branch). The asserted error derivation is incorrect.",
+     "correctText": "不適切。計算値8μFと一致しない。"
+    }
+   ]
+  },
+  {
+   "qNumber": 4,
+   "verdict": "PASS",
+   "sourcePagesChecked": [
+    2
+   ],
+   "answerChecked": true,
+   "allFourExplanationsChecked": true,
+   "issues": []
+  },
+  {
+   "qNumber": 5,
+   "verdict": "PASS",
+   "sourcePagesChecked": [
+    3
+   ],
+   "answerChecked": true,
+   "allFourExplanationsChecked": true,
+   "issues": []
+  },
+  {
+   "qNumber": 6,
+   "verdict": "PASS",
+   "sourcePagesChecked": [
+    3
+   ],
+   "answerChecked": true,
+   "allFourExplanationsChecked": true,
+   "issues": []
+  },
+  {
+   "qNumber": 7,
+   "verdict": "PASS",
+   "sourcePagesChecked": [
+    3
+   ],
+   "answerChecked": true,
+   "allFourExplanationsChecked": true,
+   "issues": []
+  },
+  {
+   "qNumber": 8,
+   "verdict": "PASS",
+   "sourcePagesChecked": [
+    3
+   ],
+   "answerChecked": true,
+   "allFourExplanationsChecked": true,
+   "issues": []
+  },
+  {
+   "qNumber": 9,
+   "verdict": "PASS",
+   "sourcePagesChecked": [
+    4
+   ],
+   "answerChecked": true,
+   "allFourExplanationsChecked": true,
+   "issues": []
+  },
+  {
+   "qNumber": 10,
+   "verdict": "PASS",
+   "sourcePagesChecked": [
+    4
+   ],
+   "answerChecked": true,
+   "allFourExplanationsChecked": true,
+   "issues": []
+  },
+  {
+   "qNumber": 11,
+   "verdict": "PASS",
+   "sourcePagesChecked": [
+    4
+   ],
+   "answerChecked": true,
+   "allFourExplanationsChecked": true,
+   "issues": []
+  },
+  {
+   "qNumber": 12,
+   "verdict": "PASS",
+   "sourcePagesChecked": [
+    5
+   ],
+   "answerChecked": true,
+   "allFourExplanationsChecked": true,
+   "issues": [],
+   "comment": "Wiring read from zoomed figure (rv_el_1/2): (1) M-housing, (2) C-housing, (3) M vs C+housing, (4) C vs M+housing. Choice explanations match the drawings."
+  },
+  {
+   "qNumber": 13,
+   "verdict": "PASS",
+   "sourcePagesChecked": [
+    5
+   ],
+   "answerChecked": true,
+   "allFourExplanationsChecked": true,
+   "issues": []
+  },
+  {
+   "qNumber": 14,
+   "verdict": "PASS",
+   "sourcePagesChecked": [
+    5
+   ],
+   "answerChecked": true,
+   "allFourExplanationsChecked": true,
+   "issues": []
+  },
+  {
+   "qNumber": 15,
+   "verdict": "PASS",
+   "sourcePagesChecked": [
+    6
+   ],
+   "answerChecked": true,
+   "allFourExplanationsChecked": true,
+   "issues": [],
+   "comment": "Answer matches official key (2). The rationale (stator coil-core insulation is checked with an insulation-resistance tester rather than a circuit tester) is hedged and could not be verified from the paper; acceptable as written."
+  },
+  {
+   "qNumber": 16,
+   "verdict": "PASS",
+   "sourcePagesChecked": [
+    6
+   ],
+   "answerChecked": true,
+   "allFourExplanationsChecked": true,
+   "issues": []
+  },
+  {
+   "qNumber": 17,
+   "verdict": "PASS",
+   "sourcePagesChecked": [
+    7
+   ],
+   "answerChecked": true,
+   "allFourExplanationsChecked": true,
+   "issues": []
+  },
+  {
+   "qNumber": 18,
+   "verdict": "PASS",
+   "sourcePagesChecked": [
+    7
+   ],
+   "answerChecked": true,
+   "allFourExplanationsChecked": true,
+   "issues": []
+  },
+  {
+   "qNumber": 19,
+   "verdict": "PASS",
+   "sourcePagesChecked": [
+    8
+   ],
+   "answerChecked": true,
+   "allFourExplanationsChecked": true,
+   "issues": []
+  },
+  {
+   "qNumber": 20,
+   "verdict": "PASS",
+   "sourcePagesChecked": [
+    8
+   ],
+   "answerChecked": true,
+   "allFourExplanationsChecked": true,
+   "issues": []
+  },
+  {
+   "qNumber": 21,
+   "verdict": "PASS",
+   "sourcePagesChecked": [
+    8
+   ],
+   "answerChecked": true,
+   "allFourExplanationsChecked": true,
+   "issues": []
+  },
+  {
+   "qNumber": 22,
+   "verdict": "PASS",
+   "sourcePagesChecked": [
+    8
+   ],
+   "answerChecked": true,
+   "allFourExplanationsChecked": true,
+   "issues": []
+  },
+  {
+   "qNumber": 23,
+   "verdict": "PASS",
+   "sourcePagesChecked": [
+    9
+   ],
+   "answerChecked": true,
+   "allFourExplanationsChecked": true,
+   "issues": []
+  },
+  {
+   "qNumber": 24,
+   "verdict": "PASS",
+   "sourcePagesChecked": [
+    9
+   ],
+   "answerChecked": true,
+   "allFourExplanationsChecked": true,
+   "issues": []
+  },
+  {
+   "qNumber": 25,
+   "verdict": "PASS",
+   "sourcePagesChecked": [
+    9
+   ],
+   "answerChecked": true,
+   "allFourExplanationsChecked": true,
+   "issues": []
+  },
+  {
+   "qNumber": 26,
+   "verdict": "PASS",
+   "sourcePagesChecked": [
+    10
+   ],
+   "answerChecked": true,
+   "allFourExplanationsChecked": true,
+   "issues": []
+  },
+  {
+   "qNumber": 27,
+   "verdict": "PASS",
+   "sourcePagesChecked": [
+    10
+   ],
+   "answerChecked": true,
+   "allFourExplanationsChecked": true,
+   "issues": []
+  },
+  {
+   "qNumber": 28,
+   "verdict": "PASS",
+   "sourcePagesChecked": [
+    11
+   ],
+   "answerChecked": true,
+   "allFourExplanationsChecked": true,
+   "issues": []
+  },
+  {
+   "qNumber": 29,
+   "verdict": "PASS",
+   "sourcePagesChecked": [
+    11
+   ],
+   "answerChecked": true,
+   "allFourExplanationsChecked": true,
+   "issues": [],
+   "comment": "Explanation asserts 4 pulses per revolution for a ring with 4 N and 4 S poles; consistent with the usual textbook statement this option is derived from. Key-relevant point (2 pulses is wrong) is sound."
+  },
+  {
+   "qNumber": 30,
+   "verdict": "PASS",
+   "sourcePagesChecked": [
+    11
+   ],
+   "answerChecked": true,
+   "allFourExplanationsChecked": true,
+   "issues": []
+  },
+  {
+   "qNumber": 31,
+   "verdict": "PASS",
+   "sourcePagesChecked": [
+    12
+   ],
+   "answerChecked": true,
+   "allFourExplanationsChecked": true,
+   "issues": []
+  },
+  {
+   "qNumber": 32,
+   "verdict": "PASS",
+   "sourcePagesChecked": [
+    12
+   ],
+   "answerChecked": true,
+   "allFourExplanationsChecked": true,
+   "issues": []
+  },
+  {
+   "qNumber": 33,
+   "verdict": "PASS",
+   "sourcePagesChecked": [
+    13
+   ],
+   "answerChecked": true,
+   "allFourExplanationsChecked": true,
+   "issues": []
+  },
+  {
+   "qNumber": 34,
+   "verdict": "PASS",
+   "sourcePagesChecked": [
+    13
+   ],
+   "answerChecked": true,
+   "allFourExplanationsChecked": true,
+   "issues": []
+  },
+  {
+   "qNumber": 35,
+   "verdict": "PASS",
+   "sourcePagesChecked": [
+    13
+   ],
+   "answerChecked": true,
+   "allFourExplanationsChecked": true,
+   "issues": []
+  },
+  {
+   "qNumber": 36,
+   "verdict": "PASS",
+   "sourcePagesChecked": [
+    14
+   ],
+   "answerChecked": true,
+   "allFourExplanationsChecked": true,
+   "issues": []
+  },
+  {
+   "qNumber": 37,
+   "verdict": "PASS",
+   "sourcePagesChecked": [
+    14
+   ],
+   "answerChecked": true,
+   "allFourExplanationsChecked": true,
+   "issues": []
+  },
+  {
+   "qNumber": 38,
+   "verdict": "PASS",
+   "sourcePagesChecked": [
+    15
+   ],
+   "answerChecked": true,
+   "allFourExplanationsChecked": true,
+   "issues": []
+  },
+  {
+   "qNumber": 39,
+   "verdict": "PASS",
+   "sourcePagesChecked": [
+    15
+   ],
+   "answerChecked": true,
+   "allFourExplanationsChecked": true,
+   "issues": []
+  },
+  {
+   "qNumber": 40,
+   "verdict": "PASS",
+   "sourcePagesChecked": [
+    15
+   ],
+   "answerChecked": true,
+   "allFourExplanationsChecked": true,
+   "issues": []
+  }
+ ],
+ "summary": {
+  "pass": 39,
+  "fix": 1
+ }
+}
