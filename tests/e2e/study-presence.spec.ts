@@ -40,7 +40,7 @@ async function expectGuidance(page: Page) {
   for (const link of await suggestions.all()) await expect(link).toHaveAttribute("href", /^\/(?!\/)/);
   await expect(guidance.getByRole("link", { name: "資格を選んで1問始める", exact: true })).toHaveCount(1);
   for (const link of await guidance.getByRole("link", { name: "資格を選んで1問始める", exact: true }).all()) await expect(link).toHaveAttribute("href", "/#choose-qualification");
-  await expect(guidance.getByRole("link")).toHaveCount(9);
+  await expect(guidance.getByRole("link")).toHaveCount(8);
   await expect(guidance.getByText(/実際の学習人数では|利用者個人や実際の行動/)).toHaveCount(0);
   await expect(guidance.getByRole("list", { name: "資格別の学習人数" })).toHaveCount(0);
   await expect(guidance.locator("time")).toHaveCount(0);

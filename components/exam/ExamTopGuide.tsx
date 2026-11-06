@@ -16,9 +16,6 @@ export function ExamTopGuide({ exam }: { exam: ExamEntryCode }) {
           <li><a href={EXAM_OFFICIAL_LINKS[exam].pastQuestions} target="_blank" rel="noopener noreferrer" className={guideLink}>IPA公式の過去問・解答例 →</a></li>
         </ul>
       </section>
-      <div id="study-guide" className="mb-8 scroll-mt-20">
-        <Link href={`/quiz?mode=review&exam=${exam}&scope=exam`} className={guideLink}>間違えた問題・ブックマークを復習 →</Link>
-      </div>
     </>
   );
 }

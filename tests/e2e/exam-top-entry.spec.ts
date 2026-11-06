@@ -24,14 +24,13 @@ for (const width of [320, 390, 1440]) {
         await expect(page.locator('link[rel="canonical"]')).toHaveAttribute("href", new RegExp(`/${exam}$`));
         await expect(page).toHaveTitle(/過去問.*午後対策/);
         const afternoon = page.getByRole("region", { name: /^午後対策：/ });
+        // Only essay exams offer AI review, and it is labelled as original material.
         if (exam === "st" || exam === "sa") {
-          await expect(afternoon).toContainText("午後IのAI採点は未対応");
-          await expect(afternoon).toContainText("編集者作成のオリジナル教材");
-          await expect(afternoon.getByRole("link", { name: /AI添削/ })).toHaveAttribute("href", "/essay");
+          await expect(afternoon.getByRole("link", { name: "オリジナル論述教材でAI添削 →", exact: true })).toHaveAttribute("href", "/essay");
         } else {
-          await expect(afternoon).toContainText("午後記述のAI採点は未対応");
           await expect(afternoon.locator('a[href="/essay"]')).toHaveCount(0);
         }
+        await expect(afternoon.getByRole("link", { name: "IPA公式の過去問・解答例 →", exact: true })).toBeVisible();
         await expect(page.locator(`main a[href="/${exam}/afternoon"]`)).toHaveCount(0);
         for (const region of [page.locator("#years"), page.locator("#topics"), afternoon]) {
           const href = await region.locator('a[href^="/"]').first().getAttribute("href");
