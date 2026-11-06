@@ -21,17 +21,17 @@
 .chips span { border-radius:999px; padding:0 8px; font-size:12px; font-weight:600; background:rgba(255,255,255,.8); border:1px solid #d8d6cd; }
 .chips .stageChip { background:#f3dfa8; border-color:#e5c66d; color:#5a4310; }
 .meter { display:grid!important; gap:2px; margin:0!important; font-size:12px!important; font-weight:600; }
-.sheet progress { appearance:none; width:100%; height:8px; border:0; border-radius:999px; overflow:hidden; background:#dfe6dc; }
-.sheet progress::-webkit-progress-bar { background:#dfe6dc; border-radius:999px; }
-.sheet progress::-webkit-progress-value { background:linear-gradient(90deg,#f0b54a,#e88d3a); border-radius:999px; }
-.sheet progress::-moz-progress-bar { background:linear-gradient(90deg,#f0b54a,#e88d3a); border-radius:999px; }
+.sheet meter { appearance:none; display:block; width:100%; height:8px; border:0; border-radius:999px; overflow:hidden; background:#dfe6dc; }
+.sheet meter::-webkit-meter-bar { background:#dfe6dc; border:0; border-radius:999px; height:100%; }
+.sheet meter::-webkit-meter-optimum-value { background:linear-gradient(90deg,#f0b54a,#e88d3a); border-radius:999px; }
+.sheet meter::-moz-meter-bar { background:linear-gradient(90deg,#f0b54a,#e88d3a); border-radius:999px; }
 .careRow { display:flex; flex-wrap:wrap; gap:8px; }
 .careRow button { display:inline-flex; align-items:center; gap:6px; }
 .emoji { font-size:18px; line-height:1; }
 .sheet .treat { background:#fff3dc; border-color:#e9b45a; font-weight:700; }
 .check { display:flex!important; align-items:center; gap:8px; min-height:44px; font-size:13px!important; }
 .check input { width:20px; height:20px; flex-shrink:0; }
-.tiles { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:8px; }
+.tiles { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:8px; }
 .sheet .tile { display:flex; flex-direction:column; align-items:center; gap:4px; width:100%; padding:8px 4px; font-size:13px; font-weight:600; }
 .tile img { object-fit:contain; }
 .locked { filter:grayscale(1) brightness(.85); opacity:.6; }

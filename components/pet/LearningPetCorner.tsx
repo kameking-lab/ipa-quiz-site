@@ -4,13 +4,12 @@ import dynamic from "next/dynamic";
 import { examLabel } from "@/lib/utils";
 import { LS_KEYS } from "@/lib/storage/keys";
 import { petArtFor, petPathArtFor, type PetPose } from "@/lib/pet/v1/art";
-import { PET_PATH_LABELS, petGrowthProgress } from "@/lib/pet/v1/growth";
+import { PET_PATH_LABELS, petNextStageProgress } from "@/lib/pet/v1/growth";
 import { canonicalPetQualification } from "@/lib/pet/v1/qualification";
 import { usePetProfileView, type PetCommittedDetail, type PetProfileView } from "./usePetProfileView";
 import styles from "./LearningPetCorner.module.css";
 const PetCareSheet = dynamic(() => import("./PetCareSheet"), { ssr: false });
 
-const PARTNER_GOAL = 5;
 const IDLE_CAPTION = "いっしょに、一問ずつ。";
 export const PET_STAGE_LABELS = { puppy: "こいぬ", partner: "相棒", expert: "専門家" } as const;
 interface Pop { key: string; growth: number; bond: number; pose: PetPose }
@@ -42,7 +41,7 @@ export function LearningPetCorner({ qualificationId, questionId, suppliedView, i
     const result = event.result;
     const unlocked = result.document.profiles.find(item => item.qualificationId === event.qualificationId)?.memories
       .filter(memory => memory.occurredAt === event.occurredAt && memory.kind !== "overcome").at(-1);
-    setCaption(unlocked?.kind === "stage" ? "相棒の姿になれるよ！" : unlocked?.kind === "path" ? `${PET_PATH_LABELS[unlocked.path]}の特技を覚えた！` :
+    setCaption(unlocked?.kind === "stage" ? `${PET_STAGE_LABELS[unlocked.stage]}の姿になれるよ！` : unlocked?.kind === "path" ? `${PET_PATH_LABELS[unlocked.path]}の特技を覚えた！` :
       result.overcame ? "前に迷った問題を、克服！" : result.reaction === "read" ? "いっしょに答えを確認。" : result.reaction === "incorrect" ? "だいじょうぶ。解説を読もう。" : result.comboMilestone ? `${result.comboMilestone}問つながった！` : "やった、正解！");
     stop();
     if (popTimer.current) clearTimeout(popTimer.current);
@@ -94,11 +93,11 @@ export function LearningPetCorner({ qualificationId, questionId, suppliedView, i
   const src = petArtFor(selectedQualification ?? null, stage, shownPose);
   const image = failed === src ? petArtFor(selectedQualification ?? null, stage, "study") : src;
   const moving = visible && !paused && !reduced && pose !== "study";
-  const progress = profile ? petGrowthProgress(profile) : null;
-  const partnerUnlocked = profile?.unlockedStages.includes("partner") ?? false;
+  const next = profile ? petNextStageProgress(profile) : null;
+  const meter = next ? next.parts.reduce((total, part) => total + part.now / part.goal, 0) / next.parts.length : 0;
   // A freshly unlocked look the learner has not tried on yet (evolution stays a choice).
-  const evolvable = partnerUnlocked && stage === "puppy" && (profile?.memories.some(memory => memory.kind === "stage" && Date.now() - memory.occurredAt < 3 * 86_400_000) ?? false);
-  const toward = progress ?Math.min(progress.uniqueQuestions, PARTNER_GOAL) : 0;
+  const newest = profile?.unlockedStages.includes("expert") ? "expert" : profile?.unlockedStages.includes("partner") ? "partner" : null;
+  const evolvable = newest !== null && stage !== newest && (profile?.memories.some(memory => memory.kind === "stage" && memory.stage === newest && Date.now() - memory.occurredAt < 3 * 86_400_000) ?? false);
   const popText = pop ? `${pop.growth > 0 ? `+${pop.growth}` : ""}${pop.bond > 0 ? ` ♥+${pop.bond}` : ""}`.trim() : "";
   return <section ref={panel} className={styles.panel} aria-labelledby={title} data-pet-id={profile?.petId ?? ""} data-pet-pose={pose} data-moving={moving}>
     <header className={styles.header}>
@@ -117,9 +116,9 @@ export function LearningPetCorner({ qualificationId, questionId, suppliedView, i
       </div>
       <div className={styles.copy}>
         <p className={styles.caption}>{caption ?? idleCaption ?? IDLE_CAPTION}</p>
-        {view.status === "unavailable" ? <p className={styles.small}>育成の保存を確認できませんでした。</p> : profile && progress ? <>
-          {partnerUnlocked ? null : <label className={styles.meter}><span>相棒まで {toward}/{PARTNER_GOAL}</span>
-            <progress className={styles.progress} max={PARTNER_GOAL} value={toward} /></label>}
+        {view.status === "unavailable" ? <p className={styles.small}>育成の保存を確認できませんでした。</p> : profile ? <>
+          {next ? <label className={styles.meter}><span>{PET_STAGE_LABELS[next.stage]}まで {next.parts.map(part => `${part.now}/${part.goal}${part.unit}`).join("・")}</span>
+            <meter className={styles.progress} min={0} max={1} value={meter} /></label> : null}
           <p className={styles.stats}><span>成長 {profile.growth}</span><span aria-label={`なつき ${profile.bond}`}>♥ {profile.bond}</span>
             {profile.selectedPath ? <span>{PET_PATH_LABELS[profile.selectedPath]}</span> : null}</p>
         </> : null}

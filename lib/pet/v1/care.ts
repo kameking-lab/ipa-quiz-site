@@ -2,7 +2,7 @@ import type { PetProfileDocument, PetProfile } from "./profile";
 
 export type PetCareAction =
   | { type: "name"; name: string }
-  | { type: "stage"; stage: "puppy" | "partner" }
+  | { type: "stage"; stage: "puppy" | "partner" | "expert" }
   | { type: "path"; path: PetProfile["selectedPath"] }
   | { type: "autoFeed"; enabled: boolean }
   | { type: "feed"; rewardId: string };

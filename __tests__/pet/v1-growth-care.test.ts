@@ -4,7 +4,7 @@ import { emptyPetProfiles, petLearningFactSchema, petProfileStorageKey, serializ
 import { applyPetCare } from "@/lib/pet/v1/care";
 import { PetProfileStore } from "@/lib/pet/v1/profile-store";
 import { migrateLegacyPetProfiles } from "@/lib/pet/v1/migration";
-import { petGrowthProgress } from "@/lib/pet/v1/growth";
+import { petGrowthProgress, petNextStageProgress } from "@/lib/pet/v1/growth";
 
 const at = Date.parse("2026-11-05T12:00:00+09:00"), zone = "Asia/Tokyo";
 const empty = () => emptyPetProfiles("guest", zone);
@@ -39,6 +39,20 @@ describe("P07 growth and four reversible paths", () => {
     expect(petGrowthProgress(learn(5).profiles[0]).fields).toBe(0);
     applyPetCare(doc, "ap", { type: "path", path: "exploration" }, at); applyPetCare(doc, "ap", { type: "path", path: null }, at);
     expect(doc.profiles[0].selectedPath).toBeNull(); expect(doc.profiles[0].unlockedPaths).toContain("exploration");
+  });
+  it("unlocks the expert look only after 30 questions, 5 learning days and 5 spaced correct answers", () => {
+    let doc = learn(30);
+    expect(petNextStageProgress(doc.profiles[0])?.stage).toBe("expert");
+    for (const day of [2, 4, 6, 8]) doc = applyPetLearningFact(doc, fact("q0", day)).document;
+    expect(doc.profiles[0].unlockedStages).not.toContain("expert");
+    expect(petNextStageProgress(doc.profiles[0])?.parts.map(part => part.now)).toEqual([30, 5, 4]);
+    doc = applyPetLearningFact(doc, fact("q0", 10)).document;
+    expect(doc.profiles[0].unlockedStages).toEqual(["puppy", "partner", "expert"]);
+    expect(doc.profiles[0].selectedStage).toBe("puppy");
+    expect(doc.profiles[0].memories.filter(memory => memory.kind === "stage").map(memory => memory.kind === "stage" && memory.stage)).toEqual(["partner", "expert"]);
+    expect(petNextStageProgress(doc.profiles[0])).toBeNull();
+    applyPetCare(doc, "ap", { type: "stage", stage: "expert" }, at); expect(doc.profiles[0].selectedStage).toBe("expert");
+    const raw = serializePetProfileDocument(doc); expect(serializePetProfileDocument(parsePetProfileDocument(raw))).toBe(raw);
   });
   it("opens memory and companionship without an error history or consecutive study days", () => {
     let doc = learn(1);

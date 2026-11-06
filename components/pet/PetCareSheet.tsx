@@ -4,7 +4,7 @@ import { Dialog, DialogContent, DialogDescription, DialogTitle } from "@/compone
 import type { PetProfileDocument } from "@/lib/pet/v1/profile";
 import { PET_BACKUP_MAX_BYTES } from "@/lib/pet/v1/profile";
 import { parsePetBackup } from "@/lib/pet/v1/profile-store";
-import { PET_PATHS, PET_PATH_LABELS, petGrowthProgress, type PetPath } from "@/lib/pet/v1/growth";
+import { PET_PATHS, PET_PATH_LABELS, petGrowthProgress, petNextStageProgress, type PetPath } from "@/lib/pet/v1/growth";
 import { exportCurrentPetBackup, restoreCurrentPetBackup, savePetCare, writeCurrentPetBackup } from "@/lib/pet/v1/browser-care";
 import type { PetCareAction } from "@/lib/pet/v1/care";
 import { PET_ROOM_SCENES, PET_ROOM_STORIES } from "@/lib/pet/v1/room";
@@ -13,7 +13,6 @@ import { examLabel } from "@/lib/utils";
 import styles from "./PetCareSheet.module.css";
 
 const STAGE_NAMES = { puppy: "こいぬ", partner: "学習の相棒", expert: "専門家" } as const;
-const PARTNER_GOAL = 5;
 
 export default function PetCareSheet({ document: doc, qualificationId, onClose, returnFocus, onPose }: {
   document: PetProfileDocument | null; qualificationId?: string; onClose(): void;
@@ -32,6 +31,7 @@ export default function PetCareSheet({ document: doc, qualificationId, onClose, 
   };
   const profile = selected ? doc?.profiles.find(item => item.qualificationId === selected) : doc?.profiles[0];
   const progress = profile ? petGrowthProgress(profile) : null;
+  const next = profile ? petNextStageProgress(profile) : null;
   const meal = profile?.care.meals.find(item => item.consumedAt === null);
   const act = async (work: () => Promise<void>) => {
     if (busy) return;
@@ -76,8 +76,8 @@ export default function PetCareSheet({ document: doc, qualificationId, onClose, 
               <p className={styles.chips}><span className={styles.stageChip}>{STAGE_NAMES[profile.selectedStage]}</span>
                 {profile.selectedPath ? <span>{PET_PATH_LABELS[profile.selectedPath]}</span> : null}</p>
               <p className={styles.chips}><span>成長 {profile.growth}</span><span aria-label={`なつき ${profile.bond}`}>♥ {profile.bond}</span><span>{progress.learningDays}日</span></p>
-              {profile.unlockedStages.includes("partner") ? null : <label className={styles.meter}><span>相棒まで {Math.min(progress.uniqueQuestions, PARTNER_GOAL)}/{PARTNER_GOAL}</span>
-                <progress max={PARTNER_GOAL} value={Math.min(progress.uniqueQuestions, PARTNER_GOAL)} /></label>}
+              {next ? <label className={styles.meter}><span>{STAGE_NAMES[next.stage]}まで {next.parts.map(part => `${part.now}/${part.goal}${part.unit}`).join("・")}</span>
+                <meter min={0} max={1} value={next.parts.reduce((total, part) => total + part.now / part.goal, 0) / next.parts.length} /></label> : null}
             </div>
           </div>
           <section aria-label="世話"><div className={styles.careRow}>
@@ -86,7 +86,7 @@ export default function PetCareSheet({ document: doc, qualificationId, onClose, 
             {meal ? <button type="button" className={styles.treat} disabled={busy} onClick={() => care({ type: "feed", rewardId: meal.rewardId })}><span aria-hidden="true" className={styles.emoji}>🍖</span>ごほうびごはんを食べる</button> : null}
           </div><label className={styles.check}><input type="checkbox" checked={profile.care.autoFeed} disabled={busy} onChange={event => care({ type: "autoFeed", enabled: event.target.checked })} />ごほうびごはんは自動で食べる</label></section>
           <section><h4>姿</h4>
-            <div className={styles.tiles}>{(["puppy", "partner"] as const).map(stage => { const open = profile.unlockedStages.includes(stage); return <button type="button" key={stage} className={styles.tile} disabled={busy || !open} aria-pressed={profile.selectedStage === stage} onClick={() => care({ type: "stage", stage })}>
+            <div className={styles.tiles}>{(["puppy", "partner", "expert"] as const).map(stage => { const open = profile.unlockedStages.includes(stage); return <button type="button" key={stage} className={styles.tile} disabled={busy || !open} aria-pressed={profile.selectedStage === stage} onClick={() => care({ type: "stage", stage })}>
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img src={petArtFor(profile.qualificationId, stage, "study")} width={64} height={64} alt="" loading="lazy" decoding="async" className={open ? undefined : styles.locked} />{STAGE_NAMES[stage]}</button>; })}</div></section>
           <section><h4>特技</h4>
@@ -94,7 +94,7 @@ export default function PetCareSheet({ document: doc, qualificationId, onClose, 
               <button type="button" className={styles.tile} disabled={busy || !open} aria-pressed={profile.selectedPath === path} onClick={() => care({ type: "path", path: profile.selectedPath === path ? null : path })}>
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img src={petPathArtFor(path)} width={36} height={36} alt="" loading="lazy" decoding="async" className={open ? undefined : styles.locked} />{PET_PATH_LABELS[path]}</button>
-              {open ? null : <span className={styles.goal}>{goal.hint} {Math.min(goal.now, goal.goal)}/{goal.goal}<progress max={goal.goal} value={Math.min(goal.now, goal.goal)} /></span>}
+              {open ? null : <span className={styles.goal}>{goal.hint} {Math.min(goal.now, goal.goal)}/{goal.goal}<meter min={0} max={goal.goal} value={Math.min(goal.now, goal.goal)} /></span>}
             </div>; })}</div>
             {profile.selectedPath ? <button type="button" className={styles.plain} disabled={busy} onClick={() => care({ type: "path", path: null })}>系統なし</button> : null}
           </section>
