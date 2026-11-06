@@ -31,7 +31,7 @@ const schema = z
     acceptedAnswerNumbers: z.array(answerNumber).min(1).max(2),
     scoring: z.enum(["single-choice", "any-of-accepted"]),
     category: text,
-    statementExplanations: z.record(z.enum(["a", "b", "c", "d", "e"]), text),
+    statementExplanations: z.partialRecord(z.enum(["a", "b", "c", "d", "e"]), text),
     choiceExplanations: five,
     explanation: text,
     explanationAuthorship: z.literal("original"),
