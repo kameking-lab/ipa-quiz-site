@@ -13,7 +13,7 @@ const PetCareSheet = dynamic(() => import("./PetCareSheet"), { ssr: false });
 const PARTNER_GOAL = 5;
 const IDLE_CAPTION = "いっしょに、一問ずつ。";
 export const PET_STAGE_LABELS = { puppy: "こいぬ", partner: "相棒", expert: "専門家" } as const;
-interface Pop { key: string; growth: number; bond: number }
+interface Pop { key: string; growth: number; bond: number; pose: PetPose }
 
 export function LearningPetCorner({ qualificationId, questionId, suppliedView, idlePose = "study", idleCaption }: {
   qualificationId?: string; questionId?: string; suppliedView?: PetProfileView;
@@ -47,7 +47,7 @@ export function LearningPetCorner({ qualificationId, questionId, suppliedView, i
     stop();
     if (popTimer.current) clearTimeout(popTimer.current);
     if (!presentation.current.closed && (result.reward.growth > 0 || result.reward.bond > 0)) {
-      setPop({ key: event.eventId, growth: result.reward.growth, bond: result.reward.bond });
+      setPop({ key: event.eventId, growth: result.reward.growth, bond: result.reward.bond, pose: result.reaction === "read" ? "revealed" : result.reaction ?? "study" });
       popTimer.current = setTimeout(() => setPop(null), 1600);
     } else setPop(null);
     if (presentation.current.closed || presentation.current.paused || !presentation.current.visible) return;
@@ -131,7 +131,7 @@ export function LearningPetCorner({ qualificationId, questionId, suppliedView, i
     {/* Answer feedback that reaches the learner even when this panel is scrolled away. */}
     {pop && popText && questionId && !inView ? <div key={`toast-${pop.key}`} className={`${styles.toast} ${reduced ? "" : styles.toastMove}`} aria-hidden="true">
       {/* eslint-disable-next-line @next/next/no-img-element */}
-      <img src={petArtFor(selectedQualification ?? null, stage, "study")} alt="" width={40} height={40} decoding="async" />
+      <img src={petArtFor(selectedQualification ?? null, stage, pop.pose)} alt="" width={40} height={40} decoding="async" />
       <span>{popText}</span>
     </div> : null}
     {detailsOwner !== null ? <PetCareSheet document={view.document?.ownerScope === detailsOwner ? view.document : null} qualificationId={selectedQualification} returnFocus={() => detailsButton.current?.focus()} onClose={() => { setDetailsOwner(null); stop(); }} onPose={(nextPose, text) => { stop(); setManual(true); setPose(nextPose); setCaption(text); timer.current = setTimeout(stop, 6000); }} /> : null}
