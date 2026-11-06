@@ -1,0 +1,122 @@
+{
+  "slug": "sokuryoshiho",
+  "name": "測量士補",
+  "administrator": "国土地理院",
+  "publicationStatus": "staging",
+  "publicAllowed": false,
+  "independentReview": "pending",
+  "checkedAt": "2026-11-06",
+  "officialIndexUrl": "https://www.gsi.go.jp/LAW/SHIKEN/past.html",
+  "officialIndexRetrieval": {
+    "retrievedAt": "2026-11-06",
+    "method": "通常GET",
+    "status": 200,
+    "contentType": "text/html",
+    "bytes": 28825,
+    "sha256": "53d557b81374f18f2009064fe09da6e66ad7fd722694e3888a365a7a9f0844e7",
+    "note": "令和8年5月17日・令和7年5月18日の行に測量士補の問題・解答一覧PDFリンクを確認。HTMLは更新され得るためSHA-256は取得時点の記録。"
+  },
+  "officialReuseTermsUrl": "https://www.gsi.go.jp/kikakuchousei/kikakuchousei40182.html",
+  "reuseTermsRetrieval": {
+    "retrievedAt": "2026-11-06",
+    "status": 200,
+    "sha256": "5388d2854a05f3e7b41cb980ecfb2de75b315de68e0d9c94b9334c11e580739e",
+    "observed": "国土地理院コンテンツ利用規約（令和7年11月20日改正）。特段の記載が無い限り公共データ利用規約（第1.0版）（PDL1.0）を適用。測量成果の複製・使用は測量法に基づく承認の要否を別途確認するよう記載。"
+  },
+  "rightsStatus": "recorded-only",
+  "rightsNote": "権利表記は記録のみ（オーナー判断により公開可否の阻害要因としない）。2025・2026年No.21の図は電子地形図25000の一部であり、測量法上の複製承認の要否は公開前に別途確認する。",
+  "lawReferenceDate": null,
+  "legalContextNote": "法令・作業規程の準則に関する解説は各試験日時点。公式資料に法令基準日の明記がないためlawReferenceDateはnull。",
+  "expectedQuestions": 56,
+  "counts": {
+    "2025": 28,
+    "2026": 28,
+    "total": 56,
+    "withFigures": 11,
+    "referenceOnly": 1
+  },
+  "rounds": [
+    {
+      "year": 2026,
+      "era": "令和8年",
+      "examDate": "2026-05-17",
+      "expectedQuestions": 28,
+      "choicesPerQuestion": 5,
+      "questionFiles": [
+        "2026-questions"
+      ],
+      "answerFile": "2026-answers",
+      "notes": "No.12は公式正答3だが掲載数値からの計算では5となるためreferenceOnly（採点・成績に算入しない）。"
+    },
+    {
+      "year": 2025,
+      "era": "令和7年",
+      "examDate": "2025-05-18",
+      "expectedQuestions": 28,
+      "choicesPerQuestion": 5,
+      "questionFiles": [
+        "2025-questions-part1",
+        "2025-questions-part2"
+      ],
+      "answerFile": "2025-answers"
+    }
+  ],
+  "files": [
+    {
+      "name": "2026-questions",
+      "url": "https://www.gsi.go.jp/common/000278974.pdf",
+      "status": 200,
+      "contentType": "application/pdf",
+      "bytes": 3905952,
+      "pages": 31,
+      "lastModified": "2026-08-10",
+      "sha256": "3b797566e6fbcfbf0fedc5a88e5983b82ac7b6676eceb2240043e43b283a60ac"
+    },
+    {
+      "name": "2026-answers",
+      "url": "https://www.gsi.go.jp/common/000278975.pdf",
+      "status": 200,
+      "contentType": "application/pdf",
+      "bytes": 70591,
+      "pages": 1,
+      "lastModified": "2026-08-10",
+      "sha256": "b513b25773b4e3e085169bd1500807eb7663b64e9853e7eb2b49fe72f8b134ef"
+    },
+    {
+      "name": "2025-questions-part1",
+      "url": "https://www.gsi.go.jp/common/000270177.pdf",
+      "status": 200,
+      "contentType": "application/pdf",
+      "bytes": 3572856,
+      "pages": 15,
+      "lastModified": "2026-08-10",
+      "sha256": "561692b95a4ffb22c5571d24ba3d9938fe2c2eb582e454908f3524180266501c"
+    },
+    {
+      "name": "2025-questions-part2",
+      "url": "https://www.gsi.go.jp/common/000270178.pdf",
+      "status": 200,
+      "contentType": "application/pdf",
+      "bytes": 3692303,
+      "pages": 14,
+      "lastModified": "2026-08-10",
+      "sha256": "8203e4cdb1ff223e285ed3accb7a7b9cd9211c0bad505ceca7ba78d73b00a24e"
+    },
+    {
+      "name": "2025-answers",
+      "url": "https://www.gsi.go.jp/common/000270180.pdf",
+      "status": 200,
+      "contentType": "application/pdf",
+      "bytes": 43171,
+      "pages": 1,
+      "lastModified": "2026-08-10",
+      "sha256": "1bf7c61223044a5a1ceee0a95a238594ca3cfae5ca2d84f34a8d0628728a75ea"
+    }
+  ],
+  "legacyOverlap": {
+    "path": "data/exam-library/survey-assistant/candidate.json",
+    "privateQualificationId": "private-gsi-survey-assistant-20261021",
+    "note": "同じPDF版（ファイルSHA-256接頭辞一致）の既存候補。公式キー56問すべて一致。解説を下敷きに原本で再検証・修正し、2026年の問題本文・選択肢全文を新規転記。"
+  },
+  "excluded": []
+}
