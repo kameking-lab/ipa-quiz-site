@@ -1,6 +1,10 @@
 import files from "./art.generated.json";
 import outfits from "./outfits.generated.json";
+// Reaction poses drawn for qualifications whose study/break pair comes from the
+// study room (same round style and outfit); their study/slack poses use that pair.
+import extra from "./art-extra.json";
 import type { PetProfile } from "./profile";
+const art: Record<string, string> = { ...files, ...extra };
 export type PetPose = "study" | "correct" | "incorrect" | "revealed" | "rest" | "meal" | "petted" | "slack";
 export function petPathArtFor(path: NonNullable<PetProfile["selectedPath"]>): string {
   return files[`lineage-${path}`];
@@ -12,7 +16,6 @@ export const PET_GENERIC_ART = { study: `${ROOM}generic-8.webp`, rest: `${ROOM}g
 const resting = (pose: PetPose) => pose === "rest" || pose === "slack";
 export function petArtFor(qualificationId: string | null, stage: PetProfile["selectedStage"], pose: PetPose): string {
   const qualification = qualificationId === "pharmacy" ? "yakuzaishi" : qualificationId;
-  const art = files as Record<string, string>;
   if (qualification) {
     for (const key of [`${qualification}-${stage}-${pose}`, `${qualification}-${stage}-study`,
       `${qualification}-puppy-${pose}`, `${qualification}-puppy-study`, `takken-anim-${pose}`, "takken-anim-study"]) {

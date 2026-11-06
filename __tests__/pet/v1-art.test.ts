@@ -42,3 +42,14 @@ it("never falls back to the slimmer guide art; other qualifications keep their o
   }
   for (const src of Object.values(PET_GENERIC_ART)) expect(existsSync(`public${src}`)).toBe(true);
 });
+it("FE and SG react in their own study-room outfit at every stage", () => {
+  for (const exam of ["fe", "sg"]) for (const stage of ["puppy", "partner"] as const) {
+    for (const pose of ["correct", "incorrect", "revealed", "meal", "petted", "rest"] as const) {
+      const src = petArtFor(exam, stage, pose);
+      expect(src).toBe(`/images/pet-v1/${exam}-puppy-${pose}.webp`);
+      expect(readFileSync(`public${src}`).length).toBeLessThan(60000);
+    }
+    expect(petArtFor(exam, stage, "study")).toBe(`/images/home/study-room-mascots/${exam}-study.webp`);
+    expect(petArtFor(exam, stage, "slack")).toBe(`/images/home/study-room-mascots/${exam}-break.webp`);
+  }
+});
