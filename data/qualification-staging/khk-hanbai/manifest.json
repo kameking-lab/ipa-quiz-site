@@ -1,0 +1,90 @@
+{
+  "taskSlug": "khk-hanbai",
+  "publicationStatus": "staging",
+  "publicAllowed": false,
+  "needsIndependentReview": false,
+  "years": [
+    2025,
+    2024
+  ],
+  "targetTotal": 230,
+  "total": 190,
+  "choiceExplanations": 950,
+  "qualifications": [
+    {
+      "slug": "khk-hanbai",
+      "name": "高圧ガス販売主任者 第一種",
+      "file": "khk-hanbai/questions.json",
+      "total": 80,
+      "targetTotal": 80,
+      "counts": {
+        "2025": {
+          "JX": 20,
+          "JY": 20
+        },
+        "2024": {
+          "JX": 20,
+          "JY": 20
+        }
+      },
+      "complete": true
+    },
+    {
+      "slug": "khk-hanbai2",
+      "name": "高圧ガス販売主任者 第二種",
+      "file": "khk-hanbai2/questions.json",
+      "total": 80,
+      "targetTotal": 80,
+      "counts": {
+        "2025": {
+          "KX": 20,
+          "KY": 20
+        },
+        "2024": {
+          "KX": 20,
+          "KY": 20
+        }
+      },
+      "complete": true
+    },
+    {
+      "slug": "khk-setsubishi",
+      "name": "液化石油ガス設備士（学科）",
+      "file": "khk-setsubishi/questions.json",
+      "total": 30,
+      "targetTotal": 70,
+      "counts": {
+        "2025": {
+          "LX": 15
+        },
+        "2024": {
+          "LX": 15
+        }
+      },
+      "complete": false
+    }
+  ],
+  "missingPdfUrls": [
+    "https://www.khk.or.jp/Portals/0/khk/exam/2025/1110/R7ACLY-W.pdf",
+    "https://www.khk.or.jp/Portals/0/khk/exam/2024/R6ACLY-W.pdf"
+  ],
+  "missingPdfUrlNote": "試験記号LYと他冊子の命名に基づく取得候補。旧公式リンク自体は未確認。両年度・両公式ホストとも404。",
+  "remainingQuestions": 40,
+  "remainingScope": "液化石油ガス設備士 配管理論等：2025年20問・2024年20問。技能試験は対象外。",
+  "normalization": [
+    "印刷用柱・ノンブルを除去、改行と空白を整理。問題本文・全5肢の並びを公式PDFと照合。",
+    "引継ぎデータの追記「出題基準」見出しを本文からlawNoteへ分離。公式の共通条件はsharedContextに保存。",
+    "選択肢キーのア〜オは公式番号1〜5に順に対応。本文内イ・ロ・ハ・ニとは別。",
+    "全問needsReview=trueを維持。公式問題原本・抽出草稿はコミット対象外。",
+    "PDFの字位置に従い、面積・体積の単位m²・m³（全角ｍを含む）の上付き指数を復元。Qmaxの下付きmaxはプレーンテキストで表現。"
+  ],
+  "independentReview": {
+    "status": "PASS",
+    "reviewer": "gpt-6-astra",
+    "sandbox": "read-only",
+    "reviewedCommit": "8f457fd69",
+    "report": "reports/lk6-review-2.md",
+    "scope": "収録済み190問。設備士配管理論等の未取得40問は完了対象外。",
+    "humanReviewFlagsRetained": true
+  }
+}
