@@ -1,6 +1,7 @@
 import { ALL_QUIZ_EXAM_CODES } from "@/lib/exam-config";
 import int8RuntimePins from "./fixtures/int8-runtime-pins.json";
 import kperfRuntimePins from "./fixtures/kperf1-runtime-pins.json";
+import petdevRuntimePins from "./fixtures/petdev1-runtime-pins.json";
 import { integrationOracle, runtimeFingerprint, normalizedTextSha256, repositoryTextSha256, sourceFilesUnder } from './fixtures/native-integration-oracle';
 import { describe,expect,it } from 'vitest';
 import { existsSync, readFileSync } from 'node:fs';
@@ -73,14 +74,18 @@ describe('aviation communication68 local registration candidate',()=>{
   // IOS1 (666a49bca) added NativeQuestionGate; refresh only the reviewed UI pins.
   // Reviewed 2026-11-01 urgent release recipe: inline AI, original-answer rewards,
   // next-question focus/loading and explicit retirement of generated questions.
+  // PETDEV1 retries dropped result focus after paint; only the reviewed UI pin changes.
   // KPERF1 defers only decorative animation chunks after KGROW1's continuity UI.
-  // The answer commit function is separately pinned to the unchanged KGROW2 base.
+  // PETDEV1 replaces only legacy pet submission and shares pre-write SRS
+  // evidence. The KPERF1 oracle stays historical; the reviewed new handler has
+  // its own pin and behavior/performance checks.
   // The prior KGROW1/PRK fixtures stay intact as provenance;
   // rewards, answers and every original-data/core pin below remain exact.
   // The historical pre-reward oracle remains unchanged as provenance.
   expect(normalizedTextSha256(player)).toBe(int8RuntimePins['components/quiz/QuizPlayer.tsx']);
   expect(player).toContain('NativeQuestionGate');
-  expect(normalizedTextSha256(player.slice(player.indexOf('  const commitAnswer ='), player.indexOf('  const onNativeBAnswer =')))).toBe(kperfRuntimePins.commitAnswer);
+  expect(petdevRuntimePins.previousCommitAnswer).toBe(kperfRuntimePins.commitAnswer);
+  expect(normalizedTextSha256(player.slice(player.indexOf('  const commitAnswer ='), player.indexOf('  const onNativeBAnswer =')))).toBe(petdevRuntimePins.commitAnswer);
   expect(player).not.toContain('ExamNoteGuide');
   expect(player).not.toContain('GenerateSimilar');
   expect(player).not.toContain('/api/generate-question');

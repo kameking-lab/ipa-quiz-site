@@ -1,5 +1,7 @@
 import { Preferences } from "@capacitor/preferences";
 import { LS_KEYS } from "@/lib/storage/keys";
+import type { PetOwnerLease } from "@/lib/pet/v1/runtime";
+import { parsePetProfileDocument } from "@/lib/pet/v1/profile";
 const LEGACY = "kakomon:portable-study:v1";
 const PREFIX = "kakomon:portable-study:v2:";
 const ACTIVE = "kakomon:portable-study:active:v2";
@@ -12,19 +14,25 @@ const keys: string[] = [LS_KEYS.history, LS_KEYS.bookmarks, LS_KEYS.starred, LS_
   LS_KEYS.earnedBadges, LS_KEYS.achievements, LS_KEYS.dailyGoal, LS_KEYS.studyReward, LS_KEYS.studyRewardPreferences,
   LS_KEYS.dailyChallenge, LS_KEYS.dailyMissions, LS_KEYS.gold, LS_KEYS.motivation, LS_KEYS.reviewSchedule,
   LS_KEYS.reviewSeen, LS_KEYS.examDate, LS_KEYS.theme, LS_KEYS.character, LS_KEYS.characterEnabled,
-  LS_KEYS.syncLocalOwner, "ipa-quiz:essay-history:v1", "ipa-quiz:study-plans:v1", "ipa-quiz:study-plan-progress:v1"];
-const prefixes = [LS_KEYS.examLibraryPrefix, LS_KEYS.examLibrarySessionPrefix, "ipa-quiz:essay-draft:"];
-interface Snapshot { owner: string | null; source: string; data: Record<string,string>; at: number }
+  LS_KEYS.syncLocalOwner, LS_KEYS.petLearning, "ipa-quiz:essay-history:v1", "ipa-quiz:study-plans:v1", "ipa-quiz:study-plan-progress:v1"];
+const prefixes = [LS_KEYS.examLibraryPrefix, LS_KEYS.examLibrarySessionPrefix, LS_KEYS.petProfilesPrefix, "ipa-quiz:essay-draft:"];
+interface Snapshot { owner: string | null; source: string; data: Record<string,string>; at: number; epoch?:string|null }
 const snapshotKey = (owner:string|null) => PREFIX + (owner === null ? "guest" : `user:${encodeURIComponent(owner)}`);
 function isStudyKey(key:string) { return keys.includes(key) || prefixes.some(prefix=>key.startsWith(prefix)); }
 function studyKeys() { return Object.keys(localStorage).filter(isStudyKey); }
+const isPetKey=(key:string)=>key===LS_KEYS.petLearning||key.startsWith(LS_KEYS.petProfilesPrefix);
+const ownPetKey=(owner:string|null)=>LS_KEYS.petProfilesPrefix+encodeURIComponent(owner===null?"guest":`user:${owner}`);
+function allowedForOwner(key:string,owner:string|null) {
+  return key===LS_KEYS.petLearning?owner===null:key.startsWith(LS_KEYS.petProfilesPrefix)?key===ownPetKey(owner):isStudyKey(key);
+}
 function capture(owner:string|null):Snapshot {
   const data:Record<string,string> = {};
   for(const key of studyKeys()) {
+    if(!allowedForOwner(key,owner))continue;
     const value=localStorage.getItem(key);
     if(value!==null)data[key]=value;
   }
-  return {owner,source:location.origin,data,at:Date.now()};
+  return {owner,source:location.origin,data,at:Date.now(),epoch:localStorage.getItem(DELETION_EPOCH)};
 }
 function localOwner():string|null|undefined {
   const raw=localStorage.getItem(LOCAL_OWNER);
@@ -46,10 +54,12 @@ function parseOwner(raw:string):string|null {
 function parseSnapshot(raw:string,owner:string|null):Snapshot {
   const value=JSON.parse(raw) as Snapshot;
   if(value.owner!==owner || typeof value.source!=="string" || !value.data || typeof value.data!=="object" || Array.isArray(value.data)
-    || !Object.values(value.data).every(v=>typeof v==="string"))throw new Error("保存した学習履歴を確認できません。");
+    || !Object.values(value.data).every(v=>typeof v==="string") || value.epoch!==undefined&&value.epoch!==null&&typeof value.epoch!=="string")throw new Error("保存した学習履歴を確認できません。");
   return value;
 }
 let operations:Promise<unknown>=Promise.resolve();
+let petOwnerGeneration=0;
+function invalidatePetOwner() { petOwnerGeneration++;window.dispatchEvent(new Event("pet-v1:owner-changed")); }
 function serialize<T>(fn:()=>Promise<T>) {
   const task=operations.then(fn);operations=task.catch(()=>{});return task;
 }
@@ -61,6 +71,7 @@ export async function studyOwner(fallback:string|null=null):Promise<string|null>
   return raw ? parseOwner(raw) : fallback;
 }
 export function restoreStudy(owner:string|null) { return serialize(async()=>{
+  invalidatePetOwner();
   const epoch=(await Preferences.get({key:DELETION_EPOCH})).value;
   // Both WKWebView origins share Preferences but have separate localStorage.
   // The other origin must discard its old snapshot before saving anything.
@@ -74,12 +85,27 @@ export function restoreStudy(owner:string|null) { return serialize(async()=>{
   if(!raw) {
     if(legacy && (JSON.parse(legacy) as Snapshot).owner===owner)raw=legacy;
   }
-  const snapshot=raw?parseSnapshot(raw,owner):null;
+  let snapshot=raw?parseSnapshot(raw,owner):null;
+  if(snapshot&&(snapshot.epoch??null)!==(epoch??null))snapshot=null;
   if(previous!==undefined && previous!==owner)await save(capture(previous));
   const legacyOwnerMismatch=previous===undefined && legacy && (JSON.parse(legacy) as Snapshot).owner!==owner;
   if(previous!==undefined && previous!==owner || legacyOwnerMismatch || snapshot && (snapshot.source!==location.origin || previous===undefined && !studyKeys().length)) {
-    studyKeys().forEach(key=>localStorage.removeItem(key));
-    for(const [key,value] of Object.entries(snapshot?.data??{}))if(isStudyKey(key))localStorage.setItem(key,value);
+    const incoming=snapshot?.data[ownPetKey(owner)],existing=localStorage.getItem(ownPetKey(owner));
+    if(incoming!==undefined&&existing!==null&&incoming!==existing) {
+      // A transfer must never replace recoverable corrupt/future/wrong-owner
+      // bytes with a different snapshot (nor corrupt an otherwise valid pet).
+      try {
+        const scope=owner===null?"guest":`user:${owner}`;
+        if(parsePetProfileDocument(existing).ownerScope!==scope||parsePetProfileDocument(incoming).ownerScope!==scope)throw new Error("owner");
+      }catch{throw new Error("この画面の育成データを上書きせず保持しました。保存内容を確認してからバックアップで復元してください。");}
+    }
+    // Pet documents have their own owner partitions. Keep other owners and the
+    // exact old guest source in this origin; never sweep them on sign-in/out.
+    studyKeys().filter(key=>!isPetKey(key)).forEach(key=>localStorage.removeItem(key));
+    for(const [key,value] of Object.entries(snapshot?.data??{}))if(allowedForOwner(key,owner)) {
+      if(key===LS_KEYS.petLearning&&localStorage.getItem(key)!==null)continue;
+      localStorage.setItem(key,value);
+    }
   }
   // A sync ownership token is valid only for its original account.
   const sync=localStorage.getItem(LS_KEYS.syncLocalOwner);
@@ -87,17 +113,43 @@ export function restoreStudy(owner:string|null) { return serialize(async()=>{
   localStorage.setItem(LOCAL_OWNER,JSON.stringify({owner}));
   await save(capture(owner));
   await Preferences.set({key:ACTIVE,value:JSON.stringify({owner})});
+  window.dispatchEvent(new Event("pet-v1:owner-changed"));
 }); }
 export function persistStudy(owner:string|null) {
   if(localOwner()!==owner)return Promise.reject(new Error("アカウントが変更されたため学習履歴の保存を中止しました。"));
-  const snapshot=capture(owner);
-  return serialize(()=>save(snapshot));
+  const snapshot=capture(owner),generation=petOwnerGeneration;
+  return serialize(async()=>{
+    const epoch=(await Preferences.get({key:DELETION_EPOCH})).value;
+    if(generation!==petOwnerGeneration||localOwner()!==owner||(snapshot.epoch??null)!==(epoch??null)||
+      (snapshot.epoch??null)!==localStorage.getItem(DELETION_EPOCH))throw new Error("所有者または削除状態が変わったため保存を中止しました。");
+    await save(snapshot);
+  });
 }
 /** Queued after in-flight snapshots; deletion cannot race a mirror write. */
 export function deleteStudy() { return serialize(async()=>{
+  invalidatePetOwner();
   const epoch=String(Date.now());await Preferences.set({key:DELETION_EPOCH,value:epoch});localStorage.setItem(DELETION_EPOCH,epoch);
   studyKeys().forEach(key=>localStorage.removeItem(key));
   localStorage.removeItem(LOCAL_OWNER);
   const {keys:stored}=await Preferences.keys();
   for(const key of stored)if(key.startsWith(PREFIX)||[LEGACY,ACTIVE].includes(key))await Preferences.remove({key});
 }); }
+/** Native bundled origin identity, independent of membership/paid downloads.
+ * Active Preferences plus this origin's restored marker must agree. */
+export async function portablePetOwner(isCurrent:()=>boolean):Promise<PetOwnerLease|null> {
+  await operations;
+  const generation=petOwnerGeneration,marker=localStorage.getItem(LOCAL_OWNER);
+  if(!marker)return null;
+  const owner=parseOwner(marker),scope=owner===null?"guest":`user:${owner}`;
+  const epoch=(await Preferences.get({key:DELETION_EPOCH})).value;
+  const current=()=>isCurrent()&&generation===petOwnerGeneration&&localStorage.getItem(LOCAL_OWNER)===marker&&
+    (!epoch||localStorage.getItem(DELETION_EPOCH)===epoch);
+  const verify=async()=>{
+    await operations;
+    const active=(await Preferences.get({key:ACTIVE})).value;
+    const latestEpoch=(await Preferences.get({key:DELETION_EPOCH})).value;
+    return current()&&!!active&&parseOwner(active)===owner&&latestEpoch===epoch;
+  };
+  if(!await verify())return null;
+  return {ownerScope:scope,isCurrent:current,revalidate:verify};
+}

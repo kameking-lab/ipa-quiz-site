@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { parseMeasuredPresence, PRESENCE_STATE_EVENT, type MeasuredPresence } from "@/lib/study-presence-contract";
 import { StudyRoom } from "@/components/home/StudyRoom";
 
-export interface StudySuggestion { name: string; href: string }
+export interface StudySuggestion { name: string; href: string; exam?: string }
 
 export function TotalAnswerCounter({ suggestions = [] }: { suggestions?: readonly StudySuggestion[] }) {
   const [snapshot, setSnapshot] = useState<MeasuredPresence | null>(null);

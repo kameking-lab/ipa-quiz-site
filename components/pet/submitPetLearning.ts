@@ -1,10 +1,10 @@
-import { notifyLearningPetSubmission } from "@/lib/pet/client/learning-bridge";
 import type { PetLearningSubmission } from "@/lib/pet/client/learning-submission-contracts";
 import type { PetLearningSubmissionContext } from "@/lib/pet/client/learning-bridge";
 
-/** Reward failure must never prevent the original answer/history/decorations. */
-export function submitPetLearning(input: PetLearningSubmission, context: PetLearningSubmissionContext): void {
-  try {
-    void Promise.resolve(notifyLearningPetSubmission(structuredClone(input), structuredClone(context))).catch(() => undefined);
-  } catch { /* The study submission remains usable. */ }
+/** Retired P05 entry: metadata-only legacy callers must not grant in parallel
+ * with v1. Active producers use usePetLearning's owner/session-bound envelope.
+ * Keep the old storage and explicit legacy tools readable for migration. */
+export function submitPetLearning(_input: PetLearningSubmission, _context: PetLearningSubmissionContext): void {
+  void _input; void _context;
+  // Deliberately no legacy grant or account queue.
 }

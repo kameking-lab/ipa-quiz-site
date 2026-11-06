@@ -1,0 +1,43 @@
+import { expect, test } from "@playwright/test";
+import { emptyPetProfiles, newPetProfile, serializePetProfileDocument } from "../../lib/pet/v1/profile";
+import { allowLoopbackWebKit } from "./helpers/local-webkit";
+const key = "ipa-quiz:pet-profiles:v1:guest";
+function seed() {
+  const doc = emptyPetProfiles("guest", "Asia/Tokyo"), pet = newPetProfile("guest", "ap");
+  pet.name = "こむぎ"; pet.unlockedStages.push("partner"); pet.selectedStage = "partner";
+  pet.unlockedPaths.push("memory"); pet.selectedPath = "memory";
+  pet.roomEvents.push({ scene: "first-meeting", day: "2026-11-05", occurredAt: Date.parse("2026-11-05T12:00:00+09:00") }); doc.profiles.push(pet);
+  return serializePetProfileDocument(doc);
+}
+test.use({ isMobile: true, hasTouch: true, viewport: { width: 390, height: 844 }, reducedMotion: "reduce", serviceWorkers: "block" });
+test.beforeEach(async({page,browserName})=>allowLoopbackWebKit(page,browserName));
+for (const width of [320, 390]) test(`private room child and saved event survive reload and match care selections (${width}px)`, async ({ page, context, browserName }) => {
+  await page.setViewportSize({ width, height: 844 });
+  await context.route("**/api/auth/session", route => route.fulfill({ json: {} }));
+  await page.addInitScript(({ key, raw }) => { if (!localStorage.getItem(key)) localStorage.setItem(key, raw); }, { key, raw: seed() });
+  await page.goto("/");
+  const own = page.locator("section[data-own-pet-id]");
+  await expect(own).toHaveAttribute("data-own-pet-id", '["guest","ap"]', { timeout: 15000 });
+  await expect(own).toHaveAttribute("data-room-scene", "first-meeting");
+  await expect(own.getByRole("heading", { name: "応用情報技術者のこむぎ" })).toBeVisible();
+  await expect(own.locator("img").first()).toHaveAttribute("src", "/images/pet-v1/ap-partner-slack.webp");
+  await expect(own).toContainText("いつもの机");
+  const before = await page.evaluate(key => localStorage.getItem(key), key), text = await own.textContent();
+  await own.scrollIntoViewIfNeeded();
+  await expect.poll(()=>own.locator("img").first().evaluate(image=>(image as HTMLImageElement).naturalWidth)).toBeGreaterThan(0);
+  await own.locator("img").first().evaluate(image=>(image as HTMLImageElement).decode());
+  await page.screenshot({ path: `test-results/pet-v1/${process.env.PET_EVIDENCE_PHASE ?? "regression"}-own-seat-${width}-${browserName}.png` });
+  expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
+  await page.reload(); await expect(own).toHaveAttribute("data-own-pet-id", '["guest","ap"]', { timeout: 15000 });
+  expect(await own.textContent()).toBe(text); expect(await page.evaluate(key => localStorage.getItem(key), key)).toBe(before);
+  const other = await context.newPage(); await allowLoopbackWebKit(other,browserName); await other.goto("/");
+  await expect(other.locator("section[data-own-pet-id]")).toHaveAttribute("data-room-scene", "first-meeting", { timeout: 15000 }); await other.close();
+  await page.getByRole("button", { name: "育成を見る", exact: true }).tap();
+  const sheet = page.getByRole("dialog", { name: "チワワの育成" });
+  await expect(sheet.getByRole("heading", { name: "自習室のアルバム" })).toBeVisible();
+  await sheet.getByRole("button", { name: "こいぬ", exact: true }).tap();
+  await expect(sheet.getByRole("button", { name: "こいぬ", exact: true })).toHaveAttribute("aria-pressed", "true");
+  await page.keyboard.press("Escape");
+  await expect(own.locator("img").first()).toHaveAttribute("src", "/images/pet-v1/ap-puppy-slack.webp");
+  await expect(own).toHaveAttribute("data-room-scene", "first-meeting");
+});

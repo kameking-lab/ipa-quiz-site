@@ -6,6 +6,9 @@ import { RikuTech2CylinderGuide } from "./RikuTech2CylinderGuide";
 import { isReferenceOnlyQuestionId } from "@/lib/questions/assessment";
 
 import * as React from "react";
+import { usePetLearning } from "@/components/pet/usePetLearning";
+import { LearningPetCorner } from "@/components/pet/LearningPetCorner";
+import type { PetLearningSubmission } from "@/lib/pet/client/learning-submission-contracts";
 import type { NativeBGrade } from "@/lib/questions/types";
 import { gradeNativeB, serializeNativeBSelections, formatNativeBAnswer, type NativeBSelections } from "@/lib/questions/native-b";
 import { NativeBAnswerInput, NativeBFeedback } from "./NativeBAnswer";
@@ -104,6 +107,7 @@ function ScoredQuestionAnswerCard({
   nextHref,
   requiredSelections = 1,
 }: Props) {
+  const pet = usePetLearning();
   const native = question?.type === "native-b";
   const [nativeBResult, setNativeBResult] = React.useState<NativeBGrade | undefined>();
   const numeric = question?.type === "numeric";
@@ -136,7 +140,7 @@ function ScoredQuestionAnswerCard({
   const roving = useQuizChoiceRoving(keys.length, selectedIndex, revealed, questionId);
 
   const recordOutcome = React.useCallback(
-    (selection: string, correct: boolean, nativeBResult?: NativeBGrade) => {
+    (selection: string, correct: boolean, petAnswer: Extract<PetLearningSubmission, { source: "question" }>["answer"], nativeBResult?: NativeBGrade) => {
       if (isReferenceOnlyQuestionId(questionId) || isReferenceOnlyQuestionId(question?.id)) return;
       const now = Date.now();
       // localStorage may be disabled/full; the answer UX must still work.
@@ -146,7 +150,8 @@ function ScoredQuestionAnswerCard({
         }
         writeLastQuestion({ exam, year, season, session, qNumber, part, answeredAt: now });
         recordStudyOnDate();
-        recordReview(questionId, correct);
+        if (question) pet.record(question, petAnswer, correct);
+        else recordReview(questionId, correct);
       } catch {
         /* ignore storage errors */
       }
@@ -154,7 +159,7 @@ function ScoredQuestionAnswerCard({
       // admin/exam-usage の資格別回答数ランキングに自動的に合算される。
       posthogCapture("question_answered", { questionId, exam, correct });
     },
-    [questionId, question, exam, year, season, session, qNumber, part],
+    [questionId, question, exam, year, season, session, qNumber, part, pet],
   );
 
   const onNativeBAnswer = React.useCallback((selections: NativeBSelections) => {
@@ -162,7 +167,7 @@ function ScoredQuestionAnswerCard({
     const result = gradeNativeB(question.nativeB, selections);
     setNativeBResult(result);
     setRevealed(true);
-    recordOutcome(serializeNativeBSelections(question.nativeB, selections), result.isCorrect, result);
+    recordOutcome(serializeNativeBSelections(question.nativeB, selections), result.isCorrect, { kind: "native-b", selections: Object.fromEntries(Object.entries(selections).filter((pair): pair is [string, string] => typeof pair[1] === "string")) }, result);
   }, [questionId, question, native, revealed, recordOutcome]);
 
   const onSelect = React.useCallback(
@@ -174,13 +179,13 @@ function ScoredQuestionAnswerCard({
         setPicked(next);
         if (!question?.acceptedAnswerCombinations && next.length === requiredSelections) {
           setRevealed(true);
-          recordOutcome(formatSelection(next), isCompleteSelectionCorrect(answerKey, next, requiredSelections, question?.acceptedAnswerCombinations));
+          recordOutcome(formatSelection(next), isCompleteSelectionCorrect(answerKey, next, requiredSelections, question?.acceptedAnswerCombinations), { kind: "multiple-choice", selected: [...next] });
         }
         return;
       }
       setSelected(key);
       setRevealed(true);
-      recordOutcome(key, isAcceptedAnswer(answerKey, key));
+      recordOutcome(key, isAcceptedAnswer(answerKey, key), { kind: "multiple-choice", selected: [key] });
     },
     [questionId, question, revealed, ordering, recordOutcome, multiSelect, picked, requiredSelections, answerKey],
   );
@@ -189,25 +194,26 @@ function ScoredQuestionAnswerCard({
     if (isReferenceOnlyQuestionId(questionId) || !question || isReferenceOnlyQuestionId(question.id) || !numeric || revealed) return;
     setNumericSelected(value);
     setRevealed(true);
-    recordOutcome(value, isNumericAnswerCorrect(question, value));
+    recordOutcome(value, isNumericAnswerCorrect(question, value), { kind: "numeric", value });
   }, [questionId, question, numeric, revealed, recordOutcome]);
 
   const onOrderingAnswer = React.useCallback((value: ChoiceKey[]) => {
     if (isReferenceOnlyQuestionId(questionId) || !question || isReferenceOnlyQuestionId(question.id) || !ordering || revealed) return;
     setOrderedSelected(value);
     setRevealed(true);
-    recordOutcome(value.join("→"), isOrderingAnswerCorrect(question, value));
+    recordOutcome(value.join("→"), isOrderingAnswerCorrect(question, value), { kind: "ordering", selected: [...value] });
   }, [questionId, question, ordering, revealed, recordOutcome]);
 
   // Pure-reader path: reveal the answer without committing/recording.
   const revealOnly = React.useCallback(() => {
     if (revealed) return;
+    if (question) pet.reveal(question);
     setSelected(undefined);
     setPicked([]);
     setNumericSelected(undefined);
     setOrderedSelected(undefined);
     setRevealed(true);
-  }, [revealed]);
+  }, [revealed, question, pet]);
 
   // Number-key selection (1–4), mirroring QuizPlayer; ignore when typing in a
   // field so the AI copilot input etc. are unaffected.
@@ -244,7 +250,7 @@ function ScoredQuestionAnswerCard({
     <div data-study-presence-exam={exam} className="space-y-4">
       {question?.acceptedAnswerCombinations && !revealed && (
         <Button disabled={picked.length < 1 || picked.length > requiredSelections}
-          onClick={() => { setRevealed(true); recordOutcome(formatSelection(picked), isCompleteSelectionCorrect(answerKey, picked, requiredSelections, question.acceptedAnswerCombinations)); }}>
+          onClick={() => { setRevealed(true); recordOutcome(formatSelection(picked), isCompleteSelectionCorrect(answerKey, picked, requiredSelections, question.acceptedAnswerCombinations), { kind: "multiple-choice", selected: [...picked] }); }}>
           回答を確定
         </Button>
       )}
@@ -371,6 +377,7 @@ function ScoredQuestionAnswerCard({
           focusRequest={{ sequence: copilotRequest?.questionId === question.id ? copilotRequest.sequence : 0, prompt: copilotRequest?.prompt }}
         />
       )}
+      {question && <LearningPetCorner qualificationId={question.exam} questionId={question.id} />}
     </div>
   );
 }

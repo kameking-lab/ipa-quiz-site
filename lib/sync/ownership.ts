@@ -38,8 +38,8 @@ export function readOwnership(userId: string): OwnershipState {
   }
 }
 
-export async function readSyncAccount(): Promise<SyncAccount | null> {
-  const response = await fetch("/api/auth/session", { cache: "no-store", credentials: "same-origin" });
+export async function readSyncAccount(signal?: AbortSignal): Promise<SyncAccount | null> {
+  const response = await fetch("/api/auth/session", { cache: "no-store", credentials: "same-origin", ...(signal ? { signal } : {}) });
   if (!response.ok) throw new Error("session_unavailable");
   const value: unknown = await response.json();
   if (!value || typeof value !== "object") throw new Error("invalid_session");

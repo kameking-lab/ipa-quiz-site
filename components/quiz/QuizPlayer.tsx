@@ -18,7 +18,7 @@ import { PracticeLoading } from "./PracticeTransition";
 import { ChihuahuaMascot } from "@/components/ChihuahuaMascot";
 import { StudyRewardCorner } from "@/components/home/StudyRewardCorner";
 import { recordStudyReward } from "@/lib/study-reward";
-import { submitPetLearning } from "@/components/pet/submitPetLearning";
+import { usePetLearning } from "@/components/pet/usePetLearning";
 import type { PetLearningSubmission } from "@/lib/pet/client/learning-submission-contracts";
 import { QuestionCard } from "./QuestionCard";
 import { DescriptiveAnswerCard } from "./DescriptiveAnswerCard";
@@ -34,7 +34,6 @@ import { CopilotInline } from "@/components/copilot/CopilotPanel";
 import { createHistoryStore } from "@/lib/storage/history";
 import { writeLastQuestion } from "@/lib/storage/last-question";
 
-import { recordReview } from "@/lib/learning/spaced-repetition";
 import { Button } from "@/components/ui/button";
 import { ArrowLeft, Timer, Share2, Check, Copy, Sparkles, Star, ArrowRight, BookOpen } from "lucide-react";
 import { examLabel } from "@/lib/utils";
@@ -104,6 +103,7 @@ function ScoredQuizPlayer({
   relatedQuestions,
   onRelated,
 }: Props) {
+  const pet = usePetLearning();
   const router = useRouter();
   const history = React.useMemo(() => createHistoryStore(), []);
   const [selected, setSelected] = React.useState<ChoiceKey | undefined>(undefined);
@@ -136,6 +136,23 @@ function ScoredQuizPlayer({
     const id = question.id;
     return onBrowserIdle(() => setPreparedExplanationId(id));
   }, [question?.id, question?.type]);
+
+  React.useEffect(() => {
+    if (!revealed) return;
+    let frame = 0, attempts = 0;
+    // Touch/reduced-motion can ignore the first focus while a prepared result
+    // becomes visible. Retry after paint only if focus was lost to the body;
+    // never steal it from a learner who already chose another action.
+    // Chromium may keep the formerly invisible result hidden for another
+    // style/transition frame in reduced motion. Retry for a bounded interval.
+    const recover = () => {
+      if (document.activeElement !== document.body) return;
+      answerResultRef.current?.focus({ preventScroll: true });
+      if (document.activeElement === document.body && ++attempts < 8) frame = requestAnimationFrame(recover);
+    };
+    frame = requestAnimationFrame(() => { frame = requestAnimationFrame(recover); });
+    return () => cancelAnimationFrame(frame);
+  }, [revealed, question?.id]);
 
   React.useEffect(() => {
     motivationSettingsRef.current = readMotivationSettings();
@@ -195,8 +212,6 @@ function ScoredQuizPlayer({
   const commitAnswer = React.useCallback(
     (selection: string, correct: boolean, petAnswer: Extract<PetLearningSubmission, { source: "question" }>["answer"], nativeBResult?: NativeBGrade) => {
       if (!question || isReferenceOnlyQuestionId(question.id)) return;
-      // Explicit input only: grade, owner and timestamps are never reward authority.
-      submitPetLearning({ source: "question", questionId: question.id, answer: petAnswer }, { source: "question", question });
       setRevealed(true);
       requestAnimationFrame(() => {
         answerResultRef.current?.focus({ preventScroll: true });
@@ -230,7 +245,7 @@ function ScoredQuizPlayer({
         at: now,
       });
       recordStudyOnDate();
-      recordReview(question.id, correct);
+      pet.record(question, petAnswer, correct);
       setStats((s) => {
         const next = { answered: s.answered + 1, correct: s.correct + (correct ? 1 : 0) };
         const allStats = history.getStats();
@@ -258,7 +273,7 @@ function ScoredQuizPlayer({
         }
       }
     },
-    [question, history, combo, pendingAchievement],
+    [question, history, combo, pendingAchievement, pet],
   );
 
   const onNativeBAnswer = React.useCallback((selections: NativeBSelections) => {
@@ -524,7 +539,7 @@ function ScoredQuizPlayer({
 
       <div className="flex flex-1">
         <main
-          className="flex-1 px-3 pb-32 pt-4 sm:px-6"
+          className="min-w-0 w-full flex-1 px-3 pb-32 pt-4 sm:px-6"
           onTouchStart={onTouchStart}
           onTouchEnd={onTouchEnd}
         >
@@ -585,7 +600,6 @@ function ScoredQuizPlayer({
                 : ""}
             </div>
 
-            <StudyRewardCorner scope={`quiz:${question.exam}`} questionId={question.id} answered={revealed} />
             <CopilotInline
               question={question}
               selectedChoice={selectionLabel}
@@ -638,6 +652,7 @@ function ScoredQuizPlayer({
             {showKeyboardHelp && (
               <KeyboardShortcutHelp onClose={() => setShowKeyboardHelp(false)} />
             )}
+            <StudyRewardCorner scope={`quiz:${question.exam}`} questionId={question.id} answered={revealed} />
           </div>
 
         </main>

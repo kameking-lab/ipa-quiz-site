@@ -4,6 +4,8 @@ import { useEffect, useId, useRef, useState, useSyncExternalStore } from "react"
 import { LS_KEYS } from "@/lib/storage/keys";
 import { getStudyReward, subscribeStudyReward, type StudyReward } from "@/lib/study-reward";
 import { StudyReturnLink } from "./StudyReturnLink";
+import { LearningPetCorner } from "@/components/pet/LearningPetCorner";
+import { PET_GENERIC_ART } from "@/lib/pet/v1/art";
 
 const captions = {
   swim: "ぷかぷか、海のひと休み。",
@@ -68,9 +70,9 @@ export function RewardCorner({ reward, showIdle = false, playbackToken = 0, show
       <div className="reward-scene" aria-hidden="true">
         <span className="reward-halo" />
         <span className="reward-spark reward-spark-one" /><span className="reward-spark reward-spark-two" />
-        {/* Fixed 14KB local WebP, also usable in the offline preview without a Next image server. */}
+        {/* Small local WebP in the round study-room style, usable offline without a Next image server. */}
         {/* eslint-disable-next-line @next/next/no-img-element */}
-        <span className="reward-dog"><img src="/mascot/chihuahua-guide.webp" width="144" height="144" alt="" /></span>
+        <span className="reward-dog"><img src={PET_GENERIC_ART.rest} width="144" height="144" alt="" /></span>
         <span className="reward-prop">{theme === "code" ? "⌨" : theme === "coins" ? "¥" : theme === "light" ? "☀" : theme === "swim" ? "〜" : "✿"}</span>
         <span className="reward-water" />
       </div>
@@ -82,6 +84,10 @@ export function RewardCorner({ reward, showIdle = false, playbackToken = 0, show
 
 /** Qualification/question scope prevents a previous answer appearing on another exam. */
 export function StudyRewardCorner({ scope, questionId, showIdle = false, answered = true }: { scope?: string; questionId?: string; showIdle?: boolean; answered?: boolean }) {
+  if (!scope || scope.startsWith("quiz:")) return <LearningPetCorner qualificationId={scope?.slice(5)} questionId={questionId} />;
+  return <LegacyStudyRewardCorner scope={scope} questionId={questionId} showIdle={showIdle} answered={answered} />;
+}
+function LegacyStudyRewardCorner({ scope, questionId, showIdle = false, answered = true }: { scope?: string; questionId?: string; showIdle?: boolean; answered?: boolean }) {
   const latest = useSyncExternalStore(subscribeStudyReward, getStudyReward, () => null);
   const [playbackToken, setPlaybackToken] = useState(0);
   // Only a fresh submission notification can start motion. Restoring/filtering a

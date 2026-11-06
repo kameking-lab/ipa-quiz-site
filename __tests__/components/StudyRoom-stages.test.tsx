@@ -17,11 +17,14 @@ it.each([
   const scene = screen.getByRole("group", { name: "前回取得時点の集計に基づくチワワの自習室" });
   expect(scene).toHaveAttribute("data-stage", String(stage));
   const visible = Math.min(count, 12);
-  // Illustrations stay decorative; the accepted seat controls are outside the scene.
+  // Images expose qualification and illustration state; seat controls stay outside the scene.
   expect(within(scene).queryAllByRole("button")).toHaveLength(0);
   const illustrations = scene.querySelectorAll(".study-room-seat");
   expect(illustrations).toHaveLength(visible);
-  for (const illustration of illustrations) expect(illustration).toHaveAttribute("aria-hidden", "true");
+  for (const illustration of illustrations) {
+    expect(illustration).not.toHaveAttribute("aria-hidden", "true");
+    expect(within(illustration as HTMLElement).getByRole("img")).toHaveAccessibleName(/^基本情報技術者の(?:チワワ（(?:勉強中|あるある：.+)）|空席（椅子と机、開いたままの本）)$/);
+  }
   const seatList = screen.queryByRole("group", { name: "自習室の席を選ぶ" });
   const seats = seatList ? within(seatList).getAllByRole("button") : [];
   expect(seats).toHaveLength(visible);

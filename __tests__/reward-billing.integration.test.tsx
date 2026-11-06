@@ -26,10 +26,17 @@ it.each(["trial", "paid", "refunded"] as const)("reward playback and dismissal p
   // A client preference or reward must never manufacture paid server access.
   localStorage.setItem(LS_KEYS.premium, "true");
   localStorage.setItem(LS_KEYS.history, "preserved-history-sentinel");
-  const scope = `quiz:integration-${state}`, questionId = `question-${state}`;
+  localStorage.setItem(LS_KEYS.petLearning, "preserved-legacy-pet-sentinel");
+  const profiles = () => Object.keys(localStorage).filter(key => key.startsWith(LS_KEYS.petProfilesPrefix)).sort().map(key => [key, localStorage.getItem(key)]);
+  const profilesBefore = profiles();
+  const scope = "quiz:fe", questionId = `question-${state}`;
   render(<StudyRewardCorner scope={scope} questionId={questionId} />);
   act(() => { recordStudyReward({scope,questionId,exam:"fe",label:"基本情報技術者"}); });
-  expect(screen.getByText("1問、回答しました。")).toBeInTheDocument();
+  // Quiz scopes now render the v1 child; the legacy visual notification does
+  // not manufacture learning progress or paid access in that child.
+  expect(screen.queryByText("1問、回答しました。")).not.toBeInTheDocument();
+  fireEvent.click(screen.getByRole("button", {name:"ひと休み"}));
+  expect(screen.getByText("のんびり、ひと休み。")).toBeInTheDocument();
   fireEvent.click(screen.getByRole("button", {name:"動きを止める"}));
   fireEvent.click(screen.getByRole("button", {name:"チワワのひと休みを閉じる"}));
   fireEvent.click(screen.getByRole("button", {name:"チワワのひと休みを開く"}));
@@ -38,4 +45,6 @@ it.each(["trial", "paid", "refunded"] as const)("reward playback and dismissal p
   expect(f.account()).toEqual(before);
   expect(localStorage.getItem(LS_KEYS.premium)).toBe("true");
   expect(localStorage.getItem(LS_KEYS.history)).toBe("preserved-history-sentinel");
+  expect(localStorage.getItem(LS_KEYS.petLearning)).toBe("preserved-legacy-pet-sentinel");
+  expect(profiles()).toEqual(profilesBefore);
 });

@@ -10,6 +10,7 @@ import { measuredPresence, PRESENCE_STATE_EVENT } from "@/lib/study-presence-con
 
 // Reward behavior has its own tests; presence/room tests must not mount its storage lifecycle.
 vi.mock("@/components/home/StudyRewardCorner", () => ({ StudyRewardCorner: () => null }));
+vi.mock("@/components/pet/usePetProfileView", () => ({ usePetProfileView: () => ({ status: "loading", document: null }) }));
 
 const suggestions = [{ name: "基本情報技術者", href: "/exams/fe" }];
 const zero: StudyPresenceSnapshot = {count:0,exams:[]};

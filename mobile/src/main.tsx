@@ -25,6 +25,7 @@ import catalog from "./generated/catalog.json";
 import { QualificationCardActions } from "./QualificationActions";
 import "./native.css";
 import { prepareTrackingPrivacy } from "./tracking";
+import { installNativePetSupport, observePetStudyWrites, persistStudyAfterPets } from "./pet-support";
 const ORIGIN="https://www.kakomon-ai.jp";
 const MaterialReader=lazy(()=>import("./MaterialReader"));
 function App() {
@@ -42,6 +43,7 @@ function App() {
   useEffect(()=>{
     let disposed=false; const disposers:Array<()=>void>=[];
     const keep=(dispose:()=>void)=>{ if(disposed) dispose(); else disposers.push(dispose); };
+    keep(observePetStudyWrites(()=>({ready:readyRef.current,owner:ownerRef.current}),e=>setNotice(String(e))));
     void downloads.list().then(v=>{ if(!disposed) setSaved(v); }).catch(e=>setNotice(String(e)));
     void downloads.rights().then(async r=>{
       const id=await studyOwner(r?.access.userId??null);await restoreStudy(id);
@@ -53,7 +55,7 @@ function App() {
       void observeLogin(ORIGIN,e=>setNotice(String(e))).then(keep);
       void NativeApp.addListener("appStateChange",s=>{
         if(!readyRef.current)return;
-        if(!s.isActive)void persistStudy(ownerRef.current).catch(e=>setNotice(String(e)));
+        if(!s.isActive)void persistStudyAfterPets(ownerRef.current).catch(e=>setNotice(String(e)));
         else void refreshDeviceRights().then(()=>{if(reading.current)return downloads.authorize();}).catch(e=>{setPool([]);setQuestion(null);setLibrary(null);setMaterials([]);setNotice(String(e));});
       }).then(h=>keep(()=>{ void h.remove(); }));
     }
@@ -99,7 +101,7 @@ function App() {
     if(!next.length)throw new Error("条件に合う問題がありません。");
     startSession(mode);setPool(next);setIndex(0);
   }
-  async function openOnline(path="/") { await persistStudy(owner);location.assign(ORIGIN+path); }
+  async function openOnline(path="/") { await persistStudyAfterPets(owner);location.assign(ORIGIN+path); }
   return <>
     <header className="native-shell flex flex-wrap gap-3 border-b"><strong>過去問AI</strong><span>{online?"オンライン":"オフライン"}</span><button onClick={()=>void run(()=>openOnline())}>オンラインの全機能</button><button onClick={()=>{setPool([]);setQuestion(null);setLibrary(null);setMaterials([]);}}>資格目次</button></header>
     {notice&&<p role="status" className="native-shell">{notice}</p>}
@@ -127,6 +129,7 @@ async function start() {
     await Preferences.set({ key: "kakomon:rc-ios-public-key", value: publicSdkKey });
   }
   installLocalApi();
+  installNativePetSupport();
   createRoot(document.getElementById("root")!).render(<App/>);
 }
 void start().catch(() => {
