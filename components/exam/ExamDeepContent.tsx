@@ -5,7 +5,6 @@ import type { ExamCode } from "@/lib/questions/types";
 import { EXAM_DEEP_CONTENT } from "@/lib/seo/exam-content";
 import { examLabel } from "@/lib/utils";
 import { Badge } from "@/components/ui/badge";
-import { getQualificationByExamCode } from "@/lib/qualifications/catalog";
 
 interface Props {
   exam: ExamCode;
@@ -27,9 +26,6 @@ export function ExamDeepLead({ exam }: Props) {
           <h2 className="text-base font-bold tracking-tight text-foreground sm:text-lg">
             {examLabel(exam)} の特色
           </h2>
-          <p className="text-[11px] text-muted-foreground">
-            位置づけ・対象者・実施形式・キャリア接続を整理
-          </p>
         </div>
       </div>
       <p className="text-sm leading-relaxed text-foreground/90">
@@ -55,9 +51,6 @@ export function ExamMainTopics({ exam }: Props) {
           <h2 className="text-base font-bold tracking-tight text-foreground sm:text-lg">
             主要出題分野
           </h2>
-          <p className="text-[11px] text-muted-foreground">
-            公開問題で扱われる学習分野を整理
-          </p>
         </div>
       </div>
       <ul className="grid gap-2 sm:grid-cols-2">
@@ -73,11 +66,6 @@ export function ExamMainTopics({ exam }: Props) {
           </li>
         ))}
       </ul>
-      <p className="mt-3 text-[10px] leading-relaxed text-muted-foreground">
-        {getQualificationByExamCode(exam)
-          ? "主要分野は学習用に編集した目安です。範囲・実施形式・基準日は当該試験実施団体の公式案内を確認してください。"
-          : "主要分野はIPAのシラバス等を参考に編集した目安です。出題頻度の集計ではありません。詳細は公式シラバスを確認してください。"}
-      </p>
     </section>
   );
 }
@@ -98,9 +86,6 @@ export function ExamRelatedExams({ exam }: Props) {
           <h2 className="text-base font-bold tracking-tight text-foreground sm:text-lg">
             関連する試験区分
           </h2>
-          <p className="text-[11px] text-muted-foreground">
-            学習内容や資格の位置付けが関連する試験
-          </p>
         </div>
       </div>
       <ul className="space-y-2">
@@ -119,9 +104,6 @@ export function ExamRelatedExams({ exam }: Props) {
                     {examLabel(r.exam)}
                   </span>
                 </div>
-                <p className="mt-1 text-xs leading-relaxed text-muted-foreground">
-                  {r.reason}
-                </p>
               </div>
               <ArrowRight className="mt-1 h-4 w-4 shrink-0 text-muted-foreground transition-transform group-hover:translate-x-0.5 group-hover:text-primary" />
             </Link>

@@ -1,6 +1,5 @@
 import Link from "next/link";
 import type { ExamEntryCode } from "@/lib/seo/exam-entry";
-import { EXAM_ENTRIES } from "@/lib/seo/exam-entry";
 import type { CategoryItem, YearItem } from "@/components/exam/ExamBrowseTabs";
 import { isMockExamCode } from "@/lib/mock-exam/config";
 
@@ -31,8 +30,7 @@ export function ExamTopBrowse({ exam, years, categories }: {
   return (
     <div className="mb-8 space-y-6">
       <section id="years" aria-labelledby="years-heading" className="scroll-mt-20">
-        <h2 id="years-heading" className="text-base font-bold">年度別の過去問</h2>
-        <p className="mb-3 mt-1 text-xs text-muted-foreground">{EXAM_ENTRIES[exam].scope}の収録済み問題。期ごとの収録範囲を確認して選べます。</p>
+        <h2 id="years-heading" className="mb-3 text-base font-bold">年度別の過去問</h2>
         <ul className="grid gap-2 sm:grid-cols-2">{years.slice(0, 4).map(yearLink)}</ul>
         {years.length > 4 && <details className="mt-3 rounded-xl border border-border">
           <summary className="min-h-11 cursor-pointer px-3 py-3 text-sm font-medium focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring">以前の年度も見る（残り{years.length - 4}期）</summary>
@@ -40,8 +38,7 @@ export function ExamTopBrowse({ exam, years, categories }: {
         </details>}
       </section>
       <section id="topics" aria-labelledby="topics-heading" className="scroll-mt-20">
-        <h2 id="topics-heading" className="text-base font-bold">分野別の過去問</h2>
-        <p className="mb-3 mt-1 text-xs text-muted-foreground">苦手な分野に絞って正答と解説を確認。分野名の横は収録問題数です。</p>
+        <h2 id="topics-heading" className="mb-3 text-base font-bold">分野別の過去問</h2>
         <ul className="grid gap-2 sm:grid-cols-2">{categories.slice(0, 4).map(categoryLink)}</ul>
         {categories.length > 4 && <details className="mt-3 rounded-xl border border-border">
           <summary className="min-h-11 cursor-pointer px-3 py-3 text-sm font-medium focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring">すべての分野を見る（全{categories.length}分野）</summary>
