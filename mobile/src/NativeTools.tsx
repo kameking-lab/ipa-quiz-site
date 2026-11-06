@@ -18,6 +18,7 @@ import { NativePageQualificationActions } from "./QualificationActions";
 import { isQualificationUrl } from "../shared/qualification-schedules";
 import { openQualificationUrl } from "./qualification-platform";
 import { ManageSubscriptionButton } from "@/app/billing/ManageSubscriptionButton";
+import { PrivacyNote } from "@/components/ui/privacy-note";
 import { blocksNativeWebPurchase } from "../shared/native-billing-policy";
 const defaultMembership = new Membership();
 export const SITE_ORIGIN = "https://www.kakomon-ai.jp";
@@ -133,7 +134,7 @@ export function NativeTools({ membershipOnly = false, membership = defaultMember
             await Preferences.set({key:`kakomon:pending-purchase:${r.entitlement.userId}`,value:"true"});setPurchasePending(true);
           });const confirmed=await refresh(true);
           setNotice(confirmed.entitlement.entitled?"購入を確認しました。有料会員の機能を利用できます。":"購入内容の確認待ちです。再購入せず、購入復元または会員状態の再確認をご利用ください。");
-        })}>{offer.product.priceString} / 月で登録</button></div>}
+        })}>{offer.product.priceString} / 月で登録</button><PrivacyNote variant="purchase" /></div>}
         {!access.entitled && access.userId && !offer && <p>商品情報を取得できていません。設定と通信を確認してください。</p>}
         <div className="flex gap-4"><button disabled={busy || !access.userId || !config?.sdkKey} onClick={()=>void run(async()=>{ const r=await refresh(true); await membership.restore(r.configuration,r.entitlement); const confirmed=await refresh(true); setNotice(confirmed.entitlement.entitled?"購入を復元し、サーバーで権利を確認しました。":"有効な購入をサーバーで確認できませんでした。購入に使用したApple IDとログイン中のアカウントをご確認ください。承認待ちの場合は、承認後に再確認してください。"); })}>購入を復元</button>
           <button onClick={()=>void Browser.open({ url:"https://apps.apple.com/account/subscriptions" })}>App Storeで管理・解約</button></div>

@@ -2,6 +2,7 @@
 import { readQuizReturn, safeQuizReturn, saveQuizReturn } from "@/lib/billing/quiz-return";
 import { useRef, useState } from "react";
 import { posthogCapture } from "@/lib/posthog";
+import { PrivacyNote } from "@/components/ui/privacy-note";
 export function CheckoutButton({ terms, amount, enabled, testMode = true, recurring = false }: { terms: string; amount: number; enabled: boolean; testMode?: boolean; recurring?: boolean }) {
   const [busy, setBusy] = useState(false);
   const submitting = useRef(false);
@@ -33,6 +34,7 @@ export function CheckoutButton({ terms, amount, enabled, testMode = true, recurr
       {busy ? "決済画面を開いています…" : testMode ? "同意してテスト決済へ" : "同意して決済へ進む"}
     </button>
     <p id="checkout-next" className="text-xs text-muted-foreground">{testMode && "実際の請求はありません。"}次の画面で{recurring ? "月額" : ""}{amount.toLocaleString("ja-JP")}円（税込）の支払いを確定します。確定前に戻れます。</p>
+    <PrivacyNote variant="purchase" />
     {error && <p role="alert" className="text-sm">{error}</p>}
   </div>;
 }

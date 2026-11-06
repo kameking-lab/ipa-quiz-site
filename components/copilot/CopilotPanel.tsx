@@ -78,6 +78,7 @@ import { AiAccessNotice, useAiAccessNotice } from "@/components/ai/AiAccessNotic
 import { aiPolicyDenialMessage } from "@/lib/ai/access-client";
 import { copilotRestriction, type CopilotRestriction } from "./restriction-copy";
 import { usePinnedQuickActions } from "@/lib/copilot/pinned-actions";
+import { PrivacyNote } from "@/components/ui/privacy-note";
 
 interface Message {
   role: "user" | "assistant";
@@ -894,7 +895,7 @@ export function CopilotPanel({
           </Button>
         )}
       </form>
-
+      <PrivacyNote variant="ai" className="px-3 pb-2" />
     </>
   );
 

@@ -6,6 +6,7 @@ import { ThumbsUp, AlertCircle, Flag, Check } from "lucide-react";
 import { readQuestionReportContext, questionReportContextLines, type QuestionReportContext } from "@/lib/feedback/question-report-context";
 import { LS_KEYS } from "@/lib/storage/keys";
 import { submitSupport } from "@/lib/feedback/submit";
+import { PrivacyNote } from "@/components/ui/privacy-note";
 import { readLocalFeedback } from "@/lib/feedback/local-data";
 
 type Rating = "helpful" | "unclear" | "report";
@@ -203,6 +204,7 @@ function QuestionFeedbackForm({ questionId, context }: { questionId: string; con
               コメントなしで送信
             </button>
           </div>
+          <PrivacyNote variant="message" />
         </div>
       )}
     </div>
