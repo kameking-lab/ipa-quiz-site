@@ -35,7 +35,6 @@ import { createHistoryStore } from "@/lib/storage/history";
 import { writeLastQuestion } from "@/lib/storage/last-question";
 
 import { recordReview } from "@/lib/learning/spaced-repetition";
-import { LS_KEYS } from "@/lib/storage/keys";
 import { Button } from "@/components/ui/button";
 import { ArrowLeft, Timer, Share2, Check, Copy, Sparkles, Star, ArrowRight, BookOpen } from "lucide-react";
 import { examLabel } from "@/lib/utils";
@@ -53,7 +52,6 @@ import { onBrowserIdle } from "@/lib/performance/browser-idle";
 // Static answer/explanation UI and the AI copilot keep their existing path.
 const FireworksBurst = dynamic(() => import("@/components/motivation/FireworksBurst").then(module => module.FireworksBurst), { ssr: false });
 const ComboCounter = dynamic(() => import("@/components/motivation/ComboCounter").then(module => module.ComboCounter), { ssr: false });
-const QuestionCommentBox = dynamic(() => import("./QuestionCommentBox").then(module => module.QuestionCommentBox), { ssr: false });
 const AchievementToast = dynamic(() => import("@/components/motivation/AchievementToast").then(module => module.AchievementToast), { ssr: false });
 
 export function quizModeLabel(mode: string): string {
@@ -125,7 +123,6 @@ function ScoredQuizPlayer({
   const [copilotQuery, setCopilotQuery] = React.useState<"why-wrong" | "open" | null>(null);
   const [starred, setStarred] = React.useState(false);
   const [stats, setStats] = React.useState({ answered: 0, correct: 0 });
-  const [showSwipeHint, setShowSwipeHint] = React.useState(false);
   const [showKeyboardHelp, setShowKeyboardHelp] = React.useState(false);
   const [elapsed, setElapsed] = React.useState(0);
   const [combo, setCombo] = React.useState(0);
@@ -142,12 +139,7 @@ function ScoredQuizPlayer({
 
   React.useEffect(() => {
     motivationSettingsRef.current = readMotivationSettings();
-    const alreadyShown = localStorage.getItem(LS_KEYS.swipeHintShown) === "true";
-    if (!quiet && !alreadyShown) {
-      setShowSwipeHint(true);
-      localStorage.setItem(LS_KEYS.swipeHintShown, "true");
-    }
-  }, [quiet]);
+  }, []);
 
   // 最初の問題がロードされた瞬間に quiz_started を一度だけ送信
   React.useEffect(() => {
@@ -189,7 +181,6 @@ function ScoredQuizPlayer({
     revealed,
     question?.id ?? "",
   );
-  const choiceCount = getChoiceKeys(question?.choices).length;
 
   const goNext = React.useCallback(() => {
     setCopilotQuery(null);
@@ -629,35 +620,21 @@ function ScoredQuizPlayer({
                     </button>
                     {showRelated && (
                       <div className="space-y-2">
-                        <p className="text-xs text-muted-foreground">{question.category}・選ぶとこの画面で続けて解けます。</p>
                         {relatedQuestions?.length ? relatedQuestions.map((item) => (
                           <button key={item.id} type="button" onClick={() => onRelated(item)} className="block min-h-11 w-full rounded-xl border border-border p-3 text-left text-sm hover:bg-muted">
                             <span className="block text-xs text-muted-foreground">{item.year}年 問{item.qNumber}</span>
                             <span className="line-clamp-2">{item.question}</span>
                           </button>
-                        )) : <p role="status" className="py-2 text-sm text-muted-foreground">{relatedQuestions ? "この科目の関連問題はありません。次の問題へ進めます。" : "関連問題を取得中です。次の問題へ進むこともできます。"}</p>}
+                        )) : <p role="status" className="py-2 text-sm text-muted-foreground">{relatedQuestions ? "関連問題はありません" : "読み込み中…"}</p>}
                       </div>
                     )}
                   </section>
                 )}
-                <Button asChild variant="outline" className="w-full sm:w-auto">
-                  <Link href={questionPagePath(question)}>公開解説・誤り報告を開く</Link>
-                </Button>
-                <QuestionCommentBox questionId={question.id} />
+                <Link href={`${questionPagePath(question)}#explanation`} className="inline-flex min-h-11 items-center text-xs text-muted-foreground underline underline-offset-4 hover:text-foreground">誤りを報告</Link>
                 </>}
               </div>
             )}
 
-            <div className="mt-4 hidden rounded-xl bg-zinc-100 p-3 text-xs text-zinc-500 sm:[@media(hover:hover)_and_(pointer:fine)]:block dark:bg-zinc-900 dark:text-zinc-400">
-              {revealed
-                ? "Enter / → で次の問題へ / R でスター / ? でヘルプ"
-                : native ? "五つの枠を選んで「回答を採点する」で解答 / R でスター / ? でヘルプ" : ordering ? "各位置を選んで採点する / R でスター / ? でヘルプ" : numeric ? "数値を入力し、Enter または「採点する」で解答 / R でスター / ? でヘルプ" : `キーボード: ${choiceCount <= 9 ? `1〜${choiceCount}` : choiceCount === 10 ? "1〜9・0" : "1〜9・0（先頭10肢）"} で選択 / R でスター / ? でヘルプ`}
-            </div>
-            {!quiet && !revealed && showSwipeHint && (
-              <div className="mt-4 rounded-xl bg-sky-50 p-3 text-xs text-sky-700 [@media(hover:hover)_and_(pointer:fine)]:hidden dark:bg-sky-950/30 dark:text-sky-300">
-                解答後、左スワイプで次の問題へ進めます
-              </div>
-            )}
             {showKeyboardHelp && (
               <KeyboardShortcutHelp onClose={() => setShowKeyboardHelp(false)} />
             )}
@@ -677,7 +654,6 @@ function ScoredQuizPlayer({
             <Button variant="outline" className="min-h-12 px-2 text-xs sm:text-sm" aria-pressed={starred} onClick={toggleStar}><Star className="h-4 w-4" aria-hidden="true" fill={starred ? "currentColor" : "none"} />{starred ? "復習登録済み" : "復習に登録"}</Button>
             <Button className="min-h-12 px-2 text-xs sm:text-sm" onClick={goNext}>{index + 1 >= total ? "学習結果へ" : "次の1問"}<ArrowRight className="h-4 w-4" aria-hidden="true" /></Button>
           </div>
-          <p role="status" className="mx-auto mt-1 max-w-2xl text-center text-xs text-muted-foreground">{starred ? "復習に登録しました。「あとで復習」から解き直せます。" : "解説を読んだら、関連問題か次の1問へ。"}</p>
         </nav>
       )}
 

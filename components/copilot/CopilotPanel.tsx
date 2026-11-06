@@ -799,15 +799,13 @@ export function CopilotPanel({
     <>
       {!online && (
         <p role="status" className="px-3 py-2 text-sm text-amber-800 dark:text-amber-200">
-          オフラインのためAIに接続できません。入力はこの画面に残ります。通信が戻ってから、ご自身で送信してください。自動では再送しません。
+          オフラインのためAIに接続できません。
         </p>
       )}
       {restriction && (
         <aside aria-label="AIの利用制限" className="space-y-1 px-3 py-2 text-sm text-amber-800 dark:text-amber-200">
           <p role="status">{restriction.reason} {restriction.resume}</p>
-          <p>待っている間も、表示中の問題・選択肢・掲載解説で無料の復習を続けられます。</p>
-          {restriction.sharedNetwork && <p>学校・職場などの共有回線では、ほかの利用者の送信が影響する場合があります。身に覚えのない制限が続く場合はお問い合わせください。</p>}
-          <a href="/contact" target="_blank" rel="noopener noreferrer" className="inline-block min-h-11 py-2 underline">制限について問い合わせる（新しいタブ）</a>
+          <a href="/contact" target="_blank" rel="noopener noreferrer" className="inline-block min-h-11 py-2 underline">問い合わせ</a>
         </aside>
       )}
       <AiAccessNotice message={aiAccessMessage} />
@@ -834,7 +832,7 @@ export function CopilotPanel({
           placeholder={
             voiceState === "listening"
               ? "話してください…"
-              : "AIに質問… (Enter 送信 / Shift+Enter 改行)"
+              : "AIに質問…"
           }
           className="min-w-0 min-h-[44px] flex-1 resize-none rounded-xl border border-zinc-300 bg-white px-3 py-2 text-base placeholder:text-zinc-400 focus:outline-none focus:ring-2 focus:ring-sky-500 dark:border-zinc-700 dark:bg-zinc-900 dark:placeholder:text-zinc-600 sm:text-sm"
         />
@@ -982,7 +980,6 @@ export function CopilotPanel({
       {/* Response length toggle */}
       <div className="border-b border-zinc-200 px-3 pt-2.5 pb-2 dark:border-zinc-800">
         <div className="flex items-center gap-2">
-          <span className="text-[11px] text-zinc-500 dark:text-zinc-400">回答の長さ（目安）</span>
           <div
             role="group"
             aria-label="回答の長さ（目安）"
@@ -1005,9 +1002,6 @@ export function CopilotPanel({
               </button>
             ))}
           </div>
-          {responseLength === "short" && (
-            <span className="text-[10px] text-zinc-400 dark:text-zinc-500">30秒解説モード</span>
-          )}
         </div>
       </div>
 
@@ -1015,10 +1009,6 @@ export function CopilotPanel({
 
       {/* Quick actions */}
       <div className="border-b border-zinc-200 p-3 dark:border-zinc-800">
-        <div className="mb-2 flex items-center justify-between">
-          <span className="text-xs text-zinc-500 dark:text-zinc-400">クイックアクション</span>
-          <span className="text-[10px] text-zinc-400 dark:text-zinc-500">連続利用には制限があります</span>
-        </div>
         <>
             <div
               id="copilot-quickactions-list"
@@ -1116,14 +1106,7 @@ export function CopilotPanel({
         aria-label="AI コパイロットの応答"
       >
         {messages.length === 0 && (
-          <div className="space-y-2.5">
-            <div className="rounded-xl border border-dashed border-zinc-300 p-4 text-xs text-zinc-500 dark:border-zinc-700 dark:text-zinc-400">
-              送信時に、この問題の文脈をAIへ渡します。分からないところを聞いたり、上のボタンでサッと深掘りできます。
-            </div>
-            <div className="rounded-xl border border-sky-200 bg-sky-50/50 p-3 dark:border-sky-900/50 dark:bg-sky-950/20">
-              <p className="mb-2 text-[11px] font-semibold text-sky-700 dark:text-sky-300">
-                こんな質問ができます
-              </p>
+          <div>
               <ul
                 aria-label="質問例"
                 className="flex flex-wrap gap-1.5"
@@ -1146,10 +1129,6 @@ export function CopilotPanel({
                   </li>
                 ))}
               </ul>
-              <p className="mt-2 text-[10px] text-zinc-500 dark:text-zinc-400">
-                ※ クリックで入力欄にプリセット。自由に編集して送信できます。
-              </p>
-            </div>
           </div>
         )}
         {messages.map((m, i) => (
@@ -1291,12 +1270,10 @@ export function CopilotPanel({
         </div>
       )}
 
-      {/* AI disclaimer */}
-      {messages.some((m) => m.role === "assistant") && (
+      {/* Cross-check against the site's per-choice explanations */}
+      {messages.some((m) => m.role === "assistant") && selectedChoice && question.type !== "ordering" && question.choices && question.choiceExplanations && (
         <div className="mx-3 mb-2 rounded-xl border border-zinc-200 bg-zinc-50 p-3 text-sm leading-7 text-zinc-700 dark:border-zinc-700 dark:bg-zinc-900 dark:text-zinc-200">
-          <p>※ AI の回答とサイト掲載の解説は誤りを含む可能性があります。重要な判断は受験する資格の公式資料でご確認ください。</p>
-          {selectedChoice && question.type !== "ordering" && question.choices && question.choiceExplanations && (
-            <details className="mt-1">
+            <details>
               <summary className="cursor-pointer font-medium underline underline-offset-2">サイト掲載の選択肢別解説と照合</summary>
               <ul className="mt-1 space-y-1 pl-3">
                 {getChoiceKeys(question.choices)
@@ -1314,7 +1291,6 @@ export function CopilotPanel({
                 </a>
               )}
             </details>
-          )}
         </div>
       )}
 
