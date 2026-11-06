@@ -31,7 +31,7 @@ export function HomeResume({ domains }: { domains: readonly HomeDirectoryDomain[
     }).catch(() => {});
     return () => controller.abort();
   }, [domains]);
-  if (!resume) return <div className="study-resume-empty">受ける資格を選んで、年度・科目から始める。</div>;
+  if (!resume) return null;
   return <section aria-labelledby="resume-title" className="study-resume">
     <p className="study-kicker">前回のページから</p>
     <div className="study-resume-row"><div className="min-w-0"><h2 id="resume-title">{resume.name}</h2><p className="study-caption">{resume.caption} · この回の収録 {resume.total}問</p></div><a href={resume.href} className="study-primary">続きを開く<ArrowRight aria-hidden="true" className="h-4 w-4" /></a></div>

@@ -31,17 +31,12 @@ it.each([
     expect(seat).toHaveAttribute("aria-controls", "study-room-selection");
     expect(seat).toHaveAttribute("aria-pressed", "false");
   });
-  const foot = container.querySelector(".study-room-foot")!;
-  expect(foot).toHaveTextContent(`イラスト ${visible}体`);
-  expect(foot).toHaveTextContent(`全${count}人の集計を一部イラストで表示`);
-  if (count > visible) expect(foot).toHaveTextContent(`ほか ${count - visible}人`);
-  else expect(foot).not.toHaveTextContent("ほか");
   expect(container.querySelector(".study-room-total")).toHaveTextContent(`${count}人`);
   if (count) {
     const counts = screen.getByRole("list", { name: "資格別の学習人数" });
-    expect(within(counts).getByRole("listitem")).toHaveTextContent(`${count}人が${presenceExamName("fe")}を学習しました。`);
+    expect(within(counts).getByRole("listitem")).toHaveTextContent(`${presenceExamName("fe")} ${count}人`);
   } else {
     expect(screen.queryByRole("list", { name: "資格別の学習人数" })).not.toBeInTheDocument();
-    expect(screen.getByText("前回取得時点の直近5分の学習人数は0人です。")).toBeInTheDocument();
+    expect(screen.getByRole("link", { name: "資格から問題を探す" })).toHaveAttribute("href", "#home-directory-title");
   }
 });

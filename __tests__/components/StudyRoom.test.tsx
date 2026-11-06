@@ -13,7 +13,7 @@ it("expands one room, delays shrinking and resets on unavailable snapshot", () =
   rerender(<StudyRoom snapshot={snapshot(100)} suggestions={[]} />);
   expect(scene()).toHaveAttribute("data-stage", "4");
   expect(container.querySelectorAll(".study-room-seat")).toHaveLength(12);
-  expect(screen.getByText(/ほか 88人/)).toBeInTheDocument();
+  expect(container.querySelector(".study-room-total")).toHaveTextContent("100人");
   rerender(<StudyRoom snapshot={snapshot(1)} suggestions={[]} />);
   expect(scene()).toHaveAttribute("data-stage", "4");
   act(() => vi.advanceTimersByTime(60_000));

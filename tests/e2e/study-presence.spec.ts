@@ -3,7 +3,6 @@ import type { PresenceViewState } from "../../lib/study-presence-contract";
 import type { StudyPresenceSnapshot } from "../../lib/study-presence";
 
 // Explicit synthetic UI fixtures: no heartbeat or production learner is recorded.
-const fallbackLabel = "資格紹介";
 type MeasuredState = Extract<PresenceViewState, { mode: "measured" }>;
 test.use({ serviceWorkers: "block" });
 test.beforeEach(async ({ page }) => {
@@ -35,7 +34,6 @@ async function expectBounded(page: Page) {
 }
 async function expectGuidance(page: Page) {
   const guidance = page.getByRole("region", { name: "学習のご案内" });
-  await expect(guidance.getByText(fallbackLabel, { exact: true })).toBeVisible();
   await expect(guidance.getByRole("link", { name: "ほかの資格を探す", exact: true })).toHaveAttribute("href", "#choose-qualification");
   const suggestions = guidance.locator(".study-room-guidance li a");
   await expect(suggestions).toHaveCount(6);
@@ -61,11 +59,10 @@ test("qualification presence is compact on desktop and mobile and distinguishes 
     await show(page, fresh);
     const region = page.getByRole("region", { name: "前回取得時点の学習状況" });
     await expect(region.getByRole("list", { name: "資格別の学習人数" }).getByRole("listitem")).toHaveText([
-      "前回取得時点の直近5分に3人が基本情報技術者を学習しました。", "前回取得時点の直近5分に1人が第二種電気工事士を学習しました。",
+      "基本情報技術者 3人", "第二種電気工事士 1人",
     ]);
     await expect(region.locator(".study-room-total")).toHaveText("4人");
     await expect(region.locator("time")).toHaveAttribute("datetime", fresh.snapshot.measuredAt);
-    await expect(region.getByText("学習者数は1時間ごとに取得します。リアルタイム表示ではありません。席と人数は前回取得時点の集計です。", { exact: true })).toBeVisible();
     const seats = region.getByRole("group", { name: "自習室の席を選ぶ", exact: true }).getByRole("button");
     await expect(seats).toHaveCount(4);
     for (const [index, name] of ["基本情報技術者", "基本情報技術者", "基本情報技術者", "第二種電気工事士"].entries()) {
@@ -75,13 +72,11 @@ test("qualification presence is compact on desktop and mobile and distinguishes 
     const scene = region.getByRole("group", { name: "前回取得時点の集計に基づくチワワの自習室", exact: true });
     await expect(scene.getByRole("button")).toHaveCount(0);
     await expect(scene.locator('.study-room-seat[aria-hidden="true"]')).toHaveCount(4);
-    await expect(region.getByText("同じブラウザは1人として集計", { exact: true })).toBeVisible();
-    await expect(region.getByText(fallbackLabel, { exact: true })).toHaveCount(0);
+    await expect(region.getByRole("link", { name: "ほかの資格を探す", exact: true })).toHaveCount(0);
     await expect(region.getByText(/直近2分/)).toHaveCount(0);
     await expectBounded(page);
 
     await show(page, await measured(page, { count: 0, exams: [] }));
-    await expect(region.getByText("前回取得時点の直近5分の学習人数は0人です。", { exact: true })).toBeVisible();
     await expect(region.locator(".study-room-total")).toHaveText("0人");
     const emptyRoom = region.getByRole("group", { name: "前回取得時点の集計に基づくチワワの自習室", exact: true });
     await expect(emptyRoom).toBeVisible();
@@ -89,7 +84,7 @@ test("qualification presence is compact on desktop and mobile and distinguishes 
     await expect(emptyRoom.locator(".study-mascot")).toHaveCount(0);
     await expect(region.getByRole("group", { name: "自習室の席を選ぶ", exact: true })).toHaveCount(0);
     await expect(region.getByRole("region", { name: "チワワと、ひと休み。", exact: true }).getByRole("button", { name: "チワワのひと休みを閉じる", exact: true })).toBeVisible();
-    await expect(region.getByText(fallbackLabel, { exact: true })).toHaveCount(0);
+    await expect(region.getByRole("link", { name: "ほかの資格を探す", exact: true })).toHaveCount(0);
     await expect(region.getByRole("link", { name: "資格から問題を探す", exact: true })).toBeVisible();
     await expect(region.getByRole("link", { name: "資格を選んで1問始める", exact: true })).toHaveCount(2);
     await expect(region.getByRole("link")).toHaveCount(9);
@@ -98,7 +93,6 @@ test("qualification presence is compact on desktop and mobile and distinguishes 
     await show(page, { mode: "stale", snapshot: null, previous: fresh.snapshot, reason: "unavailable" });
     await expect(region.locator(".study-room-total")).toHaveText("4人");
     await expect(region.locator("time")).toHaveAttribute("datetime", fresh.snapshot.measuredAt);
-    await expect(region.getByText("学習者数は1時間ごとに取得します。リアルタイム表示ではありません。席と人数は前回取得時点の集計です。", { exact: true })).toBeVisible();
     await expectBounded(page);
     await show(page, { mode: "promotion", snapshot: null, previous: null, reason: "unavailable" });
     await expectGuidance(page);
@@ -114,7 +108,6 @@ test("qualification presence is compact on desktop and mobile and distinguishes 
   const historical = page.getByRole("region", { name: "前回取得時点の学習状況" });
   await expect(historical.locator(".study-room-total")).toHaveText("4人");
   await expect(historical.locator("time")).toHaveAttribute("datetime", cached.snapshot.measuredAt);
-  await expect(historical.getByText("学習者数は1時間ごとに取得します。リアルタイム表示ではありません。席と人数は前回取得時点の集計です。", { exact: true })).toBeVisible();
   await show(page, { mode: "stale", snapshot: null, previous: cached.snapshot, reason: "expired" });
   await expect(historical.locator("time")).toHaveAttribute("datetime", cached.snapshot.measuredAt);
   await expect(historical.locator(".study-room-total")).toHaveText("4人");
@@ -150,7 +143,7 @@ test("many qualifications stay within a keyboard-scrollable small list", async (
   const list = page.getByRole("list", { name: "資格別の学習人数" });
   await expect(list.getByRole("listitem")).toHaveCount(codes.length);
   await expect(list.getByRole("listitem")).toHaveText(expectedOrder.map(row =>
-    `前回取得時点の直近5分に1人が${row.name}を学習しました。`));
+    `${row.name} 1人`));
   await expect(region.locator(".study-room-total")).toHaveText("15人");
   expect((await list.boundingBox())?.height).toBeLessThanOrEqual(220);
   await expect(list).toHaveAttribute("tabindex", "0");
@@ -177,8 +170,6 @@ test("many qualifications stay within a keyboard-scrollable small list", async (
   await expect(scene.getByRole("button")).toHaveCount(0);
   await expect(scene.locator('.study-room-seat[aria-hidden="true"]')).toHaveCount(12);
   await expect(scene).toHaveAttribute("data-stage", "2");
-  await expect(region.getByText("イラスト 12体・ほか 3人", { exact: true })).toBeVisible();
-  await expect(region.getByText("全15人の集計を一部イラストで表示", { exact: true })).toBeVisible();
   await expect(region.getByRole("navigation", { name: "自習室の部屋を選ぶ" })).toHaveCount(0);
   await expect(region.getByRole("button", { name: "次の部屋", exact: true })).toHaveCount(0);
   const scroll = region.getByLabel("広がる自習室。横にスクロールできます", { exact: true });
