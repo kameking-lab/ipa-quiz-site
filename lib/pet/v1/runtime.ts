@@ -32,10 +32,8 @@ function readPetAccount() {
   if (pendingAccount) return pendingAccount;
   const controller = new AbortController();
   const timeout = setTimeout(() => controller.abort(), 5000);
-  const request = (async () => {
-    try { return await readSyncAccount(controller.signal); }
-    finally { clearTimeout(timeout); if (pendingAccount === request) pendingAccount = null; }
-  })();
+  const request: ReturnType<typeof readSyncAccount> = Promise.resolve().then(() => readSyncAccount(controller.signal))
+    .finally(() => { clearTimeout(timeout); if (pendingAccount === request) pendingAccount = null; });
   pendingAccount = request;
   return request;
 }

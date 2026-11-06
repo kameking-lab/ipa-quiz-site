@@ -1,12 +1,12 @@
 import { expect, it, vi } from "vitest";
-import { createPetSubmissionSequence, browserPetSubmissions, petSubmissionPaintDelay, flushPetSubmissions } from "@/lib/pet/v1/submission-order";
+import { createPetSubmissionSequence, browserPetSubmissions, petSubmissionPaintDelay, flushPetSubmissions, PET_PAINT_DELAY_MS } from "@/lib/pet/v1/submission-order";
 
-it("keeps the normal one-second paint delay but flushes captured tasks in FIFO order on native background",async()=>{
+it("keeps the normal paint delay but flushes captured tasks in FIFO order on native background",async()=>{
   vi.useFakeTimers();
   try {
     const applied:string[]=[],ready=petSubmissionPaintDelay();
     const one=browserPetSubmissions.enqueue(async()=>{await ready;applied.push("answer");});
-    await vi.advanceTimersByTimeAsync(999);expect(applied).toEqual([]);
+    await vi.advanceTimersByTimeAsync(PET_PAINT_DELAY_MS-1);expect(applied).toEqual([]);
     const two=browserPetSubmissions.enqueue(async()=>{applied.push("next");});await flushPetSubmissions();await Promise.all([one,two]);
     expect(applied).toEqual(["answer","next"]);expect(vi.getTimerCount()).toBe(0);
   }finally{vi.useRealTimers();}

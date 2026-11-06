@@ -12,11 +12,13 @@ export function createPetSubmissionSequence() {
   };
 }
 export const browserPetSubmissions = createPetSubmissionSequence();
+/** Let the answer, result and explanation paint first; the save is cheap now. */
+export const PET_PAINT_DELAY_MS = 400;
 const paintDelays = new Set<() => void>();
 export function petSubmissionPaintDelay() {
   return new Promise<void>(resolve => {
     const complete = () => { clearTimeout(timer); paintDelays.delete(complete); resolve(); };
-    const timer = setTimeout(complete, 1000); paintDelays.add(complete);
+    const timer = setTimeout(complete, PET_PAINT_DELAY_MS); paintDelays.add(complete);
   });
 }
 /** Native background/navigation only. Normal answers retain their paint delay. */
