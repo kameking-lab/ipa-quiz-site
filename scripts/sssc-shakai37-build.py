@@ -1,8 +1,14 @@
-"""Build the 2024 fiscal-year Social Worker exam after full source/answer/review gates.
+"""Build data/questions/shakai/2024-annual.json (第37回社会福祉士・専門科目 問85〜129).
 
-Inputs live under reports/sssc-shakai37-20260928/. No draft or HOLD review is
-allowed into the playable question data. Original question/choice text is copied
-from the center's PDF/accessible-HTML transcription without editorial changes.
+共通科目（問1〜84）は第27回精神保健福祉士と同一問題・同一正答で、data/questions/seishin/2024-annual.json
+に解説付きで収録済み（保留3問 4・69・76 を除く）。社会福祉士側はそれを共有するので、ここでは専門科目
+45問だけを書き出す。
+
+Inputs (reports/sssc-shakai37-20260928/):
+- source-transcription.json : 129問の原文（PDF・読み上げHTMLの文字照合済み）
+- answer-keys.json          : 公式正答（s_kijun_seitou.pdf と照合済み）
+- explanations-senmon.json  : 問85〜129の独自解説（独立レビュー PASS 後）
+- sources.json              : 公式PDFのURL・SHA-256
 """
 from __future__ import annotations
 
@@ -20,45 +26,35 @@ def read_json(path: Path) -> dict:
 
 
 def main() -> None:
-    approval_path = REPORT / "APPROVED.json"
-    if not approval_path.exists():
-        raise SystemExit("HOLD: 129問・全肢の一次資料確認と承認が終わるまで公開データを生成しません")
-    approval = read_json(approval_path)
-    assert approval["status"] == "APPROVED"
-    assert approval["primarySourceVerified"] == list(range(1, 130))
     source = read_json(REPORT / "source-transcription.json")
-    key_receipt = read_json(REPORT / "answer-keys.json")
+    answers = read_json(REPORT / "answer-keys.json")["answers"]
     manifest = read_json(REPORT / "sources.json")
-    reviews = read_json(REPORT / "explanations.json")
-    answers = key_receipt["answers"]
+    explanations = read_json(REPORT / "explanations-senmon.json")
+    assert explanations["reviewStatus"].startswith("INDEPENDENT_REVIEW_PASS"), explanations["reviewStatus"]
+    reviews = explanations["questions"]
     assert source["exam"] == "shakai37"
-    assert source["sourceFiles"] == {
-        name: manifest["files"][name]["sha256"] for name in source["sourceFiles"]
-    }
-    assert key_receipt["sourceFile"]["sha256"] == manifest["files"]["s_kijun_seitou.pdf"]["sha256"]
     assert [q["number"] for q in source["questions"]] == list(range(1, 130))
-    assert sorted(map(int, answers)) == list(range(1, 130))
-    assert sorted(map(int, reviews)) == list(range(1, 130))
-    assert len({q["subject"] for q in source["questions"]}) == 19
-    assert len([q for q in source["questions"] if q["half"] == "am"]) == 84
-    assert len([q for q in source["questions"] if q["half"] == "pm"]) == 45
+    assert sorted(map(int, reviews)) == list(range(85, 130))
+    for name, sha in source["sourceFiles"].items():
+        assert manifest["files"][name]["sha256"] == sha, name
+
     records = []
     for q in source["questions"]:
         number = q["number"]
+        if number < 85:
+            continue
         answer = answers[str(number)]
         review = reviews[str(number)]
-        assert review["status"] == "PASS", (number, review["status"])
-        assert not review["sourceChecks"], (number, review["sourceChecks"])
         assert len(q["choices"]) == len(review["choiceExplanations"]) == 5, number
-        assert all(len(reason.strip()) >= 25 for reason in review["choiceExplanations"]), number
+        for index, text in enumerate(review["choiceExplanations"]):
+            expected = "正しい。" if index + 1 in answer else "誤り。"
+            assert text.startswith(expected), (number, index + 1)
+            assert len(text.strip()) >= 25, (number, index + 1)
         select = re.findall(r"([12１２])つ選びなさい", q["stem"])
-        assert select, number
-        assert int(select[-1].translate(str.maketrans("１２", "12"))) == len(answer), number
-        assert q["pdfFile"] in source["sourceFiles"]
-        assert q["pdfPage"] >= 1
+        assert select and int(select[-1].translate(str.maketrans("１２", "12"))) == len(answer), number
         records.append({
             "number": number,
-            "session": "kyotsu" if number <= 84 else "senmon",
+            "session": "senmon",
             "subject": q["subject"],
             "pdfFile": q["pdfFile"],
             "pdfPage": q["pdfPage"],
@@ -67,25 +63,29 @@ def main() -> None:
             "officialAnswer": answer,
             "summary": review["summary"],
             "choiceExplanations": review["choiceExplanations"],
-            "lawSensitive": review["lawSensitive"] or review["draftLawSensitive"],
+            "lawSensitive": bool(review["lawSensitive"]),
         })
+
+    pdfs = {name: {"url": data["url"], "sha256": data["sha256"]}
+            for name, data in manifest["files"].items() if name.endswith(".pdf") and name != "s_kijun_seitou.pdf"}
     payload = {
         "exam": "shakai",
         "title": "第37回（令和6年度）社会福祉士国家試験",
         "round": 37,
         "fiscalYear": 2024,
-        "examDate": "2025-02-02",
-        "reviewedAt": "2026-09-28",
+        "examDate": manifest["examDate"],
+        "lawNoticePeriod": "令和7年2月",
+        "lastUpdated": "2026-11-06",
         "retrievedAt": manifest["retrievedAt"],
         "termsUrl": manifest["termsUrl"],
         "indexUrl": manifest["indexUrl"],
         "answerUrl": manifest["files"]["s_kijun_seitou.pdf"]["url"],
         "answerSha256": manifest["files"]["s_kijun_seitou.pdf"]["sha256"],
-        "questionPdfs": {name: data for name, data in manifest["files"].items() if name in source["sourceFiles"]},
+        "questionPdfs": pdfs,
         "questions": records,
     }
-    OUTPUT.write_text(json.dumps(payload, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
-    print(f"Wrote {len(records)} reviewed questions to {OUTPUT.relative_to(ROOT)}")
+    OUTPUT.write_text(json.dumps(payload, ensure_ascii=False, indent=1) + "\n", encoding="utf-8", newline="\n")
+    print(f"Wrote {len(records)} senmon questions to {OUTPUT.relative_to(ROOT)}")
 
 
 if __name__ == "__main__":

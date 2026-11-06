@@ -21,6 +21,8 @@ import { StudyPresence } from "@/components/StudyPresence";
 import { EmergencyBanner } from "@/components/EmergencyBanner";
 import { SITE_BASE_URL } from "@/lib/seo/config";
 import { FeedbackAccountClaim } from "@/components/quiz/FeedbackAccountClaim";
+import { AppStorePromo } from "@/components/app-store/AppStorePromo";
+import { appStoreItunesMetadata } from "@/lib/app-store";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -58,8 +60,8 @@ export const metadata: Metadata = {
   },
   icons: {
     icon: [
-      { url: "/favicon.png?v=chihuahua", type: "image/png", sizes: "64x64" },
-      { url: "/brand/chihuahua-icon-192.png", type: "image/png", sizes: "192x192" },
+      { url: "/favicon.png?v=appicon-20261106", type: "image/png", sizes: "64x64" },
+      { url: "/icon-192.png", type: "image/png", sizes: "192x192" },
     ],
     apple: [
       { url: "/apple-icon.png", sizes: "180x180", type: "image/png" },
@@ -98,6 +100,8 @@ export const metadata: Metadata = {
   other: {
     "google-adsense-account": "ca-pub-8751260838396451",
   },
+  // Safari の Smart App Banner。NEXT_PUBLIC_APP_STORE_LIVE=true のときだけ出す（lib/app-store.ts）。
+  itunes: appStoreItunesMetadata(),
 };
 
 export const viewport: Viewport = {
@@ -268,6 +272,8 @@ export default function RootLayout({
                     <ThemeToggle />
                   </div>
                 </div>
+
+                <AppStorePromo variant="footer" className="print:hidden mt-4" />
 
                 <SourceRelationshipFooter />
               </div>

@@ -173,9 +173,6 @@ export function ExplanationLayers({ explanation }: { explanation: string }) {
                       {layer.icon}
                       {layer.label}
                     </span>
-                    <span className="text-[10px] font-medium uppercase tracking-[0.16em] text-muted-foreground/70">
-                      Layer {idx + 1}
-                    </span>
                   </div>
                   <span className="inline-flex items-center gap-1 text-[10px] font-medium text-muted-foreground">
                     <ChevronDown
@@ -196,9 +193,6 @@ export function ExplanationLayers({ explanation }: { explanation: string }) {
                   >
                     {layer.icon}
                     {layer.label}
-                  </span>
-                  <span className="text-[10px] font-medium uppercase tracking-[0.16em] text-muted-foreground/70">
-                    Layer {idx + 1}
                   </span>
                 </header>
                 <LayerBody body={layer.body} textClass={tone.text} />

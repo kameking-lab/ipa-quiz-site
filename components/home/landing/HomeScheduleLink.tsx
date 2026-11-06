@@ -7,9 +7,6 @@ export function HomeScheduleLink() {
         <CalendarClock className="mt-0.5 h-6 w-6 shrink-0 text-indigo-700 dark:text-indigo-300" aria-hidden="true" />
         <div>
           <h2 id="home-schedule-title" className="text-lg font-bold">試験日と申込締切を確認</h2>
-          <p className="mt-1 text-sm text-muted-foreground">
-            試験日程は「次の資格」にまとめています。資格を探して、日程と申込期間を確認できます。
-          </p>
           <a
             href="https://tsugino-shikaku.jp/calendar"
             target="_blank"

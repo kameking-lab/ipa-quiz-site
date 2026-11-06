@@ -1,4 +1,4 @@
-import type { ChoiceKey } from "@/lib/questions/types";
+import type { ChoiceKey, ExamCode } from "@/lib/questions/types";
 
 /**
  * Minimal question shape sent to the mock-exam client.
@@ -11,6 +11,9 @@ export interface SlimMockQuestion {
   choices: Partial<Record<ChoiceKey, string>>;
   answer: ChoiceKey | ChoiceKey[] | string;
   category: string;
+  /** Canonical server projection. Absent in old saved sessions: hold pet
+   * rewards rather than inventing qualification/content eligibility. */
+  petContext?: { qualificationId: ExamCode; eligible: boolean; contentVersion: string };
 }
 
 export interface MockExamFetchResponse {

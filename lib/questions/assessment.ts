@@ -6,6 +6,7 @@ const REFERENCE_ONLY_QUESTION_IDS = new Set([
   "kenchiku-setsubishi-2026-annual-am2-q18",
   "radio21-amateur1-2026-05-kogaku-q19",
   "radio21-riku-tech2-2026-01-kogaku-b-q25",
+  "sokuryoshiho-2026-annual-gakka-q12",
 ]);
 
 export function isReferenceOnlyQuestionId(id: unknown): boolean {

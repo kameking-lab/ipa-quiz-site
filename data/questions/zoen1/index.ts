@@ -1,5 +1,12 @@
 import type { ChoiceKey, Question, Session } from "@/lib/questions/types";
 import sourceJson from "./2026-september.json";
+import supplementJson from "./2026-september-supplement5.json";
+import supplement6Json from "./2026-september-supplement6.json";
+import supplement7Json from "./2026-september-supplement7.json";
+import supplement8Json from "./2026-september-supplement8.json";
+import supplement9Json from "./2026-september-supplement9.json";
+import supplement10Json from "./2026-september-supplement10.json";
+import supplement11Json from "./2026-september-supplement11.json";
 
 const keys: readonly ChoiceKey[] = ["ア", "イ", "ウ", "エ"];
 
@@ -14,6 +21,8 @@ type SourceItem = {
   explanation: string;
   choiceExplanations: string[];
   officialReferenceUrls?: string[];
+  imageUrls?: string[];
+  imageAltTexts?: string[];
 };
 
 type Paper = {
@@ -37,7 +46,7 @@ type Source = {
   papers: Paper[];
 };
 
-function toQuestions(source: Source): Question[] {
+function toQuestions(source: Source, lastUpdated = "2026-09-27"): Question[] {
   if (!source.allQuestionsRequired || source.papers.length !== 2) throw new Error("Invalid zoen1 exam structure");
   return source.papers.flatMap((paper): Question[] => {
     if (paper.publishedCount !== paper.questions.length || paper.officialQuestionCount !== (paper.session === "mondai-a" ? 36 : 29)) {
@@ -72,17 +81,31 @@ function toQuestions(source: Source): Question[] {
         explanation: item.explanation,
         choiceExplanations: Object.fromEntries(keys.map((key, index) => [key, item.choiceExplanations[index]])),
         explanationCoverage: "full",
-        hasImage: false,
+        hasImage: Boolean(item.imageUrls?.length),
+        ...(item.imageUrls?.length ? { imageUrls: item.imageUrls, imageAltTexts: item.imageAltTexts } : {}),
         sourcePdfUrl: paper.questionUrl,
         sourceAnswerUrl: source.answerUrl,
         sourceAttribution: `出典：一般財団法人全国建設研修センター 令和8年度1級造園施工管理技術検定 第一次検定 試験問題${paper.paper} No.${item.number}。ルビ・改行・空白を整理し、原本の数字選択肢をア・イ・ウ・エに変換。解説は本サイト作成。`,
         officialReferenceUrls: item.officialReferenceUrls ?? [],
         license: "JCTC-authorized-reuse",
-        lastUpdated: "2026-09-27",
+        lastUpdated,
       };
     });
   });
 }
 
-/** 令和8年度第一次検定。公式の全65問中、逐語照合と解説確認が済んだ設問のみ公開。 */
-export const ZOEN1_QUESTIONS = toQuestions(sourceJson as Source);
+/** 令和8年度第一次検定。公式の全65問（問題A36問・問題B29問）を収録。 */
+export const ZOEN1_QUESTIONS = [
+  ...toQuestions(sourceJson as Source),
+  ...toQuestions(supplementJson as Source, "2026-10-11"),
+  ...toQuestions(supplement6Json as Source, "2026-10-11"),
+  ...toQuestions(supplement7Json as Source, "2026-10-11"),
+  ...toQuestions(supplement8Json as Source, "2026-10-11"),
+  ...toQuestions(supplement9Json as Source, "2026-10-11"),
+  ...toQuestions(supplement10Json as Source, "2026-10-11"),
+  ...toQuestions(supplement11Json as Source, "2026-11-06"),
+].sort((a, b) => a.session.localeCompare(b.session) || a.qNumber - b.qNumber);
+
+if (new Set(ZOEN1_QUESTIONS.map((question) => question.id)).size !== ZOEN1_QUESTIONS.length) {
+  throw new Error("Duplicate zoen1 question IDs");
+}

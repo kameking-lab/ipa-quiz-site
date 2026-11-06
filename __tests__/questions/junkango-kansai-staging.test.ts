@@ -50,7 +50,7 @@ const expectedAnswers = {
 };
 const find = (year: number, qNumber: number) => questions.find(q => q.year === year && q.qNumber === qNumber)!;
 
-describe("CQ6 准看護師（関西広域連合）の未公開2回分", () => {
+describe("CQ6 准看護師の未公開2回分", () => {
   it("validates 300 originals, 1,200 explanations and every original region", () => {
     expect(validateJunkangoKansai()).toEqual({ questions: 300, choices: 1200, images: 300, publicAllowed: false });
   });

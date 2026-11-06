@@ -1,0 +1,95 @@
+{
+  "slug": "kikai-hozen",
+  "name": "機械保全技能検定 2級 機械系保全作業 学科",
+  "administrator": "公益社団法人日本プラントメンテナンス協会（JIPM、厚生労働大臣指定試験機関）",
+  "publicationStatus": "staging",
+  "publicAllowed": false,
+  "checkedAt": "2026-11-06",
+  "retrievedAt": "2026-11-06",
+  "baseCommit": "0c2a7a590850943af4990ea349f14751e3961b67",
+  "officialIndexUrl": "https://www.kikaihozenshi.jp/questions/",
+  "officialReuseTermsUrl": "https://www.kikaihozenshi.jp/questions/",
+  "rightsNotice": {
+    "indexPage": "※掲載されている試験問題等を許可なく複製、二次使用等することを禁止します。",
+    "questionPdfCover": "許可なく転載・複製・コピーはできません。",
+    "status": "reproduction-restricted-notice-recorded",
+    "ownerDecision": "権利文言は記録のみ。オーナー判断により作業は止めない（公開可否は別判断）。"
+  },
+  "lawReferenceDate": null,
+  "expectedQuestions": 100,
+  "counts": {
+    "2024": 50,
+    "2025": 50,
+    "total": 100,
+    "trueFalse": 50,
+    "fourChoice": 50,
+    "withImages": 10
+  },
+  "format": {
+    "trueFalse": "No.1〜25 真偽法（〇／×）",
+    "fourChoice": "No.26〜50 多肢択一法（ア〜エから1つ）",
+    "coverEvidence": "表紙「問題数：50題 試験時間：100分」「真偽法（問1〜問25）」「多肢択一法（問26〜問50）」（両年度共通）"
+  },
+  "rounds": [
+    {
+      "year": 2024,
+      "label": "2024年度 第2回",
+      "examDate": "2024-12-15",
+      "expectedQuestions": 50,
+      "examDateSource": "https://www.kikaihozenshi.jp/pdf/2024/2024_2kyu_kikai_kaitou.pdf",
+      "examDateEvidence": "正解PDF「※2024年12月15日（日）試験実施」"
+    },
+    {
+      "year": 2025,
+      "label": "2025年度 第2回",
+      "examDate": "2025-12-14",
+      "expectedQuestions": 50,
+      "examDateSource": "https://www.kikaihozenshi.jp/pdf/2025/2025_2kyu_kikai_kaitou.pdf",
+      "examDateEvidence": "正解PDF「※2025年12月14日（日）試験実施」。問題PDF表紙・正解PDFとも「2025年度 第2回」"
+    }
+  ],
+  "files": [
+    {
+      "name": "2024-questions",
+      "url": "https://www.kikaihozenshi.jp/pdf/2024/2024_2kyu_kikai_mondai.pdf",
+      "status": 200,
+      "contentType": "application/pdf",
+      "bytes": 1031218,
+      "sha256": "f0d3c47c972b07a6e90c38c9d12d343acb8e44afda774827e5571c2efd291edd",
+      "pages": 11,
+      "lastModified": "Fri, 20 Dec 2024 00:09:53 GMT"
+    },
+    {
+      "name": "2024-answers",
+      "url": "https://www.kikaihozenshi.jp/pdf/2024/2024_2kyu_kikai_kaitou.pdf",
+      "status": 200,
+      "contentType": "application/pdf",
+      "bytes": 170697,
+      "sha256": "718b96b0a078ed89f28708af4d9793981df83ea99319b7c531ea0fb5eea1674d",
+      "pages": 1,
+      "lastModified": "Fri, 20 Dec 2024 00:09:53 GMT"
+    },
+    {
+      "name": "2025-questions",
+      "url": "https://www.kikaihozenshi.jp/pdf/2025/2025_2kyu_kikai_mondai.pdf",
+      "status": 200,
+      "contentType": "application/pdf",
+      "bytes": 1024420,
+      "sha256": "174a0d191169618a60672b7ac7558d80957bc20b244b63515155987ff3c8a1af",
+      "pages": 11,
+      "lastModified": "Fri, 19 Dec 2025 00:28:10 GMT"
+    },
+    {
+      "name": "2025-answers",
+      "url": "https://www.kikaihozenshi.jp/pdf/2025/2025_2kyu_kikai_kaitou.pdf",
+      "status": 200,
+      "contentType": "application/pdf",
+      "bytes": 170729,
+      "sha256": "5079e853c42a8ce5595963e52c88c5eb47f1d291e8e6cc64d58bdc83e5a1a5e3",
+      "pages": 1,
+      "lastModified": "Fri, 19 Dec 2025 00:30:13 GMT"
+    }
+  ],
+  "unavailablePdfUrls": [],
+  "independentReview": "pending"
+}

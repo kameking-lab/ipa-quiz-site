@@ -5,6 +5,8 @@ import { questionSourceEdition, questionSourceExam } from "@/lib/questions/sourc
 
 
 import * as React from "react";
+import { usePetLearning } from "@/components/pet/usePetLearning";
+import { LearningPetCorner } from "@/components/pet/LearningPetCorner";
 import type { NativeBGrade } from "@/lib/questions/types";
 import { gradeNativeB, serializeNativeBSelections, formatNativeBAnswer, type NativeBSelections } from "@/lib/questions/native-b";
 import { NativeBAnswerInput, NativeBFeedback } from "../NativeBAnswer";
@@ -37,6 +39,7 @@ interface AnswerLog {
 }
 
 export function StreamQuizPlayer({ questions, backHref = "/ipa" }: { questions: Question[]; backHref?: string }) {
+  const pet = usePetLearning();
   const router = useRouter();
   const history = React.useMemo(() => createHistoryStore(), []);
   const [index, setIndex] = React.useState(0);
@@ -112,9 +115,10 @@ export function StreamQuizPlayer({ questions, backHref = "/ipa" }: { questions: 
     setRevealed(true);
     setAnswers((previous) => [...previous, { questionId: question.id, selected: selection, correct: result.isCorrect, nativeBResult: result }]);
     history.record({ id: question.id, selected: selection, correct: result.isCorrect, at: Date.now(), nativeBResult: result });
+    pet.answer(question, { kind: "native-b", selections: Object.fromEntries(Object.entries(selections).filter((pair): pair is [string, string] => typeof pair[1] === "string")) });
     if (result.isCorrect) setCombo((previous) => previous + 1);
     else setCombo(0);
-  }, [question, revealed, history]);
+  }, [question, revealed, history, pet]);
 
   const onSelect = React.useCallback(
     (key: ChoiceKey) => {
@@ -127,6 +131,7 @@ export function StreamQuizPlayer({ questions, backHref = "/ipa" }: { questions: 
         { questionId: question.id, selected: key, correct },
       ]);
       history.record({ id: question.id, selected: key, correct, at: Date.now() });
+      pet.answer(question, { kind: "multiple-choice", selected: [key] });
       if (correct) {
         setCombo((c) => {
           const next = c + 1;
@@ -140,7 +145,7 @@ export function StreamQuizPlayer({ questions, backHref = "/ipa" }: { questions: 
         setCombo(0);
       }
     },
-    [question, revealed, history],
+    [question, revealed, history, pet],
   );
 
   const onOrderingAnswer = React.useCallback((value: ChoiceKey[]) => {
@@ -150,6 +155,7 @@ export function StreamQuizPlayer({ questions, backHref = "/ipa" }: { questions: 
     setRevealed(true);
     setAnswers((previous) => [...previous, { questionId: question.id, selected: display, correct }]);
     history.record({ id: question.id, selected: value.join("→"), correct, at: Date.now() });
+    pet.answer(question, { kind: "ordering", selected: [...value] });
     if (correct) {
       setCombo((previous) => {
         const next = previous + 1;
@@ -160,7 +166,7 @@ export function StreamQuizPlayer({ questions, backHref = "/ipa" }: { questions: 
         return next;
       });
     } else setCombo(0);
-  }, [question, revealed, history]);
+  }, [question, revealed, history, pet]);
 
   const onNumericAnswer = React.useCallback((value: string) => {
     if (!question || question.type !== "numeric" || revealed) return;
@@ -168,9 +174,10 @@ export function StreamQuizPlayer({ questions, backHref = "/ipa" }: { questions: 
     setRevealed(true);
     setAnswers(previous => [...previous, { questionId: question.id, selected: value, correct }]);
     history.record({ id: question.id, selected: value, correct, at: Date.now() });
+    pet.answer(question, { kind: "numeric", value });
     if (correct) setCombo(previous => previous + 1);
     else setCombo(0);
-  }, [question, revealed, history]);
+  }, [question, revealed, history, pet]);
 
   React.useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
@@ -362,6 +369,7 @@ export function StreamQuizPlayer({ questions, backHref = "/ipa" }: { questions: 
             <div className="mt-2 text-zinc-200"><QuestionBody text={question.explanation || "解説は準備中です。"} /></div>
           </div>
         )}
+        <LearningPetCorner qualificationId={question.exam} questionId={question.id} />
       </main>
 
       {revealed && (

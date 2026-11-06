@@ -1,0 +1,146 @@
+{
+ "slug": "shiho-tanto",
+ "name": "司法試験 短答式（憲法・民法・刑法）",
+ "publicationStatus": "staging",
+ "publishable": false,
+ "ownerRightsDecision": "2026-11-04 オーナー決定: 権利・転載条件の文言では止めない（文言は報告に記録）。",
+ "officialIndexUrls": {
+  "2026": {
+   "questions": "https://www.moj.go.jp/jinji/shihoushiken/jinji08_00295.html",
+   "answers": "https://www.moj.go.jp/jinji/shihoushiken/jinji08_00296.html",
+   "schedule": "https://www.moj.go.jp/content/001450988.pdf"
+  },
+  "2025": {
+   "questions": "https://www.moj.go.jp/jinji/shihoushiken/jinji08_00267.html",
+   "answers": "https://www.moj.go.jp/jinji/shihoushiken/jinji08_00270.html",
+   "schedule": "https://www.moj.go.jp/content/001422325.pdf"
+  }
+ },
+ "examDates": {
+  "2026": "2026-07-19",
+  "2025": "2025-07-20"
+ },
+ "checkedAt": "2026-11-06",
+ "files": [
+  {
+   "year": 2026,
+   "kind": "question",
+   "subject": "憲法",
+   "url": "https://www.moj.go.jp/content/001466994.pdf",
+   "sha256": "c80826632712faeeb8d7f8d7fab9b9da0ba064123fc09dd60735abd74381f7c8",
+   "pages": 11,
+   "retrievedAt": "2026-11-06",
+   "extraction": "PyMuPDF text layer (page headers removed)"
+  },
+  {
+   "year": 2026,
+   "kind": "question",
+   "subject": "民法",
+   "url": "https://www.moj.go.jp/content/001466995.pdf",
+   "sha256": "0bb067e3fe22d91180ebd1376df0e637f9e1cbac3552a1d2001154261fd04b65",
+   "pages": 20,
+   "retrievedAt": "2026-11-06",
+   "extraction": "PyMuPDF text layer (page headers removed)"
+  },
+  {
+   "year": 2026,
+   "kind": "question",
+   "subject": "刑法",
+   "url": "https://www.moj.go.jp/content/001466996.pdf",
+   "sha256": "62970d32228060933233f60f739d03cbaf86685c69338e16ff9ebf39c0fb05b6",
+   "pages": 18,
+   "retrievedAt": "2026-11-06",
+   "extraction": "PyMuPDF text layer (page headers removed)"
+  },
+  {
+   "year": 2026,
+   "kind": "answer",
+   "subject": "憲法",
+   "url": "https://www.moj.go.jp/content/001468205.pdf",
+   "sha256": "c90c85b206e6cca1bddf1d315d3d888c6af1a155f17df6594307b20cc64635ff",
+   "pages": 1,
+   "retrievedAt": "2026-11-06",
+   "extraction": "PyMuPDF text layer; answers checked against page image"
+  },
+  {
+   "year": 2026,
+   "kind": "answer",
+   "subject": "民法",
+   "url": "https://www.moj.go.jp/content/001468206.pdf",
+   "sha256": "4597cc421263c60bf7f26e04a715a187cb8b01b4cbd8cf1fcd5a628381ec8b96",
+   "pages": 1,
+   "retrievedAt": "2026-11-06",
+   "extraction": "PyMuPDF text layer; answers checked against page image"
+  },
+  {
+   "year": 2026,
+   "kind": "answer",
+   "subject": "刑法",
+   "url": "https://www.moj.go.jp/content/001468207.pdf",
+   "sha256": "b2d81b272f25480ca60925a0c92377ae7714ead8b8473ad2efd66244fc513da1",
+   "pages": 1,
+   "retrievedAt": "2026-11-06",
+   "extraction": "PyMuPDF text layer; answers checked against page image"
+  },
+  {
+   "year": 2025,
+   "kind": "question",
+   "subject": "憲法",
+   "url": "https://www.moj.go.jp/content/001443620.pdf",
+   "sha256": "7927a8975da3cd32cb4f3eb289840f8f9fd475bc2be147e602744fa67f81dcfb",
+   "pages": 11,
+   "retrievedAt": "2026-11-06",
+   "extraction": "PyMuPDF text layer (page headers removed)"
+  },
+  {
+   "year": 2025,
+   "kind": "question",
+   "subject": "民法",
+   "url": "https://www.moj.go.jp/content/001443621.pdf",
+   "sha256": "d54f48d10c25944bc028568975d8f587032ea28af86d55f481dbca16339445a6",
+   "pages": 18,
+   "retrievedAt": "2026-11-06",
+   "extraction": "PyMuPDF text layer (page headers removed)"
+  },
+  {
+   "year": 2025,
+   "kind": "question",
+   "subject": "刑法",
+   "url": "https://www.moj.go.jp/content/001443622.pdf",
+   "sha256": "494f23ab2762d3d3b839e79287722c0fa9ac58b1ee55c6d2ccd38db08d4fa5e0",
+   "pages": 17,
+   "retrievedAt": "2026-11-06",
+   "extraction": "PyMuPDF text layer (page headers removed)"
+  },
+  {
+   "year": 2025,
+   "kind": "answer",
+   "subject": "憲法",
+   "url": "https://www.moj.go.jp/content/001444424.pdf",
+   "sha256": "ea9f261fa74ee6db45d27bfb597f388eb508738d1af7a103986424bc9a212b79",
+   "pages": 1,
+   "retrievedAt": "2026-11-06",
+   "extraction": "PyMuPDF text layer; answers checked against page image"
+  },
+  {
+   "year": 2025,
+   "kind": "answer",
+   "subject": "民法",
+   "url": "https://www.moj.go.jp/content/001444425.pdf",
+   "sha256": "7c275c44f31f366faa495a714dc2a647d0de2cbce85129c480dbc562c638d951",
+   "pages": 1,
+   "retrievedAt": "2026-11-06",
+   "extraction": "PyMuPDF text layer; answers checked against page image"
+  },
+  {
+   "year": 2025,
+   "kind": "answer",
+   "subject": "刑法",
+   "url": "https://www.moj.go.jp/content/001444426.pdf",
+   "sha256": "5b455fe5cfde7bcfcf0a822cb2917d5c6a551f31dea9001f26e9542853c122ad",
+   "pages": 1,
+   "retrievedAt": "2026-11-06",
+   "extraction": "PyMuPDF text layer; answers checked against page image"
+  }
+ ]
+}

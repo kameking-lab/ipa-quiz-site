@@ -18,7 +18,7 @@ for (const width of [390, 1280]) {
     await expect(finder.getByRole("searchbox")).toBeInViewport();
     await expect(page.locator('main a[href="/challenge"]')).toHaveCount(0);
     if (width < 768) await expect(page.locator('nav[aria-label="モバイルタブ"] a[href="/mock-exam"]:visible')).toHaveCount(0);
-    await expect(page.locator(".study-resume-empty")).toBeVisible();
+    await expect(page.locator(".study-resume")).toHaveCount(0);
     await finder.getByRole("searchbox").fill("ｆｅ");
     await finder.getByRole("button", { name: /^IT・/ }).click();
     await expect(finder.getByRole("status")).toHaveText("1資格・区分");
@@ -63,7 +63,7 @@ test("real saved question and wrong answers stay within the selected exam", asyn
 test("invalid saved coordinates produce no invented progress", async ({ page }) => {
   await page.addInitScript(() => localStorage.setItem("ipa-quiz:last-question:v1", JSON.stringify({ exam: "ip", year: 2099, season: "autumn", session: "am", qNumber: 999, answeredAt: Date.now() })));
   await page.goto("/");
-  await expect(page.locator(".study-resume-empty")).toBeVisible();
+  await expect(page.locator(".study-resume")).toHaveCount(0);
   await expect(page.getByRole("link", { name: "続きを開く" })).toHaveCount(0);
 });
 

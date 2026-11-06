@@ -1,0 +1,240 @@
+{
+  "slug": "juishi",
+  "name": "獣医師国家試験",
+  "administrator": "農林水産省",
+  "publicationStatus": "staging",
+  "publicAllowed": false,
+  "checkedAt": "2026-11-06",
+  "officialIndexUrl": "https://www.maff.go.jp/j/syouan/tikusui/zyui/shiken/shiken.html",
+  "ownerRightsDecision": "2026-11-04: 権利確認の文言では作業を止めない（報告に記録するのみ）。公開可否は未判断のため publicAllowed=false。",
+  "rightsStatus": "permission-not-confirmed",
+  "lawReferenceDate": null,
+  "rounds": [
+    {
+      "round": 77,
+      "year": 2025,
+      "fiscalYearLabel": "令和7年度",
+      "examDates": [
+        "2026-02-17",
+        "2026-02-18"
+      ],
+      "includedSections": [
+        "hissu",
+        "a",
+        "b"
+      ],
+      "includedQuestions": 209
+    },
+    {
+      "round": 76,
+      "year": 2024,
+      "fiscalYearLabel": "令和6年度",
+      "examDates": [
+        "2025-02-12",
+        "2025-02-13"
+      ],
+      "includedSections": [
+        "hissu",
+        "a",
+        "b"
+      ],
+      "includedQuestions": 209
+    }
+  ],
+  "sections": {
+    "hissu": {
+      "label": "必須問題",
+      "officialQuestionCount": 50
+    },
+    "a": {
+      "label": "学説試験 問題A",
+      "officialQuestionCount": 80
+    },
+    "b": {
+      "label": "学説試験 問題B",
+      "officialQuestionCount": 80
+    },
+    "c": {
+      "label": "実地試験 問題C",
+      "officialQuestionCount": 60,
+      "excluded": "別冊（図・表・写真）が公式ページに掲載されていない"
+    },
+    "d": {
+      "label": "実地試験 問題D",
+      "officialQuestionCount": 60,
+      "excluded": "別冊（図・表・写真）が公式ページに掲載されていない"
+    }
+  },
+  "expectedQuestions": 418,
+  "excludedCount": 242,
+  "files": [
+    {
+      "round": 77,
+      "year": 2025,
+      "kind": "questions",
+      "label": "必須問題",
+      "url": "https://www.maff.go.jp/j/syouan/tikusui/zyui/shiken/attach/pdf/shiken-140.pdf",
+      "bytes": 422399,
+      "pages": 24,
+      "sha256": "951d9c6bd2b165d38bf09464d303abd58e97a831d27dffe4624af8baa3bf4b9d",
+      "fetchedAt": "2026-11-06T13:33:33Z",
+      "status": 200,
+      "contentType": "application/pdf",
+      "usedForQuestions": true
+    },
+    {
+      "round": 77,
+      "year": 2025,
+      "kind": "questions",
+      "label": "学説試験 問題A",
+      "url": "https://www.maff.go.jp/j/syouan/tikusui/zyui/shiken/attach/pdf/shiken-141.pdf",
+      "bytes": 542505,
+      "pages": 32,
+      "sha256": "debad99fb6a7cd7b84921df53d32a58c66a3225c5f9b744feee5c79bc78e130b",
+      "fetchedAt": "2026-11-06T13:33:33Z",
+      "status": 200,
+      "contentType": "application/pdf",
+      "usedForQuestions": true
+    },
+    {
+      "round": 77,
+      "year": 2025,
+      "kind": "questions",
+      "label": "学説試験 問題B",
+      "url": "https://www.maff.go.jp/j/syouan/tikusui/zyui/shiken/attach/pdf/shiken-142.pdf",
+      "bytes": 525735,
+      "pages": 32,
+      "sha256": "9e6335dcbe44187e44d6b114f26c496745ab3953f72d40538f31d8e4f9c4ed32",
+      "fetchedAt": "2026-11-06T13:33:33Z",
+      "status": 200,
+      "contentType": "application/pdf",
+      "usedForQuestions": true
+    },
+    {
+      "round": 77,
+      "year": 2025,
+      "kind": "questions",
+      "label": "実地試験 問題C",
+      "url": "https://www.maff.go.jp/j/syouan/tikusui/zyui/shiken/attach/pdf/shiken-143.pdf",
+      "bytes": 511578,
+      "pages": 36,
+      "sha256": "cfe94ff65c14203ba2892b7b14ad0d7cd0f59502a7c4b35c09635dae8019a7f1",
+      "fetchedAt": "2026-11-06T13:33:33Z",
+      "status": 200,
+      "contentType": "application/pdf",
+      "usedForQuestions": false
+    },
+    {
+      "round": 77,
+      "year": 2025,
+      "kind": "questions",
+      "label": "実地試験 問題D",
+      "url": "https://www.maff.go.jp/j/syouan/tikusui/zyui/shiken/attach/pdf/shiken-144.pdf",
+      "bytes": 490588,
+      "pages": 36,
+      "sha256": "cadd9caee834846ff7aefd5608817eba2e401b65a2a136d2c141ce529b86066d",
+      "fetchedAt": "2026-11-06T13:33:33Z",
+      "status": 200,
+      "contentType": "application/pdf",
+      "usedForQuestions": false
+    },
+    {
+      "round": 77,
+      "year": 2025,
+      "kind": "answers",
+      "label": "正答値",
+      "url": "https://www.maff.go.jp/j/syouan/tikusui/zyui/shiken/attach/pdf/shiken-146.pdf",
+      "bytes": 41185,
+      "pages": 5,
+      "sha256": "1cac617537f68c36909b889702411f4263bf189a33b62053babbea310c25935a",
+      "fetchedAt": "2026-11-06T13:33:33Z",
+      "status": 200,
+      "contentType": "application/pdf",
+      "usedForQuestions": true
+    },
+    {
+      "round": 76,
+      "year": 2024,
+      "kind": "questions",
+      "label": "必須問題",
+      "url": "https://www.maff.go.jp/j/syouan/tikusui/zyui/shiken/attach/pdf/shiken-126.pdf",
+      "bytes": 415487,
+      "pages": 24,
+      "sha256": "e4c8c749c4b0fd3289d71ac67f60cf8e03eb23ca05b7def3ec08a39bc2243430",
+      "fetchedAt": "2026-11-06T13:33:33Z",
+      "status": 200,
+      "contentType": "application/pdf",
+      "usedForQuestions": true
+    },
+    {
+      "round": 76,
+      "year": 2024,
+      "kind": "questions",
+      "label": "学説試験 問題A",
+      "url": "https://www.maff.go.jp/j/syouan/tikusui/zyui/shiken/attach/pdf/shiken-127.pdf",
+      "bytes": 508109,
+      "pages": 32,
+      "sha256": "b2dc5a53c3fca9055ed2d3dfe32efc9ba11e6fbceb335069a1a87679e8b9aa75",
+      "fetchedAt": "2026-11-06T13:33:33Z",
+      "status": 200,
+      "contentType": "application/pdf",
+      "usedForQuestions": true
+    },
+    {
+      "round": 76,
+      "year": 2024,
+      "kind": "questions",
+      "label": "学説試験 問題B",
+      "url": "https://www.maff.go.jp/j/syouan/tikusui/zyui/shiken/attach/pdf/shiken-128.pdf",
+      "bytes": 512935,
+      "pages": 32,
+      "sha256": "15fa2b99348c37f885c0dd0b2f6225c743e9c29eb33ffef7bcdeeb0918134344",
+      "fetchedAt": "2026-11-06T13:33:33Z",
+      "status": 200,
+      "contentType": "application/pdf",
+      "usedForQuestions": true
+    },
+    {
+      "round": 76,
+      "year": 2024,
+      "kind": "questions",
+      "label": "実地試験 問題C",
+      "url": "https://www.maff.go.jp/j/syouan/tikusui/zyui/shiken/attach/pdf/shiken-129.pdf",
+      "bytes": 496172,
+      "pages": 36,
+      "sha256": "df608d99c8d3bdb851400fa1efd8b1886a53dfe91a177fd9146fd7207b68131a",
+      "fetchedAt": "2026-11-06T13:33:33Z",
+      "status": 200,
+      "contentType": "application/pdf",
+      "usedForQuestions": false
+    },
+    {
+      "round": 76,
+      "year": 2024,
+      "kind": "questions",
+      "label": "実地試験 問題D",
+      "url": "https://www.maff.go.jp/j/syouan/tikusui/zyui/shiken/attach/pdf/shiken-130.pdf",
+      "bytes": 511798,
+      "pages": 36,
+      "sha256": "2d9fd511380d3ac0aaacad6b6e9840958f414594917a45861d887d60724ec9c4",
+      "fetchedAt": "2026-11-06T13:33:33Z",
+      "status": 200,
+      "contentType": "application/pdf",
+      "usedForQuestions": false
+    },
+    {
+      "round": 76,
+      "year": 2024,
+      "kind": "answers",
+      "label": "正答値",
+      "url": "https://www.maff.go.jp/j/syouan/tikusui/zyui/shiken/attach/pdf/shiken-131.pdf",
+      "bytes": 40984,
+      "pages": 5,
+      "sha256": "4fdeeaf4d48b56f4afeba84a53683960d023cc43b1a7ee83dfce4a59f4467653",
+      "fetchedAt": "2026-11-06T13:33:33Z",
+      "status": 200,
+      "contentType": "application/pdf",
+      "usedForQuestions": true
+    }
+  ]
+}

@@ -10,6 +10,7 @@ import { measuredPresence, PRESENCE_STATE_EVENT } from "@/lib/study-presence-con
 
 // Reward behavior has its own tests; presence/room tests must not mount its storage lifecycle.
 vi.mock("@/components/home/StudyRewardCorner", () => ({ StudyRewardCorner: () => null }));
+vi.mock("@/components/pet/usePetProfileView", () => ({ usePetProfileView: () => ({ status: "loading", document: null }) }));
 
 const suggestions = [{ name: "基本情報技術者", href: "/exams/fe" }];
 const zero: StudyPresenceSnapshot = {count:0,exams:[]};
@@ -20,27 +21,26 @@ const seatList=()=>within(viewer()).queryByRole("group",{name:"自習室の席�
 const seats=()=>{const list=seatList();return list?within(list).getAllByRole("button"):[];};
 const emit=(detail:unknown,name=PRESENCE_STATE_EVENT)=>act(()=>window.dispatchEvent(new CustomEvent(name,{detail})));
 const measured=(value=zero)=>({mode:"measured",snapshot:measuredPresence(value,Date.now()),previous:null});
-function guidance(){expect(viewer()).toHaveAccessibleName("学習のご案内");expect(screen.getByText("資格紹介")).toBeVisible();expect(screen.getByRole("link",{name:"ほかの資格を探す"})).toHaveAttribute("href","#choose-qualification");}
+function guidance(){expect(viewer()).toHaveAccessibleName("学習のご案内");expect(screen.getByRole("link",{name:"ほかの資格を探す"})).toHaveAttribute("href","#choose-qualification");}
 afterEach(()=>{cleanup();vi.useRealTimers();vi.unstubAllGlobals();vi.restoreAllMocks();});
 
 describe("public qualification guidance preserved beside the independent answer reward",()=>{
  it("server-renders qualification guidance and rejects legacy/unverified counts",()=>{
-  const html=renderToString(<TotalAnswerCounter suggestions={suggestions}/>);expect(html).toContain("資格紹介");
+  const html=renderToString(<TotalAnswerCounter suggestions={suggestions}/>);expect(html).toContain("ほかの資格を探す");
   render(<TotalAnswerCounter suggestions={suggestions}/>);const stable=viewer();
   for(const detail of [null,{mode:"measured",snapshot:positive},{mode:"demo",snapshot:positive}]){emit(detail);guidance();expect(viewer()).toBe(stable);}
-  emit(positive,PRESENCE_EVENT);guidance();expect(screen.queryByText(/前回取得時点の直近5分の学習者 2人/)).toBeNull();
+  emit(positive,PRESENCE_EVENT);guidance();expect(document.querySelector(".study-room-total")).toBeNull();
  });
  it("retains a validated historical zero/positive and its original time after stale/90-second expiry",async()=>{
   vi.useFakeTimers();render(<TotalAnswerCounter suggestions={suggestions}/>);
-  emit(measured());expect(screen.getByText("前回取得時点の直近5分の学習人数は0人です。")).toBeVisible();
+  emit(measured());expect(document.querySelector(".study-room-total")).toHaveTextContent("0人");
   const sample=measured(positive);emit(sample);
-  expect(screen.getByRole("listitem")).toHaveTextContent("前回取得時点の直近5分に2人が基本情報技術者を学習しました。");
+  expect(screen.getByRole("listitem")).toHaveTextContent("基本情報技術者 2人");
   emit({mode:"stale",snapshot:null,previous:sample.snapshot,reason:"unavailable"});
   await act(async()=>{await vi.advanceTimersByTimeAsync(90_000);});
   expect(document.querySelector("time")).toHaveAttribute("datetime",sample.snapshot.measuredAt);
   expect(viewer()).toHaveAccessibleName("前回取得時点の学習状況");
-  expect(screen.getByText(/リアルタイム表示ではありません/)).toBeVisible();
-  expect(screen.getByText(/JST/)).toBeVisible();
+  expect(screen.getByText(/時点/)).toBeVisible();
  });
  it("keeps the directory link available without suggestions",()=>{
   render(<TotalAnswerCounter/>);
@@ -54,17 +54,16 @@ describe("public qualification guidance preserved beside the independent answer 
   expect(scene()).toHaveAttribute("data-stage","3");
   expect(scene().querySelectorAll(".study-room-seat")).toHaveLength(12);
   expect(within(scene()).queryAllByRole("button")).toHaveLength(0);
-  expect(screen.getByText("イラスト 12体・ほか 13人")).toBeVisible();
-  expect(screen.getByText("全25人の集計を一部イラストで表示")).toBeVisible();
+  expect(document.querySelector(".study-room-total")).toHaveTextContent("25人");
   const counts=screen.getByRole("list",{name:"資格別の学習人数"});
   expect(within(counts).getAllByRole("listitem")).toHaveLength(2);
-  expect(counts).toHaveTextContent("14人が基本情報技術者を学習しました。");
-  expect(counts).toHaveTextContent("11人がITパスポートを学習しました。");
+  expect(counts).toHaveTextContent("基本情報技術者 14人");
+  expect(counts).toHaveTextContent("ITパスポート 11人");
   expect(screen.queryByRole("navigation",{name:"自習室の部屋を選ぶ"})).toBeNull();
   expect(screen.queryByRole("button",{name:"次の部屋"})).toBeNull();
   emit(measured());expect(seats()).toHaveLength(0);expect(seatList()).toBeNull();
   expect(scene().querySelectorAll(".study-room-seat")).toHaveLength(0);
-  expect(screen.getByText("前回取得時点の直近5分の学習人数は0人です。")).toBeVisible();
+  expect(document.querySelector(".study-room-total")).toHaveTextContent("0人");
  });
  it("preserves selection, Escape clearing and focus return independently of reward controls",()=>{
   render(<TotalAnswerCounter suggestions={suggestions}/>);guidance();
@@ -82,7 +81,7 @@ describe("public qualification guidance preserved beside the independent answer 
   fetcher.mockResolvedValue({ok:false,status:503,headers:new Headers(),json:async()=>({count:999,exams:[]})});
   for(let elapsed=0;elapsed<PRESENCE_REFRESH_MS;elapsed+=60_000){act(()=>window.dispatchEvent(new Event("pointerdown")));await act(async()=>{await vi.advanceTimersByTimeAsync(60_000);});}
   expect(fetcher).toHaveBeenCalledTimes(2);expect(document.querySelector("time")).toHaveAttribute("datetime",first);
-  expect(screen.queryByText(/999人/)).toBeNull();expect(seats()).toHaveLength(2);expect(screen.getByText(/リアルタイム表示ではありません/)).toBeVisible();
+  expect(screen.queryByText(/999人/)).toBeNull();expect(seats()).toHaveLength(2);
  });
  it("does not carry selection across introduction, changed qualification or a disappearing seat",()=>{
   render(<TotalAnswerCounter suggestions={[...suggestions,...suggestions,{name:"ITパスポート",href:"/ip"}]}/>);expect(seats()).toHaveLength(2);
@@ -100,8 +99,6 @@ describe("public qualification guidance preserved beside the independent answer 
   render(<TotalAnswerCounter suggestions={suggestions}/>);emit(measured({count:1_000_000,exams:[{exam:"fe",count:1_000_000}]}));
   expect(seats()).toHaveLength(12);expect(scene().querySelectorAll(".study-room-seat")).toHaveLength(12);
   expect(scene()).toHaveAttribute("data-stage","4");
-  expect(screen.getByText("イラスト 12体・ほか 999,988人")).toBeVisible();
-  expect(screen.getByText("全1,000,000人の集計を一部イラストで表示")).toBeVisible();
   expect(document.querySelector(".study-room-total")).toHaveTextContent("1,000,000人");
   expect(screen.queryByRole("navigation",{name:"自習室の部屋を選ぶ"})).toBeNull();
  });

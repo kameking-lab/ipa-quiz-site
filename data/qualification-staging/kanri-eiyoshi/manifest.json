@@ -1,0 +1,60 @@
+{
+  "slug": "kanri-eiyoshi",
+  "name": "管理栄養士国家試験",
+  "publicationStatus": "staging",
+  "publicAllowed": false,
+  "officialIndexUrl": "https://www.mhlw.go.jp/stf/newpage_17056.html",
+  "checkedAt": "2026-11-06",
+  "expectedQuestions": 200,
+  "sittings": [
+    {
+      "round": 40,
+      "examDate": "2026-03-01",
+      "questions": 200,
+      "am": "1-97",
+      "pm": "98-200"
+    }
+  ],
+  "excludedSittings": [
+    {
+      "round": 39,
+      "examDate": "2025-03-02",
+      "reason": "問題PDF（001428960.pdf / 001428961.pdf）が公式で404（2026-11-06確認）。正答は公式に残るが、問題文の保存コピー（Wayback）を使うかはオーナー判断待ちのため未収録。"
+    }
+  ],
+  "answerNote": "正答PDFは 10900000/001683038.pdf と 10904750/001677806.pdf がバイト一致。全200問とも単一正答で、採点除外・複数正答の告知は正答表に記載なし。",
+  "existingWork": "origin/codex/kanri-eiyoshi-20261010 に午前17問の部分稿あり（未マージ）。本パックは200問を新たに原本から抽出しており、同ブランチの問題データは使っていない。",
+  "sourceFiles": [
+    {
+      "kind": "questions-am",
+      "localName": "40_am.pdf",
+      "url": "https://www.mhlw.go.jp/content/10900000/001663681.pdf",
+      "sha256": "6af5a86ec967b84cfa3deeeb96ffdfc92bb5f857577e424fce3cb48e5b07bf42",
+      "bytes": 1227273,
+      "retrievedAt": "2026-11-06",
+      "httpStatus": 200,
+      "method": "GET"
+    },
+    {
+      "kind": "questions-pm",
+      "localName": "40_pm.pdf",
+      "url": "https://www.mhlw.go.jp/content/10900000/001663682.pdf",
+      "sha256": "4d1b1a6d840873af4669d20fb4dc1111a67083b62de068a342075a63d58af6e5",
+      "bytes": 1706440,
+      "retrievedAt": "2026-11-06",
+      "httpStatus": 200,
+      "method": "GET"
+    },
+    {
+      "kind": "answers",
+      "localName": "40_answers.pdf",
+      "url": "https://www.mhlw.go.jp/content/10900000/001683038.pdf",
+      "sha256": "776ae04b59cfe7c3706c9482b3eb4c3c9dae9eebdfd817906a8281619bf93de2",
+      "bytes": 38400,
+      "retrievedAt": "2026-11-06",
+      "httpStatus": 200,
+      "method": "GET",
+      "identicalCopyUrl": "https://www.mhlw.go.jp/content/10904750/001677806.pdf"
+    }
+  ]
+}

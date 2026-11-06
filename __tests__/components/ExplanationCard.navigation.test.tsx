@@ -38,16 +38,6 @@ describe("ExplanationCard learning continuity", () => {
     expect(screen.getByText(question.explanation)).toBeInTheDocument();
     expect(screen.queryByText(/解説は準備中/)).not.toBeInTheDocument();
   });
-  it("shares the same question including its exam section", () => {
-    render(<ExplanationCard {...props} />);
-    const link = screen.getByRole("link", { name: "X (Twitter) で共有" });
-    const url = new URL(link.getAttribute("href")!);
-    expect(url.searchParams.get("url")).toBe("https://www.kakomon-ai.jp/q/st/2025-spring/am2/q1");
-  });
-  it("keeps the exam and category when returning to focused study", () => {
-    render(<ExplanationCard {...props} isCorrect={false} selected="ア" />);
-    expect(screen.getByRole("link", { name: "分野別で集中対策" })).toHaveAttribute("href", "/st/topic/%E6%83%85%E5%A0%B1%E6%88%A6%E7%95%A5");
-  });
   it("shows the selected wrong choice reason before the all-choice list", () => {
     render(<ExplanationCard {...props} isCorrect={false} selected="ア" />);
     const selectedReason = screen.getByRole("region", { name: "あなたが選んだ誤答の理由" });

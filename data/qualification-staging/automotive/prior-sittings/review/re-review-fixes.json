@@ -1,0 +1,50 @@
+{
+  "reviewer": "claude-independent",
+  "rows": [
+    {
+      "id": "jidosha-2024-second-1-small-written-q02",
+      "verdict": "PASS",
+      "answerChecked": true,
+      "allFourExplanationsChecked": true,
+      "sourcePagesChecked": [3],
+      "issues": [],
+      "notes": "Official key 12(1小) No.2 = 4 -> エ. Stem and options (1)-(4) match page 3. Zoomed graphs: starter ON at roughly t0..t0+0.6s; ⑧ stays 0 for the first part of cranking, steps to about 18 then about 20-21 mm3/str during cranking, and stays about 20 after start. The new wording (0 right after cranking starts, then about 20 from partway through cranking) is accurate. ⑨ steps up at cranking start and settles back after start, so イ is accurate. ⑩'s exclusion is explained only by citing the official answer, without a technical reason. That is acceptable and not wrong. hasImage true / sourcePages [3] correct."
+    },
+    {
+      "id": "jidosha-2024-second-2-chassis-q05",
+      "verdict": "PASS",
+      "answerChecked": true,
+      "allFourExplanationsChecked": true,
+      "sourcePagesChecked": [3],
+      "issues": [],
+      "notes": "Official key 23(2シ) No.5 = 2 -> イ. Stem and options match page 3 verbatim. イ and the explanation now state that, strictly, torque multiplication ends at the clutch point and that (2) is the official answer. That fixes the over-general claim. Non-blocking nit: the phrase 'タービン・ランナがポンプ・インペラより遅く回るコンバータ・レンジ' could be read as defining the converter range by turbine<pump speed, but the turbine is also slower in the coupling range. ア/ウ/エ are correct: coupling range starts after the clutch point; torque ratio = turbine torque / pump torque; torque ratio is about 1 in the coupling range and 2.0-2.5 is near-stall. Text-only question, so hasImage false is correct and page 3 is correct."
+    },
+    {
+      "id": "jidosha-2024-second-electrical-q03",
+      "verdict": "PASS",
+      "answerChecked": true,
+      "allFourExplanationsChecked": true,
+      "sourcePagesChecked": [2],
+      "issues": [],
+      "notes": "Official key 42(電装) No.3 = 2 -> イ. Figure on page 2: 4μF directly between A and B; 8μF from A to the midpoint; two 4μF in parallel from the midpoint to B. 4+4 = 8, 8 in series with 8 = 4, then in parallel with 4 gives 8μF. The calculation is correct. The wrong 12μF derivation is gone, and エ now only states that 12μF does not match 8μF, which is correct. The figure description in the stem matches the figure. Options match. hasImage true / sourcePages [2] correct."
+    },
+    {
+      "id": "jidosha-2024-second-3-motorcycle-q02",
+      "verdict": "PASS",
+      "answerChecked": true,
+      "allFourExplanationsChecked": true,
+      "sourcePagesChecked": [2],
+      "issues": [],
+      "notes": "Official key 34(3に) No.2 = 4 -> エ. Zoomed figure: A is a diametral dimension across the ring (arrowheads at the ring), B is radial wall thickness, C is the end gap, and D is the side-view axial dimension. ア's new wording 'リングの直径方向の寸法' is neutral and accurate. B=厚さ, C=合い口すき間, D=幅 are correct. Minor: '（上下方向）' in the explanation refers to the installed orientation, while D is drawn horizontally in the figure. Not wrong. hasImage true / sourcePages [2] correct."
+    },
+    {
+      "id": "jidosha-2025-first-2-motorcycle-q22",
+      "verdict": "PASS",
+      "answerChecked": true,
+      "allFourExplanationsChecked": true,
+      "sourcePagesChecked": [8],
+      "issues": [],
+      "notes": "Official key 2025 24(2に) No.22 = 4 -> エ. Page 8 holds No.22 with an X/Y/Z axis figure (rolling/X, pitching/Y, yawing/Z, vertical vibration), so hasImage true and sourcePages [8] are correct. Stem and all four options match verbatim. Explanations: rolling is about the longitudinal X axis with its roll center near the tire contact point; pitching is about the lateral Y axis with the rear frequency set slightly higher; natural frequency depends on spring rate and (sprung) mass; yaw combined with roll at high speed is wobble, not shimmy, and shimmy is low/mid-speed handlebar oscillation. All correct."
+    }
+  ]
+}
