@@ -14,7 +14,7 @@ interface StagedQuestion {
   publicationStatus: string; publicAllowed: boolean; needsReview: boolean; type: string;
   question: string; choices: Record<string, string>; officialAnswerNumber: number;
   sourcePdfUrl: string; sourceAnswerUrl: string; sourcePage: number;
-  hasImage: boolean; images?: StagedImage[];
+  hasImage: boolean; images?: StagedImage[]; referenceImages?: (StagedImage & { kind: string })[];
   sourceAttribution: string; lawReferenceDate: string | null; legalContextDate: string;
   lastUpdated: string; explanationAuthorship: string; sourceTextSha256: string;
   choiceExplanations: Record<string, string>; explanation: string; category: string; transcriptionNote: string;
@@ -59,7 +59,7 @@ describe("測量士補 private staging (sokuryoshiho)", () => {
       }
     }
     expect(new Set(all.map((q) => q.id)).size).toBe(56);
-    expect(manifest).toMatchObject({ slug: "sokuryoshiho", name: "測量士補", administrator: "国土地理院", independentReview: "pending" });
+    expect(manifest).toMatchObject({ slug: "sokuryoshiho", name: "測量士補", administrator: "国土地理院", independentReview: "pass-with-fixes" });
     expect(manifest.counts).toMatchObject({ "2025": 28, "2026": 28, total: 56 });
   });
 
@@ -99,19 +99,26 @@ describe("測量士補 private staging (sokuryoshiho)", () => {
     expect(existsSync(path.join(ROOT, "public", "images", "sokuryoshiho"))).toBe(false);
   });
 
-  it("stores only existing figure crops whose bytes match the recorded sha256", () => {
+  it("stores only existing figure crops and function tables whose bytes match the recorded sha256", () => {
     const referenced = new Set<string>();
     for (const q of all) {
       expect(q.hasImage).toBe(Boolean(q.images?.length));
-      for (const img of q.images ?? []) {
+      // Every question that tells the candidate to use the 巻末の関数表 carries that sitting's table page.
+      const needsTable = q.question.includes("巻末の関数表");
+      expect(q.referenceImages?.map((r) => r.path) ?? [], q.id).toEqual(needsTable ? [`images/${q.year}-function-table.webp`] : []);
+      for (const img of [...(q.images ?? []), ...(q.referenceImages ?? [])]) {
         const file = path.join(DIR, img.path);
         expect(existsSync(file), img.path).toBe(true);
         const bytes = readFileSync(file);
         expect(sha256(bytes), img.path).toBe(img.sha256);
-        expect(bytes.length).toBeLessThan(300_000);
+        expect(bytes.length).toBeLessThan(700_000);
         expect(img.alt.length).toBeGreaterThan(10);
         referenced.add(path.basename(img.path));
       }
+    }
+    // The topographic maps (No.21) are high-resolution re-crops so symbols stay legible on phones.
+    for (const name of ["2025-q21-fig.webp", "2026-q21-fig.webp"]) {
+      expect(readFileSync(path.join(DIR, "images", name)).length).toBeGreaterThan(300_000);
     }
     expect(readdirSync(path.join(DIR, "images")).sort()).toEqual([...referenced].sort());
     for (const name of referenced) expect(name).toMatch(/\.webp$/);
@@ -136,6 +143,17 @@ describe("測量士補 private staging (sokuryoshiho)", () => {
     expect(q12.computedAnswerNumber).toBe(5);
     expect(q12.scoringNote).toContain("referenceOnly");
     expect(q12.question).toContain("2.5 mm√S");
+    expect(q12.explanation).toContain("2.5 mm×S");
+  });
+
+  it("marks the underlined parts of 2026 No.25 explicitly", () => {
+    const q25 = rounds[2026][24]!;
+    expect(q25.question).toContain("（【】内は原本で下線が引かれた部分）");
+    for (const k of ["1", "2", "3", "4", "5"]) expect(q25.choices[k]).toMatch(/^[^【】]+。【[^【】]+。】$/);
+    expect(q25.choices["3"]).toContain("【平地においては4級水準測量により行い，山地においては簡易水準測量により行う。】");
+    for (const q of all) {
+      for (const text of Object.values(q.choiceExplanations)) expect(text).not.toContain("公式正答では誤りとされない");
+    }
   });
 
   it("is not imported by any public registry, loader or route", () => {
