@@ -2,7 +2,7 @@ import { EXAM_CONFIGS } from "@/lib/exam-config";
 import type { ExamCode, Session } from "./types";
 
 export const SPECIALIST_EXAMS: readonly ExamCode[] = ["st", "sa", "pm", "nw", "db", "es", "sc", "sm", "au"];
-export const PRACTICE_SESSIONS: readonly Session[] = ["yakkan", "jitsumu", "patent", "design", "trademark", "treaty", "copyright", "dokugeki-ippan", "dokugeki-nougyou", "dokugeki-tokutei", "gakka-I", "gakka-II", "gakka-III", "gakka-IV", "khk-ax", "khk-ay", "khk-az", "khk-bx", "khk-by", "khk-bz", "khk-cx", "khk-cy", "khk-cz", "khk-dx", "khk-dy", "khk-dz", "keikaku", "kankyo-setsubi", "kozo", "sekou", "gakushiki", "gyosei","kanri","kansa","am","am1","am2","pm","kamoku-a","kamoku-b","gakka","rousai","koyou","kenpo","kounen","kokunen","ippan","sentaku","riron","denryoku","kikai","houki","hoki","kogaku","kiso","kogaku-a","kogaku-b","tiri","mondai-a","mondai-b","mondai-c","mondai-d","kyotsu","senmon","hoiku-genri","kyoiku-genri","shakaiteki-yougo","kodomo-katei-fukushi","shakai-fukushi","hoiku-shinrigaku","kodomo-hoken","kodomo-shokueiyou","hoiku-jisshu-riron","keizai","zaimu","kigyo","unei","keiei-houmu","keiei-joho","chusho-seisaku","required","theory","practical","gas-law","gas-basic","gas-technology","jken-basic","jken-programming","jken-design","hoan","wagashi","yogashi","seipan","measurement-basic","measurement-mass","measurement-chemistry","measurement-concentration","measurement-physics","measurement-sound","measurement-management","kenki-type1","kenki-type2","kenki-type3","kenki-type4","kenki-type5","kenki-type6"];
+export const PRACTICE_SESSIONS: readonly Session[] = ["yakkan", "jitsumu", "patent", "design", "trademark", "treaty", "copyright", "dokugeki-ippan", "dokugeki-nougyou", "dokugeki-tokutei", "gakka-I", "gakka-II", "gakka-III", "gakka-IV", "khk-ax", "khk-ay", "khk-az", "khk-bx", "khk-by", "khk-bz", "khk-cx", "khk-cy", "khk-cz", "khk-dx", "khk-dy", "khk-dz", "keikaku", "kankyo-setsubi", "kozo", "sekou", "gakushiki", "gyosei","kanri","kansa","am","am1","am2","pm","kamoku-a","kamoku-b","gakka","rousai","koyou","kenpo","kounen","kokunen","ippan","sentaku","riron","denryoku","kikai","houki","hoki","kogaku","kiso","kogaku-a","kogaku-b","tiri","mondai-a","mondai-b","mondai-c","mondai-d","kyotsu","senmon","hoiku-genri","kyoiku-genri","shakaiteki-yougo","kodomo-katei-fukushi","shakai-fukushi","hoiku-shinrigaku","kodomo-hoken","kodomo-shokueiyou","hoiku-jisshu-riron","keizai","zaimu","kigyo","unei","keiei-houmu","keiei-joho","chusho-seisaku","required","theory","practical","gas-law","gas-basic","gas-technology","jken-basic","jken-programming","jken-design","hoan","wagashi","yogashi","seipan","measurement-basic","measurement-mass","measurement-chemistry","measurement-concentration","measurement-physics","measurement-sound","measurement-management","kenki-type1","kenki-type2","kenki-type3","kenki-type4","kenki-type5","kenki-type6","constitution","civil-law","criminal-law","admin-law","commercial-law","civil-procedure","criminal-procedure"];
 
 /** Specialist practice starts with the specialist paper; common AM I is explicit. */
 export function defaultPracticeSession(exam: ExamCode, year?: number): Session {
@@ -66,6 +66,13 @@ pm: "午後",
 pm1: "午後I",
 pm2: "午後II",
 gakka: "学科",
+constitution: "憲法",
+"civil-law": "民法",
+"criminal-law": "刑法",
+"admin-law": "行政法",
+"commercial-law": "商法",
+"civil-procedure": "民事訴訟法",
+"criminal-procedure": "刑事訴訟法",
 rousai: "労災",
 koyou: "雇用保険",
 kenpo: "健康保険",

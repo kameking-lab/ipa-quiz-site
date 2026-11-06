@@ -156,7 +156,10 @@ describe("測量士補 private staging (sokuryoshiho)", () => {
     }
   });
 
-  it("is not imported by any public registry, loader or route", () => {
+  // Batch4 publishes a reviewed projection (No.21 excluded, R8 No.12 reference-only).
+  // Only that single loader may read the staging rounds; registries import the loader.
+  const PUBLIC_PROJECTION = path.join("data", "questions", "sokuryoshiho", "index.ts");
+  it("is only read by the batch4 public projection loader", () => {
     const needle = "qualification-staging/sokuryoshiho";
     for (const file of [
       "data/questions/index.ts", "lib/questions/get-questions.ts", "lib/questions/load.ts", "lib/exam-config.ts",
@@ -176,6 +179,6 @@ describe("測量士補 private staging (sokuryoshiho)", () => {
     for (const dir of ["app", "components", "lib", "data/questions"]) {
       if (existsSync(path.join(ROOT, dir))) walk(path.join(ROOT, dir));
     }
-    expect(offenders).toEqual([]);
+    expect(offenders.map(file => path.relative(ROOT, file))).toEqual([PUBLIC_PROJECTION]);
   });
 });

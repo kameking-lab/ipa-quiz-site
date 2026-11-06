@@ -155,7 +155,14 @@ export const EXAM_LABELS: Record<string, string> = {
     "keiryoshi-soon": "環境計量士（騒音・振動関係）",
     kenki2: "2級建設機械施工管理（第一次）",
     kenki1: "1級建設機械施工管理（第一次）",
-    gyosei: "行政書士"
+    gyosei: "行政書士",
+    "career-consultant": "キャリアコンサルタント（学科）",
+    "kanri-eiyoshi": "管理栄養士",
+    "sogo-ryoko": "総合旅行業務取扱管理者",
+    "shiho-tanto": "司法試験（短答）",
+    "yobi-tanto": "予備試験（短答）",
+    "sokuryoshiho": "測量士補",
+    "caremanager": "ケアマネ試験"
 };
 export function examLabel(exam: string): string {
     return EXAM_LABELS[exam] ?? exam.toUpperCase();

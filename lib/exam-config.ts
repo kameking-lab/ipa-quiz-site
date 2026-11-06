@@ -1608,6 +1608,55 @@ shihoshoshi: {
         { session: "am", urlSlug: "am", expectedQuestions: 35, label: "午前（多肢択一式）", categories: ["憲法", "民法", "刑法", "会社法・商法"] },
         { session: "pm", urlSlug: "pm", expectedQuestions: 35, label: "午後（多肢択一式）", categories: ["民事訴訟法・民事執行法・民事保全法", "司法書士法", "供託法", "不動産登記法", "商業登記法"] },
     ], seasons: ["annual"], yearRange: { start: 2025, end: 2026 },
+},
+"career-consultant": {
+    code: "career-consultant", nameFull: "国家資格キャリアコンサルタント試験（学科）", urlSlug: "career-consultant", level: "specialist",
+    sessions: [{ session: "gakka", urlSlug: "gakka", expectedQuestions: 50, label: "学科試験", categories: ["キャリアコンサルティングの社会的意義", "キャリアコンサルティングを行うために必要な知識", "キャリアコンサルティングを行うために必要な技能", "キャリアコンサルタントの倫理と行動"] }],
+    seasons: ["autumn", "july"], yearRange: { start: 2026, end: 2026 },
+},
+"kanri-eiyoshi": {
+    code: "kanri-eiyoshi", nameFull: "管理栄養士国家試験", urlSlug: "kanri-eiyoshi", level: "specialist",
+    sessions: [
+        { session: "am", urlSlug: "am", expectedQuestions: 97, label: "午前", categories: ["社会・環境と健康", "人体の構造と機能及び疾病の成り立ち", "食べ物と健康", "基礎栄養学", "応用栄養学"] },
+        { session: "pm", urlSlug: "pm", expectedQuestions: 103, label: "午後", categories: ["栄養教育論", "臨床栄養学", "公衆栄養学", "給食経営管理論", "応用力試験"] },
+    ], seasons: ["annual"], yearRange: { start: 2026, end: 2026 },
+},
+"sogo-ryoko": {
+    code: "sogo-ryoko", nameFull: "総合旅行業務取扱管理者", urlSlug: "sogo-ryoko", level: "specialist",
+    sessions: [
+        { session: "hoki", urlSlug: "hoki", expectedQuestions: 25, label: "旅行業法令", categories: ["旅行業法令"] },
+        { session: "yakkan", urlSlug: "yakkan", expectedQuestions: 30, label: "約款", categories: ["約款"] },
+    ], seasons: ["annual"], yearRange: { start: 2025, end: 2026 },
+},
+"shiho-tanto": {
+    code: "shiho-tanto", nameFull: "司法試験（短答式）", urlSlug: "shiho-tanto", level: "specialist",
+    sessions: [
+        { session: "constitution", urlSlug: "constitution", expectedQuestions: 20, label: "憲法", categories: ["憲法"] },
+        { session: "civil-law", urlSlug: "civil-law", expectedQuestions: 37, label: "民法", categories: ["民法"] },
+        { session: "criminal-law", urlSlug: "criminal-law", expectedQuestions: 20, label: "刑法", categories: ["刑法"] },
+    ], seasons: ["annual"], yearRange: { start: 2025, end: 2026 },
+},
+"yobi-tanto": {
+    code: "yobi-tanto", nameFull: "司法試験予備試験（短答式・法律基本科目）", urlSlug: "yobi-tanto", level: "specialist",
+    sessions: [
+        { session: "constitution", urlSlug: "constitution", expectedQuestions: 12, label: "憲法", categories: ["憲法"] },
+        { session: "admin-law", urlSlug: "admin-law", expectedQuestions: 12, label: "行政法", categories: ["行政法"] },
+        { session: "civil-law", urlSlug: "civil-law", expectedQuestions: 15, label: "民法", categories: ["民法"] },
+        { session: "commercial-law", urlSlug: "commercial-law", expectedQuestions: 15, label: "商法", categories: ["商法"] },
+        { session: "civil-procedure", urlSlug: "civil-procedure", expectedQuestions: 15, label: "民事訴訟法", categories: ["民事訴訟法"] },
+        { session: "criminal-law", urlSlug: "criminal-law", expectedQuestions: 13, label: "刑法", categories: ["刑法"] },
+        { session: "criminal-procedure", urlSlug: "criminal-procedure", expectedQuestions: 13, label: "刑事訴訟法", categories: ["刑事訴訟法"] },
+    ], seasons: ["annual"], yearRange: { start: 2025, end: 2026 },
+},
+sokuryoshiho: {
+    code: "sokuryoshiho", nameFull: "測量士補試験", urlSlug: "sokuryoshiho", level: "basic",
+    sessions: [{ session: "gakka", urlSlug: "gakka", expectedQuestions: 28, label: "試験問題", categories: ["測量法規", "多角測量", "GNSS測量", "水準測量", "地形測量", "写真測量", "地図編集", "応用測量"] }],
+    seasons: ["annual"], yearRange: { start: 2025, end: 2026 },
+},
+caremanager: {
+    code: "caremanager", nameFull: "介護支援専門員実務研修受講試験", urlSlug: "caremanager", level: "basic",
+    sessions: [{ session: "gakka", urlSlug: "gakka", expectedQuestions: 60, label: "試験問題", categories: ["介護支援分野", "保健医療サービスの知識等", "福祉サービスの知識等"] }],
+    seasons: ["annual"], yearRange: { start: 2024, end: 2025 },
 }
 };
 
