@@ -44,6 +44,44 @@ TOPIC_OVERRIDES = {
 }
 
 
+QTY = re.compile(r"^(.*\S)\s+([０-９0-9][０-９0-9.．]*)\s*(ｍｇ|μｇ|ｇ|ｍＬ|mg|g|mL)$")
+HEADER = re.compile(r"^成分\s+(分量|含量)$")
+PER = re.compile(r"^(.*。)([０-９0-9]+(錠|カプセル|包|ｍＬ|mL)中：)$")
+
+
+def tabulate(question: str) -> str:
+    """成分表（「成分 分量」＋各行）を令和7年度と同じ markdown 表に整える。文言・数値は変えない。"""
+    lines = question.split("\n")
+    if not any(HEADER.match(line) for line in lines):
+        return question
+    out: list[str] = []
+    i = 0
+    while i < len(lines):
+        line = lines[i]
+        m = PER.match(line)
+        if m and i + 1 < len(lines) and HEADER.match(lines[i + 1]):
+            out.extend([m.group(1), "", m.group(2)])
+            i += 1
+            continue
+        h = HEADER.match(line)
+        if h:
+            if out and out[-1].endswith("中：") and len(out) >= 2 and out[-2] != "" and not PER.match(out[-1]):
+                out.insert(len(out) - 1, "")
+            out.extend([f"| 成分 | {h.group(1)} |", "| --- | --- |"])
+            i += 1
+            while i < len(lines) and (row := QTY.match(lines[i])):
+                out.append(f"| {row.group(1)} | {row.group(2)}{row.group(3)} |")
+                i += 1
+            if i < len(lines) and lines[i] != "":
+                out.append("")
+            continue
+        out.append(line)
+        i += 1
+    text = "\n".join(out)
+    assert "| --- | --- |" in text
+    return text
+
+
 def topic_for(number: int, question: str) -> str:
     if number in TOPIC_OVERRIDES:
         return TOPIC_OVERRIDES[number]
@@ -110,7 +148,7 @@ def main() -> None:
             "category": q["section"],
             "topic": topic_for(n, q["question"]),
             "officialAnswerNumber": ans,
-            "question": q["question"],
+            "question": tabulate(q["question"]),
             "choices": q["choices"],
             "explanation": explanation,
             "choiceExplanations": choice_explanations,
@@ -134,7 +172,7 @@ def main() -> None:
         },
         "questions": records,
     }
-    OUT.write_text(json.dumps(payload, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
+    OUT.write_text(json.dumps(payload, ensure_ascii=False, indent=1) + "\n", encoding="utf-8", newline="\n")
     print(f"wrote {len(records)} questions -> {OUT.relative_to(ROOT)}")
 
 

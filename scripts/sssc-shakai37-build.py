@@ -84,7 +84,7 @@ def main() -> None:
         "questionPdfs": pdfs,
         "questions": records,
     }
-    OUTPUT.write_text(json.dumps(payload, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
+    OUTPUT.write_text(json.dumps(payload, ensure_ascii=False, indent=1) + "\n", encoding="utf-8", newline="\n")
     print(f"Wrote {len(records)} senmon questions to {OUTPUT.relative_to(ROOT)}")
 
 

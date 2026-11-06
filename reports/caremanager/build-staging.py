@@ -110,7 +110,7 @@ def main() -> None:
                 "sourceAttribution": f"出典：第{meta['round']}回介護支援専門員実務研修受講試験 問題{n}（{meta['publisher']}掲載）。解説は過去問AIの独自作成です。",
             })
         total += len(records)
-        (OUT / f"{meta['year']}.json").write_text(json.dumps(records, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
+        (OUT / f"{meta['year']}.json").write_text(json.dumps(records, ensure_ascii=False, indent=1) + "\n", encoding="utf-8", newline="\n")
         answers_out[str(meta["year"])] = {
             "round": meta["round"],
             "answerUrls": meta["answerUrls"],
@@ -138,8 +138,8 @@ def main() -> None:
         ],
         "files": manifest_files,
     }
-    (OUT / "manifest.json").write_text(json.dumps(manifest, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
-    (OUT / "official-answers.json").write_text(json.dumps(answers_out, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    (OUT / "manifest.json").write_text(json.dumps(manifest, ensure_ascii=False, indent=2) + "\n", encoding="utf-8", newline="\n")
+    (OUT / "official-answers.json").write_text(json.dumps(answers_out, ensure_ascii=False, indent=2) + "\n", encoding="utf-8", newline="\n")
     audit = {
         "slug": "caremanager",
         "checkedAt": "2026-11-06",
@@ -151,7 +151,7 @@ def main() -> None:
         "excluded": [],
         "notYetAvailable": "第29回（2026-10-11実施）は正答が合格発表（2026-11-24予定）まで未公表のため未収録。",
     }
-    (OUT / "source-audit.json").write_text(json.dumps(audit, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    (OUT / "source-audit.json").write_text(json.dumps(audit, ensure_ascii=False, indent=2) + "\n", encoding="utf-8", newline="\n")
     print(f"wrote {total} questions")
 
 
