@@ -162,7 +162,9 @@ export const EXAM_LABELS: Record<string, string> = {
     "shiho-tanto": "司法試験（短答）",
     "yobi-tanto": "予備試験（短答）",
     "sokuryoshiho": "測量士補",
-    "caremanager": "ケアマネ試験"
+    "caremanager": "ケアマネ試験",
+    "kikai-hozen": "機械保全技能士 2級",
+    "tsukanshi": "通関士"
 };
 export function examLabel(exam: string): string {
     return EXAM_LABELS[exam] ?? exam.toUpperCase();

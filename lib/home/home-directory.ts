@@ -145,6 +145,8 @@ const OTHER_CARDS: readonly OtherCardDef[] = [
   { code: "shiho-tanto", name: "司法試験（短答）", sub: "憲法・民法・刑法の短答式", domain: "money" },
   { code: "yobi-tanto", name: "予備試験（短答）", sub: "法律基本科目7科目の短答式", domain: "money" },
   { code: "sokuryoshiho", name: "測量士補", sub: "国土地理院の公式問題・正答・独自解説", domain: "construction" },
+  { code: "kikai-hozen", name: "機械保全技能士 2級", sub: "機械系保全作業 学科（真偽法・四肢択一）", domain: "safety" },
+  { code: "tsukanshi", name: "通関士", sub: "通関業法・関税法等・通関実務", domain: "money" },
   { code: "kanteishi", name: "不動産鑑定士", sub: "令和7・8年度 短答式160問・全肢解説", domain: "money" },
   { code: "kaikeishi", name: "公認会計士", sub: "令和8年試験 第I・II回 短答式186問・全肢解説", domain: "money" },
   { code: "maritime1", name: "第一級海上無線通信士", sub: "2026年3月・9月 日本語筆記4科目190問・全肢解説・原図209枚、B40問は各5枠", domain: "electrical" },

@@ -290,7 +290,8 @@ describe("sessionLabel", () => {
             "kenki-type5": true,
             "kenki-type6": true,
             constitution: true, "civil-law": true, "criminal-law": true, "admin-law": true,
-            "commercial-law": true, "civil-procedure": true, "criminal-procedure": true
+            "commercial-law": true, "civil-procedure": true, "criminal-procedure": true,
+            "tsukan-law": true, "customs-law": true, "tsukan-practical": true
         };
         for (const session of Object.keys(SESSION_PRESENCE) as Session[]) {
             expect(sessionLabel(session)).not.toBe(session.toUpperCase());

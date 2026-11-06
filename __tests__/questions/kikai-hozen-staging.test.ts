@@ -119,7 +119,8 @@ describe("機械保全技能検定 2級 機械系保全作業 学科 private sta
     expect(textSha({ ...q, question: `${q.question}変更` })).not.toBe(q.sourceTextSha256);
   });
 
-  it("is not imported by any public registry or runtime module", () => {
+  // Batch4 publishes the reviewed set through one projection loader; nothing else may read staging.
+  it("is only read by the batch4 public projection loader", () => {
     const roots = ["app", "lib", "components", "data/questions"].map((p) => path.join(process.cwd(), p)).filter(existsSync);
     const importRe = /(from\s+|import\s*\(|require\s*\()\s*["'][^"']*qualification-staging\/kikai-hozen/;
     const offenders: string[] = [];
@@ -132,7 +133,7 @@ describe("機械保全技能検定 2級 機械系保全作業 学科 private sta
       }
     };
     roots.forEach(walk);
-    expect(offenders).toEqual([]);
+    expect(offenders.map((file) => path.relative(process.cwd(), file))).toEqual([path.join("data", "questions", "kikai-hozen", "index.ts")]);
     expect(existsSync(path.join(process.cwd(), "public", "images", "kikai-hozen"))).toBe(false);
   }, 120_000);
 });

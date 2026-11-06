@@ -162,7 +162,9 @@ shihoshoshi: async () => isExamPublished("shihoshoshi") ? (await import("@/data/
 "shiho-tanto": async () => isExamPublished("shiho-tanto") ? (await import("@/data/questions/shiho-tanto")).SHIHO_TANTO_QUESTIONS : [],
 "yobi-tanto": async () => isExamPublished("yobi-tanto") ? (await import("@/data/questions/yobi-tanto")).YOBI_TANTO_QUESTIONS : [],
 "sokuryoshiho": async () => isExamPublished("sokuryoshiho") ? (await import("@/data/questions/sokuryoshiho")).SOKURYOSHIHO_QUESTIONS : [],
-"caremanager": async () => isExamPublished("caremanager") ? (await import("@/data/questions/caremanager")).CAREMANAGER_QUESTIONS : []
+"caremanager": async () => isExamPublished("caremanager") ? (await import("@/data/questions/caremanager")).CAREMANAGER_QUESTIONS : [],
+"kikai-hozen": async () => isExamPublished("kikai-hozen") ? (await import("@/data/questions/kikai-hozen")).KIKAI_HOZEN_QUESTIONS : [],
+"tsukanshi": async () => isExamPublished("tsukanshi") ? (await import("@/data/questions/tsukanshi")).TSUKANSHI_QUESTIONS : []
 };
 
 /** Load questions for one exam (lazy — only loads the requested exam's chunk). */

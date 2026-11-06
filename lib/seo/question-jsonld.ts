@@ -37,6 +37,9 @@ export function sessionLabel(session: string, exam?: ExamCode): string {
     "commercial-law": "商法",
     "civil-procedure": "民事訴訟法",
     "criminal-procedure": "刑事訴訟法",
+    "tsukan-law": "通関業法",
+    "customs-law": "関税法等",
+    "tsukan-practical": "通関実務",
     "patent": "特許・実用新案",
     "design": "意匠",
     "trademark": "商標",
@@ -175,7 +178,7 @@ export function buildQuestionJsonLd({
 
   // The administering body authored the question; this site authored the
   // learning explanation. Keep the author inline so the node is self-contained.
-  const releaseSource = ["benrishi", "sokuryoshi", "dokugeki-chiba", "jokaso-setsubishi", "chiiki-ryoko", "junkango-kansai", "kukaku-seiri", "dojo-osen", "kenchikushi2", "mokuzo-kenchikushi", "kenchikushi1", "khk-kagaku", "sekou-1kenchiku", "chintai", "kyusui", "biru-kan", "gijutsushi1-kikai", "hoshasen-1", "hoshasen-2", "energy-kanri", "career-consultant", "kanri-eiyoshi", "sogo-ryoko", "shiho-tanto", "yobi-tanto", "sokuryoshiho", "caremanager"].includes(q.exam) ? getQualificationByExamCode(q.exam) : undefined;
+  const releaseSource = ["benrishi", "sokuryoshi", "dokugeki-chiba", "jokaso-setsubishi", "chiiki-ryoko", "junkango-kansai", "kukaku-seiri", "dojo-osen", "kenchikushi2", "mokuzo-kenchikushi", "kenchikushi1", "khk-kagaku", "sekou-1kenchiku", "chintai", "kyusui", "biru-kan", "gijutsushi1-kikai", "hoshasen-1", "hoshasen-2", "energy-kanri", "career-consultant", "kanri-eiyoshi", "sogo-ryoko", "shiho-tanto", "yobi-tanto", "sokuryoshiho", "caremanager", "kikai-hozen", "tsukanshi"].includes(q.exam) ? getQualificationByExamCode(q.exam) : undefined;
   const questionAuthor = releaseSource
     ? { "@type": "Organization", name: releaseSource.administrator, url: new URL(releaseSource.officialQuestionsUrl).origin }
     : q.exam === "kisho"

@@ -11,6 +11,7 @@ const STAGING_ONLY_FIELDS = new Set([
   "officialPoints", "references", "sharedWith", "legacyCandidateId", "officialChoiceLabels", "scoring",
   "points", "officialAnswerText", "sharedContext", "slug", "images", "referenceImages", "figureDescription",
   "calculationCheck", "computedAnswerNumber", "scoringNote", "referenceOnly", "legalContextDate",
+  "grade", "work", "answerFormat", "officialAnswer",
 ]);
 
 export function projectStagedQuestions(rows: readonly object[], imageBase?: string): Question[] {
