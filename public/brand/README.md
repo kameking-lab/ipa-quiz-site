@@ -1,9 +1,26 @@
 # Chihuahua site icons
 
-The site's browser, home-screen, PWA, and header icons use the same cream Chihuahua studying with a book as the qualification Instagram avatar.
+## Browser / home-screen / PWA icons (match the App Store icon)
 
-Source: `instagram-automation/assets/qualification-campaign/ipa-avatar.png`, generated for this campaign using the built-in image generation tool and visually reviewed. The source artwork is reused unchanged; PNG assets are deterministic size conversions. `chihuahua-maskable-512.png` adds a pale blue safe area for launcher masks. Legacy SVG paths embed the same artwork so existing structured-data URLs remain valid.
+Since 2026-11-06 the browser, home-screen and PWA icons are the same artwork as the
+iOS App Store icon (`mobile/ios-assets/AppIcon.appiconset/AppIcon-1024.png`:
+navy background, 「過去問AI」, Chihuahua holding a phone). They are deterministic Pillow
+LANCZOS downscales of that 1024 px source:
 
-Browser icon: `app/icon.png` and `public/favicon.png` (64 px). Apple icon: `app/apple-icon.png` (180 px). PWA icons: 192 and 512 px plus a separate maskable 512 px icon. Metadata and the manifest select PNG files. The service-worker cache version is bumped to refresh old cached icons.
+- `app/favicon.ico` (16/32/48), `app/icon.png` and `public/favicon.png` (64 px)
+- `app/apple-icon.png` (180 px)
+- `public/icon-192.png`, `public/icon-512.png` (purpose `any`)
+- `public/icon-maskable-192.png`, `public/icon-maskable-512.png` (art scaled to 80 % and
+  centred on the source's navy `#012966` so launcher masks do not clip it)
+- `public/favicon.svg`, `public/icon-192.svg`, `public/icon-512.svg` embed the same PNG so the
+  legacy URLs (structured-data logo, service-worker notifications) stay valid.
 
-Verified 2026-09-12: mobile home header rendered, every emitted icon link returned HTTP 200, and dimensions were checked during asset generation.
+The service-worker cache version is bumped whenever these change.
+
+## Header logo (this folder)
+
+`chihuahua-icon-192.png` / `chihuahua-icon-512.png` / `chihuahua-maskable-512.png` are the
+cream Chihuahua studying with a book (source:
+`instagram-automation/assets/qualification-campaign/ipa-avatar.png`). `components/SiteLogo.tsx`
+still uses the 192 px file as the round header logo; they are no longer referenced by the
+manifest or metadata.
