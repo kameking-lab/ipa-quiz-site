@@ -17,7 +17,7 @@
     stagingDataPath: "data/qualification-staging/sokuryoshiho",
     reuseSummary: "令和8年・令和7年の測量士補試験（各28問・五肢択一）を未公開ステージングに収録。問題・正答は国土地理院公表PDF、解説は過去問AIの独自作成。令和8年No.12は公式正答と掲載数値の計算結果が一致しないため参考扱い（採点対象外）。",
     attributionTemplate: "出典：国土地理院 令和○年測量士補試験 No.○。解説は過去問AIの独自作成。",
-    remainingWork: ["独立レビュー", "No.21の地形図（電子地形図25000）の測量法上の複製承認要否の確認", "公開用ExamCode・ローダーへの接続（別途公開指示が必要）"],
+    remainingWork: ["No.21の地形図（電子地形図25000）の測量法上の複製承認要否の確認", "公開用ExamCode・ローダーへの接続（別途公開指示が必要）"],
 },
 ```
 
