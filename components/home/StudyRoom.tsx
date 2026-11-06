@@ -6,7 +6,6 @@ import { presenceExamName } from "@/lib/study-presence";
 import type { MeasuredPresence } from "@/lib/study-presence-contract";
 import { measuredRoom, roomStage } from "@/lib/home/study-room";
 import { StudyRewardCorner } from "./StudyRewardCorner";
-import { StudyReturnLink } from "./StudyReturnLink";
 import styles from "./StudyRoomSeats.module.css";
 
 interface Suggestion { name: string; href: string }
@@ -95,7 +94,6 @@ export function StudyRoom({ snapshot, suggestions }: {
         </div>}
       </div>
       <aside className="study-room-sidebar">
-        <StudyReturnLink />
         {snapshot && <div className="study-room-summary">
           <p className="study-kicker">直近5分の学習者</p>
           <p className="study-room-total"><strong>{snapshot.count.toLocaleString("ja-JP")}</strong><span>人</span></p>

@@ -52,7 +52,6 @@ import { cn } from "@/lib/utils";
 import {
   QUICK_ACTIONS,
   RESPONSE_LENGTH_LABEL,
-  INITIAL_QUESTION_EXAMPLES,
   type QuickActionId,
   type LearnerProfile,
   type ResponseLength,
@@ -1100,37 +1099,11 @@ export function CopilotPanel({
       {/* Messages */}
       <div
         ref={scrollRef}
-        className={cn("min-w-0 overflow-y-auto break-words p-3", inline ? "max-h-[24rem]" : "flex-1")}
+        className={cn("min-w-0 overflow-y-auto break-words p-3 empty:p-0", inline ? "max-h-[24rem]" : "flex-1")}
         role="log"
         aria-live="polite"
         aria-label="AI コパイロットの応答"
       >
-        {messages.length === 0 && (
-          <div>
-              <ul
-                aria-label="質問例"
-                className="flex flex-wrap gap-1.5"
-              >
-                {INITIAL_QUESTION_EXAMPLES.map((ex) => (
-                  <li key={ex.label}>
-                    <button
-                      type="button"
-                      onClick={() => {
-                        setInput(ex.prompt);
-                        posthogCapture("copilot_question_example_clicked", {
-                          label: ex.label,
-                          questionId: question?.id,
-                        });
-                      }}
-                      className="rounded-full border border-sky-300 bg-white px-2.5 py-1 text-xs text-sky-700 transition-colors hover:bg-sky-100 dark:border-sky-800 dark:bg-zinc-900 dark:text-sky-300 dark:hover:bg-sky-950/50"
-                    >
-                      {ex.label}
-                    </button>
-                  </li>
-                ))}
-              </ul>
-          </div>
-        )}
         {messages.map((m, i) => (
           <div
             key={i}
