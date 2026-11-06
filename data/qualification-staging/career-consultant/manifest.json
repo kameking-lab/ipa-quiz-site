@@ -1,0 +1,74 @@
+{
+  "slug": "career-consultant",
+  "name": "国家資格キャリアコンサルタント試験 学科試験",
+  "publicationStatus": "staging",
+  "publicAllowed": false,
+  "officialIndexUrls": [
+    "https://www.career-shiken.org/about/learninfo/",
+    "https://www.jcda-careerex.org/past/"
+  ],
+  "checkedAt": "2026-11-06",
+  "expectedQuestions": 100,
+  "sittings": [
+    {
+      "round": 33,
+      "examDate": "2026-11-01",
+      "lawReferenceDate": "2026-04-01",
+      "questions": 50
+    },
+    {
+      "round": 32,
+      "examDate": "2026-07-05",
+      "lawReferenceDate": "2026-04-01",
+      "questions": 50
+    }
+  ],
+  "mirrorNote": "学科試験は両登録試験機関の共通問題。第33回は両機関のPDFがバイト一致、第32回はバイトは異なるが文字層が完全一致（2026-11-06確認）。正本は協議会URL。",
+  "rightsNote": "問題用紙に「無断転載・無断複製を禁ず」の記載あり。オーナー決定（2026-11-04）により権利文言では止めず記録のみ。公開前に親が扱いを確認する。",
+  "sourceFiles": [
+    {
+      "round": 33,
+      "kind": "questions",
+      "url": "https://www.career-shiken.org/wordpress/wp-content/uploads/33_gakka_mondai_20261101838345453.pdf",
+      "mirrorUrl": "https://www.jcda-careerex.org/wp-content/uploads/2026/11/33_gakka_mondai.pdf",
+      "sha256": "c956eee5f05ccc63fac3ac6ff54ed0ab9b9126e7fee0e2bcdd14e782127ff037",
+      "bytes": 1156389,
+      "retrievedAt": "2026-11-06",
+      "httpStatus": 200,
+      "method": "GET"
+    },
+    {
+      "round": 33,
+      "kind": "answers",
+      "url": "https://www.career-shiken.org/wordpress/wp-content/uploads/33_gakka_seito_20261101364523237382.pdf",
+      "mirrorUrl": "https://www.jcda-careerex.org/wp-content/uploads/2026/11/33_gakka_seitou.pdf",
+      "sha256": "4546163103ce51378b3b2ddcd3e2cac0ace01217e44ca97b6c91cf06b897ad95",
+      "bytes": 77855,
+      "retrievedAt": "2026-11-06",
+      "httpStatus": 200,
+      "method": "GET"
+    },
+    {
+      "round": 32,
+      "kind": "questions",
+      "url": "https://www.career-shiken.org/wordpress/wp-content/uploads/32_gakka_mondai_202707058262534261.pdf",
+      "mirrorUrl": "https://www.jcda-careerex.org/wp-content/uploads/2026/07/32_gakka_mondai.pdf",
+      "sha256": "357f0fc66b7a797a44695aea62480430e2450d59f2100ed443fc34d304c8e43e",
+      "bytes": 1155754,
+      "retrievedAt": "2026-11-06",
+      "httpStatus": 200,
+      "method": "GET"
+    },
+    {
+      "round": 32,
+      "kind": "answers",
+      "url": "https://www.career-shiken.org/wordpress/wp-content/uploads/32_gakka_seito_2026070502863527227.pdf",
+      "mirrorUrl": "https://www.jcda-careerex.org/wp-content/uploads/2026/07/32_gakka_seitou.pdf",
+      "sha256": "bbd5a1fbb08def688a05bffc12f8b52a83b2d8ee02352da21a71859431968604",
+      "bytes": 80439,
+      "retrievedAt": "2026-11-06",
+      "httpStatus": 200,
+      "method": "GET"
+    }
+  ]
+}
