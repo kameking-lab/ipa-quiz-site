@@ -42,11 +42,11 @@ it("renders the same private pet appearance and saved scene without a public-per
   const before = serializePetProfileDocument(doc), view = render(<PetOwnStudySeat view={{ status: "ready", document: doc }} />);
   expect(view.container.querySelector("section")).toHaveAttribute("data-own-pet-id", pet.petId);
   expect(view.container.querySelector("img")).toHaveAttribute("src", "/images/pet-v1/ap-partner-slack.webp");
-  expect(screen.getByText("応用情報技術者のこむぎ")).toBeVisible(); expect(screen.getByText(/人数の集計には加えていません/)).toBeVisible();
+  expect(screen.getByText("応用情報技術者のこむぎ")).toBeVisible(); expect(screen.getByText(/いつもの机/)).toBeVisible(); expect(screen.getByRole("button", { name: "育成を見る" })).toBeEnabled();
   expect(view.container.querySelector("section")).toHaveAttribute("data-room-scene", "first-meeting");
   expect(serializePetProfileDocument(doc)).toBe(before);
   view.rerender(<PetOwnStudySeat view={{ status: "unavailable", document: null }} />);
-  expect(view.container.querySelector("img")).toBeNull(); expect(screen.queryByText(/こむぎ/)).toBeNull();
+  expect(view.container.querySelector("img")).toHaveAttribute("src", "/images/home/study-room-mascots/generic-9.webp"); expect(screen.queryByText(/こむぎ/)).toBeNull();
 });
 it("uses an actual overcoming memory for continuity without inferring a failure from grades", () => {
   const doc = applyPetLearningFact(empty(), fact(0)).document, pet = doc.profiles[0];

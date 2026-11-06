@@ -21,7 +21,7 @@ for (const width of [320, 390]) test(`private room child and saved event survive
   await expect(own).toHaveAttribute("data-room-scene", "first-meeting");
   await expect(own.getByRole("heading", { name: "応用情報技術者のこむぎ" })).toBeVisible();
   await expect(own.locator("img").first()).toHaveAttribute("src", "/images/pet-v1/ap-partner-slack.webp");
-  await expect(own).toContainText("人数の集計には加えていません");
+  await expect(own).toContainText("いつもの机");
   const before = await page.evaluate(key => localStorage.getItem(key), key), text = await own.textContent();
   await own.scrollIntoViewIfNeeded();
   await expect.poll(()=>own.locator("img").first().evaluate(image=>(image as HTMLImageElement).naturalWidth)).toBeGreaterThan(0);

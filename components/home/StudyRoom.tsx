@@ -5,7 +5,6 @@ import { ArrowRight } from "lucide-react";
 import { presenceExamName } from "@/lib/study-presence";
 import type { MeasuredPresence } from "@/lib/study-presence-contract";
 import { mascotVisitSeed, measuredRoom, qualificationMascot, roomMascots, roomStage } from "@/lib/home/study-room";
-import { LearningPetCorner } from "@/components/pet/LearningPetCorner";
 import { PetOwnStudySeat } from "@/components/pet/PetOwnStudySeat";
 import { usePetProfileView } from "@/components/pet/usePetProfileView";
 import { StudyReturnLink } from "./StudyReturnLink";
@@ -154,8 +153,6 @@ export function StudyRoom({ snapshot, suggestions }: {
           {!snapshot && !focus && <div className="study-room-guidance"><ul>{introductions.map(item => <li key={item.href}><a href={item.href}>{item.name}<ArrowRight aria-hidden="true" /></a></li>)}</ul><a href="#choose-qualification" className="study-text-link">ほかの資格を探す<ArrowRight aria-hidden="true" /></a></div>}
           {focus && <button type="button" className="study-text-link" onClick={clearSelection}>選択を戻す</button>}
         </div>
-        <LearningPetCorner suppliedView={petView} />
-        <p className="study-room-disclosure">自分の子の育成と出来事は、この端末の保存データです。周囲の席の集計人数・正誤・ポイントには影響しません。</p>
       </aside>
     </div>
   </>;
