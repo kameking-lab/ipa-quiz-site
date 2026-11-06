@@ -55,7 +55,8 @@ def parse_questions(pdf: Path):
             text.pop(0)
         if text and re.fullmatch(r'\d+', text[0].strip()):
             text.pop(0)  # printed page number
-        lines.extend((pi + 1, l) for l in text)
+        # The last page carries a copyright footer that is not part of any choice.
+        lines.extend((pi + 1, l) for l in text if not l.strip().startswith('©'))
     qs, cur = [], None
     for page, line in lines:
         m = re.match(r'^問(\d+)\s+(.*)$', line)
