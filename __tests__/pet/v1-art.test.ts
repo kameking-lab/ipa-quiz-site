@@ -42,14 +42,24 @@ it("never falls back to the slimmer guide art; other qualifications keep their o
   }
   for (const src of Object.values(PET_GENERIC_ART)) expect(existsSync(`public${src}`)).toBe(true);
 });
-it("FE and SG react in their own study-room outfit at every stage", () => {
-  for (const exam of ["fe", "sg"]) for (const stage of ["puppy", "partner"] as const) {
+const POSES = ["study", "correct", "incorrect", "revealed", "rest", "meal", "petted", "slack"] as const;
+it("FE and SG puppies react in their own study-room outfit", () => {
+  for (const exam of ["fe", "sg"]) {
     for (const pose of ["correct", "incorrect", "revealed", "meal", "petted", "rest"] as const) {
-      const src = petArtFor(exam, stage, pose);
+      const src = petArtFor(exam, "puppy", pose);
       expect(src).toBe(`/images/pet-v1/${exam}-puppy-${pose}.webp`);
       expect(readFileSync(`public${src}`).length).toBeLessThan(60000);
     }
-    expect(petArtFor(exam, stage, "study")).toBe(`/images/home/study-room-mascots/${exam}-study.webp`);
-    expect(petArtFor(exam, stage, "slack")).toBe(`/images/home/study-room-mascots/${exam}-break.webp`);
+    expect(petArtFor(exam, "puppy", "study")).toBe(`/images/home/study-room-mascots/${exam}-study.webp`);
+    expect(petArtFor(exam, "puppy", "slack")).toBe(`/images/home/study-room-mascots/${exam}-break.webp`);
+  }
+});
+it("every stage of the eight pet qualifications has its own drawn look in all poses", () => {
+  for (const exam of ["ip", "ap", "takken", "fp3", "civil2", "yakuzaishi", "fe", "sg"]) {
+    for (const stage of ["partner", "expert"] as const) for (const pose of POSES) {
+      const src = petArtFor(exam, stage, pose);
+      expect(src).toBe(`/images/pet-v1/${exam}-${stage}-${pose}.webp`);
+      expect(readFileSync(`public${src}`).length).toBeLessThan(60000);
+    }
   }
 });
