@@ -2,16 +2,16 @@
 
 ## Browser / home-screen / PWA icons (match the App Store icon)
 
-Since 2026-11-06 the browser, home-screen and PWA icons are the same artwork as the
+Since 2026-11-07 the browser, home-screen and PWA icons are the same artwork as the
 iOS App Store icon (`mobile/ios-assets/AppIcon.appiconset/AppIcon-1024.png`:
-navy background, 「過去問AI」, Chihuahua holding a phone). They are deterministic Pillow
+pink background, 「過去問AI」 speech bubble, cream Chihuahua face). They are deterministic Pillow
 LANCZOS downscales of that 1024 px source:
 
 - `app/favicon.ico` (16/32/48), `app/icon.png` and `public/favicon.png` (64 px)
 - `app/apple-icon.png` (180 px)
 - `public/icon-192.png`, `public/icon-512.png` (purpose `any`)
 - `public/icon-maskable-192.png`, `public/icon-maskable-512.png` (art scaled to 80 % and
-  centred on the source's navy `#012966` so launcher masks do not clip it)
+  centred on the source's pink edge colour `#fd7da0` so launcher masks do not clip it)
 - `public/favicon.svg`, `public/icon-192.svg`, `public/icon-512.svg` embed the same PNG so the
   legacy URLs (structured-data logo, service-worker notifications) stay valid.
 

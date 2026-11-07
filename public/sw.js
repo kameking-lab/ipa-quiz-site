@@ -12,7 +12,7 @@
 // previously-stored caches (activate fires only on install), and effectively
 // nullify the cache strategy while bloating client storage.
 
-const CACHE_VERSION = 'v5-appicon-20261106';
+const CACHE_VERSION = 'v6-appicon-20261107';
 const STATIC_CACHE = `ipa-quiz-static-${CACHE_VERSION}`;
 const PAGE_CACHE = `ipa-quiz-pages-${CACHE_VERSION}`;
 const CONTENT_CACHE = `ipa-quiz-content-${CACHE_VERSION}`;
