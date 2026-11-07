@@ -23,7 +23,8 @@ import { blocksNativeWebPurchase } from "../shared/native-billing-policy";
 import { installNativePetSupport, observePetStudyWrites, persistStudyAfterPets } from "./pet-support";
 const defaultMembership = new Membership();
 export const SITE_ORIGIN = "https://www.kakomon-ai.jp";
-const localUrl = "capacitor://localhost/index.html";
+// The bundled shell: offline study with saved questions (paid downloads).
+const localUrl = "capacitor://localhost/index.html?local=1";
 export function NativeTools({ membershipOnly = false, membership = defaultMembership }: { membershipOnly?: boolean; membership?:Membership }) {
   const [open, setOpen] = useState(membershipOnly || (typeof location !== "undefined" && location.hash === "#app-settings")), [access, setAccess] = useState<MobileEntitlement | null>(null);
   const [config, setConfig] = useState<MobileConfiguration | null>(null), [offer, setOffer] = useState<PurchasesPackage | null>(null);
@@ -124,7 +125,7 @@ export function NativeTools({ membershipOnly = false, membership = defaultMember
   const card = "space-y-3 rounded-2xl border border-border bg-card p-4";
   return <aside aria-label="iPhoneの学習機能" className="border-b border-border bg-background px-4 py-2 text-sm">
     {!membershipOnly && <div className="mx-auto flex max-w-2xl items-center gap-2">
-      <button className={pill} onClick={()=>void run(async()=>{await persistStudyAfterPets(user.current);location.assign(localUrl);})}>アプリのホーム</button>
+      {/* Home is the site's own logo link; only app-specific actions live here. */}
       <button className={`${pill} ml-auto`} aria-expanded={open} aria-controls="native-settings" onClick={()=>setOpen(!open)}>会員・設定</button>
       <button className={pill} aria-label="このページを共有" onClick={()=>void run(async()=>{ await Share.share({ title:"過去問AI", url:location.href }); })}>共有</button>
     </div>}
@@ -170,6 +171,7 @@ export function NativeTools({ membershipOnly = false, membership = defaultMember
           </details>
         </>}
       </section>
+      <button className={`${secondary} w-full`} onClick={()=>void run(async()=>{await persistStudyAfterPets(user.current);location.assign(localUrl);})}>保存した問題をオフラインで解く</button>
       <section aria-labelledby="native-reminder" className={card}>
         <h2 id="native-reminder" className="font-bold">毎日の学習通知</h2>
         <label className="flex items-center gap-3">時刻 <input className="min-h-11 rounded-xl border border-border bg-background px-3" type="time" value={time} onChange={e=>setTime(e.target.value)} /></label>

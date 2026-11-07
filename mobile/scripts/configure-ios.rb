@@ -32,6 +32,20 @@ unless storyboard.include?('customClass="QualificationBridgeViewController"')
   raise 'Unsupported Capacitor storyboard module' unless storyboard.include?('customClass="QualificationBridgeViewController"')
   File.write(storyboard_path, storyboard)
 end
+# Capacitor 8's template builds the window in SceneDelegate and ignores the
+# storyboard class. Without this, QualificationBridgeViewController (and the
+# TrackingTransparency / QualificationBridge plugins and safe-area insets it
+# registers) never runs on a device: TestFlight builds 12 and 13 had plain
+# CAPBridgeViewController, so every call to those plugins was UNIMPLEMENTED.
+scene_path = 'ios/App/App/SceneDelegate.swift'
+if File.exist?(scene_path)
+  scene = File.read(scene_path)
+  unless scene.include?('rootViewController = QualificationBridgeViewController()')
+    scene = scene.sub('rootViewController = CAPBridgeViewController()', 'rootViewController = QualificationBridgeViewController()')
+    raise 'Unsupported Capacitor SceneDelegate' unless scene.include?('rootViewController = QualificationBridgeViewController()')
+    File.write(scene_path, scene)
+  end
+end
 project.root_object.attributes['LastUpgradeCheck'] = '2600'
 project.root_object.attributes['TargetAttributes'] ||= {}
 project.root_object.attributes['TargetAttributes'][target.uuid] ||= {}

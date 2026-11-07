@@ -5,12 +5,16 @@ import { ChihuahuaMascot } from "@/components/ChihuahuaMascot";
 import { planStartHref, saveQuizReturn } from "@/lib/billing/quiz-return";
 import { PLAN_OFFER } from "@/lib/billing/plan-offer";
 import { sendFunnelEvent } from "@/lib/billing/funnel-client";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { posthogCapture } from "@/lib/posthog";
 import dynamic from "next/dynamic";
 const FeedbackUnlock = dynamic(() => import("./FeedbackUnlock").then(m => m.FeedbackUnlock), { ssr: false });
 
 export function PracticeLoading({ index = 0, total = 0 }: { index?: number; total?: number }) {
+  // Quick loads (the usual case) show nothing instead of flashing a message per question.
+  const [visible, setVisible] = useState(false);
+  useEffect(() => { const timer = setTimeout(() => setVisible(true), 600); return () => clearTimeout(timer); }, []);
+  if (!visible) return <div className="min-h-[100dvh]" aria-busy="true" />;
   return <div className="mx-auto flex min-h-[100dvh] w-full max-w-2xl flex-col items-center gap-4 px-4 pt-10 text-center sm:pt-14" role="status" aria-live="polite">
     <ChihuahuaMascot pose="guide" size={112} />
     <h2 className="text-xl font-bold">次の問題を読み込んでいます</h2>

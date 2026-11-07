@@ -29,8 +29,12 @@ export function useNativeQuestionGrant(id?: string, paper?: string) {
     }).catch(e=>{if(!cancelled)setPermission({id,allowed:false,error:e instanceof Error?e.message:"会員状態を確認できません。"});});
     return()=>{cancelled=true;if(expiryTimer)clearTimeout(expiryTimer);};
   },[id,paper,attempt]);
-  return { allowed:!nativeClient() || !id || permission.id===id && permission.allowed,
-    error:permission.id===id?permission.error:"",retry:()=>setAttempt(n=>n+1) };
+  // Show the question immediately and check the quota in the background. Only a
+  // server answer that the free quota is used up (or, for saved offline
+  // questions, missing rights) replaces it; offline/unknown never blocks.
+  const error=permission.id===id?permission.error:"";
+  const blocked=!!error && (error==="daily_limit" || (typeof location!=="undefined" && location.protocol==="capacitor:"));
+  return { allowed:!nativeClient() || !id || !blocked, error, retry:()=>setAttempt(n=>n+1) };
 }
 export function NativeAccessState({ permission }: { permission: ReturnType<typeof useNativeQuestionGrant> }) {
   // Legacy players keep keyboard handlers while their content is gated.
@@ -39,7 +43,7 @@ export function NativeAccessState({ permission }: { permission: ReturnType<typeo
   // Same path as the web after the free 10: feedback once for +10 (login only there), then the plan.
   if(permission.error==="daily_limit") return <PracticeDailyLimit reset={null} resumeHref={typeof location==="undefined"?"/":location.pathname+location.search} backHref="/" freeDaily={10} onUnlocked={permission.retry}/>;
   const action="flex min-h-11 w-full items-center justify-center rounded-xl border border-border bg-background px-4 text-sm font-medium";
-  return <section className="mx-auto max-w-lg space-y-4 p-6" aria-live="polite"><h2 className="text-lg font-bold">演習の利用枠を確認しています</h2>{permission.error&&<><p className="break-words">{permission.error === "daily_limit" ? "本日の無料10問を使い切りました。日本時間0時に更新されます。有料会員は全問題を無制限で利用できます。" : permission.error}</p><button className={action} onClick={permission.retry}>再確認</button><Link className="flex min-h-11 w-full items-center justify-center rounded-xl bg-primary px-4 text-sm font-semibold text-primary-foreground" href="/billing">App Storeの月額プラン・購入復元</Link><Link className={action} href="/review">学習メニューへ</Link></>}</section>;
+  return <section className="mx-auto max-w-lg space-y-4 p-6" aria-live="polite"><h2 className="text-lg font-bold">保存した問題を開けません</h2>{permission.error&&<><p className="break-words">{permission.error === "daily_limit" ? "本日の無料10問を使い切りました。日本時間0時に更新されます。有料会員は全問題を無制限で利用できます。" : permission.error}</p><button className={action} onClick={permission.retry}>再確認</button><Link className="flex min-h-11 w-full items-center justify-center rounded-xl bg-primary px-4 text-sm font-semibold text-primary-foreground" href="/billing">App Storeの月額プラン・購入復元</Link><Link className={action} href="/review">学習メニューへ</Link></>}</section>;
 }
 /** webQuota: a standalone study page (essay, reader) that also counts toward the web's shared daily free 10. */
 export function NativeQuestionGate({id,paper,webQuota=false,children}:{id?:string;paper?:string;webQuota?:boolean;children:ReactNode}) {

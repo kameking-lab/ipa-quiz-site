@@ -33,6 +33,11 @@ else
   raise 'Privacy tracking domains present with ads disabled' unless privacy.fetch('NSPrivacyTrackingDomains', []).empty?
   raise 'Collected data tracking enabled with ads disabled' if privacy.fetch('NSPrivacyCollectedDataTypes', []).any? { |data| data['NSPrivacyCollectedDataTypeTracking'] == true }
 end
+scene_path = 'ios/App/App/SceneDelegate.swift'
+if File.exist?(scene_path)
+  scene = File.read(scene_path)
+  raise 'SceneDelegate bypasses the plugin bridge' if scene.include?('CAPBridgeViewController()') || !scene.include?('rootViewController = QualificationBridgeViewController()')
+end
 podfile = File.read('ios/App/Podfile')
 if plist['KakomonAdsEnabled'] == true
   raise 'Pinned Ads SDK missing' unless podfile.include?("pod 'Google-Mobile-Ads-SDK', '13.11.0'")
