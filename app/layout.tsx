@@ -60,7 +60,7 @@ export const metadata: Metadata = {
   },
   icons: {
     icon: [
-      { url: "/favicon.png?v=appicon-20261106", type: "image/png", sizes: "64x64" },
+      { url: "/favicon.png?v=appicon-20261107", type: "image/png", sizes: "64x64" },
       { url: "/icon-192.png", type: "image/png", sizes: "192x192" },
     ],
     apple: [
