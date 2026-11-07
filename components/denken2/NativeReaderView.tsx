@@ -93,4 +93,4 @@ function NativeReaderViewBody({ question, readerConfig }: {
   </main>;
 }
 
-export function NativeReaderView(props:Parameters<typeof NativeReaderViewBody>[0]) { return <NativeQuestionGate id={props.question.id}><NativeReaderViewBody {...props}/></NativeQuestionGate>; }
+export function NativeReaderView(props:Parameters<typeof NativeReaderViewBody>[0]) { return <NativeQuestionGate webQuota id={props.question.id}><NativeReaderViewBody {...props}/></NativeQuestionGate>; }

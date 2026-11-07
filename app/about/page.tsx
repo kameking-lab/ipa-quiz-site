@@ -1,6 +1,5 @@
 import { AI_ACCESS_DESCRIPTION, AI_ATTEMPT_DESCRIPTION, BROWSER_AUDIO_DESCRIPTION, aiAccessClaimsEnabled } from "@/components/ai/ai-access-copy";
 import Link from "next/link";
-import { PRICE_PAGE_LINK } from "@/lib/billing/price-page-link";
 import type { Metadata } from "next";
 import { HISTORY_PRIVACY_COPY, AI_RATE_LIMIT_PRIVACY_COPY } from "@/lib/privacy/disclosure";
 import { Button } from "@/components/ui/button";
@@ -242,8 +241,8 @@ export default function AboutPage() {
           {aiAccessClaimsEnabled() ? <>AI応答の利用条件は上記の無料・有料の区分をご確認ください。ブラウザー音声は無料です。</> : <>AI応答や音声の利用権は月額プランに含みません。</>}既存の保存済み履歴を課金のために削除することはありません。
         </p>
         <p className="text-xs text-zinc-500 dark:text-zinc-400">
-          販売状況、対象範囲、日割返金なし・重複誤請求や当社障害時の個別返金、事業者情報の開示請求は
-          <Link href={PRICE_PAGE_LINK.href} className="underline">{PRICE_PAGE_LINK.label}</Link>をご確認ください。法令上の権利は制限しません。
+          返金・解約の条件と販売者情報の開示（ご請求があれば遅滞なく開示）は
+          <Link href="/billing/terms" className="underline">月額プランの条件</Link>をご確認ください。法令上の権利は制限しません。
         </p>
       </section>
 

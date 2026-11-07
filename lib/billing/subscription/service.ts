@@ -50,7 +50,7 @@ export function access(a: Account, now: number) {
 export class MonthlyService {
   constructor(private store: MonthlyStore, readonly config: MonthlyConfig, private clock = () => new Date()) {}
   private tx<T>(id: string, fn: (a: Account) => Promise<T>, readOnly = false) { return this.store.transaction(id, this.config.mode, this.config.sourceInstance, fn, readOnly); }
-  async checkout(userId: string, terms: string, provider: MonthlyProvider) {
+  async checkout(userId: string, terms: string, provider: MonthlyProvider, email?: string) {
     if (!this.config.enabled) throw new BillingError("billing_unavailable", 503);
     if (terms !== monthlyTerms(this.config)) throw new BillingError("terms_changed");
     const reservation = await this.tx(userId, async a => {
@@ -72,7 +72,7 @@ export class MonthlyService {
       a.customer.id = customerId;
     });
     const result = reservation.signup.sessionId && reservation.signup.url
-      ? { id: reservation.signup.sessionId, url: reservation.signup.url } : await provider.checkout(customerId, reservation.signup);
+      ? { id: reservation.signup.sessionId, url: reservation.signup.url } : await provider.checkout(customerId, reservation.signup, email);
     return this.tx(userId, async a => {
       const current = a.signups[reservation.signup.id];
       if (!current || current.sessionId && current.sessionId !== result.id) problem("checkout_conflict");

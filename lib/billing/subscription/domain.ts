@@ -56,7 +56,7 @@ export interface Observation {
 }
 export interface MonthlyProvider {
   customer(attemptId: string): Promise<string>;
-  checkout(customerId: string, signup: Signup): Promise<{ id: string; url: string }>;
+  checkout(customerId: string, signup: Signup, email?: string): Promise<{ id: string; url: string }>;
   portal(customerId: string, configurationId: string): Promise<string>;
   resolve(event: unknown): Promise<Target | null>;
   observe(target: Target): Promise<Observation>;

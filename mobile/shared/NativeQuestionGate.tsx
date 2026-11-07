@@ -4,6 +4,7 @@ import { nativeClient } from "./contracts";
 import { fetchPracticeQuestion } from "@/lib/billing/guest-client";
 import Link from "next/link";
 import { PracticeDailyLimit } from "@/components/quiz/PracticeTransition";
+import { QuestionPracticeGate } from "@/components/quiz/QuestionPracticeGate";
 interface Permission { id: string; allowed: boolean; error: string }
 export function useNativeQuestionGrant(id?: string, paper?: string) {
   const [permission,setPermission]=useState<Permission>({ id:"",allowed:false,error:"" });
@@ -40,7 +41,10 @@ export function NativeAccessState({ permission }: { permission: ReturnType<typeo
   const action="flex min-h-11 w-full items-center justify-center rounded-xl border border-border bg-background px-4 text-sm font-medium";
   return <section className="mx-auto max-w-lg space-y-4 p-6" aria-live="polite"><h2 className="text-lg font-bold">演習の利用枠を確認しています</h2>{permission.error&&<><p className="break-words">{permission.error === "daily_limit" ? "本日の無料10問を使い切りました。日本時間0時に更新されます。有料会員は全問題を無制限で利用できます。" : permission.error}</p><button className={action} onClick={permission.retry}>再確認</button><Link className="flex min-h-11 w-full items-center justify-center rounded-xl bg-primary px-4 text-sm font-semibold text-primary-foreground" href="/billing">App Storeの月額プラン・購入復元</Link><Link className={action} href="/review">学習メニューへ</Link></>}</section>;
 }
-export function NativeQuestionGate({id,paper,children}:{id?:string;paper?:string;children:ReactNode}) {
+/** webQuota: a standalone study page (essay, reader) that also counts toward the web's shared daily free 10. */
+export function NativeQuestionGate({id,paper,webQuota=false,children}:{id?:string;paper?:string;webQuota?:boolean;children:ReactNode}) {
   const permission=useNativeQuestionGrant(id,paper);
+  // Web: same quota as /q pages (full text for crawlers, declared paywalled). Players inside an already-counted page leave webQuota off.
+  if(!nativeClient()) return webQuota && id ? <QuestionPracticeGate id={id} paper={paper} enabled declarePaywall>{children}</QuestionPracticeGate> : children;
   return permission.allowed ? children : <NativeAccessState permission={permission}/>;
 }

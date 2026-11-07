@@ -6,17 +6,18 @@ import { FeedbackUnlock } from "@/components/quiz/FeedbackUnlock";
 import { PracticeDailyLimit } from "@/components/quiz/PracticeTransition";
 beforeEach(() => { window.history.replaceState({}, "", "/quiz"); vi.stubEnv("NEXT_PUBLIC_TURNSTILE_SITE_KEY", ""); vi.clearAllMocks(); sessionStorage.clear(); });
 afterEach(() => { cleanup(); vi.unstubAllGlobals(); vi.unstubAllEnvs(); });
-it("offers free exits before the optional plan, accepts multiple choices, and resumes only after storage success", async () => {
+it("puts the plan first and the feedback bonus second, accepts multiple choices, and resumes only after storage success", async () => {
   const resume = vi.fn();
   let finish: (r: Response) => void = () => {};
   const fetcher = vi.fn(async (_url: string, init?: RequestInit) => init?.method === "POST" ? new Promise<Response>(resolve => { finish = resolve; }) : Response.json({ eligible: true, submitted: false, remaining: 0 }));
   vi.stubGlobal("fetch", fetcher);
-  render(<PracticeDailyLimit reset={null} resumeHref="/quiz?mode=year" backHref="/" onUnlocked={resume} />);
-  const button = await screen.findByRole("button", { name: "意見を送って、さらに10問無料で解く" });
-  const purchase = screen.getByRole("link", { name: "月額プランの料金・条件を見る" });
-  const review = screen.getByRole("link", { name: "保存済みの履歴を無料で復習する" });
-  expect(button.compareDocumentPosition(purchase) & Node.DOCUMENT_POSITION_FOLLOWING).toBeTruthy();
-  expect(review.compareDocumentPosition(purchase) & Node.DOCUMENT_POSITION_FOLLOWING).toBeTruthy();
+  render(<PracticeDailyLimit reset={null} resumeHref="/quiz?mode=year&question=q1" backHref="/" onUnlocked={resume} />);
+  const button = await screen.findByRole("button", { name: "意見を送ってあと10問" });
+  const purchase = screen.getByRole("link", { name: "月額980円で続ける" });
+  expect(purchase).toHaveAttribute("href", "/billing/start?returnTo=" + encodeURIComponent("/quiz?mode=year&question=q1"));
+  expect(purchase.compareDocumentPosition(button) & Node.DOCUMENT_POSITION_FOLLOWING).toBeTruthy();
+  expect(screen.getByRole("heading", { name: "今日の無料10問はここまで" })).toBeTruthy();
+  expect(screen.getByText("明日また10問")).toBeTruthy();
   fireEvent.click(button);
   fireEvent.click(screen.getByLabelText("解説をもっと詳しく"));
   fireEvent.click(screen.getByLabelText("スマホでの使いやすさ"));
@@ -32,7 +33,7 @@ it("preserves the form and never grants a reward on failure", async () => {
   const resume = vi.fn();
   vi.stubGlobal("fetch", vi.fn(async (_url: string, init?: RequestInit) => init?.method === "POST" ? Response.json({ error: "feedback_unavailable" }, { status: 503 }) : Response.json({ eligible: true })));
   render(<FeedbackUnlock onUnlocked={resume} />);
-  fireEvent.click(await screen.findByRole("button", { name: "意見を送って、さらに10問無料で解く" }));
+  fireEvent.click(await screen.findByRole("button", { name: "意見を送ってあと10問" }));
   fireEvent.change(screen.getByRole("textbox", { name: /自由記述/ }), { target: { value: "資格を増やしてほしい" } });
   fireEvent.click(screen.getByRole("button", { name: "意見を送信して10問追加" }));
   await screen.findByRole("alert");
@@ -44,9 +45,9 @@ it("offers login with the current question as return URL and hides anonymous sub
   window.history.replaceState({}, "", "/quiz?question=q11");
   vi.stubGlobal("fetch", vi.fn(async () => Response.json({ eligible: false, requiresLogin: true })));
   render(<FeedbackUnlock onUnlocked={vi.fn()} />);
-  const link = await screen.findByRole("link", { name: "ログインして意見を送ると、さらに10問" });
+  const link = await screen.findByRole("link", { name: "意見を送ってあと10問" });
   expect(link).toHaveAttribute("href", "/auth/signin?callbackUrl=" + encodeURIComponent("/quiz?question=q11#feedback-unlock"));
-  expect(screen.queryByRole("button", { name: "意見を送って、さらに10問無料で解く" })).toBeNull();
+  expect(screen.queryByRole("button", { name: "意見を送ってあと10問" })).toBeNull();
 });
 
 it("opens the form after login without storage access, retaining the exact question", async () => {
@@ -61,10 +62,14 @@ it("opens the form after login without storage access, retaining the exact quest
 
 it("never opens a form for a used account even with a forged return marker", async () => {
   window.history.replaceState({}, "", "/quiz?question=q11#feedback-unlock");
-  vi.stubGlobal("fetch", vi.fn(async () => Response.json({ eligible: false, submitted: true, remaining: 0 })));
+  const fetcher = vi.fn(async () => Response.json({ eligible: false, submitted: true, remaining: 0 }));
+  vi.stubGlobal("fetch", fetcher);
   render(<FeedbackUnlock onUnlocked={vi.fn()} />);
-  await screen.findByText(/受け取り済み/);
+  await waitFor(() => expect(fetcher).toHaveBeenCalled());
+  await act(async () => {});
+  // A used bonus disappears from the limit screen entirely.
   expect(screen.queryByRole("textbox")).toBeNull();
+  expect(screen.queryByText(/10問/)).toBeNull();
 });
 
 it("preserves all inputs through 401, login navigation and remount, requiring a fresh submission", async () => {
@@ -74,12 +79,12 @@ it("preserves all inputs through 401, login navigation and remount, requiring a 
     ? Response.json({}, { status: 401 }) : Response.json({ eligible: true }));
   vi.stubGlobal("fetch", fetcher);
   const first = render(<FeedbackUnlock onUnlocked={resume} />);
-  fireEvent.click(await screen.findByRole("button", { name: "意見を送って、さらに10問無料で解く" }));
+  fireEvent.click(await screen.findByRole("button", { name: "意見を送ってあと10問" }));
   fireEvent.click(screen.getByLabelText("資格の数を増やしてほしい"));
   fireEvent.change(screen.getByRole("textbox", { name: /希望資格/ }), { target: { value: "行政書士" } });
   fireEvent.change(screen.getByRole("textbox", { name: /自由記述/ }), { target: { value: "入力を保つ" } });
   fireEvent.click(screen.getByRole("button", { name: "意見を送信して10問追加" }));
-  const link = await screen.findByRole("link", { name: "ログインして意見を送ると、さらに10問" });
+  const link = await screen.findByRole("link", { name: "意見を送ってあと10問" });
   expect(screen.getByRole("alert")).toHaveTextContent("有効期限");
   expect(screen.getByRole("button", { name: "意見を送信して10問追加" })).toBeDisabled();
   expect(link.getAttribute("href")).not.toContain("行政書士");
@@ -104,10 +109,10 @@ it("keeps inputs when storage is blocked and can continue after login in another
     ? Response.json({}, { status: 401 }) : Response.json({ eligible: true }));
   vi.stubGlobal("fetch", fetcher);
   render(<FeedbackUnlock onUnlocked={vi.fn()} />);
-  fireEvent.click(await screen.findByRole("button", { name: "意見を送って、さらに10問無料で解く" }));
+  fireEvent.click(await screen.findByRole("button", { name: "意見を送ってあと10問" }));
   fireEvent.change(screen.getByRole("textbox", { name: /自由記述/ }), { target: { value: "下書き" } });
   fireEvent.click(screen.getByRole("button", { name: "意見を送信して10問追加" }));
-  const link = await screen.findByRole("link", { name: "ログインして意見を送ると、さらに10問" });
+  const link = await screen.findByRole("link", { name: "意見を送ってあと10問" });
   const storage = vi.spyOn(Storage.prototype, "setItem").mockImplementation(() => { throw new Error("blocked"); });
   fireEvent.click(link);
   expect(screen.getByRole("alert")).toHaveTextContent("別のタブ");

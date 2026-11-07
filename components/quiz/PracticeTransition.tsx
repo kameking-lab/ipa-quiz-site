@@ -2,7 +2,9 @@
 
 import Link from "next/link";
 import { ChihuahuaMascot } from "@/components/ChihuahuaMascot";
-import { billingHref, saveQuizReturn } from "@/lib/billing/quiz-return";
+import { planStartHref, saveQuizReturn } from "@/lib/billing/quiz-return";
+import { PLAN_OFFER } from "@/lib/billing/plan-offer";
+import { sendFunnelEvent } from "@/lib/billing/funnel-client";
 import { useEffect } from "react";
 import { posthogCapture } from "@/lib/posthog";
 import dynamic from "next/dynamic";
@@ -18,27 +20,29 @@ export function PracticeLoading({ index = 0, total = 0 }: { index?: number; tota
   </div>;
 }
 
-export function PracticeDailyLimit({ reset, resumeHref, backHref, freeDaily, onUnlocked }: { reset: string | null; resumeHref: string; backHref: string; freeDaily?: number; onUnlocked?: () => void }) {
-  useEffect(() => { posthogCapture("practice_limit_viewed", { freeDaily: freeDaily ?? 10 }); }, [freeDaily]);
-  return <section aria-labelledby="practice-limit-title" className="mx-auto min-h-[100dvh] w-full max-w-2xl px-4 py-6 sm:py-10">
-    <div className="space-y-5 rounded-3xl border border-sky-200 bg-gradient-to-b from-sky-50 via-card to-card p-5 text-center shadow-sm dark:border-sky-800 dark:from-sky-950 sm:p-8">
-      <div className="flex justify-center"><ChihuahuaMascot pose="celebrate" size={128} /></div>
-      <div className="space-y-2">
-        <p className="text-sm font-semibold text-sky-700 dark:text-sky-300">今日も一歩、合格に近づいたね！</p>
-        <h2 id="practice-limit-title" className="text-2xl font-bold leading-snug">今日の無料演習はここまで</h2>
-        <p className="text-sm text-muted-foreground">本日の無料連続演習枠{Number.isFinite(freeDaily) && freeDaily! > 0 ? `（${freeDaily}問）` : ""}を使い切りました。</p>
-      </div>
-      <div className="space-y-3 border-t border-border pt-5">
-        <FeedbackUnlock onUnlocked={onUnlocked ?? (() => window.location.reload())} />
-        <Link href="/review" className="flex min-h-12 w-full items-center justify-center rounded-xl bg-primary px-4 py-3 font-semibold text-primary-foreground hover:bg-primary/90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2">保存済みの履歴を無料で復習する</Link>
-        <p className="text-sm leading-relaxed">{reset ? `${reset}に無料枠が更新されます。` : "次の日本時間0時に無料枠が更新されます。"}<br />履歴はそのまま。明日もここから続けられます。</p>
-        <Link href={resumeHref} className="inline-flex min-h-11 items-center justify-center px-3 text-sm font-semibold underline underline-offset-4">明日、この問題から再開する</Link>
-      </div>
-      <div className="space-y-2 border-t border-border pt-5">
-        <p className="text-sm text-muted-foreground">もっと続けたいときは、回数制限なく演習できる月額プランもあります。</p>
-        <Link href={billingHref(resumeHref)} onClick={() => { posthogCapture("practice_upgrade_clicked", { source: "daily_limit" }); try { saveQuizReturn(window.sessionStorage, resumeHref); } catch { /* The link retains the exact context even without storage. */ } }} className="inline-flex min-h-11 items-center justify-center px-3 text-sm underline underline-offset-4">月額プランの料金・条件を見る</Link>
-      </div>
+/**
+ * The free-10 limit screen (web and app share it). Purchase first, one line of
+ * required terms under the button, the one-time feedback bonus second, nothing
+ * else. On the web the plan button goes straight to Stripe Checkout (sign-in
+ * first when needed); in the iOS app the native host turns any /billing link
+ * into the App Store purchase sheet, so Stripe is never reached there.
+ */
+export function PracticeDailyLimit({ resumeHref, freeDaily, onUnlocked }: { reset?: string | null; resumeHref: string; backHref?: string; freeDaily?: number; onUnlocked?: () => void }) {
+  const free = Number.isFinite(freeDaily) && freeDaily! > 0 ? freeDaily! : PLAN_OFFER.freeDaily;
+  useEffect(() => { posthogCapture("practice_limit_viewed", { freeDaily: free }); sendFunnelEvent("free_limit_reached"); }, [free]);
+  const start = () => {
+    posthogCapture("practice_upgrade_clicked", { source: "daily_limit" });
+    sendFunnelEvent("paywall_plan_click");
+    try { saveQuizReturn(window.sessionStorage, resumeHref); } catch { /* The link itself carries the return path. */ }
+  };
+  return <section aria-labelledby="practice-limit-title" className="mx-auto w-full max-w-md px-4 py-8 text-center">
+    <div className="flex justify-center"><ChihuahuaMascot pose="celebrate" size={96} /></div>
+    <h2 id="practice-limit-title" className="mt-3 text-2xl font-bold leading-snug">今日の無料{free}問はここまで</h2>
+    <div className="mt-6 space-y-3">
+      <a href={planStartHref(resumeHref)} onClick={start} aria-describedby="plan-terms" className="flex min-h-12 w-full items-center justify-center rounded-xl bg-primary px-4 py-3 text-lg font-bold text-primary-foreground hover:bg-primary/90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2">月額{PLAN_OFFER.priceYen}円で続ける</a>
+      <p id="plan-terms" className="text-xs text-muted-foreground">税込・毎月自動更新・いつでも解約可 <Link href="/billing/terms" target="_blank" rel="noopener noreferrer" className="underline underline-offset-2">条件・返金</Link></p>
+      <FeedbackUnlock onUnlocked={onUnlocked ?? (() => window.location.reload())} />
     </div>
-    <div className="mt-4 text-center"><Link href={backHref} className="inline-flex min-h-11 items-center px-4 text-sm underline underline-offset-4">科目選択へ戻る</Link></div>
+    <p className="mt-6 text-xs text-muted-foreground">明日また{free}問</p>
   </section>;
 }

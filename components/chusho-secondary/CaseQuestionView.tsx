@@ -28,4 +28,4 @@ function CaseQuestionViewBody({paper:p,question:q}:{paper:ChushoCase;question:Ch
   </main>;
 }
 
-export function CaseQuestionView(props:Parameters<typeof CaseQuestionViewBody>[0]) { return <NativeQuestionGate id={props.question.id}><CaseQuestionViewBody {...props}/></NativeQuestionGate>; }
+export function CaseQuestionView(props:Parameters<typeof CaseQuestionViewBody>[0]) { return <NativeQuestionGate webQuota id={props.question.id}><CaseQuestionViewBody {...props}/></NativeQuestionGate>; }

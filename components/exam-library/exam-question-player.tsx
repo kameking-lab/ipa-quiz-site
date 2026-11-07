@@ -33,6 +33,7 @@ import { StudyRewardCorner } from "@/components/home/StudyRewardCorner";
 import { recordStudyReward } from "@/lib/study-reward";
 import { readExamTabProgress, writeExamTabProgress } from "@/lib/exam-library-session";
 import { ChoiceButton } from "@/components/quiz/ChoiceButton";
+import { PracticeDailyLimit } from "@/components/quiz/PracticeTransition";
 import { buttonVariants } from "@/components/ui/button";
 import { Markdown } from "@/components/ui/markdown";
 import { extractExamChoices } from "@/lib/exam-library-choices";
@@ -535,6 +536,7 @@ export function ExamQuestionPlayer({
   }, [current, moveNext, selectChoice, submitAnswer, submitted, view]);
 
   if (!nativePermission.allowed) return <NativeAccessState permission={nativePermission}/>;
+  if (contentPending && contentError === "daily_limit") return <div role="region" aria-label="本日の無料演習の終了"><PracticeDailyLimit resumeHref={`/e-learning/exams/${examId}?question=${encodeURIComponent(currentId ?? "")}`} onUnlocked={()=>setContentAttempt(n=>n+1)} /></div>;
   if (contentPending) return <section className="space-y-4" aria-live="polite">
     {contentError ? <p role="alert">{contentError === "daily_limit" ? "本日の無料10問を使い切りました。日本時間0時に更新されます。" : contentError === "sign_in_required" ? "無料枠を端末間で共有するためログインが必要です。" : contentError}</p> : <p role="status">利用枠と回答済みの問題を確認しています…</p>}
     {contentError && <><button type="button" onClick={()=>setContentAttempt(n=>n+1)}>再確認</button><p><a href={`/auth/signin?callbackUrl=${encodeURIComponent(`/e-learning/exams/${examId}?question=${currentId ?? ""}`)}`}>ログイン・本人確認</a> · <Link href="/billing">有料会員・購入復元</Link></p></>}

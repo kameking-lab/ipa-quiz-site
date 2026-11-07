@@ -1,4 +1,5 @@
 import { isSelfReviewedDescriptiveQuestion } from "@/lib/questions/descriptive";
+import { PAYWALLED_SELECTOR } from "@/lib/billing/paywall";
 import { getQualificationByExamCode } from "@/lib/qualifications/catalog";
 import { questionPagePath } from "@/lib/seo/question-url";
 import { recordedContentDate } from "@/lib/questions/last-updated";
@@ -152,6 +153,7 @@ export interface QuestionJsonLdInput {
   /** Requested breadcrumb context may differ from the canonical resource. */
   requestedPageUrlAbs?: string;
   breadcrumbItems?: QuestionBreadcrumbItem[];
+
 }
 
 /**
@@ -437,4 +439,15 @@ export function buildQuestionJsonLd({
       },
     ],
   };
+}
+
+/**
+ * The daily free quota is active: a person past it sees the limit screen in
+ * place of the element matching PAYWALLED_SELECTOR. Declared as paywalled
+ * content (Google flexible sampling), so the crawler's full view is not cloaking.
+ */
+export function withQuotaPaywall(jsonLd: ReturnType<typeof buildQuestionJsonLd>) {
+  return { ...jsonLd, "@graph": jsonLd["@graph"].map(node => "hasPart" in node
+    ? { ...node, isAccessibleForFree: false, hasPart: [node.hasPart, { "@type": "WebPageElement", isAccessibleForFree: false, cssSelector: PAYWALLED_SELECTOR }] }
+    : node) };
 }

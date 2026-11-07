@@ -71,4 +71,4 @@ function Fp2PracticalViewBody({edition,data,q,source}:{edition:string;data:Omit<
   );
 }
 
-export function Fp2PracticalView(props:Parameters<typeof Fp2PracticalViewBody>[0]) { return <NativeQuestionGate id={`fp2-practical-${props.edition}-${props.q.number}`}><Fp2PracticalViewBody {...props}/></NativeQuestionGate>; }
+export function Fp2PracticalView(props:Parameters<typeof Fp2PracticalViewBody>[0]) { return <NativeQuestionGate webQuota id={`fp2-practical-${props.edition}-${props.q.number}`}><Fp2PracticalViewBody {...props}/></NativeQuestionGate>; }
