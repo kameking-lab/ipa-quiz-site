@@ -73,6 +73,8 @@ it("uses a one-use short-lived PKCE code without putting the session token into 
   const verifier=randomBytes(32).toString("base64url"),state=randomBytes(32).toString("base64url");
   const address=`https://site.test/api/mobile/auth/complete?challenge=${hash(verifier)}&state=${state}`;
   const page=await complete(new Request(address));expect(page.status).toBe(200);
+  // no-referrer makes Safari send Origin: null on the consent POST, which fails the origin check.
+  expect(page.headers.get("referrer-policy")).toBe("same-origin");
   const proof=/name="proof" value="([a-f0-9]+)"/.exec(await page.text())![1];
   const consentCookie=page.headers.get("set-cookie")!.split(";")[0];
   const result=await complete(new Request(address,{method:"POST",headers:{origin:"https://site.test",cookie:consentCookie},body:new URLSearchParams({proof}).toString()}));

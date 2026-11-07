@@ -21,7 +21,9 @@ export async function complete(request: Request) {
     if(request.method==="GET") {
       const nonce=randomBytes(32).toString("base64url"),proof=consentProof(session.user.id,nonce,challenge,state);
       const html=`<!doctype html><html lang="ja"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>アプリへのログイン確認</title><body><main><h1>過去問AIアプリにログイン</h1><p>ログイン中のアカウントでiPhoneアプリを利用します。アプリへ戻って学習を続けますか？</p><form method="post" action="${url.pathname}?challenge=${challenge}&state=${state}"><input type="hidden" name="proof" value="${proof}"><button type="submit">確認してアプリに戻る</button></form><p><a href="/auth/signout">別のアカウントでログインする</a></p></main></body></html>`;
-      return new Response(html,{headers:{"Content-Type":"text/html; charset=utf-8","Cache-Control":"no-store","Referrer-Policy":"no-referrer","Content-Security-Policy":"default-src 'none'; form-action 'self'; frame-ancestors 'none'; base-uri 'none'","Set-Cookie":`${cookie}=${nonce}; Path=/; HttpOnly; SameSite=Lax; Max-Age=300${secure?"; Secure":""}`}});
+      // same-origin, not no-referrer: with no-referrer Safari posts the consent form with Origin: null,
+      // which the origin check below rejects as invalid_origin (seen on TestFlight build 14).
+      return new Response(html,{headers:{"Content-Type":"text/html; charset=utf-8","Cache-Control":"no-store","Referrer-Policy":"same-origin","Content-Security-Policy":"default-src 'none'; form-action 'self'; frame-ancestors 'none'; base-uri 'none'","Set-Cookie":`${cookie}=${nonce}; Path=/; HttpOnly; SameSite=Lax; Max-Age=300${secure?"; Secure":""}`}});
     }
     if(request.headers.get("origin")!==url.origin)throw new BillingError("invalid_origin",403);
     const nonce=request.headers.get("cookie")?.split(";").map(x=>x.trim()).find(x=>x.startsWith(cookie+"="))?.slice(cookie.length+1);
