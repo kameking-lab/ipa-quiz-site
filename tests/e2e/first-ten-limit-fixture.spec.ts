@@ -34,20 +34,16 @@ test("quota UI fixture: ten uninterrupted answers, then free exits before the op
     await expect(page.getByRole("dialog")).toHaveCount(0);
     await choice.tap();
     await expect(page.getByRole("region", { name: /^(正解|不正解)の解説$/ })).toBeInViewport();
-    await page.getByRole("navigation", { name: "解答後の学習操作" }).getByRole("button", { name: "次の1問" }).tap();
+    await page.getByRole("button", { name: /^(次の問題へ|結果を見る)/ }).first().tap();
   }
-  await expect(page.getByRole("heading", { name: "今日の無料演習はここまで" })).toBeVisible();
+  await expect(page.getByRole("heading", { name: "今日の無料10問はここまで" })).toBeVisible();
   expect(granted.size).toBe(10);
   expect(await page.evaluate(() => JSON.parse(localStorage.getItem("ipa-quiz:history:v1")!).entries.length)).toBe(10);
-  const free = page.getByRole("link", { name: "保存済みの履歴を無料で復習する", exact: true });
-  const plan = page.getByRole("link", { name: "月額プランの料金・条件を見る", exact: true });
-  const top = (locator: typeof free) => locator.evaluate(el => el.getBoundingClientRect().top + scrollY);
-  expect(await top(free)).toBeLessThan(await top(plan));
+  const plan = page.getByRole("link", { name: "月額980円で続ける", exact: true });
   await expect(plan).toHaveAttribute("href", /returnTo=/);
+  await expect(page.getByText("明日また10問", { exact: true })).toBeVisible();
   await expect(page.getByRole("dialog")).toHaveCount(0);
   const mascot = page.locator('section[aria-labelledby="practice-limit-title"] img');
   await expect.poll(() => mascot.evaluate(el => (el as HTMLImageElement).naturalWidth)).toBeGreaterThan(0);
   await testInfo.attach("quota-wall-mobile", { body: await page.screenshot({ fullPage: true }), contentType: "image/png" });
-  await free.tap();
-  await expect(page).toHaveURL(/\/review$/);
 });

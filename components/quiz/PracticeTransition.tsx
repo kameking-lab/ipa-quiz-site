@@ -35,14 +35,16 @@ export function PracticeDailyLimit({ resumeHref, freeDaily, onUnlocked }: { rese
     sendFunnelEvent("paywall_plan_click");
     try { saveQuizReturn(window.sessionStorage, resumeHref); } catch { /* The link itself carries the return path. */ }
   };
-  return <section aria-labelledby="practice-limit-title" className="mx-auto w-full max-w-md px-4 py-8 text-center">
+  return <section aria-labelledby="practice-limit-title" className="mx-auto min-h-[100dvh] w-full max-w-md px-4 py-8">
+    <div className="space-y-4 rounded-3xl border border-sky-200 bg-gradient-to-b from-sky-50 via-card to-card p-5 text-center shadow-sm dark:border-sky-800 dark:from-sky-950">
     <div className="flex justify-center"><ChihuahuaMascot pose="celebrate" size={96} /></div>
-    <h2 id="practice-limit-title" className="mt-3 text-2xl font-bold leading-snug">今日の無料{free}問はここまで</h2>
-    <div className="mt-6 space-y-3">
+    <h2 id="practice-limit-title" className="text-2xl font-bold leading-snug">今日の無料{free}問はここまで</h2>
+    <div className="space-y-3">
       <a href={planStartHref(resumeHref)} onClick={start} aria-describedby="plan-terms" className="flex min-h-12 w-full items-center justify-center rounded-xl bg-primary px-4 py-3 text-lg font-bold text-primary-foreground hover:bg-primary/90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2">月額{PLAN_OFFER.priceYen}円で続ける</a>
       <p id="plan-terms" className="text-xs text-muted-foreground">税込・毎月自動更新・いつでも解約可 <Link href="/billing/terms" target="_blank" rel="noopener noreferrer" className="underline underline-offset-2">条件・返金</Link></p>
       <FeedbackUnlock onUnlocked={onUnlocked ?? (() => window.location.reload())} />
     </div>
-    <p className="mt-6 text-xs text-muted-foreground">明日また{free}問</p>
+    <p className="text-xs text-muted-foreground">明日また{free}問</p>
+    </div>
   </section>;
 }

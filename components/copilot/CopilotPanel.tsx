@@ -22,8 +22,6 @@ import {
   MicOff,
   MoreVertical,
   Search,
-  Pin,
-  PinOff,
 } from "lucide-react";
 import type { Question } from "@/lib/questions/types";
 import { getChoiceKeys } from "@/lib/questions/answers";
@@ -133,7 +131,7 @@ const WRONG_ONLY: QuickActionId = "why-wrong";
 // Number of quick actions shown by default before the "+他N個を見る" toggle.
 // Six matches the plan recommendation: enough headroom for the most-used
 // affordances without crowding the panel with the full 12-action list.
-const QUICK_ACTION_COLLAPSED_COUNT = 6;
+const QUICK_ACTION_COLLAPSED_COUNT = 4;
 
 interface SpeechRecognitionInstance {
   lang: string;
@@ -744,7 +742,8 @@ export function CopilotPanel({
     showToast("ダウンロードを開始しました");
   }, [question, messages, sessionId, createdAt, showToast]);
 
-  const { pinned, isPinned, togglePin, canPinMore } = usePinnedQuickActions();
+  // Pins saved earlier still decide the order; the per-chip pin toggles were removed as clutter.
+  const { pinned } = usePinnedQuickActions();
 
   const baseQuickActionIds: QuickActionId[] = [
     "term",
@@ -1014,72 +1013,22 @@ export function CopilotPanel({
               id="copilot-quickactions-list"
               className="flex flex-wrap gap-2"
             >
-              {visibleQuickActionIds.map((id) => {
-                const isThisPinned = isPinned(id);
-                return (
-                  <div
-                    key={id}
-                    className={cn(
-                      "group/qa inline-flex items-stretch overflow-hidden rounded-full border transition-colors",
-                      id === WRONG_ONLY
-                        ? "border-red-300 bg-red-50 dark:border-red-900/60 dark:bg-red-950/40"
-                        : isThisPinned
-                          ? "border-sky-300 bg-sky-50/70 dark:border-sky-700 dark:bg-sky-950/40"
-                          : "border-zinc-300 bg-white dark:border-zinc-700 dark:bg-zinc-900",
-                    )}
-                  >
-                    <button
-                      type="button"
-                      onClick={() => send("", id)}
-                      disabled={streaming || !online}
-                      className={cn(
-                        "min-h-11 px-3 py-2 text-sm transition-colors disabled:opacity-50",
-                        id === WRONG_ONLY
-                          ? "text-red-700 hover:bg-red-100 dark:text-red-200"
-                          : isThisPinned
-                            ? "text-sky-800 hover:bg-sky-100 dark:text-sky-100 dark:hover:bg-sky-900/40"
-                            : "text-zinc-700 hover:bg-zinc-100 dark:text-zinc-200 dark:hover:bg-zinc-800",
-                      )}
-                    >
-                      {QUICK_ACTIONS[id].label}
-                    </button>
-                    <button
-                      type="button"
-                      onClick={() => togglePin(id)}
-                      aria-pressed={isThisPinned}
-                      aria-label={
-                        isThisPinned
-                          ? `${QUICK_ACTIONS[id].label} のピン留めを解除`
-                          : canPinMore
-                            ? `${QUICK_ACTIONS[id].label} をピン留め`
-                            : `ピン留め上限 (3) に達しています`
-                      }
-                      disabled={!isThisPinned && !canPinMore}
-                      title={
-                        isThisPinned
-                          ? "ピン留め解除"
-                          : canPinMore
-                            ? "ピン留め (最大 3 件)"
-                            : "ピン留め上限 (3) に達しています"
-                      }
-                      className={cn(
-                        "flex min-h-11 w-11 items-center justify-center border-l text-[10px] transition-colors disabled:opacity-30",
-                        id === WRONG_ONLY
-                          ? "border-red-300 text-red-500 hover:bg-red-100 dark:border-red-900/60 dark:text-red-300 dark:hover:bg-red-950/60"
-                          : isThisPinned
-                            ? "border-sky-300 text-sky-600 hover:bg-sky-100 dark:border-sky-700 dark:text-sky-200 dark:hover:bg-sky-900/40"
-                            : "border-zinc-300 text-zinc-400 hover:bg-zinc-100 hover:text-zinc-600 dark:border-zinc-700 dark:text-zinc-500 dark:hover:bg-zinc-800 dark:hover:text-zinc-300",
-                      )}
-                    >
-                      {isThisPinned ? (
-                        <Pin className="h-4 w-4 fill-current" aria-hidden="true" />
-                      ) : (
-                        <PinOff className="h-4 w-4" aria-hidden="true" />
-                      )}
-                    </button>
-                  </div>
-                );
-              })}
+              {visibleQuickActionIds.map((id) => (
+                <button
+                  key={id}
+                  type="button"
+                  onClick={() => send("", id)}
+                  disabled={streaming || !online}
+                  className={cn(
+                    "min-h-11 rounded-full border px-4 py-2 text-sm transition-colors disabled:opacity-50",
+                    id === WRONG_ONLY
+                      ? "border-red-300 bg-red-50 text-red-700 hover:bg-red-100 dark:border-red-900/60 dark:bg-red-950/40 dark:text-red-200"
+                      : "border-zinc-300 bg-white text-zinc-700 hover:bg-zinc-100 dark:border-zinc-700 dark:bg-zinc-900 dark:text-zinc-200 dark:hover:bg-zinc-800",
+                  )}
+                >
+                  {QUICK_ACTIONS[id].label}
+                </button>
+              ))}
             </div>
             {hiddenQuickActionCount > 0 && (
               <button
@@ -1091,7 +1040,7 @@ export function CopilotPanel({
               >
                 {quickActionsExpanded
                   ? "閉じる"
-                  : `+他 ${hiddenQuickActionCount} 個を見る`}
+                  : "他を見る"}
               </button>
             )}
         </>

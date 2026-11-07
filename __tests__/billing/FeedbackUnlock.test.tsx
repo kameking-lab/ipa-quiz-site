@@ -18,6 +18,9 @@ it("puts the plan first and the feedback bonus second, accepts multiple choices,
   expect(purchase.compareDocumentPosition(button) & Node.DOCUMENT_POSITION_FOLLOWING).toBeTruthy();
   expect(screen.getByRole("heading", { name: "今日の無料10問はここまで" })).toBeTruthy();
   expect(screen.getByText("明日また10問")).toBeTruthy();
+  expect(purchase.classList.contains("bg-primary")).toBe(true);
+  // Only the plan button and the one-line terms link; nothing else to tap.
+  expect(screen.getAllByRole("link").map(link => link.textContent)).toEqual(["月額980円で続ける", "条件・返金"]);
   fireEvent.click(button);
   fireEvent.click(screen.getByLabelText("解説をもっと詳しく"));
   fireEvent.click(screen.getByLabelText("スマホでの使いやすさ"));
@@ -134,4 +137,11 @@ it.each(["expired", "other-question"])("discards a %s draft on return", async re
   render(<FeedbackUnlock onUnlocked={vi.fn()} />);
   expect(await screen.findByRole("textbox", { name: /自由記述/ })).toHaveValue("");
   expect(sessionStorage.getItem("feedback-unlock-draft:v1")).toBeNull();
+});
+it("offers only the plan once the feedback bonus is used", async () => {
+  vi.stubGlobal("fetch", vi.fn(async () => Response.json({ eligible: false, submitted: true, remaining: 0 })));
+  render(<PracticeDailyLimit reset={null} resumeHref="/quiz?mode=year" backHref="/" onUnlocked={vi.fn()} />);
+  await screen.findByText(/受け取り済み/);
+  expect(screen.getByRole("link", { name: "月額980円で続ける" }).getAttribute("href")).toMatch(/^\/billing/);
+  expect(screen.queryByRole("button", { name: "意見を送ってあと10問" })).toBeNull();
 });

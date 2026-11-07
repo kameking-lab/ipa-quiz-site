@@ -46,7 +46,7 @@ test("mobile: answer → explanation → related → review → next survives re
   await expect(page.getByRole("radio").first()).toBeEnabled();
   expect(new URL(page.url()).searchParams.get("question")).toBe(relatedId);
   await page.getByRole("radio").first().click();
-  await page.getByRole("navigation", { name: "解答後の学習操作" }).getByRole("button", { name: "次の1問" }).click();
+  await page.getByRole("button", { name: /^(次の問題へ|結果を見る)/ }).first().click();
   await expect.poll(() => new URL(page.url()).searchParams.get("question")).toBe(nextId);
   await expect(page.getByRole("radio").first()).toBeEnabled();
   expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);

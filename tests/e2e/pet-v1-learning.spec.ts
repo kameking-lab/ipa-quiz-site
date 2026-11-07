@@ -30,7 +30,7 @@ for (const width of [320, 390]) test(`local learning preserves legacy, persists 
   const profile = () => page.evaluate(key => JSON.parse(localStorage.getItem(key)!).profiles.find((p: { qualificationId: string }) => p.qualificationId === "ap"), key);
   expect((await profile()).growth).toBe(3);
   expect(await page.evaluate(legacyKey => localStorage.getItem(legacyKey), legacyKey)).toBe(legacy);
-  const next = page.getByRole("navigation", { name: "解答後の学習操作" }).getByRole("button", { name: "次の1問" });
+  const next = page.getByRole("button", { name: /^(次の問題へ|結果を見る)/ }).first();
   expect((await next.boundingBox())!.height).toBeGreaterThanOrEqual(44);
   expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
   await page.screenshot({ path: `test-results/pet-v1/${process.env.PET_EVIDENCE_PHASE ?? "regression"}-answer-${width}.png`, fullPage: false });
