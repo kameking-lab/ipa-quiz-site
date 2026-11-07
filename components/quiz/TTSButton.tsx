@@ -131,14 +131,8 @@ export function TTSButton({ text, lang = "ja-JP", className, label = "読み上�
     );
   }
 
-  if (!supported) {
-    return (
-      <span className={cn("inline-flex items-center gap-1 rounded-md px-2 py-1 text-xs text-zinc-400", className)}>
-        <VolumeX className="h-3.5 w-3.5" />
-        読み上げ非対応
-      </span>
-    );
-  }
+  // Unsupported devices simply have no read-aloud control (no disabled label).
+  if (!supported) return null;
 
   return (
     <div className={cn("inline-flex items-center gap-1", className)}>

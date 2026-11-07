@@ -1012,7 +1012,7 @@ export function CopilotPanel({
         <>
             <div
               id="copilot-quickactions-list"
-              className="flex flex-wrap gap-1.5"
+              className="flex flex-wrap gap-2"
             >
               {visibleQuickActionIds.map((id) => {
                 const isThisPinned = isPinned(id);
@@ -1033,7 +1033,7 @@ export function CopilotPanel({
                       onClick={() => send("", id)}
                       disabled={streaming || !online}
                       className={cn(
-                        "px-2.5 py-1 text-xs transition-colors disabled:opacity-50",
+                        "min-h-11 px-3 py-2 text-sm transition-colors disabled:opacity-50",
                         id === WRONG_ONLY
                           ? "text-red-700 hover:bg-red-100 dark:text-red-200"
                           : isThisPinned
@@ -1063,7 +1063,7 @@ export function CopilotPanel({
                             : "ピン留め上限 (3) に達しています"
                       }
                       className={cn(
-                        "flex w-6 items-center justify-center border-l text-[10px] transition-colors disabled:opacity-30",
+                        "flex min-h-11 w-11 items-center justify-center border-l text-[10px] transition-colors disabled:opacity-30",
                         id === WRONG_ONLY
                           ? "border-red-300 text-red-500 hover:bg-red-100 dark:border-red-900/60 dark:text-red-300 dark:hover:bg-red-950/60"
                           : isThisPinned
@@ -1072,9 +1072,9 @@ export function CopilotPanel({
                       )}
                     >
                       {isThisPinned ? (
-                        <Pin className="h-3 w-3 fill-current" aria-hidden="true" />
+                        <Pin className="h-4 w-4 fill-current" aria-hidden="true" />
                       ) : (
-                        <PinOff className="h-3 w-3" aria-hidden="true" />
+                        <PinOff className="h-4 w-4" aria-hidden="true" />
                       )}
                     </button>
                   </div>
@@ -1087,7 +1087,7 @@ export function CopilotPanel({
                 onClick={() => setQuickActionsExpanded((v) => !v)}
                 aria-expanded={quickActionsExpanded}
                 aria-controls="copilot-quickactions-list"
-                className="mt-2 inline-flex items-center gap-1 rounded-full border border-zinc-300 bg-white px-2.5 py-1 text-[11px] font-medium text-zinc-600 hover:bg-zinc-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-500 focus-visible:ring-offset-2 focus-visible:ring-offset-background dark:border-zinc-700 dark:bg-zinc-900 dark:text-zinc-300 dark:hover:bg-zinc-800"
+                className="mt-2 inline-flex min-h-11 items-center gap-1 rounded-full border border-zinc-300 bg-white px-3 py-2 text-xs font-medium text-zinc-600 hover:bg-zinc-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-500 focus-visible:ring-offset-2 focus-visible:ring-offset-background dark:border-zinc-700 dark:bg-zinc-900 dark:text-zinc-300 dark:hover:bg-zinc-800"
               >
                 {quickActionsExpanded
                   ? "閉じる"

@@ -56,6 +56,8 @@ export function NativePageQualificationActions({ collapsed = false }: { collapse
   const unavailable = ["gas-otsu", "gas-hei"].some(code => pathname === `/${code}` || pathname.startsWith(`/${code}/`) || search.get("exam") === code);
   if (!targets.length && unavailable) return <p className="py-3">この資格の公開ページ・確定日程を確認できていません。カレンダーへの追加はできません。</p>;
   if (!targets.length) return null;
+  // The practice route is just the practice; schedules live on qualification pages.
+  if (collapsed && (pathname.startsWith("/quiz") || pathname.startsWith("/mock-exam"))) return null;
   const list = <div className="space-y-3 pb-3">{targets.map(target => <QualificationActions key={target.id} target={target}/>)}</div>;
   // Above the page content: keep the question visible on the first screen.
   if (collapsed) return <details className="mx-auto mt-1 max-w-2xl" onToggle={e => setExpanded(e.currentTarget.open)}>

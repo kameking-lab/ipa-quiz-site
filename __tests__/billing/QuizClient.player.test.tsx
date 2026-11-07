@@ -96,8 +96,9 @@ describe("QuizClient with the real player and local learning stores", () => {
     const resume = billing.searchParams.get("returnTo");
     expect(resume).toBe(`/quiz?mode=year&exam=fp3&question=${fp[5].id}`);
     expect(screen.getByRole("link", { name: "明日、この問題から再開する" })).toHaveAttribute("href", resume);
-    expect(limit).toHaveTextContent("このボタンだけで課金は始まりません");
-    expect(limit).toHaveTextContent("ログインだけでは本日の無料枠は増えません");
+    // Actions only, no wordy disclaimers (owner rule: no repeated "確認" notes on the practice route).
+    expect(limit).not.toHaveTextContent("このボタンだけで課金は始まりません");
+    expect(screen.getByRole("link", { name: "月額プランの料金・条件を見る" })).toBeTruthy();
     expect(document.activeElement).toHaveAttribute("aria-label", "本日の無料演習の終了");
     expect(screen.queryByRole("radiogroup")).toBeNull();
     expect(started.size).toBe(10);

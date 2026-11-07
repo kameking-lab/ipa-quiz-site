@@ -8,7 +8,7 @@ exports[`BookmarkButton > renders as un-bookmarked by default 1`] = `
     <button
       aria-label="ブックマークに追加"
       aria-pressed="false"
-      class="rounded-full p-2 transition-colors focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-blue-600 focus-visible:ring-offset-2 focus-visible:ring-offset-background dark:focus-visible:ring-blue-300 bg-zinc-200 text-zinc-700 hover:bg-zinc-300 dark:bg-zinc-800 dark:text-zinc-300 dark:hover:bg-zinc-700"
+      class="inline-flex h-11 w-11 items-center justify-center rounded-full transition-colors focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-blue-600 focus-visible:ring-offset-2 focus-visible:ring-offset-background dark:focus-visible:ring-blue-300 bg-zinc-200 text-zinc-700 hover:bg-zinc-300 dark:bg-zinc-800 dark:text-zinc-300 dark:hover:bg-zinc-700"
       title="ブックマーク"
       type="button"
     >

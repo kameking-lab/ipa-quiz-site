@@ -31,6 +31,7 @@ interface Props {
   onNext: () => void;
   nextLabel?: string;
   onAskAI: () => void;
+  /** Accepted for existing callers; the copilot's 「なぜ間違えた？分析」 chip is the single entry point now. */
   onAnalyzeWrong?: () => void;
 }
 
@@ -44,7 +45,6 @@ export function ExplanationCard({
   onNext,
   nextLabel = "次の問題へ",
   onAskAI,
-  onAnalyzeWrong,
 }: Props) {
   if (question.type === "native-b" && question.nativeB) return <div className="space-y-4" role="region" aria-label="五枠の解説">
     <NativeBFeedback data={question.nativeB} result={nativeBResult} />
@@ -108,7 +108,7 @@ export function ExplanationCard({
             aria-pressed={starred}
             aria-keyshortcuts="r"
             className={cn(
-              "rounded-full p-2 transition-colors",
+              "inline-flex h-11 w-11 items-center justify-center rounded-full transition-colors",
               "focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-amber-600 focus-visible:ring-offset-2 focus-visible:ring-offset-background dark:focus-visible:ring-amber-300",
               starred
                 ? "bg-amber-200 text-amber-900 dark:bg-amber-900/60 dark:text-amber-200"
@@ -131,18 +131,6 @@ export function ExplanationCard({
         </Button>
       </div>
 
-      {!isCorrect && onAnalyzeWrong && (
-        <button
-          onClick={onAnalyzeWrong}
-          className="mb-3 flex w-full items-center justify-between rounded-xl border border-zinc-300 bg-white px-4 py-3 text-left text-sm font-semibold text-zinc-700 transition hover:bg-zinc-50 dark:border-zinc-700 dark:bg-zinc-900 dark:text-zinc-300 dark:hover:bg-zinc-800"
-        >
-          <span className="flex items-center gap-2">
-            <Sparkles className="h-4 w-4" />
-            なぜ間違えた？ AIに質問する
-          </span>
-          <ArrowRight className="h-4 w-4" />
-        </button>
-      )}
 
       {isPlaceholderExplanation(question.explanation) ? (
         <div className="selectable-content mb-4 rounded-xl bg-amber-50 p-3 text-sm text-amber-800 dark:bg-amber-950/30 dark:text-amber-200">
@@ -216,7 +204,7 @@ export function ExplanationCard({
             href={getSafePdfUrl(question.sourcePdfUrl)}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-1 rounded-lg border border-zinc-200 bg-zinc-50 px-2.5 py-1 text-[11px] text-zinc-600 transition hover:border-zinc-300 hover:bg-zinc-100 hover:text-zinc-800 dark:border-zinc-700 dark:bg-zinc-800/60 dark:text-zinc-400 dark:hover:border-zinc-600 dark:hover:text-zinc-200"
+            className="inline-flex min-h-11 items-center gap-1 rounded-lg border border-zinc-200 bg-zinc-50 px-3 py-2 text-xs text-zinc-600 transition hover:border-zinc-300 hover:bg-zinc-100 hover:text-zinc-800 dark:border-zinc-700 dark:bg-zinc-800/60 dark:text-zinc-400 dark:hover:border-zinc-600 dark:hover:text-zinc-200"
           >
             <FileText className="h-3 w-3 flex-shrink-0" />
             {ipaSourceLabel(getSafePdfUrl(question.sourcePdfUrl), "question")}
@@ -225,7 +213,7 @@ export function ExplanationCard({
             href={getOfficialAnswerPdfUrl(question.sourcePdfUrl, question.sourceAnswerUrl)}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-1 rounded-lg border border-zinc-200 bg-zinc-50 px-2.5 py-1 text-[11px] text-zinc-600 transition hover:border-zinc-300 hover:bg-zinc-100 hover:text-zinc-800 dark:border-zinc-700 dark:bg-zinc-800/60 dark:text-zinc-400 dark:hover:border-zinc-600 dark:hover:text-zinc-200"
+            className="inline-flex min-h-11 items-center gap-1 rounded-lg border border-zinc-200 bg-zinc-50 px-3 py-2 text-xs text-zinc-600 transition hover:border-zinc-300 hover:bg-zinc-100 hover:text-zinc-800 dark:border-zinc-700 dark:bg-zinc-800/60 dark:text-zinc-400 dark:hover:border-zinc-600 dark:hover:text-zinc-200"
           >
             <FileText className="h-3 w-3 flex-shrink-0" />
             {ipaSourceLabel(getOfficialAnswerPdfUrl(question.sourcePdfUrl, question.sourceAnswerUrl), "answer")}
@@ -236,7 +224,7 @@ export function ExplanationCard({
               href={url}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-1 rounded-lg border border-zinc-200 bg-zinc-50 px-2.5 py-1 text-[11px] text-zinc-600 transition hover:border-zinc-300 hover:bg-zinc-100 hover:text-zinc-800 dark:border-zinc-700 dark:bg-zinc-800/60 dark:text-zinc-400 dark:hover:border-zinc-600 dark:hover:text-zinc-200"
+              className="inline-flex min-h-11 items-center gap-1 rounded-lg border border-zinc-200 bg-zinc-50 px-3 py-2 text-xs text-zinc-600 transition hover:border-zinc-300 hover:bg-zinc-100 hover:text-zinc-800 dark:border-zinc-700 dark:bg-zinc-800/60 dark:text-zinc-400 dark:hover:border-zinc-600 dark:hover:text-zinc-200"
             >
               <FileText className="h-3 w-3 flex-shrink-0" />
               {questionReferenceLabel(question, url)}

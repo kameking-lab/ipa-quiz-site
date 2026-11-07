@@ -135,7 +135,7 @@ export function NativeTools({ membershipOnly = false, membership = defaultMember
       {notice && <p role="status" className="break-words rounded-xl bg-muted p-3 text-sm">{notice}</p>}
       <section aria-labelledby="native-plan" className={card}>
         <h2 id="native-plan" className="font-bold">有料会員（月額プラン）</h2>
-        <p className="text-sm">全資格・全問題から無料で1日10問（日本時間0時リセット）。有料会員は回数無制限、資格ごとの事前ダウンロードも使えます。</p>
+        <p className="text-sm">ログイン不要で1日10問（全資格共通・日本時間0時リセット）。意見を1回送ると＋10問。有料会員は回数無制限、資格ごとの事前ダウンロードも使えます。</p>
         {!access ? <button className={secondary} disabled={busy} onClick={()=>void run(async()=>{ await refresh(true); })}>会員状態を再確認</button> : <>
           <p className="font-semibold">{access.entitled ? access.source === "web" ? "ウェブの有料会員です。追加購入は不要です。" : "App Storeの有料会員です。" : "無料会員"}</p>
           {access.source === "web" && <div className="space-y-2"><p className="text-sm">既存のウェブ契約の管理・解約を開きます。</p><ManageSubscriptionButton label="ウェブ契約の管理・解約"/></div>}

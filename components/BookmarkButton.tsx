@@ -49,7 +49,7 @@ export function BookmarkButton({ question, className }: BookmarkButtonProps) {
         onClick={handleToggle}
         aria-pressed={bookmarked}
         className={cn(
-          "rounded-full p-2 transition-colors",
+          "inline-flex h-11 w-11 items-center justify-center rounded-full transition-colors",
           "focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-blue-600 focus-visible:ring-offset-2 focus-visible:ring-offset-background dark:focus-visible:ring-blue-300",
           bookmarked
             ? "bg-blue-200 text-blue-900 dark:bg-blue-900/60 dark:text-blue-200"

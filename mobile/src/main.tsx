@@ -152,7 +152,7 @@ function App() {
         {isSaved
           ? <><button className={primaryButton} disabled={busy} onClick={()=>void run(()=>begin(e.code))}>保存問題で学習</button><button className={`${secondaryButton} w-full`} disabled={busy} onClick={()=>void run(()=>openOnline(onlineHref(e)))}>オンラインで解く</button></>
           : <button className={primaryButton} disabled={busy} onClick={()=>void run(()=>openOnline(onlineHref(e)))}>問題を解く</button>}
-        <p className="text-sm text-muted-foreground">{isSaved?"保存問題は通信なしで解けます。":online?"オンラインで出題します。無料は全資格共通で1日10問です。":"オフラインです。通信できる場所で解けます。"}</p>
+        <p className="text-sm text-muted-foreground">{isSaved?"保存問題は通信なしで解けます。":online?"ログイン不要で1日10問まで無料です。":"オフラインです。通信できる場所で解けます。"}</p>
       </div>
       {isSaved&&quiz&&<details className="native-card"><summary className="native-summary">出題条件（保存問題）</summary><div className="grid grid-cols-2 gap-3 pb-3">
         <label className="flex flex-col gap-1 text-sm">モード<select className={field} value={mode} onChange={ev=>setMode(ev.target.value as QuizMode)}>{[["random","ランダム"],["year","年度別"],["topic","分野別"],["review","復習"],["unanswered","未回答"],["weakness","苦手"]].map(([v,n])=><option key={v} value={v}>{n}</option>)}</select></label>
@@ -165,7 +165,7 @@ function App() {
     </main></>;
   }
   return <>{header}{status}<main className="native-main space-y-6" data-mobile-ready={ready}>
-    <section className="space-y-2 pt-2"><h1 className="text-[1.75rem] font-bold leading-snug tracking-tight">全資格の過去問を、いつでも。</h1><p className="text-muted-foreground">無料で毎日10問（全資格共通・日本時間0時リセット）。有料会員は回数無制限です。</p></section>
+    <section className="space-y-2 pt-2"><h1 className="text-[1.75rem] font-bold leading-snug tracking-tight">全資格の過去問を、いつでも。</h1><p className="text-muted-foreground">ログイン不要で1日10問（全資格共通・日本時間0時リセット）。有料会員は回数無制限です。</p></section>
     <section aria-labelledby="pick-title" className="space-y-3">
       <h2 id="pick-title" className="text-lg font-bold">資格を選んで始める</h2>
       <input type="search" aria-label="資格名で探す" className={field} placeholder="資格名で探す（例：宅建、ITパスポート）" value={query} onChange={e=>setQuery(e.target.value)}/>
