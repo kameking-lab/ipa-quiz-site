@@ -13,7 +13,7 @@ import type { Question, QuizMode } from "@/lib/questions/types";
 import { downloads, type DownloadIndex } from "./downloads";
 import { hydrateImages } from "./images";
 import { persistStudy, restoreStudy, studyOwner } from "./portable-storage";
-import { observeConnection, observeReminderTap, setReminder } from "./platform";
+import { isOnline, observeConnection, observeReminderTap, setReminder } from "./platform";
 import { observeLogin } from "./login";
 import { refreshDeviceRights } from "./refresh-rights";
 import { installLocalApi } from "./local-api";
@@ -37,8 +37,8 @@ const onlineHref=(e:CatalogEntry)=>e.href??(e.code.startsWith("library.")?`/e-le
 const primaryButton="inline-flex min-h-12 w-full items-center justify-center rounded-xl bg-primary px-4 text-base font-semibold text-primary-foreground disabled:opacity-50";
 const secondaryButton="inline-flex min-h-11 items-center justify-center rounded-xl border border-border bg-background px-4 text-sm font-medium disabled:opacity-50";
 const field="min-h-11 w-full rounded-xl border border-border bg-background px-3";
-function App() {
-  const [saved,setSaved]=useState<DownloadIndex>({}),[notice,setNotice]=useState("");
+function App({ offlineFallback = false }: { offlineFallback?: boolean }) {
+  const [saved,setSaved]=useState<DownloadIndex>({}),[notice,setNotice]=useState(offlineFallback?"オフラインです。保存した問題と通知はここで使えます。":"");
   const [online,setOnline]=useState(typeof navigator==="undefined"?true:navigator.onLine),[busy,setBusy]=useState(false);
   const [mode,setMode]=useState<QuizMode>("random"),[year,setYear]=useState(""),[category,setCategory]=useState(""),[session,setSession]=useState("");
   const [pool,setPool]=useState<Question[]>([]),[index,setIndex]=useState(0),[question,setQuestion]=useState<Question|null>(null);
@@ -136,7 +136,9 @@ function App() {
     <span className={`rounded-full px-2 py-0.5 text-xs ${online?"bg-primary/10 text-primary":"bg-muted text-muted-foreground"}`}>{online?"オンライン":"オフライン"}</span>
     {studying||selected
       ? <button className={`${secondaryButton} ml-auto`} onClick={toList}>資格一覧</button>
-      : <button className={`${secondaryButton} ml-auto`} onClick={()=>void run(()=>openOnline("/settings#app-settings"))}>会員・設定</button>}
+      : offlineFallback||!online
+        ? <button className={`${secondaryButton} ml-auto`} onClick={()=>{try{sessionStorage.removeItem(HANDOFF_KEY);}catch{/* best effort */}location.replace(ORIGIN+"/");}}>オンラインで開く</button>
+        : <button className={`${secondaryButton} ml-auto`} onClick={()=>void run(()=>openOnline("/settings#app-settings"))}>会員・設定</button>}
   </header>;
   const status=notice&&<p role="status" className="native-notice">{notice}</p>;
   if(materials.length) return <>{header}{status}<div className="native-shell"><label className="flex flex-col gap-1">保存した問題<select className={field} value={materialIndex} onChange={e=>setMaterialIndex(Number(e.target.value))}>{materials.map((m,i)=><option key={m.id} value={i}>{m.title}</option>)}</select></label><Suspense fallback={<p>表示を準備しています…</p>}><MaterialReader material={materials[materialIndex]}/></Suspense></div></>;
@@ -202,6 +204,37 @@ async function step(name:string,fn:()=>unknown) {
   // One failing native call must never blank the whole app (TestFlight build 12).
   try { await fn(); } catch(error) { log(name)(error); }
 }
+/**
+ * Online, the app opens the real website home (same chihuahua home, presence
+ * count, pet game and every mode as the web). This bundled shell is the
+ * offline fallback, and "?local=1" opens it on purpose (saved questions).
+ */
+const HANDOFF_KEY = "kakomon:web-handoff-at";
+function recentHandoffFailed(): boolean {
+  // Capacitor's errorPath brings a failed navigation back to index.html; never loop.
+  try { return Date.now() - Number(sessionStorage.getItem(HANDOFF_KEY) ?? 0) < 60_000; } catch { return false; }
+}
+async function shouldOpenWebHome(): Promise<boolean> {
+  if (!Capacitor.isNativePlatform() || new URLSearchParams(location.search).has("local") || recentHandoffFailed()) return false;
+  try { return await isOnline(); } catch { return typeof navigator !== "undefined" && navigator.onLine; }
+}
+async function openWebHome() {
+  try { sessionStorage.setItem(HANDOFF_KEY, String(Date.now())); } catch { /* best effort */ }
+  // Carry this device's study history to the web origin first, but never wait long.
+  const handOff = (async () => {
+    const r = await downloads.rights();
+    const owner = await studyOwner(r?.access.userId ?? null);
+    await restoreStudy(owner);
+    await persistStudyAfterPets(owner);
+  })().catch(log("study hand-off"));
+  await Promise.race([handOff, new Promise(resolve => setTimeout(resolve, 3000))]);
+  location.replace(ORIGIN + "/");
+}
+function Splash() {
+  return <main className="native-main flex min-h-[60vh] flex-col items-center justify-center gap-3 text-center" aria-busy="true">
+    <p className="text-lg font-bold">過去問AI</p>
+  </main>;
+}
 async function start() {
   document.documentElement.classList.add("native-app");
   // Install native ad-host blocking before any UI/deep-link can leave the shell.
@@ -214,7 +247,9 @@ async function start() {
   }
   await step("local API",installLocalApi);
   await step("pet support",installNativePetSupport);
-  createRoot(document.getElementById("root")!).render(<StartupBoundary><App/></StartupBoundary>);
+  const root = createRoot(document.getElementById("root")!);
+  if (await shouldOpenWebHome()) { root.render(<Splash/>); await openWebHome(); return; }
+  root.render(<StartupBoundary><App offlineFallback={recentHandoffFailed()}/></StartupBoundary>);
 }
 void start().catch(error => {
   log("startup")(error);

@@ -2,7 +2,7 @@
 // xcodeproj are required, but no Xcode, real profiles or signing keys are used.
 import assert from "node:assert/strict";
 import { spawnSync } from "node:child_process";
-import { cpSync, mkdtempSync, mkdirSync, readFileSync, rmSync, writeFileSync } from "node:fs";
+import { cpSync, existsSync, mkdtempSync, mkdirSync, readFileSync, rmSync, writeFileSync } from "node:fs";
 import { createRequire } from "node:module";
 import { tmpdir } from "node:os";
 import { basename, dirname, join, resolve } from "node:path";
@@ -39,8 +39,8 @@ const fixture = (t) => {
   mkdirSync(join(native, "Base.lproj"), { recursive: true });
   cpSync(join(mobile, "ios/App/App.xcodeproj"), join(cwd, "ios/App/App.xcodeproj"), { recursive: true });
   cpSync(join(mobile, "ios/App/Podfile"), join(cwd, "ios/App/Podfile"));
-  for (const file of ["Info.plist", "capacitor.config.json", "Base.lproj/Main.storyboard"]) {
-    cpSync(join(mobile, "ios/App/App", file), join(native, file));
+  for (const file of ["Info.plist", "capacitor.config.json", "Base.lproj/Main.storyboard", "SceneDelegate.swift"]) {
+    if (existsSync(join(mobile, "ios/App/App", file))) cpSync(join(mobile, "ios/App/App", file), join(native, file));
   }
   success(run(cwd, "configure-ios.rb"));
   return cwd;
@@ -71,6 +71,21 @@ test("generated native sources match the checked plugin contracts and are compil
   for (const source of sources) assert.equal(compiled.filter(path => path === source).length, 1, source);
   const storyboard = readFileSync(join(mobile, "ios/App/App/Base.lproj/Main.storyboard"), "utf8");
   assert.match(storyboard, /customClass="QualificationBridgeViewController" customModule="App"/);
+});
+
+test("the scene window uses the bridge that registers the custom plugins", (t) => {
+  const cwd = fixture(t);
+  const file = join(cwd, "ios/App/App/SceneDelegate.swift");
+  if (!existsSync(file)) { t.skip("generated project has no SceneDelegate"); return; }
+  // Capacitor 8 builds the window here and ignores the storyboard class.
+  assert.match(readFileSync(file, "utf8"), /rootViewController = QualificationBridgeViewController\(\)/);
+  assert.doesNotMatch(readFileSync(file, "utf8"), /CAPBridgeViewController\(\)/);
+  writeFileSync(file, readFileSync(file, "utf8").replace("QualificationBridgeViewController()", "CAPBridgeViewController()"));
+  const rejected = run(cwd, "verify-ios.rb");
+  assert.notEqual(rejected.status, 0);
+  assert.match(rejected.stderr, /SceneDelegate bypasses the plugin bridge/);
+  success(run(cwd, "configure-ios.rb"));
+  success(run(cwd, "verify-ios.rb"));
 });
 
 test("Ads pod configuration preserves Capacitor hooks and is idempotent", () => {

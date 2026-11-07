@@ -631,6 +631,15 @@ html.native-app body::before {
 /* In the app the practice route is just the practice: no site-wide link grid. */
 html.native-app .native-app-hidden { display: none; }
 html.native-app .sticky.top-0 { top: var(--safe-top); }
+/* Bottom bars use the same measured inset (env() alone may report 0 in the app). */
+html.native-app .pb-safe { padding-bottom: max(var(--safe-bottom), 0.5rem); }
+html.native-app .mobile-bottom-nav { height: calc(3rem + 1px + max(var(--safe-bottom), 0.5rem)); }
+html.native-app .mobile-bottom-nav-reserve { padding-bottom: calc(3rem + 1px + max(var(--safe-bottom), 0.5rem) + 0.5rem); }
+html.native-app .mobile-bottom-nav-footer-reserve { padding-bottom: calc(2rem + 3rem + 1px + max(var(--safe-bottom), 0.5rem) + 0.5rem); }
+@media (min-width: 45rem) {
+  html.native-app .mobile-bottom-nav-reserve { padding-bottom: var(--safe-bottom); }
+  html.native-app .mobile-bottom-nav-footer-reserve { padding-bottom: max(var(--safe-bottom), 2rem); }
+}
 html.native-app .sticky.top-24 { top: calc(var(--safe-top) + 6rem); }
 html.native-app [role="dialog"].inset-y-0 { padding-top: calc(var(--safe-top) + 1.5rem); }
 html.native-app [role="dialog"].inset-y-0 > button.absolute.top-4 { top: calc(var(--safe-top) + 1rem); }
