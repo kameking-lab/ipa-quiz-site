@@ -29,10 +29,11 @@ export function PracticeLoading({ index = 0, total = 0 }: { index?: number; tota
  */
 export function PracticeDailyLimit({ resumeHref, freeDaily, onUnlocked }: { reset?: string | null; resumeHref: string; backHref?: string; freeDaily?: number; onUnlocked?: () => void }) {
   const free = Number.isFinite(freeDaily) && freeDaily! > 0 ? freeDaily! : PLAN_OFFER.freeDaily;
-  useEffect(() => { posthogCapture("practice_limit_viewed", { freeDaily: free }); sendFunnelEvent("free_limit_reached"); }, [free]);
+  // The KV funnel count goes first: it must not depend on the analytics SDK.
+  useEffect(() => { sendFunnelEvent("free_limit_reached"); posthogCapture("practice_limit_viewed", { freeDaily: free }); }, [free]);
   const start = () => {
-    posthogCapture("practice_upgrade_clicked", { source: "daily_limit" });
     sendFunnelEvent("paywall_plan_click");
+    posthogCapture("practice_upgrade_clicked", { source: "daily_limit" });
     try { saveQuizReturn(window.sessionStorage, resumeHref); } catch { /* The link itself carries the return path. */ }
   };
   return <section aria-labelledby="practice-limit-title" className="mx-auto min-h-[100dvh] w-full max-w-md px-4 py-8">
