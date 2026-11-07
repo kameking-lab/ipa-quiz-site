@@ -28,7 +28,7 @@ test(`prepared explanation receives focus without navigation or AI (${width}px, 
   expect(page.url()).toBe(url);
   expect(aiCalls).toBe(0);
   expect(await page.evaluate(() => JSON.parse(localStorage.getItem("ipa-quiz:history:v1")!).entries.length)).toBe(1);
-  const next = page.getByRole("navigation", { name: "解答後の学習操作" }).getByRole("button", { name: "次の1問" });
+  const next = page.getByRole("button", { name: /^(次の問題へ|結果を見る)/ }).first();
   const box = await next.boundingBox();
   expect(box!.height).toBeGreaterThanOrEqual(44);
   expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);

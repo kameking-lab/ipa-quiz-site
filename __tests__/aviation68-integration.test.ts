@@ -82,6 +82,8 @@ describe('aviation communication68 local registration candidate',()=>{
   // The prior KGROW1/PRK fixtures stay intact as provenance;
   // rewards, answers and every original-data/core pin below remain exact.
   // The historical pre-reward oracle remains unchanged as provenance.
+  // IOS-FIX (PR #807) pins the opaque sticky header and the post-answer bar
+  // without a second next button (the inline 「次の問題へ」 is the only one).
   expect(normalizedTextSha256(player)).toBe(int8RuntimePins['components/quiz/QuizPlayer.tsx']);
   expect(player).toContain('NativeQuestionGate');
   expect(petdevRuntimePins.previousCommitAnswer).toBe(kperfRuntimePins.commitAnswer);

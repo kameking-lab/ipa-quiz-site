@@ -40,7 +40,7 @@ describe("QuizClient authorization boundary", () => {
     render(<QuizClient billingGateEnabled poolIds={["q1", "q2"]} mode="year" backHref="/" />);
     await screen.findByText("q1"); expect(fetcher.mock.calls.some(([u, opts]) => u.includes("/api/questions/next?") && !opts?.method)).toBe(true);
     fireEvent.click(screen.getByText("next"));
-    await screen.findByText(/本日の無料連続演習枠/); expect(screen.queryByText("q2")).toBeNull();
+    await screen.findByText(/今日の無料演習はここまで/); expect(screen.queryByText("q2")).toBeNull();
     expect(document.activeElement).toHaveAttribute("aria-label", "本日の無料演習の終了");
     expect(HTMLElement.prototype.scrollIntoView).toHaveBeenCalledWith({ block: "start", behavior: "instant" });
     expect(fetcher.mock.calls.some(([u, opts]) => u === "/api/billing/question" && JSON.parse(opts!.body as string).id === "q2")).toBe(true);
