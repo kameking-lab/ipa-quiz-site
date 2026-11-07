@@ -1,6 +1,6 @@
 // @vitest-environment node
 import { beforeEach, describe, expect, it, vi } from "vitest";
-const record = vi.hoisted(() => vi.fn(async (..._args: unknown[]) => true));
+const record = vi.hoisted(() => vi.fn<(...args: unknown[]) => Promise<boolean>>(async () => true));
 vi.mock("@/lib/billing/funnel", async importOriginal => ({ ...(await importOriginal<typeof import("@/lib/billing/funnel")>()), recordFunnel: record }));
 import { POST } from "@/app/api/funnel/route";
 import { GET } from "@/app/api/admin/funnel/billing/route";

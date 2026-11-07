@@ -8,7 +8,7 @@ afterEach(() => { vi.unstubAllEnvs(); vi.unstubAllGlobals(); });
 
 describe("purchase funnel counter (KV, per JST day, distinct visitors)", () => {
   it("adds the visitor's keyed hash to the JST day's set in one awaited pipeline, never the raw identifier", async () => {
-    const fetcher = vi.fn(async (_url: string, _init?: RequestInit) => Response.json([{ result: 1 }, { result: 1 }]));
+    const fetcher = vi.fn<(url: string, init?: RequestInit) => Promise<Response>>(async () => Response.json([{ result: 1 }, { result: 1 }]));
     vi.stubGlobal("fetch", fetcher);
     expect(await recordFunnel("free_limit_reached", "guest:1b4e28ba-2fa1-11d2-883f-0016d3cca427", NOW)).toBe(true);
     expect(fetcher).toHaveBeenCalledTimes(1);

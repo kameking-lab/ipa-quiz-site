@@ -2,7 +2,7 @@ import { createHmac } from "node:crypto";
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 import { monthlyStripeFixture } from "./monthly-stripe-fixture";
 const wiring = vi.hoisted(() => ({ runtime: null as unknown, user: "alice", email: undefined as string | undefined }));
-const record = vi.hoisted(() => vi.fn(async (..._args: unknown[]) => true));
+const record = vi.hoisted(() => vi.fn<(...args: unknown[]) => Promise<boolean>>(async () => true));
 vi.mock("@/lib/billing/funnel", () => ({ recordFunnel: record }));
 vi.mock("@/lib/billing/checkout-email", () => ({ checkoutEmail: async () => wiring.email }));
 vi.mock("@/lib/billing/subscription/runtime", () => ({ monthlyRuntime: () => wiring.runtime }));

@@ -139,9 +139,12 @@ it.each(["expired", "other-question"])("discards a %s draft on return", async re
   expect(sessionStorage.getItem("feedback-unlock-draft:v1")).toBeNull();
 });
 it("offers only the plan once the feedback bonus is used", async () => {
-  vi.stubGlobal("fetch", vi.fn(async () => Response.json({ eligible: false, submitted: true, remaining: 0 })));
+  const fetcher = vi.fn(async () => Response.json({ eligible: false, submitted: true, remaining: 0 }));
+  vi.stubGlobal("fetch", fetcher);
   render(<PracticeDailyLimit reset={null} resumeHref="/quiz?mode=year" backHref="/" onUnlocked={vi.fn()} />);
-  await screen.findByText(/受け取り済み/);
+  await waitFor(() => expect(fetcher).toHaveBeenCalled());
+  await act(async () => {});
+  expect(screen.queryByText(/受け取り済み/)).toBeNull();
   expect(screen.getByRole("link", { name: "月額980円で続ける" }).getAttribute("href")).toMatch(/^\/billing/);
   expect(screen.queryByRole("button", { name: "意見を送ってあと10問" })).toBeNull();
 });
